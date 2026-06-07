@@ -1,0 +1,730 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-07-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 07 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 07",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-aufgabe-delegieren-und-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Eine Aufgabe delegieren und begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Delegating a task and explaining why" },
+        { "language": "fa", "text": "واگذار کردن یک وظیفه و توضیح دلیل آن" },
+        { "language": "ar", "text": "تفويض مهمة وشرح السبب" },
+        { "language": "tr", "text": "Bir görevi devretmek ve nedenini açıklamak" },
+        { "language": "ru", "text": "Поручить задачу и объяснить причину" },
+        { "language": "ckb", "text": "سپاردنی ئەرکێک و ڕوونکردنەوەی هۆکارەکەی" },
+        { "language": "kmr", "text": "Karêk radest kirin û sedemê wê rave kirin" },
+        { "language": "pl", "text": "Delegowanie zadania i wyjaśnienie powodu" },
+        { "language": "ro", "text": "Delegarea unei sarcini și explicarea motivului" },
+        { "language": "sq", "text": "Delegimi i një detyre dhe shpjegimi i arsyes" }
+      ],
+      "description": "Du möchtest einer Kollegin eine wichtige Teilaufgabe übertragen. Im Gespräch erklärst du, warum sie dafür geeignet ist, was genau erwartet wird, welche Unterstützung sie bekommt und wie ihre anderen Aufgaben angepasst werden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You want to assign an important subtask to a colleague. In the conversation, you explain why she is suited for it, what exactly is expected, what support she will receive, and how her other tasks will be adjusted." },
+        { "language": "fa", "text": "می‌خواهی یک وظیفه مهم فرعی را به یکی از همکاران بسپاری. در گفت‌وگو توضیح می‌دهی چرا او برای این کار مناسب است، دقیقاً چه انتظاری وجود دارد، چه پشتیبانی دریافت می‌کند و کارهای دیگرش چطور تنظیم می‌شوند." },
+        { "language": "ar", "text": "تريد أن تسند مهمة فرعية مهمة إلى زميلة. في الحديث تشرح لماذا هي مناسبة لها، وما المتوقع بالضبط، وما الدعم الذي ستحصل عليه، وكيف ستُعدل مهامها الأخرى." },
+        { "language": "tr", "text": "Önemli bir alt görevi bir meslektaşına vermek istiyorsun. Görüşmede onun neden uygun olduğunu, tam olarak ne beklendiğini, hangi desteği alacağını ve diğer görevlerinin nasıl ayarlanacağını açıklıyorsun." },
+        { "language": "ru", "text": "Ты хочешь поручить важную подзадачу коллеге. В разговоре ты объясняешь, почему она подходит для этого, что именно ожидается, какую поддержку она получит и как будут скорректированы её другие задачи." },
+        { "language": "ckb", "text": "دەتەوێت ئەرکێکی گرنگی لاوەکی بسپێریت بە هاوکارێک. لە گفتوگۆکەدا ڕوون دەکەیتەوە بۆچی ئەو بۆ ئەم کارە گونجاوە، بە وردی چی چاوەڕوان دەکرێت، چ پشتیوانییەک وەردەگرێت و ئەرکەکانی تری چۆن ڕێک دەخرێنەوە." },
+        { "language": "kmr", "text": "Tu dixwazî kareke girîng a beşî radestî hevkarekê bikî. Di axaftinê de tu rave dikî çima ew ji bo wê guncaw e, bi rastî çi tê xwestin, çi piştgirî distîne û karên din ên wê çawa têne rêkxistin." },
+        { "language": "pl", "text": "Chcesz przekazać koleżance ważne zadanie cząstkowe. W rozmowie wyjaśniasz, dlaczego się do niego nadaje, czego dokładnie się oczekuje, jakie wsparcie otrzyma i jak zostaną dostosowane jej inne zadania." },
+        { "language": "ro", "text": "Vrei să îi încredințezi unei colege o sarcină parțială importantă. În discuție explici de ce este potrivită, ce se așteaptă exact, ce sprijin va primi și cum vor fi ajustate celelalte sarcini ale ei." },
+        { "language": "sq", "text": "Dëshiron t'i caktosh një kolegeje një detyrë të rëndësishme të pjesshme. Në bisedë shpjegon pse ajo është e përshtatshme, çfarë pritet saktësisht, çfarë mbështetjeje do të marrë dhe si do të rregullohen detyrat e tjera të saj." }
+      ],
+      "learnerGoal": "Delegiere eine Aufgabe professionell: Erkläre Anlass und Auswahl, definiere Ergebnis und Termin, biete Unterstützung an und kläre die Auswirkungen auf andere Aufgaben.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Delegate a task professionally: explain the reason and selection, define outcome and deadline, offer support, and clarify the impact on other tasks." },
+        { "language": "fa", "text": "یک وظیفه را حرفه‌ای واگذار کن: دلیل و انتخاب فرد را توضیح بده، نتیجه و زمان تحویل را مشخص کن، پشتیبانی پیشنهاد بده و اثر آن بر کارهای دیگر را روشن کن." },
+        { "language": "ar", "text": "فوّض مهمة بشكل مهني: اشرح السبب وسبب اختيار الشخص، وحدد النتيجة والموعد، واعرض الدعم، ووضح التأثير على المهام الأخرى." },
+        { "language": "tr", "text": "Bir görevi profesyonelce devret: nedeni ve seçimi açıkla, sonucu ve tarihi tanımla, destek sun ve diğer görevler üzerindeki etkiyi netleştir." },
+        { "language": "ru", "text": "Профессионально делегируй задачу: объясни причину и выбор, определи результат и срок, предложи поддержку и проясни влияние на другие задачи." },
+        { "language": "ckb", "text": "ئەرکێک بە شێوەی پیشەیی بسپێرە: هۆکار و هەڵبژاردنی کەسەکە ڕوون بکە، ئەنجام و کات دیاری بکە، پشتیوانی پێشنیار بکە و کاریگەری لەسەر ئەرکەکانی تر ڕوون بکە." },
+        { "language": "kmr", "text": "Karêk bi awayekî profesyonel radest bike: sedem û hilbijartinê rave bike, encam û demê diyar bike, piştgirî pêşniyar bike û bandora li ser karên din zelal bike." },
+        { "language": "pl", "text": "Deleguj zadanie profesjonalnie: wyjaśnij powód i wybór osoby, określ rezultat i termin, zaoferuj wsparcie oraz wyjaśnij wpływ na inne zadania." },
+        { "language": "ro", "text": "Deleagă o sarcină profesionist: explică motivul și alegerea, definește rezultatul și termenul, oferă sprijin și clarifică impactul asupra altor sarcini." },
+        { "language": "sq", "text": "Delego një detyrë në mënyrë profesionale: shpjego arsyen dhe zgjedhjen, përcakto rezultatin dhe afatin, ofro mbështetje dhe sqaro ndikimin te detyrat e tjera." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3070,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "Meslektaş" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka" },
+            { "language": "ro", "text": "Colega" },
+            { "language": "sq", "text": "Kolege" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Du wolltest mit mir über eine neue Aufgabe sprechen. Worum geht es?",
+          "translations": [
+            { "language": "en", "text": "You wanted to speak with me about a new task. What is it about?" },
+            { "language": "fa", "text": "می‌خواستی با من درباره یک وظیفه جدید صحبت کنی. موضوع چیست؟" },
+            { "language": "ar", "text": "كنت تريد أن تتحدث معي عن مهمة جديدة. ما الموضوع؟" },
+            { "language": "tr", "text": "Benimle yeni bir görev hakkında konuşmak istiyordun. Konu nedir?" },
+            { "language": "ru", "text": "Ты хотел поговорить со мной о новой задаче. О чём речь?" },
+            { "language": "ckb", "text": "دەتویست لەگەڵ من لەسەر ئەرکێکی نوێ قسە بکەیت. بابەتەکە چییە؟" },
+            { "language": "kmr", "text": "Te dixwest bi min re li ser kareke nû biaxivî. Mijar çi ye?" },
+            { "language": "pl", "text": "Chciałeś porozmawiać ze mną o nowym zadaniu. O co chodzi?" },
+            { "language": "ro", "text": "Voiai să vorbești cu mine despre o sarcină nouă. Despre ce este vorba?" },
+            { "language": "sq", "text": "Doje të flisje me mua për një detyrë të re. Për çfarë bëhet fjalë?" }
+          ],
+          "function": "open-delegation"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja. Für den Kundentermin am Freitag brauchen wir eine kurze Entscheidungsgrundlage. Ich möchte dich bitten, die fachliche Zusammenfassung zu übernehmen.",
+          "translations": [
+            { "language": "en", "text": "Yes. For the customer appointment on Friday, we need a brief basis for decision-making. I would like to ask you to take over the technical summary." },
+            { "language": "fa", "text": "بله. برای قرار مشتری در روز جمعه به یک مبنای کوتاه برای تصمیم‌گیری نیاز داریم. می‌خواهم از تو بخواهم جمع‌بندی تخصصی را بر عهده بگیری." },
+            { "language": "ar", "text": "نعم. نحتاج لاجتماع العميل يوم الجمعة إلى أساس مختصر لاتخاذ القرار. أود أن أطلب منك تولي الملخص الفني." },
+            { "language": "tr", "text": "Evet. Cuma günkü müşteri randevusu için kısa bir karar dayanağına ihtiyacımız var. Teknik özeti üstlenmeni rica etmek istiyorum." },
+            { "language": "ru", "text": "Да. Для встречи с клиентом в пятницу нам нужна краткая основа для принятия решения. Я хотел бы попросить тебя взять на себя профессиональное резюме." },
+            { "language": "ckb", "text": "بەڵێ. بۆ دیداری کڕیار لە ڕۆژی هەینی پێویستمان بە بنەمایەکی کورتی بڕیاردان هەیە. دەمەوێت داوات لێ بکەم پوختەی پسپۆڕییەکە وەربگریت." },
+            { "language": "kmr", "text": "Erê. Ji bo hevdîtina mişterî ya roja Înê em hewceyî bingeheke kurt a biryardanê ne. Ez dixwazim ji te bixwazim ku kurteya pisporî bigirî ser xwe." },
+            { "language": "pl", "text": "Tak. Na spotkanie z klientem w piątek potrzebujemy krótkiej podstawy do decyzji. Chciałbym poprosić cię o przejęcie merytorycznego podsumowania." },
+            { "language": "ro", "text": "Da. Pentru întâlnirea cu clientul de vineri avem nevoie de o bază scurtă pentru decizie. Aș vrea să te rog să preiei rezumatul de specialitate." },
+            { "language": "sq", "text": "Po. Për takimin me klientin të premten na duhet një bazë e shkurtër për vendimmarrje. Do të doja të të kërkoja të marrësh përsipër përmbledhjen profesionale." }
+          ],
+          "function": "state-task-request",
+          "expectedLearnerAction": "Introduce the delegation with context, purpose, and the requested responsibility."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Warum fragst du ausgerechnet mich? Ich habe diese Woche schon mehrere offene Punkte.",
+          "translations": [
+            { "language": "en", "text": "Why are you asking me specifically? I already have several open points this week." },
+            { "language": "fa", "text": "چرا دقیقاً از من می‌پرسی؟ من همین هفته چند مورد باز دارم." },
+            { "language": "ar", "text": "لماذا تطلب مني أنا بالذات؟ لدي هذا الأسبوع عدة نقاط مفتوحة بالفعل." },
+            { "language": "tr", "text": "Neden özellikle benden istiyorsun? Bu hafta zaten birkaç açık konum var." },
+            { "language": "ru", "text": "Почему ты спрашиваешь именно меня? У меня на этой неделе уже есть несколько открытых вопросов." },
+            { "language": "ckb", "text": "بۆچی بە تایبەتی داوا لە من دەکەیت؟ من ئەم هەفتەیە چەند خاڵێکی کراوەم هەیە." },
+            { "language": "kmr", "text": "Çima tu bi taybetî ji min dixwazî? Min vê hefteyê jixwe çend xalên vekirî hene." },
+            { "language": "pl", "text": "Dlaczego pytasz akurat mnie? Mam już w tym tygodniu kilka otwartych spraw." },
+            { "language": "ro", "text": "De ce mă întrebi tocmai pe mine? Am deja mai multe puncte deschise săptămâna aceasta." },
+            { "language": "sq", "text": "Pse po më kërkon pikërisht mua? Këtë javë kam tashmë disa çështje të hapura." }
+          ],
+          "function": "ask-for-reason"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich frage dich, weil du die fachlichen Risiken aus dem letzten Workshop am besten einschätzen kannst. Gleichzeitig möchte ich deine aktuelle Auslastung berücksichtigen.",
+          "translations": [
+            { "language": "en", "text": "I am asking you because you can best assess the technical risks from the last workshop. At the same time, I want to take your current workload into account." },
+            { "language": "fa", "text": "از تو می‌پرسم چون تو می‌توانی ریسک‌های تخصصی کارگاه قبلی را بهتر از همه ارزیابی کنی. در عین حال می‌خواهم حجم کار فعلی تو را هم در نظر بگیرم." },
+            { "language": "ar", "text": "أطلب منك لأنك تستطيعين تقدير المخاطر الفنية من الورشة السابقة بأفضل شكل. وفي الوقت نفسه أريد أن آخذ عبء عملك الحالي بعين الاعتبار." },
+            { "language": "tr", "text": "Senden istiyorum çünkü son çalıştaydan gelen teknik riskleri en iyi sen değerlendirebilirsin. Aynı zamanda mevcut iş yükünü de dikkate almak istiyorum." },
+            { "language": "ru", "text": "Я спрашиваю тебя, потому что ты лучше всех можешь оценить профессиональные риски из последнего воркшопа. Одновременно я хочу учесть твою текущую загрузку." },
+            { "language": "ckb", "text": "داوا لە تۆ دەکەم چونکە دەتوانیت مەترسییە پسپۆڕییەکانی وۆرکشۆپی پێشووتر لە هەمووان باشتر هەڵبسەنگێنیت. لە هەمان کاتدا دەمەوێت باری کاری ئێستات لەبەرچاو بگرم." },
+            { "language": "kmr", "text": "Ez ji te dixwazim ji ber ku tu dikarî xetereyên pisporî yên atolyeya dawî herî baş binirxînî. Di heman demê de ez dixwazim barkariya te ya niha jî li ber çavan bigirim." },
+            { "language": "pl", "text": "Pytam ciebie, ponieważ najlepiej możesz ocenić ryzyka merytoryczne z ostatniego warsztatu. Jednocześnie chcę uwzględnić twoje obecne obciążenie." },
+            { "language": "ro", "text": "Te întreb pe tine pentru că poți evalua cel mai bine riscurile de specialitate din ultimul atelier. În același timp vreau să țin cont de încărcarea ta actuală." },
+            { "language": "sq", "text": "Po të kërkoj ty sepse ti mund t'i vlerësosh më mirë rreziqet profesionale nga punëtoria e fundit. Njëkohësisht dua të marr parasysh ngarkesën tënde aktuale." }
+          ],
+          "function": "explain-selection",
+          "expectedLearnerAction": "Explain why this colleague is suitable while acknowledging workload."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Was genau soll am Ende vorliegen? Ich möchte vermeiden, dass ich zu viel oder am Ziel vorbei arbeite.",
+          "translations": [
+            { "language": "en", "text": "What exactly should be available at the end? I want to avoid doing too much or working past the goal." },
+            { "language": "fa", "text": "در پایان دقیقاً چه چیزی باید آماده باشد؟ می‌خواهم جلوگیری کنم که بیش از حد کار کنم یا از هدف دور شوم." },
+            { "language": "ar", "text": "ما الذي يجب أن يكون جاهزاً بالضبط في النهاية؟ أريد أن أتجنب أن أعمل أكثر من اللازم أو بعيداً عن الهدف." },
+            { "language": "tr", "text": "Sonunda tam olarak ne hazır olmalı? Çok fazla çalışmaktan ya da hedefin dışına çıkmaktan kaçınmak istiyorum." },
+            { "language": "ru", "text": "Что именно должно быть готово в конце? Я хочу избежать лишней работы или ухода от цели." },
+            { "language": "ckb", "text": "لە کۆتاییدا بە وردی چی دەبێت ئامادە بێت؟ دەمەوێت ڕێگری بکەم لەوەی زۆرتر لە پێویست کار بکەم یان لە ئامانج دوور بکەومەوە." },
+            { "language": "kmr", "text": "Di dawiyê de bi rastî çi divê amade be? Ez dixwazim pêşî lê bigirim ku pir zêde bixebitim an ji armancê dûr bikevim." },
+            { "language": "pl", "text": "Co dokładnie ma być gotowe na końcu? Chcę uniknąć zrobienia za dużo albo pracy obok celu." },
+            { "language": "ro", "text": "Ce anume trebuie să existe la final? Vreau să evit să lucrez prea mult sau pe lângă obiectiv." },
+            { "language": "sq", "text": "Çfarë saktësisht duhet të jetë gati në fund? Dua të shmang që të bëj shumë ose të punoj jashtë qëllimit." }
+          ],
+          "function": "ask-for-scope"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Am Ende brauchen wir drei Folien: Ausgangslage, wichtigste Risiken und eine Empfehlung mit nächstem Schritt. Es geht nicht um eine vollständige Analyse.",
+          "translations": [
+            { "language": "en", "text": "At the end, we need three slides: current situation, key risks, and a recommendation with the next step. It is not about a full analysis." },
+            { "language": "fa", "text": "در پایان به سه اسلاید نیاز داریم: وضعیت اولیه، مهم‌ترین ریسک‌ها و یک توصیه همراه با قدم بعدی. هدف تحلیل کامل نیست." },
+            { "language": "ar", "text": "في النهاية نحتاج إلى ثلاث شرائح: الوضع الحالي، أهم المخاطر، وتوصية مع الخطوة التالية. الأمر لا يتعلق بتحليل كامل." },
+            { "language": "tr", "text": "Sonunda üç slayta ihtiyacımız var: başlangıç durumu, en önemli riskler ve sonraki adımla birlikte bir öneri. Tam bir analiz söz konusu değil." },
+            { "language": "ru", "text": "В конце нам нужны три слайда: исходная ситуация, основные риски и рекомендация со следующим шагом. Речь не о полном анализе." },
+            { "language": "ckb", "text": "لە کۆتاییدا پێویستمان بە سێ سلاید هەیە: دۆخی سەرەتایی، گرنگترین مەترسییەکان و پێشنیارێک لەگەڵ هەنگاوی داهاتوو. مەبەست شیکردنەوەیەکی تەواو نییە." },
+            { "language": "kmr", "text": "Di dawiyê de em hewceyî sê slaydan in: rewşa destpêkê, xetereyên herî girîng û pêşniyarek bi gava paşîn re. Mijar ne analîzeke temam e." },
+            { "language": "pl", "text": "Na końcu potrzebujemy trzech slajdów: sytuacji wyjściowej, najważniejszych ryzyk i rekomendacji z następnym krokiem. Nie chodzi o pełną analizę." },
+            { "language": "ro", "text": "La final avem nevoie de trei slide-uri: situația inițială, principalele riscuri și o recomandare cu pasul următor. Nu este vorba despre o analiză completă." },
+            { "language": "sq", "text": "Në fund na duhen tre slajde: gjendja fillestare, rreziqet kryesore dhe një rekomandim me hapin e ardhshëm. Nuk bëhet fjalë për një analizë të plotë." }
+          ],
+          "function": "define-scope",
+          "expectedLearnerAction": "Define a limited output and explicitly say what is out of scope."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Bis wann brauchst du das, und welche Unterstützung bekomme ich dafür?",
+          "translations": [
+            { "language": "en", "text": "By when do you need it, and what support will I get for it?" },
+            { "language": "fa", "text": "تا چه زمانی به آن نیاز داری و برایش چه پشتیبانی دریافت می‌کنم؟" },
+            { "language": "ar", "text": "متى تحتاج ذلك، وما الدعم الذي سأحصل عليه من أجل ذلك؟" },
+            { "language": "tr", "text": "Buna ne zamana kadar ihtiyacın var ve bunun için nasıl destek alacağım?" },
+            { "language": "ru", "text": "К какому сроку тебе это нужно и какую поддержку я получу?" },
+            { "language": "ckb", "text": "تا کەی پێویستت پێیە و بۆ ئەمە چ پشتیوانییەک وەردەگرم؟" },
+            { "language": "kmr", "text": "Heta kengî te pê hewce ye û ez ji bo vê çi piştgirî distînim?" },
+            { "language": "pl", "text": "Do kiedy tego potrzebujesz i jakie wsparcie otrzymam?" },
+            { "language": "ro", "text": "Până când ai nevoie de asta și ce sprijin primesc pentru ea?" },
+            { "language": "sq", "text": "Deri kur të duhet dhe çfarë mbështetjeje do të marr për këtë?" }
+          ],
+          "function": "ask-for-deadline-support"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich brauche einen ersten Entwurf bis Donnerstag um zwölf. Ich gebe dir die letzte Vorlage, die Zahlen aus dem Bericht und plane morgen um 15 Uhr einen kurzen Check-in ein.",
+          "translations": [
+            { "language": "en", "text": "I need a first draft by Thursday at noon. I will give you the last template and the figures from the report, and I will schedule a short check-in tomorrow at 3 p.m." },
+            { "language": "fa", "text": "تا پنج‌شنبه ساعت دوازده به یک پیش‌نویس اول نیاز دارم. آخرین قالب و اعداد گزارش را به تو می‌دهم و فردا ساعت ۱۵ یک هماهنگی کوتاه برنامه‌ریزی می‌کنم." },
+            { "language": "ar", "text": "أحتاج إلى مسودة أولى حتى الخميس الساعة الثانية عشرة. سأعطيك آخر قالب والأرقام من التقرير، وسأرتب غداً في الساعة الثالثة مراجعة قصيرة." },
+            { "language": "tr", "text": "Perşembe saat on ikiye kadar ilk taslağa ihtiyacım var. Sana son şablonu ve rapordaki sayıları vereceğim, yarın saat 15'te kısa bir kontrol görüşmesi planlayacağım." },
+            { "language": "ru", "text": "Мне нужен первый черновик к четвергу к двенадцати. Я дам тебе последний шаблон и цифры из отчёта, а завтра в 15:00 запланирую короткую сверку." },
+            { "language": "ckb", "text": "تا پێنجشەممە کاتژمێر دوازدە پێویستم بە پێشنووسی یەکەمە. دوا قاڵب و ژمارەکانی ڕاپۆرتەکە دەدەمێ و سبەی کاتژمێر ١٥ هاوئاهەنگییەکی کورت پلان دەکەم." },
+            { "language": "kmr", "text": "Heta roja Pêncşemê saet diwazde ez hewceyî pêşnivîsa yekem im. Ez şablona dawî û hejmarên ji raporê didim te û sibê saet 15 kontrolkirineke kurt plan dikim." },
+            { "language": "pl", "text": "Potrzebuję pierwszego szkicu do czwartku do godziny dwunastej. Dam ci ostatni szablon i liczby z raportu oraz zaplanuję jutro o 15 krótkie sprawdzenie." },
+            { "language": "ro", "text": "Am nevoie de o primă versiune până joi la ora douăsprezece. Îți dau ultimul șablon și cifrele din raport și programez mâine la ora 15 o scurtă verificare." },
+            { "language": "sq", "text": "Më duhet një draft i parë deri të enjten në orën dymbëdhjetë. Do të të jap shabllonin e fundit dhe shifrat nga raporti dhe nesër në orën 15 do të planifikoj një kontroll të shkurtër." }
+          ],
+          "function": "define-deadline-support",
+          "expectedLearnerAction": "Give a deadline and concrete support materials plus a check-in point."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Wenn ich das übernehme, schaffe ich die interne Auswertung bis Freitag nicht. Wie gehen wir damit um?",
+          "translations": [
+            { "language": "en", "text": "If I take this on, I will not manage the internal analysis by Friday. How do we handle that?" },
+            { "language": "fa", "text": "اگر این را بر عهده بگیرم، تحلیل داخلی را تا جمعه نمی‌رسانم. با این موضوع چه کار کنیم؟" },
+            { "language": "ar", "text": "إذا توليت هذا، فلن أنهي التحليل الداخلي حتى يوم الجمعة. كيف نتعامل مع ذلك؟" },
+            { "language": "tr", "text": "Bunu üstlenirsem iç değerlendirmeyi cumaya kadar yetiştiremem. Bunu nasıl ele alacağız?" },
+            { "language": "ru", "text": "Если я возьму это на себя, я не успею с внутренней аналитикой до пятницы. Как мы с этим поступим?" },
+            { "language": "ckb", "text": "ئەگەر ئەمە وەربگرم، شیکردنەوەی ناوخۆیی تا هەینی ناگەیەنم. چۆن مامەڵە لەگەڵ ئەمە بکەین؟" },
+            { "language": "kmr", "text": "Heke ez vê bigirim ser xwe, ez ê analîza hundirîn heta Înê nagihînim. Em ê bi vê çawa bikin?" },
+            { "language": "pl", "text": "Jeśli to przejmę, nie zdążę z wewnętrzną analizą do piątku. Jak sobie z tym poradzimy?" },
+            { "language": "ro", "text": "Dacă preiau asta, nu reușesc să termin analiza internă până vineri. Cum procedăm?" },
+            { "language": "sq", "text": "Nëse e marr këtë përsipër, nuk do ta përfundoj analizën e brendshme deri të premten. Si do ta zgjidhim këtë?" }
+          ],
+          "function": "raise-workload-conflict"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann verschieben wir die interne Auswertung auf Montag und informieren das Team heute kurz. Für den Kundentermin hat die Entscheidungsgrundlage höhere Priorität.",
+          "translations": [
+            { "language": "en", "text": "Then we will move the internal analysis to Monday and briefly inform the team today. For the customer appointment, the basis for decision-making has higher priority." },
+            { "language": "fa", "text": "پس تحلیل داخلی را به دوشنبه منتقل می‌کنیم و امروز کوتاه به تیم اطلاع می‌دهیم. برای قرار مشتری، مبنای تصمیم‌گیری اولویت بالاتری دارد." },
+            { "language": "ar", "text": "إذن ننقل التحليل الداخلي إلى يوم الاثنين ونبلغ الفريق اليوم باختصار. بالنسبة لاجتماع العميل، أساس اتخاذ القرار له أولوية أعلى." },
+            { "language": "tr", "text": "O zaman iç değerlendirmeyi pazartesiye alırız ve bugün ekibi kısaca bilgilendiririz. Müşteri randevusu için karar dayanağı daha yüksek önceliğe sahip." },
+            { "language": "ru", "text": "Тогда мы перенесём внутреннюю аналитику на понедельник и сегодня коротко сообщим команде. Для встречи с клиентом основа для решения имеет более высокий приоритет." },
+            { "language": "ckb", "text": "ئەوا شیکردنەوەی ناوخۆیی دەخەینە دووشەممە و ئەمڕۆ بە کورتی تیمەکە ئاگادار دەکەینەوە. بۆ دیداری کڕیار، بنەمای بڕیاردان پێشینەیی بەرزتری هەیە." },
+            { "language": "kmr", "text": "Wê demê em analîza hundirîn vediguhêzin roja Duşemê û îro bi kurtasî tîmê agahdar dikin. Ji bo hevdîtina mişterî, bingeha biryardanê pêşîniya bilindtir heye." },
+            { "language": "pl", "text": "W takim razie przesuniemy wewnętrzną analizę na poniedziałek i dziś krótko poinformujemy zespół. Dla spotkania z klientem podstawa decyzji ma wyższy priorytet." },
+            { "language": "ro", "text": "Atunci mutăm analiza internă pe luni și informăm scurt echipa astăzi. Pentru întâlnirea cu clientul, baza de decizie are prioritate mai mare." },
+            { "language": "sq", "text": "Atëherë e shtyjmë analizën e brendshme për të hënën dhe sot e informojmë shkurt ekipin. Për takimin me klientin, baza për vendimmarrje ka prioritet më të lartë." }
+          ],
+          "function": "rebalance-priorities",
+          "expectedLearnerAction": "Adjust other work instead of simply adding work on top."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Wie merken wir, ob die Zusammenfassung gut genug ist?",
+          "translations": [
+            { "language": "en", "text": "How will we know whether the summary is good enough?" },
+            { "language": "fa", "text": "چطور متوجه می‌شویم که جمع‌بندی به اندازه کافی خوب است؟" },
+            { "language": "ar", "text": "كيف سنعرف ما إذا كان الملخص جيداً بما يكفي؟" },
+            { "language": "tr", "text": "Özetin yeterince iyi olup olmadığını nasıl anlayacağız?" },
+            { "language": "ru", "text": "Как мы поймём, достаточно ли хорошее резюме?" },
+            { "language": "ckb", "text": "چۆن دەزانین پوختەکە بە قەدری پێویست باشە؟" },
+            { "language": "kmr", "text": "Em ê çawa bizanin ka kurte têra xwe baş e?" },
+            { "language": "pl", "text": "Po czym poznamy, że podsumowanie jest wystarczająco dobre?" },
+            { "language": "ro", "text": "Cum ne dăm seama dacă rezumatul este suficient de bun?" },
+            { "language": "sq", "text": "Si do ta kuptojmë nëse përmbledhja është mjaftueshëm e mirë?" }
+          ],
+          "function": "ask-for-success-criteria"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Gut genug ist sie, wenn die Geschäftsführung in fünf Minuten versteht, welche Option wir empfehlen, welche Risiken bleiben und welche Entscheidung wir am Freitag brauchen.",
+          "translations": [
+            { "language": "en", "text": "It is good enough if management can understand in five minutes which option we recommend, which risks remain, and what decision we need on Friday." },
+            { "language": "fa", "text": "وقتی کافی خوب است که مدیریت بتواند در پنج دقیقه بفهمد کدام گزینه را پیشنهاد می‌کنیم، چه ریسک‌هایی باقی می‌ماند و جمعه به چه تصمیمی نیاز داریم." },
+            { "language": "ar", "text": "تكون جيدة بما يكفي إذا استطاعت الإدارة أن تفهم خلال خمس دقائق أي خيار نوصي به، وما المخاطر المتبقية، وما القرار الذي نحتاجه يوم الجمعة." },
+            { "language": "tr", "text": "Yönetim beş dakika içinde hangi seçeneği önerdiğimizi, hangi risklerin kaldığını ve cuma günü hangi karara ihtiyacımız olduğunu anlarsa yeterince iyidir." },
+            { "language": "ru", "text": "Она достаточно хороша, если руководство за пять минут понимает, какой вариант мы рекомендуем, какие риски остаются и какое решение нам нужно в пятницу." },
+            { "language": "ckb", "text": "بە قەدری پێویست باشە ئەگەر بەڕێوەبردن لە پێنج خولەکدا تێبگات کام هەڵبژاردە پێشنیار دەکەین، چ مەترسییەک دەمێنێت و هەینی پێویستمان بە چ بڕیارێکە." },
+            { "language": "kmr", "text": "Ew têra xwe baş e heke rêveberî di pênc xulekan de fêm bike em kîjan vebijêrk pêşniyar dikin, kîjan xetere dimînin û roja Înê em hewceyî çi biryarê ne." },
+            { "language": "pl", "text": "Jest wystarczająco dobra, jeśli zarząd w pięć minut rozumie, którą opcję rekomendujemy, jakie ryzyka pozostają i jakiej decyzji potrzebujemy w piątek." },
+            { "language": "ro", "text": "Este suficient de bun dacă conducerea înțelege în cinci minute ce opțiune recomandăm, ce riscuri rămân și ce decizie ne trebuie vineri." },
+            { "language": "sq", "text": "Është mjaftueshëm e mirë nëse drejtuesit kuptojnë brenda pesë minutash cilën mundësi rekomandojmë, cilat rreziqe mbeten dhe çfarë vendimi na duhet të premten." }
+          ],
+          "function": "define-success-criteria",
+          "expectedLearnerAction": "Define success from the decision-maker's perspective."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "context-purpose-request",
+              "text": "Für den Kundentermin am Freitag brauchen wir eine kurze Entscheidungsgrundlage. Ich möchte dich bitten, die fachliche Zusammenfassung zu übernehmen.",
+              "translations": [
+                { "language": "en", "text": "For the customer appointment on Friday, we need a brief basis for decision-making. I would like to ask you to take over the technical summary." },
+                { "language": "fa", "text": "برای قرار مشتری در روز جمعه به یک مبنای کوتاه برای تصمیم‌گیری نیاز داریم. می‌خواهم از تو بخواهم جمع‌بندی تخصصی را بر عهده بگیری." },
+                { "language": "ar", "text": "نحتاج لاجتماع العميل يوم الجمعة إلى أساس مختصر لاتخاذ القرار. أود أن أطلب منك تولي الملخص الفني." },
+                { "language": "tr", "text": "Cuma günkü müşteri randevusu için kısa bir karar dayanağına ihtiyacımız var. Teknik özeti üstlenmeni rica etmek istiyorum." },
+                { "language": "ru", "text": "Для встречи с клиентом в пятницу нам нужна краткая основа для принятия решения. Я хотел бы попросить тебя взять на себя профессиональное резюме." },
+                { "language": "ckb", "text": "بۆ دیداری کڕیار لە ڕۆژی هەینی پێویستمان بە بنەمایەکی کورتی بڕیاردان هەیە. دەمەوێت داوات لێ بکەم پوختەی پسپۆڕییەکە وەربگریت." },
+                { "language": "kmr", "text": "Ji bo hevdîtina mişterî ya roja Înê em hewceyî bingeheke kurt a biryardanê ne. Ez dixwazim ji te bixwazim ku kurteya pisporî bigirî ser xwe." },
+                { "language": "pl", "text": "Na spotkanie z klientem w piątek potrzebujemy krótkiej podstawy do decyzji. Chciałbym poprosić cię o przejęcie merytorycznego podsumowania." },
+                { "language": "ro", "text": "Pentru întâlnirea cu clientul de vineri avem nevoie de o bază scurtă pentru decizie. Aș vrea să te rog să preiei rezumatul de specialitate." },
+                { "language": "sq", "text": "Për takimin me klientin të premten na duhet një bazë e shkurtër për vendimmarrje. Do të doja të të kërkoja të marrësh përsipër përmbledhjen profesionale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives context, purpose, and a clear request without sounding like an order.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives context, purpose, and a clear request without sounding like an order." },
+                { "language": "fa", "text": "خوب است: این پاسخ زمینه، هدف و درخواست روشن می‌دهد، بدون اینکه مثل دستور به نظر برسد." },
+                { "language": "ar", "text": "جيد: هذا يعطي السياق والهدف وطلباً واضحاً من دون أن يبدو كأمر." },
+                { "language": "tr", "text": "İyi: Bu yanıt bağlamı, amacı ve net bir isteği verir; emir gibi duyulmaz." },
+                { "language": "ru", "text": "Хорошо: это даёт контекст, цель и ясную просьбу, не звуча как приказ." },
+                { "language": "ckb", "text": "باشە: ئەمە چوارچێوە، ئامانج و داواکارییەکی ڕوون دەدات، بە بێ ئەوەی وەک فەرمان ببیسترێت." },
+                { "language": "kmr", "text": "Baş e: Ev çarçove, armanc û daxwazeke zelal dide bêyî ku wek ferman bê bihîstin." },
+                { "language": "pl", "text": "Dobrze: to daje kontekst, cel i jasną prośbę, nie brzmiąc jak rozkaz." },
+                { "language": "ro", "text": "Bine: oferă context, scop și o cerere clară fără să sune ca un ordin." },
+                { "language": "sq", "text": "Mirë: kjo jep kontekst, qëllim dhe një kërkesë të qartë pa tingëlluar si urdhër." }
+              ],
+              "explanationKey": "delegation-frame"
+            },
+            {
+              "id": "too-direct-order",
+              "text": "Du musst die Zusammenfassung übernehmen, weil ich dafür keine Zeit habe.",
+              "translations": [
+                { "language": "en", "text": "You have to take over the summary because I do not have time for it." },
+                { "language": "fa", "text": "تو باید جمع‌بندی را بر عهده بگیری، چون من برایش وقت ندارم." },
+                { "language": "ar", "text": "يجب أن تتولي الملخص لأنني لا أملك وقتاً لذلك." },
+                { "language": "tr", "text": "Özeti sen üstlenmek zorundasın, çünkü benim buna zamanım yok." },
+                { "language": "ru", "text": "Ты должна взять резюме на себя, потому что у меня нет на это времени." },
+                { "language": "ckb", "text": "تۆ دەبێت پوختەکە وەربگریت، چونکە من کاتم بۆی نییە." },
+                { "language": "kmr", "text": "Divê tu kurteyê bigirî ser xwe, ji ber ku demê min ji bo wê tune ye." },
+                { "language": "pl", "text": "Musisz przejąć podsumowanie, bo ja nie mam na to czasu." },
+                { "language": "ro", "text": "Trebuie să preiei rezumatul, pentru că eu nu am timp pentru el." },
+                { "language": "sq", "text": "Ti duhet ta marrësh përsipër përmbledhjen, sepse unë nuk kam kohë për të." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is clear but too blunt. It gives your lack of time as the reason instead of explaining task purpose and fit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is clear but too blunt. It gives your lack of time as the reason instead of explaining task purpose and fit." },
+                { "language": "fa", "text": "این پاسخ روشن است، اما بیش از حد تند است. به‌جای توضیح هدف کار و تناسب فرد، کمبود وقت تو را دلیل می‌آورد." },
+                { "language": "ar", "text": "هذا واضح لكنه مباشر جداً. يذكر نقص وقتك كسبب بدلاً من شرح هدف المهمة وملاءمة الشخص." },
+                { "language": "tr", "text": "Bu net ama fazla sert. Görevin amacını ve kişinin uygunluğunu açıklamak yerine senin zaman eksikliğini gerekçe gösteriyor." },
+                { "language": "ru", "text": "Это ясно, но слишком резко. Причиной называется нехватка твоего времени, а не цель задачи и соответствие человека." },
+                { "language": "ckb", "text": "ئەمە ڕوونە، بەڵام زۆر توندە. لە جیاتی ڕوونکردنەوەی ئامانجی ئەرکەکە و گونجاوی کەسەکە، کەمی کاتی تۆ وەک هۆکار دەهێنێت." },
+                { "language": "kmr", "text": "Ev zelal e, lê pir tund e. Li şûna ravekirina armanca karê û guncawbûna kesê, kêmbûna dema te wek sedem dide." },
+                { "language": "pl", "text": "To jest jasne, ale zbyt ostre. Jako powód podaje twój brak czasu zamiast wyjaśnić cel zadania i dopasowanie osoby." },
+                { "language": "ro", "text": "Este clar, dar prea abrupt. Dă lipsa ta de timp ca motiv, în loc să explice scopul sarcinii și potrivirea persoanei." },
+                { "language": "sq", "text": "Kjo është e qartë, por shumë e prerë. Jep mungesën tënde të kohës si arsye, në vend që të shpjegojë qëllimin e detyrës dhe përshtatjen e personit." }
+              ],
+              "explanationKey": "too-blunt-delegation"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "fit-and-workload",
+              "text": "Ich frage dich, weil du die fachlichen Risiken aus dem letzten Workshop am besten einschätzen kannst. Gleichzeitig möchte ich deine aktuelle Auslastung berücksichtigen.",
+              "translations": [
+                { "language": "en", "text": "I am asking you because you can best assess the technical risks from the last workshop. At the same time, I want to take your current workload into account." },
+                { "language": "fa", "text": "از تو می‌پرسم چون تو می‌توانی ریسک‌های تخصصی کارگاه قبلی را بهتر از همه ارزیابی کنی. در عین حال می‌خواهم حجم کار فعلی تو را هم در نظر بگیرم." },
+                { "language": "ar", "text": "أطلب منك لأنك تستطيعين تقدير المخاطر الفنية من الورشة السابقة بأفضل شكل. وفي الوقت نفسه أريد أن آخذ عبء عملك الحالي بعين الاعتبار." },
+                { "language": "tr", "text": "Senden istiyorum çünkü son çalıştaydan gelen teknik riskleri en iyi sen değerlendirebilirsin. Aynı zamanda mevcut iş yükünü de dikkate almak istiyorum." },
+                { "language": "ru", "text": "Я спрашиваю тебя, потому что ты лучше всех можешь оценить профессиональные риски из последнего воркшопа. Одновременно я хочу учесть твою текущую загрузку." },
+                { "language": "ckb", "text": "داوا لە تۆ دەکەم چونکە دەتوانیت مەترسییە پسپۆڕییەکانی وۆرکشۆپی پێشووتر لە هەمووان باشتر هەڵبسەنگێنیت. لە هەمان کاتدا دەمەوێت باری کاری ئێستات لەبەرچاو بگرم." },
+                { "language": "kmr", "text": "Ez ji te dixwazim ji ber ku tu dikarî xetereyên pisporî yên atolyeya dawî herî baş binirxînî. Di heman demê de ez dixwazim barkariya te ya niha jî li ber çavan bigirim." },
+                { "language": "pl", "text": "Pytam ciebie, ponieważ najlepiej możesz ocenić ryzyka merytoryczne z ostatniego warsztatu. Jednocześnie chcę uwzględnić twoje obecne obciążenie." },
+                { "language": "ro", "text": "Te întreb pe tine pentru că poți evalua cel mai bine riscurile de specialitate din ultimul atelier. În același timp vreau să țin cont de încărcarea ta actuală." },
+                { "language": "sq", "text": "Po të kërkoj ty sepse ti mund t'i vlerësosh më mirë rreziqet profesionale nga punëtoria e fundit. Njëkohësisht dua të marr parasysh ngarkesën tënde aktuale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this explains the fit and signals that workload will be handled, not ignored.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this explains the fit and signals that workload will be handled, not ignored." },
+                { "language": "fa", "text": "خوب است: این پاسخ تناسب فرد را توضیح می‌دهد و نشان می‌دهد حجم کار نادیده گرفته نمی‌شود." },
+                { "language": "ar", "text": "جيد: هذا يشرح الملاءمة ويشير إلى أن عبء العمل سيُؤخذ بجدية ولن يُتجاهل." },
+                { "language": "tr", "text": "İyi: Bu yanıt uygunluğu açıklıyor ve iş yükünün yok sayılmayacağını gösteriyor." },
+                { "language": "ru", "text": "Хорошо: это объясняет соответствие и показывает, что загрузка будет учтена, а не проигнорирована." },
+                { "language": "ckb", "text": "باشە: ئەمە گونجاویی کەسەکە ڕوون دەکاتەوە و نیشان دەدات باری کار پشتگوێ ناخڕێت." },
+                { "language": "kmr", "text": "Baş e: Ev guncawbûnê rave dike û nîşan dide ku barkarî nayê paşguhkirin." },
+                { "language": "pl", "text": "Dobrze: to wyjaśnia dopasowanie i pokazuje, że obciążenie pracą zostanie uwzględnione." },
+                { "language": "ro", "text": "Bine: explică potrivirea și arată că volumul de lucru va fi gestionat, nu ignorat." },
+                { "language": "sq", "text": "Mirë: kjo shpjegon përshtatjen dhe tregon se ngarkesa e punës do të merret parasysh, jo do të injorohet." }
+              ],
+              "explanationKey": "fit-and-workload"
+            },
+            {
+              "id": "flattery-only",
+              "text": "Du machst solche Sachen immer gut, deshalb passt das bestimmt.",
+              "translations": [
+                { "language": "en", "text": "You always do things like this well, so it will surely fit." },
+                { "language": "fa", "text": "تو همیشه این جور کارها را خوب انجام می‌دهی، پس حتماً مناسب است." },
+                { "language": "ar", "text": "أنت دائماً تقومين بمثل هذه الأمور جيداً، لذلك سيكون مناسباً بالتأكيد." },
+                { "language": "tr", "text": "Sen böyle şeyleri her zaman iyi yapıyorsun, bu yüzden kesin uygundur." },
+                { "language": "ru", "text": "Ты всегда хорошо делаешь такие вещи, так что это наверняка подходит." },
+                { "language": "ckb", "text": "تۆ هەمیشە ئەم جۆرە کارانە باش دەکەیت، بۆیە بە دڵنیایی گونجاوە." },
+                { "language": "kmr", "text": "Tu her dem van tiştan baş dikî, ji ber vê yekê bêguman guncaw e." },
+                { "language": "pl", "text": "Zawsze dobrze robisz takie rzeczy, więc na pewno pasuje." },
+                { "language": "ro", "text": "Tu faci mereu bine astfel de lucruri, deci sigur se potrivește." },
+                { "language": "sq", "text": "Ti gjithmonë i bën mirë këto gjëra, prandaj me siguri përshtatet." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is friendly but too vague. It does not connect the choice to a concrete skill or address workload.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly but too vague. It does not connect the choice to a concrete skill or address workload." },
+                { "language": "fa", "text": "این پاسخ دوستانه است، اما بیش از حد مبهم است. انتخاب فرد را به مهارت مشخص وصل نمی‌کند و حجم کار را هم بررسی نمی‌کند." },
+                { "language": "ar", "text": "هذا ودود لكنه مبهم جداً. لا يربط الاختيار بمهارة محددة ولا يتناول عبء العمل." },
+                { "language": "tr", "text": "Bu dostça ama fazla belirsiz. Seçimi somut bir beceriye bağlamıyor ve iş yükünü ele almıyor." },
+                { "language": "ru", "text": "Это дружелюбно, но слишком расплывчато. Выбор не связан с конкретным навыком и не учитывает загрузку." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر ناڕوونە. هەڵبژاردنەکە بە توانایەکی دیاریکراو ناگەیەنێت و باری کار ناباتەوە." },
+                { "language": "kmr", "text": "Ev dostane ye, lê pir nezelal e. Hilbijartinê bi jêhatîbûneke konkret ve nagirêde û barkariyê venake." },
+                { "language": "pl", "text": "To jest życzliwe, ale zbyt ogólne. Nie łączy wyboru z konkretną umiejętnością ani nie odnosi się do obciążenia." },
+                { "language": "ro", "text": "Este prietenos, dar prea vag. Nu leagă alegerea de o abilitate concretă și nu abordează volumul de lucru." },
+                { "language": "sq", "text": "Kjo është miqësore, por shumë e paqartë. Nuk e lidh zgjedhjen me një aftësi konkrete dhe nuk trajton ngarkesën." }
+              ],
+              "explanationKey": "vague-flattery"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "limited-output",
+              "text": "Am Ende brauchen wir drei Folien: Ausgangslage, wichtigste Risiken und eine Empfehlung mit nächstem Schritt. Es geht nicht um eine vollständige Analyse.",
+              "translations": [
+                { "language": "en", "text": "At the end, we need three slides: current situation, key risks, and a recommendation with the next step. It is not about a full analysis." },
+                { "language": "fa", "text": "در پایان به سه اسلاید نیاز داریم: وضعیت اولیه، مهم‌ترین ریسک‌ها و یک توصیه همراه با قدم بعدی. هدف تحلیل کامل نیست." },
+                { "language": "ar", "text": "في النهاية نحتاج إلى ثلاث شرائح: الوضع الحالي، أهم المخاطر، وتوصية مع الخطوة التالية. الأمر لا يتعلق بتحليل كامل." },
+                { "language": "tr", "text": "Sonunda üç slayta ihtiyacımız var: başlangıç durumu, en önemli riskler ve sonraki adımla birlikte bir öneri. Tam bir analiz söz konusu değil." },
+                { "language": "ru", "text": "В конце нам нужны три слайда: исходная ситуация, основные риски и рекомендация со следующим шагом. Речь не о полном анализе." },
+                { "language": "ckb", "text": "لە کۆتاییدا پێویستمان بە سێ سلاید هەیە: دۆخی سەرەتایی، گرنگترین مەترسییەکان و پێشنیارێک لەگەڵ هەنگاوی داهاتوو. مەبەست شیکردنەوەیەکی تەواو نییە." },
+                { "language": "kmr", "text": "Di dawiyê de em hewceyî sê slaydan in: rewşa destpêkê, xetereyên herî girîng û pêşniyarek bi gava paşîn re. Mijar ne analîzeke temam e." },
+                { "language": "pl", "text": "Na końcu potrzebujemy trzech slajdów: sytuacji wyjściowej, najważniejszych ryzyk i rekomendacji z następnym krokiem. Nie chodzi o pełną analizę." },
+                { "language": "ro", "text": "La final avem nevoie de trei slide-uri: situația inițială, principalele riscuri și o recomandare cu pasul următor. Nu este vorba despre o analiză completă." },
+                { "language": "sq", "text": "Në fund na duhen tre slajde: gjendja fillestare, rreziqet kryesore dhe një rekomandim me hapin e ardhshëm. Nuk bëhet fjalë për një analizë të plotë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this defines the result and prevents the delegated task from becoming too large.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this defines the result and prevents the delegated task from becoming too large." },
+                { "language": "fa", "text": "خوب است: این پاسخ نتیجه را مشخص می‌کند و مانع می‌شود وظیفه واگذار شده بیش از حد بزرگ شود." },
+                { "language": "ar", "text": "جيد: هذا يحدد النتيجة ويمنع المهمة المفوضة من أن تصبح كبيرة جداً." },
+                { "language": "tr", "text": "İyi: Bu yanıt sonucu tanımlar ve devredilen görevin fazla büyümesini engeller." },
+                { "language": "ru", "text": "Хорошо: это определяет результат и не даёт делегированной задаче стать слишком большой." },
+                { "language": "ckb", "text": "باشە: ئەمە ئەنجامەکە دیاری دەکات و ڕێگری دەکات لەوەی ئەرکی سپێردراو زۆر گەورە ببێت." },
+                { "language": "kmr", "text": "Baş e: Ev encamê diyar dike û pêşî lê digire ku karê radestkirî pir mezin bibe." },
+                { "language": "pl", "text": "Dobrze: to określa rezultat i zapobiega temu, by delegowane zadanie stało się zbyt duże." },
+                { "language": "ro", "text": "Bine: definește rezultatul și împiedică sarcina delegată să devină prea mare." },
+                { "language": "sq", "text": "Mirë: kjo përcakton rezultatin dhe parandalon që detyra e deleguar të bëhet shumë e madhe." }
+              ],
+              "explanationKey": "limited-output"
+            },
+            {
+              "id": "unclear-output",
+              "text": "Mach bitte eine gute Zusammenfassung, damit wir im Termin etwas zeigen können.",
+              "translations": [
+                { "language": "en", "text": "Please make a good summary so that we can show something in the appointment." },
+                { "language": "fa", "text": "لطفاً یک جمع‌بندی خوب آماده کن تا بتوانیم در قرار چیزی نشان بدهیم." },
+                { "language": "ar", "text": "من فضلك أعدّي ملخصاً جيداً حتى نتمكن من عرض شيء في الاجتماع." },
+                { "language": "tr", "text": "Lütfen iyi bir özet hazırla, böylece randevuda bir şey gösterebiliriz." },
+                { "language": "ru", "text": "Пожалуйста, сделай хорошее резюме, чтобы мы могли что-то показать на встрече." },
+                { "language": "ckb", "text": "تکایە پوختەیەکی باش ئامادە بکە بۆ ئەوەی لە دیدارەکەدا شتێک نیشان بدەین." },
+                { "language": "kmr", "text": "Ji kerema xwe kurteyeke baş amade bike da ku em di hevdîtinê de tiştek nîşan bidin." },
+                { "language": "pl", "text": "Przygotuj proszę dobre podsumowanie, żebyśmy mogli coś pokazać na spotkaniu." },
+                { "language": "ro", "text": "Te rog să faci un rezumat bun, ca să putem arăta ceva la întâlnire." },
+                { "language": "sq", "text": "Të lutem bëj një përmbledhje të mirë, që të mund të tregojmë diçka në takim." }
+              ],
+              "isCorrect": false,
+              "feedback": "This sounds polite, but it is too unclear. The colleague does not know length, content, or decision purpose.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This sounds polite, but it is too unclear. The colleague does not know length, content, or decision purpose." },
+                { "language": "fa", "text": "این پاسخ مؤدبانه به نظر می‌رسد، اما بیش از حد نامشخص است. همکار طول، محتوا یا هدف تصمیم را نمی‌داند." },
+                { "language": "ar", "text": "يبدو هذا مهذباً، لكنه غير واضح جداً. الزميلة لا تعرف الطول أو المحتوى أو هدف القرار." },
+                { "language": "tr", "text": "Bu kibar duyuluyor, ancak fazla belirsiz. Meslektaş uzunluğu, içeriği veya karar amacını bilmiyor." },
+                { "language": "ru", "text": "Это звучит вежливо, но слишком неопределённо. Коллега не знает объём, содержание или цель решения." },
+                { "language": "ckb", "text": "ئەمە بەڕێز دێتە بەرچاو، بەڵام زۆر ناڕوونە. هاوکارەکە درێژی، ناوەڕۆک یان ئامانجی بڕیاردان نازانێت." },
+                { "language": "kmr", "text": "Ev bi rêz xuya dike, lê pir nezelal e. Hevkar dirêjahî, naverok an armanca biryarê nizanê." },
+                { "language": "pl", "text": "To brzmi uprzejmie, ale jest zbyt niejasne. Koleżanka nie zna długości, treści ani celu decyzji." },
+                { "language": "ro", "text": "Sună politicos, dar este prea neclar. Colega nu știe lungimea, conținutul sau scopul deciziei." },
+                { "language": "sq", "text": "Kjo tingëllon e sjellshme, por është shumë e paqartë. Kolegia nuk e di gjatësinë, përmbajtjen ose qëllimin e vendimit." }
+              ],
+              "explanationKey": "unclear-output"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "rebalance-workload",
+              "text": "Dann verschieben wir die interne Auswertung auf Montag und informieren das Team heute kurz. Für den Kundentermin hat die Entscheidungsgrundlage höhere Priorität.",
+              "translations": [
+                { "language": "en", "text": "Then we will move the internal analysis to Monday and briefly inform the team today. For the customer appointment, the basis for decision-making has higher priority." },
+                { "language": "fa", "text": "پس تحلیل داخلی را به دوشنبه منتقل می‌کنیم و امروز کوتاه به تیم اطلاع می‌دهیم. برای قرار مشتری، مبنای تصمیم‌گیری اولویت بالاتری دارد." },
+                { "language": "ar", "text": "إذن ننقل التحليل الداخلي إلى يوم الاثنين ونبلغ الفريق اليوم باختصار. بالنسبة لاجتماع العميل، أساس اتخاذ القرار له أولوية أعلى." },
+                { "language": "tr", "text": "O zaman iç değerlendirmeyi pazartesiye alırız ve bugün ekibi kısaca bilgilendiririz. Müşteri randevusu için karar dayanağı daha yüksek önceliğe sahip." },
+                { "language": "ru", "text": "Тогда мы перенесём внутреннюю аналитику на понедельник и сегодня коротко сообщим команде. Для встречи с клиентом основа для решения имеет более высокий приоритет." },
+                { "language": "ckb", "text": "ئەوا شیکردنەوەی ناوخۆیی دەخەینە دووشەممە و ئەمڕۆ بە کورتی تیمەکە ئاگادار دەکەینەوە. بۆ دیداری کڕیار، بنەمای بڕیاردان پێشینەیی بەرزتری هەیە." },
+                { "language": "kmr", "text": "Wê demê em analîza hundirîn vediguhêzin roja Duşemê û îro bi kurtasî tîmê agahdar dikin. Ji bo hevdîtina mişterî, bingeha biryardanê pêşîniya bilindtir heye." },
+                { "language": "pl", "text": "W takim razie przesuniemy wewnętrzną analizę na poniedziałek i dziś krótko poinformujemy zespół. Dla spotkania z klientem podstawa decyzji ma wyższy priorytet." },
+                { "language": "ro", "text": "Atunci mutăm analiza internă pe luni și informăm scurt echipa astăzi. Pentru întâlnirea cu clientul, baza de decizie are prioritate mai mare." },
+                { "language": "sq", "text": "Atëherë e shtyjmë analizën e brendshme për të hënën dhe sot e informojmë shkurt ekipin. Për takimin me klientin, baza për vendimmarrje ka prioritet më të lartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: delegation is fairer when you remove or postpone another task instead of adding pressure.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: delegation is fairer when you remove or postpone another task instead of adding pressure." },
+                { "language": "fa", "text": "خوب است: واگذاری زمانی منصفانه‌تر است که به‌جای اضافه کردن فشار، کار دیگری را حذف یا عقب بیندازی." },
+                { "language": "ar", "text": "جيد: يكون التفويض أكثر عدلاً عندما تزيل أو تؤجل مهمة أخرى بدلاً من إضافة ضغط." },
+                { "language": "tr", "text": "İyi: Baskı eklemek yerine başka bir görevi kaldırdığında ya da ertelediğinde devir daha adil olur." },
+                { "language": "ru", "text": "Хорошо: делегирование справедливее, когда ты снимаешь или переносишь другую задачу, а не добавляешь давление." },
+                { "language": "ckb", "text": "باشە: سپاردنی ئەرک دادپەروەرانەترە کاتێک لە جیاتی زیادکردنی فشار، ئەرکێکی تر لادەبەیت یان دوا دەخەیت." },
+                { "language": "kmr", "text": "Baş e: Radestkirin dadperwertir e gava tu li şûna zêdekirina zextê kareke din radikî an paş dixî." },
+                { "language": "pl", "text": "Dobrze: delegowanie jest uczciwsze, gdy zdejmujesz lub przesuwasz inne zadanie zamiast dokładać presji." },
+                { "language": "ro", "text": "Bine: delegarea este mai corectă când elimini sau amâni o altă sarcină în loc să adaugi presiune." },
+                { "language": "sq", "text": "Mirë: delegimi është më i drejtë kur heq ose shtyn një detyrë tjetër, në vend që të shtosh presion." }
+              ],
+              "explanationKey": "fair-delegation"
+            },
+            {
+              "id": "pressure-only",
+              "text": "Das ist ungünstig, aber ich brauche trotzdem beides bis Freitag.",
+              "translations": [
+                { "language": "en", "text": "That is inconvenient, but I still need both by Friday." },
+                { "language": "fa", "text": "این نامناسب است، اما با این حال هر دو را تا جمعه لازم دارم." },
+                { "language": "ar", "text": "هذا غير مناسب، لكنني أحتاج إلى الأمرين حتى يوم الجمعة رغم ذلك." },
+                { "language": "tr", "text": "Bu uygun değil, ama yine de ikisine de cumaya kadar ihtiyacım var." },
+                { "language": "ru", "text": "Это неудобно, но мне всё равно нужно и то и другое к пятнице." },
+                { "language": "ckb", "text": "ئەمە نەگونجاوە، بەڵام هەرچۆنێک بێت هەردووکیانم تا هەینی پێویستە." },
+                { "language": "kmr", "text": "Ev ne guncaw e, lê dîsa jî ez heta Înê herduyan dixwazim." },
+                { "language": "pl", "text": "To niekorzystne, ale mimo to potrzebuję obu rzeczy do piątku." },
+                { "language": "ro", "text": "Este neconvenabil, dar tot am nevoie de amândouă până vineri." },
+                { "language": "sq", "text": "Kjo është e papërshtatshme, por gjithsesi më duhen të dyja deri të premten." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is clear, but it ignores capacity. In B2 workplace communication, delegation should include priority trade-offs.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is clear, but it ignores capacity. In B2 workplace communication, delegation should include priority trade-offs." },
+                { "language": "fa", "text": "این پاسخ روشن است، اما ظرفیت فرد را نادیده می‌گیرد. در ارتباط کاری B2، واگذاری باید شامل جابه‌جایی اولویت‌ها باشد." },
+                { "language": "ar", "text": "هذا واضح، لكنه يتجاهل القدرة المتاحة. في تواصل العمل بمستوى B2 يجب أن يتضمن التفويض مفاضلة بين الأولويات." },
+                { "language": "tr", "text": "Bu net, ancak kapasiteyi görmezden geliyor. B2 iş iletişiminde devir, öncelik takaslarını içermelidir." },
+                { "language": "ru", "text": "Это ясно, но игнорирует загрузку. В рабочей коммуникации B2 делегирование должно включать обмен приоритетами." },
+                { "language": "ckb", "text": "ئەمە ڕوونە، بەڵام توانای کەسەکە پشتگوێ دەخات. لە پەیوەندی کاری B2دا سپاردن دەبێت گۆڕینی پێشینەییەکان لەخۆ بگرێت." },
+                { "language": "kmr", "text": "Ev zelal e, lê kapasîteyê paşguh dike. Di ragihandina karî ya B2 de radestkirin divê guherandina pêşîniyan dihewîne." },
+                { "language": "pl", "text": "To jest jasne, ale ignoruje moce przerobowe. W komunikacji zawodowej B2 delegowanie powinno obejmować zamianę priorytetów." },
+                { "language": "ro", "text": "Este clar, dar ignoră capacitatea. În comunicarea profesională B2, delegarea ar trebui să includă schimburi de priorități." },
+                { "language": "sq", "text": "Kjo është e qartë, por injoron kapacitetin. Në komunikimin e punës B2, delegimi duhet të përfshijë shkëmbim prioritetesh." }
+              ],
+              "explanationKey": "ignores-capacity"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "decision-focused-criteria",
+              "text": "Gut genug ist sie, wenn die Geschäftsführung in fünf Minuten versteht, welche Option wir empfehlen, welche Risiken bleiben und welche Entscheidung wir am Freitag brauchen.",
+              "translations": [
+                { "language": "en", "text": "It is good enough if management can understand in five minutes which option we recommend, which risks remain, and what decision we need on Friday." },
+                { "language": "fa", "text": "وقتی کافی خوب است که مدیریت بتواند در پنج دقیقه بفهمد کدام گزینه را پیشنهاد می‌کنیم، چه ریسک‌هایی باقی می‌ماند و جمعه به چه تصمیمی نیاز داریم." },
+                { "language": "ar", "text": "تكون جيدة بما يكفي إذا استطاعت الإدارة أن تفهم خلال خمس دقائق أي خيار نوصي به، وما المخاطر المتبقية، وما القرار الذي نحتاجه يوم الجمعة." },
+                { "language": "tr", "text": "Yönetim beş dakika içinde hangi seçeneği önerdiğimizi, hangi risklerin kaldığını ve cuma günü hangi karara ihtiyacımız olduğunu anlarsa yeterince iyidir." },
+                { "language": "ru", "text": "Она достаточно хороша, если руководство за пять минут понимает, какой вариант мы рекомендуем, какие риски остаются и какое решение нам нужно в пятницу." },
+                { "language": "ckb", "text": "بە قەدری پێویست باشە ئەگەر بەڕێوەبردن لە پێنج خولەکدا تێبگات کام هەڵبژاردە پێشنیار دەکەین، چ مەترسییەک دەمێنێت و هەینی پێویستمان بە چ بڕیارێکە." },
+                { "language": "kmr", "text": "Ew têra xwe baş e heke rêveberî di pênc xulekan de fêm bike em kîjan vebijêrk pêşniyar dikin, kîjan xetere dimînin û roja Înê em hewceyî çi biryarê ne." },
+                { "language": "pl", "text": "Jest wystarczająco dobra, jeśli zarząd w pięć minut rozumie, którą opcję rekomendujemy, jakie ryzyka pozostają i jakiej decyzji potrzebujemy w piątek." },
+                { "language": "ro", "text": "Este suficient de bun dacă conducerea înțelege în cinci minute ce opțiune recomandăm, ce riscuri rămân și ce decizie ne trebuie vineri." },
+                { "language": "sq", "text": "Është mjaftueshëm e mirë nëse drejtuesit kuptojnë brenda pesë minutash cilën mundësi rekomandojmë, cilat rreziqe mbeten dhe çfarë vendimi na duhet të premten." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: success is defined from the decision-maker's perspective, not by page count or effort.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: success is defined from the decision-maker's perspective, not by page count or effort." },
+                { "language": "fa", "text": "خوب است: موفقیت از دید تصمیم‌گیرنده تعریف شده، نه با تعداد صفحه یا میزان تلاش." },
+                { "language": "ar", "text": "جيد: النجاح محدد من منظور صاحب القرار، لا بعدد الصفحات أو مقدار الجهد." },
+                { "language": "tr", "text": "İyi: Başarı, sayfa sayısı ya da çaba ile değil, karar vericinin bakış açısından tanımlanıyor." },
+                { "language": "ru", "text": "Хорошо: успех определён с точки зрения принимающего решение, а не по числу страниц или усилию." },
+                { "language": "ckb", "text": "باشە: سەرکەوتن لە دیدی بڕیاردەرەوە دیاری کراوە، نە بە ژمارەی لاپەڕە یان هەوڵ." },
+                { "language": "kmr", "text": "Baş e: Serkeftin ji perspektîfa biryarder ve hatiye diyarkirin, ne bi hejmara rûpelan an hewldanê." },
+                { "language": "pl", "text": "Dobrze: sukces jest zdefiniowany z perspektywy osoby decyzyjnej, a nie przez liczbę stron czy wysiłek." },
+                { "language": "ro", "text": "Bine: succesul este definit din perspectiva decidentului, nu prin numărul de pagini sau efort." },
+                { "language": "sq", "text": "Mirë: suksesi përcaktohet nga këndvështrimi i vendimmarrësit, jo nga numri i faqeve apo përpjekja." }
+              ],
+              "explanationKey": "decision-focused-success"
+            },
+            {
+              "id": "format-focused-only",
+              "text": "Gut genug ist sie, wenn sie ordentlich aussieht und alle Punkte irgendwie erwähnt werden.",
+              "translations": [
+                { "language": "en", "text": "It is good enough if it looks tidy and all points are mentioned somehow." },
+                { "language": "fa", "text": "وقتی کافی خوب است که مرتب به نظر برسد و همه نکات به‌نوعی ذکر شده باشند." },
+                { "language": "ar", "text": "تكون جيدة بما يكفي إذا بدت مرتبة وتم ذكر كل النقاط بطريقة ما." },
+                { "language": "tr", "text": "Düzenli görünürse ve tüm noktalar bir şekilde belirtilirse yeterince iyidir." },
+                { "language": "ru", "text": "Она достаточно хороша, если выглядит аккуратно и все пункты как-то упомянуты." },
+                { "language": "ckb", "text": "بە قەدری پێویست باشە ئەگەر ڕێکوپێک دیار بێت و هەموو خاڵەکان بە شێوەیەک باس کرابن." },
+                { "language": "kmr", "text": "Ew têra xwe baş e heke rêkûpêk xuya bike û hemû xal bi awayekî hatibin gotin." },
+                { "language": "pl", "text": "Jest wystarczająco dobra, jeśli wygląda schludnie i wszystkie punkty są jakoś wspomniane." },
+                { "language": "ro", "text": "Este suficient de bun dacă arată ordonat și toate punctele sunt menționate cumva." },
+                { "language": "sq", "text": "Është mjaftueshëm e mirë nëse duket e rregullt dhe të gjitha pikat përmenden disi." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is plausible but too weak. It focuses on format, not on whether the decision can actually be made.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is plausible but too weak. It focuses on format, not on whether the decision can actually be made." },
+                { "language": "fa", "text": "این پاسخ قابل‌تصور است، اما ضعیف است. روی قالب تمرکز دارد، نه روی اینکه تصمیم واقعاً قابل گرفتن باشد." },
+                { "language": "ar", "text": "هذا ممكن لكنه ضعيف جداً. يركز على الشكل، لا على ما إذا كان يمكن اتخاذ القرار فعلاً." },
+                { "language": "tr", "text": "Bu mümkün, ancak çok zayıf. Kararın gerçekten verilip verilemeyeceğine değil, biçime odaklanıyor." },
+                { "language": "ru", "text": "Это возможно, но слишком слабо. Внимание на форме, а не на том, можно ли действительно принять решение." },
+                { "language": "ckb", "text": "ئەمە گونجاو دێتە بەرچاو، بەڵام زۆر لاوازە. سەرنج لەسەر شێوازە، نە لەسەر ئەوەی بڕیار بەڕاستی دەتوانرێت بدرێت یان نا." },
+                { "language": "kmr", "text": "Ev gengaz e, lê pir lawaz e. Li ser şêwazê disekine, ne li ser ka biryar bi rastî dikare were dayîn yan na." },
+                { "language": "pl", "text": "To jest możliwe, ale zbyt słabe. Skupia się na formacie, a nie na tym, czy decyzję da się faktycznie podjąć." },
+                { "language": "ro", "text": "Este plauzibil, dar prea slab. Se concentrează pe format, nu pe faptul dacă decizia poate fi luată cu adevărat." },
+                { "language": "sq", "text": "Kjo është e mundshme, por shumë e dobët. Përqendrohet te formati, jo te fakti nëse vendimi mund të merret vërtet." }
+              ],
+              "explanationKey": "format-not-decision"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "model-answer",
+          "text": "Start delegation with purpose and responsibility. A task sounds more professional when the reason is visible.",
+          "translations": [
+            { "language": "en", "text": "Start delegation with purpose and responsibility. A task sounds more professional when the reason is visible." },
+            { "language": "fa", "text": "واگذاری را با هدف و مسئولیت شروع کن. وقتی دلیل روشن باشد، وظیفه حرفه‌ای‌تر به نظر می‌رسد." },
+            { "language": "ar", "text": "ابدأ التفويض بالهدف والمسؤولية. تبدو المهمة أكثر مهنية عندما يكون السبب واضحاً." },
+            { "language": "tr", "text": "Devri amaç ve sorumlulukla başlat. Neden görünür olduğunda görev daha profesyonel duyulur." },
+            { "language": "ru", "text": "Начни делегирование с цели и ответственности. Задача звучит профессиональнее, когда причина видна." },
+            { "language": "ckb", "text": "سپاردنی ئەرک بە ئامانج و بەرپرسیارێتی دەست پێ بکە. کاتێک هۆکار ڕوونە، ئەرکەکە پیشەیی‌تر دەبیسترێت." },
+            { "language": "kmr", "text": "Radestkirinê bi armanc û berpirsiyariyê dest pê bike. Gava sedem xuya be, kar profesyoneltir tê bihîstin." },
+            { "language": "pl", "text": "Zacznij delegowanie od celu i odpowiedzialności. Zadanie brzmi bardziej profesjonalnie, gdy widać powód." },
+            { "language": "ro", "text": "Începe delegarea cu scopul și responsabilitatea. O sarcină sună mai profesionist când motivul este vizibil." },
+            { "language": "sq", "text": "Fillo delegimin me qëllimin dhe përgjegjësinë. Një detyrë tingëllon më profesionale kur arsyeja është e qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "common-mistake",
+          "text": "A delegated task needs boundaries. Define what should be delivered and what is explicitly not required.",
+          "translations": [
+            { "language": "en", "text": "A delegated task needs boundaries. Define what should be delivered and what is explicitly not required." },
+            { "language": "fa", "text": "وظیفه واگذار شده به مرز نیاز دارد. مشخص کن چه چیزی باید تحویل شود و چه چیزی صریحاً لازم نیست." },
+            { "language": "ar", "text": "تحتاج المهمة المفوضة إلى حدود. حدد ما يجب تسليمه وما ليس مطلوباً صراحة." },
+            { "language": "tr", "text": "Devredilen görev sınırlara ihtiyaç duyar. Neyin teslim edileceğini ve neyin açıkça gerekli olmadığını tanımla." },
+            { "language": "ru", "text": "Делегированной задаче нужны границы. Определи, что должно быть передано и что явно не требуется." },
+            { "language": "ckb", "text": "ئەرکی سپێردراو پێویستی بە سنوور هەیە. دیاری بکە چی دەبێت پێشکەش بکرێت و چی بە ڕوونی پێویست نییە." },
+            { "language": "kmr", "text": "Karê radestkirî hewceyî sînoran e. Diyar bike çi divê were radestkirin û çi bi zelalî ne pêwîst e." },
+            { "language": "pl", "text": "Delegowane zadanie potrzebuje granic. Określ, co ma zostać dostarczone i czego wyraźnie nie trzeba robić." },
+            { "language": "ro", "text": "O sarcină delegată are nevoie de limite. Definește ce trebuie livrat și ce nu este cerut în mod explicit." },
+            { "language": "sq", "text": "Një detyrë e deleguar ka nevojë për kufij. Përcakto çfarë duhet dorëzuar dhe çfarë nuk kërkohet qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "politeness-note",
+          "text": "Delegation is not just assigning work. It also means protecting realistic capacity and shifting priorities openly.",
+          "translations": [
+            { "language": "en", "text": "Delegation is not just assigning work. It also means protecting realistic capacity and shifting priorities openly." },
+            { "language": "fa", "text": "واگذاری فقط سپردن کار نیست. یعنی ظرفیت واقعی را هم حفظ کنی و اولویت‌ها را شفاف جابه‌جا کنی." },
+            { "language": "ar", "text": "التفويض ليس مجرد إسناد عمل. إنه يعني أيضاً حماية القدرة الواقعية وتغيير الأولويات بشفافية." },
+            { "language": "tr", "text": "Delegasyon sadece iş vermek değildir. Gerçekçi kapasiteyi korumak ve öncelikleri açıkça değiştirmek anlamına da gelir." },
+            { "language": "ru", "text": "Делегирование — это не только распределение работы. Это также защита реальной загрузки и открытая смена приоритетов." },
+            { "language": "ckb", "text": "سپاردن تەنها دابەشکردنی کار نییە. واتە پاراستنی توانای واقیعی و گۆڕینی پێشینەییەکان بە ڕوونی." },
+            { "language": "kmr", "text": "Radestkirin tenê kar dayîn nîne. Ew jî wateya parastina kapasîteya rastîn û guherandina pêşîniyan bi vekirî ye." },
+            { "language": "pl", "text": "Delegowanie to nie tylko przydzielanie pracy. Oznacza też ochronę realnych mocy i otwarte przesuwanie priorytetów." },
+            { "language": "ro", "text": "Delegarea nu înseamnă doar atribuirea muncii. Înseamnă și protejarea capacității realiste și schimbarea deschisă a priorităților." },
+            { "language": "sq", "text": "Delegimi nuk është vetëm caktim pune. Do të thotë edhe të mbrosh kapacitetin real dhe të ndryshosh hapur prioritetet." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "process-note",
+          "text": "Strong success criteria describe what the decision-maker can do after reading the result.",
+          "translations": [
+            { "language": "en", "text": "Strong success criteria describe what the decision-maker can do after reading the result." },
+            { "language": "fa", "text": "معیارهای موفقیت قوی توضیح می‌دهند تصمیم‌گیرنده بعد از خواندن نتیجه چه کاری می‌تواند انجام دهد." },
+            { "language": "ar", "text": "تصف معايير النجاح القوية ما يستطيع صاحب القرار فعله بعد قراءة النتيجة." },
+            { "language": "tr", "text": "Güçlü başarı ölçütleri, karar vericinin sonucu okuduktan sonra ne yapabileceğini açıklar." },
+            { "language": "ru", "text": "Сильные критерии успеха описывают, что принимающий решение сможет сделать после чтения результата." },
+            { "language": "ckb", "text": "پێوەرە بەهێزەکانی سەرکەوتن ڕوون دەکەنەوە بڕیاردەر دوای خوێندنەوەی ئەنجامەکە دەتوانێت چی بکات." },
+            { "language": "kmr", "text": "Pîvanên serkeftinê yên xurt rave dikin ku biryarder piştî xwendina encamê dikare çi bike." },
+            { "language": "pl", "text": "Mocne kryteria sukcesu opisują, co osoba decyzyjna może zrobić po przeczytaniu rezultatu." },
+            { "language": "ro", "text": "Criteriile puternice de succes descriu ce poate face decidentul după ce citește rezultatul." },
+            { "language": "sq", "text": "Kriteret e forta të suksesit përshkruajnë çfarë mund të bëjë vendimmarrësi pasi lexon rezultatin." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

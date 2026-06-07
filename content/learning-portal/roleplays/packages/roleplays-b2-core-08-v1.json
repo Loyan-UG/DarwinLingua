@@ -1,0 +1,663 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-08-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 08 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 08",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-zwischen-zwei-loesungen-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Zwischen zwei Lösungen abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weighing two solutions" },
+        { "language": "fa", "text": "سنجیدن دو راه‌حل" },
+        { "language": "ar", "text": "الموازنة بين حلين" },
+        { "language": "tr", "text": "İki çözüm arasında değerlendirme yapmak" },
+        { "language": "ru", "text": "Взвесить два решения" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی دوو چارەسەر" },
+        { "language": "kmr", "text": "Nirxandina di navbera du çareseriyan de" },
+        { "language": "pl", "text": "Rozważenie dwóch rozwiązań" },
+        { "language": "ro", "text": "Cântărirea a două soluții" },
+        { "language": "sq", "text": "Peshimi i dy zgjidhjeve" }
+      ],
+      "description": "Im Team gibt es zwei mögliche Lösungen für ein Kundenproblem: eine schnelle Übergangslösung und eine stabilere, aber aufwendigere Umsetzung. Du vergleichst beide Optionen nach Kriterien und empfiehlst eine begründete Entscheidung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "The team has two possible solutions for a customer problem: a quick interim solution and a more stable but more complex implementation. You compare both options by criteria and recommend a justified decision." },
+        { "language": "fa", "text": "تیم برای یک مشکل مشتری دو راه‌حل ممکن دارد: یک راه‌حل موقت سریع و یک اجرای پایدارتر اما پرزحمت‌تر. تو هر دو گزینه را بر اساس معیارها مقایسه می‌کنی و یک تصمیم مستدل پیشنهاد می‌دهی." },
+        { "language": "ar", "text": "لدى الفريق حلان محتملان لمشكلة عميل: حل مؤقت سريع وتنفيذ أكثر استقراراً لكنه أكثر تعقيداً. تقارن الخيارين وفق معايير وتوصي بقرار مبرر." },
+        { "language": "tr", "text": "Ekipte bir müşteri sorunu için iki olası çözüm var: hızlı bir geçici çözüm ve daha sağlam ama daha zahmetli bir uygulama. İki seçeneği ölçütlere göre karşılaştırıyor ve gerekçeli bir karar öneriyorsun." },
+        { "language": "ru", "text": "У команды есть два возможных решения проблемы клиента: быстрое временное решение и более стабильная, но более трудоёмкая реализация. Ты сравниваешь оба варианта по критериям и рекомендуешь обоснованное решение." },
+        { "language": "ckb", "text": "تیم بۆ کێشەیەکی کڕیار دوو چارەسەری گونجاوی هەیە: چارەسەرێکی کاتیی خێرا و جێبەجێکردنێکی جێگیرتر بەڵام زەحمەتتر. تۆ هەردوو هەڵبژاردە بە پێی پێوەرەکان بەراورد دەکەیت و بڕیارێکی بەهۆکار پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Tîm ji bo pirsgirêka mişterî du çareseriyên gengaz hene: çareseriyeke demkî ya lezgîn û bicihanînek aramtir lê dijwartir. Tu her du vebijêrkan li gorî pîvanan didî ber hev û biryareke bi sedem pêşniyar dikî." },
+        { "language": "pl", "text": "Zespół ma dwa możliwe rozwiązania problemu klienta: szybkie rozwiązanie przejściowe oraz stabilniejsze, ale bardziej pracochłonne wdrożenie. Porównujesz obie opcje według kryteriów i rekomendujesz uzasadnioną decyzję." },
+        { "language": "ro", "text": "Echipa are două soluții posibile pentru o problemă a clientului: o soluție temporară rapidă și o implementare mai stabilă, dar mai solicitantă. Compari ambele opțiuni după criterii și recomanzi o decizie justificată." },
+        { "language": "sq", "text": "Ekipi ka dy zgjidhje të mundshme për një problem të klientit: një zgjidhje të shpejtë të përkohshme dhe një zbatim më të qëndrueshëm, por më të mundimshëm. Ti i krahason të dyja opsionet sipas kritereve dhe rekomandon një vendim të arsyetuar." }
+      ],
+      "learnerGoal": "Vergleiche zwei Lösungen professionell: Nenne Kriterien, zeige Vor- und Nachteile, bewerte Risiken und Aufwand und formuliere eine klare Empfehlung mit nächstem Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Compare two solutions professionally: name criteria, show advantages and disadvantages, assess risks and effort, and formulate a clear recommendation with the next step." },
+        { "language": "fa", "text": "دو راه‌حل را حرفه‌ای مقایسه کن: معیارها را نام ببر، مزایا و معایب را نشان بده، ریسک و میزان تلاش را ارزیابی کن و یک توصیه روشن همراه با قدم بعدی بیان کن." },
+        { "language": "ar", "text": "قارن بين حلين بشكل مهني: اذكر المعايير، وبيّن المزايا والعيوب، وقيّم المخاطر والجهد، وصغ توصية واضحة مع الخطوة التالية." },
+        { "language": "tr", "text": "İki çözümü profesyonelce karşılaştır: ölçütleri belirt, avantaj ve dezavantajları göster, riskleri ve çabayı değerlendir ve sonraki adımla birlikte net bir öneri formüle et." },
+        { "language": "ru", "text": "Профессионально сравни два решения: назови критерии, покажи плюсы и минусы, оцени риски и усилия и сформулируй ясную рекомендацию со следующим шагом." },
+        { "language": "ckb", "text": "دوو چارەسەر بە شێوەی پیشەیی بەراورد بکە: پێوەرەکان ناو ببە، سوود و زیانەکان نیشان بدە، مەترسی و هەوڵ هەڵبسەنگێنە و پێشنیارێکی ڕوون لەگەڵ هەنگاوی داهاتوو بڵێ." },
+        { "language": "kmr", "text": "Du çareseriyan bi awayekî profesyonel bide ber hev: pîvanan nav bike, avantaj û dezavantajan nîşan bide, xetere û hewldanê binirxîne û pêşniyareke zelal bi gava paşîn re bibêje." },
+        { "language": "pl", "text": "Porównaj dwa rozwiązania profesjonalnie: nazwij kryteria, pokaż zalety i wady, oceń ryzyka i nakład pracy oraz sformułuj jasną rekomendację z następnym krokiem." },
+        { "language": "ro", "text": "Compară profesionist două soluții: numește criteriile, arată avantajele și dezavantajele, evaluează riscurile și efortul și formulează o recomandare clară cu pasul următor." },
+        { "language": "sq", "text": "Krahaso dy zgjidhje në mënyrë profesionale: përmend kriteret, trego përparësitë dhe mangësitë, vlerëso rreziqet dhe mundin dhe formulo një rekomandim të qartë me hapin e ardhshëm." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "compare-options",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3080,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Projektkollege",
+          "translations": [
+            { "language": "en", "text": "Project colleague" },
+            { "language": "fa", "text": "همکار پروژه" },
+            { "language": "ar", "text": "زميل المشروع" },
+            { "language": "tr", "text": "Proje meslektaşı" },
+            { "language": "ru", "text": "Коллега по проекту" },
+            { "language": "ckb", "text": "هاوکاری پرۆژە" },
+            { "language": "kmr", "text": "Hevkarê projeyê" },
+            { "language": "pl", "text": "Kolega z projektu" },
+            { "language": "ro", "text": "Colegul de proiect" },
+            { "language": "sq", "text": "Kolegu i projektit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Wir müssen heute entscheiden, wie wir das Kundenproblem lösen. Kannst du die beiden Optionen kurz einordnen?",
+          "translations": [
+            { "language": "en", "text": "We need to decide today how to solve the customer problem. Can you briefly classify the two options?" },
+            { "language": "fa", "text": "امروز باید تصمیم بگیریم مشکل مشتری را چطور حل کنیم. می‌توانی دو گزینه را کوتاه دسته‌بندی کنی؟" },
+            { "language": "ar", "text": "علينا أن نقرر اليوم كيف سنحل مشكلة العميل. هل يمكنك أن تصنف الخيارين باختصار؟" },
+            { "language": "tr", "text": "Müşteri sorununu nasıl çözeceğimize bugün karar vermeliyiz. İki seçeneği kısaca değerlendirebilir misin?" },
+            { "language": "ru", "text": "Сегодня нам нужно решить, как мы решим проблему клиента. Можешь коротко классифицировать два варианта?" },
+            { "language": "ckb", "text": "دەبێت ئەمڕۆ بڕیار بدەین کێشەی کڕیار چۆن چارەسەر بکەین. دەتوانیت دوو هەڵبژاردەکە بە کورتی جێگیر بکەیت؟" },
+            { "language": "kmr", "text": "Divê em îro biryar bidin ka em pirsgirêka mişterî çawa çareser bikin. Tu dikarî her du vebijêrkan bi kurtasî rêz bikî?" },
+            { "language": "pl", "text": "Musimy dziś zdecydować, jak rozwiążemy problem klienta. Możesz krótko uporządkować dwie opcje?" },
+            { "language": "ro", "text": "Trebuie să decidem astăzi cum rezolvăm problema clientului. Poți încadra pe scurt cele două opțiuni?" },
+            { "language": "sq", "text": "Duhet të vendosim sot si ta zgjidhim problemin e klientit. A mund t'i renditësh shkurt dy opsionet?" }
+          ],
+          "function": "ask-for-options"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Es gibt eine schnelle Übergangslösung, die den Kunden morgen entlastet, und eine stabile Umsetzung, die etwa eine Woche dauert, aber langfristig weniger Risiko hat.",
+          "translations": [
+            { "language": "en", "text": "There is a quick interim solution that relieves the customer tomorrow, and a stable implementation that takes about a week but has less long-term risk." },
+            { "language": "fa", "text": "یک راه‌حل موقت سریع داریم که فردا فشار را از مشتری کم می‌کند، و یک اجرای پایدار که حدود یک هفته طول می‌کشد اما در بلندمدت ریسک کمتری دارد." },
+            { "language": "ar", "text": "هناك حل مؤقت سريع يخفف الضغط عن العميل غداً، وتنفيذ مستقر يستغرق نحو أسبوع لكنه يحمل خطراً أقل على المدى الطويل." },
+            { "language": "tr", "text": "Yarın müşteriyi rahatlatacak hızlı bir geçici çözüm var ve yaklaşık bir hafta süren ama uzun vadede daha az risk taşıyan sağlam bir uygulama var." },
+            { "language": "ru", "text": "Есть быстрое временное решение, которое разгрузит клиента завтра, и стабильная реализация, которая займёт около недели, но в долгосрочной перспективе несёт меньше риска." },
+            { "language": "ckb", "text": "چارەسەرێکی کاتیی خێرا هەیە کە سبەی فشار لە کڕیار کەم دەکاتەوە، و جێبەجێکردنێکی جێگیر هەیە کە نزیکەی هەفتەیەک دەخایەنێت بەڵام لە درێژخایەندا مەترسی کەمترە." },
+            { "language": "kmr", "text": "Çareseriyeke demkî ya lezgîn heye ku sibê mişterî sivik dike, û bicihanînek aram heye ku nêzî hefteyekê dixwaze lê di demdirêj de xetereya wê kêmtir e." },
+            { "language": "pl", "text": "Jest szybkie rozwiązanie przejściowe, które odciąży klienta jutro, oraz stabilne wdrożenie, które zajmie około tygodnia, ale długoterminowo ma mniejsze ryzyko." },
+            { "language": "ro", "text": "Există o soluție temporară rapidă, care îl degrevează pe client mâine, și o implementare stabilă, care durează cam o săptămână, dar are risc mai mic pe termen lung." },
+            { "language": "sq", "text": "Ka një zgjidhje të shpejtë të përkohshme që e lehtëson klientin nesër, dhe një zbatim të qëndrueshëm që zgjat rreth një javë, por ka më pak rrezik afatgjatë." }
+          ],
+          "function": "summarize-options",
+          "expectedLearnerAction": "Name both options and show the basic trade-off between speed and stability."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Nach welchen Kriterien würdest du entscheiden? Nur nach Geschwindigkeit zu gehen, wäre wahrscheinlich zu kurz gedacht.",
+          "translations": [
+            { "language": "en", "text": "Which criteria would you use to decide? Looking only at speed would probably be too short-sighted." },
+            { "language": "fa", "text": "با چه معیارهایی تصمیم می‌گیری؟ فقط بر اساس سرعت تصمیم گرفتن احتمالاً کوتاه‌بینانه است." },
+            { "language": "ar", "text": "وفق أي معايير ستقرر؟ الاعتماد على السرعة فقط سيكون على الأرجح قصير النظر." },
+            { "language": "tr", "text": "Hangi ölçütlere göre karar verirdin? Sadece hıza bakmak muhtemelen kısa vadeli düşünmek olur." },
+            { "language": "ru", "text": "По каким критериям ты бы принимал решение? Ориентироваться только на скорость, вероятно, было бы недальновидно." },
+            { "language": "ckb", "text": "بە پێی چ پێوەرێک بڕیار دەدەیت؟ تەنها بە خێرایی سەیرکردن لەوانەیە زۆر کورتبینانە بێت." },
+            { "language": "kmr", "text": "Tu li gorî kîjan pîvanan biryar didî? Tenê li lezê nerîn belkî pir kurtbîn be." },
+            { "language": "pl", "text": "Według jakich kryteriów byś zdecydował? Patrzenie tylko na szybkość byłoby prawdopodobnie zbyt krótkowzroczne." },
+            { "language": "ro", "text": "După ce criterii ai decide? Să ne uităm doar la viteză ar fi probabil prea limitat." },
+            { "language": "sq", "text": "Sipas cilave kritere do të vendosje? Të shohësh vetëm shpejtësinë ndoshta do të ishte mendim shumë afatshkurtër." }
+          ],
+          "function": "ask-for-criteria"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde nach vier Kriterien entscheiden: Kundendruck, technisches Risiko, Aufwand für das Team und die Frage, ob wir später doppelte Arbeit vermeiden.",
+          "translations": [
+            { "language": "en", "text": "I would decide using four criteria: customer pressure, technical risk, effort for the team, and whether we avoid duplicate work later." },
+            { "language": "fa", "text": "بر اساس چهار معیار تصمیم می‌گیرم: فشار مشتری، ریسک فنی، میزان تلاش برای تیم و اینکه آیا بعداً از دوباره‌کاری جلوگیری می‌کنیم یا نه." },
+            { "language": "ar", "text": "سأقرر وفق أربعة معايير: ضغط العميل، والخطر التقني، والجهد على الفريق، وما إذا كنا سنتجنب العمل المزدوج لاحقاً." },
+            { "language": "tr", "text": "Dört ölçüte göre karar verirdim: müşteri baskısı, teknik risk, ekip için çaba ve daha sonra çift işi önleyip önleyemeyeceğimiz." },
+            { "language": "ru", "text": "Я бы решал по четырём критериям: давление со стороны клиента, технический риск, усилия команды и вопрос, сможем ли мы позже избежать двойной работы." },
+            { "language": "ckb", "text": "بە پێی چوار پێوەر بڕیار دەدەم: فشاری کڕیار، مەترسیی تەکنیکی، هەوڵی تیم و ئەوەی ئایا دواتر کارکردنی دووبارە دەگوازینەوە یان نا." },
+            { "language": "kmr", "text": "Ez li gorî çar pîvanan biryar didim: zexta mişterî, xetera teknîkî, hewldana tîmê û ka em paşê karê dubare dûr dixin yan na." },
+            { "language": "pl", "text": "Decydowałbym według czterech kryteriów: presji klienta, ryzyka technicznego, nakładu pracy zespołu i tego, czy unikniemy później podwójnej pracy." },
+            { "language": "ro", "text": "Aș decide după patru criterii: presiunea clientului, riscul tehnic, efortul pentru echipă și dacă evităm ulterior muncă dublă." },
+            { "language": "sq", "text": "Do të vendosja sipas katër kritereve: presioni i klientit, rreziku teknik, mundi për ekipin dhe nëse shmangim punën e dyfishtë më vonë." }
+          ],
+          "function": "name-criteria",
+          "expectedLearnerAction": "Define decision criteria before arguing for an option."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Was spricht konkret für die Übergangslösung?",
+          "translations": [
+            { "language": "en", "text": "What specifically speaks in favor of the interim solution?" },
+            { "language": "fa", "text": "مشخصاً چه چیزی به نفع راه‌حل موقت است؟" },
+            { "language": "ar", "text": "ما الذي يتحدث تحديداً لصالح الحل المؤقت؟" },
+            { "language": "tr", "text": "Geçici çözüm lehine somut olarak ne var?" },
+            { "language": "ru", "text": "Что конкретно говорит в пользу временного решения?" },
+            { "language": "ckb", "text": "بە دیاریکراوی چی لە بەرژەوەندی چارەسەری کاتییە؟" },
+            { "language": "kmr", "text": "Bi awayekî konkret çi ji bo çareseriya demkî diaxive?" },
+            { "language": "pl", "text": "Co konkretnie przemawia za rozwiązaniem przejściowym?" },
+            { "language": "ro", "text": "Ce anume susține soluția temporară?" },
+            { "language": "sq", "text": "Çfarë flet konkretisht në favor të zgjidhjes së përkohshme?" }
+          ],
+          "function": "ask-for-option-a"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Für die Übergangslösung spricht, dass wir den Kunden schnell stabilisieren und Zeit gewinnen. Der Nachteil ist, dass wir später Teile davon wahrscheinlich wieder ersetzen müssen.",
+          "translations": [
+            { "language": "en", "text": "The interim solution has the advantage that we can stabilize the customer quickly and gain time. The disadvantage is that we will probably have to replace parts of it later." },
+            { "language": "fa", "text": "مزیت راه‌حل موقت این است که می‌توانیم وضعیت مشتری را سریع پایدار کنیم و زمان بخریم. عیبش این است که احتمالاً بعداً باید بخش‌هایی از آن را دوباره جایگزین کنیم." },
+            { "language": "ar", "text": "ميزة الحل المؤقت أننا نستطيع تهدئة وضع العميل بسرعة وكسب الوقت. العيب هو أننا سنضطر غالباً إلى استبدال أجزاء منه لاحقاً." },
+            { "language": "tr", "text": "Geçici çözümün avantajı müşteriyi hızlıca stabilize edip zaman kazanmamız. Dezavantajı ise muhtemelen daha sonra bazı parçalarını yeniden değiştirmemiz gerekmesi." },
+            { "language": "ru", "text": "В пользу временного решения говорит то, что мы быстро стабилизируем ситуацию клиента и выиграем время. Минус в том, что позже нам, вероятно, придётся заменить его части." },
+            { "language": "ckb", "text": "سوودی چارەسەری کاتی ئەوەیە کە دەتوانین دۆخی کڕیار خێرا جێگیر بکەین و کات بەدەست بهێنین. لاوازییەکەی ئەوەیە کە دواتر لەوانەیە بەشێکی دوبارە بگۆڕین." },
+            { "language": "kmr", "text": "Avantaja çareseriya demkî ew e ku em dikarin mişterî zû aram bikin û dem bi dest bixin. Dezavantaja wê ew e ku em paşê belkî beşên wê dîsa biguherînin." },
+            { "language": "pl", "text": "Za rozwiązaniem przejściowym przemawia to, że szybko stabilizujemy klienta i zyskujemy czas. Wadą jest to, że później prawdopodobnie będziemy musieli wymienić jego części." },
+            { "language": "ro", "text": "Soluția temporară are avantajul că stabilizăm rapid clientul și câștigăm timp. Dezavantajul este că probabil va trebui să înlocuim ulterior părți din ea." },
+            { "language": "sq", "text": "Për zgjidhjen e përkohshme flet fakti që mund ta stabilizojmë shpejt klientin dhe të fitojmë kohë. Mangësia është se më vonë ndoshta duhet të zëvendësojmë pjesë të saj." }
+          ],
+          "function": "weigh-option-a",
+          "expectedLearnerAction": "Give one advantage and one disadvantage of the fast option."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Und was spricht für die stabilere Umsetzung?",
+          "translations": [
+            { "language": "en", "text": "And what speaks in favor of the more stable implementation?" },
+            { "language": "fa", "text": "و چه چیزی به نفع اجرای پایدارتر است؟" },
+            { "language": "ar", "text": "وما الذي يتحدث لصالح التنفيذ الأكثر استقراراً؟" },
+            { "language": "tr", "text": "Peki daha sağlam uygulama lehine ne var?" },
+            { "language": "ru", "text": "А что говорит в пользу более стабильной реализации?" },
+            { "language": "ckb", "text": "و چی لە بەرژەوەندی جێبەجێکردنی جێگیرترە؟" },
+            { "language": "kmr", "text": "Û çi ji bo bicihanîna aramtir diaxive?" },
+            { "language": "pl", "text": "A co przemawia za stabilniejszym wdrożeniem?" },
+            { "language": "ro", "text": "Și ce susține implementarea mai stabilă?" },
+            { "language": "sq", "text": "Dhe çfarë flet në favor të zbatimit më të qëndrueshëm?" }
+          ],
+          "function": "ask-for-option-b"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Die stabile Umsetzung reduziert Folgefehler und ist sauberer dokumentierbar. Sie bindet aber diese Woche mehr Kapazität und der Kunde muss länger auf eine sichtbare Verbesserung warten.",
+          "translations": [
+            { "language": "en", "text": "The stable implementation reduces follow-up errors and can be documented more cleanly. But it ties up more capacity this week, and the customer has to wait longer for a visible improvement." },
+            { "language": "fa", "text": "اجرای پایدار خطاهای بعدی را کم می‌کند و بهتر قابل مستندسازی است. اما این هفته ظرفیت بیشتری می‌گیرد و مشتری باید برای بهبود قابل مشاهده بیشتر صبر کند." },
+            { "language": "ar", "text": "التنفيذ المستقر يقلل الأخطاء اللاحقة ويمكن توثيقه بشكل أنظف. لكنه يستهلك هذا الأسبوع قدرة أكبر، وعلى العميل أن ينتظر مدة أطول حتى يرى تحسناً واضحاً." },
+            { "language": "tr", "text": "Sağlam uygulama sonraki hataları azaltır ve daha temiz belgelenebilir. Ancak bu hafta daha fazla kapasite bağlar ve müşteri görünür bir iyileşme için daha uzun beklemek zorunda kalır." },
+            { "language": "ru", "text": "Стабильная реализация снижает последующие ошибки и лучше документируется. Но на этой неделе она занимает больше ресурсов, а клиенту придётся дольше ждать видимого улучшения." },
+            { "language": "ckb", "text": "جێبەجێکردنی جێگیر هەڵەکانی داهاتوو کەم دەکاتەوە و باشتر بەڵگە دەکرێت. بەڵام ئەم هەفتەیە توانای زیاتر دەگرێت و کڕیار دەبێت بۆ باشبوونێکی دیار زیاتر چاوەڕێ بکات." },
+            { "language": "kmr", "text": "Bicihanîna aram xeletiyên paşerojê kêm dike û baştir dikare were belgekirin. Lê vê hefteyê kapasîteya zêdetir digire û mişterî divê ji bo başbûneke xuya dirêjtir bisekine." },
+            { "language": "pl", "text": "Stabilne wdrożenie zmniejsza późniejsze błędy i da się czyściej udokumentować. Wiąże jednak w tym tygodniu więcej mocy, a klient musi dłużej czekać na widoczną poprawę." },
+            { "language": "ro", "text": "Implementarea stabilă reduce erorile ulterioare și poate fi documentată mai curat. Dar ocupă mai multă capacitate săptămâna aceasta, iar clientul trebuie să aștepte mai mult pentru o îmbunătățire vizibilă." },
+            { "language": "sq", "text": "Zbatimi i qëndrueshëm ul gabimet pasuese dhe mund të dokumentohet më qartë. Por këtë javë merr më shumë kapacitet dhe klienti duhet të presë më gjatë për një përmirësim të dukshëm." }
+          ],
+          "function": "weigh-option-b",
+          "expectedLearnerAction": "Give the stable option's benefit and its practical cost."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Wenn du eine Empfehlung geben müsstest: Welche Option würdest du wählen?",
+          "translations": [
+            { "language": "en", "text": "If you had to give a recommendation: which option would you choose?" },
+            { "language": "fa", "text": "اگر باید یک توصیه بدهی: کدام گزینه را انتخاب می‌کنی؟" },
+            { "language": "ar", "text": "إذا كان عليك أن تقدم توصية: أي خيار ستختار؟" },
+            { "language": "tr", "text": "Bir öneri vermen gerekse: hangi seçeneği seçerdin?" },
+            { "language": "ru", "text": "Если бы тебе нужно было дать рекомендацию: какой вариант ты бы выбрал?" },
+            { "language": "ckb", "text": "ئەگەر پێویست بێت پێشنیارێک بدەیت: کام هەڵبژاردە هەڵدەبژێریت؟" },
+            { "language": "kmr", "text": "Heke divê tu pêşniyarek bidî: tu kîjan vebijêrkê hildibijêrî?" },
+            { "language": "pl", "text": "Gdybyś miał dać rekomendację: którą opcję byś wybrał?" },
+            { "language": "ro", "text": "Dacă ar trebui să dai o recomandare: ce opțiune ai alege?" },
+            { "language": "sq", "text": "Nëse duhet të japësh një rekomandim: cilin opsion do të zgjidhje?" }
+          ],
+          "function": "ask-for-recommendation"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Übergangslösung empfehlen, aber nur mit einer festen Ablöseplanung. So bekommt der Kunde schnell Entlastung, und wir verhindern, dass das Provisorium dauerhaft bleibt.",
+          "translations": [
+            { "language": "en", "text": "I would recommend the interim solution, but only with a fixed replacement plan. That way the customer gets quick relief, and we prevent the temporary solution from becoming permanent." },
+            { "language": "fa", "text": "راه‌حل موقت را پیشنهاد می‌کنم، اما فقط همراه با یک برنامه جایگزینی قطعی. این‌طوری مشتری سریع آسوده‌تر می‌شود و ما جلوگیری می‌کنیم که راه‌حل موقت دائمی شود." },
+            { "language": "ar", "text": "أوصي بالحل المؤقت، لكن فقط مع خطة استبدال ثابتة. بهذه الطريقة يحصل العميل على تخفيف سريع، ونمنع أن يصبح الحل المؤقت دائماً." },
+            { "language": "tr", "text": "Geçici çözümü önerirdim, ama yalnızca sabit bir değiştirme planıyla. Böylece müşteri hızlı rahatlar ve geçici çözümün kalıcı olmasını önleriz." },
+            { "language": "ru", "text": "Я бы рекомендовал временное решение, но только с фиксированным планом замены. Так клиент быстро получит облегчение, а мы не допустим, чтобы временное решение стало постоянным." },
+            { "language": "ckb", "text": "چارەسەری کاتی پێشنیار دەکەم، بەڵام تەنها لەگەڵ پلانی جێگۆڕکێیەکی دیاریکراو. بەم شێوەیە کڕیار خێرا ئاسوودەتر دەبێت و ڕێگری دەکەین لەوەی چارەسەری کاتی ببێتە هەمیشەیی." },
+            { "language": "kmr", "text": "Ez çareseriya demkî pêşniyar dikim, lê tenê bi planeke guherandinê ya sabît. Bi vî awayî mişterî zû sivik dibe û em pêşî lê digirin ku çareseriya demkî bibe mayînde." },
+            { "language": "pl", "text": "Rekomendowałbym rozwiązanie przejściowe, ale tylko ze stałym planem zastąpienia go. W ten sposób klient szybko odczuje ulgę, a my zapobiegniemy temu, by prowizorka została na stałe." },
+            { "language": "ro", "text": "Aș recomanda soluția temporară, dar numai cu un plan fix de înlocuire. Astfel clientul primește rapid o ușurare, iar noi prevenim ca provizoratul să rămână permanent." },
+            { "language": "sq", "text": "Do të rekomandoja zgjidhjen e përkohshme, por vetëm me një plan të qartë zëvendësimi. Kështu klienti lehtësohet shpejt dhe ne parandalojmë që zgjidhja e përkohshme të mbetet e përhershme." }
+          ],
+          "function": "recommend-option",
+          "expectedLearnerAction": "Give a clear recommendation and add a condition that controls the main risk."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Wie würdest du den nächsten Schritt formulieren, damit die Entscheidung nicht offen bleibt?",
+          "translations": [
+            { "language": "en", "text": "How would you formulate the next step so that the decision does not remain open?" },
+            { "language": "fa", "text": "قدم بعدی را چطور بیان می‌کنی تا تصمیم باز نماند؟" },
+            { "language": "ar", "text": "كيف ستصوغ الخطوة التالية حتى لا يبقى القرار مفتوحاً؟" },
+            { "language": "tr", "text": "Kararın açıkta kalmaması için sonraki adımı nasıl formüle ederdin?" },
+            { "language": "ru", "text": "Как ты сформулируешь следующий шаг, чтобы решение не осталось открытым?" },
+            { "language": "ckb", "text": "هەنگاوی داهاتوو چۆن دەربڕیت بۆ ئەوەی بڕیارەکە کراوە نەمێنێت؟" },
+            { "language": "kmr", "text": "Tu gava paşîn çawa dibêjî da ku biryar vekirî nemîne?" },
+            { "language": "pl", "text": "Jak sformułowałbyś następny krok, żeby decyzja nie pozostała otwarta?" },
+            { "language": "ro", "text": "Cum ai formula pasul următor ca decizia să nu rămână deschisă?" },
+            { "language": "sq", "text": "Si do ta formuloje hapin e ardhshëm që vendimi të mos mbetet i hapur?" }
+          ],
+          "function": "ask-for-next-step"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde vorschlagen: Wir setzen morgen die Übergangslösung um, dokumentieren bis Freitag den Ablöseplan und entscheiden am Montag, wann die stabile Umsetzung startet.",
+          "translations": [
+            { "language": "en", "text": "I would suggest: tomorrow we implement the interim solution, document the replacement plan by Friday, and decide on Monday when the stable implementation starts." },
+            { "language": "fa", "text": "پیشنهاد می‌کنم: فردا راه‌حل موقت را اجرا کنیم، تا جمعه برنامه جایگزینی را مستند کنیم و دوشنبه تصمیم بگیریم اجرای پایدار چه زمانی شروع شود." },
+            { "language": "ar", "text": "أقترح: ننفذ الحل المؤقت غداً، ونوثق خطة الاستبدال حتى يوم الجمعة، ونقرر يوم الاثنين متى يبدأ التنفيذ المستقر." },
+            { "language": "tr", "text": "Şunu önerirdim: Yarın geçici çözümü uygularız, cuma gününe kadar değiştirme planını belgeleriz ve pazartesi sağlam uygulamanın ne zaman başlayacağına karar veririz." },
+            { "language": "ru", "text": "Я бы предложил: завтра мы реализуем временное решение, до пятницы документируем план замены и в понедельник решаем, когда начнётся стабильная реализация." },
+            { "language": "ckb", "text": "پێشنیار دەکەم: سبەی چارەسەری کاتی جێبەجێ بکەین، تا هەینی پلانی جێگۆڕکێ بەڵگە بکەین و دووشەممە بڕیار بدەین جێبەجێکردنی جێگیر کەی دەست پێ دەکات." },
+            { "language": "kmr", "text": "Ez pêşniyar dikim: Sibê em çareseriya demkî bicîh bînin, heta Înê plana guherandinê belge bikin û roja Duşemê biryar bidin ka bicihanîna aram kengî dest pê dike." },
+            { "language": "pl", "text": "Zaproponowałbym: jutro wdrażamy rozwiązanie przejściowe, do piątku dokumentujemy plan zastąpienia, a w poniedziałek decydujemy, kiedy zaczyna się stabilne wdrożenie." },
+            { "language": "ro", "text": "Aș propune: mâine implementăm soluția temporară, documentăm până vineri planul de înlocuire și decidem luni când începe implementarea stabilă." },
+            { "language": "sq", "text": "Do të propozoja: nesër zbatojmë zgjidhjen e përkohshme, deri të premten dokumentojmë planin e zëvendësimit dhe të hënën vendosim kur fillon zbatimi i qëndrueshëm." }
+          ],
+          "function": "define-next-step",
+          "expectedLearnerAction": "Close with action, documentation deadline, and decision point."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "criteria-first",
+              "text": "Ich würde nach vier Kriterien entscheiden: Kundendruck, technisches Risiko, Aufwand für das Team und die Frage, ob wir später doppelte Arbeit vermeiden.",
+              "translations": [
+                { "language": "en", "text": "I would decide using four criteria: customer pressure, technical risk, effort for the team, and whether we avoid duplicate work later." },
+                { "language": "fa", "text": "بر اساس چهار معیار تصمیم می‌گیرم: فشار مشتری، ریسک فنی، میزان تلاش برای تیم و اینکه آیا بعداً از دوباره‌کاری جلوگیری می‌کنیم یا نه." },
+                { "language": "ar", "text": "سأقرر وفق أربعة معايير: ضغط العميل، والخطر التقني، والجهد على الفريق، وما إذا كنا سنتجنب العمل المزدوج لاحقاً." },
+                { "language": "tr", "text": "Dört ölçüte göre karar verirdim: müşteri baskısı, teknik risk, ekip için çaba ve daha sonra çift işi önleyip önleyemeyeceğimiz." },
+                { "language": "ru", "text": "Я бы решал по четырём критериям: давление со стороны клиента, технический риск, усилия команды и вопрос, сможем ли мы позже избежать двойной работы." },
+                { "language": "ckb", "text": "بە پێی چوار پێوەر بڕیار دەدەم: فشاری کڕیار، مەترسیی تەکنیکی، هەوڵی تیم و ئەوەی ئایا دواتر کارکردنی دووبارە دەگوازینەوە یان نا." },
+                { "language": "kmr", "text": "Ez li gorî çar pîvanan biryar didim: zexta mişterî, xetera teknîkî, hewldana tîmê û ka em paşê karê dubare dûr dixin yan na." },
+                { "language": "pl", "text": "Decydowałbym według czterech kryteriów: presji klienta, ryzyka technicznego, nakładu pracy zespołu i tego, czy unikniemy później podwójnej pracy." },
+                { "language": "ro", "text": "Aș decide după patru criterii: presiunea clientului, riscul tehnic, efortul pentru echipă și dacă evităm ulterior muncă dublă." },
+                { "language": "sq", "text": "Do të vendosja sipas katër kritereve: presioni i klientit, rreziku teknik, mundi për ekipin dhe nëse shmangim punën e dyfishtë më vonë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this answer creates a decision frame before arguing for one option.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer creates a decision frame before arguing for one option." },
+                { "language": "fa", "text": "خوب است: این پاسخ قبل از دفاع از یک گزینه، چارچوب تصمیم‌گیری می‌سازد." },
+                { "language": "ar", "text": "جيد: هذا الجواب ينشئ إطاراً لاتخاذ القرار قبل الدفاع عن خيار واحد." },
+                { "language": "tr", "text": "İyi: Bu yanıt bir seçeneği savunmadan önce karar çerçevesi kuruyor." },
+                { "language": "ru", "text": "Хорошо: этот ответ создаёт рамку решения до аргументации за один вариант." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە پێش بەرگریکردن لە هەڵبژاردەیەک، چوارچێوەی بڕیاردان دروست دەکات." },
+                { "language": "kmr", "text": "Baş e: Ev bersiv berî parastina vebijêrkekê çarçoveya biryardanê çêdike." },
+                { "language": "pl", "text": "Dobrze: ta odpowiedź tworzy ramę decyzji, zanim zacznie bronić jednej opcji." },
+                { "language": "ro", "text": "Bine: acest răspuns creează un cadru de decizie înainte de a argumenta pentru o opțiune." },
+                { "language": "sq", "text": "Mirë: kjo përgjigje krijon një kornizë vendimmarrjeje para se të argumentojë për një opsion." }
+              ],
+              "explanationKey": "criteria-first"
+            },
+            {
+              "id": "speed-only",
+              "text": "Ich würde die schnellere Lösung nehmen, weil der Kunde dann morgen etwas sieht.",
+              "translations": [
+                { "language": "en", "text": "I would take the faster solution because the customer then sees something tomorrow." },
+                { "language": "fa", "text": "راه‌حل سریع‌تر را انتخاب می‌کنم، چون مشتری فردا چیزی می‌بیند." },
+                { "language": "ar", "text": "سأختار الحل الأسرع لأن العميل سيرى شيئاً غداً." },
+                { "language": "tr", "text": "Daha hızlı çözümü seçerdim, çünkü müşteri yarın bir şey görür." },
+                { "language": "ru", "text": "Я бы выбрал более быстрое решение, потому что клиент завтра что-то увидит." },
+                { "language": "ckb", "text": "چارەسەری خێراتر هەڵدەبژێرم، چونکە کڕیار سبەی شتێک دەبینێت." },
+                { "language": "kmr", "text": "Ez çareseriya lezgîntir hildibijêrim, ji ber ku mişterî sibê tiştek dibîne." },
+                { "language": "pl", "text": "Wybrałbym szybsze rozwiązanie, bo klient jutro coś zobaczy." },
+                { "language": "ro", "text": "Aș alege soluția mai rapidă, pentru că mâine clientul vede ceva." },
+                { "language": "sq", "text": "Do të zgjidhja zgjidhjen më të shpejtë, sepse klienti nesër sheh diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is plausible but too narrow. It uses only speed and ignores risk, effort, and long-term cost.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is plausible but too narrow. It uses only speed and ignores risk, effort, and long-term cost." },
+                { "language": "fa", "text": "این پاسخ قابل‌تصور است، اما بیش از حد محدود است. فقط سرعت را معیار می‌گیرد و ریسک، تلاش و هزینه بلندمدت را نادیده می‌گیرد." },
+                { "language": "ar", "text": "هذا ممكن لكنه ضيق جداً. يستخدم السرعة فقط ويتجاهل الخطر والجهد والتكلفة طويلة المدى." },
+                { "language": "tr", "text": "Bu mümkün ama fazla dar. Yalnızca hızı kullanıyor; riski, çabayı ve uzun vadeli maliyeti görmezden geliyor." },
+                { "language": "ru", "text": "Это возможно, но слишком узко. Учитывается только скорость, а риск, усилия и долгосрочные затраты игнорируются." },
+                { "language": "ckb", "text": "ئەمە گونجاو دێتە بەرچاو، بەڵام زۆر سنووردارە. تەنها خێرایی بەکاردەهێنێت و مەترسی، هەوڵ و تێچووی درێژخایەن پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Ev gengaz e, lê pir teng e. Tenê lezê bikar tîne û xetere, hewldan û lêçûna demdirêj paşguh dike." },
+                { "language": "pl", "text": "To jest możliwe, ale zbyt wąskie. Bierze pod uwagę tylko szybkość i ignoruje ryzyko, nakład pracy oraz koszt długoterminowy." },
+                { "language": "ro", "text": "Este plauzibil, dar prea îngust. Folosește doar viteza și ignoră riscul, efortul și costul pe termen lung." },
+                { "language": "sq", "text": "Kjo është e mundshme, por shumë e ngushtë. Përdor vetëm shpejtësinë dhe injoron rrezikun, mundin dhe koston afatgjatë." }
+              ],
+              "explanationKey": "speed-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "balanced-fast-option",
+              "text": "Für die Übergangslösung spricht, dass wir den Kunden schnell stabilisieren und Zeit gewinnen. Der Nachteil ist, dass wir später Teile davon wahrscheinlich wieder ersetzen müssen.",
+              "translations": [
+                { "language": "en", "text": "The interim solution has the advantage that we can stabilize the customer quickly and gain time. The disadvantage is that we will probably have to replace parts of it later." },
+                { "language": "fa", "text": "مزیت راه‌حل موقت این است که می‌توانیم وضعیت مشتری را سریع پایدار کنیم و زمان بخریم. عیبش این است که احتمالاً بعداً باید بخش‌هایی از آن را دوباره جایگزین کنیم." },
+                { "language": "ar", "text": "ميزة الحل المؤقت أننا نستطيع تهدئة وضع العميل بسرعة وكسب الوقت. العيب هو أننا سنضطر غالباً إلى استبدال أجزاء منه لاحقاً." },
+                { "language": "tr", "text": "Geçici çözümün avantajı müşteriyi hızlıca stabilize edip zaman kazanmamız. Dezavantajı ise muhtemelen daha sonra bazı parçalarını yeniden değiştirmemiz gerekmesi." },
+                { "language": "ru", "text": "В пользу временного решения говорит то, что мы быстро стабилизируем ситуацию клиента и выиграем время. Минус в том, что позже нам, вероятно, придётся заменить его части." },
+                { "language": "ckb", "text": "سوودی چارەسەری کاتی ئەوەیە کە دەتوانین دۆخی کڕیار خێرا جێگیر بکەین و کات بەدەست بهێنین. لاوازییەکەی ئەوەیە کە دواتر لەوانەیە بەشێکی دوبارە بگۆڕین." },
+                { "language": "kmr", "text": "Avantaja çareseriya demkî ew e ku em dikarin mişterî zû aram bikin û dem bi dest bixin. Dezavantaja wê ew e ku em paşê belkî beşên wê dîsa biguherînin." },
+                { "language": "pl", "text": "Za rozwiązaniem przejściowym przemawia to, że szybko stabilizujemy klienta i zyskujemy czas. Wadą jest to, że później prawdopodobnie będziemy musieli wymienić jego części." },
+                { "language": "ro", "text": "Soluția temporară are avantajul că stabilizăm rapid clientul și câștigăm timp. Dezavantajul este că probabil va trebui să înlocuim ulterior părți din ea." },
+                { "language": "sq", "text": "Për zgjidhjen e përkohshme flet fakti që mund ta stabilizojmë shpejt klientin dhe të fitojmë kohë. Mangësia është se më vonë ndoshta duhet të zëvendësojmë pjesë të saj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives both advantage and disadvantage instead of selling the faster option one-sidedly.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives both advantage and disadvantage instead of selling the faster option one-sidedly." },
+                { "language": "fa", "text": "خوب است: این پاسخ هم مزیت و هم عیب را بیان می‌کند و راه‌حل سریع‌تر را یک‌طرفه نمی‌فروشد." },
+                { "language": "ar", "text": "جيد: هذا يذكر الميزة والعيب معاً بدلاً من الترويج للخيار الأسرع من جانب واحد." },
+                { "language": "tr", "text": "İyi: Bu yanıt hızlı seçeneği tek taraflı satmak yerine hem avantajı hem dezavantajı verir." },
+                { "language": "ru", "text": "Хорошо: ответ даёт и плюс, и минус, а не односторонне продаёт более быстрый вариант." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە هەم سوود و هەم لاوازی دەڵێت و هەڵبژاردەی خێراتر بە یەک‌لایەنی نافرۆشێت." },
+                { "language": "kmr", "text": "Baş e: Ev bersiv hem avantaj hem dezavantaj dide û vebijêrka lezgîntir yekalî nafiroşe." },
+                { "language": "pl", "text": "Dobrze: ta odpowiedź podaje zaletę i wadę, zamiast jednostronnie sprzedawać szybszą opcję." },
+                { "language": "ro", "text": "Bine: acest răspuns dă atât avantajul, cât și dezavantajul, în loc să vândă unilateral opțiunea mai rapidă." },
+                { "language": "sq", "text": "Mirë: kjo përgjigje jep edhe përparësinë edhe mangësinë, në vend që ta shesë njëanshëm opsionin më të shpejtë." }
+              ],
+              "explanationKey": "balanced-option"
+            },
+            {
+              "id": "too-positive",
+              "text": "Die Übergangslösung ist gut, weil sie schnell geht und der Kunde dann zufrieden ist.",
+              "translations": [
+                { "language": "en", "text": "The interim solution is good because it is quick and the customer will then be satisfied." },
+                { "language": "fa", "text": "راه‌حل موقت خوب است، چون سریع است و مشتری بعد از آن راضی می‌شود." },
+                { "language": "ar", "text": "الحل المؤقت جيد لأنه سريع وسيكون العميل راضياً بعد ذلك." },
+                { "language": "tr", "text": "Geçici çözüm iyi çünkü hızlıdır ve müşteri o zaman memnun olur." },
+                { "language": "ru", "text": "Временное решение хорошее, потому что оно быстрое, и клиент потом будет доволен." },
+                { "language": "ckb", "text": "چارەسەری کاتی باشە چونکە خێرایە و کڕیار پاشان ڕازی دەبێت." },
+                { "language": "kmr", "text": "Çareseriya demkî baş e ji ber ku lezgîn e û mişterî paşê razî dibe." },
+                { "language": "pl", "text": "Rozwiązanie przejściowe jest dobre, bo jest szybkie i klient będzie wtedy zadowolony." },
+                { "language": "ro", "text": "Soluția temporară este bună pentru că este rapidă și clientul va fi apoi mulțumit." },
+                { "language": "sq", "text": "Zgjidhja e përkohshme është e mirë sepse është e shpejtë dhe klienti pastaj do të jetë i kënaqur." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is understandable, but too optimistic. It does not mention the later rework risk.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too optimistic. It does not mention the later rework risk." },
+                { "language": "fa", "text": "این پاسخ قابل فهم است، اما بیش از حد خوش‌بینانه است. ریسک دوباره‌کاری بعدی را ذکر نمی‌کند." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه متفائل جداً. لا يذكر خطر إعادة العمل لاحقاً." },
+                { "language": "tr", "text": "Bu anlaşılır, ancak fazla iyimser. Daha sonraki yeniden çalışma riskinden bahsetmiyor." },
+                { "language": "ru", "text": "Это понятно, но слишком оптимистично. Не упоминается риск последующей переделки." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتنی هەیە، بەڵام زۆر گەشبینانەیە. مەترسیی کارکردنی دووبارەی دواتر باس ناکات." },
+                { "language": "kmr", "text": "Ev tê fêmkirin, lê pir geşbîn e. Xetera karê dubare ya paşê nabêje." },
+                { "language": "pl", "text": "To jest zrozumiałe, ale zbyt optymistyczne. Nie wspomina o późniejszym ryzyku przeróbek." },
+                { "language": "ro", "text": "Este de înțeles, dar prea optimist. Nu menționează riscul de refacere ulterioară." },
+                { "language": "sq", "text": "Kjo është e kuptueshme, por shumë optimiste. Nuk përmend rrezikun e ripunimit më vonë." }
+              ],
+              "explanationKey": "missing-rework-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "conditioned-recommendation",
+              "text": "Ich würde die Übergangslösung empfehlen, aber nur mit einer festen Ablöseplanung. So bekommt der Kunde schnell Entlastung, und wir verhindern, dass das Provisorium dauerhaft bleibt.",
+              "translations": [
+                { "language": "en", "text": "I would recommend the interim solution, but only with a fixed replacement plan. That way the customer gets quick relief, and we prevent the temporary solution from becoming permanent." },
+                { "language": "fa", "text": "راه‌حل موقت را پیشنهاد می‌کنم، اما فقط همراه با یک برنامه جایگزینی قطعی. این‌طوری مشتری سریع آسوده‌تر می‌شود و ما جلوگیری می‌کنیم که راه‌حل موقت دائمی شود." },
+                { "language": "ar", "text": "أوصي بالحل المؤقت، لكن فقط مع خطة استبدال ثابتة. بهذه الطريقة يحصل العميل على تخفيف سريع، ونمنع أن يصبح الحل المؤقت دائماً." },
+                { "language": "tr", "text": "Geçici çözümü önerirdim, ama yalnızca sabit bir değiştirme planıyla. Böylece müşteri hızlı rahatlar ve geçici çözümün kalıcı olmasını önleriz." },
+                { "language": "ru", "text": "Я бы рекомендовал временное решение, но только с фиксированным планом замены. Так клиент быстро получит облегчение, а мы не допустим, чтобы временное решение стало постоянным." },
+                { "language": "ckb", "text": "چارەسەری کاتی پێشنیار دەکەم، بەڵام تەنها لەگەڵ پلانی جێگۆڕکێیەکی دیاریکراو. بەم شێوەیە کڕیار خێرا ئاسوودەتر دەبێت و ڕێگری دەکەین لەوەی چارەسەری کاتی ببێتە هەمیشەیی." },
+                { "language": "kmr", "text": "Ez çareseriya demkî pêşniyar dikim, lê tenê bi planeke guherandinê ya sabît. Bi vî awayî mişterî zû sivik dibe û em pêşî lê digirin ku çareseriya demkî bibe mayînde." },
+                { "language": "pl", "text": "Rekomendowałbym rozwiązanie przejściowe, ale tylko ze stałym planem zastąpienia go. W ten sposób klient szybko odczuje ulgę, a my zapobiegniemy temu, by prowizorka została na stałe." },
+                { "language": "ro", "text": "Aș recomanda soluția temporară, dar numai cu un plan fix de înlocuire. Astfel clientul primește rapid o ușurare, iar noi prevenim ca provizoratul să rămână permanent." },
+                { "language": "sq", "text": "Do të rekomandoja zgjidhjen e përkohshme, por vetëm me një plan të qartë zëvendësimi. Kështu klienti lehtësohet shpejt dhe ne parandalojmë që zgjidhja e përkohshme të mbetet e përhershme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this recommendation is clear, but it also controls the main weakness of the chosen option.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this recommendation is clear, but it also controls the main weakness of the chosen option." },
+                { "language": "fa", "text": "خوب است: این توصیه روشن است، اما ضعف اصلی گزینه انتخاب‌شده را هم کنترل می‌کند." },
+                { "language": "ar", "text": "جيد: هذه التوصية واضحة، لكنها تضبط أيضاً نقطة الضعف الرئيسية في الخيار المختار." },
+                { "language": "tr", "text": "İyi: Bu öneri net, ancak seçilen seçeneğin ana zayıflığını da kontrol ediyor." },
+                { "language": "ru", "text": "Хорошо: рекомендация ясная, но она также контролирует главный недостаток выбранного варианта." },
+                { "language": "ckb", "text": "باشە: ئەم پێشنیارە ڕوونە، بەڵام لاوازی سەرەکی هەڵبژاردەکەش کۆنترۆڵ دەکات." },
+                { "language": "kmr", "text": "Baş e: Ev pêşniyar zelal e, lê qelsiya sereke ya vebijêrka hilbijartî jî kontrol dike." },
+                { "language": "pl", "text": "Dobrze: rekomendacja jest jasna, ale kontroluje też główną słabość wybranej opcji." },
+                { "language": "ro", "text": "Bine: recomandarea este clară, dar controlează și principala slăbiciune a opțiunii alese." },
+                { "language": "sq", "text": "Mirë: ky rekomandim është i qartë, por kontrollon edhe dobësinë kryesore të opsionit të zgjedhur." }
+              ],
+              "explanationKey": "conditioned-recommendation"
+            },
+            {
+              "id": "no-condition",
+              "text": "Ich würde die Übergangslösung nehmen und später schauen, ob wir noch etwas verbessern müssen.",
+              "translations": [
+                { "language": "en", "text": "I would take the interim solution and later see whether we still need to improve anything." },
+                { "language": "fa", "text": "راه‌حل موقت را انتخاب می‌کنم و بعداً می‌بینیم آیا هنوز باید چیزی را بهتر کنیم یا نه." },
+                { "language": "ar", "text": "سأختار الحل المؤقت ثم نرى لاحقاً ما إذا كان علينا تحسين شيء ما." },
+                { "language": "tr", "text": "Geçici çözümü alırdım ve sonra hâlâ bir şeyi iyileştirmemiz gerekip gerekmediğine bakardık." },
+                { "language": "ru", "text": "Я бы выбрал временное решение, а позже посмотрел, нужно ли нам ещё что-то улучшать." },
+                { "language": "ckb", "text": "چارەسەری کاتی هەڵدەبژێرم و دواتر دەبینین ئایا هێشتا دەبێت شتێک باشتر بکەین یان نا." },
+                { "language": "kmr", "text": "Ez çareseriya demkî hildibijêrim û paşê dibînin ka divê em tiştekî din baştir bikin yan na." },
+                { "language": "pl", "text": "Wybrałbym rozwiązanie przejściowe, a później zobaczylibyśmy, czy musimy jeszcze coś poprawić." },
+                { "language": "ro", "text": "Aș alege soluția temporară și mai târziu vedem dacă mai trebuie să îmbunătățim ceva." },
+                { "language": "sq", "text": "Do të zgjidhja zgjidhjen e përkohshme dhe më vonë do të shihnim nëse duhet të përmirësojmë ende diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "This is too open-ended. It chooses an option but does not prevent the temporary fix from becoming permanent.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is too open-ended. It chooses an option but does not prevent the temporary fix from becoming permanent." },
+                { "language": "fa", "text": "این پاسخ بیش از حد باز است. یک گزینه را انتخاب می‌کند، اما جلوگیری نمی‌کند که راه‌حل موقت دائمی شود." },
+                { "language": "ar", "text": "هذا مفتوح جداً. يختار خياراً لكنه لا يمنع الحل المؤقت من أن يصبح دائماً." },
+                { "language": "tr", "text": "Bu fazla açık uçlu. Bir seçenek seçiyor ama geçici çözümün kalıcı olmasını önlemiyor." },
+                { "language": "ru", "text": "Это слишком открыто. Вариант выбран, но нет защиты от того, что временное решение станет постоянным." },
+                { "language": "ckb", "text": "ئەمە زۆر کراوەیە. هەڵبژاردەیەک دیاری دەکات، بەڵام ڕێگری ناکات لەوەی چارەسەری کاتی ببێتە هەمیشەیی." },
+                { "language": "kmr", "text": "Ev pir vekirî ye. Vebijêrkekê hildibijêre, lê pêşî lê nagire ku çareseriya demkî bibe mayînde." },
+                { "language": "pl", "text": "To jest zbyt otwarte. Wybiera opcję, ale nie zapobiega temu, by tymczasowa poprawka stała się stała." },
+                { "language": "ro", "text": "Este prea deschis. Alege o opțiune, dar nu previne ca soluția temporară să devină permanentă." },
+                { "language": "sq", "text": "Kjo është shumë e hapur. Zgjedh një opsion, por nuk parandalon që zgjidhja e përkohshme të bëhet e përhershme." }
+              ],
+              "explanationKey": "missing-condition"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "clear-next-step",
+              "text": "Wir setzen morgen die Übergangslösung um, dokumentieren bis Freitag den Ablöseplan und entscheiden am Montag, wann die stabile Umsetzung startet.",
+              "translations": [
+                { "language": "en", "text": "Tomorrow we implement the interim solution, document the replacement plan by Friday, and decide on Monday when the stable implementation starts." },
+                { "language": "fa", "text": "فردا راه‌حل موقت را اجرا می‌کنیم، تا جمعه برنامه جایگزینی را مستند می‌کنیم و دوشنبه تصمیم می‌گیریم اجرای پایدار چه زمانی شروع شود." },
+                { "language": "ar", "text": "غداً ننفذ الحل المؤقت، ونوثق خطة الاستبدال حتى يوم الجمعة، ونقرر يوم الاثنين متى يبدأ التنفيذ المستقر." },
+                { "language": "tr", "text": "Yarın geçici çözümü uygularız, cuma gününe kadar değiştirme planını belgeleriz ve pazartesi sağlam uygulamanın ne zaman başlayacağına karar veririz." },
+                { "language": "ru", "text": "Завтра мы реализуем временное решение, до пятницы документируем план замены и в понедельник решаем, когда начнётся стабильная реализация." },
+                { "language": "ckb", "text": "سبەی چارەسەری کاتی جێبەجێ دەکەین، تا هەینی پلانی جێگۆڕکێ بەڵگە دەکەین و دووشەممە بڕیار دەدەین جێبەجێکردنی جێگیر کەی دەست پێ دەکات." },
+                { "language": "kmr", "text": "Sibê em çareseriya demkî bicîh tînin, heta Înê plana guherandinê belge dikin û roja Duşemê biryar didin ka bicihanîna aram kengî dest pê dike." },
+                { "language": "pl", "text": "Jutro wdrażamy rozwiązanie przejściowe, do piątku dokumentujemy plan zastąpienia, a w poniedziałek decydujemy, kiedy zaczyna się stabilne wdrożenie." },
+                { "language": "ro", "text": "Mâine implementăm soluția temporară, documentăm până vineri planul de înlocuire și decidem luni când începe implementarea stabilă." },
+                { "language": "sq", "text": "Nesër zbatojmë zgjidhjen e përkohshme, deri të premten dokumentojmë planin e zëvendësimit dhe të hënën vendosim kur fillon zbatimi i qëndrueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: the next step has action, deadline, and a decision point.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the next step has action, deadline, and a decision point." },
+                { "language": "fa", "text": "خوب است: قدم بعدی شامل اقدام، مهلت و نقطه تصمیم‌گیری است." },
+                { "language": "ar", "text": "جيد: الخطوة التالية تتضمن إجراءً وموعداً ونقطة قرار." },
+                { "language": "tr", "text": "İyi: Sonraki adımda eylem, son tarih ve karar noktası var." },
+                { "language": "ru", "text": "Хорошо: следующий шаг содержит действие, срок и точку принятия решения." },
+                { "language": "ckb", "text": "باشە: هەنگاوی داهاتوو کردار، مۆڵەت و خاڵی بڕیاردانی تێدایە." },
+                { "language": "kmr", "text": "Baş e: Di gava paşîn de çalakî, dem û xala biryardanê hene." },
+                { "language": "pl", "text": "Dobrze: następny krok ma działanie, termin i punkt decyzji." },
+                { "language": "ro", "text": "Bine: pasul următor are acțiune, termen și punct de decizie." },
+                { "language": "sq", "text": "Mirë: hapi i ardhshëm ka veprim, afat dhe pikë vendimi." }
+              ],
+              "explanationKey": "action-deadline-decision"
+            },
+            {
+              "id": "unclear-next-step",
+              "text": "Wir besprechen später noch einmal, welche Lösung am besten passt.",
+              "translations": [
+                { "language": "en", "text": "We will discuss again later which solution fits best." },
+                { "language": "fa", "text": "بعداً دوباره صحبت می‌کنیم که کدام راه‌حل بهتر مناسب است." },
+                { "language": "ar", "text": "سنناقش لاحقاً مرة أخرى أي حل يناسب أكثر." },
+                { "language": "tr", "text": "Daha sonra hangi çözümün en uygun olduğunu tekrar konuşuruz." },
+                { "language": "ru", "text": "Позже мы ещё раз обсудим, какое решение подходит лучше всего." },
+                { "language": "ckb", "text": "دواتر جارێکی تر گفتوگۆ دەکەین کام چارەسەر باشتر گونجاوە." },
+                { "language": "kmr", "text": "Em paşê careke din diaxivin ka kîjan çareserî herî baş tê." },
+                { "language": "pl", "text": "Później jeszcze raz omówimy, które rozwiązanie najlepiej pasuje." },
+                { "language": "ro", "text": "Vom discuta mai târziu din nou ce soluție se potrivește cel mai bine." },
+                { "language": "sq", "text": "Do të diskutojmë përsëri më vonë se cila zgjidhje përshtatet më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "This keeps the decision open. It does not say what happens next, by when, or who decides.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This keeps the decision open. It does not say what happens next, by when, or who decides." },
+                { "language": "fa", "text": "این پاسخ تصمیم را باز نگه می‌دارد. نمی‌گوید قدم بعدی چیست، تا چه زمانی انجام می‌شود یا چه کسی تصمیم می‌گیرد." },
+                { "language": "ar", "text": "هذا يبقي القرار مفتوحاً. لا يقول ما الذي سيحدث بعد ذلك، ولا بحلول متى، ولا من يقرر." },
+                { "language": "tr", "text": "Bu kararı açık bırakır. Sonra ne olacağını, ne zamana kadar yapılacağını veya kimin karar vereceğini söylemez." },
+                { "language": "ru", "text": "Это оставляет решение открытым. Не сказано, что будет дальше, к какому сроку и кто решает." },
+                { "language": "ckb", "text": "ئەمە بڕیارەکە کراوە دەهێڵێتەوە. ناڵێت دواتر چی ڕوودەدات، تا کەی، یان کێ بڕیار دەدات." },
+                { "language": "kmr", "text": "Ev biryarê vekirî dihêle. Nabêje paşê çi dibe, heta kengî, an kî biryar dide." },
+                { "language": "pl", "text": "To zostawia decyzję otwartą. Nie mówi, co dzieje się dalej, do kiedy ani kto decyduje." },
+                { "language": "ro", "text": "Asta lasă decizia deschisă. Nu spune ce se întâmplă mai departe, până când sau cine decide." },
+                { "language": "sq", "text": "Kjo e lë vendimin të hapur. Nuk thotë çfarë ndodh më pas, deri kur ose kush vendos." }
+              ],
+              "explanationKey": "decision-left-open"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "model-answer",
+          "text": "A B2 comparison should name criteria before recommending an option. Otherwise the answer can sound like a personal preference.",
+          "translations": [
+            { "language": "en", "text": "A B2 comparison should name criteria before recommending an option. Otherwise the answer can sound like a personal preference." },
+            { "language": "fa", "text": "مقایسه سطح B2 باید قبل از توصیه یک گزینه، معیارها را نام ببرد. وگرنه پاسخ ممکن است شبیه ترجیح شخصی به نظر برسد." },
+            { "language": "ar", "text": "ينبغي لمقارنة في مستوى B2 أن تذكر المعايير قبل التوصية بخيار. وإلا قد يبدو الجواب كتفضيل شخصي." },
+            { "language": "tr", "text": "B2 düzeyinde bir karşılaştırma, seçenek önermeden önce ölçütleri belirtmelidir. Aksi hâlde yanıt kişisel tercih gibi duyulabilir." },
+            { "language": "ru", "text": "Сравнение уровня B2 должно назвать критерии до рекомендации варианта. Иначе ответ может звучать как личное предпочтение." },
+            { "language": "ckb", "text": "بەراوردی ئاستی B2 دەبێت پێش پێشنیارکردنی هەڵبژاردە، پێوەرەکان ناو ببات. ئەگەر نا، وەڵامەکە لەوانەیە وەک پەسەندی کەسی ببیسترێت." },
+            { "language": "kmr", "text": "Berhevkirina asta B2 divê berî pêşniyarkirina vebijêrkê pîvanan nav bike. Wekî din bersiv dikare wek tercihê kesane bê bihîstin." },
+            { "language": "pl", "text": "Porównanie na poziomie B2 powinno nazwać kryteria przed rekomendacją opcji. W przeciwnym razie odpowiedź może brzmieć jak osobista preferencja." },
+            { "language": "ro", "text": "O comparație B2 ar trebui să numească criteriile înainte de a recomanda o opțiune. Altfel, răspunsul poate suna ca o preferință personală." },
+            { "language": "sq", "text": "Një krahasim B2 duhet të përmendë kriteret para se të rekomandojë një opsion. Përndryshe përgjigjja mund të tingëllojë si preferencë personale." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "common-mistake",
+          "text": "Do not present one solution as perfect. Strong workplace language shows the cost of each option.",
+          "translations": [
+            { "language": "en", "text": "Do not present one solution as perfect. Strong workplace language shows the cost of each option." },
+            { "language": "fa", "text": "هیچ راه‌حلی را کامل و بی‌نقص نشان نده. زبان کاری قوی هزینه هر گزینه را هم نشان می‌دهد." },
+            { "language": "ar", "text": "لا تعرض حلاً واحداً كأنه مثالي. لغة العمل القوية تظهر تكلفة كل خيار أيضاً." },
+            { "language": "tr", "text": "Bir çözümü kusursuz gibi sunma. Güçlü iş dili her seçeneğin maliyetini de gösterir." },
+            { "language": "ru", "text": "Не представляй одно решение как идеальное. Сильная рабочая речь показывает и цену каждого варианта." },
+            { "language": "ckb", "text": "هیچ چارەسەرێک وەک تەواو و بێ‌کەم‌وکورتی پێشکەش مەکە. زمانی کاری بەهێز تێچووی هەر هەڵبژاردەیەکیش نیشان دەدات." },
+            { "language": "kmr", "text": "Tu çareseriyekê wek temam nîşan nede. Zimanê karî yê xurt lêçûna her vebijêrkê jî nîşan dide." },
+            { "language": "pl", "text": "Nie przedstawiaj jednego rozwiązania jako idealnego. Mocny język zawodowy pokazuje także koszt każdej opcji." },
+            { "language": "ro", "text": "Nu prezenta o soluție ca perfectă. Limbajul profesional puternic arată și costul fiecărei opțiuni." },
+            { "language": "sq", "text": "Mos e paraqit një zgjidhje si të përsosur. Gjuha e fortë e punës tregon edhe koston e çdo opsioni." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "politeness-note",
+          "text": "A recommendation can include a condition. That sounds realistic and protects the team from hidden follow-up work.",
+          "translations": [
+            { "language": "en", "text": "A recommendation can include a condition. That sounds realistic and protects the team from hidden follow-up work." },
+            { "language": "fa", "text": "یک توصیه می‌تواند شرط داشته باشد. این واقع‌بینانه به نظر می‌رسد و تیم را از کارهای پنهان بعدی محافظت می‌کند." },
+            { "language": "ar", "text": "يمكن أن تتضمن التوصية شرطاً. هذا يبدو واقعياً ويحمي الفريق من عمل لاحق مخفي." },
+            { "language": "tr", "text": "Bir öneri koşul içerebilir. Bu gerçekçi duyulur ve ekibi gizli takip işlerinden korur." },
+            { "language": "ru", "text": "Рекомендация может включать условие. Это звучит реалистично и защищает команду от скрытой последующей работы." },
+            { "language": "ckb", "text": "پێشنیار دەتوانێت مەرجی هەبێت. ئەمە واقیعی دەبیسترێت و تیم لە کاری دواتری شاراوە دەپارێزێت." },
+            { "language": "kmr", "text": "Pêşniyar dikare şertê hebe. Ev rastîn tê bihîstin û tîmê ji karê şopandinê yê veşartî diparêze." },
+            { "language": "pl", "text": "Rekomendacja może zawierać warunek. Brzmi to realistycznie i chroni zespół przed ukrytą późniejszą pracą." },
+            { "language": "ro", "text": "O recomandare poate include o condiție. Sună realist și protejează echipa de muncă ulterioară ascunsă." },
+            { "language": "sq", "text": "Një rekomandim mund të përfshijë një kusht. Kjo tingëllon realiste dhe e mbron ekipin nga puna e fshehur pasuese." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "process-note",
+          "text": "Close comparisons with action, deadline, and decision point. Otherwise the discussion remains open.",
+          "translations": [
+            { "language": "en", "text": "Close comparisons with action, deadline, and decision point. Otherwise the discussion remains open." },
+            { "language": "fa", "text": "مقایسه‌ها را با اقدام، مهلت و نقطه تصمیم‌گیری ببند. در غیر این صورت بحث باز می‌ماند." },
+            { "language": "ar", "text": "اختم المقارنات بإجراء وموعد ونقطة قرار. وإلا يبقى النقاش مفتوحاً." },
+            { "language": "tr", "text": "Karşılaştırmaları eylem, son tarih ve karar noktasıyla kapat. Aksi hâlde tartışma açık kalır." },
+            { "language": "ru", "text": "Завершай сравнения действием, сроком и точкой решения. Иначе обсуждение остаётся открытым." },
+            { "language": "ckb", "text": "بەراوردەکان بە کردار، مۆڵەت و خاڵی بڕیاردان کۆتایی پێ بهێنە. ئەگەر نا، گفتوگۆکە کراوە دەمێنێتەوە." },
+            { "language": "kmr", "text": "Berhevkirinan bi çalakî, dem û xala biryardanê biqedîne. Wekî din gotûbêj vekirî dimîne." },
+            { "language": "pl", "text": "Zamykaj porównania działaniem, terminem i punktem decyzji. W przeciwnym razie dyskusja pozostaje otwarta." },
+            { "language": "ro", "text": "Încheie comparațiile cu acțiune, termen și punct de decizie. Altfel discuția rămâne deschisă." },
+            { "language": "sq", "text": "Mbylli krahasimet me veprim, afat dhe pikë vendimi. Përndryshe diskutimi mbetet i hapur." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

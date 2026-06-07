@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-28-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 28 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 28",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-fristversaeumnis-differenziert-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Eine Fristversäumnis differenziert begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a missed deadline in a nuanced way" },
+        { "language": "fa", "text": "توضیح دقیق و مسئولانه درباره از دست رفتن مهلت" },
+        { "language": "ar", "text": "تفسير فوات مهلة بشكل متمايز" },
+        { "language": "tr", "text": "Kaçırılan bir süreyi ayrıntılı biçimde gerekçelendirmek" },
+        { "language": "ru", "text": "Дифференцированное объяснение пропущенного срока" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی جیاواز و وردی لەدەستدانی ماوە" },
+        { "language": "kmr", "text": "Sedemkirina wendabûna muhletê bi awayekî cudakirî" },
+        { "language": "pl", "text": "Zróżnicowane uzasadnienie przekroczenia terminu" },
+        { "language": "ro", "text": "Justificarea nuanțată a depășirii unui termen" },
+        { "language": "sq", "text": "Arsyetimi i nuancuar i humbjes së afatit" }
+      ],
+      "description": "Sie haben eine behördliche Frist knapp verpasst und erklären den Grund. Sie übernehmen Verantwortung, legen Nachweise vor, unterscheiden Erklärung von Entschuldigung und schlagen eine realistische Korrektur vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You narrowly missed an official deadline and explain the reason. You take responsibility, present supporting documents, distinguish explanation from excuse, and propose a realistic correction." },
+        { "language": "fa", "text": "شما یک مهلت اداری را کمی از دست داده‌اید و دلیل را توضیح می‌دهید. مسئولیت را می‌پذیرید، مدارک ارائه می‌کنید، توضیح را از بهانه جدا می‌کنید و اصلاحی واقع‌بینانه پیشنهاد می‌دهید." },
+        { "language": "ar", "text": "فاتتك مهلة إدارية بفارق بسيط وتشرح السبب. تتحمل المسؤولية، وتقدم مستندات داعمة، وتميز بين التفسير والعذر، وتقترح تصحيحاً واقعياً." },
+        { "language": "tr", "text": "Resmi bir süreyi az farkla kaçırdınız ve nedeni açıklıyorsunuz. Sorumluluğu üstlenir, destekleyici belgeler sunar, açıklamayı bahaneden ayırır ve gerçekçi bir düzeltme önerirsiniz." },
+        { "language": "ru", "text": "Вы немного пропустили административный срок и объясняете причину. Вы берёте ответственность, предъявляете подтверждения, отличаете объяснение от оправдания и предлагаете реалистичное исправление." },
+        { "language": "ckb", "text": "تۆ ماوەیەکی فەرمانگەییت بە کەمێک لەدەست داوە و هۆکارەکە ڕوون دەکەیتەوە. بەرپرسیاری وەردەگریت، بەڵگە پێشکەش دەکەیت، ڕوونکردنەوە لە پاساو جیا دەکەیتەوە و ڕاستکردنەوەیەکی واقیعی پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "We muhleteke îdarî bi kêmanî ji dest daye û sedemê rave dikin. Hûn berpirsiyariyê digirin, belgeyên piştgir pêşkêş dikin, ravekirinê ji behaneyê cuda dikin û rastkirineke rast pêşniyar dikin." },
+        { "language": "pl", "text": "Nieznacznie przekroczył Pan termin urzędowy i wyjaśnia Pan powód. Bierze Pan odpowiedzialność, przedstawia dokumenty, odróżnia wyjaśnienie od wymówki i proponuje realistyczną korektę." },
+        { "language": "ro", "text": "Ați ratat la limită un termen administrativ și explicați motivul. Vă asumați responsabilitatea, prezentați dovezi, distingeți explicația de scuză și propuneți o corectare realistă." },
+        { "language": "sq", "text": "Keni humbur për pak një afat administrativ dhe shpjegoni arsyen. Merrni përgjegjësi, paraqisni prova, dalloni shpjegimin nga justifikimi dhe propozoni një korrigjim realist." }
+      ],
+      "learnerGoal": "Eine versäumte Frist verantwortungsvoll erklären: Fehler anerkennen, Ursache belegen, Folgen begrenzen und eine konkrete Nachreichung anbieten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a missed deadline responsibly: acknowledge the mistake, support the cause, limit the consequences, and offer a concrete late submission." },
+        { "language": "fa", "text": "از دست رفتن مهلت را مسئولانه توضیح دهید: خطا را بپذیرید، دلیل را با مدرک نشان دهید، پیامد را محدود کنید و ارسال تکمیلی مشخص پیشنهاد دهید." },
+        { "language": "ar", "text": "اشرح فوات المهلة بمسؤولية: اعترف بالخطأ، وادعم السبب بدليل، وحدد العواقب، واعرض استكمالاً محدداً." },
+        { "language": "tr", "text": "Kaçırılan süreyi sorumlu biçimde açıklayın: hatayı kabul edin, nedeni belgeyle destekleyin, sonuçları sınırlayın ve somut bir geç teslim önerin." },
+        { "language": "ru", "text": "Ответственно объяснить пропущенный срок: признать ошибку, подтвердить причину, ограничить последствия и предложить конкретную досылку." },
+        { "language": "ckb", "text": "لەدەستدانی ماوە بە بەرپرسیاری ڕوون بکەوە: هەڵەکە وەربگرە، هۆکارەکە بە بەڵگە پشتگیری بکە، ئاکامەکان سنووردار بکە و پێشکەشکردنی دواتری دیاریکراو پێشنیار بکە." },
+        { "language": "kmr", "text": "Wendabûna muhletê bi berpirsiyariyê rave bikin: xeletiyê qebûl bikin, sedemê bi belge piştgirî bikin, encaman sînorkirin û şandina dereng a şênber pêşniyar bikin." },
+        { "language": "pl", "text": "Odpowiedzialnie wyjaśnić przekroczenie terminu: uznać błąd, udokumentować przyczynę, ograniczyć skutki i zaproponować konkretne dosłanie." },
+        { "language": "ro", "text": "Explicați responsabil ratarea termenului: recunoașteți eroarea, susțineți cauza cu dovezi, limitați consecințele și oferiți o completare concretă." },
+        { "language": "sq", "text": "Shpjegoni me përgjegjësi humbjen e afatit: pranoni gabimin, mbështetni shkakun me prova, kufizoni pasojat dhe ofroni dorëzim të vonuar konkret." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "isPublished": true,
+      "sortOrder": 28,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller/in",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌کننده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikues" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeitung",
+          "translations": [
+            { "language": "en", "text": "Caseworker" },
+            { "language": "fa", "text": "کارمند پرونده" },
+            { "language": "ar", "text": "الموظف المسؤول" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karmendê dozê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționar responsabil" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie haben die Frist für die Nachreichung um zwei Tage überschritten. Können Sie erklären, wie es dazu gekommen ist?",
+          "translations": [
+            { "language": "en", "text": "You exceeded the deadline for late submission by two days. Can you explain how this happened?" },
+            { "language": "fa", "text": "شما مهلت ارسال تکمیلی را دو روز رد کرده‌اید. می‌توانید توضیح دهید چطور این اتفاق افتاد؟" },
+            { "language": "ar", "text": "لقد تجاوزت مهلة الاستكمال بيومين. هل يمكنك أن تشرح كيف حدث ذلك؟" },
+            { "language": "tr", "text": "Ek belge sunma süresini iki gün aştınız. Bunun nasıl olduğunu açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Вы превысили срок досылки документов на два дня. Можете объяснить, как это произошло?" },
+            { "language": "ckb", "text": "تۆ ماوەی پێشکەشکردنی زیادەت بە دوو ڕۆژ تێپەڕاندووە. دەتوانیت ڕوون بکەیتەوە چۆن ئەمە ڕوویدا؟" },
+            { "language": "kmr", "text": "We muhleta şandina zêde bi du rojan derbas kiriye. Hûn dikarin rave bikin ev çawa qewimî?" },
+            { "language": "pl", "text": "Przekroczył Pan termin dosłania dokumentów o dwa dni. Czy może Pan wyjaśnić, jak do tego doszło?" },
+            { "language": "ro", "text": "Ați depășit termenul pentru completare cu două zile. Puteți explica cum s-a întâmplat?" },
+            { "language": "sq", "text": "E keni kaluar afatin për dorëzimin shtesë me dy ditë. A mund të shpjegoni si ndodhi kjo?" }
+          ],
+          "function": "deadline-question",
+          "toneNote": "formal, prüfend",
+          "expectedLearnerAction": "Fristversäumnis anerkennen und geordnet erklären"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja. Zunächst möchte ich ausdrücklich anerkennen, dass die Frist überschritten wurde und dass die Verantwortung bei mir liegt. Der Grund war eine kurzfristige stationäre Behandlung vom 10. bis 12. Juni. Ich habe die Unterlage am 13. Juni nachgereicht und lege die Entlassungsbescheinigung sowie die elektronische Eingangsbestätigung vor.",
+          "translations": [
+            { "language": "en", "text": "Yes. First, I would like to explicitly acknowledge that the deadline was exceeded and that the responsibility lies with me. The reason was a short-notice inpatient treatment from June 10 to 12. I submitted the document on June 13 and am presenting the discharge certificate and the electronic confirmation of receipt." },
+            { "language": "fa", "text": "بله. ابتدا می‌خواهم صریحاً بپذیرم که مهلت رد شده و مسئولیت با من است. دلیل، بستری کوتاه‌مدت و ناگهانی از ۱۰ تا ۱۲ ژوئن بود. مدرک را در ۱۳ ژوئن ارسال تکمیلی کردم و گواهی ترخیص و تأیید دریافت الکترونیکی را ارائه می‌کنم." },
+            { "language": "ar", "text": "نعم. أولاً أود أن أعترف صراحة بأن المهلة تم تجاوزها وأن المسؤولية تقع علي. كان السبب علاجاً قصيراً في المستشفى من 10 إلى 12 يونيو. قدمت المستند في 13 يونيو وأعرض شهادة الخروج وتأكيد الاستلام الإلكتروني." },
+            { "language": "tr", "text": "Evet. Öncelikle sürenin aşıldığını ve sorumluluğun bende olduğunu açıkça kabul etmek istiyorum. Neden, 10-12 Haziran arasında kısa süreli ve ani bir yatıştı. Belgeyi 13 Haziran'da sundum ve taburcu belgesini ile elektronik alındı onayını sunuyorum." },
+            { "language": "ru", "text": "Да. Прежде всего я хочу прямо признать, что срок был превышен и ответственность лежит на мне. Причиной было краткосрочное стационарное лечение с 10 по 12 июня. Я дослал документ 13 июня и предъявляю выписку, а также электронное подтверждение получения." },
+            { "language": "ckb", "text": "بەڵێ. سەرەتا دەمەوێت بە ڕوونی دان بنێم کە ماوەکە تێپەڕاوە و بەرپرسیاری لەسەر منە. هۆکارەکە چارەسەری نەخۆشخانەیی کورت و ناگهانی بوو لە ١٠ تا ١٢ی حوزەیران. بەڵگەکەم لە ١٣ی حوزەیران پێشکەشکردەوە و گواهی دەربوون و پشتڕاستکردنەوەی ئەلیکترۆنی وەرگرتن پێشکەش دەکەم." },
+            { "language": "kmr", "text": "Erê. Pêşî ez dixwazim bi zelalî qebûl bikim ku muhlet derbas bûye û berpirsiyarî li ser min e. Sedem dermankirina nexweşxaneyê ya kurt û ji nişka ve bû ji 10 heta 12ê Hezîranê. Min belge di 13ê Hezîranê de şand û belgeya derketinê û piştrastkirina elektronîk a wergirtinê pêşkêş dikim." },
+            { "language": "pl", "text": "Tak. Najpierw chcę wyraźnie przyznać, że termin został przekroczony i że odpowiedzialność leży po mojej stronie. Powodem było krótkie leczenie szpitalne w nagłym trybie od 10 do 12 czerwca. Dosłałem dokument 13 czerwca i przedstawiam zaświadczenie o wypisie oraz elektroniczne potwierdzenie wpływu." },
+            { "language": "ro", "text": "Da. Mai întâi vreau să recunosc explicit că termenul a fost depășit și că responsabilitatea îmi aparține. Motivul a fost o internare scurtă, apărută pe termen scurt, între 10 și 12 iunie. Am depus documentul pe 13 iunie și prezint certificatul de externare și confirmarea electronică de primire." },
+            { "language": "sq", "text": "Po. Së pari dua të pranoj qartë se afati u tejkalua dhe se përgjegjësia është e imja. Arsyeja ishte një trajtim i shkurtër spitalor nga 10 deri më 12 qershor. Dokumentin e dorëzova më 13 qershor dhe paraqes vërtetimin e daljes dhe konfirmimin elektronik të pranimit." }
+          ],
+          "function": "responsible-explanation",
+          "toneNote": "verantwortlich, nicht entschuldigend",
+          "expectedLearnerAction": "Fehler anerkennen, Ursache belegen und Nachreichung nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Sie sagen also, die Frist wurde nicht ignoriert, sondern die Unterlage konnte wegen der Behandlung nicht rechtzeitig hochgeladen werden?",
+          "translations": [
+            { "language": "en", "text": "So you are saying the deadline was not ignored, but the document could not be uploaded on time because of the treatment?" },
+            { "language": "fa", "text": "پس می‌گویید مهلت نادیده گرفته نشده، بلکه به دلیل درمان امکان بارگذاری به‌موقع مدرک وجود نداشته است؟" },
+            { "language": "ar", "text": "إذن تقول إن المهلة لم تُتجاهل، بل لم يكن ممكناً رفع المستند في الوقت بسبب العلاج؟" },
+            { "language": "tr", "text": "Yani sürenin görmezden gelinmediğini, belgenin tedavi nedeniyle zamanında yüklenemediğini söylüyorsunuz?" },
+            { "language": "ru", "text": "То есть вы говорите, что срок не был проигнорирован, а документ нельзя было загрузить вовремя из-за лечения?" },
+            { "language": "ckb", "text": "واتە دەڵێیت ماوەکە پشتگوێ نەخراوە، بەڵکو بە هۆی چارەسەرەکە نەکراوە بەڵگەکە لە کاتی خۆیدا باربکرێت؟" },
+            { "language": "kmr", "text": "Yanî hûn dibêjin muhlet nehat piştguhkirin, lê belge ji ber dermankirinê di demê xwe de nehat barkirin?" },
+            { "language": "pl", "text": "Czyli mówi Pan, że termin nie został zignorowany, tylko dokument nie mógł zostać wgrany na czas z powodu leczenia?" },
+            { "language": "ro", "text": "Deci spuneți că termenul nu a fost ignorat, ci documentul nu a putut fi încărcat la timp din cauza tratamentului?" },
+            { "language": "sq", "text": "Pra thoni se afati nuk u injorua, por dokumenti nuk mund të ngarkohej në kohë për shkak të trajtimit?" }
+          ],
+          "function": "reason-clarification",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Erklärung präzisieren und nicht übertreiben"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Genau. Ich möchte die Fristüberschreitung nicht verharmlosen. Wichtig ist mir nur, dass sie sehr kurz war, unmittelbar mit der Behandlung zusammenhing und dass die Nachreichung am ersten Werktag danach erfolgt ist.",
+          "translations": [
+            { "language": "en", "text": "Exactly. I do not want to downplay the missed deadline. What is important to me is only that it was very short, directly connected to the treatment, and that the late submission was made on the first working day afterward." },
+            { "language": "fa", "text": "دقیقاً. نمی‌خواهم عبور از مهلت را کوچک جلوه بدهم. فقط برایم مهم است که تأخیر بسیار کوتاه بود، مستقیم به درمان مربوط بود و ارسال تکمیلی در اولین روز کاری بعد از آن انجام شد." },
+            { "language": "ar", "text": "بالضبط. لا أريد التقليل من تجاوز المهلة. المهم بالنسبة لي فقط أنه كان قصيراً جداً، ومرتبطاً مباشرة بالعلاج، وأن الاستكمال تم في أول يوم عمل بعد ذلك." },
+            { "language": "tr", "text": "Aynen. Süre aşımını küçümsemek istemiyorum. Benim için önemli olan yalnızca bunun çok kısa olması, doğrudan tedaviyle bağlantılı olması ve ek teslimin sonraki ilk iş gününde yapılmış olmasıdır." },
+            { "language": "ru", "text": "Именно. Я не хочу преуменьшать превышение срока. Для меня важно лишь, что оно было очень коротким, напрямую связано с лечением, и досылка была сделана в первый рабочий день после этого." },
+            { "language": "ckb", "text": "بە وردی. نامەوێت تێپەڕاندنی ماوەکە بچووک بکەمەوە. تەنها گرنگە بۆم کە زۆر کورت بوو، ڕاستەوخۆ پەیوەندیدار بوو بە چارەسەرەکە و پێشکەشکردنی دواتر لە یەکەم ڕۆژی کاری پاش ئەوە کرا." },
+            { "language": "kmr", "text": "Rast e. Ez naxwazim derbasbûna muhletê biçûk nîşan bidim. Tenê girîng e ku ew pir kurt bû, rasterast bi dermankirinê ve girêdayî bû û şandina dereng di roja kar a yekem a piştî wê de hate kirin." },
+            { "language": "pl", "text": "Dokładnie. Nie chcę bagatelizować przekroczenia terminu. Ważne jest dla mnie tylko to, że było bardzo krótkie, bezpośrednio związane z leczeniem i że dosłanie nastąpiło w pierwszy dzień roboczy po nim." },
+            { "language": "ro", "text": "Exact. Nu vreau să minimalizez depășirea termenului. Important pentru mine este doar că a fost foarte scurtă, a avut legătură directă cu tratamentul și completarea a fost făcută în prima zi lucrătoare după aceea." },
+            { "language": "sq", "text": "Saktësisht. Nuk dua ta minimizoj tejkalimin e afatit. Për mua është e rëndësishme vetëm që ishte shumë i shkurtër, lidhej drejtpërdrejt me trajtimin dhe dorëzimi shtesë u bë në ditën e parë të punës pas tij." }
+          ],
+          "function": "nuanced-cause",
+          "toneNote": "differenziert, glaubwürdig",
+          "expectedLearnerAction": "Proportionalität erklären ohne Schuld zu leugnen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Welche Unterlage war betroffen, und ist sie inzwischen vollständig eingegangen?",
+          "translations": [
+            { "language": "en", "text": "Which document was affected, and has it now been received in full?" },
+            { "language": "fa", "text": "کدام مدرک مربوط بود و آیا اکنون به‌طور کامل دریافت شده است؟" },
+            { "language": "ar", "text": "أي مستند كان المقصود، وهل وصل الآن كاملاً؟" },
+            { "language": "tr", "text": "Hangi belge söz konusuydu ve şimdi eksiksiz olarak ulaştı mı?" },
+            { "language": "ru", "text": "О каком документе шла речь, и был ли он теперь получен полностью?" },
+            { "language": "ckb", "text": "کام بەڵگە پەیوەندیدار بوو، و ئایا ئێستا بە تەواوی گەیشتووە؟" },
+            { "language": "kmr", "text": "Kîjan belge têkildar bû, û ew niha bi tevahî hatiye wergirtin?" },
+            { "language": "pl", "text": "Którego dokumentu to dotyczyło i czy został już w pełni przyjęty?" },
+            { "language": "ro", "text": "Ce document era vizat și a fost primit acum complet?" },
+            { "language": "sq", "text": "Cili dokument ishte i përfshirë dhe a është pranuar tani plotësisht?" }
+          ],
+          "function": "document-status-request",
+          "toneNote": "sachlich",
+          "expectedLearnerAction": "Betroffene Unterlage und aktuellen Status nennen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Betroffen war die Arbeitgeberbestätigung zur aktuellen Beschäftigung. Sie wurde am 13. Juni um 9:42 Uhr hochgeladen; die Eingangsbestätigung trägt die Nummer EG-7842. Ich habe außerdem eine Kopie ausgedruckt dabei, falls die Datei im System noch nicht zugeordnet ist.",
+          "translations": [
+            { "language": "en", "text": "The affected document was the employer confirmation of current employment. It was uploaded on June 13 at 9:42; the receipt confirmation has the number EG-7842. I also have a printed copy with me in case the file has not yet been assigned in the system." },
+            { "language": "fa", "text": "مدرک مربوط، تأییدیه کارفرما درباره اشتغال فعلی بود. در ۱۳ ژوئن ساعت ۹:۴۲ بارگذاری شد؛ تأیید دریافت شماره EG-7842 دارد. علاوه بر آن یک نسخه چاپی هم همراه دارم، اگر فایل هنوز در سیستم وصل نشده باشد." },
+            { "language": "ar", "text": "المستند المعني هو تأكيد صاحب العمل بشأن العمل الحالي. تم رفعه في 13 يونيو الساعة 9:42؛ ويحمل تأكيد الاستلام الرقم EG-7842. ولدي أيضاً نسخة مطبوعة في حال لم تكن الملف قد رُبط في النظام بعد." },
+            { "language": "tr", "text": "İlgili belge mevcut çalışmaya dair işveren onayıydı. 13 Haziran saat 9:42'de yüklendi; alındı onayı EG-7842 numarasını taşıyor. Dosya sistemde henüz atanmadıysa diye yanımda basılı bir kopya da var." },
+            { "language": "ru", "text": "Затронутым документом было подтверждение работодателя о текущей занятости. Оно было загружено 13 июня в 9:42; подтверждение получения имеет номер EG-7842. Кроме того, у меня есть распечатанная копия на случай, если файл ещё не привязан в системе." },
+            { "language": "ckb", "text": "بەڵگەی پەیوەندیدار پشتڕاستکردنەوەی کارخاوەن بوو سەبارەت بە کاری ئێستا. لە ١٣ی حوزەیران کاتژمێر ٩:٤٢ بارکرا؛ پشتڕاستکردنەوەی وەرگرتن ژمارەی EG-7842 هەیە. هەروەها کۆپییەکی چاپکراوم لەگەڵدایە ئەگەر فایلەکە هێشتا لە سیستەمدا نەبەسترابێت." },
+            { "language": "kmr", "text": "Belgeya têkildar piştrastkirina kardêr li ser karê niha bû. Ew di 13ê Hezîranê de saet 9:42 hate barkirin; piştrastkirina wergirtinê jimareya EG-7842 heye. Her wiha kopiyeke çapkirî li cem min heye heke pel hîn di pergalê de nehatibe girêdan." },
+            { "language": "pl", "text": "Chodziło o potwierdzenie pracodawcy dotyczące aktualnego zatrudnienia. Zostało wgrane 13 czerwca o 9:42; potwierdzenie wpływu ma numer EG-7842. Mam też przy sobie kopię papierową, gdyby plik nie był jeszcze przypisany w systemie." },
+            { "language": "ro", "text": "Documentul vizat era confirmarea angajatorului privind ocuparea actuală. A fost încărcat pe 13 iunie la 9:42; confirmarea de primire are numărul EG-7842. Am și o copie tipărită la mine, în cazul în care fișierul nu este încă atribuit în sistem." },
+            { "language": "sq", "text": "Dokumenti i përfshirë ishte konfirmimi i punëdhënësit për punësimin aktual. U ngarkua më 13 qershor në orën 9:42; konfirmimi i pranimit ka numrin EG-7842. Kam edhe një kopje të printuar me vete, nëse skedari ende nuk është lidhur në sistem." }
+          ],
+          "function": "document-status-answer",
+          "toneNote": "präzise, lösungsorientiert",
+          "expectedLearnerAction": "Dokument, Zeitpunkt, Bestätigungsnummer und Ersatznachweis nennen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Eine Frist ist grundsätzlich verbindlich. Was genau erwarten Sie jetzt von der Behörde?",
+          "translations": [
+            { "language": "en", "text": "A deadline is generally binding. What exactly do you now expect from the public office?" },
+            { "language": "fa", "text": "مهلت اصولاً الزام‌آور است. اکنون دقیقاً چه انتظاری از اداره دارید؟" },
+            { "language": "ar", "text": "المهلة ملزمة من حيث المبدأ. ماذا تتوقع الآن تحديداً من الجهة الإدارية؟" },
+            { "language": "tr", "text": "Bir süre kural olarak bağlayıcıdır. Şimdi resmi kurumdan tam olarak ne bekliyorsunuz?" },
+            { "language": "ru", "text": "Срок в принципе является обязательным. Чего именно вы сейчас ожидаете от ведомства?" },
+            { "language": "ckb", "text": "ماوە بە بنەڕەت پابەندکەرە. ئێستا بە وردی چ چاوەڕوانییەکت لە فەرمانگە هەیە؟" },
+            { "language": "kmr", "text": "Muhlet bi bingehîn girêdayî ye. Niha hûn bi rastî çi ji saziyê hêvî dikin?" },
+            { "language": "pl", "text": "Termin jest co do zasady wiążący. Czego dokładnie oczekuje Pan teraz od urzędu?" },
+            { "language": "ro", "text": "Un termen este în principiu obligatoriu. Ce așteptați concret acum de la autoritate?" },
+            { "language": "sq", "text": "Afati në parim është detyrues. Çfarë prisni konkretisht tani nga zyra?" }
+          ],
+          "function": "expectation-request",
+          "toneNote": "begrenzend",
+          "expectedLearnerAction": "Realistische Bitte formulieren"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich erwarte nicht, dass die Frist automatisch als eingehalten gilt. Ich bitte darum, die geringe Überschreitung und die belegte Ursache bei der Entscheidung über die Annahme der Nachreichung zu berücksichtigen. Falls das nicht möglich ist, bitte ich um eine schriftliche Begründung, damit ich weiß, welche weiteren Schritte offenstehen.",
+          "translations": [
+            { "language": "en", "text": "I do not expect the deadline to automatically count as met. I ask that the small delay and the documented cause be considered when deciding whether to accept the late submission. If that is not possible, I ask for a written reason so I know which further steps remain available." },
+            { "language": "fa", "text": "انتظار ندارم مهلت خودکار رعایت‌شده حساب شود. درخواست می‌کنم تأخیر کم و دلیل مستند هنگام تصمیم درباره پذیرش ارسال تکمیلی در نظر گرفته شود. اگر این ممکن نیست، دلیل کتبی می‌خواهم تا بدانم چه گام‌های دیگری باقی است." },
+            { "language": "ar", "text": "لا أتوقع أن تُعتبر المهلة مستوفاة تلقائياً. أطلب أن يؤخذ التجاوز البسيط والسبب الموثق في الاعتبار عند اتخاذ القرار بشأن قبول الاستكمال. إذا لم يكن ذلك ممكناً، أطلب تعليلاً خطياً كي أعرف ما الخطوات الأخرى المتاحة." },
+            { "language": "tr", "text": "Sürenin otomatik olarak tutulmuş sayılmasını beklemiyorum. Küçük gecikmenin ve belgelenmiş nedenin ek teslimin kabulü konusunda karar verilirken dikkate alınmasını rica ediyorum. Bu mümkün değilse, hangi diğer adımların açık olduğunu bilmem için yazılı gerekçe istiyorum." },
+            { "language": "ru", "text": "Я не ожидаю, что срок автоматически будет считаться соблюдённым. Я прошу учесть небольшое превышение и документированную причину при решении о принятии досылки. Если это невозможно, прошу письменное обоснование, чтобы знать, какие дальнейшие шаги остаются." },
+            { "language": "ckb", "text": "چاوەڕوان ناکەم ماوەکە خۆکارانە وەک ڕێزگرتوو هەژمار بکرێت. داوا دەکەم تێپەڕاندنی کەم و هۆکاری بەڵگەدار لە بڕیاری وەرگرتنی پێشکەشکردنی دواتر لەبەرچاو بگیرێت. ئەگەر ئەمە ممکن نەبوو، داوای هۆکاری نووسراو دەکەم بۆ ئەوەی بزانم کام هەنگاوە دیکە کراونەتەوە." },
+            { "language": "kmr", "text": "Ez hêvî nakim ku muhlet bixwe wek girtî were hesibandin. Ez daxwaz dikim derengiya biçûk û sedema belgekirî di biryara qebûlkirina şandina dereng de were hesibandin. Heke ev gengaz nebe, ez sedemeke nivîskî dixwazim da ku bizanim kîjan gavên din vekirî ne." },
+            { "language": "pl", "text": "Nie oczekuję, że termin zostanie automatycznie uznany za zachowany. Proszę, aby niewielkie przekroczenie i udokumentowana przyczyna zostały uwzględnione przy decyzji o przyjęciu dosłania. Jeśli nie jest to możliwe, proszę o pisemne uzasadnienie, abym wiedział, jakie dalsze kroki są dostępne." },
+            { "language": "ro", "text": "Nu mă aștept ca termenul să fie considerat automat respectat. Solicit ca mica depășire și cauza documentată să fie luate în considerare la decizia privind acceptarea completării. Dacă acest lucru nu este posibil, solicit o motivare scrisă ca să știu ce pași mai sunt deschiși." },
+            { "language": "sq", "text": "Nuk pres që afati të konsiderohet automatikisht i respektuar. Kërkoj që vonesa e vogël dhe shkaku i dokumentuar të merren parasysh në vendimin për pranimin e dorëzimit të vonuar. Nëse kjo nuk është e mundur, kërkoj arsyetim me shkrim që të di cilët hapa të tjerë mbeten të hapur." }
+          ],
+          "function": "realistic-request",
+          "toneNote": "realistisch, respektvoll",
+          "expectedLearnerAction": "Keine automatische Ausnahme verlangen, sondern Ermessensprüfung und Begründung erbitten"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Was haben Sie getan, damit so etwas bei weiteren Fristen nicht wieder passiert?",
+          "translations": [
+            { "language": "en", "text": "What have you done to prevent this from happening again with further deadlines?" },
+            { "language": "fa", "text": "چه کاری کرده‌اید تا این موضوع در مهلت‌های بعدی دوباره تکرار نشود؟" },
+            { "language": "ar", "text": "ماذا فعلت كي لا يتكرر ذلك في المهل القادمة؟" },
+            { "language": "tr", "text": "Bunun sonraki sürelerde tekrar yaşanmaması için ne yaptınız?" },
+            { "language": "ru", "text": "Что вы сделали, чтобы это не повторилось при следующих сроках?" },
+            { "language": "ckb", "text": "چیت کردووە بۆ ئەوەی ئەمە لە ماوەکانی داهاتوودا دووبارە ڕوونەدات؟" },
+            { "language": "kmr", "text": "We çi kiriye da ku ev di muhletên din de dîsa neqewime?" },
+            { "language": "pl", "text": "Co Pan zrobił, aby taka sytuacja nie powtórzyła się przy kolejnych terminach?" },
+            { "language": "ro", "text": "Ce ați făcut pentru ca acest lucru să nu se repete la termenele următoare?" },
+            { "language": "sq", "text": "Çfarë keni bërë që kjo të mos përsëritet në afatet e ardhshme?" }
+          ],
+          "function": "corrective-action-request",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Konkrete Vorsorge nennen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich habe zwei Maßnahmen getroffen: Erstens habe ich für die nächsten Fristen eine Kalendererinnerung drei Werktage vorher eingerichtet. Zweitens habe ich eine Vertrauensperson benannt, die im Notfall Unterlagen hochladen kann. Damit möchte ich zeigen, dass ich die Frist nicht nur erkläre, sondern künftige Versäumnisse aktiv vermeide.",
+          "translations": [
+            { "language": "en", "text": "I have taken two measures: first, I set up a calendar reminder three working days before the next deadlines. Second, I named a trusted person who can upload documents in an emergency. This is meant to show that I am not only explaining the deadline issue but actively preventing future missed deadlines." },
+            { "language": "fa", "text": "دو اقدام انجام داده‌ام: اول برای مهلت‌های بعدی یادآور تقویم سه روز کاری قبل تنظیم کرده‌ام. دوم یک فرد مورد اعتماد معرفی کرده‌ام که در وضعیت اضطراری بتواند مدارک را بارگذاری کند. با این کار می‌خواهم نشان بدهم که فقط مهلت از دست رفته را توضیح نمی‌دهم، بلکه فعالانه از تکرار آن جلوگیری می‌کنم." },
+            { "language": "ar", "text": "اتخذت إجراءين: أولاً أنشأت تذكيراً في التقويم قبل المهل القادمة بثلاثة أيام عمل. ثانياً حددت شخصاً موثوقاً يمكنه رفع المستندات في حالة الطوارئ. أريد بذلك أن أظهر أنني لا أشرح فوات المهلة فقط، بل أتجنب بنشاط فوات المهل مستقبلاً." },
+            { "language": "tr", "text": "İki önlem aldım: birincisi, sonraki sürelerden üç iş günü önce takvim hatırlatması kurdum. İkincisi, acil durumda belgeleri yükleyebilecek güvendiğim bir kişiyi belirledim. Böylece sadece süre aşımını açıklamadığımı, gelecekteki kaçırmaları aktif olarak önlediğimi göstermek istiyorum." },
+            { "language": "ru", "text": "Я принял две меры: во-первых, поставил календарное напоминание за три рабочих дня до следующих сроков. Во-вторых, указал доверенное лицо, которое в экстренном случае сможет загрузить документы. Так я хочу показать, что не только объясняю пропущенный срок, но и активно предотвращаю будущие пропуски." },
+            { "language": "ckb", "text": "دوو ڕێکارم گرتووە: یەکەم بۆ ماوەکانی داهاتوو بیرخەرەوەی ساڵنامەم سێ ڕۆژی کاری پێشتر داناوە. دووەم کەسێکی باوەڕپێکراوم دیاری کردووە کە لە کاتی ناچاری بتوانێت بەڵگەکان باربکات. بەمە دەمەوێت پیشان بدەم کە تەنها لەدەستدانی ماوە ڕوون ناکەمەوە، بەڵکو بە چاالکی لە دووبارەبوونەوەی داهاتوو ڕێگری دەکەم." },
+            { "language": "kmr", "text": "Min du tedbîr girtine: yekem, ji bo muhletên din sê rojên kar berê bîrxistina salnameyê saz kir. Duyem, min kesekî pêbawer destnîşan kir ku di rewşa acîl de belgeyan barkirin bike. Bi vê dixwazim nîşan bidim ku ez tenê muhleta wenda rave nakim, lê wendabûnên pêşerojê bi çalakî asteng dikim." },
+            { "language": "pl", "text": "Podjąłem dwa działania: po pierwsze ustawiłem przypomnienie w kalendarzu na trzy dni robocze przed kolejnymi terminami. Po drugie wskazałem osobę zaufaną, która w nagłym przypadku może wgrać dokumenty. Chcę tym pokazać, że nie tylko wyjaśniam przekroczenie terminu, ale aktywnie zapobiegam przyszłym uchybieniom." },
+            { "language": "ro", "text": "Am luat două măsuri: mai întâi am setat o notificare în calendar cu trei zile lucrătoare înainte de următoarele termene. În al doilea rând, am desemnat o persoană de încredere care poate încărca documente în caz de urgență. Prin aceasta vreau să arăt că nu doar explic depășirea termenului, ci previn activ viitoare omisiuni." },
+            { "language": "sq", "text": "Kam marrë dy masa: së pari, kam vendosur një kujtesë në kalendar tre ditë pune para afateve të ardhshme. Së dyti, kam caktuar një person të besuar që mund të ngarkojë dokumente në rast urgjence. Me këtë dua të tregoj se nuk po shpjegoj vetëm humbjen e afatit, por po parandaloj aktivisht humbjet e ardhshme." }
+          ],
+          "function": "corrective-action-answer",
+          "toneNote": "verantwortlich, konkret",
+          "expectedLearnerAction": "Konkrete Prävention nennen"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Fassen Sie bitte abschließend in einem Satz zusammen, was ich zur Fristüberschreitung notieren soll.",
+          "translations": [
+            { "language": "en", "text": "Please summarize in one sentence what I should note about the missed deadline." },
+            { "language": "fa", "text": "لطفاً در پایان در یک جمله خلاصه کنید چه چیزی را درباره عبور از مهلت یادداشت کنم." },
+            { "language": "ar", "text": "يرجى في الختام تلخيص ما يجب أن أدونه بشأن تجاوز المهلة في جملة واحدة." },
+            { "language": "tr", "text": "Lütfen süre aşımıyla ilgili ne not etmem gerektiğini son olarak bir cümlede özetleyin." },
+            { "language": "ru", "text": "Пожалуйста, в завершение одним предложением резюмируйте, что мне записать о превышении срока." },
+            { "language": "ckb", "text": "تکایە لە کۆتاییدا بە یەک ڕستە پوختە بکە کە چی لەسەر تێپەڕاندنی ماوەکە تۆمار بکەم." },
+            { "language": "kmr", "text": "Kerema xwe di dawiyê de bi yek hevokê kurt bikin ka ez çi li ser derbasbûna muhletê binivîsim." },
+            { "language": "pl", "text": "Proszę na koniec podsumować w jednym zdaniu, co mam zanotować o przekroczeniu terminu." },
+            { "language": "ro", "text": "Vă rog să rezumați la final într-o propoziție ce ar trebui să notez despre depășirea termenului." },
+            { "language": "sq", "text": "Ju lutem përmblidhni në fund me një fjali çfarë duhet të shënoj për tejkalimin e afatit." }
+          ],
+          "function": "file-note-request",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Aktenfähige Zusammenfassung liefern"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Bitte notieren Sie, dass ich die zweitägige Fristüberschreitung anerkenne, sie durch eine kurzfristige stationäre Behandlung belege, die Arbeitgeberbestätigung am ersten Werktag danach mit Eingangsnummer EG-7842 nachgereicht habe und um Prüfung bitte, ob die Nachreichung dennoch berücksichtigt werden kann.",
+          "translations": [
+            { "language": "en", "text": "Please note that I acknowledge the two-day missed deadline, support it with short-notice inpatient treatment, submitted the employer confirmation on the first working day afterward with receipt number EG-7842, and ask for a review whether the late submission can nevertheless be considered." },
+            { "language": "fa", "text": "لطفاً یادداشت کنید که من عبور دو روزه از مهلت را می‌پذیرم، آن را با بستری کوتاه‌مدت و ناگهانی مستند می‌کنم، تأییدیه کارفرما را در اولین روز کاری بعد با شماره دریافت EG-7842 ارسال تکمیلی کرده‌ام و درخواست بررسی دارم که آیا با این حال می‌توان ارسال تکمیلی را در نظر گرفت یا نه." },
+            { "language": "ar", "text": "يرجى تدوين أنني أعترف بتجاوز المهلة بيومين، وأدعمه بعلاج قصير في المستشفى، وقدمت تأكيد صاحب العمل في أول يوم عمل بعد ذلك برقم الاستلام EG-7842، وأطلب فحص ما إذا كان يمكن رغم ذلك أخذ الاستكمال في الاعتبار." },
+            { "language": "tr", "text": "Lütfen, iki günlük süre aşımını kabul ettiğimi, bunu kısa süreli yatışla belgelediğimi, işveren onayını sonraki ilk iş gününde EG-7842 alındı numarasıyla sunduğumu ve geç teslimin yine de dikkate alınıp alınamayacağının incelenmesini istediğimi not edin." },
+            { "language": "ru", "text": "Пожалуйста, отметьте, что я признаю двухдневное превышение срока, подтверждаю его краткосрочным стационарным лечением, дослал подтверждение работодателя в первый рабочий день после этого с номером получения EG-7842 и прошу проверить, можно ли всё же учесть досылку." },
+            { "language": "ckb", "text": "تکایە تۆمار بکە کە من تێپەڕاندنی دوو ڕۆژەی ماوەکە وەردەگرم، ئەوە بە چارەسەری نەخۆشخانەیی کورت و ناگهانی بەڵگەدار دەکەم، پشتڕاستکردنەوەی کارخاوەنم لە یەکەم ڕۆژی کاری پاش ئەوە بە ژمارەی وەرگرتنی EG-7842 پێشکەشکردەوە و داوای پشکنین دەکەم ئایا سەرەڕای ئەوە پێشکەشکردنی دواتر دەتوانرێت لەبەرچاو بگیرێت." },
+            { "language": "kmr", "text": "Kerema xwe binivîsin ku ez derbasbûna du rojan a muhletê qebûl dikim, wê bi dermankirina nexweşxaneyê ya kurt û ji nişka ve belge dikim, piştrastkirina kardêr di roja kar a yekem a piştî wê de bi jimareya wergirtinê EG-7842 şandiye û daxwaza kontrolê dikim ka şandina dereng dîsa dikare were hesibandin yan na." },
+            { "language": "pl", "text": "Proszę zanotować, że uznaję dwudniowe przekroczenie terminu, dokumentuję je krótkim leczeniem szpitalnym, dosłałem potwierdzenie pracodawcy w pierwszy dzień roboczy po nim z numerem wpływu EG-7842 i proszę o sprawdzenie, czy dosłanie może mimo to zostać uwzględnione." },
+            { "language": "ro", "text": "Vă rog să notați că recunosc depășirea termenului cu două zile, o susțin printr-o internare scurtă apărută pe termen scurt, am depus confirmarea angajatorului în prima zi lucrătoare după aceea cu numărul de primire EG-7842 și solicit verificarea dacă completarea poate totuși fi luată în considerare." },
+            { "language": "sq", "text": "Ju lutem shënoni se e pranoj tejkalimin dyditor të afatit, e mbështes me trajtim të shkurtër spitalor, e dorëzova konfirmimin e punëdhënësit në ditën e parë të punës pas kësaj me numrin e pranimit EG-7842 dhe kërkoj të kontrollohet nëse dorëzimi i vonuar mund të merret megjithatë parasysh." }
+          ],
+          "function": "file-ready-deadline-summary",
+          "toneNote": "formal, aktenfähig",
+          "expectedLearnerAction": "Anerkennung, Beleg, Nachreichung und Prüfbitte bündeln"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich erkenne die Fristüberschreitung an; die Ursache war eine kurzfristige stationäre Behandlung, und die Nachreichung erfolgte am ersten Werktag danach.",
+              "translations": [
+                { "language": "en", "text": "I acknowledge the missed deadline; the cause was short-notice inpatient treatment, and the late submission was made on the first working day afterward." },
+                { "language": "fa", "text": "عبور از مهلت را می‌پذیرم؛ دلیل، بستری کوتاه‌مدت و ناگهانی بود و ارسال تکمیلی در اولین روز کاری بعد انجام شد." },
+                { "language": "ar", "text": "أعترف بتجاوز المهلة؛ وكان السبب علاجاً قصيراً في المستشفى، وتم الاستكمال في أول يوم عمل بعد ذلك." },
+                { "language": "tr", "text": "Süre aşımını kabul ediyorum; neden kısa süreli yatıştı ve ek teslim sonraki ilk iş gününde yapıldı." },
+                { "language": "ru", "text": "Я признаю превышение срока; причиной было краткосрочное стационарное лечение, а досылка была сделана в первый рабочий день после этого." },
+                { "language": "ckb", "text": "تێپەڕاندنی ماوەکە وەردەگرم؛ هۆکارەکە چارەسەری نەخۆشخانەیی کورت بوو و پێشکەشکردنی دواتر لە یەکەم ڕۆژی کاری پاش ئەوە کرا." },
+                { "language": "kmr", "text": "Ez derbasbûna muhletê qebûl dikim; sedem dermankirina nexweşxaneyê ya kurt bû û şandina dereng di roja kar a yekem a piştî wê de hate kirin." },
+                { "language": "pl", "text": "Uznaję przekroczenie terminu; przyczyną było krótkie leczenie szpitalne, a dosłanie nastąpiło w pierwszy dzień roboczy po nim." },
+                { "language": "ro", "text": "Recunosc depășirea termenului; cauza a fost o internare scurtă, iar completarea a fost făcută în prima zi lucrătoare după aceea." },
+                { "language": "sq", "text": "E pranoj tejkalimin e afatit; shkaku ishte trajtimi i shkurtër spitalor dhe dorëzimi i vonuar u bë në ditën e parë të punës pas tij." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Verantwortung, belegbaren Grund und schnelle Korrektur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects responsibility, a supportable reason, and quick correction." },
+                { "language": "fa", "text": "قوی: پاسخ مسئولیت، دلیل قابل اثبات و اصلاح سریع را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة بين المسؤولية والسبب القابل للإثبات والتصحيح السريع." },
+                { "language": "tr", "text": "Güçlü: Yanıt sorumluluğu, kanıtlanabilir nedeni ve hızlı düzeltmeyi bağlıyor." },
+                { "language": "ru", "text": "Сильно: ответ связывает ответственность, подтверждаемую причину и быстрое исправление." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرپرسیاری، هۆکاری بەڵگەدار و ڕاستکردنەوەی خێرا دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv berpirsiyarî, sedema belgebar û rastkirina zû bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy odpowiedzialność, udokumentowaną przyczynę i szybką korektę." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă responsabilitatea, motivul dovedibil și corectarea rapidă." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh përgjegjësinë, arsyen e provueshme dhe korrigjimin e shpejtë." }
+              ],
+              "explanationKey": "responsibility-cause-correction"
+            },
+            {
+              "id": "weak-excuse",
+              "text": "Ich konnte nichts dafür, weil ich krank war, deshalb sollte die Frist nicht zählen.",
+              "translations": [
+                { "language": "en", "text": "It was not my fault because I was ill, so the deadline should not count." },
+                { "language": "fa", "text": "تقصیر من نبود چون بیمار بودم، پس مهلت نباید حساب شود." },
+                { "language": "ar", "text": "لم يكن ذلك خطئي لأنني كنت مريضاً، لذلك لا ينبغي احتساب المهلة." },
+                { "language": "tr", "text": "Benim suçum değildi çünkü hastaydım, bu yüzden süre sayılmamalı." },
+                { "language": "ru", "text": "Это была не моя вина, потому что я был болен, поэтому срок не должен считаться." },
+                { "language": "ckb", "text": "تاوانی من نەبوو چونکە نەخۆش بووم، بۆیە ماوەکە نابێت هەژمار بکرێت." },
+                { "language": "kmr", "text": "Ev sûcê min nebû ji ber ku ez nexweş bûm, ji ber vê divê muhlet neyê hesibandin." },
+                { "language": "pl", "text": "To nie była moja wina, bo byłem chory, więc termin nie powinien się liczyć." },
+                { "language": "ro", "text": "Nu a fost vina mea pentru că am fost bolnav, deci termenul nu ar trebui să conteze." },
+                { "language": "sq", "text": "Nuk ishte faji im sepse isha i sëmurë, prandaj afati nuk duhet të llogaritet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu entschuldigend: Die Antwort leugnet Verantwortung und verlangt eine automatische Ausnahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too excuse-focused: The answer denies responsibility and demands an automatic exception." },
+                { "language": "fa", "text": "بیش از حد بهانه‌محور است: پاسخ مسئولیت را انکار می‌کند و استثنای خودکار می‌خواهد." },
+                { "language": "ar", "text": "متمحور حول العذر أكثر من اللازم: تنكر الإجابة المسؤولية وتطلب استثناءً تلقائياً." },
+                { "language": "tr", "text": "Fazla bahane odaklı: Yanıt sorumluluğu reddediyor ve otomatik istisna talep ediyor." },
+                { "language": "ru", "text": "Слишком оправдательно: ответ отрицает ответственность и требует автоматического исключения." },
+                { "language": "ckb", "text": "زۆر پاساومحورە: وەڵامەکە بەرپرسیاری ڕەت دەکاتەوە و داوای جیاوازی خۆکار دەکات." },
+                { "language": "kmr", "text": "Pir behane-navend e: Bersiv berpirsiyariyê red dike û îstîsnayeke bixweber dixwaze." },
+                { "language": "pl", "text": "Zbyt usprawiedliwiające: odpowiedź zaprzecza odpowiedzialności i żąda automatycznego wyjątku." },
+                { "language": "ro", "text": "Prea axat pe scuză: răspunsul neagă responsabilitatea și cere o excepție automată." },
+                { "language": "sq", "text": "Shumë e përqendruar te justifikimi: përgjigjja mohon përgjegjësinë dhe kërkon përjashtim automatik." }
+              ],
+              "explanationKey": "excuse-denies-responsibility"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Überschreitung war kurz, belegbar und wurde am ersten Werktag danach korrigiert.",
+              "translations": [
+                { "language": "en", "text": "The delay was short, supportable, and corrected on the first working day afterward." },
+                { "language": "fa", "text": "تأخیر کوتاه، قابل اثبات و در اولین روز کاری بعد اصلاح شد." },
+                { "language": "ar", "text": "كان التجاوز قصيراً وقابلاً للإثبات وتم تصحيحه في أول يوم عمل بعد ذلك." },
+                { "language": "tr", "text": "Gecikme kısa, kanıtlanabilir ve sonraki ilk iş gününde düzeltilmişti." },
+                { "language": "ru", "text": "Превышение было коротким, подтверждаемым и исправлено в первый рабочий день после этого." },
+                { "language": "ckb", "text": "تێپەڕاندنەکە کورت، بەڵگەدار و لە یەکەم ڕۆژی کاری پاش ئەوە ڕاستکرایەوە." },
+                { "language": "kmr", "text": "Derengî kurt, belgebar û di roja kar a yekem a piştî wê de hate rastkirin." },
+                { "language": "pl", "text": "Przekroczenie było krótkie, udokumentowane i skorygowane w pierwszy dzień roboczy po nim." },
+                { "language": "ro", "text": "Depășirea a fost scurtă, dovedibilă și corectată în prima zi lucrătoare după aceea." },
+                { "language": "sq", "text": "Tejkalimi ishte i shkurtër, i provueshëm dhe u korrigjua në ditën e parë të punës pas tij." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt proportional, ohne die Frist kleinzureden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer explains proportionally without downplaying the deadline." },
+                { "language": "fa", "text": "قوی: پاسخ متناسب توضیح می‌دهد، بدون اینکه مهلت را کم‌اهمیت نشان دهد." },
+                { "language": "ar", "text": "قوي: تشرح الإجابة بشكل متناسب دون التقليل من أهمية المهلة." },
+                { "language": "tr", "text": "Güçlü: Yanıt süreyi küçümsemeden orantılı biçimde açıklıyor." },
+                { "language": "ru", "text": "Сильно: ответ объясняет соразмерно, не приуменьшая значение срока." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە هاوسەنگی ڕوون دەکاتەوە، بەبێ ئەوەی ماوەکە بچووک بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv bi rêjeyî rave dike, bê ku muhletê biçûk nîşan bide." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia proporcjonalnie, nie bagatelizując terminu." },
+                { "language": "ro", "text": "Puternic: răspunsul explică proporțional, fără a minimaliza termenul." },
+                { "language": "sq", "text": "E fortë: përgjigjja shpjegon në mënyrë proporcionale, pa e minimizuar afatin." }
+              ],
+              "explanationKey": "proportional-explanation"
+            },
+            {
+              "id": "weak-minimize",
+              "text": "Es waren doch nur zwei Tage, das dürfte eigentlich kein Problem sein.",
+              "translations": [
+                { "language": "en", "text": "It was only two days, so that should not really be a problem." },
+                { "language": "fa", "text": "فقط دو روز بود، پس در واقع نباید مشکلی باشد." },
+                { "language": "ar", "text": "كان الأمر يومين فقط، لذلك لا ينبغي أن يكون ذلك مشكلة." },
+                { "language": "tr", "text": "Sadece iki gündü, bu aslında sorun olmamalı." },
+                { "language": "ru", "text": "Это были всего два дня, так что вообще-то это не должно быть проблемой." },
+                { "language": "ckb", "text": "تەنها دوو ڕۆژ بوو، بۆیە لە بنەڕەتدا نابێت کێشە بێت." },
+                { "language": "kmr", "text": "Tenê du roj bû, divê ev bi rastî pirsgirêk nebe." },
+                { "language": "pl", "text": "To były przecież tylko dwa dni, więc właściwie nie powinno być problemu." },
+                { "language": "ro", "text": "Au fost doar două zile, deci de fapt nu ar trebui să fie o problemă." },
+                { "language": "sq", "text": "Ishin vetëm dy ditë, prandaj në fakt nuk duhet të jetë problem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu bagatellisierend: Die Antwort wirkt, als nähmen Sie die Verbindlichkeit der Frist nicht ernst.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too minimizing: The answer sounds as if you do not take the binding nature of the deadline seriously." },
+                { "language": "fa", "text": "بیش از حد کوچک‌نمایی می‌کند: پاسخ طوری شنیده می‌شود که انگار الزام‌آور بودن مهلت را جدی نمی‌گیرید." },
+                { "language": "ar", "text": "يقلل من الأمر أكثر من اللازم: تبدو الإجابة كأنك لا تأخذ إلزامية المهلة بجدية." },
+                { "language": "tr", "text": "Fazla küçümsüyor: Yanıt, sürenin bağlayıcılığını ciddiye almıyormuşsunuz gibi duyulur." },
+                { "language": "ru", "text": "Слишком приуменьшает: ответ звучит так, будто вы не воспринимаете обязательность срока всерьёз." },
+                { "language": "ckb", "text": "زۆر بچووک دەکاتەوە: وەڵامەکە وەک ئەوە دەنگ دەدات کە پابەندبوونی ماوەکە بە جدی وەرنەگریت." },
+                { "language": "kmr", "text": "Pir biçûk dike: Bersiv wisa tê bihîstin ku hûn girêdayîbûna muhletê bi ciddî nagirin." },
+                { "language": "pl", "text": "Zbyt bagatelizujące: odpowiedź brzmi tak, jakby nie traktował Pan wiążącego charakteru terminu poważnie." },
+                { "language": "ro", "text": "Prea minimalizator: răspunsul sună ca și cum nu ați lua în serios caracterul obligatoriu al termenului." },
+                { "language": "sq", "text": "Shumë minimizuese: përgjigjja tingëllon sikur nuk e merrni seriozisht karakterin detyrues të afatit." }
+              ],
+              "explanationKey": "deadline-minimized"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Arbeitgeberbestätigung wurde am 13. Juni um 9:42 Uhr mit Eingangsnummer EG-7842 hochgeladen.",
+              "translations": [
+                { "language": "en", "text": "The employer confirmation was uploaded on June 13 at 9:42 with receipt number EG-7842." },
+                { "language": "fa", "text": "تأییدیه کارفرما در ۱۳ ژوئن ساعت ۹:۴۲ با شماره دریافت EG-7842 بارگذاری شد." },
+                { "language": "ar", "text": "تم رفع تأكيد صاحب العمل في 13 يونيو الساعة 9:42 برقم الاستلام EG-7842." },
+                { "language": "tr", "text": "İşveren onayı 13 Haziran saat 9:42'de EG-7842 alındı numarasıyla yüklendi." },
+                { "language": "ru", "text": "Подтверждение работодателя было загружено 13 июня в 9:42 с номером получения EG-7842." },
+                { "language": "ckb", "text": "پشتڕاستکردنەوەی کارخاوەن لە ١٣ی حوزەیران کاتژمێر ٩:٤٢ بە ژمارەی وەرگرتنی EG-7842 بارکرا." },
+                { "language": "kmr", "text": "Piştrastkirina kardêr di 13ê Hezîranê de saet 9:42 bi jimareya wergirtinê EG-7842 hate barkirin." },
+                { "language": "pl", "text": "Potwierdzenie pracodawcy zostało wgrane 13 czerwca o 9:42 z numerem wpływu EG-7842." },
+                { "language": "ro", "text": "Confirmarea angajatorului a fost încărcată pe 13 iunie la 9:42 cu numărul de primire EG-7842." },
+                { "language": "sq", "text": "Konfirmimi i punëdhënësit u ngarkua më 13 qershor në orën 9:42 me numrin e pranimit EG-7842." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist prüfbar, weil sie Dokument, Zeitpunkt und Nummer nennt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer is checkable because it names the document, time, and number." },
+                { "language": "fa", "text": "قوی: پاسخ قابل بررسی است، چون مدرک، زمان و شماره را نام می‌برد." },
+                { "language": "ar", "text": "قوي: الإجابة قابلة للفحص لأنها تذكر المستند والوقت والرقم." },
+                { "language": "tr", "text": "Güçlü: Yanıt belgeyi, zamanı ve numarayı belirttiği için kontrol edilebilir." },
+                { "language": "ru", "text": "Сильно: ответ проверяем, потому что называет документ, время и номер." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پشکنراوە چونکە بەڵگە، کات و ژمارە ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv kontrolbar e ji ber ku belge, dem û jimareyê bi nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest sprawdzalna, bo podaje dokument, czas i numer." },
+                { "language": "ro", "text": "Puternic: răspunsul este verificabil deoarece numește documentul, ora și numărul." },
+                { "language": "sq", "text": "E fortë: përgjigjja është e verifikueshme sepse përmend dokumentin, kohën dhe numrin." }
+              ],
+              "explanationKey": "checkable-document-status"
+            },
+            {
+              "id": "weak-document-somewhere",
+              "text": "Ich habe das Dokument inzwischen irgendwo hochgeladen und kann es noch einmal suchen.",
+              "translations": [
+                { "language": "en", "text": "I have uploaded the document somewhere by now and can look for it again." },
+                { "language": "fa", "text": "مدرک را بالاخره جایی بارگذاری کرده‌ام و می‌توانم دوباره دنبالش بگردم." },
+                { "language": "ar", "text": "لقد رفعت المستند في مكان ما الآن ويمكنني البحث عنه مرة أخرى." },
+                { "language": "tr", "text": "Belgeyi artık bir yere yükledim ve tekrar arayabilirim." },
+                { "language": "ru", "text": "Я уже где-то загрузил документ и могу снова его поискать." },
+                { "language": "ckb", "text": "بەڵگەکەم ئێستا لە شوێنێک بارکردووە و دەتوانم دووبارە بگەڕێم." },
+                { "language": "kmr", "text": "Min belge niha li cihêkî barkiriye û dikarim dîsa lê bigerim." },
+                { "language": "pl", "text": "Wgrałem już dokument gdzieś i mogę go jeszcze raz poszukać." },
+                { "language": "ro", "text": "Am încărcat documentul undeva între timp și pot să îl caut din nou." },
+                { "language": "sq", "text": "E kam ngarkuar dokumentin diku ndërkohë dhe mund ta kërkoj përsëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unsicher: Ohne Zeitpunkt und Eingangsnummer bleibt der Status schwer prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too uncertain: Without time and receipt number, the status remains hard to check." },
+                { "language": "fa", "text": "بیش از حد نامطمئن است: بدون زمان و شماره دریافت، وضعیت سخت قابل بررسی می‌ماند." },
+                { "language": "ar", "text": "غير مؤكد كفاية: بدون وقت ورقم استلام يبقى الوضع صعب الفحص." },
+                { "language": "tr", "text": "Fazla belirsiz: Zaman ve alındı numarası olmadan durumun kontrolü zor kalır." },
+                { "language": "ru", "text": "Слишком неопределённо: без времени и номера получения статус трудно проверить." },
+                { "language": "ckb", "text": "زۆر نادڵنیاوە: بەبێ کات و ژمارەی وەرگرتن، دۆخەکە بە زەحمەت پشکنراو دەمێنێت." },
+                { "language": "kmr", "text": "Pir nediyar e: Bê dem û jimareya wergirtinê rewş dijwar dimîne ku were kontrolkirin." },
+                { "language": "pl", "text": "Zbyt niepewne: bez czasu i numeru wpływu status pozostaje trudny do sprawdzenia." },
+                { "language": "ro", "text": "Prea nesigur: fără oră și număr de primire, statusul rămâne greu de verificat." },
+                { "language": "sq", "text": "Shumë e pasigurt: pa kohë dhe numër pranimi, statusi mbetet i vështirë për t'u kontrolluar." }
+              ],
+              "explanationKey": "uncertain-document-status"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Bitte berücksichtigen Sie die belegte Ursache bei der Entscheidung über die Annahme; falls das nicht möglich ist, bitte ich um schriftliche Begründung.",
+              "translations": [
+                { "language": "en", "text": "Please consider the documented cause when deciding on acceptance; if that is not possible, I ask for a written reason." },
+                { "language": "fa", "text": "لطفاً دلیل مستند را هنگام تصمیم درباره پذیرش در نظر بگیرید؛ اگر ممکن نیست، دلیل کتبی می‌خواهم." },
+                { "language": "ar", "text": "يرجى أخذ السبب الموثق في الاعتبار عند قرار القبول؛ وإذا لم يكن ذلك ممكناً فأطلب تعليلاً خطياً." },
+                { "language": "tr", "text": "Lütfen kabul kararında belgelenmiş nedeni dikkate alın; bu mümkün değilse yazılı gerekçe rica ederim." },
+                { "language": "ru", "text": "Пожалуйста, учтите документированную причину при решении о принятии; если это невозможно, прошу письменное обоснование." },
+                { "language": "ckb", "text": "تکایە هۆکاری بەڵگەدار لە بڕیاری وەرگرتندا لەبەرچاو بگرن؛ ئەگەر ممکن نەبوو، داوای هۆکاری نووسراو دەکەم." },
+                { "language": "kmr", "text": "Kerema xwe sedema belgekirî di biryara qebûlkirinê de bihesibînin; heke ev gengaz nebe, ez sedemeke nivîskî dixwazim." },
+                { "language": "pl", "text": "Proszę uwzględnić udokumentowaną przyczynę przy decyzji o przyjęciu; jeśli to nie jest możliwe, proszę o pisemne uzasadnienie." },
+                { "language": "ro", "text": "Vă rog să luați în considerare cauza documentată la decizia de acceptare; dacă nu este posibil, solicit o motivare scrisă." },
+                { "language": "sq", "text": "Ju lutem merrni parasysh shkakun e dokumentuar në vendimin për pranim; nëse kjo nuk është e mundur, kërkoj arsyetim me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte ist realistisch und lässt Raum für eine formelle Entscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is realistic and leaves room for a formal decision." },
+                { "language": "fa", "text": "قوی: درخواست واقع‌بینانه است و برای تصمیم رسمی جا می‌گذارد." },
+                { "language": "ar", "text": "قوي: الطلب واقعي ويترك مجالاً لقرار رسمي." },
+                { "language": "tr", "text": "Güçlü: Rica gerçekçi ve resmi karar için alan bırakıyor." },
+                { "language": "ru", "text": "Сильно: просьба реалистична и оставляет пространство для формального решения." },
+                { "language": "ckb", "text": "بەهێزە: داواکارییەکە واقیعییە و شوێن بۆ بڕیاری فەرمی دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz rast e û cih ji bo biryara fermî dihêle." },
+                { "language": "pl", "text": "Mocne: prośba jest realistyczna i zostawia miejsce na formalną decyzję." },
+                { "language": "ro", "text": "Puternic: solicitarea este realistă și lasă loc unei decizii formale." },
+                { "language": "sq", "text": "E fortë: kërkesa është realiste dhe lë hapësirë për vendim formal." }
+              ],
+              "explanationKey": "realistic-review-request"
+            },
+            {
+              "id": "weak-automatic-acceptance",
+              "text": "Da ich krank war, müssen Sie die Unterlage eigentlich trotzdem annehmen.",
+              "translations": [
+                { "language": "en", "text": "Since I was ill, you actually have to accept the document anyway." },
+                { "language": "fa", "text": "چون بیمار بودم، در واقع باید مدرک را با این حال بپذیرید." },
+                { "language": "ar", "text": "بما أنني كنت مريضاً، فعليكم في الواقع قبول المستند رغم ذلك." },
+                { "language": "tr", "text": "Hasta olduğum için belgeyi aslında yine de kabul etmeniz gerekir." },
+                { "language": "ru", "text": "Поскольку я был болен, вы вообще-то всё равно должны принять документ." },
+                { "language": "ckb", "text": "چونکە نەخۆش بووم، لە بنەڕەتدا دەبێت بەڵگەکە هەر وەربگرن." },
+                { "language": "kmr", "text": "Ji ber ku ez nexweş bûm, divê hûn belgeyê bi rastî dîsa qebûl bikin." },
+                { "language": "pl", "text": "Ponieważ byłem chory, właściwie muszą Państwo mimo wszystko przyjąć dokument." },
+                { "language": "ro", "text": "Deoarece am fost bolnav, de fapt trebuie să acceptați documentul totuși." },
+                { "language": "sq", "text": "Meqë isha i sëmurë, në fakt duhet ta pranoni dokumentin gjithsesi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kategorisch: Die Antwort ersetzt eine Prüfbitte durch eine rechtliche Forderung, die Sie am Schalter kaum absichern können.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too categorical: The answer replaces a review request with a legal demand that you can hardly secure at the counter." },
+                { "language": "fa", "text": "بیش از حد قطعی است: پاسخ درخواست بررسی را با مطالبه حقوقی جایگزین می‌کند که پشت باجه به‌سختی قابل تضمین است." },
+                { "language": "ar", "text": "قطعي أكثر من اللازم: تستبدل الإجابة طلب الفحص بمطالبة قانونية يصعب ضمانها عند الشباك." },
+                { "language": "tr", "text": "Fazla kesin: Yanıt inceleme talebini, gişede güvence altına almanız zor olan hukuki bir taleple değiştiriyor." },
+                { "language": "ru", "text": "Слишком категорично: ответ заменяет просьбу о проверке юридическим требованием, которое у окна трудно обеспечить." },
+                { "language": "ckb", "text": "زۆر بڕیاربەخشە: وەڵامەکە داواکاری پشکنین بە داواکاری یاسایی جێگرەوە دەکات کە لە پشت پەنجەرە بە زەحمەت دەتوانیت دڵنیای بکەیت." },
+                { "language": "kmr", "text": "Pir kategorîk e: Bersiv daxwaza kontrolê bi daxwazeke hiqûqî diguherîne ku li şûşeyê zehmet e hûn ew ewle bikin." },
+                { "language": "pl", "text": "Zbyt kategoryczne: odpowiedź zastępuje prośbę o sprawdzenie żądaniem prawnym, którego trudno dopilnować przy okienku." },
+                { "language": "ro", "text": "Prea categoric: răspunsul înlocuiește o solicitare de verificare cu o pretenție juridică greu de asigurat la ghișeu." },
+                { "language": "sq", "text": "Shumë kategorike: përgjigjja e zëvendëson kërkesën për kontroll me një kërkesë juridike që vështirë sigurohet në sportel." }
+              ],
+              "explanationKey": "categorical-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich habe Kalendererinnerungen eingerichtet und eine Vertrauensperson benannt, die im Notfall Unterlagen hochladen kann.",
+              "translations": [
+                { "language": "en", "text": "I set up calendar reminders and named a trusted person who can upload documents in an emergency." },
+                { "language": "fa", "text": "یادآورهای تقویم تنظیم کرده‌ام و یک فرد مورد اعتماد معرفی کرده‌ام که در وضعیت اضطراری بتواند مدارک را بارگذاری کند." },
+                { "language": "ar", "text": "أنشأت تذكيرات في التقويم وحددت شخصاً موثوقاً يمكنه رفع المستندات في حالة الطوارئ." },
+                { "language": "tr", "text": "Takvim hatırlatmaları kurdum ve acil durumda belge yükleyebilecek güvendiğim bir kişiyi belirledim." },
+                { "language": "ru", "text": "Я поставил календарные напоминания и указал доверенное лицо, которое сможет загрузить документы в экстренном случае." },
+                { "language": "ckb", "text": "بیرخەرەوەکانی ساڵنامەم داناوە و کەسێکی باوەڕپێکراوم دیاری کردووە کە لە کاتی ناچاری بتوانێت بەڵگە باربکات." },
+                { "language": "kmr", "text": "Min bîrxistinên salnameyê saz kirine û kesekî pêbawer destnîşan kir ku di rewşa acîl de belgeyan barkirin bike." },
+                { "language": "pl", "text": "Ustawiłem przypomnienia w kalendarzu i wskazałem osobę zaufaną, która w nagłym przypadku może wgrać dokumenty." },
+                { "language": "ro", "text": "Am setat notificări în calendar și am desemnat o persoană de încredere care poate încărca documente în caz de urgență." },
+                { "language": "sq", "text": "Kam vendosur kujtesa në kalendar dhe kam caktuar një person të besuar që mund të ngarkojë dokumente në rast urgjence." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt konkrete Prävention statt nur Reue.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer shows concrete prevention, not just regret." },
+                { "language": "fa", "text": "قوی: پاسخ پیشگیری مشخص را نشان می‌دهد، نه فقط پشیمانی." },
+                { "language": "ar", "text": "قوي: تظهر الإجابة وقاية محددة، لا مجرد ندم." },
+                { "language": "tr", "text": "Güçlü: Yanıt sadece pişmanlık değil, somut önleme gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ показывает конкретную профилактику, а не только сожаление." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێگریی دیاریکراو پیشان دەدات، نە تەنها پەشیمانی." },
+                { "language": "kmr", "text": "Xurt e: Bersiv astengkirina şênber nîşan dide, ne tenê poşmanî." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje konkretne zapobieganie, nie tylko żal." },
+                { "language": "ro", "text": "Puternic: răspunsul arată prevenție concretă, nu doar regret." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon parandalim konkret, jo vetëm keqardhje." }
+              ],
+              "explanationKey": "concrete-prevention"
+            },
+            {
+              "id": "weak-promise-only",
+              "text": "Ich werde in Zukunft einfach besser aufpassen.",
+              "translations": [
+                { "language": "en", "text": "In the future I will simply pay better attention." },
+                { "language": "fa", "text": "در آینده فقط بیشتر دقت می‌کنم." },
+                { "language": "ar", "text": "سأنتبه في المستقبل بشكل أفضل فقط." },
+                { "language": "tr", "text": "Gelecekte sadece daha dikkatli olacağım." },
+                { "language": "ru", "text": "В будущем я просто буду внимательнее." },
+                { "language": "ckb", "text": "لە داهاتوودا تەنها زیاتر ئاگادار دەبم." },
+                { "language": "kmr", "text": "Di pêşerojê de ez ê tenê baştir baldar bim." },
+                { "language": "pl", "text": "W przyszłości po prostu będę bardziej uważał." },
+                { "language": "ro", "text": "Pe viitor voi fi pur și simplu mai atent." },
+                { "language": "sq", "text": "Në të ardhmen thjesht do të jem më i kujdesshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Eine Absicht ist schwächer als eine konkrete Maßnahme mit Zeitpunkt oder Zuständigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: An intention is weaker than a concrete measure with timing or responsibility." },
+                { "language": "fa", "text": "بیش از حد کلی است: نیت از یک اقدام مشخص با زمان یا مسئولیت ضعیف‌تر است." },
+                { "language": "ar", "text": "عام أكثر من اللازم: النية أضعف من إجراء محدد له وقت أو مسؤولية." },
+                { "language": "tr", "text": "Fazla genel: Niyet, zaman veya sorumluluğu olan somut bir önlemden daha zayıftır." },
+                { "language": "ru", "text": "Слишком обобщённо: намерение слабее конкретной меры со сроком или ответственностью." },
+                { "language": "ckb", "text": "زۆر گشتییە: نیەت لە ڕێکارێکی دیاریکراو بە کات یان بەرپرسیاری لاوازترە." },
+                { "language": "kmr", "text": "Pir giştî ye: Niyet ji tedbîreke şênber bi dem an berpirsiyarî lawaztir e." },
+                { "language": "pl", "text": "Zbyt ogólne: zamiar jest słabszy niż konkretne działanie z terminem lub odpowiedzialnością." },
+                { "language": "ro", "text": "Prea general: o intenție este mai slabă decât o măsură concretă cu termen sau responsabilitate." },
+                { "language": "sq", "text": "Shumë e përgjithshme: një synim është më i dobët se një masë konkrete me kohë ose përgjegjësi." }
+              ],
+              "explanationKey": "promise-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich erkenne die Fristüberschreitung an, belege die Ursache und bitte um Prüfung, ob die Nachreichung berücksichtigt werden kann.",
+              "translations": [
+                { "language": "en", "text": "I acknowledge the missed deadline, support the cause, and ask for a review whether the late submission can be considered." },
+                { "language": "fa", "text": "عبور از مهلت را می‌پذیرم، دلیل را مستند می‌کنم و درخواست بررسی دارم که آیا ارسال تکمیلی می‌تواند در نظر گرفته شود یا نه." },
+                { "language": "ar", "text": "أعترف بتجاوز المهلة، وأدعم السبب بدليل، وأطلب فحص ما إذا كان يمكن أخذ الاستكمال في الاعتبار." },
+                { "language": "tr", "text": "Süre aşımını kabul ediyorum, nedeni belgeliyorum ve geç teslimin dikkate alınıp alınamayacağının incelenmesini rica ediyorum." },
+                { "language": "ru", "text": "Я признаю превышение срока, подтверждаю причину и прошу проверить, можно ли учесть досылку." },
+                { "language": "ckb", "text": "تێپەڕاندنی ماوەکە وەردەگرم، هۆکارەکە بەڵگەدار دەکەم و داوای پشکنین دەکەم ئایا پێشکەشکردنی دواتر دەتوانرێت لەبەرچاو بگیرێت." },
+                { "language": "kmr", "text": "Ez derbasbûna muhletê qebûl dikim, sedemê belge dikim û daxwaza kontrolê dikim ka şandina dereng dikare were hesibandin yan na." },
+                { "language": "pl", "text": "Uznaję przekroczenie terminu, dokumentuję przyczynę i proszę o sprawdzenie, czy dosłanie może zostać uwzględnione." },
+                { "language": "ro", "text": "Recunosc depășirea termenului, susțin cauza cu dovezi și solicit verificarea dacă completarea poate fi luată în considerare." },
+                { "language": "sq", "text": "E pranoj tejkalimin e afatit, e mbështes shkakun me prova dhe kërkoj të kontrollohet nëse dorëzimi i vonuar mund të merret parasysh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Aktennotiz enthält Verantwortung, Beleg und realistische Prüfbitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The file note contains responsibility, evidence, and a realistic review request." },
+                { "language": "fa", "text": "قوی: یادداشت پرونده شامل مسئولیت، مدرک و درخواست بررسی واقع‌بینانه است." },
+                { "language": "ar", "text": "قوي: تتضمن ملاحظة الملف المسؤولية والدليل وطلب فحص واقعي." },
+                { "language": "tr", "text": "Güçlü: Dosya notu sorumluluk, kanıt ve gerçekçi inceleme talebi içeriyor." },
+                { "language": "ru", "text": "Сильно: заметка в дело содержит ответственность, доказательство и реалистичную просьбу о проверке." },
+                { "language": "ckb", "text": "بەهێزە: تێبینی کەیس بەرپرسیاری، بەڵگە و داواکاری پشکنینی واقیعی لەخۆ دەگرێت." },
+                { "language": "kmr", "text": "Xurt e: Nîşeya dosyeyê berpirsiyarî, belge û daxwaza kontrolê ya rast dihewîne." },
+                { "language": "pl", "text": "Mocne: notatka w aktach zawiera odpowiedzialność, dowód i realistyczną prośbę o sprawdzenie." },
+                { "language": "ro", "text": "Puternic: nota la dosar conține responsabilitate, dovadă și o solicitare realistă de verificare." },
+                { "language": "sq", "text": "E fortë: shënimi në dosje përmban përgjegjësi, provë dhe kërkesë realiste për kontroll." }
+              ],
+              "explanationKey": "file-ready-deadline-note"
+            },
+            {
+              "id": "weak-too-much-detail",
+              "text": "Bitte notieren Sie alle Einzelheiten zu meinem Krankenhausaufenthalt und warum ich persönlich keine andere Möglichkeit hatte.",
+              "translations": [
+                { "language": "en", "text": "Please note all details about my hospital stay and why I personally had no other option." },
+                { "language": "fa", "text": "لطفاً همه جزئیات بستری من و اینکه چرا شخصاً هیچ راه دیگری نداشتم را یادداشت کنید." },
+                { "language": "ar", "text": "يرجى تدوين كل التفاصيل عن إقامتي في المستشفى ولماذا لم يكن لدي شخصياً خيار آخر." },
+                { "language": "tr", "text": "Lütfen hastane yatışımla ilgili tüm ayrıntıları ve kişisel olarak neden başka seçeneğim olmadığını not edin." },
+                { "language": "ru", "text": "Пожалуйста, запишите все подробности моего пребывания в больнице и почему лично у меня не было другой возможности." },
+                { "language": "ckb", "text": "تکایە هەموو وردەکارییەکانی مانەوەم لە نەخۆشخانە و ئەوەی بۆچی من بە شێوەی کەسی هیچ هەڵبژاردەیەکی ترم نەبوو تۆمار بکە." },
+                { "language": "kmr", "text": "Kerema xwe hemû hûrgiliyên mayîna min a nexweşxaneyê û çima min bi kesane tu rêyeke din tune bû binivîsin." },
+                { "language": "pl", "text": "Proszę zanotować wszystkie szczegóły mojego pobytu w szpitalu i dlaczego osobiście nie miałem innej możliwości." },
+                { "language": "ro", "text": "Vă rog să notați toate detaliile despre internarea mea și de ce personal nu am avut altă posibilitate." },
+                { "language": "sq", "text": "Ju lutem shënoni të gjitha detajet e qëndrimit tim në spital dhe pse personalisht nuk kisha mundësi tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausführlich und zu privat: Für die Akte reichen Ursache, Beleg, Nachreichung und Prüfbitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too detailed and too private: The file only needs cause, evidence, late submission, and review request." },
+                { "language": "fa", "text": "بیش از حد مفصل و خصوصی است: برای پرونده دلیل، مدرک، ارسال تکمیلی و درخواست بررسی کافی است." },
+                { "language": "ar", "text": "مفصل وخاص أكثر من اللازم: يكفي للملف السبب والدليل والاستكمال وطلب الفحص." },
+                { "language": "tr", "text": "Fazla ayrıntılı ve fazla özel: Dosya için neden, kanıt, geç teslim ve inceleme talebi yeterlidir." },
+                { "language": "ru", "text": "Слишком подробно и слишком приватно: для дела достаточно причины, доказательства, досылки и просьбы о проверке." },
+                { "language": "ckb", "text": "زۆر ورد و زۆر تایبەتییە: بۆ کەیس هۆکار، بەڵگە، پێشکەشکردنی دواتر و داواکاری پشکنین بەسە." },
+                { "language": "kmr", "text": "Pir hûrgilî û pir taybet e: Ji bo dosyeyê sedem, belge, şandina dereng û daxwaza kontrolê têr e." },
+                { "language": "pl", "text": "Zbyt szczegółowe i zbyt prywatne: do akt wystarczą przyczyna, dowód, dosłanie i prośba o sprawdzenie." },
+                { "language": "ro", "text": "Prea detaliat și prea privat: pentru dosar sunt suficiente cauza, dovada, completarea și solicitarea de verificare." },
+                { "language": "sq", "text": "Shumë e detajuar dhe shumë private: për dosjen mjaftojnë shkaku, prova, dorëzimi i vonuar dhe kërkesa për kontroll." }
+              ],
+              "explanationKey": "too-private-file-note"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "responsibility",
+          "text": "Bei einer Fristversäumnis ist die Reihenfolge wichtig: erst Verantwortung anerkennen, dann den belegbaren Grund erklären.",
+          "translations": [
+            { "language": "en", "text": "When a deadline is missed, the order matters: first acknowledge responsibility, then explain the supportable reason." },
+            { "language": "fa", "text": "در از دست رفتن مهلت، ترتیب مهم است: اول مسئولیت را بپذیرید، سپس دلیل قابل اثبات را توضیح دهید." },
+            { "language": "ar", "text": "عند فوات المهلة يكون الترتيب مهماً: اعترف أولاً بالمسؤولية، ثم اشرح السبب القابل للإثبات." },
+            { "language": "tr", "text": "Süre kaçırıldığında sıra önemlidir: önce sorumluluğu kabul edin, sonra kanıtlanabilir nedeni açıklayın." },
+            { "language": "ru", "text": "При пропуске срока важен порядок: сначала признать ответственность, затем объяснить подтверждаемую причину." },
+            { "language": "ckb", "text": "لە کاتی لەدەستدانی ماوەدا ڕیزبەندی گرنگە: سەرەتا بەرپرسیاری وەربگرە، پاشان هۆکاری بەڵگەدار ڕوون بکەوە." },
+            { "language": "kmr", "text": "Dema muhlet wenda dibe rêz girîng e: pêşî berpirsiyariyê qebûl bikin, paşê sedema belgebar rave bikin." },
+            { "language": "pl", "text": "Przy przekroczeniu terminu kolejność jest ważna: najpierw uznać odpowiedzialność, potem wyjaśnić udokumentowaną przyczynę." },
+            { "language": "ro", "text": "Când un termen este ratat, ordinea contează: mai întâi recunoașteți responsabilitatea, apoi explicați cauza dovedibilă." },
+            { "language": "sq", "text": "Kur humbet një afat, rendi ka rëndësi: së pari pranoni përgjegjësinë, pastaj shpjegoni arsyen e provueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "tone",
+          "text": "Vermeiden Sie sowohl Bagatellisierung als auch Drama. C1 bedeutet hier: proportional und nachweisbar sprechen.",
+          "translations": [
+            { "language": "en", "text": "Avoid both minimizing and drama. Here C1 means speaking proportionally and with evidence." },
+            { "language": "fa", "text": "هم از کوچک‌نمایی و هم از بزرگ‌نمایی احساسی دوری کنید. در اینجا C1 یعنی متناسب و مستند صحبت کردن." },
+            { "language": "ar", "text": "تجنب التقليل والدراما معاً. هنا يعني C1 التحدث بتناسب وبالأدلة." },
+            { "language": "tr", "text": "Hem küçümsemekten hem de dramatize etmekten kaçının. Burada C1, orantılı ve kanıtlı konuşmak demektir." },
+            { "language": "ru", "text": "Избегайте как приуменьшения, так и драматизации. Здесь C1 означает говорить соразмерно и доказательно." },
+            { "language": "ckb", "text": "هەم لە بچووککردنەوە و هەم لە دراماکردن دوور بکەوە. لێرە C1 واتە بە هاوسەنگی و بەڵگەدار قسەکردن." },
+            { "language": "kmr", "text": "Hem ji biçûkkirinê hem ji dramatîzekirinê dûr bikevin. Li vir C1 tê wateya axaftina bi rêje û bi belge." },
+            { "language": "pl", "text": "Unikaj zarówno bagatelizowania, jak i dramatyzowania. Tutaj C1 oznacza mówienie proporcjonalnie i z dowodami." },
+            { "language": "ro", "text": "Evitați atât minimalizarea, cât și dramatizarea. Aici C1 înseamnă să vorbiți proporțional și cu dovezi." },
+            { "language": "sq", "text": "Shmangni si minimizimin, ashtu edhe dramatizimin. Këtu C1 do të thotë të flasësh proporcionalisht dhe me prova." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "evidence",
+          "text": "Eine Nachreichung wird überzeugender, wenn Dokument, Zeitpunkt und Eingangsnummer genannt werden.",
+          "translations": [
+            { "language": "en", "text": "A late submission is more persuasive when the document, time, and receipt number are named." },
+            { "language": "fa", "text": "ارسال تکمیلی وقتی قانع‌کننده‌تر است که مدرک، زمان و شماره دریافت نام برده شود." },
+            { "language": "ar", "text": "يكون الاستكمال أكثر إقناعاً عندما يذكر المستند والوقت ورقم الاستلام." },
+            { "language": "tr", "text": "Geç teslim, belge, zaman ve alındı numarası belirtildiğinde daha ikna edici olur." },
+            { "language": "ru", "text": "Досылка убедительнее, когда названы документ, время и номер получения." },
+            { "language": "ckb", "text": "پێشکەشکردنی دواتر کاتێک قەناعەتپێکەرترە کە بەڵگە، کات و ژمارەی وەرگرتن ناو ببرێت." },
+            { "language": "kmr", "text": "Şandina dereng dema belge, dem û jimareya wergirtinê werin navkirin qanîker tir dibe." },
+            { "language": "pl", "text": "Dosłanie jest bardziej przekonujące, gdy podane są dokument, czas i numer wpływu." },
+            { "language": "ro", "text": "O completare este mai convingătoare când sunt numite documentul, ora și numărul de primire." },
+            { "language": "sq", "text": "Dorëzimi i vonuar është më bindës kur përmenden dokumenti, koha dhe numri i pranimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "strategy",
+          "text": "Bitten Sie um Prüfung, nicht um automatische Ausnahme. Das klingt respektvoller und ist rechtlich vorsichtiger.",
+          "translations": [
+            { "language": "en", "text": "Ask for a review, not an automatic exception. That sounds more respectful and is legally more cautious." },
+            { "language": "fa", "text": "درخواست بررسی کنید، نه استثنای خودکار. این محترمانه‌تر و از نظر حقوقی محتاطانه‌تر است." },
+            { "language": "ar", "text": "اطلب فحصاً لا استثناءً تلقائياً. هذا يبدو أكثر احتراماً وأكثر حذراً قانونياً." },
+            { "language": "tr", "text": "Otomatik istisna değil, inceleme isteyin. Bu daha saygılı duyulur ve hukuken daha temkinlidir." },
+            { "language": "ru", "text": "Просите о проверке, а не об автоматическом исключении. Это звучит уважительнее и юридически осторожнее." },
+            { "language": "ckb", "text": "داوای پشکنین بکە، نە جیاوازی خۆکار. ئەمە ڕێزدارتر دەنگ دەدات و لە ڕووی یاساییەوە وریاترە." },
+            { "language": "kmr", "text": "Daxwaza kontrolê bikin, ne îstîsnaya bixweber. Ev rêzdartir tê bihîstin û ji aliyê hiqûqî ve hişyartir e." },
+            { "language": "pl", "text": "Proś o sprawdzenie, nie o automatyczny wyjątek. Brzmi to bardziej z szacunkiem i jest ostrożniejsze prawnie." },
+            { "language": "ro", "text": "Cereți verificare, nu excepție automată. Sună mai respectuos și este mai prudent juridic." },
+            { "language": "sq", "text": "Kërkoni kontroll, jo përjashtim automatik. Kjo tingëllon më respektueshëm dhe është më e kujdesshme juridikisht." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Eine aktenfähige Zusammenfassung enthält Verantwortung, Beleg, Nachreichung und die konkrete Prüfbitte.",
+          "translations": [
+            { "language": "en", "text": "A file-ready summary contains responsibility, evidence, late submission, and the concrete review request." },
+            { "language": "fa", "text": "خلاصه مناسب پرونده شامل مسئولیت، مدرک، ارسال تکمیلی و درخواست بررسی مشخص است." },
+            { "language": "ar", "text": "يتضمن الملخص المناسب للملف المسؤولية والدليل والاستكمال وطلب الفحص المحدد." },
+            { "language": "tr", "text": "Dosyaya uygun özet sorumluluk, kanıt, geç teslim ve somut inceleme talebini içerir." },
+            { "language": "ru", "text": "Подходящее для дела резюме содержит ответственность, доказательство, досылку и конкретную просьбу о проверке." },
+            { "language": "ckb", "text": "پوختەی گونجاو بۆ کەیس بەرپرسیاری، بەڵگە، پێشکەشکردنی دواتر و داواکاری پشکنینی دیاریکراو لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Kurteya guncaw ji bo dosyeyê berpirsiyarî, belge, şandina dereng û daxwaza kontrolê ya şênber dihewîne." },
+            { "language": "pl", "text": "Podsumowanie odpowiednie do akt zawiera odpowiedzialność, dowód, dosłanie i konkretną prośbę o sprawdzenie." },
+            { "language": "ro", "text": "Un rezumat potrivit pentru dosar conține responsabilitate, dovadă, completare și solicitarea concretă de verificare." },
+            { "language": "sq", "text": "Një përmbledhje e përshtatshme për dosje përmban përgjegjësi, provë, dorëzim të vonuar dhe kërkesën konkrete për kontroll." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "government-office-deadline-explanation",
+          "placement": "hero",
+          "purpose": "Show a calm formal conversation at a public-office counter about a missed deadline and a small set of supporting documents.",
+          "altText": "Eine Person erklärt an einem Behördenschalter eine knapp versäumte Frist mit geordneten Nachweisen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A person explains a narrowly missed deadline at a public-office counter with organized supporting documents." },
+            { "language": "fa", "text": "فردی پشت باجه اداره مهلتی را که کمی از دست رفته با مدارک مرتب توضیح می‌دهد." },
+            { "language": "ar", "text": "شخص يشرح عند شباك جهة إدارية مهلة فاتت بفارق بسيط مع مستندات مرتبة." },
+            { "language": "tr", "text": "Bir kişi resmi kurum gişesinde az farkla kaçırılmış bir süreyi düzenli belgelerle açıklıyor." },
+            { "language": "ru", "text": "Человек у окна ведомства объясняет немного пропущенный срок с упорядоченными документами." },
+            { "language": "ckb", "text": "کەسێک لە پشت پەنجەرەی فەرمانگە ماوەیەکی کەمێک لەدەستچوو بە بەڵگەی ڕێکخراو ڕوون دەکاتەوە." },
+            { "language": "kmr", "text": "Kesek li şûşeya saziyê muhleteke bi kêmanî wenda bi belgeyên rêxistî rave dike." },
+            { "language": "pl", "text": "Osoba przy okienku urzędu wyjaśnia nieznacznie przekroczony termin z uporządkowanymi dokumentami." },
+            { "language": "ro", "text": "O persoană explică la un ghișeu public un termen ratat la limită cu documente ordonate." },
+            { "language": "sq", "text": "Një person shpjegon në sportelin e një zyre publike një afat të humbur për pak me dokumente të rregulluara." }
+          ],
+          "imagePrompt": "Clean educational illustration of a German public-office counter. A calm adult applicant explains a missed deadline with a small organized set of documents and a printed confirmation; no readable personal or medical data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

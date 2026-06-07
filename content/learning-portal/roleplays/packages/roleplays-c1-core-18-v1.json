@@ -1,0 +1,873 @@
+{
+  "packageId": "roleplays-c1-core-18-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 18 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 18",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-quellenkritik-im-seminar-formulieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Quellenkritik im Seminar formulieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Formulating source criticism in a seminar" },
+        { "language": "fa", "text": "بیان نقد منبع در سمینار" },
+        { "language": "ar", "text": "صياغة نقد مصدر في ندوة" },
+        { "language": "tr", "text": "Seminerde kaynak eleştirisi formüle etmek" },
+        { "language": "ru", "text": "Сформулировать критику источника на семинаре" },
+        { "language": "ckb", "text": "داڕشتنی ڕەخنەی سەرچاوە لە سیمیناردا" },
+        { "language": "kmr", "text": "Di semînerê de formulekirina rexneya çavkaniyê" },
+        { "language": "pl", "text": "Sformułowanie krytyki źródła na seminarium" },
+        { "language": "ro", "text": "Formularea unei critici a sursei într-un seminar" },
+        { "language": "sq", "text": "Formulimi i kritikës së burimit në seminar" }
+      ],
+      "description": "In einer C1-Seminardiskussion kritisieren Sie eine Quelle differenziert: Sie nutzen sie nicht unkritisch, verwerfen sie aber auch nicht pauschal.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 seminar discussion, you critique a source in a nuanced way: you do not use it uncritically, but you also do not reject it wholesale." },
+        { "language": "fa", "text": "در یک بحث سمیناری سطح سی‌یک، یک منبع را با دقت نقد می‌کنید: نه آن را بدون نقد به کار می‌برید و نه به‌طور کلی رد می‌کنید." },
+        { "language": "ar", "text": "في نقاش ندوة بمستوى C1، تنتقد مصدراً بطريقة متمايزة: لا تستخدمه بلا نقد، ولا ترفضه رفضاً كلياً." },
+        { "language": "tr", "text": "C1 düzeyinde bir seminer tartışmasında bir kaynağı ayrıntılı biçimde eleştirirsiniz: onu eleştirmeden kullanmaz, ama bütünüyle de reddetmezsiniz." },
+        { "language": "ru", "text": "В семинарской дискуссии уровня C1 вы дифференцированно критикуете источник: не используете его некритически, но и не отвергаете полностью." },
+        { "language": "ckb", "text": "لە گفتوگۆی سیمیناری ئاستی C1دا، سەرچاوەیەک بە وردی ڕەخنە دەکەیت: نە بەبێ ڕەخنە بەکاری دەهێنیت و نە بە گشتی ڕەتیدەکەیتەوە." },
+        { "language": "kmr", "text": "Di nîqaşeke semînerê ya asta C1 de, hûn çavkaniyekê bi awayekî hûrgulî rexne dikin: ne bê rexne bi kar tînin û ne jî bi tevahî red dikin." },
+        { "language": "pl", "text": "W dyskusji seminaryjnej na poziomie C1 krytycznie oceniasz źródło w sposób zniuansowany: nie używasz go bezkrytycznie, ale też nie odrzucasz go całkowicie." },
+        { "language": "ro", "text": "Într-o discuție de seminar de nivel C1, criticați o sursă în mod nuanțat: nu o folosiți necritic, dar nici nu o respingeți global." },
+        { "language": "sq", "text": "Në një diskutim seminarik të nivelit C1, kritikoni një burim në mënyrë të nuancuar: nuk e përdorni pa kritikë, por as nuk e refuzoni tërësisht." }
+      ],
+      "learnerGoal": "Eine Quelle akademisch einordnen: Nutzen, Autorperspektive, Datengrundlage, Reichweite und Grenzen sprachlich klar voneinander trennen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Place a source in academic context: clearly separate usefulness, author perspective, data basis, scope, and limitations." },
+        { "language": "fa", "text": "یک منبع را در چارچوب دانشگاهی جای‌گذاری کنید: کاربرد، زاویه دید نویسنده، پایه داده، دامنه اعتبار و محدودیت‌ها را روشن از هم جدا کنید." },
+        { "language": "ar", "text": "ضع مصدراً في سياقه الأكاديمي: افصل بوضوح بين الفائدة ومنظور الكاتب وأساس البيانات ونطاق الصلاحية والحدود." },
+        { "language": "tr", "text": "Bir kaynağı akademik bağlama yerleştirin: yararlılık, yazar bakış açısı, veri temeli, geçerlilik kapsamı ve sınırlamaları açıkça ayırın." },
+        { "language": "ru", "text": "Поместить источник в академический контекст: ясно разделить полезность, перспективу автора, базу данных, область применимости и ограничения." },
+        { "language": "ckb", "text": "سەرچاوەیەک لە چوارچێوەی ئەکادیمی دابنێ: سوود، دیدی نووسەر، بنەمای داتا، مەودای بەکارهێنان و سنوورەکان بە ڕوونی جیا بکەوە." },
+        { "language": "kmr", "text": "Çavkaniyekê di çarçoveya akademîk de bi cih bikin: bikêrhatin, perspektîfa nivîskar, bingehê daneyan, qada derbasdariyê û sînor bi zelalî ji hev veqetînin." },
+        { "language": "pl", "text": "Umieścić źródło w kontekście akademickim: jasno oddzielić użyteczność, perspektywę autora, podstawę danych, zakres obowiązywania i ograniczenia." },
+        { "language": "ro", "text": "Încadrați academic o sursă: separați clar utilitatea, perspectiva autorului, baza de date, domeniul de aplicare și limitele." },
+        { "language": "sq", "text": "Vendosni një burim në kontekst akademik: ndani qartë dobishmërinë, këndvështrimin e autorit, bazën e të dhënave, fushën e vlefshmërisë dhe kufizimet." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "documents-and-administration"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "agree-disagree",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 18,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant" },
+            { "language": "fa", "text": "شرکت‌کننده" },
+            { "language": "ar", "text": "المشارك" },
+            { "language": "tr", "text": "Katılımcı" },
+            { "language": "ru", "text": "Участник" },
+            { "language": "ckb", "text": "بەشداربوو" },
+            { "language": "kmr", "text": "Beşdar" },
+            { "language": "pl", "text": "Uczestnik" },
+            { "language": "ro", "text": "Participantul" },
+            { "language": "sq", "text": "Pjesëmarrësi" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Mitstudent/in",
+          "translations": [
+            { "language": "en", "text": "Fellow student" },
+            { "language": "fa", "text": "هم‌دانشجو" },
+            { "language": "ar", "text": "زميل دراسي" },
+            { "language": "tr", "text": "Sınıf arkadaşı" },
+            { "language": "ru", "text": "Однокурсник" },
+            { "language": "ckb", "text": "هاوخوێندکار" },
+            { "language": "kmr", "text": "Hev-xwendekar" },
+            { "language": "pl", "text": "Kolega ze studiów" },
+            { "language": "ro", "text": "Coleg de studiu" },
+            { "language": "sq", "text": "Bashkëstudent" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Sie beziehen sich in Ihrer Argumentation auf einen aktuellen Fachartikel. Formulieren Sie bitte eine Quellenkritik, die nicht nur sagt, ob der Artikel gut oder schlecht ist.",
+          "translations": [
+            { "language": "en", "text": "You refer to a recent academic article in your argument. Please formulate source criticism that does not merely say whether the article is good or bad." },
+            { "language": "fa", "text": "شما در استدلال خود به یک مقاله تخصصی جدید ارجاع می‌دهید. لطفاً نقد منبعی بیان کنید که فقط نگوید مقاله خوب است یا بد." },
+            { "language": "ar", "text": "تشير في حجتك إلى مقال علمي حديث. يرجى صياغة نقد للمصدر لا يكتفي بالقول إن المقال جيد أو سيئ." },
+            { "language": "tr", "text": "Argümanınızda güncel bir akademik makaleye atıf yapıyorsunuz. Lütfen yalnızca makalenin iyi ya da kötü olduğunu söylemeyen bir kaynak eleştirisi formüle edin." },
+            { "language": "ru", "text": "В своей аргументации вы ссылаетесь на недавнюю научную статью. Пожалуйста, сформулируйте критику источника, которая не просто говорит, хороша статья или плоха." },
+            { "language": "ckb", "text": "تۆ لە پاساوەکەتدا ئاماژە بە وتارێکی نوێی پسپۆڕی دەکەیت. تکایە ڕەخنەی سەرچاوەیەک دابڕێژە کە تەنها نەڵێت وتارەکە باشە یان خراپ." },
+            { "language": "kmr", "text": "Hûn di argumana xwe de behsa gotareke zanistî ya nû dikin. Ji kerema xwe rexneya çavkaniyê wisa formule bikin ku tenê nebêje gotar baş e an xerab e." },
+            { "language": "pl", "text": "W swojej argumentacji odwołujesz się do aktualnego artykułu naukowego. Proszę sformułować krytykę źródła, która nie ogranicza się do stwierdzenia, czy artykuł jest dobry czy zły." },
+            { "language": "ro", "text": "În argumentarea dumneavoastră vă referiți la un articol academic recent. Vă rog să formulați o critică a sursei care să nu spună doar dacă articolul este bun sau slab." },
+            { "language": "sq", "text": "Në argumentimin tuaj i referoheni një artikulli të ri akademik. Ju lutem formuloni një kritikë burimi që nuk thotë vetëm nëse artikulli është i mirë apo i dobët." }
+          ],
+          "function": "seminar-prompt",
+          "toneNote": "Academic and precise.",
+          "expectedLearnerAction": "formulate-source-criticism"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Quelle nicht grundsätzlich infrage stellen, aber ihren Aussagewert begrenzen. Sie ist für die aktuelle Debatte nützlich, weil sie neue Daten liefert; zugleich muss man prüfen, aus welcher Perspektive die Daten erhoben und interpretiert wurden.",
+          "translations": [
+            { "language": "en", "text": "I would not fundamentally question the source, but I would limit its evidential value. It is useful for the current debate because it provides new data; at the same time, one must examine from which perspective the data were collected and interpreted." },
+            { "language": "fa", "text": "من اعتبار منبع را به‌طور بنیادی زیر سؤال نمی‌برم، اما ارزش استنادی آن را محدود می‌کنم. برای بحث فعلی مفید است، چون داده‌های جدید می‌دهد؛ هم‌زمان باید بررسی کرد که داده‌ها از چه زاویه‌ای گردآوری و تفسیر شده‌اند." },
+            { "language": "ar", "text": "لا أشكك في المصدر من حيث المبدأ، لكنني أحدد قيمة دلالته. فهو مفيد للنقاش الحالي لأنه يقدم بيانات جديدة؛ وفي الوقت نفسه يجب فحص المنظور الذي جُمعت وفُسرت منه البيانات." },
+            { "language": "tr", "text": "Kaynağı temelden sorgulamazdım, ama kanıt değerini sınırlandırırdım. Güncel tartışma için yararlıdır, çünkü yeni veriler sunar; aynı zamanda verilerin hangi perspektiften toplandığını ve yorumlandığını incelemek gerekir." },
+            { "language": "ru", "text": "Я бы не ставил источник под сомнение в принципе, но ограничил бы его доказательную ценность. Он полезен для текущей дискуссии, потому что предоставляет новые данные; одновременно нужно проверить, с какой перспективы эти данные были собраны и интерпретированы." },
+            { "language": "ckb", "text": "من سەرچاوەکە بە بنەڕەتی ناچەمە ژێر پرسیار، بەڵام بەهای بەڵگەییەکەی سنووردار دەکەم. بۆ گفتوگۆی ئێستا بەسوودە، چونکە داتای نوێ دەدات؛ هاوکات پێویستە بپشکنرێت داتا لە چ دیدێکەوە کۆکراوەتەوە و لێکدراوەتەوە." },
+            { "language": "kmr", "text": "Ez çavkaniyê bi bingehîn nexim bin pirsê, lê nirxa delîlkirina wê sînordar dikim. Ji bo nîqaşa heyî bikêr e, ji ber ku daneyên nû dide; di heman demê de divê bê vekolîn ka daneyên ji kîjan perspektîfê hatine komkirin û şîrovekirin." },
+            { "language": "pl", "text": "Nie kwestionowałbym źródła zasadniczo, ale ograniczyłbym jego wartość dowodową. Jest użyteczne dla aktualnej debaty, bo dostarcza nowych danych; jednocześnie trzeba sprawdzić, z jakiej perspektywy dane zostały zebrane i zinterpretowane." },
+            { "language": "ro", "text": "Nu aș pune sursa fundamental sub semnul întrebării, dar i-aș limita valoarea probatorie. Este utilă pentru dezbaterea actuală deoarece oferă date noi; în același timp trebuie verificat din ce perspectivă au fost colectate și interpretate datele." },
+            { "language": "sq", "text": "Nuk do ta vija burimin në dyshim në mënyrë themelore, por do t’ia kufizoja vlerën dëshmuese. Ai është i dobishëm për debatin aktual sepse jep të dhëna të reja; njëkohësisht duhet parë nga çfarë këndvështrimi janë mbledhur dhe interpretuar të dhënat." }
+          ],
+          "function": "model-response",
+          "toneNote": "Balanced and non-dismissive.",
+          "expectedLearnerAction": "separate-usefulness-and-limit"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Warum reicht es nicht zu sagen, dass der Artikel viele Zahlen enthält und deshalb zuverlässig ist?",
+          "translations": [
+            { "language": "en", "text": "Why is it not enough to say that the article contains many numbers and is therefore reliable?" },
+            { "language": "fa", "text": "چرا کافی نیست بگوییم مقاله عددهای زیادی دارد و بنابراین قابل اعتماد است؟" },
+            { "language": "ar", "text": "لماذا لا يكفي أن نقول إن المقال يحتوي على أرقام كثيرة ولذلك فهو موثوق؟" },
+            { "language": "tr", "text": "Makalenin çok sayıda sayı içerdiğini ve bu nedenle güvenilir olduğunu söylemek neden yeterli değil?" },
+            { "language": "ru", "text": "Почему недостаточно сказать, что в статье много чисел и поэтому она надёжна?" },
+            { "language": "ckb", "text": "بۆچی بەس نییە بڵێین وتارەکە ژمارەی زۆری تێدایە و بۆیە متمانەپێکراوە؟" },
+            { "language": "kmr", "text": "Çima ne bes e ku em bêjin gotar gelek hejmar dihewîne û ji ber vê yekê pêbawer e?" },
+            { "language": "pl", "text": "Dlaczego nie wystarczy powiedzieć, że artykuł zawiera wiele liczb i dlatego jest wiarygodny?" },
+            { "language": "ro", "text": "De ce nu este suficient să spunem că articolul conține multe cifre și, prin urmare, este de încredere?" },
+            { "language": "sq", "text": "Pse nuk mjafton të thuhet se artikulli përmban shumë shifra dhe prandaj është i besueshëm?" }
+          ],
+          "function": "critical-follow-up",
+          "toneNote": "Challenges superficial evidence.",
+          "expectedLearnerAction": "explain-data-quality"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Zahlen erhöhen nicht automatisch die Zuverlässigkeit. Entscheidend ist, welche Stichprobe untersucht wurde, welche Fragen gestellt wurden und ob die Auswertung alternative Erklärungen berücksichtigt oder vorschnell eine Ursache behauptet.",
+          "translations": [
+            { "language": "en", "text": "Numbers do not automatically increase reliability. What matters is which sample was examined, which questions were asked, and whether the analysis considers alternative explanations or too quickly claims a cause." },
+            { "language": "fa", "text": "عددها به‌طور خودکار اعتبار را بالا نمی‌برند. مهم این است که چه نمونه‌ای بررسی شده، چه پرسش‌هایی مطرح شده و آیا تحلیل توضیح‌های جایگزین را در نظر گرفته یا زودهنگام علت قطعی ادعا کرده است." },
+            { "language": "ar", "text": "الأرقام لا تزيد الموثوقية تلقائياً. المهم هو نوع العينة التي دُرست، والأسئلة التي طُرحت، وما إذا كان التحليل يأخذ تفسيرات بديلة في الحسبان أو يدعي سبباً بسرعة." },
+            { "language": "tr", "text": "Sayılar güvenilirliği otomatik olarak artırmaz. Belirleyici olan hangi örneklemin incelendiği, hangi soruların sorulduğu ve analizin alternatif açıklamaları dikkate alıp almadığı ya da aceleyle neden iddia edip etmediğidir." },
+            { "language": "ru", "text": "Числа не повышают надёжность автоматически. Важно, какая выборка была изучена, какие вопросы задавались и учитывает ли анализ альтернативные объяснения или слишком быстро утверждает причину." },
+            { "language": "ckb", "text": "ژمارەکان بە شێوەیەکی خودکار متمانە زیاد ناکەن. گرنگ ئەوەیە چ نموونەیەک لێکۆڵراوەتەوە، چ پرسیارێک کراوە و ئایا شیکارییەکە ڕوونکردنەوەی جێگرەوە لەبەرچاو دەگرێت یان زۆر پەلە دەڵێت هۆکارەکە ئەوەیە." },
+            { "language": "kmr", "text": "Hejmar bi xweber pêbaweriyê zêde nakin. Ya girîng ew e ka kîjan nimûne hatiye lêkolînkirin, kîjan pirs hatine kirin û gelo analîz ravekirinên alternatîf dihesibîne an pir zû sedemekê îdia dike." },
+            { "language": "pl", "text": "Liczby nie zwiększają automatycznie wiarygodności. Decydujące jest to, jaką próbę zbadano, jakie pytania zadano i czy analiza uwzględnia alternatywne wyjaśnienia, czy zbyt szybko twierdzi, że wskazuje przyczynę." },
+            { "language": "ro", "text": "Cifrele nu cresc automat fiabilitatea. Esențial este ce eșantion a fost studiat, ce întrebări au fost puse și dacă analiza ia în calcul explicații alternative sau afirmă prea repede o cauză." },
+            { "language": "sq", "text": "Shifrat nuk e rrisin automatikisht besueshmërinë. Vendimtare është se çfarë kampioni është studiuar, çfarë pyetjesh janë bërë dhe nëse analiza merr parasysh shpjegime alternative apo pretendon shumë shpejt një shkak." }
+          ],
+          "function": "model-response",
+          "toneNote": "Method-focused and precise.",
+          "expectedLearnerAction": "name-method-criteria"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Gehen Sie noch einen Schritt weiter: Wie würden Sie die Perspektive der Autorinnen und Autoren einordnen?",
+          "translations": [
+            { "language": "en", "text": "Go one step further: How would you place the authors' perspective in context?" },
+            { "language": "fa", "text": "یک قدم جلوتر بروید: زاویه دید نویسندگان را چگونه در جایگاه خودش قرار می‌دهید؟" },
+            { "language": "ar", "text": "اذهب خطوة أبعد: كيف تضع منظور المؤلفين في سياقه؟" },
+            { "language": "tr", "text": "Bir adım daha ileri gidin: Yazarların bakış açısını nasıl bağlama oturtursunuz?" },
+            { "language": "ru", "text": "Сделайте ещё один шаг: как бы вы поместили перспективу авторов в контекст?" },
+            { "language": "ckb", "text": "هەنگاوێکی تر بچۆ پێش: دیدی نووسەران چۆن لە شوێنی خۆیدا دادەنێیت؟" },
+            { "language": "kmr", "text": "Gavekî din biçin pêş: Hûn ê perspektîfa nivîskaran çawa di çarçoveyê de bi cih bikin?" },
+            { "language": "pl", "text": "Proszę pójść o krok dalej: jak osadziłby pan perspektywę autorów w kontekście?" },
+            { "language": "ro", "text": "Mergeți un pas mai departe: cum ați contextualiza perspectiva autorilor?" },
+            { "language": "sq", "text": "Shkoni një hap më tej: si do ta vendosnit në kontekst këndvështrimin e autorëve?" }
+          ],
+          "function": "perspective-prompt",
+          "toneNote": "Asks for source positioning.",
+          "expectedLearnerAction": "discuss-author-perspective"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Die Autorinnen und Autoren argumentieren aus einer reformorientierten Perspektive. Das macht die Quelle nicht wertlos, aber es erklärt, warum Chancen ausführlicher dargestellt werden als mögliche Nebenfolgen, etwa Belastung für Lehrkräfte oder soziale Unterschiede beim Zugang.",
+          "translations": [
+            { "language": "en", "text": "The authors argue from a reform-oriented perspective. That does not make the source worthless, but it explains why opportunities are presented more extensively than possible side effects, such as burdens on teachers or social differences in access." },
+            { "language": "fa", "text": "نویسندگان از زاویه‌ای اصلاح‌محور استدلال می‌کنند. این منبع را بی‌ارزش نمی‌کند، اما توضیح می‌دهد چرا فرصت‌ها مفصل‌تر از پیامدهای جانبی احتمالی مطرح شده‌اند؛ مثلاً فشار بر معلمان یا تفاوت‌های اجتماعی در دسترسی." },
+            { "language": "ar", "text": "يجادل المؤلفون من منظور إصلاحي. هذا لا يجعل المصدر بلا قيمة، لكنه يفسر لماذا تُعرض الفرص بتفصيل أكبر من الآثار الجانبية المحتملة، مثل العبء على المعلمين أو الفروق الاجتماعية في الوصول." },
+            { "language": "tr", "text": "Yazarlar reform odaklı bir perspektiften argüman kuruyor. Bu kaynağı değersiz yapmaz, ancak fırsatların neden öğretmenlere yük veya erişimde sosyal farklar gibi olası yan sonuçlardan daha ayrıntılı sunulduğunu açıklar." },
+            { "language": "ru", "text": "Авторы аргументируют с реформаторской перспективы. Это не делает источник бесполезным, но объясняет, почему возможности представлены подробнее, чем возможные побочные последствия, например нагрузка на преподавателей или социальные различия в доступе." },
+            { "language": "ckb", "text": "نووسەران لە دیدێکی چاکسازیخوازانەوە پاساو دەهێننەوە. ئەمە سەرچاوەکە بێبەها ناکات، بەڵام ڕوون دەکاتەوە بۆچی دەرفەتەکان بە وردی زیاتر لە کاریگەرییە لاوەکییە ئەگەرییەکان باس کراون؛ وەک بارگرانی بۆ مامۆستایان یان جیاوازی کۆمەڵایەتی لە دەستگەیشتن." },
+            { "language": "kmr", "text": "Nivîskar ji perspektîfeke reformxwazî arguman dikin. Ev çavkaniyê bênirx nake, lê rave dike çima derfet zêdetir bi hûrgulî tên pêşkêşkirin ji encamên alî yên gengaz, wek bar li ser mamosteyan an cudahiyên civakî di gihîştinê de." },
+            { "language": "pl", "text": "Autorzy argumentują z perspektywy zorientowanej na reformę. Nie czyni to źródła bezwartościowym, ale wyjaśnia, dlaczego szanse są przedstawione szerzej niż możliwe skutki uboczne, na przykład obciążenie nauczycieli czy społeczne różnice w dostępie." },
+            { "language": "ro", "text": "Autorii argumentează dintr-o perspectivă orientată spre reformă. Aceasta nu face sursa inutilă, dar explică de ce oportunitățile sunt prezentate mai amplu decât posibilele efecte secundare, cum ar fi povara asupra profesorilor sau diferențele sociale de acces." },
+            { "language": "sq", "text": "Autorët argumentojnë nga një perspektivë e orientuar drejt reformës. Kjo nuk e bën burimin pa vlerë, por shpjegon pse mundësitë paraqiten më gjerësisht se pasojat e mundshme anësore, si ngarkesa për mësuesit ose dallimet sociale në qasje." }
+          ],
+          "function": "model-response",
+          "toneNote": "Critical without dismissing.",
+          "expectedLearnerAction": "identify-perspective-and-effect"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Klingt das nicht so, als würden Sie der Quelle eine Absicht unterstellen?",
+          "translations": [
+            { "language": "en", "text": "Doesn’t that sound as if you are attributing an intention to the source?" },
+            { "language": "fa", "text": "آیا این‌طور به نظر نمی‌رسد که دارید به منبع یک نیت خاص نسبت می‌دهید؟" },
+            { "language": "ar", "text": "ألا يبدو ذلك كما لو أنك تنسب نية معينة إلى المصدر؟" },
+            { "language": "tr", "text": "Bu, kaynağa bir niyet atfediyormuşsunuz gibi duyulmuyor mu?" },
+            { "language": "ru", "text": "Разве это не звучит так, будто вы приписываете источнику определённое намерение?" },
+            { "language": "ckb", "text": "ئایا ئەمە وا دەردەکەوێت کە تۆ مەبەستێکی تایبەت بە سەرچاوەکە دەدات؟" },
+            { "language": "kmr", "text": "Ma ev wisa nayê bihîstin ku hûn niyetekê didin ser çavkaniyê?" },
+            { "language": "pl", "text": "Czy to nie brzmi tak, jakby przypisywał pan źródłu określoną intencję?" },
+            { "language": "ro", "text": "Nu sună ca și cum ați atribui sursei o intenție anume?" },
+            { "language": "sq", "text": "A nuk tingëllon sikur po i atribuoni burimit një qëllim të caktuar?" }
+          ],
+          "function": "tone-risk",
+          "toneNote": "Warns against overclaiming.",
+          "expectedLearnerAction": "avoid-motive-claim"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das wäre tatsächlich zu stark formuliert. Ich würde deshalb nicht von Absicht sprechen, sondern von einer erkennbaren Schwerpunktsetzung. Kritisch ist nicht die Motivation der Autorinnen und Autoren, sondern die Frage, welche Aspekte dadurch weniger sichtbar werden.",
+          "translations": [
+            { "language": "en", "text": "That would indeed be too strong a formulation. I would therefore not speak of intention, but of a recognizable emphasis. The critical issue is not the authors' motivation, but which aspects become less visible as a result." },
+            { "language": "fa", "text": "این واقعاً بیان بیش از حد قوی‌ای می‌شود. بنابراین من از نیت حرف نمی‌زنم، بلکه از یک تأکید قابل تشخیص صحبت می‌کنم. نکته انتقادی انگیزه نویسندگان نیست، بلکه این است که در نتیجه کدام جنبه‌ها کمتر دیده می‌شوند." },
+            { "language": "ar", "text": "سيكون ذلك بالفعل صياغة قوية أكثر من اللازم. لذلك لا أتحدث عن نية، بل عن تركيز يمكن التعرف عليه. المسألة النقدية ليست دافع المؤلفين، بل الجوانب التي تصبح أقل وضوحاً بسبب ذلك." },
+            { "language": "tr", "text": "Bu gerçekten fazla güçlü bir formülasyon olurdu. Bu yüzden niyetten değil, fark edilebilir bir vurgu noktasından söz ederim. Eleştirel mesele yazarların motivasyonu değil, bunun sonucunda hangi yönlerin daha az görünür olduğudur." },
+            { "language": "ru", "text": "Это действительно было бы слишком сильной формулировкой. Поэтому я говорил бы не о намерении, а о заметном акценте. Критичен не мотив авторов, а вопрос, какие аспекты из-за этого становятся менее видимыми." },
+            { "language": "ckb", "text": "ئەمە بەڕاستی داڕشتنێکی زۆر بەهێز دەبێت. بۆیە من باس لە مەبەست ناکەم، بەڵکو باس لە جەختکردنەوەیەکی دیار دەکەم. خاڵی ڕەخنەیی انگیزەی نووسەران نییە، بەڵکو ئەوەیە کە بەهۆی ئەمەوە کام لایەن کەمتر دیار دەبێت." },
+            { "language": "kmr", "text": "Ev bi rastî formulekirineke pir xurt dibû. Ji ber vê yekê ez qala niyetê nakim, lê qala giranîdaneke xuya dikim. Pirsa rexneyî ne motivasyona nivîskaran e, lê ew e ka ji ber vê kîjan alî kêmtir xuya dibin." },
+            { "language": "pl", "text": "To rzeczywiście byłoby zbyt mocne sformułowanie. Dlatego nie mówiłbym o intencji, lecz o rozpoznawalnym rozłożeniu akcentów. Krytyczne nie jest nastawienie autorów, lecz pytanie, które aspekty stają się przez to mniej widoczne." },
+            { "language": "ro", "text": "Aceasta ar fi într-adevăr o formulare prea puternică. De aceea nu aș vorbi despre intenție, ci despre o accentuare recognoscibilă. Problema critică nu este motivația autorilor, ci întrebarea ce aspecte devin mai puțin vizibile din această cauză." },
+            { "language": "sq", "text": "Kjo do të ishte vërtet një formulim shumë i fortë. Prandaj nuk do të flisja për qëllim, por për një theksim të dallueshëm. Çështja kritike nuk është motivimi i autorëve, por cilat aspekte bëhen më pak të dukshme si rezultat." }
+          ],
+          "function": "model-response",
+          "toneNote": "Careful academic hedging.",
+          "expectedLearnerAction": "repair-overclaim"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Wie würden Sie die Quelle dann konkret in Ihrer Arbeit verwenden?",
+          "translations": [
+            { "language": "en", "text": "How would you then use the source concretely in your paper?" },
+            { "language": "fa", "text": "پس این منبع را دقیقاً چگونه در کار خودتان استفاده می‌کنید؟" },
+            { "language": "ar", "text": "كيف ستستخدم المصدر إذن بشكل ملموس في عملك؟" },
+            { "language": "tr", "text": "O hâlde kaynağı çalışmanızda somut olarak nasıl kullanırsınız?" },
+            { "language": "ru", "text": "Как бы вы тогда конкретно использовали источник в своей работе?" },
+            { "language": "ckb", "text": "ئەوا ئەم سەرچاوەیە بە شێوەیەکی دیاریکراو چۆن لە کارەکەتدا بەکار دەهێنیت؟" },
+            { "language": "kmr", "text": "Wê demê hûn ê vê çavkaniyê bi awayekî şênber di xebata xwe de çawa bi kar bînin?" },
+            { "language": "pl", "text": "Jak więc konkretnie wykorzystałby pan to źródło w swojej pracy?" },
+            { "language": "ro", "text": "Cum ați folosi atunci concret această sursă în lucrarea dumneavoastră?" },
+            { "language": "sq", "text": "Si do ta përdornit atëherë konkretisht këtë burim në punimin tuaj?" }
+          ],
+          "function": "application-prompt",
+          "toneNote": "Moves from critique to use.",
+          "expectedLearnerAction": "state-source-use"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Quelle als empirischen Ausgangspunkt nutzen, nicht als abschließenden Beleg. Sie eignet sich, um ein Problemfeld zu eröffnen; für eine belastbare Schlussfolgerung müsste ich sie jedoch mit Studien vergleichen, die andere Gruppen, längere Zeiträume oder qualitative Interviews einbeziehen.",
+          "translations": [
+            { "language": "en", "text": "I would use the source as an empirical starting point, not as final proof. It is suitable for opening a problem area; for a robust conclusion, however, I would need to compare it with studies that include other groups, longer periods, or qualitative interviews." },
+            { "language": "fa", "text": "من منبع را به‌عنوان نقطه شروع تجربی استفاده می‌کنم، نه به‌عنوان مدرک نهایی. برای گشودن یک حوزه مسئله مناسب است؛ اما برای نتیجه‌گیری قابل اتکا باید آن را با پژوهش‌هایی مقایسه کنم که گروه‌های دیگر، دوره‌های زمانی طولانی‌تر یا مصاحبه‌های کیفی را هم دربرمی‌گیرند." },
+            { "language": "ar", "text": "سأستخدم المصدر كنقطة انطلاق تجريبية، لا كدليل نهائي. يصلح لفتح مجال مشكلة؛ لكن للوصول إلى استنتاج متين يجب مقارنته بدراسات تشمل مجموعات أخرى أو فترات زمنية أطول أو مقابلات نوعية." },
+            { "language": "tr", "text": "Kaynağı nihai kanıt olarak değil, ampirik bir başlangıç noktası olarak kullanırdım. Bir problem alanını açmak için uygundur; ancak sağlam bir sonuca varmak için onu başka grupları, daha uzun dönemleri veya nitel görüşmeleri içeren çalışmalarla karşılaştırmam gerekir." },
+            { "language": "ru", "text": "Я использовал бы источник как эмпирическую отправную точку, а не как окончательное доказательство. Он подходит для открытия проблемного поля; однако для надёжного вывода мне нужно сравнить его с исследованиями, включающими другие группы, более длительные периоды или качественные интервью." },
+            { "language": "ckb", "text": "من سەرچاوەکە وەک خاڵی دەستپێکی ئەزموونی بەکار دەهێنم، نە وەک بەڵگەی کۆتایی. بۆ کردنەوەی بواری کێشەیەک گونجاوە؛ بەڵام بۆ دەرئەنجامی پشتپێبەستراو پێویستە بە توێژینەوەیەکانی تر بەراوردی بکەم کە گرووپی تر، ماوەی درێژتر یان چاوپێکەوتنی چۆنایەتی لەخۆ دەگرن." },
+            { "language": "kmr", "text": "Ez çavkaniyê wekî destpêkeke empirîk bi kar tînim, ne wekî delîla dawî. Ew ji bo vekirina qada pirsgirêkê guncan e; lê ji bo encameke bihêz divê wê bi lêkolînên ku komên din, demên dirêjtir an hevpeyvînên kalîteyî dihewînin re bide ber hev." },
+            { "language": "pl", "text": "Użyłbym źródła jako empirycznego punktu wyjścia, a nie jako ostatecznego dowodu. Nadaje się do otwarcia pola problemowego; dla solidnego wniosku musiałbym jednak porównać je z badaniami obejmującymi inne grupy, dłuższe okresy lub wywiady jakościowe." },
+            { "language": "ro", "text": "Aș folosi sursa ca punct de plecare empiric, nu ca dovadă finală. Este potrivită pentru a deschide un câmp problematic; pentru o concluzie solidă ar trebui însă să o compar cu studii care includ alte grupuri, perioade mai lungi sau interviuri calitative." },
+            { "language": "sq", "text": "Do ta përdorja burimin si pikënisje empirike, jo si provë përfundimtare. Ai është i përshtatshëm për të hapur një fushë problemi; por për një përfundim të qëndrueshëm duhet ta krahasoj me studime që përfshijnë grupe të tjera, periudha më të gjata ose intervista cilësore." }
+          ],
+          "function": "model-response",
+          "toneNote": "Clear source-use strategy.",
+          "expectedLearnerAction": "define-limited-use"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Können Sie Ihre Quellenkritik in einem Satz zusammenfassen, der in einer Seminararbeit stehen könnte?",
+          "translations": [
+            { "language": "en", "text": "Can you summarize your source criticism in one sentence that could appear in a seminar paper?" },
+            { "language": "fa", "text": "آیا می‌توانید نقد منبع خود را در یک جمله خلاصه کنید که بتواند در یک کار سمیناری بیاید؟" },
+            { "language": "ar", "text": "هل يمكنك تلخيص نقدك للمصدر في جملة واحدة يمكن أن ترد في بحث ندوة؟" },
+            { "language": "tr", "text": "Kaynak eleştirinizi bir seminer çalışmasında yer alabilecek tek bir cümlede özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Можете ли вы резюмировать критику источника одним предложением, которое могло бы быть в семинарской работе?" },
+            { "language": "ckb", "text": "دەتوانیت ڕەخنەی سەرچاوەکەت لە ڕستەیەکدا کورت بکەیتەوە کە بتوانێت لە کارێکی سیمیناردا بێت؟" },
+            { "language": "kmr", "text": "Hûn dikarin rexneya çavkaniya xwe di yek hevokê de kurt bikin ku di xebateke semînerê de cih bigire?" },
+            { "language": "pl", "text": "Czy może pan podsumować swoją krytykę źródła w jednym zdaniu, które mogłoby znaleźć się w pracy seminaryjnej?" },
+            { "language": "ro", "text": "Puteți rezuma critica sursei într-o singură propoziție care ar putea apărea într-o lucrare de seminar?" },
+            { "language": "sq", "text": "A mund ta përmblidhni kritikën e burimit në një fjali që mund të qëndrojë në një punim seminarik?" }
+          ],
+          "function": "summary-prompt",
+          "toneNote": "Requires concise academic wording.",
+          "expectedLearnerAction": "summarize-source-criticism"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Der Artikel liefert aktuelle empirische Hinweise auf ein relevantes Problemfeld, seine Aussagekraft bleibt jedoch begrenzt, weil Stichprobe, Autorperspektive und mögliche Alternativerklärungen nur teilweise offengelegt beziehungsweise diskutiert werden.",
+          "translations": [
+            { "language": "en", "text": "The article provides current empirical indications of a relevant problem area, but its evidential strength remains limited because the sample, author perspective, and possible alternative explanations are only partially disclosed or discussed." },
+            { "language": "fa", "text": "مقاله نشانه‌های تجربی تازه‌ای درباره یک حوزه مسئله مهم ارائه می‌کند، اما قدرت استنادی آن محدود می‌ماند، چون نمونه، زاویه دید نویسندگان و توضیح‌های جایگزین احتمالی فقط تا حدی آشکار یا بررسی شده‌اند." },
+            { "language": "ar", "text": "يقدم المقال مؤشرات تجريبية حديثة على مجال مشكلة مهم، لكن قوة دلالته تبقى محدودة لأن العينة ومنظور المؤلفين والتفسيرات البديلة المحتملة لا تُعرض أو تُناقش إلا جزئياً." },
+            { "language": "tr", "text": "Makale, ilgili bir problem alanına dair güncel ampirik göstergeler sunar; ancak kanıt gücü sınırlı kalır, çünkü örneklem, yazar perspektifi ve olası alternatif açıklamalar yalnızca kısmen açıklanmış veya tartışılmıştır." },
+            { "language": "ru", "text": "Статья предоставляет актуальные эмпирические указания на значимое проблемное поле, однако её доказательная сила остаётся ограниченной, поскольку выборка, перспектива авторов и возможные альтернативные объяснения раскрыты или обсуждены лишь частично." },
+            { "language": "ckb", "text": "وتارەکە ئاماژەی ئەزموونی نوێ دەربارەی بواری کێشەیەکی گرنگ پێشکەش دەکات، بەڵام هێزی بەڵگەییەکەی سنووردار دەمێنێتەوە، چونکە نموونە، دیدی نووسەران و ڕوونکردنەوە جێگرەوە ئەگەرییەکان تەنها بەشێکیان ئاشکرا یان باس کراون." },
+            { "language": "kmr", "text": "Gotar nîşanên empirîk ên nû derbarê qada pirsgirêkeke girîng pêşkêş dike, lê hêza delîlkirina wê sînordar dimîne, ji ber ku nimûne, perspektîfa nivîskaran û ravekirinên alternatîf ên gengaz tenê qismen hatine eşkere kirin an nîqaşkirin." },
+            { "language": "pl", "text": "Artykuł dostarcza aktualnych empirycznych wskazań dotyczących istotnego pola problemowego, jednak jego siła dowodowa pozostaje ograniczona, ponieważ próba, perspektywa autorów i możliwe alternatywne wyjaśnienia są ujawnione lub omówione tylko częściowo." },
+            { "language": "ro", "text": "Articolul oferă indicii empirice actuale despre un domeniu problematic relevant, însă forța sa probatorie rămâne limitată deoarece eșantionul, perspectiva autorilor și posibilele explicații alternative sunt dezvăluite sau discutate doar parțial." },
+            { "language": "sq", "text": "Artikulli ofron tregues empirikë të rinj për një fushë problemi të rëndësishme, por fuqia e tij dëshmuese mbetet e kufizuar, sepse kampioni, këndvështrimi i autorëve dhe shpjegimet alternative të mundshme janë zbuluar ose diskutuar vetëm pjesërisht." }
+          ],
+          "function": "model-response",
+          "toneNote": "Concise seminar-paper style.",
+          "expectedLearnerAction": "produce-academic-summary"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde die Quelle nicht grundsätzlich infrage stellen, aber ihren Aussagewert begrenzen. Sie ist für die aktuelle Debatte nützlich, weil sie neue Daten liefert; zugleich muss man prüfen, aus welcher Perspektive die Daten erhoben und interpretiert wurden.",
+              "translations": [
+                { "language": "en", "text": "I would not fundamentally question the source, but I would limit its evidential value. It is useful for the current debate because it provides new data; at the same time, one must examine from which perspective the data were collected and interpreted." },
+                { "language": "fa", "text": "من اعتبار منبع را به‌طور بنیادی زیر سؤال نمی‌برم، اما ارزش استنادی آن را محدود می‌کنم. برای بحث فعلی مفید است، چون داده‌های جدید می‌دهد؛ هم‌زمان باید بررسی کرد که داده‌ها از چه زاویه‌ای گردآوری و تفسیر شده‌اند." },
+                { "language": "ar", "text": "لا أشكك في المصدر من حيث المبدأ، لكنني أحدد قيمة دلالته. فهو مفيد للنقاش الحالي لأنه يقدم بيانات جديدة؛ وفي الوقت نفسه يجب فحص المنظور الذي جُمعت وفُسرت منه البيانات." },
+                { "language": "tr", "text": "Kaynağı temelden sorgulamazdım, ama kanıt değerini sınırlandırırdım. Güncel tartışma için yararlıdır, çünkü yeni veriler sunar; aynı zamanda verilerin hangi perspektiften toplandığını ve yorumlandığını incelemek gerekir." },
+                { "language": "ru", "text": "Я бы не ставил источник под сомнение в принципе, но ограничил бы его доказательную ценность. Он полезен для текущей дискуссии, потому что предоставляет новые данные; одновременно нужно проверить, с какой перспективы эти данные были собраны и интерпретированы." },
+                { "language": "ckb", "text": "من سەرچاوەکە بە بنەڕەتی ناچەمە ژێر پرسیار، بەڵام بەهای بەڵگەییەکەی سنووردار دەکەم. بۆ گفتوگۆی ئێستا بەسوودە، چونکە داتای نوێ دەدات؛ هاوکات پێویستە بپشکنرێت داتا لە چ دیدێکەوە کۆکراوەتەوە و لێکدراوەتەوە." },
+                { "language": "kmr", "text": "Ez çavkaniyê bi bingehîn nexim bin pirsê, lê nirxa delîlkirina wê sînordar dikim. Ji bo nîqaşa heyî bikêr e, ji ber ku daneyên nû dide; di heman demê de divê bê vekolîn ka daneyên ji kîjan perspektîfê hatine komkirin û şîrovekirin." },
+                { "language": "pl", "text": "Nie kwestionowałbym źródła zasadniczo, ale ograniczyłbym jego wartość dowodową. Jest użyteczne dla aktualnej debaty, bo dostarcza nowych danych; jednocześnie trzeba sprawdzić, z jakiej perspektywy dane zostały zebrane i zinterpretowane." },
+                { "language": "ro", "text": "Nu aș pune sursa fundamental sub semnul întrebării, dar i-aș limita valoarea probatorie. Este utilă pentru dezbaterea actuală deoarece oferă date noi; în același timp trebuie verificat din ce perspectivă au fost colectate și interpretate datele." },
+                { "language": "sq", "text": "Nuk do ta vija burimin në dyshim në mënyrë themelore, por do t’ia kufizoja vlerën dëshmuese. Ai është i dobishëm për debatin aktual sepse jep të dhëna të reja; njëkohësisht duhet parë nga çfarë këndvështrimi janë mbledhur dhe interpretuar të dhënat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Nutzen und Begrenzung, statt die Quelle pauschal zu loben oder zu verwerfen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates usefulness and limitation instead of praising or rejecting the source wholesale." },
+                { "language": "fa", "text": "قوی: پاسخ کاربرد و محدودیت را جدا می‌کند، به جای اینکه منبع را کلی ستایش یا رد کند." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بين الفائدة والحدود بدلاً من مدح المصدر أو رفضه بصورة كلية." },
+                { "language": "tr", "text": "Güçlü: Yanıt, kaynağı bütünüyle övmek veya reddetmek yerine yararlılık ile sınırı ayırır." },
+                { "language": "ru", "text": "Сильно: ответ разделяет полезность и ограничение, вместо того чтобы источник целиком хвалить или отвергать." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سوود و سنوور جیا دەکاتەوە، نە ئەوەی سەرچاوەکە بە گشتی بستێنێت یان ڕەتی بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv bikêrhatin û sînor ji hev vediqetîne, ne ku çavkaniyê bi tevahî pesn bike an red bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela użyteczność od ograniczeń, zamiast źródło ogólnie chwalić albo odrzucać." },
+                { "language": "ro", "text": "Puternic: răspunsul separă utilitatea de limitare, în loc să laude sau să respingă global sursa." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan dobishmërinë nga kufizimi, në vend që ta lavdërojë ose refuzojë burimin në tërësi." }
+              ],
+              "explanationKey": "balanced-source-criticism"
+            },
+            {
+              "id": "weaker",
+              "text": "Der Artikel ist aktuell und enthält viele Daten, deshalb würde ich ihn als gute Grundlage verwenden.",
+              "translations": [
+                { "language": "en", "text": "The article is current and contains a lot of data, so I would use it as a good basis." },
+                { "language": "fa", "text": "مقاله جدید است و داده‌های زیادی دارد، بنابراین آن را به‌عنوان پایه خوبی استفاده می‌کنم." },
+                { "language": "ar", "text": "المقال حديث ويحتوي على بيانات كثيرة، لذلك سأستخدمه كأساس جيد." },
+                { "language": "tr", "text": "Makale güncel ve çok veri içeriyor, bu yüzden onu iyi bir temel olarak kullanırdım." },
+                { "language": "ru", "text": "Статья актуальна и содержит много данных, поэтому я использовал бы её как хорошую основу." },
+                { "language": "ckb", "text": "وتارەکە نوێیە و داتای زۆری تێدایە، بۆیە وەک بنەمایەکی باش بەکاری دەهێنم." },
+                { "language": "kmr", "text": "Gotar nû ye û gelek dane dihewîne, ji ber vê yekê ez ê wê wekî bingehê baş bi kar bînim." },
+                { "language": "pl", "text": "Artykuł jest aktualny i zawiera wiele danych, dlatego użyłbym go jako dobrej podstawy." },
+                { "language": "ro", "text": "Articolul este actual și conține multe date, de aceea l-aș folosi ca bază bună." },
+                { "language": "sq", "text": "Artikulli është i ri dhe përmban shumë të dhëna, prandaj do ta përdorja si bazë të mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unkritisch: Aktualität und Datenmenge ersetzen keine Prüfung von Perspektive, Methode und Reichweite.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too uncritical: currency and amount of data do not replace examining perspective, method, and scope." },
+                { "language": "fa", "text": "قابل‌باور است، اما زیادی بی‌نقد: جدید بودن و حجم داده جای بررسی زاویه دید، روش و دامنه اعتبار را نمی‌گیرد." },
+                { "language": "ar", "text": "مقبول ظاهرياً لكنه غير نقدي بما يكفي: الحداثة وكثرة البيانات لا تغنيان عن فحص المنظور والمنهج ونطاق الصلاحية." },
+                { "language": "tr", "text": "Makûl ama fazla eleştirisiz: güncellik ve veri miktarı, perspektif, yöntem ve kapsam incelemesinin yerini tutmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком некритично: актуальность и объём данных не заменяют проверки перспективы, метода и области применимости." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر بێ ڕەخنەیە: نوێبوون و زۆری داتا جێی پشکنینی دید، میتۆد و مەودای بەکارهێنان ناگرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir bêrexne ye: nûbûn û piraniya daneyan cihê vekolîna perspektîf, metod û qada derbasdariyê nagirin." },
+                { "language": "pl", "text": "Plausible, ale zbyt bezkrytyczne: aktualność i ilość danych nie zastępują sprawdzenia perspektywy, metody i zakresu." },
+                { "language": "ro", "text": "Plauzibil, dar prea necritic: actualitatea și cantitatea de date nu înlocuiesc verificarea perspectivei, metodei și domeniului de aplicare." },
+                { "language": "sq", "text": "E besueshme, por shumë jokritike: risia dhe sasia e të dhënave nuk zëvendësojnë shqyrtimin e këndvështrimit, metodës dhe fushës së vlefshmërisë." }
+              ],
+              "explanationKey": "data-volume-is-not-critique"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Zahlen erhöhen nicht automatisch die Zuverlässigkeit. Entscheidend ist, welche Stichprobe untersucht wurde, welche Fragen gestellt wurden und ob die Auswertung alternative Erklärungen berücksichtigt oder vorschnell eine Ursache behauptet.",
+              "translations": [
+                { "language": "en", "text": "Numbers do not automatically increase reliability. What matters is which sample was examined, which questions were asked, and whether the analysis considers alternative explanations or too quickly claims a cause." },
+                { "language": "fa", "text": "عددها به‌طور خودکار اعتبار را بالا نمی‌برند. مهم این است که چه نمونه‌ای بررسی شده، چه پرسش‌هایی مطرح شده و آیا تحلیل توضیح‌های جایگزین را در نظر گرفته یا زودهنگام علت قطعی ادعا کرده است." },
+                { "language": "ar", "text": "الأرقام لا تزيد الموثوقية تلقائياً. المهم هو نوع العينة التي دُرست، والأسئلة التي طُرحت، وما إذا كان التحليل يأخذ تفسيرات بديلة في الحسبان أو يدعي سبباً بسرعة." },
+                { "language": "tr", "text": "Sayılar güvenilirliği otomatik olarak artırmaz. Belirleyici olan hangi örneklemin incelendiği, hangi soruların sorulduğu ve analizin alternatif açıklamaları dikkate alıp almadığı ya da aceleyle neden iddia edip etmediğidir." },
+                { "language": "ru", "text": "Числа не повышают надёжность автоматически. Важно, какая выборка была изучена, какие вопросы задавались и учитывает ли анализ альтернативные объяснения или слишком быстро утверждает причину." },
+                { "language": "ckb", "text": "ژمارەکان بە شێوەیەکی خودکار متمانە زیاد ناکەن. گرنگ ئەوەیە چ نموونەیەک لێکۆڵراوەتەوە، چ پرسیارێک کراوە و ئایا شیکارییەکە ڕوونکردنەوەی جێگرەوە لەبەرچاو دەگرێت یان زۆر پەلە دەڵێت هۆکارەکە ئەوەیە." },
+                { "language": "kmr", "text": "Hejmar bi xweber pêbaweriyê zêde nakin. Ya girîng ew e ka kîjan nimûne hatiye lêkolînkirin, kîjan pirs hatine kirin û gelo analîz ravekirinên alternatîf dihesibîne an pir zû sedemekê îdia dike." },
+                { "language": "pl", "text": "Liczby nie zwiększają automatycznie wiarygodności. Decydujące jest to, jaką próbę zbadano, jakie pytania zadano i czy analiza uwzględnia alternatywne wyjaśnienia, czy zbyt szybko twierdzi, że wskazuje przyczynę." },
+                { "language": "ro", "text": "Cifrele nu cresc automat fiabilitatea. Esențial este ce eșantion a fost studiat, ce întrebări au fost puse și dacă analiza ia în calcul explicații alternative sau afirmă prea repede o cauză." },
+                { "language": "sq", "text": "Shifrat nuk e rrisin automatikisht besueshmërinë. Vendimtare është se çfarë kampioni është studiuar, çfarë pyetjesh janë bërë dhe nëse analiza merr parasysh shpjegime alternative apo pretendon shumë shpejt një shkak." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt konkrete Kriterien, mit denen Zahlen überhaupt erst interpretierbar werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names concrete criteria that make numbers interpretable in the first place." },
+                { "language": "fa", "text": "قوی: پاسخ معیارهای مشخصی را می‌گوید که اصلاً عددها را قابل تفسیر می‌کنند." },
+                { "language": "ar", "text": "قوي: تذكر الإجابة معايير ملموسة تجعل الأرقام قابلة للتفسير أصلاً." },
+                { "language": "tr", "text": "Güçlü: Yanıt, sayıların ancak hangi somut ölçütlerle yorumlanabilir hâle geldiğini belirtir." },
+                { "language": "ru", "text": "Сильно: ответ называет конкретные критерии, благодаря которым числа вообще становятся интерпретируемыми." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێوەری دیاریکراو ناو دەبات کە ژمارەکان بەهۆیانەوە دەبنە شتێکی لێکدانەوەکراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pîvanên şênber nav dike ku hejmar bi wan qet têgihiştbar dibin." },
+                { "language": "pl", "text": "Mocne: odpowiedź podaje konkretne kryteria, dzięki którym liczby w ogóle stają się interpretowalne." },
+                { "language": "ro", "text": "Puternic: răspunsul numește criterii concrete prin care cifrele devin interpretabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmend kritere konkrete që i bëjnë shifrat të interpretueshme." }
+              ],
+              "explanationKey": "method-before-numbers"
+            },
+            {
+              "id": "weaker",
+              "text": "Viele Zahlen sind meistens ein gutes Zeichen, aber man sollte vielleicht noch kurz prüfen, ob sie richtig zitiert wurden.",
+              "translations": [
+                { "language": "en", "text": "Many numbers are usually a good sign, but one should perhaps briefly check whether they were cited correctly." },
+                { "language": "fa", "text": "عددهای زیاد معمولاً نشانه خوبی است، اما شاید باید کوتاه بررسی کرد که درست نقل شده‌اند یا نه." },
+                { "language": "ar", "text": "كثرة الأرقام تكون غالباً علامة جيدة، لكن ربما ينبغي التحقق سريعاً مما إذا كانت قد اقتُبست بشكل صحيح." },
+                { "language": "tr", "text": "Çok sayıda sayı genellikle iyi bir işarettir, ama belki doğru alıntılanıp alıntılanmadıkları kısaca kontrol edilmelidir." },
+                { "language": "ru", "text": "Много чисел обычно является хорошим признаком, но, возможно, стоит кратко проверить, правильно ли они процитированы." },
+                { "language": "ckb", "text": "ژمارەی زۆر زۆرجار نیشانەیەکی باشە، بەڵام لەوانەیە پێویست بێت بە کورتەیی بپشکنرێت ئایا بە دروستی وەرگیراون یان نا." },
+                { "language": "kmr", "text": "Gelek hejmar bi gelemperî nîşaneke baş in, lê belkî divê kurt were kontrolkirin ka rast hatine vegotin an na." },
+                { "language": "pl", "text": "Wiele liczb to zwykle dobry znak, ale może warto krótko sprawdzić, czy zostały poprawnie zacytowane." },
+                { "language": "ro", "text": "Multe cifre sunt de obicei un semn bun, dar poate ar trebui verificat pe scurt dacă au fost citate corect." },
+                { "language": "sq", "text": "Shumë shifra zakonisht janë shenjë e mirë, por ndoshta duhet kontrolluar shkurt nëse janë cituar saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu oberflächlich: Zitatgenauigkeit ist wichtig, aber Quellenkritik fragt zusätzlich nach Stichprobe, Fragestellung und Auswertung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too superficial: citation accuracy matters, but source criticism also asks about sample, research question, and analysis." },
+                { "language": "fa", "text": "زیادی سطحی است: دقت نقل قول مهم است، اما نقد منبع علاوه بر آن درباره نمونه، پرسش پژوهش و تحلیل هم می‌پرسد." },
+                { "language": "ar", "text": "سطحي جداً: دقة الاقتباس مهمة، لكن نقد المصدر يسأل أيضاً عن العينة وسؤال البحث والتحليل." },
+                { "language": "tr", "text": "Fazla yüzeysel: alıntı doğruluğu önemlidir, ancak kaynak eleştirisi ayrıca örneklem, araştırma sorusu ve analiz hakkında da soru sorar." },
+                { "language": "ru", "text": "Слишком поверхностно: точность цитирования важна, но критика источника также спрашивает о выборке, исследовательском вопросе и анализе." },
+                { "language": "ckb", "text": "زۆر سەرپێییە: وردی وەرگرتن گرنگە، بەڵام ڕەخنەی سەرچاوە هەروەها دەربارەی نموونە، پرسیاری توێژینەوە و شیکاریش دەپرسێت." },
+                { "language": "kmr", "text": "Pir sererast e: rastiya vegotinê girîng e, lê rexneya çavkaniyê her wiha li ser nimûne, pirsa lêkolînê û analîzê dipirse." },
+                { "language": "pl", "text": "Zbyt powierzchowne: dokładność cytowania jest ważna, ale krytyka źródła pyta też o próbę, pytanie badawcze i analizę." },
+                { "language": "ro", "text": "Prea superficial: acuratețea citării este importantă, dar critica sursei întreabă și despre eșantion, întrebarea de cercetare și analiză." },
+                { "language": "sq", "text": "Shumë sipërfaqësore: saktësia e citimit është e rëndësishme, por kritika e burimit pyet edhe për kampionin, pyetjen kërkimore dhe analizën." }
+              ],
+              "explanationKey": "citation-is-not-enough"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Autorinnen und Autoren argumentieren aus einer reformorientierten Perspektive. Das macht die Quelle nicht wertlos, aber es erklärt, warum Chancen ausführlicher dargestellt werden als mögliche Nebenfolgen, etwa Belastung für Lehrkräfte oder soziale Unterschiede beim Zugang.",
+              "translations": [
+                { "language": "en", "text": "The authors argue from a reform-oriented perspective. That does not make the source worthless, but it explains why opportunities are presented more extensively than possible side effects, such as burdens on teachers or social differences in access." },
+                { "language": "fa", "text": "نویسندگان از زاویه‌ای اصلاح‌محور استدلال می‌کنند. این منبع را بی‌ارزش نمی‌کند، اما توضیح می‌دهد چرا فرصت‌ها مفصل‌تر از پیامدهای جانبی احتمالی مطرح شده‌اند؛ مثلاً فشار بر معلمان یا تفاوت‌های اجتماعی در دسترسی." },
+                { "language": "ar", "text": "يجادل المؤلفون من منظور إصلاحي. هذا لا يجعل المصدر بلا قيمة، لكنه يفسر لماذا تُعرض الفرص بتفصيل أكبر من الآثار الجانبية المحتملة، مثل العبء على المعلمين أو الفروق الاجتماعية في الوصول." },
+                { "language": "tr", "text": "Yazarlar reform odaklı bir perspektiften argüman kuruyor. Bu kaynağı değersiz yapmaz, ancak fırsatların neden öğretmenlere yük veya erişimde sosyal farklar gibi olası yan sonuçlardan daha ayrıntılı sunulduğunu açıklar." },
+                { "language": "ru", "text": "Авторы аргументируют с реформаторской перспективы. Это не делает источник бесполезным, но объясняет, почему возможности представлены подробнее, чем возможные побочные последствия, например нагрузка на преподавателей или социальные различия в доступе." },
+                { "language": "ckb", "text": "نووسەران لە دیدێکی چاکسازیخوازانەوە پاساو دەهێننەوە. ئەمە سەرچاوەکە بێبەها ناکات، بەڵام ڕوون دەکاتەوە بۆچی دەرفەتەکان بە وردی زیاتر لە کاریگەرییە لاوەکییە ئەگەرییەکان باس کراون؛ وەک بارگرانی بۆ مامۆستایان یان جیاوازی کۆمەڵایەتی لە دەستگەیشتن." },
+                { "language": "kmr", "text": "Nivîskar ji perspektîfeke reformxwazî arguman dikin. Ev çavkaniyê bênirx nake, lê rave dike çima derfet zêdetir bi hûrgulî tên pêşkêşkirin ji encamên alî yên gengaz, wek bar li ser mamosteyan an cudahiyên civakî di gihîştinê de." },
+                { "language": "pl", "text": "Autorzy argumentują z perspektywy zorientowanej na reformę. Nie czyni to źródła bezwartościowym, ale wyjaśnia, dlaczego szanse są przedstawione szerzej niż możliwe skutki uboczne, na przykład obciążenie nauczycieli czy społeczne różnice w dostępie." },
+                { "language": "ro", "text": "Autorii argumentează dintr-o perspectivă orientată spre reformă. Aceasta nu face sursa inutilă, dar explică de ce oportunitățile sunt prezentate mai amplu decât posibilele efecte secundare, cum ar fi povara asupra profesorilor sau diferențele sociale de acces." },
+                { "language": "sq", "text": "Autorët argumentojnë nga një perspektivë e orientuar drejt reformës. Kjo nuk e bën burimin pa vlerë, por shpjegon pse mundësitë paraqiten më gjerësisht se pasojat e mundshme anësore, si ngarkesa për mësuesit ose dallimet sociale në qasje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort benennt eine Perspektive, ohne daraus einen persönlichen Vorwurf zu machen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names a perspective without turning it into a personal accusation." },
+                { "language": "fa", "text": "قوی: پاسخ یک زاویه دید را نام می‌برد، بدون اینکه آن را به اتهام شخصی تبدیل کند." },
+                { "language": "ar", "text": "قوي: تسمي الإجابة منظوراً معيناً من دون تحويله إلى اتهام شخصي." },
+                { "language": "tr", "text": "Güçlü: Yanıt bir perspektifi adlandırır, ama bunu kişisel suçlamaya dönüştürmez." },
+                { "language": "ru", "text": "Сильно: ответ называет перспективу, не превращая её в личное обвинение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دیدێک ناو دەبات، بەبێ ئەوەی بیکات بە تۆمەتێکی کەسی." },
+                { "language": "kmr", "text": "Xurt e: Bersiv perspektîfekê nav dike bêyî ku wê bike sûcdarkirineke kesane." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa perspektywę, nie zamieniając jej w osobisty zarzut." },
+                { "language": "ro", "text": "Puternic: răspunsul numește o perspectivă fără să o transforme într-o acuzație personală." },
+                { "language": "sq", "text": "E fortë: përgjigjja emërton një këndvështrim pa e kthyer atë në akuzë personale." }
+              ],
+              "explanationKey": "perspective-without-accusation"
+            },
+            {
+              "id": "weaker",
+              "text": "Die Autorinnen und Autoren wollen offenbar zeigen, dass Reformen gut sind, deshalb muss man bei der Quelle vorsichtig sein.",
+              "translations": [
+                { "language": "en", "text": "The authors apparently want to show that reforms are good, so one must be cautious with the source." },
+                { "language": "fa", "text": "نویسندگان ظاهراً می‌خواهند نشان دهند اصلاحات خوب است، بنابراین باید با این منبع محتاط بود." },
+                { "language": "ar", "text": "يبدو أن المؤلفين يريدون إظهار أن الإصلاحات جيدة، لذلك يجب التعامل مع المصدر بحذر." },
+                { "language": "tr", "text": "Yazarlar görünüşe göre reformların iyi olduğunu göstermek istiyor, bu yüzden kaynak konusunda dikkatli olmak gerekir." },
+                { "language": "ru", "text": "Авторы, по-видимому, хотят показать, что реформы хороши, поэтому с источником нужно быть осторожным." },
+                { "language": "ckb", "text": "نووسەران وادیارە دەیانەوێت پیشان بدەن چاکسازی باشە، بۆیە پێویستە لەگەڵ ئەم سەرچاوەیە بە ئاگاداری مامەڵە بکرێت." },
+                { "language": "kmr", "text": "Nivîskar xuya ye dixwazin nîşan bidin ku reform baş in, ji ber vê yekê divê mirov li hember çavkaniyê baldar be." },
+                { "language": "pl", "text": "Autorzy najwyraźniej chcą pokazać, że reformy są dobre, dlatego trzeba być ostrożnym wobec tego źródła." },
+                { "language": "ro", "text": "Autorii par să vrea să arate că reformele sunt bune, de aceea trebuie să fim atenți cu această sursă." },
+                { "language": "sq", "text": "Autorët duket se duan të tregojnë se reformat janë të mira, prandaj duhet pasur kujdes me këtë burim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Riskant formuliert: Die Antwort unterstellt Absicht und bleibt dadurch weniger akademisch belastbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Risky wording: The answer attributes intention and is therefore less academically defensible." },
+                { "language": "fa", "text": "فرمول‌بندی پرریسک است: پاسخ نیت نسبت می‌دهد و به همین دلیل از نظر دانشگاهی کمتر قابل دفاع است." },
+                { "language": "ar", "text": "صياغة محفوفة بالمخاطر: تنسب الإجابة نية، ولذلك تصبح أقل قابلية للدفاع أكاديمياً." },
+                { "language": "tr", "text": "Riskli ifade: Yanıt niyet atfediyor ve bu yüzden akademik olarak daha az savunulabilir oluyor." },
+                { "language": "ru", "text": "Рискованная формулировка: ответ приписывает намерение и поэтому менее защищён академически." },
+                { "language": "ckb", "text": "داڕشتنەکە مەترسیدارە: وەڵامەکە مەبەست دەدات و بۆیە لە ڕووی ئەکادیمییەوە کەمتر بەرگری لێ دەکرێت." },
+                { "language": "kmr", "text": "Formulekirin rîskdar e: Bersiv niyetê didê û ji ber vê yekê akademîk kêmtir parastinbar e." },
+                { "language": "pl", "text": "Ryzykowne sformułowanie: odpowiedź przypisuje intencję, przez co jest mniej obronna akademicko." },
+                { "language": "ro", "text": "Formulare riscantă: răspunsul atribuie intenție și devine astfel mai puțin defensabil academic." },
+                { "language": "sq", "text": "Formulim i rrezikshëm: përgjigjja i atribuon qëllim dhe kështu bëhet më pak e mbrojtshme akademikisht." }
+              ],
+              "explanationKey": "avoid-intention-claim"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das wäre tatsächlich zu stark formuliert. Ich würde deshalb nicht von Absicht sprechen, sondern von einer erkennbaren Schwerpunktsetzung. Kritisch ist nicht die Motivation der Autorinnen und Autoren, sondern die Frage, welche Aspekte dadurch weniger sichtbar werden.",
+              "translations": [
+                { "language": "en", "text": "That would indeed be too strong a formulation. I would therefore not speak of intention, but of a recognizable emphasis. The critical issue is not the authors' motivation, but which aspects become less visible as a result." },
+                { "language": "fa", "text": "این واقعاً بیان بیش از حد قوی‌ای می‌شود. بنابراین من از نیت حرف نمی‌زنم، بلکه از یک تأکید قابل تشخیص صحبت می‌کنم. نکته انتقادی انگیزه نویسندگان نیست، بلکه این است که در نتیجه کدام جنبه‌ها کمتر دیده می‌شوند." },
+                { "language": "ar", "text": "سيكون ذلك بالفعل صياغة قوية أكثر من اللازم. لذلك لا أتحدث عن نية، بل عن تركيز يمكن التعرف عليه. المسألة النقدية ليست دافع المؤلفين، بل الجوانب التي تصبح أقل وضوحاً بسبب ذلك." },
+                { "language": "tr", "text": "Bu gerçekten fazla güçlü bir formülasyon olurdu. Bu yüzden niyetten değil, fark edilebilir bir vurgu noktasından söz ederim. Eleştirel mesele yazarların motivasyonu değil, bunun sonucunda hangi yönlerin daha az görünür olduğudur." },
+                { "language": "ru", "text": "Это действительно было бы слишком сильной формулировкой. Поэтому я говорил бы не о намерении, а о заметном акценте. Критичен не мотив авторов, а вопрос, какие аспекты из-за этого становятся менее видимыми." },
+                { "language": "ckb", "text": "ئەمە بەڕاستی داڕشتنێکی زۆر بەهێز دەبێت. بۆیە من باس لە مەبەست ناکەم، بەڵکو باس لە جەختکردنەوەیەکی دیار دەکەم. خاڵی ڕەخنەیی انگیزەی نووسەران نییە، بەڵکو ئەوەیە کە بەهۆی ئەمەوە کام لایەن کەمتر دیار دەبێت." },
+                { "language": "kmr", "text": "Ev bi rastî formulekirineke pir xurt dibû. Ji ber vê yekê ez qala niyetê nakim, lê qala giranîdaneke xuya dikim. Pirsa rexneyî ne motivasyona nivîskaran e, lê ew e ka ji ber vê kîjan alî kêmtir xuya dibin." },
+                { "language": "pl", "text": "To rzeczywiście byłoby zbyt mocne sformułowanie. Dlatego nie mówiłbym o intencji, lecz o rozpoznawalnym rozłożeniu akcentów. Krytyczne nie jest nastawienie autorów, lecz pytanie, które aspekty stają się przez to mniej widoczne." },
+                { "language": "ro", "text": "Aceasta ar fi într-adevăr o formulare prea puternică. De aceea nu aș vorbi despre intenție, ci despre o accentuare recognoscibilă. Problema critică nu este motivația autorilor, ci întrebarea ce aspecte devin mai puțin vizibile din această cauză." },
+                { "language": "sq", "text": "Kjo do të ishte vërtet një formulim shumë i fortë. Prandaj nuk do të flisja për qëllim, por për një theksim të dallueshëm. Çështja kritike nuk është motivimi i autorëve, por cilat aspekte bëhen më pak të dukshme si rezultat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort korrigiert die eigene Formulierung und ersetzt eine Absichtsbehauptung durch beobachtbare Schwerpunktsetzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer corrects its own wording and replaces a claim about intention with observable emphasis." },
+                { "language": "fa", "text": "قوی: پاسخ فرمول‌بندی خودش را اصلاح می‌کند و ادعای نیت را با تأکید قابل مشاهده جایگزین می‌کند." },
+                { "language": "ar", "text": "قوي: تصحح الإجابة صياغتها وتستبدل ادعاء النية بتركيز قابل للملاحظة." },
+                { "language": "tr", "text": "Güçlü: Yanıt kendi ifadesini düzeltir ve niyet iddiasını gözlemlenebilir bir vurgu ile değiştirir." },
+                { "language": "ru", "text": "Сильно: ответ исправляет собственную формулировку и заменяет утверждение о намерении наблюдаемым акцентом." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە داڕشتنی خۆی ڕاست دەکاتەوە و بانگەشەی مەبەست بە جەختکردنەوەیەکی بینراو دەگۆڕێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv formulekirina xwe rast dike û îdiaya niyetê bi giranîdaneke xuya diguherîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź koryguje własne sformułowanie i zastępuje twierdzenie o intencji obserwowalnym rozłożeniem akcentów." },
+                { "language": "ro", "text": "Puternic: răspunsul își corectează formularea și înlocuiește afirmația despre intenție cu o accentuare observabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja korrigjon formulimin e vet dhe zëvendëson pretendimin për qëllim me një theksim të vëzhgueshëm." }
+              ],
+              "explanationKey": "hedge-source-perspective"
+            },
+            {
+              "id": "weaker",
+              "text": "Vielleicht war Absicht zu stark, aber die Quelle ist schon einseitig, deshalb sollte man ihr nicht ganz vertrauen.",
+              "translations": [
+                { "language": "en", "text": "Maybe intention was too strong, but the source is rather one-sided, so one should not fully trust it." },
+                { "language": "fa", "text": "شاید گفتن نیت زیادی قوی بود، اما منبع تا حدی یک‌طرفه است، بنابراین نباید کاملاً به آن اعتماد کرد." },
+                { "language": "ar", "text": "ربما كانت كلمة النية قوية جداً، لكن المصدر أحادي الجانب إلى حد ما، لذلك لا ينبغي الوثوق به تماماً." },
+                { "language": "tr", "text": "Belki niyet demek fazla güçlüydü, ama kaynak yine de tek taraflı, bu yüzden ona tamamen güvenmemek gerekir." },
+                { "language": "ru", "text": "Возможно, слово намерение было слишком сильным, но источник всё же односторонний, поэтому ему не следует полностью доверять." },
+                { "language": "ckb", "text": "لەوانەیە وشەی مەبەست زۆر بەهێز بووبێت، بەڵام سەرچاوەکە تا ڕادەیەک یەک‌لایەنەیە، بۆیە نابێت بە تەواوی متمانەی پێ بکرێت." },
+                { "language": "kmr", "text": "Belkî gotina niyet pir xurt bû, lê çavkanî hinekî yekalî ye, ji ber vê yekê divê mirov bi tevahî pê bawer neke." },
+                { "language": "pl", "text": "Może słowo intencja było zbyt mocne, ale źródło jest jednak jednostronne, więc nie należy mu całkowicie ufać." },
+                { "language": "ro", "text": "Poate că intenție era prea puternic, dar sursa este totuși unilaterală, deci nu ar trebui să avem încredere deplină în ea." },
+                { "language": "sq", "text": "Ndoshta fjala qëllim ishte shumë e fortë, por burimi është megjithatë i njëanshëm, prandaj nuk duhet t’i besohet plotësisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Besser als vorher, aber noch zu wertend: Die Antwort braucht eine beobachtbare Begründung, welche Aspekte fehlen oder schwächer behandelt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Better than before, but still too judgmental: The answer needs an observable reason for which aspects are missing or treated more weakly." },
+                { "language": "fa", "text": "از قبل بهتر است، اما هنوز زیادی ارزشی است: پاسخ باید دلیل قابل مشاهده‌ای بدهد که کدام جنبه‌ها غایب‌اند یا ضعیف‌تر بررسی شده‌اند." },
+                { "language": "ar", "text": "أفضل من السابق، لكنها ما زالت حكمية جداً: تحتاج الإجابة إلى سبب قابل للملاحظة يوضح الجوانب الغائبة أو الأضعف معالجة." },
+                { "language": "tr", "text": "Öncekinden daha iyi, ama hâlâ fazla yargılayıcı: Yanıt, hangi yönlerin eksik ya da daha zayıf işlendiğine dair gözlemlenebilir bir gerekçe sunmalıdır." },
+                { "language": "ru", "text": "Лучше, чем раньше, но всё ещё слишком оценочно: ответу нужно наблюдаемое обоснование, какие аспекты отсутствуют или рассмотрены слабее." },
+                { "language": "ckb", "text": "لە پێشتر باشترە، بەڵام هێشتا زۆر هەڵسەنگێنەرانەیە: وەڵامەکە پێویستی بە هۆکارێکی بینراوە کە کام لایەن نییە یان لاوازتر باس کراوە." },
+                { "language": "kmr", "text": "Ji berê çêtir e, lê hê jî pir nirxandinbar e: Bersiv hewceyî sedemeke xuya ye ku kîjan alî tune ne an kêmtir hatine gotin." },
+                { "language": "pl", "text": "Lepsze niż wcześniej, ale nadal zbyt oceniające: odpowiedź potrzebuje obserwowalnego uzasadnienia, które aspekty są pominięte lub słabiej omówione." },
+                { "language": "ro", "text": "Mai bine decât înainte, dar încă prea evaluativ: răspunsul are nevoie de o justificare observabilă privind aspectele absente sau tratate mai slab." },
+                { "language": "sq", "text": "Më mirë se më parë, por ende shumë vlerësuese: përgjigjja ka nevojë për një arsye të vëzhgueshme se cilat aspekte mungojnë ose trajtohen më dobët." }
+              ],
+              "explanationKey": "still-too-evaluative"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde die Quelle als empirischen Ausgangspunkt nutzen, nicht als abschließenden Beleg. Sie eignet sich, um ein Problemfeld zu eröffnen; für eine belastbare Schlussfolgerung müsste ich sie jedoch mit Studien vergleichen, die andere Gruppen, längere Zeiträume oder qualitative Interviews einbeziehen.",
+              "translations": [
+                { "language": "en", "text": "I would use the source as an empirical starting point, not as final proof. It is suitable for opening a problem area; for a robust conclusion, however, I would need to compare it with studies that include other groups, longer periods, or qualitative interviews." },
+                { "language": "fa", "text": "من منبع را به‌عنوان نقطه شروع تجربی استفاده می‌کنم، نه به‌عنوان مدرک نهایی. برای گشودن یک حوزه مسئله مناسب است؛ اما برای نتیجه‌گیری قابل اتکا باید آن را با پژوهش‌هایی مقایسه کنم که گروه‌های دیگر، دوره‌های زمانی طولانی‌تر یا مصاحبه‌های کیفی را هم دربرمی‌گیرند." },
+                { "language": "ar", "text": "سأستخدم المصدر كنقطة انطلاق تجريبية، لا كدليل نهائي. يصلح لفتح مجال مشكلة؛ لكن للوصول إلى استنتاج متين يجب مقارنته بدراسات تشمل مجموعات أخرى أو فترات زمنية أطول أو مقابلات نوعية." },
+                { "language": "tr", "text": "Kaynağı nihai kanıt olarak değil, ampirik bir başlangıç noktası olarak kullanırdım. Bir problem alanını açmak için uygundur; ancak sağlam bir sonuca varmak için onu başka grupları, daha uzun dönemleri veya nitel görüşmeleri içeren çalışmalarla karşılaştırmam gerekir." },
+                { "language": "ru", "text": "Я использовал бы источник как эмпирическую отправную точку, а не как окончательное доказательство. Он подходит для открытия проблемного поля; однако для надёжного вывода мне нужно сравнить его с исследованиями, включающими другие группы, более длительные периоды или качественные интервью." },
+                { "language": "ckb", "text": "من سەرچاوەکە وەک خاڵی دەستپێکی ئەزموونی بەکار دەهێنم، نە وەک بەڵگەی کۆتایی. بۆ کردنەوەی بواری کێشەیەک گونجاوە؛ بەڵام بۆ دەرئەنجامی پشتپێبەستراو پێویستە بە توێژینەوەیەکانی تر بەراوردی بکەم کە گرووپی تر، ماوەی درێژتر یان چاوپێکەوتنی چۆنایەتی لەخۆ دەگرن." },
+                { "language": "kmr", "text": "Ez çavkaniyê wekî destpêkeke empirîk bi kar tînim, ne wekî delîla dawî. Ew ji bo vekirina qada pirsgirêkê guncan e; lê ji bo encameke bihêz divê wê bi lêkolînên ku komên din, demên dirêjtir an hevpeyvînên kalîteyî dihewînin re bide ber hev." },
+                { "language": "pl", "text": "Użyłbym źródła jako empirycznego punktu wyjścia, a nie jako ostatecznego dowodu. Nadaje się do otwarcia pola problemowego; dla solidnego wniosku musiałbym jednak porównać je z badaniami obejmującymi inne grupy, dłuższe okresy lub wywiady jakościowe." },
+                { "language": "ro", "text": "Aș folosi sursa ca punct de plecare empiric, nu ca dovadă finală. Este potrivită pentru a deschide un câmp problematic; pentru o concluzie solidă ar trebui însă să o compar cu studii care includ alte grupuri, perioade mai lungi sau interviuri calitative." },
+                { "language": "sq", "text": "Do ta përdorja burimin si pikënisje empirike, jo si provë përfundimtare. Ai është i përshtatshëm për të hapur një fushë problemi; por për një përfundim të qëndrueshëm duhet ta krahasoj me studime që përfshijnë grupe të tjera, periudha më të gjata ose intervista cilësore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht aus Kritik eine saubere Verwendungsstrategie.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer turns criticism into a clear strategy for using the source." },
+                { "language": "fa", "text": "قوی: پاسخ نقد را به راهبرد روشن برای استفاده از منبع تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تحول الإجابة النقد إلى استراتيجية واضحة لاستخدام المصدر." },
+                { "language": "tr", "text": "Güçlü: Yanıt eleştiriyi kaynağı kullanmak için açık bir stratejiye dönüştürür." },
+                { "language": "ru", "text": "Сильно: ответ превращает критику в ясную стратегию использования источника." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕەخنە دەگۆڕێت بۆ ستراتیژییەکی ڕوون بۆ بەکارهێنانی سەرچاوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rexneyê vediguherîne stratejiyeke zelal ji bo bikaranîna çavkaniyê." },
+                { "language": "pl", "text": "Mocne: odpowiedź zamienia krytykę w jasną strategię wykorzystania źródła." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă critica într-o strategie clară de utilizare a sursei." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen kritikën në një strategji të qartë për përdorimin e burimit." }
+              ],
+              "explanationKey": "limited-source-use"
+            },
+            {
+              "id": "weaker",
+              "text": "Ich würde die Quelle verwenden, aber im Text kurz erwähnen, dass sie nicht perfekt ist.",
+              "translations": [
+                { "language": "en", "text": "I would use the source, but briefly mention in the text that it is not perfect." },
+                { "language": "fa", "text": "من از منبع استفاده می‌کنم، اما در متن کوتاه اشاره می‌کنم که کامل نیست." },
+                { "language": "ar", "text": "سأستخدم المصدر، لكنني سأذكر في النص بإيجاز أنه ليس مثالياً." },
+                { "language": "tr", "text": "Kaynağı kullanırdım, ama metinde kısaca mükemmel olmadığını belirtirdim." },
+                { "language": "ru", "text": "Я бы использовал источник, но кратко упомянул бы в тексте, что он не идеален." },
+                { "language": "ckb", "text": "من سەرچاوەکە بەکار دەهێنم، بەڵام لە دەقەکەدا بە کورتەیی ئاماژە دەکەم کە تەواو نییە." },
+                { "language": "kmr", "text": "Ez ê çavkaniyê bi kar bînim, lê di nivîsê de kurt bibêjim ku ew bêkêmasî nîne." },
+                { "language": "pl", "text": "Użyłbym źródła, ale krótko wspomniał w tekście, że nie jest idealne." },
+                { "language": "ro", "text": "Aș folosi sursa, dar aș menționa pe scurt în text că nu este perfectă." },
+                { "language": "sq", "text": "Do ta përdorja burimin, por në tekst do të përmendja shkurt se nuk është i përsosur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unspezifisch: Für C1 muss klar werden, wofür die Quelle verwendet wird und wofür gerade nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unspecific: At C1 it must become clear what the source is used for and what it is not used for." },
+                { "language": "fa", "text": "زیادی نامشخص است: در سطح سی‌یک باید روشن شود منبع برای چه چیزی استفاده می‌شود و برای چه چیزی نه." },
+                { "language": "ar", "text": "غير محدد بما يكفي: في مستوى C1 يجب أن يتضح لماذا يُستخدم المصدر ولأي غرض لا يُستخدم." },
+                { "language": "tr", "text": "Fazla belirsiz: C1 düzeyinde kaynağın ne için kullanıldığı ve ne için kullanılmadığı açık olmalıdır." },
+                { "language": "ru", "text": "Слишком неопределённо: на уровне C1 должно быть ясно, для чего источник используется, а для чего нет." },
+                { "language": "ckb", "text": "زۆر نا دیارە: لە ئاستی C1دا پێویستە ڕوون بێت سەرچاوەکە بۆ چی بەکار دەهێنرێت و بۆ چی نەخێر." },
+                { "language": "kmr", "text": "Pir nezelal e: Di asta C1 de divê zelal be çavkanî ji bo çi tê bikaranîn û ji bo çi nayê bikaranîn." },
+                { "language": "pl", "text": "Zbyt niekonkretne: na poziomie C1 musi być jasne, do czego źródło jest używane, a do czego nie." },
+                { "language": "ro", "text": "Prea nespecific: la nivel C1 trebuie să fie clar pentru ce este folosită sursa și pentru ce nu." },
+                { "language": "sq", "text": "Shumë e paspecifikuar: në nivelin C1 duhet të jetë e qartë për çfarë përdoret burimi dhe për çfarë jo." }
+              ],
+              "explanationKey": "generic-source-use"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Artikel liefert aktuelle empirische Hinweise auf ein relevantes Problemfeld, seine Aussagekraft bleibt jedoch begrenzt, weil Stichprobe, Autorperspektive und mögliche Alternativerklärungen nur teilweise offengelegt beziehungsweise diskutiert werden.",
+              "translations": [
+                { "language": "en", "text": "The article provides current empirical indications of a relevant problem area, but its evidential strength remains limited because the sample, author perspective, and possible alternative explanations are only partially disclosed or discussed." },
+                { "language": "fa", "text": "مقاله نشانه‌های تجربی تازه‌ای درباره یک حوزه مسئله مهم ارائه می‌کند، اما قدرت استنادی آن محدود می‌ماند، چون نمونه، زاویه دید نویسندگان و توضیح‌های جایگزین احتمالی فقط تا حدی آشکار یا بررسی شده‌اند." },
+                { "language": "ar", "text": "يقدم المقال مؤشرات تجريبية حديثة على مجال مشكلة مهم، لكن قوة دلالته تبقى محدودة لأن العينة ومنظور المؤلفين والتفسيرات البديلة المحتملة لا تُعرض أو تُناقش إلا جزئياً." },
+                { "language": "tr", "text": "Makale, ilgili bir problem alanına dair güncel ampirik göstergeler sunar; ancak kanıt gücü sınırlı kalır, çünkü örneklem, yazar perspektifi ve olası alternatif açıklamalar yalnızca kısmen açıklanmış veya tartışılmıştır." },
+                { "language": "ru", "text": "Статья предоставляет актуальные эмпирические указания на значимое проблемное поле, однако её доказательная сила остаётся ограниченной, поскольку выборка, перспектива авторов и возможные альтернативные объяснения раскрыты или обсуждены лишь частично." },
+                { "language": "ckb", "text": "وتارەکە ئاماژەی ئەزموونی نوێ دەربارەی بواری کێشەیەکی گرنگ پێشکەش دەکات، بەڵام هێزی بەڵگەییەکەی سنووردار دەمێنێتەوە، چونکە نموونە، دیدی نووسەران و ڕوونکردنەوە جێگرەوە ئەگەرییەکان تەنها بەشێکیان ئاشکرا یان باس کراون." },
+                { "language": "kmr", "text": "Gotar nîşanên empirîk ên nû derbarê qada pirsgirêkeke girîng pêşkêş dike, lê hêza delîlkirina wê sînordar dimîne, ji ber ku nimûne, perspektîfa nivîskaran û ravekirinên alternatîf ên gengaz tenê qismen hatine eşkere kirin an nîqaşkirin." },
+                { "language": "pl", "text": "Artykuł dostarcza aktualnych empirycznych wskazań dotyczących istotnego pola problemowego, jednak jego siła dowodowa pozostaje ograniczona, ponieważ próba, perspektywa autorów i możliwe alternatywne wyjaśnienia są ujawnione lub omówione tylko częściowo." },
+                { "language": "ro", "text": "Articolul oferă indicii empirice actuale despre un domeniu problematic relevant, însă forța sa probatorie rămâne limitată deoarece eșantionul, perspectiva autorilor și posibilele explicații alternative sunt dezvăluite sau discutate doar parțial." },
+                { "language": "sq", "text": "Artikulli ofron tregues empirikë të rinj për një fushë problemi të rëndësishme, por fuqia e tij dëshmuese mbetet e kufizuar, sepse kampioni, këndvështrimi i autorëve dhe shpjegimet alternative të mundshme janë zbuluar ose diskutuar vetëm pjesërisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Satz ist knapp, fachlich vorsichtig und nennt zugleich Nutzen und Grenzen der Quelle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The sentence is concise, academically cautious, and names both the source's usefulness and its limits." },
+                { "language": "fa", "text": "قوی: جمله کوتاه، از نظر علمی محتاط و هم‌زمان بیانگر کاربرد و محدودیت منبع است." },
+                { "language": "ar", "text": "قوي: الجملة موجزة وحذرة علمياً، وتذكر في الوقت نفسه فائدة المصدر وحدوده." },
+                { "language": "tr", "text": "Güçlü: Cümle kısa, akademik olarak temkinli ve kaynağın hem yararını hem sınırlarını belirtir." },
+                { "language": "ru", "text": "Сильно: предложение краткое, академически осторожное и одновременно называет пользу и ограничения источника." },
+                { "language": "ckb", "text": "بەهێزە: ڕستەکە کورتە، لە ڕووی زانستییەوە ئاگادارە و هەمان کات سوود و سنووری سەرچاوەکە ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Hevok kurt e, akademîk baldar e û hem bikêrhatin hem sînorên çavkaniyê nav dike." },
+                { "language": "pl", "text": "Mocne: zdanie jest zwięzłe, akademicko ostrożne i jednocześnie wskazuje użyteczność oraz ograniczenia źródła." },
+                { "language": "ro", "text": "Puternic: propoziția este concisă, prudentă academic și numește atât utilitatea, cât și limitele sursei." },
+                { "language": "sq", "text": "E fortë: fjalia është e shkurtër, akademikisht e kujdesshme dhe përmend njëkohësisht dobinë dhe kufijtë e burimit." }
+              ],
+              "explanationKey": "source-criticism-summary"
+            },
+            {
+              "id": "weaker",
+              "text": "Der Artikel ist interessant, aber er sollte kritisch betrachtet werden, weil er nicht alle Aspekte berücksichtigt.",
+              "translations": [
+                { "language": "en", "text": "The article is interesting, but it should be viewed critically because it does not consider all aspects." },
+                { "language": "fa", "text": "مقاله جالب است، اما باید با نگاه انتقادی بررسی شود، چون همه جنبه‌ها را در نظر نمی‌گیرد." },
+                { "language": "ar", "text": "المقال مثير للاهتمام، لكن ينبغي النظر إليه نقدياً لأنه لا يأخذ جميع الجوانب في الحسبان." },
+                { "language": "tr", "text": "Makale ilginçtir, ancak tüm yönleri dikkate almadığı için eleştirel biçimde değerlendirilmelidir." },
+                { "language": "ru", "text": "Статья интересна, но её следует рассматривать критически, потому что она учитывает не все аспекты." },
+                { "language": "ckb", "text": "وتارەکە سەرنجڕاکێشە، بەڵام پێویستە بە دیدی ڕەخنەیی ببیندرێت چونکە هەموو لایەنەکان لەبەرچاو ناگرێت." },
+                { "language": "kmr", "text": "Gotar balkêş e, lê divê bi awayekî rexneyî bê dîtin, ji ber ku hemû alîyan nahesibîne." },
+                { "language": "pl", "text": "Artykuł jest interesujący, ale należy go traktować krytycznie, ponieważ nie uwzględnia wszystkich aspektów." },
+                { "language": "ro", "text": "Articolul este interesant, dar ar trebui privit critic deoarece nu ia în considerare toate aspectele." },
+                { "language": "sq", "text": "Artikulli është interesant, por duhet parë në mënyrë kritike, sepse nuk merr parasysh të gjitha aspektet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Der Satz klingt akademisch, bleibt aber ohne konkrete Kriterien wie Stichprobe, Perspektive oder Alternativerklärungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: The sentence sounds academic, but lacks concrete criteria such as sample, perspective, or alternative explanations." },
+                { "language": "fa", "text": "زیادی کلی است: جمله دانشگاهی به نظر می‌رسد، اما معیار مشخصی مثل نمونه، زاویه دید یا توضیح‌های جایگزین ندارد." },
+                { "language": "ar", "text": "عام جداً: تبدو الجملة أكاديمية، لكنها تفتقر إلى معايير ملموسة مثل العينة أو المنظور أو التفسيرات البديلة." },
+                { "language": "tr", "text": "Fazla genel: Cümle akademik duyuluyor, ancak örneklem, perspektif veya alternatif açıklamalar gibi somut ölçütler eksik." },
+                { "language": "ru", "text": "Слишком общее: предложение звучит академически, но не содержит конкретных критериев, таких как выборка, перспектива или альтернативные объяснения." },
+                { "language": "ckb", "text": "زۆر گشتییە: ڕستەکە ئەکادیمی دەنگ دەدات، بەڵام پێوەری دیاریکراوی وەک نموونە، دید یان ڕوونکردنەوەی جێگرەوەی تێدا نییە." },
+                { "language": "kmr", "text": "Pir giştî ye: Hevok akademîk xuya dike, lê pîvanên şênber wek nimûne, perspektîf an ravekirinên alternatîf tê de tune ne." },
+                { "language": "pl", "text": "Zbyt ogólne: zdanie brzmi akademicko, ale brakuje w nim konkretnych kryteriów, takich jak próba, perspektywa czy alternatywne wyjaśnienia." },
+                { "language": "ro", "text": "Prea general: propoziția sună academic, dar nu are criterii concrete precum eșantionul, perspectiva sau explicațiile alternative." },
+                { "language": "sq", "text": "Shumë e përgjithshme: fjalia tingëllon akademike, por i mungojnë kritere konkrete si kampioni, këndvështrimi ose shpjegimet alternative." }
+              ],
+              "explanationKey": "generic-critical-sentence"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "balanced-critique",
+          "text": "C1 source criticism should separate usefulness from reliability instead of praising or rejecting a source as a whole.",
+          "translations": [
+            { "language": "en", "text": "C1 source criticism should separate usefulness from reliability instead of praising or rejecting a source as a whole." },
+            { "language": "fa", "text": "نقد منبع در سطح سی‌یک باید کاربرد را از اعتبار جدا کند، نه اینکه منبع را یک‌جا ستایش یا رد کند." },
+            { "language": "ar", "text": "ينبغي أن يفصل نقد المصدر في مستوى C1 بين الفائدة والموثوقية بدلاً من مدح المصدر أو رفضه كلياً." },
+            { "language": "tr", "text": "C1 düzeyinde kaynak eleştirisi, kaynağı bütünüyle övmek veya reddetmek yerine yararlılığı güvenilirlikten ayırmalıdır." },
+            { "language": "ru", "text": "Критика источника на уровне C1 должна отделять полезность от надёжности, а не хвалить или отвергать источник целиком." },
+            { "language": "ckb", "text": "ڕەخنەی سەرچاوە لە ئاستی C1دا پێویستە سوود لە متمانە جیا بکاتەوە، نە ئەوەی سەرچاوەکە بە تەواوی بستێنێت یان ڕەتی بکاتەوە." },
+            { "language": "kmr", "text": "Rexneya çavkaniyê di asta C1 de divê bikêrhatin ji pêbaweriyê veqetîne, ne ku çavkaniyê bi tevahî pesn bike an red bike." },
+            { "language": "pl", "text": "Krytyka źródła na poziomie C1 powinna oddzielać użyteczność od wiarygodności, zamiast chwalić lub odrzucać źródło w całości." },
+            { "language": "ro", "text": "Critica sursei la nivel C1 trebuie să separe utilitatea de fiabilitate, nu să laude sau să respingă sursa în întregime." },
+            { "language": "sq", "text": "Kritika e burimit në nivelin C1 duhet të ndajë dobishmërinë nga besueshmëria, jo ta lavdërojë ose refuzojë burimin në tërësi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "method-awareness",
+          "text": "Numbers are only useful when the learner can discuss sample, question design, analysis, and possible alternative explanations.",
+          "translations": [
+            { "language": "en", "text": "Numbers are only useful when the learner can discuss sample, question design, analysis, and possible alternative explanations." },
+            { "language": "fa", "text": "عددها فقط وقتی مفیدند که زبان‌آموز بتواند درباره نمونه، طراحی پرسش، تحلیل و توضیح‌های جایگزین احتمالی صحبت کند." },
+            { "language": "ar", "text": "لا تكون الأرقام مفيدة إلا عندما يستطيع المتعلم مناقشة العينة وتصميم الأسئلة والتحليل والتفسيرات البديلة المحتملة." },
+            { "language": "tr", "text": "Sayılar ancak öğrenci örneklem, soru tasarımı, analiz ve olası alternatif açıklamalar hakkında konuşabildiğinde yararlıdır." },
+            { "language": "ru", "text": "Числа полезны только тогда, когда учащийся может обсуждать выборку, дизайн вопросов, анализ и возможные альтернативные объяснения." },
+            { "language": "ckb", "text": "ژمارەکان تەنها ئەو کاتە بەسوودن کە فێرخواز بتوانێت دەربارەی نموونە، داڕشتنی پرسیار، شیکاری و ڕوونکردنەوەی جێگرەوەی ئەگەری گفتوگۆ بکات." },
+            { "language": "kmr", "text": "Hejmar tenê wê demê bikêr in ku fêrker bikare li ser nimûne, sêwirana pirsan, analîz û ravekirinên alternatîf ên gengaz biaxive." },
+            { "language": "pl", "text": "Liczby są użyteczne tylko wtedy, gdy uczący się potrafi omówić próbę, konstrukcję pytań, analizę i możliwe alternatywne wyjaśnienia." },
+            { "language": "ro", "text": "Cifrele sunt utile doar atunci când cursantul poate discuta eșantionul, formularea întrebărilor, analiza și posibilele explicații alternative." },
+            { "language": "sq", "text": "Shifrat janë të dobishme vetëm kur nxënësi mund të diskutojë kampionin, hartimin e pyetjeve, analizën dhe shpjegimet alternative të mundshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "academic-hedging",
+          "text": "Strong source criticism avoids unsupported claims about intention and focuses on observable emphasis and missing aspects.",
+          "translations": [
+            { "language": "en", "text": "Strong source criticism avoids unsupported claims about intention and focuses on observable emphasis and missing aspects." },
+            { "language": "fa", "text": "نقد منبع قوی از ادعای بی‌پشتوانه درباره نیت پرهیز می‌کند و بر تأکید قابل مشاهده و جنبه‌های غایب تمرکز دارد." },
+            { "language": "ar", "text": "يتجنب نقد المصدر القوي ادعاءات غير مدعومة حول النية ويركز على التركيز القابل للملاحظة والجوانب الغائبة." },
+            { "language": "tr", "text": "Güçlü kaynak eleştirisi, niyet hakkında dayanıksız iddialardan kaçınır ve gözlemlenebilir vurgu ile eksik yönlere odaklanır." },
+            { "language": "ru", "text": "Сильная критика источника избегает неподкреплённых утверждений о намерении и сосредоточивается на наблюдаемом акценте и отсутствующих аспектах." },
+            { "language": "ckb", "text": "ڕەخنەی سەرچاوەی بەهێز لە بانگەشەی بێ پشتوانە دەربارەی مەبەست دوور دەکەوێتەوە و لەسەر جەختکردنەوەی بینراو و لایەنە نەبووەکان دەوەستێت." },
+            { "language": "kmr", "text": "Rexneya çavkaniyê ya xurt ji îdiayên bêbingeh derbarê niyetê dûr dikeve û li ser giranîdana xuya û aliyên tunebûyî disekine." },
+            { "language": "pl", "text": "Mocna krytyka źródła unika niepopartych twierdzeń o intencji i skupia się na obserwowalnym rozłożeniu akcentów oraz brakujących aspektach." },
+            { "language": "ro", "text": "O critică solidă a sursei evită afirmațiile nesusținute despre intenție și se concentrează pe accentuarea observabilă și pe aspectele absente." },
+            { "language": "sq", "text": "Kritika e fortë e burimit shmang pretendimet e pambështetura për qëllimin dhe përqendrohet te theksimi i vëzhgueshëm dhe aspektet që mungojnë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "source-use",
+          "text": "A good answer explains exactly how the source can be used and which conclusions require additional evidence.",
+          "translations": [
+            { "language": "en", "text": "A good answer explains exactly how the source can be used and which conclusions require additional evidence." },
+            { "language": "fa", "text": "پاسخ خوب دقیقاً توضیح می‌دهد منبع چگونه قابل استفاده است و کدام نتیجه‌گیری‌ها به شواهد بیشتر نیاز دارند." },
+            { "language": "ar", "text": "تشرح الإجابة الجيدة بدقة كيف يمكن استخدام المصدر وأي استنتاجات تحتاج إلى أدلة إضافية." },
+            { "language": "tr", "text": "İyi bir yanıt, kaynağın tam olarak nasıl kullanılabileceğini ve hangi sonuçların ek kanıt gerektirdiğini açıklar." },
+            { "language": "ru", "text": "Хороший ответ точно объясняет, как можно использовать источник и какие выводы требуют дополнительных доказательств." },
+            { "language": "ckb", "text": "وەڵامی باش بە وردی ڕوون دەکاتەوە سەرچاوەکە چۆن بەکار دەهێنرێت و کام دەرئەنجام پێویستی بە بەڵگەی زیاتر هەیە." },
+            { "language": "kmr", "text": "Bersiva baş bi rastî rave dike çavkanî çawa dikare bê bikaranîn û kîjan encam hewceyî delîlên din in." },
+            { "language": "pl", "text": "Dobra odpowiedź dokładnie wyjaśnia, jak można użyć źródła i które wnioski wymagają dodatkowych dowodów." },
+            { "language": "ro", "text": "Un răspuns bun explică exact cum poate fi folosită sursa și ce concluzii necesită dovezi suplimentare." },
+            { "language": "sq", "text": "Një përgjigje e mirë shpjegon saktësisht si mund të përdoret burimi dhe cilat përfundime kërkojnë prova shtesë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "academic-summary",
+          "text": "The final sentence is useful for written academic work because it combines evidence value, limitation, and precise criteria.",
+          "translations": [
+            { "language": "en", "text": "The final sentence is useful for written academic work because it combines evidence value, limitation, and precise criteria." },
+            { "language": "fa", "text": "جمله پایانی برای کار نوشتاری دانشگاهی مفید است، چون ارزش شواهد، محدودیت و معیارهای دقیق را با هم ترکیب می‌کند." },
+            { "language": "ar", "text": "الجملة النهائية مفيدة للعمل الأكاديمي المكتوب لأنها تجمع بين قيمة الدليل والحدود والمعايير الدقيقة." },
+            { "language": "tr", "text": "Son cümle yazılı akademik çalışma için yararlıdır, çünkü kanıt değeri, sınırlılık ve kesin ölçütleri birleştirir." },
+            { "language": "ru", "text": "Финальное предложение полезно для письменной академической работы, потому что объединяет доказательную ценность, ограничение и точные критерии." },
+            { "language": "ckb", "text": "ڕستەی کۆتایی بۆ کاری نووسراوی ئەکادیمی بەسوودە، چونکە بەهای بەڵگە، سنوور و پێوەری ورد پێکەوە دەخات." },
+            { "language": "kmr", "text": "Hevoka dawî ji bo xebata akademîk a nivîskî bikêr e, ji ber ku nirxa delîl, sînor û pîvanên rast bi hev re tîne." },
+            { "language": "pl", "text": "Ostatnie zdanie jest przydatne w pracy akademickiej, ponieważ łączy wartość dowodową, ograniczenie i precyzyjne kryteria." },
+            { "language": "ro", "text": "Propoziția finală este utilă pentru lucrarea academică scrisă deoarece combină valoarea probatorie, limita și criteriile precise." },
+            { "language": "sq", "text": "Fjalia përfundimtare është e dobishme për punë akademike të shkruar, sepse bashkon vlerën dëshmuese, kufizimin dhe kriteret e sakta." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "source-criticism-seminar",
+          "placement": "header",
+          "purpose": "Show an academic seminar context for discussing a source without displaying real article text or private data.",
+          "altText": "A university seminar table with students discussing a printed academic source and notes.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A university seminar table with students discussing a printed academic source and notes." },
+            { "language": "fa", "text": "میز سمینار دانشگاهی که دانشجویان دور آن درباره یک منبع دانشگاهی چاپ‌شده و یادداشت‌ها بحث می‌کنند." },
+            { "language": "ar", "text": "طاولة ندوة جامعية يناقش حولها طلاب مصدراً أكاديمياً مطبوعاً وملاحظات." },
+            { "language": "tr", "text": "Öğrencilerin basılı bir akademik kaynak ve notlar üzerinde tartıştığı bir üniversite seminer masası." },
+            { "language": "ru", "text": "Стол университетского семинара, за которым студенты обсуждают распечатанный академический источник и заметки." },
+            { "language": "ckb", "text": "مێزێکی سیمیناری زانکۆ کە خوێندکاران لە دەوری سەرچاوەیەکی ئەکادیمی چاپکراو و تێبینییەکان گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Maseya semînera zanîngehê ku xwendekar li dor çavkaniyeke akademîk a çapkirî û notan nîqaş dikin." },
+            { "language": "pl", "text": "Stół seminaryjny na uczelni, przy którym studenci omawiają wydrukowane źródło akademickie i notatki." },
+            { "language": "ro", "text": "O masă de seminar universitar la care studenții discută o sursă academică tipărită și notițe." },
+            { "language": "sq", "text": "Një tryezë seminari universitar ku studentët diskutojnë një burim akademik të shtypur dhe shënime." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult university seminar group discussing a printed academic source and notes at a table, German higher-education setting, no readable article text, no logos, no private data, accessible composition, calm academic atmosphere.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

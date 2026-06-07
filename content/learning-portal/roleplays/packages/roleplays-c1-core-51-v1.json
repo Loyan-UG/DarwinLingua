@@ -1,0 +1,841 @@
+{
+  "packageId": "roleplays-c1-core-51-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 51 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 51",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-kuenstliche-intelligenz-im-alltag-differenziert-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Künstliche Intelligenz im Alltag differenziert diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing artificial intelligence in daily life in a nuanced way" },
+        { "language": "fa", "text": "بحث دقیق و چندجانبه درباره هوش مصنوعی در زندگی روزمره" },
+        { "language": "ar", "text": "مناقشة الذكاء الاصطناعي في الحياة اليومية بصورة متمايزة" },
+        { "language": "tr", "text": "Günlük yaşamda yapay zekayı ayrıntılı biçimde tartışmak" },
+        { "language": "ru", "text": "Дифференцированно обсуждать искусственный интеллект в повседневной жизни" },
+        { "language": "ckb", "text": "گفتوگۆی جیاواز و ورد دەربارەی زیرەکیی دەستکرد لە ژیانی ڕۆژانەدا" },
+        { "language": "kmr", "text": "Gotûbêja hûrgilî ya li ser aqila çêkirî di jiyana rojane de" },
+        { "language": "pl", "text": "Zniuansowana dyskusja o sztucznej inteligencji w życiu codziennym" },
+        { "language": "ro", "text": "Discutarea nuanțată a inteligenței artificiale în viața de zi cu zi" },
+        { "language": "sq", "text": "Diskutim i nuancuar për inteligjencën artificiale në jetën e përditshme" }
+      ],
+      "description": "In einer Diskussionsrunde im Sprachkurs sprechen Sie über künstliche Intelligenz im Alltag. Sie sollen Chancen und Risiken abwägen, Datenschutz und Abhängigkeit einordnen und am Ende eine verantwortliche Nutzungsempfehlung formulieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a language-course discussion round, you talk about artificial intelligence in daily life. You should weigh opportunities and risks, classify data protection and dependence, and formulate a responsible usage recommendation at the end." },
+        { "language": "fa", "text": "در یک بحث گروهی در کلاس زبان درباره هوش مصنوعی در زندگی روزمره صحبت می‌کنید. باید فرصت‌ها و خطرها را بسنجید، حریم خصوصی و وابستگی را ارزیابی کنید و در پایان توصیه‌ای مسئولانه برای استفاده بیان کنید." },
+        { "language": "ar", "text": "في جولة نقاش في دورة اللغة تتحدثون عن الذكاء الاصطناعي في الحياة اليومية. يجب أن توازن بين الفرص والمخاطر، وتصنف حماية البيانات والاعتماد، وتصوغ في النهاية توصية مسؤولة للاستخدام." },
+        { "language": "tr", "text": "Dil kursundaki bir tartışma turunda günlük yaşamda yapay zekadan söz ediyorsunuz. Fırsatları ve riskleri tartmalı, veri koruma ile bağımlılığı değerlendirmeli ve sonunda sorumlu bir kullanım önerisi formüle etmelisiniz." },
+        { "language": "ru", "text": "На дискуссии в языковом курсе вы говорите об искусственном интеллекте в повседневной жизни. Нужно взвесить возможности и риски, оценить защиту данных и зависимость и в конце сформулировать ответственную рекомендацию по использованию." },
+        { "language": "ckb", "text": "لە بازنەی گفتوگۆی کۆرسی زماندا دەربارەی زیرەکیی دەستکرد لە ژیانی ڕۆژانە قسە دەکەن. پێویستە دەرفەت و مەترسی بسەنگێنیت، پاراستنی داتا و پێبەستبوون هەڵبسەنگێنیت و لە کۆتاییدا پێشنیارێکی بەرپرسانە بۆ بەکارهێنان بڵێیت." },
+        { "language": "kmr", "text": "Di gera gotûbêjê ya kursa ziman de hûn li ser aqila çêkirî di jiyana rojane de diaxivin. Divê derfet û metirsiyan bisengînin, parastina daneyan û girêdayîbûnê binirxînin û di dawiyê de pêşniyareke bikaranîna berpirsiyar formule bikin." },
+        { "language": "pl", "text": "W rundzie dyskusyjnej na kursie językowym rozmawia Pan o sztucznej inteligencji w codziennym życiu. Ma Pan rozważyć szanse i ryzyka, ocenić ochronę danych oraz zależność, a na końcu sformułować odpowiedzialną rekomendację użycia." },
+        { "language": "ro", "text": "Într-o rundă de discuție la cursul de limbă vorbiți despre inteligența artificială în viața de zi cu zi. Trebuie să cântăriți oportunitățile și riscurile, să evaluați protecția datelor și dependența, iar la final să formulați o recomandare responsabilă de utilizare." },
+        { "language": "sq", "text": "Në një rreth diskutimi në kursin e gjuhës flisni për inteligjencën artificiale në jetën e përditshme. Duhet të peshoni mundësitë dhe rreziqet, të vlerësoni mbrojtjen e të dhënave dhe varësinë, dhe në fund të formuloni një rekomandim të përgjegjshëm përdorimi." }
+      ],
+      "learnerGoal": "Eine ausgewogene Position entwickeln: Nutzen und Risiken konkret benennen, Datenschutz und Verantwortung differenziert darstellen, Gegenargumente aufnehmen und eine begründete Empfehlung für den Alltag formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Develop a balanced position: name benefits and risks concretely, present data protection and responsibility in a nuanced way, take up counterarguments, and formulate a justified recommendation for daily life." },
+        { "language": "fa", "text": "موضعی متعادل بسازید: فایده‌ها و خطرها را مشخص بیان کنید، حریم خصوصی و مسئولیت را دقیق توضیح دهید، استدلال مخالف را وارد کنید و توصیه‌ای مستدل برای زندگی روزمره ارائه دهید." },
+        { "language": "ar", "text": "طوّر موقفاً متوازناً: سمّ الفوائد والمخاطر بصورة ملموسة، واعرض حماية البيانات والمسؤولية بشكل متمايز، وخذ الحجج المقابلة في الحسبان، وصغ توصية مبررة للحياة اليومية." },
+        { "language": "tr", "text": "Dengeli bir konum geliştirin: yararları ve riskleri somut adlandırın, veri koruma ve sorumluluğu ayrıntılı sunun, karşı argümanları alın ve günlük yaşam için gerekçeli bir öneri formüle edin." },
+        { "language": "ru", "text": "Разработать сбалансированную позицию: конкретно назвать пользу и риски, дифференцированно представить защиту данных и ответственность, учесть контраргументы и сформулировать обоснованную рекомендацию для повседневности." },
+        { "language": "ckb", "text": "هەڵوێستێکی هاوسەنگ پەرە پێبدە: سوود و مەترسییەکان بە دیاریکراوی ناو ببە، پاراستنی داتا و بەرپرسیارێتی بە وردی نیشان بدە، ئارگیومێنتی بەرامبەر وەرگرە و پێشنیارێکی پاساودار بۆ ژیانی ڕۆژانە پێشکەش بکە." },
+        { "language": "kmr", "text": "Helwesteke hevseng pêş bixin: sûd û metirsiyan bi taybetî bi nav bikin, parastina daneyan û berpirsiyariyê bi hûrgilî nîşan bidin, argumanên dijber bigirin û pêşniyareke bi hincet ji bo jiyana rojane formule bikin." },
+        { "language": "pl", "text": "Wypracować wyważone stanowisko: konkretnie nazwać korzyści i ryzyka, zniuansowanie przedstawić ochronę danych i odpowiedzialność, uwzględnić kontrargumenty i sformułować uzasadnioną rekomendację na co dzień." },
+        { "language": "ro", "text": "Dezvoltați o poziție echilibrată: numiți concret beneficiile și riscurile, prezentați nuanțat protecția datelor și responsabilitatea, integrați contraargumentele și formulați o recomandare justificată pentru viața de zi cu zi." },
+        { "language": "sq", "text": "Zhvilloni një qëndrim të balancuar: përmendni konkretisht përfitimet dhe rreziqet, paraqitni me nuanca mbrojtjen e të dhënave dhe përgjegjësinë, merrni parasysh kundërargumentet dhe formuloni një rekomandim të arsyetuar për jetën e përditshme." }
+      ],
+      "cefrLevel": "C1",
+      "category": "society",
+      "topics": ["everyday-life", "education-and-training"],
+      "examProfiles": ["c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 51,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant presenting a nuanced position" },
+            { "language": "fa", "text": "شرکت‌کننده‌ای که موضعی دقیق ارائه می‌کند" },
+            { "language": "ar", "text": "مشارك يعرض موقفاً متمايزاً" },
+            { "language": "tr", "text": "Ayrıntılı bir pozisyon sunan katılımcı" },
+            { "language": "ru", "text": "Участник, представляющий дифференцированную позицию" },
+            { "language": "ckb", "text": "بەشداربووێک کە هەڵوێستێکی ورد پێشکەش دەکات" },
+            { "language": "kmr", "text": "Beşdarek ku helwesteke hûrgilî pêşkêş dike" },
+            { "language": "pl", "text": "Uczestnik przedstawiający zniuansowane stanowisko" },
+            { "language": "ro", "text": "Participant care prezintă o poziție nuanțată" },
+            { "language": "sq", "text": "Pjesëmarrës që paraqet një qëndrim të nuancuar" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderator/in",
+          "translations": [
+            { "language": "en", "text": "Discussion moderator" },
+            { "language": "fa", "text": "گرداننده بحث" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Tartışma moderatörü" },
+            { "language": "ru", "text": "Модератор дискуссии" },
+            { "language": "ckb", "text": "ڕێکخەری گفتوگۆ" },
+            { "language": "kmr", "text": "Moderatorê gotûbêjê" },
+            { "language": "pl", "text": "Moderator dyskusji" },
+            { "language": "ro", "text": "Moderator de discuție" },
+            { "language": "sq", "text": "Moderator i diskutimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Wir diskutieren heute, wie künstliche Intelligenz unseren Alltag verändert. Bitte beginnen Sie mit einer Position, die weder nur begeistert noch nur ablehnend ist.",
+          "translations": [
+            { "language": "en", "text": "Today we are discussing how artificial intelligence changes our daily life. Please begin with a position that is neither only enthusiastic nor only rejecting." },
+            { "language": "fa", "text": "امروز بحث می‌کنیم که هوش مصنوعی چگونه زندگی روزمره ما را تغییر می‌دهد. لطفاً با موضعی شروع کنید که نه فقط شیفته است و نه فقط ردکننده." },
+            { "language": "ar", "text": "نناقش اليوم كيف يغيّر الذكاء الاصطناعي حياتنا اليومية. ابدأ من فضلك بموقف ليس متحمساً فقط ولا رافضاً فقط." },
+            { "language": "tr", "text": "Bugün yapay zekanın günlük yaşamımızı nasıl değiştirdiğini tartışıyoruz. Lütfen yalnızca coşkulu ya da yalnızca reddedici olmayan bir pozisyonla başlayın." },
+            { "language": "ru", "text": "Сегодня мы обсуждаем, как искусственный интеллект меняет нашу повседневную жизнь. Пожалуйста, начните с позиции, которая не является только восторженной или только отвергающей." },
+            { "language": "ckb", "text": "ئەمڕۆ گفتوگۆ دەکەین کە زیرەکیی دەستکرد چۆن ژیانی ڕۆژانەمان دەگۆڕێت. تکایە بە هەڵوێستێک دەست پێ بکە کە نە تەنها سەرسامە و نە تەنها ڕەتکەرەوە." },
+            { "language": "kmr", "text": "Îro em gotûbêj dikin ka aqila çêkirî çawa jiyana rojane ya me diguherîne. Ji kerema xwe bi helwesteke ku ne tenê heyecanî û ne tenê redker be dest pê bikin." },
+            { "language": "pl", "text": "Dziś dyskutujemy, jak sztuczna inteligencja zmienia naszą codzienność. Proszę zacząć od stanowiska, które nie jest ani tylko entuzjastyczne, ani tylko odrzucające." },
+            { "language": "ro", "text": "Astăzi discutăm cum inteligența artificială ne schimbă viața de zi cu zi. Vă rog să începeți cu o poziție care nu este nici doar entuziastă, nici doar respingătoare." },
+            { "language": "sq", "text": "Sot diskutojmë se si inteligjenca artificiale ndryshon jetën tonë të përditshme. Ju lutem filloni me një qëndrim që nuk është as vetëm entuziast, as vetëm refuzues." }
+          ],
+          "function": "open-discussion",
+          "toneNote": "formal and balanced"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde KI im Alltag als hilfreiches Werkzeug sehen, aber nicht als Ersatz für eigenes Urteil. Sie kann Zeit sparen, etwa beim Formulieren oder Sortieren von Informationen, gleichzeitig entstehen Fragen zu Datenschutz, Abhängigkeit und Verantwortung.",
+          "translations": [
+            { "language": "en", "text": "I would see AI in daily life as a helpful tool, but not as a replacement for one's own judgment. It can save time, for example when drafting or sorting information; at the same time, questions arise about data protection, dependence, and responsibility." },
+            { "language": "fa", "text": "من هوش مصنوعی را در زندگی روزمره ابزار مفیدی می‌بینم، اما نه جایگزین قضاوت خود انسان. می‌تواند زمان صرفه‌جویی کند، مثلاً هنگام نوشتن یا مرتب‌کردن اطلاعات؛ هم‌زمان پرسش‌هایی درباره حریم خصوصی، وابستگی و مسئولیت ایجاد می‌شود." },
+            { "language": "ar", "text": "أرى الذكاء الاصطناعي في الحياة اليومية أداة مفيدة، لكنه ليس بديلاً عن الحكم الشخصي. يمكنه توفير الوقت، مثلاً عند الصياغة أو ترتيب المعلومات؛ وفي الوقت نفسه تنشأ أسئلة حول حماية البيانات والاعتماد والمسؤولية." },
+            { "language": "tr", "text": "Günlük yaşamda yapay zekayı yararlı bir araç olarak görürüm, ama kendi yargısının yerine geçecek bir şey olarak değil. Örneğin metin oluştururken veya bilgileri düzenlerken zaman kazandırabilir; aynı zamanda veri koruma, bağımlılık ve sorumluluk soruları doğar." },
+            { "language": "ru", "text": "Я бы рассматривал ИИ в повседневной жизни как полезный инструмент, но не как замену собственному суждению. Он может экономить время, например при формулировке или сортировке информации; одновременно возникают вопросы защиты данных, зависимости и ответственности." },
+            { "language": "ckb", "text": "من زیرەکیی دەستکرد لە ژیانی ڕۆژانەدا وەک ئامرازێکی بەسوود دەبینم، بەڵام نە وەک جێگرەوەی حوکمی خۆمان. دەتوانێت کات پاشەکەوت بکات، بۆ نموونە لە داڕشتن یان ڕێکخستنی زانیاری؛ هاوکات پرسیار دەربارەی پاراستنی داتا، پێبەستبوون و بەرپرسیارێتی دروست دەبێت." },
+            { "language": "kmr", "text": "Ez aqila çêkirî di jiyana rojane de wek amûreke sûdmend dibînim, lê ne wekî cîgirê dîtina xwe. Ew dikare demê biparêze, mînak di formulekirin an rêzkirina agahiyan de; di heman demê de pirsên parastina daneyan, girêdayîbûn û berpirsiyariyê derdikevin." },
+            { "language": "pl", "text": "Postrzegałbym sztuczną inteligencję w codzienności jako pomocne narzędzie, ale nie jako zastępstwo własnego osądu. Może oszczędzać czas, na przykład przy formułowaniu lub porządkowaniu informacji; jednocześnie pojawiają się pytania o ochronę danych, zależność i odpowiedzialność." },
+            { "language": "ro", "text": "Aș vedea inteligența artificială în viața de zi cu zi ca pe un instrument util, dar nu ca înlocuitor al propriei judecăți. Poate economisi timp, de exemplu la formularea sau ordonarea informațiilor; în același timp apar întrebări despre protecția datelor, dependență și responsabilitate." },
+            { "language": "sq", "text": "Do ta shihja inteligjencën artificiale në jetën e përditshme si një mjet të dobishëm, por jo si zëvendësim të gjykimit personal. Mund të kursejë kohë, për shembull në formulim ose renditje informacioni; njëkohësisht lindin pyetje për mbrojtjen e të dhënave, varësinë dhe përgjegjësinë." }
+          ],
+          "function": "balanced-opening",
+          "toneNote": "nuanced",
+          "expectedLearnerAction": "Open with benefit and risk instead of one-sided approval or rejection."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Können Sie den Nutzen an einem konkreten Alltagsbeispiel zeigen, ohne die Risiken zu verharmlosen?",
+          "translations": [
+            { "language": "en", "text": "Can you show the benefit with a concrete everyday example without downplaying the risks?" },
+            { "language": "fa", "text": "می‌توانید فایده را با یک مثال مشخص روزمره نشان دهید، بدون اینکه خطرها را کوچک جلوه دهید؟" },
+            { "language": "ar", "text": "هل يمكنك إظهار الفائدة بمثال يومي ملموس من دون التقليل من المخاطر؟" },
+            { "language": "tr", "text": "Yararı somut bir günlük örnekle gösterebilir misiniz, riskleri küçümsemeden?" },
+            { "language": "ru", "text": "Можете показать пользу на конкретном повседневном примере, не преуменьшая риски?" },
+            { "language": "ckb", "text": "دەتوانیت سوودەکە بە نموونەیەکی دیاریکراوی ڕۆژانە نیشان بدەیت، بەبێ ئەوەی مەترسییەکان بچووک بکەیتەوە؟" },
+            { "language": "kmr", "text": "Ma hûn dikarin sûdê bi mînakeke rojane ya taybet nîşan bidin, bê ku metirsiyan biçûk bikin?" },
+            { "language": "pl", "text": "Czy może Pan pokazać korzyść na konkretnym przykładzie codziennym, nie bagatelizując ryzyk?" },
+            { "language": "ro", "text": "Puteți arăta beneficiul printr-un exemplu concret de zi cu zi, fără să minimalizați riscurile?" },
+            { "language": "sq", "text": "A mund ta tregoni përfitimin me një shembull konkret të përditshëm, pa i minimizuar rreziqet?" }
+          ],
+          "function": "ask-for-example"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein Beispiel wäre ein Brief an eine Behörde: KI kann helfen, den Entwurf klarer zu strukturieren. Trotzdem sollte man persönliche Daten sparsam eingeben, die Fakten selbst prüfen und den Ton an die Situation anpassen.",
+          "translations": [
+            { "language": "en", "text": "One example would be a letter to an authority: AI can help structure the draft more clearly. Nevertheless, one should enter personal data sparingly, check the facts oneself, and adapt the tone to the situation." },
+            { "language": "fa", "text": "یک مثال می‌تواند نامه به یک اداره باشد: هوش مصنوعی می‌تواند کمک کند پیش‌نویس واضح‌تر ساختاربندی شود. با این حال باید داده‌های شخصی را کم وارد کرد، واقعیت‌ها را خودمان بررسی کرد و لحن را با موقعیت تطبیق داد." },
+            { "language": "ar", "text": "مثال على ذلك رسالة إلى جهة رسمية: يمكن للذكاء الاصطناعي أن يساعد في تنظيم المسودة بوضوح أكبر. ومع ذلك ينبغي إدخال البيانات الشخصية باقتصاد، والتحقق من الحقائق بنفسك، وتكييف النبرة مع الموقف." },
+            { "language": "tr", "text": "Bir örnek bir kuruma yazılan mektup olabilir: yapay zeka taslağı daha net yapılandırmaya yardımcı olabilir. Yine de kişisel verileri sınırlı girmek, olguları kendiniz kontrol etmek ve tonu duruma uyarlamak gerekir." },
+            { "language": "ru", "text": "Примером может быть письмо в ведомство: ИИ может помочь яснее структурировать черновик. Тем не менее личные данные следует вводить экономно, факты проверять самостоятельно и тон адаптировать к ситуации." },
+            { "language": "ckb", "text": "نموونەیەک دەکرێت نامەیەک بۆ فەرمانگە بێت: زیرەکیی دەستکرد دەتوانێت یارمەتی بدات ڕەشنووسەکە بە ڕوونیتر ڕێکبخرێت. بەڵام پێویستە داتای کەسی بە کەمترین شێوە بنووسرێت، ڕاستییەکان خۆمان بپشکنین و لحنەکە لەگەڵ دۆخەکە بگونجێنین." },
+            { "language": "kmr", "text": "Mînak dikare nameyek ji bo dezgehekê be: aqila çêkirî dikare alîkariyê bike ku pêşnivîs zelaltir were rêzkirin. Lê dîsa divê daneyên kesane bi kêmtirîn awayî were têketin, rastî bi xwe were kontrolkirin û ton li gor rewşê were guherandin." },
+            { "language": "pl", "text": "Przykładem byłby list do urzędu: sztuczna inteligencja może pomóc jaśniej uporządkować projekt. Mimo to należy oszczędnie wpisywać dane osobowe, samodzielnie sprawdzać fakty i dopasować ton do sytuacji." },
+            { "language": "ro", "text": "Un exemplu ar fi o scrisoare către o autoritate: inteligența artificială poate ajuta la structurarea mai clară a ciornei. Totuși, datele personale trebuie introduse cu economie, faptele verificate personal, iar tonul adaptat situației." },
+            { "language": "sq", "text": "Një shembull do të ishte një letër për një zyrë: inteligjenca artificiale mund të ndihmojë që drafti të strukturohet më qartë. Megjithatë, të dhënat personale duhet të jepen me kursim, faktet të kontrollohen vetë dhe toni të përshtatet me situatën." }
+          ],
+          "function": "give-concrete-example-with-limits",
+          "expectedLearnerAction": "Use a concrete example and include practical safeguards."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Manche sagen, solche Werkzeuge machen Menschen bequemer und schwächen die eigene Sprachfähigkeit. Wie reagieren Sie auf diesen Einwand?",
+          "translations": [
+            { "language": "en", "text": "Some say such tools make people more complacent and weaken their own language ability. How do you respond to this objection?" },
+            { "language": "fa", "text": "بعضی می‌گویند چنین ابزارهایی انسان را راحت‌طلب‌تر می‌کند و توانایی زبانی خود فرد را ضعیف می‌کند. به این ایراد چگونه پاسخ می‌دهید؟" },
+            { "language": "ar", "text": "يقول البعض إن هذه الأدوات تجعل الناس أكثر اتكالية وتضعف قدرتهم اللغوية الخاصة. كيف ترد على هذا الاعتراض؟" },
+            { "language": "tr", "text": "Bazıları bu tür araçların insanları daha rahatına düşkün yaptığını ve kendi dil becerisini zayıflattığını söylüyor. Bu itiraza nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Некоторые говорят, что такие инструменты делают людей более ленивыми и ослабляют их собственные языковые способности. Как вы реагируете на это возражение?" },
+            { "language": "ckb", "text": "هەندێک دەڵێن ئەم جۆرە ئامرازانە مرۆڤ زیاتر ئاسانخواز دەکەن و توانای زمانی خۆی لاواز دەکەن. چۆن وەڵامی ئەم ناڕەزاییە دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Hin kes dibêjin amûrên wisa mirovan hêsankirtir dikin û şiyana zimanê xwe lawaz dikin. Hûn çawa bersiva vê nerazîbûnê didin?" },
+            { "language": "pl", "text": "Niektórzy mówią, że takie narzędzia rozleniwiają ludzi i osłabiają własną kompetencję językową. Jak odpowie Pan na ten zarzut?" },
+            { "language": "ro", "text": "Unii spun că astfel de instrumente îi fac pe oameni mai comozi și le slăbesc propria capacitate lingvistică. Cum răspundeți acestei obiecții?" },
+            { "language": "sq", "text": "Disa thonë se mjete të tilla i bëjnë njerëzit më të rehatshëm dhe dobësojnë aftësinë e tyre gjuhësore. Si i përgjigjeni këtij kundërshtimi?" }
+          ],
+          "function": "introduce-counterargument"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Der Einwand ist berechtigt, wenn KI nur zum Kopieren benutzt wird. Sinnvoller wäre eine Nutzung als Lernhilfe: Man lässt sich Varianten zeigen, vergleicht sie und entscheidet bewusst, was zum eigenen Ziel passt.",
+          "translations": [
+            { "language": "en", "text": "The objection is justified if AI is used only for copying. More sensible would be using it as a learning aid: one has variants shown, compares them, and consciously decides what fits one's own goal." },
+            { "language": "fa", "text": "این ایراد موجه است اگر هوش مصنوعی فقط برای کپی‌کردن استفاده شود. استفاده مناسب‌تر این است که آن را کمک آموزشی بدانیم: چند گزینه را نشان دهد، آن‌ها را مقایسه کنیم و آگاهانه تصمیم بگیریم چه چیزی با هدف خودمان سازگار است." },
+            { "language": "ar", "text": "الاعتراض مبرر إذا استُخدم الذكاء الاصطناعي للنسخ فقط. الأجدى هو استخدامه كأداة تعلم: تعرض عليك صيغ مختلفة، تقارن بينها، وتقرر بوعي ما يناسب هدفك." },
+            { "language": "tr", "text": "Yapay zeka yalnızca kopyalamak için kullanılırsa itiraz haklıdır. Daha anlamlı olan onu öğrenme yardımı olarak kullanmaktır: seçenekler gösterilir, karşılaştırılır ve kendi hedefe neyin uyduğuna bilinçli karar verilir." },
+            { "language": "ru", "text": "Возражение оправдано, если ИИ используется только для копирования. Разумнее было бы использовать его как учебную помощь: показать варианты, сравнить их и осознанно решить, что подходит собственной цели." },
+            { "language": "ckb", "text": "ئەم ناڕەزاییە دادپەروەرانەیە ئەگەر زیرەکیی دەستکرد تەنها بۆ کۆپی کردن بەکاربهێنرێت. بەسوودتر ئەوەیە وەک یارمەتیی فێربوون بەکاربهێنرێت: چەند هەڵبژاردە نیشان دەدرێت، بەراوردیان دەکەیت و بە ئاگایی بڕیار دەدەیت کامە لەگەڵ ئامانجی خۆت دەگونجێت." },
+            { "language": "kmr", "text": "Ev nerazîbûn rewa ye heke aqila çêkirî tenê ji bo kopîkirinê were bikaranîn. Bêhtir maqûl ew e ku wek alîkariya fêrbûnê were bikaranîn: varyantan nîşan dide, mirov wan dide ber hev û bi hişyarî biryar dide ka çi li gor armanca xwe ye." },
+            { "language": "pl", "text": "Zarzut jest uzasadniony, jeśli AI służy tylko do kopiowania. Sensowniejsze byłoby użycie jej jako pomocy w nauce: pokazuje się warianty, porównuje je i świadomie decyduje, co pasuje do własnego celu." },
+            { "language": "ro", "text": "Obiecția este justificată dacă AI este folosită doar pentru copiere. Mai utilă ar fi folosirea ca ajutor de învățare: se afișează variante, se compară și se decide conștient ce se potrivește propriului scop." },
+            { "language": "sq", "text": "Kundërshtimi është i arsyeshëm nëse AI përdoret vetëm për kopjim. Më e dobishme do të ishte përdorimi si ndihmë mësimore: të shfaqë variante, t'i krahasosh dhe të vendosësh me vetëdije çfarë i përshtatet qëllimit tënd." }
+          ],
+          "function": "respond-to-counterargument",
+          "expectedLearnerAction": "Accept part of the objection and turn it into a responsible use condition."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Wie würden Sie eine Grenze formulieren, damit KI im Alltag nützlich bleibt, aber nicht zur unkritischen Gewohnheit wird?",
+          "translations": [
+            { "language": "en", "text": "How would you formulate a boundary so that AI remains useful in daily life but does not become an uncritical habit?" },
+            { "language": "fa", "text": "چگونه مرزی تعریف می‌کنید تا هوش مصنوعی در زندگی روزمره مفید بماند، اما به عادت بی‌انتقاد تبدیل نشود؟" },
+            { "language": "ar", "text": "كيف تصوغ حداً يجعل الذكاء الاصطناعي مفيداً في الحياة اليومية من دون أن يتحول إلى عادة غير نقدية؟" },
+            { "language": "tr", "text": "Yapay zekanın günlük yaşamda yararlı kalması ama eleştirel olmayan bir alışkanlığa dönüşmemesi için nasıl bir sınır formüle edersiniz?" },
+            { "language": "ru", "text": "Как бы вы сформулировали границу, чтобы ИИ оставался полезным в повседневной жизни, но не превращался в некритичную привычку?" },
+            { "language": "ckb", "text": "چۆن سنوورێک دەستنیشان دەکەیت بۆ ئەوەی زیرەکیی دەستکرد لە ژیانی ڕۆژانەدا بەسوود بمێنێت، بەڵام نەبێتە خوویەکی بێ ڕەخنە؟" },
+            { "language": "kmr", "text": "Hûn çawa sînorek formule dikin da ku aqila çêkirî di jiyana rojane de sûdmend bimîne, lê nebe adeteke bêrexne?" },
+            { "language": "pl", "text": "Jak sformułowałby Pan granicę, aby AI pozostała użyteczna w codzienności, ale nie stała się bezkrytycznym nawykiem?" },
+            { "language": "ro", "text": "Cum ați formula o limită astfel încât AI să rămână utilă în viața de zi cu zi, dar să nu devină un obicei necritic?" },
+            { "language": "sq", "text": "Si do ta formulonit një kufi që AI të mbetet e dobishme në jetën e përditshme, por të mos bëhet zakon jokritik?" }
+          ],
+          "function": "ask-for-boundary"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Eine sinnvolle Grenze wäre: KI darf vorbereiten, vereinfachen oder erklären, aber nicht die letzte Entscheidung treffen. Besonders bei Gesundheit, Geld, Recht oder persönlichen Daten sollte man zusätzliche Quellen und menschliche Beratung einbeziehen.",
+          "translations": [
+            { "language": "en", "text": "A sensible boundary would be: AI may prepare, simplify, or explain, but not make the final decision. Especially with health, money, law, or personal data, one should include additional sources and human advice." },
+            { "language": "fa", "text": "یک مرز منطقی این است: هوش مصنوعی می‌تواند آماده کند، ساده کند یا توضیح دهد، اما تصمیم نهایی را نگیرد. به‌ویژه در سلامت، پول، قانون یا داده‌های شخصی باید منابع اضافی و مشاوره انسانی را وارد کرد." },
+            { "language": "ar", "text": "حد معقول هو: يمكن للذكاء الاصطناعي أن يجهز أو يبسط أو يشرح، لكنه لا يتخذ القرار النهائي. خصوصاً في الصحة والمال والقانون أو البيانات الشخصية ينبغي إشراك مصادر إضافية ومشورة بشرية." },
+            { "language": "tr", "text": "Makul bir sınır şu olurdu: Yapay zeka hazırlayabilir, sadeleştirebilir veya açıklayabilir, ama son kararı veremez. Özellikle sağlık, para, hukuk veya kişisel verilerde ek kaynaklar ve insan danışmanlığı dahil edilmelidir." },
+            { "language": "ru", "text": "Разумная граница была бы такой: ИИ может подготавливать, упрощать или объяснять, но не принимать окончательное решение. Особенно в вопросах здоровья, денег, права или личных данных следует привлекать дополнительные источники и человеческую консультацию." },
+            { "language": "ckb", "text": "سنوورێکی گونجاو ئەمەیە: زیرەکیی دەستکرد دەتوانێت ئامادە بکات، ئاسان بکات یان ڕوون بکاتەوە، بەڵام بڕیاری کۆتایی نەدات. بە تایبەتی لە تەندروستی، پارە، یاسا یان داتای کەسی، پێویستە سەرچاوەی زیادە و ڕاوێژی مرۆیی بەشداری پێ بکرێت." },
+            { "language": "kmr", "text": "Sînorek maqûl ev be: aqila çêkirî dikare amade bike, hêsan bike an rave bike, lê biryara dawî nede. Bi taybetî di tenduristî, pere, qanûn an daneyên kesane de divê çavkaniyên zêde û şêwirmendiya mirovî bê tevlîkirin." },
+            { "language": "pl", "text": "Rozsądną granicą byłoby: AI może przygotowywać, upraszczać lub wyjaśniać, ale nie podejmować ostatecznej decyzji. Zwłaszcza przy zdrowiu, pieniądzach, prawie lub danych osobowych należy włączać dodatkowe źródła i ludzką poradę." },
+            { "language": "ro", "text": "O limită rezonabilă ar fi: AI poate pregăti, simplifica sau explica, dar nu lua decizia finală. Mai ales în sănătate, bani, drept sau date personale trebuie incluse surse suplimentare și consiliere umană." },
+            { "language": "sq", "text": "Një kufi i arsyeshëm do të ishte: AI mund të përgatisë, thjeshtojë ose shpjegojë, por jo të marrë vendimin përfundimtar. Sidomos për shëndetin, paratë, ligjin ose të dhënat personale duhen përfshirë burime shtesë dhe këshillim njerëzor." }
+          ],
+          "function": "define-responsible-boundary",
+          "expectedLearnerAction": "State a practical boundary and name high-risk domains."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Ein weiterer Punkt ist soziale Ungleichheit: Nicht alle Menschen haben denselben Zugang zu guten digitalen Werkzeugen. Wie passt das in Ihre Bewertung?",
+          "translations": [
+            { "language": "en", "text": "Another point is social inequality: not everyone has the same access to good digital tools. How does that fit into your assessment?" },
+            { "language": "fa", "text": "نکته دیگر نابرابری اجتماعی است: همه انسان‌ها دسترسی یکسان به ابزارهای دیجیتال خوب ندارند. این موضوع در ارزیابی شما چه جایگاهی دارد؟" },
+            { "language": "ar", "text": "نقطة أخرى هي عدم المساواة الاجتماعية: ليس كل الناس لديهم الوصول نفسه إلى أدوات رقمية جيدة. كيف يدخل ذلك في تقييمك؟" },
+            { "language": "tr", "text": "Bir başka nokta sosyal eşitsizlik: herkes iyi dijital araçlara aynı erişime sahip değil. Bu değerlendirmenize nasıl uyuyor?" },
+            { "language": "ru", "text": "Еще один пункт — социальное неравенство: не все люди имеют одинаковый доступ к хорошим цифровым инструментам. Как это вписывается в вашу оценку?" },
+            { "language": "ckb", "text": "خاڵێکی تر نایەکسانیی کۆمەڵایەتییە: هەموو کەس بە هەمان شێوە دەستی بە ئامرازە دیجیتاڵە باشەکان ناگات. ئەمە چۆن دەچێتە ناو هەڵسەنگاندنت؟" },
+            { "language": "kmr", "text": "Xalekî din newekheviya civakî ye: hemû mirov xwedî heman gihîştina amûrên dîjîtal ên baş nînin. Ev çawa di nirxandina we de cih digire?" },
+            { "language": "pl", "text": "Kolejny punkt to nierówność społeczna: nie wszyscy mają taki sam dostęp do dobrych narzędzi cyfrowych. Jak to wpisuje się w Pana ocenę?" },
+            { "language": "ro", "text": "Un alt punct este inegalitatea socială: nu toți oamenii au același acces la instrumente digitale bune. Cum se potrivește aceasta în evaluarea dumneavoastră?" },
+            { "language": "sq", "text": "Një pikë tjetër është pabarazia sociale: jo të gjithë njerëzit kanë të njëjtën qasje në mjete të mira digjitale. Si hyn kjo në vlerësimin tuaj?" }
+          ],
+          "function": "broaden-social-perspective"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das spricht nicht gegen KI an sich, aber gegen eine naive Einführung. Wenn Behörden, Schulen oder Arbeitgeber solche Werkzeuge erwarten, müssen sie zugleich erklären, schulen und alternative Wege offenhalten.",
+          "translations": [
+            { "language": "en", "text": "That does not speak against AI itself, but against a naive introduction. If authorities, schools, or employers expect such tools, they must also explain them, provide training, and keep alternative routes open." },
+            { "language": "fa", "text": "این علیه خود هوش مصنوعی نیست، بلکه علیه معرفی ساده‌انگارانه آن است. اگر ادارات، مدارس یا کارفرمایان انتظار استفاده از چنین ابزارهایی را دارند، باید هم‌زمان توضیح دهند، آموزش بدهند و راه‌های جایگزین را باز نگه دارند." },
+            { "language": "ar", "text": "هذا لا يتحدث ضد الذكاء الاصطناعي بحد ذاته، بل ضد إدخاله بسذاجة. إذا كانت السلطات أو المدارس أو أرباب العمل يتوقعون استخدام هذه الأدوات، فعليهم في الوقت نفسه أن يشرحوا ويدرّبوا ويبقوا طرقاً بديلة مفتوحة." },
+            { "language": "tr", "text": "Bu yapay zekanın kendisine karşı değil, naif bir uygulamaya karşı konuşur. Kurumlar, okullar veya işverenler böyle araçlar bekliyorsa, aynı zamanda açıklamalı, eğitim vermeli ve alternatif yolları açık tutmalıdır." },
+            { "language": "ru", "text": "Это говорит не против ИИ как такового, а против наивного внедрения. Если ведомства, школы или работодатели ожидают такие инструменты, они должны одновременно объяснять, обучать и оставлять открытыми альтернативные пути." },
+            { "language": "ckb", "text": "ئەمە دژ بە خودی زیرەکیی دەستکرد نییە، بەڵکوو دژ بە جێبەجێکردنی سادەلووحانەیە. ئەگەر فەرمانگە، قوتابخانە یان خاوەنکاران چاوەڕوانی بەکارهێنانی ئەم ئامرازانە بکەن، پێویستە هاوکات ڕوون بکەنەوە، فێربکەن و ڕێگای جێگرەوە کراوە بهێڵنەوە." },
+            { "language": "kmr", "text": "Ev ne dijî aqila çêkirî bixwe ye, lê dijî danasîna safane ye. Heke dezgeh, dibistan an kardêr van amûran bendewar bikin, divê di heman demê de rave bikin, perwerde bidin û rêyên alternatîf vekirî bihêlin." },
+            { "language": "pl", "text": "To nie przemawia przeciwko AI jako takiej, lecz przeciwko naiwnemu wprowadzaniu. Jeśli urzędy, szkoły lub pracodawcy oczekują takich narzędzi, muszą równocześnie wyjaśniać, szkolić i pozostawiać otwarte drogi alternatywne." },
+            { "language": "ro", "text": "Aceasta nu vorbește împotriva AI în sine, ci împotriva unei introduceri naive. Dacă autoritățile, școlile sau angajatorii așteaptă astfel de instrumente, trebuie totodată să explice, să instruiască și să mențină deschise căi alternative." },
+            { "language": "sq", "text": "Kjo nuk flet kundër vetë AI-së, por kundër futjes naive të saj. Nëse zyrat, shkollat ose punëdhënësit presin përdorimin e këtyre mjeteve, duhet njëkohësisht të shpjegojnë, të trajnojnë dhe të mbajnë hapur rrugë alternative." }
+          ],
+          "function": "address-access-and-policy",
+          "expectedLearnerAction": "Connect individual use with institutional responsibility and access."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "moderator",
+          "baseText": "Bitte fassen Sie Ihre Position in einer Empfehlung zusammen, die im Alltag praktisch anwendbar wäre.",
+          "translations": [
+            { "language": "en", "text": "Please summarize your position in a recommendation that would be practically applicable in daily life." },
+            { "language": "fa", "text": "لطفاً موضع خود را در قالب توصیه‌ای خلاصه کنید که در زندگی روزمره عملاً قابل استفاده باشد." },
+            { "language": "ar", "text": "من فضلك لخّص موقفك في توصية يمكن تطبيقها عملياً في الحياة اليومية." },
+            { "language": "tr", "text": "Lütfen pozisyonunuzu günlük yaşamda pratik olarak uygulanabilir bir öneri halinde özetleyin." },
+            { "language": "ru", "text": "Пожалуйста, кратко сформулируйте свою позицию в рекомендации, которую можно практически применять в повседневной жизни." },
+            { "language": "ckb", "text": "تکایە هەڵوێستەکەت بە پێشنیارێک کورت بکەوە کە لە ژیانی ڕۆژانەدا بە کرداری بەکاربهێنرێت." },
+            { "language": "kmr", "text": "Ji kerema xwe helwesta xwe di pêşniyareke ku di jiyana rojane de bi pratîkî were bikaranîn de kurt bikin." },
+            { "language": "pl", "text": "Proszę podsumować swoje stanowisko w rekomendacji, którą można praktycznie zastosować w codziennym życiu." },
+            { "language": "ro", "text": "Vă rog să rezumați poziția dumneavoastră într-o recomandare aplicabilă practic în viața de zi cu zi." },
+            { "language": "sq", "text": "Ju lutem përmblidheni qëndrimin tuaj në një rekomandim që mund të zbatohet praktikisht në jetën e përditshme." }
+          ],
+          "function": "ask-summary-recommendation"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Meine Empfehlung wäre: KI bewusst und begrenzt nutzen. Sie eignet sich gut für Entwürfe, Struktur und Verständnishilfe; bei sensiblen Daten, wichtigen Entscheidungen und fachlichen Fragen sollte sie aber nur ein erster Schritt sein, nicht die letzte Instanz.",
+          "translations": [
+            { "language": "en", "text": "My recommendation would be: use AI consciously and in a limited way. It is well suited for drafts, structure, and help with understanding; with sensitive data, important decisions, and specialist questions, however, it should only be a first step, not the final authority." },
+            { "language": "fa", "text": "توصیه من این است: از هوش مصنوعی آگاهانه و محدود استفاده کنیم. برای پیش‌نویس، ساختار و کمک به فهم مناسب است؛ اما در داده‌های حساس، تصمیم‌های مهم و پرسش‌های تخصصی باید فقط قدم اول باشد، نه مرجع نهایی." },
+            { "language": "ar", "text": "توصيتي هي: استخدام الذكاء الاصطناعي بوعي وبحدود. هو مناسب للمسودات والبنية ومساعدة الفهم؛ لكن في البيانات الحساسة والقرارات المهمة والأسئلة المتخصصة يجب أن يكون خطوة أولى فقط، لا المرجع الأخير." },
+            { "language": "tr", "text": "Önerim şu olurdu: yapay zekayı bilinçli ve sınırlı kullanmak. Taslak, yapı ve anlama yardımı için uygundur; ancak hassas verilerde, önemli kararlarda ve uzmanlık sorularında yalnızca ilk adım olmalı, son merci olmamalıdır." },
+            { "language": "ru", "text": "Моя рекомендация была бы такой: использовать ИИ осознанно и ограниченно. Он хорошо подходит для черновиков, структуры и помощи в понимании; но при чувствительных данных, важных решениях и профессиональных вопросах он должен быть только первым шагом, а не последней инстанцией." },
+            { "language": "ckb", "text": "پێشنیارەکەم ئەمەیە: زیرەکیی دەستکرد بە ئاگایی و بە سنوورداری بەکاربهێنین. بۆ ڕەشنووس، پێکهاتە و یارمەتیی تێگەیشتن باشە؛ بەڵام لە داتای هەستیار، بڕیاری گرنگ و پرسیاری پسپۆڕیدا تەنها هەنگاوی یەکەم بێت، نە دەسەڵاتی کۆتایی." },
+            { "language": "kmr", "text": "Pêşniyara min ev be: aqila çêkirî bi hişyarî û bi sînor bikar bînin. Ji bo pêşnivîs, avahî û alîkariya têgihîştinê guncaw e; lê di daneyên hestiyar, biryarên girîng û pirsên pisporî de divê tenê gava yekem be, ne desthilata dawî." },
+            { "language": "pl", "text": "Moja rekomendacja byłaby taka: używać AI świadomie i w ograniczony sposób. Dobrze nadaje się do szkiców, struktury i pomocy w zrozumieniu; przy danych wrażliwych, ważnych decyzjach i pytaniach specjalistycznych powinna być jednak tylko pierwszym krokiem, nie ostateczną instancją." },
+            { "language": "ro", "text": "Recomandarea mea ar fi: folosiți AI conștient și limitat. Este potrivită pentru ciorne, structură și ajutor la înțelegere; însă la date sensibile, decizii importante și întrebări de specialitate ar trebui să fie doar un prim pas, nu instanța finală." },
+            { "language": "sq", "text": "Rekomandimi im do të ishte: përdorni AI me vetëdije dhe në mënyrë të kufizuar. Është e përshtatshme për drafte, strukturë dhe ndihmë në kuptim; por për të dhëna të ndjeshme, vendime të rëndësishme dhe pyetje profesionale duhet të jetë vetëm hapi i parë, jo autoriteti përfundimtar." }
+          ],
+          "function": "balanced-final-recommendation",
+          "expectedLearnerAction": "Summarize the position as a practical rule for daily use."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "balanced-tool-position",
+              "text": "Ich würde KI im Alltag als hilfreiches Werkzeug sehen, aber nicht als Ersatz für eigenes Urteil. Sie kann Zeit sparen, etwa beim Formulieren oder Sortieren von Informationen, gleichzeitig entstehen Fragen zu Datenschutz, Abhängigkeit und Verantwortung.",
+              "translations": [
+                { "language": "en", "text": "I would see AI in daily life as a helpful tool, but not as a replacement for one's own judgment. It can save time, for example when drafting or sorting information; at the same time, questions arise about data protection, dependence, and responsibility." },
+                { "language": "fa", "text": "من هوش مصنوعی را در زندگی روزمره ابزار مفیدی می‌بینم، اما نه جایگزین قضاوت خود انسان. می‌تواند زمان صرفه‌جویی کند، مثلاً هنگام نوشتن یا مرتب‌کردن اطلاعات؛ هم‌زمان پرسش‌هایی درباره حریم خصوصی، وابستگی و مسئولیت ایجاد می‌شود." },
+                { "language": "ar", "text": "أرى الذكاء الاصطناعي في الحياة اليومية أداة مفيدة، لكنه ليس بديلاً عن الحكم الشخصي. يمكنه توفير الوقت، مثلاً عند الصياغة أو ترتيب المعلومات؛ وفي الوقت نفسه تنشأ أسئلة حول حماية البيانات والاعتماد والمسؤولية." },
+                { "language": "tr", "text": "Günlük yaşamda yapay zekayı yararlı bir araç olarak görürüm, ama kendi yargısının yerine geçecek bir şey olarak değil. Örneğin metin oluştururken veya bilgileri düzenlerken zaman kazandırabilir; aynı zamanda veri koruma, bağımlılık ve sorumluluk soruları doğar." },
+                { "language": "ru", "text": "Я бы рассматривал ИИ в повседневной жизни как полезный инструмент, но не как замену собственному суждению. Он может экономить время, например при формулировке или сортировке информации; одновременно возникают вопросы защиты данных, зависимости и ответственности." },
+                { "language": "ckb", "text": "من زیرەکیی دەستکرد لە ژیانی ڕۆژانەدا وەک ئامرازێکی بەسوود دەبینم، بەڵام نە وەک جێگرەوەی حوکمی خۆمان. دەتوانێت کات پاشەکەوت بکات، بۆ نموونە لە داڕشتن یان ڕێکخستنی زانیاری؛ هاوکات پرسیار دەربارەی پاراستنی داتا، پێبەستبوون و بەرپرسیارێتی دروست دەبێت." },
+                { "language": "kmr", "text": "Ez aqila çêkirî di jiyana rojane de wek amûreke sûdmend dibînim, lê ne wekî cîgirê dîtina xwe. Ew dikare demê biparêze, mînak di formulekirin an rêzkirina agahiyan de; di heman demê de pirsên parastina daneyan, girêdayîbûn û berpirsiyariyê derdikevin." },
+                { "language": "pl", "text": "Postrzegałbym sztuczną inteligencję w codzienności jako pomocne narzędzie, ale nie jako zastępstwo własnego osądu. Może oszczędzać czas, na przykład przy formułowaniu lub porządkowaniu informacji; jednocześnie pojawiają się pytania o ochronę danych, zależność i odpowiedzialność." },
+                { "language": "ro", "text": "Aș vedea inteligența artificială în viața de zi cu zi ca pe un instrument util, dar nu ca înlocuitor al propriei judecăți. Poate economisi timp, de exemplu la formularea sau ordonarea informațiilor; în același timp apar întrebări despre protecția datelor, dependență și responsabilitate." },
+                { "language": "sq", "text": "Do ta shihja inteligjencën artificiale në jetën e përditshme si një mjet të dobishëm, por jo si zëvendësim të gjykimit personal. Mund të kursejë kohë, për shembull në formulim ose renditje informacioni; njëkohësisht lindin pyetje për mbrojtjen e të dhënave, varësinë dhe përgjegjësinë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort eröffnet die Diskussion mit Nutzen, Grenze und gesellschaftlichen Prüfpunkten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer opens the discussion with benefit, boundary, and social points to examine." },
+                { "language": "fa", "text": "خوب است: پاسخ بحث را با فایده، مرز و نکات اجتماعی برای بررسی شروع می‌کند." },
+                { "language": "ar", "text": "جيد: تفتح الإجابة النقاش بالفائدة والحدود ونقاط اجتماعية للفحص." },
+                { "language": "tr", "text": "İyi: yanıt tartışmayı yarar, sınır ve toplumsal inceleme noktalarıyla açar." },
+                { "language": "ru", "text": "Хорошо: ответ открывает дискуссию пользой, границей и социальными пунктами для проверки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە گفتوگۆ بە سوود، سنوور و خاڵە کۆمەڵایەتییەکانی پشکنین دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv gotûbêjê bi sûd, sînor û xalên civakî yên kontrolê vedike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź otwiera dyskusję korzyścią, granicą i społecznymi punktami do zbadania." },
+                { "language": "ro", "text": "Bine: răspunsul deschide discuția cu beneficiu, limită și puncte sociale de analizat." },
+                { "language": "sq", "text": "Mirë: përgjigjja e hap diskutimin me përfitim, kufi dhe pika shoqërore për shqyrtim." }
+              ],
+              "explanationKey": "balanced-opening"
+            },
+            {
+              "id": "too-general-tech-good",
+              "text": "Ich finde KI gut, weil moderne Technik einfach zum Alltag gehört und viele Aufgaben schneller macht.",
+              "translations": [
+                { "language": "en", "text": "I think AI is good because modern technology is simply part of daily life and makes many tasks faster." },
+                { "language": "fa", "text": "من فکر می‌کنم هوش مصنوعی خوب است، چون فناوری مدرن بخشی از زندگی روزمره است و خیلی کارها را سریع‌تر می‌کند." },
+                { "language": "ar", "text": "أعتقد أن الذكاء الاصطناعي جيد لأن التكنولوجيا الحديثة جزء من الحياة اليومية وتجعل كثيراً من المهام أسرع." },
+                { "language": "tr", "text": "Yapay zekayı iyi buluyorum, çünkü modern teknoloji günlük yaşamın parçasıdır ve birçok işi hızlandırır." },
+                { "language": "ru", "text": "Я считаю ИИ хорошим, потому что современные технологии просто являются частью повседневности и ускоряют многие задачи." },
+                { "language": "ckb", "text": "پێم وایە زیرەکیی دەستکرد باشە، چونکە تەکنەلۆژیای نوێ بە سادەیی بەشێکە لە ژیانی ڕۆژانە و زۆر کار خێراتر دەکات." },
+                { "language": "kmr", "text": "Ez aqila çêkirî baş dibînim, ji ber ku teknolojîya nû beşek ji jiyana rojane ye û gelek karan zûtir dike." },
+                { "language": "pl", "text": "Uważam AI za dobrą, bo nowoczesna technologia po prostu należy do codzienności i przyspiesza wiele zadań." },
+                { "language": "ro", "text": "Consider AI bună, deoarece tehnologia modernă face pur și simplu parte din viața de zi cu zi și accelerează multe sarcini." },
+                { "language": "sq", "text": "Mendoj se AI është e mirë, sepse teknologjia moderne është thjesht pjesë e jetës së përditshme dhe i bën shumë detyra më të shpejta." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einseitig: Die Antwort nennt Nutzen, aber keine Grenzen, Risiken oder Verantwortung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too one-sided: the answer names benefits, but no boundaries, risks, or responsibility." },
+                { "language": "fa", "text": "زیادی یک‌طرفه است: پاسخ فایده را می‌گوید، اما مرز، خطر یا مسئولیت را بیان نمی‌کند." },
+                { "language": "ar", "text": "أحادية جداً: تذكر الإجابة الفائدة، لكنها لا تذكر حدوداً أو مخاطر أو مسؤولية." },
+                { "language": "tr", "text": "Çok tek taraflı: yanıt yararı belirtir, ama sınır, risk veya sorumluluk belirtmez." },
+                { "language": "ru", "text": "Слишком односторонне: ответ называет пользу, но не границы, риски или ответственность." },
+                { "language": "ckb", "text": "زۆر یەک لایەنەیە: وەڵامەکە سوود ناو دەبات، بەڵام سنوور، مەترسی یان بەرپرسیارێتی ناڵێت." },
+                { "language": "kmr", "text": "Pir yekalî ye: bersiv sûdê dibêje, lê sînor, metirsî an berpirsiyarî nabêje." },
+                { "language": "pl", "text": "Zbyt jednostronnie: odpowiedź nazywa korzyść, ale nie granice, ryzyka ani odpowiedzialność." },
+                { "language": "ro", "text": "Prea unilateral: răspunsul numește beneficiul, dar nu limite, riscuri sau responsabilitate." },
+                { "language": "sq", "text": "Shumë e njëanshme: përgjigjja përmend përfitimin, por jo kufij, rreziqe ose përgjegjësi." }
+              ],
+              "explanationKey": "avoid-one-sided-opening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "administrative-letter-with-safeguards",
+              "text": "Ein Beispiel wäre ein Brief an eine Behörde: KI kann helfen, den Entwurf klarer zu strukturieren. Trotzdem sollte man persönliche Daten sparsam eingeben, die Fakten selbst prüfen und den Ton an die Situation anpassen.",
+              "translations": [
+                { "language": "en", "text": "One example would be a letter to an authority: AI can help structure the draft more clearly. Nevertheless, one should enter personal data sparingly, check the facts oneself, and adapt the tone to the situation." },
+                { "language": "fa", "text": "یک مثال می‌تواند نامه به یک اداره باشد: هوش مصنوعی می‌تواند کمک کند پیش‌نویس واضح‌تر ساختاربندی شود. با این حال باید داده‌های شخصی را کم وارد کرد، واقعیت‌ها را خودمان بررسی کرد و لحن را با موقعیت تطبیق داد." },
+                { "language": "ar", "text": "مثال على ذلك رسالة إلى جهة رسمية: يمكن للذكاء الاصطناعي أن يساعد في تنظيم المسودة بوضوح أكبر. ومع ذلك ينبغي إدخال البيانات الشخصية باقتصاد، والتحقق من الحقائق بنفسك، وتكييف النبرة مع الموقف." },
+                { "language": "tr", "text": "Bir örnek bir kuruma yazılan mektup olabilir: yapay zeka taslağı daha net yapılandırmaya yardımcı olabilir. Yine de kişisel verileri sınırlı girmek, olguları kendiniz kontrol etmek ve tonu duruma uyarlamak gerekir." },
+                { "language": "ru", "text": "Примером может быть письмо в ведомство: ИИ может помочь яснее структурировать черновик. Тем не менее личные данные следует вводить экономно, факты проверять самостоятельно и тон адаптировать к ситуации." },
+                { "language": "ckb", "text": "نموونەیەک دەکرێت نامەیەک بۆ فەرمانگە بێت: زیرەکیی دەستکرد دەتوانێت یارمەتی بدات ڕەشنووسەکە بە ڕوونیتر ڕێکبخرێت. بەڵام پێویستە داتای کەسی بە کەمترین شێوە بنووسرێت، ڕاستییەکان خۆمان بپشکنین و لحنەکە لەگەڵ دۆخەکە بگونجێنین." },
+                { "language": "kmr", "text": "Mînak dikare nameyek ji bo dezgehekê be: aqila çêkirî dikare alîkariyê bike ku pêşnivîs zelaltir were rêzkirin. Lê dîsa divê daneyên kesane bi kêmtirîn awayî were têketin, rastî bi xwe were kontrolkirin û ton li gor rewşê were guherandin." },
+                { "language": "pl", "text": "Przykładem byłby list do urzędu: sztuczna inteligencja może pomóc jaśniej uporządkować projekt. Mimo to należy oszczędnie wpisywać dane osobowe, samodzielnie sprawdzać fakty i dopasować ton do sytuacji." },
+                { "language": "ro", "text": "Un exemplu ar fi o scrisoare către o autoritate: inteligența artificială poate ajuta la structurarea mai clară a ciornei. Totuși, datele personale trebuie introduse cu economie, faptele verificate personal, iar tonul adaptat situației." },
+                { "language": "sq", "text": "Një shembull do të ishte një letër për një zyrë: inteligjenca artificiale mund të ndihmojë që drafti të strukturohet më qartë. Megjithatë, të dhënat personale duhet të jepen me kursim, faktet të kontrollohen vetë dhe toni të përshtatet me situatën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Beispiel ist konkret und verbindet Nutzen mit Datenschutz, Faktenprüfung und Registerbewusstsein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the example is concrete and connects benefit with data protection, fact-checking, and register awareness." },
+                { "language": "fa", "text": "خوب است: مثال مشخص است و فایده را با حریم خصوصی، بررسی واقعیت و آگاهی از لحن پیوند می‌دهد." },
+                { "language": "ar", "text": "جيد: المثال ملموس ويربط الفائدة بحماية البيانات والتحقق من الحقائق والوعي بالسجل اللغوي." },
+                { "language": "tr", "text": "İyi: örnek somut ve yararı veri koruma, olgu kontrolü ve üslup bilinciyle bağlar." },
+                { "language": "ru", "text": "Хорошо: пример конкретен и связывает пользу с защитой данных, проверкой фактов и осознанием регистра." },
+                { "language": "ckb", "text": "باشە: نموونەکە دیاریکراوە و سوود لەگەڵ پاراستنی داتا، پشکنینی ڕاستی و ئاگایی لە لحن گرێ دەدات." },
+                { "language": "kmr", "text": "Baş e: mînak taybet e û sûdê bi parastina daneyan, kontrola rastiyan û hişyariya qeydê ve girê dide." },
+                { "language": "pl", "text": "Dobrze: przykład jest konkretny i łączy korzyść z ochroną danych, sprawdzaniem faktów i świadomością rejestru." },
+                { "language": "ro", "text": "Bine: exemplul este concret și leagă beneficiul de protecția datelor, verificarea faptelor și conștientizarea registrului." },
+                { "language": "sq", "text": "Mirë: shembulli është konkret dhe lidh përfitimin me mbrojtjen e të dhënave, kontrollin e fakteve dhe vetëdijen për regjistrin." }
+              ],
+              "explanationKey": "concrete-safeguarded-example"
+            },
+            {
+              "id": "example-without-risk-control",
+              "text": "Zum Beispiel kann KI Briefe schreiben, wenn man selbst nicht genau weiß, wie man etwas formulieren soll.",
+              "translations": [
+                { "language": "en", "text": "For example, AI can write letters when you do not know exactly how to formulate something yourself." },
+                { "language": "fa", "text": "مثلاً هوش مصنوعی می‌تواند نامه بنویسد وقتی خود آدم دقیق نمی‌داند چیزی را چگونه بیان کند." },
+                { "language": "ar", "text": "مثلاً يمكن للذكاء الاصطناعي كتابة الرسائل عندما لا يعرف الشخص بالضبط كيف يصوغ شيئاً بنفسه." },
+                { "language": "tr", "text": "Örneğin insan bir şeyi nasıl formüle edeceğini tam bilmediğinde yapay zeka mektup yazabilir." },
+                { "language": "ru", "text": "Например, ИИ может писать письма, когда сам человек не знает точно, как что-то сформулировать." },
+                { "language": "ckb", "text": "بۆ نموونە زیرەکیی دەستکرد دەتوانێت نامە بنووسێت کاتێک خۆت بە وردی نازانیت شتێک چۆن دابڕێژیت." },
+                { "language": "kmr", "text": "Mînak aqila çêkirî dikare name binivîse dema mirov bi rastî nizanibe çawa tiştek formule bike." },
+                { "language": "pl", "text": "Na przykład AI może pisać listy, kiedy samemu nie wie się dokładnie, jak coś sformułować." },
+                { "language": "ro", "text": "De exemplu, AI poate scrie scrisori când nu știți exact cum să formulați ceva." },
+                { "language": "sq", "text": "Për shembull, AI mund të shkruajë letra kur njeriu nuk di saktësisht si ta formulojë diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu kurz: Die Antwort zeigt Nutzen, aber keine Kontrolle bei Daten, Fakten oder Ton.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too short: the answer shows benefit, but no control over data, facts, or tone." },
+                { "language": "fa", "text": "قابل‌باور اما زیادی کوتاه است: پاسخ فایده را نشان می‌دهد، اما کنترل داده، واقعیت یا لحن را ندارد." },
+                { "language": "ar", "text": "معقولة لكنها قصيرة جداً: تُظهر الإجابة الفائدة، لكنها لا تقدم تحكماً في البيانات أو الحقائق أو النبرة." },
+                { "language": "tr", "text": "Makul ama çok kısa: yanıt yararı gösterir, ancak veri, olgu veya ton kontrolü yoktur." },
+                { "language": "ru", "text": "Правдоподобно, но слишком коротко: ответ показывает пользу, но без контроля данных, фактов или тона." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر کورتە: وەڵامەکە سوود نیشان دەدات، بەڵام کۆنترۆڵی داتا، ڕاستی یان لحن نییە." },
+                { "language": "kmr", "text": "Gengaz e, lê pir kurt e: bersiv sûdê nîşan dide, lê kontrola dane, rastî an ton tune ye." },
+                { "language": "pl", "text": "Plausybilne, ale zbyt krótkie: odpowiedź pokazuje korzyść, lecz bez kontroli danych, faktów lub tonu." },
+                { "language": "ro", "text": "Plauzibil, dar prea scurt: răspunsul arată beneficiul, dar nu controlul datelor, faptelor sau tonului." },
+                { "language": "sq", "text": "E besueshme, por shumë e shkurtër: përgjigjja tregon përfitimin, por jo kontrollin mbi të dhënat, faktet ose tonin." }
+              ],
+              "explanationKey": "add-risk-control"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "copying-risk-learning-aid",
+              "text": "Der Einwand ist berechtigt, wenn KI nur zum Kopieren benutzt wird. Sinnvoller wäre eine Nutzung als Lernhilfe: Man lässt sich Varianten zeigen, vergleicht sie und entscheidet bewusst, was zum eigenen Ziel passt.",
+              "translations": [
+                { "language": "en", "text": "The objection is justified if AI is used only for copying. More sensible would be using it as a learning aid: one has variants shown, compares them, and consciously decides what fits one's own goal." },
+                { "language": "fa", "text": "این ایراد موجه است اگر هوش مصنوعی فقط برای کپی‌کردن استفاده شود. استفاده مناسب‌تر این است که آن را کمک آموزشی بدانیم: چند گزینه را نشان دهد، آن‌ها را مقایسه کنیم و آگاهانه تصمیم بگیریم چه چیزی با هدف خودمان سازگار است." },
+                { "language": "ar", "text": "الاعتراض مبرر إذا استُخدم الذكاء الاصطناعي للنسخ فقط. الأجدى هو استخدامه كأداة تعلم: تعرض عليك صيغ مختلفة، تقارن بينها، وتقرر بوعي ما يناسب هدفك." },
+                { "language": "tr", "text": "Yapay zeka yalnızca kopyalamak için kullanılırsa itiraz haklıdır. Daha anlamlı olan onu öğrenme yardımı olarak kullanmaktır: seçenekler gösterilir, karşılaştırılır ve kendi hedefe neyin uyduğuna bilinçli karar verilir." },
+                { "language": "ru", "text": "Возражение оправдано, если ИИ используется только для копирования. Разумнее было бы использовать его как учебную помощь: показать варианты, сравнить их и осознанно решить, что подходит собственной цели." },
+                { "language": "ckb", "text": "ئەم ناڕەزاییە دادپەروەرانەیە ئەگەر زیرەکیی دەستکرد تەنها بۆ کۆپی کردن بەکاربهێنرێت. بەسوودتر ئەوەیە وەک یارمەتیی فێربوون بەکاربهێنرێت: چەند هەڵبژاردە نیشان دەدرێت، بەراوردیان دەکەیت و بە ئاگایی بڕیار دەدەیت کامە لەگەڵ ئامانجی خۆت دەگونجێت." },
+                { "language": "kmr", "text": "Ev nerazîbûn rewa ye heke aqila çêkirî tenê ji bo kopîkirinê were bikaranîn. Bêhtir maqûl ew e ku wek alîkariya fêrbûnê were bikaranîn: varyantan nîşan dide, mirov wan dide ber hev û bi hişyarî biryar dide ka çi li gor armanca xwe ye." },
+                { "language": "pl", "text": "Zarzut jest uzasadniony, jeśli AI służy tylko do kopiowania. Sensowniejsze byłoby użycie jej jako pomocy w nauce: pokazuje się warianty, porównuje je i świadomie decyduje, co pasuje do własnego celu." },
+                { "language": "ro", "text": "Obiecția este justificată dacă AI este folosită doar pentru copiere. Mai utilă ar fi folosirea ca ajutor de învățare: se afișează variante, se compară și se decide conștient ce se potrivește propriului scop." },
+                { "language": "sq", "text": "Kundërshtimi është i arsyeshëm nëse AI përdoret vetëm për kopjim. Më e dobishme do të ishte përdorimi si ndihmë mësimore: të shfaqë variante, t'i krahasosh dhe të vendosësh me vetëdije çfarë i përshtatet qëllimit tënd." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort akzeptiert den berechtigten Teil des Einwands und formuliert eine kontrollierte Nutzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer accepts the justified part of the objection and formulates controlled use." },
+                { "language": "fa", "text": "خوب است: پاسخ بخش موجه ایراد را می‌پذیرد و استفاده کنترل‌شده را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تقبل الإجابة الجزء المبرر من الاعتراض وتصوغ استخداماً مضبوطاً." },
+                { "language": "tr", "text": "İyi: yanıt itirazın haklı kısmını kabul eder ve kontrollü kullanım formüle eder." },
+                { "language": "ru", "text": "Хорошо: ответ принимает обоснованную часть возражения и формулирует контролируемое использование." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەشی دادپەروەرانەی ناڕەزاییەکە قبوڵ دەکات و بەکارهێنانی کۆنترۆڵکراو دەربڕێت." },
+                { "language": "kmr", "text": "Baş e: bersiv beşa rewa ya nerazîbûnê dipejirîne û bikaranîna kontrolkirî formule dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź przyjmuje uzasadnioną część zarzutu i formułuje kontrolowane użycie." },
+                { "language": "ro", "text": "Bine: răspunsul acceptă partea justificată a obiecției și formulează o utilizare controlată." },
+                { "language": "sq", "text": "Mirë: përgjigjja pranon pjesën e arsyeshme të kundërshtimit dhe formulon përdorim të kontrolluar." }
+              ],
+              "explanationKey": "partial-concession"
+            },
+            {
+              "id": "dismiss-learning-risk",
+              "text": "Dieses Problem sehe ich nicht so stark, denn man muss mit der technischen Entwicklung einfach mitgehen.",
+              "translations": [
+                { "language": "en", "text": "I do not see this problem as very strong, because one simply has to keep up with technological development." },
+                { "language": "fa", "text": "من این مشکل را خیلی جدی نمی‌بینم، چون انسان باید به‌هرحال با پیشرفت فنی همراه شود." },
+                { "language": "ar", "text": "لا أرى هذه المشكلة قوية جداً، لأن على المرء ببساطة أن يواكب التطور التقني." },
+                { "language": "tr", "text": "Bu sorunu çok güçlü görmüyorum, çünkü insan teknik gelişime ayak uydurmak zorunda." },
+                { "language": "ru", "text": "Я не вижу эту проблему такой серьезной, потому что нужно просто идти в ногу с техническим развитием." },
+                { "language": "ckb", "text": "ئەم کێشەیە بە زۆر بەهێز نابینم، چونکە مرۆڤ پێویستە بە سادەیی لەگەڵ پەرەسەندنی تەکنیکی بڕوات." },
+                { "language": "kmr", "text": "Ez vê pirsgirêkê gelek xurt nabînim, ji ber ku mirov divê bi pêşveçûna teknîkî re biçe." },
+                { "language": "pl", "text": "Nie widzę tego problemu jako bardzo silnego, bo trzeba po prostu iść z rozwojem technicznym." },
+                { "language": "ro", "text": "Nu văd această problemă ca fiind foarte puternică, pentru că trebuie pur și simplu să ținem pasul cu dezvoltarea tehnică." },
+                { "language": "sq", "text": "Nuk e shoh këtë problem shumë të fortë, sepse njeriu thjesht duhet të ecë me zhvillimin teknik." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Die Antwort wischt den Einwand weg und erklärt nicht, wie Lernen erhalten bleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: the answer brushes aside the objection and does not explain how learning is preserved." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: پاسخ ایراد را کنار می‌زند و توضیح نمی‌دهد یادگیری چگونه حفظ می‌شود." },
+                { "language": "ar", "text": "ضعيفة استراتيجياً: تدفع الإجابة الاعتراض جانباً ولا تشرح كيف يبقى التعلم محفوظاً." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: yanıt itirazı geçiştirir ve öğrenmenin nasıl korunacağını açıklamaz." },
+                { "language": "ru", "text": "Стратегически слабо: ответ отмахивается от возражения и не объясняет, как сохраняется обучение." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: وەڵامەکە ناڕەزاییەکە پشتگوێ دەخات و ڕوون ناکاتەوە فێربوون چۆن دەپارێزرێت." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: bersiv nerazîbûnê paşguh dike û rave nake ka fêrbûn çawa tê parastin." },
+                { "language": "pl", "text": "Strategicznie słabe: odpowiedź odsuwa zarzut i nie wyjaśnia, jak zachować uczenie się." },
+                { "language": "ro", "text": "Slab strategic: răspunsul dă la o parte obiecția și nu explică modul în care învățarea este păstrată." },
+                { "language": "sq", "text": "Strategjikisht e dobët: përgjigjja e shtyn mënjanë kundërshtimin dhe nuk shpjegon si ruhet të mësuarit." }
+              ],
+              "explanationKey": "do-not-dismiss-objection"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "prepare-not-decide",
+              "text": "Eine sinnvolle Grenze wäre: KI darf vorbereiten, vereinfachen oder erklären, aber nicht die letzte Entscheidung treffen. Besonders bei Gesundheit, Geld, Recht oder persönlichen Daten sollte man zusätzliche Quellen und menschliche Beratung einbeziehen.",
+              "translations": [
+                { "language": "en", "text": "A sensible boundary would be: AI may prepare, simplify, or explain, but not make the final decision. Especially with health, money, law, or personal data, one should include additional sources and human advice." },
+                { "language": "fa", "text": "یک مرز منطقی این است: هوش مصنوعی می‌تواند آماده کند، ساده کند یا توضیح دهد، اما تصمیم نهایی را نگیرد. به‌ویژه در سلامت، پول، قانون یا داده‌های شخصی باید منابع اضافی و مشاوره انسانی را وارد کرد." },
+                { "language": "ar", "text": "حد معقول هو: يمكن للذكاء الاصطناعي أن يجهز أو يبسط أو يشرح، لكنه لا يتخذ القرار النهائي. خصوصاً في الصحة والمال والقانون أو البيانات الشخصية ينبغي إشراك مصادر إضافية ومشورة بشرية." },
+                { "language": "tr", "text": "Makul bir sınır şu olurdu: Yapay zeka hazırlayabilir, sadeleştirebilir veya açıklayabilir, ama son kararı veremez. Özellikle sağlık, para, hukuk veya kişisel verilerde ek kaynaklar ve insan danışmanlığı dahil edilmelidir." },
+                { "language": "ru", "text": "Разумная граница была бы такой: ИИ может подготавливать, упрощать или объяснять, но не принимать окончательное решение. Особенно в вопросах здоровья, денег, права или личных данных следует привлекать дополнительные источники и человеческую консультацию." },
+                { "language": "ckb", "text": "سنوورێکی گونجاو ئەمەیە: زیرەکیی دەستکرد دەتوانێت ئامادە بکات، ئاسان بکات یان ڕوون بکاتەوە، بەڵام بڕیاری کۆتایی نەدات. بە تایبەتی لە تەندروستی، پارە، یاسا یان داتای کەسی، پێویستە سەرچاوەی زیادە و ڕاوێژی مرۆیی بەشداری پێ بکرێت." },
+                { "language": "kmr", "text": "Sînorek maqûl ev be: aqila çêkirî dikare amade bike, hêsan bike an rave bike, lê biryara dawî nede. Bi taybetî di tenduristî, pere, qanûn an daneyên kesane de divê çavkaniyên zêde û şêwirmendiya mirovî bê tevlîkirin." },
+                { "language": "pl", "text": "Rozsądną granicą byłoby: AI może przygotowywać, upraszczać lub wyjaśniać, ale nie podejmować ostatecznej decyzji. Zwłaszcza przy zdrowiu, pieniądzach, prawie lub danych osobowych należy włączać dodatkowe źródła i ludzką poradę." },
+                { "language": "ro", "text": "O limită rezonabilă ar fi: AI poate pregăti, simplifica sau explica, dar nu lua decizia finală. Mai ales în sănătate, bani, drept sau date personale trebuie incluse surse suplimentare și consiliere umană." },
+                { "language": "sq", "text": "Një kufi i arsyeshëm do të ishte: AI mund të përgatisë, thjeshtojë ose shpjegojë, por jo të marrë vendimin përfundimtar. Sidomos për shëndetin, paratë, ligjin ose të dhënat personale duhen përfshirë burime shtesë dhe këshillim njerëzor." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort formuliert eine klare Grenze und nennt Bereiche mit erhöhtem Risiko.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer formulates a clear boundary and names areas with increased risk." },
+                { "language": "fa", "text": "خوب است: پاسخ مرز روشنی بیان می‌کند و حوزه‌های پرریسک‌تر را نام می‌برد." },
+                { "language": "ar", "text": "جيد: تصوغ الإجابة حداً واضحاً وتذكر مجالات ذات خطر أعلى." },
+                { "language": "tr", "text": "İyi: yanıt net bir sınır formüle eder ve daha yüksek riskli alanları belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ формулирует четкую границу и называет области с повышенным риском." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە سنوورێکی ڕوون دادەنێت و بوارە مەترسیدارترەکان ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: bersiv sînorek zelal formule dike û qadên bi metirsiya bilindtir bi nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź formułuje jasną granicę i nazywa obszary o podwyższonym ryzyku." },
+                { "language": "ro", "text": "Bine: răspunsul formulează o limită clară și numește domenii cu risc crescut." },
+                { "language": "sq", "text": "Mirë: përgjigjja formulon një kufi të qartë dhe përmend fusha me rrezik më të lartë." }
+              ],
+              "explanationKey": "clear-boundary"
+            },
+            {
+              "id": "use-when-convenient",
+              "text": "Ich würde sagen, man sollte KI immer dann nutzen, wenn sie das Leben einfacher macht, und bei Unsicherheit vorsichtig sein.",
+              "translations": [
+                { "language": "en", "text": "I would say one should use AI whenever it makes life easier, and be careful when uncertain." },
+                { "language": "fa", "text": "می‌گویم هر وقت هوش مصنوعی زندگی را آسان‌تر می‌کند باید از آن استفاده کرد و هنگام تردید محتاط بود." },
+                { "language": "ar", "text": "أقول إنه ينبغي استخدام الذكاء الاصطناعي كلما جعل الحياة أسهل، والحذر عند عدم اليقين." },
+                { "language": "tr", "text": "Bence yapay zekayı hayatı kolaylaştırdığı her zaman kullanmalı ve belirsizlikte dikkatli olmalı." },
+                { "language": "ru", "text": "Я бы сказал, что ИИ следует использовать всегда, когда он облегчает жизнь, и быть осторожным при неопределенности." },
+                { "language": "ckb", "text": "دەڵێم پێویستە هەر کاتێک زیرەکیی دەستکرد ژیان ئاسانتر دەکات بەکاربهێنرێت و لە نادڵنیاییدا وریا بین." },
+                { "language": "kmr", "text": "Ez dibêjim divê aqila çêkirî her demê ku jiyan hêsantir dike were bikaranîn û di nediyariyê de hişyar bin." },
+                { "language": "pl", "text": "Powiedziałbym, że należy używać AI zawsze, gdy ułatwia życie, a przy niepewności być ostrożnym." },
+                { "language": "ro", "text": "Aș spune că trebuie folosită AI ori de câte ori face viața mai ușoară și să fim atenți la incertitudine." },
+                { "language": "sq", "text": "Do të thosha se AI duhet përdorur sa herë që e bën jetën më të lehtë dhe duhet pasur kujdes kur ka pasiguri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort klingt vernünftig, definiert aber keine prüfbaren Grenzen oder Risikobereiche.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the answer sounds reasonable, but defines no verifiable boundaries or risk areas." },
+                { "language": "fa", "text": "زیادی مبهم است: پاسخ منطقی به نظر می‌رسد، اما مرز یا حوزه ریسک قابل بررسی تعریف نمی‌کند." },
+                { "language": "ar", "text": "غامضة جداً: تبدو الإجابة معقولة، لكنها لا تحدد حدوداً قابلة للتحقق أو مجالات خطر." },
+                { "language": "tr", "text": "Çok belirsiz: yanıt makul geliyor, ama denetlenebilir sınırlar veya risk alanları tanımlamıyor." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ звучит разумно, но не определяет проверяемых границ или зон риска." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە ژیرانە دەردەکەوێت، بەڵام سنوور یان بوارە مەترسیدارە پشکنراوەکان دیاری ناکات." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv maqûl xuya dike, lê sînorên kontrolbar an qadên metirsiyê nade nasîn." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź brzmi rozsądnie, ale nie definiuje sprawdzalnych granic ani obszarów ryzyka." },
+                { "language": "ro", "text": "Prea vag: răspunsul sună rezonabil, dar nu definește limite verificabile sau domenii de risc." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja tingëllon e arsyeshme, por nuk përcakton kufij të verifikueshëm ose fusha rreziku." }
+              ],
+              "explanationKey": "avoid-vague-boundary"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "access-responsibility",
+              "text": "Das spricht nicht gegen KI an sich, aber gegen eine naive Einführung. Wenn Behörden, Schulen oder Arbeitgeber solche Werkzeuge erwarten, müssen sie zugleich erklären, schulen und alternative Wege offenhalten.",
+              "translations": [
+                { "language": "en", "text": "That does not speak against AI itself, but against a naive introduction. If authorities, schools, or employers expect such tools, they must also explain them, provide training, and keep alternative routes open." },
+                { "language": "fa", "text": "این علیه خود هوش مصنوعی نیست، بلکه علیه معرفی ساده‌انگارانه آن است. اگر ادارات، مدارس یا کارفرمایان انتظار استفاده از چنین ابزارهایی را دارند، باید هم‌زمان توضیح دهند، آموزش بدهند و راه‌های جایگزین را باز نگه دارند." },
+                { "language": "ar", "text": "هذا لا يتحدث ضد الذكاء الاصطناعي بحد ذاته، بل ضد إدخاله بسذاجة. إذا كانت السلطات أو المدارس أو أرباب العمل يتوقعون استخدام هذه الأدوات، فعليهم في الوقت نفسه أن يشرحوا ويدرّبوا ويبقوا طرقاً بديلة مفتوحة." },
+                { "language": "tr", "text": "Bu yapay zekanın kendisine karşı değil, naif bir uygulamaya karşı konuşur. Kurumlar, okullar veya işverenler böyle araçlar bekliyorsa, aynı zamanda açıklamalı, eğitim vermeli ve alternatif yolları açık tutmalıdır." },
+                { "language": "ru", "text": "Это говорит не против ИИ как такового, а против наивного внедрения. Если ведомства, школы или работодатели ожидают такие инструменты, они должны одновременно объяснять, обучать и оставлять открытыми альтернативные пути." },
+                { "language": "ckb", "text": "ئەمە دژ بە خودی زیرەکیی دەستکرد نییە، بەڵکوو دژ بە جێبەجێکردنی سادەلووحانەیە. ئەگەر فەرمانگە، قوتابخانە یان خاوەنکاران چاوەڕوانی بەکارهێنانی ئەم ئامرازانە بکەن، پێویستە هاوکات ڕوون بکەنەوە، فێربکەن و ڕێگای جێگرەوە کراوە بهێڵنەوە." },
+                { "language": "kmr", "text": "Ev ne dijî aqila çêkirî bixwe ye, lê dijî danasîna safane ye. Heke dezgeh, dibistan an kardêr van amûran bendewar bikin, divê di heman demê de rave bikin, perwerde bidin û rêyên alternatîf vekirî bihêlin." },
+                { "language": "pl", "text": "To nie przemawia przeciwko AI jako takiej, lecz przeciwko naiwnemu wprowadzaniu. Jeśli urzędy, szkoły lub pracodawcy oczekują takich narzędzi, muszą równocześnie wyjaśniać, szkolić i pozostawiać otwarte drogi alternatywne." },
+                { "language": "ro", "text": "Aceasta nu vorbește împotriva AI în sine, ci împotriva unei introduceri naive. Dacă autoritățile, școlile sau angajatorii așteaptă astfel de instrumente, trebuie totodată să explice, să instruiască și să mențină deschise căi alternative." },
+                { "language": "sq", "text": "Kjo nuk flet kundër vetë AI-së, por kundër futjes naive të saj. Nëse zyrat, shkollat ose punëdhënësit presin përdorimin e këtyre mjeteve, duhet njëkohësisht të shpjegojnë, të trajnojnë dhe të mbajnë hapur rrugë alternative." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Technikbewertung mit Zugang, Schulung und institutioneller Verantwortung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer connects the evaluation of technology with access, training, and institutional responsibility." },
+                { "language": "fa", "text": "خوب است: پاسخ ارزیابی فناوری را با دسترسی، آموزش و مسئولیت نهادی پیوند می‌دهد." },
+                { "language": "ar", "text": "جيد: تربط الإجابة تقييم التقنية بالوصول والتدريب والمسؤولية المؤسسية." },
+                { "language": "tr", "text": "İyi: yanıt teknoloji değerlendirmesini erişim, eğitim ve kurumsal sorumlulukla bağlar." },
+                { "language": "ru", "text": "Хорошо: ответ связывает оценку технологии с доступом, обучением и институциональной ответственностью." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەڵسەنگاندنی تەکنەلۆژیا لەگەڵ دەستگەیشتن، فێرکردن و بەرپرسیارێتی دامەزراوەیی گرێ دەدات." },
+                { "language": "kmr", "text": "Baş e: bersiv nirxandina teknolojiyê bi gihîştin, perwerde û berpirsiyariya saziyî ve girê dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy ocenę technologii z dostępem, szkoleniem i odpowiedzialnością instytucjonalną." },
+                { "language": "ro", "text": "Bine: răspunsul leagă evaluarea tehnologiei de acces, instruire și responsabilitate instituțională." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh vlerësimin e teknologjisë me qasjen, trajnimin dhe përgjegjësinë institucionale." }
+              ],
+              "explanationKey": "institutional-responsibility"
+            },
+            {
+              "id": "everyone-should-learn-it",
+              "text": "Dann müssen eben alle lernen, damit umzugehen, weil solche Werkzeuge wahrscheinlich nicht wieder verschwinden.",
+              "translations": [
+                { "language": "en", "text": "Then everyone simply has to learn how to deal with it, because such tools probably will not disappear again." },
+                { "language": "fa", "text": "پس همه باید یاد بگیرند با آن کنار بیایند، چون چنین ابزارهایی احتمالاً دوباره ناپدید نمی‌شوند." },
+                { "language": "ar", "text": "إذن على الجميع ببساطة أن يتعلموا التعامل معها، لأن هذه الأدوات على الأرجح لن تختفي مرة أخرى." },
+                { "language": "tr", "text": "O halde herkes bununla başa çıkmayı öğrenmek zorunda, çünkü böyle araçlar muhtemelen tekrar kaybolmayacak." },
+                { "language": "ru", "text": "Тогда все просто должны научиться с этим обращаться, потому что такие инструменты, вероятно, уже не исчезнут." },
+                { "language": "ckb", "text": "کەواتە هەمووان پێویستە فێر بن چۆن مامەڵەی لەگەڵ بکەن، چونکە ئەم جۆرە ئامرازانە ئەگەری زۆرە جارێکی تر ون نەبن." },
+                { "language": "kmr", "text": "Wê demê divê hemû kes fêr bibin çawa pê re mijûl bibin, ji ber ku amûrên wisa guman e careke din winda bibin." },
+                { "language": "pl", "text": "W takim razie wszyscy muszą się po prostu nauczyć sobie z tym radzić, bo takie narzędzia prawdopodobnie już nie znikną." },
+                { "language": "ro", "text": "Atunci toți trebuie pur și simplu să învețe să se descurce cu ele, deoarece astfel de instrumente probabil nu vor dispărea din nou." },
+                { "language": "sq", "text": "Atëherë të gjithë duhet thjesht të mësojnë si të merren me të, sepse mjete të tilla ndoshta nuk do të zhduken më." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber sozial zu dünn: Die Antwort benennt Anpassung, lässt aber Unterstützung und Alternativen aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but socially too thin: the answer names adaptation, but omits support and alternatives." },
+                { "language": "fa", "text": "قابل‌باور اما از نظر اجتماعی ضعیف است: پاسخ سازگاری را می‌گوید، اما حمایت و راه‌های جایگزین را حذف می‌کند." },
+                { "language": "ar", "text": "معقولة لكنها ضعيفة اجتماعياً: تذكر الإجابة التكيف، لكنها تغفل الدعم والبدائل." },
+                { "language": "tr", "text": "Makul ama sosyal açıdan zayıf: yanıt uyumu belirtir, ancak destek ve alternatifleri dışarıda bırakır." },
+                { "language": "ru", "text": "Правдоподобно, но социально слишком слабо: ответ называет адаптацию, но упускает поддержку и альтернативы." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام لە ڕووی کۆمەڵایەتییەوە لاوازە: وەڵامەکە خۆگونجاندن ناو دەبات، بەڵام پشتگیری و جێگرەوەکان جێدەهێڵێت." },
+                { "language": "kmr", "text": "Gengaz e, lê ji aliyê civakî ve kêm e: bersiv lihevhatinê dibêje, lê piştgirî û alternatîfan ji bîr dike." },
+                { "language": "pl", "text": "Plausybilne, ale społecznie zbyt płytkie: odpowiedź nazywa adaptację, lecz pomija wsparcie i alternatywy." },
+                { "language": "ro", "text": "Plauzibil, dar social prea subțire: răspunsul numește adaptarea, dar omite sprijinul și alternativele." },
+                { "language": "sq", "text": "E besueshme, por shoqërisht e dobët: përgjigjja përmend përshtatjen, por lë jashtë mbështetjen dhe alternativat." }
+              ],
+              "explanationKey": "include-access-support"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "responsible-limited-use-summary",
+              "text": "Meine Empfehlung wäre: KI bewusst und begrenzt nutzen. Sie eignet sich gut für Entwürfe, Struktur und Verständnishilfe; bei sensiblen Daten, wichtigen Entscheidungen und fachlichen Fragen sollte sie aber nur ein erster Schritt sein, nicht die letzte Instanz.",
+              "translations": [
+                { "language": "en", "text": "My recommendation would be: use AI consciously and in a limited way. It is well suited for drafts, structure, and help with understanding; with sensitive data, important decisions, and specialist questions, however, it should only be a first step, not the final authority." },
+                { "language": "fa", "text": "توصیه من این است: از هوش مصنوعی آگاهانه و محدود استفاده کنیم. برای پیش‌نویس، ساختار و کمک به فهم مناسب است؛ اما در داده‌های حساس، تصمیم‌های مهم و پرسش‌های تخصصی باید فقط قدم اول باشد، نه مرجع نهایی." },
+                { "language": "ar", "text": "توصيتي هي: استخدام الذكاء الاصطناعي بوعي وبحدود. هو مناسب للمسودات والبنية ومساعدة الفهم؛ لكن في البيانات الحساسة والقرارات المهمة والأسئلة المتخصصة يجب أن يكون خطوة أولى فقط، لا المرجع الأخير." },
+                { "language": "tr", "text": "Önerim şu olurdu: yapay zekayı bilinçli ve sınırlı kullanmak. Taslak, yapı ve anlama yardımı için uygundur; ancak hassas verilerde, önemli kararlarda ve uzmanlık sorularında yalnızca ilk adım olmalı, son merci olmamalıdır." },
+                { "language": "ru", "text": "Моя рекомендация была бы такой: использовать ИИ осознанно и ограниченно. Он хорошо подходит для черновиков, структуры и помощи в понимании; но при чувствительных данных, важных решениях и профессиональных вопросах он должен быть только первым шагом, а не последней инстанцией." },
+                { "language": "ckb", "text": "پێشنیارەکەم ئەمەیە: زیرەکیی دەستکرد بە ئاگایی و بە سنوورداری بەکاربهێنین. بۆ ڕەشنووس، پێکهاتە و یارمەتیی تێگەیشتن باشە؛ بەڵام لە داتای هەستیار، بڕیاری گرنگ و پرسیاری پسپۆڕیدا تەنها هەنگاوی یەکەم بێت، نە دەسەڵاتی کۆتایی." },
+                { "language": "kmr", "text": "Pêşniyara min ev be: aqila çêkirî bi hişyarî û bi sînor bikar bînin. Ji bo pêşnivîs, avahî û alîkariya têgihîştinê guncaw e; lê di daneyên hestiyar, biryarên girîng û pirsên pisporî de divê tenê gava yekem be, ne desthilata dawî." },
+                { "language": "pl", "text": "Moja rekomendacja byłaby taka: używać AI świadomie i w ograniczony sposób. Dobrze nadaje się do szkiców, struktury i pomocy w zrozumieniu; przy danych wrażliwych, ważnych decyzjach i pytaniach specjalistycznych powinna być jednak tylko pierwszym krokiem, nie ostateczną instancją." },
+                { "language": "ro", "text": "Recomandarea mea ar fi: folosiți AI conștient și limitat. Este potrivită pentru ciorne, structură și ajutor la înțelegere; însă la date sensibile, decizii importante și întrebări de specialitate ar trebui să fie doar un prim pas, nu instanța finală." },
+                { "language": "sq", "text": "Rekomandimi im do të ishte: përdorni AI me vetëdije dhe në mënyrë të kufizuar. Është e përshtatshme për drafte, strukturë dhe ndihmë në kuptim; por për të dhëna të ndjeshme, vendime të rëndësishme dhe pyetje profesionale duhet të jetë vetëm hapi i parë, jo autoriteti përfundimtar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Zusammenfassung ist alltagstauglich, differenziert und benennt klare Grenzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the summary is practical for daily life, nuanced, and names clear boundaries." },
+                { "language": "fa", "text": "خوب است: خلاصه برای زندگی روزمره کاربردی، دقیق و دارای مرزهای روشن است." },
+                { "language": "ar", "text": "جيد: الخلاصة عملية للحياة اليومية، متمايزة، وتذكر حدوداً واضحة." },
+                { "language": "tr", "text": "İyi: özet günlük yaşam için uygulanabilir, ayrıntılı ve net sınırlar belirtir." },
+                { "language": "ru", "text": "Хорошо: резюме практично для повседневной жизни, дифференцировано и называет четкие границы." },
+                { "language": "ckb", "text": "باشە: پوختەکە بۆ ژیانی ڕۆژانە کردارە، وردە و سنووری ڕوون ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: kurtasî ji bo jiyana rojane pratîk e, hûrgilî ye û sînorên zelal dibêje." },
+                { "language": "pl", "text": "Dobrze: podsumowanie jest praktyczne na co dzień, zniuansowane i nazywa jasne granice." },
+                { "language": "ro", "text": "Bine: rezumatul este practic pentru viața de zi cu zi, nuanțat și numește limite clare." },
+                { "language": "sq", "text": "Mirë: përmbledhja është praktike për jetën e përditshme, e nuancuar dhe përmend kufij të qartë." }
+              ],
+              "explanationKey": "practical-summary"
+            },
+            {
+              "id": "summary-without-clear-domains",
+              "text": "Man sollte KI nutzen, aber nicht übertreiben. Jeder muss selbst merken, wann es hilfreich ist und wann nicht.",
+              "translations": [
+                { "language": "en", "text": "One should use AI, but not overdo it. Everyone has to notice for themselves when it is helpful and when it is not." },
+                { "language": "fa", "text": "باید از هوش مصنوعی استفاده کرد، اما زیاده‌روی نکرد. هر کس باید خودش بفهمد چه وقت مفید است و چه وقت نیست." },
+                { "language": "ar", "text": "ينبغي استخدام الذكاء الاصطناعي، لكن من دون مبالغة. على كل شخص أن يلاحظ بنفسه متى يكون مفيداً ومتى لا يكون." },
+                { "language": "tr", "text": "Yapay zeka kullanılmalı, ama abartılmamalı. Herkes ne zaman yararlı olup olmadığını kendisi fark etmeli." },
+                { "language": "ru", "text": "ИИ следует использовать, но не переусердствовать. Каждый должен сам замечать, когда он полезен, а когда нет." },
+                { "language": "ckb", "text": "پێویستە زیرەکیی دەستکرد بەکاربهێنرێت، بەڵام زیادەڕۆیی نەکرێت. هەر کەس پێویستە خۆی تێبگات کەی بەسوودە و کەی نا." },
+                { "language": "kmr", "text": "Divê aqila çêkirî were bikaranîn, lê zêde neyê kirin. Her kes divê bixwe bibîne kengî sûdmend e û kengî na." },
+                { "language": "pl", "text": "Należy używać AI, ale nie przesadzać. Każdy musi sam zauważyć, kiedy jest pomocna, a kiedy nie." },
+                { "language": "ro", "text": "AI trebuie folosită, dar fără exagerare. Fiecare trebuie să observe singur când este utilă și când nu." },
+                { "language": "sq", "text": "AI duhet përdorur, por jo tepruar. Secili duhet ta kuptojë vetë kur është e dobishme dhe kur jo." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort klingt ausgewogen, gibt aber keine konkreten Kriterien für verantwortliche Nutzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer sounds balanced, but gives no concrete criteria for responsible use." },
+                { "language": "fa", "text": "زیادی کلی است: پاسخ متعادل به نظر می‌رسد، اما معیار مشخصی برای استفاده مسئولانه نمی‌دهد." },
+                { "language": "ar", "text": "عامة جداً: تبدو الإجابة متوازنة، لكنها لا تقدم معايير ملموسة للاستخدام المسؤول." },
+                { "language": "tr", "text": "Çok genel: yanıt dengeli geliyor, ama sorumlu kullanım için somut ölçütler vermiyor." },
+                { "language": "ru", "text": "Слишком общо: ответ звучит сбалансированно, но не дает конкретных критериев ответственного использования." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە هاوسەنگ دەردەکەوێت، بەڵام پێوەری دیاریکراو بۆ بەکارهێنانی بەرپرسانە نادات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv hevseng xuya dike, lê pîvanên taybet ji bo bikaranîna berpirsiyar nade." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź brzmi wyważenie, ale nie daje konkretnych kryteriów odpowiedzialnego użycia." },
+                { "language": "ro", "text": "Prea general: răspunsul sună echilibrat, dar nu oferă criterii concrete pentru utilizarea responsabilă." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja tingëllon e balancuar, por nuk jep kritere konkrete për përdorim të përgjegjshëm." }
+              ],
+              "explanationKey": "add-criteria-to-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "balance-note",
+          "text": "Eine C1-Antwort vermeidet Schwarz-Weiß-Denken und nennt sofort Prüfpunkte.",
+          "translations": [
+            { "language": "en", "text": "A C1 answer avoids black-and-white thinking and immediately names points to examine." },
+            { "language": "fa", "text": "پاسخ C1 از نگاه صفر و صدی پرهیز می‌کند و فوراً نکات قابل بررسی را نام می‌برد." },
+            { "language": "ar", "text": "إجابة C1 تتجنب التفكير الأبيض والأسود وتذكر فوراً نقاطاً للفحص." },
+            { "language": "tr", "text": "C1 yanıtı siyah-beyaz düşünmeden kaçınır ve hemen incelenecek noktaları belirtir." },
+            { "language": "ru", "text": "Ответ C1 избегает черно-белого мышления и сразу называет пункты для проверки." },
+            { "language": "ckb", "text": "وەڵامی C1 لە بیرکردنەوەی ڕەش و سپی دوور دەکەوێتەوە و دەستبەجێ خاڵە پشکنراوەکان ناو دەبات." },
+            { "language": "kmr", "text": "Bersiva C1 ji fikirîna reş-spî dûr dikeve û tavilê xalên kontrolê bi nav dike." },
+            { "language": "pl", "text": "Odpowiedź C1 unika myślenia czarno-białego i od razu nazywa punkty do sprawdzenia." },
+            { "language": "ro", "text": "Un răspuns C1 evită gândirea alb-negru și numește imediat puncte de analiză." },
+            { "language": "sq", "text": "Një përgjigje C1 shmang mendimin bardhë e zi dhe menjëherë përmend pika për shqyrtim." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "example-note",
+          "text": "Ein gutes Beispiel zeigt nicht nur, dass etwas praktisch ist, sondern auch, welche Vorsicht nötig bleibt.",
+          "translations": [
+            { "language": "en", "text": "A good example shows not only that something is practical, but also what caution remains necessary." },
+            { "language": "fa", "text": "مثال خوب فقط نشان نمی‌دهد چیزی کاربردی است، بلکه نشان می‌دهد چه احتیاطی همچنان لازم است." },
+            { "language": "ar", "text": "المثال الجيد لا يبين فقط أن شيئاً عملي، بل أيضاً أي حذر يبقى ضرورياً." },
+            { "language": "tr", "text": "İyi bir örnek yalnızca bir şeyin pratik olduğunu değil, hangi dikkatin hâlâ gerekli olduğunu da gösterir." },
+            { "language": "ru", "text": "Хороший пример показывает не только практичность, но и то, какая осторожность остается необходимой." },
+            { "language": "ckb", "text": "نموونەی باش تەنها ئەوە نیشان نادات کە شتێک کردارە، بەڵکوو ئەوەش نیشان دەدات چ وریاییەک هێشتا پێویستە." },
+            { "language": "kmr", "text": "Mînaka baş ne tenê nîşan dide ku tiştek pratîk e, lê herwiha kîjan hişyarî hîn pêwîst e." },
+            { "language": "pl", "text": "Dobry przykład pokazuje nie tylko, że coś jest praktyczne, lecz także jaka ostrożność nadal jest potrzebna." },
+            { "language": "ro", "text": "Un exemplu bun arată nu doar că ceva este practic, ci și ce prudență rămâne necesară." },
+            { "language": "sq", "text": "Një shembull i mirë tregon jo vetëm se diçka është praktike, por edhe çfarë kujdesi mbetet i nevojshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "counterargument-note",
+          "text": "Ein starkes Gegenargument wird nicht weggewischt, sondern begrenzt akzeptiert und weitergeführt.",
+          "translations": [
+            { "language": "en", "text": "A strong counterargument is not brushed aside, but accepted in a limited way and developed further." },
+            { "language": "fa", "text": "استدلال مخالف قوی کنار زده نمی‌شود، بلکه به‌صورت محدود پذیرفته و ادامه داده می‌شود." },
+            { "language": "ar", "text": "الحجة المقابلة القوية لا تُدفع جانباً، بل تُقبل بشكل محدود وتُطوّر." },
+            { "language": "tr", "text": "Güçlü bir karşı argüman geçiştirilmez, sınırlı biçimde kabul edilip geliştirilir." },
+            { "language": "ru", "text": "Сильный контраргумент не отмахивается, а ограниченно принимается и развивается дальше." },
+            { "language": "ckb", "text": "ئارگیومێنتی بەرامبەری بەهێز پشتگوێ ناخڕێت، بەڵکوو بە سنوورداری قبوڵ دەکرێت و پەرە پێدەدرێت." },
+            { "language": "kmr", "text": "Argumana dijber a xurt nayê paşguhkirin, lê bi sînor tê pejirandin û pêş de tê birin." },
+            { "language": "pl", "text": "Silnego kontrargumentu nie odsuwa się, lecz częściowo przyjmuje i rozwija dalej." },
+            { "language": "ro", "text": "Un contraargument puternic nu este dat la o parte, ci acceptat limitat și dezvoltat mai departe." },
+            { "language": "sq", "text": "Një kundërargument i fortë nuk shtyhet mënjanë, por pranohet në mënyrë të kufizuar dhe zhvillohet më tej." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "boundary-note",
+          "text": "Verantwortliche Nutzung braucht prüfbare Grenzen, nicht nur gute Absichten.",
+          "translations": [
+            { "language": "en", "text": "Responsible use needs verifiable boundaries, not just good intentions." },
+            { "language": "fa", "text": "استفاده مسئولانه به مرزهای قابل بررسی نیاز دارد، نه فقط نیت خوب." },
+            { "language": "ar", "text": "الاستخدام المسؤول يحتاج إلى حدود قابلة للتحقق، لا إلى نوايا حسنة فقط." },
+            { "language": "tr", "text": "Sorumlu kullanım yalnızca iyi niyet değil, denetlenebilir sınırlar gerektirir." },
+            { "language": "ru", "text": "Ответственное использование требует проверяемых границ, а не только добрых намерений." },
+            { "language": "ckb", "text": "بەکارهێنانی بەرپرسانە پێویستی بە سنووری پشکنراو هەیە، نە تەنها نیەتی باش." },
+            { "language": "kmr", "text": "Bikaranîna berpirsiyar sînorên kontrolbar dixwaze, ne tenê niyetên baş." },
+            { "language": "pl", "text": "Odpowiedzialne użycie wymaga sprawdzalnych granic, nie tylko dobrych intencji." },
+            { "language": "ro", "text": "Utilizarea responsabilă are nevoie de limite verificabile, nu doar de intenții bune." },
+            { "language": "sq", "text": "Përdorimi i përgjegjshëm kërkon kufij të verifikueshëm, jo vetëm qëllime të mira." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "Die Schlussposition sollte eine alltagstaugliche Regel bieten: wofür KI geeignet ist, wo Kontrolle nötig bleibt und wer Verantwortung trägt.",
+          "translations": [
+            { "language": "en", "text": "The final position should offer a practical rule for daily life: what AI is suitable for, where control remains necessary, and who bears responsibility." },
+            { "language": "fa", "text": "موضع پایانی باید یک قاعده کاربردی برای زندگی روزمره بدهد: هوش مصنوعی برای چه مناسب است، کجا کنترل لازم می‌ماند و چه کسی مسئول است." },
+            { "language": "ar", "text": "ينبغي أن يقدم الموقف الختامي قاعدة عملية للحياة اليومية: ما يصلح له الذكاء الاصطناعي، وأين يبقى التحكم ضرورياً، ومن يتحمل المسؤولية." },
+            { "language": "tr", "text": "Son pozisyon günlük yaşam için uygulanabilir bir kural sunmalıdır: yapay zekanın neye uygun olduğu, nerede kontrolün gerekli kaldığı ve kimin sorumluluk taşıdığı." },
+            { "language": "ru", "text": "Итоговая позиция должна дать практическое правило для повседневности: для чего подходит ИИ, где контроль остается необходимым и кто несет ответственность." },
+            { "language": "ckb", "text": "هەڵوێستی کۆتایی پێویستە ڕێسایەکی کردار بۆ ژیانی ڕۆژانە بدات: زیرەکیی دەستکرد بۆ چی گونجاوە، لە کوێ کۆنترۆڵ هێشتا پێویستە و کێ بەرپرسیارە." },
+            { "language": "kmr", "text": "Helwesta dawî divê rêzikeke pratîk ji bo jiyana rojane bide: aqila çêkirî ji bo çi guncaw e, li ku kontrol hîn pêwîst e û kî berpirsiyarî digire." },
+            { "language": "pl", "text": "Końcowe stanowisko powinno dawać praktyczną regułę na co dzień: do czego AI się nadaje, gdzie kontrola pozostaje konieczna i kto ponosi odpowiedzialność." },
+            { "language": "ro", "text": "Poziția finală ar trebui să ofere o regulă practică pentru viața de zi cu zi: pentru ce este potrivită AI, unde controlul rămâne necesar și cine poartă responsabilitatea." },
+            { "language": "sq", "text": "Qëndrimi përfundimtar duhet të ofrojë një rregull praktik për jetën e përditshme: për çfarë është e përshtatshme AI, ku mbetet i nevojshëm kontrolli dhe kush mban përgjegjësi." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "ai-daily-life-discussion-circle",
+          "placement": "header",
+          "purpose": "Show a language-course discussion circle with abstract AI tool cards, privacy checklist, and everyday-use examples.",
+          "altText": "Eine neutrale Illustration einer Diskussionsrunde im Sprachkurs über KI im Alltag mit abstrakten Werkzeugkarten und Datenschutz-Checkliste.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a language-course discussion round about AI in daily life with abstract tool cards and a privacy checklist." },
+            { "language": "fa", "text": "تصویری بی‌طرف از بحث گروهی در کلاس زبان درباره هوش مصنوعی در زندگی روزمره با کارت‌های ابزار انتزاعی و فهرست حریم خصوصی." },
+            { "language": "ar", "text": "رسم محايد لجولة نقاش في دورة اللغة حول الذكاء الاصطناعي في الحياة اليومية مع بطاقات أدوات مجردة وقائمة تحقق للخصوصية." },
+            { "language": "tr", "text": "Günlük yaşamda yapay zeka üzerine dil kursu tartışma turunu, soyut araç kartları ve gizlilik kontrol listesiyle gösteren tarafsız illüstrasyon." },
+            { "language": "ru", "text": "Нейтральная иллюстрация дискуссии в языковом курсе об ИИ в повседневной жизни с абстрактными карточками инструментов и чек-листом конфиденциальности." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە بازنەی گفتوگۆی کۆرسی زمان دەربارەی زیرەکیی دەستکرد لە ژیانی ڕۆژانەدا بە کارتە ئامرازی ناڕاستەوخۆ و لیستی پشکنینی تایبەتمەندی." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya gera gotûbêjê ya kursa ziman li ser aqila çêkirî di jiyana rojane de bi kartên amûrên abstrakt û lîsteya kontrola taybetmendiyê." },
+            { "language": "pl", "text": "Neutralna ilustracja rundy dyskusyjnej na kursie językowym o AI w codzienności z abstrakcyjnymi kartami narzędzi i listą kontroli prywatności." },
+            { "language": "ro", "text": "O ilustrație neutră a unei runde de discuție la cursul de limbă despre AI în viața de zi cu zi, cu carduri abstracte de instrumente și listă de verificare a confidențialității." },
+            { "language": "sq", "text": "Një ilustrim neutral i një rrethi diskutimi në kurs gjuhe për AI në jetën e përditshme me karta abstrakte mjetesh dhe listë kontrolli privatësie." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adult language learners seated in a discussion circle, abstract AI tool cards, privacy checklist, everyday document and calendar symbols, no readable private data, no logos, calm German classroom context, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

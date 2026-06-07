@@ -1,0 +1,675 @@
+{
+  "packageId": "roleplays-b2-core-28-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 28 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 28",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-nachbarschaftskonflikt-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Nachbarschaftskonflikt moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Mediate a conflict between neighbors" },
+        { "language": "fa", "text": "میانجی‌گری در یک اختلاف بین همسایه‌ها" },
+        { "language": "ar", "text": "التوسط في خلاف بين الجيران" },
+        { "language": "tr", "text": "Komşular arasındaki bir anlaşmazlıkta arabuluculuk yapmak" },
+        { "language": "ru", "text": "Посредничество в конфликте между соседями" },
+        { "language": "ckb", "text": "ناوبژیوانی لە ناکۆکییەکی نێوان دراوسێکان" },
+        { "language": "kmr", "text": "Navbeynkariyê di nakokiyeke di navbera cîranan de kirin" },
+        { "language": "pl", "text": "Mediacja w konflikcie sąsiedzkim" },
+        { "language": "ro", "text": "Medierea unui conflict între vecini" },
+        { "language": "sq", "text": "Ndërmjetësimi në një konflikt mes fqinjëve" }
+      ],
+      "description": "Du moderierst ein Gespräch im Hausflur: Eine Nachbarin aus der unteren Wohnung beschwert sich über Lärm am späten Abend, der Nachbar aus der oberen Wohnung verweist auf Schichtarbeit und ein hellhöriges Haus. Du fasst beide Seiten neutral zusammen, fragst nach konkreten Zeiten und schlägst eine faire Testlösung vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You moderate a hallway conversation: a downstairs neighbor complains about noise late in the evening, while the upstairs neighbor points to shift work and a building where sound travels easily. You summarize both sides neutrally, ask for specific times, and propose a fair trial solution." },
+        { "language": "fa", "text": "تو یک گفت‌وگو در راهرو را مدیریت می‌کنی: همسایه طبقه پایین از سر و صدای آخر شب شکایت دارد و همسایه طبقه بالا به شیفت کاری و صداگیر نبودن ساختمان اشاره می‌کند. هر دو طرف را بی‌طرفانه خلاصه می‌کنی، زمان‌های دقیق را می‌پرسی و یک راه‌حل آزمایشی منصفانه پیشنهاد می‌دهی." },
+        { "language": "ar", "text": "تدير حديثاً في ممر البناية: تشتكي جارة في الطابق السفلي من الضجيج في وقت متأخر مساءً، بينما يشير الجار في الطابق العلوي إلى العمل بنظام الورديات وإلى أن الصوت ينتقل بسهولة في المبنى. تلخص موقفي الطرفين بحياد، وتسأل عن أوقات محددة، وتقترح حلاً تجريبياً عادلاً." },
+        { "language": "tr", "text": "Apartman koridorunda bir konuşmayı yönetirsin: alt kattaki komşu geç saatlerde gürültüden şikayet eder, üst kattaki komşu ise vardiyalı çalıştığını ve binanın ses geçirdiğini söyler. İki tarafı tarafsız özetler, somut saatleri sorar ve adil bir deneme çözümü önerirsin." },
+        { "language": "ru", "text": "Вы модерируете разговор в подъездном коридоре: соседка снизу жалуется на шум поздно вечером, а сосед сверху ссылается на сменную работу и плохую звукоизоляцию дома. Вы нейтрально резюмируете обе стороны, спрашиваете о конкретном времени и предлагаете справедливое пробное решение." },
+        { "language": "ckb", "text": "تۆ گفتوگۆیەک لە ڕێڕەوی خانووەکەدا بەڕێوە دەبەیت: دراوسێی خوارەوە شکایەت دەکات لە دەنگی زۆر لە شەوانی درەنگ، دراوسێی سەرەوەش ئاماژە دەکات بە کاری شیفتی و ئەوەی خانووەکە دەنگ زۆر دەگوازێتەوە. هەردوو لایەن بە بێلایەنی پوخت دەکەیتەوە، کاتە دیاریکراوەکان دەپرسیت و چارەسەرێکی تاقیکردنەوەی دادپەروەرانە پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Tu axaftinekê li koridora avahiyê rêve dibî: cîrana jêrîn ji dengê derengê êvarê gilî dike, cîranê jorîn jî behsa karê şîftê û avahiyeke deng derbas dibe dike. Tu her du aliyan bêalî kurte dikî, demên zehf taybetî dipirsî û çareseriyeke ceribandinê ya adil pêşniyar dikî." },
+        { "language": "pl", "text": "Moderujesz rozmowę na klatce schodowej: sąsiadka z mieszkania niżej skarży się na hałas późnym wieczorem, a sąsiad z góry wskazuje na pracę zmianową i słabą izolację akustyczną budynku. Neutralnie podsumowujesz obie strony, pytasz o konkretne godziny i proponujesz uczciwe rozwiązanie próbne." },
+        { "language": "ro", "text": "Moderezi o discuție pe holul blocului: o vecină de la etajul inferior se plânge de zgomot seara târziu, iar vecinul de deasupra invocă munca în schimburi și faptul că imobilul transmite ușor sunetele. Rezumi neutru ambele părți, întrebi despre ore concrete și propui o soluție de probă echitabilă." },
+        { "language": "sq", "text": "Ti moderon një bisedë në korridorin e ndërtesës: një fqinje nga banesa poshtë ankohet për zhurmë vonë në mbrëmje, ndërsa fqinji sipër përmend punën me turne dhe ndërtesën ku zëri dëgjohet lehtë. Ti përmbledh paanshëm të dyja palët, pyet për orare konkrete dhe propozon një zgjidhje të drejtë provuese." }
+      ],
+      "learnerGoal": "Fasse beide Positionen neutral zusammen, trenne Beobachtung und Bedürfnis, frage nach konkreten Zeiten und formuliere eine realistische Testvereinbarung mit nächstem Gespräch.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Summarize both positions neutrally, separate observation and need, ask for specific times, and formulate a realistic trial agreement with a follow-up conversation." },
+        { "language": "fa", "text": "موضع هر دو طرف را بی‌طرفانه خلاصه کن، مشاهده را از نیاز جدا کن، زمان‌های مشخص را بپرس و یک توافق آزمایشی واقع‌بینانه همراه با گفت‌وگوی بعدی تنظیم کن." },
+        { "language": "ar", "text": "لخص موقفي الطرفين بحياد، وافصل بين الملاحظة والحاجة، واسأل عن أوقات محددة، وصغ اتفاقاً تجريبياً واقعياً مع حديث لاحق." },
+        { "language": "tr", "text": "İki tarafın konumunu tarafsız özetle, gözlem ile ihtiyacı ayır, somut saatleri sor ve sonraki görüşmeyle birlikte gerçekçi bir deneme anlaşması oluştur." },
+        { "language": "ru", "text": "Нейтрально резюмируйте позиции обеих сторон, отделите наблюдение от потребности, спросите о конкретном времени и сформулируйте реалистичное пробное соглашение с последующим разговором." },
+        { "language": "ckb", "text": "هەڵوێستی هەردوو لا بە بێلایەنی پوخت بکەوە، تێبینینی ڕووداو لە پێویستی جیا بکەوە، کاتە دیاریکراوەکان بپرسە و ڕێککەوتنێکی تاقیکردنەوەی ڕاستەقینە لەگەڵ گفتوگۆی دواتر داڕێژە." },
+        { "language": "kmr", "text": "Helwesta her du aliyan bêalî kurte bike, dîtin û hewcedariyê ji hev veqetîne, demên taybetî bipirse û peymaneke ceribandinê ya rastîn bi axaftina paşê re biafirîne." },
+        { "language": "pl", "text": "Neutralnie podsumuj stanowiska obu stron, oddziel obserwację od potrzeby, zapytaj o konkretne godziny i sformułuj realistyczne porozumienie próbne z kolejną rozmową." },
+        { "language": "ro", "text": "Rezumi neutru pozițiile ambelor părți, separă observația de nevoie, întreabă despre ore concrete și formulează un acord de probă realist cu o discuție ulterioară." },
+        { "language": "sq", "text": "Përmblidh paanshëm pozicionet e të dyja palëve, ndaj vëzhgimin nga nevoja, pyet për orare konkrete dhe formulo një marrëveshje provuese realiste me bisedë pasuese." }
+      ],
+      "cefrLevel": "B2",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "social-and-relationships"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "negotiation"
+      ],
+      "taskType": "negotiate-solution",
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "neighbor-downstairs",
+          "displayName": "Nachbarin unten",
+          "translations": [
+            { "language": "en", "text": "Downstairs neighbor" },
+            { "language": "fa", "text": "همسایه طبقه پایین" },
+            { "language": "ar", "text": "الجارة في الطابق السفلي" },
+            { "language": "tr", "text": "Alt kattaki komşu" },
+            { "language": "ru", "text": "Соседка снизу" },
+            { "language": "ckb", "text": "دراوسێی خوارەوە" },
+            { "language": "kmr", "text": "Cîrana jêrîn" },
+            { "language": "pl", "text": "Sąsiadka z dołu" },
+            { "language": "ro", "text": "Vecina de jos" },
+            { "language": "sq", "text": "Fqinja poshtë" }
+          ]
+        },
+        {
+          "roleKey": "neighbor-upstairs",
+          "displayName": "Nachbar oben",
+          "translations": [
+            { "language": "en", "text": "Upstairs neighbor" },
+            { "language": "fa", "text": "همسایه طبقه بالا" },
+            { "language": "ar", "text": "الجار في الطابق العلوي" },
+            { "language": "tr", "text": "Üst kattaki komşu" },
+            { "language": "ru", "text": "Сосед сверху" },
+            { "language": "ckb", "text": "دراوسێی سەرەوە" },
+            { "language": "kmr", "text": "Cîranê jorîn" },
+            { "language": "pl", "text": "Sąsiad z góry" },
+            { "language": "ro", "text": "Vecinul de sus" },
+            { "language": "sq", "text": "Fqinji sipër" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Vermittelnde Nachbarin",
+          "translations": [
+            { "language": "en", "text": "Mediating neighbor" },
+            { "language": "fa", "text": "همسایه میانجی" },
+            { "language": "ar", "text": "الجارة الوسيطة" },
+            { "language": "tr", "text": "Arabulucu komşu" },
+            { "language": "ru", "text": "Соседка-посредница" },
+            { "language": "ckb", "text": "دراوسێی ناوبژ" },
+            { "language": "kmr", "text": "Cîrana navbeynkar" },
+            { "language": "pl", "text": "Sąsiadka mediatorka" },
+            { "language": "ro", "text": "Vecina mediatoare" },
+            { "language": "sq", "text": "Fqinja ndërmjetësuese" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "neighbor-downstairs",
+          "baseText": "Ich weiß nicht mehr weiter. Seit Wochen höre ich nach 22 Uhr laute Schritte und Stühlerücken von oben. Ich kann kaum schlafen.",
+          "translations": [
+            { "language": "en", "text": "I do not know what to do anymore. For weeks I have heard loud footsteps and chairs being moved upstairs after 10 p.m. I can hardly sleep." },
+            { "language": "fa", "text": "دیگر نمی‌دانم چه کار کنم. چند هفته است بعد از ساعت ۲۲ صدای قدم‌های بلند و کشیدن صندلی از طبقه بالا می‌شنوم. به‌سختی می‌توانم بخوابم." },
+            { "language": "ar", "text": "لم أعد أعرف ماذا أفعل. منذ أسابيع أسمع بعد العاشرة ليلاً خطوات عالية وتحريك كراسٍ من الطابق العلوي. بالكاد أستطيع النوم." },
+            { "language": "tr", "text": "Artık ne yapacağımı bilmiyorum. Haftalardır saat 22'den sonra üst kattan yüksek adım sesleri ve sandalye çekme sesleri duyuyorum. Neredeyse uyuyamıyorum." },
+            { "language": "ru", "text": "Я уже не знаю, что делать. Уже несколько недель после 22 часов я слышу сверху громкие шаги и передвигание стульев. Я почти не могу спать." },
+            { "language": "ckb", "text": "ئیتر نازانم چی بکەم. چەند هەفتەیە دوای کاتژمێر ٢٢ دەنگی پێی بەرز و ڕاکێشانی کورسی لە سەرەوە دەبیستم. بە زەحمەت دەتوانم بخەوم." },
+            { "language": "kmr", "text": "Ez êdî nizanim çi bikim. Ji çend hefteyan ve piştî saet 22ê ez gavanên bilind û kişandina kursiyan ji jor dibihîzim. Ez bi zehmetî dikarim razêm." },
+            { "language": "pl", "text": "Już nie wiem, co robić. Od tygodni po godzinie 22 słyszę z góry głośne kroki i przesuwanie krzeseł. Prawie nie mogę spać." },
+            { "language": "ro", "text": "Nu mai știu ce să fac. De săptămâni întregi, după ora 22 aud pași puternici și scaune trase de sus. Aproape că nu pot dormi." },
+            { "language": "sq", "text": "Nuk di më çfarë të bëj. Prej javësh pas orës 22 dëgjoj hapa të fortë dhe karrige që lëvizen nga lart. Mezi mund të fle." }
+          ],
+          "function": "state-complaint",
+          "toneNote": "frustrated but not insulting",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "neighbor-upstairs",
+          "baseText": "Ich verstehe, dass das stört, aber ich komme oft erst spät von der Arbeit. Außerdem merkt man in diesem Haus jeden Schritt. Ich mache das nicht absichtlich.",
+          "translations": [
+            { "language": "en", "text": "I understand that this is disturbing, but I often only get home late from work. Also, in this building you notice every step. I am not doing it on purpose." },
+            { "language": "fa", "text": "می‌فهمم که این مزاحمت ایجاد می‌کند، اما من اغلب دیر از کار برمی‌گردم. علاوه بر این، در این ساختمان هر قدمی شنیده می‌شود. من عمداً این کار را نمی‌کنم." },
+            { "language": "ar", "text": "أفهم أن هذا مزعج، لكنني غالباً لا أعود من العمل إلا متأخراً. إضافة إلى ذلك، يُسمع كل خطوة في هذا المبنى. أنا لا أفعل ذلك عمداً." },
+            { "language": "tr", "text": "Bunun rahatsız ettiğini anlıyorum, ama çoğu zaman işten geç dönüyorum. Ayrıca bu binada her adım duyuluyor. Bunu bilerek yapmıyorum." },
+            { "language": "ru", "text": "Я понимаю, что это мешает, но я часто возвращаюсь с работы только поздно. Кроме того, в этом доме слышен каждый шаг. Я делаю это не специально." },
+            { "language": "ckb", "text": "تێدەگەم ئەمە ئازار دەدات، بەڵام زۆرجار درەنگ لە کارەوە دەگەڕێمەوە. هەروەها لەم خانووەدا هەر پێهەنگاوێک دەبیسترێت. من بە ئەنقەست ئەمە ناکەم." },
+            { "language": "kmr", "text": "Ez fam dikim ku ev aciz dike, lê ez gelek caran ji karê xwe dereng vedigerim. Herwiha di vê avahiyê de her gav tê bihîstin. Ez vê bi qest nakim." },
+            { "language": "pl", "text": "Rozumiem, że to przeszkadza, ale często wracam z pracy dopiero późno. Poza tym w tym budynku słychać każdy krok. Nie robię tego celowo." },
+            { "language": "ro", "text": "Înțeleg că deranjează, dar de multe ori ajung târziu de la serviciu. În plus, în această clădire se aude fiecare pas. Nu fac asta intenționat." },
+            { "language": "sq", "text": "E kuptoj që kjo shqetëson, por shpesh kthehem vonë nga puna. Për më tepër, në këtë ndërtesë dëgjohet çdo hap. Nuk e bëj me qëllim." }
+          ],
+          "function": "explain-perspective",
+          "toneNote": "defensive but cooperative",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "learner",
+          "baseText": "Ich fasse kurz zusammen: Frau Schneider braucht abends mehr Ruhe, vor allem nach 22 Uhr. Herr Yilmaz sagt, dass er wegen der Spätschicht spät nach Hause kommt und die Geräusche nicht absichtlich verursacht. Habe ich beide Seiten richtig verstanden?",
+          "translations": [
+            { "language": "en", "text": "I will briefly summarize: Ms. Schneider needs more quiet in the evening, especially after 10 p.m. Mr. Yilmaz says that he gets home late because of the late shift and does not cause the noises on purpose. Have I understood both sides correctly?" },
+            { "language": "fa", "text": "من کوتاه خلاصه می‌کنم: خانم اشنایدر شب‌ها به آرامش بیشتری نیاز دارد، مخصوصاً بعد از ساعت ۲۲. آقای ییلماز می‌گوید به‌خاطر شیفت دیر به خانه می‌رسد و صداها را عمداً ایجاد نمی‌کند. آیا هر دو طرف را درست فهمیده‌ام؟" },
+            { "language": "ar", "text": "ألخص باختصار: تحتاج السيدة شنايدر إلى هدوء أكثر في المساء، خصوصاً بعد العاشرة. يقول السيد يلماز إنه يعود إلى البيت متأخراً بسبب الوردية المسائية ولا يسبب الضجيج عمداً. هل فهمت الطرفين بشكل صحيح؟" },
+            { "language": "tr", "text": "Kısaca özetleyeyim: Bayan Schneider akşamları, özellikle saat 22'den sonra daha fazla sessizliğe ihtiyaç duyuyor. Bay Yilmaz ise geç vardiya nedeniyle eve geç geldiğini ve sesleri bilerek çıkarmadığını söylüyor. İki tarafı doğru anladım mı?" },
+            { "language": "ru", "text": "Я кратко резюмирую: госпоже Шнайдер вечером нужно больше тишины, особенно после 22 часов. Господин Йылмаз говорит, что из-за поздней смены приходит домой поздно и не создает шум намеренно. Я правильно понял обе стороны?" },
+            { "language": "ckb", "text": "بە کورتی پوخت دەکەمەوە: خانم شنایدەر ئێواران پێویستی بە ئارامیی زیاتری هەیە، بە تایبەتی دوای کاتژمێر ٢٢. بەڕێز یڵماز دەڵێت بەهۆی شیفتی درەنگەوە درەنگ دەگەڕێتەوە و دەنگەکان بە ئەنقەست دروست ناکات. هەردوو لام بە دروستی تێگەیشتووم؟" },
+            { "language": "kmr", "text": "Ez bi kurtî vedibêjim: Xanim Schneider êvaran bêtir aramî dixwaze, bi taybetî piştî saet 22ê. Birêz Yilmaz dibêje ku ji ber şîfta dereng dereng tê malê û dengan bi qest çênake. Ma min her du alî rast fam kirin?" },
+            { "language": "pl", "text": "Krótko podsumuję: pani Schneider potrzebuje wieczorem więcej spokoju, zwłaszcza po godzinie 22. Pan Yilmaz mówi, że wraca późno z powodu pracy na późną zmianę i nie powoduje hałasów celowo. Czy dobrze zrozumiałam obie strony?" },
+            { "language": "ro", "text": "Rezumat pe scurt: doamna Schneider are nevoie de mai multă liniște seara, mai ales după ora 22. Domnul Yilmaz spune că ajunge târziu acasă din cauza schimbului de seară și nu produce zgomotele intenționat. Am înțeles corect ambele părți?" },
+            { "language": "sq", "text": "Po e përmbledh shkurt: zonja Schneider ka nevojë për më shumë qetësi në mbrëmje, sidomos pas orës 22. Zoti Yilmaz thotë se kthehet vonë në shtëpi për shkak të turnit të vonë dhe nuk i shkakton zhurmat me qëllim. A i kuptova saktë të dyja palët?" }
+          ],
+          "function": "neutral-summary",
+          "toneNote": "neutral mediation language",
+          "expectedLearnerAction": "Fasse beide Seiten ohne Schuldzuweisung zusammen und prüfe, ob die Zusammenfassung stimmt."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "neighbor-downstairs",
+          "baseText": "Ja, aber ich brauche eine konkrete Lösung, nicht nur Verständnis.",
+          "translations": [
+            { "language": "en", "text": "Yes, but I need a concrete solution, not just understanding." },
+            { "language": "fa", "text": "بله، اما من به یک راه‌حل مشخص نیاز دارم، نه فقط همدلی." },
+            { "language": "ar", "text": "نعم، لكنني أحتاج إلى حل ملموس، وليس مجرد تفهم." },
+            { "language": "tr", "text": "Evet, ama sadece anlayış değil, somut bir çözüm istiyorum." },
+            { "language": "ru", "text": "Да, но мне нужно конкретное решение, а не только понимание." },
+            { "language": "ckb", "text": "بەڵێ، بەڵام من پێویستم بە چارەسەرێکی دیاریکراوە، نەک تەنها تێگەیشتن." },
+            { "language": "kmr", "text": "Erê, lê ez çareseriyeke zehf taybetî dixwazim, ne tenê têgihîştin." },
+            { "language": "pl", "text": "Tak, ale potrzebuję konkretnego rozwiązania, nie tylko zrozumienia." },
+            { "language": "ro", "text": "Da, dar am nevoie de o soluție concretă, nu doar de înțelegere." },
+            { "language": "sq", "text": "Po, por kam nevojë për një zgjidhje konkrete, jo vetëm mirëkuptim." }
+          ],
+          "function": "request-solution",
+          "toneNote": "pressing for outcome",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "learner",
+          "baseText": "Damit wir eine faire Lösung finden, müssten wir die störenden Situationen genauer eingrenzen. Geht es vor allem um Stühlerücken nach 22 Uhr, um Musik oder um normale Schritte beim Heimkommen?",
+          "translations": [
+            { "language": "en", "text": "To find a fair solution, we would need to narrow down the disturbing situations more precisely. Is it mainly about chairs being moved after 10 p.m., music, or normal footsteps when coming home?" },
+            { "language": "fa", "text": "برای اینکه راه‌حلی منصفانه پیدا کنیم، باید موقعیت‌های مزاحم را دقیق‌تر مشخص کنیم. موضوع بیشتر کشیدن صندلی بعد از ساعت ۲۲ است، موسیقی است یا قدم‌های عادی هنگام برگشتن به خانه؟" },
+            { "language": "ar", "text": "لكي نجد حلاً عادلاً، يجب أن نحدد المواقف المزعجة بدقة أكبر. هل يتعلق الأمر أساساً بتحريك الكراسي بعد العاشرة، أم بالموسيقى، أم بالخطوات العادية عند العودة إلى البيت؟" },
+            { "language": "tr", "text": "Adil bir çözüm bulmak için rahatsız edici durumları daha net sınırlandırmamız gerekir. Konu daha çok saat 22'den sonra sandalye çekilmesi mi, müzik mi, yoksa eve gelirken normal adımlar mı?" },
+            { "language": "ru", "text": "Чтобы найти справедливое решение, нам нужно точнее определить мешающие ситуации. Речь в основном о передвигании стульев после 22 часов, о музыке или об обычных шагах при возвращении домой?" },
+            { "language": "ckb", "text": "بۆ ئەوەی چارەسەرێکی دادپەروەرانە بدۆزینەوە، دەبێت دۆخە ئازاردەرەکان بە وردتر دیاری بکەین. بابەتەکە زیاتر ڕاکێشانی کورسی دوای کاتژمێر ٢٢ە، موزیکە، یان پێهەنگاوی ئاسایی کاتی گەڕانەوە بۆ ماڵەوە؟" },
+            { "language": "kmr", "text": "Ji bo em çareseriyeke adil bibînin, divê em rewşên acizker baştir sînordar bikin. Mijar herî zêde kişandina kursiyan piştî saet 22ê ye, muzîk e, an gavên asayî dema vegera malê?" },
+            { "language": "pl", "text": "Aby znaleźć uczciwe rozwiązanie, musielibyśmy dokładniej określić sytuacje, które przeszkadzają. Czy chodzi głównie o przesuwanie krzeseł po godzinie 22, muzykę czy zwykłe kroki przy powrocie do domu?" },
+            { "language": "ro", "text": "Ca să găsim o soluție corectă, ar trebui să delimităm mai exact situațiile deranjante. Este vorba mai ales despre scaune trase după ora 22, despre muzică sau despre pași normali când cineva ajunge acasă?" },
+            { "language": "sq", "text": "Që të gjejmë një zgjidhje të drejtë, duhet t'i përcaktojmë më saktë situatat shqetësuese. Bëhet fjalë kryesisht për karrige që lëvizen pas orës 22, për muzikë apo për hapa normalë kur dikush kthehet në shtëpi?" }
+          ],
+          "function": "clarify-details",
+          "toneNote": "specific and de-escalating",
+          "expectedLearnerAction": "Frage nach konkreten Beobachtungen, ohne eine Seite zu beschuldigen."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "neighbor-upstairs",
+          "baseText": "Musik läuft bei mir abends nicht. Die Stühle kann ich leiser stellen, aber ganz geräuschlos werde ich nach der Spätschicht nicht sein.",
+          "translations": [
+            { "language": "en", "text": "I do not play music in the evening. I can move the chairs more quietly, but I will not be completely silent after the late shift." },
+            { "language": "fa", "text": "من شب‌ها موسیقی پخش نمی‌کنم. می‌توانم صندلی‌ها را آرام‌تر جابه‌جا کنم، اما بعد از شیفت دیر کاملاً بی‌صدا نخواهم بود." },
+            { "language": "ar", "text": "لا أشغل الموسيقى في المساء. أستطيع تحريك الكراسي بهدوء أكثر، لكنني لن أكون بلا صوت تماماً بعد الوردية المسائية." },
+            { "language": "tr", "text": "Akşamları müzik açmıyorum. Sandalyeleri daha sessiz hareket ettirebilirim, ama geç vardiyadan sonra tamamen sessiz olmam mümkün değil." },
+            { "language": "ru", "text": "Музыку по вечерам я не включаю. Я могу двигать стулья тише, но после поздней смены совсем бесшумным я не буду." },
+            { "language": "ckb", "text": "شەوان موزیک لەلای من کار ناکات. دەتوانم کورسییەکان ئارامتر بجوڵێنم، بەڵام دوای شیفتی درەنگ بە تەواوی بێدەنگ نابم." },
+            { "language": "kmr", "text": "Êvaran muzîk li ba min naçe. Ez dikarim kursiyan bêdengtir bigerînim, lê piştî şîfta dereng ez nikarim bi temamî bêdeng bim." },
+            { "language": "pl", "text": "Wieczorem nie puszczam muzyki. Mogę ciszej przestawiać krzesła, ale po późnej zmianie nie będę całkowicie bezgłośny." },
+            { "language": "ro", "text": "Seara nu ascult muzică. Pot muta scaunele mai încet, dar după schimbul de seară nu voi fi complet fără zgomot." },
+            { "language": "sq", "text": "Në mbrëmje nuk vë muzikë. Mund t'i lëviz karriget më qetë, por pas turnit të vonë nuk do të jem krejt pa zhurmë." }
+          ],
+          "function": "offer-limit",
+          "toneNote": "cooperative boundary",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "learner",
+          "baseText": "Dann schlage ich einen zweiwöchigen Versuch vor: Filzgleiter unter die Stühle, nach 22 Uhr keine Möbel mehr verschieben und bei einzelnen Problemen eine kurze Nachricht mit Uhrzeit statt sofortiger Vorwurf. Wäre das für beide Seiten realistisch?",
+          "translations": [
+            { "language": "en", "text": "Then I suggest a two-week trial: felt pads under the chairs, no more moving furniture after 10 p.m., and for individual problems a short message with the time instead of an immediate accusation. Would that be realistic for both sides?" },
+            { "language": "fa", "text": "پس من یک دوره آزمایشی دو هفته‌ای پیشنهاد می‌کنم: زیر صندلی‌ها پد نمدی گذاشته شود، بعد از ساعت ۲۲ دیگر وسایل جابه‌جا نشود و در مورد مشکل‌های تک‌موردی به‌جای سرزنش فوری، یک پیام کوتاه با ذکر ساعت فرستاده شود. آیا این برای هر دو طرف واقع‌بینانه است؟" },
+            { "language": "ar", "text": "إذن أقترح تجربة لمدة أسبوعين: وضع لباد تحت الكراسي، وعدم تحريك الأثاث بعد العاشرة، وعند حدوث مشكلة منفردة إرسال رسالة قصيرة مع الوقت بدلاً من اتهام فوري. هل هذا واقعي للطرفين؟" },
+            { "language": "tr", "text": "O halde iki haftalık bir deneme öneriyorum: sandalyelerin altına keçe, saat 22'den sonra mobilya taşımamak ve tekil sorunlarda hemen suçlamak yerine saat bilgisiyle kısa bir mesaj. Bu iki taraf için gerçekçi olur mu?" },
+            { "language": "ru", "text": "Тогда я предлагаю двухнедельную пробу: войлочные накладки под стулья, после 22 часов больше не двигать мебель, а при отдельных проблемах короткое сообщение с указанием времени вместо немедленного упрека. Это реалистично для обеих сторон?" },
+            { "language": "ckb", "text": "کەواتە پێشنیاری تاقیکردنەوەی دوو هەفتەیی دەکەم: دانانی پارچەی نەرمی ژێر کورسییەکان، دوای کاتژمێر ٢٢ نەجوڵاندنی مۆبڵ و بۆ کێشەی تاک‌جارە پەیامێکی کورت بە کاتەکەوە، نەک دەستبەجێ تاوانبارکردن. ئەمە بۆ هەردوو لا ڕاستەقینەیە؟" },
+            { "language": "kmr", "text": "Wê demê ez ceribandineke du heftî pêşniyar dikim: felt li bin kursiyan, piştî saet 22ê êdî mobîlya neyê guhartin û ji bo pirsgirêkên yekcarî peyameke kurt bi demê re, ne tawanbarkirina yekser. Ma ev ji bo her du aliyan rastîn e?" },
+            { "language": "pl", "text": "W takim razie proponuję dwutygodniową próbę: filcowe podkładki pod krzesła, po godzinie 22 bez przesuwania mebli, a przy pojedynczych problemach krótka wiadomość z godziną zamiast natychmiastowego zarzutu. Czy to byłoby realistyczne dla obu stron?" },
+            { "language": "ro", "text": "Atunci propun o probă de două săptămâni: protecții din fetru sub scaune, după ora 22 fără mutat mobilier și, pentru probleme izolate, un mesaj scurt cu ora în loc de acuzații imediate. Ar fi realist pentru ambele părți?" },
+            { "language": "sq", "text": "Atëherë propozoj një provë dyjavore: mbrojtëse prej filci poshtë karrigeve, pas orës 22 të mos lëvizen më mobiliet dhe për probleme të veçanta të dërgohet një mesazh i shkurtër me orën, në vend të akuzës së menjëhershme. A do të ishte realiste për të dyja palët?" }
+          ],
+          "function": "propose-compromise",
+          "toneNote": "practical and balanced",
+          "expectedLearnerAction": "Formuliere eine konkrete, zeitlich begrenzte Lösung mit Pflichten für beide Seiten."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "neighbor-downstairs",
+          "baseText": "Damit könnte ich leben, wenn ich merke, dass es wirklich leiser wird.",
+          "translations": [
+            { "language": "en", "text": "I could live with that if I notice that it really gets quieter." },
+            { "language": "fa", "text": "اگر ببینم واقعاً آرام‌تر می‌شود، می‌توانم با این کنار بیایم." },
+            { "language": "ar", "text": "يمكنني قبول ذلك إذا لاحظت أن الوضع يصبح فعلاً أهدأ." },
+            { "language": "tr", "text": "Gerçekten daha sessiz olduğunu fark edersem bununla yaşayabilirim." },
+            { "language": "ru", "text": "Я могла бы с этим жить, если увижу, что действительно становится тише." },
+            { "language": "ckb", "text": "ئەگەر هەست بکەم بەڕاستی ئارامتر دەبێت، دەتوانم لەگەڵ ئەمە بژیم." },
+            { "language": "kmr", "text": "Heke ez bibînim ku rastî bêdengtir dibe, ez dikarim bi vê razî bim." },
+            { "language": "pl", "text": "Mogłabym się na to zgodzić, jeśli zobaczę, że naprawdę robi się ciszej." },
+            { "language": "ro", "text": "Aș putea accepta asta dacă observ că devine într-adevăr mai liniște." },
+            { "language": "sq", "text": "Mund ta pranoja këtë nëse shoh që vërtet bëhet më qetë." }
+          ],
+          "function": "conditional-acceptance",
+          "toneNote": "cautiously cooperative",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "neighbor-upstairs",
+          "baseText": "Ich probiere das aus. Wenn es trotzdem zu laut ist, möchte ich aber eine konkrete Uhrzeit wissen, damit ich nachvollziehen kann, was gemeint ist.",
+          "translations": [
+            { "language": "en", "text": "I will try that. But if it is still too loud, I would like to know a specific time so I can understand what is meant." },
+            { "language": "fa", "text": "من این را امتحان می‌کنم. اما اگر با این حال باز هم خیلی بلند بود، می‌خواهم ساعت مشخصی را بدانم تا بتوانم بفهمم منظور چیست." },
+            { "language": "ar", "text": "سأجرب ذلك. لكن إذا بقي الصوت عالياً رغم ذلك، أود معرفة وقت محدد كي أستطيع فهم المقصود." },
+            { "language": "tr", "text": "Bunu deneyeceğim. Ama yine de çok gürültülü olursa, ne kastedildiğini anlayabilmem için somut bir saat bilmek isterim." },
+            { "language": "ru", "text": "Я попробую. Но если все равно будет слишком громко, я хотел бы знать конкретное время, чтобы понять, о чем идет речь." },
+            { "language": "ckb", "text": "ئەمە تاقی دەکەمەوە. بەڵام ئەگەر هێشتا زۆر بەرز بوو، دەمەوێت کاتێکی دیاریکراو بزانم تا بتوانم تێبگەم مەبەست چییە." },
+            { "language": "kmr", "text": "Ez ê vê biceribînim. Lê heke dîsa pir dengdar be, ez dixwazim demeke taybetî bizanim da ku ez bikaribim fam bikim çi tê gotin." },
+            { "language": "pl", "text": "Spróbuję tego. Jeśli jednak nadal będzie za głośno, chciałbym znać konkretną godzinę, żebym mógł zrozumieć, o co chodzi." },
+            { "language": "ro", "text": "Voi încerca. Dar dacă tot este prea tare, aș vrea să știu o oră concretă, ca să pot înțelege la ce se referă." },
+            { "language": "sq", "text": "Do ta provoj. Por nëse përsëri është shumë zhurmë, do të doja të dija një orë konkrete që të kuptoj çfarë nënkuptohet." }
+          ],
+          "function": "accept-with-condition",
+          "toneNote": "cooperative but asks for specifics",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Gut, dann halten wir fest: zwei Wochen Testphase, Filzgleiter unter die Stühle, nach 22 Uhr keine Möbelbewegungen und bei Problemen eine kurze Nachricht mit Uhrzeit. Nach den zwei Wochen sprechen wir kurz, ob es besser geworden ist.",
+          "translations": [
+            { "language": "en", "text": "Good, then we will note this: a two-week trial phase, felt pads under the chairs, no furniture movements after 10 p.m., and for problems a short message with the time. After the two weeks we will talk briefly about whether it has improved." },
+            { "language": "fa", "text": "خوب، پس این را ثبت می‌کنیم: دو هفته دوره آزمایشی، پد نمدی زیر صندلی‌ها، بعد از ساعت ۲۲ جابه‌جایی وسایل نباشد و در صورت مشکل یک پیام کوتاه با ذکر ساعت فرستاده شود. بعد از دو هفته کوتاه صحبت می‌کنیم که آیا بهتر شده است یا نه." },
+            { "language": "ar", "text": "حسناً، إذن نسجل ما يلي: فترة تجربة لمدة أسبوعين، لباد تحت الكراسي، عدم تحريك الأثاث بعد العاشرة، وعند حدوث مشكلة رسالة قصيرة مع الوقت. بعد الأسبوعين نتحدث باختصار عما إذا تحسن الوضع." },
+            { "language": "tr", "text": "Tamam, o halde şöyle kaydediyoruz: iki haftalık deneme süresi, sandalyelerin altında keçe, saat 22'den sonra mobilya hareketi yok ve sorun olursa saat bilgisiyle kısa bir mesaj. İki hafta sonra durumun düzelip düzelmediğini kısaca konuşacağız." },
+            { "language": "ru", "text": "Хорошо, тогда фиксируем: двухнедельная пробная фаза, войлочные накладки под стулья, после 22 часов не двигать мебель, а при проблемах короткое сообщение с указанием времени. Через две недели мы коротко поговорим, стало ли лучше." },
+            { "language": "ckb", "text": "باشە، کەواتە ئەمە تۆمار دەکەین: دوو هەفتە ماوەی تاقیکردنەوە، پارچەی نەرمی ژێر کورسییەکان، دوای کاتژمێر ٢٢ هیچ جوڵاندنی مۆبڵ نەبێت و لە کێشەکاندا پەیامێکی کورت بە کاتەکەوە بنێردرێت. دوای دوو هەفتە بە کورتی دەدوێین کە باشتر بووە یان نا." },
+            { "language": "kmr", "text": "Baş e, wê demê em wisa tomar dikin: qonaxa ceribandinê ya du heftî, felt li bin kursiyan, piştî saet 22ê tevgera mobîlyayê tune û di pirsgirêkan de peyameke kurt bi demê re. Piştî du heftiyan em bi kurtî diaxivin gelo çêtir bûye an na." },
+            { "language": "pl", "text": "Dobrze, w takim razie ustalamy: dwutygodniowa faza próbna, filcowe podkładki pod krzesłami, po godzinie 22 bez przesuwania mebli, a przy problemach krótka wiadomość z godziną. Po dwóch tygodniach krótko porozmawiamy, czy jest lepiej." },
+            { "language": "ro", "text": "Bine, atunci consemnăm: două săptămâni de probă, protecții din fetru sub scaune, după ora 22 fără mutat mobilier și, la probleme, un mesaj scurt cu ora. După cele două săptămâni discutăm scurt dacă situația s-a îmbunătățit." },
+            { "language": "sq", "text": "Mirë, atëherë e shënojmë: dy javë fazë prove, mbrojtëse prej filci poshtë karrigeve, pas orës 22 pa lëvizje mobiliesh dhe në rast problemesh një mesazh i shkurtër me orën. Pas dy javësh flasim shkurt nëse është përmirësuar." }
+          ],
+          "function": "summarize-agreement",
+          "toneNote": "clear and binding",
+          "expectedLearnerAction": "Fasse die Vereinbarung konkret zusammen und nenne den Zeitpunkt für die Nachbesprechung."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 3,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich fasse kurz zusammen: Frau Schneider braucht abends mehr Ruhe, vor allem nach 22 Uhr. Herr Yilmaz sagt, dass er wegen der Spätschicht spät nach Hause kommt und die Geräusche nicht absichtlich verursacht. Habe ich beide Seiten richtig verstanden?",
+              "translations": [
+                { "language": "en", "text": "I will briefly summarize: Ms. Schneider needs more quiet in the evening, especially after 10 p.m. Mr. Yilmaz says that he gets home late because of the late shift and does not cause the noises on purpose. Have I understood both sides correctly?" },
+                { "language": "fa", "text": "من کوتاه خلاصه می‌کنم: خانم اشنایدر شب‌ها به آرامش بیشتری نیاز دارد، مخصوصاً بعد از ساعت ۲۲. آقای ییلماز می‌گوید به‌خاطر شیفت دیر به خانه می‌رسد و صداها را عمداً ایجاد نمی‌کند. آیا هر دو طرف را درست فهمیده‌ام؟" },
+                { "language": "ar", "text": "ألخص باختصار: تحتاج السيدة شنايدر إلى هدوء أكثر في المساء، خصوصاً بعد العاشرة. يقول السيد يلماز إنه يعود إلى البيت متأخراً بسبب الوردية المسائية ولا يسبب الضجيج عمداً. هل فهمت الطرفين بشكل صحيح؟" },
+                { "language": "tr", "text": "Kısaca özetleyeyim: Bayan Schneider akşamları, özellikle saat 22'den sonra daha fazla sessizliğe ihtiyaç duyuyor. Bay Yilmaz ise geç vardiya nedeniyle eve geç geldiğini ve sesleri bilerek çıkarmadığını söylüyor. İki tarafı doğru anladım mı?" },
+                { "language": "ru", "text": "Я кратко резюмирую: госпоже Шнайдер вечером нужно больше тишины, особенно после 22 часов. Господин Йылмаз говорит, что из-за поздней смены приходит домой поздно и не создает шум намеренно. Я правильно понял обе стороны?" },
+                { "language": "ckb", "text": "بە کورتی پوخت دەکەمەوە: خانم شنایدەر ئێواران پێویستی بە ئارامیی زیاتری هەیە، بە تایبەتی دوای کاتژمێر ٢٢. بەڕێز یڵماز دەڵێت بەهۆی شیفتی درەنگەوە درەنگ دەگەڕێتەوە و دەنگەکان بە ئەنقەست دروست ناکات. هەردوو لام بە دروستی تێگەیشتووم؟" },
+                { "language": "kmr", "text": "Ez bi kurtî vedibêjim: Xanim Schneider êvaran bêtir aramî dixwaze, bi taybetî piştî saet 22ê. Birêz Yilmaz dibêje ku ji ber şîfta dereng dereng tê malê û dengan bi qest çênake. Ma min her du alî rast fam kirin?" },
+                { "language": "pl", "text": "Krótko podsumuję: pani Schneider potrzebuje wieczorem więcej spokoju, zwłaszcza po godzinie 22. Pan Yilmaz mówi, że wraca późno z powodu pracy na późną zmianę i nie powoduje hałasów celowo. Czy dobrze zrozumiałam obie strony?" },
+                { "language": "ro", "text": "Rezumat pe scurt: doamna Schneider are nevoie de mai multă liniște seara, mai ales după ora 22. Domnul Yilmaz spune că ajunge târziu acasă din cauza schimbului de seară și nu produce zgomotele intenționat. Am înțeles corect ambele părți?" },
+                { "language": "sq", "text": "Po e përmbledh shkurt: zonja Schneider ka nevojë për më shumë qetësi në mbrëmje, sidomos pas orës 22. Zoti Yilmaz thotë se kthehet vonë në shtëpi për shkak të turnit të vonë dhe nuk i shkakton zhurmat me qëllim. A i kuptova saktë të dyja palët?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort benennt beide Perspektiven neutral und fragt nach Bestätigung, bevor eine Lösung gesucht wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names both perspectives neutrally and asks for confirmation before looking for a solution." },
+                { "language": "fa", "text": "خوب است: پاسخ هر دو دیدگاه را بی‌طرفانه نام می‌برد و قبل از جست‌وجوی راه‌حل تأیید می‌گیرد." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة كلا المنظورين بحياد وتسأل عن التأكيد قبل البحث عن حل." },
+                { "language": "tr", "text": "İyi: cevap iki bakış açısını tarafsız biçimde belirtir ve çözüm aramadan önce onay ister." },
+                { "language": "ru", "text": "Хорошо: ответ нейтрально называет обе точки зрения и просит подтверждение перед поиском решения." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەردوو دیدگا بە بێلایەنی ناو دەبات و پێش گەڕان بەدوای چارەسەر پشتڕاستکردنەوە دەوێت." },
+                { "language": "kmr", "text": "Baş e: bersiv her du perspektîfan bêalî bi nav dike û berî lêgerîna çareseriyê piştrastkirinê dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź neutralnie nazywa obie perspektywy i prosi o potwierdzenie przed szukaniem rozwiązania." },
+                { "language": "ro", "text": "Bine: răspunsul numește neutru ambele perspective și cere confirmare înainte de a căuta o soluție." },
+                { "language": "sq", "text": "Mirë: përgjigjja i përmend paanshëm të dy këndvështrimet dhe kërkon konfirmim para se të kërkohet zgjidhje." }
+              ],
+              "explanationKey": "b2-neighbor-neutral-summary"
+            },
+            {
+              "id": "weak-too-general",
+              "text": "Sie müssen beide einfach mehr Rücksicht nehmen, dann wird das schon.",
+              "translations": [
+                { "language": "en", "text": "You both simply need to be more considerate, then it will work out." },
+                { "language": "fa", "text": "هر دو باید فقط بیشتر مراعات کنید، آن‌وقت درست می‌شود." },
+                { "language": "ar", "text": "يجب أن يراعي كل منكما الآخر أكثر ببساطة، وعندها سيتحسن الأمر." },
+                { "language": "tr", "text": "İkiniz de sadece daha fazla anlayış göstermelisiniz, o zaman düzelir." },
+                { "language": "ru", "text": "Вам обоим просто нужно больше считаться друг с другом, тогда все наладится." },
+                { "language": "ckb", "text": "هەردووکتان پێویستە تەنها زیاتر ڕەچاو بکەن، ئەوسا باش دەبێت." },
+                { "language": "kmr", "text": "Divê hûn her du tenê bêtir hesabê hev bikin, wê demê wê baş bibe." },
+                { "language": "pl", "text": "Oboje musicie po prostu bardziej uważać na siebie, wtedy jakoś się ułoży." },
+                { "language": "ro", "text": "Trebuie doar ca amândoi să fiți mai atenți unul la altul, atunci se va rezolva." },
+                { "language": "sq", "text": "Të dy duhet thjesht të tregoni më shumë kujdes për njëri-tjetrin, atëherë do të rregullohet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort klingt ausgleichend, fasst aber keine Positionen zusammen und schafft noch keine Grundlage für eine konkrete Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer sounds balancing, but it does not summarize positions and does not yet create a basis for a concrete solution." },
+                { "language": "fa", "text": "زیادی کلی است: پاسخ مصالحه‌جویانه به نظر می‌رسد، اما موضع‌ها را خلاصه نمی‌کند و هنوز پایه‌ای برای راه‌حل مشخص نمی‌سازد." },
+                { "language": "ar", "text": "عام جداً: تبدو الإجابة توفيقية، لكنها لا تلخص المواقف ولا تخلق بعد أساساً لحل ملموس." },
+                { "language": "tr", "text": "Çok genel: cevap uzlaştırıcı geliyor, ama pozisyonları özetlemiyor ve somut çözüm için zemin oluşturmuyor." },
+                { "language": "ru", "text": "Слишком общо: ответ звучит примирительно, но не резюмирует позиции и еще не создает основу для конкретного решения." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە وەک ئاشتکردنەوە دەنگ دەدات، بەڵام هەڵوێستەکان پوخت ناکاتەوە و بنەمای چارەسەرێکی دیاریکراو دروست ناکات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv wekî lihevhatinê tê bihîstin, lê helwestan kurte nake û hîn bingeha çareseriyeke taybetî çênake." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź brzmi pojednawczo, ale nie podsumowuje stanowisk i nie tworzy jeszcze podstawy do konkretnego rozwiązania." },
+                { "language": "ro", "text": "Prea general: răspunsul sună conciliant, dar nu rezumă pozițiile și nu creează încă baza pentru o soluție concretă." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja tingëllon pajtuese, por nuk përmbledh pozicionet dhe nuk krijon ende bazë për zgjidhje konkrete." }
+              ],
+              "explanationKey": "b2-neighbor-avoid-generalizing"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 5,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Damit wir eine faire Lösung finden, müssten wir die störenden Situationen genauer eingrenzen. Geht es vor allem um Stühlerücken nach 22 Uhr, um Musik oder um normale Schritte beim Heimkommen?",
+              "translations": [
+                { "language": "en", "text": "To find a fair solution, we would need to narrow down the disturbing situations more precisely. Is it mainly about chairs being moved after 10 p.m., music, or normal footsteps when coming home?" },
+                { "language": "fa", "text": "برای اینکه راه‌حلی منصفانه پیدا کنیم، باید موقعیت‌های مزاحم را دقیق‌تر مشخص کنیم. موضوع بیشتر کشیدن صندلی بعد از ساعت ۲۲ است، موسیقی است یا قدم‌های عادی هنگام برگشتن به خانه؟" },
+                { "language": "ar", "text": "لكي نجد حلاً عادلاً، يجب أن نحدد المواقف المزعجة بدقة أكبر. هل يتعلق الأمر أساساً بتحريك الكراسي بعد العاشرة، أم بالموسيقى، أم بالخطوات العادية عند العودة إلى البيت؟" },
+                { "language": "tr", "text": "Adil bir çözüm bulmak için rahatsız edici durumları daha net sınırlandırmamız gerekir. Konu daha çok saat 22'den sonra sandalye çekilmesi mi, müzik mi, yoksa eve gelirken normal adımlar mı?" },
+                { "language": "ru", "text": "Чтобы найти справедливое решение, нам нужно точнее определить мешающие ситуации. Речь в основном о передвигании стульев после 22 часов, о музыке или об обычных шагах при возвращении домой?" },
+                { "language": "ckb", "text": "بۆ ئەوەی چارەسەرێکی دادپەروەرانە بدۆزینەوە، دەبێت دۆخە ئازاردەرەکان بە وردتر دیاری بکەین. بابەتەکە زیاتر ڕاکێشانی کورسی دوای کاتژمێر ٢٢ە، موزیکە، یان پێهەنگاوی ئاسایی کاتی گەڕانەوە بۆ ماڵەوە؟" },
+                { "language": "kmr", "text": "Ji bo em çareseriyeke adil bibînin, divê em rewşên acizker baştir sînordar bikin. Mijar herî zêde kişandina kursiyan piştî saet 22ê ye, muzîk e, an gavên asayî dema vegera malê?" },
+                { "language": "pl", "text": "Aby znaleźć uczciwe rozwiązanie, musielibyśmy dokładniej określić sytuacje, które przeszkadzają. Czy chodzi głównie o przesuwanie krzeseł po godzinie 22, muzykę czy zwykłe kroki przy powrocie do domu?" },
+                { "language": "ro", "text": "Ca să găsim o soluție corectă, ar trebui să delimităm mai exact situațiile deranjante. Este vorba mai ales despre scaune trase după ora 22, despre muzică sau despre pași normali când cineva ajunge acasă?" },
+                { "language": "sq", "text": "Që të gjejmë një zgjidhje të drejtë, duhet t'i përcaktojmë më saktë situatat shqetësuese. Bëhet fjalë kryesisht për karrige që lëvizen pas orës 22, për muzikë apo për hapa normalë kur dikush kthehet në shtëpi?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fragt nach überprüfbaren Details und verhindert, dass der Konflikt bei allgemeinen Vorwürfen bleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer asks for verifiable details and prevents the conflict from staying at the level of general accusations." },
+                { "language": "fa", "text": "خوب است: پاسخ جزئیات قابل بررسی می‌پرسد و نمی‌گذارد اختلاف در سطح سرزنش‌های کلی بماند." },
+                { "language": "ar", "text": "جيد: تسأل الإجابة عن تفاصيل قابلة للتحقق وتمنع بقاء الخلاف عند مستوى الاتهامات العامة." },
+                { "language": "tr", "text": "İyi: cevap doğrulanabilir ayrıntılar sorar ve çatışmanın genel suçlamalar düzeyinde kalmasını engeller." },
+                { "language": "ru", "text": "Хорошо: ответ спрашивает проверяемые детали и не дает конфликту остаться на уровне общих обвинений." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە وردەکاریی قابل پشکنین دەپرسێت و ڕێ نادات ناکۆکییەکە لە ئاستی تاوانبارکردنی گشتی بمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv hûrguliyên kontrolkirinbar dipirse û nahêle nakokî li asta tawanbarkirinên giştî bimîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pyta o sprawdzalne szczegóły i nie pozwala, by konflikt pozostał na poziomie ogólnych zarzutów." },
+                { "language": "ro", "text": "Bine: răspunsul cere detalii verificabile și împiedică rămânerea conflictului la nivelul acuzațiilor generale." },
+                { "language": "sq", "text": "Mirë: përgjigjja kërkon hollësi të verifikueshme dhe nuk lejon që konflikti të mbetet te akuzat e përgjithshme." }
+              ],
+              "explanationKey": "b2-neighbor-ask-specifics"
+            },
+            {
+              "id": "weak-accusatory-question",
+              "text": "Was genau ist denn Ihr Problem mit ihm?",
+              "translations": [
+                { "language": "en", "text": "What exactly is your problem with him then?" },
+                { "language": "fa", "text": "خب دقیقاً مشکل شما با او چیست؟" },
+                { "language": "ar", "text": "ما مشكلتك معه بالضبط إذن؟" },
+                { "language": "tr", "text": "Peki tam olarak onunla derdiniz ne?" },
+                { "language": "ru", "text": "Так в чем именно у вас с ним проблема?" },
+                { "language": "ckb", "text": "باشە بە وردی کێشەتان لەگەڵ ئەو چییە؟" },
+                { "language": "kmr", "text": "Baş e, pirsgirêka we bi wî re bi taybetî çi ye?" },
+                { "language": "pl", "text": "Jaki dokładnie ma pani z nim problem?" },
+                { "language": "ro", "text": "Care este exact problema dumneavoastră cu el?" },
+                { "language": "sq", "text": "Cili është saktësisht problemi juaj me të?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant: Die Frage sucht Details, klingt aber persönlich und kann die Beschwerde wie einen Angriff wirken lassen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but risky: the question looks for details, but sounds personal and can make the complaint feel like an attack." },
+                { "language": "fa", "text": "قابل تصور است، اما پرریسک: سؤال دنبال جزئیات است، ولی شخصی به نظر می‌رسد و می‌تواند شکایت را شبیه حمله جلوه دهد." },
+                { "language": "ar", "text": "ممكنة، لكنها محفوفة بالمخاطر: تبحث السؤال عن تفاصيل، لكنه يبدو شخصياً وقد يجعل الشكوى تبدو كهجوم." },
+                { "language": "tr", "text": "Mantıklı olabilir ama riskli: soru ayrıntı arıyor, ancak kişisel geliyor ve şikayeti saldırı gibi gösterebilir." },
+                { "language": "ru", "text": "Возможно, но рискованно: вопрос ищет детали, но звучит лично и может сделать жалобу похожей на нападение." },
+                { "language": "ckb", "text": "قابلی تێگەیشتنە، بەڵام مەترسیدارە: پرسیارەکە وردەکاری دەگەڕێت، بەڵام کەسی دەنگ دەدات و دەتوانێت شکایەتەکە وەک هێرش نیشان بدات." },
+                { "language": "kmr", "text": "Têgihîştinbar e, lê rîskdar e: pirs hûrguliyan digere, lê kesane tê bihîstin û dikare gilî wekî êrîş nîşan bide." },
+                { "language": "pl", "text": "Możliwe, ale ryzykowne: pytanie szuka szczegółów, lecz brzmi osobiście i może sprawić, że skarga zabrzmi jak atak." },
+                { "language": "ro", "text": "Plauzibil, dar riscant: întrebarea caută detalii, însă sună personal și poate face reclamația să pară un atac." },
+                { "language": "sq", "text": "E mundshme, por me rrezik: pyetja kërkon hollësi, por tingëllon personale dhe mund ta bëjë ankesën të duket si sulm." }
+              ],
+              "explanationKey": "b2-neighbor-avoid-personalizing"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 7,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Dann schlage ich einen zweiwöchigen Versuch vor: Filzgleiter unter die Stühle, nach 22 Uhr keine Möbel mehr verschieben und bei einzelnen Problemen eine kurze Nachricht mit Uhrzeit statt sofortiger Vorwurf. Wäre das für beide Seiten realistisch?",
+              "translations": [
+                { "language": "en", "text": "Then I suggest a two-week trial: felt pads under the chairs, no more moving furniture after 10 p.m., and for individual problems a short message with the time instead of an immediate accusation. Would that be realistic for both sides?" },
+                { "language": "fa", "text": "پس من یک دوره آزمایشی دو هفته‌ای پیشنهاد می‌کنم: زیر صندلی‌ها پد نمدی گذاشته شود، بعد از ساعت ۲۲ دیگر وسایل جابه‌جا نشود و در مورد مشکل‌های تک‌موردی به‌جای سرزنش فوری، یک پیام کوتاه با ذکر ساعت فرستاده شود. آیا این برای هر دو طرف واقع‌بینانه است؟" },
+                { "language": "ar", "text": "إذن أقترح تجربة لمدة أسبوعين: وضع لباد تحت الكراسي، وعدم تحريك الأثاث بعد العاشرة، وعند حدوث مشكلة منفردة إرسال رسالة قصيرة مع الوقت بدلاً من اتهام فوري. هل هذا واقعي للطرفين؟" },
+                { "language": "tr", "text": "O halde iki haftalık bir deneme öneriyorum: sandalyelerin altına keçe, saat 22'den sonra mobilya taşımamak ve tekil sorunlarda hemen suçlamak yerine saat bilgisiyle kısa bir mesaj. Bu iki taraf için gerçekçi olur mu?" },
+                { "language": "ru", "text": "Тогда я предлагаю двухнедельную пробу: войлочные накладки под стулья, после 22 часов больше не двигать мебель, а при отдельных проблемах короткое сообщение с указанием времени вместо немедленного упрека. Это реалистично для обеих сторон?" },
+                { "language": "ckb", "text": "کەواتە پێشنیاری تاقیکردنەوەی دوو هەفتەیی دەکەم: دانانی پارچەی نەرمی ژێر کورسییەکان، دوای کاتژمێر ٢٢ نەجوڵاندنی مۆبڵ و بۆ کێشەی تاک‌جارە پەیامێکی کورت بە کاتەکەوە، نەک دەستبەجێ تاوانبارکردن. ئەمە بۆ هەردوو لا ڕاستەقینەیە؟" },
+                { "language": "kmr", "text": "Wê demê ez ceribandineke du heftî pêşniyar dikim: felt li bin kursiyan, piştî saet 22ê êdî mobîlya neyê guhartin û ji bo pirsgirêkên yekcarî peyameke kurt bi demê re, ne tawanbarkirina yekser. Ma ev ji bo her du aliyan rastîn e?" },
+                { "language": "pl", "text": "W takim razie proponuję dwutygodniową próbę: filcowe podkładki pod krzesła, po godzinie 22 bez przesuwania mebli, a przy pojedynczych problemach krótka wiadomość z godziną zamiast natychmiastowego zarzutu. Czy to byłoby realistyczne dla obu stron?" },
+                { "language": "ro", "text": "Atunci propun o probă de două săptămâni: protecții din fetru sub scaune, după ora 22 fără mutat mobilier și, pentru probleme izolate, un mesaj scurt cu ora în loc de acuzații imediate. Ar fi realist pentru ambele părți?" },
+                { "language": "sq", "text": "Atëherë propozoj një provë dyjavore: mbrojtëse prej filci poshtë karrigeve, pas orës 22 të mos lëvizen më mobiliet dhe për probleme të veçanta të dërgohet një mesazh i shkurtër me orën, në vend të akuzës së menjëhershme. A do të ishte realiste për të dyja palët?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Lösung ist konkret, zeitlich begrenzt und verteilt Verantwortung auf beide Seiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the solution is concrete, time-limited, and distributes responsibility between both sides." },
+                { "language": "fa", "text": "خوب است: راه‌حل مشخص، محدود به زمان و همراه با مسئولیت برای هر دو طرف است." },
+                { "language": "ar", "text": "جيد: الحل ملموس ومحدد زمنياً ويوزع المسؤولية على الطرفين." },
+                { "language": "tr", "text": "İyi: çözüm somut, süreyle sınırlı ve sorumluluğu iki tarafa dağıtıyor." },
+                { "language": "ru", "text": "Хорошо: решение конкретное, ограничено по времени и распределяет ответственность между обеими сторонами." },
+                { "language": "ckb", "text": "باشە: چارەسەرەکە دیاریکراوە، بە ماوە سنووردارە و بەرپرسیارێتی بەسەر هەردوو لا دابەش دەکات." },
+                { "language": "kmr", "text": "Baş e: çareserî taybetî ye, bi demê sînordar e û berpirsiyariyê li ser her du aliyan dabeş dike." },
+                { "language": "pl", "text": "Dobrze: rozwiązanie jest konkretne, ograniczone czasowo i rozkłada odpowiedzialność na obie strony." },
+                { "language": "ro", "text": "Bine: soluția este concretă, limitată în timp și distribuie responsabilitatea între ambele părți." },
+                { "language": "sq", "text": "Mirë: zgjidhja është konkrete, e kufizuar në kohë dhe e shpërndan përgjegjësinë te të dyja palët." }
+              ],
+              "explanationKey": "b2-neighbor-trial-solution"
+            },
+            {
+              "id": "weak-one-sided",
+              "text": "Dann seien Sie ab jetzt nach 22 Uhr einfach leiser.",
+              "translations": [
+                { "language": "en", "text": "Then from now on just be quieter after 10 p.m." },
+                { "language": "fa", "text": "پس از این به بعد بعد از ساعت ۲۲ فقط آرام‌تر باشید." },
+                { "language": "ar", "text": "إذن ببساطة كن أكثر هدوءاً بعد العاشرة من الآن فصاعداً." },
+                { "language": "tr", "text": "O zaman bundan sonra saat 22'den sonra sadece daha sessiz olun." },
+                { "language": "ru", "text": "Тогда с этого момента просто будьте тише после 22 часов." },
+                { "language": "ckb", "text": "کەواتە لەمەودوا دوای کاتژمێر ٢٢ تەنها ئارامتر بن." },
+                { "language": "kmr", "text": "Wê demê ji niha û pê ve piştî saet 22ê tenê bêdengtir bin." },
+                { "language": "pl", "text": "W takim razie od teraz proszę po prostu być ciszej po godzinie 22." },
+                { "language": "ro", "text": "Atunci de acum înainte fiți pur și simplu mai tăcut după ora 22." },
+                { "language": "sq", "text": "Atëherë tani e tutje thjesht bëhuni më i qetë pas orës 22." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einseitig: Die Antwort benennt zwar den Kern, bleibt aber unkonkret und berücksichtigt die Schichtarbeit nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too one-sided: the answer names the core issue, but remains vague and does not take shift work into account." },
+                { "language": "fa", "text": "زیادی یک‌طرفه است: پاسخ اصل موضوع را می‌گوید، اما مبهم می‌ماند و شیفت کاری را در نظر نمی‌گیرد." },
+                { "language": "ar", "text": "منحازة جداً لطرف واحد: تذكر الإجابة جوهر المشكلة، لكنها تبقى غير محددة ولا تأخذ العمل بنظام الورديات في الحسبان." },
+                { "language": "tr", "text": "Çok tek taraflı: cevap ana konuyu söylüyor, ama belirsiz kalıyor ve vardiyalı çalışmayı hesaba katmıyor." },
+                { "language": "ru", "text": "Слишком односторонне: ответ называет суть, но остается неконкретным и не учитывает сменную работу." },
+                { "language": "ckb", "text": "زۆر یەکلایەنەیە: وەڵامەکە ناوەڕۆکی کێشەکە دەڵێت، بەڵام نادیار دەمێنێتەوە و کاری شیفتی لەبەرچاو ناگرێت." },
+                { "language": "kmr", "text": "Pir yekalî ye: bersiv navenda mijarê dibêje, lê nezelal dimîne û karê şîftê li ber çavan nagire." },
+                { "language": "pl", "text": "Zbyt jednostronne: odpowiedź wskazuje sedno, ale pozostaje niekonkretna i nie uwzględnia pracy zmianowej." },
+                { "language": "ro", "text": "Prea unilateral: răspunsul numește esența problemei, dar rămâne vag și nu ține cont de munca în schimburi." },
+                { "language": "sq", "text": "Shumë e njëanshme: përgjigjja përmend thelbin, por mbetet e paqartë dhe nuk merr parasysh punën me turne." }
+              ],
+              "explanationKey": "b2-neighbor-avoid-one-sided-solution"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Gut, dann halten wir fest: zwei Wochen Testphase, Filzgleiter unter die Stühle, nach 22 Uhr keine Möbelbewegungen und bei Problemen eine kurze Nachricht mit Uhrzeit. Nach den zwei Wochen sprechen wir kurz, ob es besser geworden ist.",
+              "translations": [
+                { "language": "en", "text": "Good, then we will note this: a two-week trial phase, felt pads under the chairs, no furniture movements after 10 p.m., and for problems a short message with the time. After the two weeks we will talk briefly about whether it has improved." },
+                { "language": "fa", "text": "خوب، پس این را ثبت می‌کنیم: دو هفته دوره آزمایشی، پد نمدی زیر صندلی‌ها، بعد از ساعت ۲۲ جابه‌جایی وسایل نباشد و در صورت مشکل یک پیام کوتاه با ذکر ساعت فرستاده شود. بعد از دو هفته کوتاه صحبت می‌کنیم که آیا بهتر شده است یا نه." },
+                { "language": "ar", "text": "حسناً، إذن نسجل ما يلي: فترة تجربة لمدة أسبوعين، لباد تحت الكراسي، عدم تحريك الأثاث بعد العاشرة، وعند حدوث مشكلة رسالة قصيرة مع الوقت. بعد الأسبوعين نتحدث باختصار عما إذا تحسن الوضع." },
+                { "language": "tr", "text": "Tamam, o halde şöyle kaydediyoruz: iki haftalık deneme süresi, sandalyelerin altında keçe, saat 22'den sonra mobilya hareketi yok ve sorun olursa saat bilgisiyle kısa bir mesaj. İki hafta sonra durumun düzelip düzelmediğini kısaca konuşacağız." },
+                { "language": "ru", "text": "Хорошо, тогда фиксируем: двухнедельная пробная фаза, войлочные накладки под стулья, после 22 часов не двигать мебель, а при проблемах короткое сообщение с указанием времени. Через две недели мы коротко поговорим, стало ли лучше." },
+                { "language": "ckb", "text": "باشە، کەواتە ئەمە تۆمار دەکەین: دوو هەفتە ماوەی تاقیکردنەوە، پارچەی نەرمی ژێر کورسییەکان، دوای کاتژمێر ٢٢ هیچ جوڵاندنی مۆبڵ نەبێت و لە کێشەکاندا پەیامێکی کورت بە کاتەکەوە بنێردرێت. دوای دوو هەفتە بە کورتی دەدوێین کە باشتر بووە یان نا." },
+                { "language": "kmr", "text": "Baş e, wê demê em wisa tomar dikin: qonaxa ceribandinê ya du heftî, felt li bin kursiyan, piştî saet 22ê tevgera mobîlyayê tune û di pirsgirêkan de peyameke kurt bi demê re. Piştî du heftiyan em bi kurtî diaxivin gelo çêtir bûye an na." },
+                { "language": "pl", "text": "Dobrze, w takim razie ustalamy: dwutygodniowa faza próbna, filcowe podkładki pod krzesłami, po godzinie 22 bez przesuwania mebli, a przy problemach krótka wiadomość z godziną. Po dwóch tygodniach krótko porozmawiamy, czy jest lepiej." },
+                { "language": "ro", "text": "Bine, atunci consemnăm: două săptămâni de probă, protecții din fetru sub scaune, după ora 22 fără mutat mobilier și, la probleme, un mesaj scurt cu ora. După cele două săptămâni discutăm scurt dacă situația s-a îmbunătățit." },
+                { "language": "sq", "text": "Mirë, atëherë e shënojmë: dy javë fazë prove, mbrojtëse prej filci poshtë karrigeve, pas orës 22 pa lëvizje mobiliesh dhe në rast problemesh një mesazh i shkurtër me orën. Pas dy javësh flasim shkurt nëse është përmirësuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Schlussantwort enthält Zeitraum, konkrete Maßnahmen, Kommunikationsregel und Nachbesprechung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the closing answer includes the time frame, concrete measures, communication rule, and follow-up discussion." },
+                { "language": "fa", "text": "خوب است: پاسخ پایانی بازه زمانی، اقدام‌های مشخص، قانون ارتباط و گفت‌وگوی بعدی را دارد." },
+                { "language": "ar", "text": "جيد: تحتوي الإجابة الختامية على الإطار الزمني والإجراءات المحددة وقاعدة التواصل والحديث اللاحق." },
+                { "language": "tr", "text": "İyi: kapanış cevabı süreyi, somut önlemleri, iletişim kuralını ve sonraki görüşmeyi içerir." },
+                { "language": "ru", "text": "Хорошо: заключительный ответ содержит срок, конкретные меры, правило коммуникации и последующее обсуждение." },
+                { "language": "ckb", "text": "باشە: وەڵامی کۆتایی ماوە، هەنگاوە دیاریکراوەکان، یاسای پەیوەندی و گفتوگۆی دواتر لەخۆدەگرێت." },
+                { "language": "kmr", "text": "Baş e: bersiva dawî çarçoveya demê, tedbîrên taybetî, qaîdeya peywendiyê û axaftina paşê dihewîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź końcowa zawiera ramy czasowe, konkretne działania, zasadę komunikacji i rozmowę kontrolną." },
+                { "language": "ro", "text": "Bine: răspunsul final include perioada, măsurile concrete, regula de comunicare și discuția de urmărire." },
+                { "language": "sq", "text": "Mirë: përgjigjja përfundimtare përmban afatin, masat konkrete, rregullin e komunikimit dhe bisedën pasuese." }
+              ],
+              "explanationKey": "b2-neighbor-final-agreement"
+            },
+            {
+              "id": "weak-incomplete-summary",
+              "text": "Gut, dann versuchen Sie das bitte zwei Wochen lang.",
+              "translations": [
+                { "language": "en", "text": "Good, then please try that for two weeks." },
+                { "language": "fa", "text": "خوب، پس لطفاً این را دو هفته امتحان کنید." },
+                { "language": "ar", "text": "حسناً، إذن جربوا ذلك من فضلكم لمدة أسبوعين." },
+                { "language": "tr", "text": "Tamam, o halde lütfen bunu iki hafta deneyin." },
+                { "language": "ru", "text": "Хорошо, тогда, пожалуйста, попробуйте это две недели." },
+                { "language": "ckb", "text": "باشە، کەواتە تکایە ئەمە دوو هەفتە تاقی بکەنەوە." },
+                { "language": "kmr", "text": "Baş e, wê demê ji kerema xwe vê du heftiyan biceribînin." },
+                { "language": "pl", "text": "Dobrze, w takim razie proszę spróbować tego przez dwa tygodnie." },
+                { "language": "ro", "text": "Bine, atunci vă rog să încercați asta timp de două săptămâni." },
+                { "language": "sq", "text": "Mirë, atëherë ju lutem provojeni këtë për dy javë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort nennt die Testphase, aber nicht die konkreten Schritte, die Kommunikationsregel oder die Nachbesprechung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too short: the answer names the trial phase, but not the concrete steps, the communication rule, or the follow-up discussion." },
+                { "language": "fa", "text": "زیادی کوتاه است: پاسخ دوره آزمایشی را می‌گوید، اما اقدام‌های مشخص، قانون ارتباط یا گفت‌وگوی بعدی را نه." },
+                { "language": "ar", "text": "قصيرة جداً: تذكر الإجابة فترة التجربة، لكنها لا تذكر الخطوات المحددة أو قاعدة التواصل أو الحديث اللاحق." },
+                { "language": "tr", "text": "Çok kısa: cevap deneme süresini söylüyor, ama somut adımları, iletişim kuralını veya sonraki görüşmeyi belirtmiyor." },
+                { "language": "ru", "text": "Слишком кратко: ответ называет пробную фазу, но не конкретные шаги, правило коммуникации или последующее обсуждение." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە ماوەی تاقیکردنەوە دەڵێت، بەڵام هەنگاوە دیاریکراوەکان، یاسای پەیوەندی یان گفتوگۆی دواتر ناڵێت." },
+                { "language": "kmr", "text": "Pir kurt e: bersiv qonaxa ceribandinê dibêje, lê gavên taybetî, qaîdeya peywendiyê an axaftina paşê nabêje." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź podaje fazę próbną, ale nie konkretne kroki, zasadę komunikacji ani rozmowę kontrolną." },
+                { "language": "ro", "text": "Prea scurt: răspunsul numește perioada de probă, dar nu pașii concreți, regula de comunicare sau discuția de urmărire." },
+                { "language": "sq", "text": "Shumë shkurt: përgjigjja përmend fazën e provës, por jo hapat konkretë, rregullin e komunikimit ose bisedën pasuese." }
+              ],
+              "explanationKey": "b2-neighbor-need-complete-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 3,
+          "feedbackType": "strategy",
+          "text": "Mediation beginnt mit einer neutralen Zusammenfassung. So fühlen sich beide Seiten gehört, bevor über Lösungen gesprochen wird.",
+          "translations": [
+            { "language": "en", "text": "Mediation begins with a neutral summary. This makes both sides feel heard before solutions are discussed." },
+            { "language": "fa", "text": "میانجی‌گری با خلاصه‌سازی بی‌طرفانه شروع می‌شود. این باعث می‌شود هر دو طرف قبل از بحث درباره راه‌حل‌ها احساس کنند شنیده شده‌اند." },
+            { "language": "ar", "text": "تبدأ الوساطة بتلخيص محايد. بذلك يشعر الطرفان بأنهما مسموعان قبل الحديث عن الحلول." },
+            { "language": "tr", "text": "Arabuluculuk tarafsız bir özetle başlar. Böylece çözüm konuşulmadan önce iki taraf da dinlendiğini hisseder." },
+            { "language": "ru", "text": "Медиация начинается с нейтрального резюме. Так обе стороны чувствуют, что их услышали, прежде чем обсуждать решения." },
+            { "language": "ckb", "text": "ناوبژیوانی بە پوختکردنەوەی بێلایەن دەست پێدەکات. بەمە هەردوو لا هەست دەکەن گوێیان لێ گیراوە پێش ئەوەی باسی چارەسەر بکرێت." },
+            { "language": "kmr", "text": "Navbeynkari bi kurtekirineke bêalî dest pê dike. Bi vê yekê her du alî berî axaftina li ser çareseriyan xwe bihîstî hîs dikin." },
+            { "language": "pl", "text": "Mediacja zaczyna się od neutralnego podsumowania. Dzięki temu obie strony czują się wysłuchane, zanim rozmowa przejdzie do rozwiązań." },
+            { "language": "ro", "text": "Medierea începe cu un rezumat neutru. Astfel, ambele părți se simt ascultate înainte să se discute soluții." },
+            { "language": "sq", "text": "Ndërmjetësimi fillon me një përmbledhje të paanshme. Kështu të dyja palët ndihen të dëgjuara para se të flitet për zgjidhje." }
+          ]
+        },
+        {
+          "turnSortOrder": 5,
+          "feedbackType": "language",
+          "text": "B2-Sprache trennt konkrete Beobachtungen von Bewertungen: Uhrzeit, Art des Geräusches und Häufigkeit sind besser als allgemeine Vorwürfe.",
+          "translations": [
+            { "language": "en", "text": "B2 language separates concrete observations from judgments: time, type of noise and frequency are better than general accusations." },
+            { "language": "fa", "text": "زبان سطح B2 مشاهده‌های مشخص را از قضاوت جدا می‌کند: ساعت، نوع صدا و تکرار بهتر از سرزنش‌های کلی است." },
+            { "language": "ar", "text": "تفصل لغة مستوى B2 بين الملاحظات المحددة والأحكام: الوقت ونوع الضجيج والتكرار أفضل من الاتهامات العامة." },
+            { "language": "tr", "text": "B2 dili somut gözlemleri yargılardan ayırır: saat, sesin türü ve sıklık genel suçlamalardan daha iyidir." },
+            { "language": "ru", "text": "Язык уровня B2 отделяет конкретные наблюдения от оценок: время, вид шума и частота лучше общих обвинений." },
+            { "language": "ckb", "text": "زمانی B2 تێبینییە دیاریکراوەکان لە هەڵسەنگاندن جیا دەکاتەوە: کات، جۆری دەنگ و دووبارەبوونەوە باشترن لە تاوانبارکردنی گشتی." },
+            { "language": "kmr", "text": "Zimanê B2 dîtinên taybetî ji nirxandinan vediqetîne: dem, cureyê deng û çend caran çêtir in ji tawanbarkirinên giştî." },
+            { "language": "pl", "text": "Język B2 oddziela konkretne obserwacje od ocen: godzina, rodzaj hałasu i częstotliwość są lepsze niż ogólne zarzuty." },
+            { "language": "ro", "text": "Limbajul B2 separă observațiile concrete de evaluări: ora, tipul zgomotului și frecvența sunt mai bune decât acuzațiile generale." },
+            { "language": "sq", "text": "Gjuha B2 ndan vëzhgimet konkrete nga gjykimet: ora, lloji i zhurmës dhe shpeshtësia janë më të mira se akuzat e përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 7,
+          "feedbackType": "politeness-note",
+          "text": "Eine gute Kompromissformel ist konkret, befristet und überprüfbar. Sie macht aus einem Vorwurf eine Testvereinbarung.",
+          "translations": [
+            { "language": "en", "text": "A good compromise formula is concrete, limited in time and verifiable. It turns an accusation into a trial agreement." },
+            { "language": "fa", "text": "فرمول خوب برای سازش مشخص، زمان‌دار و قابل بررسی است. این کار سرزنش را به توافق آزمایشی تبدیل می‌کند." },
+            { "language": "ar", "text": "صيغة التسوية الجيدة تكون محددة ومؤقتة وقابلة للتحقق. إنها تحول الاتهام إلى اتفاق تجريبي." },
+            { "language": "tr", "text": "İyi bir uzlaşma formülü somut, süreli ve kontrol edilebilir olur. Bir suçlamayı deneme anlaşmasına dönüştürür." },
+            { "language": "ru", "text": "Хорошая формула компромисса конкретна, ограничена по времени и проверяема. Она превращает обвинение в пробное соглашение." },
+            { "language": "ckb", "text": "فۆرمولی باشی ڕێککەوتن دیاریکراوە، بە ماوە سنووردارە و قابل پشکنینە. تاوانبارکردن دەگۆڕێت بۆ ڕێککەوتنی تاقیکردنەوە." },
+            { "language": "kmr", "text": "Formûleke baş a lihevhatinê taybetî, bi demê sînordar û kontrolkirinbar e. Ew tawanbarkirinê vediguherîne peymaneke ceribandinê." },
+            { "language": "pl", "text": "Dobra formuła kompromisu jest konkretna, ograniczona czasowo i sprawdzalna. Zmienia zarzut w porozumienie próbne." },
+            { "language": "ro", "text": "O formulă bună de compromis este concretă, limitată în timp și verificabilă. Transformă o acuzație într-un acord de probă." },
+            { "language": "sq", "text": "Një formulë e mirë kompromisi është konkrete, e kufizuar në kohë dhe e verifikueshme. Ajo e kthen akuzën në marrëveshje prove." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Die Schlusszusammenfassung verhindert neue Missverständnisse: Alle hören dieselben Punkte und wissen, wann erneut gesprochen wird.",
+          "translations": [
+            { "language": "en", "text": "The closing summary prevents new misunderstandings: everyone hears the same points and knows when the next conversation will happen." },
+            { "language": "fa", "text": "خلاصه پایانی از سوءتفاهم‌های جدید جلوگیری می‌کند: همه همان نکات را می‌شنوند و می‌دانند گفت‌وگوی بعدی چه زمانی است." },
+            { "language": "ar", "text": "يمنع الملخص الختامي سوء فهم جديداً: يسمع الجميع النقاط نفسها ويعرفون متى سيكون الحديث التالي." },
+            { "language": "tr", "text": "Kapanış özeti yeni yanlış anlamaları önler: herkes aynı noktaları duyar ve bir sonraki konuşmanın ne zaman olacağını bilir." },
+            { "language": "ru", "text": "Заключительное резюме предотвращает новые недоразумения: все слышат одни и те же пункты и знают, когда будет следующий разговор." },
+            { "language": "ckb", "text": "پوختەی کۆتایی ڕێ لە تێنەگەیشتنی نوێ دەگرێت: هەمووان هەمان خاڵەکان دەبیستن و دەزانن کەی دووبارە گفتوگۆ دەکرێت." },
+            { "language": "kmr", "text": "Kurtekirina dawî rê li şaşfamkirinên nû digire: hemû kes heman xalên dibihîzin û dizanin kengê dîsa axaftin heye." },
+            { "language": "pl", "text": "Końcowe podsumowanie zapobiega nowym nieporozumieniom: wszyscy słyszą te same punkty i wiedzą, kiedy będzie kolejna rozmowa." },
+            { "language": "ro", "text": "Rezumatul final previne noi neînțelegeri: toți aud aceleași puncte și știu când se va discuta din nou." },
+            { "language": "sq", "text": "Përmbledhja përfundimtare parandalon keqkuptime të reja: të gjithë dëgjojnë të njëjtat pika dhe dinë kur do të flitet përsëri." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3280
+    }
+  ]
+}

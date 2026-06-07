@@ -1,0 +1,920 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-26-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 26 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 26",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-eine-falsche-rechnung-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Eine falsche Rechnung klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying an incorrect invoice" },
+        { "language": "fa", "text": "روشن کردن مشکل یک فاکتور اشتباه" },
+        { "language": "ar", "text": "توضيح مشكلة فاتورة خاطئة" },
+        { "language": "tr", "text": "Yanlış bir faturayı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Разобраться с неверным счётом" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی فاکتورێکی هەڵە" },
+        { "language": "kmr", "text": "Zelalkirina fatûreyeke şaş" },
+        { "language": "pl", "text": "Wyjaśnienie błędnej faktury" },
+        { "language": "ro", "text": "Clarificarea unei facturi greșite" },
+        { "language": "sq", "text": "Sqarimi i një fature të gabuar" }
+      ],
+      "description": "Du rufst beim Kundenservice an, weil auf deiner Rechnung ein Betrag doppelt berechnet wurde. Du erklärst die Rechnung, nennst den falschen Betrag und bittest um Korrektur.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call customer service because one amount was charged twice on your invoice. You explain the invoice, name the incorrect amount, and ask for a correction." },
+        { "language": "fa", "text": "با خدمات مشتریان تماس می‌گیری، چون در فاکتور تو یک مبلغ دو بار حساب شده است. فاکتور را توضیح می‌دهی، مبلغ اشتباه را می‌گویی و درخواست اصلاح می‌کنی." },
+        { "language": "ar", "text": "تتصل بخدمة العملاء لأن مبلغاً في فاتورتك حُسب مرتين. تشرح الفاتورة، وتذكر المبلغ الخاطئ، وتطلب تصحيحاً." },
+        { "language": "tr", "text": "Faturanda bir tutar iki kez hesaplandığı için müşteri hizmetlerini arıyorsun. Faturayı açıklıyor, yanlış tutarı söylüyor ve düzeltme istiyorsun." },
+        { "language": "ru", "text": "Ты звонишь в службу поддержки, потому что в твоём счёте одна сумма была начислена дважды. Ты объясняешь счёт, называешь неверную сумму и просишь исправление." },
+        { "language": "ckb", "text": "پەیوەندی بە خزمەتگوزاریی کڕیارانەوە دەکەیت چونکە لە فاکتورەکەتدا بڕێک دوو جار ژمێردراوە. فاکتورەکە ڕوون دەکەیتەوە، بڕە هەڵەکە دەڵێیت و داوای چاککردن دەکەیت." },
+        { "language": "kmr", "text": "Tu gazî xizmeta xerîdar dikî, ji ber ku di fatûreya te de pereyek du car hatiye hesabkirin. Tu fatûreyê şirove dikî, pereyê şaş dibêjî û rastkirin dixwazî." },
+        { "language": "pl", "text": "Dzwonisz do obsługi klienta, ponieważ na twojej fakturze jedna kwota została naliczona dwa razy. Wyjaśniasz fakturę, podajesz błędną kwotę i prosisz o korektę." },
+        { "language": "ro", "text": "Suni la serviciul clienți deoarece pe factura ta o sumă a fost calculată de două ori. Explici factura, numești suma greșită și ceri corectarea." },
+        { "language": "sq", "text": "Telefonon shërbimin e klientit sepse në faturën tënde një shumë është llogaritur dy herë. Shpjegon faturën, përmend shumën e gabuar dhe kërkon korrigjim." }
+      ],
+      "learnerGoal": "Erkläre eine falsche Rechnung sachlich, nenne Rechnungsnummer und Betrag und frage nach Korrektur und schriftlicher Bestätigung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain an incorrect invoice factually, name the invoice number and amount, and ask for correction and written confirmation." },
+        { "language": "fa", "text": "یک فاکتور اشتباه را منطقی توضیح بده، شماره فاکتور و مبلغ را بگو و درباره اصلاح و تأیید کتبی بپرس." },
+        { "language": "ar", "text": "اشرح فاتورة خاطئة بموضوعية، واذكر رقم الفاتورة والمبلغ، واسأل عن التصحيح والتأكيد الكتابي." },
+        { "language": "tr", "text": "Yanlış bir faturayı nesnel biçimde açıkla, fatura numarasını ve tutarı belirt, düzeltme ve yazılı onay iste." },
+        { "language": "ru", "text": "Объясни неверный счёт по существу, назови номер счёта и сумму и спроси об исправлении и письменном подтверждении." },
+        { "language": "ckb", "text": "فاکتورێکی هەڵە بە شێوەیەکی بابەتی ڕوون بکەرەوە، ژمارەی فاکتور و بڕەکە بڵێ و لە چاککردن و پشتڕاستکردنەوەی نووسراو بپرسە." },
+        { "language": "kmr", "text": "Fatûreyeke şaş bi awayekî rast şirove bike, jimareya fatûreyê û pereyê bibêje û li ser rastkirin û pejirandina nivîskî bipirse." },
+        { "language": "pl", "text": "Wyjaśnij błędną fakturę rzeczowo, podaj numer faktury i kwotę oraz zapytaj o korektę i pisemne potwierdzenie." },
+        { "language": "ro", "text": "Explică factual o factură greșită, numește numărul facturii și suma și întreabă despre corectare și confirmare scrisă." },
+        { "language": "sq", "text": "Shpjego një faturë të gabuar në mënyrë faktike, përmend numrin e faturës dhe shumën dhe pyet për korrigjim dhe konfirmim me shkrim." }
+      ],
+      "cefrLevel": "B1",
+      "category": "customer-service",
+      "topics": ["customer-service", "documents-and-administration"],
+      "examProfiles": ["dtz-a2-b1", "berufssprache-b1"],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "explain-problem",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2540,
+      "roles": [
+        {
+          "roleKey": "billing-agent",
+          "displayName": "Rechnungsservice",
+          "translations": [
+            { "language": "en", "text": "Billing service" },
+            { "language": "fa", "text": "بخش فاکتورها" },
+            { "language": "ar", "text": "خدمة الفواتير" },
+            { "language": "tr", "text": "Fatura servisi" },
+            { "language": "ru", "text": "Служба счетов" },
+            { "language": "ckb", "text": "خزمەتگوزاریی فاکتور" },
+            { "language": "kmr", "text": "Xizmeta fatûreyê" },
+            { "language": "pl", "text": "Obsługa faktur" },
+            { "language": "ro", "text": "Serviciul de facturare" },
+            { "language": "sq", "text": "Shërbimi i faturimit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kundin",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "عميلة" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиентка" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Xerîdar" },
+            { "language": "pl", "text": "Klientka" },
+            { "language": "ro", "text": "Clientă" },
+            { "language": "sq", "text": "Klientja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "billing-agent",
+          "baseText": "Guten Tag, Rechnungsservice. Worum geht es bei Ihrem Anruf?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, billing service. What is your call about?" },
+            { "language": "fa", "text": "روز بخیر، بخش فاکتورها. تماس شما درباره چیست؟" },
+            { "language": "ar", "text": "مرحباً، خدمة الفواتير. ما موضوع اتصالك؟" },
+            { "language": "tr", "text": "İyi günler, fatura servisi. Aramanız ne hakkında?" },
+            { "language": "ru", "text": "Добрый день, служба счетов. По какому вопросу вы звоните?" },
+            { "language": "ckb", "text": "ڕۆژ باش، خزمەتگوزاریی فاکتور. پەیوەندییەکەتان دەربارەی چییە؟" },
+            { "language": "kmr", "text": "Roj baş, xizmeta fatûreyê. Telefona we li ser çi ye?" },
+            { "language": "pl", "text": "Dzień dobry, obsługa faktur. W jakiej sprawie pani dzwoni?" },
+            { "language": "ro", "text": "Bună ziua, serviciul de facturare. Despre ce este apelul dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita, shërbimi i faturimit. Për çfarë bëhet fjalë në telefonatën tuaj?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich rufe wegen der Rechnung R-7842 an. Dort wurde die Servicepauschale von 18 Euro zweimal berechnet.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. I am calling about invoice R-7842. The service fee of 18 euros was charged twice there." },
+            { "language": "fa", "text": "روز بخیر. درباره فاکتور R-7842 تماس می‌گیرم. در آنجا هزینه خدمات ۱۸ یورو دو بار حساب شده است." },
+            { "language": "ar", "text": "مرحباً. أتصل بخصوص الفاتورة R-7842. فيها حُسبت رسوم الخدمة البالغة 18 يورو مرتين." },
+            { "language": "tr", "text": "İyi günler. R-7842 numaralı fatura için arıyorum. Orada 18 avroluk hizmet ücreti iki kez hesaplanmış." },
+            { "language": "ru", "text": "Добрый день. Я звоню по поводу счёта R-7842. Там сервисный сбор 18 евро был начислен дважды." },
+            { "language": "ckb", "text": "ڕۆژ باش. دەربارەی فاکتوری R-7842 پەیوەندی دەکەم. لەوێ کرێی خزمەتگوزاریی ١٨ یۆرۆ دوو جار ژمێردراوە." },
+            { "language": "kmr", "text": "Roj baş. Ez ji bo fatûreya R-7842 telefon dikim. Li wir heqê xizmetê yê 18 euro du car hatiye hesabkirin." },
+            { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie faktury R-7842. Opłata serwisowa 18 euro została tam naliczona dwa razy." },
+            { "language": "ro", "text": "Bună ziua. Sun în legătură cu factura R-7842. Taxa de serviciu de 18 euro a fost calculată acolo de două ori." },
+            { "language": "sq", "text": "Mirëdita. Telefonoj për faturën R-7842. Aty tarifa e shërbimit prej 18 eurosh është llogaritur dy herë." }
+          ],
+          "function": "state-problem",
+          "expectedLearnerAction": "Give the invoice number and exact incorrect amount."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "billing-agent",
+          "baseText": "Einen Moment bitte, ich prüfe das. Haben Sie die Rechnung gerade vor sich?",
+          "translations": [
+            { "language": "en", "text": "One moment please, I will check that. Do you have the invoice in front of you right now?" },
+            { "language": "fa", "text": "یک لحظه لطفاً، بررسی می‌کنم. آیا فاکتور الان جلوی شماست؟" },
+            { "language": "ar", "text": "لحظة من فضلك، سأتحقق من ذلك. هل الفاتورة أمامك الآن؟" },
+            { "language": "tr", "text": "Bir dakika lütfen, bunu kontrol ediyorum. Fatura şu anda önünüzde mi?" },
+            { "language": "ru", "text": "Один момент, пожалуйста, я это проверю. Счёт сейчас перед вами?" },
+            { "language": "ckb", "text": "تکایە چاوەڕێ بکەن، ئەمە دەپشکنم. ئایا فاکتورەکە ئێستا لەبەردەمتانە؟" },
+            { "language": "kmr", "text": "Demekê ji kerema xwe, ez vê kontrol dikim. Ma fatûre niha li ber we ye?" },
+            { "language": "pl", "text": "Chwileczkę, sprawdzę to. Czy ma pani teraz fakturę przed sobą?" },
+            { "language": "ro", "text": "Un moment, vă rog, verific. Aveți factura în față acum?" },
+            { "language": "sq", "text": "Një moment ju lutem, po e kontrolloj. A e keni faturën para jush tani?" }
+          ],
+          "function": "ask-document"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja. In Zeile 3 und Zeile 7 steht dieselbe Servicepauschale. Deshalb ist der Gesamtbetrag meiner Meinung nach um 18 Euro zu hoch.",
+          "translations": [
+            { "language": "en", "text": "Yes. The same service fee appears in line 3 and line 7. That is why, in my opinion, the total amount is 18 euros too high." },
+            { "language": "fa", "text": "بله. در ردیف ۳ و ردیف ۷ همان هزینه خدمات آمده است. به همین دلیل به نظر من مبلغ کل ۱۸ یورو بیش از حد است." },
+            { "language": "ar", "text": "نعم. تظهر رسوم الخدمة نفسها في السطر 3 والسطر 7. لذلك أعتقد أن المبلغ الإجمالي أعلى بـ 18 يورو." },
+            { "language": "tr", "text": "Evet. 3. satırda ve 7. satırda aynı hizmet ücreti yazıyor. Bu yüzden bence toplam tutar 18 avro fazla." },
+            { "language": "ru", "text": "Да. В строке 3 и строке 7 указана одна и та же сервисная плата. Поэтому, по моему мнению, итоговая сумма завышена на 18 евро." },
+            { "language": "ckb", "text": "بەڵێ. لە هێڵی ٣ و هێڵی ٧دا هەمان کرێی خزمەتگوزاری نووسراوە. بۆیە بە بۆچوونی من کۆی گشتی ١٨ یۆرۆ زیاترە." },
+            { "language": "kmr", "text": "Erê. Di rêza 3 û rêza 7 de heman heqê xizmetê hatiye nivîsandin. Ji ber vê yekê li gor min giştî 18 euro zêde ye." },
+            { "language": "pl", "text": "Tak. W wierszu 3 i wierszu 7 widnieje ta sama opłata serwisowa. Dlatego moim zdaniem suma całkowita jest o 18 euro za wysoka." },
+            { "language": "ro", "text": "Da. La rândul 3 și la rândul 7 apare aceeași taxă de serviciu. De aceea, după părerea mea, suma totală este cu 18 euro prea mare." },
+            { "language": "sq", "text": "Po. Në rreshtin 3 dhe rreshtin 7 është e njëjta tarifë shërbimi. Prandaj, sipas mendimit tim, shuma totale është 18 euro më e lartë." }
+          ],
+          "function": "explain-evidence",
+          "expectedLearnerAction": "Point to the exact lines and explain the consequence for the total amount."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "billing-agent",
+          "baseText": "Ich sehe den doppelten Eintrag. Wir können eine korrigierte Rechnung erstellen.",
+          "translations": [
+            { "language": "en", "text": "I see the duplicate entry. We can create a corrected invoice." },
+            { "language": "fa", "text": "من ثبت دوگانه را می‌بینم. می‌توانیم یک فاکتور اصلاح‌شده صادر کنیم." },
+            { "language": "ar", "text": "أرى القيد المكرر. يمكننا إصدار فاتورة مصححة." },
+            { "language": "tr", "text": "Çift kaydı görüyorum. Düzeltilmiş bir fatura oluşturabiliriz." },
+            { "language": "ru", "text": "Я вижу дублирующую запись. Мы можем создать исправленный счёт." },
+            { "language": "ckb", "text": "تۆماری دووبارەکراوەکە دەبینم. دەتوانین فاکتورێکی چاککراو دروست بکەین." },
+            { "language": "kmr", "text": "Ez qeyda dubare dibînim. Em dikarin fatûreyeke rastkirî çêbikin." },
+            { "language": "pl", "text": "Widzę podwójny wpis. Możemy wystawić skorygowaną fakturę." },
+            { "language": "ro", "text": "Văd înregistrarea dublă. Putem crea o factură corectată." },
+            { "language": "sq", "text": "E shoh shënimin e dyfishtë. Mund të krijojmë një faturë të korrigjuar." }
+          ],
+          "function": "confirm-error"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke. Können Sie mir bitte auch bestätigen, dass ich bis zur Korrektur nur den niedrigeren Betrag bezahlen soll?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Could you also please confirm that until the correction I should only pay the lower amount?" },
+            { "language": "fa", "text": "ممنون. لطفاً می‌توانید تأیید کنید که تا زمان اصلاح فقط مبلغ کمتر را پرداخت کنم؟" },
+            { "language": "ar", "text": "شكراً. هل يمكنكم أيضاً تأكيد أنني حتى التصحيح يجب أن أدفع فقط المبلغ الأقل؟" },
+            { "language": "tr", "text": "Teşekkür ederim. Düzeltmeye kadar yalnızca daha düşük tutarı ödemem gerektiğini de onaylayabilir misiniz?" },
+            { "language": "ru", "text": "Спасибо. Можете также подтвердить, что до исправления я должна оплатить только меньшую сумму?" },
+            { "language": "ckb", "text": "سوپاس. تکایە دەتوانن پشتڕاست بکەنەوە کە تا کاتی چاککردن تەنها بڕی کەمتر بدەم؟" },
+            { "language": "kmr", "text": "Spas. Hûn dikarin her wiha piştrast bikin ku heta rastkirinê ez tenê pereyê kêmtir bidim?" },
+            { "language": "pl", "text": "Dziękuję. Czy może pan też potwierdzić, że do czasu korekty mam zapłacić tylko niższą kwotę?" },
+            { "language": "ro", "text": "Mulțumesc. Puteți confirma, vă rog, că până la corectare trebuie să plătesc doar suma mai mică?" },
+            { "language": "sq", "text": "Faleminderit. A mund të konfirmoni gjithashtu se deri në korrigjim duhet të paguaj vetëm shumën më të ulët?" }
+          ],
+          "function": "ask-confirmation",
+          "expectedLearnerAction": "Ask for payment guidance and confirmation before acting."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "billing-agent",
+          "baseText": "Ja, ich notiere das. Sie erhalten heute eine E-Mail mit der korrigierten Rechnung und dem neuen Zahlungsbetrag.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will note that. You will receive an email today with the corrected invoice and the new payment amount." },
+            { "language": "fa", "text": "بله، این را یادداشت می‌کنم. امروز ایمیلی با فاکتور اصلاح‌شده و مبلغ جدید پرداخت دریافت می‌کنید." },
+            { "language": "ar", "text": "نعم، سأدوّن ذلك. ستتلقين اليوم بريداً إلكترونياً بالفاتورة المصححة والمبلغ الجديد للدفع." },
+            { "language": "tr", "text": "Evet, bunu not ediyorum. Bugün düzeltilmiş fatura ve yeni ödeme tutarıyla bir e-posta alacaksınız." },
+            { "language": "ru", "text": "Да, я это отмечу. Сегодня вы получите электронное письмо с исправленным счётом и новой суммой к оплате." },
+            { "language": "ckb", "text": "بەڵێ، ئەمە تۆمار دەکەم. ئەمڕۆ ئیمەیڵێک بە فاکتوری چاککراو و بڕی نوێی پارەدان وەردەگرن." },
+            { "language": "kmr", "text": "Erê, ez vê tomar dikim. Hûn ê îro e-nameyek bi fatûreya rastkirî û pereyê nû yê dayînê bistînin." },
+            { "language": "pl", "text": "Tak, zanotuję to. Dzisiaj otrzyma pani e-mail ze skorygowaną fakturą i nową kwotą płatności." },
+            { "language": "ro", "text": "Da, notez acest lucru. Astăzi primiți un e-mail cu factura corectată și noua sumă de plată." },
+            { "language": "sq", "text": "Po, do ta shënoj këtë. Sot do të merrni një email me faturën e korrigjuar dhe shumën e re të pagesës." }
+          ],
+          "function": "give-next-step"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann warte ich auf die korrigierte Rechnung und bezahle danach den neuen Betrag. Könnten Sie mir bitte noch Ihre Bearbeitungsnummer nennen?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will wait for the corrected invoice and pay the new amount after that. Could you please also give me your case number?" },
+            { "language": "fa", "text": "خیلی ممنون. پس منتظر فاکتور اصلاح‌شده می‌مانم و بعد مبلغ جدید را پرداخت می‌کنم. لطفاً شماره پیگیری این پرونده را هم می‌گویید؟" },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأنتظر الفاتورة المصححة ثم أدفع المبلغ الجديد. هل يمكن أن تعطيني أيضاً رقم المعالجة من فضلك؟" },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde düzeltilmiş faturayı beklerim ve sonra yeni tutarı öderim. Bana işlem numaranızı da söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Большое спасибо. Тогда я подожду исправленный счёт и после этого оплачу новую сумму. Можете также назвать мне номер обработки?" },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی فاکتوری چاککراو دەبم و پاشان بڕە نوێیەکە دەدەم. تکایە دەتوانن ژمارەی چارەسەرکردنەکەشم بڵێن؟" },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez li benda fatûreya rastkirî dimînim û paşê pereyê nû didim. Hûn dikarin jimareya karûbarê jî bibêjin?" },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie poczekam na skorygowaną fakturę i potem zapłacę nową kwotę. Czy może pan podać mi jeszcze numer sprawy?" },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci aștept factura corectată și plătesc apoi noua sumă. Îmi puteți spune, vă rog, și numărul de procesare?" },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë do të pres faturën e korrigjuar dhe pastaj do të paguaj shumën e re. A mund të më jepni edhe numrin e përpunimit?" }
+          ],
+          "function": "summarize-and-confirm",
+          "expectedLearnerAction": "Summarize the agreed process and request a reference number."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag. Ich rufe wegen der Rechnung R-7842 an. Dort wurde die Servicepauschale von 18 Euro zweimal berechnet.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. I am calling about invoice R-7842. The service fee of 18 euros was charged twice there." },
+                { "language": "fa", "text": "روز بخیر. درباره فاکتور R-7842 تماس می‌گیرم. در آنجا هزینه خدمات ۱۸ یورو دو بار حساب شده است." },
+                { "language": "ar", "text": "مرحباً. أتصل بخصوص الفاتورة R-7842. فيها حُسبت رسوم الخدمة البالغة 18 يورو مرتين." },
+                { "language": "tr", "text": "İyi günler. R-7842 numaralı fatura için arıyorum. Orada 18 avroluk hizmet ücreti iki kez hesaplanmış." },
+                { "language": "ru", "text": "Добрый день. Я звоню по поводу счёта R-7842. Там сервисный сбор 18 евро был начислен дважды." },
+                { "language": "ckb", "text": "ڕۆژ باش. دەربارەی فاکتوری R-7842 پەیوەندی دەکەم. لەوێ کرێی خزمەتگوزاریی ١٨ یۆرۆ دوو جار ژمێردراوە." },
+                { "language": "kmr", "text": "Roj baş. Ez ji bo fatûreya R-7842 telefon dikim. Li wir heqê xizmetê yê 18 euro du car hatiye hesabkirin." },
+                { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie faktury R-7842. Opłata serwisowa 18 euro została tam naliczona dwa razy." },
+                { "language": "ro", "text": "Bună ziua. Sun în legătură cu factura R-7842. Taxa de serviciu de 18 euro a fost calculată acolo de două ori." },
+                { "language": "sq", "text": "Mirëdita. Telefonoj për faturën R-7842. Aty tarifa e shërbimit prej 18 eurosh është llogaritur dy herë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt direkt die Rechnungsnummer und den konkreten Fehler.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer directly gives the invoice number and the concrete error." },
+                { "language": "fa", "text": "این پاسخ مستقیم شماره فاکتور و خطای مشخص را می‌گوید." },
+                { "language": "ar", "text": "تذكر الإجابة مباشرة رقم الفاتورة والخطأ المحدد." },
+                { "language": "tr", "text": "Cevap doğrudan fatura numarasını ve somut hatayı belirtir." },
+                { "language": "ru", "text": "Ответ сразу называет номер счёта и конкретную ошибку." },
+                { "language": "ckb", "text": "وەڵامەکە ڕاستەوخۆ ژمارەی فاکتور و هەڵەی دیاریکراو دەڵێت." },
+                { "language": "kmr", "text": "Bersiv rasterast jimareya fatûreyê û şaşiya zelal dibêje." },
+                { "language": "pl", "text": "Odpowiedź od razu podaje numer faktury i konkretny błąd." },
+                { "language": "ro", "text": "Răspunsul spune direct numărul facturii și eroarea concretă." },
+                { "language": "sq", "text": "Përgjigjja jep drejtpërdrejt numrin e faturës dhe gabimin konkret." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Guten Tag. Meine Rechnung ist leider falsch. Können Sie das bitte prüfen?",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. My invoice is unfortunately wrong. Could you please check that?" },
+                { "language": "fa", "text": "روز بخیر. فاکتور من متأسفانه اشتباه است. لطفاً می‌توانید آن را بررسی کنید؟" },
+                { "language": "ar", "text": "مرحباً. فاتورتي للأسف خاطئة. هل يمكنكم التحقق من ذلك من فضلكم؟" },
+                { "language": "tr", "text": "İyi günler. Faturam maalesef yanlış. Bunu lütfen kontrol edebilir misiniz?" },
+                { "language": "ru", "text": "Добрый день. Мой счёт, к сожалению, неверный. Можете это проверить, пожалуйста?" },
+                { "language": "ckb", "text": "ڕۆژ باش. فاکتورەکەم بەداخەوە هەڵەیە. تکایە دەتوانن ئەمە بپشکنن؟" },
+                { "language": "kmr", "text": "Roj baş. Fatûreya min mixabin şaş e. Hûn dikarin vê kontrol bikin?" },
+                { "language": "pl", "text": "Dzień dobry. Moja faktura jest niestety błędna. Czy może pan to sprawdzić?" },
+                { "language": "ro", "text": "Bună ziua. Factura mea este din păcate greșită. Puteți verifica, vă rog?" },
+                { "language": "sq", "text": "Mirëdita. Fatura ime fatkeqësisht është e gabuar. A mund ta kontrolloni ju lutem?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu ungenau: Rechnungsnummer und falscher Betrag fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite but too vague: the invoice number and incorrect amount are missing." },
+                { "language": "fa", "text": "این مودبانه است، اما خیلی مبهم است: شماره فاکتور و مبلغ اشتباه کم دارد." },
+                { "language": "ar", "text": "هذا مهذب لكنه غير دقيق: ينقص رقم الفاتورة والمبلغ الخاطئ." },
+                { "language": "tr", "text": "Bu kibar ama çok belirsiz: fatura numarası ve yanlış tutar eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком неопределённо: не хватает номера счёта и неверной суммы." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر ناڕوونە: ژمارەی فاکتور و بڕی هەڵە کەمە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir nezelal e: jimareya fatûreyê û pereyê şaş kêm in." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt nieprecyzyjne: brakuje numeru faktury i błędnej kwoty." },
+                { "language": "ro", "text": "Este politicos, dar prea vag: lipsesc numărul facturii și suma greșită." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e paqartë: mungon numri i faturës dhe shuma e gabuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke. Können Sie mir bitte auch bestätigen, dass ich bis zur Korrektur nur den niedrigeren Betrag bezahlen soll?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Could you also please confirm that until the correction I should only pay the lower amount?" },
+                { "language": "fa", "text": "ممنون. لطفاً می‌توانید تأیید کنید که تا زمان اصلاح فقط مبلغ کمتر را پرداخت کنم؟" },
+                { "language": "ar", "text": "شكراً. هل يمكنكم أيضاً تأكيد أنني حتى التصحيح يجب أن أدفع فقط المبلغ الأقل؟" },
+                { "language": "tr", "text": "Teşekkür ederim. Düzeltmeye kadar yalnızca daha düşük tutarı ödemem gerektiğini de onaylayabilir misiniz?" },
+                { "language": "ru", "text": "Спасибо. Можете также подтвердить, что до исправления я должна оплатить только меньшую сумму?" },
+                { "language": "ckb", "text": "سوپاس. تکایە دەتوانن پشتڕاست بکەنەوە کە تا کاتی چاککردن تەنها بڕی کەمتر بدەم؟" },
+                { "language": "kmr", "text": "Spas. Hûn dikarin her wiha piştrast bikin ku heta rastkirinê ez tenê pereyê kêmtir bidim?" },
+                { "language": "pl", "text": "Dziękuję. Czy może pan też potwierdzić, że do czasu korekty mam zapłacić tylko niższą kwotę?" },
+                { "language": "ro", "text": "Mulțumesc. Puteți confirma, vă rog, că până la corectare trebuie să plătesc doar suma mai mică?" },
+                { "language": "sq", "text": "Faleminderit. A mund të konfirmoni gjithashtu se deri në korrigjim duhet të paguaj vetëm shumën më të ulët?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort klärt eine wichtige Folgefrage, bevor bezahlt wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer clarifies an important follow-up question before payment." },
+                { "language": "fa", "text": "این پاسخ قبل از پرداخت یک سؤال مهم بعدی را روشن می‌کند." },
+                { "language": "ar", "text": "توضح الإجابة سؤالاً مهماً قبل الدفع." },
+                { "language": "tr", "text": "Cevap ödeme yapmadan önce önemli bir takip sorusunu netleştirir." },
+                { "language": "ru", "text": "Ответ проясняет важный последующий вопрос перед оплатой." },
+                { "language": "ckb", "text": "وەڵامەکە پێش پارەدان پرسێکی گرنگی داهاتوو ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv pêş dayînê pirseke girîng a şopandinê zelal dike." },
+                { "language": "pl", "text": "Odpowiedź wyjaśnia ważne pytanie dodatkowe przed płatnością." },
+                { "language": "ro", "text": "Răspunsul clarifică o întrebare importantă înainte de plată." },
+                { "language": "sq", "text": "Përgjigjja sqaron një pyetje të rëndësishme para pagesës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Okay, dann bekomme ich eine neue Rechnung.",
+              "translations": [
+                { "language": "en", "text": "Okay, then I will get a new invoice." },
+                { "language": "fa", "text": "باشه، پس یک فاکتور جدید دریافت می‌کنم." },
+                { "language": "ar", "text": "حسناً، إذن سأحصل على فاتورة جديدة." },
+                { "language": "tr", "text": "Tamam, o zaman yeni bir fatura alacağım." },
+                { "language": "ru", "text": "Хорошо, тогда я получу новый счёт." },
+                { "language": "ckb", "text": "باشە، کەواتە فاکتورێکی نوێ وەردەگرم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez fatûreyeke nû distînim." },
+                { "language": "pl", "text": "Dobrze, wtedy dostanę nową fakturę." },
+                { "language": "ro", "text": "Bine, atunci primesc o factură nouă." },
+                { "language": "sq", "text": "Në rregull, atëherë do të marr një faturë të re." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das wiederholt nur den nächsten Schritt. Es klärt nicht, ob und wie viel vor der Korrektur bezahlt werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This only repeats the next step. It does not clarify whether and how much should be paid before the correction." },
+                { "language": "fa", "text": "این فقط قدم بعدی را تکرار می‌کند. روشن نمی‌کند که قبل از اصلاح آیا باید پرداخت شود و چه مبلغی." },
+                { "language": "ar", "text": "هذا يكرر الخطوة التالية فقط. لا يوضح هل يجب الدفع قبل التصحيح وكم يجب دفعه." },
+                { "language": "tr", "text": "Bu sadece sonraki adımı tekrar eder. Düzeltmeden önce ödeme yapılıp yapılmayacağını ve ne kadar ödeneceğini açıklamaz." },
+                { "language": "ru", "text": "Это только повторяет следующий шаг. Не ясно, нужно ли платить до исправления и сколько." },
+                { "language": "ckb", "text": "ئەمە تەنها هەنگاوی داهاتوو دووبارە دەکاتەوە. ڕوون ناکاتەوە کە پێش چاککردن پارە بدرێت یان چەند بدرێت." },
+                { "language": "kmr", "text": "Ev tenê gava paşê dubare dike. Zelal nake ka berî rastkirinê divê were dayîn an çiqas were dayîn." },
+                { "language": "pl", "text": "To tylko powtarza kolejny krok. Nie wyjaśnia, czy i ile należy zapłacić przed korektą." },
+                { "language": "ro", "text": "Aceasta doar repetă pasul următor. Nu clarifică dacă și cât trebuie plătit înainte de corectare." },
+                { "language": "sq", "text": "Kjo vetëm përsërit hapin tjetër. Nuk sqaron nëse dhe sa duhet paguar para korrigjimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann warte ich auf die korrigierte Rechnung und bezahle danach den neuen Betrag. Könnten Sie mir bitte noch Ihre Bearbeitungsnummer nennen?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for the corrected invoice and pay the new amount after that. Could you please also give me your case number?" },
+                { "language": "fa", "text": "خیلی ممنون. پس منتظر فاکتور اصلاح‌شده می‌مانم و بعد مبلغ جدید را پرداخت می‌کنم. لطفاً شماره پیگیری این پرونده را هم می‌گویید؟" },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأنتظر الفاتورة المصححة ثم أدفع المبلغ الجديد. هل يمكن أن تعطيني أيضاً رقم المعالجة من فضلك؟" },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde düzeltilmiş faturayı beklerim ve sonra yeni tutarı öderim. Bana işlem numaranızı da söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Большое спасибо. Тогда я подожду исправленный счёт и после этого оплачу новую сумму. Можете также назвать мне номер обработки?" },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی فاکتوری چاککراو دەبم و پاشان بڕە نوێیەکە دەدەم. تکایە دەتوانن ژمارەی چارەسەرکردنەکەشم بڵێن؟" },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez li benda fatûreya rastkirî dimînim û paşê pereyê nû didim. Hûn dikarin jimareya karûbarê jî bibêjin?" },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie poczekam na skorygowaną fakturę i potem zapłacę nową kwotę. Czy może pan podać mi jeszcze numer sprawy?" },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci aștept factura corectată și plătesc apoi noua sumă. Îmi puteți spune, vă rog, și numărul de procesare?" },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë do të pres faturën e korrigjuar dhe pastaj do të paguaj shumën e re. A mund të më jepni edhe numrin e përpunimit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort fasst den Ablauf zusammen und fragt nach einer Referenznummer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer summarizes the process and asks for a reference number." },
+                { "language": "fa", "text": "این پاسخ روند کار را جمع‌بندی می‌کند و شماره پیگیری می‌خواهد." },
+                { "language": "ar", "text": "تلخص الإجابة الإجراء وتسأل عن رقم مرجعي." },
+                { "language": "tr", "text": "Cevap süreci özetler ve bir referans numarası ister." },
+                { "language": "ru", "text": "Ответ резюмирует процесс и спрашивает номер обращения." },
+                { "language": "ckb", "text": "وەڵامەکە ڕەوتەکە کورت دەکاتەوە و داوای ژمارەی ئاماژە دەکات." },
+                { "language": "kmr", "text": "Bersiv pêvajoyê kurt dike û jimareyeke referansê dixwaze." },
+                { "language": "pl", "text": "Odpowiedź podsumowuje procedurę i pyta o numer referencyjny." },
+                { "language": "ro", "text": "Răspunsul rezumă procesul și cere un număr de referință." },
+                { "language": "sq", "text": "Përgjigjja përmbledh procesin dhe kërkon një numër reference." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Alles klar, danke. Ich warte.",
+              "translations": [
+                { "language": "en", "text": "All right, thank you. I will wait." },
+                { "language": "fa", "text": "خیلی خب، ممنون. منتظر می‌مانم." },
+                { "language": "ar", "text": "حسناً، شكراً. سأنتظر." },
+                { "language": "tr", "text": "Tamam, teşekkürler. Beklerim." },
+                { "language": "ru", "text": "Хорошо, спасибо. Я подожду." },
+                { "language": "ckb", "text": "باشە، سوپاس. چاوەڕێ دەبم." },
+                { "language": "kmr", "text": "Baş e, spas. Ez ê li bendê bim." },
+                { "language": "pl", "text": "W porządku, dziękuję. Poczekam." },
+                { "language": "ro", "text": "În regulă, mulțumesc. Aștept." },
+                { "language": "sq", "text": "Në rregull, faleminderit. Do të pres." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber es fasst weder die Zahlung noch die Referenznummer zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly, but it summarizes neither the payment nor the reference number." },
+                { "language": "fa", "text": "این دوستانه است، اما نه پرداخت را جمع‌بندی می‌کند و نه شماره پیگیری را." },
+                { "language": "ar", "text": "هذا لطيف، لكنه لا يلخص الدفع ولا الرقم المرجعي." },
+                { "language": "tr", "text": "Bu nazik, ama ne ödemeyi ne de referans numarasını özetler." },
+                { "language": "ru", "text": "Это вежливо, но не резюмирует ни оплату, ни номер обращения." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام نە پارەدان و نە ژمارەی ئاماژە کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Ev dilovan e, lê ne dayînê û ne jimareya referansê kurt nake." },
+                { "language": "pl", "text": "To jest uprzejme, ale nie podsumowuje ani płatności, ani numeru referencyjnego." },
+                { "language": "ro", "text": "Este prietenos, dar nu rezumă nici plata, nici numărul de referință." },
+                { "language": "sq", "text": "Kjo është miqësore, por nuk përmbledh as pagesën, as numrin e referencës." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei Rechnungsproblemen helfen genaue Nummern, Beträge und eine klare Bitte um Korrektur.",
+          "translations": [
+            { "language": "en", "text": "B1 target: for invoice problems, exact numbers, amounts, and a clear request for correction help." },
+            { "language": "fa", "text": "هدف B1: در مشکلات فاکتور، شماره‌ها، مبلغ‌ها و درخواست روشن برای اصلاح کمک می‌کنند." },
+            { "language": "ar", "text": "هدف B1: في مشاكل الفواتير تساعد الأرقام والمبالغ الدقيقة وطلب التصحيح الواضح." },
+            { "language": "tr", "text": "B1 hedefi: fatura sorunlarında kesin numaralar, tutarlar ve net bir düzeltme isteği yardımcı olur." },
+            { "language": "ru", "text": "Цель B1: при проблемах со счётом помогают точные номера, суммы и ясная просьба об исправлении." },
+            { "language": "ckb", "text": "ئامانجی B1: لە کێشەکانی فاکتوردا ژمارە، بڕ و داوای ڕوونی چاککردن یارمەتی دەدەن." },
+            { "language": "kmr", "text": "Armanca B1: di pirsgirêkên fatûreyê de hejmar, pere û daxwaza zelal a rastkirinê alîkar in." },
+            { "language": "pl", "text": "Cel B1: przy problemach z fakturą pomagają dokładne numery, kwoty i jasna prośba o korektę." },
+            { "language": "ro", "text": "Ținta B1: la probleme de factură ajută numerele exacte, sumele și o cerere clară de corectare." },
+            { "language": "sq", "text": "Qëllimi B1: te problemet me faturat ndihmojnë numrat e saktë, shumat dhe një kërkesë e qartë për korrigjim." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-einen-vertrag-kuendigen-nachfragen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Vertrag kündigen und nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Cancelling a contract and asking follow-up questions" },
+        { "language": "fa", "text": "فسخ قرارداد و پرسیدن سؤال‌های پیگیری" },
+        { "language": "ar", "text": "إلغاء عقد وطرح أسئلة متابعة" },
+        { "language": "tr", "text": "Bir sözleşmeyi feshetmek ve takip soruları sormak" },
+        { "language": "ru", "text": "Расторгнуть договор и задать уточняющие вопросы" },
+        { "language": "ckb", "text": "هەڵوەشاندنەوەی گرێبەست و پرسینی پرسیاری شوێنکەوتن" },
+        { "language": "kmr", "text": "Betalkirina peymanê û pirsên şopandinê kirin" },
+        { "language": "pl", "text": "Wypowiedzenie umowy i zadanie pytań dodatkowych" },
+        { "language": "ro", "text": "Rezilierea unui contract și întrebări de clarificare" },
+        { "language": "sq", "text": "Anulimi i një kontrate dhe pyetje ndjekëse" }
+      ],
+      "description": "Du möchtest einen Vertrag telefonisch kündigen. Du fragst nach Frist, schriftlicher Bestätigung und dem letzten Vertragsdatum.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You want to cancel a contract by phone. You ask about the deadline, written confirmation, and the final contract date." },
+        { "language": "fa", "text": "می‌خواهی یک قرارداد را تلفنی فسخ کنی. درباره مهلت، تأیید کتبی و تاریخ آخر قرارداد می‌پرسی." },
+        { "language": "ar", "text": "تريد إلغاء عقد عبر الهاتف. تسأل عن المهلة والتأكيد الكتابي وتاريخ نهاية العقد." },
+        { "language": "tr", "text": "Bir sözleşmeyi telefonla feshetmek istiyorsun. Süre, yazılı onay ve son sözleşme tarihi hakkında soruyorsun." },
+        { "language": "ru", "text": "Ты хочешь расторгнуть договор по телефону. Ты спрашиваешь о сроке, письменном подтверждении и последней дате договора." },
+        { "language": "ckb", "text": "دەتەوێت بە تەلەفۆن گرێبەستێک هەڵبوەشێنیتەوە. دەربارەی ماوە، پشتڕاستکردنەوەی نووسراو و دوا ڕێکەوتی گرێبەست دەپرسیت." },
+        { "language": "kmr", "text": "Tu dixwazî bi telefonê peymanekê betal bikî. Tu li ser dem, pejirandina nivîskî û roja dawî ya peymanê dipirsî." },
+        { "language": "pl", "text": "Chcesz wypowiedzieć umowę telefonicznie. Pytasz o termin, pisemne potwierdzenie i ostatni dzień umowy." },
+        { "language": "ro", "text": "Vrei să reziliezi un contract telefonic. Întrebi despre termen, confirmare scrisă și ultima dată a contractului." },
+        { "language": "sq", "text": "Dëshiron të anulosh një kontratë me telefon. Pyet për afatin, konfirmimin me shkrim dhe datën e fundit të kontratës." }
+      ],
+      "learnerGoal": "Kündige höflich, frage nach Frist und schriftlicher Bestätigung und fasse das Vertragsende korrekt zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Cancel politely, ask about the deadline and written confirmation, and summarize the contract end correctly." },
+        { "language": "fa", "text": "مودبانه فسخ کن، درباره مهلت و تأیید کتبی بپرس و پایان قرارداد را درست جمع‌بندی کن." },
+        { "language": "ar", "text": "ألغِ العقد بأدب، واسأل عن المهلة والتأكيد الكتابي، ولخص نهاية العقد بشكل صحيح." },
+        { "language": "tr", "text": "Kibarca feshet, süre ve yazılı onay hakkında sor ve sözleşme bitişini doğru özetle." },
+        { "language": "ru", "text": "Расторгни договор вежливо, спроси о сроке и письменном подтверждении и правильно резюмируй окончание договора." },
+        { "language": "ckb", "text": "بە ڕێزەوە هەڵبوەشێنەوە، دەربارەی ماوە و پشتڕاستکردنەوەی نووسراو بپرسە و کۆتایی گرێبەستەکە بە دروستی کورت بکەرەوە." },
+        { "language": "kmr", "text": "Bi rêz betal bike, li ser dem û pejirandina nivîskî bipirse û dawiya peymanê bi rastî kurt bike." },
+        { "language": "pl", "text": "Wypowiedz umowę uprzejmie, zapytaj o termin i pisemne potwierdzenie oraz poprawnie podsumuj koniec umowy." },
+        { "language": "ro", "text": "Reziliază politicos, întreabă despre termen și confirmare scrisă și rezumă corect sfârșitul contractului." },
+        { "language": "sq", "text": "Anulo me mirësjellje, pyet për afatin dhe konfirmimin me shkrim dhe përmblidh saktë fundin e kontratës." }
+      ],
+      "cefrLevel": "B1",
+      "category": "customer-service",
+      "topics": ["customer-service", "documents-and-administration"],
+      "examProfiles": ["dtz-a2-b1", "berufssprache-b1"],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "ask-for-information",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2550,
+      "roles": [
+        {
+          "roleKey": "contract-agent",
+          "displayName": "Vertragsservice",
+          "translations": [
+            { "language": "en", "text": "Contract service" },
+            { "language": "fa", "text": "بخش قراردادها" },
+            { "language": "ar", "text": "خدمة العقود" },
+            { "language": "tr", "text": "Sözleşme servisi" },
+            { "language": "ru", "text": "Служба договоров" },
+            { "language": "ckb", "text": "خزمەتگوزاریی گرێبەست" },
+            { "language": "kmr", "text": "Xizmeta peymanê" },
+            { "language": "pl", "text": "Obsługa umów" },
+            { "language": "ro", "text": "Serviciul de contracte" },
+            { "language": "sq", "text": "Shërbimi i kontratave" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kunde",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "عميل" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиент" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Xerîdar" },
+            { "language": "pl", "text": "Klient" },
+            { "language": "ro", "text": "Client" },
+            { "language": "sq", "text": "Klienti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "contract-agent",
+          "baseText": "Guten Tag, Vertragsservice. Wie kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, contract service. How can I help you?" },
+            { "language": "fa", "text": "روز بخیر، بخش قراردادها. چطور می‌توانم کمکتان کنم؟" },
+            { "language": "ar", "text": "مرحباً، خدمة العقود. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler, sözleşme servisi. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день, служба договоров. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، خزمەتگوزاریی گرێبەست. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Roj baş, xizmeta peymanê. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Dzień dobry, obsługa umów. Jak mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, serviciul de contracte. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, shërbimi i kontratave. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich möchte meinen Internetvertrag kündigen und vorher klären, bis wann die Kündigung bei Ihnen sein muss.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. I would like to cancel my internet contract and first clarify by when the cancellation must reach you." },
+            { "language": "fa", "text": "روز بخیر. می‌خواهم قرارداد اینترنت خود را فسخ کنم و قبلش روشن کنم که فسخ تا چه تاریخی باید به دست شما برسد." },
+            { "language": "ar", "text": "مرحباً. أريد إلغاء عقد الإنترنت الخاص بي وأود أولاً أن أوضح متى يجب أن تصل إليكم الإلغاء." },
+            { "language": "tr", "text": "İyi günler. İnternet sözleşmemi feshetmek istiyorum ve önce fesih bildiriminin size ne zamana kadar ulaşması gerektiğini netleştirmek istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я хочу расторгнуть свой интернет-договор и сначала уточнить, до какого срока заявление должно поступить к вам." },
+            { "language": "ckb", "text": "ڕۆژ باش. دەمەوێت گرێبەستی ئینتەرنێتم هەڵبوەشێنمەوە و پێشتر ڕوون بکەمەوە کە هەڵوەشاندنەوەکە تا کەی دەبێت بگاتە ئێوە." },
+            { "language": "kmr", "text": "Roj baş. Ez dixwazim peymana înternetê ya xwe betal bikim û berê zelal bikim ku betalname heta kengê divê bigihîje we." },
+            { "language": "pl", "text": "Dzień dobry. Chciałbym wypowiedzieć moją umowę internetową i najpierw wyjaśnić, do kiedy wypowiedzenie musi do państwa dotrzeć." },
+            { "language": "ro", "text": "Bună ziua. Doresc să reziliez contractul meu de internet și să clarific mai întâi până când trebuie să ajungă rezilierea la dumneavoastră." },
+            { "language": "sq", "text": "Mirëdita. Dua të anuloj kontratën time të internetit dhe së pari të sqaroj deri kur duhet t'ju arrijë anulimi." }
+          ],
+          "function": "state-intention",
+          "expectedLearnerAction": "State the contract type and ask about the cancellation deadline."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "contract-agent",
+          "baseText": "Ich prüfe das gern. Haben Sie Ihre Kundennummer oder Vertragsnummer zur Hand?",
+          "translations": [
+            { "language": "en", "text": "I will gladly check that. Do you have your customer number or contract number at hand?" },
+            { "language": "fa", "text": "با کمال میل بررسی می‌کنم. آیا شماره مشتری یا شماره قرارداد خود را در دسترس دارید؟" },
+            { "language": "ar", "text": "سأتحقق من ذلك بكل سرور. هل لديك رقم العميل أو رقم العقد؟" },
+            { "language": "tr", "text": "Memnuniyetle kontrol ederim. Müşteri numaranız veya sözleşme numaranız yanınızda mı?" },
+            { "language": "ru", "text": "Я с удовольствием проверю. У вас под рукой номер клиента или номер договора?" },
+            { "language": "ckb", "text": "بە خۆشییەوە ئەمە دەپشکنم. ژمارەی کڕیار یان ژمارەی گرێبەستتان لەبەردەستە؟" },
+            { "language": "kmr", "text": "Ez bi kêfxweşî vê kontrol dikim. Jimareya xerîdar an jimareya peymanê li cem we heye?" },
+            { "language": "pl", "text": "Chętnie to sprawdzę. Czy ma pan pod ręką numer klienta albo numer umowy?" },
+            { "language": "ro", "text": "Verific cu plăcere. Aveți la îndemână numărul de client sau numărul contractului?" },
+            { "language": "sq", "text": "Me kënaqësi do ta kontrolloj. A e keni pranë numrin e klientit ose numrin e kontratës?" }
+          ],
+          "function": "ask-identification"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, die Kundennummer ist 33019. Der Vertrag läuft seit dem 1. März. Ich möchte wissen, ob ich noch zum Monatsende kündigen kann.",
+          "translations": [
+            { "language": "en", "text": "Yes, the customer number is 33019. The contract has been running since March 1. I would like to know whether I can still cancel by the end of the month." },
+            { "language": "fa", "text": "بله، شماره مشتری 33019 است. قرارداد از اول مارس فعال است. می‌خواهم بدانم آیا هنوز می‌توانم تا پایان ماه فسخ کنم." },
+            { "language": "ar", "text": "نعم، رقم العميل هو 33019. العقد سارٍ منذ 1 مارس. أود أن أعرف هل ما زلت أستطيع الإلغاء بنهاية الشهر." },
+            { "language": "tr", "text": "Evet, müşteri numarası 33019. Sözleşme 1 Mart'tan beri devam ediyor. Hâlâ ay sonuna kadar feshedip edemeyeceğimi bilmek istiyorum." },
+            { "language": "ru", "text": "Да, номер клиента 33019. Договор действует с 1 марта. Я хотел бы узнать, могу ли я ещё расторгнуть его к концу месяца." },
+            { "language": "ckb", "text": "بەڵێ، ژمارەی کڕیار 33019 ـە. گرێبەستەکە لە ١ی مارسەوە کارا بووە. دەمەوێت بزانم ئایا هێشتا دەتوانم تا کۆتایی مانگ هەڵیبوەشێنمەوە." },
+            { "language": "kmr", "text": "Erê, jimareya xerîdar 33019 e. Peyman ji 1ê Adarê ve dimeşe. Ez dixwazim bizanim gelo hê jî dikarim heta dawiya mehê betal bikim." },
+            { "language": "pl", "text": "Tak, numer klienta to 33019. Umowa trwa od 1 marca. Chciałbym wiedzieć, czy mogę jeszcze wypowiedzieć ją na koniec miesiąca." },
+            { "language": "ro", "text": "Da, numărul de client este 33019. Contractul este în vigoare din 1 martie. Aș dori să știu dacă îl mai pot rezilia până la sfârșitul lunii." },
+            { "language": "sq", "text": "Po, numri i klientit është 33019. Kontrata është aktive që nga 1 marsi. Dua të di nëse mund ta anuloj ende deri në fund të muajit." }
+          ],
+          "function": "provide-data",
+          "expectedLearnerAction": "Give customer number, contract start, and the specific deadline question."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "contract-agent",
+          "baseText": "Ja, wenn Ihre Kündigung bis zum 20. dieses Monats eingeht, endet der Vertrag zum Monatsende.",
+          "translations": [
+            { "language": "en", "text": "Yes, if your cancellation is received by the 20th of this month, the contract ends at the end of the month." },
+            { "language": "fa", "text": "بله، اگر فسخ شما تا بیستم این ماه برسد، قرارداد در پایان ماه تمام می‌شود." },
+            { "language": "ar", "text": "نعم، إذا وصل الإلغاء حتى يوم 20 من هذا الشهر، ينتهي العقد في نهاية الشهر." },
+            { "language": "tr", "text": "Evet, fesih bildiriminiz bu ayın 20'sine kadar ulaşırsa sözleşme ay sonunda biter." },
+            { "language": "ru", "text": "Да, если ваше заявление поступит до 20 числа этого месяца, договор закончится в конце месяца." },
+            { "language": "ckb", "text": "بەڵێ، ئەگەر هەڵوەشاندنەوەکەتان تا ٢٠ی ئەم مانگە بگات، گرێبەستەکە لە کۆتایی مانگدا کۆتایی دێت." },
+            { "language": "kmr", "text": "Erê, heke betalnameya we heta 20ê vê mehê bigihîje, peyman di dawiya mehê de diqede." },
+            { "language": "pl", "text": "Tak, jeśli wypowiedzenie wpłynie do 20. dnia tego miesiąca, umowa kończy się z końcem miesiąca." },
+            { "language": "ro", "text": "Da, dacă rezilierea ajunge până pe 20 ale acestei luni, contractul se încheie la sfârșitul lunii." },
+            { "language": "sq", "text": "Po, nëse anulimi juaj mbërrin deri më 20 të këtij muaji, kontrata përfundon në fund të muajit." }
+          ],
+          "function": "give-deadline"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke. Reicht eine Kündigung per E-Mail, oder muss ich sie zusätzlich per Post schicken?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Is cancellation by email enough, or do I also have to send it by post?" },
+            { "language": "fa", "text": "ممنون. آیا فسخ با ایمیل کافی است، یا باید آن را علاوه بر آن پستی هم بفرستم؟" },
+            { "language": "ar", "text": "شكراً. هل يكفي الإلغاء عبر البريد الإلكتروني، أم يجب أن أرسله أيضاً بالبريد العادي؟" },
+            { "language": "tr", "text": "Teşekkür ederim. E-postayla fesih yeterli mi, yoksa ayrıca postayla da göndermem gerekiyor mu?" },
+            { "language": "ru", "text": "Спасибо. Достаточно ли расторжения по электронной почте или мне нужно дополнительно отправить его по почте?" },
+            { "language": "ckb", "text": "سوپاس. ئایا هەڵوەشاندنەوە بە ئیمەیڵ بەسە، یان دەبێت بە پۆستیشی بنێرم؟" },
+            { "language": "kmr", "text": "Spas. Ma betalname bi e-nameyê bes e, an divê ez wê her wiha bi postê bişînim?" },
+            { "language": "pl", "text": "Dziękuję. Czy wypowiedzenie e-mailem wystarczy, czy muszę je dodatkowo wysłać pocztą?" },
+            { "language": "ro", "text": "Mulțumesc. Este suficientă rezilierea prin e-mail sau trebuie să o trimit și prin poștă?" },
+            { "language": "sq", "text": "Faleminderit. A mjafton anulimi me email, apo duhet ta dërgoj edhe me postë?" }
+          ],
+          "function": "ask-process",
+          "expectedLearnerAction": "Ask about accepted cancellation channels."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "contract-agent",
+          "baseText": "Eine E-Mail reicht. Sie bekommen danach automatisch eine schriftliche Bestätigung mit dem Vertragsende.",
+          "translations": [
+            { "language": "en", "text": "An email is enough. After that you automatically receive written confirmation with the contract end date." },
+            { "language": "fa", "text": "ایمیل کافی است. بعد از آن به‌صورت خودکار یک تأیید کتبی با تاریخ پایان قرارداد دریافت می‌کنید." },
+            { "language": "ar", "text": "البريد الإلكتروني يكفي. بعد ذلك تتلقى تلقائياً تأكيداً كتابياً مع تاريخ نهاية العقد." },
+            { "language": "tr", "text": "Bir e-posta yeterlidir. Ardından sözleşme bitiş tarihiyle birlikte otomatik olarak yazılı onay alırsınız." },
+            { "language": "ru", "text": "Электронного письма достаточно. После этого вы автоматически получите письменное подтверждение с датой окончания договора." },
+            { "language": "ckb", "text": "ئیمەیڵ بەسە. دوای ئەوە بە شێوەی خۆکار پشتڕاستکردنەوەی نووسراو لەگەڵ ڕێکەوتی کۆتایی گرێبەست وەردەگرن." },
+            { "language": "kmr", "text": "E-name bes e. Piştî wê hûn bixweber pejirandineke nivîskî bi roja dawiya peymanê distînin." },
+            { "language": "pl", "text": "E-mail wystarczy. Potem otrzyma pan automatycznie pisemne potwierdzenie z datą końca umowy." },
+            { "language": "ro", "text": "Un e-mail este suficient. După aceea primiți automat o confirmare scrisă cu data de încheiere a contractului." },
+            { "language": "sq", "text": "Një email mjafton. Pas kësaj merrni automatikisht një konfirmim me shkrim me datën e përfundimit të kontratës." }
+          ],
+          "function": "give-process"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Gut, dann schicke ich die Kündigung heute per E-Mail. Wenn sie bis zum 20. eingeht, endet der Vertrag also zum Monatsende und ich bekomme eine schriftliche Bestätigung.",
+          "translations": [
+            { "language": "en", "text": "Good, then I will send the cancellation by email today. So if it is received by the 20th, the contract ends at the end of the month and I receive written confirmation." },
+            { "language": "fa", "text": "خوب، پس امروز فسخ را با ایمیل می‌فرستم. بنابراین اگر تا بیستم برسد، قرارداد در پایان ماه تمام می‌شود و من تأیید کتبی دریافت می‌کنم." },
+            { "language": "ar", "text": "حسناً، إذن سأرسل الإلغاء اليوم عبر البريد الإلكتروني. إذا وصل حتى يوم 20، ينتهي العقد إذاً في نهاية الشهر وأتلقى تأكيداً كتابياً." },
+            { "language": "tr", "text": "Tamam, o zaman fesih bildirimini bugün e-postayla gönderirim. Yani 20'sine kadar ulaşırsa sözleşme ay sonunda biter ve yazılı onay alırım." },
+            { "language": "ru", "text": "Хорошо, тогда я сегодня отправлю заявление по электронной почте. Если оно поступит до 20-го, договор закончится в конце месяца, и я получу письменное подтверждение." },
+            { "language": "ckb", "text": "باشە، کەواتە ئەمڕۆ هەڵوەشاندنەوەکە بە ئیمەیڵ دەنێرم. ئەگەر تا ٢٠ بگات، گرێبەستەکە لە کۆتایی مانگدا کۆتایی دێت و پشتڕاستکردنەوەی نووسراو وەردەگرم." },
+            { "language": "kmr", "text": "Baş e, wê demê ez îro betalnameyê bi e-nameyê dişînim. Heke heta 20ê bigihîje, peyman di dawiya mehê de diqede û ez pejirandina nivîskî distînim." },
+            { "language": "pl", "text": "Dobrze, więc wyślę dziś wypowiedzenie e-mailem. Jeśli wpłynie do 20., umowa kończy się z końcem miesiąca i otrzymam pisemne potwierdzenie." },
+            { "language": "ro", "text": "Bine, atunci trimit astăzi rezilierea prin e-mail. Dacă ajunge până pe 20, contractul se încheie la sfârșitul lunii și primesc o confirmare scrisă." },
+            { "language": "sq", "text": "Mirë, atëherë do ta dërgoj anulimin sot me email. Nëse mbërrin deri më 20, kontrata përfundon në fund të muajit dhe marr një konfirmim me shkrim." }
+          ],
+          "function": "summarize-process",
+          "expectedLearnerAction": "Summarize deadline, channel, contract end, and written confirmation."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag. Ich möchte meinen Internetvertrag kündigen und vorher klären, bis wann die Kündigung bei Ihnen sein muss.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. I would like to cancel my internet contract and first clarify by when the cancellation must reach you." },
+                { "language": "fa", "text": "روز بخیر. می‌خواهم قرارداد اینترنت خود را فسخ کنم و قبلش روشن کنم که فسخ تا چه تاریخی باید به دست شما برسد." },
+                { "language": "ar", "text": "مرحباً. أريد إلغاء عقد الإنترنت الخاص بي وأود أولاً أن أوضح متى يجب أن تصل إليكم الإلغاء." },
+                { "language": "tr", "text": "İyi günler. İnternet sözleşmemi feshetmek istiyorum ve önce fesih bildiriminin size ne zamana kadar ulaşması gerektiğini netleştirmek istiyorum." },
+                { "language": "ru", "text": "Добрый день. Я хочу расторгнуть свой интернет-договор и сначала уточнить, до какого срока заявление должно поступить к вам." },
+                { "language": "ckb", "text": "ڕۆژ باش. دەمەوێت گرێبەستی ئینتەرنێتم هەڵبوەشێنمەوە و پێشتر ڕوون بکەمەوە کە هەڵوەشاندنەوەکە تا کەی دەبێت بگاتە ئێوە." },
+                { "language": "kmr", "text": "Roj baş. Ez dixwazim peymana înternetê ya xwe betal bikim û berê zelal bikim ku betalname heta kengê divê bigihîje we." },
+                { "language": "pl", "text": "Dzień dobry. Chciałbym wypowiedzieć moją umowę internetową i najpierw wyjaśnić, do kiedy wypowiedzenie musi do państwa dotrzeć." },
+                { "language": "ro", "text": "Bună ziua. Doresc să reziliez contractul meu de internet și să clarific mai întâi până când trebuie să ajungă rezilierea la dumneavoastră." },
+                { "language": "sq", "text": "Mirëdita. Dua të anuloj kontratën time të internetit dhe së pari të sqaroj deri kur duhet t'ju arrijë anulimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt den Wunsch und die wichtigste Fristfrage sofort.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer immediately states the request and the most important deadline question." },
+                { "language": "fa", "text": "این پاسخ فوراً خواسته و مهم‌ترین سؤال درباره مهلت را بیان می‌کند." },
+                { "language": "ar", "text": "تذكر الإجابة الطلب وأهم سؤال عن المهلة فوراً." },
+                { "language": "tr", "text": "Cevap isteği ve en önemli süre sorusunu hemen belirtir." },
+                { "language": "ru", "text": "Ответ сразу называет желание и самый важный вопрос о сроке." },
+                { "language": "ckb", "text": "وەڵامەکە دەستبەجێ داواکاری و گرنگترین پرسیاری ماوە دەڵێت." },
+                { "language": "kmr", "text": "Bersiv daxwaz û pirsa herî girîng a demê yekser dibêje." },
+                { "language": "pl", "text": "Odpowiedź od razu podaje prośbę i najważniejsze pytanie o termin." },
+                { "language": "ro", "text": "Răspunsul spune imediat dorința și cea mai importantă întrebare despre termen." },
+                { "language": "sq", "text": "Përgjigjja tregon menjëherë kërkesën dhe pyetjen më të rëndësishme për afatin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Guten Tag. Ich möchte kündigen. Wie geht das?",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. I would like to cancel. How does that work?" },
+                { "language": "fa", "text": "روز بخیر. می‌خواهم فسخ کنم. این چطور انجام می‌شود؟" },
+                { "language": "ar", "text": "مرحباً. أريد الإلغاء. كيف يتم ذلك؟" },
+                { "language": "tr", "text": "İyi günler. Feshetmek istiyorum. Bu nasıl oluyor?" },
+                { "language": "ru", "text": "Добрый день. Я хочу расторгнуть. Как это делается?" },
+                { "language": "ckb", "text": "ڕۆژ باش. دەمەوێت هەڵبوەشێنمەوە. ئەمە چۆن دەکرێت؟" },
+                { "language": "kmr", "text": "Roj baş. Ez dixwazim betal bikim. Ev çawa dibe?" },
+                { "language": "pl", "text": "Dzień dobry. Chciałbym wypowiedzieć umowę. Jak to działa?" },
+                { "language": "ro", "text": "Bună ziua. Doresc să reziliez. Cum se face?" },
+                { "language": "sq", "text": "Mirëdita. Dua ta anuloj. Si bëhet kjo?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu allgemein: Vertragstyp und Fristfrage fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite but too general: the contract type and deadline question are missing." },
+                { "language": "fa", "text": "این مودبانه است، اما خیلی کلی است: نوع قرارداد و سؤال درباره مهلت کم دارد." },
+                { "language": "ar", "text": "هذا مهذب لكنه عام جداً: ينقص نوع العقد وسؤال المهلة." },
+                { "language": "tr", "text": "Bu kibar ama çok genel: sözleşme türü ve süre sorusu eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком общее: не хватает типа договора и вопроса о сроке." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر گشتییە: جۆری گرێبەست و پرسیاری ماوە کەمە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir giştî ye: cureyê peymanê û pirsa demê kêm in." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt ogólne: brakuje typu umowy i pytania o termin." },
+                { "language": "ro", "text": "Este politicos, dar prea general: lipsesc tipul contractului și întrebarea despre termen." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e përgjithshme: mungon lloji i kontratës dhe pyetja për afatin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke. Reicht eine Kündigung per E-Mail, oder muss ich sie zusätzlich per Post schicken?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Is cancellation by email enough, or do I also have to send it by post?" },
+                { "language": "fa", "text": "ممنون. آیا فسخ با ایمیل کافی است، یا باید آن را علاوه بر آن پستی هم بفرستم؟" },
+                { "language": "ar", "text": "شكراً. هل يكفي الإلغاء عبر البريد الإلكتروني، أم يجب أن أرسله أيضاً بالبريد العادي؟" },
+                { "language": "tr", "text": "Teşekkür ederim. E-postayla fesih yeterli mi, yoksa ayrıca postayla da göndermem gerekiyor mu?" },
+                { "language": "ru", "text": "Спасибо. Достаточно ли расторжения по электронной почте или мне нужно дополнительно отправить его по почте?" },
+                { "language": "ckb", "text": "سوپاس. ئایا هەڵوەشاندنەوە بە ئیمەیڵ بەسە، یان دەبێت بە پۆستیشی بنێرم؟" },
+                { "language": "kmr", "text": "Spas. Ma betalname bi e-nameyê bes e, an divê ez wê her wiha bi postê bişînim?" },
+                { "language": "pl", "text": "Dziękuję. Czy wypowiedzenie e-mailem wystarczy, czy muszę je dodatkowo wysłać pocztą?" },
+                { "language": "ro", "text": "Mulțumesc. Este suficientă rezilierea prin e-mail sau trebuie să o trimit și prin poștă?" },
+                { "language": "sq", "text": "Faleminderit. A mjafton anulimi me email, apo duhet ta dërgoj edhe me postë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort klärt den konkreten Weg der Kündigung, nicht nur die Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer clarifies the concrete cancellation channel, not only the deadline." },
+                { "language": "fa", "text": "این پاسخ راه مشخص فسخ را روشن می‌کند، نه فقط مهلت را." },
+                { "language": "ar", "text": "توضح الإجابة طريقة الإلغاء المحددة، وليس المهلة فقط." },
+                { "language": "tr", "text": "Cevap yalnızca süreyi değil, somut fesih yolunu da netleştirir." },
+                { "language": "ru", "text": "Ответ уточняет конкретный способ расторжения, а не только срок." },
+                { "language": "ckb", "text": "وەڵامەکە ڕێگای دیاریکراوی هەڵوەشاندنەوە ڕوون دەکاتەوە، نەک تەنها ماوەکە." },
+                { "language": "kmr", "text": "Bersiv rêya zelal a betalkirinê zelal dike, ne tenê demê." },
+                { "language": "pl", "text": "Odpowiedź wyjaśnia konkretny sposób wypowiedzenia, nie tylko termin." },
+                { "language": "ro", "text": "Răspunsul clarifică modalitatea concretă de reziliere, nu doar termenul." },
+                { "language": "sq", "text": "Përgjigjja sqaron mënyrën konkrete të anulimit, jo vetëm afatin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann schicke ich Ihnen etwas schriftlich.",
+              "translations": [
+                { "language": "en", "text": "Then I will send you something in writing." },
+                { "language": "fa", "text": "پس چیزی را به صورت کتبی برایتان می‌فرستم." },
+                { "language": "ar", "text": "إذن سأرسل لكم شيئاً مكتوباً." },
+                { "language": "tr", "text": "O zaman size yazılı bir şey gönderirim." },
+                { "language": "ru", "text": "Тогда я отправлю вам что-нибудь письменно." },
+                { "language": "ckb", "text": "کەواتە شتێکتان بە نووسراوی بۆ دەنێرم." },
+                { "language": "kmr", "text": "Wê demê ez tiştekî nivîskî ji we re dişînim." },
+                { "language": "pl", "text": "W takim razie wyślę państwu coś pisemnie." },
+                { "language": "ro", "text": "Atunci vă trimit ceva în scris." },
+                { "language": "sq", "text": "Atëherë do t'ju dërgoj diçka me shkrim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist zu ungenau: E-Mail oder Post bleibt unklar und kann bei Fristen riskant sein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is too vague: email or post remains unclear and can be risky with deadlines." },
+                { "language": "fa", "text": "این خیلی مبهم است: ایمیل یا پست روشن نیست و برای مهلت‌ها می‌تواند خطرناک باشد." },
+                { "language": "ar", "text": "هذا غير دقيق جداً: البريد الإلكتروني أم البريد العادي يبقى غير واضح وقد يكون خطراً مع المهل." },
+                { "language": "tr", "text": "Bu çok belirsiz: e-posta mı posta mı olduğu açık değil ve süreler için riskli olabilir." },
+                { "language": "ru", "text": "Это слишком неопределённо: электронная почта или обычная почта остаётся неясным, а при сроках это рискованно." },
+                { "language": "ckb", "text": "ئەمە زۆر ناڕوونە: ئیمەیڵ یان پۆست دیار نییە و دەتوانێت بۆ ماوەکان مەترسیدار بێت." },
+                { "language": "kmr", "text": "Ev pir nezelal e: e-name an post ne diyar e û ji bo deman dikare xeternak be." },
+                { "language": "pl", "text": "To jest zbyt nieprecyzyjne: e-mail czy poczta pozostaje niejasne i może być ryzykowne przy terminach." },
+                { "language": "ro", "text": "Este prea vag: e-mail sau poștă rămâne neclar și poate fi riscant la termene." },
+                { "language": "sq", "text": "Kjo është shumë e paqartë: email apo postë mbetet e paqartë dhe mund të jetë e rrezikshme me afatet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gut, dann schicke ich die Kündigung heute per E-Mail. Wenn sie bis zum 20. eingeht, endet der Vertrag also zum Monatsende und ich bekomme eine schriftliche Bestätigung.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will send the cancellation by email today. So if it is received by the 20th, the contract ends at the end of the month and I receive written confirmation." },
+                { "language": "fa", "text": "خوب، پس امروز فسخ را با ایمیل می‌فرستم. بنابراین اگر تا بیستم برسد، قرارداد در پایان ماه تمام می‌شود و من تأیید کتبی دریافت می‌کنم." },
+                { "language": "ar", "text": "حسناً، إذن سأرسل الإلغاء اليوم عبر البريد الإلكتروني. إذا وصل حتى يوم 20، ينتهي العقد إذاً في نهاية الشهر وأتلقى تأكيداً كتابياً." },
+                { "language": "tr", "text": "Tamam, o zaman fesih bildirimini bugün e-postayla gönderirim. Yani 20'sine kadar ulaşırsa sözleşme ay sonunda biter ve yazılı onay alırım." },
+                { "language": "ru", "text": "Хорошо, тогда я сегодня отправлю заявление по электронной почте. Если оно поступит до 20-го, договор закончится в конце месяца, и я получу письменное подтверждение." },
+                { "language": "ckb", "text": "باشە، کەواتە ئەمڕۆ هەڵوەشاندنەوەکە بە ئیمەیڵ دەنێرم. ئەگەر تا ٢٠ بگات، گرێبەستەکە لە کۆتایی مانگدا کۆتایی دێت و پشتڕاستکردنەوەی نووسراو وەردەگرم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez îro betalnameyê bi e-nameyê dişînim. Heke heta 20ê bigihîje, peyman di dawiya mehê de diqede û ez pejirandina nivîskî distînim." },
+                { "language": "pl", "text": "Dobrze, więc wyślę dziś wypowiedzenie e-mailem. Jeśli wpłynie do 20., umowa kończy się z końcem miesiąca i otrzymam pisemne potwierdzenie." },
+                { "language": "ro", "text": "Bine, atunci trimit astăzi rezilierea prin e-mail. Dacă ajunge până pe 20, contractul se încheie la sfârșitul lunii și primesc o confirmare scrisă." },
+                { "language": "sq", "text": "Mirë, atëherë do ta dërgoj anulimin sot me email. Nëse mbërrin deri më 20, kontrata përfundon në fund të muajit dhe marr një konfirmim me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort wiederholt Kanal, Frist, Vertragsende und Bestätigung korrekt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer correctly repeats channel, deadline, contract end, and confirmation." },
+                { "language": "fa", "text": "این پاسخ روش ارسال، مهلت، پایان قرارداد و تأیید را درست تکرار می‌کند." },
+                { "language": "ar", "text": "تكرر الإجابة طريقة الإرسال والمهلة ونهاية العقد والتأكيد بشكل صحيح." },
+                { "language": "tr", "text": "Cevap kanal, süre, sözleşme bitişi ve onayı doğru şekilde tekrar eder." },
+                { "language": "ru", "text": "Ответ правильно повторяет канал, срок, окончание договора и подтверждение." },
+                { "language": "ckb", "text": "وەڵامەکە ڕێگا، ماوە، کۆتایی گرێبەست و پشتڕاستکردنەوە بە دروستی دووبارە دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv rê, dem, dawiya peymanê û pejirandinê bi rastî dubare dike." },
+                { "language": "pl", "text": "Odpowiedź poprawnie powtarza kanał, termin, koniec umowy i potwierdzenie." },
+                { "language": "ro", "text": "Răspunsul repetă corect canalul, termenul, sfârșitul contractului și confirmarea." },
+                { "language": "sq", "text": "Përgjigjja përsërit saktë mënyrën, afatin, fundin e kontratës dhe konfirmimin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann kündige ich heute. Danke.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will cancel today. Thank you." },
+                { "language": "fa", "text": "خوب، پس امروز فسخ می‌کنم. ممنون." },
+                { "language": "ar", "text": "حسناً، إذن سألغي اليوم. شكراً." },
+                { "language": "tr", "text": "Tamam, o zaman bugün feshederim. Teşekkürler." },
+                { "language": "ru", "text": "Хорошо, тогда я сегодня расторгну. Спасибо." },
+                { "language": "ckb", "text": "باشە، کەواتە ئەمڕۆ هەڵی دەوەشێنم. سوپاس." },
+                { "language": "kmr", "text": "Baş e, wê demê ez îro betal dikim. Spas." },
+                { "language": "pl", "text": "Dobrze, więc wypowiem dziś umowę. Dziękuję." },
+                { "language": "ro", "text": "Bine, atunci reziliez azi. Mulțumesc." },
+                { "language": "sq", "text": "Mirë, atëherë e anuloj sot. Faleminderit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu kurz: Frist, Vertragsende und schriftliche Bestätigung werden nicht wiederholt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly but too short: deadline, contract end, and written confirmation are not repeated." },
+                { "language": "fa", "text": "این دوستانه است، اما خیلی کوتاه است: مهلت، پایان قرارداد و تأیید کتبی تکرار نمی‌شود." },
+                { "language": "ar", "text": "هذا لطيف لكنه قصير جداً: لا يتم تكرار المهلة ونهاية العقد والتأكيد الكتابي." },
+                { "language": "tr", "text": "Bu nazik ama çok kısa: süre, sözleşme bitişi ve yazılı onay tekrar edilmiyor." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко: срок, окончание договора и письменное подтверждение не повторяются." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر کورتە: ماوە، کۆتایی گرێبەست و پشتڕاستکردنەوەی نووسراو دووبارە ناکرێتەوە." },
+                { "language": "kmr", "text": "Ev dilovan e, lê pir kurt e: dem, dawiya peymanê û pejirandina nivîskî nayên dubarekirin." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt krótkie: termin, koniec umowy i pisemne potwierdzenie nie są powtórzone." },
+                { "language": "ro", "text": "Este prietenos, dar prea scurt: termenul, sfârșitul contractului și confirmarea scrisă nu sunt repetate." },
+                { "language": "sq", "text": "Kjo është miqësore, por shumë e shkurtër: afati, fundi i kontratës dhe konfirmimi me shkrim nuk përsëriten." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei Kündigungen sind Vertragstyp, Frist, erlaubter Kanal und schriftliche Bestätigung wichtig.",
+          "translations": [
+            { "language": "en", "text": "B1 target: for cancellations, contract type, deadline, allowed channel, and written confirmation are important." },
+            { "language": "fa", "text": "هدف B1: در فسخ قرارداد، نوع قرارداد، مهلت، روش مجاز و تأیید کتبی مهم هستند." },
+            { "language": "ar", "text": "هدف B1: في الإلغاءات، نوع العقد والمهلة والطريقة المسموحة والتأكيد الكتابي أمور مهمة." },
+            { "language": "tr", "text": "B1 hedefi: fesihlerde sözleşme türü, süre, izin verilen kanal ve yazılı onay önemlidir." },
+            { "language": "ru", "text": "Цель B1: при расторжении важны тип договора, срок, допустимый канал и письменное подтверждение." },
+            { "language": "ckb", "text": "ئامانجی B1: لە هەڵوەشاندنەوەدا جۆری گرێبەست، ماوە، ڕێگای ڕێپێدراو و پشتڕاستکردنەوەی نووسراو گرنگن." },
+            { "language": "kmr", "text": "Armanca B1: di betalkirinê de cureyê peymanê, dem, rêya destûrdar û pejirandina nivîskî girîng in." },
+            { "language": "pl", "text": "Cel B1: przy wypowiedzeniach ważne są typ umowy, termin, dozwolony kanał i pisemne potwierdzenie." },
+            { "language": "ro", "text": "Ținta B1: la rezilieri sunt importante tipul contractului, termenul, canalul permis și confirmarea scrisă." },
+            { "language": "sq", "text": "Qëllimi B1: te anulimet janë të rëndësishme lloji i kontratës, afati, mënyra e lejuar dhe konfirmimi me shkrim." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

@@ -1,12 +1,21 @@
 @model DarwinLingua.Web.Models.CourseDetailPageViewModel
 @{
     ViewData["Title"] = Model.Course.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
     <span class="eyebrow">@(Model.Course.CefrLevel ?? Model.Course.CefrRange)</span>
     <h1 class="headline-md">@Model.Course.Title</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.Course.LearnerLanguageTitle))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Course.LearnerLanguageTitle</p>
+    }
     <p class="body-lg">@Model.Course.Description</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Course.LearnerLanguageDescription))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Course.LearnerLanguageDescription</p>
+    }
 </section>
 
 <section class="stack-lg">
@@ -15,7 +24,15 @@
         <article class="panel stack-md">
             <span class="eyebrow">@T["Module"] @module.ModuleNumber · @module.CefrLevel</span>
             <h2 class="headline-sm">@module.Title</h2>
+            @if (!string.IsNullOrWhiteSpace(module.LearnerLanguageTitle))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @module.LearnerLanguageTitle</p>
+            }
             <p>@module.Description</p>
+            @if (!string.IsNullOrWhiteSpace(module.LearnerLanguageDescription))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @module.LearnerLanguageDescription</p>
+            }
             @if (module.Lessons.Count == 0)
             {
                 <p>@T["No lessons have been imported for this module yet."]</p>
@@ -28,7 +45,15 @@
                         <li>
                             <a asp-controller="Courses" asp-action="Lesson" asp-route-courseSlug="@lesson.CoursePathSlug" asp-route-lessonSlug="@lesson.Slug">@lesson.LessonNumber. @lesson.Title</a>
                             <small>@lesson.CefrLevel · @T["{0} minutes", lesson.EstimatedMinutes]</small>
+                            @if (!string.IsNullOrWhiteSpace(lesson.LearnerLanguageTitle))
+                            {
+                                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @lesson.LearnerLanguageTitle</p>
+                            }
                             <p>@lesson.ShortDescription</p>
+                            @if (!string.IsNullOrWhiteSpace(lesson.LearnerLanguageShortDescription))
+                            {
+                                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @lesson.LearnerLanguageShortDescription</p>
+                            }
                         </li>
                     }
                 </ol>

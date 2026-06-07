@@ -1,0 +1,718 @@
+{
+  "packageId": "roleplays-c2-core-72-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 72 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 72",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-algorithmischen-fehler-verstaendlich-erklaeren",
+      "linkedDialogueSlug": null,
+      "title": "Einen algorithmischen Fehler verständlich erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining an algorithmic error clearly" },
+        { "language": "fa", "text": "توضیح روشن یک خطای الگوریتمی" },
+        { "language": "ar", "text": "شرح خطأ خوارزمي بوضوح" },
+        { "language": "tr", "text": "Algoritmik bir hatayı anlaşılır biçimde açıklamak" },
+        { "language": "ru", "text": "Понятно объяснить алгоритмическую ошибку" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی هەڵەیەکی ئەلگۆریتمی بە شێوەی تێگەیشتوو" },
+        { "language": "kmr", "text": "Şirovekirina şaşiyeke algorîtmî bi awayekî zelal" },
+        { "language": "pl", "text": "Zrozumiałe wyjaśnienie błędu algorytmicznego" },
+        { "language": "ro", "text": "Explicarea clară a unei erori algoritmice" },
+        { "language": "sq", "text": "Shpjegimi i qartë i një gabimi algoritmik" }
+      ],
+      "description": "In einem internen Informationsgespräch müssen Sie erklären, warum eine automatische Priorisierung mehrere Anfragen falsch eingeordnet hat. Die Erklärung soll für Nichtfachleute verständlich sein, ohne die technische Ursache zu verfälschen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an internal information meeting, you must explain why an automatic prioritization system classified several requests incorrectly. The explanation should be understandable for non-specialists without distorting the technical cause." },
+        { "language": "fa", "text": "در یک جلسه اطلاع‌رسانی داخلی باید توضیح دهید چرا یک سیستم اولویت‌بندی خودکار چند درخواست را اشتباه دسته‌بندی کرده است. توضیح باید برای افراد غیرمتخصص قابل فهم باشد، بدون اینکه علت فنی را تحریف کند." },
+        { "language": "ar", "text": "في اجتماع معلومات داخلي يجب أن تشرحوا لماذا صنّف نظام أولوية تلقائي عدة طلبات بشكل خاطئ. ينبغي أن يكون الشرح مفهومًا لغير المختصين من دون تشويه السبب التقني." },
+        { "language": "tr", "text": "İç bilgilendirme toplantısında otomatik bir önceliklendirme sisteminin birkaç başvuruyu neden yanlış sınıflandırdığını açıklamanız gerekir. Açıklama, teknik nedeni bozmadan uzman olmayan kişiler için anlaşılır olmalıdır." },
+        { "language": "ru", "text": "На внутренней информационной встрече нужно объяснить, почему система автоматической приоритизации неверно классифицировала несколько запросов. Объяснение должно быть понятным для неспециалистов, не искажая техническую причину." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی ناوخۆیی بۆ زانیاریدا دەبێت ڕوون بکەیتەوە بۆچی سیستەمێکی خۆکاری پێشینەدان چەند داواکارییەکی بە هەڵە پۆلێن کردووە. ڕوونکردنەوەکە دەبێت بۆ کەسانی ناپسپۆڕ تێگەیشتوو بێت، بەبێ ئەوەی هۆکاری تەکنیکی بشێوێنێت." },
+        { "language": "kmr", "text": "Di civîneke agahdarî ya navxweyî de divê hûn rave bikin çima pergala bixweber a pêşengkirinê çend daxwazan şaş rêz kiriye. Ravekirin divê ji bo kesên nepispor were famkirin, bêyî ku sedema teknîkî were şewitandin." },
+        { "language": "pl", "text": "Podczas wewnętrznego spotkania informacyjnego musi Pan/Pani wyjaśnić, dlaczego automatyczny system priorytetyzacji błędnie sklasyfikował kilka zgłoszeń. Wyjaśnienie ma być zrozumiałe dla niespecjalistów, bez zniekształcania przyczyny technicznej." },
+        { "language": "ro", "text": "Într-o întâlnire internă de informare trebuie să explicați de ce un sistem automat de prioritizare a clasificat greșit mai multe solicitări. Explicația trebuie să fie clară pentru nespecialiști, fără a denatura cauza tehnică." },
+        { "language": "sq", "text": "Në një takim të brendshëm informues duhet të shpjegoni pse një sistem automatik për vendosjen e përparësive i klasifikoi gabim disa kërkesa. Shpjegimi duhet të jetë i kuptueshëm për jo-specialistë, pa shtrembëruar shkakun teknik." }
+      ],
+      "learnerGoal": "Einen algorithmischen Fehler auf C2-Niveau erklären: Symptom, Ursache, Reichweite, Folgen, Korrekturweg und verbleibende Unsicherheit trennen, ohne sich hinter Fachsprache zu verstecken.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain an algorithmic error at C2 level: separate symptom, cause, scope, consequences, correction path, and remaining uncertainty without hiding behind technical language." },
+        { "language": "fa", "text": "یک خطای الگوریتمی را در سطح C2 توضیح دهید: نشانه، علت، دامنه، پیامدها، مسیر اصلاح و عدم قطعیت باقی‌مانده را از هم جدا کنید، بدون اینکه پشت زبان فنی پنهان شوید." },
+        { "language": "ar", "text": "اشرحوا خطأ خوارزميًا بمستوى C2: افصلوا بين العَرَض والسبب والنطاق والنتائج ومسار التصحيح وما يبقى من عدم يقين، من دون الاختباء خلف لغة تقنية." },
+        { "language": "tr", "text": "Algoritmik bir hatayı C2 düzeyinde açıklayın: belirtiyi, nedeni, kapsamı, sonuçları, düzeltme yolunu ve kalan belirsizliği ayırın; teknik dilin arkasına saklanmayın." },
+        { "language": "ru", "text": "Объяснить алгоритмическую ошибку на уровне C2: разделить симптом, причину, масштаб, последствия, путь исправления и оставшуюся неопределенность, не прячась за техническим языком." },
+        { "language": "ckb", "text": "هەڵەیەکی ئەلگۆریتمی لە ئاستی C2 ڕوون بکەوە: نیشانە، هۆکار، سنوور، ئەنجام، ڕێگای ڕاستکردنەوە و نادڵنیایی ماوە جیا بکەوە، بەبێ ئەوەی پشت زمانی تەکنیکی خۆت بشاریتەوە." },
+        { "language": "kmr", "text": "Şaşiyeke algorîtmî di asta C2 de rave bikin: nîşan, sedem, qada bandorê, encam, rêya rastkirinê û nezelaliya mayî ji hev veqetînin, bêyî ku hûn li pişt zimanê teknîkî veşêrin." },
+        { "language": "pl", "text": "Wyjaśnić błąd algorytmiczny na poziomie C2: oddzielić objaw, przyczynę, zakres, skutki, ścieżkę korekty i pozostałą niepewność, nie chowając się za językiem technicznym." },
+        { "language": "ro", "text": "Explicați o eroare algoritmică la nivel C2: separați simptomul, cauza, aria, consecințele, calea de corectare și incertitudinea rămasă, fără a vă ascunde în spatele limbajului tehnic." },
+        { "language": "sq", "text": "Shpjegoni një gabim algoritmik në nivel C2: ndani shenjën, shkakun, shtrirjen, pasojat, rrugën e korrigjimit dhe pasigurinë e mbetur, pa u fshehur pas gjuhës teknike." }
+      ],
+      "cefrLevel": "C2",
+      "category": "technology",
+      "topics": ["business-communication", "education-and-training"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 72,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Technische/r Ansprechpartner/in",
+          "translations": [
+            { "language": "en", "text": "Technical contact person" },
+            { "language": "fa", "text": "مسئول فنی پاسخ‌گو" },
+            { "language": "ar", "text": "جهة الاتصال التقنية" },
+            { "language": "tr", "text": "Teknik irtibat kişisi" },
+            { "language": "ru", "text": "Техническое контактное лицо" },
+            { "language": "ckb", "text": "کەسی پەیوەندیی تەکنیکی" },
+            { "language": "kmr", "text": "Kesê têkiliyê yê teknîkî" },
+            { "language": "pl", "text": "Osoba kontaktowa ds. technicznych" },
+            { "language": "ro", "text": "Persoana tehnică de contact" },
+            { "language": "sq", "text": "Personi teknik i kontaktit" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Projektleitung",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مدیریت پروژه" },
+            { "language": "ar", "text": "إدارة المشروع" },
+            { "language": "tr", "text": "Proje yöneticisi" },
+            { "language": "ru", "text": "Руководитель проекта" },
+            { "language": "ckb", "text": "بەڕێوەبەری پڕۆژە" },
+            { "language": "kmr", "text": "Rêveberiya projeyê" },
+            { "language": "pl", "text": "Kierownictwo projektu" },
+            { "language": "ro", "text": "Conducerea proiectului" },
+            { "language": "sq", "text": "Drejtimi i projektit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Mehrere Anfragen wurden automatisch zu niedrig priorisiert. Bitte erklären Sie das so, dass auch Kolleginnen und Kollegen ohne technischen Hintergrund verstehen, was passiert ist.",
+          "translations": [
+            { "language": "en", "text": "Several requests were automatically given too low a priority. Please explain this so that colleagues without a technical background also understand what happened." },
+            { "language": "fa", "text": "چند درخواست به‌صورت خودکار با اولویت پایین‌تر از حد لازم ثبت شده‌اند. لطفاً طوری توضیح دهید که همکاران بدون پیش‌زمینه فنی هم بفهمند چه اتفاقی افتاده است." },
+            { "language": "ar", "text": "تم إعطاء عدة طلبات أولوية منخفضة جدًا تلقائيًا. يرجى شرح ذلك بحيث يفهم الزملاء من دون خلفية تقنية ما الذي حدث." },
+            { "language": "tr", "text": "Birkaç başvuru otomatik olarak gereğinden düşük önceliklendirildi. Lütfen bunu teknik geçmişi olmayan çalışma arkadaşlarının da ne olduğunu anlayacağı şekilde açıklayın." },
+            { "language": "ru", "text": "Нескольким запросам автоматически присвоили слишком низкий приоритет. Пожалуйста, объясните это так, чтобы коллеги без технического фона тоже поняли, что произошло." },
+            { "language": "ckb", "text": "چەند داواکارییەک بە شێوەی خۆکار بە پێشینەی زۆر نزم پۆلێن کران. تکایە ئەمە وەها ڕوون بکەوە کە هاوکارانی بێ پاشبنەمای تەکنیکییش تێبگەن چی ڕوویداوە." },
+            { "language": "kmr", "text": "Çend daxwaz bixweber bi pêşengiyeke pir kêm hatin rêzkirin. Ji kerema xwe wisa rave bikin ku hevkarên bê paşxaneya teknîkî jî fam bikin çi qewimî." },
+            { "language": "pl", "text": "Kilku zgłoszeniom automatycznie nadano zbyt niski priorytet. Proszę wyjaśnić to tak, aby także osoby bez zaplecza technicznego zrozumiały, co się stało." },
+            { "language": "ro", "text": "Mai multe solicitări au primit automat o prioritate prea scăzută. Vă rog să explicați acest lucru astfel încât și colegii fără fundal tehnic să înțeleagă ce s-a întâmplat." },
+            { "language": "sq", "text": "Disa kërkesa u vendosën automatikisht me përparësi tepër të ulët. Ju lutem shpjegojeni kështu që edhe kolegët pa sfond teknik të kuptojnë çfarë ndodhi." }
+          ],
+          "function": "opening prompt",
+          "toneNote": "formal, clarifying"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Zunächst: Nicht das gesamte System ist ausgefallen. Ein Teil der automatischen Sortierung hat in einer bestimmten Konstellation ein falsches Signal stärker gewichtet als die eigentliche Dringlichkeit.",
+          "translations": [
+            { "language": "en", "text": "First: the entire system did not fail. One part of the automatic sorting gave a wrong signal more weight than the actual urgency in a specific constellation." },
+            { "language": "fa", "text": "اول از همه: کل سیستم از کار نیفتاده است. بخشی از مرتب‌سازی خودکار در یک وضعیت مشخص، یک نشانه اشتباه را قوی‌تر از فوریت واقعی وزن داده است." },
+            { "language": "ar", "text": "أولًا: لم يتعطل النظام كله. جزء من الفرز التلقائي أعطى في حالة محددة إشارة خاطئة وزنًا أكبر من درجة الاستعجال الفعلية." },
+            { "language": "tr", "text": "Öncelikle: tüm sistem çökmedi. Otomatik sıralamanın bir bölümü belirli bir durumda yanlış bir sinyale gerçek aciliyetten daha fazla ağırlık verdi." },
+            { "language": "ru", "text": "Сначала: отказала не вся система. Часть автоматической сортировки в определенной ситуации придала неверному сигналу больший вес, чем реальной срочности." },
+            { "language": "ckb", "text": "سەرەتا: هەموو سیستەمەکە تێک نەچووە. بەشێک لە ڕیزکردنی خۆکار لە دۆخێکی دیاریکراودا نیشانەیەکی هەڵەی زیاتر لە پێویستی ڕاستەقینە گرنگ داناوە." },
+            { "language": "kmr", "text": "Pêşî: hemû pergal têk neçû. Beşek ji rêzkirina bixweber di rewşeke diyarkirî de nîşaneke şaş ji lezgîniya rastîn girîngtir girt." },
+            { "language": "pl", "text": "Najpierw: nie zawiódł cały system. Część automatycznego sortowania w określonej sytuacji nadała błędnemu sygnałowi większą wagę niż faktycznej pilności." },
+            { "language": "ro", "text": "Mai întâi: nu a căzut întregul sistem. O parte a sortării automate a acordat, într-o anumită situație, mai multă greutate unui semnal greșit decât urgenței reale." },
+            { "language": "sq", "text": "Së pari: nuk dështoi i gjithë sistemi. Një pjesë e renditjes automatike, në një rrethanë të caktuar, i dha një sinjali të gabuar më shumë peshë sesa urgjencës reale." }
+          ],
+          "function": "scope distinction",
+          "toneNote": "precise, calm",
+          "expectedLearnerAction": "Separate system failure from a limited sorting error."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Können Sie die technische Ursache konkret machen, ohne in Programmiersprache zu wechseln?",
+          "translations": [
+            { "language": "en", "text": "Can you make the technical cause concrete without switching into programming language?" },
+            { "language": "fa", "text": "می‌توانید علت فنی را مشخص کنید، بدون اینکه وارد زبان برنامه‌نویسی شوید؟" },
+            { "language": "ar", "text": "هل يمكنكم جعل السبب التقني ملموسًا من دون الانتقال إلى لغة البرمجة؟" },
+            { "language": "tr", "text": "Teknik nedeni programlama diline geçmeden somutlaştırabilir misiniz?" },
+            { "language": "ru", "text": "Можете конкретизировать техническую причину, не переходя на язык программирования?" },
+            { "language": "ckb", "text": "دەتوانیت هۆکاری تەکنیکی دیاریکراو بکەیت، بەبێ ئەوەی بچیتە زمانی بەرنامەسازی؟" },
+            { "language": "kmr", "text": "Hûn dikarin sedema teknîkî diyarkirî bikin, bêyî ku biçin zimanê bernamekirinê?" },
+            { "language": "pl", "text": "Czy może Pan/Pani konkretnie wyjaśnić przyczynę techniczną, nie przechodząc na język programowania?" },
+            { "language": "ro", "text": "Puteți face cauza tehnică mai concretă fără a trece la limbaj de programare?" },
+            { "language": "sq", "text": "A mund ta bëni shkakun teknik konkret pa kaluar në gjuhë programimi?" }
+          ],
+          "function": "cause prompt",
+          "toneNote": "probing"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Der Fehler lag in einer Regel, die fehlende Zeitangaben als weniger dringend interpretiert hat. In den meisten Fällen war das unproblematisch; bei bestimmten Anfragen fehlte die Zeitangabe aber gerade deshalb, weil die Lage noch nicht sauber dokumentiert war.",
+          "translations": [
+            { "language": "en", "text": "The error was in a rule that interpreted missing time information as less urgent. In most cases that was not problematic; for certain requests, however, the time information was missing precisely because the situation had not yet been documented cleanly." },
+            { "language": "fa", "text": "خطا در قاعده‌ای بود که نبودِ اطلاعات زمانی را به‌عنوان فوریت کمتر تفسیر می‌کرد. در بیشتر موارد این مشکلی ایجاد نمی‌کرد؛ اما در بعضی درخواست‌ها زمان دقیقاً به این دلیل ثبت نشده بود که وضعیت هنوز درست مستند نشده بود." },
+            { "language": "ar", "text": "كان الخطأ في قاعدة فسّرت غياب معلومات الوقت على أنه استعجال أقل. في معظم الحالات لم يكن ذلك مشكلة؛ لكن في طلبات معينة غابت معلومات الوقت تحديدًا لأن الحالة لم تكن موثقة بشكل نظيف بعد." },
+            { "language": "tr", "text": "Hata, eksik zaman bilgisini daha az acil olarak yorumlayan bir kuraldaydı. Çoğu durumda bu sorun değildi; ancak bazı başvurularda zaman bilgisi tam da durum henüz düzgün belgelenmediği için eksikti." },
+            { "language": "ru", "text": "Ошибка была в правиле, которое трактовало отсутствие временных данных как меньшую срочность. В большинстве случаев это не было проблемой; но в некоторых запросах время отсутствовало именно потому, что ситуация еще не была аккуратно задокументирована." },
+            { "language": "ckb", "text": "هەڵەکە لە یاسایەکدا بوو کە نەبوونی زانیاریی کات وەک پێویستی کەمتر تێدەگەیشت. لە زۆر دۆخدا ئەمە کێشە نەبوو؛ بەڵام لە هەندێک داواکاریدا زانیاریی کات بە هەمان هۆکار نەبوو کە دۆخەکە هێشتا بە پاکی تۆمار نەکرابوو." },
+            { "language": "kmr", "text": "Şaşî di rêgezekê de bû ku nebûna agahdariya demê wek lezgîniya kêmtir şirove dikir. Di pir rewşan de ev ne pirsgirêk bû; lê di hin daxwazan de agahdariya demê rast ji ber vê nebû ku rewş hêj bi paqijî nehatiye belgekirin." },
+            { "language": "pl", "text": "Błąd leżał w regule, która brak danych czasowych interpretowała jako mniejszą pilność. W większości przypadków nie było to problematyczne; przy określonych zgłoszeniach brak czasu wynikał jednak właśnie z tego, że sytuacja nie była jeszcze czysto udokumentowana." },
+            { "language": "ro", "text": "Eroarea era într-o regulă care interpreta lipsa informațiilor de timp ca urgență mai mică. În cele mai multe cazuri nu era problematic; la anumite solicitări însă informația de timp lipsea tocmai pentru că situația nu fusese încă documentată clar." },
+            { "language": "sq", "text": "Gabimi ishte te një rregull që e interpretonte mungesën e të dhënave kohore si urgjencë më të ulët. Në shumicën e rasteve kjo nuk ishte problem; por te disa kërkesa koha mungonte pikërisht sepse gjendja ende nuk ishte dokumentuar qartë." }
+          ],
+          "function": "technical cause in plain language",
+          "toneNote": "specific, accessible",
+          "expectedLearnerAction": "Explain the cause without code-like detail."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Wie beschreiben Sie die Folgen, ohne sie zu verharmlosen oder unnötig dramatisch zu machen?",
+          "translations": [
+            { "language": "en", "text": "How do you describe the consequences without downplaying them or making them unnecessarily dramatic?" },
+            { "language": "fa", "text": "پیامدها را چگونه توضیح می‌دهید، بدون اینکه آن‌ها را کوچک جلوه دهید یا بی‌دلیل دراماتیک کنید؟" },
+            { "language": "ar", "text": "كيف تصفون النتائج من دون التقليل منها أو جعلها درامية بلا داع؟" },
+            { "language": "tr", "text": "Sonuçları ne küçümseyerek ne de gereksiz yere dramatikleştirerek nasıl anlatırsınız?" },
+            { "language": "ru", "text": "Как вы опишете последствия, не преуменьшая их и не драматизируя без необходимости?" },
+            { "language": "ckb", "text": "ئەنجامەکان چۆن وەسف دەکەیت، بەبێ ئەوەی بچووک پیشانیان بدەیت یان بەبێ پێویست دراماتیکیان بکەیت؟" },
+            { "language": "kmr", "text": "Hûn encaman çawa rave dikin, bêyî ku wan biçûk bikin an bê hewce dramatîk bikin?" },
+            { "language": "pl", "text": "Jak opisze Pan/Pani skutki, nie bagatelizując ich ani nie dramatyzując bez potrzeby?" },
+            { "language": "ro", "text": "Cum descrieți consecințele fără să le minimalizați sau să le dramatizați inutil?" },
+            { "language": "sq", "text": "Si i përshkruani pasojat pa i zvogëluar dhe pa i dramatizuar pa nevojë?" }
+          ],
+          "function": "consequence prompt",
+          "toneNote": "balanced"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Die Folge war nicht, dass Daten verloren gingen. Das Problem war die Reihenfolge: Einige Fälle wurden später geprüft, als es ihrem Inhalt entsprochen hätte. Genau diese Fälle werden jetzt manuell nachgeprüft.",
+          "translations": [
+            { "language": "en", "text": "The consequence was not that data was lost. The problem was the order: some cases were reviewed later than their content would have justified. Exactly those cases are now being checked manually." },
+            { "language": "fa", "text": "پیامد این نبود که داده‌ها از بین رفته باشند. مشکل ترتیب بود: بعضی پرونده‌ها دیرتر از آنچه محتوایشان اقتضا می‌کرد بررسی شدند. دقیقاً همین پرونده‌ها اکنون دستی بازبینی می‌شوند." },
+            { "language": "ar", "text": "لم تكن النتيجة أن بيانات ضاعت. كانت المشكلة في الترتيب: فُحصت بعض الحالات لاحقًا مما كان محتواها يبرر. وهذه الحالات تحديدًا تُراجع الآن يدويًا." },
+            { "language": "tr", "text": "Sonuç verilerin kaybolması değildi. Sorun sıralamaydı: bazı vakalar içeriklerinin gerektirdiğinden daha geç incelendi. Tam da bu vakalar şimdi elle yeniden kontrol ediliyor." },
+            { "language": "ru", "text": "Последствие не в том, что данные были потеряны. Проблема была в порядке: некоторые случаи проверили позже, чем следовало по их содержанию. Именно эти случаи сейчас вручную перепроверяются." },
+            { "language": "ckb", "text": "ئەنجامەکە ئەوە نەبوو کە داتا لەدەست چووبێت. کێشەکە ڕیزبوون بوو: هەندێک دۆخ دواتر پشکنران لەوەی ناوەڕۆکیان پێویستی دەکرد. هەمان ئەو دۆخانە ئێستا بە دەستی دووبارە پشکنراون." },
+            { "language": "kmr", "text": "Encam ew nebû ku dane winda bûne. Pirsgirêk rêz bû: hin rewş ji ya ku naveroka wan pêdivî dikir derengtir hatin kontrolkirin. Heman wan rewşan niha bi destî ji nû ve tên kontrolkirin." },
+            { "language": "pl", "text": "Skutkiem nie była utrata danych. Problem dotyczył kolejności: część spraw sprawdzono później, niż wynikałoby to z ich treści. Właśnie te sprawy są teraz ręcznie weryfikowane." },
+            { "language": "ro", "text": "Consecința nu a fost pierderea datelor. Problema a fost ordinea: unele cazuri au fost verificate mai târziu decât ar fi justificat conținutul lor. Exact aceste cazuri sunt acum verificate manual." },
+            { "language": "sq", "text": "Pasoja nuk ishte humbja e të dhënave. Problemi ishte renditja: disa raste u kontrolluan më vonë sesa e kërkonte përmbajtja e tyre. Pikërisht këto raste po rishikohen tani manualisht." }
+          ],
+          "function": "consequence framing",
+          "toneNote": "factual, proportionate",
+          "expectedLearnerAction": "State consequences proportionately and name immediate review."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Was wird konkret geändert, damit der Fehler nicht nur erklärt, sondern auch behoben wird?",
+          "translations": [
+            { "language": "en", "text": "What exactly will be changed so that the error is not only explained but also fixed?" },
+            { "language": "fa", "text": "دقیقاً چه چیزی تغییر می‌کند تا خطا فقط توضیح داده نشود، بلکه برطرف هم بشود؟" },
+            { "language": "ar", "text": "ما الذي سيتغير تحديدًا حتى لا يُشرح الخطأ فقط، بل يُصلح أيضًا؟" },
+            { "language": "tr", "text": "Hatanın sadece açıklanması değil, giderilmesi için tam olarak ne değiştirilecek?" },
+            { "language": "ru", "text": "Что именно будет изменено, чтобы ошибку не только объяснить, но и исправить?" },
+            { "language": "ckb", "text": "بە وردی چی دەگۆڕدرێت بۆ ئەوەی هەڵەکە تەنها ڕوون نەکرێتەوە، بەڵکو چارەسەر بکرێت؟" },
+            { "language": "kmr", "text": "Bi taybetî çi dê were guhertin ku şaşî ne tenê were ravekirin, lê jî were çareserkirin?" },
+            { "language": "pl", "text": "Co konkretnie zostanie zmienione, aby błąd nie tylko wyjaśnić, lecz także usunąć?" },
+            { "language": "ro", "text": "Ce anume va fi schimbat pentru ca eroarea să nu fie doar explicată, ci și corectată?" },
+            { "language": "sq", "text": "Çfarë do të ndryshohet konkretisht që gabimi jo vetëm të shpjegohet, por edhe të korrigjohet?" }
+          ],
+          "function": "repair prompt",
+          "toneNote": "action-oriented"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wir haben die fragliche Regel deaktiviert, die betroffenen Fälle zur manuellen Prüfung gegeben und testen die neue Gewichtung mit Grenzfällen, bevor sie wieder automatisch entscheidet. Zusätzlich melden wir künftig solche Abweichungen früher.",
+          "translations": [
+            { "language": "en", "text": "We have disabled the rule in question, sent the relevant cases for manual review, and are testing the new weighting with borderline cases before it makes automatic decisions again. In addition, we will report such deviations earlier in the future." },
+            { "language": "fa", "text": "قاعده مورد بحث را غیرفعال کرده‌ایم، پرونده‌های مربوط را برای بررسی دستی فرستاده‌ایم و وزن‌دهی جدید را با موارد مرزی آزمایش می‌کنیم، پیش از آنکه دوباره تصمیم خودکار بگیرد. علاوه بر این، از این پس چنین انحراف‌هایی را زودتر گزارش می‌کنیم." },
+            { "language": "ar", "text": "عطّلنا القاعدة المعنية، وأرسلنا الحالات ذات الصلة إلى مراجعة يدوية، ونختبر الترجيح الجديد بحالات حدية قبل أن يقرر تلقائيًا من جديد. إضافة إلى ذلك سنبلّغ عن مثل هذه الانحرافات أبكر مستقبلًا." },
+            { "language": "tr", "text": "Söz konusu kuralı devre dışı bıraktık, ilgili vakaları elle incelemeye verdik ve yeni ağırlığı yeniden otomatik karar vermeden önce sınır vakalarla test ediyoruz. Ayrıca gelecekte bu tür sapmaları daha erken bildireceğiz." },
+            { "language": "ru", "text": "Мы отключили спорное правило, передали соответствующие случаи на ручную проверку и тестируем новую весовую настройку на пограничных случаях, прежде чем она снова будет принимать автоматические решения. Кроме того, в будущем мы будем раньше сообщать о таких отклонениях." },
+            { "language": "ckb", "text": "ئێمە ئەو یاسایەمان ناچالاک کردووە، دۆخە پەیوەندیدارەکانمان بۆ پشکنینی دەستی ناردووە و گرنگیدانی نوێ بە دۆخی سنووری تاقی دەکەینەوە پێش ئەوەی دووبارە بڕیاری خۆکار بدات. هەروەها لە داهاتوودا ئەم جیاوازییانە زووتر ڕادەگەیەنین." },
+            { "language": "kmr", "text": "Me wê rêgezê neçalak kir, rewşên peywendîdar şandin kontrola destî û giraniya nû bi rewşên sînorî tê ceribandin berî ku dîsa bixweber biryar bide. Her wiha em dê di paşerojê de van cudahiyan zûtir ragihînin." },
+            { "language": "pl", "text": "Wyłączyliśmy omawianą regułę, przekazaliśmy właściwe sprawy do ręcznej kontroli i testujemy nowe ważenie na przypadkach granicznych, zanim znów zacznie decydować automatycznie. Dodatkowo będziemy w przyszłości wcześniej zgłaszać takie odchylenia." },
+            { "language": "ro", "text": "Am dezactivat regula în cauză, am trimis cazurile relevante la verificare manuală și testăm noua ponderare cu cazuri-limită înainte ca ea să decidă din nou automat. În plus, pe viitor vom semnala mai devreme astfel de abateri." },
+            { "language": "sq", "text": "E kemi çaktivizuar rregullin në fjalë, i kemi dërguar rastet përkatëse për kontroll manual dhe po e testojmë peshimin e ri me raste kufitare para se të vendosë sërish automatikisht. Përveç kësaj, në të ardhmen do t'i raportojmë më herët shmangie të tilla." }
+          ],
+          "function": "repair path",
+          "toneNote": "accountable, operational",
+          "expectedLearnerAction": "Describe repair, testing, and future detection."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Bitte formulieren Sie nun eine knappe Schlussaussage für die Runde.",
+          "translations": [
+            { "language": "en", "text": "Please now formulate a concise closing statement for the group." },
+            { "language": "fa", "text": "لطفاً اکنون یک جمله پایانی کوتاه برای جمع بیان کنید." },
+            { "language": "ar", "text": "يرجى الآن صياغة عبارة ختامية موجزة للمجموعة." },
+            { "language": "tr", "text": "Lütfen şimdi grup için kısa bir kapanış ifadesi formüle edin." },
+            { "language": "ru", "text": "Пожалуйста, теперь сформулируйте краткое заключительное заявление для группы." },
+            { "language": "ckb", "text": "تکایە ئێستا وتەیەکی کۆتایی کورت بۆ گرووپەکە دابڕێژە." },
+            { "language": "kmr", "text": "Ji kerema xwe niha gotineke dawî ya kurt ji bo komê ava bikin." },
+            { "language": "pl", "text": "Proszę teraz sformułować krótką wypowiedź końcową dla grupy." },
+            { "language": "ro", "text": "Vă rog să formulați acum o declarație finală concisă pentru grup." },
+            { "language": "sq", "text": "Ju lutem formuloni tani një deklaratë të shkurtër përmbyllëse për grupin." }
+          ],
+          "function": "closing prompt",
+          "toneNote": "concise"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Kurz gesagt: Es gab keinen Datenverlust, aber eine falsche Priorisierung in einer klar abgrenzbaren Fallgruppe. Wir prüfen diese Fälle manuell nach, ändern die Regel und nehmen die automatische Sortierung erst nach zusätzlichen Tests wieder vollständig in Betrieb.",
+          "translations": [
+            { "language": "en", "text": "In short: there was no data loss, but an incorrect prioritization in a clearly definable group of cases. We are manually reviewing those cases, changing the rule, and will fully restart automatic sorting only after additional tests." },
+            { "language": "fa", "text": "خلاصه: داده‌ای از بین نرفته است، اما در یک گروه پرونده‌ای با مرز روشن، اولویت‌بندی اشتباه رخ داده است. ما این پرونده‌ها را دستی بازبینی می‌کنیم، قاعده را تغییر می‌دهیم و مرتب‌سازی خودکار را فقط پس از آزمایش‌های اضافی دوباره کامل فعال می‌کنیم." },
+            { "language": "ar", "text": "باختصار: لم يحدث فقدان للبيانات، لكن حدثت أولوية خاطئة في مجموعة حالات يمكن تحديدها بوضوح. نراجع هذه الحالات يدويًا، ونغيّر القاعدة، ولا نعيد الفرز التلقائي كاملًا إلا بعد اختبارات إضافية." },
+            { "language": "tr", "text": "Kısaca: veri kaybı olmadı, ancak açıkça sınırlandırılabilen bir vaka grubunda yanlış önceliklendirme oldu. Bu vakaları elle inceliyoruz, kuralı değiştiriyoruz ve otomatik sıralamayı ancak ek testlerden sonra tamamen yeniden devreye alıyoruz." },
+            { "language": "ru", "text": "Коротко: потери данных не было, но в четко ограниченной группе случаев была неверная приоритизация. Мы вручную проверяем эти случаи, меняем правило и полностью запускаем автоматическую сортировку только после дополнительных тестов." },
+            { "language": "ckb", "text": "بە کورتی: داتا لەدەست نەچووە، بەڵام لە گرووپێکی دۆخدا کە سنووری ڕوونی هەیە پێشینەدان بە هەڵە بووە. ئێمە ئەم دۆخانە بە دەستی دووبارە پشکنین دەکەین، یاساکە دەگۆڕین و ڕیزکردنی خۆکار تەنها پاش تاقیکردنەوەی زیاتر بە تەواوی دەخەینەوە کار." },
+            { "language": "kmr", "text": "Bi kurtî: dane winda nebûne, lê di komeke rewşan a bi sînora zelal de pêşengkirin şaş bû. Em van rewşan bi destî ji nû ve kontrol dikin, rêgezê diguherînin û rêzkirina bixweber tenê piştî ceribandinên zêdetir bi tevahî dîsa dixebitînin." },
+            { "language": "pl", "text": "Krótko mówiąc: nie było utraty danych, ale wystąpiła błędna priorytetyzacja w jasno dającej się wyodrębnić grupie spraw. Sprawdzamy te sprawy ręcznie, zmieniamy regułę i uruchomimy automatyczne sortowanie w pełni dopiero po dodatkowych testach." },
+            { "language": "ro", "text": "Pe scurt: nu a existat pierdere de date, dar a existat o prioritizare greșită într-un grup de cazuri clar delimitabil. Verificăm manual aceste cazuri, schimbăm regula și reactivăm complet sortarea automată doar după teste suplimentare." },
+            { "language": "sq", "text": "Shkurt: nuk pati humbje të dhënash, por pati renditje të gabuar përparësie në një grup rastesh të përcaktueshëm qartë. Po i kontrollojmë këto raste manualisht, po ndryshojmë rregullin dhe do ta vëmë plotësisht në punë renditjen automatike vetëm pas testeve shtesë." }
+          ],
+          "function": "final synthesis",
+          "toneNote": "clear, responsible",
+          "expectedLearnerAction": "Summarize symptom, scope, consequence, and fix."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nicht das gesamte System ist ausgefallen; ein Teil der Sortierung hat in einer bestimmten Konstellation ein falsches Signal zu stark gewichtet.",
+              "translations": [
+                { "language": "en", "text": "The entire system did not fail; one part of the sorting weighted a wrong signal too strongly in a specific constellation." },
+                { "language": "fa", "text": "کل سیستم از کار نیفتاده است؛ بخشی از مرتب‌سازی در یک وضعیت مشخص، یک نشانه اشتباه را بیش از حد قوی وزن داده است." },
+                { "language": "ar", "text": "لم يتعطل النظام كله؛ فقد أعطى جزء من الفرز في حالة محددة إشارة خاطئة وزنًا زائدًا." },
+                { "language": "tr", "text": "Tüm sistem çökmedi; sıralamanın bir bölümü belirli bir durumda yanlış bir sinyale fazla ağırlık verdi." },
+                { "language": "ru", "text": "Отказала не вся система; часть сортировки в определенной ситуации слишком сильно взвесила неверный сигнал." },
+                { "language": "ckb", "text": "هەموو سیستەمەکە تێک نەچووە؛ بەشێک لە ڕیزکردن لە دۆخێکی دیاریکراودا نیشانەیەکی هەڵەی زۆر بەهێز گرنگ داناوە." },
+                { "language": "kmr", "text": "Hemû pergal têk neçû; beşek ji rêzkirinê di rewşeke diyarkirî de nîşaneke şaş pir girîng girt." },
+                { "language": "pl", "text": "Nie zawiódł cały system; część sortowania w określonej sytuacji zbyt mocno zważyła błędny sygnał." },
+                { "language": "ro", "text": "Nu a căzut întregul sistem; o parte a sortării a ponderat prea puternic un semnal greșit într-o anumită situație." },
+                { "language": "sq", "text": "Nuk dështoi i gjithë sistemi; një pjesë e renditjes në një rrethanë të caktuar i dha tepër peshë një sinjali të gabuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort begrenzt den Fehler und macht die Ursache verständlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer limits the error and makes the cause understandable." },
+                { "language": "fa", "text": "قوی: پاسخ خطا را محدود می‌کند و علت را قابل فهم می‌سازد." },
+                { "language": "ar", "text": "قوي: تحدد الإجابة الخطأ وتجعل السبب مفهومًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt hatayı sınırlar ve nedeni anlaşılır kılar." },
+                { "language": "ru", "text": "Сильно: ответ ограничивает ошибку и делает причину понятной." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەڵەکە سنووردار دەکات و هۆکارەکە تێگەیشتوو دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv şaşiyê sînordar dike û sedemê têgihiştî dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź ogranicza błąd i czyni przyczynę zrozumiałą." },
+                { "language": "ro", "text": "Puternic: răspunsul delimitează eroarea și face cauza ușor de înțeles." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kufizon gabimin dhe e bën shkakun të kuptueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Technik hat an einer Stelle nicht richtig funktioniert, aber das lässt sich wahrscheinlich relativ schnell beheben.",
+              "translations": [
+                { "language": "en", "text": "The technology did not work properly in one place, but that can probably be fixed relatively quickly." },
+                { "language": "fa", "text": "فناوری در یک بخش درست کار نکرده، اما احتمالاً نسبتاً سریع قابل رفع است." },
+                { "language": "ar", "text": "لم تعمل التقنية بشكل صحيح في موضع واحد، لكن يمكن غالبًا إصلاح ذلك بسرعة نسبية." },
+                { "language": "tr", "text": "Teknoloji bir yerde doğru çalışmadı, ama bu muhtemelen nispeten hızlı düzeltilebilir." },
+                { "language": "ru", "text": "Техника в одном месте работала неправильно, но это, вероятно, можно довольно быстро исправить." },
+                { "language": "ckb", "text": "تەکنەلۆژیا لە شوێنێکدا بە دروستی کاری نەکردووە، بەڵام ئەمە بە ئەگەری زۆر بە خێرایی چارەسەر دەکرێت." },
+                { "language": "kmr", "text": "Teknîk li cîhekê baş nexebitî, lê ev bi ihtîmalek mezin zû dikare were çareserkirin." },
+                { "language": "pl", "text": "Technika w jednym miejscu nie zadziałała poprawnie, ale prawdopodobnie da się to dość szybko naprawić." },
+                { "language": "ro", "text": "Tehnologia nu a funcționat corect într-un punct, dar probabil se poate remedia relativ repede." },
+                { "language": "sq", "text": "Teknologjia nuk funksionoi si duhet në një pikë, por kjo ndoshta mund të rregullohet relativisht shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort klingt beruhigend, trennt aber weder Ursache noch Reichweite.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the answer sounds reassuring, but separates neither cause nor scope." },
+                { "language": "fa", "text": "بیش از حد مبهم است: پاسخ آرام‌کننده به نظر می‌رسد، اما نه علت را جدا می‌کند و نه دامنه را." },
+                { "language": "ar", "text": "غامض جدًا: تبدو الإجابة مطمئنة، لكنها لا تفصل السبب ولا النطاق." },
+                { "language": "tr", "text": "Fazla belirsiz: Yanıt güven verici duyuluyor, ancak ne nedeni ne de kapsamı ayırıyor." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ успокаивает, но не отделяет ни причину, ни масштаб." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە ئارامکەرەوە دەردەکەوێت، بەڵام نە هۆکار و نە سنوور جیا ناکاتەوە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv aramker xuya dike, lê ne sedemê û ne qada bandorê ji hev venake." },
+                { "language": "pl", "text": "Zbyt niejasne: odpowiedź brzmi uspokajająco, ale nie oddziela ani przyczyny, ani zakresu." },
+                { "language": "ro", "text": "Prea vag: răspunsul pare liniștitor, dar nu separă nici cauza, nici aria." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja tingëllon qetësuese, por nuk ndan as shkakun, as shtrirjen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Regel hat fehlende Zeitangaben als weniger dringend gelesen; in manchen Fällen fehlten diese Angaben aber gerade wegen unvollständiger Dokumentation.",
+              "translations": [
+                { "language": "en", "text": "The rule read missing time information as less urgent; in some cases, however, that information was missing precisely because documentation was incomplete." },
+                { "language": "fa", "text": "قاعده نبود اطلاعات زمانی را به‌عنوان فوریت کمتر خوانده است؛ اما در بعضی موارد این اطلاعات دقیقاً به دلیل مستندسازی ناقص نبود." },
+                { "language": "ar", "text": "قرأت القاعدة غياب معلومات الوقت كدليل على استعجال أقل؛ لكن في بعض الحالات غابت هذه المعلومات تحديدًا بسبب توثيق غير مكتمل." },
+                { "language": "tr", "text": "Kural, eksik zaman bilgisini daha az acil olarak okudu; bazı durumlarda ise bu bilgiler tam da eksik belgeleme nedeniyle yoktu." },
+                { "language": "ru", "text": "Правило воспринимало отсутствие временных данных как меньшую срочность; но в некоторых случаях эти данные отсутствовали именно из-за неполной документации." },
+                { "language": "ckb", "text": "یاساکە نەبوونی زانیاریی کات وەک پێویستی کەمتر خوێندووەتەوە؛ بەڵام لە هەندێک دۆخدا ئەم زانیارییانە بەهۆی تۆمارکردنی ناتەواو نەبوون." },
+                { "language": "kmr", "text": "Rêgezê nebûna agahdariya demê wek lezgîniya kêmtir xwend; lê di hin rewşan de ev agahdarî rast ji ber belgekirina netemam tune bûn." },
+                { "language": "pl", "text": "Reguła odczytała brak danych czasowych jako mniejszą pilność; w niektórych sprawach tych danych brakowało jednak właśnie z powodu niepełnej dokumentacji." },
+                { "language": "ro", "text": "Regula a citit lipsa informațiilor de timp ca urgență mai mică; în unele cazuri însă aceste informații lipseau tocmai din cauza documentării incomplete." },
+                { "language": "sq", "text": "Rregulli e lexoi mungesën e të dhënave kohore si urgjencë më të ulët; por në disa raste këto të dhëna mungonin pikërisht për shkak të dokumentimit të paplotë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt die Ursache ohne Code und ohne falsche Vereinfachung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer explains the cause without code and without false simplification." },
+                { "language": "fa", "text": "قوی: پاسخ علت را بدون کدنویسی و بدون ساده‌سازی نادرست توضیح می‌دهد." },
+                { "language": "ar", "text": "قوي: تشرح الإجابة السبب من دون كود ومن دون تبسيط خاطئ." },
+                { "language": "tr", "text": "Güçlü: Yanıt nedeni kod kullanmadan ve yanlış basitleştirmeden açıklar." },
+                { "language": "ru", "text": "Сильно: ответ объясняет причину без кода и без ложного упрощения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هۆکار بەبێ کۆد و بەبێ سادەکردنەوەی هەڵە ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv sedemê bê kod û bê sadehkirina şaş rave dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia przyczynę bez kodu i bez fałszywego uproszczenia." },
+                { "language": "ro", "text": "Puternic: răspunsul explică motivul fără cod și fără simplificare falsă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e shpjegon shkakun pa kod dhe pa thjeshtim të gabuar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Regel hat einen Sonderfall nicht erkannt; deshalb müssen wir sie technisch nachschärfen.",
+              "translations": [
+                { "language": "en", "text": "The rule did not recognize a special case; therefore we need to refine it technically." },
+                { "language": "fa", "text": "قاعده یک مورد خاص را تشخیص نداده است؛ بنابراین باید آن را از نظر فنی دقیق‌تر کنیم." },
+                { "language": "ar", "text": "لم تتعرف القاعدة على حالة خاصة؛ لذلك علينا تحسينها تقنيًا." },
+                { "language": "tr", "text": "Kural özel bir durumu tanımadı; bu nedenle onu teknik olarak keskinleştirmemiz gerekir." },
+                { "language": "ru", "text": "Правило не распознало особый случай; поэтому нам нужно технически его уточнить." },
+                { "language": "ckb", "text": "یاساکە دۆخێکی تایبەتی نەناسێوە؛ بۆیە دەبێت لە ڕووی تەکنیکییەوە وردتری بکەین." },
+                { "language": "kmr", "text": "Rêgezê rewşeke taybet nas nekir; ji ber vê yekê divê em wê ji aliyê teknîkî ve hûrtir bikin." },
+                { "language": "pl", "text": "Reguła nie rozpoznała szczególnego przypadku; dlatego musimy ją technicznie doprecyzować." },
+                { "language": "ro", "text": "Regula nu a recunoscut un caz special; de aceea trebuie să o rafinăm tehnic." },
+                { "language": "sq", "text": "Rregulli nuk njohu një rast të veçantë; prandaj duhet ta përmirësojmë teknikisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn: Die Aussage erklärt nicht, warum der Sonderfall übersehen wurde.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too thin: the statement does not explain why the special case was missed." },
+                { "language": "fa", "text": "قابل‌باور است، اما کم‌مایه است: جمله توضیح نمی‌دهد چرا مورد خاص نادیده مانده است." },
+                { "language": "ar", "text": "معقول، لكنه ضعيف: لا تشرح العبارة لماذا فاتت الحالة الخاصة." },
+                { "language": "tr", "text": "Akla yatkın ama zayıf: İfade özel durumun neden kaçırıldığını açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно: фраза не объясняет, почему особый случай был пропущен." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام لاوازە: وتەکە ڕوون ناکاتەوە بۆچی دۆخی تایبەت لەدەست چووە." },
+                { "language": "kmr", "text": "Bawerbar e, lê lawaz e: gotin rave nake çima rewşa taybet ji ber çavan çû." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt słabe: zdanie nie wyjaśnia, dlaczego szczególny przypadek został przeoczony." },
+                { "language": "ro", "text": "Plauzibil, dar prea subțire: afirmația nu explică de ce cazul special a fost ratat." },
+                { "language": "sq", "text": "E besueshme, por e dobët: fjalia nuk shpjegon pse u humb rasti i veçantë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Es gab keinen Datenverlust; problematisch war die Reihenfolge der Prüfung, und genau diese Fälle werden jetzt manuell nachgeprüft.",
+              "translations": [
+                { "language": "en", "text": "There was no data loss; what was problematic was the review order, and exactly those cases are now being checked manually." },
+                { "language": "fa", "text": "داده‌ای از بین نرفته است؛ مشکل ترتیب بررسی بود و دقیقاً همین پرونده‌ها اکنون دستی بازبینی می‌شوند." },
+                { "language": "ar", "text": "لم يحدث فقدان للبيانات؛ المشكلة كانت في ترتيب الفحص، وهذه الحالات تحديدًا تُراجع الآن يدويًا." },
+                { "language": "tr", "text": "Veri kaybı olmadı; sorun inceleme sırasıydı ve tam da bu vakalar şimdi elle kontrol ediliyor." },
+                { "language": "ru", "text": "Потери данных не было; проблемой был порядок проверки, и именно эти случаи сейчас проверяются вручную." },
+                { "language": "ckb", "text": "داتا لەدەست نەچووە؛ کێشەکە ڕیزی پشکنین بوو و هەمان ئەم دۆخانە ئێستا بە دەستی دووبارە پشکنراون." },
+                { "language": "kmr", "text": "Dane winda nebûne; pirsgirêk rêza kontrolê bû û heman van rewşan niha bi destî ji nû ve tên kontrolkirin." },
+                { "language": "pl", "text": "Nie było utraty danych; problematyczna była kolejność kontroli i właśnie te sprawy są teraz sprawdzane ręcznie." },
+                { "language": "ro", "text": "Nu a existat pierdere de date; problematică a fost ordinea verificării, iar exact aceste cazuri sunt acum verificate manual." },
+                { "language": "sq", "text": "Nuk pati humbje të dhënash; problem ishte rendi i kontrollit dhe pikërisht këto raste po rishikohen tani manualisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort korrigiert eine mögliche Sorge und benennt zugleich die reale Folge.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer corrects a possible concern and at the same time names the real consequence." },
+                { "language": "fa", "text": "قوی: پاسخ یک نگرانی احتمالی را اصلاح می‌کند و هم‌زمان پیامد واقعی را نام می‌برد." },
+                { "language": "ar", "text": "قوي: تصحح الإجابة قلقًا محتملًا وتذكر في الوقت نفسه النتيجة الحقيقية." },
+                { "language": "tr", "text": "Güçlü: Yanıt olası bir kaygıyı düzeltir ve aynı anda gerçek sonucu adlandırır." },
+                { "language": "ru", "text": "Сильно: ответ исправляет возможное опасение и одновременно называет реальное последствие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانییەکی ئەگەری ڕاست دەکاتەوە و هەمان کات ئەنجامی ڕاستەقینە ناودەبات." },
+                { "language": "kmr", "text": "Xurt e: bersiv xemeke gengaz rast dike û di heman demê de encama rastîn nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź koryguje możliwą obawę i jednocześnie nazywa realny skutek." },
+                { "language": "ro", "text": "Puternic: răspunsul corectează o posibilă îngrijorare și numește în același timp consecința reală." },
+                { "language": "sq", "text": "E fortë: përgjigjja korrigjon një shqetësim të mundshëm dhe njëkohësisht emërton pasojën reale." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Folgen waren begrenzt, weil wir die Fälle inzwischen identifiziert haben.",
+              "translations": [
+                { "language": "en", "text": "The consequences were limited because we have now identified the cases." },
+                { "language": "fa", "text": "پیامدها محدود بودند، چون اکنون پرونده‌ها را شناسایی کرده‌ایم." },
+                { "language": "ar", "text": "كانت النتائج محدودة لأننا حددنا الحالات الآن." },
+                { "language": "tr", "text": "Sonuçlar sınırlıydı, çünkü vakaları artık belirledik." },
+                { "language": "ru", "text": "Последствия были ограничены, потому что мы теперь выявили эти случаи." },
+                { "language": "ckb", "text": "ئەنجامەکان سنووردار بوون، چونکە ئێستا دۆخەکانمان ناسیوە." },
+                { "language": "kmr", "text": "Encam sînordar bûn, ji ber ku me niha rewş nas kirine." },
+                { "language": "pl", "text": "Skutki były ograniczone, ponieważ zidentyfikowaliśmy już sprawy." },
+                { "language": "ro", "text": "Consecințele au fost limitate, deoarece am identificat acum cazurile." },
+                { "language": "sq", "text": "Pasojat ishin të kufizuara, sepse tani i kemi identifikuar rastet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Aussage nennt keine Art der Folge und kann wie Beschwichtigung wirken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: the statement names no type of consequence and may sound like reassurance." },
+                { "language": "fa", "text": "بیش از حد کوتاه است: جمله نوع پیامد را نام نمی‌برد و ممکن است شبیه آرام‌سازی بیاید." },
+                { "language": "ar", "text": "مختصر جدًا: لا تذكر العبارة نوع النتيجة وقد تبدو كتهدئة." },
+                { "language": "tr", "text": "Fazla kısa: İfade sonucun türünü belirtmiyor ve yatıştırma gibi gelebilir." },
+                { "language": "ru", "text": "Слишком кратко: фраза не называет тип последствия и может восприниматься как успокоение." },
+                { "language": "ckb", "text": "زۆر کورتە: وتەکە جۆری ئەنجام ناودەبات و دەتوانێت وەک ئارامکردنەوە دەربکەوێت." },
+                { "language": "kmr", "text": "Pir kurt e: gotin cureya encamê nav nake û dikare wek aramkirin xuya bike." },
+                { "language": "pl", "text": "Zbyt krótko: zdanie nie nazywa rodzaju skutku i może brzmieć jak uspokajanie." },
+                { "language": "ro", "text": "Prea scurt: afirmația nu numește tipul consecinței și poate părea liniștitoare." },
+                { "language": "sq", "text": "Shumë e shkurtër: fjalia nuk emërton llojin e pasojës dhe mund të duket si qetësim." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir deaktivieren die Regel, prüfen die Fälle manuell, testen die neue Gewichtung mit Grenzfällen und melden solche Abweichungen künftig früher.",
+              "translations": [
+                { "language": "en", "text": "We are disabling the rule, checking the cases manually, testing the new weighting with borderline cases, and will report such deviations earlier in the future." },
+                { "language": "fa", "text": "قاعده را غیرفعال می‌کنیم، پرونده‌ها را دستی بررسی می‌کنیم، وزن‌دهی جدید را با موارد مرزی آزمایش می‌کنیم و از این پس چنین انحراف‌هایی را زودتر گزارش می‌دهیم." },
+                { "language": "ar", "text": "نعطّل القاعدة، ونفحص الحالات يدويًا، ونختبر الترجيح الجديد بحالات حدية، وسنبلّغ مستقبلًا عن مثل هذه الانحرافات أبكر." },
+                { "language": "tr", "text": "Kuralı devre dışı bırakıyor, vakaları elle kontrol ediyor, yeni ağırlığı sınır vakalarla test ediyor ve bu tür sapmaları gelecekte daha erken bildiriyoruz." },
+                { "language": "ru", "text": "Мы отключаем правило, проверяем случаи вручную, тестируем новую весовую настройку на пограничных случаях и в будущем будем раньше сообщать о таких отклонениях." },
+                { "language": "ckb", "text": "یاساکە ناچالاک دەکەین، دۆخەکان بە دەستی دەپشکنین، گرنگیدانی نوێ بە دۆخی سنووری تاقی دەکەینەوە و لە داهاتوودا ئەم جیاوازییانە زووتر ڕادەگەیەنین." },
+                { "language": "kmr", "text": "Em rêgezê neçalak dikin, rewşan bi destî kontrol dikin, giraniya nû bi rewşên sînorî ceribandin dikin û di paşerojê de van cudahiyan zûtir radigihînin." },
+                { "language": "pl", "text": "Wyłączamy regułę, sprawdzamy sprawy ręcznie, testujemy nowe ważenie na przypadkach granicznych i będziemy wcześniej zgłaszać takie odchylenia." },
+                { "language": "ro", "text": "Dezactivăm regula, verificăm cazurile manual, testăm noua ponderare cu cazuri-limită și vom semnala mai devreme astfel de abateri." },
+                { "language": "sq", "text": "E çaktivizojmë rregullin, i kontrollojmë rastet manualisht, e testojmë peshimin e ri me raste kufitare dhe do t'i raportojmë më herët shmangie të tilla." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Sofortmaßnahme, Prüfung, Test und künftige Kontrolle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects immediate action, review, testing, and future monitoring." },
+                { "language": "fa", "text": "قوی: پاسخ اقدام فوری، بررسی، آزمایش و کنترل آینده را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة الإجراء الفوري والمراجعة والاختبار والرقابة المستقبلية." },
+                { "language": "tr", "text": "Güçlü: Yanıt acil önlem, inceleme, test ve gelecekteki kontrolü birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ связывает немедленную меру, проверку, тестирование и будущий контроль." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەنگاوی خێرا، پشکنین، تاقیکردنەوە و کۆنترۆڵی داهاتوو پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv gava lezgîn, kontrol, ceribandin û kontrola paşerojê bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy działanie natychmiastowe, kontrolę, testy i przyszły nadzór." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă măsura imediată, verificarea, testarea și controlul viitor." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh masën e menjëhershme, kontrollin, testimin dhe mbikëqyrjen e ardhshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir werden die Regel verbessern und danach beobachten, ob ähnliche Probleme erneut auftreten.",
+              "translations": [
+                { "language": "en", "text": "We will improve the rule and then observe whether similar problems occur again." },
+                { "language": "fa", "text": "قاعده را بهتر می‌کنیم و بعد مشاهده می‌کنیم آیا مشکلات مشابه دوباره رخ می‌دهند یا نه." },
+                { "language": "ar", "text": "سنحسن القاعدة ثم نراقب ما إذا كانت مشكلات مشابهة ستظهر مجددًا." },
+                { "language": "tr", "text": "Kuralı iyileştireceğiz ve sonra benzer sorunların tekrar ortaya çıkıp çıkmadığını izleyeceğiz." },
+                { "language": "ru", "text": "Мы улучшим правило и затем будем наблюдать, появятся ли похожие проблемы снова." },
+                { "language": "ckb", "text": "یاساکە باشتر دەکەین و پاشان چاودێری دەکەین ئایا کێشەی هاوشێوە دووبارە ڕوودەدات یان نا." },
+                { "language": "kmr", "text": "Em ê rêgezê baştir bikin û paşê temaşe bikin ka pirsgirêkên wekhev dîsa derdikevin an na." },
+                { "language": "pl", "text": "Poprawimy regułę, a potem będziemy obserwować, czy podobne problemy pojawią się ponownie." },
+                { "language": "ro", "text": "Vom îmbunătăți regula și apoi vom observa dacă apar din nou probleme similare." },
+                { "language": "sq", "text": "Do ta përmirësojmë rregullin dhe pastaj do të vëzhgojmë nëse shfaqen sërish probleme të ngjashme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort nennt keine manuelle Nachprüfung und keine konkreten Testbedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer names no manual recheck and no concrete test conditions." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ نه بازبینی دستی را نام می‌برد و نه شرایط مشخص آزمایش را." },
+                { "language": "ar", "text": "عام جدًا: لا تذكر الإجابة مراجعة يدوية ولا شروط اختبار ملموسة." },
+                { "language": "tr", "text": "Fazla genel: Yanıt ne elle yeniden kontrolü ne de somut test koşullarını belirtir." },
+                { "language": "ru", "text": "Слишком общо: ответ не называет ни ручную перепроверку, ни конкретные условия тестирования." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە نە پشکنینی دەستی ناودەبات و نە مەرجی دیاریکراوی تاقیکردنەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv ne kontrola destî û ne şertên diyarkirî yên ceribandinê nav dike." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź nie wskazuje ręcznej ponownej kontroli ani konkretnych warunków testu." },
+                { "language": "ro", "text": "Prea general: răspunsul nu numește reverificarea manuală și nici condiții concrete de testare." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja nuk përmend rishikim manual dhe as kushte konkrete testimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Es gab keinen Datenverlust, sondern eine falsche Priorisierung in einer klar abgrenzbaren Fallgruppe; wir prüfen nach, ändern die Regel und testen zusätzlich.",
+              "translations": [
+                { "language": "en", "text": "There was no data loss, but an incorrect prioritization in a clearly definable group of cases; we are rechecking, changing the rule, and adding tests." },
+                { "language": "fa", "text": "داده‌ای از بین نرفته است، بلکه در یک گروه پرونده‌ای با مرز روشن اولویت‌بندی اشتباه رخ داده است؛ ما بازبینی می‌کنیم، قاعده را تغییر می‌دهیم و آزمایش‌های بیشتری انجام می‌دهیم." },
+                { "language": "ar", "text": "لم يحدث فقدان للبيانات، بل أولوية خاطئة في مجموعة حالات محددة بوضوح؛ نراجع ونغيّر القاعدة ونضيف اختبارات." },
+                { "language": "tr", "text": "Veri kaybı olmadı; açıkça sınırlandırılabilen bir vaka grubunda yanlış önceliklendirme oldu. Yeniden kontrol ediyor, kuralı değiştiriyor ve ek testler yapıyoruz." },
+                { "language": "ru", "text": "Потери данных не было, была неверная приоритизация в четко ограниченной группе случаев; мы перепроверяем, меняем правило и добавляем тесты." },
+                { "language": "ckb", "text": "داتا لەدەست نەچووە، بەڵکو لە گرووپێکی دۆخدا کە سنووری ڕوونی هەیە پێشینەدان بە هەڵە بووە؛ ئێمە دووبارە پشکنین دەکەین، یاساکە دەگۆڕین و تاقیکردنەوەی زیاتر زیاد دەکەین." },
+                { "language": "kmr", "text": "Dane winda nebûne, lê di komeke rewşan a bi sînora zelal de pêşengkirin şaş bû; em ji nû ve kontrol dikin, rêgezê diguherînin û ceribandinên zêdetir zêde dikin." },
+                { "language": "pl", "text": "Nie było utraty danych, lecz błędna priorytetyzacja w jasno dającej się wyodrębnić grupie spraw; sprawdzamy ponownie, zmieniamy regułę i dodajemy testy." },
+                { "language": "ro", "text": "Nu a existat pierdere de date, ci o prioritizare greșită într-un grup de cazuri clar delimitabil; reverificăm, schimbăm regula și adăugăm teste." },
+                { "language": "sq", "text": "Nuk pati humbje të dhënash, por renditje të gabuar përparësie në një grup rastesh të përcaktueshëm qartë; po rishikojmë, po ndryshojmë rregullin dhe po shtojmë teste." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussaussage ist kurz, sachlich und enthält Reichweite, Folge und Korrektur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The closing statement is short, factual, and contains scope, consequence, and correction." },
+                { "language": "fa", "text": "قوی: جمله پایانی کوتاه و واقع‌محور است و دامنه، پیامد و اصلاح را در خود دارد." },
+                { "language": "ar", "text": "قوي: العبارة الختامية قصيرة وموضوعية وتتضمن النطاق والنتيجة والتصحيح." },
+                { "language": "tr", "text": "Güçlü: Kapanış ifadesi kısa, olgusal ve kapsam, sonuç ile düzeltmeyi içeriyor." },
+                { "language": "ru", "text": "Сильно: заключительная фраза короткая, фактическая и содержит масштаб, последствие и исправление." },
+                { "language": "ckb", "text": "بەهێزە: وتەی کۆتایی کورت و ڕاستییە و سنوور، ئەنجام و ڕاستکردنەوە لەخۆ دەگرێت." },
+                { "language": "kmr", "text": "Xurt e: gotina dawî kurt û rastîn e û qada bandorê, encam û rastkirinê di nav xwe de digire." },
+                { "language": "pl", "text": "Mocne: wypowiedź końcowa jest krótka, rzeczowa i zawiera zakres, skutek oraz korektę." },
+                { "language": "ro", "text": "Puternic: declarația finală este scurtă, factuală și include aria, consecința și corectarea." },
+                { "language": "sq", "text": "E fortë: deklarata përmbyllëse është e shkurtër, faktike dhe përmban shtrirjen, pasojën dhe korrigjimin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir haben den Fehler verstanden und werden dafür sorgen, dass die automatische Sortierung künftig verlässlicher läuft.",
+              "translations": [
+                { "language": "en", "text": "We have understood the error and will ensure that automatic sorting runs more reliably in the future." },
+                { "language": "fa", "text": "ما خطا را فهمیده‌ایم و کاری می‌کنیم که مرتب‌سازی خودکار در آینده قابل اعتمادتر کار کند." },
+                { "language": "ar", "text": "لقد فهمنا الخطأ وسنضمن أن يعمل الفرز التلقائي مستقبلًا بموثوقية أكبر." },
+                { "language": "tr", "text": "Hatayı anladık ve otomatik sıralamanın gelecekte daha güvenilir çalışmasını sağlayacağız." },
+                { "language": "ru", "text": "Мы поняли ошибку и обеспечим, чтобы автоматическая сортировка в будущем работала надежнее." },
+                { "language": "ckb", "text": "ئێمە هەڵەکەمان تێگەیشتووە و دڵنیایی دەدەین کە ڕیزکردنی خۆکار لە داهاتوودا پشتپێبەستراوتر کار بکات." },
+                { "language": "kmr", "text": "Me şaşî fam kir û em ê dabîn bikin ku rêzkirina bixweber di paşerojê de pêbawertir bixebite." },
+                { "language": "pl", "text": "Zrozumieliśmy błąd i zadbamy o to, aby automatyczne sortowanie działało w przyszłości bardziej niezawodnie." },
+                { "language": "ro", "text": "Am înțeles eroarea și vom avea grijă ca sortarea automată să funcționeze mai fiabil pe viitor." },
+                { "language": "sq", "text": "E kemi kuptuar gabimin dhe do të sigurojmë që renditja automatike të funksionojë më besueshëm në të ardhmen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Aussage klingt ordentlich, aber sie lässt offen, was genau passiert ist und was geprüft wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the statement sounds orderly, but leaves open what exactly happened and what is being checked." },
+                { "language": "fa", "text": "بیش از حد کلی است: جمله مرتب به نظر می‌رسد، اما روشن نمی‌کند دقیقاً چه رخ داده و چه چیزی بررسی می‌شود." },
+                { "language": "ar", "text": "عام جدًا: تبدو العبارة مرتبة، لكنها تترك مفتوحًا ما الذي حدث تحديدًا وما الذي يُفحص." },
+                { "language": "tr", "text": "Fazla genel: İfade düzgün duyuluyor, ancak tam olarak ne olduğunu ve neyin kontrol edildiğini açık bırakıyor." },
+                { "language": "ru", "text": "Слишком общо: фраза выглядит аккуратно, но оставляет открытым, что именно произошло и что проверяется." },
+                { "language": "ckb", "text": "زۆر گشتییە: وتەکە ڕێکوپێک دەردەکەوێت، بەڵام کراوە دەهێڵێتەوە کە بە وردی چی ڕوویداوە و چی دەپشکنرێت." },
+                { "language": "kmr", "text": "Pir giştî ye: gotin rêkûpêk xuya dike, lê vekirî dihêle ku bi taybetî çi qewimî û çi tê kontrolkirin." },
+                { "language": "pl", "text": "Zbyt ogólne: wypowiedź brzmi porządnie, ale pozostawia otwarte, co dokładnie się stało i co jest sprawdzane." },
+                { "language": "ro", "text": "Prea general: afirmația pare ordonată, dar lasă deschis ce s-a întâmplat exact și ce se verifică." },
+                { "language": "sq", "text": "Shumë e përgjithshme: fjalia tingëllon e rregullt, por lë hapur çfarë ndodhi saktësisht dhe çfarë po kontrollohet." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "scope",
+          "text": "Trennen Sie zuerst Gesamtsystem, Teilfunktion und konkrete Fehlkonstellation.",
+          "translations": [
+            { "language": "en", "text": "First separate the overall system, the partial function, and the concrete error constellation." },
+            { "language": "fa", "text": "ابتدا کل سیستم، عملکرد جزئی و وضعیت مشخص خطا را از هم جدا کنید." },
+            { "language": "ar", "text": "افصلوا أولًا بين النظام الكلي والوظيفة الجزئية وحالة الخطأ المحددة." },
+            { "language": "tr", "text": "Önce genel sistemi, kısmi işlevi ve somut hata durumunu ayırın." },
+            { "language": "ru", "text": "Сначала разделите общую систему, частичную функцию и конкретную ошибочную ситуацию." },
+            { "language": "ckb", "text": "سەرەتا هەموو سیستەم، کاری بەشی و دۆخی دیاریکراوی هەڵە جیا بکەوە." },
+            { "language": "kmr", "text": "Pêşî hemû pergal, karê beşî û rewşa diyarkirî ya şaşiyê ji hev veqetînin." },
+            { "language": "pl", "text": "Najpierw oddziel cały system, funkcję częściową i konkretną konfigurację błędu." },
+            { "language": "ro", "text": "Separați mai întâi sistemul întreg, funcția parțială și constelația concretă a erorii." },
+            { "language": "sq", "text": "Së pari ndani sistemin e përgjithshëm, funksionin e pjesshëm dhe rrethanën konkrete të gabimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "clarity",
+          "text": "Eine gute technische Erklärung nennt die Logik des Fehlers, nicht nur das Etikett des Fehlers.",
+          "translations": [
+            { "language": "en", "text": "A good technical explanation names the logic of the error, not just the label of the error." },
+            { "language": "fa", "text": "توضیح فنی خوب منطق خطا را نام می‌برد، نه فقط برچسب خطا را." },
+            { "language": "ar", "text": "الشرح التقني الجيد يذكر منطق الخطأ، لا مجرد تسمية الخطأ." },
+            { "language": "tr", "text": "İyi bir teknik açıklama, hatanın sadece etiketini değil, mantığını da adlandırır." },
+            { "language": "ru", "text": "Хорошее техническое объяснение называет логику ошибки, а не только ее ярлык." },
+            { "language": "ckb", "text": "ڕوونکردنەوەی تەکنیکی باش لۆژیکی هەڵە ناودەبات، نە تەنها ناوی هەڵەکە." },
+            { "language": "kmr", "text": "Ravekirina teknîkî ya baş mantiqa şaşiyê nav dike, ne tenê navê şaşiyê." },
+            { "language": "pl", "text": "Dobre wyjaśnienie techniczne nazywa logikę błędu, a nie tylko jego etykietę." },
+            { "language": "ro", "text": "O explicație tehnică bună numește logica erorii, nu doar eticheta erorii." },
+            { "language": "sq", "text": "Një shpjegim i mirë teknik emërton logjikën e gabimit, jo vetëm etiketën e gabimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "proportion",
+          "text": "Folgen sollten präzise begrenzt werden: weder beschönigen noch ausweiten.",
+          "translations": [
+            { "language": "en", "text": "Consequences should be limited precisely: neither gloss over them nor expand them." },
+            { "language": "fa", "text": "پیامدها باید دقیقاً محدود شوند: نه زیبا جلوه داده شوند و نه بزرگ‌تر از حد بیان شوند." },
+            { "language": "ar", "text": "ينبغي تحديد النتائج بدقة: لا تلطيفها ولا توسيعها." },
+            { "language": "tr", "text": "Sonuçlar kesin biçimde sınırlandırılmalıdır: ne güzelleştirilmeli ne de genişletilmelidir." },
+            { "language": "ru", "text": "Последствия следует точно ограничивать: не приукрашивать и не расширять." },
+            { "language": "ckb", "text": "ئەنجامەکان دەبێت بە وردی سنووردار بکرێن: نە جوان پیشان بدرێن و نە فراوان بکرێن." },
+            { "language": "kmr", "text": "Encam divê bi rastî bên sînordarkirin: ne bên xweşkirin û ne bên berfirehkirin." },
+            { "language": "pl", "text": "Skutki trzeba precyzyjnie ograniczyć: ani ich nie upiększać, ani nie rozszerzać." },
+            { "language": "ro", "text": "Consecințele trebuie delimitate precis: nici înfrumusețate, nici extinse." },
+            { "language": "sq", "text": "Pasojat duhet të kufizohen saktë: as të zbukurohen, as të zmadhohen." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "synthesis",
+          "text": "Eine starke Schlussaussage enthält Symptom, Reichweite, Korrektur und Testbedingung.",
+          "translations": [
+            { "language": "en", "text": "A strong closing statement contains symptom, scope, correction, and test condition." },
+            { "language": "fa", "text": "جمله پایانی قوی شامل نشانه، دامنه، اصلاح و شرط آزمایش است." },
+            { "language": "ar", "text": "العبارة الختامية القوية تتضمن العَرَض والنطاق والتصحيح وشرط الاختبار." },
+            { "language": "tr", "text": "Güçlü bir kapanış ifadesi belirti, kapsam, düzeltme ve test koşulunu içerir." },
+            { "language": "ru", "text": "Сильное заключительное заявление содержит симптом, масштаб, исправление и условие тестирования." },
+            { "language": "ckb", "text": "وتەی کۆتایی بەهێز نیشانە، سنوور، ڕاستکردنەوە و مەرجی تاقیکردنەوە لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Gotina dawî ya xurt nîşan, qada bandorê, rastkirin û şertê ceribandinê di nav xwe de digire." },
+            { "language": "pl", "text": "Mocna wypowiedź końcowa zawiera objaw, zakres, korektę i warunek testu." },
+            { "language": "ro", "text": "O declarație finală puternică include simptomul, aria, corectarea și condiția de testare." },
+            { "language": "sq", "text": "Një deklaratë përmbyllëse e fortë përmban shenjën, shtrirjen, korrigjimin dhe kushtin e testimit." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "technical-briefing-algorithmic-error",
+          "placement": "detail-header",
+          "purpose": "Show a neutral internal briefing where a technical issue is explained clearly to non-specialists.",
+          "altText": "Eine interne Besprechung mit einem einfachen Diagramm zur automatischen Sortierung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An internal meeting with a simple diagram about automatic sorting." },
+            { "language": "fa", "text": "یک جلسه داخلی با نموداری ساده درباره مرتب‌سازی خودکار." },
+            { "language": "ar", "text": "اجتماع داخلي مع رسم بسيط حول الفرز التلقائي." },
+            { "language": "tr", "text": "Otomatik sıralama hakkında basit bir diyagramla yapılan iç toplantı." },
+            { "language": "ru", "text": "Внутренняя встреча с простой диаграммой об автоматической сортировке." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی ناوخۆیی بە هێڵکارییەکی سادە لەسەر ڕیزکردنی خۆکار." },
+            { "language": "kmr", "text": "Civîneke navxweyî bi nexşeyeke hêsan li ser rêzkirina bixweber." },
+            { "language": "pl", "text": "Wewnętrzne spotkanie z prostym diagramem dotyczącym automatycznego sortowania." },
+            { "language": "ro", "text": "O ședință internă cu o diagramă simplă despre sortarea automată." },
+            { "language": "sq", "text": "Një takim i brendshëm me një diagram të thjeshtë për renditjen automatike." }
+          ],
+          "imagePrompt": "Clean educational illustration of a workplace briefing with a diverse group of people looking at a simple abstract flow diagram about automatic sorting on a whiteboard, no readable private data, no logos, no code on screen, no text inside image, calm professional setting, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

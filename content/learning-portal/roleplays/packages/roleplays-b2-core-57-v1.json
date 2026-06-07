@@ -1,0 +1,662 @@
+{
+  "packageId": "roleplays-b2-core-57-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 57 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 57",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "culture": "de-DE",
+  "sourceLanguage": "de",
+  "notes": "B2 standalone RoleplayScenario package. German-first source content with localized learner-language projections. One scenario only for quality review.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-reisebedingungen-bei-stornierung-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Reisebedingungen bei Stornierung klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying travel conditions when cancelling" },
+        { "language": "fa", "text": "روشن کردن شرایط سفر هنگام لغو" },
+        { "language": "ar", "text": "توضيح شروط السفر عند الإلغاء" },
+        { "language": "tr", "text": "İptal durumunda seyahat koşullarını netleştirmek" },
+        { "language": "ru", "text": "Уточнить условия поездки при отмене" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی مەرجەکانی گەشت لە کاتی هەڵوەشاندنەوە" },
+        { "language": "kmr", "text": "Zelalkirina şertên rêwîtiyê dema betalkirinê" },
+        { "language": "pl", "text": "Wyjaśnienie warunków podróży przy anulowaniu" },
+        { "language": "ro", "text": "Clarificarea condițiilor de călătorie la anulare" },
+        { "language": "sq", "text": "Sqarimi i kushteve të udhëtimit gjatë anulimit" }
+      ],
+      "description": "Du rufst bei einem Reiseanbieter an, weil du eine gebuchte Reise wahrscheinlich stornieren musst. Du klärst Tarif, Frist, Stornogebühr, Rückzahlung, Umbuchung und schriftliche Bestätigung, bevor du dich endgültig entscheidest.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call a travel provider because you will probably have to cancel a booked trip. You clarify fare type, deadline, cancellation fee, refund, rebooking, and written confirmation before making a final decision." },
+        { "language": "fa", "text": "با یک ارائه‌دهنده سفر تماس می‌گیری، چون احتمالاً باید یک سفر رزروشده را لغو کنی. قبل از تصمیم نهایی، نوع تعرفه، مهلت، هزینه لغو، بازپرداخت، تغییر رزرو و تأیید کتبی را روشن می‌کنی." },
+        { "language": "ar", "text": "تتصل بمزود سفر لأنك على الأرجح ستضطر إلى إلغاء رحلة محجوزة. قبل القرار النهائي توضّح نوع التعرفة والمهلة ورسوم الإلغاء والاسترداد وإعادة الحجز والتأكيد الخطي." },
+        { "language": "tr", "text": "Rezervasyonu yapılmış bir seyahati muhtemelen iptal etmek zorunda olduğun için bir seyahat sağlayıcısını arıyorsun. Kesin karar vermeden önce tarife türünü, süreyi, iptal ücretini, geri ödemeyi, tarih değişikliğini ve yazılı onayı netleştiriyorsun." },
+        { "language": "ru", "text": "Ты звонишь туристическому провайдеру, потому что, вероятно, придется отменить забронированную поездку. Перед окончательным решением ты уточняешь тариф, срок, штраф за отмену, возврат денег, перебронирование и письменное подтверждение." },
+        { "language": "ckb", "text": "پەیوەندی بە دابینکەری گەشت دەکەیت، چونکە ڕەنگە پێویستت بێت گەشتێکی حجزکراو هەڵبوەشێنیتەوە. پێش بڕیاری کۆتایی، جۆری نرخ، مۆڵەت، کرێی هەڵوەشاندنەوە، گەڕاندنەوەی پارە، گۆڕینی حجز و پشتڕاستکردنەوەی نووسراو ڕوون دەکەیتەوە." },
+        { "language": "kmr", "text": "Tu telefonî dabînkerê rêwîtiyê dikî, ji ber ku belkî divê rêwîtiyeke rezervkirî betal bikî. Berî biryara dawî, tu cureya bihayê, dem, berdêla betalkirinê, vegerandina pereyan, guherandina rezervasyonê û piştrastkirina nivîskî zelal dikî." },
+        { "language": "pl", "text": "Dzwonisz do organizatora podróży, ponieważ prawdopodobnie musisz anulować zarezerwowany wyjazd. Przed ostateczną decyzją wyjaśniasz typ taryfy, termin, opłatę za anulowanie, zwrot, zmianę rezerwacji i pisemne potwierdzenie." },
+        { "language": "ro", "text": "Suni la un furnizor de călătorii deoarece probabil trebuie să anulezi o călătorie rezervată. Înainte de decizia finală clarifici tipul tarifului, termenul, taxa de anulare, rambursarea, reprogramarea și confirmarea scrisă." },
+        { "language": "sq", "text": "Telefonon një ofrues udhëtimi sepse ndoshta duhet të anulosh një udhëtim të rezervuar. Para vendimit përfundimtar sqaron llojin e tarifës, afatin, tarifën e anulimit, rimbursimin, ndryshimin e rezervimit dhe konfirmimin me shkrim." }
+      ],
+      "learnerGoal": "Kläre eine mögliche Stornierung, ohne vorschnell zu kündigen: nenne Buchungsnummer und Reisedaten, frage nach Frist, Gebühr, Rückzahlung, Umbuchung und schriftlicher Bestätigung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify a possible cancellation without cancelling too quickly: name booking number and travel dates, ask about deadline, fee, refund, rebooking, and written confirmation." },
+        { "language": "fa", "text": "یک لغو احتمالی را بدون عجله برای لغو نهایی روشن کن: شماره رزرو و تاریخ سفر را بگو و درباره مهلت، هزینه، بازپرداخت، تغییر رزرو و تأیید کتبی بپرس." },
+        { "language": "ar", "text": "وضّح إلغاءً محتملًا من دون الإلغاء بسرعة: اذكر رقم الحجز وتواريخ السفر واسأل عن المهلة والرسوم والاسترداد وإعادة الحجز والتأكيد الخطي." },
+        { "language": "tr", "text": "Aceleyle iptal etmeden olası bir iptali netleştir: rezervasyon numarasını ve seyahat tarihlerini söyle, süre, ücret, geri ödeme, tarih değişikliği ve yazılı onay hakkında sor." },
+        { "language": "ru", "text": "Уточни возможную отмену, не отменяя слишком поспешно: назови номер бронирования и даты поездки, спроси о сроке, сборе, возврате, перебронировании и письменном подтверждении." },
+        { "language": "ckb", "text": "هەڵوەشاندنەوەیەکی ئەگەری ڕوون بکەوە بەبێ ئەوەی بە پەلە هەڵیبوەشێنیتەوە: ژمارەی حجز و بەروارەکانی گەشت بڵێ و لە مۆڵەت، کرێ، گەڕاندنەوەی پارە، گۆڕینی حجز و پشتڕاستکردنەوەی نووسراو بپرسە." },
+        { "language": "kmr", "text": "Betalkirineke mumkin zelal bike bê ku zû betal bikî: jimareya rezervasyonê û demên rêwîtiyê bibêje, li ser dem, berdêl, vegerandina pereyan, guherandina rezervasyonê û piştrastkirina nivîskî bipirse." },
+        { "language": "pl", "text": "Wyjaśnij możliwe anulowanie bez pochopnej rezygnacji: podaj numer rezerwacji i daty podróży, zapytaj o termin, opłatę, zwrot, zmianę rezerwacji i pisemne potwierdzenie." },
+        { "language": "ro", "text": "Clarifică o posibilă anulare fără să renunți pripit: menționează numărul rezervării și datele călătoriei, întreabă despre termen, taxă, rambursare, reprogramare și confirmare scrisă." },
+        { "language": "sq", "text": "Sqaro një anulim të mundshëm pa e anuluar me nxitim: përmend numrin e rezervimit dhe datat e udhëtimit, pyet për afatin, tarifën, rimbursimin, ndryshimin e rezervimit dhe konfirmimin me shkrim." }
+      ],
+      "cefrLevel": "B2",
+      "category": "travel",
+      "topics": [
+        "transport-and-travel",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "taskType": "ask-for-information",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "travel-agent",
+          "displayName": "Reiseservice",
+          "translations": [
+            { "language": "en", "text": "Travel service" },
+            { "language": "fa", "text": "خدمات سفر" },
+            { "language": "ar", "text": "خدمة السفر" },
+            { "language": "tr", "text": "Seyahat hizmeti" },
+            { "language": "ru", "text": "Туристический сервис" },
+            { "language": "ckb", "text": "خزمەتگوزاری گەشت" },
+            { "language": "kmr", "text": "Xizmeta rêwîtiyê" },
+            { "language": "pl", "text": "Obsługa podróży" },
+            { "language": "ro", "text": "Serviciul de călătorii" },
+            { "language": "sq", "text": "Shërbimi i udhëtimit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kunde",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "العميل" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиент" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Xerîdar" },
+            { "language": "pl", "text": "Klient" },
+            { "language": "ro", "text": "Client" },
+            { "language": "sq", "text": "Klienti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "travel-agent",
+          "baseText": "Guten Tag, Reiseservice Berger. Wie kann ich Ihnen weiterhelfen?",
+          "translations": [
+            { "language": "en", "text": "Good day, Berger Travel Service. How can I help you?" },
+            { "language": "fa", "text": "روز بخیر، خدمات سفر برگر. چطور می‌توانم کمکتان کنم؟" },
+            { "language": "ar", "text": "نهارك سعيد، خدمة السفر برغر. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler, Berger Seyahat Hizmeti. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день, туристический сервис Berger. Чем могу вам помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، خزمەتگوزاری گەشتی بەرگر. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Roj baş, Xizmeta Rêwîtiyê Berger. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Dzień dobry, Obsługa Podróży Berger. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, Serviciul de Călătorii Berger. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, Shërbimi i Udhëtimit Berger. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening",
+          "toneNote": "Der Reiseservice eröffnet das Gespräch neutral.",
+          "expectedLearnerAction": "Buchung und Klärungsanliegen nennen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich rufe wegen meiner Buchung R-28174 an. Es geht um die Reise nach Wien vom 20. bis 23. August. Ich muss sie eventuell stornieren, möchte aber zuerst die Bedingungen genau verstehen.",
+          "translations": [
+            { "language": "en", "text": "Good day. I am calling about my booking R-28174. It concerns the trip to Vienna from August 20 to 23. I may have to cancel it, but first I would like to understand the conditions exactly." },
+            { "language": "fa", "text": "روز بخیر. درباره رزرو R-28174 تماس می‌گیرم. موضوع سفر به وین از ۲۰ تا ۲۳ اوت است. شاید مجبور شوم آن را لغو کنم، اما اول می‌خواهم شرایط را دقیق بفهمم." },
+            { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص حجزي R-28174. الأمر يتعلق بالرحلة إلى فيينا من 20 إلى 23 أغسطس. قد أضطر إلى إلغائها، لكنني أريد أولًا أن أفهم الشروط بدقة." },
+            { "language": "tr", "text": "İyi günler. R-28174 numaralı rezervasyonumla ilgili arıyorum. 20-23 Ağustos tarihli Viyana seyahatiyle ilgili. Belki iptal etmek zorunda kalacağım, ama önce koşulları tam olarak anlamak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я звоню по поводу моего бронирования R-28174. Речь идет о поездке в Вену с 20 по 23 августа. Возможно, мне придется ее отменить, но сначала я хочу точно понять условия." },
+            { "language": "ckb", "text": "ڕۆژ باش. پەیوەندی دەکەم لەبارەی حجزی R-28174. بابەتەکە گەشتی ڤیەننا لە ٢٠ تا ٢٣ی ئابە. ڕەنگە پێویست بێت هەڵیبوەشێنم، بەڵام سەرەتا دەمەوێت مەرجەکان بە وردی تێبگەم." },
+            { "language": "kmr", "text": "Roj baş. Ez ji bo rezervasyona xwe ya R-28174 telefon dikim. Mijar rêwîtiya Viyanayê ji 20 heta 23ê Tebaxê ye. Dibe ku divê ez wê betal bikim, lê pêşî dixwazim şertan bi rastî fam bikim." },
+            { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie mojej rezerwacji R-28174. Chodzi o wyjazd do Wiednia od 20 do 23 sierpnia. Być może będę musiał/musiała go anulować, ale najpierw chcę dokładnie zrozumieć warunki." },
+            { "language": "ro", "text": "Bună ziua. Sun în legătură cu rezervarea mea R-28174. Este vorba despre călătoria la Viena din 20 până în 23 august. S-ar putea să trebuiască să o anulez, dar mai întâi vreau să înțeleg exact condițiile." },
+            { "language": "sq", "text": "Mirëdita. Po telefonoj për rezervimin tim R-28174. Bëhet fjalë për udhëtimin në Vjenë nga 20 deri më 23 gusht. Ndoshta do të më duhet ta anuloj, por së pari dua t'i kuptoj saktë kushtet." }
+          ],
+          "function": "state cancellation inquiry",
+          "toneNote": "Du kündigst nicht sofort, sondern bittest zuerst um Klärung.",
+          "expectedLearnerAction": "Buchungsnummer, Reisedaten und Ziel der Klärung nennen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "travel-agent",
+          "baseText": "Ich sehe die Buchung. Sie haben einen Flex-Tarif mit Hotel und Bahnfahrt gebucht. Eine kostenlose Stornierung ist bis 14 Tage vor Reisebeginn möglich, danach fällt eine Gebühr an.",
+          "translations": [
+            { "language": "en", "text": "I can see the booking. You booked a flexible fare with hotel and train travel. Free cancellation is possible up to 14 days before the start of the trip; after that, a fee applies." },
+            { "language": "fa", "text": "رزرو را می‌بینم. شما یک تعرفه انعطاف‌پذیر با هتل و سفر با قطار رزرو کرده‌اید. لغو رایگان تا ۱۴ روز پیش از شروع سفر ممکن است؛ بعد از آن هزینه‌ای اعمال می‌شود." },
+            { "language": "ar", "text": "أرى الحجز. لقد حجزت تعرفة مرنة مع فندق ورحلة بالقطار. الإلغاء المجاني ممكن حتى 14 يومًا قبل بداية الرحلة، وبعد ذلك تُفرض رسوم." },
+            { "language": "tr", "text": "Rezervasyonu görüyorum. Otel ve tren yolculuğu içeren esnek bir tarife almışsınız. Seyahat başlangıcından 14 gün öncesine kadar ücretsiz iptal mümkündür; sonrasında ücret uygulanır." },
+            { "language": "ru", "text": "Я вижу бронирование. Вы забронировали гибкий тариф с отелем и поездкой на поезде. Бесплатная отмена возможна до 14 дней до начала поездки; после этого взимается сбор." },
+            { "language": "ckb", "text": "حجزەکە دەبینم. ئێوە نرخێکی flexible لەگەڵ هۆتێل و گەشتی شەمەندەفەر حجز کردووە. هەڵوەشاندنەوەی بێبەرامبەر تا ١٤ ڕۆژ پێش دەستپێکی گەشت دەکرێت؛ دوای ئەوە کرێیەک دەخرێتەسەر." },
+            { "language": "kmr", "text": "Ez rezervasyonê dibînim. We bihayeke flexible bi otêl û rêwîtiya trênê rezerv kiriye. Betalkirina belaş heta 14 roj berî destpêka rêwîtiyê mumkin e; piştî wê berdêlek tê sepandin." },
+            { "language": "pl", "text": "Widzę rezerwację. Zarezerwowali państwo taryfę elastyczną z hotelem i przejazdem pociągiem. Bezpłatne anulowanie jest możliwe do 14 dni przed rozpoczęciem podróży, później naliczana jest opłata." },
+            { "language": "ro", "text": "Văd rezervarea. Ați rezervat un tarif flexibil cu hotel și călătorie cu trenul. Anularea gratuită este posibilă până la 14 zile înainte de începutul călătoriei; după aceea se aplică o taxă." },
+            { "language": "sq", "text": "E shoh rezervimin. Keni rezervuar një tarifë fleksibël me hotel dhe udhëtim me tren. Anulimi falas është i mundur deri 14 ditë para fillimit të udhëtimit; pas kësaj aplikohet një tarifë." }
+          ],
+          "function": "explain basic rule",
+          "toneNote": "Der Service nennt Tarif und Grundregel.",
+          "expectedLearnerAction": "Nach konkreter Frist, Gebühr und Erstattung fragen."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Könnten Sie mir bitte konkret sagen, bis zu welchem Datum ich ohne Kosten stornieren kann und wie hoch die Gebühr wäre, wenn ich erst später storniere? Außerdem interessiert mich, ob die Rückzahlung auf die ursprüngliche Karte erfolgt.",
+          "translations": [
+            { "language": "en", "text": "Could you please tell me specifically by which date I can cancel without cost and how high the fee would be if I cancel later? I would also like to know whether the refund goes back to the original card." },
+            { "language": "fa", "text": "لطفاً می‌توانید مشخصاً بگویید تا چه تاریخی می‌توانم بدون هزینه لغو کنم و اگر دیرتر لغو کنم هزینه چقدر خواهد بود؟ همچنین می‌خواهم بدانم آیا بازپرداخت به همان کارت اولیه انجام می‌شود یا نه." },
+            { "language": "ar", "text": "هل يمكنكم من فضلكم أن تقولوا لي تحديدًا حتى أي تاريخ أستطيع الإلغاء من دون تكلفة، وكم ستكون الرسوم إذا ألغيت لاحقًا؟ كما يهمني أن أعرف هل سيتم الاسترداد إلى البطاقة الأصلية." },
+            { "language": "tr", "text": "Lütfen bana tam olarak hangi tarihe kadar ücretsiz iptal edebileceğimi ve daha sonra iptal edersem ücretin ne kadar olacağını söyleyebilir misiniz? Ayrıca geri ödemenin ilk karta yapılıp yapılmayacağını bilmek istiyorum." },
+            { "language": "ru", "text": "Можете, пожалуйста, конкретно сказать, до какой даты я могу отменить без расходов и какой будет сбор, если я отменю позже? Кроме того, меня интересует, будет ли возврат на исходную карту." },
+            { "language": "ckb", "text": "تکایە دەتوانن بە دیاریکراوی پێم بڵێن تا چ بەروارێک دەتوانم بەبێ تێچوو هەڵبوەشێنمەوە و ئەگەر دواتر هەڵبوەشێنم کرێکە چەند دەبێت؟ هەروەها دەمەوێت بزانم ئایا گەڕاندنەوەی پارە بۆ هەمان کارتی سەرەتایی دەکرێت یان نا." },
+            { "language": "kmr", "text": "Hûn dikarin ji kerema xwe bi taybetî ji min re bibêjin heta kîjan tarîxê ez dikarim bê lêçûn betal bikim û ger paşê betal bikim berdêl çiqas e? Herwiha ez dixwazim bizanim ka vegerandina pereyan li karta destpêkê tê kirin an na." },
+            { "language": "pl", "text": "Czy mogą państwo konkretnie powiedzieć, do jakiej daty mogę anulować bez kosztów i jaka byłaby opłata, jeśli anuluję później? Interesuje mnie też, czy zwrot zostanie dokonany na pierwotną kartę." },
+            { "language": "ro", "text": "Îmi puteți spune concret până la ce dată pot anula fără costuri și cât ar fi taxa dacă anulez mai târziu? De asemenea, mă interesează dacă rambursarea se face pe cardul inițial." },
+            { "language": "sq", "text": "A mund të më thoni konkretisht deri në cilën datë mund ta anuloj pa kosto dhe sa do të ishte tarifa nëse e anuloj më vonë? Gjithashtu dua të di nëse rimbursimi bëhet në kartën fillestare." }
+          ],
+          "function": "ask precise conditions",
+          "toneNote": "Du fragst nicht nur allgemein, sondern nach Datum, Kosten und Zahlungsweg.",
+          "expectedLearnerAction": "Frist, Gebühr und Rückzahlungsweg konkret abfragen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "travel-agent",
+          "baseText": "Kostenfrei können Sie bis einschließlich 5. August stornieren. Ab dem 6. August wären 20 Prozent des Reisepreises fällig. Die Rückzahlung erfolgt auf die Karte, mit der die Reise bezahlt wurde, normalerweise innerhalb von sieben Werktagen.",
+          "translations": [
+            { "language": "en", "text": "You can cancel free of charge up to and including August 5. From August 6, 20 percent of the trip price would be due. The refund is made to the card used to pay for the trip, normally within seven business days." },
+            { "language": "fa", "text": "تا پایان ۵ اوت می‌توانید رایگان لغو کنید. از ۶ اوت، ۲۰ درصد قیمت سفر باید پرداخت شود. بازپرداخت به کارتی انجام می‌شود که سفر با آن پرداخت شده، معمولاً ظرف هفت روز کاری." },
+            { "language": "ar", "text": "يمكنك الإلغاء مجانًا حتى 5 أغسطس شاملًا. ابتداءً من 6 أغسطس ستستحق 20 في المئة من سعر الرحلة. يتم الاسترداد إلى البطاقة التي دُفعت بها الرحلة، عادةً خلال سبعة أيام عمل." },
+            { "language": "tr", "text": "5 Ağustos dahil olmak üzere ücretsiz iptal edebilirsiniz. 6 Ağustos'tan itibaren seyahat bedelinin yüzde 20'si ödenir. Geri ödeme, seyahatin ödendiği karta normalde yedi iş günü içinde yapılır." },
+            { "language": "ru", "text": "Бесплатно вы можете отменить до 5 августа включительно. С 6 августа взимается 20 процентов стоимости поездки. Возврат производится на карту, которой была оплачена поездка, обычно в течение семи рабочих дней." },
+            { "language": "ckb", "text": "دەتوانن تا کۆتایی ٥ی ئاب بەبێ تێچوو هەڵبوەشێننەوە. لە ٦ی ئابەوە ٢٠ لەسەدی نرخی گەشت دەبێت بدرێت. گەڕاندنەوەی پارە بۆ ئەو کارتێک دەکرێت کە گەشتەکە پێی پارەدراوە، بە ئاسایی لە ماوەی حەوت ڕۆژی کاری." },
+            { "language": "kmr", "text": "Hûn dikarin heta 5ê Tebaxê jî bêpere betal bikin. Ji 6ê Tebaxê ve 20 ji sedî ya bihayê rêwîtiyê divê were dayîn. Vegerandina pereyan li karta ku rêwîtî pê hatiye dayîn tê kirin, bi gelemperî di nav heft rojên kar de." },
+            { "language": "pl", "text": "Bezpłatnie można anulować do 5 sierpnia włącznie. Od 6 sierpnia należne byłoby 20 procent ceny podróży. Zwrot następuje na kartę, którą opłacono podróż, zwykle w ciągu siedmiu dni roboczych." },
+            { "language": "ro", "text": "Puteți anula gratuit până la 5 august inclusiv. Din 6 august ar fi datorate 20 la sută din prețul călătoriei. Rambursarea se face pe cardul cu care a fost plătită călătoria, în mod normal în termen de șapte zile lucrătoare." },
+            { "language": "sq", "text": "Mund ta anuloni falas deri më 5 gusht përfshirë. Nga 6 gushti do të duhej të paguhej 20 për qind e çmimit të udhëtimit. Rimbursimi bëhet në kartën me të cilën është paguar udhëtimi, zakonisht brenda shtatë ditëve pune." }
+          ],
+          "function": "give exact conditions",
+          "toneNote": "Der Service liefert Frist, Gebühr und Rückzahlungsweg.",
+          "expectedLearnerAction": "Nach Umbuchung und schriftlicher Bestätigung fragen."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Bevor ich storniere, möchte ich noch wissen, ob eine Umbuchung auf einen späteren Termin möglich wäre. Wäre das günstiger als eine Stornierung, und würden Hotel und Bahnfahrt zusammen umgebucht oder getrennt behandelt?",
+          "translations": [
+            { "language": "en", "text": "Before I cancel, I would also like to know whether rebooking to a later date would be possible. Would that be cheaper than cancellation, and would the hotel and train travel be rebooked together or handled separately?" },
+            { "language": "fa", "text": "قبل از اینکه لغو کنم، می‌خواهم بدانم آیا تغییر رزرو به تاریخ دیرتر ممکن است یا نه. آیا این از لغو ارزان‌تر می‌شود و هتل و سفر قطار با هم تغییر داده می‌شوند یا جداگانه بررسی می‌شوند؟" },
+            { "language": "ar", "text": "قبل أن ألغي، أريد أن أعرف أيضًا هل يمكن تغيير الحجز إلى موعد لاحق. هل سيكون ذلك أرخص من الإلغاء، وهل يتم تغيير حجز الفندق ورحلة القطار معًا أم تتم معالجتهما بشكل منفصل؟" },
+            { "language": "tr", "text": "İptal etmeden önce, daha sonraki bir tarihe değişiklik yapmanın mümkün olup olmadığını da bilmek istiyorum. Bu iptalden daha ucuz olur mu ve otel ile tren yolculuğu birlikte mi değiştirilir yoksa ayrı ayrı mı ele alınır?" },
+            { "language": "ru", "text": "Прежде чем отменять, я хочу еще узнать, возможно ли перенести бронирование на более позднюю дату. Это было бы дешевле, чем отмена, и отель и поездка на поезде перебронируются вместе или рассматриваются отдельно?" },
+            { "language": "ckb", "text": "پێش ئەوەی هەڵیبوەشێنمەوە، دەمەوێت بزانم ئایا گۆڕینی حجز بۆ بەروارێکی دواتر دەکرێت یان نا. ئایا ئەمە لە هەڵوەشاندنەوە هەرزانتر دەبێت، و ئایا هۆتێل و گەشتی شەمەندەفەر پێکەوە دەگۆڕدرێن یان جیاجیا مامەڵەیان لەگەڵ دەکرێت؟" },
+            { "language": "kmr", "text": "Berî ku ez betal bikim, ez dixwazim bizanim ka guherandina rezervasyonê bo tarîxeke paşê mumkin e an na. Ev ji betalkirinê erzantir dibe, û otêl û rêwîtiya trênê bi hev re tên guherandin an cuda tên birêvebirin?" },
+            { "language": "pl", "text": "Zanim anuluję, chciałbym/chciałabym jeszcze wiedzieć, czy możliwa byłaby zmiana rezerwacji na późniejszy termin. Czy byłoby to tańsze niż anulowanie i czy hotel oraz przejazd pociągiem zmienia się razem czy traktuje oddzielnie?" },
+            { "language": "ro", "text": "Înainte să anulez, vreau să mai știu dacă ar fi posibilă reprogramarea la o dată ulterioară. Ar fi mai ieftin decât anularea și hotelul și călătoria cu trenul ar fi reprogramate împreună sau tratate separat?" },
+            { "language": "sq", "text": "Para se ta anuloj, dua të di edhe nëse do të ishte e mundur ndryshimi i rezervimit për një datë më të vonshme. A do të ishte më lirë se anulimi dhe a do të ndryshoheshin së bashku hoteli dhe udhëtimi me tren apo do të trajtoheshin veçmas?" }
+          ],
+          "function": "ask rebooking alternative",
+          "toneNote": "Du prüfst eine Alternative, bevor du dich festlegst.",
+          "expectedLearnerAction": "Umbuchung, Kostenvergleich und Paketlogik klären."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "travel-agent",
+          "baseText": "Eine Umbuchung ist grundsätzlich möglich, solange im Hotel noch Zimmer frei sind. Für die Bahnfahrt müssten wir den aktuellen Fahrpreis prüfen. Wenn der neue Termin teurer ist, zahlen Sie nur die Differenz, keine zusätzliche Stornogebühr.",
+          "translations": [
+            { "language": "en", "text": "Rebooking is generally possible as long as rooms are still available at the hotel. For the train travel, we would have to check the current fare. If the new date is more expensive, you only pay the difference, not an additional cancellation fee." },
+            { "language": "fa", "text": "تغییر رزرو اصولاً ممکن است، تا وقتی که در هتل هنوز اتاق آزاد باشد. برای سفر قطار باید قیمت فعلی را بررسی کنیم. اگر تاریخ جدید گران‌تر باشد، فقط تفاوت قیمت را می‌پردازید، نه هزینه لغو اضافی." },
+            { "language": "ar", "text": "إعادة الحجز ممكنة من حيث المبدأ طالما أن هناك غرفًا متاحة في الفندق. بالنسبة لرحلة القطار يجب أن نتحقق من السعر الحالي. إذا كان الموعد الجديد أغلى، فستدفع الفرق فقط، من دون رسوم إلغاء إضافية." },
+            { "language": "tr", "text": "Otelde hâlâ boş oda olduğu sürece değişiklik genel olarak mümkündür. Tren yolculuğu için güncel ücreti kontrol etmemiz gerekir. Yeni tarih daha pahalıysa yalnızca farkı ödersiniz, ek iptal ücreti ödemezsiniz." },
+            { "language": "ru", "text": "Перебронирование в принципе возможно, пока в отеле есть свободные номера. По поездке на поезде нужно проверить актуальную стоимость. Если новая дата дороже, вы платите только разницу, без дополнительного сбора за отмену." },
+            { "language": "ckb", "text": "گۆڕینی حجز بە گشتی دەکرێت، تا کاتێک لە هۆتێلدا ژووری بەردەست هەبێت. بۆ گەشتی شەمەندەفەر دەبێت نرخی ئێستا بپشکنین. ئەگەر بەرواری نوێ گرانتر بێت، تەنها جیاوازی نرخ دەدەن، نە کرێی هەڵوەشاندنەوەی زیادە." },
+            { "language": "kmr", "text": "Guherandina rezervasyonê bi giştî mumkin e, heta ku li otêlê odeyên vala hebin. Ji bo rêwîtiya trênê divê em bihayê niha kontrol bikin. Ger tarîxa nû bihêtir be, hûn tenê cudahiya bihayê didin, ne berdêla betalkirina zêde." },
+            { "language": "pl", "text": "Zmiana rezerwacji jest zasadniczo możliwa, o ile w hotelu są jeszcze wolne pokoje. Dla przejazdu pociągiem musielibyśmy sprawdzić aktualną cenę. Jeśli nowy termin jest droższy, płacą państwo tylko różnicę, bez dodatkowej opłaty za anulowanie." },
+            { "language": "ro", "text": "Reprogramarea este în principiu posibilă atât timp cât mai sunt camere disponibile la hotel. Pentru călătoria cu trenul ar trebui să verificăm tariful actual. Dacă noua dată este mai scumpă, plătiți doar diferența, nu o taxă suplimentară de anulare." },
+            { "language": "sq", "text": "Ndryshimi i rezervimit është në parim i mundur për sa kohë që në hotel ka ende dhoma të lira. Për udhëtimin me tren duhet të kontrollojmë çmimin aktual. Nëse data e re është më e shtrenjtë, paguani vetëm diferencën, jo një tarifë shtesë anulimi." }
+          ],
+          "function": "explain rebooking option",
+          "toneNote": "Der Service erklärt Alternative und Kostenlogik.",
+          "expectedLearnerAction": "Schriftliche Übersicht vor Entscheidung erbitten."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das hilft mir. Könnten Sie mir bitte eine schriftliche Übersicht schicken, in der die kostenlose Stornofrist, die Gebühr nach dem 5. August, die Rückzahlungsdauer und die Umbuchungsoption stehen? Dann kann ich heute Abend entscheiden.",
+          "translations": [
+            { "language": "en", "text": "That helps me. Could you please send me a written summary showing the free cancellation deadline, the fee after August 5, the refund time, and the rebooking option? Then I can decide this evening." },
+            { "language": "fa", "text": "این به من کمک می‌کند. لطفاً می‌توانید یک خلاصه کتبی بفرستید که در آن مهلت لغو رایگان، هزینه بعد از ۵ اوت، مدت بازپرداخت و گزینه تغییر رزرو نوشته شده باشد؟ آن وقت می‌توانم امشب تصمیم بگیرم." },
+            { "language": "ar", "text": "هذا يساعدني. هل يمكنكم من فضلكم أن ترسلوا لي ملخصًا خطيًا يذكر مهلة الإلغاء المجاني والرسوم بعد 5 أغسطس ومدة الاسترداد وخيار إعادة الحجز؟ عندها أستطيع أن أقرر هذا المساء." },
+            { "language": "tr", "text": "Bu bana yardımcı olur. Ücretsiz iptal süresinin, 5 Ağustos'tan sonraki ücretin, geri ödeme süresinin ve değişiklik seçeneğinin yer aldığı yazılı bir özet gönderebilir misiniz? O zaman bu akşam karar verebilirim." },
+            { "language": "ru", "text": "Это мне поможет. Можете, пожалуйста, отправить мне письменную сводку, где указаны срок бесплатной отмены, сбор после 5 августа, срок возврата и возможность перебронирования? Тогда я смогу решить сегодня вечером." },
+            { "language": "ckb", "text": "ئەمە یارمەتیم دەدات. تکایە دەتوانن پوختەیەکی نووسراو بۆم بنێرن کە مۆڵەتی هەڵوەشاندنەوەی بێبەرامبەر، کرێی دوای ٥ی ئاب، ماوەی گەڕاندنەوەی پارە و هەڵبژاردەی گۆڕینی حجز تێیدا هەبێت؟ ئەوسا دەتوانم ئەمشەو بڕیار بدەم." },
+            { "language": "kmr", "text": "Ev alîkariya min dike. Hûn dikarin ji kerema xwe kurteyek nivîskî ji min re bişînin ku tê de dema betalkirina belaş, berdêla piştî 5ê Tebaxê, dema vegerandina pereyan û hilbijartina guherandina rezervasyonê hebin? Wê demê ez dikarim îşev biryar bidim." },
+            { "language": "pl", "text": "To mi pomaga. Czy mogą państwo przesłać mi pisemne zestawienie, w którym będą termin bezpłatnego anulowania, opłata po 5 sierpnia, czas zwrotu i opcja zmiany rezerwacji? Wtedy mogę zdecydować dziś wieczorem." },
+            { "language": "ro", "text": "Asta mă ajută. Îmi puteți trimite, vă rog, un rezumat scris în care să apară termenul de anulare gratuită, taxa după 5 august, durata rambursării și opțiunea de reprogramare? Atunci pot decide în această seară." },
+            { "language": "sq", "text": "Kjo më ndihmon. A mund të më dërgoni ju lutem një përmbledhje me shkrim ku të jenë afati i anulimit falas, tarifa pas 5 gushtit, koha e rimbursimit dhe mundësia e ndryshimit të rezervimit? Atëherë mund të vendos sonte." }
+          ],
+          "function": "request written summary",
+          "toneNote": "Du verlangst keine sofortige Änderung, sondern eine belastbare Entscheidungsgrundlage.",
+          "expectedLearnerAction": "Schriftliche Übersicht mit allen Entscheidungsdaten erbitten."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "travel-agent",
+          "baseText": "Ja, ich sende Ihnen die Übersicht gleich per E-Mail. Wenn Sie stornieren möchten, reicht eine kurze Antwort auf diese E-Mail bis spätestens 5. August, 18 Uhr. Danach gelten die genannten Gebühren.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will send you the summary by email right away. If you want to cancel, a short reply to this email is sufficient by August 5 at 6 p.m. at the latest. After that, the fees mentioned apply." },
+            { "language": "fa", "text": "بله، خلاصه را همین الان از طریق ایمیل برایتان می‌فرستم. اگر می‌خواهید لغو کنید، کافی است تا حداکثر ۵ اوت ساعت ۱۸ یک پاسخ کوتاه به همین ایمیل بدهید. بعد از آن، هزینه‌های گفته‌شده اعمال می‌شود." },
+            { "language": "ar", "text": "نعم، سأرسل لك الملخص فورًا عبر البريد الإلكتروني. إذا أردت الإلغاء، تكفي إجابة قصيرة على هذا البريد الإلكتروني حتى 5 أغسطس الساعة 18 كحد أقصى. بعد ذلك تسري الرسوم المذكورة." },
+            { "language": "tr", "text": "Evet, özeti hemen e-posta ile göndereceğim. İptal etmek isterseniz, en geç 5 Ağustos saat 18'e kadar bu e-postaya kısa bir yanıt vermeniz yeterli. Ondan sonra belirtilen ücretler geçerli olur." },
+            { "language": "ru", "text": "Да, я сразу отправлю вам сводку по электронной почте. Если вы захотите отменить, достаточно короткого ответа на это письмо не позднее 5 августа, 18:00. После этого действуют названные сборы." },
+            { "language": "ckb", "text": "بەڵێ، هەر ئێستا پوختەکە بە ئیمەیڵ بۆتان دەنێرم. ئەگەر دەتەوێت هەڵبوەشێننەوە، وەڵامێکی کورت بۆ ئەم ئیمەیڵە تا دوا کات ٥ی ئاب کاتژمێر ١٨ بەسە. دوای ئەوە کرێیە باسکراوەکان کارا دەبن." },
+            { "language": "kmr", "text": "Erê, ez kurteyê niha bi e-peyamê ji we re dişînim. Ger hûn dixwazin betal bikin, bersiveke kurt bo vê e-peyamê heta herî dereng 5ê Tebaxê saet 18ê têr e. Piştî wê berdêlên gotî derbasdar in." },
+            { "language": "pl", "text": "Tak, zaraz wyślę zestawienie e-mailem. Jeśli chcą państwo anulować, wystarczy krótka odpowiedź na tę wiadomość najpóźniej do 5 sierpnia, do godziny 18. Później obowiązują wymienione opłaty." },
+            { "language": "ro", "text": "Da, vă trimit imediat rezumatul prin e-mail. Dacă doriți să anulați, este suficient un răspuns scurt la acest e-mail până cel târziu pe 5 august, ora 18. După aceea se aplică taxele menționate." },
+            { "language": "sq", "text": "Po, do t'jua dërgoj menjëherë përmbledhjen me e-mail. Nëse dëshironi të anuloni, mjafton një përgjigje e shkurtër në këtë e-mail deri më së voni më 5 gusht, ora 18. Pas kësaj vlejnë tarifat e përmendura." }
+          ],
+          "function": "confirm written summary",
+          "toneNote": "Der Service nennt den verbindlichen Antwortweg und die Uhrzeit.",
+          "expectedLearnerAction": "Frist, Antwortweg und Entscheidungsstatus zusammenfassen."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann warte ich auf Ihre E-Mail und prüfe heute Abend, ob ich storniere oder umbuche. Ich habe verstanden: kostenfrei bis 5. August um 18 Uhr, danach 20 Prozent Gebühr, Rückzahlung auf die ursprüngliche Karte und Umbuchung je nach Verfügbarkeit.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will wait for your email and check this evening whether I will cancel or rebook. I understand: free of charge until August 5 at 6 p.m., after that a 20 percent fee, refund to the original card, and rebooking depending on availability." },
+            { "language": "fa", "text": "بسیار ممنون. پس منتظر ایمیل شما می‌مانم و امشب بررسی می‌کنم که لغو کنم یا تغییر رزرو بدهم. متوجه شدم: رایگان تا ۵ اوت ساعت ۱۸، بعد از آن ۲۰ درصد هزینه، بازپرداخت به کارت اولیه و تغییر رزرو بسته به موجود بودن." },
+            { "language": "ar", "text": "شكرًا جزيلًا. إذن سأنتظر بريدكم الإلكتروني وأتحقق هذا المساء مما إذا كنت سألغى أم أغير الحجز. فهمت: مجاني حتى 5 أغسطس الساعة 18، وبعد ذلك رسوم 20 في المئة، والاسترداد إلى البطاقة الأصلية، وإعادة الحجز حسب التوفر." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde e-postanızı bekleyeceğim ve bu akşam iptal mi edeceğimi yoksa tarih mi değiştireceğimi kontrol edeceğim. Şunu anladım: 5 Ağustos saat 18'e kadar ücretsiz, sonrasında yüzde 20 ücret, geri ödeme ilk karta ve değişiklik müsaitliğe bağlı." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я буду ждать ваше письмо и сегодня вечером проверю, отменять ли мне или перебронировать. Я понял(а): бесплатно до 5 августа 18:00, после этого сбор 20 процентов, возврат на исходную карту и перебронирование в зависимости от наличия мест." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی ئیمەیڵەکەتان دەبم و ئەمشەو دەپشکنم ئایا هەڵیبوەشێنمەوە یان حجزەکە بگۆڕم. تێگەیشتم: بەبێ تێچوو تا ٥ی ئاب کاتژمێر ١٨، دوای ئەوە ٢٠ لەسەد کرێ، گەڕاندنەوەی پارە بۆ کارتی سەرەتایی و گۆڕینی حجز بەپێی بەردەستی." },
+            { "language": "kmr", "text": "Gelek spas. Hingê ez li benda e-peyama we dimînim û îşev kontrol dikim ka ez betal bikim an rezervasyonê biguherînim. Min fam kir: heta 5ê Tebaxê saet 18ê bêpere, paşê 20 ji sedî berdêl, vegerandina pereyan li karta destpêkê û guherandin li gorî peydabûnê." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie poczekam na państwa e-mail i dziś wieczorem sprawdzę, czy anulować, czy zmienić rezerwację. Zrozumiałem/zrozumiałam: bezpłatnie do 5 sierpnia do godziny 18, potem 20 procent opłaty, zwrot na pierwotną kartę i zmiana rezerwacji zależnie od dostępności." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci aștept e-mailul dumneavoastră și verific în această seară dacă anulez sau reprogramez. Am înțeles: gratuit până pe 5 august la ora 18, apoi taxă de 20 la sută, rambursare pe cardul inițial și reprogramare în funcție de disponibilitate." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë do të pres e-mailin tuaj dhe sonte do të kontrolloj nëse do ta anuloj apo do ta ndryshoj rezervimin. E kuptova: falas deri më 5 gusht në orën 18, pastaj tarifë 20 për qind, rimbursim në kartën fillestare dhe ndryshim rezervimi sipas disponueshmërisë." }
+          ],
+          "function": "close with summary",
+          "toneNote": "Du fasst die Bedingungen vollständig zusammen und triffst noch keine vorschnelle Entscheidung.",
+          "expectedLearnerAction": "Frist, Kosten, Rückzahlung und Umbuchungsoption wiederholen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "b2-cancellation-57-t2-a",
+              "text": "Guten Tag. Ich rufe wegen meiner Buchung R-28174 an. Es geht um die Reise nach Wien vom 20. bis 23. August. Ich muss sie eventuell stornieren, möchte aber zuerst die Bedingungen genau verstehen.",
+              "translations": [
+                { "language": "en", "text": "Good day. I am calling about my booking R-28174. It concerns the trip to Vienna from August 20 to 23. I may have to cancel it, but first I would like to understand the conditions exactly." },
+                { "language": "fa", "text": "روز بخیر. درباره رزرو R-28174 تماس می‌گیرم. موضوع سفر به وین از ۲۰ تا ۲۳ اوت است. شاید مجبور شوم آن را لغو کنم، اما اول می‌خواهم شرایط را دقیق بفهمم." },
+                { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص حجزي R-28174. الأمر يتعلق بالرحلة إلى فيينا من 20 إلى 23 أغسطس. قد أضطر إلى إلغائها، لكنني أريد أولًا أن أفهم الشروط بدقة." },
+                { "language": "tr", "text": "İyi günler. R-28174 numaralı rezervasyonumla ilgili arıyorum. 20-23 Ağustos tarihli Viyana seyahatiyle ilgili. Belki iptal etmek zorunda kalacağım, ama önce koşulları tam olarak anlamak istiyorum." },
+                { "language": "ru", "text": "Добрый день. Я звоню по поводу моего бронирования R-28174. Речь идет о поездке в Вену с 20 по 23 августа. Возможно, мне придется ее отменить, но сначала я хочу точно понять условия." },
+                { "language": "ckb", "text": "ڕۆژ باش. پەیوەندی دەکەم لەبارەی حجزی R-28174. بابەتەکە گەشتی ڤیەننا لە ٢٠ تا ٢٣ی ئابە. ڕەنگە پێویست بێت هەڵیبوەشێنم، بەڵام سەرەتا دەمەوێت مەرجەکان بە وردی تێبگەم." },
+                { "language": "kmr", "text": "Roj baş. Ez ji bo rezervasyona xwe ya R-28174 telefon dikim. Mijar rêwîtiya Viyanayê ji 20 heta 23ê Tebaxê ye. Dibe ku divê ez wê betal bikim, lê pêşî dixwazim şertan bi rastî fam bikim." },
+                { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie mojej rezerwacji R-28174. Chodzi o wyjazd do Wiednia od 20 do 23 sierpnia. Być może będę musiał/musiała go anulować, ale najpierw chcę dokładnie zrozumieć warunki." },
+                { "language": "ro", "text": "Bună ziua. Sun în legătură cu rezervarea mea R-28174. Este vorba despre călătoria la Viena din 20 până în 23 august. S-ar putea să trebuiască să o anulez, dar mai întâi vreau să înțeleg exact condițiile." },
+                { "language": "sq", "text": "Mirëdita. Po telefonoj për rezervimin tim R-28174. Bëhet fjalë për udhëtimin në Vjenë nga 20 deri më 23 gusht. Ndoshta do të më duhet ta anuloj, por së pari dua t'i kuptoj saktë kushtet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist stark: Du nennst Buchung, Zeitraum und erklärst, dass du zuerst Informationen brauchst.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is strong: you name the booking, time period, and explain that you first need information." },
+                { "language": "fa", "text": "این قوی است: رزرو و بازه زمانی را می‌گویی و توضیح می‌دهی که اول به اطلاعات نیاز داری." },
+                { "language": "ar", "text": "هذا قوي: تذكر الحجز والمدة وتوضح أنك تحتاج أولًا إلى المعلومات." },
+                { "language": "tr", "text": "Bu güçlü: rezervasyonu ve tarih aralığını söylüyor, önce bilgiye ihtiyacın olduğunu açıklıyorsun." },
+                { "language": "ru", "text": "Это сильный ответ: ты называешь бронирование, период и объясняешь, что сначала нужна информация." },
+                { "language": "ckb", "text": "ئەمە بەهێزە: حجز و ماوەکە دەڵێیت و ڕوون دەکەیتەوە کە سەرەتا پێویستت بە زانیارییە." },
+                { "language": "kmr", "text": "Ev bihêz e: tu rezervasyon û demê dibêjî û şirove dikî ku pêşî hewceyî agahiyê yî." },
+                { "language": "pl", "text": "To mocne: podajesz rezerwację, termin i wyjaśniasz, że najpierw potrzebujesz informacji." },
+                { "language": "ro", "text": "Este puternic: menționezi rezervarea, perioada și explici că mai întâi ai nevoie de informații." },
+                { "language": "sq", "text": "Kjo është e fortë: përmend rezervimin, periudhën dhe shpjegon se së pari të duhen informacione." }
+              ],
+              "explanationKey": "precise-cancellation-opening"
+            },
+            {
+              "id": "b2-cancellation-57-t2-b",
+              "text": "Guten Tag. Ich möchte vielleicht meine Reise stornieren. Können Sie mir sagen, was ich machen soll?",
+              "translations": [
+                { "language": "en", "text": "Good day. I might want to cancel my trip. Can you tell me what I should do?" },
+                { "language": "fa", "text": "روز بخیر. شاید بخواهم سفرم را لغو کنم. می‌توانید بگویید چه کار باید بکنم؟" },
+                { "language": "ar", "text": "نهارك سعيد. ربما أريد إلغاء رحلتي. هل يمكنكم أن تقولوا لي ماذا أفعل؟" },
+                { "language": "tr", "text": "İyi günler. Belki seyahatimi iptal etmek istiyorum. Ne yapmam gerektiğini söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Добрый день. Возможно, я хочу отменить поездку. Можете сказать, что мне делать?" },
+                { "language": "ckb", "text": "ڕۆژ باش. ڕەنگە بمەوێت گەشتەکەم هەڵبوەشێنمەوە. دەتوانن پێم بڵێن چی بکەم؟" },
+                { "language": "kmr", "text": "Roj baş. Belkî ez dixwazim rêwîtiya xwe betal bikim. Hûn dikarin ji min re bibêjin divê ez çi bikim?" },
+                { "language": "pl", "text": "Dzień dobry. Może chcę anulować podróż. Czy mogą państwo powiedzieć, co mam zrobić?" },
+                { "language": "ro", "text": "Bună ziua. Poate vreau să îmi anulez călătoria. Îmi puteți spune ce ar trebui să fac?" },
+                { "language": "sq", "text": "Mirëdita. Ndoshta dua ta anuloj udhëtimin tim. A mund të më thoni çfarë duhet të bëj?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber für B2 zu ungenau. Buchungsnummer, Reisedaten und die Bitte um Bedingungen fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too vague for B2. Booking number, travel dates, and the request for conditions are missing." },
+                { "language": "fa", "text": "این مؤدبانه است، اما برای B2 خیلی مبهم است. شماره رزرو، تاریخ سفر و درخواست برای شرایط کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير دقيق بما يكفي لمستوى B2. ينقص رقم الحجز وتواريخ السفر وطلب الشروط." },
+                { "language": "tr", "text": "Bu kibar, ama B2 için fazla belirsiz. Rezervasyon numarası, seyahat tarihleri ve koşulları sorma eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком неточно для B2. Не хватает номера бронирования, дат поездки и просьбы об условиях." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام بۆ B2 زۆر ناوردە. ژمارەی حجز، بەروارەکانی گەشت و داوای مەرجەکان کەمە." },
+                { "language": "kmr", "text": "Ev bi rêzdarî ye, lê ji bo B2 pir nezelal e. Jimareya rezervasyonê, demên rêwîtiyê û daxwaza şertan kêm in." },
+                { "language": "pl", "text": "To uprzejme, ale zbyt nieprecyzyjne na B2. Brakuje numeru rezerwacji, dat podróży i prośby o warunki." },
+                { "language": "ro", "text": "Este politicos, dar prea neclar pentru B2. Lipsesc numărul rezervării, datele călătoriei și solicitarea condițiilor." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e paqartë për B2. Mungojnë numri i rezervimit, datat e udhëtimit dhe kërkesa për kushtet." }
+              ],
+              "explanationKey": "opening-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "b2-cancellation-57-t4-a",
+              "text": "Könnten Sie mir bitte konkret sagen, bis zu welchem Datum ich ohne Kosten stornieren kann und wie hoch die Gebühr wäre, wenn ich erst später storniere? Außerdem interessiert mich, ob die Rückzahlung auf die ursprüngliche Karte erfolgt.",
+              "translations": [
+                { "language": "en", "text": "Could you please tell me specifically by which date I can cancel without cost and how high the fee would be if I cancel later? I would also like to know whether the refund goes back to the original card." },
+                { "language": "fa", "text": "لطفاً می‌توانید مشخصاً بگویید تا چه تاریخی می‌توانم بدون هزینه لغو کنم و اگر دیرتر لغو کنم هزینه چقدر خواهد بود؟ همچنین می‌خواهم بدانم آیا بازپرداخت به همان کارت اولیه انجام می‌شود یا نه." },
+                { "language": "ar", "text": "هل يمكنكم من فضلكم أن تقولوا لي تحديدًا حتى أي تاريخ أستطيع الإلغاء من دون تكلفة، وكم ستكون الرسوم إذا ألغيت لاحقًا؟ كما يهمني أن أعرف هل سيتم الاسترداد إلى البطاقة الأصلية." },
+                { "language": "tr", "text": "Lütfen bana tam olarak hangi tarihe kadar ücretsiz iptal edebileceğimi ve daha sonra iptal edersem ücretin ne kadar olacağını söyleyebilir misiniz? Ayrıca geri ödemenin ilk karta yapılıp yapılmayacağını bilmek istiyorum." },
+                { "language": "ru", "text": "Можете, пожалуйста, конкретно сказать, до какой даты я могу отменить без расходов и какой будет сбор, если я отменю позже? Кроме того, меня интересует, будет ли возврат на исходную карту." },
+                { "language": "ckb", "text": "تکایە دەتوانن بە دیاریکراوی پێم بڵێن تا چ بەروارێک دەتوانم بەبێ تێچوو هەڵبوەشێنمەوە و ئەگەر دواتر هەڵبوەشێنم کرێکە چەند دەبێت؟ هەروەها دەمەوێت بزانم ئایا گەڕاندنەوەی پارە بۆ هەمان کارتی سەرەتایی دەکرێت یان نا." },
+                { "language": "kmr", "text": "Hûn dikarin ji kerema xwe bi taybetî ji min re bibêjin heta kîjan tarîxê ez dikarim bê lêçûn betal bikim û ger paşê betal bikim berdêl çiqas e? Herwiha ez dixwazim bizanim ka vegerandina pereyan li karta destpêkê tê kirin an na." },
+                { "language": "pl", "text": "Czy mogą państwo konkretnie powiedzieć, do jakiej daty mogę anulować bez kosztów i jaka byłaby opłata, jeśli anuluję później? Interesuje mnie też, czy zwrot zostanie dokonany na pierwotną kartę." },
+                { "language": "ro", "text": "Îmi puteți spune concret până la ce dată pot anula fără costuri și cât ar fi taxa dacă anulez mai târziu? De asemenea, mă interesează dacă rambursarea se face pe cardul inițial." },
+                { "language": "sq", "text": "A mund të më thoni konkretisht deri në cilën datë mund ta anuloj pa kosto dhe sa do të ishte tarifa nëse e anuloj më vonë? Gjithashtu dua të di nëse rimbursimi bëhet në kartën fillestare." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist vollständig: Du fragst nach Frist, Gebühr und Rückzahlungsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is complete: you ask about deadline, fee, and refund route." },
+                { "language": "fa", "text": "این کامل است: درباره مهلت، هزینه و مسیر بازپرداخت می‌پرسی." },
+                { "language": "ar", "text": "هذا كامل: تسأل عن المهلة والرسوم وطريقة الاسترداد." },
+                { "language": "tr", "text": "Bu eksiksiz: süre, ücret ve geri ödeme yolu hakkında soruyorsun." },
+                { "language": "ru", "text": "Это полно: ты спрашиваешь о сроке, сборе и способе возврата." },
+                { "language": "ckb", "text": "ئەمە تەواوە: لە مۆڵەت، کرێ و ڕێگای گەڕاندنەوەی پارە دەپرسیت." },
+                { "language": "kmr", "text": "Ev temam e: tu li ser dem, berdêl û rêya vegerandina pereyan dipirsî." },
+                { "language": "pl", "text": "To kompletne: pytasz o termin, opłatę i sposób zwrotu." },
+                { "language": "ro", "text": "Este complet: întrebi despre termen, taxă și calea rambursării." },
+                { "language": "sq", "text": "Kjo është e plotë: pyet për afatin, tarifën dhe mënyrën e rimbursimit." }
+              ],
+              "explanationKey": "complete-fee-refund-question"
+            },
+            {
+              "id": "b2-cancellation-57-t4-b",
+              "text": "Können Sie mir sagen, ob die Stornierung teuer wird?",
+              "translations": [
+                { "language": "en", "text": "Can you tell me whether the cancellation will be expensive?" },
+                { "language": "fa", "text": "می‌توانید بگویید آیا لغو گران تمام می‌شود؟" },
+                { "language": "ar", "text": "هل يمكنكم أن تقولوا لي هل سيكون الإلغاء مكلفًا؟" },
+                { "language": "tr", "text": "İptalin pahalı olup olmayacağını söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Можете сказать, будет ли отмена дорогой?" },
+                { "language": "ckb", "text": "دەتوانن پێم بڵێن ئایا هەڵوەشاندنەوەکە گران دەکەوێت؟" },
+                { "language": "kmr", "text": "Hûn dikarin ji min re bibêjin ka betalkirin biha dibe?" },
+                { "language": "pl", "text": "Czy mogą państwo powiedzieć, czy anulowanie będzie drogie?" },
+                { "language": "ro", "text": "Îmi puteți spune dacă anularea va fi scumpă?" },
+                { "language": "sq", "text": "A mund të më thoni nëse anulimi do të jetë i shtrenjtë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage ist verständlich, aber zu grob. Für B2 brauchst du Datum, Prozentbetrag und Rückzahlungsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question is understandable, but too rough. For B2, you need date, percentage, and refund route." },
+                { "language": "fa", "text": "سؤال قابل فهم است، اما خیلی کلی است. برای B2 به تاریخ، درصد هزینه و مسیر بازپرداخت نیاز داری." },
+                { "language": "ar", "text": "السؤال مفهوم، لكنه عام جدًا. في B2 تحتاج إلى التاريخ والنسبة وطريقة الاسترداد." },
+                { "language": "tr", "text": "Soru anlaşılır, ama fazla kaba. B2 için tarih, yüzde oranı ve geri ödeme yolu gerekir." },
+                { "language": "ru", "text": "Вопрос понятен, но слишком общий. Для B2 нужны дата, процент и способ возврата." },
+                { "language": "ckb", "text": "پرسیارەکە تێگەیشتنەوەی هەیە، بەڵام زۆر گشتییە. بۆ B2 پێویستت بە بەروار، ڕێژە و ڕێگای گەڕاندنەوەی پارە هەیە." },
+                { "language": "kmr", "text": "Pirs têgihiştî ye, lê pir hişk e. Ji bo B2 tarîx, rêjeya sedî û rêya vegerandina pereyan divê." },
+                { "language": "pl", "text": "Pytanie jest zrozumiałe, ale zbyt ogólne. Na B2 potrzebujesz daty, procentu i sposobu zwrotu." },
+                { "language": "ro", "text": "Întrebarea este de înțeles, dar prea generală. Pentru B2 ai nevoie de dată, procent și calea rambursării." },
+                { "language": "sq", "text": "Pyetja është e kuptueshme, por shumë e përgjithshme. Për B2 të duhet data, përqindja dhe mënyra e rimbursimit." }
+              ],
+              "explanationKey": "fee-question-too-rough"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "b2-cancellation-57-t6-a",
+              "text": "Bevor ich storniere, möchte ich noch wissen, ob eine Umbuchung auf einen späteren Termin möglich wäre. Wäre das günstiger als eine Stornierung, und würden Hotel und Bahnfahrt zusammen umgebucht oder getrennt behandelt?",
+              "translations": [
+                { "language": "en", "text": "Before I cancel, I would also like to know whether rebooking to a later date would be possible. Would that be cheaper than cancellation, and would the hotel and train travel be rebooked together or handled separately?" },
+                { "language": "fa", "text": "قبل از اینکه لغو کنم، می‌خواهم بدانم آیا تغییر رزرو به تاریخ دیرتر ممکن است یا نه. آیا این از لغو ارزان‌تر می‌شود و هتل و سفر قطار با هم تغییر داده می‌شوند یا جداگانه بررسی می‌شوند؟" },
+                { "language": "ar", "text": "قبل أن ألغي، أريد أن أعرف أيضًا هل يمكن تغيير الحجز إلى موعد لاحق. هل سيكون ذلك أرخص من الإلغاء، وهل يتم تغيير حجز الفندق ورحلة القطار معًا أم تتم معالجتهما بشكل منفصل؟" },
+                { "language": "tr", "text": "İptal etmeden önce, daha sonraki bir tarihe değişiklik yapmanın mümkün olup olmadığını da bilmek istiyorum. Bu iptalden daha ucuz olur mu ve otel ile tren yolculuğu birlikte mi değiştirilir yoksa ayrı ayrı mı ele alınır?" },
+                { "language": "ru", "text": "Прежде чем отменять, я хочу еще узнать, возможно ли перенести бронирование на более позднюю дату. Это было бы дешевле, чем отмена, и отель и поездка на поезде перебронируются вместе или рассматриваются отдельно?" },
+                { "language": "ckb", "text": "پێش ئەوەی هەڵیبوەشێنمەوە، دەمەوێت بزانم ئایا گۆڕینی حجز بۆ بەروارێکی دواتر دەکرێت یان نا. ئایا ئەمە لە هەڵوەشاندنەوە هەرزانتر دەبێت، و ئایا هۆتێل و گەشتی شەمەندەفەر پێکەوە دەگۆڕدرێن یان جیاجیا مامەڵەیان لەگەڵ دەکرێت؟" },
+                { "language": "kmr", "text": "Berî ku ez betal bikim, ez dixwazim bizanim ka guherandina rezervasyonê bo tarîxeke paşê mumkin e an na. Ev ji betalkirinê erzantir dibe, û otêl û rêwîtiya trênê bi hev re tên guherandin an cuda tên birêvebirin?" },
+                { "language": "pl", "text": "Zanim anuluję, chciałbym/chciałabym jeszcze wiedzieć, czy możliwa byłaby zmiana rezerwacji na późniejszy termin. Czy byłoby to tańsze niż anulowanie i czy hotel oraz przejazd pociągiem zmienia się razem czy traktuje oddzielnie?" },
+                { "language": "ro", "text": "Înainte să anulez, vreau să mai știu dacă ar fi posibilă reprogramarea la o dată ulterioară. Ar fi mai ieftin decât anularea și hotelul și călătoria cu trenul ar fi reprogramate împreună sau tratate separat?" },
+                { "language": "sq", "text": "Para se ta anuloj, dua të di edhe nëse do të ishte e mundur ndryshimi i rezervimit për një datë më të vonshme. A do të ishte më lirë se anulimi dhe a do të ndryshoheshin së bashku hoteli dhe udhëtimi me tren apo do të trajtoheshin veçmas?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist gut: Du prüfst eine Alternative und fragst nach Kosten sowie Paketbestandteilen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is good: you check an alternative and ask about costs and package components." },
+                { "language": "fa", "text": "این خوب است: یک جایگزین را بررسی می‌کنی و درباره هزینه‌ها و بخش‌های بسته سفر می‌پرسی." },
+                { "language": "ar", "text": "هذا جيد: تتحقق من بديل وتسأل عن التكاليف ومكونات الباقة." },
+                { "language": "tr", "text": "Bu iyi: bir alternatifi kontrol ediyor, maliyetleri ve paket bileşenlerini soruyorsun." },
+                { "language": "ru", "text": "Это хорошо: ты проверяешь альтернативу и спрашиваешь о расходах и частях пакета." },
+                { "language": "ckb", "text": "ئەمە باشە: جێگرەوەیەک دەپشکنیت و لەبارەی تێچوو و بەشەکانی پەکەجەکە دەپرسیت." },
+                { "language": "kmr", "text": "Ev baş e: tu alternatîfekê kontrol dikî û li ser lêçûn û beşên pakêtê dipirsî." },
+                { "language": "pl", "text": "To dobre: sprawdzasz alternatywę i pytasz o koszty oraz składniki pakietu." },
+                { "language": "ro", "text": "Este bine: verifici o alternativă și întrebi despre costuri și componentele pachetului." },
+                { "language": "sq", "text": "Kjo është mirë: kontrollon një alternativë dhe pyet për kostot dhe pjesët e paketës." }
+              ],
+              "explanationKey": "good-rebooking-check"
+            },
+            {
+              "id": "b2-cancellation-57-t6-b",
+              "text": "Kann ich die Reise auch einfach auf ein anderes Datum legen?",
+              "translations": [
+                { "language": "en", "text": "Can I simply move the trip to another date as well?" },
+                { "language": "fa", "text": "آیا می‌توانم سفر را به‌سادگی به تاریخ دیگری منتقل کنم؟" },
+                { "language": "ar", "text": "هل يمكنني أيضًا نقل الرحلة ببساطة إلى تاريخ آخر؟" },
+                { "language": "tr", "text": "Seyahati basitçe başka bir tarihe de alabilir miyim?" },
+                { "language": "ru", "text": "Могу ли я просто перенести поездку на другую дату?" },
+                { "language": "ckb", "text": "ئایا دەتوانم گەشتەکە بە سادەیی بۆ بەروارێکی تر بگوازمەوە؟" },
+                { "language": "kmr", "text": "Ez dikarim rêwîtiyê bi hêsanî bo tarîxeke din biguherînim?" },
+                { "language": "pl", "text": "Czy mogę po prostu przenieść podróż na inny termin?" },
+                { "language": "ro", "text": "Pot pur și simplu să mut călătoria la o altă dată?" },
+                { "language": "sq", "text": "A mund ta zhvendos thjesht udhëtimin në një datë tjetër?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Richtung stimmt, aber die Frage ist zu kurz. Es fehlen Kostenvergleich und ob Hotel und Bahnfahrt zusammen geändert werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The direction is right, but the question is too short. Cost comparison and whether hotel and train travel are changed together are missing." },
+                { "language": "fa", "text": "جهت سؤال درست است، اما خیلی کوتاه است. مقایسه هزینه و اینکه هتل و قطار با هم تغییر می‌کنند یا نه، کم است." },
+                { "language": "ar", "text": "الاتجاه صحيح، لكن السؤال قصير جدًا. تنقص مقارنة التكاليف وهل يتم تغيير الفندق والقطار معًا." },
+                { "language": "tr", "text": "Yön doğru, ama soru fazla kısa. Maliyet karşılaştırması ve otel ile trenin birlikte değiştirilip değiştirilmediği eksik." },
+                { "language": "ru", "text": "Направление верное, но вопрос слишком короткий. Не хватает сравнения стоимости и того, меняются ли отель и поезд вместе." },
+                { "language": "ckb", "text": "ئاڕاستەکە ڕاستە، بەڵام پرسیارەکە زۆر کورته. بەراوردی تێچوو و ئەوەی هۆتێل و شەمەندەفەر پێکەوە دەگۆڕدرێن یان نا کەمە." },
+                { "language": "kmr", "text": "Ali rast e, lê pirs pir kurt e. Berhevkirina lêçûnê û ka otêl û trên bi hev re tên guherandin kêm in." },
+                { "language": "pl", "text": "Kierunek jest dobry, ale pytanie jest zbyt krótkie. Brakuje porównania kosztów i informacji, czy hotel i pociąg zmienia się razem." },
+                { "language": "ro", "text": "Direcția este bună, dar întrebarea este prea scurtă. Lipsesc comparația costurilor și dacă hotelul și trenul se schimbă împreună." },
+                { "language": "sq", "text": "Drejtimi është i saktë, por pyetja është shumë e shkurtër. Mungojnë krahasimi i kostos dhe nëse hoteli dhe treni ndryshohen së bashku." }
+              ],
+              "explanationKey": "rebooking-question-too-short"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "b2-cancellation-57-t10-a",
+              "text": "Vielen Dank. Dann warte ich auf Ihre E-Mail und prüfe heute Abend, ob ich storniere oder umbuche. Ich habe verstanden: kostenfrei bis 5. August um 18 Uhr, danach 20 Prozent Gebühr, Rückzahlung auf die ursprüngliche Karte und Umbuchung je nach Verfügbarkeit.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for your email and check this evening whether I will cancel or rebook. I understand: free of charge until August 5 at 6 p.m., after that a 20 percent fee, refund to the original card, and rebooking depending on availability." },
+                { "language": "fa", "text": "بسیار ممنون. پس منتظر ایمیل شما می‌مانم و امشب بررسی می‌کنم که لغو کنم یا تغییر رزرو بدهم. متوجه شدم: رایگان تا ۵ اوت ساعت ۱۸، بعد از آن ۲۰ درصد هزینه، بازپرداخت به کارت اولیه و تغییر رزرو بسته به موجود بودن." },
+                { "language": "ar", "text": "شكرًا جزيلًا. إذن سأنتظر بريدكم الإلكتروني وأتحقق هذا المساء مما إذا كنت سألغى أم أغير الحجز. فهمت: مجاني حتى 5 أغسطس الساعة 18، وبعد ذلك رسوم 20 في المئة، والاسترداد إلى البطاقة الأصلية، وإعادة الحجز حسب التوفر." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde e-postanızı bekleyeceğim ve bu akşam iptal mi edeceğimi yoksa tarih mi değiştireceğimi kontrol edeceğim. Şunu anladım: 5 Ağustos saat 18'e kadar ücretsiz, sonrasında yüzde 20 ücret, geri ödeme ilk karta ve değişiklik müsaitliğe bağlı." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я буду ждать ваше письмо и сегодня вечером проверю, отменять ли мне или перебронировать. Я понял(а): бесплатно до 5 августа 18:00, после этого сбор 20 процентов, возврат на исходную карту и перебронирование в зависимости от наличия мест." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی ئیمەیڵەکەتان دەبم و ئەمشەو دەپشکنم ئایا هەڵیبوەشێنمەوە یان حجزەکە بگۆڕم. تێگەیشتم: بەبێ تێچوو تا ٥ی ئاب کاتژمێر ١٨، دوای ئەوە ٢٠ لەسەد کرێ، گەڕاندنەوەی پارە بۆ کارتی سەرەتایی و گۆڕینی حجز بەپێی بەردەستی." },
+                { "language": "kmr", "text": "Gelek spas. Hingê ez li benda e-peyama we dimînim û îşev kontrol dikim ka ez betal bikim an rezervasyonê biguherînim. Min fam kir: heta 5ê Tebaxê saet 18ê bêpere, paşê 20 ji sedî berdêl, vegerandina pereyan li karta destpêkê û guherandin li gorî peydabûnê." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie poczekam na państwa e-mail i dziś wieczorem sprawdzę, czy anulować, czy zmienić rezerwację. Zrozumiałem/zrozumiałam: bezpłatnie do 5 sierpnia do godziny 18, potem 20 procent opłaty, zwrot na pierwotną kartę i zmiana rezerwacji zależnie od dostępności." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci aștept e-mailul dumneavoastră și verific în această seară dacă anulez sau reprogramez. Am înțeles: gratuit până pe 5 august la ora 18, apoi taxă de 20 la sută, rambursare pe cardul inițial și reprogramare în funcție de disponibilitate." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë do të pres e-mailin tuaj dhe sonte do të kontrolloj nëse do ta anuloj apo do ta ndryshoj rezervimin. E kuptova: falas deri më 5 gusht në orën 18, pastaj tarifë 20 për qind, rimbursim në kartën fillestare dhe ndryshim rezervimi sipas disponueshmërisë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist ein klarer Abschluss: Du wiederholst alle entscheidenden Bedingungen und triffst keine vorschnelle Entscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a clear closing: you repeat all key conditions and do not make a rushed decision." },
+                { "language": "fa", "text": "این پایان‌بندی روشن است: همه شرایط مهم را تکرار می‌کنی و عجولانه تصمیم نمی‌گیری." },
+                { "language": "ar", "text": "هذه خاتمة واضحة: تكرر كل الشروط المهمة ولا تتخذ قرارًا متسرعًا." },
+                { "language": "tr", "text": "Bu net bir kapanış: tüm önemli koşulları tekrarlıyor ve acele karar vermiyorsun." },
+                { "language": "ru", "text": "Это четкое завершение: ты повторяешь все важные условия и не принимаешь поспешного решения." },
+                { "language": "ckb", "text": "ئەمە کۆتاییەکی ڕوونە: هەموو مەرجە گرنگەکان دووبارە دەکەیتەوە و بە پەلە بڕیار نادەیت." },
+                { "language": "kmr", "text": "Ev dawîkirineke zelal e: tu hemû şertên girîng dubare dikî û bi lez biryar nadî." },
+                { "language": "pl", "text": "To jasne zakończenie: powtarzasz wszystkie ważne warunki i nie podejmujesz pochopnej decyzji." },
+                { "language": "ro", "text": "Este o încheiere clară: repeți toate condițiile importante și nu iei o decizie pripită." },
+                { "language": "sq", "text": "Kjo është një mbyllje e qartë: përsërit të gjitha kushtet e rëndësishme dhe nuk merr vendim me nxitim." }
+              ],
+              "explanationKey": "complete-cancellation-closing"
+            },
+            {
+              "id": "b2-cancellation-57-t10-b",
+              "text": "Vielen Dank. Dann warte ich auf die E-Mail und melde mich später.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for the email and get back to you later." },
+                { "language": "fa", "text": "ممنون. پس منتظر ایمیل می‌مانم و بعداً خبر می‌دهم." },
+                { "language": "ar", "text": "شكرًا. إذن سأنتظر البريد الإلكتروني وأتواصل لاحقًا." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman e-postayı bekleyeceğim ve daha sonra haber vereceğim." },
+                { "language": "ru", "text": "Спасибо. Тогда я буду ждать письмо и свяжусь позже." },
+                { "language": "ckb", "text": "سوپاس. کەواتە چاوەڕێی ئیمەیڵ دەبم و دواتر پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Spas. Hingê ez li benda e-peyamê dimînim û paşê têkilî digirim." },
+                { "language": "pl", "text": "Dziękuję. W takim razie poczekam na e-mail i odezwę się później." },
+                { "language": "ro", "text": "Mulțumesc. Atunci aștept e-mailul și revin mai târziu." },
+                { "language": "sq", "text": "Faleminderit. Atëherë do të pres e-mailin dhe do të kontaktoj më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu knapp. Du sicherst weder Frist noch Gebühr, Rückzahlung oder Umbuchungsoption.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too brief. You secure neither deadline nor fee, refund, or rebooking option." },
+                { "language": "fa", "text": "این مؤدبانه است، اما خیلی کوتاه است. نه مهلت، نه هزینه، نه بازپرداخت و نه گزینه تغییر رزرو را تثبیت می‌کنی." },
+                { "language": "ar", "text": "هذا مهذب، لكنه مختصر جدًا. لا تؤكد المهلة ولا الرسوم ولا الاسترداد ولا خيار إعادة الحجز." },
+                { "language": "tr", "text": "Bu kibar, ama fazla kısa. Ne süreyi ne ücreti ne geri ödemeyi ne de değişiklik seçeneğini güvenceye alıyorsun." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко. Ты не закрепляешь ни срок, ни сбор, ни возврат, ни возможность перебронирования." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر کورته. نە مۆڵەت، نە کرێ، نە گەڕاندنەوەی پارە و نە هەڵبژاردەی گۆڕینی حجز دڵنیا دەکەیت." },
+                { "language": "kmr", "text": "Ev bi rêzdarî ye, lê pir kurt e. Tu ne dem, ne berdêl, ne vegerandina pereyan û ne hilbijartina guherandinê ewle dikî." },
+                { "language": "pl", "text": "To uprzejme, ale zbyt krótkie. Nie zabezpieczasz terminu, opłaty, zwrotu ani opcji zmiany rezerwacji." },
+                { "language": "ro", "text": "Este politicos, dar prea scurt. Nu asiguri nici termenul, nici taxa, rambursarea sau opțiunea de reprogramare." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e shkurtër. Nuk siguron as afatin, as tarifën, rimbursimin apo mundësinë e ndryshimit të rezervimit." }
+              ],
+              "explanationKey": "closing-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "opening",
+          "text": "Bei Stornierungen ist es wichtig, nicht sofort zu kündigen, sondern zuerst Buchung, Reisedaten und Informationsbedarf zu nennen.",
+          "translations": [
+            { "language": "en", "text": "For cancellations, it is important not to cancel immediately, but first to name booking, travel dates, and information need." },
+            { "language": "fa", "text": "در لغوها مهم است فوراً لغو نکنی، بلکه اول رزرو، تاریخ سفر و نیاز اطلاعاتی را بگویی." },
+            { "language": "ar", "text": "في حالات الإلغاء من المهم ألا تلغي فورًا، بل أن تذكر أولًا الحجز وتواريخ السفر والحاجة إلى المعلومات." },
+            { "language": "tr", "text": "İptallerde hemen iptal etmemek, önce rezervasyonu, seyahat tarihlerini ve bilgi ihtiyacını belirtmek önemlidir." },
+            { "language": "ru", "text": "При отменах важно не отменять сразу, а сначала назвать бронирование, даты поездки и потребность в информации." },
+            { "language": "ckb", "text": "لە هەڵوەشاندنەوەکاندا گرنگە دەستبەجێ هەڵنەوەشێنیتەوە، بەڵکو سەرەتا حجز، بەروارەکانی گەشت و پێویستی زانیاری بڵێیت." },
+            { "language": "kmr", "text": "Di betalkirinan de girîng e ku mirov tavilê betal neke, lê pêşî rezervasyon, demên rêwîtiyê û hewcedariya agahiyê bibêje." },
+            { "language": "pl", "text": "Przy anulowaniu ważne jest, aby nie rezygnować od razu, lecz najpierw podać rezerwację, daty podróży i potrzebę informacji." },
+            { "language": "ro", "text": "La anulări este important să nu anulezi imediat, ci să menționezi mai întâi rezervarea, datele călătoriei și nevoia de informații." },
+            { "language": "sq", "text": "Gjatë anulimeve është e rëndësishme të mos anulosh menjëherë, por së pari të përmendësh rezervimin, datat e udhëtimit dhe nevojën për informacion." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "conditions",
+          "text": "Eine gute Nachfrage trennt Frist, Gebühr und Rückzahlungsweg. So vermeidest du Missverständnisse beim Preis.",
+          "translations": [
+            { "language": "en", "text": "A good follow-up separates deadline, fee, and refund route. This helps avoid misunderstandings about the price." },
+            { "language": "fa", "text": "یک پرسش خوب، مهلت، هزینه و مسیر بازپرداخت را جدا می‌کند. این کار از سوءتفاهم درباره قیمت جلوگیری می‌کند." },
+            { "language": "ar", "text": "السؤال الجيد يفصل بين المهلة والرسوم وطريقة الاسترداد. هكذا تتجنب سوء الفهم حول السعر." },
+            { "language": "tr", "text": "İyi bir soru süreyi, ücreti ve geri ödeme yolunu ayırır. Böylece fiyat konusunda yanlış anlamaları önlersin." },
+            { "language": "ru", "text": "Хороший уточняющий вопрос разделяет срок, сбор и способ возврата. Так ты избегаешь недоразумений по цене." },
+            { "language": "ckb", "text": "پرسیاری باش مۆڵەت، کرێ و ڕێگای گەڕاندنەوەی پارە جیا دەکاتەوە. بەمە لە تێنەگەیشتن لەبارەی نرخ ڕێگری دەکەیت." },
+            { "language": "kmr", "text": "Pirsek baş dem, berdêl û rêya vegerandina pereyan ji hev cuda dike. Bi vê yekê şaşfêmiyên li ser biha kêm dibin." },
+            { "language": "pl", "text": "Dobre dopytanie oddziela termin, opłatę i sposób zwrotu. Dzięki temu unikasz nieporozumień dotyczących ceny." },
+            { "language": "ro", "text": "O întrebare bună separă termenul, taxa și calea rambursării. Așa eviți neînțelegerile legate de preț." },
+            { "language": "sq", "text": "Një pyetje e mirë ndan afatin, tarifën dhe mënyrën e rimbursimit. Kështu shmang keqkuptimet rreth çmimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "alternative",
+          "text": "Bei Reiseverträgen kann Umbuchung günstiger sein als Stornierung. Frage immer nach Paketbestandteilen und Verfügbarkeit.",
+          "translations": [
+            { "language": "en", "text": "With travel contracts, rebooking can be cheaper than cancellation. Always ask about package components and availability." },
+            { "language": "fa", "text": "در قراردادهای سفر، تغییر رزرو ممکن است از لغو ارزان‌تر باشد. همیشه درباره بخش‌های بسته و موجود بودن بپرس." },
+            { "language": "ar", "text": "في عقود السفر قد تكون إعادة الحجز أرخص من الإلغاء. اسأل دائمًا عن مكونات الباقة والتوفر." },
+            { "language": "tr", "text": "Seyahat sözleşmelerinde değişiklik iptalden daha ucuz olabilir. Her zaman paket bileşenlerini ve müsaitliği sor." },
+            { "language": "ru", "text": "В туристических договорах перебронирование может быть дешевле отмены. Всегда спрашивай о частях пакета и доступности." },
+            { "language": "ckb", "text": "لە گرێبەستەکانی گەشتدا، گۆڕینی حجز دەتوانێت لە هەڵوەشاندنەوە هەرزانتر بێت. هەمیشە لە بەشەکانی پەکەج و بەردەستی بپرسە." },
+            { "language": "kmr", "text": "Di peymanên rêwîtiyê de guherandina rezervasyonê dikare ji betalkirinê erzantir be. Her tim li ser beşên pakêtê û peydabûnê bipirse." },
+            { "language": "pl", "text": "W umowach podróży zmiana rezerwacji może być tańsza niż anulowanie. Zawsze pytaj o składniki pakietu i dostępność." },
+            { "language": "ro", "text": "În contractele de călătorie, reprogramarea poate fi mai ieftină decât anularea. Întreabă întotdeauna despre componentele pachetului și disponibilitate." },
+            { "language": "sq", "text": "Në kontratat e udhëtimit, ndryshimi i rezervimit mund të jetë më i lirë se anulimi. Pyet gjithmonë për pjesët e paketës dhe disponueshmërinë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Am Ende solltest du Frist, Uhrzeit, Gebühr, Rückzahlung und Umbuchungsoption wiederholen, damit du später belastbar entscheiden kannst.",
+          "translations": [
+            { "language": "en", "text": "At the end, you should repeat deadline, time, fee, refund, and rebooking option so that you can make a reliable decision later." },
+            { "language": "fa", "text": "در پایان باید مهلت، ساعت، هزینه، بازپرداخت و گزینه تغییر رزرو را تکرار کنی تا بعداً بتوانی با اطمینان تصمیم بگیری." },
+            { "language": "ar", "text": "في النهاية ينبغي أن تكرر المهلة والوقت والرسوم والاسترداد وخيار إعادة الحجز حتى تستطيع لاحقًا اتخاذ قرار موثوق." },
+            { "language": "tr", "text": "Sonda süreyi, saati, ücreti, geri ödemeyi ve değişiklik seçeneğini tekrar etmelisin ki daha sonra güvenilir bir karar verebilesin." },
+            { "language": "ru", "text": "В конце следует повторить срок, время, сбор, возврат и вариант перебронирования, чтобы позже принять надежное решение." },
+            { "language": "ckb", "text": "لە کۆتاییدا دەبێت مۆڵەت، کاتژمێر، کرێ، گەڕاندنەوەی پارە و هەڵبژاردەی گۆڕینی حجز دووبارە بکەیتەوە، بۆ ئەوەی دواتر بە دڵنیایی بڕیار بدەیت." },
+            { "language": "kmr", "text": "Di dawiyê de divê tu dem, saet, berdêl, vegerandina pereyan û hilbijartina guherandinê dubare bikî, da ku paşê bi ewlehî biryar bidî." },
+            { "language": "pl", "text": "Na końcu warto powtórzyć termin, godzinę, opłatę, zwrot i opcję zmiany rezerwacji, aby później podjąć pewną decyzję." },
+            { "language": "ro", "text": "La final ar trebui să repeți termenul, ora, taxa, rambursarea și opțiunea de reprogramare, ca să poți decide mai târziu în mod sigur." },
+            { "language": "sq", "text": "Në fund duhet të përsëritësh afatin, orën, tarifën, rimbursimin dhe mundësinë e ndryshimit të rezervimit, që më vonë të vendosësh me siguri." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3570
+    }
+  ]
+}

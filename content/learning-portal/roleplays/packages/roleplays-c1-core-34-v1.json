@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-34-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 34 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 34",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-therapieoptionen-mit-vor-und-nachteilen-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Therapieoptionen mit Vor- und Nachteilen abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weighing treatment options with pros and cons" },
+        { "language": "fa", "text": "سنجیدن گزینه‌های درمانی با مزایا و معایب" },
+        { "language": "ar", "text": "موازنة خيارات العلاج مع المزايا والعيوب" },
+        { "language": "tr", "text": "Tedavi seçeneklerini artıları ve eksileriyle tartmak" },
+        { "language": "ru", "text": "Взвешивание вариантов лечения с плюсами и минусами" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی بژاردەکانی چارەسەر لەگەڵ باشی و خراپییەکان" },
+        { "language": "kmr", "text": "Nirxandina vebijarkên dermankirinê bi alîyên baş û kêmaniyan" },
+        { "language": "pl", "text": "Rozważenie opcji terapii z zaletami i wadami" },
+        { "language": "ro", "text": "Cântărirea opțiunilor de tratament cu avantaje și dezavantaje" },
+        { "language": "sq", "text": "Peshimi i opsioneve të terapisë me përparësi dhe mangësi" }
+      ],
+      "description": "Sie besprechen mit einer Ärztin wiederkehrende Knieschmerzen, die den Alltag einschränken, aber nicht akut wirken. Sie vergleichen Physiotherapie, eine zeitlich begrenzte medikamentöse Unterstützung und weitere Abklärung, ohne selbst eine Behandlung festzulegen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You discuss recurring knee pain with a doctor. It limits everyday life but does not seem acute. You compare physiotherapy, time-limited medication support, and further assessment without deciding the treatment yourself." },
+        { "language": "fa", "text": "شما با پزشک درباره درد تکرارشونده زانو صحبت می‌کنید که زندگی روزمره را محدود می‌کند، اما ظاهراً وضعیت حاد نیست. فیزیوتراپی، پشتیبانی دارویی محدود به زمان و بررسی بیشتر را مقایسه می‌کنید، بدون اینکه خودتان درمان را تعیین کنید." },
+        { "language": "ar", "text": "تناقش مع طبيبة ألماً متكرراً في الركبة يقيّد الحياة اليومية لكنه لا يبدو حاداً. تقارن بين العلاج الطبيعي ودعم دوائي محدود زمنياً وفحص إضافي من دون أن تحدد العلاج بنفسك." },
+        { "language": "tr", "text": "Bir doktorla günlük yaşamı sınırlayan ama akut görünmeyen tekrarlayan diz ağrısını konuşuyorsunuz. Tedaviyi kendiniz belirlemeden fizyoterapiyi, süre sınırlı ilaç desteğini ve ek değerlendirmeyi karşılaştırıyorsunuz." },
+        { "language": "ru", "text": "Вы обсуждаете с врачом повторяющуюся боль в колене, которая ограничивает повседневную жизнь, но не выглядит острой. Вы сравниваете физиотерапию, временную медикаментозную поддержку и дальнейшее обследование, не назначая лечение самостоятельно." },
+        { "language": "ckb", "text": "تۆ لەگەڵ پزیشکدا دەربارەی ئازاری دووبارەبووەوەی ئەژنۆ قسە دەکەیت کە ژیانی ڕۆژانە سنووردار دەکات، بەڵام وەک دۆخی پەلەناکەوتوو دیار نییە. فیزیۆتێراپی، پشتگیریی دەرمانی سنووردار بە کات و پشکنینی زیاتر بەراورد دەکەیت، بەبێ ئەوەی خۆت چارەسەر دیاری بکەیت." },
+        { "language": "kmr", "text": "Hûn bi doktorê re li ser êşa çokê ya dubare diaxivin ku jiyana rojane sînordar dike, lê wek rewşa lezgîn xuya nake. Hûn fîzyoterapî, piştgiriya dermanî ya dem-sînordar û nirxandina zêdetir berawird dikin bêyî ku hûn bixwe dermankirinê diyar bikin." },
+        { "language": "pl", "text": "Rozmawia Pan z lekarką o nawracającym bólu kolana, który ogranicza codzienność, ale nie wygląda na ostry. Porównuje Pan fizjoterapię, czasowo ograniczone wsparcie lekami i dalszą diagnostykę, nie ustalając samodzielnie leczenia." },
+        { "language": "ro", "text": "Discutați cu o medică despre dureri recurente de genunchi care limitează viața de zi cu zi, dar nu par acute. Comparați fizioterapia, sprijinul medicamentos limitat în timp și investigații suplimentare fără a stabili singur tratamentul." },
+        { "language": "sq", "text": "Diskutoni me një mjeke për dhimbje të përsëritura të gjurit që kufizojnë jetën e përditshme, por nuk duken akute. Krahasoni fizioterapinë, mbështetjen me ilaçe për kohë të kufizuar dhe sqarimin e mëtejshëm pa vendosur vetë trajtimin." }
+      ],
+      "learnerGoal": "Therapieoptionen differenziert vergleichen: Nutzen, Risiken, Unsicherheit, Alltagstauglichkeit, Zeithorizont und Kriterien für den nächsten Schritt erfragen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Compare treatment options in a nuanced way: ask about benefits, risks, uncertainty, everyday feasibility, timeframe, and criteria for the next step." },
+        { "language": "fa", "text": "گزینه‌های درمانی را دقیق و تفکیک‌شده مقایسه کنید: درباره فایده، ریسک، عدم قطعیت، قابل اجرا بودن در زندگی روزمره، بازه زمانی و معیارهای قدم بعدی بپرسید." },
+        { "language": "ar", "text": "قارن خيارات العلاج بشكل دقيق: اسأل عن الفائدة والمخاطر وعدم اليقين وإمكانية التطبيق في الحياة اليومية والإطار الزمني ومعايير الخطوة التالية." },
+        { "language": "tr", "text": "Tedavi seçeneklerini ayrıntılı karşılaştırın: fayda, risk, belirsizlik, günlük yaşama uygunluk, zaman çerçevesi ve sonraki adımın kriterlerini sorun." },
+        { "language": "ru", "text": "Дифференцированно сравнить варианты лечения: спросить о пользе, рисках, неопределённости, пригодности для повседневной жизни, сроках и критериях следующего шага." },
+        { "language": "ckb", "text": "بژاردەکانی چارەسەر بە جیاوازی بەراورد بکە: دەربارەی سوود، مەترسی، نادڵنیایی، گونجاوی بۆ ژیانی ڕۆژانە، ماوە و پێوەری هەنگاوی دواتر بپرسە." },
+        { "language": "kmr", "text": "Vebijarkên dermankirinê bi hûrgilî berawird bikin: li ser sûd, metirsî, nebûna piştrastiyê, guncawiya jiyana rojane, dem û pîvanên gaveke paşîn bipirsin." },
+        { "language": "pl", "text": "Zróżnicowanie porównać opcje terapii: zapytać o korzyści, ryzyka, niepewność, wykonalność w codzienności, horyzont czasowy i kryteria następnego kroku." },
+        { "language": "ro", "text": "Comparați nuanțat opțiunile de tratament: întrebați despre beneficii, riscuri, incertitudine, aplicabilitate în viața de zi cu zi, orizont de timp și criterii pentru pasul următor." },
+        { "language": "sq", "text": "Krahasoni në mënyrë të diferencuar opsionet e terapisë: pyesni për përfitimet, rreziqet, pasigurinë, zbatueshmërinë në jetën e përditshme, afatin dhe kriteret për hapin tjetër." }
+      ],
+      "cefrLevel": "C1",
+      "category": "health",
+      "topics": ["appointments-and-health", "everyday-life"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "compare-options",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 34,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Patient/in",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        },
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Doktor" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medic" },
+            { "language": "sq", "text": "Mjekja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Wir haben mehrere Möglichkeiten: Physiotherapie, eine zeitlich begrenzte medikamentöse Unterstützung oder zunächst weitere Abklärung. Was möchten Sie heute besonders verstehen?",
+          "translations": [
+            { "language": "en", "text": "We have several options: physiotherapy, time-limited medication support, or further assessment first. What would you especially like to understand today?" },
+            { "language": "fa", "text": "چند امکان داریم: فیزیوتراپی، پشتیبانی دارویی محدود به زمان، یا ابتدا بررسی بیشتر. امروز به‌خصوص چه چیزی را می‌خواهید بفهمید؟" },
+            { "language": "ar", "text": "لدينا عدة إمكانات: العلاج الطبيعي، أو دعم دوائي محدود زمنياً، أو أولاً فحص إضافي. ما الذي تريد أن تفهمه اليوم بشكل خاص؟" },
+            { "language": "tr", "text": "Birkaç seçeneğimiz var: fizyoterapi, süre sınırlı ilaç desteği ya da önce ek değerlendirme. Bugün özellikle neyi anlamak istiyorsunuz?" },
+            { "language": "ru", "text": "У нас есть несколько вариантов: физиотерапия, временная медикаментозная поддержка или сначала дополнительное обследование. Что вы сегодня особенно хотите понять?" },
+            { "language": "ckb", "text": "چەند بژاردەمان هەیە: فیزیۆتێراپی، پشتگیریی دەرمانی سنووردار بە کات، یان سەرەتا پشکنینی زیاتر. ئەمڕۆ بە تایبەتی دەتەوێت چی تێبگەیت؟" },
+            { "language": "kmr", "text": "Çend vebijarkên me hene: fîzyoterapî, piştgiriya dermanî ya dem-sînordar, an pêşî nirxandina zêdetir. Îro hûn dixwazin bi taybetî çi fam bikin?" },
+            { "language": "pl", "text": "Mamy kilka możliwości: fizjoterapię, czasowo ograniczone wsparcie lekami albo najpierw dalszą diagnostykę. Co chciałby Pan dziś szczególnie zrozumieć?" },
+            { "language": "ro", "text": "Avem mai multe opțiuni: fizioterapie, sprijin medicamentos limitat în timp sau mai întâi investigații suplimentare. Ce ați dori să înțelegeți în mod special astăzi?" },
+            { "language": "sq", "text": "Kemi disa mundësi: fizioterapi, mbështetje me ilaçe për kohë të kufizuar ose fillimisht sqarim të mëtejshëm. Çfarë dëshironi të kuptoni veçanërisht sot?" }
+          ],
+          "function": "option-frame",
+          "toneNote": "formal, offen",
+          "expectedLearnerAction": "Vergleichsrahmen setzen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte die Optionen nicht gegeneinander ausspielen, sondern verstehen, welche in meiner Situation welchen Zweck hat. Mir geht es um erwartbaren Nutzen, mögliche Risiken, Alltagstauglichkeit und darum, woran wir merken würden, dass wir den nächsten Schritt brauchen.",
+          "translations": [
+            { "language": "en", "text": "I do not want to play the options against each other, but understand which purpose each has in my situation. I am interested in expected benefit, possible risks, everyday feasibility, and how we would notice that the next step is needed." },
+            { "language": "fa", "text": "نمی‌خواهم گزینه‌ها را مقابل هم قرار بدهم، بلکه می‌خواهم بفهمم هر کدام در وضعیت من چه هدفی دارد. برایم فایده قابل انتظار، ریسک‌های ممکن، قابل اجرا بودن در زندگی روزمره و این مهم است که از کجا بفهمیم قدم بعدی لازم است." },
+            { "language": "ar", "text": "لا أريد أن أضع الخيارات في مواجهة بعضها، بل أن أفهم أي غرض يخدمه كل خيار في حالتي. يهمني النفع المتوقع والمخاطر المحتملة وإمكانية التطبيق في الحياة اليومية وكيف سنعرف أننا نحتاج إلى الخطوة التالية." },
+            { "language": "tr", "text": "Seçenekleri birbirine karşı kullanmak istemiyorum; benim durumumda hangisinin hangi amaca hizmet ettiğini anlamak istiyorum. Beklenen fayda, olası riskler, günlük yaşama uygunluk ve bir sonraki adıma ihtiyaç olduğunu nasıl anlayacağımız önemli." },
+            { "language": "ru", "text": "Я не хочу противопоставлять варианты друг другу, а хочу понять, какую цель каждый из них имеет в моей ситуации. Меня интересуют ожидаемая польза, возможные риски, пригодность для повседневной жизни и то, по каким признакам мы поймём, что нужен следующий шаг." },
+            { "language": "ckb", "text": "نەمەوێت بژاردەکان بەرامبەر یەک دابنێم، بەڵکو دەمەوێت تێبگەم لە دۆخی مندا هەر یەک کام ئامانجی هەیە. سوودی چاوەڕوانکراو، مەترسییە ئەگەرییەکان، گونجاوی بۆ ژیانی ڕۆژانە و ئەوەی چۆن دەزانین هەنگاوی دواتر پێویستە بۆ من گرنگە." },
+            { "language": "kmr", "text": "Ez naxwazim vebijarkan li dijî hev bikim; dixwazim fam bikim kîjan di rewşa min de kîjan armancê heye. Sûda hêvîkirî, metirsiyên mumkin, guncawiya jiyana rojane û ka em çawa bibînin ku gaveke paşîn hewce ye ji min re girîng in." },
+            { "language": "pl", "text": "Nie chcę przeciwstawiać opcji sobie nawzajem, lecz zrozumieć, jaki cel ma każda w mojej sytuacji. Chodzi mi o oczekiwaną korzyść, możliwe ryzyka, wykonalność w codzienności i o to, po czym poznamy, że potrzebny jest następny krok." },
+            { "language": "ro", "text": "Nu vreau să pun opțiunile una împotriva celeilalte, ci să înțeleg ce scop are fiecare în situația mea. Mă interesează beneficiul așteptat, riscurile posibile, aplicabilitatea în viața de zi cu zi și cum am observa că avem nevoie de pasul următor." },
+            { "language": "sq", "text": "Nuk dua t'i vë opsionet kundër njëra-tjetrës, por të kuptoj cili opsion çfarë qëllimi ka në situatën time. Më interesojnë përfitimi i pritshëm, rreziqet e mundshme, zbatueshmëria në jetën e përditshme dhe si do ta kuptonim që nevojitet hapi tjetër." }
+          ],
+          "function": "comparison-goal",
+          "toneNote": "differenziert, kooperativ",
+          "expectedLearnerAction": "Nutzen, Risiko und Entscheidungskriterien als Ziel nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Was wäre für Ihren Alltag das wichtigste Kriterium bei der Entscheidung?",
+          "translations": [
+            { "language": "en", "text": "What would be the most important criterion for your everyday life when making the decision?" },
+            { "language": "fa", "text": "برای زندگی روزمره شما مهم‌ترین معیار در این تصمیم چه خواهد بود؟" },
+            { "language": "ar", "text": "ما المعيار الأهم لحياتك اليومية عند اتخاذ القرار؟" },
+            { "language": "tr", "text": "Karar verirken günlük yaşamınız için en önemli kriter ne olurdu?" },
+            { "language": "ru", "text": "Какой критерий был бы самым важным для вашей повседневной жизни при принятии решения?" },
+            { "language": "ckb", "text": "بۆ ژیانی ڕۆژانەت کام پێوەر لە بڕیارەکەدا گرنگترین دەبێت؟" },
+            { "language": "kmr", "text": "Ji bo jiyana we ya rojane di biryarê de kîjan pîvan herî girîng e?" },
+            { "language": "pl", "text": "Jakie kryterium byłoby najważniejsze dla Pana codzienności przy tej decyzji?" },
+            { "language": "ro", "text": "Care ar fi cel mai important criteriu pentru viața dumneavoastră de zi cu zi în această decizie?" },
+            { "language": "sq", "text": "Cili do të ishte kriteri më i rëndësishëm për jetën tuaj të përditshme në këtë vendim?" }
+          ],
+          "function": "daily-life-criterion",
+          "toneNote": "fokussierend",
+          "expectedLearnerAction": "Alltagskriterium konkretisieren"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Am wichtigsten ist, dass die Lösung realistisch in meinen Alltag passt. Ich arbeite teilweise im Stehen, muss Treppen steigen und kann Termine nicht beliebig legen. Eine gute Option wäre für mich nicht nur medizinisch sinnvoll, sondern auch so planbar, dass ich sie zuverlässig umsetzen kann.",
+          "translations": [
+            { "language": "en", "text": "Most important is that the solution realistically fits my everyday life. I partly work standing, need to climb stairs, and cannot schedule appointments freely. A good option for me would not only make medical sense, but also be plannable enough that I can carry it out reliably." },
+            { "language": "fa", "text": "مهم‌ترین نکته این است که راه‌حل واقع‌بینانه با زندگی روزمره من جور دربیاید. بخشی از کارم ایستاده است، باید از پله‌ها بالا بروم و نمی‌توانم وقت‌ها را هر طور خواستم تنظیم کنم. گزینه خوب برای من فقط از نظر پزشکی منطقی نیست، بلکه باید آن‌قدر قابل برنامه‌ریزی باشد که بتوانم مطمئن اجرا کنم." },
+            { "language": "ar", "text": "الأهم أن يناسب الحل حياتي اليومية بشكل واقعي. أعمل أحياناً واقفاً، ويجب أن أصعد السلالم، ولا أستطيع ترتيب المواعيد كما أشاء. الخيار الجيد بالنسبة لي ليس فقط مفيداً طبياً، بل قابل للتخطيط بحيث أستطيع تنفيذه بانتظام." },
+            { "language": "tr", "text": "En önemlisi çözümün günlük yaşamıma gerçekçi biçimde uyması. Kısmen ayakta çalışıyorum, merdiven çıkmam gerekiyor ve randevuları istediğim gibi ayarlayamıyorum. Benim için iyi bir seçenek yalnızca tıbben mantıklı değil, aynı zamanda güvenilir şekilde uygulayabileceğim kadar planlanabilir olmalı." },
+            { "language": "ru", "text": "Самое важное, чтобы решение реалистично вписывалось в мою повседневную жизнь. Я частично работаю стоя, должен подниматься по лестнице и не могу свободно назначать встречи. Хороший вариант для меня должен быть не только медицински разумным, но и достаточно планируемым, чтобы я мог его надёжно выполнять." },
+            { "language": "ckb", "text": "گرنگترین شت ئەوەیە کە چارەسەرەکە بە واقیعی لەگەڵ ژیانی ڕۆژانەم بگونجێت. بەشێک لە کارم بە وەستانە، پێویستە پلەکان سەربکەوم و ناتوانم کاتەکان بە دڵی خۆم دابنێم. بژاردەی باش بۆ من تەنها لە ڕووی پزیشکییەوە گونجاو نییە، بەڵکو پێویستە وا پلانکراو بێت کە بە دڵنیایی جێبەجێی بکەم." },
+            { "language": "kmr", "text": "Ya herî girîng ev e ku çareserî bi rastî li jiyana min a rojane bigunce. Ez qismek karê xwe rawestayî dikim, divê derenceyan hilkişim û nikarim randevûyan wekî dilê xwe danim. Vebijarka baş ji bo min ne tenê ji aliyê bijîşkî ve maqûl e, lê divê ew qas planbar be ku ez bi bawerî bikaribim wê bicîh bînim." },
+            { "language": "pl", "text": "Najważniejsze jest, żeby rozwiązanie realistycznie pasowało do mojej codzienności. Częściowo pracuję na stojąco, muszę chodzić po schodach i nie mogę dowolnie ustawiać terminów. Dobra opcja byłaby dla mnie nie tylko medycznie sensowna, lecz także tak planowalna, żebym mógł ją niezawodnie realizować." },
+            { "language": "ro", "text": "Cel mai important este ca soluția să se potrivească realist vieții mele de zi cu zi. Lucrez parțial în picioare, trebuie să urc scări și nu pot programa liber întâlnirile. O opțiune bună pentru mine nu ar fi doar medical rezonabilă, ci și suficient de planificabilă ca să o pot aplica constant." },
+            { "language": "sq", "text": "Më e rëndësishmja është që zgjidhja të përshtatet realisht me jetën time të përditshme. Punoj pjesërisht në këmbë, duhet të ngjis shkallë dhe nuk mund t'i caktoj takimet si të dua. Një opsion i mirë për mua nuk do të ishte vetëm mjekësisht i arsyeshëm, por edhe aq i planifikueshëm sa ta zbatoj me besueshmëri." }
+          ],
+          "function": "daily-life-fit",
+          "toneNote": "konkret, realistisch",
+          "expectedLearnerAction": "Alltagsbelastung und Umsetzbarkeit darstellen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Wenn wir mit Physiotherapie beginnen, dauert es wahrscheinlich mehrere Wochen, bis man den Effekt beurteilen kann. Wie klingt das für Sie?",
+          "translations": [
+            { "language": "en", "text": "If we start with physiotherapy, it will probably take several weeks before we can judge the effect. How does that sound to you?" },
+            { "language": "fa", "text": "اگر با فیزیوتراپی شروع کنیم، احتمالاً چند هفته طول می‌کشد تا بتوان اثرش را ارزیابی کرد. این برای شما چطور است؟" },
+            { "language": "ar", "text": "إذا بدأنا بالعلاج الطبيعي، فمن المحتمل أن يستغرق الأمر عدة أسابيع حتى يمكن تقييم الأثر. كيف يبدو ذلك بالنسبة لك؟" },
+            { "language": "tr", "text": "Fizyoterapiyle başlarsak, etkiyi değerlendirmek muhtemelen birkaç hafta sürer. Bu size nasıl geliyor?" },
+            { "language": "ru", "text": "Если мы начнём с физиотерапии, вероятно, понадобится несколько недель, прежде чем можно будет оценить эффект. Как вам это звучит?" },
+            { "language": "ckb", "text": "ئەگەر بە فیزیۆتێراپی دەست پێبکەین، ئەگەری زۆر چەند هەفتە دەخایەنێت تا بتوانرێت کاریگەرییەکە هەڵبسەنگێندرێت. ئەمە بۆ تۆ چۆن دەنگ دەدات؟" },
+            { "language": "kmr", "text": "Heke em bi fîzyoterapî dest pê bikin, belkî çend hefteyan bigire heta ku bandor were nirxandin. Ev ji bo we çawa tê bihîstin?" },
+            { "language": "pl", "text": "Jeśli zaczniemy od fizjoterapii, prawdopodobnie potrwa kilka tygodni, zanim będzie można ocenić efekt. Jak to dla Pana brzmi?" },
+            { "language": "ro", "text": "Dacă începem cu fizioterapie, probabil va dura câteva săptămâni până când putem evalua efectul. Cum vi se pare?" },
+            { "language": "sq", "text": "Nëse fillojmë me fizioterapi, ndoshta do të duhen disa javë derisa të vlerësohet efekti. Si ju duket kjo?" }
+          ],
+          "function": "physio-option",
+          "toneNote": "abwägend",
+          "expectedLearnerAction": "Nutzen und Messkriterien erfragen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das klingt grundsätzlich sinnvoll, solange wir vorher klären, woran wir Fortschritt messen. Mir wäre wichtig zu wissen, welche Übungen Priorität haben, welche Schmerzen während der Übungen noch akzeptabel sind und nach welchem Zeitraum wir entscheiden, ob Physiotherapie allein reicht.",
+          "translations": [
+            { "language": "en", "text": "That sounds reasonable in principle, as long as we clarify beforehand how we measure progress. It would be important for me to know which exercises have priority, which pain during exercises is still acceptable, and after what timeframe we decide whether physiotherapy alone is enough." },
+            { "language": "fa", "text": "در اصل منطقی به نظر می‌رسد، به شرطی که قبلش روشن کنیم پیشرفت را با چه چیزی می‌سنجیم. برایم مهم است بدانم کدام تمرین‌ها اولویت دارند، چه مقدار درد هنگام تمرین هنوز قابل قبول است و بعد از چه بازه‌ای تصمیم می‌گیریم آیا فیزیوتراپی به‌تنهایی کافی است یا نه." },
+            { "language": "ar", "text": "يبدو ذلك من حيث المبدأ منطقياً، بشرط أن نوضح مسبقاً كيف سنقيس التقدم. يهمني أن أعرف أي التمارين لها الأولوية، وأي ألم أثناء التمارين ما زال مقبولاً، وبعد أي فترة نقرر هل يكفي العلاج الطبيعي وحده." },
+            { "language": "tr", "text": "İlerlemeyi nasıl ölçeceğimizi önceden netleştirdiğimiz sürece, prensipte mantıklı geliyor. Hangi egzersizlerin öncelikli olduğunu, egzersiz sırasında hangi ağrının hâlâ kabul edilebilir olduğunu ve fizyoterapinin tek başına yeterli olup olmadığına hangi süre sonra karar vereceğimizi bilmek benim için önemli olur." },
+            { "language": "ru", "text": "В принципе это звучит разумно, если мы заранее уточним, по каким признакам будем измерять прогресс. Мне важно знать, какие упражнения имеют приоритет, какая боль во время упражнений ещё допустима и через какой срок мы решаем, достаточно ли одной физиотерапии." },
+            { "language": "ckb", "text": "لە بنەڕەتدا گونجاو دەنگ دەدات، بە مەرجێک پێشتر ڕوون بکەین پێشکەوتن بە چی دەپێوین. بۆ من گرنگە بزانم کام ڕاهێنان پێشینەیە، کام ئازار لە کاتی ڕاهێناندا هێشتا قبووڵکراوە، و دوای کام ماوە بڕیار دەدەین ئایا فیزیۆتێراپی بە تەنها بەسە." },
+            { "language": "kmr", "text": "Di bingehê de maqûl tê bihîstin, heke em pêşî zelal bikin ka em pêşketinê bi çi dipîvin. Ji bo min girîng e bizanim kîjan rahênan pêşîn in, kîjan êş di dema rahênanan de hîn qebûlbar e, û piştî kîjan demê em biryar didin ka fîzyoterapî bi tena serê xwe bes e." },
+            { "language": "pl", "text": "Zasadniczo brzmi to sensownie, o ile wcześniej wyjaśnimy, po czym mierzymy postęp. Ważne byłoby dla mnie, które ćwiczenia mają priorytet, jaki ból podczas ćwiczeń jest jeszcze akceptowalny i po jakim czasie zdecydujemy, czy sama fizjoterapia wystarczy." },
+            { "language": "ro", "text": "În principiu sună rezonabil, atâta timp cât clarificăm înainte cum măsurăm progresul. Ar fi important pentru mine să știu ce exerciții au prioritate, ce durere în timpul exercițiilor este încă acceptabilă și după cât timp decidem dacă fizioterapia singură este suficientă." },
+            { "language": "sq", "text": "Në parim tingëllon e arsyeshme, për sa kohë që sqarojmë më parë si do ta masim përparimin. Për mua do të ishte e rëndësishme të di cilat ushtrime kanë përparësi, çfarë dhimbjeje gjatë ushtrimeve është ende e pranueshme dhe pas sa kohe vendosim nëse fizioterapia mjafton vetë." }
+          ],
+          "function": "physio-criteria",
+          "toneNote": "zustimmend, kriterienorientiert",
+          "expectedLearnerAction": "Messbare Kriterien zur Therapieoption erfragen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Eine kurzfristige medikamentöse Unterstützung könnte den Alltag entlasten. Gleichzeitig müssen wir Nebenwirkungen und Dauer beachten.",
+          "translations": [
+            { "language": "en", "text": "Short-term medication support could ease everyday life. At the same time, we need to consider side effects and duration." },
+            { "language": "fa", "text": "پشتیبانی دارویی کوتاه‌مدت می‌تواند زندگی روزمره را سبک‌تر کند. همزمان باید عوارض جانبی و مدت مصرف را در نظر بگیریم." },
+            { "language": "ar", "text": "قد يخفف دعم دوائي قصير المدى الحياة اليومية. وفي الوقت نفسه يجب أن نراعي الآثار الجانبية والمدة." },
+            { "language": "tr", "text": "Kısa süreli ilaç desteği günlük yaşamı rahatlatabilir. Aynı zamanda yan etkileri ve süreyi dikkate almalıyız." },
+            { "language": "ru", "text": "Краткосрочная медикаментозная поддержка могла бы облегчить повседневную жизнь. При этом нужно учитывать побочные эффекты и длительность." },
+            { "language": "ckb", "text": "پشتگیریی دەرمانی کورت ماوە دەتوانێت ژیانی ڕۆژانە سووکتر بکات. لە هەمان کاتدا پێویستە کاریگەرییە لاوەکییەکان و ماوەکە ڕەچاو بکەین." },
+            { "language": "kmr", "text": "Piştgiriya dermanî ya demeke kurt dikare jiyana rojane siviktir bike. Di heman demê de divê bandorên aliyî û demê hesab bikin." },
+            { "language": "pl", "text": "Krótkoterminowe wsparcie lekami mogłoby odciążyć codzienność. Jednocześnie musimy uwzględnić działania niepożądane i czas trwania." },
+            { "language": "ro", "text": "Un sprijin medicamentos pe termen scurt ar putea ușura viața de zi cu zi. În același timp trebuie să ținem cont de efecte secundare și durată." },
+            { "language": "sq", "text": "Mbështetja me ilaçe për kohë të shkurtër mund ta lehtësojë jetën e përditshme. Njëkohësisht duhet të marrim parasysh efektet anësore dhe kohëzgjatjen." }
+          ],
+          "function": "medication-option",
+          "toneNote": "vorsichtig",
+          "expectedLearnerAction": "Bedingungen und Grenzen erfragen"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich bin nicht grundsätzlich dagegen, möchte aber keine dauerhafte Lösung daraus machen. Wenn Medikamente eine Brücke sein sollen, würde ich gern wissen: Für welchen Zeitraum, mit welchen Warnzeichen, und woran merken wir, dass die Unterstützung nicht mehr nötig oder nicht geeignet ist?",
+          "translations": [
+            { "language": "en", "text": "I am not against it in principle, but I do not want to turn it into a permanent solution. If medication is meant to be a bridge, I would like to know: for what period, with which warning signs, and how do we notice that the support is no longer needed or not suitable?" },
+            { "language": "fa", "text": "اصولاً مخالفش نیستم، اما نمی‌خواهم به یک راه‌حل دائمی تبدیل شود. اگر دارو قرار است نقش پل موقت داشته باشد، می‌خواهم بدانم: برای چه مدت، با چه نشانه‌های هشدار، و از کجا بفهمیم این پشتیبانی دیگر لازم نیست یا مناسب نیست؟" },
+            { "language": "ar", "text": "لست ضد ذلك من حيث المبدأ، لكنني لا أريد أن يتحول إلى حل دائم. إذا كان الدواء جسراً مؤقتاً، فأود أن أعرف: لأي مدة، ومع أي علامات إنذار، وكيف نعرف أن الدعم لم يعد ضرورياً أو غير مناسب؟" },
+            { "language": "tr", "text": "Prensipte karşı değilim, ama bunu kalıcı bir çözüme dönüştürmek istemiyorum. İlaç bir köprü olacaksa bilmek isterim: hangi süre için, hangi uyarı işaretleriyle ve desteğin artık gerekli olmadığını ya da uygun olmadığını nasıl anlarız?" },
+            { "language": "ru", "text": "Я в принципе не против, но не хочу превращать это в постоянное решение. Если лекарства должны быть мостом, я хотел бы знать: на какой срок, с какими тревожными признаками и по каким критериям мы поймём, что поддержка больше не нужна или не подходит?" },
+            { "language": "ckb", "text": "لە بنەڕەتدا دژی نیم، بەڵام نەمەوێت ببێتە چارەسەری هەمیشەیی. ئەگەر دەرمان وەک پردێکی کاتی بێت، دەمەوێت بزانم: بۆ کام ماوە، بە کام نیشانەی ئاگادارکردنەوە، و چۆن دەزانین ئەم پشتگیرییە چیتر پێویست نییە یان گونجاو نییە؟" },
+            { "language": "kmr", "text": "Di bingehê de ez ne li dijî wê me, lê naxwazim ew bibe çareseriyeke herdemî. Heke derman wekî pireke demkî be, ez dixwazim bizanim: ji bo kîjan demê, bi kîjan nîşaneyên hişyariyê, û em çawa dibînin ku piştgirî êdî ne hewce ye an ne guncaw e?" },
+            { "language": "pl", "text": "Nie jestem zasadniczo przeciw, ale nie chcę robić z tego stałego rozwiązania. Jeśli leki mają być pomostem, chciałbym wiedzieć: na jaki okres, przy jakich objawach ostrzegawczych i po czym poznamy, że wsparcie nie jest już potrzebne albo nie jest odpowiednie?" },
+            { "language": "ro", "text": "Nu sunt împotrivă în principiu, dar nu vreau să transform asta într-o soluție permanentă. Dacă medicamentele trebuie să fie o punte, aș vrea să știu: pentru ce perioadă, cu ce semne de avertizare și cum observăm că sprijinul nu mai este necesar sau nu este potrivit?" },
+            { "language": "sq", "text": "Në parim nuk jam kundër, por nuk dua ta kthej në zgjidhje të përhershme. Nëse ilaçet duhet të jenë një urë e përkohshme, do të doja të dija: për çfarë periudhe, me cilat shenja paralajmëruese dhe si e kuptojmë që mbështetja nuk nevojitet më ose nuk është e përshtatshme?" }
+          ],
+          "function": "medication-boundaries",
+          "toneNote": "vorsichtig, nicht ablehnend",
+          "expectedLearnerAction": "Zeitliche Begrenzung und Sicherheitskriterien erfragen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Weitere Bildgebung oder eine Überweisung wäre ebenfalls möglich, aber vielleicht nicht der erste Schritt. Wie möchten Sie mit dieser Unsicherheit umgehen?",
+          "translations": [
+            { "language": "en", "text": "Further imaging or a referral would also be possible, but perhaps not the first step. How would you like to handle this uncertainty?" },
+            { "language": "fa", "text": "تصویربرداری بیشتر یا ارجاع هم ممکن است، اما شاید قدم اول نباشد. می‌خواهید با این عدم قطعیت چطور برخورد کنیم؟" },
+            { "language": "ar", "text": "التصوير الإضافي أو الإحالة ممكنان أيضاً، لكن ربما ليسا الخطوة الأولى. كيف تريد التعامل مع هذا عدم اليقين؟" },
+            { "language": "tr", "text": "Ek görüntüleme ya da sevk de mümkün olurdu, ancak belki ilk adım olmayabilir. Bu belirsizlikle nasıl başa çıkmak istersiniz?" },
+            { "language": "ru", "text": "Дополнительная визуализация или направление тоже возможны, но, возможно, не как первый шаг. Как вы хотели бы обращаться с этой неопределённостью?" },
+            { "language": "ckb", "text": "وێنەگرتنی زیاتر یان ناردن بۆ پسپۆڕیش دەتوانێت بکرێت، بەڵام ڕەنگە هەنگاوی یەکەم نەبێت. دەتەوێت چۆن مامەڵە لەگەڵ ئەم نادڵنیاییە بکەیت؟" },
+            { "language": "kmr", "text": "Wênekirina zêdetir an şandin ji pispor re jî mumkin e, lê belkî ne gaveke yekem be. Hûn dixwazin bi vê nebûna piştrastiyê çawa rabin?" },
+            { "language": "pl", "text": "Dalsze obrazowanie albo skierowanie też byłoby możliwe, ale być może nie jako pierwszy krok. Jak chciałby Pan poradzić sobie z tą niepewnością?" },
+            { "language": "ro", "text": "Investigații imagistice suplimentare sau o trimitere ar fi de asemenea posibile, dar poate nu ca prim pas. Cum doriți să gestionăm această incertitudine?" },
+            { "language": "sq", "text": "Imazheria e mëtejshme ose një referim do të ishte gjithashtu i mundur, por ndoshta jo si hapi i parë. Si dëshironi ta trajtoni këtë pasiguri?" }
+          ],
+          "function": "uncertainty-question",
+          "toneNote": "abwägend",
+          "expectedLearnerAction": "Unsicherheit akzeptieren und Eskalationskriterien erfragen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich kann akzeptieren, dass nicht sofort alles abgeklärt wird, wenn die Entscheidung begründet ist. Mir wäre wichtig, die Unsicherheit nicht nur auszuhalten, sondern sie zu steuern: Welche Befunde sprechen gegen eine sofortige Überweisung, und welche Veränderung würde die Entscheidung kippen?",
+          "translations": [
+            { "language": "en", "text": "I can accept that not everything is clarified immediately if the decision is justified. It would be important for me not merely to endure the uncertainty, but to manage it: Which findings speak against an immediate referral, and what change would tip the decision?" },
+            { "language": "fa", "text": "می‌توانم بپذیرم که همه چیز فوراً بررسی نشود، اگر تصمیم دلیل داشته باشد. برایم مهم است که عدم قطعیت را فقط تحمل نکنیم، بلکه آن را مدیریت کنیم: کدام یافته‌ها علیه ارجاع فوری هستند و چه تغییری تصمیم را عوض می‌کند؟" },
+            { "language": "ar", "text": "أستطيع أن أتقبل ألا يُفحص كل شيء فوراً إذا كان القرار مبرراً. يهمني ألا نتحمل عدم اليقين فقط، بل نديره: أي نتائج تتحدث ضد إحالة فورية، وأي تغيير سيقلب القرار؟" },
+            { "language": "tr", "text": "Karar gerekçeliyse her şeyin hemen açıklığa kavuşturulmamasını kabul edebilirim. Benim için önemli olan belirsizliğe sadece katlanmak değil, onu yönetmek: Hangi bulgular hemen sevke karşı konuşuyor ve hangi değişiklik kararı tersine çevirir?" },
+            { "language": "ru", "text": "Я могу принять, что не всё выясняется сразу, если решение обосновано. Мне важно не просто терпеть неопределённость, а управлять ею: какие данные говорят против немедленного направления и какое изменение изменило бы решение?" },
+            { "language": "ckb", "text": "دەتوانم قبووڵ بکەم کە هەموو شتێک دەستبەجێ ڕوون نەکرێتەوە، ئەگەر بڕیارەکە هۆکاری هەبێت. بۆ من گرنگە نادڵنیاییەکە تەنها تەحەمول نەکەین، بەڵکو بەڕێوەی ببەین: کام دەرئەنجامەکان دژی ناردنی دەستبەجێن، و کام گۆڕان بڕیارەکە دەگۆڕێت؟" },
+            { "language": "kmr", "text": "Ez dikarim qebûl bikim ku ne her tişt tavilê zelal bibe, heke biryar bi sedem be. Ji bo min girîng e ku em nebûna piştrastiyê tenê tehemûl nekin, lê wê rêve bibin: Kîjan encam li dijî şandina tavilê diaxivin, û kîjan guhertin dê biryarê biguherîne?" },
+            { "language": "pl", "text": "Mogę zaakceptować, że nie wszystko zostanie od razu wyjaśnione, jeśli decyzja jest uzasadniona. Ważne byłoby dla mnie, żeby nie tylko znosić niepewność, lecz nią sterować: które wyniki przemawiają przeciw natychmiastowemu skierowaniu i jaka zmiana odwróciłaby decyzję?" },
+            { "language": "ro", "text": "Pot accepta că nu se clarifică totul imediat dacă decizia este motivată. Pentru mine ar fi important nu doar să suport incertitudinea, ci să o gestionăm: ce rezultate vorbesc împotriva unei trimiteri imediate și ce schimbare ar înclina decizia?" },
+            { "language": "sq", "text": "Mund ta pranoj që jo gjithçka të sqarohet menjëherë nëse vendimi është i arsyetuar. Për mua është e rëndësishme jo vetëm ta durojmë pasigurinë, por ta menaxhojmë: cilat gjetje flasin kundër referimit të menjëhershëm dhe cili ndryshim do ta kthente vendimin?" }
+          ],
+          "function": "managed-uncertainty",
+          "toneNote": "reif, kriterienorientiert",
+          "expectedLearnerAction": "Begründung und Eskalationskriterien erfragen"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "doctor",
+          "baseText": "Wenn wir uns auf einen Stufenplan einigen: Wie würden Sie die Entscheidung in eigenen Worten zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "If we agree on a staged plan, how would you summarize the decision in your own words?" },
+            { "language": "fa", "text": "اگر روی یک برنامه مرحله‌ای توافق کنیم، شما تصمیم را با کلمات خودتان چطور خلاصه می‌کنید؟" },
+            { "language": "ar", "text": "إذا اتفقنا على خطة مرحلية، كيف ستلخص القرار بكلماتك؟" },
+            { "language": "tr", "text": "Aşamalı bir plan üzerinde anlaşırsak, kararı kendi sözlerinizle nasıl özetlersiniz?" },
+            { "language": "ru", "text": "Если мы договоримся о поэтапном плане, как вы своими словами кратко изложите решение?" },
+            { "language": "ckb", "text": "ئەگەر لەسەر پلانێکی قۆناغ بە قۆناغ ڕێکبکەوین، بڕیارەکە بە وشەکانی خۆت چۆن پوختە دەکەیت؟" },
+            { "language": "kmr", "text": "Heke em li ser planeke gav bi gav li hev bikin, hûn biryarê bi gotinên xwe çawa kurt dikin?" },
+            { "language": "pl", "text": "Jeśli uzgodnimy plan etapowy, jak podsumowałby Pan decyzję własnymi słowami?" },
+            { "language": "ro", "text": "Dacă ne punem de acord asupra unui plan în etape, cum ați rezuma decizia cu propriile cuvinte?" },
+            { "language": "sq", "text": "Nëse biem dakord për një plan me faza, si do ta përmblidhnit vendimin me fjalët tuaja?" }
+          ],
+          "function": "summary-request",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Stufenplan zusammenfassen"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde es so zusammenfassen: Wir starten mit einem klar messbaren Physiotherapieplan, nutzen Medikamente höchstens zeitlich begrenzt zur Entlastung und prüfen nach einem vereinbarten Zeitraum, ob die Entwicklung ausreicht. Wenn sich bestimmte Warnzeichen zeigen oder keine Verbesserung eintritt, besprechen wir weitere Abklärung oder eine Überweisung.",
+          "translations": [
+            { "language": "en", "text": "I would summarize it like this: We start with a clearly measurable physiotherapy plan, use medication at most for a limited time to relieve symptoms, and review after an agreed period whether the progress is sufficient. If certain warning signs appear or there is no improvement, we discuss further assessment or a referral." },
+            { "language": "fa", "text": "این‌طور خلاصه می‌کنم: با یک برنامه فیزیوتراپی با معیارهای روشن شروع می‌کنیم، دارو را حداکثر به‌صورت محدود زمانی برای کاهش فشار استفاده می‌کنیم و بعد از بازه توافق‌شده بررسی می‌کنیم آیا روند کافی است یا نه. اگر نشانه‌های هشدار مشخصی دیده شود یا بهبودی رخ ندهد، بررسی بیشتر یا ارجاع را مطرح می‌کنیم." },
+            { "language": "ar", "text": "سألخص الأمر هكذا: نبدأ بخطة علاج طبيعي قابلة للقياس بوضوح، ونستخدم الدواء على الأكثر لفترة محدودة للتخفيف، ثم نراجع بعد فترة متفق عليها هل التطور كافٍ. إذا ظهرت علامات إنذار معينة أو لم يحدث تحسن، نناقش فحصاً إضافياً أو إحالة." },
+            { "language": "tr", "text": "Bunu şöyle özetlerdim: Net ölçülebilir bir fizyoterapi planıyla başlıyoruz, ilaçları en fazla süre sınırlı olarak rahatlatmak için kullanıyoruz ve kararlaştırılan bir süreden sonra gelişmenin yeterli olup olmadığını değerlendiriyoruz. Belirli uyarı işaretleri ortaya çıkarsa ya da iyileşme olmazsa ek değerlendirme veya sevki konuşuyoruz." },
+            { "language": "ru", "text": "Я бы резюмировал так: мы начинаем с чётко измеримого плана физиотерапии, используем лекарства максимум временно для облегчения и через согласованный срок проверяем, достаточно ли развитие. Если появятся определённые тревожные признаки или улучшения не будет, мы обсудим дальнейшее обследование или направление." },
+            { "language": "ckb", "text": "بەو شێوەیە پوختەی دەکەم: بە پلانێکی فیزیۆتێراپی بە پێوەری ڕوون دەست پێدەکەین، دەرمانەکان زۆرترین بە سنووری کاتی بۆ سووککردن بەکاردەهێنین و دوای ماوەی ڕێککەوتوو پشکنین دەکەین ئایا پێشکەوتنەکە بەسە. ئەگەر نیشانەی ئاگادارکردنەوەی دیاریکراو دەربکەوێت یان باشبوون نەبێت، پشکنینی زیاتر یان ناردن بۆ پسپۆڕ باس دەکەین." },
+            { "language": "kmr", "text": "Ez wê wisa kurt dikim: Em bi planeke fîzyoterapî ya bi pîvanên zelal dest pê dikin, dermanan herî zêde bi dem-sînordar ji bo sivikkirinê bikar tînin û piştî demeke lihevkirî kontrol dikin ka pêşketin bes e. Heke hin nîşaneyên hişyariyê xuya bibin an başbûn çênebe, em nirxandina zêdetir an şandinê diaxivin." },
+            { "language": "pl", "text": "Podsumowałbym to tak: zaczynamy od jasno mierzalnego planu fizjoterapii, leki stosujemy najwyżej czasowo w celu odciążenia i po uzgodnionym okresie sprawdzamy, czy postęp jest wystarczający. Jeśli pojawią się określone objawy ostrzegawcze albo nie będzie poprawy, omówimy dalszą diagnostykę lub skierowanie." },
+            { "language": "ro", "text": "Aș rezuma așa: începem cu un plan de fizioterapie clar măsurabil, folosim medicamente cel mult limitat în timp pentru ameliorare și verificăm după o perioadă convenită dacă evoluția este suficientă. Dacă apar anumite semne de avertizare sau nu există îmbunătățire, discutăm investigații suplimentare sau o trimitere." },
+            { "language": "sq", "text": "Do ta përmblidhja kështu: fillojmë me një plan fizioterapie të matshëm qartë, përdorim ilaçe vetëm për kohë të kufizuar për lehtësim dhe pas një periudhe të rënë dakord kontrollojmë nëse zhvillimi është i mjaftueshëm. Nëse shfaqen shenja të caktuara paralajmëruese ose nuk ka përmirësim, diskutojmë sqarim të mëtejshëm ose referim." }
+          ],
+          "function": "staged-plan-summary",
+          "toneNote": "präzise, kooperativ",
+          "expectedLearnerAction": "Therapieentscheidung als Stufenplan zusammenfassen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-comparison-frame",
+              "text": "Ich möchte Nutzen, Risiken, Alltagstauglichkeit und Kriterien für den nächsten Schritt vergleichen, statt sofort eine Option festzulegen.",
+              "translations": [
+                { "language": "en", "text": "I would like to compare benefits, risks, everyday feasibility, and criteria for the next step instead of immediately choosing one option." },
+                { "language": "fa", "text": "می‌خواهم فایده، ریسک، قابل اجرا بودن در زندگی روزمره و معیارهای قدم بعدی را مقایسه کنم، نه اینکه فوراً یک گزینه را تعیین کنم." },
+                { "language": "ar", "text": "أريد أن أقارن الفائدة والمخاطر وإمكانية التطبيق في الحياة اليومية ومعايير الخطوة التالية بدلاً من تحديد خيار فوراً." },
+                { "language": "tr", "text": "Hemen bir seçenek belirlemek yerine fayda, risk, günlük yaşama uygunluk ve sonraki adım kriterlerini karşılaştırmak istiyorum." },
+                { "language": "ru", "text": "Я хочу сравнить пользу, риски, пригодность для повседневной жизни и критерии следующего шага, а не сразу выбирать один вариант." },
+                { "language": "ckb", "text": "دەمەوێت سوود، مەترسی، گونجاوی بۆ ژیانی ڕۆژانە و پێوەری هەنگاوی دواتر بەراورد بکەم، نەک دەستبەجێ بژاردەیەک دیاری بکەم." },
+                { "language": "kmr", "text": "Ez dixwazim sûd, metirsî, guncawiya jiyana rojane û pîvanên gaveke paşîn berawird bikim, ne ku tavilê vebijarkekê diyar bikim." },
+                { "language": "pl", "text": "Chcę porównać korzyści, ryzyka, wykonalność w codzienności i kryteria następnego kroku, zamiast od razu ustalać jedną opcję." },
+                { "language": "ro", "text": "Vreau să compar beneficiile, riscurile, aplicabilitatea în viața de zi cu zi și criteriile pentru pasul următor, în loc să stabilesc imediat o opțiune." },
+                { "language": "sq", "text": "Dua të krahasoj përfitimet, rreziqet, zbatueshmërinë në jetën e përditshme dhe kriteret për hapin tjetër, në vend që të përcaktoj menjëherë një opsion." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schafft einen C1-Vergleichsrahmen und vermeidet vorschnelle Festlegung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer creates a C1 comparison frame and avoids premature commitment." },
+                { "language": "fa", "text": "قوی: پاسخ یک چارچوب مقایسه‌ای C1 ایجاد می‌کند و از تصمیم‌گیری عجولانه پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: تضع الإجابة إطار مقارنة بمستوى C1 وتتجنب التحديد المتسرع." },
+                { "language": "tr", "text": "Güçlü: Yanıt C1 düzeyinde bir karşılaştırma çerçevesi kuruyor ve acele karardan kaçınıyor." },
+                { "language": "ru", "text": "Сильно: ответ создаёт рамку сравнения уровня C1 и избегает преждевременного выбора." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام چوارچێوەی بەراوردی C1 دروست دەکات و لە دیاریکردنی زوو خۆ دەبوێرێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv çarçoveyeke berawirdê ya C1 çêdike û ji biryara zû dûr dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź tworzy ramę porównania na poziomie C1 i unika przedwczesnego wyboru." },
+                { "language": "ro", "text": "Puternic: răspunsul creează un cadru de comparație C1 și evită fixarea prematură." },
+                { "language": "sq", "text": "E fortë: përgjigjja krijon një kornizë krahasimi C1 dhe shmang përcaktimin e nxituar." }
+              ],
+              "explanationKey": "comparison-frame"
+            },
+            {
+              "id": "weak-fast-choice",
+              "text": "Ich möchte einfach wissen, welche Option am schnellsten hilft.",
+              "translations": [
+                { "language": "en", "text": "I simply want to know which option helps fastest." },
+                { "language": "fa", "text": "فقط می‌خواهم بدانم کدام گزینه سریع‌تر کمک می‌کند." },
+                { "language": "ar", "text": "أريد فقط أن أعرف أي خيار يساعد أسرع." },
+                { "language": "tr", "text": "Sadece hangi seçeneğin en hızlı yardımcı olduğunu bilmek istiyorum." },
+                { "language": "ru", "text": "Я просто хочу знать, какой вариант помогает быстрее всего." },
+                { "language": "ckb", "text": "تەنها دەمەوێت بزانم کام بژاردە خێراتر یارمەتی دەدات." },
+                { "language": "kmr", "text": "Ez tenê dixwazim bizanim kîjan vebijark herî zû alîkar dibe." },
+                { "language": "pl", "text": "Chcę po prostu wiedzieć, która opcja pomoże najszybciej." },
+                { "language": "ro", "text": "Vreau doar să știu care opțiune ajută cel mai repede." },
+                { "language": "sq", "text": "Thjesht dua të di cili opsion ndihmon më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng: Geschwindigkeit ist ein Kriterium, aber C1 verlangt auch Risiken, Alltag und Entscheidungspunkte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: Speed is one criterion, but C1 also requires risks, everyday life, and decision points." },
+                { "language": "fa", "text": "بیش از حد محدود است: سرعت یک معیار است، اما C1 ریسک‌ها، زندگی روزمره و نقاط تصمیم را هم می‌خواهد." },
+                { "language": "ar", "text": "ضيّق جداً: السرعة معيار واحد، لكن C1 يتطلب أيضاً المخاطر والحياة اليومية ونقاط القرار." },
+                { "language": "tr", "text": "Çok dar: Hız bir kriterdir, ancak C1 riskleri, günlük yaşamı ve karar noktalarını da gerektirir." },
+                { "language": "ru", "text": "Слишком узко: скорость — один критерий, но C1 требует также риски, повседневность и точки решения." },
+                { "language": "ckb", "text": "زۆر تەنگە: خێرایی پێوەرێکە، بەڵام C1 مەترسی، ژیانی ڕۆژانە و خاڵەکانی بڕیاریش دەوێت." },
+                { "language": "kmr", "text": "Pir teng e: Lez pîvanek e, lê C1 metirsî, jiyana rojane û xalên biryarê jî dixwaze." },
+                { "language": "pl", "text": "Zbyt wąsko: szybkość jest jednym kryterium, ale C1 wymaga także ryzyk, codzienności i punktów decyzji." },
+                { "language": "ro", "text": "Prea îngust: viteza este un criteriu, dar C1 cere și riscuri, viață de zi cu zi și puncte de decizie." },
+                { "language": "sq", "text": "Shumë e ngushtë: shpejtësia është një kriter, por C1 kërkon edhe rreziqe, përditshmëri dhe pika vendimi." }
+              ],
+              "explanationKey": "too-narrow-speed"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-daily-feasibility",
+              "text": "Die Option sollte nicht nur medizinisch sinnvoll, sondern auch mit Arbeit, Treppen und Terminplanung realistisch umsetzbar sein.",
+              "translations": [
+                { "language": "en", "text": "The option should not only make medical sense, but also be realistically feasible with work, stairs, and appointment scheduling." },
+                { "language": "fa", "text": "گزینه نباید فقط از نظر پزشکی منطقی باشد، بلکه باید با کار، پله‌ها و برنامه‌ریزی وقت‌ها هم واقع‌بینانه قابل اجرا باشد." },
+                { "language": "ar", "text": "يجب ألا يكون الخيار مفيداً طبياً فقط، بل قابلاً للتنفيذ واقعياً مع العمل والسلالم وتخطيط المواعيد." },
+                { "language": "tr", "text": "Seçenek yalnızca tıbben mantıklı değil, iş, merdivenler ve randevu planlamasıyla gerçekçi uygulanabilir olmalı." },
+                { "language": "ru", "text": "Вариант должен быть не только медицински разумным, но и реалистично выполнимым с учётом работы, лестниц и планирования встреч." },
+                { "language": "ckb", "text": "بژاردەکە نابێت تەنها لە ڕووی پزیشکییەوە گونجاو بێت، بەڵکو پێویستە لەگەڵ کار، پلەکان و پلانکردنی کاتەکاندا بە واقیعی جێبەجێ بکرێت." },
+                { "language": "kmr", "text": "Vebijark divê ne tenê ji aliyê bijîşkî ve maqûl be, lê bi kar, derence û plankirina randevûyan re bi rastî pêkan be." },
+                { "language": "pl", "text": "Opcja powinna być nie tylko medycznie sensowna, lecz także realistycznie wykonalna przy pracy, schodach i planowaniu terminów." },
+                { "language": "ro", "text": "Opțiunea nu trebuie să fie doar medical rezonabilă, ci și realist aplicabilă cu munca, scările și programarea întâlnirilor." },
+                { "language": "sq", "text": "Opsioni nuk duhet të jetë vetëm mjekësisht i arsyeshëm, por edhe realisht i zbatueshëm me punën, shkallët dhe planifikimin e takimeve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Medizinische Empfehlung und tatsächliche Umsetzbarkeit werden zusammen gedacht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Medical recommendation and actual feasibility are considered together." },
+                { "language": "fa", "text": "قوی: توصیه پزشکی و قابل اجرا بودن واقعی با هم در نظر گرفته شده‌اند." },
+                { "language": "ar", "text": "قوي: تُفكر الإجابة في التوصية الطبية وإمكانية التنفيذ الفعلية معاً." },
+                { "language": "tr", "text": "Güçlü: Tıbbi öneri ve gerçek uygulanabilirlik birlikte düşünülüyor." },
+                { "language": "ru", "text": "Сильно: медицинская рекомендация и фактическая выполнимость рассматриваются вместе." },
+                { "language": "ckb", "text": "بەهێزە: پێشنیاری پزیشکی و جێبەجێکردنی ڕاستەقینە پێکەوە لەبەرچاو گیراون." },
+                { "language": "kmr", "text": "Xurt e: Pêşniyara bijîşkî û pêkanîna rast bi hev re tên fikirîn." },
+                { "language": "pl", "text": "Mocne: zalecenie medyczne i rzeczywista wykonalność są rozważane razem." },
+                { "language": "ro", "text": "Puternic: recomandarea medicală și aplicabilitatea reală sunt gândite împreună." },
+                { "language": "sq", "text": "E fortë: rekomandimi mjekësor dhe zbatueshmëria reale mendohen së bashku." }
+              ],
+              "explanationKey": "daily-feasibility"
+            },
+            {
+              "id": "weak-ideal-only",
+              "text": "Wenn Sie sagen, dass eine Therapie gut ist, dann mache ich das einfach so.",
+              "translations": [
+                { "language": "en", "text": "If you say a therapy is good, then I will simply do it that way." },
+                { "language": "fa", "text": "اگر شما بگویید یک درمان خوب است، من هم همان را انجام می‌دهم." },
+                { "language": "ar", "text": "إذا قلتِ إن علاجاً جيد، فسأفعله ببساطة هكذا." },
+                { "language": "tr", "text": "Bir terapinin iyi olduğunu söylerseniz, ben de basitçe öyle yaparım." },
+                { "language": "ru", "text": "Если вы скажете, что терапия хорошая, я просто так и сделаю." },
+                { "language": "ckb", "text": "ئەگەر بڵێیت چارەسەرێک باشە، منیش بە سادەیی هەمان شت دەکەم." },
+                { "language": "kmr", "text": "Heke hûn bêjin dermankirinek baş e, ez jî wê wisa dikim." },
+                { "language": "pl", "text": "Jeśli Pani powie, że terapia jest dobra, to po prostu tak zrobię." },
+                { "language": "ro", "text": "Dacă spuneți că o terapie este bună, atunci o fac pur și simplu așa." },
+                { "language": "sq", "text": "Nëse thoni se një terapi është e mirë, atëherë thjesht do ta bëj ashtu." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu passiv: Vertrauen ist gut, aber die Umsetzbarkeit im Alltag muss trotzdem geklärt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: Trust is good, but everyday feasibility still needs to be clarified." },
+                { "language": "fa", "text": "بیش از حد منفعل است: اعتماد خوب است، اما قابل اجرا بودن در زندگی روزمره همچنان باید روشن شود." },
+                { "language": "ar", "text": "سلبي جداً: الثقة جيدة، لكن إمكانية التنفيذ في الحياة اليومية يجب أن تُوضح أيضاً." },
+                { "language": "tr", "text": "Fazla pasif: Güven iyidir, ama günlük yaşamda uygulanabilirlik yine de netleşmelidir." },
+                { "language": "ru", "text": "Слишком пассивно: доверие хорошо, но пригодность в повседневной жизни всё равно нужно уточнить." },
+                { "language": "ckb", "text": "زۆر ناپاساوە: متمانە باشە، بەڵام جێبەجێکردن لە ژیانی ڕۆژانەدا هێشتا پێویستە ڕوون بکرێتەوە." },
+                { "language": "kmr", "text": "Pir pasîf e: Bawerî baş e, lê guncawiya jiyana rojane hîn jî divê zelal bibe." },
+                { "language": "pl", "text": "Zbyt bierne: zaufanie jest dobre, ale wykonalność w codzienności mimo to trzeba wyjaśnić." },
+                { "language": "ro", "text": "Prea pasiv: încrederea este bună, dar aplicabilitatea în viața de zi cu zi trebuie totuși clarificată." },
+                { "language": "sq", "text": "Shumë pasive: besimi është i mirë, por zbatueshmëria në përditshmëri duhet prapë të sqarohet." }
+              ],
+              "explanationKey": "passive-therapy-choice"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-measurable-physio",
+              "text": "Ich kann Physiotherapie gut mittragen, wenn wir vorher Ziele, akzeptable Belastung und einen Zeitpunkt zur Bewertung festlegen.",
+              "translations": [
+                { "language": "en", "text": "I can support physiotherapy well if we first define goals, acceptable exertion, and a time for evaluation." },
+                { "language": "fa", "text": "می‌توانم فیزیوتراپی را خوب همراهی کنم، اگر قبلش هدف‌ها، میزان فشار قابل قبول و زمان ارزیابی را تعیین کنیم." },
+                { "language": "ar", "text": "أستطيع الالتزام بالعلاج الطبيعي جيداً إذا حددنا مسبقاً الأهداف والجهد المقبول ووقت التقييم." },
+                { "language": "tr", "text": "Önceden hedefleri, kabul edilebilir yüklenmeyi ve değerlendirme zamanını belirlersek fizyoterapiyi iyi destekleyebilirim." },
+                { "language": "ru", "text": "Я могу хорошо поддержать физиотерапию, если мы заранее определим цели, допустимую нагрузку и момент оценки." },
+                { "language": "ckb", "text": "دەتوانم باش بە فیزیۆتێراپی پشتیوانی بکەم، ئەگەر پێشتر ئامانجەکان، بارگرانی قبووڵکراو و کاتی هەڵسەنگاندن دیاری بکەین." },
+                { "language": "kmr", "text": "Ez dikarim fîzyoterapî baş bişopînim heke em pêşî armanc, barê qebûlbar û dema nirxandinê diyar bikin." },
+                { "language": "pl", "text": "Mogę dobrze współpracować przy fizjoterapii, jeśli wcześniej ustalimy cele, dopuszczalne obciążenie i termin oceny." },
+                { "language": "ro", "text": "Pot susține bine fizioterapia dacă stabilim înainte obiectivele, efortul acceptabil și un moment de evaluare." },
+                { "language": "sq", "text": "Mund ta mbështes mirë fizioterapinë nëse më parë përcaktojmë qëllimet, ngarkesën e pranueshme dhe kohën e vlerësimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Zustimmung wird mit messbaren Kriterien verbunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Agreement is connected to measurable criteria." },
+                { "language": "fa", "text": "قوی: موافقت به معیارهای قابل سنجش وصل شده است." },
+                { "language": "ar", "text": "قوي: تُربط الموافقة بمعايير قابلة للقياس." },
+                { "language": "tr", "text": "Güçlü: Onay ölçülebilir kriterlerle bağlantılandırılıyor." },
+                { "language": "ru", "text": "Сильно: согласие связывается с измеримыми критериями." },
+                { "language": "ckb", "text": "بەهێزە: ڕەزامەندی بە پێوەری پێوانەکراو دەبەسترێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Razîbûn bi pîvanên pîvandbar ve tê girêdan." },
+                { "language": "pl", "text": "Mocne: zgoda jest powiązana z mierzalnymi kryteriami." },
+                { "language": "ro", "text": "Puternic: acordul este legat de criterii măsurabile." },
+                { "language": "sq", "text": "E fortë: pajtimi lidhet me kritere të matshme." }
+              ],
+              "explanationKey": "measurable-physio"
+            },
+            {
+              "id": "weak-open-ended-physio",
+              "text": "Dann probiere ich Physiotherapie einfach mal und schaue, ob es irgendwann besser wird.",
+              "translations": [
+                { "language": "en", "text": "Then I will just try physiotherapy and see whether it gets better at some point." },
+                { "language": "fa", "text": "پس فیزیوتراپی را همین‌طور امتحان می‌کنم و می‌بینم آیا بالاخره بهتر می‌شود یا نه." },
+                { "language": "ar", "text": "إذن سأجرب العلاج الطبيعي ببساطة وأرى هل يتحسن الأمر في وقت ما." },
+                { "language": "tr", "text": "O zaman fizyoterapiyi bir denerim ve bir ara düzelip düzelmediğine bakarım." },
+                { "language": "ru", "text": "Тогда я просто попробую физиотерапию и посмотрю, станет ли когда-нибудь лучше." },
+                { "language": "ckb", "text": "ئەوکات فیزیۆتێراپی تاقی دەکەمەوە و دەبینم ئایا کاتێک باشتر دەبێت." },
+                { "language": "kmr", "text": "Wê demê ez tenê fîzyoterapî dicêribînim û dibînim ka carekê baştir dibe." },
+                { "language": "pl", "text": "W takim razie po prostu spróbuję fizjoterapii i zobaczę, czy kiedyś będzie lepiej." },
+                { "language": "ro", "text": "Atunci încerc pur și simplu fizioterapia și văd dacă se îmbunătățește cândva." },
+                { "language": "sq", "text": "Atëherë thjesht do ta provoj fizioterapinë dhe do të shoh nëse përmirësohet ndonjëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Ohne Zeitraum und Bewertungskriterien bleibt unklar, wann die Option erfolgreich oder unzureichend ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: Without timeframe and evaluation criteria, it remains unclear when the option is successful or insufficient." },
+                { "language": "fa", "text": "بیش از حد مبهم است: بدون بازه زمانی و معیار ارزیابی، روشن نیست چه زمانی گزینه موفق یا ناکافی است." },
+                { "language": "ar", "text": "غامض جداً: من دون إطار زمني ومعايير تقييم يبقى غير واضح متى يكون الخيار ناجحاً أو غير كافٍ." },
+                { "language": "tr", "text": "Çok belirsiz: Süre ve değerlendirme kriterleri olmadan seçeneğin ne zaman başarılı ya da yetersiz olduğu belirsiz kalır." },
+                { "language": "ru", "text": "Слишком расплывчато: без срока и критериев оценки остаётся неясно, когда вариант успешен или недостаточен." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: بەبێ ماوە و پێوەری هەڵسەنگاندن، ڕوون نابێت کەی بژاردەکە سەرکەوتوو یان ناکافییە." },
+                { "language": "kmr", "text": "Pir nezelal e: Bê dem û pîvanên nirxandinê nayê zanîn kengê vebijark serkeftî an nebes e." },
+                { "language": "pl", "text": "Zbyt ogólne: bez horyzontu czasowego i kryteriów oceny nie wiadomo, kiedy opcja jest skuteczna albo niewystarczająca." },
+                { "language": "ro", "text": "Prea vag: fără termen și criterii de evaluare rămâne neclar când opțiunea este reușită sau insuficientă." },
+                { "language": "sq", "text": "Shumë e paqartë: pa afat dhe kritere vlerësimi nuk dihet kur opsioni është i suksesshëm ose i pamjaftueshëm." }
+              ],
+              "explanationKey": "open-ended-physio"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-medication-boundary",
+              "text": "Wenn Medikamente eine Brücke sein sollen, brauche ich Dauer, Warnzeichen und Abbruchkriterien klar benannt.",
+              "translations": [
+                { "language": "en", "text": "If medication is meant to be a bridge, I need duration, warning signs, and stop criteria clearly named." },
+                { "language": "fa", "text": "اگر دارو قرار است نقش پل موقت داشته باشد، باید مدت، نشانه‌های هشدار و معیارهای قطع مصرف روشن نام برده شوند." },
+                { "language": "ar", "text": "إذا كان الدواء جسراً مؤقتاً، فأحتاج إلى تسمية واضحة للمدة وعلامات الإنذار ومعايير الإيقاف." },
+                { "language": "tr", "text": "İlaç bir köprü olacaksa süre, uyarı işaretleri ve bırakma kriterleri net adlandırılmalı." },
+                { "language": "ru", "text": "Если лекарства должны быть мостом, мне нужно чётко назвать срок, тревожные признаки и критерии прекращения." },
+                { "language": "ckb", "text": "ئەگەر دەرمان وەک پردێکی کاتی بێت، پێویستە ماوە، نیشانەی ئاگادارکردنەوە و پێوەری وەستاندن بە ڕوونی ناو ببرێن." },
+                { "language": "kmr", "text": "Heke derman wekî pirek be, divê dem, nîşaneyên hişyariyê û pîvanên rawestandinê bi zelalî werin navkirin." },
+                { "language": "pl", "text": "Jeśli leki mają być pomostem, potrzebuję jasno nazwanych czasu trwania, objawów ostrzegawczych i kryteriów przerwania." },
+                { "language": "ro", "text": "Dacă medicamentele sunt o punte, am nevoie ca durata, semnele de avertizare și criteriile de oprire să fie clar numite." },
+                { "language": "sq", "text": "Nëse ilaçet duhet të jenë një urë, më duhen të qarta kohëzgjatja, shenjat paralajmëruese dhe kriteret e ndërprerjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort lehnt nicht pauschal ab, sondern setzt sichere Grenzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer does not reject it broadly, but sets safe boundaries." },
+                { "language": "fa", "text": "قوی: پاسخ کلی رد نمی‌کند، بلکه مرزهای امن تعیین می‌کند." },
+                { "language": "ar", "text": "قوي: لا ترفض الإجابة بشكل عام، بل تضع حدوداً آمنة." },
+                { "language": "tr", "text": "Güçlü: Yanıt genel olarak reddetmiyor, güvenli sınırlar koyuyor." },
+                { "language": "ru", "text": "Сильно: ответ не отвергает в целом, а устанавливает безопасные границы." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام بە گشتی ڕەت ناکاتەوە، بەڵکو سنووری ئاسایش دادەنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv bi giştî red nake, lê sînorên ewle datîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź nie odrzuca ogólnie, lecz stawia bezpieczne granice." },
+                { "language": "ro", "text": "Puternic: răspunsul nu respinge în general, ci stabilește limite sigure." },
+                { "language": "sq", "text": "E fortë: përgjigjja nuk e refuzon në përgjithësi, por vendos kufij të sigurt." }
+              ],
+              "explanationKey": "medication-boundaries"
+            },
+            {
+              "id": "weak-medication-fear",
+              "text": "Medikamente möchte ich lieber gar nicht nehmen, weil ich Nebenwirkungen vermeiden will.",
+              "translations": [
+                { "language": "en", "text": "I would rather not take any medication at all because I want to avoid side effects." },
+                { "language": "fa", "text": "ترجیح می‌دهم اصلاً دارو مصرف نکنم، چون می‌خواهم از عوارض جانبی دوری کنم." },
+                { "language": "ar", "text": "أفضل ألا أتناول أي أدوية إطلاقاً لأنني أريد تجنب الآثار الجانبية." },
+                { "language": "tr", "text": "Yan etkilerden kaçınmak istediğim için hiç ilaç almamayı tercih ederim." },
+                { "language": "ru", "text": "Я предпочёл бы вообще не принимать лекарства, потому что хочу избежать побочных эффектов." },
+                { "language": "ckb", "text": "باشترم وایە هیچ دەرمانێک نەخۆم، چونکە دەمەوێت لە کاریگەرییە لاوەکییەکان دوور بکەومەوە." },
+                { "language": "kmr", "text": "Ez dixwazim qet derman negirim, ji ber ku dixwazim ji bandorên aliyî dûr bim." },
+                { "language": "pl", "text": "Wolałbym w ogóle nie brać leków, bo chcę uniknąć działań niepożądanych." },
+                { "language": "ro", "text": "Aș prefera să nu iau deloc medicamente, pentru că vreau să evit efectele secundare." },
+                { "language": "sq", "text": "Do të preferoja të mos marr fare ilaçe, sepse dua të shmang efektet anësore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu absolut: Besser ist, Nutzen, Dauer und Risiken begrenzt zu klären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too absolute: Better is to clarify benefits, duration, and risks in a limited way." },
+                { "language": "fa", "text": "قابل فهم است، اما بیش از حد مطلق است: بهتر است فایده، مدت و ریسک‌ها به‌صورت محدود روشن شوند." },
+                { "language": "ar", "text": "مفهوم لكنه مطلق جداً: الأفضل توضيح الفائدة والمدة والمخاطر بشكل محدود." },
+                { "language": "tr", "text": "Makul ama fazla mutlak: Fayda, süre ve riskleri sınırlı biçimde netleştirmek daha iyidir." },
+                { "language": "ru", "text": "Понятно, но слишком категорично: лучше ограниченно уточнить пользу, срок и риски." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام زۆر ڕەهاست: باشترە سوود، ماوە و مەترسییەکان بە سنوورداری ڕوون بکرێنەوە." },
+                { "language": "kmr", "text": "Maqûl e lê pir mutleq e: Baştir e sûd, dem û metirsiyan bi sînordarî zelal bikin." },
+                { "language": "pl", "text": "Plausible, ale zbyt kategoryczne: lepiej ograniczenie wyjaśnić korzyści, czas i ryzyka." },
+                { "language": "ro", "text": "Plauzibil, dar prea absolut: mai bine clarificați limitat beneficiile, durata și riscurile." },
+                { "language": "sq", "text": "E besueshme, por shumë absolute: më mirë të sqarohen në mënyrë të kufizuar përfitimet, kohëzgjatja dhe rreziqet." }
+              ],
+              "explanationKey": "absolute-medication-rejection"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-managed-uncertainty",
+              "text": "Ich kann Unsicherheit akzeptieren, wenn wir festhalten, welche Befunde gegen sofortige Überweisung sprechen und welche Veränderung die Entscheidung ändern würde.",
+              "translations": [
+                { "language": "en", "text": "I can accept uncertainty if we record which findings speak against immediate referral and which change would alter the decision." },
+                { "language": "fa", "text": "می‌توانم عدم قطعیت را بپذیرم، اگر مشخص کنیم کدام یافته‌ها علیه ارجاع فوری هستند و چه تغییری تصمیم را عوض می‌کند." },
+                { "language": "ar", "text": "أستطيع قبول عدم اليقين إذا سجلنا أي نتائج تتحدث ضد إحالة فورية وأي تغيير سيغير القرار." },
+                { "language": "tr", "text": "Hangi bulguların hemen sevke karşı olduğunu ve hangi değişikliğin kararı değiştireceğini kaydedersek belirsizliği kabul edebilirim." },
+                { "language": "ru", "text": "Я могу принять неопределённость, если мы зафиксируем, какие данные говорят против немедленного направления и какое изменение изменит решение." },
+                { "language": "ckb", "text": "دەتوانم نادڵنیایی قبووڵ بکەم، ئەگەر تۆمار بکەین کام دەرئەنجام دژی ناردنی دەستبەجێن و کام گۆڕان بڕیارەکە دەگۆڕێت." },
+                { "language": "kmr", "text": "Ez dikarim nebûna piştrastiyê qebûl bikim heke em tomar bikin kîjan encam li dijî şandina tavilê diaxivin û kîjan guhertin biryarê diguherîne." },
+                { "language": "pl", "text": "Mogę zaakceptować niepewność, jeśli zapiszemy, które wyniki przemawiają przeciw natychmiastowemu skierowaniu i jaka zmiana zmieniłaby decyzję." },
+                { "language": "ro", "text": "Pot accepta incertitudinea dacă consemnăm ce rezultate vorbesc împotriva unei trimiteri imediate și ce schimbare ar modifica decizia." },
+                { "language": "sq", "text": "Mund ta pranoj pasigurinë nëse shënojmë cilat gjetje flasin kundër referimit të menjëhershëm dhe cili ndryshim do ta ndryshonte vendimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Unsicherheit wird nicht verdrängt, sondern mit überprüfbaren Kriterien gesteuert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Uncertainty is not pushed aside, but managed with verifiable criteria." },
+                { "language": "fa", "text": "قوی: عدم قطعیت کنار زده نمی‌شود، بلکه با معیارهای قابل بررسی مدیریت می‌شود." },
+                { "language": "ar", "text": "قوي: لا تُزاح عدم اليقين، بل تُدار بمعايير قابلة للتحقق." },
+                { "language": "tr", "text": "Güçlü: Belirsizlik bastırılmıyor, doğrulanabilir kriterlerle yönetiliyor." },
+                { "language": "ru", "text": "Сильно: неопределённость не вытесняется, а управляется проверяемыми критериями." },
+                { "language": "ckb", "text": "بەهێزە: نادڵنیایی لادەدرێت نییە، بەڵکو بە پێوەری پشکنراو بەڕێوە دەبرێت." },
+                { "language": "kmr", "text": "Xurt e: Nebûna piştrastiyê nayê paşguhkirin, lê bi pîvanên kontrolbar tê rêvebirin." },
+                { "language": "pl", "text": "Mocne: niepewność nie jest wypierana, lecz zarządzana za pomocą sprawdzalnych kryteriów." },
+                { "language": "ro", "text": "Puternic: incertitudinea nu este ignorată, ci gestionată cu criterii verificabile." },
+                { "language": "sq", "text": "E fortë: pasiguria nuk shtyhet mënjanë, por menaxhohet me kritere të verifikueshme." }
+              ],
+              "explanationKey": "managed-uncertainty"
+            },
+            {
+              "id": "weak-demand-imaging",
+              "text": "Dann würde ich lieber gleich eine Bildgebung machen, damit wir sicher sind.",
+              "translations": [
+                { "language": "en", "text": "Then I would rather do imaging right away so that we are sure." },
+                { "language": "fa", "text": "پس ترجیح می‌دهم فوراً تصویربرداری انجام دهیم تا مطمئن باشیم." },
+                { "language": "ar", "text": "إذن أفضل أن نجري التصوير فوراً حتى نكون متأكدين." },
+                { "language": "tr", "text": "O zaman emin olmak için hemen görüntüleme yapmayı tercih ederim." },
+                { "language": "ru", "text": "Тогда я предпочёл бы сразу сделать визуализацию, чтобы мы были уверены." },
+                { "language": "ckb", "text": "ئەوکات باشترم وایە دەستبەجێ وێنەگرتن بکەین تا دڵنیا بین." },
+                { "language": "kmr", "text": "Wê demê ez tercîh dikim tavilê wênekirinê bikin da ku em piştrast bin." },
+                { "language": "pl", "text": "W takim razie wolałbym od razu zrobić obrazowanie, żebyśmy mieli pewność." },
+                { "language": "ro", "text": "Atunci aș prefera să facem imediat imagistică, ca să fim siguri." },
+                { "language": "sq", "text": "Atëherë do të preferoja të bëjmë menjëherë imazheri, që të jemi të sigurt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu sprunghaft: Die Ärztin fragt nach Umgang mit Unsicherheit, nicht nach sofortiger Eskalation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too abrupt: The doctor asks how to handle uncertainty, not for immediate escalation." },
+                { "language": "fa", "text": "قابل فهم است، اما بیش از حد جهشی است: پزشک درباره مدیریت عدم قطعیت می‌پرسد، نه تشدید فوری." },
+                { "language": "ar", "text": "مفهوم لكنه متسرع: الطبيبة تسأل عن التعامل مع عدم اليقين، لا عن التصعيد الفوري." },
+                { "language": "tr", "text": "Makul ama fazla sıçramalı: Doktor belirsizlikle nasıl başa çıkılacağını soruyor, hemen yükseltmeyi değil." },
+                { "language": "ru", "text": "Понятно, но слишком скачкообразно: врач спрашивает об обращении с неопределённостью, а не о немедленной эскалации." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام زۆر خێرایە: پزیشک دەربارەی مامەڵە لەگەڵ نادڵنیایی دەپرسێت، نەک دەستبەجێ بەرزکردنەوە." },
+                { "language": "kmr", "text": "Maqûl e lê pir lez e: Doktor li ser rabûna bi nebûna piştrastiyê dipirse, ne li ser tavilê bilindkirinê." },
+                { "language": "pl", "text": "Plausible, ale zbyt gwałtowne: lekarka pyta o radzenie sobie z niepewnością, nie o natychmiastową eskalację." },
+                { "language": "ro", "text": "Plauzibil, dar prea brusc: medicul întreabă despre gestionarea incertitudinii, nu despre escaladare imediată." },
+                { "language": "sq", "text": "E besueshme, por shumë e menjëhershme: mjekja pyet për menaxhimin e pasigurisë, jo për eskalim të menjëhershëm." }
+              ],
+              "explanationKey": "premature-imaging-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "strong-staged-plan",
+              "text": "Wir beginnen messbar mit Physiotherapie, nutzen Medikamente nur begrenzt zur Entlastung und prüfen nach einer festen Frist, ob weitere Abklärung nötig ist.",
+              "translations": [
+                { "language": "en", "text": "We begin measurably with physiotherapy, use medication only in a limited way for relief, and check after a fixed period whether further assessment is needed." },
+                { "language": "fa", "text": "با فیزیوتراپی قابل سنجش شروع می‌کنیم، دارو را فقط به‌صورت محدود برای کاهش فشار استفاده می‌کنیم و بعد از مهلت مشخص بررسی می‌کنیم آیا بررسی بیشتر لازم است یا نه." },
+                { "language": "ar", "text": "نبدأ بالعلاج الطبيعي بشكل قابل للقياس، ونستخدم الدواء فقط بشكل محدود للتخفيف، ونفحص بعد مدة ثابتة هل نحتاج إلى توضيح إضافي." },
+                { "language": "tr", "text": "Ölçülebilir biçimde fizyoterapiyle başlıyoruz, ilaçları yalnızca sınırlı rahatlama için kullanıyoruz ve belirli bir süre sonra ek değerlendirme gerekip gerekmediğini kontrol ediyoruz." },
+                { "language": "ru", "text": "Мы измеримо начинаем с физиотерапии, используем лекарства только ограниченно для облегчения и через фиксированный срок проверяем, нужно ли дальнейшее обследование." },
+                { "language": "ckb", "text": "بە فیزیۆتێراپییەکی پێوانەکراو دەست پێدەکەین، دەرمان تەنها بە سنوورداری بۆ سووککردن بەکاردەهێنین و دوای ماوەیەکی دیاریکراو دەپشکنین ئایا پشکنینی زیاتر پێویستە." },
+                { "language": "kmr", "text": "Em bi fîzyoterapî ya pîvandbar dest pê dikin, dermanan tenê bi sînordarî ji bo sivikkirinê bikar tînin û piştî demeke diyarkirî kontrol dikin ka nirxandina zêdetir hewce ye." },
+                { "language": "pl", "text": "Zaczynamy mierzalnie od fizjoterapii, leki stosujemy tylko ograniczenie dla odciążenia i po ustalonym terminie sprawdzamy, czy potrzebna jest dalsza diagnostyka." },
+                { "language": "ro", "text": "Începem măsurabil cu fizioterapie, folosim medicamente doar limitat pentru ameliorare și verificăm după un termen fix dacă sunt necesare investigații suplimentare." },
+                { "language": "sq", "text": "Fillojmë në mënyrë të matshme me fizioterapi, përdorim ilaçe vetëm në mënyrë të kufizuar për lehtësim dhe pas një afati të caktuar kontrollojmë nëse nevojitet sqarim i mëtejshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Plan ist gestuft, prüfbar und offen für Anpassung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The plan is staged, checkable, and open to adjustment." },
+                { "language": "fa", "text": "قوی: برنامه مرحله‌ای، قابل بررسی و باز برای تنظیم است." },
+                { "language": "ar", "text": "قوي: الخطة مرحلية وقابلة للفحص ومفتوحة للتعديل." },
+                { "language": "tr", "text": "Güçlü: Plan aşamalı, kontrol edilebilir ve uyarlamaya açık." },
+                { "language": "ru", "text": "Сильно: план поэтапный, проверяемый и открыт для корректировки." },
+                { "language": "ckb", "text": "بەهێزە: پلانەکە قۆناغدارە، پشکنراوە و بۆ گونجاندنەوە کراوەیە." },
+                { "language": "kmr", "text": "Xurt e: Plan gav bi gav e, kontrolbar e û ji bo lihevkirinê vekirî ye." },
+                { "language": "pl", "text": "Mocne: plan jest etapowy, sprawdzalny i otwarty na dostosowanie." },
+                { "language": "ro", "text": "Puternic: planul este etapizat, verificabil și deschis ajustării." },
+                { "language": "sq", "text": "E fortë: plani është me faza, i kontrollueshëm dhe i hapur për përshtatje." }
+              ],
+              "explanationKey": "staged-plan"
+            },
+            {
+              "id": "weak-one-option-summary",
+              "text": "Wir versuchen erst einmal Physiotherapie, und wenn das nicht hilft, schauen wir weiter.",
+              "translations": [
+                { "language": "en", "text": "We will first try physiotherapy, and if that does not help, we will look further." },
+                { "language": "fa", "text": "اول فیزیوتراپی را امتحان می‌کنیم و اگر کمک نکرد، بعداً بیشتر بررسی می‌کنیم." },
+                { "language": "ar", "text": "نجرب أولاً العلاج الطبيعي، وإذا لم يساعد ننظر لاحقاً في الأمر." },
+                { "language": "tr", "text": "Önce fizyoterapiyi deneriz, yardımcı olmazsa sonra bakarız." },
+                { "language": "ru", "text": "Сначала попробуем физиотерапию, а если не поможет, посмотрим дальше." },
+                { "language": "ckb", "text": "سەرەتا فیزیۆتێراپی تاقی دەکەینەوە، ئەگەر یارمەتی نەدا دواتر دەڕوانین." },
+                { "language": "kmr", "text": "Pêşî fîzyoterapî dicêribînin, heke alîkar nebe paşê dinêrin." },
+                { "language": "pl", "text": "Najpierw spróbujemy fizjoterapii, a jeśli to nie pomoże, zobaczymy dalej." },
+                { "language": "ro", "text": "Încercăm mai întâi fizioterapia, iar dacă nu ajută, vedem mai departe." },
+                { "language": "sq", "text": "Së pari provojmë fizioterapinë dhe nëse nuk ndihmon, shohim më tej." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einfach für C1: Es fehlen Messkriterien, Medikamentenrahmen, Frist und Eskalationskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple for C1: Measurement criteria, medication frame, deadline, and escalation criteria are missing." },
+                { "language": "fa", "text": "برای C1 بیش از حد ساده است: معیار سنجش، چارچوب دارو، مهلت و معیارهای ارجاع/تشدید کم است." },
+                { "language": "ar", "text": "بسيط جداً لمستوى C1: تنقص معايير القياس وإطار الدواء والمهلة ومعايير التصعيد." },
+                { "language": "tr", "text": "C1 için fazla basit: Ölçüm kriterleri, ilaç çerçevesi, süre ve yükseltme kriterleri eksik." },
+                { "language": "ru", "text": "Слишком просто для C1: отсутствуют критерии измерения, рамки лекарств, срок и критерии эскалации." },
+                { "language": "ckb", "text": "بۆ C1 زۆر سادەیە: پێوەری پێوانە، چوارچێوەی دەرمان، ماوە و پێوەری بەرزکردنەوە کەمە." },
+                { "language": "kmr", "text": "Ji bo C1 pir hêsan e: Pîvanên pîvandinê, çarçoveya derman, dem û pîvanên bilindkirinê kêm in." },
+                { "language": "pl", "text": "Zbyt proste jak na C1: brakuje kryteriów pomiaru, ram leków, terminu i kryteriów eskalacji." },
+                { "language": "ro", "text": "Prea simplu pentru C1: lipsesc criteriile de măsurare, cadrul medicamentelor, termenul și criteriile de escaladare." },
+                { "language": "sq", "text": "Shumë e thjeshtë për C1: mungojnë kriteret e matjes, korniza e ilaçeve, afati dhe kriteret e eskalimit." }
+              ],
+              "explanationKey": "underspecified-plan"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "comparison",
+          "text": "C1-Vergleich heißt: nicht sofort wählen, sondern Kriterien für eine begründete Entscheidung sichtbar machen.",
+          "translations": [
+            { "language": "en", "text": "C1 comparison means: do not choose immediately, but make criteria for a reasoned decision visible." },
+            { "language": "fa", "text": "مقایسه C1 یعنی فوراً انتخاب نکنید، بلکه معیارهای تصمیم مستدل را روشن کنید." },
+            { "language": "ar", "text": "المقارنة في C1 تعني: لا تختَر فوراً، بل اجعل معايير القرار المبرر واضحة." },
+            { "language": "tr", "text": "C1 karşılaştırması şu demektir: hemen seçmek değil, gerekçeli karar kriterlerini görünür kılmak." },
+            { "language": "ru", "text": "Сравнение C1 означает: не выбирать сразу, а сделать видимыми критерии обоснованного решения." },
+            { "language": "ckb", "text": "بەراوردی C1 واتە: دەستبەجێ هەڵمەبژێرە، بەڵکو پێوەری بڕیارێکی بەهۆکار ڕوون بکە." },
+            { "language": "kmr", "text": "Berawirda C1 tê wateya: tavilê hilnebijêre, lê pîvanên biryareke bi sedem xuya bike." },
+            { "language": "pl", "text": "Porównanie C1 oznacza: nie wybierać od razu, lecz pokazać kryteria uzasadnionej decyzji." },
+            { "language": "ro", "text": "Comparația C1 înseamnă: nu alegeți imediat, ci faceți vizibile criteriile unei decizii argumentate." },
+            { "language": "sq", "text": "Krahasimi C1 do të thotë: mos zgjidhni menjëherë, por bëni të dukshme kriteret për një vendim të arsyetuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "feasibility",
+          "text": "Eine medizinisch sinnvolle Option kann scheitern, wenn sie im Alltag nicht planbar ist.",
+          "translations": [
+            { "language": "en", "text": "A medically sensible option can fail if it cannot be planned in everyday life." },
+            { "language": "fa", "text": "یک گزینه پزشکی منطقی اگر در زندگی روزمره قابل برنامه‌ریزی نباشد، ممکن است شکست بخورد." },
+            { "language": "ar", "text": "قد يفشل خيار طبي منطقي إذا لم يكن قابلاً للتخطيط في الحياة اليومية." },
+            { "language": "tr", "text": "Tıbben mantıklı bir seçenek günlük yaşamda planlanamıyorsa başarısız olabilir." },
+            { "language": "ru", "text": "Медицински разумный вариант может не сработать, если его нельзя планировать в повседневной жизни." },
+            { "language": "ckb", "text": "بژاردەیەکی پزیشکی گونجاو دەتوانێت سەرنەکەوێت ئەگەر لە ژیانی ڕۆژانەدا پلان نەکرێت." },
+            { "language": "kmr", "text": "Vebijarkeke bijîşkî ya maqûl dikare têk biçe heke di jiyana rojane de planbar nebe." },
+            { "language": "pl", "text": "Medycznie sensowna opcja może się nie udać, jeśli nie da się jej zaplanować w codzienności." },
+            { "language": "ro", "text": "O opțiune medical rezonabilă poate eșua dacă nu poate fi planificată în viața de zi cu zi." },
+            { "language": "sq", "text": "Një opsion mjekësisht i arsyeshëm mund të dështojë nëse nuk mund të planifikohet në jetën e përditshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "measurement",
+          "text": "Bei längeren Therapieprozessen brauchen Lernende Sprache für Messpunkte: Zeitraum, Belastung, Schmerzgrenze, nächste Bewertung.",
+          "translations": [
+            { "language": "en", "text": "For longer therapy processes, learners need language for measurement points: timeframe, exertion, pain limit, next evaluation." },
+            { "language": "fa", "text": "در روندهای درمانی طولانی‌تر، زبان‌آموزان به زبان مربوط به نقاط سنجش نیاز دارند: بازه زمانی، فشار، حد درد، ارزیابی بعدی." },
+            { "language": "ar", "text": "في عمليات العلاج الأطول يحتاج المتعلمون إلى لغة لنقاط القياس: الفترة، الجهد، حد الألم، التقييم التالي." },
+            { "language": "tr", "text": "Daha uzun terapi süreçlerinde öğrencilerin ölçüm noktaları için dile ihtiyacı vardır: süre, yüklenme, ağrı sınırı, sonraki değerlendirme." },
+            { "language": "ru", "text": "В более длительных терапевтических процессах учащимся нужен язык для точек измерения: срок, нагрузка, предел боли, следующая оценка." },
+            { "language": "ckb", "text": "لە پرۆسەی چارەسەری درێژتردا فێرخوازان پێویستیان بە زمان بۆ خاڵەکانی پێوانە هەیە: ماوە، بارگرانی، سنووری ئازار، هەڵسەنگاندنی دواتر." },
+            { "language": "kmr", "text": "Di pêvajoyên dermankirinê yên dirêjtir de fêrkar hewceyê zimanê xalên pîvandinê ne: dem, bar, sînora êşê, nirxandina paşîn." },
+            { "language": "pl", "text": "W dłuższych procesach terapii uczący się potrzebują języka dla punktów pomiaru: okres, obciążenie, granica bólu, następna ocena." },
+            { "language": "ro", "text": "În procese terapeutice mai lungi, cursanții au nevoie de limbaj pentru puncte de măsurare: perioadă, efort, limită a durerii, evaluare următoare." },
+            { "language": "sq", "text": "Në procese më të gjata terapie, nxënësit kanë nevojë për gjuhë për pikat e matjes: afat, ngarkesë, kufi dhimbjeje, vlerësim i radhës." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "boundaries",
+          "text": "Bei Medikamenten ist eine differenzierte Grenze oft stärker als ein pauschales Ja oder Nein.",
+          "translations": [
+            { "language": "en", "text": "With medication, a nuanced boundary is often stronger than a blanket yes or no." },
+            { "language": "fa", "text": "درباره دارو، مرزبندی دقیق اغلب قوی‌تر از بله یا نه کلی است." },
+            { "language": "ar", "text": "عند الحديث عن الأدوية تكون الحدود الدقيقة غالباً أقوى من نعم أو لا عامة." },
+            { "language": "tr", "text": "İlaçlarda ayrıntılı bir sınır çoğu zaman genel bir evet ya da hayırdan daha güçlüdür." },
+            { "language": "ru", "text": "В отношении лекарств дифференцированная граница часто сильнее, чем общее да или нет." },
+            { "language": "ckb", "text": "لەبارەی دەرمانەوە، سنووری جیاکراوە زۆرجار بەهێزترە لە بەڵێ یان نەخێری گشتی." },
+            { "language": "kmr", "text": "Li ser dermanan, sînoreke hûrgilî pir caran ji erê an na ya giştî xurtir e." },
+            { "language": "pl", "text": "Przy lekach zróżnicowana granica jest często silniejsza niż ogólne tak lub nie." },
+            { "language": "ro", "text": "La medicamente, o limită nuanțată este adesea mai puternică decât un da sau nu general." },
+            { "language": "sq", "text": "Te ilaçet, një kufi i nuancuar shpesh është më i fortë se një po ose jo e përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Ein C1-Abschluss verbindet die gewählte Option mit Frist, Kontrolle und Bedingungen für Anpassung.",
+          "translations": [
+            { "language": "en", "text": "A C1 close connects the chosen option with a deadline, review, and conditions for adjustment." },
+            { "language": "fa", "text": "پایان C1 گزینه انتخاب‌شده را با مهلت، بررسی و شرط‌های تنظیم دوباره وصل می‌کند." },
+            { "language": "ar", "text": "تربط خاتمة C1 الخيار المختار بمهلة ومراجعة وشروط للتعديل." },
+            { "language": "tr", "text": "C1 kapanışı seçilen seçeneği süre, kontrol ve uyarlama koşullarıyla bağlar." },
+            { "language": "ru", "text": "Завершение C1 связывает выбранный вариант со сроком, проверкой и условиями корректировки." },
+            { "language": "ckb", "text": "کۆتایی C1 بژاردەی هەڵبژێردراو بە ماوە، پشکنین و مەرجەکانی گونجاندنەوە دەبەستێتەوە." },
+            { "language": "kmr", "text": "Dawiya C1 vebijarka hilbijartî bi dem, kontrol û mercên lihevkirinê ve girê dide." },
+            { "language": "pl", "text": "Zakończenie C1 łączy wybraną opcję z terminem, kontrolą i warunkami dostosowania." },
+            { "language": "ro", "text": "O încheiere C1 leagă opțiunea aleasă de termen, control și condiții de ajustare." },
+            { "language": "sq", "text": "Një përmbyllje C1 e lidh opsionin e zgjedhur me afatin, kontrollin dhe kushtet për përshtatje." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-treatment-options",
+          "placement": "hero",
+          "purpose": "Show a doctor and adult patient comparing treatment options with a simple decision chart for benefits, risks, everyday impact, and next review.",
+          "altText": "Eine Ärztin und ein Patient vergleichen Therapieoptionen mit einer einfachen Übersicht zu Nutzen, Risiken, Alltag und Kontrolle.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A doctor and patient compare treatment options with a simple overview of benefits, risks, everyday life, and review." },
+            { "language": "fa", "text": "پزشک و بیمار گزینه‌های درمانی را با یک نمای ساده از فایده، ریسک، زندگی روزمره و کنترل بعدی مقایسه می‌کنند." },
+            { "language": "ar", "text": "طبيبة ومريض يقارنان خيارات العلاج باستخدام عرض بسيط للفوائد والمخاطر والحياة اليومية والمراجعة." },
+            { "language": "tr", "text": "Bir doktor ve hasta, fayda, risk, günlük yaşam ve kontrol hakkında basit bir özetle tedavi seçeneklerini karşılaştırıyor." },
+            { "language": "ru", "text": "Врач и пациент сравнивают варианты лечения с простым обзором пользы, рисков, повседневности и контроля." },
+            { "language": "ckb", "text": "پزیشک و نەخۆش بژاردەکانی چارەسەر بە پوختەیەکی سادە دەربارەی سوود، مەترسی، ژیانی ڕۆژانە و پشکنین بەراورد دەکەن." },
+            { "language": "kmr", "text": "Doktor û nexweş vebijarkên dermankirinê bi kurteyeke hêsan li ser sûd, metirsî, jiyana rojane û kontrolê berawird dikin." },
+            { "language": "pl", "text": "Lekarka i pacjent porównują opcje terapii z prostym przeglądem korzyści, ryzyk, codzienności i kontroli." },
+            { "language": "ro", "text": "O medică și un pacient compară opțiuni de tratament cu o prezentare simplă a beneficiilor, riscurilor, vieții de zi cu zi și controlului." },
+            { "language": "sq", "text": "Një mjeke dhe një pacient krahasojnë opsionet e terapisë me një përmbledhje të thjeshtë të përfitimeve, rreziqeve, përditshmërisë dhe kontrollit." }
+          ],
+          "imagePrompt": "Clean educational illustration of a calm doctor-office consultation. A doctor and adult patient compare treatment options using a simple decision chart with icons for benefit, risk, everyday impact, and follow-up review; no readable personal data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

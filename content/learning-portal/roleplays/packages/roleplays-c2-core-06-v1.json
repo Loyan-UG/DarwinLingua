@@ -1,0 +1,855 @@
+{
+  "packageId": "roleplays-c2-core-06-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 06 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 06",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-scheinkonsens-im-meeting-aufbrechen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Scheinkonsens im Meeting aufbrechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Breaking apparent consensus in a meeting" },
+        { "language": "fa", "text": "شکستن توافق ظاهری در جلسه" },
+        { "language": "ar", "text": "كشف التوافق الظاهري في اجتماع" },
+        { "language": "tr", "text": "Toplantıda görünürdeki uzlaşıyı açmak" },
+        { "language": "ru", "text": "Разобрать мнимое согласие на встрече" },
+        { "language": "ckb", "text": "کردنەوەی هاوڕاییی ڕواڵەتی لە کۆبوونەوەدا" },
+        { "language": "kmr", "text": "Di civînê de lihevhatina xuyayî vekirin" },
+        { "language": "pl", "text": "Przełamanie pozornego konsensusu na spotkaniu" },
+        { "language": "ro", "text": "Desfacerea unui consens aparent într-o ședință" },
+        { "language": "sq", "text": "Zbërthimi i një konsensusi të dukshëm në takim" }
+      ],
+      "description": "Im Projektmeeting wirken alle einverstanden, doch mehrere knappe Bemerkungen zeigen, dass wichtige Vorbehalte unausgesprochen bleiben. Sie moderieren die Situation, ohne jemanden bloßzustellen, und verwandeln stilles Unbehagen in klare Bedingungen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In the project meeting, everyone seems to agree, but several brief remarks show that important reservations remain unspoken. You moderate the situation without exposing anyone and turn silent discomfort into clear conditions." },
+        { "language": "fa", "text": "در جلسه پروژه همه ظاهراً موافق‌اند، اما چند اشاره کوتاه نشان می‌دهد که تردیدهای مهمی ناگفته مانده است. شما موقعیت را مدیریت می‌کنید، بدون اینکه کسی را در موضع بد قرار دهید، و ناراحتی پنهان را به شرط‌های روشن تبدیل می‌کنید." },
+        { "language": "ar", "text": "في اجتماع المشروع يبدو أن الجميع موافقون، لكن عدة ملاحظات قصيرة تظهر أن تحفظات مهمة بقيت غير مصرح بها. أنت تدير الموقف من دون إحراج أحد، وتحول عدم الارتياح الصامت إلى شروط واضحة." },
+        { "language": "tr", "text": "Proje toplantısında herkes uzlaşmış gibi görünür, ancak birkaç kısa ifade önemli çekincelerin dile getirilmediğini gösterir. Kimseyi zor durumda bırakmadan durumu yönetir ve sessiz rahatsızlığı açık koşullara dönüştürürsünüz." },
+        { "language": "ru", "text": "На проектной встрече кажется, что все согласны, но несколько коротких замечаний показывают: важные оговорки остаются невысказанными. Вы модерируете ситуацию, никого не выставляя в неудобном положении, и превращаете молчаливое напряжение в четкие условия." },
+        { "language": "ckb", "text": "لە کۆبوونەوەی پڕۆژەدا هەمووان وەک ئەوە دیارە ڕازین، بەڵام چەند تێبینییەکی کورت دەردەخەن کە گومان و مەرجی گرنگ هێشتا نەوتراون. تۆ دۆخەکە بەڕێوە دەبەیت، بێ ئەوەی کەسێک شەرمەزار بکەیت، و بێئارامیی بێدەنگ دەگۆڕیت بۆ مەرجی ڕوون." },
+        { "language": "kmr", "text": "Di civîna projeyê de hemû kes wekî li hev hatine xuya dikin, lê çend gotinên kurt nîşan didin ku şert û gumanên girîng hêj nehatine gotin. Hûn rewşê rêve dibin bêyî ku kesekê şerm bikin û nerehetiya bêdeng dikin şertên zelal." },
+        { "language": "pl", "text": "Na spotkaniu projektowym wszyscy wydają się zgodni, lecz kilka krótkich uwag pokazuje, że ważne zastrzeżenia pozostają niewypowiedziane. Moderuje Pan/Pani sytuację, nikogo nie kompromitując, i zamienia milczący dyskomfort w jasne warunki." },
+        { "language": "ro", "text": "În ședința de proiect, toți par de acord, însă câteva remarci scurte arată că rezerve importante rămân nespuse. Moderați situația fără a expune pe nimeni și transformați disconfortul tăcut în condiții clare." },
+        { "language": "sq", "text": "Në takimin e projektit të gjithë duken dakord, por disa vërejtje të shkurtra tregojnë se rezerva të rëndësishme mbeten të pathëna. Ju e moderoni situatën pa e turpëruar askënd dhe e ktheni shqetësimin e heshtur në kushte të qarta." }
+      ],
+      "learnerGoal": "Einen scheinbaren Konsens prüfen: verdeckte Vorbehalte respektvoll sichtbar machen, Schweigen nicht als Zustimmung behandeln, präzise Bedingungen formulieren und eine tragfähige Entscheidung herbeiführen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Test apparent consensus: make hidden reservations visible respectfully, avoid treating silence as agreement, formulate precise conditions, and bring about a viable decision." },
+        { "language": "fa", "text": "توافق ظاهری را بررسی کنید: تردیدهای پنهان را محترمانه قابل مشاهده کنید، سکوت را به معنای موافقت نگیرید، شرط‌های دقیق بیان کنید و به تصمیمی قابل اتکا برسید." },
+        { "language": "ar", "text": "اختبر التوافق الظاهري: اجعل التحفظات المخفية مرئية باحترام، ولا تعامل الصمت كأنه موافقة، وصغ شروطاً دقيقة، وادفع نحو قرار قابل للتنفيذ." },
+        { "language": "tr", "text": "Görünürdeki uzlaşıyı sınayın: gizli çekinceleri saygılı biçimde görünür kılın, sessizliği onay saymayın, kesin koşullar formüle edin ve uygulanabilir bir karara ulaşın." },
+        { "language": "ru", "text": "Проверить мнимое согласие: уважительно сделать скрытые оговорки видимыми, не считать молчание согласием, сформулировать точные условия и привести к жизнеспособному решению." },
+        { "language": "ckb", "text": "هاوڕاییی ڕواڵەتی تاقی بکەوە: گومانە شاراوەکان بە ڕێزەوە دیار بکە، بێدەنگی وەک ڕەزامەندی مەگرە، مەرجی ورد دابنێ و بڕیارێکی بەهێز بەدەست بهێنە." },
+        { "language": "kmr", "text": "Lihevhatina xuyayî biceribînin: gumanên veşartî bi rêz xuya bikin, bêdengiyê wekî erêkirin nehesibînin, şertên rast formule bikin û biryareke bihêz pêk bînin." },
+        { "language": "pl", "text": "Sprawdzić pozorny konsensus: z szacunkiem ujawnić ukryte zastrzeżenia, nie traktować ciszy jako zgody, sformułować precyzyjne warunki i doprowadzić do nośnej decyzji." },
+        { "language": "ro", "text": "Verificați consensul aparent: faceți vizibile rezervele ascunse cu respect, nu tratați tăcerea ca acord, formulați condiții precise și ajungeți la o decizie solidă." },
+        { "language": "sq", "text": "Verifikoni konsensusin e dukshëm: bëni të dukshme me respekt rezervat e fshehura, mos e trajtoni heshtjen si pajtim, formuloni kushte të sakta dhe arrini një vendim të qëndrueshëm." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 6,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Meeting-Moderation",
+          "translations": [
+            { "language": "en", "text": "Meeting moderator" },
+            { "language": "fa", "text": "گرداننده جلسه" },
+            { "language": "ar", "text": "مدير الاجتماع" },
+            { "language": "tr", "text": "Toplantı moderatörü" },
+            { "language": "ru", "text": "Модератор встречи" },
+            { "language": "ckb", "text": "بەڕێوەبەری کۆبوونەوە" },
+            { "language": "kmr", "text": "Moderatorê civînê" },
+            { "language": "pl", "text": "Moderator spotkania" },
+            { "language": "ro", "text": "Moderatorul ședinței" },
+            { "language": "sq", "text": "Moderatori i takimit" }
+          ]
+        },
+        {
+          "roleKey": "product",
+          "displayName": "Produktverantwortung",
+          "translations": [
+            { "language": "en", "text": "Product owner" },
+            { "language": "fa", "text": "مسئول محصول" },
+            { "language": "ar", "text": "مسؤول المنتج" },
+            { "language": "tr", "text": "Ürün sorumlusu" },
+            { "language": "ru", "text": "Ответственный за продукт" },
+            { "language": "ckb", "text": "بەرپرسی بەرهەم" },
+            { "language": "kmr", "text": "Berpirsê hilberê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za produkt" },
+            { "language": "ro", "text": "Responsabil produs" },
+            { "language": "sq", "text": "Përgjegjësi i produktit" }
+          ]
+        },
+        {
+          "roleKey": "operations",
+          "displayName": "Betriebsleitung",
+          "translations": [
+            { "language": "en", "text": "Operations lead" },
+            { "language": "fa", "text": "مسئول عملیات" },
+            { "language": "ar", "text": "مسؤول التشغيل" },
+            { "language": "tr", "text": "Operasyon sorumlusu" },
+            { "language": "ru", "text": "Руководитель операционной части" },
+            { "language": "ckb", "text": "بەرپرسی کارگێڕی" },
+            { "language": "kmr", "text": "Rêveberê operasyonê" },
+            { "language": "pl", "text": "Kierownik operacyjny" },
+            { "language": "ro", "text": "Responsabil operațiuni" },
+            { "language": "sq", "text": "Drejtuesi i operacioneve" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "product",
+          "baseText": "Aus Produktsicht können wir mit dem vorgeschlagenen Starttermin leben. Wenn niemand grundsätzliche Einwände hat, würde ich das heute gern festziehen.",
+          "translations": [
+            { "language": "en", "text": "From a product perspective, we can live with the proposed launch date. If no one has fundamental objections, I would like to lock this in today." },
+            { "language": "fa", "text": "از نگاه محصول می‌توانیم با تاریخ شروع پیشنهادی کنار بیاییم. اگر کسی مخالفت اساسی ندارد، مایلم امروز آن را قطعی کنیم." },
+            { "language": "ar", "text": "من منظور المنتج يمكننا التعايش مع تاريخ الإطلاق المقترح. إذا لم تكن هناك اعتراضات جوهرية، أود تثبيت القرار اليوم." },
+            { "language": "tr", "text": "Ürün açısından önerilen başlangıç tarihiyle yaşayabiliriz. Kimsenin temel bir itirazı yoksa bunu bugün kesinleştirmek isterim." },
+            { "language": "ru", "text": "С точки зрения продукта мы можем принять предложенную дату запуска. Если принципиальных возражений нет, я хотел бы сегодня это зафиксировать." },
+            { "language": "ckb", "text": "لە ڕوانگەی بەرهەمەوە دەتوانین لەگەڵ کاتی دەستپێکی پێشنیارکراو بژین. ئەگەر کەس ناڕەزایی بنەڕەتی نییە، دەمەوێت ئەمڕۆ ئەمە جێگیر بکەین." },
+            { "language": "kmr", "text": "Ji aliyê hilberê ve em dikarin bi dîroka destpêka pêşniyarkirî re bijîn. Heke kes nerazîbûneke bingehîn tune be, dixwazim îro vê yekê qetî bikim." },
+            { "language": "pl", "text": "Z perspektywy produktu możemy żyć z proponowaną datą startu. Jeśli nikt nie ma zasadniczych zastrzeżeń, chciałbym to dziś zamknąć." },
+            { "language": "ro", "text": "Din perspectiva produsului putem accepta data de lansare propusă. Dacă nu există obiecții fundamentale, aș vrea să o stabilim astăzi." },
+            { "language": "sq", "text": "Nga perspektiva e produktit mund ta pranojmë datën e propozuar të nisjes. Nëse askush nuk ka kundërshtime thelbësore, do të doja ta mbyllnim sot." }
+          ],
+          "function": "opens apparent consensus",
+          "toneNote": "formal, decision-oriented"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Bevor wir das als Konsens festhalten, möchte ich kurz prüfen, ob Schweigen hier wirklich Zustimmung bedeutet oder ob noch Bedingungen unausgesprochen im Raum stehen.",
+          "translations": [
+            { "language": "en", "text": "Before we record this as consensus, I would like to briefly check whether silence here really means agreement or whether unspoken conditions are still in the room." },
+            { "language": "fa", "text": "قبل از اینکه این را به‌عنوان توافق ثبت کنیم، می‌خواهم کوتاه بررسی کنم که آیا سکوت اینجا واقعاً به معنای موافقت است یا هنوز شرط‌های ناگفته‌ای در فضا وجود دارد." },
+            { "language": "ar", "text": "قبل أن نسجل هذا كتوافق، أود أن أتحقق باختصار مما إذا كان الصمت هنا يعني فعلاً الموافقة أم أن هناك شروطاً غير مصرح بها لا تزال قائمة." },
+            { "language": "tr", "text": "Bunu uzlaşı olarak kaydetmeden önce, buradaki sessizliğin gerçekten onay mı olduğunu, yoksa hâlâ söylenmemiş koşulların mı bulunduğunu kısaca kontrol etmek isterim." },
+            { "language": "ru", "text": "Прежде чем зафиксировать это как консенсус, я хотел бы коротко проверить: молчание здесь действительно означает согласие или в комнате все еще есть невысказанные условия." },
+            { "language": "ckb", "text": "پێش ئەوەی ئەمە وەک هاوڕایی تۆمار بکەین، دەمەوێت بە کورتی بپشکنم ئایا بێدەنگی لێرە بەڕاستی واتای ڕەزامەندییە یان هێشتا مەرجی نەوتراو لە ناو گفتوگۆکەدا ماوە." },
+            { "language": "kmr", "text": "Berî ku em vê wekî lihevhatin tomar bikin, dixwazim kurt biceribînim bê ka bêdengî li vir bi rastî erêkirin e an hîn şertên negotî di nav me de hene." },
+            { "language": "pl", "text": "Zanim zapiszemy to jako konsensus, chciałbym krótko sprawdzić, czy milczenie naprawdę oznacza tutaj zgodę, czy też wciąż są niewypowiedziane warunki." },
+            { "language": "ro", "text": "Înainte să consemnăm acest lucru ca consens, aș vrea să verific pe scurt dacă tăcerea înseamnă cu adevărat acord sau dacă mai există condiții nespuse." },
+            { "language": "sq", "text": "Para se ta shënojmë këtë si konsensus, dua të verifikoj shkurt nëse heshtja këtu vërtet do të thotë pajtim apo nëse ende ka kushte të pathëna." }
+          ],
+          "function": "opens hidden reservations",
+          "toneNote": "precise, non-accusatory",
+          "expectedLearnerAction": "Do not accept silence as agreement; invite explicit reservations."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "operations",
+          "baseText": "Ich will den Starttermin nicht blockieren. Mir ist nur wichtig, dass wir später nicht so tun, als hätten wir die Betriebsrisiken heute sauber geklärt.",
+          "translations": [
+            { "language": "en", "text": "I do not want to block the launch date. I only care that we do not later pretend we clarified the operational risks properly today." },
+            { "language": "fa", "text": "نمی‌خواهم تاریخ شروع را مسدود کنم. فقط برایم مهم است که بعداً وانمود نکنیم امروز ریسک‌های عملیاتی را درست روشن کرده‌ایم." },
+            { "language": "ar", "text": "لا أريد عرقلة تاريخ الإطلاق. ما يهمني فقط ألا نتظاهر لاحقاً بأننا أوضحنا مخاطر التشغيل اليوم بشكل سليم." },
+            { "language": "tr", "text": "Başlangıç tarihini engellemek istemiyorum. Benim için önemli olan, daha sonra operasyon risklerini bugün temiz biçimde açıklığa kavuşturmuşuz gibi davranmamamız." },
+            { "language": "ru", "text": "Я не хочу блокировать дату запуска. Мне важно только, чтобы позже мы не делали вид, будто сегодня аккуратно прояснили операционные риски." },
+            { "language": "ckb", "text": "نامەوێت کاتی دەستپێک بلۆک بکەم. تەنها گرنگە بۆم کە دواتر وانەکەین وەک ئەوەی ئەمڕۆ مەترسییە کارگێڕییەکان بە باشی ڕوون کردبێت." },
+            { "language": "kmr", "text": "Ez naxwazim dîroka destpêkê asteng bikim. Tenê ji bo min girîng e ku paşê nekin wekî me îro xetereyên operasyonê bi rêkûpêk zelal kirine." },
+            { "language": "pl", "text": "Nie chcę blokować daty startu. Zależy mi tylko na tym, żebyśmy później nie udawali, że dziś porządnie wyjaśniliśmy ryzyka operacyjne." },
+            { "language": "ro", "text": "Nu vreau să blochez data lansării. Pentru mine contează doar să nu ne prefacem mai târziu că am clarificat astăzi corect riscurile operaționale." },
+            { "language": "sq", "text": "Nuk dua ta bllokoj datën e nisjes. Më rëndon vetëm që më vonë të mos bëjmë sikur sot i kemi sqaruar mirë rreziqet operative." }
+          ],
+          "function": "signals hidden concern",
+          "toneNote": "cautious, indirect"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das klingt für mich nicht nach einem Nein, sondern nach einer Bedingung. Können wir bitte konkret benennen, welche Betriebsrisiken vor dem Start zwingend geklärt sein müssen?",
+          "translations": [
+            { "language": "en", "text": "To me, that does not sound like a no but like a condition. Could we please name specifically which operational risks must be clarified before launch?" },
+            { "language": "fa", "text": "برای من این شبیه «نه» نیست، بلکه شبیه یک شرط است. می‌توانیم لطفاً دقیق بگوییم کدام ریسک‌های عملیاتی باید الزاماً قبل از شروع روشن شوند؟" },
+            { "language": "ar", "text": "بالنسبة لي لا يبدو هذا رفضاً، بل يبدو شرطاً. هل يمكننا أن نحدد بدقة أي مخاطر تشغيلية يجب توضيحها قبل الإطلاق؟" },
+            { "language": "tr", "text": "Bana bu bir hayırdan çok bir koşul gibi geliyor. Lütfen lansmandan önce hangi operasyon risklerinin mutlaka açıklığa kavuşması gerektiğini somut olarak adlandırabilir miyiz?" },
+            { "language": "ru", "text": "Для меня это звучит не как отказ, а как условие. Можем ли мы конкретно назвать, какие операционные риски обязательно нужно прояснить до запуска?" },
+            { "language": "ckb", "text": "بۆ من ئەمە وەک نا ناگوترێت، بەڵکو وەک مەرجێک دەردەکەوێت. تکایە دەتوانین بە وردی ناوی ئەو مەترسییە کارگێڕییانە ببەین کە پێش دەستپێک دەبێت ڕوون بکرێن؟" },
+            { "language": "kmr", "text": "Ji bo min ev ne wekî na, lê wekî şertê dixuye. Ji kerema xwe em dikarin bi zelalî bibêjin ka kîjan xetereyên operasyonê divê berî destpêkê bêne zelalkirin?" },
+            { "language": "pl", "text": "Dla mnie to nie brzmi jak odmowa, lecz jak warunek. Czy możemy konkretnie nazwać, które ryzyka operacyjne muszą być wyjaśnione przed startem?" },
+            { "language": "ro", "text": "Pentru mine nu sună ca un nu, ci ca o condiție. Putem numi concret ce riscuri operaționale trebuie clarificate înainte de lansare?" },
+            { "language": "sq", "text": "Për mua kjo nuk tingëllon si jo, por si kusht. A mund t’i emërtojmë konkretisht cilat rreziqe operative duhet të sqarohen patjetër para nisjes?" }
+          ],
+          "function": "reframes objection as condition",
+          "toneNote": "respectful, analytic",
+          "expectedLearnerAction": "Convert indirect resistance into explicit decision criteria."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "product",
+          "baseText": "Mir ist nur wichtig, dass wir jetzt nicht wieder alles aufmachen. Der Termin wurde schon mehrfach verschoben, und das Team braucht endlich ein klares Signal.",
+          "translations": [
+            { "language": "en", "text": "I only care that we do not reopen everything now. The date has already been postponed several times, and the team finally needs a clear signal." },
+            { "language": "fa", "text": "فقط برایم مهم است که الان دوباره همه چیز را باز نکنیم. این تاریخ چند بار عقب افتاده و تیم بالاخره به یک پیام روشن نیاز دارد." },
+            { "language": "ar", "text": "ما يهمني فقط ألا نعيد فتح كل شيء الآن. لقد تم تأجيل الموعد عدة مرات، والفريق يحتاج أخيراً إلى إشارة واضحة." },
+            { "language": "tr", "text": "Benim için önemli olan, şimdi her şeyi yeniden açmamamız. Tarih birkaç kez ertelendi ve ekip sonunda net bir sinyale ihtiyaç duyuyor." },
+            { "language": "ru", "text": "Мне важно только, чтобы мы сейчас снова не открывали все вопросы. Дату уже несколько раз переносили, и команде наконец нужен четкий сигнал." },
+            { "language": "ckb", "text": "تەنها گرنگە بۆم کە ئێستا هەموو شتێک دووبارە نەکەینەوە. کاتەکە چەند جار دواخراوە و تیمەکە لە کۆتاییدا پێویستی بە نیشانەیەکی ڕوون هەیە." },
+            { "language": "kmr", "text": "Tenê ji bo min girîng e ku em niha hemû tiştan dîsa venekin. Dîrok çend caran hate paşxistin û tîmê êdî hewceyî nîşaneke zelal e." },
+            { "language": "pl", "text": "Zależy mi tylko na tym, żebyśmy teraz nie otwierali wszystkiego od nowa. Termin był już kilka razy przesuwany, a zespół wreszcie potrzebuje jasnego sygnału." },
+            { "language": "ro", "text": "Pentru mine contează doar să nu redeschidem acum totul. Data a fost amânată de mai multe ori, iar echipa are nevoie în sfârșit de un semnal clar." },
+            { "language": "sq", "text": "Për mua ka rëndësi vetëm të mos i hapim tani të gjitha nga e para. Data është shtyrë disa herë dhe ekipi më në fund ka nevojë për një sinjal të qartë." }
+          ],
+          "function": "pushes for closure",
+          "toneNote": "impatient but professional"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde deshalb zwischen Entscheidung und Freigabebedingungen trennen: Wir können den Starttermin als Ziel bestätigen, aber nur mit drei ausdrücklich genannten Voraussetzungen.",
+          "translations": [
+            { "language": "en", "text": "I would therefore separate the decision from the release conditions: we can confirm the launch date as a target, but only with three explicitly named prerequisites." },
+            { "language": "fa", "text": "برای همین تصمیم را از شرط‌های آزادسازی جدا می‌کنم: می‌توانیم تاریخ شروع را به‌عنوان هدف تأیید کنیم، اما فقط با سه پیش‌شرط صریحاً نام‌برده." },
+            { "language": "ar", "text": "لذلك سأفصل بين القرار وشروط الإطلاق: يمكننا تأكيد تاريخ البدء كهدف، لكن فقط مع ثلاثة شروط مسبقة مسماة صراحة." },
+            { "language": "tr", "text": "Bu nedenle kararla yayın koşullarını ayırırdım: başlangıç tarihini hedef olarak onaylayabiliriz, ancak yalnızca açıkça adlandırılmış üç ön koşulla." },
+            { "language": "ru", "text": "Поэтому я бы разделил решение и условия допуска: мы можем подтвердить дату запуска как цель, но только с тремя прямо названными предпосылками." },
+            { "language": "ckb", "text": "بۆیە من بڕیار و مەرجەکانی ئازادکردن جیا دەکەمەوە: دەتوانین کاتی دەستپێک وەک ئامانج پشتڕاست بکەین، بەڵام تەنها لەگەڵ سێ پێشمەرجی بە ڕوونی ناوبراو." },
+            { "language": "kmr", "text": "Ji ber vê yekê ez biryarê ji şertên destûrdanê cuda dikim: em dikarin dîroka destpêkê wekî armanc piştrast bikin, lê tenê bi sê pêşşertên bi zelalî hatine gotin." },
+            { "language": "pl", "text": "Dlatego oddzieliłbym decyzję od warunków dopuszczenia: możemy potwierdzić datę startu jako cel, ale tylko z trzema wyraźnie nazwanymi warunkami wstępnymi." },
+            { "language": "ro", "text": "De aceea aș separa decizia de condițiile de lansare: putem confirma data de start ca obiectiv, dar numai cu trei condiții preliminare numite explicit." },
+            { "language": "sq", "text": "Prandaj do ta ndaja vendimin nga kushtet e miratimit: mund ta konfirmojmë datën e nisjes si objektiv, por vetëm me tri parakushte të emërtuara qartë." }
+          ],
+          "function": "protects closure while adding safeguards",
+          "toneNote": "structured, solution-oriented",
+          "expectedLearnerAction": "Offer a decision formula that preserves momentum and makes reservations binding."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "operations",
+          "baseText": "Damit könnte ich leben, wenn die Voraussetzungen nicht nur als Fußnote erscheinen. Wir brauchen einen klaren Abbruchpunkt, falls die Lasttests scheitern.",
+          "translations": [
+            { "language": "en", "text": "I could live with that if the prerequisites do not appear merely as a footnote. We need a clear stop point if the load tests fail." },
+            { "language": "fa", "text": "با این می‌توانم کنار بیایم، اگر پیش‌شرط‌ها فقط مثل پاورقی ظاهر نشوند. اگر تست‌های بار شکست بخورند، به یک نقطه توقف روشن نیاز داریم." },
+            { "language": "ar", "text": "يمكنني قبول ذلك إذا لم تظهر الشروط المسبقة كمجرد هامش. نحتاج إلى نقطة توقف واضحة إذا فشلت اختبارات التحمل." },
+            { "language": "tr", "text": "Ön koşullar yalnızca dipnot gibi görünmezse bununla yaşayabilirim. Yük testleri başarısız olursa net bir durdurma noktası gerekir." },
+            { "language": "ru", "text": "Я мог бы с этим согласиться, если предпосылки не будут выглядеть просто как сноска. Нам нужна четкая точка остановки, если нагрузочные тесты провалятся." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ ئەمە بژیم ئەگەر پێشمەرجەکان تەنها وەک پەراوێز نەردەکەون. ئەگەر تاقیکردنەوەی بار شکست بهێنێت، پێویستمان بە خاڵی ڕاوەستانی ڕوون هەیە." },
+            { "language": "kmr", "text": "Ez dikarim bi vê re bijîm heke pêşşert tenê wekî jêrnivîs xuya nebin. Heke testên barê têk biçin, hewceyî xaleke rawestanê ya zelal in." },
+            { "language": "pl", "text": "Mógłbym z tym żyć, jeśli warunki nie pojawią się tylko jako przypis. Potrzebujemy jasnego punktu zatrzymania, jeśli testy obciążeniowe się nie powiodą." },
+            { "language": "ro", "text": "Aș putea accepta asta dacă aceste condiții nu apar doar ca o notă de subsol. Avem nevoie de un punct clar de oprire dacă testele de încărcare eșuează." },
+            { "language": "sq", "text": "Mund ta pranoja këtë nëse parakushtet nuk shfaqen vetëm si shënim anësor. Na duhet një pikë e qartë ndalimi nëse testet e ngarkesës dështojnë." }
+          ],
+          "function": "makes condition concrete",
+          "toneNote": "specific, guarded"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann formuliere ich es nicht als Anhang, sondern als Teil des Beschlusses: Zieltermin bleibt bestehen; Freigabe erfolgt nur nach bestandenen Lasttests, geklärtem Supportmodell und benanntem Eskalationsweg.",
+          "translations": [
+            { "language": "en", "text": "Then I will not phrase it as an appendix but as part of the decision: the target date remains; release happens only after passed load tests, a clarified support model, and a named escalation path." },
+            { "language": "fa", "text": "پس آن را نه به‌عنوان پیوست، بلکه به‌عنوان بخشی از مصوبه بیان می‌کنم: تاریخ هدف باقی می‌ماند؛ آزادسازی فقط پس از قبولی تست‌های بار، روشن شدن مدل پشتیبانی و مشخص شدن مسیر escalation انجام می‌شود." },
+            { "language": "ar", "text": "إذن لن أصوغها كملحق، بل كجزء من القرار: يبقى الموعد الهدف قائماً؛ ولا تتم الموافقة إلا بعد نجاح اختبارات التحمل، وتوضيح نموذج الدعم، وتسمية مسار التصعيد." },
+            { "language": "tr", "text": "O halde bunu ek olarak değil, kararın parçası olarak formüle ederim: hedef tarih korunur; yayın ancak yük testleri geçtikten, destek modeli netleştikten ve eskalasyon yolu adlandırıldıktan sonra yapılır." },
+            { "language": "ru", "text": "Тогда я сформулирую это не как приложение, а как часть решения: целевая дата остается; допуск происходит только после успешных нагрузочных тестов, проясненной модели поддержки и названного пути эскалации." },
+            { "language": "ckb", "text": "ئەوا وەک پاشکۆ نا، بەڵکو وەک بەشێک لە بڕیارەکە دای دەڕێژم: کاتی ئامانج دەمێنێت؛ ئازادکردن تەنها دوای سەرکەوتنی تاقیکردنەوەی بار، ڕوونبوونی مۆدێلی پشتگیری و ناوبردنی ڕێڕەوی بەرزکردنەوە دەبێت." },
+            { "language": "kmr", "text": "Wê demê ez wê ne wekî pêvek, lê wekî beşek ji biryarê formule dikim: dîroka armancê dimîne; destûrdan tenê piştî serketina testên barê, zelalbûna modela piştgiriyê û rêya eskalasyonê ya navkirî dibe." },
+            { "language": "pl", "text": "W takim razie sformułuję to nie jako załącznik, lecz jako część decyzji: termin docelowy pozostaje; dopuszczenie następuje tylko po zdanych testach obciążeniowych, wyjaśnionym modelu wsparcia i nazwanej ścieżce eskalacji." },
+            { "language": "ro", "text": "Atunci nu o formulez ca anexă, ci ca parte a deciziei: data-țintă rămâne; lansarea are loc numai după teste de încărcare trecute, un model de suport clarificat și o cale de escaladare numită." },
+            { "language": "sq", "text": "Atëherë nuk do ta formuloj si shtojcë, por si pjesë të vendimit: data e synuar mbetet; miratimi bëhet vetëm pas testeve të ngarkesës të kaluara, një modeli të qartë mbështetjeje dhe një rruge të emërtuar eskalimi." }
+          ],
+          "function": "turns reservation into decision text",
+          "toneNote": "binding, precise",
+          "expectedLearnerAction": "Make safeguards central, not decorative."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "product",
+          "baseText": "Das ist akzeptabel, solange nach außen nicht der Eindruck entsteht, wir würden den Start wieder infrage stellen.",
+          "translations": [
+            { "language": "en", "text": "That is acceptable as long as it does not create the external impression that we are questioning the launch again." },
+            { "language": "fa", "text": "این قابل قبول است، به شرطی که در بیرون این برداشت ایجاد نشود که ما دوباره شروع را زیر سؤال می‌بریم." },
+            { "language": "ar", "text": "هذا مقبول ما دام لا يخلق في الخارج انطباعاً بأننا نشكك في الإطلاق من جديد." },
+            { "language": "tr", "text": "Bu kabul edilebilir, yeter ki dışarıda lansmanı yeniden sorguladığımız izlenimi oluşmasın." },
+            { "language": "ru", "text": "Это приемлемо, если вовне не возникнет впечатления, что мы снова ставим запуск под вопрос." },
+            { "language": "ckb", "text": "ئەمە قبووڵە، مەرج ئەوەیە لە دەرەوە ئەو تێگەیشتنە دروست نەبێت کە ئێمە دیسان دەستپێک دەخەینە ژێر پرسیارەوە." },
+            { "language": "kmr", "text": "Ev qebûl e, heke li derve wê têgihiştinê çêneke ku em dîsa destpêkê dixin bin pirsê." },
+            { "language": "pl", "text": "To jest do przyjęcia, o ile na zewnątrz nie powstanie wrażenie, że znów podważamy start." },
+            { "language": "ro", "text": "Este acceptabil, atâta timp cât în exterior nu apare impresia că punem din nou lansarea sub semnul întrebării." },
+            { "language": "sq", "text": "Kjo është e pranueshme, për sa kohë që jashtë nuk krijohet përshtypja se po e vëmë sërish në dyshim nisjen." }
+          ],
+          "function": "adds communication concern",
+          "toneNote": "image-conscious"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Nach außen würde ich deshalb nicht von Unsicherheit sprechen, sondern von einer abgesicherten Zielsetzung: Wir halten am Termin fest und definieren zugleich transparent, welche Qualitätskriterien vorher erfüllt sein müssen.",
+          "translations": [
+            { "language": "en", "text": "Externally, I would therefore not speak of uncertainty but of a safeguarded target: we maintain the date and at the same time define transparently which quality criteria must be met beforehand." },
+            { "language": "fa", "text": "برای بیرون، بنابراین از عدم قطعیت صحبت نمی‌کنم، بلکه از هدفی محافظت‌شده حرف می‌زنم: ما تاریخ را حفظ می‌کنیم و همزمان شفاف تعریف می‌کنیم که کدام معیارهای کیفیت باید پیش از آن برآورده شوند." },
+            { "language": "ar", "text": "لذلك لن أتحدث خارجياً عن عدم اليقين، بل عن هدف مؤمن: نتمسك بالموعد ونحدد في الوقت نفسه بشفافية معايير الجودة التي يجب تحقيقها مسبقاً." },
+            { "language": "tr", "text": "Bu nedenle dış iletişimde belirsizlikten değil, güvence altına alınmış bir hedeften söz ederdim: tarihi koruyoruz ve aynı zamanda hangi kalite kriterlerinin önceden karşılanması gerektiğini şeffaf biçimde tanımlıyoruz." },
+            { "language": "ru", "text": "Во внешней коммуникации я поэтому говорил бы не о неопределенности, а о защищенной цели: мы сохраняем дату и одновременно прозрачно определяем, какие критерии качества должны быть выполнены заранее." },
+            { "language": "ckb", "text": "بۆ دەرەوە، بۆیە لە نادڵنیایی ناڵێم، بەڵکو لە ئامانجێکی پارێزراو دەڵێم: ئێمە کاتەکە دەپارێزین و هاوکات بە شەفافی دیاری دەکەین کام پێوەری کوالیتی پێشتر دەبێت جێبەجێ بکرێت." },
+            { "language": "kmr", "text": "Ji bo derve, ez ji ber vê yekê behsa nediyariyê nakim, lê behsa armanceke parastî dikim: em dîrokê diparêzin û di heman demê de bi şefafî diyar dikin kîjan pîvanên kalîteyê divê berê werin bicihanîn." },
+            { "language": "pl", "text": "Na zewnątrz nie mówiłbym więc o niepewności, lecz o zabezpieczonym celu: utrzymujemy termin i jednocześnie transparentnie definiujemy, jakie kryteria jakości muszą być wcześniej spełnione." },
+            { "language": "ro", "text": "În exterior nu aș vorbi, așadar, despre incertitudine, ci despre un obiectiv asigurat: păstrăm data și definim totodată transparent criteriile de calitate care trebuie îndeplinite înainte." },
+            { "language": "sq", "text": "Për jashtë, prandaj nuk do të flisja për pasiguri, por për një objektiv të siguruar: e ruajmë datën dhe njëkohësisht përcaktojmë me transparencë cilat kritere cilësie duhet të plotësohen më parë." }
+          ],
+          "function": "aligns internal and external wording",
+          "toneNote": "strategic, balanced",
+          "expectedLearnerAction": "Protect the message without hiding the condition."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "operations",
+          "baseText": "Wenn das so im Protokoll steht, kann ich den Termin mittragen. Entscheidend ist, dass der Abbruchpunkt nicht erst in der Krise diskutiert wird.",
+          "translations": [
+            { "language": "en", "text": "If that is written in the minutes this way, I can support the date. The crucial point is that the stop point is not discussed only once we are already in a crisis." },
+            { "language": "fa", "text": "اگر این‌طور در صورت‌جلسه بیاید، می‌توانم از تاریخ حمایت کنم. نکته تعیین‌کننده این است که نقطه توقف فقط وقتی در بحران هستیم مطرح نشود." },
+            { "language": "ar", "text": "إذا ورد ذلك بهذه الصيغة في المحضر، يمكنني دعم الموعد. النقطة الحاسمة هي ألا نناقش نقطة التوقف فقط عندما نكون قد دخلنا الأزمة." },
+            { "language": "tr", "text": "Bu şekilde tutanağa geçerse tarihi destekleyebilirim. Belirleyici nokta, durdurma noktasının ancak krize girdiğimizde tartışılmamasıdır." },
+            { "language": "ru", "text": "Если это так будет записано в протоколе, я смогу поддержать дату. Решающе важно, чтобы точку остановки обсуждали не только тогда, когда кризис уже начался." },
+            { "language": "ckb", "text": "ئەگەر ئەمە بەم شێوەیە لە پڕۆتۆکۆڵدا بنووسرێت، دەتوانم پشتگیری کاتەکە بکەم. خاڵی گرنگ ئەوەیە کە خاڵی ڕاوەستان تەنها کاتێک باس نەکرێت کە ئێمە پێشتر لە قەیرانداین." },
+            { "language": "kmr", "text": "Heke ev bi vî awayî di protokolê de were nivîsîn, ez dikarim dîrokê piştgirî bikim. Tişta biryarder ew e ku xala rawestanê tenê dema em jixwe di krîzê de ne neyê nîqaşkirin." },
+            { "language": "pl", "text": "Jeśli tak zostanie zapisane w protokole, mogę poprzeć termin. Kluczowe jest to, żeby punkt zatrzymania nie był omawiany dopiero w kryzysie." },
+            { "language": "ro", "text": "Dacă acest lucru apare astfel în procesul-verbal, pot susține data. Esențial este ca punctul de oprire să nu fie discutat abia în criză." },
+            { "language": "sq", "text": "Nëse kjo shkruhet kështu në procesverbal, mund ta mbështes datën. Vendimtare është që pika e ndalimit të mos diskutohet vetëm kur tashmë jemi në krizë." }
+          ],
+          "function": "accepts conditional consensus",
+          "toneNote": "relieved, firm"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann halte ich als Beschluss fest: Der Zieltermin bleibt bestehen, der Konsens gilt jedoch ausdrücklich unter den drei genannten Freigabebedingungen; bei Nichterfüllung entscheidet die Runde spätestens zwei Arbeitstage vorher über Verschiebung oder Teilfreigabe.",
+          "translations": [
+            { "language": "en", "text": "Then I will record the decision as follows: the target date remains, but the consensus explicitly applies under the three named release conditions; if they are not met, the group decides no later than two working days beforehand on postponement or partial release." },
+            { "language": "fa", "text": "پس به‌عنوان مصوبه ثبت می‌کنم: تاریخ هدف باقی می‌ماند، اما توافق صریحاً تحت سه شرط آزادسازی نام‌برده معتبر است؛ در صورت برآورده نشدن آنها، جمع حداکثر دو روز کاری قبل درباره تعویق یا آزادسازی جزئی تصمیم می‌گیرد." },
+            { "language": "ar", "text": "إذن أسجل القرار كما يلي: يبقى الموعد الهدف قائماً، لكن التوافق يسري صراحة تحت شروط الإطلاق الثلاثة المذكورة؛ وإذا لم تتحقق، تقرر المجموعة قبل يومي عمل على الأكثر بشأن التأجيل أو الإطلاق الجزئي." },
+            { "language": "tr", "text": "O halde kararı şöyle kaydediyorum: hedef tarih korunur, ancak uzlaşı açıkça belirtilen üç yayın koşulu altında geçerlidir; koşullar sağlanmazsa grup en geç iki iş günü önce erteleme veya kısmi yayın konusunda karar verir." },
+            { "language": "ru", "text": "Тогда я фиксирую решение так: целевая дата сохраняется, но консенсус явно действует при трех названных условиях допуска; если они не выполнены, группа не позднее чем за два рабочих дня заранее решает о переносе или частичном запуске." },
+            { "language": "ckb", "text": "ئەوا وەک بڕیار تۆمار دەکەم: کاتی ئامانج دەمێنێت، بەڵام هاوڕایی بە ڕوونی لە ژێر ئەو سێ مەرجی ئازادکردنەی ناوبراوندا کار دەکات؛ ئەگەر جێبەجێ نەکران، گرووپەکە زۆرترین دوو ڕۆژی کاری پێشتر بڕیار دەدات لەسەر دواخستن یان ئازادکردنی بەشێکی." },
+            { "language": "kmr", "text": "Wê demê ez biryarê wisa tomar dikim: dîroka armancê dimîne, lê lihevhatin bi zelalî di bin sê şertên destûrdanê yên navkirî de derbasdar e; heke ew neyên bicihanîn, kom herî dereng du rojên kar berê li ser paşxistinê an destûrdana qismî biryar dide." },
+            { "language": "pl", "text": "W takim razie zapisuję decyzję tak: termin docelowy pozostaje, ale konsensus obowiązuje wyraźnie pod trzema nazwanymi warunkami dopuszczenia; jeśli nie zostaną spełnione, grupa najpóźniej dwa dni robocze wcześniej zdecyduje o przesunięciu albo częściowym dopuszczeniu." },
+            { "language": "ro", "text": "Atunci consemnez decizia astfel: data-țintă rămâne, însă consensul se aplică explicit sub cele trei condiții de lansare numite; dacă acestea nu sunt îndeplinite, grupul decide cel târziu cu două zile lucrătoare înainte asupra amânării sau lansării parțiale." },
+            { "language": "sq", "text": "Atëherë e shënoj vendimin kështu: data e synuar mbetet, por konsensusi vlen shprehimisht nën tri kushtet e emërtuara të miratimit; nëse ato nuk përmbushen, grupi vendos më së voni dy ditë pune më parë për shtyrje ose miratim të pjesshëm." }
+          ],
+          "function": "closes with conditional decision",
+          "toneNote": "binding, minute-ready",
+          "expectedLearnerAction": "Produce a precise final decision that reflects both agreement and limits."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Bevor wir das als Konsens festhalten, möchte ich kurz prüfen, ob Schweigen hier wirklich Zustimmung bedeutet oder ob noch Bedingungen unausgesprochen im Raum stehen.",
+              "translations": [
+                { "language": "en", "text": "Before we record this as consensus, I would like to briefly check whether silence here really means agreement or whether unspoken conditions are still in the room." },
+                { "language": "fa", "text": "قبل از اینکه این را به‌عنوان توافق ثبت کنیم، می‌خواهم کوتاه بررسی کنم که آیا سکوت اینجا واقعاً به معنای موافقت است یا هنوز شرط‌های ناگفته‌ای در فضا وجود دارد." },
+                { "language": "ar", "text": "قبل أن نسجل هذا كتوافق، أود أن أتحقق باختصار مما إذا كان الصمت هنا يعني فعلاً الموافقة أم أن هناك شروطاً غير مصرح بها لا تزال قائمة." },
+                { "language": "tr", "text": "Bunu uzlaşı olarak kaydetmeden önce, buradaki sessizliğin gerçekten onay mı olduğunu, yoksa hâlâ söylenmemiş koşulların mı bulunduğunu kısaca kontrol etmek isterim." },
+                { "language": "ru", "text": "Прежде чем зафиксировать это как консенсус, я хотел бы коротко проверить: молчание здесь действительно означает согласие или в комнате все еще есть невысказанные условия." },
+                { "language": "ckb", "text": "پێش ئەوەی ئەمە وەک هاوڕایی تۆمار بکەین، دەمەوێت بە کورتی بپشکنم ئایا بێدەنگی لێرە بەڕاستی واتای ڕەزامەندییە یان هێشتا مەرجی نەوتراو لە ناو گفتوگۆکەدا ماوە." },
+                { "language": "kmr", "text": "Berî ku em vê wekî lihevhatin tomar bikin, dixwazim kurt biceribînim bê ka bêdengî li vir bi rastî erêkirin e an hîn şertên negotî di nav me de hene." },
+                { "language": "pl", "text": "Zanim zapiszemy to jako konsensus, chciałbym krótko sprawdzić, czy milczenie naprawdę oznacza tutaj zgodę, czy też wciąż są niewypowiedziane warunki." },
+                { "language": "ro", "text": "Înainte să consemnăm acest lucru ca consens, aș vrea să verific pe scurt dacă tăcerea înseamnă cu adevărat acord sau dacă mai există condiții nespuse." },
+                { "language": "sq", "text": "Para se ta shënojmë këtë si konsensus, dua të verifikoj shkurt nëse heshtja këtu vërtet do të thotë pajtim apo nëse ende ka kushte të pathëna." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort macht den Scheinkonsens sichtbar, ohne jemandem Widerstand zu unterstellen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response makes the apparent consensus visible without accusing anyone of resistance." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ توافق ظاهری را قابل مشاهده می‌کند، بدون اینکه به کسی مقاومت نسبت دهد." },
+                { "language": "ar", "text": "جيد جداً: تجعل الإجابة التوافق الظاهري مرئياً من دون اتهام أي شخص بالمقاومة." },
+                { "language": "tr", "text": "Çok iyi: cevap görünürdeki uzlaşıyı görünür kılar, kimseyi direnç göstermekle suçlamaz." },
+                { "language": "ru", "text": "Очень хорошо: ответ делает мнимый консенсус видимым, не обвиняя никого в сопротивлении." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە هاوڕاییی ڕواڵەتی دیار دەکات بێ ئەوەی کەسێک بە بەرگری تۆمەتبار بکات." },
+                { "language": "kmr", "text": "Pir baş: bersiv lihevhatina xuyayî xuya dike bêyî ku kesekê bi berxwedanê tawanbar bike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź uwidacznia pozorny konsensus bez przypisywania komuś oporu." },
+                { "language": "ro", "text": "Foarte bine: răspunsul face vizibil consensul aparent fără a acuza pe cineva de rezistență." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e bën të dukshëm konsensusin e dukshëm pa akuzuar askënd për rezistencë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn niemand etwas sagt, gehe ich davon aus, dass alle einverstanden sind.",
+              "translations": [
+                { "language": "en", "text": "If no one says anything, I assume everyone agrees." },
+                { "language": "fa", "text": "اگر کسی چیزی نمی‌گوید، فرض می‌کنم همه موافق‌اند." },
+                { "language": "ar", "text": "إذا لم يقل أحد شيئاً، أفترض أن الجميع موافقون." },
+                { "language": "tr", "text": "Kimse bir şey söylemiyorsa herkesin kabul ettiğini varsayarım." },
+                { "language": "ru", "text": "Если никто ничего не говорит, я предполагаю, что все согласны." },
+                { "language": "ckb", "text": "ئەگەر کەس هیچ نەڵێت، وای دەگرم هەمووان ڕازین." },
+                { "language": "kmr", "text": "Heke kes tiştek nebêje, ez wisa dibînim ku hemû kes razî ne." },
+                { "language": "pl", "text": "Jeśli nikt nic nie mówi, zakładam, że wszyscy się zgadzają." },
+                { "language": "ro", "text": "Dacă nimeni nu spune nimic, presupun că toți sunt de acord." },
+                { "language": "sq", "text": "Nëse askush nuk thotë asgjë, supozoj se të gjithë janë dakord." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort ist plausibel im Meeting, aber sie behandelt Schweigen als Zustimmung und übersieht verdeckte Risiken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the answer is plausible in a meeting, but it treats silence as agreement and misses hidden risks." },
+                { "language": "fa", "text": "خیلی ضعیف: پاسخ در جلسه قابل تصور است، اما سکوت را موافقت می‌گیرد و ریسک‌های پنهان را نادیده می‌گذارد." },
+                { "language": "ar", "text": "ضعيف جداً: الإجابة ممكنة في اجتماع، لكنها تعامل الصمت كموافقة وتتجاهل المخاطر المخفية." },
+                { "language": "tr", "text": "Çok zayıf: toplantıda makul görünebilir, ama sessizliği onay sayar ve gizli riskleri kaçırır." },
+                { "language": "ru", "text": "Слишком слабо: ответ возможен на встрече, но он считает молчание согласием и упускает скрытые риски." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە لە کۆبوونەوەدا گونجاو دەردەکەوێت، بەڵام بێدەنگی وەک ڕەزامەندی دەگرێت و مەترسیی شاراوە نابینێت." },
+                { "language": "kmr", "text": "Pir lawaz e: bersiv di civînê de gengaz xuya dike, lê bêdengiyê wekî erêkirin dihesibîne û xetereyên veşartî nabîne." },
+                { "language": "pl", "text": "Za słabo: odpowiedź może brzmieć naturalnie na spotkaniu, ale traktuje ciszę jako zgodę i pomija ukryte ryzyka." },
+                { "language": "ro", "text": "Prea slab: răspunsul pare plauzibil într-o ședință, dar tratează tăcerea ca acord și ratează riscurile ascunse." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja duket e mundshme në takim, por e trajton heshtjen si pajtim dhe humb rreziqet e fshehura." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das klingt für mich nicht nach einem Nein, sondern nach einer Bedingung. Können wir bitte konkret benennen, welche Betriebsrisiken vor dem Start zwingend geklärt sein müssen?",
+              "translations": [
+                { "language": "en", "text": "To me, that does not sound like a no but like a condition. Could we please name specifically which operational risks must be clarified before launch?" },
+                { "language": "fa", "text": "برای من این شبیه «نه» نیست، بلکه شبیه یک شرط است. می‌توانیم لطفاً دقیق بگوییم کدام ریسک‌های عملیاتی باید الزاماً قبل از شروع روشن شوند؟" },
+                { "language": "ar", "text": "بالنسبة لي لا يبدو هذا رفضاً، بل يبدو شرطاً. هل يمكننا أن نحدد بدقة أي مخاطر تشغيلية يجب توضيحها قبل الإطلاق؟" },
+                { "language": "tr", "text": "Bana bu bir hayırdan çok bir koşul gibi geliyor. Lütfen lansmandan önce hangi operasyon risklerinin mutlaka açıklığa kavuşması gerektiğini somut olarak adlandırabilir miyiz?" },
+                { "language": "ru", "text": "Для меня это звучит не как отказ, а как условие. Можем ли мы конкретно назвать, какие операционные риски обязательно нужно прояснить до запуска?" },
+                { "language": "ckb", "text": "بۆ من ئەمە وەک نا ناگوترێت، بەڵکو وەک مەرجێک دەردەکەوێت. تکایە دەتوانین بە وردی ناوی ئەو مەترسییە کارگێڕییانە ببەین کە پێش دەستپێک دەبێت ڕوون بکرێن؟" },
+                { "language": "kmr", "text": "Ji bo min ev ne wekî na, lê wekî şertê dixuye. Ji kerema xwe em dikarin bi zelalî bibêjin ka kîjan xetereyên operasyonê divê berî destpêkê bêne zelalkirin?" },
+                { "language": "pl", "text": "Dla mnie to nie brzmi jak odmowa, lecz jak warunek. Czy możemy konkretnie nazwać, które ryzyka operacyjne muszą być wyjaśnione przed startem?" },
+                { "language": "ro", "text": "Pentru mine nu sună ca un nu, ci ca o condiție. Putem numi concret ce riscuri operaționale trebuie clarificate înainte de lansare?" },
+                { "language": "sq", "text": "Për mua kjo nuk tingëllon si jo, por si kusht. A mund t’i emërtojmë konkretisht cilat rreziqe operative duhet të sqarohen patjetër para nisjes?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort nimmt den Einwand ernst und übersetzt ihn in überprüfbare Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response takes the concern seriously and translates it into testable criteria." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ نگرانی را جدی می‌گیرد و آن را به معیارهای قابل بررسی تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تأخذ الإجابة الاعتراض بجدية وتحوله إلى معايير قابلة للتحقق." },
+                { "language": "tr", "text": "Çok iyi: cevap itirazı ciddiye alır ve onu kontrol edilebilir ölçütlere çevirir." },
+                { "language": "ru", "text": "Очень хорошо: ответ серьезно воспринимает возражение и переводит его в проверяемые критерии." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ناڕەزاییەکە بە جدی دەگرێت و دەیگۆڕێت بۆ پێوەری تاقیکراوە." },
+                { "language": "kmr", "text": "Pir baş: bersiv nerazîbûnê bi cidî digire û wê dike pîvanên ceribandinê." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź traktuje zastrzeżenie poważnie i przekłada je na sprawdzalne kryteria." },
+                { "language": "ro", "text": "Foarte bine: răspunsul ia obiecția în serios și o transformă în criterii verificabile." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e merr seriozisht rezervën dhe e kthen në kritere të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sagen wir einfach, dass Operations noch nicht überzeugt ist.",
+              "translations": [
+                { "language": "en", "text": "Then we simply say that Operations is not convinced yet." },
+                { "language": "fa", "text": "پس ساده می‌گوییم که بخش عملیات هنوز قانع نشده است." },
+                { "language": "ar", "text": "إذن نقول ببساطة إن قسم التشغيل غير مقتنع بعد." },
+                { "language": "tr", "text": "O zaman basitçe operasyon ekibinin henüz ikna olmadığını söyleriz." },
+                { "language": "ru", "text": "Тогда просто скажем, что операционная команда еще не убеждена." },
+                { "language": "ckb", "text": "ئەوا بە سادگی دەڵێین بەشی کارگێڕی هێشتا قایل نەبووە." },
+                { "language": "kmr", "text": "Wê demê em bi hêsanî dibêjin ku beşa operasyonê hîn qane nebûye." },
+                { "language": "pl", "text": "Wtedy po prostu powiemy, że operacje nie są jeszcze przekonane." },
+                { "language": "ro", "text": "Atunci spunem pur și simplu că operațiunile nu sunt încă convinse." },
+                { "language": "sq", "text": "Atëherë themi thjesht se operacionet ende nuk janë bindur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu grob: Die Antwort personalisiert den Vorbehalt und kann Abwehr auslösen, statt die Sachebene zu klären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too blunt: the answer personalizes the reservation and can trigger defensiveness instead of clarifying the issue." },
+                { "language": "fa", "text": "بیش از حد خام: پاسخ تردید را شخصی می‌کند و ممکن است دفاعی‌بودن ایجاد کند، به‌جای اینکه موضوع را روشن کند." },
+                { "language": "ar", "text": "مباشر أكثر من اللازم: تشخص الإجابة التحفظ وقد تثير دفاعاً بدلاً من توضيح المسألة." },
+                { "language": "tr", "text": "Çok kaba: cevap çekinceyi kişiselleştirir ve konuyu açıklığa kavuşturmak yerine savunma yaratabilir." },
+                { "language": "ru", "text": "Слишком грубо: ответ персонализирует оговорку и может вызвать защитную реакцию вместо прояснения сути." },
+                { "language": "ckb", "text": "زۆر توندە: وەڵامەکە گومانەکە دەکاتە کەسی و دەتوانێت بەرگری دروست بکات، نەک بابەتەکە ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Pir tund e: bersiv gumanê kesayetî dike û dikare parastinê çêbike, ne ku mijarê zelal bike." },
+                { "language": "pl", "text": "Za ostro: odpowiedź personalizuje zastrzeżenie i może wywołać obronę zamiast wyjaśnić sprawę." },
+                { "language": "ro", "text": "Prea dur: răspunsul personalizează rezerva și poate declanșa defensivă în loc să clarifice problema." },
+                { "language": "sq", "text": "Shumë e ashpër: përgjigjja e personalizon rezervën dhe mund të shkaktojë mbrojtje, në vend që ta sqarojë çështjen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde deshalb zwischen Entscheidung und Freigabebedingungen trennen: Wir können den Starttermin als Ziel bestätigen, aber nur mit drei ausdrücklich genannten Voraussetzungen.",
+              "translations": [
+                { "language": "en", "text": "I would therefore separate the decision from the release conditions: we can confirm the launch date as a target, but only with three explicitly named prerequisites." },
+                { "language": "fa", "text": "برای همین تصمیم را از شرط‌های آزادسازی جدا می‌کنم: می‌توانیم تاریخ شروع را به‌عنوان هدف تأیید کنیم، اما فقط با سه پیش‌شرط صریحاً نام‌برده." },
+                { "language": "ar", "text": "لذلك سأفصل بين القرار وشروط الإطلاق: يمكننا تأكيد تاريخ البدء كهدف، لكن فقط مع ثلاثة شروط مسبقة مسماة صراحة." },
+                { "language": "tr", "text": "Bu nedenle kararla yayın koşullarını ayırırdım: başlangıç tarihini hedef olarak onaylayabiliriz, ancak yalnızca açıkça adlandırılmış üç ön koşulla." },
+                { "language": "ru", "text": "Поэтому я бы разделил решение и условия допуска: мы можем подтвердить дату запуска как цель, но только с тремя прямо названными предпосылками." },
+                { "language": "ckb", "text": "بۆیە من بڕیار و مەرجەکانی ئازادکردن جیا دەکەمەوە: دەتوانین کاتی دەستپێک وەک ئامانج پشتڕاست بکەین، بەڵام تەنها لەگەڵ سێ پێشمەرجی بە ڕوونی ناوبراو." },
+                { "language": "kmr", "text": "Ji ber vê yekê ez biryarê ji şertên destûrdanê cuda dikim: em dikarin dîroka destpêkê wekî armanc piştrast bikin, lê tenê bi sê pêşşertên bi zelalî hatine gotin." },
+                { "language": "pl", "text": "Dlatego oddzieliłbym decyzję od warunków dopuszczenia: możemy potwierdzić datę startu jako cel, ale tylko z trzema wyraźnie nazwanymi warunkami wstępnymi." },
+                { "language": "ro", "text": "De aceea aș separa decizia de condițiile de lansare: putem confirma data de start ca obiectiv, dar numai cu trei condiții preliminare numite explicit." },
+                { "language": "sq", "text": "Prandaj do ta ndaja vendimin nga kushtet e miratimit: mund ta konfirmojmë datën e nisjes si objektiv, por vetëm me tri parakushte të emërtuara qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort bewahrt Entscheidungsfähigkeit und macht zugleich die Grenzen des Konsenses verbindlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response preserves the ability to decide while making the limits of consensus binding." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ توان تصمیم‌گیری را حفظ می‌کند و همزمان مرزهای توافق را الزام‌آور می‌سازد." },
+                { "language": "ar", "text": "جيد جداً: تحافظ الإجابة على القدرة على اتخاذ القرار وتلزم في الوقت نفسه حدود التوافق." },
+                { "language": "tr", "text": "Çok iyi: cevap karar alma yeteneğini korur ve uzlaşının sınırlarını bağlayıcı kılar." },
+                { "language": "ru", "text": "Очень хорошо: ответ сохраняет способность принять решение и одновременно делает границы консенсуса обязательными." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە توانای بڕیاردان دەپارێزێت و هاوکات سنووری هاوڕایی دەکاتە پابەند." },
+                { "language": "kmr", "text": "Pir baş: bersiv şiyana biryardanê diparêze û di heman demê de sînorên lihevhatinê girêdayî dike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź zachowuje zdolność decyzyjną i jednocześnie wiąże granice konsensusu." },
+                { "language": "ro", "text": "Foarte bine: răspunsul păstrează capacitatea de decizie și face obligatorii limitele consensului." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja ruan aftësinë për vendim dhe njëkohësisht i bën të detyrueshëm kufijtë e konsensusit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann verschieben wir die Entscheidung lieber, bis wirklich alle vollständig zufrieden sind.",
+              "translations": [
+                { "language": "en", "text": "Then we should rather postpone the decision until everyone is completely satisfied." },
+                { "language": "fa", "text": "پس بهتر است تصمیم را عقب بیندازیم تا زمانی که واقعاً همه کاملاً راضی باشند." },
+                { "language": "ar", "text": "إذن من الأفضل أن نؤجل القرار حتى يكون الجميع راضين تماماً." },
+                { "language": "tr", "text": "O halde herkes tamamen memnun olana kadar kararı erteleyelim." },
+                { "language": "ru", "text": "Тогда лучше отложим решение, пока все действительно не будут полностью довольны." },
+                { "language": "ckb", "text": "ئەوا باشترە بڕیارەکە دوا بخەین تا کاتێک هەمووان بە تەواوی ڕازی دەبن." },
+                { "language": "kmr", "text": "Wê demê çêtir e em biryarê paş bixin heta hemû kes bi temamî razî bibin." },
+                { "language": "pl", "text": "W takim razie lepiej przełóżmy decyzję, aż wszyscy będą naprawdę w pełni zadowoleni." },
+                { "language": "ro", "text": "Atunci mai bine amânăm decizia până când toți sunt cu adevărat complet mulțumiți." },
+                { "language": "sq", "text": "Atëherë më mirë ta shtyjmë vendimin derisa të gjithë të jenë plotësisht të kënaqur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend: Die Antwort schützt vor Konflikt, aber sie verliert die Entscheidung und setzt unrealistische vollständige Zufriedenheit voraus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive: the response avoids conflict, but it loses the decision and assumes unrealistic complete satisfaction." },
+                { "language": "fa", "text": "بیش از حد فرارکننده: پاسخ از تعارض دوری می‌کند، اما تصمیم را از دست می‌دهد و رضایت کاملِ غیرواقعی را فرض می‌گیرد." },
+                { "language": "ar", "text": "مراوغة أكثر من اللازم: تتجنب الإجابة الصراع، لكنها تفقد القرار وتفترض رضا كاملاً غير واقعي." },
+                { "language": "tr", "text": "Çok kaçamak: cevap çatışmadan kaçınır, ama kararı kaybeder ve gerçekçi olmayan tam memnuniyet varsayar." },
+                { "language": "ru", "text": "Слишком уклончиво: ответ избегает конфликта, но теряет решение и предполагает нереалистичное полное удовлетворение." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە: وەڵامەکە لە ململاێ دوور دەکەوێتەوە، بەڵام بڕیارەکە لەدەست دەدات و ڕەزامەندیی تەواوی نائەقڵانی پێشبینی دەکات." },
+                { "language": "kmr", "text": "Pir dûrketin e: bersiv ji nakokiyê dûr dikeve, lê biryarê winda dike û razîbûna temamî ya nereyîstîk pêşdîtin dike." },
+                { "language": "pl", "text": "Za unikowo: odpowiedź chroni przed konfliktem, ale traci decyzję i zakłada nierealistyczne pełne zadowolenie." },
+                { "language": "ro", "text": "Prea evaziv: răspunsul evită conflictul, dar pierde decizia și presupune o satisfacție completă nerealistă." },
+                { "language": "sq", "text": "Shumë shmangëse: përgjigjja shmang konfliktin, por humb vendimin dhe supozon kënaqësi të plotë jorealiste." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann formuliere ich es nicht als Anhang, sondern als Teil des Beschlusses: Zieltermin bleibt bestehen; Freigabe erfolgt nur nach bestandenen Lasttests, geklärtem Supportmodell und benanntem Eskalationsweg.",
+              "translations": [
+                { "language": "en", "text": "Then I will not phrase it as an appendix but as part of the decision: the target date remains; release happens only after passed load tests, a clarified support model, and a named escalation path." },
+                { "language": "fa", "text": "پس آن را نه به‌عنوان پیوست، بلکه به‌عنوان بخشی از مصوبه بیان می‌کنم: تاریخ هدف باقی می‌ماند؛ آزادسازی فقط پس از قبولی تست‌های بار، روشن شدن مدل پشتیبانی و مشخص شدن مسیر escalation انجام می‌شود." },
+                { "language": "ar", "text": "إذن لن أصوغها كملحق، بل كجزء من القرار: يبقى الموعد الهدف قائماً؛ ولا تتم الموافقة إلا بعد نجاح اختبارات التحمل، وتوضيح نموذج الدعم، وتسمية مسار التصعيد." },
+                { "language": "tr", "text": "O halde bunu ek olarak değil, kararın parçası olarak formüle ederim: hedef tarih korunur; yayın ancak yük testleri geçtikten, destek modeli netleştikten ve eskalasyon yolu adlandırıldıktan sonra yapılır." },
+                { "language": "ru", "text": "Тогда я сформулирую это не как приложение, а как часть решения: целевая дата остается; допуск происходит только после успешных нагрузочных тестов, проясненной модели поддержки и названного пути эскалации." },
+                { "language": "ckb", "text": "ئەوا وەک پاشکۆ نا، بەڵکو وەک بەشێک لە بڕیارەکە دای دەڕێژم: کاتی ئامانج دەمێنێت؛ ئازادکردن تەنها دوای سەرکەوتنی تاقیکردنەوەی بار، ڕوونبوونی مۆدێلی پشتگیری و ناوبردنی ڕێڕەوی بەرزکردنەوە دەبێت." },
+                { "language": "kmr", "text": "Wê demê ez wê ne wekî pêvek, lê wekî beşek ji biryarê formule dikim: dîroka armancê dimîne; destûrdan tenê piştî serketina testên barê, zelalbûna modela piştgiriyê û rêya eskalasyonê ya navkirî dibe." },
+                { "language": "pl", "text": "W takim razie sformułuję to nie jako załącznik, lecz jako część decyzji: termin docelowy pozostaje; dopuszczenie następuje tylko po zdanych testach obciążeniowych, wyjaśnionym modelu wsparcia i nazwanej ścieżce eskalacji." },
+                { "language": "ro", "text": "Atunci nu o formulez ca anexă, ci ca parte a deciziei: data-țintă rămâne; lansarea are loc numai după teste de încărcare trecute, un model de suport clarificat și o cale de escaladare numită." },
+                { "language": "sq", "text": "Atëherë nuk do ta formuloj si shtojcë, por si pjesë të vendimit: data e synuar mbetet; miratimi bëhet vetëm pas testeve të ngarkesës të kaluara, një modeli të qartë mbështetjeje dhe një rruge të emërtuar eskalimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort verhindert, dass zentrale Bedingungen später als nebensächlich behandelt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response prevents central conditions from being treated later as secondary." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ مانع می‌شود شرط‌های اصلی بعداً فرعی تلقی شوند." },
+                { "language": "ar", "text": "جيد جداً: تمنع الإجابة أن تُعامل الشروط المركزية لاحقاً كأمور ثانوية." },
+                { "language": "tr", "text": "Çok iyi: cevap temel koşulların daha sonra ikincil görülmesini engeller." },
+                { "language": "ru", "text": "Очень хорошо: ответ не позволяет позже считать ключевые условия второстепенными." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ڕێ دەگرێت کە مەرجە سەرەکییەکان دواتر وەک شتی لاوەکی مامەڵەیان لەگەڵ بکرێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv nahêle ku şertên navendî paşê wekî tiştên duyemîn werin dîtin." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź zapobiega temu, by kluczowe warunki zostały później potraktowane jako drugorzędne." },
+                { "language": "ro", "text": "Foarte bine: răspunsul împiedică tratarea ulterioară a condițiilor centrale ca secundare." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja pengon që kushtet qendrore të trajtohen më vonë si dytësore." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können die Voraussetzungen im Protokoll irgendwo ergänzen.",
+              "translations": [
+                { "language": "en", "text": "We can add the prerequisites somewhere in the minutes." },
+                { "language": "fa", "text": "می‌توانیم پیش‌شرط‌ها را جایی در صورت‌جلسه اضافه کنیم." },
+                { "language": "ar", "text": "يمكننا إضافة الشروط المسبقة في مكان ما في المحضر." },
+                { "language": "tr", "text": "Ön koşulları tutanakta bir yere ekleyebiliriz." },
+                { "language": "ru", "text": "Мы можем где-нибудь добавить предпосылки в протокол." },
+                { "language": "ckb", "text": "دەتوانین پێشمەرجەکان لە شوێنێک لە پڕۆتۆکۆڵدا زیاد بکەین." },
+                { "language": "kmr", "text": "Em dikarin pêşşertan li cihêkî di protokolê de zêde bikin." },
+                { "language": "pl", "text": "Możemy gdzieś dopisać warunki w protokole." },
+                { "language": "ro", "text": "Putem adăuga condițiile undeva în procesul-verbal." },
+                { "language": "sq", "text": "Mund t’i shtojmë parakushtet diku në procesverbal." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort erwähnt die Bedingungen, aber sie macht sie nicht zum verbindlichen Teil des Beschlusses.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the response mentions the conditions but does not make them a binding part of the decision." },
+                { "language": "fa", "text": "بیش از حد مبهم: پاسخ شرط‌ها را ذکر می‌کند، اما آنها را بخش الزام‌آور مصوبه نمی‌کند." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: تذكر الإجابة الشروط لكنها لا تجعلها جزءاً ملزماً من القرار." },
+                { "language": "tr", "text": "Çok belirsiz: cevap koşulları anar, ama onları kararın bağlayıcı parçası yapmaz." },
+                { "language": "ru", "text": "Слишком неточно: ответ упоминает условия, но не делает их обязательной частью решения." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە مەرجەکان باس دەکات، بەڵام نایانکاتە بەشێکی پابەندی بڕیارەکە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv şertan dibêje, lê wan nake beşekî girêdayî yê biryarê." },
+                { "language": "pl", "text": "Za mało precyzyjnie: odpowiedź wspomina warunki, ale nie czyni ich wiążącą częścią decyzji." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul menționează condițiile, dar nu le face parte obligatorie a deciziei." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja i përmend kushtet, por nuk i bën pjesë detyruese të vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nach außen würde ich deshalb nicht von Unsicherheit sprechen, sondern von einer abgesicherten Zielsetzung: Wir halten am Termin fest und definieren zugleich transparent, welche Qualitätskriterien vorher erfüllt sein müssen.",
+              "translations": [
+                { "language": "en", "text": "Externally, I would therefore not speak of uncertainty but of a safeguarded target: we maintain the date and at the same time define transparently which quality criteria must be met beforehand." },
+                { "language": "fa", "text": "برای بیرون، بنابراین از عدم قطعیت صحبت نمی‌کنم، بلکه از هدفی محافظت‌شده حرف می‌زنم: ما تاریخ را حفظ می‌کنیم و همزمان شفاف تعریف می‌کنیم که کدام معیارهای کیفیت باید پیش از آن برآورده شوند." },
+                { "language": "ar", "text": "لذلك لن أتحدث خارجياً عن عدم اليقين، بل عن هدف مؤمن: نتمسك بالموعد ونحدد في الوقت نفسه بشفافية معايير الجودة التي يجب تحقيقها مسبقاً." },
+                { "language": "tr", "text": "Bu nedenle dış iletişimde belirsizlikten değil, güvence altına alınmış bir hedeften söz ederdim: tarihi koruyoruz ve aynı zamanda hangi kalite kriterlerinin önceden karşılanması gerektiğini şeffaf biçimde tanımlıyoruz." },
+                { "language": "ru", "text": "Во внешней коммуникации я поэтому говорил бы не о неопределенности, а о защищенной цели: мы сохраняем дату и одновременно прозрачно определяем, какие критерии качества должны быть выполнены заранее." },
+                { "language": "ckb", "text": "بۆ دەرەوە، بۆیە لە نادڵنیایی ناڵێم، بەڵکو لە ئامانجێکی پارێزراو دەڵێم: ئێمە کاتەکە دەپارێزین و هاوکات بە شەفافی دیاری دەکەین کام پێوەری کوالیتی پێشتر دەبێت جێبەجێ بکرێت." },
+                { "language": "kmr", "text": "Ji bo derve, ez ji ber vê yekê behsa nediyariyê nakim, lê behsa armanceke parastî dikim: em dîrokê diparêzin û di heman demê de bi şefafî diyar dikin kîjan pîvanên kalîteyê divê berê werin bicihanîn." },
+                { "language": "pl", "text": "Na zewnątrz nie mówiłbym więc o niepewności, lecz o zabezpieczonym celu: utrzymujemy termin i jednocześnie transparentnie definiujemy, jakie kryteria jakości muszą być wcześniej spełnione." },
+                { "language": "ro", "text": "În exterior nu aș vorbi, așadar, despre incertitudine, ci despre un obiectiv asigurat: păstrăm data și definim totodată transparent criteriile de calitate care trebuie îndeplinite înainte." },
+                { "language": "sq", "text": "Për jashtë, prandaj nuk do të flisja për pasiguri, por për një objektiv të siguruar: e ruajmë datën dhe njëkohësisht përcaktojmë me transparencë cilat kritere cilësie duhet të plotësohen më parë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Formulierung schützt das externe Signal, ohne die interne Bedingtheit zu verschleiern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the wording protects the external signal without hiding the internal conditionality." },
+                { "language": "fa", "text": "خیلی خوب: فرمول‌بندی پیام بیرونی را حفظ می‌کند، بدون اینکه مشروط بودن داخلی را پنهان کند." },
+                { "language": "ar", "text": "جيد جداً: تحمي الصياغة الرسالة الخارجية من دون إخفاء الطابع الشرطي داخلياً." },
+                { "language": "tr", "text": "Çok iyi: ifade dış sinyali korur, iç koşulluluğu gizlemez." },
+                { "language": "ru", "text": "Очень хорошо: формулировка защищает внешний сигнал, не скрывая внутреннюю условность." },
+                { "language": "ckb", "text": "زۆر باش: دەربڕینەکە نیشانەی دەرەکی دەپارێزێت بێ ئەوەی مەرجداربوونی ناوخۆیی بشارێتەوە." },
+                { "language": "kmr", "text": "Pir baş: gotin nîşana derveyî diparêze bêyî ku şertîbûna hundirîn veşêre." },
+                { "language": "pl", "text": "Bardzo dobrze: sformułowanie chroni sygnał zewnętrzny, nie ukrywając wewnętrznej warunkowości." },
+                { "language": "ro", "text": "Foarte bine: formularea protejează semnalul extern fără a ascunde condiționarea internă." },
+                { "language": "sq", "text": "Shumë mirë: formulimi e mbron sinjalin e jashtëm pa fshehur kushtëzimin e brendshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Nach außen sagen wir einfach, dass alles wie geplant läuft.",
+              "translations": [
+                { "language": "en", "text": "Externally, we simply say that everything is going according to plan." },
+                { "language": "fa", "text": "برای بیرون ساده می‌گوییم که همه چیز طبق برنامه پیش می‌رود." },
+                { "language": "ar", "text": "نقول للخارج ببساطة إن كل شيء يسير حسب الخطة." },
+                { "language": "tr", "text": "Dışarıya basitçe her şeyin plana göre gittiğini söyleriz." },
+                { "language": "ru", "text": "Вовне мы просто скажем, что все идет по плану." },
+                { "language": "ckb", "text": "بۆ دەرەوە بە سادگی دەڵێین هەموو شتێک بەپێی پلان دەڕوات." },
+                { "language": "kmr", "text": "Ji derve re em bi hêsanî dibêjin ku her tişt li gorî planê diçe." },
+                { "language": "pl", "text": "Na zewnątrz powiemy po prostu, że wszystko idzie zgodnie z planem." },
+                { "language": "ro", "text": "În exterior spunem pur și simplu că totul merge conform planului." },
+                { "language": "sq", "text": "Për jashtë themi thjesht se gjithçka po shkon sipas planit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu glatt: Die Antwort klingt beruhigend, verschweigt aber die Bedingungen und erzeugt später ein Glaubwürdigkeitsrisiko.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too smooth: the response sounds reassuring but hides the conditions and creates a later credibility risk." },
+                { "language": "fa", "text": "بیش از حد صاف و ساده: پاسخ آرامش‌بخش به نظر می‌رسد، اما شرط‌ها را پنهان می‌کند و بعداً ریسک اعتبار ایجاد می‌کند." },
+                { "language": "ar", "text": "مصقولة أكثر من اللازم: تبدو الإجابة مطمئنة لكنها تخفي الشروط وتخلق لاحقاً خطراً على المصداقية." },
+                { "language": "tr", "text": "Çok pürüzsüz: cevap güven verici duyulur, ama koşulları gizler ve ileride güvenilirlik riski yaratır." },
+                { "language": "ru", "text": "Слишком гладко: ответ звучит успокаивающе, но скрывает условия и создает риск доверия позже." },
+                { "language": "ckb", "text": "زۆر ڕووخۆشە: وەڵامەکە ئارامکەرەوە دەردەکەوێت، بەڵام مەرجەکان دەشارێتەوە و دواتر مەترسیی متمانە دروست دەکات." },
+                { "language": "kmr", "text": "Pir hêsan û xweş xuya dike: bersiv aram dide, lê şertan veşêre û paşê xetera baweriyê çêdike." },
+                { "language": "pl", "text": "Za gładko: odpowiedź brzmi uspokajająco, ale ukrywa warunki i tworzy później ryzyko wiarygodności." },
+                { "language": "ro", "text": "Prea neted: răspunsul sună liniștitor, dar ascunde condițiile și creează ulterior un risc de credibilitate." },
+                { "language": "sq", "text": "Shumë e lëmuar: përgjigjja tingëllon qetësuese, por fsheh kushtet dhe krijon më vonë rrezik besueshmërie." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann halte ich als Beschluss fest: Der Zieltermin bleibt bestehen, der Konsens gilt jedoch ausdrücklich unter den drei genannten Freigabebedingungen; bei Nichterfüllung entscheidet die Runde spätestens zwei Arbeitstage vorher über Verschiebung oder Teilfreigabe.",
+              "translations": [
+                { "language": "en", "text": "Then I will record the decision as follows: the target date remains, but the consensus explicitly applies under the three named release conditions; if they are not met, the group decides no later than two working days beforehand on postponement or partial release." },
+                { "language": "fa", "text": "پس به‌عنوان مصوبه ثبت می‌کنم: تاریخ هدف باقی می‌ماند، اما توافق صریحاً تحت سه شرط آزادسازی نام‌برده معتبر است؛ در صورت برآورده نشدن آنها، جمع حداکثر دو روز کاری قبل درباره تعویق یا آزادسازی جزئی تصمیم می‌گیرد." },
+                { "language": "ar", "text": "إذن أسجل القرار كما يلي: يبقى الموعد الهدف قائماً، لكن التوافق يسري صراحة تحت شروط الإطلاق الثلاثة المذكورة؛ وإذا لم تتحقق، تقرر المجموعة قبل يومي عمل على الأكثر بشأن التأجيل أو الإطلاق الجزئي." },
+                { "language": "tr", "text": "O halde kararı şöyle kaydediyorum: hedef tarih korunur, ancak uzlaşı açıkça belirtilen üç yayın koşulu altında geçerlidir; koşullar sağlanmazsa grup en geç iki iş günü önce erteleme veya kısmi yayın konusunda karar verir." },
+                { "language": "ru", "text": "Тогда я фиксирую решение так: целевая дата сохраняется, но консенсус явно действует при трех названных условиях допуска; если они не выполнены, группа не позднее чем за два рабочих дня заранее решает о переносе или частичном запуске." },
+                { "language": "ckb", "text": "ئەوا وەک بڕیار تۆمار دەکەم: کاتی ئامانج دەمێنێت، بەڵام هاوڕایی بە ڕوونی لە ژێر ئەو سێ مەرجی ئازادکردنەی ناوبراوندا کار دەکات؛ ئەگەر جێبەجێ نەکران، گرووپەکە زۆرترین دوو ڕۆژی کاری پێشتر بڕیار دەدات لەسەر دواخستن یان ئازادکردنی بەشێکی." },
+                { "language": "kmr", "text": "Wê demê ez biryarê wisa tomar dikim: dîroka armancê dimîne, lê lihevhatin bi zelalî di bin sê şertên destûrdanê yên navkirî de derbasdar e; heke ew neyên bicihanîn, kom herî dereng du rojên kar berê li ser paşxistinê an destûrdana qismî biryar dide." },
+                { "language": "pl", "text": "W takim razie zapisuję decyzję tak: termin docelowy pozostaje, ale konsensus obowiązuje wyraźnie pod trzema nazwanymi warunkami dopuszczenia; jeśli nie zostaną spełnione, grupa najpóźniej dwa dni robocze wcześniej zdecyduje o przesunięciu albo częściowym dopuszczeniu." },
+                { "language": "ro", "text": "Atunci consemnez decizia astfel: data-țintă rămâne, însă consensul se aplică explicit sub cele trei condiții de lansare numite; dacă acestea nu sunt îndeplinite, grupul decide cel târziu cu două zile lucrătoare înainte asupra amânării sau lansării parțiale." },
+                { "language": "sq", "text": "Atëherë e shënoj vendimin kështu: data e synuar mbetet, por konsensusi vlen shprehimisht nën tri kushtet e emërtuara të miratimit; nëse ato nuk përmbushen, grupi vendos më së voni dy ditë pune më parë për shtyrje ose miratim të pjesshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Der Abschluss ist protokollreif, enthält klare Bedingungen und definiert einen Entscheidungsweg bei Nichterfüllung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the closing is ready for the minutes, contains clear conditions, and defines a decision path if they are not met." },
+                { "language": "fa", "text": "خیلی خوب: جمع‌بندی برای صورت‌جلسه آماده است، شرط‌های روشن دارد و مسیر تصمیم‌گیری در صورت برآورده نشدن را تعریف می‌کند." },
+                { "language": "ar", "text": "جيد جداً: الخاتمة جاهزة للمحضر، وتحتوي على شروط واضحة، وتحدد مسار قرار إذا لم تتحقق." },
+                { "language": "tr", "text": "Çok iyi: kapanış tutanağa hazırdır, net koşullar içerir ve koşullar sağlanmazsa karar yolunu tanımlar." },
+                { "language": "ru", "text": "Очень хорошо: завершение готово для протокола, содержит четкие условия и определяет путь решения при их невыполнении." },
+                { "language": "ckb", "text": "زۆر باش: کۆتاییەکە بۆ پڕۆتۆکۆڵ ئامادەیە، مەرجی ڕوون هەیە و ڕێڕەوی بڕیار لە کاتی جێبەجێ نەبووندا دیاری دەکات." },
+                { "language": "kmr", "text": "Pir baş: dawî ji bo protokolê amade ye, şertên zelal hene û rêya biryarê di dema nebicihanînê de diyar dike." },
+                { "language": "pl", "text": "Bardzo dobrze: zakończenie nadaje się do protokołu, zawiera jasne warunki i określa ścieżkę decyzji, jeśli nie zostaną spełnione." },
+                { "language": "ro", "text": "Foarte bine: închiderea este pregătită pentru procesul-verbal, conține condiții clare și definește o cale de decizie dacă ele nu sunt îndeplinite." },
+                { "language": "sq", "text": "Shumë mirë: mbyllja është gati për procesverbal, përmban kushte të qarta dhe përcakton rrugën e vendimit nëse ato nuk përmbushen." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sind wir uns im Prinzip einig und klären die Details später.",
+              "translations": [
+                { "language": "en", "text": "Then we agree in principle and will clarify the details later." },
+                { "language": "fa", "text": "پس در اصل موافقیم و جزئیات را بعداً روشن می‌کنیم." },
+                { "language": "ar", "text": "إذن نحن متفقون من حيث المبدأ وسنوضح التفاصيل لاحقاً." },
+                { "language": "tr", "text": "O halde prensipte anlaştık ve ayrıntıları sonra netleştiririz." },
+                { "language": "ru", "text": "Тогда мы в принципе согласны и детали проясним позже." },
+                { "language": "ckb", "text": "ئەوا بە بنەڕەت هاوڕاین و وردەکارییەکان دواتر ڕوون دەکەینەوە." },
+                { "language": "kmr", "text": "Wê demê em di prensîbê de li hev in û hûrguliyan paşê zelal dikin." },
+                { "language": "pl", "text": "W takim razie zasadniczo się zgadzamy, a szczegóły wyjaśnimy później." },
+                { "language": "ro", "text": "Atunci suntem de acord în principiu și clarificăm detaliile mai târziu." },
+                { "language": "sq", "text": "Atëherë në parim jemi dakord dhe detajet i sqarojmë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort erzeugt wieder einen Scheinkonsens, weil sie genau die kritischen Bedingungen in die Zukunft verschiebt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the response creates apparent consensus again because it pushes the critical conditions into the future." },
+                { "language": "fa", "text": "خیلی ضعیف: پاسخ دوباره توافق ظاهری ایجاد می‌کند، چون دقیقاً شرط‌های حساس را به آینده منتقل می‌کند." },
+                { "language": "ar", "text": "ضعيف جداً: تخلق الإجابة توافقاً ظاهرياً من جديد لأنها تؤجل الشروط الحاسمة إلى المستقبل." },
+                { "language": "tr", "text": "Çok zayıf: cevap yeniden görünürde uzlaşı yaratır, çünkü kritik koşulları geleceğe iter." },
+                { "language": "ru", "text": "Слишком слабо: ответ снова создает мнимый консенсус, потому что переносит критические условия на будущее." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە دیسان هاوڕاییی ڕواڵەتی دروست دەکات، چونکە مەرجە گرنگەکان دەباتە داهاتوو." },
+                { "language": "kmr", "text": "Pir lawaz e: bersiv dîsa lihevhatina xuyayî çêdike, ji ber ku şertên girîng dişîne paşerojê." },
+                { "language": "pl", "text": "Za słabo: odpowiedź ponownie tworzy pozorny konsensus, bo przesuwa krytyczne warunki w przyszłość." },
+                { "language": "ro", "text": "Prea slab: răspunsul creează din nou un consens aparent, deoarece mută condițiile critice în viitor." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja krijon sërish konsensus të dukshëm, sepse i shtyn kushtet kritike në të ardhmen." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Guter C2-Schritt: Sie prüfen Konsens, ohne Misstrauen zu unterstellen.",
+          "translations": [
+            { "language": "en", "text": "Good C2 move: you test consensus without implying mistrust." },
+            { "language": "fa", "text": "حرکت خوب C2: توافق را بررسی می‌کنید، بدون اینکه بی‌اعتمادی القا کنید." },
+            { "language": "ar", "text": "خطوة جيدة في C2: تختبر التوافق من دون إيحاء بعدم الثقة." },
+            { "language": "tr", "text": "İyi bir C2 hamlesi: güvensizlik ima etmeden uzlaşıyı sınarsınız." },
+            { "language": "ru", "text": "Хороший шаг C2: вы проверяете консенсус, не подразумевая недоверия." },
+            { "language": "ckb", "text": "هەنگاوی باشی C2: هاوڕایی تاقی دەکەیتەوە بێ ئەوەی بێمتمانەیی پێشنیار بکەیت." },
+            { "language": "kmr", "text": "Gaveke baş a C2: hûn lihevhatinê dicerebinin bêyî ku nebaweriyê nîşan bidin." },
+            { "language": "pl", "text": "Dobry krok C2: sprawdza Pan/Pani konsensus bez sugerowania braku zaufania." },
+            { "language": "ro", "text": "Un pas bun de C2: verificați consensul fără a sugera neîncredere." },
+            { "language": "sq", "text": "Hap i mirë C2: e verifikoni konsensusin pa nënkuptuar mosbesim." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "precision",
+          "text": "Sie übersetzen indirekten Widerstand in sachliche Kriterien. Das ist stärker als eine persönliche Zuschreibung.",
+          "translations": [
+            { "language": "en", "text": "You translate indirect resistance into factual criteria. That is stronger than personal attribution." },
+            { "language": "fa", "text": "مقاومت غیرمستقیم را به معیارهای عینی تبدیل می‌کنید. این از نسبت دادن شخصی قوی‌تر است." },
+            { "language": "ar", "text": "تحول المقاومة غير المباشرة إلى معايير موضوعية. هذا أقوى من النسبة الشخصية." },
+            { "language": "tr", "text": "Dolaylı direnci nesnel ölçütlere çevirirsiniz. Bu kişisel atıftan daha güçlüdür." },
+            { "language": "ru", "text": "Вы переводите косвенное сопротивление в предметные критерии. Это сильнее, чем персональная атрибуция." },
+            { "language": "ckb", "text": "بەرگری ناڕاستەوخۆ دەگۆڕیت بۆ پێوەری بابەتی. ئەمە لە دانانی کەسی بەهێزترە." },
+            { "language": "kmr", "text": "Hûn berxwedana nerasterast dikin pîvanên rastî. Ev ji vegotina kesayetî bihêztir e." },
+            { "language": "pl", "text": "Przekłada Pan/Pani pośredni opór na kryteria rzeczowe. To mocniejsze niż personalne przypisanie." },
+            { "language": "ro", "text": "Transformați rezistența indirectă în criterii factuale. Este mai puternic decât o atribuire personală." },
+            { "language": "sq", "text": "E ktheni rezistencën indirekte në kritere faktike. Kjo është më e fortë se atribuimi personal." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "structure",
+          "text": "Die Trennung zwischen Zielentscheidung und Freigabebedingungen hält das Meeting entscheidungsfähig.",
+          "translations": [
+            { "language": "en", "text": "Separating the target decision from release conditions keeps the meeting capable of deciding." },
+            { "language": "fa", "text": "جدا کردن تصمیم هدف از شرط‌های آزادسازی، جلسه را در وضعیت تصمیم‌گیری نگه می‌دارد." },
+            { "language": "ar", "text": "فصل قرار الهدف عن شروط الإطلاق يبقي الاجتماع قادراً على اتخاذ القرار." },
+            { "language": "tr", "text": "Hedef kararını yayın koşullarından ayırmak toplantının karar alabilir kalmasını sağlar." },
+            { "language": "ru", "text": "Разделение целевого решения и условий допуска сохраняет способность встречи принять решение." },
+            { "language": "ckb", "text": "جیاکردنەوەی بڕیاری ئامانج لە مەرجەکانی ئازادکردن کۆبوونەوەکە لە توانای بڕیارداندا دەپارێزێت." },
+            { "language": "kmr", "text": "Cuda kirina biryara armancê ji şertên destûrdanê civînê di şiyana biryardanê de diparêze." },
+            { "language": "pl", "text": "Oddzielenie decyzji docelowej od warunków dopuszczenia utrzymuje zdolność spotkania do decyzji." },
+            { "language": "ro", "text": "Separarea deciziei-țintă de condițiile de lansare menține ședința capabilă să decidă." },
+            { "language": "sq", "text": "Ndarja e vendimit të synuar nga kushtet e miratimit e mban takimin të aftë për vendim." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "register",
+          "text": "Die Außenformulierung bleibt positiv, aber nicht beschönigend. Genau diese Balance ist C2-relevant.",
+          "translations": [
+            { "language": "en", "text": "The external wording stays positive but not sugarcoated. This balance is exactly C2-relevant." },
+            { "language": "fa", "text": "فرمول‌بندی بیرونی مثبت می‌ماند، اما بزک‌شده نیست. دقیقاً همین تعادل برای C2 مهم است." },
+            { "language": "ar", "text": "تبقى الصياغة الخارجية إيجابية، لكنها لا تجمل الواقع. هذا التوازن بالضبط مهم في C2." },
+            { "language": "tr", "text": "Dış ifade olumlu kalır ama durumu süslemez. Bu denge tam olarak C2 düzeyiyle ilgilidir." },
+            { "language": "ru", "text": "Внешняя формулировка остается позитивной, но не приукрашивает. Именно этот баланс важен для C2." },
+            { "language": "ckb", "text": "دەربڕینی دەرەکی ئەرێنی دەمێنێت، بەڵام واقیع ناڕازێنێتەوە. هەمان ئەم هاوسەنگییە بۆ C2 گرنگە." },
+            { "language": "kmr", "text": "Gotina derveyî erênî dimîne, lê rastiyê xemil nake. Ev hevsengî rast ji bo C2 girîng e." },
+            { "language": "pl", "text": "Sformułowanie zewnętrzne pozostaje pozytywne, ale nie upiększa rzeczywistości. Właśnie ta równowaga jest istotna na C2." },
+            { "language": "ro", "text": "Formularea externă rămâne pozitivă, dar nu cosmetizează realitatea. Exact acest echilibru este relevant pentru C2." },
+            { "language": "sq", "text": "Formulimi i jashtëm mbetet pozitiv, por nuk e zbukuron realitetin. Pikërisht ky ekuilibër është i rëndësishëm për C2." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Der Abschluss macht aus einem Scheinkonsens einen bedingten, prüfbaren Beschluss.",
+          "translations": [
+            { "language": "en", "text": "The closing turns apparent consensus into a conditional, testable decision." },
+            { "language": "fa", "text": "جمع‌بندی توافق ظاهری را به مصوبه‌ای مشروط و قابل بررسی تبدیل می‌کند." },
+            { "language": "ar", "text": "تحول الخاتمة التوافق الظاهري إلى قرار مشروط وقابل للتحقق." },
+            { "language": "tr", "text": "Kapanış görünürdeki uzlaşıyı koşullu ve kontrol edilebilir bir karara dönüştürür." },
+            { "language": "ru", "text": "Завершение превращает мнимый консенсус в условное, проверяемое решение." },
+            { "language": "ckb", "text": "کۆتاییەکە هاوڕاییی ڕواڵەتی دەگۆڕێت بۆ بڕیارێکی مەرجدار و تاقیکراوە." },
+            { "language": "kmr", "text": "Dawî lihevhatina xuyayî dike biryareke şertdar û ceribandinê." },
+            { "language": "pl", "text": "Zakończenie zmienia pozorny konsensus w warunkową, sprawdzalną decyzję." },
+            { "language": "ro", "text": "Închiderea transformă consensul aparent într-o decizie condiționată și verificabilă." },
+            { "language": "sq", "text": "Mbyllja e kthen konsensusin e dukshëm në një vendim të kushtëzuar dhe të verifikueshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "meeting-room-conditional-decision",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal project meeting where apparent agreement is being clarified into explicit conditions.",
+          "altText": "Ein ruhiger Besprechungsraum mit drei Erwachsenen am Tisch, Notizen zu Bedingungen und Zieltermin auf einem neutralen Whiteboard.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm meeting room with three adults at a table and notes about conditions and a target date on a neutral whiteboard." },
+            { "language": "fa", "text": "یک اتاق جلسه آرام با سه بزرگسال دور میز و یادداشت‌هایی درباره شرط‌ها و تاریخ هدف روی یک وایت‌برد خنثی." },
+            { "language": "ar", "text": "غرفة اجتماع هادئة فيها ثلاثة بالغين حول طاولة وملاحظات عن الشروط والموعد الهدف على لوح أبيض محايد." },
+            { "language": "tr", "text": "Masada üç yetişkinin bulunduğu sakin bir toplantı odası ve nötr bir beyaz tahtada koşullar ile hedef tarihe dair notlar." },
+            { "language": "ru", "text": "Спокойная переговорная с тремя взрослыми за столом и заметками об условиях и целевой дате на нейтральной доске." },
+            { "language": "ckb", "text": "ژووری کۆبوونەوەیەکی ئارام لەگەڵ سێ گەورەسال لەسەر مێز و تێبینی دەربارەی مەرجەکان و کاتی ئامانج لەسەر تەختەیەکی سپیی بێلایەن." },
+            { "language": "kmr", "text": "Jûreke civînê ya aram bi sê mezinan li ser maseyê û notên derbarê şertan û dîroka armancê li ser tabloyeke spî ya bêalî." },
+            { "language": "pl", "text": "Spokojna sala spotkań z trzema dorosłymi przy stole oraz notatkami o warunkach i terminie docelowym na neutralnej tablicy." },
+            { "language": "ro", "text": "O sală de ședințe calmă cu trei adulți la masă și note despre condiții și data-țintă pe o tablă albă neutră." },
+            { "language": "sq", "text": "Një sallë e qetë takimi me tre të rritur rreth tryezës dhe shënime për kushtet dhe datën e synuar në një tabelë të bardhë neutrale." }
+          ],
+          "imagePrompt": "Clean educational illustration, formal German workplace meeting room, three diverse adults at a table, neutral whiteboard with abstract condition markers and a target-date timeline, no readable text, no logos, no private data, accessible composition, calm professional tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

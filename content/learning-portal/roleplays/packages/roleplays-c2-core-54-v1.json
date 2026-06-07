@@ -1,0 +1,719 @@
+{
+  "packageId": "roleplays-c2-core-54-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 54 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 54",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-gruppendynamik-im-verein-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Gruppendynamik im Verein moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating a group dynamic in a club" },
+        { "language": "fa", "text": "مدیریت پویایی گروهی در یک انجمن" },
+        { "language": "ar", "text": "إدارة ديناميكية جماعية في جمعية" },
+        { "language": "tr", "text": "Bir dernekte grup dinamiğini yönetmek" },
+        { "language": "ru", "text": "Модерировать групповую динамику в объединении" },
+        { "language": "ckb", "text": "بەڕێوەبردنی دینامیکی گرووپ لە یانەیەکدا" },
+        { "language": "kmr", "text": "Moderasyona dinamîka komê di komeleyekê de" },
+        { "language": "pl", "text": "Moderowanie dynamiki grupowej w stowarzyszeniu" },
+        { "language": "ro", "text": "Moderarea unei dinamici de grup într-o asociație" },
+        { "language": "sq", "text": "Moderimi i dinamikës së grupit në një shoqatë" }
+      ],
+      "description": "In einer freiwilligen Gruppe entscheiden oft dieselben zwei Personen, während andere kaum sprechen. Niemand will offen streiten, aber die Entscheidungen wirken nicht mehr gemeinsam getragen. Ziel ist, die Gruppendynamik als Prozessproblem zu benennen, Erfahrung zu würdigen und Beteiligung zu öffnen, ohne einzelne Personen bloßzustellen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a volunteer group, the same two people often make decisions while others hardly speak. No one wants an open dispute, but the decisions no longer seem jointly supported. The goal is to name the group dynamic as a process issue, value experience, and open participation without exposing individual people." },
+        { "language": "fa", "text": "در یک گروه داوطلبانه، معمولاً همان دو نفر تصمیم می‌گیرند و دیگران تقریباً حرف نمی‌زنند. هیچ‌کس نمی‌خواهد آشکارا بحث کند، اما تصمیم‌ها دیگر واقعاً مشترک به نظر نمی‌رسند. هدف این است که پویایی گروه را به‌عنوان مشکل فرایند نام ببرید، تجربه را ارج بگذارید و مشارکت را باز کنید، بدون اینکه کسی را در معرض قرار دهید." },
+        { "language": "ar", "text": "في مجموعة تطوعية، غالبًا ما يتخذ الشخصان نفسيهما القرارات بينما يتكلم الآخرون قليلًا. لا يريد أحد نزاعًا علنيًا، لكن القرارات لم تعد تبدو مدعومة جماعيًا. الهدف هو تسمية ديناميكية المجموعة كمشكلة في العملية، وتقدير الخبرة، وفتح المشاركة من دون إحراج أشخاص بعينهم." },
+        { "language": "tr", "text": "Gönüllü bir grupta çoğu zaman aynı iki kişi karar alıyor, diğerleri ise neredeyse hiç konuşmuyor. Kimse açık bir tartışma istemiyor, ama kararlar artık ortak taşınmış gibi görünmüyor. Amaç grup dinamiğini bir süreç sorunu olarak adlandırmak, deneyimi takdir etmek ve tek tek kişileri açığa çıkarmadan katılımı açmaktır." },
+        { "language": "ru", "text": "В добровольной группе часто решения принимают одни и те же два человека, а остальные почти не говорят. Никто не хочет открытого спора, но решения уже не выглядят общими. Цель — назвать групповую динамику как проблему процесса, признать опыт и открыть участие, не выставляя отдельных людей." },
+        { "language": "ckb", "text": "لە گرووپێکی خۆبەخشانەدا زۆرجار هەمان دوو کەس بڕیار دەدەن، لە کاتێکدا ئەوانی تر زۆر کەم قسە دەکەن. کەس نایەوێت ناکۆکییەکی ئاشکرا دروست ببێت، بەڵام بڕیارەکان وەک بڕیاری هاوبەش نامێنن. ئامانج ئەوەیە دینامیکی گرووپ وەک کێشەی ڕێکار ناوببرێت، ئەزموون ڕێز لێبگیرێت و بەشداری بکرێتەوە، بەبێ ئاشکراکردنی کەسی دیاریکراو." },
+        { "language": "kmr", "text": "Di komeke dilxwaz de gelek caran heman du kes biryar didin, lê yên din kêm diaxivin. Kes nakokiyeke vekirî naxwaze, lê biryar êdî wek biryarên bi hev re hilgirtiyî xuya nakin. Armanc ew e ku dinamîka komê wek pirsgirêka pêvajoyê bê navkirin, ezmûn bê qedir kirin û beşdarî bê vekirin bê ku kesên taybet bên eşkere kirin." },
+        { "language": "pl", "text": "W grupie wolontariackiej decyzje często podejmują te same dwie osoby, a inni prawie się nie odzywają. Nikt nie chce otwartego konfliktu, ale decyzje nie wyglądają już na wspólnie podtrzymywane. Celem jest nazwanie dynamiki grupowej jako problemu procesu, docenienie doświadczenia i otwarcie udziału bez wystawiania pojedynczych osób." },
+        { "language": "ro", "text": "Într-un grup de voluntari, aceleași două persoane iau adesea decizii, în timp ce ceilalți vorbesc foarte puțin. Nimeni nu vrea un conflict deschis, dar deciziile nu mai par susținute împreună. Scopul este să numiți dinamica de grup ca problemă de proces, să apreciați experiența și să deschideți participarea fără a expune persoane individuale." },
+        { "language": "sq", "text": "Në një grup vullnetar, shpesh vendosin të njëjtët dy persona, ndërsa të tjerët flasin shumë pak. Askush nuk do konflikt të hapur, por vendimet nuk duken më të mbështetura bashkërisht. Qëllimi është ta emërtoni dinamikën e grupit si problem procesi, të vlerësoni përvojën dhe të hapni pjesëmarrjen pa ekspozuar persona të veçantë." }
+      ],
+      "learnerGoal": "Eine heikle Gruppendynamik moderieren: Beobachtungen zum Prozess nennen, Erfahrung würdigen, Beteiligung strukturiert öffnen, persönliche Schuldzuweisungen vermeiden und eine zeitlich begrenzte Entscheidungsform vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate a delicate group dynamic: name process observations, value experience, open participation in a structured way, avoid personal blame, and suggest a time-limited decision format." },
+        { "language": "fa", "text": "یک پویایی گروهی حساس را مدیریت کنید: مشاهده‌های مربوط به فرایند را نام ببرید، تجربه را ارج بگذارید، مشارکت را ساختارمند باز کنید، از سرزنش شخصی پرهیز کنید و یک شکل تصمیم‌گیری زمان‌دار پیشنهاد دهید." },
+        { "language": "ar", "text": "أديروا ديناميكية جماعية حساسة: سمّوا ملاحظات تتعلق بالعملية، وقدّروا الخبرة، وافتحوا المشاركة بشكل منظم، وتجنبوا اللوم الشخصي، واقترحوا صيغة قرار محددة بالوقت." },
+        { "language": "tr", "text": "Hassas bir grup dinamiğini yönetin: sürece dair gözlemleri adlandırın, deneyimi takdir edin, katılımı yapılandırılmış biçimde açın, kişisel suçlamadan kaçının ve süreyle sınırlı bir karar biçimi önerin." },
+        { "language": "ru", "text": "Модерировать тонкую групповую динамику: назвать наблюдения о процессе, признать опыт, структурированно открыть участие, избегать личных обвинений и предложить ограниченный по времени формат решения." },
+        { "language": "ckb", "text": "دینامیکی گرووپێکی هەستیار بەڕێوە ببە: تێبینییەکانی پەیوەست بە ڕێکار ناوببە، ئەزموون ڕێز لێبگرە، بەشداری بە شێوەیەکی ڕێکخراو بکەرەوە، لە تۆمەتبارکردنی کەسی دووربکەوە و شێوەی بڕیارێکی سنووردار بە کات پێشنیار بکە." },
+        { "language": "kmr", "text": "Dinamîka komeke hestyar modere bikin: çavdêriyên pêvajoyê nav bikin, ezmûn qedir bikin, beşdariyê bi awayekî rêkûpêk vekin, ji sûcdarkirina kesane dûr bisekinin û awayekî biryarê yê bi demê sînorkirî pêşniyar bikin." },
+        { "language": "pl", "text": "Moderować delikatną dynamikę grupową: nazwać obserwacje dotyczące procesu, docenić doświadczenie, otworzyć udział w uporządkowany sposób, unikać osobistego obwiniania i zaproponować ograniczony czasowo format decyzji." },
+        { "language": "ro", "text": "Moderați o dinamică de grup delicată: numiți observații despre proces, apreciați experiența, deschideți participarea structurat, evitați vina personală și propuneți un format de decizie limitat în timp." },
+        { "language": "sq", "text": "Moderoni një dinamikë të ndjeshme grupi: përmendni vëzhgime për procesin, vlerësoni përvojën, hapni pjesëmarrjen në mënyrë të strukturuar, shmangni fajësimin personal dhe propozoni një format vendimi me kohë të kufizuar." }
+      ],
+      "cefrLevel": "C2",
+      "category": "social",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "discuss-plan",
+      "interactionMode": "group-work",
+      "register": "mixed",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 54,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Moderierende Person",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "فرد گرداننده" },
+            { "language": "ar", "text": "الشخص الميسر" },
+            { "language": "tr", "text": "Kolaylaştırıcı kişi" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "کەسی بەڕێوەبەر" },
+            { "language": "kmr", "text": "Kesê moderator" },
+            { "language": "pl", "text": "Osoba moderująca" },
+            { "language": "ro", "text": "Persoana care moderează" },
+            { "language": "sq", "text": "Personi moderator" }
+          ]
+        },
+        {
+          "roleKey": "speaker",
+          "displayName": "Erfahrenes Mitglied",
+          "translations": [
+            { "language": "en", "text": "Experienced member" },
+            { "language": "fa", "text": "عضو باتجربه" },
+            { "language": "ar", "text": "عضو ذو خبرة" },
+            { "language": "tr", "text": "Deneyimli üye" },
+            { "language": "ru", "text": "Опытный участник" },
+            { "language": "ckb", "text": "ئەندامی بەئەزموون" },
+            { "language": "kmr", "text": "Endamê bi ezmûn" },
+            { "language": "pl", "text": "Doświadczony członek" },
+            { "language": "ro", "text": "Membru cu experiență" },
+            { "language": "sq", "text": "Anëtar me përvojë" }
+          ]
+        },
+        {
+          "roleKey": "member",
+          "displayName": "Zurückhaltendes Mitglied",
+          "translations": [
+            { "language": "en", "text": "Reserved member" },
+            { "language": "fa", "text": "عضو کم‌حرف" },
+            { "language": "ar", "text": "عضو متحفظ" },
+            { "language": "tr", "text": "Çekingen üye" },
+            { "language": "ru", "text": "Сдержанный участник" },
+            { "language": "ckb", "text": "ئەندامی خۆگرتوو" },
+            { "language": "kmr", "text": "Endamê xwe-girtî" },
+            { "language": "pl", "text": "Powściągliwy członek" },
+            { "language": "ro", "text": "Membru rezervat" },
+            { "language": "sq", "text": "Anëtar i rezervuar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "learner",
+          "baseText": "Bevor wir zur Entscheidung springen, möchte ich kurz den Prozess benennen: Gerade sprechen vor allem zwei Personen, während mehrere andere noch gar nicht zu Wort gekommen sind.",
+          "translations": [
+            { "language": "en", "text": "Before we jump to the decision, I would like to briefly name the process: right now mainly two people are speaking, while several others have not yet had a chance to speak." },
+            { "language": "fa", "text": "قبل از اینکه مستقیم سراغ تصمیم برویم، می‌خواهم کوتاه فرایند را نام ببرم: الان بیشتر دو نفر صحبت می‌کنند، در حالی که چند نفر دیگر هنوز اصلاً فرصت حرف زدن نداشته‌اند." },
+            { "language": "ar", "text": "قبل أن نقفز إلى القرار، أود أن أسمي العملية باختصار: الآن يتحدث أساسًا شخصان، بينما لم يحصل عدة آخرين بعد على فرصة للكلام." },
+            { "language": "tr", "text": "Karara atlamadan önce süreci kısaca adlandırmak istiyorum: şu anda ağırlıklı olarak iki kişi konuşuyor, birkaç kişi ise henüz söz almadı." },
+            { "language": "ru", "text": "Прежде чем мы перейдем к решению, я хочу коротко назвать процесс: сейчас в основном говорят два человека, а несколько других еще совсем не получили слова." },
+            { "language": "ckb", "text": "پێش ئەوەی بپەڕینە سەر بڕیار، دەمەوێت بە کورتی ڕێکارەکە ناوببەم: ئێستا بە تایبەتی دوو کەس قسە دەکەن، لە کاتێکدا چەند کەسی تر هێشتا هیچ دەرفەتی قسەکردنیان نەبووە." },
+            { "language": "kmr", "text": "Berî ku em biçin ser biryarê, ez dixwazim pêvajoyê bi kurtî nav bikim: niha herî zêde du kes diaxivin, lê çend kesên din hêj gotin negirtine." },
+            { "language": "pl", "text": "Zanim przejdziemy do decyzji, chciałbym/chciałabym krótko nazwać proces: teraz mówią głównie dwie osoby, a kilka innych jeszcze w ogóle nie doszło do głosu." },
+            { "language": "ro", "text": "Înainte să sărim la decizie, aș vrea să numesc pe scurt procesul: acum vorbesc mai ales două persoane, în timp ce alte câteva încă nu au apucat să vorbească." },
+            { "language": "sq", "text": "Para se të kalojmë te vendimi, dua ta emërtoj shkurt procesin: tani po flasin kryesisht dy persona, ndërsa disa të tjerë ende nuk kanë marrë fare fjalën." }
+          ],
+          "function": "process-observation"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "speaker",
+          "baseText": "Wir reden eben, weil wir die Abläufe seit Jahren kennen. Sonst drehen wir uns hier noch ewig im Kreis.",
+          "translations": [
+            { "language": "en", "text": "We are speaking because we have known the procedures for years. Otherwise we will keep going in circles here forever." },
+            { "language": "fa", "text": "ما حرف می‌زنیم چون سال‌هاست روندها را می‌شناسیم. وگرنه اینجا تا ابد دور خودمان می‌چرخیم." },
+            { "language": "ar", "text": "نحن نتكلم لأننا نعرف الإجراءات منذ سنوات. وإلا فسندور هنا في حلقة إلى ما لا نهاية." },
+            { "language": "tr", "text": "Konuşuyoruz çünkü süreçleri yıllardır biliyoruz. Yoksa burada sonsuza kadar aynı yerde döneriz." },
+            { "language": "ru", "text": "Мы говорим, потому что знаем процессы уже много лет. Иначе мы здесь будем бесконечно ходить по кругу." },
+            { "language": "ckb", "text": "ئێمە قسە دەکەین چونکە ساڵانێکە ڕێکارەکان دەناسین. ئەگەر نا، لێرە تا هەتاهەتایە بە دەوری خۆماندا دەخولێینەوە." },
+            { "language": "kmr", "text": "Em diaxivin ji ber ku em pêvajoyan ji gelek salan ve nas dikin. Heke na, em ê li vir heta bêdawî li cihê xwe bizivirin." },
+            { "language": "pl", "text": "Mówimy, bo znamy procedury od lat. Inaczej będziemy się tu kręcić w kółko bez końca." },
+            { "language": "ro", "text": "Vorbim pentru că știm procedurile de ani de zile. Altfel ne vom învârti aici la nesfârșit." },
+            { "language": "sq", "text": "Ne flasim sepse i njohim proceset prej vitesh. Përndryshe do të sillemi këtu në rreth pa fund." }
+          ],
+          "function": "experience-defense"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "learner",
+          "baseText": "Genau diese Erfahrung brauchen wir. Ich würde sie nur gern vom Entscheidungsweg trennen: erst Informationen, dann Bedenken, dann eine klare Entscheidung mit Zustimmung der Gruppe.",
+          "translations": [
+            { "language": "en", "text": "We need exactly that experience. I would just like to separate it from the decision path: first information, then concerns, then a clear decision with the group's agreement." },
+            { "language": "fa", "text": "دقیقاً به همین تجربه نیاز داریم. فقط دوست دارم آن را از مسیر تصمیم جدا کنیم: اول اطلاعات، بعد نگرانی‌ها، بعد تصمیم روشن با موافقت گروه." },
+            { "language": "ar", "text": "نحن نحتاج بالضبط إلى هذه الخبرة. أود فقط أن أفصلها عن مسار القرار: أولًا المعلومات، ثم المخاوف، ثم قرار واضح بموافقة المجموعة." },
+            { "language": "tr", "text": "Tam da bu deneyime ihtiyacımız var. Sadece bunu karar yolundan ayırmak isterim: önce bilgi, sonra kaygılar, sonra grubun onayıyla net bir karar." },
+            { "language": "ru", "text": "Именно этот опыт нам нужен. Я только хотел бы отделить его от пути принятия решения: сначала информация, затем опасения, затем ясное решение с согласием группы." },
+            { "language": "ckb", "text": "هەمان ئەو ئەزموونەمان پێویستە. تەنها دەمەوێت لە ڕێڕەوی بڕیار جیای بکەینەوە: سەرەتا زانیاری، پاشان نیگەرانی، پاشان بڕیارێکی ڕوون بە ڕەزامەندی گرووپ." },
+            { "language": "kmr", "text": "Em rast wê ezmûnê hewce dikin. Ez tenê dixwazim wê ji rêya biryarê cuda bikim: pêşî agahî, paşê xem, paşê biryareke zelal bi razîbûna komê." },
+            { "language": "pl", "text": "Właśnie tego doświadczenia potrzebujemy. Chciałbym/Chciałabym tylko oddzielić je od ścieżki decyzji: najpierw informacje, potem obawy, potem jasna decyzja za zgodą grupy." },
+            { "language": "ro", "text": "Avem nevoie exact de această experiență. Aș vrea doar să o separ de drumul deciziei: mai întâi informații, apoi rezerve, apoi o decizie clară cu acordul grupului." },
+            { "language": "sq", "text": "Pikërisht këtë përvojë na duhet. Vetëm do të doja ta ndaja nga rruga e vendimit: fillimisht informacionet, pastaj shqetësimet, pastaj një vendim i qartë me miratimin e grupit." }
+          ],
+          "function": "reframe-process"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "speaker",
+          "baseText": "Heißt das, wir dominieren hier alles? Das klingt jetzt schon ziemlich persönlich.",
+          "translations": [
+            { "language": "en", "text": "Does that mean we dominate everything here? That already sounds quite personal." },
+            { "language": "fa", "text": "یعنی ما اینجا همه چیز را در دست گرفته‌ایم؟ این الان خیلی شخصی به نظر می‌رسد." },
+            { "language": "ar", "text": "هل يعني ذلك أننا نسيطر على كل شيء هنا؟ هذا يبدو شخصيًا جدًا الآن." },
+            { "language": "tr", "text": "Bu, burada her şeye biz mi hükmediyoruz demek? Bu şimdi oldukça kişisel duyuluyor." },
+            { "language": "ru", "text": "Это значит, что мы здесь всем доминируем? Сейчас это звучит уже довольно лично." },
+            { "language": "ckb", "text": "ئایا ئەمە واتە ئێمە لێرە هەموو شتێکمان داگیر کردووە؟ ئەمە ئێستا زۆر کەسی دەردەکەوێت." },
+            { "language": "kmr", "text": "Ma ev tê wê wateyê ku em li vir li ser her tiştî serdest in? Ev niha gelek kesane deng dide." },
+            { "language": "pl", "text": "Czy to znaczy, że my tutaj wszystko dominujemy? To brzmi teraz dość osobiście." },
+            { "language": "ro", "text": "Asta înseamnă că noi dominăm totul aici? Acum sună destul de personal." },
+            { "language": "sq", "text": "A do të thotë kjo se ne dominojmë gjithçka këtu? Kjo tani tingëllon mjaft personale." }
+          ],
+          "function": "defensive-reaction"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "learner",
+          "baseText": "Nein, mir geht es nicht um Schuld. Ich beschreibe eine Wirkung: Wenn zwei Stimmen sehr schnell Richtung vorgeben, prüfen die anderen ihre Einwände oft gar nicht mehr laut.",
+          "translations": [
+            { "language": "en", "text": "No, I am not talking about blame. I am describing an effect: when two voices set the direction very quickly, the others often no longer test their objections aloud." },
+            { "language": "fa", "text": "نه، بحث من سر تقصیر نیست. دارم یک اثر را توصیف می‌کنم: وقتی دو صدا خیلی سریع جهت را تعیین می‌کنند، دیگران اغلب اعتراض‌های خود را اصلاً با صدای بلند بررسی نمی‌کنند." },
+            { "language": "ar", "text": "لا، لا أتحدث عن اللوم. أنا أصف أثرًا: عندما تحدد صوتان الاتجاه بسرعة كبيرة، غالبًا لا يختبر الآخرون اعتراضاتهم بصوت عالٍ." },
+            { "language": "tr", "text": "Hayır, mesele suç değil. Bir etkiyi tarif ediyorum: iki ses çok hızlı yön verdiğinde, diğerleri itirazlarını çoğu zaman artık yüksek sesle yoklamıyor." },
+            { "language": "ru", "text": "Нет, речь не о вине. Я описываю эффект: когда два голоса очень быстро задают направление, другие часто уже не проверяют свои возражения вслух." },
+            { "language": "ckb", "text": "نەخێر، بابەتەکە بەرپرسیاری کەسی نییە. من کاریگەرییەک وەسف دەکەم: کاتێک دوو دەنگ زۆر خێرا ئاراستە دیاری دەکەن، ئەوانی تر زۆرجار چیتر ناڕەزاییەکانیان بە دەنگی بەرز ناپشکنن." },
+            { "language": "kmr", "text": "Na, mijar ne sûc e. Ez bandorekê şirove dikim: dema du deng gelek zû rê nîşan didin, yên din gelek caran êdî nerazîbûnên xwe bi dengê bilind venakolin." },
+            { "language": "pl", "text": "Nie, nie chodzi mi o winę. Opisuję efekt: gdy dwa głosy bardzo szybko wyznaczają kierunek, inni często nie sprawdzają już swoich zastrzeżeń na głos." },
+            { "language": "ro", "text": "Nu, nu vorbesc despre vină. Descriu un efect: când două voci dau direcția foarte repede, ceilalți adesea nu își mai testează obiecțiile cu voce tare." },
+            { "language": "sq", "text": "Jo, nuk e kam fjalën për faj. Po përshkruaj një efekt: kur dy zëra e japin shumë shpejt drejtimin, të tjerët shpesh nuk i provojnë më kundërshtimet me zë." }
+          ],
+          "function": "depersonalize"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "member",
+          "baseText": "Ich habe tatsächlich nichts gesagt, weil es für mich schon entschieden wirkte. Mein Einwand wäre gewesen, dass wir für die neue Aufgabe zu wenige Leute haben.",
+          "translations": [
+            { "language": "en", "text": "I actually did not say anything because it already seemed decided to me. My objection would have been that we have too few people for the new task." },
+            { "language": "fa", "text": "من واقعاً چیزی نگفتم، چون برایم انگار تصمیم گرفته شده بود. اعتراضم این بود که برای کار جدید افراد کافی نداریم." },
+            { "language": "ar", "text": "أنا فعلًا لم أقل شيئًا لأنه بدا لي وكأنه قد تقرر بالفعل. كان اعتراضي أن لدينا عددًا قليلًا جدًا من الأشخاص للمهمة الجديدة." },
+            { "language": "tr", "text": "Aslında hiçbir şey söylemedim, çünkü bana zaten karar verilmiş gibi geldi. İtirazım, yeni görev için yeterince kişi olmamasıydı." },
+            { "language": "ru", "text": "Я действительно ничего не сказал, потому что для меня это уже выглядело решенным. Мое возражение было бы в том, что у нас слишком мало людей для новой задачи." },
+            { "language": "ckb", "text": "من بەڕاستی هیچم نەوت، چونکە بۆ من وەک ئەوە بوو کە پێشتر بڕیار دراوە. ناڕەزاییم ئەوە دەبوو کە بۆ ئەرکی نوێ کەسی کەممان هەیە." },
+            { "language": "kmr", "text": "Min bi rastî tiştek negot, ji ber ku ji bo min wek biryarkirî xuya dikir. Nerazîbûna min ev bû ku ji bo erka nû kesên me gelek kêm in." },
+            { "language": "pl", "text": "Rzeczywiście nic nie powiedziałem/powiedziałam, bo dla mnie wyglądało to już na zdecydowane. Moje zastrzeżenie byłoby takie, że mamy za mało osób do nowego zadania." },
+            { "language": "ro", "text": "De fapt nu am spus nimic, pentru că pentru mine părea deja decis. Obiecția mea ar fi fost că avem prea puține persoane pentru noua sarcină." },
+            { "language": "sq", "text": "Në të vërtetë nuk thashë asgjë, sepse për mua dukej sikur ishte vendosur tashmë. Kundërshtimi im do të ishte se kemi shumë pak njerëz për detyrën e re." }
+          ],
+          "function": "quiet-member-input"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "learner",
+          "baseText": "Danke, genau solche Hinweise brauchen wir vor der Entscheidung. Ich schlage vor: Jede Person nennt jetzt einen Punkt, der für die Entscheidung wichtig ist, ohne ihn sofort zu bewerten.",
+          "translations": [
+            { "language": "en", "text": "Thank you; we need exactly that kind of input before the decision. I suggest this: each person now names one point that matters for the decision, without evaluating it immediately." },
+            { "language": "fa", "text": "ممنون، دقیقاً قبل از تصمیم به چنین نکته‌هایی نیاز داریم. پیشنهاد می‌کنم الان هر نفر یک نکته را بگوید که برای تصمیم مهم است، بدون اینکه فوراً ارزیابی‌اش کنیم." },
+            { "language": "ar", "text": "شكرًا، نحتاج بالضبط إلى مثل هذه الملاحظات قبل القرار. أقترح أن يذكر كل شخص الآن نقطة واحدة مهمة للقرار، من دون تقييمها فورًا." },
+            { "language": "tr", "text": "Teşekkürler, karardan önce tam da böyle bilgilere ihtiyacımız var. Şunu öneriyorum: şimdi herkes karar için önemli olan bir noktayı söylesin, hemen değerlendirmeden." },
+            { "language": "ru", "text": "Спасибо, именно такие замечания нам нужны до решения. Я предлагаю: каждый сейчас называет один пункт, важный для решения, без немедленной оценки." },
+            { "language": "ckb", "text": "سوپاس، پێش بڕیار پێویستمان بە هەمان ئەو جۆرە تێبینییانە هەیە. پێشنیارم ئەوەیە: ئێستا هەر کەس خاڵێک ناوببەیت کە بۆ بڕیارەکە گرنگە، بەبێ ئەوەی دەستبەجێ هەڵسەنگاندنی بکەین." },
+            { "language": "kmr", "text": "Spas, berî biryarê em rast hewceyê nîşanên wisa ne. Ez pêşniyar dikim: niha her kes xalekê nav bike ku ji bo biryarê girîng e, bê ku em tavilê wê binirxînin." },
+            { "language": "pl", "text": "Dziękuję, właśnie takich wskazówek potrzebujemy przed decyzją. Proponuję: każda osoba podaje teraz jeden punkt ważny dla decyzji, bez natychmiastowej oceny." },
+            { "language": "ro", "text": "Mulțumesc, exact de astfel de observații avem nevoie înainte de decizie. Propun ca fiecare persoană să numească acum un punct important pentru decizie, fără să îl evaluăm imediat." },
+            { "language": "sq", "text": "Faleminderit, pikërisht këto vërejtje na duhen para vendimit. Propozoj që tani çdo person të përmendë një pikë të rëndësishme për vendimin, pa e vlerësuar menjëherë." }
+          ],
+          "function": "structured-participation"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "speaker",
+          "baseText": "Einverstanden, aber wir dürfen nicht den ganzen Abend sammeln. Irgendwann muss jemand den Vorschlag zusammenführen.",
+          "translations": [
+            { "language": "en", "text": "Agreed, but we must not spend the whole evening collecting points. At some point someone has to bring the proposal together." },
+            { "language": "fa", "text": "موافقم، اما نباید کل شب فقط نکته جمع کنیم. بالاخره باید کسی پیشنهاد را جمع‌بندی کند." },
+            { "language": "ar", "text": "موافق، لكن لا يجوز أن نقضي المساء كله في جمع النقاط. في لحظة ما يجب أن يجمع شخص ما الاقتراح." },
+            { "language": "tr", "text": "Katılıyorum, ama bütün akşam nokta toplamamalıyız. Bir noktada birinin öneriyi bir araya getirmesi gerekir." },
+            { "language": "ru", "text": "Согласен, но мы не должны весь вечер собирать пункты. В какой-то момент кто-то должен свести предложение воедино." },
+            { "language": "ckb", "text": "ڕازیم، بەڵام نابێت هەموو ئێوارەکە تەنها خاڵ کۆبکەینەوە. لە کاتێکدا دەبێت کەسێک پێشنیارەکە کۆبکاتەوە." },
+            { "language": "kmr", "text": "Ez razî me, lê divê em hemû êvarê tenê xalan kom nekin. Di demekê de divê kesek pêşniyarê bîne hev." },
+            { "language": "pl", "text": "Zgoda, ale nie możemy zbierać punktów przez cały wieczór. W pewnym momencie ktoś musi zebrać propozycję w całość." },
+            { "language": "ro", "text": "De acord, dar nu putem aduna puncte toată seara. La un moment dat cineva trebuie să unească propunerea." },
+            { "language": "sq", "text": "Dakord, por nuk duhet të mbledhim pika gjithë mbrëmjen. Në një moment dikush duhet ta bashkojë propozimin." }
+          ],
+          "function": "time-concern"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "learner",
+          "baseText": "Dann begrenzen wir es: fünf Minuten Sammlung, danach formuliere ich einen Vorschlag mit offenen Risiken. Danach prüfen wir, ob jemand einen schweren Einwand hat.",
+          "translations": [
+            { "language": "en", "text": "Then we will limit it: five minutes of collecting points, then I will formulate a proposal with open risks. After that we check whether anyone has a serious objection." },
+            { "language": "fa", "text": "پس آن را محدود می‌کنیم: پنج دقیقه جمع‌آوری نکته‌ها، بعد من پیشنهادی با ریسک‌های باز صورت‌بندی می‌کنم. سپس بررسی می‌کنیم آیا کسی اعتراض جدی دارد یا نه." },
+            { "language": "ar", "text": "إذن نحدده: خمس دقائق لجمع النقاط، ثم أصوغ اقتراحًا مع المخاطر المفتوحة. بعد ذلك نتحقق هل لدى أحد اعتراض جدي." },
+            { "language": "tr", "text": "O zaman sınır koyalım: beş dakika nokta toplama, sonra açık risklerle bir öneri formüle edeceğim. Ardından kimsede ağır bir itiraz var mı diye kontrol ederiz." },
+            { "language": "ru", "text": "Тогда ограничим это: пять минут сбора пунктов, затем я сформулирую предложение с открытыми рисками. После этого проверим, есть ли у кого-то серьезное возражение." },
+            { "language": "ckb", "text": "ئەوا سنووری بۆ دادەنێین: پێنج خولەک کۆکردنەوەی خاڵەکان، پاشان من پێشنیارێک لەگەڵ مەترسییە کراوەکان دادەڕێژم. دوای ئەوە دەپشکنین ئایا کەسێک ناڕەزایییەکی قورس هەیە یان نا." },
+            { "language": "kmr", "text": "Hingê em wê sînordar dikin: pênc xulek komkirina xalan, paşê ez pêşniyarek bi rîskên vekirî formule dikim. Paşê em kontrol dikin ka kesek nerazîbûneke giran heye an na." },
+            { "language": "pl", "text": "W takim razie ograniczamy to: pięć minut zbierania punktów, potem sformułuję propozycję z otwartymi ryzykami. Następnie sprawdzimy, czy ktoś ma poważne zastrzeżenie." },
+            { "language": "ro", "text": "Atunci o limităm: cinci minute pentru strângerea punctelor, apoi formulez o propunere cu riscurile deschise. După aceea verificăm dacă cineva are o obiecție serioasă." },
+            { "language": "sq", "text": "Atëherë e kufizojmë: pesë minuta mbledhje pikash, pastaj unë formuloj një propozim me rreziqet e hapura. Më pas kontrollojmë nëse dikush ka një kundërshtim serioz." }
+          ],
+          "function": "timeboxed-decision"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "member",
+          "baseText": "So kann ich mitgehen. Dann zählt mein Einwand, ohne dass wir die Erfahrung der anderen ausbremsen.",
+          "translations": [
+            { "language": "en", "text": "I can go along with that. Then my objection counts without us slowing down the experience of the others." },
+            { "language": "fa", "text": "با این می‌توانم همراه شوم. آن‌وقت اعتراض من حساب می‌شود، بدون اینکه تجربه دیگران را کند کنیم." },
+            { "language": "ar", "text": "يمكنني الموافقة على ذلك. عندها يُحتسب اعتراضي من دون أن نبطئ خبرة الآخرين." },
+            { "language": "tr", "text": "Buna katılabilirim. O zaman itirazım hesaba katılır, başkalarının deneyimini yavaşlatmadan." },
+            { "language": "ru", "text": "С этим я могу согласиться. Тогда мое возражение учитывается, не замедляя опыт других." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ ئەمە بڕۆم. ئەوسا ناڕەزاییم حساب دەکرێت، بەبێ ئەوەی ئەزموونی ئەوانی تر خاو بکەینەوە." },
+            { "language": "kmr", "text": "Ez dikarim bi vê re biçim. Hingê nerazîbûna min tê hesibandin, bê ku em ezmûna yên din hêdî bikin." },
+            { "language": "pl", "text": "Z tym mogę się zgodzić. Wtedy moje zastrzeżenie się liczy, bez hamowania doświadczenia innych." },
+            { "language": "ro", "text": "Cu asta pot merge mai departe. Atunci obiecția mea contează, fără să încetinim experiența celorlalți." },
+            { "language": "sq", "text": "Me këtë mund të pajtohem. Atëherë kundërshtimi im merret parasysh, pa ngadalësuar përvojën e të tjerëve." }
+          ],
+          "function": "shared-acceptance"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 1,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Bevor wir zur Entscheidung springen, möchte ich kurz den Prozess benennen: Gerade sprechen vor allem zwei Personen, während mehrere andere noch gar nicht zu Wort gekommen sind.",
+              "translations": [
+                { "language": "en", "text": "Before we jump to the decision, I would like to briefly name the process: right now mainly two people are speaking, while several others have not yet had a chance to speak." },
+                { "language": "fa", "text": "قبل از اینکه مستقیم سراغ تصمیم برویم، می‌خواهم کوتاه فرایند را نام ببرم: الان بیشتر دو نفر صحبت می‌کنند، در حالی که چند نفر دیگر هنوز اصلاً فرصت حرف زدن نداشته‌اند." },
+                { "language": "ar", "text": "قبل أن نقفز إلى القرار، أود أن أسمي العملية باختصار: الآن يتحدث أساسًا شخصان، بينما لم يحصل عدة آخرين بعد على فرصة للكلام." },
+                { "language": "tr", "text": "Karara atlamadan önce süreci kısaca adlandırmak istiyorum: şu anda ağırlıklı olarak iki kişi konuşuyor, birkaç kişi ise henüz söz almadı." },
+                { "language": "ru", "text": "Прежде чем мы перейдем к решению, я хочу коротко назвать процесс: сейчас в основном говорят два человека, а несколько других еще совсем не получили слова." },
+                { "language": "ckb", "text": "پێش ئەوەی بپەڕینە سەر بڕیار، دەمەوێت بە کورتی ڕێکارەکە ناوببەم: ئێستا بە تایبەتی دوو کەس قسە دەکەن، لە کاتێکدا چەند کەسی تر هێشتا هیچ دەرفەتی قسەکردنیان نەبووە." },
+                { "language": "kmr", "text": "Berî ku em biçin ser biryarê, ez dixwazim pêvajoyê bi kurtî nav bikim: niha herî zêde du kes diaxivin, lê çend kesên din hêj gotin negirtine." },
+                { "language": "pl", "text": "Zanim przejdziemy do decyzji, chciałbym/chciałabym krótko nazwać proces: teraz mówią głównie dwie osoby, a kilka innych jeszcze w ogóle nie doszło do głosu." },
+                { "language": "ro", "text": "Înainte să sărim la decizie, aș vrea să numesc pe scurt procesul: acum vorbesc mai ales două persoane, în timp ce alte câteva încă nu au apucat să vorbească." },
+                { "language": "sq", "text": "Para se të kalojmë te vendimi, dua ta emërtoj shkurt procesin: tani po flasin kryesisht dy persona, ndërsa disa të tjerë ende nuk kanë marrë fare fjalën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort benennt den Prozess, ohne einzelne Personen als Problem zu etikettieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer names the process without labeling individual people as the problem." },
+                { "language": "fa", "text": "درست است: پاسخ فرایند را نام می‌برد، بدون اینکه افراد مشخص را به‌عنوان مشکل برچسب بزند." },
+                { "language": "ar", "text": "صحيح: تسمي الإجابة العملية من دون وصف أشخاص بعينهم بأنهم المشكلة." },
+                { "language": "tr", "text": "Doğru: cevap süreci adlandırır, tek tek kişileri sorun olarak etiketlemez." },
+                { "language": "ru", "text": "Правильно: ответ называет процесс, не навешивая на отдельных людей ярлык проблемы." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە ڕێکار ناودەبات، بەبێ ئەوەی کەسانی دیاریکراو وەک کێشە ناوبنێت." },
+                { "language": "kmr", "text": "Rast e: bersiv pêvajoyê nav dike, bê ku kesên taybet wek pirsgirêk binav bike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nazywa proces, nie etykietując pojedynczych osób jako problemu." },
+                { "language": "ro", "text": "Corect: răspunsul numește procesul fără să eticheteze persoane individuale ca problemă." },
+                { "language": "sq", "text": "Saktë: përgjigjja e emërton procesin pa i etiketuar persona të veçantë si problem." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ihr zwei entscheidet hier gerade wieder alles allein.",
+              "translations": [
+                { "language": "en", "text": "You two are again deciding everything here on your own." },
+                { "language": "fa", "text": "شما دو نفر باز دارید اینجا همه چیز را خودتان تصمیم می‌گیرید." },
+                { "language": "ar", "text": "أنتما الاثنان تقرران هنا كل شيء وحدكما مرة أخرى." },
+                { "language": "tr", "text": "Siz ikiniz burada yine her şeye tek başınıza karar veriyorsunuz." },
+                { "language": "ru", "text": "Вы двое опять здесь решаете все сами." },
+                { "language": "ckb", "text": "ئێوە دوو کەس دیسان لێرە هەموو شتێک بە تەنها بڕیار دەدەن." },
+                { "language": "kmr", "text": "Hûn her du kes dîsa li vir her tiştî bi xwe biryar didin." },
+                { "language": "pl", "text": "Wy dwoje znowu decydujecie tutaj o wszystkim sami." },
+                { "language": "ro", "text": "Voi doi decideți din nou aici totul singuri." },
+                { "language": "sq", "text": "Ju të dy po vendosni përsëri gjithçka vetë këtu." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu personalisiert: Die Antwort trifft einen wunden Punkt, macht aber sofort Personen zum Problem.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too personalized: the answer touches a real issue, but immediately makes people the problem." },
+                { "language": "fa", "text": "بیش از حد شخصی است: پاسخ به مسئله واقعی اشاره می‌کند، اما فوراً افراد را مشکل معرفی می‌کند." },
+                { "language": "ar", "text": "شخصي جدًا: تلمس الإجابة نقطة حقيقية، لكنها تجعل الأشخاص أنفسهم المشكلة فورًا." },
+                { "language": "tr", "text": "Fazla kişisel: cevap gerçek bir noktaya dokunur, ama hemen kişileri sorun haline getirir." },
+                { "language": "ru", "text": "Слишком персонализировано: ответ затрагивает реальную проблему, но сразу делает людей проблемой." },
+                { "language": "ckb", "text": "زۆر کەسییە: وەڵامەکە خاڵێکی ڕاست دەگرێت، بەڵام دەستبەجێ کەسان دەکاتە کێشە." },
+                { "language": "kmr", "text": "Pir kesane ye: bersiv xalek rast digire, lê tavilê kesan dike pirsgirêk." },
+                { "language": "pl", "text": "Zbyt personalnie: odpowiedź dotyka realnego punktu, ale natychmiast robi z osób problem." },
+                { "language": "ro", "text": "Prea personalizat: răspunsul atinge o problemă reală, dar transformă imediat persoanele în problemă." },
+                { "language": "sq", "text": "Shumë personale: përgjigjja prek një pikë reale, por menjëherë i bën njerëzit problem." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Genau diese Erfahrung brauchen wir. Ich würde sie nur gern vom Entscheidungsweg trennen: erst Informationen, dann Bedenken, dann eine klare Entscheidung mit Zustimmung der Gruppe.",
+              "translations": [
+                { "language": "en", "text": "We need exactly that experience. I would just like to separate it from the decision path: first information, then concerns, then a clear decision with the group's agreement." },
+                { "language": "fa", "text": "دقیقاً به همین تجربه نیاز داریم. فقط دوست دارم آن را از مسیر تصمیم جدا کنیم: اول اطلاعات، بعد نگرانی‌ها، بعد تصمیم روشن با موافقت گروه." },
+                { "language": "ar", "text": "نحن نحتاج بالضبط إلى هذه الخبرة. أود فقط أن أفصلها عن مسار القرار: أولًا المعلومات، ثم المخاوف، ثم قرار واضح بموافقة المجموعة." },
+                { "language": "tr", "text": "Tam da bu deneyime ihtiyacımız var. Sadece bunu karar yolundan ayırmak isterim: önce bilgi, sonra kaygılar, sonra grubun onayıyla net bir karar." },
+                { "language": "ru", "text": "Именно этот опыт нам нужен. Я только хотел бы отделить его от пути принятия решения: сначала информация, затем опасения, затем ясное решение с согласием группы." },
+                { "language": "ckb", "text": "هەمان ئەو ئەزموونەمان پێویستە. تەنها دەمەوێت لە ڕێڕەوی بڕیار جیای بکەینەوە: سەرەتا زانیاری، پاشان نیگەرانی، پاشان بڕیارێکی ڕوون بە ڕەزامەندی گرووپ." },
+                { "language": "kmr", "text": "Em rast wê ezmûnê hewce dikin. Ez tenê dixwazim wê ji rêya biryarê cuda bikim: pêşî agahî, paşê xem, paşê biryareke zelal bi razîbûna komê." },
+                { "language": "pl", "text": "Właśnie tego doświadczenia potrzebujemy. Chciałbym/Chciałabym tylko oddzielić je od ścieżki decyzji: najpierw informacje, potem obawy, potem jasna decyzja za zgodą grupy." },
+                { "language": "ro", "text": "Avem nevoie exact de această experiență. Aș vrea doar să o separ de drumul deciziei: mai întâi informații, apoi rezerve, apoi o decizie clară cu acordul grupului." },
+                { "language": "sq", "text": "Pikërisht këtë përvojë na duhet. Vetëm do të doja ta ndaja nga rruga e vendimit: fillimisht informacionet, pastaj shqetësimet, pastaj një vendim i qartë me miratimin e grupit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort würdigt Erfahrung und baut zugleich einen transparenten Entscheidungsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer values experience while building a transparent decision path." },
+                { "language": "fa", "text": "درست است: پاسخ تجربه را ارج می‌گذارد و همزمان مسیر تصمیم‌گیری شفافی می‌سازد." },
+                { "language": "ar", "text": "صحيح: تقدر الإجابة الخبرة وتبني في الوقت نفسه مسار قرار شفافًا." },
+                { "language": "tr", "text": "Doğru: cevap deneyimi takdir eder ve aynı zamanda şeffaf bir karar yolu kurar." },
+                { "language": "ru", "text": "Правильно: ответ ценит опыт и одновременно выстраивает прозрачный путь решения." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە ڕێز لە ئەزموون دەگرێت و هەمان کات ڕێڕەوی بڕیاری ڕوون دروست دەکات." },
+                { "language": "kmr", "text": "Rast e: bersiv ezmûnê qedir dike û di heman demê de rêyek biryarê ya zelal ava dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź docenia doświadczenie i jednocześnie buduje przejrzystą ścieżkę decyzji." },
+                { "language": "ro", "text": "Corect: răspunsul apreciază experiența și construiește în același timp un drum decizional transparent." },
+                { "language": "sq", "text": "Saktë: përgjigjja vlerëson përvojën dhe njëkohësisht ndërton një rrugë të qartë vendimmarrjeje." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Dann erklärt ihr kurz alles, und wir stimmen danach einfach ab.",
+              "translations": [
+                { "language": "en", "text": "Then you briefly explain everything, and afterwards we simply vote." },
+                { "language": "fa", "text": "پس شما کوتاه همه چیز را توضیح بدهید و بعد ما فقط رأی می‌گیریم." },
+                { "language": "ar", "text": "إذن اشرحوا كل شيء باختصار، وبعد ذلك نصوت ببساطة." },
+                { "language": "tr", "text": "O zaman siz kısaca her şeyi açıklayın, sonra da sadece oylayalım." },
+                { "language": "ru", "text": "Тогда вы коротко все объясните, а потом мы просто проголосуем." },
+                { "language": "ckb", "text": "ئەوا ئێوە بە کورتی هەموو شتێک ڕوون بکەنەوە، پاشان ئێمە تەنها دەنگ دەدەین." },
+                { "language": "kmr", "text": "Hingê hûn her tiştî bi kurtî rave bikin, paşê em tenê deng bidin." },
+                { "language": "pl", "text": "W takim razie krótko wszystko wyjaśnijcie, a potem po prostu zagłosujemy." },
+                { "language": "ro", "text": "Atunci explicați pe scurt totul, iar apoi pur și simplu votăm." },
+                { "language": "sq", "text": "Atëherë shpjegoni shkurt gjithçka dhe pastaj thjesht votojmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu dünn: Die Antwort nutzt Erfahrung, öffnet aber keine echte Beteiligung vor der Entscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too thin: the answer uses experience, but does not open real participation before the decision." },
+                { "language": "fa", "text": "کم‌عمق است: پاسخ از تجربه استفاده می‌کند، اما پیش از تصمیم مشارکت واقعی باز نمی‌کند." },
+                { "language": "ar", "text": "سطحي جدًا: تستخدم الإجابة الخبرة، لكنها لا تفتح مشاركة حقيقية قبل القرار." },
+                { "language": "tr", "text": "Yetersiz: cevap deneyimi kullanır, ama karardan önce gerçek katılım açmaz." },
+                { "language": "ru", "text": "Слишком поверхностно: ответ использует опыт, но не открывает реального участия перед решением." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە ئەزموون بەکاردەهێنێت، بەڵام پێش بڕیار بەشداریی ڕاستەقینە ناکاتەوە." },
+                { "language": "kmr", "text": "Pir lawaz e: bersiv ezmûnê bi kar tîne, lê berî biryarê beşdariyeke rast venake." },
+                { "language": "pl", "text": "Zbyt płytko: odpowiedź wykorzystuje doświadczenie, ale nie otwiera realnego udziału przed decyzją." },
+                { "language": "ro", "text": "Prea subțire: răspunsul folosește experiența, dar nu deschide participare reală înainte de decizie." },
+                { "language": "sq", "text": "Shumë e cekët: përgjigjja përdor përvojën, por nuk hap pjesëmarrje reale para vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 5,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Nein, mir geht es nicht um Schuld. Ich beschreibe eine Wirkung: Wenn zwei Stimmen sehr schnell Richtung vorgeben, prüfen die anderen ihre Einwände oft gar nicht mehr laut.",
+              "translations": [
+                { "language": "en", "text": "No, I am not talking about blame. I am describing an effect: when two voices set the direction very quickly, the others often no longer test their objections aloud." },
+                { "language": "fa", "text": "نه، بحث من سر تقصیر نیست. دارم یک اثر را توصیف می‌کنم: وقتی دو صدا خیلی سریع جهت را تعیین می‌کنند، دیگران اغلب اعتراض‌های خود را اصلاً با صدای بلند بررسی نمی‌کنند." },
+                { "language": "ar", "text": "لا، لا أتحدث عن اللوم. أنا أصف أثرًا: عندما تحدد صوتان الاتجاه بسرعة كبيرة، غالبًا لا يختبر الآخرون اعتراضاتهم بصوت عالٍ." },
+                { "language": "tr", "text": "Hayır, mesele suç değil. Bir etkiyi tarif ediyorum: iki ses çok hızlı yön verdiğinde, diğerleri itirazlarını çoğu zaman artık yüksek sesle yoklamıyor." },
+                { "language": "ru", "text": "Нет, речь не о вине. Я описываю эффект: когда два голоса очень быстро задают направление, другие часто уже не проверяют свои возражения вслух." },
+                { "language": "ckb", "text": "نەخێر، بابەتەکە بەرپرسیاری کەسی نییە. من کاریگەرییەک وەسف دەکەم: کاتێک دوو دەنگ زۆر خێرا ئاراستە دیاری دەکەن، ئەوانی تر زۆرجار چیتر ناڕەزاییەکانیان بە دەنگی بەرز ناپشکنن." },
+                { "language": "kmr", "text": "Na, mijar ne sûc e. Ez bandorekê şirove dikim: dema du deng gelek zû rê nîşan didin, yên din gelek caran êdî nerazîbûnên xwe bi dengê bilind venakolin." },
+                { "language": "pl", "text": "Nie, nie chodzi mi o winę. Opisuję efekt: gdy dwa głosy bardzo szybko wyznaczają kierunek, inni często nie sprawdzają już swoich zastrzeżeń na głos." },
+                { "language": "ro", "text": "Nu, nu vorbesc despre vină. Descriu un efect: când două voci dau direcția foarte repede, ceilalți adesea nu își mai testează obiecțiile cu voce tare." },
+                { "language": "sq", "text": "Jo, nuk e kam fjalën për faj. Po përshkruaj një efekt: kur dy zëra e japin shumë shpejt drejtimin, të tjerët shpesh nuk i provojnë më kundërshtimet me zë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort verschiebt die Ebene von persönlicher Schuld zu beobachtbarer Wirkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer shifts the level from personal blame to observable effect." },
+                { "language": "fa", "text": "درست است: پاسخ سطح بحث را از تقصیر شخصی به اثر قابل مشاهده منتقل می‌کند." },
+                { "language": "ar", "text": "صحيح: تنقل الإجابة المستوى من اللوم الشخصي إلى الأثر القابل للملاحظة." },
+                { "language": "tr", "text": "Doğru: cevap düzeyi kişisel suçtan gözlemlenebilir etkiye kaydırır." },
+                { "language": "ru", "text": "Правильно: ответ смещает уровень с личной вины на наблюдаемый эффект." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە ئاستەکە لە بەرپرسیاری کەسی دەگوازێتەوە بۆ کاریگەریی بینراو." },
+                { "language": "kmr", "text": "Rast e: bersiv astê ji sûcdarkirina kesane diguhezîne ser bandora dîtbar." },
+                { "language": "pl", "text": "Dobrze: odpowiedź przenosi poziom z osobistej winy na obserwowalny efekt." },
+                { "language": "ro", "text": "Corect: răspunsul mută nivelul de la vina personală la efectul observabil." },
+                { "language": "sq", "text": "Saktë: përgjigjja e zhvendos nivelin nga faji personal te efekti i vëzhgueshëm." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Es fühlt sich nur so an, als würden andere nicht richtig mitgenommen.",
+              "translations": [
+                { "language": "en", "text": "It just feels as if others are not really being included." },
+                { "language": "fa", "text": "فقط این حس هست که انگار دیگران واقعاً همراه نمی‌شوند." },
+                { "language": "ar", "text": "الأمر يبدو فقط كأن الآخرين لا يُشركون حقًا." },
+                { "language": "tr", "text": "Sadece başkaları gerçekten dahil edilmiyor gibi geliyor." },
+                { "language": "ru", "text": "Просто возникает ощущение, что других по-настоящему не включают." },
+                { "language": "ckb", "text": "تەنها وا هەست دەکرێت کە ئەوانی تر بە ڕاستی لەگەڵ خۆمان نابەین." },
+                { "language": "kmr", "text": "Tenê wisa hest dibe ku yên din bi rastî nayên tevlîkirin." },
+                { "language": "pl", "text": "Po prostu mam wrażenie, że inni nie są naprawdę włączani." },
+                { "language": "ro", "text": "Doar se simte ca și cum ceilalți nu sunt incluși cu adevărat." },
+                { "language": "sq", "text": "Thjesht duket sikur të tjerët nuk përfshihen vërtet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort ist weniger angreifend, aber sie bleibt ohne konkreten beobachtbaren Mechanismus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the answer is less attacking, but remains without a concrete observable mechanism." },
+                { "language": "fa", "text": "بیش از حد مبهم است: پاسخ کمتر حمله‌آمیز است، اما سازوکار قابل مشاهده‌ای را مشخص نمی‌کند." },
+                { "language": "ar", "text": "غامض جدًا: الإجابة أقل هجومية، لكنها تبقى بلا آلية محددة قابلة للملاحظة." },
+                { "language": "tr", "text": "Fazla belirsiz: cevap daha az saldırgan, ama somut gözlemlenebilir bir mekanizma sunmuyor." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ менее атакующий, но остается без конкретного наблюдаемого механизма." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە کەمتر هێرشکارە، بەڵام بێ میکانیزمی دیاریکراوی بینراو دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv kêmtir êrîşkar e, lê bê mekanîzmayeke berbiçav dimîne." },
+                { "language": "pl", "text": "Zbyt niejasne: odpowiedź mniej atakuje, ale pozostaje bez konkretnego obserwowalnego mechanizmu." },
+                { "language": "ro", "text": "Prea vag: răspunsul atacă mai puțin, dar rămâne fără un mecanism concret observabil." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja është më pak sulmuese, por mbetet pa mekanizëm konkret të vëzhgueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 7,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Danke, genau solche Hinweise brauchen wir vor der Entscheidung. Ich schlage vor: Jede Person nennt jetzt einen Punkt, der für die Entscheidung wichtig ist, ohne ihn sofort zu bewerten.",
+              "translations": [
+                { "language": "en", "text": "Thank you; we need exactly that kind of input before the decision. I suggest this: each person now names one point that matters for the decision, without evaluating it immediately." },
+                { "language": "fa", "text": "ممنون، دقیقاً قبل از تصمیم به چنین نکته‌هایی نیاز داریم. پیشنهاد می‌کنم الان هر نفر یک نکته را بگوید که برای تصمیم مهم است، بدون اینکه فوراً ارزیابی‌اش کنیم." },
+                { "language": "ar", "text": "شكرًا، نحتاج بالضبط إلى مثل هذه الملاحظات قبل القرار. أقترح أن يذكر كل شخص الآن نقطة واحدة مهمة للقرار، من دون تقييمها فورًا." },
+                { "language": "tr", "text": "Teşekkürler, karardan önce tam da böyle bilgilere ihtiyacımız var. Şunu öneriyorum: şimdi herkes karar için önemli olan bir noktayı söylesin, hemen değerlendirmeden." },
+                { "language": "ru", "text": "Спасибо, именно такие замечания нам нужны до решения. Я предлагаю: каждый сейчас называет один пункт, важный для решения, без немедленной оценки." },
+                { "language": "ckb", "text": "سوپاس، پێش بڕیار پێویستمان بە هەمان ئەو جۆرە تێبینییانە هەیە. پێشنیارم ئەوەیە: ئێستا هەر کەس خاڵێک ناوببەیت کە بۆ بڕیارەکە گرنگە، بەبێ ئەوەی دەستبەجێ هەڵسەنگاندنی بکەین." },
+                { "language": "kmr", "text": "Spas, berî biryarê em rast hewceyê nîşanên wisa ne. Ez pêşniyar dikim: niha her kes xalekê nav bike ku ji bo biryarê girîng e, bê ku em tavilê wê binirxînin." },
+                { "language": "pl", "text": "Dziękuję, właśnie takich wskazówek potrzebujemy przed decyzją. Proponuję: każda osoba podaje teraz jeden punkt ważny dla decyzji, bez natychmiastowej oceny." },
+                { "language": "ro", "text": "Mulțumesc, exact de astfel de observații avem nevoie înainte de decizie. Propun ca fiecare persoană să numească acum un punct important pentru decizie, fără să îl evaluăm imediat." },
+                { "language": "sq", "text": "Faleminderit, pikërisht këto vërejtje na duhen para vendimit. Propozoj që tani çdo person të përmendë një pikë të rëndësishme për vendimin, pa e vlerësuar menjëherë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort verwandelt Zurückhaltung in strukturierte Beteiligung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer turns reserve into structured participation." },
+                { "language": "fa", "text": "درست است: پاسخ سکوت و احتیاط را به مشارکت ساختارمند تبدیل می‌کند." },
+                { "language": "ar", "text": "صحيح: تحول الإجابة التحفظ إلى مشاركة منظمة." },
+                { "language": "tr", "text": "Doğru: cevap çekingenliği yapılandırılmış katılıma dönüştürür." },
+                { "language": "ru", "text": "Правильно: ответ превращает сдержанность в структурированное участие." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە خۆگرتن دەگۆڕێت بۆ بەشداریی ڕێکخراو." },
+                { "language": "kmr", "text": "Rast e: bersiv xwe-girtinê diguhezîne beşdariya rêkûpêk." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zmienia powściągliwość w uporządkowany udział." },
+                { "language": "ro", "text": "Corect: răspunsul transformă reținerea în participare structurată." },
+                { "language": "sq", "text": "Saktë: përgjigjja e kthen rezervimin në pjesëmarrje të strukturuar." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Gut, dann sagen jetzt zuerst die Stilleren etwas.",
+              "translations": [
+                { "language": "en", "text": "Good, then the quieter people should say something first now." },
+                { "language": "fa", "text": "خوب، پس حالا اول کم‌حرف‌ترها چیزی بگویند." },
+                { "language": "ar", "text": "حسنًا، إذن ليتكلم الأكثر هدوءًا أولًا الآن." },
+                { "language": "tr", "text": "Tamam, o zaman şimdi önce daha sessiz olanlar bir şey söylesin." },
+                { "language": "ru", "text": "Хорошо, тогда пусть сейчас сначала что-нибудь скажут более тихие участники." },
+                { "language": "ckb", "text": "باشە، ئەوا ئێستا سەرەتا ئەوانەی کەمتر قسە دەکەن شتێک بڵێن." },
+                { "language": "kmr", "text": "Baş e, hingê bila niha pêşî yên bêdengtir tiştek bibêjin." },
+                { "language": "pl", "text": "Dobrze, to teraz najpierw niech coś powiedzą ci cichsi." },
+                { "language": "ro", "text": "Bine, atunci să spună acum ceva mai întâi cei mai tăcuți." },
+                { "language": "sq", "text": "Mirë, atëherë tani të flasin fillimisht ata më të heshturit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu exponierend: Die Antwort öffnet Beteiligung, stellt aber die stilleren Personen sichtbar heraus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too exposing: the answer opens participation, but visibly singles out the quieter people." },
+                { "language": "fa", "text": "بیش از حد در معرض قراردهنده است: پاسخ مشارکت را باز می‌کند، اما افراد کم‌حرف‌تر را آشکارا جدا می‌کند." },
+                { "language": "ar", "text": "كاشف جدًا: تفتح الإجابة المشاركة، لكنها تبرز الأشخاص الأكثر هدوءًا بشكل واضح." },
+                { "language": "tr", "text": "Fazla açığa çıkarıcı: cevap katılımı açar, ama daha sessiz kişileri görünür biçimde ayırır." },
+                { "language": "ru", "text": "Слишком выставляет: ответ открывает участие, но заметно выделяет более тихих людей." },
+                { "language": "ckb", "text": "زۆر ئاشکرا دەکات: وەڵامەکە بەشداری دەکاتەوە، بەڵام کەسانی بێدەنگتر بە دیاری جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Pir eşkere dike: bersiv beşdariyê vedike, lê kesên bêdengtir bi eşkere cuda dike." },
+                { "language": "pl", "text": "Zbyt wystawia: odpowiedź otwiera udział, ale widocznie wyodrębnia cichsze osoby." },
+                { "language": "ro", "text": "Prea expune: răspunsul deschide participarea, dar îi scoate vizibil în evidență pe cei mai tăcuți." },
+                { "language": "sq", "text": "Shumë ekspozuese: përgjigjja hap pjesëmarrjen, por i veçon dukshëm personat më të heshtur." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 9,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dann begrenzen wir es: fünf Minuten Sammlung, danach formuliere ich einen Vorschlag mit offenen Risiken. Danach prüfen wir, ob jemand einen schweren Einwand hat.",
+              "translations": [
+                { "language": "en", "text": "Then we will limit it: five minutes of collecting points, then I will formulate a proposal with open risks. After that we check whether anyone has a serious objection." },
+                { "language": "fa", "text": "پس آن را محدود می‌کنیم: پنج دقیقه جمع‌آوری نکته‌ها، بعد من پیشنهادی با ریسک‌های باز صورت‌بندی می‌کنم. سپس بررسی می‌کنیم آیا کسی اعتراض جدی دارد یا نه." },
+                { "language": "ar", "text": "إذن نحدده: خمس دقائق لجمع النقاط، ثم أصوغ اقتراحًا مع المخاطر المفتوحة. بعد ذلك نتحقق هل لدى أحد اعتراض جدي." },
+                { "language": "tr", "text": "O zaman sınır koyalım: beş dakika nokta toplama, sonra açık risklerle bir öneri formüle edeceğim. Ardından kimsede ağır bir itiraz var mı diye kontrol ederiz." },
+                { "language": "ru", "text": "Тогда ограничим это: пять минут сбора пунктов, затем я сформулирую предложение с открытыми рисками. После этого проверим, есть ли у кого-то серьезное возражение." },
+                { "language": "ckb", "text": "ئەوا سنووری بۆ دادەنێین: پێنج خولەک کۆکردنەوەی خاڵەکان، پاشان من پێشنیارێک لەگەڵ مەترسییە کراوەکان دادەڕێژم. دوای ئەوە دەپشکنین ئایا کەسێک ناڕەزایییەکی قورس هەیە یان نا." },
+                { "language": "kmr", "text": "Hingê em wê sînordar dikin: pênc xulek komkirina xalan, paşê ez pêşniyarek bi rîskên vekirî formule dikim. Paşê em kontrol dikin ka kesek nerazîbûneke giran heye an na." },
+                { "language": "pl", "text": "W takim razie ograniczamy to: pięć minut zbierania punktów, potem sformułuję propozycję z otwartymi ryzykami. Następnie sprawdzimy, czy ktoś ma poważne zastrzeżenie." },
+                { "language": "ro", "text": "Atunci o limităm: cinci minute pentru strângerea punctelor, apoi formulez o propunere cu riscurile deschise. După aceea verificăm dacă cineva are o obiecție serioasă." },
+                { "language": "sq", "text": "Atëherë e kufizojmë: pesë minuta mbledhje pikash, pastaj unë formuloj një propozim me rreziqet e hapura. Më pas kontrollojmë nëse dikush ka një kundërshtim serioz." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Beteiligung mit Zeitrahmen und einer klaren Entscheidungsprüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer connects participation with a time frame and a clear decision check." },
+                { "language": "fa", "text": "قوی است: پاسخ مشارکت را با چارچوب زمانی و بررسی روشن تصمیم پیوند می‌دهد." },
+                { "language": "ar", "text": "قوي: تربط الإجابة المشاركة بإطار زمني وفحص واضح للقرار." },
+                { "language": "tr", "text": "Güçlü: cevap katılımı zaman çerçevesi ve net bir karar kontrolüyle birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ связывает участие с временными рамками и ясной проверкой решения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەشداری بە چوارچێوەی کات و پشکنینی ڕوونی بڕیارەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv beşdariyê bi çarçoveya demê û kontrola biryara zelal ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy udział z ramą czasową i jasnym sprawdzeniem decyzji." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă participarea de un cadru de timp și de o verificare clară a deciziei." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh pjesëmarrjen me një kornizë kohore dhe një kontroll të qartë të vendimit." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Dann sammeln wir einfach noch ein paar Meinungen und entscheiden danach.",
+              "translations": [
+                { "language": "en", "text": "Then we will simply collect a few more opinions and decide afterwards." },
+                { "language": "fa", "text": "پس فقط چند نظر دیگر جمع می‌کنیم و بعد تصمیم می‌گیریم." },
+                { "language": "ar", "text": "إذن نجمع ببساطة بعض الآراء الأخرى ثم نقرر بعد ذلك." },
+                { "language": "tr", "text": "O zaman sadece birkaç görüş daha toplarız ve sonra karar veririz." },
+                { "language": "ru", "text": "Тогда мы просто соберем еще несколько мнений и потом решим." },
+                { "language": "ckb", "text": "ئەوا تەنها چەند بۆچوونێکی تر کۆدەکەینەوە و پاشان بڕیار دەدەین." },
+                { "language": "kmr", "text": "Hingê em tenê çend ramanên din kom dikin û paşê biryar didin." },
+                { "language": "pl", "text": "W takim razie po prostu zbierzemy jeszcze kilka opinii i potem zdecydujemy." },
+                { "language": "ro", "text": "Atunci pur și simplu mai adunăm câteva opinii și decidem după aceea." },
+                { "language": "sq", "text": "Atëherë thjesht mbledhim edhe disa mendime dhe pastaj vendosim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Die Antwort klingt inklusiv, aber ohne Zeitrahmen und Entscheidungsregel bleibt die Dynamik unverändert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open: the answer sounds inclusive, but without a time frame and decision rule the dynamic remains unchanged." },
+                { "language": "fa", "text": "بیش از حد باز است: پاسخ مشارکتی به نظر می‌رسد، اما بدون چارچوب زمانی و قاعده تصمیم، پویایی تغییری نمی‌کند." },
+                { "language": "ar", "text": "مفتوح جدًا: تبدو الإجابة شاملة، لكن من دون إطار زمني وقاعدة قرار تبقى الديناميكية كما هي." },
+                { "language": "tr", "text": "Fazla açık: cevap kapsayıcı duyulur, ama zaman çerçevesi ve karar kuralı olmadan dinamik değişmez." },
+                { "language": "ru", "text": "Слишком открыто: ответ звучит инклюзивно, но без временных рамок и правила решения динамика не меняется." },
+                { "language": "ckb", "text": "زۆر کراوەیە: وەڵامەکە گشتگیر دەردەکەوێت، بەڵام بێ چوارچێوەی کات و یاسای بڕیار دینامیکەکە ناگۆڕێت." },
+                { "language": "kmr", "text": "Pir vekirî ye: bersiv hemûparêz xuya dike, lê bê çarçoveya demê û rêgeztê biryarê dinamîk naguhere." },
+                { "language": "pl", "text": "Zbyt otwarte: odpowiedź brzmi włączająco, ale bez ramy czasowej i reguły decyzji dynamika się nie zmienia." },
+                { "language": "ro", "text": "Prea deschis: răspunsul sună incluziv, dar fără cadru de timp și regulă de decizie dinamica rămâne neschimbată." },
+                { "language": "sq", "text": "Shumë e hapur: përgjigjja tingëllon përfshirëse, por pa kornizë kohore dhe rregull vendimi dinamika mbetet e pandryshuar." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 1,
+          "feedbackType": "process-language",
+          "text": "In heiklen Gruppenmomenten ist Prozesssprache sicherer als Charakterurteil: Wer spricht? Wer wurde noch nicht gehört? Wie wird entschieden?",
+          "translations": [
+            { "language": "en", "text": "In delicate group moments, process language is safer than character judgment: who is speaking, who has not yet been heard, and how is the decision made?" },
+            { "language": "fa", "text": "در لحظه‌های حساس گروهی، زبان فرایند امن‌تر از داوری درباره شخصیت است: چه کسی حرف می‌زند؟ چه کسی هنوز شنیده نشده؟ تصمیم چگونه گرفته می‌شود؟" },
+            { "language": "ar", "text": "في لحظات المجموعة الحساسة، لغة العملية أكثر أمانًا من الحكم على الشخصية: من يتكلم؟ من لم يُسمع بعد؟ وكيف يُتخذ القرار؟" },
+            { "language": "tr", "text": "Hassas grup anlarında süreç dili, karakter yargısından daha güvenlidir: kim konuşuyor, kim henüz duyulmadı, karar nasıl alınıyor?" },
+            { "language": "ru", "text": "В тонкие групповые моменты язык процесса безопаснее оценки характера: кто говорит, кого еще не услышали и как принимается решение?" },
+            { "language": "ckb", "text": "لە ساتە هەستیارەکانی گرووپدا، زمانی ڕێکار ئارامترە لە دادوەریی کەسایەتی: کێ قسە دەکات؟ کێ هێشتا نەبیستراوە؟ بڕیار چۆن دەدرێت؟" },
+            { "language": "kmr", "text": "Di kêliyên hestyar ên komê de zimanê pêvajoyê ji dadbariya kesayetiyê ewletir e: kî diaxive, kî hêj nehatiye bihîstin, û biryar çawa tê dayîn?" },
+            { "language": "pl", "text": "W delikatnych momentach grupowych język procesu jest bezpieczniejszy niż ocena charakteru: kto mówi, kogo jeszcze nie usłyszano i jak zapada decyzja?" },
+            { "language": "ro", "text": "În momente delicate de grup, limbajul procesului este mai sigur decât judecata de caracter: cine vorbește, cine nu a fost încă auzit și cum se decide?" },
+            { "language": "sq", "text": "Në momente delikate grupi, gjuha e procesit është më e sigurt se gjykimi i karakterit: kush flet, kush nuk është dëgjuar ende dhe si merret vendimi?" }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "feedbackType": "value-experience",
+          "text": "Erfahrung wird nicht entwertet, wenn sie als Informationsquelle statt als automatische Entscheidungsmacht gerahmt wird.",
+          "translations": [
+            { "language": "en", "text": "Experience is not devalued when it is framed as a source of information rather than automatic decision power." },
+            { "language": "fa", "text": "تجربه کم‌ارزش نمی‌شود وقتی به‌عنوان منبع اطلاعات چارچوب‌بندی شود، نه قدرت تصمیم‌گیری خودکار." },
+            { "language": "ar", "text": "لا تُقلل الخبرة عندما تُؤطر كمصدر للمعلومات لا كسلطة قرار تلقائية." },
+            { "language": "tr", "text": "Deneyim, otomatik karar gücü değil de bilgi kaynağı olarak çerçevelendiğinde değersizleşmez." },
+            { "language": "ru", "text": "Опыт не обесценивается, если он оформляется как источник информации, а не как автоматическая власть решения." },
+            { "language": "ckb", "text": "ئەزموون کەم‌بەها ناکرێت کاتێک وەک سەرچاوەی زانیاری چوارچێوە دەکرێت، نە وەک دەسەڵاتی ئۆتۆماتیکی بڕیار." },
+            { "language": "kmr", "text": "Ezmûn kêmnirx nabe dema wek çavkaniya agahiyê bê çarçovekirin, ne wek hêza biryarê ya xweber." },
+            { "language": "pl", "text": "Doświadczenie nie jest umniejszane, gdy zostaje ujęte jako źródło informacji, a nie automatyczna władza decyzji." },
+            { "language": "ro", "text": "Experiența nu este devalorizată când este încadrată ca sursă de informații, nu ca putere automată de decizie." },
+            { "language": "sq", "text": "Përvoja nuk zhvlerësohet kur paraqitet si burim informacioni, jo si fuqi automatike vendimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 5,
+          "feedbackType": "depersonalize",
+          "text": "Eine C2-Moderation hält Spannung aus, ohne sie auf Personen zu verkürzen.",
+          "translations": [
+            { "language": "en", "text": "C2 moderation can hold tension without reducing it to individual people." },
+            { "language": "fa", "text": "گردانندگی در سطح C2 می‌تواند تنش را تحمل کند، بدون اینکه آن را به افراد تقلیل دهد." },
+            { "language": "ar", "text": "تستطيع إدارة الحوار في مستوى C2 تحمل التوتر من دون اختزاله في أشخاص." },
+            { "language": "tr", "text": "C2 düzeyinde moderasyon, gerilimi tek tek kişilere indirgemeden taşıyabilir." },
+            { "language": "ru", "text": "Модерация уровня C2 выдерживает напряжение, не сводя его к отдельным людям." },
+            { "language": "ckb", "text": "بەڕێوەبردنی C2 دەتوانێت گرژی هەڵبگرێت، بەبێ ئەوەی بیکاتە کەسانی دیاریکراو." },
+            { "language": "kmr", "text": "Moderasyona asta C2 dikare tengasiyê bigire bê ku wê bixe ser kesên taybet." },
+            { "language": "pl", "text": "Moderacja na poziomie C2 wytrzymuje napięcie, nie redukując go do pojedynczych osób." },
+            { "language": "ro", "text": "Moderarea la nivel C2 poate susține tensiunea fără să o reducă la persoane individuale." },
+            { "language": "sq", "text": "Moderimi në nivel C2 e mban tensionin pa e reduktuar te persona të veçantë." }
+          ]
+        },
+        {
+          "turnSortOrder": 9,
+          "feedbackType": "decision-format",
+          "text": "Beteiligung braucht eine Form: Zeitrahmen, Sammlung, Formulierung und klare Prüfung schwerer Einwände.",
+          "translations": [
+            { "language": "en", "text": "Participation needs a format: time frame, collection, formulation, and a clear check for serious objections." },
+            { "language": "fa", "text": "مشارکت به شکل نیاز دارد: چارچوب زمانی، جمع‌آوری، صورت‌بندی و بررسی روشن اعتراض‌های جدی." },
+            { "language": "ar", "text": "تحتاج المشاركة إلى شكل: إطار زمني، وجمع نقاط، وصياغة، وفحص واضح للاعتراضات الجدية." },
+            { "language": "tr", "text": "Katılım bir biçim ister: zaman çerçevesi, toplama, formülasyon ve ağır itirazların net kontrolü." },
+            { "language": "ru", "text": "Участию нужна форма: временные рамки, сбор, формулирование и ясная проверка серьезных возражений." },
+            { "language": "ckb", "text": "بەشداری پێویستی بە شێوە هەیە: چوارچێوەی کات، کۆکردنەوە، دابڕین و پشکنینی ڕوونی ناڕەزایییە قورسەکان." },
+            { "language": "kmr", "text": "Beşdarî hewceyê formekê ye: çarçoveya demê, komkirin, formulekirin û kontrola zelal a nerazîbûnên giran." },
+            { "language": "pl", "text": "Udział potrzebuje formy: ramy czasowej, zebrania punktów, sformułowania i jasnego sprawdzenia poważnych zastrzeżeń." },
+            { "language": "ro", "text": "Participarea are nevoie de formă: cadru de timp, strângere, formulare și verificare clară a obiecțiilor serioase." },
+            { "language": "sq", "text": "Pjesëmarrja ka nevojë për formë: kornizë kohore, mbledhje, formulim dhe kontroll të qartë të kundërshtimeve serioze." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "volunteer-group-moderation-table",
+          "placement": "detail-header",
+          "purpose": "Show a moderated volunteer group discussion with balanced participation.",
+          "altText": "Eine kleine freiwillige Gruppe sitzt an einem Tisch, während eine Person die Diskussion sichtbar strukturiert.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A small volunteer group sits at a table while one person visibly structures the discussion." },
+            { "language": "fa", "text": "یک گروه داوطلب کوچک دور میزی نشسته‌اند و یک نفر بحث را به‌صورت روشن ساختار می‌دهد." },
+            { "language": "ar", "text": "مجموعة تطوعية صغيرة تجلس حول طاولة بينما ينظم شخص واحد النقاش بشكل واضح." },
+            { "language": "tr", "text": "Küçük bir gönüllü grup bir masada oturur, bir kişi tartışmayı görünür biçimde yapılandırır." },
+            { "language": "ru", "text": "Небольшая добровольная группа сидит за столом, а один человек заметно структурирует обсуждение." },
+            { "language": "ckb", "text": "گرووپێکی بچووی خۆبەخش لەسەر مێزێک دانیشتوون، لە کاتێکدا کەسێک گفتوگۆکە بە ڕوونی ڕێک دەخات." },
+            { "language": "kmr", "text": "Komeke biçûk a dilxwaz li ser maseyekê rûniştine, dema kesek nîqaşê bi eşkere rêk dixe." },
+            { "language": "pl", "text": "Mała grupa wolontariacka siedzi przy stole, a jedna osoba widocznie strukturyzuje dyskusję." },
+            { "language": "ro", "text": "Un mic grup de voluntari stă la o masă, în timp ce o persoană structurează vizibil discuția." },
+            { "language": "sq", "text": "Një grup i vogël vullnetar ulet rreth një tavoline, ndërsa një person e strukturon qartë diskutimin." }
+          ],
+          "imagePrompt": "Clean educational illustration, small volunteer group around a meeting table, one person moderating with simple note cards, balanced calm participation, no text inside the image, no logos, no private data, accessible composition, neutral warm colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

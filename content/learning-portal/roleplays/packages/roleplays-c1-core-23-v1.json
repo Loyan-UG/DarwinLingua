@@ -1,0 +1,873 @@
+{
+  "packageId": "roleplays-c1-core-23-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 23 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 23",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ein-missverstaendnis-in-einer-seminardiskussion-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Ein Missverständnis in einer Seminardiskussion klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying a misunderstanding in a seminar discussion" },
+        { "language": "fa", "text": "روشن‌کردن یک سوءتفاهم در بحث سمیناری" },
+        { "language": "ar", "text": "توضيح سوء فهم في نقاش ندوة" },
+        { "language": "tr", "text": "Seminer tartışmasında bir yanlış anlaşılmayı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Прояснение недопонимания в семинарской дискуссии" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی تێنەگەیشتنێک لە گفتوگۆی سیمیناردا" },
+        { "language": "kmr", "text": "Zelalkirina şaş-têgihiştinekê di gotûbêja semînerê de" },
+        { "language": "pl", "text": "Wyjaśnianie nieporozumienia w dyskusji seminaryjnej" },
+        { "language": "ro", "text": "Clarificarea unei neînțelegeri într-o discuție de seminar" },
+        { "language": "sq", "text": "Sqarimi i një keqkuptimi në një diskutim seminari" }
+      ],
+      "description": "In einer anspruchsvollen Seminardiskussion wurde Ihre Aussage verkürzt oder falsch verstanden. Sie präzisieren Ihre Position, nehmen berechtigte Einwände auf und halten den Austausch sachlich.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a demanding seminar discussion, your statement was shortened or misunderstood. You clarify your position, take up valid objections, and keep the exchange factual." },
+        { "language": "fa", "text": "در یک بحث سمیناری دشوار، حرف شما کوتاه یا اشتباه فهمیده شده است. موضع خود را دقیق‌تر می‌کنید، اعتراض‌های درست را می‌پذیرید و گفت‌وگو را واقع‌بینانه و محترمانه نگه می‌دارید." },
+        { "language": "ar", "text": "في نقاش ندوة متقدم، اختُصرت عبارتك أو فُهمت بشكل خاطئ. توضح موقفك، وتستوعب الاعتراضات الوجيهة، وتحافظ على الطابع الموضوعي للتبادل." },
+        { "language": "tr", "text": "Zorlu bir seminer tartışmasında ifadeniz kısaltılmış ya da yanlış anlaşılmıştır. Konumunuzu netleştirir, haklı itirazları ele alır ve tartışmayı nesnel tutarsınız." },
+        { "language": "ru", "text": "В сложной семинарской дискуссии ваше высказывание сократили или поняли неверно. Вы уточняете позицию, учитываете обоснованные возражения и сохраняете предметный тон." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی پێشکەوتووی سیمیناردا قسەکەت بە کورتکراوە یان بە هەڵە تێگەیشتراوە. هەڵوێستەکەت وردتر دەکەیت، ڕەخنەی دروست وەردەگریت و گفتوگۆکە بابەتی دەهێڵیتەوە." },
+        { "language": "kmr", "text": "Di gotûbêjake dijwar a semînerê de gotina we kurt hatîye girtin an şaş hatîye têgihiştin. Hûn helwesta xwe rasttir dikin, rexneyên derbasdar digirin û guftûgoyê bi awayekî babetî dihêlin." },
+        { "language": "pl", "text": "W wymagającej dyskusji seminaryjnej Pańska wypowiedź została skrócona lub źle zrozumiana. Doprecyzowuje Pan stanowisko, uwzględnia zasadne zastrzeżenia i utrzymuje rzeczowy ton rozmowy." },
+        { "language": "ro", "text": "Într-o discuție de seminar solicitantă, afirmația dumneavoastră a fost simplificată sau înțeleasă greșit. Vă clarificați poziția, integrați obiecțiile justificate și mențineți schimbul factual." },
+        { "language": "sq", "text": "Në një diskutim të vështirë seminari, deklarata juaj u shkurtua ose u kuptua gabim. Ju sqaroni qëndrimin tuaj, pranoni kundërshtimet e arsyeshme dhe e mbani shkëmbimin objektiv." }
+      ],
+      "learnerGoal": "Ein Missverständnis präzise und respektvoll klären, ohne die Kritik pauschal zurückzuweisen oder die eigene Aussage zu stark abzuschwächen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify a misunderstanding precisely and respectfully without rejecting the criticism wholesale or weakening your own statement too much." },
+        { "language": "fa", "text": "یک سوءتفاهم را دقیق و محترمانه روشن کنید، بدون اینکه نقد را کلی رد کنید یا حرف خودتان را بیش از حد ضعیف کنید." },
+        { "language": "ar", "text": "وضح سوء الفهم بدقة واحترام من دون رفض النقد كله أو إضعاف عبارتك الأصلية أكثر من اللازم." },
+        { "language": "tr", "text": "Bir yanlış anlaşılmayı, eleştiriyi toptan reddetmeden ya da kendi ifadenizi fazla zayıflatmadan kesin ve saygılı biçimde açıklığa kavuşturun." },
+        { "language": "ru", "text": "Точно и уважительно прояснить недопонимание, не отвергая критику полностью и не ослабляя собственное высказывание чрезмерно." },
+        { "language": "ckb", "text": "تێنەگەیشتنێک بە وردی و بە ڕێزەوە ڕوون بکە، بەبێ ئەوەی ڕەخنەکە بە گشتی ڕەت بکەیتەوە یان قسەی خۆت زۆر لاواز بکەیت." },
+        { "language": "kmr", "text": "Şaş-têgihiştinekê bi rastî û bi rêz zelal bikin, bê ku rexneyê bi tevahî red bikin an gotina xwe pir qels bikin." },
+        { "language": "pl", "text": "Precyzyjnie i z szacunkiem wyjaśnić nieporozumienie, nie odrzucając krytyki w całości ani zbyt mocno nie osłabiając własnej wypowiedzi." },
+        { "language": "ro", "text": "Clarificați o neînțelegere precis și respectuos, fără să respingeți critica în bloc sau să vă slăbiți prea mult propria afirmație." },
+        { "language": "sq", "text": "Sqaroni një keqkuptim me saktësi dhe respekt, pa e hedhur poshtë kritikën në tërësi ose pa e dobësuar tepër pohimin tuaj." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 23,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Seminarteilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Seminar participant" },
+            { "language": "fa", "text": "شرکت‌کننده سمینار" },
+            { "language": "ar", "text": "مشارك في الندوة" },
+            { "language": "tr", "text": "Seminer katılımcısı" },
+            { "language": "ru", "text": "Участник семинара" },
+            { "language": "ckb", "text": "بەشداربووی سیمینار" },
+            { "language": "kmr", "text": "Beşdarê semînerê" },
+            { "language": "pl", "text": "Uczestnik seminarium" },
+            { "language": "ro", "text": "Participant la seminar" },
+            { "language": "sq", "text": "Pjesëmarrës në seminar" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Kommiliton/in",
+          "translations": [
+            { "language": "en", "text": "Fellow student" },
+            { "language": "fa", "text": "هم‌دانشگاهی" },
+            { "language": "ar", "text": "زميل في الدراسة" },
+            { "language": "tr", "text": "Üniversite arkadaşı" },
+            { "language": "ru", "text": "Однокурсник" },
+            { "language": "ckb", "text": "هاوخوێندکار" },
+            { "language": "kmr", "text": "Hevxwendekar" },
+            { "language": "pl", "text": "Kolega ze studiów" },
+            { "language": "ro", "text": "Colegul de facultate" },
+            { "language": "sq", "text": "Kolegu i studimeve" }
+          ]
+        },
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "In der Diskussion wurde Ihre Bemerkung so verstanden, als würden Sie kulturelle Faktoren völlig ausblenden. Sie meinten aber eine methodische Begrenzung Ihrer Analyse. Wie klären Sie das?",
+          "translations": [
+            { "language": "en", "text": "In the discussion, your comment was understood as if you were completely ignoring cultural factors. But you meant a methodological limitation of your analysis. How do you clarify that?" },
+            { "language": "fa", "text": "در بحث، حرف شما طوری فهمیده شد که انگار عوامل فرهنگی را کاملاً نادیده می‌گیرید. اما منظور شما محدودیت روش‌شناختی تحلیل بود. چگونه این را روشن می‌کنید؟" },
+            { "language": "ar", "text": "في النقاش فُهمت ملاحظتك وكأنك تتجاهل العوامل الثقافية تماماً. لكنك كنت تقصد تحديداً منهجياً لتحليلك. كيف توضح ذلك؟" },
+            { "language": "tr", "text": "Tartışmada yorumunuz, kültürel etkenleri tamamen dışladığınız gibi anlaşıldı. Oysa analizinize metodolojik bir sınır koymayı kastetmiştiniz. Bunu nasıl açıklarsınız?" },
+            { "language": "ru", "text": "В дискуссии ваше замечание поняли так, будто вы полностью исключаете культурные факторы. Но вы имели в виду методическое ограничение анализа. Как вы это проясните?" },
+            { "language": "ckb", "text": "لە گفتوگۆکەدا تێبینییەکەت وا تێگەیشترا کە گوایە فاکتەرە کولتوورییەکان بە تەواوی پشتگوێ دەخەیت. بەڵام مەبەستت سنووردارکردنێکی میتۆدی بۆ شیکارییەکەت بوو. چۆن ئەمە ڕوون دەکەیتەوە؟" },
+            { "language": "kmr", "text": "Di gotûbêjê de şîroveya we wisa hate têgihiştin ku hûn faktorên çandî bi tevahî ji ber çav derdixin. Lê hûn sînordarkirineke metodîk a analîza xwe dixwestin. Hûn vê çawa zelal dikin?" },
+            { "language": "pl", "text": "W dyskusji Pańską uwagę zrozumiano tak, jakby całkowicie pomijał Pan czynniki kulturowe. Chodziło jednak o metodologiczne ograniczenie analizy. Jak Pan to wyjaśnia?" },
+            { "language": "ro", "text": "În discuție, observația dumneavoastră a fost înțeleasă ca și cum ați ignora complet factorii culturali. Însă v-ați referit la o limitare metodologică a analizei. Cum clarificați acest lucru?" },
+            { "language": "sq", "text": "Në diskutim, vërejtja juaj u kuptua sikur i anashkalonit plotësisht faktorët kulturorë. Por ju kishit parasysh një kufizim metodologjik të analizës. Si e sqaroni këtë?" }
+          ],
+          "function": "misunderstanding-start",
+          "toneNote": "analytisch",
+          "expectedLearnerAction": "Missverständnis präzise benennen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte das kurz präzisieren: Ich wollte kulturelle Faktoren nicht ausschließen, sondern sie in diesem Abschnitt bewusst nicht als Hauptvariable behandeln. Meine Aussage bezog sich auf den Zuschnitt der Analyse, nicht auf die Bedeutung des Themas insgesamt.",
+          "translations": [
+            { "language": "en", "text": "I would like to clarify that briefly: I did not want to exclude cultural factors, but deliberately not treat them as the main variable in this section. My statement referred to the scope of the analysis, not to the overall importance of the topic." },
+            { "language": "fa", "text": "می‌خواهم این را کوتاه دقیق‌تر بگویم: نمی‌خواستم عوامل فرهنگی را حذف کنم، بلکه در این بخش آگاهانه آن‌ها را به عنوان متغیر اصلی بررسی نکردم. حرف من به محدوده تحلیل مربوط بود، نه به اهمیت کلی موضوع." },
+            { "language": "ar", "text": "أود أن أوضح ذلك بإيجاز: لم أرد استبعاد العوامل الثقافية، بل اخترت ألا أعالجها في هذا القسم كمتغير رئيسي. كانت عبارتي تتعلق بنطاق التحليل لا بأهمية الموضوع عموماً." },
+            { "language": "tr", "text": "Bunu kısaca netleştirmek isterim: Kültürel etkenleri dışlamak istemedim; bu bölümde onları bilinçli olarak ana değişken olarak ele almadım. İfadem analiz kapsamıyla ilgiliydi, konunun genel önemiyle değil." },
+            { "language": "ru", "text": "Я хотел бы кратко уточнить: я не хотел исключать культурные факторы, а сознательно не рассматривал их в этом разделе как главную переменную. Моё высказывание касалось рамок анализа, а не общей значимости темы." },
+            { "language": "ckb", "text": "دەمەوێت ئەمە بە کورتی وردتر بکەم: نەمدەویست فاکتەرە کولتوورییەکان دەربکەم، بەڵکو لەم بەشەدا بە ئاگاداری وەک گۆڕاوەی سەرەکی مامەڵەم لەگەڵیان نەکرد. قسەکەم پەیوەندیدار بوو بە چوارچێوەی شیکارییەکە، نەک بە گرنگی گشتی بابەتەکە." },
+            { "language": "kmr", "text": "Ez dixwazim vê bi kurtî zelal bikim: Min nexwest faktorên çandî derxînim, lê di vê beşê de bi zanebûn wan wek guhêrbera sereke venekoland. Gotina min bi çarçoveya analîzê ve girêdayî bû, ne bi girîngiya giştî ya mijarê." },
+            { "language": "pl", "text": "Chciałbym to krótko doprecyzować: nie chciałem wykluczać czynników kulturowych, lecz w tej części świadomie nie traktowałem ich jako głównej zmiennej. Moja wypowiedź dotyczyła zakresu analizy, a nie ogólnej wagi tematu." },
+            { "language": "ro", "text": "Aș dori să clarific pe scurt: nu am vrut să exclud factorii culturali, ci să nu îi tratez în această secțiune drept variabilă principală. Afirmația mea se referea la delimitarea analizei, nu la importanța generală a temei." },
+            { "language": "sq", "text": "Dua ta sqaroj shkurt: nuk doja t'i përjashtoja faktorët kulturorë, por në këtë pjesë me vetëdije nuk i trajtova si variabël kryesore. Deklarata ime lidhej me kufirin e analizës, jo me rëndësinë e përgjithshme të temës." }
+          ],
+          "function": "precise-clarification",
+          "toneNote": "ruhig, präzise",
+          "expectedLearnerAction": "Absicht und Analysegrenze unterscheiden"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Für mich klang es trotzdem so, als ob Sie den sozialen Kontext auf eine einzige Variable reduzieren. Das ist doch gerade bei diesem Thema problematisch.",
+          "translations": [
+            { "language": "en", "text": "To me it still sounded as if you were reducing the social context to a single variable. That is problematic precisely with this topic." },
+            { "language": "fa", "text": "برای من همچنان این‌طور شنیده شد که شما زمینه اجتماعی را به یک متغیر کاهش می‌دهید. دقیقاً در این موضوع، این کار مسئله‌ساز است." },
+            { "language": "ar", "text": "بالنسبة إليّ بدا الأمر مع ذلك وكأنك تختزل السياق الاجتماعي في متغير واحد. وهذا إشكالي تحديداً في هذا الموضوع." },
+            { "language": "tr", "text": "Bana yine de toplumsal bağlamı tek bir değişkene indirgediğiniz gibi geldi. Bu konu özelinde bu gerçekten sorunlu." },
+            { "language": "ru", "text": "Мне всё равно показалось, что вы сводите социальный контекст к одной переменной. Именно в этой теме это проблематично." },
+            { "language": "ckb", "text": "بۆ من هێشتا وا دەنگی دا کە تۆ کۆنتێکستی کۆمەڵایەتی بۆ یەک گۆڕاوە کەم دەکەیتەوە. ئەمە بە تایبەتی لەم بابەتەدا کێشەیە." },
+            { "language": "kmr", "text": "Ji bo min hîn jî wisa xuya bû ku hûn konteksta civakî vediguherînin yek guhêrberê. Ev bi taybetî li vê mijarê pir problematîk e." },
+            { "language": "pl", "text": "Dla mnie nadal brzmiało to tak, jakby sprowadzał Pan kontekst społeczny do jednej zmiennej. Przy tym temacie to właśnie jest problematyczne." },
+            { "language": "ro", "text": "Pentru mine a sunat totuși ca și cum ați reduce contextul social la o singură variabilă. Tocmai la această temă este problematic." },
+            { "language": "sq", "text": "Për mua përsëri tingëlloi sikur po e reduktonit kontekstin shoqëror në një variabël të vetme. Pikërisht në këtë temë kjo është problematike." }
+          ],
+          "function": "critical-objection",
+          "toneNote": "kritisch",
+          "expectedLearnerAction": "Berechtigten Teil anerkennen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Den Einwand finde ich berechtigt, wenn meine Formulierung so gewirkt hat. Ich würde deshalb ergänzen: Die Variable erklärt nicht den gesamten sozialen Kontext, sondern nur den Ausschnitt, den ich mit den vorhandenen Daten belastbar untersuchen kann.",
+          "translations": [
+            { "language": "en", "text": "I think that objection is justified if my wording came across that way. I would therefore add: the variable does not explain the entire social context, but only the part that I can examine reliably with the available data." },
+            { "language": "fa", "text": "اگر بیان من چنین برداشتی ایجاد کرده، این نقد را درست می‌دانم. بنابراین اضافه می‌کنم: این متغیر کل زمینه اجتماعی را توضیح نمی‌دهد، بلکه فقط بخشی را که با داده‌های موجود می‌توانم قابل اتکا بررسی کنم." },
+            { "language": "ar", "text": "أرى هذا الاعتراض وجيهاً إذا كان صياغتي قد أعطت هذا الانطباع. لذلك أضيف: المتغير لا يفسر السياق الاجتماعي كله، بل فقط الجزء الذي يمكنني دراسته بشكل موثوق بالبيانات المتاحة." },
+            { "language": "tr", "text": "İfadem böyle bir izlenim yarattıysa bu itirazı haklı buluyorum. Bu nedenle şunu eklerim: Değişken tüm toplumsal bağlamı açıklamaz; yalnızca mevcut verilerle güvenilir biçimde inceleyebildiğim kesiti açıklar." },
+            { "language": "ru", "text": "Я считаю это возражение обоснованным, если моя формулировка так прозвучала. Поэтому я бы добавил: переменная объясняет не весь социальный контекст, а только тот фрагмент, который можно надёжно исследовать на имеющихся данных." },
+            { "language": "ckb", "text": "ئەگەر دەربڕینەکەم وا کاری کردبێت، ئەم ڕەخنەیە بە دروست دەزانم. بۆیە زیاد دەکەم: ئەم گۆڕاوەیە هەموو کۆنتێکستی کۆمەڵایەتی ڕوون ناکاتەوە، بەڵکو تەنها ئەو بەشەی کە بە داتاکانی بەردەست بە پشتڕاستی دەتوانم لێکۆڵینەوەی لەسەر بکەم." },
+            { "language": "kmr", "text": "Heke formulekirina min wisa bandor kiribe, ez vê rexneyê derbasdar dibînim. Ji ber vê yekê ez lê zêde dikim: Ev guhêrber hemû konteksta civakî rave nake, lê tenê ew perçeyê ku ez dikarim bi daneyên heyî bi awayekî pêbawer lêkolîn bikim." },
+            { "language": "pl", "text": "Uważam ten zarzut za uzasadniony, jeśli moja formuła tak zabrzmiała. Dlatego dodałbym: ta zmienna nie wyjaśnia całego kontekstu społecznego, lecz tylko ten wycinek, który mogę rzetelnie zbadać na dostępnych danych." },
+            { "language": "ro", "text": "Consider obiecția justificată dacă formularea mea a produs această impresie. Aș adăuga deci: variabila nu explică întregul context social, ci doar segmentul pe care îl pot analiza solid cu datele disponibile." },
+            { "language": "sq", "text": "E konsideroj kundërshtimin të arsyeshëm nëse formulimi im ka dhënë këtë përshtypje. Prandaj do të shtoja: variabla nuk e shpjegon të gjithë kontekstin shoqëror, por vetëm pjesën që mund ta shqyrtoj në mënyrë të besueshme me të dhënat ekzistuese." }
+          ],
+          "function": "accept-and-limit",
+          "toneNote": "anerkennend, differenziert",
+          "expectedLearnerAction": "Einwand integrieren und Aussage begrenzen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Die Seminarleitung bittet Sie, den Unterschied zwischen inhaltlicher Relevanz und methodischer Bearbeitbarkeit noch klarer zu formulieren.",
+          "translations": [
+            { "language": "en", "text": "The seminar instructor asks you to formulate the difference between substantive relevance and methodological workability more clearly." },
+            { "language": "fa", "text": "مدرس سمینار از شما می‌خواهد تفاوت بین اهمیت محتوایی و امکان بررسی روش‌شناختی را روشن‌تر بیان کنید." },
+            { "language": "ar", "text": "يطلب منك مدرس الندوة أن تصوغ الفرق بين الأهمية الموضوعية وقابلية المعالجة المنهجية بوضوح أكبر." },
+            { "language": "tr", "text": "Seminer yürütücüsü sizden içeriksel önem ile metodolojik işlenebilirlik arasındaki farkı daha açık formüle etmenizi ister." },
+            { "language": "ru", "text": "Ведущий семинара просит вас яснее сформулировать различие между содержательной значимостью и методической исследуемостью." },
+            { "language": "ckb", "text": "مامۆستای سیمینار داوات لێ دەکات جیاوازی نێوان گرنگی ناوەڕۆکی و توانای کاری میتۆدی ڕوونتر داڕێژیت." },
+            { "language": "kmr", "text": "Mamosteyê semînerê ji we dixwaze cudahiya navbera girîngiya naverokî û karbarîbûna metodîk zelaltir formule bikin." },
+            { "language": "pl", "text": "Prowadzący seminarium prosi, aby jaśniej sformułował Pan różnicę między znaczeniem merytorycznym a metodologiczną opracowywalnością." },
+            { "language": "ro", "text": "Coordonatorul seminarului vă cere să formulați mai clar diferența dintre relevanța de conținut și posibilitatea de analiză metodologică." },
+            { "language": "sq", "text": "Drejtuesi i seminarit ju kërkon ta formuloni më qartë dallimin midis rëndësisë së përmbajtjes dhe trajtueshmërisë metodologjike." }
+          ],
+          "function": "conceptual-clarification",
+          "toneNote": "akademisch",
+          "expectedLearnerAction": "Begriffe trennen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Inhaltlich können kulturelle Faktoren sehr relevant sein. Methodisch kann ich sie in meiner Untersuchung aber nur begrenzt abbilden. Deshalb würde ich sie nicht streichen, sondern als Kontextfaktor nennen und die Hauptanalyse enger fassen.",
+          "translations": [
+            { "language": "en", "text": "Substantively, cultural factors can be highly relevant. Methodologically, however, I can represent them only to a limited extent in my study. Therefore I would not remove them, but name them as contextual factors and define the main analysis more narrowly." },
+            { "language": "fa", "text": "از نظر محتوایی، عوامل فرهنگی می‌توانند بسیار مهم باشند. اما از نظر روش‌شناختی، در پژوهش خودم فقط تا حد محدودی می‌توانم آن‌ها را نشان بدهم. بنابراین آن‌ها را حذف نمی‌کنم، بلکه به عنوان عامل زمینه‌ای نام می‌برم و تحلیل اصلی را محدودتر تعریف می‌کنم." },
+            { "language": "ar", "text": "من حيث المحتوى يمكن أن تكون العوامل الثقافية مهمة جداً. لكن منهجياً لا أستطيع تمثيلها في دراستي إلا بدرجة محدودة. لذلك لا أحذفها، بل أذكرها كعامل سياقي وأجعل التحليل الرئيسي أضيق." },
+            { "language": "tr", "text": "İçerik açısından kültürel etkenler çok önemli olabilir. Ancak metodolojik olarak onları çalışmamda yalnızca sınırlı ölçüde gösterebilirim. Bu yüzden onları çıkarmam, bağlam faktörü olarak belirtir ve ana analizi daha dar kurarım." },
+            { "language": "ru", "text": "По содержанию культурные факторы могут быть очень значимыми. Но методически я могу отразить их в своём исследовании лишь ограниченно. Поэтому я не убираю их, а называю контекстуальным фактором и уже формулирую основной анализ." },
+            { "language": "ckb", "text": "لە ڕووی ناوەڕۆکەوە، فاکتەرە کولتوورییەکان دەتوانن زۆر گرنگ بن. بەڵام لە ڕووی میتۆدەوە، لە توێژینەوەکەمدا تەنها بە سنوورداری دەتوانم پیشانیان بدەم. بۆیە نایانسرم، بەڵکو وەک فاکتەری کۆنتێکست ناویان دەهێنم و شیکاری سەرەکی بە تەسکتری دادەڕێژم." },
+            { "language": "kmr", "text": "Ji aliyê naverokê ve faktorên çandî dikarin pir girîng bin. Lê ji aliyê metodîk ve ez dikarim wan di lêkolîna xwe de tenê bi awayekî sînordar nîşan bidim. Ji ber vê yekê ez wan jê nabirim, lê wek faktorê kontekstê bi nav dikim û analîza sereke tengtir formule dikim." },
+            { "language": "pl", "text": "Merytorycznie czynniki kulturowe mogą być bardzo istotne. Metodologicznie mogę je jednak w moim badaniu ująć tylko w ograniczonym stopniu. Dlatego nie usunąłbym ich, lecz nazwał jako czynnik kontekstowy i zawęził główną analizę." },
+            { "language": "ro", "text": "Din punct de vedere al conținutului, factorii culturali pot fi foarte relevanți. Metodologic însă îi pot reprezenta în cercetarea mea doar limitat. De aceea nu i-aș elimina, ci i-aș menționa ca factor de context și aș restrânge analiza principală." },
+            { "language": "sq", "text": "Nga ana e përmbajtjes, faktorët kulturorë mund të jenë shumë të rëndësishëm. Por metodologjikisht mund t'i paraqes në studimin tim vetëm në mënyrë të kufizuar. Prandaj nuk do t'i hiqja, por do t'i përmendja si faktor konteksti dhe do ta ngushtoja analizën kryesore." }
+          ],
+          "function": "concept-distinction",
+          "toneNote": "akademisch klar",
+          "expectedLearnerAction": "Relevanz und Bearbeitbarkeit unterscheiden"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Dann müsste Ihre These aber anders lauten. Im Moment klingt sie immer noch so, als ob die Daten allein die Erklärung liefern.",
+          "translations": [
+            { "language": "en", "text": "Then your thesis would have to be phrased differently, though. At the moment it still sounds as if the data alone provide the explanation." },
+            { "language": "fa", "text": "پس تز شما باید طور دیگری نوشته شود. در حال حاضر هنوز طوری به نظر می‌رسد که انگار داده‌ها به تنهایی توضیح را ارائه می‌کنند." },
+            { "language": "ar", "text": "إذن يجب أن تُصاغ أطروحتك بطريقة مختلفة. في الوقت الحالي ما زالت تبدو وكأن البيانات وحدها تقدم التفسير." },
+            { "language": "tr", "text": "O zaman tezinizin farklı ifade edilmesi gerekir. Şu anda hâlâ veriler tek başına açıklamayı sağlıyormuş gibi geliyor." },
+            { "language": "ru", "text": "Тогда ваш тезис нужно сформулировать иначе. Сейчас он всё ещё звучит так, будто объяснение дают только данные." },
+            { "language": "ckb", "text": "ئەوا دەبێت تێزەکەت بە شێوەیەکی تر داڕێژرێت. لە ئێستادا هێشتا وا دەنگ دەدات کە گوایە داتاکان بە تەنها ڕوونکردنەوەکە پێشکەش دەکەن." },
+            { "language": "kmr", "text": "Wê demê divê teza we bi awayekî din were formulekirin. Niha hîn jî wisa dixuye ku tenê dane ravekirinê didin." },
+            { "language": "pl", "text": "W takim razie teza musiałaby brzmieć inaczej. W tej chwili nadal brzmi tak, jakby same dane dostarczały wyjaśnienia." },
+            { "language": "ro", "text": "Atunci teza dumneavoastră ar trebui formulată altfel. În prezent încă sună ca și cum datele singure ar furniza explicația." },
+            { "language": "sq", "text": "Atëherë teza juaj duhet të formulohet ndryshe. Për momentin ende tingëllon sikur vetëm të dhënat japin shpjegimin." }
+          ],
+          "function": "thesis-revision-challenge",
+          "toneNote": "präzisierend",
+          "expectedLearnerAction": "These reformulieren"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das stimmt, die These müsste vorsichtiger formuliert werden. Statt 'die Daten erklären das Verhalten' würde ich sagen: 'Die Daten zeigen ein wiederkehrendes Muster, das im Zusammenspiel mit kulturellen und institutionellen Faktoren interpretiert werden muss.'",
+          "translations": [
+            { "language": "en", "text": "That is true; the thesis would need to be phrased more cautiously. Instead of 'the data explain the behavior,' I would say: 'The data show a recurring pattern that must be interpreted together with cultural and institutional factors.'" },
+            { "language": "fa", "text": "درست است، تز باید محتاطانه‌تر بیان شود. به جای «داده‌ها رفتار را توضیح می‌دهند»، می‌گویم: «داده‌ها الگویی تکرارشونده را نشان می‌دهند که باید در تعامل با عوامل فرهنگی و نهادی تفسیر شود.»" },
+            { "language": "ar", "text": "هذا صحيح، يجب صياغة الأطروحة بحذر أكبر. بدلاً من 'البيانات تفسر السلوك' أقول: 'تُظهر البيانات نمطاً متكرراً يجب تفسيره في تفاعل مع عوامل ثقافية ومؤسسية.'" },
+            { "language": "tr", "text": "Bu doğru; tez daha ihtiyatlı formüle edilmeli. 'Veriler davranışı açıklar' yerine şöyle derdim: 'Veriler, kültürel ve kurumsal etkenlerle birlikte yorumlanması gereken tekrarlayan bir örüntü gösteriyor.'" },
+            { "language": "ru", "text": "Это верно, тезис нужно сформулировать осторожнее. Вместо 'данные объясняют поведение' я бы сказал: 'Данные показывают повторяющийся паттерн, который нужно интерпретировать во взаимодействии с культурными и институциональными факторами.'" },
+            { "language": "ckb", "text": "ئەمە ڕاستە، دەبێت تێزەکە بە ئاگاداریتری داڕێژرێت. لە جیاتی «داتاکان ڕەفتار ڕوون دەکەنەوە» دەڵێم: «داتاکان شێوازێکی دووبارەبووەوە نیشان دەدەن کە دەبێت لە هاوکاری لەگەڵ فاکتەرە کولتووری و دامەزراوەییەکاندا لێک بدرێتەوە.»" },
+            { "language": "kmr", "text": "Ev rast e; divê tez bi baldarîtir were gotin. Li şûna 'dane tevgerê rave dikin' ez dibêjim: 'Dane nîşan didin ku şêweyeke dubare heye, ku divê bi hevkarîya faktorên çandî û sazûmanî were şîrovekirin.'" },
+            { "language": "pl", "text": "To prawda, teza powinna być sformułowana ostrożniej. Zamiast 'dane wyjaśniają zachowanie' powiedziałbym: 'Dane pokazują powtarzający się wzorzec, który trzeba interpretować w powiązaniu z czynnikami kulturowymi i instytucjonalnymi.'" },
+            { "language": "ro", "text": "Este adevărat, teza ar trebui formulată mai prudent. În loc de „datele explică comportamentul”, aș spune: „Datele indică un model recurent care trebuie interpretat în interacțiune cu factorii culturali și instituționali.”" },
+            { "language": "sq", "text": "Kjo është e vërtetë; teza duhet formuluar më me kujdes. Në vend të 'të dhënat shpjegojnë sjelljen', do të thosha: 'Të dhënat tregojnë një model të përsëritur që duhet interpretuar në ndërveprim me faktorët kulturorë dhe institucionalë.'" }
+          ],
+          "function": "thesis-reformulation",
+          "toneNote": "präzise, selbstkorrigierend",
+          "expectedLearnerAction": "Überzogene These abschwächen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Eine andere Person fragt, ob Ihre ursprüngliche Aussage dann überhaupt noch einen Erkenntniswert hat. Sie sollen den Beitrag Ihrer Analyse knapp verteidigen.",
+          "translations": [
+            { "language": "en", "text": "Another person asks whether your original statement still has any analytical value at all. You are asked to briefly defend the contribution of your analysis." },
+            { "language": "fa", "text": "فرد دیگری می‌پرسد آیا حرف اولیه شما اصلاً هنوز ارزش شناختی دارد یا نه. باید سهم تحلیل خود را کوتاه دفاع کنید." },
+            { "language": "ar", "text": "يسأل شخص آخر عما إذا كانت عبارتك الأصلية ما زالت ذات قيمة معرفية أصلاً. يُطلب منك أن تدافع بإيجاز عن إسهام تحليلك." },
+            { "language": "tr", "text": "Başka biri, ilk ifadenizin hâlâ herhangi bir bilgi değeri olup olmadığını sorar. Analizinizin katkısını kısaca savunmanız istenir." },
+            { "language": "ru", "text": "Другой участник спрашивает, имеет ли ваше исходное высказывание вообще ещё познавательную ценность. Вам нужно кратко защитить вклад анализа." },
+            { "language": "ckb", "text": "کەسێکی تر دەپرسێت ئایا قسەی سەرەتاییت هێشتا هیچ بهایەکی زانیاری هەیە یان نا. دەبێت بە کورتی بەشداری شیکارییەکەت بپارێزیت." },
+            { "language": "kmr", "text": "Kesekî din dipirse gelo gotina we ya destpêkê hîn jî nirxeke zanistî heye yan na. Divê hûn beşdariya analîza xwe bi kurtî biparêzin." },
+            { "language": "pl", "text": "Inna osoba pyta, czy Pańska pierwotna wypowiedź ma jeszcze w ogóle wartość poznawczą. Ma Pan krótko obronić wkład swojej analizy." },
+            { "language": "ro", "text": "O altă persoană întreabă dacă afirmația inițială mai are vreo valoare de cunoaștere. Trebuie să apărați pe scurt contribuția analizei." },
+            { "language": "sq", "text": "Një person tjetër pyet nëse pohimi juaj fillestar ka ende ndonjë vlerë njohëse. Duhet ta mbroni shkurt kontributin e analizës suaj." }
+          ],
+          "function": "contribution-challenge",
+          "toneNote": "fordernd",
+          "expectedLearnerAction": "Beitrag ohne Übertreibung verteidigen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Der Erkenntniswert liegt gerade in der Begrenzung: Die Analyse kann nicht alles erklären, aber sie zeigt, an welchen Stellen ein Muster stabil auftritt und wo zusätzliche Kontextfaktoren einbezogen werden müssen.",
+          "translations": [
+            { "language": "en", "text": "The analytical value lies precisely in the limitation: the analysis cannot explain everything, but it shows where a pattern appears consistently and where additional contextual factors must be included." },
+            { "language": "fa", "text": "ارزش شناختی دقیقاً در همین محدودیت است: تحلیل نمی‌تواند همه چیز را توضیح دهد، اما نشان می‌دهد الگو در کجاها پایدار ظاهر می‌شود و در کجا باید عوامل زمینه‌ای بیشتری وارد شوند." },
+            { "language": "ar", "text": "تكمن القيمة المعرفية تحديداً في هذا التحديد: لا يستطيع التحليل تفسير كل شيء، لكنه يبين أين يظهر نمط ثابت وأين يجب إدخال عوامل سياقية إضافية." },
+            { "language": "tr", "text": "Bilgi değeri tam da sınırlamada yatıyor: Analiz her şeyi açıklayamaz, ama bir örüntünün nerelerde istikrarlı göründüğünü ve nerelerde ek bağlam etkenlerinin dahil edilmesi gerektiğini gösterir." },
+            { "language": "ru", "text": "Познавательная ценность как раз в ограничении: анализ не может объяснить всё, но показывает, где паттерн проявляется устойчиво и где нужно учитывать дополнительные контекстные факторы." },
+            { "language": "ckb", "text": "بهای زانیاری ڕاست لە خودی سنووردارکردنەکەدایە: شیکارییەکە ناتوانێت هەموو شتێک ڕوون بکاتەوە، بەڵام نیشان دەدات لە کوێ شێوازێک بە جێگیری دەردەکەوێت و لە کوێ پێویستە فاکتەرە کۆنتێکستییەکانی تر بخرێنە ناو." },
+            { "language": "kmr", "text": "Nirxa zanistî rast di sînordarkirinê de ye: Analîz nikare her tiştî rave bike, lê nîşan dide ku li ku derê şêweyek bi domdarî derdikeve û li ku derê divê faktorên din ên kontekstê werin tevlîkirin." },
+            { "language": "pl", "text": "Wartość poznawcza leży właśnie w ograniczeniu: analiza nie może wyjaśnić wszystkiego, ale pokazuje, gdzie wzorzec pojawia się stabilnie i gdzie trzeba włączyć dodatkowe czynniki kontekstowe." },
+            { "language": "ro", "text": "Valoarea de cunoaștere stă tocmai în limitare: analiza nu poate explica totul, dar arată unde apare stabil un model și unde trebuie incluși factori suplimentari de context." },
+            { "language": "sq", "text": "Vlera njohëse qëndron pikërisht te kufizimi: analiza nuk mund të shpjegojë gjithçka, por tregon ku shfaqet qëndrueshëm një model dhe ku duhet të përfshihen faktorë shtesë konteksti." }
+          ],
+          "function": "defend-contribution",
+          "toneNote": "argumentativ",
+          "expectedLearnerAction": "Beitrag begrenzt verteidigen"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "teacher",
+          "baseText": "Zum Abschluss sollen Sie den Missverständnispunkt und die überarbeitete Position in zwei Sätzen zusammenfassen.",
+          "translations": [
+            { "language": "en", "text": "To close, you are asked to summarize the point of misunderstanding and the revised position in two sentences." },
+            { "language": "fa", "text": "در پایان باید نقطه سوءتفاهم و موضع اصلاح‌شده را در دو جمله خلاصه کنید." },
+            { "language": "ar", "text": "في الختام يُطلب منك تلخيص نقطة سوء الفهم والموقف المعدل في جملتين." },
+            { "language": "tr", "text": "Son olarak yanlış anlaşılma noktasını ve gözden geçirilmiş konumu iki cümlede özetlemeniz istenir." },
+            { "language": "ru", "text": "В завершение вас просят в двух предложениях подытожить точку недопонимания и переработанную позицию." },
+            { "language": "ckb", "text": "لە کۆتاییدا دەبێت خاڵی تێنەگەیشتنەکە و هەڵوێستی دەستکاریکراو لە دوو ڕستەدا پوختە بکەیت." },
+            { "language": "kmr", "text": "Di dawiyê de divê hûn xala şaş-têgihiştinê û helwesta guhertî di du hevokan de kurt bikin." },
+            { "language": "pl", "text": "Na zakończenie ma Pan w dwóch zdaniach podsumować punkt nieporozumienia i zrewidowane stanowisko." },
+            { "language": "ro", "text": "La final trebuie să rezumați în două propoziții punctul neînțelegerii și poziția revizuită." },
+            { "language": "sq", "text": "Në fund duhet të përmblidhni në dy fjali pikën e keqkuptimit dhe qëndrimin e rishikuar." }
+          ],
+          "function": "closing-summary-request",
+          "toneNote": "prüfungsnah",
+          "expectedLearnerAction": "Kurz und präzise synthetisieren"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Das Missverständnis lag darin, dass meine methodische Eingrenzung wie eine inhaltliche Abwertung kultureller Faktoren klang. Überarbeitet würde ich sagen: Die Daten zeigen ein belastbares Muster, dessen Erklärung erst durch die Einordnung in kulturelle und institutionelle Kontexte vollständig wird.",
+          "translations": [
+            { "language": "en", "text": "The misunderstanding was that my methodological narrowing sounded like a substantive devaluation of cultural factors. Revised, I would say: the data show a reliable pattern whose explanation becomes complete only when it is placed in cultural and institutional contexts." },
+            { "language": "fa", "text": "سوءتفاهم این بود که محدودسازی روش‌شناختی من مثل کم‌ارزش‌کردن محتوایی عوامل فرهنگی به نظر رسید. در نسخه اصلاح‌شده می‌گویم: داده‌ها الگویی قابل اتکا نشان می‌دهند که توضیح آن فقط با قرار دادن در زمینه‌های فرهنگی و نهادی کامل می‌شود." },
+            { "language": "ar", "text": "كان سوء الفهم في أن تضييقي المنهجي بدا كأنه تقليل من قيمة العوامل الثقافية من حيث المحتوى. في الصياغة المعدلة أقول: تُظهر البيانات نمطاً موثوقاً لا يكتمل تفسيره إلا بإدراجه في سياقات ثقافية ومؤسسية." },
+            { "language": "tr", "text": "Yanlış anlaşılma, metodolojik daraltmamın kültürel etkenleri içerik açısından değersizleştirme gibi duyulmasıydı. Gözden geçirilmiş biçimde şöyle derdim: Veriler güvenilir bir örüntü gösterir; bunun açıklaması ancak kültürel ve kurumsal bağlamlara yerleştirilince tamamlanır." },
+            { "language": "ru", "text": "Недопонимание заключалось в том, что моё методическое сужение прозвучало как содержательное обесценивание культурных факторов. В переработанном виде я бы сказал: данные показывают надёжный паттерн, объяснение которого становится полным только при включении культурного и институционального контекста." },
+            { "language": "ckb", "text": "تێنەگەیشتنەکە ئەوە بوو کە سنووردارکردنی میتۆدیی من وەک کەمکردنەوەی بهای ناوەڕۆکی فاکتەرە کولتوورییەکان دەنگی دا. بە شێوەی دەستکاریکراو دەڵێم: داتاکان شێوازێکی پشتڕاست نیشان دەدەن کە ڕوونکردنەوەکەی تەنها بە دانانی لە کۆنتێکستی کولتووری و دامەزراوەییدا تەواو دەبێت." },
+            { "language": "kmr", "text": "Şaş-têgihiştin ew bû ku sînordarkirina min a metodîk wek kêmbûna nirxa naverokî ya faktorên çandî xuya bû. Bi awayekî guhartî ez dibêjim: Dane şêweyeke pêbawer nîşan didin, lê ravekirina wê tenê bi cihkirina di kontekstên çandî û sazûmanî de temam dibe." },
+            { "language": "pl", "text": "Nieporozumienie polegało na tym, że moje metodologiczne zawężenie zabrzmiało jak merytoryczne umniejszenie czynników kulturowych. W wersji poprawionej powiedziałbym: dane pokazują rzetelny wzorzec, którego wyjaśnienie staje się pełne dopiero po osadzeniu w kontekstach kulturowych i instytucjonalnych." },
+            { "language": "ro", "text": "Neînțelegerea a fost că restrângerea mea metodologică a sunat ca o diminuare de conținut a factorilor culturali. În varianta revizuită aș spune: datele arată un model solid, a cărui explicație devine completă numai prin plasarea în contexte culturale și instituționale." },
+            { "language": "sq", "text": "Keqkuptimi ishte se ngushtimi im metodologjik tingëlloi si ulje e vlerës së faktorëve kulturorë në përmbajtje. Në versionin e rishikuar do të thosha: të dhënat tregojnë një model të besueshëm, shpjegimi i të cilit bëhet i plotë vetëm kur vendoset në kontekste kulturore dhe institucionale." }
+          ],
+          "function": "closing-synthesis",
+          "toneNote": "präzise, respektvoll",
+          "expectedLearnerAction": "Missverständnis und korrigierte These zusammenführen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich wollte kulturelle Faktoren nicht ausschließen, sondern sie in diesem Abschnitt nicht als Hauptvariable behandeln.",
+              "translations": [
+                { "language": "en", "text": "I did not want to exclude cultural factors, but not treat them as the main variable in this section." },
+                { "language": "fa", "text": "نمی‌خواستم عوامل فرهنگی را حذف کنم، بلکه در این بخش آن‌ها را به عنوان متغیر اصلی بررسی نکردم." },
+                { "language": "ar", "text": "لم أرد استبعاد العوامل الثقافية، بل عدم التعامل معها كمتغير رئيسي في هذا القسم." },
+                { "language": "tr", "text": "Kültürel etkenleri dışlamak istemedim; bu bölümde onları ana değişken olarak ele almadım." },
+                { "language": "ru", "text": "Я не хотел исключать культурные факторы, а не рассматривал их как главную переменную в этом разделе." },
+                { "language": "ckb", "text": "نەمدەویست فاکتەرە کولتوورییەکان دەربکەم، بەڵکو لەم بەشەدا وەک گۆڕاوەی سەرەکی مامەڵەم لەگەڵیان نەکرد." },
+                { "language": "kmr", "text": "Min nexwest faktorên çandî derxînim; min di vê beşê de wan wek guhêrbera sereke venekoland." },
+                { "language": "pl", "text": "Nie chciałem wykluczać czynników kulturowych, lecz nie traktowałem ich w tej części jako głównej zmiennej." },
+                { "language": "ro", "text": "Nu am vrut să exclud factorii culturali, ci să nu îi tratez în această secțiune ca variabilă principală." },
+                { "language": "sq", "text": "Nuk doja t'i përjashtoja faktorët kulturorë, por në këtë pjesë nuk i trajtova si variabël kryesore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Absicht, Methode und thematische Bedeutung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates intention, method, and thematic importance." },
+                { "language": "fa", "text": "قوی: پاسخ نیت، روش و اهمیت موضوعی را از هم جدا می‌کند." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بين النية والمنهج والأهمية الموضوعية." },
+                { "language": "tr", "text": "Güçlü: Yanıt niyeti, yöntemi ve konusal önemi ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ разделяет намерение, метод и тематическую значимость." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نێوان مەبەست، میتۆد و گرنگی بابەتی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv armanc, metod û girîngiya mijarê ji hev vediqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź rozdziela intencję, metodę i znaczenie tematu." },
+                { "language": "ro", "text": "Puternic: răspunsul separă intenția, metoda și importanța tematică." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan qëllimin, metodën dhe rëndësinë tematike." }
+              ],
+              "explanationKey": "method-intention-separation"
+            },
+            {
+              "id": "weak-defensive",
+              "text": "Das haben Sie falsch verstanden; ich habe das so nicht gesagt.",
+              "translations": [
+                { "language": "en", "text": "You misunderstood that; I did not say it like that." },
+                { "language": "fa", "text": "شما این را اشتباه فهمیدید؛ من این‌طور نگفتم." },
+                { "language": "ar", "text": "لقد فهمت ذلك خطأ؛ لم أقل الأمر بهذه الطريقة." },
+                { "language": "tr", "text": "Bunu yanlış anladınız; ben bunu böyle söylemedim." },
+                { "language": "ru", "text": "Вы неправильно это поняли; я так не говорил." },
+                { "language": "ckb", "text": "تۆ ئەمە بە هەڵە تێگەیشتویت؛ من بەو شێوەیە نەمووتووە." },
+                { "language": "kmr", "text": "We vê şaş têgihişt; min wisa negotiye." },
+                { "language": "pl", "text": "Źle Pan to zrozumiał; nie powiedziałem tego w ten sposób." },
+                { "language": "ro", "text": "Ați înțeles greșit; nu am spus așa." },
+                { "language": "sq", "text": "E keni kuptuar gabim; unë nuk e thashë kështu." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Die Antwort weist Schuld zu, erklärt aber die eigene Aussage nicht genauer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: The answer assigns blame but does not explain your statement more precisely." },
+                { "language": "fa", "text": "بیش از حد دفاعی است: پاسخ تقصیر را به دیگری نسبت می‌دهد، اما حرف خودتان را دقیق‌تر توضیح نمی‌دهد." },
+                { "language": "ar", "text": "دفاعي أكثر من اللازم: تلقي الإجابة اللوم على الآخر لكنها لا توضح عبارتك بدقة أكبر." },
+                { "language": "tr", "text": "Fazla savunmacı: Yanıt suçu karşı tarafa atıyor, ama kendi ifadenizi daha net açıklamıyor." },
+                { "language": "ru", "text": "Слишком оборонительно: ответ перекладывает вину, но не уточняет ваше высказывание." },
+                { "language": "ckb", "text": "زۆر بەرگرییە: وەڵامەکە تاوان دەخاتە سەر بەرامبەر، بەڵام قسەکەت وردتر ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Pir parastinî ye: Bersiv sûcê dide aliyê din, lê gotina we rasttir rave nake." },
+                { "language": "pl", "text": "Zbyt defensywne: odpowiedź przypisuje winę, ale nie wyjaśnia dokładniej własnej wypowiedzi." },
+                { "language": "ro", "text": "Prea defensiv: răspunsul atribuie vina, dar nu explică mai precis afirmația proprie." },
+                { "language": "sq", "text": "Shumë mbrojtëse: përgjigjja ia hedh fajin tjetrit, por nuk e shpjegon më saktë pohimin tuaj." }
+              ],
+              "explanationKey": "defensive-blame"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Einwand ist berechtigt, wenn meine Formulierung so klang. Die Variable erklärt nur den untersuchten Ausschnitt.",
+              "translations": [
+                { "language": "en", "text": "The objection is valid if my wording sounded that way. The variable explains only the section examined." },
+                { "language": "fa", "text": "اگر بیان من این‌طور شنیده شده، نقد درست است. این متغیر فقط بخش بررسی‌شده را توضیح می‌دهد." },
+                { "language": "ar", "text": "الاعتراض وجيه إذا بدت صياغتي بهذا الشكل. المتغير يفسر فقط الجزء المدروس." },
+                { "language": "tr", "text": "İfadem böyle duyulduysa itiraz haklıdır. Değişken yalnızca incelenen kesiti açıklar." },
+                { "language": "ru", "text": "Возражение обосновано, если моя формулировка так прозвучала. Переменная объясняет только исследуемый фрагмент." },
+                { "language": "ckb", "text": "ئەگەر دەربڕینەکەم وا دەنگی دابێت، ڕەخنەکە دروستە. گۆڕاوەکە تەنها بەشی لێکۆڵراو ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Heke formulekirina min wisa bihîstibe, rexne derbasdar e. Guhêrber tenê beşa lêkolînkirî rave dike." },
+                { "language": "pl", "text": "Zarzut jest zasadny, jeśli moja formuła tak zabrzmiała. Zmienna wyjaśnia tylko badany wycinek." },
+                { "language": "ro", "text": "Obiecția este justificată dacă formularea mea a sunat astfel. Variabila explică doar segmentul analizat." },
+                { "language": "sq", "text": "Kundërshtimi është i arsyeshëm nëse formulimi im tingëlloi kështu. Variabla shpjegon vetëm pjesën e shqyrtuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert den berechtigten Teil und begrenzt die eigene Aussage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts the valid part and limits your own statement." },
+                { "language": "fa", "text": "قوی: پاسخ بخش درست نقد را می‌پذیرد و حرف خودتان را محدود می‌کند." },
+                { "language": "ar", "text": "قوي: تقبل الإجابة الجزء الوجيه من النقد وتحدد عبارتك." },
+                { "language": "tr", "text": "Güçlü: Yanıt haklı kısmı kabul ediyor ve kendi ifadenizi sınırlıyor." },
+                { "language": "ru", "text": "Сильно: ответ принимает обоснованную часть и ограничивает ваше высказывание." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەشی دروستی ڕەخنەکە وەردەگرێت و قسەی خۆت سنووردار دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv beşa derbasdar qebûl dike û gotina we sînordar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź przyjmuje zasadną część i ogranicza własną wypowiedź." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă partea justificată și limitează propria afirmație." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon pjesën e arsyeshme dhe kufizon pohimin tuaj." }
+              ],
+              "explanationKey": "accept-and-limit"
+            },
+            {
+              "id": "weak-over-retreat",
+              "text": "Dann lasse ich diese Variable vielleicht lieber ganz weg.",
+              "translations": [
+                { "language": "en", "text": "Then I might prefer to leave out this variable entirely." },
+                { "language": "fa", "text": "پس شاید بهتر باشد این متغیر را کاملاً کنار بگذارم." },
+                { "language": "ar", "text": "إذن ربما من الأفضل أن أحذف هذا المتغير تماماً." },
+                { "language": "tr", "text": "O zaman bu değişkeni tamamen çıkarmam belki daha iyi olur." },
+                { "language": "ru", "text": "Тогда, возможно, лучше полностью убрать эту переменную." },
+                { "language": "ckb", "text": "ئەوا لەوانەیە باشتر بێت ئەم گۆڕاوەیە بە تەواوی لاببەم." },
+                { "language": "kmr", "text": "Wê demê belkî çêtir be ez vê guhêrberê bi tevahî derxim." },
+                { "language": "pl", "text": "W takim razie może lepiej całkowicie pominę tę zmienną." },
+                { "language": "ro", "text": "Atunci poate ar fi mai bine să elimin complet această variabilă." },
+                { "language": "sq", "text": "Atëherë ndoshta është më mirë ta heq krejt këtë variabël." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu starker Rückzug: Die Antwort vermeidet das Problem, statt den Beitrag sauber zu begrenzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too much retreat: The answer avoids the problem instead of limiting the contribution cleanly." },
+                { "language": "fa", "text": "عقب‌نشینی بیش از حد است: پاسخ مسئله را دور می‌زند، نه اینکه سهم تحلیل را دقیق محدود کند." },
+                { "language": "ar", "text": "تراجع مفرط: تتجنب الإجابة المشكلة بدلاً من تحديد الإسهام بدقة." },
+                { "language": "tr", "text": "Fazla geri çekilme: Yanıt katkıyı net sınırlamak yerine sorundan kaçıyor." },
+                { "language": "ru", "text": "Слишком сильное отступление: ответ уходит от проблемы вместо точного ограничения вклада." },
+                { "language": "ckb", "text": "گەڕانەوەی زۆرە: وەڵامەکە لە کێشەکە دەدزێتەوە، نەک بەشدارییەکە پاکیزە سنووردار بکات." },
+                { "language": "kmr", "text": "Pir paşveçûn e: Bersiv ji pirsgirêkê direve, ne ku beşdariyê bi zelalî sînordar bike." },
+                { "language": "pl", "text": "Zbyt duży odwrót: odpowiedź unika problemu zamiast jasno ograniczyć wkład." },
+                { "language": "ro", "text": "Retragere excesivă: răspunsul evită problema în loc să limiteze clar contribuția." },
+                { "language": "sq", "text": "Tërheqje e tepërt: përgjigjja shmang problemin në vend që ta kufizojë qartë kontributin." }
+              ],
+              "explanationKey": "over-retreat"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Kulturelle Faktoren bleiben relevant, werden hier aber als Kontextfaktoren behandelt, weil die Datenlage keine Hauptanalyse erlaubt.",
+              "translations": [
+                { "language": "en", "text": "Cultural factors remain relevant, but here they are treated as contextual factors because the data situation does not allow a main analysis." },
+                { "language": "fa", "text": "عوامل فرهنگی همچنان مهم‌اند، اما اینجا به عنوان عوامل زمینه‌ای بررسی می‌شوند، چون وضعیت داده‌ها اجازه تحلیل اصلی نمی‌دهد." },
+                { "language": "ar", "text": "تبقى العوامل الثقافية مهمة، لكنها تُعامل هنا كعوامل سياقية لأن وضع البيانات لا يسمح بتحليل رئيسي." },
+                { "language": "tr", "text": "Kültürel etkenler önemini korur, ancak veri durumu ana analiz yapmaya izin vermediği için burada bağlam etkenleri olarak ele alınır." },
+                { "language": "ru", "text": "Культурные факторы остаются значимыми, но здесь рассматриваются как контекстные, потому что данные не позволяют сделать их главным анализом." },
+                { "language": "ckb", "text": "فاکتەرە کولتوورییەکان هێشتا گرنگن، بەڵام لێرە وەک فاکتەرە کۆنتێکستییەکان مامەڵەیان لەگەڵ دەکرێت، چونکە بارودۆخی داتا ڕێگە بە شیکاری سەرەکی نادات." },
+                { "language": "kmr", "text": "Faktorên çandî hîn jî girîng in, lê li vir wek faktorên kontekstê tên girtin, ji ber ku rewşa daneyan destûra analîza sereke nade." },
+                { "language": "pl", "text": "Czynniki kulturowe pozostają istotne, ale tutaj są traktowane jako czynniki kontekstowe, bo stan danych nie pozwala na analizę główną." },
+                { "language": "ro", "text": "Factorii culturali rămân relevanți, dar aici sunt tratați ca factori de context, deoarece datele nu permit o analiză principală." },
+                { "language": "sq", "text": "Faktorët kulturorë mbeten të rëndësishëm, por këtu trajtohen si faktorë konteksti, sepse gjendja e të dhënave nuk lejon analizë kryesore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt den methodischen Grund, ohne die inhaltliche Relevanz zu leugnen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer explains the methodological reason without denying substantive relevance." },
+                { "language": "fa", "text": "قوی: پاسخ دلیل روش‌شناختی را توضیح می‌دهد، بدون اینکه اهمیت محتوایی را انکار کند." },
+                { "language": "ar", "text": "قوي: تشرح الإجابة السبب المنهجي من دون إنكار الأهمية الموضوعية." },
+                { "language": "tr", "text": "Güçlü: Yanıt metodolojik nedeni açıklıyor, içeriksel önemi inkâr etmiyor." },
+                { "language": "ru", "text": "Сильно: ответ объясняет методическую причину, не отрицая содержательной значимости." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هۆکاری میتۆدی ڕوون دەکاتەوە، بەبێ ئەوەی گرنگی ناوەڕۆکی ڕەت بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sedema metodîk rave dike bê ku girîngiya naverokî înkar bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia powód metodologiczny, nie negując znaczenia merytorycznego." },
+                { "language": "ro", "text": "Puternic: răspunsul explică motivul metodologic fără a nega relevanța de conținut." },
+                { "language": "sq", "text": "E fortë: përgjigjja shpjegon arsyen metodologjike pa mohuar rëndësinë e përmbajtjes." }
+              ],
+              "explanationKey": "relevance-vs-method"
+            },
+            {
+              "id": "weak-vague-balance",
+              "text": "Beides ist irgendwie wichtig, deshalb würde ich beides erwähnen.",
+              "translations": [
+                { "language": "en", "text": "Both are somehow important, so I would mention both." },
+                { "language": "fa", "text": "هر دو به نوعی مهم‌اند، پس هر دو را ذکر می‌کنم." },
+                { "language": "ar", "text": "كلاهما مهم بطريقة ما، لذلك سأذكر الاثنين." },
+                { "language": "tr", "text": "İkisi de bir şekilde önemli, bu yüzden ikisinden de söz ederim." },
+                { "language": "ru", "text": "И то, и другое как-то важно, поэтому я упомянул бы оба." },
+                { "language": "ckb", "text": "هەردووکیان بە جۆرێک گرنگن، بۆیە هەردووکیان باس دەکەم." },
+                { "language": "kmr", "text": "Herdu jî bi awayekî girîng in, ji ber vê yekê ez herduyan dibêjim." },
+                { "language": "pl", "text": "Jedno i drugie jest jakoś ważne, więc wspomniałbym o obu." },
+                { "language": "ro", "text": "Ambele sunt cumva importante, așa că le-aș menționa pe amândouă." },
+                { "language": "sq", "text": "Të dyja janë disi të rëndësishme, prandaj do t'i përmendja të dyja." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort klingt ausgleichend, trennt aber Relevanz und methodische Bearbeitbarkeit nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: The answer sounds balanced but does not separate relevance from methodological workability." },
+                { "language": "fa", "text": "بیش از حد مبهم است: پاسخ متعادل به نظر می‌رسد، اما اهمیت و امکان بررسی روش‌شناختی را جدا نمی‌کند." },
+                { "language": "ar", "text": "غامض أكثر من اللازم: تبدو الإجابة متوازنة لكنها لا تفصل بين الأهمية وقابلية المعالجة المنهجية." },
+                { "language": "tr", "text": "Fazla belirsiz: Yanıt dengeli geliyor, ama önem ile metodolojik işlenebilirliği ayırmıyor." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ звучит сбалансированно, но не разделяет значимость и методическую исследуемость." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە هاوسەنگ دەنگ دەدات، بەڵام گرنگی و توانای کاری میتۆدی جیا ناکاتەوە." },
+                { "language": "kmr", "text": "Pir nezelal e: Bersiv hevseng dixuye, lê girîngî û karbarîbûna metodîk ji hev naqetîne." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź brzmi wyważenie, ale nie oddziela znaczenia od metodologicznej opracowywalności." },
+                { "language": "ro", "text": "Prea vag: răspunsul pare echilibrat, dar nu separă relevanța de posibilitatea de analiză metodologică." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja tingëllon e balancuar, por nuk ndan rëndësinë nga trajtueshmëria metodologjike." }
+              ],
+              "explanationKey": "vague-balance"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Daten zeigen ein Muster, das erst im Zusammenspiel mit kulturellen und institutionellen Faktoren erklärt werden kann.",
+              "translations": [
+                { "language": "en", "text": "The data show a pattern that can be explained only together with cultural and institutional factors." },
+                { "language": "fa", "text": "داده‌ها الگویی را نشان می‌دهند که فقط در تعامل با عوامل فرهنگی و نهادی قابل توضیح است." },
+                { "language": "ar", "text": "تُظهر البيانات نمطاً لا يمكن تفسيره إلا مع العوامل الثقافية والمؤسسية." },
+                { "language": "tr", "text": "Veriler, ancak kültürel ve kurumsal etkenlerle birlikte açıklanabilecek bir örüntü gösteriyor." },
+                { "language": "ru", "text": "Данные показывают паттерн, который можно объяснить только вместе с культурными и институциональными факторами." },
+                { "language": "ckb", "text": "داتاکان شێوازێک نیشان دەدەن کە تەنها لە هاوکاری لەگەڵ فاکتەرە کولتووری و دامەزراوەییەکاندا دەتوانرێت ڕوون بکرێتەوە." },
+                { "language": "kmr", "text": "Dane şêweyek nîşan didin ku tenê bi faktorên çandî û sazûmanî re dikare were ravekirin." },
+                { "language": "pl", "text": "Dane pokazują wzorzec, który można wyjaśnić dopiero w powiązaniu z czynnikami kulturowymi i instytucjonalnymi." },
+                { "language": "ro", "text": "Datele arată un model care poate fi explicat doar împreună cu factorii culturali și instituționali." },
+                { "language": "sq", "text": "Të dhënat tregojnë një model që mund të shpjegohet vetëm së bashku me faktorët kulturorë dhe institucionalë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die These bleibt aussagekräftig, aber sie vermeidet einen überzogenen Erklärungsanspruch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The thesis remains meaningful but avoids an exaggerated claim to explain everything." },
+                { "language": "fa", "text": "قوی: تز همچنان معنا و ارزش دارد، اما ادعای توضیح بیش از حد را کنار می‌گذارد." },
+                { "language": "ar", "text": "قوي: تبقى الأطروحة ذات معنى لكنها تتجنب ادعاء تفسير مبالغاً فيه." },
+                { "language": "tr", "text": "Güçlü: Tez anlamlı kalıyor, ama aşırı açıklama iddiasından kaçınıyor." },
+                { "language": "ru", "text": "Сильно: тезис остаётся содержательным, но избегает чрезмерной объяснительной претензии." },
+                { "language": "ckb", "text": "بەهێزە: تێزەکە هێشتا بامانا دەمێنێت، بەڵام داوای ڕوونکردنەوەی زێدەڕۆیی دوور دەخاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Tez watedar dimîne, lê daxwaza ravekirina zêde dûr dixe." },
+                { "language": "pl", "text": "Mocne: teza pozostaje znacząca, ale unika przesadnego roszczenia wyjaśniającego." },
+                { "language": "ro", "text": "Puternic: teza rămâne semnificativă, dar evită o pretenție explicativă exagerată." },
+                { "language": "sq", "text": "E fortë: teza mbetet kuptimplote, por shmang pretendimin e tepruar shpjegues." }
+              ],
+              "explanationKey": "revised-thesis"
+            },
+            {
+              "id": "weak-same-claim",
+              "text": "Die Daten erklären das Verhalten, aber natürlich gibt es auch andere Faktoren.",
+              "translations": [
+                { "language": "en", "text": "The data explain the behavior, but of course there are other factors too." },
+                { "language": "fa", "text": "داده‌ها رفتار را توضیح می‌دهند، اما البته عوامل دیگری هم وجود دارند." },
+                { "language": "ar", "text": "البيانات تفسر السلوك، لكن بالطبع توجد عوامل أخرى أيضاً." },
+                { "language": "tr", "text": "Veriler davranışı açıklar, ama elbette başka etkenler de vardır." },
+                { "language": "ru", "text": "Данные объясняют поведение, но, конечно, есть и другие факторы." },
+                { "language": "ckb", "text": "داتاکان ڕەفتار ڕوون دەکەنەوە، بەڵام بە دڵنیایی فاکتەری تریش هەن." },
+                { "language": "kmr", "text": "Dane tevgerê rave dikin, lê bêguman faktorên din jî hene." },
+                { "language": "pl", "text": "Dane wyjaśniają zachowanie, ale oczywiście są też inne czynniki." },
+                { "language": "ro", "text": "Datele explică comportamentul, dar desigur există și alți factori." },
+                { "language": "sq", "text": "Të dhënat e shpjegojnë sjelljen, por sigurisht ka edhe faktorë të tjerë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unzureichend: Die Formulierung wiederholt den starken Erklärungsanspruch und hängt die Einschränkung nur nachträglich an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Insufficient: The wording repeats the strong explanatory claim and adds the limitation only afterward." },
+                { "language": "fa", "text": "ناکافی است: فرمول‌بندی دوباره ادعای توضیحی قوی را تکرار می‌کند و محدودیت را فقط در پایان اضافه می‌کند." },
+                { "language": "ar", "text": "غير كافٍ: تكرر الصياغة ادعاء التفسير القوي وتضيف التقييد فقط لاحقاً." },
+                { "language": "tr", "text": "Yetersiz: Formülasyon güçlü açıklama iddiasını tekrar ediyor ve sınırlamayı yalnızca sonradan ekliyor." },
+                { "language": "ru", "text": "Недостаточно: формулировка повторяет сильную объяснительную претензию и добавляет ограничение лишь потом." },
+                { "language": "ckb", "text": "ناکافییە: داڕشتنەکە دووبارە داوای ڕوونکردنەوەی بەهێز دەکات و سنووردارکردنەکە تەنها دواتر زیاد دەکات." },
+                { "language": "kmr", "text": "Têr nake: Formulekirin daxwaza ravekirina xurt dubare dike û sînordarkirinê tenê paşê zêde dike." },
+                { "language": "pl", "text": "Niewystarczające: sformułowanie powtarza silne roszczenie wyjaśniające i dopiero później dodaje ograniczenie." },
+                { "language": "ro", "text": "Insuficient: formularea repetă pretenția explicativă puternică și adaugă limitarea doar ulterior." },
+                { "language": "sq", "text": "E pamjaftueshme: formulimi përsërit pretendimin e fortë shpjegues dhe e shton kufizimin vetëm më pas." }
+              ],
+              "explanationKey": "unchanged-overclaim"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Analyse zeigt nicht die ganze Erklärung, aber sie markiert ein stabiles Muster und die Grenzen weiterer Interpretation.",
+              "translations": [
+                { "language": "en", "text": "The analysis does not show the whole explanation, but it marks a stable pattern and the limits for further interpretation." },
+                { "language": "fa", "text": "تحلیل کل توضیح را نشان نمی‌دهد، اما یک الگوی پایدار و مرزهای تفسیر بیشتر را مشخص می‌کند." },
+                { "language": "ar", "text": "لا يقدم التحليل التفسير كله، لكنه يحدد نمطاً ثابتاً وحدود التفسير الإضافي." },
+                { "language": "tr", "text": "Analiz tüm açıklamayı göstermez, ama istikrarlı bir örüntüyü ve daha ileri yorumun sınırlarını işaretler." },
+                { "language": "ru", "text": "Анализ не даёт всего объяснения, но обозначает устойчивый паттерн и границы дальнейшей интерпретации." },
+                { "language": "ckb", "text": "شیکارییەکە هەموو ڕوونکردنەوەکە نیشان نادات، بەڵام شێوازێکی جێگیر و سنوورەکانی لێکدانەوەی زیاتر دیاری دەکات." },
+                { "language": "kmr", "text": "Analîz hemû ravekirinê nîşan nade, lê şêweyeke domdar û sînorên şîroveya din destnîşan dike." },
+                { "language": "pl", "text": "Analiza nie pokazuje całego wyjaśnienia, ale wskazuje stabilny wzorzec i granice dalszej interpretacji." },
+                { "language": "ro", "text": "Analiza nu oferă întreaga explicație, dar marchează un model stabil și limitele interpretării ulterioare." },
+                { "language": "sq", "text": "Analiza nuk jep të gjithë shpjegimin, por shënon një model të qëndrueshëm dhe kufijtë e interpretimit të mëtejshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verteidigt den Beitrag, ohne die Grenzen zu verstecken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer defends the contribution without hiding the limits." },
+                { "language": "fa", "text": "قوی: پاسخ از سهم تحلیل دفاع می‌کند، بدون اینکه محدودیت‌ها را پنهان کند." },
+                { "language": "ar", "text": "قوي: تدافع الإجابة عن الإسهام من دون إخفاء الحدود." },
+                { "language": "tr", "text": "Güçlü: Yanıt katkıyı savunuyor, sınırları gizlemiyor." },
+                { "language": "ru", "text": "Сильно: ответ защищает вклад, не скрывая ограничений." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرگری لە بەشدارییەکە دەکات، بەبێ ئەوەی سنوورەکان بشارێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv beşdariyê diparêze bê ku sînorên wê veşêre." },
+                { "language": "pl", "text": "Mocne: odpowiedź broni wkładu, nie ukrywając ograniczeń." },
+                { "language": "ro", "text": "Puternic: răspunsul apără contribuția fără să ascundă limitele." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron kontributin pa fshehur kufijtë." }
+              ],
+              "explanationKey": "limited-contribution"
+            },
+            {
+              "id": "weak-minimize-value",
+              "text": "Vielleicht ist der Erkenntniswert dann eher gering, aber der Punkt kann trotzdem erwähnt werden.",
+              "translations": [
+                { "language": "en", "text": "Maybe the analytical value is rather low then, but the point can still be mentioned." },
+                { "language": "fa", "text": "شاید ارزش شناختی در این صورت نسبتاً کم باشد، اما می‌توان آن نکته را همچنان ذکر کرد." },
+                { "language": "ar", "text": "ربما تكون القيمة المعرفية حينها محدودة نسبياً، لكن يمكن ذكر النقطة رغم ذلك." },
+                { "language": "tr", "text": "Belki o zaman bilgi değeri oldukça düşüktür, ama nokta yine de anılabilir." },
+                { "language": "ru", "text": "Возможно, познавательная ценность тогда скорее невелика, но этот пункт всё равно можно упомянуть." },
+                { "language": "ckb", "text": "لەوانەیە ئەوسا بهای زانیارییەکە کەم بێت، بەڵام ئەو خاڵە هێشتا دەتوانرێت باس بکرێت." },
+                { "language": "kmr", "text": "Belkî wê demê nirxa zanistî kêm be, lê ev xal hîn jî dikare were gotin." },
+                { "language": "pl", "text": "Może wtedy wartość poznawcza jest raczej niewielka, ale punkt można mimo to wspomnieć." },
+                { "language": "ro", "text": "Poate atunci valoarea de cunoaștere este destul de mică, dar punctul poate fi totuși menționat." },
+                { "language": "sq", "text": "Ndoshta atëherë vlera njohëse është mjaft e ulët, por pika mund të përmendet gjithsesi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort entwertet die Analyse, statt ihren begrenzten Nutzen präzise zu benennen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: The answer devalues the analysis instead of naming its limited usefulness precisely." },
+                { "language": "fa", "text": "بیش از حد ضعیف است: پاسخ تحلیل را کم‌ارزش می‌کند، به جای اینکه فایده محدود آن را دقیق نام ببرد." },
+                { "language": "ar", "text": "ضعيف أكثر من اللازم: تقلل الإجابة من قيمة التحليل بدلاً من تسمية فائدته المحدودة بدقة." },
+                { "language": "tr", "text": "Fazla zayıf: Yanıt analizi değersizleştiriyor; sınırlı yararını net adlandırmıyor." },
+                { "language": "ru", "text": "Слишком слабо: ответ обесценивает анализ вместо точного обозначения его ограниченной пользы." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە شیکارییەکە کەم‌بەها دەکات، نەک سوودی سنوورداری بە وردی ناو ببرد." },
+                { "language": "kmr", "text": "Pir qels e: Bersiv analîzê bê nirx dike, ne ku sûda wê ya sînordar bi rastî bi nav bike." },
+                { "language": "pl", "text": "Zbyt słabe: odpowiedź umniejsza analizę, zamiast precyzyjnie nazwać jej ograniczoną użyteczność." },
+                { "language": "ro", "text": "Prea slab: răspunsul devalorizează analiza în loc să numească precis utilitatea ei limitată." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja e zhvlerëson analizën, në vend që të emërtojë saktë dobinë e saj të kufizuar." }
+              ],
+              "explanationKey": "minimize-value"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Meine methodische Eingrenzung klang wie eine Abwertung kultureller Faktoren. Überarbeitet zeigt die These ein belastbares Muster, das erst im Kontext vollständig erklärbar wird.",
+              "translations": [
+                { "language": "en", "text": "My methodological narrowing sounded like a devaluation of cultural factors. Revised, the thesis shows a reliable pattern that becomes fully explainable only in context." },
+                { "language": "fa", "text": "محدودسازی روش‌شناختی من مثل کم‌ارزش‌کردن عوامل فرهنگی شنیده شد. در نسخه اصلاح‌شده، تز الگویی قابل اتکا را نشان می‌دهد که فقط در متن زمینه کامل توضیح‌پذیر می‌شود." },
+                { "language": "ar", "text": "بدا تضييقي المنهجي كأنه تقليل من قيمة العوامل الثقافية. في الصياغة المعدلة تُظهر الأطروحة نمطاً موثوقاً لا يصبح قابلاً للتفسير الكامل إلا في السياق." },
+                { "language": "tr", "text": "Metodolojik daraltmam kültürel etkenleri değersizleştirme gibi duyuldu. Gözden geçirilmiş tez, ancak bağlam içinde tam açıklanabilir olan güvenilir bir örüntü gösterir." },
+                { "language": "ru", "text": "Моё методическое сужение прозвучало как обесценивание культурных факторов. В переработанном виде тезис показывает надёжный паттерн, который полностью объясним только в контексте." },
+                { "language": "ckb", "text": "سنووردارکردنی میتۆدیی من وەک کەمکردنەوەی بهای فاکتەرە کولتوورییەکان دەنگی دا. لە شێوەی دەستکاریکراودا تێزەکە شێوازێکی پشتڕاست نیشان دەدات کە تەنها لە کۆنتێکستدا بە تەواوی ڕوون دەبێتەوە." },
+                { "language": "kmr", "text": "Sînordarkirina min a metodîk wek kêmbûna nirxa faktorên çandî bihîst. Teza guhertî şêweyeke pêbawer nîşan dide ku tenê di kontekstê de bi tevahî tê ravekirin." },
+                { "language": "pl", "text": "Moje metodologiczne zawężenie zabrzmiało jak umniejszenie czynników kulturowych. Po poprawce teza pokazuje rzetelny wzorzec, który staje się w pełni wyjaśnialny dopiero w kontekście." },
+                { "language": "ro", "text": "Restrângerea mea metodologică a sunat ca o diminuare a factorilor culturali. Revizuită, teza arată un model solid, explicabil complet numai în context." },
+                { "language": "sq", "text": "Ngushtimi im metodologjik tingëlloi si zhvlerësim i faktorëve kulturorë. E rishikuar, teza tregon një model të besueshëm që shpjegohet plotësisht vetëm në kontekst." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung benennt Missverständnis, Korrektur und verbleibenden Erkenntniswert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary names the misunderstanding, the correction, and the remaining analytical value." },
+                { "language": "fa", "text": "قوی: خلاصه سوءتفاهم، اصلاح و ارزش شناختی باقی‌مانده را نام می‌برد." },
+                { "language": "ar", "text": "قوي: يسمي الملخص سوء الفهم والتصحيح والقيمة المعرفية المتبقية." },
+                { "language": "tr", "text": "Güçlü: Özet yanlış anlaşılmayı, düzeltmeyi ve kalan bilgi değerini adlandırıyor." },
+                { "language": "ru", "text": "Сильно: резюме называет недопонимание, коррекцию и оставшуюся аналитическую ценность." },
+                { "language": "ckb", "text": "بەهێزە: پوختەکە تێنەگەیشتن، چاککردنەوە و بهای زانیاری ماوە ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Kurte şaş-têgihiştin, rastkirin û nirxa zanistî ya mayî bi nav dike." },
+                { "language": "pl", "text": "Mocne: podsumowanie nazywa nieporozumienie, korektę i pozostałą wartość poznawczą." },
+                { "language": "ro", "text": "Puternic: rezumatul numește neînțelegerea, corectarea și valoarea de cunoaștere rămasă." },
+                { "language": "sq", "text": "E fortë: përmbledhja emërton keqkuptimin, korrigjimin dhe vlerën njohëse të mbetur." }
+              ],
+              "explanationKey": "closing-synthesis"
+            },
+            {
+              "id": "weak-apology-only",
+              "text": "Ich entschuldige mich für die unklare Formulierung und werde das später überarbeiten.",
+              "translations": [
+                { "language": "en", "text": "I apologize for the unclear wording and will revise it later." },
+                { "language": "fa", "text": "به خاطر بیان نامشخص عذرخواهی می‌کنم و بعداً آن را بازنویسی می‌کنم." },
+                { "language": "ar", "text": "أعتذر عن الصياغة غير الواضحة وسأراجعها لاحقاً." },
+                { "language": "tr", "text": "Belirsiz ifade için özür dilerim ve bunu daha sonra gözden geçiririm." },
+                { "language": "ru", "text": "Извиняюсь за неясную формулировку и позже её переработаю." },
+                { "language": "ckb", "text": "ببورن بۆ دەربڕینی ناڕوون و دواتر دەستکاری دەکەم." },
+                { "language": "kmr", "text": "Ez lêborînê dixwazim ji bo formulekirina nezelal û paşê wê sererast dikim." },
+                { "language": "pl", "text": "Przepraszam za niejasne sformułowanie i później je poprawię." },
+                { "language": "ro", "text": "Îmi cer scuze pentru formularea neclară și o voi revizui mai târziu." },
+                { "language": "sq", "text": "Kërkoj falje për formulimin e paqartë dhe do ta rishikoj më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Die Antwort ist höflich, fasst aber weder den sachlichen Punkt noch die neue Position zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: The answer is polite but summarizes neither the substantive point nor the new position." },
+                { "language": "fa", "text": "ناقص است: پاسخ مؤدبانه است، اما نه نکته محتوایی و نه موضع جدید را خلاصه نمی‌کند." },
+                { "language": "ar", "text": "غير مكتمل: الإجابة مهذبة لكنها لا تلخص النقطة الموضوعية ولا الموقف الجديد." },
+                { "language": "tr", "text": "Eksik: Yanıt kibar, ama ne içeriksel noktayı ne de yeni konumu özetliyor." },
+                { "language": "ru", "text": "Неполно: ответ вежливый, но не резюмирует ни содержательный пункт, ни новую позицию." },
+                { "language": "ckb", "text": "ناتەواوە: وەڵامەکە ڕێزدارانەیە، بەڵام نە خاڵی ناوەڕۆکی و نە هەڵوێستی نوێ پوختە ناکات." },
+                { "language": "kmr", "text": "Netemam e: Bersiv bi rêz e, lê ne xala naverokî û ne helwesta nû kurt dike." },
+                { "language": "pl", "text": "Niepełne: odpowiedź jest uprzejma, ale nie podsumowuje ani punktu merytorycznego, ani nowego stanowiska." },
+                { "language": "ro", "text": "Incomplet: răspunsul este politicos, dar nu rezumă nici punctul de conținut, nici noua poziție." },
+                { "language": "sq", "text": "E paplotë: përgjigjja është e sjellshme, por nuk përmbledh as pikën përmbajtësore, as qëndrimin e ri." }
+              ],
+              "explanationKey": "apology-only"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy-note",
+          "text": "Bei Missverständnissen auf C1-Niveau reicht ein Dementi nicht; die eigene Aussage muss begrifflich präzisiert werden.",
+          "translations": [
+            { "language": "en", "text": "For misunderstandings at C1 level, a denial is not enough; your own statement must be conceptually clarified." },
+            { "language": "fa", "text": "در سوءتفاهم‌های سطح C1، انکار کافی نیست؛ باید حرف خودتان را از نظر مفهومی دقیق کنید." },
+            { "language": "ar", "text": "في سوء الفهم على مستوى C1، لا يكفي النفي؛ يجب توضيح عبارتك مفاهيمياً." },
+            { "language": "tr", "text": "C1 düzeyindeki yanlış anlaşılmalarda inkâr yetmez; kendi ifadeniz kavramsal olarak netleştirilmelidir." },
+            { "language": "ru", "text": "При недопонимании на уровне C1 одного отрицания недостаточно; своё высказывание нужно уточнить понятийно." },
+            { "language": "ckb", "text": "لە تێنەگەیشتنی ئاستی C1دا ڕەتکردنەوە بەس نییە؛ دەبێت قسەی خۆت لە ڕووی چەمکەوە ورد بکەیت." },
+            { "language": "kmr", "text": "Di şaş-têgihiştina asta C1 de înkarkirin bes nake; divê gotina xwe bi têgehî zelal bikin." },
+            { "language": "pl", "text": "Przy nieporozumieniach na poziomie C1 samo zaprzeczenie nie wystarcza; własną wypowiedź trzeba doprecyzować pojęciowo." },
+            { "language": "ro", "text": "La neînțelegeri de nivel C1, o negare nu este suficientă; propria afirmație trebuie clarificată conceptual." },
+            { "language": "sq", "text": "Në keqkuptime të nivelit C1, mohimi nuk mjafton; pohimi juaj duhet sqaruar konceptualisht." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "tone-note",
+          "text": "Eine starke Reparatur akzeptiert den nachvollziehbaren Teil der Kritik und zeigt zugleich, wo die ursprüngliche Aussage enger gemeint war.",
+          "translations": [
+            { "language": "en", "text": "A strong repair accepts the understandable part of the criticism while showing where the original statement was meant more narrowly." },
+            { "language": "fa", "text": "اصلاح قوی، بخش قابل فهم نقد را می‌پذیرد و هم‌زمان نشان می‌دهد حرف اولیه در کجا محدودتر منظور شده بود." },
+            { "language": "ar", "text": "الإصلاح القوي يقبل الجزء المفهوم من النقد ويبين في الوقت نفسه أين كانت العبارة الأصلية مقصودة بشكل أضيق." },
+            { "language": "tr", "text": "Güçlü bir düzeltme, eleştirinin anlaşılır kısmını kabul eder ve ilk ifadenin nerede daha dar kastedildiğini gösterir." },
+            { "language": "ru", "text": "Сильное исправление принимает понятную часть критики и одновременно показывает, где исходное высказывание имелось в более узком смысле." },
+            { "language": "ckb", "text": "چاککردنەوەی بەهێز بەشی تێگەیشتووی ڕەخنەکە وەردەگرێت و هاوکات نیشان دەدات قسەی سەرەتا لە کوێ بە تەسکتر مەبەست بووە." },
+            { "language": "kmr", "text": "Sererastkirineke xurt beşa têgihiştbar a rexneyê qebûl dike û di heman demê de nîşan dide ku gotina destpêkê li ku derê tengtir hatibû mebestkirin." },
+            { "language": "pl", "text": "Mocna naprawa przyjmuje zrozumiałą część krytyki i jednocześnie pokazuje, gdzie pierwotna wypowiedź była rozumiana wężej." },
+            { "language": "ro", "text": "O reparare puternică acceptă partea inteligibilă a criticii și arată simultan unde afirmația inițială era intenționată mai restrâns." },
+            { "language": "sq", "text": "Një korrigjim i fortë pranon pjesën e kuptueshme të kritikës dhe njëkohësisht tregon ku pohimi fillestar ishte menduar më ngushtë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "concept-note",
+          "text": "Die Unterscheidung zwischen Relevanz und Bearbeitbarkeit hilft, komplexe Themen nicht zu vereinfachen und trotzdem methodisch sauber zu bleiben.",
+          "translations": [
+            { "language": "en", "text": "The distinction between relevance and workability helps avoid oversimplifying complex topics while remaining methodologically sound." },
+            { "language": "fa", "text": "تمایز بین اهمیت و امکان بررسی کمک می‌کند موضوعات پیچیده ساده‌سازی نشوند و در عین حال روش‌شناختی دقیق بمانند." },
+            { "language": "ar", "text": "يساعد التمييز بين الأهمية وقابلية المعالجة على عدم تبسيط الموضوعات المعقدة مع الحفاظ على الدقة المنهجية." },
+            { "language": "tr", "text": "Önem ile işlenebilirlik arasındaki ayrım, karmaşık konuları basitleştirmeden metodolojik olarak temiz kalmayı sağlar." },
+            { "language": "ru", "text": "Различение значимости и исследуемости помогает не упрощать сложные темы и при этом оставаться методически точным." },
+            { "language": "ckb", "text": "جیاکردنەوەی نێوان گرنگی و توانای کاری یارمەتی دەدات بابەتە ئاڵۆزەکان سادە نەکرێن و هەمان کات میتۆدی پاک بمێنن." },
+            { "language": "kmr", "text": "Cudahîkirina navbera girîngî û karbarîbûnê alîkar e ku mijarên tevlihev neyên hêsankirin û di heman demê de metodîk paqij bimînin." },
+            { "language": "pl", "text": "Rozróżnienie między znaczeniem a opracowywalnością pomaga nie upraszczać złożonych tematów, a jednocześnie zachować czystość metodologiczną." },
+            { "language": "ro", "text": "Distincția dintre relevanță și posibilitatea de analiză ajută la evitarea simplificării temelor complexe, rămânând totodată metodologic riguros." },
+            { "language": "sq", "text": "Dallimi midis rëndësisë dhe trajtueshmërisë ndihmon që temat komplekse të mos thjeshtohen dhe njëkohësisht të mbeten metodologjikisht të sakta." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "revision-note",
+          "text": "Eine überarbeitete These sollte den Erkenntniswert erhalten, aber den Geltungsbereich sichtbar begrenzen.",
+          "translations": [
+            { "language": "en", "text": "A revised thesis should preserve the analytical value while visibly limiting its scope." },
+            { "language": "fa", "text": "تز اصلاح‌شده باید ارزش شناختی را حفظ کند، اما دامنه اعتبار آن را آشکارا محدود کند." },
+            { "language": "ar", "text": "ينبغي أن تحافظ الأطروحة المعدلة على القيمة المعرفية مع تحديد نطاق صلاحيتها بوضوح." },
+            { "language": "tr", "text": "Gözden geçirilmiş bir tez, bilgi değerini korumalı ama geçerlilik alanını görünür biçimde sınırlamalıdır." },
+            { "language": "ru", "text": "Переработанный тезис должен сохранять познавательную ценность, но явно ограничивать область применимости." },
+            { "language": "ckb", "text": "تێزی دەستکاریکراو دەبێت بهای زانیاری بپارێزێت، بەڵام مەودای کاریگەرییەکەی بە ڕوونی سنووردار بکات." },
+            { "language": "kmr", "text": "Tezeke guhartî divê nirxa zanistî biparêze, lê qada derbasbûnê bi eşkere sînordar bike." },
+            { "language": "pl", "text": "Zmieniona teza powinna zachować wartość poznawczą, ale widocznie ograniczyć zakres obowiązywania." },
+            { "language": "ro", "text": "O teză revizuită trebuie să păstreze valoarea de cunoaștere, dar să limiteze vizibil domeniul de valabilitate." },
+            { "language": "sq", "text": "Një tezë e rishikuar duhet ta ruajë vlerën njohëse, por ta kufizojë qartë fushën e vlefshmërisë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "synthesis-note",
+          "text": "Eine gute Schlussformulierung nennt nicht nur, dass es ein Missverständnis gab, sondern auch, welche präzisere Position daraus entsteht.",
+          "translations": [
+            { "language": "en", "text": "A good closing formulation states not only that there was a misunderstanding, but also which more precise position results from it." },
+            { "language": "fa", "text": "فرمول‌بندی پایانی خوب فقط نمی‌گوید سوءتفاهمی وجود داشت، بلکه نشان می‌دهد از آن چه موضع دقیق‌تری به دست می‌آید." },
+            { "language": "ar", "text": "الصياغة الختامية الجيدة لا تذكر فقط أن سوء فهم حدث، بل توضح أيضاً أي موقف أدق ينتج عنه." },
+            { "language": "tr", "text": "İyi bir kapanış formülasyonu yalnızca bir yanlış anlaşılma olduğunu söylemez; bundan hangi daha kesin konumun çıktığını da belirtir." },
+            { "language": "ru", "text": "Хорошая завершающая формулировка не только говорит, что было недопонимание, но и показывает, какая более точная позиция из него возникает." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی باش تەنها ناڵێت تێنەگەیشتن هەبووە، بەڵکو نیشان دەدات چ هەڵوێستێکی وردتر لێیەوە دروست دەبێت." },
+            { "language": "kmr", "text": "Formulekirina dawî ya baş ne tenê dibêje ku şaş-têgihiştin hebû, lê jî nîşan dide ka kîjan helwesta rasttir jê derdikeve." },
+            { "language": "pl", "text": "Dobre zakończenie nie mówi tylko, że doszło do nieporozumienia, lecz także pokazuje, jakie precyzyjniejsze stanowisko z niego wynika." },
+            { "language": "ro", "text": "O formulare finală bună nu spune doar că a existat o neînțelegere, ci arată și ce poziție mai precisă rezultă din ea." },
+            { "language": "sq", "text": "Një formulim i mirë përmbyllës nuk thotë vetëm se pati një keqkuptim, por tregon edhe cili qëndrim më i saktë del prej tij." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "seminar-discussion-clarification",
+          "placement": "header",
+          "purpose": "Show a neutral university seminar setting where adult students clarify a discussion point respectfully without readable personal data.",
+          "altText": "Adult students in a seminar room discuss a concept map while one participant calmly clarifies a point, with no readable names or private data.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Adult students in a seminar room discuss a concept map while one participant calmly clarifies a point, with no readable names or private data." },
+            { "language": "fa", "text": "دانشجویان بزرگسال در اتاق سمینار درباره یک نقشه مفهومی بحث می‌کنند و یک نفر آرام نکته‌ای را روشن می‌کند، بدون نام یا داده شخصی خوانا." },
+            { "language": "ar", "text": "طلاب بالغون في غرفة ندوة يناقشون خريطة مفاهيم بينما يوضح أحد المشاركين نقطة بهدوء، من دون أسماء أو بيانات شخصية مقروءة." },
+            { "language": "tr", "text": "Bir seminer odasında yetişkin öğrenciler bir kavram haritasını tartışıyor; bir katılımcı bir noktayı sakin biçimde açıklıyor, okunabilir ad veya özel veri yok." },
+            { "language": "ru", "text": "Взрослые студенты в семинарской комнате обсуждают концептуальную схему, а один участник спокойно проясняет пункт, без читаемых имён или личных данных." },
+            { "language": "ckb", "text": "خوێندکارانی گەورەساڵ لە ژووری سیمیناردا باس لە نەخشەیەکی چەمکی دەکەن و بەشداربوویەک بە ئارامی خاڵێک ڕوون دەکاتەوە، بەبێ ناو یان داتای کەسیی خوێندراو." },
+            { "language": "kmr", "text": "Xwendekarên mezin li odeya semînerê li ser nexşeya têgehî diaxivin û beşdarek bi aramî xalekê zelal dike, bê nav an daneyên kesane yên xwendinbar." },
+            { "language": "pl", "text": "Dorośli studenci w sali seminaryjnej omawiają mapę pojęć, a jedna osoba spokojnie wyjaśnia punkt, bez czytelnych nazwisk ani danych prywatnych." },
+            { "language": "ro", "text": "Studenți adulți într-o sală de seminar discută o hartă conceptuală, iar un participant clarifică liniștit un punct, fără nume sau date personale lizibile." },
+            { "language": "sq", "text": "Studentë të rritur në një sallë seminari diskutojnë një hartë konceptesh ndërsa një pjesëmarrës sqaron qetësisht një pikë, pa emra ose të dhëna personale të lexueshme." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult university seminar group around a table, one participant calmly clarifying a point on an abstract concept map, respectful discussion atmosphere, German higher-education setting, no readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

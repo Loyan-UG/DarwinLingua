@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
@@ -12,6 +13,7 @@ namespace DarwinLingua.Web.Controllers;
 [Route("exercises")]
 public sealed class ExercisesController(
     IWebCatalogApiClient catalogApiClient,
+    IWebLearningProfileAccessor profileAccessor,
     IStringLocalizer<SharedResource> localizer,
     ILogger<ExercisesController> logger) : Controller
 {
@@ -22,10 +24,12 @@ public sealed class ExercisesController(
     public async Task<IActionResult> Index(string? cefrLevel, string? q, CancellationToken cancellationToken)
     {
         ExerciseSetListFilterModel filter = new(LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel), null, null, string.IsNullOrWhiteSpace(q) ? null : q.Trim());
+        UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
         IReadOnlyList<ExerciseSetListItemModel> sets;
         try
         {
-            sets = await catalogApiClient.GetExerciseSetsAsync(filter, cancellationToken).ConfigureAwait(false);
+            sets = await catalogApiClient.GetExerciseSetsAsync(filter, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or OperationCanceledException)
         {
@@ -33,21 +37,25 @@ public sealed class ExercisesController(
             sets = [];
         }
 
-        return View(new ExerciseIndexPageViewModel(sets, LearningPortalFilterConventions.CefrLevels, filter.CefrLevel, filter.Query));
+        return View(new ExerciseIndexPageViewModel(sets, LearningPortalFilterConventions.CefrLevels, filter.CefrLevel, filter.Query, primaryMeaningLanguageCode));
     }
 
     [HttpGet("sets/{slug}", Name = "ExerciseSets_Detail")]
     public async Task<IActionResult> Set(string slug, CancellationToken cancellationToken)
     {
-        ExerciseSetDetailModel? set = await catalogApiClient.GetExerciseSetBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
-        return set is null ? NotFound() : View("Set", new ExerciseSetPageViewModel(set));
+        UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
+        ExerciseSetDetailModel? set = await catalogApiClient.GetExerciseSetBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        return set is null ? NotFound() : View("Set", new ExerciseSetPageViewModel(set, primaryMeaningLanguageCode));
     }
 
     [HttpGet("{slug}", Name = "Exercises_Detail")]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
-        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
-        return exercise is null ? NotFound() : View(new ExerciseRunnerPageViewModel(exercise, null, null));
+        UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
+        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        return exercise is null ? NotFound() : View(new ExerciseRunnerPageViewModel(exercise, null, null, primaryMeaningLanguageCode));
     }
 
     [HttpPost("{slug}", Name = "Exercises_Submit")]
@@ -62,7 +70,9 @@ public sealed class ExercisesController(
         string? pairsText,
         CancellationToken cancellationToken)
     {
-        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+        UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
+        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         if (exercise is null)
         {
             return NotFound();
@@ -80,32 +90,32 @@ public sealed class ExercisesController(
         if (string.IsNullOrWhiteSpace(normalizedSubmittedAnswerJson))
         {
             ModelState.AddModelError(nameof(submittedAnswerJson), localizer["Answer is required."].Value);
-            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson));
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, submittedAnswerJson, primaryMeaningLanguageCode));
         }
 
         if (!IsSubmittedAnswerJsonValid(normalizedSubmittedAnswerJson, out string? validationMessage))
         {
             ModelState.AddModelError(nameof(submittedAnswerJson), validationMessage);
-            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, normalizedSubmittedAnswerJson));
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, normalizedSubmittedAnswerJson, primaryMeaningLanguageCode));
         }
 
         ExerciseAttemptResultModel? result;
         try
         {
             result = await catalogApiClient
-                .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(normalizedSubmittedAnswerJson.Trim()), cancellationToken)
+                .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(normalizedSubmittedAnswerJson.Trim()), primaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or InvalidOperationException)
         {
             logger.LogWarning(ex, "Exercise answer evaluation failed for exercise {ExerciseSlug}.", slug);
             ModelState.AddModelError(nameof(submittedAnswerJson), localizer["The answer could not be evaluated right now."].Value);
-            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, normalizedSubmittedAnswerJson));
+            return View("Detail", new ExerciseRunnerPageViewModel(exercise, null, normalizedSubmittedAnswerJson, primaryMeaningLanguageCode));
         }
 
         return result is null
             ? NotFound()
-            : View("Detail", new ExerciseRunnerPageViewModel(exercise, result, normalizedSubmittedAnswerJson));
+            : View("Detail", new ExerciseRunnerPageViewModel(exercise, result, normalizedSubmittedAnswerJson, primaryMeaningLanguageCode));
     }
 
     private static string BuildSubmittedAnswerJson(
@@ -192,4 +202,7 @@ public sealed class ExercisesController(
             return false;
         }
     }
+
+    private static string ResolveMeaningLanguage(string? languageCode) =>
+        string.IsNullOrWhiteSpace(languageCode) ? "en" : languageCode.Trim().ToLowerInvariant();
 }

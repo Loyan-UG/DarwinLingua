@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-22-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 22 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 22",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-ein-missverstaendnis-mit-dem-amt-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Ein Missverständnis mit dem Amt klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying a misunderstanding with an authority" },
+        { "language": "fa", "text": "رفع یک سوءتفاهم با اداره" },
+        { "language": "ar", "text": "توضيح سوء فهم مع جهة إدارية" },
+        { "language": "tr", "text": "Bir kurumla yanlış anlaşılmayı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Прояснить недоразумение с ведомством" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی سووتێگەیشتنێک لەگەڵ فەرمانگە" },
+        { "language": "kmr", "text": "Şaşfêmkirinekê bi dezgehê re zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnienie nieporozumienia z urzędem" },
+        { "language": "ro", "text": "Clarificarea unei neînțelegeri cu o autoritate" },
+        { "language": "sq", "text": "Sqarimi i një keqkuptimi me një institucion" }
+      ],
+      "description": "Du bist beim Amt, weil du zwei unterschiedliche Informationen bekommen hast. In einer E-Mail steht, dass ein Nachweis fehlt. Am Telefon wurde dir aber gesagt, dass die Unterlagen vollständig sind. Du sollst die beiden Aussagen sachlich vergleichen und klären, welcher Stand aktuell gilt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at an authority because you received two different pieces of information. An email says that proof is missing, but on the phone you were told that the documents are complete. You should compare the two statements factually and clarify which status currently applies." },
+        { "language": "fa", "text": "در اداره هستی، چون دو اطلاع متفاوت دریافت کرده‌ای. در یک ایمیل نوشته شده که یک مدرک کم است، اما تلفنی به تو گفته شده مدارک کامل هستند. باید این دو گفته را واقع‌محور مقایسه کنی و روشن کنی کدام وضعیت فعلاً معتبر است." },
+        { "language": "ar", "text": "أنت في جهة إدارية لأنك تلقيت معلومتين مختلفتين. في بريد إلكتروني ذُكر أن إثباتاً ناقص، لكن قيل لك هاتفياً إن المستندات كاملة. ينبغي أن تقارن العبارتين بشكل موضوعي وتوضح أي وضع هو المعتمد حالياً." },
+        { "language": "tr", "text": "Bir kuruma gittin, çünkü iki farklı bilgi aldın. Bir e-postada bir kanıtın eksik olduğu yazıyor, ancak telefonda belgelerin tamam olduğu söylendi. İki ifadeyi somut biçimde karşılaştırmalı ve şu anda hangi durumun geçerli olduğunu netleştirmelisin." },
+        { "language": "ru", "text": "Вы в ведомстве, потому что получили две разные информации. В электронном письме указано, что не хватает подтверждения, но по телефону вам сказали, что документы полные. Нужно фактически сравнить оба сообщения и уточнить, какой статус сейчас действует." },
+        { "language": "ckb", "text": "لە فەرمانگەیەکیت چونکە دوو زانیاری جیاوازت وەرگرتووە. لە ئیمەیڵێکدا نووسراوە کە بەڵگەیەک کەمە، بەڵام بە تەلەفۆن پێت وتراوە بەڵگەنامەکان تەواون. دەبێت ئەم دوو وتەیە بە شێوەی بابەتی بەراورد بکەیت و ڕوون بکەیتەوە کام دۆخ ئێستا کارپێکراوە." },
+        { "language": "kmr", "text": "Tu li dezgehê yî, ji ber ku du agahiyên cuda wergirtiye. Di e-nameyekê de hatiye nivîsandin ku delîlek kêm e, lê bi telefonê ji te re hatiye gotin ku belge temam in. Divê tu her du gotinan bi awayekî rastîn bidî ber hev û zelal bikî ka kîjan rewş niha derbasdar e." },
+        { "language": "pl", "text": "Jesteś w urzędzie, ponieważ otrzymałeś dwie różne informacje. W e-mailu napisano, że brakuje dowodu, ale telefonicznie powiedziano Ci, że dokumenty są kompletne. Masz rzeczowo porównać oba komunikaty i wyjaśnić, który stan jest obecnie aktualny." },
+        { "language": "ro", "text": "Ești la o autoritate pentru că ai primit două informații diferite. Într-un e-mail scrie că lipsește o dovadă, însă la telefon ți s-a spus că actele sunt complete. Trebuie să compari obiectiv cele două afirmații și să clarifici care este situația valabilă acum." },
+        { "language": "sq", "text": "Je në një institucion sepse ke marrë dy informacione të ndryshme. Në një e-mail thuhet se mungon një provë, por me telefon të është thënë se dokumentet janë të plota. Duhet t’i krahasosh faktikisht dy deklaratat dhe të sqarosh cili status vlen tani." }
+      ],
+      "learnerGoal": "Kläre widersprüchliche Informationen: Nenne beide Aussagen mit Datum, frage neutral nach dem aktuellen Stand, bitte um Korrektur im System oder um eine schriftliche Bestätigung des gültigen nächsten Schritts.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify conflicting information: name both statements with dates, ask neutrally about the current status, and ask for a correction in the system or written confirmation of the valid next step." },
+        { "language": "fa", "text": "اطلاعات متناقض را روشن کن: هر دو گفته را با تاریخ بیان کن، بی‌طرفانه درباره وضعیت فعلی بپرس، و درخواست اصلاح در سیستم یا تأیید کتبی قدم معتبر بعدی را مطرح کن." },
+        { "language": "ar", "text": "وضح المعلومات المتناقضة: اذكر العبارتين مع التاريخ، واسأل بحياد عن الوضع الحالي، واطلب تصحيحاً في النظام أو تأكيداً خطياً للخطوة التالية المعتمدة." },
+        { "language": "tr", "text": "Çelişkili bilgileri netleştir: iki ifadeyi tarihleriyle belirt, güncel durumu tarafsızca sor ve sistemde düzeltme ya da geçerli sonraki adımın yazılı onayını iste." },
+        { "language": "ru", "text": "Проясните противоречивую информацию: назовите оба сообщения с датами, нейтрально спросите о текущем статусе и попросите исправление в системе или письменное подтверждение действительного следующего шага." },
+        { "language": "ckb", "text": "زانیاریی ناکۆک ڕوون بکەوە: هەردوو وتەکە بە بەروارەوە ناو ببە، بە بێلایەنی لە دۆخی ئێستا بپرسە، و داوای ڕاستکردنەوە لە سیستەم یان پشتڕاستکردنەوەی نووسراوی هەنگاوی داهاتووی کارپێکراو بکە." },
+        { "language": "kmr", "text": "Agahiyên nakok zelal bike: her du gotinan bi rojê bi nav bike, bêalî li ser rewşa niha bipirse û daxwaza rastkirinê di pergalê de an piştrastkirina nivîskî ya gava paşîn a derbasdar bike." },
+        { "language": "pl", "text": "Wyjaśnij sprzeczne informacje: podaj oba komunikaty z datami, neutralnie zapytaj o aktualny stan i poproś o korektę w systemie albo pisemne potwierdzenie obowiązującego następnego kroku." },
+        { "language": "ro", "text": "Clarifică informațiile contradictorii: menționează ambele afirmații cu datele lor, întreabă neutru despre situația actuală și cere o corectare în sistem sau o confirmare scrisă a pasului următor valabil." },
+        { "language": "sq", "text": "Sqaro informacionet kundërthënëse: përmend të dyja deklaratat me datat, pyet në mënyrë neutrale për gjendjen aktuale dhe kërko korrigjim në sistem ose konfirmim me shkrim të hapit të ardhshëm të vlefshëm." }
+      ],
+      "cefrLevel": "B2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 3220,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Sachbearbeiter",
+          "translations": [
+            { "language": "en", "text": "Case officer" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "موظف المعاملات" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник ведомства" },
+            { "language": "ckb", "text": "کارمەندی مامەڵە" },
+            { "language": "kmr", "text": "Karbidestê dosyeyê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționarul de caz" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Antragstellerin",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "متقاضی" },
+            { "language": "ar", "text": "مقدمة الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявительница" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawczyni" },
+            { "language": "ro", "text": "Solicitantă" },
+            { "language": "sq", "text": "Aplikuesja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag. Sie möchten ein Missverständnis zu Ihrem Antrag klären. Haben Sie das Aktenzeichen und die Unterlagen dabei?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. You would like to clarify a misunderstanding about your application. Do you have the file number and documents with you?" },
+            { "language": "fa", "text": "روز بخیر. می‌خواهید یک سوءتفاهم درباره درخواست خود را روشن کنید. شماره پرونده و مدارک را همراه دارید؟" },
+            { "language": "ar", "text": "نهارك سعيد. تريدين توضيح سوء فهم بخصوص طلبك. هل لديك رقم الملف والمستندات؟" },
+            { "language": "tr", "text": "İyi günler. Başvurunuzla ilgili bir yanlış anlaşılmayı açıklığa kavuşturmak istiyorsunuz. Dosya numarası ve belgeler yanınızda mı?" },
+            { "language": "ru", "text": "Добрый день. Вы хотите прояснить недоразумение по вашему заявлению. У вас есть номер дела и документы?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەتەوێت سووتێگەیشتنێک سەبارەت بە داواکەت ڕوون بکەیتەوە. ژمارەی کەیس و بەڵگەنامەکانت پێیە؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn dixwazin şaşfêmkirinekê derbarê daxwaza xwe zelal bikin. Hejmarê dosyeyê û belge bi we re ne?" },
+            { "language": "pl", "text": "Dzień dobry. Chce Pani wyjaśnić nieporozumienie dotyczące swojego wniosku. Czy ma Pani numer sprawy i dokumenty?" },
+            { "language": "ro", "text": "Bună ziua. Doriți să clarificați o neînțelegere privind cererea dumneavoastră. Aveți numărul dosarului și actele la dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironi të sqaroni një keqkuptim për kërkesën tuaj. A e keni me vete numrin e dosjes dhe dokumentet?" }
+          ],
+          "function": "open-clarification"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, das Aktenzeichen ist A-2047. Ich habe zwei unterschiedliche Informationen bekommen: In der E-Mail vom 6. Juli steht, dass der Mietvertrag fehlt. Am Telefon wurde mir am 8. Juli gesagt, dass alle Unterlagen vollständig sind.",
+          "translations": [
+            { "language": "en", "text": "Yes, the file number is A-2047. I received two different pieces of information: the email dated July 6 says that the rental contract is missing. On the phone on July 8, I was told that all documents are complete." },
+            { "language": "fa", "text": "بله، شماره پرونده A-2047 است. من دو اطلاع متفاوت دریافت کرده‌ام: در ایمیل ۶ ژوئیه نوشته شده که قرارداد اجاره کم است. اما تلفنی در ۸ ژوئیه به من گفته شد که همه مدارک کامل هستند." },
+            { "language": "ar", "text": "نعم، رقم الملف هو A-2047. تلقيت معلومتين مختلفتين: في البريد الإلكتروني بتاريخ 6 يوليو مكتوب أن عقد الإيجار ناقص. لكن في الهاتف بتاريخ 8 يوليو قيل لي إن جميع المستندات كاملة." },
+            { "language": "tr", "text": "Evet, dosya numarası A-2047. İki farklı bilgi aldım: 6 Temmuz tarihli e-postada kira sözleşmesinin eksik olduğu yazıyor. Ancak 8 Temmuz'daki telefon görüşmesinde bana tüm belgelerin tamam olduğu söylendi." },
+            { "language": "ru", "text": "Да, номер дела A-2047. Я получила две разные информации: в письме от 6 июля написано, что отсутствует договор аренды. А по телефону 8 июля мне сказали, что все документы полные." },
+            { "language": "ckb", "text": "بەڵێ، ژمارەی کەیس A-2047 ـە. دوو زانیاری جیاوازم وەرگرتووە: لە ئیمەیڵی ٦ی تەممووزدا نووسراوە کە گرێبەستی کرێ کەمە. بەڵام لە تەلەفۆنی ٨ی تەممووزدا پێم وترا کە هەموو بەڵگەنامەکان تەواون." },
+            { "language": "kmr", "text": "Erê, hejmarê dosyeyê A-2047 e. Min du agahiyên cuda wergirtine: di e-nameya 6ê Tîrmehê de hatiye nivîsandin ku peymana kirê kêm e. Lê di telefonê ya 8ê Tîrmehê de ji min re hate gotin ku hemû belge temam in." },
+            { "language": "pl", "text": "Tak, numer sprawy to A-2047. Otrzymałam dwie różne informacje: w e-mailu z 6 lipca napisano, że brakuje umowy najmu. Telefonicznie 8 lipca powiedziano mi jednak, że wszystkie dokumenty są kompletne." },
+            { "language": "ro", "text": "Da, numărul dosarului este A-2047. Am primit două informații diferite: în e-mailul din 6 iulie scrie că lipsește contractul de închiriere. La telefon, pe 8 iulie, mi s-a spus însă că toate actele sunt complete." },
+            { "language": "sq", "text": "Po, numri i dosjes është A-2047. Kam marrë dy informacione të ndryshme: në e-mailin e datës 6 korrik thuhet se mungon kontrata e qirasë. Por me telefon më 8 korrik më thanë se të gjitha dokumentet janë të plota." }
+          ],
+          "function": "compare-two-statements",
+          "expectedLearnerAction": "Nenne Aktenzeichen und beide Aussagen mit Datum, ohne eine Seite zu beschuldigen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Danke, so kann ich es prüfen. Die E-Mail könnte automatisch erstellt worden sein. Was genau möchten Sie jetzt klären?",
+          "translations": [
+            { "language": "en", "text": "Thank you, that lets me check it. The email may have been generated automatically. What exactly would you like to clarify now?" },
+            { "language": "fa", "text": "ممنون، این‌طوری می‌توانم بررسی کنم. ممکن است ایمیل به‌صورت خودکار ساخته شده باشد. دقیقاً الان چه چیزی را می‌خواهید روشن کنید؟" },
+            { "language": "ar", "text": "شكراً، هكذا يمكنني فحص الأمر. قد يكون البريد الإلكتروني قد أُنشئ تلقائياً. ما الذي تريدين توضيحه بالضبط الآن؟" },
+            { "language": "tr", "text": "Teşekkür ederim, böylece kontrol edebilirim. E-posta otomatik oluşturulmuş olabilir. Şimdi tam olarak neyi netleştirmek istiyorsunuz?" },
+            { "language": "ru", "text": "Спасибо, так я могу это проверить. Возможно, письмо было создано автоматически. Что именно вы хотите сейчас уточнить?" },
+            { "language": "ckb", "text": "سوپاس، بەم شێوەیە دەتوانم بیپشکنم. لەوانەیە ئیمەیڵەکە بە شێوەی ئۆتۆماتیکی دروست کرابێت. بە وردی ئێستا دەتەوێت چی ڕوون بکەیتەوە؟" },
+            { "language": "kmr", "text": "Spas, bi vî awayî ez dikarim wê kontrol bikim. Dibe ku e-name bi awayekî otomatîk hatiye çêkirin. Hûn niha bi taybetî dixwazin çi zelal bikin?" },
+            { "language": "pl", "text": "Dziękuję, w ten sposób mogę to sprawdzić. E-mail mógł zostać utworzony automatycznie. Co dokładnie chce Pani teraz wyjaśnić?" },
+            { "language": "ro", "text": "Mulțumesc, așa pot verifica. E-mailul ar fi putut fi generat automat. Ce anume doriți să clarificați acum?" },
+            { "language": "sq", "text": "Faleminderit, kështu mund ta kontrolloj. E-maili mund të jetë krijuar automatikisht. Çfarë saktësisht dëshironi të sqaroni tani?" }
+          ],
+          "function": "invite-precise-question"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte wissen, welcher Stand aktuell gilt. Ist der Mietvertrag im System vorhanden, oder soll ich ihn noch einmal hochladen? Wenn die E-Mail veraltet ist, wäre eine kurze Korrektur im System für mich wichtig.",
+          "translations": [
+            { "language": "en", "text": "I would like to know which status currently applies. Is the rental contract in the system, or should I upload it again? If the email is outdated, a short correction in the system would be important for me." },
+            { "language": "fa", "text": "می‌خواهم بدانم کدام وضعیت فعلاً معتبر است. آیا قرارداد اجاره در سیستم موجود است، یا باید دوباره آن را بارگذاری کنم؟ اگر ایمیل قدیمی است، یک اصلاح کوتاه در سیستم برای من مهم است." },
+            { "language": "ar", "text": "أريد أن أعرف أي وضع هو المعتمد حالياً. هل عقد الإيجار موجود في النظام أم ينبغي أن أرفعه مرة أخرى؟ إذا كان البريد الإلكتروني قديماً، فسيكون تصحيح قصير في النظام مهماً بالنسبة لي." },
+            { "language": "tr", "text": "Şu anda hangi durumun geçerli olduğunu bilmek istiyorum. Kira sözleşmesi sistemde var mı, yoksa tekrar yüklemeli miyim? E-posta güncel değilse, sistemde kısa bir düzeltme benim için önemli olur." },
+            { "language": "ru", "text": "Я хотела бы знать, какой статус сейчас действует. Договор аренды есть в системе или мне нужно загрузить его ещё раз? Если письмо устарело, для меня важна короткая корректировка в системе." },
+            { "language": "ckb", "text": "دەمەوێت بزانم کام دۆخ ئێستا کارپێکراوە. ئایا گرێبەستی کرێ لە سیستەمدا هەیە، یان دەبێت جارێکی تر بارم بکەم؟ ئەگەر ئیمەیڵەکە کۆنە، ڕاستکردنەوەیەکی کورت لە سیستەمدا بۆ من گرنگە." },
+            { "language": "kmr", "text": "Ez dixwazim bizanim kîjan rewş niha derbasdar e. Ma peymana kirê di pergalê de heye, an divê ez careke din bar bikim? Heke e-name kevn be, rastkirineke kurt di pergalê de ji bo min girîng e." },
+            { "language": "pl", "text": "Chciałabym wiedzieć, który stan jest obecnie aktualny. Czy umowa najmu jest w systemie, czy powinnam wgrać ją jeszcze raz? Jeśli e-mail jest nieaktualny, krótka korekta w systemie byłaby dla mnie ważna." },
+            { "language": "ro", "text": "Aș dori să știu care este situația valabilă acum. Contractul de închiriere este în sistem sau ar trebui să îl încarc din nou? Dacă e-mailul este depășit, o scurtă corectare în sistem ar fi importantă pentru mine." },
+            { "language": "sq", "text": "Dua të di cili status vlen aktualisht. A është kontrata e qirasë në sistem, apo duhet ta ngarkoj edhe një herë? Nëse e-maili është i vjetruar, një korrigjim i shkurtër në sistem do të ishte i rëndësishëm për mua." }
+          ],
+          "function": "ask-current-valid-status",
+          "expectedLearnerAction": "Frage nach dem aktuell gültigen Stand und nach einer Systemkorrektur, falls die E-Mail veraltet ist."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Ich sehe den Mietvertrag im System. Er wurde am 5. Juli hochgeladen und ist lesbar. Die automatische E-Mail wurde offenbar versendet, bevor der Eingang zugeordnet war.",
+          "translations": [
+            { "language": "en", "text": "I can see the rental contract in the system. It was uploaded on July 5 and is readable. The automatic email was apparently sent before the submission was assigned." },
+            { "language": "fa", "text": "قرارداد اجاره را در سیستم می‌بینم. در ۵ ژوئیه بارگذاری شده و خواناست. ظاهراً ایمیل خودکار قبل از ثبت ارتباط مدرک با پرونده ارسال شده است." },
+            { "language": "ar", "text": "أرى عقد الإيجار في النظام. تم رفعه في 5 يوليو وهو واضح. يبدو أن البريد الإلكتروني التلقائي أُرسل قبل ربط الوارد بالملف." },
+            { "language": "tr", "text": "Kira sözleşmesini sistemde görüyorum. 5 Temmuz'da yüklenmiş ve okunabilir. Otomatik e-posta, giriş dosyayla eşleştirilmeden önce gönderilmiş gibi görünüyor." },
+            { "language": "ru", "text": "Я вижу договор аренды в системе. Он был загружен 5 июля и читаемый. Автоматическое письмо, по-видимому, было отправлено до того, как поступление было привязано к делу." },
+            { "language": "ckb", "text": "گرێبەستی کرێ لە سیستەمدا دەبینم. لە ٥ی تەممووز بارکراوە و خوێندراوە. دیارە ئیمەیڵی ئۆتۆماتیکی پێش ئەوەی وەرگرتنەکە بە کەیسەکەوە ببەسترێت نێردراوە." },
+            { "language": "kmr", "text": "Ez peymana kirê di pergalê de dibînim. Ew di 5ê Tîrmehê de hatiye barkirin û xwendbar e. E-nameya otomatîk xuya ye berî ku hatin bi dosyeyê ve were girêdan hatiye şandin." },
+            { "language": "pl", "text": "Widzę umowę najmu w systemie. Została wgrana 5 lipca i jest czytelna. Automatyczny e-mail najwyraźniej został wysłany, zanim wpływ został przypisany do sprawy." },
+            { "language": "ro", "text": "Văd contractul de închiriere în sistem. A fost încărcat pe 5 iulie și este lizibil. E-mailul automat pare să fi fost trimis înainte ca depunerea să fie asociată dosarului." },
+            { "language": "sq", "text": "E shoh kontratën e qirasë në sistem. Është ngarkuar më 5 korrik dhe është e lexueshme. E-maili automatik duket se është dërguar para se dorëzimi të lidhej me dosjen." }
+          ],
+          "function": "resolve-conflict"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke, das klärt den Widerspruch. Können Sie bitte im System vermerken, dass der Mietvertrag vorhanden ist? Außerdem hätte ich gern eine kurze schriftliche Bestätigung, damit ich auf die alte E-Mail nicht mehr reagieren muss.",
+          "translations": [
+            { "language": "en", "text": "Thank you, that clarifies the contradiction. Could you please note in the system that the rental contract is present? I would also like a short written confirmation so I no longer need to respond to the old email." },
+            { "language": "fa", "text": "ممنون، این تناقض را روشن کرد. می‌توانید لطفاً در سیستم ثبت کنید که قرارداد اجاره موجود است؟ همچنین یک تأیید کتبی کوتاه می‌خواهم تا دیگر لازم نباشد به ایمیل قدیمی واکنش نشان بدهم." },
+            { "language": "ar", "text": "شكراً، هذا يوضح التناقض. هل يمكنك أن تسجل في النظام أن عقد الإيجار موجود؟ كما أود تأكيداً خطياً قصيراً حتى لا أحتاج إلى الرد على البريد الإلكتروني القديم." },
+            { "language": "tr", "text": "Teşekkür ederim, bu çelişkiyi açıklığa kavuşturdu. Sisteme kira sözleşmesinin mevcut olduğunu not edebilir misiniz? Ayrıca eski e-postaya artık yanıt vermem gerekmemesi için kısa bir yazılı onay isterim." },
+            { "language": "ru", "text": "Спасибо, это прояснило противоречие. Можете отметить в системе, что договор аренды имеется? Кроме того, я хотела бы короткое письменное подтверждение, чтобы мне больше не нужно было отвечать на старое письмо." },
+            { "language": "ckb", "text": "سوپاس، ئەمە ناکۆکییەکەی ڕوون کردەوە. دەتوانن تکایە لە سیستەمدا تێبینی بکەن کە گرێبەستی کرێ هەیە؟ هەروەها دەمەوێت پشتڕاستکردنەوەیەکی نووسراوی کورت وەربگرم تا چیتر پێویست نەبێت وەڵامی ئیمەیڵە کۆنەکە بدەمەوە." },
+            { "language": "kmr", "text": "Spas, ev nakokiyê zelal kir. Hûn dikarin ji kerema xwe di pergalê de nîşe bikin ku peymana kirê heye? Her wiha ez piştrastkirineke nivîskî ya kurt dixwazim, da ku êdî ne pêwîst be ez bersiva e-nameya kevn bidim." },
+            { "language": "pl", "text": "Dziękuję, to wyjaśnia sprzeczność. Czy może Pan zaznaczyć w systemie, że umowa najmu jest dostępna? Chciałabym też krótkie pisemne potwierdzenie, abym nie musiała już odpowiadać na stary e-mail." },
+            { "language": "ro", "text": "Mulțumesc, asta clarifică contradicția. Puteți nota, vă rog, în sistem că există contractul de închiriere? Aș dori și o scurtă confirmare scrisă, ca să nu mai trebuiască să răspund la e-mailul vechi." },
+            { "language": "sq", "text": "Faleminderit, kjo e sqaron kundërshtinë. A mund të shënoni, ju lutem, në sistem se kontrata e qirasë ekziston? Do të doja edhe një konfirmim të shkurtër me shkrim që të mos më duhet më t’i përgjigjem e-mailit të vjetër." }
+          ],
+          "function": "request-correction-and-confirmation",
+          "expectedLearnerAction": "Bitte um Systemvermerk und schriftliche Bestätigung der Klärung."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Ich setze einen Vermerk: Mietvertrag vorhanden, E-Mail vom 6. Juli nicht mehr aktuell. Eine Bestätigung kann ich Ihnen über das Portal senden. Brauchen Sie zusätzlich eine Fristverlängerung?",
+          "translations": [
+            { "language": "en", "text": "I will add a note: rental contract present, email from July 6 no longer current. I can send you confirmation through the portal. Do you also need a deadline extension?" },
+            { "language": "fa", "text": "یک یادداشت ثبت می‌کنم: قرارداد اجاره موجود است، ایمیل ۶ ژوئیه دیگر به‌روز نیست. می‌توانم تأیید را از طریق درگاه برایتان بفرستم. علاوه بر آن به تمدید مهلت نیاز دارید؟" },
+            { "language": "ar", "text": "سأضع ملاحظة: عقد الإيجار موجود، والبريد الإلكتروني بتاريخ 6 يوليو لم يعد محدثاً. يمكنني إرسال تأكيد لك عبر البوابة. هل تحتاجين أيضاً إلى تمديد المهلة؟" },
+            { "language": "tr", "text": "Bir not ekliyorum: kira sözleşmesi mevcut, 6 Temmuz tarihli e-posta artık güncel değil. Onayı size portal üzerinden gönderebilirim. Ayrıca süre uzatmasına ihtiyacınız var mı?" },
+            { "language": "ru", "text": "Я внесу отметку: договор аренды имеется, письмо от 6 июля больше не актуально. Подтверждение могу отправить вам через портал. Вам дополнительно нужно продление срока?" },
+            { "language": "ckb", "text": "تێبینییەک دادەنێم: گرێبەستی کرێ هەیە، ئیمەیڵی ٦ی تەممووز چیتر نوێ نییە. دەتوانم پشتڕاستکردنەوەکە لە ڕێگەی پۆرتاڵەوە بۆت بنێرم. پێویستت بە درێژکردنەوەی مۆڵەتیش هەیە؟" },
+            { "language": "kmr", "text": "Ez nîşeyekê datînim: peymana kirê heye, e-nameya 6ê Tîrmehê êdî ne rojane ye. Ez dikarim piştrastkirinê bi rêya portalê ji we re bişînim. Ji bilî vê, pêwîstiya we bi dirêjkirina demê heye?" },
+            { "language": "pl", "text": "Dodam adnotację: umowa najmu jest dostępna, e-mail z 6 lipca nie jest już aktualny. Mogę wysłać Pani potwierdzenie przez portal. Czy potrzebuje Pani dodatkowo przedłużenia terminu?" },
+            { "language": "ro", "text": "Voi adăuga o notă: contractul de închiriere există, e-mailul din 6 iulie nu mai este actual. Vă pot trimite confirmarea prin portal. Aveți nevoie și de o prelungire a termenului?" },
+            { "language": "sq", "text": "Do të vendos një shënim: kontrata e qirasë ekziston, e-maili i 6 korrikut nuk është më aktual. Mund t’jua dërgoj konfirmimin përmes portalit. A ju duhet edhe zgjatje afati?" }
+          ],
+          "function": "offer-resolution"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Eine Fristverlängerung brauche ich nicht, wenn der Mietvertrag wirklich als vorhanden gilt. Wichtig ist mir nur, dass die Bestätigung klar sagt, dass ich wegen der alten E-Mail nichts erneut hochladen muss.",
+          "translations": [
+            { "language": "en", "text": "I do not need a deadline extension if the rental contract is really considered present. It is only important to me that the confirmation clearly says that I do not need to upload anything again because of the old email." },
+            { "language": "fa", "text": "اگر قرارداد اجاره واقعاً موجود محسوب شود، به تمدید مهلت نیاز ندارم. فقط برایم مهم است که تأیید روشن بگوید به خاطر ایمیل قدیمی لازم نیست چیزی را دوباره بارگذاری کنم." },
+            { "language": "ar", "text": "لا أحتاج إلى تمديد المهلة إذا كان عقد الإيجار يعتبر موجوداً فعلاً. المهم بالنسبة لي فقط أن يقول التأكيد بوضوح إنني لا أحتاج إلى رفع أي شيء مرة أخرى بسبب البريد الإلكتروني القديم." },
+            { "language": "tr", "text": "Kira sözleşmesi gerçekten mevcut sayılıyorsa süre uzatmasına ihtiyacım yok. Benim için önemli olan, onayın eski e-posta nedeniyle hiçbir şeyi tekrar yüklemem gerekmediğini açıkça söylemesidir." },
+            { "language": "ru", "text": "Мне не нужно продление срока, если договор аренды действительно считается имеющимся. Для меня важно только, чтобы подтверждение ясно говорило, что из-за старого письма мне ничего не нужно загружать повторно." },
+            { "language": "ckb", "text": "پێویستم بە درێژکردنەوەی مۆڵەت نییە، ئەگەر گرێبەستی کرێ بە ڕاستی بە هەبوو هەژمار بکرێت. تەنها ئەوە بۆم گرنگە کە پشتڕاستکردنەوەکە بە ڕوونی بڵێت بەهۆی ئیمەیڵە کۆنەکەوە پێویست ناکات هیچ شتێک دووبارە بار بکەم." },
+            { "language": "kmr", "text": "Heke peymana kirê bi rastî wekî heyî were hesibandin, pêwîstiya min bi dirêjkirina demê tune ye. Tenê ji bo min girîng e ku piştrastkirin bi zelalî bêje ku ji ber e-nameya kevn ne pêwîst e ez tiştekî careke din bar bikim." },
+            { "language": "pl", "text": "Nie potrzebuję przedłużenia terminu, jeśli umowa najmu rzeczywiście jest uznana za dostępną. Ważne jest dla mnie tylko, aby potwierdzenie jasno mówiło, że z powodu starego e-maila nie muszę niczego ponownie wgrywać." },
+            { "language": "ro", "text": "Nu am nevoie de o prelungire a termenului dacă acel contract de închiriere este într-adevăr considerat existent. Important pentru mine este doar ca confirmarea să spună clar că, din cauza e-mailului vechi, nu trebuie să mai încarc nimic din nou." },
+            { "language": "sq", "text": "Nuk kam nevojë për zgjatje afati nëse kontrata e qirasë vërtet konsiderohet e pranishme. Për mua është e rëndësishme vetëm që konfirmimi të thotë qartë se për shkak të e-mailit të vjetër nuk duhet të ngarkoj asgjë përsëri." }
+          ],
+          "function": "clarify-needed-outcome",
+          "expectedLearnerAction": "Lehne unnötige Fristverlängerung ab und formuliere den benötigten Bestätigungsinhalt."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "office-staff",
+          "baseText": "Verstanden. Ich schreibe: Mietvertrag liegt vor, keine erneute Einreichung erforderlich. Die Bestätigung wird heute im Portal hinterlegt.",
+          "translations": [
+            { "language": "en", "text": "Understood. I will write: rental contract is available, no resubmission required. The confirmation will be stored in the portal today." },
+            { "language": "fa", "text": "متوجه شدم. می‌نویسم: قرارداد اجاره موجود است، ارائه دوباره لازم نیست. تأیید امروز در درگاه قرار داده می‌شود." },
+            { "language": "ar", "text": "فهمت. سأكتب: عقد الإيجار موجود، ولا يلزم تقديمه مرة أخرى. سيتم وضع التأكيد في البوابة اليوم." },
+            { "language": "tr", "text": "Anladım. Şunu yazacağım: kira sözleşmesi mevcut, yeniden sunum gerekli değil. Onay bugün portala eklenecek." },
+            { "language": "ru", "text": "Понял. Я напишу: договор аренды имеется, повторная подача не требуется. Подтверждение будет размещено в портале сегодня." },
+            { "language": "ckb", "text": "تێگەیشتم. دەنووسم: گرێبەستی کرێ هەیە، پێشکەشکردنی دووبارە پێویست نییە. پشتڕاستکردنەوەکە ئەمڕۆ لە پۆرتاڵدا دادەنرێت." },
+            { "language": "kmr", "text": "Min fam kir. Ez dinivîsim: peymana kirê heye, radestkirina careke din ne pêwîst e. Piştrastkirin îro di portalê de tê danîn." },
+            { "language": "pl", "text": "Rozumiem. Napiszę: umowa najmu jest dostępna, ponowne złożenie nie jest wymagane. Potwierdzenie zostanie dziś umieszczone w portalu." },
+            { "language": "ro", "text": "Am înțeles. Voi scrie: contractul de închiriere există, nu este necesară o nouă depunere. Confirmarea va fi încărcată astăzi în portal." },
+            { "language": "sq", "text": "E kuptova. Do të shkruaj: kontrata e qirasë ekziston, nuk kërkohet dorëzim i përsëritur. Konfirmimi do të vendoset sot në portal." }
+          ],
+          "function": "confirm-final-wording"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann halte ich fest: Der Mietvertrag ist vorhanden, die E-Mail vom 6. Juli ist nicht mehr aktuell, und ich muss nichts erneut hochladen. Ich prüfe heute das Portal auf die schriftliche Bestätigung.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will note: the rental contract is present, the email from July 6 is no longer current, and I do not need to upload anything again. I will check the portal today for the written confirmation." },
+            { "language": "fa", "text": "خیلی ممنون. پس یادداشت می‌کنم: قرارداد اجاره موجود است، ایمیل ۶ ژوئیه دیگر به‌روز نیست، و لازم نیست چیزی را دوباره بارگذاری کنم. امروز درگاه را برای تأیید کتبی بررسی می‌کنم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن أسجل: عقد الإيجار موجود، والبريد الإلكتروني بتاريخ 6 يوليو لم يعد محدثاً، ولا يجب عليّ رفع أي شيء مرة أخرى. سأفحص البوابة اليوم بحثاً عن التأكيد الخطي." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman not alıyorum: kira sözleşmesi mevcut, 6 Temmuz tarihli e-posta artık güncel değil ve hiçbir şeyi tekrar yüklemem gerekmiyor. Yazılı onay için bugün portalı kontrol edeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я фиксирую: договор аренды имеется, письмо от 6 июля больше не актуально, и мне ничего не нужно загружать повторно. Сегодня я проверю портал на наличие письменного подтверждения." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە تێبینی دەکەم: گرێبەستی کرێ هەیە، ئیمەیڵی ٦ی تەممووز چیتر نوێ نییە، و پێویست ناکات هیچ شتێک دووبارە بار بکەم. ئەمڕۆ پۆرتاڵەکە بۆ پشتڕاستکردنەوەی نووسراو دەپشکنم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez tomar dikim: peymana kirê heye, e-nameya 6ê Tîrmehê êdî ne rojane ye, û ne pêwîst e ez tiştekî careke din bar bikim. Ez îro portalê ji bo piştrastkirina nivîskî kontrol dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie zapisuję: umowa najmu jest dostępna, e-mail z 6 lipca nie jest już aktualny i nie muszę niczego ponownie wgrywać. Dziś sprawdzę portal pod kątem pisemnego potwierdzenia." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci rețin: contractul de închiriere există, e-mailul din 6 iulie nu mai este actual și nu trebuie să mai încarc nimic din nou. Astăzi verific portalul pentru confirmarea scrisă." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë e mbaj shënim: kontrata e qirasë ekziston, e-maili i 6 korrikut nuk është më aktual dhe nuk duhet të ngarkoj asgjë përsëri. Sot do të kontrolloj portalin për konfirmimin me shkrim." }
+          ],
+          "function": "close-with-summary",
+          "expectedLearnerAction": "Fasse den gültigen Stand, die veraltete Information und den nächsten Prüfpunkt zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, das Aktenzeichen ist A-2047. Ich habe zwei unterschiedliche Informationen bekommen: In der E-Mail vom 6. Juli steht, dass der Mietvertrag fehlt. Am Telefon wurde mir am 8. Juli gesagt, dass alle Unterlagen vollständig sind.",
+              "translations": [
+                { "language": "en", "text": "Yes, the file number is A-2047. I received two different pieces of information: the email dated July 6 says that the rental contract is missing. On the phone on July 8, I was told that all documents are complete." },
+                { "language": "fa", "text": "بله، شماره پرونده A-2047 است. من دو اطلاع متفاوت دریافت کرده‌ام: در ایمیل ۶ ژوئیه نوشته شده که قرارداد اجاره کم است. اما تلفنی در ۸ ژوئیه به من گفته شد که همه مدارک کامل هستند." },
+                { "language": "ar", "text": "نعم، رقم الملف هو A-2047. تلقيت معلومتين مختلفتين: في البريد الإلكتروني بتاريخ 6 يوليو مكتوب أن عقد الإيجار ناقص. لكن في الهاتف بتاريخ 8 يوليو قيل لي إن جميع المستندات كاملة." },
+                { "language": "tr", "text": "Evet, dosya numarası A-2047. İki farklı bilgi aldım: 6 Temmuz tarihli e-postada kira sözleşmesinin eksik olduğu yazıyor. Ancak 8 Temmuz'daki telefon görüşmesinde bana tüm belgelerin tamam olduğu söylendi." },
+                { "language": "ru", "text": "Да, номер дела A-2047. Я получила две разные информации: в письме от 6 июля написано, что отсутствует договор аренды. А по телефону 8 июля мне сказали, что все документы полные." },
+                { "language": "ckb", "text": "بەڵێ، ژمارەی کەیس A-2047 ـە. دوو زانیاری جیاوازم وەرگرتووە: لە ئیمەیڵی ٦ی تەممووزدا نووسراوە کە گرێبەستی کرێ کەمە. بەڵام لە تەلەفۆنی ٨ی تەممووزدا پێم وترا کە هەموو بەڵگەنامەکان تەواون." },
+                { "language": "kmr", "text": "Erê, hejmarê dosyeyê A-2047 e. Min du agahiyên cuda wergirtine: di e-nameya 6ê Tîrmehê de hatiye nivîsandin ku peymana kirê kêm e. Lê di telefonê ya 8ê Tîrmehê de ji min re hate gotin ku hemû belge temam in." },
+                { "language": "pl", "text": "Tak, numer sprawy to A-2047. Otrzymałam dwie różne informacje: w e-mailu z 6 lipca napisano, że brakuje umowy najmu. Telefonicznie 8 lipca powiedziano mi jednak, że wszystkie dokumenty są kompletne." },
+                { "language": "ro", "text": "Da, numărul dosarului este A-2047. Am primit două informații diferite: în e-mailul din 6 iulie scrie că lipsește contractul de închiriere. La telefon, pe 8 iulie, mi s-a spus însă că toate actele sunt complete." },
+                { "language": "sq", "text": "Po, numri i dosjes është A-2047. Kam marrë dy informacione të ndryshme: në e-mailin e datës 6 korrik thuhet se mungon kontrata e qirasë. Por me telefon më 8 korrik më thanë se të gjitha dokumentet janë të plota." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt beide Quellen mit Datum und bleibt neutral.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer names both sources with dates and stays neutral." },
+                { "language": "fa", "text": "خوب است: پاسخ هر دو منبع را با تاریخ بیان می‌کند و بی‌طرف می‌ماند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة المصدرين مع التاريخ وتبقى محايدة." },
+                { "language": "tr", "text": "İyi: Yanıt iki kaynağı tarihleriyle belirtir ve tarafsız kalır." },
+                { "language": "ru", "text": "Хорошо: ответ называет оба источника с датами и остаётся нейтральным." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەردوو سەرچاوە بە بەروارەوە ناو دەبات و بێلایەن دەمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv her du çavkaniyan bi rojê bi nav dike û bêalî dimîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje oba źródła z datami i pozostaje neutralna." },
+                { "language": "ro", "text": "Bine: răspunsul menționează ambele surse cu datele lor și rămâne neutru." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend të dy burimet me datat dhe mbetet neutrale." }
+              ]
+            },
+            {
+              "id": "weak-accusatory",
+              "text": "Bei mir steht in einer E-Mail etwas anderes als am Telefon. Irgendjemand hat da offenbar einen Fehler gemacht.",
+              "translations": [
+                { "language": "en", "text": "My email says something different than what I heard on the phone. Someone apparently made a mistake there." },
+                { "language": "fa", "text": "در ایمیل من چیزی متفاوت از تماس تلفنی نوشته شده. ظاهراً یک نفر آنجا اشتباه کرده است." },
+                { "language": "ar", "text": "في بريدي الإلكتروني مكتوب شيء مختلف عما قيل لي في الهاتف. من الواضح أن شخصاً ما ارتكب خطأ هناك." },
+                { "language": "tr", "text": "E-postamda telefonda duyduğumdan farklı bir şey yazıyor. Görünüşe göre orada biri hata yapmış." },
+                { "language": "ru", "text": "В моём письме написано не то, что мне сказали по телефону. Очевидно, кто-то там допустил ошибку." },
+                { "language": "ckb", "text": "لە ئیمەیڵەکەمدا شتێکی جیاواز لەوەی بە تەلەفۆن بیستم نووسراوە. دیارە کەسێک لەوێ هەڵەی کردووە." },
+                { "language": "kmr", "text": "Di e-nameya min de tiştek ji ya telefonê cuda hatiye nivîsandin. Xuya ye kesekê li wir şaşî kiriye." },
+                { "language": "pl", "text": "W moim e-mailu jest coś innego niż to, co usłyszałam telefonicznie. Ktoś najwyraźniej popełnił błąd." },
+                { "language": "ro", "text": "În e-mailul meu scrie altceva decât ce am auzit la telefon. Se pare că cineva a făcut o greșeală." },
+                { "language": "sq", "text": "Në e-mailin tim shkruan diçka tjetër nga ajo që dëgjova në telefon. Me sa duket dikush ka bërë gabim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach für B2: Die Antwort ist verständlich, aber anklagend und ohne Aktenzeichen oder Daten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak for B2: The answer is understandable, but accusatory and without file number or dates." },
+                { "language": "fa", "text": "برای B2 ضعیف است: پاسخ قابل فهم است، اما اتهامی است و شماره پرونده یا تاریخ ندارد." },
+                { "language": "ar", "text": "ضعيفة لمستوى B2: الإجابة مفهومة لكنها اتهامية ومن دون رقم ملف أو تواريخ." },
+                { "language": "tr", "text": "B2 için zayıf: Yanıt anlaşılır, fakat suçlayıcı ve dosya numarası ya da tarih yok." },
+                { "language": "ru", "text": "Слабо для B2: ответ понятен, но обвинительный и без номера дела или дат." },
+                { "language": "ckb", "text": "بۆ B2 لاوازە: وەڵامەکە تێگەیشتراوە، بەڵام تاوانبارکەرە و ژمارەی کەیس یان بەرواری نییە." },
+                { "language": "kmr", "text": "Ji bo B2 qels e: Bersiv tê famkirin, lê sûcdarker e û hejmarê dosyeyê an roj tune ye." },
+                { "language": "pl", "text": "Za słabe na B2: odpowiedź jest zrozumiała, ale oskarżająca i bez numeru sprawy lub dat." },
+                { "language": "ro", "text": "Prea slab pentru B2: răspunsul este de înțeles, dar acuzator și fără număr de dosar sau date." },
+                { "language": "sq", "text": "Shumë e dobët për B2: përgjigjja kuptohet, por është akuzuese dhe pa numër dosjeje ose data." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich möchte wissen, welcher Stand aktuell gilt. Ist der Mietvertrag im System vorhanden, oder soll ich ihn noch einmal hochladen? Wenn die E-Mail veraltet ist, wäre eine kurze Korrektur im System für mich wichtig.",
+              "translations": [
+                { "language": "en", "text": "I would like to know which status currently applies. Is the rental contract in the system, or should I upload it again? If the email is outdated, a short correction in the system would be important for me." },
+                { "language": "fa", "text": "می‌خواهم بدانم کدام وضعیت فعلاً معتبر است. آیا قرارداد اجاره در سیستم موجود است، یا باید دوباره آن را بارگذاری کنم؟ اگر ایمیل قدیمی است، یک اصلاح کوتاه در سیستم برای من مهم است." },
+                { "language": "ar", "text": "أريد أن أعرف أي وضع هو المعتمد حالياً. هل عقد الإيجار موجود في النظام أم ينبغي أن أرفعه مرة أخرى؟ إذا كان البريد الإلكتروني قديماً، فسيكون تصحيح قصير في النظام مهماً بالنسبة لي." },
+                { "language": "tr", "text": "Şu anda hangi durumun geçerli olduğunu bilmek istiyorum. Kira sözleşmesi sistemde var mı, yoksa tekrar yüklemeli miyim? E-posta güncel değilse, sistemde kısa bir düzeltme benim için önemli olur." },
+                { "language": "ru", "text": "Я хотела бы знать, какой статус сейчас действует. Договор аренды есть в системе или мне нужно загрузить его ещё раз? Если письмо устарело, для меня важна короткая корректировка в системе." },
+                { "language": "ckb", "text": "دەمەوێت بزانم کام دۆخ ئێستا کارپێکراوە. ئایا گرێبەستی کرێ لە سیستەمدا هەیە، یان دەبێت جارێکی تر بارم بکەم؟ ئەگەر ئیمەیڵەکە کۆنە، ڕاستکردنەوەیەکی کورت لە سیستەمدا بۆ من گرنگە." },
+                { "language": "kmr", "text": "Ez dixwazim bizanim kîjan rewş niha derbasdar e. Ma peymana kirê di pergalê de heye, an divê ez careke din bar bikim? Heke e-name kevn be, rastkirineke kurt di pergalê de ji bo min girîng e." },
+                { "language": "pl", "text": "Chciałabym wiedzieć, który stan jest obecnie aktualny. Czy umowa najmu jest w systemie, czy powinnam wgrać ją jeszcze raz? Jeśli e-mail jest nieaktualny, krótka korekta w systemie byłaby dla mnie ważna." },
+                { "language": "ro", "text": "Aș dori să știu care este situația valabilă acum. Contractul de închiriere este în sistem sau ar trebui să îl încarc din nou? Dacă e-mailul este depășit, o scurtă corectare în sistem ar fi importantă pentru mine." },
+                { "language": "sq", "text": "Dua të di cili status vlen aktualisht. A është kontrata e qirasë në sistem, apo duhet ta ngarkoj edhe një herë? Nëse e-maili është i vjetruar, një korrigjim i shkurtër në sistem do të ishte i rëndësishëm për mua." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fragt nach dem gültigen Stand und nennt eine konkrete Folge für das System.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer asks about the valid status and names a concrete consequence for the system." },
+                { "language": "fa", "text": "خوب است: پاسخ درباره وضعیت معتبر می‌پرسد و پیامد مشخصی برای سیستم بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تسأل الإجابة عن الوضع المعتمد وتذكر نتيجة محددة للنظام." },
+                { "language": "tr", "text": "İyi: Yanıt geçerli durumu sorar ve sistem için somut bir sonucu belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ спрашивает о действующем статусе и называет конкретное последствие для системы." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە لە دۆخی کارپێکراو دەپرسێت و ئەنجامێکی دیاریکراو بۆ سیستەم دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv li ser rewşa derbasdar dipirse û encameke konkret ji bo pergalê dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pyta o obowiązujący stan i wskazuje konkretną konsekwencję dla systemu." },
+                { "language": "ro", "text": "Bine: răspunsul întreabă despre situația valabilă și menționează o consecință concretă pentru sistem." },
+                { "language": "sq", "text": "Mirë: përgjigjja pyet për statusin e vlefshëm dhe përmend një pasojë konkrete për sistemin." }
+              ]
+            },
+            {
+              "id": "weak-repeat-only",
+              "text": "Also ist die E-Mail falsch oder das Telefonat falsch? Ich möchte nur wissen, was stimmt.",
+              "translations": [
+                { "language": "en", "text": "So is the email wrong or the phone call wrong? I just want to know what is correct." },
+                { "language": "fa", "text": "پس ایمیل اشتباه است یا تماس تلفنی؟ فقط می‌خواهم بدانم کدام درست است." },
+                { "language": "ar", "text": "إذن هل البريد الإلكتروني خاطئ أم المكالمة الهاتفية خاطئة؟ أريد فقط أن أعرف ما الصحيح." },
+                { "language": "tr", "text": "Yani e-posta mı yanlış, telefon görüşmesi mi yanlış? Sadece neyin doğru olduğunu bilmek istiyorum." },
+                { "language": "ru", "text": "То есть письмо неправильное или телефонный разговор неправильный? Я просто хочу знать, что верно." },
+                { "language": "ckb", "text": "کەواتە ئیمەیڵەکە هەڵەیە یان تەلەفۆنەکە؟ تەنها دەمەوێت بزانم چی ڕاستە." },
+                { "language": "kmr", "text": "Yanî e-name şaş e an telefon şaş e? Ez tenê dixwazim bizanim çi rast e." },
+                { "language": "pl", "text": "Czyli e-mail jest błędny czy rozmowa telefoniczna? Chcę tylko wiedzieć, co jest prawidłowe." },
+                { "language": "ro", "text": "Deci e-mailul este greșit sau convorbirea telefonică? Vreau doar să știu ce este corect." },
+                { "language": "sq", "text": "Pra është i gabuar e-maili apo telefonata? Dua vetëm të di çfarë është e saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig B2: Es fehlt die konkrete Folgefrage, ob neu hochgeladen oder im System korrigiert werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not enough for B2: The concrete follow-up question is missing: upload again or correct it in the system." },
+                { "language": "fa", "text": "قابل‌باور است، اما برای B2 کافی نیست: سؤال پیگیری مشخص کم است؛ دوباره بارگذاری شود یا در سیستم اصلاح شود؟" },
+                { "language": "ar", "text": "معقول، لكنه غير كافٍ لمستوى B2: ينقص سؤال المتابعة المحدد: هل يجب الرفع من جديد أم التصحيح في النظام؟" },
+                { "language": "tr", "text": "Makul ama B2 için yeterli değil: Somut takip sorusu eksik; tekrar yüklensin mi yoksa sistemde düzeltme mi yapılsın?" },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно для B2: не хватает конкретного уточнения: загрузить снова или исправить в системе?" },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام بۆ B2 بەس نییە: پرسیاری بەدواداچوونی دیاریکراو کەمە؛ دووبارە بار بکرێت یان لە سیستەمدا ڕاست بکرێتەوە؟" },
+                { "language": "kmr", "text": "Maqûl e, lê ji bo B2 bes nîne: pirsa şopandinê ya konkret kêm e; careke din were barkirin an di pergalê de were rastkirin?" },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale to za mało na B2: brakuje konkretnego pytania, czy wgrać ponownie, czy skorygować w systemie." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient pentru B2: lipsește întrebarea concretă, dacă trebuie reîncărcat sau corectat în sistem." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft për B2: mungon pyetja konkrete pasuese, nëse duhet ngarkuar përsëri apo korrigjuar në sistem." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke, das klärt den Widerspruch. Können Sie bitte im System vermerken, dass der Mietvertrag vorhanden ist? Außerdem hätte ich gern eine kurze schriftliche Bestätigung, damit ich auf die alte E-Mail nicht mehr reagieren muss.",
+              "translations": [
+                { "language": "en", "text": "Thank you, that clarifies the contradiction. Could you please note in the system that the rental contract is present? I would also like a short written confirmation so I no longer need to respond to the old email." },
+                { "language": "fa", "text": "ممنون، این تناقض را روشن کرد. می‌توانید لطفاً در سیستم ثبت کنید که قرارداد اجاره موجود است؟ همچنین یک تأیید کتبی کوتاه می‌خواهم تا دیگر لازم نباشد به ایمیل قدیمی واکنش نشان بدهم." },
+                { "language": "ar", "text": "شكراً، هذا يوضح التناقض. هل يمكنك أن تسجل في النظام أن عقد الإيجار موجود؟ كما أود تأكيداً خطياً قصيراً حتى لا أحتاج إلى الرد على البريد الإلكتروني القديم." },
+                { "language": "tr", "text": "Teşekkür ederim, bu çelişkiyi açıklığa kavuşturdu. Sisteme kira sözleşmesinin mevcut olduğunu not edebilir misiniz? Ayrıca eski e-postaya artık yanıt vermem gerekmemesi için kısa bir yazılı onay isterim." },
+                { "language": "ru", "text": "Спасибо, это прояснило противоречие. Можете отметить в системе, что договор аренды имеется? Кроме того, я хотела бы короткое письменное подтверждение, чтобы мне больше не нужно было отвечать на старое письмо." },
+                { "language": "ckb", "text": "سوپاس، ئەمە ناکۆکییەکەی ڕوون کردەوە. دەتوانن تکایە لە سیستەمدا تێبینی بکەن کە گرێبەستی کرێ هەیە؟ هەروەها دەمەوێت پشتڕاستکردنەوەیەکی نووسراوی کورت وەربگرم تا چیتر پێویست نەبێت وەڵامی ئیمەیڵە کۆنەکە بدەمەوە." },
+                { "language": "kmr", "text": "Spas, ev nakokiyê zelal kir. Hûn dikarin ji kerema xwe di pergalê de nîşe bikin ku peymana kirê heye? Her wiha ez piştrastkirineke nivîskî ya kurt dixwazim, da ku êdî ne pêwîst be ez bersiva e-nameya kevn bidim." },
+                { "language": "pl", "text": "Dziękuję, to wyjaśnia sprzeczność. Czy może Pan zaznaczyć w systemie, że umowa najmu jest dostępna? Chciałabym też krótkie pisemne potwierdzenie, abym nie musiała już odpowiadać na stary e-mail." },
+                { "language": "ro", "text": "Mulțumesc, asta clarifică contradicția. Puteți nota, vă rog, în sistem că există contractul de închiriere? Aș dori și o scurtă confirmare scrisă, ca să nu mai trebuiască să răspund la e-mailul vechi." },
+                { "language": "sq", "text": "Faleminderit, kjo e sqaron kundërshtinë. A mund të shënoni, ju lutem, në sistem se kontrata e qirasë ekziston? Do të doja edhe një konfirmim të shkurtër me shkrim që të mos më duhet më t’i përgjigjem e-mailit të vjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bittet um Systemvermerk und schriftliche Bestätigung des geklärten Stands.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer asks for a system note and written confirmation of the clarified status." },
+                { "language": "fa", "text": "خوب است: پاسخ درخواست ثبت در سیستم و تأیید کتبی وضعیت روشن‌شده را مطرح می‌کند." },
+                { "language": "ar", "text": "جيد: تطلب الإجابة ملاحظة في النظام وتأكيداً خطياً للوضع الذي تم توضيحه." },
+                { "language": "tr", "text": "İyi: Yanıt sistem notu ve netleşen durumun yazılı onayını ister." },
+                { "language": "ru", "text": "Хорошо: ответ просит отметку в системе и письменное подтверждение прояснённого статуса." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە داوای تێبینی لە سیستەم و پشتڕاستکردنەوەی نووسراوی دۆخی ڕوونکراو دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv daxwaza nîşe di pergalê de û piştrastkirina nivîskî ya rewşa zelalbûyî dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź prosi o adnotację w systemie i pisemne potwierdzenie wyjaśnionego stanu." },
+                { "language": "ro", "text": "Bine: răspunsul cere o notă în sistem și confirmarea scrisă a situației clarificate." },
+                { "language": "sq", "text": "Mirë: përgjigjja kërkon shënim në sistem dhe konfirmim me shkrim të statusit të sqaruar." }
+              ]
+            },
+            {
+              "id": "weak-no-written-proof",
+              "text": "Gut, dann ist ja alles klar. Dann mache ich erst einmal nichts.",
+              "translations": [
+                { "language": "en", "text": "Good, then everything is clear. Then I will not do anything for now." },
+                { "language": "fa", "text": "خوب، پس همه چیز روشن است. فعلاً کاری انجام نمی‌دهم." },
+                { "language": "ar", "text": "حسناً، إذن كل شيء واضح. لن أفعل شيئاً الآن." },
+                { "language": "tr", "text": "Tamam, o zaman her şey açık. Şimdilik hiçbir şey yapmayacağım." },
+                { "language": "ru", "text": "Хорошо, тогда всё ясно. Тогда пока я ничего не буду делать." },
+                { "language": "ckb", "text": "باشە، کەواتە هەموو شتێک ڕوونە. کەواتە بۆ ئێستا هیچ ناکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê her tişt zelal e. Wê demê ez niha tiştekî nakim." },
+                { "language": "pl", "text": "Dobrze, w takim razie wszystko jasne. Na razie nic nie zrobię." },
+                { "language": "ro", "text": "Bine, atunci totul este clar. Deocamdată nu fac nimic." },
+                { "language": "sq", "text": "Mirë, atëherë gjithçka është e qartë. Për momentin nuk bëj asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu riskant: Ohne Systemvermerk oder schriftliche Bestätigung bleibt die alte E-Mail als Unsicherheit bestehen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too risky: Without a system note or written confirmation, the old email remains an uncertainty." },
+                { "language": "fa", "text": "خیلی پرریسک است: بدون ثبت در سیستم یا تأیید کتبی، ایمیل قدیمی همچنان ابهام ایجاد می‌کند." },
+                { "language": "ar", "text": "خطِر جداً: من دون ملاحظة في النظام أو تأكيد خطي تبقى الرسالة القديمة مصدر عدم وضوح." },
+                { "language": "tr", "text": "Çok riskli: Sistem notu veya yazılı onay olmadan eski e-posta belirsizlik olarak kalır." },
+                { "language": "ru", "text": "Слишком рискованно: без отметки в системе или письменного подтверждения старое письмо остаётся неопределённостью." },
+                { "language": "ckb", "text": "زۆر مەترسیدارە: بەبێ تێبینیی سیستەم یان پشتڕاستکردنەوەی نووسراو، ئیمەیڵە کۆنەکە وەک ناڕوونی دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir bi metirsî ye: Bê nîşeya pergalê an piştrastkirina nivîskî, e-nameya kevn wekî nezelalî dimîne." },
+                { "language": "pl", "text": "Zbyt ryzykowne: bez adnotacji w systemie albo pisemnego potwierdzenia stary e-mail nadal pozostaje niepewnością." },
+                { "language": "ro", "text": "Prea riscant: fără o notă în sistem sau o confirmare scrisă, vechiul e-mail rămâne o incertitudine." },
+                { "language": "sq", "text": "Shumë e rrezikshme: pa një shënim në sistem ose konfirmim me shkrim, e-maili i vjetër mbetet paqartësi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Eine Fristverlängerung brauche ich nicht, wenn der Mietvertrag wirklich als vorhanden gilt. Wichtig ist mir nur, dass die Bestätigung klar sagt, dass ich wegen der alten E-Mail nichts erneut hochladen muss.",
+              "translations": [
+                { "language": "en", "text": "I do not need a deadline extension if the rental contract is really considered present. It is only important to me that the confirmation clearly says that I do not need to upload anything again because of the old email." },
+                { "language": "fa", "text": "اگر قرارداد اجاره واقعاً موجود محسوب شود، به تمدید مهلت نیاز ندارم. فقط برایم مهم است که تأیید روشن بگوید به خاطر ایمیل قدیمی لازم نیست چیزی را دوباره بارگذاری کنم." },
+                { "language": "ar", "text": "لا أحتاج إلى تمديد المهلة إذا كان عقد الإيجار يعتبر موجوداً فعلاً. المهم بالنسبة لي فقط أن يقول التأكيد بوضوح إنني لا أحتاج إلى رفع أي شيء مرة أخرى بسبب البريد الإلكتروني القديم." },
+                { "language": "tr", "text": "Kira sözleşmesi gerçekten mevcut sayılıyorsa süre uzatmasına ihtiyacım yok. Benim için önemli olan, onayın eski e-posta nedeniyle hiçbir şeyi tekrar yüklemem gerekmediğini açıkça söylemesidir." },
+                { "language": "ru", "text": "Мне не нужно продление срока, если договор аренды действительно считается имеющимся. Для меня важно только, чтобы подтверждение ясно говорило, что из-за старого письма мне ничего не нужно загружать повторно." },
+                { "language": "ckb", "text": "پێویستم بە درێژکردنەوەی مۆڵەت نییە، ئەگەر گرێبەستی کرێ بە ڕاستی بە هەبوو هەژمار بکرێت. تەنها ئەوە بۆم گرنگە کە پشتڕاستکردنەوەکە بە ڕوونی بڵێت بەهۆی ئیمەیڵە کۆنەکەوە پێویست ناکات هیچ شتێک دووبارە بار بکەم." },
+                { "language": "kmr", "text": "Heke peymana kirê bi rastî wekî heyî were hesibandin, pêwîstiya min bi dirêjkirina demê tune ye. Tenê ji bo min girîng e ku piştrastkirin bi zelalî bêje ku ji ber e-nameya kevn ne pêwîst e ez tiştekî careke din bar bikim." },
+                { "language": "pl", "text": "Nie potrzebuję przedłużenia terminu, jeśli umowa najmu rzeczywiście jest uznana za dostępną. Ważne jest dla mnie tylko, aby potwierdzenie jasno mówiło, że z powodu starego e-maila nie muszę niczego ponownie wgrywać." },
+                { "language": "ro", "text": "Nu am nevoie de o prelungire a termenului dacă acel contract de închiriere este într-adevăr considerat existent. Important pentru mine este doar ca confirmarea să spună clar că, din cauza e-mailului vechi, nu trebuie să mai încarc nimic din nou." },
+                { "language": "sq", "text": "Nuk kam nevojë për zgjatje afati nëse kontrata e qirasë vërtet konsiderohet e pranishme. Për mua është e rëndësishme vetëm që konfirmimi të thotë qartë se për shkak të e-mailit të vjetër nuk duhet të ngarkoj asgjë përsëri." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort lehnt eine unnötige Lösung ab und formuliert den wirklich benötigten Nachweis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer declines an unnecessary solution and formulates the proof that is really needed." },
+                { "language": "fa", "text": "خوب است: پاسخ راه‌حل غیرضروری را رد می‌کند و مدرک واقعاً لازم را دقیق بیان می‌کند." },
+                { "language": "ar", "text": "جيد: ترفض الإجابة حلاً غير ضروري وتحدد الإثبات المطلوب فعلاً." },
+                { "language": "tr", "text": "İyi: Yanıt gereksiz bir çözümü reddeder ve gerçekten gereken kanıtı belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ отклоняет ненужное решение и формулирует действительно нужное подтверждение." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە چارەسەرێکی ناپێویست ڕەت دەکاتەوە و ئەو بەڵگەیەی بە ڕاستی پێویستە دیاری دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv çareseriyeke ne pêwîst red dike û delîla bi rastî pêwîst formule dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź odrzuca niepotrzebne rozwiązanie i formułuje naprawdę potrzebne potwierdzenie." },
+                { "language": "ro", "text": "Bine: răspunsul refuză o soluție inutilă și formulează dovada de care este cu adevărat nevoie." },
+                { "language": "sq", "text": "Mirë: përgjigjja refuzon një zgjidhje të panevojshme dhe formulon provën që nevojitet vërtet." }
+              ]
+            },
+            {
+              "id": "weak-accepts-extra-step",
+              "text": "Wenn es einfacher ist, lade ich den Mietvertrag einfach noch einmal hoch.",
+              "translations": [
+                { "language": "en", "text": "If it is easier, I will simply upload the rental contract again." },
+                { "language": "fa", "text": "اگر راحت‌تر است، قرارداد اجاره را همین‌طور دوباره بارگذاری می‌کنم." },
+                { "language": "ar", "text": "إذا كان ذلك أسهل، فسأرفع عقد الإيجار مرة أخرى ببساطة." },
+                { "language": "tr", "text": "Daha kolaysa kira sözleşmesini sadece tekrar yüklerim." },
+                { "language": "ru", "text": "Если так проще, я просто загружу договор аренды ещё раз." },
+                { "language": "ckb", "text": "ئەگەر ئاسانترە، گرێبەستی کرێ جارێکی تر بار دەکەم." },
+                { "language": "kmr", "text": "Heke hêsantir be, ez peymana kirê careke din bar dikim." },
+                { "language": "pl", "text": "Jeśli tak będzie łatwiej, po prostu wgram umowę najmu jeszcze raz." },
+                { "language": "ro", "text": "Dacă este mai simplu, încarc pur și simplu contractul de închiriere încă o dată." },
+                { "language": "sq", "text": "Nëse është më e lehtë, thjesht e ngarkoj edhe një herë kontratën e qirasë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unnötig: Die Antwort löst das Missverständnis nicht und kann doppelte Unterlagen erzeugen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but unnecessary: The answer does not resolve the misunderstanding and may create duplicate documents." },
+                { "language": "fa", "text": "قابل‌باور است، اما غیرضروری است: پاسخ سوءتفاهم را حل نمی‌کند و ممکن است مدارک تکراری ایجاد کند." },
+                { "language": "ar", "text": "معقول، لكنه غير ضروري: الإجابة لا تحل سوء الفهم وقد تؤدي إلى مستندات مكررة." },
+                { "language": "tr", "text": "Makul ama gereksiz: Yanıt yanlış anlaşılmayı çözmez ve çift belge oluşturabilir." },
+                { "language": "ru", "text": "Правдоподобно, но не нужно: ответ не решает недоразумение и может создать дубли документов." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام ناپێویستە: وەڵامەکە سووتێگەیشتنەکە چارەسەر ناکات و لەوانەیە بەڵگەنامەی دووبارە دروست بکات." },
+                { "language": "kmr", "text": "Maqûl e, lê ne pêwîst e: Bersiv şaşfêmkirinê çareser nake û dikare belgeyên dubare çêbike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest niepotrzebne: odpowiedź nie rozwiązuje nieporozumienia i może stworzyć podwójne dokumenty." },
+                { "language": "ro", "text": "Plauzibil, dar inutil: răspunsul nu rezolvă neînțelegerea și poate crea acte duplicate." },
+                { "language": "sq", "text": "E besueshme, por e panevojshme: përgjigjja nuk e zgjidh keqkuptimin dhe mund të krijojë dokumente të dyfishta." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Dann halte ich fest: Der Mietvertrag ist vorhanden, die E-Mail vom 6. Juli ist nicht mehr aktuell, und ich muss nichts erneut hochladen. Ich prüfe heute das Portal auf die schriftliche Bestätigung.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will note: the rental contract is present, the email from July 6 is no longer current, and I do not need to upload anything again. I will check the portal today for the written confirmation." },
+                { "language": "fa", "text": "خیلی ممنون. پس یادداشت می‌کنم: قرارداد اجاره موجود است، ایمیل ۶ ژوئیه دیگر به‌روز نیست، و لازم نیست چیزی را دوباره بارگذاری کنم. امروز درگاه را برای تأیید کتبی بررسی می‌کنم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن أسجل: عقد الإيجار موجود، والبريد الإلكتروني بتاريخ 6 يوليو لم يعد محدثاً، ولا يجب عليّ رفع أي شيء مرة أخرى. سأفحص البوابة اليوم بحثاً عن التأكيد الخطي." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman not alıyorum: kira sözleşmesi mevcut, 6 Temmuz tarihli e-posta artık güncel değil ve hiçbir şeyi tekrar yüklemem gerekmiyor. Yazılı onay için bugün portalı kontrol edeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я фиксирую: договор аренды имеется, письмо от 6 июля больше не актуально, и мне ничего не нужно загружать повторно. Сегодня я проверю портал на наличие письменного подтверждения." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە تێبینی دەکەم: گرێبەستی کرێ هەیە، ئیمەیڵی ٦ی تەممووز چیتر نوێ نییە، و پێویست ناکات هیچ شتێک دووبارە بار بکەم. ئەمڕۆ پۆرتاڵەکە بۆ پشتڕاستکردنەوەی نووسراو دەپشکنم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez tomar dikim: peymana kirê heye, e-nameya 6ê Tîrmehê êdî ne rojane ye, û ne pêwîst e ez tiştekî careke din bar bikim. Ez îro portalê ji bo piştrastkirina nivîskî kontrol dikim." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie zapisuję: umowa najmu jest dostępna, e-mail z 6 lipca nie jest już aktualny i nie muszę niczego ponownie wgrywać. Dziś sprawdzę portal pod kątem pisemnego potwierdzenia." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci rețin: contractul de închiriere există, e-mailul din 6 iulie nu mai este actual și nu trebuie să mai încarc nimic din nou. Astăzi verific portalul pentru confirmarea scrisă." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë e mbaj shënim: kontrata e qirasë ekziston, e-maili i 6 korrikut nuk është më aktual dhe nuk duhet të ngarkoj asgjë përsëri. Sot do të kontrolloj portalin për konfirmimin me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fasst den gültigen Stand, die veraltete Information und den nächsten Prüfpunkt zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer summarizes the valid status, outdated information, and next check point." },
+                { "language": "fa", "text": "خوب است: پاسخ وضعیت معتبر، اطلاع قدیمی و نقطه بررسی بعدی را جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "جيد: تلخص الإجابة الوضع المعتمد والمعلومة القديمة ونقطة التحقق التالية." },
+                { "language": "tr", "text": "İyi: Yanıt geçerli durumu, eski bilgiyi ve sonraki kontrol noktasını özetler." },
+                { "language": "ru", "text": "Хорошо: ответ суммирует действующий статус, устаревшую информацию и следующий пункт проверки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە دۆخی کارپێکراو، زانیاریی کۆن و خاڵی پشکنینی داهاتوو کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv rewşa derbasdar, agahiya kevn û xala kontrola paşîn kurt dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podsumowuje obowiązujący stan, nieaktualną informację i następny punkt kontroli." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă situația valabilă, informația depășită și următorul punct de verificare." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh statusin e vlefshëm, informacionin e vjetër dhe pikën tjetër të kontrollit." }
+              ]
+            },
+            {
+              "id": "weak-thanks-only",
+              "text": "Danke, dann ist alles erledigt.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then everything is done." },
+                { "language": "fa", "text": "ممنون، پس همه چیز انجام شده است." },
+                { "language": "ar", "text": "شكراً، إذن كل شيء منتهٍ." },
+                { "language": "tr", "text": "Teşekkürler, o zaman her şey tamam." },
+                { "language": "ru", "text": "Спасибо, тогда всё решено." },
+                { "language": "ckb", "text": "سوپاس، کەواتە هەموو شت تەواوە." },
+                { "language": "kmr", "text": "Spas, wê demê her tişt qediya." },
+                { "language": "pl", "text": "Dziękuję, w takim razie wszystko załatwione." },
+                { "language": "ro", "text": "Mulțumesc, atunci totul este rezolvat." },
+                { "language": "sq", "text": "Faleminderit, atëherë gjithçka është e përfunduar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort kontrolliert nicht, was genau geklärt wurde und wo die Bestätigung erscheint.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: The answer does not check what exactly was clarified or where the confirmation will appear." },
+                { "language": "fa", "text": "خیلی کوتاه است: پاسخ بررسی نمی‌کند دقیقاً چه چیزی روشن شد و تأیید کجا ظاهر می‌شود." },
+                { "language": "ar", "text": "قصيرة جداً: لا تتحقق الإجابة مما تم توضيحه بالضبط ولا أين سيظهر التأكيد." },
+                { "language": "tr", "text": "Çok kısa: Yanıt tam olarak neyin netleştiğini ve onayın nerede görüneceğini kontrol etmiyor." },
+                { "language": "ru", "text": "Слишком кратко: ответ не проверяет, что именно было прояснено и где появится подтверждение." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە ناپشکنێت بە وردی چی ڕوون کرایەوە و پشتڕاستکردنەوەکە لە کوێ دەردەکەوێت." },
+                { "language": "kmr", "text": "Pir kurt e: Bersiv kontrol nake ka bi rastî çi hate zelalkirin û piştrastkirin li ku derê xuya dibe." },
+                { "language": "pl", "text": "Za krótko: odpowiedź nie sprawdza, co dokładnie wyjaśniono i gdzie pojawi się potwierdzenie." },
+                { "language": "ro", "text": "Prea scurt: răspunsul nu verifică ce anume a fost clarificat și unde va apărea confirmarea." },
+                { "language": "sq", "text": "Shumë shkurt: përgjigjja nuk kontrollon çfarë u sqarua saktësisht dhe ku do të shfaqet konfirmimi." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei widersprüchlichen Informationen hilft eine neutrale Gegenüberstellung mit Datum mehr als ein Vorwurf.",
+          "translations": [
+            { "language": "en", "text": "With conflicting information, a neutral comparison with dates helps more than blame." },
+            { "language": "fa", "text": "در اطلاعات متناقض، مقایسه بی‌طرفانه همراه با تاریخ از سرزنش مؤثرتر است." },
+            { "language": "ar", "text": "عند وجود معلومات متناقضة، تساعد المقارنة المحايدة مع التواريخ أكثر من الاتهام." },
+            { "language": "tr", "text": "Çelişkili bilgilerde tarihli tarafsız karşılaştırma suçlamadan daha fazla yardımcı olur." },
+            { "language": "ru", "text": "При противоречивой информации нейтральное сопоставление с датами помогает больше, чем обвинение." },
+            { "language": "ckb", "text": "لە زانیاریی ناکۆکدا، بەراوردی بێلایەن بە بەروارەوە زیاتر یارمەتیدەرە لە تاوانبارکردن." },
+            { "language": "kmr", "text": "Di agahiyên nakok de, danberhevkirina bêalî bi rojan ji sûcdarkirinê zêdetir alîkar e." },
+            { "language": "pl", "text": "Przy sprzecznych informacjach neutralne zestawienie z datami pomaga bardziej niż zarzut." },
+            { "language": "ro", "text": "În cazul informațiilor contradictorii, o comparație neutră cu date ajută mai mult decât o acuzație." },
+            { "language": "sq", "text": "Kur informacionet janë kundërthënëse, krahasimi neutral me data ndihmon më shumë se akuzimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "content",
+          "text": "Eine B2-Frage klärt nicht nur `was stimmt`, sondern auch die praktische Folge: hochladen, korrigieren oder bestätigen.",
+          "translations": [
+            { "language": "en", "text": "A B2-level question does not only clarify 'what is correct', but also the practical consequence: upload, correct, or confirm." },
+            { "language": "fa", "text": "سؤال سطح B2 فقط روشن نمی‌کند «کدام درست است»، بلکه پیامد عملی را هم مشخص می‌کند: بارگذاری، اصلاح یا تأیید." },
+            { "language": "ar", "text": "سؤال مستوى B2 لا يوضح فقط «ما الصحيح»، بل يوضح أيضاً النتيجة العملية: الرفع أو التصحيح أو التأكيد." },
+            { "language": "tr", "text": "B2 düzeyinde bir soru sadece 'hangisi doğru'yu değil, pratik sonucu da netleştirir: yükleme, düzeltme veya onay." },
+            { "language": "ru", "text": "Вопрос уровня B2 проясняет не только «что верно», но и практическое последствие: загрузить, исправить или подтвердить." },
+            { "language": "ckb", "text": "پرسیاری ئاستی B2 تەنها `چی ڕاستە` ڕوون ناکاتەوە، بەڵکو ئەنجامی کرداریش دیاری دەکات: بارکردن، ڕاستکردنەوە یان پشتڕاستکردنەوە." },
+            { "language": "kmr", "text": "Pirsa asta B2 tenê `çi rast e` zelal nake, lê encama pratîkî jî diyar dike: barkirin, rastkirin an piştrastkirin." },
+            { "language": "pl", "text": "Pytanie na poziomie B2 wyjaśnia nie tylko „co jest prawidłowe”, lecz także praktyczny skutek: wgrać, skorygować czy potwierdzić." },
+            { "language": "ro", "text": "O întrebare de nivel B2 clarifică nu doar „ce este corect”, ci și consecința practică: încărcare, corectare sau confirmare." },
+            { "language": "sq", "text": "Një pyetje e nivelit B2 nuk sqaron vetëm “çfarë është e saktë”, por edhe pasojën praktike: ngarkim, korrigjim ose konfirmim." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "procedure",
+          "text": "Nach einer Klärung sollte die Akte korrigiert oder die gültige Information schriftlich bestätigt werden.",
+          "translations": [
+            { "language": "en", "text": "After clarification, the file should be corrected or the valid information should be confirmed in writing." },
+            { "language": "fa", "text": "بعد از روشن شدن موضوع، پرونده باید اصلاح شود یا اطلاعات معتبر به‌صورت کتبی تأیید شود." },
+            { "language": "ar", "text": "بعد التوضيح ينبغي تصحيح الملف أو تأكيد المعلومة المعتمدة خطياً." },
+            { "language": "tr", "text": "Netleştirmeden sonra dosya düzeltilmeli veya geçerli bilgi yazılı olarak onaylanmalıdır." },
+            { "language": "ru", "text": "После прояснения дело должно быть исправлено или действительная информация подтверждена письменно." },
+            { "language": "ckb", "text": "دوای ڕوونکردنەوە، دەبێت کەیسەکە ڕاست بکرێتەوە یان زانیاریی کارپێکراو بە نووسراوی پشتڕاست بکرێتەوە." },
+            { "language": "kmr", "text": "Piştî zelalkirinê, divê dosye were rastkirin an agahiya derbasdar bi nivîskî were piştrastkirin." },
+            { "language": "pl", "text": "Po wyjaśnieniu akta powinny zostać skorygowane albo obowiązująca informacja potwierdzona pisemnie." },
+            { "language": "ro", "text": "După clarificare, dosarul ar trebui corectat sau informația valabilă ar trebui confirmată în scris." },
+            { "language": "sq", "text": "Pas sqarimit, dosja duhet korrigjuar ose informacioni i vlefshëm duhet konfirmuar me shkrim." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Die Schlussantwort sichert den Lernwert: gültiger Stand, veraltete Information und nächster Prüfpunkt.",
+          "translations": [
+            { "language": "en", "text": "The closing answer secures the learning value: valid status, outdated information, and next check point." },
+            { "language": "fa", "text": "پاسخ پایانی ارزش یادگیری را تثبیت می‌کند: وضعیت معتبر، اطلاع قدیمی و نقطه بررسی بعدی." },
+            { "language": "ar", "text": "الإجابة الختامية تثبت قيمة التعلم: الوضع المعتمد، والمعلومة القديمة، ونقطة التحقق التالية." },
+            { "language": "tr", "text": "Kapanış yanıtı öğrenme değerini güvenceye alır: geçerli durum, eski bilgi ve sonraki kontrol noktası." },
+            { "language": "ru", "text": "Заключительный ответ закрепляет учебную ценность: действующий статус, устаревшая информация и следующий пункт проверки." },
+            { "language": "ckb", "text": "وەڵامی کۆتایی بەهای فێربوون پارێزراو دەکات: دۆخی کارپێکراو، زانیاریی کۆن و خاڵی پشکنینی داهاتوو." },
+            { "language": "kmr", "text": "Bersiva dawî nirxa fêrbûnê misoger dike: rewşa derbasdar, agahiya kevn û xala kontrola paşîn." },
+            { "language": "pl", "text": "Odpowiedź końcowa zabezpiecza wartość nauki: obowiązujący stan, nieaktualna informacja i następny punkt kontroli." },
+            { "language": "ro", "text": "Răspunsul final consolidează valoarea de învățare: situația valabilă, informația depășită și următorul punct de verificare." },
+            { "language": "sq", "text": "Përgjigjja përmbyllëse siguron vlerën e të mësuarit: statusin e vlefshëm, informacionin e vjetër dhe pikën tjetër të kontrollit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

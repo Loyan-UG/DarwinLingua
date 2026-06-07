@@ -1,0 +1,889 @@
+{
+  "packageId": "roleplays-c1-core-14-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 14 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 14",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ein-strategisches-meeting-zusammenfassen",
+      "linkedDialogueSlug": null,
+      "title": "Ein strategisches Meeting zusammenfassen",
+      "titleTranslations": [
+        { "language": "en", "text": "Summarizing a strategic meeting" },
+        { "language": "fa", "text": "جمع‌بندی یک جلسه راهبردی" },
+        { "language": "ar", "text": "تلخيص اجتماع استراتيجي" },
+        { "language": "tr", "text": "Stratejik bir toplantıyı özetlemek" },
+        { "language": "ru", "text": "Подвести итог стратегической встречи" },
+        { "language": "ckb", "text": "پوختەکردنەوەی کۆبوونەوەیەکی ستراتیژی" },
+        { "language": "kmr", "text": "Kurtkirina civîneke stratejîk" },
+        { "language": "pl", "text": "Podsumowanie strategicznego spotkania" },
+        { "language": "ro", "text": "Rezumarea unei ședințe strategice" },
+        { "language": "sq", "text": "Përmbledhja e një takimi strategjik" }
+      ],
+      "description": "In einem C1-Arbeitsmeeting fassen Sie eine komplexe strategische Diskussion zusammen: Entscheidungen, offene Risiken, Zuständigkeiten und den nächsten Prüftermin.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 workplace meeting, you summarize a complex strategic discussion: decisions, open risks, responsibilities, and the next review date." },
+        { "language": "fa", "text": "در یک جلسه کاری سطح C1، یک بحث راهبردی پیچیده را جمع‌بندی می‌کنید: تصمیم‌ها، ریسک‌های باز، مسئولیت‌ها و تاریخ بازبینی بعدی." },
+        { "language": "ar", "text": "في اجتماع عمل بمستوى C1، تلخص نقاشاً استراتيجياً معقداً: القرارات، والمخاطر المفتوحة، والمسؤوليات، وموعد المراجعة التالي." },
+        { "language": "tr", "text": "C1 düzeyinde bir iş toplantısında karmaşık bir stratejik tartışmayı özetlersiniz: kararlar, açık riskler, sorumluluklar ve bir sonraki gözden geçirme tarihi." },
+        { "language": "ru", "text": "На рабочей встрече уровня C1 вы подводите итог сложной стратегической дискуссии: решения, открытые риски, зоны ответственности и следующая дата проверки." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی کاری ئاستی C1دا، باسێکی ستراتیژی ئاڵۆز پوختە دەکەیتەوە: بڕیارەکان، مەترسییە کراوەکان، بەرپرسیارێتییەکان و بەرواری پشکنینی داهاتوو." },
+        { "language": "kmr", "text": "Di civîneke kar a asta C1 de, hûn gotûbêjeke stratejîk a tevlihev kurt dikin: biryar, rîskên vekirî, berpirsiyarî û roja kontrola din." },
+        { "language": "pl", "text": "Na spotkaniu zawodowym na poziomie C1 podsumowujesz złożoną dyskusję strategiczną: decyzje, otwarte ryzyka, odpowiedzialności i następny termin przeglądu." },
+        { "language": "ro", "text": "Într-o ședință de lucru de nivel C1, rezumați o discuție strategică complexă: decizii, riscuri deschise, responsabilități și următoarea dată de revizuire." },
+        { "language": "sq", "text": "Në një takim pune të nivelit C1, përmbledhni një diskutim strategjik të ndërlikuar: vendimet, rreziqet e hapura, përgjegjësitë dhe datën e rishikimit të radhës." }
+      ],
+      "learnerGoal": "Eine strategische Sitzung präzise abschließen: Entscheidungen von offenen Punkten trennen, Risiken mit Bedingungen benennen, Zuständigkeiten festhalten und eine belastbare Protokollformulierung liefern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Close a strategic meeting precisely: separate decisions from open points, name risks with conditions, record responsibilities, and provide reliable wording for the minutes." },
+        { "language": "fa", "text": "یک جلسه راهبردی را دقیق ببندید: تصمیم‌ها را از نکات باز جدا کنید، ریسک‌ها را همراه با شرط‌ها نام ببرید، مسئولیت‌ها را ثبت کنید و یک جمله قابل اتکا برای صورت‌جلسه ارائه دهید." },
+        { "language": "ar", "text": "اختتم اجتماعاً استراتيجياً بدقة: افصل القرارات عن النقاط المفتوحة، واذكر المخاطر مع شروطها، وثبت المسؤوليات، وقدم صياغة موثوقة للمحضر." },
+        { "language": "tr", "text": "Stratejik bir toplantıyı kesin biçimde kapatın: kararları açık noktalardan ayırın, riskleri koşullarıyla belirtin, sorumlulukları kaydedin ve tutanak için güvenilir bir ifade verin." },
+        { "language": "ru", "text": "Точно завершить стратегическую встречу: отделить решения от открытых вопросов, назвать риски с условиями, зафиксировать ответственность и дать надежную формулировку для протокола." },
+        { "language": "ckb", "text": "کۆبوونەوەیەکی ستراتیژی بە وردی ببەستە: بڕیارەکان لە خاڵە کراوەکان جیا بکەوە، مەترسییەکان لەگەڵ مەرجەکان ناو ببە، بەرپرسیارێتییەکان تۆمار بکە و داڕشتنێکی پشتپێبەستوو بۆ پڕۆتۆکۆل بدە." },
+        { "language": "kmr", "text": "Civîneke stratejîk bi hûrbûnê bigirin: biryaran ji xalên vekirî veqetînin, rîskan bi şertan nav bikin, berpirsiyariyan qeyd bikin û ji bo protokolê gotineke pêbawer bidin." },
+        { "language": "pl", "text": "Precyzyjnie zamknąć spotkanie strategiczne: oddzielić decyzje od kwestii otwartych, nazwać ryzyka wraz z warunkami, zapisać odpowiedzialności i podać wiarygodną formułę do protokołu." },
+        { "language": "ro", "text": "Închideți precis o ședință strategică: separați deciziile de punctele deschise, numiți riscurile cu condițiile lor, notați responsabilitățile și oferiți o formulare solidă pentru procesul-verbal." },
+        { "language": "sq", "text": "Mbyllni saktë një takim strategjik: ndani vendimet nga pikat e hapura, emërtoni rreziqet me kushtet e tyre, shënoni përgjegjësitë dhe jepni një formulim të besueshëm për procesverbalin." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "meetings-and-presentations"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 14,
+      "roles": [
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "گرداننده جلسه" },
+            { "language": "ar", "text": "مدير الجلسة" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەری باس" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderatori" }
+          ]
+        },
+        {
+          "roleKey": "strategy-lead",
+          "displayName": "Strategieleitung",
+          "translations": [
+            { "language": "en", "text": "Strategy lead" },
+            { "language": "fa", "text": "مسئول راهبرد" },
+            { "language": "ar", "text": "مسؤول الاستراتيجية" },
+            { "language": "tr", "text": "Strateji sorumlusu" },
+            { "language": "ru", "text": "Руководитель стратегии" },
+            { "language": "ckb", "text": "بەرپرسی ستراتیژیا" },
+            { "language": "kmr", "text": "Berpirsê stratejiyê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za strategię" },
+            { "language": "ro", "text": "Responsabilul de strategie" },
+            { "language": "sq", "text": "Përgjegjësi i strategjisë" }
+          ]
+        },
+        {
+          "roleKey": "finance-lead",
+          "displayName": "Finanzleitung",
+          "translations": [
+            { "language": "en", "text": "Finance lead" },
+            { "language": "fa", "text": "مسئول مالی" },
+            { "language": "ar", "text": "مسؤول المالية" },
+            { "language": "tr", "text": "Finans sorumlusu" },
+            { "language": "ru", "text": "Финансовый руководитель" },
+            { "language": "ckb", "text": "بەرپرسی دارایی" },
+            { "language": "kmr", "text": "Berpirsê darayî" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za finanse" },
+            { "language": "ro", "text": "Responsabilul financiar" },
+            { "language": "sq", "text": "Përgjegjësi financiar" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrbûner" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursantul" },
+            { "language": "sq", "text": "Nxënësi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Wir haben jetzt fast neunzig Minuten über die strategische Ausrichtung gesprochen. Bitte fassen Sie den Stand so zusammen, dass wir daraus ein belastbares Protokoll machen können.",
+          "translations": [
+            { "language": "en", "text": "We have now spent almost ninety minutes discussing the strategic direction. Please summarize the status in a way that allows us to create reliable minutes from it." },
+            { "language": "fa", "text": "اکنون تقریباً نود دقیقه درباره جهت‌گیری راهبردی صحبت کرده‌ایم. لطفاً وضعیت را طوری جمع‌بندی کنید که بتوانیم از آن صورت‌جلسه‌ای قابل اتکا بسازیم." },
+            { "language": "ar", "text": "لقد تحدثنا الآن قرابة تسعين دقيقة عن التوجه الاستراتيجي. يرجى تلخيص الوضع بحيث نستطيع أن نصوغ منه محضراً موثوقاً." },
+            { "language": "tr", "text": "Stratejik yönelim hakkında neredeyse doksan dakika konuştuk. Lütfen durumu, bundan güvenilir bir tutanak çıkarabileceğimiz şekilde özetleyin." },
+            { "language": "ru", "text": "Мы почти девяносто минут обсуждали стратегическое направление. Пожалуйста, подведите итог так, чтобы из этого можно было сделать надежный протокол." },
+            { "language": "ckb", "text": "ئێستا نزیکەی نەوەد خولەک دەربارەی ئاراستەی ستراتیژی قسەمان کرد. تکایە دۆخەکە وا پوختە بکەوە کە بتوانین لێی پڕۆتۆکۆلێکی پشتپێبەستوو دروست بکەین." },
+            { "language": "kmr", "text": "Me niha nêzî nod deqîqe li ser rêgezên stratejîk axivî. Ji kerema xwe rewşê wisa kurt bikin ku em karibin ji wê protokoleke pêbawer çêkin." },
+            { "language": "pl", "text": "Rozmawialiśmy już prawie dziewięćdziesiąt minut o kierunku strategicznym. Proszę podsumować stan tak, abyśmy mogli z tego przygotować wiarygodny protokół." },
+            { "language": "ro", "text": "Am discutat aproape nouăzeci de minute despre direcția strategică. Vă rog să rezumați stadiul astfel încât să putem face din el un proces-verbal solid." },
+            { "language": "sq", "text": "Kemi folur pothuajse nëntëdhjetë minuta për drejtimin strategjik. Ju lutem përmblidheni gjendjen në mënyrë që prej saj të bëjmë një procesverbal të besueshëm." }
+          ],
+          "function": "request-summary",
+          "toneNote": "Die Moderation bittet um eine protokollfähige Zusammenfassung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gern. Ich würde die Diskussion in drei Blöcke trennen: erstens, was heute entschieden wurde; zweitens, welche Risiken noch offen sind; und drittens, wer bis wann welche Klärung übernimmt.",
+          "translations": [
+            { "language": "en", "text": "Gladly. I would separate the discussion into three blocks: first, what was decided today; second, which risks are still open; and third, who takes over which clarification by when." },
+            { "language": "fa", "text": "با کمال میل. من بحث را به سه بخش تقسیم می‌کنم: اول، چه چیزی امروز تصمیم‌گیری شد؛ دوم، کدام ریسک‌ها هنوز باز هستند؛ و سوم، چه کسی تا چه زمانی کدام موضوع را روشن می‌کند." },
+            { "language": "ar", "text": "بكل سرور. سأقسم النقاش إلى ثلاثة أجزاء: أولاً، ما تم اتخاذ قرار بشأنه اليوم؛ ثانياً، ما المخاطر التي ما زالت مفتوحة؛ وثالثاً، من يتولى أي توضيح وبأي موعد." },
+            { "language": "tr", "text": "Memnuniyetle. Tartışmayı üç bloğa ayırırdım: birincisi, bugün neye karar verildi; ikincisi, hangi riskler hâlâ açık; üçüncüsü, kim hangi açıklığa ne zamana kadar bakacak." },
+            { "language": "ru", "text": "Конечно. Я бы разделил обсуждение на три блока: во-первых, что сегодня было решено; во-вторых, какие риски остаются открытыми; и в-третьих, кто и к какому сроку берет на себя какие уточнения." },
+            { "language": "ckb", "text": "بە خۆشییەوە. من باسەکە بە سێ بەش جیا دەکەمەوە: یەکەم، ئەمڕۆ چی بڕیار درا؛ دووەم، کام مەترسییەکان هێشتا کراوەن؛ سێیەم، کێ تا کەی کام ڕوونکردنەوە وەردەگرێت." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Ez ê gotûbêjê li sê beşan veqetînim: yekem, îro çi hate biryardan; duyem, kîjan rîsk hîn vekirî ne; û sêyem, kî dê heta kengê kîjan zelalkirinê bigire ser xwe." },
+            { "language": "pl", "text": "Chętnie. Podzieliłbym dyskusję na trzy bloki: po pierwsze, co dziś zostało zdecydowane; po drugie, jakie ryzyka pozostają otwarte; i po trzecie, kto do kiedy przejmuje jakie wyjaśnienie." },
+            { "language": "ro", "text": "Cu plăcere. Aș împărți discuția în trei blocuri: mai întâi, ce s-a decis astăzi; apoi, ce riscuri sunt încă deschise; și în al treilea rând, cine clarifică ce și până când." },
+            { "language": "sq", "text": "Me kënaqësi. Do ta ndaja diskutimin në tri blloqe: së pari, çfarë u vendos sot; së dyti, cilat rreziqe janë ende të hapura; dhe së treti, kush merr përsipër çfarë sqarimi deri kur." }
+          ],
+          "function": "structure-summary",
+          "toneNote": "C1: Die Antwort schafft eine klare Ordnungsstruktur für eine unübersichtliche Diskussion.",
+          "expectedLearnerAction": "Structure the meeting summary before giving content."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "strategy-lead",
+          "baseText": "Bitte achten Sie darauf, dass wir nichts als beschlossen darstellen, was nur als Option diskutiert wurde.",
+          "translations": [
+            { "language": "en", "text": "Please make sure we do not present anything as decided that was only discussed as an option." },
+            { "language": "fa", "text": "لطفاً دقت کنید چیزی را که فقط به‌عنوان گزینه بحث شده، به‌عنوان تصمیم‌شده نشان ندهیم." },
+            { "language": "ar", "text": "يرجى الانتباه إلى ألا نعرض شيئاً على أنه مقرر إذا كان قد نوقش فقط كخيار." },
+            { "language": "tr", "text": "Lütfen yalnızca seçenek olarak tartışılan bir şeyi karar alınmış gibi göstermediğimizden emin olun." },
+            { "language": "ru", "text": "Пожалуйста, проследите, чтобы мы не представили как принятое решение то, что обсуждалось только как вариант." },
+            { "language": "ckb", "text": "تکایە ئاگادار بە کە هیچ شتێک وەک بڕیاردراو پیشان نەدەین ئەگەر تەنها وەک بژاردە باسکراوە." },
+            { "language": "kmr", "text": "Ji kerema xwe bala xwe bidin ku em tiştek wekî biryar nîşan nedin ku tenê wekî vebijark hatiye gotûbêjkirin." },
+            { "language": "pl", "text": "Proszę dopilnować, żebyśmy nie przedstawili jako decyzji czegoś, co było omawiane tylko jako opcja." },
+            { "language": "ro", "text": "Vă rog să aveți grijă să nu prezentăm ca decis ceva ce a fost discutat doar ca opțiune." },
+            { "language": "sq", "text": "Ju lutem kujdesuni që të mos paraqesim si të vendosur diçka që është diskutuar vetëm si opsion." }
+          ],
+          "function": "warn-decision-boundary",
+          "toneNote": "Die Strategieleitung fordert eine saubere Trennung zwischen Beschluss und Option.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Beschlossen ist aus meiner Sicht nur Folgendes: Die Expansion in die neue Region wird nicht sofort gestartet, sondern in ein dreimonatiges Vorbereitungsfenster verschoben. Parallel bleibt die bestehende Produktlinie stabil, und ein Pilotteam prüft zwei Markteintrittsvarianten.",
+          "translations": [
+            { "language": "en", "text": "From my perspective, only the following has been decided: expansion into the new region will not start immediately, but will be moved into a three-month preparation window. In parallel, the existing product line remains stable, and a pilot team reviews two market-entry variants." },
+            { "language": "fa", "text": "از نظر من فقط این موارد تصمیم شده است: گسترش به منطقه جدید فوراً شروع نمی‌شود، بلکه به یک بازه آماده‌سازی سه‌ماهه منتقل می‌شود. هم‌زمان خط محصول موجود پایدار می‌ماند و یک تیم pilot دو گزینه ورود به بازار را بررسی می‌کند." },
+            { "language": "ar", "text": "من وجهة نظري، تم اتخاذ القرار فقط بشأن ما يلي: لن يبدأ التوسع إلى المنطقة الجديدة فوراً، بل سينتقل إلى فترة تحضير مدتها ثلاثة أشهر. وبالتوازي تبقى مجموعة المنتجات الحالية مستقرة، ويفحص فريق تجريبي خيارين لدخول السوق." },
+            { "language": "tr", "text": "Bana göre yalnızca şu karar alındı: yeni bölgeye genişleme hemen başlamayacak, üç aylık bir hazırlık penceresine taşınacak. Buna paralel olarak mevcut ürün hattı sabit kalacak ve bir pilot ekip iki pazara giriş varyantını inceleyecek." },
+            { "language": "ru", "text": "С моей точки зрения, принято только следующее: расширение в новый регион не начинается сразу, а переносится в трехмесячное окно подготовки. Параллельно существующая продуктовая линейка остается стабильной, а пилотная команда проверяет два варианта выхода на рынок." },
+            { "language": "ckb", "text": "لە دیدی منەوە تەنها ئەمانە بڕیار دراون: فراوانبوون بۆ ناوچەی نوێ دەستبەجێ دەست پێناکات، بەڵکو دەگوازرێتەوە بۆ ماوەی ئامادەکاریی سێ مانگە. هاوکات هێڵی بەرهەمی ئێستا جێگیر دەمێنێت و تیمێکی pilot دوو جۆری چوونە بازاڕ دەکۆڵێتەوە." },
+            { "language": "kmr", "text": "Ji dîtina min, tenê ev hatine biryardan: belavbûn bo herêma nû yekser dest pê nake, lê di navbera amadekariyeke sê mehan de tê veguhestin. Di heman demê de rêza hilberên heyî aram dimîne û tîmek pilot du awayên ketina bazarê kontrol dike." },
+            { "language": "pl", "text": "Z mojej perspektywy zdecydowano tylko co następuje: ekspansja do nowego regionu nie rozpocznie się natychmiast, lecz zostanie przesunięta do trzymiesięcznego okna przygotowawczego. Równolegle istniejąca linia produktowa pozostaje stabilna, a zespół pilotażowy sprawdza dwa warianty wejścia na rynek." },
+            { "language": "ro", "text": "Din perspectiva mea, s-a decis doar următorul lucru: extinderea în noua regiune nu începe imediat, ci este mutată într-o fereastră de pregătire de trei luni. În paralel, linia de produse existentă rămâne stabilă, iar o echipă pilot verifică două variante de intrare pe piață." },
+            { "language": "sq", "text": "Nga këndvështrimi im, është vendosur vetëm kjo: zgjerimi në rajonin e ri nuk nis menjëherë, por zhvendoset në një periudhë përgatitore tremujore. Paralelisht, linja ekzistuese e produktit mbetet e qëndrueshme dhe një ekip pilot shqyrton dy variante hyrjeje në treg." }
+          ],
+          "function": "state-decisions",
+          "toneNote": "Die Antwort grenzt Beschlüsse eng ab und verhindert Protokollüberdehnung.",
+          "expectedLearnerAction": "State only the actual decisions and keep options separate."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "finance-lead",
+          "baseText": "Das Budgetrisiko ist damit aber noch nicht gelöst. Wir haben nur gesagt, dass es unter bestimmten Annahmen tragbar wäre.",
+          "translations": [
+            { "language": "en", "text": "But that does not yet solve the budget risk. We only said that it would be manageable under certain assumptions." },
+            { "language": "fa", "text": "اما با این کار ریسک بودجه هنوز حل نشده است. ما فقط گفتیم که تحت فرض‌های مشخص قابل تحمل خواهد بود." },
+            { "language": "ar", "text": "لكن خطر الميزانية لم يُحل بعد بذلك. لقد قلنا فقط إنه سيكون قابلاً للتحمل في ظل افتراضات معينة." },
+            { "language": "tr", "text": "Ama bununla bütçe riski henüz çözülmüş olmuyor. Sadece belirli varsayımlar altında taşınabilir olacağını söyledik." },
+            { "language": "ru", "text": "Но бюджетный риск этим еще не решен. Мы лишь сказали, что при определенных предположениях он был бы приемлемым." },
+            { "language": "ckb", "text": "بەڵام بەوە مەترسیی بودجە هێشتا چارەسەر نەبووە. ئێمە تەنها گوتمان کە لە ژێر هەندێک گریمانەدا دەکرێت هەڵبگیرێت." },
+            { "language": "kmr", "text": "Lê bi vê rîska budceyê hîn nehatiye çareserkirin. Me tenê got ku ew di bin hin texmînan de dikare bê hilgirtin." },
+            { "language": "pl", "text": "Ryzyko budżetowe nie jest jednak przez to rozwiązane. Powiedzieliśmy tylko, że przy określonych założeniach byłoby do udźwignięcia." },
+            { "language": "ro", "text": "Dar riscul bugetar nu este încă rezolvat prin asta. Am spus doar că ar fi suportabil în anumite presupuneri." },
+            { "language": "sq", "text": "Por rreziku i buxhetit nuk është zgjidhur ende me këtë. Ne thamë vetëm se do të ishte i përballueshëm nën disa supozime." }
+          ],
+          "function": "budget-risk-warning",
+          "toneNote": "Die Finanzleitung verhindert, dass ein Risiko als erledigt erscheint.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Richtig. Das Budgetrisiko bleibt offen und wird nicht als gelöst protokolliert. Festhalten würde ich: Finanzleitung prüft bis Freitag ein Kostendach, einen Auslöser für erneute Freigabe und die Folgen, falls die Wechselkurse um mehr als fünf Prozent abweichen.",
+          "translations": [
+            { "language": "en", "text": "Correct. The budget risk remains open and will not be recorded as solved. I would record: Finance reviews by Friday a cost cap, a trigger for renewed approval, and the consequences if exchange rates deviate by more than five percent." },
+            { "language": "fa", "text": "درست است. ریسک بودجه باز می‌ماند و به‌عنوان حل‌شده در صورت‌جلسه ثبت نمی‌شود. من این را ثبت می‌کنم: مسئول مالی تا جمعه سقف هزینه، محرک نیاز به تأیید دوباره، و پیامدهای انحراف نرخ ارز بیش از پنج درصد را بررسی می‌کند." },
+            { "language": "ar", "text": "صحيح. يبقى خطر الميزانية مفتوحاً ولن يُسجل على أنه محلول. سأثبت: تراجع الإدارة المالية حتى الجمعة سقفاً للتكاليف، ومحفزاً لاعتماد جديد، والآثار إذا انحرفت أسعار الصرف بأكثر من خمسة في المئة." },
+            { "language": "tr", "text": "Doğru. Bütçe riski açık kalır ve çözülmüş olarak tutanağa geçmez. Şunu kaydederdim: Finans birimi cuma gününe kadar bir maliyet tavanı, yeniden onay tetikleyicisi ve kurlar yüzde beşten fazla saparsa sonuçları inceler." },
+            { "language": "ru", "text": "Верно. Бюджетный риск остается открытым и не будет записан как решенный. Я бы зафиксировал: финансы до пятницы проверяют потолок затрат, триггер для повторного согласования и последствия, если обменные курсы отклонятся более чем на пять процентов." },
+            { "language": "ckb", "text": "ڕاستە. مەترسیی بودجە کراوە دەمێنێتەوە و وەک چارەسەرکراو تۆمار ناکرێت. من تۆمار دەکەم: بەرپرسی دارایی تا هەینی سنووری تێچوو، هۆکاری داواکردنی ڕەزامەندیی نوێ، و دەرئەنجامەکان دەکۆڵێتەوە ئەگەر نرخی ئاڵوگۆڕ زیاتر لە پێنج لەسەد جیاواز بوو." },
+            { "language": "kmr", "text": "Rast e. Rîska budceyê vekirî dimîne û wekî çareserkirî nayê protokolkirin. Ez ê qeyd bikim: darayî heta înê sînorê lêçûnê, destpêkerê pejirandina nû û encamên dema ku nirxên danûstandinê ji pênc ji sedî zêdetir dûr bikevin kontrol dike." },
+            { "language": "pl", "text": "Zgadza się. Ryzyko budżetowe pozostaje otwarte i nie zostanie zapisane jako rozwiązane. Zapisałbym: dział finansów do piątku sprawdza limit kosztów, wyzwalacz ponownej zgody oraz skutki, jeśli kursy walut odchylą się o więcej niż pięć procent." },
+            { "language": "ro", "text": "Corect. Riscul bugetar rămâne deschis și nu va fi consemnat ca rezolvat. Aș nota: conducerea financiară verifică până vineri un plafon de costuri, un declanșator pentru o nouă aprobare și consecințele dacă ratele de schimb deviază cu peste cinci la sută." },
+            { "language": "sq", "text": "Saktë. Rreziku i buxhetit mbetet i hapur dhe nuk shënohet si i zgjidhur. Do të shënoja: financa kontrollon deri të premten një tavan kostoje, një shkak për miratim të ri dhe pasojat nëse kurset e këmbimit devijojnë më shumë se pesë për qind." }
+          ],
+          "function": "name-open-risk-owner",
+          "toneNote": "Die Antwort macht aus einem offenen Risiko eine konkrete Prüfaufgabe mit Owner, Frist und Trigger.",
+          "expectedLearnerAction": "Record an unresolved risk with owner, deadline, and trigger."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Wir brauchen außerdem eine klare Linie für die Kommunikation. Wer informiert die Teams, und was sagen wir extern noch nicht?",
+          "translations": [
+            { "language": "en", "text": "We also need a clear line for communication. Who informs the teams, and what do we not say externally yet?" },
+            { "language": "fa", "text": "همچنین به خط روشن برای ارتباطات نیاز داریم. چه کسی تیم‌ها را مطلع می‌کند، و چه چیزی را هنوز بیرون از شرکت نمی‌گوییم؟" },
+            { "language": "ar", "text": "نحتاج أيضاً إلى خط واضح للتواصل. من يبلّغ الفرق، وما الذي لا نقوله خارجياً بعد؟" },
+            { "language": "tr", "text": "Ayrıca iletişim için net bir çizgiye ihtiyacımız var. Ekipleri kim bilgilendiriyor ve dışarıya henüz ne söylemiyoruz?" },
+            { "language": "ru", "text": "Нам также нужна четкая линия коммуникации. Кто информирует команды и чего мы пока не говорим вовне?" },
+            { "language": "ckb", "text": "هەروەها پێویستمان بە هێڵێکی ڕوونی پەیوەندیکردن هەیە. کێ تیمەکان ئاگادار دەکاتەوە، و چی هێشتا دەرەوە ناڵێین؟" },
+            { "language": "kmr", "text": "Herwiha em hewceyî rêzeke zelal a ragihandinê ne. Kî tîman agahdar dike, û em hê çi li derve nabêjin?" },
+            { "language": "pl", "text": "Potrzebujemy też jasnej linii komunikacyjnej. Kto informuje zespoły i czego jeszcze nie mówimy na zewnątrz?" },
+            { "language": "ro", "text": "Avem nevoie și de o linie clară de comunicare. Cine informează echipele și ce nu spunem încă în exterior?" },
+            { "language": "sq", "text": "Na duhet edhe një vijë e qartë komunikimi. Kush i informon ekipet dhe çfarë nuk themi ende jashtë?" }
+          ],
+          "function": "ask-communication-ownership",
+          "toneNote": "Die Moderation fragt nach interner und externer Kommunikation.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Für die interne Kommunikation übernimmt die Strategieleitung bis Mittwoch einen kurzen Orientierungstext. Vertrieb informiert nur ausgewählte Schlüsselkunden, aber ohne Starttermin. Extern sprechen wir vorerst von einer Prüfphase, nicht von einem Markteintritt.",
+          "translations": [
+            { "language": "en", "text": "For internal communication, the strategy lead will provide a short orientation text by Wednesday. Sales informs only selected key customers, but without a start date. Externally, for now we speak of a review phase, not of a market entry." },
+            { "language": "fa", "text": "برای ارتباطات داخلی، مسئول راهبرد تا چهارشنبه یک متن کوتاه جهت‌گیری آماده می‌کند. فروش فقط مشتریان کلیدی منتخب را مطلع می‌کند، اما بدون تاریخ شروع. در ارتباط بیرونی فعلاً از مرحله بررسی صحبت می‌کنیم، نه از ورود به بازار." },
+            { "language": "ar", "text": "بالنسبة للتواصل الداخلي، تتولى قيادة الاستراتيجية إعداد نص توجيهي قصير حتى الأربعاء. يبلغ قسم المبيعات بعض العملاء الرئيسيين المختارين فقط، لكن من دون موعد بدء. خارجياً نتحدث حالياً عن مرحلة فحص، لا عن دخول السوق." },
+            { "language": "tr", "text": "İç iletişim için strateji sorumlusu çarşambaya kadar kısa bir yönlendirme metni hazırlar. Satış yalnızca seçilmiş kilit müşterileri bilgilendirir, ama başlangıç tarihi vermeden. Dışarıya şimdilik pazara girişten değil, inceleme aşamasından söz ederiz." },
+            { "language": "ru", "text": "Для внутренней коммуникации руководитель стратегии до среды подготовит короткий ориентирующий текст. Отдел продаж информирует только выбранных ключевых клиентов, но без даты старта. Вовне мы пока говорим о фазе проверки, а не о выходе на рынок." },
+            { "language": "ckb", "text": "بۆ پەیوەندیکردنی ناوخۆیی، بەرپرسی ستراتیژیا تا چوارشەممە دەقێکی کورتی ئاراستەکردن ئامادە دەکات. فرۆشتن تەنها کڕیارە سەرەکییە هەڵبژێردراوەکان ئاگادار دەکاتەوە، بەڵام بەبێ بەرواری دەستپێک. لە دەرەوەدا ئێستا باس لە قۆناغی پشکنین دەکەین، نەک چوونە بازاڕ." },
+            { "language": "kmr", "text": "Ji bo ragihandina navxweyî, berpirsê stratejiyê heta çarşemê nivîseke kurt a rêberiyê amade dike. Firotan tenê xerîdarên sereke yên hilbijartî agahdar dike, lê bê roja destpêkê. Li derve, niha em behsa qonaxa kontrolê dikin, ne ketina bazarê." },
+            { "language": "pl", "text": "W komunikacji wewnętrznej osoba odpowiedzialna za strategię przygotuje do środy krótki tekst orientacyjny. Sprzedaż poinformuje tylko wybranych kluczowych klientów, ale bez daty startu. Na zewnątrz mówimy na razie o fazie weryfikacji, nie o wejściu na rynek." },
+            { "language": "ro", "text": "Pentru comunicarea internă, responsabilul de strategie pregătește până miercuri un scurt text de orientare. Vânzările informează doar clienți-cheie selectați, dar fără dată de început. În exterior vorbim deocamdată despre o fază de verificare, nu despre intrarea pe piață." },
+            { "language": "sq", "text": "Për komunikimin e brendshëm, përgjegjësi i strategjisë përgatit deri të mërkurën një tekst të shkurtër orientues. Shitjet informojnë vetëm klientë kyç të zgjedhur, por pa datë fillimi. Jashtë flasim për momentin për një fazë shqyrtimi, jo për hyrje në treg." }
+          ],
+          "function": "assign-communication-lines",
+          "toneNote": "Die Antwort trennt interne Orientierung, selektive Kundenkommunikation und externe Zurückhaltung.",
+          "expectedLearnerAction": "Assign communication responsibilities and limit external wording."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "strategy-lead",
+          "baseText": "Soll die Standortfrage ins Protokoll? Darüber gab es deutliche Meinungsunterschiede.",
+          "translations": [
+            { "language": "en", "text": "Should the location question go into the minutes? There were clear differences of opinion about it." },
+            { "language": "fa", "text": "آیا موضوع محل باید در صورت‌جلسه بیاید؟ درباره آن اختلاف نظرهای روشنی وجود داشت." },
+            { "language": "ar", "text": "هل ينبغي إدراج مسألة الموقع في المحضر؟ كانت هناك اختلافات واضحة في الرأي حولها." },
+            { "language": "tr", "text": "Lokasyon konusu tutanağa girmeli mi? Bu konuda belirgin görüş ayrılıkları vardı." },
+            { "language": "ru", "text": "Нужно ли включать вопрос площадки в протокол? По нему были явные разногласия." },
+            { "language": "ckb", "text": "ئایا پرسی شوێن دەبێت بچێتە ناو پڕۆتۆکۆل؟ لەسەری جیاوازیی ڕای ڕوون هەبوو." },
+            { "language": "kmr", "text": "Ma pirsa cihê divê bikeve protokolê? Li ser wê cudahiyên nêrînê yên zelal hebûn." },
+            { "language": "pl", "text": "Czy kwestia lokalizacji powinna znaleźć się w protokole? Były tu wyraźne różnice zdań." },
+            { "language": "ro", "text": "Ar trebui să intre în procesul-verbal chestiunea locației? Au existat diferențe clare de opinie." },
+            { "language": "sq", "text": "A duhet të hyjë çështja e lokacionit në procesverbal? Për të pati dallime të qarta mendimesh." }
+          ],
+          "function": "ask-disagreement-record",
+          "toneNote": "Die Strategieleitung fragt, wie Dissens protokolliert werden soll.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja, aber nicht als Entscheidung. Ich würde notieren: Die Standortfrage bleibt offen; geprüft werden Standort A mit niedrigerem Risiko und Standort B mit höherem Wachstumspotenzial. Die Bewertung erfolgt anhand von Kosten, Personalverfügbarkeit und Kundennähe.",
+          "translations": [
+            { "language": "en", "text": "Yes, but not as a decision. I would note: the location question remains open; location A with lower risk and location B with higher growth potential will be reviewed. The assessment will be based on costs, staff availability, and customer proximity." },
+            { "language": "fa", "text": "بله، اما نه به‌عنوان تصمیم. من می‌نویسم: موضوع محل باز می‌ماند؛ محل A با ریسک کمتر و محل B با ظرفیت رشد بیشتر بررسی می‌شوند. ارزیابی بر اساس هزینه‌ها، دسترسی به نیرو و نزدیکی به مشتری انجام می‌شود." },
+            { "language": "ar", "text": "نعم، لكن ليس كقرار. سأدون: تبقى مسألة الموقع مفتوحة؛ سيتم فحص الموقع A ذي المخاطر الأقل والموقع B ذي إمكانات النمو الأعلى. يتم التقييم بناءً على التكاليف وتوافر الموظفين والقرب من العملاء." },
+            { "language": "tr", "text": "Evet, ama karar olarak değil. Şöyle not ederdim: lokasyon konusu açık kalır; daha düşük riskli A lokasyonu ve daha yüksek büyüme potansiyelli B lokasyonu incelenecek. Değerlendirme maliyetler, personel bulunabilirliği ve müşteriye yakınlık temelinde yapılır." },
+            { "language": "ru", "text": "Да, но не как решение. Я бы записал: вопрос площадки остается открытым; будут проверены площадка A с более низким риском и площадка B с более высоким потенциалом роста. Оценка проводится на основе затрат, доступности персонала и близости к клиентам." },
+            { "language": "ckb", "text": "بەڵێ، بەڵام نەک وەک بڕیار. من تۆمار دەکەم: پرسی شوێن کراوە دەمێنێتەوە؛ شوێنی A بە مەترسیی کەمتر و شوێنی B بە توانای گەشەی زیاتر دەپشکنرێن. هەڵسەنگاندنەکە لەسەر بنەمای تێچوو، بەردەستبوونی کارمەند و نزیکی لە کڕیار دەبێت." },
+            { "language": "kmr", "text": "Erê, lê ne wekî biryar. Ez ê qeyd bikim: pirsa cihê vekirî dimîne; cihê A bi rîska kêmtir û cihê B bi potansiyela mezinbûnê ya zêdetir têne kontrolkirin. Nirxandin li ser bingehê lêçûn, peydabûna karmendan û nêzîkatiya xerîdarê tê kirin." },
+            { "language": "pl", "text": "Tak, ale nie jako decyzję. Zapisałbym: kwestia lokalizacji pozostaje otwarta; sprawdzane będą lokalizacja A o niższym ryzyku oraz lokalizacja B o większym potencjale wzrostu. Ocena nastąpi na podstawie kosztów, dostępności personelu i bliskości klientów." },
+            { "language": "ro", "text": "Da, dar nu ca decizie. Aș nota: chestiunea locației rămâne deschisă; vor fi analizate locația A cu risc mai scăzut și locația B cu potențial de creștere mai mare. Evaluarea se face pe baza costurilor, disponibilității personalului și apropierii de clienți." },
+            { "language": "sq", "text": "Po, por jo si vendim. Do të shënoja: çështja e lokacionit mbetet e hapur; do të shqyrtohen lokacioni A me rrezik më të ulët dhe lokacioni B me potencial më të madh rritjeje. Vlerësimi bëhet mbi bazën e kostove, disponueshmërisë së personelit dhe afërsisë me klientët." }
+          ],
+          "function": "record-open-disagreement",
+          "toneNote": "Die Antwort macht Dissens sichtbar, ohne ihn als Beschluss zu verkleiden.",
+          "expectedLearnerAction": "Record disagreement as an open decision point with evaluation criteria."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "moderator",
+          "baseText": "Gut. Formulieren Sie bitte zum Schluss einen Satz, der in das Protokoll kann und den nächsten Prüftermin enthält.",
+          "translations": [
+            { "language": "en", "text": "Good. To finish, please formulate a sentence that can go into the minutes and includes the next review date." },
+            { "language": "fa", "text": "خوب. لطفاً در پایان یک جمله فرمول‌بندی کنید که بتواند وارد صورت‌جلسه شود و تاریخ بازبینی بعدی را هم داشته باشد." },
+            { "language": "ar", "text": "جيد. في الختام، يرجى صياغة جملة يمكن إدراجها في المحضر وتتضمن موعد المراجعة التالي." },
+            { "language": "tr", "text": "İyi. Son olarak lütfen tutanağa girebilecek ve bir sonraki gözden geçirme tarihini içeren bir cümle formüle edin." },
+            { "language": "ru", "text": "Хорошо. В завершение сформулируйте, пожалуйста, предложение, которое можно внести в протокол и которое содержит следующую дату проверки." },
+            { "language": "ckb", "text": "باشە. تکایە لە کۆتاییدا ڕستەیەک داڕێژە کە دەکرێت بچێتە ناو پڕۆتۆکۆل و بەرواری پشکنینی داهاتووی تێدا بێت." },
+            { "language": "kmr", "text": "Baş e. Ji kerema xwe di dawiyê de hevokekê biafirînin ku bikeve protokolê û roja kontrola din tê de hebe." },
+            { "language": "pl", "text": "Dobrze. Na koniec proszę sformułować zdanie, które może trafić do protokołu i zawiera następny termin przeglądu." },
+            { "language": "ro", "text": "Bine. La final, vă rog să formulați o propoziție care poate intra în procesul-verbal și care include următoarea dată de revizuire." },
+            { "language": "sq", "text": "Mirë. Në fund, ju lutem formuloni një fjali që mund të hyjë në procesverbal dhe që përfshin datën e rishikimit të radhës." }
+          ],
+          "function": "request-protocol-sentence",
+          "toneNote": "Die Moderation verlangt eine abschließende, protokollfähige Formulierung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich formulieren: Der Vorstand bestätigt das dreimonatige Vorbereitungsfenster für die regionale Expansion; Budgetrahmen, Standortbewertung und Kommunikationslinie werden bis zum 15. Juni konkretisiert und in der nächsten Strategierunde zur Entscheidung vorgelegt.",
+          "translations": [
+            { "language": "en", "text": "Then I would formulate it as follows: the board confirms the three-month preparation window for regional expansion; the budget framework, location assessment, and communication line will be specified by June 15 and submitted for decision in the next strategy round." },
+            { "language": "fa", "text": "پس این‌طور فرمول‌بندی می‌کنم: هیئت‌مدیره بازه آماده‌سازی سه‌ماهه برای گسترش منطقه‌ای را تأیید می‌کند؛ چارچوب بودجه، ارزیابی محل و خط ارتباطی تا ۱۵ ژوئن مشخص می‌شوند و در دور بعدی راهبرد برای تصمیم‌گیری ارائه خواهند شد." },
+            { "language": "ar", "text": "إذن سأصوغها كالتالي: يؤكد المجلس فترة التحضير لمدة ثلاثة أشهر للتوسع الإقليمي؛ وسيتم تحديد إطار الميزانية وتقييم الموقع وخط التواصل حتى 15 يونيو وتقديمها لاتخاذ القرار في الجولة الاستراتيجية التالية." },
+            { "language": "tr", "text": "O halde şöyle formüle ederdim: yönetim kurulu bölgesel genişleme için üç aylık hazırlık penceresini onaylar; bütçe çerçevesi, lokasyon değerlendirmesi ve iletişim çizgisi 15 Haziran'a kadar somutlaştırılır ve bir sonraki strateji turunda karar için sunulur." },
+            { "language": "ru", "text": "Тогда я сформулировал бы так: правление подтверждает трехмесячное окно подготовки к региональному расширению; бюджетные рамки, оценка площадки и коммуникационная линия будут конкретизированы до 15 июня и представлены для решения на следующем стратегическом раунде." },
+            { "language": "ckb", "text": "ئەوا من وا داڕێژم: دەستەی بەڕێوەبەری ماوەی ئامادەکاریی سێ مانگە بۆ فراوانبوونی ناوچەیی پشتڕاست دەکاتەوە؛ چوارچێوەی بودجە، هەڵسەنگاندنی شوێن و هێڵی پەیوەندیکردن تا ١٥ی حوزەیران دیار دەکرێن و لە خولی ستراتیژی داهاتوودا بۆ بڕیار پێشکەش دەکرێن." },
+            { "language": "kmr", "text": "Wê demê ez wisa diafirînim: desteya rêvebiriyê navbera amadekariyê ya sê mehan ji bo belavbûna herêmî piştrast dike; çarçoveya budceyê, nirxandina cihê û rêza ragihandinê heta 15ê Hezîranê têne konkretkirin û di gera stratejiyê ya din de ji bo biryarê têne pêşkêşkirin." },
+            { "language": "pl", "text": "Wtedy sformułowałbym to tak: zarząd potwierdza trzymiesięczne okno przygotowawcze dla ekspansji regionalnej; ramy budżetowe, ocena lokalizacji i linia komunikacyjna zostaną skonkretyzowane do 15 czerwca i przedłożone do decyzji w następnej rundzie strategicznej." },
+            { "language": "ro", "text": "Atunci aș formula astfel: consiliul confirmă fereastra de pregătire de trei luni pentru extinderea regională; cadrul bugetar, evaluarea locației și linia de comunicare vor fi concretizate până la 15 iunie și prezentate pentru decizie în următoarea rundă strategică." },
+            { "language": "sq", "text": "Atëherë do ta formuloja kështu: bordi konfirmon periudhën përgatitore tremujore për zgjerimin rajonal; korniza e buxhetit, vlerësimi i lokacionit dhe linja e komunikimit do të konkretizohen deri më 15 qershor dhe do të paraqiten për vendim në raundin e ardhshëm strategjik." }
+          ],
+          "function": "final-protocol-wording",
+          "toneNote": "Die Schlussformulierung verbindet Beschluss, offene Klärungen, Frist und Entscheidungsforum.",
+          "expectedLearnerAction": "Provide final minutes-ready wording with next review date."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Gern. Ich würde die Diskussion in drei Blöcke trennen: erstens, was heute entschieden wurde; zweitens, welche Risiken noch offen sind; und drittens, wer bis wann welche Klärung übernimmt.",
+              "translations": [
+                { "language": "en", "text": "Gladly. I would separate the discussion into three blocks: first, what was decided today; second, which risks are still open; and third, who takes over which clarification by when." },
+                { "language": "fa", "text": "با کمال میل. من بحث را به سه بخش تقسیم می‌کنم: اول، چه چیزی امروز تصمیم‌گیری شد؛ دوم، کدام ریسک‌ها هنوز باز هستند؛ و سوم، چه کسی تا چه زمانی کدام موضوع را روشن می‌کند." },
+                { "language": "ar", "text": "بكل سرور. سأقسم النقاش إلى ثلاثة أجزاء: أولاً، ما تم اتخاذ قرار بشأنه اليوم؛ ثانياً، ما المخاطر التي ما زالت مفتوحة؛ وثالثاً، من يتولى أي توضيح وبأي موعد." },
+                { "language": "tr", "text": "Memnuniyetle. Tartışmayı üç bloğa ayırırdım: birincisi, bugün neye karar verildi; ikincisi, hangi riskler hâlâ açık; üçüncüsü, kim hangi açıklığa ne zamana kadar bakacak." },
+                { "language": "ru", "text": "Конечно. Я бы разделил обсуждение на три блока: во-первых, что сегодня было решено; во-вторых, какие риски остаются открытыми; и в-третьих, кто и к какому сроку берет на себя какие уточнения." },
+                { "language": "ckb", "text": "بە خۆشییەوە. من باسەکە بە سێ بەش جیا دەکەمەوە: یەکەم، ئەمڕۆ چی بڕیار درا؛ دووەم، کام مەترسییەکان هێشتا کراوەن؛ سێیەم، کێ تا کەی کام ڕوونکردنەوە وەردەگرێت." },
+                { "language": "kmr", "text": "Bi kêfxweşî. Ez ê gotûbêjê li sê beşan veqetînim: yekem, îro çi hate biryardan; duyem, kîjan rîsk hîn vekirî ne; û sêyem, kî dê heta kengê kîjan zelalkirinê bigire ser xwe." },
+                { "language": "pl", "text": "Chętnie. Podzieliłbym dyskusję na trzy bloki: po pierwsze, co dziś zostało zdecydowane; po drugie, jakie ryzyka pozostają otwarte; i po trzecie, kto do kiedy przejmuje jakie wyjaśnienie." },
+                { "language": "ro", "text": "Cu plăcere. Aș împărți discuția în trei blocuri: mai întâi, ce s-a decis astăzi; apoi, ce riscuri sunt încă deschise; și în al treilea rând, cine clarifică ce și până când." },
+                { "language": "sq", "text": "Me kënaqësi. Do ta ndaja diskutimin në tri blloqe: së pari, çfarë u vendos sot; së dyti, cilat rreziqe janë ende të hapura; dhe së treti, kush merr përsipër çfarë sqarimi deri kur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ordnet die Zusammenfassung, bevor sie Details nennt. Das verhindert Vermischung von Beschluss, Risiko und Aufgabe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer structures the summary before naming details. This prevents mixing decisions, risks, and tasks." },
+                { "language": "fa", "text": "قوی: پاسخ قبل از گفتن جزئیات، جمع‌بندی را ساختار می‌دهد. این کار از مخلوط شدن تصمیم، ریسک و وظیفه جلوگیری می‌کند." },
+                { "language": "ar", "text": "قوي: ينظم الجواب الملخص قبل ذكر التفاصيل. هذا يمنع الخلط بين القرار والمخاطر والمهمة." },
+                { "language": "tr", "text": "Güçlü: cevap ayrıntılara geçmeden önce özeti yapılandırır. Bu, karar, risk ve görevin karışmasını önler." },
+                { "language": "ru", "text": "Сильно: ответ сначала структурирует итог, а затем называет детали. Это предотвращает смешение решения, риска и задачи." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێش وردەکاری، پوختەکە ڕێک دەخات. ئەمە ڕێ لە تێکەڵبوونی بڕیار، مەترسی و ئەرک دەگرێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv berî hûrguliyan kurteyê saz dike. Ev nahêle biryar, rîsk û erk tevlihev bibin." },
+                { "language": "pl", "text": "Mocne: odpowiedź porządkuje podsumowanie przed podaniem szczegółów. To zapobiega mieszaniu decyzji, ryzyka i zadania." },
+                { "language": "ro", "text": "Puternic: răspunsul structurează rezumatul înainte de detalii. Astfel se evită amestecarea deciziei, riscului și sarcinii." },
+                { "language": "sq", "text": "E fortë: përgjigjja e strukturon përmbledhjen para detajeve. Kjo shmang përzierjen e vendimit, rrezikut dhe detyrës." }
+              ],
+              "explanationKey": "summary-structure-first"
+            },
+            {
+              "id": "weak",
+              "text": "Ich fasse kurz zusammen: Wir haben viel über Expansion, Budget, Standort und Kommunikation gesprochen und müssen dazu noch einiges klären.",
+              "translations": [
+                { "language": "en", "text": "I will summarize briefly: we spoke a lot about expansion, budget, location, and communication, and still need to clarify quite a few things." },
+                { "language": "fa", "text": "کوتاه جمع‌بندی می‌کنم: درباره گسترش، بودجه، محل و ارتباطات زیاد صحبت کردیم و هنوز باید چیزهای زیادی را روشن کنیم." },
+                { "language": "ar", "text": "سألخص باختصار: تحدثنا كثيراً عن التوسع والميزانية والموقع والتواصل، وما زال علينا توضيح عدة أمور." },
+                { "language": "tr", "text": "Kısaca özetleyeyim: genişleme, bütçe, lokasyon ve iletişim hakkında çok konuştuk ve hâlâ epey şeyi netleştirmemiz gerekiyor." },
+                { "language": "ru", "text": "Кратко подытожу: мы много говорили о расширении, бюджете, площадке и коммуникации, и нам еще многое нужно уточнить." },
+                { "language": "ckb", "text": "بە کورتی پوختە دەکەمەوە: زۆر باسمان لە فراوانبوون، بودجە، شوێن و پەیوەندیکردن کرد و هێشتا دەبێت چەند شتێک ڕوون بکەینەوە." },
+                { "language": "kmr", "text": "Ez bi kurtî kurt dikim: me gelek li ser belavbûn, budce, cih û ragihandinê axivî û hîn divê gelek tiştan zelal bikin." },
+                { "language": "pl", "text": "Krótko podsumuję: dużo mówiliśmy o ekspansji, budżecie, lokalizacji i komunikacji, i musimy jeszcze sporo wyjaśnić." },
+                { "language": "ro", "text": "Rezumez pe scurt: am vorbit mult despre extindere, buget, locație și comunicare și mai trebuie să clarificăm destul de multe." },
+                { "language": "sq", "text": "Po e përmbledh shkurt: folëm shumë për zgjerimin, buxhetin, lokacionin dhe komunikimin dhe duhet ende të sqarojmë mjaft gjëra." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unpräzise: Die Antwort nennt Themen, trennt aber nicht zwischen Entscheidung, Risiko und Zuständigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too imprecise: the answer names topics, but does not separate decision, risk, and responsibility." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی نامشخص: پاسخ موضوع‌ها را نام می‌برد، اما تصمیم، ریسک و مسئولیت را از هم جدا نمی‌کند." },
+                { "language": "ar", "text": "معقول لكنه غير دقيق بما يكفي: يذكر الجواب موضوعات، لكنه لا يفصل بين القرار والمخاطر والمسؤولية." },
+                { "language": "tr", "text": "Makuldür ama fazla belirsiz: cevap konuları söyler, ancak karar, risk ve sorumluluğu ayırmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: ответ называет темы, но не отделяет решение, риск и ответственность." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر ناوردە: وەڵامەکە بابەتەکان ناو دەبات، بەڵام بڕیار، مەترسی و بەرپرسیارێتی جیا ناکاتەوە." },
+                { "language": "kmr", "text": "Bawerbar e lê pir nezelal e: bersiv mijaran nav dike, lê biryar, rîsk û berpirsiyarî veqetîne." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt nieprecyzyjne: odpowiedź nazywa tematy, lecz nie oddziela decyzji, ryzyka i odpowiedzialności." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis: răspunsul numește temele, dar nu separă decizia, riscul și responsabilitatea." },
+                { "language": "sq", "text": "E besueshme, por shumë e pasaktë: përgjigjja përmend temat, por nuk ndan vendimin, rrezikun dhe përgjegjësinë." }
+              ],
+              "explanationKey": "topics-without-structure"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Beschlossen ist aus meiner Sicht nur Folgendes: Die Expansion in die neue Region wird nicht sofort gestartet, sondern in ein dreimonatiges Vorbereitungsfenster verschoben. Parallel bleibt die bestehende Produktlinie stabil, und ein Pilotteam prüft zwei Markteintrittsvarianten.",
+              "translations": [
+                { "language": "en", "text": "From my perspective, only the following has been decided: expansion into the new region will not start immediately, but will be moved into a three-month preparation window. In parallel, the existing product line remains stable, and a pilot team reviews two market-entry variants." },
+                { "language": "fa", "text": "از نظر من فقط این موارد تصمیم شده است: گسترش به منطقه جدید فوراً شروع نمی‌شود، بلکه به یک بازه آماده‌سازی سه‌ماهه منتقل می‌شود. هم‌زمان خط محصول موجود پایدار می‌ماند و یک تیم pilot دو گزینه ورود به بازار را بررسی می‌کند." },
+                { "language": "ar", "text": "من وجهة نظري، تم اتخاذ القرار فقط بشأن ما يلي: لن يبدأ التوسع إلى المنطقة الجديدة فوراً، بل سينتقل إلى فترة تحضير مدتها ثلاثة أشهر. وبالتوازي تبقى مجموعة المنتجات الحالية مستقرة، ويفحص فريق تجريبي خيارين لدخول السوق." },
+                { "language": "tr", "text": "Bana göre yalnızca şu karar alındı: yeni bölgeye genişleme hemen başlamayacak, üç aylık bir hazırlık penceresine taşınacak. Buna paralel olarak mevcut ürün hattı sabit kalacak ve bir pilot ekip iki pazara giriş varyantını inceleyecek." },
+                { "language": "ru", "text": "С моей точки зрения, принято только следующее: расширение в новый регион не начинается сразу, а переносится в трехмесячное окно подготовки. Параллельно существующая продуктовая линейка остается стабильной, а пилотная команда проверяет два варианта выхода на рынок." },
+                { "language": "ckb", "text": "لە دیدی منەوە تەنها ئەمانە بڕیار دراون: فراوانبوون بۆ ناوچەی نوێ دەستبەجێ دەست پێناکات، بەڵکو دەگوازرێتەوە بۆ ماوەی ئامادەکاریی سێ مانگە. هاوکات هێڵی بەرهەمی ئێستا جێگیر دەمێنێت و تیمێکی pilot دوو جۆری چوونە بازاڕ دەکۆڵێتەوە." },
+                { "language": "kmr", "text": "Ji dîtina min, tenê ev hatine biryardan: belavbûn bo herêma nû yekser dest pê nake, lê di navbera amadekariyeke sê mehan de tê veguhestin. Di heman demê de rêza hilberên heyî aram dimîne û tîmek pilot du awayên ketina bazarê kontrol dike." },
+                { "language": "pl", "text": "Z mojej perspektywy zdecydowano tylko co następuje: ekspansja do nowego regionu nie rozpocznie się natychmiast, lecz zostanie przesunięta do trzymiesięcznego okna przygotowawczego. Równolegle istniejąca linia produktowa pozostaje stabilna, a zespół pilotażowy sprawdza dwa warianty wejścia na rynek." },
+                { "language": "ro", "text": "Din perspectiva mea, s-a decis doar următorul lucru: extinderea în noua regiune nu începe imediat, ci este mutată într-o fereastră de pregătire de trei luni. În paralel, linia de produse existentă rămâne stabilă, iar o echipă pilot verifică două variante de intrare pe piață." },
+                { "language": "sq", "text": "Nga këndvështrimi im, është vendosur vetëm kjo: zgjerimi në rajonin e ri nuk nis menjëherë, por zhvendoset në një periudhë përgatitore tremujore. Paralelisht, linja ekzistuese e produktit mbetet e qëndrueshme dhe një ekip pilot shqyrton dy variante hyrjeje në treg." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt das Protokoll, weil sie nur echte Beschlüsse nennt und Optionen nicht als fertige Entscheidung verkauft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer protects the minutes because it names only actual decisions and does not sell options as finished decisions." },
+                { "language": "fa", "text": "قوی: پاسخ از صورت‌جلسه محافظت می‌کند، چون فقط تصمیم‌های واقعی را می‌گوید و گزینه‌ها را به‌عنوان تصمیم نهایی نشان نمی‌دهد." },
+                { "language": "ar", "text": "قوي: يحمي الجواب المحضر لأنه يذكر القرارات الحقيقية فقط ولا يعرض الخيارات كقرارات نهائية." },
+                { "language": "tr", "text": "Güçlü: cevap tutanağı korur, çünkü yalnızca gerçek kararları söyler ve seçenekleri bitmiş karar gibi sunmaz." },
+                { "language": "ru", "text": "Сильно: ответ защищает протокол, потому что называет только реальные решения и не выдает варианты за готовое решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پڕۆتۆکۆل دەپارێزێت، چونکە تەنها بڕیارە ڕاستەقینەکان ناو دەبات و بژاردەکان وەک بڕیاری تەواو نافرۆشێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv protokolê diparêze, ji ber ku tenê biryarên rastîn nav dike û vebijarkan wekî biryara dawî nîşan nade." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni protokół, bo wymienia tylko rzeczywiste decyzje i nie przedstawia opcji jako gotowych rozstrzygnięć." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează procesul-verbal, deoarece numește doar deciziile reale și nu vinde opțiunile ca decizii finale." },
+                { "language": "sq", "text": "E fortë: përgjigjja e mbron procesverbalin, sepse përmend vetëm vendimet reale dhe nuk i paraqet opsionet si vendime të përfunduara." }
+              ],
+              "explanationKey": "decision-boundary"
+            },
+            {
+              "id": "weak",
+              "text": "Wir haben uns grundsätzlich auf die regionale Expansion verständigt und wollen die Details in den nächsten drei Monaten vorbereiten.",
+              "translations": [
+                { "language": "en", "text": "We basically agreed on regional expansion and want to prepare the details over the next three months." },
+                { "language": "fa", "text": "ما اصولاً درباره گسترش منطقه‌ای توافق کردیم و می‌خواهیم جزئیات را در سه ماه آینده آماده کنیم." },
+                { "language": "ar", "text": "اتفقنا من حيث المبدأ على التوسع الإقليمي ونريد إعداد التفاصيل خلال الأشهر الثلاثة القادمة." },
+                { "language": "tr", "text": "Bölgesel genişleme konusunda temel olarak anlaştık ve ayrıntıları önümüzdeki üç ayda hazırlamak istiyoruz." },
+                { "language": "ru", "text": "Мы в принципе договорились о региональном расширении и хотим подготовить детали в следующие три месяца." },
+                { "language": "ckb", "text": "ئێمە بە بنەڕەتی لەسەر فراوانبوونی ناوچەیی ڕێککەوتین و دەمانەوێت وردەکارییەکان لە سێ مانگی داهاتوودا ئامادە بکەین." },
+                { "language": "kmr", "text": "Em bi bingehî li ser belavbûna herêmî li hev kirin û dixwazin hûrguliyan di sê mehên pêş de amade bikin." },
+                { "language": "pl", "text": "Zasadniczo uzgodniliśmy ekspansję regionalną i chcemy przygotować szczegóły w ciągu najbliższych trzech miesięcy." },
+                { "language": "ro", "text": "În principiu am convenit asupra extinderii regionale și vrem să pregătim detaliile în următoarele trei luni." },
+                { "language": "sq", "text": "Në parim ramë dakord për zgjerimin rajonal dhe duam t’i përgatisim detajet në tre muajt e ardhshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant: Die Formulierung klingt so, als sei die Expansion bereits beschlossen. Das geht über den tatsächlichen Stand hinaus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but risky: the wording sounds as if expansion has already been decided. That goes beyond the actual status." },
+                { "language": "fa", "text": "قابل‌باور اما پرریسک: این فرمول‌بندی طوری به نظر می‌رسد که انگار گسترش از قبل تصمیم شده است. این فراتر از وضعیت واقعی است." },
+                { "language": "ar", "text": "معقول لكنه محفوف بالمخاطر: تبدو الصياغة كأن التوسع قد تقرر بالفعل. وهذا يتجاوز الوضع الحقيقي." },
+                { "language": "tr", "text": "Makuldür ama riskli: ifade, genişlemenin zaten kararlaştırılmış olduğu izlenimini verir. Bu gerçek durumun ötesine geçer." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно: формулировка звучит так, будто расширение уже решено. Это выходит за фактическое состояние." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام پڕمەترسییە: داڕشتنەکە وا دەنگ دەدات وەک ئەوەی فراوانبوون پێشتر بڕیاردراوە. ئەمە لە دۆخی ڕاستەقینە زیاترە." },
+                { "language": "kmr", "text": "Bawerbar e lê rîskdar e: gotin wekî ku belavbûn jixwe hatiye biryardan xuya dike. Ev ji rewşa rastîn wêdetir e." },
+                { "language": "pl", "text": "Prawdopodobne, ale ryzykowne: sformułowanie brzmi tak, jakby ekspansja była już postanowiona. To wykracza poza rzeczywisty stan." },
+                { "language": "ro", "text": "Plauzibil, dar riscant: formularea sună ca și cum extinderea ar fi fost deja decisă. Asta depășește stadiul real." },
+                { "language": "sq", "text": "E besueshme, por e rrezikshme: formulimi tingëllon sikur zgjerimi është vendosur tashmë. Kjo shkon përtej gjendjes reale." }
+              ],
+              "explanationKey": "overstated-decision"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Richtig. Das Budgetrisiko bleibt offen und wird nicht als gelöst protokolliert. Festhalten würde ich: Finanzleitung prüft bis Freitag ein Kostendach, einen Auslöser für erneute Freigabe und die Folgen, falls die Wechselkurse um mehr als fünf Prozent abweichen.",
+              "translations": [
+                { "language": "en", "text": "Correct. The budget risk remains open and will not be recorded as solved. I would record: Finance reviews by Friday a cost cap, a trigger for renewed approval, and the consequences if exchange rates deviate by more than five percent." },
+                { "language": "fa", "text": "درست است. ریسک بودجه باز می‌ماند و به‌عنوان حل‌شده در صورت‌جلسه ثبت نمی‌شود. من این را ثبت می‌کنم: مسئول مالی تا جمعه سقف هزینه، محرک نیاز به تأیید دوباره، و پیامدهای انحراف نرخ ارز بیش از پنج درصد را بررسی می‌کند." },
+                { "language": "ar", "text": "صحيح. يبقى خطر الميزانية مفتوحاً ولن يُسجل على أنه محلول. سأثبت: تراجع الإدارة المالية حتى الجمعة سقفاً للتكاليف، ومحفزاً لاعتماد جديد، والآثار إذا انحرفت أسعار الصرف بأكثر من خمسة في المئة." },
+                { "language": "tr", "text": "Doğru. Bütçe riski açık kalır ve çözülmüş olarak tutanağa geçmez. Şunu kaydederdim: Finans birimi cuma gününe kadar bir maliyet tavanı, yeniden onay tetikleyicisi ve kurlar yüzde beşten fazla saparsa sonuçları inceler." },
+                { "language": "ru", "text": "Верно. Бюджетный риск остается открытым и не будет записан как решенный. Я бы зафиксировал: финансы до пятницы проверяют потолок затрат, триггер для повторного согласования и последствия, если обменные курсы отклонятся более чем на пять процентов." },
+                { "language": "ckb", "text": "ڕاستە. مەترسیی بودجە کراوە دەمێنێتەوە و وەک چارەسەرکراو تۆمار ناکرێت. من تۆمار دەکەم: بەرپرسی دارایی تا هەینی سنووری تێچوو، هۆکاری داواکردنی ڕەزامەندیی نوێ، و دەرئەنجامەکان دەکۆڵێتەوە ئەگەر نرخی ئاڵوگۆڕ زیاتر لە پێنج لەسەد جیاواز بوو." },
+                { "language": "kmr", "text": "Rast e. Rîska budceyê vekirî dimîne û wekî çareserkirî nayê protokolkirin. Ez ê qeyd bikim: darayî heta înê sînorê lêçûnê, destpêkerê pejirandina nû û encamên dema ku nirxên danûstandinê ji pênc ji sedî zêdetir dûr bikevin kontrol dike." },
+                { "language": "pl", "text": "Zgadza się. Ryzyko budżetowe pozostaje otwarte i nie zostanie zapisane jako rozwiązane. Zapisałbym: dział finansów do piątku sprawdza limit kosztów, wyzwalacz ponownej zgody oraz skutki, jeśli kursy walut odchylą się o więcej niż pięć procent." },
+                { "language": "ro", "text": "Corect. Riscul bugetar rămâne deschis și nu va fi consemnat ca rezolvat. Aș nota: conducerea financiară verifică până vineri un plafon de costuri, un declanșator pentru o nouă aprobare și consecințele dacă ratele de schimb deviază cu peste cinci la sută." },
+                { "language": "sq", "text": "Saktë. Rreziku i buxhetit mbetet i hapur dhe nuk shënohet si i zgjidhur. Do të shënoja: financa kontrollon deri të premten një tavan kostoje, një shkak për miratim të ri dhe pasojat nëse kurset e këmbimit devijojnë më shumë se pesë për qind." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Risiko bleibt sichtbar und bekommt zugleich Owner, Frist und prüfbare Auslöser.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the risk remains visible and at the same time receives an owner, deadline, and verifiable triggers." },
+                { "language": "fa", "text": "قوی: ریسک همچنان دیده می‌شود و هم‌زمان مسئول، مهلت و محرک‌های قابل بررسی می‌گیرد." },
+                { "language": "ar", "text": "قوي: يبقى الخطر مرئياً وفي الوقت نفسه يحصل على مسؤول وموعد نهائي ومحفزات قابلة للتحقق." },
+                { "language": "tr", "text": "Güçlü: risk görünür kalır ve aynı zamanda sorumlu, süre ve doğrulanabilir tetikleyiciler kazanır." },
+                { "language": "ru", "text": "Сильно: риск остается видимым и одновременно получает ответственного, срок и проверяемые триггеры." },
+                { "language": "ckb", "text": "بەهێزە: مەترسییەکە دیار دەمێنێتەوە و هاوکات خاوەن بەرپرسیار، ماوە و هۆکاری پشکنراو دەبێت." },
+                { "language": "kmr", "text": "Xurt e: rîsk xuya dimîne û di heman demê de xwedî berpirsiyar, dem û destpêkerên kontrolbar dibe." },
+                { "language": "pl", "text": "Mocne: ryzyko pozostaje widoczne, a jednocześnie dostaje właściciela, termin i sprawdzalne wyzwalacze." },
+                { "language": "ro", "text": "Puternic: riscul rămâne vizibil și primește totodată responsabil, termen și declanșatori verificabili." },
+                { "language": "sq", "text": "E fortë: rreziku mbetet i dukshëm dhe njëkohësisht merr përgjegjës, afat dhe shkaktarë të verifikueshëm." }
+              ],
+              "explanationKey": "open-risk-owner-deadline"
+            },
+            {
+              "id": "weak",
+              "text": "Das Budgetrisiko sollten wir im Blick behalten und später noch einmal mit der Finanzleitung besprechen.",
+              "translations": [
+                { "language": "en", "text": "We should keep an eye on the budget risk and discuss it again later with Finance." },
+                { "language": "fa", "text": "باید ریسک بودجه را زیر نظر داشته باشیم و بعداً دوباره با مسئول مالی درباره آن صحبت کنیم." },
+                { "language": "ar", "text": "ينبغي أن نتابع خطر الميزانية ونتحدث عنه لاحقاً مرة أخرى مع الإدارة المالية." },
+                { "language": "tr", "text": "Bütçe riskini göz önünde tutmalı ve daha sonra Finans birimiyle tekrar görüşmeliyiz." },
+                { "language": "ru", "text": "Нам следует держать бюджетный риск в поле зрения и позже еще раз обсудить его с финансами." },
+                { "language": "ckb", "text": "دەبێت مەترسیی بودجە لەبەرچاو بگرین و دواتر جارێکی تر لەگەڵ بەرپرسی دارایی باسی بکەین." },
+                { "language": "kmr", "text": "Divê em rîska budceyê li ber çavan bigirin û paşê careke din bi darayî re biaxivin." },
+                { "language": "pl", "text": "Powinniśmy mieć ryzyko budżetowe na oku i później jeszcze raz omówić je z działem finansów." },
+                { "language": "ro", "text": "Ar trebui să ținem riscul bugetar sub observație și să îl discutăm mai târziu încă o dată cu finanțele." },
+                { "language": "sq", "text": "Duhet ta mbajmë nën vëzhgim rrezikun e buxhetit dhe ta diskutojmë më vonë përsëri me financën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unverbindlich: Es fehlen Frist, konkrete Prüfpunkte und ein klarer Auslöser für eine neue Entscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too non-committal: it lacks a deadline, concrete review points, and a clear trigger for a new decision." },
+                { "language": "fa", "text": "قابل‌باور اما بیش از حد غیرالزام‌آور: مهلت، نکات بررسی مشخص و محرک روشن برای تصمیم جدید ندارد." },
+                { "language": "ar", "text": "معقول لكنه غير ملزم بما يكفي: تنقصه مهلة ونقاط فحص محددة ومحفز واضح لقرار جديد." },
+                { "language": "tr", "text": "Makuldür ama fazla bağlayıcı değil: süre, somut kontrol noktaları ve yeni karar için açık tetikleyici yok." },
+                { "language": "ru", "text": "Правдоподобно, но слишком необязательно: нет срока, конкретных пунктов проверки и четкого триггера для нового решения." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر بێ پابەندییە: ماوە، خاڵی پشکنینی دیاریکراو و هۆکاری ڕوون بۆ بڕیاری نوێی نییە." },
+                { "language": "kmr", "text": "Bawerbar e lê pir bêgirêdan e: dem, xalên kontrolê yên konkret û destpêkerek zelal ji bo biryara nû tune." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt niewiążące: brakuje terminu, konkretnych punktów sprawdzenia i jasnego wyzwalacza nowej decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea neangajant: lipsesc termenul, punctele concrete de verificare și un declanșator clar pentru o nouă decizie." },
+                { "language": "sq", "text": "E besueshme, por shumë jo detyruese: mungojnë afati, pikat konkrete të kontrollit dhe një shkak i qartë për vendim të ri." }
+              ],
+              "explanationKey": "risk-without-commitment"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Für die interne Kommunikation übernimmt die Strategieleitung bis Mittwoch einen kurzen Orientierungstext. Vertrieb informiert nur ausgewählte Schlüsselkunden, aber ohne Starttermin. Extern sprechen wir vorerst von einer Prüfphase, nicht von einem Markteintritt.",
+              "translations": [
+                { "language": "en", "text": "For internal communication, the strategy lead will provide a short orientation text by Wednesday. Sales informs only selected key customers, but without a start date. Externally, for now we speak of a review phase, not of a market entry." },
+                { "language": "fa", "text": "برای ارتباطات داخلی، مسئول راهبرد تا چهارشنبه یک متن کوتاه جهت‌گیری آماده می‌کند. فروش فقط مشتریان کلیدی منتخب را مطلع می‌کند، اما بدون تاریخ شروع. در ارتباط بیرونی فعلاً از مرحله بررسی صحبت می‌کنیم، نه از ورود به بازار." },
+                { "language": "ar", "text": "بالنسبة للتواصل الداخلي، تتولى قيادة الاستراتيجية إعداد نص توجيهي قصير حتى الأربعاء. يبلغ قسم المبيعات بعض العملاء الرئيسيين المختارين فقط، لكن من دون موعد بدء. خارجياً نتحدث حالياً عن مرحلة فحص، لا عن دخول السوق." },
+                { "language": "tr", "text": "İç iletişim için strateji sorumlusu çarşambaya kadar kısa bir yönlendirme metni hazırlar. Satış yalnızca seçilmiş kilit müşterileri bilgilendirir, ama başlangıç tarihi vermeden. Dışarıya şimdilik pazara girişten değil, inceleme aşamasından söz ederiz." },
+                { "language": "ru", "text": "Для внутренней коммуникации руководитель стратегии до среды подготовит короткий ориентирующий текст. Отдел продаж информирует только выбранных ключевых клиентов, но без даты старта. Вовне мы пока говорим о фазе проверки, а не о выходе на рынок." },
+                { "language": "ckb", "text": "بۆ پەیوەندیکردنی ناوخۆیی، بەرپرسی ستراتیژیا تا چوارشەممە دەقێکی کورتی ئاراستەکردن ئامادە دەکات. فرۆشتن تەنها کڕیارە سەرەکییە هەڵبژێردراوەکان ئاگادار دەکاتەوە، بەڵام بەبێ بەرواری دەستپێک. لە دەرەوەدا ئێستا باس لە قۆناغی پشکنین دەکەین، نەک چوونە بازاڕ." },
+                { "language": "kmr", "text": "Ji bo ragihandina navxweyî, berpirsê stratejiyê heta çarşemê nivîseke kurt a rêberiyê amade dike. Firotan tenê xerîdarên sereke yên hilbijartî agahdar dike, lê bê roja destpêkê. Li derve, niha em behsa qonaxa kontrolê dikin, ne ketina bazarê." },
+                { "language": "pl", "text": "W komunikacji wewnętrznej osoba odpowiedzialna za strategię przygotuje do środy krótki tekst orientacyjny. Sprzedaż poinformuje tylko wybranych kluczowych klientów, ale bez daty startu. Na zewnątrz mówimy na razie o fazie weryfikacji, nie o wejściu na rynek." },
+                { "language": "ro", "text": "Pentru comunicarea internă, responsabilul de strategie pregătește până miercuri un scurt text de orientare. Vânzările informează doar clienți-cheie selectați, dar fără dată de început. În exterior vorbim deocamdată despre o fază de verificare, nu despre intrarea pe piață." },
+                { "language": "sq", "text": "Për komunikimin e brendshëm, përgjegjësi i strategjisë përgatit deri të mërkurën një tekst të shkurtër orientues. Shitjet informojnë vetëm klientë kyç të zgjedhur, por pa datë fillimi. Jashtë flasim për momentin për një fazë shqyrtimi, jo për hyrje në treg." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Zielgruppen und schützt die externe Kommunikation vor falschen Erwartungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer separates target groups and protects external communication from false expectations." },
+                { "language": "fa", "text": "قوی: پاسخ گروه‌های مخاطب را جدا می‌کند و ارتباط بیرونی را از انتظارهای نادرست حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: يفصل الجواب بين الفئات المستهدفة ويحمي التواصل الخارجي من توقعات خاطئة." },
+                { "language": "tr", "text": "Güçlü: cevap hedef grupları ayırır ve dış iletişimi yanlış beklentilerden korur." },
+                { "language": "ru", "text": "Сильно: ответ разделяет целевые группы и защищает внешнюю коммуникацию от ложных ожиданий." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گرووپە ئامانجەکان جیا دەکاتەوە و پەیوەندیکردنی دەرەوە لە چاوەڕوانیی هەڵە دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv komên armancê veqetîne û ragihandina derveyî ji hêviyên şaş diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź rozdziela grupy odbiorców i chroni komunikację zewnętrzną przed fałszywymi oczekiwaniami." },
+                { "language": "ro", "text": "Puternic: răspunsul separă grupurile țintă și protejează comunicarea externă de așteptări greșite." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan grupet e synuara dhe e mbron komunikimin e jashtëm nga pritshmëritë e gabuara." }
+              ],
+              "explanationKey": "audience-specific-communication"
+            },
+            {
+              "id": "weak",
+              "text": "Wir sollten die Teams informieren und den Kunden sagen, dass wir eine Expansion vorbereiten, aber noch keinen genauen Termin haben.",
+              "translations": [
+                { "language": "en", "text": "We should inform the teams and tell customers that we are preparing an expansion, but do not yet have an exact date." },
+                { "language": "fa", "text": "باید تیم‌ها را مطلع کنیم و به مشتریان بگوییم که در حال آماده‌سازی گسترش هستیم، اما هنوز تاریخ دقیقی نداریم." },
+                { "language": "ar", "text": "ينبغي أن نبلغ الفرق ونقول للعملاء إننا نحضر توسعاً، لكن ليس لدينا موعد دقيق بعد." },
+                { "language": "tr", "text": "Ekipleri bilgilendirmeli ve müşterilere bir genişleme hazırladığımızı, ancak henüz kesin tarihimiz olmadığını söylemeliyiz." },
+                { "language": "ru", "text": "Нам следует информировать команды и сказать клиентам, что мы готовим расширение, но точной даты пока нет." },
+                { "language": "ckb", "text": "دەبێت تیمەکان ئاگادار بکەینەوە و بە کڕیاران بڵێین کە ئامادەکاریی فراوانبوون دەکەین، بەڵام هێشتا بەرواری وردمان نییە." },
+                { "language": "kmr", "text": "Divê em tîman agahdar bikin û ji xerîdaran re bibêjin ku em belavbûnê amade dikin, lê hîn roja me ya zelal tune." },
+                { "language": "pl", "text": "Powinniśmy poinformować zespoły i powiedzieć klientom, że przygotowujemy ekspansję, ale nie mamy jeszcze dokładnej daty." },
+                { "language": "ro", "text": "Ar trebui să informăm echipele și să le spunem clienților că pregătim o extindere, dar nu avem încă o dată exactă." },
+                { "language": "sq", "text": "Duhet t’i informojmë ekipet dhe t’u themi klientëve se po përgatisim zgjerimin, por ende nuk kemi datë të saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber kommunikativ zu weit: Für externe Kunden klingt das bereits nach einer angekündigten Expansion.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but communicatively too broad: for external customers, this already sounds like an announced expansion." },
+                { "language": "fa", "text": "قابل‌باور اما از نظر ارتباطی بیش از حد گسترده: برای مشتریان بیرونی این از قبل شبیه اعلام گسترش است." },
+                { "language": "ar", "text": "معقول لكنه واسع تواصلياً أكثر من اللازم: بالنسبة للعملاء الخارجيين يبدو هذا كإعلان توسع بالفعل." },
+                { "language": "tr", "text": "Makuldür ama iletişim açısından fazla geniş: dış müşteriler için bu zaten duyurulmuş bir genişleme gibi görünür." },
+                { "language": "ru", "text": "Правдоподобно, но слишком широко в коммуникации: для внешних клиентов это уже звучит как объявленное расширение." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام لە ڕووی پەیوەندیکردنەوە زۆر فراوانە: بۆ کڕیارانی دەرەوە ئەمە پێشتر وەک ڕاگەیاندنی فراوانبوون دەنگ دەدات." },
+                { "language": "kmr", "text": "Bawerbar e lê ji aliyê ragihandinê ve pir berfireh e: ji bo xerîdarên derveyî ev jixwe wekî ragihandina belavbûnê xuya dike." },
+                { "language": "pl", "text": "Prawdopodobne, ale komunikacyjnie zbyt szerokie: dla klientów zewnętrznych brzmi to już jak ogłoszona ekspansja." },
+                { "language": "ro", "text": "Plauzibil, dar prea larg ca mesaj: pentru clienții externi sună deja ca o extindere anunțată." },
+                { "language": "sq", "text": "E besueshme, por shumë e gjerë në komunikim: për klientët e jashtëm kjo tingëllon tashmë si zgjerim i shpallur." }
+              ],
+              "explanationKey": "premature-external-message"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ja, aber nicht als Entscheidung. Ich würde notieren: Die Standortfrage bleibt offen; geprüft werden Standort A mit niedrigerem Risiko und Standort B mit höherem Wachstumspotenzial. Die Bewertung erfolgt anhand von Kosten, Personalverfügbarkeit und Kundennähe.",
+              "translations": [
+                { "language": "en", "text": "Yes, but not as a decision. I would note: the location question remains open; location A with lower risk and location B with higher growth potential will be reviewed. The assessment will be based on costs, staff availability, and customer proximity." },
+                { "language": "fa", "text": "بله، اما نه به‌عنوان تصمیم. من می‌نویسم: موضوع محل باز می‌ماند؛ محل A با ریسک کمتر و محل B با ظرفیت رشد بیشتر بررسی می‌شوند. ارزیابی بر اساس هزینه‌ها، دسترسی به نیرو و نزدیکی به مشتری انجام می‌شود." },
+                { "language": "ar", "text": "نعم، لكن ليس كقرار. سأدون: تبقى مسألة الموقع مفتوحة؛ سيتم فحص الموقع A ذي المخاطر الأقل والموقع B ذي إمكانات النمو الأعلى. يتم التقييم بناءً على التكاليف وتوافر الموظفين والقرب من العملاء." },
+                { "language": "tr", "text": "Evet, ama karar olarak değil. Şöyle not ederdim: lokasyon konusu açık kalır; daha düşük riskli A lokasyonu ve daha yüksek büyüme potansiyelli B lokasyonu incelenecek. Değerlendirme maliyetler, personel bulunabilirliği ve müşteriye yakınlık temelinde yapılır." },
+                { "language": "ru", "text": "Да, но не как решение. Я бы записал: вопрос площадки остается открытым; будут проверены площадка A с более низким риском и площадка B с более высоким потенциалом роста. Оценка проводится на основе затрат, доступности персонала и близости к клиентам." },
+                { "language": "ckb", "text": "بەڵێ، بەڵام نەک وەک بڕیار. من تۆمار دەکەم: پرسی شوێن کراوە دەمێنێتەوە؛ شوێنی A بە مەترسیی کەمتر و شوێنی B بە توانای گەشەی زیاتر دەپشکنرێن. هەڵسەنگاندنەکە لەسەر بنەمای تێچوو، بەردەستبوونی کارمەند و نزیکی لە کڕیار دەبێت." },
+                { "language": "kmr", "text": "Erê, lê ne wekî biryar. Ez ê qeyd bikim: pirsa cihê vekirî dimîne; cihê A bi rîska kêmtir û cihê B bi potansiyela mezinbûnê ya zêdetir têne kontrolkirin. Nirxandin li ser bingehê lêçûn, peydabûna karmendan û nêzîkatiya xerîdarê tê kirin." },
+                { "language": "pl", "text": "Tak, ale nie jako decyzję. Zapisałbym: kwestia lokalizacji pozostaje otwarta; sprawdzane będą lokalizacja A o niższym ryzyku oraz lokalizacja B o większym potencjale wzrostu. Ocena nastąpi na podstawie kosztów, dostępności personelu i bliskości klientów." },
+                { "language": "ro", "text": "Da, dar nu ca decizie. Aș nota: chestiunea locației rămâne deschisă; vor fi analizate locația A cu risc mai scăzut și locația B cu potențial de creștere mai mare. Evaluarea se face pe baza costurilor, disponibilității personalului și apropierii de clienți." },
+                { "language": "sq", "text": "Po, por jo si vendim. Do të shënoja: çështja e lokacionit mbetet e hapur; do të shqyrtohen lokacioni A me rrezik më të ulët dhe lokacioni B me potencial më të madh rritjeje. Vlerësimi bëhet mbi bazën e kostove, disponueshmërisë së personelit dhe afërsisë me klientët." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Dissens wird nicht geglättet, sondern als offener Punkt mit Bewertungslogik dokumentiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the disagreement is not smoothed over, but documented as an open point with an evaluation logic." },
+                { "language": "fa", "text": "قوی: اختلاف نظر صاف و پنهان نمی‌شود، بلکه به‌عنوان نکته باز همراه با منطق ارزیابی ثبت می‌شود." },
+                { "language": "ar", "text": "قوي: لا يتم تلطيف الخلاف، بل يوثق كنقطة مفتوحة مع منطق تقييم." },
+                { "language": "tr", "text": "Güçlü: görüş ayrılığı yumuşatılmaz, değerlendirme mantığıyla açık nokta olarak belgelenir." },
+                { "language": "ru", "text": "Сильно: разногласие не сглаживается, а документируется как открытый пункт с логикой оценки." },
+                { "language": "ckb", "text": "بەهێزە: ناکۆکییەکە نەرم ناکرێت، بەڵکو وەک خاڵێکی کراوە لەگەڵ لۆژیکی هەڵسەنگاندن تۆمار دەکرێت." },
+                { "language": "kmr", "text": "Xurt e: cudahiya nêrînê nayê nermkirin, lê wekî xaleke vekirî bi mantiqa nirxandinê tê belgekirin." },
+                { "language": "pl", "text": "Mocne: rozbieżność nie jest wygładzana, lecz dokumentowana jako punkt otwarty z logiką oceny." },
+                { "language": "ro", "text": "Puternic: dezacordul nu este netezit, ci documentat ca punct deschis cu o logică de evaluare." },
+                { "language": "sq", "text": "E fortë: mosmarrëveshja nuk zbutet, por dokumentohet si pikë e hapur me logjikë vlerësimi." }
+              ],
+              "explanationKey": "open-disagreement-with-criteria"
+            },
+            {
+              "id": "weak",
+              "text": "Die Standortfrage war umstritten, aber wir werden sie später entscheiden, wenn mehr Informationen vorliegen.",
+              "translations": [
+                { "language": "en", "text": "The location question was disputed, but we will decide it later when more information is available." },
+                { "language": "fa", "text": "موضوع محل محل اختلاف بود، اما وقتی اطلاعات بیشتری موجود باشد بعداً درباره آن تصمیم می‌گیریم." },
+                { "language": "ar", "text": "كانت مسألة الموقع مثار خلاف، لكننا سنقررها لاحقاً عندما تتوفر معلومات أكثر." },
+                { "language": "tr", "text": "Lokasyon konusu tartışmalıydı, ancak daha fazla bilgi olduğunda bunu daha sonra kararlaştıracağız." },
+                { "language": "ru", "text": "Вопрос площадки был спорным, но мы решим его позже, когда появится больше информации." },
+                { "language": "ckb", "text": "پرسی شوێن جێی ناکۆکی بوو، بەڵام کاتێک زانیاریی زیاتر هەبوو دواتر بڕیاری لەسەر دەدەین." },
+                { "language": "kmr", "text": "Pirsa cihê nakok bû, lê em ê wê paşê, dema agahiyên zêdetir hebin, biryar bidin." },
+                { "language": "pl", "text": "Kwestia lokalizacji była sporna, ale zdecydujemy o niej później, gdy będzie więcej informacji." },
+                { "language": "ro", "text": "Chestiunea locației a fost controversată, dar o vom decide mai târziu, când vor exista mai multe informații." },
+                { "language": "sq", "text": "Çështja e lokacionit ishte e diskutueshme, por do të vendosim më vonë kur të ketë më shumë informacion." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn: Es fehlen die konkreten Optionen und die Kriterien, nach denen später entschieden wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too thin: it lacks the concrete options and the criteria by which a later decision will be made." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی کم‌جزئیات: گزینه‌های مشخص و معیارهایی که بر اساس آن بعداً تصمیم گرفته می‌شود، وجود ندارد." },
+                { "language": "ar", "text": "معقول لكنه ضعيف التفاصيل: تنقصه الخيارات المحددة والمعايير التي سيُتخذ القرار اللاحق على أساسها." },
+                { "language": "tr", "text": "Makuldür ama fazla zayıf: somut seçenekler ve daha sonra karar verilecek kriterler yok." },
+                { "language": "ru", "text": "Правдоподобно, но слишком тонко: нет конкретных вариантов и критериев, по которым позже будет принято решение." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر لاوازە: بژاردە دیاریکراوەکان و پێوەرەکانی بڕیاری داهاتووی تێدا نییە." },
+                { "language": "kmr", "text": "Bawerbar e lê pir tenik e: vebijarkên konkret û pîvanên biryara paşê tune." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt ubogie: brakuje konkretnych opcji i kryteriów, według których zapadnie późniejsza decyzja." },
+                { "language": "ro", "text": "Plauzibil, dar prea subțire: lipsesc opțiunile concrete și criteriile după care se va decide mai târziu." },
+                { "language": "sq", "text": "E besueshme, por shumë e varfër: mungojnë opsionet konkrete dhe kriteret sipas të cilave do të vendoset më vonë." }
+              ],
+              "explanationKey": "open-point-without-criteria"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dann würde ich formulieren: Der Vorstand bestätigt das dreimonatige Vorbereitungsfenster für die regionale Expansion; Budgetrahmen, Standortbewertung und Kommunikationslinie werden bis zum 15. Juni konkretisiert und in der nächsten Strategierunde zur Entscheidung vorgelegt.",
+              "translations": [
+                { "language": "en", "text": "Then I would formulate it as follows: the board confirms the three-month preparation window for regional expansion; the budget framework, location assessment, and communication line will be specified by June 15 and submitted for decision in the next strategy round." },
+                { "language": "fa", "text": "پس این‌طور فرمول‌بندی می‌کنم: هیئت‌مدیره بازه آماده‌سازی سه‌ماهه برای گسترش منطقه‌ای را تأیید می‌کند؛ چارچوب بودجه، ارزیابی محل و خط ارتباطی تا ۱۵ ژوئن مشخص می‌شوند و در دور بعدی راهبرد برای تصمیم‌گیری ارائه خواهند شد." },
+                { "language": "ar", "text": "إذن سأصوغها كالتالي: يؤكد المجلس فترة التحضير لمدة ثلاثة أشهر للتوسع الإقليمي؛ وسيتم تحديد إطار الميزانية وتقييم الموقع وخط التواصل حتى 15 يونيو وتقديمها لاتخاذ القرار في الجولة الاستراتيجية التالية." },
+                { "language": "tr", "text": "O halde şöyle formüle ederdim: yönetim kurulu bölgesel genişleme için üç aylık hazırlık penceresini onaylar; bütçe çerçevesi, lokasyon değerlendirmesi ve iletişim çizgisi 15 Haziran'a kadar somutlaştırılır ve bir sonraki strateji turunda karar için sunulur." },
+                { "language": "ru", "text": "Тогда я сформулировал бы так: правление подтверждает трехмесячное окно подготовки к региональному расширению; бюджетные рамки, оценка площадки и коммуникационная линия будут конкретизированы до 15 июня и представлены для решения на следующем стратегическом раунде." },
+                { "language": "ckb", "text": "ئەوا من وا داڕێژم: دەستەی بەڕێوەبەری ماوەی ئامادەکاریی سێ مانگە بۆ فراوانبوونی ناوچەیی پشتڕاست دەکاتەوە؛ چوارچێوەی بودجە، هەڵسەنگاندنی شوێن و هێڵی پەیوەندیکردن تا ١٥ی حوزەیران دیار دەکرێن و لە خولی ستراتیژی داهاتوودا بۆ بڕیار پێشکەش دەکرێن." },
+                { "language": "kmr", "text": "Wê demê ez wisa diafirînim: desteya rêvebiriyê navbera amadekariyê ya sê mehan ji bo belavbûna herêmî piştrast dike; çarçoveya budceyê, nirxandina cihê û rêza ragihandinê heta 15ê Hezîranê têne konkretkirin û di gera stratejiyê ya din de ji bo biryarê têne pêşkêşkirin." },
+                { "language": "pl", "text": "Wtedy sformułowałbym to tak: zarząd potwierdza trzymiesięczne okno przygotowawcze dla ekspansji regionalnej; ramy budżetowe, ocena lokalizacji i linia komunikacyjna zostaną skonkretyzowane do 15 czerwca i przedłożone do decyzji w następnej rundzie strategicznej." },
+                { "language": "ro", "text": "Atunci aș formula astfel: consiliul confirmă fereastra de pregătire de trei luni pentru extinderea regională; cadrul bugetar, evaluarea locației și linia de comunicare vor fi concretizate până la 15 iunie și prezentate pentru decizie în următoarea rundă strategică." },
+                { "language": "sq", "text": "Atëherë do ta formuloja kështu: bordi konfirmon periudhën përgatitore tremujore për zgjerimin rajonal; korniza e buxhetit, vlerësimi i lokacionit dhe linja e komunikimit do të konkretizohen deri më 15 qershor dhe do të paraqiten për vendim në raundin e ardhshëm strategjik." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussformulierung ist protokollfähig, weil sie Beschluss, offene Klärungen, Frist und nächstes Entscheidungsgremium enthält.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the final wording is suitable for the minutes because it includes decision, open clarifications, deadline, and the next decision forum." },
+                { "language": "fa", "text": "قوی: جمله پایانی برای صورت‌جلسه مناسب است، چون تصمیم، روشن‌سازی‌های باز، مهلت و مرجع تصمیم بعدی را دارد." },
+                { "language": "ar", "text": "قوي: الصياغة الختامية مناسبة للمحضر لأنها تتضمن القرار والتوضيحات المفتوحة والمهلة والجهة التالية لاتخاذ القرار." },
+                { "language": "tr", "text": "Güçlü: son ifade tutanağa uygundur, çünkü karar, açık netleştirmeler, süre ve sonraki karar organını içerir." },
+                { "language": "ru", "text": "Сильно: финальная формулировка подходит для протокола, потому что содержит решение, открытые уточнения, срок и следующий орган принятия решения." },
+                { "language": "ckb", "text": "بەهێزە: داڕشتنی کۆتایی بۆ پڕۆتۆکۆل گونجاوە، چونکە بڕیار، ڕوونکردنەوە کراوەکان، ماوە و ئەنجومەنی بڕیاری داهاتووی تێدایە." },
+                { "language": "kmr", "text": "Xurt e: gotina dawî ji bo protokolê guncan e, ji ber ku biryar, zelalkirinên vekirî, dem û cihê biryara din tê de hene." },
+                { "language": "pl", "text": "Mocne: końcowa formuła nadaje się do protokołu, bo zawiera decyzję, otwarte wyjaśnienia, termin i kolejne forum decyzyjne." },
+                { "language": "ro", "text": "Puternic: formularea finală este potrivită pentru procesul-verbal, deoarece include decizia, clarificările deschise, termenul și următorul forum decizional." },
+                { "language": "sq", "text": "E fortë: formulimi përfundimtar është i përshtatshëm për procesverbal, sepse përmban vendimin, sqarimet e hapura, afatin dhe forumin e ardhshëm vendimmarrës." }
+              ],
+              "explanationKey": "minutes-ready-final-summary"
+            },
+            {
+              "id": "weak",
+              "text": "Wir bereiten die Expansion in den nächsten drei Monaten weiter vor und kommen im Juni mit den offenen Punkten wieder auf das Thema zurück.",
+              "translations": [
+                { "language": "en", "text": "We will continue preparing the expansion over the next three months and return to the topic in June with the open points." },
+                { "language": "fa", "text": "ما در سه ماه آینده آماده‌سازی گسترش را ادامه می‌دهیم و در ژوئن با نکات باز دوباره به این موضوع برمی‌گردیم." },
+                { "language": "ar", "text": "سنواصل تحضير التوسع خلال الأشهر الثلاثة القادمة ونعود إلى الموضوع في يونيو مع النقاط المفتوحة." },
+                { "language": "tr", "text": "Önümüzdeki üç ayda genişlemeyi hazırlamaya devam edeceğiz ve açık noktalarla birlikte haziranda konuya geri döneceğiz." },
+                { "language": "ru", "text": "Мы продолжим подготовку расширения в следующие три месяца и вернемся к теме в июне с открытыми пунктами." },
+                { "language": "ckb", "text": "ئێمە لە سێ مانگی داهاتوودا ئامادەکاریی فراوانبوون بەردەوام دەکەین و لە حوزەیراندا لەگەڵ خاڵە کراوەکان دەگەڕێینەوە سەر بابەتەکە." },
+                { "language": "kmr", "text": "Em dê di sê mehên pêş de amadekariya belavbûnê bidomînin û di Hezîranê de bi xalên vekirî vegerin ser mijarê." },
+                { "language": "pl", "text": "Będziemy dalej przygotowywać ekspansję przez najbliższe trzy miesiące i wrócimy do tematu w czerwcu z otwartymi punktami." },
+                { "language": "ro", "text": "Vom continua să pregătim extinderea în următoarele trei luni și vom reveni asupra subiectului în iunie cu punctele deschise." },
+                { "language": "sq", "text": "Do të vazhdojmë përgatitjen e zgjerimit në tre muajt e ardhshëm dhe do t’i kthehemi temës në qershor me pikat e hapura." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht protokollfest: Die Formulierung nennt weder konkrete Klärungspunkte noch das Entscheidungsgremium.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but not firm enough for minutes: the wording names neither concrete clarification points nor the decision forum." },
+                { "language": "fa", "text": "قابل‌باور اما برای صورت‌جلسه محکم نیست: این فرمول‌بندی نه نکات روشن‌سازی مشخص را می‌گوید و نه مرجع تصمیم‌گیری را." },
+                { "language": "ar", "text": "معقول لكنه غير ثابت بما يكفي للمحضر: لا تذكر الصياغة نقاط توضيح محددة ولا جهة اتخاذ القرار." },
+                { "language": "tr", "text": "Makuldür ama tutanak için yeterince sağlam değil: ifade ne somut netleştirme noktalarını ne de karar organını belirtir." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно прочно для протокола: формулировка не называет ни конкретные пункты уточнения, ни орган принятия решения." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام بۆ پڕۆتۆکۆل پتەو نییە: داڕشتنەکە نە خاڵە دیاریکراوەکانی ڕوونکردنەوە ناو دەبات و نە ئەنجومەنی بڕیار." },
+                { "language": "kmr", "text": "Bawerbar e lê ji bo protokolê têra xwe qayîm nîne: gotin ne xalên zelalkirinê yên konkret û ne jî cihê biryarê nav dike." },
+                { "language": "pl", "text": "Prawdopodobne, ale nie dość mocne dla protokołu: sformułowanie nie podaje ani konkretnych punktów wyjaśnienia, ani forum decyzyjnego." },
+                { "language": "ro", "text": "Plauzibil, dar nu suficient de solid pentru procesul-verbal: formularea nu numește nici puncte concrete de clarificare, nici forumul decizional." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e fortë për procesverbal: formulimi nuk përmend as pika konkrete sqarimi, as forumin vendimmarrës." }
+              ],
+              "explanationKey": "final-summary-too-vague"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "summary-structure",
+          "text": "Eine C1-Zusammenfassung beginnt mit Ordnung. Erst danach folgen Details, sonst wird das Protokoll unklar.",
+          "translations": [
+            { "language": "en", "text": "A C1 summary begins with structure. Only then do details follow; otherwise the minutes become unclear." },
+            { "language": "fa", "text": "جمع‌بندی C1 با ساختار شروع می‌شود. بعد از آن جزئیات می‌آیند؛ وگرنه صورت‌جلسه نامشخص می‌شود." },
+            { "language": "ar", "text": "يبدأ ملخص C1 بالترتيب. بعد ذلك فقط تأتي التفاصيل، وإلا يصبح المحضر غير واضح." },
+            { "language": "tr", "text": "C1 düzeyinde özet yapı ile başlar. Ancak sonra ayrıntılar gelir; aksi halde tutanak belirsizleşir." },
+            { "language": "ru", "text": "Итог уровня C1 начинается со структуры. Только потом идут детали, иначе протокол становится неясным." },
+            { "language": "ckb", "text": "پوختەی C1 بە ڕێکخستن دەست پێدەکات. پاشان وردەکاری دێت، ئەگەرنا پڕۆتۆکۆل ناڕوون دەبێت." },
+            { "language": "kmr", "text": "Kurteya C1 bi sazî dest pê dike. Piştre hûrgulî tên; wekî din protokol nezelal dibe." },
+            { "language": "pl", "text": "Podsumowanie C1 zaczyna się od porządku. Dopiero potem przychodzą szczegóły, inaczej protokół staje się niejasny." },
+            { "language": "ro", "text": "Un rezumat C1 începe cu structură. Abia apoi vin detaliile; altfel procesul-verbal devine neclar." },
+            { "language": "sq", "text": "Një përmbledhje C1 nis me strukturë. Vetëm pastaj vijnë detajet; përndryshe procesverbali bëhet i paqartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "decision-boundary",
+          "text": "Protokollsprache darf nicht mehr Beschluss behaupten, als tatsächlich beschlossen wurde.",
+          "translations": [
+            { "language": "en", "text": "Minutes language must not claim more decision than was actually decided." },
+            { "language": "fa", "text": "زبان صورت‌جلسه نباید بیش از آنچه واقعاً تصمیم شده، ادعای تصمیم کند." },
+            { "language": "ar", "text": "ينبغي ألا تدعي لغة المحضر وجود قرار أكثر مما تم اتخاذه فعلاً." },
+            { "language": "tr", "text": "Tutanak dili, gerçekten kararlaştırılandan daha fazla karar iddia etmemelidir." },
+            { "language": "ru", "text": "Язык протокола не должен утверждать больше решения, чем фактически было принято." },
+            { "language": "ckb", "text": "زمانی پڕۆتۆکۆل نابێت زیاتر لەوەی بەڕاستی بڕیار دراوە، بانگەشەی بڕیار بکات." },
+            { "language": "kmr", "text": "Zimanê protokolê divê ji ya ku bi rastî hatiye biryardan zêdetir biryar îdia neke." },
+            { "language": "pl", "text": "Język protokołu nie może twierdzić, że podjęto więcej decyzji, niż faktycznie podjęto." },
+            { "language": "ro", "text": "Limbajul procesului-verbal nu trebuie să pretindă mai multe decizii decât s-au luat de fapt." },
+            { "language": "sq", "text": "Gjuha e procesverbalit nuk duhet të pretendojë më shumë vendime sesa janë marrë realisht." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "risk-ownership",
+          "text": "Ein offenes Risiko wird handhabbar, wenn es mit Owner, Frist, Schwellenwert und Folgeentscheidung verbunden wird.",
+          "translations": [
+            { "language": "en", "text": "An open risk becomes manageable when it is linked to an owner, deadline, threshold, and follow-up decision." },
+            { "language": "fa", "text": "یک ریسک باز زمانی قابل مدیریت می‌شود که با مسئول، مهلت، آستانه و تصمیم بعدی پیوند داده شود." },
+            { "language": "ar", "text": "يصبح الخطر المفتوح قابلاً للإدارة عندما يرتبط بمسؤول وموعد نهائي وعتبة وقرار لاحق." },
+            { "language": "tr", "text": "Açık bir risk, sorumlu, süre, eşik ve sonraki kararla bağlandığında yönetilebilir hale gelir." },
+            { "language": "ru", "text": "Открытый риск становится управляемым, когда он связан с ответственным, сроком, порогом и последующим решением." },
+            { "language": "ckb", "text": "مەترسییەکی کراوە کاتێک بەڕێوەبردنی دەکرێت کە بە بەرپرسیار، ماوە، ئاستی سنوور و بڕیاری داهاتوو ببەسترێتەوە." },
+            { "language": "kmr", "text": "Rîskeke vekirî dema bi berpirsiyar, dem, astê sînor û biryara pişt re ve girêdayî be, rêvebirbar dibe." },
+            { "language": "pl", "text": "Otwarte ryzyko staje się zarządzalne, gdy jest powiązane z właścicielem, terminem, progiem i decyzją następczą." },
+            { "language": "ro", "text": "Un risc deschis devine gestionabil când este legat de un responsabil, un termen, un prag și o decizie ulterioară." },
+            { "language": "sq", "text": "Një rrezik i hapur bëhet i menaxhueshëm kur lidhet me përgjegjës, afat, prag dhe vendim pasues." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "communication-control",
+          "text": "Strategische Kommunikation braucht Zielgruppenlogik: intern Orientierung geben, extern keine Entscheidung vorwegnehmen.",
+          "translations": [
+            { "language": "en", "text": "Strategic communication needs audience logic: provide orientation internally, but do not anticipate a decision externally." },
+            { "language": "fa", "text": "ارتباطات راهبردی به منطق مخاطب نیاز دارد: در داخل جهت بدهید، اما بیرون از شرکت تصمیم را پیشاپیش اعلام نکنید." },
+            { "language": "ar", "text": "يحتاج التواصل الاستراتيجي إلى منطق للفئات المستهدفة: توجيه داخلياً، وعدم استباق القرار خارجياً." },
+            { "language": "tr", "text": "Stratejik iletişim hedef kitle mantığı gerektirir: içeride yönlendirme sağlayın, dışarıda kararı önden söylemeyin." },
+            { "language": "ru", "text": "Стратегическая коммуникация требует логики целевых групп: внутри дать ориентацию, вовне не предвосхищать решение." },
+            { "language": "ckb", "text": "پەیوەندیکردنی ستراتیژی پێویستی بە لۆژیکی گرووپی ئامانج هەیە: ناوخۆدا ئاراستە بدە، لە دەرەوە بڕیار پێشوەختە مەڵێ." },
+            { "language": "kmr", "text": "Ragihandina stratejîk hewceyî mantiqa komên armancê ye: li hundir rêberî bidin, li derve biryarê pêşwext nebêjin." },
+            { "language": "pl", "text": "Komunikacja strategiczna potrzebuje logiki odbiorców: wewnętrznie dać orientację, na zewnątrz nie wyprzedzać decyzji." },
+            { "language": "ro", "text": "Comunicarea strategică are nevoie de logica publicului: oferiți orientare intern, dar nu anticipați decizia extern." },
+            { "language": "sq", "text": "Komunikimi strategjik kërkon logjikë të audiencës: jepni orientim brenda, por mos e paraprini vendimin jashtë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "protocol-wording",
+          "text": "Eine gute Schlussformulierung verbindet das bereits Beschlossene mit den offenen Klärungen und dem nächsten Entscheidungspunkt.",
+          "translations": [
+            { "language": "en", "text": "Good final wording connects what has already been decided with the open clarifications and the next decision point." },
+            { "language": "fa", "text": "یک جمله پایانی خوب، تصمیم‌های گرفته‌شده را با روشن‌سازی‌های باز و نقطه تصمیم بعدی پیوند می‌دهد." },
+            { "language": "ar", "text": "تربط الصياغة الختامية الجيدة ما تم اتخاذه من قرارات بالتوضيحات المفتوحة ونقطة القرار التالية." },
+            { "language": "tr", "text": "İyi bir kapanış ifadesi, alınmış kararları açık netleştirmeler ve sonraki karar noktasıyla birleştirir." },
+            { "language": "ru", "text": "Хорошая финальная формулировка связывает уже принятое с открытыми уточнениями и следующей точкой решения." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی باش ئەوەی بڕیار دراوە بە ڕوونکردنەوە کراوەکان و خاڵی بڕیاری داهاتوو دەبەستێتەوە." },
+            { "language": "kmr", "text": "Gotineke dawî ya baş tiştên jixwe biryardayî bi zelalkirinên vekirî û xala biryara din ve girê dide." },
+            { "language": "pl", "text": "Dobra formuła końcowa łączy to, co już zdecydowano, z otwartymi wyjaśnieniami i następnym punktem decyzyjnym." },
+            { "language": "ro", "text": "O formulare finală bună leagă ceea ce a fost deja decis de clarificările deschise și de următorul punct de decizie." },
+            { "language": "sq", "text": "Një formulim i mirë përfundimtar lidh atë që është vendosur tashmë me sqarimet e hapura dhe pikën e ardhshme të vendimit." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "strategy-meeting-summary",
+          "placement": "hero",
+          "purpose": "Show a neutral workplace meeting context with a visible summary board, without readable private data.",
+          "altText": "Eine strategische Arbeitsbesprechung mit mehreren Erwachsenen an einem Besprechungstisch und einer neutralen Übersichtstafel.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A strategic workplace meeting with several adults at a meeting table and a neutral summary board." },
+            { "language": "fa", "text": "یک جلسه کاری راهبردی با چند بزرگسال دور میز جلسه و یک تخته خلاصه‌سازی خنثی." },
+            { "language": "ar", "text": "اجتماع عمل استراتيجي مع عدة بالغين حول طاولة اجتماع ولوحة تلخيص محايدة." },
+            { "language": "tr", "text": "Bir toplantı masasında birkaç yetişkin ve nötr bir özet panosuyla stratejik bir iş toplantısı." },
+            { "language": "ru", "text": "Стратегическая рабочая встреча с несколькими взрослыми за столом переговоров и нейтральной доской итогов." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی کاری ستراتیژی بە چەند پێگەیشتوو لە دەوری مێزی کۆبوونەوە و تەختەیەکی پوختەی بێلایەن." },
+            { "language": "kmr", "text": "Civîneke kar a stratejîk bi çend mezinan li dora maseya civînê û tabloyek kurtkirinê ya bêalî." },
+            { "language": "pl", "text": "Strategiczne spotkanie zawodowe z kilkoma dorosłymi przy stole konferencyjnym i neutralną tablicą podsumowania." },
+            { "language": "ro", "text": "O ședință strategică de lucru cu mai mulți adulți la o masă de ședință și o tablă neutră de rezumat." },
+            { "language": "sq", "text": "Një takim pune strategjik me disa të rritur rreth një tavoline mbledhjeje dhe një tabele neutrale përmbledhëse." }
+          ],
+          "imagePrompt": "Clean educational illustration of a strategic workplace meeting in Germany, diverse adults around a meeting table, one person summarizing decisions on a neutral board with abstract shapes only, no readable text, no logos, no private data, calm professional style, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

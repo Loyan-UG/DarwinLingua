@@ -1,0 +1,845 @@
+{
+  "packageId": "roleplays-c1-core-58-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 58 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 58",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-arbeitsmarkt-und-qualifizierung-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Arbeitsmarkt und Qualifizierung diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing the labor market and qualification" },
+        { "language": "fa", "text": "بحث درباره بازار کار و مهارت‌آموزی" },
+        { "language": "ar", "text": "مناقشة سوق العمل والتأهيل" },
+        { "language": "tr", "text": "İş piyasası ve nitelik kazanmayı tartışmak" },
+        { "language": "ru", "text": "Обсуждать рынок труда и повышение квалификации" },
+        { "language": "ckb", "text": "گفتوگۆ دەربارەی بازاڕی کار و شارەزاییپێدان" },
+        { "language": "kmr", "text": "Gotûbêjkirina bazara kar û jêhatîbûnê" },
+        { "language": "pl", "text": "Dyskusja o rynku pracy i kwalifikacjach" },
+        { "language": "ro", "text": "Discutarea pieței muncii și a calificării" },
+        { "language": "sq", "text": "Diskutimi për tregun e punës dhe kualifikimin" }
+      ],
+      "description": "In einer Prüfungssimulation diskutiert die Gruppe, wie Beschäftigte auf Digitalisierung, Fachkräftemangel und veränderte Berufsprofile reagieren können. Sie sollen individuelle Lernbereitschaft, Verantwortung der Arbeitgeber und politische Rahmenbedingungen differenziert verbinden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an exam simulation, the group discusses how employees can respond to digitalization, labor shortages, and changing job profiles. You should connect individual willingness to learn, employer responsibility, and political framework conditions in a nuanced way." },
+        { "language": "fa", "text": "در یک شبیه‌سازی امتحان، گروه بحث می‌کند که کارکنان چگونه می‌توانند به دیجیتالی‌شدن، کمبود نیروی متخصص و تغییر پروفایل‌های شغلی واکنش نشان دهند. باید آمادگی فردی برای یادگیری، مسئولیت کارفرما و چارچوب‌های سیاسی را دقیق به هم ربط دهید." },
+        { "language": "ar", "text": "في محاكاة امتحانية تناقش المجموعة كيف يمكن للعاملين التعامل مع الرقمنة ونقص الكفاءات وتغير ملامح المهن. عليك الربط بدقة بين استعداد الفرد للتعلم ومسؤولية أصحاب العمل والأطر السياسية." },
+        { "language": "tr", "text": "Bir sınav simülasyonunda grup, çalışanların dijitalleşmeye, nitelikli iş gücü eksikliğine ve değişen meslek profillerine nasıl tepki verebileceğini tartışır. Bireysel öğrenme isteğini, işveren sorumluluğunu ve siyasi çerçeve koşullarını nüanslı biçimde bağlamalısınız." },
+        { "language": "ru", "text": "В экзаменационной симуляции группа обсуждает, как работники могут реагировать на цифровизацию, нехватку специалистов и изменяющиеся профессиональные профили. Нужно дифференцированно связать индивидуальную готовность учиться, ответственность работодателей и политические рамки." },
+        { "language": "ckb", "text": "لە شبیه‌سازیی تاقیکردنەوەدا گروپەکە گفتوگۆ دەکات کە کارمەندان چۆن دەتوانن وەڵامی دیجیتاڵبوون، کەمیی پسپۆڕ و گۆڕانی پڕۆفایلی پیشەکان بدەنەوە. پێویستە ئامادەیی تاکەکەس بۆ فێربوون، بەرپرسیاریی خاوەنکار و چوارچێوەی سیاسی بە وردی پێکەوە ببەستیت." },
+        { "language": "kmr", "text": "Di şêwazeke azmûnê de kom gotûbêj dike ka karmend çawa dikarin bersivê bidin dijîtalbûnê, kêmbûna pisporan û profîlên kar ên guherbar. Divê amadebûna kesane ya fêrbûnê, berpirsiyariya kardêran û şertên siyasî bi hûrgilî girê bidin." },
+        { "language": "pl", "text": "W symulacji egzaminacyjnej grupa omawia, jak pracownicy mogą reagować na cyfryzację, niedobór fachowców i zmieniające się profile zawodowe. Należy zniuansowanie połączyć indywidualną gotowość do nauki, odpowiedzialność pracodawców i ramy polityczne." },
+        { "language": "ro", "text": "Într-o simulare de examen, grupul discută cum pot angajații reacționa la digitalizare, lipsa specialiștilor și schimbarea profilurilor profesionale. Trebuie să legați nuanțat disponibilitatea individuală de a învăța, responsabilitatea angajatorilor și cadrul politic." },
+        { "language": "sq", "text": "Në një simulim provimi, grupi diskuton si mund të reagojnë punonjësit ndaj digjitalizimit, mungesës së specialistëve dhe profileve të ndryshuara të profesioneve. Duhet të lidhni me nuanca gatishmërinë individuale për të mësuar, përgjegjësinë e punëdhënësve dhe kushtet politike." }
+      ],
+      "learnerGoal": "Eine differenzierte Position zur Qualifizierung im Wandel der Arbeitswelt formulieren: Chancen und Risiken benennen, konkrete Hürden erklären, Verantwortung verteilen und einen realistischen Maßnahmenmix begründen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Formulate a nuanced position on qualification in a changing world of work: name opportunities and risks, explain concrete barriers, distribute responsibility, and justify a realistic mix of measures." },
+        { "language": "fa", "text": "درباره مهارت‌آموزی در دنیای کارِ در حال تغییر موضعی دقیق بیان کنید: فرصت‌ها و خطرها را نام ببرید، موانع مشخص را توضیح دهید، مسئولیت را تقسیم کنید و ترکیبی واقع‌بینانه از اقدامات را توجیه کنید." },
+        { "language": "ar", "text": "صغ موقفاً دقيقاً من التأهيل في عالم العمل المتغير: سمّ الفرص والمخاطر، واشرح العقبات الملموسة، ووزع المسؤولية، وبرر مزيجاً واقعياً من الإجراءات." },
+        { "language": "tr", "text": "Değişen iş dünyasında nitelik kazanma konusunda nüanslı bir pozisyon formüle edin: fırsatları ve riskleri adlandırın, somut engelleri açıklayın, sorumluluğu dağıtın ve gerçekçi bir önlem karışımını gerekçelendirin." },
+        { "language": "ru", "text": "Сформулировать дифференцированную позицию о квалификации в меняющемся мире труда: назвать возможности и риски, объяснить конкретные барьеры, распределить ответственность и обосновать реалистичное сочетание мер." },
+        { "language": "ckb", "text": "هەڵوێستێکی ورد دەربارەی شارەزاییپێدان لە جیهانی کاری گۆڕاو دابڕێژە: دەرفەت و مەترسی ناو ببە، لەمپەری دیاریکراو ڕوون بکەوە، بەرپرسیاری دابەش بکە و تێکەڵە ڕێکارێکی واقیعی بەڵگەدار بکە." },
+        { "language": "kmr", "text": "Helwesteke hûrgilî li ser jêhatîbûnê di cihana kar a guherbar de formule bikin: fersend û metirsiyan bi nav bikin, astengên konkret rave bikin, berpirsiyariyê belav bikin û tevliheviyeke tedbîrên rastîn bi sedem bikin." },
+        { "language": "pl", "text": "Sformułować zniuansowane stanowisko o kwalifikacjach w zmieniającym się świecie pracy: nazwać szanse i ryzyka, wyjaśnić konkretne bariery, rozdzielić odpowiedzialność i uzasadnić realistyczny zestaw działań." },
+        { "language": "ro", "text": "Formulați o poziție nuanțată despre calificare într-o lume a muncii în schimbare: numiți oportunități și riscuri, explicați bariere concrete, distribuiți responsabilitatea și justificați un mix realist de măsuri." },
+        { "language": "sq", "text": "Formuloni një qëndrim me nuanca për kualifikimin në botën e punës që ndryshon: përmendni mundësitë dhe rreziqet, shpjegoni pengesa konkrete, ndani përgjegjësinë dhe arsyetoni një kombinim realist masash." }
+      ],
+      "cefrLevel": "C1",
+      "category": "society",
+      "topics": ["work-and-jobs", "education-and-training"],
+      "examProfiles": ["c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 58,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant discussing qualification and labor-market change" },
+            { "language": "fa", "text": "شرکت‌کننده‌ای که درباره مهارت‌آموزی و تغییر بازار کار بحث می‌کند" },
+            { "language": "ar", "text": "مشارك يناقش التأهيل وتغير سوق العمل" },
+            { "language": "tr", "text": "Nitelik kazanma ve iş piyasası değişimini tartışan katılımcı" },
+            { "language": "ru", "text": "Участник, обсуждающий квалификацию и изменения рынка труда" },
+            { "language": "ckb", "text": "بەشداربووێک کە دەربارەی شارەزاییپێدان و گۆڕانی بازاڕی کار گفتوگۆ دەکات" },
+            { "language": "kmr", "text": "Beşdarek ku jêhatîbûn û guherîna bazara kar gotûbêj dike" },
+            { "language": "pl", "text": "Uczestnik dyskutujący o kwalifikacjach i zmianie rynku pracy" },
+            { "language": "ro", "text": "Participant care discută calificarea și schimbarea pieței muncii" },
+            { "language": "sq", "text": "Pjesëmarrës që diskuton kualifikimin dhe ndryshimin e tregut të punës" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderator/in",
+          "translations": [
+            { "language": "en", "text": "Discussion moderator" },
+            { "language": "fa", "text": "گرداننده بحث" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Tartışma moderatörü" },
+            { "language": "ru", "text": "Модератор дискуссии" },
+            { "language": "ckb", "text": "ڕێکخەری گفتوگۆ" },
+            { "language": "kmr", "text": "Moderatorê gotûbêjê" },
+            { "language": "pl", "text": "Moderator dyskusji" },
+            { "language": "ro", "text": "Moderator de discuție" },
+            { "language": "sq", "text": "Moderator i diskutimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Viele Tätigkeiten verändern sich durch Digitalisierung und neue Anforderungen. Manche fordern mehr Eigeninitiative der Beschäftigten, andere sehen vor allem Arbeitgeber und Staat in der Pflicht. Wie eröffnen Sie die Diskussion?",
+          "translations": [
+            { "language": "en", "text": "Many tasks are changing because of digitalization and new requirements. Some demand more initiative from employees, others mainly see employers and the state as responsible. How do you open the discussion?" },
+            { "language": "fa", "text": "بسیاری از کارها به دلیل دیجیتالی‌شدن و نیازهای جدید تغییر می‌کنند. برخی از کارکنان ابتکار فردی بیشتری می‌خواهند، برخی دیگر بیشتر کارفرما و دولت را مسئول می‌دانند. بحث را چگونه آغاز می‌کنید؟" },
+            { "language": "ar", "text": "تتغير مهام كثيرة بسبب الرقمنة والمتطلبات الجديدة. يطالب بعضهم بمبادرة أكبر من العاملين، ويرى آخرون أن المسؤولية تقع أساساً على أصحاب العمل والدولة. كيف تفتح النقاش؟" },
+            { "language": "tr", "text": "Birçok görev dijitalleşme ve yeni gereklilikler nedeniyle değişiyor. Bazıları çalışanlardan daha fazla kişisel girişim isterken, diğerleri esas olarak işverenleri ve devleti sorumlu görüyor. Tartışmayı nasıl açarsınız?" },
+            { "language": "ru", "text": "Многие виды деятельности меняются из-за цифровизации и новых требований. Одни требуют большей инициативы от работников, другие видят ответственность прежде всего у работодателей и государства. Как Вы откроете дискуссию?" },
+            { "language": "ckb", "text": "زۆر ئەرک بەهۆی دیجیتاڵبوون و پێداویستییە نوێیەکان دەگۆڕێن. هەندێک داوای هەوڵی تاکەکەسی زیاتر لە کارمەندان دەکەن، هەندێکی تر بە تایبەتی خاوەنکار و دەوڵەت بە بەرپرس دەزانن. چۆن گفتوگۆکە دەست پێدەکەیت؟" },
+            { "language": "kmr", "text": "Gelek kar ji ber dijîtalbûn û daxwazên nû tên guherandin. Hin kes ji karmendan destpêşxeriyeke zêdetir dixwazin, hinên din bi taybetî kardêr û dewletê berpirsiyar dibînin. Hûn gotûbêjê çawa vedikin?" },
+            { "language": "pl", "text": "Wiele czynności zmienia się przez cyfryzację i nowe wymagania. Jedni żądają większej inicjatywy pracowników, inni widzą obowiązek przede wszystkim po stronie pracodawców i państwa. Jak rozpocząłby Pan dyskusję?" },
+            { "language": "ro", "text": "Multe activități se schimbă prin digitalizare și cerințe noi. Unii cer mai multă inițiativă din partea angajaților, alții văd responsabilitatea mai ales la angajatori și la stat. Cum deschideți discuția?" },
+            { "language": "sq", "text": "Shumë detyra po ndryshojnë nga digjitalizimi dhe kërkesat e reja. Disa kërkojnë më shumë iniciativë nga punonjësit, të tjerë shohin kryesisht punëdhënësit dhe shtetin si përgjegjës. Si e hapni diskutimin?" }
+          ],
+          "function": "open-labor-market-discussion",
+          "toneNote": "formal and differentiated"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Frage nicht als Gegensatz zwischen Eigeninitiative und Unterstützung darstellen. Entscheidend ist, ob Weiterbildung realistisch erreichbar ist: zeitlich, finanziell und fachlich.",
+          "translations": [
+            { "language": "en", "text": "I would not present the issue as a contrast between individual initiative and support. What matters is whether continuing education is realistically accessible: in terms of time, money, and subject matter." },
+            { "language": "fa", "text": "من موضوع را به شکل تقابل میان ابتکار فردی و حمایت مطرح نمی‌کنم. نکته تعیین‌کننده این است که آموزش تکمیلی واقعاً دسترس‌پذیر باشد: از نظر زمان، هزینه و محتوای تخصصی." },
+            { "language": "ar", "text": "لن أعرض المسألة كتعارض بين المبادرة الفردية والدعم. الحاسم هو ما إذا كان التعليم المستمر متاحاً واقعياً: زمنياً ومالياً ومهنياً." },
+            { "language": "tr", "text": "Konuyu bireysel girişim ile destek arasında bir karşıtlık olarak sunmazdım. Belirleyici olan, sürekli eğitimin zaman, para ve içerik açısından gerçekçi biçimde erişilebilir olup olmadığıdır." },
+            { "language": "ru", "text": "Я бы не представлял вопрос как противопоставление личной инициативы и поддержки. Решающим является то, реально ли доступно повышение квалификации: по времени, финансам и содержанию." },
+            { "language": "ckb", "text": "من بابەتەکە وەک دژایەتیی نێوان هەوڵی تاکەکەسی و پشتگیری نیشان نادەم. گرنگ ئەوەیە فێربوونی بەردەوام بە شێوەی واقیعی دەستپێگەیشتوو بێت: لە کات، پارە و ناوەڕۆکی پسپۆڕیدا." },
+            { "language": "kmr", "text": "Ez mijarê wek dijberiya di navbera destpêşxeriya kesane û piştgiriyê de nîşan nadim. Ya girîng ew e ka perwerdehiya domdar bi rastî gihîştbar e: ji aliyê dem, pere û naveroka pisporî ve." },
+            { "language": "pl", "text": "Nie przedstawiałbym tej kwestii jako przeciwieństwa między inicjatywą własną a wsparciem. Decydujące jest to, czy dokształcanie jest realistycznie dostępne: czasowo, finansowo i merytorycznie." },
+            { "language": "ro", "text": "Nu aș prezenta problema ca opoziție între inițiativa individuală și sprijin. Decisiv este dacă formarea continuă este realist accesibilă: ca timp, bani și conținut profesional." },
+            { "language": "sq", "text": "Nuk do ta paraqisja çështjen si kundërvënie mes iniciativës individuale dhe mbështetjes. Vendimtare është nëse trajnimi i mëtejshëm është realisht i arritshëm: në kohë, para dhe përmbajtje profesionale." }
+          ],
+          "function": "balanced-opening",
+          "toneNote": "analytical"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Einige sagen: Wer seinen Beruf behalten will, muss sich eben anpassen. Andere halten das für unfair, weil nicht alle dieselben Voraussetzungen haben. Wie reagieren Sie?",
+          "translations": [
+            { "language": "en", "text": "Some say: anyone who wants to keep their job simply has to adapt. Others consider that unfair because not everyone has the same prerequisites. How do you respond?" },
+            { "language": "fa", "text": "برخی می‌گویند: هر کس می‌خواهد شغلش را حفظ کند، باید خودش را تطبیق دهد. دیگران این را ناعادلانه می‌دانند، چون همه شرایط یکسان ندارند. شما چه واکنشی نشان می‌دهید؟" },
+            { "language": "ar", "text": "يقول بعضهم: من يريد الحفاظ على مهنته عليه ببساطة أن يتكيف. ويرى آخرون أن هذا غير عادل لأن الشروط ليست متساوية لدى الجميع. كيف ترد؟" },
+            { "language": "tr", "text": "Bazıları şöyle der: İşini korumak isteyen kişi uyum sağlamak zorundadır. Diğerleri bunu haksız bulur, çünkü herkes aynı koşullara sahip değildir. Nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Некоторые говорят: кто хочет сохранить профессию, должен просто адаптироваться. Другие считают это несправедливым, потому что не у всех одинаковые предпосылки. Как Вы реагируете?" },
+            { "language": "ckb", "text": "هەندێک دەڵێن: ئەوەی دەیەوێت پیشەکەی بپارێزێت، پێویستە خۆی بگونجێنێت. هەندێکی تر ئەمە بە نادادپەروەر دەزانن، چونکە هەمووان هەمان مەرجیان نییە. چۆن وەڵام دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Hin dibêjin: Kesê ku dixwaze karê xwe biparêze, divê xwe biguncîne. Hinên din vê neadil dibînin, ji ber ku herkes şertên wekhev tune ne. Hûn çawa bersiv didin?" },
+            { "language": "pl", "text": "Niektórzy mówią: kto chce utrzymać zawód, musi się po prostu dostosować. Inni uważają to za niesprawiedliwe, bo nie wszyscy mają takie same warunki. Jak Pan reaguje?" },
+            { "language": "ro", "text": "Unii spun: cine vrea să-și păstreze meseria trebuie pur și simplu să se adapteze. Alții consideră asta nedrept, deoarece nu toți au aceleași premise. Cum răspundeți?" },
+            { "language": "sq", "text": "Disa thonë: kush dëshiron ta mbajë profesionin, thjesht duhet të përshtatet. Të tjerë e konsiderojnë këtë të padrejtë, sepse jo të gjithë kanë të njëjtat kushte. Si përgjigjeni?" }
+          ],
+          "function": "challenge-individual-responsibility",
+          "toneNote": "probing"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Eigeninitiative bleibt wichtig, aber sie ersetzt keine Strukturen. Wer im Schichtdienst arbeitet, Kinder betreut oder wenig digitale Vorerfahrung hat, braucht andere Lernformate als jemand mit Bürozeit und stabilem Einkommen.",
+          "translations": [
+            { "language": "en", "text": "Individual initiative remains important, but it does not replace structures. Someone who works shifts, cares for children, or has little prior digital experience needs different learning formats than someone with office hours and a stable income." },
+            { "language": "fa", "text": "ابتکار فردی همچنان مهم است، اما جای ساختارها را نمی‌گیرد. کسی که شیفتی کار می‌کند، از کودکان مراقبت می‌کند یا تجربه دیجیتال کمی دارد، به قالب‌های آموزشی دیگری نیاز دارد تا کسی که ساعت اداری و درآمد ثابت دارد." },
+            { "language": "ar", "text": "تبقى المبادرة الفردية مهمة، لكنها لا تعوض البنى. من يعمل بنظام الورديات أو يعتني بالأطفال أو لديه خبرة رقمية قليلة يحتاج إلى صيغ تعلم مختلفة عن شخص لديه دوام مكتبي ودخل ثابت." },
+            { "language": "tr", "text": "Bireysel girişim önemini korur, ama yapıların yerini tutmaz. Vardiyalı çalışan, çocuk bakan ya da dijital ön deneyimi az olan biri, ofis saatleri ve istikrarlı geliri olan birinden farklı öğrenme biçimlerine ihtiyaç duyar." },
+            { "language": "ru", "text": "Личная инициатива остается важной, но она не заменяет структур. Тот, кто работает по сменам, ухаживает за детьми или имеет мало цифрового опыта, нуждается в других форматах обучения, чем человек с офисным графиком и стабильным доходом." },
+            { "language": "ckb", "text": "هەوڵی تاکەکەسی هێشتا گرنگە، بەڵام جێی پێکهاتەکان ناگرێتەوە. ئەوەی بە شفت کار دەکات، منداڵ دەپارێزێت یان ئەزموونی دیجیتاڵی کەمی هەیە، پێویستی بە شێوازی فێربوونی جیاواز هەیە لە کەسێک کاتژمێری ئۆفیس و داهاتی جێگیری هەیە." },
+            { "language": "kmr", "text": "Destpêşxeriya kesane hê girîng e, lê cihê avahiyan nagire. Kesê ku bi şiftê dixebite, zarokan diparêze an ezmûna dijîtal a kêm heye, ji kesê bi demên nivîsgehê û dahateke stabîl re formatên fêrbûnê yên cuda dixwaze." },
+            { "language": "pl", "text": "Inicjatywa własna pozostaje ważna, ale nie zastępuje struktur. Kto pracuje na zmiany, opiekuje się dziećmi albo ma małe doświadczenie cyfrowe, potrzebuje innych form nauki niż osoba z godzinami biurowymi i stabilnym dochodem." },
+            { "language": "ro", "text": "Inițiativa individuală rămâne importantă, dar nu înlocuiește structurile. Cine lucrează în schimburi, îngrijește copii sau are puțină experiență digitală are nevoie de formate de învățare diferite de cineva cu program de birou și venit stabil." },
+            { "language": "sq", "text": "Iniciativa individuale mbetet e rëndësishme, por nuk zëvendëson strukturat. Ai që punon me turne, kujdeset për fëmijë ose ka pak përvojë digjitale ka nevojë për formate të tjera mësimi sesa dikush me orar zyre dhe të ardhura të qëndrueshme." }
+          ],
+          "function": "name-access-barriers",
+          "toneNote": "nuanced"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Welche Verantwortung tragen Arbeitgeber konkret? Reicht es, wenn sie auf freiwillige Onlinekurse hinweisen?",
+          "translations": [
+            { "language": "en", "text": "What concrete responsibility do employers have? Is it enough if they point to voluntary online courses?" },
+            { "language": "fa", "text": "کارفرمایان دقیقاً چه مسئولیتی دارند؟ آیا کافی است فقط به دوره‌های آنلاین داوطلبانه اشاره کنند؟" },
+            { "language": "ar", "text": "ما المسؤولية الملموسة التي يتحملها أصحاب العمل؟ هل يكفي أن يشيروا إلى دورات إلكترونية اختيارية؟" },
+            { "language": "tr", "text": "İşverenlerin somut olarak hangi sorumluluğu vardır? Gönüllü çevrimiçi kurslara işaret etmeleri yeterli midir?" },
+            { "language": "ru", "text": "Какую конкретную ответственность несут работодатели? Достаточно ли, если они указывают на добровольные онлайн-курсы?" },
+            { "language": "ckb", "text": "خاوەنکاران بە شێوەی دیاریکراو چ بەرپرسیارییەکیان هەیە؟ ئایا بەسە تەنها ئاماژە بە کۆرسی ئۆنلاین و خۆبەخش بکەن؟" },
+            { "language": "kmr", "text": "Kardêr bi awayekî konkret çi berpirsiyarî hildigirin? Ma bes e ku ew tenê amaje bidin kursên online yên dilxwazî?" },
+            { "language": "pl", "text": "Jaką konkretną odpowiedzialność ponoszą pracodawcy? Czy wystarczy, że wskażą dobrowolne kursy online?" },
+            { "language": "ro", "text": "Ce responsabilitate concretă au angajatorii? Este suficient să indice cursuri online voluntare?" },
+            { "language": "sq", "text": "Çfarë përgjegjësie konkrete kanë punëdhënësit? A mjafton të tregojnë kurse online vullnetare?" }
+          ],
+          "function": "ask-employer-responsibility",
+          "toneNote": "specific"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ein bloßer Hinweis ist zu wenig. Wenn Unternehmen von neuen Kompetenzen profitieren, sollten sie Lernzeiten einplanen, Kurse teilweise bezahlen und Übergänge transparent organisieren, statt Anpassung nur privat zu erwarten.",
+          "translations": [
+            { "language": "en", "text": "A mere reference is too little. If companies benefit from new skills, they should schedule learning time, partly pay for courses, and organize transitions transparently instead of expecting adaptation only privately." },
+            { "language": "fa", "text": "یک اشاره ساده کافی نیست. اگر شرکت‌ها از مهارت‌های جدید سود می‌برند، باید زمان یادگیری برنامه‌ریزی کنند، بخشی از هزینه دوره‌ها را بپردازند و گذارها را شفاف سازمان‌دهی کنند، نه اینکه تطبیق را فقط مسئولیت خصوصی بدانند." },
+            { "language": "ar", "text": "الإشارة المجردة لا تكفي. إذا كانت الشركات تستفيد من المهارات الجديدة، فعليها تخطيط أوقات للتعلم، ودفع جزء من تكاليف الدورات، وتنظيم الانتقالات بشفافية، بدلاً من توقع التكيف كأمر خاص فقط." },
+            { "language": "tr", "text": "Sadece işaret etmek yetersizdir. Şirketler yeni yetkinliklerden yararlanıyorsa öğrenme zamanları planlamalı, kursların bir kısmını ödemeli ve geçişleri şeffaf düzenlemelidir; uyumu yalnızca özel alanda beklememelidir." },
+            { "language": "ru", "text": "Одного указания недостаточно. Если компании выигрывают от новых компетенций, они должны планировать учебное время, частично оплачивать курсы и прозрачно организовывать переходы, а не ожидать адаптации только в частном порядке." },
+            { "language": "ckb", "text": "تەنها ئاماژەدان بەس نییە. ئەگەر کۆمپانیاکان لە توانای نوێ سوود وەردەگرن، پێویستە کاتی فێربوون پلان بکەن، بەشێک لە تێچووی کۆرسەکان بدەن و گواستنەوەکان بە ڕوونی ڕێک بخەن، نە ئەوەی گونجاندن تەنها وەک بەرپرسیاریی تایبەتی چاوەڕوان بکەن." },
+            { "language": "kmr", "text": "Tenê amajekirin bes nîne. Heke şirket ji jêhatîbûnên nû sûd werdigirin, divê demên fêrbûnê plan bikin, beşek ji kursan bidin û derbasbûnê zelal rêxistin bikin, ne ku guncandinê tenê wek karê taybet hêvî bikin." },
+            { "language": "pl", "text": "Samo wskazanie to za mało. Jeśli firmy korzystają z nowych kompetencji, powinny planować czas na naukę, częściowo opłacać kursy i przejrzyście organizować przejścia, zamiast oczekiwać adaptacji wyłącznie prywatnie." },
+            { "language": "ro", "text": "O simplă trimitere nu este suficientă. Dacă firmele beneficiază de competențe noi, ar trebui să planifice timp de învățare, să plătească parțial cursurile și să organizeze tranzițiile transparent, nu să aștepte adaptarea doar privat." },
+            { "language": "sq", "text": "Një referencë e thjeshtë nuk mjafton. Nëse kompanitë përfitojnë nga aftësi të reja, duhet të planifikojnë kohë për mësim, të paguajnë pjesërisht kurset dhe të organizojnë kalimet në mënyrë transparente, jo ta presin përshtatjen vetëm privatisht." }
+          ],
+          "function": "define-employer-duty",
+          "toneNote": "argumentative"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Welche Rolle sollte die Politik übernehmen, ohne die Verantwortung einzelner Betriebe oder Beschäftigter vollständig zu ersetzen?",
+          "translations": [
+            { "language": "en", "text": "What role should policy take without completely replacing the responsibility of individual companies or employees?" },
+            { "language": "fa", "text": "سیاست باید چه نقشی بر عهده بگیرد، بدون اینکه مسئولیت شرکت‌ها یا کارکنان را کاملاً جایگزین کند؟" },
+            { "language": "ar", "text": "ما الدور الذي ينبغي أن تتولاه السياسة من دون أن تحل تماماً محل مسؤولية الشركات أو العاملين الأفراد؟" },
+            { "language": "tr", "text": "Politika, tek tek şirketlerin veya çalışanların sorumluluğunu tamamen ikame etmeden hangi rolü üstlenmelidir?" },
+            { "language": "ru", "text": "Какую роль должна взять на себя политика, не полностью заменяя ответственность отдельных предприятий или работников?" },
+            { "language": "ckb", "text": "سیاسەت پێویستە چ ڕۆڵێک وەربگرێت، بەبێ ئەوەی بەرپرسیاریی کارگای تاک یان کارمەند بە تەواوی جێگرەوە بکات؟" },
+            { "language": "kmr", "text": "Siyaset divê çi rol bigire bêyî ku berpirsiyariya şîrketan an karmendan bi tevahî biguherîne?" },
+            { "language": "pl", "text": "Jaką rolę powinna przejąć polityka, nie zastępując całkowicie odpowiedzialności poszczególnych firm lub pracowników?" },
+            { "language": "ro", "text": "Ce rol ar trebui să preia politica fără a înlocui complet responsabilitatea firmelor sau angajaților individuali?" },
+            { "language": "sq", "text": "Çfarë roli duhet të marrë politika pa zëvendësuar plotësisht përgjegjësinë e ndërmarrjeve apo punonjësve të veçantë?" }
+          ],
+          "function": "ask-policy-role",
+          "toneNote": "balancing"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Die Politik sollte Rahmen setzen: bezahlbare Weiterbildungsangebote, Beratung, Anerkennung vorhandener Kompetenzen und Unterstützung für kleine Betriebe. Sie kann aber nicht jede betriebliche Entscheidung zentral steuern.",
+          "translations": [
+            { "language": "en", "text": "Policy should set a framework: affordable continuing education, counseling, recognition of existing skills, and support for small businesses. But it cannot centrally control every company decision." },
+            { "language": "fa", "text": "سیاست باید چارچوب تعیین کند: دوره‌های مهارت‌آموزی قابل پرداخت، مشاوره، به‌رسمیت‌شناختن مهارت‌های موجود و حمایت از کسب‌وکارهای کوچک. اما نمی‌تواند هر تصمیم سازمانی را به‌صورت مرکزی کنترل کند." },
+            { "language": "ar", "text": "ينبغي للسياسة أن تضع الإطار: عروض تدريب ميسورة، واستشارة، والاعتراف بالكفاءات الموجودة، ودعم الشركات الصغيرة. لكنها لا تستطيع التحكم مركزياً في كل قرار داخل الشركات." },
+            { "language": "tr", "text": "Politika çerçeve koymalıdır: karşılanabilir sürekli eğitim teklifleri, danışmanlık, mevcut yetkinliklerin tanınması ve küçük işletmelere destek. Ama her işletme kararını merkezi olarak yönetemez." },
+            { "language": "ru", "text": "Политика должна задавать рамки: доступные программы повышения квалификации, консультации, признание имеющихся компетенций и поддержку малых предприятий. Но она не может централизованно управлять каждым решением предприятия." },
+            { "language": "ckb", "text": "سیاسەت پێویستە چوارچێوە دابنێت: پێشکەشکردنی فێربوونی بەردەوامی توانراو، ڕاوێژکاری، داننان بە توانای هەبوو و پشتگیری بۆ کارگای بچووک. بەڵام ناتوانێت هەموو بڕیاری ناوخۆی کارگا بە ناوەندی کۆنترۆڵ بکات." },
+            { "language": "kmr", "text": "Siyaset divê çarçove saz bike: pêşkêşiyên perwerdehiya domdar ên berdest, şêwirmendî, naskirina jêhatîbûnên heyî û piştgirî ji bo karsaziyên biçûk. Lê nikare her biryara şîrketê ji navendê kontrol bike." },
+            { "language": "pl", "text": "Polityka powinna wyznaczać ramy: przystępne oferty dokształcania, doradztwo, uznawanie istniejących kompetencji i wsparcie dla małych firm. Nie może jednak centralnie sterować każdą decyzją przedsiębiorstwa." },
+            { "language": "ro", "text": "Politica ar trebui să stabilească un cadru: formare continuă accesibilă, consiliere, recunoașterea competențelor existente și sprijin pentru firme mici. Dar nu poate controla central fiecare decizie a unei firme." },
+            { "language": "sq", "text": "Politika duhet të vendosë korniza: oferta të përballueshme trajnimi, këshillim, njohje të aftësive ekzistuese dhe mbështetje për bizneset e vogla. Por nuk mund të kontrollojë nga qendra çdo vendim të ndërmarrjeve." }
+          ],
+          "function": "define-policy-framework",
+          "toneNote": "precise"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Ein Einwand lautet: Weiterbildung kostet viel Geld und bringt nicht immer sofort messbare Ergebnisse. Wie entkräften Sie diesen Einwand, ohne die Kosten kleinzureden?",
+          "translations": [
+            { "language": "en", "text": "One objection is: continuing education costs a lot of money and does not always bring immediately measurable results. How do you address this objection without downplaying the costs?" },
+            { "language": "fa", "text": "یک اعتراض این است: مهارت‌آموزی هزینه زیادی دارد و همیشه نتیجه فوری قابل اندازه‌گیری نمی‌آورد. چگونه این اعتراض را پاسخ می‌دهید بدون اینکه هزینه‌ها را کوچک جلوه دهید؟" },
+            { "language": "ar", "text": "أحد الاعتراضات يقول: التعليم المستمر يكلف مالاً كثيراً ولا يحقق دائماً نتائج قابلة للقياس فوراً. كيف ترد على هذا الاعتراض من دون التقليل من شأن التكاليف؟" },
+            { "language": "tr", "text": "Bir itiraz şudur: Sürekli eğitim çok para tutar ve her zaman hemen ölçülebilir sonuçlar getirmez. Maliyetleri küçümsemeden bu itirazı nasıl çürütürsünüz?" },
+            { "language": "ru", "text": "Одно возражение звучит так: повышение квалификации стоит больших денег и не всегда сразу дает измеримые результаты. Как Вы ответите на это возражение, не преуменьшая затрат?" },
+            { "language": "ckb", "text": "ناڕەزایەتییەک ئەوەیە: فێربوونی بەردەوام پارەی زۆر دەخوات و هەمیشە ئەنجامی یەکسەر پێوانەکراو نادات. چۆن ئەم ناڕەزایەتییە لاواز دەکەیت بەبێ بچووککردنەوەی تێچوو؟" },
+            { "language": "kmr", "text": "Nerazîbûnek dibêje: Perwerdehiya domdar gelek pere dixwaze û her dem encamên yekser pîvanbar nayîne. Hûn çawa vê nerazîbûnê bersiv didin bêyî ku lêçûnê biçûk bikin?" },
+            { "language": "pl", "text": "Jeden zarzut brzmi: dokształcanie kosztuje dużo pieniędzy i nie zawsze przynosi natychmiast mierzalne wyniki. Jak odeprze Pan ten zarzut, nie bagatelizując kosztów?" },
+            { "language": "ro", "text": "O obiecție este: formarea continuă costă mult și nu aduce întotdeauna rezultate imediat măsurabile. Cum răspundeți fără a minimiza costurile?" },
+            { "language": "sq", "text": "Një kundërshtim thotë: trajnimi i mëtejshëm kushton shumë para dhe nuk sjell gjithmonë rezultate menjëherë të matshme. Si e kundërshtoni këtë pa i nënvlerësuar kostot?" }
+          ],
+          "function": "cost-objection",
+          "toneNote": "critical"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Die Kosten sind real, aber Nicht-Qualifizierung ist ebenfalls teuer: offene Stellen bleiben unbesetzt, Beschäftigte verlieren Anschluss, und Betriebe investieren später in Notlösungen. Deshalb braucht man klare Ziele und Evaluation, nicht bloß Sparlogik.",
+          "translations": [
+            { "language": "en", "text": "The costs are real, but not qualifying people is also expensive: vacancies remain unfilled, employees lose touch, and companies later invest in emergency solutions. That is why clear goals and evaluation are needed, not merely a savings logic." },
+            { "language": "fa", "text": "هزینه‌ها واقعی‌اند، اما مهارت‌آموزی نکردن هم گران تمام می‌شود: جایگاه‌های شغلی خالی می‌مانند، کارکنان از تغییر عقب می‌افتند و شرکت‌ها بعداً در راه‌حل‌های اضطراری سرمایه‌گذاری می‌کنند. بنابراین هدف‌های روشن و ارزیابی لازم است، نه صرفاً منطق صرفه‌جویی." },
+            { "language": "ar", "text": "التكاليف حقيقية، لكن عدم التأهيل مكلف أيضاً: تبقى الوظائف شاغرة، ويفقد العاملون الصلة بالتطور، وتستثمر الشركات لاحقاً في حلول اضطرارية. لذلك نحتاج إلى أهداف واضحة وتقييم، لا إلى منطق توفير فقط." },
+            { "language": "tr", "text": "Maliyetler gerçektir, ama insanları nitelendirmemek de pahalıdır: açık pozisyonlar boş kalır, çalışanlar bağlantıyı kaybeder ve şirketler sonra acil çözümlere yatırım yapar. Bu nedenle yalnızca tasarruf mantığı değil, açık hedefler ve değerlendirme gerekir." },
+            { "language": "ru", "text": "Затраты реальны, но отсутствие квалификации тоже дорого обходится: вакансии остаются незаполненными, работники теряют связь с развитием, а предприятия позже инвестируют в экстренные решения. Поэтому нужны ясные цели и оценка, а не только логика экономии." },
+            { "language": "ckb", "text": "تێچووەکان ڕاستن، بەڵام شارەزاییپێنەدانیش تێچووی هەیە: پۆستی بەتاڵ پڕ نابێتەوە، کارمەندان پەیوەندی بە گۆڕانەوە لەدەست دەدەن، و کارگاکان دواتر لە چارەسەری ناچاریدا وەبەرهێنان دەکەن. بۆیە ئامانجی ڕوون و هەڵسەنگاندن پێویستە، نە تەنها بیرکردنەوەی پاشەکەوت." },
+            { "language": "kmr", "text": "Lêçûn rast in, lê ne-jêhatîkirin jî biha ye: cihên kar vala dimînin, karmend ji pêşketinê dûr dikevin, û şîrket paşê li çareseriyên acîl veberhênan dikin. Ji ber vê yekê armancên zelal û nirxandin pêwîst in, ne tenê mentiqa spartinê." },
+            { "language": "pl", "text": "Koszty są realne, ale brak kwalifikowania też jest drogi: wakaty pozostają nieobsadzone, pracownicy tracą kontakt ze zmianą, a firmy później inwestują w rozwiązania awaryjne. Dlatego potrzebne są jasne cele i ewaluacja, nie sama logika oszczędzania." },
+            { "language": "ro", "text": "Costurile sunt reale, dar necalificarea este și ea scumpă: posturile rămân neocupate, angajații pierd contactul cu schimbarea, iar firmele investesc ulterior în soluții de urgență. De aceea sunt necesare obiective clare și evaluare, nu doar logică de economisire." },
+            { "language": "sq", "text": "Kostot janë reale, por edhe moskualifikimi është i shtrenjtë: vendet e punës mbeten bosh, punonjësit humbin lidhjen me ndryshimin dhe ndërmarrjet më vonë investojnë në zgjidhje emergjente. Prandaj duhen objektiva të qarta dhe vlerësim, jo vetëm logjikë kursimi." }
+          ],
+          "function": "answer-cost-objection",
+          "toneNote": "reasoned"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "moderator",
+          "baseText": "Formulieren Sie zum Schluss eine Position: Wann ist Qualifizierung im Wandel der Arbeitswelt wirklich gerecht und wirksam?",
+          "translations": [
+            { "language": "en", "text": "To conclude, formulate a position: When is qualification in the changing world of work truly fair and effective?" },
+            { "language": "fa", "text": "در پایان یک موضع بیان کنید: مهارت‌آموزی در تغییر دنیای کار چه زمانی واقعاً عادلانه و مؤثر است؟" },
+            { "language": "ar", "text": "في الختام صغ موقفاً: متى يكون التأهيل في عالم العمل المتغير عادلاً وفعالاً حقاً؟" },
+            { "language": "tr", "text": "Sonuç olarak bir pozisyon formüle edin: Değişen iş dünyasında nitelik kazanma ne zaman gerçekten adil ve etkili olur?" },
+            { "language": "ru", "text": "В заключение сформулируйте позицию: когда квалификация в меняющемся мире труда действительно справедлива и эффективна?" },
+            { "language": "ckb", "text": "لە کۆتاییدا هەڵوێستێک دابڕێژە: شارەزاییپێدان لە جیهانی کاری گۆڕاو کەی بە ڕاستی دادپەروەر و کاریگەرە؟" },
+            { "language": "kmr", "text": "Di dawiyê de helwestek formule bikin: Jêhatîkirin di cihana kar a guherbar de kengî bi rastî adil û bandor e?" },
+            { "language": "pl", "text": "Na koniec proszę sformułować stanowisko: kiedy kwalifikacja w zmieniającym się świecie pracy jest naprawdę sprawiedliwa i skuteczna?" },
+            { "language": "ro", "text": "În încheiere, formulați o poziție: când este calificarea în lumea muncii în schimbare cu adevărat echitabilă și eficientă?" },
+            { "language": "sq", "text": "Në fund formuloni një qëndrim: kur është kualifikimi në botën e punës që ndryshon vërtet i drejtë dhe efektiv?" }
+          ],
+          "function": "ask-final-position",
+          "toneNote": "summarizing"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Gerecht und wirksam ist Qualifizierung, wenn sie frühzeitig beginnt, nicht nur die Motivierten erreicht, Lernzeit und Finanzierung mitdenkt und Betriebe, Beschäftigte sowie Politik jeweils überprüfbare Beiträge leisten.",
+          "translations": [
+            { "language": "en", "text": "Qualification is fair and effective when it starts early, reaches not only the already motivated, includes learning time and financing, and companies, employees, and policy each make verifiable contributions." },
+            { "language": "fa", "text": "مهارت‌آموزی وقتی عادلانه و مؤثر است که زود شروع شود، فقط به افراد از قبل باانگیزه نرسد، زمان یادگیری و تأمین مالی را هم در نظر بگیرد و شرکت‌ها، کارکنان و سیاست هر کدام سهمی قابل بررسی داشته باشند." },
+            { "language": "ar", "text": "يكون التأهيل عادلاً وفعالاً عندما يبدأ مبكراً، ولا يصل فقط إلى المتحمسين أصلاً، ويأخذ وقت التعلم والتمويل في الحسبان، وتقدم الشركات والعاملون والسياسة مساهمات قابلة للتحقق." },
+            { "language": "tr", "text": "Nitelik kazanma, erken başladığında, yalnızca zaten motive olanlara ulaşmadığında, öğrenme zamanı ve finansmanı hesaba kattığında ve şirketler, çalışanlar ile politika doğrulanabilir katkılar sunduğunda adil ve etkili olur." },
+            { "language": "ru", "text": "Квалификация справедлива и эффективна, когда начинается заранее, охватывает не только уже мотивированных, учитывает учебное время и финансирование, а предприятия, работники и политика вносят проверяемый вклад." },
+            { "language": "ckb", "text": "شارەزاییپێدان کاتێک دادپەروەر و کاریگەرە کە زوو دەست پێبکات، تەنها بەوانە نەگات کە پێشتر هاندراون، کاتی فێربوون و دارایی لەبەرچاو بگرێت و کارگا، کارمەند و سیاسەت هەر یەک بەشداریی پشکنراو بدەن." },
+            { "language": "kmr", "text": "Jêhatîkirin dema adil û bandor e ku zû dest pê bike, tenê bigihîje kesên jixwe motîve nabe, dem û fînansmana fêrbûnê li ber çavan bigire û şîrket, karmend û siyaset her yek beşdariyên kontrolbar bidin." },
+            { "language": "pl", "text": "Kwalifikacja jest sprawiedliwa i skuteczna, gdy zaczyna się wcześnie, dociera nie tylko do już zmotywowanych, uwzględnia czas nauki i finansowanie, a firmy, pracownicy i polityka wnoszą sprawdzalne wkłady." },
+            { "language": "ro", "text": "Calificarea este echitabilă și eficientă când începe devreme, nu ajunge doar la cei deja motivați, ia în calcul timpul de învățare și finanțarea, iar firmele, angajații și politica aduc contribuții verificabile." },
+            { "language": "sq", "text": "Kualifikimi është i drejtë dhe efektiv kur fillon herët, nuk arrin vetëm te ata që tashmë janë të motivuar, merr parasysh kohën e mësimit dhe financimin, dhe ndërmarrjet, punonjësit e politika japin secili kontribute të verifikueshme." }
+          ],
+          "function": "final-position",
+          "toneNote": "structured"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "accessibility-framing",
+              "text": "Ich würde die Frage nicht als Gegensatz zwischen Eigeninitiative und Unterstützung darstellen. Entscheidend ist, ob Weiterbildung realistisch erreichbar ist: zeitlich, finanziell und fachlich.",
+              "translations": [
+                { "language": "en", "text": "I would not present the issue as a contrast between individual initiative and support. What matters is whether continuing education is realistically accessible: in terms of time, money, and subject matter." },
+                { "language": "fa", "text": "من موضوع را به شکل تقابل میان ابتکار فردی و حمایت مطرح نمی‌کنم. نکته تعیین‌کننده این است که آموزش تکمیلی واقعاً دسترس‌پذیر باشد: از نظر زمان، هزینه و محتوای تخصصی." },
+                { "language": "ar", "text": "لن أعرض المسألة كتعارض بين المبادرة الفردية والدعم. الحاسم هو ما إذا كان التعليم المستمر متاحاً واقعياً: زمنياً ومالياً ومهنياً." },
+                { "language": "tr", "text": "Konuyu bireysel girişim ile destek arasında bir karşıtlık olarak sunmazdım. Belirleyici olan, sürekli eğitimin zaman, para ve içerik açısından gerçekçi biçimde erişilebilir olup olmadığıdır." },
+                { "language": "ru", "text": "Я бы не представлял вопрос как противопоставление личной инициативы и поддержки. Решающим является то, реально ли доступно повышение квалификации: по времени, финансам и содержанию." },
+                { "language": "ckb", "text": "من بابەتەکە وەک دژایەتیی نێوان هەوڵی تاکەکەسی و پشتگیری نیشان نادەم. گرنگ ئەوەیە فێربوونی بەردەوام بە شێوەی واقیعی دەستپێگەیشتوو بێت: لە کات، پارە و ناوەڕۆکی پسپۆڕیدا." },
+                { "language": "kmr", "text": "Ez mijarê wek dijberiya di navbera destpêşxeriya kesane û piştgiriyê de nîşan nadim. Ya girîng ew e ka perwerdehiya domdar bi rastî gihîştbar e: ji aliyê dem, pere û naveroka pisporî ve." },
+                { "language": "pl", "text": "Nie przedstawiałbym tej kwestii jako przeciwieństwa między inicjatywą własną a wsparciem. Decydujące jest to, czy dokształcanie jest realistycznie dostępne: czasowo, finansowo i merytorycznie." },
+                { "language": "ro", "text": "Nu aș prezenta problema ca opoziție între inițiativa individuală și sprijin. Decisiv este dacă formarea continuă este realist accesibilă: ca timp, bani și conținut profesional." },
+                { "language": "sq", "text": "Nuk do ta paraqisja çështjen si kundërvënie mes iniciativës individuale dhe mbështetjes. Vendimtare është nëse trajnimi i mëtejshëm është realisht i arritshëm: në kohë, para dhe përmbajtje profesionale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort vermeidet Schuldzuweisung und nennt konkrete Zugangskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer avoids assigning blame and names concrete access criteria." },
+                { "language": "fa", "text": "خوب است: پاسخ از سرزنش دوری می‌کند و معیارهای مشخص دسترسی را نام می‌برد." },
+                { "language": "ar", "text": "جيد: تتجنب الإجابة إلقاء اللوم وتسمي معايير وصول ملموسة." },
+                { "language": "tr", "text": "İyi: yanıt suç yüklemekten kaçınıyor ve somut erişim ölçütleri adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ избегает обвинения и называет конкретные критерии доступа." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە لە تاوانبارکردن دوور دەکەوێتەوە و پێوەری دیاریکراوی دەستگەیشتن ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: bersiv ji sûcdarkirinê dûr dikeve û pîvanên gihîştinê yên konkret bi nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź unika obwiniania i nazywa konkretne kryteria dostępu." },
+                { "language": "ro", "text": "Bine: răspunsul evită învinovățirea și numește criterii concrete de acces." },
+                { "language": "sq", "text": "Mirë: përgjigjja shmang fajësimin dhe përmend kritere konkrete të qasjes." }
+              ],
+              "explanationKey": "balanced-access-opening"
+            },
+            {
+              "id": "adapt-or-lose",
+              "text": "Wer im Beruf bleiben möchte, muss sich eben regelmäßig weiterbilden; sonst kann der Arbeitsmarkt darauf keine Rücksicht nehmen.",
+              "translations": [
+                { "language": "en", "text": "Anyone who wants to stay in their profession simply has to keep training regularly; otherwise the labor market cannot take that into account." },
+                { "language": "fa", "text": "هر کسی می‌خواهد در حرفه‌اش بماند، باید مرتب آموزش ببیند؛ در غیر این صورت بازار کار نمی‌تواند این را در نظر بگیرد." },
+                { "language": "ar", "text": "من يريد البقاء في مهنته عليه ببساطة أن يتدرب باستمرار؛ وإلا فلا يستطيع سوق العمل مراعاة ذلك." },
+                { "language": "tr", "text": "Mesleğinde kalmak isteyen kişi düzenli olarak kendini geliştirmek zorundadır; aksi halde iş piyasası bunu dikkate alamaz." },
+                { "language": "ru", "text": "Тот, кто хочет оставаться в профессии, должен регулярно повышать квалификацию; иначе рынок труда не может это учитывать." },
+                { "language": "ckb", "text": "ئەوەی دەیەوێت لە پیشەکەیدا بمێنێتەوە، پێویستە بەردەوام خۆی فێر بکات؛ ئەگەرنا بازاڕی کار ناتوانێت ئەمە لەبەرچاو بگرێت." },
+                { "language": "kmr", "text": "Kesê ku dixwaze di pîşeya xwe de bimîne, divê bi rêkûpêk xwe perwerde bike; wekî din bazara kar nikare vê li ber çavan bigire." },
+                { "language": "pl", "text": "Kto chce pozostać w zawodzie, musi po prostu regularnie się dokształcać; inaczej rynek pracy nie może tego uwzględniać." },
+                { "language": "ro", "text": "Cine vrea să rămână în meserie trebuie pur și simplu să se perfecționeze regulat; altfel piața muncii nu poate ține cont de asta." },
+                { "language": "sq", "text": "Kush dëshiron të mbetet në profesion, thjesht duhet të trajnohet rregullisht; përndryshe tregu i punës nuk mund ta marrë parasysh këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einseitig: Die Antwort klingt entschlossen, ignoriert aber ungleiche Voraussetzungen und institutionelle Verantwortung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too one-sided: the answer sounds decisive, but ignores unequal prerequisites and institutional responsibility." },
+                { "language": "fa", "text": "بیش از حد یک‌طرفه است: پاسخ قاطع به نظر می‌رسد، اما شرایط نابرابر و مسئولیت نهادی را نادیده می‌گیرد." },
+                { "language": "ar", "text": "أحادية جداً: تبدو الإجابة حاسمة، لكنها تتجاهل الشروط غير المتساوية والمسؤولية المؤسسية." },
+                { "language": "tr", "text": "Çok tek taraflı: yanıt kararlı görünüyor, ama eşitsiz koşulları ve kurumsal sorumluluğu görmezden geliyor." },
+                { "language": "ru", "text": "Слишком односторонне: ответ звучит решительно, но игнорирует неравные предпосылки и институциональную ответственность." },
+                { "language": "ckb", "text": "زۆر یەکلاوە: وەڵامەکە قاطع دەردەکەوێت، بەڵام مەرجی نایەکسان و بەرپرسیاریی دامەزراوەیی پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Pir yekalî ye: bersiv biryardar xuya dike, lê şertên newekhev û berpirsiyariya sazûmanî ji bîr dike." },
+                { "language": "pl", "text": "Zbyt jednostronnie: odpowiedź brzmi zdecydowanie, ale ignoruje nierówne warunki i odpowiedzialność instytucjonalną." },
+                { "language": "ro", "text": "Prea unilateral: răspunsul sună hotărât, dar ignoră premisele inegale și responsabilitatea instituțională." },
+                { "language": "sq", "text": "Shumë e njëanshme: përgjigjja tingëllon vendimtare, por shpërfill kushtet e pabarabarta dhe përgjegjësinë institucionale." }
+              ],
+              "explanationKey": "adapt-only-too-one-sided"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "structural-barriers",
+              "text": "Eigeninitiative bleibt wichtig, aber sie ersetzt keine Strukturen. Wer im Schichtdienst arbeitet, Kinder betreut oder wenig digitale Vorerfahrung hat, braucht andere Lernformate als jemand mit Bürozeit und stabilem Einkommen.",
+              "translations": [
+                { "language": "en", "text": "Individual initiative remains important, but it does not replace structures. Someone who works shifts, cares for children, or has little prior digital experience needs different learning formats than someone with office hours and a stable income." },
+                { "language": "fa", "text": "ابتکار فردی همچنان مهم است، اما جای ساختارها را نمی‌گیرد. کسی که شیفتی کار می‌کند، از کودکان مراقبت می‌کند یا تجربه دیجیتال کمی دارد، به قالب‌های آموزشی دیگری نیاز دارد تا کسی که ساعت اداری و درآمد ثابت دارد." },
+                { "language": "ar", "text": "تبقى المبادرة الفردية مهمة، لكنها لا تعوض البنى. من يعمل بنظام الورديات أو يعتني بالأطفال أو لديه خبرة رقمية قليلة يحتاج إلى صيغ تعلم مختلفة عن شخص لديه دوام مكتبي ودخل ثابت." },
+                { "language": "tr", "text": "Bireysel girişim önemini korur, ama yapıların yerini tutmaz. Vardiyalı çalışan, çocuk bakan ya da dijital ön deneyimi az olan biri, ofis saatleri ve istikrarlı geliri olan birinden farklı öğrenme biçimlerine ihtiyaç duyar." },
+                { "language": "ru", "text": "Личная инициатива остается важной, но она не заменяет структур. Тот, кто работает по сменам, ухаживает за детьми или имеет мало цифрового опыта, нуждается в других форматах обучения, чем человек с офисным графиком и стабильным доходом." },
+                { "language": "ckb", "text": "هەوڵی تاکەکەسی هێشتا گرنگە، بەڵام جێی پێکهاتەکان ناگرێتەوە. ئەوەی بە شفت کار دەکات، منداڵ دەپارێزێت یان ئەزموونی دیجیتاڵی کەمی هەیە، پێویستی بە شێوازی فێربوونی جیاواز هەیە لە کەسێک کاتژمێری ئۆفیس و داهاتی جێگیری هەیە." },
+                { "language": "kmr", "text": "Destpêşxeriya kesane hê girîng e, lê cihê avahiyan nagire. Kesê ku bi şiftê dixebite, zarokan diparêze an ezmûna dijîtal a kêm heye, ji kesê bi demên nivîsgehê û dahateke stabîl re formatên fêrbûnê yên cuda dixwaze." },
+                { "language": "pl", "text": "Inicjatywa własna pozostaje ważna, ale nie zastępuje struktur. Kto pracuje na zmiany, opiekuje się dziećmi albo ma małe doświadczenie cyfrowe, potrzebuje innych form nauki niż osoba z godzinami biurowymi i stabilnym dochodem." },
+                { "language": "ro", "text": "Inițiativa individuală rămâne importantă, dar nu înlocuiește structurile. Cine lucrează în schimburi, îngrijește copii sau are puțină experiență digitală are nevoie de formate de învățare diferite de cineva cu program de birou și venit stabil." },
+                { "language": "sq", "text": "Iniciativa individuale mbetet e rëndësishme, por nuk zëvendëson strukturat. Ai që punon me turne, kujdeset për fëmijë ose ka pak përvojë digjitale ka nevojë për formate të tjera mësimi sesa dikush me orar zyre dhe të ardhura të qëndrueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet persönliche Verantwortung mit konkreten sozialen und organisatorischen Hürden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer connects personal responsibility with concrete social and organizational barriers." },
+                { "language": "fa", "text": "خوب است: پاسخ مسئولیت فردی را با موانع مشخص اجتماعی و سازمانی پیوند می‌دهد." },
+                { "language": "ar", "text": "جيد: تربط الإجابة المسؤولية الشخصية بعقبات اجتماعية وتنظيمية ملموسة." },
+                { "language": "tr", "text": "İyi: yanıt kişisel sorumluluğu somut sosyal ve örgütsel engellerle bağlıyor." },
+                { "language": "ru", "text": "Хорошо: ответ связывает личную ответственность с конкретными социальными и организационными барьерами." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەرپرسیاریی کەسی بە لەمپەری دیاریکراوی کۆمەڵایەتی و ڕێکخراوەیی دەبەستێتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv berpirsiyariya kesane bi astengên civakî û rêxistinî yên konkret ve girê dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy odpowiedzialność osobistą z konkretnymi barierami społecznymi i organizacyjnymi." },
+                { "language": "ro", "text": "Bine: răspunsul leagă responsabilitatea personală de bariere sociale și organizaționale concrete." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh përgjegjësinë personale me pengesa konkrete shoqërore dhe organizative." }
+              ],
+              "explanationKey": "barriers-and-agency"
+            },
+            {
+              "id": "online-course-enough",
+              "text": "Man könnte allen einen Onlinekurs empfehlen, damit zumindest jede Person die Chance hat, sich selbstständig vorzubereiten.",
+              "translations": [
+                { "language": "en", "text": "One could recommend an online course to everyone so that at least each person has the chance to prepare independently." },
+                { "language": "fa", "text": "می‌توان به همه یک دوره آنلاین پیشنهاد کرد تا دست‌کم هر فرد فرصت داشته باشد مستقل آماده شود." },
+                { "language": "ar", "text": "يمكن التوصية بدورة إلكترونية للجميع، حتى تكون لدى كل شخص على الأقل فرصة للاستعداد بشكل مستقل." },
+                { "language": "tr", "text": "Herkese bir çevrimiçi kurs önerilebilir; böylece en azından herkesin bağımsız hazırlanma şansı olur." },
+                { "language": "ru", "text": "Можно было бы всем рекомендовать онлайн-курс, чтобы у каждого хотя бы был шанс самостоятельно подготовиться." },
+                { "language": "ckb", "text": "دەتوانرێت کۆرسێکی ئۆنلاین بە هەمووان پێشنیار بکرێت، بۆ ئەوەی لانیکەم هەر کەسێک دەرفەتی ئامادەبوونی سەربەخۆی هەبێت." },
+                { "language": "kmr", "text": "Dikare kursê online ji hemûyan re were pêşniyarkirin, da ku her kes herî kêm derfeta amadebûna serbixwe hebe." },
+                { "language": "pl", "text": "Można by polecić wszystkim kurs online, aby przynajmniej każda osoba miała szansę przygotować się samodzielnie." },
+                { "language": "ro", "text": "S-ar putea recomanda tuturor un curs online, astfel încât fiecare persoană să aibă măcar șansa de a se pregăti independent." },
+                { "language": "sq", "text": "Mund t'u rekomandohet të gjithëve një kurs online, që të paktën secili të ketë mundësinë të përgatitet në mënyrë të pavarur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Ein Onlinekurs kann helfen, löst aber Zeit-, Betreuungs-, Sprach- und Zugangshürden nicht automatisch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete: an online course can help, but it does not automatically solve time, care, language, and access barriers." },
+                { "language": "fa", "text": "قابل تصور است، اما کامل نیست: دوره آنلاین می‌تواند کمک کند، اما موانع زمان، مراقبت، زبان و دسترسی را خودبه‌خود حل نمی‌کند." },
+                { "language": "ar", "text": "معقول لكنه غير كامل: يمكن للدورة الإلكترونية أن تساعد، لكنها لا تحل تلقائياً عوائق الوقت والرعاية واللغة والوصول." },
+                { "language": "tr", "text": "Makul ama eksik: çevrimiçi kurs yardımcı olabilir, fakat zaman, bakım, dil ve erişim engellerini otomatik olarak çözmez." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: онлайн-курс может помочь, но не решает автоматически барьеры времени, ухода, языка и доступа." },
+                { "language": "ckb", "text": "پێدەچێت ڕاست بێت، بەڵام تەواو نییە: کۆرسی ئۆنلاین دەتوانێت یارمەتی بدات، بەڵام لەمپەری کات، چاودێری، زمان و دەستگەیشتن خۆکارانە چارەسەر ناکات." },
+                { "language": "kmr", "text": "Têgihîştbar e, lê netemam e: kursa online dikare alîkar be, lê astengên dem, lênêrîn, ziman û gihîştinê bixweber çareser nake." },
+                { "language": "pl", "text": "Plausible, ale niepełne: kurs online może pomóc, ale nie rozwiązuje automatycznie barier czasu, opieki, języka i dostępu." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: un curs online poate ajuta, dar nu rezolvă automat barierele de timp, îngrijire, limbă și acces." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: një kurs online mund të ndihmojë, por nuk zgjidh automatikisht pengesat e kohës, kujdesit, gjuhës dhe qasjes." }
+              ],
+              "explanationKey": "online-course-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "employer-shared-responsibility",
+              "text": "Ein bloßer Hinweis ist zu wenig. Wenn Unternehmen von neuen Kompetenzen profitieren, sollten sie Lernzeiten einplanen, Kurse teilweise bezahlen und Übergänge transparent organisieren, statt Anpassung nur privat zu erwarten.",
+              "translations": [
+                { "language": "en", "text": "A mere reference is too little. If companies benefit from new skills, they should schedule learning time, partly pay for courses, and organize transitions transparently instead of expecting adaptation only privately." },
+                { "language": "fa", "text": "یک اشاره ساده کافی نیست. اگر شرکت‌ها از مهارت‌های جدید سود می‌برند، باید زمان یادگیری برنامه‌ریزی کنند، بخشی از هزینه دوره‌ها را بپردازند و گذارها را شفاف سازمان‌دهی کنند، نه اینکه تطبیق را فقط مسئولیت خصوصی بدانند." },
+                { "language": "ar", "text": "الإشارة المجردة لا تكفي. إذا كانت الشركات تستفيد من المهارات الجديدة، فعليها تخطيط أوقات للتعلم، ودفع جزء من تكاليف الدورات، وتنظيم الانتقالات بشفافية، بدلاً من توقع التكيف كأمر خاص فقط." },
+                { "language": "tr", "text": "Sadece işaret etmek yetersizdir. Şirketler yeni yetkinliklerden yararlanıyorsa öğrenme zamanları planlamalı, kursların bir kısmını ödemeli ve geçişleri şeffaf düzenlemelidir; uyumu yalnızca özel alanda beklememelidir." },
+                { "language": "ru", "text": "Одного указания недостаточно. Если компании выигрывают от новых компетенций, они должны планировать учебное время, частично оплачивать курсы и прозрачно организовывать переходы, а не ожидать адаптации только в частном порядке." },
+                { "language": "ckb", "text": "تەنها ئاماژەدان بەس نییە. ئەگەر کۆمپانیاکان لە توانای نوێ سوود وەردەگرن، پێویستە کاتی فێربوون پلان بکەن، بەشێک لە تێچووی کۆرسەکان بدەن و گواستنەوەکان بە ڕوونی ڕێک بخەن، نە ئەوەی گونجاندن تەنها وەک بەرپرسیاریی تایبەتی چاوەڕوان بکەن." },
+                { "language": "kmr", "text": "Tenê amajekirin bes nîne. Heke şirket ji jêhatîbûnên nû sûd werdigirin, divê demên fêrbûnê plan bikin, beşek ji kursan bidin û derbasbûnê zelal rêxistin bikin, ne ku guncandinê tenê wek karê taybet hêvî bikin." },
+                { "language": "pl", "text": "Samo wskazanie to za mało. Jeśli firmy korzystają z nowych kompetencji, powinny planować czas na naukę, częściowo opłacać kursy i przejrzyście organizować przejścia, zamiast oczekiwać adaptacji wyłącznie prywatnie." },
+                { "language": "ro", "text": "O simplă trimitere nu este suficientă. Dacă firmele beneficiază de competențe noi, ar trebui să planifice timp de învățare, să plătească parțial cursurile și să organizeze tranzițiile transparent, nu să aștepte adaptarea doar privat." },
+                { "language": "sq", "text": "Një referencë e thjeshtë nuk mjafton. Nëse kompanitë përfitojnë nga aftësi të reja, duhet të planifikojnë kohë për mësim, të paguajnë pjesërisht kurset dhe të organizojnë kalimet në mënyrë transparente, jo ta presin përshtatjen vetëm privatisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort macht Arbeitgeberverantwortung konkret, ohne Beschäftigte aus der Verantwortung zu entlassen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer makes employer responsibility concrete without releasing employees from responsibility." },
+                { "language": "fa", "text": "خوب است: پاسخ مسئولیت کارفرما را مشخص می‌کند، بدون اینکه کارکنان را از مسئولیت رها کند." },
+                { "language": "ar", "text": "جيد: تجعل الإجابة مسؤولية أصحاب العمل ملموسة من دون إعفاء العاملين من المسؤولية." },
+                { "language": "tr", "text": "İyi: yanıt işveren sorumluluğunu somutlaştırıyor, çalışanları sorumluluktan muaf tutmuyor." },
+                { "language": "ru", "text": "Хорошо: ответ конкретизирует ответственность работодателей, не освобождая работников от ответственности." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەرپرسیاریی خاوەنکار دیاریکراو دەکات، بەبێ ئەوەی کارمەندان لە بەرپرسیاری ئازاد بکات." },
+                { "language": "kmr", "text": "Baş e: bersiv berpirsiyariya kardêr konkret dike bêyî ku karmendan ji berpirsiyariyê azad bike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź konkretyzuje odpowiedzialność pracodawcy, nie zwalniając pracowników z odpowiedzialności." },
+                { "language": "ro", "text": "Bine: răspunsul concretizează responsabilitatea angajatorului fără a-i elibera pe angajați de responsabilitate." },
+                { "language": "sq", "text": "Mirë: përgjigjja e bën konkrete përgjegjësinë e punëdhënësit pa i liruar punonjësit nga përgjegjësia." }
+              ],
+              "explanationKey": "employer-concrete"
+            },
+            {
+              "id": "recommend-only",
+              "text": "Arbeitgeber sollten gute Kurse empfehlen und danach erwarten dürfen, dass interessierte Beschäftigte diese Möglichkeit selbst nutzen.",
+              "translations": [
+                { "language": "en", "text": "Employers should recommend good courses and then be allowed to expect interested employees to use this opportunity themselves." },
+                { "language": "fa", "text": "کارفرمایان باید دوره‌های خوب را پیشنهاد کنند و سپس حق داشته باشند انتظار داشته باشند کارکنان علاقه‌مند خودشان از این فرصت استفاده کنند." },
+                { "language": "ar", "text": "ينبغي لأصحاب العمل أن يوصوا بدورات جيدة، ثم يحق لهم توقع أن يستفيد العاملون المهتمون من هذه الفرصة بأنفسهم." },
+                { "language": "tr", "text": "İşverenler iyi kurslar önermeli ve ardından ilgili çalışanların bu fırsatı kendilerinin kullanmasını bekleyebilmelidir." },
+                { "language": "ru", "text": "Работодатели должны рекомендовать хорошие курсы, а затем вправе ожидать, что заинтересованные сотрудники сами воспользуются этой возможностью." },
+                { "language": "ckb", "text": "خاوەنکاران پێویستە کۆرسی باش پێشنیار بکەن و دواتر بتوانن چاوەڕوان بن کارمەندی حەزداری خۆیان ئەم دەرفەتە بەکاربهێنن." },
+                { "language": "kmr", "text": "Kardêr divê kursên baş pêşniyar bikin û piştre maf hebe ku hêvî bikin karmendên eleqedar vê derfetê bixwe bikar bînin." },
+                { "language": "pl", "text": "Pracodawcy powinni polecać dobre kursy, a potem móc oczekiwać, że zainteresowani pracownicy sami wykorzystają tę możliwość." },
+                { "language": "ro", "text": "Angajatorii ar trebui să recomande cursuri bune și apoi să poată aștepta ca angajații interesați să folosească singuri această oportunitate." },
+                { "language": "sq", "text": "Punëdhënësit duhet të rekomandojnë kurse të mira dhe pastaj të kenë të drejtë të presin që punonjësit e interesuar ta përdorin vetë këtë mundësi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort benennt ein Instrument, aber keine Lernzeit, Finanzierung oder transparente Übergänge.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the answer names one instrument, but no learning time, financing, or transparent transitions." },
+                { "language": "fa", "text": "ضعیف است: پاسخ یک ابزار را نام می‌برد، اما زمان یادگیری، تأمین مالی یا گذار شفاف را مطرح نمی‌کند." },
+                { "language": "ar", "text": "ضعيفة جداً: تسمي الإجابة أداة واحدة، لكنها لا تذكر وقت التعلم أو التمويل أو الانتقالات الشفافة." },
+                { "language": "tr", "text": "Zayıf: yanıt bir araç adlandırıyor, ama öğrenme zamanı, finansman veya şeffaf geçişlerden söz etmiyor." },
+                { "language": "ru", "text": "Слабо: ответ называет один инструмент, но не учебное время, финансирование или прозрачные переходы." },
+                { "language": "ckb", "text": "لاوازە: وەڵامەکە ئامرازێک ناو دەبات، بەڵام کاتی فێربوون، دارایی یان گواستنەوەی ڕوون ناڵێت." },
+                { "language": "kmr", "text": "Lawaz e: bersiv amûrek bi nav dike, lê demê fêrbûnê, fînansman an derbasbûnên zelal nabêje." },
+                { "language": "pl", "text": "Zbyt słabo: odpowiedź nazywa jedno narzędzie, ale nie czas nauki, finansowanie ani przejrzyste przejścia." },
+                { "language": "ro", "text": "Prea slab: răspunsul numește un instrument, dar nu timp de învățare, finanțare sau tranziții transparente." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja përmend një mjet, por jo kohë mësimi, financim apo kalime transparente." }
+              ],
+              "explanationKey": "recommendation-alone"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "policy-framework",
+              "text": "Die Politik sollte Rahmen setzen: bezahlbare Weiterbildungsangebote, Beratung, Anerkennung vorhandener Kompetenzen und Unterstützung für kleine Betriebe. Sie kann aber nicht jede betriebliche Entscheidung zentral steuern.",
+              "translations": [
+                { "language": "en", "text": "Policy should set a framework: affordable continuing education, counseling, recognition of existing skills, and support for small businesses. But it cannot centrally control every company decision." },
+                { "language": "fa", "text": "سیاست باید چارچوب تعیین کند: دوره‌های مهارت‌آموزی قابل پرداخت، مشاوره، به‌رسمیت‌شناختن مهارت‌های موجود و حمایت از کسب‌وکارهای کوچک. اما نمی‌تواند هر تصمیم سازمانی را به‌صورت مرکزی کنترل کند." },
+                { "language": "ar", "text": "ينبغي للسياسة أن تضع الإطار: عروض تدريب ميسورة، واستشارة، والاعتراف بالكفاءات الموجودة، ودعم الشركات الصغيرة. لكنها لا تستطيع التحكم مركزياً في كل قرار داخل الشركات." },
+                { "language": "tr", "text": "Politika çerçeve koymalıdır: karşılanabilir sürekli eğitim teklifleri, danışmanlık, mevcut yetkinliklerin tanınması ve küçük işletmelere destek. Ama her işletme kararını merkezi olarak yönetemez." },
+                { "language": "ru", "text": "Политика должна задавать рамки: доступные программы повышения квалификации, консультации, признание имеющихся компетенций и поддержку малых предприятий. Но она не может централизованно управлять каждым решением предприятия." },
+                { "language": "ckb", "text": "سیاسەت پێویستە چوارچێوە دابنێت: پێشکەشکردنی فێربوونی بەردەوامی توانراو، ڕاوێژکاری، داننان بە توانای هەبوو و پشتگیری بۆ کارگای بچووک. بەڵام ناتوانێت هەموو بڕیاری ناوخۆی کارگا بە ناوەندی کۆنترۆڵ بکات." },
+                { "language": "kmr", "text": "Siyaset divê çarçove saz bike: pêşkêşiyên perwerdehiya domdar ên berdest, şêwirmendî, naskirina jêhatîbûnên heyî û piştgirî ji bo karsaziyên biçûk. Lê nikare her biryara şîrketê ji navendê kontrol bike." },
+                { "language": "pl", "text": "Polityka powinna wyznaczać ramy: przystępne oferty dokształcania, doradztwo, uznawanie istniejących kompetencji i wsparcie dla małych firm. Nie może jednak centralnie sterować każdą decyzją przedsiębiorstwa." },
+                { "language": "ro", "text": "Politica ar trebui să stabilească un cadru: formare continuă accesibilă, consiliere, recunoașterea competențelor existente și sprijin pentru firme mici. Dar nu poate controla central fiecare decizie a unei firme." },
+                { "language": "sq", "text": "Politika duhet të vendosë korniza: oferta të përballueshme trajnimi, këshillim, njohje të aftësive ekzistuese dhe mbështetje për bizneset e vogla. Por nuk mund të kontrollojë nga qendra çdo vendim të ndërmarrjeve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort beschreibt staatliche Verantwortung als Rahmen, nicht als Ersatz für betriebliche und individuelle Verantwortung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer describes state responsibility as a framework, not as a replacement for company and individual responsibility." },
+                { "language": "fa", "text": "خوب است: پاسخ مسئولیت دولت را به‌عنوان چارچوب توصیف می‌کند، نه جایگزین مسئولیت شرکت و فرد." },
+                { "language": "ar", "text": "جيد: تصف الإجابة مسؤولية الدولة كإطار، لا كبديل عن مسؤولية الشركات والأفراد." },
+                { "language": "tr", "text": "İyi: yanıt devlet sorumluluğunu şirket ve bireysel sorumluluğun yerine geçen bir şey değil, çerçeve olarak tanımlıyor." },
+                { "language": "ru", "text": "Хорошо: ответ описывает ответственность государства как рамку, а не как замену ответственности предприятий и отдельных людей." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەرپرسیاریی دەوڵەت وەک چوارچێوە دەناسێنێت، نە وەک جێگرەوەی بەرپرسیاریی کارگا و تاک." },
+                { "language": "kmr", "text": "Baş e: bersiv berpirsiyariya dewletê wek çarçove rave dike, ne wek cihgirê berpirsiyariya şîrket û kesane." },
+                { "language": "pl", "text": "Dobrze: odpowiedź opisuje odpowiedzialność państwa jako ramę, a nie jako zastępstwo odpowiedzialności firm i jednostek." },
+                { "language": "ro", "text": "Bine: răspunsul descrie responsabilitatea statului ca un cadru, nu ca înlocuitor al responsabilității firmelor și indivizilor." },
+                { "language": "sq", "text": "Mirë: përgjigjja e përshkruan përgjegjësinë e shtetit si kornizë, jo si zëvendësim të përgjegjësisë së ndërmarrjeve dhe individëve." }
+              ],
+              "explanationKey": "policy-as-framework"
+            },
+            {
+              "id": "state-pays-all",
+              "text": "Der Staat sollte alle Kurse bezahlen, damit weder Beschäftigte noch Unternehmen finanziell belastet werden.",
+              "translations": [
+                { "language": "en", "text": "The state should pay for all courses so that neither employees nor companies are financially burdened." },
+                { "language": "fa", "text": "دولت باید هزینه همه دوره‌ها را بپردازد تا نه کارکنان و نه شرکت‌ها از نظر مالی تحت فشار قرار نگیرند." },
+                { "language": "ar", "text": "ينبغي للدولة أن تدفع تكاليف جميع الدورات كي لا يتحمل العاملون ولا الشركات عبئاً مالياً." },
+                { "language": "tr", "text": "Devlet tüm kursları ödemelidir, böylece ne çalışanlar ne de şirketler mali yük altında kalır." },
+                { "language": "ru", "text": "Государство должно оплатить все курсы, чтобы ни работники, ни компании не испытывали финансовой нагрузки." },
+                { "language": "ckb", "text": "دەوڵەت پێویستە تێچووی هەموو کۆرسەکان بدات، بۆ ئەوەی نە کارمەندان و نە کۆمپانیاکان لە ڕووی داراییەوە فشاریان لەسەر نەبێت." },
+                { "language": "kmr", "text": "Dewlet divê hemû kursan bide, da ku ne karmend û ne jî şirket ji aliyê pere ve bar nebin." },
+                { "language": "pl", "text": "Państwo powinno opłacać wszystkie kursy, aby ani pracownicy, ani firmy nie byli obciążeni finansowo." },
+                { "language": "ro", "text": "Statul ar trebui să plătească toate cursurile, astfel încât nici angajații, nici firmele să nu fie împovărate financiar." },
+                { "language": "sq", "text": "Shteti duhet të paguajë të gjitha kurset, që as punonjësit dhe as ndërmarrjet të mos ngarkohen financiarisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Antwort löst Finanzierungsfragen scheinbar einfach, blendet aber Mitverantwortung und Priorisierung aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too blanket: the answer seems to solve financing simply, but ignores shared responsibility and prioritization." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ ظاهراً مسئله تأمین مالی را ساده حل می‌کند، اما مسئولیت مشترک و اولویت‌بندی را نادیده می‌گیرد." },
+                { "language": "ar", "text": "عام جداً: تبدو الإجابة كأنها تحل التمويل ببساطة، لكنها تتجاهل المسؤولية المشتركة وتحديد الأولويات." },
+                { "language": "tr", "text": "Çok genel: yanıt finansmanı kolayca çözüyor gibi görünür, ama ortak sorumluluğu ve önceliklendirmeyi görmezden gelir." },
+                { "language": "ru", "text": "Слишком обобщенно: ответ вроде бы просто решает финансирование, но игнорирует совместную ответственность и приоритеты." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە وادەردەکەوێت دارایی بە ئاسانی چارەسەر بکات، بەڵام هاوبەرپرسیاری و ئەولەویەت پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv wek ku fînansmanê bi hêsanî çareser dike xuya dike, lê hevberpirsiyarî û pêşengî ji bîr dike." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź pozornie prosto rozwiązuje finansowanie, ale pomija współodpowiedzialność i priorytety." },
+                { "language": "ro", "text": "Prea general: răspunsul pare să rezolve simplu finanțarea, dar ignoră responsabilitatea comună și prioritizarea." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja duket se e zgjidh thjesht financimin, por shpërfill përgjegjësinë e përbashkët dhe përparësitë." }
+              ],
+              "explanationKey": "state-only-too-broad"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "cost-of-not-training",
+              "text": "Die Kosten sind real, aber Nicht-Qualifizierung ist ebenfalls teuer: offene Stellen bleiben unbesetzt, Beschäftigte verlieren Anschluss, und Betriebe investieren später in Notlösungen. Deshalb braucht man klare Ziele und Evaluation, nicht bloß Sparlogik.",
+              "translations": [
+                { "language": "en", "text": "The costs are real, but not qualifying people is also expensive: vacancies remain unfilled, employees lose touch, and companies later invest in emergency solutions. That is why clear goals and evaluation are needed, not merely a savings logic." },
+                { "language": "fa", "text": "هزینه‌ها واقعی‌اند، اما مهارت‌آموزی نکردن هم گران تمام می‌شود: جایگاه‌های شغلی خالی می‌مانند، کارکنان از تغییر عقب می‌افتند و شرکت‌ها بعداً در راه‌حل‌های اضطراری سرمایه‌گذاری می‌کنند. بنابراین هدف‌های روشن و ارزیابی لازم است، نه صرفاً منطق صرفه‌جویی." },
+                { "language": "ar", "text": "التكاليف حقيقية، لكن عدم التأهيل مكلف أيضاً: تبقى الوظائف شاغرة، ويفقد العاملون الصلة بالتطور، وتستثمر الشركات لاحقاً في حلول اضطرارية. لذلك نحتاج إلى أهداف واضحة وتقييم، لا إلى منطق توفير فقط." },
+                { "language": "tr", "text": "Maliyetler gerçektir, ama insanları nitelendirmemek de pahalıdır: açık pozisyonlar boş kalır, çalışanlar bağlantıyı kaybeder ve şirketler sonra acil çözümlere yatırım yapar. Bu nedenle yalnızca tasarruf mantığı değil, açık hedefler ve değerlendirme gerekir." },
+                { "language": "ru", "text": "Затраты реальны, но отсутствие квалификации тоже дорого обходится: вакансии остаются незаполненными, работники теряют связь с развитием, а предприятия позже инвестируют в экстренные решения. Поэтому нужны ясные цели и оценка, а не только логика экономии." },
+                { "language": "ckb", "text": "تێچووەکان ڕاستن، بەڵام شارەزاییپێنەدانیش تێچووی هەیە: پۆستی بەتاڵ پڕ نابێتەوە، کارمەندان پەیوەندی بە گۆڕانەوە لەدەست دەدەن، و کارگاکان دواتر لە چارەسەری ناچاریدا وەبەرهێنان دەکەن. بۆیە ئامانجی ڕوون و هەڵسەنگاندن پێویستە، نە تەنها بیرکردنەوەی پاشەکەوت." },
+                { "language": "kmr", "text": "Lêçûn rast in, lê ne-jêhatîkirin jî biha ye: cihên kar vala dimînin, karmend ji pêşketinê dûr dikevin, û şîrket paşê li çareseriyên acîl veberhênan dikin. Ji ber vê yekê armancên zelal û nirxandin pêwîst in, ne tenê mentiqa spartinê." },
+                { "language": "pl", "text": "Koszty są realne, ale brak kwalifikowania też jest drogi: wakaty pozostają nieobsadzone, pracownicy tracą kontakt ze zmianą, a firmy później inwestują w rozwiązania awaryjne. Dlatego potrzebne są jasne cele i ewaluacja, nie sama logika oszczędzania." },
+                { "language": "ro", "text": "Costurile sunt reale, dar necalificarea este și ea scumpă: posturile rămân neocupate, angajații pierd contactul cu schimbarea, iar firmele investesc ulterior în soluții de urgență. De aceea sunt necesare obiective clare și evaluare, nu doar logică de economisire." },
+                { "language": "sq", "text": "Kostot janë reale, por edhe moskualifikimi është i shtrenjtë: vendet e punës mbeten bosh, punonjësit humbin lidhjen me ndryshimin dhe ndërmarrjet më vonë investojnë në zgjidhje emergjente. Prandaj duhen objektiva të qarta dhe vlerësim, jo vetëm logjikë kursimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt Kosten ernst und stellt ihnen die Folgekosten fehlender Qualifizierung gegenüber.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer takes costs seriously and contrasts them with the follow-up costs of missing qualification." },
+                { "language": "fa", "text": "خوب است: پاسخ هزینه‌ها را جدی می‌گیرد و آن‌ها را با هزینه‌های بعدیِ نبود مهارت‌آموزی مقایسه می‌کند." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة التكاليف بجدية وتقابلها بتكاليف لاحقة ناتجة عن نقص التأهيل." },
+                { "language": "tr", "text": "İyi: yanıt maliyetleri ciddiye alıyor ve onları eksik nitelik kazanmanın sonraki maliyetleriyle karşılaştırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ серьезно относится к затратам и противопоставляет им последующие расходы отсутствующей квалификации." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە تێچوو بە جدی وەردەگرێت و بە تێچووی داهاتووی نەبوونی شارەزایی بەراوردی دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv lêçûnê bi ciddî digire û wê bi lêçûnên paşîn ên kêmbûna jêhatîbûnê re berhev dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź traktuje koszty poważnie i zestawia je z kosztami następczymi braku kwalifikacji." },
+                { "language": "ro", "text": "Bine: răspunsul ia costurile în serios și le pune în contrast cu costurile ulterioare ale lipsei calificării." },
+                { "language": "sq", "text": "Mirë: përgjigjja i merr seriozisht kostot dhe i krahason me kostot pasuese të mungesës së kualifikimit." }
+              ],
+              "explanationKey": "costs-and-consequences"
+            },
+            {
+              "id": "train-future-only",
+              "text": "Man sollte vor allem in zukünftige Arbeitskräfte investieren, weil sich der Nutzen dort wahrscheinlich schneller zeigt.",
+              "translations": [
+                { "language": "en", "text": "One should mainly invest in future workers because the benefit will probably show more quickly there." },
+                { "language": "fa", "text": "باید بیشتر روی نیروی کار آینده سرمایه‌گذاری کرد، چون احتمالاً فایده آنجا سریع‌تر دیده می‌شود." },
+                { "language": "ar", "text": "ينبغي الاستثمار أساساً في القوى العاملة المستقبلية، لأن الفائدة ستظهر هناك غالباً أسرع." },
+                { "language": "tr", "text": "Öncelikle gelecekteki iş gücüne yatırım yapılmalıdır, çünkü fayda orada muhtemelen daha hızlı görünür." },
+                { "language": "ru", "text": "Следует прежде всего инвестировать в будущую рабочую силу, потому что польза там, вероятно, проявится быстрее." },
+                { "language": "ckb", "text": "پێویستە بە تایبەتی لە هێزی کاری داهاتوو وەبەرهێنان بکرێت، چونکە سوودەکە لەوێ بە گومان زوو‌تر دەردەکەوێت." },
+                { "language": "kmr", "text": "Divê bi taybetî li hêza kar a pêşerojê veberhênan were kirin, ji ber ku sûd li wir belkî zûtir xuya dibe." },
+                { "language": "pl", "text": "Należy inwestować przede wszystkim w przyszłych pracowników, ponieważ tam korzyść prawdopodobnie szybciej się pokaże." },
+                { "language": "ro", "text": "Ar trebui investit mai ales în viitoarea forță de muncă, deoarece beneficiul se va vedea probabil mai repede acolo." },
+                { "language": "sq", "text": "Duhet investuar kryesisht në fuqinë punëtore të së ardhmes, sepse përfitimi ndoshta shihet më shpejt atje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kurz gedacht: Nachwuchsqualifizierung ist wichtig, aber sie löst den aktuellen Strukturwandel für bestehende Beschäftigte nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too short-sighted: training future workers is important, but it does not solve current structural change for existing employees." },
+                { "language": "fa", "text": "کوتاه‌نگرانه است: مهارت‌آموزی نیروی آینده مهم است، اما تغییر ساختاری فعلی را برای کارکنان موجود حل نمی‌کند." },
+                { "language": "ar", "text": "قصير النظر: تأهيل القوى المستقبلية مهم، لكنه لا يحل التغير البنيوي الحالي للعاملين الموجودين." },
+                { "language": "tr", "text": "Kısa vadeli düşünülmüş: gelecekteki çalışanları yetiştirmek önemlidir, ama mevcut çalışanlar için şimdiki yapısal değişimi çözmez." },
+                { "language": "ru", "text": "Недальновидно: подготовка будущих работников важна, но она не решает текущие структурные изменения для уже занятых." },
+                { "language": "ckb", "text": "کورتبینانەیە: شارەزاییپێدانی هێزی داهاتوو گرنگە، بەڵام گۆڕانی پێکهاتەی ئێستا بۆ کارمەندانی هەبوو چارەسەر ناکات." },
+                { "language": "kmr", "text": "Kurt-dîtin e: jêhatîkirina hêza pêşerojê girîng e, lê guherîna avahî ya niha ji bo karmendên heyî çareser nake." },
+                { "language": "pl", "text": "Zbyt krótkowzrocznie: kwalifikowanie przyszłych pracowników jest ważne, ale nie rozwiązuje obecnej zmiany strukturalnej dla zatrudnionych już osób." },
+                { "language": "ro", "text": "Prea îngust pe termen scurt: formarea viitorilor angajați este importantă, dar nu rezolvă schimbarea structurală actuală pentru angajații existenți." },
+                { "language": "sq", "text": "Shumë shkurtpamëse: kualifikimi i punonjësve të ardhshëm është i rëndësishëm, por nuk zgjidh ndryshimin strukturor aktual për punonjësit ekzistues." }
+              ],
+              "explanationKey": "future-workers-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "shared-verifiable-contributions",
+              "text": "Gerecht und wirksam ist Qualifizierung, wenn sie frühzeitig beginnt, nicht nur die Motivierten erreicht, Lernzeit und Finanzierung mitdenkt und Betriebe, Beschäftigte sowie Politik jeweils überprüfbare Beiträge leisten.",
+              "translations": [
+                { "language": "en", "text": "Qualification is fair and effective when it starts early, reaches not only the already motivated, includes learning time and financing, and companies, employees, and policy each make verifiable contributions." },
+                { "language": "fa", "text": "مهارت‌آموزی وقتی عادلانه و مؤثر است که زود شروع شود، فقط به افراد از قبل باانگیزه نرسد، زمان یادگیری و تأمین مالی را هم در نظر بگیرد و شرکت‌ها، کارکنان و سیاست هر کدام سهمی قابل بررسی داشته باشند." },
+                { "language": "ar", "text": "يكون التأهيل عادلاً وفعالاً عندما يبدأ مبكراً، ولا يصل فقط إلى المتحمسين أصلاً، ويأخذ وقت التعلم والتمويل في الحسبان، وتقدم الشركات والعاملون والسياسة مساهمات قابلة للتحقق." },
+                { "language": "tr", "text": "Nitelik kazanma, erken başladığında, yalnızca zaten motive olanlara ulaşmadığında, öğrenme zamanı ve finansmanı hesaba kattığında ve şirketler, çalışanlar ile politika doğrulanabilir katkılar sunduğunda adil ve etkili olur." },
+                { "language": "ru", "text": "Квалификация справедлива и эффективна, когда начинается заранее, охватывает не только уже мотивированных, учитывает учебное время и финансирование, а предприятия, работники и политика вносят проверяемый вклад." },
+                { "language": "ckb", "text": "شارەزاییپێدان کاتێک دادپەروەر و کاریگەرە کە زوو دەست پێبکات، تەنها بەوانە نەگات کە پێشتر هاندراون، کاتی فێربوون و دارایی لەبەرچاو بگرێت و کارگا، کارمەند و سیاسەت هەر یەک بەشداریی پشکنراو بدەن." },
+                { "language": "kmr", "text": "Jêhatîkirin dema adil û bandor e ku zû dest pê bike, tenê bigihîje kesên jixwe motîve nabe, dem û fînansmana fêrbûnê li ber çavan bigire û şîrket, karmend û siyaset her yek beşdariyên kontrolbar bidin." },
+                { "language": "pl", "text": "Kwalifikacja jest sprawiedliwa i skuteczna, gdy zaczyna się wcześnie, dociera nie tylko do już zmotywowanych, uwzględnia czas nauki i finansowanie, a firmy, pracownicy i polityka wnoszą sprawdzalne wkłady." },
+                { "language": "ro", "text": "Calificarea este echitabilă și eficientă când începe devreme, nu ajunge doar la cei deja motivați, ia în calcul timpul de învățare și finanțarea, iar firmele, angajații și politica aduc contribuții verificabile." },
+                { "language": "sq", "text": "Kualifikimi është i drejtë dhe efektiv kur fillon herët, nuk arrin vetëm te ata që tashmë janë të motivuar, merr parasysh kohën e mësimit dhe financimin, dhe ndërmarrjet, punonjësit e politika japin secili kontribute të verifikueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Schlussposition nennt Kriterien, Zielgruppen und geteilte Verantwortung überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the final position names criteria, target groups, and shared responsibility in a verifiable way." },
+                { "language": "fa", "text": "خوب است: موضع پایانی معیارها، گروه‌های هدف و مسئولیت مشترک را به شکل قابل بررسی نام می‌برد." },
+                { "language": "ar", "text": "جيد: يسمي الموقف الختامي المعايير والفئات المستهدفة والمسؤولية المشتركة بطريقة قابلة للتحقق." },
+                { "language": "tr", "text": "İyi: son pozisyon kriterleri, hedef grupları ve ortak sorumluluğu doğrulanabilir biçimde adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: итоговая позиция называет критерии, целевые группы и совместную ответственность проверяемым образом." },
+                { "language": "ckb", "text": "باشە: هەڵوێستی کۆتایی پێوەر، گروپی ئامانج و هاوبەرپرسیاری بە شێوەی پشکنراو ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: helwesta dawî pîvan, komên armanc û hevberpirsiyarî bi awayekî kontrolbar bi nav dike." },
+                { "language": "pl", "text": "Dobrze: stanowisko końcowe nazywa kryteria, grupy docelowe i współodpowiedzialność w sposób sprawdzalny." },
+                { "language": "ro", "text": "Bine: poziția finală numește criterii, grupuri țintă și responsabilitate comună în mod verificabil." },
+                { "language": "sq", "text": "Mirë: qëndrimi përfundimtar përmend kritere, grupe të synuara dhe përgjegjësi të përbashkët në mënyrë të verifikueshme." }
+              ],
+              "explanationKey": "final-shared-contributions"
+            },
+            {
+              "id": "motivation-condition",
+              "text": "Qualifizierung ist sinnvoll, wenn die Teilnehmenden ausreichend Motivation zeigen und die Kurse zu den wichtigsten Berufen passen.",
+              "translations": [
+                { "language": "en", "text": "Qualification makes sense if participants show sufficient motivation and the courses fit the most important professions." },
+                { "language": "fa", "text": "مهارت‌آموزی زمانی معنا دارد که شرکت‌کنندگان انگیزه کافی نشان دهند و دوره‌ها با مهم‌ترین حرفه‌ها تناسب داشته باشند." },
+                { "language": "ar", "text": "يكون التأهيل مفيداً إذا أظهر المشاركون دافعاً كافياً وكانت الدورات مناسبة لأهم المهن." },
+                { "language": "tr", "text": "Nitelik kazanma, katılımcılar yeterli motivasyon gösterirse ve kurslar en önemli mesleklere uyarsa anlamlıdır." },
+                { "language": "ru", "text": "Квалификация имеет смысл, если участники проявляют достаточную мотивацию и курсы подходят к важнейшим профессиям." },
+                { "language": "ckb", "text": "شارەزاییپێدان کاتێک مانادارە کە بەشداربووان هاندانی پێویست نیشان بدەن و کۆرسەکان لەگەڵ گرنگترین پیشەکان بگونجێن." },
+                { "language": "kmr", "text": "Jêhatîkirin watedar e heke beşdar motîvasyona têr nîşan bidin û kurs bi pîşeyên herî girîng re biguncin." },
+                { "language": "pl", "text": "Kwalifikacja ma sens, jeśli uczestnicy wykazują wystarczającą motywację, a kursy pasują do najważniejszych zawodów." },
+                { "language": "ro", "text": "Calificarea are sens dacă participanții arată motivație suficientă și cursurile se potrivesc celor mai importante profesii." },
+                { "language": "sq", "text": "Kualifikimi ka kuptim nëse pjesëmarrësit tregojnë motivim të mjaftueshëm dhe kurset përshtaten me profesionet më të rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu eng: Motivation und Passung sind wichtig, doch Zugänglichkeit, Finanzierung und geteilte Verantwortung fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too narrow: motivation and fit are important, but accessibility, financing, and shared responsibility are missing." },
+                { "language": "fa", "text": "قابل قبول اما محدود است: انگیزه و تناسب مهم‌اند، اما دسترسی، تأمین مالی و مسئولیت مشترک غایب است." },
+                { "language": "ar", "text": "معقول لكنه ضيق جداً: الدافع والملاءمة مهمان، لكن الوصول والتمويل والمسؤولية المشتركة غائبة." },
+                { "language": "tr", "text": "Makul ama çok dar: motivasyon ve uygunluk önemlidir, fakat erişilebilirlik, finansman ve ortak sorumluluk eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком узко: мотивация и соответствие важны, но отсутствуют доступность, финансирование и совместная ответственность." },
+                { "language": "ckb", "text": "پێدەچێت ڕاست بێت، بەڵام زۆر تەسکە: هاندانی و گونجان گرنگن، بەڵام دەستگەیشتن، دارایی و هاوبەرپرسیاری نییە." },
+                { "language": "kmr", "text": "Têgihîştbar e, lê pir teng e: motîvasyon û guncandin girîng in, lê gihîştin, fînansman û hevberpirsiyarî kêm in." },
+                { "language": "pl", "text": "Plausible, ale zbyt wąskie: motywacja i dopasowanie są ważne, ale brakuje dostępności, finansowania i współodpowiedzialności." },
+                { "language": "ro", "text": "Plauzibil, dar prea îngust: motivația și potrivirea sunt importante, dar lipsesc accesibilitatea, finanțarea și responsabilitatea comună." },
+                { "language": "sq", "text": "E besueshme, por shumë e ngushtë: motivimi dhe përshtatja janë të rëndësishme, por mungojnë qasja, financimi dhe përgjegjësia e përbashkët." }
+              ],
+              "explanationKey": "motivation-too-narrow"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "opening-note",
+          "text": "Eine starke C1-Eröffnung vermeidet Schuldzuweisung und fragt zuerst, ob Weiterbildung unter realen Bedingungen erreichbar ist.",
+          "translations": [
+            { "language": "en", "text": "A strong C1 opening avoids assigning blame and first asks whether continuing education is accessible under real conditions." },
+            { "language": "fa", "text": "آغاز قوی در C1 از سرزنش دوری می‌کند و نخست می‌پرسد آیا آموزش تکمیلی در شرایط واقعی دسترس‌پذیر است یا نه." },
+            { "language": "ar", "text": "تتجنب افتتاحية C1 القوية إلقاء اللوم وتسأل أولاً ما إذا كان التعليم المستمر متاحاً في الظروف الواقعية." },
+            { "language": "tr", "text": "Güçlü bir C1 açılışı suçlamadan kaçınır ve önce sürekli eğitimin gerçek koşullarda erişilebilir olup olmadığını sorar." },
+            { "language": "ru", "text": "Сильное начало C1 избегает обвинений и сначала спрашивает, доступно ли повышение квалификации в реальных условиях." },
+            { "language": "ckb", "text": "دەستپێکی بەهێزی C1 لە تاوانبارکردن دوور دەکەوێتەوە و سەرەتا دەپرسێت ئایا فێربوونی بەردەوام لە مەرجی واقیعیدا دەستپێگەیشتووە یان نا." },
+            { "language": "kmr", "text": "Destpêka bihêz a C1 ji sûcdarkirinê dûr dikeve û pêşî dipirse ka perwerdehiya domdar di şertên rastîn de gihîştbar e an na." },
+            { "language": "pl", "text": "Mocne otwarcie C1 unika obwiniania i najpierw pyta, czy dokształcanie jest dostępne w realnych warunkach." },
+            { "language": "ro", "text": "O deschidere C1 puternică evită învinovățirea și întreabă mai întâi dacă formarea continuă este accesibilă în condiții reale." },
+            { "language": "sq", "text": "Një hapje e fortë C1 shmang fajësimin dhe pyet fillimisht nëse trajnimi i mëtejshëm është i arritshëm në kushte reale." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "barrier-note",
+          "text": "Gute Argumentation nennt nicht nur Motivation, sondern auch Zeit, Betreuung, Vorerfahrung, Einkommen und Lernformat.",
+          "translations": [
+            { "language": "en", "text": "Good argumentation names not only motivation, but also time, care responsibilities, prior experience, income, and learning format." },
+            { "language": "fa", "text": "استدلال خوب فقط انگیزه را نام نمی‌برد، بلکه زمان، مسئولیت مراقبت، تجربه قبلی، درآمد و قالب یادگیری را هم مطرح می‌کند." },
+            { "language": "ar", "text": "الحجاج الجيد لا يسمي الدافع فقط، بل أيضاً الوقت ومسؤوليات الرعاية والخبرة السابقة والدخل وصيغة التعلم." },
+            { "language": "tr", "text": "İyi argümantasyon yalnızca motivasyonu değil; zamanı, bakım sorumluluklarını, önceki deneyimi, geliri ve öğrenme biçimini de adlandırır." },
+            { "language": "ru", "text": "Хорошая аргументация называет не только мотивацию, но и время, обязанности по уходу, предыдущий опыт, доход и формат обучения." },
+            { "language": "ckb", "text": "بەڵگەهێنانەوەی باش تەنها هاندان ناو نابات، بەڵکو کات، بەرپرسیاریی چاودێری، ئەزموونی پێشوو، داهات و شێوازی فێربوونیش دەناسێنێت." },
+            { "language": "kmr", "text": "Argumana baş tenê motîvasyonê bi nav nake, lê dem, berpirsiyariyên lênêrînê, ezmûna berê, dahat û forma fêrbûnê jî dibêje." },
+            { "language": "pl", "text": "Dobra argumentacja nazywa nie tylko motywację, lecz także czas, obowiązki opiekuńcze, wcześniejsze doświadczenie, dochód i formę nauki." },
+            { "language": "ro", "text": "Argumentarea bună numește nu doar motivația, ci și timpul, responsabilitățile de îngrijire, experiența anterioară, venitul și formatul de învățare." },
+            { "language": "sq", "text": "Argumentimi i mirë përmend jo vetëm motivimin, por edhe kohën, përgjegjësitë e kujdesit, përvojën e mëparshme, të ardhurat dhe formatin e mësimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "employer-note",
+          "text": "Arbeitgeberverantwortung wird überzeugend, wenn sie in Zeit, Geld, Planung und Transparenz übersetzt wird.",
+          "translations": [
+            { "language": "en", "text": "Employer responsibility becomes convincing when it is translated into time, money, planning, and transparency." },
+            { "language": "fa", "text": "مسئولیت کارفرما زمانی قانع‌کننده می‌شود که به زمان، پول، برنامه‌ریزی و شفافیت تبدیل شود." },
+            { "language": "ar", "text": "تصبح مسؤولية صاحب العمل مقنعة عندما تترجم إلى وقت ومال وتخطيط وشفافية." },
+            { "language": "tr", "text": "İşveren sorumluluğu zaman, para, planlama ve şeffaflığa çevrildiğinde ikna edici olur." },
+            { "language": "ru", "text": "Ответственность работодателя становится убедительной, когда переводится во время, деньги, планирование и прозрачность." },
+            { "language": "ckb", "text": "بەرپرسیاریی خاوەنکار کاتێک قایلکەر دەبێت کە بۆ کات، پارە، پلان و ڕوونی وەربگێڕدرێت." },
+            { "language": "kmr", "text": "Berpirsiyariya kardêr dema bi dem, pere, plankirin û zelalî were veguheztin qane dibe." },
+            { "language": "pl", "text": "Odpowiedzialność pracodawcy staje się przekonująca, gdy przekłada się na czas, pieniądze, planowanie i przejrzystość." },
+            { "language": "ro", "text": "Responsabilitatea angajatorului devine convingătoare când este tradusă în timp, bani, planificare și transparență." },
+            { "language": "sq", "text": "Përgjegjësia e punëdhënësit bëhet bindëse kur përkthehet në kohë, para, planifikim dhe transparencë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "policy-note",
+          "text": "Politische Rahmenbedingungen sollen Zugang ermöglichen, ohne jede konkrete betriebliche Entscheidung zu ersetzen.",
+          "translations": [
+            { "language": "en", "text": "Political framework conditions should enable access without replacing every concrete company decision." },
+            { "language": "fa", "text": "چارچوب‌های سیاسی باید دسترسی را ممکن کنند، بدون اینکه جای هر تصمیم مشخص سازمانی را بگیرند." },
+            { "language": "ar", "text": "ينبغي للأطر السياسية أن تتيح الوصول من دون أن تحل محل كل قرار عملي داخل الشركات." },
+            { "language": "tr", "text": "Siyasi çerçeve koşulları, her somut işletme kararının yerine geçmeden erişimi mümkün kılmalıdır." },
+            { "language": "ru", "text": "Политические рамки должны обеспечивать доступ, не заменяя каждое конкретное решение предприятия." },
+            { "language": "ckb", "text": "چوارچێوە سیاسییەکان پێویستە دەستگەیشتن بگونجێنن، بەبێ ئەوەی جێی هەموو بڕیارێکی دیاریکراوی کارگا بگرنەوە." },
+            { "language": "kmr", "text": "Şertên siyasî divê gihîştinê gengaz bikin bêyî ku cihê her biryareke konkret a şîrketê bigirin." },
+            { "language": "pl", "text": "Ramy polityczne powinny umożliwiać dostęp, nie zastępując każdej konkretnej decyzji przedsiębiorstwa." },
+            { "language": "ro", "text": "Cadrul politic trebuie să permită accesul fără a înlocui fiecare decizie concretă a firmei." },
+            { "language": "sq", "text": "Kushtet politike duhet të mundësojnë qasjen pa zëvendësuar çdo vendim konkret të ndërmarrjes." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "Eine starke Schlussposition verbindet frühe Unterstützung, breite Erreichbarkeit, Finanzierung und überprüfbare Beiträge aller Beteiligten.",
+          "translations": [
+            { "language": "en", "text": "A strong final position connects early support, broad reachability, financing, and verifiable contributions from all involved." },
+            { "language": "fa", "text": "موضع پایانی قوی حمایت زودهنگام، دسترسی گسترده، تأمین مالی و سهم قابل بررسی همه طرف‌ها را به هم وصل می‌کند." },
+            { "language": "ar", "text": "يربط الموقف الختامي القوي بين الدعم المبكر، والوصول الواسع، والتمويل، والمساهمات القابلة للتحقق من جميع الأطراف." },
+            { "language": "tr", "text": "Güçlü bir son pozisyon erken desteği, geniş erişilebilirliği, finansmanı ve tüm tarafların doğrulanabilir katkılarını bağlar." },
+            { "language": "ru", "text": "Сильная итоговая позиция связывает раннюю поддержку, широкую доступность, финансирование и проверяемые вклады всех участников." },
+            { "language": "ckb", "text": "هەڵوێستی کۆتاییی بەهێز پشتگیریی زوو، دەستگەیشتنی فراوان، دارایی و بەشداریی پشکنراوی هەموو لایەنەکان پێکەوە دەبەستێت." },
+            { "language": "kmr", "text": "Helwesta dawî ya bihêz piştgiriya zû, gihîştina fireh, fînansman û beşdariyên kontrolbar ên hemû aliyan girê dide." },
+            { "language": "pl", "text": "Mocne stanowisko końcowe łączy wczesne wsparcie, szeroką dostępność, finansowanie i sprawdzalne wkłady wszystkich stron." },
+            { "language": "ro", "text": "O poziție finală puternică leagă sprijinul timpuriu, accesibilitatea largă, finanțarea și contribuțiile verificabile ale tuturor părților." },
+            { "language": "sq", "text": "Një qëndrim përfundimtar i fortë lidh mbështetjen e hershme, arritshmërinë e gjerë, financimin dhe kontributet e verifikueshme të të gjitha palëve." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "labor-market-training-discussion",
+          "placement": "header",
+          "purpose": "Show a neutral education and workplace discussion about qualification, digital skills, counseling, and shared responsibility.",
+          "altText": "Eine neutrale Illustration einer Gesprächsrunde zu Qualifizierung, digitalem Wandel und geteilter Verantwortung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a discussion round about qualification, digital change, and shared responsibility." },
+            { "language": "fa", "text": "تصویری بی‌طرف از یک گفت‌وگو درباره مهارت‌آموزی، تغییر دیجیتال و مسئولیت مشترک." },
+            { "language": "ar", "text": "رسم محايد لجلسة نقاش حول التأهيل والتغير الرقمي والمسؤولية المشتركة." },
+            { "language": "tr", "text": "Nitelik kazanma, dijital değişim ve ortak sorumluluk hakkında tarafsız bir tartışma illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация обсуждения о квалификации, цифровых изменениях и совместной ответственности." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە گفتوگۆ دەربارەی شارەزاییپێدان، گۆڕانی دیجیتاڵ و هاوبەرپرسیاری." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya gotûbêjekê li ser jêhatîbûn, guherîna dijîtal û hevberpirsiyarî." },
+            { "language": "pl", "text": "Neutralna ilustracja rozmowy o kwalifikacjach, zmianie cyfrowej i współodpowiedzialności." },
+            { "language": "ro", "text": "O ilustrație neutră a unei discuții despre calificare, schimbare digitală și responsabilitate comună." },
+            { "language": "sq", "text": "Një ilustrim neutral i një diskutimi për kualifikimin, ndryshimin digjital dhe përgjegjësinë e përbashkët." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adults in a training and workplace discussion setting with abstract icons for laptop, calendar, certificate, counseling desk and small business, no readable text, no logos, no private data, calm cooperative atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

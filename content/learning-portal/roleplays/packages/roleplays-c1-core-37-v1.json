@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-37-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 37 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 37",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-zweite-meinung-diplomatisch-einholen",
+      "linkedDialogueSlug": null,
+      "title": "Eine zweite Meinung diplomatisch einholen",
+      "titleTranslations": [
+        { "language": "en", "text": "Seeking a second opinion diplomatically" },
+        { "language": "fa", "text": "گرفتن نظر دوم به‌صورت دیپلماتیک" },
+        { "language": "ar", "text": "طلب رأي ثانٍ بلباقة" },
+        { "language": "tr", "text": "İkinci görüşü diplomatik biçimde almak" },
+        { "language": "ru", "text": "Дипломатично получить второе мнение" },
+        { "language": "ckb", "text": "وەرگرتنی بۆچوونی دووەم بە دیپلۆماسی" },
+        { "language": "kmr", "text": "Wergirtina nerîna duyemîn bi dîplomasî" },
+        { "language": "pl", "text": "Dyplomatyczne uzyskanie drugiej opinii" },
+        { "language": "ro", "text": "Obținerea diplomatică a unei a doua opinii" },
+        { "language": "sq", "text": "Marrja diplomatike e një mendimi të dytë" }
+      ],
+      "description": "Sie sprechen mit Ihrer Hausärztin über eine empfohlene Behandlung und möchten eine zweite fachärztliche Meinung einholen. Sie formulieren Ihre Bitte respektvoll, ohne Misstrauen zu unterstellen oder die bisherige Behandlung abzuwerten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with your family doctor about a recommended treatment and would like to seek a second specialist opinion. You formulate your request respectfully without implying mistrust or devaluing the previous treatment." },
+        { "language": "fa", "text": "شما با پزشک خانواده درباره یک درمان پیشنهادی صحبت می‌کنید و می‌خواهید نظر دوم از یک متخصص بگیرید. درخواست خود را محترمانه بیان می‌کنید، بدون اینکه بی‌اعتمادی القا کنید یا درمان قبلی را بی‌ارزش نشان دهید." },
+        { "language": "ar", "text": "تتحدث مع طبيبة الأسرة عن علاج موصى به وتريد الحصول على رأي اختصاصي ثانٍ. تصوغ طلبك باحترام من دون أن توحي بعدم الثقة أو تقلل من قيمة العلاج السابق." },
+        { "language": "tr", "text": "Aile hekiminizle önerilen bir tedavi hakkında konuşuyorsunuz ve ikinci bir uzman görüşü almak istiyorsunuz. İsteğinizi güvensizlik ima etmeden veya önceki tedaviyi küçümsemeden saygılı biçimde ifade ediyorsunuz." },
+        { "language": "ru", "text": "Вы говорите с семейным врачом о рекомендованном лечении и хотите получить второе мнение специалиста. Вы формулируете просьбу уважительно, не подразумевая недоверия и не обесценивая предыдущее лечение." },
+        { "language": "ckb", "text": "لەگەڵ پزیشکی خێزانەکەت دەربارەی چارەسەرێکی پێشنیارکراو قسە دەکەیت و دەتەوێت بۆچوونی دووەمی پسپۆڕ وەربگریت. داواکارییەکەت بە ڕێزەوە دەردەبڕیت، بەبێ ئەوەی بێ‌متمانەیی نیشان بدەیت یان چارەسەری پێشووتر کەمبایەخ بکەیت." },
+        { "language": "kmr", "text": "Hûn bi doktorê malbatê li ser dermankirinek pêşniyarkirî diaxivin û dixwazin nerîna duyemîn a pisporê bistînin. Hûn daxwaza xwe bi rêzdarî formul dikin bêyî ku bêbaweriyê nîşan bidin an dermankirina berê bê nirx bikin." },
+        { "language": "pl", "text": "Rozmawia Pan z lekarką rodzinną o zalecanym leczeniu i chciałby Pan uzyskać drugą opinię specjalistyczną. Formułuje Pan prośbę z szacunkiem, bez sugerowania braku zaufania ani umniejszania dotychczasowego leczenia." },
+        { "language": "ro", "text": "Vorbiți cu medicul de familie despre un tratament recomandat și doriți să obțineți o a doua opinie de specialitate. Formulați cererea respectuos, fără a sugera neîncredere sau a devaloriza tratamentul anterior." },
+        { "language": "sq", "text": "Flisni me mjekun e familjes për një trajtim të rekomanduar dhe dëshironi të merrni një mendim të dytë specialisti. E formuloni kërkesën me respekt, pa nënkuptuar mosbesim ose pa zhvlerësuar trajtimin e deritanishëm." }
+      ],
+      "learnerGoal": "Eine zweite Meinung taktvoll erbitten: bisherige Behandlung anerkennen, eigene Unsicherheit präzise erklären, die gewünschte fachärztliche Klärung begründen und den nächsten administrativen Schritt erfragen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask tactfully for a second opinion: acknowledge previous treatment, explain your uncertainty precisely, justify the desired specialist clarification, and ask about the next administrative step." },
+        { "language": "fa", "text": "برای نظر دوم با ظرافت درخواست کنید: درمان قبلی را به رسمیت بشناسید، ابهام خود را دقیق توضیح دهید، روشن‌سازی تخصصی مورد نظر را توجیه کنید و درباره گام اداری بعدی بپرسید." },
+        { "language": "ar", "text": "اطلب رأياً ثانياً بلباقة: اعترف بالعلاج السابق، واشرح حيرتك بدقة، وعلّل التوضيح الاختصاصي المطلوب، واسأل عن الخطوة الإدارية التالية." },
+        { "language": "tr", "text": "İkinci görüşü incelikle isteyin: önceki tedaviyi kabul edin, belirsizliğinizi kesin biçimde açıklayın, istenen uzman açıklamasını gerekçelendirin ve sonraki idari adımı sorun." },
+        { "language": "ru", "text": "Тактично попросить второе мнение: признать предыдущее лечение, точно объяснить свою неуверенность, обосновать желаемое уточнение у специалиста и спросить о следующем административном шаге." },
+        { "language": "ckb", "text": "بە زیرەکی داوای بۆچوونی دووەم بکە: چارەسەری پێشووتر بپەسەندە، دڵنیانەبوونەکەت بە وردی ڕوون بکەوە، ڕوونکردنەوەی پسپۆڕی خوازراو بە هۆکارەوە باس بکە و دەربارەی هەنگاوی کارگێڕی دواتر بپرسە." },
+        { "language": "kmr", "text": "Nerîna duyemîn bi nazikî bixwazin: dermankirina berê qebûl bikin, nezelaliya xwe bi rastî rave bikin, zelalkirina pisporî ya xwestî sedem bikin û li ser gava îdarî ya paşîn bipirsin." },
+        { "language": "pl", "text": "Taktownie poprosić o drugą opinię: uznać dotychczasowe leczenie, precyzyjnie wyjaśnić swoją niepewność, uzasadnić potrzebne wyjaśnienie specjalistyczne i zapytać o następny krok administracyjny." },
+        { "language": "ro", "text": "Solicitați cu tact o a doua opinie: recunoașteți tratamentul anterior, explicați precis nesiguranța, justificați clarificarea de specialitate dorită și întrebați despre următorul pas administrativ." },
+        { "language": "sq", "text": "Kërkoni me takt një mendim të dytë: pranoni trajtimin e deritanishëm, shpjegoni saktë pasigurinë tuaj, arsyetoni sqarimin specialistik të dëshiruar dhe pyesni për hapin administrativ të ardhshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "health",
+      "topics": ["appointments-and-health", "everyday-life"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 37,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Patient/in",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        },
+        {
+          "roleKey": "doctor",
+          "displayName": "Hausärztin",
+          "translations": [
+            { "language": "en", "text": "Family doctor" },
+            { "language": "fa", "text": "پزشک خانواده" },
+            { "language": "ar", "text": "طبيبة الأسرة" },
+            { "language": "tr", "text": "Aile hekimi" },
+            { "language": "ru", "text": "Семейный врач" },
+            { "language": "ckb", "text": "پزیشکی خێزان" },
+            { "language": "kmr", "text": "Doktorê malbatê" },
+            { "language": "pl", "text": "Lekarka rodzinna" },
+            { "language": "ro", "text": "Medic de familie" },
+            { "language": "sq", "text": "Mjekja e familjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Guten Tag. Sie hatten angekündigt, dass Sie wegen der empfohlenen Behandlung noch eine Frage haben. Worum geht es genau?",
+          "translations": [
+            { "language": "en", "text": "Good day. You had said that you still had a question about the recommended treatment. What exactly is it about?" },
+            { "language": "fa", "text": "روز بخیر. گفته بودید درباره درمان پیشنهادی هنوز یک سؤال دارید. دقیقاً موضوع چیست؟" },
+            { "language": "ar", "text": "نهارك سعيد. كنت قد ذكرت أن لديك سؤالاً إضافياً بخصوص العلاج الموصى به. ما الموضوع تحديداً؟" },
+            { "language": "tr", "text": "İyi günler. Önerilen tedaviyle ilgili hâlâ bir sorunuz olduğunu söylemiştiniz. Tam olarak konu nedir?" },
+            { "language": "ru", "text": "Добрый день. Вы говорили, что у вас ещё есть вопрос по рекомендованному лечению. О чём именно речь?" },
+            { "language": "ckb", "text": "ڕۆژ باش. وتبووت کە دەربارەی چارەسەری پێشنیارکراو هێشتا پرسیارێکت هەیە. بابەتەکە بە وردی چییە؟" },
+            { "language": "kmr", "text": "Roj baş. We gotibû ku li ser dermankirina pêşniyarkirî hîn pirsek we heye. Mijar bi rastî çi ye?" },
+            { "language": "pl", "text": "Dzień dobry. Zapowiedział Pan, że ma jeszcze pytanie dotyczące zalecanego leczenia. O co dokładnie chodzi?" },
+            { "language": "ro", "text": "Bună ziua. Ați anunțat că mai aveți o întrebare privind tratamentul recomandat. Despre ce este vorba exact?" },
+            { "language": "sq", "text": "Mirëdita. Keni thënë se keni ende një pyetje për trajtimin e rekomanduar. Për çfarë bëhet fjalë saktësisht?" }
+          ],
+          "function": "opening-question",
+          "toneNote": "formal, offen",
+          "expectedLearnerAction": "Bitte um zweite Meinung diplomatisch eröffnen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Mir ist wichtig, dass das nicht wie Misstrauen klingt. Ich habe Ihre Einschätzung verstanden und möchte sie nicht infrage stellen. Gleichzeitig bin ich wegen der möglichen Nebenwirkungen und der längerfristigen Folgen unsicher und würde gern wissen, ob eine zweite fachärztliche Meinung sinnvoll wäre.",
+          "translations": [
+            { "language": "en", "text": "It is important to me that this does not sound like mistrust. I have understood your assessment and do not want to question it. At the same time, I am uncertain because of the possible side effects and longer-term consequences, and I would like to know whether a second specialist opinion would make sense." },
+            { "language": "fa", "text": "برایم مهم است که این حرف بی‌اعتمادی به نظر نرسد. ارزیابی شما را فهمیده‌ام و نمی‌خواهم آن را زیر سؤال ببرم. هم‌زمان به خاطر عوارض احتمالی و پیامدهای بلندمدت مردد هستم و می‌خواهم بدانم آیا گرفتن نظر دوم از متخصص منطقی است یا نه." },
+            { "language": "ar", "text": "من المهم لي ألا يبدو ذلك كعدم ثقة. لقد فهمت تقييمك ولا أريد التشكيك فيه. في الوقت نفسه أنا غير متأكد بسبب الآثار الجانبية المحتملة والعواقب طويلة المدى، وأود أن أعرف هل سيكون الرأي الاختصاصي الثاني مناسباً." },
+            { "language": "tr", "text": "Bunun güvensizlik gibi duyulmaması benim için önemli. Değerlendirmenizi anladım ve onu sorgulamak istemiyorum. Aynı zamanda olası yan etkiler ve uzun vadeli sonuçlar nedeniyle kararsızım ve ikinci bir uzman görüşünün anlamlı olup olmayacağını bilmek istiyorum." },
+            { "language": "ru", "text": "Для меня важно, чтобы это не звучало как недоверие. Я понял вашу оценку и не хочу ставить её под сомнение. В то же время я не уверен из-за возможных побочных эффектов и долгосрочных последствий и хотел бы знать, имеет ли смысл второе мнение специалиста." },
+            { "language": "ckb", "text": "بۆ من گرنگە ئەمە وەک بێ‌متمانەیی نەبیسترێت. من هەڵسەنگاندنەکەتان تێگەیشتووم و نامەوێت بخەمە ژێر پرسیار. هاوکات بەهۆی کاریگەری لاوەکییە ئەگەرییەکان و دەرئەنجامە ماوەدرێژەکانەوە دڵنیا نیم و دەمەوێت بزانم ئایا بۆچوونی دووەمی پسپۆڕی گونجاو دەبێت." },
+            { "language": "kmr", "text": "Ji bo min girîng e ku ev wekî bêbawerî neyê bihîstin. Min nirxandina we fêm kiriye û naxwazim wê bixin bin pirsê. Hevdem ji ber bandorên alî yên gengaz û encamên demdirêj nezelal im û dixwazim bizanim gelo nerîna duyemîn a pisporî maqûl e." },
+            { "language": "pl", "text": "Ważne jest dla mnie, żeby nie zabrzmiało to jak brak zaufania. Zrozumiałem Pani ocenę i nie chcę jej podważać. Jednocześnie jestem niepewny z powodu możliwych skutków ubocznych i długofalowych konsekwencji, dlatego chciałbym wiedzieć, czy druga opinia specjalistyczna miałaby sens." },
+            { "language": "ro", "text": "Este important pentru mine ca acest lucru să nu sune ca neîncredere. Am înțeles evaluarea dumneavoastră și nu vreau să o pun la îndoială. În același timp sunt nesigur din cauza posibilelor efecte secundare și a consecințelor pe termen lung și aș vrea să știu dacă o a doua opinie de specialitate ar avea sens." },
+            { "language": "sq", "text": "Për mua është e rëndësishme që kjo të mos tingëllojë si mosbesim. E kam kuptuar vlerësimin tuaj dhe nuk dua ta vë në dyshim. Njëkohësisht jam i pasigurt për shkak të efekteve të mundshme anësore dhe pasojave afatgjata dhe dua të di nëse një mendim i dytë specialistik do të kishte kuptim." }
+          ],
+          "function": "diplomatic-request",
+          "toneNote": "respektvoll, absichernd",
+          "expectedLearnerAction": "Respekt und eigene Unsicherheit verbinden"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Das können wir besprechen. Welche Punkte machen Sie konkret unsicher: die Diagnose, die vorgeschlagene Behandlung oder die Abwägung zwischen Nutzen und Risiko?",
+          "translations": [
+            { "language": "en", "text": "We can discuss that. Which points specifically make you uncertain: the diagnosis, the proposed treatment, or the weighing of benefit and risk?" },
+            { "language": "fa", "text": "می‌توانیم درباره آن صحبت کنیم. کدام نکات مشخصاً شما را مردد می‌کنند: تشخیص، درمان پیشنهادی، یا سنجش سود و خطر؟" },
+            { "language": "ar", "text": "يمكننا مناقشة ذلك. ما النقاط التي تجعلك غير متأكد تحديداً: التشخيص، أم العلاج المقترح، أم الموازنة بين الفائدة والمخاطر؟" },
+            { "language": "tr", "text": "Bunu konuşabiliriz. Sizi somut olarak hangi noktalar kararsız bırakıyor: tanı, önerilen tedavi veya yarar ile risk arasındaki değerlendirme mi?" },
+            { "language": "ru", "text": "Мы можем это обсудить. Какие пункты конкретно вызывают у вас неуверенность: диагноз, предложенное лечение или соотношение пользы и риска?" },
+            { "language": "ckb", "text": "دەتوانین ئەمە گفتوگۆ بکەین. کام خاڵ بە دیاریکراوی دڵنیات ناکات: دیاریکردنی نەخۆشی، چارەسەری پێشنیارکراو، یان هەڵسەنگاندنی سوود و مەترسی؟" },
+            { "language": "kmr", "text": "Em dikarin vê nîqaş bikin. Kîjan xal bi taybetî we nezelal dikin: teşxîs, dermankirina pêşniyarkirî, an hevsengkirina feyde û rîskê?" },
+            { "language": "pl", "text": "Możemy to omówić. Które punkty konkretnie budzą Pana niepewność: diagnoza, proponowane leczenie czy wyważenie korzyści i ryzyka?" },
+            { "language": "ro", "text": "Putem discuta acest lucru. Ce puncte vă fac concret nesigur: diagnosticul, tratamentul propus sau cântărirea beneficiilor și riscurilor?" },
+            { "language": "sq", "text": "Mund ta diskutojmë këtë. Cilat pika konkretisht ju bëjnë të pasigurt: diagnoza, trajtimi i propozuar apo peshimi mes përfitimit dhe rrezikut?" }
+          ],
+          "function": "clarification-question",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Unsicherheit präzise eingrenzen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Vor allem geht es mir um die Abwägung. Die Beschwerden sind zwar belastend, aber nicht akut gefährlich. Deshalb möchte ich besser verstehen, ob der vorgeschlagene Eingriff jetzt notwendig ist oder ob zunächst konservative Optionen mit klaren Kriterien ausreichen könnten.",
+          "translations": [
+            { "language": "en", "text": "It is mainly about the weighing process. The symptoms are burdensome, but not acutely dangerous. That is why I would like to understand better whether the proposed procedure is necessary now or whether conservative options with clear criteria might initially be sufficient." },
+            { "language": "fa", "text": "موضوع اصلی برایم سنجش گزینه‌هاست. علائم آزاردهنده هستند، اما خطر فوری ندارند. برای همین می‌خواهم بهتر بفهمم آیا اقدام پیشنهادی الان ضروری است یا شاید ابتدا گزینه‌های محافظه‌کارانه با معیارهای روشن کافی باشند." },
+            { "language": "ar", "text": "الأمر يتعلق أساساً بالموازنة. الأعراض مرهقة، لكنها ليست خطيرة بشكل حاد. لذلك أريد أن أفهم بشكل أفضل هل الإجراء المقترح ضروري الآن أم إن الخيارات المحافظة مع معايير واضحة قد تكفي أولاً." },
+            { "language": "tr", "text": "Benim için asıl konu değerlendirme. Şikayetler zorlayıcı, ama akut tehlikeli değil. Bu nedenle önerilen işlemin şimdi gerekli olup olmadığını veya önce net ölçütlerle konservatif seçeneklerin yeterli olup olmayacağını daha iyi anlamak istiyorum." },
+            { "language": "ru", "text": "Главным образом речь для меня о взвешивании. Жалобы обременительны, но не являются остро опасными. Поэтому я хочу лучше понять, необходимо ли предложенное вмешательство сейчас или сначала могли бы быть достаточны консервативные варианты с ясными критериями." },
+            { "language": "ckb", "text": "زۆرتر بابەتەکە هەڵسەنگاندنە. نیشانەکان سەختن، بەڵام بە شێوەی پەلە مەترسیدار نین. بۆیە دەمەوێت باشتر تێبگەم ئایا ئەو هەنگاوەی پێشنیارکراو ئێستا پێویستە یان لە سەرەتا چارەسەری پارێزکارانە بە پێوانەی ڕوون دەکرێت بەس بێت." },
+            { "language": "kmr", "text": "Mijar ji bo min herî zêde hevsengkirin e. Nîşan dijwar in, lê ne bi lezgînî metirsîdar in. Ji ber vê ez dixwazim baştir fêm bikim gelo pêvajoya pêşniyarkirî niha pêwîst e an di destpêkê de vebijarkên parastinî bi pîvanên zelal dikarin têr bikin." },
+            { "language": "pl", "text": "Chodzi mi przede wszystkim o wyważenie. Dolegliwości są obciążające, ale nie są ostro niebezpieczne. Dlatego chcę lepiej zrozumieć, czy proponowany zabieg jest teraz konieczny, czy najpierw wystarczyłyby opcje zachowawcze z jasnymi kryteriami." },
+            { "language": "ro", "text": "Pentru mine este vorba mai ales de cântărire. Simptomele sunt împovărătoare, dar nu sunt periculoase acut. De aceea vreau să înțeleg mai bine dacă procedura propusă este necesară acum sau dacă opțiunile conservatoare cu criterii clare ar putea fi suficiente la început." },
+            { "language": "sq", "text": "Për mua bëhet fjalë kryesisht për peshimin e opsioneve. Shqetësimet janë të rënda, por jo rrezik akut. Prandaj dua të kuptoj më mirë nëse ndërhyrja e propozuar është e nevojshme tani apo nëse fillimisht mund të mjaftojnë opsione konservative me kritere të qarta." }
+          ],
+          "function": "precise-uncertainty",
+          "toneNote": "sachlich, differenziert",
+          "expectedLearnerAction": "Nutzen-Risiko-Frage präzisieren"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Welche Informationen haben Sie bisher erhalten, und was ist für Sie noch nicht ausreichend geklärt?",
+          "translations": [
+            { "language": "en", "text": "What information have you received so far, and what has not yet been sufficiently clarified for you?" },
+            { "language": "fa", "text": "تا حالا چه اطلاعاتی دریافت کرده‌اید و چه چیزی برای شما هنوز به اندازه کافی روشن نشده است؟" },
+            { "language": "ar", "text": "ما المعلومات التي حصلت عليها حتى الآن، وما الذي لم يتضح لك بشكل كافٍ بعد؟" },
+            { "language": "tr", "text": "Şimdiye kadar hangi bilgileri aldınız ve sizin için ne henüz yeterince açıklığa kavuşmadı?" },
+            { "language": "ru", "text": "Какую информацию вы уже получили, и что для вас ещё недостаточно ясно?" },
+            { "language": "ckb", "text": "تا ئێستا کام زانیاریت وەرگرتووە و چی بۆت هێشتا بە تەواوی ڕوون نەبووەتەوە؟" },
+            { "language": "kmr", "text": "Heta niha kîjan agahî we standine, û çi ji bo we hîn bi têrî zelal nebûye?" },
+            { "language": "pl", "text": "Jakie informacje otrzymał Pan dotąd i co nie zostało dla Pana jeszcze wystarczająco wyjaśnione?" },
+            { "language": "ro", "text": "Ce informații ați primit până acum și ce nu este încă suficient de clar pentru dumneavoastră?" },
+            { "language": "sq", "text": "Çfarë informacioni keni marrë deri tani dhe çfarë nuk është sqaruar ende mjaftueshëm për ju?" }
+          ],
+          "function": "information-gap-question",
+          "toneNote": "präzisierend",
+          "expectedLearnerAction": "Vorinformationen und offene Punkte nennen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich habe verstanden, dass der Eingriff die Beschwerden wahrscheinlich schneller lindern kann. Unklar ist mir aber, wie groß der Unterschied gegenüber Physiotherapie und Schmerzmanagement realistisch ist und ab welchem Punkt ein Abwarten medizinisch nicht mehr vertretbar wäre.",
+          "translations": [
+            { "language": "en", "text": "I have understood that the procedure can probably relieve the symptoms more quickly. What is unclear to me, however, is how large the difference compared with physiotherapy and pain management realistically is, and at what point waiting would no longer be medically justifiable." },
+            { "language": "fa", "text": "فهمیده‌ام که این اقدام احتمالاً می‌تواند علائم را سریع‌تر کاهش دهد. اما برایم روشن نیست تفاوت واقعی آن نسبت به فیزیوتراپی و مدیریت درد چقدر است و از چه نقطه‌ای صبر کردن از نظر پزشکی دیگر قابل توجیه نیست." },
+            { "language": "ar", "text": "فهمت أن الإجراء يمكن على الأرجح أن يخفف الأعراض بسرعة أكبر. لكن غير الواضح لي هو حجم الفرق الواقعي مقارنة بالعلاج الطبيعي وإدارة الألم، ومن أي نقطة لا يعود الانتظار مقبولاً طبياً." },
+            { "language": "tr", "text": "İşlemin şikayetleri muhtemelen daha hızlı hafifletebileceğini anladım. Ancak fizyoterapi ve ağrı yönetimiyle karşılaştırıldığında farkın gerçekçi olarak ne kadar büyük olduğu ve hangi noktadan sonra beklemenin tıbben artık savunulabilir olmayacağı benim için belirsiz." },
+            { "language": "ru", "text": "Я понял, что вмешательство, вероятно, может быстрее облегчить жалобы. Но мне неясно, насколько реалистично велика разница по сравнению с физиотерапией и управлением болью, и с какого момента ожидание уже не было бы медицински оправданным." },
+            { "language": "ckb", "text": "تێگەیشتووم کە ئەو هەنگاوە بە گومانەوە دەتوانێت نیشانەکان خێراتر سووک بکات. بەڵام بۆم ڕوون نییە جیاوازییەکە بەراورد بە فیزیۆتێراپی و بەڕێوەبردنی ئازار بە واقیعی چەندە، و لە کام خاڵەوە چاوەڕوانیکردن لە ڕووی پزیشکییەوە ئیتر پاساوپێدراو نابێت." },
+            { "language": "kmr", "text": "Min fêm kiriye ku pêvajo bi gengazî dikare nîşanan zûtir sivik bike. Lê ji bo min nezelal e ku cihê wê li hember fîzyoterapî û rêvebirina êşê bi rastî çiqas mezin e, û ji kîjan xalê ve li benda mayîn êdî ji aliyê bijîşkî ve nayê pejirandin." },
+            { "language": "pl", "text": "Zrozumiałem, że zabieg prawdopodobnie może szybciej złagodzić dolegliwości. Nie jest dla mnie jednak jasne, jak duża jest realistycznie różnica wobec fizjoterapii i leczenia bólu oraz od którego momentu czekanie nie byłoby już medycznie uzasadnione." },
+            { "language": "ro", "text": "Am înțeles că procedura poate probabil ameliora simptomele mai repede. Totuși, nu îmi este clar cât de mare este realist diferența față de fizioterapie și managementul durerii și din ce punct așteptarea nu ar mai fi justificabilă medical." },
+            { "language": "sq", "text": "Kam kuptuar se ndërhyrja ndoshta mund t’i lehtësojë shqetësimet më shpejt. Por nuk e kam të qartë sa i madh është realisht ndryshimi krahasuar me fizioterapinë dhe menaxhimin e dhimbjes dhe nga cili moment pritja nuk do të ishte më e justifikueshme mjekësisht." }
+          ],
+          "function": "information-gap",
+          "toneNote": "analytisch",
+          "expectedLearnerAction": "Offene fachliche Kriterien formulieren"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Wenn Sie eine zweite Meinung möchten, kann ich das grundsätzlich unterstützen. Was wäre für Sie das Ziel dieser Einschätzung?",
+          "translations": [
+            { "language": "en", "text": "If you would like a second opinion, I can generally support that. What would be the goal of that assessment for you?" },
+            { "language": "fa", "text": "اگر نظر دوم می‌خواهید، من اصولاً می‌توانم از آن حمایت کنم. هدف شما از این ارزیابی چه خواهد بود؟" },
+            { "language": "ar", "text": "إذا كنت تريد رأياً ثانياً، فأستطيع من حيث المبدأ دعم ذلك. ما الهدف من هذا التقييم بالنسبة لك؟" },
+            { "language": "tr", "text": "İkinci görüş istiyorsanız bunu genel olarak destekleyebilirim. Bu değerlendirmenin sizin için amacı ne olurdu?" },
+            { "language": "ru", "text": "Если вы хотите второе мнение, я в принципе могу это поддержать. Какова была бы для вас цель этой оценки?" },
+            { "language": "ckb", "text": "ئەگەر بۆچوونی دووەم دەتەوێت، بە گشتی دەتوانم پشتیوانی بکەم. ئامانجی ئەم هەڵسەنگاندنە بۆ تۆ چی دەبێت؟" },
+            { "language": "kmr", "text": "Ger hûn nerîna duyemîn bixwazin, ez bi giştî dikarim vê piştgirî bikim. Armanca vê nirxandinê ji bo we çi be?" },
+            { "language": "pl", "text": "Jeśli chce Pan drugiej opinii, zasadniczo mogę to wesprzeć. Jaki byłby dla Pana cel tej oceny?" },
+            { "language": "ro", "text": "Dacă doriți o a doua opinie, pot în principiu să sprijin acest lucru. Care ar fi pentru dumneavoastră scopul acestei evaluări?" },
+            { "language": "sq", "text": "Nëse dëshironi një mendim të dytë, në parim mund ta mbështes. Cili do të ishte për ju qëllimi i këtij vlerësimi?" }
+          ],
+          "function": "goal-question",
+          "toneNote": "unterstützend",
+          "expectedLearnerAction": "Ziel der zweiten Meinung erklären"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Mir geht es nicht darum, möglichst lange alles hinauszuschieben. Ich möchte eine unabhängige fachliche Einordnung, ob die Empfehlung im Verhältnis zu meinem Verlauf passt und welche Warnzeichen bedeuten würden, dass ich nicht weiter abwarten sollte.",
+          "translations": [
+            { "language": "en", "text": "My aim is not to postpone everything for as long as possible. I would like an independent specialist assessment of whether the recommendation fits my course of symptoms and which warning signs would mean that I should not continue waiting." },
+            { "language": "fa", "text": "هدفم این نیست که همه چیز را تا حد ممکن عقب بیندازم. می‌خواهم یک ارزیابی تخصصی مستقل داشته باشم که آیا این توصیه با روند وضعیت من متناسب است و چه نشانه‌های هشداردهنده‌ای یعنی نباید بیشتر صبر کنم." },
+            { "language": "ar", "text": "لا يتعلق الأمر بأن أؤجل كل شيء لأطول فترة ممكنة. أريد تقييماً اختصاصياً مستقلاً لما إذا كانت التوصية تناسب مسار حالتي، وما علامات التحذير التي تعني أنه لا ينبغي أن أستمر في الانتظار." },
+            { "language": "tr", "text": "Amacım her şeyi mümkün olduğunca uzun ertelemek değil. Önerinin benim seyrime uygun olup olmadığı ve hangi uyarı işaretlerinin daha fazla beklememem gerektiği anlamına geldiği konusunda bağımsız bir uzman değerlendirmesi istiyorum." },
+            { "language": "ru", "text": "Моя цель не в том, чтобы как можно дольше всё откладывать. Я хочу независимую профессиональную оценку, соответствует ли рекомендация моему течению симптомов и какие тревожные признаки означали бы, что мне не следует дальше ждать." },
+            { "language": "ckb", "text": "مەبەستم ئەوە نییە هەموو شتێک تا دەتوانم دوابخەم. دەمەوێت هەڵسەنگاندنێکی پسپۆڕی سەربەخۆ هەبێت کە ئایا پێشنیارەکە لەگەڵ ڕەوتی دۆخەکەم دەگونجێت و کام نیشانەی ئاگادارکردنەوە واتە پێویست ناکات زیاتر چاوەڕێ بم." },
+            { "language": "kmr", "text": "Armanca min ne ew e ku her tiştê qasî gengaz paş bixin. Ez nirxandineke pisporî ya serbixwe dixwazim ku gelo pêşniyar bi rêça rewşa min re têkildar e û kîjan nîşanên hişyariyê wateya wê ne ku ez êdî li bendê nemînim." },
+            { "language": "pl", "text": "Nie chodzi mi o to, żeby wszystko jak najdłużej odwlekać. Chcę niezależnej oceny specjalistycznej, czy zalecenie pasuje do przebiegu moich objawów i jakie sygnały ostrzegawcze oznaczałyby, że nie powinienem dalej czekać." },
+            { "language": "ro", "text": "Nu este vorba să amân totul cât mai mult posibil. Vreau o evaluare independentă de specialitate dacă recomandarea se potrivește evoluției mele și ce semne de avertizare ar însemna că nu ar trebui să mai aștept." },
+            { "language": "sq", "text": "Qëllimi im nuk është të shtyj gjithçka sa më gjatë. Dua një vlerësim të pavarur specialistik nëse rekomandimi përputhet me ecurinë time dhe cilat shenja paralajmëruese do të thoshin se nuk duhet të pres më." }
+          ],
+          "function": "goal-definition",
+          "toneNote": "differenziert",
+          "expectedLearnerAction": "Ziel ohne Blockadehaltung erklären"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Dann sollten wir klären, welche Unterlagen die Fachpraxis braucht und wie die Überweisung formuliert werden soll. Haben Sie Befunde oder Berichte dabei?",
+          "translations": [
+            { "language": "en", "text": "Then we should clarify which documents the specialist practice needs and how the referral should be worded. Do you have findings or reports with you?" },
+            { "language": "fa", "text": "پس باید روشن کنیم مطب متخصص چه مدارکی لازم دارد و ارجاع چگونه باید نوشته شود. آیا نتایج یا گزارش‌هایی همراه دارید؟" },
+            { "language": "ar", "text": "إذن ينبغي أن نوضح ما الوثائق التي تحتاجها عيادة الاختصاصي وكيف ينبغي صياغة الإحالة. هل لديك نتائج أو تقارير معك؟" },
+            { "language": "tr", "text": "O zaman uzman muayenehanesinin hangi belgelere ihtiyaç duyduğunu ve sevkin nasıl formüle edilmesi gerektiğini açıklığa kavuşturmalıyız. Yanınızda bulgu veya rapor var mı?" },
+            { "language": "ru", "text": "Тогда нам следует уточнить, какие документы нужны специализированной практике и как должна быть сформулирована направительная запись. У вас есть результаты или отчёты с собой?" },
+            { "language": "ckb", "text": "ئەوا پێویستە ڕوون بکەینەوە کە مطبی پسپۆڕ کام بەڵگە پێویست دەکات و ڕەوانەکردنەکە چۆن بنووسرێت. ئایا ئەنجام یان ڕاپۆرتت پێیە؟" },
+            { "language": "kmr", "text": "Wê demê divê em zelal bikin kîjan belge pratîka pispor dixwaze û sewqkirin çawa were formul kirin. Ma encam an rapor bi we re hene?" },
+            { "language": "pl", "text": "W takim razie powinniśmy wyjaśnić, jakich dokumentów potrzebuje poradnia specjalistyczna i jak powinno być sformułowane skierowanie. Czy ma Pan przy sobie wyniki lub raporty?" },
+            { "language": "ro", "text": "Atunci ar trebui să clarificăm ce documente are nevoie cabinetul de specialitate și cum trebuie formulată trimiterea. Aveți rezultate sau rapoarte la dumneavoastră?" },
+            { "language": "sq", "text": "Atëherë duhet të sqarojmë cilat dokumente i duhen ordinancës specialistike dhe si duhet formuluar referimi. A keni me vete rezultate ose raporte?" }
+          ],
+          "function": "administrative-clarification",
+          "toneNote": "praktisch",
+          "expectedLearnerAction": "Unterlagen und Formulierungsbedarf nennen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich habe den letzten Befund, den Medikamentenplan und meine Notizen zu Schmerzintensität und Einschränkungen dabei. Wenn möglich, sollte in der Überweisung stehen, dass es um die Abwägung zwischen Eingriff und konservativer Weiterbehandlung geht, nicht um eine generelle Ablehnung der Empfehlung.",
+          "translations": [
+            { "language": "en", "text": "I have the latest findings, the medication plan, and my notes on pain intensity and limitations with me. If possible, the referral should state that it is about weighing the procedure against continued conservative treatment, not about a general rejection of the recommendation." },
+            { "language": "fa", "text": "آخرین نتیجه، برنامه داروها و یادداشت‌هایم درباره شدت درد و محدودیت‌ها را همراه دارم. اگر ممکن است، در ارجاع نوشته شود که موضوع سنجش بین اقدام درمانی و ادامه درمان محافظه‌کارانه است، نه رد کلی توصیه." },
+            { "language": "ar", "text": "معي آخر نتيجة وخطة الأدوية وملاحظاتي عن شدة الألم والقيود. إذا أمكن، ينبغي أن يذكر في الإحالة أن الأمر يتعلق بالموازنة بين الإجراء ومواصلة العلاج المحافظ، وليس برفض عام للتوصية." },
+            { "language": "tr", "text": "Yanımda son bulgu, ilaç planı ve ağrı şiddeti ile kısıtlamalara ilişkin notlarım var. Mümkünse sevkte bunun öneriyi genel olarak reddetmek değil, işlem ile konservatif tedavinin sürdürülmesi arasındaki değerlendirme olduğu yazmalı." },
+            { "language": "ru", "text": "У меня с собой последний результат, план лекарств и мои заметки об интенсивности боли и ограничениях. Если возможно, в направлении должно быть указано, что речь идёт о взвешивании вмешательства и продолжения консервативного лечения, а не об общем отказе от рекомендации." },
+            { "language": "ckb", "text": "دوایین ئەنجام، پلانی دەرمان و تێبینییەکانم دەربارەی توندی ئازار و سنووردارییەکانم پێیە. ئەگەر بکرێت، لە ڕەوانەکردنەکەدا بنووسرێت کە بابەتەکە هەڵسەنگاندنی نێوان هەنگاوەکە و بەردەوامبوونی چارەسەری پارێزکارانەیە، نە ڕەتکردنەوەی گشتیی پێشنیارەکە." },
+            { "language": "kmr", "text": "Encama dawî, plana dermanan û notên min li ser tundiya êşê û sînordariyan bi min re hene. Ger gengaz be, divê di sewqkirinê de bê nivîsîn ku mijar hevsengkirina di navbera pêvajo û domandina dermankirina parastinî de ye, ne redkirina giştî ya pêşniyarê." },
+            { "language": "pl", "text": "Mam przy sobie ostatni wynik, plan leków i notatki dotyczące nasilenia bólu oraz ograniczeń. Jeśli to możliwe, w skierowaniu powinno być napisane, że chodzi o wyważenie między zabiegiem a dalszym leczeniem zachowawczym, a nie o ogólne odrzucenie zalecenia." },
+            { "language": "ro", "text": "Am la mine ultimul rezultat, planul de medicamente și notițele mele despre intensitatea durerii și limitări. Dacă este posibil, în trimitere ar trebui să scrie că este vorba despre cântărirea între procedură și continuarea tratamentului conservator, nu despre respingerea generală a recomandării." },
+            { "language": "sq", "text": "Kam me vete rezultatin e fundit, planin e ilaçeve dhe shënimet e mia për intensitetin e dhimbjes dhe kufizimet. Nëse është e mundur, në referim duhet të shkruhet se bëhet fjalë për peshimin mes ndërhyrjes dhe vazhdimit të trajtimit konservativ, jo për refuzim të përgjithshëm të rekomandimit." }
+          ],
+          "function": "documents-and-wording",
+          "toneNote": "präzise, kooperativ",
+          "expectedLearnerAction": "Unterlagen und Überweisungszweck präzisieren"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "doctor",
+          "baseText": "Gut. Fassen Sie bitte noch einmal zusammen, was Sie von der zweiten Meinung erwarten und wie Sie mit der bisherigen Empfehlung umgehen möchten.",
+          "translations": [
+            { "language": "en", "text": "Good. Please summarize once more what you expect from the second opinion and how you would like to handle the previous recommendation." },
+            { "language": "fa", "text": "خوب. لطفاً یک بار دیگر خلاصه کنید از نظر دوم چه انتظاری دارید و می‌خواهید با توصیه قبلی چگونه برخورد کنید." },
+            { "language": "ar", "text": "جيد. من فضلك لخّص مرة أخرى ما الذي تتوقعه من الرأي الثاني وكيف تريد التعامل مع التوصية السابقة." },
+            { "language": "tr", "text": "İyi. Lütfen ikinci görüşten ne beklediğinizi ve önceki öneriyle nasıl hareket etmek istediğinizi bir kez daha özetleyin." },
+            { "language": "ru", "text": "Хорошо. Пожалуйста, ещё раз резюмируйте, чего вы ожидаете от второго мнения и как хотите поступить с прежней рекомендацией." },
+            { "language": "ckb", "text": "باشە. تکایە جارێکی تر کورت بکەوە کە لە بۆچوونی دووەم چ چاوەڕوانیت هەیە و دەتەوێت لەگەڵ پێشنیاری پێشووتر چۆن مامەڵە بکەیت." },
+            { "language": "kmr", "text": "Baş e. Ji kerema xwe careke din kurt bikin ku hûn ji nerîna duyemîn çi hêvî dikin û hûn dixwazin bi pêşniyara berê çawa tevbigerin." },
+            { "language": "pl", "text": "Dobrze. Proszę jeszcze raz podsumować, czego oczekuje Pan od drugiej opinii i jak chce Pan postępować z dotychczasowym zaleceniem." },
+            { "language": "ro", "text": "Bine. Vă rog să rezumați încă o dată ce așteptați de la a doua opinie și cum doriți să procedați cu recomandarea anterioară." },
+            { "language": "sq", "text": "Mirë. Ju lutem përmblidhni edhe një herë çfarë prisni nga mendimi i dytë dhe si dëshironi të veproni me rekomandimin e mëparshëm." }
+          ],
+          "function": "summary-request",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Respektvolle Abschlussformulierung geben"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte die bisherige Empfehlung ernst nehmen, aber sie durch eine zweite fachärztliche Einschätzung besser einordnen. Mir geht es um Kriterien für den richtigen Zeitpunkt, mögliche Alternativen und Warnzeichen, bei denen ich nicht weiter abwarten sollte. Wenn Sie die Überweisung entsprechend formulieren könnten, wäre mir sehr geholfen.",
+          "translations": [
+            { "language": "en", "text": "I would like to take the previous recommendation seriously, but place it better through a second specialist assessment. I am concerned with criteria for the right timing, possible alternatives, and warning signs when I should not continue waiting. If you could word the referral accordingly, that would help me a lot." },
+            { "language": "fa", "text": "می‌خواهم توصیه قبلی را جدی بگیرم، اما با یک ارزیابی تخصصی دوم آن را بهتر جای‌گذاری کنم. موضوع برایم معیارهای زمان مناسب، گزینه‌های احتمالی و نشانه‌های هشداردهنده‌ای است که نباید در آن‌ها بیشتر صبر کنم. اگر بتوانید ارجاع را مطابق آن بنویسید، خیلی کمکم می‌کند." },
+            { "language": "ar", "text": "أريد أن آخذ التوصية السابقة بجدية، لكن أن أضعها في سياق أفضل من خلال تقييم اختصاصي ثانٍ. يهمني معرفة معايير التوقيت المناسب والبدائل الممكنة وعلامات التحذير التي لا ينبغي عندها أن أواصل الانتظار. إذا أمكنك صياغة الإحالة وفقاً لذلك، فسيساعدني ذلك كثيراً." },
+            { "language": "tr", "text": "Önceki öneriyi ciddiye almak, ama ikinci bir uzman değerlendirmesiyle daha iyi yerine oturtmak istiyorum. Benim için doğru zamanlama ölçütleri, olası alternatifler ve daha fazla beklememem gereken uyarı işaretleri önemli. Sevki buna uygun formüle edebilirseniz bana çok yardımcı olur." },
+            { "language": "ru", "text": "Я хочу серьёзно отнестись к прежней рекомендации, но лучше оценить её через вторую консультацию специалиста. Для меня важны критерии правильного момента, возможные альтернативы и тревожные признаки, при которых мне не следует дальше ждать. Если вы могли бы сформулировать направление соответственно, это очень помогло бы мне." },
+            { "language": "ckb", "text": "دەمەوێت پێشنیاری پێشووتر بە جدی وەربگرم، بەڵام بە هەڵسەنگاندنی دووەمی پسپۆڕی باشتر جێی بخەم. مەبەستم پێوانەکانی کاتی گونجاو، هەڵبژاردە ئەگەرییەکان و نیشانەی ئاگادارکردنەوەیە کە لەواندا نابێت زیاتر چاوەڕێ بم. ئەگەر بتوانن ڕەوانەکردنەکە بەو شێوەیە دابڕێژن، زۆر یارمەتی دەدات." },
+            { "language": "kmr", "text": "Ez dixwazim pêşniyara berê cidî bigirim, lê bi nirxandineke pisporî ya duyemîn wê baştir bi cih bikim. Ji bo min pîvanên demê rast, vebijarkên gengaz û nîşanên hişyariyê girîng in ku li wan ez êdî li bendê nemînim. Ger hûn sewqkirinê li gor vê formul bikin, gelek alîkarî dibe." },
+            { "language": "pl", "text": "Chcę poważnie potraktować dotychczasowe zalecenie, ale lepiej je umiejscowić dzięki drugiej ocenie specjalistycznej. Chodzi mi o kryteria właściwego momentu, możliwe alternatywy i sygnały ostrzegawcze, przy których nie powinienem dalej czekać. Jeśli mogłaby Pani odpowiednio sformułować skierowanie, bardzo by mi to pomogło." },
+            { "language": "ro", "text": "Vreau să iau în serios recomandarea anterioară, dar să o încadrez mai bine printr-o a doua evaluare de specialitate. Mă interesează criteriile pentru momentul potrivit, alternativele posibile și semnele de avertizare la care nu ar trebui să mai aștept. Dacă ați putea formula trimiterea în acest sens, m-ar ajuta foarte mult." },
+            { "language": "sq", "text": "Dua ta marr seriozisht rekomandimin e mëparshëm, por ta kuptoj më mirë përmes një vlerësimi të dytë specialistik. Më interesojnë kriteret për kohën e duhur, alternativat e mundshme dhe shenjat paralajmëruese kur nuk duhet të pres më. Nëse mund ta formuloni referimin në këtë mënyrë, do të më ndihmonte shumë." }
+          ],
+          "function": "final-summary",
+          "toneNote": "respektvoll, klar",
+          "expectedLearnerAction": "Ziel und administrativen Wunsch zusammenfassen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-diplomatic-opening",
+              "text": "Ich stelle Ihre Einschätzung nicht infrage, bin aber wegen Nebenwirkungen und Langzeitfolgen unsicher und möchte wissen, ob eine zweite fachärztliche Meinung sinnvoll wäre.",
+              "translations": [
+                { "language": "en", "text": "I am not questioning your assessment, but I am uncertain because of side effects and long-term consequences and would like to know whether a second specialist opinion would make sense." },
+                { "language": "fa", "text": "من ارزیابی شما را زیر سؤال نمی‌برم، اما به خاطر عوارض و پیامدهای بلندمدت مردد هستم و می‌خواهم بدانم آیا نظر دوم تخصصی منطقی است یا نه." },
+                { "language": "ar", "text": "أنا لا أشكك في تقييمك، لكنني غير متأكد بسبب الآثار الجانبية والعواقب طويلة المدى وأريد أن أعرف هل الرأي الاختصاصي الثاني مناسب." },
+                { "language": "tr", "text": "Değerlendirmenizi sorgulamıyorum, ama yan etkiler ve uzun vadeli sonuçlar nedeniyle kararsızım ve ikinci uzman görüşünün anlamlı olup olmayacağını bilmek istiyorum." },
+                { "language": "ru", "text": "Я не ставлю под сомнение вашу оценку, но не уверен из-за побочных эффектов и долгосрочных последствий и хотел бы знать, имеет ли смысл второе мнение специалиста." },
+                { "language": "ckb", "text": "من هەڵسەنگاندنەکەتان ناخەمە ژێر پرسیار، بەڵام بەهۆی کاریگەری لاوەکی و دەرئەنجامی ماوەدرێژەوە دڵنیا نیم و دەمەوێت بزانم ئایا بۆچوونی دووەمی پسپۆڕی گونجاوە." },
+                { "language": "kmr", "text": "Ez nirxandina we naxim bin pirsê, lê ji ber bandorên alî û encamên demdirêj nezelal im û dixwazim bizanim gelo nerîna duyemîn a pisporî maqûl e." },
+                { "language": "pl", "text": "Nie podważam Pani oceny, ale jestem niepewny z powodu skutków ubocznych i konsekwencji długoterminowych i chciałbym wiedzieć, czy druga opinia specjalistyczna miałaby sens." },
+                { "language": "ro", "text": "Nu pun la îndoială evaluarea dumneavoastră, dar sunt nesigur din cauza efectelor secundare și a consecințelor pe termen lung și aș vrea să știu dacă o a doua opinie de specialitate ar avea sens." },
+                { "language": "sq", "text": "Nuk po e vë në dyshim vlerësimin tuaj, por jam i pasigurt për efektet anësore dhe pasojat afatgjata dhe dua të di nëse një mendim i dytë specialistik do të kishte kuptim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung schützt die Beziehung zur Ärztin und benennt die Unsicherheit trotzdem konkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The wording protects the relationship with the doctor while still naming the uncertainty concretely." },
+                { "language": "fa", "text": "قوی: این بیان رابطه با پزشک را حفظ می‌کند و در عین حال ابهام را مشخص نام می‌برد." },
+                { "language": "ar", "text": "قوي: الصياغة تحمي العلاقة مع الطبيبة ومع ذلك تسمي الحيرة بشكل ملموس." },
+                { "language": "tr", "text": "Güçlü: İfade doktorla ilişkiyi koruyor ve yine de belirsizliği somut adlandırıyor." },
+                { "language": "ru", "text": "Сильно: формулировка сохраняет отношения с врачом и при этом конкретно называет неуверенность." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە پەیوەندی لەگەڵ پزیشک دەپارێزێت و هەمان کات دڵنیانەبوونەکە بە دیاریکراوی ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Gotin têkiliya bi doktorê re diparêze û hevdem nezelaliyê konkret nav dike." },
+                { "language": "pl", "text": "Mocne: sformułowanie chroni relację z lekarką, a jednocześnie konkretnie nazywa niepewność." },
+                { "language": "ro", "text": "Puternic: formularea protejează relația cu medicul și totuși numește concret nesiguranța." },
+                { "language": "sq", "text": "E fortë: formulimi e mbron marrëdhënien me mjekun dhe megjithatë e emërton konkretisht pasigurinë." }
+              ],
+              "explanationKey": "respectful-second-opinion"
+            },
+            {
+              "id": "weak-mistrust-implied",
+              "text": "Ich bin mir nicht sicher, ob diese Empfehlung wirklich richtig ist, und möchte lieber noch jemand anderen fragen.",
+              "translations": [
+                { "language": "en", "text": "I am not sure whether this recommendation is really correct, and I would rather ask someone else." },
+                { "language": "fa", "text": "مطمئن نیستم این توصیه واقعاً درست باشد و ترجیح می‌دهم از شخص دیگری هم بپرسم." },
+                { "language": "ar", "text": "لست متأكداً مما إذا كانت هذه التوصية صحيحة فعلاً، وأفضل أن أسأل شخصاً آخر." },
+                { "language": "tr", "text": "Bu önerinin gerçekten doğru olup olmadığından emin değilim ve başka birine de sormayı tercih ederim." },
+                { "language": "ru", "text": "Я не уверен, действительно ли эта рекомендация правильная, и предпочёл бы спросить ещё кого-то." },
+                { "language": "ckb", "text": "دڵنیا نیم ئایا ئەم پێشنیارە بەڕاستی دروستە، و پێم باشترە لە کەسێکی تر بپرسم." },
+                { "language": "kmr", "text": "Ez ne ewle me ka ev pêşniyar bi rastî rast e, û ez tercîh dikim ji kesekî din jî bipirsim." },
+                { "language": "pl", "text": "Nie jestem pewien, czy to zalecenie jest naprawdę właściwe, i wolałbym zapytać jeszcze kogoś innego." },
+                { "language": "ro", "text": "Nu sunt sigur dacă această recomandare este cu adevărat corectă și aș prefera să întreb pe altcineva." },
+                { "language": "sq", "text": "Nuk jam i sigurt nëse ky rekomandim është vërtet i saktë dhe do të preferoja të pyesja dikë tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber taktisch schwächer: Es klingt schnell wie ein Zweifel an der Kompetenz statt wie eine Klärungsbitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but tactically weaker: it can quickly sound like doubt about competence rather than a request for clarification." },
+                { "language": "fa", "text": "قابل قبول است، اما از نظر تاکتیکی ضعیف‌تر: سریع می‌تواند مثل شک به صلاحیت شنیده شود، نه درخواست روشن‌سازی." },
+                { "language": "ar", "text": "مقبول، لكنه أضعف تكتيكياً: قد يبدو بسرعة كشك في الكفاءة بدلاً من طلب توضيح." },
+                { "language": "tr", "text": "Makûl, ama taktik olarak daha zayıf: açıklama isteğinden çok yetkinlikten şüphe gibi duyulabilir." },
+                { "language": "ru", "text": "Правдоподобно, но тактически слабее: быстро может прозвучать как сомнение в компетентности, а не просьба об уточнении." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام لە ڕووی تاکتیکییەوە لاوازترە: زوو وەک گومان لە توانای پسپۆڕی دەبیسترێت، نە وەک داوای ڕوونکردنەوە." },
+                { "language": "kmr", "text": "Guncan e, lê ji aliyê taktîkî ve lawaztir e: zûtir wekî guman li ser şiyanê tê bihîstin, ne wekî daxwaza zelalkirinê." },
+                { "language": "pl", "text": "Plausible, ale taktycznie słabsze: szybko brzmi jak wątpliwość co do kompetencji, a nie prośba o wyjaśnienie." },
+                { "language": "ro", "text": "Plauzibil, dar tactic mai slab: poate suna rapid ca o îndoială privind competența, nu ca o cerere de clarificare." },
+                { "language": "sq", "text": "E besueshme, por taktikisht më e dobët: mund të tingëllojë shpejt si dyshim për kompetencën, jo si kërkesë për sqarim." }
+              ],
+              "explanationKey": "implied-mistrust"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-risk-benefit-focus",
+              "text": "Ich möchte vor allem die Abwägung zwischen Eingriff, konservativen Optionen und klaren Warnzeichen besser verstehen.",
+              "translations": [
+                { "language": "en", "text": "I mainly want to better understand the weighing between the procedure, conservative options, and clear warning signs." },
+                { "language": "fa", "text": "بیشتر می‌خواهم سنجش بین اقدام درمانی، گزینه‌های محافظه‌کارانه و نشانه‌های هشدار روشن را بهتر بفهمم." },
+                { "language": "ar", "text": "أريد أساساً أن أفهم بشكل أفضل الموازنة بين الإجراء والخيارات المحافظة وعلامات التحذير الواضحة." },
+                { "language": "tr", "text": "Özellikle işlem, konservatif seçenekler ve net uyarı işaretleri arasındaki değerlendirmeyi daha iyi anlamak istiyorum." },
+                { "language": "ru", "text": "Я прежде всего хочу лучше понять соотношение вмешательства, консервативных вариантов и ясных тревожных признаков." },
+                { "language": "ckb", "text": "زۆرتر دەمەوێت هەڵسەنگاندنی نێوان هەنگاوەکە، هەڵبژاردە پارێزکارانەکان و نیشانە ڕوونەکانی ئاگادارکردنەوە باشتر تێبگەم." },
+                { "language": "kmr", "text": "Ez herî zêde dixwazim hevsengkirina di navbera pêvajo, vebijarkên parastinî û nîşanên hişyariyê yên zelal de baştir fêm bikim." },
+                { "language": "pl", "text": "Chcę przede wszystkim lepiej zrozumieć wyważenie między zabiegiem, opcjami zachowawczymi i jasnymi sygnałami ostrzegawczymi." },
+                { "language": "ro", "text": "Vreau mai ales să înțeleg mai bine cântărirea între procedură, opțiunile conservatoare și semnele clare de avertizare." },
+                { "language": "sq", "text": "Dua kryesisht të kuptoj më mirë peshimin mes ndërhyrjes, opsioneve konservative dhe shenjave të qarta paralajmëruese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht die fachliche Frage konkret und vermeidet eine pauschale Ablehnung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer makes the specialist question concrete and avoids a blanket rejection." },
+                { "language": "fa", "text": "قوی: پاسخ پرسش تخصصی را مشخص می‌کند و از رد کلی پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة تجعل السؤال الاختصاصي ملموساً وتتجنب الرفض العام." },
+                { "language": "tr", "text": "Güçlü: Yanıt uzmanlık sorusunu somutlaştırıyor ve genel redden kaçınıyor." },
+                { "language": "ru", "text": "Сильно: ответ конкретизирует профессиональный вопрос и избегает общего отказа." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پرسی پسپۆڕی دیاریکراو دەکات و لە ڕەتکردنەوەی گشتی دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pirsa pisporî konkret dike û ji redkirina giştî dûr dikeve." },
+                { "language": "pl", "text": "Mocne: odpowiedź konkretyzuje pytanie specjalistyczne i unika ogólnego odrzucenia." },
+                { "language": "ro", "text": "Puternic: răspunsul concretizează întrebarea de specialitate și evită o respingere generală." },
+                { "language": "sq", "text": "E fortë: përgjigjja e konkretizon pyetjen specialistike dhe shmang refuzimin e përgjithshëm." }
+              ],
+              "explanationKey": "specific-medical-question"
+            },
+            {
+              "id": "weak-too-general-fear",
+              "text": "Ich habe einfach Angst vor der Behandlung und möchte sicher sein, dass ich keinen Fehler mache.",
+              "translations": [
+                { "language": "en", "text": "I am simply afraid of the treatment and want to be sure that I am not making a mistake." },
+                { "language": "fa", "text": "من فقط از درمان می‌ترسم و می‌خواهم مطمئن باشم اشتباه نمی‌کنم." },
+                { "language": "ar", "text": "أنا ببساطة خائف من العلاج وأريد أن أتأكد من أنني لا أرتكب خطأ." },
+                { "language": "tr", "text": "Tedaviden sadece korkuyorum ve hata yapmadığımdan emin olmak istiyorum." },
+                { "language": "ru", "text": "Я просто боюсь лечения и хочу быть уверенным, что не совершаю ошибку." },
+                { "language": "ckb", "text": "من تەنها لە چارەسەرەکە دەترسم و دەمەوێت دڵنیا بم هەڵە ناکەم." },
+                { "language": "kmr", "text": "Ez tenê ji dermankirinê ditirsim û dixwazim bawer bim ku ez şaşiyê nakim." },
+                { "language": "pl", "text": "Po prostu boję się leczenia i chcę mieć pewność, że nie popełniam błędu." },
+                { "language": "ro", "text": "Pur și simplu mi-e teamă de tratament și vreau să fiu sigur că nu fac o greșeală." },
+                { "language": "sq", "text": "Thjesht kam frikë nga trajtimi dhe dua të jem i sigurt se nuk po bëj gabim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Menschlich verständlich, aber für C1 zu unpräzise: Die Ärztin erfährt nicht, welche Kriterien geklärt werden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Humanly understandable, but too imprecise for C1: the doctor does not learn which criteria should be clarified." },
+                { "language": "fa", "text": "از نظر انسانی قابل فهم است، اما برای C1 بیش از حد نامشخص: پزشک نمی‌فهمد کدام معیارها باید روشن شوند." },
+                { "language": "ar", "text": "مفهوم إنسانياً، لكنه غير دقيق لمستوى C1: لا تعرف الطبيبة أي معايير ينبغي توضيحها." },
+                { "language": "tr", "text": "İnsani olarak anlaşılır, ama C1 için fazla belirsiz: Doktor hangi ölçütlerin açıklığa kavuşturulması gerektiğini öğrenmiyor." },
+                { "language": "ru", "text": "По-человечески понятно, но для C1 слишком неточно: врач не узнаёт, какие критерии нужно уточнить." },
+                { "language": "ckb", "text": "لە ڕووی مرۆڤانەوە تێگەیشتراوە، بەڵام بۆ C1 زۆر ناڕوونە: پزیشک نازانێت کام پێوانە پێویستە ڕوون بکرێنەوە." },
+                { "language": "kmr", "text": "Ji aliyê mirovî ve tê fêmkirin, lê ji bo C1 pir nezelal e: doktor fêm nake kîjan pîvan divê zelal bibin." },
+                { "language": "pl", "text": "Po ludzku zrozumiałe, ale zbyt nieprecyzyjne na C1: lekarka nie dowiaduje się, jakie kryteria trzeba wyjaśnić." },
+                { "language": "ro", "text": "Uman de înțeles, dar prea imprecis pentru C1: medicul nu află ce criterii trebuie clarificate." },
+                { "language": "sq", "text": "E kuptueshme njerëzisht, por shumë e pasaktë për C1: mjekja nuk mëson cilat kritere duhen sqaruar." }
+              ],
+              "explanationKey": "fear-too-general"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-information-gap",
+              "text": "Ich verstehe den möglichen Nutzen, brauche aber klarere Vergleichskriterien zu Physiotherapie, Schmerzmanagement und dem richtigen Zeitpunkt.",
+              "translations": [
+                { "language": "en", "text": "I understand the possible benefit, but I need clearer comparison criteria for physiotherapy, pain management, and the right timing." },
+                { "language": "fa", "text": "سود احتمالی را می‌فهمم، اما به معیارهای مقایسه روشن‌تری برای فیزیوتراپی، مدیریت درد و زمان مناسب نیاز دارم." },
+                { "language": "ar", "text": "أفهم الفائدة المحتملة، لكنني أحتاج إلى معايير مقارنة أوضح للعلاج الطبيعي وإدارة الألم والتوقيت المناسب." },
+                { "language": "tr", "text": "Olası yararı anlıyorum, ancak fizyoterapi, ağrı yönetimi ve doğru zamanlama için daha net karşılaştırma ölçütlerine ihtiyacım var." },
+                { "language": "ru", "text": "Я понимаю возможную пользу, но мне нужны более ясные критерии сравнения для физиотерапии, управления болью и правильного момента." },
+                { "language": "ckb", "text": "سوودی ئەگەری تێدەگەم، بەڵام پێویستم بە پێوانەی بەراوردی ڕوونتر هەیە بۆ فیزیۆتێراپی، بەڕێوەبردنی ئازار و کاتی گونجاو." },
+                { "language": "kmr", "text": "Ez feydeya gengaz fêm dikim, lê pîvanên berawirdê yên zelaltir ji bo fîzyoterapî, rêvebirina êşê û demê rast dixwazim." },
+                { "language": "pl", "text": "Rozumiem możliwą korzyść, ale potrzebuję jaśniejszych kryteriów porównania fizjoterapii, leczenia bólu i właściwego momentu." },
+                { "language": "ro", "text": "Înțeleg beneficiul posibil, dar am nevoie de criterii de comparație mai clare pentru fizioterapie, managementul durerii și momentul potrivit." },
+                { "language": "sq", "text": "E kuptoj përfitimin e mundshëm, por kam nevojë për kritere më të qarta krahasimi për fizioterapinë, menaxhimin e dhimbjes dhe kohën e duhur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort würdigt die Empfehlung und zeigt genau, welche Informationen fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer acknowledges the recommendation and shows exactly which information is missing." },
+                { "language": "fa", "text": "قوی: پاسخ توصیه را به رسمیت می‌شناسد و دقیقاً نشان می‌دهد چه اطلاعاتی کم است." },
+                { "language": "ar", "text": "قوي: الإجابة تقدّر التوصية وتُظهر بالضبط ما المعلومات الناقصة." },
+                { "language": "tr", "text": "Güçlü: Yanıt öneriyi kabul ediyor ve hangi bilgilerin eksik olduğunu tam olarak gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ признаёт рекомендацию и точно показывает, какой информации не хватает." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێشنیارەکە بەپێز دەگرێت و بە وردی پیشان دەدات کام زانیاری کەمە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pêşniyarê qebûl dike û bi rastî nîşan dide kîjan agahî kêm in." },
+                { "language": "pl", "text": "Mocne: odpowiedź docenia zalecenie i dokładnie pokazuje, jakich informacji brakuje." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște recomandarea și arată exact ce informații lipsesc." },
+                { "language": "sq", "text": "E fortë: përgjigjja e vlerëson rekomandimin dhe tregon saktë cilat informacione mungojnë." }
+              ],
+              "explanationKey": "acknowledge-and-specify"
+            },
+            {
+              "id": "weak-too-many-details",
+              "text": "Ich habe sehr viele Informationen gelesen und bin dadurch noch unsicherer geworden.",
+              "translations": [
+                { "language": "en", "text": "I have read a lot of information and have become even more uncertain because of it." },
+                { "language": "fa", "text": "اطلاعات خیلی زیادی خوانده‌ام و به همین دلیل حتی مرددتر شده‌ام." },
+                { "language": "ar", "text": "قرأت الكثير من المعلومات ولذلك أصبحت أكثر حيرة." },
+                { "language": "tr", "text": "Çok fazla bilgi okudum ve bu yüzden daha da kararsız oldum." },
+                { "language": "ru", "text": "Я прочитал очень много информации и из-за этого стал ещё более неуверенным." },
+                { "language": "ckb", "text": "زانیاری زۆرم خوێندووەتەوە و بەهۆی ئەمەوە زیاتر دڵنیا نەبووم." },
+                { "language": "kmr", "text": "Min gelek agahî xwendine û ji ber vê hîn zêdetir nezelal bûme." },
+                { "language": "pl", "text": "Przeczytałem bardzo dużo informacji i przez to stałem się jeszcze bardziej niepewny." },
+                { "language": "ro", "text": "Am citit foarte multe informații și din această cauză am devenit și mai nesigur." },
+                { "language": "sq", "text": "Kam lexuar shumë informacion dhe për këtë jam bërë edhe më i pasigurt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Ärztin kann daraus noch keinen fachlichen Klärungsauftrag ableiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: the doctor still cannot derive a specialist clarification task from it." },
+                { "language": "fa", "text": "قابل قبول است، اما بیش از حد کلی: پزشک هنوز نمی‌تواند از آن مأموریت روشن‌سازی تخصصی استخراج کند." },
+                { "language": "ar", "text": "مقبول، لكنه عام جداً: لا تستطيع الطبيبة بعد أن تستنتج منه مهمة توضيح اختصاصية." },
+                { "language": "tr", "text": "Makûl, ama fazla genel: Doktor bundan henüz uzmanlık açısından bir açıklama görevi çıkaramaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общее: врач ещё не может вывести из этого задачу для профессионального уточнения." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر گشتییە: پزیشک هێشتا ناتوانێت لێی ئەرکی ڕوونکردنەوەی پسپۆڕی دەربهێنێت." },
+                { "language": "kmr", "text": "Guncan e, lê pir giştî ye: doktor hîn nikare ji vê erka zelalkirina pisporî derxe." },
+                { "language": "pl", "text": "Plausible, ale zbyt ogólne: lekarka nie może jeszcze wyprowadzić z tego zadania do wyjaśnienia specjalistycznego." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: medicul încă nu poate deriva din asta o sarcină de clarificare de specialitate." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: mjekja ende nuk mund të nxjerrë prej saj një detyrë sqarimi specialistik." }
+              ],
+              "explanationKey": "general-information-overload"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-goal-not-delay",
+              "text": "Ich will nichts blockieren, sondern Kriterien bekommen, wann Abwarten vertretbar ist und wann nicht.",
+              "translations": [
+                { "language": "en", "text": "I do not want to block anything, but to get criteria for when waiting is justifiable and when it is not." },
+                { "language": "fa", "text": "نمی‌خواهم چیزی را متوقف کنم، بلکه می‌خواهم معیارهایی بگیرم که چه زمانی صبر کردن قابل توجیه است و چه زمانی نیست." },
+                { "language": "ar", "text": "لا أريد أن أعرقل شيئاً، بل أريد الحصول على معايير متى يكون الانتظار مبرراً ومتى لا يكون كذلك." },
+                { "language": "tr", "text": "Hiçbir şeyi engellemek istemiyorum, sadece beklemenin ne zaman savunulabilir olduğu ve ne zaman olmadığı konusunda ölçütler almak istiyorum." },
+                { "language": "ru", "text": "Я не хочу ничего блокировать, а хочу получить критерии, когда ожидание оправдано, а когда нет." },
+                { "language": "ckb", "text": "نامەوێت هیچ شتێک ڕابگرم، بەڵام دەمەوێت پێوانە وەربگرم کە کەی چاوەڕوانی پاساوپێدراوە و کەی نا." },
+                { "language": "kmr", "text": "Ez naxwazim tiştekî asteng bikim, lê dixwazim pîvan bistînim ka kengî li benda mayîn tê pejirandin û kengî na." },
+                { "language": "pl", "text": "Nie chcę niczego blokować, lecz uzyskać kryteria, kiedy czekanie jest uzasadnione, a kiedy nie." },
+                { "language": "ro", "text": "Nu vreau să blochez nimic, ci să primesc criterii când așteptarea este justificabilă și când nu." },
+                { "language": "sq", "text": "Nuk dua të bllokoj asgjë, por të marr kritere se kur pritja është e justifikueshme dhe kur jo." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt der Bitte den Eindruck einer Verweigerung und macht das Ziel medizinisch prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer removes the impression of refusal and makes the goal medically reviewable." },
+                { "language": "fa", "text": "قوی: پاسخ برداشتِ امتناع را از درخواست می‌گیرد و هدف را از نظر پزشکی قابل بررسی می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة تزيل انطباع الرفض وتجعل الهدف قابلاً للفحص طبياً." },
+                { "language": "tr", "text": "Güçlü: Yanıt talebin reddetme gibi algılanmasını engelliyor ve hedefi tıbben değerlendirilebilir kılıyor." },
+                { "language": "ru", "text": "Сильно: ответ снимает впечатление отказа и делает цель медицински проверяемой." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەستی ڕەتکردنەوە لە داواکارییەکە لادەبات و ئامانجەکە لە ڕووی پزیشکییەوە پشکنراو دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv hesta redkirinê ji daxwazê radike û armancê ji aliyê bijîşkî ve vekolînbar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź usuwa wrażenie odmowy i sprawia, że cel jest medycznie weryfikowalny." },
+                { "language": "ro", "text": "Puternic: răspunsul înlătură impresia de refuz și face scopul verificabil medical." },
+                { "language": "sq", "text": "E fortë: përgjigjja heq përshtypjen e refuzimit dhe e bën qëllimin të verifikueshëm mjekësisht." }
+              ],
+              "explanationKey": "criteria-not-delay"
+            },
+            {
+              "id": "weak-delay-framing",
+              "text": "Ich möchte erst einmal abwarten und suche dafür eine Bestätigung von einer anderen Praxis.",
+              "translations": [
+                { "language": "en", "text": "I would like to wait for now and am looking for confirmation of that from another practice." },
+                { "language": "fa", "text": "فعلاً می‌خواهم صبر کنم و برای آن دنبال تأیید از یک مطب دیگر هستم." },
+                { "language": "ar", "text": "أريد أن أنتظر أولاً وأبحث عن تأكيد لذلك من عيادة أخرى." },
+                { "language": "tr", "text": "Şimdilik beklemek istiyorum ve bunun için başka bir muayenehaneden onay arıyorum." },
+                { "language": "ru", "text": "Я пока хочу подождать и ищу подтверждение этому в другой практике." },
+                { "language": "ckb", "text": "فعلاً دەمەوێت چاوەڕێ بم و بۆ ئەمە پشتڕاستکردنەوە لە مطبێکی تر دەگەڕێم." },
+                { "language": "kmr", "text": "Ez niha dixwazim li bendê bim û ji bo vê ji pratîkeke din piştrastkirinê digerim." },
+                { "language": "pl", "text": "Na razie chciałbym poczekać i szukam potwierdzenia tego w innej poradni." },
+                { "language": "ro", "text": "Aș vrea deocamdată să aștept și caut o confirmare pentru asta de la alt cabinet." },
+                { "language": "sq", "text": "Për momentin dua të pres dhe po kërkoj konfirmim për këtë nga një ordinancë tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant formuliert: Es klingt nach Bestätigungssuche statt nach fachlicher Klärung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but risky wording: it sounds like seeking confirmation rather than specialist clarification." },
+                { "language": "fa", "text": "قابل قبول است، اما بیانش پرریسک است: بیشتر مثل دنبال تأیید گشتن شنیده می‌شود تا روشن‌سازی تخصصی." },
+                { "language": "ar", "text": "مقبول، لكن الصياغة محفوفة بالمخاطر: يبدو كبحث عن تأكيد لا كتوضيح اختصاصي." },
+                { "language": "tr", "text": "Makûl, ama riskli formüle edilmiş: uzman açıklaması değil, onay arama gibi duyuluyor." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно сформулировано: звучит как поиск подтверждения, а не профессионального уточнения." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام دەربڕینەکە مەترسیدارە: وەک گەڕان بەدوای پشتڕاستکردنەوەدا دەبیسترێت، نە ڕوونکردنەوەی پسپۆڕی." },
+                { "language": "kmr", "text": "Guncan e, lê gotin rîskdar e: wekî lêgerîna piştrastkirinê tê bihîstin, ne wekî zelalkirina pisporî." },
+                { "language": "pl", "text": "Plausible, ale ryzykownie sformułowane: brzmi jak szukanie potwierdzenia, a nie wyjaśnienia specjalistycznego." },
+                { "language": "ro", "text": "Plauzibil, dar formulat riscant: sună ca o căutare de confirmare, nu ca o clarificare de specialitate." },
+                { "language": "sq", "text": "E besueshme, por e formuluar me rrezik: tingëllon si kërkim konfirmimi, jo si sqarim specialistik." }
+              ],
+              "explanationKey": "confirmation-seeking"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-referral-purpose",
+              "text": "In der Überweisung sollte stehen, dass es um die Abwägung zwischen Eingriff und konservativer Weiterbehandlung geht.",
+              "translations": [
+                { "language": "en", "text": "The referral should state that it is about weighing the procedure against continued conservative treatment." },
+                { "language": "fa", "text": "در ارجاع باید نوشته شود که موضوع سنجش بین اقدام درمانی و ادامه درمان محافظه‌کارانه است." },
+                { "language": "ar", "text": "ينبغي أن يذكر في الإحالة أن الأمر يتعلق بالموازنة بين الإجراء ومواصلة العلاج المحافظ." },
+                { "language": "tr", "text": "Sevkte bunun işlem ile konservatif tedavinin sürdürülmesi arasındaki değerlendirme olduğu yazmalı." },
+                { "language": "ru", "text": "В направлении должно быть указано, что речь идёт о взвешивании вмешательства и продолжения консервативного лечения." },
+                { "language": "ckb", "text": "لە ڕەوانەکردنەکەدا پێویستە بنووسرێت کە بابەتەکە هەڵسەنگاندنی نێوان هەنگاوەکە و بەردەوامبوونی چارەسەری پارێزکارانەیە." },
+                { "language": "kmr", "text": "Di sewqkirinê de divê bê nivîsîn ku mijar hevsengkirina di navbera pêvajo û domandina dermankirina parastinî de ye." },
+                { "language": "pl", "text": "W skierowaniu powinno być napisane, że chodzi o wyważenie między zabiegiem a dalszym leczeniem zachowawczym." },
+                { "language": "ro", "text": "În trimitere ar trebui să scrie că este vorba despre cântărirea între procedură și continuarea tratamentului conservator." },
+                { "language": "sq", "text": "Në referim duhet të shkruhet se bëhet fjalë për peshimin mes ndërhyrjes dhe vazhdimit të trajtimit konservativ." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung gibt der Fachpraxis einen klaren Auftrag und vermeidet eine wertende Vorgeschichte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The wording gives the specialist practice a clear task and avoids a judgmental case history." },
+                { "language": "fa", "text": "قوی: این بیان به مطب متخصص مأموریت روشنی می‌دهد و از سابقه‌گویی قضاوت‌آمیز پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: الصياغة تعطي عيادة الاختصاصي مهمة واضحة وتتجنب سرداً تقييمياً للخلفية." },
+                { "language": "tr", "text": "Güçlü: Formül uzman muayenehanesine net bir görev veriyor ve yargılayıcı bir geçmiş anlatımından kaçınıyor." },
+                { "language": "ru", "text": "Сильно: формулировка даёт специализированной практике ясную задачу и избегает оценочного описания предыстории." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە ئەرکێکی ڕوون بە مطبی پسپۆڕ دەدات و لە مێژووی هەڵسەنگاندنئامێز دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Gotin erke zelal dide pratîka pispor û ji dîroka nirxandinî dûr dikeve." },
+                { "language": "pl", "text": "Mocne: sformułowanie daje poradni specjalistycznej jasne zadanie i unika oceniającej historii." },
+                { "language": "ro", "text": "Puternic: formularea oferă cabinetului de specialitate o sarcină clară și evită un istoric evaluativ." },
+                { "language": "sq", "text": "E fortë: formulimi i jep ordinancës specialistike një detyrë të qartë dhe shmang një histori gjykuese." }
+              ],
+              "explanationKey": "clear-referral-purpose"
+            },
+            {
+              "id": "weak-referral-too-blunt",
+              "text": "In der Überweisung sollte stehen, dass ich mit der bisherigen Empfehlung nicht zufrieden bin.",
+              "translations": [
+                { "language": "en", "text": "The referral should state that I am not satisfied with the previous recommendation." },
+                { "language": "fa", "text": "در ارجاع باید نوشته شود که من از توصیه قبلی راضی نیستم." },
+                { "language": "ar", "text": "ينبغي أن يذكر في الإحالة أنني غير راضٍ عن التوصية السابقة." },
+                { "language": "tr", "text": "Sevkte önceki öneriden memnun olmadığım yazmalı." },
+                { "language": "ru", "text": "В направлении должно быть указано, что я недоволен прежней рекомендацией." },
+                { "language": "ckb", "text": "لە ڕەوانەکردنەکەدا پێویستە بنووسرێت کە من لە پێشنیاری پێشووتر ڕازی نیم." },
+                { "language": "kmr", "text": "Di sewqkirinê de divê bê nivîsîn ku ez ji pêşniyara berê razî nînim." },
+                { "language": "pl", "text": "W skierowaniu powinno być napisane, że nie jestem zadowolony z dotychczasowego zalecenia." },
+                { "language": "ro", "text": "În trimitere ar trebui să scrie că nu sunt mulțumit de recomandarea anterioară." },
+                { "language": "sq", "text": "Në referim duhet të shkruhet se nuk jam i kënaqur me rekomandimin e mëparshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wertend: Die Formulierung beschreibt Unzufriedenheit, aber keinen fachlichen Klärungsauftrag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too judgmental: the wording describes dissatisfaction, but not a specialist clarification task." },
+                { "language": "fa", "text": "بیش از حد قضاوت‌آمیز است: بیان نارضایتی را توضیح می‌دهد، اما مأموریت روشن‌سازی تخصصی نمی‌دهد." },
+                { "language": "ar", "text": "تقييمي جداً: الصياغة تصف عدم الرضا، لكنها لا تعطي مهمة توضيح اختصاصية." },
+                { "language": "tr", "text": "Fazla yargılayıcı: İfade memnuniyetsizliği anlatıyor, ama uzmanlık açısından bir açıklama görevi vermiyor." },
+                { "language": "ru", "text": "Слишком оценочно: формулировка описывает недовольство, но не задачу профессионального уточнения." },
+                { "language": "ckb", "text": "زۆر هەڵسەنگاندنئامێزە: دەربڕینەکە ناڕەزایی باس دەکات، بەڵام ئەرکی ڕوونکردنەوەی پسپۆڕی نادات." },
+                { "language": "kmr", "text": "Pir nirxandinî ye: Gotin nerazîbûnê rave dike, lê erka zelalkirina pisporî nade." },
+                { "language": "pl", "text": "Zbyt oceniające: sformułowanie opisuje niezadowolenie, ale nie zadanie do wyjaśnienia specjalistycznego." },
+                { "language": "ro", "text": "Prea evaluativ: formularea descrie nemulțumirea, dar nu o sarcină de clarificare de specialitate." },
+                { "language": "sq", "text": "Shumë gjykuese: formulimi përshkruan pakënaqësi, por jo një detyrë sqarimi specialistik." }
+              ],
+              "explanationKey": "judgmental-referral-wording"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "strong-closing",
+              "text": "Ich nehme die Empfehlung ernst und möchte sie durch eine zweite fachärztliche Einschätzung besser einordnen.",
+              "translations": [
+                { "language": "en", "text": "I take the recommendation seriously and would like to place it better through a second specialist assessment." },
+                { "language": "fa", "text": "من توصیه را جدی می‌گیرم و می‌خواهم با یک ارزیابی تخصصی دوم آن را بهتر درک و جای‌گذاری کنم." },
+                { "language": "ar", "text": "آخذ التوصية بجدية وأريد أن أضعها في سياق أفضل من خلال تقييم اختصاصي ثانٍ." },
+                { "language": "tr", "text": "Öneriyi ciddiye alıyorum ve ikinci bir uzman değerlendirmesiyle daha iyi yerine oturtmak istiyorum." },
+                { "language": "ru", "text": "Я серьёзно отношусь к рекомендации и хочу лучше оценить её через вторую консультацию специалиста." },
+                { "language": "ckb", "text": "پێشنیارەکە بە جدی وەردەگرم و دەمەوێت بە هەڵسەنگاندنی دووەمی پسپۆڕی باشتر جێی بخەم." },
+                { "language": "kmr", "text": "Ez pêşniyarê cidî digirim û dixwazim bi nirxandineke pisporî ya duyemîn wê baştir bi cih bikim." },
+                { "language": "pl", "text": "Traktuję zalecenie poważnie i chcę je lepiej umiejscowić dzięki drugiej ocenie specjalistycznej." },
+                { "language": "ro", "text": "Iau recomandarea în serios și vreau să o încadrez mai bine printr-o a doua evaluare de specialitate." },
+                { "language": "sq", "text": "E marr seriozisht rekomandimin dhe dua ta kuptoj më mirë përmes një vlerësimi të dytë specialistik." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss bleibt knapp, respektvoll und administrativ verwertbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The closing remains brief, respectful, and administratively usable." },
+                { "language": "fa", "text": "قوی: جمع‌بندی کوتاه، محترمانه و از نظر اداری قابل استفاده می‌ماند." },
+                { "language": "ar", "text": "قوي: الخاتمة تبقى قصيرة ومحترمة وقابلة للاستخدام إدارياً." },
+                { "language": "tr", "text": "Güçlü: Kapanış kısa, saygılı ve idari olarak kullanılabilir kalıyor." },
+                { "language": "ru", "text": "Сильно: завершение остаётся кратким, уважительным и пригодным для административного использования." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە کورت، ڕێزدار و لە ڕووی کارگێڕییەوە بەکارهێنراو دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: Dawî kurt, rêzdar û ji aliyê îdarî ve bikêr dimîne." },
+                { "language": "pl", "text": "Mocne: zakończenie pozostaje krótkie, pełne szacunku i administracyjnie użyteczne." },
+                { "language": "ro", "text": "Puternic: încheierea rămâne scurtă, respectuoasă și utilizabilă administrativ." },
+                { "language": "sq", "text": "E fortë: përmbyllja mbetet e shkurtër, me respekt dhe e përdorshme administrativisht." }
+              ],
+              "explanationKey": "respectful-closing"
+            },
+            {
+              "id": "weak-close-too-emotional",
+              "text": "Ich bin mit der ganzen Situation überfordert und brauche einfach noch eine andere Meinung.",
+              "translations": [
+                { "language": "en", "text": "I am overwhelmed by the whole situation and simply need another opinion." },
+                { "language": "fa", "text": "من از کل وضعیت درمانده‌ام و فقط به یک نظر دیگر نیاز دارم." },
+                { "language": "ar", "text": "أنا مرهق من الوضع كله وأحتاج فقط إلى رأي آخر." },
+                { "language": "tr", "text": "Bütün durum beni aşıyor ve sadece başka bir görüşe ihtiyacım var." },
+                { "language": "ru", "text": "Я перегружен всей ситуацией и просто нуждаюсь в другом мнении." },
+                { "language": "ckb", "text": "لە هەموو دۆخەکەدا ماندووم و تەنها پێویستم بە بۆچوونێکی ترە." },
+                { "language": "kmr", "text": "Ez ji tevahiya rewşê westiyam û tenê nerîneke din dixwazim." },
+                { "language": "pl", "text": "Cała sytuacja mnie przerasta i po prostu potrzebuję innej opinii." },
+                { "language": "ro", "text": "Sunt copleșit de întreaga situație și pur și simplu am nevoie de o altă opinie." },
+                { "language": "sq", "text": "Jam i mbingarkuar nga e gjithë situata dhe thjesht kam nevojë për një mendim tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber für den Abschluss zu unspezifisch: Ziel, Kriterien und Überweisungszweck fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too unspecific for the closing: goal, criteria, and referral purpose are missing." },
+                { "language": "fa", "text": "قابل فهم است، اما برای جمع‌بندی بیش از حد نامشخص: هدف، معیارها و منظور ارجاع کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه غير محدد بما يكفي للخاتمة: ينقص الهدف والمعايير وغرض الإحالة." },
+                { "language": "tr", "text": "Anlaşılır, ama kapanış için fazla belirsiz: hedef, ölçütler ve sevk amacı eksik." },
+                { "language": "ru", "text": "Понятно, но для завершения слишком неспецифично: отсутствуют цель, критерии и назначение направления." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام بۆ کۆتایی زۆر ناڕوونە: ئامانج، پێوانە و مەبەستی ڕەوانەکردن کەمن." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê ji bo dawiyê pir nezelal e: armanc, pîvan û mebesta sewqkirinê kêm in." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt niesprecyzowane na zakończenie: brakuje celu, kryteriów i celu skierowania." },
+                { "language": "ro", "text": "De înțeles, dar prea nespecific pentru încheiere: lipsesc scopul, criteriile și scopul trimiterii." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e paspecifikuar për përmbyllje: mungojnë qëllimi, kriteret dhe arsyeja e referimit." }
+              ],
+              "explanationKey": "emotional-unspecific-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "relationship-preserving",
+          "text": "Bei einer zweiten Meinung ist die Beziehungsarbeit Teil der Sprache: erst Respekt zeigen, dann die eigene Unsicherheit präzisieren.",
+          "translations": [
+            { "language": "en", "text": "When seeking a second opinion, relationship work is part of the language: first show respect, then specify your uncertainty." },
+            { "language": "fa", "text": "در گرفتن نظر دوم، حفظ رابطه بخشی از زبان است: اول احترام را نشان دهید، بعد ابهام خود را دقیق کنید." },
+            { "language": "ar", "text": "عند طلب رأي ثانٍ، الحفاظ على العلاقة جزء من اللغة: أظهر الاحترام أولاً، ثم حدّد حيرتك." },
+            { "language": "tr", "text": "İkinci görüşte ilişkiyi korumak dilin parçasıdır: önce saygı gösterin, sonra belirsizliğinizi netleştirin." },
+            { "language": "ru", "text": "При запросе второго мнения работа с отношениями является частью языка: сначала показать уважение, затем уточнить свою неуверенность." },
+            { "language": "ckb", "text": "لە وەرگرتنی بۆچوونی دووەمدا، پاراستنی پەیوەندی بەشێکە لە زمان: سەرەتا ڕێز پیشان بدە، پاشان دڵنیانەبوونەکەت ورد بکە." },
+            { "language": "kmr", "text": "Di nerîna duyemîn de, karê têkiliyê parçeyek ji ziman e: pêşî rêz nîşan bidin, paşê nezelaliya xwe zelal bikin." },
+            { "language": "pl", "text": "Przy drugiej opinii praca nad relacją jest częścią języka: najpierw okazać szacunek, potem doprecyzować niepewność." },
+            { "language": "ro", "text": "La o a doua opinie, gestionarea relației face parte din limbaj: mai întâi arătați respect, apoi precizați nesiguranța." },
+            { "language": "sq", "text": "Te mendimi i dytë, puna me marrëdhënien është pjesë e gjuhës: së pari tregoni respekt, pastaj saktësoni pasigurinë tuaj." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "medical-specificity",
+          "text": "C1-Niveau heißt hier: nicht nur Unsicherheit äußern, sondern die Entscheidungskriterien benennen.",
+          "translations": [
+            { "language": "en", "text": "C1 level here means not only expressing uncertainty, but naming the decision criteria." },
+            { "language": "fa", "text": "سطح C1 اینجا یعنی فقط بیان ابهام کافی نیست، بلکه باید معیارهای تصمیم‌گیری را نام برد." },
+            { "language": "ar", "text": "مستوى C1 هنا يعني ليس فقط التعبير عن الحيرة، بل تسمية معايير القرار." },
+            { "language": "tr", "text": "Burada C1 düzeyi yalnızca belirsizlik ifade etmek değil, karar ölçütlerini adlandırmaktır." },
+            { "language": "ru", "text": "Уровень C1 здесь означает не только выразить неуверенность, но и назвать критерии решения." },
+            { "language": "ckb", "text": "ئاستی C1 لێرەدا واتە تەنها دەربڕینی دڵنیانەبوون نییە، بەڵکو ناوبردنی پێوانەکانی بڕیارە." },
+            { "language": "kmr", "text": "Asta C1 li vir tê wateya ne tenê gotina nezelaliyê, lê navkirina pîvanên biryarê." },
+            { "language": "pl", "text": "Poziom C1 oznacza tu nie tylko wyrażenie niepewności, ale nazwanie kryteriów decyzji." },
+            { "language": "ro", "text": "Nivelul C1 aici înseamnă nu doar exprimarea nesiguranței, ci numirea criteriilor de decizie." },
+            { "language": "sq", "text": "Niveli C1 këtu do të thotë jo vetëm të shprehësh pasiguri, por të emërtosh kriteret e vendimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "information-gap",
+          "text": "Ein guter Klärungsauftrag beschreibt, was schon verstanden wurde und welche Vergleichsinformation noch fehlt.",
+          "translations": [
+            { "language": "en", "text": "A good clarification task describes what has already been understood and which comparative information is still missing." },
+            { "language": "fa", "text": "یک مأموریت روشن‌سازی خوب توضیح می‌دهد چه چیزی قبلاً فهمیده شده و کدام اطلاعات مقایسه‌ای هنوز کم است." },
+            { "language": "ar", "text": "مهمة التوضيح الجيدة تصف ما تم فهمه بالفعل وما معلومات المقارنة التي لا تزال ناقصة." },
+            { "language": "tr", "text": "İyi bir açıklama görevi, neyin zaten anlaşıldığını ve hangi karşılaştırmalı bilginin hâlâ eksik olduğunu açıklar." },
+            { "language": "ru", "text": "Хорошая задача уточнения описывает, что уже понято и какой сравнительной информации ещё не хватает." },
+            { "language": "ckb", "text": "ئەرکی ڕوونکردنەوەی باش باس دەکات چی پێشتر تێگەیشتراوە و کام زانیاری بەراوردی هێشتا کەمە." },
+            { "language": "kmr", "text": "Erka zelalkirinê ya baş rave dike çi jixwe hatî fêmkirin û kîjan agahiya berawirdî hîn kêm e." },
+            { "language": "pl", "text": "Dobre zadanie wyjaśniające opisuje, co już zostało zrozumiane i jakich informacji porównawczych jeszcze brakuje." },
+            { "language": "ro", "text": "O sarcină bună de clarificare descrie ce a fost deja înțeles și ce informație comparativă încă lipsește." },
+            { "language": "sq", "text": "Një detyrë e mirë sqarimi përshkruan çfarë është kuptuar tashmë dhe cili informacion krahasues mungon ende." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "administrative-wording",
+          "text": "Die Formulierung der Überweisung sollte fachlich neutral sein: Klärungsfrage statt Beschwerde.",
+          "translations": [
+            { "language": "en", "text": "The wording of the referral should be professionally neutral: a clarification question rather than a complaint." },
+            { "language": "fa", "text": "متن ارجاع باید از نظر تخصصی خنثی باشد: پرسش برای روشن‌سازی، نه شکایت." },
+            { "language": "ar", "text": "ينبغي أن تكون صياغة الإحالة محايدة مهنياً: سؤال توضيحي لا شكوى." },
+            { "language": "tr", "text": "Sevkin formülasyonu mesleki olarak tarafsız olmalıdır: şikayet değil, açıklama sorusu." },
+            { "language": "ru", "text": "Формулировка направления должна быть профессионально нейтральной: вопрос для уточнения, а не жалоба." },
+            { "language": "ckb", "text": "دەربڕینی ڕەوانەکردنەکە پێویستە لە ڕووی پسپۆڕییەوە بێلایەن بێت: پرسی ڕوونکردنەوە، نە سکاڵا." },
+            { "language": "kmr", "text": "Formulasyona sewqkirinê divê ji aliyê pisporî ve bêalî be: pirsa zelalkirinê, ne gilî." },
+            { "language": "pl", "text": "Sformułowanie skierowania powinno być fachowo neutralne: pytanie do wyjaśnienia zamiast skargi." },
+            { "language": "ro", "text": "Formularea trimiterii ar trebui să fie profesional neutră: întrebare de clarificare, nu reclamație." },
+            { "language": "sq", "text": "Formulimi i referimit duhet të jetë profesionalisht neutral: pyetje sqarimi, jo ankesë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing",
+          "text": "Der Abschluss sollte die bisherige Empfehlung ernst nehmen und trotzdem den Nutzen der zweiten Meinung begründen.",
+          "translations": [
+            { "language": "en", "text": "The close should take the previous recommendation seriously while still justifying the value of the second opinion." },
+            { "language": "fa", "text": "جمع‌بندی باید توصیه قبلی را جدی بگیرد و در عین حال فایده نظر دوم را توجیه کند." },
+            { "language": "ar", "text": "ينبغي أن تأخذ الخاتمة التوصية السابقة بجدية ومع ذلك تبرر فائدة الرأي الثاني." },
+            { "language": "tr", "text": "Kapanış önceki öneriyi ciddiye almalı ve yine de ikinci görüşün yararını gerekçelendirmelidir." },
+            { "language": "ru", "text": "Завершение должно серьёзно относиться к прежней рекомендации и при этом обосновывать пользу второго мнения." },
+            { "language": "ckb", "text": "کۆتایی پێویستە پێشنیاری پێشووتر بە جدی وەربگرێت و هەمان کات سوودی بۆچوونی دووەم بە هۆکارەوە باس بکات." },
+            { "language": "kmr", "text": "Dawî divê pêşniyara berê cidî bigire û hevdem feydeya nerîna duyemîn sedem bike." },
+            { "language": "pl", "text": "Zakończenie powinno poważnie traktować dotychczasowe zalecenie, a jednocześnie uzasadniać wartość drugiej opinii." },
+            { "language": "ro", "text": "Încheierea ar trebui să ia în serios recomandarea anterioară și totuși să justifice utilitatea celei de-a doua opinii." },
+            { "language": "sq", "text": "Përmbyllja duhet ta marrë seriozisht rekomandimin e mëparshëm dhe megjithatë të arsyetojë vlerën e mendimit të dytë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-second-opinion",
+          "placement": "hero",
+          "purpose": "Show a respectful doctor-office conversation about seeking a second specialist opinion with notes about criteria, alternatives, and referral wording.",
+          "altText": "Ein Patient bittet in einer Hausarztpraxis respektvoll um eine zweite fachärztliche Meinung und bespricht Kriterien und Unterlagen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A patient respectfully asks for a second specialist opinion in a family doctor's office and discusses criteria and documents." },
+            { "language": "fa", "text": "بیماری در مطب پزشک خانواده محترمانه درخواست نظر دوم تخصصی می‌کند و درباره معیارها و مدارک صحبت می‌کند." },
+            { "language": "ar", "text": "مريض يطلب باحترام رأياً اختصاصياً ثانياً في عيادة طبيبة الأسرة ويناقش المعايير والوثائق." },
+            { "language": "tr", "text": "Bir hasta aile hekimi muayenehanesinde saygılı biçimde ikinci uzman görüşü istiyor ve ölçütler ile belgeleri konuşuyor." },
+            { "language": "ru", "text": "Пациент уважительно просит второе мнение специалиста в кабинете семейного врача и обсуждает критерии и документы." },
+            { "language": "ckb", "text": "نەخۆشێک لە مطبی پزیشکی خێزاندا بە ڕێزەوە داوای بۆچوونی دووەمی پسپۆڕی دەکات و دەربارەی پێوانە و بەڵگەکان گفتوگۆ دەکات." },
+            { "language": "kmr", "text": "Nexweşek li pratîka doktorê malbatê bi rêzdarî nerîna duyemîn a pisporî dixwaze û li ser pîvan û belgeyan diaxive." },
+            { "language": "pl", "text": "Pacjent w gabinecie lekarza rodzinnego z szacunkiem prosi o drugą opinię specjalistyczną i omawia kryteria oraz dokumenty." },
+            { "language": "ro", "text": "Un pacient solicită respectuos o a doua opinie de specialitate într-un cabinet de medic de familie și discută criterii și documente." },
+            { "language": "sq", "text": "Një pacient kërkon me respekt një mendim të dytë specialistik në ordinancën e mjekut të familjes dhe diskuton kriteret dhe dokumentet." }
+          ],
+          "imagePrompt": "Clean educational illustration of a respectful consultation in a German family doctor's office. A patient and doctor review neutral notes labeled with icons for criteria, alternatives, warning signs, and referral documents; no readable private data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

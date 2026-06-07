@@ -1,0 +1,723 @@
+{
+  "packageId": "roleplays-c2-core-58-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 58 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 58",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-goethe-c2-eine-kulturelle-these-verteidigen",
+      "linkedDialogueSlug": null,
+      "title": "Goethe C2 eine kulturelle These verteidigen",
+      "titleTranslations": [
+        { "language": "en", "text": "Defending a cultural thesis in Goethe C2" },
+        { "language": "fa", "text": "دفاع از یک تز فرهنگی در Goethe C2" },
+        { "language": "ar", "text": "الدفاع عن أطروحة ثقافية في Goethe C2" },
+        { "language": "tr", "text": "Goethe C2'de kültürel bir tezi savunmak" },
+        { "language": "ru", "text": "Защита культурного тезиса на Goethe C2" },
+        { "language": "ckb", "text": "بەرگری لە تێزێکی کەلتووری لە Goethe C2" },
+        { "language": "kmr", "text": "Di Goethe C2 de parastina tezeke çandî" },
+        { "language": "pl", "text": "Obrona tezy kulturowej na Goethe C2" },
+        { "language": "ro", "text": "Susținerea unei teze culturale la Goethe C2" },
+        { "language": "sq", "text": "Mbrojtja e një teze kulturore në Goethe C2" }
+      ],
+      "description": "In einer mündlichen C2-Prüfung vertreten Sie die These, dass öffentliche Bibliotheken nicht nur als Orte für Bücher, sondern als kulturelle Grundversorgung verstanden werden sollten. Die prüfende Person fragt nach Grenzen, Kosten und einem konkreten Beispiel. Sie müssen abstrakt argumentieren, aber anschaulich bleiben.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral C2 exam, you defend the thesis that public libraries should be understood not only as places for books, but as basic cultural infrastructure. The examiner asks about limits, costs, and a concrete example. You need to argue abstractly while staying vivid." },
+        { "language": "fa", "text": "در آزمون شفاهی C2 از این تز دفاع می‌کنید که کتابخانه‌های عمومی فقط محل کتاب نیستند، بلکه باید بخشی از زیرساخت پایه فرهنگی دانسته شوند. ممتحن درباره مرزها، هزینه‌ها و یک مثال مشخص سؤال می‌کند. باید انتزاعی استدلال کنید، اما ملموس بمانید." },
+        { "language": "ar", "text": "في اختبار شفهي C2 تدافعون عن أطروحة أن المكتبات العامة لا ينبغي فهمها كأماكن للكتب فقط، بل كبنية ثقافية أساسية. يسأل الفاحص عن الحدود والتكاليف ومثال ملموس. عليكم أن تجادلوا بشكل تجريدي مع البقاء واضحين." },
+        { "language": "tr", "text": "Sözlü C2 sınavında, halk kütüphanelerinin yalnızca kitap yerleri değil, temel kültürel altyapı olarak anlaşılması gerektiği tezini savunursunuz. Sınav görevlisi sınırlar, maliyetler ve somut bir örnek sorar. Soyut tartışmalı, ama anlaşılır kalmalısınız." },
+        { "language": "ru", "text": "На устном экзамене C2 вы защищаете тезис, что публичные библиотеки следует понимать не только как места для книг, а как базовую культурную инфраструктуру. Экзаменатор спрашивает о границах, расходах и конкретном примере. Нужно аргументировать абстрактно, но оставаться наглядным." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی زارەکی C2 دا بەرگری لەو تێزە دەکەیت کە کتێبخانە گشتییەکان نابێت تەنها وەک شوێنی کتێب تێبگەین، بەڵکو وەک ژێرخانی بنەڕەتی کەلتووری. تاقیکەرەوە پرسیار لە سنوور، تێچوو و نموونەیەکی دیاریکراو دەکات. پێویستە بە شێوەی ئەبستراکت بەڵگە بهێنیت، بەڵام ڕوون بمێنیتەوە." },
+        { "language": "kmr", "text": "Di ezmûna devkî ya C2 de hûn parastina vê tezê dikin: divê pirtûkxaneyên giştî ne tenê wek cihên pirtûkan, lê wek binesaziya bingehîn a çandî bêne fêmkirin. Kesê ezmûnê li ser sînor, lêçûn û mînakeke şênber dipirse. Divê bi awayekî razber arguman bikin, lê zelal bimînin." },
+        { "language": "pl", "text": "Na ustnym egzaminie C2 bronisz tezy, że biblioteki publiczne należy rozumieć nie tylko jako miejsca z książkami, lecz jako podstawową infrastrukturę kulturową. Egzaminator pyta o granice, koszty i konkretny przykład. Trzeba argumentować abstrakcyjnie, ale pozostać obrazowym." },
+        { "language": "ro", "text": "La un examen oral C2 susțineți teza că bibliotecile publice ar trebui înțelese nu doar ca locuri pentru cărți, ci ca infrastructură culturală de bază. Examinatorul întreabă despre limite, costuri și un exemplu concret. Trebuie să argumentați abstract, dar să rămâneți clar." },
+        { "language": "sq", "text": "Në një provim me gojë C2 mbroni tezën se bibliotekat publike nuk duhen kuptuar vetëm si vende për libra, por si infrastrukturë bazë kulturore. Ekzaminuesi pyet për kufijtë, kostot dhe një shembull konkret. Duhet të argumentoni në mënyrë abstrakte, por të mbeteni të qartë." }
+      ],
+      "learnerGoal": "Eine kulturelle These in einer C2-Prüfung verteidigen: den Begriff klären, ein konkretes Beispiel einbauen, einen berechtigten Einwand zu Kosten anerkennen, die These begrenzen und mit einer differenzierten Schlussposition enden.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Defend a cultural thesis in a C2 exam: clarify the concept, include a concrete example, acknowledge a fair cost objection, limit the thesis, and end with a nuanced final position." },
+        { "language": "fa", "text": "در آزمون C2 از یک تز فرهنگی دفاع کنید: مفهوم را روشن کنید، یک مثال مشخص بیاورید، ایراد منصفانه درباره هزینه‌ها را بپذیرید، تز را محدود کنید و با موضع پایانی ظریف تمام کنید." },
+        { "language": "ar", "text": "دافعوا عن أطروحة ثقافية في اختبار C2: وضحوا المفهوم، وأدخلوا مثالًا ملموسًا، واعترفوا باعتراض عادل حول التكاليف، وحددوا الأطروحة، واختموا بموقف نهائي متمايز." },
+        { "language": "tr", "text": "C2 sınavında kültürel bir tezi savunun: kavramı netleştirin, somut bir örnek ekleyin, maliyetle ilgili haklı bir itirazı kabul edin, tezi sınırlandırın ve ayrıntılı bir son görüşle bitirin." },
+        { "language": "ru", "text": "Защитить культурный тезис на экзамене C2: прояснить понятие, включить конкретный пример, признать справедливое возражение о расходах, ограничить тезис и завершить дифференцированной итоговой позицией." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی C2 دا بەرگری لە تێزێکی کەلتووری بکە: چەمکەکە ڕوون بکەرەوە، نموونەیەکی دیاریکراو بهێنە، ڕەخنەیەکی دادپەروەرانە سەبارەت بە تێچوو بپەژێنە، تێزەکە سنووردار بکە و بە هەڵوێستێکی کۆتایی جیاوازکراوە تەواو بکە." },
+        { "language": "kmr", "text": "Di ezmûna C2 de parastina tezeke çandî bikin: têgehê zelal bikin, mînakeke şênber lê zêde bikin, îtirazeke rewa ya derbarê lêçûnê qebûl bikin, tezê sînor bikin û bi helwesteke dawî ya cuda biqedînin." },
+        { "language": "pl", "text": "Obronić tezę kulturową na egzaminie C2: wyjaśnić pojęcie, włączyć konkretny przykład, uznać uczciwy zarzut dotyczący kosztów, ograniczyć tezę i zakończyć zniuansowanym stanowiskiem." },
+        { "language": "ro", "text": "Susțineți o teză culturală la examenul C2: clarificați conceptul, includeți un exemplu concret, recunoașteți o obiecție justificată privind costurile, limitați teza și încheiați cu o poziție finală nuanțată." },
+        { "language": "sq", "text": "Mbroni një tezë kulturore në provimin C2: sqaroni konceptin, përfshini një shembull konkret, pranoni një kundërshtim të drejtë për kostot, kufizoni tezën dhe mbyllni me një qëndrim përfundimtar të nuancuar." }
+      ],
+      "cefrLevel": "C2",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["goethe-c2"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "exam-discussion",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 58,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kandidat/in",
+          "translations": [
+            { "language": "en", "text": "Candidate" },
+            { "language": "fa", "text": "داوطلب" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Aday" },
+            { "language": "ru", "text": "Кандидат" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Namzed" },
+            { "language": "pl", "text": "Kandydat" },
+            { "language": "ro", "text": "Candidat" },
+            { "language": "sq", "text": "Kandidati" }
+          ]
+        },
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfende Person",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الفاحص" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Kesê ezmûnê" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Sie sagen, öffentliche Bibliotheken seien kulturelle Grundversorgung. Das klingt sehr weit gefasst. Was meinen Sie genau mit diesem Begriff?",
+          "translations": [
+            { "language": "en", "text": "You say public libraries are basic cultural infrastructure. That sounds very broad. What exactly do you mean by this term?" },
+            { "language": "fa", "text": "شما می‌گویید کتابخانه‌های عمومی زیرساخت پایه فرهنگی هستند. این خیلی گسترده به نظر می‌رسد. دقیقاً منظورتان از این اصطلاح چیست؟" },
+            { "language": "ar", "text": "تقولون إن المكتبات العامة بنية ثقافية أساسية. يبدو ذلك واسعًا جدًا. ماذا تقصدون بهذا المصطلح بالضبط؟" },
+            { "language": "tr", "text": "Halk kütüphanelerinin temel kültürel altyapı olduğunu söylüyorsunuz. Bu çok geniş duyuluyor. Bu kavramla tam olarak neyi kastediyorsunuz?" },
+            { "language": "ru", "text": "Вы говорите, что публичные библиотеки являются базовой культурной инфраструктурой. Это звучит очень широко. Что именно вы имеете в виду под этим понятием?" },
+            { "language": "ckb", "text": "تۆ دەڵێیت کتێبخانە گشتییەکان ژێرخانی بنەڕەتی کەلتوورین. ئەمە زۆر فراوان دەبیسترێت. بەو چەمکە بە وردی مەبەستت چییە؟" },
+            { "language": "kmr", "text": "Hûn dibêjin pirtûkxaneyên giştî binesaziya bingehîn a çandî ne. Ev pir fireh xuya dike. Hûn bi vî têgehê rast çi dibêjin?" },
+            { "language": "pl", "text": "Mówi Pan/Pani, że biblioteki publiczne są podstawową infrastrukturą kulturową. Brzmi to bardzo szeroko. Co dokładnie ma Pan/Pani na myśli?" },
+            { "language": "ro", "text": "Spuneți că bibliotecile publice sunt infrastructură culturală de bază. Sună foarte larg. Ce înțelegeți exact prin acest termen?" },
+            { "language": "sq", "text": "Ju thoni se bibliotekat publike janë infrastrukturë bazë kulturore. Kjo tingëllon shumë e gjerë. Çfarë kuptoni saktësisht me këtë term?" }
+          ],
+          "function": "clarify-concept",
+          "toneNote": "The examiner asks for conceptual precision.",
+          "expectedLearnerAction": "Define the term without overclaiming."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Mit Grundversorgung meine ich nicht Luxus oder Freizeitdekoration, sondern einen verlässlichen Zugang zu Bildung, Sprache und öffentlichem Austausch. Bibliotheken schaffen einen Raum, in dem Teilhabe nicht vom Einkommen abhängt.",
+          "translations": [
+            { "language": "en", "text": "By basic infrastructure I do not mean luxury or leisure decoration, but reliable access to education, language, and public exchange. Libraries create a space where participation does not depend on income." },
+            { "language": "fa", "text": "منظورم از زیرساخت پایه، تجمل یا تزئین اوقات فراغت نیست، بلکه دسترسی قابل اتکا به آموزش، زبان و تبادل عمومی است. کتابخانه‌ها فضایی ایجاد می‌کنند که مشارکت در آن به درآمد وابسته نیست." },
+            { "language": "ar", "text": "بالبنية الأساسية لا أقصد الرفاهية أو زينة وقت الفراغ، بل وصولًا موثوقًا إلى التعليم واللغة والتبادل العام. تخلق المكتبات فضاءً لا تعتمد فيه المشاركة على الدخل." },
+            { "language": "tr", "text": "Temel altyapı derken lüksü ya da boş zaman süsünü değil, eğitime, dile ve kamusal paylaşıma güvenilir erişimi kastediyorum. Kütüphaneler, katılımın gelire bağlı olmadığı bir alan yaratır." },
+            { "language": "ru", "text": "Под базовой инфраструктурой я имею в виду не роскошь и не украшение досуга, а надежный доступ к образованию, языку и публичному обмену. Библиотеки создают пространство, где участие не зависит от дохода." },
+            { "language": "ckb", "text": "بە ژێرخانی بنەڕەتی مەبەستم خۆشگوزەرانی یان ڕازاندنەوەی کاتی ئازاد نییە، بەڵکو دەستگەیشتنی پشتپێبەستراو بە پەروەردە، زمان و ئاڵوگۆڕی گشتییە. کتێبخانەکان شوێنێک دروست دەکەن کە بەشداری تێیدا بە داهاتەوە گرێدراو نییە." },
+            { "language": "kmr", "text": "Bi binesaziya bingehîn ez ne rewşenbîriya luks an xemilandina dema vala dibêjim, lê gihîştineke pêbawer bo perwerde, ziman û danûstandina giştî. Pirtûkxane cihê ku tê de beşdarbûn bi dahatê ve girêdayî nîne diafirînin." },
+            { "language": "pl", "text": "Przez infrastrukturę podstawową nie rozumiem luksusu ani ozdoby czasu wolnego, lecz niezawodny dostęp do edukacji, języka i publicznej wymiany. Biblioteki tworzą przestrzeń, w której uczestnictwo nie zależy od dochodu." },
+            { "language": "ro", "text": "Prin infrastructură de bază nu înțeleg lux sau decor al timpului liber, ci acces sigur la educație, limbă și schimb public. Bibliotecile creează un spațiu în care participarea nu depinde de venit." },
+            { "language": "sq", "text": "Me infrastrukturë bazë nuk nënkuptoj luks apo zbukurim të kohës së lirë, por qasje të besueshme në arsim, gjuhë dhe shkëmbim publik. Bibliotekat krijojnë një hapësirë ku pjesëmarrja nuk varet nga të ardhurat." }
+          ],
+          "function": "define-thesis",
+          "toneNote": "Conceptual definition with social precision.",
+          "expectedLearnerAction": "Clarify the concept and connect it to participation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "examiner",
+          "baseText": "Könnten Sie ein konkretes Beispiel nennen? Sonst bleibt Ihre These sehr abstrakt.",
+          "translations": [
+            { "language": "en", "text": "Could you give a concrete example? Otherwise your thesis remains very abstract." },
+            { "language": "fa", "text": "می‌توانید یک مثال مشخص بزنید؟ وگرنه تز شما خیلی انتزاعی می‌ماند." },
+            { "language": "ar", "text": "هل يمكنكم ذكر مثال ملموس؟ وإلا ستبقى أطروحتكم مجردة جدًا." },
+            { "language": "tr", "text": "Somut bir örnek verebilir misiniz? Yoksa teziniz çok soyut kalır." },
+            { "language": "ru", "text": "Можете привести конкретный пример? Иначе ваш тезис остается слишком абстрактным." },
+            { "language": "ckb", "text": "دەتوانیت نموونەیەکی دیاریکراو بهێنیت؟ ئەگەر نا تێزەکەت زۆر ئەبستراکت دەمێنێتەوە." },
+            { "language": "kmr", "text": "Hûn dikarin mînakeke şênber bidin? Heke na teza we pir razber dimîne." },
+            { "language": "pl", "text": "Czy może Pan/Pani podać konkretny przykład? W przeciwnym razie teza pozostaje bardzo abstrakcyjna." },
+            { "language": "ro", "text": "Puteți da un exemplu concret? Altfel teza dumneavoastră rămâne foarte abstractă." },
+            { "language": "sq", "text": "A mund të jepni një shembull konkret? Përndryshe teza juaj mbetet shumë abstrakte." }
+          ],
+          "function": "request-example",
+          "toneNote": "The examiner requests concreteness.",
+          "expectedLearnerAction": "Give one example and link it back to the abstract claim."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein Beispiel wäre ein kostenloser Sprach- und Medienworkshop in einer Stadtbibliothek. Dort geht es nicht nur um ein einzelnes Angebot, sondern um die Fähigkeit, Informationen zu prüfen, Anträge zu verstehen und kulturelle Orientierung zu finden.",
+          "translations": [
+            { "language": "en", "text": "One example would be a free language and media workshop in a city library. It is not only about one single offer, but about the ability to check information, understand applications, and find cultural orientation." },
+            { "language": "fa", "text": "یک مثال می‌تواند کارگاه رایگان زبان و رسانه در کتابخانه شهری باشد. موضوع فقط یک پیشنهاد منفرد نیست، بلکه توانایی بررسی اطلاعات، فهم فرم‌های اداری و پیدا کردن جهت‌گیری فرهنگی است." },
+            { "language": "ar", "text": "يمكن أن يكون المثال ورشة مجانية للغة والإعلام في مكتبة مدينة. الأمر لا يتعلق بعرض واحد فقط، بل بالقدرة على فحص المعلومات، وفهم الطلبات، وإيجاد توجيه ثقافي." },
+            { "language": "tr", "text": "Bir örnek, şehir kütüphanesinde ücretsiz bir dil ve medya atölyesi olabilir. Burada mesele yalnızca tek bir hizmet değil, bilgiyi kontrol etme, başvuruları anlama ve kültürel yön bulma becerisidir." },
+            { "language": "ru", "text": "Примером мог бы быть бесплатный языковой и медийный семинар в городской библиотеке. Речь идет не только об отдельном предложении, а о способности проверять информацию, понимать заявления и находить культурную ориентацию." },
+            { "language": "ckb", "text": "نموونەیەک دەتوانێت وۆرکشۆپێکی خۆڕایی زمان و میدیا لە کتێبخانەی شار بێت. لەوێ باس تەنها لە خزمەتگوزارییەکی تاک ناکرێت، بەڵکو لە توانای پشکنینی زانیاری، تێگەیشتن لە داواکارییەکان و دۆزینەوەی ئاراستەی کەلتووری دەکرێت." },
+            { "language": "kmr", "text": "Mînakek dikare atolyeyeke belaş a ziman û medyayê li pirtûkxaneya bajêr be. Li wir mijar ne tenê pêşkêşiyeke yekane ye, lê şiyana kontrolkirina agahiyan, fêmkirina daxwazan û dîtina rêbereke çandî ye." },
+            { "language": "pl", "text": "Przykładem mógłby być bezpłatny warsztat językowo-medialny w bibliotece miejskiej. Nie chodzi tylko o jedną ofertę, lecz o umiejętność sprawdzania informacji, rozumienia wniosków i znajdowania orientacji kulturowej." },
+            { "language": "ro", "text": "Un exemplu ar fi un atelier gratuit de limbă și media într-o bibliotecă municipală. Nu este vorba doar despre o singură ofertă, ci despre capacitatea de a verifica informații, de a înțelege cereri și de a găsi orientare culturală." },
+            { "language": "sq", "text": "Një shembull do të ishte një punëtori falas për gjuhë dhe media në një bibliotekë qyteti. Nuk bëhet fjalë vetëm për një ofertë të vetme, por për aftësinë për të kontrolluar informacionin, për të kuptuar aplikimet dhe për të gjetur orientim kulturor." }
+          ],
+          "function": "give-example",
+          "toneNote": "Concrete example linked to broader capacity.",
+          "expectedLearnerAction": "Use one example to make the abstract thesis vivid."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Man könnte einwenden, dass solche Aufgaben eher Schulen, Volkshochschulen oder Beratungsstellen übernehmen sollten. Warum gerade Bibliotheken?",
+          "translations": [
+            { "language": "en", "text": "One could object that such tasks should rather be handled by schools, continuing education centers, or advisory offices. Why libraries in particular?" },
+            { "language": "fa", "text": "ممکن است ایراد گرفته شود که چنین وظایفی را بهتر است مدرسه‌ها، مراکز آموزش بزرگسالان یا مراکز مشاوره بر عهده بگیرند. چرا دقیقاً کتابخانه‌ها؟" },
+            { "language": "ar", "text": "قد يُعترض بأن مثل هذه المهام ينبغي أن تتولاها المدارس أو مراكز التعليم الشعبي أو مراكز الإرشاد. لماذا المكتبات تحديدًا؟" },
+            { "language": "tr", "text": "Böyle görevleri okulların, halk eğitim merkezlerinin ya da danışma kurumlarının üstlenmesi gerektiği söylenebilir. Neden özellikle kütüphaneler?" },
+            { "language": "ru", "text": "Можно возразить, что такие задачи скорее должны брать на себя школы, центры образования или консультационные службы. Почему именно библиотеки?" },
+            { "language": "ckb", "text": "دەکرێت ڕەخنە بگیرێت کە وەها ئەرکان باشترە قوتابخانە، ناوەندی فێرکاری گشتی یان شوێنی ڕاوێژکاری وەربگرن. بۆچی بە تایبەتی کتێبخانەکان؟" },
+            { "language": "kmr", "text": "Dibe ku were gotin ku divê ev erk zêdetir ji hêla dibistan, navendên perwerdeya gel an cihên şêwirmendiyê ve bêne girtin. Çima bi taybetî pirtûkxane?" },
+            { "language": "pl", "text": "Można zarzucić, że takie zadania powinny raczej przejmować szkoły, uniwersytety ludowe albo punkty doradcze. Dlaczego właśnie biblioteki?" },
+            { "language": "ro", "text": "S-ar putea obiecta că asemenea sarcini ar trebui preluate mai degrabă de școli, centre de educație pentru public sau servicii de consiliere. De ce tocmai bibliotecile?" },
+            { "language": "sq", "text": "Mund të kundërshtohet se detyra të tilla duhet t'i marrin më mirë shkollat, qendrat e arsimit publik ose zyrat këshilluese. Pse pikërisht bibliotekat?" }
+          ],
+          "function": "institutional-objection",
+          "toneNote": "The examiner introduces a reasonable institutional objection.",
+          "expectedLearnerAction": "Acknowledge overlap but justify the distinct role of libraries."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Der Einwand ist berechtigt, weil Bibliotheken andere Institutionen nicht ersetzen können. Ihr besonderer Wert liegt aber gerade in der niedrigen Schwelle: Man muss keinen Kurs buchen und kein Problem nachweisen, um Zugang zu Wissen und Beratung im Kleinen zu bekommen.",
+          "translations": [
+            { "language": "en", "text": "The objection is justified because libraries cannot replace other institutions. But their special value lies precisely in the low threshold: you do not need to book a course or prove a problem in order to gain access to knowledge and small-scale guidance." },
+            { "language": "fa", "text": "این ایراد بجاست، چون کتابخانه‌ها نمی‌توانند جای نهادهای دیگر را بگیرند. اما ارزش ویژه آن‌ها دقیقاً در آستانه پایین دسترسی است: لازم نیست دوره‌ای رزرو کنید یا مشکلی را اثبات کنید تا به دانش و راهنمایی محدود دسترسی پیدا کنید." },
+            { "language": "ar", "text": "الاعتراض مبرر، لأن المكتبات لا تستطيع أن تحل محل مؤسسات أخرى. لكن قيمتها الخاصة تكمن بالضبط في سهولة الوصول: لا يجب حجز دورة أو إثبات مشكلة للحصول على معرفة وإرشاد محدود." },
+            { "language": "tr", "text": "İtiraz haklı, çünkü kütüphaneler başka kurumların yerini alamaz. Ama özel değeri tam da düşük erişim eşiğindedir: bilgiye ve küçük ölçekte rehberliğe ulaşmak için kurs ayırtmanız ya da sorun kanıtlamanız gerekmez." },
+            { "language": "ru", "text": "Возражение оправдано, потому что библиотеки не могут заменить другие учреждения. Но их особая ценность именно в низком пороге доступа: не нужно записываться на курс или доказывать проблему, чтобы получить доступ к знаниям и небольшой ориентации." },
+            { "language": "ckb", "text": "ڕەخنەکە جێی خۆیەتی، چونکە کتێبخانەکان ناتوانن جێی دامەزراوەکانی تر بگرنەوە. بەڵام بهای تایبەتییان لە ئاستی نزمی دەستگەیشتنەوەیە: پێویست ناکات کۆرسێک تۆمار بکەیت یان کێشەیەک بسەلمێنیت بۆ ئەوەی دەستت بە زانیاری و ڕێنمایی بچووک بگات." },
+            { "language": "kmr", "text": "Îtiraz rewa ye, ji ber ku pirtûkxane nikarin cihê saziyên din bigirin. Lê nirxa wan a taybetî di asta nizm a gihîştinê de ye: pêwîst nake hûn kursekê veqetînin an pirsgirêkekê îsbat bikin da ku bigihîjin zanînê û rêberiyeke biçûk." },
+            { "language": "pl", "text": "Zarzut jest uzasadniony, bo biblioteki nie mogą zastąpić innych instytucji. Ich szczególna wartość polega jednak na niskim progu dostępu: nie trzeba zapisywać się na kurs ani wykazywać problemu, by uzyskać dostęp do wiedzy i drobnego wsparcia orientacyjnego." },
+            { "language": "ro", "text": "Obiecția este justificată, deoarece bibliotecile nu pot înlocui alte instituții. Valoarea lor specială constă însă tocmai în pragul scăzut: nu trebuie să rezervați un curs sau să dovediți o problemă pentru a avea acces la cunoaștere și la îndrumare punctuală." },
+            { "language": "sq", "text": "Kundërshtimi është i drejtë, sepse bibliotekat nuk mund të zëvendësojnë institucione të tjera. Por vlera e tyre e veçantë qëndron pikërisht te pragu i ulët: nuk duhet të regjistroni një kurs apo të provoni një problem për të pasur qasje në dije dhe në udhëzim të vogël." }
+          ],
+          "function": "answer-institutional-objection",
+          "toneNote": "Concession plus distinct institutional role.",
+          "expectedLearnerAction": "Accept the objection and define the unique role."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "examiner",
+          "baseText": "Wie gehen Sie mit dem Kostenargument um? Kommunen haben begrenzte Mittel.",
+          "translations": [
+            { "language": "en", "text": "How do you deal with the cost argument? Municipalities have limited funds." },
+            { "language": "fa", "text": "با استدلال هزینه‌ها چگونه برخورد می‌کنید؟ شهرداری‌ها منابع محدودی دارند." },
+            { "language": "ar", "text": "كيف تتعاملون مع حجة التكاليف؟ لدى البلديات موارد محدودة." },
+            { "language": "tr", "text": "Maliyet argümanıyla nasıl başa çıkıyorsunuz? Belediyelerin kaynakları sınırlı." },
+            { "language": "ru", "text": "Как вы работаете с аргументом о расходах? У муниципалитетов ограниченные средства." },
+            { "language": "ckb", "text": "چۆن مامەڵە لەگەڵ بەڵگەی تێچوو دەکەیت؟ شارەوانییەکان سەرچاوەی سنوورداریان هەیە." },
+            { "language": "kmr", "text": "Hûn çawa bi argumana lêçûnê re mijûl dibin? Belediyeyan çavkaniyên sînorkirî hene." },
+            { "language": "pl", "text": "Jak odnosi się Pan/Pani do argumentu kosztów? Gminy mają ograniczone środki." },
+            { "language": "ro", "text": "Cum abordați argumentul costurilor? Municipalitățile au resurse limitate." },
+            { "language": "sq", "text": "Si e trajtoni argumentin e kostove? Komunat kanë mjete të kufizuara." }
+          ],
+          "function": "cost-objection",
+          "toneNote": "The examiner tests whether the learner can qualify the thesis.",
+          "expectedLearnerAction": "Acknowledge resource limits and propose criteria."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das Kostenargument darf man nicht wegwischen. Ich würde deshalb keine grenzenlose Ausweitung fordern, sondern Kriterien: offene Zugänglichkeit, nachweisbarer Bedarf, Kooperation mit bestehenden Trägern und regelmäßige Prüfung, ob Angebote tatsächlich genutzt werden.",
+          "translations": [
+            { "language": "en", "text": "The cost argument should not be brushed aside. I would therefore not demand unlimited expansion, but criteria: open access, demonstrable need, cooperation with existing providers, and regular review of whether offers are actually used." },
+            { "language": "fa", "text": "استدلال هزینه‌ها را نباید کنار زد. بنابراین من گسترش نامحدود مطالبه نمی‌کنم، بلکه معیار می‌گذارم: دسترسی باز، نیاز قابل اثبات، همکاری با ارائه‌دهندگان موجود و بررسی منظم اینکه آیا خدمات واقعاً استفاده می‌شوند یا نه." },
+            { "language": "ar", "text": "لا ينبغي تجاهل حجة التكاليف. لذلك لن أطالب بتوسع غير محدود، بل بمعايير: وصول مفتوح، حاجة قابلة للإثبات، تعاون مع جهات قائمة، ومراجعة منتظمة لمعرفة ما إذا كانت العروض تُستخدم فعلًا." },
+            { "language": "tr", "text": "Maliyet argümanı göz ardı edilmemeli. Bu yüzden sınırsız genişleme değil, ölçütler isterdim: açık erişim, kanıtlanabilir ihtiyaç, mevcut sağlayıcılarla işbirliği ve hizmetlerin gerçekten kullanılıp kullanılmadığının düzenli kontrolü." },
+            { "language": "ru", "text": "Аргумент о расходах нельзя просто отмахнуть. Поэтому я требовал бы не безграничного расширения, а критериев: открытого доступа, доказуемой потребности, сотрудничества с существующими структурами и регулярной проверки того, действительно ли предложения используются." },
+            { "language": "ckb", "text": "نابێت بەڵگەی تێچوو پشتگوێ بخرێت. بۆیە من داوای فراوانکردنی بێسنوور ناکەم، بەڵکو پێوەر دادەنێم: دەستگەیشتنی کراوە، پێویستیی دەرکەوتوو، هاوکاری لەگەڵ دابینکەرانی ئێستا و پشکنینی ڕێکخراو کە خزمەتگوزارییەکان بەڕاستی بەکاردەهێنرێن یان نا." },
+            { "language": "kmr", "text": "Divê argumana lêçûnê neyê paşguhkirin. Ji ber vê ez firehkirineke bê sînor naxwazim, lê pîvanan dixwazim: gihîştina vekirî, hewcedariya tê nîşandan, hevkarî bi peydakirinên heyî re û kontrola birêkûpêk ka pêşkêşî rastî tên bikaranîn an na." },
+            { "language": "pl", "text": "Argumentu kosztów nie wolno zbyć. Dlatego nie postulowałbym/postulowałabym nieograniczonego rozszerzania, lecz kryteria: otwarty dostęp, wykazalną potrzebę, współpracę z istniejącymi podmiotami i regularną kontrolę, czy oferta jest rzeczywiście używana." },
+            { "language": "ro", "text": "Argumentul costurilor nu trebuie dat la o parte. De aceea nu aș cere extindere nelimitată, ci criterii: acces deschis, nevoie demonstrabilă, cooperare cu furnizori existenți și verificare regulată dacă ofertele sunt folosite efectiv." },
+            { "language": "sq", "text": "Argumenti i kostove nuk duhet hedhur mënjanë. Prandaj nuk do të kërkoja zgjerim pa kufi, por kritere: qasje të hapur, nevojë të vërtetueshme, bashkëpunim me ofrues ekzistues dhe kontroll të rregullt nëse ofertat përdoren vërtet." }
+          ],
+          "function": "qualify-thesis",
+          "toneNote": "Fair concession plus operational criteria.",
+          "expectedLearnerAction": "Limit the thesis and provide evaluation criteria."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Bitte formulieren Sie zum Schluss eine knappe, aber differenzierte Position.",
+          "translations": [
+            { "language": "en", "text": "Please formulate a brief but nuanced final position." },
+            { "language": "fa", "text": "لطفاً در پایان یک موضع کوتاه اما ظریف بیان کنید." },
+            { "language": "ar", "text": "يرجى صياغة موقف ختامي موجز لكنه متمايز." },
+            { "language": "tr", "text": "Lütfen sonunda kısa ama ayrıntılı bir görüş formüle edin." },
+            { "language": "ru", "text": "Пожалуйста, сформулируйте в конце краткую, но дифференцированную позицию." },
+            { "language": "ckb", "text": "تکایە لە کۆتاییدا هەڵوێستێکی کورت بەڵام جیاوازکراوە دابڕێژە." },
+            { "language": "kmr", "text": "Ji kerema xwe di dawiyê de helwesteke kurt lê cuda ava bikin." },
+            { "language": "pl", "text": "Proszę na koniec sformułować krótkie, ale zniuansowane stanowisko." },
+            { "language": "ro", "text": "Vă rog să formulați la final o poziție scurtă, dar nuanțată." },
+            { "language": "sq", "text": "Ju lutem në fund formuloni një qëndrim të shkurtër, por të nuancuar." }
+          ],
+          "function": "request-final-position",
+          "toneNote": "The examiner asks for synthesis.",
+          "expectedLearnerAction": "Close with a qualified recommendation."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Meine Position ist daher: Bibliotheken sollten nicht jede kulturelle Aufgabe übernehmen, aber als offene Infrastruktur gestärkt werden, wo sie Bildung, Orientierung und Begegnung niedrigschwellig verbinden. Entscheidend ist nicht Größe, sondern begründete Zugänglichkeit.",
+          "translations": [
+            { "language": "en", "text": "My position is therefore: libraries should not take on every cultural task, but they should be strengthened as open infrastructure where they connect education, orientation, and encounter with a low threshold. The decisive point is not size, but justified accessibility." },
+            { "language": "fa", "text": "بنابراین موضع من این است: کتابخانه‌ها نباید هر وظیفه فرهنگی را بر عهده بگیرند، اما باید به‌عنوان زیرساخت باز تقویت شوند، جایی که آموزش، جهت‌یابی و دیدار اجتماعی را با آستانه دسترسی پایین پیوند می‌دهند. نکته تعیین‌کننده اندازه نیست، بلکه دسترسیِ قابل توجیه است." },
+            { "language": "ar", "text": "لذلك موقفي هو: لا ينبغي أن تتولى المكتبات كل مهمة ثقافية، لكنها ينبغي أن تُقوّى كبنية مفتوحة حيث تربط التعليم والتوجيه واللقاء بعتبة وصول منخفضة. الحاسم ليس الحجم، بل إتاحة مبررة." },
+            { "language": "tr", "text": "Bu yüzden görüşüm şu: kütüphaneler her kültürel görevi üstlenmemeli, ama eğitim, yön bulma ve karşılaşmayı düşük erişim eşiğiyle birleştirdikleri yerde açık altyapı olarak güçlendirilmelidir. Belirleyici olan büyüklük değil, gerekçeli erişilebilirliktir." },
+            { "language": "ru", "text": "Поэтому моя позиция такова: библиотеки не должны брать на себя каждую культурную задачу, но их следует укреплять как открытую инфраструктуру там, где они соединяют образование, ориентацию и встречу с низким порогом доступа. Решающим является не масштаб, а обоснованная доступность." },
+            { "language": "ckb", "text": "بۆیە هەڵوێستی من ئەمەیە: کتێبخانەکان نابێت هەموو ئەرکێکی کەلتووری وەربگرن، بەڵام وەک ژێرخانی کراوە دەبێت بەهێز بکرێن لەو شوێنەی پەروەردە، ئاراستەدۆزین و دیدار بە ئاستێکی نزمی دەستگەیشتنەوە پەیوەست دەکەن. خاڵی گرنگ قەبارە نییە، بەڵکو دەستگەیشتنی پاساوکراوە." },
+            { "language": "kmr", "text": "Ji ber vê helwesta min ev e: divê pirtûkxane her erka çandî negirin, lê wek binesaziyeke vekirî bêne xurtkirin li cihê ku perwerde, rêdîtin û hevdîtinê bi asta nizm a gihîştinê ve girê didin. Ya girîng mezinahî nîne, lê gihîştina bi sedem e." },
+            { "language": "pl", "text": "Moje stanowisko jest więc takie: biblioteki nie powinny przejmować każdego zadania kulturowego, ale należy je wzmacniać jako otwartą infrastrukturę tam, gdzie łączą edukację, orientację i spotkanie z niskim progiem dostępu. Decydująca nie jest skala, lecz uzasadniona dostępność." },
+            { "language": "ro", "text": "Poziția mea este așadar: bibliotecile nu ar trebui să preia orice sarcină culturală, dar ar trebui întărite ca infrastructură deschisă acolo unde leagă educația, orientarea și întâlnirea de un prag scăzut de acces. Decisivă nu este mărimea, ci accesibilitatea justificată." },
+            { "language": "sq", "text": "Prandaj qëndrimi im është ky: bibliotekat nuk duhet të marrin përsipër çdo detyrë kulturore, por duhet të forcohen si infrastrukturë e hapur aty ku lidhin arsimin, orientimin dhe takimin me prag të ulët qasjeje. Vendimtare nuk është madhësia, por qasja e arsyetuar." }
+          ],
+          "function": "qualified-conclusion",
+          "toneNote": "Concise and qualified final thesis.",
+          "expectedLearnerAction": "Summarize the argument with limits and criteria."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-define-infrastructure",
+              "text": "Mit Grundversorgung meine ich nicht Luxus, sondern verlässlichen Zugang zu Bildung, Sprache und öffentlichem Austausch.",
+              "translations": [
+                { "language": "en", "text": "By basic infrastructure I do not mean luxury, but reliable access to education, language, and public exchange." },
+                { "language": "fa", "text": "منظورم از زیرساخت پایه تجمل نیست، بلکه دسترسی قابل اتکا به آموزش، زبان و تبادل عمومی است." },
+                { "language": "ar", "text": "بالبنية الأساسية لا أقصد الرفاهية، بل الوصول الموثوق إلى التعليم واللغة والتبادل العام." },
+                { "language": "tr", "text": "Temel altyapı derken lüksü değil, eğitime, dile ve kamusal paylaşıma güvenilir erişimi kastediyorum." },
+                { "language": "ru", "text": "Под базовой инфраструктурой я имею в виду не роскошь, а надежный доступ к образованию, языку и публичному обмену." },
+                { "language": "ckb", "text": "بە ژێرخانی بنەڕەتی مەبەستم خۆشگوزەرانی نییە، بەڵکو دەستگەیشتنی پشتپێبەستراو بە پەروەردە، زمان و ئاڵوگۆڕی گشتییە." },
+                { "language": "kmr", "text": "Bi binesaziya bingehîn ez ne luksê dibêjim, lê gihîştineke pêbawer bo perwerde, ziman û danûstandina giştî." },
+                { "language": "pl", "text": "Przez infrastrukturę podstawową nie rozumiem luksusu, lecz niezawodny dostęp do edukacji, języka i publicznej wymiany." },
+                { "language": "ro", "text": "Prin infrastructură de bază nu înțeleg lux, ci acces sigur la educație, limbă și schimb public." },
+                { "language": "sq", "text": "Me infrastrukturë bazë nuk nënkuptoj luks, por qasje të besueshme në arsim, gjuhë dhe shkëmbim publik." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong C2 opening: it defines the concept and prevents the thesis from sounding unlimited.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong C2 opening: it defines the concept and prevents the thesis from sounding unlimited." },
+                { "language": "fa", "text": "شروع قوی C2: مفهوم را تعریف می‌کند و نمی‌گذارد تز نامحدود به نظر برسد." },
+                { "language": "ar", "text": "بداية قوية في C2: تعرف المفهوم وتمنع الأطروحة من أن تبدو غير محدودة." },
+                { "language": "tr", "text": "Güçlü C2 başlangıcı: kavramı tanımlar ve tezin sınırsız duyulmasını önler." },
+                { "language": "ru", "text": "Сильное начало C2: оно определяет понятие и не дает тезису звучать безгранично." },
+                { "language": "ckb", "text": "دەستپێکی بەهێزی C2: چەمکەکە پێناسە دەکات و ڕێ دەگرێت لەوەی تێزەکە بێسنوور دەربکەوێت." },
+                { "language": "kmr", "text": "Destpêkeke xurt a C2: têgehê pênase dike û nahêle tez bê sînor xuya bike." },
+                { "language": "pl", "text": "Mocne otwarcie C2: definiuje pojęcie i nie pozwala, by teza brzmiała bezgranicznie." },
+                { "language": "ro", "text": "Deschidere puternică de C2: definește conceptul și împiedică teza să sune nelimitat." },
+                { "language": "sq", "text": "Hapje e fortë C2: përcakton konceptin dhe nuk lejon që teza të tingëllojë pa kufi." }
+              ]
+            },
+            {
+              "id": "weak-nice-place",
+              "text": "Bibliotheken sind wichtig, weil sie schöne und ruhige Orte sind.",
+              "translations": [
+                { "language": "en", "text": "Libraries are important because they are pleasant and quiet places." },
+                { "language": "fa", "text": "کتابخانه‌ها مهم‌اند، چون مکان‌هایی زیبا و آرام هستند." },
+                { "language": "ar", "text": "المكتبات مهمة لأنها أماكن جميلة وهادئة." },
+                { "language": "tr", "text": "Kütüphaneler önemlidir, çünkü güzel ve sakin yerlerdir." },
+                { "language": "ru", "text": "Библиотеки важны, потому что это приятные и тихие места." },
+                { "language": "ckb", "text": "کتێبخانەکان گرنگن، چونکە شوێنی جوان و ئارامن." },
+                { "language": "kmr", "text": "Pirtûkxane girîng in, ji ber ku cihên xweş û aram in." },
+                { "language": "pl", "text": "Biblioteki są ważne, bo są przyjemnymi i cichymi miejscami." },
+                { "language": "ro", "text": "Bibliotecile sunt importante pentru că sunt locuri plăcute și liniștite." },
+                { "language": "sq", "text": "Bibliotekat janë të rëndësishme sepse janë vende të bukura dhe të qeta." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but too simple: it gives an impression, not a defensible cultural concept.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too simple: it gives an impression, not a defensible cultural concept." },
+                { "language": "fa", "text": "قابل تصور اما خیلی ساده است: برداشت شخصی می‌دهد، نه یک مفهوم فرهنگی قابل دفاع." },
+                { "language": "ar", "text": "محتمل لكنه بسيط جدًا: يقدم انطباعًا لا مفهومًا ثقافيًا يمكن الدفاع عنه." },
+                { "language": "tr", "text": "Makul ama fazla basit: savunulabilir bir kültürel kavram değil, izlenim verir." },
+                { "language": "ru", "text": "Возможно, но слишком просто: это дает впечатление, а не защищаемое культурное понятие." },
+                { "language": "ckb", "text": "ئەگەری هەیە، بەڵام زۆر سادەیە: تێگەیشتنێکی کەسی دەدات، نە چەمکێکی کەلتووری بەرگریلێکراو." },
+                { "language": "kmr", "text": "Mumkun e, lê pir sade ye: bandorekê dide, ne têgeheke çandî ya dikare were parastin." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest zbyt proste: daje wrażenie, nie możliwe do obrony pojęcie kulturowe." },
+                { "language": "ro", "text": "Plauzibil, dar prea simplu: oferă o impresie, nu un concept cultural susținut." },
+                { "language": "sq", "text": "E mundshme, por shumë e thjeshtë: jep një përshtypje, jo një koncept kulturor të mbrojtshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-example-linked",
+              "text": "Ein kostenloser Sprach- und Medienworkshop zeigt, wie Bibliotheken Zugang zu Bildung, Information und Orientierung verbinden.",
+              "translations": [
+                { "language": "en", "text": "A free language and media workshop shows how libraries connect access to education, information, and orientation." },
+                { "language": "fa", "text": "یک کارگاه رایگان زبان و رسانه نشان می‌دهد کتابخانه‌ها چگونه دسترسی به آموزش، اطلاعات و جهت‌یابی را به هم وصل می‌کنند." },
+                { "language": "ar", "text": "تُظهر ورشة مجانية للغة والإعلام كيف تربط المكتبات الوصول إلى التعليم والمعلومات والتوجيه." },
+                { "language": "tr", "text": "Ücretsiz bir dil ve medya atölyesi, kütüphanelerin eğitime, bilgiye ve yön bulmaya erişimi nasıl bağladığını gösterir." },
+                { "language": "ru", "text": "Бесплатный языковой и медийный семинар показывает, как библиотеки связывают доступ к образованию, информации и ориентации." },
+                { "language": "ckb", "text": "وۆرکشۆپێکی خۆڕایی زمان و میدیا نیشان دەدات کتێبخانەکان چۆن دەستگەیشتن بە پەروەردە، زانیاری و ئاراستەدۆزین پەیوەست دەکەن." },
+                { "language": "kmr", "text": "Atolyeyeke belaş a ziman û medyayê nîşan dide ku pirtûkxane çawa gihîştina perwerde, agahî û rêdîtinê girê didin." },
+                { "language": "pl", "text": "Bezpłatny warsztat językowo-medialny pokazuje, jak biblioteki łączą dostęp do edukacji, informacji i orientacji." },
+                { "language": "ro", "text": "Un atelier gratuit de limbă și media arată cum bibliotecile leagă accesul la educație, informație și orientare." },
+                { "language": "sq", "text": "Një punëtori falas për gjuhë dhe media tregon si bibliotekat lidhin qasjen në arsim, informacion dhe orientim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong example: it is concrete and immediately linked back to the thesis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong example: it is concrete and immediately linked back to the thesis." },
+                { "language": "fa", "text": "مثال قوی: مشخص است و بلافاصله به تز اصلی وصل می‌شود." },
+                { "language": "ar", "text": "مثال قوي: ملموس ويرتبط مباشرة بالأطروحة." },
+                { "language": "tr", "text": "Güçlü örnek: somut ve hemen teze bağlanıyor." },
+                { "language": "ru", "text": "Сильный пример: он конкретен и сразу связан с тезисом." },
+                { "language": "ckb", "text": "نموونەی بەهێز: دیاریکراوە و دەستبەجێ بە تێزەکە پەیوەست دەبێت." },
+                { "language": "kmr", "text": "Mînaka xurt: şênber e û yekser bi tezê ve tê girêdan." },
+                { "language": "pl", "text": "Mocny przykład: jest konkretny i od razu powiązany z tezą." },
+                { "language": "ro", "text": "Exemplu puternic: este concret și legat imediat de teză." },
+                { "language": "sq", "text": "Shembull i fortë: është konkret dhe lidhet menjëherë me tezën." }
+              ]
+            },
+            {
+              "id": "weak-private-preference",
+              "text": "Ich gehe selbst gern in Bibliotheken, deshalb finde ich sie kulturell wichtig.",
+              "translations": [
+                { "language": "en", "text": "I personally like going to libraries, so I find them culturally important." },
+                { "language": "fa", "text": "من خودم دوست دارم به کتابخانه بروم، برای همین آن‌ها را از نظر فرهنگی مهم می‌دانم." },
+                { "language": "ar", "text": "أنا شخصيًا أحب الذهاب إلى المكتبات، لذلك أراها مهمة ثقافيًا." },
+                { "language": "tr", "text": "Ben kütüphanelere gitmeyi severim, bu yüzden onları kültürel olarak önemli buluyorum." },
+                { "language": "ru", "text": "Я сам люблю ходить в библиотеки, поэтому считаю их культурно важными." },
+                { "language": "ckb", "text": "من خۆم حەزم لە چوونە کتێبخانەیە، بۆیە لە ڕووی کەلتوورییەوە بە گرنگیان دەزانم." },
+                { "language": "kmr", "text": "Ez bi xwe hez dikim biçim pirtûkxaneyan, ji ber vê wan ji aliyê çandî ve girîng dibînim." },
+                { "language": "pl", "text": "Sam/Sama lubię chodzić do bibliotek, dlatego uważam je za ważne kulturowo." },
+                { "language": "ro", "text": "Mie îmi place să merg la biblioteci, de aceea le consider importante cultural." },
+                { "language": "sq", "text": "Mua më pëlqen të shkoj në biblioteka, prandaj i konsideroj të rëndësishme nga ana kulturore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too personal for C2: a private preference cannot carry the public thesis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too personal for C2: a private preference cannot carry the public thesis." },
+                { "language": "fa", "text": "برای C2 بیش از حد شخصی است: ترجیح فردی نمی‌تواند تز عمومی را حمل کند." },
+                { "language": "ar", "text": "شخصي جدًا لمستوى C2: تفضيل فردي لا يستطيع حمل الأطروحة العامة." },
+                { "language": "tr", "text": "C2 için fazla kişisel: bireysel tercih kamusal tezi taşıyamaz." },
+                { "language": "ru", "text": "Слишком лично для C2: личное предпочтение не может нести публичный тезис." },
+                { "language": "ckb", "text": "بۆ C2 زۆر کەسییە: ئارەزووی تاکەکەسی ناتوانێت تێزی گشتی هەڵبگرێت." },
+                { "language": "kmr", "text": "Ji bo C2 pir kesane ye: tercîheke kesane nikare teza giştî hilgire." },
+                { "language": "pl", "text": "Zbyt osobiste na C2: prywatna preferencja nie udźwignie tezy publicznej." },
+                { "language": "ro", "text": "Prea personal pentru C2: o preferință privată nu poate susține teza publică." },
+                { "language": "sq", "text": "Shumë personale për C2: një preferencë private nuk mund ta mbajë tezën publike." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-concession-role",
+              "text": "Der Einwand ist berechtigt, weil Bibliotheken andere Institutionen nicht ersetzen können.",
+              "translations": [
+                { "language": "en", "text": "The objection is justified because libraries cannot replace other institutions." },
+                { "language": "fa", "text": "این ایراد بجاست، چون کتابخانه‌ها نمی‌توانند جای نهادهای دیگر را بگیرند." },
+                { "language": "ar", "text": "الاعتراض مبرر، لأن المكتبات لا تستطيع أن تحل محل مؤسسات أخرى." },
+                { "language": "tr", "text": "İtiraz haklı, çünkü kütüphaneler başka kurumların yerini alamaz." },
+                { "language": "ru", "text": "Возражение оправдано, потому что библиотеки не могут заменить другие учреждения." },
+                { "language": "ckb", "text": "ڕەخنەکە جێی خۆیەتی، چونکە کتێبخانەکان ناتوانن جێی دامەزراوەکانی تر بگرنەوە." },
+                { "language": "kmr", "text": "Îtiraz rewa ye, ji ber ku pirtûkxane nikarin cihê saziyên din bigirin." },
+                { "language": "pl", "text": "Zarzut jest uzasadniony, bo biblioteki nie mogą zastąpić innych instytucji." },
+                { "language": "ro", "text": "Obiecția este justificată, deoarece bibliotecile nu pot înlocui alte instituții." },
+                { "language": "sq", "text": "Kundërshtimi është i drejtë, sepse bibliotekat nuk mund të zëvendësojnë institucione të tjera." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong concession: it accepts the objection and then opens space for the library's distinct role.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong concession: it accepts the objection and then opens space for the library's distinct role." },
+                { "language": "fa", "text": "پذیرش قوی: ایراد را می‌پذیرد و سپس جا برای نقش خاص کتابخانه باز می‌کند." },
+                { "language": "ar", "text": "تنازل قوي: يقبل الاعتراض ثم يفتح مجالًا لدور المكتبة الخاص." },
+                { "language": "tr", "text": "Güçlü kabul: itirazı kabul eder ve ardından kütüphanenin özel rolüne alan açar." },
+                { "language": "ru", "text": "Сильная уступка: она принимает возражение и затем открывает место для особой роли библиотеки." },
+                { "language": "ckb", "text": "پەژراندنێکی بەهێز: ڕەخنەکە وەردەگرێت و پاشان شوێن بۆ ڕۆڵی تایبەتی کتێبخانە دەکاتەوە." },
+                { "language": "kmr", "text": "Qebûlkirineke xurt: îtirazê qebûl dike û paşê cih bo rola taybet a pirtûkxaneyê vedike." },
+                { "language": "pl", "text": "Mocne ustępstwo: przyjmuje zarzut, a potem otwiera miejsce na szczególną rolę biblioteki." },
+                { "language": "ro", "text": "Concesie puternică: acceptă obiecția și apoi deschide spațiu pentru rolul distinct al bibliotecii." },
+                { "language": "sq", "text": "Pranim i fortë: e pranon kundërshtimin dhe pastaj hap vend për rolin e veçantë të bibliotekës." }
+              ]
+            },
+            {
+              "id": "weak-dismiss-other-institutions",
+              "text": "Schulen und Beratungsstellen reichen offenbar nicht aus, sonst bräuchte man diese Angebote nicht.",
+              "translations": [
+                { "language": "en", "text": "Schools and advisory offices are apparently not enough; otherwise these offers would not be needed." },
+                { "language": "fa", "text": "مدرسه‌ها و مراکز مشاوره ظاهراً کافی نیستند، وگرنه به این خدمات نیاز نبود." },
+                { "language": "ar", "text": "من الواضح أن المدارس ومراكز الإرشاد لا تكفي، وإلا لما احتجنا إلى هذه العروض." },
+                { "language": "tr", "text": "Okullar ve danışma kurumları anlaşılan yetmiyor; yoksa bu hizmetlere ihtiyaç olmazdı." },
+                { "language": "ru", "text": "Школ и консультационных служб, видимо, недостаточно, иначе такие предложения были бы не нужны." },
+                { "language": "ckb", "text": "قوتابخانە و شوێنەکانی ڕاوێژکاری بە دیارەوە بەس نین، ئەگەر نا پێویست بەو خزمەتگوزارییانە نەدەبوو." },
+                { "language": "kmr", "text": "Dibistan û cihên şêwirmendiyê xuya ye bes nînin; heke na ev pêşkêşî ne pêwîst bûn." },
+                { "language": "pl", "text": "Szkoły i punkty doradcze najwyraźniej nie wystarczają, inaczej takie oferty nie byłyby potrzebne." },
+                { "language": "ro", "text": "Școlile și serviciile de consiliere aparent nu sunt suficiente, altfel aceste oferte nu ar fi necesare." },
+                { "language": "sq", "text": "Shkollat dhe zyrat këshilluese duket se nuk mjaftojnë, përndryshe këto oferta nuk do të duheshin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too dismissive: it weakens cooperation and sounds less balanced than a C2 argument should.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too dismissive: it weakens cooperation and sounds less balanced than a C2 argument should." },
+                { "language": "fa", "text": "بیش از حد کنارزننده است: همکاری را تضعیف می‌کند و از استدلال C2 کمتر متعادل به نظر می‌رسد." },
+                { "language": "ar", "text": "رافض جدًا: يضعف التعاون ويبدو أقل توازنًا مما ينبغي لحجة C2." },
+                { "language": "tr", "text": "Fazla küçümseyici: işbirliğini zayıflatır ve C2 argümanından beklenenden daha dengesiz duyulur." },
+                { "language": "ru", "text": "Слишком пренебрежительно: это ослабляет сотрудничество и звучит менее сбалансированно, чем требуется для аргумента C2." },
+                { "language": "ckb", "text": "زۆر پشتگوێخەرە: هاوکاری لاواز دەکات و لەوەی بەڵگەی C2 پێویستی پێیە کەمتر هاوسەنگ دەبیسترێت." },
+                { "language": "kmr", "text": "Pir paşguhker e: hevkariyê lawaz dike û ji argumana C2 kêm hevseng xuya dike." },
+                { "language": "pl", "text": "Zbyt lekceważące: osłabia współpracę i brzmi mniej wyważenie, niż powinien argument C2." },
+                { "language": "ro", "text": "Prea disprețuitor: slăbește cooperarea și sună mai puțin echilibrat decât ar trebui pentru un argument C2." },
+                { "language": "sq", "text": "Shumë shpërfillëse: dobëson bashkëpunimin dhe tingëllon më pak e balancuar se sa duhet për një argument C2." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-cost-criteria",
+              "text": "Ich würde keine grenzenlose Ausweitung fordern, sondern Kriterien: offene Zugänglichkeit, Bedarf und regelmäßige Prüfung.",
+              "translations": [
+                { "language": "en", "text": "I would not demand unlimited expansion, but criteria: open access, need, and regular review." },
+                { "language": "fa", "text": "من گسترش نامحدود مطالبه نمی‌کنم، بلکه معیار می‌گذارم: دسترسی باز، نیاز و بررسی منظم." },
+                { "language": "ar", "text": "لن أطالب بتوسع غير محدود، بل بمعايير: وصول مفتوح، وحاجة، ومراجعة منتظمة." },
+                { "language": "tr", "text": "Sınırsız genişleme değil, ölçütler isterdim: açık erişim, ihtiyaç ve düzenli kontrol." },
+                { "language": "ru", "text": "Я требовал бы не безграничного расширения, а критериев: открытого доступа, потребности и регулярной проверки." },
+                { "language": "ckb", "text": "من داوای فراوانکردنی بێسنوور ناکەم، بەڵکو پێوەر دادەنێم: دەستگەیشتنی کراوە، پێویستی و پشکنینی ڕێکخراو." },
+                { "language": "kmr", "text": "Ez firehkirineke bê sînor naxwazim, lê pîvanan dixwazim: gihîştina vekirî, hewcedarî û kontrola birêkûpêk." },
+                { "language": "pl", "text": "Nie postulowałbym/postulowałabym nieograniczonego rozszerzania, lecz kryteria: otwarty dostęp, potrzebę i regularną kontrolę." },
+                { "language": "ro", "text": "Nu aș cere extindere nelimitată, ci criterii: acces deschis, nevoie și verificare regulată." },
+                { "language": "sq", "text": "Nuk do të kërkoja zgjerim pa kufi, por kritere: qasje të hapur, nevojë dhe kontroll të rregullt." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good C2 qualification: it takes cost seriously and turns the thesis into a testable position.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good C2 qualification: it takes cost seriously and turns the thesis into a testable position." },
+                { "language": "fa", "text": "محدودسازی خوب C2: هزینه را جدی می‌گیرد و تز را به موضعی قابل سنجش تبدیل می‌کند." },
+                { "language": "ar", "text": "تقييد جيد في C2: يأخذ التكلفة بجدية ويحول الأطروحة إلى موقف قابل للفحص." },
+                { "language": "tr", "text": "İyi C2 sınırlaması: maliyeti ciddiye alır ve tezi sınanabilir bir görüşe dönüştürür." },
+                { "language": "ru", "text": "Хорошее уточнение C2: оно серьезно относится к расходам и превращает тезис в проверяемую позицию." },
+                { "language": "ckb", "text": "سنووردارکردنی باشی C2: تێچوو بە جدی وەردەگرێت و تێزەکە دەکاتە هەڵوێستێکی پشکنینپێکراو." },
+                { "language": "kmr", "text": "Sînorkirina baş a C2: lêçûnê cidî digire û tezê dike helwesteke dikare were kontrolkirin." },
+                { "language": "pl", "text": "Dobre doprecyzowanie C2: traktuje koszty poważnie i zamienia tezę w stanowisko możliwe do sprawdzenia." },
+                { "language": "ro", "text": "Bună calificare de C2: ia costul în serios și transformă teza într-o poziție verificabilă." },
+                { "language": "sq", "text": "Kufizim i mirë C2: e merr seriozisht koston dhe e kthen tezën në një qëndrim të verifikueshëm." }
+              ]
+            },
+            {
+              "id": "weak-costs-unimportant",
+              "text": "Kosten sollten bei Kultur nicht die Hauptrolle spielen.",
+              "translations": [
+                { "language": "en", "text": "Costs should not play the main role in culture." },
+                { "language": "fa", "text": "هزینه‌ها نباید در فرهنگ نقش اصلی داشته باشند." },
+                { "language": "ar", "text": "لا ينبغي أن تلعب التكاليف الدور الرئيسي في الثقافة." },
+                { "language": "tr", "text": "Kültürde maliyetler ana rolü oynamamalıdır." },
+                { "language": "ru", "text": "Расходы не должны играть главную роль в культуре." },
+                { "language": "ckb", "text": "تێچوو نابێت لە کەلتووردا ڕۆڵی سەرەکی ببینێت." },
+                { "language": "kmr", "text": "Divê lêçûn di çandê de rola sereke nelîze." },
+                { "language": "pl", "text": "Koszty nie powinny odgrywać głównej roli w kulturze." },
+                { "language": "ro", "text": "Costurile nu ar trebui să joace rolul principal în cultură." },
+                { "language": "sq", "text": "Kostot nuk duhet të luajnë rolin kryesor në kulturë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Understandable but weak: it avoids the budget problem instead of answering it with criteria.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable but weak: it avoids the budget problem instead of answering it with criteria." },
+                { "language": "fa", "text": "قابل فهم اما ضعیف است: به‌جای پاسخ با معیار، از مسئله بودجه عبور می‌کند." },
+                { "language": "ar", "text": "مفهوم لكنه ضعيف: يتجنب مشكلة الميزانية بدلًا من الرد عليها بمعايير." },
+                { "language": "tr", "text": "Anlaşılır ama zayıf: bütçe sorununu ölçütlerle yanıtlamak yerine ondan kaçıyor." },
+                { "language": "ru", "text": "Понятно, но слабо: это обходит проблему бюджета вместо ответа через критерии." },
+                { "language": "ckb", "text": "تێگەیشتنەکە ڕوونە، بەڵام لاوازە: لە جیاتی وەڵامدانەوە بە پێوەر، لە کێشەی بودجە لا دەدات." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê lawaz e: li şûna bersiva bi pîvanan, ji pirsgirêka budceyê dûr dikeve." },
+                { "language": "pl", "text": "Zrozumiałe, ale słabe: omija problem budżetu zamiast odpowiedzieć na niego kryteriami." },
+                { "language": "ro", "text": "De înțeles, dar slab: evită problema bugetului în loc să răspundă cu criterii." },
+                { "language": "sq", "text": "E kuptueshme, por e dobët: shmang problemin e buxhetit në vend që t'i përgjigjet me kritere." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-qualified-conclusion",
+              "text": "Bibliotheken sollten nicht jede kulturelle Aufgabe übernehmen, aber als offene Infrastruktur dort gestärkt werden, wo sie Zugang und Orientierung verbinden.",
+              "translations": [
+                { "language": "en", "text": "Libraries should not take on every cultural task, but should be strengthened as open infrastructure where they connect access and orientation." },
+                { "language": "fa", "text": "کتابخانه‌ها نباید هر وظیفه فرهنگی را بر عهده بگیرند، اما باید جایی که دسترسی و جهت‌یابی را به هم وصل می‌کنند، به‌عنوان زیرساخت باز تقویت شوند." },
+                { "language": "ar", "text": "لا ينبغي أن تتولى المكتبات كل مهمة ثقافية، لكنها يجب أن تُقوّى كبنية مفتوحة حيث تربط الوصول بالتوجيه." },
+                { "language": "tr", "text": "Kütüphaneler her kültürel görevi üstlenmemeli, ama erişim ile yön bulmayı bağladıkları yerde açık altyapı olarak güçlendirilmelidir." },
+                { "language": "ru", "text": "Библиотеки не должны брать на себя каждую культурную задачу, но их следует укреплять как открытую инфраструктуру там, где они соединяют доступ и ориентацию." },
+                { "language": "ckb", "text": "کتێبخانەکان نابێت هەموو ئەرکێکی کەلتووری وەربگرن، بەڵام لەو شوێنەی دەستگەیشتن و ئاراستەدۆزین پەیوەست دەکەن دەبێت وەک ژێرخانی کراوە بەهێز بکرێن." },
+                { "language": "kmr", "text": "Divê pirtûkxane her erka çandî negirin, lê li cihê ku gihîştin û rêdîtinê girê didin wek binesaziyeke vekirî bêne xurtkirin." },
+                { "language": "pl", "text": "Biblioteki nie powinny przejmować każdego zadania kulturowego, ale należy je wzmacniać jako otwartą infrastrukturę tam, gdzie łączą dostęp i orientację." },
+                { "language": "ro", "text": "Bibliotecile nu ar trebui să preia orice sarcină culturală, dar ar trebui întărite ca infrastructură deschisă acolo unde leagă accesul și orientarea." },
+                { "language": "sq", "text": "Bibliotekat nuk duhet të marrin përsipër çdo detyrë kulturore, por duhet të forcohen si infrastrukturë e hapur aty ku lidhin qasjen dhe orientimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong conclusion: it limits the thesis and keeps the central cultural argument visible.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong conclusion: it limits the thesis and keeps the central cultural argument visible." },
+                { "language": "fa", "text": "جمع‌بندی قوی: تز را محدود می‌کند و استدلال فرهنگی اصلی را قابل دیدن نگه می‌دارد." },
+                { "language": "ar", "text": "خاتمة قوية: تحدد الأطروحة وتحافظ على الحجة الثقافية المركزية واضحة." },
+                { "language": "tr", "text": "Güçlü sonuç: tezi sınırlar ve temel kültürel argümanı görünür tutar." },
+                { "language": "ru", "text": "Сильное заключение: оно ограничивает тезис и сохраняет видимым центральный культурный аргумент." },
+                { "language": "ckb", "text": "کۆتاییەکی بەهێز: تێزەکە سنووردار دەکات و بەڵگەی کەلتووری سەرەکی بە دیاریکراوی دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Dawiyeke xurt: tezê sînor dike û argumana çandî ya navendî xuya dihêle." },
+                { "language": "pl", "text": "Mocne zakończenie: ogranicza tezę i utrzymuje widoczny główny argument kulturowy." },
+                { "language": "ro", "text": "Concluzie puternică: limitează teza și menține vizibil argumentul cultural central." },
+                { "language": "sq", "text": "Përfundim i fortë: kufizon tezën dhe mban të dukshëm argumentin kryesor kulturor." }
+              ]
+            },
+            {
+              "id": "weak-good-for-everyone",
+              "text": "Zusammenfassend sind Bibliotheken gut für alle und sollten mehr Geld bekommen.",
+              "translations": [
+                { "language": "en", "text": "In summary, libraries are good for everyone and should receive more money." },
+                { "language": "fa", "text": "در جمع‌بندی، کتابخانه‌ها برای همه خوب‌اند و باید پول بیشتری دریافت کنند." },
+                { "language": "ar", "text": "خلاصة القول، المكتبات مفيدة للجميع وينبغي أن تحصل على مال أكثر." },
+                { "language": "tr", "text": "Özetle, kütüphaneler herkes için iyidir ve daha fazla para almalıdır." },
+                { "language": "ru", "text": "В итоге библиотеки полезны для всех и должны получать больше денег." },
+                { "language": "ckb", "text": "بە پوختە، کتێبخانەکان بۆ هەمووان باشن و دەبێت پارەی زیاتر وەربگرن." },
+                { "language": "kmr", "text": "Bi kurtî, pirtûkxane ji bo herkesî baş in û divê pereyê zêdetir bistînin." },
+                { "language": "pl", "text": "Podsumowując, biblioteki są dobre dla wszystkich i powinny otrzymać więcej pieniędzy." },
+                { "language": "ro", "text": "Pe scurt, bibliotecile sunt bune pentru toți și ar trebui să primească mai mulți bani." },
+                { "language": "sq", "text": "Si përmbledhje, bibliotekat janë të mira për të gjithë dhe duhet të marrin më shumë para." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too broad for C2: it loses the criteria and sounds like a slogan.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad for C2: it loses the criteria and sounds like a slogan." },
+                { "language": "fa", "text": "برای C2 بیش از حد کلی است: معیارها را از دست می‌دهد و شبیه شعار به نظر می‌رسد." },
+                { "language": "ar", "text": "واسع جدًا لمستوى C2: يفقد المعايير ويبدو كشعار." },
+                { "language": "tr", "text": "C2 için fazla geniş: ölçütleri kaybeder ve slogan gibi duyulur." },
+                { "language": "ru", "text": "Слишком широко для C2: критерии теряются, и это звучит как лозунг." },
+                { "language": "ckb", "text": "بۆ C2 زۆر فراوانە: پێوەرەکان لەدەست دەدات و وەک دروشم دەبیسترێت." },
+                { "language": "kmr", "text": "Ji bo C2 pir fireh e: pîvanan winda dike û wek dirûşm xuya dike." },
+                { "language": "pl", "text": "Zbyt szerokie na C2: gubi kryteria i brzmi jak hasło." },
+                { "language": "ro", "text": "Prea larg pentru C2: pierde criteriile și sună ca un slogan." },
+                { "language": "sq", "text": "Shumë e gjerë për C2: humb kriteret dhe tingëllon si slogan." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "concept-clarity",
+          "text": "Ein abstrakter Begriff wird prüfungstauglich, wenn er von ähnlichen, aber schwächeren Begriffen abgegrenzt wird.",
+          "translations": [
+            { "language": "en", "text": "An abstract concept becomes exam-ready when it is distinguished from similar but weaker terms." },
+            { "language": "fa", "text": "یک مفهوم انتزاعی زمانی برای آزمون مناسب می‌شود که از اصطلاح‌های مشابه اما ضعیف‌تر جدا شود." },
+            { "language": "ar", "text": "يصبح المفهوم المجرد مناسبًا للاختبار عندما يُميَّز عن مصطلحات مشابهة لكنها أضعف." },
+            { "language": "tr", "text": "Soyut bir kavram, benzer ama daha zayıf terimlerden ayrıldığında sınava uygun hale gelir." },
+            { "language": "ru", "text": "Абстрактное понятие становится пригодным для экзамена, когда его отделяют от похожих, но более слабых терминов." },
+            { "language": "ckb", "text": "چەمکێکی ئەبستراکت کاتێک گونجاوی تاقیکردنەوە دەبێت کە لە زاراوەی هاوشێوە بەڵام لاوازتر جیا بکرێتەوە." },
+            { "language": "kmr", "text": "Têgeheke razber dema ji gotinên mîna lê lawaztir were cuda kirin, ji bo ezmûnê guncaw dibe." },
+            { "language": "pl", "text": "Pojęcie abstrakcyjne staje się gotowe do egzaminu, gdy odróżnia się je od podobnych, lecz słabszych terminów." },
+            { "language": "ro", "text": "Un concept abstract devine potrivit pentru examen când este delimitat de termeni asemănători, dar mai slabi." },
+            { "language": "sq", "text": "Një koncept abstrakt bëhet i përshtatshëm për provim kur dallohet nga terma të ngjashëm, por më të dobët." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "example-link",
+          "text": "Ein Beispiel trägt nur dann, wenn es zur These zurückgeführt wird und nicht als Anekdote stehen bleibt.",
+          "translations": [
+            { "language": "en", "text": "An example only carries weight when it is linked back to the thesis and does not remain an anecdote." },
+            { "language": "fa", "text": "مثال فقط وقتی وزن دارد که به تز اصلی برگردانده شود و در حد حکایت باقی نماند." },
+            { "language": "ar", "text": "لا يكتسب المثال وزنًا إلا عندما يُعاد ربطه بالأطروحة ولا يبقى مجرد حكاية." },
+            { "language": "tr", "text": "Bir örnek ancak teze geri bağlandığında ve anekdot olarak kalmadığında ağırlık kazanır." },
+            { "language": "ru", "text": "Пример имеет вес только тогда, когда он связан с тезисом и не остается просто случаем." },
+            { "language": "ckb", "text": "نموونە تەنها کاتێک قورسایی هەیە کە بە تێزەکەوە بگەڕێنرێتەوە و وەک چیرۆکێکی تاک نەهێڵرێتەوە." },
+            { "language": "kmr", "text": "Mînak tenê dema giranî digire ku bi tezê ve were vegerandin û wek çîrokek tenê nemîne." },
+            { "language": "pl", "text": "Przykład ma wagę tylko wtedy, gdy zostaje powiązany z tezą i nie pozostaje anegdotą." },
+            { "language": "ro", "text": "Un exemplu are greutate doar atunci când este legat înapoi de teză și nu rămâne o anecdotă." },
+            { "language": "sq", "text": "Një shembull ka peshë vetëm kur lidhet përsëri me tezën dhe nuk mbetet anekdotë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "fair-concession",
+          "text": "Eine faire Konzession macht die These nicht schwächer; sie zeigt, dass ihre Grenzen mitgedacht werden.",
+          "translations": [
+            { "language": "en", "text": "A fair concession does not weaken the thesis; it shows that its limits are being considered." },
+            { "language": "fa", "text": "پذیرش منصفانه تز را ضعیف نمی‌کند؛ نشان می‌دهد مرزهای آن هم در نظر گرفته شده‌اند." },
+            { "language": "ar", "text": "التنازل العادل لا يضعف الأطروحة؛ بل يبيّن أن حدودها مأخوذة في الحسبان." },
+            { "language": "tr", "text": "Adil bir kabul tezi zayıflatmaz; sınırlarının düşünüldüğünü gösterir." },
+            { "language": "ru", "text": "Справедливая уступка не ослабляет тезис; она показывает, что его границы учтены." },
+            { "language": "ckb", "text": "پەژراندنی دادپەروەرانە تێزەکە لاواز ناکات؛ نیشان دەدات سنوورەکانی لەبەرچاو گیراون." },
+            { "language": "kmr", "text": "Qebûlkirineke dadperwer tezê lawaz nake; nîşan dide ku sînorên wê jî têne fikirîn." },
+            { "language": "pl", "text": "Uczciwe ustępstwo nie osłabia tezy; pokazuje, że uwzględnia się jej granice." },
+            { "language": "ro", "text": "O concesie corectă nu slăbește teza; arată că limitele ei sunt luate în calcul." },
+            { "language": "sq", "text": "Një pranim i drejtë nuk e dobëson tezën; tregon se kufijtë e saj janë menduar." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "qualified-final-position",
+          "text": "Ein guter C2-Schluss verbindet klare Haltung mit Kriterien, damit die Aussage nicht zum bloßen Slogan wird.",
+          "translations": [
+            { "language": "en", "text": "A good C2 conclusion connects a clear position with criteria so the statement does not become a mere slogan." },
+            { "language": "fa", "text": "جمع‌بندی خوب C2 موضع روشن را با معیارها پیوند می‌دهد تا جمله به شعار صرف تبدیل نشود." },
+            { "language": "ar", "text": "الخاتمة الجيدة في C2 تربط الموقف الواضح بالمعايير حتى لا تتحول العبارة إلى مجرد شعار." },
+            { "language": "tr", "text": "İyi bir C2 sonucu, açık görüşü ölçütlerle bağlar; böylece ifade yalnızca slogana dönüşmez." },
+            { "language": "ru", "text": "Хорошее заключение C2 соединяет ясную позицию с критериями, чтобы высказывание не стало простым лозунгом." },
+            { "language": "ckb", "text": "کۆتاییەکی باشی C2 هەڵوێستی ڕوون بە پێوەرەکان پەیوەست دەکات، بۆ ئەوەی دەربڕینەکە نەبێتە تەنها دروشم." },
+            { "language": "kmr", "text": "Dawiyeke baş a C2 helwesta zelal bi pîvanan ve girê dide, da ku gotin ne tenê bibe dirûşm." },
+            { "language": "pl", "text": "Dobre zakończenie C2 łączy jasne stanowisko z kryteriami, aby wypowiedź nie stała się tylko hasłem." },
+            { "language": "ro", "text": "O concluzie bună de C2 leagă poziția clară de criterii, pentru ca afirmația să nu devină doar un slogan." },
+            { "language": "sq", "text": "Një përfundim i mirë C2 lidh qëndrimin e qartë me kriteret, që pohimi të mos bëhet thjesht slogan." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "goethe-c2-cultural-thesis-exam-library",
+          "placement": "detail-header",
+          "purpose": "Show a formal C2 exam discussion about public libraries and cultural access.",
+          "altText": "Eine prüfende Person und ein Kandidat diskutieren in einem ruhigen Prüfungsraum über Bibliotheken und kulturellen Zugang.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An examiner and a candidate discuss libraries and cultural access in a quiet exam room." },
+            { "language": "fa", "text": "یک ممتحن و یک داوطلب در اتاق آرام آزمون درباره کتابخانه‌ها و دسترسی فرهنگی بحث می‌کنند." },
+            { "language": "ar", "text": "يناقش فاحص ومرشح في غرفة اختبار هادئة المكتبات والوصول الثقافي." },
+            { "language": "tr", "text": "Bir sınav görevlisi ve bir aday sakin bir sınav odasında kütüphaneleri ve kültürel erişimi tartışır." },
+            { "language": "ru", "text": "Экзаменатор и кандидат обсуждают библиотеки и культурный доступ в тихой экзаменационной комнате." },
+            { "language": "ckb", "text": "تاقیکەرەوە و بەشداربوویەک لە ژوورێکی ئارامی تاقیکردنەوە لەسەر کتێبخانە و دەستگەیشتنی کەلتووری گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Kesê ezmûnê û namzedek li odeyeke aram a ezmûnê li ser pirtûkxane û gihîştina çandî gotûbêj dikin." },
+            { "language": "pl", "text": "Egzaminator i kandydat rozmawiają w cichej sali egzaminacyjnej o bibliotekach i dostępie do kultury." },
+            { "language": "ro", "text": "Un examinator și un candidat discută într-o sală de examen liniștită despre biblioteci și acces cultural." },
+            { "language": "sq", "text": "Një ekzaminues dhe një kandidat diskutojnë në një dhomë të qetë provimi për bibliotekat dhe qasjen kulturore." }
+          ],
+          "imagePrompt": "Clean educational illustration, formal oral exam room, examiner and candidate discussing public libraries and cultural access, calm respectful posture, simple table with papers without readable text, no logos, no private data, no text inside image, accessible composition, neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

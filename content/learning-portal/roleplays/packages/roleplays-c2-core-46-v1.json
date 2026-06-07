@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-46-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 46 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 46",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-hausordnung-im-kontext-auslegen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Hausordnung im Kontext auslegen",
+      "titleTranslations": [
+        { "language": "en", "text": "Interpreting house rules in context" },
+        { "language": "fa", "text": "تفسیر مقررات ساختمان در متن عملی" },
+        { "language": "ar", "text": "تفسير نظام السكن في سياقه" },
+        { "language": "tr", "text": "Apartman kurallarını bağlam içinde yorumlamak" },
+        { "language": "ru", "text": "Толкование правил дома в контексте" },
+        { "language": "ckb", "text": "لێکدانەوەی ڕێسای خانوو لە چوارچێوەی کرداریدا" },
+        { "language": "kmr", "text": "Şîrovekirina rêzikên xanî di çarçoveyê de" },
+        { "language": "pl", "text": "Interpretowanie regulaminu domu w kontekście" },
+        { "language": "ro", "text": "Interpretarea regulamentului imobilului în context" },
+        { "language": "sq", "text": "Interpretimi i rregullores së ndërtesës në kontekst" }
+      ],
+      "description": "Sie sprechen mit der Hausverwaltung über eine Hausordnungsregel, nach der Gemeinschaftsflächen freizuhalten sind. Im Alltag gibt es aber Grenzfälle: kurzfristige Lieferkisten, ein Kinderwagen und eine Gehhilfe neben der Wohnungstür. Sie sollen nicht pauschal widersprechen, sondern nach einer praktikablen, schriftlichen Auslegung fragen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with property management about a house rule requiring shared areas to be kept clear. In everyday life, however, there are borderline cases: short-term delivery boxes, a stroller, and a walking aid next to an apartment door. You should not object generally, but ask for a practical written interpretation." },
+        { "language": "fa", "text": "شما با مدیریت ساختمان درباره قاعده‌ای در مقررات خانه صحبت می‌کنید که طبق آن فضاهای مشترک باید خالی بمانند. اما در زندگی روزمره موارد مرزی وجود دارد: جعبه‌های تحویل کوتاه‌مدت، کالسکه کودک و وسیله کمکی راه رفتن کنار در واحد. نباید کلی مخالفت کنید، بلکه باید تفسیر کتبی و قابل اجرا بخواهید." },
+        { "language": "ar", "text": "تتحدثون مع إدارة العقار حول قاعدة في نظام السكن تنص على إبقاء المساحات المشتركة خالية. لكن في الحياة اليومية توجد حالات حدية: صناديق تسليم قصيرة المدة، عربة طفل، ووسيلة مساعدة على المشي بجانب باب الشقة. لا ينبغي الاعتراض بشكل عام، بل طلب تفسير عملي مكتوب." },
+        { "language": "tr", "text": "Ortak alanların boş tutulmasını isteyen bir apartman kuralı hakkında bina yönetimiyle konuşuyorsunuz. Günlük yaşamda ise sınır durumlar var: kısa süreli teslimat kutuları, çocuk arabası ve daire kapısının yanında yürüme desteği. Genel itiraz etmek yerine uygulanabilir yazılı bir yorum istemelisiniz." },
+        { "language": "ru", "text": "Вы разговариваете с управляющей компанией о правиле дома, по которому общие зоны должны оставаться свободными. Но в повседневной жизни есть пограничные случаи: кратковременные коробки доставки, детская коляска и средство поддержки ходьбы рядом с дверью квартиры. Нужно не возражать в целом, а попросить практичное письменное толкование." },
+        { "language": "ckb", "text": "تۆ لەگەڵ بەڕێوەبەرایەتی خانوو دەربارەی ڕێسایەکی خانوو گفتوگۆ دەکەیت کە دەڵێت شوێنە هاوبەشەکان پێویستە بەتاڵ بمێننەوە. بەڵام لە ژیانی ڕۆژانەدا دۆخی سنووری هەیە: سندووقی گەیاندنی کورت‌ماوە، عەرەبانەی منداڵ و ئامرازی یارمەتی ڕۆیشتن لە لای دەرگای خانوو. پێویست نییە بە گشتی ناڕەزایی دەرببڕیت، بەڵکو لێکدانەوەیەکی نووسراوی کرداری داوا بکەیت." },
+        { "language": "kmr", "text": "Hûn bi rêveberiya avahiyê re li ser rêzikeke xanî diaxivin ku dibêje deverên hevpar divê vala bimînin. Lê di jiyana rojane de rewşên sînorî hene: qutiyên radestkirina demkurt, erebeya zarok û alava alîkariya meşê li kêleka deriyê malê. Divê ne bi giştî nerazî bibin, lê şîroveyeke nivîskî ya bikaranînbar bixwazin." },
+        { "language": "pl", "text": "Rozmawia Pan/Pani z administracją o zasadzie regulaminu, według której części wspólne mają pozostać wolne. W codziennym życiu są jednak przypadki graniczne: krótkotrwałe paczki dostawcze, wózek dziecięcy i pomoc do chodzenia obok drzwi mieszkania. Nie należy sprzeciwiać się ogólnie, lecz poprosić o praktyczną pisemną interpretację." },
+        { "language": "ro", "text": "Discutați cu administrarea imobilului despre o regulă care cere ca spațiile comune să rămână libere. În viața de zi cu zi există însă situații-limită: cutii de livrare pe termen scurt, un cărucior pentru copil și un sprijin pentru mers lângă ușa locuinței. Nu trebuie să vă opuneți general, ci să cereți o interpretare scrisă, aplicabilă." },
+        { "language": "sq", "text": "Flisni me administrimin e ndërtesës për një rregull që kërkon që hapësirat e përbashkëta të mbeten të lira. Në jetën e përditshme ka raste kufitare: kuti dërgese afatshkurtra, karrocë fëmije dhe mjet ndihmës për ecje pranë derës së banesës. Nuk duhet të kundërshtoni në përgjithësi, por të kërkoni interpretim të shkruar dhe praktik." }
+      ],
+      "learnerGoal": "Eine Hausordnungsregel kontextsensibel klären: Regelzweck anerkennen, starre wörtliche Auslegung vermeiden, konkrete Grenzfälle trennen, praktikable Kriterien erfragen und eine schriftliche Anwendungspraxis vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify a house rule with attention to context: acknowledge the purpose of the rule, avoid rigid literal interpretation, separate concrete borderline cases, ask for practical criteria, and agree on a written application practice." },
+        { "language": "fa", "text": "یک قاعده مقررات ساختمان را با توجه به متن عملی روشن کنید: هدف قاعده را بپذیرید، از تفسیر خشک و لفظی پرهیز کنید، موارد مرزی مشخص را جدا کنید، معیارهای قابل اجرا بخواهید و روی شیوه کاربرد کتبی توافق کنید." },
+        { "language": "ar", "text": "وضحوا قاعدة من نظام السكن بحساسية للسياق: اعترفوا بهدف القاعدة، وتجنبوا التفسير الحرفي الجامد، وافصلوا الحالات الحدية المحددة، واسألوا عن معايير عملية، واتفقوا على ممارسة تطبيق مكتوبة." },
+        { "language": "tr", "text": "Bir apartman kuralını bağlama duyarlı biçimde netleştirin: kuralın amacını kabul edin, katı lafzi yorumdan kaçının, somut sınır durumları ayırın, uygulanabilir kriterler sorun ve yazılı uygulama pratiğinde anlaşın." },
+        { "language": "ru", "text": "Проясните правило дома с учетом контекста: признайте цель правила, избегайте жесткого буквального толкования, разделите конкретные пограничные случаи, запросите практичные критерии и согласуйте письменную практику применения." },
+        { "language": "ckb", "text": "ڕێسایەکی خانوو بە هەستی چوارچێوە ڕوون بکە: ئامانجی ڕێساکە بناسە، لێکدانەوەی وشەبەوشەی ڕەق دووربخە، دۆخە سنوورییە دیاریکراوەکان جیا بکە، پێوەری کرداری بپرسە و ڕێکاری نووسراوی جێبەجێکردن ڕێکبخە." },
+        { "language": "kmr", "text": "Rêzikeke xanî bi hestiyariya çarçoveyê zelal bikin: armanca rêzikê qebûl bikin, ji şîroveya hişk a peyvî dûr bikevin, rewşên sînorî yên konkret veqetînin, pîvanên bikaranînbar bipirsin û pratîka nivîskî ya sepandinê li hev bikin." },
+        { "language": "pl", "text": "Wyjaśnić zasadę regulaminu z uwzględnieniem kontekstu: uznać cel zasady, unikać sztywnej interpretacji literalnej, oddzielić konkretne przypadki graniczne, zapytać o praktyczne kryteria i uzgodnić pisemną praktykę stosowania." },
+        { "language": "ro", "text": "Clarificați o regulă a regulamentului cu atenție la context: recunoașteți scopul regulii, evitați interpretarea literală rigidă, separați cazurile-limită concrete, întrebați despre criterii aplicabile și conveniți o practică scrisă de aplicare." },
+        { "language": "sq", "text": "Sqaroni një rregull të ndërtesës me ndjeshmëri ndaj kontekstit: pranoni qëllimin e rregullit, shmangni interpretimin e ngurtë fjalë për fjalë, ndani rastet konkrete kufitare, kërkoni kritere praktike dhe bini dakord për praktikë zbatimi me shkrim." }
+      ],
+      "cefrLevel": "C2",
+      "category": "housing",
+      "topics": ["housing", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 46,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Mieter",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجر" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендатор" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemca" },
+            { "language": "ro", "text": "Chiriașul" },
+            { "language": "sq", "text": "Qiramarrësi" }
+          ]
+        },
+        {
+          "roleKey": "property-manager",
+          "displayName": "Hausverwaltung",
+          "translations": [
+            { "language": "en", "text": "Property management" },
+            { "language": "fa", "text": "مدیریت ساختمان" },
+            { "language": "ar", "text": "إدارة العقار" },
+            { "language": "tr", "text": "Bina yönetimi" },
+            { "language": "ru", "text": "Управляющая компания" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی خانوو" },
+            { "language": "kmr", "text": "Rêveberiya avahiyê" },
+            { "language": "pl", "text": "Administracja budynku" },
+            { "language": "ro", "text": "Administrarea imobilului" },
+            { "language": "sq", "text": "Administrimi i ndërtesës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "property-manager",
+          "baseText": "In der Hausordnung steht, dass Gemeinschaftsflächen freizuhalten sind. Es gab Beschwerden über Lieferkisten, einen Kinderwagen und eine Gehhilfe im Flur.",
+          "translations": [
+            { "language": "en", "text": "The house rules state that shared areas must be kept clear. There have been complaints about delivery boxes, a stroller, and a walking aid in the hallway." },
+            { "language": "fa", "text": "در مقررات ساختمان آمده که فضاهای مشترک باید خالی نگه داشته شوند. درباره جعبه‌های تحویل، کالسکه کودک و وسیله کمکی راه رفتن در راهرو شکایت شده است." },
+            { "language": "ar", "text": "ينص نظام السكن على إبقاء المساحات المشتركة خالية. وردت شكاوى حول صناديق تسليم وعربة طفل ووسيلة مساعدة على المشي في الممر." },
+            { "language": "tr", "text": "Apartman kurallarında ortak alanların boş tutulması gerektiği yazıyor. Koridordaki teslimat kutuları, çocuk arabası ve yürüme desteği hakkında şikayetler oldu." },
+            { "language": "ru", "text": "В правилах дома указано, что общие зоны должны оставаться свободными. Были жалобы на коробки доставки, детскую коляску и средство поддержки ходьбы в коридоре." },
+            { "language": "ckb", "text": "لە ڕێساکانی خانوودا نووسراوە کە شوێنە هاوبەشەکان پێویستە بەتاڵ بمێننەوە. سکاڵا هەبووە دەربارەی سندووقی گەیاندن، عەرەبانەی منداڵ و ئامرازی یارمەتی ڕۆیشتن لە ڕێڕەودا." },
+            { "language": "kmr", "text": "Di rêzikên xanî de hatiye nivîsandin ku deverên hevpar divê vala bimînin. Gilî li ser qutiyên radestkirinê, erebeya zarok û alava alîkariya meşê li korîdorê hene." },
+            { "language": "pl", "text": "W regulaminie domu zapisano, że części wspólne mają pozostawać wolne. Były skargi na paczki dostawcze, wózek dziecięcy i pomoc do chodzenia na korytarzu." },
+            { "language": "ro", "text": "În regulamentul imobilului scrie că spațiile comune trebuie păstrate libere. Au existat reclamații despre cutii de livrare, un cărucior pentru copil și un sprijin pentru mers pe hol." },
+            { "language": "sq", "text": "Në rregulloren e ndërtesës thuhet se hapësirat e përbashkëta duhet të mbahen të lira. Ka pasur ankesa për kuti dërgese, karrocë fëmije dhe mjet ndihmës për ecje në korridor." }
+          ],
+          "function": "state-rule-and-cases"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe den Zweck der Regel, vor allem freie Wege und gleiche Nutzbarkeit. Mir geht es nicht um eine Ausnahme nach Belieben, sondern um eine schriftliche Auslegung für Grenzfälle: kurzfristige Lieferung, notwendige Gehhilfe und dauerhafte Lagerung.",
+          "translations": [
+            { "language": "en", "text": "I understand the purpose of the rule, especially clear pathways and equal usability. I am not asking for arbitrary exceptions, but for a written interpretation for borderline cases: short-term delivery, a necessary walking aid, and permanent storage." },
+            { "language": "fa", "text": "هدف قاعده را می‌فهمم، به‌ویژه مسیرهای آزاد و استفاده برابر. مسئله من استثنا به دلخواه نیست، بلکه تفسیر کتبی برای موارد مرزی است: تحویل کوتاه‌مدت، وسیله کمکی ضروری و انبار دائمی." },
+            { "language": "ar", "text": "أفهم هدف القاعدة، خصوصًا الممرات الحرة وإمكانية الاستخدام المتساوية. لا أطلب استثناءً حسب الرغبة، بل تفسيرًا مكتوبًا للحالات الحدية: تسليم قصير المدة، وسيلة مساعدة ضرورية، وتخزين دائم." },
+            { "language": "tr", "text": "Kuralın amacını anlıyorum, özellikle açık yollar ve eşit kullanım. Keyfi istisna istemiyorum; kısa süreli teslimat, gerekli yürüme desteği ve kalıcı depolama gibi sınır durumlar için yazılı yorum istiyorum." },
+            { "language": "ru", "text": "Я понимаю цель правила, прежде всего свободные проходы и равную возможность пользования. Речь не о произвольном исключении, а о письменном толковании пограничных случаев: кратковременная доставка, необходимая поддержка ходьбы и постоянное хранение." },
+            { "language": "ckb", "text": "ئامانجی ڕێساکە تێدەگەم، بە تایبەتی ڕێگای ئازاد و توانای بەکارهێنانی یەکسان. مەبەستم ئیستسنای دڵخوازی نییە، بەڵکو لێکدانەوەی نووسراوە بۆ دۆخی سنووری: گەیاندنی کورت‌ماوە، ئامرازی یارمەتی پێویست و هەڵگرتنی هەمیشەیی." },
+            { "language": "kmr", "text": "Ez armanca rêzikê têdigihîjim, bi taybetî rêyên vekirî û bikaranîna wekhev. Mijar ne îstîsnaya keyfî ye, lê şîroveyeke nivîskî ji bo rewşên sînorî ye: radestkirina demkurt, alava alîkariya pêdivî û hilanîna domdar." },
+            { "language": "pl", "text": "Rozumiem cel zasady, zwłaszcza wolne przejścia i równą możliwość korzystania. Nie chodzi mi o dowolny wyjątek, lecz o pisemną interpretację przypadków granicznych: krótkotrwałej dostawy, potrzebnej pomocy do chodzenia i stałego składowania." },
+            { "language": "ro", "text": "Înțeleg scopul regulii, mai ales căile libere și utilizarea egală. Nu este vorba despre o excepție arbitrară, ci despre o interpretare scrisă pentru cazuri-limită: livrare pe termen scurt, sprijin necesar pentru mers și depozitare permanentă." },
+            { "language": "sq", "text": "E kuptoj qëllimin e rregullit, sidomos rrugët e lira dhe përdorimin e barabartë. Nuk kërkoj përjashtim sipas dëshirës, por interpretim me shkrim për raste kufitare: dërgesë afatshkurtër, mjet ndihmës i nevojshëm dhe ruajtje e përhershme." }
+          ],
+          "function": "contextualize-rule",
+          "expectedLearnerAction": "Regelzweck anerkennen und Grenzfälle präzise trennen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "property-manager",
+          "baseText": "Das Problem ist, dass jede Differenzierung schnell als Einladung verstanden wird, doch wieder Dinge im Flur stehen zu lassen.",
+          "translations": [
+            { "language": "en", "text": "The problem is that any differentiation is quickly understood as an invitation to leave things in the hallway after all." },
+            { "language": "fa", "text": "مشکل این است که هر تفکیکی سریعاً به‌عنوان دعوتی فهمیده می‌شود که باز هم وسایل در راهرو گذاشته شوند." },
+            { "language": "ar", "text": "المشكلة أن أي تفريق يُفهم بسرعة كدعوة لترك الأشياء في الممر من جديد." },
+            { "language": "tr", "text": "Sorun şu ki her ayrım hızlıca yine koridorda eşya bırakmaya davet gibi anlaşılıyor." },
+            { "language": "ru", "text": "Проблема в том, что любое различение быстро воспринимается как приглашение снова оставлять вещи в коридоре." },
+            { "language": "ckb", "text": "کێشە ئەوەیە کە هەر جیاکردنەوەیەک زوو وەک بانگهێشتێک تێدەگەیەنرێت بۆ ئەوەی دیسان شت لە ڕێڕەودا بهێڵدرێتەوە." },
+            { "language": "kmr", "text": "Pirsgirêk ev e ku her cudakirin zû wek vexwendinek tê fêmkirin ku dîsa tişt li korîdorê werin hiştin." },
+            { "language": "pl", "text": "Problem polega na tym, że każde zróżnicowanie szybko bywa rozumiane jako zachęta, by jednak zostawiać rzeczy na korytarzu." },
+            { "language": "ro", "text": "Problema este că orice diferențiere este repede înțeleasă ca o invitație de a lăsa totuși lucruri pe hol." },
+            { "language": "sq", "text": "Problemi është se çdo dallim kuptohet shpejt si ftesë për të lënë përsëri gjëra në korridor." }
+          ],
+          "function": "raise-enforcement-concern"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb wäre eine präzise Auslegung hilfreicher als eine nur strenge Formulierung. Wir könnten Kriterien nennen: Mindestbreite des Durchgangs, maximale Dauer, markierter Platz und ausdrücklicher Ausschluss dauerhafter Lagerung.",
+          "translations": [
+            { "language": "en", "text": "That is exactly why a precise interpretation would be more helpful than merely strict wording. We could name criteria: minimum passage width, maximum duration, marked place, and explicit exclusion of permanent storage." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل تفسیر دقیق از عبارت صرفاً سخت‌گیرانه مفیدتر است. می‌توانیم معیار بگذاریم: حداقل عرض گذر، حداکثر مدت، محل علامت‌گذاری‌شده و حذف صریح انبار دائمی." },
+            { "language": "ar", "text": "لهذا السبب بالضبط يكون التفسير الدقيق أفيد من صياغة صارمة فقط. يمكننا ذكر معايير: الحد الأدنى لعرض الممر، والمدة القصوى، ومكان محدد، واستبعاد صريح للتخزين الدائم." },
+            { "language": "tr", "text": "Tam da bu nedenle kesin bir yorum, sadece katı ifadeden daha yararlı olur. Kriterler belirtebiliriz: geçiş için asgari genişlik, azami süre, işaretli yer ve kalıcı depolamanın açıkça dışlanması." },
+            { "language": "ru", "text": "Именно поэтому точное толкование было бы полезнее, чем просто строгая формулировка. Можно назвать критерии: минимальная ширина прохода, максимальная длительность, обозначенное место и явное исключение постоянного хранения." },
+            { "language": "ckb", "text": "هەر بۆیە لێکدانەوەی ورد سوودمەندترە لە دەربڕینی تەنها توند. دەتوانین پێوەر دیاری بکەین: پانیی کەمترین بۆ تێپەڕبوون، ماوەی زۆرترین، شوێنی نیشانکراو و دەرخستنی ڕوونی هەڵگرتنی هەمیشەیی." },
+            { "language": "kmr", "text": "Ji ber vê yekê şîroveyeke rast ji gotineke tenê hişk bikêrtir e. Em dikarin pîvanan nav bikin: firehiya herî kêm a derbasbûnê, dema herî zêde, cihê nîşankirî û derxistina zelal a hilanîna domdar." },
+            { "language": "pl", "text": "Właśnie dlatego precyzyjna interpretacja byłaby pomocniejsza niż tylko surowe sformułowanie. Możemy wskazać kryteria: minimalną szerokość przejścia, maksymalny czas, oznaczone miejsce i wyraźne wyłączenie stałego składowania." },
+            { "language": "ro", "text": "Tocmai de aceea o interpretare precisă ar fi mai utilă decât o formulare doar strictă. Am putea numi criterii: lățimea minimă de trecere, durata maximă, loc marcat și excluderea explicită a depozitării permanente." },
+            { "language": "sq", "text": "Pikërisht për këtë arsye një interpretim i saktë do të ishte më i dobishëm se një formulim vetëm i rreptë. Mund të përmendim kritere: gjerësia minimale e kalimit, kohëzgjatja maksimale, vend i shënuar dhe përjashtim i qartë i ruajtjes së përhershme." }
+          ],
+          "function": "propose-criteria",
+          "expectedLearnerAction": "Starre Regelanwendung in prüfbare Kriterien übersetzen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "property-manager",
+          "baseText": "Bei Lieferkisten kann ich eine kurze Frist nachvollziehen. Schwieriger ist die Gehhilfe, weil andere Bewohner dann fragen, warum für bestimmte Personen andere Regeln gelten.",
+          "translations": [
+            { "language": "en", "text": "For delivery boxes, I can understand a short period. The walking aid is more difficult because other residents then ask why different rules apply to certain people." },
+            { "language": "fa", "text": "برای جعبه‌های تحویل، مهلت کوتاه را می‌توانم بفهمم. وسیله کمکی راه رفتن دشوارتر است، چون ساکنان دیگر می‌پرسند چرا برای برخی افراد قواعد متفاوتی اعمال می‌شود." },
+            { "language": "ar", "text": "بالنسبة لصناديق التسليم أستطيع فهم مهلة قصيرة. وسيلة المساعدة على المشي أصعب، لأن سكانًا آخرين يسألون عندها لماذا تطبق قواعد مختلفة على أشخاص معينين." },
+            { "language": "tr", "text": "Teslimat kutuları için kısa bir süreyi anlayabilirim. Yürüme desteği daha zor, çünkü diğer sakinler o zaman belirli kişiler için neden farklı kurallar geçerli diye soruyor." },
+            { "language": "ru", "text": "Для коробок доставки я могу понять короткий срок. Со средством поддержки ходьбы сложнее, потому что другие жильцы спрашивают, почему для отдельных людей действуют другие правила." },
+            { "language": "ckb", "text": "بۆ سندووقی گەیاندن، مۆڵەتی کورت تێدەگەم. ئامرازی یارمەتی ڕۆیشتن قورس‌ترە، چونکە دانیشتووانی تر دەپرسن بۆچی بۆ هەندێک کەس ڕێسای جیاواز جێبەجێ دەبێت." },
+            { "language": "kmr", "text": "Ji bo qutiyên radestkirinê ez dikarim demeke kurt fêm bikim. Alava alîkariya meşê dijwartir e, ji ber ku niştecihên din hingê dipirsin çima ji bo hin kesan rêzikên cuda derbas in." },
+            { "language": "pl", "text": "Przy paczkach dostawczych rozumiem krótki termin. Pomoc do chodzenia jest trudniejsza, bo inni mieszkańcy pytają wtedy, dlaczego wobec określonych osób obowiązują inne zasady." },
+            { "language": "ro", "text": "Pentru cutiile de livrare pot înțelege un termen scurt. Sprijinul pentru mers este mai dificil, deoarece alți locatari întreabă atunci de ce pentru anumite persoane se aplică reguli diferite." },
+            { "language": "sq", "text": "Për kutitë e dërgesës mund ta kuptoj një afat të shkurtër. Mjeti ndihmës për ecje është më i vështirë, sepse banorët e tjerë pyesin pse për disa persona vlejnë rregulla të ndryshme." }
+          ],
+          "function": "raise-fairness-concern"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das lässt sich ohne persönliche Angaben lösen. Die Auslegung muss nicht begründen, wer warum etwas braucht. Sie kann neutral sagen: Notwendige Mobilitätshilfen dürfen nur an einem markierten Platz stehen, wenn die Mindestbreite frei bleibt.",
+          "translations": [
+            { "language": "en", "text": "That can be solved without personal details. The interpretation does not have to explain who needs what and why. It can state neutrally: necessary mobility aids may stand only in a marked place if the minimum width remains clear." },
+            { "language": "fa", "text": "این را می‌توان بدون اطلاعات شخصی حل کرد. تفسیر لازم نیست توضیح دهد چه کسی چرا به چیزی نیاز دارد. می‌تواند بی‌طرف بگوید: وسایل کمک‌حرکتی ضروری فقط در محل علامت‌گذاری‌شده مجازند، اگر حداقل عرض گذر آزاد بماند." },
+            { "language": "ar", "text": "يمكن حل ذلك من دون بيانات شخصية. لا يحتاج التفسير إلى توضيح من يحتاج إلى ماذا ولماذا. يمكنه أن يقول بحياد: وسائل الحركة الضرورية يجوز أن توضع فقط في مكان محدد إذا بقي الحد الأدنى لعرض المرور حرًا." },
+            { "language": "tr", "text": "Bu kişisel bilgi olmadan çözülebilir. Yorumun kimin neye neden ihtiyaç duyduğunu açıklaması gerekmez. Tarafsız biçimde şöyle diyebilir: Gerekli hareket destekleri yalnızca işaretli yerde durabilir, asgari geçiş genişliği boş kalırsa." },
+            { "language": "ru", "text": "Это можно решить без личных данных. Толкование не должно объяснять, кому что и почему нужно. Оно может нейтрально указать: необходимые средства мобильности могут стоять только в обозначенном месте, если минимальная ширина прохода остается свободной." },
+            { "language": "ckb", "text": "ئەوە دەتوانرێت بەبێ زانیاریی کەسی چارەسەر بکرێت. لێکدانەوە پێویست ناکات ڕوون بکات کێ بۆچی پێویستی بە چییە. دەتوانێت بە بێلایەنی بڵێت: ئامرازە پێویستەکانی جوڵان تەنها لە شوێنی نیشانکراو دەبن، ئەگەر پانیی کەمترین بۆ تێپەڕبوون ئازاد بمێنێت." },
+            { "language": "kmr", "text": "Ev dikare bê agahiyên kesane çareser bibe. Şîrove ne hewce ye bibêje kî çima pêdivî bi çi heye. Ew dikare bêalî bibêje: alavên tevgerê yên pêdivî tenê li cihê nîşankirî dikarin bimînin, heke firehiya herî kêm a derbasbûnê vala bimîne." },
+            { "language": "pl", "text": "Można to rozwiązać bez danych osobistych. Interpretacja nie musi wyjaśniać, kto czego i dlaczego potrzebuje. Może neutralnie wskazać: potrzebne pomoce do poruszania się mogą stać tylko w oznaczonym miejscu, jeśli minimalna szerokość przejścia pozostaje wolna." },
+            { "language": "ro", "text": "Acest lucru se poate rezolva fără date personale. Interpretarea nu trebuie să explice cine de ce are nevoie de ceva. Poate spune neutru: mijloacele necesare de mobilitate pot sta doar într-un loc marcat, dacă lățimea minimă de trecere rămâne liberă." },
+            { "language": "sq", "text": "Kjo mund të zgjidhet pa të dhëna personale. Interpretimi nuk duhet të shpjegojë kush pse ka nevojë për çfarë. Mund të thotë në mënyrë neutrale: mjetet e nevojshme të lëvizjes mund të qëndrojnë vetëm në vend të shënuar, nëse gjerësia minimale e kalimit mbetet e lirë." }
+          ],
+          "function": "protect-privacy-and-criteria",
+          "expectedLearnerAction": "Fairness und Datenschutz durch neutrale Kriterien verbinden."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "property-manager",
+          "baseText": "Dann bräuchten wir aber auch eine klare Linie für Pakete und Lieferkisten, sonst wird der Flur wieder zur Abstellfläche.",
+          "translations": [
+            { "language": "en", "text": "Then we would also need a clear line for parcels and delivery boxes; otherwise the hallway becomes a storage area again." },
+            { "language": "fa", "text": "پس برای بسته‌ها و جعبه‌های تحویل هم خط روشن لازم داریم، وگرنه راهرو دوباره به محل گذاشتن وسایل تبدیل می‌شود." },
+            { "language": "ar", "text": "عندئذ نحتاج أيضًا إلى خط واضح للطرود وصناديق التسليم، وإلا سيعود الممر إلى مساحة تخزين." },
+            { "language": "tr", "text": "O zaman paketler ve teslimat kutuları için de net bir çizgi gerekir; yoksa koridor yine eşya bırakma alanına dönüşür." },
+            { "language": "ru", "text": "Тогда нужна и четкая линия для посылок и коробок доставки, иначе коридор снова станет местом хранения." },
+            { "language": "ckb", "text": "ئەوا پێویستمان بە هێڵێکی ڕوون بۆ پاکێت و سندووقی گەیاندنیش هەیە، ئەگەرنا ڕێڕەو دیسان دەبێتە شوێنی دانانی شت." },
+            { "language": "kmr", "text": "Wê gavê ji bo pakêt û qutiyên radestkirinê jî xetek zelal pêdivî ye, wisa nebe korîdor dîsa dibe cihê danîna tiştan." },
+            { "language": "pl", "text": "Wtedy potrzebujemy też jasnej granicy dla paczek i kartonów dostawczych, inaczej korytarz znów stanie się miejscem składowania." },
+            { "language": "ro", "text": "Atunci avem nevoie și de o linie clară pentru colete și cutii de livrare, altfel holul devine din nou spațiu de depozitare." },
+            { "language": "sq", "text": "Atëherë na duhet edhe një vijë e qartë për pakot dhe kutitë e dërgesës, përndryshe korridori bëhet përsëri vend ruajtjeje." }
+          ],
+          "function": "request-delivery-boundary"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Für Lieferungen könnten wir eine Tagesregel formulieren: kurzzeitig neben der Wohnungstür, wenn der Durchgang frei bleibt, spätestens am selben Abend weg. Alles darüber hinaus gilt als Lagerung und fällt nicht unter die Auslegung.",
+          "translations": [
+            { "language": "en", "text": "For deliveries, we could formulate a same-day rule: briefly next to the apartment door if the passage remains clear, removed by the same evening at the latest. Anything beyond that counts as storage and is not covered by the interpretation." },
+            { "language": "fa", "text": "برای تحویل‌ها می‌توانیم قاعده همان روز بگذاریم: کوتاه‌مدت کنار در واحد، اگر مسیر آزاد بماند، و حداکثر تا همان شب برداشته شود. هر چیزی فراتر از آن انبار محسوب می‌شود و زیر این تفسیر نمی‌آید." },
+            { "language": "ar", "text": "بالنسبة للتسليمات يمكننا صياغة قاعدة اليوم نفسه: لفترة قصيرة بجانب باب الشقة إذا بقي الممر حرًا، وتزال في موعد أقصاه مساء اليوم نفسه. كل ما يتجاوز ذلك يُعد تخزينًا ولا يدخل ضمن التفسير." },
+            { "language": "tr", "text": "Teslimatlar için aynı gün kuralı formüle edebiliriz: geçiş açık kalıyorsa kısa süreli olarak daire kapısının yanında, en geç aynı akşam kaldırılır. Bunun ötesi depolama sayılır ve yorum kapsamına girmez." },
+            { "language": "ru", "text": "Для доставок можно сформулировать правило того же дня: кратковременно рядом с дверью квартиры, если проход остается свободным, убрать не позднее того же вечера. Все сверх этого считается хранением и не подпадает под толкование." },
+            { "language": "ckb", "text": "بۆ گەیاندنەکان دەتوانین ڕێسای هەمان ڕۆژ دابنێین: بۆ ماوەیەکی کورت لە لای دەرگای خانوو، ئەگەر ڕێگا ئازاد بمێنێت، و زۆرترین تا هەمان ئێوارە لاببرێت. هەر شتێک زیاتر لەوە هەڵگرتنە و لەژێر ئەم لێکدانەوەیەدا نییە." },
+            { "language": "kmr", "text": "Ji bo radestkirinan em dikarin rêzika heman rojê çêkin: demkurt li kêleka deriyê malê, heke rê vala bimîne, herî dereng heman êvarê were rakirin. Her tiştê zêdetir wek hilanîn tê hesibandin û di bin vê şîroveyê de nîne." },
+            { "language": "pl", "text": "Dla dostaw możemy sformułować zasadę tego samego dnia: krótko obok drzwi mieszkania, jeśli przejście pozostaje wolne, usunięte najpóźniej tego samego wieczoru. Wszystko ponad to jest składowaniem i nie mieści się w interpretacji." },
+            { "language": "ro", "text": "Pentru livrări putem formula regula aceleiași zile: pe termen scurt lângă ușa locuinței, dacă trecerea rămâne liberă, îndepărtate cel târziu în aceeași seară. Orice depășește acest lucru este depozitare și nu intră în interpretare." },
+            { "language": "sq", "text": "Për dërgesat mund të formulojmë rregullin e së njëjtës ditë: për pak kohë pranë derës së banesës, nëse kalimi mbetet i lirë, dhe hiqet më së voni atë mbrëmje. Çdo gjë përtej kësaj llogaritet si ruajtje dhe nuk mbulohet nga interpretimi." }
+          ],
+          "function": "define-delivery-rule",
+          "expectedLearnerAction": "Kurzzeitige Nutzung von dauerhafter Lagerung trennen."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "property-manager",
+          "baseText": "Das klingt praktikabel. Ich möchte nur vermeiden, dass der Aushang wie eine neue Hausordnung wirkt, obwohl wir eigentlich nur die bestehende Regel erklären.",
+          "translations": [
+            { "language": "en", "text": "That sounds practical. I only want to avoid the notice looking like a new set of house rules, although we are actually only explaining the existing rule." },
+            { "language": "fa", "text": "این عملی به نظر می‌رسد. فقط می‌خواهم از این جلوگیری کنم که اطلاعیه مثل مقررات جدید ساختمان به نظر برسد، در حالی که ما در واقع فقط قاعده موجود را توضیح می‌دهیم." },
+            { "language": "ar", "text": "يبدو ذلك عمليًا. أريد فقط تجنب أن يبدو الإعلان كأنه نظام سكن جديد، مع أننا في الحقيقة نشرح القاعدة القائمة فقط." },
+            { "language": "tr", "text": "Bu uygulanabilir görünüyor. Yalnızca duyurunun yeni apartman kuralları gibi görünmesini istemiyorum; aslında mevcut kuralı açıklıyoruz." },
+            { "language": "ru", "text": "Это звучит практично. Я только хочу избежать того, чтобы объявление выглядело как новые правила дома, хотя мы на самом деле лишь объясняем существующее правило." },
+            { "language": "ckb", "text": "ئەوە کرداری دەردەکەوێت. تەنها دەمەوێت دوور بکەوم لەوەی ئاگادارییەکە وەک ڕێسای نوێی خانوو دەربکەوێت، لە کاتێکدا ئێمە لە ڕاستیدا تەنها ڕێسای هەبوو ڕوون دەکەینەوە." },
+            { "language": "kmr", "text": "Ev bikaranînbar xuya dike. Ez tenê dixwazim ku agahdarî wek rêzikên nû yên xanî xuya neke, her çend em bi rastî tenê rêzika heyî rave dikin." },
+            { "language": "pl", "text": "To brzmi praktycznie. Chcę tylko uniknąć tego, aby wywieszka wyglądała jak nowy regulamin, chociaż właściwie tylko wyjaśniamy istniejącą zasadę." },
+            { "language": "ro", "text": "Sună aplicabil. Vreau doar să evit ca anunțul să pară un regulament nou, deși de fapt explicăm doar regula existentă." },
+            { "language": "sq", "text": "Kjo duket praktike. Dua vetëm të shmang që njoftimi të duket si rregullore e re, megjithëse në fakt po shpjegojmë vetëm rregullin ekzistues." }
+          ],
+          "function": "avoid-new-rule-framing"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann sollte der Text ausdrücklich als Anwendungshinweis formuliert werden: Die Hausordnung bleibt unverändert; zur einheitlichen Praxis gelten drei Kriterien: freier Durchgang, kurze Dauer bei Lieferungen und diskrete Zulassung notwendiger Mobilitätshilfen am markierten Platz.",
+          "translations": [
+            { "language": "en", "text": "Then the text should be explicitly formulated as an application note: the house rules remain unchanged; for consistent practice, three criteria apply: clear passage, short duration for deliveries, and discreet permission for necessary mobility aids in the marked place." },
+            { "language": "fa", "text": "پس متن باید صریحاً به‌عنوان راهنمای کاربردی نوشته شود: مقررات ساختمان بدون تغییر می‌ماند؛ برای شیوه یکسان سه معیار اعمال می‌شود: مسیر آزاد، مدت کوتاه برای تحویل‌ها و اجازه محترمانه برای وسایل کمک‌حرکتی ضروری در محل علامت‌گذاری‌شده." },
+            { "language": "ar", "text": "إذن ينبغي صياغة النص صراحة كملاحظة تطبيقية: يبقى نظام السكن دون تغيير؛ وللممارسة الموحدة تسري ثلاثة معايير: ممر حر، مدة قصيرة للتسليمات، وسماح متحفظ بوسائل الحركة الضرورية في المكان المحدد." },
+            { "language": "tr", "text": "O zaman metin açıkça uygulama notu olarak yazılmalı: Apartman kuralları değişmeden kalır; tek tip uygulama için üç kriter geçerlidir: açık geçiş, teslimatlar için kısa süre ve gerekli hareket desteklerine işaretli yerde ölçülü izin." },
+            { "language": "ru", "text": "Тогда текст следует явно сформулировать как указание по применению: правила дома остаются без изменений; для единой практики действуют три критерия: свободный проход, короткая длительность для доставок и сдержанное разрешение необходимых средств мобильности в обозначенном месте." },
+            { "language": "ckb", "text": "ئەوا پێویستە دەقەکە بە ڕوونی وەک ڕێنمایی جێبەجێکردن دابڕێژرێت: ڕێساکانی خانوو بێ گۆڕان دەمێننەوە؛ بۆ ڕێکاری یەکسان سێ پێوەر جێبەجێ دەبن: ڕێگای ئازاد، ماوەی کورت بۆ گەیاندنەکان و ڕێگەدانێکی پارێزراو بۆ ئامرازە پێویستەکانی جوڵان لە شوێنی نیشانکراو." },
+            { "language": "kmr", "text": "Wê gavê divê nivîs bi zelalî wek şîreta sepandinê were nivîsandin: rêzikên xanî neguhêrî dimînin; ji bo pratîka yekgirtî sê pîvan derbas in: rêya vekirî, demeke kurt ji bo radestkirinan û destûra bi baldarî ji bo alavên tevgerê yên pêdivî li cihê nîşankirî." },
+            { "language": "pl", "text": "Wtedy tekst powinien być wyraźnie sformułowany jako wskazówka stosowania: regulamin domu pozostaje bez zmian; dla jednolitej praktyki obowiązują trzy kryteria: wolne przejście, krótki czas przy dostawach i dyskretne dopuszczenie potrzebnych pomocy do poruszania się w oznaczonym miejscu." },
+            { "language": "ro", "text": "Atunci textul ar trebui formulat explicit ca notă de aplicare: regulamentul rămâne neschimbat; pentru o practică unitară se aplică trei criterii: trecere liberă, durată scurtă pentru livrări și acceptare discretă a mijloacelor necesare de mobilitate în locul marcat." },
+            { "language": "sq", "text": "Atëherë teksti duhet formuluar qartë si udhëzim zbatimi: rregullorja mbetet e pandryshuar; për praktikë të njëjtë vlejnë tri kritere: kalim i lirë, kohë e shkurtër për dërgesat dhe lejim i matur i mjeteve të nevojshme të lëvizjes në vendin e shënuar." }
+          ],
+          "function": "close-with-application-note",
+          "expectedLearnerAction": "Eine schriftliche Anwendungspraxis vorschlagen, ohne eine neue Regel vorzutäuschen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich verstehe den Zweck der Regel, vor allem freie Wege und gleiche Nutzbarkeit. Mir geht es nicht um eine Ausnahme nach Belieben, sondern um eine schriftliche Auslegung für Grenzfälle: kurzfristige Lieferung, notwendige Gehhilfe und dauerhafte Lagerung.",
+              "translations": [
+                { "language": "en", "text": "I understand the rule's purpose, especially clear paths and equal usability. I am not asking for arbitrary exceptions, but for a written interpretation of borderline cases: short-term delivery, a necessary walking aid, and permanent storage." },
+                { "language": "fa", "text": "هدف قاعده را می‌فهمم، به‌ویژه مسیر آزاد و استفاده برابر. استثنای دلخواه نمی‌خواهم، بلکه تفسیر کتبی برای تحویل کوتاه‌مدت، وسیله کمکی ضروری و انبار دائمی می‌خواهم." },
+                { "language": "ar", "text": "أفهم هدف القاعدة، خصوصًا الممر الحر والاستخدام المتساوي. لا أطلب استثناءات عشوائية، بل تفسيرًا مكتوبًا للتسليم القصير ووسيلة المساعدة الضرورية والتخزين الدائم." },
+                { "language": "tr", "text": "Kuralın amacını anlıyorum, özellikle açık yollar ve eşit kullanım. Keyfi istisna değil; kısa teslimat, gerekli yürüme desteği ve kalıcı depolama için yazılı yorum istiyorum." },
+                { "language": "ru", "text": "Я понимаю цель правила, особенно свободные проходы и равное пользование. Мне нужны не произвольные исключения, а письменное толкование краткой доставки, необходимой опоры для ходьбы и постоянного хранения." },
+                { "language": "ckb", "text": "ئامانجی ڕێساکە تێدەگەم، بە تایبەتی ڕێگای ئازاد و بەکارهێنانی یەکسان. ئیستسنای دڵخوازی نا، بەڵکو لێکدانەوەی نووسراو بۆ گەیاندنی کورت، ئامرازی یارمەتی پێویست و هەڵگرتنی هەمیشەیی دەوێت." },
+                { "language": "kmr", "text": "Ez armanca rêzikê têdigihîjim, bi taybetî rêyên vekirî û bikaranîna wekhev. Ne îstîsnaya keyfî, lê şîroveyeke nivîskî ji bo radestkirina kurt, alava alîkariya pêdivî û hilanîna domdar dixwazim." },
+                { "language": "pl", "text": "Rozumiem cel zasady, zwłaszcza wolne przejścia i równe korzystanie. Nie proszę o dowolne wyjątki, lecz o pisemną interpretację krótkiej dostawy, potrzebnej pomocy do chodzenia i stałego składowania." },
+                { "language": "ro", "text": "Înțeleg scopul regulii, mai ales căile libere și utilizarea egală. Nu cer excepții arbitrare, ci o interpretare scrisă pentru livrare scurtă, sprijin necesar pentru mers și depozitare permanentă." },
+                { "language": "sq", "text": "E kuptoj qëllimin e rregullit, sidomos rrugët e lira dhe përdorimin e barabartë. Nuk kërkoj përjashtime sipas dëshirës, por interpretim me shkrim për dërgesë të shkurtër, mjet të nevojshëm dhe ruajtje të përhershme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Diese Antwort anerkennt die Regel und öffnet trotzdem Raum für eine differenzierte Auslegung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This answer acknowledges the rule while still opening room for differentiated interpretation." },
+                { "language": "fa", "text": "این پاسخ قاعده را می‌پذیرد و هم‌زمان فضا برای تفسیر دقیق باز می‌کند." },
+                { "language": "ar", "text": "هذه الإجابة تعترف بالقاعدة وتفتح في الوقت نفسه مجالًا لتفسير متمايز." },
+                { "language": "tr", "text": "Bu cevap kuralı kabul eder ve yine de ayrıntılı yorum için alan açar." },
+                { "language": "ru", "text": "Ответ признает правило и одновременно оставляет пространство для дифференцированного толкования." },
+                { "language": "ckb", "text": "ئەم وەڵامە ڕێساکە دەناسێت و هاوکات شوێن بۆ لێکدانەوەی جیاکراوە دەکاتەوە." },
+                { "language": "kmr", "text": "Ev bersiv rêzikê qebûl dike û di heman demê de cih ji bo şîroveya hûrgilî vedike." },
+                { "language": "pl", "text": "Ta odpowiedź uznaje zasadę, a jednocześnie otwiera przestrzeń na zróżnicowaną interpretację." },
+                { "language": "ro", "text": "Acest răspuns recunoaște regula și totodată deschide spațiu pentru interpretare diferențiată." },
+                { "language": "sq", "text": "Kjo përgjigje e pranon rregullin dhe njëkohësisht hap hapësirë për interpretim të nuancuar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Hausordnung ist wichtig, aber man muss sie im Alltag auch menschlich anwenden.",
+              "translations": [
+                { "language": "en", "text": "The house rules are important, but in everyday life they must also be applied humanely." },
+                { "language": "fa", "text": "مقررات ساختمان مهم است، اما در زندگی روزمره باید انسانی هم اجرا شود." },
+                { "language": "ar", "text": "نظام السكن مهم، لكن يجب تطبيقه في الحياة اليومية بطريقة إنسانية أيضًا." },
+                { "language": "tr", "text": "Apartman kuralları önemlidir, ama günlük hayatta insani biçimde de uygulanmalıdır." },
+                { "language": "ru", "text": "Правила дома важны, но в повседневной жизни их нужно применять и по-человечески." },
+                { "language": "ckb", "text": "ڕێساکانی خانوو گرنگن، بەڵام لە ژیانی ڕۆژانەدا پێویستە بە شێوەی مرۆییش جێبەجێ بکرێن." },
+                { "language": "kmr", "text": "Rêzikên xanî girîng in, lê di jiyana rojane de divê bi awayekî mirovane jî werin sepandin." },
+                { "language": "pl", "text": "Regulamin domu jest ważny, ale w codzienności trzeba go też stosować po ludzku." },
+                { "language": "ro", "text": "Regulamentul imobilului este important, dar în viața de zi cu zi trebuie aplicat și omenește." },
+                { "language": "sq", "text": "Rregullorja e ndërtesës është e rëndësishme, por në përditshmëri duhet zbatuar edhe në mënyrë njerëzore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist sympathisch, aber zu allgemein; sie nennt keine Grenzfälle und keine Auslegungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is sympathetic but too general; it names no borderline cases and no interpretation criteria." },
+                { "language": "fa", "text": "پاسخ همدلانه است، اما خیلی کلی است؛ مورد مرزی و معیار تفسیر مشخص نمی‌کند." },
+                { "language": "ar", "text": "الإجابة متعاطفة لكنها عامة جدًا؛ لا تذكر حالات حدية ولا معايير تفسير." },
+                { "language": "tr", "text": "Cevap sempatik ama çok genel; sınır durumları ve yorum kriterleri belirtmiyor." },
+                { "language": "ru", "text": "Ответ сочувственный, но слишком общий; он не называет пограничные случаи и критерии толкования." },
+                { "language": "ckb", "text": "وەڵامەکە هاوسۆزانەیە، بەڵام زۆر گشتییە؛ دۆخی سنووری و پێوەری لێکدانەوە ناوبەر ناکات." },
+                { "language": "kmr", "text": "Bersiv dilsoz e, lê pir giştî ye; rewşên sînorî û pîvanên şîroveyê nav nake." },
+                { "language": "pl", "text": "Odpowiedź jest życzliwa, ale zbyt ogólna; nie podaje przypadków granicznych ani kryteriów interpretacji." },
+                { "language": "ro", "text": "Răspunsul este empatic, dar prea general; nu numește cazuri-limită și criterii de interpretare." },
+                { "language": "sq", "text": "Përgjigjja është simpatike, por shumë e përgjithshme; nuk përmend raste kufitare dhe kritere interpretimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau deshalb wäre eine präzise Auslegung hilfreicher als eine nur strenge Formulierung. Wir könnten Kriterien nennen: Mindestbreite des Durchgangs, maximale Dauer, markierter Platz und ausdrücklicher Ausschluss dauerhafter Lagerung.",
+              "translations": [
+                { "language": "en", "text": "That is exactly why a precise interpretation would help more than merely strict wording. We could name criteria: minimum passage width, maximum duration, marked place, and explicit exclusion of permanent storage." },
+                { "language": "fa", "text": "دقیقاً به همین دلیل تفسیر دقیق از عبارت صرفاً سخت‌گیرانه بهتر است: حداقل عرض گذر، حداکثر مدت، محل مشخص و حذف صریح انبار دائمی." },
+                { "language": "ar", "text": "لهذا السبب بالضبط يكون التفسير الدقيق أنفع من صياغة صارمة فقط: الحد الأدنى لعرض الممر، والمدة القصوى، ومكان محدد، واستبعاد التخزين الدائم." },
+                { "language": "tr", "text": "Tam da bu yüzden kesin yorum yalnızca katı ifadeden daha yardımcı olur: asgari geçiş genişliği, azami süre, işaretli yer ve kalıcı depolamanın açıkça dışlanması." },
+                { "language": "ru", "text": "Именно поэтому точное толкование полезнее, чем просто строгая формулировка: минимальная ширина прохода, максимальная длительность, обозначенное место и явное исключение постоянного хранения." },
+                { "language": "ckb", "text": "هەر بۆیە لێکدانەوەی ورد لە دەربڕینی توند بەسوودترە: پانیی کەمترین بۆ تێپەڕبوون، ماوەی زۆرترین، شوێنی نیشانکراو و دەرخستنی ڕوونی هەڵگرتنی هەمیشەیی." },
+                { "language": "kmr", "text": "Ji ber vê yekê şîroveyeke rast ji gotineke tenê hişk alîkartir e: firehiya herî kêm a derbasbûnê, dema herî zêde, cihê nîşankirî û derxistina zelal a hilanîna domdar." },
+                { "language": "pl", "text": "Właśnie dlatego precyzyjna interpretacja pomaga bardziej niż sama surowa formuła: minimalna szerokość przejścia, maksymalny czas, oznaczone miejsce i wyraźne wyłączenie stałego składowania." },
+                { "language": "ro", "text": "Tocmai de aceea o interpretare precisă ajută mai mult decât o formulare doar strictă: lățimea minimă de trecere, durata maximă, loc marcat și excluderea explicită a depozitării permanente." },
+                { "language": "sq", "text": "Pikërisht për këtë arsye interpretimi i saktë ndihmon më shumë se një formulim vetëm i rreptë: gjerësia minimale e kalimit, kohëzgjatja maksimale, vendi i shënuar dhe përjashtimi i ruajtjes së përhershme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort verhindert Missbrauch nicht durch Härte, sondern durch klare Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer prevents misuse not through severity, but through clear criteria." },
+                { "language": "fa", "text": "این پاسخ جلوی سوءاستفاده را نه با سخت‌گیری، بلکه با معیار روشن می‌گیرد." },
+                { "language": "ar", "text": "تمنع الإجابة سوء الاستخدام لا بالشدة، بل بمعايير واضحة." },
+                { "language": "tr", "text": "Bu cevap kötüye kullanımı sertlikle değil, açık kriterlerle önler." },
+                { "language": "ru", "text": "Ответ предотвращает злоупотребление не жесткостью, а ясными критериями." },
+                { "language": "ckb", "text": "ئەم وەڵامە ڕێ لە خراپ بەکارهێنان دەگرێت نە بە توندی، بەڵکو بە پێوەری ڕوون." },
+                { "language": "kmr", "text": "Ev bersiv ne bi hişkiyê, lê bi pîvanên zelal pêşî li xerab bikaranînê digire." },
+                { "language": "pl", "text": "Ta odpowiedź zapobiega nadużyciom nie surowością, lecz jasnymi kryteriami." },
+                { "language": "ro", "text": "Răspunsul previne abuzul nu prin severitate, ci prin criterii clare." },
+                { "language": "sq", "text": "Përgjigjja e parandalon keqpërdorimin jo me ashpërsi, por me kritere të qarta." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollte man vielleicht einfach auf den Einzelfall schauen und nicht alles zu streng sehen.",
+              "translations": [
+                { "language": "en", "text": "Then perhaps one should simply look at the individual case and not see everything too strictly." },
+                { "language": "fa", "text": "پس شاید باید فقط به مورد فردی نگاه کرد و همه چیز را خیلی سخت نگرفت." },
+                { "language": "ar", "text": "إذن ربما ينبغي النظر ببساطة إلى الحالة الفردية وعدم التعامل مع كل شيء بصرامة شديدة." },
+                { "language": "tr", "text": "O zaman belki sadece tekil duruma bakmak ve her şeyi çok katı görmemek gerekir." },
+                { "language": "ru", "text": "Тогда, возможно, нужно просто смотреть на отдельный случай и не воспринимать все слишком строго." },
+                { "language": "ckb", "text": "ئەوا ڕەنگە پێویست بێت تەنها سەیری دۆخی تاکەکەس بکرێت و هەموو شت زۆر توند نەبینرێت." },
+                { "language": "kmr", "text": "Wê gavê belkî divê mirov tenê li rewşa takekesî binêre û hemû tiştan pir hişk nebîne." },
+                { "language": "pl", "text": "Wtedy może po prostu trzeba patrzeć na pojedynczy przypadek i nie widzieć wszystkiego zbyt surowo." },
+                { "language": "ro", "text": "Atunci poate ar trebui pur și simplu privit cazul individual și să nu se vadă totul prea strict." },
+                { "language": "sq", "text": "Atëherë ndoshta duhet parë thjesht rasti individual dhe jo gjithçka shumë rreptë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist flexibel, aber ohne Kriterien wirkt sie willkürlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is flexible, but without criteria it seems arbitrary." },
+                { "language": "fa", "text": "پاسخ انعطاف‌پذیر است، اما بدون معیار دل‌بخواهی به نظر می‌رسد." },
+                { "language": "ar", "text": "الإجابة مرنة، لكنها من دون معايير تبدو اعتباطية." },
+                { "language": "tr", "text": "Cevap esnektir, ama kriter olmadan keyfi görünür." },
+                { "language": "ru", "text": "Ответ гибкий, но без критериев выглядит произвольным." },
+                { "language": "ckb", "text": "وەڵامەکە نەرمی هەیە، بەڵام بەبێ پێوەر دڵخوازی دەردەکەوێت." },
+                { "language": "kmr", "text": "Bersiv nerm e, lê bê pîvan wek keyfî xuya dike." },
+                { "language": "pl", "text": "Odpowiedź jest elastyczna, ale bez kryteriów wygląda arbitralnie." },
+                { "language": "ro", "text": "Răspunsul este flexibil, dar fără criterii pare arbitrar." },
+                { "language": "sq", "text": "Përgjigjja është fleksibël, por pa kritere duket arbitrare." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das lässt sich ohne persönliche Angaben lösen. Die Auslegung muss nicht begründen, wer warum etwas braucht. Sie kann neutral sagen: Notwendige Mobilitätshilfen dürfen nur an einem markierten Platz stehen, wenn die Mindestbreite frei bleibt.",
+              "translations": [
+                { "language": "en", "text": "That can be solved without personal details. The interpretation need not explain who needs what and why. It can neutrally say: necessary mobility aids may stand only in a marked place if the minimum width stays clear." },
+                { "language": "fa", "text": "این بدون اطلاعات شخصی حل می‌شود. تفسیر لازم نیست بگوید چه کسی چرا به چه چیزی نیاز دارد. می‌تواند بی‌طرف بگوید: وسایل کمک‌حرکتی ضروری فقط در محل مشخص مجازند، اگر حداقل عرض گذر آزاد بماند." },
+                { "language": "ar", "text": "يمكن حل ذلك من دون بيانات شخصية. لا يحتاج التفسير إلى شرح من يحتاج إلى ماذا ولماذا. يمكن أن يقول بحياد: وسائل الحركة الضرورية مسموحة فقط في مكان محدد إذا بقي الحد الأدنى للعرض حرًا." },
+                { "language": "tr", "text": "Bu kişisel bilgi olmadan çözülebilir. Yorum kimin neye neden ihtiyaç duyduğunu açıklamak zorunda değildir. Tarafsızca şöyle diyebilir: Gerekli hareket destekleri yalnızca işaretli yerde durabilir, asgari genişlik boş kalırsa." },
+                { "language": "ru", "text": "Это можно решить без личных данных. Толкование не должно объяснять, кому что и почему нужно. Оно может нейтрально сказать: необходимые средства мобильности могут стоять только в обозначенном месте, если минимальная ширина остается свободной." },
+                { "language": "ckb", "text": "ئەوە بەبێ زانیاریی کەسی چارەسەر دەکرێت. لێکدانەوە پێویست ناکات بڵێت کێ بۆچی پێویستی بە چییە. دەتوانێت بە بێلایەنی بڵێت: ئامرازە پێویستەکانی جوڵان تەنها لە شوێنی نیشانکراو دەبن، ئەگەر پانیی کەمترین ئازاد بێت." },
+                { "language": "kmr", "text": "Ev bê agahiyên kesane dikare çareser bibe. Şîrove ne hewce ye bibêje kî çima pêdivî bi çi heye. Dikare bêalî bibêje: alavên tevgerê yên pêdivî tenê li cihê nîşankirî dimînin, heke firehiya herî kêm vala be." },
+                { "language": "pl", "text": "Można to rozwiązać bez danych osobistych. Interpretacja nie musi wyjaśniać, kto czego i dlaczego potrzebuje. Może neutralnie wskazać: potrzebne pomoce do poruszania się mogą stać tylko w oznaczonym miejscu, jeśli minimalna szerokość pozostaje wolna." },
+                { "language": "ro", "text": "Acest lucru se poate rezolva fără date personale. Interpretarea nu trebuie să explice cine de ce are nevoie de ceva. Poate spune neutru: mijloacele necesare de mobilitate pot sta doar într-un loc marcat, dacă lățimea minimă rămâne liberă." },
+                { "language": "sq", "text": "Kjo mund të zgjidhet pa të dhëna personale. Interpretimi nuk duhet të shpjegojë kush pse ka nevojë për çfarë. Mund të thotë neutrale: mjetet e nevojshme të lëvizjes mund të qëndrojnë vetëm në vend të shënuar, nëse gjerësia minimale mbetet e lirë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort verbindet Gleichbehandlung mit diskreter Rücksichtnahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer combines equal treatment with discreet consideration." },
+                { "language": "fa", "text": "این پاسخ رفتار برابر را با رعایت محترمانه و محرمانه ترکیب می‌کند." },
+                { "language": "ar", "text": "تجمع الإجابة بين المعاملة المتساوية والمراعاة المتحفظة." },
+                { "language": "tr", "text": "Bu cevap eşit muameleyi ölçülü dikkate almayla birleştirir." },
+                { "language": "ru", "text": "Ответ соединяет равное обращение с деликатным учетом обстоятельств." },
+                { "language": "ckb", "text": "ئەم وەڵامە مامەڵەی یەکسان لەگەڵ ڕەچاوکردنی پارێزراو یەکدەخات." },
+                { "language": "kmr", "text": "Ev bersiv muameleya wekhev bi baldarîya veşartî re digihîne hev." },
+                { "language": "pl", "text": "Ta odpowiedź łączy równe traktowanie z dyskretnym uwzględnieniem sytuacji." },
+                { "language": "ro", "text": "Răspunsul combină tratamentul egal cu luarea discretă în considerare." },
+                { "language": "sq", "text": "Përgjigjja bashkon trajtimin e barabartë me kujdes të matur." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Bei einer Gehhilfe sollte man sicher eine Ausnahme machen, weil das menschlich nachvollziehbar ist.",
+              "translations": [
+                { "language": "en", "text": "For a walking aid, one should surely make an exception because it is humanly understandable." },
+                { "language": "fa", "text": "برای وسیله کمک‌حرکتی حتماً باید استثنا قائل شد، چون از نظر انسانی قابل فهم است." },
+                { "language": "ar", "text": "بالنسبة لوسيلة مساعدة على المشي، ينبغي بالتأكيد عمل استثناء لأنها مفهومة إنسانيًا." },
+                { "language": "tr", "text": "Yürüme desteği için kesinlikle istisna yapılmalı, çünkü insani olarak anlaşılabilir." },
+                { "language": "ru", "text": "Для средства поддержки ходьбы, конечно, нужно сделать исключение, потому что это по-человечески понятно." },
+                { "language": "ckb", "text": "بۆ ئامرازی یارمەتی ڕۆیشتن دڵنیایە پێویستە ئیستسنا بکرێت، چونکە لە ڕووی مرۆییەوە تێگەیشتنی هەیە." },
+                { "language": "kmr", "text": "Ji bo alava alîkariya meşê divê bêguman îstîsna were kirin, ji ber ku ji aliyê mirovî ve tê fêmkirin." },
+                { "language": "pl", "text": "Przy pomocy do chodzenia na pewno trzeba zrobić wyjątek, bo po ludzku jest to zrozumiałe." },
+                { "language": "ro", "text": "Pentru un sprijin pentru mers sigur ar trebui făcută o excepție, pentru că este omenește de înțeles." },
+                { "language": "sq", "text": "Për një mjet ndihmës për ecje sigurisht duhet bërë përjashtim, sepse është njerëzisht e kuptueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist empathisch, aber ohne neutrale Kriterien und Datenschutz zu angreifbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is empathetic, but too vulnerable without neutral criteria and privacy protection." },
+                { "language": "fa", "text": "پاسخ همدلانه است، اما بدون معیار بی‌طرف و حفاظت از حریم خصوصی آسیب‌پذیر است." },
+                { "language": "ar", "text": "الإجابة متعاطفة، لكنها ضعيفة من دون معايير محايدة وحماية الخصوصية." },
+                { "language": "tr", "text": "Cevap empatik, ama tarafsız kriterler ve mahremiyet koruması olmadan zayıf kalır." },
+                { "language": "ru", "text": "Ответ эмпатичен, но без нейтральных критериев и защиты частной сферы слишком уязвим." },
+                { "language": "ckb", "text": "وەڵامەکە هاوسۆزانەیە، بەڵام بەبێ پێوەری بێلایەن و پاراستنی تایبەتمەندی زۆر لاوازە." },
+                { "language": "kmr", "text": "Bersiv dilsoz e, lê bê pîvanên bêalî û parastina taybetî pir lawaz e." },
+                { "language": "pl", "text": "Odpowiedź jest empatyczna, ale bez neutralnych kryteriów i ochrony prywatności zbyt podatna na podważenie." },
+                { "language": "ro", "text": "Răspunsul este empatic, dar fără criterii neutre și protecția vieții private este prea vulnerabil." },
+                { "language": "sq", "text": "Përgjigjja është empatike, por pa kritere neutrale dhe mbrojtje të privatësisë është shumë e cenueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Für Lieferungen könnten wir eine Tagesregel formulieren: kurzzeitig neben der Wohnungstür, wenn der Durchgang frei bleibt, spätestens am selben Abend weg. Alles darüber hinaus gilt als Lagerung und fällt nicht unter die Auslegung.",
+              "translations": [
+                { "language": "en", "text": "For deliveries, we could formulate a same-day rule: briefly next to the apartment door if the passage remains clear, removed by the same evening at the latest. Anything beyond that counts as storage and is not covered." },
+                { "language": "fa", "text": "برای تحویل‌ها می‌توانیم قاعده همان روز بگذاریم: کوتاه‌مدت کنار در واحد، اگر مسیر آزاد بماند، و حداکثر همان شب برداشته شود. بیشتر از آن انبار محسوب می‌شود." },
+                { "language": "ar", "text": "للتسليمات يمكن صياغة قاعدة اليوم نفسه: لفترة قصيرة بجانب باب الشقة إذا بقي الممر حرًا، وتزال في مساء اليوم نفسه كحد أقصى. ما يزيد على ذلك يعد تخزينًا." },
+                { "language": "tr", "text": "Teslimatlar için aynı gün kuralı koyabiliriz: geçiş açıksa kısa süre daire kapısının yanında, en geç aynı akşam kaldırılır. Bunun ötesi depolama sayılır." },
+                { "language": "ru", "text": "Для доставок можно ввести правило того же дня: кратко рядом с дверью квартиры, если проход свободен, убрать не позднее того же вечера. Все сверх этого считается хранением." },
+                { "language": "ckb", "text": "بۆ گەیاندنەکان دەتوانین ڕێسای هەمان ڕۆژ دابنێین: کورت‌ماوە لای دەرگای خانوو، ئەگەر ڕێگا ئازاد بێت، و زۆرترین هەمان ئێوارە لاببرێت. زیاتر لەوە هەڵگرتنە." },
+                { "language": "kmr", "text": "Ji bo radestkirinan em dikarin rêzika heman rojê çêkin: demkurt li kêleka deriyê malê heke rê vala be, herî dereng heman êvarê were rakirin. Zêdetir ji wê wek hilanîn tê hesibandin." },
+                { "language": "pl", "text": "Dla dostaw możemy ustalić zasadę tego samego dnia: krótko obok drzwi, jeśli przejście jest wolne, usunięte najpóźniej tego samego wieczoru. Wszystko ponad to jest składowaniem." },
+                { "language": "ro", "text": "Pentru livrări putem formula regula aceleiași zile: pe termen scurt lângă ușa locuinței, dacă trecerea rămâne liberă, îndepărtate cel târziu în aceeași seară. Orice depășire este depozitare." },
+                { "language": "sq", "text": "Për dërgesat mund të vendosim rregullin e së njëjtës ditë: shkurt pranë derës, nëse kalimi mbetet i lirë, dhe hiqet më së voni atë mbrëmje. Çdo gjë më shumë quhet ruajtje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort macht Alltagspraxis überprüfbar, ohne die Hausordnung aufzuweichen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer makes everyday practice verifiable without weakening the house rules." },
+                { "language": "fa", "text": "این پاسخ عمل روزمره را قابل بررسی می‌کند، بدون اینکه مقررات ساختمان را سست کند." },
+                { "language": "ar", "text": "تجعل الإجابة الممارسة اليومية قابلة للتحقق من دون إضعاف نظام السكن." },
+                { "language": "tr", "text": "Bu cevap günlük uygulamayı kontrol edilebilir kılar, apartman kurallarını zayıflatmaz." },
+                { "language": "ru", "text": "Ответ делает повседневную практику проверяемой, не ослабляя правила дома." },
+                { "language": "ckb", "text": "ئەم وەڵامە ڕێکاری ڕۆژانە دەکاتە شتێکی پشکنراو، بەبێ لاوازکردنی ڕێساکانی خانوو." },
+                { "language": "kmr", "text": "Ev bersiv pratîka rojane dike kontrolbar, bêyî ku rêzikên xanî lawaz bike." },
+                { "language": "pl", "text": "Ta odpowiedź czyni codzienną praktykę sprawdzalną, nie osłabiając regulaminu domu." },
+                { "language": "ro", "text": "Răspunsul face practica zilnică verificabilă fără să slăbească regulamentul." },
+                { "language": "sq", "text": "Përgjigjja e bën praktikën e përditshme të verifikueshme pa dobësuar rregulloren." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Pakete sollten kurz stehen dürfen, solange sie niemanden stören.",
+              "translations": [
+                { "language": "en", "text": "Parcels should be allowed to stand briefly as long as they do not bother anyone." },
+                { "language": "fa", "text": "بسته‌ها باید بتوانند کوتاه‌مدت بمانند، تا وقتی کسی را اذیت نکنند." },
+                { "language": "ar", "text": "ينبغي السماح للطرود بأن تبقى قليلًا ما دامت لا تزعج أحدًا." },
+                { "language": "tr", "text": "Paketlerin kimseyi rahatsız etmediği sürece kısa süre durmasına izin verilmeli." },
+                { "language": "ru", "text": "Посылкам следует разрешить стоять недолго, пока они никому не мешают." },
+                { "language": "ckb", "text": "پێویستە ڕێگە بدرێت پاکێتەکان ماوەیەکی کورت بمێننەوە، تا کاتێک کەس ئازار نەدەن." },
+                { "language": "kmr", "text": "Divê destûr hebe pakêt demeke kurt bimînin, heta ku kesek aciz nekin." },
+                { "language": "pl", "text": "Paczki powinny móc stać krótko, o ile nikomu nie przeszkadzają." },
+                { "language": "ro", "text": "Coletele ar trebui să poată sta puțin timp, atâta timp cât nu deranjează pe nimeni." },
+                { "language": "sq", "text": "Pakot duhet të lejohen të qëndrojnë shkurt, për sa kohë nuk shqetësojnë askënd." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist alltagsnah, aber ohne Dauer und Durchgangskriterium nicht belastbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is realistic, but without duration and passage criteria it is not reliable." },
+                { "language": "fa", "text": "پاسخ روزمره و طبیعی است، اما بدون مدت و معیار مسیر قابل اتکا نیست." },
+                { "language": "ar", "text": "الإجابة واقعية، لكنها من دون مدة ومعيار للممر ليست موثوقة." },
+                { "language": "tr", "text": "Cevap günlük yaşama yakın, ama süre ve geçiş kriteri olmadan güvenilir değil." },
+                { "language": "ru", "text": "Ответ близок к повседневности, но без срока и критерия прохода ненадежен." },
+                { "language": "ckb", "text": "وەڵامەکە لە ژیانی ڕۆژانە نزیکە، بەڵام بەبێ ماوە و پێوەری ڕێگا پشتپێبەستراو نییە." },
+                { "language": "kmr", "text": "Bersiv nêzîkî jiyana rojane ye, lê bê dem û pîvana rêyê ne pêbawer e." },
+                { "language": "pl", "text": "Odpowiedź jest życiowa, ale bez czasu i kryterium przejścia nie jest solidna." },
+                { "language": "ro", "text": "Răspunsul este apropiat de viața reală, dar fără durată și criteriu de trecere nu este solid." },
+                { "language": "sq", "text": "Përgjigjja është e afërt me përditshmërinë, por pa kohëzgjatje dhe kriter kalimi nuk është e qëndrueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollte der Text ausdrücklich als Anwendungshinweis formuliert werden: Die Hausordnung bleibt unverändert; zur einheitlichen Praxis gelten drei Kriterien: freier Durchgang, kurze Dauer bei Lieferungen und diskrete Zulassung notwendiger Mobilitätshilfen am markierten Platz.",
+              "translations": [
+                { "language": "en", "text": "Then the text should be explicitly formulated as an application note: the house rules remain unchanged; for consistent practice, three criteria apply: clear passage, short duration for deliveries, and discreet permission for necessary mobility aids in the marked place." },
+                { "language": "fa", "text": "پس متن باید صریحاً راهنمای کاربرد باشد: مقررات ساختمان تغییر نمی‌کند؛ برای رویه یکسان سه معیار داریم: مسیر آزاد، مدت کوتاه برای تحویل‌ها و اجازه محترمانه برای وسایل کمک‌حرکتی ضروری در محل مشخص." },
+                { "language": "ar", "text": "إذن ينبغي صياغة النص صراحة كملاحظة تطبيقية: يبقى نظام السكن دون تغيير؛ وللممارسة الموحدة تسري ثلاثة معايير: ممر حر، مدة قصيرة للتسليمات، وسماح متحفظ بوسائل الحركة الضرورية في المكان المحدد." },
+                { "language": "tr", "text": "O zaman metin açıkça uygulama notu olarak yazılmalı: Apartman kuralları değişmez; tek tip uygulama için üç kriter geçerlidir: açık geçiş, teslimatlarda kısa süre ve gerekli hareket desteklerine işaretli yerde ölçülü izin." },
+                { "language": "ru", "text": "Тогда текст должен быть явно сформулирован как указание по применению: правила дома не меняются; для единой практики действуют три критерия: свободный проход, короткая длительность доставок и сдержанное разрешение необходимых средств мобильности в обозначенном месте." },
+                { "language": "ckb", "text": "ئەوا پێویستە دەقەکە بە ڕوونی وەک ڕێنمایی جێبەجێکردن دابڕێژرێت: ڕێساکانی خانوو ناگۆڕێن؛ بۆ ڕێکاری یەکسان سێ پێوەر هەن: ڕێگای ئازاد، ماوەی کورت بۆ گەیاندنەکان و ڕێگەدانێکی پارێزراو بۆ ئامرازە پێویستەکانی جوڵان لە شوێنی نیشانکراو." },
+                { "language": "kmr", "text": "Wê gavê divê nivîs wek şîreta sepandinê bi zelalî were nivîsandin: rêzikên xanî naguhêrin; ji bo pratîka yekgirtî sê pîvan hene: rêya vekirî, demeke kurt ji bo radestkirinan û destûra baldar ji bo alavên tevgerê yên pêdivî li cihê nîşankirî." },
+                { "language": "pl", "text": "Wtedy tekst powinien być wyraźnie wskazówką stosowania: regulamin domu pozostaje bez zmian; dla jednolitej praktyki obowiązują trzy kryteria: wolne przejście, krótki czas przy dostawach i dyskretne dopuszczenie potrzebnych pomocy w oznaczonym miejscu." },
+                { "language": "ro", "text": "Atunci textul trebuie formulat explicit ca notă de aplicare: regulamentul rămâne neschimbat; pentru practica unitară se aplică trei criterii: trecere liberă, durată scurtă pentru livrări și acceptare discretă a mijloacelor necesare de mobilitate în locul marcat." },
+                { "language": "sq", "text": "Atëherë teksti duhet formuluar qartë si udhëzim zbatimi: rregullorja nuk ndryshon; për praktikë të njëjtë vlejnë tri kritere: kalim i lirë, kohë e shkurtër për dërgesat dhe lejim i matur i mjeteve të nevojshme në vendin e shënuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort vermeidet den Eindruck einer neuen Regel und schafft dennoch eine klare Praxis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer avoids the impression of a new rule while still creating clear practice." },
+                { "language": "fa", "text": "این پاسخ حس ایجاد قاعده جدید را کم می‌کند و با این حال رویه روشن می‌سازد." },
+                { "language": "ar", "text": "تتجنب الإجابة الانطباع بوجود قاعدة جديدة، ومع ذلك تخلق ممارسة واضحة." },
+                { "language": "tr", "text": "Bu cevap yeni kural izlenimini önler ve yine de açık bir uygulama oluşturur." },
+                { "language": "ru", "text": "Ответ избегает впечатления нового правила и при этом создает ясную практику." },
+                { "language": "ckb", "text": "ئەم وەڵامە هەستی ڕێسای نوێ دوور دەخاتەوە و هێشتا ڕێکاری ڕوون دروست دەکات." },
+                { "language": "kmr", "text": "Ev bersiv bandora rêzika nû dûr dixe û dîsa pratîkeke zelal çêdike." },
+                { "language": "pl", "text": "Ta odpowiedź unika wrażenia nowej zasady, a mimo to tworzy jasną praktykę." },
+                { "language": "ro", "text": "Răspunsul evită impresia unei reguli noi și totuși creează o practică clară." },
+                { "language": "sq", "text": "Përgjigjja shmang përshtypjen e një rregulli të ri dhe megjithatë krijon praktikë të qartë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann schreiben wir einfach, dass die Hausordnung grundsätzlich gilt, aber in besonderen Fällen Ausnahmen möglich sind.",
+              "translations": [
+                { "language": "en", "text": "Then we simply write that the house rules generally apply, but exceptions are possible in special cases." },
+                { "language": "fa", "text": "پس فقط می‌نویسیم که مقررات ساختمان اصولاً معتبر است، اما در موارد خاص استثنا ممکن است." },
+                { "language": "ar", "text": "إذن نكتب ببساطة أن نظام السكن يسري من حيث المبدأ، لكن الاستثناءات ممكنة في حالات خاصة." },
+                { "language": "tr", "text": "O zaman sadece apartman kurallarının genel olarak geçerli olduğunu, ama özel durumlarda istisnaların mümkün olduğunu yazarız." },
+                { "language": "ru", "text": "Тогда просто напишем, что правила дома в принципе действуют, но в особых случаях возможны исключения." },
+                { "language": "ckb", "text": "ئەوا تەنها دەنوسین کە ڕێساکانی خانوو بە گشتی جێبەجێن، بەڵام لە دۆخی تایبەتدا ئیستسنا دەکرێت." },
+                { "language": "kmr", "text": "Wê gavê em tenê dinivîsin ku rêzikên xanî bi giştî derbas in, lê di rewşên taybet de îstîsna gengaz in." },
+                { "language": "pl", "text": "Wtedy po prostu napiszemy, że regulamin domu zasadniczo obowiązuje, ale w szczególnych przypadkach możliwe są wyjątki." },
+                { "language": "ro", "text": "Atunci scriem pur și simplu că regulamentul se aplică în principiu, dar în cazuri speciale sunt posibile excepții." },
+                { "language": "sq", "text": "Atëherë shkruajmë thjesht se rregullorja në parim vlen, por në raste të veçanta përjashtimet janë të mundshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist kurz, aber zu unbestimmt; sie erzeugt neue Streitfragen statt Anwendungssicherheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is short but too vague; it creates new disputes instead of application certainty." },
+                { "language": "fa", "text": "پاسخ کوتاه است، اما خیلی مبهم؛ به‌جای اطمینان در اجرا، پرسش‌های تازه ایجاد می‌کند." },
+                { "language": "ar", "text": "الإجابة قصيرة لكنها غامضة جدًا؛ تخلق أسئلة نزاع جديدة بدل وضوح التطبيق." },
+                { "language": "tr", "text": "Cevap kısa ama çok belirsiz; uygulama güvenliği yerine yeni tartışma soruları yaratır." },
+                { "language": "ru", "text": "Ответ короткий, но слишком неопределенный; он создает новые спорные вопросы вместо надежности применения." },
+                { "language": "ckb", "text": "وەڵامەکە کورتە، بەڵام زۆر نادیارە؛ لە جیاتی دڵنیایی جێبەجێکردن، پرسیاری نوێی ناکۆکی دروست دەکات." },
+                { "language": "kmr", "text": "Bersiv kurt e, lê pir nezelal e; li şûna ewlehiya sepandinê pirsên nû yên nakokiyê çêdike." },
+                { "language": "pl", "text": "Odpowiedź jest krótka, ale zbyt nieokreślona; tworzy nowe spory zamiast pewności stosowania." },
+                { "language": "ro", "text": "Răspunsul este scurt, dar prea vag; creează noi dispute în loc de siguranță în aplicare." },
+                { "language": "sq", "text": "Përgjigjja është e shkurtër, por shumë e paqartë; krijon çështje të reja mosmarrëveshjeje në vend të sigurisë së zbatimit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "rule-purpose",
+          "text": "C2-Auslegung beginnt nicht mit Widerspruch, sondern mit dem Zweck der Regel und klaren Grenzfällen.",
+          "translations": [
+            { "language": "en", "text": "C2 interpretation does not begin with objection, but with the purpose of the rule and clear borderline cases." },
+            { "language": "fa", "text": "تفسیر در سطح C2 با مخالفت شروع نمی‌شود، بلکه با هدف قاعده و موارد مرزی روشن آغاز می‌شود." },
+            { "language": "ar", "text": "لا يبدأ تفسير C2 بالاعتراض، بل بهدف القاعدة والحالات الحدية الواضحة." },
+            { "language": "tr", "text": "C2 yorumu itirazla değil, kuralın amacı ve açık sınır durumlarla başlar." },
+            { "language": "ru", "text": "Толкование уровня C2 начинается не с возражения, а с цели правила и ясных пограничных случаев." },
+            { "language": "ckb", "text": "لێکدانەوەی C2 بە ناڕەزایی دەست پێناکات، بەڵکو بە ئامانجی ڕێسا و دۆخی سنووری ڕوون دەست پێدەکات." },
+            { "language": "kmr", "text": "Şîroveya C2 ne bi nerazîbûnê, lê bi armanca rêzikê û rewşên sînorî yên zelal dest pê dike." },
+            { "language": "pl", "text": "Interpretacja C2 nie zaczyna się od sprzeciwu, lecz od celu zasady i jasnych przypadków granicznych." },
+            { "language": "ro", "text": "Interpretarea C2 nu începe cu obiecția, ci cu scopul regulii și cazurile-limită clare." },
+            { "language": "sq", "text": "Interpretimi C2 nuk fillon me kundërshtim, por me qëllimin e rregullit dhe raste kufitare të qarta." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criteria-not-softness",
+          "text": "Praktische Auslegung ist keine Aufweichung, wenn sie mit klaren Kriterien verbunden wird.",
+          "translations": [
+            { "language": "en", "text": "Practical interpretation is not weakening if it is linked to clear criteria." },
+            { "language": "fa", "text": "تفسیر عملی اگر با معیارهای روشن همراه باشد، سست کردن قاعده نیست." },
+            { "language": "ar", "text": "التفسير العملي ليس إضعافًا إذا ارتبط بمعايير واضحة." },
+            { "language": "tr", "text": "Pratik yorum, açık kriterlerle bağlanırsa yumuşatma değildir." },
+            { "language": "ru", "text": "Практическое толкование не является ослаблением, если связано с ясными критериями." },
+            { "language": "ckb", "text": "لێکدانەوەی کرداری لاوازکردن نییە، ئەگەر بە پێوەری ڕوونەوە پەیوەست بێت." },
+            { "language": "kmr", "text": "Şîroveya bikaranînbar ne lawazkirin e, heke bi pîvanên zelal ve girêdayî be." },
+            { "language": "pl", "text": "Praktyczna interpretacja nie jest osłabieniem, jeśli wiąże się z jasnymi kryteriami." },
+            { "language": "ro", "text": "Interpretarea practică nu este o slăbire dacă este legată de criterii clare." },
+            { "language": "sq", "text": "Interpretimi praktik nuk është dobësim nëse lidhet me kritere të qarta." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "privacy-and-fairness",
+          "text": "Bei persönlichen Bedarfen sollten Regeln neutral formuliert werden, ohne private Gründe öffentlich zu machen.",
+          "translations": [
+            { "language": "en", "text": "For personal needs, rules should be formulated neutrally without making private reasons public." },
+            { "language": "fa", "text": "در نیازهای شخصی، قواعد باید بی‌طرفانه نوشته شوند، بدون اینکه دلیل خصوصی عمومی شود." },
+            { "language": "ar", "text": "عند الاحتياجات الشخصية ينبغي صياغة القواعد بحياد من دون جعل الأسباب الخاصة علنية." },
+            { "language": "tr", "text": "Kişisel ihtiyaçlarda kurallar, özel nedenleri kamusal yapmadan tarafsız biçimde formüle edilmelidir." },
+            { "language": "ru", "text": "При личных потребностях правила следует формулировать нейтрально, не делая частные причины публичными." },
+            { "language": "ckb", "text": "لە پێویستییە کەسییەکاندا پێویستە ڕێساکان بە بێلایەنی دابڕێژرێن، بەبێ ئەوەی هۆکاری تایبەتی گشتی بکرێت." },
+            { "language": "kmr", "text": "Di pêdiviyên kesane de divê rêzik bêalî werin nivîsandin, bêyî ku sedemên taybetî giştî bibin." },
+            { "language": "pl", "text": "Przy osobistych potrzebach zasady powinny być formułowane neutralnie, bez upubliczniania prywatnych powodów." },
+            { "language": "ro", "text": "În cazul nevoilor personale, regulile trebuie formulate neutru, fără a face publice motive private." },
+            { "language": "sq", "text": "Për nevoja personale, rregullat duhet të formulohen në mënyrë neutrale, pa bërë publike arsyet private." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "application-note",
+          "text": "Ein Anwendungshinweis erklärt die bestehende Regel, statt unklar neue Ausnahmen zu erfinden.",
+          "translations": [
+            { "language": "en", "text": "An application note explains the existing rule instead of vaguely inventing new exceptions." },
+            { "language": "fa", "text": "راهنمای کاربردی قاعده موجود را توضیح می‌دهد، نه اینکه استثناهای تازه و مبهم بسازد." },
+            { "language": "ar", "text": "تشرح ملاحظة التطبيق القاعدة القائمة بدل اختراع استثناءات جديدة غامضة." },
+            { "language": "tr", "text": "Uygulama notu mevcut kuralı açıklar; belirsiz yeni istisnalar uydurmaz." },
+            { "language": "ru", "text": "Указание по применению объясняет существующее правило, а не расплывчато придумывает новые исключения." },
+            { "language": "ckb", "text": "ڕێنمایی جێبەجێکردن ڕێسای هەبوو ڕوون دەکاتەوە، نەک ئیستسنای نوێی نادیار دروست بکات." },
+            { "language": "kmr", "text": "Şîreta sepandinê rêzika heyî rave dike, ne ku îstîsnayên nû yên nezelal biafirîne." },
+            { "language": "pl", "text": "Wskazówka stosowania wyjaśnia istniejącą zasadę, zamiast niejasno wymyślać nowe wyjątki." },
+            { "language": "ro", "text": "O notă de aplicare explică regula existentă în loc să inventeze vag excepții noi." },
+            { "language": "sq", "text": "Udhëzimi i zbatimit shpjegon rregullin ekzistues, në vend që të shpikë paqartë përjashtime të reja." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "house-rules-context-meeting",
+          "placement": "detail-header",
+          "purpose": "Illustrate a tenant and property-management conversation about applying house rules fairly in shared building spaces.",
+          "altText": "Ein Mieter und die Hausverwaltung besprechen an einem Tisch eine Hausordnung, einen Flurplan und kurze Anwendungskriterien.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A tenant and property management discuss house rules, a hallway plan, and short application criteria at a table." },
+            { "language": "fa", "text": "یک مستأجر و مدیریت ساختمان پشت میز درباره مقررات ساختمان، نقشه راهرو و معیارهای کوتاه کاربردی صحبت می‌کنند." },
+            { "language": "ar", "text": "مستأجر وإدارة العقار يناقشان على طاولة نظام السكن ومخطط الممر ومعايير تطبيق قصيرة." },
+            { "language": "tr", "text": "Bir kiracı ve bina yönetimi, masada apartman kurallarını, koridor planını ve kısa uygulama kriterlerini görüşüyor." },
+            { "language": "ru", "text": "Арендатор и управляющая компания обсуждают за столом правила дома, план коридора и короткие критерии применения." },
+            { "language": "ckb", "text": "کرێچییەک و بەڕێوەبەرایەتی خانوو لەسەر مێزێک ڕێسای خانوو، پلانی ڕێڕەو و پێوەری کورتی جێبەجێکردن گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Kirêdar û rêveberiya avahiyê li ser maseyê rêzikên xanî, plana korîdorê û pîvanên kurt ên sepandinê gotûbêj dikin." },
+            { "language": "pl", "text": "Najemca i administracja budynku omawiają przy stole regulamin domu, plan korytarza i krótkie kryteria stosowania." },
+            { "language": "ro", "text": "Un chiriaș și administrarea imobilului discută la masă regulamentul, planul holului și criterii scurte de aplicare." },
+            { "language": "sq", "text": "Një qiramarrës dhe administrimi i ndërtesës diskutojnë në tryezë rregulloren, planin e korridorit dhe kritere të shkurtra zbatimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, tenant and property-management representative at a table, non-readable house rules page, simple hallway plan, clear path markings, calm formal housing discussion, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

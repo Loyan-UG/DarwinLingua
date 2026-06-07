@@ -1,0 +1,790 @@
+{
+  "packageId": "roleplays-c1-core-02-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 02 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 02",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-organisationskonflikt-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Organisationskonflikt moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating an organizational conflict" },
+        { "language": "fa", "text": "میانجی‌گری یک تعارض سازمانی" },
+        { "language": "ar", "text": "إدارة نزاع تنظيمي" },
+        { "language": "tr", "text": "Kurumsal bir çatışmayı yönetmek" },
+        { "language": "ru", "text": "Модерация организационного конфликта" },
+        { "language": "ckb", "text": "ناوبژیوانیی ناکۆکییەکی ڕێکخراوەیی" },
+        { "language": "kmr", "text": "Birêvebirina nakokiyeke rêxistinî" },
+        { "language": "pl", "text": "Moderowanie konfliktu organizacyjnego" },
+        { "language": "ro", "text": "Moderarea unui conflict organizațional" },
+        { "language": "sq", "text": "Moderimi i një konflikti organizativ" }
+      ],
+      "description": "In einem C1-Arbeitsmeeting moderieren Sie einen Konflikt zwischen Vertrieb und Support über Zusagen an Kunden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 workplace meeting, you moderate a conflict between sales and support about promises made to customers." },
+        { "language": "fa", "text": "در یک جلسه کاری سطح C1، تعارض بین فروش و پشتیبانی درباره وعده‌های داده‌شده به مشتریان را میانجی‌گری می‌کنید." },
+        { "language": "ar", "text": "في اجتماع عمل بمستوى C1، تدير نزاعاً بين المبيعات والدعم حول الوعود المقدمة للعملاء." },
+        { "language": "tr", "text": "C1 düzeyinde bir iş toplantısında, müşterilere verilen sözler konusunda satış ve destek arasındaki çatışmayı yönetirsiniz." },
+        { "language": "ru", "text": "На рабочем совещании уровня C1 вы модерируете конфликт между отделом продаж и поддержкой из-за обещаний клиентам." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی کاری ئاستی C1دا، ناکۆکیی نێوان فرۆشتن و پشتگیری دەربارەی بەڵێنەکانی دراو بە کڕیاران ناوبژیوانی دەکەیت." },
+        { "language": "kmr", "text": "Di civîneke kar a asta C1 de, hûn nakokiya di navbera firotanê û piştgiriyê de derbarê sozên ji xerîdaran re hatine dayîn birêve dibin." },
+        { "language": "pl", "text": "Na spotkaniu służbowym na poziomie C1 moderujesz konflikt między sprzedażą a wsparciem dotyczący obietnic składanych klientom." },
+        { "language": "ro", "text": "Într-o ședință de lucru de nivel C1, moderați un conflict între vânzări și suport privind promisiunile făcute clienților." },
+        { "language": "sq", "text": "Në një takim pune të nivelit C1, moderoni një konflikt midis shitjeve dhe mbështetjes për premtimet ndaj klientëve." }
+      ],
+      "learnerGoal": "Einen Konflikt zwischen Abteilungen moderieren: Positionen entschärfen, Interessen und Zwänge trennen, Verantwortlichkeiten klären und einen überprüfbaren nächsten Schritt vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate a conflict between departments: de-escalate positions, separate interests and constraints, clarify responsibilities, and agree on a verifiable next step." },
+        { "language": "fa", "text": "تعارض بین بخش‌ها را میانجی‌گری کنید: موضع‌ها را آرام کنید، منافع و محدودیت‌ها را جدا کنید، مسئولیت‌ها را روشن کنید و بر گام بعدی قابل بررسی توافق کنید." },
+        { "language": "ar", "text": "أدر نزاعاً بين الأقسام: خفف حدة المواقف، وافصل بين المصالح والقيود، ووضح المسؤوليات، واتفق على خطوة تالية قابلة للتحقق." },
+        { "language": "tr", "text": "Departmanlar arası bir çatışmayı yönetin: pozisyonları yumuşatın, çıkarları ve kısıtları ayırın, sorumlulukları netleştirin ve doğrulanabilir bir sonraki adım üzerinde anlaşın." },
+        { "language": "ru", "text": "Модерировать конфликт между отделами: снизить напряженность позиций, отделить интересы и ограничения, прояснить ответственности и согласовать проверяемый следующий шаг." },
+        { "language": "ckb", "text": "ناکۆکیی نێوان بەشەکان ناوبژیوانی بکە: هەڵوێستەکان ئارام بکە، بەرژەوەندی و سنوورەکان جیا بکەوە، بەرپرسیاریەتییەکان ڕوون بکە و لەسەر هەنگاوی داهاتووی پشکنراو ڕێکبکەوە." },
+        { "language": "kmr", "text": "Nakokiya di navbera beşan de birêve bibe: helwestan aram bike, berjewendî û sînoran cuda bike, berpirsiyariyan zelal bike û li ser gaveke din a kontrolkirî lihev bike." },
+        { "language": "pl", "text": "Moderować konflikt między działami: łagodzić stanowiska, oddzielać interesy od ograniczeń, wyjaśniać odpowiedzialności i uzgodnić sprawdzalny kolejny krok." },
+        { "language": "ro", "text": "Moderați un conflict între departamente: calmați pozițiile, separați interesele de constrângeri, clarificați responsabilitățile și conveniți asupra unui pas următor verificabil." },
+        { "language": "sq", "text": "Moderoni një konflikt midis departamenteve: zbutni pozicionet, ndani interesat nga kufizimet, qartësoni përgjegjësitë dhe bini dakord për një hap të ardhshëm të verifikueshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 2,
+      "roles": [
+        {
+          "roleKey": "sales",
+          "displayName": "Vertrieb",
+          "translations": [
+            { "language": "en", "text": "Sales" },
+            { "language": "fa", "text": "فروش" },
+            { "language": "ar", "text": "المبيعات" },
+            { "language": "tr", "text": "Satış" },
+            { "language": "ru", "text": "Отдел продаж" },
+            { "language": "ckb", "text": "فرۆشتن" },
+            { "language": "kmr", "text": "Firotan" },
+            { "language": "pl", "text": "Sprzedaż" },
+            { "language": "ro", "text": "Vânzări" },
+            { "language": "sq", "text": "Shitjet" }
+          ]
+        },
+        {
+          "roleKey": "support",
+          "displayName": "Support",
+          "translations": [
+            { "language": "en", "text": "Support" },
+            { "language": "fa", "text": "پشتیبانی" },
+            { "language": "ar", "text": "الدعم" },
+            { "language": "tr", "text": "Destek" },
+            { "language": "ru", "text": "Поддержка" },
+            { "language": "ckb", "text": "پشتگیری" },
+            { "language": "kmr", "text": "Piştgirî" },
+            { "language": "pl", "text": "Wsparcie" },
+            { "language": "ro", "text": "Suport" },
+            { "language": "sq", "text": "Mbështetja" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Sie",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "شما" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Siz" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Hûn" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Dumneavoastră" },
+            { "language": "sq", "text": "Ju" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "sales",
+          "baseText": "Wir verlieren gerade Kunden, weil Support-Termine zu spät bestätigt werden. Wenn wir im Vertrieb keine schnellen Zusagen machen, wirkt das unprofessionell.",
+          "translations": [
+            { "language": "en", "text": "We are currently losing customers because support appointments are confirmed too late. If we in sales do not make quick promises, it looks unprofessional." },
+            { "language": "fa", "text": "ما الان مشتری از دست می‌دهیم، چون وقت‌های پشتیبانی خیلی دیر تأیید می‌شوند. اگر ما در فروش سریع وعده ندهیم، غیرحرفه‌ای به نظر می‌رسد." },
+            { "language": "ar", "text": "نحن نخسر عملاء حالياً لأن مواعيد الدعم تُؤكد متأخراً جداً. إذا لم نقدم في المبيعات وعوداً سريعة، يبدو ذلك غير مهني." },
+            { "language": "tr", "text": "Şu anda müşteri kaybediyoruz, çünkü destek randevuları çok geç onaylanıyor. Satışta hızlı sözler vermezsek bu profesyonel görünmüyor." },
+            { "language": "ru", "text": "Мы сейчас теряем клиентов, потому что встречи с поддержкой подтверждаются слишком поздно. Если мы в продажах не даем быстрых обещаний, это выглядит непрофессионально." },
+            { "language": "ckb", "text": "ئێمە ئێستا کڕیار لەدەست دەدەین، چونکە کاتەکانی پشتگیری زۆر درەنگ پشتڕاست دەکرێنەوە. ئەگەر ئێمە لە فرۆشتندا بەڵێنی خێرا نەدەین، ئەمە ناپیشەیی دەردەکەوێت." },
+            { "language": "kmr", "text": "Em niha xerîdaran winda dikin, ji ber ku demên piştgiriyê pir dereng tên piştrastkirin. Heke em di firotanê de sozên bilez nedin, ev neprofesyonel xuya dike." },
+            { "language": "pl", "text": "Obecnie tracimy klientów, ponieważ terminy wsparcia są potwierdzane zbyt późno. Jeśli w sprzedaży nie składamy szybkich obietnic, wygląda to nieprofesjonalnie." },
+            { "language": "ro", "text": "Pierdem clienți acum, deoarece programările de suport sunt confirmate prea târziu. Dacă noi, la vânzări, nu facem promisiuni rapide, pare neprofesionist." },
+            { "language": "sq", "text": "Po humbasim klientë sepse takimet me mbështetjen konfirmohen shumë vonë. Nëse ne në shitje nuk japim premtime të shpejta, kjo duket joprofesionale." }
+          ],
+          "function": "conflict-position-sales",
+          "toneNote": "Die Aussage enthält berechtigten Druck, aber auch eine implizite Schuldzuweisung."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde gern zuerst die beiden Ebenen trennen: Der Vertrieb braucht Verlässlichkeit gegenüber Kunden, und der Support braucht planbare Kapazitäten. Wenn wir nur über Schuld sprechen, kommen wir nicht zu einer belastbaren Lösung.",
+          "translations": [
+            { "language": "en", "text": "I would first like to separate the two levels: sales needs reliability toward customers, and support needs plannable capacity. If we only talk about blame, we will not arrive at a robust solution." },
+            { "language": "fa", "text": "می‌خواهم ابتدا دو سطح را جدا کنم: فروش در برابر مشتریان به قابل‌اعتماد بودن نیاز دارد و پشتیبانی به ظرفیت قابل برنامه‌ریزی. اگر فقط درباره تقصیر صحبت کنیم، به راه‌حل قابل اتکا نمی‌رسیم." },
+            { "language": "ar", "text": "أود أولاً أن أفصل بين مستويين: يحتاج قسم المبيعات إلى موثوقية تجاه العملاء، ويحتاج الدعم إلى قدرات يمكن التخطيط لها. إذا تحدثنا فقط عن اللوم فلن نصل إلى حل متين." },
+            { "language": "tr", "text": "Önce iki düzeyi ayırmak isterim: satışın müşterilere karşı güvenilirliğe, desteğin ise planlanabilir kapasiteye ihtiyacı var. Sadece suç hakkında konuşursak sağlam bir çözüme ulaşamayız." },
+            { "language": "ru", "text": "Я хотел бы сначала разделить два уровня: продажам нужна надежность перед клиентами, а поддержке — планируемые ресурсы. Если мы будем говорить только о вине, мы не придем к устойчивому решению." },
+            { "language": "ckb", "text": "دەمەوێت سەرەتا دوو ئاستەکە جیا بکەمەوە: فرۆشتن پێویستی بە متمانە لە بەرامبەر کڕیاران هەیە، پشتگیریش پێویستی بە توانای پلاندانراو هەیە. ئەگەر تەنها باس لە تاوان بکەین، ناگەینە چارەسەرێکی پشتپێبەستراو." },
+            { "language": "kmr", "text": "Ez dixwazim pêşî du astan cuda bikim: firotan pêwîstî bi pêbaweriyê li hember xerîdaran heye, piştgirî jî pêwîstî bi kapasîteya plansazkirî heye. Heke em tenê behsa sûcê bikin, em nagihîjin çareseriyeke qayîm." },
+            { "language": "pl", "text": "Chciałbym najpierw oddzielić dwa poziomy: sprzedaż potrzebuje wiarygodności wobec klientów, a wsparcie planowalnych zasobów. Jeśli będziemy mówić tylko o winie, nie dojdziemy do trwałego rozwiązania." },
+            { "language": "ro", "text": "Aș dori mai întâi să separ cele două niveluri: vânzările au nevoie de fiabilitate față de clienți, iar suportul are nevoie de capacitate planificabilă. Dacă vorbim doar despre vină, nu ajungem la o soluție solidă." },
+            { "language": "sq", "text": "Do të doja fillimisht të ndaj dy nivelet: shitjet kanë nevojë për besueshmëri ndaj klientëve, ndërsa mbështetja ka nevojë për kapacitet të planifikueshëm. Nëse flasim vetëm për faj, nuk arrijmë te një zgjidhje e qëndrueshme." }
+          ],
+          "function": "moderation-frame",
+          "toneNote": "C1: Die Moderation entschärft die Schuldfrage und benennt legitime Interessen beider Seiten.",
+          "expectedLearnerAction": "Set a neutral frame and separate interests."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "support",
+          "baseText": "Das Problem ist, dass der Vertrieb Termine verspricht, ohne vorher zu prüfen, ob wir die Fälle fachlich und zeitlich überhaupt abdecken können.",
+          "translations": [
+            { "language": "en", "text": "The problem is that sales promises appointments without first checking whether we can cover the cases technically and in terms of time at all." },
+            { "language": "fa", "text": "مشکل این است که فروش وقت‌هایی را وعده می‌دهد بدون اینکه اول بررسی کند آیا ما از نظر تخصصی و زمانی اصلاً می‌توانیم آن موارد را پوشش دهیم یا نه." },
+            { "language": "ar", "text": "المشكلة هي أن المبيعات تعد بمواعيد دون أن تتحقق مسبقاً مما إذا كان بإمكاننا تغطية الحالات فنياً وزمنياً." },
+            { "language": "tr", "text": "Sorun şu ki satış, bizim vakaları teknik olarak ve zaman açısından karşılayıp karşılayamayacağımızı önceden kontrol etmeden randevu sözü veriyor." },
+            { "language": "ru", "text": "Проблема в том, что продажи обещают встречи, не проверив заранее, можем ли мы вообще покрыть эти случаи по содержанию и времени." },
+            { "language": "ckb", "text": "کێشەکە ئەوەیە فرۆشتن کات بەڵێن دەدات بەبێ ئەوەی پێشتر بپشکنێت ئایا ئێمە لە ڕووی پسپۆڕی و کاتەوە دەتوانین ئەو کەیسانە بگرینە ئەستۆ یان نا." },
+            { "language": "kmr", "text": "Pirsgirêk ew e ku firotan randevûyan soz dide bê ku pêşî kontrol bike ka em dikarin wan rewşan ji aliyê pisporî û demê ve bigirin ser xwe an na." },
+            { "language": "pl", "text": "Problem polega na tym, że sprzedaż obiecuje terminy, nie sprawdzając wcześniej, czy w ogóle możemy obsłużyć sprawy merytorycznie i czasowo." },
+            { "language": "ro", "text": "Problema este că vânzările promit programări fără să verifice înainte dacă putem acoperi cazurile profesional și ca timp." },
+            { "language": "sq", "text": "Problemi është se shitjet premtojnë takime pa kontrolluar më parë nëse ne mund t'i mbulojmë rastet profesionalisht dhe në kohë." }
+          ],
+          "function": "conflict-position-support",
+          "toneNote": "Die Aussage ist sachlich verwertbar, klingt aber zugespitzt."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich höre zwei Punkte heraus: Erstens fehlt ein verlässlicher Blick auf freie Kapazitäten. Zweitens ist unklar, welche Zusagen der Vertrieb ohne Rückfrage machen darf. Können wir diese beiden Punkte getrennt bearbeiten?",
+          "translations": [
+            { "language": "en", "text": "I hear two points: first, a reliable view of available capacity is missing. Second, it is unclear which promises sales may make without asking. Can we work on these two points separately?" },
+            { "language": "fa", "text": "من دو نکته می‌شنوم: اول اینکه تصویر قابل‌اعتمادی از ظرفیت آزاد وجود ندارد. دوم اینکه روشن نیست فروش بدون پرس‌وجو اجازه دارد چه وعده‌هایی بدهد. آیا می‌توانیم این دو نکته را جداگانه بررسی کنیم؟" },
+            { "language": "ar", "text": "أفهم نقطتين: أولاً لا توجد رؤية موثوقة للقدرات المتاحة. ثانياً ليس واضحاً ما الوعود التي يمكن للمبيعات تقديمها دون مراجعة. هل يمكننا معالجة هاتين النقطتين بشكل منفصل؟" },
+            { "language": "tr", "text": "İki nokta duyuyorum: Birincisi, boş kapasiteye dair güvenilir bir görünüm eksik. İkincisi, satışın sormadan hangi sözleri verebileceği belirsiz. Bu iki noktayı ayrı ele alabilir miyiz?" },
+            { "language": "ru", "text": "Я слышу два пункта: во-первых, нет надежной картины свободных ресурсов. Во-вторых, неясно, какие обещания продажи могут давать без согласования. Можем ли мы разобрать эти два пункта отдельно?" },
+            { "language": "ckb", "text": "من دوو خاڵ دەبیستم: یەکەم، دیدێکی متمانەپێکراو بۆ توانای بەردەست نییە. دووەم، ڕوون نییە فرۆشتن بەبێ پرسین مافی چ بەڵێنێکی هەیە. دەتوانین ئەم دوو خاڵە جیاواز چارەسەر بکەین؟" },
+            { "language": "kmr", "text": "Ez du xalan dibihîzim: yekem, dîtineke pêbawer a kapasîteya vala kêm e. Duyem, nezelal e ka firotan bê pirsîn kîjan sozan dikare bide. Em dikarin van du xalan cuda bixebitin?" },
+            { "language": "pl", "text": "Słyszę dwa punkty: po pierwsze brakuje wiarygodnego obrazu wolnych zasobów. Po drugie niejasne jest, jakie obietnice sprzedaż może składać bez konsultacji. Czy możemy omówić te dwa punkty oddzielnie?" },
+            { "language": "ro", "text": "Aud două puncte: în primul rând lipsește o imagine fiabilă a capacității disponibile. În al doilea rând nu este clar ce promisiuni poate face vânzarea fără consultare. Putem trata aceste două puncte separat?" },
+            { "language": "sq", "text": "Unë dëgjoj dy pika: së pari mungon një pamje e besueshme e kapacitetit të lirë. Së dyti nuk është e qartë cilat premtime mund të bëjnë shitjet pa pyetur. A mund t'i trajtojmë këto dy pika veçmas?" }
+          ],
+          "function": "summarize-and-structure",
+          "toneNote": "C1: Die Antwort übersetzt Vorwürfe in bearbeitbare Sachpunkte.",
+          "expectedLearnerAction": "Summarize positions into two neutral work items."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "sales",
+          "baseText": "Ich verstehe den Punkt, aber wenn wir vor jeder Zusage erst Rücksprache halten, verlieren wir die Dynamik im Kundengespräch.",
+          "translations": [
+            { "language": "en", "text": "I understand the point, but if we consult before every promise, we lose momentum in the customer conversation." },
+            { "language": "fa", "text": "نکته را می‌فهمم، اما اگر قبل از هر وعده اول هماهنگ کنیم، پویایی گفت‌وگو با مشتری را از دست می‌دهیم." },
+            { "language": "ar", "text": "أفهم النقطة، لكن إذا تشاورنا قبل كل وعد، نفقد ديناميكية الحديث مع العميل." },
+            { "language": "tr", "text": "Noktayı anlıyorum, ama her sözden önce danışacak olursak müşteri görüşmesindeki dinamizmi kaybederiz." },
+            { "language": "ru", "text": "Я понимаю этот пункт, но если перед каждым обещанием мы будем согласовывать, мы потеряем динамику в разговоре с клиентом." },
+            { "language": "ckb", "text": "من ئەو خاڵە تێدەگەم، بەڵام ئەگەر پێش هەر بەڵێنێک ڕاوێژ بکەین، دینامیکی گفتوگۆی کڕیار لەدەست دەدەین." },
+            { "language": "kmr", "text": "Ez vê xalê fam dikim, lê heke em beriya her sozê şêwir bikin, em dinamîka axaftina bi xerîdar re winda dikin." },
+            { "language": "pl", "text": "Rozumiem ten punkt, ale jeśli przed każdą obietnicą będziemy się konsultować, stracimy dynamikę rozmowy z klientem." },
+            { "language": "ro", "text": "Înțeleg punctul, dar dacă ne consultăm înainte de fiecare promisiune, pierdem dinamica discuției cu clientul." },
+            { "language": "sq", "text": "E kuptoj këtë pikë, por nëse konsultohemi para çdo premtimi, humbasim dinamikën në bisedën me klientin." }
+          ],
+          "function": "sales-constraint",
+          "toneNote": "Die Sorge ist legitim: Es geht um Gesprächsdynamik und Abschlussfähigkeit."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann brauchen wir keine Rückfrage für jeden Einzelfall, sondern klare Zusage-Kategorien. Zum Beispiel: feste Zusagen nur bei grün markierter Kapazität, unverbindliche Zeitfenster bei gelber Kapazität und keine Terminzusage bei roten Fällen.",
+          "translations": [
+            { "language": "en", "text": "Then we do not need consultation for every individual case, but clear promise categories. For example: firm promises only with green-marked capacity, non-binding time windows with yellow capacity, and no appointment promise for red cases." },
+            { "language": "fa", "text": "پس برای هر مورد جداگانه به هماهنگی نیاز نداریم، بلکه به دسته‌بندی‌های روشن برای وعده‌ها نیاز داریم. مثلاً: وعده قطعی فقط در ظرفیت سبز، بازه زمانی غیرالزام‌آور در ظرفیت زرد، و بدون وعده وقت برای موارد قرمز." },
+            { "language": "ar", "text": "إذن لا نحتاج إلى مراجعة لكل حالة منفردة، بل إلى فئات واضحة للوعود. مثلاً: وعود مؤكدة فقط عند وجود قدرة مميزة بالأخضر، ونوافذ زمنية غير ملزمة عند القدرة الصفراء، وعدم تقديم موعد في الحالات الحمراء." },
+            { "language": "tr", "text": "O halde her tekil durum için danışmaya değil, net söz kategorilerine ihtiyacımız var. Örneğin: kesin sözler yalnızca yeşil işaretli kapasitede, sarı kapasitede bağlayıcı olmayan zaman aralıkları ve kırmızı durumlarda randevu sözü yok." },
+            { "language": "ru", "text": "Тогда нам нужна не консультация по каждому отдельному случаю, а четкие категории обещаний. Например: твердые обещания только при зеленой загрузке, необязательные временные окна при желтой загрузке и никаких обещаний встречи при красных случаях." },
+            { "language": "ckb", "text": "ئەوا پێویستمان بە ڕاوێژ بۆ هەر کەیسێکی تاک نییە، بەڵکو پێویستمان بە پۆلێنکردنی ڕوونی بەڵێنەکان هەیە. بۆ نموونە: بەڵێنی دڵنیایی تەنها کاتێک توانای سەوز نیشانکراوە، کاتی ناپابەند لە توانای زەرددا، و هیچ بەڵێنی کات بۆ کەیسە سوورەکان." },
+            { "language": "kmr", "text": "Wê demê pêwîstiya me bi şêwir ji bo her rewşekê tune, lê bi kategoriyên sozên zelal heye. Mînak: sozên qetî tenê dema kapasîte bi kesk hatibe nîşankirin, pencereyên demê yên ne girêdayî dema kapasîte zer be, û ji bo rewşên sor sozên randevû tune." },
+            { "language": "pl", "text": "Wtedy nie potrzebujemy konsultacji dla każdego pojedynczego przypadku, lecz jasnych kategorii obietnic. Na przykład: wiążące obietnice tylko przy zielonej dostępności, niewiążące okna czasowe przy żółtej dostępności i brak obietnicy terminu przy czerwonych sprawach." },
+            { "language": "ro", "text": "Atunci nu avem nevoie de consultare pentru fiecare caz separat, ci de categorii clare de promisiuni. De exemplu: promisiuni ferme doar la capacitate marcată verde, intervale neobligatorii la capacitate galbenă și nicio promisiune de programare la cazurile roșii." },
+            { "language": "sq", "text": "Atëherë nuk na duhet konsultim për çdo rast të veçantë, por kategori të qarta premtimesh. Për shembull: premtime të sigurta vetëm kur kapaciteti është i shënuar me të gjelbër, intervale jo të detyrueshme kur është i verdhë dhe pa premtim takimi për rastet e kuqe." }
+          ],
+          "function": "category-solution",
+          "toneNote": "Stark: Die Antwort schützt Tempo, aber begrenzt riskante Zusagen.",
+          "expectedLearnerAction": "Offer categories that preserve speed without creating unrealistic promises."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "support",
+          "baseText": "Das könnte helfen. Aber wer pflegt diese Kapazitätsanzeige? Wenn die Anzeige nicht aktuell ist, stehen wir wieder vor demselben Problem.",
+          "translations": [
+            { "language": "en", "text": "That could help. But who maintains this capacity indicator? If the indicator is not up to date, we are back to the same problem." },
+            { "language": "fa", "text": "این می‌تواند کمک کند. اما چه کسی این نمایش ظرفیت را به‌روز نگه می‌دارد؟ اگر نمایشگر به‌روز نباشد، دوباره با همان مشکل روبه‌رو می‌شویم." },
+            { "language": "ar", "text": "قد يساعد ذلك. لكن من سيحدّث مؤشر القدرة هذا؟ إذا لم يكن المؤشر محدثاً، فسنعود إلى المشكلة نفسها." },
+            { "language": "tr", "text": "Bu yardımcı olabilir. Ama bu kapasite göstergesini kim güncel tutacak? Gösterge güncel değilse aynı sorunla yeniden karşılaşırız." },
+            { "language": "ru", "text": "Это могло бы помочь. Но кто будет поддерживать этот индикатор ресурсов? Если он неактуален, мы снова окажемся перед той же проблемой." },
+            { "language": "ckb", "text": "ئەمە دەتوانێت یارمەتیدەر بێت. بەڵام کێ ئەم نیشاندەری توانایە نوێ دەکاتەوە؟ ئەگەر نیشاندەرەکە نوێ نەبێت، جارێکی تر لەبەردەم هەمان کێشە دەبین." },
+            { "language": "kmr", "text": "Ev dikare alîkar be. Lê kî vê nîşana kapasîteyê nû dike? Heke nîşan nû nebe, em dîsa li ber heman pirsgirêkê ne." },
+            { "language": "pl", "text": "To mogłoby pomóc. Ale kto będzie aktualizował ten wskaźnik zasobów? Jeśli wskaźnik nie będzie aktualny, wrócimy do tego samego problemu." },
+            { "language": "ro", "text": "Asta ar putea ajuta. Dar cine menține actualizat acest indicator de capacitate? Dacă indicatorul nu este actual, ajungem din nou la aceeași problemă." },
+            { "language": "sq", "text": "Kjo mund të ndihmojë. Por kush e mban të përditësuar këtë tregues kapaciteti? Nëse treguesi nuk është aktual, kthehemi te i njëjti problem." }
+          ],
+          "function": "implementation-risk",
+          "toneNote": "Der Einwand prüft Verantwortlichkeit und Pflegeaufwand."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist der entscheidende Punkt. Ich würde die Verantwortung nicht diffus im Support lassen, sondern eine tägliche Aktualisierung durch die Schichtkoordination vereinbaren. Der Vertrieb nutzt die Anzeige, darf sie aber nicht eigenständig interpretieren oder übersteuern.",
+          "translations": [
+            { "language": "en", "text": "That is the decisive point. I would not leave responsibility vaguely within support, but agree on a daily update by shift coordination. Sales uses the indicator, but may not interpret or override it independently." },
+            { "language": "fa", "text": "این نکته تعیین‌کننده است. من مسئولیت را مبهم در پشتیبانی رها نمی‌کنم، بلکه به‌روزرسانی روزانه توسط هماهنگی شیفت را توافق می‌کنم. فروش از نمایشگر استفاده می‌کند، اما اجازه ندارد آن را مستقل تفسیر کند یا دور بزند." },
+            { "language": "ar", "text": "هذه هي النقطة الحاسمة. لن أترك المسؤولية بشكل غامض داخل الدعم، بل أتفق على تحديث يومي من تنسيق المناوبات. يستخدم قسم المبيعات المؤشر، لكنه لا يحق له تفسيره أو تجاوزه بشكل مستقل." },
+            { "language": "tr", "text": "Belirleyici nokta bu. Sorumluluğu belirsiz biçimde destekte bırakmaz, vardiya koordinasyonunun günlük güncelleme yapmasını kararlaştırırdım. Satış göstergeyi kullanır, ancak onu bağımsız yorumlayamaz veya geçersiz kılamaz." },
+            { "language": "ru", "text": "Это решающий момент. Я бы не оставлял ответственность расплывчато в поддержке, а согласовал ежедневное обновление координатором смены. Продажи используют индикатор, но не могут самостоятельно интерпретировать или обходить его." },
+            { "language": "ckb", "text": "ئەمە خاڵی چارەنووسسازە. من بەرپرسیاریەتییەکە بە نادیاری لە پشتگیریدا ناهێڵمەوە، بەڵکو نوێکردنەوەی ڕۆژانە لەلایەن هاوئاهەنگکاری شفت ڕێکدەخەم. فرۆشتن نیشاندەرەکە بەکاردەهێنێت، بەڵام نابێت بە سەربەخۆیی لێکی بداتەوە یان بیخاتەلاوە." },
+            { "language": "kmr", "text": "Ev xala biryarder e. Ez berpirsiyarî bi awayekî nezelal di piştgiriyê de nahêlim, lê nûkirina rojane ji aliyê hevahengiya vardiyê ve lihev dikim. Firotan nîşanê bi kar tîne, lê nikare wê serbixwe şîrove bike an derbas bike." },
+            { "language": "pl", "text": "To jest punkt decydujący. Nie zostawiłbym odpowiedzialności niejasno po stronie wsparcia, lecz uzgodnił codzienną aktualizację przez koordynację zmiany. Sprzedaż korzysta ze wskaźnika, ale nie może go samodzielnie interpretować ani omijać." },
+            { "language": "ro", "text": "Acesta este punctul decisiv. Nu aș lăsa responsabilitatea vag în suport, ci aș conveni o actualizare zilnică de către coordonarea turei. Vânzările folosesc indicatorul, dar nu au voie să îl interpreteze sau să îl ocolească independent." },
+            { "language": "sq", "text": "Kjo është pika vendimtare. Nuk do ta lija përgjegjësinë në mënyrë të paqartë te mbështetja, por do të dakordoja një përditësim ditor nga koordinimi i turnit. Shitjet e përdorin treguesin, por nuk mund ta interpretojnë ose ta anashkalojnë vetë." }
+          ],
+          "function": "responsibility-clarification",
+          "toneNote": "C1: Die Antwort klärt Zuständigkeit und Nutzungsgrenze gleichzeitig.",
+          "expectedLearnerAction": "Assign ownership and define what other departments may do with the information."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "sales",
+          "baseText": "Mir ist wichtig, dass wir nicht so klingen, als würden wir Kunden nur noch vertrösten.",
+          "translations": [
+            { "language": "en", "text": "It is important to me that we do not sound as if we are merely putting customers off." },
+            { "language": "fa", "text": "برای من مهم است که طوری به نظر نرسیم انگار فقط مشتریان را دست‌به‌سر می‌کنیم." },
+            { "language": "ar", "text": "من المهم بالنسبة لي ألا نبدو وكأننا نؤجل العملاء فقط." },
+            { "language": "tr", "text": "Müşterileri sadece oyalıyormuşuz gibi duyulmamak benim için önemli." },
+            { "language": "ru", "text": "Для меня важно, чтобы мы не звучали так, будто просто откладываем клиентов." },
+            { "language": "ckb", "text": "بۆ من گرنگە وەک ئەوە دەنگ نەدەین کە تەنها کڕیاران دوا دەخەین." },
+            { "language": "kmr", "text": "Ji bo min girîng e ku em wisa nexuyin ku tenê xerîdaran paş dixin." },
+            { "language": "pl", "text": "Ważne jest dla mnie, żebyśmy nie brzmieli tak, jakbyśmy tylko zbywali klientów." },
+            { "language": "ro", "text": "Pentru mine este important să nu sunăm ca și cum doar am amâna clienții." },
+            { "language": "sq", "text": "Për mua është e rëndësishme të mos tingëllojmë sikur thjesht po i shtyjmë klientët." }
+          ],
+          "function": "relationship-concern",
+          "toneNote": "Die Sorge betrifft Außenwirkung und Beziehungspflege."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir Formulierungen vorbereiten, die ehrlich sind und trotzdem handlungsfähig klingen: etwa ein realistisches Zeitfenster, ein kurzer Grund und ein verbindlicher nächster Kontaktpunkt. So entsteht kein falsches Versprechen, aber auch kein Eindruck von Passivität.",
+          "translations": [
+            { "language": "en", "text": "Then we should prepare wording that is honest and still sounds capable of action: for example a realistic time window, a brief reason, and a binding next contact point. That way no false promise is created, but neither is there an impression of passivity." },
+            { "language": "fa", "text": "پس باید عبارت‌هایی آماده کنیم که صادقانه باشند و در عین حال توان اقدام را نشان دهند: مثلاً یک بازه زمانی واقع‌بینانه، یک دلیل کوتاه و یک نقطه تماس بعدی الزام‌آور. این‌گونه نه وعده غلط ایجاد می‌شود و نه حس انفعال." },
+            { "language": "ar", "text": "إذن ينبغي أن نعد صياغات صادقة وتبدو مع ذلك قادرة على الفعل: مثل إطار زمني واقعي، وسبب قصير، ونقطة اتصال تالية ملزمة. هكذا لا ينشأ وعد كاذب، ولا يظهر انطباع بالسلبية." },
+            { "language": "tr", "text": "O zaman dürüst olan ve yine de eylem gücü gösteren ifadeler hazırlamalıyız: örneğin gerçekçi bir zaman aralığı, kısa bir neden ve bağlayıcı bir sonraki iletişim noktası. Böylece yanlış söz oluşmaz, ama pasiflik izlenimi de doğmaz." },
+            { "language": "ru", "text": "Тогда нам следует подготовить формулировки, которые честны и при этом звучат дееспособно: например реалистичное временное окно, краткая причина и обязательная следующая точка контакта. Так не возникает ложного обещания, но и впечатления пассивности нет." },
+            { "language": "ckb", "text": "ئەوا پێویستە دەربڕینێک ئامادە بکەین کە ڕاستگۆ بێت و هەروەها توانای کردار نیشان بدات: بۆ نموونە ماوەی کاتی واقیعی، هۆکارێکی کورت و خاڵی پەیوەندیی داهاتووی پابەند. بەم شێوەیە نە بەڵێنی هەڵە دروست دەبێت، نە هەستی بێکرداری." },
+            { "language": "kmr", "text": "Wê demê divê em gotinên amade bikin ku rast bin û di heman demê de karînê nîşan bidin: mînak pencereyeke demê ya realîst, sedemeke kurt û xala pêwendiya din a girêdayî. Bi vî awayî ne sozeke derewîn çêdibe, ne jî hesta bêçalakiyê." },
+            { "language": "pl", "text": "Wtedy powinniśmy przygotować sformułowania, które są szczere, a jednocześnie brzmią sprawczo: na przykład realistyczne okno czasowe, krótki powód i wiążący kolejny punkt kontaktu. W ten sposób nie powstaje fałszywa obietnica, ale też nie ma wrażenia bierności." },
+            { "language": "ro", "text": "Atunci ar trebui să pregătim formulări care sunt sincere și totuși transmit capacitate de acțiune: de exemplu un interval realist, un motiv scurt și un punct de contact următor obligatoriu. Astfel nu apare o promisiune falsă, dar nici impresia de pasivitate." },
+            { "language": "sq", "text": "Atëherë duhet të përgatisim formulime që janë të sinqerta dhe megjithatë tregojnë aftësi veprimi: për shembull një afat realist, një arsye të shkurtër dhe një pikë kontakti të radhës të detyrueshme. Kështu nuk krijohet premtim i rremë, por as përshtypje pasiviteti." }
+          ],
+          "function": "customer-language-bridge",
+          "toneNote": "Stark: Die Antwort verbindet interne Grenze mit externer Kommunikation.",
+          "expectedLearnerAction": "Offer language that preserves customer trust without overpromising."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "support",
+          "baseText": "Können wir festhalten, wer was bis wann vorbereitet?",
+          "translations": [
+            { "language": "en", "text": "Can we record who prepares what by when?" },
+            { "language": "fa", "text": "می‌توانیم ثبت کنیم چه کسی تا چه زمانی چه چیزی را آماده می‌کند؟" },
+            { "language": "ar", "text": "هل يمكننا تسجيل من يجهز ماذا وبحلول أي موعد؟" },
+            { "language": "tr", "text": "Kimin neyi ne zamana kadar hazırlayacağını kaydedebilir miyiz?" },
+            { "language": "ru", "text": "Можем ли мы зафиксировать, кто что и к какому сроку подготовит?" },
+            { "language": "ckb", "text": "دەتوانین تۆمار بکەین کێ چی تا کەی ئامادە دەکات؟" },
+            { "language": "kmr", "text": "Em dikarin tomar bikin kî dê çi tiştî heta kengê amade bike?" },
+            { "language": "pl", "text": "Czy możemy zapisać, kto co przygotuje i do kiedy?" },
+            { "language": "ro", "text": "Putem nota cine ce pregătește și până când?" },
+            { "language": "sq", "text": "A mund të regjistrojmë kush çfarë përgatit dhe deri kur?" }
+          ],
+          "function": "action-summary-request",
+          "toneNote": "Die Frage verlangt eine protokollfähige Vereinbarung."
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich halte fest: Support definiert bis Freitag die Kapazitätsstufen und aktualisiert sie täglich über die Schichtkoordination. Vertrieb nutzt diese Stufen für Zusagen und entwickelt bis Montag passende Kundenformulierungen. Nach zwei Wochen prüfen wir Eskalationen, Terminverschiebungen und Kundenrückmeldungen gemeinsam.",
+          "translations": [
+            { "language": "en", "text": "I will record this: support defines the capacity levels by Friday and updates them daily through shift coordination. Sales uses these levels for promises and develops suitable customer wording by Monday. After two weeks, we jointly review escalations, rescheduled appointments, and customer feedback." },
+            { "language": "fa", "text": "ثبت می‌کنم: پشتیبانی تا جمعه سطح‌های ظرفیت را تعریف می‌کند و آن‌ها را روزانه از طریق هماهنگی شیفت به‌روز می‌کند. فروش از این سطح‌ها برای وعده‌ها استفاده می‌کند و تا دوشنبه عبارت‌های مناسب برای مشتری آماده می‌کند. بعد از دو هفته، موارد ارجاع، جابه‌جایی وقت‌ها و بازخورد مشتریان را مشترکاً بررسی می‌کنیم." },
+            { "language": "ar", "text": "أسجل ما يلي: يحدد الدعم مستويات القدرة حتى يوم الجمعة ويحدثها يومياً عبر تنسيق المناوبات. يستخدم قسم المبيعات هذه المستويات للوعود ويطور صياغات مناسبة للعملاء حتى يوم الاثنين. بعد أسبوعين نراجع معاً التصعيد وتغييرات المواعيد وتعليقات العملاء." },
+            { "language": "tr", "text": "Şunu kaydediyorum: destek cuma gününe kadar kapasite seviyelerini tanımlar ve bunları vardiya koordinasyonu üzerinden günlük günceller. Satış bu seviyeleri sözler için kullanır ve pazartesiye kadar uygun müşteri ifadeleri geliştirir. İki hafta sonra eskalasyonları, randevu değişikliklerini ve müşteri geri bildirimlerini birlikte değerlendiririz." },
+            { "language": "ru", "text": "Я фиксирую: поддержка до пятницы определяет уровни ресурсов и ежедневно обновляет их через координацию смены. Продажи используют эти уровни для обещаний и до понедельника разрабатывают подходящие формулировки для клиентов. Через две недели мы вместе проверяем эскалации, переносы встреч и отзывы клиентов." },
+            { "language": "ckb", "text": "تۆمار دەکەم: پشتگیری تا هەینی ئاستەکانی توانای دیاری دەکات و ڕۆژانە لە ڕێگەی هاوئاهەنگی شفتەوە نوێیان دەکاتەوە. فرۆشتن ئەم ئاستیانە بۆ بەڵێنەکان بەکاردەهێنێت و تا دووشەممە دەربڕینی گونجاو بۆ کڕیاران ئامادە دەکات. دوای دوو هەفتە، ئێمە بە هاوبەشی ئیسکالەیشن، گۆڕینی کاتەکان و فیدباکی کڕیاران دەپشکنین." },
+            { "language": "kmr", "text": "Ez tomar dikim: piştgirî heta înê astên kapasîteyê diyar dike û wan her roj bi rêya hevahengiya vardiyê nû dike. Firotan van astan ji bo sozan bi kar tîne û heta duşemê gotinên guncan ji bo xerîdaran amade dike. Piştî du hefteyan em bi hev re eskalasyon, veguhertina randevûyan û bersivên xerîdaran dinirxînin." },
+            { "language": "pl", "text": "Zapisuję: wsparcie definiuje poziomy zasobów do piątku i aktualizuje je codziennie przez koordynację zmiany. Sprzedaż wykorzystuje te poziomy do składania obietnic i do poniedziałku przygotowuje odpowiednie sformułowania dla klientów. Po dwóch tygodniach wspólnie sprawdzamy eskalacje, przesunięcia terminów i opinie klientów." },
+            { "language": "ro", "text": "Notez: suportul definește până vineri nivelurile de capacitate și le actualizează zilnic prin coordonarea turei. Vânzările folosesc aceste niveluri pentru promisiuni și dezvoltă până luni formulări potrivite pentru clienți. După două săptămâni analizăm împreună escaladările, reprogramările și feedbackul clienților." },
+            { "language": "sq", "text": "Po e regjistroj: mbështetja përcakton deri të premten nivelet e kapacitetit dhe i përditëson çdo ditë përmes koordinimit të turnit. Shitjet i përdorin këto nivele për premtimet dhe deri të hënën zhvillojnë formulime të përshtatshme për klientët. Pas dy javësh shqyrtojmë së bashku eskalimet, shtyrjet e takimeve dhe reagimet e klientëve." }
+          ],
+          "function": "action-agreement-summary",
+          "toneNote": "C1: Das Fazit nennt Zuständigkeit, Frist, Nutzung und Review-Kriterien.",
+          "expectedLearnerAction": "Summarize responsibilities, deadlines, and review metrics."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Lassen Sie uns zuerst Interessen und Zwänge trennen, damit wir nicht in der Schuldfrage stecken bleiben.",
+              "translations": [
+                { "language": "en", "text": "Let us first separate interests and constraints so we do not get stuck in the question of blame." },
+                { "language": "fa", "text": "بیایید ابتدا منافع و محدودیت‌ها را جدا کنیم تا در بحث تقصیر گیر نکنیم." },
+                { "language": "ar", "text": "دعونا نفصل أولاً بين المصالح والقيود حتى لا نعلق في مسألة اللوم." },
+                { "language": "tr", "text": "Önce çıkarları ve kısıtları ayıralım ki suçlama meselesinde takılı kalmayalım." },
+                { "language": "ru", "text": "Давайте сначала отделим интересы и ограничения, чтобы не застрять в вопросе вины." },
+                { "language": "ckb", "text": "با سەرەتا بەرژەوەندی و سنوورەکان جیا بکەینەوە، تاکو لە پرسی تاواندا گیر نەکەین." },
+                { "language": "kmr", "text": "Werin em pêşî berjewendî û sînoran cuda bikin, da ku em di mijara sûcê de nemînin." },
+                { "language": "pl", "text": "Najpierw oddzielmy interesy i ograniczenia, żeby nie utknąć w kwestii winy." },
+                { "language": "ro", "text": "Haideți să separăm mai întâi interesele și constrângerile, ca să nu rămânem blocați în întrebarea despre vină." },
+                { "language": "sq", "text": "Le t'i ndajmë fillimisht interesat dhe kufizimet që të mos ngecim te çështja e fajit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort deeskaliert und schafft eine sachliche Arbeitsstruktur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer de-escalates and creates a factual working structure." },
+                { "language": "fa", "text": "قوی: پاسخ تنش را کم می‌کند و ساختاری کاری و واقعی ایجاد می‌کند." },
+                { "language": "ar", "text": "قوية: تخفف الإجابة التوتر وتخلق بنية عمل موضوعية." },
+                { "language": "tr", "text": "Güçlü: cevap gerilimi düşürür ve olgusal bir çalışma yapısı kurar." },
+                { "language": "ru", "text": "Сильно: ответ снижает напряжение и создает предметную рабочую структуру." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گرژی کەم دەکاتەوە و پێکهاتەیەکی کاری بابەتی دروست دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv tengaviyê kêm dike û avahiyeke xebatê ya babetî çêdike." },
+                { "language": "pl", "text": "Mocne: odpowiedź obniża napięcie i tworzy rzeczową strukturę pracy." },
+                { "language": "ro", "text": "Puternic: răspunsul detensionează și creează o structură de lucru factuală." },
+                { "language": "sq", "text": "E fortë: përgjigjja ul tensionin dhe krijon një strukturë pune faktike." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Beide Seiten sollten sich einfach weniger gegenseitig Vorwürfe machen.",
+              "translations": [
+                { "language": "en", "text": "Both sides should simply make fewer accusations against each other." },
+                { "language": "fa", "text": "هر دو طرف فقط باید کمتر همدیگر را سرزنش کنند." },
+                { "language": "ar", "text": "على الطرفين ببساطة أن يقللا من تبادل الاتهامات." },
+                { "language": "tr", "text": "İki taraf da birbirini daha az suçlamalı." },
+                { "language": "ru", "text": "Обе стороны должны просто меньше обвинять друг друга." },
+                { "language": "ckb", "text": "هەردوو لایەن پێویستە تەنها کەمتر یەکتر تاوانبار بکەن." },
+                { "language": "kmr", "text": "Divê her du alî hinek kêmtir hev sûcdar bikin." },
+                { "language": "pl", "text": "Obie strony powinny po prostu mniej się wzajemnie obwiniać." },
+                { "language": "ro", "text": "Ambele părți ar trebui pur și simplu să se acuze mai puțin reciproc." },
+                { "language": "sq", "text": "Të dyja palët duhet thjesht ta akuzojnë më pak njëra-tjetrën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu moralisch und unstrukturiert: Es benennt keine Interessen oder nächsten Schritte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too moralizing and unstructured: it names no interests or next steps." },
+                { "language": "fa", "text": "اشتباه نیست، اما بیش از حد اخلاقی و بی‌ساختار است: هیچ منفعت یا گام بعدی را نام نمی‌برد." },
+                { "language": "ar", "text": "ليست خاطئة، لكنها وعظية وغير منظمة: لا تذكر مصالح أو خطوات تالية." },
+                { "language": "tr", "text": "Yanlış değil, ama fazla öğüt verici ve yapısız: çıkar veya sonraki adım belirtmiyor." },
+                { "language": "ru", "text": "Не неверно, но слишком морализаторски и неструктурированно: нет интересов или следующих шагов." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر ئامۆژگاری و بێپێکهاتەیە: هیچ بەرژەوەندی یان هەنگاوی داهاتوو ناودەبات." },
+                { "language": "kmr", "text": "Ne xelet e, lê pir exlaqî û bê avahî ye: berjewendî an gavên din bi nav nake." },
+                { "language": "pl", "text": "Nie jest błędne, ale zbyt moralizujące i bez struktury: nie wskazuje interesów ani kolejnych kroków." },
+                { "language": "ro", "text": "Nu este greșit, dar prea moralizator și nestructurat: nu numește interese sau pași următori." },
+                { "language": "sq", "text": "Nuk është gabim, por shumë moralizues dhe pa strukturë: nuk përmend interesa ose hapa të ardhshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich höre fehlende Kapazitätstransparenz und unklare Zusageregeln als zwei getrennte Arbeitsfelder.",
+              "translations": [
+                { "language": "en", "text": "I hear missing capacity transparency and unclear promise rules as two separate work areas." },
+                { "language": "fa", "text": "من نبود شفافیت ظرفیت و نامشخص بودن قواعد وعده را به‌عنوان دو حوزه کاری جدا می‌شنوم." },
+                { "language": "ar", "text": "أسمع نقص شفافية القدرة وعدم وضوح قواعد الوعود كحقلين منفصلين للعمل." },
+                { "language": "tr", "text": "Eksik kapasite şeffaflığını ve belirsiz söz kurallarını iki ayrı çalışma alanı olarak duyuyorum." },
+                { "language": "ru", "text": "Я слышу отсутствие прозрачности ресурсов и неясные правила обещаний как две отдельные рабочие области." },
+                { "language": "ckb", "text": "من نەبوونی شەفافیەتی توانای و ناڕوونی یاساکانی بەڵێن وەک دوو بواری کاری جیاواز دەبیستم." },
+                { "language": "kmr", "text": "Ez nebûna zelaliya kapasîteyê û rêzikên sozê yên nezelal wek du qadên xebatê yên cuda dibihîzim." },
+                { "language": "pl", "text": "Słyszę brak przejrzystości zasobów i niejasne zasady obietnic jako dwa oddzielne obszary pracy." },
+                { "language": "ro", "text": "Aud lipsa transparenței capacității și regulile neclare ale promisiunilor ca două domenii de lucru separate." },
+                { "language": "sq", "text": "Unë dëgjoj mungesën e transparencës së kapacitetit dhe rregullat e paqarta të premtimeve si dy fusha pune të ndara." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fasst neutral zusammen und macht den Konflikt bearbeitbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer summarizes neutrally and makes the conflict workable." },
+                { "language": "fa", "text": "قوی: پاسخ بی‌طرفانه خلاصه می‌کند و تعارض را قابل رسیدگی می‌سازد." },
+                { "language": "ar", "text": "قوية: تلخص الإجابة بحياد وتجعل النزاع قابلاً للمعالجة." },
+                { "language": "tr", "text": "Güçlü: cevap tarafsız özetliyor ve çatışmayı çalışılabilir hale getiriyor." },
+                { "language": "ru", "text": "Сильно: ответ нейтрально резюмирует и делает конфликт пригодным для проработки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە بێلایەنی پوخت دەکاتەوە و ناکۆکییەکە دەکاتە شتێکی چارەسەرکراو." },
+                { "language": "kmr", "text": "Xurt e: bersiv bêalî kurt dike û nakokiyê dike tiştekî ku dikare bê xebitandin." },
+                { "language": "pl", "text": "Mocne: odpowiedź neutralnie podsumowuje i czyni konflikt możliwym do opracowania." },
+                { "language": "ro", "text": "Puternic: răspunsul rezumă neutru și face conflictul abordabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmbledh në mënyrë neutrale dhe e bën konfliktin të punueshëm." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Der Vertrieb muss verstehen, dass der Support nicht zaubern kann.",
+              "translations": [
+                { "language": "en", "text": "Sales has to understand that support cannot do magic." },
+                { "language": "fa", "text": "فروش باید بفهمد که پشتیبانی نمی‌تواند معجزه کند." },
+                { "language": "ar", "text": "يجب أن تفهم المبيعات أن الدعم لا يستطيع صنع المعجزات." },
+                { "language": "tr", "text": "Satış, desteğin sihir yapamayacağını anlamalı." },
+                { "language": "ru", "text": "Продажи должны понять, что поддержка не может творить чудеса." },
+                { "language": "ckb", "text": "فرۆشتن دەبێت تێبگات کە پشتگیری ناتوانێت جادو بکات." },
+                { "language": "kmr", "text": "Firotan divê fam bike ku piştgirî nikare sêhr bike." },
+                { "language": "pl", "text": "Sprzedaż musi zrozumieć, że wsparcie nie potrafi czarować." },
+                { "language": "ro", "text": "Vânzările trebuie să înțeleagă că suportul nu poate face magie." },
+                { "language": "sq", "text": "Shitjet duhet të kuptojnë se mbështetja nuk mund të bëjë magji." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu parteiisch und spitz: Es benennt zwar ein Problem, verschärft aber den Konflikt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too partisan and pointed: it names a problem, but intensifies the conflict." },
+                { "language": "fa", "text": "بیش از حد جانبدارانه و تند است: مشکل را نام می‌برد، اما تعارض را تشدید می‌کند." },
+                { "language": "ar", "text": "منحازة وحادة جداً: تذكر مشكلة لكنها تصعّد النزاع." },
+                { "language": "tr", "text": "Fazla taraflı ve sert: bir sorun belirtiyor, ama çatışmayı tırmandırıyor." },
+                { "language": "ru", "text": "Слишком пристрастно и резко: проблема названа, но конфликт усиливается." },
+                { "language": "ckb", "text": "زۆر لایەنگرانە و توندە: کێشەیەک ناودەبات، بەڵام ناکۆکییەکە توندتر دەکات." },
+                { "language": "kmr", "text": "Pir alîgir û tûj e: pirsgirêkekê bi nav dike, lê nakokiyê dijwartir dike." },
+                { "language": "pl", "text": "Zbyt stronnicze i ostre: nazywa problem, ale zaostrza konflikt." },
+                { "language": "ro", "text": "Prea părtinitor și ascuțit: numește o problemă, dar amplifică conflictul." },
+                { "language": "sq", "text": "Shumë e njëanshme dhe e mprehtë: përmend një problem, por e përshkallëzon konfliktin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Wir brauchen Zusage-Kategorien, damit Vertrieb schnell reagieren kann, ohne unrealistische Termine zu versprechen.",
+              "translations": [
+                { "language": "en", "text": "We need promise categories so sales can react quickly without promising unrealistic appointments." },
+                { "language": "fa", "text": "به دسته‌بندی‌های وعده نیاز داریم تا فروش بتواند سریع واکنش دهد، بدون اینکه وقت‌های غیرواقعی وعده بدهد." },
+                { "language": "ar", "text": "نحتاج إلى فئات للوعود حتى تتمكن المبيعات من الرد بسرعة دون وعد بمواعيد غير واقعية." },
+                { "language": "tr", "text": "Satışın gerçekçi olmayan randevular vaat etmeden hızlı tepki verebilmesi için söz kategorilerine ihtiyacımız var." },
+                { "language": "ru", "text": "Нам нужны категории обещаний, чтобы продажи могли быстро реагировать, не обещая нереалистичные встречи." },
+                { "language": "ckb", "text": "پێویستمان بە پۆلێنکردنی بەڵێنەکان هەیە تاکو فرۆشتن بتوانێت خێرا وەڵام بداتەوە، بەبێ بەڵێنی کاتی ناواقیعی." },
+                { "language": "kmr", "text": "Pêwîstiya me bi kategoriyên sozê heye da ku firotan bikare bilez bersiv bide bê ku randevûyên nereali soz bide." },
+                { "language": "pl", "text": "Potrzebujemy kategorii obietnic, aby sprzedaż mogła szybko reagować bez obiecywania nierealnych terminów." },
+                { "language": "ro", "text": "Avem nevoie de categorii de promisiuni, astfel încât vânzările să poată reacționa rapid fără să promită termene nerealiste." },
+                { "language": "sq", "text": "Na duhen kategori premtimesh që shitjet të mund të reagojnë shpejt pa premtuar takime jorealiste." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Lösung wahrt die Geschwindigkeit und reduziert das Risiko falscher Zusagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the solution preserves speed and reduces the risk of false promises." },
+                { "language": "fa", "text": "قوی: راه‌حل سرعت را حفظ می‌کند و خطر وعده‌های غلط را کاهش می‌دهد." },
+                { "language": "ar", "text": "قوية: يحافظ الحل على السرعة ويقلل خطر الوعود الخاطئة." },
+                { "language": "tr", "text": "Güçlü: çözüm hızı korur ve yanlış söz riskini azaltır." },
+                { "language": "ru", "text": "Сильно: решение сохраняет скорость и снижает риск ложных обещаний." },
+                { "language": "ckb", "text": "بەهێزە: چارەسەرەکە خێرایی دەپارێزێت و مەترسیی بەڵێنی هەڵە کەم دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: çareserî lezê diparêze û xetera sozên şaş kêm dike." },
+                { "language": "pl", "text": "Mocne: rozwiązanie zachowuje szybkość i zmniejsza ryzyko fałszywych obietnic." },
+                { "language": "ro", "text": "Puternic: soluția păstrează viteza și reduce riscul promisiunilor false." },
+                { "language": "sq", "text": "E fortë: zgjidhja ruan shpejtësinë dhe ul rrezikun e premtimeve të gabuara." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Der Vertrieb sollte einfach vorsichtiger sein, wenn er mit Kunden spricht.",
+              "translations": [
+                { "language": "en", "text": "Sales should simply be more careful when talking with customers." },
+                { "language": "fa", "text": "فروش باید هنگام صحبت با مشتریان فقط محتاط‌تر باشد." },
+                { "language": "ar", "text": "ينبغي للمبيعات ببساطة أن تكون أكثر حذراً عند التحدث مع العملاء." },
+                { "language": "tr", "text": "Satış müşterilerle konuşurken sadece daha dikkatli olmalı." },
+                { "language": "ru", "text": "Продажи просто должны быть осторожнее, когда разговаривают с клиентами." },
+                { "language": "ckb", "text": "فرۆشتن پێویستە کاتێک لەگەڵ کڕیاران قسە دەکات تەنها وریاتر بێت." },
+                { "language": "kmr", "text": "Firotan dema bi xerîdaran re diaxive divê tenê hişyartir be." },
+                { "language": "pl", "text": "Sprzedaż powinna po prostu być ostrożniejsza, gdy rozmawia z klientami." },
+                { "language": "ro", "text": "Vânzările ar trebui pur și simplu să fie mai prudente când vorbesc cu clienții." },
+                { "language": "sq", "text": "Shitjet duhet thjesht të jenë më të kujdesshme kur flasin me klientët." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Vorsicht ist kein Prozess und löst weder Kapazitätsanzeige noch Zusageregel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: caution is not a process and solves neither the capacity indicator nor the promise rule." },
+                { "language": "fa", "text": "بیش از حد مبهم است: احتیاط فرایند نیست و نه نمایش ظرفیت را حل می‌کند نه قاعده وعده را." },
+                { "language": "ar", "text": "غامضة جداً: الحذر ليس عملية ولا يحل مؤشر القدرة ولا قاعدة الوعود." },
+                { "language": "tr", "text": "Fazla belirsiz: dikkatli olmak bir süreç değildir ve ne kapasite göstergesini ne söz kuralını çözer." },
+                { "language": "ru", "text": "Слишком расплывчато: осторожность не является процессом и не решает ни индикатор ресурсов, ни правило обещаний." },
+                { "language": "ckb", "text": "زۆر لێڵە: وریایی پرۆسە نییە و نە نیشاندەری توانای چارەسەر دەکات نە یاسای بەڵێن." },
+                { "language": "kmr", "text": "Pir nezelal e: hişyarî ne pêvajo ye û ne nîşana kapasîteyê ne jî rêzika sozê çareser dike." },
+                { "language": "pl", "text": "Zbyt niejasne: ostrożność nie jest procesem i nie rozwiązuje ani wskaźnika zasobów, ani zasady obietnic." },
+                { "language": "ro", "text": "Prea vag: prudența nu este un proces și nu rezolvă nici indicatorul de capacitate, nici regula promisiunilor." },
+                { "language": "sq", "text": "Shumë e paqartë: kujdesi nuk është proces dhe nuk zgjidh as treguesin e kapacitetit, as rregullin e premtimeve." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Die Schichtkoordination aktualisiert die Kapazität täglich; der Vertrieb nutzt die Anzeige ohne eigene Auslegung.",
+              "translations": [
+                { "language": "en", "text": "Shift coordination updates capacity daily; sales uses the indicator without its own interpretation." },
+                { "language": "fa", "text": "هماهنگی شیفت ظرفیت را روزانه به‌روز می‌کند؛ فروش از نمایشگر بدون تفسیر مستقل استفاده می‌کند." },
+                { "language": "ar", "text": "تحدّث تنسيقية المناوبات القدرة يومياً؛ وتستخدم المبيعات المؤشر دون تفسير مستقل." },
+                { "language": "tr", "text": "Vardiya koordinasyonu kapasiteyi günlük günceller; satış göstergeyi kendi yorumunu katmadan kullanır." },
+                { "language": "ru", "text": "Координация смены ежедневно обновляет ресурсы; продажи используют индикатор без собственной интерпретации." },
+                { "language": "ckb", "text": "هاوئاهەنگی شفت ڕۆژانە توانای نوێ دەکاتەوە؛ فرۆشتن نیشاندەرەکە بەبێ لێکدانەوەی خۆی بەکاردەهێنێت." },
+                { "language": "kmr", "text": "Hevahengiya vardiyê kapasîteyê her roj nû dike; firotan nîşanê bê şîroveya xwe bi kar tîne." },
+                { "language": "pl", "text": "Koordynacja zmiany codziennie aktualizuje zasoby; sprzedaż korzysta ze wskaźnika bez własnej interpretacji." },
+                { "language": "ro", "text": "Coordonarea turei actualizează zilnic capacitatea; vânzările folosesc indicatorul fără interpretare proprie." },
+                { "language": "sq", "text": "Koordinimi i turnit e përditëson kapacitetin çdo ditë; shitjet e përdorin treguesin pa interpretim të vetin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort klärt Eigentümerschaft und Nutzung in einem Satz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer clarifies ownership and use in one sentence." },
+                { "language": "fa", "text": "قوی: پاسخ مالکیت و نحوه استفاده را در یک جمله روشن می‌کند." },
+                { "language": "ar", "text": "قوية: توضح الإجابة الملكية والاستخدام في جملة واحدة." },
+                { "language": "tr", "text": "Güçlü: cevap sahipliği ve kullanımı tek cümlede netleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ проясняет владение и использование в одном предложении." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە خاوەندارێتی و بەکارهێنان لە یەک ڕستەدا ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv xwedîtî û bikaranînê di hevokekê de zelal dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia odpowiedzialność i użycie w jednym zdaniu." },
+                { "language": "ro", "text": "Puternic: răspunsul clarifică proprietatea și utilizarea într-o singură frază." },
+                { "language": "sq", "text": "E fortë: përgjigjja qartëson përgjegjësinë dhe përdorimin në një fjali." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Support und Vertrieb sollten die Anzeige gemeinsam pflegen, damit beide Seiten beteiligt sind.",
+              "translations": [
+                { "language": "en", "text": "Support and sales should maintain the indicator together so both sides are involved." },
+                { "language": "fa", "text": "پشتیبانی و فروش باید نمایشگر را مشترکاً نگه‌داری کنند تا هر دو طرف درگیر باشند." },
+                { "language": "ar", "text": "ينبغي أن يحافظ الدعم والمبيعات على المؤشر معاً حتى يشارك الطرفان." },
+                { "language": "tr", "text": "Destek ve satış göstergeyi birlikte yönetmeli ki iki taraf da dahil olsun." },
+                { "language": "ru", "text": "Поддержка и продажи должны вместе поддерживать индикатор, чтобы обе стороны участвовали." },
+                { "language": "ckb", "text": "پشتگیری و فرۆشتن پێویستە نیشاندەرەکە بە هاوبەشی بپارێزن، تاکو هەردوو لایەن بەشداری بکەن." },
+                { "language": "kmr", "text": "Piştgirî û firotan divê nîşanê bi hev re biparêzin da ku her du alî beşdar bin." },
+                { "language": "pl", "text": "Wsparcie i sprzedaż powinny wspólnie utrzymywać wskaźnik, aby obie strony były zaangażowane." },
+                { "language": "ro", "text": "Suportul și vânzările ar trebui să întrețină indicatorul împreună, ca ambele părți să fie implicate." },
+                { "language": "sq", "text": "Mbështetja dhe shitjet duhet ta mirëmbajnë treguesin së bashku që të dyja palët të jenë të përfshira." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant: Gemeinsame Pflege klingt kooperativ, macht die Verantwortung aber unklar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but risky: joint maintenance sounds cooperative, but makes responsibility unclear." },
+                { "language": "fa", "text": "قابل‌تصور اما پرریسک است: نگه‌داری مشترک همکاری‌آمیز به نظر می‌رسد، اما مسئولیت را مبهم می‌کند." },
+                { "language": "ar", "text": "معقولة لكنها خطرة: تبدو الصيانة المشتركة تعاونية، لكنها تجعل المسؤولية غير واضحة." },
+                { "language": "tr", "text": "Akla yatkın ama riskli: ortak yönetim işbirlikçi görünür, fakat sorumluluğu belirsizleştirir." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно: совместное ведение звучит кооперативно, но делает ответственность неясной." },
+                { "language": "ckb", "text": "شیاوە بەڵام مەترسیدارە: پاراستنی هاوبەش هاوکاریی دەردەکەوێت، بەڵام بەرپرسیاریەتی نادیار دەکات." },
+                { "language": "kmr", "text": "Guncan lê bi xeter e: parastina hevpar hevkarî xuya dike, lê berpirsiyarî nezelal dike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest ryzykowne: wspólne utrzymanie brzmi kooperacyjnie, lecz rozmywa odpowiedzialność." },
+                { "language": "ro", "text": "Este plauzibil, dar riscant: întreținerea comună sună cooperant, dar face responsabilitatea neclară." },
+                { "language": "sq", "text": "Është e besueshme, por me rrezik: mirëmbajtja e përbashkët tingëllon bashkëpunuese, por e bën përgjegjësinë të paqartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Support definiert Kapazitätsstufen, Vertrieb nutzt sie für Zusagen, und nach zwei Wochen prüfen wir konkrete Kennzahlen.",
+              "translations": [
+                { "language": "en", "text": "Support defines capacity levels, sales uses them for promises, and after two weeks we review concrete metrics." },
+                { "language": "fa", "text": "پشتیبانی سطح‌های ظرفیت را تعریف می‌کند، فروش از آن‌ها برای وعده‌ها استفاده می‌کند و پس از دو هفته شاخص‌های مشخص را بررسی می‌کنیم." },
+                { "language": "ar", "text": "يحدد الدعم مستويات القدرة، وتستخدمها المبيعات للوعود، وبعد أسبوعين نراجع مؤشرات ملموسة." },
+                { "language": "tr", "text": "Destek kapasite seviyelerini tanımlar, satış bunları sözler için kullanır ve iki hafta sonra somut göstergeleri değerlendiririz." },
+                { "language": "ru", "text": "Поддержка определяет уровни ресурсов, продажи используют их для обещаний, а через две недели мы проверяем конкретные показатели." },
+                { "language": "ckb", "text": "پشتگیری ئاستەکانی توانای دیاری دەکات، فرۆشتن بۆ بەڵێنەکان بەکاریان دەهێنێت، و دوای دوو هەفتە پێوەرە دیاریکراوەکان دەپشکنین." },
+                { "language": "kmr", "text": "Piştgirî astên kapasîteyê diyar dike, firotan wan ji bo sozan bi kar tîne, û piştî du hefteyan em nîşankerên berbiçav dinirxînin." },
+                { "language": "pl", "text": "Wsparcie definiuje poziomy zasobów, sprzedaż używa ich do obietnic, a po dwóch tygodniach sprawdzamy konkretne wskaźniki." },
+                { "language": "ro", "text": "Suportul definește nivelurile de capacitate, vânzările le folosesc pentru promisiuni, iar după două săptămâni verificăm indicatori concreți." },
+                { "language": "sq", "text": "Mbështetja përcakton nivelet e kapacitetit, shitjet i përdorin për premtime dhe pas dy javësh shqyrtojmë tregues konkretë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Starkes Fazit: Es nennt Verantwortliche, Nutzung und Review-Zeitpunkt konkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong conclusion: it concretely names owners, use, and review timing." },
+                { "language": "fa", "text": "جمع‌بندی قوی: مسئولان، نحوه استفاده و زمان بازبینی را مشخص نام می‌برد." },
+                { "language": "ar", "text": "خاتمة قوية: تذكر المسؤولين والاستخدام ووقت المراجعة بشكل ملموس." },
+                { "language": "tr", "text": "Güçlü sonuç: sorumluları, kullanımı ve değerlendirme zamanını somut biçimde belirtir." },
+                { "language": "ru", "text": "Сильный вывод: он конкретно называет ответственных, использование и срок проверки." },
+                { "language": "ckb", "text": "کۆتاییەکی بەهێز: بەرپرسان، بەکارهێنان و کاتی پێداچوونەوە بە دیاریکراوی ناودەبات." },
+                { "language": "kmr", "text": "Encameke xurt: xwediyên kar, bikaranîn û dema nirxandinê bi awayekî berbiçav bi nav dike." },
+                { "language": "pl", "text": "Mocne podsumowanie: konkretnie wskazuje odpowiedzialnych, sposób użycia i termin przeglądu." },
+                { "language": "ro", "text": "Concluzie puternică: numește concret responsabilii, utilizarea și momentul revizuirii." },
+                { "language": "sq", "text": "Përfundim i fortë: përmend konkretisht përgjegjësit, përdorimin dhe kohën e rishikimit." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir einigen uns darauf, künftig besser miteinander zu sprechen und Missverständnisse früher zu klären.",
+              "translations": [
+                { "language": "en", "text": "We agree to communicate better with each other in the future and clarify misunderstandings earlier." },
+                { "language": "fa", "text": "توافق می‌کنیم که در آینده بهتر با هم صحبت کنیم و سوءتفاهم‌ها را زودتر روشن کنیم." },
+                { "language": "ar", "text": "نتفق على أن نتواصل بشكل أفضل مستقبلاً وأن نوضح سوء الفهم في وقت أبكر." },
+                { "language": "tr", "text": "Gelecekte birbirimizle daha iyi konuşmaya ve yanlış anlamaları daha erken açıklığa kavuşturmaya karar veriyoruz." },
+                { "language": "ru", "text": "Мы договариваемся в будущем лучше общаться друг с другом и раньше прояснять недоразумения." },
+                { "language": "ckb", "text": "ڕێکدەکەوین لە داهاتوودا باشتر لەگەڵ یەکتر قسە بکەین و سوءتێگەیشتنەکان زووتر ڕوون بکەینەوە." },
+                { "language": "kmr", "text": "Em li hev dikin ku di paşerojê de çêtir bi hev re biaxivin û şaşfêmiyan zûtir zelal bikin." },
+                { "language": "pl", "text": "Uzgadniamy, że w przyszłości będziemy lepiej ze sobą rozmawiać i wcześniej wyjaśniać nieporozumienia." },
+                { "language": "ro", "text": "Convenim ca pe viitor să comunicăm mai bine și să clarificăm neînțelegerile mai devreme." },
+                { "language": "sq", "text": "Bihem dakord që në të ardhmen të komunikojmë më mirë me njëri-tjetrin dhe t'i sqarojmë më herët keqkuptimet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein für C1: Das Fazit klingt freundlich, enthält aber keine Zuständigkeit, Frist oder Messung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general for C1: the conclusion sounds friendly, but contains no owner, deadline, or measurement." },
+                { "language": "fa", "text": "برای C1 بیش از حد کلی است: جمع‌بندی دوستانه به نظر می‌رسد، اما مسئولیت، مهلت یا سنجش ندارد." },
+                { "language": "ar", "text": "عامة جداً لمستوى C1: تبدو الخاتمة ودية، لكنها لا تحتوي على مسؤولية أو موعد أو قياس." },
+                { "language": "tr", "text": "C1 için fazla genel: sonuç dostça duyuluyor, ama sorumlu, süre veya ölçüm içermiyor." },
+                { "language": "ru", "text": "Слишком общее для C1: вывод звучит дружелюбно, но не содержит ответственного, срока или измерения." },
+                { "language": "ckb", "text": "بۆ C1 زۆر گشتییە: کۆتاییەکە دۆستانە دەنگ دەدات، بەڵام بەرپرسیار، ماوە یان پێوانەی تێدا نییە." },
+                { "language": "kmr", "text": "Ji bo C1 pir giştî ye: encam dostane xuya dike, lê xwedîkar, dem an pîvan tê de tune." },
+                { "language": "pl", "text": "Zbyt ogólne jak na C1: podsumowanie brzmi przyjaźnie, ale nie zawiera odpowiedzialności, terminu ani pomiaru." },
+                { "language": "ro", "text": "Prea general pentru C1: concluzia sună prietenos, dar nu conține responsabil, termen sau măsurare." },
+                { "language": "sq", "text": "Shumë e përgjithshme për C1: përfundimi tingëllon miqësor, por nuk përmban përgjegjës, afat ose matje." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Eine gute Moderation beginnt nicht mit einer Lösung, sondern mit einem neutralen Rahmen für beide Interessen.",
+          "translations": [
+            { "language": "en", "text": "Good moderation does not begin with a solution, but with a neutral frame for both interests." },
+            { "language": "fa", "text": "میانجی‌گری خوب با راه‌حل شروع نمی‌شود، بلکه با چارچوبی بی‌طرف برای هر دو منفعت آغاز می‌شود." },
+            { "language": "ar", "text": "لا تبدأ الإدارة الجيدة للنزاع بحل، بل بإطار محايد للمصلحتين." },
+            { "language": "tr", "text": "İyi moderasyon bir çözümle değil, iki çıkar için tarafsız bir çerçeveyle başlar." },
+            { "language": "ru", "text": "Хорошая модерация начинается не с решения, а с нейтральной рамки для обеих сторон интересов." },
+            { "language": "ckb", "text": "ناوبژیوانیی باش بە چارەسەر دەست پێناکات، بەڵکو بە چوارچێوەیەکی بێلایەن بۆ هەردوو بەرژەوەندی دەست پێدەکات." },
+            { "language": "kmr", "text": "Birêvebirina baş bi çareseriyê dest pê nake, lê bi çarçoveyeke bêalî ji bo her du berjewendiyan dest pê dike." },
+            { "language": "pl", "text": "Dobra moderacja nie zaczyna się od rozwiązania, lecz od neutralnej ramy dla obu interesów." },
+            { "language": "ro", "text": "O moderare bună nu începe cu o soluție, ci cu un cadru neutru pentru ambele interese." },
+            { "language": "sq", "text": "Moderimi i mirë nuk fillon me një zgjidhje, por me një kornizë neutrale për të dy interesat." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language",
+          "text": "Vorwürfe werden bearbeitbar, wenn Sie sie als neutrale Arbeitspunkte zusammenfassen.",
+          "translations": [
+            { "language": "en", "text": "Accusations become workable when you summarize them as neutral work items." },
+            { "language": "fa", "text": "سرزنش‌ها زمانی قابل رسیدگی می‌شوند که آن‌ها را به‌عنوان موارد کاری بی‌طرف خلاصه کنید." },
+            { "language": "ar", "text": "تصبح الاتهامات قابلة للمعالجة عندما تلخصها كنقاط عمل محايدة." },
+            { "language": "tr", "text": "Suçlamalar, onları tarafsız çalışma maddeleri olarak özetlediğinizde işlenebilir hale gelir." },
+            { "language": "ru", "text": "Обвинения становятся пригодными для работы, если вы резюмируете их как нейтральные рабочие пункты." },
+            { "language": "ckb", "text": "تاوانبارکردنەکان کاتێک دەبنە شتی چارەسەرکراو کە وەک خاڵی کاری بێلایەن پوختیان بکەیتەوە." },
+            { "language": "kmr", "text": "Sûcdarkirin dema hûn wan wek xalên xebatê yên bêalî kurt bikin, dikarin bên xebitandin." },
+            { "language": "pl", "text": "Zarzuty stają się możliwe do opracowania, gdy podsumuje się je jako neutralne punkty pracy." },
+            { "language": "ro", "text": "Acuzațiile devin abordabile când le rezumați ca puncte de lucru neutre." },
+            { "language": "sq", "text": "Akuzat bëhen të punueshme kur i përmblidhni si pika pune neutrale." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "content",
+          "text": "C1-Lösungen sollten widersprüchliche Anforderungen nicht glätten, sondern durch Kategorien handhabbar machen.",
+          "translations": [
+            { "language": "en", "text": "C1-level solutions should not smooth over contradictory requirements, but make them manageable through categories." },
+            { "language": "fa", "text": "راه‌حل‌های سطح C1 نباید خواسته‌های متناقض را پنهان کنند، بلکه باید آن‌ها را از طریق دسته‌بندی قابل مدیریت سازند." },
+            { "language": "ar", "text": "ينبغي لحلول مستوى C1 ألا تلمّع المتطلبات المتناقضة، بل تجعلها قابلة للإدارة من خلال الفئات." },
+            { "language": "tr", "text": "C1 düzeyi çözümler çelişkili talepleri yumuşatmamalı, onları kategorilerle yönetilebilir hale getirmelidir." },
+            { "language": "ru", "text": "Решения уровня C1 не должны сглаживать противоречивые требования, а должны делать их управляемыми через категории." },
+            { "language": "ckb", "text": "چارەسەرەکانی ئاستی C1 نابێت داواکارییە ناکۆکەکان بسڕنەوە، بەڵکو پێویستە بە پۆلێنکردن بیانکەنە شتی بەڕێوەبردنکراو." },
+            { "language": "kmr", "text": "Çareseriyên asta C1 divê daxwazên nakok ne asan bikin, lê wan bi kategoriyan bikin tiştên birêvebirinbar." },
+            { "language": "pl", "text": "Rozwiązania na poziomie C1 nie powinny wygładzać sprzecznych wymagań, lecz czynić je możliwymi do zarządzania przez kategorie." },
+            { "language": "ro", "text": "Soluțiile de nivel C1 nu ar trebui să netezească cerințele contradictorii, ci să le facă gestionabile prin categorii." },
+            { "language": "sq", "text": "Zgjidhjet e nivelit C1 nuk duhet t'i zbusin kërkesat kontradiktore, por t'i bëjnë të menaxhueshme përmes kategorive." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "strategy",
+          "text": "Verantwortung muss eindeutig sein; gemeinsame Nutzung ist nicht dasselbe wie gemeinsame Pflege.",
+          "translations": [
+            { "language": "en", "text": "Responsibility must be clear; shared use is not the same as shared maintenance." },
+            { "language": "fa", "text": "مسئولیت باید روشن باشد؛ استفاده مشترک با نگه‌داری مشترک یکی نیست." },
+            { "language": "ar", "text": "يجب أن تكون المسؤولية واضحة؛ الاستخدام المشترك ليس مثل الصيانة المشتركة." },
+            { "language": "tr", "text": "Sorumluluk net olmalıdır; ortak kullanım, ortak bakım ile aynı şey değildir." },
+            { "language": "ru", "text": "Ответственность должна быть ясной; совместное использование не то же самое, что совместное обслуживание." },
+            { "language": "ckb", "text": "بەرپرسیاریەتی دەبێت ڕوون بێت؛ بەکارهێنانی هاوبەش هەمان شت نییە لەگەڵ پاراستنی هاوبەش." },
+            { "language": "kmr", "text": "Berpirsiyarî divê zelal be; bikaranîna hevpar ne wekî parastina hevpar e." },
+            { "language": "pl", "text": "Odpowiedzialność musi być jasna; wspólne użycie to nie to samo co wspólne utrzymanie." },
+            { "language": "ro", "text": "Responsabilitatea trebuie să fie clară; utilizarea comună nu este același lucru cu întreținerea comună." },
+            { "language": "sq", "text": "Përgjegjësia duhet të jetë e qartë; përdorimi i përbashkët nuk është i njëjtë me mirëmbajtjen e përbashkët." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "strategy",
+          "text": "Ein tragfähiges Fazit nennt Zuständigkeit, Frist, Nutzungsregel und Review-Kriterien.",
+          "translations": [
+            { "language": "en", "text": "A robust conclusion names ownership, deadline, usage rule, and review criteria." },
+            { "language": "fa", "text": "جمع‌بندی پایدار، مسئولیت، مهلت، قاعده استفاده و معیارهای بازبینی را نام می‌برد." },
+            { "language": "ar", "text": "الخاتمة المتينة تذكر المسؤولية والموعد وقاعدة الاستخدام ومعايير المراجعة." },
+            { "language": "tr", "text": "Sağlam bir sonuç sorumluluğu, süreyi, kullanım kuralını ve değerlendirme ölçütlerini belirtir." },
+            { "language": "ru", "text": "Устойчивый вывод называет ответственность, срок, правило использования и критерии проверки." },
+            { "language": "ckb", "text": "کۆتاییەکی پشتپێبەستراو بەرپرسیاریەتی، ماوە، یاسای بەکارهێنان و پێوەرەکانی پێداچوونەوە ناودەبات." },
+            { "language": "kmr", "text": "Encameke qayîm xwedîkarî, dem, rêzika bikaranînê û pîvanên nirxandinê bi nav dike." },
+            { "language": "pl", "text": "Trwałe podsumowanie wskazuje odpowiedzialność, termin, zasadę użycia i kryteria przeglądu." },
+            { "language": "ro", "text": "O concluzie solidă numește responsabilitatea, termenul, regula de utilizare și criteriile de revizuire." },
+            { "language": "sq", "text": "Një përfundim i qëndrueshëm përmend përgjegjësinë, afatin, rregullin e përdorimit dhe kriteret e rishikimit." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "organizational-conflict-moderation",
+          "placement": "detail-hero",
+          "purpose": "Show a neutral workplace moderation scene between two departments without depicting a real person.",
+          "altText": "Drei Personen moderieren in einem Büro einen Konflikt zwischen zwei Abteilungen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Three people moderate a conflict between two departments in an office." },
+            { "language": "fa", "text": "سه نفر در یک دفتر تعارض بین دو بخش را میانجی‌گری می‌کنند." },
+            { "language": "ar", "text": "ثلاثة أشخاص يديرون نزاعاً بين قسمين في مكتب." },
+            { "language": "tr", "text": "Üç kişi bir ofiste iki departman arasındaki çatışmayı yönetiyor." },
+            { "language": "ru", "text": "Три человека в офисе модерируют конфликт между двумя отделами." },
+            { "language": "ckb", "text": "سێ کەس لە ئۆفیسێکدا ناکۆکیی نێوان دوو بەش ناوبژیوانی دەکەن." },
+            { "language": "kmr", "text": "Sê kes di nivîsgehê de nakokiya di navbera du beşan de birêve dibin." },
+            { "language": "pl", "text": "Trzy osoby moderują w biurze konflikt między dwoma działami." },
+            { "language": "ro", "text": "Trei persoane moderează într-un birou un conflict între două departamente." },
+            { "language": "sq", "text": "Tre persona në një zyrë moderojnë një konflikt midis dy departamenteve." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult colleagues in a modern German office, one person moderating between two department representatives, neutral body language, abstract icons for capacity, promise, responsibility, and next step, no readable text, no logos, no private data, accessible balanced composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

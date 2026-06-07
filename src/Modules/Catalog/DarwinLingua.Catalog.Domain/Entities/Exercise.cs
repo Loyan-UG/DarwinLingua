@@ -22,8 +22,14 @@ public sealed class Exercise
         OwnerType = string.Empty;
         PromptJson = "{}";
         AnswerKeyJson = "{}";
+        TitleTranslationsJson = "[]";
+        InstructionTranslationsJson = "[]";
         CorrectExplanation = string.Empty;
+        CorrectExplanationTranslationsJson = "[]";
         IncorrectExplanation = string.Empty;
+        IncorrectExplanationTranslationsJson = "[]";
+        HintTranslationsJson = "[]";
+        CommonMistakeNoteTranslationsJson = "[]";
     }
 
     public Exercise(
@@ -44,7 +50,13 @@ public sealed class Exercise
         string? commonMistakeNote,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string? titleTranslationsJson = null,
+        string? instructionTranslationsJson = null,
+        string? correctExplanationTranslationsJson = null,
+        string? incorrectExplanationTranslationsJson = null,
+        string? hintTranslationsJson = null,
+        string? commonMistakeNoteTranslationsJson = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exercise id is required.") : id;
         Slug = NormalizeKebabKey(slug, "Exercise slug");
@@ -57,10 +69,16 @@ public sealed class Exercise
         OwnerSlug = NormalizeOptionalKebabKey(ownerSlug, "Exercise owner slug");
         PromptJson = RequireText(promptJson, "Exercise prompt JSON", 20000);
         AnswerKeyJson = RequireText(answerKeyJson, "Exercise answer key JSON", 20000);
+        TitleTranslationsJson = NormalizeJsonArray(titleTranslationsJson);
+        InstructionTranslationsJson = NormalizeJsonArray(instructionTranslationsJson);
         CorrectExplanation = RequireText(correctExplanation, "Correct explanation", 2000);
+        CorrectExplanationTranslationsJson = NormalizeJsonArray(correctExplanationTranslationsJson);
         IncorrectExplanation = RequireText(incorrectExplanation, "Incorrect explanation", 2000);
+        IncorrectExplanationTranslationsJson = NormalizeJsonArray(incorrectExplanationTranslationsJson);
         Hint = NormalizeOptionalText(hint, 1000, "Exercise hint");
+        HintTranslationsJson = NormalizeJsonArray(hintTranslationsJson);
         CommonMistakeNote = NormalizeOptionalText(commonMistakeNote, 1000, "Common mistake note");
+        CommonMistakeNoteTranslationsJson = NormalizeJsonArray(commonMistakeNoteTranslationsJson);
         PublicationStatus = publicationStatus;
         SortOrder = Math.Max(0, sortOrder);
         CreatedAtUtc = timestampUtc;
@@ -78,10 +96,16 @@ public sealed class Exercise
     public string? OwnerSlug { get; private set; }
     public string PromptJson { get; private set; }
     public string AnswerKeyJson { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
+    public string InstructionTranslationsJson { get; private set; }
     public string CorrectExplanation { get; private set; }
+    public string CorrectExplanationTranslationsJson { get; private set; }
     public string IncorrectExplanation { get; private set; }
+    public string IncorrectExplanationTranslationsJson { get; private set; }
     public string? Hint { get; private set; }
+    public string HintTranslationsJson { get; private set; }
     public string? CommonMistakeNote { get; private set; }
+    public string CommonMistakeNoteTranslationsJson { get; private set; }
     public PublicationStatus PublicationStatus { get; private set; }
     public int SortOrder { get; private set; }
     public DateTime CreatedAtUtc { get; private set; }
@@ -132,6 +156,9 @@ public sealed class Exercise
 
         return normalized;
     }
+
+    internal static string NormalizeJsonArray(string? value) =>
+        string.IsNullOrWhiteSpace(value) ? "[]" : value.Trim();
 }
 
 /// <summary>
@@ -145,7 +172,9 @@ public sealed class ExerciseSet
     {
         Slug = string.Empty;
         Title = string.Empty;
+        TitleTranslationsJson = "[]";
         Description = string.Empty;
+        DescriptionTranslationsJson = "[]";
         OwnerType = string.Empty;
     }
 
@@ -159,12 +188,16 @@ public sealed class ExerciseSet
         string? ownerSlug,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string? titleTranslationsJson = null,
+        string? descriptionTranslationsJson = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exercise set id is required.") : id;
         Slug = Exercise.NormalizeKebabKey(slug, "Exercise set slug");
         Title = Exercise.RequireText(title, "Exercise set title", 256);
+        TitleTranslationsJson = Exercise.NormalizeJsonArray(titleTranslationsJson);
         Description = Exercise.RequireText(description, "Exercise set description", 2000);
+        DescriptionTranslationsJson = Exercise.NormalizeJsonArray(descriptionTranslationsJson);
         CefrLevel = cefrLevel;
         OwnerType = Exercise.NormalizeKebabKey(ownerType, "Exercise set owner type");
         OwnerSlug = Exercise.NormalizeOptionalKebabKey(ownerSlug, "Exercise set owner slug");
@@ -177,7 +210,9 @@ public sealed class ExerciseSet
     public Guid Id { get; private set; }
     public string Slug { get; private set; }
     public string Title { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
     public string Description { get; private set; }
+    public string DescriptionTranslationsJson { get; private set; }
     public CefrLevel CefrLevel { get; private set; }
     public string OwnerType { get; private set; }
     public string? OwnerSlug { get; private set; }

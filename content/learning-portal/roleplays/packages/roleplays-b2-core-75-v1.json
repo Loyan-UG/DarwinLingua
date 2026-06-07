@@ -1,0 +1,669 @@
+{
+  "packageId": "roleplays-b2-core-75-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 75 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 75",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed B2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-ein-umweltthema-in-der-gruppe-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Ein Umweltthema in der Gruppe diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discuss an environmental topic in a group" },
+        { "language": "fa", "text": "بحث گروهی درباره یک موضوع محیط‌زیستی" },
+        { "language": "ar", "text": "مناقشة موضوع بيئي في مجموعة" },
+        { "language": "tr", "text": "Bir çevre konusunu grupta tartışmak" },
+        { "language": "ru", "text": "Обсудить экологическую тему в группе" },
+        { "language": "ckb", "text": "گفتوگۆی گرووپی دەربارەی بابەتێکی ژینگەیی" },
+        { "language": "kmr", "text": "Mijareke jîngehî di komê de gotûbêj kirin" },
+        { "language": "pl", "text": "Omówić temat ekologiczny w grupie" },
+        { "language": "ro", "text": "Discutarea unei teme de mediu în grup" },
+        { "language": "sq", "text": "Diskutim në grup për një temë mjedisore" }
+      ],
+      "description": "Du diskutierst in einer B2-Prüfung mit einer Gruppe, wie eine Sprachschule Papier- und Plastikmüll realistisch reduzieren kann.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a B2 exam, you discuss with a group how a language school can realistically reduce paper and plastic waste." },
+        { "language": "fa", "text": "در یک آزمون B2 با یک گروه بحث می‌کنی که یک مدرسه زبان چگونه می‌تواند به‌طور واقع‌بینانه زباله کاغذی و پلاستیکی را کم کند." },
+        { "language": "ar", "text": "في امتحان B2 تناقش مع مجموعة كيف يمكن لمدرسة لغة أن تقلل نفايات الورق والبلاستيك بشكل واقعي." },
+        { "language": "tr", "text": "Bir B2 sınavında bir dil okulunun kağıt ve plastik atığı gerçekçi biçimde nasıl azaltabileceğini grupla tartışırsın." },
+        { "language": "ru", "text": "На экзамене B2 вы обсуждаете в группе, как языковая школа может реалистично сократить бумажные и пластиковые отходы." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی B2دا لەگەڵ گرووپێک گفتوگۆ دەکەیت کە قوتابخانەیەکی زمان چۆن دەتوانێت بە شێوەیەکی واقیعی زبڵی کاغەز و پلاستیک کەم بکاتەوە." },
+        { "language": "kmr", "text": "Di ezmûna B2 de tu bi komekê re gotûbêj dikî ka dibistaneke zimanê çawa dikare avêtina kaxez û plastîkê bi awayekî realîst kêm bike." },
+        { "language": "pl", "text": "Na egzaminie B2 dyskutujesz w grupie, jak szkoła językowa może realistycznie ograniczyć odpady papierowe i plastikowe." },
+        { "language": "ro", "text": "La un examen B2 discuți cu un grup cum poate o școală de limbi să reducă realist deșeurile de hârtie și plastic." },
+        { "language": "sq", "text": "Në një provim B2 diskuton me një grup se si një shkollë gjuhësh mund të ulë në mënyrë realiste mbetjet e letrës dhe plastikës." }
+      ],
+      "learnerGoal": "Ein Umweltthema kooperativ diskutieren: konkrete Maßnahmen vergleichen, Bedenken aufnehmen, Kosten und Wirkung abwägen und einen gemeinsamen Vorschlag formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss an environmental topic cooperatively: compare concrete measures, take concerns into account, weigh costs and effect, and formulate a shared proposal." },
+        { "language": "fa", "text": "یک موضوع محیط‌زیستی را همکاری‌محور بحث کن: راهکارهای مشخص را مقایسه کن، نگرانی‌ها را در نظر بگیر، هزینه و اثر را بسنج و یک پیشنهاد مشترک بساز." },
+        { "language": "ar", "text": "ناقش موضوعاً بيئياً بشكل تعاوني: قارن إجراءات ملموسة، وخذ المخاوف في الاعتبار، ووازن بين التكلفة والأثر، وصغ اقتراحاً مشتركاً." },
+        { "language": "tr", "text": "Bir çevre konusunu işbirliğiyle tartış: somut önlemleri karşılaştır, kaygıları dikkate al, maliyet ve etkiyi tart ve ortak bir öneri oluştur." },
+        { "language": "ru", "text": "Обсуждать экологическую тему совместно: сравнивать конкретные меры, учитывать опасения, взвешивать затраты и эффект и формулировать общее предложение." },
+        { "language": "ckb", "text": "بابەتێکی ژینگەیی بە هاوکاری گفتوگۆ بکە: ڕێکاری دیاریکراو بەراورد بکە، نیگەرانییەکان وەربگرە، تێچوون و کاریگەری هەڵبسەنگێنە و پێشنیارێکی هاوبەش دروست بکە." },
+        { "language": "kmr", "text": "Mijareke jîngehî bi hevkarî gotûbêj bike: tedbîrên zehf diyar bidin ber hev, fikarên dinan bigire, lêçûn û bandorê binirxîne û pêşniyareke hevpar çêbike." },
+        { "language": "pl", "text": "Omów temat ekologiczny we współpracy: porównaj konkretne działania, uwzględnij obawy, rozważ koszty i efekt oraz sformułuj wspólną propozycję." },
+        { "language": "ro", "text": "Discută cooperativ o temă de mediu: compară măsuri concrete, ia în considerare îngrijorările, cântărește costurile și efectul și formulează o propunere comună." },
+        { "language": "sq", "text": "Diskuto në mënyrë bashkëpunuese një temë mjedisore: krahaso masa konkrete, merr parasysh shqetësimet, pesho koston dhe efektin dhe formulo një propozim të përbashkët." }
+      ],
+      "cefrLevel": "B2",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["goethe-b2", "telc-b2"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "sortOrder": 75,
+      "roles": [
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfende Person",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnvan" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminuesi" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Gesprächspartnerin",
+          "translations": [
+            { "language": "en", "text": "Discussion partner" },
+            { "language": "fa", "text": "هم‌گفتگو" },
+            { "language": "ar", "text": "شريكة النقاش" },
+            { "language": "tr", "text": "Tartışma partneri" },
+            { "language": "ru", "text": "Партнер по обсуждению" },
+            { "language": "ckb", "text": "هاوگفتوگۆ" },
+            { "language": "kmr", "text": "Hevpeyivîn" },
+            { "language": "pl", "text": "Partnerka rozmowy" },
+            { "language": "ro", "text": "Parteneră de discuție" },
+            { "language": "sq", "text": "Partnere diskutimi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Du",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "تو" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Sen" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Tu" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Tu" },
+            { "language": "sq", "text": "Ti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Diskutieren Sie in der Gruppe: Wie kann eine Sprachschule Papier- und Plastikmüll reduzieren, ohne den Unterricht unpraktisch zu machen?",
+          "translations": [
+            { "language": "en", "text": "Discuss in the group: How can a language school reduce paper and plastic waste without making lessons impractical?" },
+            { "language": "fa", "text": "در گروه بحث کنید: یک مدرسه زبان چگونه می‌تواند زباله کاغذی و پلاستیکی را کم کند، بدون اینکه کلاس‌ها غیرعملی شوند؟" },
+            { "language": "ar", "text": "ناقشوا في المجموعة: كيف يمكن لمدرسة لغة أن تقلل نفايات الورق والبلاستيك من دون أن تجعل الدروس غير عملية؟" },
+            { "language": "tr", "text": "Grupta tartışın: Bir dil okulu dersleri kullanışsız hale getirmeden kağıt ve plastik atığı nasıl azaltabilir?" },
+            { "language": "ru", "text": "Обсудите в группе: как языковая школа может сократить бумажные и пластиковые отходы, не делая занятия непрактичными?" },
+            { "language": "ckb", "text": "لە گرووپدا گفتوگۆ بکەن: قوتابخانەیەکی زمان چۆن دەتوانێت زبڵی کاغەز و پلاستیک کەم بکاتەوە بەبێ ئەوەی وانەکان ناکاریگەر بن؟" },
+            { "language": "kmr", "text": "Di komê de gotûbêj bikin: Dibistaneke zimanê çawa dikare avêtina kaxez û plastîkê kêm bike bêyî ku ders neprakîk bibin?" },
+            { "language": "pl", "text": "Proszę omówić w grupie: jak szkoła językowa może ograniczyć odpady papierowe i plastikowe, nie czyniąc zajęć niepraktycznymi?" },
+            { "language": "ro", "text": "Discutați în grup: cum poate o școală de limbi să reducă deșeurile de hârtie și plastic fără să facă lecțiile nepractice?" },
+            { "language": "sq", "text": "Diskutoni në grup: si mund të ulë një shkollë gjuhësh mbetjet e letrës dhe plastikës pa i bërë mësimet jopraktike?" }
+          ],
+          "function": "task-setup",
+          "toneNote": "Die Aufgabe verlangt eine gemeinsame Lösung, nicht nur persönliche Vorlieben."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde mit Maßnahmen anfangen, die im Alltag sichtbar sind: weniger Einwegbecher, digitale Arbeitsblätter, aber weiterhin Ausdrucke für Personen, die sie wirklich brauchen. So bleibt die Lösung umweltfreundlich und praktisch.",
+          "translations": [
+            { "language": "en", "text": "I would start with measures that are visible in everyday life: fewer disposable cups, digital worksheets, but still printed copies for people who really need them. That keeps the solution environmentally friendly and practical." },
+            { "language": "fa", "text": "من با اقدام‌هایی شروع می‌کنم که در زندگی روزمره دیده می‌شوند: لیوان یک‌بارمصرف کمتر، برگه‌های تمرین دیجیتال، اما همچنان چاپ برای کسانی که واقعاً به آن نیاز دارند. این‌گونه راه‌حل هم محیط‌زیستی می‌ماند و هم عملی." },
+            { "language": "ar", "text": "سأبدأ بإجراءات واضحة في الحياة اليومية: أكواب أحادية الاستخدام أقل، وأوراق عمل رقمية، لكن مع بقاء النسخ المطبوعة لمن يحتاجها فعلاً. هكذا يبقى الحل صديقاً للبيئة وعملياً." },
+            { "language": "tr", "text": "Günlük yaşamda görünür olan önlemlerle başlardım: daha az tek kullanımlık bardak, dijital çalışma kağıtları, ama gerçekten ihtiyacı olanlar için hâlâ çıktılar. Böylece çözüm hem çevreci hem pratik kalır." },
+            { "language": "ru", "text": "Я бы начал с мер, заметных в повседневности: меньше одноразовых стаканчиков, цифровые рабочие листы, но печатные копии для тех, кому они действительно нужны. Так решение остается экологичным и практичным." },
+            { "language": "ckb", "text": "من بەو ڕێکارانە دەست پێدەکەم کە لە ڕۆژانەدا دیارن: کەمکردنەوەی پەرداخی یەکجار بەکارهاتوو، لاپەڕەی کاری دیجیتاڵ، بەڵام هێشتا چاپ بۆ ئەو کەسانەی بەڕاستی پێویستیان پێیە. بەم شێوەیە چارەسەرەکە هەم ژینگەدۆستە و هەم کردارییە." },
+            { "language": "kmr", "text": "Ez ê bi tedbîrên ku di jiyana rojane de diyar in dest pê bikim: kêmkirina kasên yekcar bikaranîn, pelên kar ên dijîtal, lê hîn jî çap ji bo kesên ku bi rastî hewce ne. Wisa çareserî hem jîngehparêz hem jî prakîk dimîne." },
+            { "language": "pl", "text": "Zacząłbym od działań widocznych w codzienności: mniej jednorazowych kubków, cyfrowe karty pracy, ale nadal wydruki dla osób, które naprawdę ich potrzebują. Dzięki temu rozwiązanie pozostaje ekologiczne i praktyczne." },
+            { "language": "ro", "text": "Aș începe cu măsuri vizibile în viața de zi cu zi: mai puține pahare de unică folosință, fișe digitale, dar în continuare copii tipărite pentru persoanele care chiar au nevoie de ele. Astfel soluția rămâne ecologică și practică." },
+            { "language": "sq", "text": "Do të filloja me masa që duken në jetën e përditshme: më pak gota njëpërdorimshe, fletë pune digjitale, por ende kopje të shtypura për ata që vërtet kanë nevojë. Kështu zgjidhja mbetet ekologjike dhe praktike." }
+          ],
+          "function": "balanced-opening",
+          "toneNote": "Stark: Die Antwort kombiniert konkrete Maßnahmen mit Rücksicht auf praktische Bedürfnisse.",
+          "expectedLearnerAction": "Open with concrete measures and show that practicality matters."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Welche Maßnahme wäre Ihrer Meinung nach der beste erste Schritt?",
+          "translations": [
+            { "language": "en", "text": "In your opinion, which measure would be the best first step?" },
+            { "language": "fa", "text": "به نظر شما کدام اقدام بهترین قدم اول است؟" },
+            { "language": "ar", "text": "برأيك، أي إجراء سيكون أفضل خطوة أولى؟" },
+            { "language": "tr", "text": "Sizce hangi önlem en iyi ilk adım olurdu?" },
+            { "language": "ru", "text": "Какой шаг, по вашему мнению, был бы лучшим первым шагом?" },
+            { "language": "ckb", "text": "بە بڕوای تۆ، کام ڕێکار باشترین هەنگاوی یەکەم دەبێت؟" },
+            { "language": "kmr", "text": "Li gorî te, kîjan tedbîr dê gaveke yekem a herî baş be?" },
+            { "language": "pl", "text": "Które działanie byłoby Pana/Pani zdaniem najlepszym pierwszym krokiem?" },
+            { "language": "ro", "text": "După părerea dumneavoastră, care măsură ar fi cel mai bun prim pas?" },
+            { "language": "sq", "text": "Sipas jush, cila masë do të ishte hapi i parë më i mirë?" }
+          ],
+          "function": "ask-for-priority",
+          "toneNote": "Die Nachfrage zwingt zur Priorisierung statt zu einer langen Liste."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Als ersten Schritt würde ich Mehrwegbecher und eine gut sichtbare Wasserstation vorschlagen. Das betrifft fast alle Kursteilnehmenden, ist leicht zu erklären und reduziert täglich Müll, ohne den Unterricht direkt zu verändern.",
+          "translations": [
+            { "language": "en", "text": "As a first step, I would suggest reusable cups and a clearly visible water station. That affects almost all course participants, is easy to explain, and reduces waste every day without directly changing the lesson." },
+            { "language": "fa", "text": "به عنوان قدم اول، لیوان‌های چندبارمصرف و یک ایستگاه آب کاملاً قابل دیدن را پیشنهاد می‌کنم. این تقریباً به همه شرکت‌کنندگان دوره مربوط می‌شود، توضیحش آسان است و هر روز زباله را کم می‌کند، بدون اینکه مستقیم کلاس را تغییر دهد." },
+            { "language": "ar", "text": "كخطوة أولى أقترح أكواباً قابلة لإعادة الاستخدام ومحطة ماء واضحة الرؤية. هذا يخص تقريباً جميع المشاركين في الدورة، ويسهل شرحه، ويقلل النفايات يومياً من دون تغيير الدرس مباشرة." },
+            { "language": "tr", "text": "İlk adım olarak çok kullanımlık bardaklar ve iyi görünen bir su noktası önerirdim. Bu neredeyse tüm kurs katılımcılarını ilgilendirir, açıklaması kolaydır ve dersi doğrudan değiştirmeden her gün atığı azaltır." },
+            { "language": "ru", "text": "В качестве первого шага я предложил бы многоразовые стаканы и хорошо заметную станцию с водой. Это касается почти всех участников курса, легко объясняется и каждый день уменьшает отходы, не меняя сам урок напрямую." },
+            { "language": "ckb", "text": "وەک هەنگاوی یەکەم، پەرداخی دووبارە بەکارهاتوو و شوێنێکی ئاو کە بە ڕوونی دیار بێت پێشنیار دەکەم. ئەمە نزیکەی هەموو بەشداربووانی کۆرس دەگرێتەوە، ئاسان ڕوون دەکرێتەوە و ڕۆژانە زبڵ کەم دەکاتەوە بەبێ ئەوەی وانەکە ڕاستەوخۆ بگۆڕێت." },
+            { "language": "kmr", "text": "Wekî gaveke yekem ez kasên pircar bikaranîn û stasyoneke avê ya baş xuya pêşniyar dikim. Ev nêzîkî hemû beşdarên kursê têkildar dike, hêsan tê ravekirin û rojane avêtinê kêm dike bêyî ku dersê rasterast biguherîne." },
+            { "language": "pl", "text": "Jako pierwszy krok zaproponowałbym kubki wielorazowe i dobrze widoczny punkt z wodą. Dotyczy to prawie wszystkich uczestników kursu, łatwo to wyjaśnić i codziennie ogranicza odpady, nie zmieniając bezpośrednio lekcji." },
+            { "language": "ro", "text": "Ca prim pas aș propune pahare reutilizabile și o stație de apă bine vizibilă. Acest lucru îi privește pe aproape toți participanții la curs, este ușor de explicat și reduce zilnic deșeurile fără să schimbe direct lecția." },
+            { "language": "sq", "text": "Si hap të parë do të propozoja gota të ripërdorshme dhe një pikë uji të dukshme mirë. Kjo prek pothuajse të gjithë pjesëmarrësit e kursit, shpjegohet lehtë dhe ul mbetjet çdo ditë pa ndryshuar drejtpërdrejt mësimin." }
+          ],
+          "function": "prioritize-practical-measure",
+          "toneNote": "B2: Priorität wird mit Reichweite, Verständlichkeit und Wirkung begründet.",
+          "expectedLearnerAction": "Choose one realistic first step and justify it with effect and feasibility."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Bei digitalen Arbeitsblättern habe ich Bedenken. Nicht alle haben ein Tablet oder möchten im Unterricht ständig aufs Handy schauen.",
+          "translations": [
+            { "language": "en", "text": "I have concerns about digital worksheets. Not everyone has a tablet or wants to look at a phone all the time during class." },
+            { "language": "fa", "text": "درباره برگه‌های دیجیتال نگرانی دارم. همه تبلت ندارند یا نمی‌خواهند در کلاس مدام به موبایل نگاه کنند." },
+            { "language": "ar", "text": "لدي مخاوف بشأن أوراق العمل الرقمية. ليس لدى الجميع جهاز لوحي، ولا يريد الجميع النظر إلى الهاتف طوال الوقت في الدرس." },
+            { "language": "tr", "text": "Dijital çalışma kağıtları konusunda kaygılarım var. Herkesin tableti yok veya derste sürekli telefona bakmak istemiyor." },
+            { "language": "ru", "text": "У меня есть опасения по поводу цифровых рабочих листов. Не у всех есть планшет, и не все хотят постоянно смотреть в телефон на занятии." },
+            { "language": "ckb", "text": "دەربارەی لاپەڕە کاری دیجیتاڵ نیگەرانم. هەموو کەس تابلێتی نییە یان نایەوێت لە وانەدا بەردەوام سەیری مۆبایل بکات." },
+            { "language": "kmr", "text": "Li ser pelên kar ên dijîtal fikarên min hene. Ne herkes tabletê heye an dixwaze di dersê de her tim li telefonê binêre." },
+            { "language": "pl", "text": "Mam obawy dotyczące cyfrowych kart pracy. Nie każdy ma tablet albo chce ciągle patrzeć na telefon podczas zajęć." },
+            { "language": "ro", "text": "Am îngrijorări legate de fișele digitale. Nu toată lumea are tabletă sau vrea să se uite mereu la telefon în timpul lecției." },
+            { "language": "sq", "text": "Kam shqetësime për fletët digjitale. Jo të gjithë kanë tabletë ose duan të shohin vazhdimisht telefonin gjatë mësimit." }
+          ],
+          "function": "raise-access-concern",
+          "toneNote": "Die Kritik ist plausibel und darf nicht einfach ignoriert werden."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das sehe ich auch so. Deshalb sollte digital die Standardlösung sein, aber nicht die einzige Lösung. Wer aus technischen oder gesundheitlichen Gründen Papier braucht, sollte es ohne Rechtfertigungsdruck bekommen.",
+          "translations": [
+            { "language": "en", "text": "I see it that way too. That is why digital should be the standard solution, but not the only solution. Anyone who needs paper for technical or health reasons should get it without pressure to justify it." },
+            { "language": "fa", "text": "من هم همین‌طور می‌بینم. به همین دلیل دیجیتال باید راه‌حل پیش‌فرض باشد، اما تنها راه‌حل نباشد. هر کسی که به دلایل فنی یا سلامتی به کاغذ نیاز دارد، باید بدون فشار برای توضیح دادن آن را دریافت کند." },
+            { "language": "ar", "text": "أرى ذلك أيضاً. لذلك ينبغي أن يكون الحل الرقمي هو الحل الافتراضي، لكنه ليس الحل الوحيد. من يحتاج إلى الورق لأسباب تقنية أو صحية يجب أن يحصل عليه من دون ضغط لتبرير ذلك." },
+            { "language": "tr", "text": "Ben de böyle görüyorum. Bu yüzden dijital standart çözüm olmalı, ama tek çözüm olmamalı. Teknik veya sağlık nedenleriyle kağıda ihtiyaç duyanlar, bunu açıklama baskısı olmadan alabilmeli." },
+            { "language": "ru", "text": "Я тоже так считаю. Поэтому цифровой вариант должен быть стандартным, но не единственным решением. Тот, кому бумага нужна по техническим или медицинским причинам, должен получить ее без давления оправдываться." },
+            { "language": "ckb", "text": "منیش بەو شێوەیە دەیبینم. بۆیە دیجیتاڵ دەبێت چارەسەری بنەڕەتی بێت، بەڵام تاکە چارەسەر نەبێت. ئەوەی بە هۆکاری تەکنیکی یان تەندروستی پێویستی بە کاغەز هەیە، دەبێت بەبێ فشاری پاساوهێنان وەریبگرێت." },
+            { "language": "kmr", "text": "Ez jî wisa dibînim. Ji ber vê divê dijîtal çareseriya standard be, lê ne tenê çareserî. Kesê ku ji sedemên teknîkî an tenduristiyê kaxezê hewce dike, divê bê zexta xwe rastandinê wê bistîne." },
+            { "language": "pl", "text": "Też tak to widzę. Dlatego wersja cyfrowa powinna być rozwiązaniem standardowym, ale nie jedynym. Kto z powodów technicznych albo zdrowotnych potrzebuje papieru, powinien go dostać bez presji uzasadniania." },
+            { "language": "ro", "text": "Și eu văd lucrurile la fel. De aceea digitalul ar trebui să fie soluția standard, dar nu singura soluție. Cine are nevoie de hârtie din motive tehnice sau de sănătate ar trebui să o primească fără presiunea de a justifica." },
+            { "language": "sq", "text": "Edhe unë e shoh kështu. Prandaj digjitalja duhet të jetë zgjidhja standarde, por jo zgjidhja e vetme. Kush ka nevojë për letër për arsye teknike ose shëndetësore duhet ta marrë pa presion për t'u justifikuar." }
+          ],
+          "function": "integrate-access-concern",
+          "toneNote": "Stark: Die Antwort macht aus dem Einwand eine faire Hybridlösung.",
+          "expectedLearnerAction": "Acknowledge the concern and adapt the proposal without abandoning the goal."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "examiner",
+          "baseText": "Wie würden Sie die Kosten und den Nutzen einschätzen?",
+          "translations": [
+            { "language": "en", "text": "How would you assess the costs and benefits?" },
+            { "language": "fa", "text": "هزینه و فایده را چگونه ارزیابی می‌کنید؟" },
+            { "language": "ar", "text": "كيف تقيّم التكلفة والفائدة؟" },
+            { "language": "tr", "text": "Maliyetleri ve faydayı nasıl değerlendirirsiniz?" },
+            { "language": "ru", "text": "Как бы вы оценили затраты и пользу?" },
+            { "language": "ckb", "text": "تێچوون و سوودەکە چۆن هەڵدەسەنگێنیت؟" },
+            { "language": "kmr", "text": "Tu lêçûn û sûdê çawa dinirxînî?" },
+            { "language": "pl", "text": "Jak ocenił(a)by Pan/Pani koszty i korzyści?" },
+            { "language": "ro", "text": "Cum ați evalua costurile și beneficiile?" },
+            { "language": "sq", "text": "Si do t'i vlerësonit kostot dhe përfitimet?" }
+          ],
+          "function": "ask-cost-benefit",
+          "toneNote": "B2 verlangt keine genaue Rechnung, aber eine nachvollziehbare Einschätzung."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Am Anfang entstehen Kosten für Becher, Beschilderung und vielleicht eine Wasserstation. Langfristig spart man aber Papier, Müllsäcke und Reinigungsaufwand. Ich würde deshalb einen einmonatigen Test vorschlagen und danach Verbrauch und Rückmeldungen vergleichen.",
+          "translations": [
+            { "language": "en", "text": "At the beginning there are costs for cups, signs, and perhaps a water station. In the long term, however, paper, trash bags, and cleaning effort are saved. I would therefore suggest a one-month test and then compare consumption and feedback." },
+            { "language": "fa", "text": "در آغاز هزینه‌هایی برای لیوان‌ها، تابلوها و شاید ایستگاه آب ایجاد می‌شود. اما در بلندمدت در کاغذ، کیسه‌های زباله و کار نظافت صرفه‌جویی می‌شود. بنابراین یک تست یک‌ماهه پیشنهاد می‌کنم و بعد مصرف و بازخوردها را مقایسه می‌کنیم." },
+            { "language": "ar", "text": "في البداية توجد تكاليف للأكواب واللافتات وربما محطة ماء. لكن على المدى الطويل يتم توفير الورق وأكياس القمامة وجهد التنظيف. لذلك أقترح تجربة لمدة شهر ثم مقارنة الاستهلاك والتعليقات." },
+            { "language": "tr", "text": "Başta bardaklar, tabelalar ve belki bir su noktası için maliyet oluşur. Uzun vadede ise kağıt, çöp torbaları ve temizlik emeği tasarruf edilir. Bu yüzden bir aylık deneme önerir, sonra tüketimi ve geri bildirimleri karşılaştırırdım." },
+            { "language": "ru", "text": "Сначала возникнут расходы на стаканы, таблички и, возможно, станцию с водой. Но в долгосрочной перспективе экономятся бумага, мусорные пакеты и усилия на уборку. Поэтому я предложил бы месячный тест и затем сравнение расхода и отзывов." },
+            { "language": "ckb", "text": "لە سەرەتادا تێچوون بۆ پەرداخ، نیشانەکان و ڕەنگە شوێنی ئاو دروست دەبێت. بەڵام لە درێژماوەدا کاغەز، کیسەی زبڵ و هەوڵی پاککردنەوە کەم دەبێتەوە. بۆیە تاقیکردنەوەی مانگێک پێشنیار دەکەم و پاشان بەکارهێنان و فیدباکەکان بەراورد دەکەم." },
+            { "language": "kmr", "text": "Di destpêkê de lêçûn ji bo kasan, nîşanan û belkî stasyona avê çêdibe. Lê di demeke dirêj de kaxez, torbeyên zibilê û kedê paqijkirinê têne spartin. Ji ber vê ez testeke yek-mehî pêşniyar dikim û paşê bikaranîn û nerînan didim ber hev." },
+            { "language": "pl", "text": "Na początku pojawiają się koszty kubków, oznaczeń i być może punktu z wodą. Długoterminowo oszczędza się jednak papier, worki na śmieci i nakład sprzątania. Dlatego zaproponowałbym miesięczny test, a potem porównanie zużycia i opinii." },
+            { "language": "ro", "text": "La început apar costuri pentru pahare, indicatoare și poate o stație de apă. Pe termen lung însă se economisesc hârtie, saci de gunoi și efort de curățenie. De aceea aș propune un test de o lună și apoi compararea consumului și a feedbackului." },
+            { "language": "sq", "text": "Në fillim ka kosto për gota, shenja dhe ndoshta një pikë uji. Por afatgjatë kursehen letër, qese mbeturinash dhe punë pastrimi. Prandaj do të propozoja një test njëmujor dhe pastaj të krahasohen konsumi dhe reagimet." }
+          ],
+          "function": "cost-benefit-assessment",
+          "toneNote": "Stark: Kosten werden nicht verschwiegen, sondern mit messbarer Wirkung verbunden.",
+          "expectedLearnerAction": "Compare initial costs with longer-term savings and propose a measurable trial."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Können wir daraus einen gemeinsamen Vorschlag formulieren?",
+          "translations": [
+            { "language": "en", "text": "Can we formulate a shared proposal from that?" },
+            { "language": "fa", "text": "می‌توانیم از این یک پیشنهاد مشترک بسازیم؟" },
+            { "language": "ar", "text": "هل يمكننا صياغة اقتراح مشترك من ذلك؟" },
+            { "language": "tr", "text": "Bundan ortak bir öneri oluşturabilir miyiz?" },
+            { "language": "ru", "text": "Можем ли мы на основе этого сформулировать общее предложение?" },
+            { "language": "ckb", "text": "دەتوانین لەمە پێشنیارێکی هاوبەش دروست بکەین؟" },
+            { "language": "kmr", "text": "Em dikarin ji vê pêşniyareke hevpar çêbikin?" },
+            { "language": "pl", "text": "Czy możemy z tego sformułować wspólną propozycję?" },
+            { "language": "ro", "text": "Putem formula din asta o propunere comună?" },
+            { "language": "sq", "text": "A mund të formulojmë nga kjo një propozim të përbashkët?" }
+          ],
+          "function": "ask-for-group-proposal",
+          "toneNote": "Die letzte Phase der Diskussion braucht Zusammenführung, nicht neue Einzelargumente."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Unser gemeinsamer Vorschlag könnte so aussehen: Erstens Mehrwegbecher und eine Wasserstation, zweitens digitale Materialien als Standard mit Papier auf Wunsch, drittens eine Auswertung nach einem Monat. So testen wir Wirkung, Kosten und Akzeptanz gleichzeitig.",
+          "translations": [
+            { "language": "en", "text": "Our shared proposal could look like this: first, reusable cups and a water station; second, digital materials as the standard with paper on request; third, an evaluation after one month. That way we test effect, costs, and acceptance at the same time." },
+            { "language": "fa", "text": "پیشنهاد مشترک ما می‌تواند این‌طور باشد: اول لیوان‌های چندبارمصرف و ایستگاه آب، دوم مواد آموزشی دیجیتال به‌عنوان حالت پیش‌فرض با امکان کاغذ در صورت درخواست، سوم ارزیابی بعد از یک ماه. این‌گونه هم‌زمان اثر، هزینه و پذیرش را می‌سنجیم." },
+            { "language": "ar", "text": "يمكن أن يكون اقتراحنا المشترك هكذا: أولاً أكواب قابلة لإعادة الاستخدام ومحطة ماء، ثانياً مواد رقمية كخيار افتراضي مع ورق عند الطلب، ثالثاً تقييم بعد شهر. بهذه الطريقة نختبر الأثر والتكلفة والقبول في الوقت نفسه." },
+            { "language": "tr", "text": "Ortak önerimiz şöyle olabilir: birincisi çok kullanımlık bardaklar ve bir su noktası, ikincisi istek üzerine kağıt seçeneğiyle dijital materyallerin standart olması, üçüncüsü bir ay sonra değerlendirme. Böylece etkiyi, maliyeti ve kabulü aynı anda test ederiz." },
+            { "language": "ru", "text": "Наше общее предложение могло бы выглядеть так: во-первых, многоразовые стаканы и станция с водой; во-вторых, цифровые материалы как стандарт с бумагой по запросу; в-третьих, оценка через месяц. Так мы одновременно проверим эффект, затраты и принятие." },
+            { "language": "ckb", "text": "پێشنیاری هاوبەشمان دەتوانێت ئاوا بێت: یەکەم پەرداخی دووبارە بەکارهاتوو و شوێنی ئاو، دووەم ماددەی دیجیتاڵ وەک بنەڕەت بە کاغەز لەسەر داواکاری، سێیەم هەڵسەنگاندن دوای مانگێک. بەم شێوەیە کاریگەری، تێچوون و قبووڵکردن هاوکات تاقی دەکەینەوە." },
+            { "language": "kmr", "text": "Pêşniyara me ya hevpar dikare wisa be: yekem kasên pircar bikaranîn û stasyona avê, duyem materyalên dijîtal wekî standard bi kaxezê li gorî daxwazê, sêyem nirxandin piştî mehekê. Wisa em bandor, lêçûn û pejirandinê di heman demê de dicêribînin." },
+            { "language": "pl", "text": "Nasza wspólna propozycja mogłaby wyglądać tak: po pierwsze kubki wielorazowe i punkt z wodą, po drugie materiały cyfrowe jako standard z papierem na życzenie, po trzecie ocena po miesiącu. W ten sposób jednocześnie testujemy efekt, koszty i akceptację." },
+            { "language": "ro", "text": "Propunerea noastră comună ar putea arăta așa: în primul rând pahare reutilizabile și o stație de apă, în al doilea rând materiale digitale ca standard cu hârtie la cerere, în al treilea rând o evaluare după o lună. Astfel testăm simultan efectul, costurile și acceptarea." },
+            { "language": "sq", "text": "Propozimi ynë i përbashkët mund të duket kështu: së pari gota të ripërdorshme dhe një pikë uji, së dyti materiale digjitale si standard me letër sipas kërkesës, së treti vlerësim pas një muaji. Kështu testojmë njëkohësisht efektin, koston dhe pranimin." }
+          ],
+          "function": "shared-proposal-summary",
+          "toneNote": "Stark: Das Fazit bündelt die Diskussion in drei umsetzbare Punkte.",
+          "expectedLearnerAction": "Summarize a shared proposal with measures, fairness safeguard, and evaluation."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich würde konkrete Maßnahmen nennen, aber auch darauf achten, dass der Unterricht praktisch bleibt.",
+              "translations": [
+                { "language": "en", "text": "I would name concrete measures, but also make sure that lessons remain practical." },
+                { "language": "fa", "text": "من اقدام‌های مشخص را نام می‌برم، اما هم‌زمان توجه می‌کنم که کلاس عملی بماند." },
+                { "language": "ar", "text": "سأذكر إجراءات ملموسة، لكنني سأحرص أيضاً على أن تبقى الدروس عملية." },
+                { "language": "tr", "text": "Somut önlemleri söylerim, ama derslerin pratik kalmasına da dikkat ederim." },
+                { "language": "ru", "text": "Я назову конкретные меры, но также прослежу, чтобы занятия оставались практичными." },
+                { "language": "ckb", "text": "ڕێکاری دیاریکراو دەڵێم، بەڵام ئاگادار دەبم وانەکان کرداری بمێننەوە." },
+                { "language": "kmr", "text": "Ez tedbîrên diyar bibêjim, lê her wiha balê bidim ku ders prakîk bimînin." },
+                { "language": "pl", "text": "Wymieniłbym konkretne działania, ale zadbał też o to, aby zajęcia pozostały praktyczne." },
+                { "language": "ro", "text": "Aș numi măsuri concrete, dar aș avea grijă și ca lecțiile să rămână practice." },
+                { "language": "sq", "text": "Do të përmendja masa konkrete, por do të kujdesesha edhe që mësimet të mbeten praktike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort hält Umweltziel und Unterrichtspraxis zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer keeps the environmental goal and classroom practicality together." },
+                { "language": "fa", "text": "قوی: پاسخ هدف محیط‌زیستی و عملی بودن کلاس را هم‌زمان نگه می‌دارد." },
+                { "language": "ar", "text": "قوية: تجمع الإجابة بين الهدف البيئي والعملية في الدرس." },
+                { "language": "tr", "text": "Güçlü: cevap çevre hedefini ve dersin pratikliğini birlikte tutuyor." },
+                { "language": "ru", "text": "Сильно: ответ соединяет экологическую цель и практичность занятий." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئامانجی ژینگەیی و کرداریبوونی وانە پێکەوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv armanca jîngehî û prakîkbûna dersê bi hev re digire." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy cel ekologiczny z praktycznością zajęć." },
+                { "language": "ro", "text": "Puternic: răspunsul păstrează împreună obiectivul de mediu și caracterul practic al lecției." },
+                { "language": "sq", "text": "E fortë: përgjigjja mban bashkë qëllimin mjedisor dhe praktikën e mësimit." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir sollten einfach alles digital machen, dann ist es umweltfreundlich.",
+              "translations": [
+                { "language": "en", "text": "We should simply make everything digital, then it is environmentally friendly." },
+                { "language": "fa", "text": "باید همه چیز را دیجیتال کنیم، آن‌وقت محیط‌زیستی است." },
+                { "language": "ar", "text": "ينبغي أن نجعل كل شيء رقمياً ببساطة، عندها سيكون صديقاً للبيئة." },
+                { "language": "tr", "text": "Her şeyi basitçe dijital yapmalıyız, o zaman çevreci olur." },
+                { "language": "ru", "text": "Нужно просто сделать все цифровым, тогда это будет экологично." },
+                { "language": "ckb", "text": "دەبێت هەموو شتێک بە سادەیی دیجیتاڵ بکەین، ئەو کاتە ژینگەدۆست دەبێت." },
+                { "language": "kmr", "text": "Divê em her tiştî bi hêsanî dijîtal bikin, hingê dê jîngehparêz be." },
+                { "language": "pl", "text": "Powinniśmy po prostu zrobić wszystko cyfrowo, wtedy będzie ekologicznie." },
+                { "language": "ro", "text": "Ar trebui pur și simplu să facem totul digital, atunci va fi ecologic." },
+                { "language": "sq", "text": "Duhet thjesht ta bëjmë gjithçka digjitale, atëherë është ekologjike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu absolut: Es ignoriert Zugang, Geräte und Unterrichtssituation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too absolute: it ignores access, devices, and the classroom situation." },
+                { "language": "fa", "text": "قابل‌قبول است، اما بیش از حد مطلق است: دسترسی، دستگاه‌ها و وضعیت کلاس را نادیده می‌گیرد." },
+                { "language": "ar", "text": "مقبولة لكنها مطلقة أكثر من اللازم: تتجاهل الوصول والأجهزة ووضع الدرس." },
+                { "language": "tr", "text": "Makül ama fazla kesin: erişimi, cihazları ve ders durumunu görmezden geliyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком категорично: игнорирует доступ, устройства и ситуацию на занятии." },
+                { "language": "ckb", "text": "دەگونجێت، بەڵام زۆر ڕەهایە: دەستگەیشتن، ئامێرەکان و بارودۆخی وانە پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Maqûl e, lê pir mutleq e: gihîştin, amûr û rewşa dersê paşguh dike." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest zbyt absolutne: ignoruje dostęp, urządzenia i sytuację na zajęciach." },
+                { "language": "ro", "text": "Plauzibil, dar prea absolut: ignoră accesul, dispozitivele și situația din clasă." },
+                { "language": "sq", "text": "E besueshme, por shumë absolute: injoron aksesin, pajisjet dhe situatën në klasë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Mehrwegbecher und eine Wasserstation wären ein guter Start, weil sie viele betreffen und sofort Müll reduzieren.",
+              "translations": [
+                { "language": "en", "text": "Reusable cups and a water station would be a good start because they affect many people and reduce waste immediately." },
+                { "language": "fa", "text": "لیوان‌های چندبارمصرف و ایستگاه آب شروع خوبی است، چون به افراد زیادی مربوط می‌شود و فوراً زباله را کم می‌کند." },
+                { "language": "ar", "text": "الأكواب القابلة لإعادة الاستخدام ومحطة الماء ستكون بداية جيدة لأنها تخص كثيرين وتقلل النفايات فوراً." },
+                { "language": "tr", "text": "Çok kullanımlık bardaklar ve bir su noktası iyi bir başlangıç olur, çünkü birçok kişiyi ilgilendirir ve atığı hemen azaltır." },
+                { "language": "ru", "text": "Многоразовые стаканы и станция с водой были бы хорошим началом, потому что это касается многих и сразу сокращает отходы." },
+                { "language": "ckb", "text": "پەرداخی دووبارە بەکارهاتوو و شوێنی ئاو دەستپێکێکی باش دەبێت، چونکە زۆر کەس دەگرێتەوە و دەستبەجێ زبڵ کەم دەکاتەوە." },
+                { "language": "kmr", "text": "Kasên pircar bikaranîn û stasyona avê destpêkeke baş in, ji ber ku gelek kesan têkildar dikin û avêtinê tavilê kêm dikin." },
+                { "language": "pl", "text": "Kubki wielorazowe i punkt z wodą byłyby dobrym początkiem, ponieważ dotyczą wielu osób i od razu ograniczają odpady." },
+                { "language": "ro", "text": "Paharele reutilizabile și o stație de apă ar fi un început bun, deoarece îi privesc pe mulți și reduc imediat deșeurile." },
+                { "language": "sq", "text": "Gotat e ripërdorshme dhe një pikë uji do të ishin fillim i mirë, sepse prekin shumë njerëz dhe ulin menjëherë mbetjet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Priorität wird mit Reichweite und direkter Wirkung begründet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the priority is justified with reach and immediate effect." },
+                { "language": "fa", "text": "قوی: اولویت با گستره اثر و نتیجه فوری توجیه شده است." },
+                { "language": "ar", "text": "قوية: يتم تبرير الأولوية بالانتشار والأثر المباشر." },
+                { "language": "tr", "text": "Güçlü: öncelik kapsam ve doğrudan etkiyle gerekçelendiriliyor." },
+                { "language": "ru", "text": "Сильно: приоритет обоснован охватом и непосредственным эффектом." },
+                { "language": "ckb", "text": "بەهێزە: پێشینەیی بە گەیشتن بە زۆر کەس و کاریگەری دەستبەجێ پاساو دەدرێت." },
+                { "language": "kmr", "text": "Xurt e: pêşîti bi gihîştina zêde û bandora rasterast tê sedemkirin." },
+                { "language": "pl", "text": "Mocne: priorytet jest uzasadniony zasięgiem i bezpośrednim efektem." },
+                { "language": "ro", "text": "Puternic: prioritatea este justificată prin amploare și efect imediat." },
+                { "language": "sq", "text": "E fortë: përparësia arsyetohet me shtrirjen dhe efektin e menjëhershëm." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir könnten irgendwo anfangen, zum Beispiel mit weniger Müll.",
+              "translations": [
+                { "language": "en", "text": "We could start somewhere, for example with less waste." },
+                { "language": "fa", "text": "می‌توانیم از یک جایی شروع کنیم، مثلاً با زباله کمتر." },
+                { "language": "ar", "text": "يمكننا أن نبدأ من مكان ما، مثلاً بنفايات أقل." },
+                { "language": "tr", "text": "Bir yerden başlayabiliriz, örneğin daha az atıkla." },
+                { "language": "ru", "text": "Мы могли бы с чего-нибудь начать, например с меньшего количества мусора." },
+                { "language": "ckb", "text": "دەتوانین لە شوێنێکەوە دەست پێبکەین، بۆ نموونە بە زبڵی کەمتر." },
+                { "language": "kmr", "text": "Em dikarin ji cihekî dest pê bikin, mînak bi avêtina kêm." },
+                { "language": "pl", "text": "Moglibyśmy zacząć od czegoś, na przykład od mniejszej ilości śmieci." },
+                { "language": "ro", "text": "Am putea începe de undeva, de exemplu cu mai puține deșeuri." },
+                { "language": "sq", "text": "Mund të fillojmë diku, për shembull me më pak mbetje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Es klingt kooperativ, aber nennt keine konkrete Maßnahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: it sounds cooperative, but names no concrete measure." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: همکاری‌محور به نظر می‌رسد، اما اقدام مشخصی نمی‌گوید." },
+                { "language": "ar", "text": "غير دقيقة بما يكفي: تبدو تعاونية، لكنها لا تذكر إجراءً ملموساً." },
+                { "language": "tr", "text": "Fazla belirsiz: işbirlikçi geliyor ama somut bir önlem söylemiyor." },
+                { "language": "ru", "text": "Слишком неточно: звучит совместно, но не называет конкретной меры." },
+                { "language": "ckb", "text": "زۆر نادیارە: هاوکاریی دەردەکەوێت، بەڵام ڕێکاری دیاریکراو ناڵێت." },
+                { "language": "kmr", "text": "Pir nezelal e: hevkarî xuya dike, lê tedbîreke diyar nabêje." },
+                { "language": "pl", "text": "Zbyt niedokładne: brzmi kooperacyjnie, ale nie podaje konkretnego działania." },
+                { "language": "ro", "text": "Prea imprecis: sună cooperant, dar nu numește nicio măsură concretă." },
+                { "language": "sq", "text": "Shumë e pasaktë: tingëllon bashkëpunuese, por nuk përmend masë konkrete." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Digital kann der Standard sein, aber Papier sollte auf Wunsch weiter möglich bleiben.",
+              "translations": [
+                { "language": "en", "text": "Digital can be the standard, but paper should remain possible on request." },
+                { "language": "fa", "text": "دیجیتال می‌تواند حالت پیش‌فرض باشد، اما کاغذ باید در صورت درخواست همچنان ممکن بماند." },
+                { "language": "ar", "text": "يمكن أن يكون الرقمي هو الخيار الافتراضي، لكن ينبغي أن يبقى الورق ممكناً عند الطلب." },
+                { "language": "tr", "text": "Dijital standart olabilir, ama istek üzerine kağıt hâlâ mümkün kalmalıdır." },
+                { "language": "ru", "text": "Цифровой формат может быть стандартом, но бумага должна оставаться возможной по запросу." },
+                { "language": "ckb", "text": "دیجیتاڵ دەتوانێت بنەڕەت بێت، بەڵام کاغەز دەبێت لەسەر داواکاری هێشتا گونجاو بێت." },
+                { "language": "kmr", "text": "Dijîtal dikare standard be, lê kaxez divê li gorî daxwazê hîn mimkun bimîne." },
+                { "language": "pl", "text": "Wersja cyfrowa może być standardem, ale papier powinien nadal być możliwy na życzenie." },
+                { "language": "ro", "text": "Digitalul poate fi standardul, dar hârtia ar trebui să rămână posibilă la cerere." },
+                { "language": "sq", "text": "Digjitalja mund të jetë standardi, por letra duhet të mbetet e mundur sipas kërkesës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort integriert den Einwand und schützt faire Teilhabe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer integrates the concern and protects fair participation." },
+                { "language": "fa", "text": "قوی: پاسخ نگرانی را وارد راه‌حل می‌کند و مشارکت عادلانه را حفظ می‌کند." },
+                { "language": "ar", "text": "قوية: تدمج الإجابة الاعتراض وتحمي المشاركة العادلة." },
+                { "language": "tr", "text": "Güçlü: cevap itirazı dahil ediyor ve adil katılımı koruyor." },
+                { "language": "ru", "text": "Сильно: ответ учитывает возражение и защищает справедливое участие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانییەکە دەخاتە ناو چارەسەر و بەشداریی دادپەروەرانە دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv fikarê di nav çareseriyê de digire û beşdariya adil diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź włącza zastrzeżenie i chroni sprawiedliwy udział." },
+                { "language": "ro", "text": "Puternic: răspunsul integrează obiecția și protejează participarea echitabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfshin shqetësimin dhe mbron pjesëmarrjen e drejtë." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wer kein Tablet hat, kann sich später darum kümmern.",
+              "translations": [
+                { "language": "en", "text": "Anyone who does not have a tablet can deal with that later." },
+                { "language": "fa", "text": "هر کسی تبلت ندارد، بعداً می‌تواند فکری برایش بکند." },
+                { "language": "ar", "text": "من لا يملك جهازاً لوحياً يمكنه أن يهتم بالأمر لاحقاً." },
+                { "language": "tr", "text": "Tableti olmayan biri bununla daha sonra ilgilenebilir." },
+                { "language": "ru", "text": "Тот, у кого нет планшета, может заняться этим позже." },
+                { "language": "ckb", "text": "ئەوەی تابلێتی نییە دەتوانێت دواتر بیر لەوە بکاتەوە." },
+                { "language": "kmr", "text": "Kesê tabletê tune be dikare paşê li wê bifikire." },
+                { "language": "pl", "text": "Kto nie ma tabletu, może zająć się tym później." },
+                { "language": "ro", "text": "Cine nu are tabletă se poate ocupa de asta mai târziu." },
+                { "language": "sq", "text": "Kush nuk ka tabletë mund të merret me këtë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Problematisch: Die Antwort klingt abweisend und löst das Zugangsproblem nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Problematic: the answer sounds dismissive and does not solve the access problem." },
+                { "language": "fa", "text": "مشکل‌دار است: پاسخ بی‌توجه به نظر می‌رسد و مشکل دسترسی را حل نمی‌کند." },
+                { "language": "ar", "text": "إشكالية: تبدو الإجابة رافضة ولا تحل مشكلة الوصول." },
+                { "language": "tr", "text": "Sorunlu: cevap küçümseyici geliyor ve erişim sorununu çözmüyor." },
+                { "language": "ru", "text": "Проблемно: ответ звучит пренебрежительно и не решает проблему доступа." },
+                { "language": "ckb", "text": "کێشەدارە: وەڵامەکە بێبایەخ دەردەکەوێت و کێشەی دەستگەیشتن چارەسەر ناکات." },
+                { "language": "kmr", "text": "Pirsgirêk e: bersiv wekî paşguhkirin tê bihîstin û pirsgirêka gihîştinê çareser nake." },
+                { "language": "pl", "text": "Problematyczne: odpowiedź brzmi lekceważąco i nie rozwiązuje problemu dostępu." },
+                { "language": "ro", "text": "Problematic: răspunsul sună respingător și nu rezolvă problema accesului." },
+                { "language": "sq", "text": "Problematike: përgjigjja tingëllon shpërfillëse dhe nuk e zgjidh problemin e aksesit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Wir schlagen drei Schritte vor und prüfen nach einem Monat, ob sie wirklich wirken und akzeptiert werden.",
+              "translations": [
+                { "language": "en", "text": "We propose three steps and check after one month whether they really work and are accepted." },
+                { "language": "fa", "text": "ما سه قدم پیشنهاد می‌کنیم و بعد از یک ماه بررسی می‌کنیم که آیا واقعاً اثر دارند و پذیرفته شده‌اند یا نه." },
+                { "language": "ar", "text": "نقترح ثلاث خطوات ونفحص بعد شهر ما إذا كانت تعمل فعلاً وتحظى بالقبول." },
+                { "language": "tr", "text": "Üç adım öneriyoruz ve bir ay sonra gerçekten işe yarayıp kabul edilip edilmediklerini kontrol ediyoruz." },
+                { "language": "ru", "text": "Мы предлагаем три шага и через месяц проверяем, действительно ли они работают и принимаются." },
+                { "language": "ckb", "text": "سێ هەنگاو پێشنیار دەکەین و دوای مانگێک دەپشکنین ئایا بەڕاستی کاریگەرن و قبووڵ کراون یان نا." },
+                { "language": "kmr", "text": "Em sê gavan pêşniyar dikin û piştî mehekê kontrol dikin ka ew bi rastî kar dikin û tên pejirandin an na." },
+                { "language": "pl", "text": "Proponujemy trzy kroki i po miesiącu sprawdzamy, czy naprawdę działają i są akceptowane." },
+                { "language": "ro", "text": "Propunem trei pași și verificăm după o lună dacă funcționează cu adevărat și sunt acceptați." },
+                { "language": "sq", "text": "Ne propozojmë tre hapa dhe pas një muaji kontrollojmë nëse funksionojnë vërtet dhe pranohen." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Gruppenergebnis ist konkret und überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the group result is concrete and verifiable." },
+                { "language": "fa", "text": "قوی: نتیجه گروهی مشخص و قابل بررسی است." },
+                { "language": "ar", "text": "قوية: نتيجة المجموعة ملموسة وقابلة للتحقق." },
+                { "language": "tr", "text": "Güçlü: grup sonucu somut ve doğrulanabilir." },
+                { "language": "ru", "text": "Сильно: групповой результат конкретен и проверяем." },
+                { "language": "ckb", "text": "بەهێزە: ئەنجامی گرووپ دیاریکراو و پشکنین‌پذیرە." },
+                { "language": "kmr", "text": "Xurt e: encama komê zehf diyar û dikare bê kontrolkirin." },
+                { "language": "pl", "text": "Mocne: wynik grupy jest konkretny i możliwy do sprawdzenia." },
+                { "language": "ro", "text": "Puternic: rezultatul grupului este concret și verificabil." },
+                { "language": "sq", "text": "E fortë: rezultati i grupit është konkret dhe i verifikueshëm." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir machen etwas für die Umwelt und hoffen, dass alle mitmachen.",
+              "translations": [
+                { "language": "en", "text": "We do something for the environment and hope that everyone takes part." },
+                { "language": "fa", "text": "ما کاری برای محیط‌زیست می‌کنیم و امیدواریم همه همراهی کنند." },
+                { "language": "ar", "text": "نفعل شيئاً من أجل البيئة ونأمل أن يشارك الجميع." },
+                { "language": "tr", "text": "Çevre için bir şey yaparız ve herkesin katılmasını umarız." },
+                { "language": "ru", "text": "Мы делаем что-то для окружающей среды и надеемся, что все примут участие." },
+                { "language": "ckb", "text": "شتێک بۆ ژینگە دەکەین و هیوادارین هەمووان بەشداری بکەن." },
+                { "language": "kmr", "text": "Em tiştek ji bo jîngehê dikin û hêvî dikin ku her kes beşdar bibe." },
+                { "language": "pl", "text": "Robimy coś dla środowiska i mamy nadzieję, że wszyscy się włączą." },
+                { "language": "ro", "text": "Facem ceva pentru mediu și sperăm că toți vor participa." },
+                { "language": "sq", "text": "Ne bëjmë diçka për mjedisin dhe shpresojmë që të gjithë të marrin pjesë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage für B2: Es fehlen konkrete Schritte, Verantwortung und Auswertung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague for B2: concrete steps, responsibility, and evaluation are missing." },
+                { "language": "fa", "text": "برای B2 خیلی مبهم است: قدم‌های مشخص، مسئولیت و ارزیابی کم دارد." },
+                { "language": "ar", "text": "غامضة جداً لمستوى B2: تنقصها خطوات ملموسة ومسؤولية وتقييم." },
+                { "language": "tr", "text": "B2 için fazla belirsiz: somut adımlar, sorumluluk ve değerlendirme eksik." },
+                { "language": "ru", "text": "Слишком расплывчато для B2: не хватает конкретных шагов, ответственности и оценки." },
+                { "language": "ckb", "text": "بۆ B2 زۆر نادیارە: هەنگاوی دیاریکراو، بەرپرسیارێتی و هەڵسەنگاندن کەمە." },
+                { "language": "kmr", "text": "Ji bo B2 pir nezelal e: gavên diyar, berpirsiyarî û nirxandin kêm in." },
+                { "language": "pl", "text": "Zbyt ogólne na B2: brakuje konkretnych kroków, odpowiedzialności i oceny." },
+                { "language": "ro", "text": "Prea vag pentru B2: lipsesc pași concreți, responsabilitate și evaluare." },
+                { "language": "sq", "text": "Shumë e paqartë për B2: mungojnë hapa konkretë, përgjegjësi dhe vlerësim." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "exam-tip",
+          "text": "Beginne in einer B2-Gruppendiskussion mit praktischen Maßnahmen und zeige, dass du Ziele und Einschränkungen abwägen kannst.",
+          "translations": [
+            { "language": "en", "text": "In a B2 group discussion, start with practical measures and show that you can balance goals and constraints." },
+            { "language": "fa", "text": "در بحث گروهی B2 با راهکارهای عملی شروع کن و نشان بده می‌توانی هدف‌ها و محدودیت‌ها را متعادل کنی." },
+            { "language": "ar", "text": "في نقاش جماعي B2 ابدأ بإجراءات عملية وأظهر أنك تستطيع الموازنة بين الأهداف والقيود." },
+            { "language": "tr", "text": "B2 grup tartışmasında pratik önlemlerle başla ve hedeflerle sınırlamaları dengeleyebildiğini göster." },
+            { "language": "ru", "text": "В групповой дискуссии B2 начинайте с практических мер и покажите, что можете уравновешивать цели и ограничения." },
+            { "language": "ckb", "text": "لە گفتوگۆی گرووپی B2دا بە ڕێکاری کرداری دەست پێبکە و نیشان بدە دەتوانیت ئامانج و سنووردارکردنەکان هاوسەنگ بکەیت." },
+            { "language": "kmr", "text": "Di gotûbêja komê ya B2 de bi tedbîrên prakîk dest pê bike û nîşan bide ku tu dikarî armanc û sînoran hevseng bikî." },
+            { "language": "pl", "text": "W dyskusji grupowej B2 zacznij od praktycznych działań i pokaż, że potrafisz równoważyć cele i ograniczenia." },
+            { "language": "ro", "text": "Într-o discuție de grup B2, începe cu măsuri practice și arată că poți echilibra obiectivele și limitele." },
+            { "language": "sq", "text": "Në një diskutim grupor B2, fillo me masa praktike dhe trego se mund të balancosh qëllimet dhe kufizimet." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "quality-note",
+          "text": "Eine starke Priorität ist nicht nur umweltfreundlich, sondern sichtbar, verständlich und leicht zu testen.",
+          "translations": [
+            { "language": "en", "text": "A strong priority is not only green; it is visible, understandable, and easy to test." },
+            { "language": "fa", "text": "یک اولویت قوی فقط محیط‌زیستی نیست؛ قابل دیدن، قابل فهم و آسان برای آزمودن است." },
+            { "language": "ar", "text": "الأولوية القوية ليست بيئية فقط؛ بل مرئية ومفهومة وسهلة الاختبار." },
+            { "language": "tr", "text": "Güçlü bir öncelik yalnızca çevreci değildir; görünür, anlaşılır ve test etmesi kolaydır." },
+            { "language": "ru", "text": "Сильный приоритет не только экологичен; он заметен, понятен и легко проверяется." },
+            { "language": "ckb", "text": "پێشینەیی بەهێز تەنها ژینگەدۆست نییە؛ دیارە، تێدەگەیەنرێت و ئاسانە بۆ تاقیکردنەوە." },
+            { "language": "kmr", "text": "Pêşîtiya xurt ne tenê jîngehparêz e; ew xuya, fêmbar û hêsan ji bo ceribandinê ye." },
+            { "language": "pl", "text": "Mocny priorytet nie jest tylko ekologiczny; jest widoczny, zrozumiały i łatwy do przetestowania." },
+            { "language": "ro", "text": "O prioritate puternică nu este doar ecologică; este vizibilă, ușor de înțeles și ușor de testat." },
+            { "language": "sq", "text": "Një përparësi e fortë nuk është vetëm ekologjike; është e dukshme, e kuptueshme dhe e lehtë për t'u testuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "exam-tip",
+          "text": "Wenn eine Gesprächsperson Zugangsprobleme anspricht, passe den Vorschlag an, statt ihn starr zu verteidigen.",
+          "translations": [
+            { "language": "en", "text": "When a partner raises access concerns, adapt the proposal instead of defending it rigidly." },
+            { "language": "fa", "text": "وقتی هم‌گفتگو نگرانی درباره دسترسی مطرح می‌کند، پیشنهاد را سازگار کن، نه اینکه خشک از آن دفاع کنی." },
+            { "language": "ar", "text": "عندما يطرح شريك النقاش مخاوف بشأن الوصول، عدّل الاقتراح بدلاً من الدفاع عنه بجمود." },
+            { "language": "tr", "text": "Partner erişim kaygıları dile getirdiğinde, öneriyi katı biçimde savunmak yerine uyarlayın." },
+            { "language": "ru", "text": "Когда партнер поднимает опасения о доступе, адаптируйте предложение, а не защищайте его жестко." },
+            { "language": "ckb", "text": "کاتێک هاوگفتوگۆ نیگەرانی دەستگەیشتن دەخاتەڕوو، پێشنیارەکە بگونجێنە نەک بە توندی بەرگریی لێ بکەیت." },
+            { "language": "kmr", "text": "Dema hevpeyivîn fikarên gihîştinê tîne ziman, pêşniyarê li gorî wê biguherîne, ne ku bi hişkî wê biparêzî." },
+            { "language": "pl", "text": "Gdy partner zgłasza obawy dotyczące dostępu, dostosuj propozycję zamiast sztywno jej bronić." },
+            { "language": "ro", "text": "Când un partener ridică îngrijorări legate de acces, adaptează propunerea în loc să o aperi rigid." },
+            { "language": "sq", "text": "Kur partneri ngre shqetësime për aksesin, përshtate propozimin në vend që ta mbrosh ngurtë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "quality-note",
+          "text": "Ein gutes Gruppenfazit verbindet Maßnahmen, Fairness und Auswertung in einem klaren Vorschlag.",
+          "translations": [
+            { "language": "en", "text": "A good group conclusion combines measures, fairness, and evaluation in one clear proposal." },
+            { "language": "fa", "text": "جمع‌بندی خوب گروهی، اقدام‌ها، انصاف و ارزیابی را در یک پیشنهاد روشن جمع می‌کند." },
+            { "language": "ar", "text": "الخاتمة الجماعية الجيدة تجمع الإجراءات والإنصاف والتقييم في اقتراح واضح واحد." },
+            { "language": "tr", "text": "İyi bir grup sonucu önlemleri, adaleti ve değerlendirmeyi tek açık öneride birleştirir." },
+            { "language": "ru", "text": "Хороший групповой вывод объединяет меры, справедливость и оценку в одном ясном предложении." },
+            { "language": "ckb", "text": "کۆتاییەکی باشی گرووپی ڕێکار، دادپەروەری و هەڵسەنگاندن لە پێشنیارێکی ڕووندا کۆدەکاتەوە." },
+            { "language": "kmr", "text": "Encama baş a komê tedbîr, adilbûn û nirxandinê di pêşniyareke zelal de tîne hev." },
+            { "language": "pl", "text": "Dobry wniosek grupowy łączy działania, sprawiedliwość i ocenę w jednej jasnej propozycji." },
+            { "language": "ro", "text": "O concluzie bună de grup combină măsurile, echitatea și evaluarea într-o propunere clară." },
+            { "language": "sq", "text": "Një përfundim i mirë grupor bashkon masat, drejtësinë dhe vlerësimin në një propozim të qartë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "environment-group-discussion",
+          "placement": "detail-hero",
+          "purpose": "Set a B2 group-discussion context for practical environmental measures in a language school.",
+          "altText": "Group discussion table in a language school with reusable cups, digital worksheet icons, a water station symbol, and an evaluation chart.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Group discussion table in a language school with reusable cups, digital worksheet icons, a water station symbol, and an evaluation chart." },
+            { "language": "fa", "text": "میز بحث گروهی در یک مدرسه زبان با لیوان‌های چندبارمصرف، نماد برگه دیجیتال، نشان ایستگاه آب و نمودار ارزیابی." },
+            { "language": "ar", "text": "طاولة نقاش جماعي في مدرسة لغة مع أكواب قابلة لإعادة الاستخدام، وأيقونات أوراق رقمية، ورمز محطة ماء، ومخطط تقييم." },
+            { "language": "tr", "text": "Bir dil okulunda çok kullanımlık bardaklar, dijital çalışma kağıdı ikonları, su noktası sembolü ve değerlendirme grafiği olan grup tartışma masası." },
+            { "language": "ru", "text": "Стол групповой дискуссии в языковой школе с многоразовыми стаканами, значками цифровых листов, символом станции воды и диаграммой оценки." },
+            { "language": "ckb", "text": "مێزی گفتوگۆی گرووپی لە قوتابخانەی زمان بە پەرداخی دووبارە بەکارهاتوو، نیشانەی لاپەڕەی دیجیتاڵ، هێمای شوێنی ئاو و خشتەی هەڵسەنگاندن." },
+            { "language": "kmr", "text": "Maseya gotûbêja komê li dibistaneke zimanê bi kasên pircar bikaranîn, îkonên pelên dijîtal, sembola stasyona avê û tabloya nirxandinê." },
+            { "language": "pl", "text": "Stół dyskusji grupowej w szkole językowej z kubkami wielorazowymi, ikonami cyfrowych kart pracy, symbolem punktu z wodą i wykresem oceny." },
+            { "language": "ro", "text": "Masă de discuție de grup într-o școală de limbi, cu pahare reutilizabile, pictograme de fișe digitale, simbol de stație de apă și grafic de evaluare." },
+            { "language": "sq", "text": "Tavolinë diskutimi grupor në një shkollë gjuhësh me gota të ripërdorshme, ikona fletësh digjitale, simbol pike uji dhe grafik vlerësimi." }
+          ],
+          "imagePrompt": "Clean educational illustration of a neutral German language-school group discussion about environmental measures. Show reusable cups, abstract digital worksheet icons, a water station symbol, and a simple evaluation chart. Diverse adults, calm classroom setting, no readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

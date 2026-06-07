@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-33-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 33 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 33",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-komplexe-krankheitsgeschichte-schildern",
+      "linkedDialogueSlug": null,
+      "title": "Eine komplexe Krankheitsgeschichte schildern",
+      "titleTranslations": [
+        { "language": "en", "text": "Describing a complex medical history" },
+        { "language": "fa", "text": "شرح دادن یک سابقه پزشکی پیچیده" },
+        { "language": "ar", "text": "وصف تاريخ مرضي معقد" },
+        { "language": "tr", "text": "Karmaşık bir hastalık geçmişini anlatmak" },
+        { "language": "ru", "text": "Описание сложной истории болезни" },
+        { "language": "ckb", "text": "باسکردنی مێژووی نەخۆشییەکی ئاڵۆز" },
+        { "language": "kmr", "text": "Vegotina dîroka nexweşiyeke aloz" },
+        { "language": "pl", "text": "Opisanie złożonej historii choroby" },
+        { "language": "ro", "text": "Descrierea unui istoric medical complex" },
+        { "language": "sq", "text": "Përshkrimi i një historie mjekësore të ndërlikuar" }
+      ],
+      "description": "Sie sprechen in einer Arztpraxis über Beschwerden, die seit Monaten wiederkehren und bereits mehrfach abgeklärt wurden. Sie ordnen Zeitraum, aktuelle Symptome, bisherige Untersuchungen und Ihre konkrete Sorge, ohne eine Diagnose vorwegzunehmen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak at a doctor's office about symptoms that have been recurring for months and have already been checked several times. You organize the timeline, current symptoms, previous examinations, and your specific concern without pre-empting a diagnosis." },
+        { "language": "fa", "text": "شما در مطب پزشک درباره علائمی صحبت می‌کنید که چند ماه است تکرار می‌شوند و چند بار بررسی شده‌اند. زمان‌بندی، علائم فعلی، معاینه‌های قبلی و نگرانی مشخص خود را مرتب بیان می‌کنید، بدون اینکه از قبل تشخیص بدهید." },
+        { "language": "ar", "text": "تتحدث في عيادة الطبيب عن أعراض تتكرر منذ أشهر وتم فحصها عدة مرات. ترتب التسلسل الزمني والأعراض الحالية والفحوصات السابقة وقلقك المحدد من دون أن تسبق الطبيب بتشخيص." },
+        { "language": "tr", "text": "Bir doktor muayenehanesinde aylardır tekrarlayan ve birkaç kez incelenmiş şikayetlerden bahsediyorsunuz. Zaman çizelgesini, mevcut belirtileri, önceki muayeneleri ve somut kaygınızı tanı koymadan düzenli anlatıyorsunuz." },
+        { "language": "ru", "text": "Вы говорите в кабинете врача о симптомах, которые повторяются уже несколько месяцев и несколько раз проверялись. Вы упорядочиваете период, текущие симптомы, предыдущие обследования и конкретное беспокойство, не подменяя диагноз." },
+        { "language": "ckb", "text": "لە کلینیکی پزیشکدا دەربارەی نیشانەکان قسە دەکەیت کە چەند مانگێکە دووبارە دەبنەوە و چەند جار پشکنین کراون. کات، نیشانە ئێستاکان، پشکنینە پێشووترەکان و نیگەرانی دیاریکراوت ڕێک دەخەیت، بەبێ ئەوەی لە پێشدا دیاریکردنی نەخۆشی بکەیت." },
+        { "language": "kmr", "text": "Hûn li nivîsgeha doktorê li ser nîşaneyên ku ji çend mehan ve dubare dibin û çend caran hatine kontrolkirin diaxivin. Hûn dem, nîşaneyên niha, kontrolên berê û fikara xwe ya taybet rêxistin dikin bêyî ku teşxîsê pêş ve bibin." },
+        { "language": "pl", "text": "Rozmawia Pan w gabinecie lekarskim o dolegliwościach, które od miesięcy nawracają i były już kilka razy sprawdzane. Porządkuje Pan czas, obecne objawy, wcześniejsze badania i konkretną obawę, nie uprzedzając diagnozy." },
+        { "language": "ro", "text": "Vorbiți într-un cabinet medical despre simptome care revin de luni de zile și au fost deja investigate de mai multe ori. Organizați cronologia, simptomele actuale, investigațiile anterioare și îngrijorarea concretă fără a anticipa diagnosticul." },
+        { "language": "sq", "text": "Flisni në një ordinancë mjekësore për simptoma që përsëriten prej muajsh dhe janë kontrolluar disa herë. Organizoni kohën, simptomat aktuale, ekzaminimet e mëparshme dhe shqetësimin konkret pa e paraprirë diagnozën." }
+      ],
+      "learnerGoal": "Eine längere Krankheitsgeschichte so strukturieren, dass die Ärztin schnell erkennt: Was ist aktuell, was wurde bereits abgeklärt, was hat geholfen, und welche Frage soll heute entschieden werden?",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure a longer medical history so the doctor quickly sees what is current, what has already been checked, what helped, and which question should be decided today." },
+        { "language": "fa", "text": "یک سابقه پزشکی طولانی‌تر را طوری ساختار دهید که پزشک سریع بفهمد: وضعیت فعلی چیست، چه چیزهایی قبلاً بررسی شده، چه چیزی کمک کرده، و امروز باید درباره کدام پرسش تصمیم گرفته شود." },
+        { "language": "ar", "text": "نظم تاريخاً مرضياً أطول بحيث تفهم الطبيبة بسرعة: ما الحالي، وما الذي تم فحصه بالفعل، وما الذي ساعد، وأي سؤال يجب حسمه اليوم." },
+        { "language": "tr", "text": "Daha uzun bir hastalık geçmişini doktorun hızlıca görebileceği şekilde yapılandırın: Şu an ne var, ne daha önce incelendi, ne işe yaradı ve bugün hangi soru karara bağlanmalı?" },
+        { "language": "ru", "text": "Структурировать более длинную историю болезни так, чтобы врач быстро понял: что актуально сейчас, что уже проверяли, что помогло и какой вопрос нужно решить сегодня." },
+        { "language": "ckb", "text": "مێژووی نەخۆشییەکی درێژتر وا ڕێکبخە کە پزیشک بە خێرایی بزانێت: چی ئێستا گرنگە، چی پێشتر پشکنراوە، چی یارمەتی داوە، و ئەمڕۆ کام پرسیار پێویستە بڕیار لەسەر بدرێت." },
+        { "language": "kmr", "text": "Dîroka nexweşiyeke dirêjtir wisa rêxistin bikin ku doktor zû bibîne: niha çi girîng e, çi berê hatiye kontrolkirin, çi alîkar bûye, û îro kîjan pirs divê were biryardan." },
+        { "language": "pl", "text": "Uporządkować dłuższą historię choroby tak, aby lekarka szybko zobaczyła: co jest aktualne, co już sprawdzono, co pomogło i jakie pytanie ma dziś zostać rozstrzygnięte." },
+        { "language": "ro", "text": "Structurați un istoric medical mai lung astfel încât medicul să vadă rapid: ce este actual, ce a fost deja verificat, ce a ajutat și ce întrebare trebuie decisă astăzi." },
+        { "language": "sq", "text": "Strukturoni një histori mjekësore më të gjatë në mënyrë që mjekja të kuptojë shpejt: çfarë është aktuale, çfarë është kontrolluar, çfarë ka ndihmuar dhe cila pyetje duhet vendosur sot." }
+      ],
+      "cefrLevel": "C1",
+      "category": "health",
+      "topics": ["appointments-and-health", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 33,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Patient/in",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        },
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Doktor" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medic" },
+            { "language": "sq", "text": "Mjekja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Guten Tag. Ich sehe, dass Sie schon mehrere Vorbefunde mitgebracht haben. Können Sie mir die Krankheitsgeschichte bitte zunächst geordnet zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "Good day. I see that you have brought several previous reports. Could you first summarize the medical history for me in an organized way?" },
+            { "language": "fa", "text": "روز بخیر. می‌بینم که چند نتیجه قبلی همراه آورده‌اید. لطفاً می‌توانید ابتدا سابقه بیماری را به‌صورت منظم برای من خلاصه کنید؟" },
+            { "language": "ar", "text": "نهارك سعيد. أرى أنك أحضرت عدة نتائج سابقة. هل يمكنك أولاً أن تلخص لي التاريخ المرضي بشكل منظم؟" },
+            { "language": "tr", "text": "İyi günler. Birkaç önceki bulgu getirdiğinizi görüyorum. Önce hastalık geçmişini düzenli bir şekilde özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Добрый день. Я вижу, что вы принесли несколько предыдущих заключений. Можете сначала упорядоченно кратко изложить историю болезни?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەبینم چەند ئەنجامی پێشووترت لەگەڵ خۆت هێناوە. دەتوانیت سەرەتا مێژووی نەخۆشییەکە بە ڕێکخراوی پوختە بکەیت؟" },
+            { "language": "kmr", "text": "Roj baş. Ez dibînim ku we çend encamên berê bi xwe re aniye. Hûn dikarin pêşî dîroka nexweşiyê bi rêxistî kurt bikin?" },
+            { "language": "pl", "text": "Dzień dobry. Widzę, że przyniósł Pan kilka wcześniejszych wyników. Czy może Pan najpierw uporządkowanie podsumować historię choroby?" },
+            { "language": "ro", "text": "Bună ziua. Văd că ați adus mai multe rezultate anterioare. Îmi puteți rezuma mai întâi istoricul medical într-un mod ordonat?" },
+            { "language": "sq", "text": "Mirëdita. Shoh që keni sjellë disa rezultate të mëparshme. A mund ta përmblidhni fillimisht historinë mjekësore në mënyrë të rregullt?" }
+          ],
+          "function": "structured-history-request",
+          "toneNote": "formal, medizinisch",
+          "expectedLearnerAction": "Krankheitsgeschichte strukturiert eröffnen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gern. Ich würde es in drei Teilen darstellen: Erstens begann es vor etwa acht Monaten nach einem Infekt mit wiederkehrendem Schwindel und starker Erschöpfung. Zweitens wurden Herz und Blutwerte bereits geprüft, ohne eindeutigen Befund. Drittens ist die aktuelle Frage, ob die Beschwerden eher mit Belastung, Kreislauf oder etwas Neurologischem zusammenhängen könnten.",
+          "translations": [
+            { "language": "en", "text": "Of course. I would present it in three parts: First, it began about eight months ago after an infection with recurring dizziness and severe fatigue. Second, the heart and blood values have already been checked without a clear finding. Third, the current question is whether the symptoms might be related more to exertion, circulation, or something neurological." },
+            { "language": "fa", "text": "بله. آن را در سه بخش توضیح می‌دهم: اول اینکه حدود هشت ماه پیش بعد از یک عفونت با سرگیجه‌های تکرارشونده و خستگی شدید شروع شد. دوم اینکه قلب و آزمایش خون قبلاً بررسی شده‌اند، اما نتیجه قطعی نداشته‌اند. سوم اینکه سؤال فعلی این است که آیا علائم بیشتر با فشار و فعالیت، گردش خون یا مسئله‌ای عصبی مرتبط هستند." },
+            { "language": "ar", "text": "بكل سرور. سأعرضه في ثلاثة أجزاء: أولاً بدأ الأمر قبل حوالي ثمانية أشهر بعد عدوى مع دوار متكرر وإرهاق شديد. ثانياً تم فحص القلب وقيم الدم بالفعل من دون نتيجة واضحة. ثالثاً السؤال الحالي هو هل ترتبط الأعراض أكثر بالجهد أو بالدورة الدموية أو بشيء عصبي." },
+            { "language": "tr", "text": "Memnuniyetle. Bunu üç bölümde anlatmak isterim: Birincisi, yaklaşık sekiz ay önce bir enfeksiyondan sonra tekrarlayan baş dönmesi ve belirgin yorgunlukla başladı. İkincisi, kalp ve kan değerleri daha önce kontrol edildi, ancak net bir bulgu çıkmadı. Üçüncüsü, şu anki soru belirtilerin daha çok yüklenme, dolaşım ya da nörolojik bir şeyle bağlantılı olup olmadığı." },
+            { "language": "ru", "text": "Конечно. Я бы изложил это в трёх частях: во-первых, примерно восемь месяцев назад после инфекции начались повторяющиеся головокружения и сильная усталость. Во-вторых, сердце и показатели крови уже проверяли, без ясного результата. В-третьих, текущий вопрос в том, связаны ли симптомы скорее с нагрузкой, кровообращением или чем-то неврологическим." },
+            { "language": "ckb", "text": "بە خۆشییەوە. دەمەوێت بە سێ بەش باس بکەم: یەکەم، نزیکەی هەشت مانگ لەمەوبەر دوای هەوکێک بە سەرگێژەی دووبارەبووەوە و ماندووبوونی زۆر دەستی پێکرد. دووەم، دڵ و نرخەکانی خوێن پێشتر پشکنراون، بەبێ ئەنجامی ڕوون. سێیەم، پرسیاری ئێستا ئەوەیە کە ئایا نیشانەکان زیاتر پەیوەندییان بە بارگرانی، سووڕانی خوێن یان شتێکی عەسەبییەوە هەیە." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Ez dixwazim wê di sê beşan de pêşkêş bikim: Yekem, ew nêzî heşt meh berê piştî enfeksiyonekê bi gêjbûna dubare û westîna giran dest pê kir. Duyem, dil û nirxên xwînê berê hatine kontrolkirin, bê encameke zelal. Sêyem, pirsa niha ew e ka nîşane zêdetir bi bar, gera xwînê an tiştekî neurolojîk ve girêdayî ne." },
+            { "language": "pl", "text": "Oczywiście. Przedstawiłbym to w trzech częściach: po pierwsze, zaczęło się około ośmiu miesięcy temu po infekcji, z nawracającymi zawrotami głowy i silnym wyczerpaniem. Po drugie, serce i wyniki krwi były już sprawdzane bez jednoznacznego wyniku. Po trzecie, aktualne pytanie brzmi, czy dolegliwości mogą być bardziej związane z obciążeniem, krążeniem czy czymś neurologicznym." },
+            { "language": "ro", "text": "Desigur. Aș prezenta în trei părți: în primul rând, a început acum aproximativ opt luni după o infecție, cu amețeală recurentă și oboseală puternică. În al doilea rând, inima și valorile sanguine au fost deja verificate fără un rezultat clar. În al treilea rând, întrebarea actuală este dacă simptomele ar putea ține mai mult de efort, circulație sau ceva neurologic." },
+            { "language": "sq", "text": "Me kënaqësi. Do ta paraqisja në tre pjesë: së pari, filloi rreth tetë muaj më parë pas një infeksioni me marramendje të përsëritur dhe lodhje të fortë. Së dyti, zemra dhe analizat e gjakut janë kontrolluar tashmë pa një gjetje të qartë. Së treti, pyetja aktuale është nëse simptomat lidhen më shumë me ngarkesën, qarkullimin apo diçka neurologjike." }
+          ],
+          "function": "structured-history-opening",
+          "toneNote": "geordnet, nicht diagnostizierend",
+          "expectedLearnerAction": "Verlauf, Abklärung und aktuelle Frage trennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Was belastet Sie im Moment am meisten: der Schwindel, die Erschöpfung oder die Unsicherheit über die Ursache?",
+          "translations": [
+            { "language": "en", "text": "What burdens you most at the moment: the dizziness, the fatigue, or the uncertainty about the cause?" },
+            { "language": "fa", "text": "در حال حاضر چه چیزی بیشترین فشار را به شما وارد می‌کند: سرگیجه، خستگی یا نامطمئن بودن درباره علت؟" },
+            { "language": "ar", "text": "ما الذي يرهقك حالياً أكثر: الدوار، أم الإرهاق، أم عدم اليقين بشأن السبب؟" },
+            { "language": "tr", "text": "Şu anda sizi en çok ne zorluyor: baş dönmesi, yorgunluk, yoksa neden konusundaki belirsizlik mi?" },
+            { "language": "ru", "text": "Что сейчас больше всего вас беспокоит: головокружение, усталость или неопределённость причины?" },
+            { "language": "ckb", "text": "لە ئێستادا چی زیاتر فشارت لێدەکات: سەرگێژە، ماندووبوون، یان نادیاری هۆکارەکە؟" },
+            { "language": "kmr", "text": "Niha çi herî zêde we dijwar dike: gêjbûn, westîn, an nebûna zelaliyê li ser sedemê?" },
+            { "language": "pl", "text": "Co obecnie najbardziej Pana obciąża: zawroty głowy, wyczerpanie czy niepewność co do przyczyny?" },
+            { "language": "ro", "text": "Ce vă apasă cel mai mult în acest moment: amețeala, oboseala sau incertitudinea privind cauza?" },
+            { "language": "sq", "text": "Çfarë ju rëndon më shumë për momentin: marramendja, lodhja apo pasiguria për shkakun?" }
+          ],
+          "function": "priority-question",
+          "toneNote": "fokussierend",
+          "expectedLearnerAction": "Aktuelle Hauptbelastung priorisieren"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Im Alltag belastet mich vor allem die Erschöpfung nach normaler Aktivität. Der Schwindel ist unangenehm, aber meistens kurz. Problematisch ist, dass ich nach einem normalen Arbeitstag manchmal einen ganzen Tag brauche, um wieder belastbar zu sein. Deshalb möchte ich klären, ob ich bestimmte Belastungsgrenzen beachten sollte.",
+          "translations": [
+            { "language": "en", "text": "In everyday life, what burdens me most is the fatigue after normal activity. The dizziness is unpleasant, but usually brief. The problem is that after a normal workday I sometimes need a full day to be resilient again. That is why I want to clarify whether I should observe certain limits of exertion." },
+            { "language": "fa", "text": "در زندگی روزمره بیشتر از همه خستگی بعد از فعالیت معمولی اذیتم می‌کند. سرگیجه ناخوشایند است، اما معمولاً کوتاه است. مشکل این است که بعد از یک روز کاری عادی گاهی یک روز کامل زمان لازم دارم تا دوباره توان فعالیت داشته باشم. برای همین می‌خواهم روشن کنم آیا باید حد مشخصی برای فشار و فعالیت رعایت کنم یا نه." },
+            { "language": "ar", "text": "في الحياة اليومية يرهقني قبل كل شيء التعب بعد نشاط عادي. الدوار مزعج لكنه غالباً قصير. المشكلة أنني بعد يوم عمل عادي أحتاج أحياناً إلى يوم كامل لأستعيد قدرتي على التحمل. لذلك أريد توضيح ما إذا كان عليّ مراعاة حدود معينة للجهد." },
+            { "language": "tr", "text": "Günlük yaşamda beni en çok normal aktiviteden sonraki yorgunluk zorluyor. Baş dönmesi rahatsız edici ama genellikle kısa sürüyor. Sorun şu ki normal bir iş gününden sonra bazen yeniden dayanıklı olmak için tam bir güne ihtiyacım oluyor. Bu yüzden belirli yüklenme sınırlarına dikkat etmem gerekip gerekmediğini netleştirmek istiyorum." },
+            { "language": "ru", "text": "В повседневной жизни меня больше всего беспокоит усталость после обычной активности. Головокружение неприятно, но обычно краткое. Проблема в том, что после обычного рабочего дня мне иногда нужен целый день, чтобы снова быть работоспособным. Поэтому я хочу уточнить, нужно ли мне учитывать определённые пределы нагрузки." },
+            { "language": "ckb", "text": "لە ژیانی ڕۆژانەدا زیاترین فشارم لە ماندووبوون دوای چالاکی ئاساییەوەیە. سەرگێژە ناخۆشە، بەڵام زۆرجار کورتە. کێشەکە ئەوەیە کە دوای ڕۆژێکی کاری ئاسایی هەندێک جار پێویستم بە ڕۆژێکی تەواو هەیە تا دووبارە توانای کارم هەبێت. بۆیە دەمەوێت ڕوون بکەم ئایا پێویستە سنووری دیاریکراوی بارگرانی ڕەچاو بکەم." },
+            { "language": "kmr", "text": "Di jiyana rojane de herî zêde westîna piştî çalakiya asayî min dijwar dike. Gêjbûn nexweş e, lê pir caran kurt e. Pirsgirêk ew e ku piştî rojeke xebatê ya asayî carinan hewceyê rojeke tevahî me da ku dîsa berxwedêr bim. Ji ber vê ez dixwazim zelal bikim ka divê hin sînorên barê hesab bikim." },
+            { "language": "pl", "text": "W codziennym życiu najbardziej obciąża mnie wyczerpanie po zwykłej aktywności. Zawroty głowy są nieprzyjemne, ale zwykle krótkie. Problem polega na tym, że po normalnym dniu pracy czasem potrzebuję całego dnia, żeby znów być wydolnym. Dlatego chcę wyjaśnić, czy powinienem przestrzegać określonych granic obciążenia." },
+            { "language": "ro", "text": "În viața de zi cu zi mă apasă mai ales oboseala după activitate normală. Amețeala este neplăcută, dar de obicei scurtă. Problema este că după o zi normală de lucru uneori am nevoie de o zi întreagă ca să fiu din nou rezistent. De aceea vreau să clarific dacă ar trebui să respect anumite limite de efort." },
+            { "language": "sq", "text": "Në jetën e përditshme më rëndon më shumë lodhja pas aktivitetit normal. Marramendja është e pakëndshme, por zakonisht e shkurtër. Problemi është se pas një dite normale pune ndonjëherë më duhet një ditë e plotë që të jem përsëri i qëndrueshëm. Prandaj dua të sqaroj nëse duhet të respektoj kufij të caktuar të ngarkesës." }
+          ],
+          "function": "current-burden",
+          "toneNote": "konkret, alltagsbezogen",
+          "expectedLearnerAction": "Hauptsymptom und funktionelle Folge nennen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Welche Untersuchungen wurden bisher gemacht, und was liegt Ihnen schriftlich vor?",
+          "translations": [
+            { "language": "en", "text": "Which examinations have been done so far, and what do you have in writing?" },
+            { "language": "fa", "text": "تا حالا چه بررسی‌هایی انجام شده و چه چیزهایی را به‌صورت کتبی همراه دارید؟" },
+            { "language": "ar", "text": "ما الفحوصات التي أُجريت حتى الآن، وما الذي لديك مكتوباً؟" },
+            { "language": "tr", "text": "Şimdiye kadar hangi muayeneler yapıldı ve elinizde yazılı olarak ne var?" },
+            { "language": "ru", "text": "Какие обследования уже были проведены, и что у вас есть в письменном виде?" },
+            { "language": "ckb", "text": "تا ئێستا کام پشکنینەکان کراون، و چیت بە نووسراوی لەبەردەستدایە؟" },
+            { "language": "kmr", "text": "Heta niha kîjan kontrol hatine kirin, û çi bi nivîskî li cem we heye?" },
+            { "language": "pl", "text": "Jakie badania wykonano do tej pory i co ma Pan na piśmie?" },
+            { "language": "ro", "text": "Ce investigații au fost făcute până acum și ce aveți în scris?" },
+            { "language": "sq", "text": "Cilat ekzaminime janë bërë deri tani dhe çfarë keni me shkrim?" }
+          ],
+          "function": "prior-tests-question",
+          "toneNote": "dokumentierend",
+          "expectedLearnerAction": "Vorbefunde geordnet nennen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich habe drei Unterlagen dabei: ein unauffälliges EKG vom März, Blutwerte vom April mit leicht erniedrigtem Eisenwert und einen Bericht der Hausarztpraxis vom Mai. Dort steht, dass zunächst Beobachtung und Belastungsanpassung empfohlen wurden. Was mir fehlt, ist eine Einschätzung, ob weitere Diagnostik sinnvoll ist oder ob wir erst einen strukturierten Belastungsplan versuchen sollten.",
+          "translations": [
+            { "language": "en", "text": "I have three documents with me: an unremarkable ECG from March, blood values from April with a slightly low iron level, and a report from the general practice from May. It says that observation and adjustment of exertion were initially recommended. What I am missing is an assessment of whether further diagnostics make sense or whether we should first try a structured exertion plan." },
+            { "language": "fa", "text": "سه مدرک همراه دارم: نوار قلب بدون مورد غیرعادی از ماه مارس، آزمایش خون ماه آوریل با مقدار آهن کمی پایین‌تر، و گزارش مطب پزشک عمومی از ماه مه. در آن نوشته شده که ابتدا مشاهده وضعیت و تنظیم میزان فشار و فعالیت توصیه شده است. چیزی که کم دارم، ارزیابی این است که آیا بررسی‌های بیشتر منطقی است یا اول باید یک برنامه ساختارمند برای فعالیت را امتحان کنیم." },
+            { "language": "ar", "text": "لدي ثلاث وثائق: تخطيط قلب طبيعي من مارس، وقيم دم من أبريل مع انخفاض بسيط في الحديد، وتقرير من عيادة طبيب الأسرة من مايو. يرد فيه أنه أوصي في البداية بالمراقبة وتعديل الجهد. ما ينقصني هو تقييم ما إذا كان التشخيص الإضافي مفيداً أم أننا يجب أن نجرب أولاً خطة جهد منظمة." },
+            { "language": "tr", "text": "Yanımda üç belge var: Mart ayından normal görünen bir EKG, Nisan ayından hafif düşük demir değeri olan kan sonuçları ve Mayıs ayından aile hekimi raporu. Orada başlangıçta gözlem ve yüklenme ayarı önerildiği yazıyor. Eksik olan, daha fazla tanının anlamlı olup olmadığı ya da önce yapılandırılmış bir yüklenme planı denememiz gerekip gerekmediği konusunda bir değerlendirme." },
+            { "language": "ru", "text": "У меня с собой три документа: ЭКГ без особенностей за март, анализ крови за апрель с немного сниженным уровнем железа и отчёт семейной практики за май. Там указано, что сначала рекомендовали наблюдение и адаптацию нагрузки. Мне не хватает оценки, имеет ли смысл дальнейшая диагностика или сначала стоит попробовать структурированный план нагрузки." },
+            { "language": "ckb", "text": "سێ بەڵگەم لەگەڵدایە: ئێ‌کەی‌جییەکی بێ کێشە لە مانگی مارت، نرخەکانی خوێن لە نیساندا بە کەمبوونەوەیەکی کەم لە ئاسن، و ڕاپۆرتی پزیشکی گشتی لە مانگی مەی. لەوێدا نووسراوە کە سەرەتا چاودێری و گونجاندنی بارگرانی پێشنیار کراوە. ئەوەی کەمم هەیە هەڵسەنگاندنێکە کە ئایا پشکنینی زیاتر گونجاوە یان سەرەتا پلانێکی ڕێکخراوی بارگرانی تاقی بکەینەوە." },
+            { "language": "kmr", "text": "Sê belge li cem min hene: EKG-yeke bê taybetmendî ji adarê, nirxên xwînê ji nîsanê bi kêmbûneke sivik a hesinê, û raporek ji doktorê malbatê ji gulanê. Li wir hatiye nivîsîn ku pêşî çavdêrî û lihevkirina barê hatiye pêşniyarkirin. Ya ku min kêm e nirxandinek e ka diagnostîka zêdetir maqûl e an pêşî divê em planeke barê ya rêxistî biceribînin." },
+            { "language": "pl", "text": "Mam ze sobą trzy dokumenty: prawidłowe EKG z marca, wyniki krwi z kwietnia z lekko obniżonym poziomem żelaza oraz raport z gabinetu lekarza rodzinnego z maja. Jest tam napisane, że początkowo zalecono obserwację i dostosowanie obciążenia. Brakuje mi oceny, czy dalsza diagnostyka ma sens, czy najpierw powinniśmy spróbować uporządkowanego planu obciążenia." },
+            { "language": "ro", "text": "Am trei documente la mine: un EKG fără modificări din martie, analize de sânge din aprilie cu o valoare a fierului ușor scăzută și un raport al cabinetului medicului de familie din mai. Acolo se spune că inițial s-au recomandat observarea și ajustarea efortului. Îmi lipsește o evaluare dacă investigații suplimentare au sens sau dacă ar trebui mai întâi să încercăm un plan structurat de efort." },
+            { "language": "sq", "text": "Kam me vete tre dokumente: një EKG pa gjetje të veçanta nga marsi, analiza gjaku nga prilli me nivel pak të ulët hekuri dhe një raport nga mjeku i familjes nga maji. Aty thuhet se fillimisht u rekomandua vëzhgim dhe përshtatje e ngarkesës. Ajo që më mungon është një vlerësim nëse ka kuptim diagnostikim i mëtejshëm apo nëse duhet të provojmë fillimisht një plan të strukturuar ngarkese." }
+          ],
+          "function": "prior-tests-summary",
+          "toneNote": "aktenbezogen, fragend",
+          "expectedLearnerAction": "Vorbefunde und Entscheidungsfrage verbinden"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Gab es etwas, das die Beschwerden eindeutig verbessert oder verschlechtert hat?",
+          "translations": [
+            { "language": "en", "text": "Was there anything that clearly improved or worsened the symptoms?" },
+            { "language": "fa", "text": "آیا چیزی بوده که علائم را به‌طور واضح بهتر یا بدتر کرده باشد؟" },
+            { "language": "ar", "text": "هل كان هناك شيء حسّن الأعراض أو زادها سوءاً بوضوح؟" },
+            { "language": "tr", "text": "Şikayetleri açıkça iyileştiren ya da kötüleştiren bir şey oldu mu?" },
+            { "language": "ru", "text": "Было ли что-то, что явно улучшало или ухудшало симптомы?" },
+            { "language": "ckb", "text": "شتێک هەبووە کە بە ڕوونی نیشانەکان باشتر یان خراپتر بکات؟" },
+            { "language": "kmr", "text": "Tiştek hebû ku nîşaneyan bi zelalî baştir an xerabtir bike?" },
+            { "language": "pl", "text": "Czy było coś, co wyraźnie poprawiało albo pogarszało dolegliwości?" },
+            { "language": "ro", "text": "A existat ceva care a îmbunătățit sau a agravat clar simptomele?" },
+            { "language": "sq", "text": "A ka pasur diçka që i ka përmirësuar ose përkeqësuar qartë simptomat?" }
+          ],
+          "function": "trigger-question",
+          "toneNote": "diagnostisch offen",
+          "expectedLearnerAction": "Muster ohne Übertreibung beschreiben"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ganz eindeutig ist es nicht, deshalb möchte ich vorsichtig formulieren: Nach wenig Schlaf und längeren Terminen wird es meistens stärker. Leichte Bewegung hilft manchmal, aber intensive Belastung eher nicht. Medikamente habe ich bisher nur kurz ausprobiert; Magnesium hat kaum etwas verändert, Eisen nehme ich seit vier Wochen nach Rücksprache mit der Hausarztpraxis.",
+          "translations": [
+            { "language": "en", "text": "It is not completely clear, so I want to phrase it cautiously: after little sleep and longer appointments it usually becomes stronger. Light movement sometimes helps, but intense exertion tends not to. I have only tried medication briefly so far; magnesium changed hardly anything, and I have been taking iron for four weeks after consulting the general practice." },
+            { "language": "fa", "text": "کاملاً قطعی نیست، بنابراین می‌خواهم با احتیاط بیان کنم: بعد از کم‌خوابی و قرارهای طولانی معمولاً شدیدتر می‌شود. حرکت سبک گاهی کمک می‌کند، اما فشار شدید معمولاً نه. داروها را تا حالا فقط کوتاه امتحان کرده‌ام؛ منیزیم تقریباً تغییری ایجاد نکرد و آهن را از چهار هفته پیش بعد از مشورت با مطب پزشک عمومی مصرف می‌کنم." },
+            { "language": "ar", "text": "الأمر ليس واضحاً تماماً، لذلك أريد أن أصوغه بحذر: بعد قلة النوم والمواعيد الطويلة يصبح غالباً أقوى. الحركة الخفيفة تساعد أحياناً، أما الجهد الشديد فغالباً لا. جربت الأدوية حتى الآن لفترة قصيرة فقط؛ المغنيسيوم لم يغير شيئاً تقريباً، وأتناول الحديد منذ أربعة أسابيع بعد التشاور مع عيادة طبيب الأسرة." },
+            { "language": "tr", "text": "Tamamen net değil, bu yüzden dikkatli ifade etmek istiyorum: az uykudan ve uzun randevulardan sonra genellikle artıyor. Hafif hareket bazen yardımcı oluyor, ama yoğun yüklenme pek değil. İlaçları şimdiye kadar yalnızca kısa süre denedim; magnezyum neredeyse hiçbir şey değiştirmedi, demiri ise aile hekimiyle görüşerek dört haftadır alıyorum." },
+            { "language": "ru", "text": "Совсем однозначно это не ясно, поэтому я хочу сформулировать осторожно: после недосыпа и длительных встреч обычно становится сильнее. Лёгкое движение иногда помогает, а интенсивная нагрузка скорее нет. Лекарства я пока пробовал только недолго; магний почти ничего не изменил, железо принимаю четыре недели после консультации с семейной практикой." },
+            { "language": "ckb", "text": "بە تەواوی ڕوون نییە، بۆیە دەمەوێت بە ئاگاداری باس بکەم: دوای کەمخەوی و چاوپێکەوتنی درێژ زۆرجار بەهێزتر دەبێت. جوڵەی سووک هەندێک جار یارمەتی دەدات، بەڵام بارگرانی توند زۆرجار نا. دەرمانەکانم تا ئێستا تەنها بۆ ماوەیەکی کورت تاقی کردووە؛ مەگنێزیۆم نزیکەی هیچ گۆڕانێکی نەکرد، ئاسنیش لە چوار هەفتەی پێشووترەوە دوای ڕاوێژ لەگەڵ پزیشکی گشتی دەخۆم." },
+            { "language": "kmr", "text": "Bi tevahî zelal nîne, ji ber vê ez dixwazim bi baldarî bêjim: Piştî xewê kêm û randevûyên dirêj pir caran zêdetir dibe. Tevgera sivik carinan alîkar e, lê barê giran zêdetir na. Dermanan heta niha tenê demeke kurt ceribandime; magnezyûm pir kêm guhert, hesin jî ez ji çar hefteyan ve piştî şêwirmendiya doktorê malbatê digirim." },
+            { "language": "pl", "text": "Nie jest to całkowicie jednoznaczne, dlatego chcę sformułować ostrożnie: po małej ilości snu i dłuższych terminach zwykle się nasila. Lekki ruch czasem pomaga, ale intensywne obciążenie raczej nie. Leki próbowałem dotąd tylko krótko; magnez prawie nic nie zmienił, a żelazo biorę od czterech tygodni po konsultacji z lekarzem rodzinnym." },
+            { "language": "ro", "text": "Nu este complet clar, de aceea vreau să formulez prudent: după puțin somn și programări mai lungi, de obicei se accentuează. Mișcarea ușoară ajută uneori, dar efortul intens mai degrabă nu. Medicamente am încercat până acum doar pentru scurt timp; magneziul aproape nu a schimbat nimic, iar fier iau de patru săptămâni după consultarea medicului de familie." },
+            { "language": "sq", "text": "Nuk është plotësisht e qartë, prandaj dua ta formuloj me kujdes: pas pak gjumi dhe takimeve të gjata zakonisht bëhet më e fortë. Lëvizja e lehtë ndonjëherë ndihmon, por ngarkesa intensive jo shumë. Ilaçet i kam provuar deri tani vetëm për pak kohë; magnezi pothuajse nuk ndryshoi gjë, ndërsa hekur marr prej katër javësh pas këshillimit me mjekun e familjes." }
+          ],
+          "function": "trigger-pattern",
+          "toneNote": "vorsichtig, beobachtend",
+          "expectedLearnerAction": "Muster und bisherige Maßnahmen differenziert schildern"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Sie klingen gut vorbereitet. Gibt es einen Punkt, den Sie heute auf keinen Fall offenlassen möchten?",
+          "translations": [
+            { "language": "en", "text": "You sound well prepared. Is there one point you definitely do not want to leave open today?" },
+            { "language": "fa", "text": "به نظر می‌رسد خوب آماده شده‌اید. آیا نکته‌ای هست که امروز حتماً نمی‌خواهید باز بماند؟" },
+            { "language": "ar", "text": "يبدو أنك مستعد جيداً. هل هناك نقطة لا تريد أبداً أن تبقى مفتوحة اليوم؟" },
+            { "language": "tr", "text": "İyi hazırlanmış görünüyorsunuz. Bugün kesinlikle açık bırakmak istemediğiniz bir nokta var mı?" },
+            { "language": "ru", "text": "Вы звучите хорошо подготовленным. Есть ли вопрос, который вы сегодня ни в коем случае не хотите оставить открытым?" },
+            { "language": "ckb", "text": "دەردەکەوێت باش ئامادەیت. خاڵێک هەیە کە ئەمڕۆ بە هیچ شێوەیەک نەتەوێت کراوە بمێنێتەوە؟" },
+            { "language": "kmr", "text": "Wisa xuya dike ku hûn baş amade ne. Xalek heye ku hûn îro bi tu awayî naxwazin vekirî bihêlin?" },
+            { "language": "pl", "text": "Brzmi Pan na dobrze przygotowanego. Czy jest punkt, którego zdecydowanie nie chce Pan dziś zostawić otwartego?" },
+            { "language": "ro", "text": "Păreți bine pregătit. Există un punct pe care nu vreți în niciun caz să îl lăsați deschis astăzi?" },
+            { "language": "sq", "text": "Dukeni mirë i përgatitur. A ka një pikë që sot nuk dëshironi ta lini të hapur në asnjë mënyrë?" }
+          ],
+          "function": "decision-focus",
+          "toneNote": "zielorientiert",
+          "expectedLearnerAction": "Konkrete Entscheidungsfrage formulieren"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja. Ich möchte heute vor allem wissen, ob aus Ihrer Sicht Warnzeichen vorliegen, die zeitnah weiter abgeklärt werden müssen. Wenn nicht, wäre mein zweites Ziel ein realistischer Plan: Welche Belastung ist vertretbar, wann soll ich wiederkommen, und welche Veränderung wäre ein Grund, früher Kontakt aufzunehmen?",
+          "translations": [
+            { "language": "en", "text": "Yes. Today I mainly want to know whether, from your perspective, there are warning signs that need to be clarified soon. If not, my second goal would be a realistic plan: what level of exertion is acceptable, when should I come back, and what change would be a reason to make contact earlier?" },
+            { "language": "fa", "text": "بله. امروز بیش از همه می‌خواهم بدانم آیا از نظر شما نشانه‌های هشداردهنده‌ای وجود دارد که باید زودتر بررسی شوند. اگر نه، هدف دومم یک برنامه واقع‌بینانه است: چه میزان فشار و فعالیت قابل قبول است، چه زمانی باید دوباره مراجعه کنم، و چه تغییری دلیل تماس زودتر خواهد بود؟" },
+            { "language": "ar", "text": "نعم. أريد اليوم قبل كل شيء أن أعرف ما إذا كانت من وجهة نظرك علامات إنذار يجب توضيحها قريباً. إن لم يكن ذلك، فهدفي الثاني خطة واقعية: ما الجهد المقبول، ومتى يجب أن أعود، وأي تغيير سيكون سبباً للتواصل قبل الموعد؟" },
+            { "language": "tr", "text": "Evet. Bugün öncelikle sizin açınızdan kısa sürede daha fazla incelenmesi gereken uyarı işaretleri olup olmadığını bilmek istiyorum. Yoksa ikinci hedefim gerçekçi bir plan olurdu: Hangi yüklenme kabul edilebilir, ne zaman tekrar gelmeliyim ve hangi değişiklik daha erken iletişim kurmak için sebep olur?" },
+            { "language": "ru", "text": "Да. Сегодня я прежде всего хочу понять, есть ли, с вашей точки зрения, тревожные признаки, которые нужно вскоре дополнительно выяснить. Если нет, моей второй целью был бы реалистичный план: какая нагрузка допустима, когда мне прийти снова и какое изменение будет поводом обратиться раньше?" },
+            { "language": "ckb", "text": "بەڵێ. ئەمڕۆ پێش هەموو شتێک دەمەوێت بزانم ئایا لە ڕوانگەی ئێوەوە نیشانەی ئاگادارکردنەوە هەیە کە پێویستە بە نزیکی زیاتر پشکنرێت. ئەگەر نا، ئامانجی دووەمم پلانێکی واقیعییە: کام بارگرانی گونجاوە، کەی دووبارە بگەڕێمەوە، و کام گۆڕان هۆکارە بۆ پەیوەندی زووتر؟" },
+            { "language": "kmr", "text": "Erê. Îro berî her tiştî dixwazim bizanim ka ji nêrîna we nîşaneyên hişyariyê hene ku divê di demeke nêz de zêdetir werin kontrolkirin. Heke na, armanca min a duyem planeke rast e: kîjan bar qebûlbar e, kengê divê dîsa werim, û kîjan guhertin dê sedem be ku zûtir têkilî bigirim?" },
+            { "language": "pl", "text": "Tak. Dziś przede wszystkim chcę wiedzieć, czy z Pani perspektywy są objawy ostrzegawcze, które trzeba szybko dalej wyjaśnić. Jeśli nie, moim drugim celem byłby realistyczny plan: jakie obciążenie jest dopuszczalne, kiedy mam wrócić i jaka zmiana byłaby powodem wcześniejszego kontaktu?" },
+            { "language": "ro", "text": "Da. Astăzi vreau mai ales să știu dacă, din perspectiva dumneavoastră, există semne de alarmă care trebuie clarificate în curând. Dacă nu, al doilea obiectiv ar fi un plan realist: ce efort este acceptabil, când să revin și ce schimbare ar fi motiv să iau legătura mai devreme?" },
+            { "language": "sq", "text": "Po. Sot dua para së gjithash të di nëse, sipas jush, ka shenja paralajmëruese që duhen sqaruar së shpejti. Nëse jo, qëllimi im i dytë do të ishte një plan realist: çfarë ngarkese është e pranueshme, kur duhet të vij përsëri dhe cili ndryshim do të ishte arsye për kontakt më herët?" }
+          ],
+          "function": "decision-question",
+          "toneNote": "klar, sicherheitsorientiert",
+          "expectedLearnerAction": "Warnzeichen, Belastungsplan und Wiedervorstellung erfragen"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "doctor",
+          "baseText": "Das ist eine hilfreiche Struktur. Können Sie zum Schluss in zwei Sätzen sagen, was ich aus Ihrer Sicht als Arbeitsauftrag für heute mitnehmen soll?",
+          "translations": [
+            { "language": "en", "text": "That is a helpful structure. To close, can you say in two sentences what, from your perspective, I should take as today's task?" },
+            { "language": "fa", "text": "این ساختار مفیدی است. در پایان می‌توانید در دو جمله بگویید از نظر شما دستور کار امروز من چه باشد؟" },
+            { "language": "ar", "text": "هذه بنية مفيدة. هل يمكنك في الختام أن تقول في جملتين ما الذي يجب أن آخذه من وجهة نظرك كمهمة اليوم؟" },
+            { "language": "tr", "text": "Bu faydalı bir yapı. Son olarak iki cümleyle, sizin açınızdan bugün benim çalışma görevim ne olmalı, söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Это полезная структура. В завершение можете в двух фразах сказать, какую задачу на сегодня, с вашей точки зрения, я должен взять?" },
+            { "language": "ckb", "text": "ئەمە پێکهاتەیەکی یارمەتیدەرە. لە کۆتاییدا دەتوانیت بە دوو ڕستە بڵێیت لە ڕوانگەی تۆوە پێویستە من ئەمڕۆ چی وەک ئەرکی کار لەبەرچاو بگرم؟" },
+            { "language": "kmr", "text": "Ev rêxistin alîkar e. Di dawiyê de hûn dikarin bi du hevokan bêjin ji nêrîna we ez îro divê çi wekî erkê karê bigirim?" },
+            { "language": "pl", "text": "To pomocna struktura. Czy na koniec może Pan w dwóch zdaniach powiedzieć, co z Pana perspektywy powinnam dziś potraktować jako zadanie?" },
+            { "language": "ro", "text": "Aceasta este o structură utilă. La final, puteți spune în două propoziții ce ar trebui să iau, din perspectiva dumneavoastră, ca sarcină pentru astăzi?" },
+            { "language": "sq", "text": "Kjo është një strukturë e dobishme. Në fund, a mund të thoni në dy fjali çfarë, sipas jush, duhet të marr si detyrë për sot?" }
+          ],
+          "function": "closing-request",
+          "toneNote": "zusammenfassend",
+          "expectedLearnerAction": "Krankheitsgeschichte in Entscheidungsauftrag verdichten"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Bitte prüfen Sie, ob die wiederkehrende Erschöpfung mit Schwindel nach der bisherigen Abklärung weitere zeitnahe Diagnostik braucht oder ob ein kontrollierter Belastungsplan vertretbar ist. Außerdem brauche ich klare Kriterien, wann ich früher wiederkommen oder mich sofort melden soll.",
+          "translations": [
+            { "language": "en", "text": "Please check whether the recurring fatigue with dizziness, after the previous workup, needs further timely diagnostics or whether a controlled exertion plan is acceptable. I also need clear criteria for when I should come back earlier or contact you immediately." },
+            { "language": "fa", "text": "لطفاً بررسی کنید آیا خستگی تکرارشونده همراه با سرگیجه، با توجه به بررسی‌های قبلی، نیاز به تشخیص‌های بیشتر در زمان نزدیک دارد یا یک برنامه کنترل‌شده برای فعالیت قابل قبول است. همچنین به معیارهای روشن نیاز دارم که چه زمانی باید زودتر مراجعه کنم یا فوراً تماس بگیرم." },
+            { "language": "ar", "text": "يرجى فحص ما إذا كان الإرهاق المتكرر مع الدوار، بعد الفحوصات السابقة، يحتاج إلى تشخيصات إضافية في وقت قريب أم أن خطة جهد مراقبة مقبولة. كما أحتاج إلى معايير واضحة متى يجب أن أعود مبكراً أو أتواصل فوراً." },
+            { "language": "tr", "text": "Lütfen önceki incelemelerden sonra tekrarlayan yorgunluk ve baş dönmesinin yakın zamanda ek tanı gerektirip gerektirmediğini ya da kontrollü bir yüklenme planının kabul edilebilir olup olmadığını değerlendirin. Ayrıca ne zaman daha erken gelmem ya da hemen iletişim kurmam gerektiğine dair net ölçütlere ihtiyacım var." },
+            { "language": "ru", "text": "Пожалуйста, проверьте, требует ли повторяющаяся усталость с головокружением после предыдущего обследования дальнейшей своевременной диагностики или допустим контролируемый план нагрузки. Кроме того, мне нужны ясные критерии, когда мне прийти раньше или сразу связаться с вами." },
+            { "language": "ckb", "text": "تکایە بپشکنن ئایا ماندووبوونی دووبارەبووەوە لەگەڵ سەرگێژە دوای پشکنینی پێشووتر پێویستی بە دیاریکردنی زیاتر لە کاتی نزیکدا هەیە یان پلانێکی کۆنترۆڵکراوی بارگرانی گونجاوە. هەروەها پێویستم بە پێوەرە ڕوونەکان هەیە کە کەی زووتر بگەڕێمەوە یان دەستبەجێ پەیوەندی بکەم." },
+            { "language": "kmr", "text": "Ji kerema xwe kontrol bikin ka westîna dubare bi gêjbûnê piştî kontrolên berê hewceyê diagnostîka zêdetir a zû ye an planeke barê ya kontrolkirî qebûlbar e. Her wiha ez hewceyê pîvanên zelal im ka kengê divê zûtir vegerim an tavilê têkilî bigirim." },
+            { "language": "pl", "text": "Proszę sprawdzić, czy nawracające wyczerpanie z zawrotami głowy po dotychczasowej diagnostyce wymaga dalszych szybkich badań, czy też dopuszczalny jest kontrolowany plan obciążenia. Potrzebuję też jasnych kryteriów, kiedy mam wrócić wcześniej albo zgłosić się od razu." },
+            { "language": "ro", "text": "Vă rog să verificați dacă oboseala recurentă cu amețeală, după investigațiile de până acum, necesită diagnostic suplimentar în timp util sau dacă este acceptabil un plan de efort controlat. De asemenea, am nevoie de criterii clare când să revin mai devreme sau să vă contactez imediat." },
+            { "language": "sq", "text": "Ju lutem kontrolloni nëse lodhja e përsëritur me marramendje, pas sqarimeve të deritanishme, kërkon diagnostikim të mëtejshëm të shpejtë apo nëse një plan i kontrolluar ngarkese është i pranueshëm. Gjithashtu më duhen kritere të qarta kur duhet të vij më herët ose të kontaktoj menjëherë." }
+          ],
+          "function": "decision-focused-close",
+          "toneNote": "präzise, sicherheitsbewusst",
+          "expectedLearnerAction": "Arbeitsauftrag und Sicherheitskriterien zusammenfassen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-three-part-overview",
+              "text": "Ich würde es in drei Teilen darstellen: Beginn nach dem Infekt, bisherige unauffällige Abklärung und die heutige Frage zur weiteren Diagnostik oder Belastungssteuerung.",
+              "translations": [
+                { "language": "en", "text": "I would present it in three parts: onset after the infection, previous unremarkable workup, and today's question about further diagnostics or managing exertion." },
+                { "language": "fa", "text": "آن را در سه بخش توضیح می‌دهم: شروع بعد از عفونت، بررسی‌های قبلی بدون نتیجه نگران‌کننده، و پرسش امروز درباره بررسی بیشتر یا مدیریت میزان فعالیت." },
+                { "language": "ar", "text": "سأعرضه في ثلاثة أجزاء: البداية بعد العدوى، والفحوصات السابقة غير اللافتة، وسؤال اليوم حول التشخيص الإضافي أو تنظيم الجهد." },
+                { "language": "tr", "text": "Bunu üç bölümde anlatırdım: enfeksiyondan sonraki başlangıç, önceki belirgin olmayan incelemeler ve bugünkü ek tanı ya da yüklenme yönetimi sorusu." },
+                { "language": "ru", "text": "Я бы представил это в трёх частях: начало после инфекции, предыдущие обследования без явных находок и сегодняшний вопрос о дальнейшей диагностике или управлении нагрузкой." },
+                { "language": "ckb", "text": "بە سێ بەش باس دەکەم: دەستپێکردن دوای هەوکەکە، پشکنینە پێشووترە بێ دەرئەنجامە گرنگەکان، و پرسیاری ئەمڕۆ دەربارەی دیاریکردنی زیاتر یان ڕێکخستنی بارگرانی." },
+                { "language": "kmr", "text": "Ez wê di sê beşan de pêşkêş dikim: destpêk piştî enfeksiyonê, kontrolên berê yên bê taybetmendî, û pirsa îro li ser diagnostîka zêdetir an rêvebirina barê." },
+                { "language": "pl", "text": "Przedstawiłbym to w trzech częściach: początek po infekcji, dotychczasowa niejednoznaczna diagnostyka bez istotnych odchyleń i dzisiejsze pytanie o dalszą diagnostykę albo kontrolę obciążenia." },
+                { "language": "ro", "text": "Aș prezenta în trei părți: debutul după infecție, investigațiile anterioare fără modificări clare și întrebarea de astăzi despre diagnostic suplimentar sau controlul efortului." },
+                { "language": "sq", "text": "Do ta paraqisja në tre pjesë: fillimi pas infeksionit, sqarimet e mëparshme pa gjetje të dukshme dhe pyetja e sotme për diagnostikim të mëtejshëm ose menaxhim të ngarkesës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ordnet Verlauf, Vorbefunde und Entscheidungsfrage, ohne eine Diagnose zu behaupten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer organizes the course, previous findings, and decision question without claiming a diagnosis." },
+                { "language": "fa", "text": "قوی: پاسخ روند، یافته‌های قبلی و پرسش تصمیم‌گیری را مرتب می‌کند، بدون اینکه تشخیصی ادعا کند." },
+                { "language": "ar", "text": "قوي: ترتب الإجابة المسار والنتائج السابقة وسؤال القرار من دون ادعاء تشخيص." },
+                { "language": "tr", "text": "Güçlü: Yanıt süreci, önceki bulguları ve karar sorusunu tanı iddia etmeden düzenliyor." },
+                { "language": "ru", "text": "Сильно: ответ упорядочивает течение, предыдущие данные и вопрос решения, не утверждая диагноз." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام ڕەوت، دەرئەنجامە پێشووترەکان و پرسیاری بڕیار ڕێک دەخات، بەبێ ئەوەی دیاریکردنی نەخۆشی بانگەشە بکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pêvajoyê, encamên berê û pirsa biryarê rêxistin dike bêyî ku teşxîsê îdia bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź porządkuje przebieg, wcześniejsze wyniki i pytanie decyzyjne bez twierdzenia diagnozy." },
+                { "language": "ro", "text": "Puternic: răspunsul organizează evoluția, rezultatele anterioare și întrebarea de decizie fără a afirma un diagnostic." },
+                { "language": "sq", "text": "E fortë: përgjigjja organizon ecurinë, gjetjet e mëparshme dhe pyetjen e vendimit pa pretenduar diagnozë." }
+              ],
+              "explanationKey": "structured-medical-opening"
+            },
+            {
+              "id": "weak-everything-at-once",
+              "text": "Es ist ziemlich kompliziert, deshalb erzähle ich am besten alles von Anfang an mit allen Details.",
+              "translations": [
+                { "language": "en", "text": "It is quite complicated, so it is best if I tell everything from the beginning with all details." },
+                { "language": "fa", "text": "موضوع نسبتاً پیچیده است، بنابراین بهتر است همه چیز را از اول با تمام جزئیات تعریف کنم." },
+                { "language": "ar", "text": "الأمر معقد إلى حد ما، لذلك من الأفضل أن أروي كل شيء من البداية بكل التفاصيل." },
+                { "language": "tr", "text": "Oldukça karmaşık, bu yüzden en iyisi her şeyi baştan tüm ayrıntılarıyla anlatmam." },
+                { "language": "ru", "text": "Это довольно сложно, поэтому лучше я расскажу всё с самого начала со всеми подробностями." },
+                { "language": "ckb", "text": "بابەتەکە تا ڕادەیەک ئاڵۆزە، بۆیە باشترە هەموو شتێک لە سەرەتاوە بە هەموو وردەکارییەکان باس بکەم." },
+                { "language": "kmr", "text": "Ew pir aloz e, ji ber vê baştir e ez her tiştî ji destpêkê ve bi hemû hûrgilîyan bibêjim." },
+                { "language": "pl", "text": "To dość skomplikowane, więc najlepiej opowiem wszystko od początku ze wszystkimi szczegółami." },
+                { "language": "ro", "text": "Este destul de complicat, așa că cel mai bine povestesc totul de la început cu toate detaliile." },
+                { "language": "sq", "text": "Është mjaft e ndërlikuar, prandaj më mirë t'i tregoj të gjitha nga fillimi me të gjitha detajet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unstrukturiert: Bei C1 muss die Komplexität zuerst geordnet werden, sonst verliert die Ärztin den roten Faden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too unstructured: At C1 level, the complexity must first be organized, otherwise the doctor loses the thread." },
+                { "language": "fa", "text": "قابل فهم است، اما بیش از حد بی‌ساختار است: در سطح C1 باید ابتدا پیچیدگی مرتب شود، وگرنه پزشک خط اصلی را گم می‌کند." },
+                { "language": "ar", "text": "مفهوم لكنه غير منظم كثيراً: في مستوى C1 يجب أولاً تنظيم التعقيد، وإلا تفقد الطبيبة الخيط الرئيسي." },
+                { "language": "tr", "text": "Makul ama fazla yapısız: C1 düzeyinde karmaşıklık önce düzenlenmelidir, yoksa doktor ana hattı kaybeder." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неструктурированно: на уровне C1 сложность сначала нужно упорядочить, иначе врач потеряет основную нить." },
+                { "language": "ckb", "text": "گونجاوە بەڵام زۆر بێ پێکهاتەیە: لە ئاستی C1دا پێویستە ئاڵۆزی سەرەتا ڕێکبخرێت، ئەگەر نا پزیشک هێڵی سەرەکی لەدەست دەدات." },
+                { "language": "kmr", "text": "Maqûl e lê pir bê-rêxistin e: Di asta C1 de divê alozî pêşî were rêxistin, na doktor xeta sereke winda dike." },
+                { "language": "pl", "text": "Plausible, ale zbyt nieuporządkowane: na poziomie C1 złożoność trzeba najpierw uporządkować, inaczej lekarka traci główny wątek." },
+                { "language": "ro", "text": "Plauzibil, dar prea nestructurat: la nivel C1 complexitatea trebuie mai întâi organizată, altfel medicul pierde firul principal." },
+                { "language": "sq", "text": "E besueshme, por shumë e pastrukturuar: në nivelin C1 kompleksiteti duhet së pari të organizohet, përndryshe mjekja humb fillin kryesor." }
+              ],
+              "explanationKey": "too-unstructured-medical-history"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-functional-impact",
+              "text": "Am stärksten belastet mich die Erschöpfung nach normaler Aktivität, weil sie meine Arbeitsfähigkeit und Erholung konkret einschränkt.",
+              "translations": [
+                { "language": "en", "text": "What burdens me most is the fatigue after normal activity because it specifically limits my ability to work and recover." },
+                { "language": "fa", "text": "بیشترین فشار از خستگی بعد از فعالیت معمولی است، چون توان کاری و بازگشت به حالت عادی را به‌طور مشخص محدود می‌کند." },
+                { "language": "ar", "text": "أكثر ما يرهقني هو التعب بعد نشاط عادي لأنه يحد عملياً من قدرتي على العمل والتعافي." },
+                { "language": "tr", "text": "Beni en çok normal aktiviteden sonraki yorgunluk zorluyor, çünkü çalışma ve toparlanma yeteneğimi somut biçimde sınırlıyor." },
+                { "language": "ru", "text": "Больше всего меня беспокоит усталость после обычной активности, потому что она конкретно ограничивает мою работоспособность и восстановление." },
+                { "language": "ckb", "text": "زیاترین فشار لە ماندووبوون دوای چالاکی ئاساییەوەیە، چونکە توانای کارکردن و گەڕانەوەم بە شێوەیەکی دیاریکراو سنووردار دەکات." },
+                { "language": "kmr", "text": "Herî zêde westîna piştî çalakiya asayî min dijwar dike, ji ber ku ew şiyana xebatê û vegerê bi awayekî konkret sînordar dike." },
+                { "language": "pl", "text": "Najbardziej obciąża mnie wyczerpanie po zwykłej aktywności, ponieważ konkretnie ogranicza moją zdolność do pracy i regeneracji." },
+                { "language": "ro", "text": "Cel mai mult mă apasă oboseala după activitate normală, deoarece îmi limitează concret capacitatea de muncă și recuperarea." },
+                { "language": "sq", "text": "Më rëndon më shumë lodhja pas aktivitetit normal, sepse kufizon konkretisht aftësinë time për punë dhe rikuperim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort priorisiert ein Symptom und zeigt die funktionelle Auswirkung im Alltag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer prioritizes one symptom and shows the functional impact in everyday life." },
+                { "language": "fa", "text": "قوی: پاسخ یک علامت را اولویت می‌دهد و اثر عملی آن را در زندگی روزمره نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: تعطي الإجابة أولوية لعرض واحد وتُظهر أثره الوظيفي في الحياة اليومية." },
+                { "language": "tr", "text": "Güçlü: Yanıt bir belirtiyi önceliklendiriyor ve günlük yaşamdaki işlevsel etkisini gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ выделяет один симптом и показывает его функциональное влияние в повседневной жизни." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام نیشانەیەک پێشینە دەکات و کاریگەرییە کارکردییەکەی لە ژیانی ڕۆژانەدا پیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nîşaneyekê pêş dixe û bandora wê ya fonksiyonel di jiyana rojane de nîşan dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź priorytetyzuje jeden objaw i pokazuje jego funkcjonalny wpływ w codzienności." },
+                { "language": "ro", "text": "Puternic: răspunsul prioritizează un simptom și arată impactul funcțional în viața de zi cu zi." },
+                { "language": "sq", "text": "E fortë: përgjigjja i jep përparësi një simptome dhe tregon ndikimin funksional në jetën e përditshme." }
+              ],
+              "explanationKey": "functional-impact-priority"
+            },
+            {
+              "id": "weak-symptom-list",
+              "text": "Es ist irgendwie alles zusammen: Schwindel, Müdigkeit, Unsicherheit und manchmal auch die Angst, dass etwas übersehen wurde.",
+              "translations": [
+                { "language": "en", "text": "It is somehow all together: dizziness, tiredness, uncertainty, and sometimes also the fear that something was missed." },
+                { "language": "fa", "text": "به نوعی همه چیز با هم است: سرگیجه، خستگی، نامطمئن بودن و گاهی ترس از اینکه چیزی نادیده گرفته شده باشد." },
+                { "language": "ar", "text": "الأمر كله معاً بطريقة ما: دوار، وتعب، وعدم يقين، وأحياناً خوف من أن شيئاً ما قد فات." },
+                { "language": "tr", "text": "Bir şekilde hepsi birlikte: baş dönmesi, yorgunluk, belirsizlik ve bazen bir şeyin gözden kaçmış olabileceği korkusu." },
+                { "language": "ru", "text": "Это как-то всё вместе: головокружение, усталость, неопределённость и иногда страх, что что-то упустили." },
+                { "language": "ckb", "text": "جۆرێکە هەمووی پێکەوەیە: سەرگێژە، ماندووبوون، نادیاری و هەندێک جار ترس لەوەی شتێک لەبیر چووبێت." },
+                { "language": "kmr", "text": "Wisa ye ku her tişt bi hev re ye: gêjbûn, westîn, nebûna zelaliyê û carinan jî tirs ku tiştek hatiye jibîrkirin." },
+                { "language": "pl", "text": "To jest jakoś wszystko razem: zawroty głowy, zmęczenie, niepewność i czasem lęk, że coś przeoczono." },
+                { "language": "ro", "text": "Este cumva totul împreună: amețeală, oboseală, incertitudine și uneori teama că s-a trecut ceva cu vederea." },
+                { "language": "sq", "text": "Është disi gjithçka bashkë: marramendje, lodhje, pasiguri dhe ndonjëherë frika se është anashkaluar diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu breit: Die Ärztin fragt nach Priorität. Eine C1-Antwort sollte das stärkste Problem und seine Folge benennen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too broad: The doctor asks for a priority. A C1 answer should name the strongest problem and its consequence." },
+                { "language": "fa", "text": "قابل فهم است، اما بیش از حد گسترده است: پزشک درباره اولویت می‌پرسد. پاسخ C1 باید مشکل اصلی و پیامد آن را نام ببرد." },
+                { "language": "ar", "text": "مفهوم لكنه واسع جداً: الطبيبة تسأل عن الأولوية. إجابة C1 يجب أن تسمي المشكلة الأقوى ونتيجتها." },
+                { "language": "tr", "text": "Anlaşılır ama çok geniş: Doktor önceliği soruyor. C1 yanıtı en güçlü sorunu ve sonucunu belirtmelidir." },
+                { "language": "ru", "text": "Понятно, но слишком широко: врач спрашивает о приоритете. Ответ C1 должен назвать главную проблему и её последствие." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام زۆر فراوانە: پزیشک پرسیاری پێشینە دەکات. وەڵامی C1 پێویستە کێشەی بەهێزترین و دەرئەنجامەکەی ناو ببە." },
+                { "language": "kmr", "text": "Têgihiştinbar e, lê pir fireh e: Doktor pêşînê dipirse. Bersiva C1 divê pirsgirêka herî xurt û encama wê nav bike." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt szerokie: lekarka pyta o priorytet. Odpowiedź C1 powinna nazwać główny problem i jego skutek." },
+                { "language": "ro", "text": "De înțeles, dar prea larg: medicul întreabă despre prioritate. Un răspuns C1 trebuie să numească problema principală și consecința ei." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e gjerë: mjekja pyet për përparësinë. Një përgjigje C1 duhet të emërtojë problemin kryesor dhe pasojën e tij." }
+              ],
+              "explanationKey": "too-broad-symptom-priority"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-documents-and-decision",
+              "text": "Ich habe EKG, Blutwerte und den Bericht der Hausarztpraxis dabei; daraus ergibt sich für mich die Frage nach weiterer Diagnostik oder einem strukturierten Belastungsplan.",
+              "translations": [
+                { "language": "en", "text": "I have the ECG, blood values, and the report from the general practice with me; from that, the question for me is further diagnostics or a structured exertion plan." },
+                { "language": "fa", "text": "نوار قلب، آزمایش خون و گزارش مطب پزشک عمومی را همراه دارم؛ از این‌ها برای من این پرسش به وجود می‌آید که بررسی بیشتر لازم است یا یک برنامه ساختارمند فعالیت." },
+                { "language": "ar", "text": "لدي تخطيط القلب وقيم الدم وتقرير عيادة طبيب الأسرة؛ ومن ذلك ينتج بالنسبة لي سؤال التشخيص الإضافي أو خطة جهد منظمة." },
+                { "language": "tr", "text": "Yanımda EKG, kan değerleri ve aile hekimi raporu var; bundan benim için ek tanı mı yoksa yapılandırılmış bir yüklenme planı mı sorusu çıkıyor." },
+                { "language": "ru", "text": "У меня с собой ЭКГ, анализ крови и отчёт семейной практики; из этого для меня следует вопрос: дальнейшая диагностика или структурированный план нагрузки." },
+                { "language": "ckb", "text": "ئێ‌کەی‌جی، نرخەکانی خوێن و ڕاپۆرتی پزیشکی گشتی لەگەڵدایە؛ لەمانەوە بۆ من پرسیاری دیاریکردنی زیاتر یان پلانێکی ڕێکخراوی بارگرانی دروست دەبێت." },
+                { "language": "kmr", "text": "EKG, nirxên xwînê û rapora doktorê malbatê li cem min hene; ji van ji bo min pirsa diagnostîka zêdetir an planeke barê ya rêxistî derdikeve." },
+                { "language": "pl", "text": "Mam ze sobą EKG, wyniki krwi i raport lekarza rodzinnego; z tego wynika dla mnie pytanie o dalszą diagnostykę albo uporządkowany plan obciążenia." },
+                { "language": "ro", "text": "Am cu mine EKG-ul, analizele de sânge și raportul medicului de familie; de aici rezultă pentru mine întrebarea despre diagnostic suplimentar sau un plan structurat de efort." },
+                { "language": "sq", "text": "Kam me vete EKG-në, analizat e gjakut dhe raportin e mjekut të familjes; prej tyre del për mua pyetja për diagnostikim të mëtejshëm ose një plan të strukturuar ngarkese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Befunde werden nicht nur aufgezählt, sondern mit der heutigen Entscheidungsfrage verbunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The findings are not merely listed; they are connected to today's decision question." },
+                { "language": "fa", "text": "قوی: یافته‌ها فقط فهرست نمی‌شوند، بلکه به پرسش تصمیم‌گیری امروز وصل می‌شوند." },
+                { "language": "ar", "text": "قوي: لا تُسرد النتائج فقط، بل تُربط بسؤال القرار اليوم." },
+                { "language": "tr", "text": "Güçlü: Bulgular yalnızca sıralanmıyor, bugünkü karar sorusuyla bağlantılandırılıyor." },
+                { "language": "ru", "text": "Сильно: данные не просто перечисляются, а связываются с сегодняшним вопросом решения." },
+                { "language": "ckb", "text": "بەهێزە: دەرئەنجامەکان تەنها لیست ناکرێن، بەڵکو بە پرسیاری بڕیاری ئەمڕۆوە دەبەسترێنەوە." },
+                { "language": "kmr", "text": "Xurt e: Encam tenê nayên rêzkirin, lê bi pirsa biryara îro ve tên girêdan." },
+                { "language": "pl", "text": "Mocne: wyniki nie są tylko wymienione, lecz powiązane z dzisiejszym pytaniem decyzyjnym." },
+                { "language": "ro", "text": "Puternic: rezultatele nu sunt doar enumerate, ci legate de întrebarea de decizie de astăzi." },
+                { "language": "sq", "text": "E fortë: gjetjet nuk renditen vetëm, por lidhen me pyetjen e vendimit të sotëm." }
+              ],
+              "explanationKey": "documents-linked-to-decision"
+            },
+            {
+              "id": "weak-documents-only",
+              "text": "Die Unterlagen habe ich alle dabei; Sie können sich das am besten selbst anschauen.",
+              "translations": [
+                { "language": "en", "text": "I have all the documents with me; it is probably best if you look at them yourself." },
+                { "language": "fa", "text": "همه مدارک را همراه دارم؛ احتمالاً بهتر است خودتان آن‌ها را نگاه کنید." },
+                { "language": "ar", "text": "لدي كل الوثائق معي؛ من الأفضل على الأرجح أن تطلعي عليها بنفسك." },
+                { "language": "tr", "text": "Tüm belgeler yanımda; en iyisi sizin kendiniz bakmanız." },
+                { "language": "ru", "text": "Все документы у меня с собой; наверное, лучше, если вы сами на них посмотрите." },
+                { "language": "ckb", "text": "هەموو بەڵگەکانم لەگەڵدایە؛ باشترە خۆتان سەیریان بکەن." },
+                { "language": "kmr", "text": "Hemû belge li cem min hene; herhal baştir e hûn bixwe lê binêrin." },
+                { "language": "pl", "text": "Mam wszystkie dokumenty ze sobą; najlepiej chyba, żeby Pani sama je obejrzała." },
+                { "language": "ro", "text": "Am toate documentele la mine; probabil cel mai bine este să vă uitați dumneavoastră la ele." },
+                { "language": "sq", "text": "I kam të gjitha dokumentet me vete; ndoshta është më mirë t'i shihni vetë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu passiv: Die Ärztin soll die Unterlagen prüfen, aber Sie müssen zeigen, welche Befunde für die heutige Frage relevant sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: The doctor should review the documents, but you need to show which findings are relevant for today's question." },
+                { "language": "fa", "text": "بیش از حد منفعل است: پزشک باید مدارک را بررسی کند، اما شما باید نشان دهید کدام یافته‌ها برای پرسش امروز مهم‌اند." },
+                { "language": "ar", "text": "سلبي جداً: على الطبيبة أن تفحص الوثائق، لكن عليك أن تُظهر أي نتائج مهمة لسؤال اليوم." },
+                { "language": "tr", "text": "Fazla pasif: Doktor belgeleri incelemeli, ama bugünkü soru için hangi bulguların önemli olduğunu siz göstermelisiniz." },
+                { "language": "ru", "text": "Слишком пассивно: врач должен проверить документы, но вы должны показать, какие данные важны для сегодняшнего вопроса." },
+                { "language": "ckb", "text": "زۆر ناپاساوە: پزیشک پێویستە بەڵگەکان بپشکنێت، بەڵام تۆ پێویستە پیشان بدەیت کام دەرئەنجام بۆ پرسیاری ئەمڕۆ گرنگە." },
+                { "language": "kmr", "text": "Pir pasîf e: Doktor divê belgeyan kontrol bike, lê hûn divê nîşan bidin kîjan encam ji bo pirsa îro girîng in." },
+                { "language": "pl", "text": "Zbyt bierne: lekarka powinna sprawdzić dokumenty, ale Pan musi pokazać, które wyniki są istotne dla dzisiejszego pytania." },
+                { "language": "ro", "text": "Prea pasiv: medicul trebuie să verifice documentele, dar dumneavoastră trebuie să arătați ce rezultate sunt relevante pentru întrebarea de astăzi." },
+                { "language": "sq", "text": "Shumë pasive: mjekja duhet t'i kontrollojë dokumentet, por ju duhet të tregoni cilat gjetje janë të rëndësishme për pyetjen e sotme." }
+              ],
+              "explanationKey": "documents-without-focus"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-cautious-pattern",
+              "text": "Ganz sicher bin ich nicht; ich beobachte nur, dass Schlafmangel und längere Termine die Beschwerden verstärken, während leichte Bewegung manchmal hilft.",
+              "translations": [
+                { "language": "en", "text": "I am not completely certain; I only observe that lack of sleep and longer appointments worsen the symptoms, while light movement sometimes helps." },
+                { "language": "fa", "text": "کاملاً مطمئن نیستم؛ فقط مشاهده می‌کنم که کم‌خوابی و قرارهای طولانی علائم را شدیدتر می‌کنند، در حالی که حرکت سبک گاهی کمک می‌کند." },
+                { "language": "ar", "text": "لست متأكداً تماماً؛ ألاحظ فقط أن قلة النوم والمواعيد الطويلة تزيد الأعراض، بينما تساعد الحركة الخفيفة أحياناً." },
+                { "language": "tr", "text": "Tamamen emin değilim; yalnızca uykusuzluğun ve uzun randevuların şikayetleri artırdığını, hafif hareketin ise bazen yardımcı olduğunu gözlemliyorum." },
+                { "language": "ru", "text": "Я не полностью уверен; я только наблюдаю, что недосып и длительные встречи усиливают симптомы, а лёгкое движение иногда помогает." },
+                { "language": "ckb", "text": "بە تەواوی دڵنیا نیم؛ تەنها سەرنج دەدەم کە کەمخەوی و چاوپێکەوتنی درێژ نیشانەکان زیاد دەکەن، لە کاتێکدا جوڵەی سووک هەندێک جار یارمەتی دەدات." },
+                { "language": "kmr", "text": "Ez bi tevahî piştrast nînim; tenê dibînim ku xewê kêm û randevûyên dirêj nîşaneyan zêde dikin, lê tevgera sivik carinan alîkar e." },
+                { "language": "pl", "text": "Nie jestem całkowicie pewien; obserwuję tylko, że brak snu i dłuższe terminy nasilają dolegliwości, a lekki ruch czasem pomaga." },
+                { "language": "ro", "text": "Nu sunt complet sigur; observ doar că lipsa somnului și programările lungi accentuează simptomele, în timp ce mișcarea ușoară ajută uneori." },
+                { "language": "sq", "text": "Nuk jam plotësisht i sigurt; vetëm vërej se mungesa e gjumit dhe takimet e gjata i shtojnë simptomat, ndërsa lëvizja e lehtë ndonjëherë ndihmon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung bleibt beobachtend und behauptet keinen sicheren Zusammenhang.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The wording stays observational and does not claim a certain connection." },
+                { "language": "fa", "text": "قوی: بیان در حد مشاهده باقی می‌ماند و رابطه قطعی ادعا نمی‌کند." },
+                { "language": "ar", "text": "قوي: تبقى الصياغة في إطار الملاحظة ولا تدعي علاقة مؤكدة." },
+                { "language": "tr", "text": "Güçlü: İfade gözlem düzeyinde kalıyor ve kesin bir bağlantı iddia etmiyor." },
+                { "language": "ru", "text": "Сильно: формулировка остаётся наблюдательной и не утверждает достоверную связь." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە لە ئاستی سەرنجدا دەمێنێتەوە و پەیوەندییەکی دڵنیا بانگەشە ناکات." },
+                { "language": "kmr", "text": "Xurt e: Gotin li asta çavdêriyê dimîne û têkiliyekî misoger îdia nake." },
+                { "language": "pl", "text": "Mocne: sformułowanie pozostaje obserwacyjne i nie twierdzi pewnego związku." },
+                { "language": "ro", "text": "Puternic: formularea rămâne la nivel de observație și nu pretinde o legătură sigură." },
+                { "language": "sq", "text": "E fortë: formulimi mbetet vëzhgues dhe nuk pretendon lidhje të sigurt." }
+              ],
+              "explanationKey": "cautious-symptom-pattern"
+            },
+            {
+              "id": "weak-self-diagnosis",
+              "text": "Ich glaube, es ist wahrscheinlich etwas Neurologisches, weil die anderen Untersuchungen nichts gezeigt haben.",
+              "translations": [
+                { "language": "en", "text": "I think it is probably something neurological because the other examinations did not show anything." },
+                { "language": "fa", "text": "فکر می‌کنم احتمالاً مسئله‌ای عصبی است، چون بررسی‌های دیگر چیزی نشان نداده‌اند." },
+                { "language": "ar", "text": "أعتقد أنه على الأرجح شيء عصبي لأن الفحوصات الأخرى لم تُظهر شيئاً." },
+                { "language": "tr", "text": "Sanırım muhtemelen nörolojik bir şey, çünkü diğer muayeneler bir şey göstermedi." },
+                { "language": "ru", "text": "Я думаю, это, вероятно, что-то неврологическое, потому что другие обследования ничего не показали." },
+                { "language": "ckb", "text": "پێم وایە ئەگەری زۆر شتێکی عەسەبی بێت، چونکە پشکنینەکانی تر هیچ شتێکیان نیشان نەدا." },
+                { "language": "kmr", "text": "Ez difikirim belkî tiştekî neurolojîk e, ji ber ku kontrolên din tiştek nîşan nedan." },
+                { "language": "pl", "text": "Myślę, że to prawdopodobnie coś neurologicznego, bo inne badania nic nie pokazały." },
+                { "language": "ro", "text": "Cred că probabil este ceva neurologic, pentru că celelalte investigații nu au arătat nimic." },
+                { "language": "sq", "text": "Mendoj se ndoshta është diçka neurologjike, sepse ekzaminimet e tjera nuk treguan asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu stark diagnostizierend: Besser ist eine offene Frage nach möglichen Ursachen und nächsten Schritten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too diagnostic: Better is an open question about possible causes and next steps." },
+                { "language": "fa", "text": "بیش از حد شبیه تشخیص است: بهتر است پرسشی باز درباره علت‌های ممکن و قدم‌های بعدی مطرح شود." },
+                { "language": "ar", "text": "تشخيصي أكثر من اللازم: الأفضل سؤال مفتوح عن الأسباب المحتملة والخطوات التالية." },
+                { "language": "tr", "text": "Fazla tanı koyucu: Olası nedenler ve sonraki adımlar hakkında açık bir soru daha iyidir." },
+                { "language": "ru", "text": "Слишком диагностично: лучше задать открытый вопрос о возможных причинах и следующих шагах." },
+                { "language": "ckb", "text": "زۆر وەک دیاریکردنی نەخۆشییە: باشترە پرسیارێکی کراوە دەربارەی هۆکارە ئەگەرییەکان و هەنگاوەکانی دواتر بکرێت." },
+                { "language": "kmr", "text": "Pir teşxîsî ye: Pirseke vekirî li ser sedemên mumkin û gavên paşîn baştir e." },
+                { "language": "pl", "text": "Zbyt diagnostyczne: lepsze jest otwarte pytanie o możliwe przyczyny i następne kroki." },
+                { "language": "ro", "text": "Prea diagnostic: mai bună este o întrebare deschisă despre cauze posibile și pași următori." },
+                { "language": "sq", "text": "Shumë diagnostikuese: më mirë është një pyetje e hapur për shkaqet e mundshme dhe hapat e ardhshëm." }
+              ],
+              "explanationKey": "premature-self-diagnosis"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-warning-and-plan",
+              "text": "Ich möchte klären, ob Warnzeichen vorliegen; falls nicht, brauche ich einen realistischen Belastungsplan und klare Kriterien für eine frühere Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "I want to clarify whether warning signs are present; if not, I need a realistic exertion plan and clear criteria for earlier follow-up." },
+                { "language": "fa", "text": "می‌خواهم روشن کنم آیا نشانه‌های هشدار وجود دارد یا نه؛ اگر نه، به یک برنامه واقع‌بینانه برای فعالیت و معیارهای روشن برای مراجعه زودتر نیاز دارم." },
+                { "language": "ar", "text": "أريد أن أوضح ما إذا كانت هناك علامات إنذار؛ إن لم تكن، فأحتاج إلى خطة جهد واقعية ومعايير واضحة للتواصل المبكر." },
+                { "language": "tr", "text": "Uyarı işaretleri olup olmadığını netleştirmek istiyorum; yoksa gerçekçi bir yüklenme planına ve erken geri dönüş için net kriterlere ihtiyacım var." },
+                { "language": "ru", "text": "Я хочу уточнить, есть ли тревожные признаки; если нет, мне нужен реалистичный план нагрузки и чёткие критерии для более ранней связи." },
+                { "language": "ckb", "text": "دەمەوێت ڕوون بکەم ئایا نیشانەی ئاگادارکردنەوە هەیە؛ ئەگەر نا، پێویستم بە پلانێکی واقیعی بۆ بارگرانی و پێوەری ڕوون بۆ پەیوەندی زووتر هەیە." },
+                { "language": "kmr", "text": "Ez dixwazim zelal bikim ka nîşaneyên hişyariyê hene; heke na, ez hewceyê planeke barê ya rast û pîvanên zelal ji bo vegera zûtir im." },
+                { "language": "pl", "text": "Chcę wyjaśnić, czy są objawy ostrzegawcze; jeśli nie, potrzebuję realistycznego planu obciążenia i jasnych kryteriów wcześniejszego kontaktu." },
+                { "language": "ro", "text": "Vreau să clarific dacă există semne de alarmă; dacă nu, am nevoie de un plan realist de efort și de criterii clare pentru revenire mai devreme." },
+                { "language": "sq", "text": "Dua të sqaroj nëse ka shenja paralajmëruese; nëse jo, më duhet një plan realist ngarkese dhe kritere të qarta për kontakt më të hershëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Sicherheit, Planung und konkrete Rückmeldekriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects safety, planning, and concrete follow-up criteria." },
+                { "language": "fa", "text": "قوی: پاسخ ایمنی، برنامه‌ریزی و معیارهای مشخص برای پیگیری را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة بين السلامة والتخطيط ومعايير المتابعة المحددة." },
+                { "language": "tr", "text": "Güçlü: Yanıt güvenliği, planlamayı ve somut takip kriterlerini birleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ связывает безопасность, планирование и конкретные критерии последующего обращения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام ئاسایش، پلان و پێوەرە دیاریکراوەکانی پەیوەندی دواتر پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ewlehî, plan û pîvanên konkret ên şopandinê bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy bezpieczeństwo, planowanie i konkretne kryteria kontaktu." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă siguranța, planificarea și criteriile concrete de urmărire." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh sigurinë, planifikimin dhe kriteret konkrete të ndjekjes." }
+              ],
+              "explanationKey": "safety-and-plan-question"
+            },
+            {
+              "id": "weak-vague-reassurance",
+              "text": "Ich möchte einfach wissen, ob das schlimm ist und was ich jetzt am besten machen soll.",
+              "translations": [
+                { "language": "en", "text": "I simply want to know whether it is bad and what I should best do now." },
+                { "language": "fa", "text": "فقط می‌خواهم بدانم آیا چیز بدی است و الان بهتر است چه کار کنم." },
+                { "language": "ar", "text": "أريد فقط أن أعرف هل الأمر سيئ وما الأفضل أن أفعله الآن." },
+                { "language": "tr", "text": "Sadece bunun kötü olup olmadığını ve şimdi en iyi ne yapmam gerektiğini bilmek istiyorum." },
+                { "language": "ru", "text": "Я просто хочу знать, плохо ли это и что мне сейчас лучше делать." },
+                { "language": "ckb", "text": "تەنها دەمەوێت بزانم ئایا ئەمە خراپە و ئێستا باشترە چی بکەم." },
+                { "language": "kmr", "text": "Ez tenê dixwazim bizanim ka ev xerab e û niha baştir e ez çi bikim." },
+                { "language": "pl", "text": "Chcę po prostu wiedzieć, czy to coś złego i co najlepiej teraz zrobić." },
+                { "language": "ro", "text": "Vreau doar să știu dacă este grav și ce ar fi cel mai bine să fac acum." },
+                { "language": "sq", "text": "Thjesht dua të di nëse është keq dhe çfarë është më mirë të bëj tani." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Frage ist verständlich, aber C1 erwartet präzisere Entscheidungs- und Sicherheitskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: The question is understandable, but C1 expects more precise decision and safety criteria." },
+                { "language": "fa", "text": "بیش از حد کلی است: پرسش قابل فهم است، اما در C1 معیارهای دقیق‌تر برای تصمیم و ایمنی انتظار می‌رود." },
+                { "language": "ar", "text": "عام جداً: السؤال مفهوم، لكن مستوى C1 يتوقع معايير قرار وسلامة أدق." },
+                { "language": "tr", "text": "Çok genel: Soru anlaşılır, ancak C1 daha kesin karar ve güvenlik kriterleri bekler." },
+                { "language": "ru", "text": "Слишком обобщённо: вопрос понятен, но уровень C1 требует более точных критериев решения и безопасности." },
+                { "language": "ckb", "text": "زۆر گشتییە: پرسیارەکە تێگەیشتراوە، بەڵام C1 پێوەری وردتری بڕیار و ئاسایش چاوەڕوان دەکات." },
+                { "language": "kmr", "text": "Pir giştî ye: Pirs têgihiştinbar e, lê C1 pîvanên biryar û ewlehiyê yên rasttir hêvî dike." },
+                { "language": "pl", "text": "Zbyt ogólne: pytanie jest zrozumiałe, ale C1 wymaga bardziej precyzyjnych kryteriów decyzji i bezpieczeństwa." },
+                { "language": "ro", "text": "Prea general: întrebarea este de înțeles, dar C1 cere criterii de decizie și siguranță mai precise." },
+                { "language": "sq", "text": "Shumë e përgjithshme: pyetja është e kuptueshme, por C1 pret kritere më të sakta vendimi dhe sigurie." }
+              ],
+              "explanationKey": "vague-medical-question"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "strong-compact-task",
+              "text": "Bitte prüfen Sie die Notwendigkeit weiterer Diagnostik und geben Sie mir klare Kriterien für Belastung, Wiedervorstellung und frühere Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "Please check the need for further diagnostics and give me clear criteria for exertion, follow-up, and earlier contact." },
+                { "language": "fa", "text": "لطفاً نیاز به بررسی‌های بیشتر را ارزیابی کنید و معیارهای روشن برای میزان فعالیت، مراجعه بعدی و تماس زودتر به من بدهید." },
+                { "language": "ar", "text": "يرجى فحص الحاجة إلى تشخيص إضافي وإعطائي معايير واضحة للجهد والموعد التالي والتواصل المبكر." },
+                { "language": "tr", "text": "Lütfen ek tanı gerekliliğini değerlendirin ve bana yüklenme, kontrol randevusu ve erken iletişim için net kriterler verin." },
+                { "language": "ru", "text": "Пожалуйста, проверьте необходимость дальнейшей диагностики и дайте мне ясные критерии нагрузки, повторного визита и более раннего обращения." },
+                { "language": "ckb", "text": "تکایە پێویستی دیاریکردنی زیاتر بپشکنن و پێوەری ڕوون بۆ بارگرانی، گەڕانەوە و پەیوەندی زووترم بدەنێ." },
+                { "language": "kmr", "text": "Ji kerema xwe hewcedariya diagnostîka zêdetir kontrol bikin û pîvanên zelal ji bo barê, vegerê û têkiliya zûtir bidin min." },
+                { "language": "pl", "text": "Proszę sprawdzić potrzebę dalszej diagnostyki i dać mi jasne kryteria dotyczące obciążenia, kontroli i wcześniejszego kontaktu." },
+                { "language": "ro", "text": "Vă rog să verificați necesitatea unor investigații suplimentare și să îmi dați criterii clare pentru efort, revenire și contact mai devreme." },
+                { "language": "sq", "text": "Ju lutem kontrolloni nevojën për diagnostikim të mëtejshëm dhe më jepni kritere të qarta për ngarkesën, rikthimin dhe kontaktin më të hershëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss ist kurz, handlungsorientiert und medizinisch offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The close is brief, action-oriented, and medically open." },
+                { "language": "fa", "text": "قوی: پایان کوتاه، عمل‌محور و از نظر پزشکی باز است." },
+                { "language": "ar", "text": "قوي: الخاتمة قصيرة وموجهة نحو الفعل ومفتوحة طبياً." },
+                { "language": "tr", "text": "Güçlü: Kapanış kısa, eyleme dönük ve tıbben açık." },
+                { "language": "ru", "text": "Сильно: завершение короткое, ориентировано на действие и медицински открыто." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە کورتە، ڕووی لە کردارە و لە ڕووی پزیشکییەوە کراوەیە." },
+                { "language": "kmr", "text": "Xurt e: Dawî kurt, çalakî-beralî û ji aliyê bijîşkî ve vekirî ye." },
+                { "language": "pl", "text": "Mocne: zakończenie jest krótkie, nastawione na działanie i medycznie otwarte." },
+                { "language": "ro", "text": "Puternic: încheierea este scurtă, orientată spre acțiune și deschisă medical." },
+                { "language": "sq", "text": "E fortë: përmbyllja është e shkurtër, e orientuar drejt veprimit dhe mjekësisht e hapur." }
+              ],
+              "explanationKey": "compact-medical-close"
+            },
+            {
+              "id": "weak-diagnosis-demand",
+              "text": "Ich möchte heute endlich wissen, was ich genau habe, damit das Thema abgeschlossen ist.",
+              "translations": [
+                { "language": "en", "text": "Today I finally want to know exactly what I have so that the matter is closed." },
+                { "language": "fa", "text": "امروز بالاخره می‌خواهم دقیقاً بدانم چه دارم تا این موضوع تمام شود." },
+                { "language": "ar", "text": "أريد اليوم أخيراً أن أعرف بالضبط ما الذي لدي حتى يُغلق الموضوع." },
+                { "language": "tr", "text": "Bugün nihayet tam olarak neyim olduğunu bilmek istiyorum ki konu kapansın." },
+                { "language": "ru", "text": "Сегодня я наконец хочу точно знать, что у меня, чтобы эта тема была закрыта." },
+                { "language": "ckb", "text": "ئەمڕۆ لە کۆتاییدا دەمەوێت بە وردی بزانم چیم هەیە تا بابەتەکە کۆتایی پێبێت." },
+                { "language": "kmr", "text": "Îro ez dawî dixwazim bi rastî bizanim çi li min heye da ku mijar were girtin." },
+                { "language": "pl", "text": "Dziś wreszcie chcę dokładnie wiedzieć, co mi jest, żeby temat został zamknięty." },
+                { "language": "ro", "text": "Astăzi vreau în sfârșit să știu exact ce am, ca subiectul să fie închis." },
+                { "language": "sq", "text": "Sot më në fund dua të di saktësisht çfarë kam, që kjo çështje të mbyllet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Der Wunsch ist nachvollziehbar, aber er verlangt eine endgültige Diagnose, obwohl die Situation eventuell schrittweise geklärt werden muss.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: The wish is understandable, but it demands a final diagnosis even though the situation may need to be clarified step by step." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: خواسته قابل درک است، اما تشخیص نهایی می‌خواهد، در حالی که شاید وضعیت باید مرحله‌به‌مرحله روشن شود." },
+                { "language": "ar", "text": "ضعيف استراتيجياً: الرغبة مفهومة، لكنها تطلب تشخيصاً نهائياً رغم أن الحالة قد تحتاج إلى توضيح تدريجي." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: İstek anlaşılır, ancak durumun adım adım açıklığa kavuşması gerekebileceği halde kesin tanı talep ediyor." },
+                { "language": "ru", "text": "Стратегически слабо: желание понятно, но оно требует окончательного диагноза, хотя ситуацию, возможно, нужно выяснять поэтапно." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: داواکارییەکە تێگەیشتراوە، بەڵام دیاریکردنی کۆتایی دەخوازێت، لە کاتێکدا دۆخەکە ڕەنگە پێویستی بە ڕوونکردنەوەی هەنگاو بە هەنگاو هەبێت." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: Daxwaz têgihiştinbar e, lê teşxîsa dawî dixwaze her çend rewş belkî pêdivî bi zelalkirina gav bi gav hebe." },
+                { "language": "pl", "text": "Strategicznie słabe: życzenie jest zrozumiałe, ale żąda ostatecznej diagnozy, choć sytuację trzeba być może wyjaśniać krok po kroku." },
+                { "language": "ro", "text": "Slab strategic: dorința este de înțeles, dar cere un diagnostic final, deși situația poate trebui clarificată pas cu pas." },
+                { "language": "sq", "text": "Strategjikisht e dobët: dëshira është e kuptueshme, por kërkon diagnozë përfundimtare, edhe pse situata mund të duhet sqaruar hap pas hapi." }
+              ],
+              "explanationKey": "premature-final-diagnosis"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "structure",
+          "text": "Bei komplexer Krankheitsgeschichte hilft eine Dreiteilung: Beginn, bisherige Abklärung, heutige Entscheidungsfrage.",
+          "translations": [
+            { "language": "en", "text": "For a complex medical history, a three-part structure helps: onset, previous workup, today's decision question." },
+            { "language": "fa", "text": "در سابقه پزشکی پیچیده، تقسیم سه‌بخشی کمک می‌کند: شروع، بررسی‌های قبلی، پرسش تصمیم‌گیری امروز." },
+            { "language": "ar", "text": "في التاريخ المرضي المعقد تساعد بنية من ثلاثة أجزاء: البداية، الفحوصات السابقة، سؤال القرار اليوم." },
+            { "language": "tr", "text": "Karmaşık hastalık geçmişinde üçlü yapı yardımcı olur: başlangıç, önceki incelemeler, bugünkü karar sorusu." },
+            { "language": "ru", "text": "При сложной истории болезни помогает трёхчастная структура: начало, предыдущие обследования, сегодняшний вопрос решения." },
+            { "language": "ckb", "text": "لە مێژووی نەخۆشیی ئاڵۆزدا دابەشکردنی سێ بەش یارمەتی دەدات: دەستپێک، پشکنینی پێشووتر، پرسیاری بڕیاری ئەمڕۆ." },
+            { "language": "kmr", "text": "Di dîroka nexweşiya aloz de rêxistina sê-beşî alîkar e: destpêk, kontrolên berê, pirsa biryara îro." },
+            { "language": "pl", "text": "Przy złożonej historii choroby pomaga podział na trzy części: początek, dotychczasowa diagnostyka, dzisiejsze pytanie decyzyjne." },
+            { "language": "ro", "text": "La un istoric medical complex ajută o împărțire în trei: debut, investigații anterioare, întrebarea de decizie de astăzi." },
+            { "language": "sq", "text": "Te një histori mjekësore e ndërlikuar ndihmon ndarja në tre pjesë: fillimi, sqarimet e mëparshme, pyetja e vendimit të sotëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "functional-impact",
+          "text": "Ärztliche Gespräche werden klarer, wenn Symptome mit konkreten Alltagsfolgen verbunden werden.",
+          "translations": [
+            { "language": "en", "text": "Medical conversations become clearer when symptoms are connected to concrete everyday consequences." },
+            { "language": "fa", "text": "گفت‌وگوهای پزشکی وقتی روشن‌تر می‌شوند که علائم به پیامدهای مشخص روزمره وصل شوند." },
+            { "language": "ar", "text": "تصبح المحادثات الطبية أوضح عندما تُربط الأعراض بعواقب يومية ملموسة." },
+            { "language": "tr", "text": "Tıbbi görüşmeler, belirtiler somut günlük sonuçlarla bağlandığında daha net olur." },
+            { "language": "ru", "text": "Медицинские разговоры становятся яснее, когда симптомы связываются с конкретными повседневными последствиями." },
+            { "language": "ckb", "text": "گفتوگۆی پزیشکی ڕوونتر دەبێت کاتێک نیشانەکان بە دەرئەنجامە دیاریکراوەکانی ڕۆژانەوە دەبەسترێنەوە." },
+            { "language": "kmr", "text": "Axaftinên bijîşkî zelaltir dibin dema nîşane bi encamên konkret ên rojane ve tên girêdan." },
+            { "language": "pl", "text": "Rozmowy lekarskie stają się jaśniejsze, gdy objawy łączy się z konkretnymi skutkami w codzienności." },
+            { "language": "ro", "text": "Discuțiile medicale devin mai clare când simptomele sunt legate de consecințe concrete în viața de zi cu zi." },
+            { "language": "sq", "text": "Bisedat mjekësore bëhen më të qarta kur simptomat lidhen me pasoja konkrete të përditshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "documents",
+          "text": "Vorbefunde sind am stärksten, wenn Sie sie nach Funktion benennen: Was wurde ausgeschlossen, was bleibt offen?",
+          "translations": [
+            { "language": "en", "text": "Previous findings are strongest when you name them by function: what was ruled out, what remains open?" },
+            { "language": "fa", "text": "یافته‌های قبلی وقتی قوی‌ترند که آن‌ها را بر اساس کارکردشان نام ببرید: چه چیزی رد شده و چه چیزی باز مانده است؟" },
+            { "language": "ar", "text": "تكون النتائج السابقة أقوى عندما تسميها حسب وظيفتها: ما الذي استُبعد، وما الذي بقي مفتوحاً؟" },
+            { "language": "tr", "text": "Önceki bulgular, işlevlerine göre adlandırıldığında en güçlü olur: ne dışlandı, ne açık kaldı?" },
+            { "language": "ru", "text": "Предыдущие данные наиболее сильны, когда вы называете их по функции: что исключили, что осталось открытым?" },
+            { "language": "ckb", "text": "دەرئەنجامە پێشووترەکان کاتێک بەهێزترینن کە بە کردارەکانیان ناویان ببەیت: چی لابراوە، چی کراوە ماوەتەوە؟" },
+            { "language": "kmr", "text": "Encamên berê herî xurt in dema hûn wan li gor fonksiyonê nav dikin: çi hatiye derxistin, çi vekirî maye?" },
+            { "language": "pl", "text": "Wcześniejsze wyniki są najmocniejsze, gdy nazywa się je według funkcji: co wykluczono, co pozostaje otwarte?" },
+            { "language": "ro", "text": "Rezultatele anterioare sunt cele mai puternice când le numiți după funcție: ce a fost exclus, ce rămâne deschis?" },
+            { "language": "sq", "text": "Gjetjet e mëparshme janë më të forta kur i emërtoni sipas funksionit: çfarë u përjashtua, çfarë mbetet e hapur?" }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "caution",
+          "text": "C1 heißt hier: Muster vorsichtig beschreiben, ohne aus Beobachtungen eine Diagnose zu machen.",
+          "translations": [
+            { "language": "en", "text": "Here, C1 means describing patterns cautiously without turning observations into a diagnosis." },
+            { "language": "fa", "text": "اینجا C1 یعنی الگوها را با احتیاط توصیف کنید، بدون اینکه از مشاهده‌ها تشخیص بسازید." },
+            { "language": "ar", "text": "يعني C1 هنا وصف الأنماط بحذر من دون تحويل الملاحظات إلى تشخيص." },
+            { "language": "tr", "text": "Burada C1, gözlemleri tanıya dönüştürmeden kalıpları dikkatli anlatmak demektir." },
+            { "language": "ru", "text": "Здесь C1 означает осторожно описывать закономерности, не превращая наблюдения в диагноз." },
+            { "language": "ckb", "text": "لێرەدا C1 واتە شێوەکان بە ئاگاداری باس بکەیت، بەبێ ئەوەی سەرنجەکان بکەیتە دیاریکردنی نەخۆشی." },
+            { "language": "kmr", "text": "Li vir C1 tê wateya ku şêweyan bi baldarî rave bikin bêyî ku çavdêriyan bikin teşxîs." },
+            { "language": "pl", "text": "Tutaj C1 oznacza ostrożne opisywanie wzorców bez robienia z obserwacji diagnozy." },
+            { "language": "ro", "text": "Aici C1 înseamnă să descrieți tipare prudent, fără a transforma observațiile în diagnostic." },
+            { "language": "sq", "text": "Këtu C1 do të thotë të përshkruani modelet me kujdes, pa i kthyer vëzhgimet në diagnozë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing",
+          "text": "Ein guter Abschluss macht aus vielen Beschwerden einen ärztlichen Arbeitsauftrag: prüfen, planen, Kriterien nennen.",
+          "translations": [
+            { "language": "en", "text": "A good close turns many symptoms into a medical task: check, plan, name criteria." },
+            { "language": "fa", "text": "پایان خوب از علائم زیاد یک دستور کار پزشکی می‌سازد: بررسی، برنامه‌ریزی، نام بردن معیارها." },
+            { "language": "ar", "text": "تحول الخاتمة الجيدة الأعراض الكثيرة إلى مهمة طبية: فحص، تخطيط، تسمية معايير." },
+            { "language": "tr", "text": "İyi bir kapanış birçok şikayeti tıbbi bir göreve dönüştürür: kontrol etmek, planlamak, kriter belirtmek." },
+            { "language": "ru", "text": "Хорошее завершение превращает множество симптомов в медицинскую задачу: проверить, спланировать, назвать критерии." },
+            { "language": "ckb", "text": "کۆتایی باش نیشانەی زۆر دەکاتە ئەرکێکی پزیشکی: پشکنین، پلان، ناوبردنی پێوەر." },
+            { "language": "kmr", "text": "Dawiya baş gelek nîşaneyan dike erkeke bijîşkî: kontrolkirin, plankirin, navkirina pîvanan." },
+            { "language": "pl", "text": "Dobre zakończenie zamienia wiele dolegliwości w zadanie lekarskie: sprawdzić, zaplanować, nazwać kryteria." },
+            { "language": "ro", "text": "O încheiere bună transformă multe simptome într-o sarcină medicală: verificare, planificare, numirea criteriilor." },
+            { "language": "sq", "text": "Një përmbyllje e mirë i kthen shumë simptoma në një detyrë mjekësore: kontroll, planifikim, emërtim kriteresh." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-medical-history",
+          "placement": "hero",
+          "purpose": "Show a doctor-office conversation where an adult patient uses a simple timeline and organized medical documents to explain a complex history.",
+          "altText": "Eine Patientin erklärt in einer Arztpraxis eine längere Krankheitsgeschichte mit kurzer Zeitleiste und geordneten Vorbefunden.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A patient explains a longer medical history in a doctor's office using a short timeline and organized previous reports." },
+            { "language": "fa", "text": "بیماری در مطب پزشک با یک خط زمانی کوتاه و مدارک قبلی مرتب، سابقه پزشکی طولانی‌تری را توضیح می‌دهد." },
+            { "language": "ar", "text": "مريضة تشرح في عيادة الطبيب تاريخاً مرضياً أطول باستخدام خط زمني قصير ونتائج سابقة مرتبة." },
+            { "language": "tr", "text": "Bir hasta doktor muayenehanesinde kısa bir zaman çizgisi ve düzenli önceki raporlarla daha uzun bir hastalık geçmişini açıklıyor." },
+            { "language": "ru", "text": "Пациентка в кабинете врача объясняет более длинную историю болезни с помощью краткой временной линии и упорядоченных предыдущих заключений." },
+            { "language": "ckb", "text": "نەخۆشێک لە کلینیکی پزیشکدا بە هێڵی کاتی کورت و ئەنجامە پێشووترە ڕێکخراوەکان مێژووی نەخۆشییەکی درێژتر ڕوون دەکاتەوە." },
+            { "language": "kmr", "text": "Nexweşek li nivîsgeha doktorê bi xeta demê ya kurt û raporên berê yên rêxistî dîroka nexweşiyeke dirêjtir şirove dike." },
+            { "language": "pl", "text": "Pacjentka w gabinecie lekarskim wyjaśnia dłuższą historię choroby za pomocą krótkiej osi czasu i uporządkowanych wcześniejszych wyników." },
+            { "language": "ro", "text": "O pacientă explică într-un cabinet medical un istoric mai lung folosind o linie temporală scurtă și rezultate anterioare ordonate." },
+            { "language": "sq", "text": "Një paciente shpjegon në një ordinancë mjekësore një histori më të gjatë sëmundjeje me një vijë të shkurtër kohore dhe raporte të mëparshme të rregulluara." }
+          ],
+          "imagePrompt": "Clean educational illustration of a calm doctor-office conversation. An adult patient shows a simple symptom timeline and three organized medical documents to a doctor; no readable personal data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,703 @@
+{
+  "packageId": "roleplays-c2-core-51-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 51 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 51",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-ironische-bemerkung-richtig-einordnen",
+      "linkedDialogueSlug": null,
+      "title": "Eine ironische Bemerkung richtig einordnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Interpreting an ironic remark correctly" },
+        { "language": "fa", "text": "درست فهمیدن یک جمله کنایه‌آمیز" },
+        { "language": "ar", "text": "فهم تعليق ساخر بشكل صحيح" },
+        { "language": "tr", "text": "İronik bir sözü doğru değerlendirmek" },
+        { "language": "ru", "text": "Правильно понять ироничное замечание" },
+        { "language": "ckb", "text": "تێگەیشتنی دروست لە تێبینییەکی کنایەدار" },
+        { "language": "kmr", "text": "Rast şîrovekirina gotineke îronîk" },
+        { "language": "pl", "text": "Właściwe odczytanie ironicznej uwagi" },
+        { "language": "ro", "text": "Interpretarea corectă a unei remarci ironice" },
+        { "language": "sq", "text": "Kuptimi i saktë i një vërejtjeje ironike" }
+      ],
+      "description": "Nach einer kleinen Panne in einem gemeinsamen Projekt sagt jemand: „Na, das lief ja wieder hervorragend.“ Sie sind unsicher, ob das als lockerer Kommentar, verdeckte Kritik oder persönlicher Angriff gemeint war. Ziel ist, die Ironie ohne Überreaktion einzuordnen, das Gesicht beider Seiten zu wahren und den sachlichen Punkt zu klären.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a small mishap in a shared project, someone says: 'Well, that went brilliantly again.' You are unsure whether this was meant as a casual comment, hidden criticism, or a personal attack. The goal is to interpret the irony without overreacting, preserve face on both sides, and clarify the factual point." },
+        { "language": "fa", "text": "بعد از یک خطای کوچک در یک پروژه مشترک، کسی می‌گوید: «خب، این هم دوباره عالی پیش رفت.» شما مطمئن نیستید منظور یک نظر شوخ، نقد پنهان یا حمله شخصی بوده است. هدف این است که کنایه را بدون واکنش افراطی درست بفهمید، آبروی هر دو طرف حفظ شود و نکته واقعی روشن شود." },
+        { "language": "ar", "text": "بعد خلل صغير في مشروع مشترك، يقول أحدهم: «حسنًا، سار هذا مرة أخرى بشكل ممتاز». لستم متأكدين هل كان المقصود تعليقًا عابرًا أم نقدًا مبطنًا أم هجومًا شخصيًا. الهدف هو فهم السخرية من دون مبالغة في الرد، وحفظ وجه الطرفين، وتوضيح النقطة الموضوعية." },
+        { "language": "tr", "text": "Ortak bir projedeki küçük bir aksaklıktan sonra biri şöyle der: 'Eh, bu da yine harika gitti.' Bunun rahat bir yorum mu, örtülü eleştiri mi yoksa kişisel saldırı mı olduğunu bilmiyorsunuz. Amaç ironiyi aşırı tepki vermeden değerlendirmek, iki tarafın da yüzünü korumak ve somut noktayı netleştirmektir." },
+        { "language": "ru", "text": "После небольшой накладки в совместном проекте кто-то говорит: «Ну, это опять прошло великолепно». Вы не уверены, было ли это легким комментарием, скрытой критикой или личной атакой. Цель — понять иронию без чрезмерной реакции, сохранить лицо обеих сторон и прояснить фактический пункт." },
+        { "language": "ckb", "text": "دوای هەڵەیەکی بچووک لە پڕۆژەیەکی هاوبەشدا، کەسێک دەڵێت: «باشە، ئەمەش جارێکی تر بە نایابی ڕۆیشت.» تۆ دڵنیا نیت ئایا مەبەست لێدوانێکی ئاسایی بووە، ڕەخنەیەکی شاراوە یان هێرشێکی کەسی. ئامانج ئەوەیە کنایەکە بەبێ کاردانەوەی زێدە تێبگەیت، ڕووی هەردوو لا بپارێزیت و خاڵی ڕاستەقینە ڕوون بکەیتەوە." },
+        { "language": "kmr", "text": "Piştî xeletiyeke biçûk di projeyeke hevpar de, kesek dibêje: 'Erê, ev jî dîsa gelek baş derbas bû.' Hûn ne ewle ne ka ev wek şîroveyeke rehet, rexneyeke veşartî an êrîşeke kesane hatiye gotin. Armanc ew e ku îroniyê bê zêdebersivdan şîrove bikin, rûyê her du aliyan biparêzin û xala rast zelal bikin." },
+        { "language": "pl", "text": "Po małej wpadce we wspólnym projekcie ktoś mówi: „No, to znowu poszło znakomicie”. Nie jest Pan/Pani pewien, czy miał to być luźny komentarz, ukryta krytyka czy osobisty atak. Celem jest odczytanie ironii bez przesadnej reakcji, zachowanie twarzy obu stron i wyjaśnienie rzeczowego punktu." },
+        { "language": "ro", "text": "După o mică problemă într-un proiect comun, cineva spune: „Ei, asta a mers din nou excelent.” Nu sunteți sigur dacă a fost un comentariu relaxat, o critică ascunsă sau un atac personal. Scopul este să interpretați ironia fără reacție exagerată, să păstrați fața ambelor părți și să clarificați punctul concret." },
+        { "language": "sq", "text": "Pas një gabimi të vogël në një projekt të përbashkët, dikush thotë: “Epo, kjo përsëri shkoi shkëlqyeshëm.” Nuk jeni i sigurt nëse ishte koment i lirshëm, kritikë e fshehur apo sulm personal. Qëllimi është ta kuptoni ironinë pa reagim të tepruar, të ruani fytyrën e të dy palëve dhe të sqaroni pikën konkrete." }
+      ],
+      "learnerGoal": "Eine ironische Bemerkung einordnen: nicht sofort zurückschießen, die mögliche Kritik benennen, mit einer leichten Rückfrage die Absicht klären, den sachlichen Fehler übernehmen und für künftige Situationen eine klare Bitte formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Interpret an ironic remark: do not immediately shoot back, name the possible criticism, clarify the intention with a light follow-up question, take responsibility for the factual mistake, and formulate a clear request for future situations." },
+        { "language": "fa", "text": "یک جمله کنایه‌آمیز را درست بفهمید: فوراً پاسخ تند ندهید، نقد احتمالی را نام ببرید، با یک پرسش سبک نیت را روشن کنید، مسئولیت خطای واقعی را بپذیرید و برای موقعیت‌های بعدی درخواست روشنی مطرح کنید." },
+        { "language": "ar", "text": "صنّفوا تعليقًا ساخرًا: لا تردوا فورًا بحدة، وسمّوا النقد المحتمل، ووضحوا النية بسؤال خفيف، وتحملوا مسؤولية الخطأ الموضوعي، وصوغوا طلبًا واضحًا للمواقف القادمة." },
+        { "language": "tr", "text": "İronik bir sözü değerlendirin: hemen karşılık vermeyin, olası eleştiriyi adlandırın, hafif bir soruyla niyeti netleştirin, somut hatanın sorumluluğunu alın ve gelecekteki durumlar için açık bir rica formüle edin." },
+        { "language": "ru", "text": "Понять ироничное замечание: не отвечать резко сразу, назвать возможную критику, легким уточняющим вопросом прояснить намерение, взять ответственность за фактическую ошибку и сформулировать ясную просьбу на будущее." },
+        { "language": "ckb", "text": "تێبینییەکی کنایەدار ڕێک بخە: دەستبەجێ وەڵامی توند مەدەوە، ڕەخنەی ئەگەری ناوببە، بە پرسیارێکی سووک مەبەست ڕوون بکەوە، بەرپرسیاری هەڵەی ڕاستەقینە وەربگرە و بۆ دۆخەکانی داهاتوو داواکارییەکی ڕوون دابڕێژە." },
+        { "language": "kmr", "text": "Gotineke îronîk şîrove bikin: tavilê bi tundî bersiv nedin, rexneya gengaz nav bikin, bi pirseke sivik mebestê zelal bikin, berpirsiyariya xeletiya rast bigirin û ji bo rewşên paşerojê daxwazeke zelal formule bikin." },
+        { "language": "pl", "text": "Odczytać ironiczną uwagę: nie odpowiadać od razu ostro, nazwać możliwą krytykę, lekkim pytaniem doprecyzować intencję, wziąć odpowiedzialność za rzeczowy błąd i sformułować jasną prośbę na przyszłość." },
+        { "language": "ro", "text": "Interpretați o remarcă ironică: nu ripostați imediat, numiți critica posibilă, clarificați intenția printr-o întrebare ușoară, asumați greșeala concretă și formulați o cerere clară pentru situațiile viitoare." },
+        { "language": "sq", "text": "Interpretoni një vërejtje ironike: mos ktheni menjëherë përgjigje të ashpër, përmendni kritikën e mundshme, sqaroni qëllimin me një pyetje të lehtë, merrni përgjegjësi për gabimin konkret dhe formuloni një kërkesë të qartë për situata të ardhshme." }
+      ],
+      "cefrLevel": "C2",
+      "category": "social",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "face-to-face",
+      "register": "mixed",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 51,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Projektpartner",
+          "translations": [
+            { "language": "en", "text": "Project partner" },
+            { "language": "fa", "text": "همکار پروژه" },
+            { "language": "ar", "text": "شريك المشروع" },
+            { "language": "tr", "text": "Proje ortağı" },
+            { "language": "ru", "text": "Партнер по проекту" },
+            { "language": "ckb", "text": "هاوبەشی پڕۆژە" },
+            { "language": "kmr", "text": "Hevkarê projeyê" },
+            { "language": "pl", "text": "Partner projektu" },
+            { "language": "ro", "text": "Partenerul de proiect" },
+            { "language": "sq", "text": "Partneri i projektit" }
+          ]
+        },
+        {
+          "roleKey": "speaker",
+          "displayName": "Gesprächspartnerin",
+          "translations": [
+            { "language": "en", "text": "Conversation partner" },
+            { "language": "fa", "text": "طرف گفت‌وگو" },
+            { "language": "ar", "text": "طرف الحوار" },
+            { "language": "tr", "text": "Konuşma partneri" },
+            { "language": "ru", "text": "Собеседница" },
+            { "language": "ckb", "text": "هاوگفتوگۆ" },
+            { "language": "kmr", "text": "Hevpeyvîn" },
+            { "language": "pl", "text": "Rozmówczyni" },
+            { "language": "ro", "text": "Interlocutoarea" },
+            { "language": "sq", "text": "Bashkëbiseduesja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "speaker",
+          "baseText": "Na, das lief ja wieder hervorragend mit der Raumreservierung. Wir standen nur zehn Minuten vor der falschen Tür.",
+          "translations": [
+            { "language": "en", "text": "Well, that went brilliantly again with the room reservation. We were only standing ten minutes in front of the wrong door." },
+            { "language": "fa", "text": "خب، رزرو اتاق هم دوباره عالی پیش رفت. فقط ده دقیقه جلوی در اشتباه ایستاده بودیم." },
+            { "language": "ar", "text": "حسنًا، سار حجز القاعة مرة أخرى بشكل ممتاز. وقفنا فقط عشر دقائق أمام الباب الخطأ." },
+            { "language": "tr", "text": "Eh, oda rezervasyonu yine harika gitti. Sadece on dakika yanlış kapının önünde bekledik." },
+            { "language": "ru", "text": "Ну, с бронированием комнаты опять все прошло великолепно. Мы всего лишь десять минут стояли перед не той дверью." },
+            { "language": "ckb", "text": "باشە، دیسان هەموو شتێک لەگەڵ تەرخانکردنی ژوورەکە بە نایابی ڕۆیشت. تەنها دە خولەک لەبەردەم دەرگای هەڵە وەستابووین." },
+            { "language": "kmr", "text": "Erê, rezervasyona odeyê dîsa gelek baş derbas bû. Em tenê deh xulek li ber deriyê şaş rawestiyan." },
+            { "language": "pl", "text": "No, z rezerwacją sali znowu poszło znakomicie. Staliśmy tylko dziesięć minut przed niewłaściwymi drzwiami." },
+            { "language": "ro", "text": "Ei, rezervarea sălii a mers din nou excelent. Am stat doar zece minute în fața ușii greșite." },
+            { "language": "sq", "text": "Epo, rezervimi i dhomës përsëri shkoi shkëlqyeshëm. Qëndruam vetëm dhjetë minuta para derës së gabuar." }
+          ],
+          "function": "ironic-remark"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich höre den ironischen Unterton. Meinst du gerade vor allem: Das war ärgerlich, und ich soll die Reservierung nächstes Mal genauer prüfen?",
+          "translations": [
+            { "language": "en", "text": "I hear the ironic undertone. Do you mainly mean: that was annoying, and I should check the reservation more carefully next time?" },
+            { "language": "fa", "text": "لحن کنایه‌آمیز را می‌شنوم. منظورت الان بیشتر این است که این موضوع آزاردهنده بود و من دفعه بعد رزرو را دقیق‌تر بررسی کنم؟" },
+            { "language": "ar", "text": "أسمع النبرة الساخرة. هل تقصدين أساسًا أن الأمر كان مزعجًا وأن عليّ أن أتحقق من الحجز بدقة أكبر في المرة القادمة؟" },
+            { "language": "tr", "text": "İronik tonu duyuyorum. Şu anda asıl demek istediğin şu mu: bu can sıkıcıydı ve bir dahaki sefere rezervasyonu daha dikkatli kontrol etmeliyim?" },
+            { "language": "ru", "text": "Я слышу ироничный подтекст. Ты сейчас в основном имеешь в виду: это раздражало, и в следующий раз мне стоит точнее проверить бронирование?" },
+            { "language": "ckb", "text": "ژێرئاوازی کنایەدار دەبیستم. ئایا ئێستا بە تایبەتی مەبەستت ئەوەیە: ئەمە ناڕەحەتکەر بوو و من جارێکی تر دەبێت تەرخانکردنەکە وردتر بپشکنم؟" },
+            { "language": "kmr", "text": "Ez dengê îronîk dibihîzim. Ma tu niha herî zêde vê dibêjî: ev acizker bû û divê ez careke din rezervasyonê hûrgiltir kontrol bikim?" },
+            { "language": "pl", "text": "Słyszę ironiczny ton. Czy chodzi ci teraz głównie o to, że to było irytujące i następnym razem powinienem dokładniej sprawdzić rezerwację?" },
+            { "language": "ro", "text": "Aud subtonul ironic. Vrei să spui mai ales că a fost deranjant și că data viitoare ar trebui să verific rezervarea mai atent?" },
+            { "language": "sq", "text": "E dëgjoj nëntekstin ironik. A do të thuash kryesisht se kjo ishte bezdisëse dhe se herën tjetër duhet ta kontrolloj më saktë rezervimin?" }
+          ],
+          "function": "clarify-irony"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "speaker",
+          "baseText": "Ja, genau. Ich wollte dich nicht persönlich angreifen, aber es war wirklich nervig, weil die Gruppe dadurch unruhig wurde.",
+          "translations": [
+            { "language": "en", "text": "Yes, exactly. I did not want to attack you personally, but it really was annoying because the group became restless because of it." },
+            { "language": "fa", "text": "بله، دقیقاً. نمی‌خواستم شخصاً به تو حمله کنم، اما واقعاً آزاردهنده بود، چون گروه به‌خاطر آن بی‌قرار شد." },
+            { "language": "ar", "text": "نعم، بالضبط. لم أرد مهاجمتك شخصيًا، لكنه كان مزعجًا فعلًا لأن المجموعة أصبحت مضطربة بسببه." },
+            { "language": "tr", "text": "Evet, aynen. Sana kişisel olarak saldırmak istemedim, ama gerçekten can sıkıcıydı çünkü grup bundan dolayı huzursuz oldu." },
+            { "language": "ru", "text": "Да, именно. Я не хотела нападать на тебя лично, но это действительно раздражало, потому что группа из-за этого стала нервничать." },
+            { "language": "ckb", "text": "بەڵێ، هەمان ئەوە. نەمدەویست بە کەسی هێرش بکەمە سەرت، بەڵام بەڕاستی ناڕەحەتکەر بوو چونکە کۆمەڵەکە بەهۆی ئەوەوە نائارام بوو." },
+            { "language": "kmr", "text": "Erê, rast ew e. Min nexwest bi kesane êrîşî te bikim, lê bi rastî acizker bû, ji ber ku kom ji ber vê yekê nerehet bû." },
+            { "language": "pl", "text": "Tak, dokładnie. Nie chciałam atakować cię osobiście, ale to naprawdę było irytujące, bo grupa zrobiła się przez to niespokojna." },
+            { "language": "ro", "text": "Da, exact. Nu am vrut să te atac personal, dar chiar a fost deranjant, pentru că grupul a devenit neliniștit din cauza asta." },
+            { "language": "sq", "text": "Po, pikërisht. Nuk doja të të sulmoja personalisht, por ishte vërtet bezdisëse, sepse grupi u bë i shqetësuar për këtë." }
+          ],
+          "function": "intent-clarified"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Den Punkt nehme ich. Die falsche Tür geht auf meine Kappe. Ich würde nur gern vermeiden, dass wir das über Spott klären, weil ich dann erst einmal den Ton sortiere statt das Problem.",
+          "translations": [
+            { "language": "en", "text": "I take that point. The wrong door is on me. I would just like to avoid clarifying it through mockery, because then I first have to sort out the tone instead of the problem." },
+            { "language": "fa", "text": "این نکته را می‌پذیرم. اشتباه در اتاق با من بود. فقط دوست دارم این را از طریق تمسخر روشن نکنیم، چون آن وقت اول باید لحن را بفهمم، نه خود مشکل را." },
+            { "language": "ar", "text": "أقبل هذه النقطة. الباب الخطأ مسؤوليتي. أود فقط أن نتجنب توضيح الأمر عبر التهكم، لأنني حينها أضطر أولًا إلى فرز النبرة بدلًا من المشكلة." },
+            { "language": "tr", "text": "Bu noktayı kabul ediyorum. Yanlış kapı benim sorumluluğumda. Sadece bunu alay üzerinden çözmekten kaçınmak isterim, çünkü o zaman önce tonu ayıklıyorum, sorunu değil." },
+            { "language": "ru", "text": "Этот пункт я принимаю. Неверная дверь — моя ответственность. Я бы только хотел избежать прояснения через насмешку, потому что тогда я сначала разбираю тон, а не проблему." },
+            { "language": "ckb", "text": "ئەم خاڵە وەردەگرم. دەرگای هەڵە بەرپرسیاریی منە. تەنها دەمەوێت ڕوونکردنەوەی ئەمە لە ڕێگەی گاڵتەوە نەبێت، چونکە ئەوسا سەرەتا دەبێت ئاوازەکە ڕێک بخەم نەک کێشەکە." },
+            { "language": "kmr", "text": "Ez vê xalê qebûl dikim. Deriyê şaş berpirsiyariya min e. Ez tenê dixwazim em vê bi tinazê zelal nekin, ji ber ku hingê ez pêşî dengê gotinê rêk dixim, ne pirsgirêkê." },
+            { "language": "pl", "text": "Przyjmuję ten punkt. Niewłaściwe drzwi są po mojej stronie. Chciałbym tylko uniknąć wyjaśniania tego przez kpinę, bo wtedy najpierw porządkuję ton, a nie problem." },
+            { "language": "ro", "text": "Accept acest punct. Ușa greșită este responsabilitatea mea. Aș vrea doar să evităm clarificarea prin batjocură, pentru că atunci mai întâi trebuie să deslușesc tonul, nu problema." },
+            { "language": "sq", "text": "E pranoj këtë pikë. Dera e gabuar është përgjegjësia ime. Do të doja vetëm të shmangim sqarimin përmes talljes, sepse atëherë më duhet fillimisht të kuptoj tonin, jo problemin." }
+          ],
+          "function": "accept-and-bound-tone"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "speaker",
+          "baseText": "Okay, das ist fair. Ich war genervt und habe es spitzer gesagt, als nötig war.",
+          "translations": [
+            { "language": "en", "text": "Okay, that is fair. I was annoyed and said it more sharply than necessary." },
+            { "language": "fa", "text": "باشه، این منصفانه است. من عصبانی بودم و تندتر از لازم گفتم." },
+            { "language": "ar", "text": "حسنًا، هذا عادل. كنت منزعجة وقلت ذلك بحدة أكثر مما كان لازمًا." },
+            { "language": "tr", "text": "Tamam, bu adil. Sinirliydim ve gerekenden daha sivri söyledim." },
+            { "language": "ru", "text": "Хорошо, это справедливо. Я была раздражена и сказала это резче, чем нужно было." },
+            { "language": "ckb", "text": "باشە، ئەمە دادپەروەرانەیە. ناڕەحەت بووم و توندتر لە پێویست وتم." },
+            { "language": "kmr", "text": "Baş e, ev dadmend e. Ez aciz bûm û ji pêwîstiyê tûjtir got." },
+            { "language": "pl", "text": "Okej, to uczciwe. Byłam zdenerwowana i powiedziałam to ostrzej, niż było trzeba." },
+            { "language": "ro", "text": "Bine, este corect. Eram enervată și am spus-o mai tăios decât era necesar." },
+            { "language": "sq", "text": "Në rregull, kjo është e drejtë. Isha e bezdisur dhe e thashë më ashpër se duhej." }
+          ],
+          "function": "tone-acknowledged"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke. Inhaltlich ändere ich den Ablauf: Ich schicke künftig nicht nur die Adresse, sondern auch Raum, Etage und einen Screenshot der Bestätigung. Dann ist der sachliche Fehler abgedeckt.",
+          "translations": [
+            { "language": "en", "text": "Thank you. On the factual side, I will change the process: in the future I will send not only the address, but also the room, floor, and a screenshot of the confirmation. That covers the factual mistake." },
+            { "language": "fa", "text": "ممنون. از نظر عملی روند را تغییر می‌دهم: از این به بعد فقط آدرس را نمی‌فرستم، بلکه اتاق، طبقه و تصویر تأییدیه را هم می‌فرستم. این‌طور خطای واقعی پوشش داده می‌شود." },
+            { "language": "ar", "text": "شكرًا. من الناحية العملية سأغيّر الإجراء: في المستقبل لن أرسل العنوان فقط، بل أيضًا القاعة والطابق ولقطة شاشة من التأكيد. هكذا يُغطى الخطأ الموضوعي." },
+            { "language": "tr", "text": "Teşekkür ederim. İçerik olarak süreci değiştiriyorum: Bundan sonra sadece adresi değil, oda, kat ve onay ekran görüntüsünü de göndereceğim. Böylece somut hata kapsanmış olur." },
+            { "language": "ru", "text": "Спасибо. По сути я изменю порядок: в будущем я буду отправлять не только адрес, но и комнату, этаж и снимок подтверждения. Так фактическая ошибка будет закрыта." },
+            { "language": "ckb", "text": "سوپاس. لە ناوەڕۆکدا ڕێکارەکە دەگۆڕم: لە داهاتوودا تەنها ناونیشان نانێرم، بەڵکو ژوور، نهۆم و وێنەی پشتڕاستکردنەوەش دەنێرم. بەم شێوەیە هەڵەی ڕاستەقینە چارەسەر دەکرێت." },
+            { "language": "kmr", "text": "Spas. Ji aliyê naverokê ve ez rêbazê diguherînim: Paşerojê ne tenê navnîşanê, lê ode, qat û wêneyê piştrastkirinê jî dişînim. Bi vî awayî xeletiya rast tê girtin." },
+            { "language": "pl", "text": "Dziękuję. Merytorycznie zmienię procedurę: w przyszłości wyślę nie tylko adres, lecz także salę, piętro i zrzut ekranu potwierdzenia. Wtedy rzeczowy błąd będzie zabezpieczony." },
+            { "language": "ro", "text": "Mulțumesc. Pe fond, schimb procedura: pe viitor trimit nu doar adresa, ci și sala, etajul și o captură a confirmării. Astfel eroarea concretă este acoperită." },
+            { "language": "sq", "text": "Faleminderit. Në përmbajtje do ta ndryshoj procesin: në të ardhmen nuk do të dërgoj vetëm adresën, por edhe dhomën, katin dhe pamjen e konfirmimit. Kështu mbulohet gabimi konkret." }
+          ],
+          "function": "process-fix"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "speaker",
+          "baseText": "Das würde helfen. Mir ging es auch darum, dass ich vor der Gruppe plötzlich erklären musste, warum wir am falschen Ort stehen.",
+          "translations": [
+            { "language": "en", "text": "That would help. I was also concerned that I suddenly had to explain to the group why we were standing in the wrong place." },
+            { "language": "fa", "text": "این کمک می‌کند. مسئله من این هم بود که ناگهان باید جلوی گروه توضیح می‌دادم چرا جای اشتباه ایستاده‌ایم." },
+            { "language": "ar", "text": "هذا سيساعد. كان الأمر يتعلق أيضًا بأنني اضطررت فجأة إلى أن أشرح للمجموعة لماذا نقف في المكان الخطأ." },
+            { "language": "tr", "text": "Bu yardımcı olur. Benim derdim aynı zamanda grubun önünde neden yanlış yerde durduğumuzu aniden açıklamak zorunda kalmamdı." },
+            { "language": "ru", "text": "Это помогло бы. Мне также было важно, что мне вдруг пришлось объяснять группе, почему мы стоим не там." },
+            { "language": "ckb", "text": "ئەمە یارمەتیدەر دەبێت. بابەتەکە هەروەها ئەوە بوو کە لەناکاو دەبوو لەبەردەم کۆمەڵەکە ڕوون بکەمەوە بۆچی لە شوێنی هەڵە وەستاوین." },
+            { "language": "kmr", "text": "Ev alîkar dibe. Mijara min jî ew bû ku ji nişkê ve diviyabû li ber komê rave bikim ka çima em li cihê şaş rawestiyane." },
+            { "language": "pl", "text": "To by pomogło. Chodziło mi też o to, że nagle musiałam wyjaśniać grupie, dlaczego stoimy w złym miejscu." },
+            { "language": "ro", "text": "Asta ar ajuta. Pentru mine conta și faptul că a trebuit brusc să explic grupului de ce stăm în locul greșit." },
+            { "language": "sq", "text": "Kjo do të ndihmonte. Për mua ishte edhe fakti që papritur duhej t’i shpjegoja grupit pse po qëndronim në vendin e gabuar." }
+          ],
+          "function": "social-impact"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Wenn so etwas wieder passiert, sag mir bitte direkt: „Wir brauchen eine schnelle Klärung“, statt es ironisch zu verpacken. Dann kann ich sofort handeln und muss nicht erst deuten.",
+          "translations": [
+            { "language": "en", "text": "I understand that. If something like this happens again, please tell me directly: 'We need quick clarification,' instead of wrapping it in irony. Then I can act immediately and do not have to interpret first." },
+            { "language": "fa", "text": "این را می‌فهمم. اگر چنین چیزی دوباره پیش آمد، لطفاً مستقیم به من بگو: «به روشن‌سازی سریع نیاز داریم»، نه اینکه آن را در کنایه بپیچی. آن‌وقت می‌توانم فوراً عمل کنم و لازم نیست اول تفسیر کنم." },
+            { "language": "ar", "text": "أفهم ذلك. إذا حدث شيء كهذا مرة أخرى، فقولي لي مباشرة: «نحتاج إلى توضيح سريع»، بدلًا من تغليفه بالسخرية. عندها أستطيع التصرف فورًا ولا أحتاج إلى التأويل أولًا." },
+            { "language": "tr", "text": "Bunu anlıyorum. Böyle bir şey yine olursa lütfen doğrudan bana 'Hızlı bir netleştirmeye ihtiyacımız var' de, bunu ironiye sarmak yerine. O zaman hemen harekete geçebilirim ve önce yorumlamak zorunda kalmam." },
+            { "language": "ru", "text": "Я это понимаю. Если такое снова случится, пожалуйста, скажи мне прямо: «Нам нужно быстро прояснить ситуацию», вместо того чтобы заворачивать это в иронию. Тогда я смогу сразу действовать и мне не придется сначала толковать." },
+            { "language": "ckb", "text": "ئەمە تێدەگەم. ئەگەر شتی وا جارێکی تر ڕوویدا، تکایە ڕاستەوخۆ پێم بڵێ: «پێویستمان بە ڕوونکردنەوەی خێرا هەیە»، لەبری ئەوەی لە کنایەدا بیپێچیت. ئەوسا دەتوانم دەستبەجێ کار بکەم و پێویست ناکات سەرەتا لێکبدەمەوە." },
+            { "language": "kmr", "text": "Ez vê fam dikim. Heke tiştekî wisa dîsa çêbibe, ji kerema xwe rasterast ji min re bêje: 'Em hewceyê zelalkirineke lezgîn in', li şûna ku wê di îroniyê de bipêçî. Hingê ez dikarim tavilê tevbigirim û ne hewce ye pêşî şîrove bikim." },
+            { "language": "pl", "text": "Rozumiem to. Jeśli coś takiego znów się zdarzy, powiedz mi proszę wprost: „Potrzebujemy szybkiego wyjaśnienia”, zamiast pakować to w ironię. Wtedy mogę od razu działać i nie muszę najpierw interpretować." },
+            { "language": "ro", "text": "Înțeleg asta. Dacă se mai întâmplă ceva de acest fel, te rog spune-mi direct: „Avem nevoie de o clarificare rapidă”, în loc să o împachetezi în ironie. Atunci pot acționa imediat și nu trebuie mai întâi să interpretez." },
+            { "language": "sq", "text": "E kuptoj këtë. Nëse ndodh përsëri diçka e tillë, të lutem më thuaj drejtpërdrejt: “Na duhet një sqarim i shpejtë”, në vend që ta mbështjellësh me ironi. Atëherë mund të veproj menjëherë dhe nuk më duhet fillimisht të interpretoj." }
+          ],
+          "function": "future-request"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "speaker",
+          "baseText": "Einverstanden. Ich sage es direkter. Und du schickst beim nächsten Mal die vollständigen Raumdaten mit?",
+          "translations": [
+            { "language": "en", "text": "Agreed. I will say it more directly. And next time you will send the complete room details?" },
+            { "language": "fa", "text": "قبول. مستقیم‌تر می‌گویم. و تو دفعه بعد اطلاعات کامل اتاق را هم می‌فرستی؟" },
+            { "language": "ar", "text": "متفقون. سأقولها بشكل مباشر أكثر. وأنت سترسل في المرة القادمة بيانات القاعة كاملة؟" },
+            { "language": "tr", "text": "Anlaştık. Daha doğrudan söylerim. Sen de bir dahaki sefere tam oda bilgilerini gönderirsin, değil mi?" },
+            { "language": "ru", "text": "Согласна. Я скажу это прямее. А ты в следующий раз отправишь полные данные комнаты?" },
+            { "language": "ckb", "text": "ڕێککەوتین. ڕاستەوخۆتر دەیڵێم. تۆش جارێکی تر زانیاری تەواوی ژوورەکە دەنێریت؟" },
+            { "language": "kmr", "text": "Li hev hatin. Ez ê wê rasterastir bibêjim. Tu jî careke din agahiyên temam ên odeyê dişînî?" },
+            { "language": "pl", "text": "Zgoda. Powiem to bardziej wprost. A ty następnym razem prześlesz pełne dane sali?" },
+            { "language": "ro", "text": "De acord. O voi spune mai direct. Iar tu trimiți data viitoare datele complete ale sălii?" },
+            { "language": "sq", "text": "Dakord. Do ta them më drejtpërdrejt. Dhe ti herën tjetër do të dërgosh të dhënat e plota të dhomës?" }
+          ],
+          "function": "mutual-agreement"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja. Ich übernehme die vollständige Rauminfo, und du sprichst die Kritik direkt an. Dann haben wir beides: weniger Reibung im Ton und weniger Fehler im Ablauf.",
+          "translations": [
+            { "language": "en", "text": "Yes. I will take care of the complete room information, and you will address criticism directly. Then we have both: less friction in tone and fewer process mistakes." },
+            { "language": "fa", "text": "بله. من اطلاعات کامل اتاق را بر عهده می‌گیرم و تو نقد را مستقیم مطرح می‌کنی. آن‌وقت هر دو را داریم: اصطکاک کمتر در لحن و خطای کمتر در روند." },
+            { "language": "ar", "text": "نعم. سأتولى معلومات القاعة كاملة، وأنت تطرحين النقد مباشرة. عندها نحصل على الأمرين: احتكاك أقل في النبرة وأخطاء أقل في الإجراء." },
+            { "language": "tr", "text": "Evet. Tam oda bilgisini ben üstleniyorum, sen de eleştiriyi doğrudan dile getiriyorsun. Böylece ikisi de olur: tonda daha az sürtünme ve süreçte daha az hata." },
+            { "language": "ru", "text": "Да. Я беру на себя полную информацию о комнате, а ты говоришь критику прямо. Тогда у нас будет и то и другое: меньше трения в тоне и меньше ошибок в процессе." },
+            { "language": "ckb", "text": "بەڵێ. من زانیاری تەواوی ژوورەکە وەردەگرم، تۆش ڕەخنەکە ڕاستەوخۆ باس دەکەیت. ئەوسا هەردووکمان دەبێت: کەمتر کێشە لە ئاوازدا و کەمتر هەڵە لە ڕێکاردا." },
+            { "language": "kmr", "text": "Erê. Ez agahiya temam a odeyê digirim ser xwe, û tu rexneyê rasterast dibêjî. Hingê her du tişt hene: kêmtir nakokî di dengê gotinê de û kêmtir xeletî di rêbazê de." },
+            { "language": "pl", "text": "Tak. Ja biorę na siebie pełne informacje o sali, a ty mówisz krytykę wprost. Wtedy mamy jedno i drugie: mniej tarcia w tonie i mniej błędów w procedurze." },
+            { "language": "ro", "text": "Da. Eu preiau informația completă despre sală, iar tu formulezi critica direct. Atunci le avem pe amândouă: mai puțină fricțiune în ton și mai puține greșeli în procedură." },
+            { "language": "sq", "text": "Po. Unë marr përsipër informacionin e plotë të dhomës, dhe ti e shpreh kritikën drejtpërdrejt. Atëherë i kemi të dyja: më pak fërkim në ton dhe më pak gabime në proces." }
+          ],
+          "function": "proportionate-close"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich höre den ironischen Unterton. Meinst du gerade vor allem: Das war ärgerlich, und ich soll die Reservierung nächstes Mal genauer prüfen?",
+              "translations": [
+                { "language": "en", "text": "I hear the ironic undertone. Do you mainly mean: that was annoying, and I should check the reservation more carefully next time?" },
+                { "language": "fa", "text": "لحن کنایه‌آمیز را می‌شنوم. منظورت الان بیشتر این است که این موضوع آزاردهنده بود و من دفعه بعد رزرو را دقیق‌تر بررسی کنم؟" },
+                { "language": "ar", "text": "أسمع النبرة الساخرة. هل تقصدين أساسًا أن الأمر كان مزعجًا وأن عليّ أن أتحقق من الحجز بدقة أكبر في المرة القادمة؟" },
+                { "language": "tr", "text": "İronik tonu duyuyorum. Şu anda asıl demek istediğin şu mu: bu can sıkıcıydı ve bir dahaki sefere rezervasyonu daha dikkatli kontrol etmeliyim?" },
+                { "language": "ru", "text": "Я слышу ироничный подтекст. Ты сейчас в основном имеешь в виду: это раздражало, и в следующий раз мне стоит точнее проверить бронирование?" },
+                { "language": "ckb", "text": "ژێرئاوازی کنایەدار دەبیستم. ئایا ئێستا بە تایبەتی مەبەستت ئەوەیە: ئەمە ناڕەحەتکەر بوو و من جارێکی تر دەبێت تەرخانکردنەکە وردتر بپشکنم؟" },
+                { "language": "kmr", "text": "Ez dengê îronîk dibihîzim. Ma tu niha herî zêde vê dibêjî: ev acizker bû û divê ez careke din rezervasyonê hûrgiltir kontrol bikim?" },
+                { "language": "pl", "text": "Słyszę ironiczny ton. Czy chodzi ci teraz głównie o to, że to było irytujące i następnym razem powinienem dokładniej sprawdzić rezerwację?" },
+                { "language": "ro", "text": "Aud subtonul ironic. Vrei să spui mai ales că a fost deranjant și că data viitoare ar trebui să verific rezervarea mai atent?" },
+                { "language": "sq", "text": "E dëgjoj nëntekstin ironik. A do të thuash kryesisht se kjo ishte bezdisëse dhe se herën tjetër duhet ta kontrolloj më saktë rezervimin?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort benennt den Ton, macht aber sofort eine sachliche Lesart auf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer names the tone, but immediately opens a factual reading." },
+                { "language": "fa", "text": "قوی است: پاسخ لحن را نام می‌برد، اما فوراً برداشت عملی و موضوعی را باز می‌کند." },
+                { "language": "ar", "text": "قوي: تسمي الإجابة النبرة، لكنها تفتح فورًا قراءة موضوعية." },
+                { "language": "tr", "text": "Güçlü: cevap tonu adlandırır, ama hemen somut bir okuma açar." },
+                { "language": "ru", "text": "Сильно: ответ называет тон, но сразу открывает фактическое прочтение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئاوازەکە ناودەبات، بەڵام دەستبەجێ خوێندنەوەیەکی بابەتی دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv dengê gotinê nav dike, lê tavilê şîrovekirineke rastîn vedike." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa ton, ale od razu otwiera rzeczowe odczytanie." },
+                { "language": "ro", "text": "Puternic: răspunsul numește tonul, dar deschide imediat o lectură factuală." },
+                { "language": "sq", "text": "E fortë: përgjigjja e emërton tonin, por hap menjëherë një lexim faktik." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wenn du ein Problem hast, kannst du es auch normal sagen.",
+              "translations": [
+                { "language": "en", "text": "If you have a problem, you can also say it normally." },
+                { "language": "fa", "text": "اگر مشکلی داری، می‌توانی عادی هم بگویی." },
+                { "language": "ar", "text": "إذا كانت لديك مشكلة، يمكنك أن تقولها بشكل عادي أيضًا." },
+                { "language": "tr", "text": "Bir sorunun varsa bunu normal şekilde de söyleyebilirsin." },
+                { "language": "ru", "text": "Если у тебя есть проблема, ты можешь сказать это нормально." },
+                { "language": "ckb", "text": "ئەگەر کێشەت هەیە، دەتوانیت بە شێوەی ئاسایییش بیڵێیت." },
+                { "language": "kmr", "text": "Heke pirsgirêka te heye, tu dikarî wê bi awayekî asayî jî bibêjî." },
+                { "language": "pl", "text": "Jeśli masz problem, możesz też powiedzieć to normalnie." },
+                { "language": "ro", "text": "Dacă ai o problemă, poți să o spui și normal." },
+                { "language": "sq", "text": "Nëse ke një problem, mund ta thuash edhe normalisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu konfrontativ: Die Antwort greift den Ton an, bevor die sachliche Kritik geklärt ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable but too confrontational: the answer attacks the tone before the factual criticism is clarified." },
+                { "language": "fa", "text": "قابل‌فهم است، اما بیش از حد تقابلی: پاسخ قبل از روشن شدن نقد واقعی، به لحن حمله می‌کند." },
+                { "language": "ar", "text": "مفهوم لكنه صدامي جدًا: تهاجم الإجابة النبرة قبل توضيح النقد الموضوعي." },
+                { "language": "tr", "text": "Anlaşılır ama fazla karşıt: cevap somut eleştiri netleşmeden tonu hedef alır." },
+                { "language": "ru", "text": "Понятно, но слишком конфронтационно: ответ атакует тон до прояснения фактической критики." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام زۆر ڕووبەڕووبوونەوەیە: وەڵامەکە پێش ڕوونبوونەوەی ڕەخنەی بابەتی، هێرش دەکاتە سەر ئاواز." },
+                { "language": "kmr", "text": "Têgihiştî ye lê pir rûbirû ye: bersiv berî ku rexneya rast zelal bibe, êrîşî dengê gotinê dike." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt konfrontacyjne: odpowiedź atakuje ton, zanim rzeczowa krytyka zostanie wyjaśniona." },
+                { "language": "ro", "text": "De înțeles, dar prea confruntațional: răspunsul atacă tonul înainte ca critica factuală să fie clarificată." },
+                { "language": "sq", "text": "E kuptueshme, por tepër konfrontuese: përgjigjja sulmon tonin para se të sqarohet kritika faktike." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Den Punkt nehme ich. Die falsche Tür geht auf meine Kappe. Ich würde nur gern vermeiden, dass wir das über Spott klären, weil ich dann erst einmal den Ton sortiere statt das Problem.",
+              "translations": [
+                { "language": "en", "text": "I take that point. The wrong door is on me. I would just like to avoid clarifying it through mockery, because then I first have to sort out the tone instead of the problem." },
+                { "language": "fa", "text": "این نکته را می‌پذیرم. اشتباه در اتاق با من بود. فقط دوست دارم این را از طریق تمسخر روشن نکنیم، چون آن وقت اول باید لحن را بفهمم، نه خود مشکل را." },
+                { "language": "ar", "text": "أقبل هذه النقطة. الباب الخطأ مسؤوليتي. أود فقط أن نتجنب توضيح الأمر عبر التهكم، لأنني حينها أضطر أولًا إلى فرز النبرة بدلًا من المشكلة." },
+                { "language": "tr", "text": "Bu noktayı kabul ediyorum. Yanlış kapı benim sorumluluğumda. Sadece bunu alay üzerinden çözmekten kaçınmak isterim, çünkü o zaman önce tonu ayıklıyorum, sorunu değil." },
+                { "language": "ru", "text": "Этот пункт я принимаю. Неверная дверь — моя ответственность. Я бы только хотел избежать прояснения через насмешку, потому что тогда я сначала разбираю тон, а не проблему." },
+                { "language": "ckb", "text": "ئەم خاڵە وەردەگرم. دەرگای هەڵە بەرپرسیاریی منە. تەنها دەمەوێت ڕوونکردنەوەی ئەمە لە ڕێگەی گاڵتەوە نەبێت، چونکە ئەوسا سەرەتا دەبێت ئاوازەکە ڕێک بخەم نەک کێشەکە." },
+                { "language": "kmr", "text": "Ez vê xalê qebûl dikim. Deriyê şaş berpirsiyariya min e. Ez tenê dixwazim em vê bi tinazê zelal nekin, ji ber ku hingê ez pêşî dengê gotinê rêk dixim, ne pirsgirêkê." },
+                { "language": "pl", "text": "Przyjmuję ten punkt. Niewłaściwe drzwi są po mojej stronie. Chciałbym tylko uniknąć wyjaśniania tego przez kpinę, bo wtedy najpierw porządkuję ton, a nie problem." },
+                { "language": "ro", "text": "Accept acest punct. Ușa greșită este responsabilitatea mea. Aș vrea doar să evităm clarificarea prin batjocură, pentru că atunci mai întâi trebuie să deslușesc tonul, nu problema." },
+                { "language": "sq", "text": "E pranoj këtë pikë. Dera e gabuar është përgjegjësia ime. Do të doja vetëm të shmangim sqarimin përmes talljes, sepse atëherë më duhet fillimisht të kuptoj tonin, jo problemin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort übernimmt den Fehler und setzt zugleich eine Grenze für den Ton.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer takes responsibility for the mistake and at the same time sets a boundary for the tone." },
+                { "language": "fa", "text": "درست است: پاسخ مسئولیت خطا را می‌پذیرد و همزمان برای لحن مرز می‌گذارد." },
+                { "language": "ar", "text": "صحيح: تتحمل الإجابة مسؤولية الخطأ وتضع في الوقت نفسه حدًا للنبرة." },
+                { "language": "tr", "text": "Doğru: cevap hatanın sorumluluğunu alır ve aynı anda ton için sınır koyar." },
+                { "language": "ru", "text": "Правильно: ответ берет ответственность за ошибку и одновременно устанавливает границу для тона." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە بەرپرسیاری هەڵەکە وەردەگرێت و هەمان کات سنوور بۆ ئاواز دادەنێت." },
+                { "language": "kmr", "text": "Rast e: bersiv berpirsiyariya xeletiyê digire û di heman demê de ji bo dengê gotinê sînor datîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź bierze odpowiedzialność za błąd i jednocześnie stawia granicę dla tonu." },
+                { "language": "ro", "text": "Corect: răspunsul își asumă greșeala și stabilește în același timp o limită pentru ton." },
+                { "language": "sq", "text": "Saktë: përgjigjja merr përgjegjësi për gabimin dhe njëkohësisht vendos kufi për tonin." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Okay, ich habe verstanden, dass du sauer bist.",
+              "translations": [
+                { "language": "en", "text": "Okay, I understand that you are angry." },
+                { "language": "fa", "text": "باشه، فهمیدم که عصبانی هستی." },
+                { "language": "ar", "text": "حسنًا، فهمت أنك غاضبة." },
+                { "language": "tr", "text": "Tamam, kızgın olduğunu anladım." },
+                { "language": "ru", "text": "Хорошо, я понял, что ты злишься." },
+                { "language": "ckb", "text": "باشە، تێگەیشتم کە تووڕەیت." },
+                { "language": "kmr", "text": "Baş e, min fam kir ku tu hêrs bûyî." },
+                { "language": "pl", "text": "Okej, rozumiem, że jesteś zła." },
+                { "language": "ro", "text": "Bine, am înțeles că ești supărată." },
+                { "language": "sq", "text": "Në rregull, e kuptova që je e zemëruar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wenig: Die Antwort benennt Emotion, aber übernimmt den sachlichen Fehler nicht und klärt den Ton nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too little: the answer names emotion, but does not take responsibility for the factual mistake or clarify the tone." },
+                { "language": "fa", "text": "ناکافی است: پاسخ احساس را نام می‌برد، اما مسئولیت خطای واقعی را نمی‌پذیرد و لحن را روشن نمی‌کند." },
+                { "language": "ar", "text": "غير كاف: تسمي الإجابة الشعور، لكنها لا تتحمل مسؤولية الخطأ الموضوعي ولا توضح النبرة." },
+                { "language": "tr", "text": "Yetersiz: cevap duyguyu adlandırır, ama somut hatanın sorumluluğunu almaz ve tonu netleştirmez." },
+                { "language": "ru", "text": "Недостаточно: ответ называет эмоцию, но не берет ответственность за фактическую ошибку и не проясняет тон." },
+                { "language": "ckb", "text": "کەمە: وەڵامەکە هەست ناودەبات، بەڵام بەرپرسیاری هەڵەی ڕاستەقینە وەرناگرێت و ئاواز ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Kêm e: bersiv hestê nav dike, lê berpirsiyariya xeletiya rast nagire û dengê gotinê zelal nake." },
+                { "language": "pl", "text": "Za mało: odpowiedź nazywa emocję, ale nie bierze odpowiedzialności za rzeczowy błąd ani nie wyjaśnia tonu." },
+                { "language": "ro", "text": "Prea puțin: răspunsul numește emoția, dar nu își asumă greșeala concretă și nu clarifică tonul." },
+                { "language": "sq", "text": "Shumë pak: përgjigjja përmend emocionin, por nuk merr përgjegjësi për gabimin konkret dhe nuk sqaron tonin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Danke. Inhaltlich ändere ich den Ablauf: Ich schicke künftig nicht nur die Adresse, sondern auch Raum, Etage und einen Screenshot der Bestätigung. Dann ist der sachliche Fehler abgedeckt.",
+              "translations": [
+                { "language": "en", "text": "Thank you. On the factual side, I will change the process: in the future I will send not only the address, but also the room, floor, and a screenshot of the confirmation. That covers the factual mistake." },
+                { "language": "fa", "text": "ممنون. از نظر عملی روند را تغییر می‌دهم: از این به بعد فقط آدرس را نمی‌فرستم، بلکه اتاق، طبقه و تصویر تأییدیه را هم می‌فرستم. این‌طور خطای واقعی پوشش داده می‌شود." },
+                { "language": "ar", "text": "شكرًا. من الناحية العملية سأغيّر الإجراء: في المستقبل لن أرسل العنوان فقط، بل أيضًا القاعة والطابق ولقطة شاشة من التأكيد. هكذا يُغطى الخطأ الموضوعي." },
+                { "language": "tr", "text": "Teşekkür ederim. İçerik olarak süreci değiştiriyorum: Bundan sonra sadece adresi değil, oda, kat ve onay ekran görüntüsünü de göndereceğim. Böylece somut hata kapsanmış olur." },
+                { "language": "ru", "text": "Спасибо. По сути я изменю порядок: в будущем я буду отправлять не только адрес, но и комнату, этаж и снимок подтверждения. Так фактическая ошибка будет закрыта." },
+                { "language": "ckb", "text": "سوپاس. لە ناوەڕۆکدا ڕێکارەکە دەگۆڕم: لە داهاتوودا تەنها ناونیشان نانێرم، بەڵکو ژوور، نهۆم و وێنەی پشتڕاستکردنەوەش دەنێرم. بەم شێوەیە هەڵەی ڕاستەقینە چارەسەر دەکرێت." },
+                { "language": "kmr", "text": "Spas. Ji aliyê naverokê ve ez rêbazê diguherînim: Paşerojê ne tenê navnîşanê, lê ode, qat û wêneyê piştrastkirinê jî dişînim. Bi vî awayî xeletiya rast tê girtin." },
+                { "language": "pl", "text": "Dziękuję. Merytorycznie zmienię procedurę: w przyszłości wyślę nie tylko adres, lecz także salę, piętro i zrzut ekranu potwierdzenia. Wtedy rzeczowy błąd będzie zabezpieczony." },
+                { "language": "ro", "text": "Mulțumesc. Pe fond, schimb procedura: pe viitor trimit nu doar adresa, ci și sala, etajul și o captură a confirmării. Astfel eroarea concretă este acoperită." },
+                { "language": "sq", "text": "Faleminderit. Në përmbajtje do ta ndryshoj procesin: në të ardhmen nuk do të dërgoj vetëm adresën, por edhe dhomën, katin dhe pamjen e konfirmimit. Kështu mbulohet gabimi konkret." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort zeigt eine konkrete Prozessänderung statt nur ein allgemeines Bedauern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer shows a concrete process change instead of only general regret." },
+                { "language": "fa", "text": "درست است: پاسخ به‌جای فقط ابراز تأسف کلی، تغییر مشخصی در روند نشان می‌دهد." },
+                { "language": "ar", "text": "صحيح: تُظهر الإجابة تغييرًا ملموسًا في الإجراء بدلًا من مجرد أسف عام." },
+                { "language": "tr", "text": "Doğru: cevap sadece genel pişmanlık yerine somut bir süreç değişikliği gösterir." },
+                { "language": "ru", "text": "Правильно: ответ показывает конкретное изменение процесса, а не только общее сожаление." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە گۆڕانکارییەکی دیاریکراوی ڕێکار نیشان دەدات، نە تەنها پەشیمانییەکی گشتی." },
+                { "language": "kmr", "text": "Rast e: bersiv guhertineke berbiçav a rêbazê nîşan dide, ne tenê xemgîniyeke giştî." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pokazuje konkretną zmianę procedury zamiast tylko ogólnego żalu." },
+                { "language": "ro", "text": "Corect: răspunsul arată o schimbare concretă de procedură, nu doar regret general." },
+                { "language": "sq", "text": "Saktë: përgjigjja tregon një ndryshim konkret në proces, jo vetëm keqardhje të përgjithshme." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich passe nächstes Mal besser auf.",
+              "translations": [
+                { "language": "en", "text": "I will pay more attention next time." },
+                { "language": "fa", "text": "دفعه بعد بیشتر دقت می‌کنم." },
+                { "language": "ar", "text": "سأنتبه أكثر في المرة القادمة." },
+                { "language": "tr", "text": "Bir dahaki sefere daha dikkatli olurum." },
+                { "language": "ru", "text": "В следующий раз я буду внимательнее." },
+                { "language": "ckb", "text": "جارێکی تر زیاتر وریا دەبم." },
+                { "language": "kmr", "text": "Careke din ez ê zêdetir baldar bim." },
+                { "language": "pl", "text": "Następnym razem będę bardziej uważać." },
+                { "language": "ro", "text": "Data viitoare voi fi mai atent." },
+                { "language": "sq", "text": "Herën tjetër do të jem më i kujdesshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort klingt kooperativ, zeigt aber keine überprüfbare Änderung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer sounds cooperative, but shows no verifiable change." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ همکاری‌آمیز به نظر می‌رسد، اما تغییر قابل بررسی نشان نمی‌دهد." },
+                { "language": "ar", "text": "عام جدًا: تبدو الإجابة تعاونية، لكنها لا تُظهر تغييرًا قابلًا للتحقق." },
+                { "language": "tr", "text": "Fazla genel: cevap işbirlikçi duyulur, ama denetlenebilir bir değişiklik göstermez." },
+                { "language": "ru", "text": "Слишком обще: ответ звучит кооперативно, но не показывает проверяемого изменения." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە هاوکاری دەردەکەوێت، بەڵام گۆڕانکارییەکی پشکنینکراو نیشان نادات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv hevkarî xuya dike, lê guhertineke kontrolbar nîşan nade." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź brzmi współpracująco, ale nie pokazuje sprawdzalnej zmiany." },
+                { "language": "ro", "text": "Prea general: răspunsul sună cooperant, dar nu arată o schimbare verificabilă." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja tingëllon bashkëpunuese, por nuk tregon ndryshim të verifikueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das verstehe ich. Wenn so etwas wieder passiert, sag mir bitte direkt: „Wir brauchen eine schnelle Klärung“, statt es ironisch zu verpacken. Dann kann ich sofort handeln und muss nicht erst deuten.",
+              "translations": [
+                { "language": "en", "text": "I understand that. If something like this happens again, please tell me directly: 'We need quick clarification,' instead of wrapping it in irony. Then I can act immediately and do not have to interpret first." },
+                { "language": "fa", "text": "این را می‌فهمم. اگر چنین چیزی دوباره پیش آمد، لطفاً مستقیم به من بگو: «به روشن‌سازی سریع نیاز داریم»، نه اینکه آن را در کنایه بپیچی. آن‌وقت می‌توانم فوراً عمل کنم و لازم نیست اول تفسیر کنم." },
+                { "language": "ar", "text": "أفهم ذلك. إذا حدث شيء كهذا مرة أخرى، فقولي لي مباشرة: «نحتاج إلى توضيح سريع»، بدلًا من تغليفه بالسخرية. عندها أستطيع التصرف فورًا ولا أحتاج إلى التأويل أولًا." },
+                { "language": "tr", "text": "Bunu anlıyorum. Böyle bir şey yine olursa lütfen doğrudan bana 'Hızlı bir netleştirmeye ihtiyacımız var' de, bunu ironiye sarmak yerine. O zaman hemen harekete geçebilirim ve önce yorumlamak zorunda kalmam." },
+                { "language": "ru", "text": "Я это понимаю. Если такое снова случится, пожалуйста, скажи мне прямо: «Нам нужно быстро прояснить ситуацию», вместо того чтобы заворачивать это в иронию. Тогда я смогу сразу действовать и мне не придется сначала толковать." },
+                { "language": "ckb", "text": "ئەمە تێدەگەم. ئەگەر شتی وا جارێکی تر ڕوویدا، تکایە ڕاستەوخۆ پێم بڵێ: «پێویستمان بە ڕوونکردنەوەی خێرا هەیە»، لەبری ئەوەی لە کنایەدا بیپێچیت. ئەوسا دەتوانم دەستبەجێ کار بکەم و پێویست ناکات سەرەتا لێکبدەمەوە." },
+                { "language": "kmr", "text": "Ez vê fam dikim. Heke tiştekî wisa dîsa çêbibe, ji kerema xwe rasterast ji min re bêje: 'Em hewceyê zelalkirineke lezgîn in', li şûna ku wê di îroniyê de bipêçî. Hingê ez dikarim tavilê tevbigirim û ne hewce ye pêşî şîrove bikim." },
+                { "language": "pl", "text": "Rozumiem to. Jeśli coś takiego znów się zdarzy, powiedz mi proszę wprost: „Potrzebujemy szybkiego wyjaśnienia”, zamiast pakować to w ironię. Wtedy mogę od razu działać i nie muszę najpierw interpretować." },
+                { "language": "ro", "text": "Înțeleg asta. Dacă se mai întâmplă ceva de acest fel, te rog spune-mi direct: „Avem nevoie de o clarificare rapidă”, în loc să o împachetezi în ironie. Atunci pot acționa imediat și nu trebuie mai întâi să interpretez." },
+                { "language": "sq", "text": "E kuptoj këtë. Nëse ndodh përsëri diçka e tillë, të lutem më thuaj drejtpërdrejt: “Na duhet një sqarim i shpejtë”, në vend që ta mbështjellësh me ironi. Atëherë mund të veproj menjëherë dhe nuk më duhet fillimisht të interpretoj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort macht eine klare Bitte für künftige Kritik, ohne den aktuellen Fehler wegzuschieben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the answer makes a clear request for future criticism without pushing away the current mistake." },
+                { "language": "fa", "text": "بسیار خوب: پاسخ برای نقدهای آینده درخواست روشنی مطرح می‌کند، بدون اینکه خطای فعلی را کنار بزند." },
+                { "language": "ar", "text": "جيد جدًا: تقدم الإجابة طلبًا واضحًا للنقد في المستقبل من دون إزاحة الخطأ الحالي." },
+                { "language": "tr", "text": "Çok iyi: cevap gelecekteki eleştiri için net bir rica yapar, mevcut hatayı kenara itmeden." },
+                { "language": "ru", "text": "Очень хорошо: ответ формулирует ясную просьбу для будущей критики, не отодвигая текущую ошибку." },
+                { "language": "ckb", "text": "زۆر باشە: وەڵامەکە بۆ ڕەخنەی داهاتوو داواکارییەکی ڕوون دەکات، بەبێ ئەوەی هەڵەی ئێستا لاببات." },
+                { "language": "kmr", "text": "Pir baş e: bersiv ji bo rexneya paşerojê daxwazeke zelal dike, bê ku xeletiya niha bide aliyekê." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź formułuje jasną prośbę dotyczącą przyszłej krytyki, nie odsuwając obecnego błędu." },
+                { "language": "ro", "text": "Foarte bine: răspunsul formulează o cerere clară pentru critica viitoare, fără să împingă deoparte greșeala actuală." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja bën një kërkesë të qartë për kritikën e ardhshme, pa e shmangur gabimin aktual." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Dann sag es nächstes Mal einfach freundlicher.",
+              "translations": [
+                { "language": "en", "text": "Then just say it more kindly next time." },
+                { "language": "fa", "text": "پس دفعه بعد فقط دوستانه‌تر بگو." },
+                { "language": "ar", "text": "إذن قوليها في المرة القادمة بلطف أكبر فقط." },
+                { "language": "tr", "text": "O zaman bir dahaki sefere sadece daha nazik söyle." },
+                { "language": "ru", "text": "Тогда в следующий раз просто скажи это дружелюбнее." },
+                { "language": "ckb", "text": "ئەوا جارێکی تر تەنها بە میهرەبانیتر بیڵێ." },
+                { "language": "kmr", "text": "Hingê careke din tenê bi dilovanîtir bibêje." },
+                { "language": "pl", "text": "W takim razie następnym razem po prostu powiedz to milej." },
+                { "language": "ro", "text": "Atunci data viitoare spune-o pur și simplu mai prietenos." },
+                { "language": "sq", "text": "Atëherë herën tjetër thuaje thjesht më miqësisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unpräzise: Die Antwort benennt Höflichkeit, aber keine handlungsfähige Alternative für Drucksituationen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer names politeness, but no actionable alternative for pressure situations." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: پاسخ ادب را نام می‌برد، اما جایگزین قابل اجرا برای موقعیت‌های فشار نمی‌دهد." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: تسمي الإجابة اللطف، لكنها لا تعطي بديلًا عمليًا في مواقف الضغط." },
+                { "language": "tr", "text": "Fazla belirsiz: cevap nezaketi adlandırır, ama baskı durumları için uygulanabilir alternatif vermez." },
+                { "language": "ru", "text": "Слишком неточно: ответ называет вежливость, но не дает действенной альтернативы для ситуаций давления." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە ڕێز ناودەبات، بەڵام جێگرەوەیەکی کرداریدار بۆ دۆخی فشار نادات." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv dilovanî nav dike, lê alternatîfeke bikêrhatî ji bo rewşên zextê nade." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: odpowiedź nazywa uprzejmość, ale nie daje wykonalnej alternatywy w sytuacjach presji." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul numește politețea, dar nu oferă o alternativă aplicabilă pentru situații de presiune." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja përmend mirësjelljen, por nuk jep alternativë të zbatueshme për situata presioni." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ja. Ich übernehme die vollständige Rauminfo, und du sprichst die Kritik direkt an. Dann haben wir beides: weniger Reibung im Ton und weniger Fehler im Ablauf.",
+              "translations": [
+                { "language": "en", "text": "Yes. I will take care of the complete room information, and you will address criticism directly. Then we have both: less friction in tone and fewer process mistakes." },
+                { "language": "fa", "text": "بله. من اطلاعات کامل اتاق را بر عهده می‌گیرم و تو نقد را مستقیم مطرح می‌کنی. آن‌وقت هر دو را داریم: اصطکاک کمتر در لحن و خطای کمتر در روند." },
+                { "language": "ar", "text": "نعم. سأتولى معلومات القاعة كاملة، وأنت تطرحين النقد مباشرة. عندها نحصل على الأمرين: احتكاك أقل في النبرة وأخطاء أقل في الإجراء." },
+                { "language": "tr", "text": "Evet. Tam oda bilgisini ben üstleniyorum, sen de eleştiriyi doğrudan dile getiriyorsun. Böylece ikisi de olur: tonda daha az sürtünme ve süreçte daha az hata." },
+                { "language": "ru", "text": "Да. Я беру на себя полную информацию о комнате, а ты говоришь критику прямо. Тогда у нас будет и то и другое: меньше трения в тоне и меньше ошибок в процессе." },
+                { "language": "ckb", "text": "بەڵێ. من زانیاری تەواوی ژوورەکە وەردەگرم، تۆش ڕەخنەکە ڕاستەوخۆ باس دەکەیت. ئەوسا هەردووکمان دەبێت: کەمتر کێشە لە ئاوازدا و کەمتر هەڵە لە ڕێکاردا." },
+                { "language": "kmr", "text": "Erê. Ez agahiya temam a odeyê digirim ser xwe, û tu rexneyê rasterast dibêjî. Hingê her du tişt hene: kêmtir nakokî di dengê gotinê de û kêmtir xeletî di rêbazê de." },
+                { "language": "pl", "text": "Tak. Ja biorę na siebie pełne informacje o sali, a ty mówisz krytykę wprost. Wtedy mamy jedno i drugie: mniej tarcia w tonie i mniej błędów w procedurze." },
+                { "language": "ro", "text": "Da. Eu preiau informația completă despre sală, iar tu formulezi critica direct. Atunci le avem pe amândouă: mai puțină fricțiune în ton și mai puține greșeli în procedură." },
+                { "language": "sq", "text": "Po. Unë marr përsipër informacionin e plotë të dhomës, dhe ti e shpreh kritikën drejtpërdrejt. Atëherë i kemi të dyja: më pak fërkim në ton dhe më pak gabime në proces." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss verteilt Verantwortung fair und schließt mit zwei überprüfbaren Änderungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the closing distributes responsibility fairly and ends with two verifiable changes." },
+                { "language": "fa", "text": "قوی است: پایان‌بندی مسئولیت را منصفانه تقسیم می‌کند و با دو تغییر قابل بررسی تمام می‌شود." },
+                { "language": "ar", "text": "قوي: توزع الخاتمة المسؤولية بعدل وتنتهي بتغييرين قابلين للتحقق." },
+                { "language": "tr", "text": "Güçlü: kapanış sorumluluğu adil dağıtır ve iki denetlenebilir değişiklikle biter." },
+                { "language": "ru", "text": "Сильно: завершение справедливо распределяет ответственность и заканчивается двумя проверяемыми изменениями." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە بەرپرسیاری بە دادپەروەرانە دابەش دەکات و بە دوو گۆڕانکاریی پشکنینکراو کۆتایی دێت." },
+                { "language": "kmr", "text": "Xurt e: dawî berpirsiyarî bi dadmendî dabeş dike û bi du guhertinên kontrolbar diqede." },
+                { "language": "pl", "text": "Mocne: zakończenie sprawiedliwie rozdziela odpowiedzialność i kończy się dwiema sprawdzalnymi zmianami." },
+                { "language": "ro", "text": "Puternic: încheierea distribuie responsabilitatea echitabil și se termină cu două schimbări verificabile." },
+                { "language": "sq", "text": "E fortë: mbyllja e ndan përgjegjësinë drejt dhe përfundon me dy ndryshime të verifikueshme." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Gut, dann machen wir es nächstes Mal einfach besser.",
+              "translations": [
+                { "language": "en", "text": "Good, then we will simply do it better next time." },
+                { "language": "fa", "text": "خوب، پس دفعه بعد فقط بهتر انجامش می‌دهیم." },
+                { "language": "ar", "text": "حسنًا، إذن سنفعل ذلك بشكل أفضل في المرة القادمة." },
+                { "language": "tr", "text": "Tamam, o zaman bir dahaki sefere sadece daha iyi yaparız." },
+                { "language": "ru", "text": "Хорошо, тогда в следующий раз просто сделаем лучше." },
+                { "language": "ckb", "text": "باشە، ئەوا جارێکی تر تەنها باشتر دەیکەین." },
+                { "language": "kmr", "text": "Baş e, hingê careke din em wê tenê baştir dikin." },
+                { "language": "pl", "text": "Dobrze, następnym razem po prostu zrobimy to lepiej." },
+                { "language": "ro", "text": "Bine, atunci data viitoare pur și simplu o facem mai bine." },
+                { "language": "sq", "text": "Mirë, atëherë herën tjetër thjesht do ta bëjmë më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Antwort klingt versöhnlich, hält aber weder den Ton noch den Ablauf verbindlich fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad: the answer sounds conciliatory, but records neither the tone nor the process bindingly." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ آشتی‌جویانه به نظر می‌رسد، اما نه لحن را و نه روند را الزام‌آور ثبت می‌کند." },
+                { "language": "ar", "text": "عام جدًا: تبدو الإجابة تصالحية، لكنها لا تثبت النبرة ولا الإجراء بشكل ملزم." },
+                { "language": "tr", "text": "Fazla genel: cevap uzlaştırıcı duyulur, ama ne tonu ne süreci bağlayıcı biçimde belirler." },
+                { "language": "ru", "text": "Слишком обще: ответ звучит примирительно, но не фиксирует ни тон, ни процесс как обязательные." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە ئاشتیخواز دەردەکەوێت، بەڵام نە ئاواز و نە ڕێکار بە پابەندی تۆمار دەکات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv aştkirinê xuya dike, lê ne dengê gotinê ne jî rêbazê bi girêdayî tomar dike." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź brzmi pojednawczo, ale nie ustala wiążąco ani tonu, ani procedury." },
+                { "language": "ro", "text": "Prea general: răspunsul sună împăciuitor, dar nu fixează obligatoriu nici tonul, nici procedura." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja tingëllon pajtuese, por nuk e fikson detyrueshëm as tonin, as procesin." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "clarify-irony",
+          "text": "Bei Ironie hilft eine leichte Rückfrage: Sie benennt den Unterton, ohne ihn sofort als Angriff zu behandeln.",
+          "translations": [
+            { "language": "en", "text": "With irony, a light follow-up question helps: it names the undertone without immediately treating it as an attack." },
+            { "language": "fa", "text": "در برخورد با کنایه، یک پرسش سبک کمک می‌کند: زیرلحن را نام می‌برد، بدون اینکه فوراً آن را حمله تلقی کند." },
+            { "language": "ar", "text": "في السخرية يساعد سؤال خفيف: فهو يسمي النبرة الضمنية من دون التعامل معها فورًا كهجوم." },
+            { "language": "tr", "text": "İronide hafif bir soru yardımcı olur: alt tonu adlandırır, ama onu hemen saldırı olarak ele almaz." },
+            { "language": "ru", "text": "При иронии помогает легкий уточняющий вопрос: он называет подтекст, не рассматривая его сразу как нападение." },
+            { "language": "ckb", "text": "لە کنایەدا پرسیارێکی سووک یارمەتیدەرە: ژێرئاوازەکە ناودەبات، بەبێ ئەوەی دەستبەجێ وەک هێرش مامەڵەی لەگەڵ بکات." },
+            { "language": "kmr", "text": "Di îroniyê de pirseke sivik alîkar e: ew dengê veşartî nav dike, bê ku tavilê wek êrîş bibîne." },
+            { "language": "pl", "text": "Przy ironii pomaga lekkie pytanie: nazywa podton, nie traktując go od razu jak ataku." },
+            { "language": "ro", "text": "În cazul ironiei ajută o întrebare ușoară: numește subtonul fără să îl trateze imediat ca atac." },
+            { "language": "sq", "text": "Me ironinë ndihmon një pyetje e lehtë: e emërton nëntekstin pa e trajtuar menjëherë si sulm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "accept-and-bound-tone",
+          "text": "C2-stark ist die Doppelbewegung: sachliche Verantwortung übernehmen und gleichzeitig die Gesprächsform begrenzen.",
+          "translations": [
+            { "language": "en", "text": "The C2 strength is the double move: take factual responsibility and at the same time set limits on the conversation form." },
+            { "language": "fa", "text": "نقطه قوت C2 حرکت دوگانه است: مسئولیت موضوعی را پذیرفتن و همزمان شکل گفت‌وگو را محدود کردن." },
+            { "language": "ar", "text": "القوة في C2 هي الحركة المزدوجة: تحمل المسؤولية الموضوعية وفي الوقت نفسه وضع حد لشكل الحوار." },
+            { "language": "tr", "text": "C2 gücü çift harekettedir: somut sorumluluğu almak ve aynı anda konuşma biçimine sınır koymak." },
+            { "language": "ru", "text": "Сила C2 в двойном движении: взять фактическую ответственность и одновременно ограничить форму разговора." },
+            { "language": "ckb", "text": "بەهێزی C2 لە جووڵەی دووانەدایە: بەرپرسیاریی بابەتی وەرگرتن و هەمان کات سنووردانانی شێوەی گفتوگۆ." },
+            { "language": "kmr", "text": "Hêza C2 di tevgera dualî de ye: berpirsiyariya rast girtin û di heman demê de forma axaftinê sînorkirin." },
+            { "language": "pl", "text": "Siła C2 tkwi w podwójnym ruchu: wziąć rzeczową odpowiedzialność i jednocześnie ograniczyć formę rozmowy." },
+            { "language": "ro", "text": "Forța C2 stă în mișcarea dublă: asumarea responsabilității concrete și limitarea simultană a formei conversației." },
+            { "language": "sq", "text": "Forca e C2 është te lëvizja e dyfishtë: marrja e përgjegjësisë faktike dhe njëkohësisht kufizimi i formës së bisedës." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "process-fix",
+          "text": "Eine glaubwürdige Reaktion auf Kritik enthält eine überprüfbare Änderung, nicht nur eine Entschuldigung.",
+          "translations": [
+            { "language": "en", "text": "A credible response to criticism includes a verifiable change, not just an apology." },
+            { "language": "fa", "text": "واکنش باورپذیر به نقد شامل تغییر قابل بررسی است، نه فقط عذرخواهی." },
+            { "language": "ar", "text": "تتضمن الاستجابة الموثوقة للنقد تغييرًا قابلًا للتحقق، لا مجرد اعتذار." },
+            { "language": "tr", "text": "Eleştiriye güvenilir bir tepki, yalnızca özür değil, denetlenebilir bir değişiklik içerir." },
+            { "language": "ru", "text": "Убедительная реакция на критику включает проверяемое изменение, а не только извинение." },
+            { "language": "ckb", "text": "کاردانەوەی باوەڕپێکراو بۆ ڕەخنە گۆڕانکاریی پشکنینکراو لەخۆ دەگرێت، نە تەنها داوای لێبوردن." },
+            { "language": "kmr", "text": "Bersiveke bawerbar ji rexneyê re guhertineke kontrolbar dihewîne, ne tenê lêborîn." },
+            { "language": "pl", "text": "Wiarygodna reakcja na krytykę zawiera sprawdzalną zmianę, a nie tylko przeprosiny." },
+            { "language": "ro", "text": "O reacție credibilă la critică include o schimbare verificabilă, nu doar scuze." },
+            { "language": "sq", "text": "Një reagim i besueshëm ndaj kritikës përfshin ndryshim të verifikueshëm, jo vetëm ndjesë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "proportionate-close",
+          "text": "Der Abschluss ist proportional: Er löst den Sachfehler und die Tonfrage, ohne aus der Bemerkung einen Grundsatzkonflikt zu machen.",
+          "translations": [
+            { "language": "en", "text": "The closing is proportionate: it resolves the factual mistake and the tone issue without turning the remark into a fundamental conflict." },
+            { "language": "fa", "text": "پایان‌بندی متناسب است: هم خطای موضوعی را حل می‌کند و هم مسئله لحن را، بدون اینکه جمله را به اختلافی اصولی تبدیل کند." },
+            { "language": "ar", "text": "الخاتمة متناسبة: تحل الخطأ الموضوعي ومسألة النبرة من دون تحويل التعليق إلى خلاف مبدئي." },
+            { "language": "tr", "text": "Kapanış orantılıdır: somut hatayı ve ton meselesini çözer, sözü temel bir çatışmaya dönüştürmez." },
+            { "language": "ru", "text": "Завершение соразмерно: оно решает фактическую ошибку и вопрос тона, не превращая замечание в принципиальный конфликт." },
+            { "language": "ckb", "text": "کۆتاییەکە هاوتایە: هەڵەی بابەتی و پرسی ئاواز چارەسەر دەکات، بەبێ ئەوەی تێبینییەکە بکاتە ناکۆکییەکی بنەڕەتی." },
+            { "language": "kmr", "text": "Dawî li gorî rewşê ye: xeletiya rast û pirsa dengê gotinê çareser dike, bê ku gotinê bike nakokiyeke bingehîn." },
+            { "language": "pl", "text": "Zakończenie jest proporcjonalne: rozwiązuje błąd rzeczowy i kwestię tonu, nie zamieniając uwagi w konflikt zasadniczy." },
+            { "language": "ro", "text": "Încheierea este proporțională: rezolvă greșeala concretă și problema tonului fără a transforma remarca într-un conflict de principiu." },
+            { "language": "sq", "text": "Mbyllja është proporcionale: zgjidh gabimin faktik dhe çështjen e tonit pa e kthyer vërejtjen në konflikt parimor." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "ironic-remark-project-table",
+          "placement": "detail-header",
+          "purpose": "Show a calm project conversation after a small logistical mistake.",
+          "altText": "Zwei Personen sitzen an einem Projekttisch mit Notizen und klären eine missverständliche Bemerkung ruhig.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two people sit at a project table with notes and calmly clarify a misunderstood remark." },
+            { "language": "fa", "text": "دو نفر پشت میز پروژه با یادداشت‌ها نشسته‌اند و یک جمله سوءبرداشت‌شده را آرام روشن می‌کنند." },
+            { "language": "ar", "text": "يجلس شخصان إلى طاولة مشروع مع ملاحظات ويوضحان بهدوء تعليقًا أسيء فهمه." },
+            { "language": "tr", "text": "İki kişi notlarla dolu bir proje masasında oturup yanlış anlaşılmış bir sözü sakin biçimde açıklığa kavuşturuyor." },
+            { "language": "ru", "text": "Два человека сидят за проектным столом с заметками и спокойно проясняют неправильно понятое замечание." },
+            { "language": "ckb", "text": "دوو کەس لەسەر مێزی پڕۆژەیەک لەگەڵ تێبینییەکان دانیشتوون و بە ئارامی قسەیەکی بە هەڵە تێگەیشتراو ڕوون دەکەنەوە." },
+            { "language": "kmr", "text": "Du kes li ser maseya projeyê bi notan rûniştine û gotineke şaş têgihiştî bi aramî zelal dikin." },
+            { "language": "pl", "text": "Dwie osoby siedzą przy stole projektowym z notatkami i spokojnie wyjaśniają źle zrozumianą uwagę." },
+            { "language": "ro", "text": "Două persoane stau la o masă de proiect cu notițe și clarifică liniștit o remarcă înțeleasă greșit." },
+            { "language": "sq", "text": "Dy persona ulen në një tryezë projekti me shënime dhe sqarojnë qetësisht një vërejtje të keqkuptuar." }
+          ],
+          "imagePrompt": "Clean educational illustration of two people at a project table with notes, calmly clarifying a misunderstood ironic remark after a small room-reservation mistake, neutral indoor setting, no logos, no readable text, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

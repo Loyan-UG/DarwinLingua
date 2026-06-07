@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-18-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 18 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 18",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-fristverlaengerung-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Eine Fristverlängerung begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Justifying a deadline extension" },
+        { "language": "fa", "text": "توضیح دلیل برای تمدید مهلت" },
+        { "language": "ar", "text": "تبرير تمديد المهلة" },
+        { "language": "tr", "text": "Süre uzatımını gerekçelendirmek" },
+        { "language": "ru", "text": "Обосновать продление срока" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی هۆکاری درێژکردنەوەی مۆڵەت" },
+        { "language": "kmr", "text": "Sedema dirêjkirina demê ravekirin" },
+        { "language": "pl", "text": "Uzasadnienie przedłużenia terminu" },
+        { "language": "ro", "text": "Justificarea prelungirii unui termen" },
+        { "language": "sq", "text": "Arsyetimi i zgjatjes së afatit" }
+      ],
+      "description": "Du rufst bei einer Behörde an, weil eine angeforderte Bescheinigung nicht rechtzeitig ausgestellt werden kann. Du sollst die Verzögerung sachlich erklären, bereits vorhandene Unterlagen anbieten und um eine konkrete Fristverlängerung bitten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call an authority because a requested certificate cannot be issued in time. You should explain the delay factually, offer documents that are already available, and ask for a specific deadline extension." },
+        { "language": "fa", "text": "با یک اداره تماس می‌گیری، چون یک گواهی درخواست‌شده به‌موقع صادر نمی‌شود. باید تأخیر را واقع‌محور توضیح بدهی، مدارک موجود را پیشنهاد کنی و برای تمدید مشخص مهلت درخواست بدهی." },
+        { "language": "ar", "text": "تتصل بجهة إدارية لأن شهادة مطلوبة لا يمكن إصدارها في الوقت المناسب. ينبغي أن تشرح التأخير بشكل موضوعي، وتعرض المستندات المتوفرة، وتطلب تمديداً محدداً للمهلة." },
+        { "language": "tr", "text": "İstenen bir belge zamanında düzenlenemediği için bir kurumla telefonda görüşüyorsun. Gecikmeyi somut biçimde açıklamalı, hazır olan belgeleri sunmalı ve belirli bir süre uzatımı istemelisin." },
+        { "language": "ru", "text": "Вы звоните в ведомство, потому что запрошенную справку не могут выдать вовремя. Нужно объективно объяснить задержку, предложить уже имеющиеся документы и попросить конкретное продление срока." },
+        { "language": "ckb", "text": "پەیوەندی بە فەرمانگەیەک دەکەیت، چونکە بڕوانامەیەکی داواکراو لە کاتی خۆیدا دەرناچێت. دەبێت دواخستنەکە بە شێوەی ڕاستەقینە ڕوون بکەیتەوە، بەڵگەنامەی بەردەست پێشنیار بکەیت و داوای درێژکردنەوەی مۆڵەتێکی دیاریکراو بکەیت." },
+        { "language": "kmr", "text": "Tu ji ber ku belgeyek xwestî di wextê xwe de nayê dayîn, bi dezgeheke îdarî re telefon dikî. Divê derengmayînê bi awayekî rastîn rave bikî, belgeyên heyî pêşkêş bikî û dirêjkirina demeke konkret bixwazî." },
+        { "language": "pl", "text": "Dzwonisz do urzędu, ponieważ wymagane zaświadczenie nie może zostać wystawione na czas. Masz rzeczowo wyjaśnić opóźnienie, zaoferować już dostępne dokumenty i poprosić o konkretną prolongatę terminu." },
+        { "language": "ro", "text": "Suni la o autoritate deoarece o adeverință solicitată nu poate fi emisă la timp. Trebuie să explici obiectiv întârzierea, să oferi documentele deja disponibile și să ceri o prelungire concretă a termenului." },
+        { "language": "sq", "text": "Telefonon një institucion, sepse një vërtetim i kërkuar nuk mund të lëshohet në kohë. Duhet ta shpjegosh vonesën në mënyrë konkrete, të ofrosh dokumentet që i ke tashmë dhe të kërkosh një zgjatje të qartë të afatit." }
+      ],
+      "learnerGoal": "Begründe eine Fristverlängerung: Nenne Aktenzeichen, fehlende Unterlage, Ursache der Verzögerung, vorhandene Nachweise, vorgeschlagenes neues Datum und eine klare Bitte um schriftliche Bestätigung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Justify a deadline extension: state the reference number, missing document, cause of the delay, available evidence, proposed new date, and a clear request for written confirmation." },
+        { "language": "fa", "text": "تمدید مهلت را توجیه کن: شماره پرونده، مدرک ناقص، علت تأخیر، مدارک موجود، تاریخ جدید پیشنهادی و درخواست روشن برای تأیید کتبی را بگو." },
+        { "language": "ar", "text": "برر تمديد المهلة: اذكر رقم الملف والمستند الناقص وسبب التأخير والأدلة المتوفرة والتاريخ الجديد المقترح وطلباً واضحاً لتأكيد خطي." },
+        { "language": "tr", "text": "Süre uzatımını gerekçelendir: dosya numarasını, eksik belgeyi, gecikme nedenini, mevcut kanıtları, önerilen yeni tarihi ve yazılı onay için açık talebi belirt." },
+        { "language": "ru", "text": "Обоснуйте продление срока: назовите номер дела, недостающий документ, причину задержки, имеющиеся подтверждения, предложенную новую дату и чёткую просьбу о письменном подтверждении." },
+        { "language": "ckb", "text": "درێژکردنەوەی مۆڵەت ڕوون بکەوە: ژمارەی کەیس، بەڵگەنامەی کەم، هۆکاری دواخستن، بەڵگەی بەردەست، ڕێکەوتی نوێی پێشنیارکراو و داواکارییەکی ڕوون بۆ پشتڕاستکردنەوەی نووسراو ناو ببرە." },
+        { "language": "kmr", "text": "Dirêjkirina demê bi sedem rave bike: hejmarê dosyeyê, belgeya kêm, sedema derengmayînê, belgeyên heyî, roja nû ya pêşniyarkirî û daxwazeke zelal ji bo pejirandina nivîskî bibêje." },
+        { "language": "pl", "text": "Uzasadnij przedłużenie terminu: podaj numer sprawy, brakujący dokument, przyczynę opóźnienia, dostępne dowody, proponowaną nową datę i jasną prośbę o pisemne potwierdzenie." },
+        { "language": "ro", "text": "Justifică prelungirea termenului: menționează numărul dosarului, documentul lipsă, cauza întârzierii, dovezile disponibile, noua dată propusă și o cerere clară de confirmare scrisă." },
+        { "language": "sq", "text": "Arsyeto zgjatjen e afatit: përmend numrin e dosjes, dokumentin që mungon, shkakun e vonesës, provat që ke, datën e re të propozuar dhe një kërkesë të qartë për konfirmim me shkrim." }
+      ],
+      "cefrLevel": "B2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3180,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin der Behörde",
+          "translations": [
+            { "language": "en", "text": "Authority staff member" },
+            { "language": "fa", "text": "کارمند اداره" },
+            { "language": "ar", "text": "موظفة الجهة الإدارية" },
+            { "language": "tr", "text": "Kurum görevlisi" },
+            { "language": "ru", "text": "Сотрудница ведомства" },
+            { "language": "ckb", "text": "کارمەندی فەرمانگە" },
+            { "language": "kmr", "text": "Karmenda dezgehê" },
+            { "language": "pl", "text": "Pracownica urzędu" },
+            { "language": "ro", "text": "Funcționara autorității" },
+            { "language": "sq", "text": "Punonjësja e institucionit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "متقاضی" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag, Behörde für Leistungsangelegenheiten, Sie sprechen mit Schneider. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, benefits authority, Schneider speaking. What can I do for you?" },
+            { "language": "fa", "text": "روز بخیر، اداره امور کمک‌هزینه‌ها، اشنایدر صحبت می‌کند. چه کمکی از دستم برمی‌آید؟" },
+            { "language": "ar", "text": "نهارك سعيد، جهة شؤون الإعانات، معك شنايدر. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler, sosyal yardım işleri kurumu, Schneider ben. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день, ведомство по вопросам пособий, говорит Шнайдер. Чем могу помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، فەرمانگەی کاروباری یارمەتی، شنایدەر لەگەڵتاندایە. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Roj baş, dezgeha karên alîkariyê, ez Schneider im. Ez dikarim çawa alîkariya we bikim?" },
+            { "language": "pl", "text": "Dzień dobry, urząd do spraw świadczeń, mówi Schneider. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, autoritatea pentru chestiuni de prestații, Schneider la telefon. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, institucioni për çështjet e ndihmave, flet Schneider. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "open-phone-call"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag, mein Name ist Rahimi. Ich rufe wegen meines Antrags mit dem Aktenzeichen L-4827 an. In Ihrem Schreiben steht, dass ich bis Freitag eine Arbeitgeberbescheinigung nachreichen soll. Diese Bescheinigung kann mein Arbeitgeber aber erst nächste Woche Mittwoch ausstellen. Deshalb möchte ich um eine kurze Fristverlängerung bitten.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, my name is Rahimi. I am calling about my application with reference number L-4827. Your letter says that I should submit an employer certificate by Friday. My employer can only issue this certificate next Wednesday, so I would like to ask for a short deadline extension." },
+            { "language": "fa", "text": "روز بخیر، نام من رحیمی است. درباره درخواست خودم با شماره پرونده L-4827 تماس می‌گیرم. در نامه شما نوشته شده که باید تا جمعه یک گواهی کارفرما ارائه کنم. اما کارفرمای من این گواهی را فقط چهارشنبه هفته آینده می‌تواند صادر کند. برای همین می‌خواهم درخواست تمدید کوتاه مهلت بدهم." },
+            { "language": "ar", "text": "نهارك سعيد، اسمي رحيمي. أتصل بخصوص طلبي برقم الملف L-4827. في خطابكم ذُكر أن عليّ تقديم شهادة من صاحب العمل حتى يوم الجمعة. لكن صاحب العمل لا يستطيع إصدار هذه الشهادة إلا يوم الأربعاء القادم. لذلك أود طلب تمديد قصير للمهلة." },
+            { "language": "tr", "text": "İyi günler, adım Rahimi. L-4827 dosya numaralı başvurum için arıyorum. Yazınızda Cuma gününe kadar işveren belgesi sunmam gerektiği yazıyor. Ancak işverenim bu belgeyi ancak gelecek hafta Çarşamba düzenleyebiliyor. Bu nedenle kısa bir süre uzatımı rica etmek istiyorum." },
+            { "language": "ru", "text": "Добрый день, меня зовут Рахими. Я звоню по поводу моего заявления с номером дела L-4827. В вашем письме указано, что до пятницы я должен предоставить справку от работодателя. Но мой работодатель сможет выдать эту справку только в следующую среду. Поэтому я хотел бы попросить о коротком продлении срока." },
+            { "language": "ckb", "text": "ڕۆژ باش، ناوم ڕەحیمییە. پەیوەندی دەکەم سەبارەت بە داواکارییەکەم بە ژمارەی کەیسی L-4827. لە نامەکەتاندا نووسراوە کە دەبێت تا هەینی بڕوانامەی کارفرما پێشکەش بکەم. بەڵام کارفرماکەم تەنها چوارشەممەی هەفتەی داهاتوو دەتوانێت ئەم بڕوانامەیە دەر بکات. بۆیە دەمەوێت داوای درێژکردنەوەیەکی کورتی مۆڵەت بکەم." },
+            { "language": "kmr", "text": "Roj baş, navê min Rahimi ye. Ez ji bo daxwaza xwe ya bi hejmarê dosyeyê L-4827 telefon dikim. Di nameya we de hatiye nivîsandin ku divê ez heta Înê belgeya kardêrê xwe radest bikim. Lê kardêrê min dikare vê belgeyê tenê Çarşema hefteya bê bide. Ji ber vê yekê ez dixwazim dirêjkirineke kurt a demê bixwazim." },
+            { "language": "pl", "text": "Dzień dobry, nazywam się Rahimi. Dzwonię w sprawie mojego wniosku o numerze L-4827. W Państwa piśmie jest napisane, że do piątku mam dostarczyć zaświadczenie od pracodawcy. Mój pracodawca może jednak wystawić to zaświadczenie dopiero w przyszłą środę. Dlatego chciałbym poprosić o krótkie przedłużenie terminu." },
+            { "language": "ro", "text": "Bună ziua, mă numesc Rahimi. Sun în legătură cu cererea mea, cu numărul de dosar L-4827. În scrisoarea dumneavoastră scrie că trebuie să depun până vineri o adeverință de la angajator. Însă angajatorul meu poate emite această adeverință abia miercurea viitoare. De aceea aș dori să cer o scurtă prelungire a termenului." },
+            { "language": "sq", "text": "Mirëdita, quhem Rahimi. Po telefonoj për aplikimin tim me numrin e dosjes L-4827. Në letrën tuaj shkruhet se duhet të dorëzoj deri të premten një vërtetim nga punëdhënësi. Por punëdhënësi im mund ta lëshojë këtë vërtetim vetëm të mërkurën e ardhshme. Prandaj dua të kërkoj një zgjatje të shkurtër të afatit." }
+          ],
+          "function": "state-extension-request",
+          "expectedLearnerAction": "Nenne Aktenzeichen, fehlende Unterlage, aktuelle Frist und den Grund für die Bitte."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Ich sehe den Vorgang. Die Frist läuft tatsächlich am Freitag ab. Können Sie genauer erklären, warum die Bescheinigung nicht früher kommt?",
+          "translations": [
+            { "language": "en", "text": "I can see the case. The deadline does indeed expire on Friday. Could you explain more precisely why the certificate will not arrive earlier?" },
+            { "language": "fa", "text": "پرونده را می‌بینم. مهلت واقعاً روز جمعه تمام می‌شود. می‌توانید دقیق‌تر توضیح بدهید چرا گواهی زودتر نمی‌رسد؟" },
+            { "language": "ar", "text": "أرى الملف. المهلة تنتهي فعلاً يوم الجمعة. هل يمكنك أن تشرح بدقة أكبر لماذا لن تصل الشهادة قبل ذلك؟" },
+            { "language": "tr", "text": "İşlemi görüyorum. Süre gerçekten Cuma günü doluyor. Belgenin neden daha erken gelmeyeceğini daha ayrıntılı açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Я вижу дело. Срок действительно истекает в пятницу. Можете точнее объяснить, почему справка не поступит раньше?" },
+            { "language": "ckb", "text": "کەیسەکە دەبینم. مۆڵەتەکە بەڕاستی هەینی کۆتایی دێت. دەتوانن بە وردیتر ڕوون بکەنەوە بۆچی بڕوانامەکە زووتر ناگات؟" },
+            { "language": "kmr", "text": "Ez dosyeyê dibînim. Dem bi rastî roja Înê diqede. Hûn dikarin hûrgulîtir rave bikin çima belge zûtir nayê?" },
+            { "language": "pl", "text": "Widzę sprawę. Termin rzeczywiście upływa w piątek. Czy może Pan dokładniej wyjaśnić, dlaczego zaświadczenie nie będzie wcześniej?" },
+            { "language": "ro", "text": "Văd dosarul. Termenul expiră într-adevăr vineri. Puteți explica mai exact de ce adeverința nu ajunge mai devreme?" },
+            { "language": "sq", "text": "E shoh çështjen. Afati vërtet përfundon të premten. A mund të shpjegoni më saktë pse vërtetimi nuk vjen më herët?" }
+          ],
+          "function": "ask-delay-reason"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die Personalabteilung stellt solche Bescheinigungen nur zweimal pro Woche aus. Ich habe die Anfrage bereits gestern schriftlich gestellt, aber mir wurde als frühester Termin der kommende Mittwoch genannt. Als Nachweis kann ich Ihnen die Eingangsbestätigung meiner Anfrage und die Antwort der Personalabteilung zusenden.",
+          "translations": [
+            { "language": "en", "text": "The HR department issues such certificates only twice a week. I already made the request in writing yesterday, but I was given next Wednesday as the earliest date. As proof, I can send you the confirmation that my request was received and the HR department's reply." },
+            { "language": "fa", "text": "بخش منابع انسانی چنین گواهی‌هایی را فقط دو بار در هفته صادر می‌کند. من دیروز درخواست را به‌صورت کتبی فرستادم، اما زودترین زمان ممکن را چهارشنبه آینده اعلام کردند. به‌عنوان مدرک می‌توانم تأیید دریافت درخواست و پاسخ بخش منابع انسانی را برای شما ارسال کنم." },
+            { "language": "ar", "text": "قسم الموارد البشرية يصدر مثل هذه الشهادات مرتين فقط في الأسبوع. لقد قدمت الطلب خطياً أمس، لكن أُبلغت بأن أقرب موعد هو الأربعاء القادم. كدليل أستطيع أن أرسل لكم تأكيد استلام طلبي ورد قسم الموارد البشرية." },
+            { "language": "tr", "text": "İnsan kaynakları bölümü bu tür belgeleri haftada yalnızca iki kez düzenliyor. Talebi dün yazılı olarak ilettim, ancak bana en erken tarih olarak gelecek Çarşamba söylendi. Kanıt olarak talebimin alındığına dair onayı ve insan kaynakları bölümünün cevabını gönderebilirim." },
+            { "language": "ru", "text": "Отдел кадров выдаёт такие справки только два раза в неделю. Я уже вчера направил запрос письменно, но мне назвали ближайшей датой следующую среду. В качестве подтверждения я могу отправить вам подтверждение получения моего запроса и ответ отдела кадров." },
+            { "language": "ckb", "text": "بەشی کارگێڕی کارمەندان ئەم جۆرە بڕوانامانە تەنها دوو جار لە هەفتەیەکدا دەر دەکات. من دوێنێ داواکارییەکەم بە نووسراوی نارد، بەڵام وەک زووترين کات چوارشەممەی داهاتوویان پێم گوت. وەک بەڵگە دەتوانم پشتڕاستکردنەوەی گەیشتنی داواکارییەکەم و وەڵامی بەشی کارمەندان بۆتان بنێرم." },
+            { "language": "kmr", "text": "Beşa karmendan belgeyên wisa tenê du caran di hefteyê de dide. Min daxwazê duh bi nivîskî şand, lê wekî demê herî zû Çarşema bê hat gotin. Wekî delîl ez dikarim pejirandina gihîştina daxwaza xwe û bersiva beşa karmendan ji we re bişînim." },
+            { "language": "pl", "text": "Dział kadr wystawia takie zaświadczenia tylko dwa razy w tygodniu. Wysłałem prośbę pisemnie już wczoraj, ale jako najwcześniejszy termin podano mi przyszłą środę. Jako dowód mogę przesłać potwierdzenie przyjęcia mojego zapytania oraz odpowiedź działu kadr." },
+            { "language": "ro", "text": "Departamentul de personal emite astfel de adeverințe doar de două ori pe săptămână. Am trimis cererea în scris încă de ieri, dar mi s-a comunicat ca prim termen posibil miercurea viitoare. Ca dovadă vă pot trimite confirmarea primirii cererii și răspunsul departamentului de personal." },
+            { "language": "sq", "text": "Departamenti i personelit i lëshon këto vërtetime vetëm dy herë në javë. Kërkesën e kam bërë me shkrim që dje, por më thanë se data më e hershme është e mërkura e ardhshme. Si provë mund t'ju dërgoj konfirmimin e marrjes së kërkesës sime dhe përgjigjen e departamentit të personelit." }
+          ],
+          "function": "justify-delay-with-evidence",
+          "expectedLearnerAction": "Erkläre die Ursache der Verzögerung und biete konkrete Nachweise an."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Welche Unterlagen könnten Sie denn schon vor Ablauf der Frist einreichen?",
+          "translations": [
+            { "language": "en", "text": "Which documents could you submit before the deadline expires?" },
+            { "language": "fa", "text": "کدام مدارک را می‌توانید پیش از پایان مهلت ارائه کنید؟" },
+            { "language": "ar", "text": "أي مستندات يمكنك تقديمها قبل انتهاء المهلة؟" },
+            { "language": "tr", "text": "Süre dolmadan önce hangi belgeleri sunabilirsiniz?" },
+            { "language": "ru", "text": "Какие документы вы могли бы подать до истечения срока?" },
+            { "language": "ckb", "text": "کام بەڵگەنامانە دەتوانن پێش کۆتایی مۆڵەت پێشکەش بکەن؟" },
+            { "language": "kmr", "text": "Hûn dikarin berî qediyana demê kîjan belgeyan radest bikin?" },
+            { "language": "pl", "text": "Jakie dokumenty może Pan złożyć jeszcze przed upływem terminu?" },
+            { "language": "ro", "text": "Ce documente ați putea depune înainte de expirarea termenului?" },
+            { "language": "sq", "text": "Cilat dokumente mund t'i dorëzoni para përfundimit të afatit?" }
+          ],
+          "function": "ask-partial-documents"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Den aktuellen Kontoauszug und den Mietvertrag kann ich Ihnen heute noch hochladen. Außerdem kann ich die Empfangsbestätigung der Personalabteilung beifügen. Nur die endgültige Arbeitgeberbescheinigung würde ich am Mittwoch nachreichen.",
+          "translations": [
+            { "language": "en", "text": "I can upload the current bank statement and the rental contract today. I can also attach the confirmation of receipt from the HR department. Only the final employer certificate would follow on Wednesday." },
+            { "language": "fa", "text": "صورتحساب بانکی فعلی و قرارداد اجاره را می‌توانم همین امروز بارگذاری کنم. علاوه بر آن می‌توانم تأیید دریافت از بخش منابع انسانی را پیوست کنم. فقط گواهی نهایی کارفرما را چهارشنبه ارائه خواهم کرد." },
+            { "language": "ar", "text": "يمكنني تحميل كشف الحساب الحالي وعقد الإيجار اليوم. كما يمكنني إرفاق تأكيد الاستلام من قسم الموارد البشرية. فقط شهادة صاحب العمل النهائية سأقدمها يوم الأربعاء." },
+            { "language": "tr", "text": "Güncel banka dökümünü ve kira sözleşmesini bugün yükleyebilirim. Ayrıca insan kaynakları bölümünün alındı onayını ekleyebilirim. Yalnızca nihai işveren belgesini Çarşamba günü sonradan sunacağım." },
+            { "language": "ru", "text": "Текущую выписку со счёта и договор аренды я могу загрузить ещё сегодня. Кроме того, могу приложить подтверждение получения от отдела кадров. Только окончательную справку от работодателя я донесу в среду." },
+            { "language": "ckb", "text": "دەتوانم ئەمڕۆ خشتەی بانکیی ئێستا و گرێبەستی کرێ باربکەم. هەروەها دەتوانم پشتڕاستکردنەوەی گەیشتن لە بەشی کارمەندان هاوپێچ بکەم. تەنها بڕوانامەی کۆتایی کارفرما چوارشەممە دواتر پێشکەش دەکەم." },
+            { "language": "kmr", "text": "Ez dikarim îro hîn derxistina heyî ya bankê û peymana kirê bar bikim. Her wiha dikarim pejirandina wergirtinê ji beşa karmendan lê zêde bikim. Tenê belgeya dawî ya kardêrê ez ê Çarşemê paşê radest bikim." },
+            { "language": "pl", "text": "Aktualny wyciąg z konta i umowę najmu mogę przesłać jeszcze dziś. Mogę też dołączyć potwierdzenie odbioru z działu kadr. Tylko ostateczne zaświadczenie od pracodawcy dostarczyłbym w środę." },
+            { "language": "ro", "text": "Extrasul de cont actual și contractul de închiriere le pot încărca chiar astăzi. În plus, pot atașa confirmarea de primire de la departamentul de personal. Doar adeverința finală de la angajator aș depune-o miercuri." },
+            { "language": "sq", "text": "Ekstraktin aktual bankar dhe kontratën e qirasë mund t'i ngarkoj që sot. Gjithashtu mund të bashkëngjis konfirmimin e marrjes nga departamenti i personelit. Vetëm vërtetimin përfundimtar nga punëdhënësi do ta dorëzoja të mërkurën." }
+          ],
+          "function": "offer-partial-submission",
+          "expectedLearnerAction": "Biete vorhandene Unterlagen sofort an und grenze klar ab, was später folgt."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Bis wann genau brauchen Sie die Verlängerung, und warum ist dieses Datum realistisch?",
+          "translations": [
+            { "language": "en", "text": "Until exactly when do you need the extension, and why is that date realistic?" },
+            { "language": "fa", "text": "دقیقاً تا چه زمانی به تمدید نیاز دارید و چرا آن تاریخ واقع‌بینانه است؟" },
+            { "language": "ar", "text": "إلى متى بالضبط تحتاج إلى التمديد، ولماذا هذا التاريخ واقعي؟" },
+            { "language": "tr", "text": "Uzatmaya tam olarak hangi tarihe kadar ihtiyacınız var ve bu tarih neden gerçekçi?" },
+            { "language": "ru", "text": "До какого именно срока вам нужно продление и почему эта дата реалистична?" },
+            { "language": "ckb", "text": "بە وردی تا کەی پێویستان بە درێژکردنەوەی مۆڵەتە، و بۆچی ئەو ڕێکەوتە واقیعییە؟" },
+            { "language": "kmr", "text": "Hûn heya kengê rast dirêjkirinê dixwazin, û çima ew roj rastîn e?" },
+            { "language": "pl", "text": "Do kiedy dokładnie potrzebuje Pan przedłużenia i dlaczego ta data jest realna?" },
+            { "language": "ro", "text": "Până când exact aveți nevoie de prelungire și de ce este această dată realistă?" },
+            { "language": "sq", "text": "Deri kur saktësisht ju duhet zgjatja dhe pse është realiste kjo datë?" }
+          ],
+          "function": "ask-new-deadline"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich bitte um eine Verlängerung bis Freitag nächster Woche. Die Bescheinigung soll am Mittwoch ausgestellt werden, sodass ich sie spätestens am Donnerstag hochladen kann. Freitag als neue Frist gibt mir einen kleinen Puffer, falls die Datei erst am Nachmittag kommt.",
+          "translations": [
+            { "language": "en", "text": "I am asking for an extension until Friday of next week. The certificate is supposed to be issued on Wednesday, so I can upload it by Thursday at the latest. Friday as the new deadline gives me a small buffer in case the file only arrives in the afternoon." },
+            { "language": "fa", "text": "درخواست تمدید تا جمعه هفته آینده را دارم. قرار است گواهی روز چهارشنبه صادر شود، بنابراین حداکثر تا پنجشنبه می‌توانم آن را بارگذاری کنم. جمعه به‌عنوان مهلت جدید کمی زمان اضافه می‌دهد، اگر فایل تازه بعدازظهر برسد." },
+            { "language": "ar", "text": "أطلب تمديد المهلة حتى الجمعة القادمة. من المفترض أن تصدر الشهادة يوم الأربعاء، وبذلك أستطيع تحميلها في موعد أقصاه الخميس. الجمعة كموعد جديد تمنحني هامشاً صغيراً إذا وصل الملف بعد الظهر فقط." },
+            { "language": "tr", "text": "Gelecek hafta Cuma gününe kadar süre uzatımı rica ediyorum. Belgenin Çarşamba günü düzenlenmesi bekleniyor, bu yüzden en geç Perşembe yükleyebilirim. Yeni süre olarak Cuma, dosya ancak öğleden sonra gelirse bana küçük bir pay bırakır." },
+            { "language": "ru", "text": "Я прошу продлить срок до следующей пятницы. Справка должна быть выдана в среду, так что я смогу загрузить её не позднее четверга. Пятница как новый срок даёт небольшой запас, если файл придёт только во второй половине дня." },
+            { "language": "ckb", "text": "داوای درێژکردنەوە تا هەینی هەفتەی داهاتوو دەکەم. بڕوانامەکە پێویستە چوارشەممە دەر بچێت، بۆیە دەتوانم تا دوایین پێنجشەممە باریکەم. هەینی وەک مۆڵەتی نوێ کەمێک بۆشایی کاتم دەدات ئەگەر فایلەکە تەنها دوای نیوەڕۆ بگات." },
+            { "language": "kmr", "text": "Ez dirêjkirinê heta Îna hefteya bê dixwazim. Belge divê Çarşemê were dayîn, ji ber vê ez dikarim herî dereng Pêncşemê bar bikim. În wekî dema nû ji min re valahiyeke biçûk dide, heke pel tenê piştî nîvro were." },
+            { "language": "pl", "text": "Proszę o przedłużenie do piątku przyszłego tygodnia. Zaświadczenie ma zostać wystawione w środę, więc najpóźniej w czwartek mogę je przesłać. Piątek jako nowy termin daje mi mały zapas, jeśli plik przyjdzie dopiero po południu." },
+            { "language": "ro", "text": "Cer o prelungire până vinerea viitoare. Adeverința ar trebui emisă miercuri, astfel încât să o pot încărca cel târziu joi. Vineri ca nou termen îmi oferă o mică rezervă dacă fișierul ajunge abia după-amiază." },
+            { "language": "sq", "text": "Kërkoj zgjatje deri të premten e javës tjetër. Vërtetimi pritet të lëshohet të mërkurën, kështu që mund ta ngarkoj më së voni të enjten. E premtja si afat i ri më jep një hapësirë të vogël nëse dokumenti vjen vetëm pasdite." }
+          ],
+          "function": "propose-realistic-new-deadline",
+          "expectedLearnerAction": "Nenne ein konkretes neues Datum und begründe den zeitlichen Puffer."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "office-staff",
+          "baseText": "Ich kann eine Fristverlängerung vormerken, brauche aber eine kurze schriftliche Begründung. Möchten Sie, dass ich Ihnen die Anforderungen per E-Mail bestätige?",
+          "translations": [
+            { "language": "en", "text": "I can note a deadline extension, but I need a short written justification. Would you like me to confirm the requirements to you by email?" },
+            { "language": "fa", "text": "می‌توانم تمدید مهلت را ثبت کنم، اما به یک توضیح کوتاه کتبی نیاز دارم. می‌خواهید شرایط لازم را از طریق ایمیل برایتان تأیید کنم؟" },
+            { "language": "ar", "text": "يمكنني تسجيل تمديد المهلة، لكنني أحتاج إلى تبرير خطي قصير. هل ترغب في أن أؤكد لك المتطلبات عبر البريد الإلكتروني؟" },
+            { "language": "tr", "text": "Süre uzatımını not edebilirim, ancak kısa bir yazılı gerekçeye ihtiyacım var. Gereklilikleri size e-posta ile teyit etmemi ister misiniz?" },
+            { "language": "ru", "text": "Я могу отметить продление срока, но мне нужно короткое письменное обоснование. Хотите, чтобы я подтвердил требования по электронной почте?" },
+            { "language": "ckb", "text": "دەتوانم درێژکردنەوەی مۆڵەت تۆمار بکەم، بەڵام پێویستم بە ڕوونکردنەوەیەکی کورتی نووسراوە. دەتەوێت پێویستییەکان بە ئیمەیل بۆتان پشتڕاست بکەمەوە؟" },
+            { "language": "kmr", "text": "Ez dikarim dirêjkirina demê qeyd bikim, lê pêdivî bi sedemnameyeke kurt a nivîskî heye. Hûn dixwazin ez şertan bi e-nameyê ji we re piştrast bikim?" },
+            { "language": "pl", "text": "Mogę odnotować przedłużenie terminu, ale potrzebuję krótkiego pisemnego uzasadnienia. Czy mam potwierdzić wymagania mailowo?" },
+            { "language": "ro", "text": "Pot nota o prelungire a termenului, dar am nevoie de o scurtă justificare scrisă. Doriți să vă confirm cerințele prin e-mail?" },
+            { "language": "sq", "text": "Mund ta shënoj zgjatjen e afatit, por më duhet një arsyetim i shkurtër me shkrim. Dëshironi t'jua konfirmoj kërkesat me postë elektronike?" }
+          ],
+          "function": "offer-written-confirmation"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte schicken Sie mir die Anforderungen schriftlich. Ich lade heute Kontoauszug, Mietvertrag und die Bestätigung der Personalabteilung hoch und reiche die Arbeitgeberbescheinigung bis Freitag nächster Woche nach. Können Sie bitte dazuschreiben, dass die Frist bis dahin verlängert ist?",
+          "translations": [
+            { "language": "en", "text": "Yes, please send me the requirements in writing. I will upload the bank statement, rental contract, and confirmation from HR today, and I will submit the employer certificate by Friday of next week. Could you please add that the deadline is extended until then?" },
+            { "language": "fa", "text": "بله، لطفاً شرایط لازم را به‌صورت کتبی برای من بفرستید. من امروز صورتحساب بانکی، قرارداد اجاره و تأیید بخش منابع انسانی را بارگذاری می‌کنم و گواهی کارفرما را تا جمعه هفته آینده ارائه می‌دهم. می‌توانید لطفاً اضافه کنید که مهلت تا آن زمان تمدید شده است؟" },
+            { "language": "ar", "text": "نعم، من فضلك أرسلي لي المتطلبات خطياً. سأحمّل اليوم كشف الحساب وعقد الإيجار وتأكيد قسم الموارد البشرية، وسأقدم شهادة صاحب العمل حتى الجمعة القادمة. هل يمكنك أن تضيفي أن المهلة ممددة حتى ذلك الوقت؟" },
+            { "language": "tr", "text": "Evet, lütfen gereklilikleri bana yazılı olarak gönderin. Bugün banka dökümünü, kira sözleşmesini ve insan kaynakları bölümünün onayını yükleyeceğim; işveren belgesini de gelecek hafta Cuma gününe kadar sunacağım. Lütfen sürenin o tarihe kadar uzatıldığını da ekler misiniz?" },
+            { "language": "ru", "text": "Да, пожалуйста, отправьте мне требования письменно. Сегодня я загружу выписку со счёта, договор аренды и подтверждение от отдела кадров, а справку от работодателя донесу до следующей пятницы. Можете, пожалуйста, добавить, что срок продлён до этой даты?" },
+            { "language": "ckb", "text": "بەڵێ، تکایە پێویستییەکان بە نووسراوی بۆم بنێرن. ئەمڕۆ خشتەی بانکی، گرێبەستی کرێ و پشتڕاستکردنەوەی بەشی کارمەندان بار دەکەم و بڕوانامەی کارفرما تا هەینی هەفتەی داهاتوو پێشکەش دەکەم. دەتوانن تکایە بنووسن کە مۆڵەت تا ئەو کاتە درێژکراوەتەوە؟" },
+            { "language": "kmr", "text": "Erê, ji kerema xwe şertan bi nivîskî ji min re bişînin. Ez ê îro derxistina bankê, peymana kirê û pejirandina beşa karmendan bar bikim û belgeya kardêrê heta Îna hefteya bê radest bikim. Hûn dikarin lê zêde bikin ku dem heta wê rojê hatiye dirêjkirin?" },
+            { "language": "pl", "text": "Tak, proszę przesłać mi wymagania na piśmie. Dziś prześlę wyciąg z konta, umowę najmu i potwierdzenie z działu kadr, a zaświadczenie od pracodawcy dostarczę do piątku przyszłego tygodnia. Czy może Pani dopisać, że termin jest do tego czasu przedłużony?" },
+            { "language": "ro", "text": "Da, vă rog să îmi trimiteți cerințele în scris. Astăzi încarc extrasul de cont, contractul de închiriere și confirmarea departamentului de personal, iar adeverința de la angajator o depun până vinerea viitoare. Puteți adăuga, vă rog, că termenul este prelungit până atunci?" },
+            { "language": "sq", "text": "Po, ju lutem m'i dërgoni kërkesat me shkrim. Sot do të ngarkoj ekstraktin bankar, kontratën e qirasë dhe konfirmimin nga departamenti i personelit, ndërsa vërtetimin nga punëdhënësi do ta dorëzoj deri të premten e javës tjetër. A mund të shtoni, ju lutem, se afati është zgjatur deri atëherë?" }
+          ],
+          "function": "confirm-written-next-step",
+          "expectedLearnerAction": "Fasse Zusage, Teildokumente, neue Frist und Bitte um schriftliche Bestätigung zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag, mein Name ist Rahimi. Ich rufe wegen meines Antrags mit dem Aktenzeichen L-4827 an. In Ihrem Schreiben steht, dass ich bis Freitag eine Arbeitgeberbescheinigung nachreichen soll. Diese Bescheinigung kann mein Arbeitgeber aber erst nächste Woche Mittwoch ausstellen. Deshalb möchte ich um eine kurze Fristverlängerung bitten.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon, my name is Rahimi. I am calling about my application with reference number L-4827. Your letter says that I should submit an employer certificate by Friday. My employer can only issue this certificate next Wednesday, so I would like to ask for a short deadline extension." },
+                { "language": "fa", "text": "روز بخیر، نام من رحیمی است. درباره درخواست خودم با شماره پرونده L-4827 تماس می‌گیرم. در نامه شما نوشته شده که باید تا جمعه یک گواهی کارفرما ارائه کنم. اما کارفرمای من این گواهی را فقط چهارشنبه هفته آینده می‌تواند صادر کند. برای همین می‌خواهم درخواست تمدید کوتاه مهلت بدهم." },
+                { "language": "ar", "text": "نهارك سعيد، اسمي رحيمي. أتصل بخصوص طلبي برقم الملف L-4827. في خطابكم ذُكر أن عليّ تقديم شهادة من صاحب العمل حتى يوم الجمعة. لكن صاحب العمل لا يستطيع إصدار هذه الشهادة إلا يوم الأربعاء القادم. لذلك أود طلب تمديد قصير للمهلة." },
+                { "language": "tr", "text": "İyi günler, adım Rahimi. L-4827 dosya numaralı başvurum için arıyorum. Yazınızda Cuma gününe kadar işveren belgesi sunmam gerektiği yazıyor. Ancak işverenim bu belgeyi ancak gelecek hafta Çarşamba düzenleyebiliyor. Bu nedenle kısa bir süre uzatımı rica etmek istiyorum." },
+                { "language": "ru", "text": "Добрый день, меня зовут Рахими. Я звоню по поводу моего заявления с номером дела L-4827. В вашем письме указано, что до пятницы я должен предоставить справку от работодателя. Но мой работодатель сможет выдать эту справку только в следующую среду. Поэтому я хотел бы попросить о коротком продлении срока." },
+                { "language": "ckb", "text": "ڕۆژ باش، ناوم ڕەحیمییە. پەیوەندی دەکەم سەبارەت بە داواکارییەکەم بە ژمارەی کەیسی L-4827. لە نامەکەتاندا نووسراوە کە دەبێت تا هەینی بڕوانامەی کارفرما پێشکەش بکەم. بەڵام کارفرماکەم تەنها چوارشەممەی هەفتەی داهاتوو دەتوانێت ئەم بڕوانامەیە دەر بکات. بۆیە دەمەوێت داوای درێژکردنەوەیەکی کورتی مۆڵەت بکەم." },
+                { "language": "kmr", "text": "Roj baş, navê min Rahimi ye. Ez ji bo daxwaza xwe ya bi hejmarê dosyeyê L-4827 telefon dikim. Di nameya we de hatiye nivîsandin ku divê ez heta Înê belgeya kardêrê xwe radest bikim. Lê kardêrê min dikare vê belgeyê tenê Çarşema hefteya bê bide. Ji ber vê yekê ez dixwazim dirêjkirineke kurt a demê bixwazim." },
+                { "language": "pl", "text": "Dzień dobry, nazywam się Rahimi. Dzwonię w sprawie mojego wniosku o numerze L-4827. W Państwa piśmie jest napisane, że do piątku mam dostarczyć zaświadczenie od pracodawcy. Mój pracodawca może jednak wystawić to zaświadczenie dopiero w przyszłą środę. Dlatego chciałbym poprosić o krótkie przedłużenie terminu." },
+                { "language": "ro", "text": "Bună ziua, mă numesc Rahimi. Sun în legătură cu cererea mea, cu numărul de dosar L-4827. În scrisoarea dumneavoastră scrie că trebuie să depun până vineri o adeverință de la angajator. Însă angajatorul meu poate emite această adeverință abia miercurea viitoare. De aceea aș dori să cer o scurtă prelungire a termenului." },
+                { "language": "sq", "text": "Mirëdita, quhem Rahimi. Po telefonoj për aplikimin tim me numrin e dosjes L-4827. Në letrën tuaj shkruhet se duhet të dorëzoj deri të premten një vërtetim nga punëdhënësi. Por punëdhënësi im mund ta lëshojë këtë vërtetim vetëm të mërkurën e ardhshme. Prandaj dua të kërkoj një zgjatje të shkurtër të afatit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort nennt Aktenzeichen, fehlende Unterlage, aktuelle Frist und den Anlass der Bitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer states the reference number, missing document, current deadline, and reason for the request." },
+                { "language": "fa", "text": "خوب است: شماره پرونده، مدرک ناقص، مهلت فعلی و دلیل درخواست را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر هذه الإجابة رقم الملف والمستند الناقص والمهلة الحالية وسبب الطلب." },
+                { "language": "tr", "text": "İyi: bu cevap dosya numarasını, eksik belgeyi, mevcut süreyi ve talebin nedenini belirtiyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет номер дела, недостающий документ, текущий срок и причину просьбы." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە ژمارەی کەیس، بەڵگەنامەی کەم، مۆڵەتی ئێستا و هۆکاری داواکارییەکە دەڵێت." },
+                { "language": "kmr", "text": "Baş e: ev bersiv hejmarê dosyeyê, belgeya kêm, dema niha û sedema daxwazê dibêje." },
+                { "language": "pl", "text": "Dobrze: ta odpowiedź podaje numer sprawy, brakujący dokument, aktualny termin i powód prośby." },
+                { "language": "ro", "text": "Bine: acest răspuns menționează numărul dosarului, documentul lipsă, termenul actual și motivul cererii." },
+                { "language": "sq", "text": "Mirë: kjo përgjigje jep numrin e dosjes, dokumentin që mungon, afatin aktual dhe arsyen e kërkesës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Guten Tag, ich brauche mehr Zeit für meine Unterlagen. Die Bescheinigung ist noch nicht fertig, deshalb kann ich die Frist am Freitag wahrscheinlich nicht einhalten.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon, I need more time for my documents. The certificate is not ready yet, so I probably cannot meet the deadline on Friday." },
+                { "language": "fa", "text": "روز بخیر، برای مدارکم به زمان بیشتری نیاز دارم. گواهی هنوز آماده نیست، برای همین احتمالاً نمی‌توانم مهلت جمعه را رعایت کنم." },
+                { "language": "ar", "text": "نهارك سعيد، أحتاج إلى وقت أكثر لمستنداتي. الشهادة ليست جاهزة بعد، لذلك ربما لا أستطيع الالتزام بمهلة الجمعة." },
+                { "language": "tr", "text": "İyi günler, belgelerim için daha fazla zamana ihtiyacım var. Belge henüz hazır değil, bu yüzden Cuma günkü süreye muhtemelen uyamayacağım." },
+                { "language": "ru", "text": "Добрый день, мне нужно больше времени для документов. Справка ещё не готова, поэтому я, вероятно, не смогу уложиться в срок в пятницу." },
+                { "language": "ckb", "text": "ڕۆژ باش، بۆ بەڵگەنامەکانم پێویستم بە کاتی زیاترە. بڕوانامەکە هێشتا ئامادە نییە، بۆیە لەوانەیە نەتوانم مۆڵەتی هەینی جێبەجێ بکەم." },
+                { "language": "kmr", "text": "Roj baş, ji bo belgeyên xwe demekî zêdetir divê. Belge hêj amade nîne, ji ber vê ez belkî nikarim dema Înê bigirim." },
+                { "language": "pl", "text": "Dzień dobry, potrzebuję więcej czasu na dokumenty. Zaświadczenie nie jest jeszcze gotowe, dlatego prawdopodobnie nie dotrzymam piątkowego terminu." },
+                { "language": "ro", "text": "Bună ziua, am nevoie de mai mult timp pentru documente. Adeverința nu este încă gata, de aceea probabil nu pot respecta termenul de vineri." },
+                { "language": "sq", "text": "Mirëdita, më duhet më shumë kohë për dokumentet. Vërtetimi nuk është ende gati, prandaj ndoshta nuk mund ta respektoj afatin e së premtes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort erklärt das Problem, nennt aber weder Aktenzeichen noch konkrete Unterlage oder gewünschte Verlängerung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer explains the problem but does not state the reference number, specific document, or requested extension." },
+                { "language": "fa", "text": "خیلی کلی است: مشکل را توضیح می‌دهد، اما شماره پرونده، مدرک مشخص یا تمدید درخواستی را نمی‌گوید." },
+                { "language": "ar", "text": "عام جداً: يشرح المشكلة، لكنه لا يذكر رقم الملف أو المستند المحدد أو التمديد المطلوب." },
+                { "language": "tr", "text": "Çok genel: sorun açıklanıyor, ancak dosya numarası, belirli belge veya istenen uzatma belirtilmiyor." },
+                { "language": "ru", "text": "Слишком обобщённо: проблема объяснена, но не названы номер дела, конкретный документ или запрашиваемое продление." },
+                { "language": "ckb", "text": "زۆر گشتییە: کێشەکە ڕوون دەکاتەوە، بەڵام ژمارەی کەیس، بەڵگەنامەی دیاریکراو یان درێژکردنەوەی داواکراو ناڵێت." },
+                { "language": "kmr", "text": "Pir giştî ye: pirsgirêkê rave dike, lê hejmarê dosyeyê, belgeya konkret an dirêjkirina xwestî nabêje." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź wyjaśnia problem, ale nie podaje numeru sprawy, konkretnego dokumentu ani oczekiwanego przedłużenia." },
+                { "language": "ro", "text": "Prea general: răspunsul explică problema, dar nu menționează numărul dosarului, documentul concret sau prelungirea cerută." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja shpjegon problemin, por nuk jep numrin e dosjes, dokumentin konkret ose zgjatjen e kërkuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Personalabteilung stellt solche Bescheinigungen nur zweimal pro Woche aus. Ich habe die Anfrage bereits gestern schriftlich gestellt, aber mir wurde als frühester Termin der kommende Mittwoch genannt. Als Nachweis kann ich Ihnen die Eingangsbestätigung meiner Anfrage und die Antwort der Personalabteilung zusenden.",
+              "translations": [
+                { "language": "en", "text": "The HR department issues such certificates only twice a week. I already made the request in writing yesterday, but I was given next Wednesday as the earliest date. As proof, I can send you the confirmation that my request was received and the HR department's reply." },
+                { "language": "fa", "text": "بخش منابع انسانی چنین گواهی‌هایی را فقط دو بار در هفته صادر می‌کند. من دیروز درخواست را به‌صورت کتبی فرستادم، اما زودترین زمان ممکن را چهارشنبه آینده اعلام کردند. به‌عنوان مدرک می‌توانم تأیید دریافت درخواست و پاسخ بخش منابع انسانی را برای شما ارسال کنم." },
+                { "language": "ar", "text": "قسم الموارد البشرية يصدر مثل هذه الشهادات مرتين فقط في الأسبوع. لقد قدمت الطلب خطياً أمس، لكن أُبلغت بأن أقرب موعد هو الأربعاء القادم. كدليل أستطيع أن أرسل لكم تأكيد استلام طلبي ورد قسم الموارد البشرية." },
+                { "language": "tr", "text": "İnsan kaynakları bölümü bu tür belgeleri haftada yalnızca iki kez düzenliyor. Talebi dün yazılı olarak ilettim, ancak bana en erken tarih olarak gelecek Çarşamba söylendi. Kanıt olarak talebimin alındığına dair onayı ve insan kaynakları bölümünün cevabını gönderebilirim." },
+                { "language": "ru", "text": "Отдел кадров выдаёт такие справки только два раза в неделю. Я уже вчера направил запрос письменно, но мне назвали ближайшей датой следующую среду. В качестве подтверждения я могу отправить вам подтверждение получения моего запроса и ответ отдела кадров." },
+                { "language": "ckb", "text": "بەشی کارگێڕی کارمەندان ئەم جۆرە بڕوانامانە تەنها دوو جار لە هەفتەیەکدا دەر دەکات. من دوێنێ داواکارییەکەم بە نووسراوی نارد، بەڵام وەک زووترين کات چوارشەممەی داهاتوویان پێم گوت. وەک بەڵگە دەتوانم پشتڕاستکردنەوەی گەیشتنی داواکارییەکەم و وەڵامی بەشی کارمەندان بۆتان بنێرم." },
+                { "language": "kmr", "text": "Beşa karmendan belgeyên wisa tenê du caran di hefteyê de dide. Min daxwazê duh bi nivîskî şand, lê wekî demê herî zû Çarşema bê hat gotin. Wekî delîl ez dikarim pejirandina gihîştina daxwaza xwe û bersiva beşa karmendan ji we re bişînim." },
+                { "language": "pl", "text": "Dział kadr wystawia takie zaświadczenia tylko dwa razy w tygodniu. Wysłałem prośbę pisemnie już wczoraj, ale jako najwcześniejszy termin podano mi przyszłą środę. Jako dowód mogę przesłać potwierdzenie przyjęcia mojego zapytania oraz odpowiedź działu kadr." },
+                { "language": "ro", "text": "Departamentul de personal emite astfel de adeverințe doar de două ori pe săptămână. Am trimis cererea în scris încă de ieri, dar mi s-a comunicat ca prim termen posibil miercurea viitoare. Ca dovadă vă pot trimite confirmarea primirii cererii și răspunsul departamentului de personal." },
+                { "language": "sq", "text": "Departamenti i personelit i lëshon këto vërtetime vetëm dy herë në javë. Kërkesën e kam bërë me shkrim që dje, por më thanë se data më e hershme është e mërkura e ardhshme. Si provë mund t'ju dërgoj konfirmimin e marrjes së kërkesës sime dhe përgjigjen e departamentit të personelit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort macht die Verzögerung überprüfbar und bietet sofort Belege an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer makes the delay verifiable and immediately offers evidence." },
+                { "language": "fa", "text": "خوب است: تأخیر را قابل بررسی می‌کند و فوراً مدرک پیشنهاد می‌دهد." },
+                { "language": "ar", "text": "جيد: تجعل هذه الإجابة التأخير قابلاً للتحقق وتعرض الأدلة فوراً." },
+                { "language": "tr", "text": "İyi: bu cevap gecikmeyi doğrulanabilir kılıyor ve hemen kanıt sunuyor." },
+                { "language": "ru", "text": "Хорошо: ответ делает задержку проверяемой и сразу предлагает подтверждения." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە دواخستنەکە دەکاتە شتێکی پشکنراو و دەستبەجێ بەڵگە پێشنیار دەکات." },
+                { "language": "kmr", "text": "Baş e: ev bersiv derengmayînê dike tiştekî ku dikare were kontrolkirin û tavilê delîl pêşkêş dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź sprawia, że opóźnienie można zweryfikować, i od razu oferuje dowody." },
+                { "language": "ro", "text": "Bine: acest răspuns face întârzierea verificabilă și oferă imediat dovezi." },
+                { "language": "sq", "text": "Mirë: kjo përgjigje e bën vonesën të verifikueshme dhe ofron menjëherë prova." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Personalabteilung braucht leider länger. Ich habe dort schon gefragt, aber ich kann nicht beeinflussen, wann die Bescheinigung fertig ist.",
+              "translations": [
+                { "language": "en", "text": "Unfortunately, the HR department needs longer. I have already asked there, but I cannot influence when the certificate will be ready." },
+                { "language": "fa", "text": "متأسفانه بخش منابع انسانی زمان بیشتری نیاز دارد. من آنجا پرسیده‌ام، اما نمی‌توانم روی زمان آماده شدن گواهی تأثیر بگذارم." },
+                { "language": "ar", "text": "للأسف يحتاج قسم الموارد البشرية إلى وقت أطول. لقد سألت هناك، لكنني لا أستطيع التأثير على موعد جاهزية الشهادة." },
+                { "language": "tr", "text": "Ne yazık ki insan kaynakları bölümü daha fazla zamana ihtiyaç duyuyor. Oraya sordum, ancak belgenin ne zaman hazır olacağını etkileyemem." },
+                { "language": "ru", "text": "К сожалению, отделу кадров нужно больше времени. Я уже спрашивал там, но не могу повлиять на то, когда справка будет готова." },
+                { "language": "ckb", "text": "بەداخەوە بەشی کارمەندان پێویستی بە کاتی زیاترە. من لەوێ پرسیومە، بەڵام ناتوانم کاریگەری لەسەر کاتی ئامادەبوونی بڕوانامەکە هەبێت." },
+                { "language": "kmr", "text": "Mixabin beşa karmendan demekî zêdetir dixwaze. Min li wir pirsî, lê ez nikarim bandor li kengê belge amade dibe bikim." },
+                { "language": "pl", "text": "Niestety dział kadr potrzebuje więcej czasu. Już tam pytałem, ale nie mam wpływu na to, kiedy zaświadczenie będzie gotowe." },
+                { "language": "ro", "text": "Din păcate, departamentul de personal are nevoie de mai mult timp. Am întrebat deja acolo, dar nu pot influența momentul în care adeverința va fi gata." },
+                { "language": "sq", "text": "Fatkeqësisht departamenti i personelit ka nevojë për më shumë kohë. Kam pyetur atje, por nuk mund të ndikoj se kur do të jetë gati vërtetimi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu schwach: Die Antwort nennt keinen prüfbaren Ablauf und keinen Nachweis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too weak: the answer gives no verifiable sequence and no evidence." },
+                { "language": "fa", "text": "قابل‌قبول اما ضعیف است: روند قابل بررسی و مدرک ارائه نمی‌کند." },
+                { "language": "ar", "text": "معقول لكنه ضعيف: لا يذكر تسلسلاً قابلاً للتحقق ولا يقدم دليلاً." },
+                { "language": "tr", "text": "Makul ama zayıf: doğrulanabilir bir süreç ve kanıt sunmuyor." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: нет проверяемой последовательности и подтверждения." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام لاوازە: ڕەوتێکی پشکنراو و بەڵگە نادات." },
+                { "language": "kmr", "text": "Watebar e, lê qels e: rêzeke ku were kontrolkirin û delîl nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt słabe: odpowiedź nie podaje sprawdzalnego przebiegu ani dowodu." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: răspunsul nu oferă o desfășurare verificabilă și nicio dovadă." },
+                { "language": "sq", "text": "E besueshme, por e dobët: përgjigjja nuk jep një rrjedhë të verifikueshme dhe as provë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Den aktuellen Kontoauszug und den Mietvertrag kann ich Ihnen heute noch hochladen. Außerdem kann ich die Empfangsbestätigung der Personalabteilung beifügen. Nur die endgültige Arbeitgeberbescheinigung würde ich am Mittwoch nachreichen.",
+              "translations": [
+                { "language": "en", "text": "I can upload the current bank statement and the rental contract today. I can also attach the confirmation of receipt from the HR department. Only the final employer certificate would follow on Wednesday." },
+                { "language": "fa", "text": "صورتحساب بانکی فعلی و قرارداد اجاره را می‌توانم همین امروز بارگذاری کنم. علاوه بر آن می‌توانم تأیید دریافت از بخش منابع انسانی را پیوست کنم. فقط گواهی نهایی کارفرما را چهارشنبه ارائه خواهم کرد." },
+                { "language": "ar", "text": "يمكنني تحميل كشف الحساب الحالي وعقد الإيجار اليوم. كما يمكنني إرفاق تأكيد الاستلام من قسم الموارد البشرية. فقط شهادة صاحب العمل النهائية سأقدمها يوم الأربعاء." },
+                { "language": "tr", "text": "Güncel banka dökümünü ve kira sözleşmesini bugün yükleyebilirim. Ayrıca insan kaynakları bölümünün alındı onayını ekleyebilirim. Yalnızca nihai işveren belgesini Çarşamba günü sonradan sunacağım." },
+                { "language": "ru", "text": "Текущую выписку со счёта и договор аренды я могу загрузить ещё сегодня. Кроме того, могу приложить подтверждение получения от отдела кадров. Только окончательную справку от работодателя я донесу в среду." },
+                { "language": "ckb", "text": "دەتوانم ئەمڕۆ خشتەی بانکیی ئێستا و گرێبەستی کرێ باربکەم. هەروەها دەتوانم پشتڕاستکردنەوەی گەیشتن لە بەشی کارمەندان هاوپێچ بکەم. تەنها بڕوانامەی کۆتایی کارفرما چوارشەممە دواتر پێشکەش دەکەم." },
+                { "language": "kmr", "text": "Ez dikarim îro hîn derxistina heyî ya bankê û peymana kirê bar bikim. Her wiha dikarim pejirandina wergirtinê ji beşa karmendan lê zêde bikim. Tenê belgeya dawî ya kardêrê ez ê Çarşemê paşê radest bikim." },
+                { "language": "pl", "text": "Aktualny wyciąg z konta i umowę najmu mogę przesłać jeszcze dziś. Mogę też dołączyć potwierdzenie odbioru z działu kadr. Tylko ostateczne zaświadczenie od pracodawcy dostarczyłbym w środę." },
+                { "language": "ro", "text": "Extrasul de cont actual și contractul de închiriere le pot încărca chiar astăzi. În plus, pot atașa confirmarea de primire de la departamentul de personal. Doar adeverința finală de la angajator aș depune-o miercuri." },
+                { "language": "sq", "text": "Ekstraktin aktual bankar dhe kontratën e qirasë mund t'i ngarkoj që sot. Gjithashtu mund të bashkëngjis konfirmimin e marrjes nga departamenti i personelit. Vetëm vërtetimin përfundimtar nga punëdhënësi do ta dorëzoja të mërkurën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort zeigt Kooperationsbereitschaft und reduziert das Risiko für die Behörde.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer shows willingness to cooperate and reduces risk for the authority." },
+                { "language": "fa", "text": "خوب است: همکاری را نشان می‌دهد و ریسک را برای اداره کاهش می‌دهد." },
+                { "language": "ar", "text": "جيد: تُظهر هذه الإجابة الاستعداد للتعاون وتقلل المخاطر على الجهة الإدارية." },
+                { "language": "tr", "text": "İyi: bu cevap iş birliğine hazır olduğunu gösteriyor ve kurum için riski azaltıyor." },
+                { "language": "ru", "text": "Хорошо: ответ показывает готовность сотрудничать и снижает риск для ведомства." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە ئامادەیی بۆ هاوکاری نیشان دەدات و مەترسی بۆ فەرمانگە کەم دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: ev bersiv amadebûna hevkariyê nîşan dide û rîska ji bo dezgehê kêm dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pokazuje gotowość do współpracy i zmniejsza ryzyko dla urzędu." },
+                { "language": "ro", "text": "Bine: răspunsul arată disponibilitate de cooperare și reduce riscul pentru autoritate." },
+                { "language": "sq", "text": "Mirë: përgjigjja tregon gatishmëri për bashkëpunim dhe ul rrezikun për institucionin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich kann Ihnen die meisten Unterlagen schicken. Die fehlende Bescheinigung kommt dann später, sobald sie fertig ist.",
+              "translations": [
+                { "language": "en", "text": "I can send you most of the documents. The missing certificate will come later once it is ready." },
+                { "language": "fa", "text": "می‌توانم بیشتر مدارک را برایتان بفرستم. گواهی ناقص بعداً هر وقت آماده شد می‌آید." },
+                { "language": "ar", "text": "يمكنني إرسال معظم المستندات لكم. أما الشهادة الناقصة فستأتي لاحقاً عندما تكون جاهزة." },
+                { "language": "tr", "text": "Belgelerin çoğunu size gönderebilirim. Eksik belge hazır olunca daha sonra gelir." },
+                { "language": "ru", "text": "Я могу отправить вам большинство документов. Недостающая справка поступит позже, когда будет готова." },
+                { "language": "ckb", "text": "دەتوانم زۆربەی بەڵگەنامەکانتان بۆ بنێرم. بڕوانامەی کەم دواتر کاتێک ئامادە بوو دێت." },
+                { "language": "kmr", "text": "Ez dikarim piraniya belgeyan ji we re bişînim. Belgeya kêm paşê, dema amade bibe, tê." },
+                { "language": "pl", "text": "Mogę wysłać większość dokumentów. Brakujące zaświadczenie przyjdzie później, gdy będzie gotowe." },
+                { "language": "ro", "text": "Vă pot trimite majoritatea documentelor. Adeverința lipsă va veni mai târziu, când va fi gata." },
+                { "language": "sq", "text": "Mund t'ju dërgoj shumicën e dokumenteve. Vërtetimi që mungon do të vijë më vonë kur të jetë gati." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unpräzise: Die Antwort nennt nicht, welche Unterlagen sofort kommen und wann die fehlende Bescheinigung folgt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer does not say which documents will arrive immediately or when the missing certificate will follow." },
+                { "language": "fa", "text": "بیش از حد مبهم است: نمی‌گوید کدام مدارک فوراً ارسال می‌شوند و گواهی ناقص چه زمانی می‌رسد." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: لا يذكر أي مستندات ستصل فوراً ولا متى ستتبع الشهادة الناقصة." },
+                { "language": "tr", "text": "Çok belirsiz: hangi belgelerin hemen geleceğini ve eksik belgenin ne zaman sunulacağını söylemiyor." },
+                { "language": "ru", "text": "Слишком неточно: не сказано, какие документы будут поданы сразу и когда последует недостающая справка." },
+                { "language": "ckb", "text": "زۆر ناوردە: ناڵێت کام بەڵگەنامە دەستبەجێ دێن و بڕوانامەی کەم کەی دواتر دێت." },
+                { "language": "kmr", "text": "Pir nezelal e: nabêje kîjan belge tavilê têne û belgeya kêm kengê pey re tê." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: odpowiedź nie mówi, które dokumenty zostaną złożone od razu ani kiedy dojdzie brakujące zaświadczenie." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul nu spune ce documente vin imediat și când urmează adeverința lipsă." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja nuk thotë cilat dokumente vijnë menjëherë dhe kur do të vijë vërtetimi që mungon." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich bitte um eine Verlängerung bis Freitag nächster Woche. Die Bescheinigung soll am Mittwoch ausgestellt werden, sodass ich sie spätestens am Donnerstag hochladen kann. Freitag als neue Frist gibt mir einen kleinen Puffer, falls die Datei erst am Nachmittag kommt.",
+              "translations": [
+                { "language": "en", "text": "I am asking for an extension until Friday of next week. The certificate is supposed to be issued on Wednesday, so I can upload it by Thursday at the latest. Friday as the new deadline gives me a small buffer in case the file only arrives in the afternoon." },
+                { "language": "fa", "text": "درخواست تمدید تا جمعه هفته آینده را دارم. قرار است گواهی روز چهارشنبه صادر شود، بنابراین حداکثر تا پنجشنبه می‌توانم آن را بارگذاری کنم. جمعه به‌عنوان مهلت جدید کمی زمان اضافه می‌دهد، اگر فایل تازه بعدازظهر برسد." },
+                { "language": "ar", "text": "أطلب تمديد المهلة حتى الجمعة القادمة. من المفترض أن تصدر الشهادة يوم الأربعاء، وبذلك أستطيع تحميلها في موعد أقصاه الخميس. الجمعة كموعد جديد تمنحني هامشاً صغيراً إذا وصل الملف بعد الظهر فقط." },
+                { "language": "tr", "text": "Gelecek hafta Cuma gününe kadar süre uzatımı rica ediyorum. Belgenin Çarşamba günü düzenlenmesi bekleniyor, bu yüzden en geç Perşembe yükleyebilirim. Yeni süre olarak Cuma, dosya ancak öğleden sonra gelirse bana küçük bir pay bırakır." },
+                { "language": "ru", "text": "Я прошу продлить срок до следующей пятницы. Справка должна быть выдана в среду, так что я смогу загрузить её не позднее четверга. Пятница как новый срок даёт небольшой запас, если файл придёт только во второй половине дня." },
+                { "language": "ckb", "text": "داوای درێژکردنەوە تا هەینی هەفتەی داهاتوو دەکەم. بڕوانامەکە پێویستە چوارشەممە دەر بچێت، بۆیە دەتوانم تا دوایین پێنجشەممە باریکەم. هەینی وەک مۆڵەتی نوێ کەمێک بۆشایی کاتم دەدات ئەگەر فایلەکە تەنها دوای نیوەڕۆ بگات." },
+                { "language": "kmr", "text": "Ez dirêjkirinê heta Îna hefteya bê dixwazim. Belge divê Çarşemê were dayîn, ji ber vê ez dikarim herî dereng Pêncşemê bar bikim. În wekî dema nû ji min re valahiyeke biçûk dide, heke pel tenê piştî nîvro were." },
+                { "language": "pl", "text": "Proszę o przedłużenie do piątku przyszłego tygodnia. Zaświadczenie ma zostać wystawione w środę, więc najpóźniej w czwartek mogę je przesłać. Piątek jako nowy termin daje mi mały zapas, jeśli plik przyjdzie dopiero po południu." },
+                { "language": "ro", "text": "Cer o prelungire până vinerea viitoare. Adeverința ar trebui emisă miercuri, astfel încât să o pot încărca cel târziu joi. Vineri ca nou termen îmi oferă o mică rezervă dacă fișierul ajunge abia după-amiază." },
+                { "language": "sq", "text": "Kërkoj zgjatje deri të premten e javës tjetër. Vërtetimi pritet të lëshohet të mërkurën, kështu që mund ta ngarkoj më së voni të enjten. E premtja si afat i ri më jep një hapësirë të vogël nëse dokumenti vjen vetëm pasdite." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort nennt ein genaues Datum und erklärt, warum der Puffer sachlich sinnvoll ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer states an exact date and explains why the buffer is objectively useful." },
+                { "language": "fa", "text": "خوب است: تاریخ دقیق می‌دهد و توضیح می‌دهد چرا این زمان اضافه از نظر عملی منطقی است." },
+                { "language": "ar", "text": "جيد: تذكر هذه الإجابة تاريخاً دقيقاً وتشرح لماذا الهامش الزمني مفيد عملياً." },
+                { "language": "tr", "text": "İyi: bu cevap kesin bir tarih veriyor ve zaman payının neden nesnel olarak anlamlı olduğunu açıklıyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет точную дату и объясняет, почему запас времени практически оправдан." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە ڕێکەوتێکی ورد دەڵێت و ڕوون دەکاتەوە بۆچی بۆشایی کات بە شێوەیەکی کرداری گونجاوە." },
+                { "language": "kmr", "text": "Baş e: ev bersiv rojeke rast dibêje û rave dike çima valahiya demê bi awayekî pratîkî maqûl e." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje dokładną datę i wyjaśnia, dlaczego zapas czasu jest rzeczowo uzasadniony." },
+                { "language": "ro", "text": "Bine: răspunsul menționează o dată exactă și explică de ce rezerva de timp este utilă în mod practic." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep një datë të saktë dhe shpjegon pse hapësira kohore është e dobishme në mënyrë praktike." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Vielleicht könnten Sie mir noch eine Woche mehr geben. Dann sollte die Bescheinigung wahrscheinlich da sein.",
+              "translations": [
+                { "language": "en", "text": "Maybe you could give me one more week. Then the certificate should probably be there." },
+                { "language": "fa", "text": "شاید بتوانید یک هفته بیشتر به من وقت بدهید. آن وقت احتمالاً گواهی رسیده است." },
+                { "language": "ar", "text": "ربما يمكنكم إعطائي أسبوعاً إضافياً. حينها من المفترض أن تكون الشهادة قد وصلت غالباً." },
+                { "language": "tr", "text": "Belki bana bir hafta daha verebilirsiniz. O zaman belge muhtemelen gelmiş olur." },
+                { "language": "ru", "text": "Возможно, вы могли бы дать мне ещё одну неделю. Тогда справка, вероятно, уже будет." },
+                { "language": "ckb", "text": "لەوانەیە بتوانن هەفتەیەکی ترم پێ بدەن. ئەوکات بڕوانامەکە بە گومانێکی زۆر دەبێت گەیشتبێت." },
+                { "language": "kmr", "text": "Belkî hûn dikarin hefteyek din bidin min. Wê demê belge belkî hatibe." },
+                { "language": "pl", "text": "Może mogliby Państwo dać mi jeszcze tydzień. Wtedy zaświadczenie prawdopodobnie już będzie." },
+                { "language": "ro", "text": "Poate mi-ați putea da încă o săptămână. Atunci adeverința ar trebui probabil să fie disponibilă." },
+                { "language": "sq", "text": "Ndoshta mund të më jepni edhe një javë. Atëherë vërtetimi ndoshta do të jetë gati." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort bittet um mehr Zeit, aber ohne konkretes Datum und ohne nachvollziehbaren Puffer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the answer asks for more time, but without a specific date or a clear buffer." },
+                { "language": "fa", "text": "خیلی مبهم است: زمان بیشتری می‌خواهد، اما بدون تاریخ مشخص و بدون توضیح روشن برای زمان اضافه." },
+                { "language": "ar", "text": "غامض جداً: يطلب وقتاً أكثر، لكن من دون تاريخ محدد أو هامش زمني مفهوم." },
+                { "language": "tr", "text": "Çok belirsiz: daha fazla zaman istiyor, ancak belirli tarih ve anlaşılır zaman payı yok." },
+                { "language": "ru", "text": "Слишком расплывчато: просит больше времени, но без конкретной даты и понятного запаса." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: کاتی زیاتر دەخوازێت، بەڵام بێ ڕێکەوتی دیاریکراو و بێ بۆشایی کاتی تێگەیشتوو." },
+                { "language": "kmr", "text": "Pir nezelal e: demekî zêdetir dixwaze, lê bê roja konkret û bê valahiya demê ya zelal." },
+                { "language": "pl", "text": "Zbyt niejasne: prosi o więcej czasu, ale bez konkretnej daty i bez zrozumiałego zapasu." },
+                { "language": "ro", "text": "Prea vag: cere mai mult timp, dar fără o dată concretă și fără o rezervă clară." },
+                { "language": "sq", "text": "Shumë e paqartë: kërkon më shumë kohë, por pa datë konkrete dhe pa hapësirë të qartë kohore." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, bitte schicken Sie mir die Anforderungen schriftlich. Ich lade heute Kontoauszug, Mietvertrag und die Bestätigung der Personalabteilung hoch und reiche die Arbeitgeberbescheinigung bis Freitag nächster Woche nach. Können Sie bitte dazuschreiben, dass die Frist bis dahin verlängert ist?",
+              "translations": [
+                { "language": "en", "text": "Yes, please send me the requirements in writing. I will upload the bank statement, rental contract, and confirmation from HR today, and I will submit the employer certificate by Friday of next week. Could you please add that the deadline is extended until then?" },
+                { "language": "fa", "text": "بله، لطفاً شرایط لازم را به‌صورت کتبی برای من بفرستید. من امروز صورتحساب بانکی، قرارداد اجاره و تأیید بخش منابع انسانی را بارگذاری می‌کنم و گواهی کارفرما را تا جمعه هفته آینده ارائه می‌دهم. می‌توانید لطفاً اضافه کنید که مهلت تا آن زمان تمدید شده است؟" },
+                { "language": "ar", "text": "نعم، من فضلك أرسلي لي المتطلبات خطياً. سأحمّل اليوم كشف الحساب وعقد الإيجار وتأكيد قسم الموارد البشرية، وسأقدم شهادة صاحب العمل حتى الجمعة القادمة. هل يمكنك أن تضيفي أن المهلة ممددة حتى ذلك الوقت؟" },
+                { "language": "tr", "text": "Evet, lütfen gereklilikleri bana yazılı olarak gönderin. Bugün banka dökümünü, kira sözleşmesini ve insan kaynakları bölümünün onayını yükleyeceğim; işveren belgesini de gelecek hafta Cuma gününe kadar sunacağım. Lütfen sürenin o tarihe kadar uzatıldığını da ekler misiniz?" },
+                { "language": "ru", "text": "Да, пожалуйста, отправьте мне требования письменно. Сегодня я загружу выписку со счёта, договор аренды и подтверждение от отдела кадров, а справку от работодателя донесу до следующей пятницы. Можете, пожалуйста, добавить, что срок продлён до этой даты?" },
+                { "language": "ckb", "text": "بەڵێ، تکایە پێویستییەکان بە نووسراوی بۆم بنێرن. ئەمڕۆ خشتەی بانکی، گرێبەستی کرێ و پشتڕاستکردنەوەی بەشی کارمەندان بار دەکەم و بڕوانامەی کارفرما تا هەینی هەفتەی داهاتوو پێشکەش دەکەم. دەتوانن تکایە بنووسن کە مۆڵەت تا ئەو کاتە درێژکراوەتەوە؟" },
+                { "language": "kmr", "text": "Erê, ji kerema xwe şertan bi nivîskî ji min re bişînin. Ez ê îro derxistina bankê, peymana kirê û pejirandina beşa karmendan bar bikim û belgeya kardêrê heta Îna hefteya bê radest bikim. Hûn dikarin lê zêde bikin ku dem heta wê rojê hatiye dirêjkirin?" },
+                { "language": "pl", "text": "Tak, proszę przesłać mi wymagania na piśmie. Dziś prześlę wyciąg z konta, umowę najmu i potwierdzenie z działu kadr, a zaświadczenie od pracodawcy dostarczę do piątku przyszłego tygodnia. Czy może Pani dopisać, że termin jest do tego czasu przedłużony?" },
+                { "language": "ro", "text": "Da, vă rog să îmi trimiteți cerințele în scris. Astăzi încarc extrasul de cont, contractul de închiriere și confirmarea departamentului de personal, iar adeverința de la angajator o depun până vinerea viitoare. Puteți adăuga, vă rog, că termenul este prelungit până atunci?" },
+                { "language": "sq", "text": "Po, ju lutem m'i dërgoni kërkesat me shkrim. Sot do të ngarkoj ekstraktin bankar, kontratën e qirasë dhe konfirmimin nga departamenti i personelit, ndërsa vërtetimin nga punëdhënësi do ta dorëzoj deri të premten e javës tjetër. A mund të shtoni, ju lutem, se afati është zgjatur deri atëherë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort fasst den Plan zusammen und fordert die schriftliche Absicherung der Verlängerung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer summarizes the plan and asks for written confirmation of the extension." },
+                { "language": "fa", "text": "خوب است: برنامه را جمع‌بندی می‌کند و تأیید کتبی تمدید را درخواست می‌کند." },
+                { "language": "ar", "text": "جيد: تلخص هذه الإجابة الخطة وتطلب تأكيداً خطياً للتمديد." },
+                { "language": "tr", "text": "İyi: bu cevap planı özetliyor ve uzatmanın yazılı güvenceye alınmasını istiyor." },
+                { "language": "ru", "text": "Хорошо: ответ суммирует план и просит письменное подтверждение продления." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە پلانەکە کورت دەکاتەوە و داوای پشتڕاستکردنەوەی نووسراوی درێژکردنەوەکە دەکات." },
+                { "language": "kmr", "text": "Baş e: ev bersiv planê kurt dike û pejirandina nivîskî ya dirêjkirinê dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podsumowuje plan i prosi o pisemne zabezpieczenie przedłużenia." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă planul și cere confirmarea scrisă a prelungirii." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh planin dhe kërkon konfirmimin me shkrim të zgjatjes." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, schicken Sie mir das bitte schriftlich. Dann lade ich alles hoch, sobald ich es habe.",
+              "translations": [
+                { "language": "en", "text": "Yes, please send that to me in writing. Then I will upload everything as soon as I have it." },
+                { "language": "fa", "text": "بله، لطفاً آن را کتبی برایم بفرستید. بعد هر وقت همه چیز را داشتم بارگذاری می‌کنم." },
+                { "language": "ar", "text": "نعم، من فضلك أرسلي ذلك لي خطياً. ثم سأحمّل كل شيء عندما يكون لدي." },
+                { "language": "tr", "text": "Evet, lütfen bunu bana yazılı olarak gönderin. Sonra her şeyi elimde olur olmaz yüklerim." },
+                { "language": "ru", "text": "Да, пожалуйста, отправьте мне это письменно. Затем я загружу всё, как только у меня будет." },
+                { "language": "ckb", "text": "بەڵێ، تکایە ئەوە بە نووسراوی بۆم بنێرن. پاشان هەر کات هەمووی لەبەردەستم بوو بار دەکەم." },
+                { "language": "kmr", "text": "Erê, ji kerema xwe wê bi nivîskî ji min re bişînin. Paşê ez ê her tiştê dema bi min re bibe bar bikim." },
+                { "language": "pl", "text": "Tak, proszę mi to przesłać na piśmie. Potem prześlę wszystko, gdy tylko będę to mieć." },
+                { "language": "ro", "text": "Da, vă rog să îmi trimiteți asta în scris. Apoi voi încărca totul de îndată ce le am." },
+                { "language": "sq", "text": "Po, ju lutem ma dërgoni këtë me shkrim. Pastaj do të ngarkoj gjithçka sapo ta kem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Die Antwort sichert keine neue Frist und sagt nicht, welche Unterlagen heute und welche später kommen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: the answer secures no new deadline and does not say which documents will come today and which later." },
+                { "language": "fa", "text": "ناقص است: مهلت جدید را قطعی نمی‌کند و نمی‌گوید کدام مدارک امروز و کدام بعداً ارسال می‌شوند." },
+                { "language": "ar", "text": "ناقص: لا يؤمّن مهلة جديدة ولا يذكر أي مستندات ستُرسل اليوم وأيها لاحقاً." },
+                { "language": "tr", "text": "Eksik: yeni süreyi güvenceye almıyor ve hangi belgelerin bugün, hangilerinin sonra geleceğini söylemiyor." },
+                { "language": "ru", "text": "Неполно: не закрепляет новый срок и не говорит, какие документы будут поданы сегодня, а какие позже." },
+                { "language": "ckb", "text": "ناتەواوە: مۆڵەتی نوێ مسۆگەر ناکات و ناڵێت کام بەڵگەنامە ئەمڕۆ و کام دواتر دێن." },
+                { "language": "kmr", "text": "Netemam e: dema nû ewle nake û nabêje kîjan belge îro û kîjan paşê têne." },
+                { "language": "pl", "text": "Niepełne: odpowiedź nie zabezpiecza nowego terminu i nie mówi, które dokumenty będą dziś, a które później." },
+                { "language": "ro", "text": "Incomplet: răspunsul nu asigură un termen nou și nu spune ce documente vin astăzi și care mai târziu." },
+                { "language": "sq", "text": "E paplotë: përgjigjja nuk siguron afatin e ri dhe nuk thotë cilat dokumente vijnë sot dhe cilat më vonë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Beginne am Telefon nicht mit einer langen Vorgeschichte. Nenne zuerst Aktenzeichen, Frist und konkrete Bitte.",
+          "translations": [
+            { "language": "en", "text": "On the phone, do not begin with a long backstory. First state the reference number, deadline, and concrete request." },
+            { "language": "fa", "text": "در تماس تلفنی با داستان طولانی شروع نکن. اول شماره پرونده، مهلت و درخواست مشخص را بگو." },
+            { "language": "ar", "text": "في المكالمة الهاتفية لا تبدأ بقصة طويلة. اذكر أولاً رقم الملف والمهلة والطلب المحدد." },
+            { "language": "tr", "text": "Telefonda uzun bir geçmiş anlatımıyla başlama. Önce dosya numarasını, süreyi ve somut talebi söyle." },
+            { "language": "ru", "text": "По телефону не начинайте с длинной предыстории. Сначала назовите номер дела, срок и конкретную просьбу." },
+            { "language": "ckb", "text": "لە تەلەفۆندا بە چیرۆکی درێژ دەست پێ مەکە. یەکەم ژمارەی کەیس، مۆڵەت و داواکاریی دیاریکراو بڵێ." },
+            { "language": "kmr", "text": "Di telefonê de bi paşxaneyeke dirêj dest pê neke. Pêşî hejmarê dosyeyê, dem û daxwaza konkret bibêje." },
+            { "language": "pl", "text": "W rozmowie telefonicznej nie zaczynaj od długiej historii. Najpierw podaj numer sprawy, termin i konkretną prośbę." },
+            { "language": "ro", "text": "La telefon nu începe cu o poveste lungă. Menționează mai întâi numărul dosarului, termenul și cererea concretă." },
+            { "language": "sq", "text": "Në telefon mos fillo me histori të gjatë. Së pari jep numrin e dosjes, afatin dhe kërkesën konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "strategy",
+          "text": "Eine Fristverlängerung wirkt stärker, wenn der Grund überprüfbar ist und nicht nur als persönliche Schwierigkeit klingt.",
+          "translations": [
+            { "language": "en", "text": "A deadline extension sounds stronger when the reason is verifiable and does not only sound like a personal difficulty." },
+            { "language": "fa", "text": "درخواست تمدید مهلت وقتی قوی‌تر است که دلیل آن قابل بررسی باشد و فقط مثل یک مشکل شخصی به نظر نرسد." },
+            { "language": "ar", "text": "يبدو طلب تمديد المهلة أقوى عندما يكون السبب قابلاً للتحقق ولا يبدو كمشكلة شخصية فقط." },
+            { "language": "tr", "text": "Süre uzatımı, nedeni doğrulanabilir olduğunda ve yalnızca kişisel bir zorluk gibi duyulmadığında daha güçlü görünür." },
+            { "language": "ru", "text": "Просьба о продлении срока звучит сильнее, если причина проверяема и не выглядит только как личная трудность." },
+            { "language": "ckb", "text": "داوای درێژکردنەوەی مۆڵەت بەهێزتر دەردەکەوێت کاتێک هۆکارەکە پشکنراو بێت و تەنها وەک قورساییەکی کەسی نەبیسترێت." },
+            { "language": "kmr", "text": "Daxwaza dirêjkirina demê xurtir xuya dike, dema sedem dikare were kontrolkirin û tenê wek zehmetiyeke kesane neyê bihîstin." },
+            { "language": "pl", "text": "Prośba o przedłużenie terminu brzmi mocniej, gdy powód można sprawdzić i nie brzmi tylko jak osobista trudność." },
+            { "language": "ro", "text": "O cerere de prelungire a termenului pare mai solidă când motivul este verificabil și nu sună doar ca o dificultate personală." },
+            { "language": "sq", "text": "Kërkesa për zgjatje afati tingëllon më e fortë kur arsyeja është e verifikueshme dhe nuk duket vetëm si vështirësi personale." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "language",
+          "text": "Sag nicht nur `eine Woche mehr`. Ein genaues Datum mit kurzer Begründung ist am Telefon deutlich belastbarer.",
+          "translations": [
+            { "language": "en", "text": "Do not just say 'one more week'. An exact date with a short reason is much more reliable on the phone." },
+            { "language": "fa", "text": "فقط نگو «یک هفته بیشتر». تاریخ دقیق همراه با دلیل کوتاه در تماس تلفنی بسیار قابل اتکاتر است." },
+            { "language": "ar", "text": "لا تقل فقط «أسبوعاً إضافياً». التاريخ الدقيق مع سبب قصير يكون أكثر اعتماداً في المكالمة الهاتفية." },
+            { "language": "tr", "text": "Sadece 'bir hafta daha' deme. Kısa gerekçeli kesin bir tarih telefonda çok daha sağlamdır." },
+            { "language": "ru", "text": "Не говорите просто «ещё одну неделю». Точная дата с коротким обоснованием по телефону гораздо надёжнее." },
+            { "language": "ckb", "text": "تەنها مەڵێ `هەفتەیەکی تر`. ڕێکەوتی ورد لەگەڵ هۆکارێکی کورتی لە تەلەفۆندا زۆر پشتپێبەستوترە." },
+            { "language": "kmr", "text": "Tenê nebêje `hefteyek din`. Rojeke rast bi sedemekî kurt di telefonê de gelekî pêbawertir e." },
+            { "language": "pl", "text": "Nie mów tylko „jeszcze tydzień”. Dokładna data z krótkim uzasadnieniem jest w rozmowie telefonicznej znacznie bardziej wiarygodna." },
+            { "language": "ro", "text": "Nu spune doar „încă o săptămână”. O dată exactă cu o scurtă justificare este mult mai solidă la telefon." },
+            { "language": "sq", "text": "Mos thuaj vetëm “edhe një javë”. Një datë e saktë me një arsye të shkurtër është shumë më e besueshme në telefon." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Schließe den Anruf mit einem klaren Paket ab: Was kommt heute, was kommt später, bis wann gilt die Frist und wo steht die Bestätigung?",
+          "translations": [
+            { "language": "en", "text": "Close the call with a clear package: what comes today, what comes later, until when the deadline applies, and where the confirmation is written." },
+            { "language": "fa", "text": "تماس را با یک جمع‌بندی روشن تمام کن: چه چیزی امروز می‌آید، چه چیزی بعداً می‌آید، مهلت تا چه زمانی است و تأیید کجا نوشته می‌شود." },
+            { "language": "ar", "text": "اختم المكالمة بحزمة واضحة: ما الذي سيُرسل اليوم، وما الذي سيأتي لاحقاً، حتى متى تسري المهلة، وأين يوجد التأكيد." },
+            { "language": "tr", "text": "Görüşmeyi net bir paketle bitir: bugün ne gelecek, sonra ne gelecek, süre ne zamana kadar geçerli ve onay nerede yazıyor." },
+            { "language": "ru", "text": "Завершите звонок ясным набором пунктов: что поступит сегодня, что позже, до какого срока действует продление и где будет подтверждение." },
+            { "language": "ckb", "text": "پەیوەندییەکە بە کۆتاییەکی ڕوون ببە: چی ئەمڕۆ دێت، چی دواتر دێت، مۆڵەت تا کەیە و پشتڕاستکردنەوەکە لە کوێ نووسراوە." },
+            { "language": "kmr", "text": "Telefonê bi pakêteke zelal biqedîne: çi îro tê, çi paşê tê, dem heta kengê derbasdar e û pejirandin li ku hatiye nivîsandin." },
+            { "language": "pl", "text": "Zakończ rozmowę jasnym pakietem: co przyjdzie dziś, co później, do kiedy obowiązuje termin i gdzie jest potwierdzenie." },
+            { "language": "ro", "text": "Încheie apelul cu un pachet clar: ce vine astăzi, ce vine mai târziu, până când este valabil termenul și unde este confirmarea." },
+            { "language": "sq", "text": "Mbylle telefonatën me një paketë të qartë: çfarë vjen sot, çfarë vjen më vonë, deri kur vlen afati dhe ku është konfirmimi." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

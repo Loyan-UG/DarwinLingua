@@ -1,0 +1,662 @@
+{
+  "packageId": "roleplays-b2-core-56-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 56 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 56",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "culture": "de-DE",
+  "sourceLanguage": "de",
+  "notes": "B2 standalone RoleplayScenario package. German-first source content with localized learner-language projections. One scenario only for quality review.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-verlorenen-gegenstand-beschreiben",
+      "linkedDialogueSlug": null,
+      "title": "Einen verlorenen Gegenstand beschreiben",
+      "titleTranslations": [
+        { "language": "en", "text": "Describing a lost item" },
+        { "language": "fa", "text": "توصیف یک وسیله گم‌شده" },
+        { "language": "ar", "text": "وصف غرض مفقود" },
+        { "language": "tr", "text": "Kaybolan bir eşyayı tarif etmek" },
+        { "language": "ru", "text": "Описать потерянную вещь" },
+        { "language": "ckb", "text": "وەسفکردنی شتێکی ونبوو" },
+        { "language": "kmr", "text": "Danasîna tiştekî wenda" },
+        { "language": "pl", "text": "Opisanie zgubionego przedmiotu" },
+        { "language": "ro", "text": "Descrierea unui obiect pierdut" },
+        { "language": "sq", "text": "Përshkrimi i një sendi të humbur" }
+      ],
+      "description": "Du meldest am Servicepunkt, dass du im Zug einen Rucksack verloren hast. Du beschreibst Aussehen, Inhalt, letzten Ort und Zeitpunkt, gibst deine Kontaktdaten an, fragst nach dem Ablauf und sicherst dir eine Vorgangsnummer.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You report at the service point that you lost a backpack on the train. You describe its appearance, contents, last location, and time, provide your contact details, ask about the process, and secure a case number." },
+        { "language": "fa", "text": "در بخش خدمات گزارش می‌دهی که در قطار یک کوله‌پشتی گم کرده‌ای. ظاهر، محتویات، آخرین محل و زمان را توضیح می‌دهی، اطلاعات تماس خود را می‌دهی، درباره روند پیگیری می‌پرسی و شماره پرونده می‌گیری." },
+        { "language": "ar", "text": "تبلغ في نقطة الخدمة أنك فقدت حقيبة ظهر في القطار. تصف شكلها ومحتوياتها وآخر مكان ووقت، وتقدم بيانات الاتصال بك، وتسأل عن سير العملية، وتحصل على رقم ملف." },
+        { "language": "tr", "text": "Servis noktasında trende bir sırt çantası kaybettiğini bildiriyorsun. Görünüşünü, içindekileri, son yeri ve zamanı tarif ediyor, iletişim bilgilerini veriyor, süreci soruyor ve bir işlem numarası alıyorsun." },
+        { "language": "ru", "text": "Ты сообщаешь в сервисном пункте, что потерял(а) рюкзак в поезде. Ты описываешь внешний вид, содержимое, последнее место и время, даешь контактные данные, спрашиваешь о порядке действий и получаешь номер обращения." },
+        { "language": "ckb", "text": "لە خاڵی خزمەتگوزاریدا ڕاپۆرت دەدەیت کە لە شەمەندەفەردا جانتای پشت ون کردووە. ڕووخسار، ناوەڕۆک، شوێنی دوایین و کات وەسف دەکەیت، زانیاری پەیوەندیی خۆت دەدەیت، لە ڕێکاری پاشگیری دەپرسیت و ژمارەی دۆسیە وەردەگریت." },
+        { "language": "kmr", "text": "Li xala xizmetê tu radigihînî ku di trênê de çenteyeke piştê wenda kiriye. Tu xuyang, tiştên hundir, cih û dema dawî şirove dikî, daneyên têkiliyê didî, li ser pêvajoyê dipirsî û jimareyek dozê distînî." },
+        { "language": "pl", "text": "W punkcie obsługi zgłaszasz, że zgubiłeś/zgubiłaś plecak w pociągu. Opisujesz wygląd, zawartość, ostatnie miejsce i czas, podajesz dane kontaktowe, pytasz o dalszą procedurę i uzyskujesz numer sprawy." },
+        { "language": "ro", "text": "La punctul de service anunți că ai pierdut un rucsac în tren. Descrii aspectul, conținutul, ultimul loc și ora, dai datele tale de contact, întrebi despre procedură și obții un număr de caz." },
+        { "language": "sq", "text": "Në pikën e shërbimit njofton se ke humbur një çantë shpine në tren. Përshkruan pamjen, përmbajtjen, vendin dhe kohën e fundit, jep të dhënat e kontaktit, pyet për procedurën dhe siguron një numër rasti." }
+      ],
+      "learnerGoal": "Beschreibe einen verlorenen Gegenstand so genau, dass der Service ihn zuordnen kann: Aussehen, Inhalt, letzter Ort, Zeitpunkt, Kontaktdaten, Abhol- oder Versandoption und Vorgangsnummer.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Describe a lost item precisely enough for service staff to identify it: appearance, contents, last location, time, contact details, pickup or shipping option, and case number." },
+        { "language": "fa", "text": "یک وسیله گم‌شده را آن‌قدر دقیق توصیف کن که بخش خدمات بتواند آن را تشخیص دهد: ظاهر، محتویات، آخرین محل، زمان، اطلاعات تماس، گزینه تحویل گرفتن یا ارسال و شماره پرونده." },
+        { "language": "ar", "text": "صف غرضًا مفقودًا بدقة كافية حتى يستطيع موظفو الخدمة تحديده: الشكل، المحتويات، آخر مكان، الوقت، بيانات الاتصال، خيار الاستلام أو الإرسال، ورقم الملف." },
+        { "language": "tr", "text": "Kaybolan bir eşyayı servis görevlilerinin eşleştirebileceği kadar kesin tarif et: görünüş, içerik, son yer, zaman, iletişim bilgileri, teslim alma veya gönderim seçeneği ve işlem numarası." },
+        { "language": "ru", "text": "Опиши потерянную вещь достаточно точно, чтобы сервис мог ее идентифицировать: внешний вид, содержимое, последнее место, время, контактные данные, вариант получения или отправки и номер обращения." },
+        { "language": "ckb", "text": "شتێکی ونبوو بەوەندە ورد وەسف بکە کە خزمەتگوزاری بتوانێت بیناسێتەوە: ڕووخسار، ناوەڕۆک، شوێنی دوایین، کات، زانیاری پەیوەندی، هەڵبژاردەی وەرگرتن یان ناردن و ژمارەی دۆسیە." },
+        { "language": "kmr", "text": "Tiştekî wenda ewqas zehf danasîne ku karmendên xizmetê bikarin nas bikin: xuyang, hundir, cihê dawî, dem, daneyên têkiliyê, hilbijartina wergirtin an şandinê û jimareya dozê." },
+        { "language": "pl", "text": "Opisz zgubiony przedmiot na tyle dokładnie, aby obsługa mogła go zidentyfikować: wygląd, zawartość, ostatnie miejsce, czas, dane kontaktowe, odbiór lub wysyłka oraz numer sprawy." },
+        { "language": "ro", "text": "Descrie un obiect pierdut suficient de precis încât serviciul să îl poată identifica: aspect, conținut, ultimul loc, ora, date de contact, opțiune de ridicare sau trimitere și număr de caz." },
+        { "language": "sq", "text": "Përshkruaj një send të humbur aq saktë sa shërbimi ta identifikojë: pamja, përmbajtja, vendi i fundit, koha, të dhënat e kontaktit, mundësia e marrjes ose dërgimit dhe numri i rastit." }
+      ],
+      "cefrLevel": "B2",
+      "category": "travel",
+      "topics": [
+        "transport-and-travel",
+        "customer-service"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "taskType": "explain-problem",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "service-agent",
+          "displayName": "Fundservice",
+          "translations": [
+            { "language": "en", "text": "Lost property service" },
+            { "language": "fa", "text": "بخش اشیای گمشده" },
+            { "language": "ar", "text": "خدمة المفقودات" },
+            { "language": "tr", "text": "Kayıp eşya servisi" },
+            { "language": "ru", "text": "Служба находок" },
+            { "language": "ckb", "text": "خزمەتگوزاری شتە ونبووەکان" },
+            { "language": "kmr", "text": "Xizmeta tiştên wenda" },
+            { "language": "pl", "text": "Biuro rzeczy znalezionych" },
+            { "language": "ro", "text": "Serviciul obiecte pierdute" },
+            { "language": "sq", "text": "Shërbimi i sendeve të humbura" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Reisender",
+          "translations": [
+            { "language": "en", "text": "Traveler" },
+            { "language": "fa", "text": "مسافر" },
+            { "language": "ar", "text": "المسافر" },
+            { "language": "tr", "text": "Yolcu" },
+            { "language": "ru", "text": "Пассажир" },
+            { "language": "ckb", "text": "گەشتیار" },
+            { "language": "kmr", "text": "Rêwî" },
+            { "language": "pl", "text": "Podróżny" },
+            { "language": "ro", "text": "Călător" },
+            { "language": "sq", "text": "Udhëtari" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "service-agent",
+          "baseText": "Guten Tag. Sie sind beim Fundservice. Haben Sie etwas im Zug oder am Bahnhof verloren?",
+          "translations": [
+            { "language": "en", "text": "Good day. You are at the lost property service. Did you lose something on the train or at the station?" },
+            { "language": "fa", "text": "روز بخیر. شما در بخش اشیای گمشده هستید. چیزی را در قطار یا ایستگاه گم کرده‌اید؟" },
+            { "language": "ar", "text": "نهارك سعيد. أنت في خدمة المفقودات. هل فقدت شيئًا في القطار أو في المحطة؟" },
+            { "language": "tr", "text": "İyi günler. Kayıp eşya servisindesiniz. Trende veya istasyonda bir şey mi kaybettiniz?" },
+            { "language": "ru", "text": "Добрый день. Вы в службе находок. Вы потеряли что-то в поезде или на вокзале?" },
+            { "language": "ckb", "text": "ڕۆژ باش. ئێوە لە خزمەتگوزاری شتە ونبووەکانن. ئایا شتێکتان لە شەمەندەفەر یان لە وێستگەدا ون کردووە؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn li xizmeta tiştên wenda ne. We di trênê an li stasyonê de tiştek wenda kir?" },
+            { "language": "pl", "text": "Dzień dobry. To biuro rzeczy znalezionych. Czy zgubił pan / zgubiła pani coś w pociągu albo na dworcu?" },
+            { "language": "ro", "text": "Bună ziua. Ați ajuns la serviciul de obiecte pierdute. Ați pierdut ceva în tren sau în gară?" },
+            { "language": "sq", "text": "Mirëdita. Jeni te shërbimi i sendeve të humbura. A keni humbur diçka në tren apo në stacion?" }
+          ],
+          "function": "opening",
+          "toneNote": "Der Service grenzt den Ort des Verlusts ein.",
+          "expectedLearnerAction": "Gegenstand, Zug und Zeitpunkt nennen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe gestern Abend im RE 7 von Köln nach Wuppertal meinen Rucksack vergessen. Der Zug kam gegen 18:40 Uhr auf Gleis 4 an. Ich saß im zweiten Wagen in der Nähe des Fahrradbereichs.",
+          "translations": [
+            { "language": "en", "text": "Good day. Yesterday evening I left my backpack on the RE 7 from Cologne to Wuppertal. The train arrived at around 6:40 p.m. on platform 4. I was sitting in the second carriage near the bicycle area." },
+            { "language": "fa", "text": "روز بخیر. دیروز عصر کوله‌پشتی‌ام را در RE 7 از کلن به ووپرتال جا گذاشتم. قطار حدود ساعت ۱۸:۴۰ در سکوی ۴ رسید. من در واگن دوم نزدیک بخش دوچرخه نشسته بودم." },
+            { "language": "ar", "text": "نهارك سعيد. نسيت حقيبة ظهري مساء أمس في قطار RE 7 من كولن إلى فوبرتال. وصل القطار حوالي الساعة 18:40 إلى الرصيف 4. كنت جالسًا في العربة الثانية قرب منطقة الدراجات." },
+            { "language": "tr", "text": "İyi günler. Dün akşam Köln'den Wuppertal'a giden RE 7 treninde sırt çantamı unuttum. Tren saat 18:40 civarında 4. perona geldi. İkinci vagonda bisiklet bölümünün yakınında oturuyordum." },
+            { "language": "ru", "text": "Добрый день. Вчера вечером я забыл(а) свой рюкзак в поезде RE 7 из Кельна в Вупперталь. Поезд прибыл примерно в 18:40 на платформу 4. Я сидел(а) во втором вагоне рядом с зоной для велосипедов." },
+            { "language": "ckb", "text": "ڕۆژ باش. دوێنێ ئێوارە جانتای پشتم لە RE 7 لە کۆڵن بۆ ڤووپەرتال لەبیرچووە. شەمەندەفەرەکە نزیکەی کاتژمێر ١٨:٤٠ لە سەکۆی ٤ گەیشت. من لە واگۆنی دووەم نزیک بە بەشی پاسکیل دانیشتبووم." },
+            { "language": "kmr", "text": "Roj baş. Min duh êvarê di RE 7 ji Kölnê bo Wuppertalê de çenteya piştê xwe jibîr kir. Trên li derdora saet 18:40 li perona 4ê gihîşt. Ez di vagona duyem de nêzî beşa bisiklêtê rûniştibûm." },
+            { "language": "pl", "text": "Dzień dobry. Wczoraj wieczorem zostawiłem/zostawiłam plecak w RE 7 z Kolonii do Wuppertalu. Pociąg przyjechał około 18:40 na peron 4. Siedziałem/siedziałam w drugim wagonie, niedaleko strefy dla rowerów." },
+            { "language": "ro", "text": "Bună ziua. Aseară mi-am uitat rucsacul în RE 7 de la Köln la Wuppertal. Trenul a ajuns în jurul orei 18:40 la peronul 4. Stăteam în al doilea vagon, aproape de zona pentru biciclete." },
+            { "language": "sq", "text": "Mirëdita. Dje në mbrëmje harrova çantën e shpinës në RE 7 nga Këlni për në Wuppertal. Treni mbërriti rreth orës 18:40 në platformën 4. Isha ulur në vagonin e dytë pranë zonës së biçikletave." }
+          ],
+          "function": "state loss context",
+          "toneNote": "Du nennst Zug, Strecke, Zeit, Gleis und Sitzbereich.",
+          "expectedLearnerAction": "Verlustort und Zeitpunkt präzise eingrenzen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "service-agent",
+          "baseText": "Danke. Damit wir den Gegenstand zuordnen können, brauche ich eine genaue Beschreibung. Wie sieht der Rucksack aus und was war ungefähr darin?",
+          "translations": [
+            { "language": "en", "text": "Thank you. So that we can identify the item, I need an exact description. What does the backpack look like and roughly what was inside it?" },
+            { "language": "fa", "text": "ممنون. برای اینکه بتوانیم وسیله را تشخیص دهیم، به یک توصیف دقیق نیاز دارم. کوله‌پشتی چه شکلی است و تقریباً چه چیزهایی داخلش بود؟" },
+            { "language": "ar", "text": "شكرًا. حتى نستطيع تحديد الغرض، أحتاج إلى وصف دقيق. كيف تبدو حقيبة الظهر وماذا كان فيها تقريبًا؟" },
+            { "language": "tr", "text": "Teşekkür ederim. Eşyayı eşleştirebilmemiz için tam bir tarife ihtiyacım var. Sırt çantası nasıl görünüyor ve içinde yaklaşık neler vardı?" },
+            { "language": "ru", "text": "Спасибо. Чтобы мы могли идентифицировать вещь, мне нужно точное описание. Как выглядит рюкзак и что примерно было внутри?" },
+            { "language": "ckb", "text": "سوپاس. بۆ ئەوەی بتوانین شتەکە بناسینەوە، پێویستم بە وەسفێکی وردە. جانتای پشتەکە چۆن دەردەکەوێت و نزیکەی چی تێیدا بوو؟" },
+            { "language": "kmr", "text": "Spas. Da ku em tiştê nas bikin, ez hewceyî danasîneke zehf im. Çenteya piştê çawa xuya dike û nêzîkî çi tê de bû?" },
+            { "language": "pl", "text": "Dziękuję. Żebyśmy mogli przyporządkować przedmiot, potrzebuję dokładnego opisu. Jak wygląda plecak i co mniej więcej było w środku?" },
+            { "language": "ro", "text": "Mulțumesc. Ca să putem identifica obiectul, am nevoie de o descriere exactă. Cum arată rucsacul și ce era aproximativ în el?" },
+            { "language": "sq", "text": "Faleminderit. Që ta identifikojmë sendin, më duhet një përshkrim i saktë. Si duket çanta e shpinës dhe çfarë kishte afërsisht brenda?" }
+          ],
+          "function": "request description",
+          "toneNote": "Der Service braucht identifizierende Merkmale.",
+          "expectedLearnerAction": "Aussehen und Inhalt detailliert beschreiben."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Es ist ein dunkelblauer Rucksack mit grauem Frontfach und einem roten Schlüsselanhänger am Reißverschluss. Darin waren eine schwarze Mappe mit meinem Namen, ein Ladekabel, eine Wasserflasche und ein grauer Pullover. Bargeld und Ausweis waren zum Glück nicht darin.",
+          "translations": [
+            { "language": "en", "text": "It is a dark blue backpack with a gray front pocket and a red keychain on the zipper. Inside were a black folder with my name, a charging cable, a water bottle, and a gray sweater. Fortunately, there was no cash or ID inside." },
+            { "language": "fa", "text": "یک کوله‌پشتی سرمه‌ای با جیب جلویی خاکستری و یک جاکلیدی قرمز روی زیپ است. داخلش یک پوشه مشکی با اسم من، کابل شارژ، بطری آب و یک پلیور خاکستری بود. خوشبختانه پول نقد و کارت شناسایی داخلش نبود." },
+            { "language": "ar", "text": "إنها حقيبة ظهر زرقاء داكنة مع جيب أمامي رمادي وعلاقة مفاتيح حمراء على السحاب. كان بداخلها ملف أسود عليه اسمي، وكابل شحن، وقنينة ماء، وسترة رمادية. لحسن الحظ لم يكن فيها مال نقدي ولا بطاقة هوية." },
+            { "language": "tr", "text": "Koyu mavi bir sırt çantası; gri bir ön cebi ve fermuarında kırmızı bir anahtarlığı var. İçinde adımın yazılı olduğu siyah bir dosya, bir şarj kablosu, bir su şişesi ve gri bir kazak vardı. Neyse ki içinde nakit para ve kimlik yoktu." },
+            { "language": "ru", "text": "Это темно-синий рюкзак с серым передним карманом и красным брелоком на молнии. Внутри были черная папка с моим именем, зарядный кабель, бутылка воды и серый свитер. К счастью, наличных и удостоверения личности там не было." },
+            { "language": "ckb", "text": "جانتای پشتێکی شینى تۆخە، گیرفانی پێشەوەی خۆڵەمێشی و کلیلی سوور لەسەر زیپەکەی هەیە. لە ناویدا فۆڵدەرێکی ڕەش بە ناوی من، کەیبڵی شەحن، بوتڵی ئاو و بلوزێکی خۆڵەمێشی بوو. بەختەوەرانە پارەی نەقد و ناسنامەی تێدا نەبوو." },
+            { "language": "kmr", "text": "Ew çenteyeke piştê ya şînê tarî ye, kîsek pêşiya gewr û girêdana mifteya sor li fermuarê wê heye. Di hundir de peldankeke reş bi navê min, kabloya şarjê, şûşeya avê û kirasê germ ê gewr hebûn. Bi xêr, pereyê dest û nasname tê de nebûn." },
+            { "language": "pl", "text": "To ciemnoniebieski plecak z szarą przednią kieszenią i czerwonym brelokiem przy zamku. W środku była czarna teczka z moim nazwiskiem, kabel do ładowania, butelka wody i szary sweter. Na szczęście nie było tam gotówki ani dokumentu tożsamości." },
+            { "language": "ro", "text": "Este un rucsac albastru închis, cu buzunar frontal gri și un breloc roșu la fermoar. În el erau un dosar negru cu numele meu, un cablu de încărcare, o sticlă de apă și un pulover gri. Din fericire, nu erau bani numerar sau act de identitate în el." },
+            { "language": "sq", "text": "Është një çantë shpine blu e errët me xhep të përparmë gri dhe një mbajtëse çelësash të kuqe te zinxhiri. Brenda kishte një dosje të zezë me emrin tim, një kabllo karikimi, një shishe uji dhe një pulovër gri. Fatmirësisht nuk kishte para të gatshme apo dokument identiteti brenda." }
+          ],
+          "function": "describe item",
+          "toneNote": "Du gibst mehrere identifizierende Merkmale und Inhalte an.",
+          "expectedLearnerAction": "Merkmale, Inhalt und Ausschluss wichtiger Dokumente nennen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "service-agent",
+          "baseText": "Das ist hilfreich. Haben Sie den Rucksack zuletzt im Gepäckfach gesehen oder stand er neben Ihnen? Und können wir Sie telefonisch oder per E-Mail erreichen, falls er gefunden wird?",
+          "translations": [
+            { "language": "en", "text": "That is helpful. Did you last see the backpack in the luggage rack or was it next to you? And can we reach you by phone or email if it is found?" },
+            { "language": "fa", "text": "این کمک‌کننده است. آخرین بار کوله‌پشتی را در قفسه بار دیدید یا کنار شما بود؟ و اگر پیدا شود، می‌توانیم تلفنی یا از طریق ایمیل با شما تماس بگیریم؟" },
+            { "language": "ar", "text": "هذا مفيد. هل رأيت الحقيبة آخر مرة في رف الأمتعة أم كانت بجانبك؟ وهل يمكننا الوصول إليك هاتفيًا أو عبر البريد الإلكتروني إذا تم العثور عليها؟" },
+            { "language": "tr", "text": "Bu yardımcı oldu. Sırt çantasını en son bagaj rafında mı gördünüz, yoksa yanınızda mı duruyordu? Bulunursa size telefonla veya e-posta ile ulaşabilir miyiz?" },
+            { "language": "ru", "text": "Это полезно. Вы в последний раз видели рюкзак на багажной полке или он стоял рядом с вами? И можем ли мы связаться с вами по телефону или электронной почте, если его найдут?" },
+            { "language": "ckb", "text": "ئەمە یارمەتیدەرە. دوایین جار جانتای پشتەکەتان لە سەرەوەی شوێنی بار بینی یان لە تەنیشتتان بوو؟ ئەگەر بدۆزرێتەوە، دەتوانین بە تەلەفۆن یان ئیمەیڵ پەیوەندیتان پێوە بکەین؟" },
+            { "language": "kmr", "text": "Ev alîkar e. We çenteya piştê herî dawî li refa baran dît an li kêleka we bû? Ger were dîtin, em dikarin bi telefon an e-peyamê bigihîjin we?" },
+            { "language": "pl", "text": "To pomocne. Czy ostatnio widział pan / widziała pani plecak na półce bagażowej, czy stał obok pana/pani? I czy możemy skontaktować się telefonicznie albo mailowo, jeśli się znajdzie?" },
+            { "language": "ro", "text": "Este util. Ați văzut rucsacul ultima dată în raftul pentru bagaje sau era lângă dumneavoastră? Și vă putem contacta telefonic sau prin e-mail dacă este găsit?" },
+            { "language": "sq", "text": "Kjo ndihmon. A e patë çantën për herë të fundit në raftin e bagazheve apo ishte pranë jush? Dhe a mund t'ju kontaktojmë me telefon ose me e-mail nëse gjendet?" }
+          ],
+          "function": "ask last location and contact",
+          "toneNote": "Der Service fragt nach letzter Position und Kontaktweg.",
+          "expectedLearnerAction": "Letzten Ort und Kontaktdaten angeben."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich habe ihn zuletzt im Gepäckfach über meinem Sitz gesehen. Beim Aussteigen hatte ich nur meinen kleinen Beutel dabei und habe den Rucksack erst zehn Minuten später vermisst. Sie erreichen mich unter 0176 12345678 oder per E-Mail an amir.rahimi@example.com.",
+          "translations": [
+            { "language": "en", "text": "I last saw it in the luggage rack above my seat. When I got off, I only had my small bag with me and noticed the backpack was missing ten minutes later. You can reach me at 0176 12345678 or by email at amir.rahimi@example.com." },
+            { "language": "fa", "text": "آخرین بار آن را در قفسه بار بالای صندلی‌ام دیدم. هنگام پیاده شدن فقط کیف کوچک همراهم بود و ده دقیقه بعد متوجه شدم کوله‌پشتی نیست. می‌توانید با شماره 0176 12345678 یا از طریق ایمیل amir.rahimi@example.com با من تماس بگیرید." },
+            { "language": "ar", "text": "رأيته آخر مرة في رف الأمتعة فوق مقعدي. عند النزول كان معي كيسي الصغير فقط ولاحظت بعد عشر دقائق أن حقيبة الظهر مفقودة. يمكنكم الوصول إلي على الرقم 0176 12345678 أو عبر البريد الإلكتروني amir.rahimi@example.com." },
+            { "language": "tr", "text": "Onu en son koltuğumun üzerindeki bagaj rafında gördüm. İnerken yanımda sadece küçük çantam vardı ve sırt çantasının eksik olduğunu on dakika sonra fark ettim. Bana 0176 12345678 numarasından veya amir.rahimi@example.com adresinden ulaşabilirsiniz." },
+            { "language": "ru", "text": "В последний раз я видел(а) его на багажной полке над своим сиденьем. При выходе у меня была только маленькая сумка, и я заметил(а), что рюкзака нет, через десять минут. Со мной можно связаться по номеру 0176 12345678 или по электронной почте amir.rahimi@example.com." },
+            { "language": "ckb", "text": "دوایین جار لە سەرەوەی شوێنی بار لەسەر کورسییەکەم بینیم. کاتێک دابەزیم تەنها جانتای بچووكم پێبوو و دوای دە خولەک زانیم جانتای پشتەکەم نییە. دەتوانن لە ژمارەی 0176 12345678 یان بە ئیمەیڵی amir.rahimi@example.com پەیوەندیم پێوە بکەن." },
+            { "language": "kmr", "text": "Min ew herî dawî li refa baran li ser kursiya xwe dît. Dema daketim tenê çenteya biçûk li cem min bû û min deh deqe paşê fam kir ku çenteya piştê tune ye. Hûn dikarin bi jimareya 0176 12345678 an bi e-peyama amir.rahimi@example.com bigihîjin min." },
+            { "language": "pl", "text": "Ostatni raz widziałem/widziałam go na półce bagażowej nad moim miejscem. Przy wysiadaniu miałem/miałam tylko małą torbę i dopiero dziesięć minut później zauważyłem/zauważyłam brak plecaka. Można się ze mną skontaktować pod numerem 0176 12345678 albo e-mailem na amir.rahimi@example.com." },
+            { "language": "ro", "text": "L-am văzut ultima dată în raftul pentru bagaje deasupra locului meu. La coborâre aveam cu mine doar geanta mică și am observat lipsa rucsacului abia zece minute mai târziu. Mă puteți contacta la 0176 12345678 sau prin e-mail la amir.rahimi@example.com." },
+            { "language": "sq", "text": "E pashë për herë të fundit në raftin e bagazheve mbi vendin tim. Kur zbrita kisha me vete vetëm çantën e vogël dhe e vura re pas dhjetë minutash që çanta e shpinës mungonte. Mund të më kontaktoni në 0176 12345678 ose me e-mail në amir.rahimi@example.com." }
+          ],
+          "function": "give last location and contact",
+          "toneNote": "Du erklärst plausibel, wann der Verlust bemerkt wurde, und gibst Kontaktwege an.",
+          "expectedLearnerAction": "Letzte Sichtung, Zeitabstand und Kontakt nennen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "service-agent",
+          "baseText": "Gut. Ich lege eine Verlustmeldung an. Wenn der Rucksack gefunden wird, bekommen Sie eine Nachricht. Möchten Sie ihn hier am Bahnhof abholen oder soll er gegen Gebühr an eine Adresse geschickt werden?",
+          "translations": [
+            { "language": "en", "text": "Good. I will create a lost item report. If the backpack is found, you will receive a message. Would you like to pick it up here at the station, or should it be sent to an address for a fee?" },
+            { "language": "fa", "text": "خوب. من یک گزارش گم‌شدن ثبت می‌کنم. اگر کوله‌پشتی پیدا شود، پیامی دریافت می‌کنید. می‌خواهید آن را همین‌جا در ایستگاه تحویل بگیرید یا با هزینه به یک آدرس ارسال شود؟" },
+            { "language": "ar", "text": "حسنًا. سأفتح بلاغ فقدان. إذا تم العثور على حقيبة الظهر فستتلقى رسالة. هل تريد استلامها هنا في المحطة أم إرسالها إلى عنوان مقابل رسوم؟" },
+            { "language": "tr", "text": "Tamam. Bir kayıp bildirimi oluşturuyorum. Sırt çantası bulunursa size bir mesaj gönderilecek. Onu burada istasyonda almak mı istersiniz, yoksa ücret karşılığında bir adrese gönderilsin mi?" },
+            { "language": "ru", "text": "Хорошо. Я оформлю заявление о потере. Если рюкзак найдут, вы получите сообщение. Хотите забрать его здесь на вокзале или отправить на адрес за плату?" },
+            { "language": "ckb", "text": "باشە. ڕاپۆرتێکی ونبوون تۆمار دەکەم. ئەگەر جانتای پشتەکە بدۆزرێتەوە، پەیامێکتان پێدەگات. دەتەوێت لێرە لە وێستگەدا وەری بگرن یان بەرامبەر کرێ بۆ ناونیشانێک بنێردرێت؟" },
+            { "language": "kmr", "text": "Baş e. Ez ragihandineke wendayî çêdikim. Ger çenteya piştê were dîtin, hûn peyamekê distînin. Hûn dixwazin wê li vir li stasyonê bistînin an bi berdêlekê ji navnîşanekê re were şandin?" },
+            { "language": "pl", "text": "Dobrze. Założę zgłoszenie zagubienia. Jeśli plecak się znajdzie, otrzyma pan/pani wiadomość. Czy chce pan/pani odebrać go tutaj na dworcu, czy ma zostać wysłany na adres za opłatą?" },
+            { "language": "ro", "text": "Bine. Voi crea o sesizare de pierdere. Dacă rucsacul este găsit, primiți un mesaj. Doriți să îl ridicați aici, în gară, sau să fie trimis contra cost la o adresă?" },
+            { "language": "sq", "text": "Mirë. Do të hap një njoftim për humbje. Nëse çanta e shpinës gjendet, do të merrni një mesazh. Dëshironi ta merrni këtu në stacion apo të dërgohet me pagesë në një adresë?" }
+          ],
+          "function": "explain process and options",
+          "toneNote": "Der Service erklärt Meldung, Benachrichtigung und Abholoptionen.",
+          "expectedLearnerAction": "Option wählen und Ablauf klären."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wenn er gefunden wird, würde ich ihn am liebsten hier abholen, weil in der Mappe Unterlagen für einen Termin liegen. Können Sie bitte in der Meldung notieren, dass ich schnell erreichbar bin, und mir sagen, wie lange die Suche normalerweise dauert?",
+          "translations": [
+            { "language": "en", "text": "If it is found, I would prefer to pick it up here because the folder contains documents for an appointment. Could you please note in the report that I can be reached quickly and tell me how long the search usually takes?" },
+            { "language": "fa", "text": "اگر پیدا شود، ترجیح می‌دهم آن را همین‌جا تحویل بگیرم، چون در پوشه مدارکی برای یک قرار هست. لطفاً می‌توانید در گزارش یادداشت کنید که من سریع در دسترس هستم و بگویید جست‌وجو معمولاً چقدر طول می‌کشد؟" },
+            { "language": "ar", "text": "إذا تم العثور عليها، فأفضل أن أستلمها هنا لأن في الملف مستندات لموعد. هل يمكنكم من فضلكم أن تكتبوا في البلاغ أنني متاح بسرعة، وأن تخبروني كم تستغرق عملية البحث عادة؟" },
+            { "language": "tr", "text": "Bulunursa, onu en iyisi burada almak isterim, çünkü dosyada bir randevu için belgeler var. Lütfen bildirime hızlıca ulaşılabilir olduğumu not eder misiniz ve aramanın normalde ne kadar sürdüğünü söyler misiniz?" },
+            { "language": "ru", "text": "Если его найдут, я бы предпочел(предпочла) забрать его здесь, потому что в папке лежат документы для встречи. Можете, пожалуйста, отметить в заявлении, что со мной можно быстро связаться, и сказать, сколько обычно длится поиск?" },
+            { "language": "ckb", "text": "ئەگەر بدۆزرێتەوە، باشترە لێرە وەری بگرم، چونکە لە فۆڵدەرەکەدا بەڵگەنامە بۆ کۆبوونەوەیەک هەیە. تکایە دەتوانن لە ڕاپۆرتەکەدا بنووسن کە من بە خێرایی دەردەستم و پێم بڵێن گەڕانەکە بە ئاسایی چەند دەخایەنێت؟" },
+            { "language": "kmr", "text": "Ger were dîtin, ez dixwazim wê herî baş li vir bistînim, ji ber ku di peldankê de belgeyên ji bo randevûyekê hene. Hûn dikarin ji kerema xwe di ragihandinê de binivîsin ku ez zû têgihîştinbar im û ji min re bibêjin lêgerîn bi gelemperî çiqas dem digire?" },
+            { "language": "pl", "text": "Jeśli się znajdzie, najchętniej odebrałbym/odebrałabym go tutaj, ponieważ w teczce są dokumenty na spotkanie. Czy mogą państwo zanotować w zgłoszeniu, że jestem szybko osiągalny/osiągalna, i powiedzieć, jak długo zwykle trwa poszukiwanie?" },
+            { "language": "ro", "text": "Dacă este găsit, aș prefera să îl ridic de aici, deoarece în dosar sunt documente pentru o programare. Puteți nota, vă rog, în sesizare că pot fi contactat rapid și să îmi spuneți cât durează de obicei căutarea?" },
+            { "language": "sq", "text": "Nëse gjendet, do të preferoja ta merrja këtu, sepse në dosje ka dokumente për një takim. A mund të shënoni ju lutem në njoftim se jam i arritshëm shpejt dhe të më thoni sa zgjat zakonisht kërkimi?" }
+          ],
+          "function": "clarify urgency and process",
+          "toneNote": "Du erklärst Dringlichkeit ohne Druck und fragst nach realistischer Dauer.",
+          "expectedLearnerAction": "Abholung, Dringlichkeit und Suchdauer klären."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "service-agent",
+          "baseText": "Ich habe das notiert. Die Vorgangsnummer lautet F-73921. Sie können den Status online prüfen. Falls der Rucksack gefunden wird, brauchen Sie bei der Abholung einen Ausweis und diese Nummer.",
+          "translations": [
+            { "language": "en", "text": "I have noted that. The case number is F-73921. You can check the status online. If the backpack is found, you will need an ID and this number when picking it up." },
+            { "language": "fa", "text": "این را یادداشت کردم. شماره پرونده F-73921 است. می‌توانید وضعیت را آنلاین بررسی کنید. اگر کوله‌پشتی پیدا شود، هنگام تحویل گرفتن به کارت شناسایی و این شماره نیاز دارید." },
+            { "language": "ar", "text": "لقد دوّنت ذلك. رقم الملف هو F-73921. يمكنك التحقق من الحالة عبر الإنترنت. إذا تم العثور على حقيبة الظهر، فستحتاج عند الاستلام إلى بطاقة هوية وهذا الرقم." },
+            { "language": "tr", "text": "Bunu not ettim. İşlem numarası F-73921. Durumu çevrimiçi kontrol edebilirsiniz. Sırt çantası bulunursa, teslim alırken kimliğe ve bu numaraya ihtiyacınız olacak." },
+            { "language": "ru", "text": "Я это отметил(а). Номер обращения F-73921. Вы можете проверять статус онлайн. Если рюкзак найдут, при получении вам понадобится удостоверение личности и этот номер." },
+            { "language": "ckb", "text": "ئەمەم تۆمار کرد. ژمارەی دۆسیە F-73921ە. دەتوانن دۆخەکە ئۆنلاین بپشکنن. ئەگەر جانتای پشتەکە بدۆزرێتەوە، لە کاتی وەرگرتندا پێویستتان بە ناسنامە و ئەم ژمارەیە دەبێت." },
+            { "language": "kmr", "text": "Min ev tomar kir. Jimareya dozê F-73921 e. Hûn dikarin rewşê serhêl kontrol bikin. Ger çenteya piştê were dîtin, dema wergirtinê nasname û ev jimare divê." },
+            { "language": "pl", "text": "Zanotowałem/zanotowałam to. Numer sprawy to F-73921. Status można sprawdzać online. Jeśli plecak się znajdzie, przy odbiorze potrzebny będzie dokument tożsamości i ten numer." },
+            { "language": "ro", "text": "Am notat acest lucru. Numărul cazului este F-73921. Puteți verifica starea online. Dacă rucsacul este găsit, la ridicare aveți nevoie de un act de identitate și de acest număr." },
+            { "language": "sq", "text": "E shënova këtë. Numri i rastit është F-73921. Mund ta kontrolloni statusin online. Nëse çanta e shpinës gjendet, gjatë marrjes ju duhet një dokument identiteti dhe ky numër." }
+          ],
+          "function": "provide reference number",
+          "toneNote": "Der Service nennt Vorgangsnummer und Abholvoraussetzungen.",
+          "expectedLearnerAction": "Nummer wiederholen und nächste Schritte zusammenfassen."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Ich notiere die Vorgangsnummer F-73921, prüfe den Status online und warte auf Ihre Nachricht. Wenn der Rucksack gefunden wird, hole ich ihn hier mit Ausweis ab. Bitte informieren Sie mich möglichst telefonisch, weil die Unterlagen dringend sind.",
+          "translations": [
+            { "language": "en", "text": "Thank you. I will note the case number F-73921, check the status online, and wait for your message. If the backpack is found, I will pick it up here with my ID. Please inform me by phone if possible because the documents are urgent." },
+            { "language": "fa", "text": "بسیار ممنون. شماره پرونده F-73921 را یادداشت می‌کنم، وضعیت را آنلاین بررسی می‌کنم و منتظر پیام شما می‌مانم. اگر کوله‌پشتی پیدا شود، آن را اینجا با کارت شناسایی تحویل می‌گیرم. لطفاً اگر ممکن است تلفنی به من اطلاع دهید، چون مدارک فوری هستند." },
+            { "language": "ar", "text": "شكرًا جزيلًا. سأدوّن رقم الملف F-73921، وأتحقق من الحالة عبر الإنترنت، وأنتظر رسالتكم. إذا تم العثور على حقيبة الظهر، فسأستلمها هنا مع بطاقة الهوية. أرجو إبلاغي هاتفيًا إن أمكن، لأن المستندات عاجلة." },
+            { "language": "tr", "text": "Çok teşekkür ederim. F-73921 işlem numarasını not ediyorum, durumu çevrimiçi kontrol edeceğim ve mesajınızı bekleyeceğim. Sırt çantası bulunursa, onu burada kimliğimle alacağım. Belgeler acil olduğu için lütfen mümkünse beni telefonla bilgilendirin." },
+            { "language": "ru", "text": "Большое спасибо. Я запишу номер обращения F-73921, буду проверять статус онлайн и ждать ваше сообщение. Если рюкзак найдут, я заберу его здесь с удостоверением личности. Пожалуйста, по возможности сообщите мне по телефону, потому что документы срочные." },
+            { "language": "ckb", "text": "زۆر سوپاس. ژمارەی دۆسیە F-73921 تۆمار دەکەم، دۆخەکە ئۆنلاین دەپشکنم و چاوەڕێی پەیامتان دەبم. ئەگەر جانتای پشتەکە بدۆزرێتەوە، لێرە لەگەڵ ناسنامە وەری دەگرم. تکایە ئەگەر دەکرێت بە تەلەفۆن ئاگادارم بکەنەوە، چونکە بەڵگەنامەکان پەلەن." },
+            { "language": "kmr", "text": "Gelek spas. Ez jimareya dozê F-73921 dinivîsim, rewşê serhêl kontrol dikim û li benda peyama we dimînim. Ger çenteya piştê were dîtin, ez wê li vir bi nasnameyê distînim. Ji kerema xwe heke mumkin be bi telefonê min agahdar bikin, ji ber ku belge lezgîn in." },
+            { "language": "pl", "text": "Dziękuję bardzo. Zanotuję numer sprawy F-73921, sprawdzę stan sprawy w internecie i poczekam na państwa wiadomość. Jeśli plecak się znajdzie, odbiorę go tutaj z dokumentem tożsamości. Proszę, jeśli to możliwe, poinformować mnie telefonicznie, ponieważ dokumenty są pilne." },
+            { "language": "ro", "text": "Vă mulțumesc. Notez numărul cazului F-73921, verific starea online și aștept mesajul dumneavoastră. Dacă rucsacul este găsit, îl ridic de aici cu actul de identitate. Vă rog să mă informați telefonic, dacă este posibil, deoarece documentele sunt urgente." },
+            { "language": "sq", "text": "Faleminderit shumë. Do ta shënoj numrin e rastit F-73921, do ta kontrolloj statusin online dhe do të pres mesazhin tuaj. Nëse çanta e shpinës gjendet, do ta marr këtu me dokument identiteti. Ju lutem më njoftoni me telefon nëse është e mundur, sepse dokumentet janë urgjente." }
+          ],
+          "function": "close with next steps",
+          "toneNote": "Du sicherst Nummer, Statusprüfung, Abholung und bevorzugten Kontaktweg.",
+          "expectedLearnerAction": "Vorgangsnummer und nächste Schritte verbindlich wiederholen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "b2-lost-item-56-t2-a",
+              "text": "Guten Tag. Ich habe gestern Abend im RE 7 von Köln nach Wuppertal meinen Rucksack vergessen. Der Zug kam gegen 18:40 Uhr auf Gleis 4 an. Ich saß im zweiten Wagen in der Nähe des Fahrradbereichs.",
+              "translations": [
+                { "language": "en", "text": "Good day. Yesterday evening I left my backpack on the RE 7 from Cologne to Wuppertal. The train arrived at around 6:40 p.m. on platform 4. I was sitting in the second carriage near the bicycle area." },
+                { "language": "fa", "text": "روز بخیر. دیروز عصر کوله‌پشتی‌ام را در RE 7 از کلن به ووپرتال جا گذاشتم. قطار حدود ساعت ۱۸:۴۰ در سکوی ۴ رسید. من در واگن دوم نزدیک بخش دوچرخه نشسته بودم." },
+                { "language": "ar", "text": "نهارك سعيد. نسيت حقيبة ظهري مساء أمس في قطار RE 7 من كولن إلى فوبرتال. وصل القطار حوالي الساعة 18:40 إلى الرصيف 4. كنت جالسًا في العربة الثانية قرب منطقة الدراجات." },
+                { "language": "tr", "text": "İyi günler. Dün akşam Köln'den Wuppertal'a giden RE 7 treninde sırt çantamı unuttum. Tren saat 18:40 civarında 4. perona geldi. İkinci vagonda bisiklet bölümünün yakınında oturuyordum." },
+                { "language": "ru", "text": "Добрый день. Вчера вечером я забыл(а) свой рюкзак в поезде RE 7 из Кельна в Вупперталь. Поезд прибыл примерно в 18:40 на платформу 4. Я сидел(а) во втором вагоне рядом с зоной для велосипедов." },
+                { "language": "ckb", "text": "ڕۆژ باش. دوێنێ ئێوارە جانتای پشتم لە RE 7 لە کۆڵن بۆ ڤووپەرتال لەبیرچووە. شەمەندەفەرەکە نزیکەی کاتژمێر ١٨:٤٠ لە سەکۆی ٤ گەیشت. من لە واگۆنی دووەم نزیک بە بەشی پاسکیل دانیشتبووم." },
+                { "language": "kmr", "text": "Roj baş. Min duh êvarê di RE 7 ji Kölnê bo Wuppertalê de çenteya piştê xwe jibîr kir. Trên li derdora saet 18:40 li perona 4ê gihîşt. Ez di vagona duyem de nêzî beşa bisiklêtê rûniştibûm." },
+                { "language": "pl", "text": "Dzień dobry. Wczoraj wieczorem zostawiłem/zostawiłam plecak w RE 7 z Kolonii do Wuppertalu. Pociąg przyjechał około 18:40 na peron 4. Siedziałem/siedziałam w drugim wagonie, niedaleko strefy dla rowerów." },
+                { "language": "ro", "text": "Bună ziua. Aseară mi-am uitat rucsacul în RE 7 de la Köln la Wuppertal. Trenul a ajuns în jurul orei 18:40 la peronul 4. Stăteam în al doilea vagon, aproape de zona pentru biciclete." },
+                { "language": "sq", "text": "Mirëdita. Dje në mbrëmje harrova çantën e shpinës në RE 7 nga Këlni për në Wuppertal. Treni mbërriti rreth orës 18:40 në platformën 4. Isha ulur në vagonin e dytë pranë zonës së biçikletave." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist gut: Zug, Strecke, Zeit, Gleis und Sitzbereich helfen dem Fundservice sofort.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is good: train, route, time, platform, and seating area immediately help the lost property service." },
+                { "language": "fa", "text": "این خوب است: قطار، مسیر، زمان، سکو و محل نشستن فوراً به بخش اشیای گمشده کمک می‌کند." },
+                { "language": "ar", "text": "هذا جيد: القطار والمسار والوقت والرصيف ومنطقة الجلوس تساعد خدمة المفقودات فورًا." },
+                { "language": "tr", "text": "Bu iyi: tren, güzergah, saat, peron ve oturma bölgesi kayıp eşya servisine hemen yardımcı olur." },
+                { "language": "ru", "text": "Это хорошо: поезд, маршрут, время, платформа и место в вагоне сразу помогают службе находок." },
+                { "language": "ckb", "text": "ئەمە باشە: شەمەندەفەر، ڕێگا، کات، سەکۆ و شوێنی دانیشتن دەستبەجێ یارمەتی خزمەتگوزاری شتە ونبووەکان دەدات." },
+                { "language": "kmr", "text": "Ev baş e: trên, rê, dem, peron û cihê rûniştinê tavilê alîkariya xizmeta tiştên wenda dikin." },
+                { "language": "pl", "text": "To dobre: pociąg, trasa, czas, peron i miejsce siedzenia od razu pomagają biuru rzeczy znalezionych." },
+                { "language": "ro", "text": "Este bine: trenul, ruta, ora, peronul și zona locului ajută imediat serviciul de obiecte pierdute." },
+                { "language": "sq", "text": "Kjo është mirë: treni, itinerari, koha, platforma dhe zona e uljes e ndihmojnë menjëherë shërbimin e sendeve të humbura." }
+              ],
+              "explanationKey": "precise-loss-context"
+            },
+            {
+              "id": "b2-lost-item-56-t2-b",
+              "text": "Guten Tag. Ich habe gestern im Zug meinen Rucksack verloren. Können Sie nachsehen, ob er da ist?",
+              "translations": [
+                { "language": "en", "text": "Good day. I lost my backpack on the train yesterday. Could you check whether it is there?" },
+                { "language": "fa", "text": "روز بخیر. دیروز در قطار کوله‌پشتی‌ام را گم کردم. می‌توانید بررسی کنید آیا آنجاست؟" },
+                { "language": "ar", "text": "نهارك سعيد. فقدت حقيبة ظهري أمس في القطار. هل يمكنكم التحقق مما إذا كانت موجودة؟" },
+                { "language": "tr", "text": "İyi günler. Dün trende sırt çantamı kaybettim. Orada olup olmadığını kontrol eder misiniz?" },
+                { "language": "ru", "text": "Добрый день. Вчера я потерял(а) рюкзак в поезде. Можете проверить, есть ли он там?" },
+                { "language": "ckb", "text": "ڕۆژ باش. دوێنێ لە شەمەندەفەر جانتای پشتم ون کرد. دەتوانن بپشکنن ئایا لەوێیە؟" },
+                { "language": "kmr", "text": "Roj baş. Min duh di trênê de çenteya piştê xwe wenda kir. Hûn dikarin kontrol bikin ka ew li wir e?" },
+                { "language": "pl", "text": "Dzień dobry. Wczoraj zgubiłem/zgubiłam plecak w pociągu. Czy mogą państwo sprawdzić, czy tam jest?" },
+                { "language": "ro", "text": "Bună ziua. Ieri mi-am pierdut rucsacul în tren. Puteți verifica dacă este acolo?" },
+                { "language": "sq", "text": "Mirëdita. Dje humba çantën e shpinës në tren. A mund të kontrolloni nëse është aty?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber zu allgemein. Ohne Zug, Zeit und Sitzbereich kann der Service kaum gezielt suchen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too general. Without train, time, and seating area, the service can hardly search specifically." },
+                { "language": "fa", "text": "این قابل فهم است، اما خیلی کلی است. بدون قطار، زمان و محل نشستن، بخش خدمات به‌سختی می‌تواند هدفمند جست‌وجو کند." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه عام جدًا. من دون القطار والوقت ومنطقة الجلوس يصعب على الخدمة البحث بشكل محدد." },
+                { "language": "tr", "text": "Bu anlaşılır, ama fazla genel. Tren, saat ve oturma bölgesi olmadan servis hedefli arama yapmakta zorlanır." },
+                { "language": "ru", "text": "Это понятно, но слишком общее. Без поезда, времени и места в вагоне службе трудно искать целенаправленно." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتنەوەی هەیە، بەڵام زۆر گشتییە. بەبێ شەمەندەفەر، کات و شوێنی دانیشتن، خزمەتگوزاری بە ئاسانی ناتوانێت بە ئامانجدار بگەڕێت." },
+                { "language": "kmr", "text": "Ev têgihiştî ye, lê pir giştî ye. Bêyî trên, dem û cihê rûniştinê xizmet nikare bi armanc lê bigere." },
+                { "language": "pl", "text": "To zrozumiałe, ale zbyt ogólne. Bez pociągu, czasu i miejsca siedzenia obsługa nie może szukać konkretnie." },
+                { "language": "ro", "text": "Este de înțeles, dar prea general. Fără tren, oră și zona locului, serviciul nu poate căuta țintit." },
+                { "language": "sq", "text": "Kjo është e kuptueshme, por shumë e përgjithshme. Pa trenin, kohën dhe zonën e uljes, shërbimi vështirë se mund të kërkojë saktë." }
+              ],
+              "explanationKey": "loss-context-too-general"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "b2-lost-item-56-t4-a",
+              "text": "Es ist ein dunkelblauer Rucksack mit grauem Frontfach und einem roten Schlüsselanhänger am Reißverschluss. Darin waren eine schwarze Mappe mit meinem Namen, ein Ladekabel, eine Wasserflasche und ein grauer Pullover. Bargeld und Ausweis waren zum Glück nicht darin.",
+              "translations": [
+                { "language": "en", "text": "It is a dark blue backpack with a gray front pocket and a red keychain on the zipper. Inside were a black folder with my name, a charging cable, a water bottle, and a gray sweater. Fortunately, there was no cash or ID inside." },
+                { "language": "fa", "text": "یک کوله‌پشتی سرمه‌ای با جیب جلویی خاکستری و یک جاکلیدی قرمز روی زیپ است. داخلش یک پوشه مشکی با اسم من، کابل شارژ، بطری آب و یک پلیور خاکستری بود. خوشبختانه پول نقد و کارت شناسایی داخلش نبود." },
+                { "language": "ar", "text": "إنها حقيبة ظهر زرقاء داكنة مع جيب أمامي رمادي وعلاقة مفاتيح حمراء على السحاب. كان بداخلها ملف أسود عليه اسمي، وكابل شحن، وقنينة ماء، وسترة رمادية. لحسن الحظ لم يكن فيها مال نقدي ولا بطاقة هوية." },
+                { "language": "tr", "text": "Koyu mavi bir sırt çantası; gri bir ön cebi ve fermuarında kırmızı bir anahtarlığı var. İçinde adımın yazılı olduğu siyah bir dosya, bir şarj kablosu, bir su şişesi ve gri bir kazak vardı. Neyse ki içinde nakit para ve kimlik yoktu." },
+                { "language": "ru", "text": "Это темно-синий рюкзак с серым передним карманом и красным брелоком на молнии. Внутри были черная папка с моим именем, зарядный кабель, бутылка воды и серый свитер. К счастью, наличных и удостоверения личности там не было." },
+                { "language": "ckb", "text": "جانتای پشتێکی شینى تۆخە، گیرفانی پێشەوەی خۆڵەمێشی و کلیلی سوور لەسەر زیپەکەی هەیە. لە ناویدا فۆڵدەرێکی ڕەش بە ناوی من، کەیبڵی شەحن، بوتڵی ئاو و بلوزێکی خۆڵەمێشی بوو. بەختەوەرانە پارەی نەقد و ناسنامەی تێدا نەبوو." },
+                { "language": "kmr", "text": "Ew çenteyeke piştê ya şînê tarî ye, kîsek pêşiya gewr û girêdana mifteya sor li fermuarê wê heye. Di hundir de peldankeke reş bi navê min, kabloya şarjê, şûşeya avê û kirasê germ ê gewr hebûn. Bi xêr, pereyê dest û nasname tê de nebûn." },
+                { "language": "pl", "text": "To ciemnoniebieski plecak z szarą przednią kieszenią i czerwonym brelokiem przy zamku. W środku była czarna teczka z moim nazwiskiem, kabel do ładowania, butelka wody i szary sweter. Na szczęście nie było tam gotówki ani dokumentu tożsamości." },
+                { "language": "ro", "text": "Este un rucsac albastru închis, cu buzunar frontal gri și un breloc roșu la fermoar. În el erau un dosar negru cu numele meu, un cablu de încărcare, o sticlă de apă și un pulover gri. Din fericire, nu erau bani numerar sau act de identitate în el." },
+                { "language": "sq", "text": "Është një çantë shpine blu e errët me xhep të përparmë gri dhe një mbajtëse çelësash të kuqe te zinxhiri. Brenda kishte një dosje të zezë me emrin tim, një kabllo karikimi, një shishe uji dhe një pulovër gri. Fatmirësisht nuk kishte para të gatshme apo dokument identiteti brenda." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist konkret genug: Farbe, besonderes Merkmal, Inhalt und fehlende Wertsachen helfen bei der Identifikation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is concrete enough: color, special feature, contents, and missing valuables help with identification." },
+                { "language": "fa", "text": "این به‌اندازه کافی مشخص است: رنگ، نشانه خاص، محتویات و نبودن اشیای قیمتی به شناسایی کمک می‌کند." },
+                { "language": "ar", "text": "هذا محدد بما يكفي: اللون والميزة الخاصة والمحتويات وغياب الأشياء الثمينة تساعد في التحديد." },
+                { "language": "tr", "text": "Bu yeterince somut: renk, özel işaret, içerik ve değerli eşyaların olmaması tanımlamaya yardımcı olur." },
+                { "language": "ru", "text": "Это достаточно конкретно: цвет, особая деталь, содержимое и отсутствие ценных вещей помогают идентификации." },
+                { "language": "ckb", "text": "ئەمە بە تەواوی دیاریکراوە: ڕەنگ، نیشانەی تایبەت، ناوەڕۆک و نەبوونی شتە بەنرخەکان یارمەتی ناسینەوە دەدەن." },
+                { "language": "kmr", "text": "Ev têr taybet e: reng, taybetmendiyeke taybet, hundir û nebûna tiştên bi nirx alîkariya nasînê dikin." },
+                { "language": "pl", "text": "To wystarczająco konkretne: kolor, szczególna cecha, zawartość i brak cennych rzeczy pomagają w identyfikacji." },
+                { "language": "ro", "text": "Este suficient de concret: culoarea, semnul distinctiv, conținutul și lipsa obiectelor de valoare ajută la identificare." },
+                { "language": "sq", "text": "Kjo është mjaft konkrete: ngjyra, shenja e veçantë, përmbajtja dhe mungesa e sendeve me vlerë ndihmojnë në identifikim." }
+              ],
+              "explanationKey": "detailed-item-description"
+            },
+            {
+              "id": "b2-lost-item-56-t4-b",
+              "text": "Es ist ein blauer Rucksack. Ich glaube, da waren ein paar Sachen drin, vielleicht eine Mappe und Kleidung.",
+              "translations": [
+                { "language": "en", "text": "It is a blue backpack. I think there were a few things inside, maybe a folder and clothes." },
+                { "language": "fa", "text": "یک کوله‌پشتی آبی است. فکر می‌کنم چند چیز داخلش بود، شاید یک پوشه و لباس." },
+                { "language": "ar", "text": "إنها حقيبة ظهر زرقاء. أعتقد أن فيها بعض الأشياء، ربما ملفًا وملابس." },
+                { "language": "tr", "text": "Mavi bir sırt çantası. Sanırım içinde birkaç şey vardı, belki bir dosya ve kıyafet." },
+                { "language": "ru", "text": "Это синий рюкзак. Думаю, внутри было несколько вещей, может быть папка и одежда." },
+                { "language": "ckb", "text": "جانتای پشتێکی شینە. پێم وایە هەندێک شتی تێدا بوو، ڕەنگە فۆڵدەرێک و جل." },
+                { "language": "kmr", "text": "Ew çenteyeke piştê ya şîn e. Ez difikirim çend tişt tê de bûn, belkî peldankek û cil." },
+                { "language": "pl", "text": "To niebieski plecak. Chyba było w nim kilka rzeczy, może teczka i ubrania." },
+                { "language": "ro", "text": "Este un rucsac albastru. Cred că erau câteva lucruri în el, poate un dosar și haine." },
+                { "language": "sq", "text": "Është një çantë shpine blu. Mendoj se kishte disa gjëra brenda, ndoshta një dosje dhe rroba." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das klingt realistisch, bleibt aber zu vage. Für eine Verlustmeldung brauchst du erkennbare Merkmale und konkrete Inhalte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This sounds realistic, but remains too vague. For a lost item report, you need recognizable features and concrete contents." },
+                { "language": "fa", "text": "واقعی به نظر می‌رسد، اما هنوز خیلی مبهم است. برای گزارش گم‌شدن، به نشانه‌های قابل تشخیص و محتویات مشخص نیاز داری." },
+                { "language": "ar", "text": "هذا يبدو واقعيًا، لكنه يبقى غامضًا جدًا. لبلاغ فقدان تحتاج إلى علامات يمكن التعرف عليها ومحتويات محددة." },
+                { "language": "tr", "text": "Bu gerçekçi geliyor, ama fazla belirsiz kalıyor. Kayıp bildirimi için tanınabilir özellikler ve somut içerikler gerekir." },
+                { "language": "ru", "text": "Это звучит реалистично, но остается слишком расплывчатым. Для заявления о потере нужны узнаваемые признаки и конкретное содержимое." },
+                { "language": "ckb", "text": "ئەمە واقیعی دەردەکەوێت، بەڵام زۆر ناڕوونە. بۆ ڕاپۆرتی ونبوون، پێویستت بە نیشانەی ناسراو و ناوەڕۆکی دیاریکراوە." },
+                { "language": "kmr", "text": "Ev rastîn xuya dike, lê pir nezelal dimîne. Ji bo ragihandina wendayî, taybetmendiyên naskirî û hundirekî zehf divê." },
+                { "language": "pl", "text": "To brzmi realistycznie, ale jest zbyt niejasne. Do zgłoszenia potrzebne są rozpoznawalne cechy i konkretna zawartość." },
+                { "language": "ro", "text": "Sună realist, dar rămâne prea vag. Pentru o sesizare de pierdere ai nevoie de caracteristici recognoscibile și conținuturi concrete." },
+                { "language": "sq", "text": "Kjo tingëllon realiste, por mbetet shumë e paqartë. Për një njoftim humbjeje duhen shenja të dallueshme dhe përmbajtje konkrete." }
+              ],
+              "explanationKey": "description-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "b2-lost-item-56-t6-a",
+              "text": "Ich habe ihn zuletzt im Gepäckfach über meinem Sitz gesehen. Beim Aussteigen hatte ich nur meinen kleinen Beutel dabei und habe den Rucksack erst zehn Minuten später vermisst. Sie erreichen mich unter 0176 12345678 oder per E-Mail an amir.rahimi@example.com.",
+              "translations": [
+                { "language": "en", "text": "I last saw it in the luggage rack above my seat. When I got off, I only had my small bag with me and noticed the backpack was missing ten minutes later. You can reach me at 0176 12345678 or by email at amir.rahimi@example.com." },
+                { "language": "fa", "text": "آخرین بار آن را در قفسه بار بالای صندلی‌ام دیدم. هنگام پیاده شدن فقط کیف کوچک همراهم بود و ده دقیقه بعد متوجه شدم کوله‌پشتی نیست. می‌توانید با شماره 0176 12345678 یا از طریق ایمیل amir.rahimi@example.com با من تماس بگیرید." },
+                { "language": "ar", "text": "رأيته آخر مرة في رف الأمتعة فوق مقعدي. عند النزول كان معي كيسي الصغير فقط ولاحظت بعد عشر دقائق أن حقيبة الظهر مفقودة. يمكنكم الوصول إلي على الرقم 0176 12345678 أو عبر البريد الإلكتروني amir.rahimi@example.com." },
+                { "language": "tr", "text": "Onu en son koltuğumun üzerindeki bagaj rafında gördüm. İnerken yanımda sadece küçük çantam vardı ve sırt çantasının eksik olduğunu on dakika sonra fark ettim. Bana 0176 12345678 numarasından veya amir.rahimi@example.com adresinden ulaşabilirsiniz." },
+                { "language": "ru", "text": "В последний раз я видел(а) его на багажной полке над своим сиденьем. При выходе у меня была только маленькая сумка, и я заметил(а), что рюкзака нет, через десять минут. Со мной можно связаться по номеру 0176 12345678 или по электронной почте amir.rahimi@example.com." },
+                { "language": "ckb", "text": "دوایین جار لە سەرەوەی شوێنی بار لەسەر کورسییەکەم بینیم. کاتێک دابەزیم تەنها جانتای بچووكم پێبوو و دوای دە خولەک زانیم جانتای پشتەکەم نییە. دەتوانن لە ژمارەی 0176 12345678 یان بە ئیمەیڵی amir.rahimi@example.com پەیوەندیم پێوە بکەن." },
+                { "language": "kmr", "text": "Min ew herî dawî li refa baran li ser kursiya xwe dît. Dema daketim tenê çenteya biçûk li cem min bû û min deh deqe paşê fam kir ku çenteya piştê tune ye. Hûn dikarin bi jimareya 0176 12345678 an bi e-peyama amir.rahimi@example.com bigihîjin min." },
+                { "language": "pl", "text": "Ostatni raz widziałem/widziałam go na półce bagażowej nad moim miejscem. Przy wysiadaniu miałem/miałam tylko małą torbę i dopiero dziesięć minut później zauważyłem/zauważyłam brak plecaka. Można się ze mną skontaktować pod numerem 0176 12345678 albo e-mailem na amir.rahimi@example.com." },
+                { "language": "ro", "text": "L-am văzut ultima dată în raftul pentru bagaje deasupra locului meu. La coborâre aveam cu mine doar geanta mică și am observat lipsa rucsacului abia zece minute mai târziu. Mă puteți contacta la 0176 12345678 sau prin e-mail la amir.rahimi@example.com." },
+                { "language": "sq", "text": "E pashë për herë të fundit në raftin e bagazheve mbi vendin tim. Kur zbrita kisha me vete vetëm çantën e vogël dhe e vura re pas dhjetë minutash që çanta e shpinës mungonte. Mund të më kontaktoni në 0176 12345678 ose me e-mail në amir.rahimi@example.com." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist vollständig: letzte Sichtung, Ablauf beim Aussteigen und zwei Kontaktwege sind genannt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is complete: last sighting, what happened when getting off, and two contact routes are named." },
+                { "language": "fa", "text": "این کامل است: آخرین مشاهده، روند هنگام پیاده شدن و دو راه تماس گفته شده‌اند." },
+                { "language": "ar", "text": "هذا كامل: آخر مشاهدة، وما حدث عند النزول، وطريقتا اتصال مذكورة." },
+                { "language": "tr", "text": "Bu eksiksiz: son görülme, inerken olanlar ve iki iletişim yolu belirtilmiş." },
+                { "language": "ru", "text": "Это полно: названы последнее место, ситуация при выходе и два способа связи." },
+                { "language": "ckb", "text": "ئەمە تەواوە: دوایین بینین، ڕووداوەکە لە کاتی دابەزین و دوو ڕێگای پەیوەندی باسکراون." },
+                { "language": "kmr", "text": "Ev temam e: dîtina dawî, çi dema daketinê qewimî û du rêyên têkiliyê hatine gotin." },
+                { "language": "pl", "text": "To kompletne: podano ostatnie widzenie, przebieg wysiadania i dwie drogi kontaktu." },
+                { "language": "ro", "text": "Este complet: ultima observare, ce s-a întâmplat la coborâre și două căi de contact sunt menționate." },
+                { "language": "sq", "text": "Kjo është e plotë: përmendet hera e fundit kur u pa, çfarë ndodhi gjatë zbritjes dhe dy mënyra kontakti." }
+              ],
+              "explanationKey": "complete-last-location-contact"
+            },
+            {
+              "id": "b2-lost-item-56-t6-b",
+              "text": "Er war wahrscheinlich über meinem Sitz. Wenn Sie etwas finden, können Sie mir eine Nachricht schicken.",
+              "translations": [
+                { "language": "en", "text": "It was probably above my seat. If you find something, you can send me a message." },
+                { "language": "fa", "text": "احتمالاً بالای صندلی‌ام بود. اگر چیزی پیدا کردید، می‌توانید برایم پیام بفرستید." },
+                { "language": "ar", "text": "كان على الأرجح فوق مقعدي. إذا وجدتم شيئًا، يمكنكم إرسال رسالة إلي." },
+                { "language": "tr", "text": "Muhtemelen koltuğumun üzerindeydi. Bir şey bulursanız bana mesaj gönderebilirsiniz." },
+                { "language": "ru", "text": "Он, вероятно, был над моим сиденьем. Если что-то найдете, можете отправить мне сообщение." },
+                { "language": "ckb", "text": "ڕەنگە لەسەر کورسییەکەم بووبێت. ئەگەر شتێکتان دۆزییەوە، دەتوانن پەیامم بۆ بنێرن." },
+                { "language": "kmr", "text": "Ew belkî li ser kursiya min bû. Ger hûn tiştek bibînin, hûn dikarin peyamekê ji min re bişînin." },
+                { "language": "pl", "text": "Prawdopodobnie był nad moim miejscem. Jeśli coś państwo znajdą, mogą mi państwo wysłać wiadomość." },
+                { "language": "ro", "text": "Probabil era deasupra locului meu. Dacă găsiți ceva, îmi puteți trimite un mesaj." },
+                { "language": "sq", "text": "Ndoshta ishte mbi vendin tim. Nëse gjeni diçka, mund të më dërgoni një mesazh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist plausibel, aber nicht ausreichend. Es fehlen genauer Zeitpunkt, Verlustablauf und konkrete Kontaktdaten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is plausible, but not sufficient. Exact time, loss sequence, and concrete contact details are missing." },
+                { "language": "fa", "text": "این قابل قبول به نظر می‌رسد، اما کافی نیست. زمان دقیق، روند گم‌شدن و اطلاعات تماس مشخص کم است." },
+                { "language": "ar", "text": "هذا معقول، لكنه غير كاف. ينقص الوقت الدقيق وتسلسل الفقدان وبيانات الاتصال المحددة." },
+                { "language": "tr", "text": "Bu makul, ama yeterli değil. Tam zaman, kaybolma süreci ve somut iletişim bilgileri eksik." },
+                { "language": "ru", "text": "Это правдоподобно, но недостаточно. Не хватает точного времени, последовательности потери и конкретных контактных данных." },
+                { "language": "ckb", "text": "ئەمە باوەڕپێکراوە، بەڵام بەس نییە. کاتی ورد، چۆنیەتی ونبوون و زانیاری پەیوەندی دیاریکراو کەمە." },
+                { "language": "kmr", "text": "Ev mumkin e, lê têr nake. Dema zehf, rêza wendayî û daneyên têkiliyê yên taybet kêm in." },
+                { "language": "pl", "text": "To brzmi prawdopodobnie, ale nie wystarczy. Brakuje dokładnego czasu, przebiegu zgubienia i konkretnych danych kontaktowych." },
+                { "language": "ro", "text": "Este plauzibil, dar nu suficient. Lipsesc ora exactă, desfășurarea pierderii și datele concrete de contact." },
+                { "language": "sq", "text": "Kjo është e besueshme, por jo e mjaftueshme. Mungojnë koha e saktë, rrjedha e humbjes dhe të dhënat konkrete të kontaktit." }
+              ],
+              "explanationKey": "contact-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "b2-lost-item-56-t10-a",
+              "text": "Vielen Dank. Ich notiere die Vorgangsnummer F-73921, prüfe den Status online und warte auf Ihre Nachricht. Wenn der Rucksack gefunden wird, hole ich ihn hier mit Ausweis ab. Bitte informieren Sie mich möglichst telefonisch, weil die Unterlagen dringend sind.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I will note the case number F-73921, check the status online, and wait for your message. If the backpack is found, I will pick it up here with my ID. Please inform me by phone if possible because the documents are urgent." },
+                { "language": "fa", "text": "بسیار ممنون. شماره پرونده F-73921 را یادداشت می‌کنم، وضعیت را آنلاین بررسی می‌کنم و منتظر پیام شما می‌مانم. اگر کوله‌پشتی پیدا شود، آن را اینجا با کارت شناسایی تحویل می‌گیرم. لطفاً اگر ممکن است تلفنی به من اطلاع دهید، چون مدارک فوری هستند." },
+                { "language": "ar", "text": "شكرًا جزيلًا. سأدوّن رقم الملف F-73921، وأتحقق من الحالة عبر الإنترنت، وأنتظر رسالتكم. إذا تم العثور على حقيبة الظهر، فسأستلمها هنا مع بطاقة الهوية. أرجو إبلاغي هاتفيًا إن أمكن، لأن المستندات عاجلة." },
+                { "language": "tr", "text": "Çok teşekkür ederim. F-73921 işlem numarasını not ediyorum, durumu çevrimiçi kontrol edeceğim ve mesajınızı bekleyeceğim. Sırt çantası bulunursa, onu burada kimliğimle alacağım. Belgeler acil olduğu için lütfen mümkünse beni telefonla bilgilendirin." },
+                { "language": "ru", "text": "Большое спасибо. Я запишу номер обращения F-73921, буду проверять статус онлайн и ждать ваше сообщение. Если рюкзак найдут, я заберу его здесь с удостоверением личности. Пожалуйста, по возможности сообщите мне по телефону, потому что документы срочные." },
+                { "language": "ckb", "text": "زۆر سوپاس. ژمارەی دۆسیە F-73921 تۆمار دەکەم، دۆخەکە ئۆنلاین دەپشکنم و چاوەڕێی پەیامتان دەبم. ئەگەر جانتای پشتەکە بدۆزرێتەوە، لێرە لەگەڵ ناسنامە وەری دەگرم. تکایە ئەگەر دەکرێت بە تەلەفۆن ئاگادارم بکەنەوە، چونکە بەڵگەنامەکان پەلەن." },
+                { "language": "kmr", "text": "Gelek spas. Ez jimareya dozê F-73921 dinivîsim, rewşê serhêl kontrol dikim û li benda peyama we dimînim. Ger çenteya piştê were dîtin, ez wê li vir bi nasnameyê distînim. Ji kerema xwe heke mumkin be bi telefonê min agahdar bikin, ji ber ku belge lezgîn in." },
+                { "language": "pl", "text": "Dziękuję bardzo. Zanotuję numer sprawy F-73921, sprawdzę stan sprawy w internecie i poczekam na państwa wiadomość. Jeśli plecak się znajdzie, odbiorę go tutaj z dokumentem tożsamości. Proszę, jeśli to możliwe, poinformować mnie telefonicznie, ponieważ dokumenty są pilne." },
+                { "language": "ro", "text": "Vă mulțumesc. Notez numărul cazului F-73921, verific starea online și aștept mesajul dumneavoastră. Dacă rucsacul este găsit, îl ridic de aici cu actul de identitate. Vă rog să mă informați telefonic, dacă este posibil, deoarece documentele sunt urgente." },
+                { "language": "sq", "text": "Faleminderit shumë. Do ta shënoj numrin e rastit F-73921, do ta kontrolloj statusin online dhe do të pres mesazhin tuaj. Nëse çanta e shpinës gjendet, do ta marr këtu me dokument identiteti. Ju lutem më njoftoni me telefon nëse është e mundur, sepse dokumentet janë urgjente." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist ein guter Abschluss: Vorgangsnummer, Statusprüfung, Abholung und bevorzugter Kontaktweg sind gesichert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a good closing: case number, status check, pickup, and preferred contact route are secured." },
+                { "language": "fa", "text": "این پایان‌بندی خوبی است: شماره پرونده، بررسی وضعیت، تحویل گرفتن و راه تماس ترجیحی مشخص شده‌اند." },
+                { "language": "ar", "text": "هذه خاتمة جيدة: رقم الملف، والتحقق من الحالة، والاستلام، وطريقة الاتصال المفضلة كلها مضمونة." },
+                { "language": "tr", "text": "Bu iyi bir kapanış: işlem numarası, durum kontrolü, teslim alma ve tercih edilen iletişim yolu güvenceye alınmış." },
+                { "language": "ru", "text": "Это хорошее завершение: номер обращения, проверка статуса, получение и предпочтительный способ связи закреплены." },
+                { "language": "ckb", "text": "ئەمە کۆتاییەکی باشە: ژمارەی دۆسیە، پشکنینی دۆخ، وەرگرتن و ڕێگای پەیوەندیی پێشنیارکراو دڵنیان." },
+                { "language": "kmr", "text": "Ev dawîkirineke baş e: jimareya dozê, kontrola rewşê, wergirtin û rêya têkiliyê ya bijartî ewle bûne." },
+                { "language": "pl", "text": "To dobre zakończenie: numer sprawy, sprawdzanie statusu, odbiór i preferowana droga kontaktu są zabezpieczone." },
+                { "language": "ro", "text": "Este o încheiere bună: numărul cazului, verificarea stării, ridicarea și contactul preferat sunt asigurate." },
+                { "language": "sq", "text": "Kjo është një mbyllje e mirë: numri i rastit, kontrolli i statusit, marrja dhe mënyra e preferuar e kontaktit janë siguruar." }
+              ],
+              "explanationKey": "complete-lost-item-closing"
+            },
+            {
+              "id": "b2-lost-item-56-t10-b",
+              "text": "Vielen Dank. Dann schaue ich später online nach und hoffe, dass Sie den Rucksack finden.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will check online later and hope that you find the backpack." },
+                { "language": "fa", "text": "ممنون. پس بعداً آنلاین بررسی می‌کنم و امیدوارم کوله‌پشتی را پیدا کنید." },
+                { "language": "ar", "text": "شكرًا. إذن سأتحقق لاحقًا عبر الإنترنت وآمل أن تجدوا حقيبة الظهر." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman daha sonra çevrimiçi bakarım ve sırt çantasını bulmanızı umarım." },
+                { "language": "ru", "text": "Спасибо. Тогда я позже проверю онлайн и надеюсь, что вы найдете рюкзак." },
+                { "language": "ckb", "text": "سوپاس. کەواتە دواتر ئۆنلاین دەپشکنم و هیوادارم جانتای پشتەکە بدۆزنەوە." },
+                { "language": "kmr", "text": "Spas. Hingê ez paşê serhêl kontrol dikim û hêvî dikim hûn çenteya piştê bibînin." },
+                { "language": "pl", "text": "Dziękuję. W takim razie sprawdzę później online i mam nadzieję, że znajdą państwo plecak." },
+                { "language": "ro", "text": "Mulțumesc. Atunci verific mai târziu online și sper că găsiți rucsacul." },
+                { "language": "sq", "text": "Faleminderit. Atëherë do ta kontrolloj më vonë online dhe shpresoj që ta gjeni çantën e shpinës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber unvollständig. Du wiederholst weder die Vorgangsnummer noch Abholvoraussetzungen oder bevorzugten Kontaktweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but incomplete. You repeat neither the case number nor pickup requirements or preferred contact route." },
+                { "language": "fa", "text": "این مؤدبانه است، اما کامل نیست. نه شماره پرونده را تکرار می‌کنی، نه شرایط تحویل گرفتن یا راه تماس ترجیحی را." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير كامل. لا تكرر رقم الملف ولا شروط الاستلام أو طريقة الاتصال المفضلة." },
+                { "language": "tr", "text": "Bu kibar, ama eksik. Ne işlem numarasını ne teslim alma koşullarını ne de tercih edilen iletişim yolunu tekrarlıyorsun." },
+                { "language": "ru", "text": "Это вежливо, но неполно. Ты не повторяешь ни номер обращения, ни условия получения, ни предпочтительный способ связи." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام ناتەواوە. نە ژمارەی دۆسیە دووبارە دەکەیتەوە، نە مەرجەکانی وەرگرتن یان ڕێگای پەیوەندیی پێشنیارکراو." },
+                { "language": "kmr", "text": "Ev bi rêzdarî ye, lê ne temam e. Tu ne jimareya dozê dubare dikî, ne şertên wergirtinê û ne rêya têkiliyê ya bijartî." },
+                { "language": "pl", "text": "To uprzejme, ale niepełne. Nie powtarzasz ani numeru sprawy, ani warunków odbioru czy preferowanej drogi kontaktu." },
+                { "language": "ro", "text": "Este politicos, dar incomplet. Nu repeți nici numărul cazului, nici condițiile de ridicare sau calea de contact preferată." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por e paplotë. Nuk përsërit as numrin e rastit, as kushtet e marrjes apo mënyrën e preferuar të kontaktit." }
+              ],
+              "explanationKey": "closing-missing-case-number"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "loss-context",
+          "text": "Bei verlorenen Gegenständen zählt die Eingrenzung: Zug, Strecke, Uhrzeit, Gleis und ungefährer Sitzplatz.",
+          "translations": [
+            { "language": "en", "text": "For lost items, narrowing down matters: train, route, time, platform, and approximate seat location." },
+            { "language": "fa", "text": "برای اشیای گمشده، محدود کردن محل مهم است: قطار، مسیر، ساعت، سکو و محل تقریبی نشستن." },
+            { "language": "ar", "text": "في الأشياء المفقودة يهم تحديد النطاق: القطار والمسار والوقت والرصيف ومكان الجلوس التقريبي." },
+            { "language": "tr", "text": "Kayıp eşyalarda alanı daraltmak önemlidir: tren, güzergah, saat, peron ve yaklaşık oturma yeri." },
+            { "language": "ru", "text": "При потерянных вещах важно сузить поиск: поезд, маршрут, время, платформа и примерное место." },
+            { "language": "ckb", "text": "لە شتە ونبووەکاندا سنووردارکردن گرنگە: شەمەندەفەر، ڕێگا، کات، سەکۆ و شوێنی نزیکەی دانیشتن." },
+            { "language": "kmr", "text": "Di tiştên wenda de tengkirin girîng e: trên, rê, dem, peron û cihê nêzîkî rûniştinê." },
+            { "language": "pl", "text": "Przy zgubionych rzeczach liczy się zawężenie: pociąg, trasa, godzina, peron i przybliżone miejsce." },
+            { "language": "ro", "text": "La obiecte pierdute contează restrângerea căutării: tren, rută, oră, peron și loc aproximativ." },
+            { "language": "sq", "text": "Te sendet e humbura ka rëndësi ngushtimi i kërkimit: treni, itinerari, ora, platforma dhe vendi i përafërt." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "identification",
+          "text": "Beschreibe nicht nur die Farbe. Besondere Merkmale, Inhalt und Name auf Unterlagen machen den Gegenstand erkennbar.",
+          "translations": [
+            { "language": "en", "text": "Do not describe only the color. Special features, contents, and a name on documents make the item recognizable." },
+            { "language": "fa", "text": "فقط رنگ را توصیف نکن. نشانه‌های خاص، محتویات و نام روی مدارک وسیله را قابل تشخیص می‌کند." },
+            { "language": "ar", "text": "لا تصف اللون فقط. العلامات الخاصة والمحتويات والاسم على المستندات تجعل الغرض قابلًا للتعرف عليه." },
+            { "language": "tr", "text": "Sadece rengi tarif etme. Özel işaretler, içerik ve belgelerdeki isim eşyayı tanınabilir yapar." },
+            { "language": "ru", "text": "Описывай не только цвет. Особые признаки, содержимое и имя на документах делают вещь узнаваемой." },
+            { "language": "ckb", "text": "تەنها ڕەنگ وەسف مەکە. نیشانەی تایبەت، ناوەڕۆک و ناو لەسەر بەڵگەنامەکان شتەکە ناسراو دەکات." },
+            { "language": "kmr", "text": "Tenê rengê danasîne neke. Taybetmendiyên taybet, hundir û nav li ser belgeyan tiştê nasbar dikin." },
+            { "language": "pl", "text": "Nie opisuj tylko koloru. Szczególne cechy, zawartość i nazwisko na dokumentach czynią przedmiot rozpoznawalnym." },
+            { "language": "ro", "text": "Nu descrie doar culoarea. Semnele speciale, conținutul și numele de pe documente fac obiectul recognoscibil." },
+            { "language": "sq", "text": "Mos përshkruaj vetëm ngjyrën. Shenjat e veçanta, përmbajtja dhe emri në dokumente e bëjnë sendin të dallueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "contact",
+          "text": "Eine Verlustmeldung braucht Kontaktwege. Gib Telefonnummer und E-Mail klar an und erkläre, wann du den Verlust bemerkt hast.",
+          "translations": [
+            { "language": "en", "text": "A lost item report needs contact routes. Give phone number and email clearly and explain when you noticed the loss." },
+            { "language": "fa", "text": "گزارش گم‌شدن به راه‌های تماس نیاز دارد. شماره تلفن و ایمیل را روشن بده و توضیح بده چه زمانی متوجه گم‌شدن شدی." },
+            { "language": "ar", "text": "بلاغ الفقدان يحتاج إلى طرق اتصال. اذكر رقم الهاتف والبريد الإلكتروني بوضوح واشرح متى لاحظت الفقدان." },
+            { "language": "tr", "text": "Kayıp bildirimi iletişim yolları gerektirir. Telefon numarasını ve e-postayı net ver ve kaybı ne zaman fark ettiğini açıkla." },
+            { "language": "ru", "text": "Заявление о потере требует способов связи. Четко укажи телефон и электронную почту и объясни, когда заметил(а) потерю." },
+            { "language": "ckb", "text": "ڕاپۆرتی ونبوون پێویستی بە ڕێگای پەیوەندی هەیە. ژمارەی تەلەفۆن و ئیمەیڵ بە ڕوونی بدە و ڕوون بکەوە کەی هەستت بە ونبوون کرد." },
+            { "language": "kmr", "text": "Ragihandina wendayî rêyên têkiliyê divê. Jimareya telefonê û e-peyamê zelal bide û şirove bike kengî te wendayî fêm kir." },
+            { "language": "pl", "text": "Zgłoszenie zagubienia wymaga dróg kontaktu. Podaj wyraźnie numer telefonu i e-mail oraz wyjaśnij, kiedy zauważyłeś/zauważyłaś zgubę." },
+            { "language": "ro", "text": "O sesizare de pierdere are nevoie de căi de contact. Dă clar numărul de telefon și e-mailul și explică când ai observat pierderea." },
+            { "language": "sq", "text": "Një njoftim humbjeje ka nevojë për mënyra kontakti. Jep qartë numrin e telefonit dhe e-mailin dhe shpjego kur e vure re humbjen." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "case-number",
+          "text": "Wiederhole am Ende die Vorgangsnummer und den nächsten Schritt. So vermeidest du, dass die Meldung später schwer auffindbar ist.",
+          "translations": [
+            { "language": "en", "text": "At the end, repeat the case number and the next step. This avoids the report being hard to find later." },
+            { "language": "fa", "text": "در پایان شماره پرونده و قدم بعدی را تکرار کن. این باعث می‌شود بعداً پیدا کردن گزارش سخت نشود." },
+            { "language": "ar", "text": "في النهاية كرر رقم الملف والخطوة التالية. هكذا تتجنب أن يصبح العثور على البلاغ صعبًا لاحقًا." },
+            { "language": "tr", "text": "Sonda işlem numarasını ve sonraki adımı tekrar et. Böylece bildirimin daha sonra zor bulunmasını önlersin." },
+            { "language": "ru", "text": "В конце повтори номер обращения и следующий шаг. Так ты избежишь того, что заявление позже будет трудно найти." },
+            { "language": "ckb", "text": "لە کۆتاییدا ژمارەی دۆسیە و هەنگاوی دواتر دووبارە بکەوە. بەمە ڕێگری دەکەیت لەوەی ڕاپۆرتەکە دواتر بە زەحمەت بدۆزرێتەوە." },
+            { "language": "kmr", "text": "Di dawiyê de jimareya dozê û gava paşê dubare bike. Bi vî awayî rê li ber wê digirî ku ragihandin paşê bi zehmet were dîtin." },
+            { "language": "pl", "text": "Na końcu powtórz numer sprawy i następny krok. Dzięki temu zgłoszenie nie będzie później trudne do odnalezienia." },
+            { "language": "ro", "text": "La final repetă numărul cazului și pasul următor. Astfel eviți ca sesizarea să fie greu de găsit mai târziu." },
+            { "language": "sq", "text": "Në fund përsërit numrin e rastit dhe hapin e ardhshëm. Kështu shmang që njoftimi të jetë i vështirë për t'u gjetur më vonë." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3560
+    }
+  ]
+}

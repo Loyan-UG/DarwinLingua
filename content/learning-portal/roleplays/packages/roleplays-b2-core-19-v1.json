@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-19-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 19 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 19",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-bescheid-verstehen-und-nachfragen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Bescheid verstehen und nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Understanding an official notice and asking follow-up questions" },
+        { "language": "fa", "text": "فهمیدن یک نامه اداری رسمی و پرسیدن سؤال‌های تکمیلی" },
+        { "language": "ar", "text": "فهم قرار إداري رسمي وطرح أسئلة متابعة" },
+        { "language": "tr", "text": "Resmî bir kararı anlamak ve takip soruları sormak" },
+        { "language": "ru", "text": "Понять официальное решение и задать уточняющие вопросы" },
+        { "language": "ckb", "text": "تێگەیشتن لە بڕیارنامەیەکی فەرمی و پرسیاری بەدواداچوون" },
+        { "language": "kmr", "text": "Têgihîştina biryareke fermî û pirsên şopandinê kirin" },
+        { "language": "pl", "text": "Zrozumienie decyzji urzędowej i zadanie pytań uzupełniających" },
+        { "language": "ro", "text": "Înțelegerea unei decizii oficiale și adresarea unor întrebări de clarificare" },
+        { "language": "sq", "text": "Kuptimi i një vendimi zyrtar dhe bërja e pyetjeve sqaruese" }
+      ],
+      "description": "Du bist bei einer Behörde, weil du einen Bescheid erhalten hast. Einige Formulierungen sind unklar: der Bewilligungszeitraum, eine vorläufige Berechnung und die Frage, ob du noch Unterlagen einreichen musst. Du sollst gezielt nachfragen, ohne rechtliche Beratung zu verlangen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at an authority because you received an official notice. Some wording is unclear: the approval period, a provisional calculation, and whether you still need to submit documents. You should ask targeted questions without requesting legal advice." },
+        { "language": "fa", "text": "در یک اداره هستی چون یک نامه اداری رسمی دریافت کرده‌ای. چند عبارت روشن نیست: دوره تأیید، محاسبه موقت و اینکه آیا هنوز باید مدارکی ارائه کنی یا نه. باید هدفمند سؤال بپرسی، بدون اینکه درخواست مشاوره حقوقی کنی." },
+        { "language": "ar", "text": "أنت في جهة إدارية لأنك تلقيت قراراً رسمياً. بعض الصياغات غير واضحة: فترة الموافقة، حساب مؤقت، وما إذا كان عليك تقديم مستندات أخرى. ينبغي أن تطرح أسئلة محددة من دون طلب استشارة قانونية." },
+        { "language": "tr", "text": "Resmî bir karar aldığın için bir kurumdasın. Bazı ifadeler belirsiz: onay dönemi, geçici hesaplama ve hâlâ belge sunman gerekip gerekmediği. Hukuki danışmanlık istemeden hedefli sorular sormalısın." },
+        { "language": "ru", "text": "Вы находитесь в ведомстве, потому что получили официальное решение. Некоторые формулировки непонятны: период одобрения, предварительный расчёт и вопрос, нужно ли ещё подавать документы. Нужно задавать точные вопросы, не требуя юридической консультации." },
+        { "language": "ckb", "text": "لە فەرمانگەیەکیت چونکە بڕیارنامەیەکی فەرمیت وەرگرتووە. هەندێک دەستەواژە ڕوون نییە: ماوەی پەسەندکردن، ژماردنێکی کاتی و ئەوەی ئایا هێشتا دەبێت بەڵگەنامە پێشکەش بکەیت یان نا. دەبێت پرسیاری ئامانجدار بکەیت، بەبێ ئەوەی داوای ڕاوێژی یاسایی بکەیت." },
+        { "language": "kmr", "text": "Tu li dezgehekê yî, ji ber ku biryareke fermî wergirtiye. Hin gotin nezelal in: heyama pejirandinê, hesabkirineke demkî û gelo divê tu hêj belgeyan radest bikî an na. Divê pirsên armancdar bikî, bêyî ku şêwirmendiya hiqûqî bixwazî." },
+        { "language": "pl", "text": "Jesteś w urzędzie, ponieważ otrzymałeś decyzję. Niektóre sformułowania są niejasne: okres przyznania, wstępne obliczenie i pytanie, czy musisz jeszcze złożyć dokumenty. Masz zadawać konkretne pytania, nie prosząc o poradę prawną." },
+        { "language": "ro", "text": "Ești la o autoritate pentru că ai primit o decizie oficială. Unele formulări sunt neclare: perioada de aprobare, un calcul provizoriu și întrebarea dacă mai trebuie să depui documente. Trebuie să pui întrebări țintite, fără să soliciți consiliere juridică." },
+        { "language": "sq", "text": "Je në një institucion sepse ke marrë një vendim zyrtar. Disa formulime janë të paqarta: periudha e miratimit, një llogaritje e përkohshme dhe nëse duhet ende të dorëzosh dokumente. Duhet të bësh pyetje të synuara pa kërkuar këshillim ligjor." }
+      ],
+      "learnerGoal": "Frage zu einem Bescheid gezielt nach: Zitiere die unklare Stelle, frage nach der praktischen Bedeutung, kläre fehlende Unterlagen, Fristen und den nächsten Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask targeted questions about an official notice: quote the unclear part, ask about the practical meaning, and clarify missing documents, deadlines, and the next step." },
+        { "language": "fa", "text": "درباره یک نامه اداری رسمی هدفمند سؤال بپرس: بخش مبهم را نقل کن، معنی عملی آن را بپرس، و مدارک ناقص، مهلت‌ها و قدم بعدی را روشن کن." },
+        { "language": "ar", "text": "اطرح أسئلة محددة حول قرار رسمي: اقتبس الجزء غير الواضح، واسأل عن معناه العملي، ووضح المستندات الناقصة والمواعيد والخطوة التالية." },
+        { "language": "tr", "text": "Resmî bir karar hakkında hedefli sorular sor: belirsiz kısmı alıntıla, pratik anlamını sor, eksik belgeleri, süreleri ve sonraki adımı netleştir." },
+        { "language": "ru", "text": "Задайте точные вопросы по официальному решению: процитируйте непонятное место, спросите о практическом значении и уточните недостающие документы, сроки и следующий шаг." },
+        { "language": "ckb", "text": "سەبارەت بە بڕیارنامەیەکی فەرمی پرسیاری ئامانجدار بکە: بەشی ناڕوون وەربگرە، مانای کرداریی بپرسە، و بەڵگەنامەی کەم، مۆڵەتەکان و هەنگاوی داهاتوو ڕوون بکەوە." },
+        { "language": "kmr", "text": "Derbarê biryareke fermî pirsên armancdar bike: beşa nezelal veguhezîne, wateya pratîkî bipirse û belgeyên kêm, dem û gava paşîn zelal bike." },
+        { "language": "pl", "text": "Zadaj konkretne pytania dotyczące decyzji: zacytuj niejasny fragment, zapytaj o praktyczne znaczenie oraz wyjaśnij brakujące dokumenty, terminy i następny krok." },
+        { "language": "ro", "text": "Pune întrebări țintite despre o decizie oficială: citează pasajul neclar, întreabă despre sensul practic și clarifică documentele lipsă, termenele și pasul următor." },
+        { "language": "sq", "text": "Bëj pyetje të synuara për një vendim zyrtar: cito pjesën e paqartë, pyet për kuptimin praktik dhe sqaro dokumentet që mungojnë, afatet dhe hapin tjetër." }
+      ],
+      "cefrLevel": "B2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3190,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Sachbearbeiter",
+          "translations": [
+            { "language": "en", "text": "Case officer" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "موظف المعاملات" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник ведомства" },
+            { "language": "ckb", "text": "کارمەندی مامەڵە" },
+            { "language": "kmr", "text": "Karbidestê dosyeyê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționarul de caz" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "متقاضی" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag. Sie möchten zu Ihrem Bescheid nachfragen. Haben Sie das Aktenzeichen dabei?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. You would like to ask questions about your notice. Do you have the reference number with you?" },
+            { "language": "fa", "text": "روز بخیر. می‌خواهید درباره نامه رسمی خود سؤال بپرسید. شماره پرونده را همراه دارید؟" },
+            { "language": "ar", "text": "نهارك سعيد. تريد أن تسأل عن القرار الذي وصلك. هل لديك رقم الملف؟" },
+            { "language": "tr", "text": "İyi günler. Kararınız hakkında soru sormak istiyorsunuz. Dosya numarası yanınızda mı?" },
+            { "language": "ru", "text": "Добрый день. Вы хотите задать вопросы по вашему решению. У вас есть номер дела?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەتەوێت سەبارەت بە بڕیارنامەکەت پرسیار بکەیت. ژمارەی کەیست پێیە؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn dixwazin derbarê biryara xwe bipirsin. Hejmarê dosyeyê bi we re ye?" },
+            { "language": "pl", "text": "Dzień dobry. Chce Pan zapytać o swoją decyzję. Czy ma Pan numer sprawy?" },
+            { "language": "ro", "text": "Bună ziua. Doriți să întrebați despre decizia dumneavoastră. Aveți numărul dosarului la dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironi të pyesni për vendimin tuaj. A e keni me vete numrin e dosjes?" }
+          ],
+          "function": "open-office-clarification"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, das Aktenzeichen ist B-9164. Ich habe den Bescheid vom 12. Juni bekommen und möchte zwei Formulierungen besser verstehen. Besonders unklar ist mir der Satz: `Die Bewilligung erfolgt vorläufig bis zur abschließenden Prüfung der Einkommensnachweise.`",
+          "translations": [
+            { "language": "en", "text": "Yes, the reference number is B-9164. I received the notice dated June 12 and would like to understand two wordings better. I am especially unclear about the sentence: 'The approval is provisional until the final review of the income documents.'" },
+            { "language": "fa", "text": "بله، شماره پرونده B-9164 است. نامه رسمی مورخ ۱۲ ژوئن را دریافت کرده‌ام و می‌خواهم دو عبارت را بهتر بفهمم. مخصوصاً این جمله برایم مبهم است: «تأیید به‌صورت موقت تا بررسی نهایی مدارک درآمد انجام می‌شود.»" },
+            { "language": "ar", "text": "نعم، رقم الملف هو B-9164. تلقيت القرار المؤرخ في 12 يونيو وأرغب في فهم عبارتين بشكل أفضل. خصوصاً هذه الجملة غير واضحة لي: «تتم الموافقة مؤقتاً حتى الفحص النهائي لإثباتات الدخل»." },
+            { "language": "tr", "text": "Evet, dosya numarası B-9164. 12 Haziran tarihli kararı aldım ve iki ifadeyi daha iyi anlamak istiyorum. Özellikle şu cümle benim için belirsiz: 'Onay, gelir belgelerinin nihai incelemesine kadar geçici olarak verilir.'" },
+            { "language": "ru", "text": "Да, номер дела B-9164. Я получил решение от 12 июня и хотел бы лучше понять две формулировки. Особенно непонятно мне предложение: «Одобрение предоставляется предварительно до окончательной проверки документов о доходах»." },
+            { "language": "ckb", "text": "بەڵێ، ژمارەی کەیس B-9164 ـە. بڕیارنامەی ١٢ی حوزەیرانم وەرگرتووە و دەمەوێت دوو دەستەواژە باشتر تێبگەم. بە تایبەتی ئەم ڕستەیە بۆم ناڕوونە: «پەسەندکردنەکە بە شێوەی کاتییە تا پشکنینی کۆتایی بەڵگەکانی داهات.»" },
+            { "language": "kmr", "text": "Erê, hejmarê dosyeyê B-9164 e. Min biryara 12ê Hezîranê wergirtiye û dixwazim du gotinan baştir fam bikim. Bi taybetî ev hevok ji min re nezelal e: `Pejirandin demkî ye heta kontrola dawî ya belgeyên dahatê.`" },
+            { "language": "pl", "text": "Tak, numer sprawy to B-9164. Otrzymałem decyzję z 12 czerwca i chciałbym lepiej zrozumieć dwa sformułowania. Szczególnie niejasne jest dla mnie zdanie: „Przyznanie następuje tymczasowo do czasu końcowej weryfikacji dokumentów dochodowych”." },
+            { "language": "ro", "text": "Da, numărul dosarului este B-9164. Am primit decizia din 12 iunie și aș dori să înțeleg mai bine două formulări. Mai ales această propoziție îmi este neclară: „Aprobarea se face provizoriu până la verificarea finală a dovezilor de venit.”" },
+            { "language": "sq", "text": "Po, numri i dosjes është B-9164. Kam marrë vendimin e datës 12 qershor dhe dua të kuptoj më mirë dy formulime. Sidomos kjo fjali është e paqartë për mua: “Miratimi bëhet përkohësisht deri në kontrollin përfundimtar të provave të të ardhurave.”" }
+          ],
+          "function": "quote-unclear-part",
+          "expectedLearnerAction": "Nenne Aktenzeichen, Datum des Bescheids und zitiere die unklare Stelle genau."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Das bedeutet, dass die Leistung zunächst gezahlt wird, aber noch nicht endgültig feststeht. Welche praktische Frage haben Sie dazu?",
+          "translations": [
+            { "language": "en", "text": "That means the benefit will initially be paid, but it is not yet final. What practical question do you have about that?" },
+            { "language": "fa", "text": "یعنی کمک‌هزینه ابتدا پرداخت می‌شود، اما هنوز نهایی نیست. سؤال عملی شما در این مورد چیست؟" },
+            { "language": "ar", "text": "هذا يعني أن الإعانة ستُدفع أولاً، لكنها ليست نهائية بعد. ما سؤالك العملي حول ذلك؟" },
+            { "language": "tr", "text": "Bu, ödemenin önce yapılacağı, ancak henüz kesinleşmediği anlamına gelir. Bununla ilgili pratik sorunuz nedir?" },
+            { "language": "ru", "text": "Это означает, что выплата сначала будет производиться, но окончательно ещё не установлена. Какой практический вопрос у вас по этому поводу?" },
+            { "language": "ckb", "text": "ئەوە مانای ئەوەیە کە پارەکە سەرەتا دەدرێت، بەڵام هێشتا کۆتایی نییە. پرسیاری کرداریی تۆ لەم بارەیە چییە؟" },
+            { "language": "kmr", "text": "Ev tê wateya ku alîkarî di destpêkê de tê dayîn, lê hêj ne dawî ye. Pirsê te ya pratîkî li ser vê çi ye?" },
+            { "language": "pl", "text": "To oznacza, że świadczenie będzie najpierw wypłacane, ale nie jest jeszcze ostatecznie ustalone. Jakie praktyczne pytanie ma Pan w tej sprawie?" },
+            { "language": "ro", "text": "Asta înseamnă că prestația va fi plătită inițial, dar nu este încă definitiv stabilită. Ce întrebare practică aveți în legătură cu asta?" },
+            { "language": "sq", "text": "Kjo do të thotë se ndihma fillimisht paguhet, por ende nuk është përfundimtare. Cila është pyetja juaj praktike për këtë?" }
+          ],
+          "function": "explain-provisional-meaning"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte verstehen, ob ich im Moment etwas tun muss. Heißt `vorläufig`, dass ich abwarten soll, oder fehlt noch ein bestimmter Einkommensnachweis? Wenn etwas fehlt, würde ich gern wissen, welches Dokument und bis wann ich es einreichen muss.",
+          "translations": [
+            { "language": "en", "text": "I would like to understand whether I need to do anything right now. Does 'provisional' mean that I should wait, or is a specific income document still missing? If something is missing, I would like to know which document and by when I must submit it." },
+            { "language": "fa", "text": "می‌خواهم بدانم آیا الان باید کاری انجام بدهم یا نه. آیا «موقت» یعنی باید منتظر بمانم، یا هنوز مدرک درآمد مشخصی کم است؟ اگر چیزی کم است، می‌خواهم بدانم کدام مدرک و تا چه زمانی باید آن را ارائه کنم." },
+            { "language": "ar", "text": "أريد أن أفهم هل يجب عليّ فعل شيء الآن. هل تعني كلمة «مؤقت» أن عليّ الانتظار، أم لا يزال هناك إثبات دخل محدد ناقص؟ إذا كان هناك شيء ناقص، أود أن أعرف أي مستند وإلى متى يجب تقديمه." },
+            { "language": "tr", "text": "Şu anda bir şey yapmam gerekip gerekmediğini anlamak istiyorum. 'Geçici' beklemem gerektiği anlamına mı geliyor, yoksa belirli bir gelir belgesi hâlâ eksik mi? Bir şey eksikse, hangi belgeyi ve hangi tarihe kadar sunmam gerektiğini bilmek isterim." },
+            { "language": "ru", "text": "Я хотел бы понять, нужно ли мне сейчас что-то делать. Означает ли «предварительно», что мне следует ждать, или ещё не хватает конкретного документа о доходах? Если чего-то не хватает, я хотел бы знать, какой документ и до какого срока нужно подать." },
+            { "language": "ckb", "text": "دەمەوێت تێبگەم ئایا ئێستا دەبێت شتێک بکەم یان نا. ئایا `کاتی` مانای ئەوەیە کە چاوەڕێ بکەم، یان هێشتا بەڵگەیەکی دیاریکراوی داهات کەمە؟ ئەگەر شتێک کەمە، دەمەوێت بزانم کام بەڵگەنامە و تا کەی دەبێت پێشکەشی بکەم." },
+            { "language": "kmr", "text": "Ez dixwazim fam bikim gelo divê ez niha tiştekî bikim an na. Ma `demkî` tê wateya ku divê ez bisekinim, an belgeyeke konkret a dahatê hêj kêm e? Ger tiştek kêm be, ez dixwazim bizanim kîjan belge û heta kengê divê wê radest bikim." },
+            { "language": "pl", "text": "Chciałbym zrozumieć, czy teraz muszę coś zrobić. Czy „tymczasowo” oznacza, że mam czekać, czy brakuje jeszcze konkretnego dokumentu dochodowego? Jeśli czegoś brakuje, chciałbym wiedzieć, jaki to dokument i do kiedy muszę go złożyć." },
+            { "language": "ro", "text": "Aș dori să înțeleg dacă trebuie să fac ceva acum. Înseamnă „provizoriu” că trebuie să aștept sau lipsește încă o anumită dovadă de venit? Dacă lipsește ceva, aș vrea să știu ce act și până când trebuie să îl depun." },
+            { "language": "sq", "text": "Dua të kuptoj nëse duhet të bëj diçka tani. A do të thotë “përkohësisht” se duhet të pres, apo mungon ende një provë e caktuar e të ardhurave? Nëse mungon diçka, dua të di cilin dokument dhe deri kur duhet ta dorëzoj." }
+          ],
+          "function": "ask-practical-meaning",
+          "expectedLearnerAction": "Frage nach der praktischen Bedeutung und nach konkreten fehlenden Unterlagen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "In Ihrem Fall fehlt noch die Lohnabrechnung für Mai. Außerdem steht im Bescheid eine Rückforderung vorbehalten, falls sich das Einkommen ändert.",
+          "translations": [
+            { "language": "en", "text": "In your case, the payslip for May is still missing. The notice also reserves the possibility of reclaiming money if the income changes." },
+            { "language": "fa", "text": "در پرونده شما هنوز فیش حقوقی ماه مه کم است. علاوه بر آن در نامه نوشته شده که اگر درآمد تغییر کند، امکان مطالبه بازپرداخت محفوظ است." },
+            { "language": "ar", "text": "في حالتك لا تزال قسيمة الراتب لشهر مايو ناقصة. كما يذكر القرار أن استرداد مبلغ يبقى محتملاً إذا تغير الدخل." },
+            { "language": "tr", "text": "Sizin durumunuzda Mayıs ayı maaş bordrosu hâlâ eksik. Ayrıca kararda, gelir değişirse geri ödeme talebinin saklı olduğu belirtiliyor." },
+            { "language": "ru", "text": "В вашем случае ещё не хватает расчётного листка за май. Кроме того, в решении указано, что при изменении дохода возможен возврат средств." },
+            { "language": "ckb", "text": "لە کەیسی تۆدا هێشتا لیستی مووچەی مانگی مای کەمە. هەروەها لە بڕیارنامەکەدا نووسراوە ئەگەر داهات بگۆڕێت، داوای گەڕاندنەوەی پارە پارێزراوە." },
+            { "language": "kmr", "text": "Di rewşa we de slipê meaşa Gulanê hêj kêm e. Her wiha di biryarê de hatiye nivîsandin ku heke dahat biguhere, daxwaza vegerandina pereyan parastî ye." },
+            { "language": "pl", "text": "W Pana przypadku brakuje jeszcze odcinka wypłaty za maj. Poza tym w decyzji zastrzeżono możliwość zwrotu pieniędzy, jeśli dochód się zmieni." },
+            { "language": "ro", "text": "În cazul dumneavoastră lipsește încă fluturașul de salariu pentru luna mai. În plus, decizia prevede posibilitatea recuperării unor sume dacă venitul se schimbă." },
+            { "language": "sq", "text": "Në rastin tuaj mungon ende lista e pagës për muajin maj. Gjithashtu në vendim thuhet se mund të kërkohet kthim parash nëse të ardhurat ndryshojnë." }
+          ],
+          "function": "name-missing-document"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke, das hilft mir. Dann reiche ich die Lohnabrechnung für Mai nach. Können Sie mir bitte sagen, ob ein normaler Scan reicht und ob ich zusätzlich eine kurze Erklärung zu meinem schwankenden Einkommen beilegen soll?",
+          "translations": [
+            { "language": "en", "text": "Thank you, that helps me. Then I will submit the payslip for May. Could you please tell me whether a normal scan is sufficient and whether I should also attach a short explanation of my fluctuating income?" },
+            { "language": "fa", "text": "ممنون، این به من کمک می‌کند. پس فیش حقوقی ماه مه را ارائه می‌کنم. می‌توانید لطفاً بگویید آیا یک اسکن معمولی کافی است و آیا باید علاوه بر آن توضیح کوتاهی درباره درآمد متغیرم پیوست کنم؟" },
+            { "language": "ar", "text": "شكراً، هذا يساعدني. إذن سأقدم قسيمة الراتب لشهر مايو. هل يمكنك أن تخبرني هل يكفي مسح عادي، وهل ينبغي أن أرفق أيضاً شرحاً قصيراً عن دخلي المتغير؟" },
+            { "language": "tr", "text": "Teşekkür ederim, bu bana yardımcı oluyor. O zaman Mayıs ayı maaş bordrosunu sunacağım. Normal bir taramanın yeterli olup olmadığını ve değişken gelirimle ilgili kısa bir açıklama eklemem gerekip gerekmediğini söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Спасибо, это мне помогает. Тогда я донесу расчётный листок за май. Можете сказать, достаточно ли обычного скана и нужно ли дополнительно приложить короткое объяснение о моём меняющемся доходе?" },
+            { "language": "ckb", "text": "سوپاس، ئەمە یارمەتیم دەدات. کەواتە لیستی مووچەی مانگی مای پێشکەش دەکەم. دەتوانن تکایە پێم بڵێن ئایا سکانی ئاسایی بەسە و ئایا پێویستە ڕوونکردنەوەیەکی کورتی سەبارەت بە داهاتی گۆڕاوم هاوپێچ بکەم؟" },
+            { "language": "kmr", "text": "Spas, ev alîkariya min dike. Wê demê ez slipê meaşa Gulanê radest dikim. Hûn dikarin ji kerema xwe bêjin gelo skanek normal bes e û gelo divê ez ravekirineke kurt derbarê dahata xwe ya guherbar lê zêde bikim?" },
+            { "language": "pl", "text": "Dziękuję, to mi pomaga. W takim razie dostarczę odcinek wypłaty za maj. Czy może mi Pan powiedzieć, czy wystarczy zwykły skan i czy powinienem dodatkowo dołączyć krótkie wyjaśnienie dotyczące zmiennego dochodu?" },
+            { "language": "ro", "text": "Mulțumesc, asta mă ajută. Atunci voi depune fluturașul de salariu pentru luna mai. Îmi puteți spune, vă rog, dacă este suficient un scan obișnuit și dacă ar trebui să anexez și o scurtă explicație despre venitul meu variabil?" },
+            { "language": "sq", "text": "Faleminderit, kjo më ndihmon. Atëherë do të dorëzoj listën e pagës për muajin maj. A mund të më thoni, ju lutem, nëse mjafton një skanim i zakonshëm dhe nëse duhet të bashkëngjis edhe një shpjegim të shkurtër për të ardhurat e mia të ndryshueshme?" }
+          ],
+          "function": "ask-submission-format",
+          "expectedLearnerAction": "Bestätige das fehlende Dokument und frage nach Format und Zusatzinformation."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Ein Scan reicht, wenn er vollständig und lesbar ist. Eine kurze Erklärung ist sinnvoll. Wichtig ist auch die Frist: Im Bescheid steht, dass Sie bis zum 28. Juni reagieren sollen.",
+          "translations": [
+            { "language": "en", "text": "A scan is sufficient if it is complete and readable. A short explanation is useful. The deadline is also important: the notice says you should respond by June 28." },
+            { "language": "fa", "text": "اسکن کافی است، اگر کامل و خوانا باشد. توضیح کوتاه هم مفید است. مهلت هم مهم است: در نامه نوشته شده که باید تا ۲۸ ژوئن پاسخ بدهید." },
+            { "language": "ar", "text": "المسح يكفي إذا كان كاملاً وواضحاً. الشرح القصير مفيد. المهم أيضاً هو المهلة: في القرار مكتوب أنه ينبغي أن ترد حتى 28 يونيو." },
+            { "language": "tr", "text": "Tarama tam ve okunaklıysa yeterlidir. Kısa bir açıklama faydalıdır. Süre de önemlidir: kararda 28 Haziran'a kadar yanıt vermeniz gerektiği yazıyor." },
+            { "language": "ru", "text": "Скан достаточен, если он полный и читаемый. Короткое объяснение полезно. Важен также срок: в решении указано, что вы должны ответить до 28 июня." },
+            { "language": "ckb", "text": "سکان بەسە ئەگەر تەواو و خوێندراو بێت. ڕوونکردنەوەیەکی کورت بەسوودە. مۆڵەتیش گرنگە: لە بڕیارنامەکەدا نووسراوە کە دەبێت تا ٢٨ی حوزەیران وەڵام بدەیتەوە." },
+            { "language": "kmr", "text": "Skan bes e, heke temam û xwendbar be. Ravekirineke kurt bikêr e. Dem jî girîng e: di biryarê de hatiye nivîsandin ku divê hûn heta 28ê Hezîranê bersiv bidin." },
+            { "language": "pl", "text": "Skan wystarczy, jeśli jest kompletny i czytelny. Krótkie wyjaśnienie ma sens. Ważny jest też termin: w decyzji jest napisane, że powinien Pan zareagować do 28 czerwca." },
+            { "language": "ro", "text": "Un scan este suficient dacă este complet și lizibil. O explicație scurtă este utilă. Important este și termenul: în decizie scrie că trebuie să răspundeți până la 28 iunie." },
+            { "language": "sq", "text": "Një skanim mjafton nëse është i plotë dhe i lexueshëm. Një shpjegim i shkurtër është i dobishëm. I rëndësishëm është edhe afati: në vendim shkruhet se duhet të përgjigjeni deri më 28 qershor." }
+          ],
+          "function": "clarify-format-and-deadline"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Dann lade ich den Scan der Lohnabrechnung und eine kurze Erklärung bis zum 28. Juni hoch. Können Sie mir noch sagen, ob diese Frist nur für die fehlenden Unterlagen gilt oder auch für einen möglichen Widerspruch gegen den Bescheid?",
+          "translations": [
+            { "language": "en", "text": "I understand. Then I will upload the scan of the payslip and a short explanation by June 28. Could you also tell me whether this deadline applies only to the missing documents or also to a possible objection to the notice?" },
+            { "language": "fa", "text": "متوجه شدم. پس اسکن فیش حقوقی و توضیح کوتاه را تا ۲۸ ژوئن بارگذاری می‌کنم. می‌توانید همچنین بگویید آیا این مهلت فقط برای مدارک ناقص است یا برای اعتراض احتمالی به نامه هم هست؟" },
+            { "language": "ar", "text": "فهمت. إذن سأحمّل مسح قسيمة الراتب وشرحاً قصيراً حتى 28 يونيو. هل يمكنك أيضاً أن تخبرني هل هذه المهلة تنطبق فقط على المستندات الناقصة أم أيضاً على اعتراض محتمل على القرار؟" },
+            { "language": "tr", "text": "Anladım. O zaman maaş bordrosunun taramasını ve kısa açıklamayı 28 Haziran'a kadar yükleyeceğim. Bu sürenin yalnızca eksik belgeler için mi, yoksa karara olası bir itiraz için de mi geçerli olduğunu söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Понятно. Тогда я загружу скан расчётного листка и короткое объяснение до 28 июня. Можете ещё сказать, относится ли этот срок только к недостающим документам или также к возможному возражению против решения?" },
+            { "language": "ckb", "text": "تێگەیشتم. کەواتە سکانی لیستی مووچە و ڕوونکردنەوەیەکی کورت تا ٢٨ی حوزەیران بار دەکەم. دەتوانن هەروەها پێم بڵێن ئایا ئەم مۆڵەتە تەنها بۆ بەڵگەنامە کەمەکانە یان بۆ ناڕەزایەتییەکی ئەگەری لە بڕیارنامەکەشە؟" },
+            { "language": "kmr", "text": "Fam kirim. Wê demê ez skana slipê meaşê û ravekirineke kurt heta 28ê Hezîranê bar dikim. Hûn dikarin her wiha bêjin gelo ev dem tenê ji bo belgeyên kêm derbas dibe an jî ji bo îtirazeke mumkin li dijî biryarê?" },
+            { "language": "pl", "text": "Rozumiem. W takim razie prześlę skan odcinka wypłaty i krótkie wyjaśnienie do 28 czerwca. Czy może mi Pan jeszcze powiedzieć, czy ten termin dotyczy tylko brakujących dokumentów, czy także ewentualnego odwołania od decyzji?" },
+            { "language": "ro", "text": "Înțeleg. Atunci voi încărca scanul fluturașului de salariu și o scurtă explicație până la 28 iunie. Îmi puteți spune și dacă acest termen se aplică doar documentelor lipsă sau și unei posibile contestații împotriva deciziei?" },
+            { "language": "sq", "text": "E kuptoj. Atëherë do të ngarkoj skanimin e listës së pagës dhe një shpjegim të shkurtër deri më 28 qershor. A mund të më thoni edhe nëse ky afat vlen vetëm për dokumentet që mungojnë apo edhe për një kundërshtim të mundshëm ndaj vendimit?" }
+          ],
+          "function": "clarify-deadline-scope",
+          "expectedLearnerAction": "Fasse den nächsten Schritt zusammen und frage nach dem Geltungsbereich der Frist."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "office-staff",
+          "baseText": "Die Frist bis zum 28. Juni betrifft die Unterlagen. Die Widerspruchsfrist steht gesondert in der Rechtsbehelfsbelehrung am Ende des Bescheids.",
+          "translations": [
+            { "language": "en", "text": "The deadline of June 28 concerns the documents. The objection deadline is stated separately in the legal remedies notice at the end of the official notice." },
+            { "language": "fa", "text": "مهلت ۲۸ ژوئن مربوط به مدارک است. مهلت اعتراض جداگانه در بخش راهنمای اعتراض در انتهای نامه رسمی نوشته شده است." },
+            { "language": "ar", "text": "المهلة حتى 28 يونيو تخص المستندات. أما مهلة الاعتراض فهي مذكورة بشكل منفصل في إرشادات طرق الطعن في نهاية القرار." },
+            { "language": "tr", "text": "28 Haziran'a kadar olan süre belgelerle ilgilidir. İtiraz süresi, kararın sonunda yer alan hukuki başvuru açıklamasında ayrı olarak belirtilmiştir." },
+            { "language": "ru", "text": "Срок до 28 июня касается документов. Срок возражения отдельно указан в разъяснении о средствах правовой защиты в конце решения." },
+            { "language": "ckb", "text": "مۆڵەتی تا ٢٨ی حوزەیران پەیوەندی بە بەڵگەنامەکانەوە هەیە. مۆڵەتی ناڕەزایەتی جیاواز لە ڕێنمایی ڕێگاکانی ناڕەزایەتی لە کۆتایی بڕیارنامەکەدا نووسراوە." },
+            { "language": "kmr", "text": "Dema heta 28ê Hezîranê ji bo belgeyan e. Dema îtirazê cuda di agahdariya rêyên hiqûqî de li dawiya biryarê hatiye nivîsandin." },
+            { "language": "pl", "text": "Termin do 28 czerwca dotyczy dokumentów. Termin odwołania jest podany osobno w pouczeniu o środkach prawnych na końcu decyzji." },
+            { "language": "ro", "text": "Termenul până la 28 iunie se referă la documente. Termenul pentru contestație este menționat separat în informarea privind căile de atac de la finalul deciziei." },
+            { "language": "sq", "text": "Afati deri më 28 qershor ka të bëjë me dokumentet. Afati për kundërshtim është shënuar veçmas në udhëzimin për mjetet juridike në fund të vendimit." }
+          ],
+          "function": "separate-deadlines"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Danke, dann habe ich es richtig verstanden: Bis zum 28. Juni reiche ich die Lohnabrechnung für Mai und eine kurze Erklärung ein. Die Widerspruchsfrist prüfe ich separat in der Rechtsbehelfsbelehrung. Können Sie mir bitte noch sagen, ob ich nach dem Hochladen eine Eingangsbestätigung bekomme?",
+          "translations": [
+            { "language": "en", "text": "Thank you, then I have understood it correctly: by June 28 I will submit the payslip for May and a short explanation. I will check the objection deadline separately in the legal remedies notice. Could you please also tell me whether I will receive a confirmation of receipt after uploading?" },
+            { "language": "fa", "text": "ممنون، پس درست فهمیده‌ام: تا ۲۸ ژوئن فیش حقوقی ماه مه و یک توضیح کوتاه را ارائه می‌کنم. مهلت اعتراض را جداگانه در بخش راهنمای اعتراض بررسی می‌کنم. می‌توانید لطفاً بگویید آیا بعد از بارگذاری تأیید دریافت می‌گیرم؟" },
+            { "language": "ar", "text": "شكراً، إذن فهمت الأمر بشكل صحيح: حتى 28 يونيو سأقدم قسيمة راتب مايو وشرحاً قصيراً. سأراجع مهلة الاعتراض بشكل منفصل في إرشادات طرق الطعن. هل يمكنك أيضاً أن تخبرني هل سأحصل على تأكيد استلام بعد التحميل؟" },
+            { "language": "tr", "text": "Teşekkür ederim, o zaman doğru anladım: 28 Haziran'a kadar Mayıs ayı maaş bordrosunu ve kısa bir açıklamayı sunacağım. İtiraz süresini hukuki başvuru açıklamasında ayrıca kontrol edeceğim. Yükledikten sonra bir alındı onayı alıp almayacağımı da söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Спасибо, значит, я правильно понял: до 28 июня я подам расчётный листок за май и короткое объяснение. Срок возражения я отдельно проверю в разъяснении о средствах правовой защиты. Можете ещё сказать, получу ли я подтверждение получения после загрузки?" },
+            { "language": "ckb", "text": "سوپاس، کەواتە بە دروستی تێگەیشتم: تا ٢٨ی حوزەیران لیستی مووچەی مای و ڕوونکردنەوەیەکی کورت پێشکەش دەکەم. مۆڵەتی ناڕەزایەتی جیا لە ڕێنمایی ڕێگاکانی ناڕەزایەتی دەبینم. دەتوانن تکایە هەروەها پێم بڵێن ئایا دوای بارکردن پشتڕاستکردنەوەی گەیشتن وەردەگرم؟" },
+            { "language": "kmr", "text": "Spas, wê demê min rast fam kiriye: heta 28ê Hezîranê ez slipê meaşa Gulanê û ravekirineke kurt radest dikim. Dema îtirazê ez cuda di agahdariya rêyên hiqûqî de kontrol dikim. Hûn dikarin her wiha bêjin gelo piştî barkirinê ez pejirandina wergirtinê werdigirim?" },
+            { "language": "pl", "text": "Dziękuję, czyli dobrze zrozumiałem: do 28 czerwca dostarczę odcinek wypłaty za maj i krótkie wyjaśnienie. Termin odwołania sprawdzę osobno w pouczeniu o środkach prawnych. Czy może mi Pan jeszcze powiedzieć, czy po przesłaniu otrzymam potwierdzenie odbioru?" },
+            { "language": "ro", "text": "Mulțumesc, atunci am înțeles corect: până la 28 iunie depun fluturașul de salariu pentru mai și o scurtă explicație. Verific separat termenul pentru contestație în informarea privind căile de atac. Îmi puteți spune, vă rog, dacă primesc o confirmare de primire după încărcare?" },
+            { "language": "sq", "text": "Faleminderit, atëherë e kam kuptuar saktë: deri më 28 qershor dorëzoj listën e pagës për maj dhe një shpjegim të shkurtër. Afatin për kundërshtim e kontrolloj veçmas në udhëzimin për mjetet juridike. A mund të më thoni, ju lutem, nëse marr një konfirmim pranimi pas ngarkimit?" }
+          ],
+          "function": "summarize-and-confirm-receipt",
+          "expectedLearnerAction": "Fasse Unterlagen, Frist und getrennte Widerspruchsfrist zusammen und frage nach der Eingangsbestätigung."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, das Aktenzeichen ist B-9164. Ich habe den Bescheid vom 12. Juni bekommen und möchte zwei Formulierungen besser verstehen. Besonders unklar ist mir der Satz: `Die Bewilligung erfolgt vorläufig bis zur abschließenden Prüfung der Einkommensnachweise.`",
+              "translations": [
+                { "language": "en", "text": "Yes, the reference number is B-9164. I received the notice dated June 12 and would like to understand two wordings better. I am especially unclear about the sentence: 'The approval is provisional until the final review of the income documents.'" },
+                { "language": "fa", "text": "بله، شماره پرونده B-9164 است. نامه رسمی مورخ ۱۲ ژوئن را دریافت کرده‌ام و می‌خواهم دو عبارت را بهتر بفهمم. مخصوصاً این جمله برایم مبهم است: «تأیید به‌صورت موقت تا بررسی نهایی مدارک درآمد انجام می‌شود.»" },
+                { "language": "ar", "text": "نعم، رقم الملف هو B-9164. تلقيت القرار المؤرخ في 12 يونيو وأرغب في فهم عبارتين بشكل أفضل. خصوصاً هذه الجملة غير واضحة لي: «تتم الموافقة مؤقتاً حتى الفحص النهائي لإثباتات الدخل»." },
+                { "language": "tr", "text": "Evet, dosya numarası B-9164. 12 Haziran tarihli kararı aldım ve iki ifadeyi daha iyi anlamak istiyorum. Özellikle şu cümle benim için belirsiz: 'Onay, gelir belgelerinin nihai incelemesine kadar geçici olarak verilir.'" },
+                { "language": "ru", "text": "Да, номер дела B-9164. Я получил решение от 12 июня и хотел бы лучше понять две формулировки. Особенно непонятно мне предложение: «Одобрение предоставляется предварительно до окончательной проверки документов о доходах»." },
+                { "language": "ckb", "text": "بەڵێ، ژمارەی کەیس B-9164 ـە. بڕیارنامەی ١٢ی حوزەیرانم وەرگرتووە و دەمەوێت دوو دەستەواژە باشتر تێبگەم. بە تایبەتی ئەم ڕستەیە بۆم ناڕوونە: «پەسەندکردنەکە بە شێوەی کاتییە تا پشکنینی کۆتایی بەڵگەکانی داهات.»" },
+                { "language": "kmr", "text": "Erê, hejmarê dosyeyê B-9164 e. Min biryara 12ê Hezîranê wergirtiye û dixwazim du gotinan baştir fam bikim. Bi taybetî ev hevok ji min re nezelal e: `Pejirandin demkî ye heta kontrola dawî ya belgeyên dahatê.`" },
+                { "language": "pl", "text": "Tak, numer sprawy to B-9164. Otrzymałem decyzję z 12 czerwca i chciałbym lepiej zrozumieć dwa sformułowania. Szczególnie niejasne jest dla mnie zdanie: „Przyznanie następuje tymczasowo do czasu końcowej weryfikacji dokumentów dochodowych”." },
+                { "language": "ro", "text": "Da, numărul dosarului este B-9164. Am primit decizia din 12 iunie și aș dori să înțeleg mai bine două formulări. Mai ales această propoziție îmi este neclară: „Aprobarea se face provizoriu până la verificarea finală a dovezilor de venit.”" },
+                { "language": "sq", "text": "Po, numri i dosjes është B-9164. Kam marrë vendimin e datës 12 qershor dhe dua të kuptoj më mirë dy formulime. Sidomos kjo fjali është e paqartë për mua: “Miratimi bëhet përkohësisht deri në kontrollin përfundimtar të provave të të ardhurave.”" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort nennt Aktenzeichen, Bescheiddatum und zitiert die unklare Stelle genau.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer gives the reference number, notice date, and quotes the unclear part precisely." },
+                { "language": "fa", "text": "خوب است: شماره پرونده، تاریخ نامه و بخش مبهم را دقیق نقل می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر هذه الإجابة رقم الملف وتاريخ القرار وتقتبس الجزء غير الواضح بدقة." },
+                { "language": "tr", "text": "İyi: bu cevap dosya numarasını, karar tarihini ve belirsiz kısmı tam olarak alıntılıyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет номер дела, дату решения и точно цитирует непонятное место." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە ژمارەی کەیس، ڕێکەوتی بڕیارنامە و بەشی ناڕوون بە وردی دەگوازێتەوە." },
+                { "language": "kmr", "text": "Baş e: ev bersiv hejmarê dosyeyê, roja biryarê û beşa nezelal bi rastî vediguhêze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje numer sprawy, datę decyzji i dokładnie cytuje niejasny fragment." },
+                { "language": "ro", "text": "Bine: răspunsul menționează numărul dosarului, data deciziei și citează exact pasajul neclar." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep numrin e dosjes, datën e vendimit dhe citon saktë pjesën e paqartë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, ich habe hier einen Bescheid bekommen. Da stehen einige komplizierte Wörter drin, und ich verstehe nicht genau, was ich jetzt machen soll.",
+              "translations": [
+                { "language": "en", "text": "Yes, I received a notice here. It contains some complicated words, and I do not understand exactly what I should do now." },
+                { "language": "fa", "text": "بله، من یک نامه رسمی دریافت کرده‌ام. چند کلمه پیچیده در آن هست و دقیق نمی‌فهمم الان باید چه کار کنم." },
+                { "language": "ar", "text": "نعم، لقد تلقيت قراراً. توجد فيه بعض الكلمات المعقدة، ولا أفهم بالضبط ما الذي يجب أن أفعله الآن." },
+                { "language": "tr", "text": "Evet, burada bir karar aldım. İçinde bazı karmaşık kelimeler var ve şimdi tam olarak ne yapmam gerektiğini anlamıyorum." },
+                { "language": "ru", "text": "Да, я получил здесь решение. В нём есть несколько сложных слов, и я точно не понимаю, что мне сейчас делать." },
+                { "language": "ckb", "text": "بەڵێ، من بڕیارنامەیەکم وەرگرتووە. هەندێک وشەی ئاڵۆزی تێدایە و بە وردی تێناگەم ئێستا دەبێت چی بکەم." },
+                { "language": "kmr", "text": "Erê, min biryarek wergirtiye. Hin peyvên tevlihev tê de hene û ez bi rastî fam nakim niha divê ez çi bikim." },
+                { "language": "pl", "text": "Tak, otrzymałem decyzję. Są w niej trudne słowa i nie rozumiem dokładnie, co mam teraz zrobić." },
+                { "language": "ro", "text": "Da, am primit o decizie. În ea sunt câteva cuvinte complicate și nu înțeleg exact ce trebuie să fac acum." },
+                { "language": "sq", "text": "Po, kam marrë një vendim. Në të ka disa fjalë të ndërlikuara dhe nuk kuptoj saktë çfarë duhet të bëj tani." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort beschreibt Unsicherheit, zitiert aber keine Stelle und nennt kein Aktenzeichen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer describes uncertainty but does not quote a passage or give the reference number." },
+                { "language": "fa", "text": "بیش از حد مبهم است: سردرگمی را توضیح می‌دهد، اما بخشی را نقل نمی‌کند و شماره پرونده را نمی‌گوید." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: يصف الارتباك، لكنه لا يقتبس جزءاً ولا يذكر رقم الملف." },
+                { "language": "tr", "text": "Çok belirsiz: kararsızlığı anlatıyor ama hiçbir bölümü alıntılamıyor ve dosya numarasını vermiyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ описывает неуверенность, но не цитирует место и не называет номер дела." },
+                { "language": "ckb", "text": "زۆر ناوردە: دڵەڕاوکێ ڕوون دەکاتەوە، بەڵام هیچ بەشێک ناگوازێتەوە و ژمارەی کەیس ناڵێت." },
+                { "language": "kmr", "text": "Pir nezelal e: bêewlehiyê rave dike, lê beşek venaguhêze û hejmarê dosyeyê nabêje." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: odpowiedź opisuje niepewność, ale nie cytuje fragmentu i nie podaje numeru sprawy." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul descrie nesiguranța, dar nu citează niciun pasaj și nu dă numărul dosarului." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja përshkruan pasigurinë, por nuk citon asnjë pjesë dhe nuk jep numrin e dosjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte verstehen, ob ich im Moment etwas tun muss. Heißt `vorläufig`, dass ich abwarten soll, oder fehlt noch ein bestimmter Einkommensnachweis? Wenn etwas fehlt, würde ich gern wissen, welches Dokument und bis wann ich es einreichen muss.",
+              "translations": [
+                { "language": "en", "text": "I would like to understand whether I need to do anything right now. Does 'provisional' mean that I should wait, or is a specific income document still missing? If something is missing, I would like to know which document and by when I must submit it." },
+                { "language": "fa", "text": "می‌خواهم بدانم آیا الان باید کاری انجام بدهم یا نه. آیا «موقت» یعنی باید منتظر بمانم، یا هنوز مدرک درآمد مشخصی کم است؟ اگر چیزی کم است، می‌خواهم بدانم کدام مدرک و تا چه زمانی باید آن را ارائه کنم." },
+                { "language": "ar", "text": "أريد أن أفهم هل يجب عليّ فعل شيء الآن. هل تعني كلمة «مؤقت» أن عليّ الانتظار، أم لا يزال هناك إثبات دخل محدد ناقص؟ إذا كان هناك شيء ناقص، أود أن أعرف أي مستند وإلى متى يجب تقديمه." },
+                { "language": "tr", "text": "Şu anda bir şey yapmam gerekip gerekmediğini anlamak istiyorum. 'Geçici' beklemem gerektiği anlamına mı geliyor, yoksa belirli bir gelir belgesi hâlâ eksik mi? Bir şey eksikse, hangi belgeyi ve hangi tarihe kadar sunmam gerektiğini bilmek isterim." },
+                { "language": "ru", "text": "Я хотел бы понять, нужно ли мне сейчас что-то делать. Означает ли «предварительно», что мне следует ждать, или ещё не хватает конкретного документа о доходах? Если чего-то не хватает, я хотел бы знать, какой документ и до какого срока нужно подать." },
+                { "language": "ckb", "text": "دەمەوێت تێبگەم ئایا ئێستا دەبێت شتێک بکەم یان نا. ئایا `کاتی` مانای ئەوەیە کە چاوەڕێ بکەم، یان هێشتا بەڵگەیەکی دیاریکراوی داهات کەمە؟ ئەگەر شتێک کەمە، دەمەوێت بزانم کام بەڵگەنامە و تا کەی دەبێت پێشکەشی بکەم." },
+                { "language": "kmr", "text": "Ez dixwazim fam bikim gelo divê ez niha tiştekî bikim an na. Ma `demkî` tê wateya ku divê ez bisekinim, an belgeyeke konkret a dahatê hêj kêm e? Ger tiştek kêm be, ez dixwazim bizanim kîjan belge û heta kengê divê wê radest bikim." },
+                { "language": "pl", "text": "Chciałbym zrozumieć, czy teraz muszę coś zrobić. Czy „tymczasowo” oznacza, że mam czekać, czy brakuje jeszcze konkretnego dokumentu dochodowego? Jeśli czegoś brakuje, chciałbym wiedzieć, jaki to dokument i do kiedy muszę go złożyć." },
+                { "language": "ro", "text": "Aș dori să înțeleg dacă trebuie să fac ceva acum. Înseamnă „provizoriu” că trebuie să aștept sau lipsește încă o anumită dovadă de venit? Dacă lipsește ceva, aș vrea să știu ce act și până când trebuie să îl depun." },
+                { "language": "sq", "text": "Dua të kuptoj nëse duhet të bëj diçka tani. A do të thotë “përkohësisht” se duhet të pres, apo mungon ende një provë e caktuar e të ardhurave? Nëse mungon diçka, dua të di cilin dokument dhe deri kur duhet ta dorëzoj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort fragt nach der praktischen Bedeutung und nach konkreten Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer asks about the practical meaning and about specific documents." },
+                { "language": "fa", "text": "خوب است: معنی عملی و مدارک مشخص را می‌پرسد." },
+                { "language": "ar", "text": "جيد: تسأل هذه الإجابة عن المعنى العملي وعن مستندات محددة." },
+                { "language": "tr", "text": "İyi: bu cevap pratik anlamı ve belirli belgeleri soruyor." },
+                { "language": "ru", "text": "Хорошо: ответ спрашивает о практическом значении и конкретных документах." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە مانای کرداری و بەڵگەنامەی دیاریکراو دەپرسێت." },
+                { "language": "kmr", "text": "Baş e: ev bersiv wateya pratîkî û belgeyên konkret dipirse." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pyta o praktyczne znaczenie i konkretne dokumenty." },
+                { "language": "ro", "text": "Bine: răspunsul întreabă despre sensul practic și despre documente concrete." },
+                { "language": "sq", "text": "Mirë: përgjigjja pyet për kuptimin praktik dhe për dokumente konkrete." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Heißt `vorläufig`, dass der Bescheid vielleicht falsch ist? Ich möchte nur wissen, ob ich mich darauf verlassen kann.",
+              "translations": [
+                { "language": "en", "text": "Does 'provisional' mean that the notice may be wrong? I just want to know whether I can rely on it." },
+                { "language": "fa", "text": "آیا «موقت» یعنی نامه ممکن است اشتباه باشد؟ فقط می‌خواهم بدانم آیا می‌توانم به آن تکیه کنم یا نه." },
+                { "language": "ar", "text": "هل تعني كلمة «مؤقت» أن القرار ربما يكون خاطئاً؟ أريد فقط أن أعرف هل يمكنني الاعتماد عليه." },
+                { "language": "tr", "text": "'Geçici' kararın belki yanlış olduğu anlamına mı geliyor? Sadece buna güvenip güvenemeyeceğimi bilmek istiyorum." },
+                { "language": "ru", "text": "Означает ли «предварительно», что решение может быть неправильным? Я просто хочу знать, могу ли я на него полагаться." },
+                { "language": "ckb", "text": "ئایا `کاتی` مانای ئەوەیە کە بڕیارنامەکە ڕەنگە هەڵە بێت؟ تەنها دەمەوێت بزانم دەتوانم پشت پێ ببەستم یان نا." },
+                { "language": "kmr", "text": "Ma `demkî` tê wateya ku biryar belkî şaş e? Ez tenê dixwazim bizanim gelo dikarim xwe pê bispêrim an na." },
+                { "language": "pl", "text": "Czy „tymczasowo” oznacza, że decyzja może być błędna? Chcę tylko wiedzieć, czy mogę na niej polegać." },
+                { "language": "ro", "text": "Înseamnă „provizoriu” că decizia ar putea fi greșită? Vreau doar să știu dacă mă pot baza pe ea." },
+                { "language": "sq", "text": "A do të thotë “përkohësisht” se vendimi mund të jetë i gabuar? Dua vetëm të di nëse mund të mbështetem te ai." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Die Antwort fragt nach Sicherheit, aber nicht nach Handlung, Dokumenten oder Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but incomplete: the answer asks about certainty, but not about action, documents, or a deadline." },
+                { "language": "fa", "text": "قابل‌قبول اما ناقص است: درباره اطمینان می‌پرسد، اما درباره اقدام، مدارک یا مهلت نمی‌پرسد." },
+                { "language": "ar", "text": "معقول لكنه ناقص: يسأل عن اليقين، لا عن الإجراء أو المستندات أو المهلة." },
+                { "language": "tr", "text": "Makul ama eksik: güvenilirlik hakkında soruyor, fakat işlem, belgeler veya süre hakkında sormuyor." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: ответ спрашивает об уверенности, но не о действии, документах или сроке." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام ناتەواوە: دەربارەی دڵنیایی دەپرسێت، نەک دەربارەی هەنگاو، بەڵگەنامە یان مۆڵەت." },
+                { "language": "kmr", "text": "Watebar e, lê netemam e: derbarê ewlehiyê dipirse, lê ne derbarê gav, belge an demê." },
+                { "language": "pl", "text": "Wiarygodne, ale niepełne: odpowiedź pyta o pewność, ale nie o działanie, dokumenty ani termin." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: răspunsul întreabă despre siguranță, dar nu despre acțiune, documente sau termen." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: përgjigjja pyet për siguri, por jo për veprim, dokumente ose afat." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke, das hilft mir. Dann reiche ich die Lohnabrechnung für Mai nach. Können Sie mir bitte sagen, ob ein normaler Scan reicht und ob ich zusätzlich eine kurze Erklärung zu meinem schwankenden Einkommen beilegen soll?",
+              "translations": [
+                { "language": "en", "text": "Thank you, that helps me. Then I will submit the payslip for May. Could you please tell me whether a normal scan is sufficient and whether I should also attach a short explanation of my fluctuating income?" },
+                { "language": "fa", "text": "ممنون، این به من کمک می‌کند. پس فیش حقوقی ماه مه را ارائه می‌کنم. می‌توانید لطفاً بگویید آیا یک اسکن معمولی کافی است و آیا باید علاوه بر آن توضیح کوتاهی درباره درآمد متغیرم پیوست کنم؟" },
+                { "language": "ar", "text": "شكراً، هذا يساعدني. إذن سأقدم قسيمة الراتب لشهر مايو. هل يمكنك أن تخبرني هل يكفي مسح عادي، وهل ينبغي أن أرفق أيضاً شرحاً قصيراً عن دخلي المتغير؟" },
+                { "language": "tr", "text": "Teşekkür ederim, bu bana yardımcı oluyor. O zaman Mayıs ayı maaş bordrosunu sunacağım. Normal bir taramanın yeterli olup olmadığını ve değişken gelirimle ilgili kısa bir açıklama eklemem gerekip gerekmediğini söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Спасибо, это мне помогает. Тогда я донесу расчётный листок за май. Можете сказать, достаточно ли обычного скана и нужно ли дополнительно приложить короткое объяснение о моём меняющемся доходе?" },
+                { "language": "ckb", "text": "سوپاس، ئەمە یارمەتیم دەدات. کەواتە لیستی مووچەی مانگی مای پێشکەش دەکەم. دەتوانن تکایە پێم بڵێن ئایا سکانی ئاسایی بەسە و ئایا پێویستە ڕوونکردنەوەیەکی کورتی سەبارەت بە داهاتی گۆڕاوم هاوپێچ بکەم؟" },
+                { "language": "kmr", "text": "Spas, ev alîkariya min dike. Wê demê ez slipê meaşa Gulanê radest dikim. Hûn dikarin ji kerema xwe bêjin gelo skanek normal bes e û gelo divê ez ravekirineke kurt derbarê dahata xwe ya guherbar lê zêde bikim?" },
+                { "language": "pl", "text": "Dziękuję, to mi pomaga. W takim razie dostarczę odcinek wypłaty za maj. Czy może mi Pan powiedzieć, czy wystarczy zwykły skan i czy powinienem dodatkowo dołączyć krótkie wyjaśnienie dotyczące zmiennego dochodu?" },
+                { "language": "ro", "text": "Mulțumesc, asta mă ajută. Atunci voi depune fluturașul de salariu pentru luna mai. Îmi puteți spune, vă rog, dacă este suficient un scan obișnuit și dacă ar trebui să anexez și o scurtă explicație despre venitul meu variabil?" },
+                { "language": "sq", "text": "Faleminderit, kjo më ndihmon. Atëherë do të dorëzoj listën e pagës për muajin maj. A mund të më thoni, ju lutem, nëse mjafton një skanim i zakonshëm dhe nëse duhet të bashkëngjis edhe një shpjegim të shkurtër për të ardhurat e mia të ndryshueshme?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort bestätigt das fehlende Dokument und klärt Format und Zusatzinformation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer confirms the missing document and clarifies the format and additional information." },
+                { "language": "fa", "text": "خوب است: مدرک ناقص را تأیید می‌کند و قالب و اطلاعات تکمیلی را روشن می‌کند." },
+                { "language": "ar", "text": "جيد: تؤكد هذه الإجابة المستند الناقص وتوضح الشكل والمعلومة الإضافية." },
+                { "language": "tr", "text": "İyi: bu cevap eksik belgeyi onaylıyor ve biçimi ile ek bilgiyi netleştiriyor." },
+                { "language": "ru", "text": "Хорошо: ответ подтверждает недостающий документ и уточняет формат и дополнительную информацию." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە بەڵگەنامەی کەم پشتڕاست دەکاتەوە و شێواز و زانیاریی زیادە ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: ev bersiv belgeya kêm piştrast dike û şêwe û agahiya zêde zelal dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź potwierdza brakujący dokument i wyjaśnia format oraz dodatkową informację." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă documentul lipsă și clarifică formatul și informația suplimentară." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon dokumentin që mungon dhe sqaron formatin dhe informacionin shtesë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann suche ich die Lohnabrechnung heraus und schicke sie irgendwie nach. Eine Erklärung kann ich auch schreiben, wenn das besser ist.",
+              "translations": [
+                { "language": "en", "text": "Fine, then I will look for the payslip and send it somehow. I can also write an explanation if that is better." },
+                { "language": "fa", "text": "خوب، پس فیش حقوقی را پیدا می‌کنم و به هر شکلی می‌فرستم. اگر بهتر است، توضیحی هم می‌توانم بنویسم." },
+                { "language": "ar", "text": "حسناً، سأبحث عن قسيمة الراتب وأرسلها بطريقة ما. يمكنني أيضاً كتابة شرح إذا كان ذلك أفضل." },
+                { "language": "tr", "text": "Tamam, o zaman maaş bordrosunu bulup bir şekilde gönderirim. Daha iyi olacaksa bir açıklama da yazabilirim." },
+                { "language": "ru", "text": "Хорошо, тогда я найду расчётный листок и как-нибудь отправлю его. Если так лучше, могу также написать объяснение." },
+                { "language": "ckb", "text": "باشە، کەواتە لیستی مووچە دەدۆزمەوە و بە جۆرێک دەنێرم. ئەگەر باشتر بێت، دەتوانم ڕوونکردنەوەیەکیش بنووسم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez ê slipê meaşê bibînim û bi awayekî bişînim. Ger baştir be, ez dikarim ravekirinekê jî binivîsim." },
+                { "language": "pl", "text": "Dobrze, znajdę odcinek wypłaty i jakoś go doślę. Mogę też napisać wyjaśnienie, jeśli tak będzie lepiej." },
+                { "language": "ro", "text": "Bine, atunci caut fluturașul de salariu și îl trimit cumva. Pot scrie și o explicație, dacă este mai bine." },
+                { "language": "sq", "text": "Mirë, atëherë do ta gjej listën e pagës dhe do ta dërgoj disi. Mund të shkruaj edhe një shpjegim nëse është më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu locker und unklar: `irgendwie` passt nicht zum Amt, und Format sowie Zusatzinformation bleiben offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too casual and unclear: 'somehow' does not fit an authority, and the format and additional information remain open." },
+                { "language": "fa", "text": "زیادی غیررسمی و مبهم است: «یه جوری» برای اداره مناسب نیست و قالب و اطلاعات تکمیلی روشن نمی‌شود." },
+                { "language": "ar", "text": "عامي وغير واضح: «بطريقة ما» لا يناسب جهة إدارية، ويبقى الشكل والمعلومة الإضافية غير واضحين." },
+                { "language": "tr", "text": "Fazla rahat ve belirsiz: 'bir şekilde' kurumla konuşmaya uygun değil, biçim ve ek bilgi açık kalıyor." },
+                { "language": "ru", "text": "Слишком разговорно и неясно: «как-нибудь» не подходит для ведомства, а формат и дополнительная информация остаются открытыми." },
+                { "language": "ckb", "text": "زۆر سادە و ناڕوونە: `بە جۆرێک` بۆ فەرمانگە گونجاو نییە، و شێواز و زانیاریی زیادە کراوە دەمێنن." },
+                { "language": "kmr", "text": "Pir rehet û nezelal e: `bi awayekî` ji bo dezgehê guncaw nîne, û şêwe û agahiya zêde vekirî dimînin." },
+                { "language": "pl", "text": "Zbyt swobodne i niejasne: „jakoś” nie pasuje do urzędu, a format i dodatkowa informacja pozostają otwarte." },
+                { "language": "ro", "text": "Prea lejer și neclar: „cumva” nu se potrivește cu o autoritate, iar formatul și informația suplimentară rămân neclare." },
+                { "language": "sq", "text": "Shumë e lirshme dhe e paqartë: “disi” nuk i përshtatet institucionit, dhe formati e informacioni shtesë mbeten të hapura." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Verstehe. Dann lade ich den Scan der Lohnabrechnung und eine kurze Erklärung bis zum 28. Juni hoch. Können Sie mir noch sagen, ob diese Frist nur für die fehlenden Unterlagen gilt oder auch für einen möglichen Widerspruch gegen den Bescheid?",
+              "translations": [
+                { "language": "en", "text": "I understand. Then I will upload the scan of the payslip and a short explanation by June 28. Could you also tell me whether this deadline applies only to the missing documents or also to a possible objection to the notice?" },
+                { "language": "fa", "text": "متوجه شدم. پس اسکن فیش حقوقی و توضیح کوتاه را تا ۲۸ ژوئن بارگذاری می‌کنم. می‌توانید همچنین بگویید آیا این مهلت فقط برای مدارک ناقص است یا برای اعتراض احتمالی به نامه هم هست؟" },
+                { "language": "ar", "text": "فهمت. إذن سأحمّل مسح قسيمة الراتب وشرحاً قصيراً حتى 28 يونيو. هل يمكنك أيضاً أن تخبرني هل هذه المهلة تنطبق فقط على المستندات الناقصة أم أيضاً على اعتراض محتمل على القرار؟" },
+                { "language": "tr", "text": "Anladım. O zaman maaş bordrosunun taramasını ve kısa açıklamayı 28 Haziran'a kadar yükleyeceğim. Bu sürenin yalnızca eksik belgeler için mi, yoksa karara olası bir itiraz için de mi geçerli olduğunu söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Понятно. Тогда я загружу скан расчётного листка и короткое объяснение до 28 июня. Можете ещё сказать, относится ли этот срок только к недостающим документам или также к возможному возражению против решения?" },
+                { "language": "ckb", "text": "تێگەیشتم. کەواتە سکانی لیستی مووچە و ڕوونکردنەوەیەکی کورت تا ٢٨ی حوزەیران بار دەکەم. دەتوانن هەروەها پێم بڵێن ئایا ئەم مۆڵەتە تەنها بۆ بەڵگەنامە کەمەکانە یان بۆ ناڕەزایەتییەکی ئەگەری لە بڕیارنامەکەشە؟" },
+                { "language": "kmr", "text": "Fam kirim. Wê demê ez skana slipê meaşê û ravekirineke kurt heta 28ê Hezîranê bar dikim. Hûn dikarin her wiha bêjin gelo ev dem tenê ji bo belgeyên kêm derbas dibe an jî ji bo îtirazeke mumkin li dijî biryarê?" },
+                { "language": "pl", "text": "Rozumiem. W takim razie prześlę skan odcinka wypłaty i krótkie wyjaśnienie do 28 czerwca. Czy może mi Pan jeszcze powiedzieć, czy ten termin dotyczy tylko brakujących dokumentów, czy także ewentualnego odwołania od decyzji?" },
+                { "language": "ro", "text": "Înțeleg. Atunci voi încărca scanul fluturașului de salariu și o scurtă explicație până la 28 iunie. Îmi puteți spune și dacă acest termen se aplică doar documentelor lipsă sau și unei posibile contestații împotriva deciziei?" },
+                { "language": "sq", "text": "E kuptoj. Atëherë do të ngarkoj skanimin e listës së pagës dhe një shpjegim të shkurtër deri më 28 qershor. A mund të më thoni edhe nëse ky afat vlen vetëm për dokumentet që mungojnë apo edhe për një kundërshtim të mundshëm ndaj vendimit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort trennt die Unterlagenfrist von der möglichen Widerspruchsfrist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer separates the document deadline from the possible objection deadline." },
+                { "language": "fa", "text": "خوب است: مهلت مدارک را از مهلت احتمالی اعتراض جدا می‌کند." },
+                { "language": "ar", "text": "جيد: تفصل هذه الإجابة بين مهلة المستندات ومهلة الاعتراض المحتملة." },
+                { "language": "tr", "text": "İyi: bu cevap belge süresini olası itiraz süresinden ayırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ отделяет срок подачи документов от возможного срока возражения." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە مۆڵەتی بەڵگەنامەکان لە مۆڵەتی ئەگەری ناڕەزایەتی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: ev bersiv dema belgeyan ji dema mumkin a îtirazê veqetîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź oddziela termin na dokumenty od ewentualnego terminu odwołania." },
+                { "language": "ro", "text": "Bine: răspunsul separă termenul pentru documente de termenul posibil pentru contestație." },
+                { "language": "sq", "text": "Mirë: përgjigjja e ndan afatin për dokumente nga afati i mundshëm për kundërshtim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Also muss ich bis zum 28. Juni reagieren. Dann mache ich das so schnell wie möglich und schaue später noch einmal in den Bescheid.",
+              "translations": [
+                { "language": "en", "text": "So I have to respond by June 28. Then I will do that as quickly as possible and look at the notice again later." },
+                { "language": "fa", "text": "پس باید تا ۲۸ ژوئن پاسخ بدهم. بعد این کار را هرچه سریع‌تر انجام می‌دهم و بعداً دوباره به نامه نگاه می‌کنم." },
+                { "language": "ar", "text": "إذن يجب أن أرد حتى 28 يونيو. سأفعل ذلك بأسرع ما يمكن وأنظر إلى القرار مرة أخرى لاحقاً." },
+                { "language": "tr", "text": "Yani 28 Haziran'a kadar yanıt vermeliyim. O zaman bunu mümkün olduğunca hızlı yaparım ve karara daha sonra tekrar bakarım." },
+                { "language": "ru", "text": "Значит, я должен ответить до 28 июня. Тогда я сделаю это как можно быстрее и позже ещё раз посмотрю решение." },
+                { "language": "ckb", "text": "کەواتە دەبێت تا ٢٨ی حوزەیران وەڵام بدەمەوە. پاشان ئەمە بە زووترین کات دەکەم و دواتر جارێکی تر بڕیارنامەکە دەبینمەوە." },
+                { "language": "kmr", "text": "Ango divê ez heta 28ê Hezîranê bersiv bidim. Wê demê ez vê herî zû dikim û paşê careke din li biryarê dinêrim." },
+                { "language": "pl", "text": "Czyli muszę zareagować do 28 czerwca. W takim razie zrobię to jak najszybciej i później jeszcze raz zajrzę do decyzji." },
+                { "language": "ro", "text": "Deci trebuie să răspund până la 28 iunie. Atunci fac asta cât mai repede și mă mai uit mai târziu încă o dată în decizie." },
+                { "language": "sq", "text": "Pra duhet të përgjigjem deri më 28 qershor. Atëherë do ta bëj sa më shpejt dhe më vonë do ta shikoj vendimin edhe një herë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort bestätigt nur die Frist, klärt aber nicht, wofür sie gilt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer only confirms the deadline but does not clarify what it applies to." },
+                { "language": "fa", "text": "بیش از حد مبهم است: فقط مهلت را تأیید می‌کند، اما روشن نمی‌کند برای چه چیزی است." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: يؤكد الموعد فقط، لكنه لا يوضح ما الذي ينطبق عليه." },
+                { "language": "tr", "text": "Çok belirsiz: sadece süreyi onaylıyor, ancak ne için geçerli olduğunu netleştirmiyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ только подтверждает срок, но не уточняет, к чему он относится." },
+                { "language": "ckb", "text": "زۆر ناوردە: تەنها مۆڵەت پشتڕاست دەکاتەوە، بەڵام ڕوون ناکاتەوە بۆ چییە." },
+                { "language": "kmr", "text": "Pir nezelal e: tenê demê piştrast dike, lê zelal nake ew ji bo çi ye." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: odpowiedź tylko potwierdza termin, ale nie wyjaśnia, czego on dotyczy." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul confirmă doar termenul, dar nu clarifică la ce se aplică." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja vetëm konfirmon afatin, por nuk sqaron për çfarë vlen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke, dann habe ich es richtig verstanden: Bis zum 28. Juni reiche ich die Lohnabrechnung für Mai und eine kurze Erklärung ein. Die Widerspruchsfrist prüfe ich separat in der Rechtsbehelfsbelehrung. Können Sie mir bitte noch sagen, ob ich nach dem Hochladen eine Eingangsbestätigung bekomme?",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I have understood it correctly: by June 28 I will submit the payslip for May and a short explanation. I will check the objection deadline separately in the legal remedies notice. Could you please also tell me whether I will receive a confirmation of receipt after uploading?" },
+                { "language": "fa", "text": "ممنون، پس درست فهمیده‌ام: تا ۲۸ ژوئن فیش حقوقی ماه مه و یک توضیح کوتاه را ارائه می‌کنم. مهلت اعتراض را جداگانه در بخش راهنمای اعتراض بررسی می‌کنم. می‌توانید لطفاً بگویید آیا بعد از بارگذاری تأیید دریافت می‌گیرم؟" },
+                { "language": "ar", "text": "شكراً، إذن فهمت الأمر بشكل صحيح: حتى 28 يونيو سأقدم قسيمة راتب مايو وشرحاً قصيراً. سأراجع مهلة الاعتراض بشكل منفصل في إرشادات طرق الطعن. هل يمكنك أيضاً أن تخبرني هل سأحصل على تأكيد استلام بعد التحميل؟" },
+                { "language": "tr", "text": "Teşekkür ederim, o zaman doğru anladım: 28 Haziran'a kadar Mayıs ayı maaş bordrosunu ve kısa bir açıklamayı sunacağım. İtiraz süresini hukuki başvuru açıklamasında ayrıca kontrol edeceğim. Yükledikten sonra bir alındı onayı alıp almayacağımı da söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Спасибо, значит, я правильно понял: до 28 июня я подам расчётный листок за май и короткое объяснение. Срок возражения я отдельно проверю в разъяснении о средствах правовой защиты. Можете ещё сказать, получу ли я подтверждение получения после загрузки?" },
+                { "language": "ckb", "text": "سوپاس، کەواتە بە دروستی تێگەیشتم: تا ٢٨ی حوزەیران لیستی مووچەی مای و ڕوونکردنەوەیەکی کورت پێشکەش دەکەم. مۆڵەتی ناڕەزایەتی جیا لە ڕێنمایی ڕێگاکانی ناڕەزایەتی دەبینم. دەتوانن تکایە هەروەها پێم بڵێن ئایا دوای بارکردن پشتڕاستکردنەوەی گەیشتن وەردەگرم؟" },
+                { "language": "kmr", "text": "Spas, wê demê min rast fam kiriye: heta 28ê Hezîranê ez slipê meaşa Gulanê û ravekirineke kurt radest dikim. Dema îtirazê ez cuda di agahdariya rêyên hiqûqî de kontrol dikim. Hûn dikarin her wiha bêjin gelo piştî barkirinê ez pejirandina wergirtinê werdigirim?" },
+                { "language": "pl", "text": "Dziękuję, czyli dobrze zrozumiałem: do 28 czerwca dostarczę odcinek wypłaty za maj i krótkie wyjaśnienie. Termin odwołania sprawdzę osobno w pouczeniu o środkach prawnych. Czy może mi Pan jeszcze powiedzieć, czy po przesłaniu otrzymam potwierdzenie odbioru?" },
+                { "language": "ro", "text": "Mulțumesc, atunci am înțeles corect: până la 28 iunie depun fluturașul de salariu pentru mai și o scurtă explicație. Verific separat termenul pentru contestație în informarea privind căile de atac. Îmi puteți spune, vă rog, dacă primesc o confirmare de primire după încărcare?" },
+                { "language": "sq", "text": "Faleminderit, atëherë e kam kuptuar saktë: deri më 28 qershor dorëzoj listën e pagës për maj dhe një shpjegim të shkurtër. Afatin për kundërshtim e kontrolloj veçmas në udhëzimin për mjetet juridike. A mund të më thoni, ju lutem, nëse marr një konfirmim pranimi pas ngarkimit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Diese Antwort fasst den Plan zusammen und sichert den Nachweis des Eingangs.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer summarizes the plan and secures proof of receipt." },
+                { "language": "fa", "text": "خوب است: برنامه را جمع‌بندی می‌کند و مدرک دریافت را مشخص می‌گیرد." },
+                { "language": "ar", "text": "جيد: تلخص هذه الإجابة الخطة وتضمن إثبات الاستلام." },
+                { "language": "tr", "text": "İyi: bu cevap planı özetliyor ve teslim alındığına dair kanıtı güvenceye alıyor." },
+                { "language": "ru", "text": "Хорошо: ответ суммирует план и закрепляет подтверждение получения." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە پلانەکە کورت دەکاتەوە و بەڵگەی گەیشتن مسۆگەر دەکات." },
+                { "language": "kmr", "text": "Baş e: ev bersiv planê kurt dike û delîla wergirtinê ewle dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podsumowuje plan i zabezpiecza dowód odbioru." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă planul și asigură dovada primirii." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh planin dhe siguron provën e pranimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann lade ich die Unterlagen hoch und prüfe den Rest später selbst. Falls noch etwas fehlt, wird sich die Behörde sicher melden.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will upload the documents and check the rest myself later. If anything is still missing, the authority will surely get in touch." },
+                { "language": "fa", "text": "ممنون، پس مدارک را بارگذاری می‌کنم و بقیه را بعداً خودم بررسی می‌کنم. اگر چیزی هنوز کم باشد، اداره حتماً تماس می‌گیرد." },
+                { "language": "ar", "text": "شكراً، إذن سأحمّل المستندات وأراجع الباقي لاحقاً بنفسي. إذا كان هناك شيء ناقص، فستتواصل الجهة الإدارية بالتأكيد." },
+                { "language": "tr", "text": "Teşekkür ederim, o zaman belgeleri yüklerim ve geri kalanını sonra kendim kontrol ederim. Bir şey hâlâ eksikse kurum mutlaka iletişime geçer." },
+                { "language": "ru", "text": "Спасибо, тогда я загружу документы и остальное позже проверю сам. Если ещё чего-то не хватает, ведомство наверняка свяжется." },
+                { "language": "ckb", "text": "سوپاس، کەواتە بەڵگەنامەکان بار دەکەم و ئەوانی تر دواتر خۆم دەبینمەوە. ئەگەر هێشتا شتێک کەم بێت، فەرمانگە بە دڵنیاییەوە پەیوەندی دەکات." },
+                { "language": "kmr", "text": "Spas, wê demê ez belgeyan bar dikim û yên din paşê bi xwe kontrol dikim. Ger tiştek hêj kêm be, dezgeh bêguman têkilî digire." },
+                { "language": "pl", "text": "Dziękuję, w takim razie prześlę dokumenty i resztę sprawdzę później sam. Jeśli czegoś będzie jeszcze brakować, urząd na pewno się odezwie." },
+                { "language": "ro", "text": "Mulțumesc, atunci încarc documentele și verific restul mai târziu singur. Dacă mai lipsește ceva, autoritatea sigur va lua legătura." },
+                { "language": "sq", "text": "Faleminderit, atëherë do t'i ngarkoj dokumentet dhe pjesën tjetër do ta kontrolloj vetë më vonë. Nëse mungon ende diçka, institucioni me siguri do të kontaktojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu riskant: Die Antwort verlässt sich auf spätere Rückmeldung und sichert keine Eingangsbestätigung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too risky: the answer relies on later contact and does not secure confirmation of receipt." },
+                { "language": "fa", "text": "بیش از حد پرریسک است: به تماس بعدی تکیه می‌کند و تأیید دریافت را مشخص نمی‌گیرد." },
+                { "language": "ar", "text": "فيه مخاطرة كبيرة: يعتمد على تواصل لاحق ولا يضمن تأكيد الاستلام." },
+                { "language": "tr", "text": "Çok riskli: sonraki iletişime güveniyor ve alındı onayını güvenceye almıyor." },
+                { "language": "ru", "text": "Слишком рискованно: ответ полагается на последующий контакт и не закрепляет подтверждение получения." },
+                { "language": "ckb", "text": "زۆر مەترسیدارە: پشت بە پەیوەندی دواتر دەبەستێت و پشتڕاستکردنەوەی گەیشتن مسۆگەر ناکات." },
+                { "language": "kmr", "text": "Pir xeternak e: xwe dispêre têkiliyeke paşîn û pejirandina wergirtinê ewle nake." },
+                { "language": "pl", "text": "Zbyt ryzykowne: odpowiedź polega na późniejszym kontakcie i nie zabezpiecza potwierdzenia odbioru." },
+                { "language": "ro", "text": "Prea riscant: răspunsul se bazează pe un contact ulterior și nu asigură confirmarea primirii." },
+                { "language": "sq", "text": "Shumë e rrezikshme: përgjigjja mbështetet te një kontakt i mëvonshëm dhe nuk siguron konfirmimin e pranimit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei einem Bescheid hilft ein genaues Zitat. So muss die Sachbearbeitung nicht raten, welche Stelle du meinst.",
+          "translations": [
+            { "language": "en", "text": "With an official notice, an exact quote helps. That way the case officer does not have to guess which passage you mean." },
+            { "language": "fa", "text": "در مورد نامه اداری رسمی، نقل دقیق کمک می‌کند. این‌طور کارشناس مجبور نیست حدس بزند منظور تو کدام بخش است." },
+            { "language": "ar", "text": "في القرار الرسمي يساعد الاقتباس الدقيق. بهذه الطريقة لا يضطر الموظف إلى تخمين أي جزء تقصد." },
+            { "language": "tr", "text": "Resmî bir kararda tam alıntı yardımcı olur. Böylece görevli hangi bölümü kastettiğini tahmin etmek zorunda kalmaz." },
+            { "language": "ru", "text": "В официальном решении помогает точная цитата. Так сотруднику не нужно угадывать, какое место вы имеете в виду." },
+            { "language": "ckb", "text": "لە بڕیارنامەی فەرمیدا وەرگرتنی ورد یارمەتیدەرە. بەو شێوەیە کارمەند ناچار نابێت پێشبینی بکات مەبەستت کام بەشە." },
+            { "language": "kmr", "text": "Di biryareke fermî de veguhestineke rast alîkar e. Bi vî awayî karbidest neçar namîne texmîn bike tu kîjan beşê dibêjî." },
+            { "language": "pl", "text": "Przy decyzji urzędowej pomaga dokładny cytat. Dzięki temu urzędnik nie musi zgadywać, który fragment ma Pan na myśli." },
+            { "language": "ro", "text": "În cazul unei decizii oficiale, un citat exact ajută. Astfel, funcționarul nu trebuie să ghicească la ce pasaj vă referiți." },
+            { "language": "sq", "text": "Në një vendim zyrtar ndihmon citimi i saktë. Kështu nëpunësi nuk duhet të hamendësojë cilën pjesë ke parasysh." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "strategy",
+          "text": "Frage nicht nur `Was heißt das?`. B2-stark ist die Frage: Was bedeutet das praktisch für mein nächstes Handeln?",
+          "translations": [
+            { "language": "en", "text": "Do not only ask 'What does that mean?' A strong B2 question is: What does this mean practically for my next action?" },
+            { "language": "fa", "text": "فقط نپرس «این یعنی چه؟». سؤال قوی در سطح B2 این است: این از نظر عملی برای قدم بعدی من چه معنی دارد؟" },
+            { "language": "ar", "text": "لا تسأل فقط «ماذا يعني ذلك؟». السؤال القوي في مستوى B2 هو: ماذا يعني ذلك عملياً لخطوتي التالية؟" },
+            { "language": "tr", "text": "Sadece 'Bu ne anlama geliyor?' diye sorma. B2 düzeyinde güçlü soru şudur: Bu benim sonraki adımım için pratikte ne anlama geliyor?" },
+            { "language": "ru", "text": "Не спрашивайте только «Что это значит?». Сильный вопрос уровня B2: что это практически означает для моего следующего действия?" },
+            { "language": "ckb", "text": "تەنها مەپرسە `ئەمە مانای چییە؟`. پرسیاری بەهێزی B2 ئەمەیە: ئەمە بە کرداری بۆ هەنگاوی داهاتووی من چی مانایەک هەیە؟" },
+            { "language": "kmr", "text": "Tenê nepirse `Ev çi tê wateyê?`. Pirseke xurt a B2 ev e: Ev bi pratîkî ji bo gava min a paşîn çi tê wateyê?" },
+            { "language": "pl", "text": "Nie pytaj tylko „Co to znaczy?”. Mocne pytanie na B2 brzmi: co to praktycznie oznacza dla mojego następnego działania?" },
+            { "language": "ro", "text": "Nu întreba doar „Ce înseamnă asta?”. O întrebare puternică la B2 este: ce înseamnă asta practic pentru următoarea mea acțiune?" },
+            { "language": "sq", "text": "Mos pyet vetëm “Çfarë do të thotë kjo?”. Pyetja e fortë për B2 është: çfarë do të thotë kjo praktikisht për veprimin tim të ardhshëm?" }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "language",
+          "text": "Trenne verschiedene Fristen ausdrücklich. Sonst kann eine Dokumentenfrist mit einer Widerspruchsfrist verwechselt werden.",
+          "translations": [
+            { "language": "en", "text": "Separate different deadlines explicitly. Otherwise a document deadline can be confused with an objection deadline." },
+            { "language": "fa", "text": "مهلت‌های مختلف را صریحاً از هم جدا کن. وگرنه ممکن است مهلت مدارک با مهلت اعتراض اشتباه گرفته شود." },
+            { "language": "ar", "text": "افصل المواعيد المختلفة بوضوح. وإلا قد تختلط مهلة المستندات بمهلة الاعتراض." },
+            { "language": "tr", "text": "Farklı süreleri açıkça ayır. Aksi halde belge süresi itiraz süresiyle karıştırılabilir." },
+            { "language": "ru", "text": "Явно разделяйте разные сроки. Иначе срок подачи документов можно спутать со сроком возражения." },
+            { "language": "ckb", "text": "مۆڵەتە جیاوازەکان بە ڕوونی جیا بکەرەوە. ئەگەر نا، مۆڵەتی بەڵگەنامە دەتوانێت لەگەڵ مۆڵەتی ناڕەزایەتی تێکەڵ بکرێت." },
+            { "language": "kmr", "text": "Demên cuda bi eşkere veqetîne. Wekî din, dema belgeyan dikare bi dema îtirazê were tevlihevkirin." },
+            { "language": "pl", "text": "Wyraźnie oddziel różne terminy. Inaczej termin na dokumenty można pomylić z terminem odwołania." },
+            { "language": "ro", "text": "Separă explicit termenele diferite. Altfel, termenul pentru documente poate fi confundat cu termenul pentru contestație." },
+            { "language": "sq", "text": "Ndaji qartë afatet e ndryshme. Përndryshe, afati për dokumentet mund të ngatërrohet me afatin për kundërshtim." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Schließe mit einer Zusammenfassung ab. Danach frage nach der Eingangsbestätigung, damit du später einen Nachweis hast.",
+          "translations": [
+            { "language": "en", "text": "Close with a summary. Then ask for confirmation of receipt so you have proof later." },
+            { "language": "fa", "text": "با یک جمع‌بندی تمام کن. سپس تأیید دریافت را بپرس تا بعداً مدرک داشته باشی." },
+            { "language": "ar", "text": "اختم بملخص. ثم اسأل عن تأكيد الاستلام حتى يكون لديك دليل لاحقاً." },
+            { "language": "tr", "text": "Bir özetle bitir. Sonra daha sonra kanıtın olması için alındı onayını sor." },
+            { "language": "ru", "text": "Завершайте кратким итогом. Затем спросите о подтверждении получения, чтобы позже иметь доказательство." },
+            { "language": "ckb", "text": "بە کورتکردنەوە کۆتایی پێبهێنە. پاشان پرسیاری پشتڕاستکردنەوەی گەیشتن بکە، تاکو دواتر بەڵگەت هەبێت." },
+            { "language": "kmr", "text": "Bi kurtekirinê biqedîne. Paşê li ser pejirandina wergirtinê bipirse, da ku paşê delîlek te hebe." },
+            { "language": "pl", "text": "Zakończ podsumowaniem. Potem zapytaj o potwierdzenie odbioru, żeby później mieć dowód." },
+            { "language": "ro", "text": "Încheie cu un rezumat. Apoi întreabă despre confirmarea primirii, ca să ai o dovadă mai târziu." },
+            { "language": "sq", "text": "Mbylle me një përmbledhje. Pastaj pyet për konfirmimin e pranimit, që të kesh provë më vonë." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

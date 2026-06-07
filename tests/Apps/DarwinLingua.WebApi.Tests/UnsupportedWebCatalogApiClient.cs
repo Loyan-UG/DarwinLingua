@@ -32,19 +32,19 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<ExpressionDetailModel?> GetExpressionBySlugAsync(string slug, string primaryMeaningLanguageCode, bool includeSensitiveEducationalLanguage, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(ExerciseSetListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(ExerciseSetListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<ExerciseDetailModel?> GetExerciseBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<ExerciseDetailModel?> GetExerciseBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(string slug, ExerciseAttemptRequestModel request, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(string slug, ExerciseAttemptRequestModel request, string primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(CoursePathListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(CoursePathListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<CoursePathDetailModel?> GetCourseBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<CoursePathDetailModel?> GetCourseBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(WritingTemplateListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 

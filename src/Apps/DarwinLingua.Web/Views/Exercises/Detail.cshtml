@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.ExerciseRunnerPageViewModel
 @{
     ViewData["Title"] = Model.Exercise.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
@@ -9,10 +10,22 @@
         <a class="button button--secondary button--compact" asp-controller="Exercises" asp-action="Index">@T["All exercise sets"]</a>
     </div>
     <h1 class="headline-md">@Model.Exercise.Title</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.Exercise.LearnerLanguageTitle))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Exercise.LearnerLanguageTitle</p>
+    }
     <p class="body-lg">@Model.Exercise.Instruction</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Exercise.LearnerLanguageInstruction))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Exercise.LearnerLanguageInstruction</p>
+    }
     @if (!string.IsNullOrWhiteSpace(Model.Exercise.Hint))
     {
         <p><strong>@T["Hint"]:</strong> @Model.Exercise.Hint</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Exercise.LearnerLanguageHint))
+        {
+            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Exercise.LearnerLanguageHint</p>
+        }
     }
 </section>
 
@@ -67,14 +80,6 @@
                 <textarea name="pairsText" rows="6" placeholder="@T["One pair per line"]"></textarea>
             </label>
         }
-        <details class="stack-sm">
-            <summary>@T["Advanced JSON answer"]</summary>
-            <pre class="code-sample">@Model.Exercise.PromptJson</pre>
-            <label class="form-field">
-                <span>@T["Answer JSON"]</span>
-                <textarea name="submittedAnswerJson" rows="7" placeholder='{"answer":"..."}'>@Model.SubmittedAnswerJson</textarea>
-            </label>
-        </details>
         <button class="button button--primary" type="submit">@T["Check answer"]</button>
     </form>
 </section>
@@ -84,9 +89,17 @@
     <section class="panel stack-md">
         <h2 class="headline-sm">@(Model.Result.IsCorrect ? T["correct"] : T["Try again"])</h2>
         <p>@Model.Result.Explanation</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Result.LearnerLanguageExplanation))
+        {
+            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Result.LearnerLanguageExplanation</p>
+        }
         @if (!Model.Result.IsCorrect && !string.IsNullOrWhiteSpace(Model.Result.CommonMistakeNote))
         {
             <p><strong>@T["Common mistake"]:</strong> @Model.Result.CommonMistakeNote</p>
+            @if (!string.IsNullOrWhiteSpace(Model.Result.LearnerLanguageCommonMistakeNote))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Result.LearnerLanguageCommonMistakeNote</p>
+            }
         }
     </section>
 }

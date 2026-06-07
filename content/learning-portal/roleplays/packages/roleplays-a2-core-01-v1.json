@@ -1,0 +1,4842 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-a2-core-01-v1",
+  "packageName": "Roleplay-Szenarien A2 Core 01 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "a2-arzttermin-wegen-kind-verschieben",
+      "title": "Einen Arzttermin wegen des Kindes verschieben",
+      "cefrLevel": "A2",
+      "category": "appointments",
+      "topics": [
+        "appointments-and-health",
+        "everyday-life"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "make-appointment",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call",
+        "appointment-management"
+      ],
+      "examProfiles": [
+        "goethe-a2"
+      ],
+      "sortOrder": 1020,
+      "estimatedPracticeMinutes": 8,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Staff member"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند"
+            },
+            {
+              "language": "ar",
+              "text": "الموظفة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудница"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەند"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmend"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownica"
+            },
+            {
+              "language": "ro",
+              "text": "Angajata"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjësja"
+            }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Reschedule a doctor's appointment because of a child"
+        },
+        {
+          "language": "fa",
+          "text": "جابه‌جا کردن وقت پزشک به خاطر کودک"
+        },
+        {
+          "language": "ar",
+          "text": "تغيير موعد طبيب بسبب الطفل"
+        },
+        {
+          "language": "tr",
+          "text": "Çocuk nedeniyle doktor randevusunu ertelemek"
+        },
+        {
+          "language": "ru",
+          "text": "Перенести приём у врача из-за ребёнка"
+        },
+        {
+          "language": "ckb",
+          "text": "گۆڕینی وادەی پزیشک بەهۆی منداڵەوە"
+        },
+        {
+          "language": "kmr",
+          "text": "Ji ber zarokê randevûya bijîşk biguherîne"
+        },
+        {
+          "language": "pl",
+          "text": "Przełożyć wizytę lekarską z powodu dziecka"
+        },
+        {
+          "language": "ro",
+          "text": "Reprogramezi o programare la medic din cauza copilului"
+        },
+        {
+          "language": "sq",
+          "text": "Shty një takim te mjeku për shkak të fëmijës"
+        }
+      ],
+      "description": "Du übst, am Telefon einen Arzttermin höflich zu verschieben und einen neuen Termin zu bestätigen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice politely rescheduling a doctor's appointment by phone and confirming a new time."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی تلفنی و مؤدبانه وقت پزشک را جابه‌جا کنی و وقت جدید را تأیید کنی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على تغيير موعد الطبيب بأدب عبر الهاتف وتأكيد موعد جديد."
+        },
+        {
+          "language": "tr",
+          "text": "Telefonda doktor randevusunu kibarca değiştirmeyi ve yeni zamanı onaylamayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься вежливо переносить приём у врача по телефону и подтверждать новое время."
+        },
+        {
+          "language": "ckb",
+          "text": "ڕاهێنان دەکەیت بە تەلەفۆن و بە ڕێزەوە وادەی پزیشک بگۆڕیت و وادەی نوێ پشتڕاست بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu hîn dibî bi telefonê û bi rêzdarî randevûya bijîşk biguherînî û dema nû piştrast bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz uprzejme przełożenie wizyty lekarskiej przez telefon i potwierdzenie nowego terminu."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi cum să reprogramezi politicos la telefon o programare la medic și să confirmi noua oră."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron si të shtysh me mirësjellje me telefon një takim te mjeku dhe të konfirmosh orarin e ri."
+        }
+      ],
+      "learnerGoal": "Du kannst einen Grund nennen, nach einem Ersatztermin fragen und den neuen Termin wiederholen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can give a reason, ask for another appointment, and repeat the new time."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی دلیل بیاوری، وقت جایگزین بخواهی و وقت جدید را تکرار کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك ذكر سبب وطلب موعد بديل وتكرار الموعد الجديد."
+        },
+        {
+          "language": "tr",
+          "text": "Bir neden söyleyebilir, başka randevu isteyebilir ve yeni zamanı tekrar edebilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь назвать причину, попросить другой термин и повторить новое время."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت هۆکار بڵێیت، داوای وادەی جێگرەوە بکەیت و کاتی نوێ دووبارە بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî sedemek bibêjî, randevûyeke din bixwazî û dema nû dubare bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Umiesz podać powód, poprosić o inny termin i powtórzyć nową godzinę."
+        },
+        {
+          "language": "ro",
+          "text": "Poți da un motiv, cere o altă programare și repeta noua oră."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të japësh një arsye, të kërkosh një takim tjetër dhe të përsërisësh orarin e ri."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Praxis Dr. Keller, guten Morgen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Dr. Keller's practice, good morning."
+            },
+            {
+              "language": "fa",
+              "text": "مطب دکتر کلر، صبح بخیر."
+            },
+            {
+              "language": "ar",
+              "text": "عيادة الدكتورة كيلر، صباح الخير."
+            },
+            {
+              "language": "tr",
+              "text": "Dr. Keller muayenehanesi, günaydın."
+            },
+            {
+              "language": "ru",
+              "text": "Практика доктора Келлер, доброе утро."
+            },
+            {
+              "language": "ckb",
+              "text": "مەتەبی دکتۆر کێلەر، بەیانی باش."
+            },
+            {
+              "language": "kmr",
+              "text": "Praksîsa Dr. Keller, sibeh baş."
+            },
+            {
+              "language": "pl",
+              "text": "Przychodnia dr Keller, dzień dobry."
+            },
+            {
+              "language": "ro",
+              "text": "Cabinetul Dr. Keller, bună dimineața."
+            },
+            {
+              "language": "sq",
+              "text": "Klinika e Dr. Keller, mirëmëngjes."
+            }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Morgen. Ich habe heute um zehn einen Termin, aber mein Kind ist krank.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. I have an appointment today at ten, but my child is ill."
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر. امروز ساعت ده وقت دارم، اما فرزندم بیمار است."
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير. لدي موعد اليوم الساعة العاشرة، لكن طفلي مريض."
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın. Bugün saat onda randevum var, ama çocuğum hasta."
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро. У меня сегодня в десять приём, но мой ребёнок болен."
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش. ئەمڕۆ کاتژمێر دە وادەم هەیە، بەڵام منداڵەکەم نەخۆشە."
+            },
+            {
+              "language": "kmr",
+              "text": "Sibeh baş. Îro saet deh randevûya min heye, lê zarokê min nexweş e."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Mam dziś wizytę o dziesiątej, ale moje dziecko jest chore."
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața. Am programare astăzi la zece, dar copilul meu este bolnav."
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes. Kam takim sot në orën dhjetë, por fëmija im është i sëmurë."
+            }
+          ],
+          "function": "problem",
+          "expectedLearnerAction": "State appointment time and reason."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Möchten Sie den Termin verschieben?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Would you like to reschedule the appointment?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌خواهید وقت را جابه‌جا کنید؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل تريد تغيير الموعد؟"
+            },
+            {
+              "language": "tr",
+              "text": "Randevuyu değiştirmek ister misiniz?"
+            },
+            {
+              "language": "ru",
+              "text": "Вы хотите перенести приём?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەتانەوێت وادەکە بگۆڕن؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Hûn dixwazin randevûyê biguherînin?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy chce pan/pani przełożyć termin?"
+            },
+            {
+              "language": "ro",
+              "text": "Doriți să reprogramați?"
+            },
+            {
+              "language": "sq",
+              "text": "Dëshironi ta shtyni takimin?"
+            }
+          ],
+          "function": "question"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte. Haben Sie morgen oder Freitag einen Termin frei?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, please. Do you have an appointment free tomorrow or Friday?"
+            },
+            {
+              "language": "fa",
+              "text": "بله، لطفاً. فردا یا جمعه وقت خالی دارید؟"
+            },
+            {
+              "language": "ar",
+              "text": "نعم، من فضلك. هل لديكم موعد شاغر غدًا أو يوم الجمعة؟"
+            },
+            {
+              "language": "tr",
+              "text": "Evet, lütfen. Yarın veya cuma boş randevunuz var mı?"
+            },
+            {
+              "language": "ru",
+              "text": "Да, пожалуйста. У вас есть свободный термин завтра или в пятницу?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەڵێ، تکایە. سبەی یان هەینی وادەی بەتاڵتان هەیە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Erê, ji kerema xwe. Sibê an înê randevûyek vala heye?"
+            },
+            {
+              "language": "pl",
+              "text": "Tak, proszę. Czy mają państwo wolny termin jutro albo w piątek?"
+            },
+            {
+              "language": "ro",
+              "text": "Da, vă rog. Aveți un loc liber mâine sau vineri?"
+            },
+            {
+              "language": "sq",
+              "text": "Po, ju lutem. A keni një orar të lirë nesër ose të premten?"
+            }
+          ],
+          "function": "request",
+          "expectedLearnerAction": "Ask for two alternative days."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Morgen um elf wäre möglich.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Tomorrow at eleven would be possible."
+            },
+            {
+              "language": "fa",
+              "text": "فردا ساعت یازده ممکن است."
+            },
+            {
+              "language": "ar",
+              "text": "غدًا الساعة الحادية عشرة ممكن."
+            },
+            {
+              "language": "tr",
+              "text": "Yarın saat on bir mümkün olur."
+            },
+            {
+              "language": "ru",
+              "text": "Завтра в одиннадцать возможно."
+            },
+            {
+              "language": "ckb",
+              "text": "سبەی کاتژمێر یازدە دەکرێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Sibê saet yazdeh dibe."
+            },
+            {
+              "language": "pl",
+              "text": "Jutro o jedenastej byłoby możliwe."
+            },
+            {
+              "language": "ro",
+              "text": "Mâine la unsprezece ar fi posibil."
+            },
+            {
+              "language": "sq",
+              "text": "Nesër në njëmbëdhjetë do të ishte e mundur."
+            }
+          ],
+          "function": "offer"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke, morgen um elf passt. Ich komme dann morgen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you, tomorrow at eleven works. I will come tomorrow then."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون، فردا ساعت یازده مناسب است. پس فردا می‌آیم."
+            },
+            {
+              "language": "ar",
+              "text": "شكرًا، غدًا الساعة الحادية عشرة مناسب. إذن آتي غدًا."
+            },
+            {
+              "language": "tr",
+              "text": "Teşekkürler, yarın saat on bir uygun. O zaman yarın geliyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо, завтра в одиннадцать подходит. Тогда я приду завтра."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس، سبەی کاتژمێر یازدە گونجاوە. ئەوا سبەی دێم."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas, sibê saet yazdeh guncaw e. Wê demê sibê têm."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję, jutro o jedenastej pasuje. W takim razie przyjdę jutro."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc, mâine la unsprezece se potrivește. Atunci vin mâine."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit, nesër në njëmbëdhjetë më përshtatet. Atëherë vij nesër."
+            }
+          ],
+          "function": "confirmation",
+          "expectedLearnerAction": "Confirm the new appointment."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Guten Morgen. Ich habe heute um zehn einen Termin, aber mein Kind ist krank.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good morning. I have an appointment today at ten, but my child is ill."
+                },
+                {
+                  "language": "fa",
+                  "text": "صبح بخیر. امروز ساعت ده وقت دارم، اما فرزندم بیمار است."
+                },
+                {
+                  "language": "ar",
+                  "text": "صباح الخير. لدي موعد اليوم الساعة العاشرة، لكن طفلي مريض."
+                },
+                {
+                  "language": "tr",
+                  "text": "Günaydın. Bugün saat onda randevum var, ama çocuğum hasta."
+                },
+                {
+                  "language": "ru",
+                  "text": "Доброе утро. У меня сегодня в десять приём, но мой ребёнок болен."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەیانی باش. ئەمڕۆ کاتژمێر دە وادەم هەیە، بەڵام منداڵەکەم نەخۆشە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Sibeh baş. Îro saet deh randevûya min heye, lê zarokê min nexweş e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Mam dziś wizytę o dziesiątej, ale moje dziecko jest chore."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună dimineața. Am programare astăzi la zece, dar copilul meu este bolnav."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëmëngjes. Kam takim sot në orën dhjetë, por fëmija im është i sëmurë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt Terminzeit und Grund klar.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "The answer clearly gives the appointment time and reason."
+                },
+                {
+                  "language": "fa",
+                  "text": "جواب زمان وقت و دلیل را روشن می‌گوید."
+                },
+                {
+                  "language": "ar",
+                  "text": "الإجابة تذكر وقت الموعد والسبب بوضوح."
+                },
+                {
+                  "language": "tr",
+                  "text": "Cevap randevu saatini ve nedeni açıkça söyler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ответ ясно называет время приёма и причину."
+                },
+                {
+                  "language": "ckb",
+                  "text": "وەڵامەکە کاتی وادە و هۆکارەکە بە ڕوونی دەڵێت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Bersiv dema randevû û sedemê bi zelalî dibêje."
+                },
+                {
+                  "language": "pl",
+                  "text": "Odpowiedź jasno podaje godzinę wizyty i powód."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul spune clar ora programării și motivul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Përgjigjja tregon qartë orarin e takimit dhe arsyen."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Ich kann heute nicht kommen.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "I cannot come today."
+                },
+                {
+                  "language": "fa",
+                  "text": "امروز نمی‌توانم بیایم."
+                },
+                {
+                  "language": "ar",
+                  "text": "لا أستطيع الحضور اليوم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bugün gelemem."
+                },
+                {
+                  "language": "ru",
+                  "text": "Я не могу прийти сегодня."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمڕۆ ناتوانم بێم."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Îro nikarim bêm."
+                },
+                {
+                  "language": "pl",
+                  "text": "Nie mogę dziś przyjść."
+                },
+                {
+                  "language": "ro",
+                  "text": "Nu pot veni astăzi."
+                },
+                {
+                  "language": "sq",
+                  "text": "Nuk mund të vij sot."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber für die Praxis fehlen Terminzeit und Grund.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is understandable, but the appointment time and reason are missing for the practice."
+                },
+                {
+                  "language": "fa",
+                  "text": "قابل فهم است، اما برای مطب زمان وقت و دلیل کم است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مفهوم، لكن للعيادة ينقص وقت الموعد والسبب."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu anlaşılır, ama muayenehane için randevu saati ve neden eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это понятно, но для практики не хватает времени приёма и причины."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە تێدەگەیەندرێت، بەڵام بۆ مەتەب کاتی وادە و هۆکار کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev tê famkirin, lê ji bo praksîsê dema randevû û sedem kêm in."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest zrozumiałe, ale w przychodni brakuje godziny wizyty i powodu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este de înțeles, dar pentru cabinet lipsesc ora programării și motivul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kuptohet, por për klinikën mungojnë ora e takimit dhe arsyeja."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Ja, bitte. Haben Sie morgen oder Freitag einen Termin frei?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, please. Do you have an appointment free tomorrow or Friday?"
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، لطفاً. فردا یا جمعه وقت خالی دارید؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، من فضلك. هل لديكم موعد شاغر غدًا أو يوم الجمعة؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, lütfen. Yarın veya cuma boş randevunuz var mı?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, пожалуйста. У вас есть свободный термин завтра или в пятницу?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، تکایە. سبەی یان هەینی وادەی بەتاڵتان هەیە؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, ji kerema xwe. Sibê an înê randevûyek vala heye?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, proszę. Czy mają państwo wolny termin jutro albo w piątek?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, vă rog. Aveți un loc liber mâine sau vineri?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, ju lutem. A keni një orar të lirë nesër ose të premten?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du fragst höflich nach zwei passenden Alternativen.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You politely ask for two suitable alternatives."
+                },
+                {
+                  "language": "fa",
+                  "text": "مؤدبانه دو گزینه مناسب می‌پرسی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تسأل بأدب عن بديلين مناسبين."
+                },
+                {
+                  "language": "tr",
+                  "text": "Kibarca iki uygun alternatif soruyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты вежливо спрашиваешь о двух подходящих вариантах."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بە ڕێزەوە پرسیار لە دوو جێگرەوەی گونجاو دەکەیت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu bi rêzdarî li du alternatîfên guncaw dipirsî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Uprzejmie pytasz o dwie pasujące alternatywy."
+                },
+                {
+                  "language": "ro",
+                  "text": "Întrebi politicos despre două alternative potrivite."
+                },
+                {
+                  "language": "sq",
+                  "text": "Pyet me mirësjellje për dy alternativa të përshtatshme."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Geben Sie mir einen anderen Termin.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Give me another appointment."
+                },
+                {
+                  "language": "fa",
+                  "text": "یک وقت دیگر به من بدهید."
+                },
+                {
+                  "language": "ar",
+                  "text": "أعطني موعدًا آخر."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bana başka bir randevu verin."
+                },
+                {
+                  "language": "ru",
+                  "text": "Дайте мне другой термин."
+                },
+                {
+                  "language": "ckb",
+                  "text": "وادەیەکی ترم بدەنێ."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Randevûyeke din bidin min."
+                },
+                {
+                  "language": "pl",
+                  "text": "Proszę dać mi inny termin."
+                },
+                {
+                  "language": "ro",
+                  "text": "Dați-mi altă programare."
+                },
+                {
+                  "language": "sq",
+                  "text": "Më jepni një takim tjetër."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber zu direkt und ohne eigene Zeitvorschläge.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is understandable, but too direct and without your own time suggestions."
+                },
+                {
+                  "language": "fa",
+                  "text": "قابل فهم است، اما خیلی مستقیم است و زمان پیشنهادی خودت را نمی‌گویی."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مفهوم، لكنه مباشر جدًا وبدون اقتراحات وقت منك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu anlaşılır, ama çok doğrudan ve kendi zaman önerilerin yok."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это понятно, но слишком прямо и без твоих вариантов времени."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە تێدەگەیەندرێت، بەڵام زۆر ڕاستەوخۆیە و کاتی پێشنیاری خۆت نییە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev tê famkirin, lê pir rasterast e û pêşniyarên dema te tune ne."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest zrozumiałe, ale zbyt bezpośrednie i bez własnych propozycji terminu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este de înțeles, dar prea direct și fără propuneri de timp din partea ta."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kuptohet, por është shumë e drejtpërdrejtë dhe pa propozime kohe nga ti."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Danke, morgen um elf passt. Ich komme dann morgen.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thank you, tomorrow at eleven works. I will come tomorrow then."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون، فردا ساعت یازده مناسب است. پس فردا می‌آیم."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكرًا، غدًا الساعة الحادية عشرة مناسب. إذن آتي غدًا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler, yarın saat on bir uygun. O zaman yarın geliyorum."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо, завтра в одиннадцать подходит. Тогда я приду завтра."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس، سبەی کاتژمێر یازدە گونجاوە. ئەوا سبەی دێم."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas, sibê saet yazdeh guncaw e. Wê demê sibê têm."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję, jutro o jedenastej pasuje. W takim razie przyjdę jutro."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc, mâine la unsprezece se potrivește. Atunci vin mâine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit, nesër në njëmbëdhjetë më përshtatet. Atëherë vij nesër."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du bestätigst den neuen Termin vollständig.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You confirm the new appointment completely."
+                },
+                {
+                  "language": "fa",
+                  "text": "وقت جدید را کامل تأیید می‌کنی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تؤكد الموعد الجديد بالكامل."
+                },
+                {
+                  "language": "tr",
+                  "text": "Yeni randevuyu tam olarak onaylıyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты полностью подтверждаешь новый термин."
+                },
+                {
+                  "language": "ckb",
+                  "text": "وادەی نوێ بە تەواوی پشتڕاست دەکەیتەوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu randevûya nû bi tevahî piştrast dikî."
+                },
+                {
+                  "language": "pl",
+                  "text": "W pełni potwierdzasz nowy termin."
+                },
+                {
+                  "language": "ro",
+                  "text": "Confirmi complet noua programare."
+                },
+                {
+                  "language": "sq",
+                  "text": "E konfirmon plotësisht takimin e ri."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Okay, danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Okay, thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "باشه، ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "حسنًا، شكرًا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Tamam, teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо, спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باشە، سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Temam, spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dobrze, dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bine, mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Në rregull, faleminderit."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber du wiederholst den neuen Termin nicht.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite, but you do not repeat the new appointment."
+                },
+                {
+                  "language": "fa",
+                  "text": "مؤدبانه است، اما وقت جدید را تکرار نمی‌کنی."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مهذب، لكنك لا تكرر الموعد الجديد."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu kibar, ama yeni randevuyu tekrar etmiyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это вежливо, но ты не повторяешь новый термин."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە ڕێزدارانەیە، بەڵام وادەی نوێ دووبارە ناکەیتەوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev rêzdar e, lê tu randevûya nû dubare nakî."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest uprzejme, ale nie powtarzasz nowego terminu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este politicos, dar nu repeți noua programare."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e sjellshme, por nuk e përsërit takimin e ri."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "a2-practice-note",
+          "text": "Bei Terminänderungen sind Grund, Alternativen und Wiederholung des neuen Termins wichtig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "When changing appointments, the reason, alternatives, and repeating the new time are important."
+            },
+            {
+              "language": "fa",
+              "text": "در تغییر وقت، دلیل، گزینه‌های جایگزین و تکرار وقت جدید مهم است."
+            },
+            {
+              "language": "ar",
+              "text": "عند تغيير المواعيد، السبب والبدائل وتكرار الموعد الجديد مهمة."
+            },
+            {
+              "language": "tr",
+              "text": "Randevu değişikliklerinde neden, alternatifler ve yeni zamanı tekrar etmek önemlidir."
+            },
+            {
+              "language": "ru",
+              "text": "При переносе терминов важны причина, альтернативы и повторение нового времени."
+            },
+            {
+              "language": "ckb",
+              "text": "لە گۆڕینی وادەدا هۆکار، جێگرەوەکان و دووبارەکردنەوەی وادەی نوێ گرنگن."
+            },
+            {
+              "language": "kmr",
+              "text": "Di guhertina randevûyan de sedem, alternatîf û dubarekirina dema nû girîng in."
+            },
+            {
+              "language": "pl",
+              "text": "Przy zmianie terminu ważne są powód, alternatywy i powtórzenie nowej godziny."
+            },
+            {
+              "language": "ro",
+              "text": "La schimbarea programărilor sunt importante motivul, alternativele și repetarea noii ore."
+            },
+            {
+              "language": "sq",
+              "text": "Kur ndryshon takime, arsyeja, alternativat dhe përsëritja e orarit të ri janë të rëndësishme."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-appointment-phone-child",
+          "placement": "header",
+          "purpose": "Set a clear A2 practice context without showing authoring metadata to learners.",
+          "altText": "Illustration eines Telefonats zur Terminverschiebung in einer Arztpraxis",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "Illustration of a phone call to reschedule at a doctor's office"
+            },
+            {
+              "language": "fa",
+              "text": "تصویرسازی تماس تلفنی برای جابه‌جایی وقت در مطب پزشک"
+            },
+            {
+              "language": "ar",
+              "text": "رسم توضيحي لمكالمة هاتفية لتغيير موعد في عيادة طبيب"
+            },
+            {
+              "language": "tr",
+              "text": "Doktor muayenehanesinde randevu değiştirmek için telefon görüşmesi çizimi"
+            },
+            {
+              "language": "ru",
+              "text": "Иллюстрация телефонного звонка для переноса приёма у врача"
+            },
+            {
+              "language": "ckb",
+              "text": "وێنەسازی تەلەفۆنکردن بۆ گۆڕینی وادە لە مەتەبی پزیشک"
+            },
+            {
+              "language": "kmr",
+              "text": "Wêneyek ji telefonê ji bo guhertina randevûyê li praksîsa bijîşk"
+            },
+            {
+              "language": "pl",
+              "text": "Ilustracja rozmowy telefonicznej o przełożeniu wizyty u lekarza"
+            },
+            {
+              "language": "ro",
+              "text": "Ilustrație cu un apel telefonic pentru reprogramare la cabinetul medical"
+            },
+            {
+              "language": "sq",
+              "text": "Ilustrim i një telefonate për shtyrjen e takimit në klinikë"
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of a learner making a polite phone call to a doctor's office while a child rests nearby; diverse adults; German everyday setting; no logos; no private data; no readable text; accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a2-in-der-praxis-beschwerden-kurz-erklaeren",
+      "title": "Beschwerden in der Praxis kurz erklären",
+      "cefrLevel": "A2",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "everyday-life"
+      ],
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "taskType": "explain-problem",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "goethe-a2"
+      ],
+      "sortOrder": 1030,
+      "estimatedPracticeMinutes": 8,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Doctor"
+            },
+            {
+              "language": "fa",
+              "text": "پزشک"
+            },
+            {
+              "language": "ar",
+              "text": "الطبيبة"
+            },
+            {
+              "language": "tr",
+              "text": "Doktor"
+            },
+            {
+              "language": "ru",
+              "text": "Врач"
+            },
+            {
+              "language": "ckb",
+              "text": "پزیشک"
+            },
+            {
+              "language": "kmr",
+              "text": "Bijîşk"
+            },
+            {
+              "language": "pl",
+              "text": "Lekarka"
+            },
+            {
+              "language": "ro",
+              "text": "Medicul"
+            },
+            {
+              "language": "sq",
+              "text": "Mjekja"
+            }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Briefly explain symptoms at the doctor's office"
+        },
+        {
+          "language": "fa",
+          "text": "توضیح کوتاه علائم در مطب"
+        },
+        {
+          "language": "ar",
+          "text": "شرح الأعراض بإيجاز في العيادة"
+        },
+        {
+          "language": "tr",
+          "text": "Muayenehanede şikayetleri kısaca açıklamak"
+        },
+        {
+          "language": "ru",
+          "text": "Коротко объяснить жалобы в кабинете врача"
+        },
+        {
+          "language": "ckb",
+          "text": "بە کورتی نیشانەکان لە مەتەب ڕوون بکەوە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li praksîsê bi kurtî şikayetên xwe şirove bike"
+        },
+        {
+          "language": "pl",
+          "text": "Krótko wyjaśnić objawy w gabinecie"
+        },
+        {
+          "language": "ro",
+          "text": "Explici pe scurt simptomele la cabinet"
+        },
+        {
+          "language": "sq",
+          "text": "Shpjego shkurt simptomat në klinikë"
+        }
+      ],
+      "description": "Du übst, einfache Beschwerden mit Dauer und Stärke zu beschreiben.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice describing simple symptoms with duration and intensity."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی علائم ساده را همراه با مدت و شدت توضیح بدهی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على وصف أعراض بسيطة مع المدة والشدة."
+        },
+        {
+          "language": "tr",
+          "text": "Basit şikayetleri süre ve şiddetle anlatmayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься описывать простые жалобы с длительностью и силой."
+        },
+        {
+          "language": "ckb",
+          "text": "ڕاهێنان دەکەیت نیشانە سادەکان لەگەڵ ماوە و توندی ڕوون بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu hîn dibî şikayetên hêsan bi dem û giranî şirove bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz opisywanie prostych objawów z czasem trwania i natężeniem."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi cum să descrii simptome simple cu durată și intensitate."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron si të përshkruash simptoma të thjeshta me kohëzgjatje dhe intensitet."
+        }
+      ],
+      "learnerGoal": "Du kannst sagen, was weh tut, seit wann es so ist und wie stark es ist.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can say what hurts, since when, and how strong it is."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی بگویی چه چیزی درد می‌کند، از چه زمانی و شدت آن چقدر است."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تقول ما الذي يؤلمك ومنذ متى ومدى شدته."
+        },
+        {
+          "language": "tr",
+          "text": "Nerenin ağrıdığını, ne zamandan beri olduğunu ve şiddetini söyleyebilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь сказать, что болит, с какого времени и насколько сильно."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت بڵێیت چیت ئێشە، لە کەیەوە و چەند توندە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî bibêjî çi diêşe, ji kengî ve û çiqas giran e."
+        },
+        {
+          "language": "pl",
+          "text": "Umiesz powiedzieć, co boli, od kiedy i jak mocno."
+        },
+        {
+          "language": "ro",
+          "text": "Poți spune ce te doare, de când și cât de tare."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të thuash çfarë të dhemb, prej kur dhe sa fort."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Was führt Sie heute zu mir?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "What brings you to me today?"
+            },
+            {
+              "language": "fa",
+              "text": "امروز برای چه مشکلی به من مراجعه کرده‌اید؟"
+            },
+            {
+              "language": "ar",
+              "text": "ما الذي أتى بك إليّ اليوم؟"
+            },
+            {
+              "language": "tr",
+              "text": "Bugün sizi bana getiren şikayet nedir?"
+            },
+            {
+              "language": "ru",
+              "text": "Что привело вас сегодня ко мне?"
+            },
+            {
+              "language": "ckb",
+              "text": "ئەمڕۆ چی هێناویتە لای من؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Îro çi we aniye cem min?"
+            },
+            {
+              "language": "pl",
+              "text": "Co pana/panią dziś do mnie sprowadza?"
+            },
+            {
+              "language": "ro",
+              "text": "Ce vă aduce astăzi la mine?"
+            },
+            {
+              "language": "sq",
+              "text": "Çfarë ju sjell sot tek unë?"
+            }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich habe seit zwei Tagen Halsschmerzen und etwas Fieber.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I have had a sore throat and some fever for two days."
+            },
+            {
+              "language": "fa",
+              "text": "دو روز است گلودرد و کمی تب دارم."
+            },
+            {
+              "language": "ar",
+              "text": "لدي ألم في الحلق وبعض الحمى منذ يومين."
+            },
+            {
+              "language": "tr",
+              "text": "İki gündür boğaz ağrım ve biraz ateşim var."
+            },
+            {
+              "language": "ru",
+              "text": "У меня уже два дня болит горло и немного температура."
+            },
+            {
+              "language": "ckb",
+              "text": "دوو ڕۆژە گەرووم ئێشە و کەمێک تایم هەیە."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji du rojan ve qirika min diêşe û hinek tayê min heye."
+            },
+            {
+              "language": "pl",
+              "text": "Od dwóch dni boli mnie gardło i mam trochę gorączki."
+            },
+            {
+              "language": "ro",
+              "text": "De două zile mă doare gâtul și am puțină febră."
+            },
+            {
+              "language": "sq",
+              "text": "Kam dy ditë dhimbje fyti dhe pak temperaturë."
+            }
+          ],
+          "function": "symptoms",
+          "expectedLearnerAction": "Name symptoms and duration."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Wie hoch ist das Fieber ungefähr?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "How high is the fever approximately?"
+            },
+            {
+              "language": "fa",
+              "text": "تب تقریباً چقدر است؟"
+            },
+            {
+              "language": "ar",
+              "text": "كم تبلغ الحمى تقريبًا؟"
+            },
+            {
+              "language": "tr",
+              "text": "Ateş yaklaşık kaç derece?"
+            },
+            {
+              "language": "ru",
+              "text": "Какая примерно температура?"
+            },
+            {
+              "language": "ckb",
+              "text": "تایەکە نزیکەی چەندە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Taya we nêzîkî çiqas e?"
+            },
+            {
+              "language": "pl",
+              "text": "Jak wysoka jest mniej więcej gorączka?"
+            },
+            {
+              "language": "ro",
+              "text": "Cât de mare este febra aproximativ?"
+            },
+            {
+              "language": "sq",
+              "text": "Sa e lartë është temperatura afërsisht?"
+            }
+          ],
+          "function": "follow-up"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Gestern waren es 38 Grad. Heute ist es etwas besser.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yesterday it was 38 degrees. Today it is a little better."
+            },
+            {
+              "language": "fa",
+              "text": "دیروز ۳۸ درجه بود. امروز کمی بهتر است."
+            },
+            {
+              "language": "ar",
+              "text": "أمس كانت 38 درجة. اليوم أفضل قليلًا."
+            },
+            {
+              "language": "tr",
+              "text": "Dün 38 dereceydi. Bugün biraz daha iyi."
+            },
+            {
+              "language": "ru",
+              "text": "Вчера было 38 градусов. Сегодня немного лучше."
+            },
+            {
+              "language": "ckb",
+              "text": "دوێنێ ٣٨ پلە بوو. ئەمڕۆ کەمێک باشترە."
+            },
+            {
+              "language": "kmr",
+              "text": "Duh 38 derece bû. Îro hinek baştir e."
+            },
+            {
+              "language": "pl",
+              "text": "Wczoraj było 38 stopni. Dziś jest trochę lepiej."
+            },
+            {
+              "language": "ro",
+              "text": "Ieri a fost 38 de grade. Astăzi este puțin mai bine."
+            },
+            {
+              "language": "sq",
+              "text": "Dje ishte 38 gradë. Sot është pak më mirë."
+            }
+          ],
+          "function": "detail",
+          "expectedLearnerAction": "Give temperature and change."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Nehmen Sie schon Medikamente?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Are you already taking medication?"
+            },
+            {
+              "language": "fa",
+              "text": "در حال حاضر دارویی مصرف می‌کنید؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل تتناول دواءً بالفعل؟"
+            },
+            {
+              "language": "tr",
+              "text": "Şu anda ilaç alıyor musunuz?"
+            },
+            {
+              "language": "ru",
+              "text": "Вы уже принимаете лекарства?"
+            },
+            {
+              "language": "ckb",
+              "text": "ئێستا دەرمان دەخۆیت؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Hûn niha derman dixwin?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy bierze pan/pani już leki?"
+            },
+            {
+              "language": "ro",
+              "text": "Luați deja medicamente?"
+            },
+            {
+              "language": "sq",
+              "text": "A po merrni tashmë ilaçe?"
+            }
+          ],
+          "function": "medicine-question"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Nur Tee und Lutschtabletten, noch keine anderen Medikamente.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Only tea and lozenges, no other medication yet."
+            },
+            {
+              "language": "fa",
+              "text": "فقط چای و قرص مکیدنی، هنوز داروی دیگری نه."
+            },
+            {
+              "language": "ar",
+              "text": "فقط شاي وأقراص مص، ولا أدوية أخرى بعد."
+            },
+            {
+              "language": "tr",
+              "text": "Sadece çay ve pastil, henüz başka ilaç yok."
+            },
+            {
+              "language": "ru",
+              "text": "Только чай и пастилки, других лекарств пока нет."
+            },
+            {
+              "language": "ckb",
+              "text": "تەنها چا و حەبی مژین، هێشتا دەرمانی تر نە."
+            },
+            {
+              "language": "kmr",
+              "text": "Tenê çay û tabletên mizandinê, hîn dermanên din tune ne."
+            },
+            {
+              "language": "pl",
+              "text": "Tylko herbata i tabletki do ssania, jeszcze żadnych innych leków."
+            },
+            {
+              "language": "ro",
+              "text": "Doar ceai și pastile de supt, încă fără alte medicamente."
+            },
+            {
+              "language": "sq",
+              "text": "Vetëm çaj dhe tableta për fyt, ende pa ilaçe të tjera."
+            }
+          ],
+          "function": "answer",
+          "expectedLearnerAction": "Answer medicine question."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Ich habe seit zwei Tagen Halsschmerzen und etwas Fieber.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "I have had a sore throat and some fever for two days."
+                },
+                {
+                  "language": "fa",
+                  "text": "دو روز است گلودرد و کمی تب دارم."
+                },
+                {
+                  "language": "ar",
+                  "text": "لدي ألم في الحلق وبعض الحمى منذ يومين."
+                },
+                {
+                  "language": "tr",
+                  "text": "İki gündür boğaz ağrım ve biraz ateşim var."
+                },
+                {
+                  "language": "ru",
+                  "text": "У меня уже два дня болит горло и немного температура."
+                },
+                {
+                  "language": "ckb",
+                  "text": "دوو ڕۆژە گەرووم ئێشە و کەمێک تایم هەیە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ji du rojan ve qirika min diêşe û hinek tayê min heye."
+                },
+                {
+                  "language": "pl",
+                  "text": "Od dwóch dni boli mnie gardło i mam trochę gorączki."
+                },
+                {
+                  "language": "ro",
+                  "text": "De două zile mă doare gâtul și am puțină febră."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kam dy ditë dhimbje fyti dhe pak temperaturë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du nennst Symptom und Dauer, das hilft der Ärztin.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You name the symptom and duration; that helps the doctor."
+                },
+                {
+                  "language": "fa",
+                  "text": "علامت و مدت را می‌گویی؛ این به پزشک کمک می‌کند."
+                },
+                {
+                  "language": "ar",
+                  "text": "تذكر العرض والمدة، وهذا يساعد الطبيبة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Belirtiyi ve süreyi söylüyorsun; bu doktora yardımcı olur."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты называешь симптом и длительность; это помогает врачу."
+                },
+                {
+                  "language": "ckb",
+                  "text": "نیشانە و ماوەکە دەڵێیت؛ ئەمە یارمەتی پزیشک دەدات."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu nîşan û demê dibêjî; ev alîkariya bijîşkê dike."
+                },
+                {
+                  "language": "pl",
+                  "text": "Podajesz objaw i czas trwania; to pomaga lekarce."
+                },
+                {
+                  "language": "ro",
+                  "text": "Numesti simptomul și durata; asta ajută medicul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Tregon simptomën dhe kohëzgjatjen; kjo e ndihmon mjekun."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Mir geht es nicht gut.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "I do not feel well."
+                },
+                {
+                  "language": "fa",
+                  "text": "حالم خوب نیست."
+                },
+                {
+                  "language": "ar",
+                  "text": "لا أشعر أنني بخير."
+                },
+                {
+                  "language": "tr",
+                  "text": "Kendimi iyi hissetmiyorum."
+                },
+                {
+                  "language": "ru",
+                  "text": "Мне нехорошо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "حاڵم باش نییە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ez baş hîs nakim."
+                },
+                {
+                  "language": "pl",
+                  "text": "Nie czuję się dobrze."
+                },
+                {
+                  "language": "ro",
+                  "text": "Nu mă simt bine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Nuk ndihem mirë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist als Einstieg möglich, aber für A2 fehlen Symptom und Dauer.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This can start the conversation, but for A2 the symptom and duration are missing."
+                },
+                {
+                  "language": "fa",
+                  "text": "برای شروع ممکن است، اما برای A2 علامت و مدت کم است."
+                },
+                {
+                  "language": "ar",
+                  "text": "يمكن أن يكون بداية، لكن في A2 ينقص العرض والمدة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu başlangıç olabilir, ama A2 için belirti ve süre eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это может быть началом, но для A2 не хватает симптома и длительности."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە دەکرێت دەستپێک بێت، بەڵام بۆ A2 نیشانە و ماوە کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev dikare destpêk be, lê ji bo A2 nîşan û dem kêm in."
+                },
+                {
+                  "language": "pl",
+                  "text": "To może być początek, ale na A2 brakuje objawu i czasu trwania."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi un început, dar pentru A2 lipsesc simptomul și durata."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të jetë fillim, por për A2 mungojnë simptoma dhe kohëzgjatja."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Gestern waren es 38 Grad. Heute ist es etwas besser.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yesterday it was 38 degrees. Today it is a little better."
+                },
+                {
+                  "language": "fa",
+                  "text": "دیروز ۳۸ درجه بود. امروز کمی بهتر است."
+                },
+                {
+                  "language": "ar",
+                  "text": "أمس كانت 38 درجة. اليوم أفضل قليلًا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Dün 38 dereceydi. Bugün biraz daha iyi."
+                },
+                {
+                  "language": "ru",
+                  "text": "Вчера было 38 градусов. Сегодня немного лучше."
+                },
+                {
+                  "language": "ckb",
+                  "text": "دوێنێ ٣٨ پلە بوو. ئەمڕۆ کەمێک باشترە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Duh 38 derece bû. Îro hinek baştir e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Wczoraj było 38 stopni. Dziś jest trochę lepiej."
+                },
+                {
+                  "language": "ro",
+                  "text": "Ieri a fost 38 de grade. Astăzi este puțin mai bine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Dje ishte 38 gradë. Sot është pak më mirë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du gibst eine konkrete Zahl und sagst, ob es besser wird.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You give a concrete number and say whether it is improving."
+                },
+                {
+                  "language": "fa",
+                  "text": "عدد مشخص می‌دهی و می‌گویی بهتر شده یا نه."
+                },
+                {
+                  "language": "ar",
+                  "text": "تعطي رقمًا محددًا وتقول هل يتحسن الوضع."
+                },
+                {
+                  "language": "tr",
+                  "text": "Somut bir sayı veriyor ve iyileşip iyileşmediğini söylüyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты даёшь конкретное число и говоришь, становится ли лучше."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ژمارەیەکی دیاریکراو دەدەیت و دەڵێیت باشتر دەبێت یان نا."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu hejmareke konkret didî û dibêjî gelo baştir dibe yan na."
+                },
+                {
+                  "language": "pl",
+                  "text": "Podajesz konkretną liczbę i mówisz, czy jest lepiej."
+                },
+                {
+                  "language": "ro",
+                  "text": "Dai un număr concret și spui dacă se îmbunătățește."
+                },
+                {
+                  "language": "sq",
+                  "text": "Jep një numër konkret dhe thua nëse po përmirësohet."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Ein bisschen Fieber.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "A little fever."
+                },
+                {
+                  "language": "fa",
+                  "text": "کمی تب."
+                },
+                {
+                  "language": "ar",
+                  "text": "قليل من الحمى."
+                },
+                {
+                  "language": "tr",
+                  "text": "Biraz ateş."
+                },
+                {
+                  "language": "ru",
+                  "text": "Немного температура."
+                },
+                {
+                  "language": "ckb",
+                  "text": "کەمێک تا."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Hinek tay."
+                },
+                {
+                  "language": "pl",
+                  "text": "Trochę gorączki."
+                },
+                {
+                  "language": "ro",
+                  "text": "Puțină febră."
+                },
+                {
+                  "language": "sq",
+                  "text": "Pak temperaturë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das passt, aber eine Zahl ist für die Ärztin hilfreicher.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This fits, but a number is more helpful for the doctor."
+                },
+                {
+                  "language": "fa",
+                  "text": "مناسب است، اما عدد برای پزشک مفیدتر است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مناسب، لكن الرقم يساعد الطبيبة أكثر."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu uygun, ama bir sayı doktor için daha yararlıdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это подходит, но число полезнее для врача."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە دەگونجێت، بەڵام ژمارە بۆ پزیشک یارمەتیدەرترە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev tê, lê hejmar ji bo bijîşkê alîkartir e."
+                },
+                {
+                  "language": "pl",
+                  "text": "To pasuje, ale liczba jest bardziej pomocna dla lekarki."
+                },
+                {
+                  "language": "ro",
+                  "text": "Se potrivește, dar un număr este mai util pentru medic."
+                },
+                {
+                  "language": "sq",
+                  "text": "Përshtatet, por një numër është më i dobishëm për mjekun."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Nur Tee und Lutschtabletten, noch keine anderen Medikamente.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Only tea and lozenges, no other medication yet."
+                },
+                {
+                  "language": "fa",
+                  "text": "فقط چای و قرص مکیدنی، هنوز داروی دیگری نه."
+                },
+                {
+                  "language": "ar",
+                  "text": "فقط شاي وأقراص مص، ولا أدوية أخرى بعد."
+                },
+                {
+                  "language": "tr",
+                  "text": "Sadece çay ve pastil, henüz başka ilaç yok."
+                },
+                {
+                  "language": "ru",
+                  "text": "Только чай и пастилки, других лекарств пока нет."
+                },
+                {
+                  "language": "ckb",
+                  "text": "تەنها چا و حەبی مژین، هێشتا دەرمانی تر نە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tenê çay û tabletên mizandinê, hîn dermanên din tune ne."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tylko herbata i tabletki do ssania, jeszcze żadnych innych leków."
+                },
+                {
+                  "language": "ro",
+                  "text": "Doar ceai și pastile de supt, încă fără alte medicamente."
+                },
+                {
+                  "language": "sq",
+                  "text": "Vetëm çaj dhe tableta për fyt, ende pa ilaçe të tjera."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du beantwortest die Medikamentenfrage genau genug.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You answer the medication question precisely enough."
+                },
+                {
+                  "language": "fa",
+                  "text": "به سؤال درباره دارو به اندازه کافی دقیق جواب می‌دهی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تجيب عن سؤال الدواء بدقة كافية."
+                },
+                {
+                  "language": "tr",
+                  "text": "İlaç sorusuna yeterince net cevap veriyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты достаточно точно отвечаешь на вопрос о лекарствах."
+                },
+                {
+                  "language": "ckb",
+                  "text": "وەڵامی پرسیاری دەرمانەکە بە قەدری پێویست ورد دەدەیتەوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu bersiva pirsa dermanê têra xwe zelal didî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Odpowiadasz na pytanie o leki wystarczająco dokładnie."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunzi suficient de precis la întrebarea despre medicamente."
+                },
+                {
+                  "language": "sq",
+                  "text": "I përgjigjesh mjaft saktë pyetjes për ilaçet."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Nein.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "No."
+                },
+                {
+                  "language": "fa",
+                  "text": "نه."
+                },
+                {
+                  "language": "ar",
+                  "text": "لا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Hayır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Нет."
+                },
+                {
+                  "language": "ckb",
+                  "text": "نەخێر."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Na."
+                },
+                {
+                  "language": "pl",
+                  "text": "Nie."
+                },
+                {
+                  "language": "ro",
+                  "text": "Nu."
+                },
+                {
+                  "language": "sq",
+                  "text": "Jo."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist kurz, aber du sagst nicht, was du schon probiert hast.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is short, but you do not say what you have already tried."
+                },
+                {
+                  "language": "fa",
+                  "text": "کوتاه است، اما نمی‌گویی تا حالا چه چیزی امتحان کرده‌ای."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا قصير، لكنك لا تقول ما الذي جرّبته بالفعل."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu kısa, ama neyi denediğini söylemiyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это коротко, но ты не говоришь, что уже пробовал."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە کورتە، بەڵام ناڵێیت پێشتر چیت تاقی کردووەتەوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev kurt e, lê tu nabêjî te berê çi ceribandiye."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest krótkie, ale nie mówisz, czego już próbowałeś."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este scurt, dar nu spui ce ai încercat deja."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e shkurtër, por nuk thua çfarë ke provuar tashmë."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "a2-practice-note",
+          "text": "Bei Beschwerden helfen drei Angaben: was, seit wann, wie stark.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "For symptoms, three details help: what, since when, how strong."
+            },
+            {
+              "language": "fa",
+              "text": "برای علائم سه چیز کمک می‌کند: چه چیزی، از چه زمانی، چه شدتی."
+            },
+            {
+              "language": "ar",
+              "text": "في الأعراض تساعد ثلاث معلومات: ماذا، منذ متى، وما الشدة."
+            },
+            {
+              "language": "tr",
+              "text": "Şikayetlerde üç bilgi yardımcı olur: ne, ne zamandan beri, ne kadar şiddetli."
+            },
+            {
+              "language": "ru",
+              "text": "При жалобах помогают три детали: что, с какого времени, насколько сильно."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی نیشانەکاندا سێ زانیاری یارمەتیدەرە: چی، لە کەیەوە، چەند توند."
+            },
+            {
+              "language": "kmr",
+              "text": "Di şikayetan de sê agahî alîkar in: çi, ji kengî ve, çiqas giran."
+            },
+            {
+              "language": "pl",
+              "text": "Przy objawach pomagają trzy informacje: co, od kiedy, jak mocno."
+            },
+            {
+              "language": "ro",
+              "text": "La simptome ajută trei informații: ce, de când, cât de tare."
+            },
+            {
+              "language": "sq",
+              "text": "Te simptomat ndihmojnë tre të dhëna: çfarë, prej kur, sa fort."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-symptoms-a2",
+          "placement": "header",
+          "purpose": "Set a clear A2 practice context without showing authoring metadata to learners.",
+          "altText": "Illustration eines Gesprächs über Beschwerden in einer Arztpraxis",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "Illustration of a conversation about symptoms at a doctor's office"
+            },
+            {
+              "language": "fa",
+              "text": "تصویرسازی گفت‌وگو درباره علائم در مطب پزشک"
+            },
+            {
+              "language": "ar",
+              "text": "رسم توضيحي لحديث عن الأعراض في عيادة طبيب"
+            },
+            {
+              "language": "tr",
+              "text": "Doktor muayenehanesinde şikayetler hakkında konuşma çizimi"
+            },
+            {
+              "language": "ru",
+              "text": "Иллюстрация разговора о симптомах в кабинете врача"
+            },
+            {
+              "language": "ckb",
+              "text": "وێنەسازی گفتوگۆ لەسەر نیشانەکان لە مەتەبی پزیشک"
+            },
+            {
+              "language": "kmr",
+              "text": "Wêneyek ji axaftina li ser şikayetan li praksîsa bijîşk"
+            },
+            {
+              "language": "pl",
+              "text": "Ilustracja rozmowy o objawach w gabinecie lekarskim"
+            },
+            {
+              "language": "ro",
+              "text": "Ilustrație cu o discuție despre simptome la cabinetul medical"
+            },
+            {
+              "language": "sq",
+              "text": "Ilustrim i një bisede për simptomat në klinikë"
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of a calm doctor office conversation about simple symptoms; diverse adults; German everyday setting; no logos; no private data; no readable text; accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a2-in-der-apotheke-nach-einnahme-fragen",
+      "title": "In der Apotheke nach der Einnahme fragen",
+      "cefrLevel": "A2",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "shopping-and-services"
+      ],
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [
+        "goethe-a2"
+      ],
+      "sortOrder": 1040,
+      "estimatedPracticeMinutes": 8,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Staff member"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند"
+            },
+            {
+              "language": "ar",
+              "text": "الموظفة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудница"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەند"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmend"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownica"
+            },
+            {
+              "language": "ro",
+              "text": "Angajata"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjësja"
+            }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Ask at the pharmacy about how to take medicine"
+        },
+        {
+          "language": "fa",
+          "text": "در داروخانه درباره نحوه مصرف دارو سؤال کردن"
+        },
+        {
+          "language": "ar",
+          "text": "السؤال في الصيدلية عن طريقة تناول الدواء"
+        },
+        {
+          "language": "tr",
+          "text": "Eczanede ilacın nasıl alınacağını sormak"
+        },
+        {
+          "language": "ru",
+          "text": "Спросить в аптеке, как принимать лекарство"
+        },
+        {
+          "language": "ckb",
+          "text": "لە دەرمانخانە پرسیار لە چۆنیەتی خواردنی دەرمان بکە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li dermanxaneyê li ser awayê xwarina derman bipirse"
+        },
+        {
+          "language": "pl",
+          "text": "Zapytać w aptece, jak przyjmować lek"
+        },
+        {
+          "language": "ro",
+          "text": "Întrebi la farmacie cum se ia medicamentul"
+        },
+        {
+          "language": "sq",
+          "text": "Pyet në farmaci si merret ilaçi"
+        }
+      ],
+      "description": "Du übst, in der Apotheke nach Dosierung und Tageszeit zu fragen und die Antwort zu wiederholen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice asking at the pharmacy about dosage and time of day and repeating the answer."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی در داروخانه درباره مقدار مصرف و زمان روز سؤال کنی و جواب را تکرار کنی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على السؤال في الصيدلية عن الجرعة ووقت اليوم وتكرار الإجابة."
+        },
+        {
+          "language": "tr",
+          "text": "Eczanede doz ve günün zamanı hakkında sormayı ve cevabı tekrar etmeyi çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься спрашивать в аптеке о дозировке и времени приёма и повторять ответ."
+        },
+        {
+          "language": "ckb",
+          "text": "ڕاهێنان دەکەیت لە دەرمانخانە لەسەر بڕی دەرمان و کاتی ڕۆژ بپرسیت و وەڵامەکە دووبارە بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu hîn dibî li dermanxaneyê li ser doz û dema rojê bipirsî û bersivê dubare bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz pytanie w aptece o dawkowanie i porę dnia oraz powtarzanie odpowiedzi."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi cum să întrebi la farmacie despre doză și momentul zilei și să repeți răspunsul."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron si të pyesësh në farmaci për dozën dhe kohën e ditës dhe ta përsërisësh përgjigjen."
+        }
+      ],
+      "learnerGoal": "Du kannst fragen, wie oft du ein Medikament nehmen sollst, und die Anweisung bestätigen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can ask how often to take a medicine and confirm the instruction."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی بپرسی چند بار باید دارو را مصرف کنی و دستور را تأیید کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تسأل كم مرة يجب أن تتناول الدواء وتؤكد التعليمات."
+        },
+        {
+          "language": "tr",
+          "text": "Bir ilacı ne sıklıkla alacağını sorup talimatı onaylayabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь спросить, как часто принимать лекарство, и подтвердить инструкцию."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت بپرسیت چەند جار دەبێت دەرمانەکە بخۆیت و ڕێنماییەکە پشتڕاست بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî bipirsî çend caran divê dermanê bixwî û rêwerzê piştrast bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Umiesz zapytać, jak często brać lek, i potwierdzić instrukcję."
+        },
+        {
+          "language": "ro",
+          "text": "Poți întreba cât de des să iei un medicament și poți confirma instrucțiunea."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të pyesësh sa shpesh duhet ta marrësh ilaçin dhe të konfirmosh udhëzimin."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Hier ist Ihr Medikament. Haben Sie noch Fragen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Here is your medication. Do you have any questions?"
+            },
+            {
+              "language": "fa",
+              "text": "این داروی شماست. سؤال دیگری دارید؟"
+            },
+            {
+              "language": "ar",
+              "text": "هذا دواؤك. هل لديك أسئلة أخرى؟"
+            },
+            {
+              "language": "tr",
+              "text": "İşte ilacınız. Başka sorunuz var mı?"
+            },
+            {
+              "language": "ru",
+              "text": "Вот ваше лекарство. У вас есть ещё вопросы?"
+            },
+            {
+              "language": "ckb",
+              "text": "ئەمە دەرمانەکەتانە. پرسیاری ترتان هەیە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ev dermanê we ye. Pirsên we yên din hene?"
+            },
+            {
+              "language": "pl",
+              "text": "Oto pański/pani lek. Czy ma pan/pani jeszcze pytania?"
+            },
+            {
+              "language": "ro",
+              "text": "Acesta este medicamentul dumneavoastră. Mai aveți întrebări?"
+            },
+            {
+              "language": "sq",
+              "text": "Ja ilaçi juaj. A keni pyetje të tjera?"
+            }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte. Wie oft soll ich die Tabletten nehmen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, please. How often should I take the tablets?"
+            },
+            {
+              "language": "fa",
+              "text": "بله، لطفاً. قرص‌ها را چند بار باید مصرف کنم؟"
+            },
+            {
+              "language": "ar",
+              "text": "نعم، من فضلك. كم مرة يجب أن أتناول الأقراص؟"
+            },
+            {
+              "language": "tr",
+              "text": "Evet, lütfen. Tabletleri ne sıklıkla almalıyım?"
+            },
+            {
+              "language": "ru",
+              "text": "Да, пожалуйста. Как часто мне принимать таблетки?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەڵێ، تکایە. چەند جار دەبێت حەبەکان بخۆم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Erê, ji kerema xwe. Divê ez tabletan çend caran bixwim?"
+            },
+            {
+              "language": "pl",
+              "text": "Tak, proszę. Jak często mam brać tabletki?"
+            },
+            {
+              "language": "ro",
+              "text": "Da, vă rog. Cât de des trebuie să iau pastilele?"
+            },
+            {
+              "language": "sq",
+              "text": "Po, ju lutem. Sa shpesh duhet t'i marr tabletat?"
+            }
+          ],
+          "function": "question",
+          "expectedLearnerAction": "Ask frequency."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Zweimal täglich, morgens und abends nach dem Essen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Twice daily, in the morning and evening after eating."
+            },
+            {
+              "language": "fa",
+              "text": "روزی دو بار، صبح و شب بعد از غذا."
+            },
+            {
+              "language": "ar",
+              "text": "مرتين يوميًا، صباحًا ومساءً بعد الطعام."
+            },
+            {
+              "language": "tr",
+              "text": "Günde iki kez, sabah ve akşam yemekten sonra."
+            },
+            {
+              "language": "ru",
+              "text": "Два раза в день, утром и вечером после еды."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژانە دوو جار، بەیانی و ئێوارە دوای خواردن."
+            },
+            {
+              "language": "kmr",
+              "text": "Rojê du caran, sibeh û êvar piştî xwarinê."
+            },
+            {
+              "language": "pl",
+              "text": "Dwa razy dziennie, rano i wieczorem po jedzeniu."
+            },
+            {
+              "language": "ro",
+              "text": "De două ori pe zi, dimineața și seara după masă."
+            },
+            {
+              "language": "sq",
+              "text": "Dy herë në ditë, në mëngjes dhe në mbrëmje pas ushqimit."
+            }
+          ],
+          "function": "instruction"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Also morgens und abends nach dem Essen, richtig?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "So in the morning and evening after eating, correct?"
+            },
+            {
+              "language": "fa",
+              "text": "یعنی صبح و شب بعد از غذا، درست است؟"
+            },
+            {
+              "language": "ar",
+              "text": "إذًا صباحًا ومساءً بعد الطعام، صحيح؟"
+            },
+            {
+              "language": "tr",
+              "text": "Yani sabah ve akşam yemekten sonra, doğru mu?"
+            },
+            {
+              "language": "ru",
+              "text": "То есть утром и вечером после еды, правильно?"
+            },
+            {
+              "language": "ckb",
+              "text": "واتە بەیانی و ئێوارە دوای خواردن، ڕاستە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Yanî sibeh û êvar piştî xwarinê, rast e?"
+            },
+            {
+              "language": "pl",
+              "text": "Czyli rano i wieczorem po jedzeniu, tak?"
+            },
+            {
+              "language": "ro",
+              "text": "Deci dimineața și seara după masă, corect?"
+            },
+            {
+              "language": "sq",
+              "text": "Pra në mëngjes dhe në mbrëmje pas ushqimit, apo jo?"
+            }
+          ],
+          "function": "confirmation",
+          "expectedLearnerAction": "Repeat instruction."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Genau. Und bitte mit viel Wasser.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Exactly. And please with plenty of water."
+            },
+            {
+              "language": "fa",
+              "text": "دقیقاً. و لطفاً با آب زیاد."
+            },
+            {
+              "language": "ar",
+              "text": "بالضبط. ومع الكثير من الماء من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "Aynen. Ve lütfen bol suyla."
+            },
+            {
+              "language": "ru",
+              "text": "Именно. И пожалуйста, с большим количеством воды."
+            },
+            {
+              "language": "ckb",
+              "text": "وردە. تکایە لەگەڵ ئاوی زۆر."
+            },
+            {
+              "language": "kmr",
+              "text": "Belê. Û ji kerema xwe bi avê gelek."
+            },
+            {
+              "language": "pl",
+              "text": "Dokładnie. I proszę popijać dużą ilością wody."
+            },
+            {
+              "language": "ro",
+              "text": "Exact. Și vă rog cu multă apă."
+            },
+            {
+              "language": "sq",
+              "text": "Saktë. Dhe ju lutem me shumë ujë."
+            }
+          ],
+          "function": "extra-instruction"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke, dann nehme ich sie mit viel Wasser.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you, then I will take them with plenty of water."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون، پس آن‌ها را با آب زیاد مصرف می‌کنم."
+            },
+            {
+              "language": "ar",
+              "text": "شكرًا، إذن سأتناولها مع الكثير من الماء."
+            },
+            {
+              "language": "tr",
+              "text": "Teşekkürler, o zaman bol suyla alıyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо, тогда я буду принимать их с большим количеством воды."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس، ئەوا لەگەڵ ئاوی زۆر دەیانخۆم."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas, wê demê ez wan bi avê gelek dixwim."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję, w takim razie będę je brać z dużą ilością wody."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc, atunci le iau cu multă apă."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit, atëherë do t'i marr me shumë ujë."
+            }
+          ],
+          "function": "closing",
+          "expectedLearnerAction": "Confirm final instruction."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Ja, bitte. Wie oft soll ich die Tabletten nehmen?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, please. How often should I take the tablets?"
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، لطفاً. قرص‌ها را چند بار باید مصرف کنم؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، من فضلك. كم مرة يجب أن أتناول الأقراص؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, lütfen. Tabletleri ne sıklıkla almalıyım?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, пожалуйста. Как часто мне принимать таблетки?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، تکایە. چەند جار دەبێت حەبەکان بخۆم؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, ji kerema xwe. Divê ez tabletan çend caran bixwim?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, proszę. Jak często mam brać tabletki?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, vă rog. Cât de des trebuie să iau pastilele?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, ju lutem. Sa shpesh duhet t'i marr tabletat?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Frage ist genau: du fragst nach der Häufigkeit.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "The question is precise: you ask about frequency."
+                },
+                {
+                  "language": "fa",
+                  "text": "سؤال دقیق است: درباره تعداد دفعات مصرف می‌پرسی."
+                },
+                {
+                  "language": "ar",
+                  "text": "السؤال دقيق: تسأل عن عدد المرات."
+                },
+                {
+                  "language": "tr",
+                  "text": "Soru nettir: sıklığı soruyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Вопрос точный: ты спрашиваешь о частоте."
+                },
+                {
+                  "language": "ckb",
+                  "text": "پرسیارەکە وردە: لەسەر چەندجاربوون دەپرسی."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Pirs rast e: tu li ser çend caran dipirsî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Pytanie jest precyzyjne: pytasz o częstotliwość."
+                },
+                {
+                  "language": "ro",
+                  "text": "Întrebarea este precisă: întrebi despre frecvență."
+                },
+                {
+                  "language": "sq",
+                  "text": "Pyetja është e saktë: pyet për shpeshtësinë."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Was mache ich damit?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "What do I do with it?"
+                },
+                {
+                  "language": "fa",
+                  "text": "با آن چه کار کنم؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "ماذا أفعل به؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Bununla ne yapayım?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Что мне с этим делать?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەمە چی بکەم؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ez bi vê çi bikim?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Co mam z tym zrobić?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Ce fac cu el?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Çfarë të bëj me të?"
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber in der Apotheke zu ungenau.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is understandable, but too imprecise at the pharmacy."
+                },
+                {
+                  "language": "fa",
+                  "text": "قابل فهم است، اما در داروخانه خیلی نامشخص است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مفهوم، لكنه غير دقيق في الصيدلية."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu anlaşılır, ama eczanede çok belirsiz."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это понятно, но в аптеке слишком неточно."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە تێدەگەیەندرێت، بەڵام لە دەرمانخانە زۆر ناوردەیە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev tê famkirin, lê li dermanxaneyê pir nezelal e."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest zrozumiałe, ale w aptece zbyt nieprecyzyjne."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este de înțeles, dar prea neclar la farmacie."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kuptohet, por në farmaci është shumë e paqartë."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Also morgens und abends nach dem Essen, richtig?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "So in the morning and evening after eating, correct?"
+                },
+                {
+                  "language": "fa",
+                  "text": "یعنی صبح و شب بعد از غذا، درست است؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "إذًا صباحًا ومساءً بعد الطعام، صحيح؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Yani sabah ve akşam yemekten sonra, doğru mu?"
+                },
+                {
+                  "language": "ru",
+                  "text": "То есть утром и вечером после еды, правильно?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "واتە بەیانی و ئێوارە دوای خواردن، ڕاستە؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Yanî sibeh û êvar piştî xwarinê, rast e?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Czyli rano i wieczorem po jedzeniu, tak?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Deci dimineața și seara după masă, corect?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Pra në mëngjes dhe në mbrëmje pas ushqimit, apo jo?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du wiederholst die Anweisung und prüfst, ob du sie richtig verstanden hast.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You repeat the instruction and check whether you understood it correctly."
+                },
+                {
+                  "language": "fa",
+                  "text": "دستور را تکرار می‌کنی و بررسی می‌کنی درست فهمیده‌ای."
+                },
+                {
+                  "language": "ar",
+                  "text": "تكرر التعليمات وتتحقق أنك فهمتها بشكل صحيح."
+                },
+                {
+                  "language": "tr",
+                  "text": "Talimatı tekrar ediyor ve doğru anlayıp anlamadığını kontrol ediyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты повторяешь инструкцию и проверяешь, правильно ли понял."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ڕێنماییەکە دووبارە دەکەیتەوە و دڵنیا دەبیت کە بە دروستی تێگەیشتوویت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu rêwerzê dubare dikî û kontrol dikî gelo te rast fam kiriye."
+                },
+                {
+                  "language": "pl",
+                  "text": "Powtarzasz instrukcję i sprawdzasz, czy dobrze zrozumiałeś."
+                },
+                {
+                  "language": "ro",
+                  "text": "Repeți instrucțiunea și verifici dacă ai înțeles corect."
+                },
+                {
+                  "language": "sq",
+                  "text": "E përsërit udhëzimin dhe kontrollon nëse e ke kuptuar saktë."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Okay, zweimal.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Okay, twice."
+                },
+                {
+                  "language": "fa",
+                  "text": "باشه، دو بار."
+                },
+                {
+                  "language": "ar",
+                  "text": "حسنًا، مرتين."
+                },
+                {
+                  "language": "tr",
+                  "text": "Tamam, iki kez."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо, два раза."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باشە، دوو جار."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Temam, du caran."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dobrze, dwa razy."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bine, de două ori."
+                },
+                {
+                  "language": "sq",
+                  "text": "Në rregull, dy herë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist teilweise richtig, aber morgens, abends und nach dem Essen fehlen.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is partly correct, but morning, evening, and after eating are missing."
+                },
+                {
+                  "language": "fa",
+                  "text": "تا حدی درست است، اما صبح، شب و بعد از غذا کم است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا صحيح جزئيًا، لكن الصباح والمساء وبعد الطعام غير مذكورة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu kısmen doğru, ama sabah, akşam ve yemekten sonra bilgisi eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это частично правильно, но не хватает утром, вечером и после еды."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە بەشێک ڕاستە، بەڵام بەیانی، ئێوارە و دوای خواردن کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev hinek rast e, lê sibeh, êvar û piştî xwarinê kêm in."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest częściowo poprawne, ale brakuje rano, wieczorem i po jedzeniu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este parțial corect, dar lipsesc dimineața, seara și după masă."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është pjesërisht e saktë, por mungojnë mëngjesi, mbrëmja dhe pas ushqimit."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Danke, dann nehme ich sie mit viel Wasser.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thank you, then I will take them with plenty of water."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون، پس آن‌ها را با آب زیاد مصرف می‌کنم."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكرًا، إذن سأتناولها مع الكثير من الماء."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler, o zaman bol suyla alıyorum."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо, тогда я буду принимать их с большим количеством воды."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس، ئەوا لەگەڵ ئاوی زۆر دەیانخۆم."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas, wê demê ez wan bi avê gelek dixwim."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję, w takim razie będę je brać z dużą ilością wody."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc, atunci le iau cu multă apă."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit, atëherë do t'i marr me shumë ujë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du übernimmst die Zusatzinformation und schließt höflich ab.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You include the additional information and close politely."
+                },
+                {
+                  "language": "fa",
+                  "text": "اطلاعات اضافه را هم در نظر می‌گیری و مؤدبانه تمام می‌کنی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تأخذ المعلومة الإضافية وتُنهي الحديث بأدب."
+                },
+                {
+                  "language": "tr",
+                  "text": "Ek bilgiyi de alıyor ve kibarca kapatıyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты учитываешь дополнительную информацию и вежливо завершаешь."
+                },
+                {
+                  "language": "ckb",
+                  "text": "زانیاریی زیاتر وەردەگریت و بە ڕێزەوە کۆتایی پێدەهێنیت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu agahiya zêde digirî û bi rêzdarî diqedînî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Uwzględniasz dodatkową informację i uprzejmie kończysz."
+                },
+                {
+                  "language": "ro",
+                  "text": "Preiei informația suplimentară și închei politicos."
+                },
+                {
+                  "language": "sq",
+                  "text": "E përfshin informacionin shtesë dhe e mbyll me mirësjellje."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Danke, tschüss.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thanks, bye."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون، خداحافظ."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكرًا، وداعًا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler, hoşça kal."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо, пока."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس، ماڵئاوا."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas, bi xatirê we."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję, do widzenia."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc, la revedere."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit, mirupafshim."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber du zeigst nicht, dass du die Wasser-Anweisung verstanden hast.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite, but it does not show that you understood the water instruction."
+                },
+                {
+                  "language": "fa",
+                  "text": "مؤدبانه است، اما نشان نمی‌دهد دستور مربوط به آب را فهمیده‌ای."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مهذب، لكنه لا يظهر أنك فهمت تعليمات الماء."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu kibar, ama su talimatını anladığını göstermez."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это вежливо, но не показывает, что ты понял инструкцию про воду."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە ڕێزدارانەیە، بەڵام پیشان نادات کە ڕێنمایی ئاوت تێگەیشتووە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev rêzdar e, lê nîşan nade ku te rêwerza avê fam kiriye."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest uprzejme, ale nie pokazuje, że zrozumiałeś instrukcję o wodzie."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este politicos, dar nu arată că ai înțeles instrucțiunea despre apă."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e sjellshme, por nuk tregon se e ke kuptuar udhëzimin për ujin."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "a2-practice-note",
+          "text": "Bei Medikamenten ist Wiederholen wichtig: wie oft, wann und womit.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "With medication, repeating is important: how often, when, and with what."
+            },
+            {
+              "language": "fa",
+              "text": "درباره دارو، تکرار مهم است: چند بار، چه زمانی و با چه چیزی."
+            },
+            {
+              "language": "ar",
+              "text": "مع الدواء، التكرار مهم: كم مرة، متى، ومع ماذا."
+            },
+            {
+              "language": "tr",
+              "text": "İlaçlarda tekrar önemlidir: ne sıklıkla, ne zaman ve neyle."
+            },
+            {
+              "language": "ru",
+              "text": "С лекарствами важно повторять: как часто, когда и с чем."
+            },
+            {
+              "language": "ckb",
+              "text": "لە دەرماندا دووبارەکردنەوە گرنگە: چەند جار، کەی و لەگەڵ چی."
+            },
+            {
+              "language": "kmr",
+              "text": "Di dermanan de dubarekirin girîng e: çend caran, kengî û bi çi."
+            },
+            {
+              "language": "pl",
+              "text": "Przy lekach ważne jest powtórzenie: jak często, kiedy i z czym."
+            },
+            {
+              "language": "ro",
+              "text": "La medicamente este important să repeți: cât de des, când și cu ce."
+            },
+            {
+              "language": "sq",
+              "text": "Me ilaçet është e rëndësishme të përsërisësh: sa shpesh, kur dhe me çfarë."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "pharmacy-dosage-question",
+          "placement": "header",
+          "purpose": "Set a clear A2 practice context without showing authoring metadata to learners.",
+          "altText": "Illustration einer Frage zur Einnahme in einer Apotheke",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "Illustration of a dosage question in a pharmacy"
+            },
+            {
+              "language": "fa",
+              "text": "تصویرسازی سؤال درباره مصرف دارو در داروخانه"
+            },
+            {
+              "language": "ar",
+              "text": "رسم توضيحي لسؤال عن الجرعة في صيدلية"
+            },
+            {
+              "language": "tr",
+              "text": "Eczanede doz sorusu çizimi"
+            },
+            {
+              "language": "ru",
+              "text": "Иллюстрация вопроса о дозировке в аптеке"
+            },
+            {
+              "language": "ckb",
+              "text": "وێنەسازی پرسیار لەسەر بڕی دەرمان لە دەرمانخانە"
+            },
+            {
+              "language": "kmr",
+              "text": "Wêneyek ji pirsa dozê li dermanxaneyê"
+            },
+            {
+              "language": "pl",
+              "text": "Ilustracja pytania o dawkowanie w aptece"
+            },
+            {
+              "language": "ro",
+              "text": "Ilustrație cu o întrebare despre dozaj într-o farmacie"
+            },
+            {
+              "language": "sq",
+              "text": "Ilustrim i një pyetjeje për dozën në farmaci"
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of a learner asking a pharmacist about dosage and timing; diverse adults; German everyday setting; no logos; no private data; no readable text; accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a2-in-der-schule-eine-krankmeldung-erklaeren",
+      "title": "In der Schule eine Krankmeldung erklären",
+      "cefrLevel": "A2",
+      "category": "school-kindergarten",
+      "topics": [
+        "education-and-training",
+        "appointments-and-health"
+      ],
+      "interactionMode": "school-kindergarten",
+      "register": "formal",
+      "taskType": "explain-problem",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "goethe-a2"
+      ],
+      "sortOrder": 1050,
+      "estimatedPracticeMinutes": 8,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Lehrerin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Teacher"
+            },
+            {
+              "language": "fa",
+              "text": "معلم"
+            },
+            {
+              "language": "ar",
+              "text": "المعلّمة"
+            },
+            {
+              "language": "tr",
+              "text": "Öğretmen"
+            },
+            {
+              "language": "ru",
+              "text": "Учительница"
+            },
+            {
+              "language": "ckb",
+              "text": "مامۆستا"
+            },
+            {
+              "language": "kmr",
+              "text": "Mamoste"
+            },
+            {
+              "language": "pl",
+              "text": "Nauczycielka"
+            },
+            {
+              "language": "ro",
+              "text": "Profesoara"
+            },
+            {
+              "language": "sq",
+              "text": "Mësuesja"
+            }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Explain a sick note at school"
+        },
+        {
+          "language": "fa",
+          "text": "توضیح غیبت به علت بیماری در مدرسه"
+        },
+        {
+          "language": "ar",
+          "text": "شرح بلاغ مرض في المدرسة"
+        },
+        {
+          "language": "tr",
+          "text": "Okulda hastalık bildirimi açıklamak"
+        },
+        {
+          "language": "ru",
+          "text": "Объяснить сообщение о болезни в школе"
+        },
+        {
+          "language": "ckb",
+          "text": "لە قوتابخانە ڕاپۆرتی نەخۆشی ڕوون بکەوە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li dibistanê agahdariya nexweşiyê şirove bike"
+        },
+        {
+          "language": "pl",
+          "text": "Wyjaśnić zgłoszenie choroby w szkole"
+        },
+        {
+          "language": "ro",
+          "text": "Explici o absență medicală la școală"
+        },
+        {
+          "language": "sq",
+          "text": "Shpjego një njoftim sëmundjeje në shkollë"
+        }
+      ],
+      "description": "Du übst, in der Schule zu erklären, dass ein Kind krank ist und welche Unterlagen nötig sind.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice explaining at school that a child is ill and asking which documents are needed."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی در مدرسه توضیح بدهی که کودک بیمار است و بپرسی چه مدارکی لازم است."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على شرح أن الطفل مريض في المدرسة والسؤال عن المستندات المطلوبة."
+        },
+        {
+          "language": "tr",
+          "text": "Okulda çocuğun hasta olduğunu açıklamayı ve hangi belgelerin gerektiğini sormayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься объяснять в школе, что ребёнок болен, и спрашивать, какие документы нужны."
+        },
+        {
+          "language": "ckb",
+          "text": "ڕاهێنان دەکەیت لە قوتابخانە ڕوون بکەیتەوە کە منداڵەکە نەخۆشە و بپرسیت چ بەڵگەنامەیەک پێویستە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu hîn dibî li dibistanê şirove bikî ku zarok nexweş e û bipirsî kîjan belge pêwîst in."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz wyjaśnienie w szkole, że dziecko jest chore, i pytanie, jakie dokumenty są potrzebne."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi cum să explici la școală că un copil este bolnav și să întrebi ce documente sunt necesare."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron si të shpjegosh në shkollë se fëmija është i sëmurë dhe të pyesësh cilat dokumente duhen."
+        }
+      ],
+      "learnerGoal": "Du kannst Name, Klasse, voraussichtliche Dauer und Dokumentenfrage nennen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can give the name, class, expected duration, and ask about documents."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی نام، کلاس، مدت احتمالی و سؤال درباره مدارک را بگویی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك ذكر الاسم والصف والمدة المتوقعة والسؤال عن المستندات."
+        },
+        {
+          "language": "tr",
+          "text": "Adı, sınıfı, beklenen süreyi söyleyebilir ve belgeleri sorabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь назвать имя, класс, ожидаемую длительность и спросить о документах."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت ناو، پۆل، ماوەی پێشبینیکراو و پرسیاری بەڵگەنامە بڵێیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî nav, pol, dema tê texmînkirin û pirsa belgeyan bibêjî."
+        },
+        {
+          "language": "pl",
+          "text": "Umiesz podać imię, klasę, przewidywany czas i zapytać o dokumenty."
+        },
+        {
+          "language": "ro",
+          "text": "Poți spune numele, clasa, durata estimată și poți întreba despre documente."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të thuash emrin, klasën, kohëzgjatjen e pritshme dhe të pyesësh për dokumentet."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Guten Morgen, wie kann ich helfen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning, how can I help?"
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر، چطور می‌توانم کمک کنم؟"
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير، كيف يمكنني المساعدة؟"
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın, nasıl yardımcı olabilirim?"
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро, чем могу помочь?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش، چۆن دەتوانم یارمەتیت بدەم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Sibeh baş, ez çawa dikarim alîkarî bikim?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry, jak mogę pomóc?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața, cum pot ajuta?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes, si mund të ndihmoj?"
+            }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Morgen. Meine Tochter Sara aus Klasse 2A ist krank.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. My daughter Sara from class 2A is ill."
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر. دخترم سارا از کلاس ۲A بیمار است."
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير. ابنتي سارة من الصف 2A مريضة."
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın. 2A sınıfından kızım Sara hasta."
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро. Моя дочь Сара из класса 2A болеет."
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش. کچەکەم سارا لە پۆلی 2A نەخۆشە."
+            },
+            {
+              "language": "kmr",
+              "text": "Sibeh baş. Keça min Sara ji pola 2A nexweş e."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Moja córka Sara z klasy 2A jest chora."
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața. Fiica mea Sara din clasa 2A este bolnavă."
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes. Vajza ime Sara nga klasa 2A është e sëmurë."
+            }
+          ],
+          "function": "notice",
+          "expectedLearnerAction": "Give child name and class."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "teacher",
+          "baseText": "Wie lange fehlt sie ungefähr?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "About how long will she be absent?"
+            },
+            {
+              "language": "fa",
+              "text": "تقریباً چه مدت غایب خواهد بود؟"
+            },
+            {
+              "language": "ar",
+              "text": "كم ستغيب تقريبًا؟"
+            },
+            {
+              "language": "tr",
+              "text": "Yaklaşık ne kadar süre gelmeyecek?"
+            },
+            {
+              "language": "ru",
+              "text": "Примерно как долго её не будет?"
+            },
+            {
+              "language": "ckb",
+              "text": "نزیکەی چەند ماوە غایب دەبێت؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Nêzîkî çiqas dem dê tune be?"
+            },
+            {
+              "language": "pl",
+              "text": "Jak długo mniej więcej jej nie będzie?"
+            },
+            {
+              "language": "ro",
+              "text": "Cam cât timp va lipsi?"
+            },
+            {
+              "language": "sq",
+              "text": "Rreth sa kohë do të mungojë?"
+            }
+          ],
+          "function": "duration-question"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Wahrscheinlich zwei Tage. Brauchen Sie eine Bescheinigung vom Arzt?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Probably two days. Do you need a doctor's note?"
+            },
+            {
+              "language": "fa",
+              "text": "احتمالاً دو روز. آیا گواهی پزشک لازم دارید؟"
+            },
+            {
+              "language": "ar",
+              "text": "غالبًا يومين. هل تحتاجون إلى شهادة من الطبيب؟"
+            },
+            {
+              "language": "tr",
+              "text": "Muhtemelen iki gün. Doktordan rapor gerekiyor mu?"
+            },
+            {
+              "language": "ru",
+              "text": "Вероятно, два дня. Вам нужна справка от врача?"
+            },
+            {
+              "language": "ckb",
+              "text": "لەوانەیە دوو ڕۆژ. پێویستتان بە بەڵگەنامەی پزیشک هەیە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Dibe ku du roj. Belgeya bijîşk pêwîst e?"
+            },
+            {
+              "language": "pl",
+              "text": "Prawdopodobnie dwa dni. Czy potrzebują państwo zaświadczenia od lekarza?"
+            },
+            {
+              "language": "ro",
+              "text": "Probabil două zile. Aveți nevoie de o adeverință de la medic?"
+            },
+            {
+              "language": "sq",
+              "text": "Ndoshta dy ditë. A ju duhet një vërtetim nga mjeku?"
+            }
+          ],
+          "function": "duration-and-document",
+          "expectedLearnerAction": "Give duration and ask document question."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Bitte schicken Sie uns eine kurze Nachricht per E-Mail.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Please send us a short message by email."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً یک پیام کوتاه از طریق ایمیل برای ما بفرستید."
+            },
+            {
+              "language": "ar",
+              "text": "من فضلك أرسل لنا رسالة قصيرة عبر البريد الإلكتروني."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen bize e-posta ile kısa bir mesaj gönderin."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, отправьте нам короткое сообщение по электронной почте."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە نامەیەکی کورت بە ئیمەیڵ بۆمان بنێرن."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe peyameke kurt bi e-mailê ji me re bişînin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę wysłać nam krótką wiadomość e-mailem."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rog să ne trimiteți un mesaj scurt pe e-mail."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutem na dërgoni një mesazh të shkurtër me email."
+            }
+          ],
+          "function": "instruction"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Alles klar. Ich schicke die E-Mail heute Vormittag.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "All right. I will send the email this morning."
+            },
+            {
+              "language": "fa",
+              "text": "باشه. ایمیل را امروز قبل از ظهر می‌فرستم."
+            },
+            {
+              "language": "ar",
+              "text": "حسنًا. سأرسل البريد الإلكتروني هذا الصباح."
+            },
+            {
+              "language": "tr",
+              "text": "Tamam. E-postayı bugün öğleden önce gönderiyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Хорошо. Я отправлю письмо сегодня до обеда."
+            },
+            {
+              "language": "ckb",
+              "text": "باشە. ئەم بەیانییە ئیمەیڵەکە دەنێرم."
+            },
+            {
+              "language": "kmr",
+              "text": "Temam. Ez îro berî nîvro e-mailê dişînim."
+            },
+            {
+              "language": "pl",
+              "text": "W porządku. Wyślę e-mail dziś przed południem."
+            },
+            {
+              "language": "ro",
+              "text": "În regulă. Trimit e-mailul astăzi înainte de prânz."
+            },
+            {
+              "language": "sq",
+              "text": "Në rregull. Do ta dërgoj emailin sot paradite."
+            }
+          ],
+          "function": "confirmation",
+          "expectedLearnerAction": "Confirm next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Guten Morgen. Meine Tochter Sara aus Klasse 2A ist krank.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good morning. My daughter Sara from class 2A is ill."
+                },
+                {
+                  "language": "fa",
+                  "text": "صبح بخیر. دخترم سارا از کلاس ۲A بیمار است."
+                },
+                {
+                  "language": "ar",
+                  "text": "صباح الخير. ابنتي سارة من الصف 2A مريضة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Günaydın. 2A sınıfından kızım Sara hasta."
+                },
+                {
+                  "language": "ru",
+                  "text": "Доброе утро. Моя дочь Сара из класса 2A болеет."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەیانی باش. کچەکەم سارا لە پۆلی 2A نەخۆشە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Sibeh baş. Keça min Sara ji pola 2A nexweş e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Moja córka Sara z klasy 2A jest chora."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună dimineața. Fiica mea Sara din clasa 2A este bolnavă."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëmëngjes. Vajza ime Sara nga klasa 2A është e sëmurë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du nennst Kind, Klasse und Problem klar.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You clearly name the child, class, and problem."
+                },
+                {
+                  "language": "fa",
+                  "text": "کودک، کلاس و مشکل را روشن می‌گویی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تذكر الطفل والصف والمشكلة بوضوح."
+                },
+                {
+                  "language": "tr",
+                  "text": "Çocuğu, sınıfı ve problemi açıkça söylüyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты ясно называешь ребёнка, класс и проблему."
+                },
+                {
+                  "language": "ckb",
+                  "text": "منداڵ، پۆل و کێشەکە بە ڕوونی دەڵێیت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu zarok, pol û pirsgirêkê bi zelalî dibêjî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Jasno podajesz dziecko, klasę i problem."
+                },
+                {
+                  "language": "ro",
+                  "text": "Numesti clar copilul, clasa și problema."
+                },
+                {
+                  "language": "sq",
+                  "text": "Tregon qartë fëmijën, klasën dhe problemin."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Mein Kind ist krank.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "My child is ill."
+                },
+                {
+                  "language": "fa",
+                  "text": "فرزندم بیمار است."
+                },
+                {
+                  "language": "ar",
+                  "text": "طفلي مريض."
+                },
+                {
+                  "language": "tr",
+                  "text": "Çocuğum hasta."
+                },
+                {
+                  "language": "ru",
+                  "text": "Мой ребёнок болен."
+                },
+                {
+                  "language": "ckb",
+                  "text": "منداڵەکەم نەخۆشە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Zarokê min nexweş e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Moje dziecko jest chore."
+                },
+                {
+                  "language": "ro",
+                  "text": "Copilul meu este bolnav."
+                },
+                {
+                  "language": "sq",
+                  "text": "Fëmija im është i sëmurë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist richtig, aber Name und Klasse fehlen für die Schule.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is correct, but the name and class are missing for school."
+                },
+                {
+                  "language": "fa",
+                  "text": "درست است، اما برای مدرسه نام و کلاس کم است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا صحيح، لكن الاسم والصف غير مذكورين للمدرسة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu doğru, ama okul için isim ve sınıf eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это правильно, но для школы не хватает имени и класса."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە ڕاستە، بەڵام بۆ قوتابخانە ناو و پۆل کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev rast e, lê ji bo dibistanê nav û pol kêm in."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest poprawne, ale w szkole brakuje imienia i klasy."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este corect, dar pentru școală lipsesc numele și clasa."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e saktë, por për shkollën mungojnë emri dhe klasa."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Wahrscheinlich zwei Tage. Brauchen Sie eine Bescheinigung vom Arzt?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Probably two days. Do you need a doctor's note?"
+                },
+                {
+                  "language": "fa",
+                  "text": "احتمالاً دو روز. آیا گواهی پزشک لازم دارید؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "غالبًا يومين. هل تحتاجون إلى شهادة من الطبيب؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Muhtemelen iki gün. Doktordan rapor gerekiyor mu?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Вероятно, два дня. Вам нужна справка от врача?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە دوو ڕۆژ. پێویستتان بە بەڵگەنامەی پزیشک هەیە؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku du roj. Belgeya bijîşk pêwîst e?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Prawdopodobnie dwa dni. Czy potrzebują państwo zaświadczenia od lekarza?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Probabil două zile. Aveți nevoie de o adeverință de la medic?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Ndoshta dy ditë. A ju duhet një vërtetim nga mjeku?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du gibst die Dauer und fragst nach der nötigen Unterlage.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You give the duration and ask about the needed document."
+                },
+                {
+                  "language": "fa",
+                  "text": "مدت را می‌گویی و درباره مدرک لازم سؤال می‌کنی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تذكر المدة وتسأل عن المستند المطلوب."
+                },
+                {
+                  "language": "tr",
+                  "text": "Süreyi söylüyor ve gerekli belgeyi soruyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты называешь длительность и спрашиваешь о нужном документе."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ماوەکە دەڵێیت و پرسیار لە بەڵگەنامەی پێویست دەکەیت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu demê dibêjî û li belgeya pêwîst dipirsî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Podajesz czas trwania i pytasz o potrzebny dokument."
+                },
+                {
+                  "language": "ro",
+                  "text": "Dai durata și întrebi despre documentul necesar."
+                },
+                {
+                  "language": "sq",
+                  "text": "Jep kohëzgjatjen dhe pyet për dokumentin e nevojshëm."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Vielleicht zwei Tage.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Maybe two days."
+                },
+                {
+                  "language": "fa",
+                  "text": "شاید دو روز."
+                },
+                {
+                  "language": "ar",
+                  "text": "ربما يومين."
+                },
+                {
+                  "language": "tr",
+                  "text": "Belki iki gün."
+                },
+                {
+                  "language": "ru",
+                  "text": "Может быть, два дня."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ڕەنگە دوو ڕۆژ."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku du roj."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może dwa dni."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate două zile."
+                },
+                {
+                  "language": "sq",
+                  "text": "Ndoshta dy ditë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Dauer ist da, aber die Frage nach der Unterlage fehlt.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "The duration is there, but the question about the document is missing."
+                },
+                {
+                  "language": "fa",
+                  "text": "مدت گفته شده، اما سؤال درباره مدرک کم است."
+                },
+                {
+                  "language": "ar",
+                  "text": "المدة موجودة، لكن السؤال عن المستند غير موجود."
+                },
+                {
+                  "language": "tr",
+                  "text": "Süre var, ama belge sorusu eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Длительность есть, но нет вопроса о документе."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ماوەکە هەیە، بەڵام پرسیاری بەڵگەنامە نییە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dem heye, lê pirsa belgeyê tune ye."
+                },
+                {
+                  "language": "pl",
+                  "text": "Czas trwania jest podany, ale brakuje pytania o dokument."
+                },
+                {
+                  "language": "ro",
+                  "text": "Durata este prezentă, dar lipsește întrebarea despre document."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kohëzgjatja është, por mungon pyetja për dokumentin."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended-answer",
+              "text": "Alles klar. Ich schicke die E-Mail heute Vormittag.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "All right. I will send the email this morning."
+                },
+                {
+                  "language": "fa",
+                  "text": "باشه. ایمیل را امروز قبل از ظهر می‌فرستم."
+                },
+                {
+                  "language": "ar",
+                  "text": "حسنًا. سأرسل البريد الإلكتروني هذا الصباح."
+                },
+                {
+                  "language": "tr",
+                  "text": "Tamam. E-postayı bugün öğleden önce gönderiyorum."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо. Я отправлю письмо сегодня до обеда."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باشە. ئەم بەیانییە ئیمەیڵەکە دەنێرم."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Temam. Ez îro berî nîvro e-mailê dişînim."
+                },
+                {
+                  "language": "pl",
+                  "text": "W porządku. Wyślę e-mail dziś przed południem."
+                },
+                {
+                  "language": "ro",
+                  "text": "În regulă. Trimit e-mailul astăzi înainte de prânz."
+                },
+                {
+                  "language": "sq",
+                  "text": "Në rregull. Do ta dërgoj emailin sot paradite."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "Du bestätigst die nächste Handlung mit Zeit.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "You confirm the next action with a time."
+                },
+                {
+                  "language": "fa",
+                  "text": "اقدام بعدی را همراه با زمان تأیید می‌کنی."
+                },
+                {
+                  "language": "ar",
+                  "text": "تؤكد الخطوة التالية مع الوقت."
+                },
+                {
+                  "language": "tr",
+                  "text": "Sonraki adımı zamanla birlikte onaylıyorsun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Ты подтверждаешь следующее действие с временем."
+                },
+                {
+                  "language": "ckb",
+                  "text": "هەنگاوی داهاتوو لەگەڵ کات پشتڕاست دەکەیتەوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tu gavê din bi demê re piştrast dikî."
+                },
+                {
+                  "language": "pl",
+                  "text": "Potwierdzasz kolejne działanie wraz z czasem."
+                },
+                {
+                  "language": "ro",
+                  "text": "Confirmi acțiunea următoare cu timpul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Konfirmon veprimin tjetër me kohën."
+                }
+              ],
+              "explanationKey": "complete-a2-answer"
+            },
+            {
+              "id": "plausible-but-incomplete",
+              "text": "Okay.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Okay."
+                },
+                {
+                  "language": "fa",
+                  "text": "باشه."
+                },
+                {
+                  "language": "ar",
+                  "text": "حسنًا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Tamam."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باشە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Temam."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dobrze."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Në rregull."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist zu kurz, weil nicht klar ist, ob und wann du die E-Mail schickst.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is too short because it is not clear whether and when you will send the email."
+                },
+                {
+                  "language": "fa",
+                  "text": "خیلی کوتاه است، چون روشن نیست آیا و چه زمانی ایمیل را می‌فرستی."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا قصير جدًا، لأنه ليس واضحًا هل ومتى سترسل البريد الإلكتروني."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu çok kısa, çünkü e-postayı gönderip göndermeyeceğin ve ne zaman göndereceğin belli değil."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это слишком коротко, потому что не ясно, отправишь ли ты письмо и когда."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە زۆر کورتە، چونکە ڕوون نییە ئایا و کەی ئیمەیڵەکە دەنێریت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev pir kurt e, ji ber ku nezelal e gelo tu e-mailê dişînî û kengî."
+                },
+                {
+                  "language": "pl",
+                  "text": "To jest zbyt krótkie, bo nie wiadomo, czy i kiedy wyślesz e-mail."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este prea scurt, pentru că nu este clar dacă și când trimiți e-mailul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është shumë e shkurtër, sepse nuk është e qartë nëse dhe kur do ta dërgosh emailin."
+                }
+              ],
+              "explanationKey": "plausible-but-insufficient"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "a2-practice-note",
+          "text": "Bei Krankmeldungen helfen Name, Klasse, Dauer und die Frage nach Unterlagen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "For sick notices, name, class, duration, and the question about documents help."
+            },
+            {
+              "language": "fa",
+              "text": "برای اعلام بیماری، نام، کلاس، مدت و سؤال درباره مدارک کمک می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "في بلاغ المرض تساعد المعلومات: الاسم والصف والمدة والسؤال عن المستندات."
+            },
+            {
+              "language": "tr",
+              "text": "Hastalık bildiriminde isim, sınıf, süre ve belge sorusu yardımcı olur."
+            },
+            {
+              "language": "ru",
+              "text": "При сообщении о болезни помогают имя, класс, длительность и вопрос о документах."
+            },
+            {
+              "language": "ckb",
+              "text": "لە ڕاپۆرتی نەخۆشیدا ناو، پۆل، ماوە و پرسیاری بەڵگەنامە یارمەتیدەرن."
+            },
+            {
+              "language": "kmr",
+              "text": "Di agahdariya nexweşiyê de nav, pol, dem û pirsa belgeyan alîkar in."
+            },
+            {
+              "language": "pl",
+              "text": "Przy zgłoszeniu choroby pomagają imię, klasa, czas i pytanie o dokumenty."
+            },
+            {
+              "language": "ro",
+              "text": "La anunțarea bolii ajută numele, clasa, durata și întrebarea despre documente."
+            },
+            {
+              "language": "sq",
+              "text": "Te njoftimi i sëmundjes ndihmojnë emri, klasa, kohëzgjatja dhe pyetja për dokumentet."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "school-sick-note-a2",
+          "placement": "header",
+          "purpose": "Set a clear A2 practice context without showing authoring metadata to learners.",
+          "altText": "Illustration eines Gesprächs über eine Krankmeldung in der Schule",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "Illustration of a conversation about a sick notice at school"
+            },
+            {
+              "language": "fa",
+              "text": "تصویرسازی گفت‌وگو درباره اعلام بیماری در مدرسه"
+            },
+            {
+              "language": "ar",
+              "text": "رسم توضيحي لحديث عن بلاغ مرض في المدرسة"
+            },
+            {
+              "language": "tr",
+              "text": "Okulda hastalık bildirimi hakkında konuşma çizimi"
+            },
+            {
+              "language": "ru",
+              "text": "Иллюстрация разговора о сообщении болезни в школе"
+            },
+            {
+              "language": "ckb",
+              "text": "وێنەسازی گفتوگۆ لەسەر ڕاپۆرتی نەخۆشی لە قوتابخانە"
+            },
+            {
+              "language": "kmr",
+              "text": "Wêneyek ji axaftina li ser agahdariya nexweşiyê li dibistanê"
+            },
+            {
+              "language": "pl",
+              "text": "Ilustracja rozmowy o zgłoszeniu choroby w szkole"
+            },
+            {
+              "language": "ro",
+              "text": "Ilustrație cu o discuție despre anunțarea bolii la școală"
+            },
+            {
+              "language": "sq",
+              "text": "Ilustrim i një bisede për njoftimin e sëmundjes në shkollë"
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of a parent speaking with a school staff member about a child's sick notice; diverse adults; German everyday setting; no logos; no private data; no readable text; accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-11-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 11 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 11",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-ein-kundenproblem-intern-eskalieren",
+      "linkedDialogueSlug": null,
+      "title": "Ein Kundenproblem intern eskalieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Escalating a customer problem internally" },
+        { "language": "fa", "text": "ارجاع داخلی یک مشکل مشتری" },
+        { "language": "ar", "text": "تصعيد مشكلة عميل داخلياً" },
+        { "language": "tr", "text": "Bir müşteri sorununu içeride üst seviyeye taşımak" },
+        { "language": "ru", "text": "Внутренне эскалировать проблему клиента" },
+        { "language": "ckb", "text": "بەرزکردنەوەی ناوخۆیی کێشەی کڕیار" },
+        { "language": "kmr", "text": "Pirsgirêka mişterî li hundir bilind kirin" },
+        { "language": "pl", "text": "Wewnętrzna eskalacja problemu klienta" },
+        { "language": "ro", "text": "Escaladarea internă a unei probleme a clientului" },
+        { "language": "sq", "text": "Eskalimi i brendshëm i një problemi të klientit" }
+      ],
+      "description": "Ein wichtiger Kunde meldet, dass ein zugesagter Export wiederholt fehlschlägt. Du musst das Problem intern eskalieren: sachlich, lösungsorientiert und mit einer klaren Entscheidung, welche Person bis wann handelt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "An important customer reports that a promised export keeps failing. You need to escalate the problem internally: factually, solution-oriented, and with a clear decision on who acts by when." },
+        { "language": "fa", "text": "یک مشتری مهم گزارش داده که خروجی وعده‌داده‌شده چند بار شکست می‌خورد. باید مسئله را داخل تیم escalation کنی: factual، راه‌حل‌محور و با تصمیم روشن درباره اینکه چه کسی تا چه زمانی اقدام می‌کند." },
+        { "language": "ar", "text": "يبلغ عميل مهم أن تصديراً موعوداً يفشل مراراً. يجب أن تصعّد المشكلة داخلياً: بموضوعية وبتركيز على الحل، مع قرار واضح حول من سيتصرف ومتى." },
+        { "language": "tr", "text": "Önemli bir müşteri, söz verilen bir dışa aktarmanın tekrar tekrar başarısız olduğunu bildiriyor. Sorunu içeride üst seviyeye taşımalısın: olgusal, çözüm odaklı ve kimin ne zamana kadar hareket edeceğine dair net bir kararla." },
+        { "language": "ru", "text": "Важный клиент сообщает, что обещанный экспорт снова и снова не срабатывает. Нужно внутренне эскалировать проблему: фактически, ориентируясь на решение, и с ясным решением, кто и к какому сроку действует." },
+        { "language": "ckb", "text": "کڕیارێکی گرنگ ڕاپۆرت دەدات کە هەناردەکردنی بەڵێندراو چەند جارە شکست دەهێنێت. دەبێت کێشەکە لە ناوخۆ بەرز بکەیتەوە: بە بابەتی، چارەسەر-ئاراستە و بە بڕیارێکی ڕوون کە کێ تا کەی هەنگاو دەگرێت." },
+        { "language": "kmr", "text": "Mişteriyekî girîng radigihîne ku derxistina hatî sozdan gelek caran têk diçe. Divê tu pirsgirêkê li hundir bilind bikî: bi rastiyan, bi arasteya çareseriyê û bi biryareke zelal ku kî heta kengê tev digere." },
+        { "language": "pl", "text": "Ważny klient zgłasza, że obiecany eksport wielokrotnie się nie udaje. Musisz wewnętrznie eskalować problem: rzeczowo, zorientowanie na rozwiązanie i z jasną decyzją, kto działa do kiedy." },
+        { "language": "ro", "text": "Un client important anunță că un export promis eșuează în mod repetat. Trebuie să escaladezi problema intern: factual, orientat spre soluție și cu o decizie clară despre cine acționează până când." },
+        { "language": "sq", "text": "Një klient i rëndësishëm raporton se një eksport i premtuar dështon vazhdimisht. Duhet ta eskalosh problemin brenda ekipit: në mënyrë faktike, të orientuar nga zgjidhja dhe me një vendim të qartë se kush vepron deri kur." }
+      ],
+      "learnerGoal": "Eskaliere ein Kundenproblem professionell: Trenne Fakten, Kundenerwartung, Auswirkung, Risiko und Entscheidungsbedarf und schließe mit einem klaren nächsten Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Escalate a customer problem professionally: separate facts, customer expectation, impact, risk, and decision need, and close with a clear next step." },
+        { "language": "fa", "text": "یک مشکل مشتری را حرفه‌ای escalation کن: factها، انتظار مشتری، اثر، ریسک و نیاز به تصمیم را جدا کن و با قدم بعدی روشن تمام کن." },
+        { "language": "ar", "text": "صعّد مشكلة العميل بشكل مهني: افصل بين الحقائق وتوقع العميل والتأثير والخطر والحاجة إلى قرار، واختم بخطوة تالية واضحة." },
+        { "language": "tr", "text": "Bir müşteri sorununu profesyonelce üst seviyeye taşı: olguları, müşteri beklentisini, etkiyi, riski ve karar ihtiyacını ayır; net bir sonraki adımla kapat." },
+        { "language": "ru", "text": "Профессионально эскалируй проблему клиента: раздели факты, ожидание клиента, влияние, риск и необходимость решения, затем заверши ясным следующим шагом." },
+        { "language": "ckb", "text": "کێشەی کڕیار بە شێوەی پیشەیی بەرز بکەوە: ڕاستییەکان، چاوەڕوانی کڕیار، کاریگەری، مەترسی و پێویستی بڕیار جیا بکەوە و بە هەنگاوی داهاتووی ڕوون کۆتایی پێبهێنە." },
+        { "language": "kmr", "text": "Pirsgirêka mişterî bi awayekî profesyonel bilind bike: rastî, hêviya mişterî, bandor, xeter û pêwîstiya biryarê ji hev veqetîne û bi gaveke paşîn a zelal bi dawî bike." },
+        { "language": "pl", "text": "Profesjonalnie eskaluj problem klienta: oddziel fakty, oczekiwanie klienta, wpływ, ryzyko i potrzebę decyzji, a zakończ jasnym następnym krokiem." },
+        { "language": "ro", "text": "Escaladează profesionist o problemă a clientului: separă faptele, așteptarea clientului, impactul, riscul și nevoia de decizie și încheie cu un pas următor clar." },
+        { "language": "sq", "text": "Eskalo profesionalisht një problem të klientit: ndaj faktet, pritjen e klientit, ndikimin, rrezikun dhe nevojën për vendim dhe mbylle me një hap tjetër të qartë." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "customer-service"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication", "complaint-handling"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3110,
+      "roles": [
+        {
+          "roleKey": "manager",
+          "displayName": "Teamleitung",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "قائدة الفريق" },
+            { "language": "tr", "text": "Ekip lideri" },
+            { "language": "ru", "text": "Руководитель команды" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Lider zespołu" },
+            { "language": "ro", "text": "Coordonatorul echipei" },
+            { "language": "sq", "text": "Drejtuesi i ekipit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "manager",
+          "baseText": "Du wolltest ein Kundenproblem intern eskalieren. Was ist passiert?",
+          "translations": [
+            { "language": "en", "text": "You wanted to escalate a customer problem internally. What happened?" },
+            { "language": "fa", "text": "می‌خواستی یک مشکل مشتری را داخل تیم escalation کنی. چه اتفاقی افتاده؟" },
+            { "language": "ar", "text": "كنت تريد تصعيد مشكلة عميل داخلياً. ماذا حدث؟" },
+            { "language": "tr", "text": "Bir müşteri sorununu içeride üst seviyeye taşımak istiyordun. Ne oldu?" },
+            { "language": "ru", "text": "Ты хотел внутренне эскалировать проблему клиента. Что случилось?" },
+            { "language": "ckb", "text": "دەتویست کێشەیەکی کڕیار لە ناوخۆ بەرز بکەیتەوە. چی ڕوویدا؟" },
+            { "language": "kmr", "text": "Te dixwest pirsgirêka mişterî li hundir bilind bikî. Çi qewimî?" },
+            { "language": "pl", "text": "Chciałeś wewnętrznie eskalować problem klienta. Co się stało?" },
+            { "language": "ro", "text": "Voiai să escaladezi intern o problemă a clientului. Ce s-a întâmplat?" },
+            { "language": "sq", "text": "Doje të eskaloje brenda ekipit një problem të klientit. Çfarë ndodhi?" }
+          ],
+          "function": "open-escalation"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Der Kunde hat heute Morgen gemeldet, dass der zugesagte Export zum dritten Mal abbricht. Es betrifft nur einen Datensatztyp, aber genau den braucht der Kunde für seinen Monatsabschluss.",
+          "translations": [
+            { "language": "en", "text": "The customer reported this morning that the promised export fails for the third time. It affects only one data record type, but that is exactly the one the customer needs for their monthly closing." },
+            { "language": "fa", "text": "مشتری امروز صبح گزارش داد که خروجی وعده‌داده‌شده برای بار سوم قطع می‌شود. فقط یک نوع رکورد داده را درگیر می‌کند، اما دقیقاً همان چیزی است که مشتری برای بستن ماهانه نیاز دارد." },
+            { "language": "ar", "text": "أبلغ العميل هذا الصباح أن التصدير الموعود يتوقف للمرة الثالثة. يؤثر الأمر في نوع واحد فقط من سجلات البيانات، لكنه بالضبط النوع الذي يحتاجه العميل لإغلاقه الشهري." },
+            { "language": "tr", "text": "Müşteri bu sabah, söz verilen dışa aktarmanın üçüncü kez kesildiğini bildirdi. Sadece bir veri kaydı türünü etkiliyor, ama müşteri aylık kapanışı için tam da buna ihtiyaç duyuyor." },
+            { "language": "ru", "text": "Клиент сегодня утром сообщил, что обещанный экспорт в третий раз прерывается. Это касается только одного типа записи данных, но именно он нужен клиенту для месячного закрытия." },
+            { "language": "ckb", "text": "کڕیار ئەم بەیانییە ڕایگەیاند کە هەناردەکردنی بەڵێندراو بۆ جاری سێیەم دەبڕێت. تەنها جۆرێکی تۆماری داتا دەگرێتەوە، بەڵام کڕیار ڕاستەوخۆ ئەوەی بۆ داخستنی مانگانە پێویستە." },
+            { "language": "kmr", "text": "Mişterî vê sibehê ragihand ku derxistina hatî sozdan cara sêyem tê qutkirin. Ev tenê cureyekî tomara daneyan bandor dike, lê mişterî ji bo girtina mehane tam wê pêwîst dike." },
+            { "language": "pl", "text": "Klient zgłosił dziś rano, że obiecany eksport przerywa się po raz trzeci. Dotyczy to tylko jednego typu rekordu danych, ale właśnie tego klient potrzebuje do miesięcznego zamknięcia." },
+            { "language": "ro", "text": "Clientul a raportat în această dimineață că exportul promis se întrerupe pentru a treia oară. Afectează doar un tip de înregistrare de date, dar exact pe acela îl are clientul nevoie pentru închiderea lunară." },
+            { "language": "sq", "text": "Klienti raportoi këtë mëngjes se eksporti i premtuar ndërpritet për herë të tretë. Prek vetëm një lloj regjistri të dhënash, por pikërisht atë i duhet klientit për mbylljen mujore." }
+          ],
+          "function": "state-facts-and-impact",
+          "expectedLearnerAction": "State the factual incident, scope, and customer impact without blaming anyone."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "manager",
+          "baseText": "Ist das ein technischer Fehler oder eher ein Missverständnis über den vereinbarten Umfang?",
+          "translations": [
+            { "language": "en", "text": "Is this a technical error or more of a misunderstanding about the agreed scope?" },
+            { "language": "fa", "text": "این یک خطای فنی است یا بیشتر سوءتفاهم درباره محدوده توافق‌شده؟" },
+            { "language": "ar", "text": "هل هذا خطأ تقني أم أنه بالأحرى سوء فهم حول النطاق المتفق عليه؟" },
+            { "language": "tr", "text": "Bu teknik bir hata mı, yoksa daha çok üzerinde anlaşılan kapsamla ilgili bir yanlış anlaşılma mı?" },
+            { "language": "ru", "text": "Это техническая ошибка или скорее недоразумение по поводу согласованного объёма?" },
+            { "language": "ckb", "text": "ئەمە هەڵەیەکی تەکنیکییە یان زیاتر تێنەگەیشتنە لەسەر سنووری ڕێککەوتوو؟" },
+            { "language": "kmr", "text": "Ev xeletiyeke teknîkî ye an bêtir tênegihîştinek li ser çarçoveya li hev hatî ye?" },
+            { "language": "pl", "text": "Czy to błąd techniczny, czy raczej nieporozumienie dotyczące uzgodnionego zakresu?" },
+            { "language": "ro", "text": "Este o eroare tehnică sau mai degrabă o neînțelegere privind domeniul convenit?" },
+            { "language": "sq", "text": "A është ky një gabim teknik apo më shumë një keqkuptim për fushën e rënë dakord?" }
+          ],
+          "function": "clarify-cause"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Nach aktuellem Stand ist es technisch: Der Export startet, bricht aber bei großen Datensätzen ab. Die Erwartung des Kunden ist berechtigt, weil dieser Export im letzten Protokoll als zugesagt markiert wurde.",
+          "translations": [
+            { "language": "en", "text": "Based on the current status, it is technical: the export starts but fails with large data sets. The customer's expectation is justified because this export was marked as promised in the last minutes." },
+            { "language": "fa", "text": "طبق وضعیت فعلی، موضوع فنی است: خروجی شروع می‌شود اما در داده‌های بزرگ قطع می‌شود. انتظار مشتری موجه است، چون این خروجی در صورت‌جلسه قبلی به‌عنوان وعده‌داده‌شده ثبت شده بود." },
+            { "language": "ar", "text": "وفق الوضع الحالي، المسألة تقنية: يبدأ التصدير لكنه يتوقف عند مجموعات البيانات الكبيرة. توقع العميل مبرر لأن هذا التصدير وُضع في المحضر الأخير على أنه مُتعهَّد به." },
+            { "language": "tr", "text": "Mevcut duruma göre teknik: dışa aktarma başlıyor, ancak büyük veri setlerinde kesiliyor. Müşterinin beklentisi haklı, çünkü bu dışa aktarma son tutanakta söz verilmiş olarak işaretlendi." },
+            { "language": "ru", "text": "По текущему состоянию это техническая проблема: экспорт запускается, но прерывается на больших наборах данных. Ожидание клиента обосновано, потому что этот экспорт был отмечен в последнем протоколе как обещанный." },
+            { "language": "ckb", "text": "بەپێی دۆخی ئێستا، بابەتەکە تەکنیکییە: هەناردەکردن دەست پێ دەکات، بەڵام لەسەر کۆمەڵە داتای گەورە دەبڕێت. چاوەڕوانی کڕیار ڕەوایە، چونکە ئەم هەناردەکردنە لە تۆماری پێشوو وەک بەڵێندراو نیشان کراوە." },
+            { "language": "kmr", "text": "Li gorî rewşa niha, ev teknîkî ye: derxistin dest pê dike, lê li ser komên daneyên mezin tê qutkirin. Hêviya mişterî mafdar e, ji ber ku ev derxistin di protokola dawî de wek hatî sozdan hat nîşankirin." },
+            { "language": "pl", "text": "Według obecnego stanu to kwestia techniczna: eksport startuje, ale przerywa się przy dużych zestawach danych. Oczekiwanie klienta jest uzasadnione, bo ten eksport został w ostatnim protokole oznaczony jako obiecany." },
+            { "language": "ro", "text": "Conform stadiului actual, este tehnic: exportul pornește, dar se oprește la seturi mari de date. Așteptarea clientului este justificată, deoarece acest export a fost marcat ca promis în ultimul proces-verbal." },
+            { "language": "sq", "text": "Sipas gjendjes aktuale, është teknike: eksporti nis, por ndërpritet te grupe të mëdha të dhënash. Pritja e klientit është e justifikuar, sepse ky eksport u shënua në procesverbalin e fundit si i premtuar." }
+          ],
+          "function": "separate-cause-and-expectation",
+          "expectedLearnerAction": "Separate technical cause from legitimate customer expectation using evidence."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "manager",
+          "baseText": "Was ist das konkrete Risiko, wenn wir heute nichts entscheiden?",
+          "translations": [
+            { "language": "en", "text": "What is the concrete risk if we decide nothing today?" },
+            { "language": "fa", "text": "اگر امروز تصمیمی نگیریم، ریسک مشخص چیست؟" },
+            { "language": "ar", "text": "ما الخطر المحدد إذا لم نتخذ قراراً اليوم؟" },
+            { "language": "tr", "text": "Bugün hiçbir karar almazsak somut risk nedir?" },
+            { "language": "ru", "text": "Какой конкретный риск, если мы сегодня ничего не решим?" },
+            { "language": "ckb", "text": "ئەگەر ئەمڕۆ هیچ بڕیارێک نەدەین، مەترسییە دیاریکراوەکە چییە؟" },
+            { "language": "kmr", "text": "Heke em îro ti biryar nedin, xetera diyarkirî çi ye?" },
+            { "language": "pl", "text": "Jakie jest konkretne ryzyko, jeśli dziś niczego nie zdecydujemy?" },
+            { "language": "ro", "text": "Care este riscul concret dacă astăzi nu luăm nicio decizie?" },
+            { "language": "sq", "text": "Cili është rreziku konkret nëse sot nuk marrim asnjë vendim?" }
+          ],
+          "function": "ask-risk"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das Risiko ist zweifach: Der Kunde kann seinen Monatsabschluss nicht rechtzeitig abschließen, und unser Support verliert Glaubwürdigkeit, weil wir bisher nur Zwischenstände liefern konnten.",
+          "translations": [
+            { "language": "en", "text": "The risk is twofold: the customer cannot complete their monthly closing on time, and our support loses credibility because so far we have only been able to provide interim updates." },
+            { "language": "fa", "text": "ریسک دو بخش دارد: مشتری نمی‌تواند بستن ماهانه را به‌موقع انجام دهد، و پشتیبانی ما اعتبار از دست می‌دهد، چون تا حالا فقط وضعیت‌های موقت داده‌ایم." },
+            { "language": "ar", "text": "الخطر مزدوج: لا يستطيع العميل إتمام إغلاقه الشهري في الوقت المناسب، ويفقد دعمنا المصداقية لأننا لم نستطع حتى الآن سوى تقديم حالات مؤقتة." },
+            { "language": "tr", "text": "Risk iki yönlü: müşteri aylık kapanışını zamanında tamamlayamaz ve destek ekibimiz güvenilirlik kaybeder, çünkü şimdiye kadar sadece ara durumlar verebildik." },
+            { "language": "ru", "text": "Риск двойной: клиент не сможет вовремя завершить месячное закрытие, а наша поддержка потеряет доверие, потому что до сих пор мы могли давать только промежуточные статусы." },
+            { "language": "ckb", "text": "مەترسییەکە دوو لایەنەیە: کڕیار ناتوانێت داخستنی مانگانە بە کاتی خۆی تەواو بکات، و پشتیوانییەکەمان متمانە لەدەست دەدات چونکە تا ئێستا تەنها دۆخی کاتی پێشکەش کردووە." },
+            { "language": "kmr", "text": "Xeter du alî ye: mişterî nikare girtina mehane di demê xwe de qedîne, û piştgiriya me bawerbarî winda dike ji ber ku heta niha me tenê rewşên navber da." },
+            { "language": "pl", "text": "Ryzyko jest podwójne: klient nie może zamknąć miesiąca na czas, a nasz support traci wiarygodność, bo dotąd mogliśmy przekazywać tylko statusy pośrednie." },
+            { "language": "ro", "text": "Riscul este dublu: clientul nu își poate finaliza închiderea lunară la timp, iar suportul nostru pierde credibilitate deoarece până acum am putut oferi doar statusuri intermediare." },
+            { "language": "sq", "text": "Rreziku është i dyfishtë: klienti nuk mund ta mbyllë muajin në kohë, dhe mbështetja jonë humb besueshmëri sepse deri tani kemi dhënë vetëm statuse të ndërmjetme." }
+          ],
+          "function": "explain-risk",
+          "expectedLearnerAction": "Explain operational and trust risk without exaggeration."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "manager",
+          "baseText": "Welche Entscheidung brauchst du jetzt intern?",
+          "translations": [
+            { "language": "en", "text": "What decision do you need internally now?" },
+            { "language": "fa", "text": "الان داخل تیم چه تصمیمی لازم داری؟" },
+            { "language": "ar", "text": "ما القرار الذي تحتاجه داخلياً الآن؟" },
+            { "language": "tr", "text": "Şu anda içeride hangi karara ihtiyacın var?" },
+            { "language": "ru", "text": "Какое внутреннее решение тебе сейчас нужно?" },
+            { "language": "ckb", "text": "ئێستا لە ناوخۆ چ بڕیارێکت پێویستە؟" },
+            { "language": "kmr", "text": "Niha li hundir kîjan biryarê hewce dikî?" },
+            { "language": "pl", "text": "Jakiej decyzji wewnętrznej teraz potrzebujesz?" },
+            { "language": "ro", "text": "De ce decizie internă ai nevoie acum?" },
+            { "language": "sq", "text": "Çfarë vendimi të brendshëm të duhet tani?" }
+          ],
+          "function": "ask-decision"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich brauche eine Entscheidung, ob wir den Fehler heute als Priorität vor die neue Funktion ziehen. Mein Vorschlag: Lena übernimmt die Analyse bis 15 Uhr, und ich informiere den Kunden um 16 Uhr mit einem realistischen Update.",
+          "translations": [
+            { "language": "en", "text": "I need a decision on whether we move the bug ahead of the new feature as today's priority. My proposal: Lena takes over the analysis by 3 p.m., and I inform the customer at 4 p.m. with a realistic update." },
+            { "language": "fa", "text": "به یک تصمیم نیاز دارم که آیا امروز این خطا را به‌عنوان اولویت جلوتر از قابلیت جدید قرار می‌دهیم یا نه. پیشنهاد من: لنا تا ساعت ۱۵ تحلیل را بر عهده بگیرد و من ساعت ۱۶ با یک به‌روزرسانی واقع‌بینانه به مشتری اطلاع بدهم." },
+            { "language": "ar", "text": "أحتاج إلى قرار حول ما إذا كنا سنضع هذا الخطأ اليوم قبل الميزة الجديدة كأولوية. اقتراحي: تتولى لينا التحليل حتى الساعة الثالثة، وأُبلغ العميل الساعة الرابعة بتحديث واقعي." },
+            { "language": "tr", "text": "Bugün bu hatayı yeni özellikten önce öncelik yapıp yapmayacağımıza dair bir karara ihtiyacım var. Önerim: Lena analizi saat 15'e kadar üstlensin, ben de müşteriyi saat 16'da gerçekçi bir güncellemeyle bilgilendireyim." },
+            { "language": "ru", "text": "Мне нужно решение, ставим ли мы сегодня эту ошибку в приоритет перед новой функцией. Моё предложение: Лена берёт анализ до 15:00, а я в 16:00 информирую клиента реалистичным обновлением." },
+            { "language": "ckb", "text": "پێویستم بە بڕیارێکە کە ئایا ئەمڕۆ ئەم هەڵەیە وەک پێشینە لە پێش تایبەتمەندی نوێ دادەنێین. پێشنیارم: لێنا تا کاتژمێر ١٥ شیکردنەوەکە وەربگرێت، و من کاتژمێر ١٦ بە نوێکردنەوەیەکی واقیعی کڕیار ئاگادار بکەمەوە." },
+            { "language": "kmr", "text": "Pêwîstiya min bi biryarekê heye ka em îro vê xeletiyê wek pêşînî li pêş taybetmendiya nû dixin an na. Pêşniyara min: Lena heta saet 15 analîzê digire, û ez saet 16 bi nûkirineke rastîn mişterî agahdar dikim." },
+            { "language": "pl", "text": "Potrzebuję decyzji, czy dziś przesuwamy ten błąd jako priorytet przed nową funkcję. Moja propozycja: Lena przejmuje analizę do 15:00, a ja o 16:00 informuję klienta realistyczną aktualizacją." },
+            { "language": "ro", "text": "Am nevoie de o decizie dacă astăzi punem această eroare ca prioritate înaintea funcției noi. Propunerea mea: Lena preia analiza până la ora 15, iar eu informez clientul la ora 16 cu o actualizare realistă." },
+            { "language": "sq", "text": "Më duhet një vendim nëse sot e vendosim këtë gabim si prioritet para funksionit të ri. Propozimi im: Lena merr analizën deri në orën 15, dhe unë e informoj klientin në orën 16 me një përditësim realist." }
+          ],
+          "function": "request-decision-with-owner",
+          "expectedLearnerAction": "Ask for a priority decision and propose owner, deadline, and customer communication time."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "manager",
+          "baseText": "Formuliere bitte noch kurz, was wir dem Kunden heute sagen, ohne etwas zu versprechen, was wir nicht halten können.",
+          "translations": [
+            { "language": "en", "text": "Please briefly formulate what we will tell the customer today without promising anything we cannot keep." },
+            { "language": "fa", "text": "لطفاً کوتاه بگو امروز به مشتری چه می‌گوییم، بدون اینکه چیزی وعده بدهیم که نتوانیم نگه داریم." },
+            { "language": "ar", "text": "صغ من فضلك باختصار ما سنقوله للعميل اليوم من دون أن نعد بشيء لا نستطيع الالتزام به." },
+            { "language": "tr", "text": "Lütfen müşteriye bugün ne söyleyeceğimizi, tutamayacağımız bir söz vermeden kısaca formüle et." },
+            { "language": "ru", "text": "Кратко сформулируй, пожалуйста, что мы сегодня скажем клиенту, не обещая того, что не сможем выполнить." },
+            { "language": "ckb", "text": "تکایە بە کورتی داڕشتە بکە ئەمڕۆ چی بە کڕیار دەڵێین، بە بێ ئەوەی شتێک بەڵێن بدەین کە نەتوانین جێبەجێی بکەین." },
+            { "language": "kmr", "text": "Ji kerema xwe bi kurtî bibêje em îro çi ji mişterî re dibêjin, bê ku sozê tiştê ku nikarin pêk bînin bidin." },
+            { "language": "pl", "text": "Sformułuj proszę krótko, co dziś powiemy klientowi, nie obiecując niczego, czego nie możemy dotrzymać." },
+            { "language": "ro", "text": "Formulează, te rog, pe scurt ce îi spunem astăzi clientului fără să promitem ceva ce nu putem respecta." },
+            { "language": "sq", "text": "Formulo shkurt, të lutem, çfarë do t'i themi sot klientit pa premtuar diçka që nuk mund ta mbajmë." }
+          ],
+          "function": "ask-client-message"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Wir haben den Fehler eingegrenzt und behandeln ihn heute mit Priorität. Bis 16 Uhr geben wir Ihnen eine belastbare Einschätzung, ob der Export heute noch freigegeben werden kann oder ob wir eine Übergangslösung brauchen.",
+          "translations": [
+            { "language": "en", "text": "I would say: We have narrowed down the error and are treating it as a priority today. By 4 p.m., we will give you a reliable assessment of whether the export can still be released today or whether we need an interim solution." },
+            { "language": "fa", "text": "من می‌گویم: ما خطا را محدود کرده‌ایم و امروز آن را با اولویت بررسی می‌کنیم. تا ساعت ۱۶ به شما ارزیابی قابل اتکایی می‌دهیم که آیا خروجی امروز قابل آزادسازی است یا به راه‌حل موقت نیاز داریم." },
+            { "language": "ar", "text": "سأقول: لقد حصرنا الخطأ ونعالجه اليوم كأولوية. حتى الساعة الرابعة سنعطيكم تقييماً موثوقاً حول ما إذا كان يمكن إطلاق التصدير اليوم أم أننا نحتاج إلى حل مؤقت." },
+            { "language": "tr", "text": "Şöyle derdim: Hatayı daralttık ve bugün öncelikli olarak ele alıyoruz. Saat 16'ya kadar dışa aktarmanın bugün hâlâ serbest bırakılıp bırakılamayacağına ya da geçici bir çözüme ihtiyaç olup olmadığına dair güvenilir bir değerlendirme vereceğiz." },
+            { "language": "ru", "text": "Я бы сказал: мы сузили область ошибки и сегодня рассматриваем её как приоритет. До 16:00 мы дадим вам надёжную оценку, можно ли ещё сегодня выпустить экспорт или нужна временная альтернатива." },
+            { "language": "ckb", "text": "من دەڵێم: ئێمە هەڵەکەمان سنووردار کردووە و ئەمڕۆ بە پێشینە چارەسەری دەکەین. تا کاتژمێر ١٦ هەڵسەنگاندنێکی پشتپێبەستوو پێتان دەدەین کە ئایا هەناردەکردن ئەمڕۆ دەکرێت ئازاد بکرێت یان پێویستمان بە چارەسەری کاتی هەیە." },
+            { "language": "kmr", "text": "Ez ê bibêjim: Me xeletî teng kir û îro wê wek pêşînî digirin dest. Heta saet 16 em ê nirxandineke bawerbar bidin we ka derxistin îro hîn dikare were berdan an em hewceyî çareseriyeke demkî ne." },
+            { "language": "pl", "text": "Powiedziałbym: zawęziliśmy błąd i dziś traktujemy go priorytetowo. Do 16:00 przekażemy Państwu wiarygodną ocenę, czy eksport może zostać dziś zwolniony, czy potrzebujemy rozwiązania przejściowego." },
+            { "language": "ro", "text": "Aș spune: am restrâns eroarea și o tratăm astăzi cu prioritate. Până la ora 16 vă oferim o evaluare solidă dacă exportul mai poate fi eliberat astăzi sau dacă avem nevoie de o soluție temporară." },
+            { "language": "sq", "text": "Do të thosha: e kemi ngushtuar gabimin dhe po e trajtojmë sot me prioritet. Deri në orën 16 do t'ju japim një vlerësim të besueshëm nëse eksporti mund të lëshohet ende sot apo nëse na duhet një zgjidhje e përkohshme." }
+          ],
+          "function": "safe-customer-message",
+          "expectedLearnerAction": "Give a customer update that is transparent, time-bound, and does not overpromise."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "facts-scope-impact",
+              "text": "Der Kunde hat heute Morgen gemeldet, dass der zugesagte Export zum dritten Mal abbricht. Es betrifft nur einen Datensatztyp, aber genau den braucht der Kunde für seinen Monatsabschluss.",
+              "translations": [
+                { "language": "en", "text": "The customer reported this morning that the promised export fails for the third time. It affects only one data record type, but that is exactly the one the customer needs for their monthly closing." },
+                { "language": "fa", "text": "مشتری امروز صبح گزارش داد که خروجی وعده‌داده‌شده برای بار سوم قطع می‌شود. فقط یک نوع رکورد داده را درگیر می‌کند، اما دقیقاً همان چیزی است که مشتری برای بستن ماهانه نیاز دارد." },
+                { "language": "ar", "text": "أبلغ العميل هذا الصباح أن التصدير الموعود يتوقف للمرة الثالثة. يؤثر الأمر في نوع واحد فقط من سجلات البيانات، لكنه بالضبط النوع الذي يحتاجه العميل لإغلاقه الشهري." },
+                { "language": "tr", "text": "Müşteri bu sabah, söz verilen dışa aktarmanın üçüncü kez kesildiğini bildirdi. Sadece bir veri kaydı türünü etkiliyor, ama müşteri aylık kapanışı için tam da buna ihtiyaç duyuyor." },
+                { "language": "ru", "text": "Клиент сегодня утром сообщил, что обещанный экспорт в третий раз прерывается. Это касается только одного типа записи данных, но именно он нужен клиенту для месячного закрытия." },
+                { "language": "ckb", "text": "کڕیار ئەم بەیانییە ڕایگەیاند کە هەناردەکردنی بەڵێندراو بۆ جاری سێیەم دەبڕێت. تەنها جۆرێکی تۆماری داتا دەگرێتەوە، بەڵام کڕیار ڕاستەوخۆ ئەوەی بۆ داخستنی مانگانە پێویستە." },
+                { "language": "kmr", "text": "Mişterî vê sibehê ragihand ku derxistina hatî sozdan cara sêyem tê qutkirin. Ev tenê cureyekî tomara daneyan bandor dike, lê mişterî ji bo girtina mehane tam wê pêwîst dike." },
+                { "language": "pl", "text": "Klient zgłosił dziś rano, że obiecany eksport przerywa się po raz trzeci. Dotyczy to tylko jednego typu rekordu danych, ale właśnie tego klient potrzebuje do miesięcznego zamknięcia." },
+                { "language": "ro", "text": "Clientul a raportat în această dimineață că exportul promis se întrerupe pentru a treia oară. Afectează doar un tip de înregistrare de date, dar exact pe acela îl are clientul nevoie pentru închiderea lunară." },
+                { "language": "sq", "text": "Klienti raportoi këtë mëngjes se eksporti i premtuar ndërpritet për herë të tretë. Prek vetëm një lloj regjistri të dhënash, por pikërisht atë i duhet klientit për mbylljen mujore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives facts, scope, and customer impact without blame.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives facts, scope, and customer impact without blame." },
+                { "language": "fa", "text": "خوب است: fact، محدوده و اثر بر مشتری را بدون سرزنش بیان می‌کند." },
+                { "language": "ar", "text": "جيد: يذكر الحقائق والنطاق وتأثير العميل من دون لوم." },
+                { "language": "tr", "text": "İyi: olguları, kapsamı ve müşteri etkisini suçlama olmadan veriyor." },
+                { "language": "ru", "text": "Хорошо: даны факты, объём и влияние на клиента без обвинений." },
+                { "language": "ckb", "text": "باشە: ڕاستی، سنوور و کاریگەری لەسەر کڕیار بە بێ تاوانبارکردن دەدات." },
+                { "language": "kmr", "text": "Baş e: rastî, çarçove û bandora li mişterî bê sûcdarkirin dide." },
+                { "language": "pl", "text": "Dobrze: podaje fakty, zakres i wpływ na klienta bez obwiniania." },
+                { "language": "ro", "text": "Bine: oferă fapte, domeniu și impact asupra clientului fără vinovățire." },
+                { "language": "sq", "text": "Mirë: jep faktet, fushën dhe ndikimin te klienti pa fajësuar." }
+              ],
+              "explanationKey": "facts-scope-impact"
+            },
+            {
+              "id": "too-emotional-escalation",
+              "text": "Der Kunde ist sehr unzufrieden, und das Ganze wird langsam wirklich kritisch. Wir müssen sofort irgendetwas machen.",
+              "translations": [
+                { "language": "en", "text": "The customer is very dissatisfied, and the whole thing is slowly becoming really critical. We have to do something immediately." },
+                { "language": "fa", "text": "مشتری خیلی ناراضی است و کل موضوع کم‌کم واقعاً بحرانی می‌شود. باید فوراً یک کاری بکنیم." },
+                { "language": "ar", "text": "العميل غير راضٍ جداً، والأمر كله يصبح ببطء حرجاً حقاً. يجب أن نفعل شيئاً فوراً." },
+                { "language": "tr", "text": "Müşteri çok memnun değil ve tüm konu yavaş yavaş gerçekten kritik hâle geliyor. Hemen bir şey yapmalıyız." },
+                { "language": "ru", "text": "Клиент очень недоволен, и всё это постепенно становится действительно критичным. Нам нужно немедленно что-то сделать." },
+                { "language": "ckb", "text": "کڕیار زۆر ناڕازییە و هەموو بابەتەکە وردە وردە بەڕاستی دەبێتە گرنگ. دەبێت دەستبەجێ شتێک بکەین." },
+                { "language": "kmr", "text": "Mişterî pir ne razî ye û hemû mijar hêdî hêdî bi rastî krîtîk dibe. Divê em tavilê tiştekî bikin." },
+                { "language": "pl", "text": "Klient jest bardzo niezadowolony i cała sprawa powoli robi się naprawdę krytyczna. Musimy natychmiast coś zrobić." },
+                { "language": "ro", "text": "Clientul este foarte nemulțumit și întreaga situație devine treptat cu adevărat critică. Trebuie să facem imediat ceva." },
+                { "language": "sq", "text": "Klienti është shumë i pakënaqur dhe e gjithë çështja po bëhet ngadalë vërtet kritike. Duhet të bëjmë menjëherë diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too vague and emotional: it signals urgency but does not provide facts, scope, or decision need.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague and emotional: it signals urgency but does not provide facts, scope, or decision need." },
+                { "language": "fa", "text": "بیش از حد مبهم و احساسی است: فوریت را نشان می‌دهد اما fact، محدوده یا نیاز به تصمیم نمی‌دهد." },
+                { "language": "ar", "text": "غامض وعاطفي جداً: يشير إلى الاستعجال لكنه لا يقدم حقائق أو نطاقاً أو حاجة إلى قرار." },
+                { "language": "tr", "text": "Çok belirsiz ve duygusal: aciliyet gösteriyor ama olgu, kapsam veya karar ihtiyacı vermiyor." },
+                { "language": "ru", "text": "Слишком расплывчато и эмоционально: срочность есть, но нет фактов, объёма или нужного решения." },
+                { "language": "ckb", "text": "زۆر ناڕوون و هەستییە: پەلەیی نیشان دەدات بەڵام ڕاستی، سنوور یان پێویستی بڕیار نادات." },
+                { "language": "kmr", "text": "Pir nezelal û hestî ye: lezê nîşan dide lê rastî, çarçove an pêwîstiya biryarê nade." },
+                { "language": "pl", "text": "Zbyt niejasne i emocjonalne: pokazuje pilność, ale nie daje faktów, zakresu ani potrzeby decyzji." },
+                { "language": "ro", "text": "Prea vag și emoțional: semnalează urgență, dar nu oferă fapte, domeniu sau nevoie de decizie." },
+                { "language": "sq", "text": "Shumë e paqartë dhe emocionale: tregon urgjencë, por nuk jep fakte, fushë apo nevojë për vendim." }
+              ],
+              "explanationKey": "vague-emotional"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "cause-and-expectation",
+              "text": "Nach aktuellem Stand ist es technisch: Der Export startet, bricht aber bei großen Datensätzen ab. Die Erwartung des Kunden ist berechtigt, weil dieser Export im letzten Protokoll als zugesagt markiert wurde.",
+              "translations": [
+                { "language": "en", "text": "Based on the current status, it is technical: the export starts but fails with large data sets. The customer's expectation is justified because this export was marked as promised in the last minutes." },
+                { "language": "fa", "text": "طبق وضعیت فعلی، موضوع فنی است: خروجی شروع می‌شود اما در داده‌های بزرگ قطع می‌شود. انتظار مشتری موجه است، چون این خروجی در صورت‌جلسه قبلی به‌عنوان وعده‌داده‌شده ثبت شده بود." },
+                { "language": "ar", "text": "وفق الوضع الحالي، المسألة تقنية: يبدأ التصدير لكنه يتوقف عند مجموعات البيانات الكبيرة. توقع العميل مبرر لأن هذا التصدير وُضع في المحضر الأخير على أنه مُتعهَّد به." },
+                { "language": "tr", "text": "Mevcut duruma göre teknik: dışa aktarma başlıyor, ancak büyük veri setlerinde kesiliyor. Müşterinin beklentisi haklı, çünkü bu dışa aktarma son tutanakta söz verilmiş olarak işaretlendi." },
+                { "language": "ru", "text": "По текущему состоянию это техническая проблема: экспорт запускается, но прерывается на больших наборах данных. Ожидание клиента обосновано, потому что этот экспорт был отмечен в последнем протоколе как обещанный." },
+                { "language": "ckb", "text": "بەپێی دۆخی ئێستا، بابەتەکە تەکنیکییە: هەناردەکردن دەست پێ دەکات، بەڵام لەسەر کۆمەڵە داتای گەورە دەبڕێت. چاوەڕوانی کڕیار ڕەوایە، چونکە ئەم هەناردەکردنە لە تۆماری پێشوو وەک بەڵێندراو نیشان کراوە." },
+                { "language": "kmr", "text": "Li gorî rewşa niha, ev teknîkî ye: derxistin dest pê dike, lê li ser komên daneyên mezin tê qutkirin. Hêviya mişterî mafdar e, ji ber ku ev derxistin di protokola dawî de wek hatî sozdan hat nîşankirin." },
+                { "language": "pl", "text": "Według obecnego stanu to kwestia techniczna: eksport startuje, ale przerywa się przy dużych zestawach danych. Oczekiwanie klienta jest uzasadnione, bo ten eksport został w ostatnim protokole oznaczony jako obiecany." },
+                { "language": "ro", "text": "Conform stadiului actual, este tehnic: exportul pornește, dar se oprește la seturi mari de date. Așteptarea clientului este justificată, deoarece acest export a fost marcat ca promis în ultimul proces-verbal." },
+                { "language": "sq", "text": "Sipas gjendjes aktuale, është teknike: eksporti nis, por ndërpritet te grupe të mëdha të dhënash. Pritja e klientit është e justifikuar, sepse ky eksport u shënua në procesverbalin e fundit si i premtuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: it separates cause and customer expectation, which makes the escalation fair.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: it separates cause and customer expectation, which makes the escalation fair." },
+                { "language": "fa", "text": "خوب است: علت و انتظار مشتری را جدا می‌کند و escalation را منصفانه می‌سازد." },
+                { "language": "ar", "text": "جيد: يفصل بين السبب وتوقع العميل، وهذا يجعل التصعيد عادلاً." },
+                { "language": "tr", "text": "İyi: nedeni ve müşteri beklentisini ayırıyor; bu da üst seviyeye taşımayı adil kılıyor." },
+                { "language": "ru", "text": "Хорошо: причина и ожидание клиента разделены, поэтому эскалация выглядит справедливой." },
+                { "language": "ckb", "text": "باشە: هۆکار و چاوەڕوانی کڕیار جیا دەکاتەوە، ئەمە بەرزکردنەوەکە دادپەروەرانە دەکات." },
+                { "language": "kmr", "text": "Baş e: sedem û hêviya mişterî ji hev veqetîne, ev bilindkirinê dadmend dike." },
+                { "language": "pl", "text": "Dobrze: oddziela przyczynę od oczekiwania klienta, dzięki czemu eskalacja jest uczciwa." },
+                { "language": "ro", "text": "Bine: separă cauza de așteptarea clientului, ceea ce face escaladarea corectă." },
+                { "language": "sq", "text": "Mirë: ndan shkakun nga pritja e klientit, gjë që e bën eskalimin të drejtë." }
+              ],
+              "explanationKey": "cause-expectation"
+            },
+            {
+              "id": "blame-customer",
+              "text": "Der Kunde hat vermutlich zu viel erwartet, aber technisch gibt es auch noch ein Problem. Wir müssen irgendwie reagieren.",
+              "translations": [
+                { "language": "en", "text": "The customer probably expected too much, but technically there is also still a problem. We have to react somehow." },
+                { "language": "fa", "text": "مشتری احتمالاً بیش از حد انتظار داشته، اما از نظر فنی هم هنوز مشکلی هست. باید به نحوی واکنش نشان بدهیم." },
+                { "language": "ar", "text": "ربما كان العميل يتوقع الكثير، لكن من الناحية التقنية ما زالت هناك مشكلة أيضاً. علينا أن نتصرف بطريقة ما." },
+                { "language": "tr", "text": "Müşteri muhtemelen fazla şey bekledi, ama teknik olarak da hâlâ bir sorun var. Bir şekilde tepki vermeliyiz." },
+                { "language": "ru", "text": "Клиент, вероятно, ожидал слишком многого, но технически проблема тоже ещё есть. Нужно как-то отреагировать." },
+                { "language": "ckb", "text": "کڕیار بە گومان زۆر چاوەڕوانی کردووە، بەڵام لە ڕووی تەکنیکییشەوە هێشتا کێشە هەیە. دەبێت بە شێوەیەک وەڵام بدەینەوە." },
+                { "language": "kmr", "text": "Mişterî dibe zêde hêvî kiribe, lê teknîkî jî hîn pirsgirêk heye. Divê em bi awayekî bersiv bidin." },
+                { "language": "pl", "text": "Klient prawdopodobnie oczekiwał zbyt wiele, ale technicznie też nadal jest problem. Musimy jakoś zareagować." },
+                { "language": "ro", "text": "Clientul probabil a așteptat prea mult, dar tehnic există încă o problemă. Trebuie să reacționăm cumva." },
+                { "language": "sq", "text": "Klienti ndoshta priti shumë, por teknikisht ka ende një problem. Duhet të reagojmë disi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Weak: it shifts blame to the customer and still gives no concrete decision path.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Weak: it shifts blame to the customer and still gives no concrete decision path." },
+                { "language": "fa", "text": "ضعیف است: تقصیر را به مشتری منتقل می‌کند و هنوز مسیر تصمیم مشخصی نمی‌دهد." },
+                { "language": "ar", "text": "ضعيف: ينقل اللوم إلى العميل ولا يقدم مسار قرار ملموساً." },
+                { "language": "tr", "text": "Zayıf: suçu müşteriye kaydırıyor ve hâlâ somut bir karar yolu vermiyor." },
+                { "language": "ru", "text": "Слабо: вина перекладывается на клиента, и всё ещё нет конкретного пути решения." },
+                { "language": "ckb", "text": "لاوازە: تاوان دەخاتە سەر کڕیار و هێشتا ڕێگای بڕیاری دیاریکراو نادات." },
+                { "language": "kmr", "text": "Lawaz e: sûcê dixe ser mişterî û hîn rêyeke biryarê ya diyarkirî nade." },
+                { "language": "pl", "text": "Słabe: przerzuca winę na klienta i nadal nie daje konkretnej ścieżki decyzji." },
+                { "language": "ro", "text": "Slab: mută vina pe client și tot nu oferă o cale concretă de decizie." },
+                { "language": "sq", "text": "E dobët: ia kalon fajin klientit dhe ende nuk jep një rrugë konkrete vendimi." }
+              ],
+              "explanationKey": "blame-customer"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "decision-owner-timing",
+              "text": "Ich brauche eine Entscheidung, ob wir den Fehler heute als Priorität vor die neue Funktion ziehen. Mein Vorschlag: Lena übernimmt die Analyse bis 15 Uhr, und ich informiere den Kunden um 16 Uhr mit einem realistischen Update.",
+              "translations": [
+                { "language": "en", "text": "I need a decision on whether we move the bug ahead of the new feature as today's priority. My proposal: Lena takes over the analysis by 3 p.m., and I inform the customer at 4 p.m. with a realistic update." },
+                { "language": "fa", "text": "به یک تصمیم نیاز دارم که آیا امروز این خطا را به‌عنوان اولویت جلوتر از قابلیت جدید قرار می‌دهیم یا نه. پیشنهاد من: لنا تا ساعت ۱۵ تحلیل را بر عهده بگیرد و من ساعت ۱۶ با یک به‌روزرسانی واقع‌بینانه به مشتری اطلاع بدهم." },
+                { "language": "ar", "text": "أحتاج إلى قرار حول ما إذا كنا سنضع هذا الخطأ اليوم قبل الميزة الجديدة كأولوية. اقتراحي: تتولى لينا التحليل حتى الساعة الثالثة، وأُبلغ العميل الساعة الرابعة بتحديث واقعي." },
+                { "language": "tr", "text": "Bugün bu hatayı yeni özellikten önce öncelik yapıp yapmayacağımıza dair bir karara ihtiyacım var. Önerim: Lena analizi saat 15'e kadar üstlensin, ben de müşteriyi saat 16'da gerçekçi bir güncellemeyle bilgilendireyim." },
+                { "language": "ru", "text": "Мне нужно решение, ставим ли мы сегодня эту ошибку в приоритет перед новой функцией. Моё предложение: Лена берёт анализ до 15:00, а я в 16:00 информирую клиента реалистичным обновлением." },
+                { "language": "ckb", "text": "پێویستم بە بڕیارێکە کە ئایا ئەمڕۆ ئەم هەڵەیە وەک پێشینە لە پێش تایبەتمەندی نوێ دادەنێین. پێشنیارم: لێنا تا کاتژمێر ١٥ شیکردنەوەکە وەربگرێت، و من کاتژمێر ١٦ بە نوێکردنەوەیەکی واقیعی کڕیار ئاگادار بکەمەوە." },
+                { "language": "kmr", "text": "Pêwîstiya min bi biryarekê heye ka em îro vê xeletiyê wek pêşînî li pêş taybetmendiya nû dixin an na. Pêşniyara min: Lena heta saet 15 analîzê digire, û ez saet 16 bi nûkirineke rastîn mişterî agahdar dikim." },
+                { "language": "pl", "text": "Potrzebuję decyzji, czy dziś przesuwamy ten błąd jako priorytet przed nową funkcję. Moja propozycja: Lena przejmuje analizę do 15:00, a ja o 16:00 informuję klienta realistyczną aktualizacją." },
+                { "language": "ro", "text": "Am nevoie de o decizie dacă astăzi punem această eroare ca prioritate înaintea funcției noi. Propunerea mea: Lena preia analiza până la ora 15, iar eu informez clientul la ora 16 cu o actualizare realistă." },
+                { "language": "sq", "text": "Më duhet një vendim nëse sot e vendosim këtë gabim si prioritet para funksionit të ri. Propozimi im: Lena merr analizën deri në orën 15, dhe unë e informoj klientin në orën 16 me një përditësim realist." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: it makes escalation actionable with priority, owner, deadline, and customer communication.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: it makes escalation actionable with priority, owner, deadline, and customer communication." },
+                { "language": "fa", "text": "خوب است: escalation را با اولویت، مسئول، زمان و ارتباط با مشتری قابل اقدام می‌کند." },
+                { "language": "ar", "text": "جيد: يجعل التصعيد قابلاً للتنفيذ من خلال أولوية ومسؤول وموعد وتواصل مع العميل." },
+                { "language": "tr", "text": "İyi: üst seviyeye taşımayı öncelik, sorumlu, son tarih ve müşteri iletişimiyle uygulanabilir kılıyor." },
+                { "language": "ru", "text": "Хорошо: эскалация становится практичной благодаря приоритету, ответственному, сроку и коммуникации с клиентом." },
+                { "language": "ckb", "text": "باشە: بەرزکردنەوەکە بە پێشینە، بەرپرس، کات و پەیوەندی لەگەڵ کڕیار دەکاتە هەنگاوی کرداری." },
+                { "language": "kmr", "text": "Baş e: bilindkirinê bi pêşînî, berpirs, dawîdem û ragihandina mişterî dike çalakiyeke pêkan." },
+                { "language": "pl", "text": "Dobrze: eskalacja staje się wykonalna dzięki priorytetowi, właścicielowi, terminowi i komunikacji z klientem." },
+                { "language": "ro", "text": "Bine: face escaladarea acționabilă prin prioritate, responsabil, termen și comunicare cu clientul." },
+                { "language": "sq", "text": "Mirë: e bën eskalimin të zbatueshëm me prioritet, përgjegjës, afat dhe komunikim me klientin." }
+              ],
+              "explanationKey": "decision-owner-timing"
+            },
+            {
+              "id": "too-soft-no-decision",
+              "text": "Vielleicht kann sich jemand aus dem Technikteam das später anschauen. Ich würde dem Kunden erst einmal sagen, dass wir dran sind.",
+              "translations": [
+                { "language": "en", "text": "Maybe someone from the technical team can look at it later. I would first tell the customer that we are working on it." },
+                { "language": "fa", "text": "شاید کسی از تیم فنی بعداً بتواند نگاهی به آن بیندازد. فعلاً به مشتری می‌گویم که داریم روی آن کار می‌کنیم." },
+                { "language": "ar", "text": "ربما يستطيع شخص من الفريق التقني أن ينظر في الأمر لاحقاً. سأقول للعميل أولاً إننا نعمل عليه." },
+                { "language": "tr", "text": "Belki teknik ekipten biri daha sonra bakabilir. Müşteriye şimdilik üzerinde çalıştığımızı söylerdim." },
+                { "language": "ru", "text": "Возможно, кто-то из технической команды сможет позже посмотреть. Я бы пока сказал клиенту, что мы работаем над этим." },
+                { "language": "ckb", "text": "لەوانەیە کەسێک لە تیمی تەکنیکی دواتر سەیری بکات. من سەرەتا بە کڕیار دەڵێم کە کارمان لەسەر دەکەین." },
+                { "language": "kmr", "text": "Dibe ku kesek ji tîma teknîkî paşê lê binêre. Ez ê pêşî ji mişterî re bibêjim ku em li ser dixebitin." },
+                { "language": "pl", "text": "Może ktoś z zespołu technicznego później na to spojrzy. Na razie powiedziałbym klientowi, że nad tym pracujemy." },
+                { "language": "ro", "text": "Poate cineva din echipa tehnică se poate uita mai târziu. Deocamdată i-aș spune clientului că lucrăm la asta." },
+                { "language": "sq", "text": "Ndoshta dikush nga ekipi teknik mund ta shikojë më vonë. Fillimisht do t'i thosha klientit se po punojmë për këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too weak: it sounds polite, but there is no owner, deadline, or real escalation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: it sounds polite, but there is no owner, deadline, or real escalation." },
+                { "language": "fa", "text": "بیش از حد ضعیف است: مؤدبانه به نظر می‌رسد، اما مسئول، زمان یا escalation واقعی ندارد." },
+                { "language": "ar", "text": "ضعيف جداً: يبدو مهذباً، لكن لا يوجد مسؤول أو موعد أو تصعيد حقيقي." },
+                { "language": "tr", "text": "Çok zayıf: kibar duyuluyor, ama sorumlu, son tarih veya gerçek üst seviyeye taşıma yok." },
+                { "language": "ru", "text": "Слишком слабо: звучит вежливо, но нет ответственного, срока или настоящей эскалации." },
+                { "language": "ckb", "text": "زۆر لاوازە: ئەدەبانە دەردەکەوێت، بەڵام بەرپرس، کات یان بەرزکردنەوەی ڕاستەقینەی نییە." },
+                { "language": "kmr", "text": "Pir lawaz e: bi edeb xuya dike, lê berpirs, dawîdem an bilindkirina rastîn tune ye." },
+                { "language": "pl", "text": "Zbyt słabe: brzmi uprzejmie, ale nie ma właściciela, terminu ani prawdziwej eskalacji." },
+                { "language": "ro", "text": "Prea slab: sună politicos, dar nu există responsabil, termen sau escaladare reală." },
+                { "language": "sq", "text": "Shumë e dobët: tingëllon e sjellshme, por nuk ka përgjegjës, afat apo eskalim të vërtetë." }
+              ],
+              "explanationKey": "no-owner"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "transparent-time-bound-update",
+              "text": "Ich würde sagen: Wir haben den Fehler eingegrenzt und behandeln ihn heute mit Priorität. Bis 16 Uhr geben wir Ihnen eine belastbare Einschätzung, ob der Export heute noch freigegeben werden kann oder ob wir eine Übergangslösung brauchen.",
+              "translations": [
+                { "language": "en", "text": "I would say: We have narrowed down the error and are treating it as a priority today. By 4 p.m., we will give you a reliable assessment of whether the export can still be released today or whether we need an interim solution." },
+                { "language": "fa", "text": "من می‌گویم: ما خطا را محدود کرده‌ایم و امروز آن را با اولویت بررسی می‌کنیم. تا ساعت ۱۶ به شما ارزیابی قابل اتکایی می‌دهیم که آیا خروجی امروز قابل آزادسازی است یا به راه‌حل موقت نیاز داریم." },
+                { "language": "ar", "text": "سأقول: لقد حصرنا الخطأ ونعالجه اليوم كأولوية. حتى الساعة الرابعة سنعطيكم تقييماً موثوقاً حول ما إذا كان يمكن إطلاق التصدير اليوم أم أننا نحتاج إلى حل مؤقت." },
+                { "language": "tr", "text": "Şöyle derdim: Hatayı daralttık ve bugün öncelikli olarak ele alıyoruz. Saat 16'ya kadar dışa aktarmanın bugün hâlâ serbest bırakılıp bırakılamayacağına ya da geçici bir çözüme ihtiyaç olup olmadığına dair güvenilir bir değerlendirme vereceğiz." },
+                { "language": "ru", "text": "Я бы сказал: мы сузили область ошибки и сегодня рассматриваем её как приоритет. До 16:00 мы дадим вам надёжную оценку, можно ли ещё сегодня выпустить экспорт или нужна временная альтернатива." },
+                { "language": "ckb", "text": "من دەڵێم: ئێمە هەڵەکەمان سنووردار کردووە و ئەمڕۆ بە پێشینە چارەسەری دەکەین. تا کاتژمێر ١٦ هەڵسەنگاندنێکی پشتپێبەستوو پێتان دەدەین کە ئایا هەناردەکردن ئەمڕۆ دەکرێت ئازاد بکرێت یان پێویستمان بە چارەسەری کاتی هەیە." },
+                { "language": "kmr", "text": "Ez ê bibêjim: Me xeletî teng kir û îro wê wek pêşînî digirin dest. Heta saet 16 em ê nirxandineke bawerbar bidin we ka derxistin îro hîn dikare were berdan an em hewceyî çareseriyeke demkî ne." },
+                { "language": "pl", "text": "Powiedziałbym: zawęziliśmy błąd i dziś traktujemy go priorytetowo. Do 16:00 przekażemy Państwu wiarygodną ocenę, czy eksport może zostać dziś zwolniony, czy potrzebujemy rozwiązania przejściowego." },
+                { "language": "ro", "text": "Aș spune: am restrâns eroarea și o tratăm astăzi cu prioritate. Până la ora 16 vă oferim o evaluare solidă dacă exportul mai poate fi eliberat astăzi sau dacă avem nevoie de o soluție temporară." },
+                { "language": "sq", "text": "Do të thosha: e kemi ngushtuar gabimin dhe po e trajtojmë sot me prioritet. Deri në orën 16 do t'ju japim një vlerësim të besueshëm nëse eksporti mund të lëshohet ende sot apo nëse na duhet një zgjidhje e përkohshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: it is transparent and time-bound without promising a fix before analysis is complete.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: it is transparent and time-bound without promising a fix before analysis is complete." },
+                { "language": "fa", "text": "خوب است: شفاف و زمان‌دار است، بدون اینکه قبل از پایان تحلیل وعده حل بدهد." },
+                { "language": "ar", "text": "جيد: شفاف ومحدد زمنياً من دون أن يعد بحل قبل اكتمال التحليل." },
+                { "language": "tr", "text": "İyi: şeffaf ve zaman sınırlı, analiz bitmeden çözüm sözü vermiyor." },
+                { "language": "ru", "text": "Хорошо: сообщение прозрачное и ограниченное по времени, без обещания исправления до завершения анализа." },
+                { "language": "ckb", "text": "باشە: ڕوون و کاتدارە، بە بێ ئەوەی پێش تەواوبوونی شیکردنەوە بەڵێنی چارەسەر بدات." },
+                { "language": "kmr", "text": "Baş e: zelal û bi dem e, bê ku berî qedandina analîzê sozê çareseriyê bide." },
+                { "language": "pl", "text": "Dobrze: jest przejrzyste i określone czasowo, bez obiecywania naprawy przed zakończeniem analizy." },
+                { "language": "ro", "text": "Bine: este transparent și încadrat în timp, fără să promită o remediere înainte ca analiza să fie completă." },
+                { "language": "sq", "text": "Mirë: është transparente dhe me afat, pa premtuar zgjidhje para se analiza të përfundojë." }
+              ],
+              "explanationKey": "safe-customer-update"
+            },
+            {
+              "id": "overpromise-client-update",
+              "text": "Ich würde dem Kunden sagen, dass wir das Problem heute sicher lösen und der Export danach normal funktioniert.",
+              "translations": [
+                { "language": "en", "text": "I would tell the customer that we will definitely solve the problem today and that the export will work normally afterwards." },
+                { "language": "fa", "text": "به مشتری می‌گویم که امروز حتماً مشکل را حل می‌کنیم و بعد از آن خروجی به‌صورت عادی کار می‌کند." },
+                { "language": "ar", "text": "سأقول للعميل إننا سنحل المشكلة بالتأكيد اليوم وإن التصدير سيعمل بعد ذلك بشكل طبيعي." },
+                { "language": "tr", "text": "Müşteriye sorunu bugün kesin çözeceğimizi ve sonrasında dışa aktarmanın normal çalışacağını söylerdim." },
+                { "language": "ru", "text": "Я бы сказал клиенту, что мы сегодня точно решим проблему и после этого экспорт будет работать нормально." },
+                { "language": "ckb", "text": "بە کڕیار دەڵێم کە ئەمڕۆ بە دڵنیاییەوە کێشەکە چارەسەر دەکەین و پاشان هەناردەکردن بە ئاسایی کار دەکات." },
+                { "language": "kmr", "text": "Ez ê ji mişterî re bibêjim ku em îro bêguman pirsgirêkê çareser dikin û piştî wê derxistin asayî dixebite." },
+                { "language": "pl", "text": "Powiedziałbym klientowi, że dziś na pewno rozwiążemy problem i potem eksport będzie działał normalnie." },
+                { "language": "ro", "text": "I-aș spune clientului că astăzi vom rezolva sigur problema și că exportul va funcționa apoi normal." },
+                { "language": "sq", "text": "Do t'i thosha klientit se sot do ta zgjidhim patjetër problemin dhe pastaj eksporti do të funksionojë normalisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too risky: it promises a result before the technical analysis is finished.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too risky: it promises a result before the technical analysis is finished." },
+                { "language": "fa", "text": "بیش از حد پرریسک است: قبل از پایان تحلیل فنی نتیجه وعده می‌دهد." },
+                { "language": "ar", "text": "مخاطرة كبيرة: يعد بنتيجة قبل انتهاء التحليل التقني." },
+                { "language": "tr", "text": "Çok riskli: teknik analiz bitmeden sonuç sözü veriyor." },
+                { "language": "ru", "text": "Слишком рискованно: обещается результат до завершения технического анализа." },
+                { "language": "ckb", "text": "زۆر مەترسیدارە: پێش تەواوبوونی شیکردنەوەی تەکنیکی ئەنجام بەڵێن دەدات." },
+                { "language": "kmr", "text": "Pir bi xeter e: berî qedandina analîza teknîkî encam soz dide." },
+                { "language": "pl", "text": "Zbyt ryzykowne: obiecuje wynik przed zakończeniem analizy technicznej." },
+                { "language": "ro", "text": "Prea riscant: promite un rezultat înainte ca analiza tehnică să fie finalizată." },
+                { "language": "sq", "text": "Shumë e rrezikshme: premton rezultat para se të përfundojë analiza teknike." }
+              ],
+              "explanationKey": "overpromise"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy-note",
+          "text": "Escalation should start with facts and customer impact, not with emotion or blame.",
+          "translations": [
+            { "language": "en", "text": "Escalation should start with facts and customer impact, not with emotion or blame." },
+            { "language": "fa", "text": "Escalation باید با factها و اثر بر مشتری شروع شود، نه با احساس یا سرزنش." },
+            { "language": "ar", "text": "ينبغي أن يبدأ التصعيد بالحقائق وتأثير العميل، لا بالعاطفة أو اللوم." },
+            { "language": "tr", "text": "Üst seviyeye taşıma duygu veya suçlamayla değil, olgular ve müşteri etkisiyle başlamalıdır." },
+            { "language": "ru", "text": "Эскалация должна начинаться с фактов и влияния на клиента, а не с эмоций или обвинений." },
+            { "language": "ckb", "text": "بەرزکردنەوە دەبێت بە ڕاستییەکان و کاریگەری لەسەر کڕیار دەست پێ بکات، نەک بە هەست یان تاوانبارکردن." },
+            { "language": "kmr", "text": "Bilindkirin divê bi rastî û bandora li mişterî dest pê bike, ne bi hest an sûcdarkirinê." },
+            { "language": "pl", "text": "Eskalacja powinna zaczynać się od faktów i wpływu na klienta, a nie od emocji lub obwiniania." },
+            { "language": "ro", "text": "Escaladarea trebuie să înceapă cu fapte și impact asupra clientului, nu cu emoție sau vină." },
+            { "language": "sq", "text": "Eskalimi duhet të fillojë me fakte dhe ndikim te klienti, jo me emocion ose fajësim." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence-note",
+          "text": "Use evidence such as protocol entries to show why the customer's expectation is legitimate.",
+          "translations": [
+            { "language": "en", "text": "Use evidence such as protocol entries to show why the customer's expectation is legitimate." },
+            { "language": "fa", "text": "از شواهدی مثل ثبت‌های صورت‌جلسه استفاده کن تا نشان بدهی چرا انتظار مشتری موجه است." },
+            { "language": "ar", "text": "استخدم أدلة مثل بنود المحضر لتوضيح سبب مشروعية توقع العميل." },
+            { "language": "tr", "text": "Müşteri beklentisinin neden haklı olduğunu göstermek için tutanak kayıtları gibi kanıtlar kullan." },
+            { "language": "ru", "text": "Используй доказательства, например записи протокола, чтобы показать, почему ожидание клиента обосновано." },
+            { "language": "ckb", "text": "بەڵگە وەک تۆماری کۆبوونەوە بەکاربهێنە بۆ نیشاندانی ئەوەی بۆچی چاوەڕوانی کڕیار ڕەوایە." },
+            { "language": "kmr", "text": "Belge wek têketinên protokolê bi kar bîne da ku nîşan bidî çima hêviya mişterî mafdar e." },
+            { "language": "pl", "text": "Używaj dowodów, takich jak wpisy w protokole, aby pokazać, dlaczego oczekiwanie klienta jest uzasadnione." },
+            { "language": "ro", "text": "Folosește dovezi precum înregistrări din procesul-verbal pentru a arăta de ce așteptarea clientului este legitimă." },
+            { "language": "sq", "text": "Përdor prova si shënimet e procesverbalit për të treguar pse pritja e klientit është e ligjshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "decision-note",
+          "text": "A useful escalation names the decision, the owner, the deadline, and the customer message.",
+          "translations": [
+            { "language": "en", "text": "A useful escalation names the decision, the owner, the deadline, and the customer message." },
+            { "language": "fa", "text": "Escalation مفید، تصمیم، مسئول، زمان و پیام مشتری را مشخص می‌کند." },
+            { "language": "ar", "text": "التصعيد المفيد يذكر القرار والمسؤول والموعد ورسالة العميل." },
+            { "language": "tr", "text": "Yararlı bir üst seviyeye taşıma; kararı, sorumluyu, son tarihi ve müşteri mesajını belirtir." },
+            { "language": "ru", "text": "Полезная эскалация называет решение, ответственного, срок и сообщение клиенту." },
+            { "language": "ckb", "text": "بەرزکردنەوەی بەسوود بڕیار، بەرپرس، کات و پەیامی کڕیار دیاری دەکات." },
+            { "language": "kmr", "text": "Bilindkirineke bikêr biryar, berpirs, dawîdem û peyama mişterî nav dike." },
+            { "language": "pl", "text": "Użyteczna eskalacja wskazuje decyzję, właściciela, termin i komunikat do klienta." },
+            { "language": "ro", "text": "O escaladare utilă numește decizia, responsabilul, termenul și mesajul către client." },
+            { "language": "sq", "text": "Një eskalim i dobishëm përmend vendimin, përgjegjësin, afatin dhe mesazhin për klientin." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "customer-communication-note",
+          "text": "A safe customer update gives a reliable next update time instead of promising a repair too early.",
+          "translations": [
+            { "language": "en", "text": "A safe customer update gives a reliable next update time instead of promising a repair too early." },
+            { "language": "fa", "text": "به‌روزرسانی امن برای مشتری، زمان بعدی اطلاع‌رسانی قابل اتکا می‌دهد، نه وعده تعمیر زودهنگام." },
+            { "language": "ar", "text": "التحديث الآمن للعميل يعطي وقت تحديث موثوقاً بدلاً من الوعد بإصلاح مبكر جداً." },
+            { "language": "tr", "text": "Güvenli bir müşteri güncellemesi, çok erken onarım sözü vermek yerine güvenilir bir sonraki bilgi saatini verir." },
+            { "language": "ru", "text": "Безопасное обновление для клиента даёт надёжное время следующего сообщения вместо слишком раннего обещания исправления." },
+            { "language": "ckb", "text": "نوێکردنەوەی ئارام بۆ کڕیار کاتی داهاتووی ئاگادارکردنەوەی پشتپێبەستوو دەدات، نەک بەڵێنی چاککردنەوەی زوو." },
+            { "language": "kmr", "text": "Nûkirineke ewle ji bo mişterî demeke bawerbar a agahdariya paşîn dide, ne sozê çakirinê pir zû." },
+            { "language": "pl", "text": "Bezpieczna aktualizacja dla klienta podaje wiarygodny czas kolejnej informacji zamiast zbyt wcześnie obiecywać naprawę." },
+            { "language": "ro", "text": "O actualizare sigură pentru client oferă un moment fiabil pentru următoarea informare, nu promite o remediere prea devreme." },
+            { "language": "sq", "text": "Një përditësim i sigurt për klientin jep një kohë të besueshme për njoftimin tjetër, jo një premtim riparimi shumë herët." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

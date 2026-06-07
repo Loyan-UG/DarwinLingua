@@ -1,0 +1,816 @@
+{
+  "packageId": "roleplays-c2-core-02-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 02 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 02",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-vorstandsvorschlag-diplomatisch-kritisieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Vorstandsvorschlag diplomatisch kritisieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Diplomatically criticizing a board proposal" },
+        { "language": "fa", "text": "نقد دیپلماتیک یک پیشنهاد هیئت‌مدیره" },
+        { "language": "ar", "text": "انتقاد دبلوماسي لاقتراح من مجلس الإدارة" },
+        { "language": "tr", "text": "Bir yönetim kurulu önerisini diplomatik biçimde eleştirmek" },
+        { "language": "ru", "text": "Дипломатично критиковать предложение правления" },
+        { "language": "ckb", "text": "ڕەخنەکردنی دیپلۆماتیک لە پێشنیاری دەستەی بەڕێوەبردن" },
+        { "language": "kmr", "text": "Bi awayekî dîplomatîk rexne li pêşniyara desteya rêveberiyê kirin" },
+        { "language": "pl", "text": "Dyplomatyczna krytyka propozycji zarządu" },
+        { "language": "ro", "text": "Criticarea diplomatică a unei propuneri a conducerii" },
+        { "language": "sq", "text": "Kritikimi diplomatik i një propozimi të bordit" }
+      ],
+      "description": "In einer erweiterten Leitungsrunde schlägt der Vorstand vor, das Onboarding für neue Kunden drastisch zu kürzen, um kurzfristig Kosten zu senken. Sie sehen erhebliche Risiken für Bindung, Support und Reputation und müssen den Vorschlag kritisieren, ohne die Hierarchie zu verletzen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an extended leadership meeting, the board proposes drastically shortening onboarding for new customers to cut short-term costs. You see significant risks for retention, support, and reputation and must criticize the proposal without violating hierarchy." },
+        { "language": "fa", "text": "در یک جلسه گسترده مدیریتی، هیئت‌مدیره پیشنهاد می‌کند برای کاهش هزینه‌های کوتاه‌مدت، فرایند onboarding مشتریان جدید به‌شدت کوتاه شود. شما ریسک‌های جدی برای حفظ مشتری، پشتیبانی و اعتبار شرکت می‌بینید و باید بدون آسیب‌زدن به سلسله‌مراتب، پیشنهاد را نقد کنید." },
+        { "language": "ar", "text": "في اجتماع موسع للإدارة تقترح الإدارة العليا تقصير تهيئة العملاء الجدد بشكل كبير لتقليل التكاليف قصيرة المدى. ترى مخاطر كبيرة على الاحتفاظ بالعملاء والدعم والسمعة، ويجب أن تنتقد الاقتراح من دون الإخلال بالتراتبية." },
+        { "language": "tr", "text": "Genişletilmiş bir yönetim toplantısında yönetim kurulu, kısa vadeli maliyetleri düşürmek için yeni müşterilerin onboarding sürecini ciddi biçimde kısaltmayı önerir. Müşteri bağlılığı, destek ve itibar açısından ciddi riskler görüyorsunuz ve hiyerarşiyi zedelemeden öneriyi eleştirmelisiniz." },
+        { "language": "ru", "text": "На расширенном совещании руководства правление предлагает резко сократить онбординг новых клиентов, чтобы снизить краткосрочные расходы. Вы видите существенные риски для удержания клиентов, поддержки и репутации и должны критиковать предложение, не нарушая иерархию." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی فراوانی بەڕێوەبردندا، دەستەی بەڕێوەبردن پێشنیار دەکات پرۆسەی ئاشناکردنی کڕیارانی نوێ زۆر کورت بکرێتەوە بۆ کەمکردنەوەی تێچووی کورت‌ماوە. تۆ مەترسیی گەورە بۆ مانەوەی کڕیار، پشتگیری و ناوبانگ دەبینیت و دەبێت پێشنیارەکە ڕەخنە بکەیت بێ ئەوەی پلەبەندی بشکێنیت." },
+        { "language": "kmr", "text": "Di civîneke berfireh a rêveberiyê de desteya rêveberiyê pêşniyar dike ku onboarding-a xerîdarên nû gelek kurt bibe da ku lêçûnên demkurt kêm bibin. Hûn xeterên girîng ji bo girêdan, piştgirî û navûdengê dibînin û divê pêşniyarê rexne bikin bêyî ku hiyerarşî zirar bibîne." },
+        { "language": "pl", "text": "Na rozszerzonym spotkaniu kierownictwa zarząd proponuje drastyczne skrócenie onboardingu nowych klientów, aby obniżyć krótkoterminowe koszty. Widzi Pan/Pani poważne ryzyka dla retencji, wsparcia i reputacji i musi skrytykować propozycję bez naruszania hierarchii." },
+        { "language": "ro", "text": "Într-o ședință extinsă de conducere, conducerea propune scurtarea drastică a onboardingului pentru clienții noi pentru a reduce costurile pe termen scurt. Vedeți riscuri semnificative pentru retenție, suport și reputație și trebuie să criticați propunerea fără a încălca ierarhia." },
+        { "language": "sq", "text": "Në një takim të zgjeruar drejtues, bordi propozon shkurtimin drastik të onboarding-ut për klientët e rinj për të ulur kostot afatshkurtra. Ju shihni rreziqe të mëdha për mbajtjen e klientëve, mbështetjen dhe reputacionin dhe duhet ta kritikoni propozimin pa cenuar hierarkinë." }
+      ],
+      "learnerGoal": "Einen Vorstandsvorschlag diplomatisch kritisieren: Anerkennung zeigen, Einwände faktenbasiert rahmen, Folgekosten sichtbar machen, eine konstruktive Alternative anbieten und die Entscheidungsebene respektvoll einbeziehen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Diplomatically criticize a board proposal: show acknowledgement, frame objections with evidence, make downstream costs visible, offer a constructive alternative, and respectfully involve the decision level." },
+        { "language": "fa", "text": "یک پیشنهاد هیئت‌مدیره را دیپلماتیک نقد کنید: ابتدا ارزش پیشنهاد را به رسمیت بشناسید، ایرادها را مبتنی بر شواهد چارچوب‌بندی کنید، هزینه‌های بعدی را آشکار کنید، جایگزین سازنده بدهید و سطح تصمیم‌گیری را محترمانه درگیر کنید." },
+        { "language": "ar", "text": "انتقد اقتراحاً من الإدارة العليا بدبلوماسية: أظهر التقدير، وأطر الاعتراضات بالأدلة، واجعل التكاليف اللاحقة مرئية، وقدم بديلاً بنّاءً، وأشرك مستوى القرار باحترام." },
+        { "language": "tr", "text": "Bir yönetim kurulu önerisini diplomatik biçimde eleştirin: takdir gösterin, itirazları kanıtla çerçeveleyin, sonraki maliyetleri görünür kılın, yapıcı bir alternatif sunun ve karar düzeyini saygıyla dahil edin." },
+        { "language": "ru", "text": "Дипломатично критиковать предложение правления: показать признание, обосновать возражения фактами, сделать видимыми последующие издержки, предложить конструктивную альтернативу и уважительно включить уровень принятия решения." },
+        { "language": "ckb", "text": "پێشنیاری دەستەی بەڕێوەبردن بە دیپلۆماتیک ڕەخنە بکە: دانپێدان نیشان بدە، ڕەخنەکان بە بەڵگە دابڕێژە، تێچووی دواتر دیار بکە، جێگرەوەیەکی سازندە پێشنیار بکە و ئاستی بڕیار بە ڕێزەوە تێوەربکە." },
+        { "language": "kmr", "text": "Pêşniyara desteya rêveberiyê bi dîplomasî rexne bikin: qebûlkirinê nîşan bidin, nerazîbûnan bi belgeyan çarçove bikin, lêçûnên paşerojê xuya bikin, alternatîveke avakar pêşkêş bikin û asta biryarê bi rêz tê de bigirin." },
+        { "language": "pl", "text": "Dyplomatycznie skrytykować propozycję zarządu: okazać uznanie, oprzeć zastrzeżenia na faktach, uwidocznić koszty następcze, zaproponować konstruktywną alternatywę i z szacunkiem włączyć poziom decyzyjny." },
+        { "language": "ro", "text": "Criticați diplomatic o propunere a conducerii: arătați recunoaștere, încadrați obiecțiile pe bază de dovezi, faceți vizibile costurile ulterioare, oferiți o alternativă constructivă și implicați respectuos nivelul decizional." },
+        { "language": "sq", "text": "Kritikoni diplomatikisht një propozim të bordit: tregoni vlerësim, kornizoni kundërshtimet me prova, bëni të dukshme kostot pasuese, ofroni një alternativë ndërtuese dhe përfshini me respekt nivelin vendimmarrës." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "agree-disagree",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 2,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Bereichsleitung",
+          "translations": [
+            { "language": "en", "text": "Department lead" },
+            { "language": "fa", "text": "مدیر بخش" },
+            { "language": "ar", "text": "مدير القسم" },
+            { "language": "tr", "text": "Bölüm yöneticisi" },
+            { "language": "ru", "text": "Руководитель направления" },
+            { "language": "ckb", "text": "بەڕێوەبەری بەش" },
+            { "language": "kmr", "text": "Rêveberê beşê" },
+            { "language": "pl", "text": "Kierownik działu" },
+            { "language": "ro", "text": "Manager de departament" },
+            { "language": "sq", "text": "Drejtues departamenti" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Vorstandsmitglied",
+          "translations": [
+            { "language": "en", "text": "Board member" },
+            { "language": "fa", "text": "عضو هیئت‌مدیره" },
+            { "language": "ar", "text": "عضو مجلس الإدارة" },
+            { "language": "tr", "text": "Yönetim kurulu üyesi" },
+            { "language": "ru", "text": "Член правления" },
+            { "language": "ckb", "text": "ئەندامی دەستەی بەڕێوەبردن" },
+            { "language": "kmr", "text": "Endamê desteya rêveberiyê" },
+            { "language": "pl", "text": "Członek zarządu" },
+            { "language": "ro", "text": "Membru al conducerii" },
+            { "language": "sq", "text": "Anëtar bordi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Unser Vorschlag ist, das Onboarding für Neukunden von sechs Wochen auf zehn Tage zu kürzen. Wir brauchen kurzfristig Luft im Budget, und die Kunden sollen schneller produktiv werden.",
+          "translations": [
+            { "language": "en", "text": "Our proposal is to shorten onboarding for new customers from six weeks to ten days. We need short-term room in the budget, and customers should become productive faster." },
+            { "language": "fa", "text": "پیشنهاد ما این است که onboarding مشتریان جدید از شش هفته به ده روز کوتاه شود. ما در کوتاه‌مدت به فضای بودجه‌ای نیاز داریم و مشتریان هم باید سریع‌تر بهره‌بردار شوند." },
+            { "language": "ar", "text": "اقتراحنا هو تقصير تهيئة العملاء الجدد من ستة أسابيع إلى عشرة أيام. نحتاج إلى مساحة قصيرة المدى في الميزانية، وينبغي أن يصبح العملاء منتجين بسرعة أكبر." },
+            { "language": "tr", "text": "Önerimiz, yeni müşteriler için onboarding sürecini altı haftadan on güne indirmek. Kısa vadede bütçede alan açmamız gerekiyor ve müşteriler daha hızlı verimli hale gelmeli." },
+            { "language": "ru", "text": "Наше предложение - сократить онбординг новых клиентов с шести недель до десяти дней. Нам нужен краткосрочный бюджетный резерв, а клиенты должны быстрее начать продуктивно работать." },
+            { "language": "ckb", "text": "پێشنیاری ئێمە ئەوەیە پرۆسەی ئاشناکردنی کڕیارانی نوێ لە شەش هەفتەوە بۆ دە ڕۆژ کورت بکرێتەوە. لە کورت‌ماوەدا پێویستمان بە بۆشایی لە بودجە هەیە و کڕیارانیش دەبێت خێراتر بەرهەمدار بن." },
+            { "language": "kmr", "text": "Pêşniyara me ew e ku onboarding-a xerîdarên nû ji şeş hefteyan bibe deh roj. Di demkurt de cihê budceyê hewce ye, û xerîdar jî divê zûtir produktîf bibin." },
+            { "language": "pl", "text": "Nasza propozycja zakłada skrócenie onboardingu nowych klientów z sześciu tygodni do dziesięciu dni. Potrzebujemy krótkoterminowej przestrzeni w budżecie, a klienci powinni szybciej zacząć produktywnie pracować." },
+            { "language": "ro", "text": "Propunerea noastră este să scurtăm onboardingul pentru clienții noi de la șase săptămâni la zece zile. Avem nevoie pe termen scurt de spațiu în buget, iar clienții ar trebui să devină productivi mai repede." },
+            { "language": "sq", "text": "Propozimi ynë është të shkurtojmë onboarding-un për klientët e rinj nga gjashtë javë në dhjetë ditë. Na duhet hapësirë afatshkurtër në buxhet dhe klientët duhet të bëhen produktivë më shpejt." }
+          ],
+          "function": "state-board-proposal",
+          "toneNote": "senior proposal with cost pressure"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich kann die Budgetlogik nachvollziehen, und der Wunsch nach schnellerer Produktivität ist berechtigt. Meine Sorge ist, dass wir die Kosten nicht senken, sondern zeitlich verschieben: vom Onboarding in Support, Eskalation und Kundenbindung.",
+          "translations": [
+            { "language": "en", "text": "I can understand the budget logic, and the wish for faster productivity is justified. My concern is that we are not reducing costs, but shifting them in time: from onboarding to support, escalation, and customer retention." },
+            { "language": "fa", "text": "من منطق بودجه‌ای را درک می‌کنم و خواسته برای بهره‌وری سریع‌تر هم قابل‌توجیه است. نگرانی من این است که هزینه‌ها را کم نمی‌کنیم، بلکه فقط زمانشان را جابه‌جا می‌کنیم: از onboarding به پشتیبانی، escalation و حفظ مشتری." },
+            { "language": "ar", "text": "أستطيع فهم منطق الميزانية، والرغبة في إنتاجية أسرع مبررة. قلقي هو أننا لا نخفض التكاليف، بل ننقلها زمنياً: من التهيئة إلى الدعم والتصعيد والاحتفاظ بالعملاء." },
+            { "language": "tr", "text": "Bütçe mantığını anlayabiliyorum ve daha hızlı verimlilik isteği haklı. Kaygım şu: maliyetleri azaltmıyor, yalnızca zaman içinde kaydırıyoruz; onboardingden desteğe, eskalasyona ve müşteri bağlılığına." },
+            { "language": "ru", "text": "Я понимаю бюджетную логику, и стремление к более быстрой продуктивности оправдано. Моя тревога в том, что мы не снижаем расходы, а переносим их во времени: из онбординга в поддержку, эскалации и удержание клиентов." },
+            { "language": "ckb", "text": "من دەتوانم لۆژیکی بودجە تێبگەم، و خواستی بەرهەمداریی خێراتر ڕەوایە. نیگەرانیی من ئەوەیە کە ئێمە تێچوو کەم ناکەینەوە، بەڵکو کاتەکەی دەگوازینەوە: لە onboarding بۆ پشتگیری، escalation و مانەوەی کڕیار." },
+            { "language": "kmr", "text": "Ez dikarim mantiqa budceyê fam bikim, û daxwaza produktîfbûna zûtir jî maqûl e. Xemgîniya min ew e ku em lêçûnan kêm nakin, tenê wan di demê de diguhezînin: ji onboardingê ber bi piştgirî, eskalasyon û girêdana xerîdar ve." },
+            { "language": "pl", "text": "Rozumiem logikę budżetową, a życzenie szybszej produktywności jest uzasadnione. Moja obawa polega na tym, że nie obniżamy kosztów, lecz przesuwamy je w czasie: z onboardingu do wsparcia, eskalacji i retencji klientów." },
+            { "language": "ro", "text": "Înțeleg logica bugetară, iar dorința de productivitate mai rapidă este justificată. Îngrijorarea mea este că nu reducem costurile, ci le mutăm în timp: din onboarding în suport, escaladări și retenția clienților." },
+            { "language": "sq", "text": "E kuptoj logjikën buxhetore dhe dëshira për produktivitet më të shpejtë është e arsyeshme. Shqetësimi im është se nuk po i ulim kostot, por po i zhvendosim në kohë: nga onboarding-u te mbështetja, eskalimi dhe mbajtja e klientëve." }
+          ],
+          "function": "acknowledge-and-reframe-cost",
+          "toneNote": "respectful but clear"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Das klingt nach grundsätzlicher Ablehnung. Uns geht es nicht um Perfektion, sondern um ein schlankeres Modell, das wir endlich skalieren können.",
+          "translations": [
+            { "language": "en", "text": "That sounds like fundamental rejection. We are not aiming for perfection, but for a leaner model that we can finally scale." },
+            { "language": "fa", "text": "این شبیه رد اصولی پیشنهاد است. هدف ما کمال‌گرایی نیست، بلکه مدلی چابک‌تر است که بالاخره بتوانیم آن را مقیاس‌پذیر کنیم." },
+            { "language": "ar", "text": "هذا يبدو كرفض مبدئي. هدفنا ليس الكمال، بل نموذج أكثر رشاقة نستطيع أخيراً توسيعه." },
+            { "language": "tr", "text": "Bu temel bir ret gibi geliyor. Amacımız mükemmellik değil, nihayet ölçekleyebileceğimiz daha yalın bir model." },
+            { "language": "ru", "text": "Это звучит как принципиальное отклонение. Речь не о совершенстве, а о более стройной модели, которую мы наконец сможем масштабировать." },
+            { "language": "ckb", "text": "ئەمە وەک ڕەتکردنەوەی بنەڕەتی دەنگ دەدات. ئامانجی ئێمە تەواوی نییە، بەڵکو مۆدێلێکی چالاکترە کە ئاخیر بتوانین پەرەی پێبدەین." },
+            { "language": "kmr", "text": "Ev wek redkirineke bingehîn dixuye. Armanca me bêkêmasî nîne, lê modelekî siviktir e ku em dawî karibin mezin bikin." },
+            { "language": "pl", "text": "To brzmi jak zasadnicze odrzucenie. Nie chodzi nam o perfekcję, lecz o szczuplejszy model, który wreszcie możemy skalować." },
+            { "language": "ro", "text": "Asta sună ca o respingere de principiu. Nu urmărim perfecțiunea, ci un model mai suplu pe care să îl putem în sfârșit scala." },
+            { "language": "sq", "text": "Kjo tingëllon si refuzim parimor. Nuk synojmë përsosmëri, por një model më të lehtë që më në fund mund ta shkallëzojmë." }
+          ],
+          "function": "push-back-against-criticism",
+          "toneNote": "defensive senior response"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde es nicht als Ablehnung rahmen, sondern als Absicherung des Skalierungsziels. Wenn die ersten drei Monate nach Vertragsbeginn die Abbruchrate erhöhen, skaliert nicht das Modell, sondern der Schaden.",
+          "translations": [
+            { "language": "en", "text": "I would not frame it as rejection, but as safeguarding the scaling objective. If the first three months after contract start increase the churn rate, it is not the model that scales, but the damage." },
+            { "language": "fa", "text": "من آن را به‌عنوان رد پیشنهاد چارچوب‌بندی نمی‌کنم، بلکه به‌عنوان حفاظت از هدف مقیاس‌پذیری. اگر سه ماه اول پس از شروع قرارداد نرخ ریزش را بالا ببرد، چیزی که مقیاس‌پذیر می‌شود مدل نیست، بلکه خسارت است." },
+            { "language": "ar", "text": "لن أؤطره كرفض، بل كحماية لهدف التوسيع. إذا زادت الأشهر الثلاثة الأولى بعد بدء العقد معدل الانسحاب، فلن يكون النموذج هو ما يتوسع، بل الضرر." },
+            { "language": "tr", "text": "Bunu ret olarak değil, ölçekleme hedefinin güvenceye alınması olarak çerçevelerdim. Sözleşme başlangıcından sonraki ilk üç ay kayıp oranını artırırsa ölçeklenen model değil, zarar olur." },
+            { "language": "ru", "text": "Я бы сформулировал это не как отказ, а как защиту цели масштабирования. Если первые три месяца после начала договора увеличат отток, масштабироваться будет не модель, а ущерб." },
+            { "language": "ckb", "text": "من ئەمە وەک ڕەتکردنەوە دابڕێژمەوە نا، بەڵکو وەک پاراستنی ئامانجی پەرەپێدان. ئەگەر سێ مانگی یەکەمی دوای دەستپێکی گرێبەست ڕێژەی وازهێنان زیاد بکات، ئەوە مۆدێلەکە نییە پەرە دەسێنێت، بەڵکو زیانەکەیە." },
+            { "language": "kmr", "text": "Ez wê wek redkirin çarçove nakim, lê wek parastina armanca mezinbûnê. Heke sê mehên yekem piştî destpêka peymanê rêjeya devjêberdanê zêde bikin, ya ku mezin dibe ne model e, lê zirar e." },
+            { "language": "pl", "text": "Nie ująłbym/ujęłabym tego jako odrzucenie, lecz jako zabezpieczenie celu skalowania. Jeśli pierwsze trzy miesiące po rozpoczęciu umowy zwiększą churn, skalować będzie się nie model, lecz szkoda." },
+            { "language": "ro", "text": "Nu aș încadra asta ca respingere, ci ca protejare a obiectivului de scalare. Dacă primele trei luni după începerea contractului cresc rata de plecare, nu modelul se scalează, ci prejudiciul." },
+            { "language": "sq", "text": "Nuk do ta kornizoja si refuzim, por si mbrojtje të qëllimit të shkallëzimit. Nëse tre muajt e parë pas nisjes së kontratës rrisin largimin e klientëve, nuk shkallëzohet modeli, por dëmi." }
+          ],
+          "function": "reframe-criticism-as-risk-safeguard",
+          "toneNote": "diplomatic counterargument"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Welche Evidenz haben Sie dafür? Ein längerer Prozess fühlt sich für viele Kunden eher schwerfällig an.",
+          "translations": [
+            { "language": "en", "text": "What evidence do you have for that? For many customers, a longer process feels rather cumbersome." },
+            { "language": "fa", "text": "برای این حرف چه شواهدی دارید؟ برای بسیاری از مشتریان، فرایند طولانی‌تر بیشتر سنگین و کند به نظر می‌رسد." },
+            { "language": "ar", "text": "ما الدليل على ذلك؟ بالنسبة إلى كثير من العملاء تبدو العملية الأطول ثقيلة إلى حد ما." },
+            { "language": "tr", "text": "Bunun için hangi kanıtınız var? Daha uzun bir süreç birçok müşteri için daha çok hantal hissettirir." },
+            { "language": "ru", "text": "Какие у вас есть доказательства? Более длинный процесс многим клиентам кажется скорее громоздким." },
+            { "language": "ckb", "text": "بۆ ئەمە چ بەڵگەیەکت هەیە؟ پرۆسەی درێژتر بۆ زۆرێک لە کڕیاران زیاتر قورس و ناخۆش دەردەکەوێت." },
+            { "language": "kmr", "text": "Ji bo vê çi belgeyên we hene? Pêvajoyeke dirêjtir ji bo gelek xerîdaran hinekî giran û bêlez xuya dike." },
+            { "language": "pl", "text": "Jakie ma Pan/Pani na to dowody? Dłuższy proces dla wielu klientów wydaje się raczej ociężały." },
+            { "language": "ro", "text": "Ce dovezi aveți pentru asta? Un proces mai lung pare pentru mulți clienți destul de greoi." },
+            { "language": "sq", "text": "Çfarë prove keni për këtë? Një proces më i gjatë për shumë klientë duket më tepër i rëndë." }
+          ],
+          "function": "ask-for-evidence",
+          "toneNote": "legitimate challenge"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Die Daten sprechen nicht gegen Verschlankung, aber gegen einen harten Schnitt. Bei Kunden, die weniger als drei betreute Nutzungstermine hatten, lag die Eskalationsquote zuletzt fast doppelt so hoch.",
+          "translations": [
+            { "language": "en", "text": "The data does not argue against streamlining, but against a hard cut. Among customers with fewer than three guided usage sessions, the escalation rate was recently almost twice as high." },
+            { "language": "fa", "text": "داده‌ها علیه چابک‌سازی نیستند، اما علیه یک کاهش ناگهانی هستند. در مشتریانی که کمتر از سه جلسه استفاده هدایت‌شده داشتند، نرخ escalation اخیراً تقریباً دو برابر بود." },
+            { "language": "ar", "text": "البيانات لا تعارض التبسيط، لكنها تعارض القطع الحاد. لدى العملاء الذين حصلوا على أقل من ثلاث جلسات استخدام موجهة، كان معدل التصعيد مؤخراً يقارب الضعف." },
+            { "language": "tr", "text": "Veriler sadeleştirmeye karşı değil, sert bir kesintiye karşı konuşuyor. Üçten az yönlendirilmiş kullanım oturumu alan müşterilerde eskalasyon oranı son dönemde neredeyse iki kat yüksekti." },
+            { "language": "ru", "text": "Данные говорят не против упрощения, а против резкого сокращения. У клиентов, у которых было меньше трех сопровождаемых сессий использования, уровень эскалаций недавно был почти вдвое выше." },
+            { "language": "ckb", "text": "داتاکان دژی سادەکردنەوە نین، بەڵکو دژی بڕینی توندن. لەو کڕیارانەی کەمتر لە سێ دانیشتنی بەکارهێنانی ڕێنمایی‌کراویان هەبوو، ڕێژەی escalation لە دواییەکاندا نزیکەی دوو هێندە بوو." },
+            { "language": "kmr", "text": "Daneyên me li dijî sivikkirinê nabêjin, lê li dijî qutkirineke tûj dibêjin. Li ba xerîdarên ku kêmtir ji sê danişînên bikaranîna bi rêberî hebûn, rêjeya eskalasyonê vê dawiyê hema du qat bû." },
+            { "language": "pl", "text": "Dane nie przemawiają przeciw uproszczeniu, lecz przeciw ostremu cięciu. U klientów, którzy mieli mniej niż trzy prowadzone sesje użytkowania, wskaźnik eskalacji był ostatnio prawie dwukrotnie wyższy." },
+            { "language": "ro", "text": "Datele nu vorbesc împotriva simplificării, ci împotriva unei tăieri bruște. La clienții care au avut mai puțin de trei sesiuni ghidate de utilizare, rata escaladărilor a fost recent aproape dublă." },
+            { "language": "sq", "text": "Të dhënat nuk flasin kundër thjeshtimit, por kundër një prerjeje të fortë. Te klientët që kishin më pak se tri seanca përdorimi të udhëzuara, shkalla e eskalimit kohët e fundit ishte pothuajse dyfish." }
+          ],
+          "function": "provide-evidence-with-nuance",
+          "toneNote": "data-based disagreement"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Wir können aber nicht jeden Sonderfall betreuen. Wenn Ihr Bereich eine Alternative sieht, muss sie trotzdem signifikant günstiger sein.",
+          "translations": [
+            { "language": "en", "text": "But we cannot support every special case. If your department sees an alternative, it still has to be significantly cheaper." },
+            { "language": "fa", "text": "اما نمی‌توانیم از هر مورد خاص پشتیبانی کنیم. اگر بخش شما جایگزینی می‌بیند، آن جایگزین همچنان باید به‌طور معناداری ارزان‌تر باشد." },
+            { "language": "ar", "text": "لكن لا يمكننا دعم كل حالة خاصة. إذا كان قسمكم يرى بديلاً، فيجب أن يكون مع ذلك أرخص بشكل واضح." },
+            { "language": "tr", "text": "Ama her özel durumu destekleyemeyiz. Bölümünüz bir alternatif görüyorsa, yine de anlamlı biçimde daha ucuz olmalı." },
+            { "language": "ru", "text": "Но мы не можем сопровождать каждый особый случай. Если ваше направление видит альтернативу, она все равно должна быть значительно дешевле." },
+            { "language": "ckb", "text": "بەڵام ناتوانین هەر دۆخێکی تایبەت پشتگیری بکەین. ئەگەر بەشی ئێوە جێگرەوەیەک دەبینێت، هێشتا دەبێت بە شێوەیەکی بەرچاو هەرزانتر بێت." },
+            { "language": "kmr", "text": "Lê em nikarin her rewşa taybet piştgirî bikin. Heke beşa we alternatîvek dibîne, divê ew dîsa jî bi awayekî girîng erzantir be." },
+            { "language": "pl", "text": "Nie możemy jednak obsługiwać każdego szczególnego przypadku. Jeśli Pański/Pani obszar widzi alternatywę, nadal musi być ona znacząco tańsza." },
+            { "language": "ro", "text": "Dar nu putem susține fiecare caz special. Dacă departamentul dumneavoastră vede o alternativă, aceasta trebuie totuși să fie semnificativ mai ieftină." },
+            { "language": "sq", "text": "Por nuk mund të mbështesim çdo rast të veçantë. Nëse departamenti juaj sheh një alternativë, ajo prapë duhet të jetë ndjeshëm më e lirë." }
+          ],
+          "function": "require-cost-compatible-alternative",
+          "toneNote": "conditional openness"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich keinen Sechs-Wochen-Standard verteidigen, sondern ein gestuftes Modell vorschlagen: zehn Tage Basisprogramm für einfache Fälle, drei verpflichtende Erfolgspunkte für komplexe Kunden und ein Frühwarnsignal, wenn die Nutzung nach zwei Wochen nicht trägt.",
+          "translations": [
+            { "language": "en", "text": "Then I would not defend a six-week standard, but propose a tiered model: a ten-day basic program for simple cases, three mandatory success checkpoints for complex customers, and an early warning signal if usage is not stable after two weeks." },
+            { "language": "fa", "text": "پس من از استاندارد شش‌هفته‌ای دفاع نمی‌کنم، بلکه یک مدل مرحله‌ای پیشنهاد می‌دهم: برنامه پایه ده‌روزه برای موارد ساده، سه نقطه موفقیت الزامی برای مشتریان پیچیده و یک علامت هشدار زودهنگام اگر استفاده پس از دو هفته پایدار نباشد." },
+            { "language": "ar", "text": "إذن لن أدافع عن معيار الستة أسابيع، بل سأقترح نموذجاً متدرجاً: برنامجاً أساسياً من عشرة أيام للحالات البسيطة، وثلاث نقاط نجاح إلزامية للعملاء المعقدين، وإشارة إنذار مبكر إذا لم يكن الاستخدام مستقراً بعد أسبوعين." },
+            { "language": "tr", "text": "O zaman altı haftalık standardı savunmam; kademeli bir model öneririm: basit vakalar için on günlük temel program, karmaşık müşteriler için üç zorunlu başarı noktası ve iki hafta sonra kullanım taşımıyorsa erken uyarı sinyali." },
+            { "language": "ru", "text": "Тогда я бы не защищал шестинедельный стандарт, а предложил ступенчатую модель: десятидневную базовую программу для простых случаев, три обязательные точки успеха для сложных клиентов и ранний сигнал предупреждения, если через две недели использование не держится." },
+            { "language": "ckb", "text": "ئەوا من بەرگری لە ستانداردی شەش هەفتە ناکەم، بەڵکو مۆدێلێکی قۆناغبەقۆناغ پێشنیار دەکەم: بەرنامەی بنەڕەتی دە ڕۆژە بۆ دۆخی سادە، سێ خاڵی سەرکەوتنی پێویست بۆ کڕیارانی ئاڵۆز، و ئاماژەی ئاگاداری زوو ئەگەر بەکارهێنان دوای دوو هەفتە نەوەستێت." },
+            { "language": "kmr", "text": "Wê demê ez standarda şeş-hefteyî naparêzim, lê modelekî qatekî pêşniyar dikim: programa bingehîn a deh rojî ji bo rewşên hêsan, sê xalên serkeftinê yên mecbûrî ji bo xerîdarên tevlihev, û nîşaneke hişyariya zû heke bikaranîn piştî du hefteyan ne domdar be." },
+            { "language": "pl", "text": "Wtedy nie broniłbym/broniłabym sześciotygodniowego standardu, lecz zaproponował(a) model stopniowany: dziesięciodniowy program podstawowy dla prostych przypadków, trzy obowiązkowe punkty sukcesu dla złożonych klientów i sygnał wczesnego ostrzegania, jeśli użycie po dwóch tygodniach nie jest stabilne." },
+            { "language": "ro", "text": "Atunci nu aș apăra standardul de șase săptămâni, ci aș propune un model pe trepte: program de bază de zece zile pentru cazuri simple, trei puncte obligatorii de succes pentru clienți complecși și un semnal de avertizare timpurie dacă utilizarea nu se susține după două săptămâni." },
+            { "language": "sq", "text": "Atëherë nuk do të mbroja standardin gjashtëjavor, por do të propozoja një model me nivele: program bazë dhjetëditor për raste të thjeshta, tri pika të detyrueshme suksesi për klientë kompleksë dhe një sinjal paralajmërimi të hershëm nëse përdorimi nuk qëndron pas dy javësh." }
+          ],
+          "function": "offer-constructive-alternative",
+          "toneNote": "solution-oriented criticism"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Das klingt differenzierter, aber auch erklärungsbedürftig. Wie verhindern wir, dass der Vertrieb es als Rückzieher gegenüber dem Vorstand versteht?",
+          "translations": [
+            { "language": "en", "text": "That sounds more differentiated, but also in need of explanation. How do we prevent sales from interpreting it as backing down toward the board?" },
+            { "language": "fa", "text": "این دقیق‌تر به نظر می‌رسد، اما نیاز به توضیح هم دارد. چطور جلوگیری کنیم که فروش آن را عقب‌نشینی در برابر هیئت‌مدیره تعبیر نکند؟" },
+            { "language": "ar", "text": "هذا يبدو أكثر تفصيلاً، لكنه يحتاج أيضاً إلى شرح. كيف نمنع المبيعات من فهمه كتراجع أمام مجلس الإدارة؟" },
+            { "language": "tr", "text": "Bu daha ayrıntılı geliyor, ama açıklama da gerektiriyor. Satış ekibinin bunu yönetim kuruluna karşı geri adım olarak anlamasını nasıl engelleriz?" },
+            { "language": "ru", "text": "Это звучит более дифференцированно, но требует объяснения. Как не допустить, чтобы продажи восприняли это как отступление перед правлением?" },
+            { "language": "ckb", "text": "ئەمە وردتر دەردەکەوێت، بەڵام پێویستی بە ڕوونکردنەوەش هەیە. چۆن ڕێگری بکەین کە فرۆشتن ئەمە وەک پاشگەزبوونەوە بەرامبەر دەستەی بەڕێوەبردن تێنەگات؟" },
+            { "language": "kmr", "text": "Ev cuda-xuyatir dixuye, lê hewcedarê ravekirinê jî ye. Em çawa rê li ber wê digirin ku firotin vê wek paşveçûn li hember desteya rêveberiyê fam neke?" },
+            { "language": "pl", "text": "To brzmi bardziej zróżnicowanie, ale wymaga też wyjaśnienia. Jak zapobiec temu, żeby sprzedaż odczytała to jako wycofanie się wobec zarządu?" },
+            { "language": "ro", "text": "Sună mai diferențiat, dar are nevoie și de explicații. Cum prevenim ca vânzările să îl interpreteze ca pe un pas înapoi față de conducere?" },
+            { "language": "sq", "text": "Kjo tingëllon më e diferencuar, por kërkon edhe shpjegim. Si ta parandalojmë që shitjet ta kuptojnë si tërheqje para bordit?" }
+          ],
+          "function": "test-political-communication",
+          "toneNote": "concern about internal optics"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Botschaft so setzen: Wir übernehmen den Kostendruck des Vorstands, aber übersetzen ihn in ein risikogerechtes Modell. Das ist kein Rückzieher, sondern die Bedingung dafür, dass die Einsparung nicht an anderer Stelle wieder aufläuft.",
+          "translations": [
+            { "language": "en", "text": "I would frame the message like this: we accept the board's cost pressure, but translate it into a risk-appropriate model. That is not backing down, but the condition for ensuring that the savings do not reappear elsewhere." },
+            { "language": "fa", "text": "من پیام را این‌طور تنظیم می‌کنم: ما فشار هزینه‌ای هیئت‌مدیره را می‌پذیریم، اما آن را به مدلی متناسب با ریسک ترجمه می‌کنیم. این عقب‌نشینی نیست، بلکه شرطی است برای اینکه صرفه‌جویی در جای دیگری دوباره هزینه ایجاد نکند." },
+            { "language": "ar", "text": "سأصوغ الرسالة هكذا: نحن نتبنى ضغط التكلفة الذي حدده مجلس الإدارة، لكننا نترجمه إلى نموذج ملائم للمخاطر. هذا ليس تراجعاً، بل شرط لضمان ألا تظهر الوفورات مرة أخرى في مكان آخر." },
+            { "language": "tr", "text": "Mesajı şöyle kurardım: Yönetim kurulunun maliyet baskısını üstleniyoruz, ama bunu riske uygun bir modele çeviriyoruz. Bu geri adım değil, tasarrufun başka bir yerde yeniden maliyet olarak ortaya çıkmaması için koşuldur." },
+            { "language": "ru", "text": "Я бы сформулировал сообщение так: мы принимаем давление правления по снижению затрат, но переводим его в модель, соответствующую риску. Это не отступление, а условие того, чтобы экономия не возникла снова в другом месте." },
+            { "language": "ckb", "text": "من پەیامەکە ئاوا دادەنێم: ئێمە فشاری تێچووی دەستەی بەڕێوەبردن وەردەگرین، بەڵام دەیگوازینەوە بۆ مۆدێلێکی گونجاو بە مەترسی. ئەمە پاشگەزبوونەوە نییە، بەڵکو مەرجە بۆ ئەوەی پاشەکەوتەکە لە شوێنێکی تر دووبارە نەگەڕێتەوە." },
+            { "language": "kmr", "text": "Ez peyamê wisa datînim: em zexta lêçûnê ya desteya rêveberiyê werdigirin, lê wê vediguherînin modelekî li gor xeterê. Ev paşveçûn nîne, lê merc e ji bo ku teserûf li cihê din careke din dernekeve." },
+            { "language": "pl", "text": "Ująłbym/ujęłabym komunikat tak: przejmujemy presję kosztową zarządu, ale przekładamy ją na model adekwatny do ryzyka. To nie jest wycofanie się, lecz warunek, by oszczędność nie pojawiła się ponownie w innym miejscu." },
+            { "language": "ro", "text": "Aș formula mesajul astfel: preluăm presiunea de cost a conducerii, dar o traducem într-un model adecvat riscului. Nu este un pas înapoi, ci condiția ca economia să nu reapară în altă parte." },
+            { "language": "sq", "text": "Mesazhin do ta formuloja kështu: e marrim përsipër presionin e kostos nga bordi, por e përkthejmë në një model të përshtatur me rrezikun. Kjo nuk është tërheqje, por kushti që kursimi të mos shfaqet përsëri diku tjetër." }
+          ],
+          "function": "protect-hierarchy-and-message",
+          "toneNote": "politically careful synthesis"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Wenn wir das so weitergeben, brauche ich eine Formulierung, die nicht wie eine Warnung aus Ihrem Bereich klingt, sondern wie ein tragfähiger Managementvorschlag.",
+          "translations": [
+            { "language": "en", "text": "If we pass it on like that, I need wording that does not sound like a warning from your department, but like a viable management proposal." },
+            { "language": "fa", "text": "اگر این را این‌طور منتقل کنیم، من به فرمول‌بندی‌ای نیاز دارم که مثل هشدار از بخش شما شنیده نشود، بلکه مثل یک پیشنهاد مدیریتی قابل‌اتکا باشد." },
+            { "language": "ar", "text": "إذا نقلنا الأمر بهذه الطريقة، أحتاج إلى صياغة لا تبدو كتحذير من قسمكم، بل كاقتراح إداري قابل للحمل." },
+            { "language": "tr", "text": "Bunu böyle ileteceksek, bölümünüzden gelen bir uyarı gibi değil, taşıyıcı bir yönetim önerisi gibi duyulan bir formülasyona ihtiyacım var." },
+            { "language": "ru", "text": "Если мы передадим это так, мне нужна формулировка, которая звучит не как предупреждение от вашего направления, а как жизнеспособное управленческое предложение." },
+            { "language": "ckb", "text": "ئەگەر ئەمە ئاوا بگوازینەوە، پێویستم بە دەربڕینێکە کە وەک ئاگادارییەک لە بەشی ئێوە نەدەنگ بدات، بەڵکو وەک پێشنیاری بەڕێوەبردنی بەهێز بێت." },
+            { "language": "kmr", "text": "Heke em vê wisa derbas bikin, pêdiviya min bi gotinekê heye ku wek hişyariyek ji beşa we neyê bihîstin, lê wek pêşniyareke rêveberiyê ya bihêz xuya bike." },
+            { "language": "pl", "text": "Jeśli przekażemy to w ten sposób, potrzebuję sformułowania, które nie brzmi jak ostrzeżenie z Pańskiego/Pani obszaru, lecz jak nośna propozycja zarządcza." },
+            { "language": "ro", "text": "Dacă transmitem asta așa, am nevoie de o formulare care să nu sune ca un avertisment din departamentul dumneavoastră, ci ca o propunere managerială solidă." },
+            { "language": "sq", "text": "Nëse e përcjellim kështu, më duhet një formulim që të mos tingëllojë si paralajmërim nga departamenti juaj, por si një propozim i qëndrueshëm menaxherial." }
+          ],
+          "function": "request-executive-ready-wording",
+          "toneNote": "decision-ready language requested"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann formuliere ich es so: Wir empfehlen eine verkürzte Basisstrecke, ergänzt um verbindliche Erfolgspunkte für risikoreiche Kundensegmente. Damit realisieren wir den Budgeteffekt, ohne die Einsparung durch spätere Eskalationen zu entwerten.",
+          "translations": [
+            { "language": "en", "text": "Then I would phrase it like this: we recommend a shortened basic track, supplemented by binding success checkpoints for high-risk customer segments. This allows us to realize the budget effect without devaluing the savings through later escalations." },
+            { "language": "fa", "text": "پس این‌طور فرمول‌بندی می‌کنم: ما یک مسیر پایه کوتاه‌شده را توصیه می‌کنیم که با نقاط موفقیت الزام‌آور برای بخش‌های پرریسک مشتری تکمیل می‌شود. با این کار اثر بودجه‌ای را محقق می‌کنیم، بدون اینکه صرفه‌جویی با escalationهای بعدی بی‌ارزش شود." },
+            { "language": "ar", "text": "إذن سأصوغها هكذا: نوصي بمسار أساسي مختصر، مكمل بنقاط نجاح ملزمة لشرائح العملاء ذات المخاطر العالية. وبذلك نحقق أثر الميزانية من دون إضعاف الوفورات عبر تصعيدات لاحقة." },
+            { "language": "tr", "text": "O zaman şöyle formüle ederim: Riskli müşteri segmentleri için bağlayıcı başarı noktalarıyla tamamlanan kısaltılmış bir temel rota öneriyoruz. Böylece bütçe etkisini gerçekleştiririz, ama tasarrufu sonraki eskalasyonlarla değersizleştirmeyiz." },
+            { "language": "ru", "text": "Тогда я сформулирую так: мы рекомендуем сокращенный базовый путь, дополненный обязательными точками успеха для рискованных клиентских сегментов. Так мы реализуем бюджетный эффект, не обесценивая экономию последующими эскалациями." },
+            { "language": "ckb", "text": "ئەوا من ئاوا دەریدەبڕم: ئێمە ڕێڕەوی بنەڕەتی کورتکراو پێشنیار دەکەین، کە بە خاڵەکانی سەرکەوتنی پابەند بۆ بەشەکانی کڕیاری پڕمەترسی تەواو دەکرێت. بەمە کاریگەری بودجە بەدەست دەهێنین بێ ئەوەی پاشەکەوت بە escalationی دواتر بێ‌بها بکرێت." },
+            { "language": "kmr", "text": "Wê demê ez wisa formule dikim: em rêyeke bingehîn a kurtkirî pêşniyar dikin, bi xalên serkeftinê yên girêdayî ji bo segmentên xerîdarên xeternak temamkirî. Bi vê yekê em bandora budceyê pêk tînin bêyî ku teserûf bi eskalasyonên paşerojê bêqîmet bibe." },
+            { "language": "pl", "text": "Wtedy sformułuję to tak: rekomendujemy skróconą ścieżkę podstawową, uzupełnioną o wiążące punkty sukcesu dla segmentów klientów o podwyższonym ryzyku. Dzięki temu realizujemy efekt budżetowy, nie obniżając wartości oszczędności przez późniejsze eskalacje." },
+            { "language": "ro", "text": "Atunci aș formula astfel: recomandăm o rută de bază scurtată, completată de puncte obligatorii de succes pentru segmentele de clienți cu risc ridicat. Astfel realizăm efectul bugetar fără a devaloriza economia prin escaladări ulterioare." },
+            { "language": "sq", "text": "Atëherë do ta formuloja kështu: rekomandojmë një rrugë bazë të shkurtuar, të plotësuar me pika suksesi detyruese për segmentet e klientëve me rrezik të lartë. Kështu e realizojmë efektin buxhetor pa e zhvlerësuar kursimin përmes eskalimeve të mëvonshme." }
+          ],
+          "function": "deliver-executive-ready-proposal",
+          "toneNote": "final diplomatic recommendation"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich kann die Budgetlogik nachvollziehen, und der Wunsch nach schnellerer Produktivität ist berechtigt. Meine Sorge ist, dass wir die Kosten nicht senken, sondern zeitlich verschieben: vom Onboarding in Support, Eskalation und Kundenbindung.",
+              "translations": [
+                { "language": "en", "text": "I can understand the budget logic, and the wish for faster productivity is justified. My concern is that we are not reducing costs, but shifting them in time: from onboarding to support, escalation, and customer retention." },
+                { "language": "fa", "text": "من منطق بودجه‌ای را درک می‌کنم و خواسته برای بهره‌وری سریع‌تر هم قابل‌توجیه است. نگرانی من این است که هزینه‌ها را کم نمی‌کنیم، بلکه فقط زمانشان را جابه‌جا می‌کنیم: از onboarding به پشتیبانی، escalation و حفظ مشتری." },
+                { "language": "ar", "text": "أستطيع فهم منطق الميزانية، والرغبة في إنتاجية أسرع مبررة. قلقي هو أننا لا نخفض التكاليف، بل ننقلها زمنياً: من التهيئة إلى الدعم والتصعيد والاحتفاظ بالعملاء." },
+                { "language": "tr", "text": "Bütçe mantığını anlayabiliyorum ve daha hızlı verimlilik isteği haklı. Kaygım şu: maliyetleri azaltmıyor, yalnızca zaman içinde kaydırıyoruz; onboardingden desteğe, eskalasyona ve müşteri bağlılığına." },
+                { "language": "ru", "text": "Я понимаю бюджетную логику, и стремление к более быстрой продуктивности оправдано. Моя тревога в том, что мы не снижаем расходы, а переносим их во времени: из онбординга в поддержку, эскалации и удержание клиентов." },
+                { "language": "ckb", "text": "من دەتوانم لۆژیکی بودجە تێبگەم، و خواستی بەرهەمداریی خێراتر ڕەوایە. نیگەرانیی من ئەوەیە کە ئێمە تێچوو کەم ناکەینەوە، بەڵکو کاتەکەی دەگوازینەوە: لە onboarding بۆ پشتگیری، escalation و مانەوەی کڕیار." },
+                { "language": "kmr", "text": "Ez dikarim mantiqa budceyê fam bikim, û daxwaza produktîfbûna zûtir jî maqûl e. Xemgîniya min ew e ku em lêçûnan kêm nakin, tenê wan di demê de diguhezînin: ji onboardingê ber bi piştgirî, eskalasyon û girêdana xerîdar ve." },
+                { "language": "pl", "text": "Rozumiem logikę budżetową, a życzenie szybszej produktywności jest uzasadnione. Moja obawa polega na tym, że nie obniżamy kosztów, lecz przesuwamy je w czasie: z onboardingu do wsparcia, eskalacji i retencji klientów." },
+                { "language": "ro", "text": "Înțeleg logica bugetară, iar dorința de productivitate mai rapidă este justificată. Îngrijorarea mea este că nu reducem costurile, ci le mutăm în timp: din onboarding în suport, escaladări și retenția clienților." },
+                { "language": "sq", "text": "E kuptoj logjikën buxhetore dhe dëshira për produktivitet më të shpejtë është e arsyeshme. Shqetësimi im është se nuk po i ulim kostot, por po i zhvendosim në kohë: nga onboarding-u te mbështetja, eskalimi dhe mbajtja e klientëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort würdigt die Vorstandslogik und verschiebt die Kritik auf Folgekosten statt auf persönliche Ablehnung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer acknowledges the board's logic and shifts the criticism to downstream costs rather than personal rejection." },
+                { "language": "fa", "text": "قوی: پاسخ منطق هیئت‌مدیره را به رسمیت می‌شناسد و نقد را به هزینه‌های بعدی منتقل می‌کند، نه رد شخصی." },
+                { "language": "ar", "text": "قوي: تعترف الإجابة بمنطق الإدارة العليا وتنقل النقد إلى التكاليف اللاحقة بدلاً من الرفض الشخصي." },
+                { "language": "tr", "text": "Güçlü: cevap yönetim kurulunun mantığını kabul eder ve eleştiriyi kişisel red yerine sonraki maliyetlere taşır." },
+                { "language": "ru", "text": "Сильно: ответ признает логику правления и переносит критику на последующие издержки, а не на личное отклонение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لۆژیکی دەستەی بەڕێوەبردن دانپێدەدات و ڕەخنەکە دەگوازێتەوە بۆ تێچووی دواتر، نە ڕەتکردنەوەی کەسی." },
+                { "language": "kmr", "text": "Xurt e: bersiv mantiqa desteya rêveberiyê qebûl dike û rexneyê dibe ser lêçûnên paşerojê, ne redkirina kesane." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje logikę zarządu i przenosi krytykę na koszty następcze, a nie na osobiste odrzucenie." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște logica conducerii și mută critica spre costurile ulterioare, nu spre respingere personală." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon logjikën e bordit dhe e zhvendos kritikën te kostot pasuese, jo te refuzimi personal." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Vorschlag spart kurzfristig Geld, aber ich sehe dabei einige Risiken für den Support.",
+              "translations": [
+                { "language": "en", "text": "The proposal saves money in the short term, but I see some risks for support." },
+                { "language": "fa", "text": "پیشنهاد در کوتاه‌مدت پول صرفه‌جویی می‌کند، اما من چند ریسک برای پشتیبانی می‌بینم." },
+                { "language": "ar", "text": "يوفر الاقتراح المال على المدى القصير، لكنني أرى بعض المخاطر على الدعم." },
+                { "language": "tr", "text": "Öneri kısa vadede para kazandırır, ama destek açısından bazı riskler görüyorum." },
+                { "language": "ru", "text": "Предложение экономит деньги в краткосрочной перспективе, но я вижу некоторые риски для поддержки." },
+                { "language": "ckb", "text": "پێشنیارەکە لە کورت‌ماوەدا پارە پاشەکەوت دەکات، بەڵام من چەند مەترسییەک بۆ پشتگیری دەبینم." },
+                { "language": "kmr", "text": "Pêşniyar di demkurt de pere teserûf dike, lê ez hin xeteran ji bo piştgiriyê dibînim." },
+                { "language": "pl", "text": "Propozycja oszczędza pieniądze krótkoterminowo, ale widzę przy tym pewne ryzyka dla wsparcia." },
+                { "language": "ro", "text": "Propunerea economisește bani pe termen scurt, dar văd unele riscuri pentru suport." },
+                { "language": "sq", "text": "Propozimi kursen para afatshkurtër, por shoh disa rreziqe për mbështetjen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Antwort nennt Risiken, macht aber den Kostenmechanismus und die Kundenbindung nicht sichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: the answer names risks but does not make the cost mechanism and customer retention visible." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی کلی است: پاسخ ریسک‌ها را نام می‌برد، اما سازوکار هزینه و حفظ مشتری را آشکار نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه عام جداً: تذكر الإجابة المخاطر، لكنها لا تجعل آلية التكلفة والاحتفاظ بالعملاء مرئيتين." },
+                { "language": "tr", "text": "Makul ama fazla genel: cevap riskleri söyler, fakat maliyet mekanizmasını ve müşteri bağlılığını görünür kılmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком обще: ответ называет риски, но не показывает механизм расходов и удержание клиентов." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر گشتییە: وەڵامەکە مەترسییەکان دەڵێت، بەڵام میکانیزمی تێچوو و مانەوەی کڕیار دیار ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir giştî ye: bersiv xeteran bi nav dike, lê mekanîzmaya lêçûnê û girêdana xerîdar xuya nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne: odpowiedź nazywa ryzyka, lecz nie pokazuje mechanizmu kosztów ani retencji klientów." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul numește riscuri, dar nu face vizibile mecanismul costurilor și retenția clienților." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: përgjigjja përmend rreziqe, por nuk e bën të dukshëm mekanizmin e kostos dhe mbajtjen e klientëve." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde es nicht als Ablehnung rahmen, sondern als Absicherung des Skalierungsziels. Wenn die ersten drei Monate nach Vertragsbeginn die Abbruchrate erhöhen, skaliert nicht das Modell, sondern der Schaden.",
+              "translations": [
+                { "language": "en", "text": "I would not frame it as rejection, but as safeguarding the scaling objective. If the first three months after contract start increase the churn rate, it is not the model that scales, but the damage." },
+                { "language": "fa", "text": "من آن را به‌عنوان رد پیشنهاد چارچوب‌بندی نمی‌کنم، بلکه به‌عنوان حفاظت از هدف مقیاس‌پذیری. اگر سه ماه اول پس از شروع قرارداد نرخ ریزش را بالا ببرد، چیزی که مقیاس‌پذیر می‌شود مدل نیست، بلکه خسارت است." },
+                { "language": "ar", "text": "لن أؤطره كرفض، بل كحماية لهدف التوسيع. إذا زادت الأشهر الثلاثة الأولى بعد بدء العقد معدل الانسحاب، فلن يكون النموذج هو ما يتوسع، بل الضرر." },
+                { "language": "tr", "text": "Bunu ret olarak değil, ölçekleme hedefinin güvenceye alınması olarak çerçevelerdim. Sözleşme başlangıcından sonraki ilk üç ay kayıp oranını artırırsa ölçeklenen model değil, zarar olur." },
+                { "language": "ru", "text": "Я бы сформулировал это не как отказ, а как защиту цели масштабирования. Если первые три месяца после начала договора увеличат отток, масштабироваться будет не модель, а ущерб." },
+                { "language": "ckb", "text": "من ئەمە وەک ڕەتکردنەوە دابڕێژمەوە نا، بەڵکو وەک پاراستنی ئامانجی پەرەپێدان. ئەگەر سێ مانگی یەکەمی دوای دەستپێکی گرێبەست ڕێژەی وازهێنان زیاد بکات، ئەوە مۆدێلەکە نییە پەرە دەسێنێت، بەڵکو زیانەکەیە." },
+                { "language": "kmr", "text": "Ez wê wek redkirin çarçove nakim, lê wek parastina armanca mezinbûnê. Heke sê mehên yekem piştî destpêka peymanê rêjeya devjêberdanê zêde bikin, ya ku mezin dibe ne model e, lê zirar e." },
+                { "language": "pl", "text": "Nie ująłbym/ujęłabym tego jako odrzucenie, lecz jako zabezpieczenie celu skalowania. Jeśli pierwsze trzy miesiące po rozpoczęciu umowy zwiększą churn, skalować będzie się nie model, lecz szkoda." },
+                { "language": "ro", "text": "Nu aș încadra asta ca respingere, ci ca protejare a obiectivului de scalare. Dacă primele trei luni după începerea contractului cresc rata de plecare, nu modelul se scalează, ci prejudiciul." },
+                { "language": "sq", "text": "Nuk do ta kornizoja si refuzim, por si mbrojtje të qëllimit të shkallëzimit. Nëse tre muajt e parë pas nisjes së kontratës rrisin largimin e klientëve, nuk shkallëzohet modeli, por dëmi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt den Vorwurf der Ablehnung heraus und schützt das strategische Ziel mit einem präzisen Risikoargument.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer removes the accusation of rejection and protects the strategic goal with a precise risk argument." },
+                { "language": "fa", "text": "قوی: پاسخ اتهام ردکردن را خنثی می‌کند و هدف استراتژیک را با یک استدلال دقیق درباره ریسک حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: تزيل الإجابة اتهام الرفض وتحمي الهدف الاستراتيجي بحجة دقيقة عن المخاطر." },
+                { "language": "tr", "text": "Güçlü: cevap ret suçlamasını dışarı alır ve stratejik hedefi kesin bir risk argümanıyla korur." },
+                { "language": "ru", "text": "Сильно: ответ снимает обвинение в отказе и защищает стратегическую цель точным аргументом о риске." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە تۆمەتی ڕەتکردنەوە دەهێنێتە دەرەوە و ئامانجی ستراتیژی بە ئارگیومێنتێکی وردی مەترسی دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv tawanbarkirina redkirinê derdixe û armanca stratejîk bi argumaneke xeterê ya rast diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź usuwa zarzut odrzucenia i chroni cel strategiczny precyzyjnym argumentem ryzyka." },
+                { "language": "ro", "text": "Puternic: răspunsul elimină acuzația de respingere și protejează obiectivul strategic cu un argument precis de risc." },
+                { "language": "sq", "text": "E fortë: përgjigjja heq akuzën e refuzimit dhe mbron qëllimin strategjik me një argument të saktë rreziku." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich lehne die Kürzung nicht ab, aber ich finde sie in dieser Form problematisch.",
+              "translations": [
+                { "language": "en", "text": "I do not reject the shortening, but I find it problematic in this form." },
+                { "language": "fa", "text": "من کوتاه‌کردن را رد نمی‌کنم، اما آن را در این شکل مشکل‌دار می‌دانم." },
+                { "language": "ar", "text": "أنا لا أرفض التقصير، لكنني أراه إشكالياً بهذا الشكل." },
+                { "language": "tr", "text": "Kısaltmayı reddetmiyorum, ama bu haliyle sorunlu buluyorum." },
+                { "language": "ru", "text": "Я не отвергаю сокращение, но считаю его в такой форме проблематичным." },
+                { "language": "ckb", "text": "من کورتکردنەوەکە ڕەت ناکەمەوە، بەڵام لەم شێوەیەدا کێشەدار دەیبینم." },
+                { "language": "kmr", "text": "Ez kurtkirinê red nakim, lê bi vî awayî wê pirsgirêkdar dibînim." },
+                { "language": "pl", "text": "Nie odrzucam skrócenia, ale w tej formie uważam je za problematyczne." },
+                { "language": "ro", "text": "Nu resping scurtarea, dar o consider problematică în această formă." },
+                { "language": "sq", "text": "Nuk e refuzoj shkurtimin, por në këtë formë e shoh problematik." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu defensiv: Die Antwort bleibt bei Bewertung stehen und zeigt nicht, warum das Skalierungsziel gefährdet wäre.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too defensive: the answer stays at evaluation and does not show why the scaling goal would be at risk." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی دفاعی است: پاسخ در حد ارزیابی می‌ماند و نشان نمی‌دهد چرا هدف مقیاس‌پذیری در خطر است." },
+                { "language": "ar", "text": "مقبول لكنه دفاعي جداً: تبقى الإجابة عند مستوى التقييم ولا تبيّن لماذا قد يكون هدف التوسيع معرضاً للخطر." },
+                { "language": "tr", "text": "Makul ama fazla savunmacı: cevap değerlendirme düzeyinde kalır ve ölçekleme hedefinin neden risk altında olacağını göstermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком оборонительно: ответ остается на уровне оценки и не показывает, почему цель масштабирования была бы под угрозой." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر بەرگرییە: وەڵامەکە لە ئاستی هەڵسەنگاندندا دەمێنێتەوە و نیشان نادات بۆچی ئامانجی پەرەپێدان لە مەترسیدا دەبێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir parastinî ye: bersiv li asta nirxandinê dimîne û nîşan nade çima armanca mezinbûnê di xeterê de dibe." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt defensywne: odpowiedź pozostaje przy ocenie i nie pokazuje, dlaczego cel skalowania byłby zagrożony." },
+                { "language": "ro", "text": "Plauzibil, dar prea defensiv: răspunsul rămâne la nivel de evaluare și nu arată de ce obiectivul de scalare ar fi în pericol." },
+                { "language": "sq", "text": "E besueshme, por shumë mbrojtëse: përgjigjja mbetet te vlerësimi dhe nuk tregon pse qëllimi i shkallëzimit do të rrezikohej." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Daten sprechen nicht gegen Verschlankung, aber gegen einen harten Schnitt. Bei Kunden, die weniger als drei betreute Nutzungstermine hatten, lag die Eskalationsquote zuletzt fast doppelt so hoch.",
+              "translations": [
+                { "language": "en", "text": "The data does not argue against streamlining, but against a hard cut. Among customers with fewer than three guided usage sessions, the escalation rate was recently almost twice as high." },
+                { "language": "fa", "text": "داده‌ها علیه چابک‌سازی نیستند، اما علیه یک کاهش ناگهانی هستند. در مشتریانی که کمتر از سه جلسه استفاده هدایت‌شده داشتند، نرخ escalation اخیراً تقریباً دو برابر بود." },
+                { "language": "ar", "text": "البيانات لا تعارض التبسيط، لكنها تعارض القطع الحاد. لدى العملاء الذين حصلوا على أقل من ثلاث جلسات استخدام موجهة، كان معدل التصعيد مؤخراً يقارب الضعف." },
+                { "language": "tr", "text": "Veriler sadeleştirmeye karşı değil, sert bir kesintiye karşı konuşuyor. Üçten az yönlendirilmiş kullanım oturumu alan müşterilerde eskalasyon oranı son dönemde neredeyse iki kat yüksekti." },
+                { "language": "ru", "text": "Данные говорят не против упрощения, а против резкого сокращения. У клиентов, у которых было меньше трех сопровождаемых сессий использования, уровень эскалаций недавно был почти вдвое выше." },
+                { "language": "ckb", "text": "داتاکان دژی سادەکردنەوە نین، بەڵکو دژی بڕینی توندن. لەو کڕیارانەی کەمتر لە سێ دانیشتنی بەکارهێنانی ڕێنمایی‌کراویان هەبوو، ڕێژەی escalation لە دواییەکاندا نزیکەی دوو هێندە بوو." },
+                { "language": "kmr", "text": "Daneyên me li dijî sivikkirinê nabêjin, lê li dijî qutkirineke tûj dibêjin. Li ba xerîdarên ku kêmtir ji sê danişînên bikaranîna bi rêberî hebûn, rêjeya eskalasyonê vê dawiyê hema du qat bû." },
+                { "language": "pl", "text": "Dane nie przemawiają przeciw uproszczeniu, lecz przeciw ostremu cięciu. U klientów, którzy mieli mniej niż trzy prowadzone sesje użytkowania, wskaźnik eskalacji był ostatnio prawie dwukrotnie wyższy." },
+                { "language": "ro", "text": "Datele nu vorbesc împotriva simplificării, ci împotriva unei tăieri bruște. La clienții care au avut mai puțin de trei sesiuni ghidate de utilizare, rata escaladărilor a fost recent aproape dublă." },
+                { "language": "sq", "text": "Të dhënat nuk flasin kundër thjeshtimit, por kundër një prerjeje të fortë. Te klientët që kishin më pak se tri seanca përdorimi të udhëzuara, shkalla e eskalimit kohët e fundit ishte pothuajse dyfish." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort differenziert zwischen Verschlankung und hartem Schnitt und nutzt Evidenz statt Bauchgefühl.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer distinguishes between streamlining and a hard cut and uses evidence rather than gut feeling." },
+                { "language": "fa", "text": "قوی: پاسخ بین چابک‌سازی و کاهش ناگهانی تفاوت می‌گذارد و به جای حس کلی از شواهد استفاده می‌کند." },
+                { "language": "ar", "text": "قوي: تميز الإجابة بين التبسيط والقطع الحاد وتستخدم الأدلة بدلاً من الانطباع." },
+                { "language": "tr", "text": "Güçlü: cevap sadeleştirme ile sert kesinti arasında ayrım yapar ve içgüdü yerine kanıt kullanır." },
+                { "language": "ru", "text": "Сильно: ответ различает упрощение и резкое сокращение и использует доказательства вместо интуиции." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە جیاوازی نێوان سادەکردنەوە و بڕینی توند دەکات و بەڵگە بەکار دەهێنێت نە هەستی گشتی." },
+                { "language": "kmr", "text": "Xurt e: bersiv di navbera sivikkirin û qutkirina tûj de cudahî dike û li şûna hestê belge bikar tîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź odróżnia uproszczenie od ostrego cięcia i używa dowodów zamiast przeczucia." },
+                { "language": "ro", "text": "Puternic: răspunsul distinge între simplificare și tăiere bruscă și folosește dovezi, nu impresii." },
+                { "language": "sq", "text": "E fortë: përgjigjja dallon mes thjeshtimit dhe prerjes së fortë dhe përdor prova, jo ndjesi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir haben in einigen Fällen gesehen, dass Kunden nach einem kurzen Onboarding mehr Fragen hatten.",
+              "translations": [
+                { "language": "en", "text": "In some cases we saw that customers had more questions after short onboarding." },
+                { "language": "fa", "text": "در چند مورد دیده‌ایم که مشتریان بعد از onboarding کوتاه پرسش‌های بیشتری داشتند." },
+                { "language": "ar", "text": "رأينا في بعض الحالات أن العملاء كانت لديهم أسئلة أكثر بعد تهيئة قصيرة." },
+                { "language": "tr", "text": "Bazı durumlarda müşterilerin kısa onboardingden sonra daha fazla sorusu olduğunu gördük." },
+                { "language": "ru", "text": "В некоторых случаях мы видели, что после короткого онбординга у клиентов было больше вопросов." },
+                { "language": "ckb", "text": "لە چەند دۆخێکدا بینیمان کە کڕیاران دوای onboardingی کورت پرسیاری زیاتریان هەبوو." },
+                { "language": "kmr", "text": "Di hin rewşan de me dît ku xerîdar piştî onboarding-a kurt pirsên zêdetir hebûn." },
+                { "language": "pl", "text": "W kilku przypadkach widzieliśmy, że klienci po krótkim onboardingu mieli więcej pytań." },
+                { "language": "ro", "text": "În câteva cazuri am văzut că, după un onboarding scurt, clienții aveau mai multe întrebări." },
+                { "language": "sq", "text": "Në disa raste kemi parë se klientët kishin më shumë pyetje pas një onboarding-u të shkurtër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu weich: Die Antwort zeigt keine Größenordnung und wirkt dadurch leichter abwägbar oder ignorierbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too soft: the answer gives no magnitude and is therefore easier to downplay or ignore." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی نرم است: پاسخ هیچ اندازه‌ای نشان نمی‌دهد و بنابراین راحت‌تر قابل کم‌اهمیت‌کردن یا نادیده‌گرفتن است." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف جداً: لا تقدم الإجابة حجماً واضحاً، ولذلك يسهل التقليل من شأنها أو تجاهلها." },
+                { "language": "tr", "text": "Makul ama fazla yumuşak: cevap bir büyüklük göstermiyor; bu yüzden daha kolay küçümsenebilir veya görmezden gelinebilir." },
+                { "language": "ru", "text": "Правдоподобно, но слишком мягко: ответ не показывает масштаб, поэтому его легче обесценить или проигнорировать." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر نەرمە: وەڵامەکە قەبارەیەک نیشان نادات، بۆیە ئاسانتر کەم‌بایەخ یان پشتگوێ دەخرێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir nerm e: bersiv mezinahiyek nîşan nade û ji ber vê hêsantir dikare kêm were nirxandin an paşguh bibe." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt miękkie: odpowiedź nie pokazuje skali, przez co łatwiej ją umniejszyć lub zignorować." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: răspunsul nu arată amploarea și devine astfel mai ușor de minimalizat sau ignorat." },
+                { "language": "sq", "text": "E besueshme, por shumë e butë: përgjigjja nuk tregon përmasë dhe kështu mund të nënvlerësohet ose të shpërfillet më lehtë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann würde ich keinen Sechs-Wochen-Standard verteidigen, sondern ein gestuftes Modell vorschlagen: zehn Tage Basisprogramm für einfache Fälle, drei verpflichtende Erfolgspunkte für komplexe Kunden und ein Frühwarnsignal, wenn die Nutzung nach zwei Wochen nicht trägt.",
+              "translations": [
+                { "language": "en", "text": "Then I would not defend a six-week standard, but propose a tiered model: a ten-day basic program for simple cases, three mandatory success checkpoints for complex customers, and an early warning signal if usage is not stable after two weeks." },
+                { "language": "fa", "text": "پس من از استاندارد شش‌هفته‌ای دفاع نمی‌کنم، بلکه یک مدل مرحله‌ای پیشنهاد می‌دهم: برنامه پایه ده‌روزه برای موارد ساده، سه نقطه موفقیت الزامی برای مشتریان پیچیده و یک علامت هشدار زودهنگام اگر استفاده پس از دو هفته پایدار نباشد." },
+                { "language": "ar", "text": "إذن لن أدافع عن معيار الستة أسابيع، بل سأقترح نموذجاً متدرجاً: برنامجاً أساسياً من عشرة أيام للحالات البسيطة، وثلاث نقاط نجاح إلزامية للعملاء المعقدين، وإشارة إنذار مبكر إذا لم يكن الاستخدام مستقراً بعد أسبوعين." },
+                { "language": "tr", "text": "O zaman altı haftalık standardı savunmam; kademeli bir model öneririm: basit vakalar için on günlük temel program, karmaşık müşteriler için üç zorunlu başarı noktası ve iki hafta sonra kullanım taşımıyorsa erken uyarı sinyali." },
+                { "language": "ru", "text": "Тогда я бы не защищал шестинедельный стандарт, а предложил ступенчатую модель: десятидневную базовую программу для простых случаев, три обязательные точки успеха для сложных клиентов и ранний сигнал предупреждения, если через две недели использование не держится." },
+                { "language": "ckb", "text": "ئەوا من بەرگری لە ستانداردی شەش هەفتە ناکەم، بەڵکو مۆدێلێکی قۆناغبەقۆناغ پێشنیار دەکەم: بەرنامەی بنەڕەتی دە ڕۆژە بۆ دۆخی سادە، سێ خاڵی سەرکەوتنی پێویست بۆ کڕیارانی ئاڵۆز، و ئاماژەی ئاگاداری زوو ئەگەر بەکارهێنان دوای دوو هەفتە نەوەستێت." },
+                { "language": "kmr", "text": "Wê demê ez standarda şeş-hefteyî naparêzim, lê modelekî qatekî pêşniyar dikim: programa bingehîn a deh rojî ji bo rewşên hêsan, sê xalên serkeftinê yên mecbûrî ji bo xerîdarên tevlihev, û nîşaneke hişyariya zû heke bikaranîn piştî du hefteyan ne domdar be." },
+                { "language": "pl", "text": "Wtedy nie broniłbym/broniłabym sześciotygodniowego standardu, lecz zaproponował(a) model stopniowany: dziesięciodniowy program podstawowy dla prostych przypadków, trzy obowiązkowe punkty sukcesu dla złożonych klientów i sygnał wczesnego ostrzegania, jeśli użycie po dwóch tygodniach nie jest stabilne." },
+                { "language": "ro", "text": "Atunci nu aș apăra standardul de șase săptămâni, ci aș propune un model pe trepte: program de bază de zece zile pentru cazuri simple, trei puncte obligatorii de succes pentru clienți complecși și un semnal de avertizare timpurie dacă utilizarea nu se susține după două săptămâni." },
+                { "language": "sq", "text": "Atëherë nuk do të mbroja standardin gjashtëjavor, por do të propozoja një model me nivele: program bazë dhjetëditor për raste të thjeshta, tri pika të detyrueshme suksesi për klientë kompleksë dhe një sinjal paralajmërimi të hershëm nëse përdorimi nuk qëndron pas dy javësh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort gibt die alte Position teilweise auf und rettet den Kern durch ein differenziertes, kostentaugliches Modell.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer partially lets go of the old position and preserves the core through a differentiated, cost-compatible model." },
+                { "language": "fa", "text": "قوی: پاسخ بخشی از موضع قدیمی را رها می‌کند و هسته اصلی را با یک مدل تفکیک‌شده و سازگار با هزینه حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: تتخلى الإجابة جزئياً عن الموقف القديم وتحافظ على الجوهر من خلال نموذج متمايز ومتوافق مع التكلفة." },
+                { "language": "tr", "text": "Güçlü: cevap eski pozisyonun bir kısmını bırakır ve özü farklılaştırılmış, maliyetle uyumlu bir modelle korur." },
+                { "language": "ru", "text": "Сильно: ответ частично отпускает старую позицию и сохраняет ядро через дифференцированную, совместимую с затратами модель." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەشێک لە هەڵوێستی کۆن جێدەهێڵێت و ناوەڕۆکەکە بە مۆدێلێکی جیاکراوە و گونجاو بە تێچوو دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv beşek ji helwesta kevn berdide û navokê bi modelekî cuda û li gor lêçûnê diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź częściowo rezygnuje ze starego stanowiska i ratuje sedno przez zróżnicowany model zgodny kosztowo." },
+                { "language": "ro", "text": "Puternic: răspunsul renunță parțial la poziția veche și păstrează miezul printr-un model diferențiat, compatibil cu costurile." },
+                { "language": "sq", "text": "E fortë: përgjigjja heq dorë pjesërisht nga pozicioni i vjetër dhe ruan thelbin përmes një modeli të diferencuar dhe të përshtatshëm me koston." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir könnten das Onboarding vielleicht etwas kürzen und bei schwierigen Kunden mehr Unterstützung anbieten.",
+              "translations": [
+                { "language": "en", "text": "We could perhaps shorten onboarding somewhat and offer more support for difficult customers." },
+                { "language": "fa", "text": "شاید بتوانیم onboarding را کمی کوتاه کنیم و برای مشتریان دشوار پشتیبانی بیشتری ارائه دهیم." },
+                { "language": "ar", "text": "يمكننا ربما تقصير التهيئة قليلاً وتقديم دعم أكبر للعملاء الصعبين." },
+                { "language": "tr", "text": "Onboardingi belki biraz kısaltabilir ve zor müşterilere daha fazla destek sunabiliriz." },
+                { "language": "ru", "text": "Мы могли бы, возможно, немного сократить онбординг и предложить больше поддержки сложным клиентам." },
+                { "language": "ckb", "text": "لەوانەیە بتوانین onboarding کەمێک کورت بکەینەوە و بۆ کڕیارانی قورس پشتگیری زیاتر پێشکەش بکەین." },
+                { "language": "kmr", "text": "Dibe ku em onboardingê hinekî kurt bikin û ji bo xerîdarên dijwar piştgiriya zêdetir pêşkêş bikin." },
+                { "language": "pl", "text": "Moglibyśmy może trochę skrócić onboarding i zaoferować więcej wsparcia trudnym klientom." },
+                { "language": "ro", "text": "Am putea poate scurta puțin onboardingul și oferi mai mult suport clienților dificili." },
+                { "language": "sq", "text": "Ndoshta mund ta shkurtojmë pak onboarding-un dhe t'u ofrojmë më shumë mbështetje klientëve të vështirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht C2-stark: Die Antwort bleibt vage und definiert weder Kundensegmente noch Erfolgspunkte oder Frühwarnlogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not strong enough for C2: the answer stays vague and defines neither customer segments nor success checkpoints or early warning logic." },
+                { "language": "fa", "text": "قابل‌تصور است، اما برای C2 کافی قوی نیست: پاسخ مبهم می‌ماند و نه بخش‌های مشتری، نه نقاط موفقیت و نه منطق هشدار زودهنگام را تعریف می‌کند." },
+                { "language": "ar", "text": "مقبول لكنه ليس قوياً بما يكفي لمستوى C2: تبقى الإجابة غامضة ولا تحدد شرائح العملاء أو نقاط النجاح أو منطق الإنذار المبكر." },
+                { "language": "tr", "text": "Makul ama C2 için yeterince güçlü değil: cevap belirsiz kalır; ne müşteri segmentlerini ne başarı noktalarını ne de erken uyarı mantığını tanımlar." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно сильно для C2: ответ остается расплывчатым и не определяет ни клиентские сегменты, ни точки успеха, ни логику раннего предупреждения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام بۆ C2 بەهێز نییە: وەڵامەکە لێڵ دەمێنێتەوە و نە بەشەکانی کڕیار، نە خاڵەکانی سەرکەوتن، نە لۆژیکی ئاگاداری زوو دیاری دەکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê ji bo C2 ne bes xurt e: bersiv nezelal dimîne û ne segmentên xerîdar, ne xalên serkeftinê, ne jî mantiqa hişyariya zû diyar dike." },
+                { "language": "pl", "text": "Wiarygodne, ale niewystarczająco mocne na C2: odpowiedź pozostaje niejasna i nie definiuje ani segmentów klientów, ani punktów sukcesu, ani logiki wczesnego ostrzegania." },
+                { "language": "ro", "text": "Plauzibil, dar nu suficient de puternic pentru C2: răspunsul rămâne vag și nu definește segmente de clienți, puncte de succes sau logică de avertizare timpurie." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e fortë për C2: përgjigjja mbetet e paqartë dhe nuk përcakton as segmentet e klientëve, as pikat e suksesit, as logjikën e paralajmërimit të hershëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde die Botschaft so setzen: Wir übernehmen den Kostendruck des Vorstands, aber übersetzen ihn in ein risikogerechtes Modell. Das ist kein Rückzieher, sondern die Bedingung dafür, dass die Einsparung nicht an anderer Stelle wieder aufläuft.",
+              "translations": [
+                { "language": "en", "text": "I would frame the message like this: we accept the board's cost pressure, but translate it into a risk-appropriate model. That is not backing down, but the condition for ensuring that the savings do not reappear elsewhere." },
+                { "language": "fa", "text": "من پیام را این‌طور تنظیم می‌کنم: ما فشار هزینه‌ای هیئت‌مدیره را می‌پذیریم، اما آن را به مدلی متناسب با ریسک ترجمه می‌کنیم. این عقب‌نشینی نیست، بلکه شرطی است برای اینکه صرفه‌جویی در جای دیگری دوباره هزینه ایجاد نکند." },
+                { "language": "ar", "text": "سأصوغ الرسالة هكذا: نحن نتبنى ضغط التكلفة الذي حدده مجلس الإدارة، لكننا نترجمه إلى نموذج ملائم للمخاطر. هذا ليس تراجعاً، بل شرط لضمان ألا تظهر الوفورات مرة أخرى في مكان آخر." },
+                { "language": "tr", "text": "Mesajı şöyle kurardım: Yönetim kurulunun maliyet baskısını üstleniyoruz, ama bunu riske uygun bir modele çeviriyoruz. Bu geri adım değil, tasarrufun başka bir yerde yeniden maliyet olarak ortaya çıkmaması için koşuldur." },
+                { "language": "ru", "text": "Я бы сформулировал сообщение так: мы принимаем давление правления по снижению затрат, но переводим его в модель, соответствующую риску. Это не отступление, а условие того, чтобы экономия не возникла снова в другом месте." },
+                { "language": "ckb", "text": "من پەیامەکە ئاوا دادەنێم: ئێمە فشاری تێچووی دەستەی بەڕێوەبردن وەردەگرین، بەڵام دەیگوازینەوە بۆ مۆدێلێکی گونجاو بە مەترسی. ئەمە پاشگەزبوونەوە نییە، بەڵکو مەرجە بۆ ئەوەی پاشەکەوتەکە لە شوێنێکی تر دووبارە نەگەڕێتەوە." },
+                { "language": "kmr", "text": "Ez peyamê wisa datînim: em zexta lêçûnê ya desteya rêveberiyê werdigirin, lê wê vediguherînin modelekî li gor xeterê. Ev paşveçûn nîne, lê merc e ji bo ku teserûf li cihê din careke din dernekeve." },
+                { "language": "pl", "text": "Ująłbym/ujęłabym komunikat tak: przejmujemy presję kosztową zarządu, ale przekładamy ją na model adekwatny do ryzyka. To nie jest wycofanie się, lecz warunek, by oszczędność nie pojawiła się ponownie w innym miejscu." },
+                { "language": "ro", "text": "Aș formula mesajul astfel: preluăm presiunea de cost a conducerii, dar o traducem într-un model adecvat riscului. Nu este un pas înapoi, ci condiția ca economia să nu reapară în altă parte." },
+                { "language": "sq", "text": "Mesazhin do ta formuloja kështu: e marrim përsipër presionin e kostos nga bordi, por e përkthejmë në një model të përshtatur me rrezikun. Kjo nuk është tërheqje, por kushti që kursimi të mos shfaqet përsëri diku tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt die Hierarchie, ohne inhaltlich weich zu werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer protects hierarchy without becoming weak on substance." },
+                { "language": "fa", "text": "قوی: پاسخ سلسله‌مراتب را حفظ می‌کند، بدون اینکه از نظر محتوایی ضعیف شود." },
+                { "language": "ar", "text": "قوي: تحمي الإجابة التراتبية من دون أن تصبح ضعيفة من حيث المضمون." },
+                { "language": "tr", "text": "Güçlü: cevap hiyerarşiyi korur, ama içerik açısından zayıflamaz." },
+                { "language": "ru", "text": "Сильно: ответ защищает иерархию, не становясь слабым по содержанию." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پلەبەندی دەپارێزێت بێ ئەوەی لە ناوەڕۆکدا لاواز ببێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv hiyerarşiyê diparêze bêyî ku ji aliyê naverokê ve lawaz bibe." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni hierarchię, nie stając się merytorycznie słaba." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează ierarhia fără să devină slab pe fond." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron hierarkinë pa u dobësuar në përmbajtje." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten dem Vertrieb sagen, dass wir den Vorschlag grundsätzlich unterstützen, aber noch ein paar Anpassungen brauchen.",
+              "translations": [
+                { "language": "en", "text": "We should tell sales that we generally support the proposal but still need a few adjustments." },
+                { "language": "fa", "text": "باید به فروش بگوییم که ما اصولاً از پیشنهاد حمایت می‌کنیم، اما هنوز چند اصلاح لازم داریم." },
+                { "language": "ar", "text": "ينبغي أن نقول للمبيعات إننا ندعم الاقتراح من حيث المبدأ، لكننا ما زلنا بحاجة إلى بعض التعديلات." },
+                { "language": "tr", "text": "Satış ekibine öneriyi temelde desteklediğimizi, ama birkaç uyarlamaya daha ihtiyacımız olduğunu söylemeliyiz." },
+                { "language": "ru", "text": "Мы должны сказать отделу продаж, что в принципе поддерживаем предложение, но нам нужны еще несколько корректировок." },
+                { "language": "ckb", "text": "دەبێت بە فرۆشتن بڵێین کە بە بنەڕەت پشتگیری پێشنیارەکە دەکەین، بەڵام هێشتا پێویستمان بە چەند گۆڕانکارییەک هەیە." },
+                { "language": "kmr", "text": "Divê em ji firotinê re bêjin ku em bi bingehîn piştgirî didin pêşniyarê, lê hêj pêdiviya me bi çend sererastkirinan heye." },
+                { "language": "pl", "text": "Powinniśmy powiedzieć sprzedaży, że zasadniczo popieramy propozycję, ale potrzebujemy jeszcze kilku dostosowań." },
+                { "language": "ro", "text": "Ar trebui să le spunem celor de la vânzări că susținem în principiu propunerea, dar mai avem nevoie de câteva ajustări." },
+                { "language": "sq", "text": "Duhet t'u themi shitjeve se në parim e mbështesim propozimin, por na duhen ende disa përshtatje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu harmlos: Die Antwort vermeidet Gesichtsverlust, benennt aber nicht den Zusammenhang von Budgetdruck, Risiko und Folgekosten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too harmless: the answer avoids loss of face, but does not name the link between cost pressure, risk, and downstream costs." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی بی‌خطر است: پاسخ از آبروریزی جلوگیری می‌کند، اما رابطه فشار هزینه، ریسک و هزینه‌های بعدی را نام نمی‌برد." },
+                { "language": "ar", "text": "مقبول لكنه خفيف جداً: تتجنب الإجابة فقدان ماء الوجه، لكنها لا تسمي العلاقة بين ضغط التكلفة والمخاطر والتكاليف اللاحقة." },
+                { "language": "tr", "text": "Makul ama fazla zararsız: cevap yüz kaybını önler, fakat maliyet baskısı, risk ve sonraki maliyetler arasındaki ilişkiyi adlandırmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком беззубо: ответ избегает потери лица, но не называет связь между давлением затрат, риском и последующими издержками." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر بێ‌مەترسییە: وەڵامەکە ڕێگری لە لەدەستدانی ڕوو دەکات، بەڵام پەیوەندی نێوان فشاری تێچوو، مەترسی و تێچووی دواتر ناونابات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir bêzirar e: bersiv rûreşbûnê dûr dike, lê girêdana di navbera zexta lêçûnê, xeter û lêçûnên paşerojê de bi nav nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt łagodne: odpowiedź unika utraty twarzy, ale nie nazywa związku między presją kosztową, ryzykiem i kosztami następczymi." },
+                { "language": "ro", "text": "Plauzibil, dar prea inofensiv: răspunsul evită pierderea prestigiului, dar nu numește legătura dintre presiunea costurilor, risc și costurile ulterioare." },
+                { "language": "sq", "text": "E besueshme, por shumë e butë: përgjigjja shmang humbjen e fytyrës, por nuk e emërton lidhjen mes presionit të kostos, rrezikut dhe kostove pasuese." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann formuliere ich es so: Wir empfehlen eine verkürzte Basisstrecke, ergänzt um verbindliche Erfolgspunkte für risikoreiche Kundensegmente. Damit realisieren wir den Budgeteffekt, ohne die Einsparung durch spätere Eskalationen zu entwerten.",
+              "translations": [
+                { "language": "en", "text": "Then I would phrase it like this: we recommend a shortened basic track, supplemented by binding success checkpoints for high-risk customer segments. This allows us to realize the budget effect without devaluing the savings through later escalations." },
+                { "language": "fa", "text": "پس این‌طور فرمول‌بندی می‌کنم: ما یک مسیر پایه کوتاه‌شده را توصیه می‌کنیم که با نقاط موفقیت الزام‌آور برای بخش‌های پرریسک مشتری تکمیل می‌شود. با این کار اثر بودجه‌ای را محقق می‌کنیم، بدون اینکه صرفه‌جویی با escalationهای بعدی بی‌ارزش شود." },
+                { "language": "ar", "text": "إذن سأصوغها هكذا: نوصي بمسار أساسي مختصر، مكمل بنقاط نجاح ملزمة لشرائح العملاء ذات المخاطر العالية. وبذلك نحقق أثر الميزانية من دون إضعاف الوفورات عبر تصعيدات لاحقة." },
+                { "language": "tr", "text": "O zaman şöyle formüle ederim: Riskli müşteri segmentleri için bağlayıcı başarı noktalarıyla tamamlanan kısaltılmış bir temel rota öneriyoruz. Böylece bütçe etkisini gerçekleştiririz, ama tasarrufu sonraki eskalasyonlarla değersizleştirmeyiz." },
+                { "language": "ru", "text": "Тогда я сформулирую так: мы рекомендуем сокращенный базовый путь, дополненный обязательными точками успеха для рискованных клиентских сегментов. Так мы реализуем бюджетный эффект, не обесценивая экономию последующими эскалациями." },
+                { "language": "ckb", "text": "ئەوا من ئاوا دەریدەبڕم: ئێمە ڕێڕەوی بنەڕەتی کورتکراو پێشنیار دەکەین، کە بە خاڵەکانی سەرکەوتنی پابەند بۆ بەشەکانی کڕیاری پڕمەترسی تەواو دەکرێت. بەمە کاریگەری بودجە بەدەست دەهێنین بێ ئەوەی پاشەکەوت بە escalationی دواتر بێ‌بها بکرێت." },
+                { "language": "kmr", "text": "Wê demê ez wisa formule dikim: em rêyeke bingehîn a kurtkirî pêşniyar dikin, bi xalên serkeftinê yên girêdayî ji bo segmentên xerîdarên xeternak temamkirî. Bi vê yekê em bandora budceyê pêk tînin bêyî ku teserûf bi eskalasyonên paşerojê bêqîmet bibe." },
+                { "language": "pl", "text": "Wtedy sformułuję to tak: rekomendujemy skróconą ścieżkę podstawową, uzupełnioną o wiążące punkty sukcesu dla segmentów klientów o podwyższonym ryzyku. Dzięki temu realizujemy efekt budżetowy, nie obniżając wartości oszczędności przez późniejsze eskalacje." },
+                { "language": "ro", "text": "Atunci aș formula astfel: recomandăm o rută de bază scurtată, completată de puncte obligatorii de succes pentru segmentele de clienți cu risc ridicat. Astfel realizăm efectul bugetar fără a devaloriza economia prin escaladări ulterioare." },
+                { "language": "sq", "text": "Atëherë do ta formuloja kështu: rekomandojmë një rrugë bazë të shkurtuar, të plotësuar me pika suksesi detyruese për segmentet e klientëve me rrezik të lartë. Kështu e realizojmë efektin buxhetor pa e zhvlerësuar kursimin përmes eskalimeve të mëvonshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung ist entscheidungsreif, respektiert die Vorstandsperspektive und hält die fachliche Warnung sichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the wording is decision-ready, respects the board perspective, and keeps the professional warning visible." },
+                { "language": "fa", "text": "قوی: فرمول‌بندی آماده تصمیم‌گیری است، دیدگاه هیئت‌مدیره را محترم می‌دارد و هشدار تخصصی را هم آشکار نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: الصياغة جاهزة للقرار، وتحترم منظور الإدارة العليا، وتبقي التحذير المهني مرئياً." },
+                { "language": "tr", "text": "Güçlü: formülasyon karar için hazırdır, yönetim kurulu perspektifine saygı duyar ve uzman uyarısını görünür tutar." },
+                { "language": "ru", "text": "Сильно: формулировка готова для решения, уважает перспективу правления и сохраняет профессиональное предупреждение видимым." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە ئامادەی بڕیارە، ڕوانگەی دەستەی بەڕێوەبردن ڕێز دەگرێت و ئاگاداریی پیشەیی دیار دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: formulekirin ji bo biryarê amade ye, perspektîfa desteya rêveberiyê rêz dike û hişyariya pisporî xuya dihêle." },
+                { "language": "pl", "text": "Mocne: sformułowanie jest gotowe decyzyjnie, respektuje perspektywę zarządu i zachowuje widoczność ostrzeżenia merytorycznego." },
+                { "language": "ro", "text": "Puternic: formularea este gata pentru decizie, respectă perspectiva conducerii și păstrează vizibil avertismentul profesional." },
+                { "language": "sq", "text": "E fortë: formulimi është gati për vendimmarrje, respekton këndvështrimin e bordit dhe e mban të dukshëm paralajmërimin profesional." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir empfehlen ein kürzeres Onboarding, aber bei Kunden mit höherem Risiko sollten wir vorsichtig bleiben.",
+              "translations": [
+                { "language": "en", "text": "We recommend shorter onboarding, but with higher-risk customers we should remain cautious." },
+                { "language": "fa", "text": "ما onboarding کوتاه‌تر را توصیه می‌کنیم، اما برای مشتریان پرریسک‌تر باید محتاط بمانیم." },
+                { "language": "ar", "text": "نوصي بتهيئة أقصر، لكن مع العملاء ذوي المخاطر الأعلى ينبغي أن نبقى حذرين." },
+                { "language": "tr", "text": "Daha kısa onboarding öneriyoruz, ancak daha yüksek riskli müşterilerde dikkatli kalmalıyız." },
+                { "language": "ru", "text": "Мы рекомендуем более короткий онбординг, но с клиентами с повышенным риском должны оставаться осторожными." },
+                { "language": "ckb", "text": "ئێمە onboardingی کورتتر پێشنیار دەکەین، بەڵام لەگەڵ کڕیارانی پڕمەترسیتر دەبێت وریا بمێنینەوە." },
+                { "language": "kmr", "text": "Em onboarding-a kurtir pêşniyar dikin, lê li ba xerîdarên bi xetera zêdetir divê em hişyar bimînin." },
+                { "language": "pl", "text": "Rekomendujemy krótszy onboarding, ale przy klientach o wyższym ryzyku powinniśmy pozostać ostrożni." },
+                { "language": "ro", "text": "Recomandăm un onboarding mai scurt, dar la clienții cu risc mai mare ar trebui să rămânem prudenți." },
+                { "language": "sq", "text": "Rekomandojmë onboarding më të shkurtër, por me klientët me rrezik më të lartë duhet të mbetemi të kujdesshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht entscheidungsreif: Die Antwort nennt keine verbindlichen Erfolgspunkte und erklärt nicht, wie der Budgeteffekt gesichert wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not decision-ready: the answer names no binding success checkpoints and does not explain how the budget effect is secured." },
+                { "language": "fa", "text": "قابل‌تصور است، اما آماده تصمیم‌گیری نیست: پاسخ هیچ نقطه موفقیت الزام‌آوری نام نمی‌برد و توضیح نمی‌دهد اثر بودجه‌ای چگونه حفظ می‌شود." },
+                { "language": "ar", "text": "مقبول لكنه ليس جاهزاً للقرار: لا تذكر الإجابة نقاط نجاح ملزمة ولا تشرح كيف يتم تأمين أثر الميزانية." },
+                { "language": "tr", "text": "Makul ama karar için hazır değil: cevap bağlayıcı başarı noktaları söylemiyor ve bütçe etkisinin nasıl güvenceye alınacağını açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но не готово для решения: ответ не называет обязательные точки успеха и не объясняет, как защищается бюджетный эффект." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام ئامادەی بڕیار نییە: وەڵامەکە خاڵی سەرکەوتنی پابەند ناونابات و ڕوون ناکات کاریگەری بودجە چۆن دەپارێزرێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê ji bo biryarê amade nîne: bersiv xalên serkeftinê yên girêdayî bi nav nake û rave nake ka bandora budceyê çawa tê parastin." },
+                { "language": "pl", "text": "Wiarygodne, ale niegotowe decyzyjnie: odpowiedź nie wskazuje wiążących punktów sukcesu i nie wyjaśnia, jak zabezpieczony jest efekt budżetowy." },
+                { "language": "ro", "text": "Plauzibil, dar nu este gata pentru decizie: răspunsul nu numește puncte obligatorii de succes și nu explică modul în care este asigurat efectul bugetar." },
+                { "language": "sq", "text": "E besueshme, por jo gati për vendim: përgjigjja nuk përmend pika suksesi detyruese dhe nuk shpjegon si sigurohet efekti buxhetor." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei Kritik nach oben hilft zuerst Anerkennung der Entscheidungslogik, dann eine präzise Verschiebung auf Folgewirkungen.",
+          "translations": [
+            { "language": "en", "text": "When criticizing upward, first acknowledge the decision logic, then precisely shift attention to downstream effects." },
+            { "language": "fa", "text": "در نقد رو به بالا، ابتدا به رسمیت شناختن منطق تصمیم کمک می‌کند، سپس انتقال دقیق توجه به پیامدهای بعدی." },
+            { "language": "ar", "text": "عند النقد باتجاه الأعلى يفيد أولاً الاعتراف بمنطق القرار، ثم نقل الانتباه بدقة إلى الآثار اللاحقة." },
+            { "language": "tr", "text": "Yukarıya eleştiride önce karar mantığını kabul etmek, sonra dikkati sonraki etkilere kesin biçimde kaydırmak yardımcı olur." },
+            { "language": "ru", "text": "При критике вверх помогает сначала признать логику решения, а затем точно перенести внимание на последующие эффекты." },
+            { "language": "ckb", "text": "لە ڕەخنەکردن بەرەو سەرەوەدا، سەرەتا دانپێدانی لۆژیکی بڕیار یارمەتیدەرە، پاشان گواستنەوەی وردی سەرنج بۆ کاریگەرییەکانی دواتر." },
+            { "language": "kmr", "text": "Di rexneya ber bi jor de, pêşî qebûlkirina mantiqa biryarê alîkar e, paşê veguhestina rast a balê bo bandorên paşerojê." },
+            { "language": "pl", "text": "Przy krytyce w górę najpierw pomaga uznanie logiki decyzji, a potem precyzyjne przeniesienie uwagi na skutki następcze." },
+            { "language": "ro", "text": "În critica adresată în sus, ajută mai întâi recunoașterea logicii deciziei, apoi mutarea precisă a atenției spre efectele ulterioare." },
+            { "language": "sq", "text": "Në kritikën drejt niveleve më të larta ndihmon së pari pranimi i logjikës së vendimit, pastaj zhvendosja e saktë e vëmendjes te efektet pasuese." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "content",
+          "text": "C2-Kritik wirkt belastbar, wenn sie nicht nur ein Risiko behauptet, sondern die Größenordnung und den Mechanismus nennt.",
+          "translations": [
+            { "language": "en", "text": "C2-level criticism becomes robust when it not only claims a risk, but names the magnitude and the mechanism." },
+            { "language": "fa", "text": "نقد در سطح C2 وقتی قابل‌اتکا می‌شود که فقط ریسک را ادعا نکند، بلکه اندازه و سازوکار آن را هم نام ببرد." },
+            { "language": "ar", "text": "تصبح النقد في مستوى C2 متيناً عندما لا يكتفي بادعاء الخطر، بل يذكر الحجم والآلية." },
+            { "language": "tr", "text": "C2 düzeyinde eleştiri, yalnızca risk iddia etmekle kalmayıp büyüklüğü ve mekanizmayı adlandırdığında sağlamlaşır." },
+            { "language": "ru", "text": "Критика уровня C2 становится устойчивой, когда она не только утверждает риск, но называет масштаб и механизм." },
+            { "language": "ckb", "text": "ڕەخنەی ئاستی C2 کاتێک بەهێز دەبێت کە تەنها مەترسی نەڵێت، بەڵکو قەبارە و میکانیزمەکەش ناو ببات." },
+            { "language": "kmr", "text": "Rexneya asta C2 demê bihêz dibe ku ne tenê xeterekê îdia bike, lê mezinahî û mekanîzmayê jî bi nav bike." },
+            { "language": "pl", "text": "Krytyka na poziomie C2 jest solidna, gdy nie tylko twierdzi, że istnieje ryzyko, lecz nazywa skalę i mechanizm." },
+            { "language": "ro", "text": "Critica de nivel C2 devine solidă când nu doar afirmă un risc, ci numește amploarea și mecanismul." },
+            { "language": "sq", "text": "Kritika e nivelit C2 bëhet e qëndrueshme kur jo vetëm pretendon një rrezik, por emërton përmasën dhe mekanizmin." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "language",
+          "text": "Eine konstruktive Alternative darf nicht wie ein Kompromiss aus Bequemlichkeit klingen; sie braucht Kriterien, Grenzen und Frühwarnlogik.",
+          "translations": [
+            { "language": "en", "text": "A constructive alternative must not sound like a compromise of convenience; it needs criteria, boundaries, and early warning logic." },
+            { "language": "fa", "text": "جایگزین سازنده نباید مثل مصالحه از سر راحتی شنیده شود؛ به معیار، مرز و منطق هشدار زودهنگام نیاز دارد." },
+            { "language": "ar", "text": "لا ينبغي أن يبدو البديل البنّاء كحل وسط من باب الراحة؛ إنه يحتاج إلى معايير وحدود ومنطق إنذار مبكر." },
+            { "language": "tr", "text": "Yapıcı bir alternatif kolaylık uzlaşması gibi duyulmamalı; ölçütlere, sınırlara ve erken uyarı mantığına ihtiyaç duyar." },
+            { "language": "ru", "text": "Конструктивная альтернатива не должна звучать как компромисс ради удобства; ей нужны критерии, границы и логика раннего предупреждения." },
+            { "language": "ckb", "text": "جێگرەوەی سازندە نابێت وەک سازشێکی بۆ ئاسانی بێت؛ پێویستی بە پێوەر، سنوور و لۆژیکی ئاگاداری زوو هەیە." },
+            { "language": "kmr", "text": "Alternatîveke avakar divê wek kompromîsek ji bo rehetî neyê bihîstin; pêdiviya wê bi pîvan, sînor û mantiqa hişyariya zû heye." },
+            { "language": "pl", "text": "Konstruktywna alternatywa nie może brzmieć jak kompromis z wygody; potrzebuje kryteriów, granic i logiki wczesnego ostrzegania." },
+            { "language": "ro", "text": "O alternativă constructivă nu trebuie să sune ca un compromis de comoditate; are nevoie de criterii, limite și logică de avertizare timpurie." },
+            { "language": "sq", "text": "Një alternativë ndërtuese nuk duhet të tingëllojë si kompromis nga komoditeti; i duhen kritere, kufij dhe logjikë paralajmërimi të hershëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "strategy",
+          "text": "Eine entscheidungsreife Schlussformel verbindet Empfehlung, Risikobegrenzung und die Sprache der oberen Führungsebene.",
+          "translations": [
+            { "language": "en", "text": "A decision-ready closing formula connects recommendation, risk limitation, and the language of senior leadership." },
+            { "language": "fa", "text": "فرمول پایانی آماده تصمیم‌گیری، توصیه، محدودسازی ریسک و زبان مدیریت ارشد را به هم وصل می‌کند." },
+            { "language": "ar", "text": "الصيغة الختامية الجاهزة للقرار تربط التوصية وحدّ المخاطر ولغة الإدارة العليا." },
+            { "language": "tr", "text": "Karara hazır bir kapanış formülü öneriyi, risk sınırlamasını ve üst yönetim dilini birbirine bağlar." },
+            { "language": "ru", "text": "Готовая к решению финальная формула соединяет рекомендацию, ограничение риска и язык высшего руководства." },
+            { "language": "ckb", "text": "فۆرمولی کۆتایی ئامادەی بڕیار پێشنیار، سنووردارکردنی مەترسی و زمانی بەڕێوەبردنی باڵا پەیوەست دەکات." },
+            { "language": "kmr", "text": "Formula dawiyê ya ji bo biryarê amade pêşniyar, sînordarkirina xeterê û zimanê rêveberiya jorîn girê dide." },
+            { "language": "pl", "text": "Gotowa decyzyjnie formuła końcowa łączy rekomendację, ograniczenie ryzyka i język najwyższego kierownictwa." },
+            { "language": "ro", "text": "O formulă finală gata pentru decizie leagă recomandarea, limitarea riscului și limbajul conducerii superioare." },
+            { "language": "sq", "text": "Një formulë mbyllëse gati për vendim lidh rekomandimin, kufizimin e rrezikut dhe gjuhën e drejtimit të lartë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "board-proposal-discussion",
+          "placement": "hero",
+          "purpose": "Show a formal leadership meeting where a department lead carefully presents evidence and an alternative to a senior proposal.",
+          "altText": "Eine formale Leitungsrunde mit einer ruhigen Präsentation an einem Konferenztisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A formal leadership meeting with a calm presentation at a conference table." },
+            { "language": "fa", "text": "یک جلسه رسمی مدیریتی با ارائه‌ای آرام پشت میز کنفرانس." },
+            { "language": "ar", "text": "اجتماع قيادة رسمي مع عرض هادئ حول طاولة مؤتمر." },
+            { "language": "tr", "text": "Bir konferans masasında sakin bir sunumla resmi bir yönetim toplantısı." },
+            { "language": "ru", "text": "Официальное совещание руководства со спокойной презентацией за конференц-столом." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی فەرمی بەڕێوەبردن بە پێشکەشکردنێکی ئارام لەسەر مێزی کۆنفرانس." },
+            { "language": "kmr", "text": "Civîneke fermî ya rêveberiyê bi pêşkêşkirineke aram li ser maseya konferansê." },
+            { "language": "pl", "text": "Formalne spotkanie kierownictwa ze spokojną prezentacją przy stole konferencyjnym." },
+            { "language": "ro", "text": "O ședință formală de conducere cu o prezentare calmă la masa de conferință." },
+            { "language": "sq", "text": "Një takim formal drejtues me një prezantim të qetë në tryezën e konferencës." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal leadership meeting: diverse adults at a conference table, one person calmly presenting a simple risk-and-cost chart without readable text, respectful atmosphere, no logos, no private data, accessible composition, neutral office setting.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

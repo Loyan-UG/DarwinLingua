@@ -465,7 +465,9 @@ internal sealed class ContentImportParser : IContentImportParser
         return new ParsedExerciseModel(
             exercise.Slug ?? string.Empty,
             exercise.Title ?? string.Empty,
+            MapTranslations(exercise.TitleTranslations),
             exercise.Instruction ?? string.Empty,
+            MapTranslations(exercise.InstructionTranslations),
             exercise.CefrLevel ?? string.Empty,
             exercise.ExerciseType ?? string.Empty,
             exercise.TargetSkill ?? string.Empty,
@@ -474,9 +476,13 @@ internal sealed class ContentImportParser : IContentImportParser
             SerializeRaw(exercise.Prompt),
             SerializeRaw(exercise.AnswerKey),
             exercise.CorrectExplanation ?? string.Empty,
+            MapTranslations(exercise.CorrectExplanationTranslations),
             exercise.IncorrectExplanation ?? string.Empty,
+            MapTranslations(exercise.IncorrectExplanationTranslations),
             exercise.Hint,
+            MapTranslations(exercise.HintTranslations),
             exercise.CommonMistakeNote,
+            MapTranslations(exercise.CommonMistakeNoteTranslations),
             exercise.IsPublished ?? true,
             exercise.SortOrder ?? 0);
     }
@@ -486,7 +492,9 @@ internal sealed class ContentImportParser : IContentImportParser
         return new ParsedExerciseSetModel(
             set.Slug ?? string.Empty,
             set.Title ?? string.Empty,
+            MapTranslations(set.TitleTranslations),
             set.Description ?? string.Empty,
+            MapTranslations(set.DescriptionTranslations),
             set.CefrLevel ?? string.Empty,
             set.OwnerType ?? string.Empty,
             set.OwnerSlug,
@@ -499,7 +507,9 @@ internal sealed class ContentImportParser : IContentImportParser
         new(
             course.Slug ?? string.Empty,
             course.Title ?? string.Empty,
+            MapTranslations(course.TitleTranslations),
             course.Description ?? string.Empty,
+            MapTranslations(course.DescriptionTranslations),
             course.CefrLevel,
             course.CefrRange,
             course.IsPublished ?? true,
@@ -510,7 +520,9 @@ internal sealed class ContentImportParser : IContentImportParser
             module.Slug ?? string.Empty,
             module.CoursePathSlug ?? string.Empty,
             module.Title ?? string.Empty,
+            MapTranslations(module.TitleTranslations),
             module.Description ?? string.Empty,
+            MapTranslations(module.DescriptionTranslations),
             module.ModuleNumber ?? 0,
             module.CefrLevel ?? string.Empty,
             module.IsPublished ?? true,
@@ -523,11 +535,17 @@ internal sealed class ContentImportParser : IContentImportParser
             lesson.ModuleSlug ?? string.Empty,
             lesson.LessonNumber ?? 0,
             lesson.Title ?? string.Empty,
+            MapTranslations(lesson.TitleTranslations),
             lesson.ShortDescription ?? string.Empty,
+            MapTranslations(lesson.ShortDescriptionTranslations),
             lesson.Narrative ?? string.Empty,
+            MapTranslations(lesson.NarrativeTranslations),
             lesson.CefrLevel ?? string.Empty,
             lesson.EstimatedMinutes ?? 0,
             (lesson.LearningGoals ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.LearningGoalsTranslations ?? []).Select(item => new ParsedCourseTextListTranslationModel(
+                item.Language ?? string.Empty,
+                (item.Texts ?? []).Select(text => text ?? string.Empty).ToArray())).ToArray(),
             (lesson.PrerequisiteLessonSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             lesson.NextLessonSlug,
             (lesson.LinkedGrammarTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
@@ -538,7 +556,9 @@ internal sealed class ContentImportParser : IContentImportParser
             (lesson.LinkedExerciseSetSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (lesson.LinkedExamPrepSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             lesson.ReviewSummary,
+            MapTranslations(lesson.ReviewSummaryTranslations),
             lesson.HomeworkTask,
+            MapTranslations(lesson.HomeworkTaskTranslations),
             lesson.IsPublished ?? true,
             lesson.SortOrder ?? 0);
 
@@ -1519,7 +1539,9 @@ internal sealed class ContentImportParser : IContentImportParser
     {
         public string? Slug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? Instruction { get; set; }
+        public ContentMeaningDocument[]? InstructionTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public string? ExerciseType { get; set; }
         public string? TargetSkill { get; set; }
@@ -1528,9 +1550,13 @@ internal sealed class ContentImportParser : IContentImportParser
         public JsonElement? Prompt { get; set; }
         public JsonElement? AnswerKey { get; set; }
         public string? CorrectExplanation { get; set; }
+        public ContentMeaningDocument[]? CorrectExplanationTranslations { get; set; }
         public string? IncorrectExplanation { get; set; }
+        public ContentMeaningDocument[]? IncorrectExplanationTranslations { get; set; }
         public string? Hint { get; set; }
+        public ContentMeaningDocument[]? HintTranslations { get; set; }
         public string? CommonMistakeNote { get; set; }
+        public ContentMeaningDocument[]? CommonMistakeNoteTranslations { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }
     }
@@ -1539,7 +1565,9 @@ internal sealed class ContentImportParser : IContentImportParser
     {
         public string? Slug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? Description { get; set; }
+        public ContentMeaningDocument[]? DescriptionTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public string? OwnerType { get; set; }
         public string? OwnerSlug { get; set; }
@@ -1552,7 +1580,9 @@ internal sealed class ContentImportParser : IContentImportParser
     {
         public string? Slug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? Description { get; set; }
+        public ContentMeaningDocument[]? DescriptionTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public string? CefrRange { get; set; }
         public bool? IsPublished { get; set; }
@@ -1564,7 +1594,9 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? Slug { get; set; }
         public string? CoursePathSlug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? Description { get; set; }
+        public ContentMeaningDocument[]? DescriptionTranslations { get; set; }
         public int? ModuleNumber { get; set; }
         public string? CefrLevel { get; set; }
         public bool? IsPublished { get; set; }
@@ -1578,11 +1610,15 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? ModuleSlug { get; set; }
         public int? LessonNumber { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? ShortDescription { get; set; }
+        public ContentMeaningDocument[]? ShortDescriptionTranslations { get; set; }
         public string? Narrative { get; set; }
+        public ContentMeaningDocument[]? NarrativeTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public int? EstimatedMinutes { get; set; }
         public string?[]? LearningGoals { get; set; }
+        public CourseTextListTranslationDocument[]? LearningGoalsTranslations { get; set; }
         public string?[]? PrerequisiteLessonSlugs { get; set; }
         public string? NextLessonSlug { get; set; }
         public string?[]? LinkedGrammarTopicSlugs { get; set; }
@@ -1593,9 +1629,17 @@ internal sealed class ContentImportParser : IContentImportParser
         public string?[]? LinkedExerciseSetSlugs { get; set; }
         public string?[]? LinkedExamPrepSlugs { get; set; }
         public string? ReviewSummary { get; set; }
+        public ContentMeaningDocument[]? ReviewSummaryTranslations { get; set; }
         public string? HomeworkTask { get; set; }
+        public ContentMeaningDocument[]? HomeworkTaskTranslations { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }
+    }
+
+    private sealed class CourseTextListTranslationDocument
+    {
+        public string? Language { get; set; }
+        public string?[]? Texts { get; set; }
     }
 
     private sealed class WritingTemplateDocument

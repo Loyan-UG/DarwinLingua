@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-33-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 33 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 33",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-mehrdeutigen-bescheid-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Einen mehrdeutigen Bescheid klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying an ambiguous notice" },
+        { "language": "fa", "text": "روشن‌کردن یک ابلاغ مبهم" },
+        { "language": "ar", "text": "توضيح قرار إداري غامض" },
+        { "language": "tr", "text": "Belirsiz bir kararı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Уточнение неоднозначного решения" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی بڕیارێکی دووواتا" },
+        { "language": "kmr", "text": "Zelalkirina biryareke duwate" },
+        { "language": "pl", "text": "Wyjaśnianie niejednoznacznej decyzji" },
+        { "language": "ro", "text": "Clarificarea unei decizii ambigue" },
+        { "language": "sq", "text": "Sqarimi i një vendimi të paqartë" }
+      ],
+      "description": "Sie haben einen amtlichen Bescheid erhalten, in dem steht: \"Der Nachweis ist binnen eines Monats nachzureichen; andernfalls kann die Leistung ruhen.\" Unklar bleibt, ob die Frist ab Ausstellungsdatum oder ab Zugang läuft, ob zunächst eine digitale Kopie genügt und ab wann genau eine Unterbrechung droht. Sie sollen die unklare Stelle zitieren, zwei mögliche Auslegungen benennen und eine verbindliche schriftliche Klärung erbitten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You have received an official notice stating: \"The proof must be submitted within one month; otherwise the benefit may be suspended.\" It remains unclear whether the deadline starts on the issue date or on receipt, whether a digital copy is initially sufficient, and exactly when an interruption may occur. You should quote the unclear passage, name two possible interpretations, and request binding written clarification." },
+        { "language": "fa", "text": "شما یک ابلاغ اداری دریافت کرده‌اید که در آن آمده است: «مدرک باید ظرف یک ماه تکمیل و ارائه شود؛ در غیر این صورت ممکن است پرداخت/مزایا متوقف شود.» روشن نیست مهلت از تاریخ صدور شروع می‌شود یا از تاریخ دریافت، آیا ابتدا کپی دیجیتال کافی است، و دقیقاً از چه زمانی خطر توقف وجود دارد. باید بخش مبهم را نقل کنید، دو برداشت ممکن را نام ببرید و توضیح کتبی معتبر بخواهید." },
+        { "language": "ar", "text": "تلقيتم قرارًا إداريًا جاء فيه: «يجب تقديم الإثبات خلال شهر؛ وإلا قد تُعلّق الاستفادة.» ولا يزال غير واضح هل تبدأ المهلة من تاريخ الإصدار أم من تاريخ الوصول، وهل تكفي نسخة رقمية في البداية، ومتى قد يحدث التعليق بالضبط. ينبغي أن تقتبسوا الموضع الغامض، وتذكروا تفسيرين محتملين، وتطلبوا توضيحًا خطيًا ملزمًا." },
+        { "language": "tr", "text": "Şöyle yazan resmi bir karar aldınız: \"Kanıt bir ay içinde sonradan sunulmalıdır; aksi halde ödeme/hak askıya alınabilir.\" Sürenin düzenleme tarihinden mi yoksa tebliğden mi başladığı, başlangıçta dijital bir kopyanın yeterli olup olmadığı ve kesintinin tam olarak ne zaman doğabileceği belirsizdir. Belirsiz kısmı alıntılamalı, iki olası yorumu belirtmeli ve bağlayıcı yazılı açıklama istemelisiniz." },
+        { "language": "ru", "text": "Вы получили официальное решение, в котором сказано: «Доказательство должно быть представлено в течение месяца; иначе выплата может быть приостановлена». Неясно, начинается ли срок с даты выдачи или с даты получения, достаточно ли сначала цифровой копии и когда именно может наступить приостановка. Нужно процитировать неясное место, назвать две возможные трактовки и попросить обязательное письменное разъяснение." },
+        { "language": "ckb", "text": "بڕیارێکی فەرمی وەرگرتووە کە تێیدا نووسراوە: «بەڵگەکە پێویستە لە ماوەی مانگێکدا پاشکەش بکرێت؛ ئەگەر نا، سوودەکە ڕەنگە ڕابگیرێت.» ڕوون نییە ماوەکە لە ڕۆژی دەرچوونەوە دەست پێدەکات یان لە ڕۆژی گەیشتن، ئایا سەرەتا کۆپییەکی دیجیتاڵ بەسە، و کەی بە وردی ڕاگرتن ڕوودەدات. پێویستە بەشی نادیار وەربگریت، دوو لێکدانەوەی ئەگەری ناوببەیت و ڕوونکردنەوەی نووسراوی پابەند داوا بکەیت." },
+        { "language": "kmr", "text": "We biryareke fermî wergirtiye ku tê de hatiye nivîsîn: \"Belge divê di nav mehekê de were şandin; wekî din maf dikare were rawestandin.\" Nezelal e ka dem ji roja derxistinê dest pê dike an ji roja gihîştinê, ka kopiyeke dîjîtal di destpêkê de bes e an na, û kengê bi rastî rawestandin dikare çêbibe. Divê hûn cihê nezelal bineqînin, du şîroveyên gengaz nav bikin û daxuyaniyeke nivîskî ya girêdayî bixwazin." },
+        { "language": "pl", "text": "Otrzymał Pan/Pani urzędową decyzję, w której zapisano: „Dowód należy dostarczyć w ciągu miesiąca; w przeciwnym razie świadczenie może zostać wstrzymane”. Nie jest jasne, czy termin biegnie od daty wystawienia czy od doręczenia, czy na początku wystarczy kopia cyfrowa i od kiedy dokładnie grozi przerwa. Należy zacytować niejasny fragment, nazwać dwie możliwe interpretacje i poprosić o wiążące pisemne wyjaśnienie." },
+        { "language": "ro", "text": "Ați primit o decizie oficială în care scrie: „Dovada trebuie depusă în termen de o lună; în caz contrar, prestația poate fi suspendată.” Rămâne neclar dacă termenul curge de la data emiterii sau de la primire, dacă o copie digitală este suficientă inițial și de când exact poate apărea suspendarea. Trebuie să citați pasajul neclar, să numiți două interpretări posibile și să cereți o clarificare scrisă obligatorie." },
+        { "language": "sq", "text": "Keni marrë një vendim zyrtar ku thuhet: “Prova duhet të dorëzohet brenda një muaji; përndryshe përfitimi mund të pezullohet.” Mbetet e paqartë nëse afati fillon nga data e lëshimit apo nga marrja, nëse fillimisht mjafton një kopje digjitale dhe nga kur saktësisht rrezikohet ndërprerja. Duhet të citoni pjesën e paqartë, të përmendni dy interpretime të mundshme dhe të kërkoni sqarim të detyrueshëm me shkrim." }
+      ],
+      "learnerGoal": "Einen mehrdeutigen Bescheid präzise klären: die unklare Formulierung zitieren, mögliche Lesarten unterscheiden, keine eigene Rechtsauslegung als Tatsache darstellen und eine schriftliche Bestätigung zu Fristbeginn, Fristende, Nachweisform und Folgen erbitten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify an ambiguous notice precisely: quote the unclear wording, distinguish possible readings, do not present your own legal interpretation as fact, and request written confirmation of the deadline start, deadline end, form of proof, and consequences." },
+        { "language": "fa", "text": "یک ابلاغ مبهم را دقیق روشن کنید: عبارت نامشخص را نقل کنید، برداشت‌های ممکن را جدا کنید، برداشت حقوقی خودتان را به‌عنوان واقعیت مطرح نکنید، و درباره شروع مهلت، پایان مهلت، شکل مدرک و پیامدها تأیید کتبی بخواهید." },
+        { "language": "ar", "text": "وضحوا القرار الغامض بدقة: اقتبسوا الصياغة غير الواضحة، وميزوا بين القراءات المحتملة، ولا تعرضوا تفسيركم القانوني كحقيقة، واطلبوا تأكيدًا خطيًا لبداية المهلة ونهايتها وشكل الإثبات والنتائج." },
+        { "language": "tr", "text": "Belirsiz bir kararı kesin biçimde açıklığa kavuşturun: belirsiz ifadeyi alıntılayın, olası okumaları ayırın, kendi hukuki yorumunuzu gerçek gibi sunmayın ve sürenin başlangıcı, bitişi, belge biçimi ve sonuçları için yazılı teyit isteyin." },
+        { "language": "ru", "text": "Точно проясните неоднозначное решение: процитируйте неясную формулировку, различите возможные прочтения, не представляйте собственную правовую трактовку как факт и попросите письменное подтверждение начала срока, конца срока, формы доказательства и последствий." },
+        { "language": "ckb", "text": "بڕیارێکی دووواتا بە وردی ڕوون بکەرەوە: دەربڕینی نادیار وەربگرە، خوێندنەوە ئەگەرییەکان جیا بکەرەوە، لێکدانەوەی یاسایی خۆت وەک ڕاستی پێشکەش مەکە، و پشتڕاستکردنەوەی نووسراو دەربارەی دەستپێکی ماوە، کۆتایی ماوە، شێوەی بەڵگە و ئاکامەکان داوا بکە." },
+        { "language": "kmr", "text": "Biryareke duwate bi hûrgilî zelal bikin: gotina nezelal bineqînin, xwendinên gengaz veqetînin, şîroveya xwe ya hiqûqî wek rastî pêşkêş nekin, û piştrastkirina nivîskî ji bo destpêka demê, dawîya demê, awayê belgeyê û encaman bixwazin." },
+        { "language": "pl", "text": "Precyzyjnie wyjaśnić niejednoznaczną decyzję: zacytować niejasne sformułowanie, rozróżnić możliwe odczytania, nie przedstawiać własnej interpretacji prawnej jako faktu i poprosić o pisemne potwierdzenie początku terminu, końca terminu, formy dowodu i konsekwencji." },
+        { "language": "ro", "text": "Clarificați precis o decizie ambiguă: citați formularea neclară, separați interpretările posibile, nu prezentați propria interpretare juridică drept fapt și cereți confirmare scrisă privind începutul termenului, sfârșitul termenului, forma dovezii și consecințele." },
+        { "language": "sq", "text": "Sqaroni me saktësi një vendim të paqartë: citoni formulimin e paqartë, dalloni leximet e mundshme, mos e paraqitni interpretimin tuaj juridik si fakt dhe kërkoni konfirmim me shkrim për fillimin e afatit, fundin e afatit, formën e provës dhe pasojat." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 33,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌دهنده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeiterin",
+          "translations": [
+            { "language": "en", "text": "Case worker" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "الموظفة المختصة" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудница по делу" },
+            { "language": "ckb", "text": "کارمەندی دۆسیە" },
+            { "language": "kmr", "text": "Karmenda dosyayê" },
+            { "language": "pl", "text": "Urzędniczka prowadząca sprawę" },
+            { "language": "ro", "text": "Funcționara responsabilă de dosar" },
+            { "language": "sq", "text": "Punonjësja e dosjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie haben eine Frage zu Ihrem Bescheid. Welche Stelle ist für Sie unklar?",
+          "translations": [
+            { "language": "en", "text": "You have a question about your notice. Which part is unclear to you?" },
+            { "language": "fa", "text": "شما درباره ابلاغ خود پرسشی دارید. کدام بخش برای شما مبهم است؟" },
+            { "language": "ar", "text": "لديكم سؤال حول القرار. أي موضع غير واضح بالنسبة لكم؟" },
+            { "language": "tr", "text": "Kararınız hakkında bir sorunuz var. Hangi bölüm sizin için belirsiz?" },
+            { "language": "ru", "text": "У вас вопрос по вашему решению. Какая часть вам неясна?" },
+            { "language": "ckb", "text": "تۆ پرسیارێکت دەربارەی بڕیارەکەت هەیە. کام بەش بۆت نادیارە؟" },
+            { "language": "kmr", "text": "Pirseke we li ser biryara xwe heye. Kîjan cih ji bo we nezelal e?" },
+            { "language": "pl", "text": "Ma Pan/Pani pytanie dotyczące decyzji. Który fragment jest dla Pana/Pani niejasny?" },
+            { "language": "ro", "text": "Aveți o întrebare despre decizia dumneavoastră. Care parte este neclară pentru dumneavoastră?" },
+            { "language": "sq", "text": "Keni një pyetje për vendimin tuaj. Cila pjesë është e paqartë për ju?" }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Im Bescheid heißt es: \"Der Nachweis ist binnen eines Monats nachzureichen; andernfalls kann die Leistung ruhen.\" Unklar ist mir vor allem, ob die Monatsfrist ab dem Datum des Bescheids oder ab dem Zugang bei mir gerechnet wird.",
+          "translations": [
+            { "language": "en", "text": "The notice says: \"The proof must be submitted within one month; otherwise the benefit may be suspended.\" What is unclear to me above all is whether the one-month deadline is counted from the date of the notice or from the date I received it." },
+            { "language": "fa", "text": "در ابلاغ آمده است: «مدرک باید ظرف یک ماه تکمیل و ارائه شود؛ در غیر این صورت ممکن است پرداخت/مزایا متوقف شود.» ابهام اصلی من این است که مهلت یک‌ماهه از تاریخ ابلاغ حساب می‌شود یا از تاریخی که به من رسیده است." },
+            { "language": "ar", "text": "ورد في القرار: «يجب تقديم الإثبات خلال شهر؛ وإلا قد تُعلّق الاستفادة.» وما هو غير واضح لي خصوصًا هو هل تُحسب مهلة الشهر من تاريخ القرار أم من تاريخ وصوله إلي." },
+            { "language": "tr", "text": "Kararda şöyle yazıyor: \"Kanıt bir ay içinde sonradan sunulmalıdır; aksi halde ödeme/hak askıya alınabilir.\" Benim için özellikle belirsiz olan, bir aylık sürenin karar tarihinden mi yoksa bana ulaştığı tarihten mi hesaplandığıdır." },
+            { "language": "ru", "text": "В решении сказано: «Доказательство должно быть представлено в течение месяца; иначе выплата может быть приостановлена». Мне прежде всего неясно, считается ли месячный срок с даты решения или с даты его получения мной." },
+            { "language": "ckb", "text": "لە بڕیارەکەدا نووسراوە: «بەڵگەکە پێویستە لە ماوەی مانگێکدا پاشکەش بکرێت؛ ئەگەر نا، سوودەکە ڕەنگە ڕابگیرێت.» بە تایبەتی بۆ من نادیارە کە ماوەی مانگێک لە ڕێکەوتی بڕیارەکەوە هەژمار دەکرێت یان لە ڕۆژی گەیشتنی بۆ من." },
+            { "language": "kmr", "text": "Di biryarê de tê gotin: \"Belge divê di nav mehekê de were şandin; wekî din maf dikare were rawestandin.\" Ya ku ji min re herî zêde nezelal e ev e ka demê mehekê ji roja biryarê tê hesabkirin an ji roja ku gihîştiye min." },
+            { "language": "pl", "text": "W decyzji napisano: „Dowód należy dostarczyć w ciągu miesiąca; w przeciwnym razie świadczenie może zostać wstrzymane”. Najbardziej niejasne jest dla mnie, czy miesięczny termin liczy się od daty decyzji czy od dnia doręczenia mi jej." },
+            { "language": "ro", "text": "În decizie scrie: „Dovada trebuie depusă în termen de o lună; în caz contrar, prestația poate fi suspendată.” Nu îmi este clar mai ales dacă termenul de o lună se calculează de la data deciziei sau de la primirea ei de către mine." },
+            { "language": "sq", "text": "Në vendim thuhet: “Prova duhet të dorëzohet brenda një muaji; përndryshe përfitimi mund të pezullohet.” Për mua është e paqartë sidomos nëse afati njëmujor llogaritet nga data e vendimit apo nga data kur e kam marrë." }
+          ],
+          "function": "quote-unclear-wording",
+          "toneNote": "Die unklare Stelle zitieren, nicht nur allgemein sagen, dass der Bescheid unverständlich ist.",
+          "expectedLearnerAction": "Quote the unclear passage and name the ambiguity."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "In der Regel sollen Unterlagen möglichst schnell nachgereicht werden. Der Bescheid nennt aber keinen konkreten Kalendertag.",
+          "translations": [
+            { "language": "en", "text": "As a rule, documents should be submitted as quickly as possible. But the notice does not name a specific calendar date." },
+            { "language": "fa", "text": "معمولاً مدارک باید تا حد ممکن سریع تکمیل و ارائه شوند. اما ابلاغ یک تاریخ تقویمی مشخص نام نمی‌برد." },
+            { "language": "ar", "text": "عادة ينبغي تقديم الوثائق بأسرع ما يمكن. لكن القرار لا يذكر يومًا تقويميًا محددًا." },
+            { "language": "tr", "text": "Kural olarak belgeler mümkün olduğunca hızlı sonradan sunulmalıdır. Ancak karar belirli bir takvim günü belirtmiyor." },
+            { "language": "ru", "text": "Как правило, документы следует представить как можно быстрее. Но решение не называет конкретную календарную дату." },
+            { "language": "ckb", "text": "بە گشتی پێویستە بەڵگەکان هەرچی زووە پاشکەش بکرێن. بەڵام بڕیارەکە هیچ ڕۆژێکی دیاریکراوی ساڵنامەیی ناوناببات." },
+            { "language": "kmr", "text": "Bi gelemperî divê belge her çiqas zû be werin şandin. Lê biryar rojeke salnameyî ya konkret nav nake." },
+            { "language": "pl", "text": "Co do zasady dokumenty powinny zostać dostarczone możliwie szybko. Decyzja nie podaje jednak konkretnej daty kalendarzowej." },
+            { "language": "ro", "text": "De regulă, documentele ar trebui depuse cât mai repede posibil. Totuși decizia nu menționează o dată calendaristică precisă." },
+            { "language": "sq", "text": "Si rregull, dokumentet duhet të dorëzohen sa më shpejt të jetë e mundur. Megjithatë vendimi nuk përmend një datë konkrete kalendarike." }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Gerade deshalb möchte ich keine eigene Auslegung voraussetzen. Nach meinem Verständnis kämen zwei Daten in Betracht: der 12. Juni, wenn das Bescheiddatum zählt, oder der 15. Juni, wenn der Zugang maßgeblich ist. Können Sie bestätigen, welches Datum gilt?",
+          "translations": [
+            { "language": "en", "text": "That is exactly why I do not want to assume my own interpretation. As I understand it, two dates could be relevant: 12 June if the notice date counts, or 15 June if receipt is decisive. Can you confirm which date applies?" },
+            { "language": "fa", "text": "دقیقاً به همین دلیل نمی‌خواهم برداشت خودم را مبنا بگیرم. تا جایی که می‌فهمم، دو تاریخ ممکن است مطرح باشد: ۱۲ ژوئن اگر تاریخ ابلاغ ملاک باشد، یا ۱۵ ژوئن اگر تاریخ دریافت تعیین‌کننده باشد. می‌توانید تأیید کنید کدام تاریخ معتبر است؟" },
+            { "language": "ar", "text": "لهذا بالضبط لا أريد أن أفترض تفسيري الخاص. بحسب فهمي قد يكون هناك تاريخان محتملان: 12 حزيران إذا كان تاريخ القرار هو المعيار، أو 15 حزيران إذا كان الوصول هو الحاسم. هل يمكنكم تأكيد أي تاريخ ينطبق؟" },
+            { "language": "tr", "text": "Tam da bu nedenle kendi yorumumu varsaymak istemiyorum. Anladığım kadarıyla iki tarih söz konusu olabilir: karar tarihi esas alınırsa 12 Haziran, tebliğ belirleyiciyse 15 Haziran. Hangi tarihin geçerli olduğunu teyit edebilir misiniz?" },
+            { "language": "ru", "text": "Именно поэтому я не хочу исходить из собственной трактовки. Насколько я понимаю, возможны две даты: 12 июня, если считается дата решения, или 15 июня, если решающим является получение. Можете подтвердить, какая дата действует?" },
+            { "language": "ckb", "text": "هەر بۆیە نامەوێت لێکدانەوەی خۆم وەک بنەما دابنێم. بەپێی تێگەیشتنی من، دوو ڕێکەوت دەکرێت گرنگ بن: ١٢ی حوزەیران ئەگەر ڕێکەوتی بڕیارەکە گرنگ بێت، یان ١٥ی حوزەیران ئەگەر گەیشتن بنەما بێت. دەتوانن پشتڕاست بکەنەوە کام ڕێکەوت کاردەکات؟" },
+            { "language": "kmr", "text": "Bi rastî ji ber vê ez naxwazim şîroveya xwe wek bingeh bigirim. Li gor fêmkirina min, du tarîx dikarin girîng bin: 12ê Hezîranê heke roja biryarê hesab bibe, an 15ê Hezîranê heke gihîştin diyarker be. Hûn dikarin piştrast bikin kîjan tarîx derbasdar e?" },
+            { "language": "pl", "text": "Właśnie dlatego nie chcę zakładać własnej interpretacji. Według mojego rozumienia w grę wchodzą dwie daty: 12 czerwca, jeśli liczy się data decyzji, albo 15 czerwca, jeśli decydujące jest doręczenie. Czy mogą Państwo potwierdzić, która data obowiązuje?" },
+            { "language": "ro", "text": "Tocmai de aceea nu vreau să presupun propria interpretare. Din câte înțeleg, ar putea fi relevante două date: 12 iunie, dacă se ia în calcul data deciziei, sau 15 iunie, dacă primirea este decisivă. Puteți confirma care dată se aplică?" },
+            { "language": "sq", "text": "Pikërisht për këtë arsye nuk dua të supozoj interpretimin tim. Sipas kuptimit tim, mund të jenë dy data: 12 qershor, nëse vlen data e vendimit, ose 15 qershor, nëse vendimtare është marrja. A mund të konfirmoni cila datë vlen?" }
+          ],
+          "function": "offer-interpretations",
+          "toneNote": "Zwei Lesarten anbieten und die Behörde um Bestätigung bitten.",
+          "expectedLearnerAction": "Name possible interpretations and request confirmation."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Ich kann Ihnen sagen, dass wir den Nachweis brauchen. Zur Form des Nachweises steht im Bescheid nur \"geeigneter Nachweis\".",
+          "translations": [
+            { "language": "en", "text": "I can tell you that we need the proof. Regarding the form of proof, the notice only says \"suitable proof\"." },
+            { "language": "fa", "text": "می‌توانم بگویم که ما به مدرک نیاز داریم. درباره شکل مدرک، در ابلاغ فقط نوشته شده «مدرک مناسب»." },
+            { "language": "ar", "text": "أستطيع أن أقول إننا نحتاج إلى الإثبات. وبخصوص شكل الإثبات، لا يذكر القرار إلا «إثباتًا مناسبًا»." },
+            { "language": "tr", "text": "Size kanıta ihtiyacımız olduğunu söyleyebilirim. Kanıtın biçimi konusunda kararda yalnızca \"uygun kanıt\" yazıyor." },
+            { "language": "ru", "text": "Я могу сказать, что нам нужно доказательство. Что касается формы доказательства, в решении указано только «подходящее доказательство»." },
+            { "language": "ckb", "text": "دەتوانم بڵێم کە ئێمە پێویستمان بە بەڵگەکە هەیە. دەربارەی شێوەی بەڵگە، لە بڕیارەکەدا تەنها نووسراوە «بەڵگەی گونجاو»." },
+            { "language": "kmr", "text": "Ez dikarim bêjim ku belge ji me re pêwîst e. Li ser awayê belgeyê, di biryarê de tenê \"belgeya guncav\" hatiye nivîsîn." },
+            { "language": "pl", "text": "Mogę powiedzieć, że potrzebujemy dowodu. Co do formy dowodu, w decyzji zapisano tylko „odpowiedni dowód”." },
+            { "language": "ro", "text": "Vă pot spune că avem nevoie de dovadă. În privința formei dovezii, decizia spune doar „dovadă adecvată”." },
+            { "language": "sq", "text": "Mund t'ju them se na duhet prova. Sa i përket formës së provës, në vendim shkruhet vetëm “provë e përshtatshme”." }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Auch das würde ich gern klären. Reicht für die Fristwahrung zunächst eine digitale Kopie mit gut lesbarem Datum, oder muss innerhalb der Frist bereits das Original vorliegen?",
+          "translations": [
+            { "language": "en", "text": "I would also like to clarify that. Is a digital copy with a clearly readable date initially sufficient to preserve the deadline, or must the original already be available within the deadline?" },
+            { "language": "fa", "text": "این را هم مایلم روشن کنم. آیا برای حفظ مهلت، ابتدا یک کپی دیجیتال با تاریخ کاملاً خوانا کافی است، یا اصل مدرک باید حتماً در همان مهلت موجود باشد؟" },
+            { "language": "ar", "text": "أود توضيح ذلك أيضًا. هل تكفي في البداية نسخة رقمية بتاريخ واضح القراءة للحفاظ على المهلة، أم يجب أن يكون الأصل موجودًا بالفعل داخل المهلة؟" },
+            { "language": "tr", "text": "Bunu da açıklığa kavuşturmak isterim. Süreyi korumak için başlangıçta tarihi açıkça okunabilen dijital bir kopya yeterli mi, yoksa asıl belgenin süre içinde mevcut olması mı gerekir?" },
+            { "language": "ru", "text": "Это я тоже хотел бы уточнить. Достаточно ли сначала цифровой копии с четко читаемой датой для соблюдения срока, или оригинал уже должен быть представлен в пределах срока?" },
+            { "language": "ckb", "text": "ئەوەشم دەمەوێت ڕوون بکەمەوە. ئایا بۆ پاراستنی ماوەکە سەرەتا کۆپییەکی دیجیتاڵ بە ڕێکەوتی خوێندراوە بەسە، یان پێویستە ناو ماوەکەدا ئەسڵی بەڵگەکە هەبێت؟" },
+            { "language": "kmr", "text": "Ez dixwazim wê jî zelal bikim. Ji bo parastina demê, di destpêkê de kopiyeke dîjîtal bi tarîxeke baş xwendinbar bes e, an divê orîjînal di nav demê de amade be?" },
+            { "language": "pl", "text": "To również chciałbym/chciałabym wyjaśnić. Czy dla zachowania terminu wystarczy najpierw kopia cyfrowa z dobrze czytelną datą, czy w terminie musi już być dostępny oryginał?" },
+            { "language": "ro", "text": "Aș dori să clarific și acest lucru. Pentru păstrarea termenului, este suficientă inițial o copie digitală cu dată clar lizibilă sau originalul trebuie să fie deja disponibil în termen?" },
+            { "language": "sq", "text": "Edhe këtë do të doja ta sqaroj. Për të ruajtur afatin, a mjafton fillimisht një kopje digjitale me datë qartë të lexueshme, apo origjinali duhet të jetë dorëzuar brenda afatit?" }
+          ],
+          "function": "clarify-document-form",
+          "toneNote": "Nicht raten, sondern die akzeptierte Form des Nachweises erfragen.",
+          "expectedLearnerAction": "Ask whether a digital copy or original is required."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Sie machen sich Sorgen wegen der Formulierung, dass die Leistung ruhen kann?",
+          "translations": [
+            { "language": "en", "text": "You are concerned about the wording that the benefit may be suspended?" },
+            { "language": "fa", "text": "نگران عبارت مربوط به امکان توقف پرداخت/مزایا هستید؟" },
+            { "language": "ar", "text": "أنتم قلقون من الصياغة التي تقول إن الاستفادة قد تُعلّق؟" },
+            { "language": "tr", "text": "Ödeme/hakkın askıya alınabileceği ifadesi konusunda endişeleniyorsunuz, değil mi?" },
+            { "language": "ru", "text": "Вы беспокоитесь из-за формулировки о том, что выплата может быть приостановлена?" },
+            { "language": "ckb", "text": "تۆ نیگەرانیت لە دەربڕینەکە کە دەڵێت سوودەکە ڕەنگە ڕابگیرێت؟" },
+            { "language": "kmr", "text": "Hûn ji gotina ku maf dikare were rawestandin xemgîn in?" },
+            { "language": "pl", "text": "Martwi się Pan/Pani sformułowaniem, że świadczenie może zostać wstrzymane?" },
+            { "language": "ro", "text": "Vă îngrijorează formularea potrivit căreia prestația poate fi suspendată?" },
+            { "language": "sq", "text": "Jeni i shqetësuar për formulimin se përfitimi mund të pezullohet?" }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, weil der Satz offenlässt, ob die Leistung erst nach Fristablauf ruhen kann oder ob schon vorher eine vorläufige Unterbrechung möglich ist. Ich möchte nicht dramatisieren, sondern wissen, welche Folge konkret an welche Voraussetzung geknüpft ist.",
+          "translations": [
+            { "language": "en", "text": "Yes, because the sentence leaves open whether the benefit may be suspended only after the deadline has expired or whether a temporary interruption is possible earlier. I do not want to dramatize it, but to know which consequence is specifically tied to which condition." },
+            { "language": "fa", "text": "بله، چون جمله روشن نمی‌کند که پرداخت/مزایا فقط بعد از پایان مهلت ممکن است متوقف شود یا آیا قبل از آن هم توقف موقت ممکن است. نمی‌خواهم موضوع را بزرگ‌نمایی کنم، فقط می‌خواهم بدانم کدام پیامد دقیقاً به کدام شرط وابسته است." },
+            { "language": "ar", "text": "نعم، لأن الجملة تترك مفتوحًا هل يمكن تعليق الاستفادة فقط بعد انتهاء المهلة أم أن تعليقًا مؤقتًا ممكن قبل ذلك. لا أريد تهويل الأمر، بل معرفة أي نتيجة ترتبط تحديدًا بأي شرط." },
+            { "language": "tr", "text": "Evet, çünkü cümle ödeme/hakkın yalnızca sürenin bitiminden sonra mı askıya alınabileceğini yoksa daha önce geçici bir kesintinin mümkün olup olmadığını açık bırakıyor. Bunu dramatize etmek istemiyorum; hangi sonucun tam olarak hangi koşula bağlı olduğunu bilmek istiyorum." },
+            { "language": "ru", "text": "Да, потому что фраза оставляет открытым, может ли выплата быть приостановлена только после истечения срока или временная приостановка возможна раньше. Я не хочу драматизировать, а хочу знать, какое последствие конкретно связано с каким условием." },
+            { "language": "ckb", "text": "بەڵێ، چونکە ڕستەکە ڕوون ناکاتەوە ئایا سوودەکە تەنها دوای کۆتایی ماوەکە ڕادەگیرێت یان پێشتر ڕاگرتنی کاتییش دەکرێت. نامەوێت شتەکە گەورە بکەمەوە، بەڵکو دەمەوێت بزانم کام ئاکام بە وردی بە کام مەرجەوە بەستراوە." },
+            { "language": "kmr", "text": "Erê, ji ber ku hevokê nezelal dihêle ka maf tenê piştî dawîbûna demê dikare were rawestandin an rawestandineke demkî berê jî gengaz e. Ez naxwazim mijarê dramatîze bikim, lê dixwazim bizanim kîjan encam bi kîjan şertê ve girêdayî ye." },
+            { "language": "pl", "text": "Tak, ponieważ zdanie pozostawia otwarte, czy świadczenie może zostać wstrzymane dopiero po upływie terminu, czy też wcześniej możliwa jest tymczasowa przerwa. Nie chcę dramatyzować, lecz wiedzieć, która konsekwencja jest konkretnie powiązana z którym warunkiem." },
+            { "language": "ro", "text": "Da, pentru că fraza lasă deschis dacă prestația poate fi suspendată doar după expirarea termenului sau dacă o întrerupere provizorie este posibilă mai devreme. Nu vreau să dramatizez, ci să știu ce consecință este legată concret de ce condiție." },
+            { "language": "sq", "text": "Po, sepse fjalia e lë të hapur nëse përfitimi mund të pezullohet vetëm pas skadimit të afatit apo nëse një ndërprerje e përkohshme është e mundur më herët. Nuk dua ta dramatizoj, por të di cila pasojë lidhet konkretisht me cilin kusht." }
+          ],
+          "function": "clarify-consequences",
+          "toneNote": "Konsequenzen präzise erfragen, ohne Panik oder Drohung.",
+          "expectedLearnerAction": "Ask what consequence depends on what condition."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Welche Antwort brauchen Sie von uns, damit Sie sicher handeln können?",
+          "translations": [
+            { "language": "en", "text": "What answer do you need from us so that you can act safely?" },
+            { "language": "fa", "text": "چه پاسخی از طرف ما لازم دارید تا بتوانید با اطمینان اقدام کنید؟" },
+            { "language": "ar", "text": "ما الجواب الذي تحتاجونه منا كي تتمكنوا من التصرف بأمان؟" },
+            { "language": "tr", "text": "Güvenli biçimde hareket edebilmeniz için bizden hangi yanıtı istiyorsunuz?" },
+            { "language": "ru", "text": "Какой ответ вам нужен от нас, чтобы вы могли действовать уверенно?" },
+            { "language": "ckb", "text": "چ وەڵامێکتان لە ئێمە پێویستە تا بتوانیت بە دڵنیایی هەنگاو بنێیت؟" },
+            { "language": "kmr", "text": "Ji me kîjan bersivê hewce dikin da ku hûn bi ewlehî tev bigerin?" },
+            { "language": "pl", "text": "Jakiej odpowiedzi potrzebuje Pan/Pani od nas, żeby móc działać bezpiecznie?" },
+            { "language": "ro", "text": "De ce răspuns aveți nevoie de la noi ca să puteți acționa în siguranță?" },
+            { "language": "sq", "text": "Çfarë përgjigjeje ju duhet nga ne që të mund të veproni me siguri?" }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Bitte bestätigen Sie mir schriftlich vier Punkte: ab wann die Monatsfrist läuft, an welchem Datum sie endet, ob zunächst eine digitale Kopie genügt und ab welchem Zeitpunkt die Leistung tatsächlich ruhen würde.",
+          "translations": [
+            { "language": "en", "text": "Please confirm four points for me in writing: when the one-month deadline starts, on which date it ends, whether a digital copy is initially sufficient, and from what point the benefit would actually be suspended." },
+            { "language": "fa", "text": "لطفاً چهار نکته را کتبی برای من تأیید کنید: مهلت یک‌ماهه از چه زمانی شروع می‌شود، در چه تاریخی پایان می‌یابد، آیا ابتدا کپی دیجیتال کافی است، و از چه زمانی پرداخت/مزایا واقعاً متوقف می‌شود." },
+            { "language": "ar", "text": "يرجى تأكيد أربع نقاط خطيًا: متى تبدأ مهلة الشهر، وفي أي تاريخ تنتهي، وهل تكفي نسخة رقمية في البداية، ومن أي وقت ستُعلّق الاستفادة فعليًا." },
+            { "language": "tr", "text": "Lütfen bana dört noktayı yazılı olarak teyit edin: bir aylık süre ne zaman başlıyor, hangi tarihte bitiyor, başlangıçta dijital bir kopya yeterli mi ve ödeme/hak fiilen hangi andan itibaren askıya alınır." },
+            { "language": "ru", "text": "Пожалуйста, письменно подтвердите мне четыре пункта: с какого момента начинается месячный срок, в какую дату он заканчивается, достаточно ли сначала цифровой копии и с какого момента выплата фактически будет приостановлена." },
+            { "language": "ckb", "text": "تکایە چوار خاڵ بە نووسراو بۆم پشتڕاست بکەنەوە: ماوەی مانگێک کەی دەست پێدەکات، لە کام ڕێکەوتدا کۆتایی دێت، ئایا سەرەتا کۆپییەکی دیجیتاڵ بەسە، و لە کام کاتەوە سوودەکە بەڕاستی ڕادەگیرێت." },
+            { "language": "kmr", "text": "Ji kerema xwe çar xal bi nivîskî ji min re piştrast bikin: demê mehekê kengê dest pê dike, di kîjan tarîxê de diqede, ka di destpêkê de kopiyeke dîjîtal bes e an na, û ji kîjan demê ve maf bi rastî tê rawestandin." },
+            { "language": "pl", "text": "Proszę potwierdzić mi pisemnie cztery punkty: od kiedy biegnie miesięczny termin, w którym dniu się kończy, czy na początku wystarczy kopia cyfrowa oraz od jakiego momentu świadczenie faktycznie zostałoby wstrzymane." },
+            { "language": "ro", "text": "Vă rog să îmi confirmați în scris patru puncte: de când începe termenul de o lună, la ce dată se încheie, dacă inițial este suficientă o copie digitală și din ce moment prestația ar fi efectiv suspendată." },
+            { "language": "sq", "text": "Ju lutem më konfirmoni me shkrim katër pika: kur fillon afati njëmujor, në cilën datë përfundon, nëse fillimisht mjafton një kopje digjitale dhe nga cili moment përfitimi do të pezullohej realisht." }
+          ],
+          "function": "written-confirmation-request",
+          "toneNote": "Die Schlussbitte bündelt die offenen Punkte in einer schriftlichen Bestätigung.",
+          "expectedLearnerAction": "Request written confirmation of deadline, proof form, and consequences."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Im Bescheid heißt es: \"Der Nachweis ist binnen eines Monats nachzureichen; andernfalls kann die Leistung ruhen.\" Unklar ist mir vor allem, ob die Monatsfrist ab dem Datum des Bescheids oder ab dem Zugang bei mir gerechnet wird.",
+              "translations": [
+                { "language": "en", "text": "The notice says: \"The proof must be submitted within one month; otherwise the benefit may be suspended.\" What is unclear to me above all is whether the one-month deadline is counted from the date of the notice or from the date I received it." },
+                { "language": "fa", "text": "در ابلاغ آمده است: «مدرک باید ظرف یک ماه تکمیل و ارائه شود؛ در غیر این صورت ممکن است پرداخت/مزایا متوقف شود.» ابهام اصلی من این است که مهلت یک‌ماهه از تاریخ ابلاغ حساب می‌شود یا از تاریخ دریافت آن." },
+                { "language": "ar", "text": "ورد في القرار: «يجب تقديم الإثبات خلال شهر؛ وإلا قد تُعلّق الاستفادة.» وما هو غير واضح لي خصوصًا هو هل تُحسب مهلة الشهر من تاريخ القرار أم من تاريخ وصوله إلي." },
+                { "language": "tr", "text": "Kararda şöyle yazıyor: \"Kanıt bir ay içinde sonradan sunulmalıdır; aksi halde ödeme/hak askıya alınabilir.\" Benim için özellikle belirsiz olan, bir aylık sürenin karar tarihinden mi yoksa bana ulaştığı tarihten mi hesaplandığıdır." },
+                { "language": "ru", "text": "В решении сказано: «Доказательство должно быть представлено в течение месяца; иначе выплата может быть приостановлена». Мне прежде всего неясно, считается ли месячный срок с даты решения или с даты его получения мной." },
+                { "language": "ckb", "text": "لە بڕیارەکەدا نووسراوە: «بەڵگەکە پێویستە لە ماوەی مانگێکدا پاشکەش بکرێت؛ ئەگەر نا، سوودەکە ڕەنگە ڕابگیرێت.» بە تایبەتی بۆ من نادیارە کە ماوەی مانگێک لە ڕێکەوتی بڕیارەکەوە هەژمار دەکرێت یان لە ڕۆژی گەیشتنی بۆ من." },
+                { "language": "kmr", "text": "Di biryarê de tê gotin: \"Belge divê di nav mehekê de were şandin; wekî din maf dikare were rawestandin.\" Ya ku ji min re herî zêde nezelal e ev e ka demê mehekê ji roja biryarê tê hesabkirin an ji roja ku gihîştiye min." },
+                { "language": "pl", "text": "W decyzji napisano: „Dowód należy dostarczyć w ciągu miesiąca; w przeciwnym razie świadczenie może zostać wstrzymane”. Najbardziej niejasne jest dla mnie, czy miesięczny termin liczy się od daty decyzji czy od dnia doręczenia mi jej." },
+                { "language": "ro", "text": "În decizie scrie: „Dovada trebuie depusă în termen de o lună; în caz contrar, prestația poate fi suspendată.” Nu îmi este clar mai ales dacă termenul de o lună se calculează de la data deciziei sau de la primirea ei de către mine." },
+                { "language": "sq", "text": "Në vendim thuhet: “Prova duhet të dorëzohet brenda një muaji; përndryshe përfitimi mund të pezullohet.” Për mua është e paqartë sidomos nëse afati njëmujor llogaritet nga data e vendimit apo nga data kur e kam marrë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zitiert die unklare Stelle und benennt die konkrete Deutungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer quotes the unclear passage and names the specific interpretation question." },
+                { "language": "fa", "text": "قوی: پاسخ بخش مبهم را نقل می‌کند و پرسش تفسیری مشخص را نام می‌برد." },
+                { "language": "ar", "text": "قوي: الجواب يقتبس الموضع الغامض ويذكر سؤال التفسير المحدد." },
+                { "language": "tr", "text": "Güçlü: Yanıt belirsiz kısmı alıntılıyor ve somut yorum sorusunu belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ цитирует неясное место и называет конкретный вопрос толкования." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەشی نادیار وەردەگرێت و پرسیاری لێکدانەوەی دیاریکراو ناودەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv cihê nezelal dinivîse û pirsa şîroveya konkret nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź cytuje niejasny fragment i nazywa konkretne pytanie interpretacyjne." },
+                { "language": "ro", "text": "Puternic: răspunsul citează pasajul neclar și numește întrebarea concretă de interpretare." },
+                { "language": "sq", "text": "E fortë: përgjigjja citon pjesën e paqartë dhe përmend pyetjen konkrete të interpretimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Bescheid ist für mich ziemlich unverständlich. Können Sie mir erklären, was ich tun soll?",
+              "translations": [
+                { "language": "en", "text": "The notice is quite hard for me to understand. Can you explain what I should do?" },
+                { "language": "fa", "text": "ابلاغ برای من خیلی نامفهوم است. می‌توانید توضیح دهید باید چه کار کنم؟" },
+                { "language": "ar", "text": "القرار غير مفهوم بالنسبة لي إلى حد كبير. هل يمكنكم شرح ما يجب أن أفعله؟" },
+                { "language": "tr", "text": "Karar benim için oldukça anlaşılmaz. Ne yapmam gerektiğini açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Решение для меня довольно непонятно. Можете объяснить, что мне делать?" },
+                { "language": "ckb", "text": "بڕیارەکە بۆ من زۆر ناتێگەیشتووە. دەتوانن ڕوون بکەنەوە چی بکەم؟" },
+                { "language": "kmr", "text": "Biryara ji bo min pir nezelal e. Hûn dikarin rave bikin divê ez çi bikim?" },
+                { "language": "pl", "text": "Decyzja jest dla mnie dość niezrozumiała. Czy mogą Państwo wyjaśnić, co mam zrobić?" },
+                { "language": "ro", "text": "Decizia este destul de greu de înțeles pentru mine. Îmi puteți explica ce ar trebui să fac?" },
+                { "language": "sq", "text": "Vendimi është mjaft i paqartë për mua. A mund të më shpjegoni çfarë duhet të bëj?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Die Frage ist höflich, aber ohne Zitat kann die Behörde den unklaren Punkt nicht gezielt klären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. The question is polite, but without a quote the office cannot clarify the unclear point precisely." },
+                { "language": "fa", "text": "بیش از حد کلی است. پرسش مؤدبانه است، اما بدون نقل عبارت، اداره نمی‌تواند نقطه مبهم را دقیق روشن کند." },
+                { "language": "ar", "text": "عام جدًا. السؤال مهذب، لكن من دون اقتباس لا تستطيع الدائرة توضيح النقطة الغامضة بدقة." },
+                { "language": "tr", "text": "Çok genel. Soru kibar, ancak alıntı olmadan daire belirsiz noktayı hedefli biçimde açıklığa kavuşturamaz." },
+                { "language": "ru", "text": "Слишком общее. Вопрос вежлив, но без цитаты учреждение не сможет точно прояснить неясный пункт." },
+                { "language": "ckb", "text": "زۆر گشتییە. پرسیارەکە ڕێزدارانەیە، بەڵام بەبێ وەرگرتنی دەقەکە فەرمانگە ناتوانێت خاڵی نادیار بە وردی ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye. Pirs bi rêzdarî ye, lê bêyî neqilkirin dezgeh nikare xala nezelal bi hûrgilî zelal bike." },
+                { "language": "pl", "text": "Zbyt ogólne. Pytanie jest uprzejme, ale bez cytatu urząd nie może celowo wyjaśnić niejasnego punktu." },
+                { "language": "ro", "text": "Prea general. Întrebarea este politicoasă, dar fără citat instituția nu poate clarifica precis punctul neclar." },
+                { "language": "sq", "text": "Shumë e përgjithshme. Pyetja është e sjellshme, por pa citim zyra nuk mund ta sqarojë saktë pikën e paqartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gerade deshalb möchte ich keine eigene Auslegung voraussetzen. Nach meinem Verständnis kämen zwei Daten in Betracht: der 12. Juni, wenn das Bescheiddatum zählt, oder der 15. Juni, wenn der Zugang maßgeblich ist. Können Sie bestätigen, welches Datum gilt?",
+              "translations": [
+                { "language": "en", "text": "That is exactly why I do not want to assume my own interpretation. As I understand it, two dates could be relevant: 12 June if the notice date counts, or 15 June if receipt is decisive. Can you confirm which date applies?" },
+                { "language": "fa", "text": "دقیقاً به همین دلیل نمی‌خواهم برداشت خودم را مبنا بگیرم. تا جایی که می‌فهمم، دو تاریخ ممکن است مطرح باشد: ۱۲ ژوئن اگر تاریخ ابلاغ ملاک باشد، یا ۱۵ ژوئن اگر تاریخ دریافت تعیین‌کننده باشد. می‌توانید تأیید کنید کدام تاریخ معتبر است؟" },
+                { "language": "ar", "text": "لهذا بالضبط لا أريد أن أفترض تفسيري الخاص. بحسب فهمي قد يكون هناك تاريخان محتملان: 12 حزيران إذا كان تاريخ القرار هو المعيار، أو 15 حزيران إذا كان الوصول هو الحاسم. هل يمكنكم تأكيد أي تاريخ ينطبق؟" },
+                { "language": "tr", "text": "Tam da bu nedenle kendi yorumumu varsaymak istemiyorum. Anladığım kadarıyla iki tarih söz konusu olabilir: karar tarihi esas alınırsa 12 Haziran, tebliğ belirleyiciyse 15 Haziran. Hangi tarihin geçerli olduğunu teyit edebilir misiniz?" },
+                { "language": "ru", "text": "Именно поэтому я не хочу исходить из собственной трактовки. Насколько я понимаю, возможны две даты: 12 июня, если считается дата решения, или 15 июня, если решающим является получение. Можете подтвердить, какая дата действует?" },
+                { "language": "ckb", "text": "هەر بۆیە نامەوێت لێکدانەوەی خۆم وەک بنەما دابنێم. بەپێی تێگەیشتنی من، دوو ڕێکەوت دەکرێت گرنگ بن: ١٢ی حوزەیران ئەگەر ڕێکەوتی بڕیارەکە گرنگ بێت، یان ١٥ی حوزەیران ئەگەر گەیشتن بنەما بێت. دەتوانن پشتڕاست بکەنەوە کام ڕێکەوت کاردەکات؟" },
+                { "language": "kmr", "text": "Bi rastî ji ber vê ez naxwazim şîroveya xwe wek bingeh bigirim. Li gor fêmkirina min, du tarîx dikarin girîng bin: 12ê Hezîranê heke roja biryarê hesab bibe, an 15ê Hezîranê heke gihîştin diyarker be. Hûn dikarin piştrast bikin kîjan tarîx derbasdar e?" },
+                { "language": "pl", "text": "Właśnie dlatego nie chcę zakładać własnej interpretacji. Według mojego rozumienia w grę wchodzą dwie daty: 12 czerwca, jeśli liczy się data decyzji, albo 15 czerwca, jeśli decydujące jest doręczenie. Czy mogą Państwo potwierdzić, która data obowiązuje?" },
+                { "language": "ro", "text": "Tocmai de aceea nu vreau să presupun propria interpretare. Din câte înțeleg, ar putea fi relevante două date: 12 iunie, dacă se ia în calcul data deciziei, sau 15 iunie, dacă primirea este decisivă. Puteți confirma care dată se aplică?" },
+                { "language": "sq", "text": "Pikërisht për këtë arsye nuk dua të supozoj interpretimin tim. Sipas kuptimit tim, mund të jenë dy data: 12 qershor, nëse vlen data e vendimit, ose 15 qershor, nëse vendimtare është marrja. A mund të konfirmoni cila datë vlen?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bietet zwei Lesarten an, ohne eine davon eigenmächtig als verbindlich zu behaupten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer offers two readings without unilaterally claiming either one as binding." },
+                { "language": "fa", "text": "قوی: پاسخ دو برداشت را مطرح می‌کند، بدون اینکه یکی را خودسرانه الزام‌آور بداند." },
+                { "language": "ar", "text": "قوي: الجواب يعرض قراءتين من دون أن يعلن أيًا منهما ملزمة من طرف واحد." },
+                { "language": "tr", "text": "Güçlü: Yanıt iki okuma sunuyor, hiçbirini tek taraflı olarak bağlayıcı ilan etmiyor." },
+                { "language": "ru", "text": "Сильно: ответ предлагает две трактовки, не объявляя ни одну из них самостоятельно обязательной." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دوو خوێندنەوە پێشکەش دەکات، بەبێ ئەوەی هیچ کامیان بە تەنیا وەک پابەند ڕابگەیەنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv du xwendin pêşkêş dike, bêyî ku yek ji wan bi yekalî wek girêdayî îlan bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź przedstawia dwa odczytania, nie uznając samodzielnie żadnego z nich za wiążące." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă două interpretări fără a declara unilateral una dintre ele obligatorie." },
+                { "language": "sq", "text": "E fortë: përgjigjja ofron dy lexime pa shpallur në mënyrë të njëanshme njërin si detyrues." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann nehme ich einfach den späteren Termin, weil das für mich sicherer ist.",
+              "translations": [
+                { "language": "en", "text": "Then I will simply take the later date because that is safer for me." },
+                { "language": "fa", "text": "پس من همان تاریخ دیرتر را در نظر می‌گیرم، چون برای من مطمئن‌تر است." },
+                { "language": "ar", "text": "إذن سأعتمد ببساطة التاريخ المتأخر لأنه أكثر أمانًا بالنسبة لي." },
+                { "language": "tr", "text": "O zaman benim için daha güvenli olduğu için sadece daha geç tarihi esas alırım." },
+                { "language": "ru", "text": "Тогда я просто возьму более позднюю дату, потому что так для меня безопаснее." },
+                { "language": "ckb", "text": "ئەوا من بەسادەیی ڕێکەوتی دواتر وەردەگرم، چونکە بۆ من دڵنیاترە." },
+                { "language": "kmr", "text": "Wê demê ez tenê tarîxa derengtir digirim, ji ber ku ji bo min ewletir e." },
+                { "language": "pl", "text": "W takim razie po prostu przyjmę późniejszy termin, bo to dla mnie bezpieczniejsze." },
+                { "language": "ro", "text": "Atunci voi lua pur și simplu data mai târzie, pentru că este mai sigur pentru mine." },
+                { "language": "sq", "text": "Atëherë thjesht do të marr datën më të vonshme, sepse është më e sigurt për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant. Eine selbst gewählte günstigere Auslegung ersetzt keine behördliche Bestätigung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but risky. A self-chosen more favorable interpretation does not replace confirmation from the office." },
+                { "language": "fa", "text": "قابل فهم است، اما پرریسک. برداشت مطلوبی که خودتان انتخاب می‌کنید جای تأیید اداره را نمی‌گیرد." },
+                { "language": "ar", "text": "معقول لكنه محفوف بالمخاطر. التفسير الأنسب الذي تختارونه بأنفسكم لا يعوض تأكيد الدائرة." },
+                { "language": "tr", "text": "Makul ama riskli. Kişinin kendisi için daha elverişli seçtiği yorum, dairenin teyidinin yerine geçmez." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно. Самостоятельно выбранная более выгодная трактовка не заменяет подтверждение учреждения." },
+                { "language": "ckb", "text": "ئەگەرییە، بەڵام مەترسیدارە. لێکدانەوەی باشتر کە خۆت هەڵیدەبژێریت جێگەی پشتڕاستکردنەوەی فەرمانگە ناگرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê bi xeter e. Şîroveya guncavtir a ku hûn xwe hildibijêrin şûna piştrastkirina dezgehê nagire." },
+                { "language": "pl", "text": "Wiarygodne, ale ryzykowne. Samodzielnie wybrana korzystniejsza interpretacja nie zastępuje potwierdzenia urzędu." },
+                { "language": "ro", "text": "Plauzibil, dar riscant. O interpretare mai favorabilă aleasă de dumneavoastră nu înlocuiește confirmarea instituției." },
+                { "language": "sq", "text": "E besueshme, por e rrezikshme. Një interpretim më i favorshëm i zgjedhur vetë nuk zëvendëson konfirmimin e zyrës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Auch das würde ich gern klären. Reicht für die Fristwahrung zunächst eine digitale Kopie mit gut lesbarem Datum, oder muss innerhalb der Frist bereits das Original vorliegen?",
+              "translations": [
+                { "language": "en", "text": "I would also like to clarify that. Is a digital copy with a clearly readable date initially sufficient to preserve the deadline, or must the original already be available within the deadline?" },
+                { "language": "fa", "text": "این را هم مایلم روشن کنم. آیا برای حفظ مهلت، ابتدا یک کپی دیجیتال با تاریخ کاملاً خوانا کافی است، یا اصل مدرک باید حتماً در همان مهلت موجود باشد؟" },
+                { "language": "ar", "text": "أود توضيح ذلك أيضًا. هل تكفي في البداية نسخة رقمية بتاريخ واضح القراءة للحفاظ على المهلة، أم يجب أن يكون الأصل موجودًا بالفعل داخل المهلة؟" },
+                { "language": "tr", "text": "Bunu da açıklığa kavuşturmak isterim. Süreyi korumak için başlangıçta tarihi açıkça okunabilen dijital bir kopya yeterli mi, yoksa asıl belgenin süre içinde mevcut olması mı gerekir?" },
+                { "language": "ru", "text": "Это я тоже хотел бы уточнить. Достаточно ли сначала цифровой копии с четко читаемой датой для соблюдения срока, или оригинал уже должен быть представлен в пределах срока?" },
+                { "language": "ckb", "text": "ئەوەشم دەمەوێت ڕوون بکەمەوە. ئایا بۆ پاراستنی ماوەکە سەرەتا کۆپییەکی دیجیتاڵ بە ڕێکەوتی خوێندراوە بەسە، یان پێویستە ناو ماوەکەدا ئەسڵی بەڵگەکە هەبێت؟" },
+                { "language": "kmr", "text": "Ez dixwazim wê jî zelal bikim. Ji bo parastina demê, di destpêkê de kopiyeke dîjîtal bi tarîxeke baş xwendinbar bes e, an divê orîjînal di nav demê de amade be?" },
+                { "language": "pl", "text": "To również chciałbym/chciałabym wyjaśnić. Czy dla zachowania terminu wystarczy najpierw kopia cyfrowa z dobrze czytelną datą, czy w terminie musi już być dostępny oryginał?" },
+                { "language": "ro", "text": "Aș dori să clarific și acest lucru. Pentru păstrarea termenului, este suficientă inițial o copie digitală cu dată clar lizibilă sau originalul trebuie să fie deja disponibil în termen?" },
+                { "language": "sq", "text": "Edhe këtë do të doja ta sqaroj. Për të ruajtur afatin, a mjafton fillimisht një kopje digjitale me datë qartë të lexueshme, apo origjinali duhet të jetë dorëzuar brenda afatit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fragt nicht nur nach der Frist, sondern auch nach der akzeptierten Form des Nachweises.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer asks not only about the deadline, but also about the accepted form of proof." },
+                { "language": "fa", "text": "قوی: پاسخ فقط درباره مهلت نمی‌پرسد، بلکه شکل پذیرفته‌شده مدرک را هم روشن می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب لا يسأل عن المهلة فقط، بل عن الشكل المقبول للإثبات أيضًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt yalnızca süreyi değil, kanıtın kabul edilen biçimini de soruyor." },
+                { "language": "ru", "text": "Сильно: ответ спрашивает не только о сроке, но и о принятой форме доказательства." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە تەنها دەربارەی ماوە ناپرسێت، بەڵکو شێوەی پەسەندکراوی بەڵگەش ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ne tenê li ser demê dipirse, lê li ser awayê pejirandî yê belgeyê jî dipirse." },
+                { "language": "pl", "text": "Mocne: odpowiedź pyta nie tylko o termin, lecz także o akceptowaną formę dowodu." },
+                { "language": "ro", "text": "Puternic: răspunsul întreabă nu doar despre termen, ci și despre forma acceptată a dovezii." },
+                { "language": "sq", "text": "E fortë: përgjigjja nuk pyet vetëm për afatin, por edhe për formën e pranuar të provës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich sende einfach alles, was ich habe, und hoffe, dass es reicht.",
+              "translations": [
+                { "language": "en", "text": "I will simply send everything I have and hope that it is enough." },
+                { "language": "fa", "text": "من هرچه دارم می‌فرستم و امیدوارم کافی باشد." },
+                { "language": "ar", "text": "سأرسل ببساطة كل ما لدي وآمل أن يكون كافيًا." },
+                { "language": "tr", "text": "Elimde ne varsa gönderirim ve yeterli olmasını umarım." },
+                { "language": "ru", "text": "Я просто отправлю всё, что у меня есть, и буду надеяться, что этого достаточно." },
+                { "language": "ckb", "text": "هەرچی هەیەم دەنێرم و هیوادارم بەس بێت." },
+                { "language": "kmr", "text": "Ez her tiştê ku heye dişînim û hêvî dikim ku bes be." },
+                { "language": "pl", "text": "Po prostu wyślę wszystko, co mam, i będę mieć nadzieję, że wystarczy." },
+                { "language": "ro", "text": "Voi trimite pur și simplu tot ce am și voi spera că este suficient." },
+                { "language": "sq", "text": "Do të dërgoj thjesht gjithçka që kam dhe do të shpresoj se mjafton." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unsicher. Bei C2 sollte die akzeptierte Nachweisform gezielt geklärt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but uncertain. At C2, the accepted form of proof should be clarified directly." },
+                { "language": "fa", "text": "قابل تصور است، اما نامطمئن. در C2 باید شکل پذیرفته‌شده مدرک را هدفمند روشن کرد." },
+                { "language": "ar", "text": "معقول لكنه غير آمن. في C2 ينبغي توضيح الشكل المقبول للإثبات بشكل مباشر." },
+                { "language": "tr", "text": "Makul ama güvensiz. C2 düzeyinde kabul edilen kanıt biçimi hedefli biçimde açıklığa kavuşturulmalıdır." },
+                { "language": "ru", "text": "Правдоподобно, но ненадежно. На уровне C2 следует целенаправленно уточнить принятую форму доказательства." },
+                { "language": "ckb", "text": "ئەگەرییە، بەڵام نادڵنیا. لە C2 پێویستە شێوەی پەسەندکراوی بەڵگە بە ئامانج ڕوون بکرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê ne ewle ye. Di C2 de divê awayê pejirandî yê belgeyê bi armanc were zelalkirin." },
+                { "language": "pl", "text": "Wiarygodne, ale niepewne. Na C2 należy celowo wyjaśnić akceptowaną formę dowodu." },
+                { "language": "ro", "text": "Plauzibil, dar nesigur. La C2, forma acceptată a dovezii ar trebui clarificată direct." },
+                { "language": "sq", "text": "E besueshme, por e pasigurt. Në C2 duhet sqaruar drejtpërdrejt forma e pranuar e provës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, weil der Satz offenlässt, ob die Leistung erst nach Fristablauf ruhen kann oder ob schon vorher eine vorläufige Unterbrechung möglich ist. Ich möchte nicht dramatisieren, sondern wissen, welche Folge konkret an welche Voraussetzung geknüpft ist.",
+              "translations": [
+                { "language": "en", "text": "Yes, because the sentence leaves open whether the benefit may be suspended only after the deadline has expired or whether a temporary interruption is possible earlier. I do not want to dramatize it, but to know which consequence is specifically tied to which condition." },
+                { "language": "fa", "text": "بله، چون جمله روشن نمی‌کند که پرداخت/مزایا فقط بعد از پایان مهلت ممکن است متوقف شود یا آیا قبل از آن هم توقف موقت ممکن است. نمی‌خواهم موضوع را بزرگ‌نمایی کنم، فقط می‌خواهم بدانم کدام پیامد دقیقاً به کدام شرط وابسته است." },
+                { "language": "ar", "text": "نعم، لأن الجملة تترك مفتوحًا هل يمكن تعليق الاستفادة فقط بعد انتهاء المهلة أم أن تعليقًا مؤقتًا ممكن قبل ذلك. لا أريد تهويل الأمر، بل معرفة أي نتيجة ترتبط تحديدًا بأي شرط." },
+                { "language": "tr", "text": "Evet, çünkü cümle ödeme/hakkın yalnızca sürenin bitiminden sonra mı askıya alınabileceğini yoksa daha önce geçici bir kesintinin mümkün olup olmadığını açık bırakıyor. Bunu dramatize etmek istemiyorum; hangi sonucun tam olarak hangi koşula bağlı olduğunu bilmek istiyorum." },
+                { "language": "ru", "text": "Да, потому что фраза оставляет открытым, может ли выплата быть приостановлена только после истечения срока или временная приостановка возможна раньше. Я не хочу драматизировать, а хочу знать, какое последствие конкретно связано с каким условием." },
+                { "language": "ckb", "text": "بەڵێ، چونکە ڕستەکە ڕوون ناکاتەوە ئایا سوودەکە تەنها دوای کۆتایی ماوەکە ڕادەگیرێت یان پێشتر ڕاگرتنی کاتییش دەکرێت. نامەوێت شتەکە گەورە بکەمەوە، بەڵکو دەمەوێت بزانم کام ئاکام بە وردی بە کام مەرجەوە بەستراوە." },
+                { "language": "kmr", "text": "Erê, ji ber ku hevokê nezelal dihêle ka maf tenê piştî dawîbûna demê dikare were rawestandin an rawestandineke demkî berê jî gengaz e. Ez naxwazim mijarê dramatîze bikim, lê dixwazim bizanim kîjan encam bi kîjan şertê ve girêdayî ye." },
+                { "language": "pl", "text": "Tak, ponieważ zdanie pozostawia otwarte, czy świadczenie może zostać wstrzymane dopiero po upływie terminu, czy też wcześniej możliwa jest tymczasowa przerwa. Nie chcę dramatyzować, lecz wiedzieć, która konsekwencja jest konkretnie powiązana z którym warunkiem." },
+                { "language": "ro", "text": "Da, pentru că fraza lasă deschis dacă prestația poate fi suspendată doar după expirarea termenului sau dacă o întrerupere provizorie este posibilă mai devreme. Nu vreau să dramatizez, ci să știu ce consecință este legată concret de ce condiție." },
+                { "language": "sq", "text": "Po, sepse fjalia e lë të hapur nëse përfitimi mund të pezullohet vetëm pas skadimit të afatit apo nëse një ndërprerje e përkohshme është e mundur më herët. Nuk dua ta dramatizoj, por të di cila pasojë lidhet konkretisht me cilin kusht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt mögliche Folgen von ihren Voraussetzungen und vermeidet Übertreibung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates possible consequences from their conditions and avoids exaggeration." },
+                { "language": "fa", "text": "قوی: پاسخ پیامدهای ممکن را از شرط‌هایشان جدا می‌کند و از بزرگ‌نمایی پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يفصل النتائج المحتملة عن شروطها ويتجنب المبالغة." },
+                { "language": "tr", "text": "Güçlü: Yanıt olası sonuçları koşullarından ayırıyor ve abartıdan kaçınıyor." },
+                { "language": "ru", "text": "Сильно: ответ отделяет возможные последствия от их условий и избегает преувеличения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئاکامە ئەگەرییەکان لە مەرجەکانیان جیا دەکاتەوە و لە گەورەکردنەوە دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv encamên gengaz ji şertên wan veqetîne û ji zêde kirinê dûr dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela możliwe konsekwencje od ich warunków i unika przesady." },
+                { "language": "ro", "text": "Puternic: răspunsul separă consecințele posibile de condițiile lor și evită exagerarea." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan pasojat e mundshme nga kushtet e tyre dhe shmang ekzagjerimin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich möchte nur sicher sein, dass mir nichts gestrichen wird.",
+              "translations": [
+                { "language": "en", "text": "I just want to be sure that nothing is cut off for me." },
+                { "language": "fa", "text": "فقط می‌خواهم مطمئن باشم که چیزی از من قطع نمی‌شود." },
+                { "language": "ar", "text": "أريد فقط أن أكون متأكدًا من أنه لن يُقطع عني شيء." },
+                { "language": "tr", "text": "Sadece benden hiçbir şeyin kesilmeyeceğinden emin olmak istiyorum." },
+                { "language": "ru", "text": "Я просто хочу быть уверен, что мне ничего не прекратят." },
+                { "language": "ckb", "text": "تەنها دەمەوێت دڵنیا بم کە هیچ شتێکم لێ نابڕدرێت." },
+                { "language": "kmr", "text": "Ez tenê dixwazim piştrast bim ku tiştek ji min nayê birîn." },
+                { "language": "pl", "text": "Chcę tylko mieć pewność, że nic nie zostanie mi wstrzymane." },
+                { "language": "ro", "text": "Vreau doar să fiu sigur că nu mi se oprește nimic." },
+                { "language": "sq", "text": "Dua vetëm të jem i sigurt se nuk më ndërpritet asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu unpräzise. Die Behörde braucht eine Frage zu konkreter Voraussetzung und konkreter Folge.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too imprecise. The office needs a question about a specific condition and a specific consequence." },
+                { "language": "fa", "text": "قابل فهم است، اما بیش از حد نامشخص. اداره به پرسشی درباره شرط مشخص و پیامد مشخص نیاز دارد." },
+                { "language": "ar", "text": "مفهوم لكنه غير دقيق بما يكفي. تحتاج الدائرة إلى سؤال عن شرط محدد ونتيجة محددة." },
+                { "language": "tr", "text": "Anlaşılır, ama çok belirsiz. Dairenin somut bir koşul ve somut bir sonuç hakkında soruya ihtiyacı var." },
+                { "language": "ru", "text": "Понятно, но слишком неточно. Учреждению нужен вопрос о конкретном условии и конкретном последствии." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام زۆر نادیارە. فەرمانگە پێویستی بە پرسیارێک دەربارەی مەرجێکی دیاریکراو و ئاکامێکی دیاریکراو هەیە." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê pir nezelal e. Dezgeh pirsê li ser şertê konkret û encameke konkret pêwîst dike." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt nieprecyzyjne. Urząd potrzebuje pytania o konkretny warunek i konkretną konsekwencję." },
+                { "language": "ro", "text": "De înțeles, dar prea imprecis. Instituția are nevoie de o întrebare despre o condiție concretă și o consecință concretă." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e pasaktë. Zyra ka nevojë për një pyetje për një kusht konkret dhe një pasojë konkrete." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Bitte bestätigen Sie mir schriftlich vier Punkte: ab wann die Monatsfrist läuft, an welchem Datum sie endet, ob zunächst eine digitale Kopie genügt und ab welchem Zeitpunkt die Leistung tatsächlich ruhen würde.",
+              "translations": [
+                { "language": "en", "text": "Please confirm four points for me in writing: when the one-month deadline starts, on which date it ends, whether a digital copy is initially sufficient, and from what point the benefit would actually be suspended." },
+                { "language": "fa", "text": "لطفاً چهار نکته را کتبی برای من تأیید کنید: مهلت یک‌ماهه از چه زمانی شروع می‌شود، در چه تاریخی پایان می‌یابد، آیا ابتدا کپی دیجیتال کافی است، و از چه زمانی پرداخت/مزایا واقعاً متوقف می‌شود." },
+                { "language": "ar", "text": "يرجى تأكيد أربع نقاط خطيًا: متى تبدأ مهلة الشهر، وفي أي تاريخ تنتهي، وهل تكفي نسخة رقمية في البداية، ومن أي وقت ستُعلّق الاستفادة فعليًا." },
+                { "language": "tr", "text": "Lütfen bana dört noktayı yazılı olarak teyit edin: bir aylık süre ne zaman başlıyor, hangi tarihte bitiyor, başlangıçta dijital bir kopya yeterli mi ve ödeme/hak fiilen hangi andan itibaren askıya alınır." },
+                { "language": "ru", "text": "Пожалуйста, письменно подтвердите мне четыре пункта: с какого момента начинается месячный срок, в какую дату он заканчивается, достаточно ли сначала цифровой копии и с какого момента выплата фактически будет приостановлена." },
+                { "language": "ckb", "text": "تکایە چوار خاڵ بە نووسراو بۆم پشتڕاست بکەنەوە: ماوەی مانگێک کەی دەست پێدەکات، لە کام ڕێکەوتدا کۆتایی دێت، ئایا سەرەتا کۆپییەکی دیجیتاڵ بەسە، و لە کام کاتەوە سوودەکە بەڕاستی ڕادەگیرێت." },
+                { "language": "kmr", "text": "Ji kerema xwe çar xal bi nivîskî ji min re piştrast bikin: demê mehekê kengê dest pê dike, di kîjan tarîxê de diqede, ka di destpêkê de kopiyeke dîjîtal bes e an na, û ji kîjan demê ve maf bi rastî tê rawestandin." },
+                { "language": "pl", "text": "Proszę potwierdzić mi pisemnie cztery punkty: od kiedy biegnie miesięczny termin, w którym dniu się kończy, czy na początku wystarczy kopia cyfrowa oraz od jakiego momentu świadczenie faktycznie zostałoby wstrzymane." },
+                { "language": "ro", "text": "Vă rog să îmi confirmați în scris patru puncte: de când începe termenul de o lună, la ce dată se încheie, dacă inițial este suficientă o copie digitală și din ce moment prestația ar fi efectiv suspendată." },
+                { "language": "sq", "text": "Ju lutem më konfirmoni me shkrim katër pika: kur fillon afati njëmujor, në cilën datë përfundon, nëse fillimisht mjafton një kopje digjitale dhe nga cili moment përfitimi do të pezullohej realisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussbitte nennt alle offenen Punkte so konkret, dass eine verwertbare Auskunft möglich ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final request names all open points concretely enough for a usable answer." },
+                { "language": "fa", "text": "قوی: درخواست پایانی همه نکات باز را آن‌قدر مشخص نام می‌برد که پاسخ قابل استفاده ممکن شود." },
+                { "language": "ar", "text": "قوي: الطلب الختامي يذكر كل النقاط المفتوحة بشكل محدد بما يكفي للحصول على جواب قابل للاستخدام." },
+                { "language": "tr", "text": "Güçlü: Son rica tüm açık noktaları kullanılabilir bir yanıt mümkün olacak kadar somut biçimde belirtiyor." },
+                { "language": "ru", "text": "Сильно: финальная просьба называет все открытые пункты достаточно конкретно, чтобы был возможен пригодный ответ." },
+                { "language": "ckb", "text": "بەهێزە: داوای کۆتایی هەموو خاڵە کراوەکان بە هێندە دیاریکراوی ناودەبات کە وەڵامێکی بەکاربێنراو بکرێت." },
+                { "language": "kmr", "text": "Xurt e: Daxwaza dawî hemû xalên vekirî ewqas konkret nav dike ku bersiveke bikêr gengaz be." },
+                { "language": "pl", "text": "Mocne: końcowa prośba nazywa wszystkie otwarte punkty na tyle konkretnie, że możliwa jest użyteczna odpowiedź." },
+                { "language": "ro", "text": "Puternic: cererea finală numește toate punctele deschise suficient de concret pentru a permite un răspuns utilizabil." },
+                { "language": "sq", "text": "E fortë: kërkesa përfundimtare i përmend të gjitha pikat e hapura mjaft konkretisht që të jetë e mundur një përgjigje e përdorshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Könnten Sie mir kurz schreiben, wie ich den Bescheid verstehen soll?",
+              "translations": [
+                { "language": "en", "text": "Could you briefly write to me how I should understand the notice?" },
+                { "language": "fa", "text": "می‌توانید کوتاه برایم بنویسید که باید ابلاغ را چطور بفهمم؟" },
+                { "language": "ar", "text": "هل يمكنكم أن تكتبوا لي باختصار كيف ينبغي أن أفهم القرار؟" },
+                { "language": "tr", "text": "Kararı nasıl anlamam gerektiğini bana kısaca yazabilir misiniz?" },
+                { "language": "ru", "text": "Можете коротко написать мне, как мне понимать это решение?" },
+                { "language": "ckb", "text": "دەتوانن بە کورتی بۆم بنووسن کە چۆن بڕیارەکە تێبگەم؟" },
+                { "language": "kmr", "text": "Hûn dikarin bi kurtî ji min re binivîsin ka divê ez biryarê çawa fêm bikim?" },
+                { "language": "pl", "text": "Czy mogą mi Państwo krótko napisać, jak mam rozumieć tę decyzję?" },
+                { "language": "ro", "text": "Îmi puteți scrie pe scurt cum ar trebui să înțeleg decizia?" },
+                { "language": "sq", "text": "A mund të më shkruani shkurt si duhet ta kuptoj vendimin?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber zu vage. Die Behörde müsste selbst erraten, welche Punkte bestätigt werden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite, but too vague. The office would have to guess which points should be confirmed." },
+                { "language": "fa", "text": "مؤدبانه است، اما بیش از حد مبهم. اداره باید خودش حدس بزند کدام نکات باید تأیید شوند." },
+                { "language": "ar", "text": "مهذب، لكنه غامض جدًا. ستضطر الدائرة إلى تخمين النقاط التي ينبغي تأكيدها." },
+                { "language": "tr", "text": "Kibar, ama çok belirsiz. Daire hangi noktaların teyit edilmesi gerektiğini tahmin etmek zorunda kalır." },
+                { "language": "ru", "text": "Вежливо, но слишком расплывчато. Учреждению пришлось бы угадывать, какие пункты следует подтвердить." },
+                { "language": "ckb", "text": "ڕێزدارانەیە، بەڵام زۆر نادیارە. فەرمانگە دەبێت خۆی پێشبینی بکات کام خاڵ پێویستە پشتڕاست بکرێتەوە." },
+                { "language": "kmr", "text": "Bi rêzdarî ye, lê pir nezelal e. Dezgeh divê texmîn bike kîjan xal divê werin piştrastkirin." },
+                { "language": "pl", "text": "Uprzejme, ale zbyt niejasne. Urząd musiałby sam zgadywać, które punkty mają zostać potwierdzone." },
+                { "language": "ro", "text": "Politicos, dar prea vag. Instituția ar trebui să ghicească ce puncte trebuie confirmate." },
+                { "language": "sq", "text": "E sjellshme, por shumë e paqartë. Zyra do të duhej të hamendësonte cilat pika duhen konfirmuar." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "quote-wording",
+          "text": "Bei mehrdeutigen Bescheiden hilft ein genaues Zitat mehr als eine allgemeine Beschwerde.",
+          "translations": [
+            { "language": "en", "text": "With ambiguous notices, an exact quote helps more than a general complaint." },
+            { "language": "fa", "text": "در ابلاغ‌های مبهم، نقل دقیق بیشتر از شکایت کلی کمک می‌کند." },
+            { "language": "ar", "text": "في القرارات الغامضة يساعد الاقتباس الدقيق أكثر من الشكوى العامة." },
+            { "language": "tr", "text": "Belirsiz kararlarda tam alıntı genel şikayetten daha çok yardımcı olur." },
+            { "language": "ru", "text": "В неоднозначных решениях точная цитата помогает больше, чем общая жалоба." },
+            { "language": "ckb", "text": "لە بڕیارە دووواتاکاندا وەرگرتنی ورد زیاتر لە سکاڵای گشتی یارمەتیدەرە." },
+            { "language": "kmr", "text": "Di biryarên duwate de neqileke rast ji gilîkirineke giştî bêtir alîkar e." },
+            { "language": "pl", "text": "Przy niejednoznacznych decyzjach dokładny cytat pomaga bardziej niż ogólna skarga." },
+            { "language": "ro", "text": "În cazul deciziilor ambigue, un citat exact ajută mai mult decât o plângere generală." },
+            { "language": "sq", "text": "Në vendimet e paqarta, një citim i saktë ndihmon më shumë se një ankesë e përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "interpretation-options",
+          "text": "C2-Sprache zeigt mögliche Lesarten und bittet um Bestätigung, statt eine günstige Auslegung zu behaupten.",
+          "translations": [
+            { "language": "en", "text": "C2 language shows possible readings and asks for confirmation instead of asserting a favorable interpretation." },
+            { "language": "fa", "text": "زبان C2 برداشت‌های ممکن را نشان می‌دهد و به‌جای ادعای برداشت مطلوب، تأیید می‌خواهد." },
+            { "language": "ar", "text": "لغة C2 تعرض القراءات المحتملة وتطلب التأكيد بدل ادعاء تفسير مناسب." },
+            { "language": "tr", "text": "C2 dili olası okumaları gösterir ve elverişli bir yorumu iddia etmek yerine teyit ister." },
+            { "language": "ru", "text": "Язык C2 показывает возможные прочтения и просит подтверждение, вместо того чтобы утверждать выгодную трактовку." },
+            { "language": "ckb", "text": "زمانی C2 خوێندنەوە ئەگەرییەکان نیشان دەدات و لەبری بانگەشەی لێکدانەوەی باش، داوای پشتڕاستکردنەوە دەکات." },
+            { "language": "kmr", "text": "Zimanê C2 xwendinên gengaz nîşan dide û li şûna îdiaya şîroveya guncav, piştrastkirin dixwaze." },
+            { "language": "pl", "text": "Język C2 pokazuje możliwe odczytania i prosi o potwierdzenie, zamiast twierdzić korzystną interpretację." },
+            { "language": "ro", "text": "Limbajul C2 arată interpretări posibile și cere confirmare în loc să afirme o interpretare favorabilă." },
+            { "language": "sq", "text": "Gjuha C2 tregon leximet e mundshme dhe kërkon konfirmim në vend që të pohojë një interpretim të favorshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "condition-consequence",
+          "text": "Die stärkste Frage verbindet konkrete Folge und konkrete Voraussetzung.",
+          "translations": [
+            { "language": "en", "text": "The strongest question links a specific consequence with a specific condition." },
+            { "language": "fa", "text": "قوی‌ترین پرسش پیامد مشخص را به شرط مشخص وصل می‌کند." },
+            { "language": "ar", "text": "أقوى سؤال يربط نتيجة محددة بشرط محدد." },
+            { "language": "tr", "text": "En güçlü soru somut bir sonucu somut bir koşula bağlar." },
+            { "language": "ru", "text": "Самый сильный вопрос связывает конкретное последствие с конкретным условием." },
+            { "language": "ckb", "text": "بەهێزترین پرسیار ئاکامێکی دیاریکراو بە مەرجێکی دیاریکراوەوە دەبەستێت." },
+            { "language": "kmr", "text": "Pirsa herî xurt encameke konkret bi şertê konkret ve girê dide." },
+            { "language": "pl", "text": "Najmocniejsze pytanie łączy konkretną konsekwencję z konkretnym warunkiem." },
+            { "language": "ro", "text": "Cea mai puternică întrebare leagă o consecință concretă de o condiție concretă." },
+            { "language": "sq", "text": "Pyetja më e fortë lidh një pasojë konkrete me një kusht konkret." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "written-confirmation",
+          "text": "Eine verwertbare Auskunft braucht benannte Punkte: Fristbeginn, Fristende, Nachweisform und Folge.",
+          "translations": [
+            { "language": "en", "text": "A usable answer needs named points: deadline start, deadline end, proof form, and consequence." },
+            { "language": "fa", "text": "پاسخ قابل استفاده به نکات نام‌برده نیاز دارد: شروع مهلت، پایان مهلت، شکل مدرک و پیامد." },
+            { "language": "ar", "text": "الجواب القابل للاستخدام يحتاج إلى نقاط مسماة: بداية المهلة ونهايتها وشكل الإثبات والنتيجة." },
+            { "language": "tr", "text": "Kullanılabilir bir yanıt adlandırılmış noktalara ihtiyaç duyar: süre başlangıcı, süre sonu, kanıt biçimi ve sonuç." },
+            { "language": "ru", "text": "Пригодный ответ требует названных пунктов: начало срока, конец срока, форма доказательства и последствие." },
+            { "language": "ckb", "text": "وەڵامی بەکاربێنراو پێویستی بە خاڵی ناوبراو هەیە: دەستپێکی ماوە، کۆتایی ماوە، شێوەی بەڵگە و ئاکام." },
+            { "language": "kmr", "text": "Bersiveke bikêr xalan navkirî pêwîst dike: destpêka demê, dawîya demê, awayê belgeyê û encam." },
+            { "language": "pl", "text": "Użyteczna odpowiedź potrzebuje nazwanych punktów: początku terminu, końca terminu, formy dowodu i konsekwencji." },
+            { "language": "ro", "text": "Un răspuns utilizabil are nevoie de puncte numite: începutul termenului, sfârșitul termenului, forma dovezii și consecința." },
+            { "language": "sq", "text": "Një përgjigje e përdorshme ka nevojë për pika të emërtuara: fillimin e afatit, fundin e afatit, formën e provës dhe pasojën." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "ambiguous-notice-clarification",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal public-office conversation where an applicant asks a case worker to clarify ambiguous wording in an official notice.",
+          "altText": "Ein Antragsteller spricht an einem deutschen Amtsschalter mit einer Sachbearbeiterin über einen Bescheid, eine Frist und die Form eines Nachweises.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An applicant speaks at a German public-office counter with a case worker about a notice, a deadline, and the form of proof." },
+            { "language": "fa", "text": "یک درخواست‌دهنده در پیشخوان اداره آلمان با کارشناس پرونده درباره ابلاغ، مهلت و شکل مدرک صحبت می‌کند." },
+            { "language": "ar", "text": "يتحدث مقدم طلب عند شباك دائرة ألمانية مع موظفة مختصة عن قرار ومهلة وشكل الإثبات." },
+            { "language": "tr", "text": "Bir başvuru sahibi Alman resmi daire gişesinde dosya görevlisiyle bir karar, süre ve kanıt biçimi hakkında konuşuyor." },
+            { "language": "ru", "text": "Заявитель у стойки немецкого учреждения говорит с сотрудницей по делу о решении, сроке и форме доказательства." },
+            { "language": "ckb", "text": "داواکەرێک لە کەونتەری فەرمانگەیەکی ئەڵمانیدا لەگەڵ کارمەندی دۆسیە دەربارەی بڕیار، ماوە و شێوەی بەڵگە قسە دەکات." },
+            { "language": "kmr", "text": "Daxwazkarek li ber maseya dezgeheke Alman bi karmenda dosyayê re li ser biryar, dem û awayê belgeyê diaxive." },
+            { "language": "pl", "text": "Wnioskodawca rozmawia przy niemieckim stanowisku urzędowym z urzędniczką o decyzji, terminie i formie dowodu." },
+            { "language": "ro", "text": "Un solicitant discută la un ghișeu german cu o funcționară despre o decizie, un termen și forma dovezii." },
+            { "language": "sq", "text": "Një aplikues flet në një sportel gjerman me punonjësen për një vendim, një afat dhe formën e provës." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult applicant and public-office case worker at a German administrative counter, applicant calmly pointing to a generic official notice while asking about a deadline and proof form, no readable text, no logos, no private data, accessible composition, formal and cooperative mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

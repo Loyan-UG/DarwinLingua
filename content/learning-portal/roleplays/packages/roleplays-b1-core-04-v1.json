@@ -1,0 +1,985 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-04-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 04 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-einen-schichttausch-begruenden",
+      "title": "Einen Schichttausch begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Explain a shift swap" },
+        { "language": "fa", "text": "توضیح دادن دلیل جابه‌جایی شیفت" },
+        { "language": "ar", "text": "شرح سبب تبديل وردية" },
+        { "language": "tr", "text": "Bir vardiya değişimini gerekçelendirmek" },
+        { "language": "ru", "text": "Обосновать обмен сменами" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی هۆکاری گۆڕینی شێفت" },
+        { "language": "kmr", "text": "Sedema guhartina şiftê rave kirin" },
+        { "language": "pl", "text": "Uzasadnić zamianę zmiany" },
+        { "language": "ro", "text": "Să justifici un schimb de tură" },
+        { "language": "sq", "text": "Të shpjegosh një shkëmbim turni" }
+      ],
+      "description": "Du möchtest eine Schicht tauschen, nennst den Grund, bietest einen fairen Ausgleich an und bestätigst die Absprache.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You want to swap a shift, give the reason, offer fair compensation, and confirm the agreement." },
+        { "language": "fa", "text": "می‌خواهی یک شیفت را جابه‌جا کنی، دلیل را می‌گویی، یک جبران منصفانه پیشنهاد می‌کنی و توافق را تأیید می‌کنی." },
+        { "language": "ar", "text": "تريد تبديل وردية، وتذكر السبب، وتعرض تعويضًا عادلًا، وتؤكد الاتفاق." },
+        { "language": "tr", "text": "Bir vardiyayı değiştirmek istiyorsun, nedeni söylüyorsun, adil bir telafi öneriyorsun ve anlaşmayı onaylıyorsun." },
+        { "language": "ru", "text": "Ты хочешь обменяться сменой, называешь причину, предлагаешь справедливую компенсацию и подтверждаешь договоренность." },
+        { "language": "ckb", "text": "دەتەوێت شێفتێک بگۆڕیت، هۆکارەکە دەڵێیت، قەرەبوویەکی دادپەروەرانە پێشنیار دەکەیت و ڕێککەوتنەکە پشتڕاست دەکەیتەوە." },
+        { "language": "kmr", "text": "Tu dixwazî şifteke biguherînî, sedemê dibêjî, telafiyeke dadperwer pêşniyar dikî û lihevhatinê piştrast dikî." },
+        { "language": "pl", "text": "Chcesz zamienić zmianę, podajesz powód, proponujesz uczciwą rekompensatę i potwierdzasz ustalenie." },
+        { "language": "ro", "text": "Vrei să schimbi o tură, spui motivul, oferi o compensare corectă și confirmi înțelegerea." },
+        { "language": "sq", "text": "Dëshiron të shkëmbesh një turn, jep arsyen, ofron një kompensim të drejtë dhe konfirmon marrëveshjen." }
+      ],
+      "learnerGoal": "Du kannst einen Schichttausch höflich begründen, eine Gegenleistung anbieten und am Ende die Details klar zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can politely justify a shift swap, offer something in return, and clearly summarize the details at the end." },
+        { "language": "fa", "text": "می‌توانی جابه‌جایی شیفت را مؤدبانه توضیح بدهی، یک جبران پیشنهاد کنی و در پایان جزئیات را روشن جمع‌بندی کنی." },
+        { "language": "ar", "text": "يمكنك تبرير تبديل الوردية بأدب، وعرض مقابل، وتلخيص التفاصيل بوضوح في النهاية." },
+        { "language": "tr", "text": "Bir vardiya değişimini kibarca gerekçelendirebilir, karşılığında bir şey önerebilir ve sonunda ayrıntıları netçe özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь вежливо обосновать обмен сменами, предложить что-то взамен и в конце ясно подвести детали." },
+        { "language": "ckb", "text": "دەتوانیت بە ئەدەب هۆکاری گۆڕینی شێفت ڕوون بکەیتەوە، شتێک وەک قەرەبوو پێشنیار بکەیت و لە کۆتاییدا وردەکارییەکان بەڕوونی کۆبکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî guhartina şiftê bi nazikî rave bikî, tiştekî wek telafî pêşniyar bikî û di dawiyê de hûrgiliyan zelal kom bikî." },
+        { "language": "pl", "text": "Potrafisz uprzejmie uzasadnić zamianę zmiany, zaproponować coś w zamian i jasno podsumować szczegóły na końcu." },
+        { "language": "ro", "text": "Poți justifica politicos un schimb de tură, poți oferi ceva la schimb și poți rezuma clar detaliile la final." },
+        { "language": "sq", "text": "Mund ta arsyetosh me mirësjellje një shkëmbim turni, të ofrosh diçka në këmbim dhe në fund t'i përmbledhësh qartë detajet." }
+      ],
+      "cefrLevel": "B1",
+      "category": "workplace",
+      "topics": [
+        "work-and-jobs",
+        "social-and-relationships"
+      ],
+      "interactionMode": "workplace",
+      "register": "neutral",
+      "taskType": "negotiate-solution",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "negotiation"
+      ],
+      "examProfiles": [
+        "berufssprache-b1"
+      ],
+      "sortOrder": 2100,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollege",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميل" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Kolega" },
+            { "language": "ro", "text": "Coleg" },
+            { "language": "sq", "text": "Koleg" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Kesê fêrbûner" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Du wolltest wegen Samstag mit mir sprechen. Worum geht es?",
+          "translations": [
+            { "language": "en", "text": "You wanted to talk to me about Saturday. What is it about?" },
+            { "language": "fa", "text": "می‌خواستی درباره شنبه با من صحبت کنی. موضوع چیست؟" },
+            { "language": "ar", "text": "كنت تريد التحدث معي بشأن يوم السبت. ما الموضوع؟" },
+            { "language": "tr", "text": "Cumartesi hakkında benimle konuşmak istiyordun. Konu ne?" },
+            { "language": "ru", "text": "Ты хотел поговорить со мной о субботе. В чем дело?" },
+            { "language": "ckb", "text": "دەتویست دەربارەی شەممە لەگەڵم قسە بکەیت. بابەتەکە چییە؟" },
+            { "language": "kmr", "text": "Te dixwest derbarê şemiyê bi min re biaxivî. Mesele çi ye?" },
+            { "language": "pl", "text": "Chciałeś porozmawiać ze mną o sobocie. O co chodzi?" },
+            { "language": "ro", "text": "Voiai să vorbești cu mine despre sâmbătă. Despre ce este vorba?" },
+            { "language": "sq", "text": "Doje të flisje me mua për të shtunën. Për çfarë bëhet fjalë?" }
+          ],
+          "function": "open-topic",
+          "toneNote": "Neutral colleague question.",
+          "expectedLearnerAction": "Explain reason and ask for swap."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich habe am Samstag einen wichtigen Familientermin. Könntest du meinen Frühdienst übernehmen, wenn ich dafür deinen Spätdienst am Dienstag mache?",
+          "translations": [
+            { "language": "en", "text": "I have an important family appointment on Saturday. Could you take my early shift if I do your late shift on Tuesday in return?" },
+            { "language": "fa", "text": "شنبه یک قرار خانوادگی مهم دارم. آیا می‌توانی شیفت صبح من را بگیری، اگر من در عوض شیفت عصر سه‌شنبه تو را انجام بدهم؟" },
+            { "language": "ar", "text": "لدي موعد عائلي مهم يوم السبت. هل يمكنك تولّي ورديتي الصباحية إذا أخذت أنا ورديتك المسائية يوم الثلاثاء مقابل ذلك؟" },
+            { "language": "tr", "text": "Cumartesi önemli bir aile randevum var. Karşılığında salı günü senin geç vardiyanı yaparsam benim erken vardiyamı alabilir misin?" },
+            { "language": "ru", "text": "В субботу у меня важная семейная встреча. Можешь взять мою раннюю смену, если я взамен возьму твою позднюю смену во вторник?" },
+            { "language": "ckb", "text": "شەممە کاتێکی گرنگی خێزانیم هەیە. دەتوانیت شێفتی بەیانیی من بگریت، ئەگەر من لە جیاتی ئەوە شێفتی ئێوارەی سێشەممەی تۆ بکەم؟" },
+            { "language": "kmr", "text": "Şemiyê hevdîtineke malbatî ya girîng heye. Tu dikarî şifta min a sibê bigirî, heke ez li şûna wê şifta te ya êvarê ya sêşemê bikim?" },
+            { "language": "pl", "text": "W sobotę mam ważne spotkanie rodzinne. Czy możesz przejąć moją poranną zmianę, jeśli ja w zamian zrobię twoją późną zmianę we wtorek?" },
+            { "language": "ro", "text": "Sâmbătă am o programare importantă de familie. Poți prelua tura mea de dimineață dacă eu fac în schimb tura ta de seară de marți?" },
+            { "language": "sq", "text": "Të shtunën kam një takim të rëndësishëm familjar. A mund ta marrësh turnin tim të mëngjesit, nëse unë bëj në këmbim turnin tënd të mbrëmjes të martën?" }
+          ],
+          "function": "request-swap",
+          "toneNote": "Polite and concrete.",
+          "expectedLearnerAction": "Give reason and compensation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Am Dienstag habe ich eigentlich einen Kurs. Könnte auch Mittwoch gehen?",
+          "translations": [
+            { "language": "en", "text": "On Tuesday I actually have a course. Would Wednesday also work?" },
+            { "language": "fa", "text": "سه‌شنبه در واقع کلاس دارم. چهارشنبه هم می‌شود؟" },
+            { "language": "ar", "text": "يوم الثلاثاء لدي دورة في الحقيقة. هل ينفع يوم الأربعاء أيضًا؟" },
+            { "language": "tr", "text": "Salı günü aslında kursum var. Çarşamba da olur mu?" },
+            { "language": "ru", "text": "Во вторник у меня вообще-то курс. Подойдет также среда?" },
+            { "language": "ckb", "text": "سێشەممە لە ڕاستیدا کۆرسم هەیە. چوارشەممەش دەکرێت؟" },
+            { "language": "kmr", "text": "Sêşemê bi rastî kursa min heye. Çarşem jî dibe?" },
+            { "language": "pl", "text": "We wtorek mam właściwie kurs. Czy środa też wchodzi w grę?" },
+            { "language": "ro", "text": "Marți de fapt am un curs. Ar merge și miercuri?" },
+            { "language": "sq", "text": "Të martën në fakt kam një kurs. A bën edhe e mërkura?" }
+          ],
+          "function": "counter-offer",
+          "toneNote": "Offers an alternative.",
+          "expectedLearnerAction": "Check and adapt proposal."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mittwoch passt für mich. Dann übernehme ich deinen Spätdienst am Mittwoch, und du machst meinen Frühdienst am Samstag.",
+          "translations": [
+            { "language": "en", "text": "Wednesday works for me. Then I will take your late shift on Wednesday, and you will do my early shift on Saturday." },
+            { "language": "fa", "text": "چهارشنبه برای من مناسب است. پس من شیفت عصر تو را چهارشنبه می‌گیرم و تو شیفت صبح من را شنبه انجام می‌دهی." },
+            { "language": "ar", "text": "الأربعاء يناسبني. إذن أتولى ورديتك المسائية يوم الأربعاء، وأنت تتولى ورديتي الصباحية يوم السبت." },
+            { "language": "tr", "text": "Çarşamba benim için uygun. O zaman ben çarşamba senin geç vardiyanı alırım, sen de cumartesi benim erken vardiyamı yaparsın." },
+            { "language": "ru", "text": "Среда мне подходит. Тогда я беру твою позднюю смену в среду, а ты делаешь мою раннюю смену в субботу." },
+            { "language": "ckb", "text": "چوارشەممە بۆ من گونجاوە. ئەوسا من شێفتی ئێوارەی تۆ لە چوارشەممە دەگرم، و تۆ شێفتی بەیانیی من لە شەممە دەکەیت." },
+            { "language": "kmr", "text": "Çarşem ji bo min baş e. Wê demê ez şifta te ya êvarê ya çarşemê digirim, û tu şifta min a sibê ya şemiyê dikî." },
+            { "language": "pl", "text": "Środa mi pasuje. Wtedy przejmę twoją późną zmianę w środę, a ty zrobisz moją poranną zmianę w sobotę." },
+            { "language": "ro", "text": "Miercuri îmi convine. Atunci preiau tura ta de seară miercuri, iar tu faci tura mea de dimineață sâmbătă." },
+            { "language": "sq", "text": "E mërkura më përshtatet. Atëherë unë marr turnin tënd të mbrëmjes të mërkurën, dhe ti bën turnin tim të mëngjesit të shtunën." }
+          ],
+          "function": "adapt-proposal",
+          "toneNote": "Accepts counter-offer and restates details.",
+          "expectedLearnerAction": "Confirm revised swap clearly."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Das klingt fair. Soll ich es der Leitung sagen, oder machst du das?",
+          "translations": [
+            { "language": "en", "text": "That sounds fair. Should I tell management, or will you do that?" },
+            { "language": "fa", "text": "این منصفانه به نظر می‌رسد. من به مدیریت بگویم یا تو انجام می‌دهی؟" },
+            { "language": "ar", "text": "هذا يبدو عادلًا. هل أخبر الإدارة أم تفعل أنت ذلك؟" },
+            { "language": "tr", "text": "Bu adil görünüyor. Yönetime ben mi söyleyeyim, yoksa sen mi yaparsın?" },
+            { "language": "ru", "text": "Это звучит справедливо. Мне сказать руководству или ты это сделаешь?" },
+            { "language": "ckb", "text": "ئەمە دادپەروەرانە دیارە. من بە بەڕێوەبەرایەتی بڵێم یان تۆ دەیکەیت؟" },
+            { "language": "kmr", "text": "Ev dadperwer xuya dike. Ez ji rêveberiyê re bibêjim, an tu dikî?" },
+            { "language": "pl", "text": "To brzmi uczciwie. Mam powiedzieć kierownictwu, czy ty to zrobisz?" },
+            { "language": "ro", "text": "Sună corect. Să spun eu conducerii sau faci tu asta?" },
+            { "language": "sq", "text": "Kjo duket e drejtë. T'ia them unë drejtimit apo e bën ti?" }
+          ],
+          "function": "confirm-process",
+          "toneNote": "Clarifies who informs management.",
+          "expectedLearnerAction": "Take responsibility for next step."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich schreibe der Leitung gleich eine kurze Nachricht und setze dich in Kopie, damit alles dokumentiert ist.",
+          "translations": [
+            { "language": "en", "text": "I will write a short message to management right away and copy you, so everything is documented." },
+            { "language": "fa", "text": "همین الان یک پیام کوتاه به مدیریت می‌نویسم و تو را هم در کپی می‌گذارم تا همه چیز ثبت شده باشد." },
+            { "language": "ar", "text": "سأكتب للإدارة رسالة قصيرة الآن وأضعك في النسخة، حتى يكون كل شيء موثقًا." },
+            { "language": "tr", "text": "Yönetime hemen kısa bir mesaj yazıp seni de kopyaya koyarım, böylece her şey belgelenmiş olur." },
+            { "language": "ru", "text": "Я сразу напишу руководству короткое сообщение и поставлю тебя в копию, чтобы все было задокументировано." },
+            { "language": "ckb", "text": "ئێستا نامەیەکی کورت بۆ بەڕێوەبەرایەتی دەنووسم و تۆش لە کۆپی دادەنێم، بۆ ئەوەی هەموو شتێک تۆمار بکرێت." },
+            { "language": "kmr", "text": "Ez ê niha peyameke kurt ji rêveberiyê re binivîsim û te jî di kopiyê de deynim, da ku her tişt belgekirî be." },
+            { "language": "pl", "text": "Od razu napiszę krótką wiadomość do kierownictwa i dodam cię do kopii, żeby wszystko było udokumentowane." },
+            { "language": "ro", "text": "Scriu imediat un mesaj scurt conducerii și te pun în copie, ca totul să fie documentat." },
+            { "language": "sq", "text": "Do t'i shkruaj menjëherë një mesazh të shkurtër drejtimit dhe do të të vendos në kopje, që gjithçka të jetë e dokumentuar." }
+          ],
+          "function": "take-next-step",
+          "toneNote": "Takes responsibility and documents agreement.",
+          "expectedLearnerAction": "Confirm written follow-up."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Gut. Dann sind wir uns einig?",
+          "translations": [
+            { "language": "en", "text": "Good. Then we agree?" },
+            { "language": "fa", "text": "خوب. پس توافق داریم؟" },
+            { "language": "ar", "text": "جيد. إذن نحن متفقان؟" },
+            { "language": "tr", "text": "İyi. O zaman anlaştık mı?" },
+            { "language": "ru", "text": "Хорошо. Значит, мы договорились?" },
+            { "language": "ckb", "text": "باشە. ئەوسا ڕێککەوتووین؟" },
+            { "language": "kmr", "text": "Baş e. Wê demê em li hev hatin?" },
+            { "language": "pl", "text": "Dobrze. Czyli jesteśmy zgodni?" },
+            { "language": "ro", "text": "Bine. Deci suntem de acord?" },
+            { "language": "sq", "text": "Mirë. Pra jemi dakord?" }
+          ],
+          "function": "ask-for-final-confirmation",
+          "toneNote": "Requests final confirmation.",
+          "expectedLearnerAction": "Summarize agreement."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, danke. Du übernimmst meinen Frühdienst am Samstag, und ich übernehme deinen Spätdienst am Mittwoch. Ich informiere die Leitung schriftlich.",
+          "translations": [
+            { "language": "en", "text": "Yes, thank you. You take my early shift on Saturday, and I take your late shift on Wednesday. I will inform management in writing." },
+            { "language": "fa", "text": "بله، ممنون. تو شیفت صبح من را شنبه می‌گیری و من شیفت عصر تو را چهارشنبه می‌گیرم. من مدیریت را کتبی مطلع می‌کنم." },
+            { "language": "ar", "text": "نعم، شكرًا. أنت تتولى ورديتي الصباحية يوم السبت، وأنا أتولى ورديتك المسائية يوم الأربعاء. سأبلغ الإدارة كتابة." },
+            { "language": "tr", "text": "Evet, teşekkürler. Sen cumartesi benim erken vardiyamı alıyorsun, ben de çarşamba senin geç vardiyanı alıyorum. Yönetime yazılı bilgi vereceğim." },
+            { "language": "ru", "text": "Да, спасибо. Ты берешь мою раннюю смену в субботу, а я беру твою позднюю смену в среду. Я письменно сообщу руководству." },
+            { "language": "ckb", "text": "بەڵێ، سوپاس. تۆ شێفتی بەیانیی من لە شەممە دەگریت، و من شێفتی ئێوارەی تۆ لە چوارشەممە دەگرم. من بە نووسراو بەڕێوەبەرایەتی ئاگادار دەکەمەوە." },
+            { "language": "kmr", "text": "Erê, spas. Tu şifta min a sibê ya şemiyê digirî, û ez şifta te ya êvarê ya çarşemê digirim. Ez ê rêveberiyê bi nivîskî agahdar bikim." },
+            { "language": "pl", "text": "Tak, dziękuję. Ty przejmujesz moją poranną zmianę w sobotę, a ja przejmuję twoją późną zmianę w środę. Poinformuję kierownictwo pisemnie." },
+            { "language": "ro", "text": "Da, mulțumesc. Tu preiei tura mea de dimineață sâmbătă, iar eu preiau tura ta de seară miercuri. Informez conducerea în scris." },
+            { "language": "sq", "text": "Po, faleminderit. Ti merr turnin tim të mëngjesit të shtunën, dhe unë marr turnin tënd të mbrëmjes të mërkurën. Do ta informoj drejtimin me shkrim." }
+          ],
+          "function": "summarize-agreement",
+          "toneNote": "Clear final confirmation.",
+          "expectedLearnerAction": "Confirm both shifts and next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich habe am Samstag einen wichtigen Familientermin. Könntest du meinen Frühdienst übernehmen, wenn ich dafür deinen Spätdienst am Dienstag mache?",
+              "translations": [
+                { "language": "en", "text": "I have an important family appointment on Saturday. Could you take my early shift if I do your late shift on Tuesday in return?" },
+                { "language": "fa", "text": "شنبه یک قرار خانوادگی مهم دارم. آیا می‌توانی شیفت صبح من را بگیری، اگر من در عوض شیفت عصر سه‌شنبه تو را انجام بدهم؟" },
+                { "language": "ar", "text": "لدي موعد عائلي مهم يوم السبت. هل يمكنك تولّي ورديتي الصباحية إذا أخذت أنا ورديتك المسائية يوم الثلاثاء مقابل ذلك؟" },
+                { "language": "tr", "text": "Cumartesi önemli bir aile randevum var. Karşılığında salı günü senin geç vardiyanı yaparsam benim erken vardiyamı alabilir misin?" },
+                { "language": "ru", "text": "В субботу у меня важная семейная встреча. Можешь взять мою раннюю смену, если я взамен возьму твою позднюю смену во вторник?" },
+                { "language": "ckb", "text": "شەممە کاتێکی گرنگی خێزانیم هەیە. دەتوانیت شێفتی بەیانیی من بگریت، ئەگەر من لە جیاتی ئەوە شێفتی ئێوارەی سێشەممەی تۆ بکەم؟" },
+                { "language": "kmr", "text": "Şemiyê hevdîtineke malbatî ya girîng heye. Tu dikarî şifta min a sibê bigirî, heke ez li şûna wê şifta te ya êvarê ya sêşemê bikim?" },
+                { "language": "pl", "text": "W sobotę mam ważne spotkanie rodzinne. Czy możesz przejąć moją poranną zmianę, jeśli ja w zamian zrobię twoją późną zmianę we wtorek?" },
+                { "language": "ro", "text": "Sâmbătă am o programare importantă de familie. Poți prelua tura mea de dimineață dacă eu fac în schimb tura ta de seară de marți?" },
+                { "language": "sq", "text": "Të shtunën kam një takim të rëndësishëm familjar. A mund ta marrësh turnin tim të mëngjesit, nëse unë bëj në këmbim turnin tënd të mbrëmjes të martën?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Antwort: Sie nennt den Grund und macht ein faires Tauschangebot.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good answer: it gives the reason and makes a fair swap offer." },
+                { "language": "fa", "text": "پاسخ خوب: دلیل را می‌گوید و یک پیشنهاد جابه‌جایی منصفانه می‌دهد." },
+                { "language": "ar", "text": "إجابة جيدة: تذكر السبب وتقدم عرض تبديل عادلًا." },
+                { "language": "tr", "text": "İyi cevap: nedeni söyler ve adil bir değişim teklifi yapar." },
+                { "language": "ru", "text": "Хороший ответ: он называет причину и делает справедливое предложение обмена." },
+                { "language": "ckb", "text": "وەڵامی باش: هۆکارەکە دەڵێت و پێشنیاری گۆڕینەوەیەکی دادپەروەرانە دەکات." },
+                { "language": "kmr", "text": "Bersiva baş: sedemê dibêje û pêşniyareke guhartinê ya dadperwer dike." },
+                { "language": "pl", "text": "Dobra odpowiedź: podaje powód i składa uczciwą propozycję zamiany." },
+                { "language": "ro", "text": "Răspuns bun: spune motivul și face o ofertă corectă de schimb." },
+                { "language": "sq", "text": "Përgjigje e mirë: jep arsyen dhe bën një ofertë të drejtë shkëmbimi." }
+              ],
+              "explanationKey": "reason-and-fair-offer"
+            },
+            {
+              "id": "too-demanding",
+              "text": "Kannst du bitte meinen Dienst am Samstag übernehmen?",
+              "translations": [
+                { "language": "en", "text": "Can you please take my shift on Saturday?" },
+                { "language": "fa", "text": "می‌توانی لطفاً شیفت شنبه من را بگیری؟" },
+                { "language": "ar", "text": "هل يمكنك من فضلك تولّي ورديتي يوم السبت؟" },
+                { "language": "tr", "text": "Cumartesi vardiyamı alabilir misin?" },
+                { "language": "ru", "text": "Можешь, пожалуйста, взять мою смену в субботу?" },
+                { "language": "ckb", "text": "دەتوانیت تکایە شێفتی شەممەی من بگریت؟" },
+                { "language": "kmr", "text": "Tu dikarî ji kerema xwe şifta min a şemiyê bigirî?" },
+                { "language": "pl", "text": "Czy możesz proszę przejąć moją zmianę w sobotę?" },
+                { "language": "ro", "text": "Poți, te rog, să preiei tura mea de sâmbătă?" },
+                { "language": "sq", "text": "A mund ta marrësh, të lutem, turnin tim të shtunën?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber zu wenig: Es fehlen Grund und Gegenleistung, deshalb wirkt die Bitte schwerer anzunehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite, but not enough: it lacks a reason and something in return, so the request is harder to accept." },
+                { "language": "fa", "text": "مؤدبانه است، اما کافی نیست: دلیل و جبران ندارد، بنابراین قبول کردن درخواست سخت‌تر می‌شود." },
+                { "language": "ar", "text": "مهذبة، لكنها غير كافية: ينقصها سبب ومقابل، لذلك يصبح قبول الطلب أصعب." },
+                { "language": "tr", "text": "Kibar, ama yeterli değil: neden ve karşılık eksik, bu yüzden isteği kabul etmek zorlaşır." },
+                { "language": "ru", "text": "Вежливо, но недостаточно: нет причины и предложения взамен, поэтому просьбу сложнее принять." },
+                { "language": "ckb", "text": "ئەدەبییە، بەڵام بەس نییە: هۆکار و قەرەبوو نییە، بۆیە وەرگرتنی داواکارییەکە قورستر دەبێت." },
+                { "language": "kmr", "text": "Nazik e, lê têr nake: sedem û tiştekî li şûna wê kêm in, ji ber vê daxwaz qebûlkirin dijwartir dibe." },
+                { "language": "pl", "text": "Uprzejme, ale za mało: brakuje powodu i czegoś w zamian, więc prośbę trudniej przyjąć." },
+                { "language": "ro", "text": "Politicos, dar insuficient: lipsesc motivul și ceva la schimb, deci cererea este mai greu de acceptat." },
+                { "language": "sq", "text": "E sjellshme, por jo mjaftueshëm: mungon arsyeja dhe diçka në këmbim, prandaj kërkesa është më e vështirë për t'u pranuar." }
+              ],
+              "explanationKey": "missing-reason-compensation"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Mittwoch passt für mich. Dann übernehme ich deinen Spätdienst am Mittwoch, und du machst meinen Frühdienst am Samstag.",
+              "translations": [
+                { "language": "en", "text": "Wednesday works for me. Then I will take your late shift on Wednesday, and you will do my early shift on Saturday." },
+                { "language": "fa", "text": "چهارشنبه برای من مناسب است. پس من شیفت عصر تو را چهارشنبه می‌گیرم و تو شیفت صبح من را شنبه انجام می‌دهی." },
+                { "language": "ar", "text": "الأربعاء يناسبني. إذن أتولى ورديتك المسائية يوم الأربعاء، وأنت تتولى ورديتي الصباحية يوم السبت." },
+                { "language": "tr", "text": "Çarşamba benim için uygun. O zaman ben çarşamba senin geç vardiyanı alırım, sen de cumartesi benim erken vardiyamı yaparsın." },
+                { "language": "ru", "text": "Среда мне подходит. Тогда я беру твою позднюю смену в среду, а ты делаешь мою раннюю смену в субботу." },
+                { "language": "ckb", "text": "چوارشەممە بۆ من گونجاوە. ئەوسا من شێفتی ئێوارەی تۆ لە چوارشەممە دەگرم، و تۆ شێفتی بەیانیی من لە شەممە دەکەیت." },
+                { "language": "kmr", "text": "Çarşem ji bo min baş e. Wê demê ez şifta te ya êvarê ya çarşemê digirim, û tu şifta min a sibê ya şemiyê dikî." },
+                { "language": "pl", "text": "Środa mi pasuje. Wtedy przejmę twoją późną zmianę w środę, a ty zrobisz moją poranną zmianę w sobotę." },
+                { "language": "ro", "text": "Miercuri îmi convine. Atunci preiau tura ta de seară miercuri, iar tu faci tura mea de dimineață sâmbătă." },
+                { "language": "sq", "text": "E mërkura më përshtatet. Atëherë unë marr turnin tënd të mbrëmjes të mërkurën, dhe ti bën turnin tim të mëngjesit të shtunën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Antwort: Sie akzeptiert den Gegenvorschlag und wiederholt beide Schichten klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good answer: it accepts the counter-offer and clearly repeats both shifts." },
+                { "language": "fa", "text": "پاسخ خوب: پیشنهاد متقابل را می‌پذیرد و هر دو شیفت را روشن تکرار می‌کند." },
+                { "language": "ar", "text": "إجابة جيدة: تقبل الاقتراح المقابل وتكرر الوردتين بوضوح." },
+                { "language": "tr", "text": "İyi cevap: karşı öneriyi kabul eder ve iki vardiyayı da net tekrar eder." },
+                { "language": "ru", "text": "Хороший ответ: он принимает встречное предложение и ясно повторяет обе смены." },
+                { "language": "ckb", "text": "وەڵامی باش: پێشنیاری بەرامبەر وەردەگرێت و هەردوو شێفتەکە بەڕوونی دووبارە دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiva baş: pêşniyara dijber dipejirîne û her du şiftan zelal dubare dike." },
+                { "language": "pl", "text": "Dobra odpowiedź: akceptuje kontrpropozycję i jasno powtarza obie zmiany." },
+                { "language": "ro", "text": "Răspuns bun: acceptă contrapropunerea și repetă clar ambele ture." },
+                { "language": "sq", "text": "Përgjigje e mirë: pranon kundërpropozimin dhe përsërit qartë të dy turnet." }
+              ],
+              "explanationKey": "accept-and-restate"
+            },
+            {
+              "id": "unclear-acceptance",
+              "text": "Ja, Mittwoch geht auch.",
+              "translations": [
+                { "language": "en", "text": "Yes, Wednesday also works." },
+                { "language": "fa", "text": "بله، چهارشنبه هم می‌شود." },
+                { "language": "ar", "text": "نعم، الأربعاء ينفع أيضًا." },
+                { "language": "tr", "text": "Evet, çarşamba da olur." },
+                { "language": "ru", "text": "Да, среда тоже подойдет." },
+                { "language": "ckb", "text": "بەڵێ، چوارشەممەش دەکرێت." },
+                { "language": "kmr", "text": "Erê, çarşem jî dibe." },
+                { "language": "pl", "text": "Tak, środa też pasuje." },
+                { "language": "ro", "text": "Da, merge și miercuri." },
+                { "language": "sq", "text": "Po, edhe e mërkura bën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu kurz: Bei einem Schichttausch sollten beide Schichten noch einmal klar genannt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too short: in a shift swap, both shifts should be clearly named again." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی کوتاه است: در جابه‌جایی شیفت باید هر دو شیفت دوباره روشن گفته شوند." },
+                { "language": "ar", "text": "مفهومة، لكنها قصيرة جدًا: في تبديل الوردية يجب ذكر الوردتين بوضوح مرة أخرى." },
+                { "language": "tr", "text": "Anlaşılır, ama çok kısa: vardiya değişiminde iki vardiya da tekrar net söylenmelidir." },
+                { "language": "ru", "text": "Понятно, но слишком коротко: при обмене сменами обе смены нужно еще раз ясно назвать." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام زۆر کورتە: لە گۆڕینی شێفتدا دەبێت هەردوو شێفتەکە جارێکی تر بەڕوونی بگوترێن." },
+                { "language": "kmr", "text": "Têgihiştî ye, lê pir kurt e: di guhartina şiftê de divê her du şift careke din zelal werin gotin." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt krótkie: przy zamianie zmian trzeba jeszcze raz jasno nazwać obie zmiany." },
+                { "language": "ro", "text": "Este de înțeles, dar prea scurt: la un schimb de ture trebuie numite clar din nou ambele ture." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e shkurtër: në një shkëmbim turnesh duhen përmendur qartë përsëri të dy turnet." }
+              ],
+              "explanationKey": "needs-clear-details"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, danke. Du übernimmst meinen Frühdienst am Samstag, und ich übernehme deinen Spätdienst am Mittwoch. Ich informiere die Leitung schriftlich.",
+              "translations": [
+                { "language": "en", "text": "Yes, thank you. You take my early shift on Saturday, and I take your late shift on Wednesday. I will inform management in writing." },
+                { "language": "fa", "text": "بله، ممنون. تو شیفت صبح من را شنبه می‌گیری و من شیفت عصر تو را چهارشنبه می‌گیرم. من مدیریت را کتبی مطلع می‌کنم." },
+                { "language": "ar", "text": "نعم، شكرًا. أنت تتولى ورديتي الصباحية يوم السبت، وأنا أتولى ورديتك المسائية يوم الأربعاء. سأبلغ الإدارة كتابة." },
+                { "language": "tr", "text": "Evet, teşekkürler. Sen cumartesi benim erken vardiyamı alıyorsun, ben de çarşamba senin geç vardiyanı alıyorum. Yönetime yazılı bilgi vereceğim." },
+                { "language": "ru", "text": "Да, спасибо. Ты берешь мою раннюю смену в субботу, а я беру твою позднюю смену в среду. Я письменно сообщу руководству." },
+                { "language": "ckb", "text": "بەڵێ، سوپاس. تۆ شێفتی بەیانیی من لە شەممە دەگریت، و من شێفتی ئێوارەی تۆ لە چوارشەممە دەگرم. من بە نووسراو بەڕێوەبەرایەتی ئاگادار دەکەمەوە." },
+                { "language": "kmr", "text": "Erê, spas. Tu şifta min a sibê ya şemiyê digirî, û ez şifta te ya êvarê ya çarşemê digirim. Ez ê rêveberiyê bi nivîskî agahdar bikim." },
+                { "language": "pl", "text": "Tak, dziękuję. Ty przejmujesz moją poranną zmianę w sobotę, a ja przejmuję twoją późną zmianę w środę. Poinformuję kierownictwo pisemnie." },
+                { "language": "ro", "text": "Da, mulțumesc. Tu preiei tura mea de dimineață sâmbătă, iar eu preiau tura ta de seară miercuri. Informez conducerea în scris." },
+                { "language": "sq", "text": "Po, faleminderit. Ti merr turnin tim të mëngjesit të shtunën, dhe unë marr turnin tënd të mbrëmjes të mërkurën. Do ta informoj drejtimin me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Zusammenfassung: Beide Schichten und der schriftliche nächste Schritt sind klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good summary: both shifts and the written next step are clear." },
+                { "language": "fa", "text": "جمع‌بندی خوب: هر دو شیفت و قدم کتبی بعدی روشن هستند." },
+                { "language": "ar", "text": "تلخيص جيد: الوردتان والخطوة الكتابية التالية واضحة." },
+                { "language": "tr", "text": "İyi özet: iki vardiya ve yazılı sonraki adım net." },
+                { "language": "ru", "text": "Хорошее резюме: обе смены и следующий письменный шаг понятны." },
+                { "language": "ckb", "text": "پوختەی باش: هەردوو شێفت و هەنگاوی نووسراوی دواتر ڕوونن." },
+                { "language": "kmr", "text": "Kurtasiya baş: her du şift û gava nivîskî ya din zelal in." },
+                { "language": "pl", "text": "Dobre podsumowanie: obie zmiany i następny pisemny krok są jasne." },
+                { "language": "ro", "text": "Rezumat bun: ambele ture și pasul scris următor sunt clare." },
+                { "language": "sq", "text": "Përmbledhje e mirë: të dy turnet dhe hapi i ardhshëm me shkrim janë të qarta." }
+              ],
+              "explanationKey": "final-swap-summary"
+            },
+            {
+              "id": "missing-written-step",
+              "text": "Ja, danke. Dann machen wir das so.",
+              "translations": [
+                { "language": "en", "text": "Yes, thank you. Then we will do it that way." },
+                { "language": "fa", "text": "بله، ممنون. پس همین‌طور انجام می‌دهیم." },
+                { "language": "ar", "text": "نعم، شكرًا. إذن نفعل ذلك هكذا." },
+                { "language": "tr", "text": "Evet, teşekkürler. O zaman böyle yaparız." },
+                { "language": "ru", "text": "Да, спасибо. Тогда так и сделаем." },
+                { "language": "ckb", "text": "بەڵێ، سوپاس. ئەوسا بەم شێوەیە دەیکەین." },
+                { "language": "kmr", "text": "Erê, spas. Wê demê em wisa dikin." },
+                { "language": "pl", "text": "Tak, dziękuję. W takim razie tak zrobimy." },
+                { "language": "ro", "text": "Da, mulțumesc. Atunci așa facem." },
+                { "language": "sq", "text": "Po, faleminderit. Atëherë kështu e bëjmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Freundlich, aber nicht genau genug: Die Schichten und die Info an die Leitung fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Friendly, but not precise enough: the shifts and the information to management are missing." },
+                { "language": "fa", "text": "دوستانه است، اما به اندازه کافی دقیق نیست: شیفت‌ها و اطلاع به مدیریت کم است." },
+                { "language": "ar", "text": "ودودة، لكنها ليست دقيقة كفاية: الوردتان وإبلاغ الإدارة غير مذكورين." },
+                { "language": "tr", "text": "Samimi, ama yeterince net değil: vardiyalar ve yönetime bilgi verme eksik." },
+                { "language": "ru", "text": "Дружелюбно, но недостаточно точно: не хватает смен и сообщения руководству." },
+                { "language": "ckb", "text": "دۆستانەیە، بەڵام بەشی پێویست ورد نییە: شێفتەکان و ئاگادارکردنەوەی بەڕێوەبەرایەتی کەمە." },
+                { "language": "kmr", "text": "Hevaltî ye, lê têra xwe nezelal e: şift û agahdarkirina rêveberiyê kêm in." },
+                { "language": "pl", "text": "Przyjazne, ale zbyt mało dokładne: brakuje zmian i informacji dla kierownictwa." },
+                { "language": "ro", "text": "Prietenos, dar nu suficient de precis: lipsesc turele și informarea conducerii." },
+                { "language": "sq", "text": "Miqësore, por jo mjaft e saktë: mungojnë turnet dhe njoftimi për drejtimin." }
+              ],
+              "explanationKey": "too-vague-final"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "model-answer",
+          "text": "Bei einem Schichttausch ist eine gute B1-Antwort fair und konkret: Grund, Gegenleistung, genaue Schichten und schriftliche Bestätigung.",
+          "translations": [
+            { "language": "en", "text": "For a shift swap, a good B1 answer is fair and concrete: reason, compensation, exact shifts, and written confirmation." },
+            { "language": "fa", "text": "در جابه‌جایی شیفت، پاسخ خوب B1 منصفانه و مشخص است: دلیل، جبران، شیفت‌های دقیق و تأیید کتبی." },
+            { "language": "ar", "text": "في تبديل الوردية، إجابة B1 الجيدة عادلة ومحددة: سبب، مقابل، ورديات دقيقة، وتأكيد كتابي." },
+            { "language": "tr", "text": "Bir vardiya değişiminde iyi bir B1 cevabı adil ve somuttur: neden, karşılık, net vardiyalar ve yazılı onay." },
+            { "language": "ru", "text": "При обмене сменами хороший ответ B1 справедлив и конкретен: причина, компенсация, точные смены и письменное подтверждение." },
+            { "language": "ckb", "text": "لە گۆڕینی شێفتدا، وەڵامی باشی B1 دادپەروەرانە و دیاریکراوە: هۆکار، قەرەبوو، شێفتە وردەکان و پشتڕاستکردنەوەی نووسراو." },
+            { "language": "kmr", "text": "Di guhartina şiftê de, bersiva baş a B1 dadperwer û zelel e: sedem, telafî, şiftên rast û piştrastkirina nivîskî." },
+            { "language": "pl", "text": "Przy zamianie zmiany dobra odpowiedź B1 jest uczciwa i konkretna: powód, rekompensata, dokładne zmiany i pisemne potwierdzenie." },
+            { "language": "ro", "text": "La un schimb de tură, un răspuns bun B1 este corect și concret: motiv, compensare, ture exacte și confirmare scrisă." },
+            { "language": "sq", "text": "Në një shkëmbim turni, një përgjigje e mirë B1 është e drejtë dhe konkrete: arsye, kompensim, turne të sakta dhe konfirmim me shkrim." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-im-team-ein-missverstaendnis-klaeren",
+      "title": "Im Team ein Missverständnis klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarify a misunderstanding in the team" },
+        { "language": "fa", "text": "روشن کردن یک سوءتفاهم در تیم" },
+        { "language": "ar", "text": "توضيح سوء فهم داخل الفريق" },
+        { "language": "tr", "text": "Ekipte bir yanlış anlaşılmayı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Прояснить недоразумение в команде" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی تێنەگەیشتنێک لە تیمدا" },
+        { "language": "kmr", "text": "Di tîmê de şaşfêmkirinekê zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnić nieporozumienie w zespole" },
+        { "language": "ro", "text": "Să clarifici o neînțelegere în echipă" },
+        { "language": "sq", "text": "Të sqarosh një keqkuptim në ekip" }
+      ],
+      "description": "Du merkst, dass du und eine Kollegin eine Aufgabe unterschiedlich verstanden haben. Du erklärst dein Verständnis und bittest um Korrektur.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You notice that you and a colleague understood a task differently. You explain your understanding and ask for correction." },
+        { "language": "fa", "text": "متوجه می‌شوی که تو و یک همکار یک وظیفه را متفاوت فهمیده‌اید. برداشت خودت را توضیح می‌دهی و درخواست اصلاح می‌کنی." },
+        { "language": "ar", "text": "تلاحظ أنك وزميلة فهمتما مهمة بشكل مختلف. تشرح فهمك وتطلب التصحيح." },
+        { "language": "tr", "text": "Senin ve bir iş arkadaşının bir görevi farklı anladığını fark edersin. Kendi anladığını açıklar ve düzeltme istersin." },
+        { "language": "ru", "text": "Ты замечаешь, что вы с коллегой по-разному поняли задачу. Ты объясняешь свое понимание и просишь поправить." },
+        { "language": "ckb", "text": "تێدەگەیت کە تۆ و هاوکارێک ئەرکێکتان جیاواز تێگەیشتووە. تێگەیشتنی خۆت ڕووندەکەیتەوە و داوای ڕاستکردنەوە دەکەیت." },
+        { "language": "kmr", "text": "Tu dibînî ku tu û hevkarekê karekî cuda fêm kirine. Tu fêmkirina xwe rave dikî û rastkirinê dixwazî." },
+        { "language": "pl", "text": "Zauważasz, że ty i koleżanka inaczej zrozumieliście zadanie. Wyjaśniasz swoje rozumienie i prosisz o korektę." },
+        { "language": "ro", "text": "Observi că tu și o colegă ați înțeles diferit o sarcină. Îți explici înțelegerea și ceri corectare." },
+        { "language": "sq", "text": "Vëren se ti dhe një kolege e keni kuptuar ndryshe një detyrë. Shpjegon kuptimin tënd dhe kërkon korrigjim." }
+      ],
+      "learnerGoal": "Du kannst ein Missverständnis ohne Schuldzuweisung klären, dein Verständnis wiederholen und die neue Absprache zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can clarify a misunderstanding without blaming anyone, restate your understanding, and summarize the new agreement." },
+        { "language": "fa", "text": "می‌توانی یک سوءتفاهم را بدون سرزنش روشن کنی، برداشت خودت را تکرار کنی و توافق جدید را جمع‌بندی کنی." },
+        { "language": "ar", "text": "يمكنك توضيح سوء فهم دون لوم أحد، وإعادة صياغة فهمك، وتلخيص الاتفاق الجديد." },
+        { "language": "tr", "text": "Kimseyi suçlamadan bir yanlış anlaşılmayı açıklığa kavuşturabilir, kendi anladığını tekrar edebilir ve yeni anlaşmayı özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь прояснить недоразумение без обвинений, повторить свое понимание и подвести итог новой договоренности." },
+        { "language": "ckb", "text": "دەتوانیت تێنەگەیشتنێک بێ تاوانبارکردنی کەس ڕوون بکەیتەوە، تێگەیشتنی خۆت دووبارە بکەیتەوە و ڕێککەوتنی نوێ کۆبکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî şaşfêmkirinekê bê sûcdarkirinê zelal bikî, fêmkirina xwe dubare bikî û lihevhatina nû kom bikî." },
+        { "language": "pl", "text": "Potrafisz wyjaśnić nieporozumienie bez obwiniania, powtórzyć swoje rozumienie i podsumować nowe ustalenie." },
+        { "language": "ro", "text": "Poți clarifica o neînțelegere fără să dai vina, poți repeta ce ai înțeles și poți rezuma noua înțelegere." },
+        { "language": "sq", "text": "Mund të sqarosh një keqkuptim pa fajësuar askënd, të përsërisësh kuptimin tënd dhe të përmbledhësh marrëveshjen e re." }
+      ],
+      "cefrLevel": "B1",
+      "category": "workplace",
+      "topics": [
+        "work-and-jobs",
+        "business-communication"
+      ],
+      "interactionMode": "workplace",
+      "register": "neutral",
+      "taskType": "handle-misunderstanding",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "workplace-communication"
+      ],
+      "examProfiles": [
+        "berufssprache-b1"
+      ],
+      "sortOrder": 2110,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka" },
+            { "language": "ro", "text": "Colegă" },
+            { "language": "sq", "text": "Kolege" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Kesê fêrbûner" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Ich dachte, du schickst die Zusammenfassung heute Vormittag. Sie ist noch nicht da.",
+          "translations": [
+            { "language": "en", "text": "I thought you were sending the summary this morning. It has not arrived yet." },
+            { "language": "fa", "text": "فکر می‌کردم تو خلاصه را امروز صبح می‌فرستی. هنوز نرسیده است." },
+            { "language": "ar", "text": "ظننت أنك سترسل الملخص هذا الصباح. لم يصل بعد." },
+            { "language": "tr", "text": "Özeti bu sabah göndereceğini sanıyordum. Henüz gelmedi." },
+            { "language": "ru", "text": "Я думала, что ты отправишь резюме сегодня утром. Оно еще не пришло." },
+            { "language": "ckb", "text": "وامزانی تۆ ئەم بەیانییە پوختەکە دەنێریت. هێشتا نەهاتووە." },
+            { "language": "kmr", "text": "Min difikirî ku tu vê sibê kurtasiyê dişînî. Hîn nehatiye." },
+            { "language": "pl", "text": "Myślałam, że wyślesz podsumowanie dziś rano. Jeszcze go nie ma." },
+            { "language": "ro", "text": "Credeam că trimiți rezumatul în această dimineață. Încă nu a ajuns." },
+            { "language": "sq", "text": "Mendova se do ta dërgoje përmbledhjen sot paradite. Ende nuk ka ardhur." }
+          ],
+          "function": "raise-misunderstanding",
+          "toneNote": "Direct but not hostile.",
+          "expectedLearnerAction": "Clarify understanding without blame."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Oh, dann habe ich das anders verstanden. Ich dachte, ich sammle nur die Zahlen und du schreibst die Zusammenfassung.",
+          "translations": [
+            { "language": "en", "text": "Oh, then I understood that differently. I thought I was only collecting the figures and you were writing the summary." },
+            { "language": "fa", "text": "اوه، پس من این را متفاوت فهمیده بودم. فکر می‌کردم فقط اعداد را جمع می‌کنم و تو خلاصه را می‌نویسی." },
+            { "language": "ar", "text": "آه، إذن فهمت ذلك بشكل مختلف. ظننت أنني أجمع الأرقام فقط وأنك تكتبين الملخص." },
+            { "language": "tr", "text": "Ah, o zaman ben bunu farklı anlamışım. Ben sadece rakamları topladığımı, özeti de senin yazdığını düşünmüştüm." },
+            { "language": "ru", "text": "О, значит, я понял это иначе. Я думал, что только собираю цифры, а ты пишешь резюме." },
+            { "language": "ckb", "text": "ئۆ، ئەوسا من ئەمە بە شێوەیەکی تر تێگەیشتووم. وامزانی من تەنها ژمارەکان کۆدەکەمەوە و تۆ پوختەکە دەنووسیت." },
+            { "language": "kmr", "text": "Ha, wê demê min vê cuda fêm kiriye. Min difikirî ku ez tenê hejmaran kom dikim û tu kurtasiyê dinivîsî." },
+            { "language": "pl", "text": "Och, w takim razie zrozumiałem to inaczej. Myślałem, że tylko zbieram liczby, a ty piszesz podsumowanie." },
+            { "language": "ro", "text": "A, atunci am înțeles diferit. Credeam că eu doar strâng cifrele și tu scrii rezumatul." },
+            { "language": "sq", "text": "Oh, atëherë e paskam kuptuar ndryshe. Mendova se unë vetëm mbledh shifrat dhe ti shkruan përmbledhjen." }
+          ],
+          "function": "clarify-own-understanding",
+          "toneNote": "Neutral repair language.",
+          "expectedLearnerAction": "Restate own understanding."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Ah, dann haben wir aneinander vorbeigeredet. Die Zusammenfassung brauchen wir aber bis 13 Uhr.",
+          "translations": [
+            { "language": "en", "text": "Ah, then we talked past each other. But we need the summary by 1 p.m." },
+            { "language": "fa", "text": "آها، پس از همدیگر درست متوجه نشده‌ایم. اما خلاصه را تا ساعت ۱۳ لازم داریم." },
+            { "language": "ar", "text": "آه، إذن لم نفهم بعضنا جيدًا. لكننا نحتاج الملخص حتى الساعة الواحدة." },
+            { "language": "tr", "text": "Ah, o zaman birbirimizi yanlış anlamışız. Ama özete saat 13'e kadar ihtiyacımız var." },
+            { "language": "ru", "text": "А, значит, мы друг друга неправильно поняли. Но резюме нужно до 13:00." },
+            { "language": "ckb", "text": "ئا، ئەوسا ئێمە یەکترمان بە باشی تێنەگەیشتووە. بەڵام پوختەکەمان تا کاتژمێر ١٣ پێویستە." },
+            { "language": "kmr", "text": "Ha, wê demê em hev baş fêm nekirin. Lê kurtasî heta saet 13 pêwîst e." },
+            { "language": "pl", "text": "Ach, czyli się nie zrozumieliśmy. Ale podsumowanie jest nam potrzebne do 13." },
+            { "language": "ro", "text": "A, atunci ne-am înțeles pe lângă. Dar avem nevoie de rezumat până la ora 13." },
+            { "language": "sq", "text": "Ah, atëherë nuk jemi kuptuar mirë. Por përmbledhja na duhet deri në orën 13." }
+          ],
+          "function": "set-deadline",
+          "toneNote": "Clarifies deadline after misunderstanding.",
+          "expectedLearnerAction": "Offer a recovery plan."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Verstanden. Ich kann die Zahlen sofort einfügen und einen ersten Entwurf bis 12:30 Uhr schicken. Könntest du ihn danach kurz prüfen?",
+          "translations": [
+            { "language": "en", "text": "Understood. I can add the figures immediately and send a first draft by 12:30. Could you check it briefly afterward?" },
+            { "language": "fa", "text": "متوجه شدم. می‌توانم اعداد را فوراً وارد کنم و یک پیش‌نویس اولیه تا ساعت ۱۲:۳۰ بفرستم. می‌توانی بعد از آن کوتاه بررسی‌اش کنی؟" },
+            { "language": "ar", "text": "فهمت. يمكنني إدخال الأرقام فورًا وإرسال مسودة أولى حتى 12:30. هل يمكنك مراجعتها بعد ذلك باختصار؟" },
+            { "language": "tr", "text": "Anladım. Rakamları hemen ekleyip ilk taslağı 12:30'a kadar gönderebilirim. Sonrasında kısaca kontrol edebilir misin?" },
+            { "language": "ru", "text": "Понял. Я могу сразу вставить цифры и отправить первый черновик до 12:30. Можешь потом коротко проверить?" },
+            { "language": "ckb", "text": "تێگەیشتم. دەتوانم ژمارەکان دەستبەجێ زیاد بکەم و یەکەم ڕەشنووس تا کاتژمێر ١٢:٣٠ بنێرم. دەتوانیت پاشان بەکورتی پشکنینی بکەیت؟" },
+            { "language": "kmr", "text": "Têgihiştim. Ez dikarim hejmaran yekser lê zêde bikim û pêşnivîsa yekem heta saet 12:30 bişînim. Tu dikarî paşê bi kurtî kontrol bikî?" },
+            { "language": "pl", "text": "Rozumiem. Mogę od razu wstawić liczby i wysłać pierwszy szkic do 12:30. Czy możesz go potem krótko sprawdzić?" },
+            { "language": "ro", "text": "Am înțeles. Pot introduce cifrele imediat și pot trimite o primă versiune până la 12:30. Poți să o verifici scurt după aceea?" },
+            { "language": "sq", "text": "E kuptova. Mund t'i fus menjëherë shifrat dhe të dërgoj një draft të parë deri në 12:30. A mund ta kontrollosh shkurt më pas?" }
+          ],
+          "function": "offer-recovery-plan",
+          "toneNote": "Takes responsibility and asks for review.",
+          "expectedLearnerAction": "Offer deadline and ask for support."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Ja, das geht. Bitte markiere noch die offenen Fragen.",
+          "translations": [
+            { "language": "en", "text": "Yes, that works. Please also mark the open questions." },
+            { "language": "fa", "text": "بله، این می‌شود. لطفاً سؤال‌های باز را هم علامت بزن." },
+            { "language": "ar", "text": "نعم، هذا ممكن. من فضلك حدد أيضًا الأسئلة المفتوحة." },
+            { "language": "tr", "text": "Evet, olur. Lütfen açık soruları da işaretle." },
+            { "language": "ru", "text": "Да, так подойдет. Пожалуйста, отметь еще открытые вопросы." },
+            { "language": "ckb", "text": "بەڵێ، دەکرێت. تکایە پرسیارە کراوەکانیش نیشان بدە." },
+            { "language": "kmr", "text": "Erê, dibe. Ji kerema xwe pirsyarên vekirî jî nîşan bike." },
+            { "language": "pl", "text": "Tak, to pasuje. Zaznacz proszę jeszcze otwarte pytania." },
+            { "language": "ro", "text": "Da, merge. Te rog marchează și întrebările deschise." },
+            { "language": "sq", "text": "Po, kjo bën. Të lutem shëno edhe pyetjet e hapura." }
+          ],
+          "function": "add-requirement",
+          "toneNote": "Adds quality requirement.",
+          "expectedLearnerAction": "Confirm added detail."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Mache ich. Ich markiere die offenen Fragen gelb und schreibe darunter, welche Information noch fehlt.",
+          "translations": [
+            { "language": "en", "text": "I will. I will mark the open questions in yellow and write below which information is still missing." },
+            { "language": "fa", "text": "حتماً. سؤال‌های باز را زرد علامت می‌زنم و زیرشان می‌نویسم کدام اطلاعات هنوز کم است." },
+            { "language": "ar", "text": "سأفعل. سأحدد الأسئلة المفتوحة باللون الأصفر وأكتب تحتها أي معلومات ما زالت ناقصة." },
+            { "language": "tr", "text": "Yaparım. Açık soruları sarı işaretleyip altına hangi bilginin hâlâ eksik olduğunu yazarım." },
+            { "language": "ru", "text": "Сделаю. Я отмечу открытые вопросы желтым и напишу под ними, какой информации еще не хватает." },
+            { "language": "ckb", "text": "دەیکەم. پرسیارە کراوەکان بە زەرد نیشان دەدەم و لە ژێریان دەنووسم کام زانیاری هێشتا کەمە." },
+            { "language": "kmr", "text": "Ez ê bikim. Ez pirsyarên vekirî bi zer nîşan dikim û li binê wan dinivîsim kîjan agahî hîn kêm e." },
+            { "language": "pl", "text": "Zrobię to. Zaznaczę otwarte pytania na żółto i napiszę pod nimi, jakiej informacji jeszcze brakuje." },
+            { "language": "ro", "text": "Așa fac. Marchez întrebările deschise cu galben și scriu dedesubt ce informație încă lipsește." },
+            { "language": "sq", "text": "Do ta bëj. Do t'i shënoj pyetjet e hapura me të verdhë dhe poshtë do të shkruaj se cili informacion mungon ende." }
+          ],
+          "function": "confirm-detail",
+          "toneNote": "Concrete execution detail.",
+          "expectedLearnerAction": "Confirm how the requirement will be handled."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Gut. Können wir kurz festhalten, wer jetzt was macht?",
+          "translations": [
+            { "language": "en", "text": "Good. Can we briefly record who is doing what now?" },
+            { "language": "fa", "text": "خوب. می‌توانیم کوتاه مشخص کنیم الان چه کسی چه کاری انجام می‌دهد؟" },
+            { "language": "ar", "text": "جيد. هل يمكننا أن نثبت باختصار من يفعل ماذا الآن؟" },
+            { "language": "tr", "text": "İyi. Şimdi kimin ne yaptığını kısaca netleştirebilir miyiz?" },
+            { "language": "ru", "text": "Хорошо. Можем кратко зафиксировать, кто теперь что делает?" },
+            { "language": "ckb", "text": "باشە. دەتوانین بەکورتی دیاری بکەین ئێستا کێ چی دەکات؟" },
+            { "language": "kmr", "text": "Baş e. Em dikarin bi kurtî diyar bikin niha kî çi dike?" },
+            { "language": "pl", "text": "Dobrze. Czy możemy krótko ustalić, kto teraz co robi?" },
+            { "language": "ro", "text": "Bine. Putem stabili pe scurt cine ce face acum?" },
+            { "language": "sq", "text": "Mirë. A mund ta përcaktojmë shkurt kush çfarë bën tani?" }
+          ],
+          "function": "ask-for-summary",
+          "toneNote": "Requests role summary.",
+          "expectedLearnerAction": "Summarize responsibilities and deadlines."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja. Ich erstelle bis 12:30 Uhr den Entwurf mit Zahlen und offenen Fragen. Du prüfst ihn danach kurz, damit wir die finale Version bis 13 Uhr haben.",
+          "translations": [
+            { "language": "en", "text": "Yes. I will create the draft with figures and open questions by 12:30. You will check it briefly afterward so we have the final version by 1 p.m." },
+            { "language": "fa", "text": "بله. من تا ساعت ۱۲:۳۰ پیش‌نویس را با اعداد و سؤال‌های باز آماده می‌کنم. تو بعد از آن کوتاه بررسی‌اش می‌کنی تا نسخه نهایی را تا ساعت ۱۳ داشته باشیم." },
+            { "language": "ar", "text": "نعم. سأعد المسودة مع الأرقام والأسئلة المفتوحة حتى 12:30. أنت تراجعينها بعد ذلك باختصار حتى تكون النسخة النهائية جاهزة حتى الساعة 13." },
+            { "language": "tr", "text": "Evet. Taslağı rakamlar ve açık sorularla 12:30'a kadar hazırlarım. Sonra sen kısaca kontrol edersin, böylece nihai sürüm saat 13'e kadar hazır olur." },
+            { "language": "ru", "text": "Да. Я подготовлю черновик с цифрами и открытыми вопросами до 12:30. Потом ты коротко проверишь его, чтобы финальная версия была готова до 13:00." },
+            { "language": "ckb", "text": "بەڵێ. من تا کاتژمێر ١٢:٣٠ ڕەشنووسەکە لەگەڵ ژمارەکان و پرسیارە کراوەکان ئامادە دەکەم. تۆ پاشان بەکورتی پشکنینی دەکەیت، بۆ ئەوەی وەشانی کۆتایی تا کاتژمێر ١٣ هەبێت." },
+            { "language": "kmr", "text": "Erê. Ez heta saet 12:30 pêşnivîsê bi hejmar û pirsyarên vekirî amade dikim. Tu paşê bi kurtî kontrol dikî, da ku guhertoya dawî heta saet 13 hebe." },
+            { "language": "pl", "text": "Tak. Do 12:30 przygotuję szkic z liczbami i otwartymi pytaniami. Potem krótko go sprawdzisz, żebyśmy mieli wersję finalną do 13." },
+            { "language": "ro", "text": "Da. Pregătesc până la 12:30 draftul cu cifrele și întrebările deschise. Tu îl verifici apoi scurt, ca să avem versiunea finală până la ora 13." },
+            { "language": "sq", "text": "Po. Unë e përgatis draftin me shifrat dhe pyetjet e hapura deri në 12:30. Ti e kontrollon shkurt më pas, që ta kemi versionin final deri në orën 13." }
+          ],
+          "function": "summarize-responsibilities",
+          "toneNote": "Clear repair summary.",
+          "expectedLearnerAction": "Summarize tasks, deadlines, and review."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Oh, dann habe ich das anders verstanden. Ich dachte, ich sammle nur die Zahlen und du schreibst die Zusammenfassung.",
+              "translations": [
+                { "language": "en", "text": "Oh, then I understood that differently. I thought I was only collecting the figures and you were writing the summary." },
+                { "language": "fa", "text": "اوه، پس من این را متفاوت فهمیده بودم. فکر می‌کردم فقط اعداد را جمع می‌کنم و تو خلاصه را می‌نویسی." },
+                { "language": "ar", "text": "آه، إذن فهمت ذلك بشكل مختلف. ظننت أنني أجمع الأرقام فقط وأنك تكتبين الملخص." },
+                { "language": "tr", "text": "Ah, o zaman ben bunu farklı anlamışım. Ben sadece rakamları topladığımı, özeti de senin yazdığını düşünmüştüm." },
+                { "language": "ru", "text": "О, значит, я понял это иначе. Я думал, что только собираю цифры, а ты пишешь резюме." },
+                { "language": "ckb", "text": "ئۆ، ئەوسا من ئەمە بە شێوەیەکی تر تێگەیشتووم. وامزانی من تەنها ژمارەکان کۆدەکەمەوە و تۆ پوختەکە دەنووسیت." },
+                { "language": "kmr", "text": "Ha, wê demê min vê cuda fêm kiriye. Min difikirî ku ez tenê hejmaran kom dikim û tu kurtasiyê dinivîsî." },
+                { "language": "pl", "text": "Och, w takim razie zrozumiałem to inaczej. Myślałem, że tylko zbieram liczby, a ty piszesz podsumowanie." },
+                { "language": "ro", "text": "A, atunci am înțeles diferit. Credeam că eu doar strâng cifrele și tu scrii rezumatul." },
+                { "language": "sq", "text": "Oh, atëherë e paskam kuptuar ndryshe. Mendova se unë vetëm mbledh shifrat dhe ti shkruan përmbledhjen." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Antwort: Sie erklärt das eigene Verständnis, ohne der Kollegin Schuld zu geben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good answer: it explains your own understanding without blaming the colleague." },
+                { "language": "fa", "text": "پاسخ خوب: برداشت خودت را توضیح می‌دهد بدون اینکه همکار را سرزنش کند." },
+                { "language": "ar", "text": "إجابة جيدة: تشرح فهمك دون لوم الزميلة." },
+                { "language": "tr", "text": "İyi cevap: iş arkadaşını suçlamadan kendi anladığını açıklar." },
+                { "language": "ru", "text": "Хороший ответ: он объясняет твое понимание, не обвиняя коллегу." },
+                { "language": "ckb", "text": "وەڵامی باش: تێگەیشتنی خۆت ڕووندەکاتەوە بێ ئەوەی هاوکارەکە تاوانبار بکات." },
+                { "language": "kmr", "text": "Bersiva baş: fêmkirina xwe rave dike bê ku hevkarê sûcdar bike." },
+                { "language": "pl", "text": "Dobra odpowiedź: wyjaśnia własne rozumienie bez obwiniania koleżanki." },
+                { "language": "ro", "text": "Răspuns bun: explică propria înțelegere fără să dea vina pe colegă." },
+                { "language": "sq", "text": "Përgjigje e mirë: shpjegon kuptimin tënd pa fajësuar kolegen." }
+              ],
+              "explanationKey": "neutral-repair"
+            },
+            {
+              "id": "defensive",
+              "text": "Das war nicht meine Aufgabe.",
+              "translations": [
+                { "language": "en", "text": "That was not my task." },
+                { "language": "fa", "text": "این وظیفه من نبود." },
+                { "language": "ar", "text": "لم تكن هذه مهمتي." },
+                { "language": "tr", "text": "Bu benim görevim değildi." },
+                { "language": "ru", "text": "Это была не моя задача." },
+                { "language": "ckb", "text": "ئەمە ئەرکی من نەبوو." },
+                { "language": "kmr", "text": "Ev ne karê min bû." },
+                { "language": "pl", "text": "To nie było moje zadanie." },
+                { "language": "ro", "text": "Nu era sarcina mea." },
+                { "language": "sq", "text": "Kjo nuk ishte detyra ime." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu defensiv: Die Antwort klärt nicht, was du verstanden hast, und hilft nicht bei der Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too defensive: the answer does not clarify what you understood and does not help solve the problem." },
+                { "language": "fa", "text": "قابل‌باور است، اما خیلی دفاعی است: روشن نمی‌کند تو چه برداشتی داشتی و به حل مشکل کمک نمی‌کند." },
+                { "language": "ar", "text": "تبدو معقولة، لكنها دفاعية جدًا: لا توضح ما فهمته ولا تساعد في الحل." },
+                { "language": "tr", "text": "Makul, ama çok savunmacı: ne anladığını açıklamaz ve çözümde yardımcı olmaz." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слишком оборонительно: ответ не проясняет, что ты понял, и не помогает решить проблему." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر بەرگرییانەیە: ڕوون ناکاتەوە تۆ چی تێگەیشتوویت و یارمەتیی چارەسەر ناکات." },
+                { "language": "kmr", "text": "Maqûl e, lê pir parastinî ye: rave nake tu çi fêm kirî û ji çareseriyê re alîkar nabe." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale zbyt defensywnie: nie wyjaśnia, co zrozumiałeś, i nie pomaga w rozwiązaniu." },
+                { "language": "ro", "text": "Este plauzibil, dar prea defensiv: nu clarifică ce ai înțeles și nu ajută la soluție." },
+                { "language": "sq", "text": "Është e besueshme, por shumë mbrojtëse: nuk sqaron çfarë ke kuptuar dhe nuk ndihmon në zgjidhje." }
+              ],
+              "explanationKey": "avoid-blame"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Verstanden. Ich kann die Zahlen sofort einfügen und einen ersten Entwurf bis 12:30 Uhr schicken. Könntest du ihn danach kurz prüfen?",
+              "translations": [
+                { "language": "en", "text": "Understood. I can add the figures immediately and send a first draft by 12:30. Could you check it briefly afterward?" },
+                { "language": "fa", "text": "متوجه شدم. می‌توانم اعداد را فوراً وارد کنم و یک پیش‌نویس اولیه تا ساعت ۱۲:۳۰ بفرستم. می‌توانی بعد از آن کوتاه بررسی‌اش کنی؟" },
+                { "language": "ar", "text": "فهمت. يمكنني إدخال الأرقام فورًا وإرسال مسودة أولى حتى 12:30. هل يمكنك مراجعتها بعد ذلك باختصار؟" },
+                { "language": "tr", "text": "Anladım. Rakamları hemen ekleyip ilk taslağı 12:30'a kadar gönderebilirim. Sonrasında kısaca kontrol edebilir misin?" },
+                { "language": "ru", "text": "Понял. Я могу сразу вставить цифры и отправить первый черновик до 12:30. Можешь потом коротко проверить?" },
+                { "language": "ckb", "text": "تێگەیشتم. دەتوانم ژمارەکان دەستبەجێ زیاد بکەم و یەکەم ڕەشنووس تا کاتژمێر ١٢:٣٠ بنێرم. دەتوانیت پاشان بەکورتی پشکنینی بکەیت؟" },
+                { "language": "kmr", "text": "Têgihiştim. Ez dikarim hejmaran yekser lê zêde bikim û pêşnivîsa yekem heta saet 12:30 bişînim. Tu dikarî paşê bi kurtî kontrol bikî?" },
+                { "language": "pl", "text": "Rozumiem. Mogę od razu wstawić liczby i wysłać pierwszy szkic do 12:30. Czy możesz go potem krótko sprawdzić?" },
+                { "language": "ro", "text": "Am înțeles. Pot introduce cifrele imediat și pot trimite o primă versiune până la 12:30. Poți să o verifici scurt după aceea?" },
+                { "language": "sq", "text": "E kuptova. Mund t'i fus menjëherë shifrat dhe të dërgoj një draft të parë deri në 12:30. A mund ta kontrollosh shkurt më pas?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Antwort: Sie reagiert auf die Frist und schlägt einen machbaren Rettungsplan vor.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good answer: it reacts to the deadline and suggests a feasible recovery plan." },
+                { "language": "fa", "text": "پاسخ خوب: به مهلت واکنش نشان می‌دهد و یک برنامه جبرانی قابل انجام پیشنهاد می‌کند." },
+                { "language": "ar", "text": "إجابة جيدة: تتفاعل مع الموعد النهائي وتقترح خطة إنقاذ ممكنة." },
+                { "language": "tr", "text": "İyi cevap: süreye tepki verir ve uygulanabilir bir telafi planı önerir." },
+                { "language": "ru", "text": "Хороший ответ: он реагирует на срок и предлагает выполнимый план исправления." },
+                { "language": "ckb", "text": "وەڵامی باش: وەڵامی کاتی کۆتایی دەداتەوە و پلانێکی قەرەبووی جێبەجێکراو پێشنیار دەکات." },
+                { "language": "kmr", "text": "Bersiva baş: li demê dawî bersiv dide û planeke xilasiyê ya gengaz pêşniyar dike." },
+                { "language": "pl", "text": "Dobra odpowiedź: reaguje na termin i proponuje wykonalny plan naprawczy." },
+                { "language": "ro", "text": "Răspuns bun: reacționează la termen și propune un plan de recuperare realizabil." },
+                { "language": "sq", "text": "Përgjigje e mirë: reagon ndaj afatit dhe propozon një plan rikuperimi të realizueshëm." }
+              ],
+              "explanationKey": "deadline-recovery"
+            },
+            {
+              "id": "too-vague",
+              "text": "Ich mache es so schnell wie möglich.",
+              "translations": [
+                { "language": "en", "text": "I will do it as quickly as possible." },
+                { "language": "fa", "text": "تا جایی که ممکن است سریع انجامش می‌دهم." },
+                { "language": "ar", "text": "سأفعل ذلك بأسرع ما يمكن." },
+                { "language": "tr", "text": "Mümkün olduğunca hızlı yaparım." },
+                { "language": "ru", "text": "Я сделаю это как можно быстрее." },
+                { "language": "ckb", "text": "بە خێرایی ئەوەندەی دەتوانم دەیکەم." },
+                { "language": "kmr", "text": "Ez ê çiqas zû be bikim." },
+                { "language": "pl", "text": "Zrobię to tak szybko, jak to możliwe." },
+                { "language": "ro", "text": "O fac cât de repede pot." },
+                { "language": "sq", "text": "Do ta bëj sa më shpejt që të jetë e mundur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu ungenau: Bei einer Frist um 13 Uhr braucht die Antwort eine konkrete Uhrzeit und einen nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too vague: with a 1 p.m. deadline, the answer needs a concrete time and next step." },
+                { "language": "fa", "text": "اشتباه نیست، اما خیلی مبهم است: وقتی مهلت ساعت ۱۳ است، پاسخ باید زمان مشخص و قدم بعدی داشته باشد." },
+                { "language": "ar", "text": "ليست خاطئة، لكنها غير دقيقة: مع موعد نهائي الساعة 13 تحتاج الإجابة إلى وقت محدد وخطوة تالية." },
+                { "language": "tr", "text": "Yanlış değil, ama çok belirsiz: saat 13 son tarihi için cevapta net saat ve sonraki adım olmalı." },
+                { "language": "ru", "text": "Не неверно, но слишком неопределенно: при сроке в 13:00 ответу нужны конкретное время и следующий шаг." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر ناڕوونە: لە کاتی کۆتایی ١٣دا، وەڵامەکە پێویستی بە کاتێکی دیاریکراو و هەنگاوی دواتر هەیە." },
+                { "language": "kmr", "text": "Ne şaş e, lê pir nezelal e: bi demê dawî ya 13, bersiv demeke zelal û gaveke din divê." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt nieprecyzyjne: przy terminie o 13 odpowiedź potrzebuje konkretnej godziny i następnego kroku." },
+                { "language": "ro", "text": "Nu este greșit, dar prea vag: cu termen la ora 13, răspunsul are nevoie de o oră concretă și un pas următor." },
+                { "language": "sq", "text": "Nuk është gabim, por shumë e paqartë: me afat në orën 13, përgjigjja ka nevojë për një orë konkrete dhe një hap tjetër." }
+              ],
+              "explanationKey": "needs-time-and-step"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja. Ich erstelle bis 12:30 Uhr den Entwurf mit Zahlen und offenen Fragen. Du prüfst ihn danach kurz, damit wir die finale Version bis 13 Uhr haben.",
+              "translations": [
+                { "language": "en", "text": "Yes. I will create the draft with figures and open questions by 12:30. You will check it briefly afterward so we have the final version by 1 p.m." },
+                { "language": "fa", "text": "بله. من تا ساعت ۱۲:۳۰ پیش‌نویس را با اعداد و سؤال‌های باز آماده می‌کنم. تو بعد از آن کوتاه بررسی‌اش می‌کنی تا نسخه نهایی را تا ساعت ۱۳ داشته باشیم." },
+                { "language": "ar", "text": "نعم. سأعد المسودة مع الأرقام والأسئلة المفتوحة حتى 12:30. أنت تراجعينها بعد ذلك باختصار حتى تكون النسخة النهائية جاهزة حتى الساعة 13." },
+                { "language": "tr", "text": "Evet. Taslağı rakamlar ve açık sorularla 12:30'a kadar hazırlarım. Sonra sen kısaca kontrol edersin, böylece nihai sürüm saat 13'e kadar hazır olur." },
+                { "language": "ru", "text": "Да. Я подготовлю черновик с цифрами и открытыми вопросами до 12:30. Потом ты коротко проверишь его, чтобы финальная версия была готова до 13:00." },
+                { "language": "ckb", "text": "بەڵێ. من تا کاتژمێر ١٢:٣٠ ڕەشنووسەکە لەگەڵ ژمارەکان و پرسیارە کراوەکان ئامادە دەکەم. تۆ پاشان بەکورتی پشکنینی دەکەیت، بۆ ئەوەی وەشانی کۆتایی تا کاتژمێر ١٣ هەبێت." },
+                { "language": "kmr", "text": "Erê. Ez heta saet 12:30 pêşnivîsê bi hejmar û pirsyarên vekirî amade dikim. Tu paşê bi kurtî kontrol dikî, da ku guhertoya dawî heta saet 13 hebe." },
+                { "language": "pl", "text": "Tak. Do 12:30 przygotuję szkic z liczbami i otwartymi pytaniami. Potem krótko go sprawdzisz, żebyśmy mieli wersję finalną do 13." },
+                { "language": "ro", "text": "Da. Pregătesc până la 12:30 draftul cu cifrele și întrebările deschise. Tu îl verifici apoi scurt, ca să avem versiunea finală până la ora 13." },
+                { "language": "sq", "text": "Po. Unë e përgatis draftin me shifrat dhe pyetjet e hapura deri në 12:30. Ti e kontrollon shkurt më pas, që ta kemi versionin final deri në orën 13." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Zusammenfassung: Sie nennt beide Rollen, die Uhrzeiten und das gemeinsame Ziel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good summary: it names both roles, the times, and the shared goal." },
+                { "language": "fa", "text": "جمع‌بندی خوب: نقش هر دو نفر، زمان‌ها و هدف مشترک را می‌گوید." },
+                { "language": "ar", "text": "تلخيص جيد: يذكر دوري الشخصين، والأوقات، والهدف المشترك." },
+                { "language": "tr", "text": "İyi özet: iki rolü, saatleri ve ortak hedefi söyler." },
+                { "language": "ru", "text": "Хорошее резюме: оно называет обе роли, время и общую цель." },
+                { "language": "ckb", "text": "پوختەی باش: ڕۆڵی هەردوو کەس، کاتەکان و ئامانجی هاوبەش دەڵێت." },
+                { "language": "kmr", "text": "Kurtasiya baş: her du rolan, deman û armanca hevpar dibêje." },
+                { "language": "pl", "text": "Dobre podsumowanie: podaje obie role, godziny i wspólny cel." },
+                { "language": "ro", "text": "Rezumat bun: numește ambele roluri, orele și scopul comun." },
+                { "language": "sq", "text": "Përmbledhje e mirë: tregon të dy rolet, oraret dhe qëllimin e përbashkët." }
+              ],
+              "explanationKey": "repair-summary"
+            },
+            {
+              "id": "missing-review",
+              "text": "Ja, ich mache den Entwurf bis 12:30 Uhr.",
+              "translations": [
+                { "language": "en", "text": "Yes, I will do the draft by 12:30." },
+                { "language": "fa", "text": "بله، پیش‌نویس را تا ساعت ۱۲:۳۰ انجام می‌دهم." },
+                { "language": "ar", "text": "نعم، سأعد المسودة حتى 12:30." },
+                { "language": "tr", "text": "Evet, taslağı 12:30'a kadar yaparım." },
+                { "language": "ru", "text": "Да, я сделаю черновик до 12:30." },
+                { "language": "ckb", "text": "بەڵێ، ڕەشنووسەکە تا کاتژمێر ١٢:٣٠ دەکەم." },
+                { "language": "kmr", "text": "Erê, ez ê pêşnivîsê heta saet 12:30 bikim." },
+                { "language": "pl", "text": "Tak, zrobię szkic do 12:30." },
+                { "language": "ro", "text": "Da, fac draftul până la 12:30." },
+                { "language": "sq", "text": "Po, do ta bëj draftin deri në 12:30." }
+              ],
+              "isCorrect": false,
+              "feedback": "Fast richtig, aber unvollständig: Die Prüfung durch die Kollegin und die finale Frist fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Almost right, but incomplete: the colleague's review and the final deadline are missing." },
+                { "language": "fa", "text": "تقریباً درست است، اما ناقص است: بررسی همکار و مهلت نهایی کم است." },
+                { "language": "ar", "text": "قريبة من الصحيح، لكنها ناقصة: مراجعة الزميلة والموعد النهائي غير مذكورين." },
+                { "language": "tr", "text": "Neredeyse doğru, ama eksik: iş arkadaşının kontrolü ve son teslim saati eksik." },
+                { "language": "ru", "text": "Почти правильно, но неполно: не хватает проверки коллегой и финального срока." },
+                { "language": "ckb", "text": "نزیکە لە ڕاست، بەڵام ناتەواوە: پشکنینی هاوکارەکە و کاتی کۆتایی کەمە." },
+                { "language": "kmr", "text": "Nêzî rast e, lê kêm e: kontrola hevkarê û dema dawî kêm in." },
+                { "language": "pl", "text": "Prawie dobrze, ale niepełne: brakuje sprawdzenia przez koleżankę i finalnego terminu." },
+                { "language": "ro", "text": "Aproape corect, dar incomplet: lipsesc verificarea colegei și termenul final." },
+                { "language": "sq", "text": "Pothuajse e saktë, por e paplotë: mungon kontrolli nga kolegia dhe afati final." }
+              ],
+              "explanationKey": "missing-review-final-deadline"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "model-answer",
+          "text": "Bei Missverständnissen ist eine gute B1-Antwort ruhig und lösungsorientiert: eigenes Verständnis erklären, Frist beachten und neue Aufgaben klar zusammenfassen.",
+          "translations": [
+            { "language": "en", "text": "With misunderstandings, a good B1 answer is calm and solution-oriented: explain your own understanding, respect the deadline, and clearly summarize the new tasks." },
+            { "language": "fa", "text": "در سوءتفاهم‌ها، پاسخ خوب B1 آرام و راه‌حل‌محور است: برداشت خودت را توضیح بده، مهلت را رعایت کن و وظایف جدید را روشن جمع‌بندی کن." },
+            { "language": "ar", "text": "في سوء الفهم، إجابة B1 الجيدة تكون هادئة وموجهة نحو الحل: اشرح فهمك، راعِ الموعد، ولخص المهام الجديدة بوضوح." },
+            { "language": "tr", "text": "Yanlış anlaşılmalarda iyi bir B1 cevabı sakin ve çözüm odaklıdır: kendi anladığını açıkla, süreye dikkat et ve yeni görevleri net özetle." },
+            { "language": "ru", "text": "При недоразумениях хороший ответ B1 спокоен и ориентирован на решение: объяснить свое понимание, учесть срок и ясно подвести новые задачи." },
+            { "language": "ckb", "text": "لە تێنەگەیشتنەکاندا، وەڵامی باشی B1 ئارام و چارەسەرخوازە: تێگەیشتنی خۆت ڕوون بکەوە، مۆڵەتەکە لەبەرچاو بگرە و ئەرکە نوێیەکان بەڕوونی کۆبکەوە." },
+            { "language": "kmr", "text": "Di şaşfêmkirinan de, bersiva baş a B1 aram û çareserî-berçav e: fêmkirina xwe rave bike, demê dawî bibîne û karên nû zelal kom bike." },
+            { "language": "pl", "text": "Przy nieporozumieniach dobra odpowiedź B1 jest spokojna i nastawiona na rozwiązanie: wyjaśnij swoje rozumienie, uwzględnij termin i jasno podsumuj nowe zadania." },
+            { "language": "ro", "text": "În neînțelegeri, un răspuns bun B1 este calm și orientat spre soluție: explică ce ai înțeles, respectă termenul și rezumă clar sarcinile noi." },
+            { "language": "sq", "text": "Në keqkuptime, një përgjigje e mirë B1 është e qetë dhe e orientuar drejt zgjidhjes: shpjego kuptimin tënd, respekto afatin dhe përmblidh qartë detyrat e reja." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

@@ -15,7 +15,7 @@ Exercise definitions are imported through the existing content package format un
   "packageVersion": "1.0",
   "packageId": "exercise-sample",
   "packageName": "Exercise Sample",
-  "defaultMeaningLanguages": ["en"],
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
   "entries": [],
   "exercises": [],
   "exerciseSets": []
@@ -27,6 +27,17 @@ Exercise definitions are imported through the existing content package format un
 Required: `slug`, `title`, `instruction`, `cefrLevel`, `exerciseType`, `targetSkill`, `ownerType`, `prompt`, `answerKey`, `correctExplanation`, `incorrectExplanation`.
 
 Optional: `ownerSlug`, `hint`, `commonMistakeNote`, `isPublished`, `sortOrder`.
+
+Learner helper translations are optional at the schema level but required for reviewed multilingual packages:
+
+- `titleTranslations`
+- `instructionTranslations`
+- `correctExplanationTranslations`
+- `incorrectExplanationTranslations`
+- `hintTranslations`
+- `commonMistakeNoteTranslations`
+
+Each translation item uses `{ "language": "...", "text": "..." }`. Languages must be active learner meaning languages, duplicate language entries are rejected, and non-English fields must not be English fallback. The German source fields remain canonical and must not be replaced by localized helper text.
 
 ## Supported Types
 
@@ -58,13 +69,22 @@ The Web runner must never expose `answerKey` before submission. It receives only
 
 Exercise sets require `slug`, `title`, `description`, `cefrLevel`, `ownerType`, and `exerciseSlugs`.
 
+Reviewed multilingual exercise sets should also include:
+
+- `titleTranslations`
+- `descriptionTranslations`
+
+The importer rejects empty exercise sets and unknown exercise slugs inside the same package. Admin reports flag unresolved persisted set items, unpublished drafts, missing translations, malformed prompt/answer-key JSON, and missing explanations.
+
 ## Minimal Example
 
 ```json
 {
   "slug": "a1-article-der",
-  "title": "Choose the article",
-  "instruction": "Choose the correct article.",
+  "title": "Den Artikel wählen",
+  "titleTranslations": [{ "language": "en", "text": "Choose the article" }],
+  "instruction": "Wähle den richtigen Artikel.",
+  "instructionTranslations": [{ "language": "en", "text": "Choose the correct article." }],
   "cefrLevel": "A1",
   "exerciseType": "article-selection",
   "targetSkill": "grammar",
@@ -81,12 +101,15 @@ Exercise sets require `slug`, `title`, `description`, `cefrLevel`, `ownerType`, 
   "answerKey": {
     "correctOptionIds": ["der"]
   },
-  "correctExplanation": "Der Kaffee is masculine.",
-  "incorrectExplanation": "Review article gender for common nouns.",
-  "hint": "Kaffee is masculine."
+  "correctExplanation": "Es heißt: der Kaffee.",
+  "correctExplanationTranslations": [{ "language": "en", "text": "The correct form is: der Kaffee." }],
+  "incorrectExplanation": "Kaffee ist maskulin: der Kaffee.",
+  "incorrectExplanationTranslations": [{ "language": "en", "text": "Kaffee is masculine: der Kaffee." }],
+  "hint": "Kaffee ist maskulin.",
+  "hintTranslations": [{ "language": "en", "text": "Kaffee is masculine." }]
 }
 ```
 
 ## Content Generation Rule
 
-Bulk exercise content generation must not start until implementation, validation, Web API, Web rendering, admin visibility, and release tests are stable.
+Bulk exercise content generation must not start until implementation, validation, Web API, Web rendering, admin visibility, and release tests are stable. The first reviewed Exercise package now validates and imports with multilingual helper translations; future Exercise content should remain small-batch and German-first.

@@ -1,0 +1,723 @@
+{
+  "packageId": "roleplays-c2-core-57-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 57 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 57",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-goethe-c2-eine-literarische-position-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Goethe C2 eine literarische Position diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing a literary position in Goethe C2" },
+        { "language": "fa", "text": "بحث درباره یک موضع ادبی در Goethe C2" },
+        { "language": "ar", "text": "مناقشة موقف أدبي في Goethe C2" },
+        { "language": "tr", "text": "Goethe C2'de edebi bir görüşü tartışmak" },
+        { "language": "ru", "text": "Обсуждение литературной позиции на Goethe C2" },
+        { "language": "ckb", "text": "گفتوگۆکردن لەسەر هەڵوێستێکی ئەدەبی لە Goethe C2" },
+        { "language": "kmr", "text": "Li Goethe C2 li ser helwesteke edebî gotûbêj kirin" },
+        { "language": "pl", "text": "Omawianie stanowiska literackiego na Goethe C2" },
+        { "language": "ro", "text": "Discutarea unei poziții literare la Goethe C2" },
+        { "language": "sq", "text": "Diskutimi i një qëndrimi letrar në Goethe C2" }
+      ],
+      "description": "In einer mündlichen C2-Prüfung vertreten Sie eine Deutung zu einem literarischen Textausschnitt. Die prüfende Person stellt eine Gegenposition vor. Sie sollen Ihre These präzisieren, Textbeobachtungen nennen, eine alternative Lesart fair aufnehmen und am Ende eine differenzierte Bewertung formulieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral C2 exam, you present an interpretation of a literary passage. The examiner introduces a counter-position. You need to refine your thesis, name textual observations, respond fairly to an alternative reading, and finish with a nuanced evaluation." },
+        { "language": "fa", "text": "در آزمون شفاهی C2، شما تفسیری از یک بخش ادبی ارائه می‌دهید. ممتحن یک دیدگاه مخالف مطرح می‌کند. باید تز خود را دقیق‌تر کنید، مشاهده‌های متنی بیاورید، به خوانش جایگزین منصفانه پاسخ دهید و در پایان ارزیابی ظریفی ارائه کنید." },
+        { "language": "ar", "text": "في اختبار شفهي C2 تعرضون تفسيرًا لمقطع أدبي. يطرح الممتحن موقفًا مقابلًا. عليكم أن تدققوا أطروحتكم، وتذكروا ملاحظات من النص، وتتعاملوا بإنصاف مع قراءة بديلة، ثم تختموا بتقييم متمايز." },
+        { "language": "tr", "text": "Sözlü C2 sınavında edebi bir metin parçası için bir yorum sunarsınız. Sınav görevlisi karşı bir görüş getirir. Tezinizi keskinleştirmeniz, metinsel gözlemler belirtmeniz, alternatif bir okumaya adil yanıt vermeniz ve sonunda ayrıntılı bir değerlendirme yapmanız gerekir." },
+        { "language": "ru", "text": "На устном экзамене C2 вы представляете толкование литературного отрывка. Экзаменатор выдвигает встречную позицию. Нужно уточнить тезис, назвать наблюдения по тексту, честно ответить на другую трактовку и завершить дифференцированной оценкой." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی زارەکی C2 دا، لێکدانەوەیەک بۆ پارچەیەکی ئەدەبی پێشکەش دەکەیت. تاقیکەرەوە هەڵوێستێکی بەرامبەر دەخاتەڕوو. پێویستە تێزەکەت وردتر بکەیت، تێبینییەکانی دەق ناوببەیت، بە دادپەروەری وەڵامی خوێندنەوەیەکی جێگرەوە بدەیتەوە و لە کۆتاییدا هەڵسەنگاندنێکی جیاوازکراوە بدەیت." },
+        { "language": "kmr", "text": "Di ezmûna devkî ya C2 de hûn şîroveyekê ji bo perçeyekî edebî pêşkêş dikin. Kesê ezmûnê helwesteke dijber tîne. Divê tezê xwe zelaltir bikin, çavdêriyên nivîsê nav bikin, bi edalet bersiva xwendineke din bidin û di dawiyê de nirxandineke cuda û hûr bikin." },
+        { "language": "pl", "text": "Na ustnym egzaminie C2 przedstawiasz interpretację fragmentu literackiego. Egzaminator podaje kontrargument. Trzeba doprecyzować tezę, wskazać obserwacje z tekstu, uczciwie odnieść się do innej lektury i zakończyć zniuansowaną oceną." },
+        { "language": "ro", "text": "La un examen oral C2 prezentați o interpretare a unui fragment literar. Examinatorul introduce o poziție opusă. Trebuie să vă precizați teza, să numiți observații din text, să răspundeți corect unei lecturi alternative și să încheiați cu o evaluare nuanțată." },
+        { "language": "sq", "text": "Në një provim me gojë C2 paraqisni një interpretim të një pjese letrare. Ekzaminuesi sjell një qëndrim kundër. Duhet ta saktësoni tezën, të përmendni vëzhgime nga teksti, t'i përgjigjeni drejt një leximi tjetër dhe të mbyllni me një vlerësim të nuancuar." }
+      ],
+      "learnerGoal": "Eine literarische Deutung in einer C2-Prüfung vertreten: These einschränken, Textbelege ohne Überdeutung nutzen, eine Gegenposition fair aufnehmen, zwischen psychologischer und gesellschaftlicher Lesart abwägen und mit einer präzisen Schlussbewertung enden.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Defend a literary interpretation in a C2 exam: limit the thesis, use textual evidence without over-reading, respond fairly to a counter-position, weigh psychological and social readings, and end with a precise final evaluation." },
+        { "language": "fa", "text": "در آزمون C2 از یک تفسیر ادبی دفاع کنید: تز را محدود کنید، از شواهد متنی بدون زیاده‌خوانی استفاده کنید، به دیدگاه مخالف منصفانه پاسخ دهید، خوانش روان‌شناختی و اجتماعی را بسنجید و با یک ارزیابی پایانی دقیق تمام کنید." },
+        { "language": "ar", "text": "دافعوا عن تفسير أدبي في اختبار C2: حدّدوا الأطروحة، واستعملوا أدلة نصية من دون مبالغة في التأويل، وتعاملوا بإنصاف مع موقف مقابل، ووازنوا بين القراءة النفسية والاجتماعية، واختموا بتقييم دقيق." },
+        { "language": "tr", "text": "C2 sınavında edebi bir yorumu savunun: tezi sınırlandırın, metinsel kanıtı aşırı yorumlamadan kullanın, karşı görüşe adil yanıt verin, psikolojik ve toplumsal okumayı tartın ve kesin bir son değerlendirmeyle bitirin." },
+        { "language": "ru", "text": "Защитить литературную интерпретацию на экзамене C2: ограничить тезис, использовать текстовые аргументы без чрезмерного толкования, честно ответить встречной позиции, взвесить психологическое и социальное чтение и завершить точной итоговой оценкой." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی C2 دا بەرگری لە لێکدانەوەیەکی ئەدەبی بکە: تێزەکە سنووردار بکە، بەڵگەی دەق بەبێ زیادەڕۆیی بەکاربهێنە، بە دادپەروەری وەڵامی هەڵوێستی بەرامبەر بدەوە، خوێندنەوەی دەروونی و کۆمەڵایەتی هەڵبسەنگێنە و بە هەڵسەنگاندنێکی ورد کۆتایی پێبهێنە." },
+        { "language": "kmr", "text": "Di ezmûna C2 de parastina şîroveyeke edebî bikin: tezê sînor bikin, belgeyên nivîsê bê zêdeşîrove bikar bînin, bi edalet bersiva helwesta dijber bidin, xwendina derûnî û civakî bitevînin û bi nirxandineke dawî ya rast biqedînin." },
+        { "language": "pl", "text": "Obronić interpretację literacką na egzaminie C2: zawęzić tezę, użyć dowodów z tekstu bez nadinterpretacji, uczciwie odpowiedzieć na kontrargument, zważyć lekturę psychologiczną i społeczną oraz zakończyć precyzyjną oceną." },
+        { "language": "ro", "text": "Susțineți o interpretare literară la examenul C2: limitați teza, folosiți dovezi din text fără supra-interpretare, răspundeți corect unei poziții opuse, cântăriți lectura psihologică și socială și încheiați cu o evaluare finală precisă." },
+        { "language": "sq", "text": "Mbroni një interpretim letrar në provimin C2: kufizoni tezën, përdorni prova nga teksti pa tejinterpretim, përgjigjuni drejt një qëndrimi kundër, peshoni leximin psikologjik dhe shoqëror dhe mbyllni me një vlerësim të saktë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["goethe-c2"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "exam-discussion",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 57,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kandidat/in",
+          "translations": [
+            { "language": "en", "text": "Candidate" },
+            { "language": "fa", "text": "داوطلب" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Aday" },
+            { "language": "ru", "text": "Кандидат" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Namzed" },
+            { "language": "pl", "text": "Kandydat" },
+            { "language": "ro", "text": "Candidat" },
+            { "language": "sq", "text": "Kandidati" }
+          ]
+        },
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfende Person",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الفاحص" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Kesê ezmûnê" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Sie vertreten die These, dass die Erzählerin nicht einfach unzuverlässig ist, sondern dass ihre Unsicherheit bewusst als Stilmittel eingesetzt wird. Können Sie das begründen?",
+          "translations": [
+            { "language": "en", "text": "You argue that the narrator is not simply unreliable, but that her uncertainty is deliberately used as a stylistic device. Can you justify that?" },
+            { "language": "fa", "text": "شما این تز را مطرح می‌کنید که راوی فقط غیرقابل اعتماد نیست، بلکه نااطمینانی او آگاهانه به‌عنوان شگرد سبکی به کار می‌رود. می‌توانید آن را توجیه کنید؟" },
+            { "language": "ar", "text": "تدافعون عن أطروحة أن الراوية ليست غير موثوقة ببساطة، بل إن عدم يقينها يُستخدم عمدًا كوسيلة أسلوبية. هل يمكنكم تبرير ذلك؟" },
+            { "language": "tr", "text": "Anlatıcının sadece güvenilmez olmadığını, belirsizliğinin bilinçli olarak üslup aracı şeklinde kullanıldığını savunuyorsunuz. Bunu gerekçelendirebilir misiniz?" },
+            { "language": "ru", "text": "Вы утверждаете, что рассказчица не просто ненадежна, а ее неуверенность сознательно используется как стилистический прием. Можете это обосновать?" },
+            { "language": "ckb", "text": "تۆ ئەو تێزە پشتیوانی دەکەیت کە گێڕەرەوەکە تەنها متمانەپێنەکراو نییە، بەڵکو نادڵنیاییەکەی بە ئاگایی وەک ئامرازێکی شێوازی بەکاردەهێنرێت. دەتوانیت ئەمە پاساو بدەیت؟" },
+            { "language": "kmr", "text": "Hûn dibêjin ku vegêr ne tenê bêbawer e, lê bêewlehiya wê bi zanebûn wek amûrekî şêwazî tê bikaranîn. Hûn dikarin vê rewa bikin?" },
+            { "language": "pl", "text": "Stawia Pan/Pani tezę, że narratorka nie jest po prostu niewiarygodna, lecz jej niepewność jest świadomie użyta jako środek stylistyczny. Czy może Pan/Pani to uzasadnić?" },
+            { "language": "ro", "text": "Susțineți teza că naratoarea nu este pur și simplu nesigură ca sursă, ci că incertitudinea ei este folosită intenționat ca procedeu stilistic. Puteți justifica acest lucru?" },
+            { "language": "sq", "text": "Ju mbroni tezën se rrëfimtarja nuk është thjesht jo e besueshme, por pasiguria e saj përdoret qëllimisht si mjet stilistik. A mund ta arsyetoni këtë?" }
+          ],
+          "function": "challenge-thesis",
+          "toneNote": "Formal exam challenge; the learner should narrow the thesis before defending it.",
+          "expectedLearnerAction": "Limit the claim and explain the interpretive function of uncertainty."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die These bewusst einschränken: Die Unsicherheit ist nicht einfach eine Schwäche der Figur, sondern ein Verfahren des Textes. Gerade die Leerstellen zwingen die Lesenden, zwischen innerem Druck und äußerer Erwartung zu unterscheiden.",
+          "translations": [
+            { "language": "en", "text": "I would deliberately limit the thesis: the uncertainty is not simply a weakness of the character, but a textual procedure. The gaps in particular force readers to distinguish between inner pressure and external expectation." },
+            { "language": "fa", "text": "من عمداً تز را محدود می‌کنم: نااطمینانی فقط ضعف شخصیت نیست، بلکه روشی در متن است. دقیقاً همین جاهای خالی خوانندگان را وادار می‌کند بین فشار درونی و انتظار بیرونی تفاوت بگذارند." },
+            { "language": "ar", "text": "سأقيّد الأطروحة عن قصد: عدم اليقين ليس مجرد ضعف في الشخصية، بل هو إجراء نصي. والفجوات تحديدًا تجبر القراء على التمييز بين ضغط داخلي وتوقع خارجي." },
+            { "language": "tr", "text": "Tezi bilinçli olarak sınırlandırırdım: belirsizlik yalnızca figürün zayıflığı değil, metnin bir yöntemidir. Özellikle boşluklar okurları iç baskı ile dış beklentiyi ayırmaya zorlar." },
+            { "language": "ru", "text": "Я бы сознательно ограничил тезис: неуверенность не просто слабость персонажа, а прием текста. Именно лакуны заставляют читателей различать внутреннее давление и внешнее ожидание." },
+            { "language": "ckb", "text": "من بە ئاگایی تێزەکە سنووردار دەکەم: نادڵنیایی تەنها لاوازیی کارەکتەرەکە نییە، بەڵکو ڕێکارێکی دەقەکەیە. بە تایبەتی بۆشاییەکان خوێنەران ناچار دەکەن جیاوازی لە نێوان فشارێکی ناوخۆیی و چاوەڕوانیی دەرەکی بکەن." },
+            { "language": "kmr", "text": "Ez ê tezê bi zanebûn sînor bikim: bêewlehî ne tenê lawaziya karakterê ye, lê rêbazeke nivîsê ye. Bi taybetî valahî xwendevanan neçar dikin ku di navbera zexta hundirîn û hêviya derveyî de cudahî bikin." },
+            { "language": "pl", "text": "Świadomie zawęziłbym/zawęziłabym tezę: niepewność nie jest po prostu słabością postaci, lecz zabiegiem tekstu. Właśnie luki zmuszają czytelników do odróżnienia presji wewnętrznej od oczekiwań zewnętrznych." },
+            { "language": "ro", "text": "Aș limita intenționat teza: incertitudinea nu este doar o slăbiciune a personajului, ci un procedeu al textului. Tocmai golurile îi obligă pe cititori să distingă între presiunea interioară și așteptarea exterioară." },
+            { "language": "sq", "text": "Do ta kufizoja qëllimisht tezën: pasiguria nuk është thjesht dobësi e personazhit, por një procedurë e tekstit. Pikërisht boshllëqet i detyrojnë lexuesit të dallojnë mes presionit të brendshëm dhe pritjes së jashtme." }
+          ],
+          "function": "defend-limited-thesis",
+          "toneNote": "Academic but concise; the claim is strong because it is limited.",
+          "expectedLearnerAction": "State a qualified thesis and name its textual function."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "examiner",
+          "baseText": "Eine Gegenposition wäre: Das ist überinterpretiert. Die Figur sagt schlicht nicht klar, was sie will. Wie reagieren Sie darauf?",
+          "translations": [
+            { "language": "en", "text": "A counter-position would be: that is over-interpreted. The character simply does not say clearly what she wants. How do you respond?" },
+            { "language": "fa", "text": "یک دیدگاه مخالف این است: این بیش از حد تفسیر شده است. شخصیت به‌سادگی روشن نمی‌گوید چه می‌خواهد. شما چطور پاسخ می‌دهید؟" },
+            { "language": "ar", "text": "سيكون الموقف المقابل: هذا تأويل زائد. الشخصية ببساطة لا تقول بوضوح ماذا تريد. كيف تردون؟" },
+            { "language": "tr", "text": "Karşı görüş şu olabilir: Bu aşırı yorum. Figür ne istediğini açıkça söylemiyor, o kadar. Buna nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Встречная позиция могла бы звучать так: это чрезмерное толкование. Персонаж просто не говорит ясно, чего хочет. Как вы на это ответите?" },
+            { "language": "ckb", "text": "هەڵوێستی بەرامبەر ئەمە دەبێت: ئەمە زیادە لێکدراوەتەوە. کارەکتەرەکە بە سادەیی ڕوون ناڵێت چی دەوێت. چۆن وەڵام دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Helwesta dijber dikare ev be: ev zêde tê şîrovekirin. Karakter bi sadehî zelal nabêje ka çi dixwaze. Hûn çawa bersiv didin?" },
+            { "language": "pl", "text": "Kontrargument brzmiałby: to nadinterpretacja. Postać po prostu nie mówi jasno, czego chce. Jak Pan/Pani na to odpowie?" },
+            { "language": "ro", "text": "O poziție opusă ar fi: aceasta este supra-interpretare. Personajul pur și simplu nu spune clar ce vrea. Cum răspundeți?" },
+            { "language": "sq", "text": "Një qëndrim kundër do të ishte: kjo është tejinterpretim. Personazhi thjesht nuk thotë qartë çfarë do. Si përgjigjeni?" }
+          ],
+          "function": "introduce-counter-position",
+          "toneNote": "The examiner tests whether the learner can handle objection without defensiveness.",
+          "expectedLearnerAction": "Acknowledge the objection and show why it does not fully explain the text."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Diesen Einwand nehme ich ernst, aber er greift mir zu kurz. Dass die Figur nicht klar spricht, ist zunächst eine Beobachtung; die Deutung beginnt erst bei der Frage, warum diese Unklarheit im Text so konsequent wiederkehrt.",
+          "translations": [
+            { "language": "en", "text": "I take that objection seriously, but I find it too limited. The fact that the character does not speak clearly is first an observation; interpretation begins only with the question of why this lack of clarity returns so consistently in the text." },
+            { "language": "fa", "text": "این ایراد را جدی می‌گیرم، اما به نظرم کافی نیست. اینکه شخصیت روشن حرف نمی‌زند ابتدا یک مشاهده است؛ تفسیر تازه از جایی شروع می‌شود که بپرسیم چرا این ابهام در متن این‌قدر پیوسته تکرار می‌شود." },
+            { "language": "ar", "text": "آخذ هذا الاعتراض بجدية، لكنه يبدو لي محدودًا. أن الشخصية لا تتكلم بوضوح هو أولًا ملاحظة؛ أما التفسير فيبدأ بسؤال لماذا يعود هذا الغموض في النص بهذا الاتساق." },
+            { "language": "tr", "text": "Bu itirazı ciddiye alıyorum, ama bana göre dar kalıyor. Figürün açık konuşmaması önce bir gözlemdir; yorum ancak bu belirsizliğin metinde neden bu kadar tutarlı döndüğü sorusuyla başlar." },
+            { "language": "ru", "text": "Я воспринимаю это возражение серьезно, но считаю его слишком узким. То, что персонаж не говорит ясно, сначала является наблюдением; интерпретация начинается с вопроса, почему эта неясность так последовательно возвращается в тексте." },
+            { "language": "ckb", "text": "من ئەو ڕەخنەیە بە جدی وەردەگرم، بەڵام پێم وایە زۆر کورتە. ئەوەی کارەکتەرەکە ڕوون قسە ناکات سەرەتا تێبینییەکە؛ لێکدانەوە تەنها کاتێک دەست پێدەکات کە بپرسین بۆچی ئەم ناڕوونییە بەو ڕێکخراوییە لە دەقەکەدا دەگەڕێتەوە." },
+            { "language": "kmr", "text": "Ez vê îtirazê cidî digirim, lê li gorî min ew teng dimîne. Ew ku karakter zelal napeyive pêşî çavdêriyeke ye; şîrove tenê bi pirsa ku çima ev nezelalî di nivîsê de bi vî awayî domdar vedigere dest pê dike." },
+            { "language": "pl", "text": "Traktuję ten zarzut poważnie, ale uważam go za zbyt wąski. To, że postać nie mówi jasno, jest najpierw obserwacją; interpretacja zaczyna się dopiero od pytania, dlaczego ta niejasność tak konsekwentnie powraca w tekście." },
+            { "language": "ro", "text": "Iau în serios această obiecție, dar mi se pare prea limitată. Faptul că personajul nu vorbește clar este mai întâi o observație; interpretarea începe abia cu întrebarea de ce această neclaritate revine atât de consecvent în text." },
+            { "language": "sq", "text": "E marr seriozisht këtë kundërshtim, por më duket i kufizuar. Fakti që personazhi nuk flet qartë është fillimisht një vëzhgim; interpretimi fillon vetëm me pyetjen pse kjo paqartësi kthehet kaq vazhdimisht në tekst." }
+          ],
+          "function": "answer-counter-position",
+          "toneNote": "Respectful disagreement with a precise distinction between observation and interpretation.",
+          "expectedLearnerAction": "Accept the objection partly and move it to a deeper interpretive question."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Welche konkreten Textsignale würden Sie nennen, ohne den Ausschnitt mit Bedeutung zu überfrachten?",
+          "translations": [
+            { "language": "en", "text": "Which specific textual signals would you name without overloading the passage with meaning?" },
+            { "language": "fa", "text": "کدام نشانه‌های مشخص متنی را نام می‌برید، بدون اینکه بخش متن را با معناهای اضافی سنگین کنید؟" },
+            { "language": "ar", "text": "ما الإشارات النصية المحددة التي تذكرونها من دون تحميل المقطع معاني زائدة؟" },
+            { "language": "tr", "text": "Metin parçasına fazla anlam yüklemeden hangi somut metin işaretlerini belirtirsiniz?" },
+            { "language": "ru", "text": "Какие конкретные сигналы текста вы бы назвали, не перегружая отрывок смыслом?" },
+            { "language": "ckb", "text": "کام نیشانە دیاریکراوەکانی دەق ناودەبەیت، بەبێ ئەوەی پارچەکە بە واتای زیادە قورس بکەیت؟" },
+            { "language": "kmr", "text": "Hûn ê kîjan nîşaneyên şênber ên nivîsê nav bikin bê ku perçeyê bi wateyên zêde giran bikin?" },
+            { "language": "pl", "text": "Jakie konkretne sygnały tekstowe Pan/Pani wskaże, nie obciążając fragmentu nadmiarem znaczeń?" },
+            { "language": "ro", "text": "Ce semnale concrete din text ați numi fără să încărcați fragmentul cu sensuri prea multe?" },
+            { "language": "sq", "text": "Cilat sinjale konkrete të tekstit do të përmendnit pa e rënduar fragmentin me kuptime të tepërta?" }
+          ],
+          "function": "request-textual-evidence",
+          "toneNote": "The examiner asks for evidence discipline.",
+          "expectedLearnerAction": "Give limited evidence categories and avoid inventing unsupported meaning."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde drei Signale nennen: die indirekten Formulierungen, die wiederholten Selbstkorrekturen und den offenen Schluss. Zusammen stützen sie keine fertige Diagnose, sondern eine Lesart, in der Ambivalenz als Strukturprinzip wirkt.",
+          "translations": [
+            { "language": "en", "text": "I would name three signals: the indirect formulations, the repeated self-corrections, and the open ending. Together they do not support a finished diagnosis, but a reading in which ambivalence works as a structural principle." },
+            { "language": "fa", "text": "من سه نشانه را نام می‌برم: فرمول‌بندی‌های غیرمستقیم، خوداصلاحی‌های تکراری و پایان باز. این‌ها با هم یک تشخیص آماده را پشتیبانی نمی‌کنند، بلکه خوانشی را تقویت می‌کنند که در آن دوگانگی به‌عنوان اصل ساختاری عمل می‌کند." },
+            { "language": "ar", "text": "سأذكر ثلاث إشارات: الصيغ غير المباشرة، والتصحيحات الذاتية المتكررة، والنهاية المفتوحة. وهي معًا لا تدعم تشخيصًا جاهزًا، بل قراءة تعمل فيها الازدواجية كمبدأ بنيوي." },
+            { "language": "tr", "text": "Üç işaret söylerdim: dolaylı ifadeler, tekrarlanan öz-düzeltmeler ve açık son. Bunlar birlikte hazır bir teşhisi değil, ikircikliliğin yapı ilkesi olarak işlediği bir okumayı destekler." },
+            { "language": "ru", "text": "Я бы назвал три сигнала: косвенные формулировки, повторные самокоррекции и открытый финал. Вместе они поддерживают не готовый диагноз, а чтение, в котором амбивалентность действует как структурный принцип." },
+            { "language": "ckb", "text": "من سێ نیشانە ناودەبەم: دەربڕینە ناڕاستەوخۆکان، خۆڕاستکردنەوە دووبارەکان و کۆتایی کراوە. ئەمانە پێکەوە دەستگیری دەستنیشانکردنێکی ئامادە ناکەن، بەڵکو خوێندنەوەیەک بەهێز دەکەن کە تێیدا دووڕوویی وەک بنەمایەکی پێکهاتەیی کاردەکات." },
+            { "language": "kmr", "text": "Ez ê sê nîşan nav bikim: gotinên nerasterast, xwe-sererastkirinên dubare û dawiyeke vekirî. Ew bi hev re ne teşhîseke amade piştgirî dikin, lê xwendineke ku tê de ambîvalans wek prensîpeke avahî dixebite." },
+            { "language": "pl", "text": "Wskazałbym/wskazałabym trzy sygnały: pośrednie sformułowania, powtarzające się autokorekty i otwarte zakończenie. Razem nie wspierają gotowej diagnozy, lecz lekturę, w której ambiwalencja działa jako zasada konstrukcyjna." },
+            { "language": "ro", "text": "Aș numi trei semnale: formulările indirecte, autocorectările repetate și finalul deschis. Împreună ele nu susțin un diagnostic gata făcut, ci o lectură în care ambivalența funcționează ca principiu structural." },
+            { "language": "sq", "text": "Do të përmendja tre sinjale: formulimet e tërthorta, vetëkorrigjimet e përsëritura dhe fundin e hapur. Së bashku ato nuk mbështesin një diagnozë të gatshme, por një lexim ku ambivalenca vepron si parim strukturor." }
+          ],
+          "function": "provide-evidence",
+          "toneNote": "Evidence is concrete but not overloaded.",
+          "expectedLearnerAction": "Name three evidence categories and explain their shared function."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "examiner",
+          "baseText": "Sehen Sie den Schwerpunkt eher in einer psychologischen Darstellung oder in einer gesellschaftlichen Kritik?",
+          "translations": [
+            { "language": "en", "text": "Do you see the main focus more in a psychological portrayal or in social criticism?" },
+            { "language": "fa", "text": "تمرکز اصلی را بیشتر در تصویرپردازی روان‌شناختی می‌بینید یا در نقد اجتماعی؟" },
+            { "language": "ar", "text": "هل ترون أن التركيز الأساسي أقرب إلى تصوير نفسي أم إلى نقد اجتماعي؟" },
+            { "language": "tr", "text": "Ana odağı daha çok psikolojik bir betimlemede mi yoksa toplumsal eleştiride mi görüyorsunuz?" },
+            { "language": "ru", "text": "Вы видите главный акцент скорее в психологическом изображении или в социальной критике?" },
+            { "language": "ckb", "text": "تۆ گرنگترین قورسایی زیاتر لە وێنەکردنی دەروونی دەبینیت یان لە ڕەخنەی کۆمەڵایەتی؟" },
+            { "language": "kmr", "text": "Hûn giraniya sereke zêdetir di wênekirineke derûnî de dibînin an di rexneyeke civakî de?" },
+            { "language": "pl", "text": "Czy widzi Pan/Pani główny akcent raczej w portrecie psychologicznym, czy w krytyce społecznej?" },
+            { "language": "ro", "text": "Vedeți accentul principal mai degrabă într-o reprezentare psihologică sau într-o critică socială?" },
+            { "language": "sq", "text": "A e shihni theksin kryesor më shumë në një paraqitje psikologjike apo në një kritikë shoqërore?" }
+          ],
+          "function": "ask-evaluation",
+          "toneNote": "The examiner asks for weighting, not a simple either/or.",
+          "expectedLearnerAction": "Weigh both readings and choose a dominant emphasis with qualification."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde beides verbinden, aber nicht gleich gewichten. Psychologisch zeigt der Text eine verunsicherte Wahrnehmung; gesellschaftlich fragt er, welche Erwartungen diese Verunsicherung überhaupt erzeugen. Die Kritik bleibt dadurch indirekt, aber gerade deshalb wirksam.",
+          "translations": [
+            { "language": "en", "text": "I would connect both, but not weight them equally. Psychologically, the text shows an unsettled perception; socially, it asks which expectations produce that uncertainty in the first place. The criticism therefore remains indirect, but precisely for that reason it is effective." },
+            { "language": "fa", "text": "من هر دو را به هم وصل می‌کنم، اما وزن برابر به آن‌ها نمی‌دهم. از نظر روان‌شناختی متن ادراکی ناآرام را نشان می‌دهد؛ از نظر اجتماعی می‌پرسد اصلاً کدام انتظارها این نااطمینانی را ایجاد می‌کنند. به همین دلیل نقد غیرمستقیم می‌ماند، اما دقیقاً به همین دلیل اثرگذار است." },
+            { "language": "ar", "text": "سأربط بين الأمرين، لكنني لن أعطيهما الوزن نفسه. نفسيًا يُظهر النص إدراكًا مضطربًا؛ واجتماعيًا يسأل أي توقعات تنتج هذا الاضطراب أصلًا. لذلك يبقى النقد غير مباشر، لكنه مؤثر تحديدًا لهذا السبب." },
+            { "language": "tr", "text": "İkisini bağlardım, ama eşit ağırlık vermezdim. Psikolojik olarak metin sarsılmış bir algı gösterir; toplumsal olarak ise bu belirsizliği en başta hangi beklentilerin ürettiğini sorar. Eleştiri bu yüzden dolaylı kalır, ama tam da bu nedenle etkili olur." },
+            { "language": "ru", "text": "Я бы связал оба аспекта, но не придал им одинаковый вес. Психологически текст показывает нарушенное восприятие; социально он спрашивает, какие ожидания вообще создают эту неуверенность. Поэтому критика остается косвенной, но именно поэтому действует." },
+            { "language": "ckb", "text": "من هەردووکیان پەیوەست دەکەم، بەڵام هەمان قورساییان پێنادەم. لە ڕووی دەروونییەوە دەقەکە تێگەیشتنێکی ناآرام نیشان دەدات؛ لە ڕووی کۆمەڵایەتییەوە دەپرسێت کام چاوەڕوانییەکان لە بنەڕەتدا ئەو نادڵنیاییە دروست دەکەن. بۆیە ڕەخنەکە ناڕاستەوخۆ دەمێنێتەوە، بەڵام هەر بەو هۆیە کاریگەرە." },
+            { "language": "kmr", "text": "Ez ê her duyan girê bidim, lê ne bi heman giraniyê. Ji aliyê derûnî ve nivîs têgihiştineke nerehet nîşan dide; ji aliyê civakî ve dipirse ka kîjan hêvî ev bêewlehî ji destpêkê ve diafirînin. Ji ber vê rexne nerasterast dimîne, lê rast ji ber vê yekê bi bandor e." },
+            { "language": "pl", "text": "Połączyłbym/połączyłabym oba aspekty, ale nie ważyłbym/ważyłabym ich tak samo. Psychologicznie tekst pokazuje zachwianą percepcję; społecznie pyta, jakie oczekiwania w ogóle wytwarzają tę niepewność. Krytyka pozostaje przez to pośrednia, ale właśnie dlatego jest skuteczna." },
+            { "language": "ro", "text": "Aș lega ambele aspecte, dar nu le-aș da aceeași greutate. Psihologic, textul arată o percepție nesigură; social, întreabă ce așteptări produc de fapt această incertitudine. Critica rămâne astfel indirectă, dar tocmai de aceea eficientă." },
+            { "language": "sq", "text": "Do t'i lidhja të dyja, por nuk do t'u jepja të njëjtën peshë. Psikologjikisht teksti tregon një perceptim të lëkundur; shoqërisht pyet se cilat pritje e krijojnë këtë pasiguri që në fillim. Prandaj kritika mbetet e tërthortë, por pikërisht për këtë është e efektshme." }
+          ],
+          "function": "weigh-readings",
+          "toneNote": "Advanced weighting: both readings are accepted, but one is framed as structurally stronger.",
+          "expectedLearnerAction": "Connect both readings and explain their relation."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Bitte fassen Sie Ihre Position abschließend so zusammen, dass sie nicht wie eine auswendig gelernte Formel klingt.",
+          "translations": [
+            { "language": "en", "text": "Please summarize your position in closing so that it does not sound like a memorized formula." },
+            { "language": "fa", "text": "لطفاً در پایان موضع خود را طوری خلاصه کنید که شبیه فرمول حفظ‌شده به نظر نرسد." },
+            { "language": "ar", "text": "يرجى تلخيص موقفكم في الختام بطريقة لا تبدو كصيغة محفوظة." },
+            { "language": "tr", "text": "Lütfen son olarak görüşünüzü ezberlenmiş bir kalıp gibi duyulmayacak biçimde özetleyin." },
+            { "language": "ru", "text": "Пожалуйста, в завершение подведите итог своей позиции так, чтобы это не звучало как выученная формула." },
+            { "language": "ckb", "text": "تکایە لە کۆتاییدا هەڵوێستەکەت بە شێوەیەک پوخت بکەوە کە وەک فۆرمولێکی لەبەرکراو نەبیسترێت." },
+            { "language": "kmr", "text": "Ji kerema xwe di dawiyê de helwesta xwe wisa kurt bikin ku wek qalibeke ji berkirî neyê bihîstin." },
+            { "language": "pl", "text": "Proszę na koniec podsumować swoje stanowisko tak, aby nie brzmiało jak wyuczona formuła." },
+            { "language": "ro", "text": "Vă rog să vă rezumați poziția la final astfel încât să nu sune ca o formulă memorată." },
+            { "language": "sq", "text": "Ju lutem përmblidheni në fund qëndrimin tuaj në mënyrë që të mos tingëllojë si formulë e mësuar përmendësh." }
+          ],
+          "function": "request-final-evaluation",
+          "toneNote": "The examiner wants synthesis, not a stock phrase.",
+          "expectedLearnerAction": "Summarize thesis, evidence, and value in one coherent final evaluation."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Meine Schlussposition wäre: Der Text verlangt keine eindeutige Diagnose der Figur, sondern eine genaue Lektüre ihrer sprachlichen Ausweichbewegungen. Seine Stärke liegt darin, Unsicherheit sichtbar zu machen, ohne sie vorschnell aufzulösen.",
+          "translations": [
+            { "language": "en", "text": "My concluding position would be: the text does not demand a clear diagnosis of the character, but a close reading of her linguistic evasions. Its strength lies in making uncertainty visible without resolving it too quickly." },
+            { "language": "fa", "text": "موضع پایانی من این است: متن تشخیص قطعی درباره شخصیت نمی‌خواهد، بلکه خوانش دقیق حرکت‌های زبانیِ گریزآمیز او را می‌طلبد. قدرت متن در این است که نااطمینانی را قابل دیدن می‌کند، بدون اینکه آن را شتاب‌زده حل کند." },
+            { "language": "ar", "text": "سيكون موقفي الختامي: النص لا يطلب تشخيصًا واضحًا للشخصية، بل قراءة دقيقة لحركاتها اللغوية المراوغة. قوته تكمن في جعل عدم اليقين مرئيًا من دون حله بسرعة." },
+            { "language": "tr", "text": "Son görüşüm şu olurdu: Metin figür hakkında kesin bir teşhis istemiyor, onun dilsel kaçınma hareketlerinin dikkatli okunmasını istiyor. Gücü, belirsizliği aceleyle çözmeden görünür kılmasında yatıyor." },
+            { "language": "ru", "text": "Моя заключительная позиция была бы такой: текст требует не однозначного диагноза персонажа, а внимательного чтения ее языковых уклонений. Его сила в том, что он делает неуверенность видимой, не разрешая ее поспешно." },
+            { "language": "ckb", "text": "هەڵوێستی کۆتاییم ئەمە دەبێت: دەقەکە دەستنیشانکردنێکی ڕوونی کارەکتەرەکە داوا ناکات، بەڵکو خوێندنەوەیەکی وردی جوڵە زبانییە خۆدزینەوەکانی داوا دەکات. بەهێزی دەقەکە لەوەدایە نادڵنیایی دەردەخات، بەبێ ئەوەی بە پەلە چارەسەری بکات." },
+            { "language": "kmr", "text": "Helwesta min a dawî ev e: nivîs teşhîseke yekalî ya karakterê naxwaze, lê xwendineke hûr a tevgerên zimanî yên xwe-vekişandina wê dixwaze. Hêza wê di vê de ye ku bêewlehiyê xuya dike bê ku wê bi lez çareser bike." },
+            { "language": "pl", "text": "Moja końcowa pozycja brzmiałaby tak: tekst nie domaga się jednoznacznej diagnozy postaci, lecz uważnej lektury jej językowych uników. Jego siła polega na tym, że uwidacznia niepewność, nie rozwiązując jej zbyt szybko." },
+            { "language": "ro", "text": "Poziția mea finală ar fi: textul nu cere un diagnostic clar al personajului, ci o lectură atentă a mișcărilor sale lingvistice de evitare. Forța lui stă în faptul că face vizibilă incertitudinea fără să o rezolve prea repede." },
+            { "language": "sq", "text": "Qëndrimi im përfundimtar do të ishte: teksti nuk kërkon një diagnozë të qartë të personazhit, por një lexim të kujdesshëm të shmangieve të saj gjuhësore. Forca e tij qëndron te bërja e pasigurisë të dukshme pa e zgjidhur me nxitim." }
+          ],
+          "function": "final-synthesis",
+          "toneNote": "Precise and personal, without sounding memorized.",
+          "expectedLearnerAction": "Close with a concise interpretive evaluation."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-thesis-limited",
+              "text": "Ich würde die These bewusst einschränken: Die Unsicherheit ist nicht einfach eine Schwäche der Figur, sondern ein Verfahren des Textes.",
+              "translations": [
+                { "language": "en", "text": "I would deliberately limit the thesis: the uncertainty is not simply a weakness of the character, but a textual procedure." },
+                { "language": "fa", "text": "من عمداً تز را محدود می‌کنم: نااطمینانی فقط ضعف شخصیت نیست، بلکه روشی در متن است." },
+                { "language": "ar", "text": "سأقيّد الأطروحة عن قصد: عدم اليقين ليس مجرد ضعف في الشخصية، بل هو إجراء نصي." },
+                { "language": "tr", "text": "Tezi bilinçli olarak sınırlandırırdım: belirsizlik yalnızca figürün zayıflığı değil, metnin bir yöntemidir." },
+                { "language": "ru", "text": "Я бы сознательно ограничил тезис: неуверенность не просто слабость персонажа, а прием текста." },
+                { "language": "ckb", "text": "من بە ئاگایی تێزەکە سنووردار دەکەم: نادڵنیایی تەنها لاوازیی کارەکتەرەکە نییە، بەڵکو ڕێکارێکی دەقەکەیە." },
+                { "language": "kmr", "text": "Ez ê tezê bi zanebûn sînor bikim: bêewlehî ne tenê lawaziya karakterê ye, lê rêbazeke nivîsê ye." },
+                { "language": "pl", "text": "Świadomie zawęziłbym/zawęziłabym tezę: niepewność nie jest po prostu słabością postaci, lecz zabiegiem tekstu." },
+                { "language": "ro", "text": "Aș limita intenționat teza: incertitudinea nu este doar o slăbiciune a personajului, ci un procedeu al textului." },
+                { "language": "sq", "text": "Do ta kufizoja qëllimisht tezën: pasiguria nuk është thjesht dobësi e personazhit, por një procedurë e tekstit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good C2 answer: it limits the claim, avoids exaggeration, and turns uncertainty into a textual function.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good C2 answer: it limits the claim, avoids exaggeration, and turns uncertainty into a textual function." },
+                { "language": "fa", "text": "پاسخ خوب C2: ادعا را محدود می‌کند، از اغراق دوری می‌کند و نااطمینانی را به کارکرد متنی تبدیل می‌کند." },
+                { "language": "ar", "text": "إجابة جيدة في C2: تحدّ الادعاء، وتتجنب المبالغة، وتحول عدم اليقين إلى وظيفة نصية." },
+                { "language": "tr", "text": "İyi C2 yanıtı: iddiayı sınırlar, abartıdan kaçınır ve belirsizliği metinsel işleve dönüştürür." },
+                { "language": "ru", "text": "Хороший ответ C2: он ограничивает тезис, избегает преувеличения и превращает неуверенность в функцию текста." },
+                { "language": "ckb", "text": "وەڵامی باشی C2: بانگەشەکە سنووردار دەکات، لە زیادەڕۆیی دوور دەکەوێتەوە و نادڵنیایی دەکاتە کارکردێکی دەقی." },
+                { "language": "kmr", "text": "Bersiva baş a C2: îdîayê sînor dike, ji mezinandinê dûr dimîne û bêewlehiyê dike fonksiyoneke nivîsê." },
+                { "language": "pl", "text": "Dobra odpowiedź C2: zawęża twierdzenie, unika przesady i zamienia niepewność w funkcję tekstu." },
+                { "language": "ro", "text": "Răspuns bun de C2: limitează afirmația, evită exagerarea și transformă incertitudinea într-o funcție textuală." },
+                { "language": "sq", "text": "Përgjigje e mirë C2: kufizon pretendimin, shmang teprimin dhe e kthen pasigurinë në funksion tekstual." }
+              ]
+            },
+            {
+              "id": "weak-descriptive",
+              "text": "Die Figur ist unsicher, deshalb ist der Text schwer zu verstehen.",
+              "translations": [
+                { "language": "en", "text": "The character is uncertain, so the text is hard to understand." },
+                { "language": "fa", "text": "شخصیت نامطمئن است، بنابراین متن سخت فهمیده می‌شود." },
+                { "language": "ar", "text": "الشخصية غير واثقة، لذلك يصعب فهم النص." },
+                { "language": "tr", "text": "Figür belirsiz, bu yüzden metni anlamak zor." },
+                { "language": "ru", "text": "Персонаж неуверен, поэтому текст трудно понять." },
+                { "language": "ckb", "text": "کارەکتەرەکە نادڵنیاوە، بۆیە دەقەکە قورس تێدەگەیت." },
+                { "language": "kmr", "text": "Karakter bêewle ye, ji ber vê nivîs zehmet tê fêmkirin." },
+                { "language": "pl", "text": "Postać jest niepewna, dlatego tekst trudno zrozumieć." },
+                { "language": "ro", "text": "Personajul este nesigur, de aceea textul este greu de înțeles." },
+                { "language": "sq", "text": "Personazhi është i pasigurt, prandaj teksti është i vështirë për t'u kuptuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but too simple: it describes a difficulty, but does not explain the literary function.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too simple: it describes a difficulty, but does not explain the literary function." },
+                { "language": "fa", "text": "قابل تصور اما خیلی ساده است: دشواری را توصیف می‌کند، اما کارکرد ادبی را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "محتمل لكنه بسيط جدًا: يصف صعوبة، لكنه لا يشرح الوظيفة الأدبية." },
+                { "language": "tr", "text": "Makul ama fazla basit: bir zorluğu anlatır, edebi işlevi açıklamaz." },
+                { "language": "ru", "text": "Возможно, но слишком просто: это описывает трудность, но не объясняет литературную функцию." },
+                { "language": "ckb", "text": "ئەگەری هەیە، بەڵام زۆر سادەیە: قورساییەک وەسف دەکات، بەڵام کارکردی ئەدەبی ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Mumkun e, lê pir sade ye: zehmetiyekê vedibêje, lê fonksiyona edebî rave nake." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest zbyt proste: opisuje trudność, lecz nie wyjaśnia funkcji literackiej." },
+                { "language": "ro", "text": "Plauzibil, dar prea simplu: descrie o dificultate, însă nu explică funcția literară." },
+                { "language": "sq", "text": "E mundshme, por shumë e thjeshtë: përshkruan një vështirësi, por nuk shpjegon funksionin letrar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-objection-into-question",
+              "text": "Diesen Einwand nehme ich ernst, aber er greift mir zu kurz.",
+              "translations": [
+                { "language": "en", "text": "I take that objection seriously, but I find it too limited." },
+                { "language": "fa", "text": "این ایراد را جدی می‌گیرم، اما به نظرم کافی نیست." },
+                { "language": "ar", "text": "آخذ هذا الاعتراض بجدية، لكنه يبدو لي محدودًا." },
+                { "language": "tr", "text": "Bu itirazı ciddiye alıyorum, ama bana göre dar kalıyor." },
+                { "language": "ru", "text": "Я воспринимаю это возражение серьезно, но считаю его слишком узким." },
+                { "language": "ckb", "text": "من ئەو ڕەخنەیە بە جدی وەردەگرم، بەڵام پێم وایە زۆر کورتە." },
+                { "language": "kmr", "text": "Ez vê îtirazê cidî digirim, lê li gorî min ew teng dimîne." },
+                { "language": "pl", "text": "Traktuję ten zarzut poważnie, ale uważam go za zbyt wąski." },
+                { "language": "ro", "text": "Iau în serios această obiecție, dar mi se pare prea limitată." },
+                { "language": "sq", "text": "E marr seriozisht këtë kundërshtim, por më duket i kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong because it respects the counter-position and then shows where interpretation begins.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong because it respects the counter-position and then shows where interpretation begins." },
+                { "language": "fa", "text": "قوی است، چون به دیدگاه مخالف احترام می‌گذارد و سپس نشان می‌دهد تفسیر از کجا شروع می‌شود." },
+                { "language": "ar", "text": "قوي لأنه يحترم الموقف المقابل ثم يبيّن أين يبدأ التفسير." },
+                { "language": "tr", "text": "Güçlüdür, çünkü karşı görüşe saygı duyar ve yorumun nerede başladığını gösterir." },
+                { "language": "ru", "text": "Сильно, потому что уважает встречную позицию и затем показывает, где начинается интерпретация." },
+                { "language": "ckb", "text": "بەهێزە، چونکە ڕێز لە هەڵوێستی بەرامبەر دەگرێت و پاشان نیشان دەدات لێکدانەوە لە کوێ دەست پێدەکات." },
+                { "language": "kmr", "text": "Xurt e, ji ber ku rêzê li helwesta dijber digire û paşê nîşan dide ku şîrove li ku dest pê dike." },
+                { "language": "pl", "text": "Mocne, bo szanuje kontrargument, a potem pokazuje, gdzie zaczyna się interpretacja." },
+                { "language": "ro", "text": "Puternic, deoarece respectă poziția opusă și apoi arată unde începe interpretarea." },
+                { "language": "sq", "text": "E fortë, sepse respekton qëndrimin kundër dhe pastaj tregon ku fillon interpretimi." }
+              ]
+            },
+            {
+              "id": "weak-interesting-only",
+              "text": "Vielleicht stimmt das, aber ich finde meine Deutung interessanter.",
+              "translations": [
+                { "language": "en", "text": "Maybe that is true, but I find my interpretation more interesting." },
+                { "language": "fa", "text": "شاید درست باشد، اما من تفسیر خودم را جالب‌تر می‌دانم." },
+                { "language": "ar", "text": "ربما يكون ذلك صحيحًا، لكنني أجد تفسيري أكثر إثارة للاهتمام." },
+                { "language": "tr", "text": "Belki bu doğru, ama kendi yorumumu daha ilginç buluyorum." },
+                { "language": "ru", "text": "Возможно, это верно, но моя интерпретация кажется мне интереснее." },
+                { "language": "ckb", "text": "لەوانەیە ئەمە ڕاست بێت، بەڵام من لێکدانەوەی خۆم سەرنجڕاکێشتر دەبینم." },
+                { "language": "kmr", "text": "Dibe ku ev rast be, lê ez şîroveya xwe balkêştir dibînim." },
+                { "language": "pl", "text": "Może to prawda, ale moja interpretacja wydaje mi się ciekawsza." },
+                { "language": "ro", "text": "Poate că este adevărat, dar interpretarea mea mi se pare mai interesantă." },
+                { "language": "sq", "text": "Ndoshta kjo është e vërtetë, por interpretimi im më duket më interesant." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too subjective for C2: it does not answer the objection with textual reasoning.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too subjective for C2: it does not answer the objection with textual reasoning." },
+                { "language": "fa", "text": "برای C2 بیش از حد ذهنی است: با استدلال متنی به ایراد پاسخ نمی‌دهد." },
+                { "language": "ar", "text": "ذاتي جدًا لمستوى C2: لا يجيب عن الاعتراض بتعليل نصي." },
+                { "language": "tr", "text": "C2 için fazla öznel: itiraza metinsel gerekçeyle yanıt vermiyor." },
+                { "language": "ru", "text": "Слишком субъективно для C2: возражение не получает ответа через аргументы из текста." },
+                { "language": "ckb", "text": "بۆ C2 زۆر کەسییە: بە هۆکاری دەقی وەڵامی ڕەخنەکە ناداتەوە." },
+                { "language": "kmr", "text": "Ji bo C2 pir subjektîf e: bi sedema nivîsê bersiva îtirazê nade." },
+                { "language": "pl", "text": "Zbyt subiektywne na C2: nie odpowiada na zarzut argumentacją z tekstu." },
+                { "language": "ro", "text": "Prea subiectiv pentru C2: nu răspunde obiecției prin raționament textual." },
+                { "language": "sq", "text": "Shumë subjektive për C2: nuk i përgjigjet kundërshtimit me arsyetim nga teksti." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-three-signals",
+              "text": "Ich würde drei Signale nennen: die indirekten Formulierungen, die wiederholten Selbstkorrekturen und den offenen Schluss.",
+              "translations": [
+                { "language": "en", "text": "I would name three signals: the indirect formulations, the repeated self-corrections, and the open ending." },
+                { "language": "fa", "text": "من سه نشانه را نام می‌برم: فرمول‌بندی‌های غیرمستقیم، خوداصلاحی‌های تکراری و پایان باز." },
+                { "language": "ar", "text": "سأذكر ثلاث إشارات: الصيغ غير المباشرة، والتصحيحات الذاتية المتكررة، والنهاية المفتوحة." },
+                { "language": "tr", "text": "Üç işaret söylerdim: dolaylı ifadeler, tekrarlanan öz-düzeltmeler ve açık son." },
+                { "language": "ru", "text": "Я бы назвал три сигнала: косвенные формулировки, повторные самокоррекции и открытый финал." },
+                { "language": "ckb", "text": "من سێ نیشانە ناودەبەم: دەربڕینە ناڕاستەوخۆکان، خۆڕاستکردنەوە دووبارەکان و کۆتایی کراوە." },
+                { "language": "kmr", "text": "Ez ê sê nîşan nav bikim: gotinên nerasterast, xwe-sererastkirinên dubare û dawiyeke vekirî." },
+                { "language": "pl", "text": "Wskazałbym/wskazałabym trzy sygnały: pośrednie sformułowania, powtarzające się autokorekty i otwarte zakończenie." },
+                { "language": "ro", "text": "Aș numi trei semnale: formulările indirecte, autocorectările repetate și finalul deschis." },
+                { "language": "sq", "text": "Do të përmendja tre sinjale: formulimet e tërthorta, vetëkorrigjimet e përsëritura dhe fundin e hapur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good evidence discipline: three concrete signals are enough and are linked to one interpretive principle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good evidence discipline: three concrete signals are enough and are linked to one interpretive principle." },
+                { "language": "fa", "text": "انضباط شواهد خوب است: سه نشانه مشخص کافی است و به یک اصل تفسیری وصل می‌شود." },
+                { "language": "ar", "text": "انضباط جيد في الأدلة: ثلاث إشارات ملموسة تكفي وترتبط بمبدأ تفسيري واحد." },
+                { "language": "tr", "text": "Kanıt disiplini iyi: üç somut işaret yeterli ve tek bir yorum ilkesine bağlanıyor." },
+                { "language": "ru", "text": "Хорошая дисциплина доказательств: трех конкретных сигналов достаточно, и они связаны с одним принципом интерпретации." },
+                { "language": "ckb", "text": "ڕێکخستنی بەڵگە باشە: سێ نیشانەی دیاریکراو بەسە و بە بنەمایەکی لێکدانەوە پەیوەست دەکرێن." },
+                { "language": "kmr", "text": "Dîsîplîna belgeyan baş e: sê nîşaneyên şênber bes in û bi prensîpeke şîroveyê ve têne girêdan." },
+                { "language": "pl", "text": "Dobra dyscyplina dowodowa: trzy konkretne sygnały wystarczą i są połączone z jedną zasadą interpretacji." },
+                { "language": "ro", "text": "Disciplină bună a dovezilor: trei semnale concrete sunt suficiente și sunt legate de un singur principiu interpretativ." },
+                { "language": "sq", "text": "Disiplinë e mirë e provave: tre sinjale konkrete mjaftojnë dhe lidhen me një parim interpretues." }
+              ]
+            },
+            {
+              "id": "weak-one-signal",
+              "text": "Ich würde vor allem den Schluss nennen, weil er offen bleibt.",
+              "translations": [
+                { "language": "en", "text": "I would mainly mention the ending because it remains open." },
+                { "language": "fa", "text": "من بیشتر پایان را نام می‌برم، چون باز می‌ماند." },
+                { "language": "ar", "text": "سأذكر النهاية أساسًا لأنها تبقى مفتوحة." },
+                { "language": "tr", "text": "Özellikle sonu söylerdim, çünkü açık kalıyor." },
+                { "language": "ru", "text": "Я бы прежде всего назвал финал, потому что он остается открытым." },
+                { "language": "ckb", "text": "من زیاتر کۆتاییەکە ناودەبەم، چونکە کراوە دەمێنێتەوە." },
+                { "language": "kmr", "text": "Ez ê herî zêde dawiyê nav bikim, ji ber ku vekirî dimîne." },
+                { "language": "pl", "text": "Wskazałbym/wskazałabym głównie zakończenie, bo pozostaje otwarte." },
+                { "language": "ro", "text": "Aș menționa mai ales finalul, deoarece rămâne deschis." },
+                { "language": "sq", "text": "Do të përmendja kryesisht fundin, sepse mbetet i hapur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Not wrong, but too narrow: one signal alone is weak for a C2 interpretation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too narrow: one signal alone is weak for a C2 interpretation." },
+                { "language": "fa", "text": "غلط نیست، اما خیلی محدود است: یک نشانه به‌تنهایی برای تفسیر C2 ضعیف است." },
+                { "language": "ar", "text": "ليس خطأ، لكنه ضيق جدًا: إشارة واحدة وحدها ضعيفة لتفسير في C2." },
+                { "language": "tr", "text": "Yanlış değil, ama fazla dar: tek bir işaret C2 yorumu için zayıf kalır." },
+                { "language": "ru", "text": "Не неверно, но слишком узко: одного сигнала мало для интерпретации C2." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر تەسکە: تەنها یەک نیشانە بۆ لێکدانەوەی C2 لاوازە." },
+                { "language": "kmr", "text": "Ne şaş e, lê pir teng e: tenê nîşaneyek ji bo şîroveya C2 lawaz e." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt wąskie: jeden sygnał sam w sobie jest słaby na interpretację C2." },
+                { "language": "ro", "text": "Nu este greșit, dar prea îngust: un singur semnal este slab pentru o interpretare C2." },
+                { "language": "sq", "text": "Nuk është gabim, por shumë e ngushtë: një sinjal i vetëm është i dobët për interpretim C2." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-weighted-both",
+              "text": "Ich würde beides verbinden, aber nicht gleich gewichten.",
+              "translations": [
+                { "language": "en", "text": "I would connect both, but not weight them equally." },
+                { "language": "fa", "text": "من هر دو را به هم وصل می‌کنم، اما وزن برابر به آن‌ها نمی‌دهم." },
+                { "language": "ar", "text": "سأربط بين الأمرين، لكنني لن أعطيهما الوزن نفسه." },
+                { "language": "tr", "text": "İkisini bağlardım, ama eşit ağırlık vermezdim." },
+                { "language": "ru", "text": "Я бы связал оба аспекта, но не придал им одинаковый вес." },
+                { "language": "ckb", "text": "من هەردووکیان پەیوەست دەکەم، بەڵام هەمان قورساییان پێنادەم." },
+                { "language": "kmr", "text": "Ez ê her duyan girê bidim, lê ne bi heman giraniyê." },
+                { "language": "pl", "text": "Połączyłbym/połączyłabym oba aspekty, ale nie ważyłbym/ważyłabym ich tak samo." },
+                { "language": "ro", "text": "Aș lega ambele aspecte, dar nu le-aș da aceeași greutate." },
+                { "language": "sq", "text": "Do t'i lidhja të dyja, por nuk do t'u jepja të njëjtën peshë." }
+              ],
+              "isCorrect": true,
+              "feedback": "C2-level weighting: it avoids a false either/or and still makes a clear evaluation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "C2-level weighting: it avoids a false either/or and still makes a clear evaluation." },
+                { "language": "fa", "text": "وزن‌دهی در سطح C2: از دوگانه‌سازی نادرست دوری می‌کند و با این حال ارزیابی روشن می‌دهد." },
+                { "language": "ar", "text": "موازنة بمستوى C2: تتجنب ثنائية زائفة ومع ذلك تقدم تقييمًا واضحًا." },
+                { "language": "tr", "text": "C2 düzeyinde tartma: yanlış bir ya/o karşıtlığından kaçınır ve yine de açık bir değerlendirme yapar." },
+                { "language": "ru", "text": "Взвешивание уровня C2: избегает ложного выбора «или/или» и все же дает ясную оценку." },
+                { "language": "ckb", "text": "هەڵسەنگاندنی ئاستی C2: لە دووگانییەکی هەڵە دوور دەکەوێتەوە و هێشتا هەڵسەنگاندنێکی ڕوون دەدات." },
+                { "language": "kmr", "text": "Pîvandina asta C2: ji an/aneke şaş dûr dimîne û hîn jî nirxandineke zelal dide." },
+                { "language": "pl", "text": "Ważenie na poziomie C2: unika fałszywego wyboru albo/albo, a mimo to daje jasną ocenę." },
+                { "language": "ro", "text": "Cântărire de nivel C2: evită un fals ori/ori și totuși oferă o evaluare clară." },
+                { "language": "sq", "text": "Peshim në nivel C2: shmang një ose/ose të rremë dhe prapë jep një vlerësim të qartë." }
+              ]
+            },
+            {
+              "id": "weak-blame-society",
+              "text": "Es ist eher Gesellschaftskritik, weil die Gesellschaft schuld ist.",
+              "translations": [
+                { "language": "en", "text": "It is more social criticism because society is to blame." },
+                { "language": "fa", "text": "بیشتر نقد اجتماعی است، چون جامعه مقصر است." },
+                { "language": "ar", "text": "إنه أقرب إلى نقد اجتماعي لأن المجتمع هو الملام." },
+                { "language": "tr", "text": "Daha çok toplumsal eleştiri, çünkü toplum suçlu." },
+                { "language": "ru", "text": "Это скорее социальная критика, потому что виновато общество." },
+                { "language": "ckb", "text": "زیاتر ڕەخنەی کۆمەڵایەتییە، چونکە کۆمەڵگا تاوانبارە." },
+                { "language": "kmr", "text": "Ew zêdetir rexneya civakî ye, ji ber ku civak sûcdar e." },
+                { "language": "pl", "text": "To raczej krytyka społeczna, bo społeczeństwo jest winne." },
+                { "language": "ro", "text": "Este mai degrabă critică socială, pentru că societatea este vinovată." },
+                { "language": "sq", "text": "Është më shumë kritikë shoqërore, sepse shoqëria është fajtore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too reductive: it names a direction, but loses the nuance of how the text produces criticism.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too reductive: it names a direction, but loses the nuance of how the text produces criticism." },
+                { "language": "fa", "text": "بیش از حد تقلیل‌دهنده است: جهت را نام می‌برد، اما ظرافتِ چگونگی تولید نقد در متن را از دست می‌دهد." },
+                { "language": "ar", "text": "اختزالي جدًا: يذكر اتجاهًا، لكنه يفقد دقة كيفية إنتاج النص للنقد." },
+                { "language": "tr", "text": "Fazla indirgemeci: yönü adlandırır, ama metnin eleştiriyi nasıl ürettiğinin inceliğini kaybeder." },
+                { "language": "ru", "text": "Слишком редуктивно: направление названо, но теряется нюанс того, как текст создает критику." },
+                { "language": "ckb", "text": "زۆر کەمکردنەوەیە: ئاراستەکە ناودەبات، بەڵام وردیی ئەوەی دەق چۆن ڕەخنە دروست دەکات لەدەست دەدات." },
+                { "language": "kmr", "text": "Pir kêmker e: alîyekê nav dike, lê hûrbûna ku nivîs çawa rexneyê diafirîne winda dike." },
+                { "language": "pl", "text": "Zbyt redukcyjne: wskazuje kierunek, lecz gubi niuans tego, jak tekst tworzy krytykę." },
+                { "language": "ro", "text": "Prea reductiv: numește o direcție, dar pierde nuanța felului în care textul produce critica." },
+                { "language": "sq", "text": "Shumë reduktuese: emërton drejtimin, por humb nuancën se si teksti krijon kritikën." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-final-synthesis",
+              "text": "Der Text verlangt keine eindeutige Diagnose der Figur, sondern eine genaue Lektüre ihrer sprachlichen Ausweichbewegungen.",
+              "translations": [
+                { "language": "en", "text": "The text does not demand a clear diagnosis of the character, but a close reading of her linguistic evasions." },
+                { "language": "fa", "text": "متن تشخیص قطعی درباره شخصیت نمی‌خواهد، بلکه خوانش دقیق حرکت‌های زبانیِ گریزآمیز او را می‌طلبد." },
+                { "language": "ar", "text": "النص لا يطلب تشخيصًا واضحًا للشخصية، بل قراءة دقيقة لحركاتها اللغوية المراوغة." },
+                { "language": "tr", "text": "Metin figür hakkında kesin bir teşhis istemiyor, onun dilsel kaçınma hareketlerinin dikkatli okunmasını istiyor." },
+                { "language": "ru", "text": "Текст требует не однозначного диагноза персонажа, а внимательного чтения ее языковых уклонений." },
+                { "language": "ckb", "text": "دەقەکە دەستنیشانکردنێکی ڕوونی کارەکتەرەکە داوا ناکات، بەڵکو خوێندنەوەیەکی وردی جوڵە زبانییە خۆدزینەوەکانی داوا دەکات." },
+                { "language": "kmr", "text": "Nivîs teşhîseke yekalî ya karakterê naxwaze, lê xwendineke hûr a tevgerên zimanî yên xwe-vekişandina wê dixwaze." },
+                { "language": "pl", "text": "Tekst nie domaga się jednoznacznej diagnozy postaci, lecz uważnej lektury jej językowych uników." },
+                { "language": "ro", "text": "Textul nu cere un diagnostic clar al personajului, ci o lectură atentă a mișcărilor sale lingvistice de evitare." },
+                { "language": "sq", "text": "Teksti nuk kërkon një diagnozë të qartë të personazhit, por një lexim të kujdesshëm të shmangieve të saj gjuhësore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong closing: it summarizes the thesis and the method of reading without using a memorized formula.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong closing: it summarizes the thesis and the method of reading without using a memorized formula." },
+                { "language": "fa", "text": "جمع‌بندی قوی: تز و شیوه خواندن را خلاصه می‌کند، بدون اینکه از فرمول حفظ‌شده استفاده کند." },
+                { "language": "ar", "text": "خاتمة قوية: تلخص الأطروحة وطريقة القراءة من دون استعمال صيغة محفوظة." },
+                { "language": "tr", "text": "Güçlü kapanış: tezi ve okuma yöntemini ezberlenmiş bir kalıp kullanmadan özetler." },
+                { "language": "ru", "text": "Сильное завершение: оно подводит итог тезису и способу чтения без выученной формулы." },
+                { "language": "ckb", "text": "کۆتاییەکی بەهێز: تێز و شێوازی خوێندنەوە پوخت دەکاتەوە، بەبێ بەکارهێنانی فۆرمولێکی لەبەرکراو." },
+                { "language": "kmr", "text": "Dawiyeke xurt: tez û awayê xwendinê kurt dike bê ku qalibeke ji berkirî bikar bîne." },
+                { "language": "pl", "text": "Mocne zakończenie: podsumowuje tezę i sposób lektury bez użycia wyuczonej formuły." },
+                { "language": "ro", "text": "Încheiere puternică: rezumă teza și metoda lecturii fără să folosească o formulă memorată." },
+                { "language": "sq", "text": "Mbyllje e fortë: përmbledh tezën dhe mënyrën e leximit pa përdorur formulë të mësuar përmendësh." }
+              ]
+            },
+            {
+              "id": "weak-generic-open",
+              "text": "Der Text ist wichtig, weil er viele Deutungen zulässt.",
+              "translations": [
+                { "language": "en", "text": "The text is important because it allows many interpretations." },
+                { "language": "fa", "text": "متن مهم است، چون تفسیرهای زیادی را ممکن می‌کند." },
+                { "language": "ar", "text": "النص مهم لأنه يسمح بتفسيرات كثيرة." },
+                { "language": "tr", "text": "Metin önemli, çünkü birçok yoruma izin veriyor." },
+                { "language": "ru", "text": "Текст важен, потому что допускает много интерпретаций." },
+                { "language": "ckb", "text": "دەقەکە گرنگە، چونکە ڕێگە بە زۆر لێکدانەوە دەدات." },
+                { "language": "kmr", "text": "Nivîs girîng e, ji ber ku destûrê dide gelek şîroveyan." },
+                { "language": "pl", "text": "Tekst jest ważny, bo dopuszcza wiele interpretacji." },
+                { "language": "ro", "text": "Textul este important pentru că permite multe interpretări." },
+                { "language": "sq", "text": "Teksti është i rëndësishëm sepse lejon shumë interpretime." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too generic for C2: it could fit almost any literary text and does not close this argument.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too generic for C2: it could fit almost any literary text and does not close this argument." },
+                { "language": "fa", "text": "برای C2 بیش از حد کلی است: تقریباً به هر متن ادبی می‌خورد و این استدلال را جمع نمی‌کند." },
+                { "language": "ar", "text": "عام جدًا لمستوى C2: يمكن أن يناسب أي نص أدبي تقريبًا ولا يختم هذه الحجة." },
+                { "language": "tr", "text": "C2 için fazla genel: neredeyse her edebi metne uyabilir ve bu argümanı kapatmaz." },
+                { "language": "ru", "text": "Слишком общее для C2: это подошло бы почти к любому литературному тексту и не завершает данный аргумент." },
+                { "language": "ckb", "text": "بۆ C2 زۆر گشتییە: نزیکەی بۆ هەر دەقێکی ئەدەبی دەگونجێت و ئەم بەڵگەهێنانە کۆتایی پێناهێنێت." },
+                { "language": "kmr", "text": "Ji bo C2 pir giştî ye: dikare hema ji bo her nivîseke edebî bigunce û vê argumanê naqedîne." },
+                { "language": "pl", "text": "Zbyt ogólne na C2: pasowałoby do prawie każdego tekstu literackiego i nie zamyka tego argumentu." },
+                { "language": "ro", "text": "Prea general pentru C2: s-ar potrivi aproape oricărui text literar și nu închide acest argument." },
+                { "language": "sq", "text": "Shumë e përgjithshme për C2: mund t'i përshtatet pothuajse çdo teksti letrar dhe nuk e mbyll këtë argument." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "qualified-thesis",
+          "text": "Eine C2-These wird stärker, wenn sie ihre Reichweite begrenzt und nicht mehr behauptet, als der Ausschnitt trägt.",
+          "translations": [
+            { "language": "en", "text": "A C2 thesis becomes stronger when it limits its scope and does not claim more than the passage supports." },
+            { "language": "fa", "text": "تز C2 وقتی قوی‌تر می‌شود که دامنه خود را محدود کند و بیش از آنچه بخش متن پشتیبانی می‌کند ادعا نکند." },
+            { "language": "ar", "text": "تصبح أطروحة C2 أقوى عندما تحدد مداها ولا تدّعي أكثر مما يدعمه المقطع." },
+            { "language": "tr", "text": "C2 tezi, kapsamını sınırladığında ve parçanın taşıdığından fazlasını iddia etmediğinde güçlenir." },
+            { "language": "ru", "text": "Тезис C2 становится сильнее, когда ограничивает свой охват и не утверждает больше, чем поддерживает отрывок." },
+            { "language": "ckb", "text": "تێزی C2 کاتێک بەهێزتر دەبێت کە مەوداکەی سنووردار بکات و زیاتر لەوەی پارچەکە پشتگیری دەکات بانگەشە نەکات." },
+            { "language": "kmr", "text": "Teza C2 xurtir dibe dema ku qada xwe sînor dike û ji ya ku perçe piştgirî dike zêdetir îdia nake." },
+            { "language": "pl", "text": "Teza C2 staje się mocniejsza, gdy ogranicza zakres i nie twierdzi więcej, niż wspiera fragment." },
+            { "language": "ro", "text": "O teză C2 devine mai puternică atunci când își limitează domeniul și nu afirmă mai mult decât susține fragmentul." },
+            { "language": "sq", "text": "Një tezë C2 bëhet më e fortë kur kufizon shtrirjen e saj dhe nuk pretendon më shumë sesa mbështet fragmenti." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "counter-position",
+          "text": "Eine Gegenposition sollte nicht abgewertet werden; sie wird aufgenommen und in eine präzisere Frage überführt.",
+          "translations": [
+            { "language": "en", "text": "A counter-position should not be devalued; it is acknowledged and moved into a more precise question." },
+            { "language": "fa", "text": "دیدگاه مخالف نباید کوچک شمرده شود؛ پذیرفته می‌شود و به پرسشی دقیق‌تر تبدیل می‌شود." },
+            { "language": "ar", "text": "لا ينبغي التقليل من الموقف المقابل؛ يُعترف به ويُنقل إلى سؤال أدق." },
+            { "language": "tr", "text": "Karşı görüş küçümsenmemeli; kabul edilir ve daha kesin bir soruya taşınır." },
+            { "language": "ru", "text": "Встречную позицию не следует обесценивать; ее признают и переводят в более точный вопрос." },
+            { "language": "ckb", "text": "نابێت هەڵوێستی بەرامبەر بچووک بکرێتەوە؛ وەردەگیرێت و دەگوازرێتەوە بۆ پرسیارێکی وردتر." },
+            { "language": "kmr", "text": "Divê helwesta dijber kêm neyê dîtin; ew tê pejirandin û tê veguhastin bo pirseke rasttir." },
+            { "language": "pl", "text": "Kontrargumentu nie należy umniejszać; trzeba go uznać i przenieść w precyzyjniejsze pytanie." },
+            { "language": "ro", "text": "O poziție opusă nu trebuie depreciată; este recunoscută și mutată într-o întrebare mai precisă." },
+            { "language": "sq", "text": "Qëndrimi kundër nuk duhet ulur; ai pranohet dhe kthehet në një pyetje më të saktë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "evidence-control",
+          "text": "Drei klare Textsignale sind oft überzeugender als eine lange Liste, wenn ihre gemeinsame Funktion erklärt wird.",
+          "translations": [
+            { "language": "en", "text": "Three clear textual signals are often more convincing than a long list when their shared function is explained." },
+            { "language": "fa", "text": "سه نشانه روشن متنی اغلب از یک فهرست بلند قانع‌کننده‌تر است، اگر کارکرد مشترک آن‌ها توضیح داده شود." },
+            { "language": "ar", "text": "ثلاث إشارات نصية واضحة غالبًا أكثر إقناعًا من قائمة طويلة عندما تُشرح وظيفتها المشتركة." },
+            { "language": "tr", "text": "Ortak işlevleri açıklandığında üç net metin işareti çoğu zaman uzun bir listeden daha ikna edicidir." },
+            { "language": "ru", "text": "Три ясных текстовых сигнала часто убедительнее длинного списка, если объяснена их общая функция." },
+            { "language": "ckb", "text": "سێ نیشانەی ڕوونی دەق زۆرجار قانعکەرترە لە لیستێکی درێژ، ئەگەر کارکردی هاوبەشیان ڕوون بکرێتەوە." },
+            { "language": "kmr", "text": "Sê nîşaneyên zelal ên nivîsê gelek caran ji lîsteyeke dirêj bawerkertir in, heke fonksiyona wan a hevpar were ravekirin." },
+            { "language": "pl", "text": "Trzy jasne sygnały tekstowe są często bardziej przekonujące niż długa lista, jeśli wyjaśnia się ich wspólną funkcję." },
+            { "language": "ro", "text": "Trei semnale clare din text sunt adesea mai convingătoare decât o listă lungă atunci când funcția lor comună este explicată." },
+            { "language": "sq", "text": "Tre sinjale të qarta tekstuale shpesh janë më bindëse se një listë e gjatë kur shpjegohet funksioni i tyre i përbashkët." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "final-synthesis",
+          "text": "Ein C2-Schluss fasst nicht nur zusammen, sondern zeigt, warum die eigene Lesart dem Text besonders gerecht wird.",
+          "translations": [
+            { "language": "en", "text": "A C2 conclusion does not only summarize; it shows why your reading is especially fair to the text." },
+            { "language": "fa", "text": "جمع‌بندی C2 فقط خلاصه نمی‌کند؛ نشان می‌دهد چرا خوانش شما به‌ویژه با متن منصفانه برخورد می‌کند." },
+            { "language": "ar", "text": "خاتمة C2 لا تلخص فقط؛ بل تُظهر لماذا تنصف قراءتكم النص بشكل خاص." },
+            { "language": "tr", "text": "C2 kapanışı yalnızca özetlemez; yorumunuzun metne neden özellikle adil davrandığını gösterir." },
+            { "language": "ru", "text": "Заключение C2 не только подводит итог; оно показывает, почему ваше чтение особенно справедливо к тексту." },
+            { "language": "ckb", "text": "کۆتایی C2 تەنها پوختە ناکاتەوە؛ نیشان دەدات بۆچی خوێندنەوەکەت بە تایبەتی بە دادپەروەری مامەڵە لەگەڵ دەقەکە دەکات." },
+            { "language": "kmr", "text": "Dawiya C2 ne tenê kurt dike; nîşan dide ku çima xwendina we bi taybetî li hember nivîsê dadperwer e." },
+            { "language": "pl", "text": "Zakończenie C2 nie tylko podsumowuje; pokazuje, dlaczego Twoja lektura szczególnie dobrze oddaje tekst." },
+            { "language": "ro", "text": "O concluzie C2 nu doar rezumă; arată de ce lectura dumneavoastră face dreptate textului." },
+            { "language": "sq", "text": "Një përfundim C2 nuk përmbledh vetëm; ai tregon pse leximi juaj i bën veçanërisht drejtësi tekstit." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "goethe-c2-literary-exam-discussion",
+          "placement": "detail-header",
+          "purpose": "Show a formal oral exam discussion about a literary interpretation.",
+          "altText": "Eine prüfende Person und eine Kandidatin sitzen in einem ruhigen Prüfungsraum und diskutieren einen literarischen Text.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An examiner and a candidate sit in a quiet exam room and discuss a literary text." },
+            { "language": "fa", "text": "یک ممتحن و یک داوطلب در اتاق آرام آزمون نشسته‌اند و درباره متنی ادبی بحث می‌کنند." },
+            { "language": "ar", "text": "يجلس فاحص ومرشحة في غرفة اختبار هادئة ويناقشان نصًا أدبيًا." },
+            { "language": "tr", "text": "Bir sınav görevlisi ve bir aday sakin bir sınav odasında oturup edebi bir metni tartışır." },
+            { "language": "ru", "text": "Экзаменатор и кандидат сидят в тихой экзаменационной комнате и обсуждают литературный текст." },
+            { "language": "ckb", "text": "تاقیکەرەوە و بەشداربوویەک لە ژوورێکی ئارامی تاقیکردنەوە دانیشتوون و لەسەر دەقێکی ئەدەبی گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Kesê ezmûnê û namzedek li odeyeke aram a ezmûnê rûniştine û li ser nivîseke edebî gotûbêj dikin." },
+            { "language": "pl", "text": "Egzaminator i kandydat siedzą w cichej sali egzaminacyjnej i omawiają tekst literacki." },
+            { "language": "ro", "text": "Un examinator și o candidată stau într-o sală de examen liniștită și discută un text literar." },
+            { "language": "sq", "text": "Një ekzaminues dhe një kandidate ulen në një dhomë të qetë provimi dhe diskutojnë një tekst letrar." }
+          ],
+          "imagePrompt": "Clean educational illustration, formal oral exam room, examiner and candidate discussing a literary text, calm respectful posture, papers on table without readable text, no logos, no private data, no text inside image, accessible composition, neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "packageId": "roleplays-c2-core-12-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 12 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 12",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-fuehrungsrolle-nach-kritik-neu-positionieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Führungsrolle nach Kritik neu positionieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Repositioning a leadership role after criticism" },
+        { "language": "fa", "text": "بازتعریف نقش رهبری پس از نقد" },
+        { "language": "ar", "text": "إعادة تموضع دور قيادي بعد النقد" },
+        { "language": "tr", "text": "Eleştiri sonrası liderlik rolünü yeniden konumlandırmak" },
+        { "language": "ru", "text": "Переосмыслить руководящую роль после критики" },
+        { "language": "ckb", "text": "دووبارە جێگیرکردنەوەی ڕۆڵی سەرکردایەتی دوای ڕەخنە" },
+        { "language": "kmr", "text": "Ji nû ve bicihkirina rola rêveberiyê piştî rexneyê" },
+        { "language": "pl", "text": "Ponowne ustawienie roli lidera po krytyce" },
+        { "language": "ro", "text": "Repoziționarea unui rol de conducere după critică" },
+        { "language": "sq", "text": "Ripozicionimi i rolit drejtues pas kritikës" }
+      ],
+      "description": "Nach einer internen Team-Retrospektive erhält eine Führungskraft deutliche Kritik: Entscheidungen wirkten spät, Einwände wurden zu schnell übergangen, und einige Teammitglieder haben sich zurückgezogen. Sie müssen die eigene Rolle neu rahmen, Verantwortung übernehmen und konkrete Verhaltensänderungen ankündigen, ohne sich defensiv oder übertrieben schuldbewusst darzustellen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After an internal team retrospective, a manager receives clear criticism: decisions seemed late, objections were passed over too quickly, and some team members withdrew. You must reframe your leadership role, take responsibility, and announce concrete behavior changes without sounding defensive or excessively guilty." },
+        { "language": "fa", "text": "پس از یک بازنگری داخلی تیم، یک مدیر نقد روشنی دریافت می‌کند: تصمیم‌ها دیر به نظر می‌رسیدند، اعتراض‌ها خیلی سریع کنار گذاشته می‌شدند و برخی اعضای تیم عقب کشیده‌اند. شما باید نقش رهبری خود را دوباره چارچوب‌بندی کنید، مسئولیت بپذیرید و تغییرات رفتاری مشخص اعلام کنید، بدون اینکه دفاعی یا بیش از حد گناهکار به نظر برسید." },
+        { "language": "ar", "text": "بعد مراجعة داخلية للفريق، يتلقى مدير نقداً واضحاً: بدت القرارات متأخرة، وتُجاوزت الاعتراضات بسرعة كبيرة، وانسحب بعض أعضاء الفريق. يجب أن تعيدوا صياغة دوركم القيادي، وتتحملوا المسؤولية، وتعلنوا تغييرات سلوكية ملموسة من دون أن تبدوا دفاعيين أو مثقلين بالذنب بشكل مبالغ فيه." },
+        { "language": "tr", "text": "İç ekip değerlendirmesinden sonra bir yönetici net eleştiri alır: kararlar geç görünüyordu, itirazlar çok hızlı geçiştirildi ve bazı ekip üyeleri geri çekildi. Liderlik rolünüzü yeniden çerçevelemeniz, sorumluluk almanız ve savunmacı ya da aşırı suçluluk duyan biri gibi görünmeden somut davranış değişiklikleri açıklamanız gerekir." },
+        { "language": "ru", "text": "После внутренней ретроспективы команды руководитель получает четкую критику: решения казались запоздалыми, возражения слишком быстро обходились, а некоторые участники команды отстранились. Нужно заново очертить свою руководящую роль, взять ответственность и объявить конкретные изменения поведения, не звуча оборонительно или чрезмерно виновато." },
+        { "language": "ckb", "text": "دوای هەڵسەنگاندنەوەی ناوخۆی تیم، بەڕێوەبەرێک ڕەخنەی ڕوون وەردەگرێت: بڕیارەکان دوا کەوتوو دەردەکەوتن، ناڕەزایەتییەکان زۆر خێرا تێپەڕاندراون، و هەندێک ئەندامی تیمەکە کشاونەتەوە. دەبێت ڕۆڵی سەرکردایەتی خۆت دووبارە چوارچێوە بکەیت، بەرپرسیاریەتی وەربگریت و گۆڕانکارییە ڕەفتارییە دیاریکراوەکان ڕابگەیەنیت، بێ ئەوەی بەرگریکارانە یان بە شێوەیەکی زیادە هەست بە تاوان پیشان بدەیت." },
+        { "language": "kmr", "text": "Piştî nirxandineke hundir a tîmê, rêveberek rexneyeke zelal distîne: biryar dereng xuya dikirin, nerazîbûn pir zû hatin derbas kirin, û hin endamên tîmê xwe paş ve kişandin. Divê hûn rola xwe ya rêveberiyê ji nû ve çarçove bikin, berpirsiyarî bigirin û guherînên reftarî yên konkret ragihînin, bêyî ku parastinî an bi awayekî zêde sûcdar xuya bikin." },
+        { "language": "pl", "text": "Po wewnętrznej retrospektywie zespołu lider otrzymuje wyraźną krytykę: decyzje wydawały się spóźnione, zastrzeżenia zbyt szybko pomijano, a część osób z zespołu się wycofała. Trzeba na nowo ustawić swoją rolę lidera, wziąć odpowiedzialność i zapowiedzieć konkretne zmiany zachowania, nie brzmiąc defensywnie ani nadmiernie winno." },
+        { "language": "ro", "text": "După o retrospectivă internă a echipei, un manager primește critici clare: deciziile au părut întârziate, obiecțiile au fost trecute prea repede cu vederea, iar unii membri ai echipei s-au retras. Trebuie să vă reîncadrați rolul de conducere, să vă asumați responsabilitatea și să anunțați schimbări concrete de comportament fără să păreți defensiv sau excesiv de vinovat." },
+        { "language": "sq", "text": "Pas një retrospektive të brendshme të ekipit, një drejtues merr kritikë të qartë: vendimet dukeshin të vonuara, kundërshtimet kaloheshin shumë shpejt dhe disa anëtarë të ekipit u tërhoqën. Duhet ta riformuloni rolin tuaj drejtues, të merrni përgjegjësi dhe të njoftoni ndryshime konkrete në sjellje pa tingëlluar mbrojtës ose tepër fajtor." }
+      ],
+      "learnerGoal": "Auf Kritik am eigenen Führungsstil souverän reagieren: Muster anerkennen, ohne die eigene Rolle zu entwerten; konkrete Änderungen benennen; Rückmeldung institutionalisieren; und Vertrauen durch überprüfbares Verhalten statt durch große Entschuldigungen wieder aufbauen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Respond confidently to criticism of your leadership style: acknowledge patterns without devaluing your role, name concrete changes, institutionalize feedback, and rebuild trust through observable behavior rather than big apologies." },
+        { "language": "fa", "text": "به نقد درباره سبک رهبری خود با تسلط پاسخ دهید: الگوها را بپذیرید بدون اینکه نقش خود را بی‌ارزش کنید؛ تغییرات مشخص را نام ببرید؛ بازخورد را نهادینه کنید؛ و اعتماد را با رفتار قابل مشاهده، نه با عذرخواهی‌های بزرگ، بازسازی کنید." },
+        { "language": "ar", "text": "استجيبوا بثبات للنقد الموجه إلى أسلوبكم القيادي: اعترفوا بالأنماط من دون إضعاف دوركم، واذكروا تغييرات ملموسة، واجعلوا التغذية الراجعة جزءاً من العمل، وأعيدوا بناء الثقة عبر سلوك قابل للملاحظة لا عبر اعتذارات كبيرة." },
+        { "language": "tr", "text": "Liderlik tarzınıza yönelik eleştiriye kendinden emin yanıt verin: rolünüzü değersizleştirmeden kalıpları kabul edin, somut değişiklikleri adlandırın, geri bildirimi kurumsallaştırın ve güveni büyük özürlerle değil gözlemlenebilir davranışla yeniden kurun." },
+        { "language": "ru", "text": "Уверенно ответить на критику собственного стиля руководства: признать повторяющиеся модели, не обесценивая свою роль; назвать конкретные изменения; встроить обратную связь в процесс; и восстановить доверие через проверяемое поведение, а не большие извинения." },
+        { "language": "ckb", "text": "بە دڵنیایی وەڵامی ڕەخنەی شێوازی سەرکردایەتی خۆت بدەوە: الگوکان بناسە بێ ئەوەی ڕۆڵەکەت کەم نرخ بکەیت؛ گۆڕانکارییە دیاریکراوەکان ناو ببه؛ فیدباک بخە ناو پرۆسە؛ و متمانە بە ڕەفتاری قابل بینین، نە بە داوای لێبوردنی گەورە، دووبارە دروست بکەوە." },
+        { "language": "kmr", "text": "Bi bawerî bersiva rexneya li ser şêwaza xwe ya rêveberiyê bidin: şêwazên dubare qebûl bikin bêyî ku rola xwe kêm nirx bikin; guherînên konkret bi nav bikin; paşxistinê bixin nav prosesê; û baweriyê bi reftara xuya, ne bi lêborînên mezin, ji nû ve ava bikin." },
+        { "language": "pl", "text": "Pewnie odpowiedzieć na krytykę własnego stylu przywództwa: uznać wzorce bez dewaluowania swojej roli; nazwać konkretne zmiany; wbudować informację zwrotną w proces; i odbudować zaufanie przez sprawdzalne zachowanie, a nie wielkie przeprosiny." },
+        { "language": "ro", "text": "Răspundeți sigur la critica privind propriul stil de conducere: recunoașteți tiparele fără a vă devaloriza rolul, numiți schimbări concrete, instituționalizați feedbackul și reconstruiți încrederea prin comportament observabil, nu prin scuze mari." },
+        { "language": "sq", "text": "Përgjigjuni me siguri kritikës ndaj stilit tuaj drejtues: pranoni modelet pa e zhvlerësuar rolin tuaj, emërtoni ndryshime konkrete, institucionalizoni reagimin dhe rindërtoni besimin përmes sjelljes së verifikueshme, jo përmes faljeve të mëdha." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "describe-experience",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 12,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Führungskraft",
+          "translations": [
+            { "language": "en", "text": "Manager" },
+            { "language": "fa", "text": "مدیر" },
+            { "language": "ar", "text": "مدير" },
+            { "language": "tr", "text": "Yönetici" },
+            { "language": "ru", "text": "Руководитель" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Rêveber" },
+            { "language": "pl", "text": "Lider" },
+            { "language": "ro", "text": "Manager" },
+            { "language": "sq", "text": "Drejtues" }
+          ]
+        },
+        {
+          "roleKey": "team-member",
+          "displayName": "Teammitglied",
+          "translations": [
+            { "language": "en", "text": "Team member" },
+            { "language": "fa", "text": "عضو تیم" },
+            { "language": "ar", "text": "عضو الفريق" },
+            { "language": "tr", "text": "Ekip üyesi" },
+            { "language": "ru", "text": "Участник команды" },
+            { "language": "ckb", "text": "ئەندامی تیم" },
+            { "language": "kmr", "text": "Endamê tîmê" },
+            { "language": "pl", "text": "Członek zespołu" },
+            { "language": "ro", "text": "Membru al echipei" },
+            { "language": "sq", "text": "Anëtar i ekipit" }
+          ]
+        },
+        {
+          "roleKey": "hr",
+          "displayName": "Personalentwicklung",
+          "translations": [
+            { "language": "en", "text": "People development" },
+            { "language": "fa", "text": "توسعه منابع انسانی" },
+            { "language": "ar", "text": "تطوير الموارد البشرية" },
+            { "language": "tr", "text": "İnsan kaynakları gelişimi" },
+            { "language": "ru", "text": "Развитие персонала" },
+            { "language": "ckb", "text": "پەرەپێدانی سەرچاوە مرۆیی" },
+            { "language": "kmr", "text": "Pêşxistina çavkaniyên mirovî" },
+            { "language": "pl", "text": "Rozwój pracowników" },
+            { "language": "ro", "text": "Dezvoltarea personalului" },
+            { "language": "sq", "text": "Zhvillimi i personelit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "hr",
+          "baseText": "Die Rückmeldungen aus der Retrospektive sind deutlich: Das Team erlebt Entscheidungen als spät, Einwände als zu schnell abgeräumt und Ihre Rolle teilweise als zu stark kontrollierend.",
+          "translations": [
+            { "language": "en", "text": "The feedback from the retrospective is clear: the team experiences decisions as late, objections as cleared away too quickly, and your role partly as too controlling." },
+            { "language": "fa", "text": "بازخوردهای بازنگری روشن هستند: تیم تصمیم‌ها را دیرهنگام تجربه می‌کند، اعتراض‌ها را خیلی سریع کنار گذاشته‌شده می‌بیند و نقش شما را تا حدی بیش از حد کنترل‌گر می‌داند." },
+            { "language": "ar", "text": "التغذية الراجعة من المراجعة واضحة: يرى الفريق القرارات متأخرة، والاعتراضات مزاحة بسرعة كبيرة، ودوركم جزئياً شديد التحكم." },
+            { "language": "tr", "text": "Retrospektiften gelen geri bildirim açık: ekip kararları geç, itirazların çok hızlı ortadan kaldırıldığını ve rolünüzü kısmen fazla kontrolcü olarak deneyimliyor." },
+            { "language": "ru", "text": "Обратная связь из ретроспективы ясна: команда воспринимает решения как поздние, возражения как слишком быстро убранные, а вашу роль частично как чрезмерно контролирующую." },
+            { "language": "ckb", "text": "فیدباکی هەڵسەنگاندنەوەکە ڕوونە: تیمەکە بڕیارەکان وەک دواکەوتوو دەبینێت، ناڕەزایەتییەکان وەک زۆر خێرا لابراو، و ڕۆڵی ئێوە بەشێک وەک زۆر کۆنترۆڵکەر." },
+            { "language": "kmr", "text": "Paşxistina retrospektîfê zelal e: tîm biryaran wekî dereng, nerazîbûnan wekî pir zû rakirî, û rola we qismî wekî pir kontrolkar dibîne." },
+            { "language": "pl", "text": "Informacja zwrotna z retrospektywy jest wyraźna: zespół odbiera decyzje jako spóźnione, zastrzeżenia jako zbyt szybko usuwane, a Pana/Pani rolę częściowo jako zbyt kontrolującą." },
+            { "language": "ro", "text": "Feedbackul din retrospectivă este clar: echipa percepe deciziile ca întârziate, obiecțiile ca eliminate prea repede și rolul dumneavoastră parțial ca prea controlant." },
+            { "language": "sq", "text": "Reagimet nga retrospektiva janë të qarta: ekipi i përjeton vendimet si të vonuara, kundërshtimet si të larguara shumë shpejt dhe rolin tuaj pjesërisht si tepër kontrollues." }
+          ],
+          "function": "presents leadership criticism",
+          "toneNote": "direct, professional"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte das nicht relativieren. Ich höre drei Muster: späte Entscheidungsfenster, zu wenig sichtbarer Umgang mit Einwänden und ein Führungsverhalten, das Sicherheit geben sollte, aber stellenweise als Kontrolle angekommen ist.",
+          "translations": [
+            { "language": "en", "text": "I do not want to relativize this. I hear three patterns: late decision windows, too little visible handling of objections, and leadership behavior that was meant to provide certainty but at points came across as control." },
+            { "language": "fa", "text": "نمی‌خواهم این را کم‌اهمیت جلوه بدهم. سه الگو می‌شنوم: بازه‌های تصمیم‌گیری دیرهنگام، برخورد ناکافی و قابل مشاهده با اعتراض‌ها، و رفتاری رهبری که قرار بود اطمینان بدهد اما در بعضی جاها به‌صورت کنترل‌گری دریافت شده است." },
+            { "language": "ar", "text": "لا أريد أن أهوّن من ذلك. أسمع ثلاثة أنماط: نوافذ قرار متأخرة، وتعامل غير مرئي بما يكفي مع الاعتراضات، وسلوك قيادي كان يُفترض أن يمنح الأمان لكنه وصل في بعض المواضع كتحكم." },
+            { "language": "tr", "text": "Bunu görecelileştirmek istemiyorum. Üç kalıp duyuyorum: geç karar pencereleri, itirazlarla yeterince görünür ilgilenilmemesi ve güven vermesi amaçlanan ama yer yer kontrol olarak algılanan bir liderlik davranışı." },
+            { "language": "ru", "text": "Я не хочу это смягчать. Я слышу три модели: поздние окна принятия решений, недостаточно видимая работа с возражениями и руководящее поведение, которое должно было давать уверенность, но местами воспринималось как контроль." },
+            { "language": "ckb", "text": "نامەوێت ئەمە کەم بکەمەوە. سێ الگو دەبیستم: کاتی بڕیاردانی دوا، مامەڵەی ناکافی و نەبینراو لەگەڵ ناڕەزایەتییەکان، و ڕەفتاری سەرکردایەتی کە مەبەست بوو دڵنیایی بدات بەڵام لە هەندێک شوێن وەک کۆنترۆڵ وەرگیراوە." },
+            { "language": "kmr", "text": "Ez naxwazim vê sivik nîşan bidim. Ez sê şêwaz dibihîzim: demên biryardanê yên dereng, mijûlbûna ne têr xuya bi nerazîbûnan, û reftara rêveberiyê ku diviya ewlehî bide lê li hin cihan wekî kontrol hatî fêmkirin." },
+            { "language": "pl", "text": "Nie chcę tego relatywizować. Słyszę trzy wzorce: późne okna decyzyjne, zbyt mało widoczne obchodzenie się z zastrzeżeniami oraz zachowanie przywódcze, które miało dawać bezpieczeństwo, ale miejscami zostało odebrane jako kontrola." },
+            { "language": "ro", "text": "Nu vreau să relativizez acest lucru. Aud trei tipare: ferestre decizionale târzii, prea puțină gestionare vizibilă a obiecțiilor și un comportament de conducere care trebuia să ofere siguranță, dar pe alocuri a fost perceput ca control." },
+            { "language": "sq", "text": "Nuk dua ta relativizoj këtë. Dëgjoj tre modele: dritare vendimmarrjeje të vonuara, shumë pak trajtim të dukshëm të kundërshtimeve dhe një sjellje drejtuese që synonte të jepte siguri, por në disa raste u perceptua si kontroll." }
+          ],
+          "function": "acknowledges criticism without collapse",
+          "toneNote": "calm, accountable",
+          "expectedLearnerAction": "Name patterns in the criticism without becoming defensive or self-devaluing."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "team-member",
+          "baseText": "Einige haben aufgehört, Bedenken früh zu äußern. Nicht, weil sie keine Meinung haben, sondern weil sie das Gefühl hatten, am Ende entscheidet ohnehin alles über Ihren Tisch.",
+          "translations": [
+            { "language": "en", "text": "Some people stopped raising concerns early. Not because they have no opinion, but because they felt that in the end everything is decided through your desk anyway." },
+            { "language": "fa", "text": "بعضی‌ها دیگر نگرانی‌ها را زود مطرح نکردند. نه چون نظری ندارند، بلکه چون احساس می‌کردند در نهایت همه چیز از میز شما تصمیم‌گیری می‌شود." },
+            { "language": "ar", "text": "توقف بعضهم عن طرح المخاوف مبكراً. ليس لأنهم بلا رأي، بل لأنهم شعروا أن كل شيء في النهاية يقرر عبر مكتبكم على أي حال." },
+            { "language": "tr", "text": "Bazıları endişelerini erken dile getirmeyi bıraktı. Fikirleri olmadığı için değil, sonunda zaten her şeyin sizin masanızda karara bağlandığını hissettikleri için." },
+            { "language": "ru", "text": "Некоторые перестали рано высказывать опасения. Не потому, что у них нет мнения, а потому что они чувствовали: в конце все равно все решается через ваш стол." },
+            { "language": "ckb", "text": "هەندێک کەس وازیان هێنا لەوەی زوو نیگەرانی دەرببڕن. نە چونکە بۆچوونیان نییە، بەڵکو چونکە هەستیان دەکرد لە کۆتاییدا هەموو شتێک هەر لەسەر مێزی ئێوە بڕیار دەدرێت." },
+            { "language": "kmr", "text": "Hin kesan dev ji gotina xemgîniyan di destpêkê de berdan. Ne ji ber ku wan nerîn tune ye, lê ji ber ku wan hest dikir di dawiyê de her tişt dîsa li ser maseya we tê biryardan." },
+            { "language": "pl", "text": "Niektórzy przestali wcześnie zgłaszać obawy. Nie dlatego, że nie mają zdania, lecz dlatego, że mieli poczucie, iż na końcu i tak wszystko przechodzi przez Pana/Pani biurko." },
+            { "language": "ro", "text": "Unii au încetat să exprime devreme îngrijorări. Nu pentru că nu au opinii, ci pentru că au simțit că, în final, oricum totul se decide la biroul dumneavoastră." },
+            { "language": "sq", "text": "Disa ndaluan së shprehuri herët shqetësimet. Jo sepse nuk kanë mendim, por sepse ndienin se në fund gjithçka vendoset gjithsesi në tavolinën tuaj." }
+          ],
+          "function": "describes trust and participation loss",
+          "toneNote": "honest, reserved"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein ernstes Signal. Ich nehme daraus nicht mit, dass Führung überflüssig wäre, sondern dass ich Entscheidung und Beteiligung sauberer trennen muss: Wo ich entscheide, begründe ich früher; wo Expertise im Team liegt, mache ich den Entscheidungsspielraum vorher sichtbar.",
+          "translations": [
+            { "language": "en", "text": "That is a serious signal. What I take from it is not that leadership is unnecessary, but that I must separate decision and participation more cleanly: where I decide, I explain earlier; where expertise lies in the team, I make the decision space visible beforehand." },
+            { "language": "fa", "text": "این نشانه جدی است. برداشت من این نیست که رهبری بی‌فایده است، بلکه این است که باید تصمیم‌گیری و مشارکت را تمیزتر جدا کنم: جایی که من تصمیم می‌گیرم، زودتر دلیل می‌آورم؛ جایی که تخصص در تیم است، فضای تصمیم را از قبل قابل مشاهده می‌کنم." },
+            { "language": "ar", "text": "هذه إشارة جدية. لا أفهم منها أن القيادة غير ضرورية، بل أن عليّ فصل القرار والمشاركة بصورة أنظف: حيث أقرر، أشرح السبب أبكر؛ وحيث توجد الخبرة في الفريق، أجعل مساحة القرار مرئية مسبقاً." },
+            { "language": "tr", "text": "Bu ciddi bir sinyal. Bundan liderliğin gereksiz olduğu sonucunu çıkarmıyorum; karar ve katılımı daha temiz ayırmam gerektiğini çıkarıyorum: karar verdiğim yerde daha erken gerekçelendiririm; uzmanlık ekipte olduğunda karar alanını önceden görünür kılarım." },
+            { "language": "ru", "text": "Это серьезный сигнал. Я не делаю из этого вывод, что руководство не нужно; я понимаю, что должен чище разделять решение и участие: там, где решаю я, я раньше объясняю основания; там, где экспертиза в команде, заранее показываю пространство решения." },
+            { "language": "ckb", "text": "ئەمە نیشانەیەکی جدییە. من لەوەوە ئەوە وەرناگرم کە سەرکردایەتی بێ پێویستە، بەڵکو ئەوە وەردەگرم کە دەبێت بڕیار و بەشداری بە پاکیتر جیا بکەمەوە: لەو شوێنەی من بڕیار دەدەم، زووتر هۆکار دەهێنمەوە؛ لەو شوێنەی پسپۆڕی لە تیمەکەدایە، پێشتر فضای بڕیار دەردەخەم." },
+            { "language": "kmr", "text": "Ev nîşaneyeke cidî ye. Ez ji vê nagihîjim wê encamê ku rêveberî bêhewce ye, lê ku divê ez biryar û beşdarbûnê paqijtir ji hev veqetînim: li ku ez biryar didim, ez zûtir sedemê dibêjim; li ku pisporî di tîmê de ye, ez qada biryarê berê xuya dikim." },
+            { "language": "pl", "text": "To poważny sygnał. Nie wyciągam z tego wniosku, że przywództwo jest zbędne, tylko że muszę czyściej oddzielać decyzję od udziału: tam, gdzie decyduję ja, wcześniej uzasadniam; tam, gdzie wiedza jest w zespole, wcześniej pokazuję przestrzeń decyzyjną." },
+            { "language": "ro", "text": "Este un semnal serios. Nu înțeleg de aici că leadershipul ar fi inutil, ci că trebuie să separ mai clar decizia și participarea: acolo unde decid eu, explic mai devreme; acolo unde expertiza este în echipă, fac vizibil dinainte spațiul deciziei." },
+            { "language": "sq", "text": "Ky është një sinjal serioz. Nuk nxjerr prej tij se drejtimi është i panevojshëm, por se duhet të ndaj më pastër vendimin dhe pjesëmarrjen: aty ku vendos unë, jap arsyet më herët; aty ku ekspertiza është në ekip, e bëj hapësirën e vendimit të dukshme më parë." }
+          ],
+          "function": "reframes leadership after criticism",
+          "toneNote": "accountable, steady",
+          "expectedLearnerAction": "Accept the signal and define a better leadership distinction."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "hr",
+          "baseText": "Das klingt nachvollziehbar. Aber das Team wird fragen, woran es konkret merkt, dass sich etwas ändert.",
+          "translations": [
+            { "language": "en", "text": "That sounds understandable. But the team will ask how it can concretely notice that something is changing." },
+            { "language": "fa", "text": "این قابل فهم است. اما تیم خواهد پرسید دقیقاً از چه چیزی بفهمد که چیزی تغییر می‌کند." },
+            { "language": "ar", "text": "هذا يبدو مفهوماً. لكن الفريق سيسأل كيف يلاحظ بشكل ملموس أن شيئاً يتغير." },
+            { "language": "tr", "text": "Bu anlaşılır geliyor. Ama ekip bir şeylerin değiştiğini somut olarak nereden anlayacağını soracak." },
+            { "language": "ru", "text": "Это звучит понятно. Но команда спросит, по каким конкретным признакам она заметит изменения." },
+            { "language": "ckb", "text": "ئەمە تێگەیشتراو دەردەکەوێت. بەڵام تیمەکە دەپرسێت بە دیاریکراوی لە چی تێبگات کە شتێک دەگۆڕێت." },
+            { "language": "kmr", "text": "Ev fêmbar xuya dike. Lê tîm dê bipirse ka bi çi awayekî konkret bibîne ku tiştek diguhere." },
+            { "language": "pl", "text": "To brzmi zrozumiale. Ale zespół zapyta, po czym konkretnie pozna, że coś się zmienia." },
+            { "language": "ro", "text": "Sună de înțeles. Dar echipa va întreba după ce va observa concret că se schimbă ceva." },
+            { "language": "sq", "text": "Kjo tingëllon e kuptueshme. Por ekipi do të pyesë nga çfarë konkretisht do ta kuptojë se diçka po ndryshon." }
+          ],
+          "function": "requests observable behavior",
+          "toneNote": "constructive"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich schlage drei beobachtbare Änderungen vor: Entscheidungen bekommen künftig einen kurzen Begründungssatz, Einwände werden vor dem Beschluss sichtbar dokumentiert, und in kritischen Phasen gibt es eine feste Runde, in der ausdrücklich Gegenargumente gesammelt werden.",
+          "translations": [
+            { "language": "en", "text": "I propose three observable changes: in future, decisions will include a short rationale, objections will be visibly documented before the resolution, and in critical phases there will be a fixed round explicitly dedicated to collecting counterarguments." },
+            { "language": "fa", "text": "سه تغییر قابل مشاهده پیشنهاد می‌کنم: از این به بعد تصمیم‌ها یک جمله کوتاه درباره دلیل خواهند داشت، اعتراض‌ها پیش از تصویب به‌صورت قابل مشاهده ثبت می‌شوند، و در مراحل حساس یک دور ثابت وجود دارد که صریحاً برای جمع‌آوری استدلال‌های مخالف است." },
+            { "language": "ar", "text": "أقترح ثلاثة تغييرات قابلة للملاحظة: ستحصل القرارات مستقبلاً على جملة تبرير قصيرة، وستوثق الاعتراضات بشكل مرئي قبل القرار، وفي المراحل الحرجة ستكون هناك جولة ثابتة مخصصة صراحة لجمع الحجج المضادة." },
+            { "language": "tr", "text": "Üç gözlemlenebilir değişiklik öneriyorum: kararlar bundan sonra kısa bir gerekçe cümlesi alacak, itirazlar karar öncesinde görünür biçimde belgelenmiş olacak ve kritik aşamalarda açıkça karşı argüman toplamaya ayrılmış sabit bir tur olacak." },
+            { "language": "ru", "text": "Я предлагаю три наблюдаемых изменения: решения в будущем получают короткое обоснование, возражения до принятия решения видимо документируются, а в критических фазах будет фиксированный раунд, специально посвященный сбору контраргументов." },
+            { "language": "ckb", "text": "سێ گۆڕانکاری قابل بینین پێشنیار دەکەم: لە داهاتوودا بڕیارەکان ڕستەیەکی کورتی هۆکار وەردەگرن، ناڕەزایەتییەکان پێش پەسەندکردن بە شێوەی بینراو تۆمار دەکرێن، و لە قۆناغە گرنگەکاندا خولێکی جێگیر هەیە کە بە ئاشکرا بۆ کۆکردنەوەی بەڵگەی دژە." },
+            { "language": "kmr", "text": "Ez sê guherînên xuya pêşniyar dikim: ji niha pê ve biryar dê hevokeke kurt a sedemê hebin, nerazîbûn berî biryarê bi awayekî xuya tomar dibin, û di qonaxên krîtîk de dê doreke sabît hebe ku bi zelalî ji bo berhevkirina argumanên dijber e." },
+            { "language": "pl", "text": "Proponuję trzy obserwowalne zmiany: decyzje będą w przyszłości zawierać krótkie uzasadnienie, zastrzeżenia będą widocznie dokumentowane przed uchwałą, a w krytycznych fazach będzie stała runda wyraźnie poświęcona zbieraniu kontrargumentów." },
+            { "language": "ro", "text": "Propun trei schimbări observabile: deciziile vor avea pe viitor o scurtă justificare, obiecțiile vor fi documentate vizibil înainte de hotărâre, iar în fazele critice va exista o rundă fixă dedicată explicit colectării contraargumentelor." },
+            { "language": "sq", "text": "Propozoj tre ndryshime të vëzhgueshme: vendimet në të ardhmen do të kenë një fjali të shkurtër arsyetimi, kundërshtimet do të dokumentohen dukshëm para vendimit dhe në fazat kritike do të ketë një raund të caktuar posaçërisht për mbledhjen e kundërargumenteve." }
+          ],
+          "function": "names measurable leadership changes",
+          "toneNote": "concrete, procedural",
+          "expectedLearnerAction": "Translate criticism into observable leadership behaviors."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "team-member",
+          "baseText": "Das wäre hilfreich. Aber ehrlich gesagt: Nach Retrospektiven klingen viele Dinge gut, und nach zwei Wochen läuft wieder alles wie vorher.",
+          "translations": [
+            { "language": "en", "text": "That would be helpful. But honestly: after retrospectives, many things sound good, and after two weeks everything runs as before again." },
+            { "language": "fa", "text": "این کمک‌کننده خواهد بود. اما راستش را بخواهید: بعد از بازنگری‌ها خیلی چیزها خوب به نظر می‌رسند، و بعد از دو هفته همه چیز دوباره مثل قبل پیش می‌رود." },
+            { "language": "ar", "text": "سيكون ذلك مفيداً. لكن بصراحة: بعد المراجعات تبدو أشياء كثيرة جيدة، وبعد أسبوعين يسير كل شيء كما كان من قبل." },
+            { "language": "tr", "text": "Bu yardımcı olurdu. Ama açıkçası: retrospektiflerden sonra birçok şey iyi duyuluyor ve iki hafta sonra her şey yine eskisi gibi işliyor." },
+            { "language": "ru", "text": "Это было бы полезно. Но честно говоря: после ретроспектив многие вещи звучат хорошо, а через две недели все снова идет как раньше." },
+            { "language": "ckb", "text": "ئەمە یارمەتیدەر دەبێت. بەڵام بە ڕاستی: دوای هەڵسەنگاندنەوەکان زۆر شت باش دەنگ دەدات، و دوای دوو هەفتە هەموو شت جارێکی تر وەک پێشوو دەڕوات." },
+            { "language": "kmr", "text": "Ev dê alîkar be. Lê bi rastî: piştî retrospektîfan gelek tişt baş têne bihîstin, û piştî du hefteyan her tişt dîsa wekî berê dimeşe." },
+            { "language": "pl", "text": "To byłoby pomocne. Ale szczerze mówiąc: po retrospektywach wiele rzeczy brzmi dobrze, a po dwóch tygodniach wszystko znów działa jak wcześniej." },
+            { "language": "ro", "text": "Ar fi util. Dar sincer: după retrospective multe lucruri sună bine, iar după două săptămâni totul merge din nou ca înainte." },
+            { "language": "sq", "text": "Kjo do të ishte e dobishme. Por sinqerisht: pas retrospektivave shumë gjëra tingëllojnë mirë, dhe pas dy javësh gjithçka funksionon sërish si më parë." }
+          ],
+          "function": "tests sustainability of change",
+          "toneNote": "skeptical but engaged"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb will ich die Veränderung nicht als Absichtserklärung stehen lassen. Wir überprüfen sie nach vier Wochen anhand von zwei Fragen: Wurden Einwände dokumentiert, bevor entschieden wurde, und konnte das Team nachvollziehen, warum eine Entscheidung so gefallen ist?",
+          "translations": [
+            { "language": "en", "text": "That is exactly why I do not want to leave the change as a declaration of intent. We will review it after four weeks using two questions: were objections documented before the decision, and could the team understand why the decision was made that way?" },
+            { "language": "fa", "text": "دقیقاً به همین دلیل نمی‌خواهم تغییر فقط در حد اعلام نیت بماند. پس از چهار هفته آن را با دو پرسش بررسی می‌کنیم: آیا اعتراض‌ها پیش از تصمیم ثبت شدند، و آیا تیم توانست بفهمد چرا تصمیم این‌گونه گرفته شد؟" },
+            { "language": "ar", "text": "لهذا بالضبط لا أريد أن تبقى التغييرات مجرد إعلان نية. سنراجعها بعد أربعة أسابيع بسؤالين: هل وُثقت الاعتراضات قبل القرار، وهل استطاع الفريق فهم سبب اتخاذ القرار بهذه الطريقة؟" },
+            { "language": "tr", "text": "Tam da bu yüzden değişikliğin niyet beyanı olarak kalmasını istemiyorum. Dört hafta sonra iki soruyla kontrol edeceğiz: itirazlar karar verilmeden önce belgelendi mi ve ekip kararın neden bu şekilde alındığını anlayabildi mi?" },
+            { "language": "ru", "text": "Именно поэтому я не хочу оставлять изменение на уровне заявления о намерениях. Через четыре недели мы проверим его по двум вопросам: были ли возражения задокументированы до решения, и смогла ли команда понять, почему решение было принято именно так?" },
+            { "language": "ckb", "text": "هەر بۆیە نامەوێت گۆڕانکارییەکە تەنها وەک ڕاگەیاندنی نیەت بمێنێتەوە. دوای چوار هەفتە بە دوو پرسیار دەیپشکنین: ئایا ناڕەزایەتییەکان پێش بڕیار تۆمار کران، و ئایا تیمەکە توانی تێبگات بۆچی بڕیارەکە ئاوا درا؟" },
+            { "language": "kmr", "text": "Tam ji ber vê ez naxwazim guherîn wekî daxuyaniya niyetê bimîne. Em piştî çar hefteyan wê bi du pirsan kontrol dikin: gelo nerazîbûn berî biryarê hatin tomarkirin, û gelo tîm karî fêm bike çima biryar wisa hat dayîn?" },
+            { "language": "pl", "text": "Właśnie dlatego nie chcę zostawić zmiany jako deklaracji intencji. Po czterech tygodniach sprawdzimy ją dwoma pytaniami: czy zastrzeżenia zostały udokumentowane przed decyzją i czy zespół mógł zrozumieć, dlaczego decyzja zapadła właśnie tak?" },
+            { "language": "ro", "text": "Tocmai de aceea nu vreau să las schimbarea la nivel de declarație de intenție. O verificăm după patru săptămâni pe baza a două întrebări: au fost documentate obiecțiile înainte de decizie și a putut echipa să înțeleagă de ce decizia a fost luată astfel?" },
+            { "language": "sq", "text": "Pikërisht për këtë nuk dua ta lë ndryshimin si deklaratë qëllimi. Do ta kontrollojmë pas katër javësh me dy pyetje: a u dokumentuan kundërshtimet para vendimit dhe a mundi ekipi të kuptojë pse vendimi u mor në këtë mënyrë?" }
+          ],
+          "function": "makes change reviewable",
+          "toneNote": "specific, credible",
+          "expectedLearnerAction": "Turn promises into a reviewable follow-up mechanism."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "hr",
+          "baseText": "Für die Teamrunde brauchen Sie eine knappe Formulierung. Sie sollte Verantwortung zeigen, aber nicht so klingen, als würden Sie Ihre Führungsrolle abgeben.",
+          "translations": [
+            { "language": "en", "text": "For the team round, you need concise wording. It should show responsibility without sounding as if you are giving up your leadership role." },
+            { "language": "fa", "text": "برای جلسه تیم به یک بیان کوتاه نیاز دارید. باید مسئولیت‌پذیری نشان دهد، اما طوری نباشد که انگار نقش رهبری خود را واگذار می‌کنید." },
+            { "language": "ar", "text": "تحتاجون إلى صياغة قصيرة لجولة الفريق. ينبغي أن تظهر المسؤولية، لكن من دون أن تبدو كأنكم تتخلون عن دوركم القيادي." },
+            { "language": "tr", "text": "Ekip turu için kısa bir ifadeye ihtiyacınız var. Sorumluluk göstermeli, ama liderlik rolünüzü bırakıyormuşsunuz gibi duyulmamalı." },
+            { "language": "ru", "text": "Для командного обсуждения нужна краткая формулировка. Она должна показать ответственность, но не звучать так, будто вы отказываетесь от своей руководящей роли." },
+            { "language": "ckb", "text": "بۆ خولی تیم پێویستتان بە دەربڕینێکی کورتە. دەبێت بەرپرسیاریەتی پیشان بدات، بەڵام وەک ئەوە نەدەنگ بدات کە ئێوە ڕۆڵی سەرکردایەتی خۆتان دەستبەردار دەبن." },
+            { "language": "kmr", "text": "Ji bo dora tîmê hewce bi formulasyoneke kurt heye. Divê berpirsiyarî nîşan bide, lê wisa neyê bihîstin ku hûn rola xwe ya rêveberiyê berdidin." },
+            { "language": "pl", "text": "Na rundę zespołu potrzebne jest krótkie sformułowanie. Powinno pokazywać odpowiedzialność, ale nie brzmieć tak, jakby oddawał Pan/Pani rolę lidera." },
+            { "language": "ro", "text": "Pentru runda cu echipa aveți nevoie de o formulare scurtă. Ar trebui să arate responsabilitate, dar să nu sune ca și cum ați renunța la rolul de conducere." },
+            { "language": "sq", "text": "Për raundin me ekipin ju duhet një formulim i shkurtër. Duhet të tregojë përgjegjësi, por të mos tingëllojë sikur po hiqni dorë nga roli drejtues." }
+          ],
+          "function": "requests leadership wording",
+          "toneNote": "advisory"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Ich bleibe für Entscheidungen verantwortlich, aber ich werde früher sichtbar machen, welche Fragen offen sind und welche Einwände in die Entscheidung einfließen. Mein Ziel ist nicht weniger Führung, sondern bessere Anschlussfähigkeit der Führung an die Expertise im Team.",
+          "translations": [
+            { "language": "en", "text": "I would say: I remain responsible for decisions, but I will make visible earlier which questions are open and which objections feed into the decision. My goal is not less leadership, but better connection between leadership and the expertise in the team." },
+            { "language": "fa", "text": "می‌گویم: من همچنان مسئول تصمیم‌ها می‌مانم، اما زودتر قابل مشاهده می‌کنم که چه پرسش‌هایی باز هستند و کدام اعتراض‌ها وارد تصمیم می‌شوند. هدفم رهبری کمتر نیست، بلکه پیوند بهتر رهبری با تخصص تیم است." },
+            { "language": "ar", "text": "سأقول: أبقى مسؤولاً عن القرارات، لكنني سأجعل الأسئلة المفتوحة والاعتراضات التي تدخل في القرار مرئية في وقت أبكر. هدفي ليس قيادة أقل، بل ارتباط أفضل بين القيادة وخبرة الفريق." },
+            { "language": "tr", "text": "Şöyle derdim: Kararlardan sorumlu olmaya devam ediyorum, ama hangi soruların açık olduğunu ve hangi itirazların karara dahil olduğunu daha erken görünür kılacağım. Hedefim daha az liderlik değil, liderliğin ekip uzmanlığıyla daha iyi bağ kurmasıdır." },
+            { "language": "ru", "text": "Я бы сказал так: я остаюсь ответственным за решения, но буду раньше показывать, какие вопросы открыты и какие возражения входят в решение. Моя цель не меньше руководства, а лучшая связность руководства с экспертизой команды." },
+            { "language": "ckb", "text": "دەڵێم: من هێشتا بەرپرسی بڕیارەکان دەمێنمەوە، بەڵام زووتر دەردەخەم کام پرسیارەکان کراوەن و کام ناڕەزایەتییەکان دەچنە ناو بڕیارەکە. ئامانجم سەرکردایەتی کەمتر نییە، بەڵکو پەیوەندی باشترە لە نێوان سەرکردایەتی و پسپۆڕی تیم." },
+            { "language": "kmr", "text": "Ez ê bibêjim: Ez ji bo biryaran hîn berpirsiyar dimînim, lê ez ê zûtir xuya bikim kîjan pirs vekirî ne û kîjan nerazîbûn dikevin nav biryarê. Armanca min ne kêmkirina rêveberiyê ye, lê girêdana çêtir a rêveberiyê bi pisporiya tîmê re ye." },
+            { "language": "pl", "text": "Powiedziałbym/Powiedziałabym: nadal odpowiadam za decyzje, ale wcześniej pokażę, które pytania pozostają otwarte i które zastrzeżenia wpływają na decyzję. Moim celem nie jest mniej przywództwa, lecz lepsze połączenie przywództwa z wiedzą zespołu." },
+            { "language": "ro", "text": "Aș spune: rămân responsabil pentru decizii, dar voi face vizibil mai devreme ce întrebări sunt deschise și ce obiecții intră în decizie. Scopul meu nu este mai puțină conducere, ci o conectare mai bună a conducerii la expertiza echipei." },
+            { "language": "sq", "text": "Do të thosha: mbetem përgjegjës për vendimet, por do të bëj më herët të dukshme cilat pyetje janë të hapura dhe cilat kundërshtime hyjnë në vendim. Qëllimi im nuk është më pak drejtim, por lidhje më e mirë e drejtimit me ekspertizën e ekipit." }
+          ],
+          "function": "formulates balanced leadership repositioning",
+          "toneNote": "confident, accountable",
+          "expectedLearnerAction": "State responsibility while opening leadership to team expertise."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "team-member",
+          "baseText": "Wenn das so gemeint ist, kann ich damit arbeiten. Wichtig wäre mir nur, dass Gegenargumente nicht erst gesammelt werden, wenn die Richtung praktisch schon feststeht.",
+          "translations": [
+            { "language": "en", "text": "If that is what you mean, I can work with it. What would be important to me is only that counterarguments are not collected only when the direction is practically already set." },
+            { "language": "fa", "text": "اگر منظورتان این است، می‌توانم با آن کار کنم. فقط برای من مهم است که استدلال‌های مخالف وقتی جمع نشوند که مسیر عملاً از قبل تعیین شده است." },
+            { "language": "ar", "text": "إذا كان هذا هو المقصود، فيمكنني العمل معه. ما يهمني فقط هو ألا تُجمع الحجج المضادة حين يكون الاتجاه عملياً قد تحدد بالفعل." },
+            { "language": "tr", "text": "Eğer kastınız buysa, bununla çalışabilirim. Benim için önemli olan tek şey, karşı argümanların yön pratikte zaten belirlenmişken toplanmaması." },
+            { "language": "ru", "text": "Если это имеется в виду, я могу с этим работать. Для меня важно только, чтобы контраргументы не собирались уже тогда, когда направление практически определено." },
+            { "language": "ckb", "text": "ئەگەر مەبەست ئەوە بێت، دەتوانم لەگەڵی کار بکەم. تەنها بۆ من گرنگە کە بەڵگەی دژە تەنها کاتێک کۆنەکرێتەوە کە ڕێگا بە کردار پێشتر دیاری کراوە." },
+            { "language": "kmr", "text": "Ger mebest ev be, ez dikarim bi wê re bixebitim. Tenê ji bo min girîng e ku argumanên dijber tenê wê demê neyên berhevkirin ku rêgez bi awayekî praktîk jixwe diyar bûye." },
+            { "language": "pl", "text": "Jeśli o to chodzi, mogę z tym pracować. Ważne byłoby dla mnie tylko to, żeby kontrargumenty nie były zbierane dopiero wtedy, gdy kierunek jest praktycznie już ustalony." },
+            { "language": "ro", "text": "Dacă asta este intenția, pot lucra cu ea. Pentru mine ar fi important doar ca argumentele contra să nu fie colectate abia când direcția este practic deja stabilită." },
+            { "language": "sq", "text": "Nëse ky është qëllimi, mund të punoj me këtë. Për mua do të ishte e rëndësishme vetëm që kundërargumentet të mos mblidhen vetëm kur drejtimi praktikisht është vendosur tashmë." }
+          ],
+          "function": "accepts but sets condition",
+          "toneNote": "cautiously constructive"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Das nehme ich als Prüfstein auf. Ab nächster Woche markiere ich vor jeder größeren Entscheidung ausdrücklich den Zeitpunkt, bis zu dem Gegenargumente erwünscht sind, und danach dokumentiere ich, welche davon die Entscheidung verändert oder begrenzt haben.",
+          "translations": [
+            { "language": "en", "text": "I will take that as a test criterion. Starting next week, before every larger decision I will explicitly mark the point until which counterarguments are welcome, and afterward I will document which of them changed or limited the decision." },
+            { "language": "fa", "text": "این را به‌عنوان معیار سنجش می‌پذیرم. از هفته آینده، پیش از هر تصمیم بزرگ‌تر، صریحاً زمانی را مشخص می‌کنم که تا آن استدلال‌های مخالف استقبال می‌شوند، و بعد ثبت می‌کنم کدام‌یک از آن‌ها تصمیم را تغییر داده یا محدود کرده‌اند." },
+            { "language": "ar", "text": "سآخذ ذلك كمعيار اختبار. ابتداءً من الأسبوع القادم، سأحدد صراحة قبل كل قرار أكبر الموعد الذي تكون فيه الحجج المضادة مرحباً بها، وبعد ذلك أوثق أيها غيّر القرار أو حدّه." },
+            { "language": "tr", "text": "Bunu bir kontrol ölçütü olarak alıyorum. Gelecek haftadan itibaren her büyük karardan önce karşı argümanların hangi zamana kadar istendiğini açıkça işaretleyeceğim ve sonra bunlardan hangilerinin kararı değiştirdiğini veya sınırladığını belgeleyeceğim." },
+            { "language": "ru", "text": "Я беру это как критерий проверки. Со следующей недели перед каждым более крупным решением я прямо обозначаю момент, до которого контраргументы желательны, а затем документирую, какие из них изменили или ограничили решение." },
+            { "language": "ckb", "text": "ئەمە وەک پێوەری پشکنین وەردەگرم. لە هەفتەی داهاتووەوە، پێش هەر بڕیارێکی گەورەتر بە ئاشکرا کاتەکە دیاری دەکەم کە تا ئەو کاتە بەڵگەی دژە پێشوازی لێ دەکرێت، و پاشان تۆمار دەکەم کام لەوان بڕیارەکەی گۆڕیوە یان سنووردار کردووە." },
+            { "language": "kmr", "text": "Ez vê wekî pîvana kontrolê digirim. Ji hefteya bê pê ve, berî her biryareke mezin ez bi zelalî ew dem nîşan dikim ku heta wê demê argumanên dijber têne xwestin, û paşê tomar dikim kîjan ji wan biryarê guherandin an sînordar kirin." },
+            { "language": "pl", "text": "Przyjmuję to jako kryterium sprawdzające. Od przyszłego tygodnia przed każdą większą decyzją wyraźnie zaznaczę moment, do którego kontrargumenty są oczekiwane, a potem udokumentuję, które z nich zmieniły lub ograniczyły decyzję." },
+            { "language": "ro", "text": "Preiau acest lucru ca reper de verificare. Începând de săptămâna viitoare, înainte de fiecare decizie mai mare voi marca explicit momentul până la care contraargumentele sunt dorite, iar apoi voi documenta care dintre ele au schimbat sau limitat decizia." },
+            { "language": "sq", "text": "E marr këtë si kriter kontrolli. Duke filluar nga java e ardhshme, para çdo vendimi më të madh do të shënoj qartë momentin deri kur kundërargumentet janë të mirëpritura, dhe më pas do të dokumentoj cilat prej tyre e ndryshuan ose e kufizuan vendimin." }
+          ],
+          "function": "closes with a reviewable leadership commitment",
+          "toneNote": "specific, reliable",
+          "expectedLearnerAction": "Turn the team's condition into an observable commitment."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte das nicht relativieren. Ich höre drei Muster: späte Entscheidungsfenster, zu wenig sichtbarer Umgang mit Einwänden und ein Führungsverhalten, das Sicherheit geben sollte, aber stellenweise als Kontrolle angekommen ist.",
+              "translations": [
+                { "language": "en", "text": "I do not want to relativize this. I hear three patterns: late decision windows, too little visible handling of objections, and leadership behavior that was meant to provide certainty but at points came across as control." },
+                { "language": "fa", "text": "نمی‌خواهم این را کم‌اهمیت جلوه بدهم. سه الگو می‌شنوم: بازه‌های تصمیم‌گیری دیرهنگام، برخورد ناکافی و قابل مشاهده با اعتراض‌ها، و رفتاری رهبری که قرار بود اطمینان بدهد اما در بعضی جاها به‌صورت کنترل‌گری دریافت شده است." },
+                { "language": "ar", "text": "لا أريد أن أهوّن من ذلك. أسمع ثلاثة أنماط: نوافذ قرار متأخرة، وتعامل غير مرئي بما يكفي مع الاعتراضات، وسلوك قيادي كان يُفترض أن يمنح الأمان لكنه وصل في بعض المواضع كتحكم." },
+                { "language": "tr", "text": "Bunu görecelileştirmek istemiyorum. Üç kalıp duyuyorum: geç karar pencereleri, itirazlarla yeterince görünür ilgilenilmemesi ve güven vermesi amaçlanan ama yer yer kontrol olarak algılanan bir liderlik davranışı." },
+                { "language": "ru", "text": "Я не хочу это смягчать. Я слышу три модели: поздние окна принятия решений, недостаточно видимая работа с возражениями и руководящее поведение, которое должно было давать уверенность, но местами воспринималось как контроль." },
+                { "language": "ckb", "text": "نامەوێت ئەمە کەم بکەمەوە. سێ الگو دەبیستم: کاتی بڕیاردانی دوا، مامەڵەی ناکافی و نەبینراو لەگەڵ ناڕەزایەتییەکان، و ڕەفتاری سەرکردایەتی کە مەبەست بوو دڵنیایی بدات بەڵام لە هەندێک شوێن وەک کۆنترۆڵ وەرگیراوە." },
+                { "language": "kmr", "text": "Ez naxwazim vê sivik nîşan bidim. Ez sê şêwaz dibihîzim: demên biryardanê yên dereng, mijûlbûna ne têr xuya bi nerazîbûnan, û reftara rêveberiyê ku diviya ewlehî bide lê li hin cihan wekî kontrol hatî fêmkirin." },
+                { "language": "pl", "text": "Nie chcę tego relatywizować. Słyszę trzy wzorce: późne okna decyzyjne, zbyt mało widoczne obchodzenie się z zastrzeżeniami oraz zachowanie przywódcze, które miało dawać bezpieczeństwo, ale miejscami zostało odebrane jako kontrola." },
+                { "language": "ro", "text": "Nu vreau să relativizez acest lucru. Aud trei tipare: ferestre decizionale târzii, prea puțină gestionare vizibilă a obiecțiilor și un comportament de conducere care trebuia să ofere siguranță, dar pe alocuri a fost perceput ca control." },
+                { "language": "sq", "text": "Nuk dua ta relativizoj këtë. Dëgjoj tre modele: dritare vendimmarrjeje të vonuara, shumë pak trajtim të dukshëm të kundërshtimeve dhe një sjellje drejtuese që synonte të jepte siguri, por në disa raste u perceptua si kontroll." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort nimmt die Kritik ernst, ohne in Selbstabwertung oder Verteidigung zu kippen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response takes the criticism seriously without tipping into self-devaluation or defense." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ نقد را جدی می‌گیرد، بدون اینکه به بی‌ارزش کردن خود یا دفاع بیفتد." },
+                { "language": "ar", "text": "جيد جداً: تأخذ الإجابة النقد بجدية من دون أن تنقلب إلى تقليل من الذات أو دفاع." },
+                { "language": "tr", "text": "Çok iyi: cevap eleştiriyi ciddiye alır, ama kendini değersizleştirmeye ya da savunmaya kaymaz." },
+                { "language": "ru", "text": "Очень хорошо: ответ серьезно относится к критике, не скатываясь в самообесценивание или защиту." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ڕەخنە بە جدی وەردەگرێت بێ ئەوەی بکەوێتە کەم نرخکردنی خۆ یان بەرگری." },
+                { "language": "kmr", "text": "Pir baş: bersiv rexneyê cidî digire bêyî ku bikeve kêmnirxkirina xwe an parastinê." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź traktuje krytykę poważnie, nie popadając w samoocenę ani obronę." },
+                { "language": "ro", "text": "Foarte bine: răspunsul ia critica în serios fără să cadă în autodevalorizare sau apărare." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e merr kritikën seriozisht pa rënë në vetëzhvlerësim ose mbrojtje." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich sehe, dass manches unglücklich gelaufen ist, aber wir standen auch unter starkem Zeitdruck.",
+              "translations": [
+                { "language": "en", "text": "I see that some things went badly, but we were also under strong time pressure." },
+                { "language": "fa", "text": "می‌بینم که بعضی چیزها خوب پیش نرفت، اما ما هم تحت فشار زمانی شدید بودیم." },
+                { "language": "ar", "text": "أرى أن بعض الأمور سارت بشكل غير موفق، لكننا كنا أيضاً تحت ضغط زمني شديد." },
+                { "language": "tr", "text": "Bazı şeylerin kötü gittiğini görüyorum, ama biz de ciddi zaman baskısı altındaydık." },
+                { "language": "ru", "text": "Я вижу, что кое-что прошло неудачно, но мы тоже были под сильным давлением времени." },
+                { "language": "ckb", "text": "دەبینم هەندێک شت بە ناخۆشی ڕۆیشتووە، بەڵام ئێمەش لە ژێر فشاری کاتی زۆر بووین." },
+                { "language": "kmr", "text": "Ez dibînim ku hin tişt nebaş çûn, lê em jî di bin zexta demê ya xurt de bûn." },
+                { "language": "pl", "text": "Widzę, że część rzeczy poszła niefortunnie, ale byliśmy też pod silną presją czasu." },
+                { "language": "ro", "text": "Văd că unele lucruri au mers nefericit, dar am fost și sub presiune mare de timp." },
+                { "language": "sq", "text": "E shoh që disa gjëra nuk shkuan mirë, por edhe ne ishim nën presion të fortë kohe." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber defensiv: Die Antwort erklärt den Druck, bevor sie die wiederkehrenden Muster wirklich benennt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but defensive: the response explains the pressure before truly naming the recurring patterns." },
+                { "language": "fa", "text": "قابل تصور است، اما دفاعی است: پاسخ قبل از نام بردن واقعی الگوهای تکرارشونده، فشار را توضیح می‌دهد." },
+                { "language": "ar", "text": "ممكن، لكنه دفاعي: تشرح الإجابة الضغط قبل أن تسمي الأنماط المتكررة فعلاً." },
+                { "language": "tr", "text": "Makul ama savunmacı: cevap tekrarlayan kalıpları gerçekten adlandırmadan önce baskıyı açıklar." },
+                { "language": "ru", "text": "Правдоподобно, но оборонительно: ответ объясняет давление до того, как действительно называет повторяющиеся модели." },
+                { "language": "ckb", "text": "ڕەنگە گونجاو بێت، بەڵام بەرگرییە: وەڵامەکە فشارەکە ڕوون دەکاتەوە پێش ئەوەی الگو دووبارەبووەکان بەڕاستی ناو ببات." },
+                { "language": "kmr", "text": "Gengaz e, lê parastinî ye: bersiv zextê şîrove dike berî ku şêwazên dubare bi rastî bi nav bike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale defensywnie: odpowiedź wyjaśnia presję, zanim naprawdę nazwie powtarzające się wzorce." },
+                { "language": "ro", "text": "Plauzibil, dar defensiv: răspunsul explică presiunea înainte să numească realmente tiparele recurente." },
+                { "language": "sq", "text": "E besueshme, por mbrojtëse: përgjigjja shpjegon presionin para se të emërtojë vërtet modelet e përsëritura." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das ist ein ernstes Signal. Ich nehme daraus nicht mit, dass Führung überflüssig wäre, sondern dass ich Entscheidung und Beteiligung sauberer trennen muss: Wo ich entscheide, begründe ich früher; wo Expertise im Team liegt, mache ich den Entscheidungsspielraum vorher sichtbar.",
+              "translations": [
+                { "language": "en", "text": "That is a serious signal. What I take from it is not that leadership is unnecessary, but that I must separate decision and participation more cleanly: where I decide, I explain earlier; where expertise lies in the team, I make the decision space visible beforehand." },
+                { "language": "fa", "text": "این نشانه جدی است. برداشت من این نیست که رهبری بی‌فایده است، بلکه این است که باید تصمیم‌گیری و مشارکت را تمیزتر جدا کنم: جایی که من تصمیم می‌گیرم، زودتر دلیل می‌آورم؛ جایی که تخصص در تیم است، فضای تصمیم را از قبل قابل مشاهده می‌کنم." },
+                { "language": "ar", "text": "هذه إشارة جدية. لا أفهم منها أن القيادة غير ضرورية، بل أن عليّ فصل القرار والمشاركة بصورة أنظف: حيث أقرر، أشرح السبب أبكر؛ وحيث توجد الخبرة في الفريق، أجعل مساحة القرار مرئية مسبقاً." },
+                { "language": "tr", "text": "Bu ciddi bir sinyal. Bundan liderliğin gereksiz olduğu sonucunu çıkarmıyorum; karar ve katılımı daha temiz ayırmam gerektiğini çıkarıyorum: karar verdiğim yerde daha erken gerekçelendiririm; uzmanlık ekipte olduğunda karar alanını önceden görünür kılarım." },
+                { "language": "ru", "text": "Это серьезный сигнал. Я не делаю из этого вывод, что руководство не нужно; я понимаю, что должен чище разделять решение и участие: там, где решаю я, я раньше объясняю основания; там, где экспертиза в команде, заранее показываю пространство решения." },
+                { "language": "ckb", "text": "ئەمە نیشانەیەکی جدییە. من لەوەوە ئەوە وەرناگرم کە سەرکردایەتی بێ پێویستە، بەڵکو ئەوە وەردەگرم کە دەبێت بڕیار و بەشداری بە پاکیتر جیا بکەمەوە: لەو شوێنەی من بڕیار دەدەم، زووتر هۆکار دەهێنمەوە؛ لەو شوێنەی پسپۆڕی لە تیمەکەدایە، پێشتر فضای بڕیار دەردەخەم." },
+                { "language": "kmr", "text": "Ev nîşaneyeke cidî ye. Ez ji vê nagihîjim wê encamê ku rêveberî bêhewce ye, lê ku divê ez biryar û beşdarbûnê paqijtir ji hev veqetînim: li ku ez biryar didim, ez zûtir sedemê dibêjim; li ku pisporî di tîmê de ye, ez qada biryarê berê xuya dikim." },
+                { "language": "pl", "text": "To poważny sygnał. Nie wyciągam z tego wniosku, że przywództwo jest zbędne, tylko że muszę czyściej oddzielać decyzję od udziału: tam, gdzie decyduję ja, wcześniej uzasadniam; tam, gdzie wiedza jest w zespole, wcześniej pokazuję przestrzeń decyzyjną." },
+                { "language": "ro", "text": "Este un semnal serios. Nu înțeleg de aici că leadershipul ar fi inutil, ci că trebuie să separ mai clar decizia și participarea: acolo unde decid eu, explic mai devreme; acolo unde expertiza este în echipă, fac vizibil dinainte spațiul deciziei." },
+                { "language": "sq", "text": "Ky është një sinjal serioz. Nuk nxjerr prej tij se drejtimi është i panevojshëm, por se duhet të ndaj më pastër vendimin dhe pjesëmarrjen: aty ku vendos unë, jap arsyet më herët; aty ku ekspertiza është në ekip, e bëj hapësirën e vendimit të dukshme më parë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort schützt die Führungsrolle und verändert zugleich ihre Ausübung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response protects the leadership role while changing how it is practiced." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ نقش رهبری را حفظ می‌کند و هم‌زمان شیوه اجرای آن را تغییر می‌دهد." },
+                { "language": "ar", "text": "جيد جداً: تحمي الإجابة الدور القيادي وتغير في الوقت نفسه طريقة ممارسته." },
+                { "language": "tr", "text": "Çok iyi: cevap liderlik rolünü korur ve aynı zamanda uygulanış biçimini değiştirir." },
+                { "language": "ru", "text": "Очень хорошо: ответ сохраняет руководящую роль и одновременно меняет способ ее осуществления." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ڕۆڵی سەرکردایەتی دەپارێزێت و هاوکات شێوازی جێبەجێکردنی دەگۆڕێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv rola rêveberiyê diparêze û di heman demê de awayê pêkanîna wê diguherîne." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź chroni rolę lidera, a jednocześnie zmienia sposób jej wykonywania." },
+                { "language": "ro", "text": "Foarte bine: răspunsul protejează rolul de conducere și schimbă în același timp modul de exercitare." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e mbron rolin drejtues dhe njëkohësisht ndryshon mënyrën e ushtrimit të tij." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich werde künftig mehr delegieren und dem Team mehr Freiheit lassen.",
+              "translations": [
+                { "language": "en", "text": "In future I will delegate more and give the team more freedom." },
+                { "language": "fa", "text": "در آینده بیشتر واگذار می‌کنم و آزادی بیشتری به تیم می‌دهم." },
+                { "language": "ar", "text": "سأفوض أكثر مستقبلاً وأترك للفريق حرية أكبر." },
+                { "language": "tr", "text": "Gelecekte daha fazla delege edeceğim ve ekibe daha fazla özgürlük bırakacağım." },
+                { "language": "ru", "text": "В будущем я буду больше делегировать и давать команде больше свободы." },
+                { "language": "ckb", "text": "لە داهاتوودا زیاتر وەردەدەمە ئەوان و ئازادی زیاتر بە تیمەکە دەدەم." },
+                { "language": "kmr", "text": "Di pêşerojê de ez ê zêdetir radest bikim û azadiya zêdetir bidim tîmê." },
+                { "language": "pl", "text": "W przyszłości będę więcej delegować i dam zespołowi więcej swobody." },
+                { "language": "ro", "text": "Pe viitor voi delega mai mult și voi lăsa echipei mai multă libertate." },
+                { "language": "sq", "text": "Në të ardhmen do të delegoj më shumë dhe do t'i lë ekipit më shumë liri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort klingt positiv, aber sie erklärt nicht, wie Entscheidung, Beteiligung und Verantwortung künftig zusammenhängen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the response sounds positive but does not explain how decision, participation, and responsibility will fit together in future." },
+                { "language": "fa", "text": "بیش از حد کلی: پاسخ مثبت به نظر می‌رسد، اما توضیح نمی‌دهد تصمیم، مشارکت و مسئولیت در آینده چگونه به هم وصل می‌شوند." },
+                { "language": "ar", "text": "عامة أكثر من اللازم: تبدو الإجابة إيجابية، لكنها لا تشرح كيف سترتبط القرارات والمشاركة والمسؤولية مستقبلاً." },
+                { "language": "tr", "text": "Çok genel: cevap olumlu duyuluyor, ama karar, katılım ve sorumluluğun gelecekte nasıl bağlanacağını açıklamıyor." },
+                { "language": "ru", "text": "Слишком общо: ответ звучит позитивно, но не объясняет, как в будущем будут связаны решение, участие и ответственность." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە ئەرێنی دەنگ دەدات، بەڵام ڕوون ناکاتەوە کە لە داهاتوودا بڕیار، بەشداری و بەرپرسیاریەتی چۆن پێکەوە دەبەسترێن." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv erênî tê bihîstin, lê şîrove nake ku biryar, beşdarbûn û berpirsiyarî dê di pêşerojê de çawa bi hev ve girêdayî bin." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź brzmi pozytywnie, ale nie wyjaśnia, jak decyzja, udział i odpowiedzialność będą się w przyszłości łączyć." },
+                { "language": "ro", "text": "Prea general: răspunsul sună pozitiv, dar nu explică cum se vor lega pe viitor decizia, participarea și responsabilitatea." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja tingëllon pozitive, por nuk shpjegon si do të lidhen në të ardhmen vendimi, pjesëmarrja dhe përgjegjësia." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich schlage drei beobachtbare Änderungen vor: Entscheidungen bekommen künftig einen kurzen Begründungssatz, Einwände werden vor dem Beschluss sichtbar dokumentiert, und in kritischen Phasen gibt es eine feste Runde, in der ausdrücklich Gegenargumente gesammelt werden.",
+              "translations": [
+                { "language": "en", "text": "I propose three observable changes: in future, decisions will include a short rationale, objections will be visibly documented before the resolution, and in critical phases there will be a fixed round explicitly dedicated to collecting counterarguments." },
+                { "language": "fa", "text": "سه تغییر قابل مشاهده پیشنهاد می‌کنم: از این به بعد تصمیم‌ها یک جمله کوتاه درباره دلیل خواهند داشت، اعتراض‌ها پیش از تصویب به‌صورت قابل مشاهده ثبت می‌شوند، و در مراحل حساس یک دور ثابت وجود دارد که صریحاً برای جمع‌آوری استدلال‌های مخالف است." },
+                { "language": "ar", "text": "أقترح ثلاثة تغييرات قابلة للملاحظة: ستحصل القرارات مستقبلاً على جملة تبرير قصيرة، وستوثق الاعتراضات بشكل مرئي قبل القرار، وفي المراحل الحرجة ستكون هناك جولة ثابتة مخصصة صراحة لجمع الحجج المضادة." },
+                { "language": "tr", "text": "Üç gözlemlenebilir değişiklik öneriyorum: kararlar bundan sonra kısa bir gerekçe cümlesi alacak, itirazlar karar öncesinde görünür biçimde belgelenecek ve kritik aşamalarda açıkça karşı argüman toplamaya ayrılmış sabit bir tur olacak." },
+                { "language": "ru", "text": "Я предлагаю три наблюдаемых изменения: решения в будущем получают короткое обоснование, возражения до принятия решения видимо документируются, а в критических фазах будет фиксированный раунд, специально посвященный сбору контраргументов." },
+                { "language": "ckb", "text": "سێ گۆڕانکاری قابل بینین پێشنیار دەکەم: لە داهاتوودا بڕیارەکان ڕستەیەکی کورتی هۆکار وەردەگرن، ناڕەزایەتییەکان پێش پەسەندکردن بە شێوەی بینراو تۆمار دەکرێن، و لە قۆناغە گرنگەکاندا خولێکی جێگیر هەیە کە بە ئاشکرا بۆ کۆکردنەوەی بەڵگەی دژە." },
+                { "language": "kmr", "text": "Ez sê guherînên xuya pêşniyar dikim: ji niha pê ve biryar dê hevokeke kurt a sedemê hebin, nerazîbûn berî biryarê bi awayekî xuya tomar dibin, û di qonaxên krîtîk de dê doreke sabît hebe ku bi zelalî ji bo berhevkirina argumanên dijber e." },
+                { "language": "pl", "text": "Proponuję trzy obserwowalne zmiany: decyzje będą w przyszłości zawierać krótkie uzasadnienie, zastrzeżenia będą widocznie dokumentowane przed uchwałą, a w krytycznych fazach będzie stała runda wyraźnie poświęcona zbieraniu kontrargumentów." },
+                { "language": "ro", "text": "Propun trei schimbări observabile: deciziile vor avea pe viitor o scurtă justificare, obiecțiile vor fi documentate vizibil înainte de hotărâre, iar în fazele critice va exista o rundă fixă dedicată explicit colectării contraargumentelor." },
+                { "language": "sq", "text": "Propozoj tre ndryshime të vëzhgueshme: vendimet në të ardhmen do të kenë një fjali të shkurtër arsyetimi, kundërshtimet do të dokumentohen dukshëm para vendimit dhe në fazat kritike do të ketë një raund të caktuar posaçërisht për mbledhjen e kundërargumenteve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort macht Veränderung beobachtbar und nicht nur rhetorisch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response makes change observable, not merely rhetorical." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ تغییر را قابل مشاهده می‌کند، نه فقط شعاری." },
+                { "language": "ar", "text": "جيد جداً: تجعل الإجابة التغيير قابلاً للملاحظة، لا مجرد خطاب." },
+                { "language": "tr", "text": "Çok iyi: cevap değişimi yalnızca retorik değil, gözlemlenebilir kılar." },
+                { "language": "ru", "text": "Очень хорошо: ответ делает изменение наблюдаемым, а не просто риторическим." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە گۆڕانکاری دەکاتە شتێکی قابل بینین، نە تەنها وتاری." },
+                { "language": "kmr", "text": "Pir baş: bersiv guherînê xuya dike, ne tenê retorîkî." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź czyni zmianę obserwowalną, a nie tylko retoryczną." },
+                { "language": "ro", "text": "Foarte bine: răspunsul face schimbarea observabilă, nu doar retorică." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e bën ndryshimin të vëzhgueshëm, jo vetëm retorik." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich werde in Meetings bewusster zuhören und mich bemühen, Einwände nicht zu schnell zu bewerten.",
+              "translations": [
+                { "language": "en", "text": "I will listen more consciously in meetings and make an effort not to evaluate objections too quickly." },
+                { "language": "fa", "text": "در جلسات آگاهانه‌تر گوش می‌دهم و تلاش می‌کنم اعتراض‌ها را خیلی سریع ارزیابی نکنم." },
+                { "language": "ar", "text": "سأستمع بوعي أكبر في الاجتماعات وسأحاول ألا أقيّم الاعتراضات بسرعة كبيرة." },
+                { "language": "tr", "text": "Toplantılarda daha bilinçli dinleyeceğim ve itirazları çok hızlı değerlendirmemeye çalışacağım." },
+                { "language": "ru", "text": "На встречах я буду слушать более осознанно и постараюсь не оценивать возражения слишком быстро." },
+                { "language": "ckb", "text": "لە کۆبوونەوەکاندا بە ئاگایی زیاتر گوێ دەگرم و هەوڵ دەدەم ناڕەزایەتییەکان زۆر خێرا هەڵنەسەنگێنم." },
+                { "language": "kmr", "text": "Di civînan de ez ê bi hişmendiyeke zêdetir guhdar bikim û hewl bidim nerazîbûnan pir zû nenirxînim." },
+                { "language": "pl", "text": "Będę bardziej świadomie słuchać na spotkaniach i postaram się nie oceniać zastrzeżeń zbyt szybko." },
+                { "language": "ro", "text": "Voi asculta mai conștient în ședințe și mă voi strădui să nu evaluez obiecțiile prea repede." },
+                { "language": "sq", "text": "Do të dëgjoj më me vetëdije në takime dhe do të përpiqem të mos i vlerësoj kundërshtimet shumë shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu weich: Die Antwort nennt eine Haltung, aber keine überprüfbare Änderung im Entscheidungsprozess.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too soft: the response names an attitude but no verifiable change in the decision process." },
+                { "language": "fa", "text": "بیش از حد نرم است: پاسخ یک نگرش را نام می‌برد، اما تغییر قابل بررسی در فرایند تصمیم‌گیری ندارد." },
+                { "language": "ar", "text": "لينة أكثر من اللازم: تسمي الإجابة موقفاً، لكنها لا تقدم تغييراً قابلاً للتحقق في عملية القرار." },
+                { "language": "tr", "text": "Çok yumuşak: cevap bir tutum adlandırır, ama karar sürecinde denetlenebilir bir değişiklik vermez." },
+                { "language": "ru", "text": "Слишком мягко: ответ называет установку, но не дает проверяемого изменения в процессе принятия решений." },
+                { "language": "ckb", "text": "زۆر نەرمە: وەڵامەکە هەڵوێستێک ناو دەبات، بەڵام گۆڕانکارییەکی قابل پشکنین لە پرۆسەی بڕیارداندا نادات." },
+                { "language": "kmr", "text": "Pir nerm e: bersiv helwestek bi nav dike, lê guherîneke kontrolbar di prosesa biryardanê de nade." },
+                { "language": "pl", "text": "Zbyt miękko: odpowiedź nazywa postawę, ale nie wskazuje sprawdzalnej zmiany w procesie decyzyjnym." },
+                { "language": "ro", "text": "Prea moale: răspunsul numește o atitudine, dar nu o schimbare verificabilă în procesul decizional." },
+                { "language": "sq", "text": "Shumë e butë: përgjigjja emërton një qëndrim, por jo një ndryshim të verifikueshëm në procesin e vendimmarrjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau deshalb will ich die Veränderung nicht als Absichtserklärung stehen lassen. Wir überprüfen sie nach vier Wochen anhand von zwei Fragen: Wurden Einwände dokumentiert, bevor entschieden wurde, und konnte das Team nachvollziehen, warum eine Entscheidung so gefallen ist?",
+              "translations": [
+                { "language": "en", "text": "That is exactly why I do not want to leave the change as a declaration of intent. We will review it after four weeks using two questions: were objections documented before the decision, and could the team understand why the decision was made that way?" },
+                { "language": "fa", "text": "دقیقاً به همین دلیل نمی‌خواهم تغییر فقط در حد اعلام نیت بماند. پس از چهار هفته آن را با دو پرسش بررسی می‌کنیم: آیا اعتراض‌ها پیش از تصمیم ثبت شدند، و آیا تیم توانست بفهمد چرا تصمیم این‌گونه گرفته شد؟" },
+                { "language": "ar", "text": "لهذا بالضبط لا أريد أن تبقى التغييرات مجرد إعلان نية. سنراجعها بعد أربعة أسابيع بسؤالين: هل وُثقت الاعتراضات قبل القرار، وهل استطاع الفريق فهم سبب اتخاذ القرار بهذه الطريقة؟" },
+                { "language": "tr", "text": "Tam da bu yüzden değişikliğin niyet beyanı olarak kalmasını istemiyorum. Dört hafta sonra iki soruyla kontrol edeceğiz: itirazlar karar verilmeden önce belgelendi mi ve ekip kararın neden bu şekilde alındığını anlayabildi mi?" },
+                { "language": "ru", "text": "Именно поэтому я не хочу оставлять изменение на уровне заявления о намерениях. Через четыре недели мы проверим его по двум вопросам: были ли возражения задокументированы до решения, и смогла ли команда понять, почему решение было принято именно так?" },
+                { "language": "ckb", "text": "هەر بۆیە نامەوێت گۆڕانکارییەکە تەنها وەک ڕاگەیاندنی نیەت بمێنێتەوە. دوای چوار هەفتە بە دوو پرسیار دەیپشکنین: ئایا ناڕەزایەتییەکان پێش بڕیار تۆمار کران، و ئایا تیمەکە توانی تێبگات بۆچی بڕیارەکە ئاوا درا؟" },
+                { "language": "kmr", "text": "Tam ji ber vê ez naxwazim guherîn wekî daxuyaniya niyetê bimîne. Em piştî çar hefteyan wê bi du pirsan kontrol dikin: gelo nerazîbûn berî biryarê hatin tomarkirin, û gelo tîm karî fêm bike çima biryar wisa hat dayîn?" },
+                { "language": "pl", "text": "Właśnie dlatego nie chcę zostawić zmiany jako deklaracji intencji. Po czterech tygodniach sprawdzimy ją dwoma pytaniami: czy zastrzeżenia zostały udokumentowane przed decyzją i czy zespół mógł zrozumieć, dlaczego decyzja zapadła właśnie tak?" },
+                { "language": "ro", "text": "Tocmai de aceea nu vreau să las schimbarea la nivel de declarație de intenție. O verificăm după patru săptămâni pe baza a două întrebări: au fost documentate obiecțiile înainte de decizie și a putut echipa să înțeleagă de ce decizia a fost luată astfel?" },
+                { "language": "sq", "text": "Pikërisht për këtë nuk dua ta lë ndryshimin si deklaratë qëllimi. Do ta kontrollojmë pas katër javësh me dy pyetje: a u dokumentuan kundërshtimet para vendimit dhe a mundi ekipi të kuptojë pse vendimi u mor në këtë mënyrë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort macht Veränderung überprüfbar und nimmt die Skepsis des Teams ernst.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response makes change verifiable and takes the team's skepticism seriously." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ تغییر را قابل بررسی می‌کند و تردید تیم را جدی می‌گیرد." },
+                { "language": "ar", "text": "جيد جداً: تجعل الإجابة التغيير قابلاً للتحقق وتأخذ تشكك الفريق بجدية." },
+                { "language": "tr", "text": "Çok iyi: cevap değişimi denetlenebilir kılar ve ekibin şüphesini ciddiye alır." },
+                { "language": "ru", "text": "Очень хорошо: ответ делает изменение проверяемым и серьезно относится к скепсису команды." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە گۆڕانکاری دەکاتە شتێکی قابل پشکنین و گومانەکانی تیم بە جدی وەردەگرێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv guherînê kontrolbar dike û gumanên tîmê cidî digire." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź czyni zmianę sprawdzalną i poważnie traktuje sceptycyzm zespołu." },
+                { "language": "ro", "text": "Foarte bine: răspunsul face schimbarea verificabilă și ia în serios scepticismul echipei." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e bën ndryshimin të verifikueshëm dhe e merr seriozisht skepticizmin e ekipit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verstehe die Skepsis und werde darauf achten, dass die neuen Regeln im Alltag nicht untergehen.",
+              "translations": [
+                { "language": "en", "text": "I understand the skepticism and will make sure the new rules do not get lost in daily work." },
+                { "language": "fa", "text": "تردید را درک می‌کنم و مراقب خواهم بود که قواعد جدید در کار روزمره گم نشوند." },
+                { "language": "ar", "text": "أفهم التشكيك وسأحرص على ألا تضيع القواعد الجديدة في العمل اليومي." },
+                { "language": "tr", "text": "Şüpheyi anlıyorum ve yeni kuralların günlük iş içinde kaybolmamasına dikkat edeceğim." },
+                { "language": "ru", "text": "Я понимаю скепсис и прослежу, чтобы новые правила не потерялись в повседневной работе." },
+                { "language": "ckb", "text": "گومانەکە تێدەگەم و ئاگادار دەبم کە ڕێساکانی نوێ لە کاری ڕۆژانەدا ون نەبن." },
+                { "language": "kmr", "text": "Ez gumanê têdigihîjim û dê bala xwe bidim ku rêzikên nû di karê rojane de winda nebin." },
+                { "language": "pl", "text": "Rozumiem sceptycyzm i zadbam, żeby nowe zasady nie zginęły w codziennej pracy." },
+                { "language": "ro", "text": "Înțeleg scepticismul și voi avea grijă ca noile reguli să nu se piardă în munca de zi cu zi." },
+                { "language": "sq", "text": "E kuptoj skepticizmin dhe do të kujdesem që rregullat e reja të mos humbasin në punën e përditshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unverbindlich: Die Antwort zeigt Verständnis, aber sie enthält keinen klaren Prüfzeitpunkt und keine messbaren Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too non-committal: the response shows understanding but contains no clear review point and no measurable criteria." },
+                { "language": "fa", "text": "بیش از حد غیرالزام‌آور: پاسخ فهم نشان می‌دهد، اما زمان بررسی روشن و معیار قابل اندازه‌گیری ندارد." },
+                { "language": "ar", "text": "غير ملزمة بما يكفي: تظهر الإجابة فهماً لكنها لا تحتوي على موعد مراجعة واضح ولا معايير قابلة للقياس." },
+                { "language": "tr", "text": "Çok bağlayıcılıktan uzak: cevap anlayış gösterir, ama net kontrol zamanı ve ölçülebilir kriter içermez." },
+                { "language": "ru", "text": "Слишком необязательно: ответ показывает понимание, но не содержит четкого момента проверки и измеримых критериев." },
+                { "language": "ckb", "text": "زۆر بێ پابەندییە: وەڵامەکە تێگەیشتن پیشان دەدات، بەڵام کاتی پشکنینی ڕوون و پێوەری قابل پێوانەکردن نییە." },
+                { "language": "kmr", "text": "Pir bêgirêdan e: bersiv têgihiştin nîşan dide, lê dema kontrolê ya zelal û pîvanên pîvandbar tune ne." },
+                { "language": "pl", "text": "Zbyt mało zobowiązująco: odpowiedź pokazuje zrozumienie, ale nie zawiera jasnego momentu sprawdzenia ani mierzalnych kryteriów." },
+                { "language": "ro", "text": "Prea neangajant: răspunsul arată înțelegere, dar nu conține un moment clar de verificare și criterii măsurabile." },
+                { "language": "sq", "text": "Shumë pak detyruese: përgjigjja tregon mirëkuptim, por nuk përmban një moment të qartë kontrolli dhe kritere të matshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde sagen: Ich bleibe für Entscheidungen verantwortlich, aber ich werde früher sichtbar machen, welche Fragen offen sind und welche Einwände in die Entscheidung einfließen. Mein Ziel ist nicht weniger Führung, sondern bessere Anschlussfähigkeit der Führung an die Expertise im Team.",
+              "translations": [
+                { "language": "en", "text": "I would say: I remain responsible for decisions, but I will make visible earlier which questions are open and which objections feed into the decision. My goal is not less leadership, but better connection between leadership and the expertise in the team." },
+                { "language": "fa", "text": "می‌گویم: من همچنان مسئول تصمیم‌ها می‌مانم، اما زودتر قابل مشاهده می‌کنم که چه پرسش‌هایی باز هستند و کدام اعتراض‌ها وارد تصمیم می‌شوند. هدفم رهبری کمتر نیست، بلکه پیوند بهتر رهبری با تخصص تیم است." },
+                { "language": "ar", "text": "سأقول: أبقى مسؤولاً عن القرارات، لكنني سأجعل الأسئلة المفتوحة والاعتراضات التي تدخل في القرار مرئية في وقت أبكر. هدفي ليس قيادة أقل، بل ارتباط أفضل بين القيادة وخبرة الفريق." },
+                { "language": "tr", "text": "Şöyle derdim: Kararlardan sorumlu olmaya devam ediyorum, ama hangi soruların açık olduğunu ve hangi itirazların karara dahil olduğunu daha erken görünür kılacağım. Hedefim daha az liderlik değil, liderliğin ekip uzmanlığıyla daha iyi bağ kurmasıdır." },
+                { "language": "ru", "text": "Я бы сказал так: я остаюсь ответственным за решения, но буду раньше показывать, какие вопросы открыты и какие возражения входят в решение. Моя цель не меньше руководства, а лучшая связность руководства с экспертизой команды." },
+                { "language": "ckb", "text": "دەڵێم: من هێشتا بەرپرسی بڕیارەکان دەمێنمەوە، بەڵام زووتر دەردەخەم کام پرسیارەکان کراوەن و کام ناڕەزایەتییەکان دەچنە ناو بڕیارەکە. ئامانجم سەرکردایەتی کەمتر نییە، بەڵکو پەیوەندی باشترە لە نێوان سەرکردایەتی و پسپۆڕی تیم." },
+                { "language": "kmr", "text": "Ez ê bibêjim: Ez ji bo biryaran hîn berpirsiyar dimînim, lê ez ê zûtir xuya bikim kîjan pirs vekirî ne û kîjan nerazîbûn dikevin nav biryarê. Armanca min ne kêmkirina rêveberiyê ye, lê girêdana çêtir a rêveberiyê bi pisporiya tîmê re ye." },
+                { "language": "pl", "text": "Powiedziałbym/Powiedziałabym: nadal odpowiadam za decyzje, ale wcześniej pokażę, które pytania pozostają otwarte i które zastrzeżenia wpływają na decyzję. Moim celem nie jest mniej przywództwa, lecz lepsze połączenie przywództwa z wiedzą zespołu." },
+                { "language": "ro", "text": "Aș spune: rămân responsabil pentru decizii, dar voi face vizibil mai devreme ce întrebări sunt deschise și ce obiecții intră în decizie. Scopul meu nu este mai puțină conducere, ci o conectare mai bună a conducerii la expertiza echipei." },
+                { "language": "sq", "text": "Do të thosha: mbetem përgjegjës për vendimet, por do të bëj më herët të dukshme cilat pyetje janë të hapura dhe cilat kundërshtime hyjnë në vendim. Qëllimi im nuk është më pak drejtim, por lidhje më e mirë e drejtimit me ekspertizën e ekipit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort verbindet Verantwortung, Beteiligung und Führungsanspruch in einem tragfähigen Satz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response connects responsibility, participation, and leadership claim in one workable sentence." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ مسئولیت، مشارکت و ادعای رهبری را در یک جمله قابل اتکا به هم وصل می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تربط الإجابة بين المسؤولية والمشاركة وادعاء القيادة في جملة قابلة للحمل." },
+                { "language": "tr", "text": "Çok iyi: cevap sorumluluk, katılım ve liderlik iddiasını taşınabilir bir cümlede birleştirir." },
+                { "language": "ru", "text": "Очень хорошо: ответ связывает ответственность, участие и руководящее притязание в одной устойчивой фразе." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بەرپرسیاریەتی، بەشداری و داوای سەرکردایەتی لە ڕستەیەکی جێگیر پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv berpirsiyarî, beşdarbûn û daxwaza rêveberiyê di hevokeke guncav de girê dide." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź łączy odpowiedzialność, udział i roszczenie przywódcze w jednym nośnym zdaniu." },
+                { "language": "ro", "text": "Foarte bine: răspunsul leagă responsabilitatea, participarea și pretenția de conducere într-o frază solidă." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja lidh përgjegjësinë, pjesëmarrjen dhe pretendimin drejtues në një fjali të qëndrueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich möchte mich bei allen entschuldigen, die sich durch meinen Führungsstil nicht ausreichend einbezogen gefühlt haben.",
+              "translations": [
+                { "language": "en", "text": "I would like to apologize to everyone who did not feel sufficiently included because of my leadership style." },
+                { "language": "fa", "text": "می‌خواهم از همه کسانی عذرخواهی کنم که به دلیل سبک رهبری من احساس کرده‌اند به اندازه کافی درگیر نشده‌اند." },
+                { "language": "ar", "text": "أود أن أعتذر لكل من لم يشعر بأنه أُشرك بما يكفي بسبب أسلوبي القيادي." },
+                { "language": "tr", "text": "Liderlik tarzım nedeniyle yeterince dahil edilmediğini hisseden herkesten özür dilemek istiyorum." },
+                { "language": "ru", "text": "Я хотел бы извиниться перед всеми, кто из-за моего стиля руководства чувствовал себя недостаточно вовлеченным." },
+                { "language": "ckb", "text": "دەمەوێت داوای لێبوردن بکەم لە هەموو ئەوانەی بەهۆی شێوازی سەرکردایەتی منەوە هەستیان کردووە بە تەواوی بەشدار نەکراون." },
+                { "language": "kmr", "text": "Ez dixwazim ji hemû kesên ku ji ber şêwaza min a rêveberiyê xwe ne têra xwe têkildar hîs kirine lêborînê bixwazim." },
+                { "language": "pl", "text": "Chciałbym/Chciałabym przeprosić wszystkich, którzy przez mój styl przywództwa nie czuli się wystarczająco włączeni." },
+                { "language": "ro", "text": "Aș vrea să îmi cer scuze tuturor celor care, din cauza stilului meu de conducere, nu s-au simțit suficient implicați." },
+                { "language": "sq", "text": "Dua t'u kërkoj falje të gjithëve që për shkak të stilit tim drejtues nuk janë ndier mjaftueshëm të përfshirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu apologetisch: Die Antwort zeigt Einsicht, aber sie positioniert die Führungsrolle nicht neu und nennt keine Verhaltensänderung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too apologetic: the response shows insight but does not reposition the leadership role or name a behavior change." },
+                { "language": "fa", "text": "بیش از حد عذرخواهانه است: پاسخ بینش نشان می‌دهد، اما نقش رهبری را بازتعریف نمی‌کند و تغییر رفتاری نام نمی‌برد." },
+                { "language": "ar", "text": "اعتذارية أكثر من اللازم: تظهر الإجابة فهماً لكنها لا تعيد تموضع الدور القيادي ولا تسمي تغييراً سلوكياً." },
+                { "language": "tr", "text": "Çok özür odaklı: cevap farkındalık gösterir, ama liderlik rolünü yeniden konumlandırmaz ve davranış değişikliği adlandırmaz." },
+                { "language": "ru", "text": "Слишком извиняюще: ответ показывает понимание, но не переопределяет руководящую роль и не называет изменение поведения." },
+                { "language": "ckb", "text": "زۆر داوای لێبوردنە: وەڵامەکە تێگەیشتن پیشان دەدات، بەڵام ڕۆڵی سەرکردایەتی دووبارە جێگیر ناکاتەوە و گۆڕانکاری ڕەفتاری ناو ناببات." },
+                { "language": "kmr", "text": "Pir lêborînî ye: bersiv têgihiştin nîşan dide, lê rola rêveberiyê ji nû ve bicih nake û guherîna reftarî bi nav nake." },
+                { "language": "pl", "text": "Zbyt przepraszające: odpowiedź pokazuje wgląd, ale nie ustawia na nowo roli lidera i nie nazywa zmiany zachowania." },
+                { "language": "ro", "text": "Prea apologetic: răspunsul arată înțelegere, dar nu repoziționează rolul de conducere și nu numește o schimbare de comportament." },
+                { "language": "sq", "text": "Shumë apologjetike: përgjigjja tregon kuptim, por nuk e ripozicionon rolin drejtues dhe nuk emërton ndryshim sjelljeje." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das nehme ich als Prüfstein auf. Ab nächster Woche markiere ich vor jeder größeren Entscheidung ausdrücklich den Zeitpunkt, bis zu dem Gegenargumente erwünscht sind, und danach dokumentiere ich, welche davon die Entscheidung verändert oder begrenzt haben.",
+              "translations": [
+                { "language": "en", "text": "I will take that as a test criterion. Starting next week, before every larger decision I will explicitly mark the point until which counterarguments are welcome, and afterward I will document which of them changed or limited the decision." },
+                { "language": "fa", "text": "این را به‌عنوان معیار سنجش می‌پذیرم. از هفته آینده، پیش از هر تصمیم بزرگ‌تر، صریحاً زمانی را مشخص می‌کنم که تا آن استدلال‌های مخالف استقبال می‌شوند، و بعد ثبت می‌کنم کدام‌یک از آن‌ها تصمیم را تغییر داده یا محدود کرده‌اند." },
+                { "language": "ar", "text": "سآخذ ذلك كمعيار اختبار. ابتداءً من الأسبوع القادم، سأحدد صراحة قبل كل قرار أكبر الموعد الذي تكون فيه الحجج المضادة مرحباً بها، وبعد ذلك أوثق أيها غيّر القرار أو حدّه." },
+                { "language": "tr", "text": "Bunu bir kontrol ölçütü olarak alıyorum. Gelecek haftadan itibaren her büyük karardan önce karşı argümanların hangi zamana kadar istendiğini açıkça işaretleyeceğim ve sonra bunlardan hangilerinin kararı değiştirdiğini veya sınırladığını belgeleyeceğim." },
+                { "language": "ru", "text": "Я беру это как критерий проверки. Со следующей недели перед каждым более крупным решением я прямо обозначаю момент, до которого контраргументы желательны, а затем документирую, какие из них изменили или ограничили решение." },
+                { "language": "ckb", "text": "ئەمە وەک پێوەری پشکنین وەردەگرم. لە هەفتەی داهاتووەوە، پێش هەر بڕیارێکی گەورەتر بە ئاشکرا کاتەکە دیاری دەکەم کە تا ئەو کاتە بەڵگەی دژە پێشوازی لێ دەکرێت، و پاشان تۆمار دەکەم کام لەوان بڕیارەکەی گۆڕیوە یان سنووردار کردووە." },
+                { "language": "kmr", "text": "Ez vê wekî pîvana kontrolê digirim. Ji hefteya bê pê ve, berî her biryareke mezin ez bi zelalî ew dem nîşan dikim ku heta wê demê argumanên dijber têne xwestin, û paşê tomar dikim kîjan ji wan biryarê guherandin an sînordar kirin." },
+                { "language": "pl", "text": "Przyjmuję to jako kryterium sprawdzające. Od przyszłego tygodnia przed każdą większą decyzją wyraźnie zaznaczę moment, do którego kontrargumenty są oczekiwane, a potem udokumentuję, które z nich zmieniły lub ograniczyły decyzję." },
+                { "language": "ro", "text": "Preiau acest lucru ca reper de verificare. Începând de săptămâna viitoare, înainte de fiecare decizie mai mare voi marca explicit momentul până la care contraargumentele sunt dorite, iar apoi voi documenta care dintre ele au schimbat sau limitat decizia." },
+                { "language": "sq", "text": "E marr këtë si kriter kontrolli. Duke filluar nga java e ardhshme, para çdo vendimi më të madh do të shënoj qartë momentin deri kur kundërargumentet janë të mirëpritura, dhe më pas do të dokumentoj cilat prej tyre e ndryshuan ose e kufizuan vendimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Der Abschluss macht die Veränderung zeitlich, sachlich und beobachtbar verbindlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the closing makes the change binding in time, substance, and observability." },
+                { "language": "fa", "text": "خیلی خوب: جمع‌بندی تغییر را از نظر زمان، محتوا و قابلیت مشاهده الزام‌آور می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تجعل الخاتمة التغيير ملزماً زمنياً ومضمونياً وقابلاً للملاحظة." },
+                { "language": "tr", "text": "Çok iyi: kapanış değişimi zaman, içerik ve gözlemlenebilirlik açısından bağlayıcı kılar." },
+                { "language": "ru", "text": "Очень хорошо: завершение делает изменение обязательным по времени, содержанию и наблюдаемости." },
+                { "language": "ckb", "text": "زۆر باش: کۆتاییەکە گۆڕانکاری لە ڕووی کات، ناوەڕۆک و قابل بینینەوە پابەند دەکات." },
+                { "language": "kmr", "text": "Pir baş: dawî guherînê ji aliyê dem, naverok û xuyabûnê ve girêdayî dike." },
+                { "language": "pl", "text": "Bardzo dobrze: zakończenie czyni zmianę wiążącą czasowo, merytorycznie i obserwowalnie." },
+                { "language": "ro", "text": "Foarte bine: închiderea face schimbarea obligatorie temporal, substanțial și observabil." },
+                { "language": "sq", "text": "Shumë mirë: mbyllja e bën ndryshimin të detyrueshëm në kohë, në përmbajtje dhe në vëzhgueshmëri." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich nehme das mit und werde beim nächsten größeren Thema früher nach Gegenargumenten fragen.",
+              "translations": [
+                { "language": "en", "text": "I will take that with me and ask earlier for counterarguments on the next larger topic." },
+                { "language": "fa", "text": "این را با خودم می‌برم و در موضوع بزرگ بعدی زودتر درباره استدلال‌های مخالف می‌پرسم." },
+                { "language": "ar", "text": "سآخذ ذلك بعين الاعتبار وسأسأل أبكر عن الحجج المضادة في الموضوع الأكبر القادم." },
+                { "language": "tr", "text": "Bunu not alacağım ve bir sonraki büyük konuda karşı argümanları daha erken soracağım." },
+                { "language": "ru", "text": "Я возьму это с собой и в следующей более крупной теме раньше спрошу о контраргументах." },
+                { "language": "ckb", "text": "ئەمە لەگەڵ خۆم دەبەم و لە بابەتی گەورەی داهاتوودا زووتر پرسیاری بەڵگەی دژە دەکەم." },
+                { "language": "kmr", "text": "Ez vê bi xwe re dibim û di mijara mezin a din de zûtir li ser argumanên dijber dipirsim." },
+                { "language": "pl", "text": "Zabiorę to ze sobą i przy następnym większym temacie wcześniej zapytam o kontrargumenty." },
+                { "language": "ro", "text": "Voi lua acest lucru cu mine și la următorul subiect mai mare voi întreba mai devreme despre contraargumente." },
+                { "language": "sq", "text": "Do ta marr këtë me vete dhe në temën tjetër më të madhe do të pyes më herët për kundërargumente." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu locker: Die Antwort ist grundsätzlich richtig, aber ohne Zeitpunkt, Regel und Dokumentation bleibt sie schwer überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too loose: the response is basically right, but without timing, rule, and documentation it remains hard to verify." },
+                { "language": "fa", "text": "بیش از حد آزاد است: پاسخ در اصل درست است، اما بدون زمان، قاعده و مستندسازی، سخت قابل بررسی می‌ماند." },
+                { "language": "ar", "text": "فضفاضة أكثر من اللازم: الإجابة صحيحة من حيث المبدأ، لكنها تبقى صعبة التحقق من دون موعد وقاعدة وتوثيق." },
+                { "language": "tr", "text": "Çok gevşek: cevap temelde doğru, ama zaman, kural ve belgeleme olmadan doğrulanması zor kalır." },
+                { "language": "ru", "text": "Слишком свободно: ответ в целом верен, но без срока, правила и документации его трудно проверить." },
+                { "language": "ckb", "text": "زۆر سستە: وەڵامەکە لە بنەڕەتدا ڕاستە، بەڵام بێ کات، ڕێسا و بەڵگەکردن، پشکنینی قورس دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir sist e: bersiv di bingehê de rast e, lê bê dem, rêzik û belgekirin kontrolkirina wê dijwar dimîne." },
+                { "language": "pl", "text": "Zbyt luźno: odpowiedź jest zasadniczo właściwa, ale bez czasu, reguły i dokumentacji pozostaje trudna do sprawdzenia." },
+                { "language": "ro", "text": "Prea lejer: răspunsul este în principiu corect, dar fără termen, regulă și documentare rămâne greu de verificat." },
+                { "language": "sq", "text": "Shumë e lirshme: përgjigjja është në thelb e saktë, por pa kohë, rregull dhe dokumentim mbetet vështirë e verifikueshme." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "accountability",
+          "text": "C2-Führungssprache benennt Muster, ohne sich hinter Umständen zu verstecken oder die eigene Rolle zu entwerten.",
+          "translations": [
+            { "language": "en", "text": "C2 leadership language names patterns without hiding behind circumstances or devaluing one's own role." },
+            { "language": "fa", "text": "زبان رهبری سطح C2 الگوها را نام می‌برد، بدون اینکه پشت شرایط پنهان شود یا نقش خود را بی‌ارزش کند." },
+            { "language": "ar", "text": "لغة القيادة في مستوى C2 تسمي الأنماط من دون الاختباء خلف الظروف أو تقليل قيمة الدور الذاتي." },
+            { "language": "tr", "text": "C2 liderlik dili, koşulların arkasına saklanmadan veya kendi rolünü değersizleştirmeden kalıpları adlandırır." },
+            { "language": "ru", "text": "Язык руководства уровня C2 называет модели, не прячась за обстоятельства и не обесценивая собственную роль." },
+            { "language": "ckb", "text": "زمانی سەرکردایەتی C2 الگوکان ناو دەبات بێ ئەوەی لە پشت بارودۆخەکان بشارێتەوە یان ڕۆڵی خۆی کەم نرخ بکات." },
+            { "language": "kmr", "text": "Zimanê rêveberiyê yê C2 şêwazan bi nav dike bêyî ku li pişt şertan veşêre an rola xwe kêm nirx bike." },
+            { "language": "pl", "text": "Język przywództwa C2 nazywa wzorce, nie chowając się za okolicznościami ani nie deprecjonując własnej roli." },
+            { "language": "ro", "text": "Limbajul de conducere C2 numește tipare fără să se ascundă în spatele circumstanțelor sau să își devalorizeze rolul." },
+            { "language": "sq", "text": "Gjuha drejtuese C2 emërton modelet pa u fshehur pas rrethanave ose pa zhvlerësuar rolin e vet." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "reframing",
+          "text": "Die Rolle wird nicht aufgegeben, sondern präziser gerahmt: Entscheidung bleibt, Beteiligung wird sichtbarer.",
+          "translations": [
+            { "language": "en", "text": "The role is not given up but framed more precisely: decision remains, participation becomes more visible." },
+            { "language": "fa", "text": "نقش واگذار نمی‌شود، بلکه دقیق‌تر چارچوب‌بندی می‌شود: تصمیم‌گیری باقی می‌ماند، مشارکت قابل مشاهده‌تر می‌شود." },
+            { "language": "ar", "text": "لا يُتخلى عن الدور، بل يُؤطر بدقة أكبر: يبقى القرار، وتصبح المشاركة أكثر وضوحاً." },
+            { "language": "tr", "text": "Rol bırakılmaz, daha kesin çerçevelenir: karar kalır, katılım daha görünür olur." },
+            { "language": "ru", "text": "Роль не отдается, а точнее очерчивается: решение остается, участие становится более видимым." },
+            { "language": "ckb", "text": "ڕۆڵەکە دەستبەردار ناکرێت، بەڵکو بە وردیتر چوارچێوە دەکرێت: بڕیار دەمێنێت، بەشداری بینراوتر دەبێت." },
+            { "language": "kmr", "text": "Rol nayê berdan, lê hûrgilîtir tê çarçovekirin: biryar dimîne, beşdarbûn zêdetir xuya dibe." },
+            { "language": "pl", "text": "Rola nie zostaje oddana, lecz precyzyjniej osadzona: decyzja zostaje, udział staje się bardziej widoczny." },
+            { "language": "ro", "text": "Rolul nu este abandonat, ci încadrat mai precis: decizia rămâne, participarea devine mai vizibilă." },
+            { "language": "sq", "text": "Roli nuk braktiset, por kornizohet më saktë: vendimi mbetet, pjesëmarrja bëhet më e dukshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "observable-change",
+          "text": "Veränderung wird glaubwürdig, wenn sie in konkrete Routinen und Artefakte übersetzt wird.",
+          "translations": [
+            { "language": "en", "text": "Change becomes credible when it is translated into concrete routines and artifacts." },
+            { "language": "fa", "text": "تغییر زمانی معتبر می‌شود که به روال‌ها و آثار ملموس تبدیل شود." },
+            { "language": "ar", "text": "يصبح التغيير موثوقاً عندما يُترجم إلى روتينات وآثار ملموسة." },
+            { "language": "tr", "text": "Değişim somut rutinlere ve çıktılara çevrildiğinde güvenilir olur." },
+            { "language": "ru", "text": "Изменение становится достоверным, когда переводится в конкретные процедуры и артефакты." },
+            { "language": "ckb", "text": "گۆڕانکاری کاتێک باوەڕپێکراو دەبێت کە بکرێتە ڕووتین و بەرهەمی دیاریکراو." },
+            { "language": "kmr", "text": "Guherîn wê demê pêbawer dibe ku veguhezê rêûresm û berhemên konkret." },
+            { "language": "pl", "text": "Zmiana staje się wiarygodna, gdy zostaje przełożona na konkretne rutyny i artefakty." },
+            { "language": "ro", "text": "Schimbarea devine credibilă când este tradusă în rutine și artefacte concrete." },
+            { "language": "sq", "text": "Ndryshimi bëhet i besueshëm kur përkthehet në rutina dhe artefakte konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "positioning",
+          "text": "Die stärkste Formulierung vermeidet zwei Extreme: autoritäre Kontrolle und führungslose Selbstzurücknahme.",
+          "translations": [
+            { "language": "en", "text": "The strongest wording avoids two extremes: authoritarian control and leaderless self-withdrawal." },
+            { "language": "fa", "text": "قوی‌ترین بیان از دو افراط دوری می‌کند: کنترل اقتدارگرایانه و عقب‌نشینی بی‌رهبری." },
+            { "language": "ar", "text": "أقوى صياغة تتجنب طرفين: التحكم السلطوي والتراجع الذاتي بلا قيادة." },
+            { "language": "tr", "text": "En güçlü ifade iki uçtan kaçınır: otoriter kontrol ve lidersiz geri çekilme." },
+            { "language": "ru", "text": "Самая сильная формулировка избегает двух крайностей: авторитарного контроля и безлидерного самоотступления." },
+            { "language": "ckb", "text": "بەهێزترین دەربڕین لە دوو لایەنی توند دوور دەکەوێتەوە: کۆنترۆڵی دەسەڵاتخوازانە و کشانەوەی بێ سەرکردایەتی." },
+            { "language": "kmr", "text": "Formulasyona herî bihêz ji du tundiyên dûr dikeve: kontrola otorîter û paşvekişîna bê rêveberî." },
+            { "language": "pl", "text": "Najmocniejsze sformułowanie unika dwóch skrajności: autorytarnej kontroli i bezprzywódczego wycofania." },
+            { "language": "ro", "text": "Cea mai puternică formulare evită două extreme: controlul autoritar și retragerea fără conducere." },
+            { "language": "sq", "text": "Formulimi më i fortë shmang dy ekstreme: kontrollin autoritar dhe tërheqjen pa drejtim." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "commitment",
+          "text": "Der Abschluss ist stark, weil er die Teamforderung als Prüfstein aufnimmt und in eine wiederholbare Regel übersetzt.",
+          "translations": [
+            { "language": "en", "text": "The closing is strong because it takes the team's demand as a test criterion and translates it into a repeatable rule." },
+            { "language": "fa", "text": "جمع‌بندی قوی است، چون خواسته تیم را به‌عنوان معیار سنجش می‌پذیرد و آن را به یک قاعده قابل تکرار تبدیل می‌کند." },
+            { "language": "ar", "text": "الخاتمة قوية لأنها تأخذ مطلب الفريق كمعيار اختبار وتحوله إلى قاعدة قابلة للتكرار." },
+            { "language": "tr", "text": "Kapanış güçlüdür, çünkü ekibin talebini kontrol ölçütü olarak alır ve tekrarlanabilir bir kurala çevirir." },
+            { "language": "ru", "text": "Завершение сильное, потому что принимает требование команды как критерий проверки и переводит его в повторяемое правило." },
+            { "language": "ckb", "text": "کۆتاییەکە بەهێزە چونکە داخوازی تیم وەک پێوەری پشکنین وەردەگرێت و دەیکاتە ڕێسایەکی قابل دووبارەکردنەوە." },
+            { "language": "kmr", "text": "Dawî bihêz e ji ber ku daxwaza tîmê wekî pîvana kontrolê digire û wê vediguhezîne rêzikeke dubarebar." },
+            { "language": "pl", "text": "Zakończenie jest mocne, bo przyjmuje żądanie zespołu jako kryterium sprawdzające i przekłada je na powtarzalną regułę." },
+            { "language": "ro", "text": "Închiderea este puternică deoarece preia cerința echipei ca reper de verificare și o traduce într-o regulă repetabilă." },
+            { "language": "sq", "text": "Mbyllja është e fortë sepse e merr kërkesën e ekipit si kriter kontrolli dhe e përkthen në një rregull të përsëritshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "leadership-feedback-meeting",
+          "placement": "detail-header",
+          "purpose": "Illustrate a professional feedback conversation about leadership behavior after a team retrospective.",
+          "altText": "Ein ruhiger Besprechungsraum mit drei Erwachsenen, Moderationskarten und einem neutralen Whiteboard ohne lesbaren Text.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm meeting room with three adults, facilitation cards, and a neutral whiteboard without readable text." },
+            { "language": "fa", "text": "یک اتاق جلسه آرام با سه بزرگسال، کارت‌های تسهیل‌گری و یک تخته سفید خنثی بدون متن خوانا." },
+            { "language": "ar", "text": "غرفة اجتماع هادئة فيها ثلاثة بالغين وبطاقات تيسير ولوح أبيض محايد بلا نص مقروء." },
+            { "language": "tr", "text": "Üç yetişkinin, kolaylaştırma kartlarının ve okunabilir metin olmayan nötr bir beyaz tahtanın bulunduğu sakin bir toplantı odası." },
+            { "language": "ru", "text": "Спокойная переговорная с тремя взрослыми, карточками модерации и нейтральной доской без читаемого текста." },
+            { "language": "ckb", "text": "ژووری کۆبوونەوەیەکی ئارام لەگەڵ سێ گەورەسال، کارتی ئاسانکاری و تەختەی سپیی بێلایەن بێ دەقی خوێندراوە." },
+            { "language": "kmr", "text": "Jûreke civînê ya aram bi sê mezinan, kartên hêsankeriyê û tabloyeke spî ya bêalî bê nivîsa xwendbar." },
+            { "language": "pl", "text": "Spokojna sala spotkań z trzema dorosłymi, kartami moderacyjnymi i neutralną tablicą bez czytelnego tekstu." },
+            { "language": "ro", "text": "O sală de ședințe calmă cu trei adulți, cartonașe de facilitare și o tablă albă neutră fără text lizibil." },
+            { "language": "sq", "text": "Një sallë e qetë takimi me tre të rritur, karta lehtësimi dhe një tabelë të bardhë neutrale pa tekst të lexueshëm." }
+          ],
+          "imagePrompt": "Clean educational illustration, professional German office meeting after a team retrospective, three diverse adults discussing feedback calmly, facilitation cards on table, neutral whiteboard without readable text, no logos, no private data, accessible composition, serious constructive tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

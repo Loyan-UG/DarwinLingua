@@ -1,0 +1,730 @@
+{
+  "packageId": "roleplays-c2-core-31-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 31 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 31",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-amtliche-auflage-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Eine amtliche Auflage verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating an administrative condition" },
+        { "language": "fa", "text": "مذاکره درباره یک شرط اداری" },
+        { "language": "ar", "text": "التفاوض حول شرط إداري" },
+        { "language": "tr", "text": "İdari bir şartı müzakere etmek" },
+        { "language": "ru", "text": "Обсуждение административного условия" },
+        { "language": "ckb", "text": "دانوستاندن لەسەر مەرجێکی ئیداری" },
+        { "language": "kmr", "text": "Danûstandin li ser şertê îdarî" },
+        { "language": "pl", "text": "Negocjowanie warunku administracyjnego" },
+        { "language": "ro", "text": "Negocierea unei condiții administrative" },
+        { "language": "sq", "text": "Negocimi i një kushti administrativ" }
+      ],
+      "description": "Bei einer kommunalen Weiterbildungsstelle kann Ihr Antrag nur weiterbearbeitet werden, wenn eine Arbeitgeberbestätigung bis Freitag vorliegt. Die zuständige Person im Betrieb ist jedoch erst nächste Woche erreichbar. Sie sollen die Auflage nicht bestreiten, sondern sachlich klären, ob ein gleichwertiger Nachweis, eine kurze Fristverlängerung oder eine schriftliche Zwischenbestätigung möglich ist.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "At a municipal continuing-education office, your application can only move forward if an employer confirmation is submitted by Friday. The responsible person at work, however, will not be reachable until next week. You should not dispute the condition, but clarify calmly whether equivalent evidence, a short extension, or a written interim confirmation is possible." },
+        { "language": "fa", "text": "در یک مرکز شهری آموزش تکمیلی، درخواست شما فقط وقتی جلو می‌رود که تأییدیه کارفرما تا جمعه ارائه شود. اما فرد مسئول در محل کار تا هفته آینده در دسترس نیست. شما نباید شرط را انکار کنید، بلکه باید آرام و دقیق روشن کنید آیا مدرک هم‌ارز، تمدید کوتاه مهلت یا تأییدیه کتبی موقت ممکن است یا نه." },
+        { "language": "ar", "text": "في مكتب بلدي للتعليم المستمر لا يمكن متابعة طلبكم إلا إذا قُدمت شهادة من صاحب العمل حتى يوم الجمعة. لكن الشخص المسؤول في العمل غير متاح إلا في الأسبوع القادم. لا ينبغي أن تعترضوا على الشرط، بل أن توضحوا بهدوء هل يمكن قبول إثبات مكافئ أو تمديد قصير للمهلة أو تأكيد خطي مؤقت." },
+        { "language": "tr", "text": "Belediyeye bağlı bir sürekli eğitim biriminde başvurunuz ancak işveren onayı cuma gününe kadar verilirse ilerleyebilir. Ancak iş yerindeki sorumlu kişi gelecek haftaya kadar ulaşılamıyor. Şartı tartışmaya açmak yerine, eşdeğer bir belge, kısa süre uzatımı veya yazılı ara onay mümkün mü diye sakin biçimde açıklığa kavuşturmalısınız." },
+        { "language": "ru", "text": "В муниципальном отделе дополнительного образования ваше заявление может продвинуться только при подаче подтверждения работодателя до пятницы. Однако ответственное лицо на работе будет доступно только на следующей неделе. Нужно не оспаривать условие, а спокойно уточнить, возможны ли равноценное подтверждение, короткое продление срока или письменное промежуточное подтверждение." },
+        { "language": "ckb", "text": "لە بەشی شارەوانیی فێرکاری بەردەوامدا داواکارییەکەت تەنها کاتێک دەچێتە پێشەوە کە پشتڕاستکردنەوەی خاوەنکار تا هەینی پێشکەش بکرێت. بەڵام کەسی بەرپرسی شوێنی کار تا هەفتەی داهاتوو بەردەست نییە. نابێت مەرجەکە ڕەت بکەیتەوە، بەڵکو بە ئارامی ڕوون بکەیتەوە کە ئایا بەڵگەی هاوبەها، درێژکردنەوەی کورتی کات، یان پشتڕاستکردنەوەی نووسراوی کاتی دەکرێت یان نا." },
+        { "language": "kmr", "text": "Li dezgeha şaredariyê ya perwerdeya domdar, daxwaza we tenê dema dikare pêş bikeve ku piştrastkirina kardêr heta înê were dayîn. Lê kesê berpirs li cihê karê heta hefteya bê nayê gihîştin. Divê hûn şertê red nekin, lê bi aramî zelal bikin ka belgeyeke hevwate, dirêjkirineke kurt a demê an piştrastkirineke demkî ya nivîskî gengaz e an na." },
+        { "language": "pl", "text": "W miejskim punkcie kształcenia ustawicznego pański wniosek może być dalej rozpatrywany tylko wtedy, gdy potwierdzenie od pracodawcy wpłynie do piątku. Osoba odpowiedzialna w pracy będzie jednak dostępna dopiero w przyszłym tygodniu. Nie należy kwestionować warunku, lecz rzeczowo wyjaśnić, czy możliwy jest równoważny dowód, krótkie przedłużenie terminu albo pisemne potwierdzenie przejściowe." },
+        { "language": "ro", "text": "La un serviciu municipal de formare continuă, cererea dumneavoastră poate merge mai departe doar dacă o confirmare de la angajator este depusă până vineri. Persoana responsabilă de la locul de muncă este însă disponibilă abia săptămâna viitoare. Nu trebuie să contestați condiția, ci să clarificați calm dacă este posibilă o dovadă echivalentă, o scurtă prelungire a termenului sau o confirmare scrisă provizorie." },
+        { "language": "sq", "text": "Në një zyrë komunale për arsim të vazhdueshëm, kërkesa juaj mund të vazhdojë vetëm nëse dorëzohet konfirmimi i punëdhënësit deri të premten. Personi përgjegjës në punë është i arritshëm vetëm javën tjetër. Ju nuk duhet ta kundërshtoni kushtin, por të sqaroni qetë nëse është e mundur një provë e barasvlershme, një shtyrje e shkurtër afati ose një konfirmim i përkohshëm me shkrim." }
+      ],
+      "learnerGoal": "Eine amtliche Auflage sachlich verhandeln: den Zweck der Unterlage anerkennen, nach Entscheidungsspielraum fragen, gleichwertige Alternativen anbieten, eine kurze Frist realistisch begründen und das Ergebnis schriftlich sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate an administrative condition calmly: acknowledge the purpose of the document, ask about room for discretion, offer equivalent alternatives, justify a short extension realistically, and secure the result in writing." },
+        { "language": "fa", "text": "یک شرط اداری را آرام و دقیق مذاکره کنید: هدف مدرک را بپذیرید، درباره اختیار تصمیم‌گیری بپرسید، گزینه‌های هم‌ارز پیشنهاد دهید، تمدید کوتاه را واقع‌بینانه توضیح دهید و نتیجه را کتبی ثبت کنید." },
+        { "language": "ar", "text": "تفاوضوا حول شرط إداري بهدوء: اعترفوا بهدف الوثيقة، واسألوا عن هامش القرار، وقدموا بدائل مكافئة، وبرروا تمديداً قصيراً بشكل واقعي، وثبتوا النتيجة خطياً." },
+        { "language": "tr", "text": "İdari bir şartı sakin biçimde müzakere edin: belgenin amacını kabul edin, takdir alanını sorun, eşdeğer alternatifler sunun, kısa süre uzatımını gerçekçi gerekçelendirin ve sonucu yazılı güvenceye alın." },
+        { "language": "ru", "text": "Спокойно обсудите административное условие: признайте цель документа, спросите о возможном усмотрении, предложите равноценные альтернативы, реалистично обоснуйте короткое продление и закрепите результат письменно." },
+        { "language": "ckb", "text": "مەرجێکی ئیداری بە ئارامی دانوستاندن بکە: ئامانجی بەڵگەکە بپەسەندە، دەربارەی بۆشایی بڕیاردان بپرسە، جێگرەوەی هاوبەها پێشنیار بکە، درێژکردنەوەی کورتی کات بە ڕاستەقینە ڕوون بکەوە و ئەنجامەکە بە نووسراو پارێزە." },
+        { "language": "kmr", "text": "Şerteke îdarî bi aramî danûstandin bikin: armanca belgeyê qebûl bikin, li ser cihê biryardanê bipirsin, alternatîvên hevwate pêşkêş bikin, dirêjkirineke kurt bi awayekî rastîn sedem bikin û encamê nivîskî misoger bikin." },
+        { "language": "pl", "text": "Rzeczowo negocjować warunek administracyjny: uznać cel dokumentu, zapytać o zakres uznania, zaproponować równoważne alternatywy, realistycznie uzasadnić krótkie przedłużenie i zabezpieczyć wynik pisemnie." },
+        { "language": "ro", "text": "Negociați calm o condiție administrativă: recunoașteți scopul documentului, întrebați despre marja de apreciere, oferiți alternative echivalente, justificați realist o scurtă prelungire și fixați rezultatul în scris." },
+        { "language": "sq", "text": "Negocioni qetë një kusht administrativ: pranoni qëllimin e dokumentit, pyesni për hapësirën e vendimmarrjes, ofroni alternativa të barasvlershme, arsyetoni realisht një shtyrje të shkurtër dhe siguroni rezultatin me shkrim." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 31,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌دهنده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeiterin",
+          "translations": [
+            { "language": "en", "text": "Case worker" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "الموظفة المختصة" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудница по делу" },
+            { "language": "ckb", "text": "کارمەندی دۆسیە" },
+            { "language": "kmr", "text": "Karmenda dosyayê" },
+            { "language": "pl", "text": "Urzędniczka prowadząca sprawę" },
+            { "language": "ro", "text": "Funcționară responsabilă de dosar" },
+            { "language": "sq", "text": "Punonjësja e çështjes" }
+          ]
+        },
+        {
+          "roleKey": "supervisor",
+          "displayName": "Teamleiter",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "رئيس الفريق" },
+            { "language": "tr", "text": "Ekip sorumlusu" },
+            { "language": "ru", "text": "Руководитель группы" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Kierownik zespołu" },
+            { "language": "ro", "text": "Coordonator de echipă" },
+            { "language": "sq", "text": "Drejtuesi i ekipit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Ihr Antrag kann nur weiterbearbeitet werden, wenn die Arbeitgeberbestätigung bis Freitag vorliegt. Sonst bleibt die Akte unvollständig.",
+          "translations": [
+            { "language": "en", "text": "Your application can only move forward if the employer confirmation is submitted by Friday. Otherwise the file remains incomplete." },
+            { "language": "fa", "text": "درخواست شما فقط وقتی جلو می‌رود که تأییدیه کارفرما تا جمعه ارائه شود. در غیر این صورت پرونده ناقص می‌ماند." },
+            { "language": "ar", "text": "لا يمكن متابعة طلبكم إلا إذا وصلت شهادة صاحب العمل حتى الجمعة. وإلا سيبقى الملف غير مكتمل." },
+            { "language": "tr", "text": "Başvurunuz ancak işveren onayı cuma gününe kadar gelirse ilerleyebilir. Aksi halde dosya eksik kalır." },
+            { "language": "ru", "text": "Ваше заявление может продвинуться только если подтверждение работодателя будет подано до пятницы. Иначе дело останется неполным." },
+            { "language": "ckb", "text": "داواکارییەکەت تەنها کاتێک دەچێتە پێشەوە کە پشتڕاستکردنەوەی خاوەنکار تا هەینی بگات. ئەگەر نا، دۆسیەکە ناتەواو دەمێنێتەوە." },
+            { "language": "kmr", "text": "Daxwaza we tenê dema dikare pêş bikeve ku piştrastkirina kardêr heta înê were. Wekî din dosya netemam dimîne." },
+            { "language": "pl", "text": "Pański wniosek może być dalej rozpatrywany tylko wtedy, gdy potwierdzenie od pracodawcy wpłynie do piątku. W przeciwnym razie akta pozostaną niekompletne." },
+            { "language": "ro", "text": "Cererea dumneavoastră poate merge mai departe doar dacă confirmarea angajatorului este depusă până vineri. Altfel dosarul rămâne incomplet." },
+            { "language": "sq", "text": "Kërkesa juaj mund të vazhdojë vetëm nëse konfirmimi i punëdhënësit dorëzohet deri të premten. Përndryshe dosja mbetet e paplotë." }
+          ],
+          "function": "state-condition",
+          "toneNote": "Formell und knapp."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe, dass die Bestätigung den Beschäftigungsstatus belegen soll. Mir geht es nicht darum, die Auflage zu umgehen, sondern zu klären, ob bis zur endgültigen Bestätigung ein gleichwertiger Zwischennachweis akzeptiert werden kann.",
+          "translations": [
+            { "language": "en", "text": "I understand that the confirmation is meant to prove employment status. I am not trying to bypass the condition, but to clarify whether an equivalent interim document can be accepted until the final confirmation arrives." },
+            { "language": "fa", "text": "می‌فهمم که این تأییدیه باید وضعیت اشتغال را ثابت کند. هدفم دور زدن شرط نیست، بلکه می‌خواهم روشن کنم آیا تا زمان رسیدن تأییدیه نهایی، مدرک موقت هم‌ارز پذیرفته می‌شود یا نه." },
+            { "language": "ar", "text": "أفهم أن الشهادة تهدف إلى إثبات وضع العمل. لا أريد تجاوز الشرط، بل توضيح هل يمكن قبول إثبات مؤقت مكافئ إلى أن تصل الشهادة النهائية." },
+            { "language": "tr", "text": "Onayın çalışma durumunu kanıtlaması gerektiğini anlıyorum. Amacım şartı aşmak değil, kesin onay gelene kadar eşdeğer bir ara belgenin kabul edilip edilemeyeceğini açıklığa kavuşturmak." },
+            { "language": "ru", "text": "Я понимаю, что подтверждение должно доказать статус занятости. Я не хочу обойти условие, а хочу уточнить, можно ли принять равноценное промежуточное подтверждение до получения окончательного документа." },
+            { "language": "ckb", "text": "تێدەگەم کە پشتڕاستکردنەوەکە دەبێت دۆخی کارکردن بسەلمێنێت. مەبەستم دەربازبوون لە مەرجەکە نییە، بەڵکو ڕوونکردنەوەی ئەوەیە کە ئایا تا هاتنی پشتڕاستکردنەوەی کۆتایی، بەڵگەیەکی کاتی هاوبەها پەسەند دەکرێت یان نا." },
+            { "language": "kmr", "text": "Ez fêm dikim ku piştrastkirin divê rewşa karê îspat bike. Armanca min derbasbûna ji şertê nîne, lê zelalkirin e ka heta piştrastkirina dawî were, belgeyeke navberî ya hevwate dikare were qebûlkirin an na." },
+            { "language": "pl", "text": "Rozumiem, że potwierdzenie ma wykazać status zatrudnienia. Nie chodzi mi o obejście warunku, lecz o wyjaśnienie, czy do czasu ostatecznego potwierdzenia może zostać przyjęty równoważny dokument przejściowy." },
+            { "language": "ro", "text": "Înțeleg că această confirmare trebuie să dovedească statutul de angajare. Nu urmăresc să ocolesc condiția, ci să clarific dacă până la confirmarea finală poate fi acceptată o dovadă provizorie echivalentă." },
+            { "language": "sq", "text": "E kuptoj që konfirmimi duhet të dëshmojë statusin e punësimit. Nuk dua ta anashkaloj kushtin, por të sqaroj nëse deri në konfirmimin përfundimtar mund të pranohet një provë e përkohshme e barasvlershme." }
+          ],
+          "function": "acknowledge-purpose",
+          "toneNote": "Kooperativ und präzise.",
+          "expectedLearnerAction": "Acknowledge the purpose of the condition and ask about an equivalent interim document."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Welche Unterlagen könnten Sie denn vor Freitag vorlegen?",
+          "translations": [
+            { "language": "en", "text": "Which documents could you submit before Friday?" },
+            { "language": "fa", "text": "چه مدارکی را می‌توانید پیش از جمعه ارائه کنید؟" },
+            { "language": "ar", "text": "ما الوثائق التي يمكنكم تقديمها قبل الجمعة؟" },
+            { "language": "tr", "text": "Cuma gününden önce hangi belgeleri sunabilirsiniz?" },
+            { "language": "ru", "text": "Какие документы вы могли бы подать до пятницы?" },
+            { "language": "ckb", "text": "چ بەڵگەیەک دەتوانیت پێش هەینی پێشکەش بکەیت؟" },
+            { "language": "kmr", "text": "Hûn dikarin berî înê kîjan belgeyan bidin?" },
+            { "language": "pl", "text": "Jakie dokumenty mógłby pan przedłożyć przed piątkiem?" },
+            { "language": "ro", "text": "Ce documente ați putea depune înainte de vineri?" },
+            { "language": "sq", "text": "Cilat dokumente mund t'i dorëzoni para së premtes?" }
+          ],
+          "function": "ask-alternatives"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich könnte den aktuellen Arbeitsvertrag, die letzte Gehaltsabrechnung und eine E-Mail der Personalabteilung vorlegen, in der die endgültige Bestätigung für Montag angekündigt wird. Wenn diese Unterlagen nicht ausreichen, würde ich gern wissen, welche Mindestangabe fehlt.",
+          "translations": [
+            { "language": "en", "text": "I could submit the current employment contract, the latest payslip, and an email from the personnel department announcing the final confirmation for Monday. If these documents are not sufficient, I would like to know which minimum detail is missing." },
+            { "language": "fa", "text": "می‌توانم قرارداد کاری فعلی، آخرین فیش حقوقی و ایمیلی از بخش منابع انسانی ارائه کنم که در آن تأییدیه نهایی برای دوشنبه اعلام شده است. اگر این مدارک کافی نیستند، مایل هستم بدانم کدام حداقل اطلاعات کم است." },
+            { "language": "ar", "text": "يمكنني تقديم عقد العمل الحالي وآخر قسيمة راتب ورسالة بريد من قسم الموارد البشرية تعلن أن الشهادة النهائية ستصدر يوم الاثنين. إذا لم تكن هذه الوثائق كافية، أود أن أعرف أي معلومة دنيا ناقصة." },
+            { "language": "tr", "text": "Güncel iş sözleşmesini, son maaş bordrosunu ve kesin onayın pazartesi geleceğini bildiren insan kaynakları e-postasını sunabilirim. Bu belgeler yeterli değilse, hangi asgari bilginin eksik olduğunu bilmek isterim." },
+            { "language": "ru", "text": "Я мог бы подать текущий трудовой договор, последнюю расчетную ведомость и письмо отдела кадров, где окончательное подтверждение обещано на понедельник. Если этих документов недостаточно, я хотел бы знать, какого минимального сведения не хватает." },
+            { "language": "ckb", "text": "دەتوانم گرێبەستی کاری ئێستا، دوا فیشی مووچە و ئیمەیڵێکی بەشی کارگێڕیی مرۆیی پێشکەش بکەم کە پشتڕاستکردنەوەی کۆتایی بۆ دووشەممە ڕادەگەیەنێت. ئەگەر ئەم بەڵگەیانە بەس نەبن، دەمەوێت بزانم کام زانیاریی کەمینە کەمە." },
+            { "language": "kmr", "text": "Ez dikarim peymana karê ya niha, pelê dawî yê meaşê û e-mailek ji beşa personelê bidim ku piştrastkirina dawî ji bo duşemê tê ragihandin. Heke ev belge têr nebin, ez dixwazim bizanim kîjan agahiya kêmtirîn kêm e." },
+            { "language": "pl", "text": "Mógłbym przedłożyć aktualną umowę o pracę, ostatni pasek wynagrodzenia i e-mail z działu kadr, w którym zapowiedziano ostateczne potwierdzenie na poniedziałek. Jeśli te dokumenty nie wystarczą, chciałbym wiedzieć, jakiej minimalnej informacji brakuje." },
+            { "language": "ro", "text": "Aș putea depune contractul de muncă actual, ultimul fluturaș de salariu și un e-mail de la resurse umane în care confirmarea finală este anunțată pentru luni. Dacă aceste documente nu sunt suficiente, aș dori să știu ce informație minimă lipsește." },
+            { "language": "sq", "text": "Mund të dorëzoj kontratën aktuale të punës, listëpagesën e fundit dhe një e-mail nga burimet njerëzore ku konfirmimi përfundimtar njoftohet për të hënën. Nëse këto dokumente nuk mjaftojnë, dua të di cili informacion minimal mungon." }
+          ],
+          "function": "offer-equivalent-evidence",
+          "toneNote": "Konkrete Alternativen.",
+          "expectedLearnerAction": "Offer specific alternative documents and ask for the missing minimum detail."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Eine Verlängerung ist bei uns nicht automatisch vorgesehen.",
+          "translations": [
+            { "language": "en", "text": "An extension is not automatically provided here." },
+            { "language": "fa", "text": "تمدید مهلت نزد ما به‌صورت خودکار پیش‌بینی نشده است." },
+            { "language": "ar", "text": "التمديد غير مقرر لدينا تلقائياً." },
+            { "language": "tr", "text": "Bizde süre uzatımı otomatik olarak öngörülmüyor." },
+            { "language": "ru", "text": "Продление у нас автоматически не предусмотрено." },
+            { "language": "ckb", "text": "لە لای ئێمە درێژکردنەوە بە شێوەی خۆکار پێشبینی نەکراوە." },
+            { "language": "kmr", "text": "Li cem me dirêjkirin bixweber nehatiye pêşbînîkirin." },
+            { "language": "pl", "text": "Przedłużenie nie jest u nas przewidziane automatycznie." },
+            { "language": "ro", "text": "O prelungire nu este prevăzută automat la noi." },
+            { "language": "sq", "text": "Shtyrja e afatit nuk parashikohet automatikisht tek ne." }
+          ],
+          "function": "limit-extension"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Deshalb frage ich nicht nach einer automatischen Verlängerung, sondern nach dem Entscheidungsspielraum im konkreten Fall: Die Verzögerung liegt nicht bei mir, der Zeitraum ist kurz, und ich kann die Nachreichung für Montag belegen.",
+          "translations": [
+            { "language": "en", "text": "I understand that. That is why I am not asking for an automatic extension, but about the room for discretion in this specific case: the delay is not on my side, the period is short, and I can document that I will submit the missing item on Monday." },
+            { "language": "fa", "text": "این را می‌فهمم. به همین دلیل تمدید خودکار نمی‌خواهم، بلکه درباره اختیار تصمیم‌گیری در این مورد مشخص می‌پرسم: تأخیر از طرف من نیست، زمان کوتاه است و می‌توانم ثابت کنم که مدرک را دوشنبه تکمیل می‌کنم." },
+            { "language": "ar", "text": "أفهم ذلك. لذلك لا أطلب تمديداً تلقائياً، بل أسأل عن هامش القرار في هذه الحالة المحددة: التأخير ليس من جهتي، والمدة قصيرة، ويمكنني إثبات أنني سأكمل الوثيقة يوم الاثنين." },
+            { "language": "tr", "text": "Bunu anlıyorum. Bu yüzden otomatik bir uzatma değil, somut durumdaki takdir alanını soruyorum: gecikme benden kaynaklanmıyor, süre kısa ve eksik belgeyi pazartesi tamamlayacağımı belgeleyebilirim." },
+            { "language": "ru", "text": "Я понимаю. Поэтому я прошу не автоматическое продление, а спрашиваю о возможности усмотрения в данном конкретном случае: задержка не с моей стороны, срок короткий, и я могу подтвердить, что донесу документ в понедельник." },
+            { "language": "ckb", "text": "تێدەگەم. بۆیە داوای درێژکردنەوەی خۆکار ناکەم، بەڵکو دەربارەی بۆشایی بڕیاردان لەم بارە دیاریکراوەدا دەپرسێم: دواخستنەکە لە لای منەوە نییە، ماوەکە کورتە، و دەتوانم بەڵگە بدەم کە دووشەممە بەڵگەی کەم پێشکەش دەکەم." },
+            { "language": "kmr", "text": "Ez vê fêm dikim. Ji ber vê yekê ez ne dirêjkirineke bixweber dixwazim, lê li ser cihê biryardanê di vê rewşa taybet de dipirsim: derengî ne ji aliyê min e, dem kurt e, û ez dikarim îspat bikim ku ez belgeya kêm duşemê temam dikim." },
+            { "language": "pl", "text": "Rozumiem. Dlatego nie pytam o automatyczne przedłużenie, lecz o zakres uznania w tym konkretnym przypadku: opóźnienie nie leży po mojej stronie, okres jest krótki, a ja mogę udokumentować, że uzupełnię brak w poniedziałek." },
+            { "language": "ro", "text": "Înțeleg. De aceea nu cer o prelungire automată, ci întreb despre marja de apreciere în acest caz concret: întârzierea nu este din partea mea, perioada este scurtă și pot dovedi că depun completarea luni." },
+            { "language": "sq", "text": "E kuptoj. Prandaj nuk kërkoj shtyrje automatike, por pyes për hapësirën e vendimmarrjes në këtë rast konkret: vonesa nuk vjen nga unë, periudha është e shkurtër dhe mund të dëshmoj se dokumentin e munguar e dorëzoj të hënën." }
+          ],
+          "function": "ask-discretion",
+          "toneNote": "Bestimmt, aber nicht konfrontativ.",
+          "expectedLearnerAction": "Ask for discretion without claiming an automatic right."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Ich müsste prüfen, ob ein Zwischennachweis für die Akte reicht.",
+          "translations": [
+            { "language": "en", "text": "I would have to check whether an interim document is sufficient for the file." },
+            { "language": "fa", "text": "باید بررسی کنم آیا مدرک موقت برای پرونده کافی است یا نه." },
+            { "language": "ar", "text": "عليّ أن أتحقق هل يكفي إثبات مؤقت للملف." },
+            { "language": "tr", "text": "Ara belgenin dosya için yeterli olup olmadığını kontrol etmem gerekir." },
+            { "language": "ru", "text": "Мне нужно проверить, достаточно ли промежуточного документа для дела." },
+            { "language": "ckb", "text": "دەبێت بپشکنم ئایا بەڵگەی کاتی بۆ دۆسیەکە بەسە یان نا." },
+            { "language": "kmr", "text": "Divê ez kontrol bikim ka belgeya navberî ji bo dosyayê têr dike an na." },
+            { "language": "pl", "text": "Musiałabym sprawdzić, czy dokument przejściowy wystarczy do akt." },
+            { "language": "ro", "text": "Ar trebui să verific dacă o dovadă provizorie este suficientă pentru dosar." },
+            { "language": "sq", "text": "Duhet të kontrolloj nëse një dokument i përkohshëm mjafton për dosjen." }
+          ],
+          "function": "open-review"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das wäre hilfreich. Damit ich nichts falsch verstehe: Könnten Sie mir bitte schriftlich bestätigen, welche Unterlagen ich heute einreiche, was noch fehlt und bis wann die endgültige Bestätigung nachgereicht werden kann?",
+          "translations": [
+            { "language": "en", "text": "That would be helpful. So that I do not misunderstand anything: could you please confirm in writing which documents I am submitting today, what is still missing, and by when the final confirmation can be submitted later?" },
+            { "language": "fa", "text": "این کمک‌کننده است. برای اینکه چیزی را اشتباه متوجه نشوم: ممکن است لطفاً کتبی تأیید کنید امروز چه مدارکی ارائه می‌کنم، چه چیزی هنوز کم است و تا چه زمانی تأییدیه نهایی می‌تواند بعداً ارائه شود؟" },
+            { "language": "ar", "text": "سيكون ذلك مفيداً. حتى لا أفهم شيئاً بشكل خاطئ: هل يمكنكم من فضلكم أن تؤكدوا خطياً ما الوثائق التي أقدمها اليوم، وما الذي ما زال ناقصاً، وحتى متى يمكن تقديم الشهادة النهائية لاحقاً؟" },
+            { "language": "tr", "text": "Bu yardımcı olur. Yanlış anlamamam için: bugün hangi belgeleri sunduğumu, neyin hâlâ eksik olduğunu ve kesin onayın en geç ne zamana kadar sonradan verilebileceğini yazılı olarak teyit eder misiniz?" },
+            { "language": "ru", "text": "Это было бы полезно. Чтобы я ничего не понял неправильно: могли бы вы письменно подтвердить, какие документы я подаю сегодня, чего еще не хватает и до какого срока можно донести окончательное подтверждение?" },
+            { "language": "ckb", "text": "ئەمە یارمەتیدەر دەبێت. بۆ ئەوەی هیچ شتێک بە هەڵە تێنەگەم: تکایە دەتوانن بە نووسراو پشتڕاست بکەنەوە کە ئەمڕۆ چ بەڵگەیەک پێشکەش دەکەم، چی هێشتا کەمە و تا کەی پشتڕاستکردنەوەی کۆتایی دواتر پێشکەش دەکرێت؟" },
+            { "language": "kmr", "text": "Ev dê alîkar be. Ji bo ku ez tiştekî şaş fêm nekim: ji kerema xwe hûn dikarin nivîskî piştrast bikin ka ez îro kîjan belgeyan didim, çi hîn kêm e û heta kengî piştrastkirina dawî dikare paşê were dayîn?" },
+            { "language": "pl", "text": "To byłoby pomocne. Żebym niczego źle nie zrozumiał: czy mogłaby pani potwierdzić pisemnie, jakie dokumenty składam dzisiaj, czego jeszcze brakuje i do kiedy można dosłać ostateczne potwierdzenie?" },
+            { "language": "ro", "text": "Ar fi de ajutor. Ca să nu înțeleg greșit: ați putea, vă rog, să confirmați în scris ce documente depun astăzi, ce mai lipsește și până când poate fi adusă ulterior confirmarea finală?" },
+            { "language": "sq", "text": "Kjo do të ndihmonte. Që të mos kuptoj diçka gabim: a mund të më konfirmoni me shkrim cilat dokumente dorëzoj sot, çfarë mungon ende dhe deri kur mund të dorëzohet më vonë konfirmimi përfundimtar?" }
+          ],
+          "function": "request-written-confirmation",
+          "toneNote": "Absichernd und höflich.",
+          "expectedLearnerAction": "Ask for written confirmation of the interim arrangement."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "supervisor",
+          "baseText": "Wir können heute die Ersatzunterlagen aufnehmen und Ihnen schriftlich vermerken, dass die Arbeitgeberbestätigung bis Montag um 12 Uhr nachgereicht werden muss.",
+          "translations": [
+            { "language": "en", "text": "We can accept the substitute documents today and note in writing for you that the employer confirmation must be submitted by Monday at noon." },
+            { "language": "fa", "text": "می‌توانیم امروز مدارک جایگزین را دریافت کنیم و برای شما کتبی ثبت کنیم که تأییدیه کارفرما باید تا دوشنبه ساعت ۱۲ تکمیل شود." },
+            { "language": "ar", "text": "يمكننا اليوم أخذ الوثائق البديلة وتدوين لكم خطياً أن شهادة صاحب العمل يجب أن تُستكمل حتى الاثنين الساعة الثانية عشرة." },
+            { "language": "tr", "text": "Bugün yedek belgeleri alabilir ve işveren onayının pazartesi saat 12'ye kadar tamamlanması gerektiğini size yazılı olarak not edebiliriz." },
+            { "language": "ru", "text": "Мы можем сегодня принять заменяющие документы и письменно отметить для вас, что подтверждение работодателя должно быть донесено до понедельника 12 часов." },
+            { "language": "ckb", "text": "دەتوانین ئەمڕۆ بەڵگە جێگرەوەکان وەرگرین و بە نووسراو بۆتان تۆمار بکەین کە پشتڕاستکردنەوەی خاوەنکار دەبێت تا دووشەممە کاتژمێر ١٢ پێشکەش بکرێت." },
+            { "language": "kmr", "text": "Em dikarin îro belgeyên cîgir bistînin û ji we re nivîskî binivîsin ku piştrastkirina kardêr divê heta duşemê saet 12 were dayîn." },
+            { "language": "pl", "text": "Możemy dziś przyjąć dokumenty zastępcze i pisemnie odnotować dla pana, że potwierdzenie od pracodawcy musi zostać dosłane do poniedziałku do godziny 12." },
+            { "language": "ro", "text": "Putem prelua astăzi documentele înlocuitoare și vă putem nota în scris că confirmarea angajatorului trebuie depusă până luni la ora 12." },
+            { "language": "sq", "text": "Mund t'i pranojmë sot dokumentet zëvendësuese dhe t'ju shënojmë me shkrim se konfirmimi i punëdhënësit duhet dorëzuar deri të hënën në orën 12." }
+          ],
+          "function": "offer-interim-arrangement"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann reiche ich heute die drei Ersatzunterlagen ein, lasse mir den fehlenden Punkt und die Frist schriftlich bestätigen und sende die Arbeitgeberbestätigung spätestens Montag um 12 Uhr nach.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will submit the three substitute documents today, have the missing item and the deadline confirmed in writing, and send the employer confirmation by Monday at noon at the latest." },
+            { "language": "fa", "text": "بسیار ممنون. پس امروز سه مدرک جایگزین را ارائه می‌کنم، مورد کمبود و مهلت را کتبی تأیید می‌گیرم و تأییدیه کارفرما را حداکثر تا دوشنبه ساعت ۱۲ ارسال می‌کنم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن أقدم اليوم الوثائق البديلة الثلاث، وأحصل على تأكيد خطي للنقطة الناقصة والمهلة، وأرسل شهادة صاحب العمل حتى الاثنين الساعة الثانية عشرة كحد أقصى." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde bugün üç yedek belgeyi sunuyorum, eksik noktayı ve süreyi yazılı teyit ettiriyorum ve işveren onayını en geç pazartesi saat 12'ye kadar gönderiyorum." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я сегодня подаю три заменяющих документа, получаю письменное подтверждение недостающего пункта и срока и отправляю подтверждение работодателя не позднее понедельника 12 часов." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ سێ بەڵگەی جێگرەوە پێشکەش دەکەم، خاڵی کەم و ماوەکە بە نووسراو پشتڕاست دەکەمەوە و پشتڕاستکردنەوەی خاوەنکار زۆرترین تا دووشەممە کاتژمێر ١٢ دەنێرم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez îro sê belgeyên cîgir didim, xala kêm û demê nivîskî piştrast dikim û piştrastkirina kardêr herî dereng heta duşemê saet 12 dişînim." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie składam dziś trzy dokumenty zastępcze, proszę o pisemne potwierdzenie brakującego punktu i terminu, a potwierdzenie od pracodawcy dosyłam najpóźniej w poniedziałek o 12." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci depun astăzi cele trei documente înlocuitoare, primesc confirmarea scrisă a punctului lipsă și a termenului și trimit confirmarea angajatorului cel târziu luni la ora 12." },
+            { "language": "sq", "text": "Shumë faleminderit. Atëherë sot dorëzoj tre dokumentet zëvendësuese, marr konfirmim me shkrim për pikën që mungon dhe afatin, dhe e dërgoj konfirmimin e punëdhënësit më së voni të hënën në orën 12." }
+          ],
+          "function": "confirm-next-steps",
+          "toneNote": "Zusammenfassend und verbindlich.",
+          "expectedLearnerAction": "Summarize the agreed next steps precisely."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich verstehe, dass die Bestätigung den Beschäftigungsstatus belegen soll. Mir geht es nicht darum, die Auflage zu umgehen, sondern zu klären, ob bis zur endgültigen Bestätigung ein gleichwertiger Zwischennachweis akzeptiert werden kann.",
+              "translations": [
+                { "language": "en", "text": "I understand that the confirmation is meant to prove employment status. I am not trying to bypass the condition, but to clarify whether an equivalent interim document can be accepted until the final confirmation arrives." },
+                { "language": "fa", "text": "می‌فهمم که این تأییدیه باید وضعیت اشتغال را ثابت کند. هدفم دور زدن شرط نیست، بلکه می‌خواهم روشن کنم آیا تا زمان رسیدن تأییدیه نهایی، مدرک موقت هم‌ارز پذیرفته می‌شود یا نه." },
+                { "language": "ar", "text": "أفهم أن الشهادة تهدف إلى إثبات وضع العمل. لا أريد تجاوز الشرط، بل توضيح هل يمكن قبول إثبات مؤقت مكافئ إلى أن تصل الشهادة النهائية." },
+                { "language": "tr", "text": "Onayın çalışma durumunu kanıtlaması gerektiğini anlıyorum. Amacım şartı aşmak değil, kesin onay gelene kadar eşdeğer bir ara belgenin kabul edilip edilemeyeceğini açıklığa kavuşturmak." },
+                { "language": "ru", "text": "Я понимаю, что подтверждение должно доказать статус занятости. Я не хочу обойти условие, а хочу уточнить, можно ли принять равноценное промежуточное подтверждение до получения окончательного документа." },
+                { "language": "ckb", "text": "تێدەگەم کە پشتڕاستکردنەوەکە دەبێت دۆخی کارکردن بسەلمێنێت. مەبەستم دەربازبوون لە مەرجەکە نییە، بەڵکو ڕوونکردنەوەی ئەوەیە کە ئایا تا هاتنی پشتڕاستکردنەوەی کۆتایی، بەڵگەیەکی کاتی هاوبەها پەسەند دەکرێت یان نا." },
+                { "language": "kmr", "text": "Ez fêm dikim ku piştrastkirin divê rewşa karê îspat bike. Armanca min derbasbûna ji şertê nîne, lê zelalkirin e ka heta piştrastkirina dawî were, belgeyeke navberî ya hevwate dikare were qebûlkirin an na." },
+                { "language": "pl", "text": "Rozumiem, że potwierdzenie ma wykazać status zatrudnienia. Nie chodzi mi o obejście warunku, lecz o wyjaśnienie, czy do czasu ostatecznego potwierdzenia może zostać przyjęty równoważny dokument przejściowy." },
+                { "language": "ro", "text": "Înțeleg că această confirmare trebuie să dovedească statutul de angajare. Nu urmăresc să ocolesc condiția, ci să clarific dacă până la confirmarea finală poate fi acceptată o dovadă provizorie echivalentă." },
+                { "language": "sq", "text": "E kuptoj që konfirmimi duhet të dëshmojë statusin e punësimit. Nuk dua ta anashkaloj kushtin, por të sqaroj nëse deri në konfirmimin përfundimtar mund të pranohet një provë e përkohshme e barasvlershme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erkennt den Zweck der Auflage an und fragt nach einer gleichwertigen Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer acknowledges the purpose of the condition and asks for an equivalent solution." },
+                { "language": "fa", "text": "قوی است: پاسخ هدف شرط را می‌پذیرد و درباره راه‌حل هم‌ارز می‌پرسد." },
+                { "language": "ar", "text": "قوي: يعترف الجواب بهدف الشرط ويسأل عن حل مكافئ." },
+                { "language": "tr", "text": "Güçlü: yanıt şartın amacını kabul ediyor ve eşdeğer bir çözüm soruyor." },
+                { "language": "ru", "text": "Сильно: ответ признает цель условия и спрашивает о равноценном решении." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئامانجی مەرجەکە دەپەسەندێت و دەربارەی چارەسەرێکی هاوبەها دەپرسێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv armanca şertê qebûl dike û li ser çareseriyeke hevwate dipirse." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje cel warunku i pyta o równoważne rozwiązanie." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște scopul condiției și întreabă despre o soluție echivalentă." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon qëllimin e kushtit dhe pyet për një zgjidhje të barasvlershme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Bestätigung kommt erst nächste Woche, deshalb brauche ich einfach mehr Zeit.",
+              "translations": [
+                { "language": "en", "text": "The confirmation will only come next week, so I simply need more time." },
+                { "language": "fa", "text": "تأییدیه تازه هفته آینده می‌آید، بنابراین فقط زمان بیشتری لازم دارم." },
+                { "language": "ar", "text": "ستأتي الشهادة فقط في الأسبوع القادم، لذلك أحتاج ببساطة إلى وقت أكثر." },
+                { "language": "tr", "text": "Onay ancak gelecek hafta gelecek, bu yüzden sadece daha fazla zamana ihtiyacım var." },
+                { "language": "ru", "text": "Подтверждение будет только на следующей неделе, поэтому мне просто нужно больше времени." },
+                { "language": "ckb", "text": "پشتڕاستکردنەوەکە تەنها هەفتەی داهاتوو دێت، بۆیە تەنها کاتی زیاتر پێویستمە." },
+                { "language": "kmr", "text": "Piştrastkirin tenê hefteya bê tê, ji ber vê yekê ez tenê demeke zêdetir dixwazim." },
+                { "language": "pl", "text": "Potwierdzenie przyjdzie dopiero w przyszłym tygodniu, więc po prostu potrzebuję więcej czasu." },
+                { "language": "ro", "text": "Confirmarea vine abia săptămâna viitoare, deci am pur și simplu nevoie de mai mult timp." },
+                { "language": "sq", "text": "Konfirmimi vjen vetëm javën tjetër, prandaj thjesht më duhet më shumë kohë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schlicht. Die Antwort begründet den Wunsch, aber sie erkennt den Zweck der Auflage nicht an und bietet keine Alternative.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple. The answer justifies the wish, but does not acknowledge the purpose of the condition or offer an alternative." },
+                { "language": "fa", "text": "بیش از حد ساده است. پاسخ خواسته را توجیه می‌کند، اما هدف شرط را نمی‌پذیرد و جایگزین پیشنهاد نمی‌دهد." },
+                { "language": "ar", "text": "بسيط أكثر من اللازم. يبرر الجواب الطلب، لكنه لا يعترف بهدف الشرط ولا يقدم بديلاً." },
+                { "language": "tr", "text": "Fazla basit. Yanıt isteği gerekçelendiriyor, ama şartın amacını kabul etmiyor ve alternatif sunmuyor." },
+                { "language": "ru", "text": "Слишком просто. Ответ обосновывает желание, но не признает цель условия и не предлагает альтернативу." },
+                { "language": "ckb", "text": "زۆر سادەیە. وەڵامەکە داواکە ڕوون دەکاتەوە، بەڵام ئامانجی مەرجەکە ناپەسەندێت و جێگرەوە پێشنیار ناکات." },
+                { "language": "kmr", "text": "Pir sade ye. Bersiv daxwazê sedem dike, lê armanca şertê qebûl nake û alternatîv pêşkêş nake." },
+                { "language": "pl", "text": "Zbyt proste. Odpowiedź uzasadnia prośbę, ale nie uznaje celu warunku i nie proponuje alternatywy." },
+                { "language": "ro", "text": "Prea simplu. Răspunsul justifică dorința, dar nu recunoaște scopul condiției și nu oferă alternativă." },
+                { "language": "sq", "text": "Tepër e thjeshtë. Përgjigjja e arsyeton kërkesën, por nuk pranon qëllimin e kushtit dhe nuk ofron alternativë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich könnte den aktuellen Arbeitsvertrag, die letzte Gehaltsabrechnung und eine E-Mail der Personalabteilung vorlegen, in der die endgültige Bestätigung für Montag angekündigt wird. Wenn diese Unterlagen nicht ausreichen, würde ich gern wissen, welche Mindestangabe fehlt.",
+              "translations": [
+                { "language": "en", "text": "I could submit the current employment contract, the latest payslip, and an email from the personnel department announcing the final confirmation for Monday. If these documents are not sufficient, I would like to know which minimum detail is missing." },
+                { "language": "fa", "text": "می‌توانم قرارداد کاری فعلی، آخرین فیش حقوقی و ایمیلی از بخش منابع انسانی ارائه کنم که در آن تأییدیه نهایی برای دوشنبه اعلام شده است. اگر این مدارک کافی نیستند، مایل هستم بدانم کدام حداقل اطلاعات کم است." },
+                { "language": "ar", "text": "يمكنني تقديم عقد العمل الحالي وآخر قسيمة راتب ورسالة بريد من قسم الموارد البشرية تعلن أن الشهادة النهائية ستصدر يوم الاثنين. إذا لم تكن هذه الوثائق كافية، أود أن أعرف أي معلومة دنيا ناقصة." },
+                { "language": "tr", "text": "Güncel iş sözleşmesini, son maaş bordrosunu ve kesin onayın pazartesi geleceğini bildiren insan kaynakları e-postasını sunabilirim. Bu belgeler yeterli değilse, hangi asgari bilginin eksik olduğunu bilmek isterim." },
+                { "language": "ru", "text": "Я мог бы подать текущий трудовой договор, последнюю расчетную ведомость и письмо отдела кадров, где окончательное подтверждение обещано на понедельник. Если этих документов недостаточно, я хотел бы знать, какого минимального сведения не хватает." },
+                { "language": "ckb", "text": "دەتوانم گرێبەستی کاری ئێستا، دوا فیشی مووچە و ئیمەیڵێکی بەشی کارگێڕیی مرۆیی پێشکەش بکەم کە پشتڕاستکردنەوەی کۆتایی بۆ دووشەممە ڕادەگەیەنێت. ئەگەر ئەم بەڵگەیانە بەس نەبن، دەمەوێت بزانم کام زانیاریی کەمینە کەمە." },
+                { "language": "kmr", "text": "Ez dikarim peymana karê ya niha, pelê dawî yê meaşê û e-mailek ji beşa personelê bidim ku piştrastkirina dawî ji bo duşemê tê ragihandin. Heke ev belge têr nebin, ez dixwazim bizanim kîjan agahiya kêmtirîn kêm e." },
+                { "language": "pl", "text": "Mógłbym przedłożyć aktualną umowę o pracę, ostatni pasek wynagrodzenia i e-mail z działu kadr, w którym zapowiedziano ostateczne potwierdzenie na poniedziałek. Jeśli te dokumenty nie wystarczą, chciałbym wiedzieć, jakiej minimalnej informacji brakuje." },
+                { "language": "ro", "text": "Aș putea depune contractul de muncă actual, ultimul fluturaș de salariu și un e-mail de la resurse umane în care confirmarea finală este anunțată pentru luni. Dacă aceste documente nu sunt suficiente, aș dori să știu ce informație minimă lipsește." },
+                { "language": "sq", "text": "Mund të dorëzoj kontratën aktuale të punës, listëpagesën e fundit dhe një e-mail nga burimet njerëzore ku konfirmimi përfundimtar njoftohet për të hënën. Nëse këto dokumente nuk mjaftojnë, dua të di cili informacion minimal mungon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bietet konkrete Ersatzunterlagen und fragt präzise nach der fehlenden Mindestangabe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer offers concrete substitute documents and asks precisely about the missing minimum detail." },
+                { "language": "fa", "text": "قوی است: پاسخ مدارک جایگزین مشخص ارائه می‌کند و دقیق درباره حداقل اطلاعات کم‌شده می‌پرسد." },
+                { "language": "ar", "text": "قوي: يقدم الجواب وثائق بديلة ملموسة ويسأل بدقة عن المعلومة الدنيا الناقصة." },
+                { "language": "tr", "text": "Güçlü: yanıt somut yedek belgeler sunuyor ve eksik asgari bilgiyi kesin biçimde soruyor." },
+                { "language": "ru", "text": "Сильно: ответ предлагает конкретные заменяющие документы и точно спрашивает о недостающем минимальном сведении." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەڵگەی جێگرەوەی دیاریکراو پێشنیار دەکات و بە وردی دەربارەی زانیاریی کەمینەی کەم دەپرسێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv belgeyên cîgir ên konkret pêşkêş dike û bi hûrgilî li ser agahiya kêmtirîn a kêm dipirse." },
+                { "language": "pl", "text": "Mocne: odpowiedź oferuje konkretne dokumenty zastępcze i precyzyjnie pyta o brakującą informację minimalną." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă documente înlocuitoare concrete și întreabă precis despre informația minimă lipsă." },
+                { "language": "sq", "text": "E fortë: përgjigjja ofron dokumente zëvendësuese konkrete dhe pyet saktë për informacionin minimal që mungon." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich kann Ihnen ein paar andere Unterlagen zeigen, vielleicht reicht das.",
+              "translations": [
+                { "language": "en", "text": "I can show you a few other documents; maybe that will be enough." },
+                { "language": "fa", "text": "می‌توانم چند مدرک دیگر نشان بدهم، شاید کافی باشد." },
+                { "language": "ar", "text": "يمكنني أن أريكم بعض الوثائق الأخرى، ربما يكفي ذلك." },
+                { "language": "tr", "text": "Size birkaç başka belge gösterebilirim, belki yeterli olur." },
+                { "language": "ru", "text": "Я могу показать вам несколько других документов, возможно, этого хватит." },
+                { "language": "ckb", "text": "دەتوانم چەند بەڵگەی تریشتان پیشان بدەم، ڕەنگە بەس بێت." },
+                { "language": "kmr", "text": "Ez dikarim çend belgeyên din nîşanî we bidim, dibe ku têr bike." },
+                { "language": "pl", "text": "Mogę pokazać pani kilka innych dokumentów, może to wystarczy." },
+                { "language": "ro", "text": "Vă pot arăta câteva alte documente, poate este suficient." },
+                { "language": "sq", "text": "Mund t'ju tregoj disa dokumente të tjera, ndoshta mjafton." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unbestimmt. Für C2 muss klar sein, welche Dokumente angeboten werden und welche Anforderung sie erfüllen sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too indefinite. At C2, it must be clear which documents are offered and which requirement they are meant to satisfy." },
+                { "language": "fa", "text": "بیش از حد نامشخص است. در C2 باید روشن باشد کدام مدارک پیشنهاد می‌شوند و قرار است کدام الزام را برآورده کنند." },
+                { "language": "ar", "text": "غير محدد بما يكفي. في C2 يجب أن يكون واضحاً أي وثائق تُعرض وأي شرط يفترض أن تفي به." },
+                { "language": "tr", "text": "Fazla belirsiz. C2'de hangi belgelerin sunulduğu ve hangi şartı karşılamaları gerektiği açık olmalıdır." },
+                { "language": "ru", "text": "Слишком неопределенно. На C2 должно быть ясно, какие документы предлагаются и какое требование они должны выполнить." },
+                { "language": "ckb", "text": "زۆر نادیارە. لە C2 دەبێت ڕوون بێت کام بەڵگە پێشنیار دەکرێت و دەبێت کام پێداویستی جێبەجێ بکات." },
+                { "language": "kmr", "text": "Pir nediyar e. Li C2 divê zelal be kîjan belge tên pêşkêşkirin û divê kîjan daxwazê pêk bînin." },
+                { "language": "pl", "text": "Zbyt nieokreślone. Na C2 musi być jasne, jakie dokumenty są oferowane i jaki wymóg mają spełnić." },
+                { "language": "ro", "text": "Prea neclar. La C2 trebuie să fie clar ce documente sunt oferite și ce cerință trebuie să îndeplinească." },
+                { "language": "sq", "text": "Tepër e papërcaktuar. Në C2 duhet të jetë e qartë cilat dokumente ofrohen dhe cilin kusht duhet të plotësojnë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das verstehe ich. Deshalb frage ich nicht nach einer automatischen Verlängerung, sondern nach dem Entscheidungsspielraum im konkreten Fall: Die Verzögerung liegt nicht bei mir, der Zeitraum ist kurz, und ich kann die Nachreichung für Montag belegen.",
+              "translations": [
+                { "language": "en", "text": "I understand that. That is why I am not asking for an automatic extension, but about the room for discretion in this specific case: the delay is not on my side, the period is short, and I can document that I will submit the missing item on Monday." },
+                { "language": "fa", "text": "این را می‌فهمم. به همین دلیل تمدید خودکار نمی‌خواهم، بلکه درباره اختیار تصمیم‌گیری در این مورد مشخص می‌پرسم: تأخیر از طرف من نیست، زمان کوتاه است و می‌توانم ثابت کنم که مدرک را دوشنبه تکمیل می‌کنم." },
+                { "language": "ar", "text": "أفهم ذلك. لذلك لا أطلب تمديداً تلقائياً، بل أسأل عن هامش القرار في هذه الحالة المحددة: التأخير ليس من جهتي، والمدة قصيرة، ويمكنني إثبات أنني سأكمل الوثيقة يوم الاثنين." },
+                { "language": "tr", "text": "Bunu anlıyorum. Bu yüzden otomatik bir uzatma değil, somut durumdaki takdir alanını soruyorum: gecikme benden kaynaklanmıyor, süre kısa ve eksik belgeyi pazartesi tamamlayacağımı belgeleyebilirim." },
+                { "language": "ru", "text": "Я понимаю. Поэтому я прошу не автоматическое продление, а спрашиваю о возможности усмотрения в данном конкретном случае: задержка не с моей стороны, срок короткий, и я могу подтвердить, что донесу документ в понедельник." },
+                { "language": "ckb", "text": "تێدەگەم. بۆیە داوای درێژکردنەوەی خۆکار ناکەم، بەڵکو دەربارەی بۆشایی بڕیاردان لەم بارە دیاریکراوەدا دەپرسێم: دواخستنەکە لە لای منەوە نییە، ماوەکە کورتە، و دەتوانم بەڵگە بدەم کە دووشەممە بەڵگەی کەم پێشکەش دەکەم." },
+                { "language": "kmr", "text": "Ez vê fêm dikim. Ji ber vê yekê ez ne dirêjkirineke bixweber dixwazim, lê li ser cihê biryardanê di vê rewşa taybet de dipirsim: derengî ne ji aliyê min e, dem kurt e, û ez dikarim îspat bikim ku ez belgeya kêm duşemê temam dikim." },
+                { "language": "pl", "text": "Rozumiem. Dlatego nie pytam o automatyczne przedłużenie, lecz o zakres uznania w tym konkretnym przypadku: opóźnienie nie leży po mojej stronie, okres jest krótki, a ja mogę udokumentować, że uzupełnię brak w poniedziałek." },
+                { "language": "ro", "text": "Înțeleg. De aceea nu cer o prelungire automată, ci întreb despre marja de apreciere în acest caz concret: întârzierea nu este din partea mea, perioada este scurtă și pot dovedi că depun completarea luni." },
+                { "language": "sq", "text": "E kuptoj. Prandaj nuk kërkoj shtyrje automatike, por pyes për hapësirën e vendimmarrjes në këtë rast konkret: vonesa nuk vjen nga unë, periudha është e shkurtër dhe mund të dëshmoj se dokumentin e munguar e dorëzoj të hënën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fragt nach Spielraum, ohne einen Anspruch zu behaupten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer asks about room for discretion without claiming entitlement." },
+                { "language": "fa", "text": "قوی است: پاسخ درباره اختیار می‌پرسد، بدون اینکه ادعای حق قطعی کند." },
+                { "language": "ar", "text": "قوي: يسأل الجواب عن هامش القرار من دون ادعاء حق ثابت." },
+                { "language": "tr", "text": "Güçlü: yanıt hak iddia etmeden takdir alanını soruyor." },
+                { "language": "ru", "text": "Сильно: ответ спрашивает о возможном усмотрении, не заявляя права." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دەربارەی بۆشایی بڕیاردان دەپرسێت، بەبێ بانگەشەی مافی دڵنیا." },
+                { "language": "kmr", "text": "Xurt e: bersiv li ser cihê biryardanê dipirse bêyî ku mafekî teqez îdia bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź pyta o zakres uznania, nie twierdząc, że istnieje roszczenie." },
+                { "language": "ro", "text": "Puternic: răspunsul întreabă despre marja de apreciere fără a pretinde un drept." },
+                { "language": "sq", "text": "E fortë: përgjigjja pyet për hapësirën e vendimmarrjes pa pretenduar një të drejtë të sigurt." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann müsste jemand bei Ihnen eine Ausnahme machen, weil ich sonst die Frist nicht halten kann.",
+              "translations": [
+                { "language": "en", "text": "Then someone here would have to make an exception because otherwise I cannot meet the deadline." },
+                { "language": "fa", "text": "پس باید کسی نزد شما استثنا قائل شود، چون در غیر این صورت نمی‌توانم مهلت را رعایت کنم." },
+                { "language": "ar", "text": "إذن يجب أن يقوم شخص لديكم باستثناء، لأنني وإلا لا أستطيع الالتزام بالمهلة." },
+                { "language": "tr", "text": "O zaman burada birinin istisna yapması gerekir, çünkü yoksa süreye uyamam." },
+                { "language": "ru", "text": "Тогда кто-то у вас должен сделать исключение, потому что иначе я не смогу соблюсти срок." },
+                { "language": "ckb", "text": "کەواتە دەبێت کەسێک لە لاتان ئیستیسنا بکات، چونکە ئەگەر نا ناتوانم ماوەکە بپارێزم." },
+                { "language": "kmr", "text": "Wê demê divê kesek li cem we îstîsna bike, ji ber ku wekî din ez nikarim demê bigirim." },
+                { "language": "pl", "text": "W takim razie ktoś u państwa musiałby zrobić wyjątek, bo inaczej nie dotrzymam terminu." },
+                { "language": "ro", "text": "Atunci cineva de la dumneavoastră ar trebui să facă o excepție, pentru că altfel nu pot respecta termenul." },
+                { "language": "sq", "text": "Atëherë dikush te ju duhet të bëjë përjashtim, sepse ndryshe nuk mund ta respektoj afatin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu drängend. Die Antwort fordert eine Ausnahme, statt den prüfbaren Entscheidungsspielraum sauber zu begründen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too pressuring. The answer demands an exception instead of carefully justifying the discretion to be examined." },
+                { "language": "fa", "text": "بیش از حد فشارآور است. پاسخ استثنا مطالبه می‌کند، به‌جای اینکه اختیار قابل بررسی را دقیق توجیه کند." },
+                { "language": "ar", "text": "ضاغط أكثر من اللازم. يطالب الجواب باستثناء بدلاً من تبرير هامش القرار القابل للفحص بدقة." },
+                { "language": "tr", "text": "Fazla baskıcı. Yanıt, incelenebilir takdir alanını düzgün gerekçelendirmek yerine istisna talep ediyor." },
+                { "language": "ru", "text": "Слишком давит. Ответ требует исключения вместо того, чтобы аккуратно обосновать проверяемое усмотрение." },
+                { "language": "ckb", "text": "زۆر فشاردارە. وەڵامەکە داوای ئیستیسنا دەکات، لەبری ئەوەی بۆشایی بڕیاردانی پشکنراو بە ڕێکی ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Pir zextdar e. Bersiv îstîsna dixwaze, li şûna ku cihê biryardanê yê dikare were nirxandin bi rêk sedem bike." },
+                { "language": "pl", "text": "Zbyt naciskające. Odpowiedź żąda wyjątku, zamiast starannie uzasadnić zakres uznania do sprawdzenia." },
+                { "language": "ro", "text": "Prea apăsător. Răspunsul cere o excepție în loc să justifice clar marja de apreciere verificabilă." },
+                { "language": "sq", "text": "Tepër shtytëse. Përgjigjja kërkon përjashtim, në vend që të arsyetojë qartë hapësirën e vendimmarrjes që mund të shqyrtohet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das wäre hilfreich. Damit ich nichts falsch verstehe: Könnten Sie mir bitte schriftlich bestätigen, welche Unterlagen ich heute einreiche, was noch fehlt und bis wann die endgültige Bestätigung nachgereicht werden kann?",
+              "translations": [
+                { "language": "en", "text": "That would be helpful. So that I do not misunderstand anything: could you please confirm in writing which documents I am submitting today, what is still missing, and by when the final confirmation can be submitted later?" },
+                { "language": "fa", "text": "این کمک‌کننده است. برای اینکه چیزی را اشتباه متوجه نشوم: ممکن است لطفاً کتبی تأیید کنید امروز چه مدارکی ارائه می‌کنم، چه چیزی هنوز کم است و تا چه زمانی تأییدیه نهایی می‌تواند بعداً ارائه شود؟" },
+                { "language": "ar", "text": "سيكون ذلك مفيداً. حتى لا أفهم شيئاً بشكل خاطئ: هل يمكنكم من فضلكم أن تؤكدوا خطياً ما الوثائق التي أقدمها اليوم، وما الذي ما زال ناقصاً، وحتى متى يمكن تقديم الشهادة النهائية لاحقاً؟" },
+                { "language": "tr", "text": "Bu yardımcı olur. Yanlış anlamamam için: bugün hangi belgeleri sunduğumu, neyin hâlâ eksik olduğunu ve kesin onayın en geç ne zamana kadar sonradan verilebileceğini yazılı olarak teyit eder misiniz?" },
+                { "language": "ru", "text": "Это было бы полезно. Чтобы я ничего не понял неправильно: могли бы вы письменно подтвердить, какие документы я подаю сегодня, чего еще не хватает и до какого срока можно донести окончательное подтверждение?" },
+                { "language": "ckb", "text": "ئەمە یارمەتیدەر دەبێت. بۆ ئەوەی هیچ شتێک بە هەڵە تێنەگەم: تکایە دەتوانن بە نووسراو پشتڕاست بکەنەوە کە ئەمڕۆ چ بەڵگەیەک پێشکەش دەکەم، چی هێشتا کەمە و تا کەی پشتڕاستکردنەوەی کۆتایی دواتر پێشکەش دەکرێت؟" },
+                { "language": "kmr", "text": "Ev dê alîkar be. Ji bo ku ez tiştekî şaş fêm nekim: ji kerema xwe hûn dikarin nivîskî piştrast bikin ka ez îro kîjan belgeyan didim, çi hîn kêm e û heta kengî piştrastkirina dawî dikare paşê were dayîn?" },
+                { "language": "pl", "text": "To byłoby pomocne. Żebym niczego źle nie zrozumiał: czy mogłaby pani potwierdzić pisemnie, jakie dokumenty składam dzisiaj, czego jeszcze brakuje i do kiedy można dosłać ostateczne potwierdzenie?" },
+                { "language": "ro", "text": "Ar fi de ajutor. Ca să nu înțeleg greșit: ați putea, vă rog, să confirmați în scris ce documente depun astăzi, ce mai lipsește și până când poate fi adusă ulterior confirmarea finală?" },
+                { "language": "sq", "text": "Kjo do të ndihmonte. Që të mos kuptoj diçka gabim: a mund të më konfirmoni me shkrim cilat dokumente dorëzoj sot, çfarë mungon ende dhe deri kur mund të dorëzohet më vonë konfirmimi përfundimtar?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort sichert die Vereinbarung schriftlich, ohne misstrauisch zu klingen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer secures the arrangement in writing without sounding distrustful." },
+                { "language": "fa", "text": "قوی است: پاسخ توافق را کتبی تثبیت می‌کند، بدون اینکه بی‌اعتماد به نظر برسد." },
+                { "language": "ar", "text": "قوي: يثبت الجواب الاتفاق خطياً من دون أن يبدو مرتاباً." },
+                { "language": "tr", "text": "Güçlü: yanıt düzenlemeyi yazılı güvenceye alıyor, ama güvensiz görünmüyor." },
+                { "language": "ru", "text": "Сильно: ответ закрепляет договоренность письменно, не звуча недоверчиво." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێککەوتنەکە بە نووسراو دەپارێزێت، بەبێ ئەوەی وەک بێ‌متمانەیی دەربکەوێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv rêkeftinê nivîskî misoger dike bêyî ku wekî bêbawerî xuya bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź zabezpiecza ustalenie pisemnie, nie brzmiąc nieufnie." },
+                { "language": "ro", "text": "Puternic: răspunsul fixează înțelegerea în scris fără să sune neîncrezător." },
+                { "language": "sq", "text": "E fortë: përgjigjja e siguron marrëveshjen me shkrim pa tingëlluar mosbesuese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Könnten Sie mir einfach eine kurze E-Mail schicken, damit ich etwas in der Hand habe?",
+              "translations": [
+                { "language": "en", "text": "Could you simply send me a short email so that I have something in hand?" },
+                { "language": "fa", "text": "ممکن است فقط یک ایمیل کوتاه برایم بفرستید تا چیزی در دست داشته باشم؟" },
+                { "language": "ar", "text": "هل يمكنكم فقط إرسال بريد قصير إليّ حتى يكون لدي شيء في يدي؟" },
+                { "language": "tr", "text": "Elimde bir şey olması için bana kısa bir e-posta gönderebilir misiniz?" },
+                { "language": "ru", "text": "Могли бы вы просто отправить мне короткое письмо, чтобы у меня что-то было на руках?" },
+                { "language": "ckb", "text": "دەتوانن تەنها ئیمەیڵێکی کورت بۆم بنێرن بۆ ئەوەی شتێکم بەدەستەوە بێت؟" },
+                { "language": "kmr", "text": "Hûn dikarin tenê e-maileke kurt ji min re bişînin da ku tiştek di destê min de hebe?" },
+                { "language": "pl", "text": "Czy mogłaby pani po prostu wysłać mi krótki e-mail, żebym miał coś w ręku?" },
+                { "language": "ro", "text": "Ați putea pur și simplu să-mi trimiteți un e-mail scurt, ca să am ceva în mână?" },
+                { "language": "sq", "text": "A mund të më dërgoni thjesht një e-mail të shkurtër që të kem diçka në dorë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber ungenau. Es fehlt, welche Punkte schriftlich bestätigt werden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but imprecise. It does not say which points should be confirmed in writing." },
+                { "language": "fa", "text": "قابل قبول است، اما دقیق نیست. نمی‌گوید کدام نکات باید کتبی تأیید شوند." },
+                { "language": "ar", "text": "مقبول، لكنه غير دقيق. لا يذكر أي نقاط يجب تأكيدها خطياً." },
+                { "language": "tr", "text": "Makûl, ama kesin değil. Hangi noktaların yazılı teyit edilmesi gerektiğini söylemiyor." },
+                { "language": "ru", "text": "Правдоподобно, но неточно. Не сказано, какие пункты должны быть подтверждены письменно." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام ورد نییە. ناڵێت کام خاڵ دەبێت بە نووسراو پشتڕاست بکرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê hûrgilî nîne. Nabeje kîjan xal divê nivîskî bên piştrastkirin." },
+                { "language": "pl", "text": "Wiarygodne, ale nieprecyzyjne. Nie mówi, które punkty mają zostać potwierdzone pisemnie." },
+                { "language": "ro", "text": "Plauzibil, dar imprecis. Nu spune ce puncte trebuie confirmate în scris." },
+                { "language": "sq", "text": "E besueshme, por e pasaktë. Nuk thotë cilat pika duhet të konfirmohen me shkrim." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann reiche ich heute die drei Ersatzunterlagen ein, lasse mir den fehlenden Punkt und die Frist schriftlich bestätigen und sende die Arbeitgeberbestätigung spätestens Montag um 12 Uhr nach.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will submit the three substitute documents today, have the missing item and the deadline confirmed in writing, and send the employer confirmation by Monday at noon at the latest." },
+                { "language": "fa", "text": "بسیار ممنون. پس امروز سه مدرک جایگزین را ارائه می‌کنم، مورد کمبود و مهلت را کتبی تأیید می‌گیرم و تأییدیه کارفرما را حداکثر تا دوشنبه ساعت ۱۲ ارسال می‌کنم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن أقدم اليوم الوثائق البديلة الثلاث، وأحصل على تأكيد خطي للنقطة الناقصة والمهلة، وأرسل شهادة صاحب العمل حتى الاثنين الساعة الثانية عشرة كحد أقصى." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde bugün üç yedek belgeyi sunuyorum, eksik noktayı ve süreyi yazılı teyit ettiriyorum ve işveren onayını en geç pazartesi saat 12'ye kadar gönderiyorum." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я сегодня подаю три заменяющих документа, получаю письменное подтверждение недостающего пункта и срока и отправляю подтверждение работодателя не позднее понедельника 12 часов." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ سێ بەڵگەی جێگرەوە پێشکەش دەکەم، خاڵی کەم و ماوەکە بە نووسراو پشتڕاست دەکەمەوە و پشتڕاستکردنەوەی خاوەنکار زۆرترین تا دووشەممە کاتژمێر ١٢ دەنێرم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez îro sê belgeyên cîgir didim, xala kêm û demê nivîskî piştrast dikim û piştrastkirina kardêr herî dereng heta duşemê saet 12 dişînim." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie składam dziś trzy dokumenty zastępcze, proszę o pisemne potwierdzenie brakującego punktu i terminu, a potwierdzenie od pracodawcy dosyłam najpóźniej w poniedziałek o 12." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci depun astăzi cele trei documente înlocuitoare, primesc confirmarea scrisă a punctului lipsă și a termenului și trimit confirmarea angajatorului cel târziu luni la ora 12." },
+                { "language": "sq", "text": "Shumë faleminderit. Atëherë sot dorëzoj tre dokumentet zëvendësuese, marr konfirmim me shkrim për pikën që mungon dhe afatin, dhe e dërgoj konfirmimin e punëdhënësit më së voni të hënën në orën 12." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fasst Unterlagen, fehlenden Punkt, Frist und nächste Handlung präzise zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer precisely summarizes documents, missing item, deadline, and next action." },
+                { "language": "fa", "text": "قوی است: پاسخ مدارک، مورد کمبود، مهلت و اقدام بعدی را دقیق جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "قوي: يلخص الجواب الوثائق والنقطة الناقصة والمهلة والخطوة التالية بدقة." },
+                { "language": "tr", "text": "Güçlü: yanıt belgeleri, eksik noktayı, süreyi ve sonraki adımı kesin biçimde özetliyor." },
+                { "language": "ru", "text": "Сильно: ответ точно суммирует документы, недостающий пункт, срок и следующее действие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەڵگەکان، خاڵی کەم، ماوە و هەنگاوی داهاتوو بە وردی کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv belge, xala kêm, dem û gava paşê bi hûrgilî kurt dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź precyzyjnie podsumowuje dokumenty, brakujący punkt, termin i następne działanie." },
+                { "language": "ro", "text": "Puternic: răspunsul rezumă precis documentele, punctul lipsă, termenul și pasul următor." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmbledh saktë dokumentet, pikën që mungon, afatin dhe veprimin tjetër." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann mache ich das so und melde mich am Montag wieder.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will do it that way and get back to you on Monday." },
+                { "language": "fa", "text": "خوب، پس همین کار را می‌کنم و دوشنبه دوباره تماس می‌گیرم." },
+                { "language": "ar", "text": "حسناً، سأفعل ذلك هكذا وأتواصل معكم مجدداً يوم الاثنين." },
+                { "language": "tr", "text": "Tamam, o halde böyle yaparım ve pazartesi tekrar size dönerim." },
+                { "language": "ru", "text": "Хорошо, тогда я так и сделаю и снова свяжусь с вами в понедельник." },
+                { "language": "ckb", "text": "باشە، کەواتە بەم شێوەیە دەیکەم و دووشەممە دووبارە پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez wisa dikim û duşemê dîsa têkilî digirim." },
+                { "language": "pl", "text": "Dobrze, w takim razie zrobię tak i zgłoszę się ponownie w poniedziałek." },
+                { "language": "ro", "text": "Bine, atunci fac așa și revin luni." },
+                { "language": "sq", "text": "Mirë, atëherë do ta bëj kështu dhe do të paraqitem sërish të hënën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp. Die Antwort bestätigt nicht, welche Unterlagen heute abgegeben werden und welche Frist gilt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief. The answer does not confirm which documents are submitted today and which deadline applies." },
+                { "language": "fa", "text": "خیلی کوتاه است. پاسخ تأیید نمی‌کند امروز کدام مدارک ارائه می‌شود و کدام مهلت معتبر است." },
+                { "language": "ar", "text": "قصير جداً. لا يؤكد الجواب أي وثائق تُقدّم اليوم وأي مهلة تسري." },
+                { "language": "tr", "text": "Fazla kısa. Yanıt bugün hangi belgelerin verildiğini ve hangi sürenin geçerli olduğunu teyit etmiyor." },
+                { "language": "ru", "text": "Слишком кратко. Ответ не подтверждает, какие документы подаются сегодня и какой срок действует." },
+                { "language": "ckb", "text": "زۆر کورتە. وەڵامەکە پشتڕاست ناکاتەوە ئەمڕۆ کام بەڵگە پێشکەش دەکرێت و کام ماوە کاردەکات." },
+                { "language": "kmr", "text": "Pir kurt e. Bersiv piştrast nake ku îro kîjan belge tên dayîn û kîjan dem derbas e." },
+                { "language": "pl", "text": "Zbyt krótko. Odpowiedź nie potwierdza, jakie dokumenty zostają dziś złożone i jaki termin obowiązuje." },
+                { "language": "ro", "text": "Prea scurt. Răspunsul nu confirmă ce documente sunt depuse astăzi și ce termen se aplică." },
+                { "language": "sq", "text": "Tepër e shkurtër. Përgjigjja nuk konfirmon cilat dokumente dorëzohen sot dhe cili afat vlen." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "purpose-acknowledgement",
+          "text": "Bei Behörden wirkt eine Bitte stärker, wenn der Zweck der Auflage zuerst anerkannt wird.",
+          "translations": [
+            { "language": "en", "text": "With public offices, a request is stronger when the purpose of the condition is acknowledged first." },
+            { "language": "fa", "text": "در اداره‌ها، درخواست وقتی قوی‌تر است که ابتدا هدف شرط پذیرفته شود." },
+            { "language": "ar", "text": "في الدوائر العامة يكون الطلب أقوى عندما يُعترف أولاً بهدف الشرط." },
+            { "language": "tr", "text": "Resmi dairelerde, şartın amacı önce kabul edildiğinde talep daha güçlü olur." },
+            { "language": "ru", "text": "В учреждениях просьба сильнее, когда сначала признается цель условия." },
+            { "language": "ckb", "text": "لە فەرمانگەکاندا داواکاری کاتێک بەهێزترە کە سەرەتا ئامانجی مەرجەکە پەسەند بکرێت." },
+            { "language": "kmr", "text": "Li dezgehên giştî, daxwaz dema armanca şertê pêşî tê qebûlkirin xurtir dibe." },
+            { "language": "pl", "text": "W urzędach prośba brzmi mocniej, gdy najpierw uznaje się cel warunku." },
+            { "language": "ro", "text": "În instituții publice, o cerere este mai puternică atunci când scopul condiției este recunoscut mai întâi." },
+            { "language": "sq", "text": "Në zyra publike, kërkesa është më e fortë kur së pari pranohet qëllimi i kushtit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "alternative-evidence",
+          "text": "C2-Verhandlung bietet konkrete Ersatzunterlagen und fragt nach der fehlenden Mindestinformation.",
+          "translations": [
+            { "language": "en", "text": "C2 negotiation offers concrete substitute documents and asks about the missing minimum information." },
+            { "language": "fa", "text": "مذاکره C2 مدارک جایگزین مشخص ارائه می‌کند و درباره حداقل اطلاعات کم‌شده می‌پرسد." },
+            { "language": "ar", "text": "تقدم مفاوضة C2 وثائق بديلة ملموسة وتسأل عن المعلومة الدنيا الناقصة." },
+            { "language": "tr", "text": "C2 müzakeresi somut yedek belgeler sunar ve eksik asgari bilgiyi sorar." },
+            { "language": "ru", "text": "Переговоры уровня C2 предлагают конкретные заменяющие документы и спрашивают о недостающей минимальной информации." },
+            { "language": "ckb", "text": "دانوستاندنی C2 بەڵگەی جێگرەوەی دیاریکراو پێشنیار دەکات و دەربارەی زانیاریی کەمینەی کەم دەپرسێت." },
+            { "language": "kmr", "text": "Danûstandina C2 belgeyên cîgir ên konkret pêşkêş dike û li ser agahiya kêmtirîn a kêm dipirse." },
+            { "language": "pl", "text": "Negocjacja na C2 oferuje konkretne dokumenty zastępcze i pyta o brakującą informację minimalną." },
+            { "language": "ro", "text": "Negocierea C2 oferă documente înlocuitoare concrete și întreabă despre informația minimă lipsă." },
+            { "language": "sq", "text": "Negocimi C2 ofron dokumente zëvendësuese konkrete dhe pyet për informacionin minimal që mungon." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "discretion",
+          "text": "Nach Entscheidungsspielraum zu fragen ist präziser als eine Ausnahme zu fordern.",
+          "translations": [
+            { "language": "en", "text": "Asking about room for discretion is more precise than demanding an exception." },
+            { "language": "fa", "text": "پرسیدن درباره اختیار تصمیم‌گیری دقیق‌تر از مطالبه استثناست." },
+            { "language": "ar", "text": "السؤال عن هامش القرار أدق من المطالبة باستثناء." },
+            { "language": "tr", "text": "Takdir alanını sormak, istisna talep etmekten daha kesindir." },
+            { "language": "ru", "text": "Спросить о возможном усмотрении точнее, чем требовать исключения." },
+            { "language": "ckb", "text": "پرسین دەربارەی بۆشایی بڕیاردان وردترە لە داوای ئیستیسنا." },
+            { "language": "kmr", "text": "Pirsîn li ser cihê biryardanê ji daxwaza îstîsnayê hûrgilîtir e." },
+            { "language": "pl", "text": "Pytanie o zakres uznania jest precyzyjniejsze niż żądanie wyjątku." },
+            { "language": "ro", "text": "A întreba despre marja de apreciere este mai precis decât a cere o excepție." },
+            { "language": "sq", "text": "Të pyesësh për hapësirën e vendimmarrjes është më e saktë sesa të kërkosh përjashtim." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "next-steps",
+          "text": "Eine gute Zusammenfassung nennt Unterlagen, fehlenden Punkt, Frist und nächste Handlung.",
+          "translations": [
+            { "language": "en", "text": "A good summary names documents, missing item, deadline, and next action." },
+            { "language": "fa", "text": "جمع‌بندی خوب مدارک، مورد کمبود، مهلت و اقدام بعدی را نام می‌برد." },
+            { "language": "ar", "text": "يلخص الجواب الجيد الوثائق والنقطة الناقصة والمهلة والخطوة التالية." },
+            { "language": "tr", "text": "İyi bir özet belgeleri, eksik noktayı, süreyi ve sonraki adımı belirtir." },
+            { "language": "ru", "text": "Хорошее резюме называет документы, недостающий пункт, срок и следующее действие." },
+            { "language": "ckb", "text": "کۆکردنەوەی باش بەڵگەکان، خاڵی کەم، ماوە و هەنگاوی داهاتوو ناودەبات." },
+            { "language": "kmr", "text": "Kurteya baş belge, xala kêm, dem û gava paşê nav dike." },
+            { "language": "pl", "text": "Dobre podsumowanie nazywa dokumenty, brakujący punkt, termin i następne działanie." },
+            { "language": "ro", "text": "Un rezumat bun numește documentele, punctul lipsă, termenul și pasul următor." },
+            { "language": "sq", "text": "Një përmbledhje e mirë përmend dokumentet, pikën që mungon, afatin dhe veprimin tjetër." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "administrative-condition-counter",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal public-office conversation where an applicant negotiates an administrative condition with documents on the counter.",
+          "altText": "Ein Antragsteller spricht an einem ruhigen Amtsschalter mit einer Sachbearbeiterin über Ersatzunterlagen und eine schriftliche Fristbestätigung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An applicant speaks at a calm public-office counter with a case worker about substitute documents and written deadline confirmation." },
+            { "language": "fa", "text": "یک درخواست‌دهنده در پیشخوان آرام اداره با کارشناس پرونده درباره مدارک جایگزین و تأیید کتبی مهلت صحبت می‌کند." },
+            { "language": "ar", "text": "يتحدث مقدم طلب عند شباك هادئ في دائرة عامة مع موظفة مختصة عن وثائق بديلة وتأكيد خطي للمهلة." },
+            { "language": "tr", "text": "Bir başvuru sahibi sakin bir resmi daire gişesinde dosya görevlisiyle yedek belgeler ve yazılı süre teyidi hakkında konuşuyor." },
+            { "language": "ru", "text": "Заявитель у спокойной стойки учреждения говорит с сотрудницей по делу о заменяющих документах и письменном подтверждении срока." },
+            { "language": "ckb", "text": "داواکەرێک لە کەونتەری ئارامی فەرمانگەدا لەگەڵ کارمەندی دۆسیە دەربارەی بەڵگەی جێگرەوە و پشتڕاستکردنەوەی نووسراوی ماوەکە قسە دەکات." },
+            { "language": "kmr", "text": "Daxwazkarek li ber maseya aram a dezgehê bi karmenda dosyayê re li ser belgeyên cîgir û piştrastkirina nivîskî ya demê diaxive." },
+            { "language": "pl", "text": "Wnioskodawca rozmawia przy spokojnym stanowisku urzędowym z urzędniczką o dokumentach zastępczych i pisemnym potwierdzeniu terminu." },
+            { "language": "ro", "text": "Un solicitant discută la un ghișeu public liniștit cu o funcționară despre documente înlocuitoare și confirmarea scrisă a termenului." },
+            { "language": "sq", "text": "Një aplikues flet në një sportel të qetë zyre me punonjësen për dokumente zëvendësuese dhe konfirmim me shkrim të afatit." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult applicant and public-office case worker at a calm German administrative counter, folder with generic documents, applicant politely asking about substitute documents and written deadline confirmation, no readable text, no logos, no private data, accessible composition, formal and cooperative mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

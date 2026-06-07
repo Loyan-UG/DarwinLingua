@@ -1,0 +1,981 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-15-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 15 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-einen-schaden-in-der-wohnung-beschreiben",
+      "title": "Einen Schaden in der Wohnung beschreiben",
+      "titleTranslations": [
+        { "language": "en", "text": "Describe damage in the apartment" },
+        { "language": "fa", "text": "توضیح‌دادن خسارت در خانه" },
+        { "language": "ar", "text": "وصف ضرر في الشقة" },
+        { "language": "tr", "text": "Dairedeki bir hasarı anlatmak" },
+        { "language": "ru", "text": "Описать повреждение в квартире" },
+        { "language": "ckb", "text": "باسکردنی زیانێک لە خانوو" },
+        { "language": "kmr", "text": "Ziyanek di xanî de şirove kirin" },
+        { "language": "pl", "text": "Opisać szkodę w mieszkaniu" },
+        { "language": "ro", "text": "Să descrii o daună în apartament" },
+        { "language": "sq", "text": "Të përshkruash një dëmtim në banesë" }
+      ],
+      "description": "Du rufst deinen Vermieter an, weil im Bad ein Riss an einer Fliese und Feuchtigkeit an der Wand sichtbar sind. Du beschreibst Ort und Zeitpunkt und fragst, welche Fotos oder Unterlagen du schicken sollst.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call your landlord because a crack in a bathroom tile and moisture on the wall are visible. You describe the location and time and ask which photos or documents you should send." },
+        { "language": "fa", "text": "به صاحبخانه‌ات زنگ می‌زنی، چون در حمام ترک روی یک کاشی و رطوبت روی دیوار دیده می‌شود. محل و زمان را توضیح می‌دهی و می‌پرسی چه عکس‌ها یا مدارکی باید بفرستی." },
+        { "language": "ar", "text": "تتصل بالمؤجر لأن هناك شقًا ظاهرًا في بلاطة في الحمام ورطوبة على الجدار. تصف المكان والوقت وتسأل أي صور أو مستندات يجب أن ترسلها." },
+        { "language": "tr", "text": "Banyoda bir fayans çatlağı ve duvarda nem göründüğü için ev sahibini arıyorsun. Yeri ve zamanı anlatıyor, hangi fotoğrafları veya belgeleri göndermen gerektiğini soruyorsun." },
+        { "language": "ru", "text": "Ты звонишь арендодателю, потому что в ванной видна трещина на плитке и влажность на стене. Ты описываешь место и время и спрашиваешь, какие фото или документы нужно отправить." },
+        { "language": "ckb", "text": "پەیوەندی بە خاوەن خانووەکەت دەکەیت، چونکە لە حەمامدا درزێک لە کاشی و شێیی لەسەر دیوار دیارە. شوێن و کاتەکە باس دەکەیت و دەپرسی کام وێنە یان بەڵگەنامە بنێریت." },
+        { "language": "kmr", "text": "Tu telefonî xwediyê xanî dikî, ji ber ku di hemamê de qelekek li ser kaşiyê û şilbûn li ser dîwarê xuya ye. Tu cih û demê şirove dikî û dipirsî kîjan wêne an belgeyan bişînî." },
+        { "language": "pl", "text": "Dzwonisz do wynajmującego, ponieważ w łazience widać pęknięcie płytki i wilgoć na ścianie. Opisujesz miejsce i czas oraz pytasz, jakie zdjęcia lub dokumenty masz wysłać." },
+        { "language": "ro", "text": "Suni proprietarul pentru că în baie se vede o crăpătură la o faianță și umezeală pe perete. Descrii locul și momentul și întrebi ce fotografii sau documente trebuie să trimiți." },
+        { "language": "sq", "text": "Telefonon qiradhënësin sepse në banjë shihet një çarje në një pllakë dhe lagështi në mur. Përshkruan vendin dhe kohën dhe pyet cilat foto ose dokumente duhet të dërgosh." }
+      ],
+      "learnerGoal": "Du kannst einen Wohnungsschaden sachlich beschreiben, Dringlichkeit einschätzen, nach Nachweisen fragen und den nächsten Schritt bestätigen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can describe apartment damage factually, assess urgency, ask about evidence, and confirm the next step." },
+        { "language": "fa", "text": "می‌توانی خسارت خانه را واقع‌گرایانه توضیح بدهی، فوریت را مشخص کنی، درباره مدرک سؤال کنی و قدم بعدی را تأیید کنی." },
+        { "language": "ar", "text": "يمكنك وصف ضرر في الشقة بموضوعية، وتقدير درجة الاستعجال، والسؤال عن الإثباتات، وتأكيد الخطوة التالية." },
+        { "language": "tr", "text": "Dairedeki hasarı nesnel şekilde anlatabilir, aciliyeti değerlendirebilir, kanıtları sorabilir ve sonraki adımı onaylayabilirsin." },
+        { "language": "ru", "text": "Ты можешь предметно описать повреждение в квартире, оценить срочность, спросить о подтверждениях и подтвердить следующий шаг." },
+        { "language": "ckb", "text": "دەتوانیت زیانی خانوو بە شێوەی بابەتی باس بکەیت، پەلەییەکە هەڵبسەنگێنیت، دەربارەی بەڵگە بپرسی و هەنگاوی دواتر پشتڕاست بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî ziyana xanî bi awayekî rast şirove bikî, lezê binirxînî, li ser belgeyan bipirsî û gava din piştrast bikî." },
+        { "language": "pl", "text": "Potrafisz rzeczowo opisać szkodę w mieszkaniu, ocenić pilność, zapytać o dowody i potwierdzić następny krok." },
+        { "language": "ro", "text": "Poți descrie obiectiv o daună în apartament, poți aprecia urgența, poți întreba despre dovezi și poți confirma pasul următor." },
+        { "language": "sq", "text": "Mund të përshkruash qartë një dëmtim në banesë, të vlerësosh urgjencën, të pyesësh për dëshmi dhe të konfirmosh hapin tjetër." }
+      ],
+      "cefrLevel": "B1",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "documents-and-administration"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "explain-problem",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2320,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "landlord",
+          "displayName": "Vermieterin",
+          "translations": [
+            { "language": "en", "text": "Landlord" },
+            { "language": "fa", "text": "صاحبخانه" },
+            { "language": "ar", "text": "المؤجرة" },
+            { "language": "tr", "text": "Ev sahibi" },
+            { "language": "ru", "text": "Арендодательница" },
+            { "language": "ckb", "text": "خاوەن خانوو" },
+            { "language": "kmr", "text": "Xwediya xanî" },
+            { "language": "pl", "text": "Wynajmująca" },
+            { "language": "ro", "text": "Proprietară" },
+            { "language": "sq", "text": "Qiradhënëse" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mieter",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجر" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендатор" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemca" },
+            { "language": "ro", "text": "Chiriaș" },
+            { "language": "sq", "text": "Qiramarrës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "landlord",
+          "baseText": "Guten Tag, Müller. Worum geht es?",
+          "translations": [
+            { "language": "en", "text": "Good day, Müller. What is it about?" },
+            { "language": "fa", "text": "روز بخیر، مولر. موضوع چیست؟" },
+            { "language": "ar", "text": "نهارك سعيد، مولر. ما الموضوع؟" },
+            { "language": "tr", "text": "İyi günler, Müller. Konu nedir?" },
+            { "language": "ru", "text": "Добрый день, Мюллер. О чем речь?" },
+            { "language": "ckb", "text": "ڕۆژباش، مولەر. بابەت چییە؟" },
+            { "language": "kmr", "text": "Roj baş, Müller. Mijar çi ye?" },
+            { "language": "pl", "text": "Dzień dobry, Müller. O co chodzi?" },
+            { "language": "ro", "text": "Bună ziua, Müller. Despre ce este vorba?" },
+            { "language": "sq", "text": "Mirëdita, Müller. Për çfarë bëhet fjalë?" }
+          ],
+          "function": "phone-opening",
+          "toneNote": "Formal but direct phone opening.",
+          "expectedLearnerAction": "Describe damage briefly."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag, Frau Müller. Im Bad ist mir heute Morgen ein Riss in einer Fliese aufgefallen, und an der Wand daneben ist eine feuchte Stelle.",
+          "translations": [
+            { "language": "en", "text": "Good day, Ms. Müller. This morning I noticed a crack in a tile in the bathroom, and there is a damp spot on the wall next to it." },
+            { "language": "fa", "text": "روز بخیر خانم مولر. امروز صبح در حمام متوجه ترک روی یک کاشی شدم و کنار آن روی دیوار یک قسمت مرطوب هست." },
+            { "language": "ar", "text": "نهارك سعيد يا سيدة مولر. لاحظت هذا الصباح شقًا في بلاطة في الحمام، وهناك بقعة رطبة على الجدار بجانبها." },
+            { "language": "tr", "text": "İyi günler Frau Müller. Bu sabah banyoda bir fayans çatlağı fark ettim ve yanındaki duvarda nemli bir yer var." },
+            { "language": "ru", "text": "Добрый день, госпожа Мюллер. Сегодня утром я заметил трещину на плитке в ванной, а рядом на стене есть влажное место." },
+            { "language": "ckb", "text": "ڕۆژباش خانمی مولەر. ئەم بەیانییە لە حەمامدا درزێکم لە کاشییەک بینی و لەسەر دیواری تەنیشتی شوێنێکی شێدار هەیە." },
+            { "language": "kmr", "text": "Roj baş xanim Müller. Îro sibê min di hemamê de qelekek li ser kaşiyekê dît û li ser dîwara kêleka wê cihê şil heye." },
+            { "language": "pl", "text": "Dzień dobry, pani Müller. Dziś rano zauważyłem w łazience pęknięcie jednej płytki, a na ścianie obok jest wilgotne miejsce." },
+            { "language": "ro", "text": "Bună ziua, doamnă Müller. În această dimineață am observat o crăpătură la o faianță în baie, iar pe peretele de lângă ea este o zonă umedă." },
+            { "language": "sq", "text": "Mirëdita, zonja Müller. Sot në mëngjes vura re një çarje në një pllakë në banjë dhe pranë saj në mur ka një vend të lagësht." }
+          ],
+          "function": "describe-damage-location",
+          "toneNote": "Specific location and visible signs.",
+          "expectedLearnerAction": "Name location and visible damage."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "landlord",
+          "baseText": "Ist die Stelle größer geworden, oder ist Wasser ausgetreten?",
+          "translations": [
+            { "language": "en", "text": "Has the spot become larger, or has water leaked out?" },
+            { "language": "fa", "text": "آن قسمت بزرگ‌تر شده، یا آب بیرون زده است؟" },
+            { "language": "ar", "text": "هل أصبحت البقعة أكبر، أم خرج ماء؟" },
+            { "language": "tr", "text": "O yer büyüdü mü, yoksa su sızdı mı?" },
+            { "language": "ru", "text": "Это место стало больше или вытекала вода?" },
+            { "language": "ckb", "text": "شوێنەکە گەورەتر بووە، یان ئاو دەرچووە؟" },
+            { "language": "kmr", "text": "Ew cih mezintir bûye, an av derketiye?" },
+            { "language": "pl", "text": "Czy to miejsce się powiększyło albo czy wypłynęła woda?" },
+            { "language": "ro", "text": "Zona s-a mărit sau a ieșit apă?" },
+            { "language": "sq", "text": "A është zmadhuar ai vend, apo ka dalë ujë?" }
+          ],
+          "function": "ask-urgency",
+          "toneNote": "Checks urgency.",
+          "expectedLearnerAction": "Explain urgency and timing."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Wasser läuft nicht heraus, aber die Stelle war gestern noch nicht zu sehen. Deshalb möchte ich es lieber früh melden.",
+          "translations": [
+            { "language": "en", "text": "Water is not running out, but the spot was not visible yesterday. That is why I would rather report it early." },
+            { "language": "fa", "text": "آب بیرون نمی‌آید، اما دیروز این قسمت دیده نمی‌شد. برای همین ترجیح می‌دهم زود گزارش بدهم." },
+            { "language": "ar", "text": "لا يخرج ماء، لكن البقعة لم تكن ظاهرة أمس. لذلك أفضل أن أبلغ عنها مبكرًا." },
+            { "language": "tr", "text": "Su akmıyor, ama o yer dün henüz görünmüyordu. Bu yüzden erken bildirmeyi tercih ederim." },
+            { "language": "ru", "text": "Вода не вытекает, но вчера это место еще не было видно. Поэтому я предпочитаю сообщить об этом заранее." },
+            { "language": "ckb", "text": "ئاو دەرناچێت، بەڵام شوێنەکە دوێنێ هێشتا دیار نەبوو. بۆیە باشتر دەزانم زوو ڕاپۆرتی بکەم." },
+            { "language": "kmr", "text": "Av dernakeve, lê ew cih duh hîn nediyar bû. Ji ber vê ez dixwazim zûtir ragihînim." },
+            { "language": "pl", "text": "Woda nie wypływa, ale wczoraj tego miejsca jeszcze nie było widać. Dlatego wolę zgłosić to wcześniej." },
+            { "language": "ro", "text": "Apa nu curge, dar zona nu era vizibilă ieri. De aceea prefer să anunț mai devreme." },
+            { "language": "sq", "text": "Uji nuk po rrjedh, por ai vend dje ende nuk dukej. Prandaj preferoj ta raportoj herët." }
+          ],
+          "function": "explain-urgency",
+          "toneNote": "Clear but not dramatic.",
+          "expectedLearnerAction": "Explain what changed and why reporting now."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "landlord",
+          "baseText": "Gut, dann brauche ich bitte Fotos von der Fliese und von der ganzen Wand. Können Sie die heute schicken?",
+          "translations": [
+            { "language": "en", "text": "Good, then I need photos of the tile and the whole wall, please. Can you send them today?" },
+            { "language": "fa", "text": "خوب، پس لطفاً عکس‌هایی از کاشی و کل دیوار لازم دارم. می‌توانید امروز بفرستید؟" },
+            { "language": "ar", "text": "حسنًا، إذن أحتاج من فضلك إلى صور للبلاطة وللجدار كله. هل يمكنك إرسالها اليوم؟" },
+            { "language": "tr", "text": "Tamam, o zaman lütfen fayansın ve tüm duvarın fotoğraflarına ihtiyacım var. Bunları bugün gönderebilir misiniz?" },
+            { "language": "ru", "text": "Хорошо, тогда мне нужны фотографии плитки и всей стены. Можете отправить их сегодня?" },
+            { "language": "ckb", "text": "باشە، کەواتە تکایە پێویستم بە وێنەی کاشییەکە و هەموو دیوارەکە هەیە. دەتوانن ئەمڕۆ بیاننێرن؟" },
+            { "language": "kmr", "text": "Baş e, wê demê ji kerema xwe wêneyên kaşiyê û hemû dîwarê lazim in. Hûn dikarin îro bişînin?" },
+            { "language": "pl", "text": "Dobrze, w takim razie potrzebuję zdjęć płytki i całej ściany. Czy może pan wysłać je dzisiaj?" },
+            { "language": "ro", "text": "Bine, atunci am nevoie de fotografii cu faianța și cu tot peretele. Le puteți trimite astăzi?" },
+            { "language": "sq", "text": "Mirë, atëherë më duhen foto të pllakës dhe të gjithë murit. A mund t'i dërgoni sot?" }
+          ],
+          "function": "request-photos",
+          "toneNote": "Requests evidence.",
+          "expectedLearnerAction": "Confirm photos and ask channel."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich kann die Fotos heute Abend schicken. Soll ich sie per E-Mail senden, und brauchen Sie zusätzlich eine kurze Beschreibung mit Datum?",
+          "translations": [
+            { "language": "en", "text": "Yes, I can send the photos this evening. Should I send them by email, and do you also need a short description with the date?" },
+            { "language": "fa", "text": "بله، می‌توانم عکس‌ها را امشب بفرستم. باید آن‌ها را از طریق ایمیل بفرستم، و آیا علاوه بر آن توضیح کوتاهی با تاریخ لازم دارید؟" },
+            { "language": "ar", "text": "نعم، يمكنني إرسال الصور هذا المساء. هل يجب أن أرسلها بالبريد الإلكتروني، وهل تحتاجين بالإضافة إلى ذلك إلى وصف قصير مع التاريخ؟" },
+            { "language": "tr", "text": "Evet, fotoğrafları bu akşam gönderebilirim. Onları e-posta ile mi göndereyim ve ayrıca tarihli kısa bir açıklama gerekiyor mu?" },
+            { "language": "ru", "text": "Да, я могу отправить фотографии сегодня вечером. Отправить их по электронной почте, и нужно ли дополнительно короткое описание с датой?" },
+            { "language": "ckb", "text": "بەڵێ، دەتوانم وێنەکان ئەمشەو بنێرم. ئایا بە ئیمەیل بیاننێرم، و پێویستان بە باسکردنێکی کورت لەگەڵ بەروار هەیە؟" },
+            { "language": "kmr", "text": "Erê, ez dikarim wêneyan îşev bişînim. Divê ez wan bi e-nameyê bişînim, û hûn ji bilî wê şiroveyeke kurt bi dîrokê dixwazin?" },
+            { "language": "pl", "text": "Tak, mogę wysłać zdjęcia dziś wieczorem. Czy mam je wysłać e-mailem i czy potrzebuje pani dodatkowo krótkiego opisu z datą?" },
+            { "language": "ro", "text": "Da, pot trimite fotografiile în această seară. Să le trimit prin e-mail și aveți nevoie și de o scurtă descriere cu data?" },
+            { "language": "sq", "text": "Po, mund t'i dërgoj fotot sonte. A t'i dërgoj me email dhe a ju duhet edhe një përshkrim i shkurtër me datë?" }
+          ],
+          "function": "confirm-evidence-channel",
+          "toneNote": "Confirms evidence and asks exact channel.",
+          "expectedLearnerAction": "Ask how to send evidence."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "landlord",
+          "baseText": "Ja, bitte per E-Mail mit Datum und kurzer Beschreibung. Danach entscheide ich, ob direkt ein Handwerker kommen muss.",
+          "translations": [
+            { "language": "en", "text": "Yes, please by email with the date and a short description. After that I will decide whether a repair person needs to come directly." },
+            { "language": "fa", "text": "بله، لطفاً از طریق ایمیل با تاریخ و توضیح کوتاه. بعد از آن تصمیم می‌گیرم آیا باید تعمیرکار مستقیم بیاید یا نه." },
+            { "language": "ar", "text": "نعم، من فضلك بالبريد الإلكتروني مع التاريخ ووصف قصير. بعد ذلك أقرر هل يجب أن يأتي عامل الصيانة مباشرة." },
+            { "language": "tr", "text": "Evet, lütfen tarih ve kısa açıklama ile e-posta olarak. Sonra tamircinin doğrudan gelip gelmemesine karar vereceğim." },
+            { "language": "ru", "text": "Да, пожалуйста, по электронной почте с датой и коротким описанием. После этого я решу, должен ли сразу прийти мастер." },
+            { "language": "ckb", "text": "بەڵێ، تکایە بە ئیمەیل لەگەڵ بەروار و باسکردنێکی کورت. پاشان بڕیار دەدەم ئایا چاککەرەوە ڕاستەوخۆ بێت یان نا." },
+            { "language": "kmr", "text": "Erê, ji kerema xwe bi e-nameyê bi dîrok û şiroveyeke kurt. Piştî wê ez biryar didim ka divê tamîrkar rasterast were an na." },
+            { "language": "pl", "text": "Tak, proszę e-mailem z datą i krótkim opisem. Potem zdecyduję, czy fachowiec musi przyjść od razu." },
+            { "language": "ro", "text": "Da, vă rog prin e-mail, cu data și o scurtă descriere. După aceea decid dacă trebuie să vină direct un meșter." },
+            { "language": "sq", "text": "Po, ju lutem me email me datën dhe një përshkrim të shkurtër. Pastaj vendos nëse duhet të vijë menjëherë një mjeshtër." }
+          ],
+          "function": "confirm-evidence-plan",
+          "toneNote": "Gives next decision point.",
+          "expectedLearnerAction": "Summarize evidence and next step."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Alles klar. Ich schicke Ihnen heute Abend Fotos von der Fliese und der Wand, mit Datum und kurzer Beschreibung, und warte dann auf Ihre Rückmeldung.",
+          "translations": [
+            { "language": "en", "text": "All right. I will send you photos of the tile and the wall this evening, with the date and a short description, and then wait for your reply." },
+            { "language": "fa", "text": "خیلی خوب. امشب عکس‌های کاشی و دیوار را همراه با تاریخ و توضیح کوتاه برایتان می‌فرستم و بعد منتظر پاسخ شما می‌مانم." },
+            { "language": "ar", "text": "حسنًا. سأرسل لك هذا المساء صورًا للبلاطة والجدار مع التاريخ ووصف قصير، ثم أنتظر ردك." },
+            { "language": "tr", "text": "Tamam. Bu akşam size fayansın ve duvarın fotoğraflarını tarih ve kısa açıklamayla göndereceğim, sonra cevabınızı bekleyeceğim." },
+            { "language": "ru", "text": "Хорошо. Сегодня вечером я отправлю вам фотографии плитки и стены с датой и коротким описанием, а затем буду ждать вашего ответа." },
+            { "language": "ckb", "text": "باشە. ئەمشەو وێنەی کاشییەکە و دیوارەکە لەگەڵ بەروار و باسکردنێکی کورت بۆتان دەنێرم و پاشان چاوەڕێی وەڵامتان دەبم." },
+            { "language": "kmr", "text": "Baş e. Îşev ez wêneyên kaşiyê û dîwarê bi dîrok û şiroveyeke kurt ji we re dişînim û paşê li benda bersiva we dimînim." },
+            { "language": "pl", "text": "W porządku. Dziś wieczorem wyślę pani zdjęcia płytki i ściany z datą oraz krótkim opisem, a potem poczekam na odpowiedź." },
+            { "language": "ro", "text": "În regulă. Vă trimit în această seară fotografii cu faianța și peretele, cu data și o scurtă descriere, și apoi aștept răspunsul dumneavoastră." },
+            { "language": "sq", "text": "Në rregull. Sonte do t'ju dërgoj foto të pllakës dhe murit, me datën dhe një përshkrim të shkurtër, dhe pastaj do të pres përgjigjen tuaj." }
+          ],
+          "function": "summarize-evidence-plan",
+          "toneNote": "Complete summary.",
+          "expectedLearnerAction": "Confirm evidence, timing, and follow-up."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "specific-damage-description",
+              "text": "Guten Tag, Frau Müller. Im Bad ist mir heute Morgen ein Riss in einer Fliese aufgefallen, und an der Wand daneben ist eine feuchte Stelle.",
+              "translations": [
+                { "language": "en", "text": "Good day, Ms. Müller. This morning I noticed a crack in a tile in the bathroom, and there is a damp spot on the wall next to it." },
+                { "language": "fa", "text": "روز بخیر خانم مولر. امروز صبح در حمام متوجه ترک روی یک کاشی شدم و کنار آن روی دیوار یک قسمت مرطوب هست." },
+                { "language": "ar", "text": "نهارك سعيد يا سيدة مولر. لاحظت هذا الصباح شقًا في بلاطة في الحمام، وهناك بقعة رطبة على الجدار بجانبها." },
+                { "language": "tr", "text": "İyi günler Frau Müller. Bu sabah banyoda bir fayans çatlağı fark ettim ve yanındaki duvarda nemli bir yer var." },
+                { "language": "ru", "text": "Добрый день, госпожа Мюллер. Сегодня утром я заметил трещину на плитке в ванной, а рядом на стене есть влажное место." },
+                { "language": "ckb", "text": "ڕۆژباش خانمی مولەر. ئەم بەیانییە لە حەمامدا درزێکم لە کاشییەک بینی و لەسەر دیواری تەنیشتی شوێنێکی شێدار هەیە." },
+                { "language": "kmr", "text": "Roj baş xanim Müller. Îro sibê min di hemamê de qelekek li ser kaşiyekê dît û li ser dîwara kêleka wê cihê şil heye." },
+                { "language": "pl", "text": "Dzień dobry, pani Müller. Dziś rano zauważyłem w łazience pęknięcie jednej płytki, a na ścianie obok jest wilgotne miejsce." },
+                { "language": "ro", "text": "Bună ziua, doamnă Müller. În această dimineață am observat o crăpătură la o faianță în baie, iar pe peretele de lângă ea este o zonă umedă." },
+                { "language": "sq", "text": "Mirëdita, zonja Müller. Sot në mëngjes vura re një çarje në një pllakë në banjë dhe pranë saj në mur ka një vend të lagësht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du nennst Ort, sichtbaren Schaden und Zeitpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You name the location, visible damage, and time." },
+                { "language": "fa", "text": "خوب است: محل، خسارت قابل مشاهده و زمان را می‌گویی." },
+                { "language": "ar", "text": "جيد: تذكر المكان والضرر الظاهر والوقت." },
+                { "language": "tr", "text": "İyi: Yeri, görünen hasarı ve zamanı söylüyorsun." },
+                { "language": "ru", "text": "Хорошо: ты называешь место, видимое повреждение и время." },
+                { "language": "ckb", "text": "باشە: شوێن، زیانی دیار و کاتەکە دەڵێیت." },
+                { "language": "kmr", "text": "Baş e: Tu cih, ziyana xuya û demê dibêjî." },
+                { "language": "pl", "text": "Dobrze: podajesz miejsce, widoczną szkodę i czas." },
+                { "language": "ro", "text": "Bine: numești locul, dauna vizibilă și momentul." },
+                { "language": "sq", "text": "Mirë: përmend vendin, dëmtimin e dukshëm dhe kohën." }
+              ],
+              "explanationKey": "specific-damage-report"
+            },
+            {
+              "id": "damage-too-vague",
+              "text": "Guten Tag. Im Bad ist etwas kaputt, und ich mache mir Sorgen.",
+              "translations": [
+                { "language": "en", "text": "Good day. Something is broken in the bathroom, and I am worried." },
+                { "language": "fa", "text": "روز بخیر. در حمام چیزی خراب است و من نگرانم." },
+                { "language": "ar", "text": "نهارك سعيد. هناك شيء معطل في الحمام وأنا قلقة." },
+                { "language": "tr", "text": "İyi günler. Banyoda bir şey bozuk ve endişeleniyorum." },
+                { "language": "ru", "text": "Добрый день. В ванной что-то сломано, и я беспокоюсь." },
+                { "language": "ckb", "text": "ڕۆژباش. لە حەمامدا شتێک تێکچووە و من نیگەرانم." },
+                { "language": "kmr", "text": "Roj baş. Di hemamê de tiştek xerab e û ez xemgîn im." },
+                { "language": "pl", "text": "Dzień dobry. W łazience coś jest zepsute i martwię się." },
+                { "language": "ro", "text": "Bună ziua. În baie este ceva stricat și sunt îngrijorat." },
+                { "language": "sq", "text": "Mirëdita. Në banjë diçka është prishur dhe jam i shqetësuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu ungenau: Es fehlen Ort, Art des Schadens und Zeitpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too vague: the location, type of damage, and time are missing." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی نامشخص است: محل، نوع خسارت و زمان کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه غير دقيق: ينقص المكان ونوع الضرر والوقت." },
+                { "language": "tr", "text": "Anlaşılır, ama çok belirsiz: yer, hasarın türü ve zaman eksik." },
+                { "language": "ru", "text": "Понятно, но слишком неопределенно: не хватает места, вида повреждения и времени." },
+                { "language": "ckb", "text": "تێگەیشتنی ئاسانە، بەڵام زۆر نادیارە: شوێن، جۆری زیان و کات کەمە." },
+                { "language": "kmr", "text": "Têgihiştinê hêsan e, lê pir nezelal e: cih, cureya ziyanê û dem kêm in." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt nieprecyzyjne: brakuje miejsca, rodzaju szkody i czasu." },
+                { "language": "ro", "text": "Este de înțeles, dar prea vag: lipsesc locul, tipul daunei și momentul." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e paqartë: mungojnë vendi, lloji i dëmtimit dhe koha." }
+              ],
+              "explanationKey": "missing-damage-details"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "ask-evidence-channel",
+              "text": "Ja, ich kann die Fotos heute Abend schicken. Soll ich sie per E-Mail senden, und brauchen Sie zusätzlich eine kurze Beschreibung mit Datum?",
+              "translations": [
+                { "language": "en", "text": "Yes, I can send the photos this evening. Should I send them by email, and do you also need a short description with the date?" },
+                { "language": "fa", "text": "بله، می‌توانم عکس‌ها را امشب بفرستم. باید آن‌ها را از طریق ایمیل بفرستم، و آیا علاوه بر آن توضیح کوتاهی با تاریخ لازم دارید؟" },
+                { "language": "ar", "text": "نعم، يمكنني إرسال الصور هذا المساء. هل يجب أن أرسلها بالبريد الإلكتروني، وهل تحتاجين بالإضافة إلى ذلك إلى وصف قصير مع التاريخ؟" },
+                { "language": "tr", "text": "Evet, fotoğrafları bu akşam gönderebilirim. Onları e-posta ile mi göndereyim ve ayrıca tarihli kısa bir açıklama gerekiyor mu?" },
+                { "language": "ru", "text": "Да, я могу отправить фотографии сегодня вечером. Отправить их по электронной почте, и нужно ли дополнительно короткое описание с датой?" },
+                { "language": "ckb", "text": "بەڵێ، دەتوانم وێنەکان ئەمشەو بنێرم. ئایا بە ئیمەیل بیاننێرم، و پێویستان بە باسکردنێکی کورت لەگەڵ بەروار هەیە؟" },
+                { "language": "kmr", "text": "Erê, ez dikarim wêneyan îşev bişînim. Divê ez wan bi e-nameyê bişînim, û hûn ji bilî wê şiroveyeke kurt bi dîrokê dixwazin?" },
+                { "language": "pl", "text": "Tak, mogę wysłać zdjęcia dziś wieczorem. Czy mam je wysłać e-mailem i czy potrzebuje pani dodatkowo krótkiego opisu z datą?" },
+                { "language": "ro", "text": "Da, pot trimite fotografiile în această seară. Să le trimit prin e-mail și aveți nevoie și de o scurtă descriere cu data?" },
+                { "language": "sq", "text": "Po, mund t'i dërgoj fotot sonte. A t'i dërgoj me email dhe a ju duhet edhe një përshkrim i shkurtër me datë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du bestätigst die Fotos und klärst Versandweg und Beschreibung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You confirm the photos and clarify the sending method and description." },
+                { "language": "fa", "text": "خوب است: عکس‌ها را تأیید می‌کنی و راه ارسال و توضیح را روشن می‌کنی." },
+                { "language": "ar", "text": "جيد: تؤكد الصور وتوضح طريقة الإرسال والوصف." },
+                { "language": "tr", "text": "İyi: Fotoğrafları onaylıyor, gönderim yolunu ve açıklamayı netleştiriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты подтверждаешь фотографии и уточняешь способ отправки и описание." },
+                { "language": "ckb", "text": "باشە: وێنەکان پشتڕاست دەکەیتەوە و ڕێگای ناردن و باسکردنەکە ڕوون دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu wêneyan piştrast dikî û rêya şandinê û şiroveyê zelal dikî." },
+                { "language": "pl", "text": "Dobrze: potwierdzasz zdjęcia i wyjaśniasz sposób wysyłki oraz opis." },
+                { "language": "ro", "text": "Bine: confirmi fotografiile și clarifici calea de trimitere și descrierea." },
+                { "language": "sq", "text": "Mirë: konfirmon fotot dhe sqaron mënyrën e dërgimit dhe përshkrimin." }
+              ],
+              "explanationKey": "evidence-channel"
+            },
+            {
+              "id": "photos-without-channel",
+              "text": "Ja, ich mache Fotos.",
+              "translations": [
+                { "language": "en", "text": "Yes, I will take photos." },
+                { "language": "fa", "text": "بله، عکس می‌گیرم." },
+                { "language": "ar", "text": "نعم، سألتقط صورًا." },
+                { "language": "tr", "text": "Evet, fotoğraf çekeceğim." },
+                { "language": "ru", "text": "Да, я сделаю фотографии." },
+                { "language": "ckb", "text": "بەڵێ، وێنە دەگرم." },
+                { "language": "kmr", "text": "Erê, ez wêne digirim." },
+                { "language": "pl", "text": "Tak, zrobię zdjęcia." },
+                { "language": "ro", "text": "Da, fac fotografii." },
+                { "language": "sq", "text": "Po, do të bëj foto." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist zu kurz: Es fehlt, wann du sendest, wohin du sendest und ob eine Beschreibung gebraucht wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is too short: it is missing when you will send them, where you will send them, and whether a description is needed." },
+                { "language": "fa", "text": "خیلی کوتاه است: زمان ارسال، مسیر ارسال و اینکه آیا توضیح لازم است یا نه، کم است." },
+                { "language": "ar", "text": "هذا مختصر جدًا: ينقص متى سترسلها، وإلى أين سترسلها، وهل هناك حاجة إلى وصف." },
+                { "language": "tr", "text": "Bu çok kısa: ne zaman göndereceğin, nereye göndereceğin ve açıklama gerekip gerekmediği eksik." },
+                { "language": "ru", "text": "Это слишком кратко: не хватает, когда ты отправишь, куда отправишь и нужно ли описание." },
+                { "language": "ckb", "text": "ئەمە زۆر کورتە: کەی دەنێریت، بۆ کوێ دەنێریت و ئایا باسکردن پێویستە یان نا کەمە." },
+                { "language": "kmr", "text": "Ev pir kurt e: kengî dişînî, li ku dişînî û gelo şirove lazim e an na kêm in." },
+                { "language": "pl", "text": "To zbyt krótkie: brakuje informacji, kiedy wyślesz, dokąd wyślesz i czy potrzebny jest opis." },
+                { "language": "ro", "text": "Este prea scurt: lipsește când trimiți, unde trimiți și dacă este nevoie de o descriere." },
+                { "language": "sq", "text": "Është shumë e shkurtër: mungon kur do t'i dërgosh, ku do t'i dërgosh dhe nëse duhet përshkrim." }
+              ],
+              "explanationKey": "missing-evidence-details"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-evidence-summary",
+              "text": "Alles klar. Ich schicke Ihnen heute Abend Fotos von der Fliese und der Wand, mit Datum und kurzer Beschreibung, und warte dann auf Ihre Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "All right. I will send you photos of the tile and the wall this evening, with the date and a short description, and then wait for your reply." },
+                { "language": "fa", "text": "خیلی خوب. امشب عکس‌های کاشی و دیوار را همراه با تاریخ و توضیح کوتاه برایتان می‌فرستم و بعد منتظر پاسخ شما می‌مانم." },
+                { "language": "ar", "text": "حسنًا. سأرسل لك هذا المساء صورًا للبلاطة والجدار مع التاريخ ووصف قصير، ثم أنتظر ردك." },
+                { "language": "tr", "text": "Tamam. Bu akşam size fayansın ve duvarın fotoğraflarını tarih ve kısa açıklamayla göndereceğim, sonra cevabınızı bekleyeceğim." },
+                { "language": "ru", "text": "Хорошо. Сегодня вечером я отправлю вам фотографии плитки и стены с датой и коротким описанием, а затем буду ждать вашего ответа." },
+                { "language": "ckb", "text": "باشە. ئەمشەو وێنەی کاشییەکە و دیوارەکە لەگەڵ بەروار و باسکردنێکی کورت بۆتان دەنێرم و پاشان چاوەڕێی وەڵامتان دەبم." },
+                { "language": "kmr", "text": "Baş e. Îşev ez wêneyên kaşiyê û dîwarê bi dîrok û şiroveyeke kurt ji we re dişînim û paşê li benda bersiva we dimînim." },
+                { "language": "pl", "text": "W porządku. Dziś wieczorem wyślę pani zdjęcia płytki i ściany z datą oraz krótkim opisem, a potem poczekam na odpowiedź." },
+                { "language": "ro", "text": "În regulă. Vă trimit în această seară fotografii cu faianța și peretele, cu data și o scurtă descriere, și apoi aștept răspunsul dumneavoastră." },
+                { "language": "sq", "text": "Në rregull. Sonte do t'ju dërgoj foto të pllakës dhe murit, me datën dhe një përshkrim të shkurtër, dhe pastaj do të pres përgjigjen tuaj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Du fasst Belege, Zeitpunkt, Beschreibung und nächste Rückmeldung vollständig zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: You fully summarize evidence, time, description, and the next reply." },
+                { "language": "fa", "text": "بسیار خوب: مدارک، زمان، توضیح و پاسخ بعدی را کامل خلاصه می‌کنی." },
+                { "language": "ar", "text": "جيد جدًا: تلخص الإثباتات والوقت والوصف والرد التالي بشكل كامل." },
+                { "language": "tr", "text": "Çok iyi: Kanıtları, zamanı, açıklamayı ve sonraki cevabı eksiksiz özetliyorsun." },
+                { "language": "ru", "text": "Очень хорошо: ты полностью подытоживаешь доказательства, время, описание и следующий ответ." },
+                { "language": "ckb", "text": "زۆر باش: بەڵگە، کات، باسکردن و وەڵامی دواتر بە تەواوی کورت دەکەیتەوە." },
+                { "language": "kmr", "text": "Pir baş: Tu belge, dem, şirove û bersiva din bi temamî kurt dikî." },
+                { "language": "pl", "text": "Bardzo dobrze: w pełni podsumowujesz dowody, czas, opis i kolejną odpowiedź." },
+                { "language": "ro", "text": "Foarte bine: rezumi complet dovezile, momentul, descrierea și următorul răspuns." },
+                { "language": "sq", "text": "Shumë mirë: përmbledh plotësisht dëshmitë, kohën, përshkrimin dhe përgjigjen e radhës." }
+              ],
+              "explanationKey": "complete-evidence-summary"
+            },
+            {
+              "id": "summary-without-next-step",
+              "text": "Alles klar, ich schicke Ihnen etwas.",
+              "translations": [
+                { "language": "en", "text": "All right, I will send you something." },
+                { "language": "fa", "text": "خیلی خوب، چیزی برایتان می‌فرستم." },
+                { "language": "ar", "text": "حسنًا، سأرسل لك شيئًا." },
+                { "language": "tr", "text": "Tamam, size bir şey göndereceğim." },
+                { "language": "ru", "text": "Хорошо, я вам что-нибудь отправлю." },
+                { "language": "ckb", "text": "باشە، شتێکتان بۆ دەنێرم." },
+                { "language": "kmr", "text": "Baş e, ez tiştek ji we re dişînim." },
+                { "language": "pl", "text": "W porządku, coś pani wyślę." },
+                { "language": "ro", "text": "În regulă, vă trimit ceva." },
+                { "language": "sq", "text": "Në rregull, do t'ju dërgoj diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Es bleibt offen, welche Fotos, wann und mit welcher Beschreibung du sendest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: it remains unclear which photos you will send, when, and with what description." },
+                { "language": "fa", "text": "خیلی نامشخص است: معلوم نیست چه عکس‌هایی، چه زمانی و با چه توضیحی می‌فرستی." },
+                { "language": "ar", "text": "غير دقيق جدًا: يبقى غير واضح أي صور سترسلها ومتى وبأي وصف." },
+                { "language": "tr", "text": "Çok belirsiz: Hangi fotoğrafları, ne zaman ve hangi açıklamayla göndereceğin açık kalıyor." },
+                { "language": "ru", "text": "Слишком неопределенно: остается неясно, какие фотографии, когда и с каким описанием ты отправишь." },
+                { "language": "ckb", "text": "زۆر نادیارە: ڕوون نییە کام وێنە، کەی و بە چ باسکردنێک دەنێریت." },
+                { "language": "kmr", "text": "Pir nezelal e: ne diyar e kîjan wêne, kengî û bi kîjan şiroveyê dişînî." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: nie wiadomo, jakie zdjęcia, kiedy i z jakim opisem wyślesz." },
+                { "language": "ro", "text": "Prea vag: rămâne neclar ce fotografii trimiți, când și cu ce descriere." },
+                { "language": "sq", "text": "Shumë e paqartë: mbetet e paqartë cilat foto, kur dhe me çfarë përshkrimi do t'i dërgosh." }
+              ],
+              "explanationKey": "vague-evidence-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "model-answer",
+          "text": "Bei Wohnungsschäden ist eine klare Reihenfolge wichtig: Ort, sichtbarer Schaden, Zeitpunkt, Belege und nächster Schritt.",
+          "translations": [
+            { "language": "en", "text": "For apartment damage, a clear order is important: location, visible damage, time, evidence, and next step." },
+            { "language": "fa", "text": "در خسارت‌های خانه، ترتیب روشن مهم است: محل، خسارت قابل مشاهده، زمان، مدارک و قدم بعدی." },
+            { "language": "ar", "text": "في أضرار الشقة، الترتيب الواضح مهم: المكان، والضرر الظاهر، والوقت، والإثباتات، والخطوة التالية." },
+            { "language": "tr", "text": "Daire hasarlarında net sıra önemlidir: yer, görünen hasar, zaman, kanıtlar ve sonraki adım." },
+            { "language": "ru", "text": "При повреждениях в квартире важен ясный порядок: место, видимое повреждение, время, доказательства и следующий шаг." },
+            { "language": "ckb", "text": "لە زیانەکانی خانوودا ڕیزبەندییەکی ڕوون گرنگە: شوێن، زیانی دیار، کات، بەڵگە و هەنگاوی دواتر." },
+            { "language": "kmr", "text": "Di ziyanên xanî de rêzeke zelal girîng e: cih, ziyana xuya, dem, belge û gava din." },
+            { "language": "pl", "text": "Przy szkodach w mieszkaniu ważna jest jasna kolejność: miejsce, widoczna szkoda, czas, dowody i następny krok." },
+            { "language": "ro", "text": "La daunele din apartament este importantă o ordine clară: locul, dauna vizibilă, momentul, dovezile și pasul următor." },
+            { "language": "sq", "text": "Në dëmtimet e banesës është i rëndësishëm një rend i qartë: vendi, dëmtimi i dukshëm, koha, dëshmitë dhe hapi tjetër." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-einen-hausordnungskonflikt-klaeren",
+      "title": "Einen Hausordnungskonflikt klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarify a house-rules conflict" },
+        { "language": "fa", "text": "روشن‌کردن اختلاف درباره قوانین ساختمان" },
+        { "language": "ar", "text": "توضيح خلاف حول نظام البيت" },
+        { "language": "tr", "text": "Apartman kurallarıyla ilgili bir anlaşmazlığı netleştirmek" },
+        { "language": "ru", "text": "Прояснить конфликт из-за правил дома" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی ناکۆکی دەربارەی ڕێساکانی خانوو" },
+        { "language": "kmr", "text": "Nakokiyek li ser rêzikên xanî zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnić konflikt dotyczący regulaminu domu" },
+        { "language": "ro", "text": "Să clarifici un conflict despre regulile imobilului" },
+        { "language": "sq", "text": "Të sqarosh një konflikt për rregullat e ndërtesës" }
+      ],
+      "description": "Ein Nachbar sagt, dass dein Kinderwagen im Hausflur nicht stehen darf. Du erklärst deine Sicht, fragst nach der genauen Regel und suchst eine praktische Lösung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "A neighbor says your stroller is not allowed to stand in the hallway. You explain your view, ask about the exact rule, and look for a practical solution." },
+        { "language": "fa", "text": "یک همسایه می‌گوید کالسکه کودک شما نباید در راهروی ساختمان بماند. دیدگاه خودت را توضیح می‌دهی، درباره قانون دقیق سؤال می‌کنی و دنبال راه‌حل عملی می‌گردی." },
+        { "language": "ar", "text": "يقول جار إن عربة طفلك لا يجوز أن تبقى في مدخل المبنى. تشرح وجهة نظرك، وتسأل عن القاعدة الدقيقة، وتبحث عن حل عملي." },
+        { "language": "tr", "text": "Bir komşu, bebek arabanın apartman koridorunda duramayacağını söylüyor. Kendi görüşünü açıklıyor, tam kuralı soruyor ve pratik bir çözüm arıyorsun." },
+        { "language": "ru", "text": "Сосед говорит, что ваша детская коляска не должна стоять в подъезде. Ты объясняешь свою позицию, спрашиваешь о точном правиле и ищешь практическое решение." },
+        { "language": "ckb", "text": "دراوسێیەک دەڵێت عەرەبانەی منداڵەکەت نابێت لە ڕاڕەوی خانوو بمێنێتەوە. دیدگای خۆت ڕوون دەکەیتەوە، دەربارەی ڕێسای ورد دەپرسی و بەدوای چارەسەرێکی کرداری دەگەڕێیت." },
+        { "language": "kmr", "text": "Cîranek dibêje ku erebeya zarokê te nabe di korîdora xanî de bimîne. Tu dîtina xwe şirove dikî, li ser rêzika rast dipirsî û li çareseriyeke praktîk digerî." },
+        { "language": "pl", "text": "Sąsiad mówi, że twój wózek dziecięcy nie może stać na korytarzu. Wyjaśniasz swoje stanowisko, pytasz o dokładną zasadę i szukasz praktycznego rozwiązania." },
+        { "language": "ro", "text": "Un vecin spune că landoul copilului tău nu are voie să stea pe hol. Îți explici punctul de vedere, întrebi despre regula exactă și cauți o soluție practică." },
+        { "language": "sq", "text": "Një fqinj thotë se karroca e fëmijës nuk lejohet të qëndrojë në korridor. Shpjegon këndvështrimin tënd, pyet për rregullin e saktë dhe kërkon një zgjidhje praktike." }
+      ],
+      "learnerGoal": "Du kannst eine Regel höflich nachfragen, deine Situation erklären und eine Lösung vorschlagen, ohne den Konflikt zu verschärfen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can politely ask about a rule, explain your situation, and suggest a solution without making the conflict worse." },
+        { "language": "fa", "text": "می‌توانی محترمانه درباره یک قانون سؤال کنی، وضعیت خودت را توضیح بدهی و بدون تشدید اختلاف راه‌حل پیشنهاد کنی." },
+        { "language": "ar", "text": "يمكنك السؤال بأدب عن قاعدة، وشرح وضعك، واقتراح حل من دون تصعيد الخلاف." },
+        { "language": "tr", "text": "Bir kuralı kibarca sorabilir, durumunu açıklayabilir ve çatışmayı büyütmeden çözüm önerebilirsin." },
+        { "language": "ru", "text": "Ты можешь вежливо спросить о правиле, объяснить свою ситуацию и предложить решение, не усиливая конфликт." },
+        { "language": "ckb", "text": "دەتوانیت بە ڕێزەوە دەربارەی ڕێسایەک بپرسی، بارودۆخی خۆت ڕوون بکەیتەوە و بێ ئەوەی ناکۆکییەکە توندتر بکەیت چارەسەر پێشنیار بکەیت." },
+        { "language": "kmr", "text": "Tu dikarî bi rêzdarî li ser rêzikekê bipirsî, rewşa xwe şirove bikî û bêyî ku nakokî girantir bibe çareseriyek pêşniyar bikî." },
+        { "language": "pl", "text": "Potrafisz uprzejmie zapytać o zasadę, wyjaśnić swoją sytuację i zaproponować rozwiązanie bez zaostrzania konfliktu." },
+        { "language": "ro", "text": "Poți întreba politicos despre o regulă, îți poți explica situația și poți propune o soluție fără să agravezi conflictul." },
+        { "language": "sq", "text": "Mund të pyesësh me mirësjellje për një rregull, të shpjegosh situatën tënde dhe të propozosh një zgjidhje pa e përkeqësuar konfliktin." }
+      ],
+      "cefrLevel": "B1",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "documents-and-administration"
+      ],
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "taskType": "handle-misunderstanding",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "informal-conversation"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2330,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "neighbor",
+          "displayName": "Nachbarin",
+          "translations": [
+            { "language": "en", "text": "Neighbor" },
+            { "language": "fa", "text": "همسایه" },
+            { "language": "ar", "text": "الجارة" },
+            { "language": "tr", "text": "Komşu" },
+            { "language": "ru", "text": "Соседка" },
+            { "language": "ckb", "text": "دراوسێ" },
+            { "language": "kmr", "text": "Cîran" },
+            { "language": "pl", "text": "Sąsiadka" },
+            { "language": "ro", "text": "Vecină" },
+            { "language": "sq", "text": "Fqinje" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mieter",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجر" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендатор" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemca" },
+            { "language": "ro", "text": "Chiriaș" },
+            { "language": "sq", "text": "Qiramarrës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "neighbor",
+          "baseText": "Entschuldigung, Ihr Kinderwagen steht schon wieder im Hausflur. Das ist laut Hausordnung nicht erlaubt.",
+          "translations": [
+            { "language": "en", "text": "Excuse me, your stroller is in the hallway again. According to the house rules, that is not allowed." },
+            { "language": "fa", "text": "ببخشید، کالسکه کودک شما دوباره در راهروی ساختمان است. طبق قوانین ساختمان این مجاز نیست." },
+            { "language": "ar", "text": "عذرًا، عربة طفلك موجودة مرة أخرى في مدخل المبنى. حسب نظام البيت، هذا غير مسموح." },
+            { "language": "tr", "text": "Affedersiniz, bebek arabanız yine apartman koridorunda duruyor. Apartman kurallarına göre buna izin verilmiyor." },
+            { "language": "ru", "text": "Извините, ваша детская коляска снова стоит в коридоре. По правилам дома это не разрешено." },
+            { "language": "ckb", "text": "ببورە، عەرەبانەی منداڵەکەتان جارێکی دیکە لە ڕاڕەوی خانووەکەدایە. بە پێی ڕێساکانی خانوو ئەمە ڕێگەپێدراو نییە." },
+            { "language": "kmr", "text": "Bibore, erebeya zarokê we dîsa di korîdora xanî de ye. Li gorî rêzikên xanî ev ne destûr e." },
+            { "language": "pl", "text": "Przepraszam, pani wózek dziecięcy znowu stoi na korytarzu. Zgodnie z regulaminem domu to nie jest dozwolone." },
+            { "language": "ro", "text": "Scuzați-mă, căruciorul copilului dumneavoastră este din nou pe hol. Conform regulilor imobilului, acest lucru nu este permis." },
+            { "language": "sq", "text": "Më falni, karroca e fëmijës suaj është përsëri në korridor. Sipas rregullave të ndërtesës, kjo nuk lejohet." }
+          ],
+          "function": "raise-rule-concern",
+          "toneNote": "Direct complaint about a rule.",
+          "expectedLearnerAction": "Respond calmly and ask for clarification."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke, dass Sie es sagen. Ich möchte die Hausordnung natürlich beachten. Können Sie mir zeigen, wo genau das steht?",
+          "translations": [
+            { "language": "en", "text": "Thank you for telling me. Of course I want to follow the house rules. Can you show me where exactly that is written?" },
+            { "language": "fa", "text": "ممنون که گفتید. البته می‌خواهم قوانین ساختمان را رعایت کنم. می‌توانید نشان بدهید دقیقاً کجا نوشته شده است؟" },
+            { "language": "ar", "text": "شكرًا لأنك أخبرتني. بالطبع أريد الالتزام بنظام البيت. هل يمكنك أن تريني أين ورد ذلك بالضبط؟" },
+            { "language": "tr", "text": "Söylediğiniz için teşekkür ederim. Elbette apartman kurallarına uymak istiyorum. Bunun tam olarak nerede yazdığını gösterebilir misiniz?" },
+            { "language": "ru", "text": "Спасибо, что сказали. Конечно, я хочу соблюдать правила дома. Можете показать, где именно это написано?" },
+            { "language": "ckb", "text": "سوپاس کە پێتان گوتم. بە دڵنیاییەوە دەمەوێت ڕێساکانی خانوو ڕەچاو بکەم. دەتوانن پیشانم بدەن لە کوێ بە وردی نووسراوە؟" },
+            { "language": "kmr", "text": "Spas ku we got. Bi rastî ez dixwazim rêzikên xanî bişopînim. Hûn dikarin nîşan bidin li ku bi rastî nivîsandî ye?" },
+            { "language": "pl", "text": "Dziękuję, że pani mówi. Oczywiście chcę przestrzegać regulaminu domu. Czy może mi pani pokazać, gdzie dokładnie to jest napisane?" },
+            { "language": "ro", "text": "Mulțumesc că îmi spuneți. Bineînțeles că vreau să respect regulile imobilului. Îmi puteți arăta unde scrie exact acest lucru?" },
+            { "language": "sq", "text": "Faleminderit që ma thoni. Sigurisht dua t'i respektoj rregullat e ndërtesës. A mund të më tregoni ku shkruhet saktësisht kjo?" }
+          ],
+          "function": "acknowledge-ask-rule",
+          "toneNote": "Calm and cooperative.",
+          "expectedLearnerAction": "Acknowledge and ask for exact rule."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "neighbor",
+          "baseText": "Im Aushang steht, dass Fluchtwege frei bleiben müssen. Der Flur ist manchmal sehr eng.",
+          "translations": [
+            { "language": "en", "text": "The notice says that escape routes must remain clear. The hallway is sometimes very narrow." },
+            { "language": "fa", "text": "در اطلاعیه نوشته شده که مسیرهای خروج اضطراری باید آزاد بمانند. راهرو گاهی خیلی باریک است." },
+            { "language": "ar", "text": "في الإعلان مكتوب أن طرق الهروب يجب أن تبقى خالية. المدخل أحيانًا ضيق جدًا." },
+            { "language": "tr", "text": "Duyuruda kaçış yollarının boş kalması gerektiği yazıyor. Koridor bazen çok dar oluyor." },
+            { "language": "ru", "text": "В объявлении написано, что пути эвакуации должны оставаться свободными. Коридор иногда очень узкий." },
+            { "language": "ckb", "text": "لە ئاگادارکردنەوەکەدا نووسراوە کە ڕێگاکانی هەڵاتن دەبێت بەتاڵ بمێننەوە. ڕاڕەوەکە هەندێک جار زۆر تەسکە." },
+            { "language": "kmr", "text": "Di daxuyanîyê de nivîsandî ye ku rêyên revê divê vala bimînin. Korîdor carinan pir teng e." },
+            { "language": "pl", "text": "Na ogłoszeniu jest napisane, że drogi ewakuacyjne muszą pozostać wolne. Korytarz jest czasem bardzo wąski." },
+            { "language": "ro", "text": "În afiș scrie că ieșirile de urgență trebuie să rămână libere. Holul este uneori foarte îngust." },
+            { "language": "sq", "text": "Në njoftim shkruhet se rrugët e daljes duhet të mbeten të lira. Korridori ndonjëherë është shumë i ngushtë." }
+          ],
+          "function": "explain-rule-concern",
+          "toneNote": "Clarifies safety reason.",
+          "expectedLearnerAction": "Explain situation and show willingness."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Ich stelle den Kinderwagen nur kurz dort ab, wenn ich mein Kind hochtrage. Dauerhaft soll er dort nicht stehen.",
+          "translations": [
+            { "language": "en", "text": "I understand that. I only put the stroller there briefly when I carry my child upstairs. It is not supposed to stand there permanently." },
+            { "language": "fa", "text": "این را می‌فهمم. کالسکه را فقط کوتاه آنجا می‌گذارم وقتی فرزندم را بالا می‌برم. قرار نیست دائم آنجا بماند." },
+            { "language": "ar", "text": "أفهم ذلك. أضع العربة هناك لفترة قصيرة فقط عندما أحمل طفلي إلى الطابق العلوي. لا يفترض أن تبقى هناك بشكل دائم." },
+            { "language": "tr", "text": "Bunu anlıyorum. Bebek arabasını sadece çocuğumu yukarı taşıdığımda kısa süreliğine oraya koyuyorum. Sürekli orada durması gerekmiyor." },
+            { "language": "ru", "text": "Я это понимаю. Я ставлю коляску туда только ненадолго, когда несу ребенка наверх. Постоянно она там стоять не должна." },
+            { "language": "ckb", "text": "ئەمە تێدەگەم. عەرەبانەکە تەنها بۆ ماوەیەکی کورت لەوێ دادەنێم کاتێک منداڵەکەم دەبەمە سەرەوە. نابێت بەردەوام لەوێ بمێنێتەوە." },
+            { "language": "kmr", "text": "Ez vê fêm dikim. Ez erebeyê tenê demeke kurt li wir datînim, dema ku zarokê xwe dibim jor. Divê ew bi domdarî li wir nemîne." },
+            { "language": "pl", "text": "Rozumiem to. Stawiam wózek tam tylko na krótko, kiedy niosę dziecko na górę. Nie ma tam stać na stałe." },
+            { "language": "ro", "text": "Înțeleg asta. Pun căruciorul acolo doar pentru scurt timp când îmi duc copilul sus. Nu ar trebui să stea acolo permanent." },
+            { "language": "sq", "text": "E kuptoj këtë. E vendos karrocën aty vetëm për pak kohë kur e çoj fëmijën lart. Nuk duhet të qëndrojë aty vazhdimisht." }
+          ],
+          "function": "explain-own-situation",
+          "toneNote": "Shows understanding and explains practical reason.",
+          "expectedLearnerAction": "Explain situation without denying rule."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "neighbor",
+          "baseText": "Vielleicht könnten Sie ihn unten neben den Briefkästen abstellen. Dort ist mehr Platz.",
+          "translations": [
+            { "language": "en", "text": "Maybe you could put it downstairs next to the mailboxes. There is more space there." },
+            { "language": "fa", "text": "شاید بتوانید آن را پایین کنار صندوق‌های پستی بگذارید. آنجا فضای بیشتری هست." },
+            { "language": "ar", "text": "ربما يمكنك وضعها في الأسفل بجانب صناديق البريد. هناك مساحة أكبر." },
+            { "language": "tr", "text": "Belki onu aşağıda posta kutularının yanına koyabilirsiniz. Orada daha fazla yer var." },
+            { "language": "ru", "text": "Возможно, вы могли бы ставить ее внизу рядом с почтовыми ящиками. Там больше места." },
+            { "language": "ckb", "text": "ڕەنگە بتوانن لە خوارەوە لە تەنیشت سندوقە پۆستییەکان دابنێن. لەوێ شوێنی زیاتر هەیە." },
+            { "language": "kmr", "text": "Belkî hûn dikarin wê li jêr li kêleka qutiyên posteyê deynin. Li wir cih zêdetir e." },
+            { "language": "pl", "text": "Może mogłaby pani stawiać go na dole obok skrzynek pocztowych. Tam jest więcej miejsca." },
+            { "language": "ro", "text": "Poate îl puteți pune jos, lângă cutiile poștale. Acolo este mai mult spațiu." },
+            { "language": "sq", "text": "Ndoshta mund ta vendosni poshtë pranë kutive postare. Aty ka më shumë vend." }
+          ],
+          "function": "suggest-alternative-place",
+          "toneNote": "Suggests compromise.",
+          "expectedLearnerAction": "Evaluate and refine solution."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das könnte funktionieren. Ich probiere es ab morgen und achte darauf, dass der Fluchtweg frei bleibt.",
+          "translations": [
+            { "language": "en", "text": "That could work. I will try it from tomorrow and make sure the escape route stays clear." },
+            { "language": "fa", "text": "این می‌تواند کار کند. از فردا امتحان می‌کنم و دقت می‌کنم مسیر خروج اضطراری آزاد بماند." },
+            { "language": "ar", "text": "قد ينجح ذلك. سأجربه من الغد وسأحرص على أن يبقى طريق الهروب خاليًا." },
+            { "language": "tr", "text": "Bu işe yarayabilir. Yarından itibaren deneyeceğim ve kaçış yolunun boş kalmasına dikkat edeceğim." },
+            { "language": "ru", "text": "Это может сработать. Я попробую с завтрашнего дня и прослежу, чтобы путь эвакуации оставался свободным." },
+            { "language": "ckb", "text": "ئەمە دەکرێت کار بکات. لە سبەینێوە تاقی دەکەمەوە و ئاگادار دەبم ڕێگای هەڵاتن بەتاڵ بمێنێتەوە." },
+            { "language": "kmr", "text": "Ev dikare bibe. Ez ji sibê ve tê biceribînim û baldar dibim ku rêya revê vala bimîne." },
+            { "language": "pl", "text": "To może zadziałać. Spróbuję od jutra i zadbam, żeby droga ewakuacyjna była wolna." },
+            { "language": "ro", "text": "Ar putea funcționa. Încerc de mâine și am grijă ca ieșirea de urgență să rămână liberă." },
+            { "language": "sq", "text": "Kjo mund të funksionojë. Do ta provoj nga nesër dhe do të kujdesem që rruga e daljes të mbetet e lirë." }
+          ],
+          "function": "accept-compromise",
+          "toneNote": "Accepts solution and names safety goal.",
+          "expectedLearnerAction": "Accept practical solution."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "neighbor",
+          "baseText": "Danke. Wenn es dort auch ein Problem gibt, können wir die Hausverwaltung fragen.",
+          "translations": [
+            { "language": "en", "text": "Thank you. If there is a problem there too, we can ask the property management office." },
+            { "language": "fa", "text": "ممنون. اگر آنجا هم مشکلی بود، می‌توانیم از مدیریت ساختمان سؤال کنیم." },
+            { "language": "ar", "text": "شكرًا. إذا كانت هناك مشكلة هناك أيضًا، يمكننا أن نسأل إدارة العقار." },
+            { "language": "tr", "text": "Teşekkürler. Orada da bir sorun olursa bina yönetimine sorabiliriz." },
+            { "language": "ru", "text": "Спасибо. Если там тоже будет проблема, мы можем спросить управляющую компанию." },
+            { "language": "ckb", "text": "سوپاس. ئەگەر لەوێش کێشە هەبوو، دەتوانین لە بەڕێوەبەرایەتی خانوو بپرسین." },
+            { "language": "kmr", "text": "Spas. Ger li wir jî pirsgirêk hebe, em dikarin ji rêveberiya xanî bipirsin." },
+            { "language": "pl", "text": "Dziękuję. Jeśli tam też będzie problem, możemy zapytać administrację budynku." },
+            { "language": "ro", "text": "Mulțumesc. Dacă și acolo apare o problemă, putem întreba administrația imobilului." },
+            { "language": "sq", "text": "Faleminderit. Nëse edhe aty ka problem, mund të pyesim administratën e ndërtesës." }
+          ],
+          "function": "offer-fallback",
+          "toneNote": "Keeps escalation constructive.",
+          "expectedLearnerAction": "Summarize agreement and fallback."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Einverstanden. Ich stelle den Kinderwagen ab morgen unten ab und melde mich bei der Hausverwaltung, falls es dort ebenfalls nicht passt.",
+          "translations": [
+            { "language": "en", "text": "Agreed. From tomorrow I will put the stroller downstairs and contact the property management office if it does not work there either." },
+            { "language": "fa", "text": "موافقم. از فردا کالسکه را پایین می‌گذارم و اگر آنجا هم مناسب نبود، با مدیریت ساختمان تماس می‌گیرم." },
+            { "language": "ar", "text": "متفقون. ابتداءً من الغد سأضع العربة في الأسفل، وسأتواصل مع إدارة العقار إذا لم يكن ذلك مناسبًا هناك أيضًا." },
+            { "language": "tr", "text": "Anlaştık. Yarından itibaren bebek arabasını aşağıya koyacağım ve orada da uygun olmazsa bina yönetimiyle iletişime geçeceğim." },
+            { "language": "ru", "text": "Договорились. С завтрашнего дня я буду ставить коляску внизу и обращусь в управляющую компанию, если там тоже не подойдет." },
+            { "language": "ckb", "text": "ڕێککەوتین. لە سبەینێوە عەرەبانەی منداڵەکە لە خوارەوە دادەنێم و ئەگەر لەوێش نەگونجا، پەیوەندی بە بەڕێوەبەرایەتی خانوو دەکەم." },
+            { "language": "kmr", "text": "Li hev hatin. Ji sibê ve ez erebeya zarokê li jêr datînim û ger li wir jî neguncaw be, ez têkilî bi rêveberiya xanî re dikim." },
+            { "language": "pl", "text": "Zgoda. Od jutra będę stawiać wózek na dole i zgłoszę się do administracji, jeśli tam też nie będzie pasować." },
+            { "language": "ro", "text": "De acord. De mâine pun căruciorul jos și contactez administrația imobilului dacă nici acolo nu este potrivit." },
+            { "language": "sq", "text": "Dakord. Nga nesër do ta vendos karrocën poshtë dhe do të kontaktoj administratën e ndërtesës nëse as aty nuk është e përshtatshme." }
+          ],
+          "function": "confirm-agreement",
+          "toneNote": "Clear agreement and fallback.",
+          "expectedLearnerAction": "Confirm action and fallback."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "calm-rule-clarification",
+              "text": "Danke, dass Sie es sagen. Ich möchte die Hausordnung natürlich beachten. Können Sie mir zeigen, wo genau das steht?",
+              "translations": [
+                { "language": "en", "text": "Thank you for telling me. Of course I want to follow the house rules. Can you show me where exactly that is written?" },
+                { "language": "fa", "text": "ممنون که گفتید. البته می‌خواهم قوانین ساختمان را رعایت کنم. می‌توانید نشان بدهید دقیقاً کجا نوشته شده است؟" },
+                { "language": "ar", "text": "شكرًا لأنك أخبرتني. بالطبع أريد الالتزام بنظام البيت. هل يمكنك أن تريني أين ورد ذلك بالضبط؟" },
+                { "language": "tr", "text": "Söylediğiniz için teşekkür ederim. Elbette apartman kurallarına uymak istiyorum. Bunun tam olarak nerede yazdığını gösterebilir misiniz?" },
+                { "language": "ru", "text": "Спасибо, что сказали. Конечно, я хочу соблюдать правила дома. Можете показать, где именно это написано?" },
+                { "language": "ckb", "text": "سوپاس کە پێتان گوتم. بە دڵنیاییەوە دەمەوێت ڕێساکانی خانوو ڕەچاو بکەم. دەتوانن پیشانم بدەن لە کوێ بە وردی نووسراوە؟" },
+                { "language": "kmr", "text": "Spas ku we got. Bi rastî ez dixwazim rêzikên xanî bişopînim. Hûn dikarin nîşan bidin li ku bi rastî nivîsandî ye?" },
+                { "language": "pl", "text": "Dziękuję, że pani mówi. Oczywiście chcę przestrzegać regulaminu domu. Czy może mi pani pokazać, gdzie dokładnie to jest napisane?" },
+                { "language": "ro", "text": "Mulțumesc că îmi spuneți. Bineînțeles că vreau să respect regulile imobilului. Îmi puteți arăta unde scrie exact acest lucru?" },
+                { "language": "sq", "text": "Faleminderit që ma thoni. Sigurisht dua t'i respektoj rregullat e ndërtesës. A mund të më tregoni ku shkruhet saktësisht kjo?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du bleibst ruhig, zeigst Kooperationsbereitschaft und fragst nach der genauen Regel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You stay calm, show willingness to cooperate, and ask about the exact rule." },
+                { "language": "fa", "text": "خوب است: آرام می‌مانی، آمادگی همکاری نشان می‌دهی و درباره قانون دقیق سؤال می‌کنی." },
+                { "language": "ar", "text": "جيد: تبقى هادئًا، وتظهر استعدادًا للتعاون، وتسأل عن القاعدة الدقيقة." },
+                { "language": "tr", "text": "İyi: Sakin kalıyor, işbirliğine hazır olduğunu gösteriyor ve tam kuralı soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты остаешься спокойным, показываешь готовность к сотрудничеству и спрашиваешь о точном правиле." },
+                { "language": "ckb", "text": "باشە: ئارام دەمێنیتەوە، ئامادەیی بۆ هاوکاری پیشان دەدەیت و دەربارەی ڕێسای ورد دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Tu aram dimînî, amadebûna hevkariyê nîşan didî û li ser rêzika rast dipirsî." },
+                { "language": "pl", "text": "Dobrze: zachowujesz spokój, pokazujesz gotowość do współpracy i pytasz o dokładną zasadę." },
+                { "language": "ro", "text": "Bine: rămâi calm, arăți disponibilitate de cooperare și întrebi despre regula exactă." },
+                { "language": "sq", "text": "Mirë: qëndron i qetë, tregon gatishmëri për bashkëpunim dhe pyet për rregullin e saktë." }
+              ],
+              "explanationKey": "calm-rule-question"
+            },
+            {
+              "id": "defensive-response",
+              "text": "Das ist doch nur kurz. Andere stellen auch Sachen in den Flur.",
+              "translations": [
+                { "language": "en", "text": "It is only for a short time. Others also put things in the hallway." },
+                { "language": "fa", "text": "این که فقط کوتاه است. دیگران هم چیزهایی در راهرو می‌گذارند." },
+                { "language": "ar", "text": "هذا لفترة قصيرة فقط. الآخرون يضعون أشياء أيضًا في المدخل." },
+                { "language": "tr", "text": "Bu sadece kısa süreliğine. Başkaları da koridora eşya koyuyor." },
+                { "language": "ru", "text": "Это же только ненадолго. Другие тоже ставят вещи в коридор." },
+                { "language": "ckb", "text": "ئەمە تەنها بۆ ماوەیەکی کورتە. کەسانی دیکەش شت لە ڕاڕەو دادەنێن." },
+                { "language": "kmr", "text": "Ev tenê demeke kurt e. Yên din jî tiştan di korîdorê de datînin." },
+                { "language": "pl", "text": "To przecież tylko na krótko. Inni też stawiają rzeczy na korytarzu." },
+                { "language": "ro", "text": "Este doar pentru puțin timp. Și alții pun lucruri pe hol." },
+                { "language": "sq", "text": "Është vetëm për pak kohë. Edhe të tjerët vendosin gjëra në korridor." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das erklärt deine Sicht, klingt aber defensiv. Besser ist, erst die Regel zu klären und dann deine Situation zu erklären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This explains your view, but sounds defensive. It is better to clarify the rule first and then explain your situation." },
+                { "language": "fa", "text": "این دیدگاه تو را توضیح می‌دهد، اما دفاعی به نظر می‌رسد. بهتر است اول قانون را روشن کنی و بعد وضعیت خودت را توضیح بدهی." },
+                { "language": "ar", "text": "هذا يوضح وجهة نظرك، لكنه يبدو دفاعيًا. الأفضل أن توضح القاعدة أولًا ثم تشرح وضعك." },
+                { "language": "tr", "text": "Bu senin görüşünü açıklıyor, ama savunmacı duyuluyor. Önce kuralı netleştirmek, sonra durumunu açıklamak daha iyidir." },
+                { "language": "ru", "text": "Это объясняет твою позицию, но звучит защитно. Лучше сначала прояснить правило, а затем объяснить свою ситуацию." },
+                { "language": "ckb", "text": "ئەمە دیدگاکەت ڕوون دەکاتەوە، بەڵام وەک بەرگری دەنگ دەدات. باشترە سەرەتا ڕێساکە ڕوون بکەیتەوە و پاشان بارودۆخی خۆت باس بکەیت." },
+                { "language": "kmr", "text": "Ev dîtina te şirove dike, lê wek parastinê xuya dike. Çêtir e pêşî rêzikê zelal bikî û paşê rewşa xwe şirove bikî." },
+                { "language": "pl", "text": "To wyjaśnia twoją perspektywę, ale brzmi defensywnie. Lepiej najpierw wyjaśnić zasadę, a potem swoją sytuację." },
+                { "language": "ro", "text": "Aceasta îți explică punctul de vedere, dar sună defensiv. Este mai bine să clarifici mai întâi regula și apoi să îți explici situația." },
+                { "language": "sq", "text": "Kjo shpjegon këndvështrimin tënd, por tingëllon mbrojtëse. Është më mirë të sqarosh fillimisht rregullin dhe pastaj situatën tënde." }
+              ],
+              "explanationKey": "defensive-tone"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "explain-temporary-use",
+              "text": "Das verstehe ich. Ich stelle den Kinderwagen nur kurz dort ab, wenn ich mein Kind hochtrage. Dauerhaft soll er dort nicht stehen.",
+              "translations": [
+                { "language": "en", "text": "I understand that. I only put the stroller there briefly when I carry my child upstairs. It is not supposed to stand there permanently." },
+                { "language": "fa", "text": "این را می‌فهمم. کالسکه را فقط کوتاه آنجا می‌گذارم وقتی فرزندم را بالا می‌برم. قرار نیست دائم آنجا بماند." },
+                { "language": "ar", "text": "أفهم ذلك. أضع العربة هناك لفترة قصيرة فقط عندما أحمل طفلي إلى الطابق العلوي. لا يفترض أن تبقى هناك بشكل دائم." },
+                { "language": "tr", "text": "Bunu anlıyorum. Bebek arabasını sadece çocuğumu yukarı taşıdığımda kısa süreliğine oraya koyuyorum. Sürekli orada durması gerekmiyor." },
+                { "language": "ru", "text": "Я это понимаю. Я ставлю коляску туда только ненадолго, когда несу ребенка наверх. Постоянно она там стоять не должна." },
+                { "language": "ckb", "text": "ئەمە تێدەگەم. عەرەبانەکە تەنها بۆ ماوەیەکی کورت لەوێ دادەنێم کاتێک منداڵەکەم دەبەمە سەرەوە. نابێت بەردەوام لەوێ بمێنێتەوە." },
+                { "language": "kmr", "text": "Ez vê fêm dikim. Ez erebeyê tenê demeke kurt li wir datînim, dema ku zarokê xwe dibim jor. Divê ew bi domdarî li wir nemîne." },
+                { "language": "pl", "text": "Rozumiem to. Stawiam wózek tam tylko na krótko, kiedy niosę dziecko na górę. Nie ma tam stać na stałe." },
+                { "language": "ro", "text": "Înțeleg asta. Pun căruciorul acolo doar pentru scurt timp când îmi duc copilul sus. Nu ar trebui să stea acolo permanent." },
+                { "language": "sq", "text": "E kuptoj këtë. E vendos karrocën aty vetëm për pak kohë kur e çoj fëmijën lart. Nuk duhet të qëndrojë aty vazhdimisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du akzeptierst den Sicherheitsgrund und erklärst deine praktische Situation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You accept the safety reason and explain your practical situation." },
+                { "language": "fa", "text": "خوب است: دلیل ایمنی را می‌پذیری و وضعیت عملی خودت را توضیح می‌دهی." },
+                { "language": "ar", "text": "جيد: تقبل سبب السلامة وتشرح وضعك العملي." },
+                { "language": "tr", "text": "İyi: Güvenlik nedenini kabul ediyor ve pratik durumunu açıklıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты принимаешь причину безопасности и объясняешь свою практическую ситуацию." },
+                { "language": "ckb", "text": "باشە: هۆکاری سەلامەتییەکە دەوەرگریت و بارودۆخی کرداری خۆت ڕوون دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu sedema ewlehiyê qebûl dikî û rewşa xwe ya praktîk şirove dikî." },
+                { "language": "pl", "text": "Dobrze: akceptujesz powód bezpieczeństwa i wyjaśniasz swoją praktyczną sytuację." },
+                { "language": "ro", "text": "Bine: accepți motivul de siguranță și îți explici situația practică." },
+                { "language": "sq", "text": "Mirë: pranon arsyen e sigurisë dhe shpjegon situatën tënde praktike." }
+              ],
+              "explanationKey": "safety-plus-situation"
+            },
+            {
+              "id": "denies-rule-impact",
+              "text": "Der Flur ist doch breit genug. Ich sehe da kein Problem.",
+              "translations": [
+                { "language": "en", "text": "The hallway is wide enough. I do not see a problem there." },
+                { "language": "fa", "text": "راهرو که به اندازه کافی پهن است. من مشکلی در آن نمی‌بینم." },
+                { "language": "ar", "text": "المدخل واسع بما يكفي. لا أرى مشكلة في ذلك." },
+                { "language": "tr", "text": "Koridor yeterince geniş. Bunda bir sorun görmüyorum." },
+                { "language": "ru", "text": "Коридор ведь достаточно широкий. Я не вижу здесь проблемы." },
+                { "language": "ckb", "text": "ڕاڕەوەکە بە قەدری پێویست پانە. من لەوەدا کێشە نابینم." },
+                { "language": "kmr", "text": "Korîdor bes fireh e. Ez li wir pirsgirêk nabînim." },
+                { "language": "pl", "text": "Korytarz jest przecież wystarczająco szeroki. Nie widzę tu problemu." },
+                { "language": "ro", "text": "Holul este destul de lat. Nu văd nicio problemă." },
+                { "language": "sq", "text": "Korridori është mjaft i gjerë. Nuk shoh problem aty." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das kann den Konflikt verstärken, weil du den Sicherheitsgrund abwertest. Besser ist, deine Situation zu erklären und Lösung zu suchen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This can make the conflict worse because you dismiss the safety reason. It is better to explain your situation and look for a solution." },
+                { "language": "fa", "text": "این می‌تواند اختلاف را تشدید کند، چون دلیل ایمنی را کم‌اهمیت نشان می‌دهی. بهتر است وضعیت خودت را توضیح بدهی و دنبال راه‌حل باشی." },
+                { "language": "ar", "text": "قد يزيد هذا الخلاف لأنك تقلل من سبب السلامة. الأفضل أن تشرح وضعك وتبحث عن حل." },
+                { "language": "tr", "text": "Bu çatışmayı artırabilir, çünkü güvenlik nedenini küçümsüyorsun. Durumunu açıklamak ve çözüm aramak daha iyidir." },
+                { "language": "ru", "text": "Это может усилить конфликт, потому что ты обесцениваешь причину безопасности. Лучше объяснить ситуацию и искать решение." },
+                { "language": "ckb", "text": "ئەمە دەتوانێت ناکۆکییەکە توندتر بکات، چونکە هۆکاری سەلامەتی کەم دەکەیتەوە. باشترە بارودۆخی خۆت ڕوون بکەیتەوە و بەدوای چارەسەر بگەڕێیت." },
+                { "language": "kmr", "text": "Ev dikare nakokiyê girantir bike, ji ber ku tu sedema ewlehiyê biçûk dibînî. Çêtir e rewşa xwe şirove bikî û li çareseriyê bigerî." },
+                { "language": "pl", "text": "To może zaostrzyć konflikt, bo lekceważysz powód bezpieczeństwa. Lepiej wyjaśnić swoją sytuację i szukać rozwiązania." },
+                { "language": "ro", "text": "Aceasta poate agrava conflictul, pentru că minimalizezi motivul de siguranță. Este mai bine să îți explici situația și să cauți o soluție." },
+                { "language": "sq", "text": "Kjo mund ta përkeqësojë konfliktin, sepse e nënvlerëson arsyen e sigurisë. Është më mirë të shpjegosh situatën tënde dhe të kërkosh zgjidhje." }
+              ],
+              "explanationKey": "dismisses-safety-concern"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "confirm-compromise",
+              "text": "Einverstanden. Ich stelle den Kinderwagen ab morgen unten ab und melde mich bei der Hausverwaltung, falls es dort ebenfalls nicht passt.",
+              "translations": [
+                { "language": "en", "text": "Agreed. From tomorrow I will put the stroller downstairs and contact the property management office if it does not work there either." },
+                { "language": "fa", "text": "موافقم. از فردا کالسکه را پایین می‌گذارم و اگر آنجا هم مناسب نبود، با مدیریت ساختمان تماس می‌گیرم." },
+                { "language": "ar", "text": "متفقون. ابتداءً من الغد سأضع العربة في الأسفل، وسأتواصل مع إدارة العقار إذا لم يكن ذلك مناسبًا هناك أيضًا." },
+                { "language": "tr", "text": "Anlaştık. Yarından itibaren bebek arabasını aşağıya koyacağım ve orada da uygun olmazsa bina yönetimiyle iletişime geçeceğim." },
+                { "language": "ru", "text": "Договорились. С завтрашнего дня я буду ставить коляску внизу и обращусь в управляющую компанию, если там тоже не подойдет." },
+                { "language": "ckb", "text": "ڕێککەوتین. لە سبەینێوە عەرەبانەی منداڵەکە لە خوارەوە دادەنێم و ئەگەر لەوێش نەگونجا، پەیوەندی بە بەڕێوەبەرایەتی خانوو دەکەم." },
+                { "language": "kmr", "text": "Li hev hatin. Ji sibê ve ez erebeya zarokê li jêr datînim û ger li wir jî neguncaw be, ez têkilî bi rêveberiya xanî re dikim." },
+                { "language": "pl", "text": "Zgoda. Od jutra będę stawiać wózek na dole i zgłoszę się do administracji, jeśli tam też nie będzie pasować." },
+                { "language": "ro", "text": "De acord. De mâine pun căruciorul jos și contactez administrația imobilului dacă nici acolo nu este potrivit." },
+                { "language": "sq", "text": "Dakord. Nga nesër do ta vendos karrocën poshtë dhe do të kontaktoj administratën e ndërtesës nëse as aty nuk është e përshtatshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Du bestätigst konkrete Handlung, Zeitpunkt und einen sachlichen nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: You confirm a concrete action, time, and a factual next step." },
+                { "language": "fa", "text": "بسیار خوب: اقدام مشخص، زمان و قدم بعدی واقع‌گرایانه را تأیید می‌کنی." },
+                { "language": "ar", "text": "جيد جدًا: تؤكد إجراءً محددًا ووقتًا وخطوة تالية موضوعية." },
+                { "language": "tr", "text": "Çok iyi: Somut bir eylemi, zamanı ve nesnel bir sonraki adımı onaylıyorsun." },
+                { "language": "ru", "text": "Очень хорошо: ты подтверждаешь конкретное действие, время и предметный следующий шаг." },
+                { "language": "ckb", "text": "زۆر باش: کردارێکی دیاریکراو، کات و هەنگاوی دواتری بابەتی پشتڕاست دەکەیتەوە." },
+                { "language": "kmr", "text": "Pir baş: Tu kiryareke zelel, dem û gaveke din a rast piştrast dikî." },
+                { "language": "pl", "text": "Bardzo dobrze: potwierdzasz konkretne działanie, czas i rzeczowy następny krok." },
+                { "language": "ro", "text": "Foarte bine: confirmi o acțiune concretă, momentul și un pas următor obiectiv." },
+                { "language": "sq", "text": "Shumë mirë: konfirmon një veprim konkret, kohën dhe një hap të ardhshëm të qartë." }
+              ],
+              "explanationKey": "action-time-fallback"
+            },
+            {
+              "id": "agreement-without-specifics",
+              "text": "Okay, ich kümmere mich darum.",
+              "translations": [
+                { "language": "en", "text": "Okay, I will take care of it." },
+                { "language": "fa", "text": "باشه، رسیدگی می‌کنم." },
+                { "language": "ar", "text": "حسنًا، سأهتم بالأمر." },
+                { "language": "tr", "text": "Tamam, bununla ilgileneceğim." },
+                { "language": "ru", "text": "Хорошо, я этим займусь." },
+                { "language": "ckb", "text": "باشە، ئاگاداری دەکەم." },
+                { "language": "kmr", "text": "Baş e, ez ê pê re mijûl bibim." },
+                { "language": "pl", "text": "Dobrze, zajmę się tym." },
+                { "language": "ro", "text": "Bine, mă ocup de asta." },
+                { "language": "sq", "text": "Në rregull, do të merrem me këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Es bleibt unklar, wohin der Kinderwagen kommt und was passiert, falls die Lösung nicht funktioniert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: it remains unclear where the stroller will go and what happens if the solution does not work." },
+                { "language": "fa", "text": "خیلی کلی است: روشن نیست کالسکه کجا گذاشته می‌شود و اگر راه‌حل کار نکرد چه می‌شود." },
+                { "language": "ar", "text": "عام جدًا: يبقى غير واضح أين ستوضع العربة وماذا يحدث إذا لم ينجح الحل." },
+                { "language": "tr", "text": "Çok genel: Bebek arabasının nereye konacağı ve çözüm işe yaramazsa ne olacağı belirsiz kalıyor." },
+                { "language": "ru", "text": "Слишком общо: остается неясно, куда будет поставлена коляска и что будет, если решение не сработает." },
+                { "language": "ckb", "text": "زۆر گشتییە: ڕوون نییە عەرەبانەکە لە کوێ دادەنرێت و ئەگەر چارەسەرەکە کار نەکات چی دەبێت." },
+                { "language": "kmr", "text": "Pir giştî ye: ne diyar e erebe li ku tê danîn û ger çareserî nexebite çi dibe." },
+                { "language": "pl", "text": "Zbyt ogólnie: nie wiadomo, gdzie trafi wózek i co się stanie, jeśli rozwiązanie nie zadziała." },
+                { "language": "ro", "text": "Prea general: rămâne neclar unde va sta căruciorul și ce se întâmplă dacă soluția nu funcționează." },
+                { "language": "sq", "text": "Shumë e përgjithshme: mbetet e paqartë ku do të vendoset karroca dhe çfarë ndodh nëse zgjidhja nuk funksionon." }
+              ],
+              "explanationKey": "missing-specific-agreement"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "politeness-note",
+          "text": "Bei Hausordnungskonflikten hilft es, die Regel zuerst zu klären, die eigene Situation ruhig zu erklären und eine überprüfbare Lösung zu vereinbaren.",
+          "translations": [
+            { "language": "en", "text": "In house-rules conflicts, it helps to clarify the rule first, explain your own situation calmly, and agree on a checkable solution." },
+            { "language": "fa", "text": "در اختلاف‌های مربوط به قوانین ساختمان، کمک می‌کند اول قانون را روشن کنی، وضعیت خودت را آرام توضیح بدهی و راه‌حلی قابل بررسی توافق کنی." },
+            { "language": "ar", "text": "في خلافات نظام البيت، من المفيد توضيح القاعدة أولًا، وشرح وضعك بهدوء، والاتفاق على حل يمكن التحقق منه." },
+            { "language": "tr", "text": "Apartman kurallarıyla ilgili anlaşmazlıklarda önce kuralı netleştirmek, kendi durumunu sakin açıklamak ve kontrol edilebilir bir çözüm üzerinde anlaşmak yardımcı olur." },
+            { "language": "ru", "text": "В конфликтах из-за правил дома помогает сначала прояснить правило, спокойно объяснить свою ситуацию и договориться о проверяемом решении." },
+            { "language": "ckb", "text": "لە ناکۆکییەکانی ڕێساکانی خانوودا یارمەتیدەرە سەرەتا ڕێساکە ڕوون بکەیتەوە، بارودۆخی خۆت بە ئارامی ڕوون بکەیتەوە و لەسەر چارەسەرێکی پشکنراو ڕێک بکەویت." },
+            { "language": "kmr", "text": "Di nakokiyên rêzikên xanî de alîkar e ku pêşî rêzikê zelal bikî, rewşa xwe bi aramî şirove bikî û li ser çareseriyeke kontrolkirbar li hev werin." },
+            { "language": "pl", "text": "Przy konfliktach dotyczących regulaminu domu pomaga najpierw wyjaśnić zasadę, spokojnie opisać swoją sytuację i uzgodnić rozwiązanie możliwe do sprawdzenia." },
+            { "language": "ro", "text": "În conflictele despre regulile imobilului ajută să clarifici mai întâi regula, să îți explici calm situația și să conveniți asupra unei soluții verificabile." },
+            { "language": "sq", "text": "Në konfliktet për rregullat e ndërtesës ndihmon të sqarosh fillimisht rregullin, të shpjegosh qetë situatën tënde dhe të bini dakord për një zgjidhje të kontrollueshme." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

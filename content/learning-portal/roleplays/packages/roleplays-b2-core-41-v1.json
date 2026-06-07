@@ -1,0 +1,726 @@
+{
+  "packageId": "roleplays-b2-core-41-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 41 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 41",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-beschwerde-in-der-kita-sachlich-formulieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Beschwerde in der Kita sachlich formulieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Make a factual complaint at daycare" },
+        { "language": "fa", "text": "مطرح کردن شکایت واقع‌بینانه در مهدکودک" },
+        { "language": "ar", "text": "صياغة شكوى موضوعية في الروضة" },
+        { "language": "tr", "text": "Kreşte şikayeti nesnel biçimde dile getirmek" },
+        { "language": "ru", "text": "Сформулировать жалобу в детском саду по существу" },
+        { "language": "ckb", "text": "داڕشتنی سکاڵایەکی بابەتی لە باخچەی منداڵان" },
+        { "language": "kmr", "text": "Li baxçeyê zarokan gilîyek bi awayekî objektîf gotin" },
+        { "language": "pl", "text": "Rzeczowo sformułować skargę w przedszkolu" },
+        { "language": "ro", "text": "Formularea obiectivă a unei reclamații la grădiniță" },
+        { "language": "sq", "text": "Të formulosh një ankesë objektive në kopsht" }
+      ],
+      "description": "Du sprichst mit der Kita-Leitung über ein wiederholtes Problem bei Abholung und Kommunikation. Du beschreibst konkrete Vorfälle, vermeidest Vorwürfe, erklärst die Auswirkung auf dein Kind und bittest um einen klaren Ablauf für die Zukunft.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with the daycare manager about a repeated problem with pickup and communication. You describe concrete incidents, avoid blame, explain the effect on your child, and ask for a clear process for the future." },
+        { "language": "fa", "text": "با مسئول مهدکودک درباره مشکلی تکرارشونده در زمان تحویل گرفتن کودک و ارتباط‌رسانی صحبت می‌کنی. موارد مشخص را توضیح می‌دهی، از سرزنش پرهیز می‌کنی، اثر آن بر کودک را می‌گویی و برای آینده روندی روشن می‌خواهی." },
+        { "language": "ar", "text": "تتحدث مع إدارة الروضة عن مشكلة متكررة عند الاستلام والتواصل. تصف حوادث محددة، وتتجنب اللوم، وتشرح الأثر على طفلك، وتطلب إجراءً واضحاً للمستقبل." },
+        { "language": "tr", "text": "Kreş yönetimiyle teslim alma ve iletişimde tekrarlanan bir sorun hakkında konuşuyorsun. Somut olayları anlatıyor, suçlamadan kaçınıyor, bunun çocuğun üzerindeki etkisini açıklıyor ve gelecek için net bir süreç istiyorsun." },
+        { "language": "ru", "text": "Вы разговариваете с руководством детского сада о повторяющейся проблеме при забирании ребенка и коммуникации. Вы описываете конкретные случаи, избегаете обвинений, объясняете влияние на ребенка и просите ясный порядок на будущее." },
+        { "language": "ckb", "text": "لەگەڵ سەرپەرشتیاری باخچەی منداڵان دەربارەی کێشەیەکی دووبارەبووەوە لە کاتی وەرگرتنی منداڵ و پەیوەندیدا قسە دەکەیت. ڕووداوە دیاریکراوەکان ڕوون دەکەیتەوە، لە تاوانبارکردن دوور دەکەویتەوە، کاریگەرییەکە لەسەر منداڵەکەت دەڵێیت و بۆ داهاتوو ڕێکاری ڕوون دەخوازیت." },
+        { "language": "kmr", "text": "Tu bi rêveberiya baxçeyê zarokan re li ser pirsgirêkeke dubare di dema wergirtina zarok û ragihandinê de diaxivî. Tu bûyerên diyar rave dikî, ji tawanbar kirinê dûr dimînî, bandora wê li ser zarokê xwe dibêjî û ji bo pêşerojê rêbazeke zelal dixwazî." },
+        { "language": "pl", "text": "Rozmawiasz z kierownictwem przedszkola o powtarzającym się problemie przy odbiorze i komunikacji. Opisujesz konkretne zdarzenia, unikasz oskarżeń, wyjaśniasz wpływ na dziecko i prosisz o jasną procedurę na przyszłość." },
+        { "language": "ro", "text": "Vorbești cu conducerea grădiniței despre o problemă repetată la preluare și comunicare. Descrii incidente concrete, eviți acuzațiile, explici efectul asupra copilului tău și ceri o procedură clară pentru viitor." },
+        { "language": "sq", "text": "Flet me drejtuesen e kopshtit për një problem të përsëritur gjatë marrjes së fëmijës dhe komunikimit. Përshkruan raste konkrete, shmang fajësimin, shpjegon ndikimin te fëmija yt dhe kërkon një procedurë të qartë për të ardhmen." }
+      ],
+      "learnerGoal": "Formuliere eine sachliche Kita-Beschwerde: Vorfälle konkret nennen, Wirkung erklären, nicht beschuldigen, einen Ablauf vorschlagen und eine überprüfbare Vereinbarung festhalten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Formulate a factual daycare complaint: name incidents concretely, explain the effect, do not accuse, suggest a process, and record a verifiable agreement." },
+        { "language": "fa", "text": "یک شکایت واقع‌بینانه در مهدکودک مطرح کن: موارد را مشخص بگو، اثر را توضیح بده، اتهام نزن، روندی پیشنهاد کن و توافق قابل پیگیری را ثبت کن." },
+        { "language": "ar", "text": "صغ شكوى موضوعية في الروضة: اذكر الحوادث بدقة، واشرح الأثر، ولا تتهم، واقترح إجراءً، وثبت اتفاقاً قابلاً للمراجعة." },
+        { "language": "tr", "text": "Kreşte nesnel bir şikayet formüle et: olayları somut belirt, etkiyi açıkla, suçlama, bir süreç öner ve kontrol edilebilir bir anlaşmayı kaydet." },
+        { "language": "ru", "text": "Сформулируйте жалобу в детском саду по существу: конкретно назовите случаи, объясните эффект, не обвиняйте, предложите порядок и зафиксируйте проверяемую договоренность." },
+        { "language": "ckb", "text": "سکاڵایەکی بابەتی لە باخچەی منداڵان دابڕێژە: ڕووداوەکان بە دیاری ناو ببە، کاریگەری ڕوون بکەرەوە، تاوانبار مەکە، ڕێکارێک پێشنیار بکە و ڕێککەوتنێکی قابل پێداچوونەوە تۆمار بکە." },
+        { "language": "kmr", "text": "Gilîyek objektîf li baxçeyê zarokan formule bike: bûyeran bi diyarî bibêje, bandorê rave bike, tawanbar neke, rêbazekê pêşniyar bike û lihevkirineke tê kontrolkirin tomar bike." },
+        { "language": "pl", "text": "Sformułuj rzeczową skargę w przedszkolu: konkretnie nazwij zdarzenia, wyjaśnij wpływ, nie oskarżaj, zaproponuj procedurę i zapisz możliwe do sprawdzenia ustalenie." },
+        { "language": "ro", "text": "Formulează o reclamație obiectivă la grădiniță: numește concret incidentele, explică efectul, nu acuza, propune o procedură și notează un acord verificabil." },
+        { "language": "sq", "text": "Formulo një ankesë objektive në kopsht: përmend konkretisht rastet, shpjego ndikimin, mos akuzo, propozo një procedurë dhe shëno një marrëveshje të verifikueshme." }
+      ],
+      "cefrLevel": "B2",
+      "category": "school-kindergarten",
+      "topics": [
+        "education-and-training",
+        "customer-service"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "complaint-handling"
+      ],
+      "taskType": "complain-politely",
+      "interactionMode": "school-kindergarten",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Kita-Leitung",
+          "translations": [
+            { "language": "en", "text": "Daycare manager" },
+            { "language": "fa", "text": "مسئول مهدکودک" },
+            { "language": "ar", "text": "مديرة الروضة" },
+            { "language": "tr", "text": "Kreş yöneticisi" },
+            { "language": "ru", "text": "Руководительница детского сада" },
+            { "language": "ckb", "text": "سەرپەرشتیاری باخچەی منداڵان" },
+            { "language": "kmr", "text": "Rêvebera baxçeyê zarokan" },
+            { "language": "pl", "text": "Kierowniczka przedszkola" },
+            { "language": "ro", "text": "Directoarea grădiniței" },
+            { "language": "sq", "text": "Drejtuesja e kopshtit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Elternteil",
+          "translations": [
+            { "language": "en", "text": "Parent" },
+            { "language": "fa", "text": "والد" },
+            { "language": "ar", "text": "ولي الأمر" },
+            { "language": "tr", "text": "Veli" },
+            { "language": "ru", "text": "Родитель" },
+            { "language": "ckb", "text": "دایک یان باوک" },
+            { "language": "kmr", "text": "Dêûbav" },
+            { "language": "pl", "text": "Rodzic" },
+            { "language": "ro", "text": "Părinte" },
+            { "language": "sq", "text": "Prindi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Guten Morgen. Sie wollten kurz mit mir sprechen. Worum geht es?",
+          "translations": [
+            { "language": "en", "text": "Good morning. You wanted to speak with me briefly. What is it about?" },
+            { "language": "fa", "text": "صبح بخیر. می‌خواستید کوتاه با من صحبت کنید. موضوع چیست؟" },
+            { "language": "ar", "text": "صباح الخير. أردت أن تتحدث معي باختصار. ما الموضوع؟" },
+            { "language": "tr", "text": "Günaydın. Benimle kısaca konuşmak istemiştiniz. Konu nedir?" },
+            { "language": "ru", "text": "Доброе утро. Вы хотели коротко поговорить со мной. О чем речь?" },
+            { "language": "ckb", "text": "بەیانی باش. دەتانویست بە کورتی لەگەڵم قسە بکەن. بابەتەکە چییە؟" },
+            { "language": "kmr", "text": "Beyanî baş. We dixwest bi kurtî bi min re biaxivin. Mijar çi ye?" },
+            { "language": "pl", "text": "Dzień dobry. Chciał pan krótko ze mną porozmawiać. O co chodzi?" },
+            { "language": "ro", "text": "Bună dimineața. Ați dorit să vorbiți scurt cu mine. Despre ce este vorba?" },
+            { "language": "sq", "text": "Mirëmëngjes. Dëshironit të flisnit shkurt me mua. Për çfarë bëhet fjalë?" }
+          ],
+          "function": "open-complaint-conversation",
+          "toneNote": "formal and open",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke, dass Sie sich Zeit nehmen. Ich möchte ein wiederholtes Problem bei der Abholung ansprechen. Mir geht es nicht um Schuldzuweisung, sondern um einen verlässlichen Ablauf.",
+          "translations": [
+            { "language": "en", "text": "Thank you for taking the time. I would like to address a repeated problem at pickup. I am not interested in blaming anyone, but in having a reliable process." },
+            { "language": "fa", "text": "ممنون که وقت می‌گذارید. می‌خواهم یک مشکل تکرارشونده هنگام تحویل گرفتن کودک را مطرح کنم. هدفم مقصر دانستن کسی نیست، بلکه داشتن روندی قابل اعتماد است." },
+            { "language": "ar", "text": "شكراً على وقتك. أود أن أطرح مشكلة متكررة عند الاستلام. لا يهمني إلقاء اللوم، بل وجود إجراء موثوق." },
+            { "language": "tr", "text": "Zaman ayırdığınız için teşekkür ederim. Çocuğu teslim alırken tekrarlanan bir sorunu dile getirmek istiyorum. Amacım suçlamak değil, güvenilir bir süreç olması." },
+            { "language": "ru", "text": "Спасибо, что нашли время. Я хотел бы поднять повторяющуюся проблему при забирании ребенка. Речь не об обвинениях, а о надежном порядке." },
+            { "language": "ckb", "text": "سوپاس کە کات دەخەن. دەمەوێت کێشەیەکی دووبارەبووەوە لە کاتی وەرگرتنی منداڵ باس بکەم. مەبەستم تاوانبارکردن نییە، بەڵکو ڕێکارێکی پشتپێبەستووە." },
+            { "language": "kmr", "text": "Spas ku hûn dem didin. Ez dixwazim pirsgirêkeke dubare di dema wergirtina zarok de bibêjim. Armanca min tawanbar kirin nîne, lê rêbazeke pêbawer e." },
+            { "language": "pl", "text": "Dziękuję, że znajduje pani czas. Chciałbym poruszyć powtarzający się problem przy odbiorze. Nie chodzi mi o przypisywanie winy, lecz o niezawodną procedurę." },
+            { "language": "ro", "text": "Vă mulțumesc că vă faceți timp. Aș dori să discut o problemă repetată la preluare. Nu este vorba despre atribuirea vinei, ci despre o procedură de încredere." },
+            { "language": "sq", "text": "Faleminderit që po gjeni kohë. Dua të flas për një problem të përsëritur gjatë marrjes së fëmijës. Nuk më intereson të fajësoj dikë, por të kemi një procedurë të besueshme." }
+          ],
+          "function": "open-factual-complaint",
+          "toneNote": "calm and non-accusatory",
+          "expectedLearnerAction": "Eröffne die Beschwerde sachlich und trenne Anliegen von Schuldzuweisung."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "teacher",
+          "baseText": "Danke für die Einordnung. Können Sie mir konkret sagen, was passiert ist?",
+          "translations": [
+            { "language": "en", "text": "Thank you for framing it that way. Can you tell me concretely what happened?" },
+            { "language": "fa", "text": "ممنون که موضوع را این‌طور توضیح دادید. می‌توانید مشخص بگویید چه اتفاقی افتاده است؟" },
+            { "language": "ar", "text": "شكراً على هذا التوضيح. هل يمكنك أن تقول بشكل محدد ماذا حدث؟" },
+            { "language": "tr", "text": "Bunu böyle çerçevelediğiniz için teşekkür ederim. Somut olarak ne olduğunu söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Спасибо за такое уточнение. Можете конкретно сказать, что произошло?" },
+            { "language": "ckb", "text": "سوپاس بۆ ئەم چوارچێوەدانە. دەتوانن بە دیاری بڵێن چی ڕوویداوە؟" },
+            { "language": "kmr", "text": "Spas ji bo vê çarçoveyê. Hûn dikarin bi diyarî bibêjin çi qewimî?" },
+            { "language": "pl", "text": "Dziękuję za takie ujęcie sprawy. Czy może pan konkretnie powiedzieć, co się wydarzyło?" },
+            { "language": "ro", "text": "Vă mulțumesc pentru această încadrare. Puteți spune concret ce s-a întâmplat?" },
+            { "language": "sq", "text": "Faleminderit për këtë sqarim. A mund të thoni konkretisht çfarë ka ndodhur?" }
+          ],
+          "function": "ask-for-facts",
+          "toneNote": "clarifying",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "In den letzten zwei Wochen wurde Amir dreimal mit nasser Kleidung abgeholt, obwohl Wechselkleidung im Fach lag. Wir haben es jeweils erst zu Hause bemerkt, weil uns beim Abholen niemand informiert hat.",
+          "translations": [
+            { "language": "en", "text": "In the last two weeks, Amir was picked up three times in wet clothes, although spare clothes were in his cubby. Each time we only noticed it at home because no one informed us at pickup." },
+            { "language": "fa", "text": "در دو هفته گذشته امیر سه بار با لباس خیس تحویل گرفته شد، در حالی که لباس جایگزین در قفسه‌اش بود. هر بار فقط در خانه متوجه شدیم، چون هنگام تحویل گرفتن کسی به ما اطلاع نداد." },
+            { "language": "ar", "text": "في الأسبوعين الماضيين تم استلام أمير ثلاث مرات بملابس مبللة، رغم أن ملابس بديلة كانت في خانته. في كل مرة لاحظنا ذلك فقط في البيت لأن أحداً لم يخبرنا عند الاستلام." },
+            { "language": "tr", "text": "Son iki haftada Amir üç kez ıslak kıyafetle teslim alındı, oysa yedek kıyafet dolabında vardı. Her seferinde bunu ancak evde fark ettik, çünkü teslim alırken kimse bize bilgi vermedi." },
+            { "language": "ru", "text": "За последние две недели Амира трижды забирали в мокрой одежде, хотя сменная одежда лежала в его ячейке. Каждый раз мы замечали это только дома, потому что при забирании нас никто не информировал." },
+            { "language": "ckb", "text": "لە دوو هەفتەی ڕابردوودا ئەمیر سێ جار بە جل و بەرگی تەڕەوە وەرگیرا، لە کاتێکدا جل و بەرگی گۆڕین لە خانەکەیدا هەبوو. هەر جار تەنها لە ماڵەوە تێبینیمان کرد، چونکە لە کاتی وەرگرتندا کەس ئاگاداری نەکردینەوە." },
+            { "language": "kmr", "text": "Di du hefteyên dawî de Amir sê caran bi cilên şil hat wergirtin, her çend cilên guhertinê di cihê wî de hebûn. Her car em tenê li malê fêm kirin, ji ber ku di dema wergirtinê de kes me agahdar nekir." },
+            { "language": "pl", "text": "W ostatnich dwóch tygodniach Amir trzy razy został odebrany w mokrym ubraniu, chociaż ubranie na zmianę było w jego przegródce. Za każdym razem zauważyliśmy to dopiero w domu, bo przy odbiorze nikt nas nie poinformował." },
+            { "language": "ro", "text": "În ultimele două săptămâni, Amir a fost preluat de trei ori cu haine ude, deși haine de schimb erau în dulăpiorul lui. De fiecare dată am observat abia acasă, pentru că la preluare nimeni nu ne-a informat." },
+            { "language": "sq", "text": "Në dy javët e fundit, Amiri u mor tri herë me rroba të lagura, megjithëse rrobat rezervë ishin në raftin e tij. Çdo herë e vumë re vetëm në shtëpi, sepse gjatë marrjes askush nuk na informoi." }
+          ],
+          "function": "state-concrete-incidents",
+          "toneNote": "specific and factual",
+          "expectedLearnerAction": "Nenne Zeitraum, Häufigkeit, konkrete Situation und Informationslücke."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Das sollte so nicht passieren. Wissen Sie, ob es jedes Mal dieselbe Situation war, zum Beispiel nach dem Spielen draußen?",
+          "translations": [
+            { "language": "en", "text": "That should not happen like that. Do you know whether it was the same situation each time, for example after playing outside?" },
+            { "language": "fa", "text": "این نباید به این شکل اتفاق بیفتد. می‌دانید آیا هر بار همان موقعیت بوده، مثلاً بعد از بازی بیرون؟" },
+            { "language": "ar", "text": "لا ينبغي أن يحدث ذلك بهذه الطريقة. هل تعرف هل كان الأمر في كل مرة نفس الموقف، مثلاً بعد اللعب في الخارج؟" },
+            { "language": "tr", "text": "Bu böyle olmamalıydı. Her seferinde aynı durum olup olmadığını biliyor musunuz, örneğin dışarıda oynadıktan sonra?" },
+            { "language": "ru", "text": "Так не должно происходить. Вы знаете, была ли это каждый раз одна и та же ситуация, например после игры на улице?" },
+            { "language": "ckb", "text": "ئەمە نابێت بەو شێوەیە ڕووبدات. دەزانن ئایا هەر جار هەمان دۆخ بووە، بۆ نموونە دوای یاریکردن لە دەرەوە؟" },
+            { "language": "kmr", "text": "Ev divê wisa neqewime. Hûn dizanin ka her car heman rewş bû, mînak piştî lîstina li derve?" },
+            { "language": "pl", "text": "To nie powinno się tak zdarzać. Czy wie pan, czy za każdym razem była to ta sama sytuacja, na przykład po zabawie na dworze?" },
+            { "language": "ro", "text": "Asta nu ar trebui să se întâmple așa. Știți dacă de fiecare dată a fost aceeași situație, de exemplu după joaca afară?" },
+            { "language": "sq", "text": "Kjo nuk duhet të ndodhë kështu. A e dini nëse çdo herë ishte e njëjta situatë, për shembull pas lojës jashtë?" }
+          ],
+          "function": "acknowledge-and-ask-pattern",
+          "toneNote": "problem-solving",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Zweimal war es nach dem Garten, einmal nach dem Mittagsschlaf. Für uns ist vor allem wichtig, dass Amir sich nicht unwohl fühlt und dass wir bei der Abholung kurz informiert werden.",
+          "translations": [
+            { "language": "en", "text": "Twice it was after the garden, once after the midday nap. For us, the main point is that Amir does not feel uncomfortable and that we are briefly informed at pickup." },
+            { "language": "fa", "text": "دو بار بعد از باغ/حیاط بود، یک بار بعد از خواب ظهر. برای ما مهم‌تر از همه این است که امیر احساس ناراحتی نکند و هنگام تحویل گرفتن کوتاه به ما اطلاع داده شود." },
+            { "language": "ar", "text": "مرتان كان ذلك بعد الحديقة، ومرة بعد قيلولة الظهر. المهم لنا قبل كل شيء ألا يشعر أمير بعدم الراحة وأن يتم إبلاغنا باختصار عند الاستلام." },
+            { "language": "tr", "text": "İki kez bahçeden sonra, bir kez öğle uykusundan sonraydı. Bizim için en önemlisi Amir'in rahatsız hissetmemesi ve teslim alırken bize kısa bilgi verilmesi." },
+            { "language": "ru", "text": "Дважды это было после сада, один раз после дневного сна. Для нас прежде всего важно, чтобы Амир не чувствовал дискомфорта и чтобы при забирании нас кратко информировали." },
+            { "language": "ckb", "text": "دوو جار دوای باخچە بوو، جارێک دوای خەوی نیوەڕۆ. بۆ ئێمە گرنگترین شت ئەوەیە ئەمیر هەست بە ناخۆشی نەکات و لە کاتی وەرگرتندا بە کورتی ئاگادار بکرێینەوە." },
+            { "language": "kmr", "text": "Du car piştî baxçe bû, carek piştî xewa nîvro. Ji bo me ya herî girîng ev e ku Amir xwe nebaş hîs neke û di dema wergirtinê de em bi kurtî bên agahdarkirin." },
+            { "language": "pl", "text": "Dwa razy było to po ogrodzie, raz po drzemce poobiedniej. Dla nas najważniejsze jest, żeby Amir nie czuł się niekomfortowo i żebyśmy przy odbiorze byli krótko informowani." },
+            { "language": "ro", "text": "De două ori a fost după grădină, o dată după somnul de prânz. Pentru noi este important mai ales ca Amir să nu se simtă inconfortabil și să fim informați pe scurt la preluare." },
+            { "language": "sq", "text": "Dy herë ishte pas kopshtit, një herë pas gjumit të drekës. Për ne më e rëndësishmja është që Amiri të mos ndihet në siklet dhe që të informohemi shkurt gjatë marrjes." }
+          ],
+          "function": "explain-impact-and-need",
+          "toneNote": "child-centered",
+          "expectedLearnerAction": "Erkläre Muster, Wirkung und Informationsbedarf ohne Vorwurf."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "teacher",
+          "baseText": "Verstanden. Ich spreche mit dem Team. Was wäre aus Ihrer Sicht ein praktikabler Ablauf?",
+          "translations": [
+            { "language": "en", "text": "Understood. I will speak with the team. From your point of view, what would be a practical process?" },
+            { "language": "fa", "text": "متوجه شدم. با تیم صحبت می‌کنم. از نظر شما چه روندی عملی خواهد بود؟" },
+            { "language": "ar", "text": "فهمت. سأتحدث مع الفريق. من وجهة نظرك، ما الإجراء العملي؟" },
+            { "language": "tr", "text": "Anladım. Ekiple konuşacağım. Sizin açınızdan uygulanabilir bir süreç ne olurdu?" },
+            { "language": "ru", "text": "Поняла. Я поговорю с командой. С вашей точки зрения, какой порядок был бы практичным?" },
+            { "language": "ckb", "text": "تێگەیشتم. لەگەڵ تیمەکە قسە دەکەم. لە دیدی ئێوەوە کام ڕێکار جێبەجێکراو دەبێت؟" },
+            { "language": "kmr", "text": "Fêm kirim. Ez ê bi tîmê re biaxivim. Ji dîtina we, kîjan rêbaz pratîkî be?" },
+            { "language": "pl", "text": "Rozumiem. Porozmawiam z zespołem. Jaka procedura byłaby z pana punktu widzenia praktyczna?" },
+            { "language": "ro", "text": "Am înțeles. Voi vorbi cu echipa. Din punctul dumneavoastră de vedere, ce procedură ar fi practică?" },
+            { "language": "sq", "text": "E kuptova. Do të flas me ekipin. Nga këndvështrimi juaj, cila procedurë do të ishte praktike?" }
+          ],
+          "function": "ask-for-process",
+          "toneNote": "collaborative",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Mein Vorschlag wäre: Wenn Kleidung gewechselt werden müsste oder Amir sich unwohl fühlt, gibt es eine kurze Notiz im Abholbuch oder eine mündliche Info. Dann wissen wir, worauf wir zu Hause achten sollen.",
+          "translations": [
+            { "language": "en", "text": "My suggestion would be: if clothes need to be changed or Amir feels uncomfortable, there should be a short note in the pickup book or verbal information. Then we know what to watch for at home." },
+            { "language": "fa", "text": "پیشنهادم این است: اگر لازم بود لباس عوض شود یا امیر احساس ناراحتی داشت، یک یادداشت کوتاه در دفتر تحویل یا اطلاع شفاهی داده شود. در این صورت می‌دانیم در خانه باید به چه چیزی توجه کنیم." },
+            { "language": "ar", "text": "اقتراحي هو: إذا كان يجب تغيير الملابس أو شعر أمير بعدم الراحة، تكون هناك ملاحظة قصيرة في دفتر الاستلام أو إبلاغ شفهي. عندها نعرف ما الذي ننتبه إليه في البيت." },
+            { "language": "tr", "text": "Önerim şu olurdu: Kıyafet değiştirilmesi gerekiyorsa ya da Amir rahatsız hissediyorsa, teslim alma defterinde kısa bir not veya sözlü bilgi olsun. Böylece evde nelere dikkat etmemiz gerektiğini biliriz." },
+            { "language": "ru", "text": "Мое предложение такое: если нужно было переодеть одежду или Амир чувствует дискомфорт, пусть будет короткая запись в книге выдачи или устная информация. Тогда мы будем знать, на что обратить внимание дома." },
+            { "language": "ckb", "text": "پێشنیاری من ئەمەیە: ئەگەر پێویست بوو جل و بەرگ بگۆڕدرێت یان ئەمیر هەست بە ناخۆشی کرد، تێبینییەکی کورت لە دفتەری وەرگرتن یان زانیاریی زارەکی هەبێت. ئەوکات دەزانین لە ماڵەوە سەرنج بدەینە چی." },
+            { "language": "kmr", "text": "Pêşniyara min ev e: heke divê cil bên guhertin an Amir xwe nebaş hîs bike, noteke kurt di deftera wergirtinê de an agahdariya devkî hebe. Wê demê em dizanin li malê bala xwe bidin çi." },
+            { "language": "pl", "text": "Moja propozycja byłaby taka: jeśli trzeba zmienić ubranie albo Amir czuje się niekomfortowo, pojawia się krótka notatka w zeszycie odbioru albo informacja ustna. Wtedy wiemy, na co zwrócić uwagę w domu." },
+            { "language": "ro", "text": "Propunerea mea ar fi: dacă trebuie schimbate hainele sau Amir se simte inconfortabil, să existe o notă scurtă în caietul de preluare sau o informare verbală. Atunci știm la ce să fim atenți acasă." },
+            { "language": "sq", "text": "Propozimi im do të ishte: nëse duhet ndërruar rrobat ose Amiri ndihet në siklet, të ketë një shënim të shkurtër në librin e marrjes ose një informacion me gojë. Atëherë dimë çfarë të vërejmë në shtëpi." }
+          ],
+          "function": "propose-concrete-process",
+          "toneNote": "practical and cooperative",
+          "expectedLearnerAction": "Schlage einen konkreten, alltagstauglichen Ablauf vor."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Das ist nachvollziehbar. Ich kläre heute im Team, wer die Abholinformation übernimmt, und wir testen den Ablauf ab morgen für zwei Wochen.",
+          "translations": [
+            { "language": "en", "text": "That is understandable. I will clarify with the team today who will handle pickup information, and we will test the process from tomorrow for two weeks." },
+            { "language": "fa", "text": "قابل درک است. امروز با تیم روشن می‌کنم چه کسی مسئول اطلاع‌رسانی هنگام تحویل گرفتن باشد، و از فردا این روند را دو هفته آزمایش می‌کنیم." },
+            { "language": "ar", "text": "هذا مفهوم. سأوضح اليوم مع الفريق من يتولى معلومات الاستلام، وسنختبر الإجراء ابتداءً من غد لمدة أسبوعين." },
+            { "language": "tr", "text": "Bu anlaşılır. Bugün ekiple teslim alma bilgisini kimin üstleneceğini netleştireceğim ve süreci yarından itibaren iki hafta deneyeceğiz." },
+            { "language": "ru", "text": "Это понятно. Сегодня я уточню в команде, кто отвечает за информацию при забирании, и мы протестируем порядок с завтрашнего дня в течение двух недель." },
+            { "language": "ckb", "text": "ئەمە تێگەیشتنە. ئەمڕۆ لە تیمەکەدا ڕوون دەکەمەوە کێ زانیاریی وەرگرتن دەگرێتە ئەستۆ، و لە سبەیەوە دوو هەفتە ئەم ڕێکارە تاقی دەکەینەوە." },
+            { "language": "kmr", "text": "Ev tê fêm kirin. Ez ê îro di tîmê de zelal bikim ka kî agahdariya wergirtinê digire ser xwe, û em ê ji sibê ve du hefteyan rêbazê biceribînin." },
+            { "language": "pl", "text": "To zrozumiałe. Wyjaśnię dziś w zespole, kto przejmuje informację przy odbiorze, i od jutra przez dwa tygodnie przetestujemy tę procedurę." },
+            { "language": "ro", "text": "Este de înțeles. Clarific astăzi în echipă cine preia informația la preluare și testăm procedura de mâine timp de două săptămâni." },
+            { "language": "sq", "text": "Kjo është e kuptueshme. Sot do ta sqaroj në ekip kush e merr përsipër informacionin gjatë marrjes dhe do ta testojmë procedurën nga nesër për dy javë." }
+          ],
+          "function": "commit-to-process",
+          "toneNote": "clear commitment",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Danke. Dann fasse ich zusammen: Sie klären heute die Zuständigkeit im Team, ab morgen gibt es bei Bedarf eine kurze Abholinformation, und nach zwei Wochen schauen wir, ob der Ablauf zuverlässig funktioniert.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will summarize: you will clarify responsibility in the team today, from tomorrow there will be brief pickup information when needed, and after two weeks we will check whether the process works reliably." },
+            { "language": "fa", "text": "ممنون. پس جمع‌بندی می‌کنم: شما امروز مسئولیت را در تیم روشن می‌کنید، از فردا در صورت نیاز اطلاع کوتاه هنگام تحویل گرفتن داده می‌شود، و بعد از دو هفته بررسی می‌کنیم آیا روند قابل اعتماد کار می‌کند یا نه." },
+            { "language": "ar", "text": "شكراً. إذن ألخص: ستوضحين اليوم المسؤولية في الفريق، ومن الغد ستكون هناك معلومة قصيرة عند الاستلام إذا لزم الأمر، وبعد أسبوعين نراجع هل يعمل الإجراء بشكل موثوق." },
+            { "language": "tr", "text": "Teşekkür ederim. O zaman özetliyorum: bugün ekipte sorumluluğu netleştireceksiniz, yarından itibaren gerektiğinde kısa teslim alma bilgisi olacak ve iki hafta sonra sürecin güvenilir işleyip işlemediğini kontrol edeceğiz." },
+            { "language": "ru", "text": "Спасибо. Тогда я подведу итог: сегодня вы уточняете ответственность в команде, с завтрашнего дня при необходимости будет короткая информация при забирании, а через две недели мы проверим, надежно ли работает порядок." },
+            { "language": "ckb", "text": "سوپاس. کەواتە پوخت دەکەمەوە: ئێوە ئەمڕۆ بەرپرسیارێتی لە تیمەکەدا ڕوون دەکەنەوە، لە سبەیەوە لە پێویستیدا زانیارییەکی کورتی وەرگرتن دەدرێت، و پاش دوو هەفتە دەبینین ئایا ڕێکارەکە بە پشتپێبەستوو کار دەکات یان نا." },
+            { "language": "kmr", "text": "Spas. Wê demê ez kurte dikim: hûn îro berpirsiyariyê di tîmê de zelal dikin, ji sibê ve heke hewce be agahdariyeke kurt a wergirtinê heye, û piştî du hefteyan em dibînin ka rêbaz bi pêbawerî dixebite an na." },
+            { "language": "pl", "text": "Dziękuję. W takim razie podsumuję: dziś wyjaśni pani odpowiedzialność w zespole, od jutra w razie potrzeby będzie krótka informacja przy odbiorze, a po dwóch tygodniach sprawdzimy, czy procedura działa niezawodnie." },
+            { "language": "ro", "text": "Mulțumesc. Atunci rezum: clarificați astăzi responsabilitatea în echipă, de mâine va exista la nevoie o informare scurtă la preluare, iar după două săptămâni vedem dacă procedura funcționează fiabil." },
+            { "language": "sq", "text": "Faleminderit. Atëherë po përmbledh: sot sqaroni përgjegjësinë në ekip, nga nesër do të ketë informacion të shkurtër gjatë marrjes kur të jetë e nevojshme, dhe pas dy javësh shohim nëse procedura funksionon në mënyrë të besueshme." }
+          ],
+          "function": "summarize-complaint-resolution",
+          "toneNote": "precise closing",
+          "expectedLearnerAction": "Fasse Zuständigkeit, Startzeitpunkt und Überprüfung zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke, dass Sie sich Zeit nehmen. Ich möchte ein wiederholtes Problem bei der Abholung ansprechen. Mir geht es nicht um Schuldzuweisung, sondern um einen verlässlichen Ablauf.",
+              "translations": [
+                { "language": "en", "text": "Thank you for taking the time. I would like to address a repeated problem at pickup. I am not interested in blaming anyone, but in having a reliable process." },
+                { "language": "fa", "text": "ممنون که وقت می‌گذارید. می‌خواهم یک مشکل تکرارشونده هنگام تحویل گرفتن کودک را مطرح کنم. هدفم مقصر دانستن کسی نیست، بلکه داشتن روندی قابل اعتماد است." },
+                { "language": "ar", "text": "شكراً على وقتك. أود أن أطرح مشكلة متكررة عند الاستلام. لا يهمني إلقاء اللوم، بل وجود إجراء موثوق." },
+                { "language": "tr", "text": "Zaman ayırdığınız için teşekkür ederim. Çocuğu teslim alırken tekrarlanan bir sorunu dile getirmek istiyorum. Amacım suçlamak değil, güvenilir bir süreç olması." },
+                { "language": "ru", "text": "Спасибо, что нашли время. Я хотел бы поднять повторяющуюся проблему при забирании ребенка. Речь не об обвинениях, а о надежном порядке." },
+                { "language": "ckb", "text": "سوپاس کە کات دەخەن. دەمەوێت کێشەیەکی دووبارەبووەوە لە کاتی وەرگرتنی منداڵ باس بکەم. مەبەستم تاوانبارکردن نییە، بەڵکو ڕێکارێکی پشتپێبەستووە." },
+                { "language": "kmr", "text": "Spas ku hûn dem didin. Ez dixwazim pirsgirêkeke dubare di dema wergirtina zarok de bibêjim. Armanca min tawanbar kirin nîne, lê rêbazeke pêbawer e." },
+                { "language": "pl", "text": "Dziękuję, że znajduje pani czas. Chciałbym poruszyć powtarzający się problem przy odbiorze. Nie chodzi mi o przypisywanie winy, lecz o niezawodną procedurę." },
+                { "language": "ro", "text": "Vă mulțumesc că vă faceți timp. Aș dori să discut o problemă repetată la preluare. Nu este vorba despre atribuirea vinei, ci despre o procedură de încredere." },
+                { "language": "sq", "text": "Faleminderit që po gjeni kohë. Dua të flas për një problem të përsëritur gjatë marrjes së fëmijës. Nuk më intereson të fajësoj dikë, por të kemi një procedurë të besueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort eröffnet sachlich und senkt die Abwehr, weil sie nicht mit Schuld beginnt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer opens factually and lowers defensiveness because it does not start with blame." },
+                { "language": "fa", "text": "خوب است: پاسخ واقع‌بینانه شروع می‌شود و چون با سرزنش آغاز نمی‌کند، حالت دفاعی را کم می‌کند." },
+                { "language": "ar", "text": "جيد: تبدأ الإجابة بموضوعية وتخفف الدفاعية لأنها لا تبدأ باللوم." },
+                { "language": "tr", "text": "İyi: cevap nesnel başlıyor ve suçlamayla başlamadığı için savunmayı azaltıyor." },
+                { "language": "ru", "text": "Хорошо: ответ начинается по существу и снижает защитную реакцию, потому что не начинается с обвинения." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بە بابەتی دەست پێ دەکات و بەرگری کەم دەکاتەوە چونکە بە تاوانبارکردن دەست پێ ناکات." },
+                { "language": "kmr", "text": "Baş e: bersiv bi objektîfî dest pê dike û parastinê kêm dike, ji ber ku bi tawanbar kirinê dest pê nake." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zaczyna się rzeczowo i zmniejsza defensywność, bo nie zaczyna od oskarżenia." },
+                { "language": "ro", "text": "Bine: răspunsul începe obiectiv și reduce defensiva, deoarece nu începe cu vinovăția." },
+                { "language": "sq", "text": "Mirë: përgjigjja nis objektivisht dhe ul mbrojtjen, sepse nuk fillon me fajësim." }
+              ],
+              "explanationKey": "b2-kita-open-with-process"
+            },
+            {
+              "id": "weak-accusatory-opening",
+              "text": "Ich bin wirklich enttäuscht, weil bei Ihnen in der Abholung etwas nicht funktioniert.",
+              "translations": [
+                { "language": "en", "text": "I am really disappointed because something in your pickup process is not working." },
+                { "language": "fa", "text": "واقعاً ناامید شده‌ام، چون در روند تحویل گرفتن شما چیزی درست کار نمی‌کند." },
+                { "language": "ar", "text": "أنا محبط حقاً لأن شيئاً في عملية الاستلام لديكم لا يعمل." },
+                { "language": "tr", "text": "Gerçekten hayal kırıklığına uğradım, çünkü sizde teslim alma sürecinde bir şey işlemiyor." },
+                { "language": "ru", "text": "Я действительно разочарован, потому что у вас что-то не работает при выдаче детей." },
+                { "language": "ckb", "text": "بەڕاستی نائومێدم، چونکە لە ڕێکاری وەرگرتنی ئێوەدا شتێک کار ناکات." },
+                { "language": "kmr", "text": "Ez bi rastî bêhêvî me, ji ber ku di pêvajoya wergirtina we de tiştek naxebite." },
+                { "language": "pl", "text": "Jestem naprawdę rozczarowany, bo u państwa coś nie działa przy odbiorze." },
+                { "language": "ro", "text": "Sunt cu adevărat dezamăgit, deoarece la dumneavoastră ceva nu funcționează la preluare." },
+                { "language": "sq", "text": "Jam vërtet i zhgënjyer, sepse te ju diçka nuk funksionon gjatë marrjes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber ungünstig: Die Antwort startet mit Bewertung und macht Kooperation schwieriger.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but unhelpful: the answer starts with judgment and makes cooperation harder." },
+                { "language": "fa", "text": "قابل‌فهم اما نامناسب است: پاسخ با قضاوت شروع می‌شود و همکاری را سخت‌تر می‌کند." },
+                { "language": "ar", "text": "مفهوم لكنه غير مناسب: تبدأ الإجابة بحكم وتجعل التعاون أصعب." },
+                { "language": "tr", "text": "Anlaşılır ama uygun değil: cevap yargıyla başlıyor ve iş birliğini zorlaştırıyor." },
+                { "language": "ru", "text": "Понятно, но неудачно: ответ начинается с оценки и затрудняет сотрудничество." },
+                { "language": "ckb", "text": "تێگەیشتنی هەیە، بەڵام نەگونجاوە: وەڵامەکە بە حوکمدان دەست پێ دەکات و هاوکاری قورس‌تر دەکات." },
+                { "language": "kmr", "text": "Tê fêm kirin, lê ne guncaw e: bersiv bi dadbarî dest pê dike û hevkariyê dijwartir dike." },
+                { "language": "pl", "text": "Zrozumiałe, ale niekorzystne: odpowiedź zaczyna się od oceny i utrudnia współpracę." },
+                { "language": "ro", "text": "Plauzibil, dar nefavorabil: răspunsul începe cu o judecată și face cooperarea mai dificilă." },
+                { "language": "sq", "text": "E kuptueshme, por jo e dobishme: përgjigjja fillon me gjykim dhe e bën bashkëpunimin më të vështirë." }
+              ],
+              "explanationKey": "b2-kita-avoid-accusatory-opening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "In den letzten zwei Wochen wurde Amir dreimal mit nasser Kleidung abgeholt, obwohl Wechselkleidung im Fach lag. Wir haben es jeweils erst zu Hause bemerkt, weil uns beim Abholen niemand informiert hat.",
+              "translations": [
+                { "language": "en", "text": "In the last two weeks, Amir was picked up three times in wet clothes, although spare clothes were in his cubby. Each time we only noticed it at home because no one informed us at pickup." },
+                { "language": "fa", "text": "در دو هفته گذشته امیر سه بار با لباس خیس تحویل گرفته شد، در حالی که لباس جایگزین در قفسه‌اش بود. هر بار فقط در خانه متوجه شدیم، چون هنگام تحویل گرفتن کسی به ما اطلاع نداد." },
+                { "language": "ar", "text": "في الأسبوعين الماضيين تم استلام أمير ثلاث مرات بملابس مبللة، رغم أن ملابس بديلة كانت في خانته. في كل مرة لاحظنا ذلك فقط في البيت لأن أحداً لم يخبرنا عند الاستلام." },
+                { "language": "tr", "text": "Son iki haftada Amir üç kez ıslak kıyafetle teslim alındı, oysa yedek kıyafet dolabında vardı. Her seferinde bunu ancak evde fark ettik, çünkü teslim alırken kimse bize bilgi vermedi." },
+                { "language": "ru", "text": "За последние две недели Амира трижды забирали в мокрой одежде, хотя сменная одежда лежала в его ячейке. Каждый раз мы замечали это только дома, потому что при забирании нас никто не информировал." },
+                { "language": "ckb", "text": "لە دوو هەفتەی ڕابردوودا ئەمیر سێ جار بە جل و بەرگی تەڕەوە وەرگیرا، لە کاتێکدا جل و بەرگی گۆڕین لە خانەکەیدا هەبوو. هەر جار تەنها لە ماڵەوە تێبینیمان کرد، چونکە لە کاتی وەرگرتندا کەس ئاگاداری نەکردینەوە." },
+                { "language": "kmr", "text": "Di du hefteyên dawî de Amir sê caran bi cilên şil hat wergirtin, her çend cilên guhertinê di cihê wî de hebûn. Her car em tenê li malê fêm kirin, ji ber ku di dema wergirtinê de kes me agahdar nekir." },
+                { "language": "pl", "text": "W ostatnich dwóch tygodniach Amir trzy razy został odebrany w mokrym ubraniu, chociaż ubranie na zmianę było w jego przegródce. Za każdym razem zauważyliśmy to dopiero w domu, bo przy odbiorze nikt nas nie poinformował." },
+                { "language": "ro", "text": "În ultimele două săptămâni, Amir a fost preluat de trei ori cu haine ude, deși haine de schimb erau în dulăpiorul lui. De fiecare dată am observat abia acasă, pentru că la preluare nimeni nu ne-a informat." },
+                { "language": "sq", "text": "Në dy javët e fundit, Amiri u mor tri herë me rroba të lagura, megjithëse rrobat rezervë ishin në raftin e tij. Çdo herë e vumë re vetëm në shtëpi, sepse gjatë marrjes askush nuk na informoi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Zeitraum, Häufigkeit, Sachlage und Informationslücke.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names timeframe, frequency, facts, and communication gap." },
+                { "language": "fa", "text": "خوب است: پاسخ بازه زمانی، تعداد دفعات، وضعیت و خلأ اطلاع‌رسانی را می‌گوید." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة الإطار الزمني والتكرار والوقائع وفجوة التواصل." },
+                { "language": "tr", "text": "İyi: cevap zaman aralığını, sıklığı, durumu ve iletişim boşluğunu belirtiyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет период, частоту, факты и пробел в коммуникации." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە کات، دووبارەبوونەوە، ڕاستییەکان و کەمی پەیوەندی ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: bersiv dem, dubarebûn, rastî û valahiya ragihandinê dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje okres, częstotliwość, fakty i lukę komunikacyjną." },
+                { "language": "ro", "text": "Bine: răspunsul numește intervalul, frecvența, faptele și lipsa de comunicare." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend periudhën, shpeshtësinë, faktet dhe boshllëkun e komunikimit." }
+              ],
+              "explanationKey": "b2-kita-state-facts"
+            },
+            {
+              "id": "weak-too-vague",
+              "text": "Es gab jetzt öfter Probleme mit der Kleidung, und das finden wir nicht in Ordnung.",
+              "translations": [
+                { "language": "en", "text": "There have now been more frequent problems with the clothing, and we do not think that is acceptable." },
+                { "language": "fa", "text": "اخیراً چند بار با لباس مشکل پیش آمده و ما این را قابل قبول نمی‌دانیم." },
+                { "language": "ar", "text": "حدثت الآن مشاكل أكثر مع الملابس، ونحن لا نرى ذلك مقبولاً." },
+                { "language": "tr", "text": "Son zamanlarda kıyafetlerle daha sık sorun oldu ve bunu uygun bulmuyoruz." },
+                { "language": "ru", "text": "Сейчас чаще возникали проблемы с одеждой, и мы считаем это неприемлемым." },
+                { "language": "ckb", "text": "ئێستا زۆرجار کێشە لەگەڵ جل و بەرگدا هەبووە و ئێمە ئەمە بە گونجاو نازانین." },
+                { "language": "kmr", "text": "Niha zêdetir pirsgirêk bi cil û bergan re hebûne û em vê rast nabînin." },
+                { "language": "pl", "text": "Ostatnio częściej były problemy z ubraniem i nie uważamy tego za w porządku." },
+                { "language": "ro", "text": "Au fost acum mai des probleme cu hainele și nu considerăm că este în regulă." },
+                { "language": "sq", "text": "Kohët e fundit ka pasur më shpesh probleme me rrobat dhe ne nuk e shohim këtë si në rregull." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort nennt keine Häufigkeit, kein Beispiel und keine Informationslücke.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer names no frequency, no example, and no communication gap." },
+                { "language": "fa", "text": "خیلی نامشخص است: پاسخ تعداد دفعات، مثال و خلأ اطلاع‌رسانی را نمی‌گوید." },
+                { "language": "ar", "text": "غير دقيق: لا تذكر الإجابة التكرار ولا مثالاً ولا فجوة التواصل." },
+                { "language": "tr", "text": "Fazla belirsiz: cevap sıklık, örnek ve iletişim boşluğu belirtmiyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ не называет частоту, пример и пробел в коммуникации." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە نە دووبارەبوونەوە، نە نموونە و نە کەمی پەیوەندی ناو نابات." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv ne dubarebûn, ne mînak û ne valahiya ragihandinê dibêje." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: odpowiedź nie podaje częstotliwości, przykładu ani luki komunikacyjnej." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul nu numește frecvența, un exemplu și lipsa de comunicare." },
+                { "language": "sq", "text": "Tepër e pasaktë: përgjigjja nuk përmend shpeshtësinë, shembullin dhe boshllëkun e komunikimit." }
+              ],
+              "explanationKey": "b2-kita-avoid-vague-complaint"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Zweimal war es nach dem Garten, einmal nach dem Mittagsschlaf. Für uns ist vor allem wichtig, dass Amir sich nicht unwohl fühlt und dass wir bei der Abholung kurz informiert werden.",
+              "translations": [
+                { "language": "en", "text": "Twice it was after the garden, once after the midday nap. For us, the main point is that Amir does not feel uncomfortable and that we are briefly informed at pickup." },
+                { "language": "fa", "text": "دو بار بعد از باغ/حیاط بود، یک بار بعد از خواب ظهر. برای ما مهم‌تر از همه این است که امیر احساس ناراحتی نکند و هنگام تحویل گرفتن کوتاه به ما اطلاع داده شود." },
+                { "language": "ar", "text": "مرتان كان ذلك بعد الحديقة، ومرة بعد قيلولة الظهر. المهم لنا قبل كل شيء ألا يشعر أمير بعدم الراحة وأن يتم إبلاغنا باختصار عند الاستلام." },
+                { "language": "tr", "text": "İki kez bahçeden sonra, bir kez öğle uykusundan sonraydı. Bizim için en önemlisi Amir'in rahatsız hissetmemesi ve teslim alırken bize kısa bilgi verilmesi." },
+                { "language": "ru", "text": "Дважды это было после сада, один раз после дневного сна. Для нас прежде всего важно, чтобы Амир не чувствовал дискомфорта и чтобы при забирании нас кратко информировали." },
+                { "language": "ckb", "text": "دوو جار دوای باخچە بوو، جارێک دوای خەوی نیوەڕۆ. بۆ ئێمە گرنگترین شت ئەوەیە ئەمیر هەست بە ناخۆشی نەکات و لە کاتی وەرگرتندا بە کورتی ئاگادار بکرێینەوە." },
+                { "language": "kmr", "text": "Du car piştî baxçe bû, carek piştî xewa nîvro. Ji bo me ya herî girîng ev e ku Amir xwe nebaş hîs neke û di dema wergirtinê de em bi kurtî bên agahdarkirin." },
+                { "language": "pl", "text": "Dwa razy było to po ogrodzie, raz po drzemce poobiedniej. Dla nas najważniejsze jest, żeby Amir nie czuł się niekomfortowo i żebyśmy przy odbiorze byli krótko informowani." },
+                { "language": "ro", "text": "De două ori a fost după grădină, o dată după somnul de prânz. Pentru noi este important mai ales ca Amir să nu se simtă inconfortabil și să fim informați pe scurt la preluare." },
+                { "language": "sq", "text": "Dy herë ishte pas kopshtit, një herë pas gjumit të drekës. Për ne më e rëndësishmja është që Amiri të mos ndihet në siklet dhe që të informohemi shkurt gjatë marrjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort zeigt Muster und Wirkung, ohne einzelne Personen anzugreifen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer shows pattern and effect without attacking individual people." },
+                { "language": "fa", "text": "خوب است: پاسخ الگو و اثر را نشان می‌دهد، بدون اینکه به افراد حمله کند." },
+                { "language": "ar", "text": "جيد: تُظهر الإجابة النمط والأثر دون مهاجمة أشخاص بعينهم." },
+                { "language": "tr", "text": "İyi: cevap kişilere saldırmadan örüntüyü ve etkiyi gösteriyor." },
+                { "language": "ru", "text": "Хорошо: ответ показывает закономерность и эффект, не нападая на отдельных людей." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە شێوە و کاریگەری نیشان دەدات بێ ئەوەی هێرش بکاتە سەر کەسانی دیاریکراو." },
+                { "language": "kmr", "text": "Baş e: bersiv şêwe û bandorê nîşan dide bê ku êrîşî kesên taybet bike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pokazuje wzorzec i wpływ, nie atakując konkretnych osób." },
+                { "language": "ro", "text": "Bine: răspunsul arată tiparul și efectul fără să atace persoane individuale." },
+                { "language": "sq", "text": "Mirë: përgjigjja tregon modelin dhe ndikimin pa sulmuar persona të veçantë." }
+              ],
+              "explanationKey": "b2-kita-pattern-and-impact"
+            },
+            {
+              "id": "weak-blame-staff",
+              "text": "Ich habe den Eindruck, dass da nicht sorgfältig genug aufgepasst wird.",
+              "translations": [
+                { "language": "en", "text": "I have the impression that people are not paying careful enough attention there." },
+                { "language": "fa", "text": "من این برداشت را دارم که آنجا به اندازه کافی با دقت مراقبت نمی‌شود." },
+                { "language": "ar", "text": "لدي انطباع بأن الانتباه هناك ليس دقيقاً بما يكفي." },
+                { "language": "tr", "text": "Orada yeterince dikkatli davranılmadığı izlenimine sahibim." },
+                { "language": "ru", "text": "У меня впечатление, что там недостаточно внимательно следят." },
+                { "language": "ckb", "text": "هەستم وایە لەوێ بە پێویستی وردبینانە ئاگاداری ناکرێت." },
+                { "language": "kmr", "text": "Hesta min ev e ku li wir bi têra xwe bi baldarî nayê şopandin." },
+                { "language": "pl", "text": "Mam wrażenie, że nie zwraca się tam wystarczająco uważnie uwagi." },
+                { "language": "ro", "text": "Am impresia că acolo nu se acordă suficientă atenție." },
+                { "language": "sq", "text": "Kam përshtypjen se aty nuk tregohet mjaft kujdes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu bewertend: Die Antwort klingt wie ein Vorwurf und nennt keine konkrete Wirkung auf das Kind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too judgmental: the answer sounds like an accusation and names no concrete effect on the child." },
+                { "language": "fa", "text": "بیش از حد قضاوتی است: پاسخ شبیه اتهام است و اثر مشخصی بر کودک نمی‌گوید." },
+                { "language": "ar", "text": "حكمي أكثر من اللازم: تبدو الإجابة كاتهام ولا تذكر أثراً محدداً على الطفل." },
+                { "language": "tr", "text": "Fazla yargılayıcı: cevap suçlama gibi geliyor ve çocuk üzerindeki somut etkiyi belirtmiyor." },
+                { "language": "ru", "text": "Слишком оценочно: ответ звучит как обвинение и не называет конкретного влияния на ребенка." },
+                { "language": "ckb", "text": "زۆر حوکمدانە: وەڵامەکە وەک تاوانبارکردن دەنگ دەدات و کاریگەریی دیاریکراو لەسەر منداڵ ناو نابات." },
+                { "language": "kmr", "text": "Pir dadbarî ye: bersiv wek tawanbar kirinê tê bihîstin û bandoreke diyar li ser zarok nabêje." },
+                { "language": "pl", "text": "Zbyt oceniająco: odpowiedź brzmi jak oskarżenie i nie podaje konkretnego wpływu na dziecko." },
+                { "language": "ro", "text": "Prea evaluativ: răspunsul sună ca o acuzație și nu numește un efect concret asupra copilului." },
+                { "language": "sq", "text": "Tepër gjykuese: përgjigjja tingëllon si akuzë dhe nuk përmend ndikim konkret te fëmija." }
+              ],
+              "explanationKey": "b2-kita-avoid-staff-blame"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Mein Vorschlag wäre: Wenn Kleidung gewechselt werden müsste oder Amir sich unwohl fühlt, gibt es eine kurze Notiz im Abholbuch oder eine mündliche Info. Dann wissen wir, worauf wir zu Hause achten sollen.",
+              "translations": [
+                { "language": "en", "text": "My suggestion would be: if clothes need to be changed or Amir feels uncomfortable, there should be a short note in the pickup book or verbal information. Then we know what to watch for at home." },
+                { "language": "fa", "text": "پیشنهادم این است: اگر لازم بود لباس عوض شود یا امیر احساس ناراحتی داشت، یک یادداشت کوتاه در دفتر تحویل یا اطلاع شفاهی داده شود. در این صورت می‌دانیم در خانه باید به چه چیزی توجه کنیم." },
+                { "language": "ar", "text": "اقتراحي هو: إذا كان يجب تغيير الملابس أو شعر أمير بعدم الراحة، تكون هناك ملاحظة قصيرة في دفتر الاستلام أو إبلاغ شفهي. عندها نعرف ما الذي ننتبه إليه في البيت." },
+                { "language": "tr", "text": "Önerim şu olurdu: Kıyafet değiştirilmesi gerekiyorsa ya da Amir rahatsız hissediyorsa, teslim alma defterinde kısa bir not veya sözlü bilgi olsun. Böylece evde nelere dikkat etmemiz gerektiğini biliriz." },
+                { "language": "ru", "text": "Мое предложение такое: если нужно было переодеть одежду или Амир чувствует дискомфорт, пусть будет короткая запись в книге выдачи или устная информация. Тогда мы будем знать, на что обратить внимание дома." },
+                { "language": "ckb", "text": "پێشنیاری من ئەمەیە: ئەگەر پێویست بوو جل و بەرگ بگۆڕدرێت یان ئەمیر هەست بە ناخۆشی کرد، تێبینییەکی کورت لە دفتەری وەرگرتن یان زانیاریی زارەکی هەبێت. ئەوکات دەزانین لە ماڵەوە سەرنج بدەینە چی." },
+                { "language": "kmr", "text": "Pêşniyara min ev e: heke divê cil bên guhertin an Amir xwe nebaş hîs bike, noteke kurt di deftera wergirtinê de an agahdariya devkî hebe. Wê demê em dizanin li malê bala xwe bidin çi." },
+                { "language": "pl", "text": "Moja propozycja byłaby taka: jeśli trzeba zmienić ubranie albo Amir czuje się niekomfortowo, pojawia się krótka notatka w zeszycie odbioru albo informacja ustna. Wtedy wiemy, na co zwrócić uwagę w domu." },
+                { "language": "ro", "text": "Propunerea mea ar fi: dacă trebuie schimbate hainele sau Amir se simte inconfortabil, să existe o notă scurtă în caietul de preluare sau o informare verbală. Atunci știm la ce să fim atenți acasă." },
+                { "language": "sq", "text": "Propozimi im do të ishte: nëse duhet ndërruar rrobat ose Amiri ndihet në siklet, të ketë një shënim të shkurtër në librin e marrjes ose një informacion me gojë. Atëherë dimë çfarë të vërejmë në shtëpi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort schlägt einen einfachen Prozess vor, der im Kita-Alltag realistisch ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer suggests a simple process that is realistic in everyday daycare practice." },
+                { "language": "fa", "text": "خوب است: پاسخ روندی ساده پیشنهاد می‌کند که در زندگی روزمره مهدکودک واقعی و عملی است." },
+                { "language": "ar", "text": "جيد: تقترح الإجابة إجراءً بسيطاً وواقعياً في الحياة اليومية للروضة." },
+                { "language": "tr", "text": "İyi: cevap kreş günlük yaşamında gerçekçi olan basit bir süreç öneriyor." },
+                { "language": "ru", "text": "Хорошо: ответ предлагает простой порядок, реалистичный в повседневной работе детского сада." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕێکارێکی سادە پێشنیار دەکات کە لە ژیانی ڕۆژانەی باخچەی منداڵاندا ڕاستەقینەیە." },
+                { "language": "kmr", "text": "Baş e: bersiv rêbazeke hêsan pêşniyar dike ku di jiyana rojane ya baxçeyê zarokan de rastîn e." },
+                { "language": "pl", "text": "Dobrze: odpowiedź proponuje prostą procedurę realistyczną w codziennym działaniu przedszkola." },
+                { "language": "ro", "text": "Bine: răspunsul propune o procedură simplă, realistă în viața de zi cu zi a grădiniței." },
+                { "language": "sq", "text": "Mirë: përgjigjja propozon një procedurë të thjeshtë që është realiste në përditshmërinë e kopshtit." }
+              ],
+              "explanationKey": "b2-kita-propose-process"
+            },
+            {
+              "id": "weak-too-broad-process",
+              "text": "Ich wünsche mir einfach, dass solche Situationen künftig besser beachtet werden.",
+              "translations": [
+                { "language": "en", "text": "I simply wish that such situations will be handled more carefully in the future." },
+                { "language": "fa", "text": "فقط می‌خواهم که در آینده به چنین موقعیت‌هایی بهتر توجه شود." },
+                { "language": "ar", "text": "أتمنى فقط أن يتم الانتباه إلى مثل هذه المواقف بشكل أفضل مستقبلاً." },
+                { "language": "tr", "text": "Sadece bu tür durumlara gelecekte daha iyi dikkat edilmesini istiyorum." },
+                { "language": "ru", "text": "Я просто хочу, чтобы в будущем к таким ситуациям относились внимательнее." },
+                { "language": "ckb", "text": "تەنها دەمەوێت لە داهاتوودا زیاتر سەرنج بدرێتە دۆخەکانی وەک ئەمە." },
+                { "language": "kmr", "text": "Ez tenê dixwazim ku di pêşerojê de li rewşên wiha baştir were baldan." },
+                { "language": "pl", "text": "Chciałbym po prostu, żeby w przyszłości takie sytuacje były lepiej zauważane." },
+                { "language": "ro", "text": "Îmi doresc pur și simplu ca astfel de situații să fie observate mai bine pe viitor." },
+                { "language": "sq", "text": "Thjesht dëshiroj që situata të tilla të vërehen më mirë në të ardhmen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu breit: Die Antwort sagt das Ziel, aber keinen Ablauf, keine Zuständigkeit und keinen Informationsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad: the answer states the goal, but no process, responsibility, or communication route." },
+                { "language": "fa", "text": "خیلی گسترده است: پاسخ هدف را می‌گوید، اما روند، مسئولیت و مسیر اطلاع‌رسانی ندارد." },
+                { "language": "ar", "text": "واسع جداً: تذكر الإجابة الهدف، لكن لا تذكر إجراءً ولا مسؤولية ولا طريق تواصل." },
+                { "language": "tr", "text": "Fazla geniş: cevap hedefi söylüyor, ama süreç, sorumluluk ve iletişim yolu yok." },
+                { "language": "ru", "text": "Слишком широко: ответ называет цель, но не порядок, ответственность и путь коммуникации." },
+                { "language": "ckb", "text": "زۆر فراوانە: وەڵامەکە ئامانج دەڵێت، بەڵام ڕێکار، بەرپرسیارێتی و ڕێگای پەیوەندی نییە." },
+                { "language": "kmr", "text": "Pir fireh e: bersiv armancê dibêje, lê rêbaz, berpirsiyarî û rêya ragihandinê tune ne." },
+                { "language": "pl", "text": "Zbyt szeroko: odpowiedź podaje cel, ale nie procedurę, odpowiedzialność ani drogę informacji." },
+                { "language": "ro", "text": "Prea larg: răspunsul spune scopul, dar nu procedura, responsabilitatea și calea de comunicare." },
+                { "language": "sq", "text": "Tepër e gjerë: përgjigjja thotë qëllimin, por jo procedurën, përgjegjësinë dhe rrugën e komunikimit." }
+              ],
+              "explanationKey": "b2-kita-ask-for-specific-process"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Dann fasse ich zusammen: Sie klären heute die Zuständigkeit im Team, ab morgen gibt es bei Bedarf eine kurze Abholinformation, und nach zwei Wochen schauen wir, ob der Ablauf zuverlässig funktioniert.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will summarize: you will clarify responsibility in the team today, from tomorrow there will be brief pickup information when needed, and after two weeks we will check whether the process works reliably." },
+                { "language": "fa", "text": "ممنون. پس جمع‌بندی می‌کنم: شما امروز مسئولیت را در تیم روشن می‌کنید، از فردا در صورت نیاز اطلاع کوتاه هنگام تحویل گرفتن داده می‌شود، و بعد از دو هفته بررسی می‌کنیم آیا روند قابل اعتماد کار می‌کند یا نه." },
+                { "language": "ar", "text": "شكراً. إذن ألخص: ستوضحين اليوم المسؤولية في الفريق، ومن الغد ستكون هناك معلومة قصيرة عند الاستلام إذا لزم الأمر، وبعد أسبوعين نراجع هل يعمل الإجراء بشكل موثوق." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman özetliyorum: bugün ekipte sorumluluğu netleştireceksiniz, yarından itibaren gerektiğinde kısa teslim alma bilgisi olacak ve iki hafta sonra sürecin güvenilir işleyip işlemediğini kontrol edeceğiz." },
+                { "language": "ru", "text": "Спасибо. Тогда я подведу итог: сегодня вы уточняете ответственность в команде, с завтрашнего дня при необходимости будет короткая информация при забирании, а через две недели мы проверим, надежно ли работает порядок." },
+                { "language": "ckb", "text": "سوپاس. کەواتە پوخت دەکەمەوە: ئێوە ئەمڕۆ بەرپرسیارێتی لە تیمەکەدا ڕوون دەکەنەوە، لە سبەیەوە لە پێویستیدا زانیارییەکی کورتی وەرگرتن دەدرێت، و پاش دوو هەفتە دەبینین ئایا ڕێکارەکە بە پشتپێبەستوو کار دەکات یان نا." },
+                { "language": "kmr", "text": "Spas. Wê demê ez kurte dikim: hûn îro berpirsiyariyê di tîmê de zelal dikin, ji sibê ve heke hewce be agahdariyeke kurt a wergirtinê heye, û piştî du hefteyan em dibînin ka rêbaz bi pêbawerî dixebite an na." },
+                { "language": "pl", "text": "Dziękuję. W takim razie podsumuję: dziś wyjaśni pani odpowiedzialność w zespole, od jutra w razie potrzeby będzie krótka informacja przy odbiorze, a po dwóch tygodniach sprawdzimy, czy procedura działa niezawodnie." },
+                { "language": "ro", "text": "Mulțumesc. Atunci rezum: clarificați astăzi responsabilitatea în echipă, de mâine va exista la nevoie o informare scurtă la preluare, iar după două săptămâni vedem dacă procedura funcționează fiabil." },
+                { "language": "sq", "text": "Faleminderit. Atëherë po përmbledh: sot sqaroni përgjegjësinë në ekip, nga nesër do të ketë informacion të shkurtër gjatë marrjes kur të jetë e nevojshme, dhe pas dy javësh shohim nëse procedura funksionon në mënyrë të besueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort hält Verantwortung, Start und Überprüfung fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer records responsibility, start, and review." },
+                { "language": "fa", "text": "خوب است: پاسخ مسئولیت، شروع و بررسی را ثبت می‌کند." },
+                { "language": "ar", "text": "جيد: تثبت الإجابة المسؤولية والبداية والمراجعة." },
+                { "language": "tr", "text": "İyi: cevap sorumluluğu, başlangıcı ve kontrolü kaydediyor." },
+                { "language": "ru", "text": "Хорошо: ответ фиксирует ответственность, начало и проверку." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەرپرسیارێتی، دەستپێک و پێداچوونەوە تۆمار دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv berpirsiyarî, destpêk û venêrînê tomar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zapisuje odpowiedzialność, start i sprawdzenie." },
+                { "language": "ro", "text": "Bine: răspunsul reține responsabilitatea, începutul și verificarea." },
+                { "language": "sq", "text": "Mirë: përgjigjja shënon përgjegjësinë, fillimin dhe kontrollin." }
+              ],
+              "explanationKey": "b2-kita-final-summary"
+            },
+            {
+              "id": "weak-no-review",
+              "text": "Danke, ich hoffe, dass es dann in Zukunft besser klappt.",
+              "translations": [
+                { "language": "en", "text": "Thank you, I hope that it will work better in the future." },
+                { "language": "fa", "text": "ممنون، امیدوارم در آینده بهتر پیش برود." },
+                { "language": "ar", "text": "شكراً، آمل أن يسير الأمر بشكل أفضل مستقبلاً." },
+                { "language": "tr", "text": "Teşekkür ederim, umarım gelecekte daha iyi işler." },
+                { "language": "ru", "text": "Спасибо, надеюсь, что в будущем это будет работать лучше." },
+                { "language": "ckb", "text": "سوپاس، هیوادارم لە داهاتوودا باشتر کار بکات." },
+                { "language": "kmr", "text": "Spas, ez hêvî dikim ku di pêşerojê de baştir biçe." },
+                { "language": "pl", "text": "Dziękuję, mam nadzieję, że w przyszłości będzie działać lepiej." },
+                { "language": "ro", "text": "Mulțumesc, sper că pe viitor va funcționa mai bine." },
+                { "language": "sq", "text": "Faleminderit, shpresoj që në të ardhmen të funksionojë më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unverbindlich: Die Antwort nennt keine Zuständigkeit und keine Überprüfung nach zwei Wochen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too non-committal: the answer names no responsibility and no review after two weeks." },
+                { "language": "fa", "text": "خیلی غیرتعهدآور است: پاسخ مسئولیت و بررسی بعد از دو هفته را نمی‌گوید." },
+                { "language": "ar", "text": "غير ملزم كفاية: لا تذكر الإجابة مسؤولية ولا مراجعة بعد أسبوعين." },
+                { "language": "tr", "text": "Fazla bağlayıcı değil: cevap sorumluluk ve iki hafta sonra kontrol belirtmiyor." },
+                { "language": "ru", "text": "Слишком необязательно: ответ не называет ответственность и проверку через две недели." },
+                { "language": "ckb", "text": "زۆر بێ پابەندییە: وەڵامەکە بەرپرسیارێتی و پێداچوونەوەی پاش دوو هەفتە ناو نابات." },
+                { "language": "kmr", "text": "Pir bêpabend e: bersiv berpirsiyarî û venêrîna piştî du hefteyan nabêje." },
+                { "language": "pl", "text": "Zbyt niezobowiązująco: odpowiedź nie podaje odpowiedzialności ani sprawdzenia po dwóch tygodniach." },
+                { "language": "ro", "text": "Prea neangajant: răspunsul nu numește responsabilitatea și verificarea după două săptămâni." },
+                { "language": "sq", "text": "Tepër pa angazhim: përgjigjja nuk përmend përgjegjësinë dhe kontrollin pas dy javësh." }
+              ],
+              "explanationKey": "b2-kita-close-with-review"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "complaint-opening",
+          "text": "Eine sachliche Beschwerde beginnt mit Anliegen und Ziel, nicht mit Vorwurf.",
+          "translations": [
+            { "language": "en", "text": "A factual complaint begins with concern and goal, not with accusation." },
+            { "language": "fa", "text": "یک شکایت واقع‌بینانه با موضوع و هدف شروع می‌شود، نه با اتهام." },
+            { "language": "ar", "text": "تبدأ الشكوى الموضوعية بالموضوع والهدف، لا بالاتهام." },
+            { "language": "tr", "text": "Nesnel bir şikayet konu ve hedefle başlar, suçlamayla değil." },
+            { "language": "ru", "text": "Жалоба по существу начинается с темы и цели, а не с обвинения." },
+            { "language": "ckb", "text": "سکاڵای بابەتی بە مەبەست و ئامانج دەست پێ دەکات، نە بە تاوانبارکردن." },
+            { "language": "kmr", "text": "Gilîyeke objektîf bi mijar û armanc dest pê dike, ne bi tawanbar kirinê." },
+            { "language": "pl", "text": "Rzeczowa skarga zaczyna się od sprawy i celu, a nie od oskarżenia." },
+            { "language": "ro", "text": "O reclamație obiectivă începe cu problema și scopul, nu cu acuzația." },
+            { "language": "sq", "text": "Një ankesë objektive fillon me çështjen dhe qëllimin, jo me akuzë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "specific-facts",
+          "text": "Konkrete Daten, Häufigkeit und Beobachtung machen die Beschwerde überprüfbar.",
+          "translations": [
+            { "language": "en", "text": "Concrete dates, frequency, and observation make the complaint verifiable." },
+            { "language": "fa", "text": "تاریخ‌ها، تعداد دفعات و مشاهده‌های مشخص شکایت را قابل بررسی می‌کنند." },
+            { "language": "ar", "text": "التواريخ المحددة والتكرار والملاحظة تجعل الشكوى قابلة للتحقق." },
+            { "language": "tr", "text": "Somut tarihler, sıklık ve gözlem şikayeti kontrol edilebilir hale getirir." },
+            { "language": "ru", "text": "Конкретные даты, частота и наблюдение делают жалобу проверяемой." },
+            { "language": "ckb", "text": "بەروار، دووبارەبوونەوە و تێبینیی دیاریکراو سکاڵاکە قابل پێداچوونەوە دەکەن." },
+            { "language": "kmr", "text": "Dîrokên diyar, dubarebûn û çavdêrî gilîyê tê kontrolkirin dikin." },
+            { "language": "pl", "text": "Konkretne daty, częstotliwość i obserwacja sprawiają, że skarga jest możliwa do sprawdzenia." },
+            { "language": "ro", "text": "Datele concrete, frecvența și observația fac reclamația verificabilă." },
+            { "language": "sq", "text": "Datat konkrete, shpeshtësia dhe vëzhgimi e bëjnë ankesën të verifikueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "process-request",
+          "text": "Ein Prozessvorschlag sollte einfach, alltagstauglich und für beide Seiten klar sein.",
+          "translations": [
+            { "language": "en", "text": "A process suggestion should be simple, practical for everyday use, and clear to both sides." },
+            { "language": "fa", "text": "پیشنهاد روند باید ساده، مناسب استفاده روزمره و برای هر دو طرف روشن باشد." },
+            { "language": "ar", "text": "ينبغي أن يكون اقتراح الإجراء بسيطاً ومناسباً للحياة اليومية وواضحاً للطرفين." },
+            { "language": "tr", "text": "Bir süreç önerisi basit, günlük kullanıma uygun ve iki taraf için net olmalıdır." },
+            { "language": "ru", "text": "Предложение порядка должно быть простым, пригодным для повседневной практики и ясным для обеих сторон." },
+            { "language": "ckb", "text": "پێشنیاری ڕێکار دەبێت سادە، گونجاوی ژیانی ڕۆژانە و بۆ هەردوو لا ڕوون بێت." },
+            { "language": "kmr", "text": "Pêşniyara rêbazê divê hêsan, ji bo karanîna rojane guncaw û ji bo her du aliyan zelal be." },
+            { "language": "pl", "text": "Propozycja procedury powinna być prosta, praktyczna na co dzień i jasna dla obu stron." },
+            { "language": "ro", "text": "O propunere de procedură ar trebui să fie simplă, practică pentru uz zilnic și clară pentru ambele părți." },
+            { "language": "sq", "text": "Një propozim procedure duhet të jetë i thjeshtë, praktik për përditshmëri dhe i qartë për të dyja palët." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Am Ende sollten Zuständigkeit, Startdatum und Überprüfungstermin genannt werden.",
+          "translations": [
+            { "language": "en", "text": "At the end, responsibility, start date, and review date should be named." },
+            { "language": "fa", "text": "در پایان باید مسئولیت، تاریخ شروع و زمان بررسی گفته شود." },
+            { "language": "ar", "text": "في النهاية ينبغي ذكر المسؤولية وتاريخ البدء وموعد المراجعة." },
+            { "language": "tr", "text": "Sonunda sorumluluk, başlangıç tarihi ve kontrol tarihi belirtilmelidir." },
+            { "language": "ru", "text": "В конце нужно назвать ответственность, дату начала и срок проверки." },
+            { "language": "ckb", "text": "لە کۆتاییدا دەبێت بەرپرسیارێتی، بەرواری دەستپێک و کاتی پێداچوونەوە ناو ببرێت." },
+            { "language": "kmr", "text": "Di dawiyê de divê berpirsiyarî, dîroka destpêkê û dema venêrînê bên gotin." },
+            { "language": "pl", "text": "Na końcu należy podać odpowiedzialność, datę rozpoczęcia i termin sprawdzenia." },
+            { "language": "ro", "text": "La final ar trebui numite responsabilitatea, data de început și termenul de verificare." },
+            { "language": "sq", "text": "Në fund duhet të përmenden përgjegjësia, data e fillimit dhe afati i kontrollit." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3410
+    }
+  ]
+}

@@ -1,0 +1,985 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-06-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 06 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-einen-kurzen-statusbericht-geben",
+      "title": "Einen kurzen Statusbericht geben",
+      "titleTranslations": [
+        { "language": "en", "text": "Give a short status report" },
+        { "language": "fa", "text": "دادن گزارش کوتاه وضعیت" },
+        { "language": "ar", "text": "تقديم تقرير حالة قصير" },
+        { "language": "tr", "text": "Kısa bir durum raporu vermek" },
+        { "language": "ru", "text": "Дать краткий отчет о статусе" },
+        { "language": "ckb", "text": "پێدانی ڕاپۆرتێکی کورتی دۆخ" },
+        { "language": "kmr", "text": "Raporteke rewşê ya kurt dayîn" },
+        { "language": "pl", "text": "Przekazać krótki raport o stanie pracy" },
+        { "language": "ro", "text": "Să dai un scurt raport despre starea lucrării" },
+        { "language": "sq", "text": "Të japësh një raport të shkurtër të gjendjes" }
+      ],
+      "description": "Du gibst im Teammeeting einen kurzen Status: Was ist erledigt, was blockiert noch, und welche Unterstützung brauchst du?",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You give a short status update in a team meeting: what is done, what is still blocked, and what support you need." },
+        { "language": "fa", "text": "در جلسه تیم یک گزارش کوتاه وضعیت می‌دهی: چه چیزی انجام شده، چه چیزی هنوز مانع دارد و چه کمکی لازم داری." },
+        { "language": "ar", "text": "تقدّم في اجتماع الفريق تحديثًا قصيرًا عن الحالة: ما الذي تم، وما الذي ما زال متعطلًا، وما الدعم الذي تحتاجه." },
+        { "language": "tr", "text": "Ekip toplantısında kısa bir durum güncellemesi verirsin: ne tamamlandı, ne hâlâ engelleniyor ve hangi desteğe ihtiyacın var." },
+        { "language": "ru", "text": "Ты даешь на командной встрече краткий статус: что сделано, что еще заблокировано и какая поддержка тебе нужна." },
+        { "language": "ckb", "text": "لە کۆبوونەوەی تیمدا ڕاپۆرتێکی کورتی دۆخ دەدەیت: چی تەواو بووە، چی هێشتا بەربەستە، و چ پشتیوانییەکت پێویستە." },
+        { "language": "kmr", "text": "Di civîna tîmê de tu raporteke rewşê ya kurt didî: çi qediya, çi hîn asteng e û te çi piştgirî lazim e." },
+        { "language": "pl", "text": "Na spotkaniu zespołu przekazujesz krótki stan pracy: co jest zrobione, co jest jeszcze zablokowane i jakiego wsparcia potrzebujesz." },
+        { "language": "ro", "text": "În ședința echipei dai o scurtă actualizare despre starea lucrării: ce este terminat, ce este încă blocat și de ce sprijin ai nevoie." },
+        { "language": "sq", "text": "Në mbledhjen e ekipit jep një raport të shkurtër të gjendjes: çfarë është bërë, çfarë është ende e bllokuar dhe çfarë mbështetjeje të duhet." }
+      ],
+      "learnerGoal": "Du kannst Fortschritt, Blocker und nächsten Schritt klar strukturieren und eine konkrete Bitte formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can clearly structure progress, blockers, and the next step, and make a concrete request." },
+        { "language": "fa", "text": "می‌توانی پیشرفت، مانع‌ها و قدم بعدی را روشن ساختاربندی کنی و یک درخواست مشخص مطرح کنی." },
+        { "language": "ar", "text": "يمكنك تنظيم التقدم والعوائق والخطوة التالية بوضوح، وصياغة طلب محدد." },
+        { "language": "tr", "text": "İlerlemeyi, engelleri ve sonraki adımı net biçimde yapılandırabilir ve somut bir istekte bulunabilirsin." },
+        { "language": "ru", "text": "Ты можешь ясно структурировать прогресс, препятствия и следующий шаг, а также сформулировать конкретную просьбу." },
+        { "language": "ckb", "text": "دەتوانیت پێشکەوتن، بەربەست و هەنگاوی داهاتوو بە ڕوونی ڕێکبخەیت و داواکارییەکی دیاریکراو بکەیت." },
+        { "language": "kmr", "text": "Tu dikarî pêşketin, astengî û gava din bi zelalî rêz bikî û daxwazeke zelel çê bikî." },
+        { "language": "pl", "text": "Potrafisz jasno uporządkować postęp, blokady i następny krok oraz sformułować konkretną prośbę." },
+        { "language": "ro", "text": "Poți structura clar progresul, blocajele și pasul următor și poți formula o cerere concretă." },
+        { "language": "sq", "text": "Mund të strukturosh qartë progresin, pengesat dhe hapin tjetër, si dhe të bësh një kërkesë konkrete." }
+      ],
+      "cefrLevel": "B1",
+      "category": "workplace",
+      "topics": [
+        "work-and-jobs",
+        "meetings-and-presentations"
+      ],
+      "interactionMode": "workplace",
+      "register": "formal",
+      "taskType": "workplace-meeting",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "workplace-communication"
+      ],
+      "examProfiles": [
+        "berufssprache-b1"
+      ],
+      "sortOrder": 2140,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka" },
+            { "language": "ro", "text": "Colegă" },
+            { "language": "sq", "text": "Kolege" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Kesê fêrbûner" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Kannst du uns bitte kurz den Stand zum Kundenformular geben?",
+          "translations": [
+            { "language": "en", "text": "Can you please give us a brief update on the customer form?" },
+            { "language": "fa", "text": "می‌توانی لطفاً یک گزارش کوتاه درباره وضعیت فرم مشتری بدهی؟" },
+            { "language": "ar", "text": "هل يمكنك من فضلك أن تعطينا تحديثًا قصيرًا عن نموذج العميل؟" },
+            { "language": "tr", "text": "Müşteri formuyla ilgili bize kısaca durum bilgisi verebilir misin?" },
+            { "language": "ru", "text": "Можешь, пожалуйста, кратко сообщить нам статус по форме клиента?" },
+            { "language": "ckb", "text": "دەتوانیت تکایە بە کورتی دۆخی فۆڕمی کڕیارمان پێ بڵێیت؟" },
+            { "language": "kmr", "text": "Tu dikarî ji kerema xwe bi kurtî rewşa forma xerîdar ji me re bibêjî?" },
+            { "language": "pl", "text": "Czy możesz proszę krótko powiedzieć, jaki jest stan formularza klienta?" },
+            { "language": "ro", "text": "Poți, te rog, să ne spui pe scurt care este starea formularului pentru client?" },
+            { "language": "sq", "text": "A mund të na japësh shkurt gjendjen e formularit të klientit?" }
+          ],
+          "function": "request-status",
+          "toneNote": "Formal team-meeting prompt.",
+          "expectedLearnerAction": "Give a structured status update."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gerne. Die Grundstruktur ist fertig, und die Pflichtfelder sind eingetragen. Offen ist noch die Prüfung der Beispieldaten.",
+          "translations": [
+            { "language": "en", "text": "Of course. The basic structure is finished, and the required fields have been entered. The sample data still needs to be checked." },
+            { "language": "fa", "text": "حتماً. ساختار اصلی آماده است و فیلدهای اجباری وارد شده‌اند. فقط بررسی داده‌های نمونه هنوز باقی مانده است." },
+            { "language": "ar", "text": "بكل سرور. البنية الأساسية جاهزة، وتم إدخال الحقول الإلزامية. ما زال فحص البيانات النموذجية مفتوحًا." },
+            { "language": "tr", "text": "Tabii. Temel yapı hazır ve zorunlu alanlar girildi. Örnek verilerin kontrolü hâlâ açık." },
+            { "language": "ru", "text": "Конечно. Основная структура готова, и обязательные поля внесены. Еще остается проверка примерных данных." },
+            { "language": "ckb", "text": "بە خۆشحاڵییەوە. پێکهاتەی سەرەکی تەواوە و خانە پێویستەکان تۆمارکراون. تەنها پشکنینی داتای نموونە هێشتا ماوە." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Avahiya bingehîn amade ye û qada pêwîst hatine tomarkirin. Tenê kontrola daneyên mînak hîn maye." },
+            { "language": "pl", "text": "Oczywiście. Podstawowa struktura jest gotowa, a pola obowiązkowe są wpisane. Do sprawdzenia zostały jeszcze dane przykładowe." },
+            { "language": "ro", "text": "Sigur. Structura de bază este gata, iar câmpurile obligatorii sunt introduse. Mai rămâne verificarea datelor de exemplu." },
+            { "language": "sq", "text": "Patjetër. Struktura bazë është gati dhe fushat e detyrueshme janë futur. Mbetet ende kontrolli i të dhënave shembull." }
+          ],
+          "function": "report-progress",
+          "toneNote": "Clear, structured status.",
+          "expectedLearnerAction": "Name finished and open work."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Gibt es dabei ein Problem oder ist es nur noch Arbeit?",
+          "translations": [
+            { "language": "en", "text": "Is there a problem with that, or is it only remaining work?" },
+            { "language": "fa", "text": "در این مورد مشکلی وجود دارد یا فقط کار باقی‌مانده است؟" },
+            { "language": "ar", "text": "هل توجد مشكلة في ذلك، أم أنه مجرد عمل متبقٍ؟" },
+            { "language": "tr", "text": "Bunda bir sorun var mı, yoksa sadece kalan iş mi?" },
+            { "language": "ru", "text": "С этим есть проблема или это просто оставшаяся работа?" },
+            { "language": "ckb", "text": "لەوەدا کێشەیەک هەیە یان تەنها کاری ماوەیە؟" },
+            { "language": "kmr", "text": "Di vê de pirsgirêkek heye an tenê karê mayî ye?" },
+            { "language": "pl", "text": "Czy jest z tym jakiś problem, czy to tylko pozostała praca?" },
+            { "language": "ro", "text": "Există vreo problemă cu asta sau este doar muncă rămasă?" },
+            { "language": "sq", "text": "A ka ndonjë problem me këtë apo është vetëm punë e mbetur?" }
+          ],
+          "function": "ask-blocker",
+          "toneNote": "Clarifies whether there is a blocker.",
+          "expectedLearnerAction": "Explain the blocker precisely."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Es gibt einen kleinen Blocker: Für zwei Felder fehlt mir noch die Entscheidung, ob sie Pflichtfelder bleiben sollen.",
+          "translations": [
+            { "language": "en", "text": "There is a small blocker: for two fields I still need the decision on whether they should remain required fields." },
+            { "language": "fa", "text": "یک مانع کوچک وجود دارد: برای دو فیلد هنوز تصمیم لازم است که آیا باید همچنان اجباری بمانند یا نه." },
+            { "language": "ar", "text": "هناك عائق صغير: بالنسبة لحقلين ما زلت أحتاج إلى قرار بشأن ما إذا كانا سيبقيان إلزاميين." },
+            { "language": "tr", "text": "Küçük bir engel var: iki alan için hâlâ zorunlu alan olarak kalıp kalmayacağına dair karara ihtiyacım var." },
+            { "language": "ru", "text": "Есть небольшое препятствие: по двум полям мне еще нужно решение, должны ли они остаться обязательными." },
+            { "language": "ckb", "text": "بەربەستێکی بچووک هەیە: بۆ دوو خانە هێشتا پێویستم بە بڕیارە کە ئایا وەک خانەی پێویست دەمێننەوە یان نا." },
+            { "language": "kmr", "text": "Astengiyeke piçûk heye: ji bo du qadan hîn biryarê dixwazim ka ew wek qada pêwîst bimînin yan na." },
+            { "language": "pl", "text": "Jest mała blokada: dla dwóch pól wciąż potrzebuję decyzji, czy mają pozostać polami obowiązkowymi." },
+            { "language": "ro", "text": "Există un mic blocaj: pentru două câmpuri încă am nevoie de decizia dacă trebuie să rămână obligatorii." },
+            { "language": "sq", "text": "Ka një pengesë të vogël: për dy fusha më duhet ende vendimi nëse duhet të mbeten fusha të detyrueshme." }
+          ],
+          "function": "name-blocker",
+          "toneNote": "Specific and factual.",
+          "expectedLearnerAction": "Name what decision is needed."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Welche Entscheidung brauchst du vom Team?",
+          "translations": [
+            { "language": "en", "text": "What decision do you need from the team?" },
+            { "language": "fa", "text": "چه تصمیمی از تیم لازم داری؟" },
+            { "language": "ar", "text": "ما القرار الذي تحتاجه من الفريق؟" },
+            { "language": "tr", "text": "Ekipten hangi karara ihtiyacın var?" },
+            { "language": "ru", "text": "Какое решение тебе нужно от команды?" },
+            { "language": "ckb", "text": "چ بڕیارێکت لە تیمەکە پێویستە؟" },
+            { "language": "kmr", "text": "Ji tîmê çi biryarekê dixwazî?" },
+            { "language": "pl", "text": "Jakiej decyzji potrzebujesz od zespołu?" },
+            { "language": "ro", "text": "De ce decizie ai nevoie din partea echipei?" },
+            { "language": "sq", "text": "Çfarë vendimi të duhet nga ekipi?" }
+          ],
+          "function": "ask-needed-decision",
+          "toneNote": "Asks for the concrete request.",
+          "expectedLearnerAction": "Make a precise request with a deadline."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich brauche bis morgen 10 Uhr eine Rückmeldung zu den Feldern Telefon und Kundennummer. Dann kann ich die Version bis Mittag abschließen.",
+          "translations": [
+            { "language": "en", "text": "I need feedback by tomorrow at 10 a.m. on the fields phone and customer number. Then I can finish the version by noon." },
+            { "language": "fa", "text": "تا فردا ساعت ۱۰ به بازخورد درباره فیلدهای تلفن و شماره مشتری نیاز دارم. بعد می‌توانم نسخه را تا ظهر تمام کنم." },
+            { "language": "ar", "text": "أحتاج إلى ملاحظة حتى العاشرة صباحًا غدًا بشأن حقلي الهاتف ورقم العميل. عندها أستطيع إنهاء النسخة حتى الظهر." },
+            { "language": "tr", "text": "Yarın saat 10'a kadar telefon ve müşteri numarası alanlarıyla ilgili geri bildirime ihtiyacım var. O zaman sürümü öğlene kadar bitirebilirim." },
+            { "language": "ru", "text": "Мне нужен отзыв до завтра 10 часов по полям телефон и номер клиента. Тогда я смогу закончить версию к полудню." },
+            { "language": "ckb", "text": "تا سبەی کاتژمێر ١٠ پێویستم بە فیدباکە بۆ خانەکانی تەلەفۆن و ژمارەی کڕیار. پاشان دەتوانم وەشانەکە تا نیوەڕۆ تەواو بکەم." },
+            { "language": "kmr", "text": "Heta sibê saet 10 ji bo qadên telefon û hejmara xerîdar vegerandinê dixwazim. Hingê dikarim guhertoyê heta nîvro biqedînim." },
+            { "language": "pl", "text": "Potrzebuję do jutra do godziny 10 informacji zwrotnej dotyczącej pól telefon i numer klienta. Wtedy mogę zakończyć wersję do południa." },
+            { "language": "ro", "text": "Am nevoie până mâine la ora 10 de răspuns pentru câmpurile telefon și număr de client. Apoi pot finaliza versiunea până la prânz." },
+            { "language": "sq", "text": "Më duhen përgjigjet deri nesër në orën 10 për fushat telefon dhe numër klienti. Pastaj mund ta përfundoj versionin deri në mesditë." }
+          ],
+          "function": "request-decision",
+          "toneNote": "Concrete request with deadline and result.",
+          "expectedLearnerAction": "Request a decision and explain the consequence."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Okay. Kannst du den nächsten Schritt noch einmal zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "Okay. Can you summarize the next step again?" },
+            { "language": "fa", "text": "باشه. می‌توانی قدم بعدی را دوباره خلاصه کنی؟" },
+            { "language": "ar", "text": "حسنًا. هل يمكنك تلخيص الخطوة التالية مرة أخرى؟" },
+            { "language": "tr", "text": "Tamam. Sonraki adımı bir kez daha özetleyebilir misin?" },
+            { "language": "ru", "text": "Хорошо. Можешь еще раз подытожить следующий шаг?" },
+            { "language": "ckb", "text": "باشە. دەتوانیت هەنگاوی داهاتوو جارێکی تر پوختە بکەیتەوە؟" },
+            { "language": "kmr", "text": "Baş e. Tu dikarî gava din careke din kurt bikî?" },
+            { "language": "pl", "text": "Dobrze. Czy możesz jeszcze raz podsumować następny krok?" },
+            { "language": "ro", "text": "Bine. Poți să rezumi încă o dată pasul următor?" },
+            { "language": "sq", "text": "Në rregull. A mund ta përmbledhësh edhe një herë hapin tjetër?" }
+          ],
+          "function": "ask-summary",
+          "toneNote": "Checks shared understanding.",
+          "expectedLearnerAction": "Summarize decision, deadline, and delivery."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja: Ich warte auf die Entscheidung zu zwei Feldern, sammle die Rückmeldung bis morgen 10 Uhr und schließe die Version bis Mittag ab.",
+          "translations": [
+            { "language": "en", "text": "Yes: I will wait for the decision on two fields, collect the feedback by tomorrow at 10 a.m., and finish the version by noon." },
+            { "language": "fa", "text": "بله: منتظر تصمیم درباره دو فیلد می‌مانم، بازخورد را تا فردا ساعت ۱۰ جمع می‌کنم و نسخه را تا ظهر نهایی می‌کنم." },
+            { "language": "ar", "text": "نعم: سأنتظر القرار بشأن حقلين، وأجمع الملاحظات حتى العاشرة صباحًا غدًا، وأنهي النسخة حتى الظهر." },
+            { "language": "tr", "text": "Evet: iki alanla ilgili kararı bekleyeceğim, geri bildirimi yarın saat 10'a kadar toplayacağım ve sürümü öğlene kadar tamamlayacağım." },
+            { "language": "ru", "text": "Да: я дождусь решения по двум полям, соберу отзывы до завтра 10 часов и закончу версию к полудню." },
+            { "language": "ckb", "text": "بەڵێ: چاوەڕێی بڕیار لەسەر دوو خانە دەکەم، فیدباکەکان تا سبەی کاتژمێر ١٠ کۆدەکەمەوە و وەشانەکە تا نیوەڕۆ تەواو دەکەم." },
+            { "language": "kmr", "text": "Erê: ez li benda biryara li ser du qadan dimînim, vegerandinê heta sibê saet 10 kom dikim û guhertoyê heta nîvro diqedînim." },
+            { "language": "pl", "text": "Tak: poczekam na decyzję dotyczącą dwóch pól, zbiorę informacje zwrotne do jutra do godziny 10 i zakończę wersję do południa." },
+            { "language": "ro", "text": "Da: aștept decizia pentru două câmpuri, adun răspunsurile până mâine la ora 10 și finalizez versiunea până la prânz." },
+            { "language": "sq", "text": "Po: do të pres vendimin për dy fusha, do t'i mbledh përgjigjet deri nesër në orën 10 dhe do ta përfundoj versionin deri në mesditë." }
+          ],
+          "function": "summarize-next-step",
+          "toneNote": "Complete meeting summary.",
+          "expectedLearnerAction": "Summarize precisely."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Gerne. Die Grundstruktur ist fertig, und die Pflichtfelder sind eingetragen. Offen ist noch die Prüfung der Beispieldaten.",
+              "translations": [
+                { "language": "en", "text": "Of course. The basic structure is finished, and the required fields have been entered. The sample data still needs to be checked." },
+                { "language": "fa", "text": "حتماً. ساختار اصلی آماده است و فیلدهای اجباری وارد شده‌اند. فقط بررسی داده‌های نمونه هنوز باقی مانده است." },
+                { "language": "ar", "text": "بكل سرور. البنية الأساسية جاهزة، وتم إدخال الحقول الإلزامية. ما زال فحص البيانات النموذجية مفتوحًا." },
+                { "language": "tr", "text": "Tabii. Temel yapı hazır ve zorunlu alanlar girildi. Örnek verilerin kontrolü hâlâ açık." },
+                { "language": "ru", "text": "Конечно. Основная структура готова, и обязательные поля внесены. Еще остается проверка примерных данных." },
+                { "language": "ckb", "text": "بە خۆشحاڵییەوە. پێکهاتەی سەرەکی تەواوە و خانە پێویستەکان تۆمارکراون. تەنها پشکنینی داتای نموونە هێشتا ماوە." },
+                { "language": "kmr", "text": "Bi kêfxweşî. Avahiya bingehîn amade ye û qada pêwîst hatine tomarkirin. Tenê kontrola daneyên mînak hîn maye." },
+                { "language": "pl", "text": "Oczywiście. Podstawowa struktura jest gotowa, a pola obowiązkowe są wpisane. Do sprawdzenia zostały jeszcze dane przykładowe." },
+                { "language": "ro", "text": "Sigur. Structura de bază este gata, iar câmpurile obligatorii sunt introduse. Mai rămâne verificarea datelor de exemplu." },
+                { "language": "sq", "text": "Patjetër. Struktura bazë është gati dhe fushat e detyrueshme janë futur. Mbetet ende kontrolli i të dhënave shembull." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Der Status nennt erledigte Arbeit und den offenen Punkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the status names completed work and the open point." },
+                { "language": "fa", "text": "خوب است: گزارش وضعیت، کار انجام‌شده و نکته باز را مشخص می‌کند." },
+                { "language": "ar", "text": "جيد: يذكر التحديث العمل المنجز والنقطة المفتوحة." },
+                { "language": "tr", "text": "İyi: durum bilgisi tamamlanan işi ve açık noktayı söylüyor." },
+                { "language": "ru", "text": "Хорошо: статус называет выполненную работу и открытый пункт." },
+                { "language": "ckb", "text": "باشە: دۆخەکە کاری تەواوبوو و خاڵی کراوە دەڵێت." },
+                { "language": "kmr", "text": "Baş e: rewş karê qediyayî û xala vekirî dibêje." },
+                { "language": "pl", "text": "Dobrze: opis stanu wskazuje wykonaną pracę i otwarty punkt." },
+                { "language": "ro", "text": "Bine: descrierea stării numește munca finalizată și punctul deschis." },
+                { "language": "sq", "text": "Mirë: përshkrimi i gjendjes përmend punën e përfunduar dhe pikën e hapur." }
+              ],
+              "explanationKey": "status-done-open"
+            },
+            {
+              "id": "too-vague",
+              "text": "Es läuft gut, aber ich bin noch nicht ganz fertig.",
+              "translations": [
+                { "language": "en", "text": "It is going well, but I am not completely finished yet." },
+                { "language": "fa", "text": "خوب پیش می‌رود، اما هنوز کاملاً تمام نکرده‌ام." },
+                { "language": "ar", "text": "الأمر يسير جيدًا، لكنني لم أنتهِ تمامًا بعد." },
+                { "language": "tr", "text": "İyi gidiyor, ama henüz tamamen bitirmedim." },
+                { "language": "ru", "text": "Все идет хорошо, но я еще не совсем закончил." },
+                { "language": "ckb", "text": "باش دەچێت، بەڵام هێشتا بە تەواوی تەواوم نەکردووە." },
+                { "language": "kmr", "text": "Baş diçe, lê ez hîn bi tevahî neqedandime." },
+                { "language": "pl", "text": "Idzie dobrze, ale nie jestem jeszcze całkiem gotowy." },
+                { "language": "ro", "text": "Merge bine, dar încă nu am terminat complet." },
+                { "language": "sq", "text": "Po shkon mirë, por ende nuk e kam përfunduar plotësisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Es fehlen erledigte Teile und der konkrete offene Punkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: completed parts and the concrete open point are missing." },
+                { "language": "fa", "text": "قابل‌قبول به نظر می‌رسد، اما خیلی مبهم است: بخش‌های انجام‌شده و نکته باز مشخص نیستند." },
+                { "language": "ar", "text": "محتملة، لكنها عامة جدًا: الأجزاء المنجزة والنقطة المفتوحة المحددة غير مذكورة." },
+                { "language": "tr", "text": "Mantıklı görünüyor, ama fazla belirsiz: tamamlanan kısımlar ve somut açık nokta eksik." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слишком расплывчато: не хватает выполненных частей и конкретного открытого пункта." },
+                { "language": "ckb", "text": "گونجاو دەردەکەوێت، بەڵام زۆر ناڕوونە: بەشە تەواوبووەکان و خاڵی کراوەی دیاریکراو کەمن." },
+                { "language": "kmr", "text": "Mimkun xuya dike, lê pir nezelal e: beşên qediyayî û xala vekirî ya zelel kêm in." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ogólne: brakuje wykonanych części i konkretnego otwartego punktu." },
+                { "language": "ro", "text": "Pare plauzibil, dar este prea vag: lipsesc părțile finalizate și punctul concret rămas deschis." },
+                { "language": "sq", "text": "Duket e besueshme, por është shumë e paqartë: mungojnë pjesët e përfunduara dhe pika konkrete e hapur." }
+              ],
+              "explanationKey": "needs-specific-status"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Es gibt einen kleinen Blocker: Für zwei Felder fehlt mir noch die Entscheidung, ob sie Pflichtfelder bleiben sollen.",
+              "translations": [
+                { "language": "en", "text": "There is a small blocker: for two fields I still need the decision on whether they should remain required fields." },
+                { "language": "fa", "text": "یک مانع کوچک وجود دارد: برای دو فیلد هنوز تصمیم لازم است که آیا باید همچنان اجباری بمانند یا نه." },
+                { "language": "ar", "text": "هناك عائق صغير: بالنسبة لحقلين ما زلت أحتاج إلى قرار بشأن ما إذا كانا سيبقيان إلزاميين." },
+                { "language": "tr", "text": "Küçük bir engel var: iki alan için hâlâ zorunlu alan olarak kalıp kalmayacağına dair karara ihtiyacım var." },
+                { "language": "ru", "text": "Есть небольшое препятствие: по двум полям мне еще нужно решение, должны ли они остаться обязательными." },
+                { "language": "ckb", "text": "بەربەستێکی بچووک هەیە: بۆ دوو خانە هێشتا پێویستم بە بڕیارە کە ئایا وەک خانەی پێویست دەمێننەوە یان نا." },
+                { "language": "kmr", "text": "Astengiyeke piçûk heye: ji bo du qadan hîn biryarê dixwazim ka ew wek qada pêwîst bimînin yan na." },
+                { "language": "pl", "text": "Jest mała blokada: dla dwóch pól wciąż potrzebuję decyzji, czy mają pozostać polami obowiązkowymi." },
+                { "language": "ro", "text": "Există un mic blocaj: pentru două câmpuri încă am nevoie de decizia dacă trebuie să rămână obligatorii." },
+                { "language": "sq", "text": "Ka një pengesë të vogël: për dy fusha më duhet ende vendimi nëse duhet të mbeten fusha të detyrueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Der Blocker ist klein, konkret und mit einer Entscheidung verbunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the blocker is small, concrete, and connected to a decision." },
+                { "language": "fa", "text": "خوب است: مانع کوچک، مشخص و مرتبط با یک تصمیم است." },
+                { "language": "ar", "text": "جيد: العائق صغير ومحدد ومرتبط بقرار." },
+                { "language": "tr", "text": "İyi: engel küçük, somut ve bir kararla bağlantılı." },
+                { "language": "ru", "text": "Хорошо: препятствие небольшое, конкретное и связано с решением." },
+                { "language": "ckb", "text": "باشە: بەربەستەکە بچووک، دیاریکراو و پەیوەندیدارە بە بڕیارێکەوە." },
+                { "language": "kmr", "text": "Baş e: astengî piçûk, zelel û bi biryarekê ve girêdayî ye." },
+                { "language": "pl", "text": "Dobrze: blokada jest mała, konkretna i związana z decyzją." },
+                { "language": "ro", "text": "Bine: blocajul este mic, concret și legat de o decizie." },
+                { "language": "sq", "text": "Mirë: pengesa është e vogël, konkrete dhe e lidhur me një vendim." }
+              ],
+              "explanationKey": "specific-blocker"
+            },
+            {
+              "id": "missing-decision",
+              "text": "Ich muss nur noch zwei Felder prüfen.",
+              "translations": [
+                { "language": "en", "text": "I only still need to check two fields." },
+                { "language": "fa", "text": "فقط باید دو فیلد را هنوز بررسی کنم." },
+                { "language": "ar", "text": "عليّ فقط أن أراجع حقلين آخرين." },
+                { "language": "tr", "text": "Sadece iki alanı daha kontrol etmem gerekiyor." },
+                { "language": "ru", "text": "Мне нужно только еще проверить два поля." },
+                { "language": "ckb", "text": "تەنها دەبێت دوو خانەی تر پشکنین بکەم." },
+                { "language": "kmr", "text": "Tenê divê ez du qadên din kontrol bikim." },
+                { "language": "pl", "text": "Muszę tylko sprawdzić jeszcze dwa pola." },
+                { "language": "ro", "text": "Trebuie doar să mai verific două câmpuri." },
+                { "language": "sq", "text": "Më duhet vetëm të kontrolloj edhe dy fusha." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Es klingt nach eigener Restarbeit, aber die nötige Teamentscheidung fehlt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: it sounds like your own remaining work, but the needed team decision is missing." },
+                { "language": "fa", "text": "خیلی نامشخص است: انگار فقط کار باقی‌مانده خودت است، اما تصمیم لازم تیم ذکر نشده است." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: يبدو كأنه عملك المتبقي فقط، لكن قرار الفريق المطلوب غير مذكور." },
+                { "language": "tr", "text": "Fazla belirsiz: kendi kalan işin gibi duyuluyor, ama gereken ekip kararı eksik." },
+                { "language": "ru", "text": "Слишком неточно: звучит как твоя собственная оставшаяся работа, но не хватает нужного решения команды." },
+                { "language": "ckb", "text": "زۆر ناوردەیە: وەک کاری ماوەی خۆت دەردەکەوێت، بەڵام بڕیاری پێویستی تیمەکە کەمە." },
+                { "language": "kmr", "text": "Pir nezelal e: wekî karê mayî yê te xuya dike, lê biryara pêwîst a tîmê kêm e." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: brzmi jak twoja własna pozostała praca, ale brakuje potrzebnej decyzji zespołu." },
+                { "language": "ro", "text": "Prea neclar: sună ca munca ta rămasă, dar lipsește decizia necesară a echipei." },
+                { "language": "sq", "text": "Shumë e pasaktë: tingëllon si puna jote e mbetur, por mungon vendimi i nevojshëm i ekipit." }
+              ],
+              "explanationKey": "missing-team-decision"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja: Ich warte auf die Entscheidung zu zwei Feldern, sammle die Rückmeldung bis morgen 10 Uhr und schließe die Version bis Mittag ab.",
+              "translations": [
+                { "language": "en", "text": "Yes: I will wait for the decision on two fields, collect the feedback by tomorrow at 10 a.m., and finish the version by noon." },
+                { "language": "fa", "text": "بله: منتظر تصمیم درباره دو فیلد می‌مانم، بازخورد را تا فردا ساعت ۱۰ جمع می‌کنم و نسخه را تا ظهر نهایی می‌کنم." },
+                { "language": "ar", "text": "نعم: سأنتظر القرار بشأن حقلين، وأجمع الملاحظات حتى العاشرة صباحًا غدًا، وأنهي النسخة حتى الظهر." },
+                { "language": "tr", "text": "Evet: iki alanla ilgili kararı bekleyeceğim, geri bildirimi yarın saat 10'a kadar toplayacağım ve sürümü öğlene kadar tamamlayacağım." },
+                { "language": "ru", "text": "Да: я дождусь решения по двум полям, соберу отзывы до завтра 10 часов и закончу версию к полудню." },
+                { "language": "ckb", "text": "بەڵێ: چاوەڕێی بڕیار لەسەر دوو خانە دەکەم، فیدباکەکان تا سبەی کاتژمێر ١٠ کۆدەکەمەوە و وەشانەکە تا نیوەڕۆ تەواو دەکەم." },
+                { "language": "kmr", "text": "Erê: ez li benda biryara li ser du qadan dimînim, vegerandinê heta sibê saet 10 kom dikim û guhertoyê heta nîvro diqedînim." },
+                { "language": "pl", "text": "Tak: poczekam na decyzję dotyczącą dwóch pól, zbiorę informacje zwrotne do jutra do godziny 10 i zakończę wersję do południa." },
+                { "language": "ro", "text": "Da: aștept decizia pentru două câmpuri, adun răspunsurile până mâine la ora 10 și finalizez versiunea până la prânz." },
+                { "language": "sq", "text": "Po: do të pres vendimin për dy fusha, do t'i mbledh përgjigjet deri nesër në orën 10 dhe do ta përfundoj versionin deri në mesditë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gute Zusammenfassung: Entscheidung, Frist und Ergebnis sind klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good summary: decision, deadline, and result are clear." },
+                { "language": "fa", "text": "جمع‌بندی خوب: تصمیم، مهلت و نتیجه روشن هستند." },
+                { "language": "ar", "text": "تلخيص جيد: القرار والموعد والنتيجة واضحة." },
+                { "language": "tr", "text": "İyi özet: karar, son tarih ve sonuç net." },
+                { "language": "ru", "text": "Хорошее резюме: решение, срок и результат ясны." },
+                { "language": "ckb", "text": "پوختەی باش: بڕیار، مۆڵەت و ئەنجام ڕوونن." },
+                { "language": "kmr", "text": "Kurtasiya baş: biryar, demê dawî û encam zelal in." },
+                { "language": "pl", "text": "Dobre podsumowanie: decyzja, termin i rezultat są jasne." },
+                { "language": "ro", "text": "Rezumat bun: decizia, termenul și rezultatul sunt clare." },
+                { "language": "sq", "text": "Përmbledhje e mirë: vendimi, afati dhe rezultati janë të qarta." }
+              ],
+              "explanationKey": "decision-deadline-result"
+            },
+            {
+              "id": "missing-deadline",
+              "text": "Ja, ich warte auf die Rückmeldung und mache die Version dann fertig.",
+              "translations": [
+                { "language": "en", "text": "Yes, I will wait for the feedback and then finish the version." },
+                { "language": "fa", "text": "بله، منتظر بازخورد می‌مانم و بعد نسخه را تمام می‌کنم." },
+                { "language": "ar", "text": "نعم، سأنتظر الملاحظات ثم أنهي النسخة." },
+                { "language": "tr", "text": "Evet, geri bildirimi beklerim ve sonra sürümü bitiririm." },
+                { "language": "ru", "text": "Да, я подожду отзыв и потом закончу версию." },
+                { "language": "ckb", "text": "بەڵێ، چاوەڕێی فیدباک دەکەم و پاشان وەشانەکە تەواو دەکەم." },
+                { "language": "kmr", "text": "Erê, ez li benda vegerandinê dimînim û paşê guhertoyê diqedînim." },
+                { "language": "pl", "text": "Tak, poczekam na informację zwrotną i potem skończę wersję." },
+                { "language": "ro", "text": "Da, aștept răspunsul și apoi finalizez versiunea." },
+                { "language": "sq", "text": "Po, do të pres përgjigjen dhe pastaj do ta përfundoj versionin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Fast passend, aber zu schwach für ein Meeting: Die genaue Uhrzeit und der Liefertermin fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Almost suitable, but too weak for a meeting: the exact time and delivery deadline are missing." },
+                { "language": "fa", "text": "تقریباً مناسب است، اما برای جلسه کافی نیست: ساعت دقیق و زمان تحویل ذکر نشده‌اند." },
+                { "language": "ar", "text": "قريبة من المناسبة، لكنها ضعيفة للاجتماع: الوقت الدقيق وموعد التسليم غير مذكورين." },
+                { "language": "tr", "text": "Neredeyse uygun, ama toplantı için zayıf: kesin saat ve teslim zamanı eksik." },
+                { "language": "ru", "text": "Почти подходит, но слишком слабо для встречи: не хватает точного времени и срока сдачи." },
+                { "language": "ckb", "text": "نزیکە لە گونجاو، بەڵام بۆ کۆبوونەوە لاوازە: کاتی ورد و کاتی گەیاندن کەمن." },
+                { "language": "kmr", "text": "Hema hema guncaw e, lê ji bo civînê lawaz e: saeta rast û demê radestkirinê kêm in." },
+                { "language": "pl", "text": "Prawie pasuje, ale jest za słabe na spotkanie: brakuje dokładnej godziny i terminu dostarczenia." },
+                { "language": "ro", "text": "Aproape potrivit, dar prea slab pentru o ședință: lipsesc ora exactă și termenul de livrare." },
+                { "language": "sq", "text": "Pothuajse e përshtatshme, por e dobët për një mbledhje: mungojnë ora e saktë dhe afati i dorëzimit." }
+              ],
+              "explanationKey": "missing-time-and-delivery"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "model-answer",
+          "text": "Ein guter B1-Statusbericht ist kurz, aber strukturiert: erledigt, offen, Blocker, Bitte und nächster Schritt.",
+          "translations": [
+            { "language": "en", "text": "A good B1 status report is short but structured: done, open, blocker, request, and next step." },
+            { "language": "fa", "text": "گزارش وضعیت خوب در سطح B1 کوتاه اما ساختارمند است: انجام‌شده، باز، مانع، درخواست و قدم بعدی." },
+            { "language": "ar", "text": "تقرير الحالة الجيد في مستوى B1 يكون قصيرًا لكنه منظم: المنجز، المفتوح، العائق، الطلب، والخطوة التالية." },
+            { "language": "tr", "text": "İyi bir B1 durum raporu kısa ama yapılandırılmıştır: tamamlanan, açık olan, engel, istek ve sonraki adım." },
+            { "language": "ru", "text": "Хороший статусный отчет B1 короткий, но структурированный: выполнено, открыто, препятствие, просьба и следующий шаг." },
+            { "language": "ckb", "text": "ڕاپۆرتی باشی دۆخی B1 کورتە، بەڵام ڕێکخراوە: تەواوبوو، کراوە، بەربەست، داواکاری و هەنگاوی داهاتوو." },
+            { "language": "kmr", "text": "Raporta rewşê ya baş a B1 kurt e, lê rêzkirî ye: qediyayî, vekirî, astengî, daxwaz û gava din." },
+            { "language": "pl", "text": "Dobry raport o stanie pracy na B1 jest krótki, ale uporządkowany: zrobione, otwarte, blokada, prośba i następny krok." },
+            { "language": "ro", "text": "Un raport bun despre starea lucrării la B1 este scurt, dar structurat: făcut, deschis, blocaj, cerere și pasul următor." },
+            { "language": "sq", "text": "Një raport i mirë për gjendjen e punës në B1 është i shkurtër, por i strukturuar: e kryer, e hapur, pengesë, kërkesë dhe hapi tjetër." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-aufgabe-freundlich-ablehnen",
+      "title": "Eine Aufgabe freundlich ablehnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Politely decline a task" },
+        { "language": "fa", "text": "رد مؤدبانه یک وظیفه" },
+        { "language": "ar", "text": "رفض مهمة بأدب" },
+        { "language": "tr", "text": "Bir görevi kibarca reddetmek" },
+        { "language": "ru", "text": "Вежливо отказаться от задачи" },
+        { "language": "ckb", "text": "ڕەتکردنەوەی ئەرکێک بە ئەدەب" },
+        { "language": "kmr", "text": "Karekî bi nazikî red kirin" },
+        { "language": "pl", "text": "Uprzejmie odmówić zadania" },
+        { "language": "ro", "text": "Să refuzi politicos o sarcină" },
+        { "language": "sq", "text": "Të refuzosh me mirësjellje një detyrë" }
+      ],
+      "description": "Eine Kollegin bittet dich um eine zusätzliche Aufgabe. Du hast gerade keine Kapazität, lehnst höflich ab und bietest eine realistische Alternative an.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "A colleague asks you to take on an extra task. You currently have no capacity, decline politely, and offer a realistic alternative." },
+        { "language": "fa", "text": "یک همکار از تو می‌خواهد یک وظیفه اضافی انجام بدهی. فعلاً ظرفیت نداری، مؤدبانه رد می‌کنی و یک جایگزین واقع‌بینانه پیشنهاد می‌دهی." },
+        { "language": "ar", "text": "تطلب منك زميلة مهمة إضافية. ليست لديك قدرة الآن، فترفض بأدب وتعرض بديلًا واقعيًا." },
+        { "language": "tr", "text": "Bir iş arkadaşı senden ek bir görev ister. Şu anda kapasiten yok, kibarca reddeder ve gerçekçi bir alternatif sunarsın." },
+        { "language": "ru", "text": "Коллега просит тебя взять дополнительную задачу. Сейчас у тебя нет ресурса, ты вежливо отказываешься и предлагаешь реалистичную альтернативу." },
+        { "language": "ckb", "text": "هاوکارێک داوای ئەرکێکی زیادە لێدەکات. لە ئێستادا توانای زیاترت نییە، بە ئەدەب ڕەتدەکەیتەوە و جێگرەوەیەکی ڕاستەقینە پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Hevkarek karekî zêde ji te dixwaze. Niha kapasîteya te tune, tu bi nazikî red dikî û alternatîfeke rastîn pêşniyar dikî." },
+        { "language": "pl", "text": "Koleżanka prosi cię o dodatkowe zadanie. Nie masz teraz możliwości, odmawiasz uprzejmie i proponujesz realistyczną alternatywę." },
+        { "language": "ro", "text": "O colegă te roagă să preiei o sarcină suplimentară. Nu ai capacitate acum, refuzi politicos și oferi o alternativă realistă." },
+        { "language": "sq", "text": "Një kolege të kërkon një detyrë shtesë. Për momentin nuk ke kapacitet, refuzon me mirësjellje dhe ofron një alternativë realiste." }
+      ],
+      "learnerGoal": "Du kannst eine Grenze setzen, den Grund kurz erklären und eine Alternative anbieten, ohne unkooperativ zu wirken.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can set a boundary, briefly explain the reason, and offer an alternative without sounding uncooperative." },
+        { "language": "fa", "text": "می‌توانی یک حد و مرز بگذاری، دلیل را کوتاه توضیح بدهی و بدون اینکه غیرهمکارانه به نظر برسی جایگزین پیشنهاد کنی." },
+        { "language": "ar", "text": "يمكنك وضع حد، وشرح السبب باختصار، وعرض بديل من دون أن تبدو غير متعاون." },
+        { "language": "tr", "text": "Bir sınır koyabilir, nedeni kısaca açıklayabilir ve işbirliğine kapalı görünmeden alternatif sunabilirsin." },
+        { "language": "ru", "text": "Ты можешь обозначить границу, кратко объяснить причину и предложить альтернативу, не выглядя неготовым сотрудничать." },
+        { "language": "ckb", "text": "دەتوانیت سنوورێک دابنێیت، هۆکارەکە بە کورتی ڕوون بکەیتەوە و جێگرەوە پێشنیار بکەیت، بێ ئەوەی وەک کەسێکی نەهاوکار دیار بیت." },
+        { "language": "kmr", "text": "Tu dikarî sînorekê danî, sedemê bi kurtî rave bikî û alternatîfekê pêşniyar bikî bê ku wekî ne-hevkariyê xuya bikî." },
+        { "language": "pl", "text": "Potrafisz postawić granicę, krótko wyjaśnić powód i zaproponować alternatywę, nie brzmiąc niechętnie do współpracy." },
+        { "language": "ro", "text": "Poți stabili o limită, poți explica pe scurt motivul și poți oferi o alternativă fără să pari necooperant." },
+        { "language": "sq", "text": "Mund të vendosësh një kufi, ta shpjegosh shkurt arsyen dhe të ofrosh një alternativë pa tingëlluar jo bashkëpunues." }
+      ],
+      "cefrLevel": "B1",
+      "category": "workplace",
+      "topics": [
+        "work-and-jobs",
+        "business-communication"
+      ],
+      "interactionMode": "workplace",
+      "register": "formal",
+      "taskType": "refuse-politely",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "workplace-communication"
+      ],
+      "examProfiles": [
+        "berufssprache-b1"
+      ],
+      "sortOrder": 2150,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka" },
+            { "language": "ro", "text": "Colegă" },
+            { "language": "sq", "text": "Kolege" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Kesê fêrbûner" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Kannst du heute zusätzlich die Präsentation für Frau Weber vorbereiten?",
+          "translations": [
+            { "language": "en", "text": "Can you also prepare the presentation for Ms. Weber today?" },
+            { "language": "fa", "text": "می‌توانی امروز علاوه بر کارهای دیگر، ارائه برای خانم وبر را هم آماده کنی؟" },
+            { "language": "ar", "text": "هل يمكنك اليوم أيضًا إعداد العرض للسيدة فيبر؟" },
+            { "language": "tr", "text": "Bugün ayrıca Bayan Weber için sunumu hazırlayabilir misin?" },
+            { "language": "ru", "text": "Можешь сегодня дополнительно подготовить презентацию для госпожи Вебер?" },
+            { "language": "ckb", "text": "دەتوانیت ئەمڕۆ بە زیادەوە پێشکەشکردنەکە بۆ خانمی ڤێبەر ئامادە بکەیت؟" },
+            { "language": "kmr", "text": "Tu dikarî îro zêdetir pêşkêşkirina ji bo Xanim Weber amade bikî?" },
+            { "language": "pl", "text": "Czy możesz dziś dodatkowo przygotować prezentację dla pani Weber?" },
+            { "language": "ro", "text": "Poți să pregătești astăzi și prezentarea pentru doamna Weber?" },
+            { "language": "sq", "text": "A mund ta përgatitësh sot edhe prezantimin për zonjën Weber?" }
+          ],
+          "function": "request-extra-task",
+          "toneNote": "Workplace request.",
+          "expectedLearnerAction": "Decline politely with reason."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde gern helfen, aber heute schaffe ich das leider nicht, weil ich den Bericht bis 16 Uhr abgeben muss.",
+          "translations": [
+            { "language": "en", "text": "I would like to help, but unfortunately I cannot manage that today because I have to submit the report by 4 p.m." },
+            { "language": "fa", "text": "دوست دارم کمک کنم، اما متأسفانه امروز نمی‌توانم انجامش بدهم، چون باید گزارش را تا ساعت ۱۶ تحویل بدهم." },
+            { "language": "ar", "text": "أود أن أساعد، لكن للأسف لا أستطيع إنجاز ذلك اليوم لأن عليّ تسليم التقرير حتى الساعة الرابعة." },
+            { "language": "tr", "text": "Yardım etmek isterim, ama maalesef bugün bunu yetiştiremiyorum çünkü raporu saat 16'ya kadar teslim etmem gerekiyor." },
+            { "language": "ru", "text": "Я бы хотел помочь, но, к сожалению, сегодня не справлюсь, потому что должен сдать отчет до 16 часов." },
+            { "language": "ckb", "text": "دەمەوێت یارمەتی بدەم، بەڵام بەداخەوە ئەمڕۆ ناتوانم ئەوە بکەم، چونکە دەبێت ڕاپۆرتەکە تا کاتژمێر ١٦ بدەم." },
+            { "language": "kmr", "text": "Ez dixwazim alîkarî bikim, lê mixabin îro nikarim vê bikim, ji ber ku divê ez raportê heta saet 16 radest bikim." },
+            { "language": "pl", "text": "Chętnie bym pomógł, ale niestety dziś nie dam rady, ponieważ muszę oddać raport do godziny 16." },
+            { "language": "ro", "text": "Aș vrea să ajut, dar din păcate astăzi nu reușesc, pentru că trebuie să predau raportul până la ora 16." },
+            { "language": "sq", "text": "Do të doja të ndihmoja, por fatkeqësisht sot nuk mundem, sepse duhet ta dorëzoj raportin deri në orën 16." }
+          ],
+          "function": "decline-with-reason",
+          "toneNote": "Polite boundary with a concrete reason.",
+          "expectedLearnerAction": "Set capacity limit."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Die Präsentation ist auch wichtig. Gibt es eine Möglichkeit?",
+          "translations": [
+            { "language": "en", "text": "The presentation is important too. Is there any possibility?" },
+            { "language": "fa", "text": "ارائه هم مهم است. آیا راهی وجود دارد؟" },
+            { "language": "ar", "text": "العرض مهم أيضًا. هل توجد أي إمكانية؟" },
+            { "language": "tr", "text": "Sunum da önemli. Bir imkân var mı?" },
+            { "language": "ru", "text": "Презентация тоже важна. Есть какая-нибудь возможность?" },
+            { "language": "ckb", "text": "پێشکەشکردنەکەش گرنگە. هیچ ڕێگایەک هەیە؟" },
+            { "language": "kmr", "text": "Pêşkêşkirin jî girîng e. Derfeteke heye?" },
+            { "language": "pl", "text": "Prezentacja też jest ważna. Czy jest jakaś możliwość?" },
+            { "language": "ro", "text": "Și prezentarea este importantă. Există vreo posibilitate?" },
+            { "language": "sq", "text": "Edhe prezantimi është i rëndësishëm. A ka ndonjë mundësi?" }
+          ],
+          "function": "push-for-option",
+          "toneNote": "Asks for a compromise.",
+          "expectedLearnerAction": "Offer a realistic alternative."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich könnte morgen Vormittag die Gliederung vorbereiten oder heute nur die wichtigsten drei Folien prüfen. Was wäre hilfreicher?",
+          "translations": [
+            { "language": "en", "text": "I could prepare the outline tomorrow morning, or today only check the three most important slides. What would be more helpful?" },
+            { "language": "fa", "text": "می‌توانم فردا صبح ساختار کلی را آماده کنم یا امروز فقط سه اسلاید مهم‌تر را بررسی کنم. کدام مفیدتر است؟" },
+            { "language": "ar", "text": "يمكنني أن أعدّ المخطط غدًا صباحًا، أو أن أراجع اليوم فقط أهم ثلاث شرائح. ما الذي سيكون أكثر فائدة؟" },
+            { "language": "tr", "text": "Yarın sabah taslağı hazırlayabilirim ya da bugün sadece en önemli üç slaytı kontrol edebilirim. Hangisi daha faydalı olur?" },
+            { "language": "ru", "text": "Я мог бы завтра утром подготовить структуру или сегодня проверить только три самые важные слайда. Что было бы полезнее?" },
+            { "language": "ckb", "text": "دەتوانم سبەی بەیانی پێکهاتەکە ئامادە بکەم یان ئەمڕۆ تەنها سێ سلایدی گرنگترین پشکنین بکەم. کامەیان یارمەتیدەرترە؟" },
+            { "language": "kmr", "text": "Ez dikarim sibê berê nîvro şemayê amade bikim an jî îro tenê sê slaydên herî girîng kontrol bikim. Kîjan bêtir alîkar e?" },
+            { "language": "pl", "text": "Mógłbym jutro rano przygotować strukturę albo dziś sprawdzić tylko trzy najważniejsze slajdy. Co byłoby bardziej pomocne?" },
+            { "language": "ro", "text": "Aș putea pregăti structura mâine dimineață sau astăzi să verific doar cele mai importante trei slide-uri. Ce ar ajuta mai mult?" },
+            { "language": "sq", "text": "Mund ta përgatis strukturën nesër paradite ose sot të kontrolloj vetëm tre slajdet më të rëndësishme. Cila do të ndihmonte më shumë?" }
+          ],
+          "function": "offer-alternatives",
+          "toneNote": "Helpful but realistic.",
+          "expectedLearnerAction": "Offer two realistic options."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Die drei Folien heute wären schon hilfreich.",
+          "translations": [
+            { "language": "en", "text": "The three slides today would already be helpful." },
+            { "language": "fa", "text": "همان سه اسلاید امروز هم کمک‌کننده خواهد بود." },
+            { "language": "ar", "text": "مراجعة الشرائح الثلاث اليوم ستكون مفيدة بالفعل." },
+            { "language": "tr", "text": "Bugün o üç slayt bile yardımcı olur." },
+            { "language": "ru", "text": "Три слайда сегодня уже были бы полезны." },
+            { "language": "ckb", "text": "ئەو سێ سلایدە ئەمڕۆ خۆی یارمەتیدەر دەبێت." },
+            { "language": "kmr", "text": "Ew sê slaydên îro jixwe alîkar dibin." },
+            { "language": "pl", "text": "Te trzy slajdy dzisiaj już byłyby pomocne." },
+            { "language": "ro", "text": "Cele trei slide-uri astăzi ar fi deja utile." },
+            { "language": "sq", "text": "Tre slajdet sot do të ndihmonin tashmë." }
+          ],
+          "function": "choose-option",
+          "toneNote": "Accepts a limited option.",
+          "expectedLearnerAction": "Confirm scope and deadline."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das kann ich übernehmen. Ich prüfe die drei Folien bis 15 Uhr und schreibe dir kurze Hinweise dazu.",
+          "translations": [
+            { "language": "en", "text": "I can take that on. I will check the three slides by 3 p.m. and write you short notes on them." },
+            { "language": "fa", "text": "این را می‌توانم بر عهده بگیرم. سه اسلاید را تا ساعت ۱۵ بررسی می‌کنم و چند نکته کوتاه برایت می‌نویسم." },
+            { "language": "ar", "text": "يمكنني تولي ذلك. سأراجع الشرائح الثلاث حتى الساعة الثالثة وأكتب لك ملاحظات قصيرة عنها." },
+            { "language": "tr", "text": "Bunu üstlenebilirim. Üç slaytı saat 15'e kadar kontrol eder ve sana kısa notlar yazarım." },
+            { "language": "ru", "text": "Это я могу взять на себя. Я проверю три слайда до 15 часов и напишу тебе краткие замечания." },
+            { "language": "ckb", "text": "ئەمە دەتوانم بگرمە ئەستۆ. سێ سلایدەکە تا کاتژمێر ١٥ پشکنین دەکەم و تێبینیی کورتیان بۆت دەنووسم." },
+            { "language": "kmr", "text": "Vê dikarim bigirim ser xwe. Ez sê slaydan heta saet 15 kontrol dikim û kurte-têbîniyan ji te re dinivîsim." },
+            { "language": "pl", "text": "To mogę wziąć na siebie. Sprawdzę trzy slajdy do godziny 15 i napiszę ci krótkie uwagi." },
+            { "language": "ro", "text": "Asta pot prelua. Verific cele trei slide-uri până la ora 15 și îți scriu observații scurte." },
+            { "language": "sq", "text": "Këtë mund ta marr përsipër. Do t'i kontrolloj tre slajdet deri në orën 15 dhe do të të shkruaj shënime të shkurtra." }
+          ],
+          "function": "confirm-limited-task",
+          "toneNote": "Clear limited commitment.",
+          "expectedLearnerAction": "Confirm exact scope."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Danke. Dann mache ich den Rest selbst weiter.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will continue the rest myself." },
+            { "language": "fa", "text": "ممنون. پس بقیه را خودم ادامه می‌دهم." },
+            { "language": "ar", "text": "شكرًا. إذن سأتابع الباقي بنفسي." },
+            { "language": "tr", "text": "Teşekkürler. O zaman geri kalanını ben devam ettiririm." },
+            { "language": "ru", "text": "Спасибо. Тогда остальное я продолжу сама." },
+            { "language": "ckb", "text": "سوپاس. ئەوسا ئەوانی تر خۆم بەردەوام دەبم." },
+            { "language": "kmr", "text": "Spas. Wê demê ez mayî bi xwe didomînim." },
+            { "language": "pl", "text": "Dziękuję. W takim razie resztę będę kontynuować sama." },
+            { "language": "ro", "text": "Mulțumesc. Atunci continui restul singură." },
+            { "language": "sq", "text": "Faleminderit. Atëherë pjesën tjetër do ta vazhdoj vetë." }
+          ],
+          "function": "accept-boundary",
+          "toneNote": "Accepts the limited support.",
+          "expectedLearnerAction": "Keep cooperation open."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Gerne. Wenn morgen noch etwas offen ist, kann ich ab 10 Uhr wieder unterstützen.",
+          "translations": [
+            { "language": "en", "text": "Gladly. If anything is still open tomorrow, I can support again from 10 a.m." },
+            { "language": "fa", "text": "با کمال میل. اگر فردا هنوز چیزی باز مانده باشد، از ساعت ۱۰ دوباره می‌توانم کمک کنم." },
+            { "language": "ar", "text": "بكل سرور. إذا بقي شيء مفتوحًا غدًا، يمكنني أن أساعد مرة أخرى ابتداءً من الساعة العاشرة." },
+            { "language": "tr", "text": "Memnuniyetle. Yarın hâlâ açık bir şey olursa saat 10'dan itibaren tekrar destek olabilirim." },
+            { "language": "ru", "text": "С удовольствием. Если завтра что-то еще останется открытым, я смогу снова помочь с 10 часов." },
+            { "language": "ckb", "text": "بە خۆشحاڵییەوە. ئەگەر سبەی شتێک هێشتا کراوە بوو، لە کاتژمێر ١٠ەوە دەتوانم دووبارە یارمەتی بدەم." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Ger sibê tiştek hîn vekirî be, ez dikarim ji saet 10 ve dîsa piştgirî bikim." },
+            { "language": "pl", "text": "Chętnie. Jeśli jutro coś będzie jeszcze otwarte, mogę znów pomóc od godziny 10." },
+            { "language": "ro", "text": "Cu plăcere. Dacă mâine mai rămâne ceva deschis, pot ajuta din nou de la ora 10." },
+            { "language": "sq", "text": "Me kënaqësi. Nëse nesër mbetet ende diçka e hapur, mund të ndihmoj përsëri nga ora 10." }
+          ],
+          "function": "keep-door-open",
+          "toneNote": "Keeps cooperation open after a boundary.",
+          "expectedLearnerAction": "Offer future support."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich würde gern helfen, aber heute schaffe ich das leider nicht, weil ich den Bericht bis 16 Uhr abgeben muss.",
+              "translations": [
+                { "language": "en", "text": "I would like to help, but unfortunately I cannot manage that today because I have to submit the report by 4 p.m." },
+                { "language": "fa", "text": "دوست دارم کمک کنم، اما متأسفانه امروز نمی‌توانم انجامش بدهم، چون باید گزارش را تا ساعت ۱۶ تحویل بدهم." },
+                { "language": "ar", "text": "أود أن أساعد، لكن للأسف لا أستطيع إنجاز ذلك اليوم لأن عليّ تسليم التقرير حتى الساعة الرابعة." },
+                { "language": "tr", "text": "Yardım etmek isterim, ama maalesef bugün bunu yetiştiremiyorum çünkü raporu saat 16'ya kadar teslim etmem gerekiyor." },
+                { "language": "ru", "text": "Я бы хотел помочь, но, к сожалению, сегодня не справлюсь, потому что должен сдать отчет до 16 часов." },
+                { "language": "ckb", "text": "دەمەوێت یارمەتی بدەم، بەڵام بەداخەوە ئەمڕۆ ناتوانم ئەوە بکەم، چونکە دەبێت ڕاپۆرتەکە تا کاتژمێر ١٦ بدەم." },
+                { "language": "kmr", "text": "Ez dixwazim alîkarî bikim, lê mixabin îro nikarim vê bikim, ji ber ku divê ez raportê heta saet 16 radest bikim." },
+                { "language": "pl", "text": "Chętnie bym pomógł, ale niestety dziś nie dam rady, ponieważ muszę oddać raport do godziny 16." },
+                { "language": "ro", "text": "Aș vrea să ajut, dar din păcate astăzi nu reușesc, pentru că trebuie să predau raportul până la ora 16." },
+                { "language": "sq", "text": "Do të doja të ndihmoja, por fatkeqësisht sot nuk mundem, sepse duhet ta dorëzoj raportin deri në orën 16." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Absage ist freundlich und nennt einen konkreten Grund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the refusal is polite and gives a concrete reason." },
+                { "language": "fa", "text": "خوب است: رد کردن مؤدبانه است و دلیل مشخصی دارد." },
+                { "language": "ar", "text": "جيد: الرفض مهذب ويذكر سببًا محددًا." },
+                { "language": "tr", "text": "İyi: ret kibar ve somut bir neden veriyor." },
+                { "language": "ru", "text": "Хорошо: отказ вежливый и содержит конкретную причину." },
+                { "language": "ckb", "text": "باشە: ڕەتکردنەوەکە بە ئەدەبە و هۆکاری دیاریکراوی هەیە." },
+                { "language": "kmr", "text": "Baş e: redkirin nazik e û sedemeke zelel dide." },
+                { "language": "pl", "text": "Dobrze: odmowa jest uprzejma i podaje konkretny powód." },
+                { "language": "ro", "text": "Bine: refuzul este politicos și oferă un motiv concret." },
+                { "language": "sq", "text": "Mirë: refuzimi është i sjellshëm dhe jep një arsye konkrete." }
+              ],
+              "explanationKey": "polite-reason"
+            },
+            {
+              "id": "too-direct",
+              "text": "Heute geht das nicht, ich habe zu viel zu tun.",
+              "translations": [
+                { "language": "en", "text": "That is not possible today, I have too much to do." },
+                { "language": "fa", "text": "امروز امکانش نیست، کار زیاد دارم." },
+                { "language": "ar", "text": "هذا غير ممكن اليوم، لديّ الكثير من العمل." },
+                { "language": "tr", "text": "Bugün olmaz, çok işim var." },
+                { "language": "ru", "text": "Сегодня это невозможно, у меня слишком много дел." },
+                { "language": "ckb", "text": "ئەمڕۆ ئەوە ناکرێت، زۆر کارم هەیە." },
+                { "language": "kmr", "text": "Îro ev nabe, gelek karê min heye." },
+                { "language": "pl", "text": "Dzisiaj się nie da, mam za dużo pracy." },
+                { "language": "ro", "text": "Astăzi nu se poate, am prea mult de lucru." },
+                { "language": "sq", "text": "Sot nuk bëhet, kam shumë punë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber im Beruf zu knapp: Es fehlt ein höflicher Einstieg und ein konkreter Bezug zur eigenen Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too brief at work: it lacks a polite opening and a concrete reference to your own deadline." },
+                { "language": "fa", "text": "قابل‌فهم است، اما در محیط کار خیلی کوتاه است: شروع مؤدبانه و اشاره مشخص به مهلت خودت کم است." },
+                { "language": "ar", "text": "مفهومة، لكنها قصيرة جدًا في العمل: ينقصها افتتاح مهذب وربط محدد بموعدك النهائي." },
+                { "language": "tr", "text": "Anlaşılır, ama iş ortamında fazla kısa: kibar bir giriş ve kendi son tarihine somut bağlantı eksik." },
+                { "language": "ru", "text": "Понятно, но для работы слишком кратко: не хватает вежливого начала и конкретной ссылки на свой срок." },
+                { "language": "ckb", "text": "تێگەیشتنە، بەڵام لە کاردا زۆر کورتە: دەستپێکی ئەدەبی و پەیوەندییەکی دیاریکراو بە مۆڵەتی خۆت کەمە." },
+                { "language": "kmr", "text": "Têgihiştin e, lê li karê pir kurt e: destpêkeke nazik û girêdaneke zelel bi demê xwe yê dawî kêm e." },
+                { "language": "pl", "text": "Zrozumiałe, ale w pracy zbyt krótkie: brakuje uprzejmego początku i konkretnego odniesienia do własnego terminu." },
+                { "language": "ro", "text": "Este de înțeles, dar prea scurt la serviciu: lipsește o introducere politicoasă și o referire concretă la propriul termen." },
+                { "language": "sq", "text": "E kuptueshme, por në punë është shumë e shkurtër: mungon hyrja e sjellshme dhe lidhja konkrete me afatin tënd." }
+              ],
+              "explanationKey": "too-brief-for-work"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich könnte morgen Vormittag die Gliederung vorbereiten oder heute nur die wichtigsten drei Folien prüfen. Was wäre hilfreicher?",
+              "translations": [
+                { "language": "en", "text": "I could prepare the outline tomorrow morning, or today only check the three most important slides. What would be more helpful?" },
+                { "language": "fa", "text": "می‌توانم فردا صبح ساختار کلی را آماده کنم یا امروز فقط سه اسلاید مهم‌تر را بررسی کنم. کدام مفیدتر است؟" },
+                { "language": "ar", "text": "يمكنني أن أعدّ المخطط غدًا صباحًا، أو أن أراجع اليوم فقط أهم ثلاث شرائح. ما الذي سيكون أكثر فائدة؟" },
+                { "language": "tr", "text": "Yarın sabah taslağı hazırlayabilirim ya da bugün sadece en önemli üç slaytı kontrol edebilirim. Hangisi daha faydalı olur?" },
+                { "language": "ru", "text": "Я мог бы завтра утром подготовить структуру или сегодня проверить только три самые важные слайда. Что было бы полезнее?" },
+                { "language": "ckb", "text": "دەتوانم سبەی بەیانی پێکهاتەکە ئامادە بکەم یان ئەمڕۆ تەنها سێ سلایدی گرنگترین پشکنین بکەم. کامەیان یارمەتیدەرترە؟" },
+                { "language": "kmr", "text": "Ez dikarim sibê berê nîvro şemayê amade bikim an jî îro tenê sê slaydên herî girîng kontrol bikim. Kîjan bêtir alîkar e?" },
+                { "language": "pl", "text": "Mógłbym jutro rano przygotować strukturę albo dziś sprawdzić tylko trzy najważniejsze slajdy. Co byłoby bardziej pomocne?" },
+                { "language": "ro", "text": "Aș putea pregăti structura mâine dimineață sau astăzi să verific doar cele mai importante trei slide-uri. Ce ar ajuta mai mult?" },
+                { "language": "sq", "text": "Mund ta përgatis strukturën nesër paradite ose sot të kontrolloj vetëm tre slajdet më të rëndësishme. Cila do të ndihmonte më shumë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bleibt kooperativ und bietet zwei realistische Alternativen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer remains cooperative and offers two realistic alternatives." },
+                { "language": "fa", "text": "خوب است: پاسخ همچنان همکاری‌جویانه است و دو جایگزین واقع‌بینانه پیشنهاد می‌دهد." },
+                { "language": "ar", "text": "جيد: تبقى الإجابة تعاونية وتعرض بديلين واقعيين." },
+                { "language": "tr", "text": "İyi: cevap işbirlikçi kalıyor ve iki gerçekçi alternatif sunuyor." },
+                { "language": "ru", "text": "Хорошо: ответ остается готовым к сотрудничеству и предлагает две реалистичные альтернативы." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هاوکارییانە دەمێنێتەوە و دوو جێگرەوەی ڕاستەقینە پێشنیار دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv hîn hevkarane dimîne û du alternatîfên rastîn pêşniyar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pozostaje nastawiona na współpracę i oferuje dwie realistyczne alternatywy." },
+                { "language": "ro", "text": "Bine: răspunsul rămâne cooperant și oferă două alternative realiste." },
+                { "language": "sq", "text": "Mirë: përgjigjja mbetet bashkëpunuese dhe ofron dy alternativa realiste." }
+              ],
+              "explanationKey": "two-realistic-options"
+            },
+            {
+              "id": "too-open",
+              "text": "Vielleicht kann ich später noch etwas machen.",
+              "translations": [
+                { "language": "en", "text": "Maybe I can do something later." },
+                { "language": "fa", "text": "شاید بعداً بتوانم یک کاری انجام بدهم." },
+                { "language": "ar", "text": "ربما أستطيع أن أفعل شيئًا لاحقًا." },
+                { "language": "tr", "text": "Belki daha sonra bir şey yapabilirim." },
+                { "language": "ru", "text": "Может быть, позже я смогу что-то сделать." },
+                { "language": "ckb", "text": "لەوانەیە دواتر بتوانم شتێک بکەم." },
+                { "language": "kmr", "text": "Dibe ku paşê ez tiştek bikim." },
+                { "language": "pl", "text": "Może później mogę jeszcze coś zrobić." },
+                { "language": "ro", "text": "Poate pot face ceva mai târziu." },
+                { "language": "sq", "text": "Ndoshta mund të bëj diçka më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu offen: Es fehlen Zeitpunkt, Umfang und eine klare Entscheidungshilfe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too open: time, scope, and a clear decision aid are missing." },
+                { "language": "fa", "text": "اشتباه نیست، اما خیلی باز است: زمان، محدوده و کمک روشن برای تصمیم‌گیری کم است." },
+                { "language": "ar", "text": "ليست خاطئة، لكنها مفتوحة جدًا: ينقصها الوقت والنطاق ومساعدة واضحة لاتخاذ القرار." },
+                { "language": "tr", "text": "Yanlış değil, ama fazla açık: zaman, kapsam ve net bir karar yardımı eksik." },
+                { "language": "ru", "text": "Не неверно, но слишком неопределенно: не хватает времени, объема и ясной помощи для решения." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر کراوەیە: کات، سنوور و یارمەتییەکی ڕوون بۆ بڕیاردان کەمن." },
+                { "language": "kmr", "text": "Ne şaş e, lê pir vekirî ye: dem, qada kar û alîkariya zelel a biryardanê kêm in." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt otwarte: brakuje czasu, zakresu i jasnej pomocy w decyzji." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea vag: lipsesc momentul, amploarea și un sprijin clar pentru decizie." },
+                { "language": "sq", "text": "Nuk është gabim, por është shumë e hapur: mungojnë koha, kufiri dhe ndihma e qartë për vendim." }
+              ],
+              "explanationKey": "needs-time-and-scope"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Gerne. Wenn morgen noch etwas offen ist, kann ich ab 10 Uhr wieder unterstützen.",
+              "translations": [
+                { "language": "en", "text": "Gladly. If anything is still open tomorrow, I can support again from 10 a.m." },
+                { "language": "fa", "text": "با کمال میل. اگر فردا هنوز چیزی باز مانده باشد، از ساعت ۱۰ دوباره می‌توانم کمک کنم." },
+                { "language": "ar", "text": "بكل سرور. إذا بقي شيء مفتوحًا غدًا، يمكنني أن أساعد مرة أخرى ابتداءً من الساعة العاشرة." },
+                { "language": "tr", "text": "Memnuniyetle. Yarın hâlâ açık bir şey olursa saat 10'dan itibaren tekrar destek olabilirim." },
+                { "language": "ru", "text": "С удовольствием. Если завтра что-то еще останется открытым, я смогу снова помочь с 10 часов." },
+                { "language": "ckb", "text": "بە خۆشحاڵییەوە. ئەگەر سبەی شتێک هێشتا کراوە بوو، لە کاتژمێر ١٠ەوە دەتوانم دووبارە یارمەتی بدەم." },
+                { "language": "kmr", "text": "Bi kêfxweşî. Ger sibê tiştek hîn vekirî be, ez dikarim ji saet 10 ve dîsa piştgirî bikim." },
+                { "language": "pl", "text": "Chętnie. Jeśli jutro coś będzie jeszcze otwarte, mogę znów pomóc od godziny 10." },
+                { "language": "ro", "text": "Cu plăcere. Dacă mâine mai rămâne ceva deschis, pot ajuta din nou de la ora 10." },
+                { "language": "sq", "text": "Me kënaqësi. Nëse nesër mbetet ende diçka e hapur, mund të ndihmoj përsëri nga ora 10." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Grenze bleibt bestehen, aber die Zusammenarbeit bleibt offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the boundary remains, but cooperation stays open." },
+                { "language": "fa", "text": "خوب است: حد و مرز حفظ می‌شود، اما راه همکاری باز می‌ماند." },
+                { "language": "ar", "text": "جيد: يبقى الحد واضحًا، لكن التعاون يظل مفتوحًا." },
+                { "language": "tr", "text": "İyi: sınır korunuyor, ama işbirliği açık kalıyor." },
+                { "language": "ru", "text": "Хорошо: граница сохраняется, но сотрудничество остается открытым." },
+                { "language": "ckb", "text": "باشە: سنوورەکە دەمێنێتەوە، بەڵام هاوکارییەکە کراوە دەمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: sînor dimîne, lê hevkarî vekirî dimîne." },
+                { "language": "pl", "text": "Dobrze: granica zostaje, ale współpraca pozostaje otwarta." },
+                { "language": "ro", "text": "Bine: limita rămâne, dar colaborarea rămâne deschisă." },
+                { "language": "sq", "text": "Mirë: kufiri mbetet, por bashkëpunimi mbetet i hapur." }
+              ],
+              "explanationKey": "boundary-and-future-support"
+            },
+            {
+              "id": "ends-too-abruptly",
+              "text": "Okay, dann ist das geklärt.",
+              "translations": [
+                { "language": "en", "text": "Okay, then that is settled." },
+                { "language": "fa", "text": "باشه، پس این موضوع روشن شد." },
+                { "language": "ar", "text": "حسنًا، إذن تم توضيح الأمر." },
+                { "language": "tr", "text": "Tamam, o zaman bu konu netleşti." },
+                { "language": "ru", "text": "Хорошо, тогда это прояснено." },
+                { "language": "ckb", "text": "باشە، ئەوسا ئەمە ڕوون بووە." },
+                { "language": "kmr", "text": "Baş e, wê demê ev zelal bû." },
+                { "language": "pl", "text": "Dobrze, w takim razie to jest wyjaśnione." },
+                { "language": "ro", "text": "Bine, atunci este clarificat." },
+                { "language": "sq", "text": "Në rregull, atëherë kjo u sqarua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht unhöflich, aber für die Situation zu abrupt: Es fehlt ein positives Signal für spätere Unterstützung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not impolite, but too abrupt for the situation: a positive signal for later support is missing." },
+                { "language": "fa", "text": "بی‌ادبانه نیست، اما برای این موقعیت خیلی ناگهانی تمام می‌شود: نشانه مثبت برای کمک بعدی کم است." },
+                { "language": "ar", "text": "ليست غير مهذبة، لكنها مفاجئة جدًا للموقف: ينقصها إشارة إيجابية لدعم لاحق." },
+                { "language": "tr", "text": "Kaba değil, ama durum için fazla ani: daha sonraki destek için olumlu bir işaret eksik." },
+                { "language": "ru", "text": "Не невежливо, но для ситуации слишком резко: не хватает позитивного сигнала о дальнейшей поддержке." },
+                { "language": "ckb", "text": "بێئەدەبی نییە، بەڵام بۆ ئەم دۆخە زۆر لەناکاوە: نیشانەیەکی ئەرێنی بۆ پشتیوانی دواتر کەمە." },
+                { "language": "kmr", "text": "Ne bêedebî ye, lê ji bo vê rewşê pir ji nişkê ve ye: nîşaneke erênî ji bo piştgiriya paşê kêm e." },
+                { "language": "pl", "text": "To nie jest nieuprzejme, ale zbyt nagłe jak na tę sytuację: brakuje pozytywnego sygnału późniejszego wsparcia." },
+                { "language": "ro", "text": "Nu este nepoliticos, dar prea abrupt pentru situație: lipsește un semnal pozitiv pentru sprijin ulterior." },
+                { "language": "sq", "text": "Nuk është e pasjellshme, por është shumë e papritur për situatën: mungon një sinjal pozitiv për mbështetje të mëvonshme." }
+              ],
+              "explanationKey": "needs-future-support-signal"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "model-answer",
+          "text": "Eine höfliche Absage auf B1 nennt Kapazität, Grund und Alternative. Ein reines Nein wirkt im Beruf oft zu hart.",
+          "translations": [
+            { "language": "en", "text": "A polite refusal at B1 names capacity, reason, and an alternative. A simple no often sounds too harsh at work." },
+            { "language": "fa", "text": "رد مؤدبانه در سطح B1 ظرفیت، دلیل و جایگزین را بیان می‌کند. یک «نه» ساده در محیط کار اغلب خیلی تند به نظر می‌رسد." },
+            { "language": "ar", "text": "الرفض المهذب في مستوى B1 يذكر القدرة والسبب والبديل. كلمة لا فقط تبدو غالبًا قاسية جدًا في العمل." },
+            { "language": "tr", "text": "B1 düzeyinde kibar bir ret kapasiteyi, nedeni ve alternatifi belirtir. Sadece hayır demek işte çoğu zaman fazla sert duyulur." },
+            { "language": "ru", "text": "Вежливый отказ на B1 называет ресурс, причину и альтернативу. Простое нет на работе часто звучит слишком резко." },
+            { "language": "ckb", "text": "ڕەتکردنەوەی ئەدەبی لە B1 توانست، هۆکار و جێگرەوە دەڵێت. تەنها نەخێر لە کاردا زۆرجار زۆر توند دەنگ دەدات." },
+            { "language": "kmr", "text": "Redkirina nazik li B1 kapasîte, sedem û alternatîfê dibêje. Tenê na li karê gelek caran pir hişk xuya dike." },
+            { "language": "pl", "text": "Uprzejma odmowa na B1 podaje możliwości, powód i alternatywę. Samo nie w pracy często brzmi zbyt ostro." },
+            { "language": "ro", "text": "Un refuz politicos la B1 menționează capacitatea, motivul și alternativa. Un simplu nu sună adesea prea dur la serviciu." },
+            { "language": "sq", "text": "Një refuzim i sjellshëm në B1 përmend kapacitetin, arsyen dhe alternativën. Një jo e thjeshtë në punë shpesh tingëllon shumë e ashpër." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

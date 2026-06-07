@@ -1,0 +1,981 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-14-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 14 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-eine-nebenkostenfrage-stellen",
+      "title": "Eine Nebenkostenfrage stellen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask a question about utility costs" },
+        { "language": "fa", "text": "پرسیدن سؤال درباره هزینه‌های جانبی خانه" },
+        { "language": "ar", "text": "طرح سؤال حول التكاليف الجانبية للسكن" },
+        { "language": "tr", "text": "Yan giderler hakkında soru sormak" },
+        { "language": "ru", "text": "Задать вопрос о коммунальных расходах" },
+        { "language": "ckb", "text": "پرسیارکردن دەربارەی خەرجییە لاوەکییەکانی خانوو" },
+        { "language": "kmr", "text": "Li ser lêçûnên alî yên xanî pirsîn" },
+        { "language": "pl", "text": "Zadać pytanie o koszty dodatkowe mieszkania" },
+        { "language": "ro", "text": "Să pui o întrebare despre costurile auxiliare ale locuinței" },
+        { "language": "sq", "text": "Të bësh një pyetje për shpenzimet shtesë të banesës" }
+      ],
+      "description": "Du rufst bei der Hausverwaltung an, weil du eine Position in der Nebenkostenabrechnung nicht verstehst. Du nennst Kundennummer, Betrag und bittest um eine verständliche Erklärung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the property management office because you do not understand one item in the utility cost statement. You give the customer number and amount and ask for a clear explanation." },
+        { "language": "fa", "text": "به مدیریت ساختمان زنگ می‌زنی، چون یک بخش از صورتحساب هزینه‌های جانبی را نمی‌فهمی. شماره مشتری و مبلغ را می‌گویی و توضیح قابل فهم می‌خواهی." },
+        { "language": "ar", "text": "تتصل بإدارة العقار لأنك لا تفهم بندًا في كشف التكاليف الجانبية. تذكر رقم العميل والمبلغ وتطلب شرحًا مفهومًا." },
+        { "language": "tr", "text": "Yan gider hesap dökümünde bir kalemi anlamadığın için bina yönetimini arıyorsun. Müşteri numarasını ve tutarı söylüyor, anlaşılır bir açıklama istiyorsun." },
+        { "language": "ru", "text": "Ты звонишь в управляющую компанию, потому что не понимаешь один пункт в расчете коммунальных расходов. Ты называешь номер клиента и сумму и просишь понятное объяснение." },
+        { "language": "ckb", "text": "پەیوەندی بە بەڕێوەبەرایەتی خانوو دەکەیت، چونکە بڕگەیەک لە پێداچوونەوەی خەرجییە لاوەکییەکان تێناگەیت. ژمارەی کڕیار و بڕە پارەکە دەڵێیت و داوای ڕوونکردنەوەیەکی تێگەیشتنی ئاسان دەکەیت." },
+        { "language": "kmr", "text": "Tu telefonî rêveberiya xanî dikî, ji ber ku tu bendek di hesabê lêçûnên alî de fêm nakî. Tu jimareya kiryar û mîqdarê dibêjî û daxwaza şiroveyeke zelal dikî." },
+        { "language": "pl", "text": "Dzwonisz do administracji budynku, ponieważ nie rozumiesz jednej pozycji w rozliczeniu kosztów dodatkowych. Podajesz numer klienta i kwotę oraz prosisz o zrozumiałe wyjaśnienie." },
+        { "language": "ro", "text": "Suni la administrația imobilului pentru că nu înțelegi o poziție din decontul costurilor auxiliare. Dai numărul de client și suma și ceri o explicație clară." },
+        { "language": "sq", "text": "Telefonon administratën e ndërtesës sepse nuk kupton një zë në llogaritjen e shpenzimeve shtesë. Jep numrin e klientit dhe shumën dhe kërkon një shpjegim të qartë." }
+      ],
+      "learnerGoal": "Du kannst eine konkrete Rechnungsposition nennen, nach dem Grund für eine Erhöhung fragen und Frist sowie nächsten Schritt zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can name a specific billing item, ask about the reason for an increase, and summarize the deadline and next step." },
+        { "language": "fa", "text": "می‌توانی یک بخش مشخص از صورتحساب را نام ببری، دلیل افزایش را بپرسی و مهلت و قدم بعدی را خلاصه کنی." },
+        { "language": "ar", "text": "يمكنك ذكر بند محدد في الفاتورة، والسؤال عن سبب الزيادة، وتلخيص المهلة والخطوة التالية." },
+        { "language": "tr", "text": "Belirli bir fatura kalemini söyleyebilir, artışın nedenini sorabilir ve süreyi ve sonraki adımı özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь назвать конкретный пункт счета, спросить о причине повышения и подытожить срок и следующий шаг." },
+        { "language": "ckb", "text": "دەتوانیت بڕگەیەکی دیاریکراوی پێداچوونەوە بناسێنیت، هۆکاری زیادبوونەکە بپرسی و ماوە و هەنگاوی دواتر کورت بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî bendeke hesabê ya zelal bibêjî, sedema zêdebûnê bipirsî û dem û gava din kurt bikî." },
+        { "language": "pl", "text": "Potrafisz nazwać konkretną pozycję w rozliczeniu, zapytać o powód podwyżki oraz podsumować termin i następny krok." },
+        { "language": "ro", "text": "Poți numi o poziție concretă din decont, poți întreba motivul creșterii și poți rezuma termenul și pasul următor." },
+        { "language": "sq", "text": "Mund të përmendësh një zë konkret të faturës, të pyesësh për arsyen e rritjes dhe të përmbledhësh afatin dhe hapin tjetër." }
+      ],
+      "cefrLevel": "B1",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "documents-and-administration"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2300,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin der Hausverwaltung",
+          "translations": [
+            { "language": "en", "text": "Property management employee" },
+            { "language": "fa", "text": "کارمند مدیریت ساختمان" },
+            { "language": "ar", "text": "موظفة إدارة العقار" },
+            { "language": "tr", "text": "Bina yönetimi görevlisi" },
+            { "language": "ru", "text": "Сотрудница управляющей компании" },
+            { "language": "ckb", "text": "کارمەندی بەڕێوەبەرایەتی خانوو" },
+            { "language": "kmr", "text": "Karmenda rêveberiya xanî" },
+            { "language": "pl", "text": "Pracowniczka administracji budynku" },
+            { "language": "ro", "text": "Angajată a administrației imobilului" },
+            { "language": "sq", "text": "Punonjëse e administratës së ndërtesës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mieter",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجر" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендатор" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemca" },
+            { "language": "ro", "text": "Chiriaș" },
+            { "language": "sq", "text": "Qiramarrës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Hausverwaltung Keller, guten Tag. Wie kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "Keller property management, good day. How can I help you?" },
+            { "language": "fa", "text": "مدیریت ساختمان کلر، روز بخیر. چه کمکی می‌توانم به شما بکنم؟" },
+            { "language": "ar", "text": "إدارة العقار كيلر، نهارك سعيد. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "Keller bina yönetimi, iyi günler. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Управляющая компания Келлер, добрый день. Чем могу вам помочь?" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی خانووی کێلەر، ڕۆژباش. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Rêveberiya xanî Keller, roj baş. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Administracja budynku Keller, dzień dobry. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Administrația Keller, bună ziua. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Administrata Keller, mirëdita. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "phone-opening",
+          "toneNote": "Formal phone opening.",
+          "expectedLearnerAction": "State billing concern."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe die Nebenkostenabrechnung bekommen und habe eine Frage zur Position Hausreinigung.",
+          "translations": [
+            { "language": "en", "text": "Good day. I received the utility cost statement and have a question about the building cleaning item." },
+            { "language": "fa", "text": "روز بخیر. صورتحساب هزینه‌های جانبی را دریافت کردم و درباره بخش نظافت ساختمان سؤالی دارم." },
+            { "language": "ar", "text": "نهارك سعيد. تلقيت كشف التكاليف الجانبية ولدي سؤال حول بند تنظيف المبنى." },
+            { "language": "tr", "text": "İyi günler. Yan gider hesap dökümünü aldım ve bina temizliği kalemi hakkında bir sorum var." },
+            { "language": "ru", "text": "Добрый день. Я получил расчет коммунальных расходов, и у меня вопрос по пункту уборки дома." },
+            { "language": "ckb", "text": "ڕۆژباش. پێداچوونەوەی خەرجییە لاوەکییەکانم وەرگرتووە و پرسیارێکم دەربارەی بڕگەی پاککردنەوەی بینا هەیە." },
+            { "language": "kmr", "text": "Roj baş. Min hesabê lêçûnên alî wergirtiye û pirsek min li ser benda paqijkirina avahiyê heye." },
+            { "language": "pl", "text": "Dzień dobry. Otrzymałem rozliczenie kosztów dodatkowych i mam pytanie dotyczące pozycji sprzątania budynku." },
+            { "language": "ro", "text": "Bună ziua. Am primit decontul costurilor auxiliare și am o întrebare despre poziția curățeniei clădirii." },
+            { "language": "sq", "text": "Mirëdita. Kam marrë llogaritjen e shpenzimeve shtesë dhe kam një pyetje për zërin e pastrimit të ndërtesës." }
+          ],
+          "function": "state-billing-question",
+          "toneNote": "Names document and billing item.",
+          "expectedLearnerAction": "Name statement and item."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Gern. Nennen Sie mir bitte Ihre Kundennummer und den Betrag, um den es geht.",
+          "translations": [
+            { "language": "en", "text": "Of course. Please tell me your customer number and the amount in question." },
+            { "language": "fa", "text": "حتماً. لطفاً شماره مشتری و مبلغ مورد نظر را بگویید." },
+            { "language": "ar", "text": "بكل سرور. من فضلك اذكر رقم العميل والمبلغ المقصود." },
+            { "language": "tr", "text": "Memnuniyetle. Lütfen müşteri numaranızı ve söz konusu tutarı söyleyin." },
+            { "language": "ru", "text": "Конечно. Пожалуйста, назовите номер клиента и сумму, о которой идет речь." },
+            { "language": "ckb", "text": "بە دڵنیاییەوە. تکایە ژمارەی کڕیار و بڕی پارەی بابەتەکە بڵێن." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Ji kerema xwe jimareya kiryar û mîqdara ku mijar e bibêjin." },
+            { "language": "pl", "text": "Oczywiście. Proszę podać numer klienta i kwotę, której to dotyczy." },
+            { "language": "ro", "text": "Desigur. Vă rog să îmi spuneți numărul de client și suma despre care este vorba." },
+            { "language": "sq", "text": "Sigurisht. Ju lutem më thoni numrin e klientit dhe shumën për të cilën bëhet fjalë." }
+          ],
+          "function": "ask-reference-and-amount",
+          "toneNote": "Requests reference data.",
+          "expectedLearnerAction": "Give customer number, old/new amount, and question."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Meine Kundennummer ist 5824. Die Hausreinigung ist von 18 auf 34 Euro pro Monat gestiegen. Können Sie mir erklären, warum der Betrag höher ist?",
+          "translations": [
+            { "language": "en", "text": "My customer number is 5824. The building cleaning charge increased from 18 to 34 euros per month. Can you explain why the amount is higher?" },
+            { "language": "fa", "text": "شماره مشتری من ۵۸۲۴ است. هزینه نظافت ساختمان از ۱۸ به ۳۴ یورو در ماه افزایش یافته است. می‌توانید توضیح دهید چرا مبلغ بیشتر شده است؟" },
+            { "language": "ar", "text": "رقم عميلي هو 5824. ارتفعت تكلفة تنظيف المبنى من 18 إلى 34 يورو شهريًا. هل يمكنكم أن تشرحوا لي لماذا أصبح المبلغ أعلى؟" },
+            { "language": "tr", "text": "Müşteri numaram 5824. Bina temizliği aylık 18 avrodan 34 avroya yükselmiş. Tutarın neden daha yüksek olduğunu açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Мой номер клиента 5824. Уборка дома выросла с 18 до 34 евро в месяц. Можете объяснить, почему сумма стала выше?" },
+            { "language": "ckb", "text": "ژمارەی کڕیارم 5824 ـە. خەرجی پاککردنەوەی بینا لە ١٨ یۆرۆوە بۆ ٣٤ یۆرۆ لە مانگێکدا زیاد بووە. دەتوانن ڕوون بکەنەوە بۆچی بڕەکە زیاترە؟" },
+            { "language": "kmr", "text": "Jimareya kiryarê min 5824 e. Lêçûna paqijkirina avahiyê ji 18 euro bûye 34 euro mehane. Hûn dikarin şirove bikin çima mîqdar zêdetir e?" },
+            { "language": "pl", "text": "Mój numer klienta to 5824. Sprzątanie budynku wzrosło z 18 do 34 euro miesięcznie. Czy może mi pani wyjaśnić, dlaczego kwota jest wyższa?" },
+            { "language": "ro", "text": "Numărul meu de client este 5824. Curățenia clădirii a crescut de la 18 la 34 de euro pe lună. Îmi puteți explica de ce suma este mai mare?" },
+            { "language": "sq", "text": "Numri im i klientit është 5824. Pastrimi i ndërtesës është rritur nga 18 në 34 euro në muaj. A mund të më shpjegoni pse shuma është më e lartë?" }
+          ],
+          "function": "ask-amount-increase",
+          "toneNote": "Precise amount and reason question.",
+          "expectedLearnerAction": "Name item, amount, and ask why."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Seit Juli gibt es eine neue Reinigungsfirma. Die Erklärung steht auf Seite drei, aber ich kann Ihnen die Berechnung auch per E-Mail schicken.",
+          "translations": [
+            { "language": "en", "text": "Since July there has been a new cleaning company. The explanation is on page three, but I can also send you the calculation by email." },
+            { "language": "fa", "text": "از ماه ژوئیه شرکت نظافت جدیدی داریم. توضیح در صفحه سه آمده است، اما می‌توانم محاسبه را هم از طریق ایمیل برایتان بفرستم." },
+            { "language": "ar", "text": "منذ يوليو توجد شركة تنظيف جديدة. الشرح موجود في الصفحة الثالثة، لكن يمكنني أيضًا إرسال الحساب لك بالبريد الإلكتروني." },
+            { "language": "tr", "text": "Temmuzdan beri yeni bir temizlik şirketi var. Açıklama üçüncü sayfada, ama hesaplamayı size e-posta ile de gönderebilirim." },
+            { "language": "ru", "text": "С июля работает новая клининговая фирма. Объяснение находится на третьей странице, но я могу также отправить вам расчет по электронной почте." },
+            { "language": "ckb", "text": "لە تەممووزەوە کۆمپانیایەکی نوێی پاککردنەوە هەیە. ڕوونکردنەوەکە لە لاپەڕەی سێدایە، بەڵام دەتوانم حیسابکردنەکە بە ئیمەیل بۆتان بنێرم." },
+            { "language": "kmr", "text": "Ji tîrmehê ve şîrketeke nû ya paqijkirinê heye. Şirove li rûpela sêyem e, lê ez dikarim hesabkirinê jî bi e-nameyê ji we re bişînim." },
+            { "language": "pl", "text": "Od lipca jest nowa firma sprzątająca. Wyjaśnienie jest na stronie trzeciej, ale mogę też wysłać panu wyliczenie e-mailem." },
+            { "language": "ro", "text": "Din iulie există o firmă nouă de curățenie. Explicația este la pagina trei, dar vă pot trimite și calculul prin e-mail." },
+            { "language": "sq", "text": "Që nga korriku ka një kompani të re pastrimi. Shpjegimi është në faqen tre, por mund t'jua dërgoj edhe llogaritjen me email." }
+          ],
+          "function": "explain-cost-increase",
+          "toneNote": "Gives reason and document option.",
+          "expectedLearnerAction": "Ask for calculation and deadline."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte schicken Sie mir die Berechnung per E-Mail. Bis wann kann ich Rückfragen oder Einwände schriftlich einreichen?",
+          "translations": [
+            { "language": "en", "text": "Yes, please send me the calculation by email. By when can I submit follow-up questions or objections in writing?" },
+            { "language": "fa", "text": "بله، لطفاً محاسبه را از طریق ایمیل برایم بفرستید. تا چه زمانی می‌توانم سؤال‌های بعدی یا اعتراض‌ها را کتبی ارائه کنم؟" },
+            { "language": "ar", "text": "نعم، من فضلك أرسلي لي الحساب بالبريد الإلكتروني. إلى متى يمكنني تقديم أسئلة إضافية أو اعتراضات خطيًا؟" },
+            { "language": "tr", "text": "Evet, lütfen hesaplamayı bana e-posta ile gönderin. Ek soruları veya itirazları yazılı olarak ne zamana kadar sunabilirim?" },
+            { "language": "ru", "text": "Да, пожалуйста, отправьте мне расчет по электронной почте. До какого срока я могу письменно подать дополнительные вопросы или возражения?" },
+            { "language": "ckb", "text": "بەڵێ، تکایە حیسابکردنەکە بە ئیمەیل بۆم بنێرن. تا کەی دەتوانم پرسیاری زیاتر یان ناڕەزایەتی بە نووسراوی پێشکەش بکەم؟" },
+            { "language": "kmr", "text": "Erê, ji kerema xwe hesabkirinê bi e-nameyê ji min re bişînin. Heta kengî ez dikarim pirsên din an nerazîbûnê bi nivîskî radest bikim?" },
+            { "language": "pl", "text": "Tak, proszę wysłać mi wyliczenie e-mailem. Do kiedy mogę złożyć pisemnie dodatkowe pytania lub zastrzeżenia?" },
+            { "language": "ro", "text": "Da, vă rog să îmi trimiteți calculul prin e-mail. Până când pot trimite în scris întrebări suplimentare sau obiecții?" },
+            { "language": "sq", "text": "Po, ju lutem më dërgoni llogaritjen me email. Deri kur mund të paraqes me shkrim pyetje shtesë ose kundërshtime?" }
+          ],
+          "function": "ask-calculation-and-deadline",
+          "toneNote": "Requests document and deadline.",
+          "expectedLearnerAction": "Ask for calculation and written deadline."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Ich schicke es heute. Rückfragen können Sie innerhalb von vier Wochen nach Erhalt der Abrechnung stellen.",
+          "translations": [
+            { "language": "en", "text": "I will send it today. You can ask follow-up questions within four weeks after receiving the statement." },
+            { "language": "fa", "text": "امروز آن را می‌فرستم. می‌توانید ظرف چهار هفته پس از دریافت صورتحساب سؤال‌های بعدی را مطرح کنید." },
+            { "language": "ar", "text": "سأرسله اليوم. يمكنكم طرح أسئلة إضافية خلال أربعة أسابيع بعد استلام الكشف." },
+            { "language": "tr", "text": "Bugün göndereceğim. Hesap dökümünü aldıktan sonra dört hafta içinde ek sorular sorabilirsiniz." },
+            { "language": "ru", "text": "Я отправлю это сегодня. Дополнительные вопросы можно задать в течение четырех недель после получения расчета." },
+            { "language": "ckb", "text": "ئەمڕۆ دەنێرم. دەتوانن لە ماوەی چوار هەفتە دوای وەرگرتنی پێداچوونەوەکە پرسیاری زیاتر بکەن." },
+            { "language": "kmr", "text": "Ez îro wê dişînim. Hûn dikarin di nav çar hefteyan piştî wergirtina hesabê pirsên din bikin." },
+            { "language": "pl", "text": "Wyślę to dzisiaj. Dodatkowe pytania może pan zadać w ciągu czterech tygodni od otrzymania rozliczenia." },
+            { "language": "ro", "text": "Îl trimit astăzi. Puteți pune întrebări suplimentare în termen de patru săptămâni de la primirea decontului." },
+            { "language": "sq", "text": "Do ta dërgoj sot. Pyetje shtesë mund të bëni brenda katër javësh pas marrjes së llogaritjes." }
+          ],
+          "function": "confirm-document-deadline",
+          "toneNote": "Gives follow-up deadline.",
+          "expectedLearnerAction": "Summarize next step and deadline."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann warte ich auf die Berechnung per E-Mail und melde mich innerhalb von vier Wochen, falls ich noch Fragen habe.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will wait for the calculation by email and get back to you within four weeks if I still have questions." },
+            { "language": "fa", "text": "خیلی ممنون. پس منتظر محاسبه از طریق ایمیل می‌مانم و اگر هنوز سؤالی داشتم، ظرف چهار هفته تماس می‌گیرم." },
+            { "language": "ar", "text": "شكرًا جزيلًا. إذن سأنتظر الحساب بالبريد الإلكتروني وسأتواصل خلال أربعة أسابيع إذا بقيت لدي أسئلة." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman hesaplamayı e-posta ile bekleyeceğim ve hâlâ sorularım olursa dört hafta içinde tekrar iletişime geçeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я подожду расчет по электронной почте и свяжусь с вами в течение четырех недель, если у меня еще будут вопросы." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی حیسابکردنەکە بە ئیمەیل دەبم و ئەگەر هێشتا پرسیارم هەبوو، لە ماوەی چوار هەفتەدا پەیوەندی دەکەمەوە." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez li benda hesabkirinê bi e-nameyê dimînim û ger hîn pirsên min hebin, di nav çar hefteyan de dîsa têkilî dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie poczekam na wyliczenie e-mailem i zgłoszę się w ciągu czterech tygodni, jeśli będę miał jeszcze pytania." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci aștept calculul prin e-mail și revin în termen de patru săptămâni dacă mai am întrebări." },
+            { "language": "sq", "text": "Shumë faleminderit. Atëherë do ta pres llogaritjen me email dhe do të kontaktoj brenda katër javësh nëse kam ende pyetje." }
+          ],
+          "function": "summarize-deadline-next-step",
+          "toneNote": "Clear closing summary.",
+          "expectedLearnerAction": "Confirm email and deadline."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "state-document-and-item",
+              "text": "Guten Tag. Ich habe die Nebenkostenabrechnung bekommen und habe eine Frage zur Position Hausreinigung.",
+              "translations": [
+                { "language": "en", "text": "Good day. I received the utility cost statement and have a question about the building cleaning item." },
+                { "language": "fa", "text": "روز بخیر. صورتحساب هزینه‌های جانبی را دریافت کردم و درباره بخش نظافت ساختمان سؤالی دارم." },
+                { "language": "ar", "text": "نهارك سعيد. تلقيت كشف التكاليف الجانبية ولدي سؤال حول بند تنظيف المبنى." },
+                { "language": "tr", "text": "İyi günler. Yan gider hesap dökümünü aldım ve bina temizliği kalemi hakkında bir sorum var." },
+                { "language": "ru", "text": "Добрый день. Я получил расчет коммунальных расходов, и у меня вопрос по пункту уборки дома." },
+                { "language": "ckb", "text": "ڕۆژباش. پێداچوونەوەی خەرجییە لاوەکییەکانم وەرگرتووە و پرسیارێکم دەربارەی بڕگەی پاککردنەوەی بینا هەیە." },
+                { "language": "kmr", "text": "Roj baş. Min hesabê lêçûnên alî wergirtiye û pirsek min li ser benda paqijkirina avahiyê heye." },
+                { "language": "pl", "text": "Dzień dobry. Otrzymałem rozliczenie kosztów dodatkowych i mam pytanie dotyczące pozycji sprzątania budynku." },
+                { "language": "ro", "text": "Bună ziua. Am primit decontul costurilor auxiliare și am o întrebare despre poziția curățeniei clădirii." },
+                { "language": "sq", "text": "Mirëdita. Kam marrë llogaritjen e shpenzimeve shtesë dhe kam një pyetje për zërin e pastrimit të ndërtesës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du nennst das Dokument und die genaue Position, nicht nur allgemein die Rechnung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You name the document and the exact item, not only the bill in general." },
+                { "language": "fa", "text": "خوب است: سند و بخش دقیق را نام می‌بری، نه فقط به‌طور کلی صورتحساب را." },
+                { "language": "ar", "text": "جيد: تذكر المستند والبند المحدد، وليس الفاتورة بشكل عام فقط." },
+                { "language": "tr", "text": "İyi: Sadece faturayı genel olarak değil, belgeyi ve tam kalemi söylüyorsun." },
+                { "language": "ru", "text": "Хорошо: ты называешь документ и точный пункт, а не только счет в целом." },
+                { "language": "ckb", "text": "باشە: بەڵگەنامەکە و بڕگەی ورد دەناسێنیت، نەک تەنها پێداچوونەوەکە بە گشتی." },
+                { "language": "kmr", "text": "Baş e: Tu belge û benda rast dibêjî, ne tenê hesabê bi giştî." },
+                { "language": "pl", "text": "Dobrze: nazywasz dokument i dokładną pozycję, a nie tylko ogólnie rachunek." },
+                { "language": "ro", "text": "Bine: numești documentul și poziția exactă, nu doar factura în general." },
+                { "language": "sq", "text": "Mirë: përmend dokumentin dhe zërin e saktë, jo vetëm faturën në përgjithësi." }
+              ],
+              "explanationKey": "specific-billing-item"
+            },
+            {
+              "id": "too-general-bill-question",
+              "text": "Guten Tag. Die Abrechnung ist zu hoch, und ich verstehe das nicht.",
+              "translations": [
+                { "language": "en", "text": "Good day. The statement is too high, and I do not understand it." },
+                { "language": "fa", "text": "روز بخیر. صورتحساب خیلی زیاد است و من آن را نمی‌فهمم." },
+                { "language": "ar", "text": "نهارك سعيد. الكشف مرتفع جدًا ولا أفهمه." },
+                { "language": "tr", "text": "İyi günler. Hesap dökümü çok yüksek ve bunu anlamıyorum." },
+                { "language": "ru", "text": "Добрый день. Расчет слишком высокий, и я этого не понимаю." },
+                { "language": "ckb", "text": "ڕۆژباش. پێداچوونەوەکە زۆر بەرزە و من تێی ناگەم." },
+                { "language": "kmr", "text": "Roj baş. Hesab pir bilind e û ez fêm nakim." },
+                { "language": "pl", "text": "Dzień dobry. Rozliczenie jest za wysokie i tego nie rozumiem." },
+                { "language": "ro", "text": "Bună ziua. Decontul este prea mare și nu îl înțeleg." },
+                { "language": "sq", "text": "Mirëdita. Llogaritja është shumë e lartë dhe nuk e kuptoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das Problem ist verständlich, aber zu allgemein. Für B1 solltest du die genaue Position und den Betrag nennen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The problem is understandable, but too general. For B1, you should name the exact item and amount." },
+                { "language": "fa", "text": "مشکل قابل فهم است، اما خیلی کلی است. برای B1 باید بخش دقیق و مبلغ را بگویی." },
+                { "language": "ar", "text": "المشكلة مفهومة، لكنها عامة جدًا. في مستوى B1 يجب أن تذكر البند المحدد والمبلغ." },
+                { "language": "tr", "text": "Sorun anlaşılır, ama çok genel. B1 için tam kalemi ve tutarı söylemelisin." },
+                { "language": "ru", "text": "Проблема понятна, но слишком общая. Для B1 нужно назвать точный пункт и сумму." },
+                { "language": "ckb", "text": "کێشەکە تێگەیشتنی ئاسانە، بەڵام زۆر گشتییە. بۆ B1 دەبێت بڕگەی ورد و بڕە پارەکە بڵێیت." },
+                { "language": "kmr", "text": "Pirsgirêk têgihiştinê hêsan e, lê pir giştî ye. Ji bo B1 divê tu benda rast û mîqdarê bibêjî." },
+                { "language": "pl", "text": "Problem jest zrozumiały, ale zbyt ogólny. Na B1 powinieneś podać dokładną pozycję i kwotę." },
+                { "language": "ro", "text": "Problema este de înțeles, dar prea generală. Pentru B1 ar trebui să numești poziția exactă și suma." },
+                { "language": "sq", "text": "Problemi është i kuptueshëm, por shumë i përgjithshëm. Për B1 duhet të përmendësh zërin e saktë dhe shumën." }
+              ],
+              "explanationKey": "missing-item-amount"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "amount-and-reason-question",
+              "text": "Meine Kundennummer ist 5824. Die Hausreinigung ist von 18 auf 34 Euro pro Monat gestiegen. Können Sie mir erklären, warum der Betrag höher ist?",
+              "translations": [
+                { "language": "en", "text": "My customer number is 5824. The building cleaning charge increased from 18 to 34 euros per month. Can you explain why the amount is higher?" },
+                { "language": "fa", "text": "شماره مشتری من ۵۸۲۴ است. هزینه نظافت ساختمان از ۱۸ به ۳۴ یورو در ماه افزایش یافته است. می‌توانید توضیح دهید چرا مبلغ بیشتر شده است؟" },
+                { "language": "ar", "text": "رقم عميلي هو 5824. ارتفعت تكلفة تنظيف المبنى من 18 إلى 34 يورو شهريًا. هل يمكنكم أن تشرحوا لي لماذا أصبح المبلغ أعلى؟" },
+                { "language": "tr", "text": "Müşteri numaram 5824. Bina temizliği aylık 18 avrodan 34 avroya yükselmiş. Tutarın neden daha yüksek olduğunu açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Мой номер клиента 5824. Уборка дома выросла с 18 до 34 евро в месяц. Можете объяснить, почему сумма стала выше?" },
+                { "language": "ckb", "text": "ژمارەی کڕیارم 5824 ـە. خەرجی پاککردنەوەی بینا لە ١٨ یۆرۆوە بۆ ٣٤ یۆرۆ لە مانگێکدا زیاد بووە. دەتوانن ڕوون بکەنەوە بۆچی بڕەکە زیاترە؟" },
+                { "language": "kmr", "text": "Jimareya kiryarê min 5824 e. Lêçûna paqijkirina avahiyê ji 18 euro bûye 34 euro mehane. Hûn dikarin şirove bikin çima mîqdar zêdetir e?" },
+                { "language": "pl", "text": "Mój numer klienta to 5824. Sprzątanie budynku wzrosło z 18 do 34 euro miesięcznie. Czy może mi pani wyjaśnić, dlaczego kwota jest wyższa?" },
+                { "language": "ro", "text": "Numărul meu de client este 5824. Curățenia clădirii a crescut de la 18 la 34 de euro pe lună. Îmi puteți explica de ce suma este mai mare?" },
+                { "language": "sq", "text": "Numri im i klientit është 5824. Pastrimi i ndërtesës është rritur nga 18 në 34 euro në muaj. A mund të më shpjegoni pse shuma është më e lartë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du gibst Referenzdaten, vergleichst den alten und neuen Betrag und stellst eine klare Warum-Frage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You give reference data, compare the old and new amount, and ask a clear why-question." },
+                { "language": "fa", "text": "خوب است: اطلاعات مرجع را می‌دهی، مبلغ قدیم و جدید را مقایسه می‌کنی و سؤال واضح درباره دلیل می‌پرسی." },
+                { "language": "ar", "text": "جيد: تعطي بيانات مرجعية، وتقارن المبلغ القديم والجديد، وتطرح سؤالًا واضحًا عن السبب." },
+                { "language": "tr", "text": "İyi: Referans bilgilerini veriyor, eski ve yeni tutarı karşılaştırıyor ve net bir neden sorusu soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты даешь справочные данные, сравниваешь старую и новую сумму и задаешь ясный вопрос о причине." },
+                { "language": "ckb", "text": "باشە: زانیارییە سەرچاوەییەکان دەدەیت، بڕی کۆن و نوێ بەراورد دەکەیت و پرسیارێکی ڕوونی هۆکار دەکەیت." },
+                { "language": "kmr", "text": "Baş e: Tu agahiyên referansê didî, mîqdara kevn û nû didî ber hev û pirseke zelal ya çima dipirsî." },
+                { "language": "pl", "text": "Dobrze: podajesz dane referencyjne, porównujesz starą i nową kwotę oraz zadajesz jasne pytanie o powód." },
+                { "language": "ro", "text": "Bine: dai date de referință, compari suma veche și nouă și pui o întrebare clară despre motiv." },
+                { "language": "sq", "text": "Mirë: jep të dhëna reference, krahason shumën e vjetër dhe të re dhe bën një pyetje të qartë për arsyen." }
+              ],
+              "explanationKey": "reference-amount-reason"
+            },
+            {
+              "id": "amount-without-question",
+              "text": "Meine Kundennummer ist 5824. Die Hausreinigung ist jetzt 34 Euro.",
+              "translations": [
+                { "language": "en", "text": "My customer number is 5824. The building cleaning is now 34 euros." },
+                { "language": "fa", "text": "شماره مشتری من ۵۸۲۴ است. نظافت ساختمان الان ۳۴ یورو است." },
+                { "language": "ar", "text": "رقم عميلي هو 5824. تنظيف المبنى الآن 34 يورو." },
+                { "language": "tr", "text": "Müşteri numaram 5824. Bina temizliği şimdi 34 avro." },
+                { "language": "ru", "text": "Мой номер клиента 5824. Уборка дома теперь 34 евро." },
+                { "language": "ckb", "text": "ژمارەی کڕیارم 5824 ـە. پاککردنەوەی بینا ئێستا ٣٤ یۆرۆیە." },
+                { "language": "kmr", "text": "Jimareya kiryarê min 5824 e. Paqijkirina avahiyê niha 34 euro ye." },
+                { "language": "pl", "text": "Mój numer klienta to 5824. Sprzątanie budynku wynosi teraz 34 euro." },
+                { "language": "ro", "text": "Numărul meu de client este 5824. Curățenia clădirii este acum 34 de euro." },
+                { "language": "sq", "text": "Numri im i klientit është 5824. Pastrimi i ndërtesës tani është 34 euro." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Information reicht nicht: Ohne alten Betrag und klare Frage weiß die Hausverwaltung nicht, was sie erklären soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The information is not enough: without the old amount and a clear question, property management does not know what to explain." },
+                { "language": "fa", "text": "این اطلاعات کافی نیست: بدون مبلغ قبلی و سؤال روشن، مدیریت ساختمان نمی‌داند چه چیزی را باید توضیح بدهد." },
+                { "language": "ar", "text": "المعلومة غير كافية: من دون المبلغ القديم وسؤال واضح لا تعرف إدارة العقار ما الذي يجب شرحه." },
+                { "language": "tr", "text": "Bilgi yeterli değil: Eski tutar ve net soru olmadan bina yönetimi neyi açıklaması gerektiğini bilmez." },
+                { "language": "ru", "text": "Информации недостаточно: без старой суммы и ясного вопроса управляющая компания не знает, что объяснять." },
+                { "language": "ckb", "text": "زانیارییەکە بەس نییە: بەبێ بڕی کۆن و پرسیاری ڕوون، بەڕێوەبەرایەتی خانوو نازانێت چی ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Agahî têr nake: bê mîqdara kevn û pirseke zelal, rêveberiya xanî nizane divê çi şirove bike." },
+                { "language": "pl", "text": "Informacja nie wystarcza: bez starej kwoty i jasnego pytania administracja nie wie, co ma wyjaśnić." },
+                { "language": "ro", "text": "Informația nu este suficientă: fără suma veche și o întrebare clară, administrația nu știe ce trebuie să explice." },
+                { "language": "sq", "text": "Informacioni nuk mjafton: pa shumën e vjetër dhe një pyetje të qartë, administrata nuk e di çfarë duhet të shpjegojë." }
+              ],
+              "explanationKey": "missing-comparison-question"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "confirm-email-deadline",
+              "text": "Vielen Dank. Dann warte ich auf die Berechnung per E-Mail und melde mich innerhalb von vier Wochen, falls ich noch Fragen habe.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will wait for the calculation by email and get back to you within four weeks if I still have questions." },
+                { "language": "fa", "text": "خیلی ممنون. پس منتظر محاسبه از طریق ایمیل می‌مانم و اگر هنوز سؤالی داشتم، ظرف چهار هفته تماس می‌گیرم." },
+                { "language": "ar", "text": "شكرًا جزيلًا. إذن سأنتظر الحساب بالبريد الإلكتروني وسأتواصل خلال أربعة أسابيع إذا بقيت لدي أسئلة." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman hesaplamayı e-posta ile bekleyeceğim ve hâlâ sorularım olursa dört hafta içinde tekrar iletişime geçeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я подожду расчет по электронной почте и свяжусь с вами в течение четырех недель, если у меня еще будут вопросы." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی حیسابکردنەکە بە ئیمەیل دەبم و ئەگەر هێشتا پرسیارم هەبوو، لە ماوەی چوار هەفتەدا پەیوەندی دەکەمەوە." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez li benda hesabkirinê bi e-nameyê dimînim û ger hîn pirsên min hebin, di nav çar hefteyan de dîsa têkilî dikim." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie poczekam na wyliczenie e-mailem i zgłoszę się w ciągu czterech tygodni, jeśli będę miał jeszcze pytania." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci aștept calculul prin e-mail și revin în termen de patru săptămâni dacă mai am întrebări." },
+                { "language": "sq", "text": "Shumë faleminderit. Atëherë do ta pres llogaritjen me email dhe do të kontaktoj brenda katër javësh nëse kam ende pyetje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Du bestätigst den Versandweg und die Frist für weitere Fragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: You confirm the sending method and the deadline for further questions." },
+                { "language": "fa", "text": "بسیار خوب: راه ارسال و مهلت سؤال‌های بعدی را تأیید می‌کنی." },
+                { "language": "ar", "text": "جيد جدًا: تؤكد طريقة الإرسال والمهلة للأسئلة الإضافية." },
+                { "language": "tr", "text": "Çok iyi: Gönderim yolunu ve ek sorular için süreyi onaylıyorsun." },
+                { "language": "ru", "text": "Очень хорошо: ты подтверждаешь способ отправки и срок для дальнейших вопросов." },
+                { "language": "ckb", "text": "زۆر باش: ڕێگای ناردن و ماوەی پرسیارەکانی دواتر پشتڕاست دەکەیتەوە." },
+                { "language": "kmr", "text": "Pir baş: Tu rêya şandinê û demê ji bo pirsên din piştrast dikî." },
+                { "language": "pl", "text": "Bardzo dobrze: potwierdzasz sposób wysyłki i termin na dalsze pytania." },
+                { "language": "ro", "text": "Foarte bine: confirmi calea de trimitere și termenul pentru întrebări suplimentare." },
+                { "language": "sq", "text": "Shumë mirë: konfirmon mënyrën e dërgimit dhe afatin për pyetje të tjera." }
+              ],
+              "explanationKey": "deadline-summary"
+            },
+            {
+              "id": "thanks-without-deadline",
+              "text": "Danke, dann warte ich auf Ihre E-Mail.",
+              "translations": [
+                { "language": "en", "text": "Thanks, then I will wait for your email." },
+                { "language": "fa", "text": "ممنون، پس منتظر ایمیل شما می‌مانم." },
+                { "language": "ar", "text": "شكرًا، إذن سأنتظر بريدك الإلكتروني." },
+                { "language": "tr", "text": "Teşekkürler, o zaman e-postanızı bekleyeceğim." },
+                { "language": "ru", "text": "Спасибо, тогда я буду ждать ваше письмо." },
+                { "language": "ckb", "text": "سوپاس، کەواتە چاوەڕێی ئیمەیلەکەتان دەبم." },
+                { "language": "kmr", "text": "Spas, wê demê ez li benda e-nameya we dimînim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie poczekam na pani e-mail." },
+                { "language": "ro", "text": "Mulțumesc, atunci aștept e-mailul dumneavoastră." },
+                { "language": "sq", "text": "Faleminderit, atëherë do të pres emailin tuaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber unvollständig: Die Frist für Rückfragen wird nicht wiederholt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite, but incomplete: the deadline for follow-up questions is not repeated." },
+                { "language": "fa", "text": "مؤدبانه است، اما ناقص است: مهلت سؤال‌های بعدی تکرار نمی‌شود." },
+                { "language": "ar", "text": "مهذب، لكنه غير كامل: لا تُعاد المهلة للأسئلة الإضافية." },
+                { "language": "tr", "text": "Kibar, ama eksik: Ek sorular için süre tekrar edilmiyor." },
+                { "language": "ru", "text": "Вежливо, но неполно: срок для дополнительных вопросов не повторяется." },
+                { "language": "ckb", "text": "ڕێزدارانەیە، بەڵام ناتەواوە: ماوەی پرسیارەکانی دواتر دووبارە ناوترێتەوە." },
+                { "language": "kmr", "text": "Bi rêz e, lê netemam e: dem ji bo pirsên din nayê dubarekirin." },
+                { "language": "pl", "text": "Uprzejmie, ale niepełnie: termin na dalsze pytania nie zostaje powtórzony." },
+                { "language": "ro", "text": "Politicos, dar incomplet: termenul pentru întrebări suplimentare nu este repetat." },
+                { "language": "sq", "text": "E sjellshme, por jo e plotë: afati për pyetje shtesë nuk përsëritet." }
+              ],
+              "explanationKey": "missing-deadline"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "model-answer",
+          "text": "Bei Abrechnungen hilft eine genaue Struktur: Position, Betrag, Grund der Frage, gewünschter Nachweis und Frist.",
+          "translations": [
+            { "language": "en", "text": "For statements, a precise structure helps: item, amount, reason for the question, requested proof, and deadline." },
+            { "language": "fa", "text": "در صورتحساب‌ها ساختار دقیق کمک می‌کند: بخش، مبلغ، دلیل سؤال، مدرک درخواستی و مهلت." },
+            { "language": "ar", "text": "في الكشوفات تساعد بنية دقيقة: البند، والمبلغ، وسبب السؤال، والإثبات المطلوب، والمهلة." },
+            { "language": "tr", "text": "Hesap dökümlerinde net bir yapı yardımcı olur: kalem, tutar, sorunun nedeni, istenen kanıt ve süre." },
+            { "language": "ru", "text": "В расчетах помогает точная структура: пункт, сумма, причина вопроса, желаемое подтверждение и срок." },
+            { "language": "ckb", "text": "لە پێداچوونەوەکاندا پێکهاتەیەکی ورد یارمەتیدەرە: بڕگە، بڕی پارە، هۆکاری پرسیار، بەڵگەی داواکراو و ماوە." },
+            { "language": "kmr", "text": "Di hesabên nivîskî de avahiyeke zelal alîkar e: bend, mîqdar, sedema pirsê, belgeya xwestî û dem." },
+            { "language": "pl", "text": "Przy rozliczeniach pomaga dokładna struktura: pozycja, kwota, powód pytania, oczekiwany dowód i termin." },
+            { "language": "ro", "text": "La deconturi ajută o structură precisă: poziție, sumă, motivul întrebării, dovada dorită și termenul." },
+            { "language": "sq", "text": "Në llogaritje ndihmon një strukturë e saktë: zëri, shuma, arsyeja e pyetjes, dëshmia e kërkuar dhe afati." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-laermbeschwerde-sachlich-formulieren",
+      "title": "Eine Lärmbeschwerde sachlich formulieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Formulate a noise complaint factually" },
+        { "language": "fa", "text": "بیان محترمانه و واقع‌گرایانه شکایت از سر و صدا" },
+        { "language": "ar", "text": "صياغة شكوى ضوضاء بموضوعية" },
+        { "language": "tr", "text": "Gürültü şikayetini nesnel şekilde ifade etmek" },
+        { "language": "ru", "text": "Предметно сформулировать жалобу на шум" },
+        { "language": "ckb", "text": "دەربڕینی سکاڵای ژاوەژاو بە شێوەی بابەتی" },
+        { "language": "kmr", "text": "Gilîkirina deng bi awayekî rast gotin" },
+        { "language": "pl", "text": "Rzeczowo sformułować skargę na hałas" },
+        { "language": "ro", "text": "Să formulezi obiectiv o plângere despre zgomot" },
+        { "language": "sq", "text": "Të formulosh qartë një ankesë për zhurmë" }
+      ],
+      "description": "Du sprichst mit einem Nachbarn, weil es abends wiederholt laut war. Du beschreibst konkrete Situationen, vermeidest Vorwürfe und schlägst eine Lösung für die Ruhezeiten vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You talk to a neighbor because it was repeatedly loud in the evening. You describe concrete situations, avoid accusations, and suggest a solution for quiet hours." },
+        { "language": "fa", "text": "با همسایه صحبت می‌کنی، چون عصرها چند بار سر و صدا زیاد بوده است. موقعیت‌های مشخص را توضیح می‌دهی، از سرزنش مستقیم پرهیز می‌کنی و برای ساعات سکوت راه‌حل پیشنهاد می‌دهی." },
+        { "language": "ar", "text": "تتحدث مع جار لأن الضوضاء تكررت في المساء. تصف مواقف محددة، وتتجنب الاتهامات، وتقترح حلًا لأوقات الهدوء." },
+        { "language": "tr", "text": "Akşamları tekrar tekrar gürültü olduğu için bir komşuyla konuşuyorsun. Somut durumları anlatıyor, suçlamadan kaçınıyor ve sessizlik saatleri için çözüm öneriyorsun." },
+        { "language": "ru", "text": "Ты разговариваешь с соседом, потому что вечерами несколько раз было громко. Ты описываешь конкретные ситуации, избегаешь обвинений и предлагаешь решение для часов тишины." },
+        { "language": "ckb", "text": "لەگەڵ دراوسێیەک قسە دەکەیت، چونکە ئێواران چەند جار ژاوەژاو زۆر بووە. بارودۆخی دیاریکراو باس دەکەیت، لە تاوانبارکردن دوور دەکەویت و چارەسەرێک بۆ کاتەکانی ئارامی پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Tu bi cîranekî re diaxivî, ji ber ku êvaran gelek caran deng bilind bûye. Tu rewşên zelel şirove dikî, ji sûcdarkirinê dûr dimînî û ji bo demên aramiyê çareseriyek pêşniyar dikî." },
+        { "language": "pl", "text": "Rozmawiasz z sąsiadem, ponieważ wieczorami kilka razy było głośno. Opisujesz konkretne sytuacje, unikasz oskarżeń i proponujesz rozwiązanie dotyczące ciszy nocnej." },
+        { "language": "ro", "text": "Vorbești cu un vecin pentru că seara a fost de mai multe ori zgomot. Descrii situații concrete, eviți acuzațiile și propui o soluție pentru orele de liniște." },
+        { "language": "sq", "text": "Flet me një fqinj sepse në mbrëmje ka pasur disa herë zhurmë. Përshkruan situata konkrete, shmang akuzat dhe propozon një zgjidhje për oraret e qetësisë." }
+      ],
+      "learnerGoal": "Du kannst eine Beschwerde mit konkreten Beispielen, höflichem Ton und einem realistischen Lösungsvorschlag formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can formulate a complaint with concrete examples, a polite tone, and a realistic proposed solution." },
+        { "language": "fa", "text": "می‌توانی شکایتی را با مثال‌های مشخص، لحن محترمانه و پیشنهاد راه‌حل واقع‌گرایانه بیان کنی." },
+        { "language": "ar", "text": "يمكنك صياغة شكوى بأمثلة محددة، ونبرة مهذبة، واقتراح حل واقعي." },
+        { "language": "tr", "text": "Somut örnekler, kibar bir ton ve gerçekçi bir çözüm önerisiyle şikayet ifade edebilirsin." },
+        { "language": "ru", "text": "Ты можешь сформулировать жалобу с конкретными примерами, вежливым тоном и реалистичным предложением решения." },
+        { "language": "ckb", "text": "دەتوانیت سکاڵایەک بە نموونەی دیاریکراو، تۆنی ڕێزدارانە و پێشنیاری چارەسەری ڕاستەقینە دەرببڕیت." },
+        { "language": "kmr", "text": "Tu dikarî gilîkirinek bi mînakên zelel, toneyeke rêzdar û pêşniyara çareseriyeke rast bibêjî." },
+        { "language": "pl", "text": "Potrafisz sformułować skargę z konkretnymi przykładami, uprzejmym tonem i realistyczną propozycją rozwiązania." },
+        { "language": "ro", "text": "Poți formula o plângere cu exemple concrete, ton politicos și o propunere realistă de soluție." },
+        { "language": "sq", "text": "Mund të formulosh një ankesë me shembuj konkretë, ton të sjellshëm dhe një propozim realist për zgjidhje." }
+      ],
+      "cefrLevel": "B1",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "social-and-relationships"
+      ],
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "taskType": "complain-politely",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "complaint-handling"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2310,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "neighbor",
+          "displayName": "Nachbar",
+          "translations": [
+            { "language": "en", "text": "Neighbor" },
+            { "language": "fa", "text": "همسایه" },
+            { "language": "ar", "text": "الجار" },
+            { "language": "tr", "text": "Komşu" },
+            { "language": "ru", "text": "Сосед" },
+            { "language": "ckb", "text": "دراوسێ" },
+            { "language": "kmr", "text": "Cîran" },
+            { "language": "pl", "text": "Sąsiad" },
+            { "language": "ro", "text": "Vecin" },
+            { "language": "sq", "text": "Fqinj" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mieterin",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجرة" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендаторка" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemczyni" },
+            { "language": "ro", "text": "Chiriașă" },
+            { "language": "sq", "text": "Qiramarrëse" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "neighbor",
+          "baseText": "Hallo. Ist etwas passiert?",
+          "translations": [
+            { "language": "en", "text": "Hello. Did something happen?" },
+            { "language": "fa", "text": "سلام. اتفاقی افتاده؟" },
+            { "language": "ar", "text": "مرحبًا. هل حدث شيء؟" },
+            { "language": "tr", "text": "Merhaba. Bir şey mi oldu?" },
+            { "language": "ru", "text": "Здравствуйте. Что-то случилось?" },
+            { "language": "ckb", "text": "سڵاو. شتێک ڕوویداوە؟" },
+            { "language": "kmr", "text": "Silav. Tiştek qewimî?" },
+            { "language": "pl", "text": "Cześć. Czy coś się stało?" },
+            { "language": "ro", "text": "Bună. S-a întâmplat ceva?" },
+            { "language": "sq", "text": "Përshëndetje. A ka ndodhur diçka?" }
+          ],
+          "function": "neighbor-opening",
+          "toneNote": "Informal neighbor opening.",
+          "expectedLearnerAction": "Open the complaint politely."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Hallo. Ich wollte kurz wegen der Musik sprechen. Gestern und am Samstag war es nach 22 Uhr ziemlich laut.",
+          "translations": [
+            { "language": "en", "text": "Hello. I wanted to briefly talk about the music. Yesterday and on Saturday it was quite loud after 10 p.m." },
+            { "language": "fa", "text": "سلام. می‌خواستم کوتاه درباره موسیقی صحبت کنم. دیروز و شنبه بعد از ساعت ۲۲ صدا نسبتاً زیاد بود." },
+            { "language": "ar", "text": "مرحبًا. أردت أن أتحدث باختصار بخصوص الموسيقى. أمس ويوم السبت كان الصوت مرتفعًا جدًا بعد الساعة العاشرة مساءً." },
+            { "language": "tr", "text": "Merhaba. Müzik hakkında kısaca konuşmak istedim. Dün ve cumartesi saat 22'den sonra oldukça yüksekti." },
+            { "language": "ru", "text": "Здравствуйте. Я хотел коротко поговорить о музыке. Вчера и в субботу после 22 часов было довольно громко." },
+            { "language": "ckb", "text": "سڵاو. دەمویست بە کورتی دەربارەی مۆسیقا قسە بکەم. دوێنێ و شەممە دوای کاتژمێر ٢٢ زۆر بەرز بوو." },
+            { "language": "kmr", "text": "Silav. Min dixwest bi kurtî li ser muzîkê biaxivim. Duh û şemiyê piştî saet 22ê pir bilind bû." },
+            { "language": "pl", "text": "Cześć. Chciałam krótko porozmawiać o muzyce. Wczoraj i w sobotę po 22:00 było dość głośno." },
+            { "language": "ro", "text": "Bună. Voiam să vorbesc pe scurt despre muzică. Ieri și sâmbătă după ora 22 a fost destul de tare." },
+            { "language": "sq", "text": "Përshëndetje. Doja të flisja shkurt për muzikën. Dje dhe të shtunën pas orës 22 ishte mjaft zhurmë." }
+          ],
+          "function": "state-noise-issue",
+          "toneNote": "Concrete, not accusatory.",
+          "expectedLearnerAction": "Name time and issue."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "neighbor",
+          "baseText": "Oh, das tut mir leid. War es wirklich so laut? Wir hatten Besuch.",
+          "translations": [
+            { "language": "en", "text": "Oh, I am sorry. Was it really that loud? We had guests." },
+            { "language": "fa", "text": "اوه، متأسفم. واقعاً آن‌قدر بلند بود؟ مهمان داشتیم." },
+            { "language": "ar", "text": "آه، أنا آسف. هل كان الصوت عاليًا فعلًا إلى هذا الحد؟ كان لدينا ضيوف." },
+            { "language": "tr", "text": "Ah, üzgünüm. Gerçekten o kadar yüksek miydi? Misafirlerimiz vardı." },
+            { "language": "ru", "text": "О, мне жаль. Правда было так громко? У нас были гости." },
+            { "language": "ckb", "text": "ئۆ، ببورە. بەڕاستی ئەوەندە بەرز بوو؟ میوانمان هەبوو." },
+            { "language": "kmr", "text": "A, lêborîne. Bi rastî ewqas bilind bû? Mêvanên me hebûn." },
+            { "language": "pl", "text": "Och, przepraszam. Naprawdę było aż tak głośno? Mieliśmy gości." },
+            { "language": "ro", "text": "Of, îmi pare rău. Chiar a fost atât de tare? Am avut musafiri." },
+            { "language": "sq", "text": "Oh, më vjen keq. A ishte vërtet kaq me zë? Kishim mysafirë." }
+          ],
+          "function": "neighbor-explains",
+          "toneNote": "Neighbor reacts defensively but politely.",
+          "expectedLearnerAction": "Acknowledge and explain impact."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe, dass Besuch manchmal länger bleibt. Mein Schlafzimmer liegt aber direkt neben der Wand, und ich konnte kaum schlafen.",
+          "translations": [
+            { "language": "en", "text": "I understand that guests sometimes stay longer. But my bedroom is directly next to the wall, and I could hardly sleep." },
+            { "language": "fa", "text": "می‌فهمم که مهمان‌ها گاهی بیشتر می‌مانند. اما اتاق خواب من درست کنار دیوار است و تقریباً نتوانستم بخوابم." },
+            { "language": "ar", "text": "أفهم أن الضيوف يبقون أحيانًا وقتًا أطول. لكن غرفة نومي تقع مباشرة بجانب الجدار، ولم أستطع النوم تقريبًا." },
+            { "language": "tr", "text": "Misafirlerin bazen daha uzun kaldığını anlıyorum. Ama yatak odam doğrudan duvarın yanında ve neredeyse uyuyamadım." },
+            { "language": "ru", "text": "Я понимаю, что гости иногда остаются дольше. Но моя спальня прямо рядом со стеной, и я почти не смогла спать." },
+            { "language": "ckb", "text": "تێدەگەم کە میوان هەندێک جار درەنگتر دەمێنێتەوە. بەڵام ژووری نووستنەکەم ڕاستەوخۆ لە تەنیشت دیوارەکەیە و نەتوانیم باش بخەوم." },
+            { "language": "kmr", "text": "Ez têdigihîjim ku mêvan carinan dirêjtir dimînin. Lê odeya razana min rasterast li kêleka dîwarê ye û min zor karî razêm." },
+            { "language": "pl", "text": "Rozumiem, że goście czasem zostają dłużej. Ale moja sypialnia jest bezpośrednio przy tej ścianie i prawie nie mogłam spać." },
+            { "language": "ro", "text": "Înțeleg că musafirii rămân uneori mai mult. Dar dormitorul meu este chiar lângă perete și aproape nu am putut dormi." },
+            { "language": "sq", "text": "E kuptoj që mysafirët ndonjëherë rrinë më gjatë. Por dhoma ime e gjumit është menjëherë pranë murit dhe mezi fjeta." }
+          ],
+          "function": "acknowledge-and-impact",
+          "toneNote": "Acknowledges the reason and explains impact.",
+          "expectedLearnerAction": "Show understanding and concrete impact."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "neighbor",
+          "baseText": "Das wusste ich nicht. Was schlagen Sie vor?",
+          "translations": [
+            { "language": "en", "text": "I did not know that. What do you suggest?" },
+            { "language": "fa", "text": "این را نمی‌دانستم. چه پیشنهادی دارید؟" },
+            { "language": "ar", "text": "لم أكن أعرف ذلك. ماذا تقترحين؟" },
+            { "language": "tr", "text": "Bunu bilmiyordum. Ne önerirsiniz?" },
+            { "language": "ru", "text": "Я этого не знал. Что вы предлагаете?" },
+            { "language": "ckb", "text": "ئەمەم نەدەزانی. چی پێشنیار دەکەن؟" },
+            { "language": "kmr", "text": "Min ev nedizanî. Hûn çi pêşniyar dikin?" },
+            { "language": "pl", "text": "Nie wiedziałem o tym. Co pani proponuje?" },
+            { "language": "ro", "text": "Nu știam asta. Ce propuneți?" },
+            { "language": "sq", "text": "Nuk e dija këtë. Çfarë propozoni?" }
+          ],
+          "function": "ask-for-solution",
+          "toneNote": "Invites a proposal.",
+          "expectedLearnerAction": "Propose quiet-time solution."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wäre es möglich, die Musik nach 22 Uhr leiser zu machen? Wenn Sie eine Feier planen, könnten Sie uns vielleicht vorher kurz informieren.",
+          "translations": [
+            { "language": "en", "text": "Would it be possible to turn the music down after 10 p.m.? If you are planning a party, could you perhaps briefly inform us beforehand?" },
+            { "language": "fa", "text": "ممکن است بعد از ساعت ۲۲ موسیقی را آرام‌تر کنید؟ اگر جشنی برنامه‌ریزی می‌کنید، شاید بتوانید قبلش کوتاه به ما اطلاع دهید." },
+            { "language": "ar", "text": "هل من الممكن خفض صوت الموسيقى بعد الساعة العاشرة مساءً؟ إذا كنتم تخططون لحفلة، فهل يمكنكم ربما إبلاغنا مسبقًا بشكل قصير؟" },
+            { "language": "tr", "text": "Saat 22'den sonra müziği biraz kısmak mümkün olur mu? Bir kutlama planlıyorsanız, belki bize önceden kısaca haber verebilir misiniz?" },
+            { "language": "ru", "text": "Можно ли после 22 часов сделать музыку тише? Если вы планируете вечеринку, могли бы вы, возможно, заранее коротко нас предупредить?" },
+            { "language": "ckb", "text": "ئایا دەکرێت دوای کاتژمێر ٢٢ مۆسیقاکە کەمتر بکەن؟ ئەگەر ئاهەنگێک پلان دەکەن، ڕەنگە بتوانن پێشتر بە کورتی ئاگادارمان بکەنەوە." },
+            { "language": "kmr", "text": "Ma gengaz e piştî saet 22ê muzîkê hêdîtir bikin? Ger hûn şahiyekê plan dikin, hûn dikarin belkî berê bi kurtî me agahdar bikin?" },
+            { "language": "pl", "text": "Czy byłoby możliwe ściszyć muzykę po 22:00? Jeśli planują państwo spotkanie, może mogliby nas państwo krótko wcześniej poinformować." },
+            { "language": "ro", "text": "Ar fi posibil să dați muzica mai încet după ora 22? Dacă plănuiți o petrecere, poate ne puteți anunța scurt înainte." },
+            { "language": "sq", "text": "A do të ishte e mundur ta ulni muzikën pas orës 22? Nëse planifikoni një festë, ndoshta mund të na njoftoni shkurt më parë." }
+          ],
+          "function": "propose-solution",
+          "toneNote": "Polite solution with concrete request.",
+          "expectedLearnerAction": "Propose quiet hours and advance notice."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "neighbor",
+          "baseText": "Ja, das ist fair. Ich achte nach 22 Uhr darauf und gebe Ihnen vorher Bescheid, wenn wieder Besuch kommt.",
+          "translations": [
+            { "language": "en", "text": "Yes, that is fair. I will pay attention after 10 p.m. and let you know beforehand if guests come again." },
+            { "language": "fa", "text": "بله، این منصفانه است. بعد از ساعت ۲۲ حواسم را جمع می‌کنم و اگر دوباره مهمان بیاید، از قبل به شما خبر می‌دهم." },
+            { "language": "ar", "text": "نعم، هذا عادل. سأنتبه بعد الساعة العاشرة مساءً وسأخبركم مسبقًا إذا جاء ضيوف مرة أخرى." },
+            { "language": "tr", "text": "Evet, bu adil. Saat 22'den sonra dikkat edeceğim ve tekrar misafir gelirse size önceden haber vereceğim." },
+            { "language": "ru", "text": "Да, это справедливо. После 22 часов я буду следить за этим и заранее сообщу вам, если снова придут гости." },
+            { "language": "ckb", "text": "بەڵێ، ئەمە دادپەروەرانەیە. دوای کاتژمێر ٢٢ ئاگادار دەبم و ئەگەر جارێکی دیکە میوان بێت، پێشتر ئاگادارتان دەکەمەوە." },
+            { "language": "kmr", "text": "Erê, ev adil e. Piştî saet 22ê ez baldar dibim û ger careke din mêvan bên, ez berê we agahdar dikim." },
+            { "language": "pl", "text": "Tak, to uczciwe. Po 22:00 będę na to uważał i wcześniej dam państwu znać, jeśli znowu przyjdą goście." },
+            { "language": "ro", "text": "Da, este corect. Voi avea grijă după ora 22 și vă anunț înainte dacă vin din nou musafiri." },
+            { "language": "sq", "text": "Po, kjo është e drejtë. Do të kem kujdes pas orës 22 dhe do t'ju njoftoj më parë nëse vijnë përsëri mysafirë." }
+          ],
+          "function": "accept-solution",
+          "toneNote": "Agreement and commitment.",
+          "expectedLearnerAction": "Thank and summarize agreement."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke, das hilft mir sehr. Dann versuchen wir es so: nach 22 Uhr leiser und bei Feiern vorher kurz Bescheid sagen.",
+          "translations": [
+            { "language": "en", "text": "Thank you, that helps me a lot. Then we will try it this way: quieter after 10 p.m. and a short notice beforehand for parties." },
+            { "language": "fa", "text": "ممنون، این خیلی به من کمک می‌کند. پس این‌طور امتحان می‌کنیم: بعد از ساعت ۲۲ آرام‌تر و در صورت جشن، از قبل کوتاه اطلاع دادن." },
+            { "language": "ar", "text": "شكرًا، هذا يساعدني كثيرًا. إذن نجرب الأمر هكذا: صوت أخفض بعد الساعة العاشرة مساءً، وإبلاغ قصير مسبقًا عند وجود حفلات." },
+            { "language": "tr", "text": "Teşekkür ederim, bu bana çok yardımcı olur. O zaman şöyle deneyelim: saat 22'den sonra daha sessiz ve kutlamalarda önceden kısa haber." },
+            { "language": "ru", "text": "Спасибо, это мне очень поможет. Тогда попробуем так: после 22 часов тише и перед вечеринками короткое предупреждение." },
+            { "language": "ckb", "text": "سوپاس، ئەمە زۆر یارمەتیم دەدات. کەواتە وەها تاقی دەکەینەوە: دوای کاتژمێر ٢٢ کەمتر و لە کاتی ئاهەنگدا پێشتر ئاگادارکردنەوەیەکی کورت." },
+            { "language": "kmr", "text": "Spas, ev gelek alîkariya min dike. Wê demê em wisa biceribînin: piştî saet 22ê hêdîtir û di şahiyan de berê agahdariyeke kurt." },
+            { "language": "pl", "text": "Dziękuję, to bardzo mi pomoże. Spróbujmy więc tak: po 22:00 ciszej, a przy spotkaniach krótka informacja wcześniej." },
+            { "language": "ro", "text": "Mulțumesc, asta mă ajută mult. Atunci încercăm așa: mai încet după ora 22 și o informare scurtă înainte de petreceri." },
+            { "language": "sq", "text": "Faleminderit, kjo më ndihmon shumë. Atëherë ta provojmë kështu: më qetë pas orës 22 dhe një njoftim i shkurtër më parë për festa." }
+          ],
+          "function": "thank-and-summarize",
+          "toneNote": "Friendly closure with agreement.",
+          "expectedLearnerAction": "Summarize agreement without blame."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "specific-polites-noise-opening",
+              "text": "Hallo. Ich wollte kurz wegen der Musik sprechen. Gestern und am Samstag war es nach 22 Uhr ziemlich laut.",
+              "translations": [
+                { "language": "en", "text": "Hello. I wanted to briefly talk about the music. Yesterday and on Saturday it was quite loud after 10 p.m." },
+                { "language": "fa", "text": "سلام. می‌خواستم کوتاه درباره موسیقی صحبت کنم. دیروز و شنبه بعد از ساعت ۲۲ صدا نسبتاً زیاد بود." },
+                { "language": "ar", "text": "مرحبًا. أردت أن أتحدث باختصار بخصوص الموسيقى. أمس ويوم السبت كان الصوت مرتفعًا جدًا بعد الساعة العاشرة مساءً." },
+                { "language": "tr", "text": "Merhaba. Müzik hakkında kısaca konuşmak istedim. Dün ve cumartesi saat 22'den sonra oldukça yüksekti." },
+                { "language": "ru", "text": "Здравствуйте. Я хотел коротко поговорить о музыке. Вчера и в субботу после 22 часов было довольно громко." },
+                { "language": "ckb", "text": "سڵاو. دەمویست بە کورتی دەربارەی مۆسیقا قسە بکەم. دوێنێ و شەممە دوای کاتژمێر ٢٢ زۆر بەرز بوو." },
+                { "language": "kmr", "text": "Silav. Min dixwest bi kurtî li ser muzîkê biaxivim. Duh û şemiyê piştî saet 22ê pir bilind bû." },
+                { "language": "pl", "text": "Cześć. Chciałam krótko porozmawiać o muzyce. Wczoraj i w sobotę po 22:00 było dość głośno." },
+                { "language": "ro", "text": "Bună. Voiam să vorbesc pe scurt despre muzică. Ieri și sâmbătă după ora 22 a fost destul de tare." },
+                { "language": "sq", "text": "Përshëndetje. Doja të flisja shkurt për muzikën. Dje dhe të shtunën pas orës 22 ishte mjaft zhurmë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du bleibst sachlich und nennst konkrete Tage und Uhrzeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You stay factual and name concrete days and time." },
+                { "language": "fa", "text": "خوب است: واقع‌گرایانه می‌مانی و روزها و ساعت مشخص را می‌گویی." },
+                { "language": "ar", "text": "جيد: تبقى موضوعيًا وتذكر أيامًا ووقتًا محددًا." },
+                { "language": "tr", "text": "İyi: Nesnel kalıyor ve somut günleri ve saati söylüyorsun." },
+                { "language": "ru", "text": "Хорошо: ты остаешься предметной и называешь конкретные дни и время." },
+                { "language": "ckb", "text": "باشە: بابەتی دەمێنیتەوە و ڕۆژ و کاتی دیاریکراو دەڵێیت." },
+                { "language": "kmr", "text": "Baş e: Tu rast dimînî û roj û demên zelel dibêjî." },
+                { "language": "pl", "text": "Dobrze: pozostajesz rzeczowa i podajesz konkretne dni oraz godzinę." },
+                { "language": "ro", "text": "Bine: rămâi obiectivă și numești zile și ore concrete." },
+                { "language": "sq", "text": "Mirë: qëndron objektive dhe përmend ditë dhe orë konkrete." }
+              ],
+              "explanationKey": "factual-noise-opening"
+            },
+            {
+              "id": "accusatory-opening",
+              "text": "Hallo. Sie sind abends immer viel zu laut.",
+              "translations": [
+                { "language": "en", "text": "Hello. You are always much too loud in the evenings." },
+                { "language": "fa", "text": "سلام. شما عصرها همیشه خیلی پر سر و صدا هستید." },
+                { "language": "ar", "text": "مرحبًا. أنتم دائمًا تصدرون ضوضاء كثيرة جدًا في المساء." },
+                { "language": "tr", "text": "Merhaba. Akşamları her zaman çok fazla gürültü yapıyorsunuz." },
+                { "language": "ru", "text": "Здравствуйте. Вы по вечерам всегда слишком громко шумите." },
+                { "language": "ckb", "text": "سڵاو. ئێوە ئێواران هەمیشە زۆر ژاوەژاو دەکەن." },
+                { "language": "kmr", "text": "Silav. Hûn êvaran her tim pir deng dikin." },
+                { "language": "pl", "text": "Cześć. Wieczorami jest pan zawsze zdecydowanie za głośno." },
+                { "language": "ro", "text": "Bună. Seara sunteți mereu mult prea zgomotos." },
+                { "language": "sq", "text": "Përshëndetje. Ju në mbrëmje jeni gjithmonë shumë të zhurmshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das kann schnell wie ein Vorwurf klingen. Besser sind konkrete Situationen und ein ruhiger Einstieg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This can quickly sound like an accusation. Concrete situations and a calm opening are better." },
+                { "language": "fa", "text": "این می‌تواند سریع مثل سرزنش به نظر برسد. موقعیت‌های مشخص و شروع آرام بهتر است." },
+                { "language": "ar", "text": "قد يبدو هذا بسرعة كاتهام. المواقف المحددة والبداية الهادئة أفضل." },
+                { "language": "tr", "text": "Bu çabuk suçlama gibi gelebilir. Somut durumlar ve sakin bir başlangıç daha iyidir." },
+                { "language": "ru", "text": "Это быстро может прозвучать как обвинение. Лучше конкретные ситуации и спокойное начало." },
+                { "language": "ckb", "text": "ئەمە زوو وەک تاوانبارکردن دەنگ دەدات. بارودۆخی دیاریکراو و دەستپێکی ئارام باشترە." },
+                { "language": "kmr", "text": "Ev zû dikare wek sûcdarkirinê xuya bike. Rewşên zelel û destpêkeke aram çêtir in." },
+                { "language": "pl", "text": "To może szybko zabrzmieć jak oskarżenie. Lepsze są konkretne sytuacje i spokojny początek." },
+                { "language": "ro", "text": "Aceasta poate suna repede ca o acuzație. Situațiile concrete și un început calm sunt mai bune." },
+                { "language": "sq", "text": "Kjo mund të tingëllojë shpejt si akuzë. Situatat konkrete dhe një fillim i qetë janë më të mira." }
+              ],
+              "explanationKey": "accusatory-tone"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "acknowledge-and-impact",
+              "text": "Ich verstehe, dass Besuch manchmal länger bleibt. Mein Schlafzimmer liegt aber direkt neben der Wand, und ich konnte kaum schlafen.",
+              "translations": [
+                { "language": "en", "text": "I understand that guests sometimes stay longer. But my bedroom is directly next to the wall, and I could hardly sleep." },
+                { "language": "fa", "text": "می‌فهمم که مهمان‌ها گاهی بیشتر می‌مانند. اما اتاق خواب من درست کنار دیوار است و تقریباً نتوانستم بخوابم." },
+                { "language": "ar", "text": "أفهم أن الضيوف يبقون أحيانًا وقتًا أطول. لكن غرفة نومي تقع مباشرة بجانب الجدار، ولم أستطع النوم تقريبًا." },
+                { "language": "tr", "text": "Misafirlerin bazen daha uzun kaldığını anlıyorum. Ama yatak odam doğrudan duvarın yanında ve neredeyse uyuyamadım." },
+                { "language": "ru", "text": "Я понимаю, что гости иногда остаются дольше. Но моя спальня прямо рядом со стеной, и я почти не смогла спать." },
+                { "language": "ckb", "text": "تێدەگەم کە میوان هەندێک جار درەنگتر دەمێنێتەوە. بەڵام ژووری نووستنەکەم ڕاستەوخۆ لە تەنیشت دیوارەکەیە و نەتوانیم باش بخەوم." },
+                { "language": "kmr", "text": "Ez têdigihîjim ku mêvan carinan dirêjtir dimînin. Lê odeya razana min rasterast li kêleka dîwarê ye û min zor karî razêm." },
+                { "language": "pl", "text": "Rozumiem, że goście czasem zostają dłużej. Ale moja sypialnia jest bezpośrednio przy tej ścianie i prawie nie mogłam spać." },
+                { "language": "ro", "text": "Înțeleg că musafirii rămân uneori mai mult. Dar dormitorul meu este chiar lângă perete și aproape nu am putut dormi." },
+                { "language": "sq", "text": "E kuptoj që mysafirët ndonjëherë rrinë më gjatë. Por dhoma ime e gjumit është menjëherë pranë murit dhe mezi fjeta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du zeigst Verständnis, erklärst aber trotzdem konkret, wie dich der Lärm betrifft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You show understanding, but still explain concretely how the noise affects you." },
+                { "language": "fa", "text": "خوب است: درک نشان می‌دهی، اما همچنان مشخص توضیح می‌دهی که سر و صدا چه اثری روی تو دارد." },
+                { "language": "ar", "text": "جيد: تظهر تفهمًا، لكنك تشرح أيضًا بشكل محدد كيف تؤثر الضوضاء عليك." },
+                { "language": "tr", "text": "İyi: Anlayış gösteriyor ama yine de gürültünün seni nasıl etkilediğini somut açıklıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты проявляешь понимание, но все равно конкретно объясняешь, как шум на тебя влияет." },
+                { "language": "ckb", "text": "باشە: تێگەیشتن پیشان دەدەیت، بەڵام هێشتا بە دیاری ڕوون دەکەیتەوە ژاوەژاو چۆن کارت لێ دەکات." },
+                { "language": "kmr", "text": "Baş e: Tu têgihiştin nîşan didî, lê hîn jî bi zelalî şirove dikî ka deng çawa bandorê li te dike." },
+                { "language": "pl", "text": "Dobrze: okazujesz zrozumienie, ale nadal konkretnie wyjaśniasz, jak hałas na ciebie wpływa." },
+                { "language": "ro", "text": "Bine: arăți înțelegere, dar explici totuși concret cum te afectează zgomotul." },
+                { "language": "sq", "text": "Mirë: tregon mirëkuptim, por gjithsesi shpjegon konkretisht si të ndikon zhurma." }
+              ],
+              "explanationKey": "acknowledge-impact"
+            },
+            {
+              "id": "impact-without-relationship-repair",
+              "text": "Ich konnte nicht schlafen. Das darf nicht wieder passieren.",
+              "translations": [
+                { "language": "en", "text": "I could not sleep. This must not happen again." },
+                { "language": "fa", "text": "نتوانستم بخوابم. این نباید دوباره اتفاق بیفتد." },
+                { "language": "ar", "text": "لم أستطع النوم. يجب ألا يحدث هذا مرة أخرى." },
+                { "language": "tr", "text": "Uyuyamadım. Bu tekrar olmamalı." },
+                { "language": "ru", "text": "Я не могла спать. Это не должно повториться." },
+                { "language": "ckb", "text": "نەتوانیم بخەوم. ئەمە نابێت جارێکی دیکە ڕووبدات." },
+                { "language": "kmr", "text": "Min nikarî razêm. Ev divê careke din neqewime." },
+                { "language": "pl", "text": "Nie mogłam spać. To nie może się powtórzyć." },
+                { "language": "ro", "text": "Nu am putut dormi. Asta nu trebuie să se mai întâmple." },
+                { "language": "sq", "text": "Nuk munda të fle. Kjo nuk duhet të ndodhë përsëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Der Inhalt ist verständlich, aber der Ton ist hart. Besser ist, zuerst kurz Verständnis zu zeigen und dann die Wirkung zu erklären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The content is understandable, but the tone is harsh. It is better to briefly show understanding first and then explain the effect." },
+                { "language": "fa", "text": "محتوا قابل فهم است، اما لحن تند است. بهتر است اول کوتاه درک نشان بدهی و بعد اثر آن را توضیح دهی." },
+                { "language": "ar", "text": "المضمون مفهوم، لكن النبرة قاسية. الأفضل إظهار بعض التفهم أولًا ثم شرح الأثر." },
+                { "language": "tr", "text": "İçerik anlaşılır, ama ton sert. Önce kısaca anlayış göstermek, sonra etkiyi açıklamak daha iyidir." },
+                { "language": "ru", "text": "Содержание понятно, но тон резкий. Лучше сначала коротко проявить понимание, а затем объяснить влияние." },
+                { "language": "ckb", "text": "ناوەڕۆکەکە تێگەیشتنی ئاسانە، بەڵام تۆنەکە توندە. باشترە سەرەتا بە کورتی تێگەیشتن پیشان بدەیت و پاشان کاریگەرییەکە ڕوون بکەیتەوە." },
+                { "language": "kmr", "text": "Naverok têgihiştinê hêsan e, lê ton tund e. Çêtir e pêşî bi kurtî têgihiştin nîşan bidî û paşê bandorê şirove bikî." },
+                { "language": "pl", "text": "Treść jest zrozumiała, ale ton jest ostry. Lepiej najpierw krótko okazać zrozumienie, a potem wyjaśnić wpływ." },
+                { "language": "ro", "text": "Conținutul este de înțeles, dar tonul este dur. Este mai bine să arăți întâi puțină înțelegere și apoi să explici efectul." },
+                { "language": "sq", "text": "Përmbajtja është e kuptueshme, por toni është i ashpër. Është më mirë të tregosh fillimisht pak mirëkuptim dhe pastaj të shpjegosh ndikimin." }
+              ],
+              "explanationKey": "harsh-tone"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "solution-with-quiet-time",
+              "text": "Wäre es möglich, die Musik nach 22 Uhr leiser zu machen? Wenn Sie eine Feier planen, könnten Sie uns vielleicht vorher kurz informieren.",
+              "translations": [
+                { "language": "en", "text": "Would it be possible to turn the music down after 10 p.m.? If you are planning a party, could you perhaps briefly inform us beforehand?" },
+                { "language": "fa", "text": "ممکن است بعد از ساعت ۲۲ موسیقی را آرام‌تر کنید؟ اگر جشنی برنامه‌ریزی می‌کنید، شاید بتوانید قبلش کوتاه به ما اطلاع دهید." },
+                { "language": "ar", "text": "هل من الممكن خفض صوت الموسيقى بعد الساعة العاشرة مساءً؟ إذا كنتم تخططون لحفلة، فهل يمكنكم ربما إبلاغنا مسبقًا بشكل قصير؟" },
+                { "language": "tr", "text": "Saat 22'den sonra müziği biraz kısmak mümkün olur mu? Bir kutlama planlıyorsanız, belki bize önceden kısaca haber verebilir misiniz?" },
+                { "language": "ru", "text": "Можно ли после 22 часов сделать музыку тише? Если вы планируете вечеринку, могли бы вы, возможно, заранее коротко нас предупредить?" },
+                { "language": "ckb", "text": "ئایا دەکرێت دوای کاتژمێر ٢٢ مۆسیقاکە کەمتر بکەن؟ ئەگەر ئاهەنگێک پلان دەکەن، ڕەنگە بتوانن پێشتر بە کورتی ئاگادارمان بکەنەوە." },
+                { "language": "kmr", "text": "Ma gengaz e piştî saet 22ê muzîkê hêdîtir bikin? Ger hûn şahiyekê plan dikin, hûn dikarin belkî berê bi kurtî me agahdar bikin?" },
+                { "language": "pl", "text": "Czy byłoby możliwe ściszyć muzykę po 22:00? Jeśli planują państwo spotkanie, może mogliby nas państwo krótko wcześniej poinformować." },
+                { "language": "ro", "text": "Ar fi posibil să dați muzica mai încet după ora 22? Dacă plănuiți o petrecere, poate ne puteți anunța scurt înainte." },
+                { "language": "sq", "text": "A do të ishte e mundur ta ulni muzikën pas orës 22? Nëse planifikoni një festë, ndoshta mund të na njoftoni shkurt më parë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du formulierst eine konkrete, realistische Lösung und lässt dem Nachbarn Spielraum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You formulate a concrete, realistic solution and leave the neighbor some room." },
+                { "language": "fa", "text": "خوب است: یک راه‌حل مشخص و واقع‌گرایانه بیان می‌کنی و برای همسایه هم کمی انعطاف می‌گذاری." },
+                { "language": "ar", "text": "جيد: تصيغ حلًا محددًا وواقعيًا وتترك للجار بعض المجال." },
+                { "language": "tr", "text": "İyi: Somut ve gerçekçi bir çözüm söylüyor ve komşuya biraz hareket alanı bırakıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты формулируешь конкретное, реалистичное решение и оставляешь соседу пространство." },
+                { "language": "ckb", "text": "باشە: چارەسەرێکی دیاریکراو و ڕاستەقینە دەربڕیت و بۆ دراوسێکەش بۆشاییەک دەهێڵیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu çareseriyeke zelel û rast dibêjî û ji cîran re hinek cih dihêlî." },
+                { "language": "pl", "text": "Dobrze: formułujesz konkretne, realistyczne rozwiązanie i zostawiasz sąsiadowi trochę przestrzeni." },
+                { "language": "ro", "text": "Bine: formulezi o soluție concretă și realistă și îi lași vecinului puțin spațiu." },
+                { "language": "sq", "text": "Mirë: formulon një zgjidhje konkrete dhe realiste dhe i lë fqinjit pak hapësirë." }
+              ],
+              "explanationKey": "solution-not-accusation"
+            },
+            {
+              "id": "only-demand-no-solution",
+              "text": "Bitte machen Sie abends einfach keinen Lärm mehr.",
+              "translations": [
+                { "language": "en", "text": "Please just do not make any more noise in the evenings." },
+                { "language": "fa", "text": "لطفاً عصرها دیگر اصلاً سر و صدا نکنید." },
+                { "language": "ar", "text": "من فضلك لا تصدر أي ضوضاء في المساء بعد الآن." },
+                { "language": "tr", "text": "Lütfen akşamları artık hiç gürültü yapmayın." },
+                { "language": "ru", "text": "Пожалуйста, просто больше не шумите по вечерам." },
+                { "language": "ckb", "text": "تکایە ئێواران چیتر هیچ ژاوەژاوێک مەکەن." },
+                { "language": "kmr", "text": "Ji kerema xwe êvaran êdî qet deng nekin." },
+                { "language": "pl", "text": "Proszę po prostu nie hałasować już wieczorami." },
+                { "language": "ro", "text": "Vă rog pur și simplu să nu mai faceți zgomot seara." },
+                { "language": "sq", "text": "Ju lutem thjesht mos bëni më zhurmë në mbrëmje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Bitte ist klar, aber zu absolut. Ein konkreter Vorschlag nach 22 Uhr ist realistischer und klingt kooperativer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The request is clear, but too absolute. A concrete suggestion after 10 p.m. is more realistic and sounds more cooperative." },
+                { "language": "fa", "text": "درخواست روشن است، اما خیلی مطلق است. پیشنهاد مشخص برای بعد از ساعت ۲۲ واقع‌گرایانه‌تر و همکاری‌جویانه‌تر است." },
+                { "language": "ar", "text": "الطلب واضح، لكنه مطلق جدًا. اقتراح محدد بعد الساعة العاشرة مساءً أكثر واقعية ويبدو أكثر تعاونًا." },
+                { "language": "tr", "text": "İstek açık, ama çok kesin. Saat 22'den sonrası için somut bir öneri daha gerçekçi ve daha işbirlikçi duyulur." },
+                { "language": "ru", "text": "Просьба ясная, но слишком абсолютная. Конкретное предложение после 22 часов реалистичнее и звучит более совместно." },
+                { "language": "ckb", "text": "داواکارییەکە ڕوونە، بەڵام زۆر ڕەهایە. پێشنیارێکی دیاریکراو بۆ دوای کاتژمێر ٢٢ ڕاستەقینەترە و هاوکاریانەتر دەنگ دەدات." },
+                { "language": "kmr", "text": "Daxwaz zelal e, lê pir mutleq e. Pêşniyareke zelel ji bo piştî saet 22ê rasttir e û hevkariyane xuya dike." },
+                { "language": "pl", "text": "Prośba jest jasna, ale zbyt absolutna. Konkretna propozycja po 22:00 jest bardziej realistyczna i brzmi bardziej współpracująco." },
+                { "language": "ro", "text": "Cererea este clară, dar prea absolută. O propunere concretă după ora 22 este mai realistă și sună mai cooperant." },
+                { "language": "sq", "text": "Kërkesa është e qartë, por shumë absolute. Një propozim konkret pas orës 22 është më realist dhe tingëllon më bashkëpunues." }
+              ],
+              "explanationKey": "too-absolute"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "politeness-note",
+          "text": "Bei Beschwerden unter Nachbarn sind konkrete Beispiele, Ich-Formulierungen und ein lösbarer Vorschlag besser als allgemeine Vorwürfe.",
+          "translations": [
+            { "language": "en", "text": "For complaints between neighbors, concrete examples, I-statements, and a solvable proposal are better than general accusations." },
+            { "language": "fa", "text": "در شکایت بین همسایه‌ها، مثال‌های مشخص، جمله‌های با «من» و یک پیشنهاد قابل حل بهتر از سرزنش‌های کلی است." },
+            { "language": "ar", "text": "في الشكاوى بين الجيران، الأمثلة المحددة، وصياغات المتكلم، واقتراح قابل للحل أفضل من الاتهامات العامة." },
+            { "language": "tr", "text": "Komşular arasındaki şikayetlerde somut örnekler, ben dili ve çözülebilir bir öneri genel suçlamalardan daha iyidir." },
+            { "language": "ru", "text": "В жалобах между соседями конкретные примеры, высказывания от первого лица и решаемое предложение лучше общих обвинений." },
+            { "language": "ckb", "text": "لە سکاڵای نێوان دراوسێکاندا نموونەی دیاریکراو، دەربڕینی بە «من» و پێشنیاری چارەسەرکراو باشترە لە تاوانبارکردنی گشتی." },
+            { "language": "kmr", "text": "Di gilîkirinên di navbera cîranan de mînakên zelel, gotinên bi 'ez' û pêşniyareke çareserkirinê ji sûcdarkirina giştî çêtir in." },
+            { "language": "pl", "text": "Przy skargach między sąsiadami konkretne przykłady, komunikaty typu „ja” i możliwa do rozwiązania propozycja są lepsze niż ogólne zarzuty." },
+            { "language": "ro", "text": "În plângerile între vecini, exemplele concrete, formulările la persoana întâi și o propunere rezolvabilă sunt mai bune decât acuzațiile generale." },
+            { "language": "sq", "text": "Në ankesat mes fqinjëve, shembujt konkretë, formulimet me 'unë' dhe një propozim i zgjidhshëm janë më të mira se akuzat e përgjithshme." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

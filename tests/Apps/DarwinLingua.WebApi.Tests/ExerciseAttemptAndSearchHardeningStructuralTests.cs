@@ -12,7 +12,7 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
 
         Assert.Contains("MapPost(", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/learning/exercises/{slug}/attempts\"", program, StringComparison.Ordinal);
-        Assert.Contains("attemptService.SubmitAttemptAsync( slug, request, GetRequiredUserId(principal), cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("attemptService.SubmitAttemptAsync( slug, request, GetRequiredUserId(principal), primaryMeaningLanguageCode ?? \"en\", cancellationToken)", normalized, StringComparison.Ordinal);
         Assert.Contains(".RequireAuthorization()", program, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"ExerciseAttempts\")", program, StringComparison.Ordinal);
         Assert.DoesNotContain("Identity?.Name ?? \"anonymous\"", program, StringComparison.Ordinal);
@@ -26,7 +26,7 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
 
         Assert.Contains("MapPost(", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/catalog/exercises/{slug}/evaluate\"", program, StringComparison.Ordinal);
-        Assert.Contains("attemptService.EvaluateAttemptAsync( slug, request, cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("attemptService.EvaluateAttemptAsync( slug, request, primaryMeaningLanguageCode ?? \"en\", cancellationToken)", normalized, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"ExerciseAttempts\")", program, StringComparison.Ordinal);
     }
 
@@ -39,6 +39,17 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
         Assert.Contains("\"/api/catalog/search\"", program, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"CatalogSearch\")", program, StringComparison.Ordinal);
         Assert.Contains("AddPolicy(\"CatalogSearch\"", program, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ExerciseRunnerView_ShouldNotExposeAdvancedJsonAnswerToLearners()
+    {
+        string view = File.ReadAllText(GetExerciseDetailViewPath());
+
+        Assert.DoesNotContain("Advanced JSON answer", view, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Answer JSON", view, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("PromptJson", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("submittedAnswerJson", view, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -94,6 +105,16 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
             "DarwinLingua.Infrastructure",
             "Persistence",
             "DarwinLinguaDatabaseInitializer.cs");
+
+    private static string GetExerciseDetailViewPath() =>
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "Apps",
+            "DarwinLingua.Web",
+            "Views",
+            "Exercises",
+            "Detail.cshtml");
 
     private static string FindRepositoryRoot()
     {

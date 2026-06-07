@@ -1,0 +1,646 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-03-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 03 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 03",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-entscheidung-im-meeting-hinterfragen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Entscheidung im Meeting hinterfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Questioning a decision in a meeting" },
+        { "language": "fa", "text": "زیر سؤال بردن محترمانه یک تصمیم در جلسه" },
+        { "language": "ar", "text": "مراجعة قرار في اجتماع باحترام" },
+        { "language": "tr", "text": "Bir toplantıda bir kararı sorgulamak" },
+        { "language": "ru", "text": "Поставить под вопрос решение на встрече" },
+        { "language": "ckb", "text": "پرسیارکردن لەسەر بڕیارێک لە کۆبوونەوەدا" },
+        { "language": "kmr", "text": "Di civînê de biryarekê pirsîn" },
+        { "language": "pl", "text": "Kwestionowanie decyzji na spotkaniu" },
+        { "language": "ro", "text": "Chestionarea unei decizii într-o ședință" },
+        { "language": "sq", "text": "Vënia në diskutim e një vendimi në mbledhje" }
+      ],
+      "description": "In einem Teammeeting wurde entschieden, ein Update bereits am Freitag zu veröffentlichen. Du siehst ein Risiko im Support und hinterfragst die Entscheidung respektvoll, ohne den Prozess zu blockieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a team meeting, it was decided to release an update as early as Friday. You see a support risk and question the decision respectfully without blocking the process." },
+        { "language": "fa", "text": "در یک جلسه تیمی تصمیم گرفته شده است که یک به‌روزرسانی همین جمعه منتشر شود. تو یک ریسک در بخش پشتیبانی می‌بینی و تصمیم را محترمانه بررسی می‌کنی، بدون اینکه روند کار را متوقف کنی." },
+        { "language": "ar", "text": "في اجتماع فريق تقرر نشر تحديث يوم الجمعة بالفعل. ترى خطراً في الدعم وتراجع القرار باحترام من دون تعطيل سير العمل." },
+        { "language": "tr", "text": "Bir ekip toplantısında bir güncellemenin daha cuma günü yayımlanmasına karar verildi. Destek tarafında bir risk görüyorsun ve süreci engellemeden kararı saygılı biçimde sorguluyorsun." },
+        { "language": "ru", "text": "На командной встрече было решено выпустить обновление уже в пятницу. Ты видишь риск для поддержки и уважительно ставишь решение под вопрос, не блокируя процесс." },
+        { "language": "ckb", "text": "لە کۆبوونەوەی تیمدا بڕیار دراوە نوێکردنەوەیەک هەر لە هەینی بڵاو بکرێتەوە. تۆ مەترسییەک لە پشتیوانی دەبینیت و بە ڕێزەوە بڕیارەکە دەپرسیت، بەبێ ئەوەی پرۆسەکە ڕابگریت." },
+        { "language": "kmr", "text": "Di civîneke tîmê de biryar hatiye dayîn ku nûkirinek ji roja înê ve were weşandin. Tu di piştgiriyê de xetereyek dibînî û biryarê bi rêzdarî dipirsî, bêyî ku pêvajoyê rawestînî." },
+        { "language": "pl", "text": "Na spotkaniu zespołu zdecydowano, że aktualizacja zostanie opublikowana już w piątek. Widzisz ryzyko po stronie wsparcia i z szacunkiem kwestionujesz decyzję, nie blokując procesu." },
+        { "language": "ro", "text": "Într-o ședință de echipă s-a decis ca o actualizare să fie publicată deja vineri. Vezi un risc în zona de suport și chestionezi decizia respectuos, fără să blochezi procesul." },
+        { "language": "sq", "text": "Në një mbledhje ekipi u vendos që një përditësim të publikohet që të premten. Ti sheh një rrezik te mbështetja dhe e vë vendimin në diskutim me respekt, pa bllokuar procesin." }
+      ],
+      "learnerGoal": "Hinterfrage eine Entscheidung konstruktiv: Erkenne den Zeitdruck an, frage nach Entscheidungskriterien und schlage eine bedingte Lösung mit klarer Absicherung vor.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Question a decision constructively: acknowledge the time pressure, ask for decision criteria, and suggest a conditional solution with clear safeguards." },
+        { "language": "fa", "text": "یک تصمیم را سازنده بررسی کن: فشار زمانی را بپذیر، درباره معیارهای تصمیم بپرس و یک راه‌حل مشروط با اقدامات حفاظتی روشن پیشنهاد بده." },
+        { "language": "ar", "text": "راجع قراراً بطريقة بنّاءة: اعترف بضغط الوقت، واسأل عن معايير القرار، واقترح حلاً مشروطاً مع ضمانات واضحة." },
+        { "language": "tr", "text": "Bir kararı yapıcı biçimde sorgula: zaman baskısını kabul et, karar ölçütlerini sor ve net güvenceleri olan koşullu bir çözüm öner." },
+        { "language": "ru", "text": "Конструктивно поставь решение под вопрос: признай давление сроков, спроси о критериях решения и предложи условное решение с ясными мерами защиты." },
+        { "language": "ckb", "text": "بڕیارێک بە شێوەی سازندە بپرسە: فشاری کات بپەسێنە، پرسیار لە پێوەرەکانی بڕیار بکە و چارەسەرێکی مەرجدار لەگەڵ پاراستنی ڕوون پێشنیار بکە." },
+        { "language": "kmr", "text": "Biryarekê bi awayekî avaker bipirse: zexta demê qebûl bike, li ser pîvanên biryarê bipirse û çareseriyeke şertdar bi parastinên zelal pêşniyar bike." },
+        { "language": "pl", "text": "Zakwestonuj decyzję konstruktywnie: uznaj presję czasu, zapytaj o kryteria decyzji i zaproponuj warunkowe rozwiązanie z jasnym zabezpieczeniem." },
+        { "language": "ro", "text": "Chestionază o decizie constructiv: recunoaște presiunea timpului, întreabă despre criteriile deciziei și propune o soluție condiționată cu garanții clare." },
+        { "language": "sq", "text": "Vëre në diskutim një vendim në mënyrë ndërtuese: prano presionin e kohës, pyet për kriteret e vendimit dhe propozo një zgjidhje të kushtëzuar me masa të qarta sigurie." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "agree-disagree",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3030,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollege",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميل" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Kolega z pracy" },
+            { "language": "ro", "text": "Coleg" },
+            { "language": "sq", "text": "Koleg" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Wir haben gerade entschieden, das Update am Freitag zu veröffentlichen. Aus meiner Sicht sollten wir den Termin jetzt nicht mehr öffnen.",
+          "translations": [
+            { "language": "en", "text": "We just decided to release the update on Friday. From my point of view, we should not reopen the date now." },
+            { "language": "fa", "text": "همین الان تصمیم گرفتیم به‌روزرسانی را جمعه منتشر کنیم. از نظر من دیگر نباید تاریخ را دوباره باز کنیم." },
+            { "language": "ar", "text": "قررنا للتو نشر التحديث يوم الجمعة. من وجهة نظري لا ينبغي أن نعيد فتح موضوع الموعد الآن." },
+            { "language": "tr", "text": "Güncellemeyi cuma günü yayımlamaya az önce karar verdik. Bence artık tarihi yeniden açmamalıyız." },
+            { "language": "ru", "text": "Мы только что решили выпустить обновление в пятницу. На мой взгляд, сейчас не стоит снова открывать вопрос даты." },
+            { "language": "ckb", "text": "ئێستا بڕیارمان دا نوێکردنەوەکە لە هەینی بڵاو بکەینەوە. بە بۆچوونی من نابێت ئێستا دووبارە کاتی بڵاوکردنەوە بکەینەوە." },
+            { "language": "kmr", "text": "Me niha biryar da ku nûkirin roja înê were weşandin. Li gorî min divê em êdî dîroka weşandinê venekin." },
+            { "language": "pl", "text": "Właśnie zdecydowaliśmy, że opublikujemy aktualizację w piątek. Moim zdaniem nie powinniśmy już otwierać tematu terminu." },
+            { "language": "ro", "text": "Tocmai am decis să publicăm actualizarea vineri. Din punctul meu de vedere nu ar trebui să redeschidem acum data." },
+            { "language": "sq", "text": "Sapo vendosëm ta publikojmë përditësimin të premten. Sipas meje nuk duhet ta hapim më tani çështjen e datës." }
+          ],
+          "function": "state-decision"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe den Zeitdruck. Bevor wir den Termin endgültig bestätigen, würde ich gern noch prüfen, ob die Support-Risiken ausreichend abgesichert sind.",
+          "translations": [
+            { "language": "en", "text": "I understand the time pressure. Before we confirm the date finally, I would like to check whether the support risks are sufficiently covered." },
+            { "language": "fa", "text": "فشار زمانی را می‌فهمم. قبل از اینکه تاریخ را نهایی تأیید کنیم، مایلم بررسی کنیم آیا ریسک‌های پشتیبانی به اندازه کافی پوشش داده شده‌اند یا نه." },
+            { "language": "ar", "text": "أفهم ضغط الوقت. قبل أن نؤكد الموعد نهائياً، أود أن نتحقق مما إذا كانت مخاطر الدعم مؤمنة بما يكفي." },
+            { "language": "tr", "text": "Zaman baskısını anlıyorum. Tarihi kesin olarak onaylamadan önce destek risklerinin yeterince güvence altına alınıp alınmadığını kontrol etmek isterim." },
+            { "language": "ru", "text": "Я понимаю давление сроков. Прежде чем окончательно подтвердить дату, я хотел бы проверить, достаточно ли закрыты риски для поддержки." },
+            { "language": "ckb", "text": "فشاری کات تێدەگەم. پێش ئەوەی کاتەکە بە کۆتایی پشتڕاست بکەینەوە، دەمەوێت بزانین مەترسییەکانی پشتیوانی بە تەواوی پارێزراون یان نا." },
+            { "language": "kmr", "text": "Ez zexta demê fam dikim. Berî ku em dîrokê bi dawî piştrast bikin, dixwazim kontrol bikin ka xetereyên piştgiriyê têra xwe hatine parastin an na." },
+            { "language": "pl", "text": "Rozumiem presję czasu. Zanim ostatecznie potwierdzimy termin, chciałbym jeszcze sprawdzić, czy ryzyka po stronie wsparcia są wystarczająco zabezpieczone." },
+            { "language": "ro", "text": "Înțeleg presiunea timpului. Înainte să confirmăm definitiv data, aș vrea să verificăm dacă riscurile de suport sunt suficient acoperite." },
+            { "language": "sq", "text": "E kuptoj presionin e kohës. Para se ta konfirmojmë përfundimisht datën, do të doja të kontrollonim nëse rreziqet e mbështetjes janë mbuluar mjaftueshëm." }
+          ],
+          "function": "respectful-challenge",
+          "expectedLearnerAction": "Acknowledge the decision pressure and introduce one concrete risk area without blocking the meeting."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Die Kundenseite wartet schon lange. Wenn wir jetzt wieder Risiken sammeln, verlieren wir vielleicht das Momentum.",
+          "translations": [
+            { "language": "en", "text": "The customer side has been waiting for a long time. If we start collecting risks again now, we might lose momentum." },
+            { "language": "fa", "text": "طرف مشتری مدت زیادی منتظر بوده است. اگر الان دوباره شروع به جمع‌کردن ریسک‌ها کنیم، شاید شتاب کار را از دست بدهیم." },
+            { "language": "ar", "text": "جهة العميل تنتظر منذ وقت طويل. إذا بدأنا الآن بجمع المخاطر مرة أخرى، فقد نفقد الزخم." },
+            { "language": "tr", "text": "Müşteri tarafı uzun süredir bekliyor. Şimdi yeniden riskleri toplamaya başlarsak ivmeyi kaybedebiliriz." },
+            { "language": "ru", "text": "Клиентская сторона уже давно ждёт. Если мы сейчас снова начнём собирать риски, можем потерять темп." },
+            { "language": "ckb", "text": "لایەنی کڕیار ماوەیەکی زۆرە چاوەڕێ دەکات. ئەگەر ئێستا دووبارە مەترسییەکان کۆبکەینەوە، ڕەنگە خێرایی کار لەدەست بدەین." },
+            { "language": "kmr", "text": "Aliyê xerîdar demek dirêj e li bendê ye. Ger em niha dîsa xetereyan kom bikin, dibe ku tevgera karê winda bikin." },
+            { "language": "pl", "text": "Strona klienta czeka już długo. Jeśli teraz znów zaczniemy zbierać ryzyka, możemy stracić tempo." },
+            { "language": "ro", "text": "Partea clientului așteaptă de mult. Dacă începem acum să adunăm din nou riscuri, am putea pierde avântul." },
+            { "language": "sq", "text": "Ana e klientit ka pritur gjatë. Nëse tani fillojmë sërish të mbledhim rreziqe, mund të humbasim ritmin." }
+          ],
+          "function": "defend-decision"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mir geht es nicht darum, die Entscheidung zu stoppen. Ich möchte nur klären, welche Mindestkriterien erfüllt sein müssen, damit der Termin tragfähig ist.",
+          "translations": [
+            { "language": "en", "text": "I am not trying to stop the decision. I just want to clarify which minimum criteria have to be met so that the date is viable." },
+            { "language": "fa", "text": "هدفم متوقف‌کردن تصمیم نیست. فقط می‌خواهم روشن کنیم چه معیارهای حداقلی باید رعایت شوند تا این تاریخ قابل اتکا باشد." },
+            { "language": "ar", "text": "لا أريد إيقاف القرار. أريد فقط أن نوضح ما المعايير الدنيا التي يجب تحقيقها حتى يكون الموعد قابلاً للاعتماد." },
+            { "language": "tr", "text": "Amacım kararı durdurmak değil. Sadece tarihin uygulanabilir olması için hangi asgari kriterlerin karşılanması gerektiğini netleştirmek istiyorum." },
+            { "language": "ru", "text": "Я не хочу остановить решение. Я лишь хочу уточнить, какие минимальные критерии должны быть выполнены, чтобы дата была устойчивой." },
+            { "language": "ckb", "text": "مەبەستم ڕاگرتنی بڕیارەکە نییە. تەنها دەمەوێت ڕوون بکەین کام پێوەرە کەمینەکان دەبێت جێبەجێ بن، بۆ ئەوەی ئەم کاتە جێی پشتپێبەستن بێت." },
+            { "language": "kmr", "text": "Armanca min ne ew e ku biryarê rawestînim. Ez tenê dixwazim zelal bikin ka kîjan pîvanên herî kêm divê bêne cih, da ku ev dîrok bi hêz be." },
+            { "language": "pl", "text": "Nie chodzi mi o zatrzymanie decyzji. Chcę tylko wyjaśnić, jakie minimalne kryteria muszą być spełnione, żeby termin był realny." },
+            { "language": "ro", "text": "Nu vreau să opresc decizia. Vreau doar să clarificăm ce criterii minime trebuie îndeplinite ca data să fie sustenabilă." },
+            { "language": "sq", "text": "Nuk dua ta ndal vendimin. Dua vetëm të sqarojmë cilat kritere minimale duhet të plotësohen që data të jetë e qëndrueshme." }
+          ],
+          "function": "clarify-intention-and-criteria",
+          "expectedLearnerAction": "Separate challenging criteria from blocking the decision."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Welche Kriterien meinst du konkret? Wir haben Tests, Freigabe und Kommunikation doch schon besprochen.",
+          "translations": [
+            { "language": "en", "text": "Which criteria do you mean exactly? We already discussed testing, approval, and communication." },
+            { "language": "fa", "text": "دقیقاً منظورت کدام معیارهاست؟ ما تست، تأیید و ارتباطات را قبلاً بررسی کرده‌ایم." },
+            { "language": "ar", "text": "أي معايير تقصد تحديداً؟ لقد ناقشنا الاختبارات والموافقة والتواصل بالفعل." },
+            { "language": "tr", "text": "Tam olarak hangi kriterleri kastediyorsun? Testleri, onayı ve iletişimi zaten konuştuk." },
+            { "language": "ru", "text": "Какие критерии ты имеешь в виду конкретно? Тесты, согласование и коммуникацию мы уже обсудили." },
+            { "language": "ckb", "text": "بە دیاریکراوی مەبەستت کام پێوەرەکانە؟ ئێمە تاقیکردنەوە، پەسەندکردن و پەیوەندی پێشتر باس کردووە." },
+            { "language": "kmr", "text": "Tu bi taybetî kîjan pîvanan dibêjî? Me test, pejirandin û ragihandin jixwe nîqaş kirin." },
+            { "language": "pl", "text": "Jakie kryteria masz konkretnie na myśli? Testy, akceptację i komunikację już przecież omówiliśmy." },
+            { "language": "ro", "text": "La ce criterii te referi concret? Am discutat deja testarea, aprobarea și comunicarea." },
+            { "language": "sq", "text": "Cilat kritere ke konkretisht parasysh? Testimin, miratimin dhe komunikimin tashmë i kemi diskutuar." }
+          ],
+          "function": "ask-for-criteria"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Mir fehlt vor allem die Absicherung für den Support: Wer beantwortet Rückfragen, wenn nach dem Update viele Tickets kommen?",
+          "translations": [
+            { "language": "en", "text": "What I mainly miss is the safeguard for support: who answers follow-up questions if many tickets come in after the update?" },
+            { "language": "fa", "text": "چیزی که بیشتر از همه کم دارم، پوشش برای پشتیبانی است: اگر بعد از به‌روزرسانی تیکت‌های زیادی بیاید، چه کسی پاسخ سؤال‌های بعدی را می‌دهد؟" },
+            { "language": "ar", "text": "ما ينقصني خصوصاً هو التأمين للدعم: من سيجيب عن الأسئلة اللاحقة إذا جاءت تذاكر كثيرة بعد التحديث؟" },
+            { "language": "tr", "text": "Bana özellikle destek güvencesi eksik geliyor: güncellemeden sonra çok sayıda talep gelirse takip sorularını kim yanıtlayacak?" },
+            { "language": "ru", "text": "Мне прежде всего не хватает подстраховки для поддержки: кто будет отвечать на дополнительные вопросы, если после обновления придёт много тикетов?" },
+            { "language": "ckb", "text": "ئەوەی زۆرتر کەمە، پاراستنی پشتیوانییە: ئەگەر دوای نوێکردنەوە تیکەتی زۆر بێت، کێ وەڵامی پرسیارە دواییەکان دەداتەوە؟" },
+            { "language": "kmr", "text": "Ya ku herî zêde kêm dibînim parastina piştgiriyê ye: ger piştî nûkirinê gelek ticket bên, kî dê bersiva pirsên dûv re bide?" },
+            { "language": "pl", "text": "Brakuje mi przede wszystkim zabezpieczenia dla wsparcia: kto odpowie na pytania, jeśli po aktualizacji pojawi się wiele zgłoszeń?" },
+            { "language": "ro", "text": "Îmi lipsește mai ales asigurarea pentru suport: cine răspunde la întrebările ulterioare dacă după actualizare vin multe tichete?" },
+            { "language": "sq", "text": "Ajo që më mungon më shumë është sigurimi për mbështetjen: kush u përgjigjet pyetjeve pasuese nëse pas përditësimit vijnë shumë kërkesa?" }
+          ],
+          "function": "name-specific-risk",
+          "expectedLearnerAction": "Name one concrete missing safeguard and connect it to a practical consequence."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Das ist ein Punkt. Aber wenn wir deshalb verschieben, müssen wir das dem Kunden erklären.",
+          "translations": [
+            { "language": "en", "text": "That is a point. But if we postpone because of that, we have to explain it to the customer." },
+            { "language": "fa", "text": "این نکته‌ای است. اما اگر به همین دلیل عقب بیندازیم، باید آن را برای مشتری توضیح بدهیم." },
+            { "language": "ar", "text": "هذه نقطة مهمة. لكن إذا أجلنا بسببها، فيجب أن نشرح ذلك للعميل." },
+            { "language": "tr", "text": "Bu bir nokta. Ama bu yüzden ertelersek bunu müşteriye açıklamamız gerekir." },
+            { "language": "ru", "text": "Это аргумент. Но если мы из-за этого перенесём срок, нам придётся объяснять это клиенту." },
+            { "language": "ckb", "text": "ئەمە خاڵێکە. بەڵام ئەگەر بەهۆی ئەوەوە دوا بخەین، دەبێت بۆ کڕیار ڕوونی بکەینەوە." },
+            { "language": "kmr", "text": "Ev xalek e. Lê ger em ji ber vê yekê paş bixin, divê em vê ji xerîdar re rave bikin." },
+            { "language": "pl", "text": "To jest argument. Ale jeśli z tego powodu przesuniemy termin, musimy wyjaśnić to klientowi." },
+            { "language": "ro", "text": "Este un punct. Dar dacă amânăm din acest motiv, trebuie să explicăm asta clientului." },
+            { "language": "sq", "text": "Kjo është një pikë. Por nëse e shtyjmë për këtë arsye, duhet t'ia shpjegojmë klientit." }
+          ],
+          "function": "raise-consequence"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich schlage keine sofortige Verschiebung vor. Wir könnten den Termin bestätigen, aber mit zwei Bedingungen: FAQ bis Donnerstagmittag und eine klare Zuständigkeit für Rückfragen.",
+          "translations": [
+            { "language": "en", "text": "I am not suggesting an immediate postponement. We could confirm the date, but with two conditions: the FAQ by Thursday noon and a clear responsibility for follow-up questions." },
+            { "language": "fa", "text": "من پیشنهاد تعویق فوری نمی‌دهم. می‌توانیم تاریخ را تأیید کنیم، اما با دو شرط: پرسش‌های متداول تا ظهر پنجشنبه و مسئولیت روشن برای پاسخ به سؤال‌های بعدی." },
+            { "language": "ar", "text": "لا أقترح تأجيلاً فورياً. يمكننا تأكيد الموعد، لكن بشرطين: الأسئلة الشائعة حتى ظهر الخميس ومسؤولية واضحة عن الأسئلة اللاحقة." },
+            { "language": "tr", "text": "Hemen ertelemeyi önermiyorum. Tarihi onaylayabiliriz, ama iki koşulla: perşembe öğlene kadar SSS ve takip soruları için net sorumluluk." },
+            { "language": "ru", "text": "Я не предлагаю немедленный перенос. Мы можем подтвердить дату, но с двумя условиями: частые вопросы до полудня четверга и чёткая ответственность за дополнительные вопросы." },
+            { "language": "ckb", "text": "من پێشنیاری دواخستنی دەستبەجێ ناکەم. دەتوانین کاتەکە پشتڕاست بکەینەوە، بەڵام بە دوو مەرج: پرسیار و وەڵامە باوەکان تا نیوەڕۆی پێنجشەممە و بەرپرسیارێتی ڕوون بۆ پرسیارە دواییەکان." },
+            { "language": "kmr", "text": "Ez paşxistina tavilê pêşniyar nakim. Em dikarin dîrokê piştrast bikin, lê bi du şertan: pirsên pir têne kirin heta nîvroya pêncşemê û berpirsiyariyeke zelal ji bo pirsên dûv re." },
+            { "language": "pl", "text": "Nie proponuję natychmiastowego przesunięcia. Możemy potwierdzić termin, ale pod dwoma warunkami: FAQ do czwartku do południa i jasna odpowiedzialność za pytania." },
+            { "language": "ro", "text": "Nu propun o amânare imediată. Am putea confirma data, dar cu două condiții: întrebările frecvente până joi la prânz și o responsabilitate clară pentru întrebările ulterioare." },
+            { "language": "sq", "text": "Nuk po propozoj shtyrje të menjëhershme. Mund ta konfirmojmë datën, por me dy kushte: pyetjet e shpeshta deri të enjten në mesditë dhe përgjegjësi e qartë për pyetjet pasuese." }
+          ],
+          "function": "offer-conditional-solution",
+          "expectedLearnerAction": "Propose a conditional path that preserves the decision but adds safeguards."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "So formuliert klingt es weniger wie ein Einspruch. Wie würdest du das im Protokoll festhalten?",
+          "translations": [
+            { "language": "en", "text": "Put that way, it sounds less like an objection. How would you record it in the minutes?" },
+            { "language": "fa", "text": "با این بیان، کمتر شبیه اعتراض به نظر می‌رسد. چطور آن را در صورت‌جلسه ثبت می‌کنی؟" },
+            { "language": "ar", "text": "بهذه الصياغة يبدو أقل كاعتراض. كيف ستسجله في محضر الاجتماع؟" },
+            { "language": "tr", "text": "Böyle ifade edilince itiraz gibi daha az duyuluyor. Bunu tutanağa nasıl geçirirdin?" },
+            { "language": "ru", "text": "В такой формулировке это меньше похоже на возражение. Как бы ты записал это в протокол?" },
+            { "language": "ckb", "text": "بەم شێوەیە دەربڕدرێت، کەمتر وەک ناڕەزایەتی دەردەکەوێت. چۆن ئەمە لە پەڕاوەی کۆبوونەوەدا تۆمار دەکەیت؟" },
+            { "language": "kmr", "text": "Bi vê awayê, ev kêmtir wek nerazîbûnê xuya dike. Tu vê çawa di protokolê de tomar dikî?" },
+            { "language": "pl", "text": "W takiej formie brzmi to mniej jak sprzeciw. Jak zapisałbyś to w protokole?" },
+            { "language": "ro", "text": "Formulat așa, sună mai puțin ca o obiecție. Cum ai consemna asta în procesul-verbal?" },
+            { "language": "sq", "text": "E formuluar kështu, tingëllon më pak si kundërshtim. Si do ta shënoje në procesverbal?" }
+          ],
+          "function": "ask-for-minutes-wording"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde schreiben: Veröffentlichung am Freitag geplant, sofern FAQ und Support-Zuständigkeit bis Donnerstagmittag bestätigt sind.",
+          "translations": [
+            { "language": "en", "text": "I would write: release planned for Friday, provided that the FAQ and support responsibility are confirmed by Thursday noon." },
+            { "language": "fa", "text": "می‌نویسم: انتشار برای جمعه برنامه‌ریزی شده است، به شرطی که پرسش‌های متداول و مسئولیت پشتیبانی تا ظهر پنجشنبه تأیید شوند." },
+            { "language": "ar", "text": "سأكتب: النشر مخطط له يوم الجمعة، بشرط تأكيد الأسئلة الشائعة ومسؤولية الدعم حتى ظهر الخميس." },
+            { "language": "tr", "text": "Şöyle yazardım: Yayın cuma günü planlanıyor; SSS ve destek sorumluluğu perşembe öğlene kadar onaylanırsa." },
+            { "language": "ru", "text": "Я бы записал: выпуск запланирован на пятницу при условии, что частые вопросы и ответственность поддержки будут подтверждены до полудня четверга." },
+            { "language": "ckb", "text": "دەمەوێت بنووسم: بڵاوکردنەوە بۆ هەینی پلانکراوە، بە مەرجی ئەوەی پرسیار و وەڵامە باوەکان و بەرپرسیارێتی پشتیوانی تا نیوەڕۆی پێنجشەممە پشتڕاست بکرێنەوە." },
+            { "language": "kmr", "text": "Ez ê binivîsim: weşandin ji bo roja înê hatiye plan kirin, bi şertê ku pirsên pir têne kirin û berpirsiyariya piştgiriyê heta nîvroya pêncşemê bêne piştrast kirin." },
+            { "language": "pl", "text": "Napisałbym: publikacja planowana na piątek, pod warunkiem że FAQ i odpowiedzialność za wsparcie zostaną potwierdzone do czwartku do południa." },
+            { "language": "ro", "text": "Aș scrie: publicarea este planificată pentru vineri, cu condiția ca întrebările frecvente și responsabilitatea pentru suport să fie confirmate până joi la prânz." },
+            { "language": "sq", "text": "Do të shkruaja: publikimi është planifikuar për të premten, me kusht që pyetjet e shpeshta dhe përgjegjësia e mbështetjes të konfirmohen deri të enjten në mesditë." }
+          ],
+          "function": "formulate-minutes-entry",
+          "expectedLearnerAction": "Record the decision as conditional, concise, and measurable."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Gut. Kannst du zum Abschluss noch kurz zusammenfassen, was wir jetzt tun?",
+          "translations": [
+            { "language": "en", "text": "Good. To close, can you briefly summarize what we are doing now?" },
+            { "language": "fa", "text": "خوب. برای پایان، می‌توانی کوتاه جمع‌بندی کنی الان چه کار می‌کنیم؟" },
+            { "language": "ar", "text": "جيد. في الختام، هل يمكنك أن تلخص باختصار ما سنفعله الآن؟" },
+            { "language": "tr", "text": "İyi. Kapanış için şimdi ne yaptığımızı kısaca özetleyebilir misin?" },
+            { "language": "ru", "text": "Хорошо. В завершение можешь коротко подытожить, что мы теперь делаем?" },
+            { "language": "ckb", "text": "باشە. بۆ کۆتایی، دەتوانیت بە کورتی پوختە بکەیتەوە ئێستا چی دەکەین؟" },
+            { "language": "kmr", "text": "Baş e. Ji bo dawiyê, tu dikarî bi kurtî bibêjî em niha çi dikin?" },
+            { "language": "pl", "text": "Dobrze. Na koniec możesz krótko podsumować, co teraz robimy?" },
+            { "language": "ro", "text": "Bine. La final, poți să rezumi pe scurt ce facem acum?" },
+            { "language": "sq", "text": "Mirë. Në fund, a mund ta përmbledhësh shkurt çfarë bëjmë tani?" }
+          ],
+          "function": "request-summary"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Wir halten am Freitag fest, aber nicht bedingungslos. Bis Donnerstagmittag klären wir FAQ, Support-Zuständigkeit und Rückfallplan; wenn etwas fehlt, informieren wir frühzeitig.",
+          "translations": [
+            { "language": "en", "text": "We keep Friday, but not unconditionally. By Thursday noon we clarify the FAQ, support responsibility, and fallback plan; if anything is missing, we inform early." },
+            { "language": "fa", "text": "ما جمعه را حفظ می‌کنیم، اما نه بدون شرط. تا ظهر پنجشنبه پرسش‌های متداول، مسئولیت پشتیبانی و برنامه جایگزین را روشن می‌کنیم؛ اگر چیزی کم باشد، زود اطلاع می‌دهیم." },
+            { "language": "ar", "text": "نتمسك بيوم الجمعة، لكن ليس بلا شروط. حتى ظهر الخميس نوضح الأسئلة الشائعة ومسؤولية الدعم وخطة الرجوع؛ وإذا كان شيء ناقصاً نبلغ مبكراً." },
+            { "language": "tr", "text": "Cuma tarihini koruyoruz, ama koşulsuz değil. Perşembe öğlene kadar SSS'yi, destek sorumluluğunu ve geri dönüş planını netleştiriyoruz; bir şey eksikse erken bilgilendiriyoruz." },
+            { "language": "ru", "text": "Мы сохраняем пятницу, но не безусловно. До полудня четверга уточняем частые вопросы, ответственность поддержки и резервный план; если чего-то не хватает, сообщаем заранее." },
+            { "language": "ckb", "text": "ئێمە هەینی دەهێڵینەوە، بەڵام نە بەبێ مەرج. تا نیوەڕۆی پێنجشەممە پرسیار و وەڵامە باوەکان، بەرپرسیارێتی پشتیوانی و پلانی گەڕانەوە ڕوون دەکەین؛ ئەگەر شتێک کەم بێت، زوو ڕادەگەیەنین." },
+            { "language": "kmr", "text": "Em roja înê diparêzin, lê ne bê şert. Heta nîvroya pêncşemê em pirsên pir têne kirin, berpirsiyariya piştgiriyê û plana vegerê zelal dikin; ger tiştek kêm be, em zû agahdar dikin." },
+            { "language": "pl", "text": "Trzymamy się piątku, ale nie bezwarunkowo. Do czwartku do południa wyjaśniamy FAQ, odpowiedzialność za wsparcie i plan awaryjny; jeśli czegoś brakuje, informujemy wcześniej." },
+            { "language": "ro", "text": "Păstrăm ziua de vineri, dar nu necondiționat. Până joi la prânz clarificăm întrebările frecvente, responsabilitatea de suport și planul de rezervă; dacă lipsește ceva, informăm din timp." },
+            { "language": "sq", "text": "E mbajmë të premten, por jo pa kushte. Deri të enjten në mesditë sqarojmë pyetjet e shpeshta, përgjegjësinë e mbështetjes dhe planin rezervë; nëse mungon diçka, informojmë herët." }
+          ],
+          "function": "summarize-conditional-decision",
+          "expectedLearnerAction": "Summarize the conditional decision, safeguards, deadline, and escalation trigger."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "respectful-risk-check",
+              "text": "Ich verstehe den Zeitdruck. Bevor wir endgültig bestätigen, würde ich gern prüfen, ob die Support-Risiken ausreichend abgesichert sind.",
+              "translations": [
+                { "language": "en", "text": "I understand the time pressure. Before we confirm finally, I would like to check whether the support risks are sufficiently covered." },
+                { "language": "fa", "text": "فشار زمانی را می‌فهمم. قبل از تأیید نهایی، مایلم بررسی کنیم آیا ریسک‌های پشتیبانی به اندازه کافی پوشش داده شده‌اند یا نه." },
+                { "language": "ar", "text": "أفهم ضغط الوقت. قبل التأكيد النهائي، أود أن نتحقق مما إذا كانت مخاطر الدعم مؤمنة بما يكفي." },
+                { "language": "tr", "text": "Zaman baskısını anlıyorum. Kesin onaydan önce destek risklerinin yeterince güvenceye alınıp alınmadığını kontrol etmek isterim." },
+                { "language": "ru", "text": "Я понимаю давление сроков. Перед окончательным подтверждением хотел бы проверить, достаточно ли закрыты риски поддержки." },
+                { "language": "ckb", "text": "فشاری کات تێدەگەم. پێش پشتڕاستکردنەوەی کۆتایی، دەمەوێت بزانین مەترسییەکانی پشتیوانی بە تەواوی پارێزراون یان نا." },
+                { "language": "kmr", "text": "Ez zexta demê fam dikim. Berî piştrastkirina dawî, dixwazim kontrol bikin ka xetereyên piştgiriyê têra xwe hatine parastin an na." },
+                { "language": "pl", "text": "Rozumiem presję czasu. Przed ostatecznym potwierdzeniem chciałbym sprawdzić, czy ryzyka po stronie wsparcia są wystarczająco zabezpieczone." },
+                { "language": "ro", "text": "Înțeleg presiunea timpului. Înainte de confirmarea finală, aș vrea să verificăm dacă riscurile de suport sunt suficient acoperite." },
+                { "language": "sq", "text": "E kuptoj presionin e kohës. Para konfirmimit përfundimtar, do të doja të kontrollonim nëse rreziqet e mbështetjes janë mbuluar mjaftueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this acknowledges the pressure and names a specific risk area without sounding like a veto.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this acknowledges the pressure and names a specific risk area without sounding like a veto." },
+                { "language": "fa", "text": "خوب است: فشار را می‌پذیرد و یک حوزه ریسک مشخص را نام می‌برد، بدون اینکه شبیه وتو کردن باشد." },
+                { "language": "ar", "text": "جيد: يعترف بالضغط ويسمي مجال خطر محدداً من دون أن يبدو كأنه veto أو منع." },
+                { "language": "tr", "text": "İyi: baskıyı kabul ediyor ve veto gibi duyulmadan somut bir risk alanı söylüyor." },
+                { "language": "ru", "text": "Хорошо: признаёт давление и называет конкретную зону риска, не звуча как вето." },
+                { "language": "ckb", "text": "باشە: فشارەکە دەناسێت و ناوچەیەکی دیاریکراوی مەترسی ناو دەبات، بەبێ ئەوەی وەک ڕەتکردنەوە دەنگ بدات." },
+                { "language": "kmr", "text": "Baş e: zextê qebûl dike û warê xetereyekî konkret nav dike bêyî ku wek redkirinê xuya bike." },
+                { "language": "pl", "text": "Dobrze: uznaje presję i nazywa konkretny obszar ryzyka, nie brzmiąc jak weto." },
+                { "language": "ro", "text": "Bine: recunoaște presiunea și numește o zonă concretă de risc fără să sune ca un veto." },
+                { "language": "sq", "text": "Mirë: pranon presionin dhe përmend një fushë konkrete rreziku pa tingëlluar si veto." }
+              ],
+              "explanationKey": "respectful-risk-check"
+            },
+            {
+              "id": "too-direct-objection",
+              "text": "Ich finde die Entscheidung falsch. Wir sollten den Termin nicht halten.",
+              "translations": [
+                { "language": "en", "text": "I think the decision is wrong. We should not keep the date." },
+                { "language": "fa", "text": "به نظر من تصمیم اشتباه است. نباید این تاریخ را نگه داریم." },
+                { "language": "ar", "text": "أعتقد أن القرار خاطئ. لا ينبغي أن نلتزم بهذا الموعد." },
+                { "language": "tr", "text": "Bence karar yanlış. Bu tarihi korumamalıyız." },
+                { "language": "ru", "text": "Я считаю, что решение неправильное. Не стоит сохранять эту дату." },
+                { "language": "ckb", "text": "بە بۆچوونی من بڕیارەکە هەڵەیە. نابێت ئەم کاتە بهێڵینەوە." },
+                { "language": "kmr", "text": "Li gorî min biryar şaş e. Divê em vê dîrokê neparêzin." },
+                { "language": "pl", "text": "Uważam, że decyzja jest błędna. Nie powinniśmy trzymać się tego terminu." },
+                { "language": "ro", "text": "Cred că decizia este greșită. Nu ar trebui să păstrăm această dată." },
+                { "language": "sq", "text": "Mendoj se vendimi është i gabuar. Nuk duhet ta mbajmë këtë datë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too direct for this meeting context: it rejects the decision before naming criteria or offering a workable alternative.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too direct for this meeting context: it rejects the decision before naming criteria or offering a workable alternative." },
+                { "language": "fa", "text": "برای این جلسه بیش از حد مستقیم است: قبل از گفتن معیارها یا پیشنهاد راه جایگزین عملی، تصمیم را رد می‌کند." },
+                { "language": "ar", "text": "مباشر جداً في سياق هذا الاجتماع: يرفض القرار قبل ذكر المعايير أو تقديم بديل قابل للتنفيذ." },
+                { "language": "tr", "text": "Bu toplantı bağlamı için fazla doğrudan: ölçütleri söylemeden veya uygulanabilir bir alternatif sunmadan kararı reddediyor." },
+                { "language": "ru", "text": "Слишком прямо для такого контекста встречи: решение отвергается до критериев и без рабочей альтернативы." },
+                { "language": "ckb", "text": "بۆ ئەم کۆبوونەوەیە زۆر ڕاستەوخۆیە: پێش ناوبردنی پێوەرەکان یان پێشنیاری جێگرەوەی کارا، بڕیارەکە ڕەت دەکاتەوە." },
+                { "language": "kmr", "text": "Ji bo vê civînê pir rasterast e: berî navkirina pîvanan an pêşniyara alternatîfeke pêkan biryarê red dike." },
+                { "language": "pl", "text": "Zbyt bezpośrednie w tym kontekście: odrzuca decyzję, zanim pojawią się kryteria lub wykonalna alternatywa." },
+                { "language": "ro", "text": "Prea direct pentru acest context: respinge decizia înainte să numească criterii sau să ofere o alternativă aplicabilă." },
+                { "language": "sq", "text": "Shumë e drejtpërdrejtë për këtë mbledhje: e refuzon vendimin para se të përmendë kritere ose një alternativë të zbatueshme." }
+              ],
+              "explanationKey": "too-direct"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "criteria-not-blocking",
+              "text": "Mir geht es nicht darum, die Entscheidung zu stoppen. Ich möchte nur klären, welche Mindestkriterien erfüllt sein müssen.",
+              "translations": [
+                { "language": "en", "text": "I am not trying to stop the decision. I just want to clarify which minimum criteria have to be met." },
+                { "language": "fa", "text": "هدفم متوقف‌کردن تصمیم نیست. فقط می‌خواهم روشن کنیم چه معیارهای حداقلی باید رعایت شوند." },
+                { "language": "ar", "text": "لا أريد إيقاف القرار. أريد فقط أن نوضح ما المعايير الدنيا التي يجب تحقيقها." },
+                { "language": "tr", "text": "Amacım kararı durdurmak değil. Sadece hangi asgari kriterlerin karşılanması gerektiğini netleştirmek istiyorum." },
+                { "language": "ru", "text": "Я не пытаюсь остановить решение. Я лишь хочу уточнить, какие минимальные критерии должны быть выполнены." },
+                { "language": "ckb", "text": "مەبەستم ڕاگرتنی بڕیارەکە نییە. تەنها دەمەوێت ڕوون بکەین کام پێوەرە کەمینەکان دەبێت جێبەجێ بن." },
+                { "language": "kmr", "text": "Armanca min ne rawestandina biryarê ye. Ez tenê dixwazim zelal bikin ka kîjan pîvanên herî kêm divê bên cih." },
+                { "language": "pl", "text": "Nie chodzi mi o zatrzymanie decyzji. Chcę tylko wyjaśnić, jakie minimalne kryteria muszą być spełnione." },
+                { "language": "ro", "text": "Nu vreau să opresc decizia. Vreau doar să clarificăm ce criterii minime trebuie îndeplinite." },
+                { "language": "sq", "text": "Nuk dua ta ndal vendimin. Dua vetëm të sqarojmë cilat kritere minimale duhet të plotësohen." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this keeps the process moving and shifts the discussion from opinion to decision criteria.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this keeps the process moving and shifts the discussion from opinion to decision criteria." },
+                { "language": "fa", "text": "خوب است: روند را جلو می‌برد و بحث را از نظر شخصی به معیارهای تصمیم منتقل می‌کند." },
+                { "language": "ar", "text": "جيد: يحافظ على سير العملية وينقل النقاش من الرأي إلى معايير القرار." },
+                { "language": "tr", "text": "İyi: süreci ilerletiyor ve tartışmayı kişisel görüşten karar ölçütlerine taşıyor." },
+                { "language": "ru", "text": "Хорошо: процесс продолжает двигаться, а обсуждение переходит от мнения к критериям решения." },
+                { "language": "ckb", "text": "باشە: پرۆسەکە بەردەوام دەهێڵێت و گفتوگۆکە لە بۆچوونەوە دەگوازێتەوە بۆ پێوەرەکانی بڕیار." },
+                { "language": "kmr", "text": "Baş e: pêvajoyê didomîne û nîqaşê ji nerînê vediguhezîne ser pîvanên biryarê." },
+                { "language": "pl", "text": "Dobrze: utrzymuje proces w ruchu i przenosi dyskusję z opinii na kryteria decyzji." },
+                { "language": "ro", "text": "Bine: menține procesul în mișcare și mută discuția de la opinie la criterii de decizie." },
+                { "language": "sq", "text": "Mirë: e mban procesin në lëvizje dhe e zhvendos diskutimin nga mendimi te kriteret e vendimit." }
+              ],
+              "explanationKey": "criteria-framing"
+            },
+            {
+              "id": "vague-reopen",
+              "text": "Vielleicht sollten wir das noch einmal allgemein besprechen.",
+              "translations": [
+                { "language": "en", "text": "Maybe we should discuss this generally once more." },
+                { "language": "fa", "text": "شاید بهتر باشد این موضوع را یک‌بار دیگر به طور کلی بررسی کنیم." },
+                { "language": "ar", "text": "ربما ينبغي أن نناقش هذا الأمر مرة أخرى بشكل عام." },
+                { "language": "tr", "text": "Belki bunu genel olarak bir kez daha konuşmalıyız." },
+                { "language": "ru", "text": "Может быть, стоит ещё раз обсудить это в общем." },
+                { "language": "ckb", "text": "ڕەنگە باش بێت ئەمە جارێکی تر بە گشتی باس بکەین." },
+                { "language": "kmr", "text": "Dibe ku baş be em vê carekê din bi giştî nîqaş bikin." },
+                { "language": "pl", "text": "Może powinniśmy jeszcze raz omówić to ogólnie." },
+                { "language": "ro", "text": "Poate ar trebui să discutăm asta încă o dată în general." },
+                { "language": "sq", "text": "Ndoshta duhet ta diskutojmë këtë edhe një herë në përgjithësi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but too vague: it reopens the topic without naming criteria, risk, or decision boundary.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: it reopens the topic without naming criteria, risk, or decision boundary." },
+                { "language": "fa", "text": "قابل تصور است اما خیلی مبهم است: موضوع را دوباره باز می‌کند، بدون اینکه معیار، ریسک یا مرز تصمیم را نام ببرد." },
+                { "language": "ar", "text": "ممكن لكنه عام جداً: يعيد فتح الموضوع من دون ذكر معايير أو خطر أو حدود القرار." },
+                { "language": "tr", "text": "Makul ama çok belirsiz: konuyu yeniden açıyor, fakat ölçüt, risk veya karar sınırı söylemiyor." },
+                { "language": "ru", "text": "Возможно, но слишком расплывчато: тема снова открывается без критериев, риска или границы решения." },
+                { "language": "ckb", "text": "ڕەنگە گونجاو بێت بەڵام زۆر گشتییە: بابەتەکە دووبارە دەکاتەوە، بەبێ ناوبردنی پێوەر، مەترسی یان سنووری بڕیار." },
+                { "language": "kmr", "text": "Dibe ku maqûl be lê pir giştî ye: mijarê dîsa vedike bê navkirina pîvan, xetere an sînorê biryarê." },
+                { "language": "pl", "text": "Możliwe, ale zbyt ogólne: otwiera temat ponownie bez kryteriów, ryzyka ani granicy decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: redeschide subiectul fără criterii, risc sau limită de decizie." },
+                { "language": "sq", "text": "E mundshme, por shumë e paqartë: e rihap temën pa përmendur kritere, rrezik ose kufi të vendimit." }
+              ],
+              "explanationKey": "vague-reopening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "conditional-release",
+              "text": "Wir bestätigen den Termin, aber mit zwei Bedingungen: FAQ bis Donnerstagmittag und klare Zuständigkeit für Rückfragen.",
+              "translations": [
+                { "language": "en", "text": "We confirm the date, but with two conditions: FAQ by Thursday noon and clear responsibility for follow-up questions." },
+                { "language": "fa", "text": "تاریخ را تأیید می‌کنیم، اما با دو شرط: پرسش‌های متداول تا ظهر پنجشنبه و مسئولیت روشن برای سؤال‌های بعدی." },
+                { "language": "ar", "text": "نؤكد الموعد، لكن بشرطين: الأسئلة الشائعة حتى ظهر الخميس ومسؤولية واضحة عن الأسئلة اللاحقة." },
+                { "language": "tr", "text": "Tarihi onaylıyoruz, ama iki koşulla: perşembe öğlene kadar SSS ve takip soruları için net sorumluluk." },
+                { "language": "ru", "text": "Мы подтверждаем дату, но с двумя условиями: частые вопросы до полудня четверга и чёткая ответственность за дополнительные вопросы." },
+                { "language": "ckb", "text": "کاتەکە پشتڕاست دەکەینەوە، بەڵام بە دوو مەرج: پرسیار و وەڵامە باوەکان تا نیوەڕۆی پێنجشەممە و بەرپرسیارێتی ڕوون بۆ پرسیارە دواییەکان." },
+                { "language": "kmr", "text": "Em dîrokê piştrast dikin, lê bi du şertan: pirsên pir têne kirin heta nîvroya pêncşemê û berpirsiyariya zelal ji bo pirsên dûv re." },
+                { "language": "pl", "text": "Potwierdzamy termin, ale pod dwoma warunkami: FAQ do czwartku do południa i jasna odpowiedzialność za pytania." },
+                { "language": "ro", "text": "Confirmăm data, dar cu două condiții: întrebările frecvente până joi la prânz și responsabilitate clară pentru întrebările ulterioare." },
+                { "language": "sq", "text": "E konfirmojmë datën, por me dy kushte: pyetjet e shpeshta deri të enjten në mesditë dhe përgjegjësi e qartë për pyetjet pasuese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this preserves the decision while making the risk controls concrete and measurable.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this preserves the decision while making the risk controls concrete and measurable." },
+                { "language": "fa", "text": "خوب است: تصمیم را حفظ می‌کند و کنترل‌های ریسک را مشخص و قابل سنجش می‌سازد." },
+                { "language": "ar", "text": "جيد: يحافظ على القرار ويجعل ضوابط المخاطر محددة وقابلة للقياس." },
+                { "language": "tr", "text": "İyi: kararı koruyor ve risk kontrollerini somut ve ölçülebilir hale getiriyor." },
+                { "language": "ru", "text": "Хорошо: решение сохраняется, а меры контроля риска становятся конкретными и измеримыми." },
+                { "language": "ckb", "text": "باشە: بڕیارەکە دەپارێزێت و کۆنترۆڵەکانی مەترسی دەکاتە دیاریکراو و پێوانەکراو." },
+                { "language": "kmr", "text": "Baş e: biryarê diparêze û kontrolên xetereyê konkret û pîvanbar dike." },
+                { "language": "pl", "text": "Dobrze: zachowuje decyzję, a jednocześnie czyni kontrole ryzyka konkretnymi i mierzalnymi." },
+                { "language": "ro", "text": "Bine: păstrează decizia și face controalele de risc concrete și măsurabile." },
+                { "language": "sq", "text": "Mirë: e ruan vendimin dhe i bën kontrollet e rrezikut konkrete dhe të matshme." }
+              ],
+              "explanationKey": "conditional-decision"
+            },
+            {
+              "id": "broad-postponement",
+              "text": "Dann sollten wir den Termin lieber auf nächste Woche verschieben.",
+              "translations": [
+                { "language": "en", "text": "Then we should rather postpone the date to next week." },
+                { "language": "fa", "text": "پس بهتر است تاریخ را به هفته آینده عقب بیندازیم." },
+                { "language": "ar", "text": "إذن من الأفضل أن نؤجل الموعد إلى الأسبوع المقبل." },
+                { "language": "tr", "text": "O zaman tarihi gelecek haftaya ertelememiz daha iyi olur." },
+                { "language": "ru", "text": "Тогда лучше перенести срок на следующую неделю." },
+                { "language": "ckb", "text": "ئەوا باشترە کاتەکە بۆ هەفتەی داهاتوو دوا بخەین." },
+                { "language": "kmr", "text": "Wê demê baştir e em dîrokê paş bixin hefteya bê." },
+                { "language": "pl", "text": "W takim razie lepiej przesunąć termin na przyszły tydzień." },
+                { "language": "ro", "text": "Atunci ar fi mai bine să amânăm data pentru săptămâna viitoare." },
+                { "language": "sq", "text": "Atëherë më mirë ta shtyjmë datën për javën tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too broad: postponement might be needed later, but here it jumps to delay before testing a conditional solution.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad: postponement might be needed later, but here it jumps to delay before testing a conditional solution." },
+                { "language": "fa", "text": "خیلی کلی است: شاید بعداً تعویق لازم شود، اما این پاسخ قبل از امتحان راه‌حل مشروط، مستقیم سراغ تأخیر می‌رود." },
+                { "language": "ar", "text": "واسع جداً: قد يكون التأجيل ضرورياً لاحقاً، لكن هنا ينتقل مباشرة إلى التأجيل قبل اختبار حل مشروط." },
+                { "language": "tr", "text": "Fazla geniş: erteleme daha sonra gerekebilir, ama burada koşullu bir çözümü denemeden doğrudan gecikmeye gidiyor." },
+                { "language": "ru", "text": "Слишком широко: перенос может понадобиться позже, но здесь сразу предлагается задержка до проверки условного решения." },
+                { "language": "ckb", "text": "زۆر گشتییە: ڕەنگە دواتر دواخستن پێویست بێت، بەڵام لێرە پێش تاقیکردنەوەی چارەسەری مەرجدار ڕاستەوخۆ دەچێتە دواخستن." },
+                { "language": "kmr", "text": "Pir fireh e: dibe ku paşxistin paşê pêwîst be, lê li vir berî ceribandina çareseriyeke şertdar rasterast diçe ser derengxistinê." },
+                { "language": "pl", "text": "Zbyt szerokie: przesunięcie może być później potrzebne, ale tu od razu przechodzi do opóźnienia przed sprawdzeniem rozwiązania warunkowego." },
+                { "language": "ro", "text": "Prea larg: amânarea poate fi necesară mai târziu, dar aici se sare direct la întârziere înainte de a testa o soluție condiționată." },
+                { "language": "sq", "text": "Shumë e gjerë: shtyrja mund të nevojitet më vonë, por këtu kalohet direkt te vonesa para se të provohet një zgjidhje e kushtëzuar." }
+              ],
+              "explanationKey": "premature-delay"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "complete-conditional-summary",
+              "text": "Wir halten am Freitag fest, klären bis Donnerstagmittag FAQ, Support-Zuständigkeit und Rückfallplan und informieren früh, falls etwas fehlt.",
+              "translations": [
+                { "language": "en", "text": "We keep Friday, clarify FAQ, support responsibility, and fallback plan by Thursday noon, and inform early if anything is missing." },
+                { "language": "fa", "text": "جمعه را حفظ می‌کنیم، تا ظهر پنجشنبه پرسش‌های متداول، مسئولیت پشتیبانی و برنامه جایگزین را روشن می‌کنیم و اگر چیزی کم باشد زود اطلاع می‌دهیم." },
+                { "language": "ar", "text": "نحافظ على يوم الجمعة، ونوضح حتى ظهر الخميس الأسئلة الشائعة ومسؤولية الدعم وخطة الرجوع، ونبلغ مبكراً إذا كان شيء ناقصاً." },
+                { "language": "tr", "text": "Cuma tarihini koruyoruz, perşembe öğlene kadar SSS'yi, destek sorumluluğunu ve geri dönüş planını netleştiriyoruz; bir şey eksikse erken bilgilendiriyoruz." },
+                { "language": "ru", "text": "Мы сохраняем пятницу, до полудня четверга уточняем частые вопросы, ответственность поддержки и резервный план и заранее сообщаем, если чего-то не хватает." },
+                { "language": "ckb", "text": "هەینی دەهێڵینەوە، تا نیوەڕۆی پێنجشەممە پرسیار و وەڵامە باوەکان، بەرپرسیارێتی پشتیوانی و پلانی گەڕانەوە ڕوون دەکەین و ئەگەر شتێک کەم بێت زوو ڕادەگەیەنین." },
+                { "language": "kmr", "text": "Em roja înê diparêzin, heta nîvroya pêncşemê pirsên pir têne kirin, berpirsiyariya piştgiriyê û plana vegerê zelal dikin û ger tiştek kêm be zû agahdar dikin." },
+                { "language": "pl", "text": "Trzymamy się piątku, do czwartku do południa wyjaśniamy FAQ, odpowiedzialność za wsparcie i plan awaryjny oraz informujemy wcześniej, jeśli czegoś brakuje." },
+                { "language": "ro", "text": "Păstrăm ziua de vineri, clarificăm până joi la prânz întrebările frecvente, responsabilitatea de suport și planul de rezervă și informăm din timp dacă lipsește ceva." },
+                { "language": "sq", "text": "E mbajmë të premten, deri të enjten në mesditë sqarojmë pyetjet e shpeshta, përgjegjësinë e mbështetjes dhe planin rezervë dhe informojmë herët nëse mungon diçka." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this summary includes the decision, conditions, deadline, and escalation trigger.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this summary includes the decision, conditions, deadline, and escalation trigger." },
+                { "language": "fa", "text": "خوب است: این جمع‌بندی تصمیم، شرط‌ها، مهلت و نقطه اطلاع‌رسانی را شامل می‌شود." },
+                { "language": "ar", "text": "جيد: يتضمن هذا الملخص القرار والشروط والموعد ومحفز التصعيد." },
+                { "language": "tr", "text": "İyi: bu özet kararı, koşulları, teslim tarihini ve bilgilendirme tetikleyicisini içeriyor." },
+                { "language": "ru", "text": "Хорошо: резюме включает решение, условия, срок и триггер для сообщения." },
+                { "language": "ckb", "text": "باشە: ئەم پوختەیە بڕیار، مەرجەکان، کاتی کۆتایی و خاڵی ڕاگەیاندن لەخۆدەگرێت." },
+                { "language": "kmr", "text": "Baş e: ev kurtkirin biryar, şert, dema dawî û sedema agahdarkirinê dihewîne." },
+                { "language": "pl", "text": "Dobrze: to podsumowanie zawiera decyzję, warunki, termin i punkt uruchamiający komunikację." },
+                { "language": "ro", "text": "Bine: acest rezumat include decizia, condițiile, termenul și declanșatorul informării." },
+                { "language": "sq", "text": "Mirë: kjo përmbledhje përfshin vendimin, kushtet, afatin dhe pikën që nxit informimin." }
+              ],
+              "explanationKey": "complete-summary"
+            },
+            {
+              "id": "incomplete-summary",
+              "text": "Wir veröffentlichen am Freitag, aber wir müssen noch ein paar Dinge klären.",
+              "translations": [
+                { "language": "en", "text": "We release on Friday, but we still have to clarify a few things." },
+                { "language": "fa", "text": "جمعه منتشر می‌کنیم، اما هنوز باید چند چیز را روشن کنیم." },
+                { "language": "ar", "text": "سننشر يوم الجمعة، لكن ما زال علينا توضيح بعض الأمور." },
+                { "language": "tr", "text": "Cuma günü yayımlıyoruz, ama hâlâ birkaç şeyi netleştirmemiz gerekiyor." },
+                { "language": "ru", "text": "Мы выпускаем в пятницу, но ещё нужно кое-что уточнить." },
+                { "language": "ckb", "text": "لە هەینی بڵاو دەکەینەوە، بەڵام هێشتا دەبێت چەند شتێک ڕوون بکەین." },
+                { "language": "kmr", "text": "Em roja înê diweşînin, lê hîn divê çend tiştan zelal bikin." },
+                { "language": "pl", "text": "Publikujemy w piątek, ale musimy jeszcze wyjaśnić kilka rzeczy." },
+                { "language": "ro", "text": "Publicăm vineri, dar mai trebuie să clarificăm câteva lucruri." },
+                { "language": "sq", "text": "Publikojmë të premten, por duhet të sqarojmë ende disa gjëra." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too incomplete for a meeting summary: it does not name the conditions, owner area, deadline, or what happens if something is missing.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too incomplete for a meeting summary: it does not name the conditions, owner area, deadline, or what happens if something is missing." },
+                { "language": "fa", "text": "برای جمع‌بندی جلسه خیلی ناقص است: شرط‌ها، حوزه مسئول، مهلت و اقدام در صورت کمبود را نام نمی‌برد." },
+                { "language": "ar", "text": "ناقص جداً كملخص اجتماع: لا يذكر الشروط أو مجال المسؤولية أو الموعد أو ما يحدث إذا كان شيء ناقصاً." },
+                { "language": "tr", "text": "Toplantı özeti için çok eksik: koşulları, sorumluluk alanını, tarihi veya bir şey eksikse ne olacağını söylemiyor." },
+                { "language": "ru", "text": "Слишком неполно для резюме встречи: нет условий, зоны ответственности, срока и действия при недостающих пунктах." },
+                { "language": "ckb", "text": "بۆ پوختەی کۆبوونەوە زۆر ناتەواوە: مەرجەکان، بواری بەرپرسیارێتی، کاتی کۆتایی یان ئەوەی ئەگەر شتێک کەم بێت چی دەکرێت ناو نابردرێت." },
+                { "language": "kmr", "text": "Ji bo kurtkirina civînê pir netemam e: şert, warê berpirsiyariyê, dema dawî an çi dibe ger tiştek kêm be nayê gotin." },
+                { "language": "pl", "text": "Zbyt niepełne jak na podsumowanie spotkania: nie podaje warunków, obszaru odpowiedzialności, terminu ani działania w razie braków." },
+                { "language": "ro", "text": "Prea incomplet pentru un rezumat de ședință: nu numește condițiile, zona responsabilă, termenul sau ce se întâmplă dacă lipsește ceva." },
+                { "language": "sq", "text": "Shumë e paplotë për një përmbledhje mbledhjeje: nuk përmend kushtet, fushën përgjegjëse, afatin ose çfarë ndodh nëse mungon diçka." }
+              ],
+              "explanationKey": "missing-conditions"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "meeting-tone-note",
+          "text": "To question a decision respectfully, acknowledge the pressure first and then name one concrete risk area.",
+          "translations": [
+            { "language": "en", "text": "To question a decision respectfully, acknowledge the pressure first and then name one concrete risk area." },
+            { "language": "fa", "text": "برای بررسی محترمانه یک تصمیم، اول فشار موجود را بپذیر و بعد یک حوزه ریسک مشخص را نام ببر." },
+            { "language": "ar", "text": "لمراجعة قرار باحترام، اعترف أولاً بالضغط ثم اذكر مجال خطر محدداً." },
+            { "language": "tr", "text": "Bir kararı saygılı biçimde sorgulamak için önce baskıyı kabul et, sonra somut bir risk alanı söyle." },
+            { "language": "ru", "text": "Чтобы уважительно поставить решение под вопрос, сначала признай давление, а затем назови конкретную зону риска." },
+            { "language": "ckb", "text": "بۆ پرسیارکردنی ڕێزدارانە لەسەر بڕیارێک، سەرەتا فشارەکە بپەسێنە و پاشان ناوچەیەکی دیاریکراوی مەترسی ناو ببە." },
+            { "language": "kmr", "text": "Ji bo ku tu biryarekê bi rêzdarî bipirsî, pêşî zextê qebûl bike û paşê warê xetereyekî konkret nav bike." },
+            { "language": "pl", "text": "Aby z szacunkiem zakwestionować decyzję, najpierw uznaj presję, a potem nazwij konkretny obszar ryzyka." },
+            { "language": "ro", "text": "Pentru a chestiona o decizie respectuos, recunoaște mai întâi presiunea și apoi numește o zonă concretă de risc." },
+            { "language": "sq", "text": "Për ta vënë në diskutim një vendim me respekt, prano së pari presionin dhe pastaj përmend një fushë konkrete rreziku." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "decision-note",
+          "text": "A conditional decision keeps momentum but makes risk controls visible and testable.",
+          "translations": [
+            { "language": "en", "text": "A conditional decision keeps momentum but makes risk controls visible and testable." },
+            { "language": "fa", "text": "تصمیم مشروط شتاب کار را حفظ می‌کند، اما کنترل‌های ریسک را قابل مشاهده و قابل بررسی می‌سازد." },
+            { "language": "ar", "text": "يحافظ القرار المشروط على الزخم، لكنه يجعل ضوابط المخاطر مرئية وقابلة للاختبار." },
+            { "language": "tr", "text": "Koşullu karar ivmeyi korur, ama risk kontrollerini görünür ve kontrol edilebilir hale getirir." },
+            { "language": "ru", "text": "Условное решение сохраняет темп, но делает меры контроля риска видимыми и проверяемыми." },
+            { "language": "ckb", "text": "بڕیاری مەرجدار خێرایی کار دەپارێزێت، بەڵام کۆنترۆڵەکانی مەترسی دەکاتە شتێکی بینراو و تاقیکراو." },
+            { "language": "kmr", "text": "Biryara şertdar tevgera karê diparêze, lê kontrolên xetereyê dike xuya û pîvanbar." },
+            { "language": "pl", "text": "Decyzja warunkowa utrzymuje tempo, ale sprawia, że kontrole ryzyka są widoczne i sprawdzalne." },
+            { "language": "ro", "text": "O decizie condiționată păstrează avântul, dar face controalele de risc vizibile și verificabile." },
+            { "language": "sq", "text": "Një vendim i kushtëzuar e ruan ritmin, por i bën kontrollet e rrezikut të dukshme dhe të verifikueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "A strong meeting summary includes the decision, conditions, deadline, and what happens if the conditions are not met.",
+          "translations": [
+            { "language": "en", "text": "A strong meeting summary includes the decision, conditions, deadline, and what happens if the conditions are not met." },
+            { "language": "fa", "text": "یک جمع‌بندی قوی جلسه شامل تصمیم، شرط‌ها، مهلت و اقدام در صورت انجام‌نشدن شرط‌هاست." },
+            { "language": "ar", "text": "يتضمن ملخص الاجتماع القوي القرار والشروط والموعد وما يحدث إذا لم تتحقق الشروط." },
+            { "language": "tr", "text": "Güçlü bir toplantı özeti kararı, koşulları, teslim tarihini ve koşullar karşılanmazsa ne olacağını içerir." },
+            { "language": "ru", "text": "Сильное резюме встречи включает решение, условия, срок и то, что произойдёт, если условия не будут выполнены." },
+            { "language": "ckb", "text": "پوختەیەکی بەهێزی کۆبوونەوە بڕیار، مەرجەکان، کاتی کۆتایی و ئەوەی ئەگەر مەرجەکان جێبەجێ نەبن چی ڕوودەدات لەخۆدەگرێت." },
+            { "language": "kmr", "text": "Kurtkirineke bihêz a civînê biryar, şert, dema dawî û çi dibe ger şert pêk neyin dihewîne." },
+            { "language": "pl", "text": "Mocne podsumowanie spotkania zawiera decyzję, warunki, termin i to, co się stanie, jeśli warunki nie zostaną spełnione." },
+            { "language": "ro", "text": "Un rezumat puternic de ședință include decizia, condițiile, termenul și ce se întâmplă dacă acestea nu sunt îndeplinite." },
+            { "language": "sq", "text": "Një përmbledhje e fortë e mbledhjes përfshin vendimin, kushtet, afatin dhe çfarë ndodh nëse kushtet nuk plotësohen." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

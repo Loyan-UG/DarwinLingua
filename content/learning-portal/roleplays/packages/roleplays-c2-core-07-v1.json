@@ -1,0 +1,855 @@
+{
+  "packageId": "roleplays-c2-core-07-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 07 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 07",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-unternehmensentscheidung-ethisch-einordnen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Unternehmensentscheidung ethisch einordnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Assessing a business decision ethically" },
+        { "language": "fa", "text": "ارزیابی اخلاقی یک تصمیم شرکتی" },
+        { "language": "ar", "text": "تقييم قرار شركة من زاوية أخلاقية" },
+        { "language": "tr", "text": "Bir şirket kararını etik açıdan değerlendirmek" },
+        { "language": "ru", "text": "Этически оценить решение компании" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی ئەخلاقیی بڕیارێکی کۆمپانیا" },
+        { "language": "kmr", "text": "Biryarêke pargîdanî ji aliyê etîkî ve nirxandin" },
+        { "language": "pl", "text": "Etyczna ocena decyzji firmy" },
+        { "language": "ro", "text": "Evaluarea etică a unei decizii de companie" },
+        { "language": "sq", "text": "Vlerësimi etik i një vendimi të kompanisë" }
+      ],
+      "description": "Die Geschäftsführung erwägt, einen Teil des Kundensupports an einen günstigeren Dienstleister auszulagern. Die Entscheidung wäre rechtlich möglich und finanziell attraktiv, hätte aber Folgen für Servicequalität, Beschäftigte und Kundenvertrauen. Sie sollen die Entscheidung differenziert einordnen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "Management is considering outsourcing part of customer support to a cheaper provider. The decision would be legally possible and financially attractive, but it would affect service quality, employees, and customer trust. You are asked to assess the decision in a nuanced way." },
+        { "language": "fa", "text": "مدیریت در نظر دارد بخشی از پشتیبانی مشتریان را به یک ارائه‌دهنده ارزان‌تر واگذار کند. این تصمیم از نظر قانونی ممکن و از نظر مالی جذاب است، اما بر کیفیت خدمات، کارکنان و اعتماد مشتریان اثر می‌گذارد. از شما خواسته شده تصمیم را با نگاه دقیق و چندوجهی ارزیابی کنید." },
+        { "language": "ar", "text": "تدرس الإدارة إسناد جزء من دعم العملاء إلى مزود خدمة أرخص. سيكون القرار ممكناً قانونياً وجذاباً مالياً، لكنه سيؤثر في جودة الخدمة والموظفين وثقة العملاء. يُطلب منك تقييم القرار بطريقة متمايزة." },
+        { "language": "tr", "text": "Yönetim, müşteri desteğinin bir bölümünü daha ucuz bir hizmet sağlayıcıya devretmeyi değerlendiriyor. Karar hukuken mümkün ve finansal olarak cazip olurdu, ancak hizmet kalitesini, çalışanları ve müşteri güvenini etkilerdi. Sizden kararı ayrıntılı ve dengeli biçimde değerlendirmeniz isteniyor." },
+        { "language": "ru", "text": "Руководство рассматривает передачу части клиентской поддержки более дешевому поставщику услуг. Решение юридически возможно и финансово привлекательно, но оно повлияет на качество сервиса, сотрудников и доверие клиентов. Вас просят оценить решение дифференцированно." },
+        { "language": "ckb", "text": "بەڕێوەبەرایەتی بیر لەوە دەکاتەوە بەشێک لە پشتگیریی کڕیاران بداتە دابینکەرێکی هەرزانتر. بڕیارەکە لە ڕووی یاساییەوە دەکرێت و لە ڕووی داراییەوە سەرنجڕاکێشە، بەڵام کاریگەری لەسەر کوالیتی خزمەتگوزاری، کارمەندان و متمانەی کڕیاران دەبێت. داوات لێ دەکرێت بڕیارەکە بە وردی و چەندلایەنە هەڵبسەنگێنیت." },
+        { "language": "kmr", "text": "Rêveberî difikire ku beşek ji piştgiriya xerîdaran bide dabînkerêkî erzan. Biryar ji aliyê qanûnî ve gengaz û ji aliyê aborî ve balkêş e, lê wê bandorê li ser kalîteya xizmetê, karmendan û baweriya xerîdaran bike. Ji we tê xwestin ku biryarê bi awayekî hûrgil û piralî binirxînin." },
+        { "language": "pl", "text": "Zarząd rozważa zlecenie części obsługi klienta tańszemu dostawcy. Decyzja byłaby prawnie możliwa i finansowo atrakcyjna, ale miałaby skutki dla jakości usług, pracowników i zaufania klientów. Ma Pan/Pani ocenić tę decyzję w sposób zniuansowany." },
+        { "language": "ro", "text": "Conducerea ia în calcul externalizarea unei părți a suportului pentru clienți către un furnizor mai ieftin. Decizia ar fi posibilă legal și atractivă financiar, dar ar avea efecte asupra calității serviciului, angajaților și încrederii clienților. Vi se cere să evaluați decizia nuanțat." },
+        { "language": "sq", "text": "Drejtoria po shqyrton kalimin e një pjese të mbështetjes së klientëve te një ofrues më i lirë. Vendimi do të ishte i mundshëm ligjërisht dhe tërheqës financiarisht, por do të ndikonte në cilësinë e shërbimit, punonjësit dhe besimin e klientëve. Ju kërkohet ta vlerësoni vendimin në mënyrë të nuancuar." }
+      ],
+      "learnerGoal": "Eine ethisch schwierige Unternehmensentscheidung bewerten: finanzielle Zwänge anerkennen, Werte und Folgen benennen, legitime Gegenargumente aufnehmen, Bedingungen formulieren und eine verantwortbare Empfehlung geben.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Evaluate an ethically difficult business decision: acknowledge financial constraints, name values and consequences, include legitimate counterarguments, formulate conditions, and give a responsible recommendation." },
+        { "language": "fa", "text": "یک تصمیم دشوار شرکتی از نظر اخلاقی را ارزیابی کنید: فشارهای مالی را بپذیرید، ارزش‌ها و پیامدها را نام ببرید، استدلال‌های مخالف معتبر را وارد کنید، شرط‌ها را فرمول‌بندی کنید و توصیه‌ای مسئولانه بدهید." },
+        { "language": "ar", "text": "قيّم قراراً صعباً أخلاقياً في شركة: اعترف بالقيود المالية، وسم القيم والنتائج، وخذ الحجج المضادة المشروعة في الحسبان، وصغ شروطاً، وقدم توصية مسؤولة." },
+        { "language": "tr", "text": "Etik açıdan zor bir şirket kararını değerlendirin: finansal kısıtları kabul edin, değerleri ve sonuçları adlandırın, meşru karşı argümanları dahil edin, koşullar formüle edin ve sorumlu bir öneri verin." },
+        { "language": "ru", "text": "Оценить этически сложное решение компании: признать финансовые ограничения, назвать ценности и последствия, учесть законные контраргументы, сформулировать условия и дать ответственную рекомендацию." },
+        { "language": "ckb", "text": "بڕیارێکی ئەخلاقی قورس لە کۆمپانیا هەڵبسەنگێنە: سنووری دارایی بناسە، بەها و ئەنجامەکان ناو ببه، بەڵگەی بەرامبەری ڕەوا بخە ناو گفتوگۆ، مەرج دابنێ و پێشنیارێکی بەرپرسانە بدە." },
+        { "language": "kmr", "text": "Biryarêke pargîdanî ya ji aliyê etîkî ve dijwar binirxînin: sînordariyên aborî qebûl bikin, nirx û encaman bi nav bikin, argûmanên dijber ên rewa têxin navê, şertan formule bikin û pêşniyareke berpirsiyar bidin." },
+        { "language": "pl", "text": "Ocenić etycznie trudną decyzję firmy: uznać ograniczenia finansowe, nazwać wartości i konsekwencje, uwzględnić uprawnione kontrargumenty, sformułować warunki i dać odpowiedzialną rekomendację." },
+        { "language": "ro", "text": "Evaluați o decizie de companie dificilă etic: recunoașteți constrângerile financiare, numiți valorile și consecințele, includeți contraargumente legitime, formulați condiții și dați o recomandare responsabilă." },
+        { "language": "sq", "text": "Vlerësoni një vendim të vështirë etik të kompanisë: pranoni kufizimet financiare, emërtoni vlerat dhe pasojat, përfshini kundërargumente të ligjshme, formuloni kushte dhe jepni një rekomandim të përgjegjshëm." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "give-opinion",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 7,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Strategieberatung",
+          "translations": [
+            { "language": "en", "text": "Strategy advisor" },
+            { "language": "fa", "text": "مشاور راهبردی" },
+            { "language": "ar", "text": "مستشار استراتيجي" },
+            { "language": "tr", "text": "Strateji danışmanı" },
+            { "language": "ru", "text": "Стратегический консультант" },
+            { "language": "ckb", "text": "ڕاوێژکاری ستراتیژی" },
+            { "language": "kmr", "text": "Şêwirmendê stratejiyê" },
+            { "language": "pl", "text": "Doradca strategiczny" },
+            { "language": "ro", "text": "Consilier strategic" },
+            { "language": "sq", "text": "Këshilltar strategjik" }
+          ]
+        },
+        {
+          "roleKey": "finance",
+          "displayName": "Finanzleitung",
+          "translations": [
+            { "language": "en", "text": "Finance lead" },
+            { "language": "fa", "text": "مدیر مالی" },
+            { "language": "ar", "text": "مدير مالي" },
+            { "language": "tr", "text": "Finans yöneticisi" },
+            { "language": "ru", "text": "Финансовый руководитель" },
+            { "language": "ckb", "text": "بەڕێوەبەری دارایی" },
+            { "language": "kmr", "text": "Rêveberê darayî" },
+            { "language": "pl", "text": "Dyrektor finansowy" },
+            { "language": "ro", "text": "Director financiar" },
+            { "language": "sq", "text": "Drejtues financiar" }
+          ]
+        },
+        {
+          "roleKey": "customer",
+          "displayName": "Kundenservice-Leitung",
+          "translations": [
+            { "language": "en", "text": "Customer service lead" },
+            { "language": "fa", "text": "مدیر خدمات مشتریان" },
+            { "language": "ar", "text": "مدير خدمة العملاء" },
+            { "language": "tr", "text": "Müşteri hizmetleri yöneticisi" },
+            { "language": "ru", "text": "Руководитель клиентского сервиса" },
+            { "language": "ckb", "text": "بەڕێوەبەری خزمەتگوزاری کڕیاران" },
+            { "language": "kmr", "text": "Rêveberê xizmeta xerîdaran" },
+            { "language": "pl", "text": "Kierownik obsługi klienta" },
+            { "language": "ro", "text": "Manager servicii clienți" },
+            { "language": "sq", "text": "Drejtues i shërbimit ndaj klientëve" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "finance",
+          "baseText": "Die Zahlen sind eindeutig: Wenn wir einen Teil des Supports auslagern, reduzieren wir die Kosten im nächsten Jahr deutlich. Rechtlich ist das Modell geprüft.",
+          "translations": [
+            { "language": "en", "text": "The numbers are clear: if we outsource part of support, we will significantly reduce costs next year. The model has been legally reviewed." },
+            { "language": "fa", "text": "اعداد روشن‌اند: اگر بخشی از پشتیبانی را برون‌سپاری کنیم، سال آینده هزینه‌ها را به‌طور محسوسی کاهش می‌دهیم. مدل از نظر حقوقی بررسی شده است." },
+            { "language": "ar", "text": "الأرقام واضحة: إذا أسندنا جزءاً من الدعم إلى الخارج، فسنخفض التكاليف بوضوح في العام المقبل. وقد تم فحص النموذج قانونياً." },
+            { "language": "tr", "text": "Rakamlar net: desteğin bir bölümünü dışarı verirsek gelecek yıl maliyetleri belirgin biçimde azaltırız. Model hukuken incelendi." },
+            { "language": "ru", "text": "Цифры однозначны: если мы передадим часть поддержки на сторону, в следующем году заметно снизим расходы. Модель юридически проверена." },
+            { "language": "ckb", "text": "ژمارەکان ڕوونن: ئەگەر بەشێک لە پشتگیری بدەینە دەرەوە، ساڵی داهاتوو تێچوو بە شێوەیەکی دیار کەم دەکەینەوە. مۆدێلەکە لە ڕووی یاساییەوە پشکنراوە." },
+            { "language": "kmr", "text": "Hejmar zelal in: heke em beşek ji piştgiriyê bidin derve, sala bê me xerçan bi awayekî eşkere kêm dikin. Model ji aliyê qanûnî ve hatiye kontrolkirin." },
+            { "language": "pl", "text": "Liczby są jednoznaczne: jeśli zlecimy część wsparcia na zewnątrz, w przyszłym roku wyraźnie obniżymy koszty. Model został sprawdzony prawnie." },
+            { "language": "ro", "text": "Cifrele sunt clare: dacă externalizăm o parte a suportului, vom reduce semnificativ costurile anul viitor. Modelul a fost verificat legal." },
+            { "language": "sq", "text": "Shifrat janë të qarta: nëse e jashtëkontraktojmë një pjesë të mbështetjes, vitin e ardhshëm do t’i ulim dukshëm kostot. Modeli është kontrolluar ligjërisht." }
+          ],
+          "function": "frames decision as financial and legal",
+          "toneNote": "formal, numbers-driven"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Die finanzielle Logik ist nachvollziehbar, aber rechtliche Zulässigkeit beantwortet noch nicht die ganze Frage. Wir sollten zusätzlich prüfen, welche Folgen die Entscheidung für Servicequalität, Beschäftigte und Kundenvertrauen hat.",
+          "translations": [
+            { "language": "en", "text": "The financial logic is understandable, but legal permissibility does not answer the whole question. We should also examine what consequences the decision has for service quality, employees, and customer trust." },
+            { "language": "fa", "text": "منطق مالی قابل فهم است، اما مجاز بودن حقوقی هنوز کل مسئله را پاسخ نمی‌دهد. باید علاوه بر آن بررسی کنیم این تصمیم چه پیامدهایی برای کیفیت خدمات، کارکنان و اعتماد مشتریان دارد." },
+            { "language": "ar", "text": "المنطق المالي مفهوم، لكن الجواز القانوني لا يجيب عن السؤال كله. ينبغي أن نفحص أيضاً آثار القرار على جودة الخدمة والموظفين وثقة العملاء." },
+            { "language": "tr", "text": "Finansal mantık anlaşılır, ancak hukuki izin verilebilirlik sorunun tamamını yanıtlamaz. Kararın hizmet kalitesi, çalışanlar ve müşteri güveni üzerindeki sonuçlarını da incelemeliyiz." },
+            { "language": "ru", "text": "Финансовая логика понятна, но юридическая допустимость еще не отвечает на весь вопрос. Нам также следует проверить, какие последствия решение имеет для качества сервиса, сотрудников и доверия клиентов." },
+            { "language": "ckb", "text": "لۆژیکی دارایی تێگەیشتنی هەیە، بەڵام ڕێپێدراوی یاسایی هێشتا هەموو پرسیارەکە وەڵام ناداتەوە. پێویستە هەروەها بپشکنین بڕیارەکە چ ئەنجامێک بۆ کوالیتی خزمەتگوزاری، کارمەندان و متمانەی کڕیاران هەیە." },
+            { "language": "kmr", "text": "Mantiqa darayî tê famkirin, lê destûra qanûnî hîn hemû pirsê bersiv nade. Divê em her wiha bibînin biryar çi encamên li ser kalîteya xizmetê, karmendan û baweriya xerîdaran heye." },
+            { "language": "pl", "text": "Logika finansowa jest zrozumiała, ale dopuszczalność prawna nie odpowiada jeszcze na całe pytanie. Powinniśmy dodatkowo sprawdzić skutki decyzji dla jakości usług, pracowników i zaufania klientów." },
+            { "language": "ro", "text": "Logica financiară este de înțeles, dar admisibilitatea legală nu răspunde încă întregii întrebări. Ar trebui să examinăm și ce consecințe are decizia pentru calitatea serviciului, angajați și încrederea clienților." },
+            { "language": "sq", "text": "Logjika financiare është e kuptueshme, por lejueshmëria ligjore nuk i përgjigjet gjithë pyetjes. Duhet të shqyrtojmë gjithashtu çfarë pasojash ka vendimi për cilësinë e shërbimit, punonjësit dhe besimin e klientëve." }
+          ],
+          "function": "broadens the decision frame",
+          "toneNote": "balanced, non-moralizing",
+          "expectedLearnerAction": "Acknowledge financial logic and add ethical/practical criteria."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "customer",
+          "baseText": "Meine Sorge ist nicht nur die Übergangsphase. Unsere Kunden rufen oft an, weil die Fälle kompliziert sind. Wenn die Beratung schematischer wird, verlieren wir Vertrauen.",
+          "translations": [
+            { "language": "en", "text": "My concern is not only the transition phase. Our customers often call because their cases are complex. If the advice becomes more formulaic, we lose trust." },
+            { "language": "fa", "text": "نگرانی من فقط مرحله انتقال نیست. مشتریان ما اغلب تماس می‌گیرند چون پرونده‌هایشان پیچیده است. اگر مشاوره قالبی‌تر شود، اعتماد را از دست می‌دهیم." },
+            { "language": "ar", "text": "قلقي ليس مرحلة الانتقال فقط. يتصل عملاؤنا غالباً لأن حالاتهم معقدة. إذا أصبحت المشورة نمطية أكثر، فسنفقد الثقة." },
+            { "language": "tr", "text": "Endişem yalnızca geçiş aşaması değil. Müşterilerimiz çoğu zaman dosyaları karmaşık olduğu için arıyor. Danışma daha kalıplaşmış hale gelirse güven kaybederiz." },
+            { "language": "ru", "text": "Меня беспокоит не только переходный этап. Наши клиенты часто звонят, потому что их случаи сложны. Если консультации станут более шаблонными, мы потеряем доверие." },
+            { "language": "ckb", "text": "نیگەرانیی من تەنها قۆناغی گواستنەوە نییە. کڕیارەکانمان زۆرجار پەیوەندی دەکەن چونکە کەیسەکانیان ئاڵۆزن. ئەگەر ڕاوێژکردنەکە قالبیتر بێت، متمانە لەدەست دەدەین." },
+            { "language": "kmr", "text": "Xemgîniya min ne tenê qonaxa veguhestinê ye. Xerîdarên me gelek caran bang dikin ji ber ku dosyayên wan alozen. Heke şêwirmendî bibe qalibî, em baweriyê winda dikin." },
+            { "language": "pl", "text": "Moja obawa dotyczy nie tylko fazy przejściowej. Nasi klienci często dzwonią, bo ich sprawy są skomplikowane. Jeśli doradztwo stanie się bardziej schematyczne, stracimy zaufanie." },
+            { "language": "ro", "text": "Îngrijorarea mea nu ține doar de faza de tranziție. Clienții noștri sună adesea pentru că situațiile lor sunt complexe. Dacă consilierea devine mai schematică, pierdem încredere." },
+            { "language": "sq", "text": "Shqetësimi im nuk është vetëm faza e tranzicionit. Klientët tanë shpesh telefonojnë sepse rastet e tyre janë të ndërlikuara. Nëse këshillimi bëhet më skematik, humbasim besimin." }
+          ],
+          "function": "adds customer-trust concern",
+          "toneNote": "concerned, concrete"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dann geht es nicht um ein abstraktes Für oder Gegen Auslagerung, sondern um die Frage, welche Teile standardisierbar sind und welche Kundenkontakte wegen Komplexität oder Vertrauen intern bleiben sollten.",
+          "translations": [
+            { "language": "en", "text": "Then this is not about an abstract yes or no to outsourcing, but about which parts can be standardized and which customer contacts should remain internal because of complexity or trust." },
+            { "language": "fa", "text": "پس مسئله یک موافقت یا مخالفت انتزاعی با برون‌سپاری نیست، بلکه این است که کدام بخش‌ها قابل استانداردسازی‌اند و کدام تماس‌های مشتریان به‌دلیل پیچیدگی یا اعتماد باید داخلی بمانند." },
+            { "language": "ar", "text": "إذن لا يتعلق الأمر بتأييد أو رفض مجرد للإسناد الخارجي، بل بالسؤال عن الأجزاء التي يمكن توحيدها وأي اتصالات مع العملاء يجب أن تبقى داخلية بسبب التعقيد أو الثقة." },
+            { "language": "tr", "text": "O halde mesele dış kaynak kullanımına soyut bir evet ya da hayır değil; hangi bölümlerin standartlaştırılabileceği ve hangi müşteri temaslarının karmaşıklık veya güven nedeniyle içeride kalması gerektiğidir." },
+            { "language": "ru", "text": "Тогда речь идет не об абстрактном за или против аутсорсинга, а о том, какие части можно стандартизировать и какие контакты с клиентами должны оставаться внутри из-за сложности или доверия." },
+            { "language": "ckb", "text": "ئەوا بابەتەکە ناگەڕێتەوە بۆ بەڵێ یان نەیەکی گشتی بۆ دەرەوەسپاردن، بەڵکو بۆ ئەو پرسیارەی کام بەش دەکرێت ستاندارد بکرێت و کام پەیوەندیی کڕیاران بەهۆی ئاڵۆزی یان متمانەوە پێویستە لە ناوخۆ بمێنێتەوە." },
+            { "language": "kmr", "text": "Wê demê mijar ne erê an na ya abstrakt ji bo dervekirinê ye, lê ew e ka kîjan beş dikarin standard bibin û kîjan têkiliyên xerîdaran ji ber aloziyê an baweriyê divê li hundir bimînin." },
+            { "language": "pl", "text": "Wtedy nie chodzi o abstrakcyjne za lub przeciw outsourcingowi, lecz o to, które części można ustandaryzować, a które kontakty z klientami powinny pozostać wewnętrzne ze względu na złożoność lub zaufanie." },
+            { "language": "ro", "text": "Atunci nu este vorba despre un da sau nu abstract față de externalizare, ci despre ce părți pot fi standardizate și ce contacte cu clienții ar trebui să rămână interne din cauza complexității sau a încrederii." },
+            { "language": "sq", "text": "Atëherë nuk bëhet fjalë për një po ose jo abstrakte ndaj jashtëkontraktimit, por për cilat pjesë mund të standardizohen dhe cilat kontakte me klientët duhet të mbeten të brendshme për shkak të ndërlikimit ose besimit." }
+          ],
+          "function": "turns moral tension into decision architecture",
+          "toneNote": "analytical, nuanced",
+          "expectedLearnerAction": "Avoid binary judgment; split the decision by risk and trust."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "finance",
+          "baseText": "Ich möchte vermeiden, dass wir daraus eine Grundsatzdebatte über Moral machen. Am Ende müssen wir auch wirtschaftlich handlungsfähig bleiben.",
+          "translations": [
+            { "language": "en", "text": "I want to avoid turning this into a fundamental debate about morality. In the end, we also have to remain economically capable of acting." },
+            { "language": "fa", "text": "می‌خواهم از این جلوگیری کنم که موضوع به بحث اصولی درباره اخلاق تبدیل شود. در نهایت باید از نظر اقتصادی هم توان اقدام داشته باشیم." },
+            { "language": "ar", "text": "أريد أن أتجنب تحويل الأمر إلى نقاش مبدئي حول الأخلاق. في النهاية يجب أن نبقى قادرين على التصرف اقتصادياً أيضاً." },
+            { "language": "tr", "text": "Bunu ahlak üzerine ilkesel bir tartışmaya çevirmekten kaçınmak istiyorum. Sonuçta ekonomik olarak da hareket edebilir kalmalıyız." },
+            { "language": "ru", "text": "Я хочу избежать превращения этого в принципиальную дискуссию о морали. В итоге мы также должны оставаться экономически дееспособными." },
+            { "language": "ckb", "text": "دەمەوێت ڕێگری لەوە بکەم ئەمە ببێتە گفتوگۆیەکی بنەڕەتی دەربارەی ئەخلاق. لە کۆتاییدا دەبێت لە ڕووی ئابوورییەوەش توانای کردارمان بمێنێت." },
+            { "language": "kmr", "text": "Ez dixwazim rê nedim ku ev bibe nîqaşeke bingehîn li ser exlaqê. Di dawiyê de divê em ji aliyê aborî ve jî şiyana tevgerê biparêzin." },
+            { "language": "pl", "text": "Chciałbym uniknąć robienia z tego zasadniczej debaty o moralności. Ostatecznie musimy też pozostać zdolni do działania gospodarczo." },
+            { "language": "ro", "text": "Aș vrea să evităm transformarea acestui lucru într-o dezbatere de principiu despre morală. În cele din urmă trebuie să rămânem capabili să acționăm și economic." },
+            { "language": "sq", "text": "Dua të shmangim kthimin e kësaj në një debat parimor mbi moralin. Në fund duhet të mbetemi të aftë të veprojmë edhe ekonomikisht." }
+          ],
+          "function": "pushes back against moralizing",
+          "toneNote": "pragmatic, defensive"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb würde ich Ethik hier nicht als moralisches Etikett verwenden, sondern als Qualitätsprüfung der Entscheidung: Welche Kosten sparen wir, welche Risiken verlagern wir, und welche Verantwortung behalten wir trotzdem?",
+          "translations": [
+            { "language": "en", "text": "That is exactly why I would not use ethics here as a moral label, but as a quality check of the decision: what costs do we save, what risks do we shift, and what responsibility do we still retain?" },
+            { "language": "fa", "text": "دقیقاً به همین دلیل اخلاق را اینجا به‌عنوان برچسب اخلاقی به کار نمی‌برم، بلکه به‌عنوان سنجش کیفیت تصمیم: چه هزینه‌هایی را کم می‌کنیم، چه ریسک‌هایی را منتقل می‌کنیم، و چه مسئولیتی همچنان نزد ما می‌ماند؟" },
+            { "language": "ar", "text": "لهذا السبب بالضبط لن أستخدم الأخلاق هنا كوسم أخلاقي، بل كفحص لجودة القرار: أي تكاليف نوفر، وأي مخاطر ننقل، وأي مسؤولية تبقى لدينا رغم ذلك؟" },
+            { "language": "tr", "text": "Tam da bu nedenle etiği burada ahlaki bir etiket olarak değil, kararın kalite kontrolü olarak kullanırdım: hangi maliyetleri azaltıyoruz, hangi riskleri başka yere aktarıyoruz ve hangi sorumluluğu yine de bizde tutuyoruz?" },
+            { "language": "ru", "text": "Именно поэтому я использовал бы этику здесь не как моральный ярлык, а как проверку качества решения: какие расходы мы экономим, какие риски переносим и какую ответственность все равно сохраняем?" },
+            { "language": "ckb", "text": "هەر بۆیە من ئەخلاق لێرە وەک ناوی ئەخلاقی بەکار ناهێنم، بەڵکو وەک پشکنینی کوالیتی بڕیارەکە: کام تێچوو کەم دەکەینەوە، کام مەترسی دەگوازینەوە، و کام بەرپرسیارێتی هێشتا لای ئێمە دەمێنێت؟" },
+            { "language": "kmr", "text": "Tam ji ber vê yekê ez etîkê li vir wekî etîketeke exlaqî bi kar naynim, lê wekî kontrola kalîteya biryarê: kîjan xerçan kêm dikin, kîjan xetereyan vediguhezînin û kîjan berpirsiyarî hêj li me dimîne?" },
+            { "language": "pl", "text": "Właśnie dlatego nie używałbym tu etyki jako etykiety moralnej, lecz jako kontroli jakości decyzji: jakie koszty oszczędzamy, jakie ryzyka przenosimy i jaką odpowiedzialność mimo to zachowujemy?" },
+            { "language": "ro", "text": "Tocmai de aceea nu aș folosi etica aici ca etichetă morală, ci ca verificare a calității deciziei: ce costuri economisim, ce riscuri transferăm și ce responsabilitate păstrăm totuși?" },
+            { "language": "sq", "text": "Pikërisht prandaj nuk do ta përdorja etikën këtu si etiketë morale, por si kontroll cilësie të vendimit: cilat kosto kursejmë, cilat rreziqe zhvendosim dhe cilën përgjegjësi e mbajmë megjithatë?" }
+          ],
+          "function": "defines ethics as decision quality",
+          "toneNote": "conceptual, pragmatic",
+          "expectedLearnerAction": "Avoid moralizing and connect ethics to practical accountability."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "customer",
+          "baseText": "Dann müssten wir auch ehrlich sagen, dass Einsparung nicht automatisch Effizienz bedeutet. Wenn komplexe Fälle falsch laufen, zahlen wir später mit Beschwerden, Kündigungen und zusätzlicher Nacharbeit.",
+          "translations": [
+            { "language": "en", "text": "Then we would also have to honestly say that savings do not automatically mean efficiency. If complex cases go wrong, we pay later with complaints, cancellations, and additional rework." },
+            { "language": "fa", "text": "پس باید صادقانه هم بگوییم که صرفه‌جویی خودبه‌خود به معنای کارایی نیست. اگر پرونده‌های پیچیده اشتباه پیش بروند، بعداً با شکایت، فسخ قرارداد و کار دوباره هزینه می‌دهیم." },
+            { "language": "ar", "text": "إذن يجب أن نقول بصراحة أيضاً إن التوفير لا يعني الكفاءة تلقائياً. إذا سارت الحالات المعقدة بشكل خاطئ، فسندفع لاحقاً عبر الشكاوى والإلغاءات والعمل الإضافي." },
+            { "language": "tr", "text": "O zaman tasarrufun otomatik olarak verimlilik anlamına gelmediğini de dürüstçe söylemeliyiz. Karmaşık vakalar yanlış giderse daha sonra şikayetler, iptaller ve ek işlerle öderiz." },
+            { "language": "ru", "text": "Тогда нам также нужно честно сказать, что экономия не автоматически означает эффективность. Если сложные случаи пойдут неправильно, позже мы заплатим жалобами, расторжениями и дополнительной доработкой." },
+            { "language": "ckb", "text": "ئەوا پێویستە بە ڕاستی بڵێین کە کەمکردنەوەی تێچوو خۆکارانە واتای کارایی نییە. ئەگەر کەیسە ئاڵۆزەکان بە هەڵە بچن، دواتر بە سکاڵا، هەڵوەشاندنەوە و کاری زیادە باج دەدەین." },
+            { "language": "kmr", "text": "Wê demê divê em bi rastî jî bibêjin ku teserûf bixweber ne wateya karîgeriyê ye. Heke dosyayên aloz şaş biçin, em paşê bi gilî, betalkirin û karê zêde pere didin." },
+            { "language": "pl", "text": "Wtedy musielibyśmy też uczciwie powiedzieć, że oszczędność nie oznacza automatycznie efektywności. Jeśli złożone sprawy pójdą źle, zapłacimy później skargami, wypowiedzeniami i dodatkową pracą." },
+            { "language": "ro", "text": "Atunci ar trebui să spunem sincer și că economisirea nu înseamnă automat eficiență. Dacă situațiile complexe merg prost, plătim mai târziu prin reclamații, rezilieri și muncă suplimentară." },
+            { "language": "sq", "text": "Atëherë duhet të themi sinqerisht edhe se kursimi nuk do të thotë automatikisht efikasitet. Nëse rastet e ndërlikuara shkojnë keq, më vonë paguajmë me ankesa, anulime dhe punë shtesë." }
+          ],
+          "function": "adds hidden-cost argument",
+          "toneNote": "evidence-oriented"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde deshalb zwei Leitplanken setzen: Standardfälle können ausgelagert werden, wenn Qualität messbar bleibt; komplexe oder vertrauenskritische Fälle bleiben intern, bis ein nachweislich gleichwertiger Prozess steht.",
+          "translations": [
+            { "language": "en", "text": "I would therefore set two guardrails: standard cases can be outsourced if quality remains measurable; complex or trust-critical cases stay internal until a demonstrably equivalent process is in place." },
+            { "language": "fa", "text": "برای همین دو چارچوب می‌گذارم: پرونده‌های استاندارد می‌توانند برون‌سپاری شوند اگر کیفیت قابل اندازه‌گیری بماند؛ پرونده‌های پیچیده یا حساس از نظر اعتماد، داخلی می‌مانند تا زمانی که فرایندی به‌طور قابل اثبات هم‌ارز برقرار شود." },
+            { "language": "ar", "text": "لذلك سأضع حدين إرشاديين: يمكن إسناد الحالات القياسية إلى الخارج إذا بقيت الجودة قابلة للقياس؛ وتبقى الحالات المعقدة أو الحساسة للثقة داخلية إلى أن توجد عملية مكافئة يمكن إثباتها." },
+            { "language": "tr", "text": "Bu nedenle iki sınır koyardım: standart vakalar kalite ölçülebilir kaldığı sürece dışarı verilebilir; karmaşık veya güven açısından kritik vakalar, kanıtlanabilir biçimde eşdeğer bir süreç kurulana kadar içeride kalır." },
+            { "language": "ru", "text": "Поэтому я бы установил две рамки: стандартные случаи можно передать на сторону, если качество остается измеримым; сложные или критичные для доверия случаи остаются внутри, пока не будет доказуемо равноценного процесса." },
+            { "language": "ckb", "text": "بۆیە دوو سنوور دادەنێم: کەیسە ستانداردەکان دەکرێت بدرێنە دەرەوە ئەگەر کوالیتی پێوانەکراو بمێنێت؛ کەیسە ئاڵۆزەکان یان ئەوانەی بۆ متمانە زۆر گرنگن لە ناوخۆ دەمێنن تا پرۆسەیەکی بەڵگەدار هاوتا دامەزرێت." },
+            { "language": "kmr", "text": "Ji ber vê yekê ez du rêgezên parastinê datînim: dosyayên standard dikarin bên dervekirin heke kalîte were pîvan; dosyayên aloz an ji bo baweriyê girîng li hundir dimînin heta proseya wekhev a bi belge ava bibe." },
+            { "language": "pl", "text": "Dlatego ustawiłbym dwie barierki: sprawy standardowe można zlecić na zewnątrz, jeśli jakość pozostaje mierzalna; sprawy złożone lub krytyczne dla zaufania pozostają wewnątrz, dopóki nie powstanie dowodowo równoważny proces." },
+            { "language": "ro", "text": "De aceea aș stabili două limite de protecție: cazurile standard pot fi externalizate dacă calitatea rămâne măsurabilă; cazurile complexe sau critice pentru încredere rămân interne până există un proces demonstrabil echivalent." },
+            { "language": "sq", "text": "Prandaj do të vendosja dy kufij mbrojtës: rastet standarde mund të jashtëkontraktohen nëse cilësia mbetet e matshme; rastet e ndërlikuara ose kritike për besimin mbeten të brendshme derisa të ketë një proces të provueshëm të barasvlershëm." }
+          ],
+          "function": "formulates ethical/practical guardrails",
+          "toneNote": "concrete, conditional",
+          "expectedLearnerAction": "Translate values into operational conditions."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "finance",
+          "baseText": "Das klingt differenziert, aber es reduziert den Spareffekt. Wie würden Sie das gegenüber der Geschäftsführung vertreten?",
+          "translations": [
+            { "language": "en", "text": "That sounds nuanced, but it reduces the savings effect. How would you defend that to management?" },
+            { "language": "fa", "text": "این دقیق و چندوجهی به نظر می‌رسد، اما اثر صرفه‌جویی را کم می‌کند. چطور آن را در برابر مدیریت دفاع می‌کنید؟" },
+            { "language": "ar", "text": "يبدو ذلك متمايزاً، لكنه يقلل أثر التوفير. كيف ستدافع عنه أمام الإدارة؟" },
+            { "language": "tr", "text": "Bu ayrıntılı görünüyor, ama tasarruf etkisini azaltıyor. Bunu yönetime karşı nasıl savunurdunuz?" },
+            { "language": "ru", "text": "Это звучит дифференцированно, но снижает эффект экономии. Как бы вы отстаивали это перед руководством?" },
+            { "language": "ckb", "text": "ئەمە چەندلایەنە دەردەکەوێت، بەڵام کاریگەریی پاشەکەوت کەم دەکاتەوە. چۆن لە بەرامبەر بەڕێوەبەرایەتی بەرگریی لێ دەکەیت؟" },
+            { "language": "kmr", "text": "Ev hûrgil xuya dike, lê bandora teserûfê kêm dike. Hûn ê wê li hember rêveberiyê çawa biparêzin?" },
+            { "language": "pl", "text": "To brzmi zniuansowanie, ale zmniejsza efekt oszczędności. Jak obroniłby Pan/Pani to przed zarządem?" },
+            { "language": "ro", "text": "Sună nuanțat, dar reduce efectul de economisire. Cum ați susține asta în fața conducerii?" },
+            { "language": "sq", "text": "Kjo tingëllon e nuancuar, por e ul efektin e kursimit. Si do ta mbronit këtë para drejtimit?" }
+          ],
+          "function": "tests executive justification",
+          "toneNote": "challenging"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde es als Risikosteuerung begründen: Die volle Auslagerung maximiert kurzfristig die Einsparung, aber sie erhöht die Folgekosten, wenn Qualität und Vertrauen leiden. Eine gestufte Lösung spart weniger sofort, ist aber belastbarer.",
+          "translations": [
+            { "language": "en", "text": "I would justify it as risk management: full outsourcing maximizes short-term savings, but it increases downstream costs if quality and trust suffer. A staged solution saves less immediately, but it is more robust." },
+            { "language": "fa", "text": "آن را به‌عنوان مدیریت ریسک توضیح می‌دهم: برون‌سپاری کامل صرفه‌جویی کوتاه‌مدت را بیشینه می‌کند، اما اگر کیفیت و اعتماد آسیب ببینند، هزینه‌های بعدی را افزایش می‌دهد. راه‌حل مرحله‌ای فوراً کمتر صرفه‌جویی می‌کند، اما پایدارتر است." },
+            { "language": "ar", "text": "سأبرره بوصفه إدارة للمخاطر: الإسناد الخارجي الكامل يعظم التوفير قصير الأجل، لكنه يزيد التكاليف اللاحقة إذا تضررت الجودة والثقة. الحل المتدرج يوفر أقل فوراً، لكنه أكثر متانة." },
+            { "language": "tr", "text": "Bunu risk yönetimi olarak gerekçelendirirdim: tam dış kaynak kullanımı kısa vadeli tasarrufu en üst düzeye çıkarır, ancak kalite ve güven zarar görürse sonraki maliyetleri artırır. Kademeli çözüm hemen daha az tasarruf sağlar, ama daha dayanıklıdır." },
+            { "language": "ru", "text": "Я бы обосновал это как управление рисками: полный аутсорсинг максимизирует краткосрочную экономию, но увеличивает последующие расходы, если пострадают качество и доверие. Поэтапное решение экономит меньше сразу, но оно устойчивее." },
+            { "language": "ckb", "text": "ئەمە وەک بەڕێوەبردنی مەترسی ڕوون دەکەمەوە: دەرەوەسپاردنی تەواو پاشەکەوتی کورتخایەن بەرزترین دەکات، بەڵام ئەگەر کوالیتی و متمانە زیان ببینن، تێچووی دواتر زیاد دەکات. چارەسەری قۆناغبەقۆناغ دەستبەجێ کەمتر پاشەکەوت دەکات، بەڵام بەهێزترە." },
+            { "language": "kmr", "text": "Ez vê wekî rêvebirina xetereyê şîrove dikim: dervekirina temam teserûfa demkurt herî zêde dike, lê heke kalîte û bawerî zirar bibînin, xerçên paşê zêde dike. Çareseriya qonaxî di cih de kêmtir teserûf dike, lê bihêztir e." },
+            { "language": "pl", "text": "Uzasadniłbym to jako zarządzanie ryzykiem: pełny outsourcing maksymalizuje krótkoterminowe oszczędności, ale zwiększa koszty następcze, jeśli ucierpią jakość i zaufanie. Rozwiązanie etapowe oszczędza mniej od razu, ale jest odporniejsze." },
+            { "language": "ro", "text": "Aș justifica-o ca management al riscului: externalizarea completă maximizează economiile pe termen scurt, dar crește costurile ulterioare dacă suferă calitatea și încrederea. O soluție etapizată economisește mai puțin imediat, dar este mai robustă." },
+            { "language": "sq", "text": "Do ta arsyetoja si menaxhim rreziku: jashtëkontraktimi i plotë maksimizon kursimin afatshkurtër, por rrit kostot pasuese nëse dëmtohen cilësia dhe besimi. Një zgjidhje me faza kursen më pak menjëherë, por është më e qëndrueshme." }
+          ],
+          "function": "defends nuanced recommendation",
+          "toneNote": "executive-ready, concise",
+          "expectedLearnerAction": "Frame reduced savings as risk control, not indecision."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "customer",
+          "baseText": "Damit könnte ich arbeiten, wenn wir klare Messpunkte haben: Erstlösungsquote, Beschwerdequote, Rückübertragungsregeln und eine faire Kommunikation an die betroffenen Teams.",
+          "translations": [
+            { "language": "en", "text": "I could work with that if we have clear measurement points: first-contact resolution rate, complaint rate, rules for bringing cases back, and fair communication to the affected teams." },
+            { "language": "fa", "text": "با این می‌توانم کار کنم، اگر نقاط سنجش روشن داشته باشیم: نرخ حل در تماس اول، نرخ شکایت، قواعد بازگرداندن پرونده‌ها و ارتباط منصفانه با تیم‌های تحت تأثیر." },
+            { "language": "ar", "text": "يمكنني العمل بهذا إذا كانت لدينا نقاط قياس واضحة: معدل الحل من الاتصال الأول، ومعدل الشكاوى، وقواعد إعادة الحالات، وتواصل عادل مع الفرق المتأثرة." },
+            { "language": "tr", "text": "Net ölçüm noktalarımız olursa bununla çalışabilirim: ilk temasta çözüm oranı, şikayet oranı, vakaları geri alma kuralları ve etkilenen ekiplerle adil iletişim." },
+            { "language": "ru", "text": "С этим можно работать, если у нас есть четкие точки измерения: доля решения при первом обращении, уровень жалоб, правила возврата случаев и справедливая коммуникация с затронутыми командами." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ ئەمە کار بکەم ئەگەر خاڵی پێوانەکردنی ڕوونمان هەبێت: ڕێژەی چارەسەری لە یەکەم پەیوەندی، ڕێژەی سکاڵا، ڕێسای گەڕاندنەوەی کەیسەکان و پەیوەندیی دادپەروەرانە لەگەڵ تیمە کاریگەربووەکان." },
+            { "language": "kmr", "text": "Ez dikarim bi vê bixebitim heke xalên pîvandinê yên zelal hebin: rêjeya çareseriyê di têkiliya yekem de, rêjeya gilîyan, rêgezên vegerandina dosyayan û têkiliya dadmendane bi tîmên bandorkirî re." },
+            { "language": "pl", "text": "Mógłbym z tym pracować, jeśli będziemy mieć jasne punkty pomiaru: wskaźnik rozwiązania przy pierwszym kontakcie, wskaźnik skarg, zasady przekazywania spraw z powrotem i uczciwą komunikację do dotkniętych zespołów." },
+            { "language": "ro", "text": "Aș putea lucra cu asta dacă avem puncte clare de măsurare: rata de rezolvare la primul contact, rata reclamațiilor, reguli de readucere a cazurilor și comunicare corectă către echipele afectate." },
+            { "language": "sq", "text": "Mund të punoja me këtë nëse kemi pika të qarta matjeje: norma e zgjidhjes në kontaktin e parë, norma e ankesave, rregulla për kthimin e rasteve dhe komunikim të drejtë me ekipet e prekura." }
+          ],
+          "function": "adds measurable conditions",
+          "toneNote": "constructive"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Meine Empfehlung wäre daher eine begrenzte, messbare Auslagerung: Standardfälle gehen in einen Pilotbetrieb, komplexe Fälle bleiben intern, betroffene Teams erhalten frühzeitig Klarheit, und nach drei Monaten entscheidet die Geschäftsführung anhand von Qualitäts- und Vertrauenswerten über die nächste Stufe.",
+          "translations": [
+            { "language": "en", "text": "My recommendation would therefore be a limited, measurable outsourcing: standard cases move into a pilot phase, complex cases remain internal, affected teams receive clarity early, and after three months management decides on the next stage based on quality and trust metrics." },
+            { "language": "fa", "text": "بنابراین توصیه من برون‌سپاری محدود و قابل سنجش است: پرونده‌های استاندارد وارد مرحله آزمایشی شوند، پرونده‌های پیچیده داخلی بمانند، تیم‌های تحت تأثیر زودهنگام شفافیت دریافت کنند، و پس از سه ماه مدیریت بر اساس شاخص‌های کیفیت و اعتماد درباره مرحله بعد تصمیم بگیرد." },
+            { "language": "ar", "text": "لذلك ستكون توصيتي إسناداً خارجياً محدوداً وقابلاً للقياس: تدخل الحالات القياسية مرحلة تجريبية، وتبقى الحالات المعقدة داخلية، وتحصل الفرق المتأثرة على وضوح مبكر، وبعد ثلاثة أشهر تقرر الإدارة المرحلة التالية بناء على مؤشرات الجودة والثقة." },
+            { "language": "tr", "text": "Bu nedenle önerim sınırlı ve ölçülebilir bir dış kaynak kullanımı olurdu: standart vakalar pilot işletmeye geçer, karmaşık vakalar içeride kalır, etkilenen ekipler erken netlik kazanır ve üç ay sonra yönetim kalite ve güven göstergelerine göre bir sonraki aşamaya karar verir." },
+            { "language": "ru", "text": "Моя рекомендация поэтому была бы ограниченным, измеримым аутсорсингом: стандартные случаи переходят в пилотный режим, сложные остаются внутри, затронутые команды заранее получают ясность, а через три месяца руководство принимает решение о следующем этапе на основе показателей качества и доверия." },
+            { "language": "ckb", "text": "بۆیە پێشنیاری من دەرەوەسپاردنێکی سنووردار و پێوانەکراوە: کەیسە ستانداردەکان دەچنە قۆناغی تاقیکاری، کەیسە ئاڵۆزەکان لە ناوخۆ دەمێنن، تیمە کاریگەربووەکان زوو ڕوونی وەردەگرن، و دوای سێ مانگ بەڕێوەبەرایەتی بە پێی پێوەرەکانی کوالیتی و متمانە بڕیار دەدات لەسەر قۆناغی داهاتوو." },
+            { "language": "kmr", "text": "Ji ber vê yekê pêşniyara min dervekirineke sînorkirî û pîvbar e: dosyayên standard diçin qonaxa ceribandinê, dosyayên aloz li hundir dimînin, tîmên bandorkirî zû zelaliyê werdigirin û piştî sê mehan rêveberî li gorî pîvanên kalîte û baweriyê li ser qonaxa din biryar dide." },
+            { "language": "pl", "text": "Moja rekomendacja to więc ograniczony, mierzalny outsourcing: sprawy standardowe przechodzą do pilotażu, sprawy złożone pozostają wewnątrz, dotknięte zespoły otrzymują wcześnie jasność, a po trzech miesiącach zarząd decyduje o kolejnym etapie na podstawie wskaźników jakości i zaufania." },
+            { "language": "ro", "text": "Recomandarea mea ar fi, așadar, o externalizare limitată și măsurabilă: cazurile standard intră într-un pilot, cazurile complexe rămân interne, echipele afectate primesc claritate devreme, iar după trei luni conducerea decide etapa următoare pe baza indicatorilor de calitate și încredere." },
+            { "language": "sq", "text": "Prandaj rekomandimi im do të ishte një jashtëkontraktim i kufizuar dhe i matshëm: rastet standarde kalojnë në pilotim, rastet e ndërlikuara mbeten të brendshme, ekipet e prekura marrin qartësi herët dhe pas tre muajsh drejtoria vendos fazën tjetër mbi bazën e treguesve të cilësisë dhe besimit." }
+          ],
+          "function": "gives responsible final recommendation",
+          "toneNote": "clear, executive-ready",
+          "expectedLearnerAction": "Close with a conditional recommendation and measurable review."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die finanzielle Logik ist nachvollziehbar, aber rechtliche Zulässigkeit beantwortet noch nicht die ganze Frage. Wir sollten zusätzlich prüfen, welche Folgen die Entscheidung für Servicequalität, Beschäftigte und Kundenvertrauen hat.",
+              "translations": [
+                { "language": "en", "text": "The financial logic is understandable, but legal permissibility does not answer the whole question. We should also examine what consequences the decision has for service quality, employees, and customer trust." },
+                { "language": "fa", "text": "منطق مالی قابل فهم است، اما مجاز بودن حقوقی هنوز کل مسئله را پاسخ نمی‌دهد. باید علاوه بر آن بررسی کنیم این تصمیم چه پیامدهایی برای کیفیت خدمات، کارکنان و اعتماد مشتریان دارد." },
+                { "language": "ar", "text": "المنطق المالي مفهوم، لكن الجواز القانوني لا يجيب عن السؤال كله. ينبغي أن نفحص أيضاً آثار القرار على جودة الخدمة والموظفين وثقة العملاء." },
+                { "language": "tr", "text": "Finansal mantık anlaşılır, ancak hukuki izin verilebilirlik sorunun tamamını yanıtlamaz. Kararın hizmet kalitesi, çalışanlar ve müşteri güveni üzerindeki sonuçlarını da incelemeliyiz." },
+                { "language": "ru", "text": "Финансовая логика понятна, но юридическая допустимость еще не отвечает на весь вопрос. Нам также следует проверить, какие последствия решение имеет для качества сервиса, сотрудников и доверия клиентов." },
+                { "language": "ckb", "text": "لۆژیکی دارایی تێگەیشتنی هەیە، بەڵام ڕێپێدراوی یاسایی هێشتا هەموو پرسیارەکە وەڵام ناداتەوە. پێویستە هەروەها بپشکنین بڕیارەکە چ ئەنجامێک بۆ کوالیتی خزمەتگوزاری، کارمەندان و متمانەی کڕیاران هەیە." },
+                { "language": "kmr", "text": "Mantiqa darayî tê famkirin, lê destûra qanûnî hîn hemû pirsê bersiv nade. Divê em her wiha bibînin biryar çi encamên li ser kalîteya xizmetê, karmendan û baweriya xerîdaran heye." },
+                { "language": "pl", "text": "Logika finansowa jest zrozumiała, ale dopuszczalność prawna nie odpowiada jeszcze na całe pytanie. Powinniśmy dodatkowo sprawdzić skutki decyzji dla jakości usług, pracowników i zaufania klientów." },
+                { "language": "ro", "text": "Logica financiară este de înțeles, dar admisibilitatea legală nu răspunde încă întregii întrebări. Ar trebui să examinăm și ce consecințe are decizia pentru calitatea serviciului, angajați și încrederea clienților." },
+                { "language": "sq", "text": "Logjika financiare është e kuptueshme, por lejueshmëria ligjore nuk i përgjigjet gjithë pyetjes. Duhet të shqyrtojmë gjithashtu çfarë pasojash ka vendimi për cilësinë e shërbimit, punonjësit dhe besimin e klientëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort anerkennt den finanziellen Punkt und erweitert den Rahmen, ohne moralisierend zu klingen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response acknowledges the financial point and expands the frame without sounding moralizing." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ نکته مالی را می‌پذیرد و چارچوب را گسترش می‌دهد، بدون اینکه موعظه‌گرانه به نظر برسد." },
+                { "language": "ar", "text": "جيد جداً: تعترف الإجابة بالنقطة المالية وتوسع الإطار من دون أن تبدو وعظية." },
+                { "language": "tr", "text": "Çok iyi: cevap finansal noktayı kabul eder ve çerçeveyi ahlak dersi verir gibi görünmeden genişletir." },
+                { "language": "ru", "text": "Очень хорошо: ответ признает финансовый аргумент и расширяет рамку, не звуча морализаторски." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە خاڵی دارایی دەناسێت و چوارچێوەکە فراوان دەکات بێ ئەوەی وەک وانەی ئەخلاقی دەربکەوێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv xala darayî qebûl dike û çarçoveyê fireh dike bêyî ku wekî dersa exlaqê xuya bike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź uznaje punkt finansowy i rozszerza ramę bez moralizowania." },
+                { "language": "ro", "text": "Foarte bine: răspunsul recunoaște punctul financiar și lărgește cadrul fără să sune moralizator." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e pranon pikën financiare dhe e zgjeron kornizën pa tingëlluar moralizuese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn es rechtlich geprüft ist und Geld spart, spricht eigentlich wenig dagegen.",
+              "translations": [
+                { "language": "en", "text": "If it has been legally reviewed and saves money, there is actually little against it." },
+                { "language": "fa", "text": "اگر از نظر حقوقی بررسی شده و پول صرفه‌جویی می‌کند، در واقع مخالفت زیادی با آن وجود ندارد." },
+                { "language": "ar", "text": "إذا تم فحصه قانونياً ويوفر المال، فلا يوجد في الحقيقة الكثير ضده." },
+                { "language": "tr", "text": "Hukuken incelendiyse ve para tasarrufu sağlıyorsa aslında buna karşı pek bir şey yok." },
+                { "language": "ru", "text": "Если это юридически проверено и экономит деньги, против этого, собственно, мало что говорит." },
+                { "language": "ckb", "text": "ئەگەر لە ڕووی یاساییەوە پشکنراوە و پارە پاشەکەوت دەکات، لە ڕاستیدا شتی زۆر دژی نییە." },
+                { "language": "kmr", "text": "Heke ji aliyê qanûnî ve hatiye kontrolkirin û pere teserûf dike, bi rastî tiştekî zêde li dijî wê tune ye." },
+                { "language": "pl", "text": "Jeśli zostało to sprawdzone prawnie i oszczędza pieniądze, właściwie niewiele przemawia przeciw." },
+                { "language": "ro", "text": "Dacă a fost verificat legal și economisește bani, de fapt sunt puține lucruri împotrivă." },
+                { "language": "sq", "text": "Nëse është kontrolluar ligjërisht dhe kursen para, në fakt ka pak gjëra kundër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng: Die Antwort ist plausibel, reduziert die Entscheidung aber auf Legalität und Kosten und übersieht Verantwortung, Qualität und Vertrauen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: the answer is plausible, but it reduces the decision to legality and cost and misses responsibility, quality, and trust." },
+                { "language": "fa", "text": "بیش از حد محدود: پاسخ قابل تصور است، اما تصمیم را به قانون و هزینه کاهش می‌دهد و مسئولیت، کیفیت و اعتماد را نادیده می‌گیرد." },
+                { "language": "ar", "text": "ضيقة جداً: الإجابة ممكنة، لكنها تختزل القرار في القانون والتكلفة وتتجاهل المسؤولية والجودة والثقة." },
+                { "language": "tr", "text": "Çok dar: cevap makul görünebilir, ama kararı hukuk ve maliyete indirger; sorumluluk, kalite ve güveni kaçırır." },
+                { "language": "ru", "text": "Слишком узко: ответ возможен, но он сводит решение к законности и стоимости, упуская ответственность, качество и доверие." },
+                { "language": "ckb", "text": "زۆر تەنگە: وەڵامەکە گونجاو دەردەکەوێت، بەڵام بڕیارەکە تەنها دەکاتە یاساییبوون و تێچوو و بەرپرسیارێتی، کوالیتی و متمانە نابینێت." },
+                { "language": "kmr", "text": "Pir teng e: bersiv gengaz xuya dike, lê biryarê tenê dike qanûnîbûn û xerç û berpirsiyarî, kalîte û baweriyê winda dike." },
+                { "language": "pl", "text": "Za wąsko: odpowiedź jest możliwa, ale sprowadza decyzję do legalności i kosztów, pomijając odpowiedzialność, jakość i zaufanie." },
+                { "language": "ro", "text": "Prea îngust: răspunsul este plauzibil, dar reduce decizia la legalitate și costuri și ratează responsabilitatea, calitatea și încrederea." },
+                { "language": "sq", "text": "Shumë e ngushtë: përgjigjja është e mundshme, por e redukton vendimin te ligjshmëria dhe kostoja, duke humbur përgjegjësinë, cilësinë dhe besimin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann geht es nicht um ein abstraktes Für oder Gegen Auslagerung, sondern um die Frage, welche Teile standardisierbar sind und welche Kundenkontakte wegen Komplexität oder Vertrauen intern bleiben sollten.",
+              "translations": [
+                { "language": "en", "text": "Then this is not about an abstract yes or no to outsourcing, but about which parts can be standardized and which customer contacts should remain internal because of complexity or trust." },
+                { "language": "fa", "text": "پس مسئله یک موافقت یا مخالفت انتزاعی با برون‌سپاری نیست، بلکه این است که کدام بخش‌ها قابل استانداردسازی‌اند و کدام تماس‌های مشتریان به‌دلیل پیچیدگی یا اعتماد باید داخلی بمانند." },
+                { "language": "ar", "text": "إذن لا يتعلق الأمر بتأييد أو رفض مجرد للإسناد الخارجي، بل بالسؤال عن الأجزاء التي يمكن توحيدها وأي اتصالات مع العملاء يجب أن تبقى داخلية بسبب التعقيد أو الثقة." },
+                { "language": "tr", "text": "O halde mesele dış kaynak kullanımına soyut bir evet ya da hayır değil; hangi bölümlerin standartlaştırılabileceği ve hangi müşteri temaslarının karmaşıklık veya güven nedeniyle içeride kalması gerektiğidir." },
+                { "language": "ru", "text": "Тогда речь идет не об абстрактном за или против аутсорсинга, а о том, какие части можно стандартизировать и какие контакты с клиентами должны оставаться внутри из-за сложности или доверия." },
+                { "language": "ckb", "text": "ئەوا بابەتەکە ناگەڕێتەوە بۆ بەڵێ یان نەیەکی گشتی بۆ دەرەوەسپاردن، بەڵکو بۆ ئەو پرسیارەی کام بەش دەکرێت ستاندارد بکرێت و کام پەیوەندیی کڕیاران بەهۆی ئاڵۆزی یان متمانەوە پێویستە لە ناوخۆ بمێنێتەوە." },
+                { "language": "kmr", "text": "Wê demê mijar ne erê an na ya abstrakt ji bo dervekirinê ye, lê ew e ka kîjan beş dikarin standard bibin û kîjan têkiliyên xerîdaran ji ber aloziyê an baweriyê divê li hundir bimînin." },
+                { "language": "pl", "text": "Wtedy nie chodzi o abstrakcyjne za lub przeciw outsourcingowi, lecz o to, które części można ustandaryzować, a które kontakty z klientami powinny pozostać wewnętrzne ze względu na złożoność lub zaufanie." },
+                { "language": "ro", "text": "Atunci nu este vorba despre un da sau nu abstract față de externalizare, ci despre ce părți pot fi standardizate și ce contacte cu clienții ar trebui să rămână interne din cauza complexității sau a încrederii." },
+                { "language": "sq", "text": "Atëherë nuk bëhet fjalë për një po ose jo abstrakte ndaj jashtëkontraktimit, por për cilat pjesë mund të standardizohen dhe cilat kontakte me klientët duhet të mbeten të brendshme për shkak të ndërlikimit ose besimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort vermeidet eine Scheinalternative und macht die Entscheidung operativ differenzierbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response avoids a false alternative and makes the decision operationally distinguishable." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ از دوگانه کاذب دوری می‌کند و تصمیم را از نظر عملیاتی قابل تفکیک می‌سازد." },
+                { "language": "ar", "text": "جيد جداً: تتجنب الإجابة بديلاً زائفاً وتجعل القرار قابلاً للتمييز عملياً." },
+                { "language": "tr", "text": "Çok iyi: cevap sahte bir ikilemden kaçınır ve kararı operasyonel olarak ayrıştırılabilir kılar." },
+                { "language": "ru", "text": "Очень хорошо: ответ избегает ложной альтернативы и делает решение операционно различимым." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە لە دووڕێی درۆینە دوور دەکەوێتەوە و بڕیارەکە لە ڕووی کردارەوە جیاکردنەوەی بۆ دەکرێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv ji alternatîfa derewîn dûr dikeve û biryarê ji aliyê operasyonî ve cuda dike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź unika fałszywej alternatywy i czyni decyzję operacyjnie rozróżnialną." },
+                { "language": "ro", "text": "Foarte bine: răspunsul evită o falsă alternativă și face decizia diferențiabilă operațional." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja shmang një alternativë të rreme dhe e bën vendimin të dallueshëm operativisht." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollten wir aus ethischen Gründen lieber gar nichts auslagern.",
+              "translations": [
+                { "language": "en", "text": "Then for ethical reasons we should probably not outsource anything at all." },
+                { "language": "fa", "text": "پس به دلایل اخلاقی بهتر است اصلاً هیچ چیزی را برون‌سپاری نکنیم." },
+                { "language": "ar", "text": "إذن لأسباب أخلاقية من الأفضل ألا نسند أي شيء إلى الخارج إطلاقاً." },
+                { "language": "tr", "text": "O zaman etik nedenlerle muhtemelen hiçbir şeyi dışarı vermemeliyiz." },
+                { "language": "ru", "text": "Тогда по этическим причинам нам лучше вообще ничего не передавать на сторону." },
+                { "language": "ckb", "text": "ئەوا بەهۆی هۆکاری ئەخلاقی باشترە هیچ شتێک نەدەرەوە بسپێرین." },
+                { "language": "kmr", "text": "Wê demê ji ber sedemên etîkî çêtir e em tiştekî qet derve nekin." },
+                { "language": "pl", "text": "W takim razie ze względów etycznych lepiej w ogóle niczego nie zlecać na zewnątrz." },
+                { "language": "ro", "text": "Atunci, din motive etice, ar fi mai bine să nu externalizăm nimic." },
+                { "language": "sq", "text": "Atëherë për arsye etike ndoshta është më mirë të mos jashtëkontraktojmë asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Antwort nimmt die Sorge ernst, macht daraus aber ein absolutes Verbot und verliert die differenzierte Entscheidungslogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping: the answer takes the concern seriously but turns it into an absolute ban and loses the differentiated decision logic." },
+                { "language": "fa", "text": "بیش از حد کلی: پاسخ نگرانی را جدی می‌گیرد، اما آن را به ممنوعیت مطلق تبدیل می‌کند و منطق تفکیک‌شده تصمیم را از دست می‌دهد." },
+                { "language": "ar", "text": "عام جداً: تأخذ الإجابة القلق بجدية لكنها تحوله إلى حظر مطلق وتفقد منطق القرار المتمايز." },
+                { "language": "tr", "text": "Çok genelleyici: cevap kaygıyı ciddiye alır, ama bunu mutlak yasağa çevirir ve ayrıntılı karar mantığını kaybeder." },
+                { "language": "ru", "text": "Слишком обобщенно: ответ серьезно воспринимает тревогу, но превращает ее в абсолютный запрет и теряет дифференцированную логику решения." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە نیگەرانی بە جدی دەگرێت، بەڵام دەیکاتە قەدەغەی تەواو و لۆژیکی جیاکراوەی بڕیار لەدەست دەدات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv xemgîniyê bi cidî digire, lê wê dike qedexeya temam û mantiqa biryara cuda winda dike." },
+                { "language": "pl", "text": "Za ogólnie: odpowiedź traktuje obawę poważnie, ale zamienia ją w absolutny zakaz i traci zróżnicowaną logikę decyzji." },
+                { "language": "ro", "text": "Prea general: răspunsul ia îngrijorarea în serios, dar o transformă într-o interdicție absolută și pierde logica diferențiată a deciziei." },
+                { "language": "sq", "text": "Shumë përgjithësuese: përgjigjja e merr seriozisht shqetësimin, por e kthen në ndalim absolut dhe humb logjikën e diferencuar të vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau deshalb würde ich Ethik hier nicht als moralisches Etikett verwenden, sondern als Qualitätsprüfung der Entscheidung: Welche Kosten sparen wir, welche Risiken verlagern wir, und welche Verantwortung behalten wir trotzdem?",
+              "translations": [
+                { "language": "en", "text": "That is exactly why I would not use ethics here as a moral label, but as a quality check of the decision: what costs do we save, what risks do we shift, and what responsibility do we still retain?" },
+                { "language": "fa", "text": "دقیقاً به همین دلیل اخلاق را اینجا به‌عنوان برچسب اخلاقی به کار نمی‌برم، بلکه به‌عنوان سنجش کیفیت تصمیم: چه هزینه‌هایی را کم می‌کنیم، چه ریسک‌هایی را منتقل می‌کنیم، و چه مسئولیتی همچنان نزد ما می‌ماند؟" },
+                { "language": "ar", "text": "لهذا السبب بالضبط لن أستخدم الأخلاق هنا كوسم أخلاقي، بل كفحص لجودة القرار: أي تكاليف نوفر، وأي مخاطر ننقل، وأي مسؤولية تبقى لدينا رغم ذلك؟" },
+                { "language": "tr", "text": "Tam da bu nedenle etiği burada ahlaki bir etiket olarak değil, kararın kalite kontrolü olarak kullanırdım: hangi maliyetleri azaltıyoruz, hangi riskleri başka yere aktarıyoruz ve hangi sorumluluğu yine de bizde tutuyoruz?" },
+                { "language": "ru", "text": "Именно поэтому я использовал бы этику здесь не как моральный ярлык, а как проверку качества решения: какие расходы мы экономим, какие риски переносим и какую ответственность все равно сохраняем?" },
+                { "language": "ckb", "text": "هەر بۆیە من ئەخلاق لێرە وەک ناوی ئەخلاقی بەکار ناهێنم، بەڵکو وەک پشکنینی کوالیتی بڕیارەکە: کام تێچوو کەم دەکەینەوە، کام مەترسی دەگوازینەوە، و کام بەرپرسیارێتی هێشتا لای ئێمە دەمێنێت؟" },
+                { "language": "kmr", "text": "Tam ji ber vê yekê ez etîkê li vir wekî etîketeke exlaqî bi kar naynim, lê wekî kontrola kalîteya biryarê: kîjan xerçan kêm dikin, kîjan xetereyan vediguhezînin û kîjan berpirsiyarî hêj li me dimîne?" },
+                { "language": "pl", "text": "Właśnie dlatego nie używałbym tu etyki jako etykiety moralnej, lecz jako kontroli jakości decyzji: jakie koszty oszczędzamy, jakie ryzyka przenosimy i jaką odpowiedzialność mimo to zachowujemy?" },
+                { "language": "ro", "text": "Tocmai de aceea nu aș folosi etica aici ca etichetă morală, ci ca verificare a calității deciziei: ce costuri economisim, ce riscuri transferăm și ce responsabilitate păstrăm totuși?" },
+                { "language": "sq", "text": "Pikërisht prandaj nuk do ta përdorja etikën këtu si etiketë morale, por si kontroll cilësie të vendimit: cilat kosto kursejmë, cilat rreziqe zhvendosim dhe cilën përgjegjësi e mbajmë megjithatë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort entzieht der Debatte die falsche Spannung zwischen Wirtschaftlichkeit und Ethik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response removes the false tension between economic viability and ethics." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ تنش کاذب میان سودآوری و اخلاق را از بحث خارج می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تزيل الإجابة التوتر الزائف بين الجدوى الاقتصادية والأخلاق." },
+                { "language": "tr", "text": "Çok iyi: cevap ekonomik uygulanabilirlik ile etik arasındaki sahte gerilimi ortadan kaldırır." },
+                { "language": "ru", "text": "Очень хорошо: ответ снимает ложное напряжение между экономической состоятельностью и этикой." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ئەو گرژییە درۆینەی نێوان توانای ئابووری و ئەخلاق لادەبات." },
+                { "language": "kmr", "text": "Pir baş: bersiv ew tengezariya derewîn a di navbera jêhatîbûna aborî û etîkê de radike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź usuwa fałszywe napięcie między opłacalnością a etyką." },
+                { "language": "ro", "text": "Foarte bine: răspunsul elimină falsa tensiune dintre viabilitatea economică și etică." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e heq tensionin e rremë midis qëndrueshmërisë ekonomike dhe etikës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verstehe den Punkt, aber Ethik darf bei solchen Zahlen nicht im Vordergrund stehen.",
+              "translations": [
+                { "language": "en", "text": "I understand the point, but with numbers like these ethics must not be in the foreground." },
+                { "language": "fa", "text": "نکته را می‌فهمم، اما با چنین اعدادی اخلاق نباید در اولویت باشد." },
+                { "language": "ar", "text": "أفهم النقطة، لكن مع أرقام كهذه لا ينبغي أن تكون الأخلاق في المقدمة." },
+                { "language": "tr", "text": "Noktayı anlıyorum, ama böyle rakamlarda etik ön planda olmamalı." },
+                { "language": "ru", "text": "Я понимаю этот аргумент, но при таких цифрах этика не должна быть на первом плане." },
+                { "language": "ckb", "text": "خاڵەکە تێدەگەم، بەڵام لەگەڵ ژمارەی وەهادا ئەخلاق نابێت لە پێشەوە بێت." },
+                { "language": "kmr", "text": "Ez xala te fam dikim, lê bi hejmarên wisa re etîk divê li pêş nebe." },
+                { "language": "pl", "text": "Rozumiem ten punkt, ale przy takich liczbach etyka nie powinna być na pierwszym planie." },
+                { "language": "ro", "text": "Înțeleg punctul, dar la asemenea cifre etica nu ar trebui să fie în prim-plan." },
+                { "language": "sq", "text": "E kuptoj pikën, por me shifra të tilla etika nuk duhet të jetë në plan të parë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Die Antwort erkennt den Einwand an, trennt Ethik aber wieder künstlich von der Qualität der Entscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: the answer acknowledges the objection but artificially separates ethics again from the quality of the decision." },
+                { "language": "fa", "text": "بیش از حد دفاعی: پاسخ ایراد را می‌پذیرد، اما دوباره اخلاق را به‌طور مصنوعی از کیفیت تصمیم جدا می‌کند." },
+                { "language": "ar", "text": "دفاعية أكثر من اللازم: تعترف الإجابة بالاعتراض لكنها تفصل الأخلاق مرة أخرى بشكل مصطنع عن جودة القرار." },
+                { "language": "tr", "text": "Çok savunmacı: cevap itirazı kabul eder, ama etiği kararın kalitesinden yeniden yapay biçimde ayırır." },
+                { "language": "ru", "text": "Слишком оборонительно: ответ признает возражение, но снова искусственно отделяет этику от качества решения." },
+                { "language": "ckb", "text": "زۆر بەرگرییە: وەڵامەکە ناڕەزایی دەناسێت، بەڵام دیسان ئەخلاق بە شێوەیەکی دەستکرد لە کوالیتی بڕیار جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Pir parastinî ye: bersiv nerazîbûnê qebûl dike, lê dîsa etîkê bi awayekî çêkirî ji kalîteya biryarê cuda dike." },
+                { "language": "pl", "text": "Za defensywnie: odpowiedź uznaje zastrzeżenie, ale znów sztucznie oddziela etykę od jakości decyzji." },
+                { "language": "ro", "text": "Prea defensiv: răspunsul recunoaște obiecția, dar separă din nou artificial etica de calitatea deciziei." },
+                { "language": "sq", "text": "Shumë mbrojtëse: përgjigjja e pranon kundërshtimin, por e ndan sërish artificialisht etikën nga cilësia e vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde deshalb zwei Leitplanken setzen: Standardfälle können ausgelagert werden, wenn Qualität messbar bleibt; komplexe oder vertrauenskritische Fälle bleiben intern, bis ein nachweislich gleichwertiger Prozess steht.",
+              "translations": [
+                { "language": "en", "text": "I would therefore set two guardrails: standard cases can be outsourced if quality remains measurable; complex or trust-critical cases stay internal until a demonstrably equivalent process is in place." },
+                { "language": "fa", "text": "برای همین دو چارچوب می‌گذارم: پرونده‌های استاندارد می‌توانند برون‌سپاری شوند اگر کیفیت قابل اندازه‌گیری بماند؛ پرونده‌های پیچیده یا حساس از نظر اعتماد، داخلی می‌مانند تا زمانی که فرایندی به‌طور قابل اثبات هم‌ارز برقرار شود." },
+                { "language": "ar", "text": "لذلك سأضع حدين إرشاديين: يمكن إسناد الحالات القياسية إلى الخارج إذا بقيت الجودة قابلة للقياس؛ وتبقى الحالات المعقدة أو الحساسة للثقة داخلية إلى أن توجد عملية مكافئة يمكن إثباتها." },
+                { "language": "tr", "text": "Bu nedenle iki sınır koyardım: standart vakalar kalite ölçülebilir kaldığı sürece dışarı verilebilir; karmaşık veya güven açısından kritik vakalar, kanıtlanabilir biçimde eşdeğer bir süreç kurulana kadar içeride kalır." },
+                { "language": "ru", "text": "Поэтому я бы установил две рамки: стандартные случаи можно передать на сторону, если качество остается измеримым; сложные или критичные для доверия случаи остаются внутри, пока не будет доказуемо равноценного процесса." },
+                { "language": "ckb", "text": "بۆیە دوو سنوور دادەنێم: کەیسە ستانداردەکان دەکرێت بدرێنە دەرەوە ئەگەر کوالیتی پێوانەکراو بمێنێت؛ کەیسە ئاڵۆزەکان یان ئەوانەی بۆ متمانە زۆر گرنگن لە ناوخۆ دەمێنن تا پرۆسەیەکی بەڵگەدار هاوتا دامەزرێت." },
+                { "language": "kmr", "text": "Ji ber vê yekê ez du rêgezên parastinê datînim: dosyayên standard dikarin bên dervekirin heke kalîte were pîvan; dosyayên aloz an ji bo baweriyê girîng li hundir dimînin heta proseya wekhev a bi belge ava bibe." },
+                { "language": "pl", "text": "Dlatego ustawiłbym dwie barierki: sprawy standardowe można zlecić na zewnątrz, jeśli jakość pozostaje mierzalna; sprawy złożone lub krytyczne dla zaufania pozostają wewnątrz, dopóki nie powstanie dowodowo równoważny proces." },
+                { "language": "ro", "text": "De aceea aș stabili două limite de protecție: cazurile standard pot fi externalizate dacă calitatea rămâne măsurabilă; cazurile complexe sau critice pentru încredere rămân interne până există un proces demonstrabil echivalent." },
+                { "language": "sq", "text": "Prandaj do të vendosja dy kufij mbrojtës: rastet standarde mund të jashtëkontraktohen nëse cilësia mbetet e matshme; rastet e ndërlikuara ose kritike për besimin mbeten të brendshme derisa të ketë një proces të provueshëm të barasvlershëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort macht Werte operationalisierbar und vermeidet sowohl Blockade als auch blinde Kostenlogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response makes values operational and avoids both blockage and blind cost logic." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ ارزش‌ها را عملیاتی می‌کند و هم از بن‌بست و هم از منطق کور هزینه دوری می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تجعل الإجابة القيم قابلة للتشغيل وتتجنب الانسداد ومنطق التكلفة الأعمى معاً." },
+                { "language": "tr", "text": "Çok iyi: cevap değerleri uygulanabilir kılar ve hem tıkanmayı hem de kör maliyet mantığını önler." },
+                { "language": "ru", "text": "Очень хорошо: ответ делает ценности операциональными и избегает как блокировки, так и слепой логики затрат." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بەهاکان دەکاتە شتی کرداری و هەم لە بلۆکبوون و هەم لە لۆژیکی کوێری تێچوو دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Pir baş: bersiv nirxan dike tiştên pêkanînê û hem ji astengkirinê hem ji mantiqa kor a xerçê dûr dikeve." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź czyni wartości operacyjnymi i unika zarówno blokady, jak i ślepej logiki kosztów." },
+                { "language": "ro", "text": "Foarte bine: răspunsul face valorile operaționale și evită atât blocajul, cât și logica oarbă a costurilor." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja i bën vlerat operative dhe shmang si bllokimin, ashtu edhe logjikën e verbër të kostos." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten zuerst auslagern und dann beobachten, ob es Beschwerden gibt.",
+              "translations": [
+                { "language": "en", "text": "We should outsource first and then observe whether there are complaints." },
+                { "language": "fa", "text": "بهتر است اول برون‌سپاری کنیم و بعد ببینیم آیا شکایتی پیش می‌آید یا نه." },
+                { "language": "ar", "text": "ينبغي أن نسند إلى الخارج أولاً ثم نراقب ما إذا كانت هناك شكاوى." },
+                { "language": "tr", "text": "Önce dışarı vermeli, sonra şikayet olup olmadığını gözlemlemeliyiz." },
+                { "language": "ru", "text": "Нам следует сначала передать на сторону, а затем наблюдать, будут ли жалобы." },
+                { "language": "ckb", "text": "پێویستە سەرەتا بدەینە دەرەوە و دواتر سەیر بکەین ئایا سکاڵا هەیە یان نا." },
+                { "language": "kmr", "text": "Divê em pêşî bidin derve û paşê temaşe bikin ka gilî hene an na." },
+                { "language": "pl", "text": "Powinniśmy najpierw zlecić na zewnątrz, a potem obserwować, czy są skargi." },
+                { "language": "ro", "text": "Ar trebui să externalizăm mai întâi și apoi să observăm dacă apar reclamații." },
+                { "language": "sq", "text": "Duhet së pari ta jashtëkontraktojmë dhe pastaj të shohim nëse ka ankesa." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu reaktiv: Die Antwort misst Probleme erst nach dem Schaden und definiert keine Schutzkriterien vor der Umsetzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too reactive: the answer measures problems only after damage has occurred and defines no protective criteria before implementation." },
+                { "language": "fa", "text": "بیش از حد واکنشی: پاسخ مشکلات را فقط بعد از ایجاد آسیب می‌سنجد و پیش از اجرا معیار محافظتی تعریف نمی‌کند." },
+                { "language": "ar", "text": "تفاعلية أكثر من اللازم: تقيس الإجابة المشكلات فقط بعد حدوث الضرر ولا تحدد معايير حماية قبل التنفيذ." },
+                { "language": "tr", "text": "Çok tepkisel: cevap sorunları ancak zarar oluştuktan sonra ölçer ve uygulama öncesi koruyucu ölçüt tanımlamaz." },
+                { "language": "ru", "text": "Слишком реактивно: ответ измеряет проблемы только после ущерба и не определяет защитные критерии до внедрения." },
+                { "language": "ckb", "text": "زۆر کاردانەوەییە: وەڵامەکە کێشەکان تەنها دوای زیان پێوانە دەکات و پێش جێبەجێکردن پێوەری پاراستن دانانێت." },
+                { "language": "kmr", "text": "Pir reaksiyonî ye: bersiv pirsgirêkan tenê piştî zirarê dipîve û berî bicihanînê pîvanên parastinê danayne." },
+                { "language": "pl", "text": "Za reaktywnie: odpowiedź mierzy problemy dopiero po szkodzie i nie definiuje kryteriów ochronnych przed wdrożeniem." },
+                { "language": "ro", "text": "Prea reactiv: răspunsul măsoară problemele abia după producerea prejudiciului și nu definește criterii de protecție înainte de implementare." },
+                { "language": "sq", "text": "Shumë reaktive: përgjigjja i mat problemet vetëm pas dëmit dhe nuk përcakton kritere mbrojtëse para zbatimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde es als Risikosteuerung begründen: Die volle Auslagerung maximiert kurzfristig die Einsparung, aber sie erhöht die Folgekosten, wenn Qualität und Vertrauen leiden. Eine gestufte Lösung spart weniger sofort, ist aber belastbarer.",
+              "translations": [
+                { "language": "en", "text": "I would justify it as risk management: full outsourcing maximizes short-term savings, but it increases downstream costs if quality and trust suffer. A staged solution saves less immediately, but it is more robust." },
+                { "language": "fa", "text": "آن را به‌عنوان مدیریت ریسک توضیح می‌دهم: برون‌سپاری کامل صرفه‌جویی کوتاه‌مدت را بیشینه می‌کند، اما اگر کیفیت و اعتماد آسیب ببینند، هزینه‌های بعدی را افزایش می‌دهد. راه‌حل مرحله‌ای فوراً کمتر صرفه‌جویی می‌کند، اما پایدارتر است." },
+                { "language": "ar", "text": "سأبرره بوصفه إدارة للمخاطر: الإسناد الخارجي الكامل يعظم التوفير قصير الأجل، لكنه يزيد التكاليف اللاحقة إذا تضررت الجودة والثقة. الحل المتدرج يوفر أقل فوراً، لكنه أكثر متانة." },
+                { "language": "tr", "text": "Bunu risk yönetimi olarak gerekçelendirirdim: tam dış kaynak kullanımı kısa vadeli tasarrufu en üst düzeye çıkarır, ancak kalite ve güven zarar görürse sonraki maliyetleri artırır. Kademeli çözüm hemen daha az tasarruf sağlar, ama daha dayanıklıdır." },
+                { "language": "ru", "text": "Я бы обосновал это как управление рисками: полный аутсорсинг максимизирует краткосрочную экономию, но увеличивает последующие расходы, если пострадают качество и доверие. Поэтапное решение экономит меньше сразу, но оно устойчивее." },
+                { "language": "ckb", "text": "ئەمە وەک بەڕێوەبردنی مەترسی ڕوون دەکەمەوە: دەرەوەسپاردنی تەواو پاشەکەوتی کورتخایەن بەرزترین دەکات، بەڵام ئەگەر کوالیتی و متمانە زیان ببینن، تێچووی دواتر زیاد دەکات. چارەسەری قۆناغبەقۆناغ دەستبەجێ کەمتر پاشەکەوت دەکات، بەڵام بەهێزترە." },
+                { "language": "kmr", "text": "Ez vê wekî rêvebirina xetereyê şîrove dikim: dervekirina temam teserûfa demkurt herî zêde dike, lê heke kalîte û bawerî zirar bibînin, xerçên paşê zêde dike. Çareseriya qonaxî di cih de kêmtir teserûf dike, lê bihêztir e." },
+                { "language": "pl", "text": "Uzasadniłbym to jako zarządzanie ryzykiem: pełny outsourcing maksymalizuje krótkoterminowe oszczędności, ale zwiększa koszty następcze, jeśli ucierpią jakość i zaufanie. Rozwiązanie etapowe oszczędza mniej od razu, ale jest odporniejsze." },
+                { "language": "ro", "text": "Aș justifica-o ca management al riscului: externalizarea completă maximizează economiile pe termen scurt, dar crește costurile ulterioare dacă suferă calitatea și încrederea. O soluție etapizată economisește mai puțin imediat, dar este mai robustă." },
+                { "language": "sq", "text": "Do ta arsyetoja si menaxhim rreziku: jashtëkontraktimi i plotë maksimizon kursimin afatshkurtër, por rrit kostot pasuese nëse dëmtohen cilësia dhe besimi. Një zgjidhje me faza kursen më pak menjëherë, por është më e qëndrueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort ist vorstandsfähig, weil sie weniger Einsparung nicht als Schwäche, sondern als Risikobegrenzung erklärt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response is suitable for leadership because it explains lower savings not as weakness, but as risk limitation." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ برای سطح مدیریت مناسب است، چون صرفه‌جویی کمتر را ضعف نمی‌داند، بلکه محدودسازی ریسک توضیح می‌دهد." },
+                { "language": "ar", "text": "جيد جداً: الإجابة مناسبة للإدارة لأنها تشرح التوفير الأقل لا كضعف، بل كحد من المخاطر." },
+                { "language": "tr", "text": "Çok iyi: cevap üst yönetim için uygundur, çünkü daha düşük tasarrufu zayıflık değil risk sınırlaması olarak açıklar." },
+                { "language": "ru", "text": "Очень хорошо: ответ подходит для руководства, потому что объясняет меньшую экономию не как слабость, а как ограничение риска." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بۆ ئاستی بەڕێوەبەرایەتی گونجاوە، چونکە پاشەکەوتی کەمتر وەک لاوازی نا، بەڵکو وەک سنووردارکردنی مەترسی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Pir baş: bersiv ji bo rêveberiya bilind guncaw e, ji ber ku teserûfa kêmtir ne wekî lawazî, lê wekî sînordarkirina xetereyê şîrove dike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź nadaje się dla zarządu, bo wyjaśnia mniejsze oszczędności nie jako słabość, lecz jako ograniczenie ryzyka." },
+                { "language": "ro", "text": "Foarte bine: răspunsul este potrivit pentru conducere, deoarece explică economiile mai mici nu ca slăbiciune, ci ca limitare a riscului." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja është e përshtatshme për drejtimin, sepse e shpjegon kursimin më të vogël jo si dobësi, por si kufizim rreziku." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man könnte sagen, dass ein bisschen weniger Einsparung menschlicher wirkt.",
+              "translations": [
+                { "language": "en", "text": "One could say that slightly lower savings look more humane." },
+                { "language": "fa", "text": "می‌توان گفت کمی صرفه‌جویی کمتر انسانی‌تر به نظر می‌رسد." },
+                { "language": "ar", "text": "يمكن القول إن توفيراً أقل قليلاً يبدو أكثر إنسانية." },
+                { "language": "tr", "text": "Biraz daha az tasarrufun daha insani göründüğü söylenebilir." },
+                { "language": "ru", "text": "Можно сказать, что немного меньшая экономия выглядит более человечной." },
+                { "language": "ckb", "text": "دەکرێت بگوترێت کە پاشەکەوتی کەمێک کەمتر مرۆڤانەتر دەردەکەوێت." },
+                { "language": "kmr", "text": "Dibe were gotin ku teserûfeke hinekî kêmtir mirovantir xuya dike." },
+                { "language": "pl", "text": "Można powiedzieć, że nieco mniejsze oszczędności wyglądają bardziej po ludzku." },
+                { "language": "ro", "text": "S-ar putea spune că economii puțin mai mici par mai umane." },
+                { "language": "sq", "text": "Mund të thuhet se pak më pak kursim duket më njerëzor." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu weich: Die Antwort klingt sympathisch, liefert aber keine tragfähige Begründung für eine Geschäftsentscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too soft: the answer sounds sympathetic, but it does not provide a robust justification for a business decision." },
+                { "language": "fa", "text": "بیش از حد نرم: پاسخ همدلانه به نظر می‌رسد، اما دلیل محکمی برای تصمیم شرکتی ارائه نمی‌دهد." },
+                { "language": "ar", "text": "لينة أكثر من اللازم: تبدو الإجابة متعاطفة، لكنها لا تقدم مبرراً متيناً لقرار شركة." },
+                { "language": "tr", "text": "Çok yumuşak: cevap sempatik duyulur, ama bir şirket kararı için sağlam gerekçe sunmaz." },
+                { "language": "ru", "text": "Слишком мягко: ответ звучит сочувственно, но не дает прочного обоснования для бизнес-решения." },
+                { "language": "ckb", "text": "زۆر نەرمە: وەڵامەکە هاوسۆزانە دەردەکەوێت، بەڵام پاساوێکی بەهێز بۆ بڕیارێکی کۆمپانیا نادات." },
+                { "language": "kmr", "text": "Pir nerm e: bersiv sempatîk xuya dike, lê ji bo biryareke pargîdanî hinceteke bihêz nade." },
+                { "language": "pl", "text": "Za miękko: odpowiedź brzmi sympatycznie, ale nie daje nośnego uzasadnienia dla decyzji biznesowej." },
+                { "language": "ro", "text": "Prea moale: răspunsul sună empatic, dar nu oferă o justificare solidă pentru o decizie de business." },
+                { "language": "sq", "text": "Shumë e butë: përgjigjja tingëllon simpatike, por nuk jep një arsyetim të fortë për një vendim biznesi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Meine Empfehlung wäre daher eine begrenzte, messbare Auslagerung: Standardfälle gehen in einen Pilotbetrieb, komplexe Fälle bleiben intern, betroffene Teams erhalten frühzeitig Klarheit, und nach drei Monaten entscheidet die Geschäftsführung anhand von Qualitäts- und Vertrauenswerten über die nächste Stufe.",
+              "translations": [
+                { "language": "en", "text": "My recommendation would therefore be a limited, measurable outsourcing: standard cases move into a pilot phase, complex cases remain internal, affected teams receive clarity early, and after three months management decides on the next stage based on quality and trust metrics." },
+                { "language": "fa", "text": "بنابراین توصیه من برون‌سپاری محدود و قابل سنجش است: پرونده‌های استاندارد وارد مرحله آزمایشی شوند، پرونده‌های پیچیده داخلی بمانند، تیم‌های تحت تأثیر زودهنگام شفافیت دریافت کنند، و پس از سه ماه مدیریت بر اساس شاخص‌های کیفیت و اعتماد درباره مرحله بعد تصمیم بگیرد." },
+                { "language": "ar", "text": "لذلك ستكون توصيتي إسناداً خارجياً محدوداً وقابلاً للقياس: تدخل الحالات القياسية مرحلة تجريبية، وتبقى الحالات المعقدة داخلية، وتحصل الفرق المتأثرة على وضوح مبكر، وبعد ثلاثة أشهر تقرر الإدارة المرحلة التالية بناء على مؤشرات الجودة والثقة." },
+                { "language": "tr", "text": "Bu nedenle önerim sınırlı ve ölçülebilir bir dış kaynak kullanımı olurdu: standart vakalar pilot işletmeye geçer, karmaşık vakalar içeride kalır, etkilenen ekipler erken netlik kazanır ve üç ay sonra yönetim kalite ve güven göstergelerine göre bir sonraki aşamaya karar verir." },
+                { "language": "ru", "text": "Моя рекомендация поэтому была бы ограниченным, измеримым аутсорсингом: стандартные случаи переходят в пилотный режим, сложные остаются внутри, затронутые команды заранее получают ясность, а через три месяца руководство принимает решение о следующем этапе на основе показателей качества и доверия." },
+                { "language": "ckb", "text": "بۆیە پێشنیاری من دەرەوەسپاردنێکی سنووردار و پێوانەکراوە: کەیسە ستانداردەکان دەچنە قۆناغی تاقیکاری، کەیسە ئاڵۆزەکان لە ناوخۆ دەمێنن، تیمە کاریگەربووەکان زوو ڕوونی وەردەگرن، و دوای سێ مانگ بەڕێوەبەرایەتی بە پێی پێوەرەکانی کوالیتی و متمانە بڕیار دەدات لەسەر قۆناغی داهاتوو." },
+                { "language": "kmr", "text": "Ji ber vê yekê pêşniyara min dervekirineke sînorkirî û pîvbar e: dosyayên standard diçin qonaxa ceribandinê, dosyayên aloz li hundir dimînin, tîmên bandorkirî zû zelaliyê werdigirin û piştî sê mehan rêveberî li gorî pîvanên kalîte û baweriyê li ser qonaxa din biryar dide." },
+                { "language": "pl", "text": "Moja rekomendacja to więc ograniczony, mierzalny outsourcing: sprawy standardowe przechodzą do pilotażu, sprawy złożone pozostają wewnątrz, dotknięte zespoły otrzymują wcześnie jasność, a po trzech miesiącach zarząd decyduje o kolejnym etapie na podstawie wskaźników jakości i zaufania." },
+                { "language": "ro", "text": "Recomandarea mea ar fi, așadar, o externalizare limitată și măsurabilă: cazurile standard intră într-un pilot, cazurile complexe rămân interne, echipele afectate primesc claritate devreme, iar după trei luni conducerea decide etapa următoare pe baza indicatorilor de calitate și încredere." },
+                { "language": "sq", "text": "Prandaj rekomandimi im do të ishte një jashtëkontraktim i kufizuar dhe i matshëm: rastet standarde kalojnë në pilotim, rastet e ndërlikuara mbeten të brendshme, ekipet e prekura marrin qartësi herët dhe pas tre muajsh drejtoria vendos fazën tjetër mbi bazën e treguesve të cilësisë dhe besimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Empfehlung ist klar, begrenzt, messbar und verbindet finanzielle, ethische und operative Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the recommendation is clear, limited, measurable, and connects financial, ethical, and operational criteria." },
+                { "language": "fa", "text": "خیلی خوب: توصیه روشن، محدود و قابل سنجش است و معیارهای مالی، اخلاقی و عملیاتی را به هم وصل می‌کند." },
+                { "language": "ar", "text": "جيد جداً: التوصية واضحة ومحدودة وقابلة للقياس وتربط المعايير المالية والأخلاقية والتشغيلية." },
+                { "language": "tr", "text": "Çok iyi: öneri net, sınırlı ve ölçülebilir; finansal, etik ve operasyonel ölçütleri birbirine bağlar." },
+                { "language": "ru", "text": "Очень хорошо: рекомендация ясная, ограниченная, измеримая и соединяет финансовые, этические и операционные критерии." },
+                { "language": "ckb", "text": "زۆر باش: پێشنیارەکە ڕوون، سنووردار و پێوانەکراوە و پێوەرە دارایی، ئەخلاقی و کردارییەکان پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Pir baş: pêşniyar zelal, sînorkirî û pîvbar e û pîvanên darayî, etîkî û operasyonî bi hev ve girê dide." },
+                { "language": "pl", "text": "Bardzo dobrze: rekomendacja jest jasna, ograniczona, mierzalna i łączy kryteria finansowe, etyczne oraz operacyjne." },
+                { "language": "ro", "text": "Foarte bine: recomandarea este clară, limitată, măsurabilă și conectează criterii financiare, etice și operaționale." },
+                { "language": "sq", "text": "Shumë mirë: rekomandimi është i qartë, i kufizuar, i matshëm dhe lidh kriteret financiare, etike dhe operative." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich empfehle, das Thema noch einmal grundsätzlich zu diskutieren, bevor wir uns festlegen.",
+              "translations": [
+                { "language": "en", "text": "I recommend discussing the topic fundamentally once more before we commit." },
+                { "language": "fa", "text": "توصیه می‌کنم پیش از قطعی شدن، موضوع را یک بار دیگر به‌صورت اصولی بحث کنیم." },
+                { "language": "ar", "text": "أوصي بمناقشة الموضوع مرة أخرى من حيث المبدأ قبل أن نلتزم." },
+                { "language": "tr", "text": "Kesinleşmeden önce konuyu bir kez daha ilkesel olarak tartışmayı öneririm." },
+                { "language": "ru", "text": "Я рекомендую еще раз принципиально обсудить тему, прежде чем мы зафиксируемся." },
+                { "language": "ckb", "text": "پێشنیار دەکەم پێش جێگیرکردن، بابەتەکە جارێکی دیکە بە شێوەی بنەڕەتی باس بکەین." },
+                { "language": "kmr", "text": "Ez pêşniyar dikim berî ku em xwe girê bidin, mijarê careke din bi awayekî bingehîn nîqaş bikin." },
+                { "language": "pl", "text": "Rekomenduję jeszcze raz zasadniczo omówić temat, zanim się zobowiążemy." },
+                { "language": "ro", "text": "Recomand să discutăm încă o dată tema în principiu înainte să ne angajăm." },
+                { "language": "sq", "text": "Rekomandoj ta diskutojmë temën edhe një herë në parim para se të angazhohemi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unentschlossen: Die Antwort ist vorsichtig, aber sie liefert keine Empfehlung und keine prüfbaren Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too undecided: the answer is cautious, but it provides no recommendation and no testable conditions." },
+                { "language": "fa", "text": "بیش از حد نامصمم: پاسخ محتاط است، اما نه توصیه می‌دهد و نه شرط قابل سنجش." },
+                { "language": "ar", "text": "مترددة أكثر من اللازم: الإجابة حذرة، لكنها لا تقدم توصية ولا شروطاً قابلة للتحقق." },
+                { "language": "tr", "text": "Çok kararsız: cevap temkinli, ama ne öneri ne de kontrol edilebilir koşullar sunar." },
+                { "language": "ru", "text": "Слишком нерешительно: ответ осторожен, но не дает ни рекомендации, ни проверяемых условий." },
+                { "language": "ckb", "text": "زۆر دوودڵە: وەڵامەکە وریایە، بەڵام نە پێشنیار دەدات و نە مەرجی تاقیکراوە." },
+                { "language": "kmr", "text": "Pir dudil e: bersiv hişyar e, lê ne pêşniyar dide ne jî şertên ceribandinê." },
+                { "language": "pl", "text": "Za niezdecydowanie: odpowiedź jest ostrożna, ale nie daje rekomendacji ani sprawdzalnych warunków." },
+                { "language": "ro", "text": "Prea indecis: răspunsul este prudent, dar nu oferă nici recomandare, nici condiții verificabile." },
+                { "language": "sq", "text": "Shumë e pavendosur: përgjigjja është e kujdesshme, por nuk jep as rekomandim, as kushte të verifikueshme." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "framing",
+          "text": "Sie erweitern den Entscheidungsrahmen, ohne die finanzielle Lage zu ignorieren. Das verhindert eine Scheindebatte.",
+          "translations": [
+            { "language": "en", "text": "You expand the decision frame without ignoring the financial situation. This prevents a false debate." },
+            { "language": "fa", "text": "چارچوب تصمیم را گسترش می‌دهید، بدون اینکه وضعیت مالی را نادیده بگیرید. این از بحث کاذب جلوگیری می‌کند." },
+            { "language": "ar", "text": "توسع إطار القرار من دون تجاهل الوضع المالي. هذا يمنع نقاشاً زائفاً." },
+            { "language": "tr", "text": "Finansal durumu görmezden gelmeden karar çerçevesini genişletirsiniz. Bu sahte bir tartışmayı önler." },
+            { "language": "ru", "text": "Вы расширяете рамку решения, не игнорируя финансовую ситуацию. Это предотвращает ложную дискуссию." },
+            { "language": "ckb", "text": "چوارچێوەی بڕیار فراوان دەکەیت بێ ئەوەی دۆخی دارایی پشتگوێ بخەیت. ئەمە ڕێگری لە گفتوگۆی درۆینە دەکات." },
+            { "language": "kmr", "text": "Hûn çarçoveya biryarê fireh dikin bêyî ku rewşa darayî paşguh bikin. Ev rê li ber nîqaşeke derewîn digire." },
+            { "language": "pl", "text": "Rozszerza Pan/Pani ramę decyzji, nie ignorując sytuacji finansowej. To zapobiega pozornej debacie." },
+            { "language": "ro", "text": "Lărgiți cadrul deciziei fără a ignora situația financiară. Asta previne o dezbatere falsă." },
+            { "language": "sq", "text": "E zgjeroni kornizën e vendimit pa injoruar gjendjen financiare. Kjo parandalon një debat të rremë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "precision",
+          "text": "C2-stark: Sie machen aus einem moralischen Gegensatz eine differenzierte Architektur der Entscheidung.",
+          "translations": [
+            { "language": "en", "text": "Strong C2 move: you turn a moral opposition into a differentiated decision architecture." },
+            { "language": "fa", "text": "حرکت قوی C2: تضاد اخلاقی را به معماری تفکیک‌شده تصمیم تبدیل می‌کنید." },
+            { "language": "ar", "text": "خطوة قوية في C2: تحول التعارض الأخلاقي إلى بنية قرار متمايزة." },
+            { "language": "tr", "text": "Güçlü bir C2 hamlesi: ahlaki karşıtlığı ayrıntılı bir karar mimarisine dönüştürürsünüz." },
+            { "language": "ru", "text": "Сильный ход C2: вы превращаете моральное противопоставление в дифференцированную архитектуру решения." },
+            { "language": "ckb", "text": "هەنگاوی بەهێزی C2: دژایەتیی ئەخلاقی دەگۆڕیت بۆ پێکهاتەیەکی جیاکراوەی بڕیار." },
+            { "language": "kmr", "text": "Gaveke bihêz a C2: hûn dijberiya etîkî dikin avahiya biryarê ya cuda." },
+            { "language": "pl", "text": "Mocny ruch C2: zmienia Pan/Pani moralne przeciwstawienie w zróżnicowaną architekturę decyzji." },
+            { "language": "ro", "text": "Un pas puternic de C2: transformați opoziția morală într-o arhitectură diferențiată a deciziei." },
+            { "language": "sq", "text": "Hap i fortë C2: e ktheni kundërshtinë morale në një arkitekturë të diferencuar vendimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "register",
+          "text": "Die Formulierung vermeidet moralische Überlegenheit und macht Ethik anschlussfähig für ein Leitungsgremium.",
+          "translations": [
+            { "language": "en", "text": "The wording avoids moral superiority and makes ethics usable for a leadership body." },
+            { "language": "fa", "text": "فرمول‌بندی از برتری‌نمایی اخلاقی دوری می‌کند و اخلاق را برای یک هیئت مدیریتی قابل استفاده می‌سازد." },
+            { "language": "ar", "text": "تتجنب الصياغة التفوق الأخلاقي وتجعل الأخلاق قابلة للاستخدام في هيئة قيادية." },
+            { "language": "tr", "text": "Formülasyon ahlaki üstünlükten kaçınır ve etiği bir yönetim kurulu için kullanılabilir kılar." },
+            { "language": "ru", "text": "Формулировка избегает морального превосходства и делает этику применимой для руководящего органа." },
+            { "language": "ckb", "text": "دەربڕینەکە لە بەرزخستنەوەی ئەخلاقی دوور دەکەوێتەوە و ئەخلاق دەکاتە شتێکی بەکارهێنراو بۆ دەستەی بەڕێوەبەرایەتی." },
+            { "language": "kmr", "text": "Gotin ji serbilindiya exlaqî dûr dikeve û etîkê ji bo desteya rêveberiyê bikêr dike." },
+            { "language": "pl", "text": "Sformułowanie unika moralnej wyższości i czyni etykę użyteczną dla gremium kierowniczego." },
+            { "language": "ro", "text": "Formularea evită superioritatea morală și face etica utilizabilă pentru un organism de conducere." },
+            { "language": "sq", "text": "Formulimi shmang epërsinë morale dhe e bën etikën të përdorshme për një organ drejtues." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Die Begründung über Risikosteuerung ist stärker als ein Appell an Menschlichkeit, weil sie entscheidungsrelevant bleibt.",
+          "translations": [
+            { "language": "en", "text": "Justifying it through risk management is stronger than an appeal to humanity because it remains relevant to the decision." },
+            { "language": "fa", "text": "توضیح از مسیر مدیریت ریسک قوی‌تر از توسل به انسانیت است، چون همچنان به تصمیم مربوط می‌ماند." },
+            { "language": "ar", "text": "تبرير ذلك عبر إدارة المخاطر أقوى من نداء إلى الإنسانية لأنه يبقى مرتبطاً بالقرار." },
+            { "language": "tr", "text": "Bunu risk yönetimi üzerinden gerekçelendirmek, insaniliğe çağrıdan daha güçlüdür; çünkü karar açısından ilgili kalır." },
+            { "language": "ru", "text": "Обоснование через управление рисками сильнее, чем призыв к человечности, потому что остается релевантным для решения." },
+            { "language": "ckb", "text": "پاساودان بە ڕێگەی بەڕێوەبردنی مەترسی لە بانگەواز بۆ مرۆڤایەتی بەهێزترە، چونکە هێشتا پەیوەندیدار بە بڕیارەکە دەمێنێت." },
+            { "language": "kmr", "text": "Hincetkirin bi rêya rêvebirina xetereyê ji bangek li mirovahiyê bihêztir e, ji ber ku ji bo biryarê têkildar dimîne." },
+            { "language": "pl", "text": "Uzasadnienie przez zarządzanie ryzykiem jest mocniejsze niż apel do człowieczeństwa, bo pozostaje istotne decyzyjnie." },
+            { "language": "ro", "text": "Justificarea prin managementul riscului este mai puternică decât un apel la umanitate, deoarece rămâne relevantă pentru decizie." },
+            { "language": "sq", "text": "Arsyetimi përmes menaxhimit të rrezikut është më i fortë se një thirrje për njerëzi, sepse mbetet i rëndësishëm për vendimin." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Die Empfehlung ist verantwortbar, weil sie weder Kosten noch Werte isoliert, sondern beides messbar verbindet.",
+          "translations": [
+            { "language": "en", "text": "The recommendation is responsible because it isolates neither costs nor values, but connects both measurably." },
+            { "language": "fa", "text": "توصیه مسئولانه است، چون نه هزینه‌ها و نه ارزش‌ها را جدا نمی‌کند، بلکه هر دو را به‌شکل قابل سنجش پیوند می‌دهد." },
+            { "language": "ar", "text": "التوصية مسؤولة لأنها لا تعزل التكاليف ولا القيم، بل تربط الاثنين بطريقة قابلة للقياس." },
+            { "language": "tr", "text": "Öneri sorumludur, çünkü ne maliyetleri ne de değerleri izole eder; ikisini ölçülebilir biçimde bağlar." },
+            { "language": "ru", "text": "Рекомендация ответственна, потому что она не изолирует ни расходы, ни ценности, а измеримо связывает оба элемента." },
+            { "language": "ckb", "text": "پێشنیارەکە بەرپرسانەیە، چونکە نە تێچوو و نە بەهاکان جیا ناکاتەوە، بەڵکو هەردووکیان بە شێوەی پێوانەکراو دەبەستێتەوە." },
+            { "language": "kmr", "text": "Pêşniyar berpirsiyar e, ji ber ku ne xerç ne jî nirxan cuda nake, lê herduyan bi awayekî pîvbar girê dide." },
+            { "language": "pl", "text": "Rekomendacja jest odpowiedzialna, bo nie izoluje ani kosztów, ani wartości, lecz łączy oba elementy w sposób mierzalny." },
+            { "language": "ro", "text": "Recomandarea este responsabilă deoarece nu izolează nici costurile, nici valorile, ci le conectează măsurabil." },
+            { "language": "sq", "text": "Rekomandimi është i përgjegjshëm, sepse nuk izolon as kostot, as vlerat, por i lidh të dyja në mënyrë të matshme." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "ethical-business-decision-boardroom",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal workplace discussion where financial, service-quality, and employee-impact criteria are weighed together.",
+          "altText": "Ein ruhiger Besprechungsraum mit drei Erwachsenen am Tisch, abstrakten Diagrammen zu Kosten, Qualität und Vertrauen auf einem neutralen Whiteboard.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm meeting room with three adults at a table and abstract charts about cost, quality, and trust on a neutral whiteboard." },
+            { "language": "fa", "text": "یک اتاق جلسه آرام با سه بزرگسال دور میز و نمودارهای انتزاعی درباره هزینه، کیفیت و اعتماد روی یک وایت‌برد خنثی." },
+            { "language": "ar", "text": "غرفة اجتماع هادئة فيها ثلاثة بالغين حول طاولة ورسوم بيانية مجردة عن التكلفة والجودة والثقة على لوح أبيض محايد." },
+            { "language": "tr", "text": "Masada üç yetişkinin bulunduğu sakin bir toplantı odası ve nötr beyaz tahtada maliyet, kalite ve güven hakkında soyut grafikler." },
+            { "language": "ru", "text": "Спокойная переговорная с тремя взрослыми за столом и абстрактными диаграммами о расходах, качестве и доверии на нейтральной доске." },
+            { "language": "ckb", "text": "ژووری کۆبوونەوەیەکی ئارام لەگەڵ سێ گەورەسال لەسەر مێز و هێڵکارییەکی ئەبستراکت دەربارەی تێچوو، کوالیتی و متمانە لەسەر تەختەیەکی سپیی بێلایەن." },
+            { "language": "kmr", "text": "Jûreke civînê ya aram bi sê mezinan li ser maseyê û grafîkên abstrakt derbarê xerç, kalîte û baweriyê li ser tabloyeke spî ya bêalî." },
+            { "language": "pl", "text": "Spokojna sala spotkań z trzema dorosłymi przy stole oraz abstrakcyjnymi wykresami o kosztach, jakości i zaufaniu na neutralnej tablicy." },
+            { "language": "ro", "text": "O sală de ședințe calmă cu trei adulți la masă și diagrame abstracte despre cost, calitate și încredere pe o tablă albă neutră." },
+            { "language": "sq", "text": "Një sallë e qetë takimi me tre të rritur rreth tryezës dhe grafika abstrakte për koston, cilësinë dhe besimin në një tabelë të bardhë neutrale." }
+          ],
+          "imagePrompt": "Clean educational illustration, formal German workplace meeting room, three diverse adults discussing a business decision, neutral whiteboard with abstract icons for cost, quality, employees, and customer trust, no readable text, no logos, no private data, accessible composition, calm professional tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-32-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 32 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 32",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-schriftliche-stellungnahme-muendlich-erlaeutern",
+      "linkedDialogueSlug": null,
+      "title": "Eine schriftliche Stellungnahme mündlich erläutern",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a written statement orally" },
+        { "language": "fa", "text": "توضیح شفاهی یک توضیح‌نامه کتبی" },
+        { "language": "ar", "text": "شرح إفادة مكتوبة شفهياً" },
+        { "language": "tr", "text": "Yazılı bir açıklamayı sözlü olarak açıklamak" },
+        { "language": "ru", "text": "Устное пояснение письменного заявления" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی زارەکیی ڕاگەیاندنێکی نووسراو" },
+        { "language": "kmr", "text": "Şirovekirina devkî ya daxuyaniyeke nivîskî" },
+        { "language": "pl", "text": "Ustne objaśnienie pisemnego stanowiska" },
+        { "language": "ro", "text": "Explicarea orală a unei declarații scrise" },
+        { "language": "sq", "text": "Shpjegimi gojor i një deklarate me shkrim" }
+      ],
+      "description": "Sie haben einer Behörde eine schriftliche Stellungnahme zu widersprüchlich wirkenden Unterlagen geschickt. Im Termin sollen Sie die Kernaussage mündlich erläutern, Rückfragen beantworten und dabei nicht den ganzen Text vorlesen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You have sent a public office a written statement about documents that appear contradictory. At the appointment you need to explain the core message orally, answer clarification questions, and avoid reading the entire text aloud." },
+        { "language": "fa", "text": "شما برای یک اداره درباره مدارکی که ظاهراً با هم تناقض دارند توضیح‌نامه کتبی فرستاده‌اید. در وقت حضوری باید پیام اصلی را شفاهی توضیح دهید، به پرسش‌های روشن‌سازی پاسخ دهید و کل متن را از روی نوشته نخوانید." },
+        { "language": "ar", "text": "أرسلت إلى جهة إدارية إفادة مكتوبة حول وثائق تبدو متناقضة. في الموعد يجب أن تشرح الرسالة الأساسية شفهياً، وتجيب عن أسئلة التوضيح، وألا تقرأ النص كله بصوت عالٍ." },
+        { "language": "tr", "text": "Bir kuruma çelişkili görünen belgeler hakkında yazılı bir açıklama gönderdiniz. Randevuda ana mesajı sözlü olarak açıklamanız, açıklama sorularını yanıtlamanız ve tüm metni sesli okumamanız gerekir." },
+        { "language": "ru", "text": "Вы отправили ведомству письменное пояснение по документам, которые выглядят противоречиво. На приёме нужно устно объяснить основную мысль, ответить на уточняющие вопросы и не читать весь текст вслух." },
+        { "language": "ckb", "text": "تۆ بۆ فەرمانگەیەک ڕاگەیاندنێکی نووسراوت ناردووە دەربارەی بەڵگەکان کە وەک دژبەیەک دەردەکەون. لە کاتەکەدا پێویستە ناوەڕۆکی سەرەکی بە زارەکی ڕوون بکەیتەوە، وەڵامی پرسیارەکانی ڕوونکردنەوە بدەیتەوە و هەموو دەقەکە بە دەنگی بەرز نەخوێنیتەوە." },
+        { "language": "kmr", "text": "We ji saziyeke îdarî re daxuyaniyeke nivîskî şandiye li ser belgeyên ku wek dijber xuya dikin. Di randevûyê de divê hûn peyama bingehîn bi devkî şirove bikin, bersiva pirsên zelalkirinê bidin û hemû nivîsê bi deng nexwînin." },
+        { "language": "pl", "text": "Wysłał Pan do urzędu pisemne stanowisko dotyczące dokumentów, które wyglądają na sprzeczne. Podczas terminu ma Pan ustnie wyjaśnić główną treść, odpowiedzieć na pytania doprecyzowujące i nie czytać całego tekstu na głos." },
+        { "language": "ro", "text": "Ați trimis unei autorități o declarație scrisă despre documente care par contradictorii. La programare trebuie să explicați oral mesajul central, să răspundeți la întrebări de clarificare și să nu citiți tot textul cu voce tare." },
+        { "language": "sq", "text": "I keni dërguar një institucioni një deklaratë me shkrim për dokumente që duken kontradiktore. Në takim duhet të shpjegoni gojarisht mesazhin kryesor, të përgjigjeni pyetjeve sqaruese dhe të mos lexoni të gjithë tekstin me zë." }
+      ],
+      "learnerGoal": "Eine schriftliche Stellungnahme mündlich verdichten: Anlass, Kernaussage, Belege und offene Bitte kurz darstellen und Rückfragen präzise beantworten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Condense a written statement orally: briefly present the reason, core message, evidence, and open request, and answer follow-up questions precisely." },
+        { "language": "fa", "text": "یک توضیح‌نامه کتبی را شفاهی خلاصه کنید: علت، پیام اصلی، مدارک و درخواست باز را کوتاه بیان کنید و به پرسش‌های بعدی دقیق پاسخ دهید." },
+        { "language": "ar", "text": "اختصر إفادة مكتوبة شفهياً: اعرض السبب والرسالة الأساسية والأدلة والطلب المفتوح بإيجاز، وأجب بدقة عن الأسئلة اللاحقة." },
+        { "language": "tr", "text": "Yazılı bir açıklamayı sözlü olarak yoğunlaştırın: nedeni, ana mesajı, kanıtları ve açık talebi kısaca sunun ve takip sorularını kesin yanıtlayın." },
+        { "language": "ru", "text": "Сжато устно представить письменное заявление: кратко изложить повод, основную мысль, доказательства и открытый запрос, а также точно ответить на уточняющие вопросы." },
+        { "language": "ckb", "text": "ڕاگەیاندنێکی نووسراو بە زارەکی پوختە بکە: هۆکار، ناوەڕۆکی سەرەکی، بەڵگەکان و داواکاریی کراوە بە کورتی پیشان بدە و وەڵامی پرسیارەکانی دواتر بە وردی بدەوە." },
+        { "language": "kmr", "text": "Daxuyaniyeke nivîskî bi devkî kurt bikin: sedem, peyama bingehîn, belge û daxwaza vekirî bi kurtî pêşkêş bikin û bersiva pirsên paşîn bi rast bidin." },
+        { "language": "pl", "text": "Ustnie streścić pisemne stanowisko: krótko przedstawić powód, główną treść, dowody i otwartą prośbę oraz precyzyjnie odpowiedzieć na pytania." },
+        { "language": "ro", "text": "Condensați oral o declarație scrisă: prezentați pe scurt motivul, mesajul central, dovezile și solicitarea deschisă și răspundeți precis la întrebări." },
+        { "language": "sq", "text": "Përmblidhni gojarisht një deklaratë me shkrim: paraqitni shkurt arsyen, mesazhin kryesor, provat dhe kërkesën e hapur dhe përgjigjuni saktë pyetjeve pasuese." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 17,
+      "isPublished": true,
+      "sortOrder": 32,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller/in",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌کننده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikues" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeitung",
+          "translations": [
+            { "language": "en", "text": "Caseworker" },
+            { "language": "fa", "text": "کارمند پرونده" },
+            { "language": "ar", "text": "الموظف المسؤول" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karmendê dozê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționar responsabil" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Wir haben Ihre schriftliche Stellungnahme erhalten. Können Sie bitte mündlich zusammenfassen, was der Kern Ihrer Erklärung ist?",
+          "translations": [
+            { "language": "en", "text": "We have received your written statement. Could you please summarize orally what the core of your explanation is?" },
+            { "language": "fa", "text": "ما توضیح‌نامه کتبی شما را دریافت کرده‌ایم. لطفاً می‌توانید شفاهی خلاصه کنید اصل توضیح شما چیست؟" },
+            { "language": "ar", "text": "لقد استلمنا إفادتك المكتوبة. هل يمكنك أن تلخص شفهياً جوهر شرحك؟" },
+            { "language": "tr", "text": "Yazılı açıklamanızı aldık. Açıklamanızın özünü sözlü olarak özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Мы получили ваше письменное заявление. Можете устно кратко изложить, в чём суть вашего объяснения?" },
+            { "language": "ckb", "text": "ئێمە ڕاگەیاندنی نووسراوی تۆمان وەرگرتووە. دەتوانیت بە زارەکی پوختە بکەیت کە ناوەڕۆکی سەرەکی ڕوونکردنەوەکەت چییە؟" },
+            { "language": "kmr", "text": "Me daxuyaniya we ya nivîskî wergirtiye. Hûn dikarin bi devkî kurt bikin ka bingehê ravekirina we çi ye?" },
+            { "language": "pl", "text": "Otrzymaliśmy Pana pisemne stanowisko. Czy może Pan ustnie podsumować, jaki jest sedno Pana wyjaśnienia?" },
+            { "language": "ro", "text": "Am primit declarația dumneavoastră scrisă. Puteți rezuma oral care este esența explicației dumneavoastră?" },
+            { "language": "sq", "text": "E kemi marrë deklaratën tuaj me shkrim. A mund të përmblidhni gojarisht cili është thelbi i shpjegimit tuaj?" }
+          ],
+          "function": "summary-request",
+          "toneNote": "formal, prüfend",
+          "expectedLearnerAction": "Kern der Stellungnahme mündlich verdichten"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gern. Der Kern ist, dass die Unterlagen nicht inhaltlich widersprüchlich sind, sondern zwei unterschiedliche Zeitpunkte abbilden: Die Meldebescheinigung zeigt den Stand vor dem Umzug, der Mietvertrag und die Übergabebestätigung zeigen den neuen Wohnsitz ab dem 1. Juni.",
+          "translations": [
+            { "language": "en", "text": "Of course. The core point is that the documents are not substantively contradictory, but show two different points in time: the registration certificate shows the situation before the move, while the rental contract and handover confirmation show the new residence from June 1." },
+            { "language": "fa", "text": "بله. اصل موضوع این است که مدارک از نظر محتوا متناقض نیستند، بلکه دو زمان متفاوت را نشان می‌دهند: گواهی ثبت محل سکونت وضعیت قبل از نقل مکان را نشان می‌دهد، و قرارداد اجاره و تأیید تحویل، محل سکونت جدید را از اول ژوئن نشان می‌دهند." },
+            { "language": "ar", "text": "بكل سرور. الجوهر هو أن الوثائق ليست متناقضة من حيث المحتوى، بل تعرض نقطتين زمنيتين مختلفتين: شهادة التسجيل تُظهر الوضع قبل الانتقال، بينما عقد الإيجار وتأكيد التسليم يُظهران السكن الجديد اعتباراً من 1 يونيو." },
+            { "language": "tr", "text": "Memnuniyetle. Ana nokta şu: Belgeler içerik olarak çelişkili değil, iki farklı zamanı gösteriyor. İkamet kayıt belgesi taşınmadan önceki durumu gösteriyor; kira sözleşmesi ve teslim tutanağı ise 1 Haziran'dan itibaren yeni adresi gösteriyor." },
+            { "language": "ru", "text": "Конечно. Суть в том, что документы не противоречат друг другу по содержанию, а отражают два разных момента времени: справка о регистрации показывает состояние до переезда, а договор аренды и подтверждение передачи показывают новое место жительства с 1 июня." },
+            { "language": "ckb", "text": "بە خۆشییەوە. ناوەڕۆکی سەرەکی ئەوەیە کە بەڵگەکان لە ناوەڕۆکدا دژبەیەک نین، بەڵکو دوو کاتی جیاواز نیشان دەدەن: گواهی تۆمارکردنی نیشتەجێبوون دۆخی پێش گواستنەوە نیشان دەدات، گرێبەستی کرێ و پشتڕاستکردنەوەی وەرگرتن نیشتەجێبوونی نوێ لە ١ی حوزەیرانەوە نیشان دەدەن." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Xala bingehîn ev e ku belge ji aliyê naverokê ve ne dijber in, lê du demên cuda nîşan didin: belgeya tomarbûna niştecîhbûnê rewşa berî veguhastinê nîşan dide, peymana kirê û piştrastkirina radestkirinê jî niştecîhbûna nû ji 1ê Hezîranê ve nîşan didin." },
+            { "language": "pl", "text": "Oczywiście. Sedno jest takie, że dokumenty nie są merytorycznie sprzeczne, lecz pokazują dwa różne momenty: zaświadczenie o meldunku pokazuje stan przed przeprowadzką, a umowa najmu i potwierdzenie przekazania pokazują nowy adres od 1 czerwca." },
+            { "language": "ro", "text": "Desigur. Esența este că documentele nu sunt contradictorii ca fond, ci reflectă două momente diferite: certificatul de domiciliu arată situația dinaintea mutării, iar contractul de închiriere și confirmarea predării arată noua locuință de la 1 iunie." },
+            { "language": "sq", "text": "Me kënaqësi. Thelbi është se dokumentet nuk janë kontradiktore në përmbajtje, por paraqesin dy momente të ndryshme: vërtetimi i vendbanimit tregon gjendjen para shpërnguljes, ndërsa kontrata e qirasë dhe konfirmimi i dorëzimit tregojnë banesën e re nga 1 qershori." }
+          ],
+          "function": "core-summary",
+          "toneNote": "präzise, zusammenfassend",
+          "expectedLearnerAction": "Kernaussage ohne Vorlesen darstellen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Warum steht dann in der älteren Bescheinigung noch die alte Adresse?",
+          "translations": [
+            { "language": "en", "text": "Why, then, does the older certificate still show the old address?" },
+            { "language": "fa", "text": "پس چرا در گواهی قدیمی‌تر هنوز آدرس قبلی آمده است؟" },
+            { "language": "ar", "text": "لماذا إذن ما زال العنوان القديم موجوداً في الشهادة الأقدم؟" },
+            { "language": "tr", "text": "O zaman eski belgede neden hâlâ eski adres yazıyor?" },
+            { "language": "ru", "text": "Почему тогда в более старой справке всё ещё указан старый адрес?" },
+            { "language": "ckb", "text": "ئەوکات بۆچی لە گواهی کۆنترەکەدا هێشتا ناونیشانی کۆن هاتووە؟" },
+            { "language": "kmr", "text": "Wê demê çima di belgeya kevntir de hîn navnîşana kevn heye?" },
+            { "language": "pl", "text": "Dlaczego więc w starszym zaświadczeniu nadal widnieje stary adres?" },
+            { "language": "ro", "text": "De ce apare atunci încă vechea adresă în certificatul mai vechi?" },
+            { "language": "sq", "text": "Pse atëherë në vërtetimin më të vjetër figuron ende adresa e vjetër?" }
+          ],
+          "function": "clarification-question",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Zeitliche Abfolge erklären"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die Bescheinigung wurde am 28. Mai ausgestellt, also vor der Schlüsselübergabe. Der Mietvertrag war zwar schon unterschrieben, aber die tatsächliche Wohnungsübergabe und die Ummeldung konnten erst am 1. Juni erfolgen. Deshalb habe ich in der Stellungnahme die Daten chronologisch aufgeführt.",
+          "translations": [
+            { "language": "en", "text": "The certificate was issued on May 28, before the key handover. The rental contract had already been signed, but the actual apartment handover and re-registration could only take place on June 1. That is why I listed the dates chronologically in the statement." },
+            { "language": "fa", "text": "گواهی در ۲۸ مه صادر شده، یعنی قبل از تحویل کلید. قرارداد اجاره قبلاً امضا شده بود، اما تحویل واقعی آپارتمان و ثبت آدرس جدید فقط در ۱ ژوئن ممکن شد. به همین دلیل در توضیح‌نامه تاریخ‌ها را به ترتیب زمانی نوشته‌ام." },
+            { "language": "ar", "text": "صدرت الشهادة في 28 مايو، أي قبل تسليم المفاتيح. كان عقد الإيجار موقّعاً بالفعل، لكن التسليم الفعلي للشقة وتغيير التسجيل لم يكونا ممكنين إلا في 1 يونيو. لذلك أدرجت التواريخ في الإفادة بترتيب زمني." },
+            { "language": "tr", "text": "Belge 28 Mayıs'ta, yani anahtar tesliminden önce düzenlendi. Kira sözleşmesi imzalanmıştı, ancak gerçek daire teslimi ve adres değişikliği ancak 1 Haziran'da yapılabildi. Bu nedenle açıklamada tarihleri kronolojik olarak yazdım." },
+            { "language": "ru", "text": "Справка была выдана 28 мая, то есть до передачи ключей. Договор аренды уже был подписан, но фактическая передача квартиры и перерегистрация могли состояться только 1 июня. Поэтому в заявлении я перечислил даты в хронологическом порядке." },
+            { "language": "ckb", "text": "گواهیەکە لە ٢٨ی ئایار دەردراوە، واتە پێش وەرگرتنی کلیل. گرێبەستی کرێ پێشتر واژۆ کرابوو، بەڵام وەرگرتنی ڕاستەقینەی خانوو و گۆڕینی ناونیشان تەنها لە ١ی حوزەیراندا دەکرا. بۆیە لە ڕاگەیاندنەکەدا بەروارەکانم بە ڕیزبەندی کاتی نووسیوە." },
+            { "language": "kmr", "text": "Belge di 28ê Gulanê de hatiye derxistin, yanî berî radestkirina kilîtan. Peymana kirê jixwe hatibû îmzekirin, lê radestkirina rastîn a xanî û guhertina tomarê tenê di 1ê Hezîranê de gengaz bû. Ji ber vê yekê min di daxuyaniyê de dîrokan bi rêza demê nivîsî." },
+            { "language": "pl", "text": "Zaświadczenie zostało wystawione 28 maja, czyli przed przekazaniem kluczy. Umowa najmu była już podpisana, ale faktyczne przekazanie mieszkania i przemeldowanie mogły nastąpić dopiero 1 czerwca. Dlatego w stanowisku podałem daty chronologicznie." },
+            { "language": "ro", "text": "Certificatul a fost emis pe 28 mai, deci înainte de predarea cheilor. Contractul de închiriere era deja semnat, dar predarea efectivă a locuinței și schimbarea domiciliului au putut avea loc abia pe 1 iunie. De aceea am prezentat datele cronologic în declarație." },
+            { "language": "sq", "text": "Vërtetimi u lëshua më 28 maj, pra para dorëzimit të çelësave. Kontrata e qirasë ishte nënshkruar tashmë, por dorëzimi real i banesës dhe regjistrimi i adresës së re mund të bëheshin vetëm më 1 qershor. Prandaj në deklaratë i kam renditur datat kronologjikisht." }
+          ],
+          "function": "timeline-clarification",
+          "toneNote": "chronologisch, belegt",
+          "expectedLearnerAction": "Rückfrage mit Datum und Abfolge beantworten"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Welche Belege stützen diese zeitliche Darstellung?",
+          "translations": [
+            { "language": "en", "text": "Which documents support this timeline?" },
+            { "language": "fa", "text": "کدام مدارک این ترتیب زمانی را پشتیبانی می‌کنند؟" },
+            { "language": "ar", "text": "ما الوثائق التي تدعم هذا التسلسل الزمني؟" },
+            { "language": "tr", "text": "Bu zaman sıralamasını hangi belgeler destekliyor?" },
+            { "language": "ru", "text": "Какие документы подтверждают эту временную последовательность?" },
+            { "language": "ckb", "text": "کام بەڵگە ئەم ڕیزبەندی کاتییە پشتگیری دەکات؟" },
+            { "language": "kmr", "text": "Kîjan belge vê rêza demê piştgirî dikin?" },
+            { "language": "pl", "text": "Jakie dokumenty potwierdzają ten przebieg czasowy?" },
+            { "language": "ro", "text": "Ce documente susțin această prezentare cronologică?" },
+            { "language": "sq", "text": "Cilat dokumente e mbështesin këtë rend kohor?" }
+          ],
+          "function": "evidence-question",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Belege kurz sortieren"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Drei Belege sind dafür zentral: die Meldebescheinigung vom 28. Mai, der unterschriebene Mietvertrag mit Beginn zum 1. Juni und die Übergabebestätigung vom selben Tag. Zusätzlich liegt die elektronische Eingangsbestätigung meiner Ummeldung vor.",
+          "translations": [
+            { "language": "en", "text": "Three documents are central for this: the registration certificate from May 28, the signed rental contract starting June 1, and the handover confirmation from the same day. In addition, the electronic receipt confirmation of my re-registration is available." },
+            { "language": "fa", "text": "سه مدرک برای این موضوع اصلی‌اند: گواهی ثبت محل سکونت از ۲۸ مه، قرارداد اجاره امضاشده با شروع از ۱ ژوئن، و تأییدیه تحویل از همان روز. علاوه بر آن، تأیید دریافت الکترونیکی ثبت آدرس جدیدم هم موجود است." },
+            { "language": "ar", "text": "ثلاث وثائق أساسية هنا: شهادة التسجيل بتاريخ 28 مايو، وعقد الإيجار الموقّع الذي يبدأ في 1 يونيو، وتأكيد التسليم من اليوم نفسه. بالإضافة إلى ذلك توجد تأكيدات الاستلام الإلكترونية لتغيير التسجيل." },
+            { "language": "tr", "text": "Bunun için üç belge temel: 28 Mayıs tarihli ikamet kayıt belgesi, 1 Haziran başlangıçlı imzalı kira sözleşmesi ve aynı güne ait teslim tutanağı. Ayrıca adres değişikliğimin elektronik alındı onayı da mevcut." },
+            { "language": "ru", "text": "Для этого ключевыми являются три документа: справка о регистрации от 28 мая, подписанный договор аренды с началом 1 июня и подтверждение передачи от того же дня. Дополнительно есть электронное подтверждение получения моей перерегистрации." },
+            { "language": "ckb", "text": "سێ بەڵگە بۆ ئەمە سەرەکین: گواهی تۆمارکردنی نیشتەجێبوون لە ٢٨ی ئایار، گرێبەستی کرێی واژۆکراو بە دەستپێکی ١ی حوزەیران و پشتڕاستکردنەوەی وەرگرتن لە هەمان ڕۆژ. جگە لەوەش، پشتڕاستکردنەوەی ئەلیکترۆنی وەرگرتنی گۆڕینی ناونیشانم هەیە." },
+            { "language": "kmr", "text": "Sê belge ji bo vê yekê bingehîn in: belgeya tomarbûna niştecîhbûnê ya 28ê Gulanê, peymana kirê ya îmzekirî bi destpêka 1ê Hezîranê û piştrastkirina radestkirinê ya heman rojê. Her wiha piştrastkirina elektronîk a wergirtina guhertina tomara min heye." },
+            { "language": "pl", "text": "Kluczowe są trzy dokumenty: zaświadczenie o meldunku z 28 maja, podpisana umowa najmu z początkiem od 1 czerwca oraz potwierdzenie przekazania z tego samego dnia. Dodatkowo jest elektroniczne potwierdzenie wpływu mojego przemeldowania." },
+            { "language": "ro", "text": "Trei documente sunt centrale: certificatul de domiciliu din 28 mai, contractul de închiriere semnat cu începere de la 1 iunie și confirmarea predării din aceeași zi. În plus, există confirmarea electronică de primire a schimbării domiciliului." },
+            { "language": "sq", "text": "Tre dokumente janë kryesore për këtë: vërtetimi i vendbanimit i 28 majit, kontrata e nënshkruar e qirasë me fillim më 1 qershor dhe konfirmimi i dorëzimit nga e njëjta ditë. Përveç kësaj ekziston konfirmimi elektronik i pranimit të ndryshimit të adresës." }
+          ],
+          "function": "evidence-list",
+          "toneNote": "geordnet, beweisbezogen",
+          "expectedLearnerAction": "Drei Belege knapp und prüfbar nennen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "In Ihrer Stellungnahme steht auch, dass Sie die alte Adresse nicht absichtlich weiterverwendet haben. Können Sie das erläutern?",
+          "translations": [
+            { "language": "en", "text": "Your statement also says that you did not intentionally continue using the old address. Can you explain that?" },
+            { "language": "fa", "text": "در توضیح‌نامه شما همچنین آمده که آدرس قبلی را عمداً ادامه نداده‌اید. می‌توانید این را توضیح دهید؟" },
+            { "language": "ar", "text": "تذكر إفادتك أيضاً أنك لم تواصل استخدام العنوان القديم عمداً. هل يمكنك توضيح ذلك؟" },
+            { "language": "tr", "text": "Açıklamanızda eski adresi kasıtlı olarak kullanmaya devam etmediğiniz de yazıyor. Bunu açıklayabilir misiniz?" },
+            { "language": "ru", "text": "В вашем заявлении также сказано, что вы не намеренно продолжали использовать старый адрес. Можете это пояснить?" },
+            { "language": "ckb", "text": "لە ڕاگەیاندنەکەتدا هەروەها نووسراوە کە بە ئەنقەست ناونیشانی کۆنت بەردەوام بەکارنەهێناوە. دەتوانیت ئەمە ڕوون بکەیتەوە؟" },
+            { "language": "kmr", "text": "Di daxuyaniya we de her wiha hatiye gotin ku we bi mebest navnîşana kevn berdewam bikar neaniye. Hûn dikarin vê şirove bikin?" },
+            { "language": "pl", "text": "W Pana stanowisku jest też napisane, że nie używał Pan starego adresu celowo dalej. Czy może Pan to wyjaśnić?" },
+            { "language": "ro", "text": "În declarația dumneavoastră se menționează și că nu ați continuat intenționat să folosiți vechea adresă. Puteți explica acest lucru?" },
+            { "language": "sq", "text": "Në deklaratën tuaj thuhet gjithashtu se nuk e keni përdorur qëllimisht adresën e vjetër më tej. A mund ta shpjegoni këtë?" }
+          ],
+          "function": "intent-question",
+          "toneNote": "prüfend, sensibel",
+          "expectedLearnerAction": "Absichtsvorwurf sachlich vermeiden"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja. Die alte Adresse stand nur auf dem älteren Dokument, das vor der Ummeldung erstellt wurde. Seit dem 1. Juni habe ich in allen neuen Schreiben die neue Adresse verwendet. Ich möchte damit klarstellen, dass es eine zeitliche Überschneidung gab, aber keine absichtliche Falschangabe.",
+          "translations": [
+            { "language": "en", "text": "Yes. The old address appeared only on the older document that was created before the re-registration. Since June 1, I have used the new address in all new correspondence. I want to clarify that there was an overlap in timing, but no intentional false information." },
+            { "language": "fa", "text": "بله. آدرس قبلی فقط روی سند قدیمی‌تری بود که قبل از ثبت آدرس جدید تهیه شده بود. از ۱ ژوئن در همه نامه‌های جدید از آدرس جدید استفاده کرده‌ام. می‌خواهم روشن کنم که یک هم‌پوشانی زمانی وجود داشته، اما اطلاعات نادرست عمدی نبوده است." },
+            { "language": "ar", "text": "نعم. كان العنوان القديم موجوداً فقط في الوثيقة الأقدم التي أُعدت قبل تغيير التسجيل. منذ 1 يونيو استخدمت العنوان الجديد في كل المراسلات الجديدة. أريد أن أوضح أن هناك تداخلاً زمنياً، لكن لم تكن هناك معلومة خاطئة متعمدة." },
+            { "language": "tr", "text": "Evet. Eski adres yalnızca adres değişikliğinden önce hazırlanmış eski belgede yer alıyordu. 1 Haziran'dan beri tüm yeni yazışmalarda yeni adresi kullandım. Bununla zamansal bir çakışma olduğunu, ancak kasıtlı yanlış bilgi olmadığını açıklığa kavuşturmak istiyorum." },
+            { "language": "ru", "text": "Да. Старый адрес был только на более старом документе, который был создан до перерегистрации. С 1 июня я использую новый адрес во всех новых письмах. Я хочу пояснить, что было временное наложение, но не было намеренного ложного указания." },
+            { "language": "ckb", "text": "بەڵێ. ناونیشانی کۆن تەنها لەسەر بەڵگەی کۆنتر بوو کە پێش گۆڕینی ناونیشان دروست کرابوو. لە ١ی حوزەیرانەوە لە هەموو نووسراوە نوێکاندا ناونیشانی نوێم بەکار هێناوە. دەمەوێت ڕوون بکەمەوە کە هاوپوشانی کاتی هەبوو، بەڵام زانیاری هەڵەی بە ئەنقەست نەبوو." },
+            { "language": "kmr", "text": "Erê. Navnîşana kevn tenê li ser belgeya kevntir bû ku berî guhertina tomarê hatibû çêkirin. Ji 1ê Hezîranê ve min di hemû nivîsên nû de navnîşana nû bikar aniye. Ez dixwazim zelal bikim ku hevdemîyek hebû, lê agahiyeke şaş a bi mebest nebû." },
+            { "language": "pl", "text": "Tak. Stary adres widniał tylko na starszym dokumencie, który został sporządzony przed przemeldowaniem. Od 1 czerwca używałem nowego adresu we wszystkich nowych pismach. Chcę wyjaśnić, że było nałożenie czasowe, ale nie celowo podana błędna informacja." },
+            { "language": "ro", "text": "Da. Vechea adresă apărea doar pe documentul mai vechi, întocmit înainte de schimbarea domiciliului. Din 1 iunie am folosit noua adresă în toate documentele noi. Vreau să clarific că a existat o suprapunere temporală, dar nu o informație falsă intenționată." },
+            { "language": "sq", "text": "Po. Adresa e vjetër ishte vetëm në dokumentin më të vjetër, të hartuar para ndryshimit të adresës. Nga 1 qershori kam përdorur adresën e re në të gjitha shkresat e reja. Dua të sqaroj se kishte një mbivendosje kohore, por jo informacion të gabuar të qëllimshëm." }
+          ],
+          "function": "intent-clarification",
+          "toneNote": "sachlich, nicht defensiv",
+          "expectedLearnerAction": "Absicht verneinen und zeitliche Erklärung belegen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Was möchten Sie, dass wir mit Ihrer Stellungnahme jetzt konkret prüfen?",
+          "translations": [
+            { "language": "en", "text": "What exactly would you like us to review now with your statement?" },
+            { "language": "fa", "text": "دقیقاً می‌خواهید ما با توضیح‌نامه شما اکنون چه چیزی را بررسی کنیم؟" },
+            { "language": "ar", "text": "ما الذي تريد تحديداً أن نفحصه الآن بناءً على إفادتك؟" },
+            { "language": "tr", "text": "Açıklamanızla şimdi tam olarak neyi incelememizi istiyorsunuz?" },
+            { "language": "ru", "text": "Что именно вы хотите, чтобы мы теперь проверили на основании вашего заявления?" },
+            { "language": "ckb", "text": "دەتەوێت ئێمە ئێستا بە ڕاگەیاندنەکەت بە وردی چی بپشکنین؟" },
+            { "language": "kmr", "text": "Hûn dixwazin em niha bi daxuyaniya we bi rastî çi kontrol bikin?" },
+            { "language": "pl", "text": "Co dokładnie chce Pan, abyśmy teraz sprawdzili na podstawie Pana stanowiska?" },
+            { "language": "ro", "text": "Ce doriți concret să verificăm acum pe baza declarației dumneavoastră?" },
+            { "language": "sq", "text": "Çfarë saktësisht dëshironi të kontrollojmë tani me deklaratën tuaj?" }
+          ],
+          "function": "requested-review",
+          "toneNote": "lösungsorientiert",
+          "expectedLearnerAction": "Konkrete Prüfbitte formulieren"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich bitte darum zu prüfen, ob die zeitliche Abfolge mit den beigefügten Belegen nachvollziehbar ist und ob die neue Adresse ab dem 1. Juni als maßgeblich erfasst werden kann. Falls noch ein Nachweis fehlt, bitte ich um eine konkrete Rückfrage statt einer pauschalen Ablehnung.",
+          "translations": [
+            { "language": "en", "text": "I ask you to review whether the timeline is traceable with the attached documents and whether the new address can be recorded as relevant from June 1. If another document is still missing, I ask for a specific follow-up question rather than a general rejection." },
+            { "language": "fa", "text": "درخواست می‌کنم بررسی شود آیا ترتیب زمانی با مدارک پیوست قابل پیگیری است و آیا آدرس جدید از ۱ ژوئن می‌تواند به‌عنوان آدرس معتبر ثبت شود. اگر هنوز مدرکی کم است، لطفاً به جای رد کلی، پرسش مشخص مطرح شود." },
+            { "language": "ar", "text": "أطلب فحص ما إذا كان التسلسل الزمني مفهوماً بالوثائق المرفقة، وما إذا كان يمكن تسجيل العنوان الجديد كالعنوان المعتمد اعتباراً من 1 يونيو. وإذا كانت وثيقة أخرى لا تزال ناقصة، أطلب سؤالاً محدداً بدلاً من رفض عام." },
+            { "language": "tr", "text": "Ekli belgelerle zaman sıralamasının izlenebilir olup olmadığını ve yeni adresin 1 Haziran'dan itibaren esas adres olarak kaydedilip kaydedilemeyeceğini incelemenizi rica ediyorum. Hâlâ bir belge eksikse, genel bir ret yerine somut bir ek soru rica ederim." },
+            { "language": "ru", "text": "Я прошу проверить, прослеживается ли временная последовательность по приложенным документам и может ли новый адрес с 1 июня быть учтён как определяющий. Если ещё не хватает документа, я прошу конкретный уточняющий вопрос вместо общего отказа." },
+            { "language": "ckb", "text": "داوا دەکەم بپشکنرێت ئایا ڕیزبەندی کاتی بە بەڵگە هاوپێچەکان بەدواداچوون‌پێکراوە و ئایا ناونیشانی نوێ لە ١ی حوزەیرانەوە دەتوانرێت وەک ناونیشانی سەرەکی تۆمار بکرێت. ئەگەر هێشتا بەڵگەیەک کەمە، داوای پرسیارێکی دیاریکراو دەکەم نەک ڕەتکردنەوەی گشتی." },
+            { "language": "kmr", "text": "Ez daxwaz dikim were kontrolkirin ka rêza demê bi belgeyên pêvek şopandinbar e û ka navnîşana nû ji 1ê Hezîranê ve dikare wek navnîşana sereke were tomar kirin. Ger hê belgeyek kêm be, ez daxwaza pirseke şênber dikim, ne redkirineke gelemperî." },
+            { "language": "pl", "text": "Proszę o sprawdzenie, czy przebieg czasowy jest zrozumiały na podstawie załączonych dokumentów i czy nowy adres od 1 czerwca może zostać ujęty jako właściwy. Jeśli nadal brakuje dokumentu, proszę o konkretne pytanie zamiast ogólnej odmowy." },
+            { "language": "ro", "text": "Solicit verificarea dacă succesiunea temporală este urmărită prin documentele anexate și dacă noua adresă poate fi înregistrată ca relevantă de la 1 iunie. Dacă mai lipsește un document, solicit o întrebare concretă în locul unei respingeri generale." },
+            { "language": "sq", "text": "Kërkoj të kontrollohet nëse rendi kohor mund të ndiqet me dokumentet e bashkëngjitura dhe nëse adresa e re mund të regjistrohet si e vlefshme nga 1 qershori. Nëse ende mungon një dokument, kërkoj një pyetje konkrete në vend të një refuzimi të përgjithshëm." }
+          ],
+          "function": "concrete-review-request",
+          "toneNote": "präzise, lösungsorientiert",
+          "expectedLearnerAction": "Prüfbitte konkret und fair formulieren"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Können Sie zum Abschluss noch einmal in zwei Sätzen sagen, wie wir Ihre Stellungnahme verstehen sollen?",
+          "translations": [
+            { "language": "en", "text": "To conclude, can you say again in two sentences how we should understand your statement?" },
+            { "language": "fa", "text": "برای پایان، می‌توانید در دو جمله دوباره بگویید ما توضیح‌نامه شما را چگونه باید بفهمیم؟" },
+            { "language": "ar", "text": "في الختام، هل يمكنك أن تقول مرة أخرى في جملتين كيف ينبغي أن نفهم إفادتك؟" },
+            { "language": "tr", "text": "Kapanış olarak, açıklamanızı nasıl anlamamız gerektiğini iki cümleyle tekrar söyleyebilir misiniz?" },
+            { "language": "ru", "text": "В завершение можете ещё раз в двух предложениях сказать, как нам следует понимать ваше заявление?" },
+            { "language": "ckb", "text": "بۆ کۆتایی، دەتوانیت جارێکی تر لە دوو ڕستەدا بڵێیت ئێمە چۆن پێویستە ڕاگەیاندنەکەت تێبگەین؟" },
+            { "language": "kmr", "text": "Ji bo dawiyê, hûn dikarin careke din di du hevokan de bibêjin em divê daxuyaniya we çawa fam bikin?" },
+            { "language": "pl", "text": "Na zakończenie, czy może Pan jeszcze raz w dwóch zdaniach powiedzieć, jak mamy rozumieć Pana stanowisko?" },
+            { "language": "ro", "text": "În încheiere, puteți spune încă o dată în două propoziții cum ar trebui să înțelegem declarația dumneavoastră?" },
+            { "language": "sq", "text": "Në përfundim, a mund të thoni edhe një herë në dy fjali si duhet ta kuptojmë deklaratën tuaj?" }
+          ],
+          "function": "final-compression",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Zwei-Satz-Zusammenfassung geben"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Die Stellungnahme soll erklären, dass die unterschiedlichen Adressen aus einer zeitlichen Überschneidung beim Umzug entstanden sind und durch die beigefügten Belege nachvollziehbar werden. Ich bitte darum, die neue Adresse ab dem 1. Juni zu berücksichtigen oder mir konkret mitzuteilen, welcher Nachweis dafür noch fehlt.",
+          "translations": [
+            { "language": "en", "text": "The statement is meant to explain that the different addresses resulted from an overlap in timing during the move and become traceable through the attached documents. I ask that the new address be considered from June 1 or that you tell me specifically which document is still missing for that." },
+            { "language": "fa", "text": "هدف توضیح‌نامه این است که روشن کند آدرس‌های متفاوت به دلیل هم‌پوشانی زمانی هنگام نقل مکان ایجاد شده‌اند و با مدارک پیوست قابل پیگیری هستند. درخواست می‌کنم آدرس جدید از ۱ ژوئن در نظر گرفته شود یا دقیقاً اعلام شود کدام مدرک برای این کار هنوز کم است." },
+            { "language": "ar", "text": "تهدف الإفادة إلى توضيح أن العناوين المختلفة نشأت من تداخل زمني أثناء الانتقال، وأنها تصبح مفهومة من خلال الوثائق المرفقة. أطلب أخذ العنوان الجديد في الاعتبار اعتباراً من 1 يونيو أو إبلاغي تحديداً بالوثيقة التي ما زالت ناقصة لذلك." },
+            { "language": "tr", "text": "Açıklama, farklı adreslerin taşınma sırasında zamansal bir çakışmadan kaynaklandığını ve ekli belgelerle izlenebilir hale geldiğini açıklamak içindir. Yeni adresin 1 Haziran'dan itibaren dikkate alınmasını ya da bunun için hâlâ hangi belgenin eksik olduğunun somut olarak bildirilmesini rica ediyorum." },
+            { "language": "ru", "text": "Заявление должно объяснить, что разные адреса возникли из-за временного наложения при переезде и становятся прослеживаемыми благодаря приложенным документам. Я прошу учесть новый адрес с 1 июня или конкретно сообщить, какого документа для этого ещё не хватает." },
+            { "language": "ckb", "text": "ڕاگەیاندنەکە بۆ ئەوەیە ڕوون بکاتەوە کە ناونیشانە جیاوازەکان بەهۆی هاوپوشانی کاتی لە کاتی گواستنەوەدا دروست بوون و بە بەڵگە هاوپێچەکان بەدواداچوون‌پێکراو دەبن. داوا دەکەم ناونیشانی نوێ لە ١ی حوزەیرانەوە لەبەرچاو بگیرێت یان بە وردی پێم بڵێن کام بەڵگە بۆ ئەمە هێشتا کەمە." },
+            { "language": "kmr", "text": "Daxuyanî divê rave bike ku navnîşanên cuda ji hevdemîya demê di dema veguhastinê de çêbûne û bi belgeyên pêvek şopandinbar dibin. Ez daxwaz dikim navnîşana nû ji 1ê Hezîranê ve were hesibandin an bi şênberî ji min re bê gotin kîjan belge ji bo vê hê kêm e." },
+            { "language": "pl", "text": "Stanowisko ma wyjaśnić, że różne adresy wynikły z nałożenia czasowego podczas przeprowadzki i stają się zrozumiałe dzięki załączonym dokumentom. Proszę o uwzględnienie nowego adresu od 1 czerwca albo o konkretne wskazanie, jakiego dokumentu jeszcze do tego brakuje." },
+            { "language": "ro", "text": "Declarația trebuie să explice că adresele diferite au apărut dintr-o suprapunere temporală în timpul mutării și devin urmărite prin documentele anexate. Solicit ca noua adresă să fie luată în considerare de la 1 iunie sau să mi se comunice concret ce document mai lipsește pentru aceasta." },
+            { "language": "sq", "text": "Deklarata synon të shpjegojë se adresat e ndryshme kanë ardhur nga një mbivendosje kohore gjatë shpërnguljes dhe bëhen të gjurmueshme përmes dokumenteve të bashkëngjitura. Kërkoj që adresa e re të merret parasysh nga 1 qershori ose të më thuhet konkretisht cili dokument mungon ende për këtë." }
+          ],
+          "function": "two-sentence-summary",
+          "toneNote": "komprimiert, aktenfähig",
+          "expectedLearnerAction": "Kernaussage und Prüfbitte in zwei Sätzen abschließen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct-core-summary",
+              "text": "Die Unterlagen widersprechen sich nicht; sie zeigen zwei verschiedene Zeitpunkte des Umzugs.",
+              "translations": [
+                { "language": "en", "text": "The documents do not contradict each other; they show two different points in time during the move." },
+                { "language": "fa", "text": "مدارک با هم تناقض ندارند؛ دو زمان متفاوت از روند نقل مکان را نشان می‌دهند." },
+                { "language": "ar", "text": "الوثائق لا تتناقض؛ إنها تعرض نقطتين زمنيتين مختلفتين أثناء الانتقال." },
+                { "language": "tr", "text": "Belgeler birbirine aykırı değil; taşınma sürecinde iki farklı zamanı gösteriyor." },
+                { "language": "ru", "text": "Документы не противоречат друг другу; они показывают два разных момента во время переезда." },
+                { "language": "ckb", "text": "بەڵگەکان دژبەیەک نین؛ دوو کاتی جیاواز لە ڕەوتی گواستنەوەدا نیشان دەدەن." },
+                { "language": "kmr", "text": "Belge ne dijber in; ew di pêvajoya veguhastinê de du demên cuda nîşan didin." },
+                { "language": "pl", "text": "Dokumenty nie są sprzeczne; pokazują dwa różne momenty przeprowadzki." },
+                { "language": "ro", "text": "Documentele nu se contrazic; ele arată două momente diferite ale mutării." },
+                { "language": "sq", "text": "Dokumentet nuk bien ndesh; ato tregojnë dy momente të ndryshme të shpërnguljes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bringt die schriftliche Stellungnahme sofort auf den Kern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer immediately brings the written statement to its core." },
+                { "language": "fa", "text": "قوی: پاسخ بلافاصله توضیح‌نامه کتبی را به اصل موضوع می‌رساند." },
+                { "language": "ar", "text": "قوي: توصل الإجابة الإفادة المكتوبة مباشرة إلى جوهرها." },
+                { "language": "tr", "text": "Güçlü: Yanıt yazılı açıklamayı hemen özüne indiriyor." },
+                { "language": "ru", "text": "Сильно: ответ сразу сводит письменное заявление к сути." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕاگەیاندنی نووسراو دەستبەجێ دەباتە ناوەڕۆکی سەرەکی." },
+                { "language": "kmr", "text": "Xurt e: Bersiv daxuyaniya nivîskî tavilê digihîne bingehê wê." },
+                { "language": "pl", "text": "Mocne: odpowiedź od razu sprowadza pisemne stanowisko do sedna." },
+                { "language": "ro", "text": "Puternic: răspunsul aduce imediat declarația scrisă la esență." },
+                { "language": "sq", "text": "E fortë: përgjigjja e çon menjëherë deklaratën me shkrim te thelbi." }
+              ],
+              "explanationKey": "oral-core-summary"
+            },
+            {
+              "id": "weak-read-whole-text",
+              "text": "Ich kann Ihnen die Stellungnahme gern vollständig vorlesen, damit nichts fehlt.",
+              "translations": [
+                { "language": "en", "text": "I can gladly read the statement to you in full so that nothing is missing." },
+                { "language": "fa", "text": "می‌توانم کل توضیح‌نامه را برایتان کامل بخوانم تا چیزی جا نیفتد." },
+                { "language": "ar", "text": "يمكنني أن أقرأ لك الإفادة كاملة حتى لا ينقص شيء." },
+                { "language": "tr", "text": "Hiçbir şey eksik kalmasın diye açıklamayı size tamamen okuyabilirim." },
+                { "language": "ru", "text": "Я могу полностью прочитать вам заявление, чтобы ничего не пропустить." },
+                { "language": "ckb", "text": "دەتوانم هەموو ڕاگەیاندنەکە بە تەواوی بۆتان بخوێنمەوە بۆ ئەوەی هیچ شتێک کەم نەبێت." },
+                { "language": "kmr", "text": "Ez dikarim hemû daxuyaniyê bi temamî ji we re bixwînim da ku tiştek kêm nemîne." },
+                { "language": "pl", "text": "Mogę chętnie przeczytać całe stanowisko, żeby niczego nie pominąć." },
+                { "language": "ro", "text": "Pot să vă citesc cu plăcere declarația integral, ca să nu lipsească nimic." },
+                { "language": "sq", "text": "Mund t'jua lexoj me kënaqësi të gjithë deklaratën, që të mos mungojë asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht effizient: Im Termin ist eine mündliche Verdichtung stärker als vollständiges Vorlesen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not efficient: In the appointment, an oral condensation is stronger than reading everything aloud." },
+                { "language": "fa", "text": "قابل تصور است، اما کارآمد نیست: در وقت اداری، خلاصه شفاهی قوی‌تر از خواندن کامل متن است." },
+                { "language": "ar", "text": "معقول لكنه غير فعال: في الموعد يكون الاختصار الشفهي أقوى من قراءة النص كاملاً." },
+                { "language": "tr", "text": "Makul ama verimli değil: Randevuda sözlü yoğunlaştırma, metni tamamen okumaktan daha güçlüdür." },
+                { "language": "ru", "text": "Похоже на возможный вариант, но неэффективно: на приёме устное сжатие сильнее, чем полное чтение." },
+                { "language": "ckb", "text": "قایلە، بەڵام کارا نییە: لە کاتەکەدا پوختەکردنی زارەکی بەهێزترە لە خوێندنەوەی تەواوی دەق." },
+                { "language": "kmr", "text": "Gengaz e, lê ne bikêr e: Di randevûyê de kurtkirina devkî ji xwendina hemû nivîsê xurtir e." },
+                { "language": "pl", "text": "Plausible, ale nieefektywne: podczas terminu ustne streszczenie jest mocniejsze niż czytanie całego tekstu." },
+                { "language": "ro", "text": "Plauzibil, dar ineficient: la programare, condensarea orală este mai puternică decât citirea integrală." },
+                { "language": "sq", "text": "E besueshme, por jo efikase: në takim, përmbledhja gojore është më e fortë se leximi i plotë." }
+              ],
+              "explanationKey": "reads-entire-statement"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct-chronological-answer",
+              "text": "Die ältere Bescheinigung stammt vom 28. Mai, die neue Adresse gilt erst ab der Übergabe am 1. Juni.",
+              "translations": [
+                { "language": "en", "text": "The older certificate is from May 28, while the new address applies only from the handover on June 1." },
+                { "language": "fa", "text": "گواهی قدیمی‌تر مربوط به ۲۸ مه است، اما آدرس جدید فقط از زمان تحویل در ۱ ژوئن معتبر است." },
+                { "language": "ar", "text": "الشهادة الأقدم من 28 مايو، أما العنوان الجديد فيسري فقط من التسليم في 1 يونيو." },
+                { "language": "tr", "text": "Eski belge 28 Mayıs tarihli; yeni adres ise ancak 1 Haziran'daki teslimden itibaren geçerli." },
+                { "language": "ru", "text": "Более старая справка датирована 28 мая, а новый адрес действует только с передачи 1 июня." },
+                { "language": "ckb", "text": "گواهی کۆنترەکە لە ٢٨ی ئایارە، ناونیشانی نوێ تەنها لە وەرگرتنی ١ی حوزەیرانەوە کاریگەرە." },
+                { "language": "kmr", "text": "Belgeya kevntir ji 28ê Gulanê ye, navnîşana nû tenê ji radestkirina 1ê Hezîranê ve derbasdar e." },
+                { "language": "pl", "text": "Starsze zaświadczenie pochodzi z 28 maja, a nowy adres obowiązuje dopiero od przekazania 1 czerwca." },
+                { "language": "ro", "text": "Certificatul mai vechi este din 28 mai, iar noua adresă este valabilă doar de la predarea din 1 iunie." },
+                { "language": "sq", "text": "Vërtetimi më i vjetër është i 28 majit, ndërsa adresa e re vlen vetëm nga dorëzimi më 1 qershor." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet die Rückfrage direkt mit zwei belegbaren Daten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer directly connects the follow-up question with two verifiable dates." },
+                { "language": "fa", "text": "قوی: پاسخ پرسش را مستقیم به دو تاریخ قابل اثبات وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة السؤال مباشرة بتاريخين قابلين للإثبات." },
+                { "language": "tr", "text": "Güçlü: Yanıt ek soruyu doğrudan iki kanıtlanabilir tarihle bağlıyor." },
+                { "language": "ru", "text": "Сильно: ответ напрямую связывает уточняющий вопрос с двумя проверяемыми датами." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پرسیارەکە ڕاستەوخۆ بە دوو بەرواری بەڵگەدارەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pirsa paşîn rasterast bi du dîrokên belgebar ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź bezpośrednio łączy pytanie z dwiema możliwymi do potwierdzenia datami." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă direct întrebarea de două date verificabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja e lidh drejtpërdrejt pyetjen me dy data të verifikueshme." }
+              ],
+              "explanationKey": "chronological-clarification"
+            },
+            {
+              "id": "weak-memory-answer",
+              "text": "Ich glaube, das war einfach noch nicht aktualisiert, aber genau weiß ich es nicht mehr.",
+              "translations": [
+                { "language": "en", "text": "I think it simply had not been updated yet, but I no longer know exactly." },
+                { "language": "fa", "text": "فکر می‌کنم فقط هنوز به‌روزرسانی نشده بود، اما دقیقاً دیگر یادم نیست." },
+                { "language": "ar", "text": "أعتقد أنه لم يكن قد حُدث بعد، لكنني لا أعرف بدقة بعد الآن." },
+                { "language": "tr", "text": "Sanırım henüz güncellenmemişti, ama tam olarak artık hatırlamıyorum." },
+                { "language": "ru", "text": "Думаю, это просто ещё не было обновлено, но точно я уже не помню." },
+                { "language": "ckb", "text": "پێم وایە تەنها هێشتا نوێ نەکرابووەوە، بەڵام بە وردی ئیتر بیرم نییە." },
+                { "language": "kmr", "text": "Ez difikirim ew tenê hê nehatiye nûkirin, lê ez êdî bi rastî nizanim." },
+                { "language": "pl", "text": "Myślę, że po prostu nie było jeszcze zaktualizowane, ale dokładnie już nie pamiętam." },
+                { "language": "ro", "text": "Cred că pur și simplu nu fusese încă actualizat, dar nu mai știu exact." },
+                { "language": "sq", "text": "Mendoj se thjesht nuk ishte përditësuar ende, por nuk e di më saktësisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unsicher: Bei C1 sollte die Antwort nicht auf Erinnerung beruhen, sondern auf Datum und Beleg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too uncertain: At C1 level, the answer should not rely on memory, but on date and evidence." },
+                { "language": "fa", "text": "بیش از حد نامطمئن است: در سطح C1 پاسخ نباید بر حافظه تکیه کند، بلکه باید بر تاریخ و مدرک تکیه داشته باشد." },
+                { "language": "ar", "text": "غير مؤكد بما يكفي: في مستوى C1 ينبغي ألا تعتمد الإجابة على الذاكرة، بل على التاريخ والدليل." },
+                { "language": "tr", "text": "Çok belirsiz: C1 düzeyinde yanıt hafızaya değil, tarihe ve kanıta dayanmalıdır." },
+                { "language": "ru", "text": "Слишком неопределённо: на уровне C1 ответ должен опираться не на память, а на дату и доказательство." },
+                { "language": "ckb", "text": "زۆر دڵنیانەبووە: لە ئاستی C1دا وەڵام نابێت پشت بە بیرەوەری ببەستێت، بەڵکو بە بەروار و بەڵگە." },
+                { "language": "kmr", "text": "Pir nediyar e: Di asta C1 de bersiv divê ne li bîranînê, lê li dîrok û belgeyê bisekine." },
+                { "language": "pl", "text": "Zbyt niepewne: na poziomie C1 odpowiedź nie powinna opierać się na pamięci, lecz na dacie i dowodzie." },
+                { "language": "ro", "text": "Prea nesigur: la nivel C1, răspunsul nu trebuie să se bazeze pe memorie, ci pe dată și dovadă." },
+                { "language": "sq", "text": "Shumë e pasigurt: në nivelin C1 përgjigjja nuk duhet të mbështetet te kujtesa, por te data dhe prova." }
+              ],
+              "explanationKey": "memory-instead-of-evidence"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct-three-evidence-items",
+              "text": "Die Meldebescheinigung, der Mietvertrag und die Übergabebestätigung zeigen die Abfolge.",
+              "translations": [
+                { "language": "en", "text": "The registration certificate, rental contract, and handover confirmation show the sequence." },
+                { "language": "fa", "text": "گواهی ثبت محل سکونت، قرارداد اجاره و تأییدیه تحویل، ترتیب زمانی را نشان می‌دهند." },
+                { "language": "ar", "text": "تُظهر شهادة التسجيل وعقد الإيجار وتأكيد التسليم التسلسل." },
+                { "language": "tr", "text": "İkamet kayıt belgesi, kira sözleşmesi ve teslim tutanağı sıralamayı gösteriyor." },
+                { "language": "ru", "text": "Справка о регистрации, договор аренды и подтверждение передачи показывают последовательность." },
+                { "language": "ckb", "text": "گواهی تۆمارکردنی نیشتەجێبوون، گرێبەستی کرێ و پشتڕاستکردنەوەی وەرگرتن ڕیزبەندییەکە نیشان دەدەن." },
+                { "language": "kmr", "text": "Belgeya tomarbûnê, peymana kirê û piştrastkirina radestkirinê rêzê nîşan didin." },
+                { "language": "pl", "text": "Zaświadczenie o meldunku, umowa najmu i potwierdzenie przekazania pokazują kolejność." },
+                { "language": "ro", "text": "Certificatul de domiciliu, contractul de închiriere și confirmarea predării arată succesiunea." },
+                { "language": "sq", "text": "Vërtetimi i vendbanimit, kontrata e qirasë dhe konfirmimi i dorëzimit tregojnë rendin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Drei Belege reichen als mündliche Orientierung; Details stehen im Schriftstück.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Three documents are enough for oral orientation; the details are in the written statement." },
+                { "language": "fa", "text": "قوی: سه مدرک برای جهت‌دهی شفاهی کافی است؛ جزئیات در متن کتبی آمده‌اند." },
+                { "language": "ar", "text": "قوي: تكفي ثلاث وثائق للتوجيه الشفهي؛ التفاصيل موجودة في الإفادة المكتوبة." },
+                { "language": "tr", "text": "Güçlü: Sözlü yönlendirme için üç belge yeterli; ayrıntılar yazılı metinde." },
+                { "language": "ru", "text": "Сильно: трёх документов достаточно для устной ориентации; детали находятся в письменном тексте." },
+                { "language": "ckb", "text": "بەهێزە: سێ بەڵگە بۆ ئاراستەکردنی زارەکی بەسە؛ وردەکارییەکان لە نووسراوەکەدان." },
+                { "language": "kmr", "text": "Xurt e: Sê belge ji bo rêberiya devkî têr in; hûrgilî di nivîsa nivîskî de ne." },
+                { "language": "pl", "text": "Mocne: trzy dokumenty wystarczą jako ustna orientacja; szczegóły są w piśmie." },
+                { "language": "ro", "text": "Puternic: trei documente sunt suficiente pentru orientarea orală; detaliile sunt în textul scris." },
+                { "language": "sq", "text": "E fortë: tre dokumente mjaftojnë për orientim gojor; detajet janë në shkrim." }
+              ],
+              "explanationKey": "three-evidence-items"
+            },
+            {
+              "id": "weak-too-many-details",
+              "text": "Ich habe sehr viele Unterlagen dabei und kann zu jedem Dokument einzeln erklären, warum es wichtig ist.",
+              "translations": [
+                { "language": "en", "text": "I have many documents with me and can explain for each document individually why it is important." },
+                { "language": "fa", "text": "مدارک زیادی همراه دارم و می‌توانم برای هر سند جداگانه توضیح دهم چرا مهم است." },
+                { "language": "ar", "text": "لدي الكثير من الوثائق ويمكنني أن أشرح لكل وثيقة على حدة لماذا هي مهمة." },
+                { "language": "tr", "text": "Yanımda çok sayıda belge var ve her belge için ayrı ayrı neden önemli olduğunu açıklayabilirim." },
+                { "language": "ru", "text": "У меня с собой очень много документов, и я могу по каждому отдельно объяснить, почему он важен." },
+                { "language": "ckb", "text": "زۆر بەڵگەم لەگەڵدایە و دەتوانم بۆ هەر بەڵگەیەک بە جیا ڕوون بکەمەوە بۆچی گرنگە." },
+                { "language": "kmr", "text": "Gelek belge bi min re hene û ez dikarim ji bo her belgeyekê cuda rave bikim çima girîng e." },
+                { "language": "pl", "text": "Mam przy sobie bardzo wiele dokumentów i mogę przy każdym osobno wyjaśnić, dlaczego jest ważny." },
+                { "language": "ro", "text": "Am foarte multe documente la mine și pot explica separat pentru fiecare de ce este important." },
+                { "language": "sq", "text": "Kam shumë dokumente me vete dhe mund të shpjegoj veçmas për secilin pse është i rëndësishëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausführlich: Die Rückfrage verlangt die tragenden Belege, nicht eine komplette Dokumentenführung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too extensive: The follow-up question asks for the supporting documents, not a complete document walkthrough." },
+                { "language": "fa", "text": "بیش از حد مفصل است: پرسش، مدارک اصلی را می‌خواهد، نه توضیح کامل همه اسناد." },
+                { "language": "ar", "text": "مفصل أكثر من اللازم: السؤال يطلب الوثائق الداعمة، لا عرضاً كاملاً لكل الوثائق." },
+                { "language": "tr", "text": "Fazla ayrıntılı: Ek soru, taşıyıcı belgeleri istiyor; tüm belgelerin tam anlatımını değil." },
+                { "language": "ru", "text": "Слишком подробно: уточняющий вопрос требует ключевые документы, а не полный разбор всех бумаг." },
+                { "language": "ckb", "text": "زۆر وردە: پرسیارەکە بەڵگە سەرەکییەکان دەوێت، نە ڕوونکردنەوەی تەواوی هەموو بەڵگەکان." },
+                { "language": "kmr", "text": "Pir hûrgilî ye: Pirs belgeyên piştgir dixwaze, ne rêberiya temam a belgeyan." },
+                { "language": "pl", "text": "Zbyt szczegółowe: pytanie dotyczy głównych dowodów, nie pełnego omawiania dokumentów." },
+                { "language": "ro", "text": "Prea detaliat: întrebarea cere documentele de susținere, nu prezentarea completă a tuturor documentelor." },
+                { "language": "sq", "text": "Shumë e detajuar: pyetja kërkon dokumentet mbështetëse, jo shpjegimin e plotë të të gjitha dokumenteve." }
+              ],
+              "explanationKey": "too-many-document-details"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct-no-intentional-error",
+              "text": "Es gab eine zeitliche Überschneidung, aber keine absichtliche Falschangabe.",
+              "translations": [
+                { "language": "en", "text": "There was an overlap in timing, but no intentional false information." },
+                { "language": "fa", "text": "یک هم‌پوشانی زمانی وجود داشت، اما اطلاعات نادرست عمدی نبود." },
+                { "language": "ar", "text": "كان هناك تداخل زمني، لكن لم تكن هناك معلومة خاطئة متعمدة." },
+                { "language": "tr", "text": "Zamansal bir çakışma vardı, ancak kasıtlı yanlış bilgi yoktu." },
+                { "language": "ru", "text": "Было временное наложение, но не было намеренного ложного указания." },
+                { "language": "ckb", "text": "هاوپوشانی کاتی هەبوو، بەڵام زانیاری هەڵەی بە ئەنقەست نەبوو." },
+                { "language": "kmr", "text": "Hevdemîyek hebû, lê agahiyeke şaş a bi mebest nebû." },
+                { "language": "pl", "text": "Było nałożenie czasowe, ale nie było celowo podanej błędnej informacji." },
+                { "language": "ro", "text": "A existat o suprapunere temporală, dar nu o informație falsă intenționată." },
+                { "language": "sq", "text": "Kishte një mbivendosje kohore, por jo informacion të gabuar të qëllimshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet Defensive und benennt die entscheidende Abgrenzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer avoids defensiveness and names the decisive distinction." },
+                { "language": "fa", "text": "قوی: پاسخ حالت دفاعی ندارد و تمایز تعیین‌کننده را نام می‌برد." },
+                { "language": "ar", "text": "قوي: تتجنب الإجابة الدفاعية وتسمّي التمييز الحاسم." },
+                { "language": "tr", "text": "Güçlü: Yanıt savunmacılıktan kaçınıyor ve belirleyici ayrımı adlandırıyor." },
+                { "language": "ru", "text": "Сильно: ответ избегает оборонительности и называет решающее разграничение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە بەرگری دوور دەکەوێت و جیاکردنەوەی گرنگ ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ji parastinê dûr dikeve û cudakirina girîng nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika defensywności i nazywa kluczowe rozróżnienie." },
+                { "language": "ro", "text": "Puternic: răspunsul evită defensiva și numește distincția decisivă." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang mbrojtjen dhe përmend dallimin vendimtar." }
+              ],
+              "explanationKey": "intent-distinction"
+            },
+            {
+              "id": "weak-defensive",
+              "text": "Ich habe doch schon schriftlich erklärt, dass ich nichts falsch machen wollte.",
+              "translations": [
+                { "language": "en", "text": "But I already explained in writing that I did not want to do anything wrong." },
+                { "language": "fa", "text": "اما من قبلاً کتبی توضیح داده‌ام که نمی‌خواستم کار اشتباهی انجام بدهم." },
+                { "language": "ar", "text": "لكنني شرحت بالفعل كتابياً أنني لم أرد أن أفعل شيئاً خطأ." },
+                { "language": "tr", "text": "Ama zaten yazılı olarak yanlış bir şey yapmak istemediğimi açıkladım." },
+                { "language": "ru", "text": "Но я уже письменно объяснил, что не хотел сделать ничего неправильного." },
+                { "language": "ckb", "text": "بەڵام من پێشتر بە نووسراوی ڕوونم کردووەتەوە کە نەمدەویست هیچ هەڵەیەک بکەم." },
+                { "language": "kmr", "text": "Lê min jixwe bi nivîskî rave kiriye ku min nexwest tiştekî şaş bikim." },
+                { "language": "pl", "text": "Przecież już pisemnie wyjaśniłem, że nie chciałem zrobić nic złego." },
+                { "language": "ro", "text": "Dar am explicat deja în scris că nu am vrut să fac nimic greșit." },
+                { "language": "sq", "text": "Por unë tashmë e kam shpjeguar me shkrim se nuk doja të bëja asgjë gabim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Wiederholen Sie nicht, dass es schon im Text steht; erklären Sie den Punkt mündlich knapp.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: Do not repeat that it is already in the text; explain the point briefly aloud." },
+                { "language": "fa", "text": "بیش از حد دفاعی است: تکرار نکنید که این در متن آمده؛ نکته را شفاهی و کوتاه توضیح دهید." },
+                { "language": "ar", "text": "دفاعي أكثر من اللازم: لا تكرر أنه موجود في النص؛ اشرح النقطة شفهياً بإيجاز." },
+                { "language": "tr", "text": "Fazla savunmacı: Bunun metinde zaten olduğunu tekrarlamayın; noktayı sözlü ve kısa açıklayın." },
+                { "language": "ru", "text": "Слишком оборонительно: не повторяйте, что это уже есть в тексте; кратко объясните пункт устно." },
+                { "language": "ckb", "text": "زۆر بەرگرییە: دووبارە مەکەوە کە ئەمە لە دەقەکەدایە؛ خاڵەکە بە زارەکی و بە کورتی ڕوون بکەوە." },
+                { "language": "kmr", "text": "Pir parastinî ye: Dubare nekin ku ew jixwe di nivîsê de ye; xalê bi devkî û kurt rave bikin." },
+                { "language": "pl", "text": "Zbyt defensywne: nie powtarzaj, że to już jest w tekście; krótko wyjaśnij punkt ustnie." },
+                { "language": "ro", "text": "Prea defensiv: nu repetați că este deja în text; explicați punctul scurt oral." },
+                { "language": "sq", "text": "Shumë mbrojtëse: mos përsëritni se është tashmë në tekst; shpjegojeni pikën shkurt gojarisht." }
+              ],
+              "explanationKey": "defensive-reference-to-text"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct-specific-review",
+              "text": "Bitte prüfen Sie die zeitliche Abfolge und nennen Sie konkret, falls noch ein Nachweis fehlt.",
+              "translations": [
+                { "language": "en", "text": "Please review the timeline and specify concretely if another document is still missing." },
+                { "language": "fa", "text": "لطفاً ترتیب زمانی را بررسی کنید و اگر هنوز مدرکی کم است، مشخصاً نام ببرید." },
+                { "language": "ar", "text": "يرجى فحص التسلسل الزمني وذكر ذلك تحديداً إذا كانت وثيقة أخرى لا تزال ناقصة." },
+                { "language": "tr", "text": "Lütfen zaman sıralamasını inceleyin ve hâlâ bir belge eksikse somut olarak belirtin." },
+                { "language": "ru", "text": "Пожалуйста, проверьте временную последовательность и конкретно укажите, если ещё не хватает документа." },
+                { "language": "ckb", "text": "تکایە ڕیزبەندی کاتی بپشکنن و ئەگەر هێشتا بەڵگەیەک کەمە، بە وردی ناوی ببەن." },
+                { "language": "kmr", "text": "Kerema xwe rêza demê kontrol bikin û heke hê belgeyek kêm be, bi şênberî nav bikin." },
+                { "language": "pl", "text": "Proszę sprawdzić przebieg czasowy i konkretnie wskazać, jeśli nadal brakuje dokumentu." },
+                { "language": "ro", "text": "Vă rog să verificați succesiunea temporală și să precizați concret dacă mai lipsește un document." },
+                { "language": "sq", "text": "Ju lutem kontrolloni rendin kohor dhe përmendni konkretisht nëse ende mungon një dokument." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte ist konkret und lässt Raum für eine faire Nachforderung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is concrete and leaves room for a fair request for additional documents." },
+                { "language": "fa", "text": "قوی: درخواست مشخص است و برای درخواست منصفانه مدرک تکمیلی جا می‌گذارد." },
+                { "language": "ar", "text": "قوي: الطلب محدد ويترك مجالاً لطلب عادل لوثائق إضافية." },
+                { "language": "tr", "text": "Güçlü: Talep somut ve adil ek belge talebine yer bırakıyor." },
+                { "language": "ru", "text": "Сильно: просьба конкретна и оставляет место для справедливого запроса дополнительных документов." },
+                { "language": "ckb", "text": "بەهێزە: داواکە دیاریکراوە و شوێن بۆ داواکاری دادپەروەرانەی بەڵگەی زیادە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz şênber e û cih ji bo daxwaza belgeyên zêde ya dadperwer dihêle." },
+                { "language": "pl", "text": "Mocne: prośba jest konkretna i zostawia miejsce na uczciwe wezwanie do uzupełnienia dokumentu." },
+                { "language": "ro", "text": "Puternic: solicitarea este concretă și lasă loc unei cereri corecte de document suplimentar." },
+                { "language": "sq", "text": "E fortë: kërkesa është konkrete dhe lë hapësirë për një kërkesë të drejtë për dokument shtesë." }
+              ],
+              "explanationKey": "specific-review-request"
+            },
+            {
+              "id": "weak-avoid-rejection",
+              "text": "Ich bitte darum, meine Stellungnahme zu akzeptieren und den Widerspruch nicht weiter zu beachten.",
+              "translations": [
+                { "language": "en", "text": "I ask that you accept my statement and no longer pay attention to the contradiction." },
+                { "language": "fa", "text": "درخواست می‌کنم توضیح‌نامه من را بپذیرید و دیگر به تناقض توجه نکنید." },
+                { "language": "ar", "text": "أطلب أن تقبلوا إفادتي وألا تواصلوا الاهتمام بالتناقض." },
+                { "language": "tr", "text": "Açıklamamı kabul etmenizi ve çelişkiyi artık dikkate almamanızı rica ediyorum." },
+                { "language": "ru", "text": "Я прошу принять моё заявление и больше не учитывать противоречие." },
+                { "language": "ckb", "text": "داوا دەکەم ڕاگەیاندنەکەم قبووڵ بکەن و چیتر گرنگی بە دژبەیەکییەکە نەدەن." },
+                { "language": "kmr", "text": "Ez daxwaz dikim daxuyaniya min qebûl bikin û êdî girîngî nedin dijberiyê." },
+                { "language": "pl", "text": "Proszę o zaakceptowanie mojego stanowiska i dalsze nieuwzględnianie sprzeczności." },
+                { "language": "ro", "text": "Solicit să acceptați declarația mea și să nu mai luați în considerare contradicția." },
+                { "language": "sq", "text": "Kërkoj ta pranoni deklaratën time dhe të mos e merrni më parasysh kontradiktën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Behörde soll prüfen können, nicht einfach einen offenen Punkt ignorieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: The office should be able to review, not simply ignore an open point." },
+                { "language": "fa", "text": "بیش از حد کلی است: اداره باید بتواند بررسی کند، نه اینکه یک نکته باز را نادیده بگیرد." },
+                { "language": "ar", "text": "عام أكثر من اللازم: يجب أن تتمكن الجهة من الفحص، لا أن تتجاهل نقطة مفتوحة ببساطة." },
+                { "language": "tr", "text": "Çok genel: Kurum açık bir noktayı görmezden gelmek yerine inceleyebilmelidir." },
+                { "language": "ru", "text": "Слишком общее: ведомство должно иметь возможность проверить, а не просто игнорировать открытый пункт." },
+                { "language": "ckb", "text": "زۆر گشتییە: فەرمانگە پێویستە بتوانێت بپشکنێت، نەک بە سادەیی خاڵێکی کراوە پشتگوێ بخات." },
+                { "language": "kmr", "text": "Pir giştî ye: Sazî divê bikare kontrol bike, ne ku xalekî vekirî bi hêsanî paşguh bike." },
+                { "language": "pl", "text": "Zbyt ogólne: urząd powinien móc sprawdzić sprawę, a nie po prostu pominąć otwarty punkt." },
+                { "language": "ro", "text": "Prea general: autoritatea trebuie să poată verifica, nu să ignore pur și simplu un punct deschis." },
+                { "language": "sq", "text": "Shumë e përgjithshme: institucioni duhet të mund të kontrollojë, jo thjesht të injorojë një pikë të hapur." }
+              ],
+              "explanationKey": "asks-to-ignore-open-point"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct-two-sentence-close",
+              "text": "Die unterschiedlichen Adressen erklären sich durch den Umzug; die neue Adresse gilt ab dem 1. Juni.",
+              "translations": [
+                { "language": "en", "text": "The different addresses are explained by the move; the new address applies from June 1." },
+                { "language": "fa", "text": "آدرس‌های متفاوت به دلیل نقل مکان توضیح داده می‌شوند؛ آدرس جدید از ۱ ژوئن معتبر است." },
+                { "language": "ar", "text": "تُفسَّر العناوين المختلفة بالانتقال؛ والعنوان الجديد يسري من 1 يونيو." },
+                { "language": "tr", "text": "Farklı adresler taşınmayla açıklanır; yeni adres 1 Haziran'dan itibaren geçerlidir." },
+                { "language": "ru", "text": "Разные адреса объясняются переездом; новый адрес действует с 1 июня." },
+                { "language": "ckb", "text": "ناونیشانە جیاوازەکان بە گواستنەوە ڕوون دەبنەوە؛ ناونیشانی نوێ لە ١ی حوزەیرانەوە کاریگەرە." },
+                { "language": "kmr", "text": "Navnîşanên cuda bi veguhastinê tên ravekirin; navnîşana nû ji 1ê Hezîranê ve derbasdar e." },
+                { "language": "pl", "text": "Różne adresy wynikają z przeprowadzki; nowy adres obowiązuje od 1 czerwca." },
+                { "language": "ro", "text": "Adresele diferite se explică prin mutare; noua adresă este valabilă de la 1 iunie." },
+                { "language": "sq", "text": "Adresat e ndryshme shpjegohen me shpërnguljen; adresa e re vlen nga 1 qershori." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussformel ist kurz, verständlich und aktenfähig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The closing formula is short, clear, and suitable for the file." },
+                { "language": "fa", "text": "قوی: جمع‌بندی کوتاه، روشن و مناسب پرونده است." },
+                { "language": "ar", "text": "قوي: الصيغة الختامية قصيرة وواضحة ومناسبة للملف." },
+                { "language": "tr", "text": "Güçlü: Kapanış ifadesi kısa, anlaşılır ve dosyaya uygun." },
+                { "language": "ru", "text": "Сильно: заключительная формула коротка, понятна и подходит для дела." },
+                { "language": "ckb", "text": "بەهێزە: فۆرمولەی کۆتایی کورت، ڕوون و گونجاوە بۆ کەیس." },
+                { "language": "kmr", "text": "Xurt e: Formula dawî kurt, zelal û ji bo dosyeyê guncaw e." },
+                { "language": "pl", "text": "Mocne: formuła końcowa jest krótka, zrozumiała i nadaje się do akt." },
+                { "language": "ro", "text": "Puternic: formula finală este scurtă, clară și potrivită pentru dosar." },
+                { "language": "sq", "text": "E fortë: formula përmbyllëse është e shkurtër, e qartë dhe e përshtatshme për dosje." }
+              ],
+              "explanationKey": "two-sentence-close"
+            },
+            {
+              "id": "weak-too-long-close",
+              "text": "Ich würde gern noch einmal alle Punkte der Stellungnahme der Reihe nach durchgehen.",
+              "translations": [
+                { "language": "en", "text": "I would like to go through all points of the statement one by one again." },
+                { "language": "fa", "text": "می‌خواهم یک‌بار دیگر همه نکات توضیح‌نامه را به ترتیب مرور کنم." },
+                { "language": "ar", "text": "أود أن أراجع مرة أخرى كل نقاط الإفادة واحدة تلو الأخرى." },
+                { "language": "tr", "text": "Açıklamadaki tüm noktaları tekrar sırayla gözden geçirmek isterim." },
+                { "language": "ru", "text": "Я хотел бы ещё раз пройти все пункты заявления по порядку." },
+                { "language": "ckb", "text": "دەمەوێت جارێکی تر هەموو خاڵەکانی ڕاگەیاندنەکە بە ڕیزبەندی بپێڕمەوە." },
+                { "language": "kmr", "text": "Ez dixwazim careke din hemû xalên daxuyaniyê yek bi yek derbas bikim." },
+                { "language": "pl", "text": "Chciałbym jeszcze raz przejść po kolei przez wszystkie punkty stanowiska." },
+                { "language": "ro", "text": "Aș dori să mai parcurg o dată toate punctele declarației, pe rând." },
+                { "language": "sq", "text": "Do të doja t'i kaloj edhe një herë të gjitha pikat e deklaratës me radhë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu lang für den Abschluss: Wenn zwei Sätze verlangt werden, muss die Antwort verdichten, nicht neu beginnen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too long for the close: When two sentences are requested, the answer must condense, not start over." },
+                { "language": "fa", "text": "برای پایان بیش از حد طولانی است: وقتی دو جمله خواسته می‌شود، پاسخ باید خلاصه کند، نه از نو شروع کند." },
+                { "language": "ar", "text": "طويل أكثر من اللازم للخاتمة: عندما يُطلب جملتان يجب أن تختصر الإجابة، لا أن تبدأ من جديد." },
+                { "language": "tr", "text": "Kapanış için çok uzun: İki cümle istendiğinde yanıt yoğunlaştırmalı, yeniden başlamamalıdır." },
+                { "language": "ru", "text": "Слишком длинно для завершения: если просят две фразы, ответ должен сжимать, а не начинать заново." },
+                { "language": "ckb", "text": "بۆ کۆتایی زۆر درێژە: کاتێک دوو ڕستە داوا دەکرێت، وەڵام پێویستە پوختە بکات، نەک لە نوێوە دەست پێبکات." },
+                { "language": "kmr", "text": "Ji bo dawiyê pir dirêj e: Dema du hevok tên xwestin, bersiv divê kurt bike, ne ji nû ve dest pê bike." },
+                { "language": "pl", "text": "Zbyt długie na zakończenie: gdy proszą o dwa zdania, odpowiedź musi streszczać, a nie zaczynać od nowa." },
+                { "language": "ro", "text": "Prea lung pentru încheiere: când se cer două propoziții, răspunsul trebuie să condenseze, nu să înceapă din nou." },
+                { "language": "sq", "text": "Shumë e gjatë për përmbyllje: kur kërkohen dy fjali, përgjigjja duhet të përmbledhë, jo të fillojë nga e para." }
+              ],
+              "explanationKey": "too-long-closing"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "compression",
+          "text": "Eine mündliche Erläuterung ist keine Lesung. Beginnen Sie mit der Kernaussage und nennen Sie erst danach Belege.",
+          "translations": [
+            { "language": "en", "text": "An oral explanation is not a reading. Start with the core message and only then name evidence." },
+            { "language": "fa", "text": "توضیح شفاهی خواندن متن نیست. با پیام اصلی شروع کنید و بعد مدارک را نام ببرید." },
+            { "language": "ar", "text": "الشرح الشفهي ليس قراءة. ابدأ بالرسالة الأساسية ثم اذكر الأدلة." },
+            { "language": "tr", "text": "Sözlü açıklama metin okuma değildir. Ana mesajla başlayın, sonra kanıtları belirtin." },
+            { "language": "ru", "text": "Устное пояснение не является чтением. Начните с основной мысли и только затем назовите доказательства." },
+            { "language": "ckb", "text": "ڕوونکردنەوەی زارەکی خوێندنەوە نییە. بە ناوەڕۆکی سەرەکی دەست پێبکە و پاشان بەڵگەکان ناو ببە." },
+            { "language": "kmr", "text": "Şirovekirina devkî ne xwendin e. Bi peyama bingehîn dest pê bikin û paşê belgeyan nav bikin." },
+            { "language": "pl", "text": "Ustne objaśnienie nie jest czytaniem. Zacznij od głównej treści, a dopiero potem nazwij dowody." },
+            { "language": "ro", "text": "Explicația orală nu este o lectură. Începeți cu mesajul central și abia apoi numiți dovezile." },
+            { "language": "sq", "text": "Shpjegimi gojor nuk është lexim. Filloni me mesazhin kryesor dhe vetëm pastaj përmendni provat." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "timeline",
+          "text": "Bei scheinbaren Widersprüchen hilft oft eine zeitliche Linie: Datum des Dokuments, Datum des Ereignisses, Datum der Änderung.",
+          "translations": [
+            { "language": "en", "text": "With apparent contradictions, a timeline often helps: document date, event date, change date." },
+            { "language": "fa", "text": "در تناقض‌های ظاهری، خط زمانی اغلب کمک می‌کند: تاریخ سند، تاریخ رویداد، تاریخ تغییر." },
+            { "language": "ar", "text": "عند التناقضات الظاهرية يساعد غالباً خط زمني: تاريخ الوثيقة، تاريخ الحدث، تاريخ التغيير." },
+            { "language": "tr", "text": "Görünür çelişkilerde zaman çizgisi sıkça yardımcı olur: belge tarihi, olay tarihi, değişiklik tarihi." },
+            { "language": "ru", "text": "При кажущихся противоречиях часто помогает временная линия: дата документа, дата события, дата изменения." },
+            { "language": "ckb", "text": "لە دژبەیەکییە دەرکەوتووەکاندا زۆرجار هێڵی کاتی یارمەتی دەدات: بەرواری بەڵگە، بەرواری ڕووداو، بەرواری گۆڕان." },
+            { "language": "kmr", "text": "Di dijberiyên xuya de gelek caran xeta demê alîkar e: dîroka belgeyê, dîroka bûyerê, dîroka guhartinê." },
+            { "language": "pl", "text": "Przy pozornych sprzecznościach często pomaga linia czasu: data dokumentu, data zdarzenia, data zmiany." },
+            { "language": "ro", "text": "În cazul contradicțiilor aparente, ajută adesea o linie temporală: data documentului, data evenimentului, data schimbării." },
+            { "language": "sq", "text": "Te kontradiktat e dukshme shpesh ndihmon një vijë kohore: data e dokumentit, data e ngjarjes, data e ndryshimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "evidence",
+          "text": "Nennen Sie nur die tragenden Belege. Zu viele Details machen die mündliche Erklärung schwächer.",
+          "translations": [
+            { "language": "en", "text": "Name only the supporting documents. Too many details make the oral explanation weaker." },
+            { "language": "fa", "text": "فقط مدارک اصلی را نام ببرید. جزئیات زیاد توضیح شفاهی را ضعیف‌تر می‌کند." },
+            { "language": "ar", "text": "اذكر فقط الوثائق الداعمة الأساسية. التفاصيل الكثيرة تضعف الشرح الشفهي." },
+            { "language": "tr", "text": "Yalnızca temel belgeleri belirtin. Çok fazla ayrıntı sözlü açıklamayı zayıflatır." },
+            { "language": "ru", "text": "Назовите только ключевые документы. Слишком много деталей ослабляет устное объяснение." },
+            { "language": "ckb", "text": "تەنها بەڵگە سەرەکییەکان ناو ببە. وردەکاری زۆر ڕوونکردنەوەی زارەکی لاوازتر دەکات." },
+            { "language": "kmr", "text": "Tenê belgeyên sereke nav bikin. Hûrgilîyên zêde şiroveya devkî lawaztir dikin." },
+            { "language": "pl", "text": "Nazywaj tylko główne dowody. Zbyt wiele szczegółów osłabia ustne wyjaśnienie." },
+            { "language": "ro", "text": "Numiți doar documentele de bază. Prea multe detalii slăbesc explicația orală." },
+            { "language": "sq", "text": "Përmendni vetëm dokumentet kryesore. Shumë detaje e dobësojnë shpjegimin gojor." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "tone",
+          "text": "Bei sensiblen Rückfragen klingt eine sachliche Abgrenzung besser als Verteidigung: Überschneidung ja, Absicht nein.",
+          "translations": [
+            { "language": "en", "text": "With sensitive follow-up questions, a factual distinction sounds better than defensiveness: overlap yes, intention no." },
+            { "language": "fa", "text": "در پرسش‌های حساس، تمایز عینی بهتر از حالت دفاعی است: هم‌پوشانی بله، عمدی بودن نه." },
+            { "language": "ar", "text": "في الأسئلة الحساسة يبدو التمييز الموضوعي أفضل من الدفاعية: تداخل نعم، نية لا." },
+            { "language": "tr", "text": "Hassas ek sorularda nesnel ayrım savunmacılıktan daha iyi duyulur: çakışma var, kasıt yok." },
+            { "language": "ru", "text": "При чувствительных уточняющих вопросах фактическое разграничение звучит лучше, чем оборона: наложение да, намерение нет." },
+            { "language": "ckb", "text": "لە پرسیارە هەستیارەکاندا جیاکردنەوەی بابەتی باشترە لە بەرگری: هاوپوشانی بەڵێ، ئەنقەست نەخێر." },
+            { "language": "kmr", "text": "Di pirsên hestyar de cudakirina rast ji parastinê baştir tê bihîstin: hevdemî erê, mebest na." },
+            { "language": "pl", "text": "Przy wrażliwych pytaniach rzeczowe rozróżnienie brzmi lepiej niż defensywa: nałożenie tak, zamiar nie." },
+            { "language": "ro", "text": "La întrebări sensibile, o delimitare factuală sună mai bine decât defensiva: suprapunere da, intenție nu." },
+            { "language": "sq", "text": "Në pyetje të ndjeshme, dallimi faktik tingëllon më mirë se mbrojtja: mbivendosje po, qëllim jo." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing",
+          "text": "Wenn zwei Sätze verlangt werden, darf die Antwort nicht neu anfangen. Sie muss Kern und Prüfbitte komprimieren.",
+          "translations": [
+            { "language": "en", "text": "When two sentences are requested, the answer must not start over. It must compress the core and the review request." },
+            { "language": "fa", "text": "وقتی دو جمله خواسته می‌شود، پاسخ نباید از نو شروع شود. باید اصل موضوع و درخواست بررسی را فشرده کند." },
+            { "language": "ar", "text": "عندما يُطلب جملتان، لا يجوز أن تبدأ الإجابة من جديد. يجب أن تضغط الجوهر وطلب الفحص." },
+            { "language": "tr", "text": "İki cümle istendiğinde yanıt yeniden başlamamalıdır. Özü ve inceleme talebini sıkıştırmalıdır." },
+            { "language": "ru", "text": "Когда просят две фразы, ответ не должен начинаться заново. Он должен сжать суть и просьбу о проверке." },
+            { "language": "ckb", "text": "کاتێک دوو ڕستە داوا دەکرێت، وەڵام نابێت لە نوێوە دەست پێبکات. پێویستە ناوەڕۆک و داواکاری پشکنین پوختە بکات." },
+            { "language": "kmr", "text": "Dema du hevok tên xwestin, bersiv divê ji nû ve dest pê neke. Divê bingeh û daxwaza kontrolê kurt bike." },
+            { "language": "pl", "text": "Gdy proszą o dwa zdania, odpowiedź nie może zaczynać od nowa. Musi skompresować sedno i prośbę o sprawdzenie." },
+            { "language": "ro", "text": "Când se cer două propoziții, răspunsul nu trebuie să înceapă din nou. Trebuie să comprime esența și solicitarea de verificare." },
+            { "language": "sq", "text": "Kur kërkohen dy fjali, përgjigjja nuk duhet të fillojë nga e para. Duhet të përmbledhë thelbin dhe kërkesën për kontroll." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "oral-statement-at-public-office",
+          "placement": "hero",
+          "purpose": "Show a public-office appointment where an applicant orally explains a written statement using a short timeline and three organized documents.",
+          "altText": "Eine Person erläutert an einem Behördenschalter eine schriftliche Stellungnahme mit kurzer Zeitleiste und drei geordneten Belegen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A person explains a written statement at a public-office counter using a short timeline and three organized documents." },
+            { "language": "fa", "text": "فردی پشت باجه اداره یک توضیح‌نامه کتبی را با خط زمانی کوتاه و سه مدرک مرتب توضیح می‌دهد." },
+            { "language": "ar", "text": "شخص يشرح إفادة مكتوبة عند شباك جهة إدارية باستخدام خط زمني قصير وثلاث وثائق مرتبة." },
+            { "language": "tr", "text": "Bir kişi resmi kurum gişesinde kısa bir zaman çizgisi ve üç düzenli belgeyle yazılı açıklamayı anlatıyor." },
+            { "language": "ru", "text": "Человек у окна ведомства объясняет письменное заявление с помощью краткой временной линии и трёх упорядоченных документов." },
+            { "language": "ckb", "text": "کەسێک لە پشت پەنجەرەی فەرمانگە ڕاگەیاندنێکی نووسراو بە هێڵی کاتی کورت و سێ بەڵگەی ڕێکخراو ڕوون دەکاتەوە." },
+            { "language": "kmr", "text": "Kesek li şûşeya saziyê daxuyaniyeke nivîskî bi xeta demê ya kurt û sê belgeyên rêxistî şirove dike." },
+            { "language": "pl", "text": "Osoba przy okienku urzędu wyjaśnia pisemne stanowisko za pomocą krótkiej osi czasu i trzech uporządkowanych dokumentów." },
+            { "language": "ro", "text": "O persoană explică la un ghișeu public o declarație scrisă folosind o linie temporală scurtă și trei documente ordonate." },
+            { "language": "sq", "text": "Një person shpjegon në sportelin e një institucioni një deklaratë me shkrim duke përdorur një vijë të shkurtër kohore dhe tre dokumente të rregulluara." }
+          ],
+          "imagePrompt": "Clean educational illustration of a German public-office counter. A calm adult applicant explains a written statement with a short visual timeline and three organized documents; no readable personal data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

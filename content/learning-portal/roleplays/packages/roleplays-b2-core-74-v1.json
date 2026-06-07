@@ -1,0 +1,669 @@
+{
+  "packageId": "roleplays-b2-core-74-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 74 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 74",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed B2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-ein-gesellschaftliches-thema-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Ein gesellschaftliches Thema abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weigh a social issue" },
+        { "language": "fa", "text": "سنجیدن جنبه‌های یک موضوع اجتماعی" },
+        { "language": "ar", "text": "الموازنة بين جوانب قضية اجتماعية" },
+        { "language": "tr", "text": "Toplumsal bir konuyu tartmak" },
+        { "language": "ru", "text": "Взвесить общественную тему" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی بابەتێکی کۆمەڵایەتی" },
+        { "language": "kmr", "text": "Mijareke civakî danûstandin" },
+        { "language": "pl", "text": "Rozważyć temat społeczny" },
+        { "language": "ro", "text": "Cântărirea unei teme sociale" },
+        { "language": "sq", "text": "Të peshosh një çështje shoqërore" }
+      ],
+      "description": "Du sollst in einer B2-Prüfung abwägen, ob Städte mehr kostenlose öffentliche Räume für Jugendliche schaffen sollten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a B2 exam, you should weigh whether cities should create more free public spaces for young people." },
+        { "language": "fa", "text": "در یک آزمون B2 باید بسنجی که آیا شهرها باید فضاهای عمومی رایگان بیشتری برای جوانان ایجاد کنند یا نه." },
+        { "language": "ar", "text": "في امتحان B2 عليك أن توازن ما إذا كان ينبغي للمدن إنشاء مساحات عامة مجانية أكثر للشباب." },
+        { "language": "tr", "text": "Bir B2 sınavında şehirlerin gençler için daha fazla ücretsiz kamusal alan oluşturup oluşturmaması gerektiğini tartmalısın." },
+        { "language": "ru", "text": "На экзамене B2 нужно взвесить, должны ли города создавать больше бесплатных общественных пространств для молодежи." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی B2دا دەبێت هەڵبسەنگێنیت ئایا شارەکان دەبێت شوێنی گشتیی زیاتر و بێبەرامبەر بۆ گەنجان دروست بکەن یان نا." },
+        { "language": "kmr", "text": "Di ezmûna B2 de divê tu binirxînî ka bajar divê ji bo ciwanan cihên giştî yên bêpere zêdetir çêkin an na." },
+        { "language": "pl", "text": "Na egzaminie B2 masz rozważyć, czy miasta powinny tworzyć więcej bezpłatnych przestrzeni publicznych dla młodzieży." },
+        { "language": "ro", "text": "La un examen B2 trebuie să cântărești dacă orașele ar trebui să creeze mai multe spații publice gratuite pentru tineri." },
+        { "language": "sq", "text": "Në një provim B2 duhet të peshosh nëse qytetet duhet të krijojnë më shumë hapësira publike falas për të rinjtë." }
+      ],
+      "learnerGoal": "Beide Seiten eines gesellschaftlichen Themas darstellen, Beispiele nennen, Gegenargumente ernst nehmen und zu einem differenzierten Fazit kommen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Present both sides of a social issue, give examples, take counterarguments seriously, and reach a nuanced conclusion." },
+        { "language": "fa", "text": "هر دو طرف یک موضوع اجتماعی را بیان کن، مثال بده، استدلال‌های مخالف را جدی بگیر و به جمع‌بندی دقیق برسی." },
+        { "language": "ar", "text": "اعرض جانبي قضية اجتماعية، واذكر أمثلة، وخذ الحجج المضادة بجدية، وتوصل إلى خاتمة متوازنة." },
+        { "language": "tr", "text": "Toplumsal bir konunun iki tarafını sun, örnekler ver, karşı argümanları ciddiye al ve nüanslı bir sonuca ulaş." },
+        { "language": "ru", "text": "Представить обе стороны общественной темы, привести примеры, серьезно отнестись к контраргументам и прийти к дифференцированному выводу." },
+        { "language": "ckb", "text": "هەردوو لایەنی بابەتێکی کۆمەڵایەتی پیشان بدە، نموونە بهێنە، بەڵگەی بەرامبەر بە جدی وەربگرە و بگاتە کۆتاییەکی ورد." },
+        { "language": "kmr", "text": "Her du aliyên mijareke civakî pêşkêş bike, nimûneyan bide, argumanên dijber bi ciddiyetê bigire û bigihîje encameke nûansdar." },
+        { "language": "pl", "text": "Przedstaw obie strony tematu społecznego, podaj przykłady, poważnie potraktuj kontrargumenty i dojdź do zniuansowanego wniosku." },
+        { "language": "ro", "text": "Prezintă ambele părți ale unei teme sociale, oferă exemple, tratează contraargumentele cu seriozitate și ajungi la o concluzie nuanțată." },
+        { "language": "sq", "text": "Paraqit të dyja anët e një çështjeje shoqërore, jep shembuj, merr seriozisht kundërargumentet dhe arrij në një përfundim të nuancuar." }
+      ],
+      "cefrLevel": "B2",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["goethe-b2", "telc-b2"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "compare-options",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "sortOrder": 74,
+      "roles": [
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfende Person",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnvan" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminuesi" }
+          ]
+        },
+        {
+          "roleKey": "listener",
+          "displayName": "Zuhörende Person",
+          "translations": [
+            { "language": "en", "text": "Listener" },
+            { "language": "fa", "text": "شنونده" },
+            { "language": "ar", "text": "المستمع" },
+            { "language": "tr", "text": "Dinleyici" },
+            { "language": "ru", "text": "Слушатель" },
+            { "language": "ckb", "text": "گوێگر" },
+            { "language": "kmr", "text": "Guhdar" },
+            { "language": "pl", "text": "Słuchacz" },
+            { "language": "ro", "text": "Ascultător" },
+            { "language": "sq", "text": "Dëgjuesi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Du",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "تو" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Sen" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Tu" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Tu" },
+            { "language": "sq", "text": "Ti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Nehmen Sie Stellung zu der Frage: Sollten Städte mehr kostenlose öffentliche Räume für Jugendliche schaffen? Wägen Sie beide Seiten ab.",
+          "translations": [
+            { "language": "en", "text": "Take a position on the question: Should cities create more free public spaces for young people? Weigh both sides." },
+            { "language": "fa", "text": "درباره این پرسش موضع بگیرید: آیا شهرها باید فضاهای عمومی رایگان بیشتری برای جوانان ایجاد کنند؟ هر دو طرف را بسنجید." },
+            { "language": "ar", "text": "اتخذ موقفاً من السؤال: هل ينبغي للمدن إنشاء مساحات عامة مجانية أكثر للشباب؟ وازن بين الجانبين." },
+            { "language": "tr", "text": "Şu soru hakkında görüş bildirin: Şehirler gençler için daha fazla ücretsiz kamusal alan oluşturmalı mı? İki tarafı da tartın." },
+            { "language": "ru", "text": "Выскажите позицию по вопросу: должны ли города создавать больше бесплатных общественных пространств для молодежи? Взвесьте обе стороны." },
+            { "language": "ckb", "text": "دەربارەی ئەم پرسیارە هەڵوێست وەربگرە: ئایا شارەکان دەبێت شوێنی گشتیی زیاتر و بێبەرامبەر بۆ گەنجان دروست بکەن؟ هەردوو لایەنەکە هەڵبسەنگێنە." },
+            { "language": "kmr", "text": "Li ser vê pirsê helwestê xwe bêje: Ma divê bajar ji bo ciwanan cihên giştî yên bêpere zêdetir çêkin? Her du aliyan binirxîne." },
+            { "language": "pl", "text": "Proszę zająć stanowisko wobec pytania: czy miasta powinny tworzyć więcej bezpłatnych przestrzeni publicznych dla młodzieży? Proszę rozważyć obie strony." },
+            { "language": "ro", "text": "Exprimați-vă poziția față de întrebarea: ar trebui orașele să creeze mai multe spații publice gratuite pentru tineri? Cântăriți ambele părți." },
+            { "language": "sq", "text": "Merrni qëndrim ndaj pyetjes: a duhet qytetet të krijojnë më shumë hapësira publike falas për të rinjtë? Peshoni të dyja anët." }
+          ],
+          "function": "task-setup",
+          "toneNote": "Die Prüfungsfrage verlangt eine abgewogene Antwort, keine reine Meinung."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde das Thema nicht nur als Freizeitfrage sehen. Einerseits brauchen Jugendliche sichere Orte außerhalb von Schule und Familie. Andererseits kosten solche Räume Geld und müssen gut betreut werden.",
+          "translations": [
+            { "language": "en", "text": "I would not see the topic only as a leisure question. On the one hand, young people need safe places outside school and family. On the other hand, such spaces cost money and must be well supervised." },
+            { "language": "fa", "text": "من این موضوع را فقط مسئله اوقات فراغت نمی‌بینم. از یک طرف جوانان به مکان‌های امنی خارج از مدرسه و خانواده نیاز دارند. از طرف دیگر چنین فضاهایی هزینه دارند و باید خوب مدیریت و نظارت شوند." },
+            { "language": "ar", "text": "لا أرى الموضوع مجرد مسألة ترفيه. فمن جهة يحتاج الشباب إلى أماكن آمنة خارج المدرسة والأسرة. ومن جهة أخرى تكلف هذه المساحات مالاً ويجب الإشراف عليها جيداً." },
+            { "language": "tr", "text": "Bu konuyu sadece boş zaman meselesi olarak görmem. Bir yandan gençlerin okul ve aile dışında güvenli yerlere ihtiyacı var. Öte yandan böyle alanlar para gerektirir ve iyi denetlenmelidir." },
+            { "language": "ru", "text": "Я бы не рассматривал эту тему только как вопрос досуга. С одной стороны, молодежи нужны безопасные места вне школы и семьи. С другой стороны, такие пространства стоят денег и требуют хорошего сопровождения." },
+            { "language": "ckb", "text": "من ئەم بابەتە تەنها وەک پرسی کاتی ئازاد نابینم. لە لایەکەوە گەنجان پێویستیان بە شوێنی ئارام هەیە دەرەوەی قوتابخانە و خێزان. لە لایەکی ترەوە ئەم شوێنانە پارە دەخوازن و دەبێت باش چاودێری بکرێن." },
+            { "language": "kmr", "text": "Ez vê mijarê ne tenê wekî pirsa dema vala dibînim. Ji aliyekî ve ciwan hewceyê cihên ewle ne li derveyî dibistan û malbatê. Ji aliyê din ve, ev cih pere dixwazin û divê baş bên şopandin." },
+            { "language": "pl", "text": "Nie widziałbym tego tematu tylko jako kwestii czasu wolnego. Z jednej strony młodzież potrzebuje bezpiecznych miejsc poza szkołą i rodziną. Z drugiej strony takie przestrzenie kosztują i muszą być dobrze nadzorowane." },
+            { "language": "ro", "text": "Nu aș vedea tema doar ca pe o chestiune de timp liber. Pe de o parte, tinerii au nevoie de locuri sigure în afara școlii și familiei. Pe de altă parte, astfel de spații costă bani și trebuie supravegheate bine." },
+            { "language": "sq", "text": "Nuk do ta shihja këtë temë vetëm si çështje kohe të lirë. Nga njëra anë, të rinjtë kanë nevojë për vende të sigurta jashtë shkollës dhe familjes. Nga ana tjetër, këto hapësira kushtojnë para dhe duhen mbikëqyrur mirë." }
+          ],
+          "function": "balanced-opening",
+          "toneNote": "Stark: Die Antwort nennt sofort beide Seiten und vermeidet eine einseitige Position.",
+          "expectedLearnerAction": "Open with a balanced frame and name one argument on each side."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "listener",
+          "baseText": "Welche Vorteile sehen Sie konkret?",
+          "translations": [
+            { "language": "en", "text": "What specific advantages do you see?" },
+            { "language": "fa", "text": "به طور مشخص چه مزایایی می‌بینید؟" },
+            { "language": "ar", "text": "ما المزايا المحددة التي تراها؟" },
+            { "language": "tr", "text": "Somut olarak hangi avantajları görüyorsunuz?" },
+            { "language": "ru", "text": "Какие конкретные преимущества вы видите?" },
+            { "language": "ckb", "text": "بە وردی چ سوودێک دەبینیت؟" },
+            { "language": "kmr", "text": "Bi taybetî tu kîjan avantajiyan dibînî?" },
+            { "language": "pl", "text": "Jakie konkretne korzyści Pan/Pani widzi?" },
+            { "language": "ro", "text": "Ce avantaje concrete vedeți?" },
+            { "language": "sq", "text": "Cilat përparësi konkrete shihni?" }
+          ],
+          "function": "ask-for-benefits",
+          "toneNote": "Die Nachfrage verlangt Beispiele statt allgemeiner Zustimmung."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein wichtiger Vorteil ist soziale Teilhabe. Nicht jede Familie kann Vereinsbeiträge oder private Kurse bezahlen. Ein öffentlicher Raum kann Begegnung, Hausaufgabenhilfe und auch Sprachanwendung im Alltag ermöglichen.",
+          "translations": [
+            { "language": "en", "text": "An important advantage is social participation. Not every family can pay club fees or private courses. A public space can make encounters, homework support, and everyday language practice possible." },
+            { "language": "fa", "text": "یک مزیت مهم، مشارکت اجتماعی است. هر خانواده‌ای نمی‌تواند هزینه باشگاه‌ها یا کلاس‌های خصوصی را بپردازد. یک فضای عمومی می‌تواند امکان دیدار، کمک در تکالیف و کاربرد زبان در زندگی روزمره را فراهم کند." },
+            { "language": "ar", "text": "ميزة مهمة هي المشاركة الاجتماعية. ليست كل أسرة قادرة على دفع رسوم النوادي أو الدورات الخاصة. يمكن للمساحة العامة أن تتيح اللقاءات، والمساعدة في الواجبات، واستخدام اللغة في الحياة اليومية." },
+            { "language": "tr", "text": "Önemli bir avantaj sosyal katılımdır. Her aile dernek ücretlerini veya özel kursları ödeyemez. Kamusal bir alan buluşmayı, ödev desteğini ve günlük yaşamda dil kullanımını mümkün kılabilir." },
+            { "language": "ru", "text": "Важное преимущество - социальное участие. Не каждая семья может оплачивать взносы в клубы или частные курсы. Общественное пространство может дать возможность для встреч, помощи с домашними заданиями и использования языка в быту." },
+            { "language": "ckb", "text": "سوودێکی گرنگ بەشداریی کۆمەڵایەتییە. هەموو خێزانێک ناتوانێت پارەی یانە یان کۆرسی تایبەت بدات. شوێنێکی گشتی دەتوانێت چاوپێکەوتن، یارمەتیی ئەرکی ماڵەوە و بەکارهێنانی زمان لە ژیانی ڕۆژانەدا فەراهەم بکات." },
+            { "language": "kmr", "text": "Avantajeke girîng beşdariya civakî ye. Ne her malbat dikare heqê komeleyan an kursên taybet bide. Cihê giştî dikare hevditin, piştgiriya dersên malê û bikaranîna ziman di jiyana rojane de pêkan bike." },
+            { "language": "pl", "text": "Ważną korzyścią jest udział społeczny. Nie każda rodzina może opłacać składki klubowe albo prywatne kursy. Przestrzeń publiczna może umożliwiać spotkania, pomoc w zadaniach domowych i używanie języka w codzienności." },
+            { "language": "ro", "text": "Un avantaj important este participarea socială. Nu orice familie își poate permite cotizații la cluburi sau cursuri private. Un spațiu public poate permite întâlniri, sprijin la teme și folosirea limbii în viața de zi cu zi." },
+            { "language": "sq", "text": "Një përparësi e rëndësishme është pjesëmarrja shoqërore. Jo çdo familje mund të paguajë tarifa klubesh ose kurse private. Një hapësirë publike mund të mundësojë takime, ndihmë me detyrat dhe përdorim të gjuhës në jetën e përditshme." }
+          ],
+          "function": "explain-benefit-with-examples",
+          "toneNote": "B2: Ein abstrakter Vorteil wird mit konkreten Beispielen verbunden.",
+          "expectedLearnerAction": "Give a clear advantage and support it with concrete examples."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Welche Gegenargumente muss man ernst nehmen?",
+          "translations": [
+            { "language": "en", "text": "Which counterarguments must be taken seriously?" },
+            { "language": "fa", "text": "کدام استدلال‌های مخالف را باید جدی گرفت؟" },
+            { "language": "ar", "text": "ما الحجج المضادة التي يجب أخذها بجدية؟" },
+            { "language": "tr", "text": "Hangi karşı argümanlar ciddiye alınmalı?" },
+            { "language": "ru", "text": "Какие контраргументы нужно воспринимать всерьез?" },
+            { "language": "ckb", "text": "کام بەڵگەی بەرامبەر دەبێت بە جدی وەربگیرێت؟" },
+            { "language": "kmr", "text": "Kîjan argumanên dijber divê bi ciddiyetê bên girtin?" },
+            { "language": "pl", "text": "Jakie kontrargumenty trzeba potraktować poważnie?" },
+            { "language": "ro", "text": "Ce contraargumente trebuie luate în serios?" },
+            { "language": "sq", "text": "Cilat kundërargumente duhen marrë seriozisht?" }
+          ],
+          "function": "ask-for-counterarguments",
+          "toneNote": "Die Frage prüft, ob die Argumentation wirklich ausgewogen ist."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Man muss Kosten, Lärm und mögliche Konflikte ernst nehmen. Deshalb reicht es nicht, einfach einen Raum zu öffnen. Es braucht klare Regeln, verlässliche Öffnungszeiten und eine Ansprechperson, wenn Probleme entstehen.",
+          "translations": [
+            { "language": "en", "text": "Costs, noise, and possible conflicts must be taken seriously. That is why it is not enough simply to open a space. Clear rules, reliable opening hours, and a contact person are needed if problems arise." },
+            { "language": "fa", "text": "باید هزینه‌ها، سر و صدا و تعارض‌های احتمالی را جدی گرفت. به همین دلیل کافی نیست فقط یک فضا باز شود. قوانین روشن، ساعت‌های قابل اعتماد و یک فرد پاسخگو لازم است اگر مشکلی پیش بیاید." },
+            { "language": "ar", "text": "يجب أخذ التكاليف والضوضاء والصراعات المحتملة بجدية. لذلك لا يكفي أن نفتح مساحة فقط. نحتاج إلى قواعد واضحة، وساعات فتح موثوقة، وشخص مسؤول عند ظهور مشكلات." },
+            { "language": "tr", "text": "Maliyetler, gürültü ve olası çatışmalar ciddiye alınmalıdır. Bu yüzden sadece bir alan açmak yeterli değildir. Sorun çıktığında açık kurallar, güvenilir açılış saatleri ve bir muhatap gerekir." },
+            { "language": "ru", "text": "Нужно серьезно относиться к расходам, шуму и возможным конфликтам. Поэтому недостаточно просто открыть помещение. Нужны четкие правила, надежные часы работы и контактное лицо, если возникнут проблемы." },
+            { "language": "ckb", "text": "دەبێت تێچوون، دەنگەدەنگ و ناکۆکیی ئەگەری بە جدی وەربگیرێن. بۆیە تەنها کردنەوەی شوێنێک بەس نییە. یاسای ڕوون، کاتی کردنەوەی پشت پێبەستوو و کەسێکی پەیوەندی پێویستن کاتێک کێشە دروست دەبێت." },
+            { "language": "kmr", "text": "Divê lêçûn, deng û nakokiyên gengaz bi ciddiyetê bên girtin. Ji ber vê ne bes e ku mirov tenê cihêk veke. Rêgezên zelal, demên vekirinê yên pêbawer û kesek ji bo pêwendiyê hewce ne dema ku pirsgirêk derkevin." },
+            { "language": "pl", "text": "Trzeba poważnie traktować koszty, hałas i możliwe konflikty. Dlatego nie wystarczy po prostu otworzyć przestrzeń. Potrzebne są jasne zasady, pewne godziny otwarcia i osoba kontaktowa, gdy pojawią się problemy." },
+            { "language": "ro", "text": "Costurile, zgomotul și posibilele conflicte trebuie luate în serios. De aceea nu este suficient să deschidem pur și simplu un spațiu. Sunt necesare reguli clare, program sigur și o persoană de contact când apar probleme." },
+            { "language": "sq", "text": "Kostot, zhurma dhe konfliktet e mundshme duhen marrë seriozisht. Prandaj nuk mjafton thjesht të hapet një hapësirë. Duhen rregulla të qarta, orare të besueshme dhe një person kontakti kur lindin probleme." }
+          ],
+          "function": "acknowledge-counterarguments",
+          "toneNote": "Stark: Das Gegenargument wird nicht abgetan, sondern in Bedingungen für eine Lösung übersetzt.",
+          "expectedLearnerAction": "Take counterarguments seriously and explain conditions for a workable solution."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "listener",
+          "baseText": "Wäre das nicht eigentlich Aufgabe der Familien?",
+          "translations": [
+            { "language": "en", "text": "Would that not actually be the families' responsibility?" },
+            { "language": "fa", "text": "آیا این در واقع وظیفه خانواده‌ها نیست؟" },
+            { "language": "ar", "text": "ألا تكون هذه في الأصل مسؤولية العائلات؟" },
+            { "language": "tr", "text": "Bu aslında ailelerin görevi olmaz mı?" },
+            { "language": "ru", "text": "Разве это не задача семей?" },
+            { "language": "ckb", "text": "ئایا ئەمە لە ڕاستیدا ئەرکی خێزانەکان نییە؟" },
+            { "language": "kmr", "text": "Ma ev bi rastî ne peywira malbatan e?" },
+            { "language": "pl", "text": "Czy to właściwie nie jest zadanie rodzin?" },
+            { "language": "ro", "text": "Nu ar fi aceasta, de fapt, responsabilitatea familiilor?" },
+            { "language": "sq", "text": "A nuk do të ishte kjo në fakt detyrë e familjeve?" }
+          ],
+          "function": "challenge-responsibility",
+          "toneNote": "Die Herausforderung fragt nach Verantwortung, nicht nur nach Finanzierung."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Familien spielen natürlich eine zentrale Rolle. Trotzdem kann die Stadt ergänzen, besonders wenn Wohnungen klein sind oder Eltern lange arbeiten. Öffentliche Räume ersetzen die Familie nicht, sie schaffen aber fairere Chancen.",
+          "translations": [
+            { "language": "en", "text": "Families naturally play a central role. Still, the city can provide support, especially when apartments are small or parents work long hours. Public spaces do not replace the family, but they create fairer opportunities." },
+            { "language": "fa", "text": "خانواده‌ها طبیعتاً نقش اصلی دارند. با این حال شهر می‌تواند مکمل باشد، به‌خصوص وقتی خانه‌ها کوچک هستند یا والدین ساعات طولانی کار می‌کنند. فضاهای عمومی جای خانواده را نمی‌گیرند، اما فرصت‌های عادلانه‌تری ایجاد می‌کنند." },
+            { "language": "ar", "text": "تلعب العائلات بالطبع دوراً مركزياً. ومع ذلك يمكن للمدينة أن تكمل هذا الدور، خاصة عندما تكون الشقق صغيرة أو يعمل الوالدان لساعات طويلة. لا تحل المساحات العامة محل الأسرة، لكنها تخلق فرصاً أكثر عدلاً." },
+            { "language": "tr", "text": "Aileler elbette merkezi bir rol oynar. Yine de şehir destekleyici olabilir, özellikle evler küçükse veya ebeveynler uzun saatler çalışıyorsa. Kamusal alanlar ailenin yerini almaz, ama daha adil fırsatlar yaratır." },
+            { "language": "ru", "text": "Семьи, конечно, играют центральную роль. Тем не менее город может дополнять их, особенно если квартиры маленькие или родители долго работают. Общественные пространства не заменяют семью, но создают более справедливые возможности." },
+            { "language": "ckb", "text": "خێزانەکان بە دڵنیاییەوە ڕۆڵێکی ناوەندی دەگێڕن. بەڵام شار دەتوانێت تەواوکەر بێت، بە تایبەتی کاتێک ماڵەکان بچووکەن یان دایک و باوک کاتی درێژ کار دەکەن. شوێنە گشتییەکان جێگەی خێزان ناگرنەوە، بەڵام هەلی دادپەروەرانەتر دروست دەکەن." },
+            { "language": "kmr", "text": "Malbat bê guman roleke navendî dilîzin. Lêbelê bajar dikare piştgir be, bi taybetî dema xaniyan biçûk in an dê û bav demên dirêj dixebitin. Cihên giştî malbatê nagirin, lê derfetên adiltir diafirînin." },
+            { "language": "pl", "text": "Rodziny oczywiście odgrywają centralną rolę. Mimo to miasto może ją uzupełniać, zwłaszcza gdy mieszkania są małe albo rodzice długo pracują. Przestrzenie publiczne nie zastępują rodziny, ale tworzą bardziej sprawiedliwe szanse." },
+            { "language": "ro", "text": "Familiile joacă, desigur, un rol central. Totuși, orașul poate completa acest rol, mai ales când locuințele sunt mici sau părinții lucrează mult. Spațiile publice nu înlocuiesc familia, dar creează șanse mai echitabile." },
+            { "language": "sq", "text": "Familjet sigurisht luajnë rol qendror. Megjithatë, qyteti mund ta plotësojë këtë rol, sidomos kur banesat janë të vogla ose prindërit punojnë gjatë. Hapësirat publike nuk e zëvendësojnë familjen, por krijojnë mundësi më të drejta." }
+          ],
+          "function": "respond-to-responsibility-challenge",
+          "toneNote": "Die Antwort vermeidet ein Entweder-oder und formuliert eine ergänzende Rolle des Staates.",
+          "expectedLearnerAction": "Respond to a responsibility challenge without dismissing families or public support."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Wie lautet Ihre Schlussfolgerung?",
+          "translations": [
+            { "language": "en", "text": "What is your conclusion?" },
+            { "language": "fa", "text": "جمع‌بندی شما چیست؟" },
+            { "language": "ar", "text": "ما هي خاتمتك؟" },
+            { "language": "tr", "text": "Sonucunuz nedir?" },
+            { "language": "ru", "text": "Каков ваш вывод?" },
+            { "language": "ckb", "text": "کۆتایی و دەرئەنجامت چییە؟" },
+            { "language": "kmr", "text": "Encama te çi ye?" },
+            { "language": "pl", "text": "Jaki jest Pana/Pani wniosek?" },
+            { "language": "ro", "text": "Care este concluzia dumneavoastră?" },
+            { "language": "sq", "text": "Cili është përfundimi juaj?" }
+          ],
+          "function": "ask-for-conclusion",
+          "toneNote": "Ein B2-Fazit sollte Position, Einschränkung und nächsten Schritt enthalten."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Mein Fazit wäre: Ich bin dafür, aber schrittweise. Die Stadt könnte mit einem Pilotprojekt in zwei Stadtteilen beginnen, Jugendliche an der Planung beteiligen und nach sechs Monaten prüfen, ob das Angebot wirklich genutzt wird.",
+          "translations": [
+            { "language": "en", "text": "My conclusion would be: I am in favor, but step by step. The city could begin with a pilot project in two districts, involve young people in the planning, and check after six months whether the offer is actually being used." },
+            { "language": "fa", "text": "جمع‌بندی من این است: موافقم، اما مرحله‌به‌مرحله. شهر می‌تواند با یک پروژه آزمایشی در دو محله شروع کند، جوانان را در برنامه‌ریزی مشارکت دهد و بعد از شش ماه بررسی کند که آیا این امکان واقعاً استفاده می‌شود یا نه." },
+            { "language": "ar", "text": "خلاصتي هي: أنا مؤيد، لكن خطوة خطوة. يمكن للمدينة أن تبدأ بمشروع تجريبي في حيين، وتشرك الشباب في التخطيط، وتتحقق بعد ستة أشهر مما إذا كان العرض يُستخدم فعلاً." },
+            { "language": "tr", "text": "Sonucum şu olurdu: destekliyorum, ama adım adım. Şehir iki semtte bir pilot projeyle başlayabilir, gençleri planlamaya dahil edebilir ve altı ay sonra bu imkanın gerçekten kullanılıp kullanılmadığını kontrol edebilir." },
+            { "language": "ru", "text": "Мой вывод был бы таким: я за, но постепенно. Город мог бы начать с пилотного проекта в двух районах, привлечь молодежь к планированию и через шесть месяцев проверить, действительно ли предложение используется." },
+            { "language": "ckb", "text": "دەرئەنجامی من ئەمە دەبێت: من لەگەڵیم، بەڵام هەنگاو بە هەنگاو. شار دەتوانێت بە پڕۆژەیەکی تاقیکاری لە دوو گەڕەک دەست پێبکات، گەنجان لە پلانداناندا بەشداری پێبکات و دوای شەش مانگ بپشکنێت ئایا ئەم خزمەتگوزارییە بە ڕاستی بەکاردەهێنرێت یان نا." },
+            { "language": "kmr", "text": "Encama min ev e: ez alîgir im, lê gav bi gav. Bajar dikare bi projeyeke ceribandinê li du taxan dest pê bike, ciwanan di plankirinê de beşdar bike û piştî şeş mehan bibîne ka ev pêşkêşî bi rastî tê bikaranîn an na." },
+            { "language": "pl", "text": "Mój wniosek byłby taki: jestem za, ale stopniowo. Miasto mogłoby zacząć od projektu pilotażowego w dwóch dzielnicach, włączyć młodzież w planowanie i po sześciu miesiącach sprawdzić, czy oferta naprawdę jest używana." },
+            { "language": "ro", "text": "Concluzia mea ar fi: sunt pentru, dar treptat. Orașul ar putea începe cu un proiect-pilot în două cartiere, să implice tinerii în planificare și după șase luni să verifice dacă oferta este folosită cu adevărat." },
+            { "language": "sq", "text": "Përfundimi im do të ishte: jam pro, por hap pas hapi. Qyteti mund të fillojë me një projekt pilot në dy lagje, të përfshijë të rinjtë në planifikim dhe pas gjashtë muajsh të kontrollojë nëse oferta përdoret vërtet." }
+          ],
+          "function": "nuanced-conclusion",
+          "toneNote": "Stark: Das Fazit enthält Position, Einschränkung und einen überprüfbaren nächsten Schritt.",
+          "expectedLearnerAction": "Close with a clear position, conditions, and a realistic next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Einerseits brauchen Jugendliche sichere Orte; andererseits kosten solche Räume Geld und müssen betreut werden.",
+              "translations": [
+                { "language": "en", "text": "On the one hand, young people need safe places; on the other hand, such spaces cost money and must be supervised." },
+                { "language": "fa", "text": "از یک طرف جوانان به مکان‌های امن نیاز دارند؛ از طرف دیگر چنین فضاهایی هزینه دارند و باید نظارت شوند." },
+                { "language": "ar", "text": "من جهة يحتاج الشباب إلى أماكن آمنة؛ ومن جهة أخرى تكلف هذه المساحات مالاً ويجب الإشراف عليها." },
+                { "language": "tr", "text": "Bir yandan gençlerin güvenli yerlere ihtiyacı var; öte yandan böyle alanlar para gerektirir ve denetlenmelidir." },
+                { "language": "ru", "text": "С одной стороны, молодежи нужны безопасные места; с другой стороны, такие пространства стоят денег и должны сопровождаться." },
+                { "language": "ckb", "text": "لە لایەکەوە گەنجان پێویستیان بە شوێنی ئارام هەیە؛ لە لایەکی ترەوە ئەم شوێنانە پارە دەخوازن و دەبێت چاودێری بکرێن." },
+                { "language": "kmr", "text": "Ji aliyekî ve ciwan hewceyê cihên ewle ne; ji aliyê din ve ev cih pere dixwazin û divê bên şopandin." },
+                { "language": "pl", "text": "Z jednej strony młodzież potrzebuje bezpiecznych miejsc; z drugiej strony takie przestrzenie kosztują i muszą być nadzorowane." },
+                { "language": "ro", "text": "Pe de o parte, tinerii au nevoie de locuri sigure; pe de altă parte, aceste spații costă bani și trebuie supravegheate." },
+                { "language": "sq", "text": "Nga njëra anë, të rinjtë kanë nevojë për vende të sigurta; nga ana tjetër, këto hapësira kushtojnë para dhe duhen mbikëqyrur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort eröffnet direkt mit einer echten Abwägung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer opens directly with a real weighing of both sides." },
+                { "language": "fa", "text": "قوی: پاسخ از همان ابتدا با سنجش واقعی دو طرف شروع می‌شود." },
+                { "language": "ar", "text": "قوية: تبدأ الإجابة مباشرة بموازنة حقيقية بين الجانبين." },
+                { "language": "tr", "text": "Güçlü: cevap doğrudan iki tarafı gerçek bir biçimde tartarak başlıyor." },
+                { "language": "ru", "text": "Сильно: ответ сразу начинается с настоящего взвешивания обеих сторон." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕاستەوخۆ بە هەڵسەنگاندنی ڕاستەقینەی هەردوو لایەن دەست پێدەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv rasterast bi nirxandina rastîn a her du aliyan dest pê dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź od razu zaczyna się od rzeczywistego rozważenia obu stron." },
+                { "language": "ro", "text": "Puternic: răspunsul începe direct cu o cântărire reală a ambelor părți." },
+                { "language": "sq", "text": "E fortë: përgjigjja fillon drejtpërdrejt me peshimin real të të dyja anëve." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich bin dafür, weil Jugendliche einen Platz brauchen.",
+              "translations": [
+                { "language": "en", "text": "I am in favor because young people need a place." },
+                { "language": "fa", "text": "من موافقم چون جوانان به یک مکان نیاز دارند." },
+                { "language": "ar", "text": "أنا مؤيد لأن الشباب يحتاجون إلى مكان." },
+                { "language": "tr", "text": "Ben destekliyorum çünkü gençlerin bir yere ihtiyacı var." },
+                { "language": "ru", "text": "Я за, потому что молодежи нужно место." },
+                { "language": "ckb", "text": "من لەگەڵم چونکە گەنجان پێویستیان بە شوێنێک هەیە." },
+                { "language": "kmr", "text": "Ez alîgir im ji ber ku ciwan hewceyê cihekî ne." },
+                { "language": "pl", "text": "Jestem za, ponieważ młodzież potrzebuje miejsca." },
+                { "language": "ro", "text": "Sunt pentru, deoarece tinerii au nevoie de un loc." },
+                { "language": "sq", "text": "Jam pro sepse të rinjtë kanë nevojë për një vend." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu einseitig: Für B2 fehlt das Gegenargument oder eine Einschränkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too one-sided: for B2, a counterargument or limitation is missing." },
+                { "language": "fa", "text": "قابل‌قبول است، اما بیش از حد یک‌طرفه است: برای B2 استدلال مخالف یا محدودیت کم دارد." },
+                { "language": "ar", "text": "مقبولة لكنها أحادية أكثر من اللازم: في B2 ينقصها حجة مضادة أو قيد." },
+                { "language": "tr", "text": "Makül ama fazla tek taraflı: B2 için karşı argüman ya da sınırlama eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком односторонне: для B2 не хватает контраргумента или ограничения." },
+                { "language": "ckb", "text": "دەگونجێت، بەڵام زۆر یەک لایەنەیە: بۆ B2 بەڵگەی بەرامبەر یان سنووردارکردن کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir yekalî ye: ji bo B2 argumana dijber an sînordarkirin kêm e." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest zbyt jednostronne: na B2 brakuje kontrargumentu albo ograniczenia." },
+                { "language": "ro", "text": "Plauzibil, dar prea unilateral: pentru B2 lipsește un contraargument sau o limitare." },
+                { "language": "sq", "text": "E besueshme, por shumë e njëanshme: për B2 mungon një kundërargument ose kufizim." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ein öffentlicher Raum kann soziale Teilhabe fördern, weil nicht jede Familie private Angebote bezahlen kann.",
+              "translations": [
+                { "language": "en", "text": "A public space can promote social participation because not every family can pay for private offers." },
+                { "language": "fa", "text": "یک فضای عمومی می‌تواند مشارکت اجتماعی را تقویت کند، چون هر خانواده‌ای نمی‌تواند امکانات خصوصی را بپردازد." },
+                { "language": "ar", "text": "يمكن للمساحة العامة أن تعزز المشاركة الاجتماعية لأن ليس كل أسرة تستطيع دفع تكاليف العروض الخاصة." },
+                { "language": "tr", "text": "Kamusal bir alan sosyal katılımı destekleyebilir, çünkü her aile özel imkanları ödeyemez." },
+                { "language": "ru", "text": "Общественное пространство может способствовать социальному участию, потому что не каждая семья может оплатить частные предложения." },
+                { "language": "ckb", "text": "شوێنی گشتی دەتوانێت بەشداریی کۆمەڵایەتی بەهێز بکات، چونکە هەموو خێزانێک ناتوانێت خزمەتگوزاریی تایبەت بدات." },
+                { "language": "kmr", "text": "Cihê giştî dikare beşdariya civakî xurt bike, ji ber ku ne her malbat dikare pêşkêşiyên taybet bide." },
+                { "language": "pl", "text": "Przestrzeń publiczna może wspierać udział społeczny, ponieważ nie każda rodzina może zapłacić za prywatne oferty." },
+                { "language": "ro", "text": "Un spațiu public poate promova participarea socială, deoarece nu orice familie își permite oferte private." },
+                { "language": "sq", "text": "Një hapësirë publike mund të nxisë pjesëmarrjen shoqërore, sepse jo çdo familje mund të paguajë oferta private." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Vorteil und Begründung konkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer connects the advantage and the reason concretely." },
+                { "language": "fa", "text": "قوی: پاسخ مزیت و دلیل را به‌طور مشخص به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوية: تربط الإجابة بين الميزة والسبب بشكل ملموس." },
+                { "language": "tr", "text": "Güçlü: cevap avantajı ve gerekçeyi somut biçimde bağlıyor." },
+                { "language": "ru", "text": "Сильно: ответ конкретно связывает преимущество и обоснование." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سوود و هۆکار بە شێوەیەکی دیاریکراو پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv avantaj û sedemê bi awayekî diyar girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź konkretnie łączy korzyść z uzasadnieniem." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă concret avantajul de motiv." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh konkretisht përparësinë me arsyen." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Dann hätten Jugendliche einfach mehr Spaß.",
+              "translations": [
+                { "language": "en", "text": "Then young people would simply have more fun." },
+                { "language": "fa", "text": "آن‌وقت جوانان فقط بیشتر خوش می‌گذرانند." },
+                { "language": "ar", "text": "عندها سيستمتع الشباب أكثر فقط." },
+                { "language": "tr", "text": "O zaman gençler sadece daha çok eğlenir." },
+                { "language": "ru", "text": "Тогда молодежи просто будет веселее." },
+                { "language": "ckb", "text": "ئەو کاتە گەنجان تەنها زیاتر خۆش دەبن." },
+                { "language": "kmr", "text": "Wê demê ciwan tenê bêtir kêf bikin." },
+                { "language": "pl", "text": "Wtedy młodzież po prostu miałaby więcej zabawy." },
+                { "language": "ro", "text": "Atunci tinerii s-ar distra pur și simplu mai mult." },
+                { "language": "sq", "text": "Atëherë të rinjtë thjesht do të argëtoheshin më shumë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu oberflächlich: Der Gedanke ist verständlich, aber für B2 fehlt der gesellschaftliche Nutzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too superficial: the idea is understandable, but for B2 the social benefit is missing." },
+                { "language": "fa", "text": "خیلی سطحی است: فکرش قابل فهم است، اما برای B2 فایده اجتماعی کم دارد." },
+                { "language": "ar", "text": "سطحية جداً: الفكرة مفهومة، لكن في B2 ينقصها الأثر الاجتماعي." },
+                { "language": "tr", "text": "Fazla yüzeysel: fikir anlaşılır, fakat B2 için toplumsal fayda eksik." },
+                { "language": "ru", "text": "Слишком поверхностно: мысль понятна, но для B2 не хватает общественной пользы." },
+                { "language": "ckb", "text": "زۆر سەرپێییە: بیرۆکەکە تێدەگەیەنرێت، بەڵام بۆ B2 سوودی کۆمەڵایەتی کەمە." },
+                { "language": "kmr", "text": "Pir sererast e: raman tê fêmkirin, lê ji bo B2 sûda civakî kêm e." },
+                { "language": "pl", "text": "Zbyt powierzchowne: myśl jest zrozumiała, ale na B2 brakuje korzyści społecznej." },
+                { "language": "ro", "text": "Prea superficial: ideea este de înțeles, dar pentru B2 lipsește beneficiul social." },
+                { "language": "sq", "text": "Shumë sipërfaqësore: ideja kuptohet, por për B2 mungon dobia shoqërore." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Die Risiken sprechen nicht gegen das Angebot selbst, sondern für klare Regeln und eine verantwortliche Ansprechperson.",
+              "translations": [
+                { "language": "en", "text": "The risks do not argue against the offer itself, but for clear rules and a responsible contact person." },
+                { "language": "fa", "text": "ریسک‌ها علیه خود این امکان نیستند، بلکه نشان می‌دهند قوانین روشن و یک فرد مسئول لازم است." },
+                { "language": "ar", "text": "المخاطر لا تعارض العرض نفسه، بل تدعو إلى قواعد واضحة وشخص مسؤول للتواصل." },
+                { "language": "tr", "text": "Riskler teklifin kendisine karşı değil, açık kurallar ve sorumlu bir muhatap gerekliliği lehinedir." },
+                { "language": "ru", "text": "Риски говорят не против самого предложения, а в пользу четких правил и ответственного контактного лица." },
+                { "language": "ckb", "text": "مەترسییەکان دژی خودی خزمەتگوزارییەکە نین، بەڵکوو پشتیوانی لە یاسای ڕوون و کەسێکی بەرپرسی پەیوەندی دەکەن." },
+                { "language": "kmr", "text": "Rîsk ne li dijî pêşkêşiyê bixwe ne, lê ji bo rêgezên zelal û kesek berpirsiyar ê pêwendiyê ne." },
+                { "language": "pl", "text": "Ryzyka nie przemawiają przeciw samej ofercie, lecz za jasnymi zasadami i odpowiedzialną osobą kontaktową." },
+                { "language": "ro", "text": "Riscurile nu vorbesc împotriva ofertei în sine, ci pentru reguli clare și o persoană de contact responsabilă." },
+                { "language": "sq", "text": "Rreziqet nuk flasin kundër vetë ofertës, por për rregulla të qarta dhe një person përgjegjës kontakti." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Gegenargument wird anerkannt und in eine Lösungsbedingung verwandelt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the counterargument is acknowledged and turned into a condition for a solution." },
+                { "language": "fa", "text": "قوی: استدلال مخالف پذیرفته می‌شود و به شرطی برای راه‌حل تبدیل می‌شود." },
+                { "language": "ar", "text": "قوية: يتم الاعتراف بالحجة المضادة وتحويلها إلى شرط للحل." },
+                { "language": "tr", "text": "Güçlü: karşı argüman kabul ediliyor ve çözüm için bir koşula dönüştürülüyor." },
+                { "language": "ru", "text": "Сильно: контраргумент признается и превращается в условие решения." },
+                { "language": "ckb", "text": "بەهێزە: بەڵگەی بەرامبەر وەردەگیرێت و دەکرێتە مەرجێک بۆ چارەسەر." },
+                { "language": "kmr", "text": "Xurt e: argumana dijber tê pejirandin û vediguhere merca çareseriyê." },
+                { "language": "pl", "text": "Mocne: kontrargument zostaje uznany i zamieniony w warunek rozwiązania." },
+                { "language": "ro", "text": "Puternic: contraargumentul este recunoscut și transformat într-o condiție pentru soluție." },
+                { "language": "sq", "text": "E fortë: kundërargumenti pranohet dhe kthehet në kusht për zgjidhje." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Natürlich gibt es Probleme, aber die muss man eben lösen.",
+              "translations": [
+                { "language": "en", "text": "Of course there are problems, but they just have to be solved." },
+                { "language": "fa", "text": "البته مشکل‌هایی وجود دارد، اما بالاخره باید حلشان کرد." },
+                { "language": "ar", "text": "بالطبع توجد مشكلات، لكن يجب حلها ببساطة." },
+                { "language": "tr", "text": "Elbette sorunlar var, ama bunların çözülmesi gerekir." },
+                { "language": "ru", "text": "Конечно, проблемы есть, но их просто нужно решить." },
+                { "language": "ckb", "text": "بە دڵنیایی کێشە هەیە، بەڵام دەبێت چارەسەر بکرێن." },
+                { "language": "kmr", "text": "Bê guman pirsgirêk hene, lê divê bên çareserkirin." },
+                { "language": "pl", "text": "Oczywiście są problemy, ale trzeba je po prostu rozwiązać." },
+                { "language": "ro", "text": "Desigur, există probleme, dar trebuie pur și simplu rezolvate." },
+                { "language": "sq", "text": "Sigurisht ka probleme, por ato thjesht duhen zgjidhur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Es fehlt, welche Probleme gemeint sind und wie man sie begrenzt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too general: it does not say which problems are meant or how to limit them." },
+                { "language": "fa", "text": "قابل‌قبول است، اما خیلی کلی است: نمی‌گوید کدام مشکل‌ها منظور است و چگونه باید محدودشان کرد." },
+                { "language": "ar", "text": "مقبولة لكنها عامة جداً: لا تذكر أي مشكلات مقصودة ولا كيف يمكن الحد منها." },
+                { "language": "tr", "text": "Makül ama fazla genel: hangi sorunların kastedildiğini ve nasıl sınırlandırılacağını söylemiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком обще: не сказано, какие проблемы имеются в виду и как их ограничить." },
+                { "language": "ckb", "text": "دەگونجێت، بەڵام زۆر گشتییە: ناڵێت مەبەست کام کێشەیە و چۆن سنووردار دەکرێت." },
+                { "language": "kmr", "text": "Maqûl e, lê pir giştî ye: nabêje kîjan pirsgirêk têne mebest kirin û çawa tên sînordarkirin." },
+                { "language": "pl", "text": "Brzmi możliwie, ale zbyt ogólnie: nie mówi, o jakie problemy chodzi ani jak je ograniczyć." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: nu spune ce probleme sunt vizate și cum pot fi limitate." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: nuk thotë cilat probleme nënkuptohen dhe si kufizohen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich wäre dafür, aber zunächst als Pilotprojekt mit klaren Regeln, Beteiligung der Jugendlichen und Auswertung nach sechs Monaten.",
+              "translations": [
+                { "language": "en", "text": "I would be in favor, but first as a pilot project with clear rules, youth participation, and evaluation after six months." },
+                { "language": "fa", "text": "من موافقم، اما ابتدا به‌صورت پروژه آزمایشی با قوانین روشن، مشارکت جوانان و ارزیابی بعد از شش ماه." },
+                { "language": "ar", "text": "سأكون مؤيداً، لكن أولاً كمشروع تجريبي مع قواعد واضحة ومشاركة الشباب وتقييم بعد ستة أشهر." },
+                { "language": "tr", "text": "Ben desteklerdim, ama önce açık kurallar, gençlerin katılımı ve altı ay sonra değerlendirme içeren bir pilot proje olarak." },
+                { "language": "ru", "text": "Я был бы за, но сначала как пилотный проект с четкими правилами, участием молодежи и оценкой через шесть месяцев." },
+                { "language": "ckb", "text": "من لەگەڵ دەبووم، بەڵام سەرەتا وەک پڕۆژەیەکی تاقیکاری بە یاسای ڕوون، بەشداری گەنجان و هەڵسەنگاندن دوای شەش مانگ." },
+                { "language": "kmr", "text": "Ez alîgir bûm, lê pêşî wekî projeyeke ceribandinê bi rêgezên zelal, beşdariya ciwanan û nirxandinê piştî şeş mehan." },
+                { "language": "pl", "text": "Byłbym za, ale najpierw jako projekt pilotażowy z jasnymi zasadami, udziałem młodzieży i oceną po sześciu miesiącach." },
+                { "language": "ro", "text": "Aș fi pentru, dar mai întâi ca proiect-pilot cu reguli clare, participarea tinerilor și evaluare după șase luni." },
+                { "language": "sq", "text": "Do të isha pro, por fillimisht si projekt pilot me rregulla të qarta, pjesëmarrje të të rinjve dhe vlerësim pas gjashtë muajsh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Fazit ist differenziert und enthält einen realistischen nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the conclusion is nuanced and includes a realistic next step." },
+                { "language": "fa", "text": "قوی: جمع‌بندی دقیق است و یک گام بعدی واقع‌بینانه دارد." },
+                { "language": "ar", "text": "قوية: الخاتمة متوازنة وتتضمن خطوة تالية واقعية." },
+                { "language": "tr", "text": "Güçlü: sonuç nüanslı ve gerçekçi bir sonraki adım içeriyor." },
+                { "language": "ru", "text": "Сильно: вывод дифференцирован и содержит реалистичный следующий шаг." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە وردە و هەنگاوی داهاتووی واقیعی تێدایە." },
+                { "language": "kmr", "text": "Xurt e: encam nûansdar e û gaveke din a realîst di nav de heye." },
+                { "language": "pl", "text": "Mocne: wniosek jest zniuansowany i zawiera realistyczny następny krok." },
+                { "language": "ro", "text": "Puternic: concluzia este nuanțată și include un pas următor realist." },
+                { "language": "sq", "text": "E fortë: përfundimi është i nuancuar dhe përfshin një hap realist të radhës." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich finde es gut, wenn dafür genug Geld da ist.",
+              "translations": [
+                { "language": "en", "text": "I think it is good if there is enough money for it." },
+                { "language": "fa", "text": "به نظر من خوب است، اگر برایش پول کافی وجود داشته باشد." },
+                { "language": "ar", "text": "أعتقد أنه جيد إذا كان هناك مال كاف لذلك." },
+                { "language": "tr", "text": "Bunun için yeterli para varsa bunun iyi olduğunu düşünüyorum." },
+                { "language": "ru", "text": "Я считаю это хорошим, если на это достаточно денег." },
+                { "language": "ckb", "text": "پێم باشە ئەگەر پارەی پێویست بۆی هەبێت." },
+                { "language": "kmr", "text": "Ez dibêjim baş e heke ji bo wê pereyê bes hebe." },
+                { "language": "pl", "text": "Uważam, że to dobre, jeśli jest na to wystarczająco pieniędzy." },
+                { "language": "ro", "text": "Mi se pare bine dacă există suficienți bani pentru asta." },
+                { "language": "sq", "text": "Mendoj se është mirë nëse ka mjaft para për këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn: Es nennt eine Bedingung, aber keinen Plan und keine klare Schlussfolgerung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too thin: it names a condition, but no plan and no clear conclusion." },
+                { "language": "fa", "text": "قابل‌قبول است، اما خیلی کم‌مایه است: یک شرط را می‌گوید، اما برنامه و جمع‌بندی روشن ندارد." },
+                { "language": "ar", "text": "مقبولة لكنها ضعيفة: تذكر شرطاً، لكنها لا تقدم خطة ولا خاتمة واضحة." },
+                { "language": "tr", "text": "Makül ama zayıf: bir koşul söylüyor, fakat plan ve açık sonuç yok." },
+                { "language": "ru", "text": "Правдоподобно, но слишком слабо: названо условие, но нет плана и ясного вывода." },
+                { "language": "ckb", "text": "دەگونجێت، بەڵام زۆر لاوازە: مەرجێک دەڵێت، بەڵام پلان و کۆتایی ڕوونی نییە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir lawaz e: mercêk dibêje, lê plan û encameke zelal tune ye." },
+                { "language": "pl", "text": "Brzmi możliwie, ale zbyt słabo: podaje warunek, lecz bez planu i jasnego wniosku." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: numește o condiție, dar nu are plan și concluzie clară." },
+                { "language": "sq", "text": "E besueshme, por shumë e dobët: përmend një kusht, por nuk ka plan dhe përfundim të qartë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "exam-tip",
+          "text": "Eine B2-Abwägung sollte direkt zeigen, dass es mindestens zwei legitime Perspektiven gibt.",
+          "translations": [
+            { "language": "en", "text": "A B2-level weighing should directly show that there are at least two legitimate perspectives." },
+            { "language": "fa", "text": "یک سنجش در سطح B2 باید مستقیم نشان دهد که دست‌کم دو دیدگاه معتبر وجود دارد." },
+            { "language": "ar", "text": "ينبغي للموازنة في مستوى B2 أن تُظهر مباشرة أن هناك منظورين مشروعين على الأقل." },
+            { "language": "tr", "text": "B2 düzeyinde bir tartma, en az iki meşru bakış açısı olduğunu doğrudan göstermelidir." },
+            { "language": "ru", "text": "Взвешивание на уровне B2 должно сразу показывать, что существуют как минимум две обоснованные перспективы." },
+            { "language": "ckb", "text": "هەڵسەنگاندنی ئاستی B2 دەبێت ڕاستەوخۆ نیشان بدات کە لانیکەم دوو ڕوانگەی دروست هەن." },
+            { "language": "kmr", "text": "Nirxandineke asta B2 divê rasterast nîşan bide ku herî kêm du perspektîfên rewa hene." },
+            { "language": "pl", "text": "Rozważenie na poziomie B2 powinno od razu pokazać, że istnieją co najmniej dwie uzasadnione perspektywy." },
+            { "language": "ro", "text": "O cântărire la nivel B2 ar trebui să arate direct că există cel puțin două perspective legitime." },
+            { "language": "sq", "text": "Një peshim në nivelin B2 duhet të tregojë menjëherë se ka të paktën dy perspektiva të ligjshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "quality-note",
+          "text": "Ein gutes Beispiel macht ein abstraktes Argument prüfungsreif.",
+          "translations": [
+            { "language": "en", "text": "A good example makes an abstract argument suitable for the exam." },
+            { "language": "fa", "text": "یک مثال خوب، استدلال انتزاعی را برای آزمون مناسب و قابل‌قبول می‌کند." },
+            { "language": "ar", "text": "المثال الجيد يجعل الحجة المجردة مناسبة للامتحان." },
+            { "language": "tr", "text": "İyi bir örnek, soyut bir argümanı sınava uygun hale getirir." },
+            { "language": "ru", "text": "Хороший пример делает абстрактный аргумент пригодным для экзамена." },
+            { "language": "ckb", "text": "نموونەیەکی باش بەڵگەیەکی ئەبستراکت دەکاتە شتێکی گونجاو بۆ تاقیکردنەوە." },
+            { "language": "kmr", "text": "Nimûneyeke baş argumaneke abstrakt ji bo ezmûnê guncan dike." },
+            { "language": "pl", "text": "Dobry przykład sprawia, że abstrakcyjny argument nadaje się do egzaminu." },
+            { "language": "ro", "text": "Un exemplu bun face un argument abstract potrivit pentru examen." },
+            { "language": "sq", "text": "Një shembull i mirë e bën një argument abstrakt të përshtatshëm për provim." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "exam-tip",
+          "text": "Starke Gegenargumente werden nicht weggewischt, sondern in Bedingungen oder Grenzen übersetzt.",
+          "translations": [
+            { "language": "en", "text": "Strong counterarguments are not brushed aside; they are translated into conditions or limits." },
+            { "language": "fa", "text": "استدلال‌های مخالف قوی کنار زده نمی‌شوند؛ بلکه به شرط‌ها یا محدودیت‌ها تبدیل می‌شوند." },
+            { "language": "ar", "text": "لا تُهمَل الحجج المضادة القوية، بل تُحوَّل إلى شروط أو حدود." },
+            { "language": "tr", "text": "Güçlü karşı argümanlar geçiştirilmez; koşullara veya sınırlara dönüştürülür." },
+            { "language": "ru", "text": "Сильные контраргументы не отбрасываются, а переводятся в условия или ограничения." },
+            { "language": "ckb", "text": "بەڵگەی بەرامبەری بەهێز پشتگوێ ناخرێت؛ بەڵکوو دەگۆڕدرێن بۆ مەرج یان سنوور." },
+            { "language": "kmr", "text": "Argumanên dijber ên xurt nayên paşguhkirin; ew vediguhere merc an sînor." },
+            { "language": "pl", "text": "Silnych kontrargumentów nie zbywa się, lecz przekłada na warunki albo granice." },
+            { "language": "ro", "text": "Contraargumentele puternice nu sunt ignorate, ci transformate în condiții sau limite." },
+            { "language": "sq", "text": "Kundërargumentet e forta nuk anashkalohen, por kthehen në kushte ose kufij." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "quality-note",
+          "text": "Ein differenziertes Fazit nennt Position, Vorsicht und einen überprüfbaren nächsten Schritt.",
+          "translations": [
+            { "language": "en", "text": "A nuanced conclusion names a position, caution, and a verifiable next step." },
+            { "language": "fa", "text": "یک جمع‌بندی دقیق، موضع، احتیاط و گام بعدی قابل بررسی را بیان می‌کند." },
+            { "language": "ar", "text": "الخاتمة المتوازنة تذكر موقفاً وحذراً وخطوة تالية قابلة للتحقق." },
+            { "language": "tr", "text": "Nüanslı bir sonuç, pozisyonu, ihtiyatı ve doğrulanabilir bir sonraki adımı belirtir." },
+            { "language": "ru", "text": "Дифференцированный вывод называет позицию, осторожность и проверяемый следующий шаг." },
+            { "language": "ckb", "text": "کۆتاییەکی ورد هەڵوێست، ئاگاداری و هەنگاوی داهاتووی پشکنین‌پذیر دەڵێت." },
+            { "language": "kmr", "text": "Encameke nûansdar helwest, hişyarî û gaveke din a dikare bê kontrolkirin dibêje." },
+            { "language": "pl", "text": "Zniuansowany wniosek wskazuje stanowisko, ostrożność i możliwy do sprawdzenia następny krok." },
+            { "language": "ro", "text": "O concluzie nuanțată numește poziția, prudența și un pas următor verificabil." },
+            { "language": "sq", "text": "Një përfundim i nuancuar përmend qëndrimin, kujdesin dhe një hap të radhës të verifikueshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "social-issue-exam-discussion",
+          "placement": "detail-hero",
+          "purpose": "Set a B2 exam speaking context for weighing a public social issue.",
+          "altText": "Exam discussion table with simple cards showing young people, a city park, rules, costs, and a balanced conclusion.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Exam discussion table with simple cards showing young people, a city park, rules, costs, and a balanced conclusion." },
+            { "language": "fa", "text": "میز بحث امتحانی با کارت‌های ساده که جوانان، پارک شهری، قوانین، هزینه‌ها و جمع‌بندی متعادل را نشان می‌دهد." },
+            { "language": "ar", "text": "طاولة نقاش امتحاني مع بطاقات بسيطة تُظهر شباباً وحديقة مدينة وقواعد وتكاليف وخاتمة متوازنة." },
+            { "language": "tr", "text": "Gençleri, şehir parkını, kuralları, maliyetleri ve dengeli sonucu gösteren basit kartlarla sınav tartışma masası." },
+            { "language": "ru", "text": "Экзаменационный стол для обсуждения с простыми карточками о молодежи, городском парке, правилах, расходах и сбалансированном выводе." },
+            { "language": "ckb", "text": "مێزی گفتوگۆی تاقیکردنەوە بە کارتە سادەکان کە گەنجان، پارکی شار، یاساکان، تێچوون و کۆتاییەکی هاوسەنگ نیشان دەدەن." },
+            { "language": "kmr", "text": "Maseya gotûbêja ezmûnê bi kartên sade ku ciwan, parkeke bajarî, rêgez, lêçûn û encameke hevseng nîşan didin." },
+            { "language": "pl", "text": "Stół dyskusji egzaminacyjnej z prostymi kartami pokazującymi młodzież, park miejski, zasady, koszty i wyważony wniosek." },
+            { "language": "ro", "text": "Masă de discuție de examen cu carduri simple care arată tineri, un parc urban, reguli, costuri și o concluzie echilibrată." },
+            { "language": "sq", "text": "Tavolinë diskutimi provimi me karta të thjeshta që tregojnë të rinj, park qyteti, rregulla, kosto dhe përfundim të balancuar." }
+          ],
+          "imagePrompt": "Clean educational illustration of a neutral German B2 speaking exam discussion. A small table has abstract cards for young people, a city park, rules, costs, and a balanced conclusion. Diverse adults in a calm exam setting. No readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

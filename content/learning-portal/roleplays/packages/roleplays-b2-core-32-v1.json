@@ -1,0 +1,727 @@
+{
+  "packageId": "roleplays-b2-core-32-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 32 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 32",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-uebergabetermin-mit-bedingungen-vereinbaren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Übergabetermin mit Bedingungen vereinbaren",
+      "titleTranslations": [
+        { "language": "en", "text": "Arrange a handover appointment with conditions" },
+        { "language": "fa", "text": "هماهنگ کردن وقت تحویل خانه با شرایط مشخص" },
+        { "language": "ar", "text": "تحديد موعد تسليم بشروط واضحة" },
+        { "language": "tr", "text": "Koşulları belirlenmiş bir teslim randevusu ayarlamak" },
+        { "language": "ru", "text": "Договориться о встрече передачи квартиры с условиями" },
+        { "language": "ckb", "text": "ڕێکخستنی کاتی ڕادەستکردن بە مەرجە دیاریکراوەکان" },
+        { "language": "kmr", "text": "Demekî radestkirinê bi şertên diyarkirî saz kirin" },
+        { "language": "pl", "text": "Ustalenie terminu przekazania mieszkania z warunkami" },
+        { "language": "ro", "text": "Stabilirea unei programări de predare cu condiții clare" },
+        { "language": "sq", "text": "Caktimi i një takimi dorëzimi me kushte të qarta" }
+      ],
+      "description": "Du rufst die Hausverwaltung an, um den Übergabetermin für deine Wohnung zu vereinbaren. Du möchtest genug Zeit für Zählerstände, Schlüssel, Übergabeprotokoll und bereits gemeldete Mängel einplanen und den Termin schriftlich bestätigen lassen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the property management company to arrange the handover appointment for your apartment. You want enough time for meter readings, keys, the handover protocol, and defects already reported, and you want the appointment confirmed in writing." },
+        { "language": "fa", "text": "تو به مدیریت ساختمان زنگ می‌زنی تا وقت تحویل خانه را هماهنگ کنی. می‌خواهی زمان کافی برای خواندن کنتورها، کلیدها، صورت‌جلسه تحویل و ایرادهایی که قبلاً گزارش شده‌اند در نظر گرفته شود و وقت به‌صورت کتبی تأیید شود." },
+        { "language": "ar", "text": "تتصل بإدارة العقار لتحديد موعد تسليم شقتك. تريد تخصيص وقت كافٍ لقراءات العدادات والمفاتيح ومحضر التسليم والعيوب التي تم الإبلاغ عنها سابقاً، وتريد تأكيد الموعد كتابياً." },
+        { "language": "tr", "text": "Dairenin teslim randevusunu ayarlamak için apartman yönetimini ararsın. Sayaç okumaları, anahtarlar, teslim tutanağı ve daha önce bildirilen kusurlar için yeterli süre ayrılmasını ve randevunun yazılı olarak teyit edilmesini istersin." },
+        { "language": "ru", "text": "Вы звоните в управляющую компанию, чтобы договориться о встрече для передачи квартиры. Вам нужно достаточно времени на показания счетчиков, ключи, акт передачи и уже заявленные дефекты, а также письменное подтверждение встречи." },
+        { "language": "ckb", "text": "پەیوەندی بە بەڕێوەبەرایەتی خانووەکە دەکەیت بۆ ڕێکخستنی کاتی ڕادەستکردنی خانووەکەت. دەتەوێت کاتی پێویست بۆ خوێندنەوەی پێوەرەکان، کلیلەکان، پرۆتۆکۆڵی ڕادەستکردن و کەموکوڕییە پێشتر ڕاپۆرتکراوەکان دیاری بکرێت و کاتەکە بە نووسراو پشتڕاست بکرێتەوە." },
+        { "language": "kmr", "text": "Tu telefonî rêveberiya avahiyê dikî da ku dema radestkirina apartmana xwe saz bikî. Tu dixwazî demeke têr ji bo xwendina pîvanan, kilîtan, protokola radestkirinê û kêmasiyên berê hatine ragihandin were danîn û dem bi nivîskî were piştrastkirin." },
+        { "language": "pl", "text": "Dzwonisz do administracji budynku, aby ustalić termin przekazania mieszkania. Chcesz zaplanować wystarczająco dużo czasu na odczyty liczników, klucze, protokół przekazania i wcześniej zgłoszone usterki oraz otrzymać pisemne potwierdzenie terminu." },
+        { "language": "ro", "text": "Suni la administrația imobilului pentru a stabili programarea de predare a locuinței. Vrei să fie planificat suficient timp pentru citirea contoarelor, chei, procesul-verbal de predare și defectele deja raportate și vrei confirmarea scrisă a programării." },
+        { "language": "sq", "text": "Ti telefonon administratën e ndërtesës për të caktuar takimin e dorëzimit të banesës. Dëshiron të planifikohet kohë e mjaftueshme për leximet e matësve, çelësat, procesverbalin e dorëzimit dhe defektet e raportuara më parë, si dhe ta marrësh takimin të konfirmuar me shkrim." }
+      ],
+      "learnerGoal": "Vereinbare einen konkreten Übergabetermin, kläre Zeitfenster, Unterlagen, Schlüssel, Zählerstände und Protokollpunkte und fasse die Bedingungen am Ende verbindlich zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Arrange a specific handover appointment, clarify time window, documents, keys, meter readings, and protocol items, and summarize the conditions bindingly at the end." },
+        { "language": "fa", "text": "یک وقت مشخص برای تحویل هماهنگ کن، بازه زمانی، مدارک، کلیدها، کنتورها و نکات صورت‌جلسه را روشن کن و در پایان شرایط را به‌صورت الزام‌آور خلاصه کن." },
+        { "language": "ar", "text": "حدّد موعد تسليم واضحاً، ووضّح الفترة الزمنية والمستندات والمفاتيح وقراءات العدادات ونقاط المحضر، ثم لخّص الشروط بشكل ملزم في النهاية." },
+        { "language": "tr", "text": "Somut bir teslim randevusu ayarla, zaman aralığını, belgeleri, anahtarları, sayaç okumalarını ve tutanak maddelerini netleştir ve sonunda koşulları bağlayıcı biçimde özetle." },
+        { "language": "ru", "text": "Договоритесь о конкретной встрече передачи, уточните временное окно, документы, ключи, показания счетчиков и пункты акта, а в конце обязательно резюмируйте условия." },
+        { "language": "ckb", "text": "کاتێکی دیاریکراو بۆ ڕادەستکردن ڕێکبخە، بازنەی کات، بەڵگەنامەکان، کلیلەکان، خوێندنەوەی پێوەرەکان و خاڵەکانی پرۆتۆکۆڵ ڕوون بکەوە و لە کۆتاییدا مەرجەکان بە شێوەی پابەند پوخت بکەوە." },
+        { "language": "kmr", "text": "Demekî diyarkirî ji bo radestkirinê saz bike, pencereya demê, belge, kilît, xwendina pîvanan û xalên protokolê zelal bike û di dawiyê de şertan bi awayekî girêdayî kurte bike." },
+        { "language": "pl", "text": "Ustal konkretny termin przekazania, wyjaśnij przedział czasowy, dokumenty, klucze, odczyty liczników i punkty protokołu, a na końcu wiążąco podsumuj warunki." },
+        { "language": "ro", "text": "Stabilește o programare concretă de predare, clarifică intervalul, documentele, cheile, citirile contoarelor și punctele procesului-verbal, apoi rezumă condițiile ferm la final." },
+        { "language": "sq", "text": "Cakto një takim konkret dorëzimi, sqaro intervalin kohor, dokumentet, çelësat, leximet e matësve dhe pikat e procesverbalit, pastaj përmblidhi kushtet në mënyrë të detyrueshme në fund." }
+      ],
+      "cefrLevel": "B2",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call",
+        "appointment-management"
+      ],
+      "taskType": "make-appointment",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "property-manager",
+          "displayName": "Hausverwaltung",
+          "translations": [
+            { "language": "en", "text": "Property management" },
+            { "language": "fa", "text": "مدیریت ساختمان" },
+            { "language": "ar", "text": "إدارة العقار" },
+            { "language": "tr", "text": "Apartman yönetimi" },
+            { "language": "ru", "text": "Управляющая компания" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی خانوو" },
+            { "language": "kmr", "text": "Rêveberiya avahiyê" },
+            { "language": "pl", "text": "Administracja budynku" },
+            { "language": "ro", "text": "Administrația imobilului" },
+            { "language": "sq", "text": "Administrata e ndërtesës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mieterin",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجرة" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Квартиросъемщица" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemczyni" },
+            { "language": "ro", "text": "Chiriașă" },
+            { "language": "sq", "text": "Qiramarrësja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "property-manager",
+          "baseText": "Guten Tag, Hausverwaltung Stein. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, Stein Property Management. What can I do for you?" },
+            { "language": "fa", "text": "سلام، مدیریت ساختمان اشتاین. چه کاری می‌توانم برایتان انجام دهم؟" },
+            { "language": "ar", "text": "مرحباً، إدارة العقار شتاين. ماذا يمكنني أن أفعل من أجلك؟" },
+            { "language": "tr", "text": "İyi günler, Stein Apartman Yönetimi. Sizin için ne yapabilirim?" },
+            { "language": "ru", "text": "Добрый день, управляющая компания Штайн. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، بەڕێوەبەرایەتی خانووی شتاین. چیتان بۆ بکەم؟" },
+            { "language": "kmr", "text": "Roj baş, rêveberiya avahiyê Stein. Ez dikarim ji bo we çi bikim?" },
+            { "language": "pl", "text": "Dzień dobry, administracja Stein. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, administrația Stein. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, administrata Stein. Çfarë mund të bëj për ju?" }
+          ],
+          "function": "opening",
+          "toneNote": "formal phone opening",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag, hier spricht Sara Karimi aus der Wohnung 2.4. Ich möchte den Übergabetermin abstimmen. Mir ist wichtig, dass wir genug Zeit für Zählerstände, Schlüssel, das Übergabeprotokoll und die bereits gemeldeten Mängel einplanen.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, this is Sara Karimi from apartment 2.4. I would like to coordinate the handover appointment. It is important to me that we allow enough time for meter readings, keys, the handover protocol, and the defects already reported." },
+            { "language": "fa", "text": "سلام، سارا کریمی از آپارتمان ۲.۴ هستم. می‌خواهم وقت تحویل را هماهنگ کنم. برایم مهم است که زمان کافی برای خواندن کنتورها، کلیدها، صورت‌جلسه تحویل و ایرادهایی که قبلاً گزارش شده‌اند در نظر بگیریم." },
+            { "language": "ar", "text": "مرحباً، معك سارة كريمي من الشقة 2.4. أود تنسيق موعد التسليم. من المهم بالنسبة لي أن نخصص وقتاً كافياً لقراءات العدادات والمفاتيح ومحضر التسليم والعيوب التي تم الإبلاغ عنها مسبقاً." },
+            { "language": "tr", "text": "İyi günler, ben 2.4 numaralı daireden Sara Karimi. Teslim randevusunu ayarlamak istiyorum. Sayaç okumaları, anahtarlar, teslim tutanağı ve daha önce bildirilen kusurlar için yeterli zaman ayırmamız benim için önemli." },
+            { "language": "ru", "text": "Добрый день, это Сара Карими из квартиры 2.4. Я хотела бы согласовать встречу передачи. Для меня важно, чтобы мы заложили достаточно времени на показания счетчиков, ключи, акт передачи и уже заявленные дефекты." },
+            { "language": "ckb", "text": "ڕۆژ باش، من سارا کەریمی لە خانووی ٢.٤م. دەمەوێت کاتی ڕادەستکردن ڕێکبخەم. بۆ من گرنگە کاتی پێویست بۆ خوێندنەوەی پێوەرەکان، کلیلەکان، پرۆتۆکۆڵی ڕادەستکردن و کەموکوڕییە پێشتر ڕاپۆرتکراوەکان دیاری بکەین." },
+            { "language": "kmr", "text": "Roj baş, ez Sara Karimi ji apartmana 2.4 me. Ez dixwazim dema radestkirinê li hev bînim. Ji bo min girîng e ku em demeke têr ji bo xwendina pîvanan, kilîtan, protokola radestkirinê û kêmasiyên berê hatine ragihandin veqetînin." },
+            { "language": "pl", "text": "Dzień dobry, mówi Sara Karimi z mieszkania 2.4. Chciałabym ustalić termin przekazania. Ważne jest dla mnie, żebyśmy zaplanowali wystarczająco dużo czasu na odczyty liczników, klucze, protokół przekazania i wcześniej zgłoszone usterki." },
+            { "language": "ro", "text": "Bună ziua, sunt Sara Karimi din apartamentul 2.4. Aș dori să stabilim programarea de predare. Pentru mine este important să planificăm suficient timp pentru citirea contoarelor, chei, procesul-verbal de predare și defectele deja raportate." },
+            { "language": "sq", "text": "Mirëdita, jam Sara Karimi nga banesa 2.4. Dua të koordinoj takimin e dorëzimit. Për mua është e rëndësishme të planifikojmë kohë të mjaftueshme për leximet e matësve, çelësat, procesverbalin e dorëzimit dhe defektet e raportuara më parë." }
+          ],
+          "function": "state-purpose-and-conditions",
+          "toneNote": "formal and structured",
+          "expectedLearnerAction": "Nenne den Anlass und die Bedingungen, die beim Termin berücksichtigt werden müssen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "property-manager",
+          "baseText": "In Ordnung. Welcher Tag würde Ihnen passen? Normalerweise planen wir für eine Übergabe etwa zwanzig Minuten ein.",
+          "translations": [
+            { "language": "en", "text": "All right. Which day would suit you? Normally we schedule about twenty minutes for a handover." },
+            { "language": "fa", "text": "بسیار خوب. چه روزی برایتان مناسب است؟ معمولاً برای تحویل حدود بیست دقیقه در نظر می‌گیریم." },
+            { "language": "ar", "text": "حسناً. أي يوم يناسبك؟ عادة نخصص حوالي عشرين دقيقة للتسليم." },
+            { "language": "tr", "text": "Peki. Hangi gün sizin için uygun olur? Normalde teslim için yaklaşık yirmi dakika planlıyoruz." },
+            { "language": "ru", "text": "Хорошо. Какой день вам подойдет? Обычно мы планируем на передачу около двадцати минут." },
+            { "language": "ckb", "text": "باشە. کام ڕۆژ بۆتان گونجاوە؟ ئاساییە بۆ ڕادەستکردن نزیکەی بیست خولەک دیاری دەکەین." },
+            { "language": "kmr", "text": "Baş e. Kîjan roj ji we re guncaw e? Bi gelemperî em ji bo radestkirinê nêzîkî bîst deqeyan plan dikin." },
+            { "language": "pl", "text": "W porządku. Który dzień by pani odpowiadał? Zwykle planujemy około dwudziestu minut na przekazanie." },
+            { "language": "ro", "text": "În regulă. Ce zi v-ar conveni? De obicei planificăm aproximativ douăzeci de minute pentru o predare." },
+            { "language": "sq", "text": "Në rregull. Cila ditë do t'ju përshtatej? Zakonisht planifikojmë rreth njëzet minuta për dorëzim." }
+          ],
+          "function": "ask-for-availability",
+          "toneNote": "administrative",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Donnerstag ab 16 Uhr wäre für mich gut, alternativ Freitagvormittag. Wegen der offenen Punkte würde ich den Termin aber nur bestätigen, wenn wir mindestens 45 Minuten einplanen und das Protokoll gemeinsam ausfüllen.",
+          "translations": [
+            { "language": "en", "text": "Thursday from 4 p.m. would work well for me, alternatively Friday morning. Because of the open points, however, I would only confirm the appointment if we schedule at least 45 minutes and fill out the protocol together." },
+            { "language": "fa", "text": "پنجشنبه از ساعت ۱۶ برای من خوب است، یا به‌عنوان جایگزین جمعه صبح. اما به‌خاطر نکات باز، فقط زمانی وقت را تأیید می‌کنم که حداقل ۴۵ دقیقه در نظر بگیریم و صورت‌جلسه را با هم تکمیل کنیم." },
+            { "language": "ar", "text": "الخميس من الساعة الرابعة مناسب لي، أو صباح الجمعة كبديل. لكن بسبب النقاط المفتوحة لن أؤكد الموعد إلا إذا خططنا لما لا يقل عن 45 دقيقة وملأنا المحضر معاً." },
+            { "language": "tr", "text": "Perşembe saat 16'dan sonrası benim için uygun, alternatif olarak cuma sabahı da olur. Ancak açık noktalar nedeniyle, en az 45 dakika planlarsak ve tutanağı birlikte doldurursak randevuyu onaylarım." },
+            { "language": "ru", "text": "Четверг после 16 часов мне подходит, как вариант пятница утром. Но из-за открытых вопросов я подтвержу встречу только если мы запланируем минимум 45 минут и вместе заполним акт." },
+            { "language": "ckb", "text": "پێنجشەممە لە دوای کاتژمێر ١٦ بۆ من باشە، یان بە جێگرەوە هەینی بەیانی. بەڵام بەهۆی خاڵە کراوەکانەوە تەنها ئەوکاتە کاتەکە پشتڕاست دەکەمەوە کە لانیکەم ٤٥ خولەک دیاری بکەین و پرۆتۆکۆڵەکە پێکەوە پڕ بکەینەوە." },
+            { "language": "kmr", "text": "Pêncşem piştî saet 16ê ji bo min baş e, wek alternatîf înê sibehê. Lê ji ber xalên vekirî ez tenê wê demê dema randevûyê piştrast dikim heke em herî kêm 45 deqeyan plan bikin û protokolê bi hev re dagirin." },
+            { "language": "pl", "text": "Czwartek od godziny 16 byłby dla mnie dobry, ewentualnie piątek rano. Ze względu na otwarte punkty potwierdzę jednak termin tylko wtedy, jeśli zaplanujemy co najmniej 45 minut i wspólnie wypełnimy protokół." },
+            { "language": "ro", "text": "Joi de la ora 16 ar fi bine pentru mine, alternativ vineri dimineață. Din cauza punctelor deschise, însă, aș confirma programarea doar dacă planificăm cel puțin 45 de minute și completăm împreună procesul-verbal." },
+            { "language": "sq", "text": "E enjtja nga ora 16 do të ishte mirë për mua, si alternativë të premten paradite. Megjithatë, për shkak të pikave të hapura, do ta konfirmoja takimin vetëm nëse planifikojmë të paktën 45 minuta dhe e plotësojmë procesverbalin së bashku." }
+          ],
+          "function": "propose-time-with-condition",
+          "toneNote": "firm but cooperative",
+          "expectedLearnerAction": "Schlage konkrete Zeiten vor und begründe, warum mehr Zeit als üblich nötig ist."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "property-manager",
+          "baseText": "Donnerstag um 16 Uhr könnte klappen. 45 Minuten sind ungewöhnlich, aber wenn es offene Mängel gibt, ist das nachvollziehbar. Welche Punkte sind noch offen?",
+          "translations": [
+            { "language": "en", "text": "Thursday at 4 p.m. could work. Forty-five minutes is unusual, but if there are open defects, that is understandable. Which points are still open?" },
+            { "language": "fa", "text": "پنجشنبه ساعت ۱۶ ممکن است بشود. ۴۵ دقیقه غیرمعمول است، اما اگر ایرادهای باز وجود دارد، قابل درک است. کدام نکات هنوز باز هستند؟" },
+            { "language": "ar", "text": "الخميس الساعة الرابعة قد يكون ممكناً. خمس وأربعون دقيقة غير معتادة، لكن إذا كانت هناك عيوب مفتوحة فهذا مفهوم. ما النقاط التي لا تزال مفتوحة؟" },
+            { "language": "tr", "text": "Perşembe saat 16 olabilir. Kırk beş dakika alışılmadık, ama açık kusurlar varsa bu anlaşılır. Hangi noktalar hâlâ açık?" },
+            { "language": "ru", "text": "Четверг в 16 часов может подойти. 45 минут необычно, но если есть открытые дефекты, это понятно. Какие пункты еще открыты?" },
+            { "language": "ckb", "text": "پێنجشەممە کاتژمێر ١٦ دەکرێت. ٤٥ خولەک نامۆیە، بەڵام ئەگەر کەموکوڕی کراوە هەبێت، تێدەگەین. کام خاڵانە هێشتا کراوەن؟" },
+            { "language": "kmr", "text": "Pêncşem saet 16 dikare bibe. 45 deqe ne asayî ye, lê heke kêmasiyên vekirî hebin, ev tê fêmkirin. Kîjan xal hîn vekirî ne?" },
+            { "language": "pl", "text": "Czwartek o 16 może się udać. Czterdzieści pięć minut to nietypowo, ale jeśli są otwarte usterki, jest to zrozumiałe. Które punkty są jeszcze otwarte?" },
+            { "language": "ro", "text": "Joi la ora 16 ar putea merge. Patruzeci și cinci de minute este neobișnuit, dar dacă există defecte deschise, este de înțeles. Ce puncte sunt încă deschise?" },
+            { "language": "sq", "text": "E enjtja në orën 16 mund të funksionojë. Dyzet e pesë minuta është e pazakontë, por nëse ka defekte të hapura, kjo kuptohet. Cilat pika janë ende të hapura?" }
+          ],
+          "function": "accept-conditionally-and-ask-details",
+          "toneNote": "practical",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich hatte bereits Fotos vom beschädigten Fensterrahmen und vom Fleck im Bad geschickt. Wenn diese Punkte bis dahin nicht repariert sind, sollten sie im Übergabeprotokoll neutral vermerkt werden, damit später klar ist, dass sie nicht neu entstanden sind.",
+          "translations": [
+            { "language": "en", "text": "I had already sent photos of the damaged window frame and the stain in the bathroom. If these points are not repaired by then, they should be noted neutrally in the handover protocol so that it is clear later that they did not occur recently." },
+            { "language": "fa", "text": "من قبلاً عکس‌های قاب پنجره آسیب‌دیده و لکه حمام را فرستاده بودم. اگر این موارد تا آن زمان تعمیر نشده باشند، باید به‌صورت بی‌طرفانه در صورت‌جلسه تحویل ثبت شوند تا بعداً روشن باشد که تازه ایجاد نشده‌اند." },
+            { "language": "ar", "text": "كنت قد أرسلت بالفعل صوراً لإطار النافذة المتضرر والبقعة في الحمام. إذا لم تُصلح هذه النقاط حتى ذلك الوقت، فينبغي تسجيلها بشكل محايد في محضر التسليم حتى يكون واضحاً لاحقاً أنها لم تظهر حديثاً." },
+            { "language": "tr", "text": "Hasarlı pencere çerçevesinin ve banyodaki lekenin fotoğraflarını zaten göndermiştim. Bu noktalar o zamana kadar onarılmamışsa, daha sonra yeni oluşmadıkları açık olsun diye teslim tutanağına tarafsız biçimde yazılmalı." },
+            { "language": "ru", "text": "Я уже отправляла фотографии поврежденной оконной рамы и пятна в ванной. Если эти пункты к тому времени не будут устранены, их нужно нейтрально указать в акте передачи, чтобы позже было ясно, что они не возникли недавно." },
+            { "language": "ckb", "text": "من پێشتر وێنەی چوارچێوەی پەنجەرەی زیانلێکەوتوو و لکه‌کەی حەمامم ناردبوو. ئەگەر ئەم خاڵانە تا ئەوکاتە چاک نەکرابنەوە، پێویستە بە بێلایەنی لە پرۆتۆکۆڵی ڕادەستکردندا تۆمار بکرێن، بۆ ئەوەی دواتر ڕوون بێت تازە دروست نەبوون." },
+            { "language": "kmr", "text": "Min berê wêneyên çarçoveya pencereya zirar dîtî û lekeya serşokê şandibûn. Heke ev xal heta wê demê nehên sererastkirin, divê bi bêalî di protokola radestkirinê de bên nivîsandin, da ku paşê zelal be ku ew nû çênebûne." },
+            { "language": "pl", "text": "Wysłałam już zdjęcia uszkodzonej ramy okiennej i plamy w łazience. Jeśli te punkty nie zostaną do tego czasu naprawione, powinny zostać neutralnie wpisane do protokołu przekazania, żeby później było jasne, że nie powstały teraz." },
+            { "language": "ro", "text": "Trimisesem deja fotografii cu rama deteriorată a ferestrei și cu pata din baie. Dacă aceste puncte nu sunt reparate până atunci, ar trebui notate neutru în procesul-verbal de predare, ca să fie clar mai târziu că nu au apărut recent." },
+            { "language": "sq", "text": "Unë i kisha dërguar tashmë fotografitë e kornizës së dëmtuar të dritares dhe të njollës në banjë. Nëse këto pika nuk riparohen deri atëherë, duhet të shënohen në mënyrë neutrale në procesverbalin e dorëzimit, që më vonë të jetë e qartë se nuk janë krijuar rishtas." }
+          ],
+          "function": "name-defects-and-protocol-need",
+          "toneNote": "evidence-based",
+          "expectedLearnerAction": "Nenne konkrete offene Mängel und erkläre, warum sie neutral protokolliert werden sollen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "property-manager",
+          "baseText": "Verstanden. Bitte bringen Sie alle Schlüssel mit. Die Zählerstände können wir gemeinsam ablesen. Haben Sie außerdem Ihre Kautionsdaten und die letzte Nebenkostenabrechnung dabei?",
+          "translations": [
+            { "language": "en", "text": "Understood. Please bring all keys. We can read the meter readings together. Will you also have your deposit details and the last utility cost statement with you?" },
+            { "language": "fa", "text": "متوجه شدم. لطفاً همه کلیدها را همراه داشته باشید. می‌توانیم کنتورها را با هم بخوانیم. آیا اطلاعات ودیعه و آخرین صورت‌حساب هزینه‌های جانبی را هم همراه دارید؟" },
+            { "language": "ar", "text": "فهمت. يرجى إحضار كل المفاتيح. يمكننا قراءة العدادات معاً. هل ستكون معك أيضاً بيانات التأمين وآخر كشف للتكاليف الإضافية؟" },
+            { "language": "tr", "text": "Anladım. Lütfen tüm anahtarları getirin. Sayaçları birlikte okuyabiliriz. Ayrıca depozito bilgileriniz ve son aidat/yan gider dökümü yanınızda olacak mı?" },
+            { "language": "ru", "text": "Понятно. Пожалуйста, принесите все ключи. Показания счетчиков мы можем снять вместе. Будут ли у вас также данные о залоге и последний расчет коммунальных расходов?" },
+            { "language": "ckb", "text": "تێگەیشتم. تکایە هەموو کلیلەکان بهێنن. دەتوانین پێوەرەکان پێکەوە بخوێنینەوە. هەروەها زانیارییەکانی پارەی دەستەبەری و دوا حسابی خەرجییە لاوەکییەکانتان لەگەڵدایە؟" },
+            { "language": "kmr", "text": "Fêm kirim. Ji kerema xwe hemû kilîtan bînin. Em dikarin pîvanan bi hev re bixwînin. Herwiha agahiyên depozîtoya we û hesabkirina dawî ya lêçûnên alî jî li gel we hene?" },
+            { "language": "pl", "text": "Rozumiem. Proszę przynieść wszystkie klucze. Liczniki możemy odczytać wspólnie. Czy będzie pani miała również dane dotyczące kaucji i ostatnie rozliczenie kosztów dodatkowych?" },
+            { "language": "ro", "text": "Am înțeles. Vă rog să aduceți toate cheile. Putem citi împreună contoarele. Aveți la dumneavoastră și datele despre garanție și ultima decontare a cheltuielilor auxiliare?" },
+            { "language": "sq", "text": "E kuptova. Ju lutem sillni të gjithë çelësat. Leximet e matësve mund t'i bëjmë së bashku. A do t'i keni me vete edhe të dhënat e depozitës dhe faturën e fundit të shpenzimeve shtesë?" }
+          ],
+          "function": "ask-for-documents-and-keys",
+          "toneNote": "administrative checklist",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich bringe Wohnungs-, Briefkasten- und Kellerschlüssel sowie meinen Ausweis mit. Können Sie mir bitte noch schriftlich bestätigen, welche Unterlagen Sie benötigen und dass die Zählerstände für Strom, Wasser und Heizung gemeinsam notiert werden?",
+          "translations": [
+            { "language": "en", "text": "Yes, I will bring the apartment, mailbox, and cellar keys as well as my ID. Could you please also confirm in writing which documents you need and that the meter readings for electricity, water, and heating will be recorded together?" },
+            { "language": "fa", "text": "بله، کلیدهای آپارتمان، صندوق پستی و انباری و همچنین کارت شناسایی‌ام را می‌آورم. ممکن است لطفاً کتبی تأیید کنید که چه مدارکی لازم دارید و اینکه کنتورهای برق، آب و گرمایش با هم ثبت می‌شوند؟" },
+            { "language": "ar", "text": "نعم، سأحضر مفاتيح الشقة وصندوق البريد والقبو وكذلك هويتي. هل يمكنكم أيضاً تأكيد المستندات المطلوبة كتابياً وأن قراءات عدادات الكهرباء والماء والتدفئة ستُسجل معاً؟" },
+            { "language": "tr", "text": "Evet, daire, posta kutusu ve bodrum anahtarlarını ve kimliğimi getireceğim. Hangi belgeleri istediğinizi ve elektrik, su ve ısıtma sayaçlarının birlikte kaydedileceğini bana yazılı olarak da teyit edebilir misiniz?" },
+            { "language": "ru", "text": "Да, я принесу ключи от квартиры, почтового ящика и подвала, а также удостоверение личности. Могли бы вы еще письменно подтвердить, какие документы вам нужны и что показания электричества, воды и отопления будут записаны вместе?" },
+            { "language": "ckb", "text": "بەڵێ، کلیلەکانی خانوو، سندووقی پۆست و ژێرزەمین و ناسنامەکەم دەهێنم. دەتوانن تکایە بە نووسراو پشتڕاست بکەنەوە کام بەڵگەنامەتان پێویستە و خوێندنەوەی پێوەری کارەبا، ئاو و گەرما پێکەوە تۆمار دەکرێت؟" },
+            { "language": "kmr", "text": "Erê, ez kilîtên apartmanê, qutiya postê û jêrzemînê û nasnameya xwe tînim. Hûn dikarin ji kerema xwe bi nivîskî jî piştrast bikin ka kîjan belge pêwîst in û pîvanên elektrîkê, avê û germkirinê bi hev re tên tomar kirin?" },
+            { "language": "pl", "text": "Tak, przyniosę klucze do mieszkania, skrzynki pocztowej i piwnicy oraz dowód tożsamości. Czy może mi pani jeszcze pisemnie potwierdzić, jakie dokumenty są potrzebne i że odczyty prądu, wody i ogrzewania zostaną zapisane wspólnie?" },
+            { "language": "ro", "text": "Da, voi aduce cheile de la apartament, cutia poștală și pivniță, precum și actul de identitate. Îmi puteți confirma în scris ce documente sunt necesare și că citirile contoarelor pentru electricitate, apă și încălzire vor fi notate împreună?" },
+            { "language": "sq", "text": "Po, do të sjell çelësat e banesës, kutisë postare dhe bodrumit, si edhe dokumentin tim të identitetit. A mund të më konfirmoni me shkrim cilat dokumente ju duhen dhe që leximet e matësve të energjisë, ujit dhe ngrohjes do të shënohen së bashku?" }
+          ],
+          "function": "confirm-checklist-and-request-writing",
+          "toneNote": "precise and polite",
+          "expectedLearnerAction": "Bestätige die mitzubringenden Dinge und bitte um schriftliche Klarheit zu Unterlagen und Zählerständen."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "property-manager",
+          "baseText": "Ja, das bestätige ich Ihnen per E-Mail. Ich notiere Donnerstag, 16 Uhr, mit 45 Minuten, gemeinsamer Zählerablesung und Protokoll der offenen Mängel.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will confirm that to you by email. I will note Thursday, 4 p.m., with 45 minutes, joint meter readings, and a protocol of the open defects." },
+            { "language": "fa", "text": "بله، این را از طریق ایمیل برایتان تأیید می‌کنم. یادداشت می‌کنم: پنجشنبه ساعت ۱۶، با ۴۵ دقیقه زمان، خواندن مشترک کنتورها و صورت‌جلسه ایرادهای باز." },
+            { "language": "ar", "text": "نعم، سأؤكد ذلك لك عبر البريد الإلكتروني. سأدوّن الخميس الساعة الرابعة، لمدة 45 دقيقة، مع قراءة مشتركة للعدادات ومحضر للعيوب المفتوحة." },
+            { "language": "tr", "text": "Evet, bunu size e-postayla teyit edeceğim. Perşembe saat 16'yı, 45 dakika, ortak sayaç okuması ve açık kusurların tutanağı şeklinde not ediyorum." },
+            { "language": "ru", "text": "Да, я подтвержу это вам по электронной почте. Я запишу четверг, 16 часов, 45 минут, совместное снятие показаний счетчиков и протокол открытых дефектов." },
+            { "language": "ckb", "text": "بەڵێ، ئەمە بە ئیمەیل بۆتان پشتڕاست دەکەمەوە. پێنجشەممە کاتژمێر ١٦، لەگەڵ ٤٥ خولەک، خوێندنەوەی هاوبەشی پێوەرەکان و پرۆتۆکۆڵی کەموکوڕییە کراوەکان تۆمار دەکەم." },
+            { "language": "kmr", "text": "Erê, ez vê bi e-nameyê ji we re piştrast dikim. Ez pêncşem saet 16, bi 45 deqeyan, xwendina hevpar a pîvanan û protokola kêmasiyên vekirî tomar dikim." },
+            { "language": "pl", "text": "Tak, potwierdzę to pani e-mailem. Zapisuję czwartek, godzinę 16, z 45 minutami, wspólnym odczytem liczników i protokołem otwartych usterek." },
+            { "language": "ro", "text": "Da, vă confirm acest lucru prin e-mail. Notez joi, ora 16, cu 45 de minute, citire comună a contoarelor și proces-verbal al defectelor deschise." },
+            { "language": "sq", "text": "Po, do t'jua konfirmoj këtë me email. Po shënoj të enjten, ora 16, me 45 minuta, lexim të përbashkët të matësve dhe procesverbal për defektet e hapura." }
+          ],
+          "function": "confirm-appointment",
+          "toneNote": "binding confirmation",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann fasse ich zusammen: Donnerstag um 16 Uhr, 45 Minuten für Übergabe, Schlüssel, gemeinsame Zählerstände und ein Protokoll zu den bereits gemeldeten Mängeln. Sobald Ihre E-Mail da ist, bestätige ich den Termin ebenfalls schriftlich.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will summarize: Thursday at 4 p.m., 45 minutes for handover, keys, joint meter readings, and a protocol for the defects already reported. As soon as your email arrives, I will also confirm the appointment in writing." },
+            { "language": "fa", "text": "خیلی ممنون. پس خلاصه می‌کنم: پنجشنبه ساعت ۱۶، ۴۵ دقیقه برای تحویل، کلیدها، خواندن مشترک کنتورها و صورت‌جلسه برای ایرادهایی که قبلاً گزارش شده‌اند. به‌محض اینکه ایمیل شما برسد، من هم وقت را کتبی تأیید می‌کنم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن ألخص: الخميس الساعة الرابعة، 45 دقيقة للتسليم، والمفاتيح، وقراءات العدادات المشتركة، ومحضر للعيوب التي تم الإبلاغ عنها مسبقاً. بمجرد وصول بريدكم الإلكتروني، سأؤكد الموعد كتابياً أيضاً." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde özetliyorum: Perşembe saat 16, teslim, anahtarlar, ortak sayaç okumaları ve daha önce bildirilen kusurlar için tutanak adına 45 dakika. E-postanız gelir gelmez ben de randevuyu yazılı olarak onaylayacağım." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я резюмирую: четверг в 16 часов, 45 минут на передачу, ключи, совместные показания счетчиков и акт по уже заявленным дефектам. Как только придет ваше письмо, я также письменно подтвержу встречу." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە پوخت دەکەمەوە: پێنجشەممە کاتژمێر ١٦، ٤٥ خولەک بۆ ڕادەستکردن، کلیلەکان، خوێندنەوەی هاوبەشی پێوەرەکان و پرۆتۆکۆڵێک بۆ کەموکوڕییە پێشتر ڕاپۆرتکراوەکان. هەر کاتێک ئیمەیلەکەتان هات، منیش کاتەکە بە نووسراو پشتڕاست دەکەمەوە." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez kurte dikim: pêncşem saet 16, 45 deqe ji bo radestkirinê, kilît, xwendina hevpar a pîvanan û protokolek ji bo kêmasiyên berê hatine ragihandin. Dema e-nameya we hat, ez jî demê bi nivîskî piştrast dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie podsumuję: czwartek o 16, 45 minut na przekazanie, klucze, wspólne odczyty liczników i protokół dotyczący wcześniej zgłoszonych usterek. Gdy tylko przyjdzie pani e-mail, również potwierdzę termin pisemnie." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci rezum: joi la ora 16, 45 de minute pentru predare, chei, citiri comune ale contoarelor și un proces-verbal pentru defectele deja raportate. De îndată ce primesc e-mailul dumneavoastră, voi confirma și eu programarea în scris." },
+            { "language": "sq", "text": "Shumë faleminderit. Atëherë po përmbledh: e enjte në orën 16, 45 minuta për dorëzimin, çelësat, leximet e përbashkëta të matësve dhe një procesverbal për defektet e raportuara më parë. Sapo të vijë emaili juaj, edhe unë do ta konfirmoj takimin me shkrim." }
+          ],
+          "function": "final-summary",
+          "toneNote": "clear and binding",
+          "expectedLearnerAction": "Fasse Termin, Dauer, Schlüssel, Zählerstände, Protokoll und schriftliche Bestätigung zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag, hier spricht Sara Karimi aus der Wohnung 2.4. Ich möchte den Übergabetermin abstimmen. Mir ist wichtig, dass wir genug Zeit für Zählerstände, Schlüssel, das Übergabeprotokoll und die bereits gemeldeten Mängel einplanen.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon, this is Sara Karimi from apartment 2.4. I would like to coordinate the handover appointment. It is important to me that we allow enough time for meter readings, keys, the handover protocol, and the defects already reported." },
+                { "language": "fa", "text": "سلام، سارا کریمی از آپارتمان ۲.۴ هستم. می‌خواهم وقت تحویل را هماهنگ کنم. برایم مهم است که زمان کافی برای خواندن کنتورها، کلیدها، صورت‌جلسه تحویل و ایرادهایی که قبلاً گزارش شده‌اند در نظر بگیریم." },
+                { "language": "ar", "text": "مرحباً، معك سارة كريمي من الشقة 2.4. أود تنسيق موعد التسليم. من المهم بالنسبة لي أن نخصص وقتاً كافياً لقراءات العدادات والمفاتيح ومحضر التسليم والعيوب التي تم الإبلاغ عنها مسبقاً." },
+                { "language": "tr", "text": "İyi günler, ben 2.4 numaralı daireden Sara Karimi. Teslim randevusunu ayarlamak istiyorum. Sayaç okumaları, anahtarlar, teslim tutanağı ve daha önce bildirilen kusurlar için yeterli zaman ayırmamız benim için önemli." },
+                { "language": "ru", "text": "Добрый день, это Сара Карими из квартиры 2.4. Я хотела бы согласовать встречу передачи. Для меня важно, чтобы мы заложили достаточно времени на показания счетчиков, ключи, акт передачи и уже заявленные дефекты." },
+                { "language": "ckb", "text": "ڕۆژ باش، من سارا کەریمی لە خانووی ٢.٤م. دەمەوێت کاتی ڕادەستکردن ڕێکبخەم. بۆ من گرنگە کاتی پێویست بۆ خوێندنەوەی پێوەرەکان، کلیلەکان، پرۆتۆکۆڵی ڕادەستکردن و کەموکوڕییە پێشتر ڕاپۆرتکراوەکان دیاری بکەین." },
+                { "language": "kmr", "text": "Roj baş, ez Sara Karimi ji apartmana 2.4 me. Ez dixwazim dema radestkirinê li hev bînim. Ji bo min girîng e ku em demeke têr ji bo xwendina pîvanan, kilîtan, protokola radestkirinê û kêmasiyên berê hatine ragihandin veqetînin." },
+                { "language": "pl", "text": "Dzień dobry, mówi Sara Karimi z mieszkania 2.4. Chciałabym ustalić termin przekazania. Ważne jest dla mnie, żebyśmy zaplanowali wystarczająco dużo czasu na odczyty liczników, klucze, protokół przekazania i wcześniej zgłoszone usterki." },
+                { "language": "ro", "text": "Bună ziua, sunt Sara Karimi din apartamentul 2.4. Aș dori să stabilim programarea de predare. Pentru mine este important să planificăm suficient timp pentru citirea contoarelor, chei, procesul-verbal de predare și defectele deja raportate." },
+                { "language": "sq", "text": "Mirëdita, jam Sara Karimi nga banesa 2.4. Dua të koordinoj takimin e dorëzimit. Për mua është e rëndësishme të planifikojmë kohë të mjaftueshme për leximet e matësve, çelësat, procesverbalin e dorëzimit dhe defektet e raportuara më parë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt den Anlass und erklärt direkt, welche Punkte beim Übergabetermin Zeit brauchen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names the reason and directly explains which points need time during the handover appointment." },
+                { "language": "fa", "text": "خوب است: پاسخ دلیل تماس را می‌گوید و مستقیم توضیح می‌دهد کدام نکات در وقت تحویل زمان لازم دارند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة سبب الاتصال وتشرح مباشرة النقاط التي تحتاج إلى وقت في موعد التسليم." },
+                { "language": "tr", "text": "İyi: cevap nedeni belirtir ve teslim randevusunda hangi noktaların zaman gerektirdiğini doğrudan açıklar." },
+                { "language": "ru", "text": "Хорошо: ответ называет причину и прямо объясняет, какие пункты потребуют времени при передаче." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هۆکارەکە ناو دەبات و ڕاستەوخۆ ڕوون دەکاتەوە کام خاڵانە لە کاتی ڕادەستکردندا کات دەوێن." },
+                { "language": "kmr", "text": "Baş e: bersiv sedemê dibêje û rasterast rave dike ka kîjan xal di dema radestkirinê de dem dixwazin." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje powód i od razu wyjaśnia, które punkty wymagają czasu podczas przekazania." },
+                { "language": "ro", "text": "Bine: răspunsul numește motivul și explică direct ce puncte necesită timp la programarea de predare." },
+                { "language": "sq", "text": "Mirë: përgjigjja tregon arsyen dhe shpjegon drejtpërdrejt cilat pika kërkojnë kohë gjatë takimit të dorëzimit." }
+              ],
+              "explanationKey": "b2-handover-state-conditions"
+            },
+            {
+              "id": "weak-too-vague",
+              "text": "Ich möchte einen Termin für die Übergabe machen. Es gibt noch ein paar Sachen.",
+              "translations": [
+                { "language": "en", "text": "I would like to make an appointment for the handover. There are still a few things." },
+                { "language": "fa", "text": "می‌خواهم برای تحویل وقت بگیرم. هنوز چند تا چیز هست." },
+                { "language": "ar", "text": "أريد تحديد موعد للتسليم. لا تزال هناك بعض الأشياء." },
+                { "language": "tr", "text": "Teslim için bir randevu almak istiyorum. Hâlâ birkaç şey var." },
+                { "language": "ru", "text": "Я хотела бы назначить встречу для передачи. Там еще есть несколько вещей." },
+                { "language": "ckb", "text": "دەمەوێت کاتێک بۆ ڕادەستکردن دیاری بکەم. هێشتا چەند شتێک هەیە." },
+                { "language": "kmr", "text": "Ez dixwazim ji bo radestkirinê demekê saz bikim. Hîn çend tişt hene." },
+                { "language": "pl", "text": "Chciałabym umówić termin przekazania. Jest jeszcze kilka rzeczy." },
+                { "language": "ro", "text": "Aș dori să fac o programare pentru predare. Mai sunt câteva lucruri." },
+                { "language": "sq", "text": "Dua të caktoj një takim për dorëzimin. Ka ende disa gjëra." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort ist verständlich, aber für B2 fehlen konkrete Bedingungen wie Zählerstände, Schlüssel und Protokoll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the answer is understandable, but for B2 it lacks concrete conditions such as meter readings, keys, and protocol." },
+                { "language": "fa", "text": "بیش از حد مبهم است: پاسخ قابل فهم است، اما برای B2 شرایط مشخصی مثل کنتورها، کلیدها و صورت‌جلسه را ندارد." },
+                { "language": "ar", "text": "غامض أكثر من اللازم: الإجابة مفهومة، لكنها في مستوى B2 تفتقر إلى شروط محددة مثل قراءات العدادات والمفاتيح والمحضر." },
+                { "language": "tr", "text": "Fazla belirsiz: cevap anlaşılır, ama B2 için sayaç okumaları, anahtarlar ve tutanak gibi somut koşullar eksik." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ понятен, но для B2 не хватает конкретных условий, таких как счетчики, ключи и акт." },
+                { "language": "ckb", "text": "زۆر نادیارە: وەڵامەکە تێدەگەیەنرێت، بەڵام بۆ B2 مەرجی دیاریکراو وەک پێوەرەکان، کلیلەکان و پرۆتۆکۆڵ کەمە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv tê fêmkirin, lê ji bo B2 şertên taybetî wek pîvan, kilît û protokol kêm in." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź jest zrozumiała, ale na poziomie B2 brakuje konkretnych warunków, takich jak liczniki, klucze i protokół." },
+                { "language": "ro", "text": "Prea vag: răspunsul este de înțeles, dar pentru B2 lipsesc condiții concrete precum contoarele, cheile și procesul-verbal." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja kuptohet, por për B2 mungojnë kushte konkrete si matësit, çelësat dhe procesverbali." }
+              ],
+              "explanationKey": "b2-handover-avoid-vague-opening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Donnerstag ab 16 Uhr wäre für mich gut, alternativ Freitagvormittag. Wegen der offenen Punkte würde ich den Termin aber nur bestätigen, wenn wir mindestens 45 Minuten einplanen und das Protokoll gemeinsam ausfüllen.",
+              "translations": [
+                { "language": "en", "text": "Thursday from 4 p.m. would work well for me, alternatively Friday morning. Because of the open points, however, I would only confirm the appointment if we schedule at least 45 minutes and fill out the protocol together." },
+                { "language": "fa", "text": "پنجشنبه از ساعت ۱۶ برای من خوب است، یا به‌عنوان جایگزین جمعه صبح. اما به‌خاطر نکات باز، فقط زمانی وقت را تأیید می‌کنم که حداقل ۴۵ دقیقه در نظر بگیریم و صورت‌جلسه را با هم تکمیل کنیم." },
+                { "language": "ar", "text": "الخميس من الساعة الرابعة مناسب لي، أو صباح الجمعة كبديل. لكن بسبب النقاط المفتوحة لن أؤكد الموعد إلا إذا خططنا لما لا يقل عن 45 دقيقة وملأنا المحضر معاً." },
+                { "language": "tr", "text": "Perşembe saat 16'dan sonrası benim için uygun, alternatif olarak cuma sabahı da olur. Ancak açık noktalar nedeniyle, en az 45 dakika planlarsak ve tutanağı birlikte doldurursak randevuyu onaylarım." },
+                { "language": "ru", "text": "Четверг после 16 часов мне подходит, как вариант пятница утром. Но из-за открытых вопросов я подтвержу встречу только если мы запланируем минимум 45 минут и вместе заполним акт." },
+                { "language": "ckb", "text": "پێنجشەممە لە دوای کاتژمێر ١٦ بۆ من باشە، یان بە جێگرەوە هەینی بەیانی. بەڵام بەهۆی خاڵە کراوەکانەوە تەنها ئەوکاتە کاتەکە پشتڕاست دەکەمەوە کە لانیکەم ٤٥ خولەک دیاری بکەین و پرۆتۆکۆڵەکە پێکەوە پڕ بکەینەوە." },
+                { "language": "kmr", "text": "Pêncşem piştî saet 16ê ji bo min baş e, wek alternatîf înê sibehê. Lê ji ber xalên vekirî ez tenê wê demê dema randevûyê piştrast dikim heke em herî kêm 45 deqeyan plan bikin û protokolê bi hev re dagirin." },
+                { "language": "pl", "text": "Czwartek od godziny 16 byłby dla mnie dobry, ewentualnie piątek rano. Ze względu na otwarte punkty potwierdzę jednak termin tylko wtedy, jeśli zaplanujemy co najmniej 45 minut i wspólnie wypełnimy protokół." },
+                { "language": "ro", "text": "Joi de la ora 16 ar fi bine pentru mine, alternativ vineri dimineață. Din cauza punctelor deschise, însă, aș confirma programarea doar dacă planificăm cel puțin 45 de minute și completăm împreună procesul-verbal." },
+                { "language": "sq", "text": "E enjtja nga ora 16 do të ishte mirë për mua, si alternativë të premten paradite. Megjithatë, për shkak të pikave të hapura, do ta konfirmoja takimin vetëm nëse planifikojmë të paktën 45 minuta dhe e plotësojmë procesverbalin së bashku." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bietet Alternativen, bleibt kooperativ und nennt eine klare Bedingung für die Terminbestätigung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer offers alternatives, stays cooperative, and names a clear condition for confirming the appointment." },
+                { "language": "fa", "text": "خوب است: پاسخ گزینه جایگزین می‌دهد، همکاری را حفظ می‌کند و شرط روشنی برای تأیید وقت بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تقدم الإجابة بدائل، وتبقى تعاونية، وتذكر شرطاً واضحاً لتأكيد الموعد." },
+                { "language": "tr", "text": "İyi: cevap alternatifler sunar, işbirlikçi kalır ve randevu onayı için net bir koşul belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ предлагает варианты, остается конструктивным и называет четкое условие подтверждения встречи." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە جێگرەوە پێشنیار دەکات، هاوکاری دەهێڵێتەوە و مەرجێکی ڕوون بۆ پشتڕاستکردنەوەی کاتەکە ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: bersiv alternatîfan pêşkêş dike, hevkar dimîne û şertê zelal ji bo piştrastkirina demê dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź oferuje alternatywy, pozostaje współpracująca i podaje jasny warunek potwierdzenia terminu." },
+                { "language": "ro", "text": "Bine: răspunsul oferă alternative, rămâne cooperant și numește o condiție clară pentru confirmarea programării." },
+                { "language": "sq", "text": "Mirë: përgjigjja ofron alternativa, mbetet bashkëpunuese dhe përmend një kusht të qartë për konfirmimin e takimit." }
+              ],
+              "explanationKey": "b2-handover-time-with-condition"
+            },
+            {
+              "id": "weak-no-condition",
+              "text": "Donnerstag ab 16 Uhr passt. Wir können dann ja schauen, wie lange es dauert.",
+              "translations": [
+                { "language": "en", "text": "Thursday from 4 p.m. works. We can just see then how long it takes." },
+                { "language": "fa", "text": "پنجشنبه از ساعت ۱۶ مناسب است. بعد همان‌جا می‌بینیم چقدر طول می‌کشد." },
+                { "language": "ar", "text": "الخميس من الساعة الرابعة مناسب. يمكننا حينها أن نرى كم يستغرق الأمر." },
+                { "language": "tr", "text": "Perşembe saat 16'dan sonrası uygun. O zaman ne kadar süreceğine bakarız." },
+                { "language": "ru", "text": "Четверг после 16 часов подходит. Тогда посмотрим, сколько это займет." },
+                { "language": "ckb", "text": "پێنجشەممە لە دوای کاتژمێر ١٦ گونجاوە. ئەوکات دەبینین چەند دەخایەنێت." },
+                { "language": "kmr", "text": "Pêncşem piştî saet 16ê guncaw e. Wê demê em dibînin çiqas dem digire." },
+                { "language": "pl", "text": "Czwartek od 16 pasuje. Zobaczymy wtedy, ile to potrwa." },
+                { "language": "ro", "text": "Joi de la ora 16 se potrivește. Vedem atunci cât durează." },
+                { "language": "sq", "text": "E enjtja nga ora 16 më përshtatet. Atëherë shohim sa zgjat." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Die Antwort nennt einen Termin, sichert aber kein ausreichendes Zeitfenster und kein gemeinsames Protokoll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open-ended: the answer names a time, but does not secure enough time or a joint protocol." },
+                { "language": "fa", "text": "بیش از حد باز است: پاسخ زمان را می‌گوید، اما زمان کافی و صورت‌جلسه مشترک را تضمین نمی‌کند." },
+                { "language": "ar", "text": "مفتوح أكثر من اللازم: تذكر الإجابة الموعد، لكنها لا تضمن فترة كافية ولا محضراً مشتركاً." },
+                { "language": "tr", "text": "Fazla açık uçlu: cevap bir saat belirtir, ancak yeterli süreyi ve ortak tutanağı güvenceye almaz." },
+                { "language": "ru", "text": "Слишком неопределенно: ответ называет время, но не обеспечивает достаточный временной интервал и совместный акт." },
+                { "language": "ckb", "text": "زۆر کراوەیە: وەڵامەکە کاتێک ناو دەبات، بەڵام کاتی پێویست و پرۆتۆکۆڵی هاوبەش دڵنیا ناکات." },
+                { "language": "kmr", "text": "Pir vekirî ye: bersiv demê dibêje, lê demeke têr û protokoleke hevpar misoger nake." },
+                { "language": "pl", "text": "Zbyt otwarte: odpowiedź podaje termin, ale nie zabezpiecza wystarczającego czasu ani wspólnego protokołu." },
+                { "language": "ro", "text": "Prea deschis: răspunsul numește ora, dar nu asigură suficient timp și nici un proces-verbal comun." },
+                { "language": "sq", "text": "Shumë e hapur: përgjigjja jep orën, por nuk siguron kohë të mjaftueshme dhe as procesverbal të përbashkët." }
+              ],
+              "explanationKey": "b2-handover-avoid-open-ended-time"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich hatte bereits Fotos vom beschädigten Fensterrahmen und vom Fleck im Bad geschickt. Wenn diese Punkte bis dahin nicht repariert sind, sollten sie im Übergabeprotokoll neutral vermerkt werden, damit später klar ist, dass sie nicht neu entstanden sind.",
+              "translations": [
+                { "language": "en", "text": "I had already sent photos of the damaged window frame and the stain in the bathroom. If these points are not repaired by then, they should be noted neutrally in the handover protocol so that it is clear later that they did not occur recently." },
+                { "language": "fa", "text": "من قبلاً عکس‌های قاب پنجره آسیب‌دیده و لکه حمام را فرستاده بودم. اگر این موارد تا آن زمان تعمیر نشده باشند، باید به‌صورت بی‌طرفانه در صورت‌جلسه تحویل ثبت شوند تا بعداً روشن باشد که تازه ایجاد نشده‌اند." },
+                { "language": "ar", "text": "كنت قد أرسلت بالفعل صوراً لإطار النافذة المتضرر والبقعة في الحمام. إذا لم تُصلح هذه النقاط حتى ذلك الوقت، فينبغي تسجيلها بشكل محايد في محضر التسليم حتى يكون واضحاً لاحقاً أنها لم تظهر حديثاً." },
+                { "language": "tr", "text": "Hasarlı pencere çerçevesinin ve banyodaki lekenin fotoğraflarını zaten göndermiştim. Bu noktalar o zamana kadar onarılmamışsa, daha sonra yeni oluşmadıkları açık olsun diye teslim tutanağına tarafsız biçimde yazılmalı." },
+                { "language": "ru", "text": "Я уже отправляла фотографии поврежденной оконной рамы и пятна в ванной. Если эти пункты к тому времени не будут устранены, их нужно нейтрально указать в акте передачи, чтобы позже было ясно, что они не возникли недавно." },
+                { "language": "ckb", "text": "من پێشتر وێنەی چوارچێوەی پەنجەرەی زیانلێکەوتوو و لکه‌کەی حەمامم ناردبوو. ئەگەر ئەم خاڵانە تا ئەوکاتە چاک نەکرابنەوە، پێویستە بە بێلایەنی لە پرۆتۆکۆڵی ڕادەستکردندا تۆمار بکرێن، بۆ ئەوەی دواتر ڕوون بێت تازە دروست نەبوون." },
+                { "language": "kmr", "text": "Min berê wêneyên çarçoveya pencereya zirar dîtî û lekeya serşokê şandibûn. Heke ev xal heta wê demê nehên sererastkirin, divê bi bêalî di protokola radestkirinê de bên nivîsandin, da ku paşê zelal be ku ew nû çênebûne." },
+                { "language": "pl", "text": "Wysłałam już zdjęcia uszkodzonej ramy okiennej i plamy w łazience. Jeśli te punkty nie zostaną do tego czasu naprawione, powinny zostać neutralnie wpisane do protokołu przekazania, żeby później było jasne, że nie powstały teraz." },
+                { "language": "ro", "text": "Trimisesem deja fotografii cu rama deteriorată a ferestrei și cu pata din baie. Dacă aceste puncte nu sunt reparate până atunci, ar trebui notate neutru în procesul-verbal de predare, ca să fie clar mai târziu că nu au apărut recent." },
+                { "language": "sq", "text": "Unë i kisha dërguar tashmë fotografitë e kornizës së dëmtuar të dritares dhe të njollës në banjë. Nëse këto pika nuk riparohen deri atëherë, duhet të shënohen në mënyrë neutrale në procesverbalin e dorëzimit, që më vonë të jetë e qartë se nuk janë krijuar rishtas." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Belege, bleibt neutral und erklärt den Zweck des Protokolls.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names evidence, stays neutral, and explains the purpose of the protocol." },
+                { "language": "fa", "text": "خوب است: پاسخ شواهد را نام می‌برد، بی‌طرف می‌ماند و هدف صورت‌جلسه را توضیح می‌دهد." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة الأدلة، وتبقى محايدة، وتشرح هدف المحضر." },
+                { "language": "tr", "text": "İyi: cevap kanıtları belirtir, tarafsız kalır ve tutanağın amacını açıklar." },
+                { "language": "ru", "text": "Хорошо: ответ называет доказательства, остается нейтральным и объясняет цель акта." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەکان ناو دەبات، بێلایەن دەمێنێتەوە و مەبەستی پرۆتۆکۆڵەکە ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv belgeyan dibêje, bêalî dimîne û armanca protokolê rave dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje dowody, pozostaje neutralna i wyjaśnia cel protokołu." },
+                { "language": "ro", "text": "Bine: răspunsul numește dovezile, rămâne neutru și explică scopul procesului-verbal." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend provat, mbetet neutrale dhe shpjegon qëllimin e procesverbalit." }
+              ],
+              "explanationKey": "b2-handover-evidence-and-protocol"
+            },
+            {
+              "id": "weak-drops-protocol",
+              "text": "Es gibt noch den Fensterrahmen und den Fleck im Bad, aber das können wir dann kurz anschauen.",
+              "translations": [
+                { "language": "en", "text": "There is still the window frame and the stain in the bathroom, but we can take a quick look at that then." },
+                { "language": "fa", "text": "قاب پنجره و لکه حمام هنوز هست، اما همان موقع می‌توانیم کوتاه نگاه کنیم." },
+                { "language": "ar", "text": "لا يزال هناك إطار النافذة والبقعة في الحمام، لكن يمكننا أن نلقي نظرة سريعة عليهما حينها." },
+                { "language": "tr", "text": "Pencere çerçevesi ve banyodaki leke hâlâ var, ama o zaman kısaca bakabiliriz." },
+                { "language": "ru", "text": "Еще есть оконная рама и пятно в ванной, но мы можем тогда быстро посмотреть." },
+                { "language": "ckb", "text": "هێشتا چوارچێوەی پەنجەرە و لکه‌کەی حەمام ماون، بەڵام ئەوکات دەتوانین بە کورتەیی سەیریان بکەین." },
+                { "language": "kmr", "text": "Hîn çarçoveya pencereyê û lekeya serşokê hene, lê em wê demê dikarin bi kurtî li wan binêrin." },
+                { "language": "pl", "text": "Jest jeszcze rama okienna i plama w łazience, ale możemy wtedy krótko na to spojrzeć." },
+                { "language": "ro", "text": "Mai sunt rama ferestrei și pata din baie, dar putem să ne uităm scurt atunci." },
+                { "language": "sq", "text": "Ka ende kornizën e dritares dhe njollën në banjë, por mund t'i shohim shkurt atëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort nennt die Mängel, fordert aber keine neutrale Protokollierung und schützt dich später schlechter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the answer names the defects, but does not request neutral documentation and protects you less later." },
+                { "language": "fa", "text": "ضعیف است: پاسخ ایرادها را می‌گوید، اما ثبت بی‌طرفانه در صورت‌جلسه را نمی‌خواهد و بعداً کمتر از تو محافظت می‌کند." },
+                { "language": "ar", "text": "ضعيف: تذكر الإجابة العيوب، لكنها لا تطلب توثيقاً محايداً وتحميك لاحقاً بشكل أقل." },
+                { "language": "tr", "text": "Zayıf: cevap kusurları belirtir, ancak tarafsız kayıt istemez ve seni daha sonra daha az korur." },
+                { "language": "ru", "text": "Слабо: ответ называет дефекты, но не просит нейтральной фиксации и хуже защищает вас позже." },
+                { "language": "ckb", "text": "لاوازە: وەڵامەکە کەموکوڕییەکان ناو دەبات، بەڵام تۆمارکردنی بێلایەن داوا ناکات و دواتر کەمتر پارێزگاری لێت دەکات." },
+                { "language": "kmr", "text": "Lawaz e: bersiv kêmasiyan dibêje, lê tomarkirina bêalî naxwaze û paşê we kêmtir diparêze." },
+                { "language": "pl", "text": "Za słabo: odpowiedź wymienia usterki, ale nie prosi o neutralny wpis do protokołu i gorzej chroni cię później." },
+                { "language": "ro", "text": "Prea slab: răspunsul numește defectele, dar nu cere documentare neutră și te protejează mai puțin mai târziu." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja përmend defektet, por nuk kërkon dokumentim neutral dhe të mbron më pak më vonë." }
+              ],
+              "explanationKey": "b2-handover-include-protocol"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, ich bringe Wohnungs-, Briefkasten- und Kellerschlüssel sowie meinen Ausweis mit. Können Sie mir bitte noch schriftlich bestätigen, welche Unterlagen Sie benötigen und dass die Zählerstände für Strom, Wasser und Heizung gemeinsam notiert werden?",
+              "translations": [
+                { "language": "en", "text": "Yes, I will bring the apartment, mailbox, and cellar keys as well as my ID. Could you please also confirm in writing which documents you need and that the meter readings for electricity, water, and heating will be recorded together?" },
+                { "language": "fa", "text": "بله، کلیدهای آپارتمان، صندوق پستی و انباری و همچنین کارت شناسایی‌ام را می‌آورم. ممکن است لطفاً کتبی تأیید کنید که چه مدارکی لازم دارید و اینکه کنتورهای برق، آب و گرمایش با هم ثبت می‌شوند؟" },
+                { "language": "ar", "text": "نعم، سأحضر مفاتيح الشقة وصندوق البريد والقبو وكذلك هويتي. هل يمكنكم أيضاً تأكيد المستندات المطلوبة كتابياً وأن قراءات عدادات الكهرباء والماء والتدفئة ستُسجل معاً؟" },
+                { "language": "tr", "text": "Evet, daire, posta kutusu ve bodrum anahtarlarını ve kimliğimi getireceğim. Hangi belgeleri istediğinizi ve elektrik, su ve ısıtma sayaçlarının birlikte kaydedileceğini bana yazılı olarak da teyit edebilir misiniz?" },
+                { "language": "ru", "text": "Да, я принесу ключи от квартиры, почтового ящика и подвала, а также удостоверение личности. Могли бы вы еще письменно подтвердить, какие документы вам нужны и что показания электричества, воды и отопления будут записаны вместе?" },
+                { "language": "ckb", "text": "بەڵێ، کلیلەکانی خانوو، سندووقی پۆست و ژێرزەمین و ناسنامەکەم دەهێنم. دەتوانن تکایە بە نووسراو پشتڕاست بکەنەوە کام بەڵگەنامەتان پێویستە و خوێندنەوەی پێوەری کارەبا، ئاو و گەرما پێکەوە تۆمار دەکرێت؟" },
+                { "language": "kmr", "text": "Erê, ez kilîtên apartmanê, qutiya postê û jêrzemînê û nasnameya xwe tînim. Hûn dikarin ji kerema xwe bi nivîskî jî piştrast bikin ka kîjan belge pêwîst in û pîvanên elektrîkê, avê û germkirinê bi hev re tên tomar kirin?" },
+                { "language": "pl", "text": "Tak, przyniosę klucze do mieszkania, skrzynki pocztowej i piwnicy oraz dowód tożsamości. Czy może mi pani jeszcze pisemnie potwierdzić, jakie dokumenty są potrzebne i że odczyty prądu, wody i ogrzewania zostaną zapisane wspólnie?" },
+                { "language": "ro", "text": "Da, voi aduce cheile de la apartament, cutia poștală și pivniță, precum și actul de identitate. Îmi puteți confirma în scris ce documente sunt necesare și că citirile contoarelor pentru electricitate, apă și încălzire vor fi notate împreună?" },
+                { "language": "sq", "text": "Po, do të sjell çelësat e banesës, kutisë postare dhe bodrumit, si edhe dokumentin tim të identitetit. A mund të më konfirmoni me shkrim cilat dokumente ju duhen dhe që leximet e matësve të energjisë, ujit dhe ngrohjes do të shënohen së bashku?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bestätigt die Checkliste und bittet um schriftliche Klarheit zu Unterlagen und Zählerständen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer confirms the checklist and asks for written clarity about documents and meter readings." },
+                { "language": "fa", "text": "خوب است: پاسخ چک‌لیست را تأیید می‌کند و درباره مدارک و خواندن کنتورها شفافیت کتبی می‌خواهد." },
+                { "language": "ar", "text": "جيد: تؤكد الإجابة قائمة التحقق وتطلب وضوحاً كتابياً بشأن المستندات وقراءات العدادات." },
+                { "language": "tr", "text": "İyi: cevap kontrol listesini onaylar ve belgeler ile sayaç okumaları konusunda yazılı netlik ister." },
+                { "language": "ru", "text": "Хорошо: ответ подтверждает список и просит письменной ясности по документам и показаниям счетчиков." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە لیستی پشکنینەکە پشتڕاست دەکاتەوە و داوای ڕوونی نووسراو لەبارەی بەڵگەنامەکان و خوێندنەوەی پێوەرەکان دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv lîsteya kontrolê piştrast dike û li ser belge û xwendina pîvanan zelaliya nivîskî dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź potwierdza listę kontrolną i prosi o pisemną jasność co do dokumentów i odczytów liczników." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă lista de verificare și cere claritate scrisă despre documente și citirile contoarelor." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon listën e kontrollit dhe kërkon qartësi me shkrim për dokumentet dhe leximet e matësve." }
+              ],
+              "explanationKey": "b2-handover-checklist-and-writing"
+            },
+            {
+              "id": "weak-missing-meter-details",
+              "text": "Ja, ich bringe die Schlüssel und meinen Ausweis mit. Die anderen Dinge können wir dann besprechen.",
+              "translations": [
+                { "language": "en", "text": "Yes, I will bring the keys and my ID. We can discuss the other things then." },
+                { "language": "fa", "text": "بله، کلیدها و کارت شناسایی‌ام را می‌آورم. چیزهای دیگر را همان‌جا می‌توانیم صحبت کنیم." },
+                { "language": "ar", "text": "نعم، سأحضر المفاتيح وهويتي. يمكننا أن نناقش الأمور الأخرى حينها." },
+                { "language": "tr", "text": "Evet, anahtarları ve kimliğimi getireceğim. Diğer şeyleri o zaman konuşabiliriz." },
+                { "language": "ru", "text": "Да, я принесу ключи и удостоверение личности. Остальное мы можем обсудить тогда." },
+                { "language": "ckb", "text": "بەڵێ، کلیلەکان و ناسنامەکەم دەهێنم. شتەکانی تر ئەوکات دەتوانین باس بکەین." },
+                { "language": "kmr", "text": "Erê, ez kilît û nasnameya xwe tînim. Tiştên din em dikarin wê demê nîqaş bikin." },
+                { "language": "pl", "text": "Tak, przyniosę klucze i dowód tożsamości. Inne rzeczy możemy wtedy omówić." },
+                { "language": "ro", "text": "Da, voi aduce cheile și actul de identitate. Celelalte lucruri le putem discuta atunci." },
+                { "language": "sq", "text": "Po, do të sjell çelësat dhe dokumentin tim të identitetit. Gjërat e tjera mund t'i diskutojmë atëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Die Antwort bestätigt Schlüssel und Ausweis, lässt aber Unterlagen, Zählerstände und schriftliche Bestätigung offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: the answer confirms keys and ID, but leaves documents, meter readings, and written confirmation open." },
+                { "language": "fa", "text": "ناقص است: پاسخ کلیدها و کارت شناسایی را تأیید می‌کند، اما مدارک، کنتورها و تأیید کتبی را باز می‌گذارد." },
+                { "language": "ar", "text": "غير كامل: تؤكد الإجابة المفاتيح والهوية، لكنها تترك المستندات وقراءات العدادات والتأكيد الكتابي مفتوحة." },
+                { "language": "tr", "text": "Eksik: cevap anahtarları ve kimliği onaylar, ama belgeleri, sayaç okumalarını ve yazılı teyidi açık bırakır." },
+                { "language": "ru", "text": "Неполно: ответ подтверждает ключи и удостоверение, но оставляет открытыми документы, счетчики и письменное подтверждение." },
+                { "language": "ckb", "text": "ناتەواوە: وەڵامەکە کلیل و ناسنامە پشتڕاست دەکاتەوە، بەڵام بەڵگەنامەکان، پێوەرەکان و پشتڕاستکردنەوەی نووسراو بە کراوەیی دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Netemam e: bersiv kilît û nasnameyê piştrast dike, lê belge, pîvan û piştrastkirina nivîskî vekirî dihêle." },
+                { "language": "pl", "text": "Niepełne: odpowiedź potwierdza klucze i dowód, ale zostawia otwarte dokumenty, liczniki i pisemne potwierdzenie." },
+                { "language": "ro", "text": "Incomplet: răspunsul confirmă cheile și actul de identitate, dar lasă deschise documentele, contoarele și confirmarea scrisă." },
+                { "language": "sq", "text": "E paplotë: përgjigjja konfirmon çelësat dhe dokumentin e identitetit, por lë të hapura dokumentet, matësit dhe konfirmimin me shkrim." }
+              ],
+              "explanationKey": "b2-handover-include-meter-details"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Dann fasse ich zusammen: Donnerstag um 16 Uhr, 45 Minuten für Übergabe, Schlüssel, gemeinsame Zählerstände und ein Protokoll zu den bereits gemeldeten Mängeln. Sobald Ihre E-Mail da ist, bestätige ich den Termin ebenfalls schriftlich.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will summarize: Thursday at 4 p.m., 45 minutes for handover, keys, joint meter readings, and a protocol for the defects already reported. As soon as your email arrives, I will also confirm the appointment in writing." },
+                { "language": "fa", "text": "خیلی ممنون. پس خلاصه می‌کنم: پنجشنبه ساعت ۱۶، ۴۵ دقیقه برای تحویل، کلیدها، خواندن مشترک کنتورها و صورت‌جلسه برای ایرادهایی که قبلاً گزارش شده‌اند. به‌محض اینکه ایمیل شما برسد، من هم وقت را کتبی تأیید می‌کنم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن ألخص: الخميس الساعة الرابعة، 45 دقيقة للتسليم، والمفاتيح، وقراءات العدادات المشتركة، ومحضر للعيوب التي تم الإبلاغ عنها مسبقاً. بمجرد وصول بريدكم الإلكتروني، سأؤكد الموعد كتابياً أيضاً." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde özetliyorum: Perşembe saat 16, teslim, anahtarlar, ortak sayaç okumaları ve daha önce bildirilen kusurlar için tutanak adına 45 dakika. E-postanız gelir gelmez ben de randevuyu yazılı olarak onaylayacağım." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я резюмирую: четверг в 16 часов, 45 минут на передачу, ключи, совместные показания счетчиков и акт по уже заявленным дефектам. Как только придет ваше письмо, я также письменно подтвержу встречу." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە پوخت دەکەمەوە: پێنجشەممە کاتژمێر ١٦، ٤٥ خولەک بۆ ڕادەستکردن، کلیلەکان، خوێندنەوەی هاوبەشی پێوەرەکان و پرۆتۆکۆڵێک بۆ کەموکوڕییە پێشتر ڕاپۆرتکراوەکان. هەر کاتێک ئیمەیلەکەتان هات، منیش کاتەکە بە نووسراو پشتڕاست دەکەمەوە." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez kurte dikim: pêncşem saet 16, 45 deqe ji bo radestkirinê, kilît, xwendina hevpar a pîvanan û protokolek ji bo kêmasiyên berê hatine ragihandin. Dema e-nameya we hat, ez jî demê bi nivîskî piştrast dikim." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie podsumuję: czwartek o 16, 45 minut na przekazanie, klucze, wspólne odczyty liczników i protokół dotyczący wcześniej zgłoszonych usterek. Gdy tylko przyjdzie pani e-mail, również potwierdzę termin pisemnie." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci rezum: joi la ora 16, 45 de minute pentru predare, chei, citiri comune ale contoarelor și un proces-verbal pentru defectele deja raportate. De îndată ce primesc e-mailul dumneavoastră, voi confirma și eu programarea în scris." },
+                { "language": "sq", "text": "Shumë faleminderit. Atëherë po përmbledh: e enjte në orën 16, 45 minuta për dorëzimin, çelësat, leximet e përbashkëta të matësve dhe një procesverbal për defektet e raportuara më parë. Sapo të vijë emaili juaj, edhe unë do ta konfirmoj takimin me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Schlussantwort hält Zeit, Dauer, Schlüssel, Zählerstände, Protokoll und schriftliche Bestätigung fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the closing answer records time, duration, keys, meter readings, protocol, and written confirmation." },
+                { "language": "fa", "text": "خوب است: پاسخ پایانی زمان، مدت، کلیدها، کنتورها، صورت‌جلسه و تأیید کتبی را ثبت می‌کند." },
+                { "language": "ar", "text": "جيد: تثبت الإجابة الختامية الوقت والمدة والمفاتيح وقراءات العدادات والمحضر والتأكيد الكتابي." },
+                { "language": "tr", "text": "İyi: kapanış cevabı zamanı, süreyi, anahtarları, sayaç okumalarını, tutanağı ve yazılı teyidi kaydeder." },
+                { "language": "ru", "text": "Хорошо: заключительный ответ фиксирует время, длительность, ключи, показания счетчиков, акт и письменное подтверждение." },
+                { "language": "ckb", "text": "باشە: وەڵامی کۆتایی کات، ماوە، کلیلەکان، خوێندنەوەی پێوەرەکان، پرۆتۆکۆڵ و پشتڕاستکردنەوەی نووسراو تۆمار دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiva dawî dem, dirêjahî, kilît, xwendina pîvanan, protokol û piştrastkirina nivîskî tomar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź końcowa utrwala czas, długość, klucze, odczyty liczników, protokół i pisemne potwierdzenie." },
+                { "language": "ro", "text": "Bine: răspunsul final fixează ora, durata, cheile, citirile contoarelor, procesul-verbal și confirmarea scrisă." },
+                { "language": "sq", "text": "Mirë: përgjigjja përfundimtare fikson kohën, kohëzgjatjen, çelësat, leximet e matësve, procesverbalin dhe konfirmimin me shkrim." }
+              ],
+              "explanationKey": "b2-handover-final-summary"
+            },
+            {
+              "id": "weak-missing-written-followup",
+              "text": "Vielen Dank, dann sehen wir uns Donnerstag um 16 Uhr zur Übergabe.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will see you Thursday at 4 p.m. for the handover." },
+                { "language": "fa", "text": "خیلی ممنون، پس پنجشنبه ساعت ۱۶ برای تحویل شما را می‌بینم." },
+                { "language": "ar", "text": "شكراً جزيلاً، إذن أراكم يوم الخميس الساعة الرابعة للتسليم." },
+                { "language": "tr", "text": "Çok teşekkür ederim, o halde perşembe saat 16'da teslim için görüşürüz." },
+                { "language": "ru", "text": "Большое спасибо, тогда увидимся в четверг в 16 часов для передачи." },
+                { "language": "ckb", "text": "زۆر سوپاس، کەواتە پێنجشەممە کاتژمێر ١٦ بۆ ڕادەستکردن یەکتر دەبینین." },
+                { "language": "kmr", "text": "Gelek spas, wê demê pêncşem saet 16 ji bo radestkirinê hev dibînin." },
+                { "language": "pl", "text": "Bardzo dziękuję, w takim razie widzimy się w czwartek o 16 na przekazaniu." },
+                { "language": "ro", "text": "Vă mulțumesc, atunci ne vedem joi la ora 16 pentru predare." },
+                { "language": "sq", "text": "Shumë faleminderit, atëherë shihemi të enjten në orën 16 për dorëzimin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort bestätigt den Termin, lässt aber Dauer, Zählerstände, Protokoll und schriftliche Rückbestätigung weg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: the answer confirms the appointment, but leaves out duration, meter readings, protocol, and written reconfirmation." },
+                { "language": "fa", "text": "بیش از حد کوتاه است: پاسخ وقت را تأیید می‌کند، اما مدت، کنتورها، صورت‌جلسه و تأیید کتبی متقابل را حذف می‌کند." },
+                { "language": "ar", "text": "مختصر أكثر من اللازم: تؤكد الإجابة الموعد، لكنها تترك المدة وقراءات العدادات والمحضر والتأكيد الكتابي المتبادل." },
+                { "language": "tr", "text": "Fazla kısa: cevap randevuyu onaylar, ama süreyi, sayaç okumalarını, tutanağı ve yazılı tekrar teyidi atlar." },
+                { "language": "ru", "text": "Слишком кратко: ответ подтверждает встречу, но пропускает длительность, счетчики, акт и письменное повторное подтверждение." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە کاتەکە پشتڕاست دەکاتەوە، بەڵام ماوە، پێوەرەکان، پرۆتۆکۆڵ و پشتڕاستکردنەوەی نووسراوی دووبارە جێدەهێڵێت." },
+                { "language": "kmr", "text": "Pir kurt e: bersiv demê piştrast dike, lê dirêjahî, pîvan, protokol û piştrastkirina nivîskî ya dubare dihêle." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź potwierdza termin, ale pomija czas trwania, liczniki, protokół i pisemne potwierdzenie zwrotne." },
+                { "language": "ro", "text": "Prea scurt: răspunsul confirmă programarea, dar omite durata, contoarele, procesul-verbal și reconfirmarea scrisă." },
+                { "language": "sq", "text": "Shumë shkurt: përgjigjja konfirmon takimin, por lë jashtë kohëzgjatjen, matësit, procesverbalin dhe rikonfirmimin me shkrim." }
+              ],
+              "explanationKey": "b2-handover-final-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei einem Übergabetermin solltest du früh sagen, welche Punkte Zeit brauchen. So wirkt die Bitte um ein längeres Zeitfenster begründet.",
+          "translations": [
+            { "language": "en", "text": "For a handover appointment, you should say early which points need time. That makes the request for a longer time window sound justified." },
+            { "language": "fa", "text": "در وقت تحویل باید زود بگویی کدام نکات زمان لازم دارند. این باعث می‌شود درخواست بازه زمانی طولانی‌تر موجه به نظر برسد." },
+            { "language": "ar", "text": "في موعد التسليم ينبغي أن تذكر مبكراً النقاط التي تحتاج إلى وقت. بذلك يبدو طلب فترة زمنية أطول مبرراً." },
+            { "language": "tr", "text": "Teslim randevusunda hangi noktaların zaman gerektirdiğini erken söylemelisin. Böylece daha uzun süre isteği gerekçeli görünür." },
+            { "language": "ru", "text": "При встрече передачи нужно заранее сказать, какие пункты требуют времени. Так просьба о более длинном временном окне выглядит обоснованной." },
+            { "language": "ckb", "text": "لە کاتی ڕادەستکردندا پێویستە زوو بڵێیت کام خاڵانە کات دەوێن. بەمە داوای بازنەی کاتی درێژتر بە هۆکارەوە دەردەکەوێت." },
+            { "language": "kmr", "text": "Di dema radestkirinê de divê tu zû bibêjî kîjan xal dem dixwazin. Bi vî awayî daxwaza pencereya demê ya dirêjtir bi sedem xuya dike." },
+            { "language": "pl", "text": "Przy terminie przekazania warto od razu powiedzieć, które punkty wymagają czasu. Wtedy prośba o dłuższy przedział czasowy brzmi uzasadnienie." },
+            { "language": "ro", "text": "La o programare de predare ar trebui să spui devreme ce puncte necesită timp. Astfel cererea pentru un interval mai lung pare justificată." },
+            { "language": "sq", "text": "Në një takim dorëzimi duhet të thuash herët cilat pika kërkojnë kohë. Kështu kërkesa për një interval më të gjatë duket e arsyetuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language",
+          "text": "B2-Terminvereinbarung bedeutet nicht nur einen Zeitpunkt nennen, sondern Bedingungen und Alternativen klar formulieren.",
+          "translations": [
+            { "language": "en", "text": "B2 appointment-making means not only naming a time, but formulating conditions and alternatives clearly." },
+            { "language": "fa", "text": "هماهنگی وقت در سطح B2 فقط گفتن زمان نیست، بلکه باید شرایط و گزینه‌های جایگزین را هم روشن بیان کرد." },
+            { "language": "ar", "text": "تحديد الموعد في مستوى B2 لا يعني ذكر الوقت فقط، بل صياغة الشروط والبدائل بوضوح." },
+            { "language": "tr", "text": "B2 düzeyinde randevu ayarlamak yalnızca zamanı söylemek değil, koşulları ve alternatifleri açıkça ifade etmektir." },
+            { "language": "ru", "text": "Договоренность о встрече на уровне B2 означает не только назвать время, но и ясно сформулировать условия и варианты." },
+            { "language": "ckb", "text": "ڕێکخستنی کات لە ئاستی B2 تەنها ناوهێنانی کات نییە، بەڵکو پێویستە مەرج و جێگرەوەکان بە ڕوونی دەرببڕدرێن." },
+            { "language": "kmr", "text": "Sazkirina demê li asta B2 ne tenê gotina demê ye, lê şert û alternatîf divê bi zelalî bên gotin." },
+            { "language": "pl", "text": "Umawianie terminu na poziomie B2 to nie tylko podanie czasu, lecz także jasne sformułowanie warunków i alternatyw." },
+            { "language": "ro", "text": "Stabilirea unei programări la nivel B2 nu înseamnă doar să numești ora, ci să formulezi clar condițiile și alternativele." },
+            { "language": "sq", "text": "Caktimi i një takimi në nivelin B2 nuk do të thotë vetëm të përmendësh orën, por të formulosh qartë kushtet dhe alternativat." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "common-mistake",
+          "text": "Mängel nur mündlich anzuschauen ist schwächer als eine neutrale Protokollnotiz mit bereits vorhandenen Fotos.",
+          "translations": [
+            { "language": "en", "text": "Only looking at defects orally is weaker than a neutral protocol note with photos that already exist." },
+            { "language": "fa", "text": "فقط شفاهی نگاه کردن به ایرادها ضعیف‌تر از ثبت بی‌طرفانه در صورت‌جلسه همراه با عکس‌های موجود است." },
+            { "language": "ar", "text": "مجرد النظر إلى العيوب شفهياً أضعف من ملاحظة محايدة في المحضر مع الصور الموجودة مسبقاً." },
+            { "language": "tr", "text": "Kusurlara yalnızca sözlü olarak bakmak, mevcut fotoğraflarla tarafsız bir tutanak notundan daha zayıftır." },
+            { "language": "ru", "text": "Просто устно посмотреть дефекты слабее, чем нейтральная запись в акте с уже имеющимися фотографиями." },
+            { "language": "ckb", "text": "تەنها بە زارەکی سەیرکردنی کەموکوڕییەکان لاوازترە لە تێبینییەکی بێلایەنی پرۆتۆکۆڵ لەگەڵ وێنە پێشوەختە هەبووەکان." },
+            { "language": "kmr", "text": "Tenê bi devkî li kêmasiyan nihêrîn ji têbîniyekê ya bêalî ya protokolê bi wêneyên jixwe hene lawaztir e." },
+            { "language": "pl", "text": "Samo ustne obejrzenie usterek jest słabsze niż neutralna notatka w protokole z już istniejącymi zdjęciami." },
+            { "language": "ro", "text": "Doar examinarea verbală a defectelor este mai slabă decât o notă neutră în procesul-verbal cu fotografiile deja existente." },
+            { "language": "sq", "text": "Vetëm shikimi verbal i defekteve është më i dobët se një shënim neutral në procesverbal me fotografitë që ekzistojnë tashmë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Eine starke Schlusszusammenfassung nennt Termin, Dauer, Gegenstände, Messwerte, Protokoll und die schriftliche Bestätigung.",
+          "translations": [
+            { "language": "en", "text": "A strong closing summary names the appointment, duration, items, readings, protocol, and written confirmation." },
+            { "language": "fa", "text": "خلاصه پایانی قوی، زمان، مدت، وسایل، اعداد کنتورها، صورت‌جلسه و تأیید کتبی را نام می‌برد." },
+            { "language": "ar", "text": "الملخص الختامي القوي يذكر الموعد والمدة والأشياء والقراءات والمحضر والتأكيد الكتابي." },
+            { "language": "tr", "text": "Güçlü bir kapanış özeti randevuyu, süreyi, eşyaları, okumaları, tutanağı ve yazılı teyidi belirtir." },
+            { "language": "ru", "text": "Сильное заключительное резюме называет встречу, длительность, предметы, показания, акт и письменное подтверждение." },
+            { "language": "ckb", "text": "پوختەی کۆتایی بەهێز کات، ماوە، شتەکان، ژمارەی پێوەرەکان، پرۆتۆکۆڵ و پشتڕاستکردنەوەی نووسراو ناو دەبات." },
+            { "language": "kmr", "text": "Kurtekirina dawî ya bihêz dem, dirêjahî, tişt, xwendin, protokol û piştrastkirina nivîskî dibêje." },
+            { "language": "pl", "text": "Mocne podsumowanie końcowe wymienia termin, czas trwania, rzeczy, odczyty, protokół i pisemne potwierdzenie." },
+            { "language": "ro", "text": "Un rezumat final puternic numește programarea, durata, obiectele, valorile citite, procesul-verbal și confirmarea scrisă." },
+            { "language": "sq", "text": "Një përmbledhje e fortë përfundimtare përmend takimin, kohëzgjatjen, sendet, leximet, procesverbalin dhe konfirmimin me shkrim." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3320
+    }
+  ]
+}

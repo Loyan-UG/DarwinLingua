@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-30-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 30 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 30",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-zwischen-rechtslage-und-einzelfall-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Zwischen Rechtslage und Einzelfall abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weighing the legal framework against an individual case" },
+        { "language": "fa", "text": "سنجیدن قاعده حقوقی با وضعیت فردی" },
+        { "language": "ar", "text": "الموازنة بين الإطار القانوني والحالة الفردية" },
+        { "language": "tr", "text": "Hukuki çerçeve ile bireysel durumu tartmak" },
+        { "language": "ru", "text": "Взвешивание правовой рамки и индивидуального случая" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی چوارچێوەی یاسایی و کەیسی تاکەکەسی" },
+        { "language": "kmr", "text": "Nirxandina çarçoveya hiqûqî û doza kesane" },
+        { "language": "pl", "text": "Wyważanie ram prawnych i indywidualnej sprawy" },
+        { "language": "ro", "text": "Cântărirea cadrului legal și a cazului individual" },
+        { "language": "sq", "text": "Peshimi mes kuadrit ligjor dhe rastit individual" }
+      ],
+      "description": "Sie besprechen mit einer Behörde, wie eine allgemeine Nachweisregel auf Ihren besonderen Fall angewendet werden kann. Sie bitten nicht um Rechtsberatung, sondern um verfahrensbezogene Klärung, welche Unterlagen konkret fehlen oder ausreichen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You discuss with a public office how a general evidence rule can be applied to your particular case. You do not ask for legal advice, but for procedural clarification of which documents are specifically missing or sufficient." },
+        { "language": "fa", "text": "شما با یک اداره صحبت می‌کنید که یک قاعده عمومی درباره مدارک چگونه می‌تواند روی وضعیت خاص شما اعمال شود. درخواست مشاوره حقوقی نمی‌کنید، بلکه می‌خواهید از نظر روند اداری روشن شود دقیقاً کدام مدارک کم است یا کافی است." },
+        { "language": "ar", "text": "تناقش مع جهة إدارية كيف يمكن تطبيق قاعدة عامة بخصوص الإثبات على حالتك الخاصة. لا تطلب استشارة قانونية، بل توضيحاً إجرائياً حول الوثائق الناقصة أو الكافية تحديداً." },
+        { "language": "tr", "text": "Bir kurumla, genel bir kanıt kuralının sizin özel durumunuza nasıl uygulanabileceğini görüşüyorsunuz. Hukuki danışmanlık istemiyorsunuz; hangi belgelerin eksik ya da yeterli olduğuna dair süreç odaklı açıklama istiyorsunuz." },
+        { "language": "ru", "text": "Вы обсуждаете с ведомством, как общее правило о подтверждениях может применяться к вашему конкретному случаю. Вы не просите юридической консультации, а просите процедурное разъяснение, каких документов конкретно не хватает или достаточно." },
+        { "language": "ckb", "text": "لەگەڵ فەرمانگەیەک باس دەکەیت کە چۆن ڕێسایەکی گشتی دەربارەی بەڵگە دەتوانرێت بۆ دۆخی تایبەتی تۆ بەکاربهێنرێت. داوای ڕاوێژکاری یاسایی ناکەیت، بەڵکو داوای ڕوونکردنەوەی ڕێکاری دەکەیت کە بە وردی کام بەڵگە کەمە یان بەسە." },
+        { "language": "kmr", "text": "Hûn bi saziyeke îdarî re dipeyivin ka qaîdeyeke gelemperî ya belgeyan çawa dikare li ser rewşa taybet a we were bikaranîn. Hûn daxwaza şêwirmendiya hiqûqî nakin, lê daxwaza zelalkirina rêkarî dikin ka kîjan belge bi taybetî kêm in an têr in." },
+        { "language": "pl", "text": "Rozmawia Pan z urzędem o tym, jak ogólna zasada dowodowa może zostać zastosowana do Pana szczególnego przypadku. Nie prosi Pan o poradę prawną, lecz o proceduralne wyjaśnienie, których dokumentów konkretnie brakuje albo które są wystarczające." },
+        { "language": "ro", "text": "Discutați cu o autoritate despre modul în care o regulă generală privind dovezile poate fi aplicată cazului dumneavoastră particular. Nu solicitați consultanță juridică, ci clarificare procedurală privind documentele care lipsesc concret sau sunt suficiente." },
+        { "language": "sq", "text": "Diskutoni me një institucion se si një rregull i përgjithshëm për provat mund të zbatohet në rastin tuaj të veçantë. Nuk kërkoni këshillë ligjore, por sqarim procedural se cilat dokumente mungojnë konkretisht ose janë të mjaftueshme." }
+      ],
+      "learnerGoal": "Eine allgemeine Regel respektvoll auf den eigenen Fall beziehen: keine Rechtsberatung verlangen, Nachweise strukturiert erklären, Unklarheiten eingrenzen und eine schriftliche Klärung der nächsten Schritte erbitten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Relate a general rule respectfully to your own case: do not request legal advice, explain evidence in a structured way, narrow down ambiguities, and ask for written clarification of next steps." },
+        { "language": "fa", "text": "یک قاعده عمومی را محترمانه به پرونده خود ربط دهید: مشاوره حقوقی نخواهید، مدارک را ساختارمند توضیح دهید، ابهام‌ها را محدود کنید و روشن‌سازی کتبی قدم‌های بعدی را درخواست کنید." },
+        { "language": "ar", "text": "اربط قاعدة عامة بحالتك باحترام: لا تطلب استشارة قانونية، واشرح الأدلة بشكل منظم، وحدد نقاط الغموض، واطلب توضيحاً كتابياً للخطوات التالية." },
+        { "language": "tr", "text": "Genel bir kuralı kendi durumunuzla saygılı biçimde ilişkilendirin: hukuki danışmanlık istemeyin, kanıtları yapılandırılmış şekilde açıklayın, belirsizlikleri daraltın ve sonraki adımların yazılı açıklamasını isteyin." },
+        { "language": "ru", "text": "Уважительно связать общее правило со своим случаем: не требовать юридической консультации, структурированно объяснить доказательства, сузить неясности и попросить письменное разъяснение следующих шагов." },
+        { "language": "ckb", "text": "ڕێسایەکی گشتی بە ڕێزەوە بە کەیسی خۆت ببەستەوە: داوای ڕاوێژکاری یاسایی مەکە، بەڵگەکان بە ڕێکخراوی ڕوون بکەوە، ناڕوونییەکان سنووردار بکە و داوای ڕوونکردنەوەی نووسراوی هەنگاوەکانی داهاتوو بکە." },
+        { "language": "kmr", "text": "Qaîdeyeke gelemperî bi rêz ve bi doza xwe ve girê bidin: daxwaza şêwirmendiya hiqûqî nekin, belgeyan bi rêxistî rave bikin, nezelaliyên sînorkirin û daxwaza zelalkirina nivîskî ya gavên paşîn bikin." },
+        { "language": "pl", "text": "Z szacunkiem odnieść ogólną zasadę do własnej sprawy: nie żądać porady prawnej, uporządkowanie wyjaśnić dowody, zawęzić niejasności i poprosić o pisemne wyjaśnienie kolejnych kroków." },
+        { "language": "ro", "text": "Raportați respectuos o regulă generală la propriul caz: nu cereți consultanță juridică, explicați dovezile structurat, restrângeți ambiguitățile și solicitați clarificarea scrisă a pașilor următori." },
+        { "language": "sq", "text": "Lidheni me respekt një rregull të përgjithshëm me rastin tuaj: mos kërkoni këshillë ligjore, shpjegoni provat në mënyrë të strukturuar, ngushtoni paqartësitë dhe kërkoni sqarim me shkrim për hapat e ardhshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "compare-options",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 17,
+      "isPublished": true,
+      "sortOrder": 30,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller/in",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌کننده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikues" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeitung",
+          "translations": [
+            { "language": "en", "text": "Caseworker" },
+            { "language": "fa", "text": "کارمند پرونده" },
+            { "language": "ar", "text": "الموظف المسؤول" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karmendê dozê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționar responsabil" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie möchten besprechen, wie die allgemeine Nachweisregel auf Ihren Einzelfall angewendet wird. Welcher Punkt ist für Sie unklar?",
+          "translations": [
+            { "language": "en", "text": "You would like to discuss how the general evidence rule is applied to your individual case. Which point is unclear to you?" },
+            { "language": "fa", "text": "شما می‌خواهید درباره این صحبت کنید که قاعده عمومی مدارک چگونه روی پرونده فردی شما اعمال می‌شود. کدام نکته برای شما نامشخص است؟" },
+            { "language": "ar", "text": "تود أن تناقش كيف تُطبق قاعدة الإثبات العامة على حالتك الفردية. ما النقطة غير الواضحة بالنسبة لك؟" },
+            { "language": "tr", "text": "Genel belge kuralının bireysel durumunuza nasıl uygulandığını görüşmek istiyorsunuz. Hangi nokta sizin için belirsiz?" },
+            { "language": "ru", "text": "Вы хотите обсудить, как общее правило о документах применяется к вашему индивидуальному случаю. Какой пункт вам неясен?" },
+            { "language": "ckb", "text": "دەتەوێت باس بکەیت کە چۆن ڕێسای گشتی بەڵگەکان بۆ کەیسی تاکەکەسی تۆ بەکار دەهێنرێت. کام خاڵ بۆت ناڕوونە؟" },
+            { "language": "kmr", "text": "Hûn dixwazin nîqaş bikin ka qaîdeya gelemperî ya belgeyan çawa li doza kesane ya we tê bikaranîn. Kîjan xal ji bo we nezelal e?" },
+            { "language": "pl", "text": "Chce Pan omówić, jak ogólna zasada dowodowa jest stosowana do Pana indywidualnej sprawy. Który punkt jest dla Pana niejasny?" },
+            { "language": "ro", "text": "Doriți să discutați cum se aplică regula generală privind dovezile în cazul dumneavoastră individual. Ce punct este neclar pentru dumneavoastră?" },
+            { "language": "sq", "text": "Dëshironi të diskutoni se si zbatohet rregulli i përgjithshëm i provave në rastin tuaj individual. Cila pikë është e paqartë për ju?" }
+          ],
+          "function": "opening-clarification",
+          "toneNote": "formal, prüfend",
+          "expectedLearnerAction": "Unklarheit verfahrensbezogen eingrenzen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Mir ist bewusst, dass Sie keine Rechtsberatung leisten. Ich möchte nur verfahrensbezogen klären, welche Nachweise in meinem Fall als ausreichend gelten können. Mein Einkommen besteht aus einem Stipendium und einem Minijob; beides deckt denselben Zeitraum ab, aber die Nachweise sehen sehr unterschiedlich aus.",
+          "translations": [
+            { "language": "en", "text": "I am aware that you do not provide legal advice. I only want to clarify procedurally which evidence can be considered sufficient in my case. My income consists of a scholarship and a mini-job; both cover the same period, but the documents look very different." },
+            { "language": "fa", "text": "می‌دانم که شما مشاوره حقوقی ارائه نمی‌کنید. فقط می‌خواهم از نظر روند اداری روشن کنم کدام مدارک در پرونده من می‌توانند کافی محسوب شوند. درآمد من از یک بورسیه و یک کار کوچک تشکیل شده؛ هر دو همان بازه زمانی را پوشش می‌دهند، اما شکل مدارکشان بسیار متفاوت است." },
+            { "language": "ar", "text": "أعلم أنكم لا تقدمون استشارة قانونية. أريد فقط أن أوضح إجرائياً أي أدلة يمكن اعتبارها كافية في حالتي. يتكون دخلي من منحة وعمل صغير؛ كلاهما يغطي الفترة نفسها، لكن شكل الوثائق مختلف جداً." },
+            { "language": "tr", "text": "Hukuki danışmanlık vermediğinizi biliyorum. Yalnızca süreç açısından, benim durumumda hangi kanıtların yeterli sayılabileceğini netleştirmek istiyorum. Gelirim bir burs ve bir mini işten oluşuyor; ikisi de aynı dönemi kapsıyor, ancak belgeler çok farklı görünüyor." },
+            { "language": "ru", "text": "Я понимаю, что вы не даёте юридических консультаций. Я хочу только процедурно уточнить, какие подтверждения в моём случае могут считаться достаточными. Мой доход состоит из стипендии и мини-работы; оба покрывают один и тот же период, но документы выглядят очень по-разному." },
+            { "language": "ckb", "text": "ئاگادارم کە ئێوە ڕاوێژکاری یاسایی پێشکەش ناکەن. تەنها دەمەوێت لە ڕووی ڕێکارەوە ڕوون بکەم کە کام بەڵگە لە کەیسی مندا دەتوانرێت بەس بێت. داهاتم لە بورسیە و کارێکی بچووک پێکدێت؛ هەردووکیان هەمان ماوە دادەپۆشن، بەڵام شێوەی بەڵگەکان زۆر جیاوازن." },
+            { "language": "kmr", "text": "Ez dizanim ku hûn şêwirmendiya hiqûqî nadin. Ez tenê dixwazim ji aliyê rêkarî ve zelal bikim ka di doza min de kîjan belge dikarin têr werin hesibandin. Dahata min ji burs û karekî piçûk pêk tê; her du jî heman heyamê digirin, lê belge pir cuda xuya dikin." },
+            { "language": "pl", "text": "Mam świadomość, że nie udzielają Państwo porad prawnych. Chcę jedynie proceduralnie wyjaśnić, które dowody mogą być w mojej sprawie uznane za wystarczające. Mój dochód składa się ze stypendium i minipracy; oba obejmują ten sam okres, ale dokumenty wyglądają bardzo różnie." },
+            { "language": "ro", "text": "Sunt conștient că nu oferiți consultanță juridică. Vreau doar să clarific procedural ce dovezi pot fi considerate suficiente în cazul meu. Venitul meu constă dintr-o bursă și un mini-job; ambele acoperă aceeași perioadă, dar documentele arată foarte diferit." },
+            { "language": "sq", "text": "E di që ju nuk jepni këshillë ligjore. Dua vetëm të sqaroj nga ana procedurale cilat prova mund të konsiderohen të mjaftueshme në rastin tim. Të ardhurat e mia përbëhen nga një bursë dhe një punë e vogël; të dyja mbulojnë të njëjtën periudhë, por dokumentet duken shumë të ndryshme." }
+          ],
+          "function": "scope-without-legal-advice",
+          "toneNote": "vorsichtig, verfahrensbezogen",
+          "expectedLearnerAction": "Rechtsberatung ausschließen und konkrete Nachweisfrage stellen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Die Regel verlangt nachvollziehbare und vollständige Einkommensnachweise. Was macht Ihren Fall aus Ihrer Sicht besonders?",
+          "translations": [
+            { "language": "en", "text": "The rule requires traceable and complete proof of income. What, from your point of view, makes your case special?" },
+            { "language": "fa", "text": "این قاعده مدارک درآمدی قابل پیگیری و کامل می‌خواهد. از نظر شما چه چیزی پرونده شما را خاص می‌کند؟" },
+            { "language": "ar", "text": "تتطلب القاعدة أدلة دخل مفهومة وكاملة. ما الذي يجعل حالتك خاصة من وجهة نظرك؟" },
+            { "language": "tr", "text": "Kural, izlenebilir ve eksiksiz gelir kanıtları gerektiriyor. Sizin açınızdan durumunuzu özel yapan nedir?" },
+            { "language": "ru", "text": "Правило требует прослеживаемых и полных подтверждений дохода. Что, с вашей точки зрения, делает ваш случай особым?" },
+            { "language": "ckb", "text": "ڕێساکە بەڵگەی داهاتی تەواو و بەدواداچوون‌پێکراو دەوێت. لە ڕوانگەی تۆوە چی کەیسی تۆ تایبەت دەکات؟" },
+            { "language": "kmr", "text": "Qaîde belgeyên dahatê yên şopandinbar û temam dixwaze. Ji nêrîna we ve çi doza we taybet dike?" },
+            { "language": "pl", "text": "Zasada wymaga zrozumiałych i kompletnych dowodów dochodu. Co z Pana punktu widzenia czyni Pana sprawę szczególną?" },
+            { "language": "ro", "text": "Regula cere dovezi de venit urmărite și complete. Ce face cazul dumneavoastră special din punctul dumneavoastră de vedere?" },
+            { "language": "sq", "text": "Rregulli kërkon prova të ardhurash të gjurmueshme dhe të plota. Çfarë e bën rastin tuaj të veçantë sipas jush?" }
+          ],
+          "function": "special-case-question",
+          "toneNote": "formal",
+          "expectedLearnerAction": "Besonderheit ohne Dramatisierung erklären"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Besonders ist nicht, dass Einkommen fehlt, sondern dass es aus zwei Quellen stammt. Für die Monate April bis Juni habe ich den Stipendienbescheid, drei Lohnabrechnungen und die Kontoauszüge. Meine Frage ist, ob diese Kombination den Zeitraum ausreichend abbildet oder ob ein zusätzlicher Nachweis ausdrücklich erforderlich ist.",
+          "translations": [
+            { "language": "en", "text": "What is special is not that income is missing, but that it comes from two sources. For April through June I have the scholarship notice, three payslips, and the bank statements. My question is whether this combination sufficiently represents the period or whether an additional document is explicitly required." },
+            { "language": "fa", "text": "نکته خاص این نیست که درآمدی وجود ندارد، بلکه این است که درآمد از دو منبع می‌آید. برای ماه‌های آوریل تا ژوئن، نامه بورسیه، سه فیش حقوقی و گردش حساب را دارم. پرسشم این است که آیا این ترکیب بازه زمانی را به اندازه کافی نشان می‌دهد یا مدرک اضافه‌ای صریحاً لازم است." },
+            { "language": "ar", "text": "الأمر الخاص ليس أن الدخل مفقود، بل أنه يأتي من مصدرين. للأشهر من أبريل إلى يونيو لدي قرار المنحة وثلاث كشوف رواتب وكشوف الحساب البنكي. سؤالي هو هل تمثل هذه المجموعة الفترة بشكل كافٍ أم أن وثيقة إضافية مطلوبة صراحة." },
+            { "language": "tr", "text": "Özel olan, gelirin eksik olması değil; iki kaynaktan gelmesidir. Nisan'dan Haziran'a kadar burs kararım, üç maaş bordrom ve banka hesap dökümlerim var. Sorum, bu kombinasyonun dönemi yeterince gösterip göstermediği ya da açıkça ek bir belgenin gerekli olup olmadığıdır." },
+            { "language": "ru", "text": "Особенность не в том, что доход отсутствует, а в том, что он поступает из двух источников. За апрель-июнь у меня есть решение о стипендии, три расчётных листка и банковские выписки. Мой вопрос в том, достаточно ли эта комбинация отражает период или прямо требуется дополнительный документ." },
+            { "language": "ckb", "text": "تایبەتییەکە ئەوە نییە کە داهات نییە، بەڵکو ئەوەیە کە لە دوو سەرچاوەوە دێت. بۆ مانگەکانی نیسان تا حوزەیران بڕیاری بورسیە، سێ فیشی مووچە و وەسفی حسابی بانکم هەیە. پرسیارم ئەوەیە ئایا ئەم تێکەڵەیە ماوەکە بە تەواوی دەردەخات یان بەڵگەیەکی زیادە بە ڕوونی پێویستە." },
+            { "language": "kmr", "text": "Ya taybet ne ew e ku dahat kêm e, lê ew e ku ji du çavkaniyan tê. Ji Nîsanê heta Hezîranê biryara bursê, sê belgeyên meaşê û derxistinên hesabê bankê hene. Pirsa min ev e ka ev tevlihevî heyamê têr nîşan dide yan belgeyeke zêde bi eşkere pêwîst e." },
+            { "language": "pl", "text": "Szczególne nie jest to, że brakuje dochodu, lecz to, że pochodzi z dwóch źródeł. Za miesiące od kwietnia do czerwca mam decyzję stypendialną, trzy paski płacowe i wyciągi bankowe. Moje pytanie brzmi, czy ta kombinacja wystarczająco przedstawia okres, czy też wyraźnie wymagany jest dodatkowy dokument." },
+            { "language": "ro", "text": "Special nu este faptul că lipsește venitul, ci că provine din două surse. Pentru lunile aprilie-iunie am decizia de bursă, trei fluturași de salariu și extrasele de cont. Întrebarea mea este dacă această combinație reflectă suficient perioada sau dacă este necesar în mod expres un document suplimentar." },
+            { "language": "sq", "text": "E veçanta nuk është se mungojnë të ardhurat, por se ato vijnë nga dy burime. Për muajt prill deri në qershor kam vendimin e bursës, tre fletëpagesa dhe pasqyrat bankare. Pyetja ime është nëse ky kombinim e paraqet mjaftueshëm periudhën apo nëse kërkohet shprehimisht një dokument shtesë." }
+          ],
+          "function": "structured-evidence-question",
+          "toneNote": "präzise, nicht dramatisierend",
+          "expectedLearnerAction": "Regel und Einzelfall über Nachweise verbinden"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Ich kann hier keine rechtliche Einschätzung abgeben, ob Ihnen daraus ein Anspruch entsteht.",
+          "translations": [
+            { "language": "en", "text": "I cannot provide a legal assessment here of whether this creates a claim for you." },
+            { "language": "fa", "text": "من اینجا نمی‌توانم ارزیابی حقوقی بدهم که آیا از این موضوع برای شما حقی ایجاد می‌شود یا نه." },
+            { "language": "ar", "text": "لا أستطيع هنا تقديم تقييم قانوني بشأن ما إذا كان ذلك ينشئ لك حقاً." },
+            { "language": "tr", "text": "Bunun sizin için bir hak doğurup doğurmadığına dair burada hukuki değerlendirme yapamam." },
+            { "language": "ru", "text": "Я не могу здесь дать юридическую оценку, возникает ли у вас из этого право требования." },
+            { "language": "ckb", "text": "ناتوانم لێرە هەڵسەنگاندنی یاسایی بدەم کە ئایا لەمەوە مافێک بۆ تۆ دروست دەبێت یان نا." },
+            { "language": "kmr", "text": "Ez nikarim li vir nirxandineke hiqûqî bidim ka ji vê yekê ji bo we mafek derdikeve yan na." },
+            { "language": "pl", "text": "Nie mogę tutaj dokonać oceny prawnej, czy wynika z tego dla Pana roszczenie." },
+            { "language": "ro", "text": "Nu pot oferi aici o evaluare juridică privind existența unui drept pentru dumneavoastră." },
+            { "language": "sq", "text": "Nuk mund të jap këtu një vlerësim ligjor nëse nga kjo lind një e drejtë për ju." }
+          ],
+          "function": "legal-advice-boundary",
+          "toneNote": "abgrenzend",
+          "expectedLearnerAction": "Grenze akzeptieren und Frage verfahrensbezogen neu formulieren"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das respektiere ich. Mir geht es nicht um eine rechtliche Bewertung, sondern um die praktische Prüffrage: Reichen diese drei Nachweisarten für die Vollständigkeitsprüfung, oder soll ich vor Ablauf der Frist noch eine gesonderte Arbeitgeberbestätigung nachreichen?",
+          "translations": [
+            { "language": "en", "text": "I respect that. I am not asking for a legal assessment, but for the practical review question: Are these three types of evidence sufficient for the completeness check, or should I submit a separate employer confirmation before the deadline?" },
+            { "language": "fa", "text": "این را می‌پذیرم. موضوع من ارزیابی حقوقی نیست، بلکه پرسش عملی برای بررسی است: آیا این سه نوع مدرک برای کنترل کامل بودن کافی است، یا باید قبل از پایان مهلت یک تأییدیه جداگانه از کارفرما هم ارسال کنم؟" },
+            { "language": "ar", "text": "أحترم ذلك. لا يتعلق الأمر لدي بتقييم قانوني، بل بسؤال عملي للفحص: هل تكفي هذه الأنواع الثلاثة من الأدلة لفحص الاكتمال، أم ينبغي أن أقدم قبل انتهاء المهلة تأكيداً منفصلاً من صاحب العمل؟" },
+            { "language": "tr", "text": "Buna saygı duyuyorum. Benim derdim hukuki değerlendirme değil, pratik inceleme sorusu: Bu üç kanıt türü eksiksizlik kontrolü için yeterli mi, yoksa süre bitmeden ayrıca işveren onayı sunmalı mıyım?" },
+            { "language": "ru", "text": "Я это уважаю. Речь для меня не о юридической оценке, а о практическом вопросе проверки: достаточно ли этих трёх видов подтверждений для проверки полноты, или мне до истечения срока следует дослать отдельное подтверждение работодателя?" },
+            { "language": "ckb", "text": "ڕێزی لێدەگرم. مەبەستم هەڵسەنگاندنی یاسایی نییە، بەڵکو پرسیاری پشکنینی کردارییە: ئایا ئەم سێ جۆرە بەڵگەیە بۆ پشکنینی تەواوبوون بەسە، یان پێویستە پێش کۆتایی ماوەکە پشتڕاستکردنەوەیەکی جیاوازی خاوەنکار پێشکەش بکەم؟" },
+            { "language": "kmr", "text": "Ez rêzê lê digirim. Mijara min nirxandina hiqûqî nîne, lê pirsa kontrolê ya pratîk e: Ma ev sê cure belge ji bo kontrola temambûnê têr in, an divê ez berî dawîbûna muhletê piştrastkirineke cuda ya xwediyê karê bişînim?" },
+            { "language": "pl", "text": "Szanuję to. Nie chodzi mi o ocenę prawną, lecz o praktyczne pytanie kontrolne: czy te trzy rodzaje dowodów wystarczą do sprawdzenia kompletności, czy powinienem przed upływem terminu dosłać osobne potwierdzenie od pracodawcy?" },
+            { "language": "ro", "text": "Respect acest lucru. Nu mă interesează o evaluare juridică, ci întrebarea practică de verificare: sunt suficiente aceste trei tipuri de dovezi pentru controlul completitudinii sau trebuie să depun înainte de termen o confirmare separată de la angajator?" },
+            { "language": "sq", "text": "E respektoj këtë. Nuk kërkoj vlerësim ligjor, por një pyetje praktike kontrolli: a mjaftojnë këto tre lloje provash për kontrollin e plotësisë, apo duhet të dorëzoj para afatit një konfirmim të veçantë nga punëdhënësi?" }
+          ],
+          "function": "procedural-reframe",
+          "toneNote": "respektvoll, lösungsorientiert",
+          "expectedLearnerAction": "Rechtsberatungsgrenze akzeptieren und konkrete Prüffrage stellen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Wenn Unterlagen unterschiedlich aufgebaut sind, kann es zu Rückfragen kommen. Wie können Sie die Übersichtlichkeit erhöhen?",
+          "translations": [
+            { "language": "en", "text": "When documents are structured differently, follow-up questions can arise. How can you improve clarity?" },
+            { "language": "fa", "text": "وقتی مدارک ساختار متفاوتی دارند، ممکن است پرسش‌های بعدی پیش بیاید. چطور می‌توانید وضوح را بیشتر کنید؟" },
+            { "language": "ar", "text": "عندما تكون الوثائق مبنية بطرق مختلفة قد تظهر أسئلة لاحقة. كيف يمكنك زيادة الوضوح؟" },
+            { "language": "tr", "text": "Belgeler farklı yapıdaysa ek sorular ortaya çıkabilir. Anlaşılırlığı nasıl artırabilirsiniz?" },
+            { "language": "ru", "text": "Если документы имеют разную структуру, могут возникнуть дополнительные вопросы. Как вы можете повысить ясность?" },
+            { "language": "ckb", "text": "کاتێک بەڵگەکان بە شێوەی جیاواز ڕێکخراون، دەتوانێت پرسیاری دواتر دروست ببێت. چۆن دەتوانیت ڕوونی زیاتر بکەیت؟" },
+            { "language": "kmr", "text": "Dema belge bi awayên cuda hatine avakirin, pirsên paşîn dikarin derkevin. Hûn çawa dikarin zelaliyê zêde bikin?" },
+            { "language": "pl", "text": "Gdy dokumenty mają różną strukturę, mogą pojawić się pytania dodatkowe. Jak może Pan zwiększyć przejrzystość?" },
+            { "language": "ro", "text": "Când documentele sunt structurate diferit, pot apărea întrebări ulterioare. Cum puteți crește claritatea?" },
+            { "language": "sq", "text": "Kur dokumentet kanë strukturë të ndryshme, mund të lindin pyetje shtesë. Si mund ta rrisni qartësinë?" }
+          ],
+          "function": "clarity-question",
+          "toneNote": "beratend, aber nicht rechtsberatend",
+          "expectedLearnerAction": "Übersichtliche Darstellung anbieten"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich kann eine kurze Übersicht beilegen: links die Monate April bis Juni, daneben die jeweilige Quelle, der Betrag und der passende Beleg. Zwei Punkte, die nicht eindeutig sind, markiere ich als Rückfrage, damit Sie nicht alles neu zuordnen müssen.",
+          "translations": [
+            { "language": "en", "text": "I can attach a short overview: on the left the months April through June, next to them the respective source, the amount, and the matching document. I will mark two points that are not clear as follow-up questions so that you do not have to reassign everything from scratch." },
+            { "language": "fa", "text": "می‌توانم یک جدول کوتاه پیوست کنم: سمت چپ ماه‌های آوریل تا ژوئن، کنار آن منبع مربوط، مبلغ و مدرک مرتبط. دو نکته‌ای را که روشن نیستند به‌عنوان پرسش مشخص می‌کنم تا شما مجبور نباشید همه چیز را از نو تطبیق دهید." },
+            { "language": "ar", "text": "يمكنني إرفاق نظرة عامة قصيرة: في اليسار الأشهر من أبريل إلى يونيو، وبجانبها المصدر المعني والمبلغ والوثيقة المناسبة. سأضع علامة على نقطتين غير واضحتين كأسئلة متابعة حتى لا تضطروا إلى إعادة ترتيب كل شيء من جديد." },
+            { "language": "tr", "text": "Kısa bir özet ekleyebilirim: solda Nisan-Haziran ayları, yanında ilgili kaynak, tutar ve uygun belge. Net olmayan iki noktayı ek soru olarak işaretlerim, böylece her şeyi baştan eşleştirmeniz gerekmez." },
+            { "language": "ru", "text": "Я могу приложить краткий обзор: слева месяцы с апреля по июнь, рядом соответствующий источник, сумма и подходящий документ. Два неясных пункта я отмечу как вопросы, чтобы вам не пришлось заново сопоставлять всё." },
+            { "language": "ckb", "text": "دەتوانم پوختەیەکی کورت هاوپێچ بکەم: لای چەپ مانگەکانی نیسان تا حوزەیران، لە تەنیشتیدا سەرچاوەی پەیوەندیدار، بڕی پارە و بەڵگەی گونجاو. دوو خاڵی ناڕوون وەک پرسیاری دواتر نیشان دەکەم، بۆ ئەوەی پێویست نەبێت هەموو شتێک لە سەرەتاوە ڕێکبخەنەوە." },
+            { "language": "kmr", "text": "Ez dikarim kurteyekê pêve bikim: li çepê mehên Nîsan heta Hezîran, li kêleka wan çavkaniya têkildar, mîqdar û belgeya guncaw. Du xalên nezelal wek pirsên paşîn nîşan dikim, da ku hûn neçar nebin her tiştî ji nû ve rêz bikin." },
+            { "language": "pl", "text": "Mogę dołączyć krótkie zestawienie: po lewej miesiące od kwietnia do czerwca, obok odpowiednie źródło, kwota i właściwy dokument. Dwa niejednoznaczne punkty zaznaczę jako pytania, aby nie musieli Państwo wszystkiego przyporządkowywać od nowa." },
+            { "language": "ro", "text": "Pot atașa o scurtă prezentare: în stânga lunile aprilie-iunie, lângă ele sursa respectivă, suma și documentul potrivit. Voi marca două puncte neclare ca întrebări, astfel încât să nu fie nevoie să reasociați totul de la zero." },
+            { "language": "sq", "text": "Mund të bashkëngjis një përmbledhje të shkurtër: majtas muajt prill deri në qershor, pranë tyre burimi përkatës, shuma dhe dokumenti i duhur. Dy pika të paqarta do t'i shënoj si pyetje pasuese, që ju të mos keni nevojë t'i rendisni të gjitha nga e para." }
+          ],
+          "function": "evidence-map",
+          "toneNote": "geordnet, kooperativ",
+          "expectedLearnerAction": "Nachweise prüffähig strukturieren"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Was soll ich als Ihre konkrete Bitte in der Akte festhalten?",
+          "translations": [
+            { "language": "en", "text": "What should I record as your concrete request in the file?" },
+            { "language": "fa", "text": "چه چیزی را به‌عنوان درخواست مشخص شما در پرونده ثبت کنم؟" },
+            { "language": "ar", "text": "ما الذي ينبغي أن أسجله كطلبك المحدد في الملف؟" },
+            { "language": "tr", "text": "Somut talebiniz olarak dosyaya ne kaydetmeliyim?" },
+            { "language": "ru", "text": "Что мне записать в деле как вашу конкретную просьбу?" },
+            { "language": "ckb", "text": "چی وەک داواکاری دیاریکراوی تۆ لە کەیسدا تۆمار بکەم؟" },
+            { "language": "kmr", "text": "Ez divê çi wek daxwaza we ya şênber têxim dosyeyê?" },
+            { "language": "pl", "text": "Co mam odnotować w aktach jako Pana konkretną prośbę?" },
+            { "language": "ro", "text": "Ce ar trebui să consemnez în dosar ca solicitare concretă a dumneavoastră?" },
+            { "language": "sq", "text": "Çfarë duhet të shënoj në dosje si kërkesën tuaj konkrete?" }
+          ],
+          "function": "file-note-question",
+          "toneNote": "dokumentierend",
+          "expectedLearnerAction": "Aktenfähige Bitte formulieren"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Bitte halten Sie fest, dass ich die allgemeine Nachweisregel anerkenne und um Klärung bitte, ob die Kombination aus Stipendienbescheid, Lohnabrechnungen und Kontoauszügen für den Zeitraum April bis Juni vollständig ist. Falls nicht, bitte ich um eine konkrete Liste der fehlenden Unterlagen vor Fristablauf.",
+          "translations": [
+            { "language": "en", "text": "Please record that I acknowledge the general evidence rule and request clarification of whether the combination of scholarship notice, payslips, and bank statements is complete for the period April through June. If not, I ask for a concrete list of the missing documents before the deadline expires." },
+            { "language": "fa", "text": "لطفاً ثبت کنید که من قاعده عمومی مدارک را می‌پذیرم و درخواست روشن‌سازی دارم که آیا ترکیب نامه بورسیه، فیش‌های حقوقی و گردش حساب برای بازه آوریل تا ژوئن کامل است یا نه. اگر کامل نیست، لطفاً پیش از پایان مهلت فهرست مشخص مدارک کم‌شده را بدهید." },
+            { "language": "ar", "text": "يرجى تسجيل أنني أعترف بقاعدة الإثبات العامة وأطلب توضيحاً حول ما إذا كانت مجموعة قرار المنحة وكشوف الرواتب وكشوف الحساب البنكي كاملة للفترة من أبريل إلى يونيو. وإذا لم تكن كاملة، أطلب قائمة محددة بالوثائق الناقصة قبل انتهاء المهلة." },
+            { "language": "tr", "text": "Lütfen genel kanıt kuralını kabul ettiğimi ve burs kararı, maaş bordroları ile banka hesap dökümleri kombinasyonunun Nisan-Haziran dönemi için eksiksiz olup olmadığının açıklığa kavuşturulmasını istediğimi kaydedin. Eksikse, sürenin bitiminden önce eksik belgelerin somut listesini rica ederim." },
+            { "language": "ru", "text": "Пожалуйста, зафиксируйте, что я признаю общее правило о подтверждениях и прошу разъяснить, полна ли комбинация решения о стипендии, расчётных листков и банковских выписок за период с апреля по июнь. Если нет, я прошу конкретный список недостающих документов до истечения срока." },
+            { "language": "ckb", "text": "تکایە تۆمار بکەن کە من ڕێسای گشتی بەڵگەکان وەردەگرم و داوای ڕوونکردنەوە دەکەم ئایا تێکەڵەی بڕیاری بورسیە، فیشەکانی مووچە و وەسفی حسابی بانک بۆ ماوەی نیسان تا حوزەیران تەواوە یان نا. ئەگەر تەواو نییە، داوای لیستی دیاریکراوی بەڵگە کەمەکان پێش کۆتایی ماوەکە دەکەم." },
+            { "language": "kmr", "text": "Kerema xwe tomar bikin ku ez qaîdeya gelemperî ya belgeyan qebûl dikim û daxwaza zelalkirinê dikim ka tevliheviya biryara bursê, belgeyên meaşê û derxistinên hesabê bankê ji bo heyama Nîsan heta Hezîran temam e yan na. Ger ne temam be, ez daxwaza lîsteyeke şênber a belgeyên kêm berî dawîbûna muhletê dikim." },
+            { "language": "pl", "text": "Proszę odnotować, że uznaję ogólną zasadę dowodową i proszę o wyjaśnienie, czy kombinacja decyzji stypendialnej, pasków płacowych i wyciągów bankowych jest kompletna dla okresu od kwietnia do czerwca. Jeśli nie, proszę o konkretną listę brakujących dokumentów przed upływem terminu." },
+            { "language": "ro", "text": "Vă rog să consemnați că recunosc regula generală privind dovezile și solicit clarificarea dacă combinația dintre decizia de bursă, fluturașii de salariu și extrasele de cont este completă pentru perioada aprilie-iunie. Dacă nu, solicit o listă concretă a documentelor lipsă înainte de expirarea termenului." },
+            { "language": "sq", "text": "Ju lutem shënoni se e pranoj rregullin e përgjithshëm të provave dhe kërkoj sqarim nëse kombinimi i vendimit të bursës, fletëpagesave dhe pasqyrave bankare është i plotë për periudhën prill-qershor. Nëse jo, kërkoj një listë konkrete të dokumenteve që mungojnë para skadimit të afatit." }
+          ],
+          "function": "file-ready-request",
+          "toneNote": "aktenfähig, präzise",
+          "expectedLearnerAction": "Regel, Einzelfall und konkrete Klärungsbitte verbinden"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Und wenn die Unterlagen nach Prüfung nicht ausreichen, was möchten Sie dann wissen?",
+          "translations": [
+            { "language": "en", "text": "And if the documents are not sufficient after review, what would you like to know then?" },
+            { "language": "fa", "text": "و اگر پس از بررسی مدارک کافی نباشد، آن وقت چه چیزی را می‌خواهید بدانید؟" },
+            { "language": "ar", "text": "وإذا لم تكن الوثائق كافية بعد الفحص، فماذا تريد أن تعرف عندئذ؟" },
+            { "language": "tr", "text": "Peki belgeler incelemeden sonra yeterli olmazsa, o zaman neyi bilmek istersiniz?" },
+            { "language": "ru", "text": "А если после проверки документов будет недостаточно, что вы тогда хотели бы узнать?" },
+            { "language": "ckb", "text": "ئەگەر دوای پشکنین بەڵگەکان بەس نەبن، ئەوکات دەتەوێت چی بزانیت؟" },
+            { "language": "kmr", "text": "Û ger piştî kontrolê belge têr nebin, wê demê hûn dixwazin çi bizanin?" },
+            { "language": "pl", "text": "A jeśli po sprawdzeniu dokumenty nie będą wystarczające, co chciałby Pan wtedy wiedzieć?" },
+            { "language": "ro", "text": "Și dacă documentele nu sunt suficiente după verificare, ce ați dori să știți atunci?" },
+            { "language": "sq", "text": "Dhe nëse pas kontrollit dokumentet nuk mjaftojnë, çfarë do të dëshironit të dini atëherë?" }
+          ],
+          "function": "negative-outcome-question",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Nächste Schritte ohne Rechtsberatung erbitten"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann bitte ich nicht um eine abschließende rechtliche Bewertung, sondern um die Verfahrensinformation: Welche Unterlage fehlt, bis wann kann ich sie nachreichen, und ob ich bei einer negativen Entscheidung eine Begründung mit Frist- und Verfahrenshinweis erhalte.",
+          "translations": [
+            { "language": "en", "text": "Then I am not asking for a final legal assessment, but for procedural information: which document is missing, by when I can submit it, and whether, in case of a negative decision, I will receive reasons with deadline and procedure information." },
+            { "language": "fa", "text": "در آن صورت درخواست ارزیابی حقوقی نهایی ندارم، بلکه اطلاعات روند را می‌خواهم: کدام مدرک کم است، تا چه زمانی می‌توانم آن را ارسال کنم، و آیا در صورت تصمیم منفی، دلیل همراه با مهلت و راهنمایی روند دریافت می‌کنم یا نه." },
+            { "language": "ar", "text": "عندئذ لا أطلب تقييماً قانونياً نهائياً، بل معلومات إجرائية: أي وثيقة ناقصة، إلى متى يمكنني تقديمها، وهل سأحصل في حال قرار سلبي على تعليل مع إشارة إلى المهلة والإجراء." },
+            { "language": "tr", "text": "O zaman nihai hukuki değerlendirme değil, süreç bilgisi rica ederim: hangi belge eksik, ne zamana kadar sunabilirim ve olumsuz karar durumunda süre ve prosedür bilgisi içeren bir gerekçe alıp almayacağım." },
+            { "language": "ru", "text": "Тогда я прошу не окончательную юридическую оценку, а процедурную информацию: какого документа не хватает, до какого срока я могу его дослать и получу ли я при отрицательном решении обоснование с указанием срока и процедуры." },
+            { "language": "ckb", "text": "ئەوکات داوای هەڵسەنگاندنی یاسایی کۆتایی ناکەم، بەڵکو زانیاری ڕێکاری دەوێت: کام بەڵگە کەمە، تا کەی دەتوانم پێشکەشی بکەم، و ئایا لە دۆخی بڕیاری نەرێنیدا هۆکار لەگەڵ زانیاری ماوە و ڕێکار وەردەگرم یان نا." },
+            { "language": "kmr", "text": "Wê demê ez ne daxwaza nirxandina hiqûqî ya dawî dikim, lê agahiya rêkarî dixwazim: kîjan belge kêm e, heta kengî dikarim wê bişînim, û gelo di biryareke neyînî de ez sedem bi agahiya muhlet û rêkarê werdigirim yan na." },
+            { "language": "pl", "text": "Wtedy nie proszę o końcową ocenę prawną, lecz o informację proceduralną: którego dokumentu brakuje, do kiedy mogę go dosłać i czy w razie decyzji negatywnej otrzymam uzasadnienie z informacją o terminie i procedurze." },
+            { "language": "ro", "text": "Atunci nu solicit o evaluare juridică finală, ci informații procedurale: ce document lipsește, până când îl pot depune și dacă, în cazul unei decizii negative, primesc o motivare cu termen și indicații privind procedura." },
+            { "language": "sq", "text": "Atëherë nuk kërkoj vlerësim ligjor përfundimtar, por informacion procedural: cili dokument mungon, deri kur mund ta dorëzoj dhe nëse në rast vendimi negativ do të marr arsyetim me afat dhe udhëzim procedure." }
+          ],
+          "function": "procedural-next-steps",
+          "toneNote": "präzise, rechtlich vorsichtig",
+          "expectedLearnerAction": "Nächste Schritte und Begründung ohne Rechtsberatung erfragen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct-procedural-scope",
+              "text": "Ich bitte nicht um Rechtsberatung, sondern um Klärung, welche Nachweise verfahrensbezogen ausreichen können.",
+              "translations": [
+                { "language": "en", "text": "I am not asking for legal advice, but for clarification of which evidence may be procedurally sufficient." },
+                { "language": "fa", "text": "من درخواست مشاوره حقوقی ندارم، بلکه می‌خواهم روشن شود کدام مدارک از نظر روند اداری می‌توانند کافی باشند." },
+                { "language": "ar", "text": "لا أطلب استشارة قانونية، بل توضيحاً حول الأدلة التي قد تكون كافية من الناحية الإجرائية." },
+                { "language": "tr", "text": "Hukuki danışmanlık istemiyorum; hangi kanıtların süreç açısından yeterli olabileceğinin açıklığa kavuşturulmasını istiyorum." },
+                { "language": "ru", "text": "Я не прошу юридической консультации, а прошу разъяснить, какие подтверждения могут быть процедурно достаточными." },
+                { "language": "ckb", "text": "داوای ڕاوێژکاری یاسایی ناکەم، بەڵکو داوای ڕوونکردنەوە دەکەم کە کام بەڵگە لە ڕووی ڕێکارەوە دەتوانێت بەس بێت." },
+                { "language": "kmr", "text": "Ez daxwaza şêwirmendiya hiqûqî nakim, lê daxwaza zelalkirinê dikim ka kîjan belge ji aliyê rêkarî ve dikarin têr bin." },
+                { "language": "pl", "text": "Nie proszę o poradę prawną, lecz o wyjaśnienie, które dowody mogą być proceduralnie wystarczające." },
+                { "language": "ro", "text": "Nu solicit consultanță juridică, ci clarificarea dovezilor care pot fi suficiente procedural." },
+                { "language": "sq", "text": "Nuk kërkoj këshillë ligjore, por sqarim se cilat prova mund të jenë të mjaftueshme proceduralisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Grenze zur Rechtsberatung wird klar gezogen, ohne die Klärungsbitte aufzugeben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The boundary to legal advice is clearly drawn without giving up the clarification request." },
+                { "language": "fa", "text": "قوی: مرز با مشاوره حقوقی روشن می‌شود، بدون اینکه درخواست روشن‌سازی کنار گذاشته شود." },
+                { "language": "ar", "text": "قوي: يتم رسم الحد الفاصل عن الاستشارة القانونية بوضوح من دون التخلي عن طلب التوضيح." },
+                { "language": "tr", "text": "Güçlü: Hukuki danışmanlık sınırı net çiziliyor, ancak açıklama talebinden vazgeçilmiyor." },
+                { "language": "ru", "text": "Сильно: граница с юридической консультацией ясно обозначена, но просьба о разъяснении не оставлена." },
+                { "language": "ckb", "text": "بەهێزە: سنووری ڕاوێژکاری یاسایی بە ڕوونی دیاری دەکرێت، بەبێ ئەوەی داوای ڕوونکردنەوە بەجێبهێڵرێت." },
+                { "language": "kmr", "text": "Xurt e: Sînorê şêwirmendiya hiqûqî zelal tê kişandin bêyî ku daxwaza zelalkirinê were berdan." },
+                { "language": "pl", "text": "Mocne: granica wobec porady prawnej jest jasno zaznaczona, bez rezygnacji z prośby o wyjaśnienie." },
+                { "language": "ro", "text": "Puternic: limita față de consultanța juridică este trasată clar, fără a renunța la solicitarea de clarificare." },
+                { "language": "sq", "text": "E fortë: kufiri me këshillën ligjore vendoset qartë pa hequr dorë nga kërkesa për sqarim." }
+              ],
+              "explanationKey": "procedural-scope"
+            },
+            {
+              "id": "weak-legal-demand",
+              "text": "Ich möchte wissen, ob ich nach der Rechtslage einen Anspruch auf Anerkennung habe.",
+              "translations": [
+                { "language": "en", "text": "I want to know whether, under the legal situation, I have a claim to recognition." },
+                { "language": "fa", "text": "می‌خواهم بدانم آیا طبق وضعیت حقوقی، حق پذیرش مدارکم را دارم یا نه." },
+                { "language": "ar", "text": "أريد أن أعرف هل لدي وفق الوضع القانوني حق في الاعتراف بالوثائق." },
+                { "language": "tr", "text": "Hukuki duruma göre tanınma hakkım olup olmadığını bilmek istiyorum." },
+                { "language": "ru", "text": "Я хочу знать, есть ли у меня по правовой ситуации право на признание." },
+                { "language": "ckb", "text": "دەمەوێت بزانم ئایا بە پێی دۆخی یاسایی مافی ناساندنم هەیە یان نا." },
+                { "language": "kmr", "text": "Ez dixwazim bizanim ka li gor rewşa hiqûqî mafê pejirandinê min heye yan na." },
+                { "language": "pl", "text": "Chcę wiedzieć, czy według stanu prawnego mam roszczenie o uznanie." },
+                { "language": "ro", "text": "Vreau să știu dacă, potrivit situației juridice, am dreptul la recunoaștere." },
+                { "language": "sq", "text": "Dua të di nëse sipas gjendjes ligjore kam të drejtë për njohje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu juristisch: Die Behörde kann oft Verfahrensfragen klären, aber keine persönliche Rechtsberatung ersetzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too legalistic: The office can often clarify procedural questions, but it cannot replace personal legal advice." },
+                { "language": "fa", "text": "بیش از حد حقوقی است: اداره اغلب می‌تواند پرسش‌های روند را روشن کند، اما جای مشاوره حقوقی شخصی را نمی‌گیرد." },
+                { "language": "ar", "text": "قانوني أكثر من اللازم: يمكن للجهة غالباً توضيح أسئلة الإجراء، لكنها لا تحل محل الاستشارة القانونية الشخصية." },
+                { "language": "tr", "text": "Fazla hukuki: Kurum çoğu zaman süreç sorularını açıklayabilir, ancak kişisel hukuki danışmanlığın yerini alamaz." },
+                { "language": "ru", "text": "Слишком юридично: ведомство часто может разъяснить процедурные вопросы, но не заменяет личную юридическую консультацию." },
+                { "language": "ckb", "text": "زۆر یاساییە: فەرمانگە زۆرجار دەتوانێت پرسیارەکانی ڕێکار ڕوون بکاتەوە، بەڵام جێگەی ڕاوێژکاری یاسایی کەسی ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir hiqûqî ye: Sazî gelek caran dikare pirsên rêkarî zelal bike, lê cihê şêwirmendiya hiqûqî ya kesane nagire." },
+                { "language": "pl", "text": "Zbyt prawnicze: urząd często może wyjaśnić pytania proceduralne, ale nie zastąpi osobistej porady prawnej." },
+                { "language": "ro", "text": "Prea juridic: autoritatea poate adesea clarifica întrebări procedurale, dar nu poate înlocui consultanța juridică personală." },
+                { "language": "sq", "text": "Shumë juridike: institucioni shpesh mund të sqarojë pyetje procedurale, por nuk zëvendëson këshillën ligjore personale." }
+              ],
+              "explanationKey": "asks-legal-advice"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct-two-source-evidence",
+              "text": "Es fehlt nicht an Einkommen; die Nachweise stammen nur aus zwei unterschiedlichen Quellen.",
+              "translations": [
+                { "language": "en", "text": "Income is not missing; the evidence simply comes from two different sources." },
+                { "language": "fa", "text": "درآمد کم نیست؛ فقط مدارک از دو منبع متفاوت می‌آیند." },
+                { "language": "ar", "text": "الدخل غير مفقود؛ الأدلة تأتي فقط من مصدرين مختلفين." },
+                { "language": "tr", "text": "Gelir eksik değil; kanıtlar sadece iki farklı kaynaktan geliyor." },
+                { "language": "ru", "text": "Доход не отсутствует; подтверждения просто поступают из двух разных источников." },
+                { "language": "ckb", "text": "داهات کەم نییە؛ بەڵگەکان تەنها لە دوو سەرچاوەی جیاوازەوە دێن." },
+                { "language": "kmr", "text": "Dahat kêm nîne; belge tenê ji du çavkaniyên cuda tên." },
+                { "language": "pl", "text": "Dochodu nie brakuje; dowody pochodzą tylko z dwóch różnych źródeł." },
+                { "language": "ro", "text": "Venitul nu lipsește; dovezile provin doar din două surse diferite." },
+                { "language": "sq", "text": "Të ardhurat nuk mungojnë; provat vijnë thjesht nga dy burime të ndryshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Besonderheit wird sachlich eingegrenzt und nicht dramatisiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The special feature is narrowed down factually and not dramatized." },
+                { "language": "fa", "text": "قوی: ویژگی خاص پرونده دقیق و بدون بزرگ‌نمایی مشخص می‌شود." },
+                { "language": "ar", "text": "قوي: يتم تحديد الخصوصية بشكل موضوعي من دون تهويل." },
+                { "language": "tr", "text": "Güçlü: Özel durum somut biçimde daraltılıyor ve dramatize edilmiyor." },
+                { "language": "ru", "text": "Сильно: особенность фактически сужена и не драматизирована." },
+                { "language": "ckb", "text": "بەهێزە: تایبەتییەکە بە بابەتی و بەبێ گەورەکردنەوە سنووردار دەکرێت." },
+                { "language": "kmr", "text": "Xurt e: Taybetmendî bi rastî tê sînorkirin û nayê dramatîzekirin." },
+                { "language": "pl", "text": "Mocne: szczególność zostaje rzeczowo zawężona i nie jest dramatyzowana." },
+                { "language": "ro", "text": "Puternic: particularitatea este delimitată factual și nu este dramatizată." },
+                { "language": "sq", "text": "E fortë: veçantia kufizohet në mënyrë faktike dhe nuk dramatizohet." }
+              ],
+              "explanationKey": "special-case-narrowing"
+            },
+            {
+              "id": "weak-too-vague",
+              "text": "Mein Fall ist einfach komplizierter als ein normaler Antrag.",
+              "translations": [
+                { "language": "en", "text": "My case is simply more complicated than a normal application." },
+                { "language": "fa", "text": "پرونده من فقط از یک درخواست معمولی پیچیده‌تر است." },
+                { "language": "ar", "text": "حالتي ببساطة أكثر تعقيداً من طلب عادي." },
+                { "language": "tr", "text": "Benim durumum normal bir başvurudan daha karmaşık." },
+                { "language": "ru", "text": "Мой случай просто сложнее, чем обычное заявление." },
+                { "language": "ckb", "text": "کەیسی من تەنها لە داواکارییەکی ئاسایی ئاڵۆزترە." },
+                { "language": "kmr", "text": "Doza min tenê ji daxwazeke asayî tevlihevtir e." },
+                { "language": "pl", "text": "Moja sprawa jest po prostu bardziej skomplikowana niż zwykły wniosek." },
+                { "language": "ro", "text": "Cazul meu este pur și simplu mai complicat decât o cerere obișnuită." },
+                { "language": "sq", "text": "Rasti im është thjesht më i ndërlikuar se një kërkesë normale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Eine C1-Antwort muss benennen, worin die Komplexität konkret besteht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: A C1 answer must name exactly what the complexity consists of." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: پاسخ C1 باید دقیقاً بگوید پیچیدگی در چیست." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: يجب أن تذكر إجابة C1 تحديداً أين تكمن التعقيد." },
+                { "language": "tr", "text": "Çok belirsiz: C1 yanıtı karmaşıklığın tam olarak nerede olduğunu belirtmelidir." },
+                { "language": "ru", "text": "Слишком неточно: ответ уровня C1 должен назвать, в чём именно состоит сложность." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامی C1 پێویستە بە وردی بڵێت ئاڵۆزییەکە لە چیدایە." },
+                { "language": "kmr", "text": "Pir nezelal e: Bersiveke C1 divê bi rastî bibêje tevlihevî ji çi pêk tê." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: odpowiedź C1 musi wskazać, na czym dokładnie polega złożoność." },
+                { "language": "ro", "text": "Prea imprecis: un răspuns C1 trebuie să numească exact în ce constă complexitatea." },
+                { "language": "sq", "text": "Shumë e pasaktë: një përgjigje C1 duhet të tregojë saktësisht ku qëndron ndërlikimi." }
+              ],
+              "explanationKey": "vague-complexity"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct-reframe-to-practice",
+              "text": "Ich frage nicht nach einem Anspruch, sondern danach, welche Unterlage praktisch noch benötigt wird.",
+              "translations": [
+                { "language": "en", "text": "I am not asking about a claim, but about which document is still practically needed." },
+                { "language": "fa", "text": "من درباره حق قطعی نمی‌پرسم، بلکه می‌پرسم از نظر عملی کدام مدرک هنوز لازم است." },
+                { "language": "ar", "text": "لا أسأل عن حق، بل عن الوثيقة التي لا تزال مطلوبة عملياً." },
+                { "language": "tr", "text": "Bir hak iddiasını sormuyorum; pratikte hâlâ hangi belgenin gerektiğini soruyorum." },
+                { "language": "ru", "text": "Я спрашиваю не о праве требования, а о том, какой документ ещё практически нужен." },
+                { "language": "ckb", "text": "من پرسیاری مافی دڵنیا ناکەم، بەڵکو دەپرسم لە ڕووی کردارییەوە کام بەڵگە هێشتا پێویستە." },
+                { "language": "kmr", "text": "Ez li ser mafekî qut napirsim, lê dipirsim ka di pratîkê de kîjan belge hîn pêwîst e." },
+                { "language": "pl", "text": "Nie pytam o roszczenie, lecz o to, który dokument jest jeszcze praktycznie potrzebny." },
+                { "language": "ro", "text": "Nu întreb despre un drept, ci despre documentul care mai este necesar practic." },
+                { "language": "sq", "text": "Nuk pyes për një të drejtë, por se cili dokument nevojitet ende praktikisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert die Grenze und macht die Frage wieder bearbeitbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts the boundary and makes the question workable again." },
+                { "language": "fa", "text": "قوی: پاسخ مرز را می‌پذیرد و پرسش را دوباره قابل رسیدگی می‌کند." },
+                { "language": "ar", "text": "قوي: تقبل الإجابة الحد وتجعل السؤال قابلاً للمعالجة مرة أخرى." },
+                { "language": "tr", "text": "Güçlü: Yanıt sınırı kabul ediyor ve soruyu yeniden işlenebilir hale getiriyor." },
+                { "language": "ru", "text": "Сильно: ответ принимает границу и снова делает вопрос пригодным для обработки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنوورەکە وەردەگرێت و پرسیارەکە جارێکی تر دەکاتە شتێکی چارەسەرکراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sînorê qebûl dike û pirsê dîsa dike karbar." },
+                { "language": "pl", "text": "Mocne: odpowiedź akceptuje granicę i znów czyni pytanie możliwym do rozpatrzenia." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă limita și face întrebarea din nou abordabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon kufirin dhe e bën pyetjen sërish të trajtueshme." }
+              ],
+              "explanationKey": "practice-reframe"
+            },
+            {
+              "id": "weak-push-legal-answer",
+              "text": "Trotzdem brauche ich von Ihnen eine klare rechtliche Einschätzung.",
+              "translations": [
+                { "language": "en", "text": "Nevertheless, I need a clear legal assessment from you." },
+                { "language": "fa", "text": "با این حال من از شما یک ارزیابی حقوقی روشن لازم دارم." },
+                { "language": "ar", "text": "مع ذلك أحتاج منكم إلى تقييم قانوني واضح." },
+                { "language": "tr", "text": "Yine de sizden net bir hukuki değerlendirme almam gerekiyor." },
+                { "language": "ru", "text": "Тем не менее мне нужна от вас чёткая юридическая оценка." },
+                { "language": "ckb", "text": "لەگەڵ ئەوەشدا پێویستم بە هەڵسەنگاندنێکی یاسایی ڕوون لە ئێوە هەیە." },
+                { "language": "kmr", "text": "Lê dîsa jî ji we nirxandineke hiqûqî ya zelal pêwîst e." },
+                { "language": "pl", "text": "Mimo to potrzebuję od Państwa jasnej oceny prawnej." },
+                { "language": "ro", "text": "Totuși am nevoie de la dumneavoastră de o evaluare juridică clară." },
+                { "language": "sq", "text": "Megjithatë kam nevojë nga ju për një vlerësim të qartë ligjor." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Sie wiederholen genau die Frage, die die Sachbearbeitung nicht beantworten kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: You repeat exactly the question the caseworker cannot answer." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: دقیقاً همان پرسشی را تکرار می‌کنید که کارمند پرونده نمی‌تواند پاسخ دهد." },
+                { "language": "ar", "text": "ضعيف استراتيجياً: تكرر بالضبط السؤال الذي لا يستطيع الموظف المسؤول الإجابة عنه." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: Dosya görevlisinin yanıtlayamayacağı soruyu aynen tekrarlıyorsunuz." },
+                { "language": "ru", "text": "Стратегически слабо: вы повторяете именно тот вопрос, на который сотрудник не может ответить." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: هەمان پرسیار دووبارە دەکەیتەوە کە کارمەندی کەیس ناتوانێت وەڵامی بداتەوە." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: Hûn heman pirsa ku karmend nikare bersiv bide dubare dikin." },
+                { "language": "pl", "text": "Strategicznie słabe: powtarza Pan dokładnie pytanie, na które urzędnik nie może odpowiedzieć." },
+                { "language": "ro", "text": "Strategic slab: repetați exact întrebarea la care funcționarul nu poate răspunde." },
+                { "language": "sq", "text": "E dobët strategjikisht: përsërisni pikërisht pyetjen që nëpunësi nuk mund t'i përgjigjet." }
+              ],
+              "explanationKey": "repeats-legal-advice-request"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct-evidence-overview",
+              "text": "Ich ordne die Monate, Quellen, Beträge und Belege in einer kurzen Übersicht.",
+              "translations": [
+                { "language": "en", "text": "I will organize the months, sources, amounts, and documents in a short overview." },
+                { "language": "fa", "text": "ماه‌ها، منابع، مبلغ‌ها و مدارک را در یک جدول کوتاه مرتب می‌کنم." },
+                { "language": "ar", "text": "سأرتب الأشهر والمصادر والمبالغ والوثائق في نظرة عامة قصيرة." },
+                { "language": "tr", "text": "Ayları, kaynakları, tutarları ve belgeleri kısa bir özet içinde düzenleyeceğim." },
+                { "language": "ru", "text": "Я упорядочу месяцы, источники, суммы и документы в кратком обзоре." },
+                { "language": "ckb", "text": "مانگەکان، سەرچاوەکان، بڕە پارەکان و بەڵگەکان لە پوختەیەکی کورتدا ڕێکدەخەم." },
+                { "language": "kmr", "text": "Ez meh, çavkanî, mîqdar û belgeyan di kurteyekê de rêz dikim." },
+                { "language": "pl", "text": "Uporządkuję miesiące, źródła, kwoty i dokumenty w krótkim zestawieniu." },
+                { "language": "ro", "text": "Voi organiza lunile, sursele, sumele și documentele într-o scurtă prezentare." },
+                { "language": "sq", "text": "Do t'i rendis muajt, burimet, shumat dhe dokumentet në një përmbledhje të shkurtër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Eine Übersicht macht den Einzelfall prüffähig, ohne neue Rechtsfragen zu öffnen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: An overview makes the individual case reviewable without opening new legal questions." },
+                { "language": "fa", "text": "قوی: یک جدول خلاصه پرونده فردی را قابل بررسی می‌کند، بدون اینکه پرسش حقوقی تازه باز کند." },
+                { "language": "ar", "text": "قوي: تجعل النظرة العامة الحالة الفردية قابلة للفحص من دون فتح أسئلة قانونية جديدة." },
+                { "language": "tr", "text": "Güçlü: Bir özet, yeni hukuki sorular açmadan bireysel durumu incelenebilir hale getirir." },
+                { "language": "ru", "text": "Сильно: обзор делает индивидуальный случай проверяемым, не открывая новых юридических вопросов." },
+                { "language": "ckb", "text": "بەهێزە: پوختەیەک کەیسی تاکەکەسی دەکاتە شتێکی پشکنین‌پێکراو، بەبێ ئەوەی پرسیاری یاسایی نوێ بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Kurteyek doza kesane dike kontrolbar bêyî ku pirsên hiqûqî yên nû veke." },
+                { "language": "pl", "text": "Mocne: zestawienie czyni indywidualną sprawę możliwą do sprawdzenia bez otwierania nowych pytań prawnych." },
+                { "language": "ro", "text": "Puternic: o prezentare face cazul individual verificabil fără a deschide întrebări juridice noi." },
+                { "language": "sq", "text": "E fortë: një përmbledhje e bën rastin individual të kontrollueshëm pa hapur pyetje të reja ligjore." }
+              ],
+              "explanationKey": "evidence-overview"
+            },
+            {
+              "id": "weak-dump-documents",
+              "text": "Ich gebe Ihnen einfach alle Unterlagen, dann sehen Sie selbst, was wichtig ist.",
+              "translations": [
+                { "language": "en", "text": "I will simply give you all the documents, then you can see for yourself what is important." },
+                { "language": "fa", "text": "من فقط همه مدارک را به شما می‌دهم، بعد خودتان می‌بینید چه چیزی مهم است." },
+                { "language": "ar", "text": "سأعطيكم ببساطة كل الوثائق، ثم ترون بأنفسكم ما هو مهم." },
+                { "language": "tr", "text": "Size sadece tüm belgeleri veririm, sonra neyin önemli olduğunu siz görürsünüz." },
+                { "language": "ru", "text": "Я просто дам вам все документы, а вы сами увидите, что важно." },
+                { "language": "ckb", "text": "من تەنها هەموو بەڵگەکان پێتان دەدەم، پاشان خۆتان دەبینن چی گرنگە." },
+                { "language": "kmr", "text": "Ez tenê hemû belgeyan didim we, paşê hûn xwe dibînin çi girîng e." },
+                { "language": "pl", "text": "Po prostu przekażę Państwu wszystkie dokumenty, a potem sami zobaczą Państwo, co jest ważne." },
+                { "language": "ro", "text": "Vă dau pur și simplu toate documentele, apoi vedeți dumneavoastră ce este important." },
+                { "language": "sq", "text": "Unë thjesht ju jap të gjitha dokumentet, pastaj e shihni vetë çfarë është e rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu passiv: Bei komplexen Unterlagen hilft eine klare Zuordnung mehr als ein unsortiertes Bündel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: With complex documents, clear assignment helps more than an unsorted bundle." },
+                { "language": "fa", "text": "بیش از حد منفعل است: در مدارک پیچیده، تطبیق روشن بهتر از یک دسته مدرک نامرتب کمک می‌کند." },
+                { "language": "ar", "text": "سلبي أكثر من اللازم: في الوثائق المعقدة يساعد التصنيف الواضح أكثر من حزمة غير مرتبة." },
+                { "language": "tr", "text": "Çok pasif: Karmaşık belgelerde açık eşleştirme, düzensiz bir yığından daha çok yardımcı olur." },
+                { "language": "ru", "text": "Слишком пассивно: при сложных документах ясное сопоставление помогает больше, чем несортированный набор." },
+                { "language": "ckb", "text": "زۆر پاسیڤە: لە بەڵگەی ئاڵۆزدا، پەیوەندیدانی ڕوون زیاتر یارمەتی دەدات لە کۆمەڵەیەکی ناڕێکخراو." },
+                { "language": "kmr", "text": "Pir pasîf e: Di belgeyên tevlihev de girêdana zelal ji komeke nerêxistî zêdetir alîkar e." },
+                { "language": "pl", "text": "Zbyt pasywne: przy złożonych dokumentach jasne przyporządkowanie pomaga bardziej niż nieuporządkowany pakiet." },
+                { "language": "ro", "text": "Prea pasiv: la documente complexe, o asociere clară ajută mai mult decât un pachet neordonat." },
+                { "language": "sq", "text": "Shumë pasive: te dokumentet e ndërlikuara, renditja e qartë ndihmon më shumë se një grumbull i parregullt." }
+              ],
+              "explanationKey": "unsorted-document-dump"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct-file-note",
+              "text": "Bitte halten Sie fest, welche Nachweise geprüft werden und welche Unterlagen gegebenenfalls fehlen.",
+              "translations": [
+                { "language": "en", "text": "Please record which evidence is being reviewed and which documents may be missing." },
+                { "language": "fa", "text": "لطفاً ثبت کنید کدام مدارک بررسی می‌شوند و در صورت لزوم کدام مدارک کم است." },
+                { "language": "ar", "text": "يرجى تسجيل الأدلة التي سيتم فحصها والوثائق التي قد تكون ناقصة." },
+                { "language": "tr", "text": "Lütfen hangi kanıtların incelendiğini ve gerekirse hangi belgelerin eksik olduğunu kaydedin." },
+                { "language": "ru", "text": "Пожалуйста, зафиксируйте, какие подтверждения проверяются и каких документов при необходимости не хватает." },
+                { "language": "ckb", "text": "تکایە تۆمار بکەن کام بەڵگە پشکنین دەکرێت و لە پێویستیدا کام بەڵگە کەمە." },
+                { "language": "kmr", "text": "Kerema xwe tomar bikin kîjan belge tên kontrolkirin û heke pêwîst be kîjan belge kêm in." },
+                { "language": "pl", "text": "Proszę odnotować, które dowody są sprawdzane i których dokumentów ewentualnie brakuje." },
+                { "language": "ro", "text": "Vă rog să consemnați ce dovezi sunt verificate și ce documente lipsesc eventual." },
+                { "language": "sq", "text": "Ju lutem shënoni cilat prova po kontrollohen dhe cilat dokumente mund të mungojnë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte ist konkret, aktenfähig und nicht rechtlich überdehnt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is concrete, suitable for the file, and not legally overextended." },
+                { "language": "fa", "text": "قوی: درخواست مشخص، مناسب پرونده و از نظر حقوقی بیش از حد کشیده نشده است." },
+                { "language": "ar", "text": "قوي: الطلب محدد ومناسب للملف وغير موسع قانونياً أكثر من اللازم." },
+                { "language": "tr", "text": "Güçlü: Talep somut, dosyaya uygun ve hukuken aşırı genişletilmiş değil." },
+                { "language": "ru", "text": "Сильно: просьба конкретна, подходит для дела и не чрезмерно расширена юридически." },
+                { "language": "ckb", "text": "بەهێزە: داواکە دیاریکراوە، گونجاوە بۆ کەیس و لە ڕووی یاساییەوە زۆر فراوان نەکراوە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz şênber e, ji bo dosyeyê guncaw e û ji aliyê hiqûqî ve pir fireh nekiriye." },
+                { "language": "pl", "text": "Mocne: prośba jest konkretna, nadaje się do akt i nie jest nadmiernie rozciągnięta prawnie." },
+                { "language": "ro", "text": "Puternic: solicitarea este concretă, potrivită pentru dosar și nu este extinsă juridic excesiv." },
+                { "language": "sq", "text": "E fortë: kërkesa është konkrete, e përshtatshme për dosje dhe jo e zgjeruar tepër juridikisht." }
+              ],
+              "explanationKey": "file-note-request"
+            },
+            {
+              "id": "weak-abstract-principle",
+              "text": "Bitte halten Sie fest, dass mein Fall wegen der besonderen Umstände anders bewertet werden sollte.",
+              "translations": [
+                { "language": "en", "text": "Please record that my case should be assessed differently because of the special circumstances." },
+                { "language": "fa", "text": "لطفاً ثبت کنید که پرونده من به دلیل شرایط خاص باید متفاوت ارزیابی شود." },
+                { "language": "ar", "text": "يرجى تسجيل أن حالتي ينبغي تقييمها بشكل مختلف بسبب الظروف الخاصة." },
+                { "language": "tr", "text": "Lütfen özel koşullar nedeniyle durumumun farklı değerlendirilmesi gerektiğini kaydedin." },
+                { "language": "ru", "text": "Пожалуйста, зафиксируйте, что мой случай следует оценивать иначе из-за особых обстоятельств." },
+                { "language": "ckb", "text": "تکایە تۆمار بکەن کە کەیسی من بەهۆی بارودۆخی تایبەتەوە پێویستە جیاواز هەڵبسەنگێنرێت." },
+                { "language": "kmr", "text": "Kerema xwe tomar bikin ku doza min ji ber mercên taybet divê cuda were nirxandin." },
+                { "language": "pl", "text": "Proszę odnotować, że moja sprawa powinna zostać oceniona inaczej z powodu szczególnych okoliczności." },
+                { "language": "ro", "text": "Vă rog să consemnați că situația mea ar trebui evaluată diferit din cauza circumstanțelor speciale." },
+                { "language": "sq", "text": "Ju lutem shënoni se rasti im duhet vlerësuar ndryshe për shkak të rrethanave të veçanta." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu abstrakt: Ohne konkrete Nachweise und fehlende Unterlagen bleibt die Bitte schwer prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too abstract: Without concrete evidence and missing documents, the request remains hard to review." },
+                { "language": "fa", "text": "بیش از حد انتزاعی است: بدون مدارک مشخص و اسناد کم‌شده، درخواست سخت قابل بررسی می‌ماند." },
+                { "language": "ar", "text": "مجرد أكثر من اللازم: من دون أدلة محددة ووثائق ناقصة يبقى الطلب صعب الفحص." },
+                { "language": "tr", "text": "Çok soyut: Somut kanıtlar ve eksik belgeler olmadan talep zor incelenebilir kalır." },
+                { "language": "ru", "text": "Слишком абстрактно: без конкретных подтверждений и недостающих документов просьбу трудно проверить." },
+                { "language": "ckb", "text": "زۆر ئەبستراکتە: بەبێ بەڵگەی دیاریکراو و بەڵگەی کەم، داواکە بە سەختی پشکنین دەکرێت." },
+                { "language": "kmr", "text": "Pir razber e: Bê belgeyên şênber û belgeyên kêm daxwaz dijwar tê kontrolkirin." },
+                { "language": "pl", "text": "Zbyt abstrakcyjne: bez konkretnych dowodów i brakujących dokumentów prośba pozostaje trudna do sprawdzenia." },
+                { "language": "ro", "text": "Prea abstract: fără dovezi concrete și documente lipsă, solicitarea rămâne greu de verificat." },
+                { "language": "sq", "text": "Shumë abstrakte: pa prova konkrete dhe dokumente që mungojnë, kërkesa mbetet e vështirë për t'u kontrolluar." }
+              ],
+              "explanationKey": "abstract-special-case"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct-procedural-next-step",
+              "text": "Wenn die Unterlagen nicht reichen, bitte ich um konkrete Verfahrenshinweise und Fristen.",
+              "translations": [
+                { "language": "en", "text": "If the documents are not sufficient, I ask for concrete procedural information and deadlines." },
+                { "language": "fa", "text": "اگر مدارک کافی نباشد، درخواست راهنمایی مشخص درباره روند و مهلت‌ها دارم." },
+                { "language": "ar", "text": "إذا لم تكن الوثائق كافية، أطلب إرشادات إجرائية محددة ومهلاً." },
+                { "language": "tr", "text": "Belgeler yeterli değilse, somut süreç bilgileri ve süreler rica ederim." },
+                { "language": "ru", "text": "Если документов недостаточно, я прошу конкретные процедурные указания и сроки." },
+                { "language": "ckb", "text": "ئەگەر بەڵگەکان بەس نەبن، داوای ڕێنمایی ڕێکاری دیاریکراو و ماوەکان دەکەم." },
+                { "language": "kmr", "text": "Ger belge têr nebin, ez daxwaza agahiyên rêkarî yên şênber û muhletan dikim." },
+                { "language": "pl", "text": "Jeśli dokumenty nie wystarczą, proszę o konkretne wskazówki proceduralne i terminy." },
+                { "language": "ro", "text": "Dacă documentele nu sunt suficiente, solicit indicații procedurale concrete și termene." },
+                { "language": "sq", "text": "Nëse dokumentet nuk mjaftojnë, kërkoj udhëzime konkrete procedurale dhe afate." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Auch bei negativem Ausgang bleibt die Bitte verfahrensbezogen und handlungsorientiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Even with a negative outcome, the request remains procedural and action-oriented." },
+                { "language": "fa", "text": "قوی: حتی در نتیجه منفی، درخواست همچنان روندی و عمل‌محور می‌ماند." },
+                { "language": "ar", "text": "قوي: حتى في النتيجة السلبية يبقى الطلب إجرائياً وموجهاً نحو العمل." },
+                { "language": "tr", "text": "Güçlü: Olumsuz sonuçta bile talep süreç odaklı ve eyleme dönük kalıyor." },
+                { "language": "ru", "text": "Сильно: даже при отрицательном результате просьба остаётся процедурной и ориентированной на действия." },
+                { "language": "ckb", "text": "بەهێزە: تەنانەت لە ئاکامی نەرێنیدا داواکە ڕێکاری و کرداری دەمێنێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Di encameke neyînî de jî daxwaz rêkarî û ber bi çalakiyê ve dimîne." },
+                { "language": "pl", "text": "Mocne: nawet przy negatywnym wyniku prośba pozostaje proceduralna i ukierunkowana na działanie." },
+                { "language": "ro", "text": "Puternic: chiar și în cazul unui rezultat negativ, solicitarea rămâne procedurală și orientată spre acțiune." },
+                { "language": "sq", "text": "E fortë: edhe me rezultat negativ, kërkesa mbetet procedurale dhe e orientuar drejt veprimit." }
+              ],
+              "explanationKey": "procedural-next-step"
+            },
+            {
+              "id": "weak-ask-final-outcome",
+              "text": "Dann möchte ich sofort wissen, ob meine Sache endgültig abgelehnt wird.",
+              "translations": [
+                { "language": "en", "text": "Then I want to know immediately whether my matter will be finally rejected." },
+                { "language": "fa", "text": "پس می‌خواهم فوراً بدانم آیا پرونده‌ام به طور نهایی رد می‌شود یا نه." },
+                { "language": "ar", "text": "عندئذ أريد أن أعرف فوراً هل سيتم رفض قضيتي نهائياً." },
+                { "language": "tr", "text": "O zaman dosyamın kesin olarak reddedilip reddedilmeyeceğini hemen bilmek isterim." },
+                { "language": "ru", "text": "Тогда я хочу сразу знать, будет ли моё дело окончательно отклонено." },
+                { "language": "ckb", "text": "ئەوکات دەمەوێت دەستبەجێ بزانم ئایا کەیسەکەم بە کۆتایی ڕەت دەکرێتەوە یان نا." },
+                { "language": "kmr", "text": "Wê demê ez dixwazim tavilê bizanim ka doza min bi dawî tê redkirin yan na." },
+                { "language": "pl", "text": "Wtedy chcę od razu wiedzieć, czy moja sprawa zostanie ostatecznie odrzucona." },
+                { "language": "ro", "text": "Atunci vreau să știu imediat dacă dosarul meu va fi respins definitiv." },
+                { "language": "sq", "text": "Atëherë dua ta di menjëherë nëse çështja ime do të refuzohet përfundimisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu stark auf das Endergebnis fixiert: Besser ist die Frage nach fehlenden Unterlagen, Fristen und Begründung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too focused on the final outcome: It is better to ask about missing documents, deadlines, and reasons." },
+                { "language": "fa", "text": "بیش از حد روی نتیجه نهایی متمرکز است: بهتر است درباره مدارک کم‌شده، مهلت‌ها و دلیل سؤال کنید." },
+                { "language": "ar", "text": "مركز أكثر من اللازم على النتيجة النهائية: الأفضل السؤال عن الوثائق الناقصة والمهل والتعليل." },
+                { "language": "tr", "text": "Nihai sonuca fazla odaklı: Eksik belgeler, süreler ve gerekçe hakkında sormak daha iyidir." },
+                { "language": "ru", "text": "Слишком зациклено на конечном результате: лучше спросить о недостающих документах, сроках и обосновании." },
+                { "language": "ckb", "text": "زۆر لەسەر ئاکامی کۆتایی چڕبووەتەوە: باشترە دەربارەی بەڵگە کەمەکان، ماوەکان و هۆکار بپرسیت." },
+                { "language": "kmr", "text": "Pir li ser encama dawî disekine: Çêtir e li ser belgeyên kêm, muhlet û sedemê bipirsin." },
+                { "language": "pl", "text": "Zbyt mocno skupione na końcowym wyniku: lepiej zapytać o brakujące dokumenty, terminy i uzasadnienie." },
+                { "language": "ro", "text": "Prea concentrat pe rezultatul final: este mai bine să întrebați despre documente lipsă, termene și motivare." },
+                { "language": "sq", "text": "Shumë e përqendruar te rezultati përfundimtar: më mirë të pyesni për dokumentet që mungojnë, afatet dhe arsyetimin." }
+              ],
+              "explanationKey": "final-outcome-fixation"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "boundary",
+          "text": "Bei rechtlich klingenden Themen ist C1-Sprache besonders vorsichtig: Grenzen Sie Rechtsberatung von Verfahrensklärung ab.",
+          "translations": [
+            { "language": "en", "text": "With legally sounding topics, C1 language is especially careful: separate legal advice from procedural clarification." },
+            { "language": "fa", "text": "در موضوعاتی که رنگ حقوقی دارند، زبان C1 باید بسیار محتاط باشد: مشاوره حقوقی را از روشن‌سازی روند جدا کنید." },
+            { "language": "ar", "text": "في المواضيع ذات الطابع القانوني تكون لغة C1 حذرة جداً: افصل بين الاستشارة القانونية والتوضيح الإجرائي." },
+            { "language": "tr", "text": "Hukuki görünen konularda C1 dili özellikle dikkatli olur: hukuki danışmanlığı süreç açıklamasından ayırın." },
+            { "language": "ru", "text": "В темах с юридическим оттенком язык C1 особенно осторожен: отделяйте юридическую консультацию от процедурного разъяснения." },
+            { "language": "ckb", "text": "لە بابەتە یاسایی‌ئامێزەکاندا زمانی C1 زۆر وریایە: ڕاوێژکاری یاسایی لە ڕوونکردنەوەی ڕێکاری جیا بکەوە." },
+            { "language": "kmr", "text": "Di mijarên ku dengê hiqûqî hene de zimanê C1 bi taybetî hişyar e: şêwirmendiya hiqûqî ji zelalkirina rêkarî cuda bikin." },
+            { "language": "pl", "text": "Przy tematach brzmiących prawnie język C1 jest szczególnie ostrożny: oddziel poradę prawną od wyjaśnienia proceduralnego." },
+            { "language": "ro", "text": "În temele cu sonoritate juridică, limbajul C1 este deosebit de prudent: separați consultanța juridică de clarificarea procedurală." },
+            { "language": "sq", "text": "Në tema që tingëllojnë juridike, gjuha C1 është veçanërisht e kujdesshme: ndani këshillën ligjore nga sqarimi procedural." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "precision",
+          "text": "Ein Einzelfall wird nicht durch das Wort `kompliziert` erklärbar, sondern durch konkrete Unterschiede zur Standardlage.",
+          "translations": [
+            { "language": "en", "text": "An individual case is not explained by the word `complicated`, but by concrete differences from the standard situation." },
+            { "language": "fa", "text": "پرونده فردی با واژه «پیچیده» توضیح داده نمی‌شود، بلکه با تفاوت‌های مشخص نسبت به حالت عادی روشن می‌شود." },
+            { "language": "ar", "text": "لا تُشرح الحالة الفردية بكلمة «معقدة»، بل بالفروق المحددة عن الحالة العادية." },
+            { "language": "tr", "text": "Bireysel durum `karmaşık` kelimesiyle değil, standart durumdan somut farklarla açıklanır." },
+            { "language": "ru", "text": "Индивидуальный случай объясняется не словом «сложный», а конкретными отличиями от стандартной ситуации." },
+            { "language": "ckb", "text": "کەیسی تاکەکەسی بە وشەی «ئاڵۆز» ڕوون ناکرێتەوە، بەڵکو بە جیاوازییە دیاریکراوەکان لە دۆخی ستاندارد ڕوون دەبێتەوە." },
+            { "language": "kmr", "text": "Doza kesane bi peyva `tevlihev` nayê ravekirin, lê bi cudahiyên şênber ji rewşa standard tê ravekirin." },
+            { "language": "pl", "text": "Indywidualnej sprawy nie wyjaśnia słowo „skomplikowana”, lecz konkretne różnice wobec sytuacji standardowej." },
+            { "language": "ro", "text": "Un caz individual nu se explică prin cuvântul „complicat”, ci prin diferențe concrete față de situația standard." },
+            { "language": "sq", "text": "Një rast individual nuk shpjegohet me fjalën 'i ndërlikuar', por me dallime konkrete nga situata standarde." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "repair",
+          "text": "Wenn die Sachbearbeitung eine Grenze setzt, hilft eine Reparaturformel: `Ich respektiere das; meine Frage ist verfahrensbezogen.`",
+          "translations": [
+            { "language": "en", "text": "When the caseworker sets a boundary, a repair formula helps: `I respect that; my question is procedural.`" },
+            { "language": "fa", "text": "وقتی کارمند پرونده مرزی تعیین می‌کند، یک فرمول اصلاحی کمک می‌کند: «این را می‌پذیرم؛ پرسش من مربوط به روند است.»" },
+            { "language": "ar", "text": "عندما يضع الموظف المسؤول حداً، تساعد صيغة إصلاحية: «أحترم ذلك؛ سؤالي إجرائي»." },
+            { "language": "tr", "text": "Dosya görevlisi bir sınır koyduğunda bir onarım formülü yardımcı olur: `Buna saygı duyuyorum; sorum süreçle ilgili.`" },
+            { "language": "ru", "text": "Когда сотрудник обозначает границу, помогает формула восстановления: «Я это уважаю; мой вопрос процедурный»." },
+            { "language": "ckb", "text": "کاتێک کارمەندی کەیس سنوورێک دادەنێت، فۆرمولەیەکی چاککردنەوە یارمەتی دەدات: «ڕێزی لێدەگرم؛ پرسیارەکەم ڕێکارییە.»" },
+            { "language": "kmr", "text": "Dema karmend sînorek datîne, formuleke sererastkirinê alîkar e: `Ez rêzê lê digirim; pirsa min rêkarî ye.`" },
+            { "language": "pl", "text": "Gdy urzędnik stawia granicę, pomaga formuła naprawcza: „Szanuję to; moje pytanie jest proceduralne”." },
+            { "language": "ro", "text": "Când funcționarul stabilește o limită, ajută o formulă de reparare: „Respect acest lucru; întrebarea mea este procedurală.”" },
+            { "language": "sq", "text": "Kur nëpunësi vendos një kufi, ndihmon një formulë riparuese: 'E respektoj këtë; pyetja ime është procedurale.'" }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "structure",
+          "text": "Bei mehreren Dokumenttypen ist eine Zuordnungstabelle oft stärker als eine lange Erklärung.",
+          "translations": [
+            { "language": "en", "text": "With several document types, a mapping table is often stronger than a long explanation." },
+            { "language": "fa", "text": "وقتی چند نوع مدرک وجود دارد، یک جدول تطبیق اغلب از توضیح طولانی قوی‌تر است." },
+            { "language": "ar", "text": "عند وجود عدة أنواع من الوثائق يكون جدول الربط غالباً أقوى من شرح طويل." },
+            { "language": "tr", "text": "Birden fazla belge türü olduğunda, eşleştirme tablosu çoğu zaman uzun açıklamadan daha güçlüdür." },
+            { "language": "ru", "text": "При нескольких типах документов таблица соответствий часто сильнее длинного объяснения." },
+            { "language": "ckb", "text": "کاتێک چەند جۆر بەڵگە هەیە، خشتەی پەیوەندیدان زۆرجار لە ڕوونکردنەوەی درێژ بەهێزترە." },
+            { "language": "kmr", "text": "Dema çend cure belge hene, tabloya girêdanê gelek caran ji ravekirineke dirêj xurtir e." },
+            { "language": "pl", "text": "Przy kilku typach dokumentów tabela przyporządkowania jest często mocniejsza niż długie wyjaśnienie." },
+            { "language": "ro", "text": "Cu mai multe tipuri de documente, un tabel de asociere este adesea mai puternic decât o explicație lungă." },
+            { "language": "sq", "text": "Kur ka disa lloje dokumentesh, një tabelë përputhjeje shpesh është më e fortë se një shpjegim i gjatë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "next-step",
+          "text": "Auch bei einem möglichen negativen Ausgang bleiben gute Fragen konkret: fehlendes Dokument, Frist, Begründung, Verfahren.",
+          "translations": [
+            { "language": "en", "text": "Even with a possible negative outcome, good questions stay concrete: missing document, deadline, reasons, procedure." },
+            { "language": "fa", "text": "حتی در صورت احتمال نتیجه منفی، پرسش خوب مشخص می‌ماند: مدرک کم‌شده، مهلت، دلیل، روند." },
+            { "language": "ar", "text": "حتى مع احتمال نتيجة سلبية تبقى الأسئلة الجيدة محددة: الوثيقة الناقصة، المهلة، التعليل، الإجراء." },
+            { "language": "tr", "text": "Olası olumsuz sonuçta bile iyi sorular somut kalır: eksik belge, süre, gerekçe, prosedür." },
+            { "language": "ru", "text": "Даже при возможном отрицательном результате хорошие вопросы остаются конкретными: недостающий документ, срок, обоснование, процедура." },
+            { "language": "ckb", "text": "تەنانەت لە دۆخی ئەگەری ئاکامی نەرێنیدا، پرسیاری باش دیاریکراو دەمێنێتەوە: بەڵگەی کەم، ماوە، هۆکار، ڕێکار." },
+            { "language": "kmr", "text": "Di encameke neyînî ya gengaz de jî pirsên baş şênber dimînin: belgeya kêm, muhlet, sedem, rêkar." },
+            { "language": "pl", "text": "Nawet przy możliwym negatywnym wyniku dobre pytania pozostają konkretne: brakujący dokument, termin, uzasadnienie, procedura." },
+            { "language": "ro", "text": "Chiar și cu un posibil rezultat negativ, întrebările bune rămân concrete: document lipsă, termen, motivare, procedură." },
+            { "language": "sq", "text": "Edhe me një rezultat të mundshëm negativ, pyetjet e mira mbeten konkrete: dokumenti që mungon, afati, arsyetimi, procedura." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "government-office-evidence-rule",
+          "placement": "hero",
+          "purpose": "Show a formal public-office conversation where an applicant compares a general evidence rule with organized documents from two income sources.",
+          "altText": "Eine Person bespricht an einem Behördenschalter geordnete Einkommensnachweise aus zwei Quellen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A person discusses organized income documents from two sources at a public-office counter." },
+            { "language": "fa", "text": "فردی پشت باجه اداره مدارک درآمدی مرتب از دو منبع را توضیح می‌دهد." },
+            { "language": "ar", "text": "شخص يناقش عند شباك جهة إدارية وثائق دخل مرتبة من مصدرين." },
+            { "language": "tr", "text": "Bir kişi resmi kurum gişesinde iki gelir kaynağından gelen düzenli belgeleri görüşüyor." },
+            { "language": "ru", "text": "Человек у окна ведомства обсуждает упорядоченные документы о доходах из двух источников." },
+            { "language": "ckb", "text": "کەسێک لە پشت پەنجەرەی فەرمانگە بەڵگەی داهاتی ڕێکخراو لە دوو سەرچاوە باس دەکات." },
+            { "language": "kmr", "text": "Kesek li şûşeya saziyê belgeyên dahatê yên rêxistî ji du çavkaniyan nîqaş dike." },
+            { "language": "pl", "text": "Osoba przy okienku urzędu omawia uporządkowane dokumenty dochodu z dwóch źródeł." },
+            { "language": "ro", "text": "O persoană discută la un ghișeu public documente de venit ordonate din două surse." },
+            { "language": "sq", "text": "Një person diskuton në sportelin e një institucioni dokumente të rregulluara të të ardhurave nga dy burime." }
+          ],
+          "imagePrompt": "Clean educational illustration of a German public-office counter. A calm adult applicant presents a small organized table and income documents from two sources while speaking respectfully with a caseworker; no readable personal data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

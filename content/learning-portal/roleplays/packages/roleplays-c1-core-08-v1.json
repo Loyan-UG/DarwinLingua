@@ -1,0 +1,806 @@
+{
+  "packageId": "roleplays-c1-core-08-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 08 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 08",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-verhandlung-mit-mehreren-interessen-fuehren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Verhandlung mit mehreren Interessen führen",
+      "titleTranslations": [
+        { "language": "en", "text": "Leading a negotiation with several interests" },
+        { "language": "fa", "text": "پیش‌بردن مذاکره با چند منفعت متفاوت" },
+        { "language": "ar", "text": "إدارة تفاوض مع عدة مصالح" },
+        { "language": "tr", "text": "Birden fazla çıkarla müzakere yürütmek" },
+        { "language": "ru", "text": "Вести переговоры с несколькими интересами" },
+        { "language": "ckb", "text": "بەڕێوەبردنی دانوساندنێک بە چەند بەرژەوەندییەوە" },
+        { "language": "kmr", "text": "Rêvebirina danûstandinekê bi çend berjewendiyan" },
+        { "language": "pl", "text": "Prowadzenie negocjacji z kilkoma interesami" },
+        { "language": "ro", "text": "Conducerea unei negocieri cu mai multe interese" },
+        { "language": "sq", "text": "Drejtimi i një negociate me disa interesa" }
+      ],
+      "description": "In einem C1-Meeting verhandeln Sie einen Produktpilot, bei dem Vertrieb, Support und Produktentwicklung unterschiedliche Prioritäten und verdeckte Zwänge haben.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 meeting, you negotiate a product pilot in which sales, support, and product development have different priorities and hidden constraints." },
+        { "language": "fa", "text": "در یک جلسه سطح C1، درباره یک pilot محصول مذاکره می‌کنید که در آن فروش، پشتیبانی و توسعه محصول اولویت‌ها و محدودیت‌های پنهان متفاوتی دارند." },
+        { "language": "ar", "text": "في اجتماع بمستوى C1، تتفاوض حول تجربة منتج يملك فيها فريق المبيعات والدعم وتطوير المنتج أولويات وقيوداً خفية مختلفة." },
+        { "language": "tr", "text": "C1 düzeyinde bir toplantıda, satış, destek ve ürün geliştirme ekiplerinin farklı öncelikleri ve gizli kısıtları olduğu bir ürün pilotunu müzakere edersiniz." },
+        { "language": "ru", "text": "На встрече уровня C1 вы обсуждаете пилот продукта, в котором продажи, поддержка и разработка продукта имеют разные приоритеты и скрытые ограничения." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی ئاستی C1دا، لەسەر pilotێکی بەرهەم دانوساندن دەکەیت کە فرۆشتن، پشتگیری و پەرەپێدانی بەرهەم پێشینە و سنووری شاراوەی جیاوازیان هەیە." },
+        { "language": "kmr", "text": "Di civîneke asta C1 de, hûn li ser piloteke berhemê danûstandin dikin ku firotan, piştgirî û pêşxistina berhemê pêşengî û sînorkirinên veşartî yên cuda hene." },
+        { "language": "pl", "text": "Na spotkaniu na poziomie C1 negocjujesz pilotaż produktu, w którym sprzedaż, wsparcie i rozwój produktu mają różne priorytety oraz ukryte ograniczenia." },
+        { "language": "ro", "text": "Într-o ședință de nivel C1, negociați un pilot de produs în care vânzările, suportul și dezvoltarea produsului au priorități diferite și constrângeri ascunse." },
+        { "language": "sq", "text": "Në një takim të nivelit C1, negocioni një pilot produkti ku shitjet, mbështetja dhe zhvillimi i produktit kanë prioritete të ndryshme dhe kufizime të fshehta." }
+      ],
+      "learnerGoal": "Mehrere Interessen in einer Verhandlung steuern: verdeckte Zwänge sichtbar machen, Prioritäten gewichten, Risiken begrenzen, einen gestuften Kompromiss formulieren und klare Review-Kriterien vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Manage several interests in a negotiation: make hidden constraints visible, weigh priorities, limit risks, formulate a staged compromise, and agree on clear review criteria." },
+        { "language": "fa", "text": "چند منفعت را در مذاکره مدیریت کنید: محدودیت‌های پنهان را قابل‌دید کنید، اولویت‌ها را وزن‌دهی کنید، ریسک‌ها را محدود کنید، مصالحه‌ای مرحله‌ای بسازید و معیارهای روشن بازبینی توافق کنید." },
+        { "language": "ar", "text": "أدر عدة مصالح في تفاوض: اجعل القيود الخفية مرئية، ووازن الأولويات، وحدد المخاطر، وصغ حلاً وسطاً مرحلياً، واتفق على معايير مراجعة واضحة." },
+        { "language": "tr", "text": "Bir müzakerede birkaç çıkarı yönetin: gizli kısıtları görünür kılın, öncelikleri tartın, riskleri sınırlayın, aşamalı bir uzlaşma formüle edin ve net değerlendirme kriterleri üzerinde anlaşın." },
+        { "language": "ru", "text": "Управлять несколькими интересами в переговорах: сделать скрытые ограничения видимыми, взвесить приоритеты, ограничить риски, сформулировать поэтапный компромисс и согласовать четкие критерии проверки." },
+        { "language": "ckb", "text": "چەند بەرژەوەندی لە دانوساندنێکدا بەڕێوەببە: سنوورە شاراوەکان دیار بکە، پێشینەکان هەڵبسەنگێنە، مەترسییەکان سنووردار بکە، ڕێککەوتنێکی قۆناغی داڕێژە و پێوەرە ڕوونەکانی پێداچوونەوە ڕێکبخە." },
+        { "language": "kmr", "text": "Çend berjewendiyan di danûstandinekê de rêve bibin: sînorkirinên veşartî xuya bikin, pêşengiyan binirxînin, xeteran sînor bikin, lihevhatineke qonaxî biafirînin û pîvanên vekolînê yên zelal li hev bikin." },
+        { "language": "pl", "text": "Sterować kilkoma interesami w negocjacjach: ujawnić ukryte ograniczenia, zważyć priorytety, ograniczyć ryzyka, sformułować etapowy kompromis i uzgodnić jasne kryteria przeglądu." },
+        { "language": "ro", "text": "Gestionați mai multe interese într-o negociere: faceți vizibile constrângerile ascunse, cântăriți prioritățile, limitați riscurile, formulați un compromis etapizat și conveniți criterii clare de revizuire." },
+        { "language": "sq", "text": "Menaxhoni disa interesa në një negociatë: bëni të dukshme kufizimet e fshehta, peshoni prioritetet, kufizoni rreziqet, formuloni një kompromis me faza dhe bini dakord për kritere të qarta rishikimi." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 8,
+      "roles": [
+        {
+          "roleKey": "sales-lead",
+          "displayName": "Vertriebsleitung",
+          "translations": [
+            { "language": "en", "text": "Sales lead" },
+            { "language": "fa", "text": "مدیر فروش" },
+            { "language": "ar", "text": "مدير المبيعات" },
+            { "language": "tr", "text": "Satış yöneticisi" },
+            { "language": "ru", "text": "Руководитель продаж" },
+            { "language": "ckb", "text": "بەڕێوەبەری فرۆشتن" },
+            { "language": "kmr", "text": "Rêvebirê firotanê" },
+            { "language": "pl", "text": "Kierownik sprzedaży" },
+            { "language": "ro", "text": "Manager de vânzări" },
+            { "language": "sq", "text": "Drejtuesi i shitjeve" }
+          ]
+        },
+        {
+          "roleKey": "support-lead",
+          "displayName": "Supportleitung",
+          "translations": [
+            { "language": "en", "text": "Support lead" },
+            { "language": "fa", "text": "مدیر پشتیبانی" },
+            { "language": "ar", "text": "مدير الدعم" },
+            { "language": "tr", "text": "Destek yöneticisi" },
+            { "language": "ru", "text": "Руководитель поддержки" },
+            { "language": "ckb", "text": "بەڕێوەبەری پشتگیری" },
+            { "language": "kmr", "text": "Rêvebirê piştgiriyê" },
+            { "language": "pl", "text": "Kierownik wsparcia" },
+            { "language": "ro", "text": "Manager de suport" },
+            { "language": "sq", "text": "Drejtuesi i mbështetjes" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Sie",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "شما" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Siz" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Hûn" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Dumneavoastră" },
+            { "language": "sq", "text": "Ju" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "sales-lead",
+          "baseText": "Der Pilot muss spätestens Anfang nächsten Monats starten. Zwei strategische Kunden warten darauf, und wenn wir noch einmal verschieben, verliert der Vertrieb Glaubwürdigkeit.",
+          "translations": [
+            { "language": "en", "text": "The pilot has to start by the beginning of next month at the latest. Two strategic customers are waiting for it, and if we postpone again, sales loses credibility." },
+            { "language": "fa", "text": "pilot باید حداکثر ابتدای ماه آینده شروع شود. دو مشتری استراتژیک منتظر آن هستند و اگر دوباره عقب بیندازیم، فروش اعتبارش را از دست می‌دهد." },
+            { "language": "ar", "text": "يجب أن يبدأ المشروع التجريبي في موعد أقصاه بداية الشهر المقبل. ينتظره عميلان استراتيجيان، وإذا أجلناه مرة أخرى فسيفقد فريق المبيعات مصداقيته." },
+            { "language": "tr", "text": "Pilot en geç gelecek ayın başında başlamalı. İki stratejik müşteri bunu bekliyor ve tekrar ertelersek satış ekibi güvenilirliğini kaybeder." },
+            { "language": "ru", "text": "Пилот должен начаться не позднее начала следующего месяца. Его ждут два стратегических клиента, и если мы снова перенесем, продажи потеряют доверие." },
+            { "language": "ckb", "text": "pilot دەبێت زۆرترین تا سەرەتای مانگی داهاتوو دەست پێبکات. دوو کڕیاری ستراتیژی چاوەڕێی ئەون، و ئەگەر جارێکی تر دوا بخەین، فرۆشتن باوەڕپێکراویی لەدەست دەدات." },
+            { "language": "kmr", "text": "Pilot divê herî dereng di destpêka meha din de dest pê bike. Du xerîdarên stratejîk li bendê ne, û heke em careke din paş bixin, firotan baweriyê winda dike." },
+            { "language": "pl", "text": "Pilotaż musi ruszyć najpóźniej na początku przyszłego miesiąca. Czeka na niego dwóch strategicznych klientów, a jeśli znów przełożymy termin, sprzedaż straci wiarygodność." },
+            { "language": "ro", "text": "Pilotul trebuie să înceapă cel târziu la începutul lunii viitoare. Doi clienți strategici îl așteaptă, iar dacă amânăm din nou, vânzările își pierd credibilitatea." },
+            { "language": "sq", "text": "Piloti duhet të nisë më së voni në fillim të muajit tjetër. Dy klientë strategjikë po e presin dhe nëse e shtyjmë përsëri, shitjet humbin besueshmëri." }
+          ],
+          "function": "sales-pressure",
+          "toneNote": "Der Vertrieb benennt einen legitimen Markt- und Vertrauensdruck.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Vertriebsdruck ernst nehmen, aber ihn nicht isoliert betrachten. Neben der Glaubwürdigkeit nach außen haben wir auch das Risiko, dass ein instabiler Pilot später mehr Vertrauen kostet als eine begrenzte erste Version.",
+          "translations": [
+            { "language": "en", "text": "I would take the sales pressure seriously, but not view it in isolation. Alongside external credibility, we also have the risk that an unstable pilot may later cost more trust than a limited first version." },
+            { "language": "fa", "text": "فشار فروش را جدی می‌گیرم، اما آن را جداگانه نمی‌بینم. در کنار اعتبار بیرونی، این ریسک را هم داریم که یک pilot ناپایدار بعداً اعتماد بیشتری از یک نسخه اول محدود از بین ببرد." },
+            { "language": "ar", "text": "سآخذ ضغط المبيعات بجدية، لكنني لن أنظر إليه بمعزل. إلى جانب المصداقية الخارجية، لدينا أيضاً خطر أن يكلفنا مشروع تجريبي غير مستقر ثقة أكثر لاحقاً من نسخة أولى محدودة." },
+            { "language": "tr", "text": "Satış baskısını ciddiye alırdım, ama onu tek başına değerlendirmezdim. Dışarıdaki güvenilirliğin yanında, istikrarsız bir pilotun daha sonra sınırlı bir ilk sürümden daha fazla güven kaybettirme riski de var." },
+            { "language": "ru", "text": "Я бы серьезно отнесся к давлению продаж, но не рассматривал бы его изолированно. Помимо внешней надежности, есть риск, что нестабильный пилот позже будет стоить больше доверия, чем ограниченная первая версия." },
+            { "language": "ckb", "text": "فشاری فرۆشتن بە جدی وەردەگرم، بەڵام بە جیاوازی سەیری ناکەم. لەگەڵ باوەڕپێکراویی دەرەوە، مەترسیی ئەوەشمان هەیە کە pilotێکی نەجێگیر دواتر زیاتر لە وەشانی یەکەمی سنووردار باوەڕ لەدەست بدات." },
+            { "language": "kmr", "text": "Ez zexta firotanê cidî digirim, lê wê bi tena xwe nabînim. Li kêleka baweriya derveyî, xetera me jî heye ku piloteke ne-stabîl paşê ji versiyoneke yekem a sînorkirî bêtir baweriyê winda bike." },
+            { "language": "pl", "text": "Potraktowałbym presję sprzedaży poważnie, ale nie w izolacji. Oprócz wiarygodności na zewnątrz mamy też ryzyko, że niestabilny pilotaż później będzie kosztował więcej zaufania niż ograniczona pierwsza wersja." },
+            { "language": "ro", "text": "Aș lua presiunea vânzărilor în serios, dar nu aș privi-o izolat. Pe lângă credibilitatea externă, avem și riscul ca un pilot instabil să coste ulterior mai multă încredere decât o primă versiune limitată." },
+            { "language": "sq", "text": "Do ta merrja seriozisht presionin e shitjeve, por nuk do ta shihja të izoluar. Përveç besueshmërisë së jashtme, kemi edhe rrezikun që një pilot i paqëndrueshëm më vonë të kushtojë më shumë besim sesa një version i parë i kufizuar." }
+          ],
+          "function": "multi-interest-frame",
+          "toneNote": "C1: Die Antwort anerkennt ein Interesse und ergänzt ein zweites Risiko, statt direkt zu widersprechen.",
+          "expectedLearnerAction": "Acknowledge one stakeholder interest while adding the hidden risk of another."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "support-lead",
+          "baseText": "Aus Supportsicht ist nicht der Pilot an sich das Problem, sondern die Erwartung, dass wir ab Tag eins alle Sonderfälle auffangen können.",
+          "translations": [
+            { "language": "en", "text": "From support's perspective, the pilot itself is not the problem, but the expectation that we can handle all special cases from day one." },
+            { "language": "fa", "text": "از نگاه پشتیبانی، خود pilot مشکل نیست، بلکه این انتظار مشکل است که از روز اول بتوانیم همه موارد خاص را پوشش دهیم." },
+            { "language": "ar", "text": "من منظور الدعم، ليست التجربة نفسها هي المشكلة، بل التوقع بأننا نستطيع التعامل مع كل الحالات الخاصة من اليوم الأول." },
+            { "language": "tr", "text": "Destek açısından sorun pilotun kendisi değil, ilk günden itibaren tüm özel durumları karşılayabileceğimiz beklentisidir." },
+            { "language": "ru", "text": "С точки зрения поддержки проблема не в самом пилоте, а в ожидании, что мы с первого дня сможем обработать все особые случаи." },
+            { "language": "ckb", "text": "لە ڕوانگەی پشتگیرییەوە، خودی pilot کێشە نییە، بەڵکو چاوەڕوانیی ئەوە کێشەیە کە لە ڕۆژی یەکەمەوە بتوانین هەموو حاڵەتە تایبەتییەکان بگرینەوە." },
+            { "language": "kmr", "text": "Ji perspektîfa piştgiriyê, pirsgirêk ne pilot bixwe ye, lê hêviya ku em ji roja yekem ve hemû rewşên taybet bigirin." },
+            { "language": "pl", "text": "Z perspektywy wsparcia problemem nie jest sam pilotaż, lecz oczekiwanie, że od pierwszego dnia obsłużymy wszystkie przypadki szczególne." },
+            { "language": "ro", "text": "Din perspectiva suportului, problema nu este pilotul în sine, ci așteptarea că putem gestiona toate cazurile speciale din prima zi." },
+            { "language": "sq", "text": "Nga këndvështrimi i mbështetjes, problemi nuk është vetë piloti, por pritja që nga dita e parë të mbulojmë të gjitha rastet e veçanta." }
+          ],
+          "function": "support-constraint",
+          "toneNote": "Der Support macht eine verdeckte Bedingung sichtbar.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dann liegt der Konflikt weniger beim Starttermin als beim Umfang der Zusage. Wir könnten den Pilot zum Termin starten, aber mit klaren Einschlusskriterien, einer begrenzten Kundengruppe und einem definierten Supportpfad für Sonderfälle.",
+          "translations": [
+            { "language": "en", "text": "Then the conflict is less about the start date than about the scope of the promise. We could start the pilot on time, but with clear inclusion criteria, a limited customer group, and a defined support path for special cases." },
+            { "language": "fa", "text": "پس تعارض کمتر بر سر تاریخ شروع است و بیشتر بر سر دامنه تعهد. می‌توانیم pilot را در موعد شروع کنیم، اما با معیارهای ورود روشن، گروه مشتری محدود و مسیر پشتیبانی تعریف‌شده برای موارد خاص." },
+            { "language": "ar", "text": "إذن الصراع ليس حول تاريخ البدء بقدر ما هو حول نطاق الوعد. يمكننا بدء التجربة في الموعد، لكن مع معايير إدراج واضحة، ومجموعة عملاء محدودة، ومسار دعم محدد للحالات الخاصة." },
+            { "language": "tr", "text": "O zaman çatışma başlangıç tarihinden çok verilen sözün kapsamıyla ilgilidir. Pilotu zamanında başlatabiliriz, ancak net dahil etme kriterleri, sınırlı müşteri grubu ve özel durumlar için tanımlı bir destek yolu ile." },
+            { "language": "ru", "text": "Тогда конфликт меньше в дате старта, чем в объеме обещания. Мы могли бы запустить пилот в срок, но с четкими критериями включения, ограниченной группой клиентов и определенным путем поддержки для особых случаев." },
+            { "language": "ckb", "text": "ئەوا ناکۆکییەکە کەمتر لەسەر کاتی دەستپێکە و زیاتر لەسەر سنووری بەڵێنەکەیە. دەتوانین pilot لە کاتی خۆیدا دەست پێبکەین، بەڵام بە پێوەری ڕوونی داخلکردن، گرووپی کڕیاری سنووردار و ڕێگای پشتگیریی دیاریکراو بۆ حاڵەتە تایبەتییەکان." },
+            { "language": "kmr", "text": "Wê demê nakokî kêm derbarê roja destpêkê ye û bêtir derbarê qada sozê ye. Em dikarin pilot di demê xwe de dest pê bikin, lê bi pîvanên tevlîkirinê yên zelal, koma xerîdarên sînorkirî û rêya piştgiriyê ya diyarkirî ji bo rewşên taybet." },
+            { "language": "pl", "text": "W takim razie konflikt dotyczy mniej terminu startu, a bardziej zakresu obietnicy. Możemy uruchomić pilotaż w terminie, ale z jasnymi kryteriami włączenia, ograniczoną grupą klientów i zdefiniowaną ścieżką wsparcia dla przypadków szczególnych." },
+            { "language": "ro", "text": "Atunci conflictul ține mai puțin de data de start și mai mult de amploarea promisiunii. Putem începe pilotul la timp, dar cu criterii clare de includere, un grup limitat de clienți și o cale de suport definită pentru cazurile speciale." },
+            { "language": "sq", "text": "Atëherë konflikti lidhet më pak me datën e nisjes dhe më shumë me shtrirjen e premtimit. Mund ta nisim pilotin në afat, por me kritere të qarta përfshirjeje, grup të kufizuar klientësh dhe rrugë mbështetjeje të përcaktuar për rastet e veçanta." }
+          ],
+          "function": "scope-reframing",
+          "toneNote": "C1: Die Antwort verschiebt den Konflikt von ja/nein zu Bedingungen und Steuerung.",
+          "expectedLearnerAction": "Turn competing interests into a conditional pilot proposal."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "sales-lead",
+          "baseText": "Wenn wir die Kundengruppe begrenzen, brauche ich aber eine Formulierung, die nicht wie ein Rückzug klingt.",
+          "translations": [
+            { "language": "en", "text": "If we limit the customer group, I need wording that does not sound like a retreat." },
+            { "language": "fa", "text": "اگر گروه مشتری را محدود کنیم، به عبارتی نیاز دارم که شبیه عقب‌نشینی به نظر نرسد." },
+            { "language": "ar", "text": "إذا حدّدنا مجموعة العملاء، فأحتاج إلى صياغة لا تبدو كأنها تراجع." },
+            { "language": "tr", "text": "Müşteri grubunu sınırlandırırsak, geri çekilme gibi duyulmayan bir ifadeye ihtiyacım var." },
+            { "language": "ru", "text": "Если мы ограничим группу клиентов, мне нужна формулировка, которая не звучит как отступление." },
+            { "language": "ckb", "text": "ئەگەر گرووپی کڕیار سنووردار بکەین، پێویستم بە دەربڕینێکە کە وەک پاشەکشە دەنگ نەدات." },
+            { "language": "kmr", "text": "Heke em koma xerîdaran sînor bikin, ez hewceyî vegotinekê me ku wekî paşvekişîn xuya neke." },
+            { "language": "pl", "text": "Jeśli ograniczymy grupę klientów, potrzebuję sformułowania, które nie brzmi jak wycofanie." },
+            { "language": "ro", "text": "Dacă limităm grupul de clienți, am nevoie de o formulare care să nu sune ca o retragere." },
+            { "language": "sq", "text": "Nëse e kufizojmë grupin e klientëve, më duhet një formulim që të mos tingëllojë si tërheqje." }
+          ],
+          "function": "market-wording-concern",
+          "toneNote": "Der Vertrieb braucht eine positiv vertretbare Außenkommunikation.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir könnten es als kuratierten Pilot beschreiben: Die erste Gruppe wird so ausgewählt, dass wir Nutzwert, Stabilität und Supportaufwand sauber messen können. Das klingt nicht kleiner, sondern kontrollierter.",
+          "translations": [
+            { "language": "en", "text": "We could describe it as a curated pilot: the first group is selected so that we can measure user value, stability, and support effort cleanly. That does not sound smaller, but more controlled." },
+            { "language": "fa", "text": "می‌توانیم آن را pilot گزینش‌شده توصیف کنیم: گروه اول طوری انتخاب می‌شود که بتوانیم ارزش استفاده، پایداری و هزینه پشتیبانی را دقیق اندازه بگیریم. این کوچک‌تر به نظر نمی‌رسد، بلکه کنترل‌شده‌تر است." },
+            { "language": "ar", "text": "يمكننا وصفه بأنه مشروع تجريبي منتقى: يتم اختيار المجموعة الأولى بحيث نستطيع قياس قيمة الاستخدام والاستقرار وجهد الدعم بدقة. هذا لا يبدو أصغر، بل أكثر ضبطاً." },
+            { "language": "tr", "text": "Bunu küratörlü bir pilot olarak tanımlayabiliriz: ilk grup, kullanım değerini, istikrarı ve destek çabasını temiz biçimde ölçebileceğimiz şekilde seçilir. Bu daha küçük değil, daha kontrollü duyulur." },
+            { "language": "ru", "text": "Мы могли бы описать это как кураторский пилот: первая группа выбирается так, чтобы мы могли чисто измерить пользовательскую ценность, стабильность и нагрузку на поддержку. Это звучит не меньше, а более управляемо." },
+            { "language": "ckb", "text": "دەتوانین وەک pilotێکی هەڵبژێردراو وەسفی بکەین: گرووپی یەکەم بە جۆرێک هەڵدەبژێردرێت کە بتوانین سوودی بەکارهێنان، جێگیری و تێچوونی پشتگیری بە پاکی پێوانە بکەین. ئەمە بچووکتر دەنگ نادات، بەڵکو کۆنترۆڵکراوترە." },
+            { "language": "kmr", "text": "Em dikarin wê wekî piloteke hilbijartî rave bikin: koma yekem wisa tê hilbijartin ku em nirxa bikaranînê, stabîlî û barê piştgiriyê paqij bipîvin. Ev ne biçûktir xuya dike, lê kontrolkirîtir." },
+            { "language": "pl", "text": "Możemy opisać to jako pilotaż kuratorowany: pierwsza grupa zostanie dobrana tak, abyśmy mogli rzetelnie zmierzyć wartość użytkową, stabilność i nakład wsparcia. To brzmi nie jak mniejsze, lecz bardziej kontrolowane." },
+            { "language": "ro", "text": "L-am putea descrie ca pe un pilot curat: primul grup este ales astfel încât să putem măsura clar valoarea de utilizare, stabilitatea și efortul de suport. Nu sună mai mic, ci mai controlat." },
+            { "language": "sq", "text": "Mund ta përshkruajmë si pilot të kuruar: grupi i parë zgjidhet në mënyrë që të masim qartë vlerën e përdorimit, qëndrueshmërinë dhe përpjekjen e mbështetjes. Kjo nuk tingëllon më e vogël, por më e kontrolluar." }
+          ],
+          "function": "positive-pilot-framing",
+          "toneNote": "C1: Die Antwort gibt dem Vertrieb eine positive, aber ehrliche Sprache.",
+          "expectedLearnerAction": "Offer external wording that preserves ambition while limiting scope."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "support-lead",
+          "baseText": "Für mich ist entscheidend, dass wir vor dem Start wissen, welche Fälle in den Pilot gehören und welche ausdrücklich nicht.",
+          "translations": [
+            { "language": "en", "text": "For me, the decisive point is that before launch we know which cases belong in the pilot and which explicitly do not." },
+            { "language": "fa", "text": "برای من نکته تعیین‌کننده این است که قبل از شروع بدانیم کدام موارد داخل pilot هستند و کدام‌ها صراحتاً نیستند." },
+            { "language": "ar", "text": "بالنسبة لي، النقطة الحاسمة هي أن نعرف قبل البدء أي الحالات تدخل في التجربة وأيها لا يدخل صراحة." },
+            { "language": "tr", "text": "Benim için belirleyici olan, başlamadan önce hangi durumların pilota dahil olduğunu ve hangilerinin açıkça dahil olmadığını bilmemizdir." },
+            { "language": "ru", "text": "Для меня решающее то, чтобы до старта мы знали, какие случаи входят в пилот, а какие явно не входят." },
+            { "language": "ckb", "text": "بۆ من خاڵی یەکلاکەرەوە ئەوەیە کە پێش دەستپێک بزانین کام حاڵەتەکان دەچنە ناو pilot و کامەکان بە ڕوونی ناچن." },
+            { "language": "kmr", "text": "Ji bo min xala girîng ew e ku berî destpêkê em zanibin kîjan rewş di pilotê de ne û kîjan bi zelalî ne tê de ne." },
+            { "language": "pl", "text": "Dla mnie decydujące jest to, żebyśmy przed startem wiedzieli, które przypadki należą do pilotażu, a które wyraźnie nie." },
+            { "language": "ro", "text": "Pentru mine este decisiv ca înainte de start să știm ce cazuri aparțin pilotului și care nu aparțin explicit." },
+            { "language": "sq", "text": "Për mua është vendimtare që para nisjes të dimë cilat raste i përkasin pilotit dhe cilat shprehimisht jo." }
+          ],
+          "function": "inclusion-boundary",
+          "toneNote": "Support fordert operative Klarheit.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann brauchen wir vor dem Start drei Kriterien: Kundentyp, technischer Integrationsgrad und Supportfähigkeit. Fälle außerhalb dieser Kriterien werden nicht abgelehnt, sondern für die zweite Pilotwelle eingeplant.",
+          "translations": [
+            { "language": "en", "text": "Then before launch we need three criteria: customer type, technical integration level, and supportability. Cases outside these criteria are not rejected, but planned for the second pilot wave." },
+            { "language": "fa", "text": "پس قبل از شروع به سه معیار نیاز داریم: نوع مشتری، سطح ادغام فنی و قابلیت پشتیبانی. موارد خارج از این معیارها رد نمی‌شوند، بلکه برای موج دوم pilot برنامه‌ریزی می‌شوند." },
+            { "language": "ar", "text": "إذن نحتاج قبل البدء إلى ثلاثة معايير: نوع العميل، ودرجة التكامل التقني، وقابلية الدعم. الحالات خارج هذه المعايير لا تُرفض، بل تُخطط للموجة الثانية من التجربة." },
+            { "language": "tr", "text": "O zaman başlamadan önce üç kritere ihtiyacımız var: müşteri tipi, teknik entegrasyon derecesi ve desteklenebilirlik. Bu kriterlerin dışındaki durumlar reddedilmez, ikinci pilot dalgası için planlanır." },
+            { "language": "ru", "text": "Тогда до старта нам нужны три критерия: тип клиента, уровень технической интеграции и поддерживаемость. Случаи вне этих критериев не отклоняются, а планируются для второй волны пилота." },
+            { "language": "ckb", "text": "ئەوا پێش دەستپێک پێویستمان بە سێ پێوەرە: جۆری کڕیار، ئاستی یەکخستنی تەکنیکی و توانای پشتگیری. حاڵەتەکانی دەرەوەی ئەم پێوەرانە ڕەت ناکرێنەوە، بەڵکو بۆ شەپۆلی دووەمی pilot پلان دەکرێن." },
+            { "language": "kmr", "text": "Wê demê berî destpêkê em hewceyî sê pîvanan in: cureyê xerîdar, asta entegrasyona teknîkî û piştgirîbûn. Rewşên derveyî van pîvanan nayên redkirin, lê ji bo pêla duyem a pilotê tên plan kirin." },
+            { "language": "pl", "text": "W takim razie przed startem potrzebujemy trzech kryteriów: typu klienta, stopnia integracji technicznej i możliwości wsparcia. Przypadki poza tymi kryteriami nie są odrzucane, lecz planowane do drugiej fali pilotażu." },
+            { "language": "ro", "text": "Atunci înainte de start avem nevoie de trei criterii: tipul clientului, gradul de integrare tehnică și capacitatea de suport. Cazurile din afara acestor criterii nu sunt respinse, ci planificate pentru al doilea val al pilotului." },
+            { "language": "sq", "text": "Atëherë para nisjes na duhen tri kritere: tipi i klientit, niveli i integrimit teknik dhe mbështetshmëria. Rastet jashtë këtyre kritereve nuk refuzohen, por planifikohen për valën e dytë të pilotit." }
+          ],
+          "function": "criteria-and-second-wave",
+          "toneNote": "C1: Die Antwort schafft Grenzen, ohne Stakeholder auszuschließen.",
+          "expectedLearnerAction": "Define inclusion criteria and preserve a path for excluded cases."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "sales-lead",
+          "baseText": "Ich kann mit einer zweiten Welle leben, wenn wir den Kunden vorher sagen können, wann über die Erweiterung entschieden wird.",
+          "translations": [
+            { "language": "en", "text": "I can live with a second wave if we can tell customers beforehand when the expansion will be decided." },
+            { "language": "fa", "text": "با موج دوم می‌توانم کنار بیایم، اگر بتوانیم از قبل به مشتریان بگوییم چه زمانی درباره گسترش تصمیم گرفته می‌شود." },
+            { "language": "ar", "text": "يمكنني قبول موجة ثانية إذا استطعنا أن نقول للعملاء مسبقاً متى سيُتخذ قرار التوسيع." },
+            { "language": "tr", "text": "Müşterilere genişletme kararının ne zaman verileceğini önceden söyleyebilirsek ikinci dalgayla yaşayabilirim." },
+            { "language": "ru", "text": "Я могу согласиться на вторую волну, если мы заранее скажем клиентам, когда будет принято решение о расширении." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ شەپۆلی دووەم بژیم، ئەگەر بتوانین پێشتر بە کڕیاران بڵێین کە کەی بڕیار لەسەر فراوانکردن دەدرێت." },
+            { "language": "kmr", "text": "Ez dikarim bi pêla duyem re bijîm, heke em bikarin berê ji xerîdaran re bibêjin kengî li ser berfirehkirinê biryar tê dayîn." },
+            { "language": "pl", "text": "Mogę zaakceptować drugą falę, jeśli wcześniej powiemy klientom, kiedy zapadnie decyzja o rozszerzeniu." },
+            { "language": "ro", "text": "Pot accepta un al doilea val dacă le putem spune clienților dinainte când se va decide extinderea." },
+            { "language": "sq", "text": "Mund ta pranoj valën e dytë nëse mund t'u themi klientëve paraprakisht kur do të merret vendimi për zgjerim." }
+          ],
+          "function": "review-date-request",
+          "toneNote": "Der Vertrieb verlangt Planbarkeit für die externe Kommunikation.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann verknüpfen wir die zweite Welle mit überprüfbaren Kriterien: Nach drei Wochen prüfen wir Nutzungsdaten, Supportaufwand und kritische Fehler. Wenn zwei von drei Werten im grünen Bereich liegen, erweitern wir die Kundengruppe.",
+          "translations": [
+            { "language": "en", "text": "Then we link the second wave to verifiable criteria: after three weeks, we review usage data, support effort, and critical errors. If two of the three values are in the green zone, we expand the customer group." },
+            { "language": "fa", "text": "پس موج دوم را به معیارهای قابل‌بررسی وصل می‌کنیم: بعد از سه هفته داده‌های استفاده، هزینه پشتیبانی و خطاهای بحرانی را بررسی می‌کنیم. اگر دو مورد از سه شاخص در محدوده سبز باشد، گروه مشتری را گسترش می‌دهیم." },
+            { "language": "ar", "text": "إذن نربط الموجة الثانية بمعايير قابلة للتحقق: بعد ثلاثة أسابيع نراجع بيانات الاستخدام وجهد الدعم والأخطاء الحرجة. إذا كان اثنان من القيم الثلاث في النطاق الأخضر، نوسع مجموعة العملاء." },
+            { "language": "tr", "text": "O zaman ikinci dalgayı doğrulanabilir kriterlere bağlarız: üç hafta sonra kullanım verilerini, destek çabasını ve kritik hataları inceleriz. Üç değerden ikisi yeşil alandaysa müşteri grubunu genişletiriz." },
+            { "language": "ru", "text": "Тогда мы связываем вторую волну с проверяемыми критериями: через три недели проверяем данные использования, нагрузку на поддержку и критические ошибки. Если два из трех показателей в зеленой зоне, расширяем группу клиентов." },
+            { "language": "ckb", "text": "ئەوا شەپۆلی دووەم بە پێوەری پشکنراو دەبەستینەوە: دوای سێ هەفتە داتای بەکارهێنان، تێچوونی پشتگیری و هەڵە گرنگەکان پێدا دەچینەوە. ئەگەر دوو لە سێ نرخیان لە ناوچەی سەوزدا بوون، گرووپی کڕیار فراوان دەکەین." },
+            { "language": "kmr", "text": "Wê demê em pêla duyem bi pîvanên kontrolkirî ve girêdin: piştî sê hefteyan em daneyên bikaranînê, barê piştgiriyê û şaşiyên krîtîk vedikolin. Heke du ji sê nirxan di qada kesk de bin, em koma xerîdaran berfireh dikin." },
+            { "language": "pl", "text": "Wtedy łączymy drugą falę ze sprawdzalnymi kryteriami: po trzech tygodniach analizujemy dane użycia, nakład wsparcia i błędy krytyczne. Jeśli dwa z trzech wskaźników są w zielonym obszarze, rozszerzamy grupę klientów." },
+            { "language": "ro", "text": "Atunci legăm al doilea val de criterii verificabile: după trei săptămâni analizăm datele de utilizare, efortul de suport și erorile critice. Dacă două din trei valori sunt în zona verde, extindem grupul de clienți." },
+            { "language": "sq", "text": "Atëherë e lidhim valën e dytë me kritere të verifikueshme: pas tri javësh shqyrtojmë të dhënat e përdorimit, përpjekjen e mbështetjes dhe gabimet kritike. Nëse dy nga tri vlera janë në zonën e gjelbër, e zgjerojmë grupin e klientëve." }
+          ],
+          "function": "review-criteria",
+          "toneNote": "C1: Die Antwort macht den Kompromiss überprüfbar und reduziert Interpretationsspielraum.",
+          "expectedLearnerAction": "Tie the staged agreement to measurable review criteria."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "support-lead",
+          "baseText": "Unter der Bedingung, dass wir die Kriterien schriftlich festhalten und Supportfälle außerhalb des Rahmens nicht ad hoc übernehmen müssen, kann ich zustimmen.",
+          "translations": [
+            { "language": "en", "text": "On the condition that we record the criteria in writing and do not have to take on support cases outside the framework ad hoc, I can agree." },
+            { "language": "fa", "text": "به شرط اینکه معیارها را کتبی ثبت کنیم و مجبور نباشیم موارد پشتیبانی خارج از چارچوب را ad hoc بپذیریم، می‌توانم موافقت کنم." },
+            { "language": "ar", "text": "بشرط أن نثبت المعايير كتابياً وألا نضطر إلى تولي حالات دعم خارج الإطار بشكل فوري، يمكنني الموافقة." },
+            { "language": "tr", "text": "Kriterleri yazılı olarak kaydetmemiz ve çerçevenin dışındaki destek durumlarını ad hoc üstlenmek zorunda kalmamamız şartıyla kabul edebilirim." },
+            { "language": "ru", "text": "При условии, что мы письменно зафиксируем критерии и не будем вынуждены ad hoc брать на себя случаи поддержки вне рамок, я могу согласиться." },
+            { "language": "ckb", "text": "بە مەرجی ئەوەی پێوەرەکان بە نووسراو تۆمار بکەین و ناچار نەبین حاڵەتەکانی پشتگیریی دەرەوەی چوارچێوە بە ad hoc وەربگرین، دەتوانم ڕازی بم." },
+            { "language": "kmr", "text": "Bi şertê ku em pîvanan nivîskî qeyd bikin û ne mecbûr bin rewşên piştgiriyê yên derveyî çarçoveyê ad hoc bistînin, ez dikarim qebûl bikim." },
+            { "language": "pl", "text": "Pod warunkiem, że zapiszemy kryteria na piśmie i nie będziemy musieli ad hoc przejmować przypadków wsparcia spoza ram, mogę się zgodzić." },
+            { "language": "ro", "text": "Cu condiția să consemnăm criteriile în scris și să nu fim obligați să preluăm ad hoc cazuri de suport din afara cadrului, pot fi de acord." },
+            { "language": "sq", "text": "Me kusht që t'i regjistrojmë kriteret me shkrim dhe të mos detyrohemi të marrim ad hoc raste mbështetjeje jashtë kuadrit, mund të pajtohem." }
+          ],
+          "function": "conditional-agreement",
+          "toneNote": "Support akzeptiert unter klaren operativen Bedingungen.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann halte ich als Kompromiss fest: Start zum geplanten Termin mit kuratierter Kundengruppe, schriftlichen Einschlusskriterien, definiertem Supportpfad und Review nach drei Wochen. Die zweite Welle wird nicht versprochen, sondern an Nutzungsdaten, Supportaufwand und Fehlerlage geknüpft.",
+          "translations": [
+            { "language": "en", "text": "Then I will record the compromise as follows: start on the planned date with a curated customer group, written inclusion criteria, a defined support path, and a review after three weeks. The second wave is not promised, but tied to usage data, support effort, and error situation." },
+            { "language": "fa", "text": "پس مصالحه را این‌طور ثبت می‌کنم: شروع در زمان برنامه‌ریزی‌شده با گروه مشتری گزینش‌شده، معیارهای ورود کتبی، مسیر پشتیبانی تعریف‌شده و بازبینی بعد از سه هفته. موج دوم وعده داده نمی‌شود، بلکه به داده‌های استفاده، هزینه پشتیبانی و وضعیت خطاها وابسته می‌شود." },
+            { "language": "ar", "text": "إذن أسجل الحل الوسط كما يلي: بدء في الموعد المخطط مع مجموعة عملاء منتقاة، ومعايير إدراج مكتوبة، ومسار دعم محدد، ومراجعة بعد ثلاثة أسابيع. لا تُوعد الموجة الثانية، بل تُربط ببيانات الاستخدام وجهد الدعم وحالة الأخطاء." },
+            { "language": "tr", "text": "O halde uzlaşmayı şöyle kaydederim: planlanan tarihte küratörlü müşteri grubuyla başlangıç, yazılı dahil etme kriterleri, tanımlı destek yolu ve üç hafta sonra değerlendirme. İkinci dalga vaat edilmez, kullanım verilerine, destek çabasına ve hata durumuna bağlanır." },
+            { "language": "ru", "text": "Тогда я зафиксирую компромисс так: старт в запланированный срок с кураторской группой клиентов, письменными критериями включения, определенным путем поддержки и проверкой через три недели. Вторая волна не обещается, а привязывается к данным использования, нагрузке на поддержку и ситуации с ошибками." },
+            { "language": "ckb", "text": "ئەوا ڕێککەوتنەکە ئاوا تۆمار دەکەم: دەستپێک لە کاتی پلانکراو بە گرووپی کڕیاری هەڵبژێردراو، پێوەری نووسراوی داخلکردن، ڕێگای پشتگیریی دیاریکراو و پێداچوونەوە دوای سێ هەفتە. شەپۆلی دووەم بەڵێن نادرێت، بەڵکو بە داتای بەکارهێنان، تێچوونی پشتگیری و دۆخی هەڵەکان دەبەسترێتەوە." },
+            { "language": "kmr", "text": "Wê demê ez lihevhatinê wisa qeyd dikim: destpêk di dema plankirî de bi koma xerîdarên hilbijartî, pîvanên nivîskî yên tevlîkirinê, rêya piştgiriyê ya diyarkirî û vekolîn piştî sê hefteyan. Pêla duyem nayê sozdan, lê bi daneyên bikaranînê, barê piştgiriyê û rewşa şaşiyan ve tê girêdan." },
+            { "language": "pl", "text": "W takim razie zapisuję kompromis tak: start w planowanym terminie z kuratorowaną grupą klientów, pisemnymi kryteriami włączenia, zdefiniowaną ścieżką wsparcia i przeglądem po trzech tygodniach. Druga fala nie jest obiecana, lecz powiązana z danymi użycia, nakładem wsparcia i sytuacją błędów." },
+            { "language": "ro", "text": "Atunci consemnez compromisul astfel: start la data planificată cu un grup de clienți curat, criterii de includere scrise, cale de suport definită și revizuire după trei săptămâni. Al doilea val nu este promis, ci legat de datele de utilizare, efortul de suport și situația erorilor." },
+            { "language": "sq", "text": "Atëherë e regjistroj kompromisin kështu: nisje në datën e planifikuar me grup klientësh të kuruar, kritere përfshirjeje me shkrim, rrugë mbështetjeje të përcaktuar dhe rishikim pas tri javësh. Vala e dytë nuk premtohet, por lidhet me të dhënat e përdorimit, përpjekjen e mbështetjes dhe gjendjen e gabimeve." }
+          ],
+          "function": "staged-agreement-summary",
+          "toneNote": "C1: Der Abschluss ist präzise, überprüfbar und balanciert die Interessen.",
+          "expectedLearnerAction": "Summarize the staged compromise with scope, safeguards, and review criteria."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich nehme den Vertriebsdruck ernst, ergänze aber das Risiko: Ein instabiler Pilot kann später mehr Vertrauen kosten als eine begrenzte erste Version.",
+              "translations": [
+                { "language": "en", "text": "I take the sales pressure seriously, but add the risk: an unstable pilot may later cost more trust than a limited first version." },
+                { "language": "fa", "text": "فشار فروش را جدی می‌گیرم، اما ریسک را اضافه می‌کنم: یک pilot ناپایدار ممکن است بعداً اعتماد بیشتری از یک نسخه اول محدود از بین ببرد." },
+                { "language": "ar", "text": "آخذ ضغط المبيعات بجدية، لكنني أضيف الخطر: قد يكلف مشروع تجريبي غير مستقر ثقة أكثر لاحقاً من نسخة أولى محدودة." },
+                { "language": "tr", "text": "Satış baskısını ciddiye alıyorum, ama riski ekliyorum: istikrarsız bir pilot daha sonra sınırlı bir ilk sürümden daha fazla güven kaybettirebilir." },
+                { "language": "ru", "text": "Я серьезно отношусь к давлению продаж, но добавляю риск: нестабильный пилот позже может стоить больше доверия, чем ограниченная первая версия." },
+                { "language": "ckb", "text": "فشاری فرۆشتن بە جدی وەردەگرم، بەڵام مەترسییەکە زیاد دەکەم: pilotێکی نەجێگیر دەتوانێت دواتر زیاتر لە وەشانی یەکەمی سنووردار باوەڕ لەدەست بدات." },
+                { "language": "kmr", "text": "Ez zexta firotanê cidî digirim, lê xeterê zêde dikim: piloteke ne-stabîl dikare paşê ji versiyoneke yekem a sînorkirî bêtir baweriyê winda bike." },
+                { "language": "pl", "text": "Traktuję presję sprzedaży poważnie, ale dodaję ryzyko: niestabilny pilotaż może później kosztować więcej zaufania niż ograniczona pierwsza wersja." },
+                { "language": "ro", "text": "Iau presiunea vânzărilor în serios, dar adaug riscul: un pilot instabil poate costa ulterior mai multă încredere decât o primă versiune limitată." },
+                { "language": "sq", "text": "E marr seriozisht presionin e shitjeve, por shtoj rrezikun: një pilot i paqëndrueshëm më vonë mund të kushtojë më shumë besim sesa një version i parë i kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort würdigt ein Interesse und macht ein verdecktes Gegenrisiko sichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer acknowledges one interest and makes a hidden counter-risk visible." },
+                { "language": "fa", "text": "قوی: پاسخ یک منفعت را به رسمیت می‌شناسد و ریسک پنهان مقابل را قابل‌دید می‌کند." },
+                { "language": "ar", "text": "قوي: يعترف الجواب بمصلحة واحدة ويجعل خطراً مقابلاً خفياً مرئياً." },
+                { "language": "tr", "text": "Güçlü: cevap bir çıkarı kabul eder ve gizli karşı riski görünür kılar." },
+                { "language": "ru", "text": "Сильно: ответ признает один интерес и делает скрытый встречный риск видимым." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرژەوەندییەک دەناسێت و مەترسییەکی شاراوەی بەرامبەر دیار دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv berjewendiyekê nas dike û xetera dijber a veşartî xuya dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje jeden interes i ujawnia ukryte ryzyko przeciwne." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște un interes și face vizibil un contra-risc ascuns." },
+                { "language": "sq", "text": "E fortë: përgjigjja njeh një interes dhe bën të dukshëm një kundërrrezik të fshehur." }
+              ],
+              "explanationKey": "acknowledge-and-add-risk"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde sagen, dass der Starttermin wichtig ist, wir aber vorher noch intern prüfen müssen, ob der Pilot wirklich machbar ist.",
+              "translations": [
+                { "language": "en", "text": "I would say that the start date is important, but that we still need to check internally whether the pilot is really feasible." },
+                { "language": "fa", "text": "می‌گویم تاریخ شروع مهم است، اما باید ابتدا داخلی بررسی کنیم آیا pilot واقعاً قابل انجام است یا نه." },
+                { "language": "ar", "text": "سأقول إن موعد البدء مهم، لكن علينا أولاً أن نتحقق داخلياً مما إذا كانت التجربة قابلة للتنفيذ فعلاً." },
+                { "language": "tr", "text": "Başlangıç tarihinin önemli olduğunu, ancak pilotun gerçekten yapılabilir olup olmadığını önce içeride kontrol etmemiz gerektiğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал, что дата старта важна, но нам нужно еще внутренне проверить, действительно ли пилот осуществим." },
+                { "language": "ckb", "text": "دەڵێم کاتی دەستپێک گرنگە، بەڵام پێشتر دەبێت ناوخۆیی بپشکنین کە pilot بەڕاستی کردنییە یان نا." },
+                { "language": "kmr", "text": "Ez ê bibêjim roja destpêkê girîng e, lê divê em pêşî hundirîn kontrol bikin ka pilot bi rastî mumkin e an na." },
+                { "language": "pl", "text": "Powiedziałbym, że termin startu jest ważny, ale musimy jeszcze wewnętrznie sprawdzić, czy pilotaż jest naprawdę wykonalny." },
+                { "language": "ro", "text": "Aș spune că data de start este importantă, dar că trebuie să verificăm intern dacă pilotul este cu adevărat fezabil." },
+                { "language": "sq", "text": "Do të thosha se data e nisjes është e rëndësishme, por më parë duhet të kontrollojmë brenda nëse piloti është vërtet i realizueshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Die Antwort erkennt den Termin an, benennt aber keine konkurrierenden Interessen oder Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: the answer acknowledges the date but names no competing interests or criteria." },
+                { "language": "fa", "text": "قابل‌باور اما مبهم: پاسخ تاریخ را به رسمیت می‌شناسد، اما هیچ منفعت یا معیار رقیبی را نام نمی‌برد." },
+                { "language": "ar", "text": "معقول لكنه غامض جداً: يعترف الجواب بالموعد، لكنه لا يذكر مصالح أو معايير متنافسة." },
+                { "language": "tr", "text": "Makuldür ama çok belirsiz: cevap tarihi kabul eder, ancak rekabet eden çıkarları veya kriterleri belirtmez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: ответ признает дату, но не называет конкурирующие интересы или критерии." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر ناڕوونە: وەڵامەکە کاتەکە دەناسێت، بەڵام هیچ بەرژەوەندی یان پێوەری ڕکابەر ناو نابات." },
+                { "language": "kmr", "text": "Bawerbar e lê pir nezelal e: bersiv demê nas dike, lê berjewendî an pîvanên dijber nav nake." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt ogólne: odpowiedź uznaje termin, lecz nie nazywa konkurujących interesów ani kryteriów." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: răspunsul recunoaște data, dar nu numește interese sau criterii concurente." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: përgjigjja e pranon datën, por nuk përmend interesa ose kritere konkurruese." }
+              ],
+              "explanationKey": "date-acknowledged-but-no-structure"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Der Konflikt liegt weniger beim Starttermin als beim Umfang der Zusage: Start zum Termin, aber mit klaren Kriterien, begrenzter Kundengruppe und definiertem Supportpfad.",
+              "translations": [
+                { "language": "en", "text": "The conflict is less about the start date than about the scope of the promise: start on time, but with clear criteria, a limited customer group, and a defined support path." },
+                { "language": "fa", "text": "تعارض کمتر بر سر تاریخ شروع است و بیشتر بر سر دامنه تعهد: شروع در موعد، اما با معیارهای روشن، گروه مشتری محدود و مسیر پشتیبانی تعریف‌شده." },
+                { "language": "ar", "text": "الصراع ليس حول موعد البدء بقدر ما هو حول نطاق الوعد: بدء في الموعد، لكن مع معايير واضحة، ومجموعة عملاء محدودة، ومسار دعم محدد." },
+                { "language": "tr", "text": "Çatışma başlangıç tarihinden çok verilen sözün kapsamıyla ilgilidir: zamanında başlangıç, ama net kriterler, sınırlı müşteri grubu ve tanımlı destek yolu ile." },
+                { "language": "ru", "text": "Конфликт меньше в дате старта, чем в объеме обещания: старт в срок, но с четкими критериями, ограниченной группой клиентов и определенным путем поддержки." },
+                { "language": "ckb", "text": "ناکۆکییەکە کەمتر لەسەر کاتی دەستپێکە و زیاتر لەسەر سنووری بەڵێنەکەیە: دەستپێک لە کاتی خۆیدا، بەڵام بە پێوەری ڕوون، گرووپی کڕیاری سنووردار و ڕێگای پشتگیریی دیاریکراو." },
+                { "language": "kmr", "text": "Nakokî kêm derbarê roja destpêkê ye û bêtir derbarê qada sozê ye: destpêk di demê xwe de, lê bi pîvanên zelal, koma xerîdarên sînorkirî û rêya piştgiriyê ya diyarkirî." },
+                { "language": "pl", "text": "Konflikt dotyczy mniej terminu startu, a bardziej zakresu obietnicy: start w terminie, ale z jasnymi kryteriami, ograniczoną grupą klientów i zdefiniowaną ścieżką wsparcia." },
+                { "language": "ro", "text": "Conflictul ține mai puțin de data de start și mai mult de amploarea promisiunii: start la termen, dar cu criterii clare, grup limitat de clienți și cale de suport definită." },
+                { "language": "sq", "text": "Konflikti lidhet më pak me datën e nisjes dhe më shumë me shtrirjen e premtimit: nisje në afat, por me kritere të qarta, grup klientësh të kufizuar dhe rrugë mbështetjeje të përcaktuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet ein Entweder-oder und macht den Pilot steuerbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids an either-or and makes the pilot manageable." },
+                { "language": "fa", "text": "قوی: پاسخ از دوگانه‌ی یا این یا آن دوری می‌کند و pilot را قابل مدیریت می‌کند." },
+                { "language": "ar", "text": "قوي: يتجنب الجواب خيار إما أو ويجعل التجربة قابلة للإدارة." },
+                { "language": "tr", "text": "Güçlü: cevap ya o ya bu ikileminden kaçınır ve pilotu yönetilebilir kılar." },
+                { "language": "ru", "text": "Сильно: ответ избегает выбора либо-либо и делает пилот управляемым." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە دووڕیانی یان ئەمە یان ئەوە دوور دەکەوێتەوە و pilot بەڕێوەبردنی دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji du-yekî dûr dikeve û pilotê rêvebirbar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika alternatywy albo-albo i czyni pilotaż sterowalnym." },
+                { "language": "ro", "text": "Puternic: răspunsul evită un ori-ori și face pilotul gestionabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang një ose-ose dhe e bën pilotin të menaxhueshëm." }
+              ],
+              "explanationKey": "conditional-pilot-scope"
+            },
+            {
+              "id": "weak",
+              "text": "Wir könnten den Pilot starten und dem Support zusagen, dass wir im laufenden Betrieb nachsteuern, falls zu viele Sonderfälle auftreten.",
+              "translations": [
+                { "language": "en", "text": "We could start the pilot and promise support that we will adjust during operation if too many special cases occur." },
+                { "language": "fa", "text": "می‌توانیم pilot را شروع کنیم و به پشتیبانی قول بدهیم اگر موارد خاص زیادی پیش آمد، در حین اجرا اصلاح کنیم." },
+                { "language": "ar", "text": "يمكننا بدء التجربة ووعد الدعم بأننا سنصحح المسار أثناء التشغيل إذا ظهرت حالات خاصة كثيرة." },
+                { "language": "tr", "text": "Pilotu başlatabilir ve çok fazla özel durum çıkarsa operasyon sırasında ayarlama yapacağımıza desteğe söz verebiliriz." },
+                { "language": "ru", "text": "Мы могли бы запустить пилот и пообещать поддержке, что будем корректировать во время работы, если появится слишком много особых случаев." },
+                { "language": "ckb", "text": "دەتوانین pilot دەست پێبکەین و بە پشتگیری بەڵێن بدەین ئەگەر حاڵەتی تایبەتی زۆر ڕوویدا، لە کاتی کاردا ڕێکخستن بکەین." },
+                { "language": "kmr", "text": "Em dikarin pilotê dest pê bikin û ji piştgiriyê re soz bidin ku heke pir rewşên taybet derkevin, di xebatê de sererast bikin." },
+                { "language": "pl", "text": "Moglibyśmy uruchomić pilotaż i obiecać wsparciu, że będziemy korygować w trakcie, jeśli pojawi się zbyt wiele przypadków szczególnych." },
+                { "language": "ro", "text": "Am putea începe pilotul și promite suportului că vom ajusta în timpul funcționării dacă apar prea multe cazuri speciale." },
+                { "language": "sq", "text": "Mund ta nisim pilotin dhe t'i premtojmë mbështetjes se do të rregullojmë gjatë punës nëse dalin shumë raste të veçanta." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant: Die Antwort startet zwar pünktlich, verschiebt aber die eigentliche Steuerung in den laufenden Betrieb.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but risky: the answer starts on time, but moves the actual control into live operation." },
+                { "language": "fa", "text": "قابل‌باور اما پرریسک: پاسخ به‌موقع شروع می‌کند، اما کنترل واقعی را به حین اجرا منتقل می‌کند." },
+                { "language": "ar", "text": "معقول لكنه محفوف بالمخاطر: يبدأ الجواب في الموعد، لكنه ينقل التحكم الحقيقي إلى التشغيل الجاري." },
+                { "language": "tr", "text": "Makuldür ama riskli: cevap zamanında başlatır, ancak gerçek kontrolü canlı operasyona taşır." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно: ответ запускает вовремя, но переносит реальное управление в текущую работу." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام مەترسیدارە: وەڵامەکە لە کاتی خۆیدا دەست پێدەکات، بەڵام کۆنترۆڵی ڕاستەقینە دەگوازێتەوە بۆ کاتی جێبەجێکردن." },
+                { "language": "kmr", "text": "Bawerbar e lê xeternak e: bersiv di demê xwe de dest pê dike, lê kontrola rastîn dixe nav xebata zindî." },
+                { "language": "pl", "text": "Prawdopodobne, ale ryzykowne: odpowiedź startuje w terminie, lecz przenosi właściwe sterowanie do bieżącej pracy." },
+                { "language": "ro", "text": "Plauzibil, dar riscant: răspunsul începe la timp, dar mută controlul real în operarea curentă." },
+                { "language": "sq", "text": "E besueshme, por e rrezikshme: përgjigjja nis në afat, por e zhvendos kontrollin real në funksionim." }
+              ],
+              "explanationKey": "late-control-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Wir nennen es einen kuratierten Pilot: Die erste Gruppe wird so gewählt, dass Nutzwert, Stabilität und Supportaufwand sauber messbar sind.",
+              "translations": [
+                { "language": "en", "text": "We call it a curated pilot: the first group is chosen so that user value, stability, and support effort are cleanly measurable." },
+                { "language": "fa", "text": "آن را pilot گزینش‌شده می‌نامیم: گروه اول طوری انتخاب می‌شود که ارزش استفاده، پایداری و هزینه پشتیبانی دقیق قابل اندازه‌گیری باشد." },
+                { "language": "ar", "text": "نسميه مشروعاً تجريبياً منتقى: تُختار المجموعة الأولى بحيث تكون قيمة الاستخدام والاستقرار وجهد الدعم قابلة للقياس بدقة." },
+                { "language": "tr", "text": "Buna küratörlü pilot deriz: ilk grup, kullanım değeri, istikrar ve destek çabasının temiz biçimde ölçülebileceği şekilde seçilir." },
+                { "language": "ru", "text": "Мы называем это кураторским пилотом: первая группа выбирается так, чтобы пользовательская ценность, стабильность и нагрузка на поддержку были чисто измеримы." },
+                { "language": "ckb", "text": "ناوی دەنێین pilotی هەڵبژێردراو: گرووپی یەکەم بە جۆرێک هەڵدەبژێردرێت کە سوودی بەکارهێنان، جێگیری و تێچوونی پشتگیری بە پاکی پێوانە بکرێن." },
+                { "language": "kmr", "text": "Em navê wê dikin piloteke hilbijartî: koma yekem wisa tê hilbijartin ku nirxa bikaranînê, stabîlî û barê piştgiriyê paqij bên pîvandin." },
+                { "language": "pl", "text": "Nazywamy to pilotażem kuratorowanym: pierwsza grupa jest dobrana tak, aby wartość użytkowa, stabilność i nakład wsparcia były rzetelnie mierzalne." },
+                { "language": "ro", "text": "Îl numim pilot curat: primul grup este ales astfel încât valoarea de utilizare, stabilitatea și efortul de suport să fie măsurabile clar." },
+                { "language": "sq", "text": "E quajmë pilot të kuruar: grupi i parë zgjidhet në mënyrë që vlera e përdorimit, qëndrueshmëria dhe përpjekja e mbështetjes të maten qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung ist positiv, aber nicht irreführend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the wording is positive but not misleading." },
+                { "language": "fa", "text": "قوی: بیان مثبت است اما گمراه‌کننده نیست." },
+                { "language": "ar", "text": "قوي: الصياغة إيجابية لكنها ليست مضللة." },
+                { "language": "tr", "text": "Güçlü: ifade olumlu ama yanıltıcı değil." },
+                { "language": "ru", "text": "Сильно: формулировка позитивная, но не вводит в заблуждение." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە ئەرێنییە بەڵام گومڕاکەر نییە." },
+                { "language": "kmr", "text": "Xurt e: vegotin erênî ye lê şaşker nîne." },
+                { "language": "pl", "text": "Mocne: sformułowanie jest pozytywne, ale nie wprowadza w błąd." },
+                { "language": "ro", "text": "Puternic: formularea este pozitivă, dar nu induce în eroare." },
+                { "language": "sq", "text": "E fortë: formulimi është pozitiv, por jo mashtrues." }
+              ],
+              "explanationKey": "positive-honest-pilot-framing"
+            },
+            {
+              "id": "weak",
+              "text": "Wir könnten sagen, dass wir aus Qualitätsgründen vorerst nur mit wenigen Kunden starten und den Rest später informieren.",
+              "translations": [
+                { "language": "en", "text": "We could say that for quality reasons we are starting with only a few customers for now and will inform the rest later." },
+                { "language": "fa", "text": "می‌توانیم بگوییم به دلایل کیفیت فعلاً فقط با چند مشتری شروع می‌کنیم و بقیه را بعداً مطلع می‌کنیم." },
+                { "language": "ar", "text": "يمكننا أن نقول إننا لأسباب تتعلق بالجودة نبدأ حالياً مع عدد قليل من العملاء فقط ونبلغ الباقين لاحقاً." },
+                { "language": "tr", "text": "Kalite nedenleriyle şimdilik yalnızca birkaç müşteriyle başladığımızı ve geri kalanları daha sonra bilgilendireceğimizi söyleyebiliriz." },
+                { "language": "ru", "text": "Мы могли бы сказать, что по причинам качества пока стартуем только с несколькими клиентами и позже сообщим остальным." },
+                { "language": "ckb", "text": "دەتوانین بڵێین بە هۆکاری کوالێتی ئێستا تەنها لەگەڵ چەند کڕیارێک دەست پێدەکەین و دواتر ئەوانی تر ئاگادار دەکەینەوە." },
+                { "language": "kmr", "text": "Em dikarin bibêjin ji ber sedemên kalîteyê niha tenê bi çend xerîdaran dest pê dikin û yên din paşê agahdar dikin." },
+                { "language": "pl", "text": "Moglibyśmy powiedzieć, że ze względów jakościowych zaczynamy na razie tylko z kilkoma klientami, a resztę poinformujemy później." },
+                { "language": "ro", "text": "Am putea spune că din motive de calitate începem deocamdată doar cu câțiva clienți și îi informăm pe ceilalți mai târziu." },
+                { "language": "sq", "text": "Mund të themi se për arsye cilësie po fillojmë tani vetëm me pak klientë dhe të tjerët do t'i informojmë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber schwächer: Die Antwort erklärt die Begrenzung, gibt aber keine messbare Logik und wirkt defensiver.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weaker: the answer explains the limit, but gives no measurable logic and sounds more defensive." },
+                { "language": "fa", "text": "قابل‌باور اما ضعیف‌تر: پاسخ محدودیت را توضیح می‌دهد، اما منطق قابل اندازه‌گیری ندارد و دفاعی‌تر به نظر می‌رسد." },
+                { "language": "ar", "text": "معقول لكنه أضعف: يشرح الجواب الحد، لكنه لا يقدم منطقاً قابلاً للقياس ويبدو أكثر دفاعية." },
+                { "language": "tr", "text": "Makuldür ama daha zayıf: cevap sınırlamayı açıklar, ancak ölçülebilir bir mantık vermez ve daha savunmacı duyulur." },
+                { "language": "ru", "text": "Правдоподобно, но слабее: ответ объясняет ограничение, но не дает измеримой логики и звучит более оборонительно." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام لاوازترە: وەڵامەکە سنووردارکردنەکە ڕوون دەکاتەوە، بەڵام لۆژیکی پێوانەکراو نادات و پاراستنەوەیی‌تر دەنگ دەدات." },
+                { "language": "kmr", "text": "Bawerbar e lê lawaztir e: bersiv sînorê rave dike, lê lojîka pîvandinê nade û parastîner xuya dike." },
+                { "language": "pl", "text": "Prawdopodobne, ale słabsze: odpowiedź wyjaśnia ograniczenie, ale nie daje mierzalnej logiki i brzmi bardziej defensywnie." },
+                { "language": "ro", "text": "Plauzibil, dar mai slab: răspunsul explică limita, dar nu oferă o logică măsurabilă și sună mai defensiv." },
+                { "language": "sq", "text": "E besueshme, por më e dobët: përgjigjja shpjegon kufizimin, por nuk jep logjikë të matshme dhe tingëllon më mbrojtëse." }
+              ],
+              "explanationKey": "quality-reason-too-defensive"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Vor dem Start legen wir Kundentyp, Integrationsgrad und Supportfähigkeit fest; Fälle außerhalb davon kommen in die zweite Pilotwelle.",
+              "translations": [
+                { "language": "en", "text": "Before launch, we define customer type, integration level, and supportability; cases outside that go into the second pilot wave." },
+                { "language": "fa", "text": "قبل از شروع، نوع مشتری، سطح ادغام و قابلیت پشتیبانی را تعیین می‌کنیم؛ موارد خارج از آن وارد موج دوم pilot می‌شوند." },
+                { "language": "ar", "text": "قبل البدء نحدد نوع العميل ودرجة التكامل وقابلية الدعم؛ الحالات خارج ذلك تدخل في الموجة الثانية من التجربة." },
+                { "language": "tr", "text": "Başlamadan önce müşteri tipini, entegrasyon derecesini ve desteklenebilirliği belirleriz; bunun dışındaki durumlar ikinci pilot dalgasına gider." },
+                { "language": "ru", "text": "Перед стартом мы определяем тип клиента, уровень интеграции и поддерживаемость; случаи вне этого идут во вторую волну пилота." },
+                { "language": "ckb", "text": "پێش دەستپێک، جۆری کڕیار، ئاستی یەکخستن و توانای پشتگیری دیاری دەکەین؛ حاڵەتەکانی دەرەوەی ئەوە دەچنە شەپۆلی دووەمی pilot." },
+                { "language": "kmr", "text": "Berî destpêkê em cureyê xerîdar, asta entegrasyonê û piştgirîbûnê diyar dikin; rewşên derveyî wê diçin pêla duyem a pilotê." },
+                { "language": "pl", "text": "Przed startem określamy typ klienta, stopień integracji i możliwość wsparcia; przypadki spoza tego zakresu trafiają do drugiej fali pilotażu." },
+                { "language": "ro", "text": "Înainte de start stabilim tipul clientului, gradul de integrare și capacitatea de suport; cazurile din afara acestora intră în al doilea val al pilotului." },
+                { "language": "sq", "text": "Para nisjes përcaktojmë tipin e klientit, nivelin e integrimit dhe mbështetshmërinë; rastet jashtë këtyre hyjnë në valën e dytë të pilotit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schafft operative Grenzen und hält zugleich eine Perspektive offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer creates operational boundaries while still keeping a path open." },
+                { "language": "fa", "text": "قوی: پاسخ مرزهای عملیاتی می‌سازد و هم‌زمان مسیر آینده را باز نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: يخلق الجواب حدوداً تشغيلية ويترك في الوقت نفسه مساراً مفتوحاً." },
+                { "language": "tr", "text": "Güçlü: cevap operasyonel sınırlar oluşturur ve aynı zamanda bir yolu açık tutar." },
+                { "language": "ru", "text": "Сильно: ответ создает операционные границы и одновременно оставляет путь открытым." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنووری کارکردن دروست دەکات و هاوکات ڕێگایەکیش کراوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv sînorên operasyonî çêdike û di heman demê de rêyekê vekirî dihêle." },
+                { "language": "pl", "text": "Mocne: odpowiedź tworzy granice operacyjne i jednocześnie zostawia otwartą ścieżkę." },
+                { "language": "ro", "text": "Puternic: răspunsul creează limite operaționale și păstrează în același timp o cale deschisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja krijon kufij operacionalë dhe njëkohësisht mban një rrugë të hapur." }
+              ],
+              "explanationKey": "criteria-with-second-wave"
+            },
+            {
+              "id": "weak",
+              "text": "Wir könnten mit den einfachsten Kunden anfangen und später entscheiden, welche weiteren Fälle der Support noch übernehmen kann.",
+              "translations": [
+                { "language": "en", "text": "We could start with the simplest customers and later decide which additional cases support can still take on." },
+                { "language": "fa", "text": "می‌توانیم با ساده‌ترین مشتریان شروع کنیم و بعداً تصمیم بگیریم پشتیبانی چه موارد دیگری را هنوز می‌تواند بپذیرد." },
+                { "language": "ar", "text": "يمكننا البدء بأبسط العملاء ثم نقرر لاحقاً أي حالات إضافية يستطيع الدعم توليها." },
+                { "language": "tr", "text": "En basit müşterilerle başlayabilir ve daha sonra desteğin hangi ek durumları üstlenebileceğine karar verebiliriz." },
+                { "language": "ru", "text": "Мы могли бы начать с самых простых клиентов и позже решить, какие дополнительные случаи поддержка еще сможет взять." },
+                { "language": "ckb", "text": "دەتوانین بە سادەترین کڕیاران دەست پێبکەین و دواتر بڕیار بدەین پشتگیری کام حاڵەتە زیاترانە هێشتا دەتوانێت وەربگرێت." },
+                { "language": "kmr", "text": "Em dikarin bi xerîdarên herî hêsan dest pê bikin û paşê biryar bidin ka piştgirî kîjan rewşên din dikare bistîne." },
+                { "language": "pl", "text": "Moglibyśmy zacząć od najprostszych klientów i później zdecydować, jakie kolejne przypadki wsparcie może jeszcze przejąć." },
+                { "language": "ro", "text": "Am putea începe cu cei mai simpli clienți și decide mai târziu ce alte cazuri mai poate prelua suportul." },
+                { "language": "sq", "text": "Mund të fillojmë me klientët më të thjeshtë dhe më vonë të vendosim cilat raste të tjera mund të marrë ende mbështetja." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber ungenau: Einfachste Kunden ist kein belastbares Kriterium und verschiebt die Supportgrenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but imprecise: simplest customers is not a robust criterion and postpones the support boundary." },
+                { "language": "fa", "text": "قابل‌باور اما غیر دقیق: ساده‌ترین مشتریان معیار قابل اتکایی نیست و مرز پشتیبانی را عقب می‌اندازد." },
+                { "language": "ar", "text": "معقول لكنه غير دقيق: أبسط العملاء ليس معياراً متيناً ويؤجل حد الدعم." },
+                { "language": "tr", "text": "Makuldür ama belirsiz: en basit müşteriler sağlam bir kriter değildir ve destek sınırını erteler." },
+                { "language": "ru", "text": "Правдоподобно, но неточно: самые простые клиенты не являются надежным критерием и откладывают границу поддержки." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام ناوردە: سادەترین کڕیاران پێوەرێکی پشتپێبەستراو نییە و سنووری پشتگیری دوا دەخات." },
+                { "language": "kmr", "text": "Bawerbar e lê nezelal e: xerîdarên herî hêsan pîvaneke xurt nîne û sînora piştgiriyê paş dixe." },
+                { "language": "pl", "text": "Prawdopodobne, ale nieprecyzyjne: najprostszy klient nie jest solidnym kryterium i przesuwa granicę wsparcia." },
+                { "language": "ro", "text": "Plauzibil, dar imprecis: cei mai simpli clienți nu reprezintă un criteriu solid și amână limita suportului." },
+                { "language": "sq", "text": "E besueshme, por e pasaktë: klientët më të thjeshtë nuk janë kriter i qëndrueshëm dhe e shtyn kufirin e mbështetjes." }
+              ],
+              "explanationKey": "vague-customer-selection"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Nach drei Wochen prüfen wir Nutzungsdaten, Supportaufwand und kritische Fehler; bei zwei grünen Werten erweitern wir die Kundengruppe.",
+              "translations": [
+                { "language": "en", "text": "After three weeks, we review usage data, support effort, and critical errors; if two values are green, we expand the customer group." },
+                { "language": "fa", "text": "بعد از سه هفته داده‌های استفاده، هزینه پشتیبانی و خطاهای بحرانی را بررسی می‌کنیم؛ اگر دو شاخص سبز باشد، گروه مشتری را گسترش می‌دهیم." },
+                { "language": "ar", "text": "بعد ثلاثة أسابيع نراجع بيانات الاستخدام وجهد الدعم والأخطاء الحرجة؛ إذا كانت قيمتان في النطاق الأخضر، نوسع مجموعة العملاء." },
+                { "language": "tr", "text": "Üç hafta sonra kullanım verilerini, destek çabasını ve kritik hataları inceleriz; iki değer yeşilse müşteri grubunu genişletiriz." },
+                { "language": "ru", "text": "Через три недели проверяем данные использования, нагрузку на поддержку и критические ошибки; если два показателя зеленые, расширяем группу клиентов." },
+                { "language": "ckb", "text": "دوای سێ هەفتە داتای بەکارهێنان، تێچوونی پشتگیری و هەڵە گرنگەکان پێدا دەچینەوە؛ ئەگەر دوو شاخص سەوز بوون، گرووپی کڕیار فراوان دەکەین." },
+                { "language": "kmr", "text": "Piştî sê hefteyan em daneyên bikaranînê, barê piştgiriyê û şaşiyên krîtîk vedikolin; heke du nirx kesk bin, em koma xerîdaran berfireh dikin." },
+                { "language": "pl", "text": "Po trzech tygodniach analizujemy dane użycia, nakład wsparcia i błędy krytyczne; jeśli dwa wskaźniki są zielone, rozszerzamy grupę klientów." },
+                { "language": "ro", "text": "După trei săptămâni analizăm datele de utilizare, efortul de suport și erorile critice; dacă două valori sunt verzi, extindem grupul de clienți." },
+                { "language": "sq", "text": "Pas tri javësh shqyrtojmë të dhënat e përdorimit, përpjekjen e mbështetjes dhe gabimet kritike; nëse dy vlera janë të gjelbra, e zgjerojmë grupin e klientëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Erweiterung wird an messbare Kriterien geknüpft und bleibt damit für alle Seiten nachvollziehbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the expansion is tied to measurable criteria and therefore remains understandable for all sides." },
+                { "language": "fa", "text": "قوی: گسترش به معیارهای قابل اندازه‌گیری وصل می‌شود و برای همه طرف‌ها قابل‌فهم می‌ماند." },
+                { "language": "ar", "text": "قوي: تُربط التوسعة بمعايير قابلة للقياس وتبقى بذلك مفهومة لكل الأطراف." },
+                { "language": "tr", "text": "Güçlü: genişletme ölçülebilir kriterlere bağlanır ve böylece tüm taraflar için anlaşılır kalır." },
+                { "language": "ru", "text": "Сильно: расширение привязано к измеримым критериям и поэтому остается понятным для всех сторон." },
+                { "language": "ckb", "text": "بەهێزە: فراوانکردن بە پێوەری پێوانەکراو دەبەسترێتەوە و بەمە بۆ هەموو لایەک تێگەیشتوو دەمێنێتەوە." },
+                { "language": "kmr", "text": "Xurt e: berfirehkirin bi pîvanên pîvandinê ve tê girêdan û ji bo hemû aliyan têgihiştî dimîne." },
+                { "language": "pl", "text": "Mocne: rozszerzenie jest powiązane z mierzalnymi kryteriami i pozostaje zrozumiałe dla wszystkich stron." },
+                { "language": "ro", "text": "Puternic: extinderea este legată de criterii măsurabile și rămâne astfel clară pentru toate părțile." },
+                { "language": "sq", "text": "E fortë: zgjerimi lidhet me kritere të matshme dhe mbetet i kuptueshëm për të gjitha palët." }
+              ],
+              "explanationKey": "measurable-second-wave"
+            },
+            {
+              "id": "weak",
+              "text": "Wir könnten nach einigen Wochen gemeinsam schauen, ob der Pilot gut genug läuft, um weitere Kunden aufzunehmen.",
+              "translations": [
+                { "language": "en", "text": "After a few weeks, we could look together at whether the pilot is running well enough to include more customers." },
+                { "language": "fa", "text": "بعد از چند هفته می‌توانیم با هم ببینیم آیا pilot آن‌قدر خوب پیش می‌رود که مشتریان بیشتری اضافه کنیم یا نه." },
+                { "language": "ar", "text": "بعد بضعة أسابيع يمكننا أن ننظر معاً فيما إذا كانت التجربة تسير جيداً بما يكفي لإدخال عملاء آخرين." },
+                { "language": "tr", "text": "Birkaç hafta sonra pilotun daha fazla müşteriyi dahil edecek kadar iyi gidip gitmediğine birlikte bakabiliriz." },
+                { "language": "ru", "text": "Через несколько недель мы могли бы вместе посмотреть, идет ли пилот достаточно хорошо, чтобы включить дополнительных клиентов." },
+                { "language": "ckb", "text": "دوای چەند هەفتە دەتوانین پێکەوە ببینین ئایا pilot بە باشی بەڕێوە دەچێت تا کڕیاری زیاتر زیاد بکەین." },
+                { "language": "kmr", "text": "Piştî çend hefteyan em dikarin bi hev re binêrin ka pilot têra xwe baş diçe da ku xerîdarên din tevlî bikin." },
+                { "language": "pl", "text": "Po kilku tygodniach moglibyśmy wspólnie sprawdzić, czy pilotaż działa wystarczająco dobrze, aby dołączyć kolejnych klientów." },
+                { "language": "ro", "text": "După câteva săptămâni am putea analiza împreună dacă pilotul merge suficient de bine pentru a include alți clienți." },
+                { "language": "sq", "text": "Pas disa javësh mund të shohim së bashku nëse piloti po ecën mjaftueshëm mirë për të përfshirë klientë të tjerë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unscharf: Gut genug ist kein Kriterium, das Vertrieb und Support verlässlich planen lässt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: good enough is not a criterion that lets sales and support plan reliably." },
+                { "language": "fa", "text": "قابل‌باور اما مبهم: آن‌قدر خوب معیار مشخصی نیست که فروش و پشتیبانی بتوانند قابل‌اتکا برنامه‌ریزی کنند." },
+                { "language": "ar", "text": "معقول لكنه غامض جداً: جيد بما يكفي ليس معياراً يسمح للمبيعات والدعم بالتخطيط بشكل موثوق." },
+                { "language": "tr", "text": "Makuldür ama çok belirsiz: yeterince iyi, satış ve desteğin güvenilir plan yapmasını sağlayan bir kriter değildir." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: достаточно хорошо не является критерием, позволяющим продажам и поддержке надежно планировать." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر ناڕوونە: بە باشی تێر پێوەرێک نییە کە فرۆشتن و پشتگیری بتوانن بە پشتپێبەستنی پلان بکەن." },
+                { "language": "kmr", "text": "Bawerbar e lê pir nezelal e: têra xwe baş pîvanek nîne ku firotan û piştgirî bikarin bi pêbawerî plan bikin." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt nieostre: wystarczająco dobrze nie jest kryterium, które pozwala sprzedaży i wsparciu planować niezawodnie." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: suficient de bine nu este un criteriu care să permită vânzărilor și suportului să planifice fiabil." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: mjaftueshëm mirë nuk është kriter që i lejon shitjet dhe mbështetjen të planifikojnë me besueshmëri." }
+              ],
+              "explanationKey": "review-without-metrics"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei mehreren Interessen sollten Sie nicht sofort vermitteln. Zuerst müssen legitime Ziele und verdeckte Risiken nebeneinander sichtbar werden.",
+          "translations": [
+            { "language": "en", "text": "When several interests are involved, you should not mediate immediately. First, legitimate goals and hidden risks need to become visible side by side." },
+            { "language": "fa", "text": "وقتی چند منفعت درگیر است، نباید فوراً میانجی‌گری کنید. اول باید هدف‌های مشروع و ریسک‌های پنهان کنار هم قابل‌دید شوند." },
+            { "language": "ar", "text": "عندما توجد عدة مصالح، لا ينبغي أن تتوسط فوراً. أولاً يجب أن تصبح الأهداف المشروعة والمخاطر الخفية مرئية جنباً إلى جنب." },
+            { "language": "tr", "text": "Birden fazla çıkar olduğunda hemen arabuluculuk yapmamalısınız. Önce meşru hedefler ve gizli riskler yan yana görünür olmalıdır." },
+            { "language": "ru", "text": "Когда есть несколько интересов, не следует сразу посредничать. Сначала законные цели и скрытые риски должны стать видимыми рядом." },
+            { "language": "ckb", "text": "کاتێک چەند بەرژەوەندی هەیە، نابێت دەستبەجێ ناوبژیوانی بکەیت. سەرەتا ئامانجە ڕەواکان و مەترسییە شاراوەکان دەبێت لە تەنیشت یەک دیار بن." },
+            { "language": "kmr", "text": "Dema çend berjewendî hebin, divê hûn yekser navbeynkarî nekin. Pêşî divê armancên rewa û xeterên veşartî li rex hev xuya bibin." },
+            { "language": "pl", "text": "Przy kilku interesach nie należy od razu mediować. Najpierw legalne cele i ukryte ryzyka muszą stać się widoczne obok siebie." },
+            { "language": "ro", "text": "Când sunt implicate mai multe interese, nu ar trebui să mediați imediat. Mai întâi obiectivele legitime și riscurile ascunse trebuie să devină vizibile împreună." },
+            { "language": "sq", "text": "Kur përfshihen disa interesa, nuk duhet të ndërmjetësoni menjëherë. Së pari, qëllimet legjitime dhe rreziqet e fshehura duhet të bëhen të dukshme krah për krah." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language-function",
+          "text": "Ein C1-Kompromiss verändert oft die Frage: nicht ob gestartet wird, sondern unter welchen Bedingungen verantwortbar gestartet wird.",
+          "translations": [
+            { "language": "en", "text": "A C1 compromise often changes the question: not whether to start, but under which conditions starting is responsible." },
+            { "language": "fa", "text": "یک مصالحه C1 اغلب سؤال را تغییر می‌دهد: نه اینکه شروع کنیم یا نه، بلکه تحت چه شرایطی شروع مسئولانه است." },
+            { "language": "ar", "text": "غالباً يغيّر حل C1 الوسط السؤال: ليس هل نبدأ، بل تحت أي شروط يكون البدء مسؤولاً." },
+            { "language": "tr", "text": "C1 düzeyinde bir uzlaşma çoğu zaman soruyu değiştirir: başlayıp başlamamak değil, hangi koşullarda sorumlu biçimde başlanacağı." },
+            { "language": "ru", "text": "Компромисс уровня C1 часто меняет вопрос: не начинать ли, а при каких условиях старт будет ответственным." },
+            { "language": "ckb", "text": "ڕێککەوتنی C1 زۆرجار پرسیارەکە دەگۆڕێت: نە ئەوەی دەست پێبکەین یان نا، بەڵکو لە ژێر کام مەرجدا دەستپێک بەرپرسیارانەیە." },
+            { "language": "kmr", "text": "Lihevhatina C1 gelek caran pirsê diguherîne: ne ka em dest pê bikin an na, lê di bin kîjan şertan de destpêk berpirsiyar e." },
+            { "language": "pl", "text": "Kompromis na poziomie C1 często zmienia pytanie: nie czy startować, lecz na jakich warunkach start jest odpowiedzialny." },
+            { "language": "ro", "text": "Un compromis C1 schimbă adesea întrebarea: nu dacă începem, ci în ce condiții începerea este responsabilă." },
+            { "language": "sq", "text": "Një kompromis C1 shpesh e ndryshon pyetjen: jo nëse nisemi, por në cilat kushte nisja është e përgjegjshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "tone",
+          "text": "Positive Außenkommunikation darf nicht beschönigen. Kuratierter Pilot ist stark, wenn die Auswahl wirklich messbar begründet wird.",
+          "translations": [
+            { "language": "en", "text": "Positive external communication must not gloss over reality. Curated pilot is strong when the selection is truly justified by measurable reasons." },
+            { "language": "fa", "text": "ارتباط بیرونی مثبت نباید واقعیت را بزک کند. pilot گزینش‌شده وقتی قوی است که انتخاب واقعاً با دلایل قابل اندازه‌گیری توجیه شود." },
+            { "language": "ar", "text": "لا ينبغي للتواصل الخارجي الإيجابي أن يجمّل الواقع. يكون تعبير مشروع تجريبي منتقى قوياً عندما يكون الاختيار مبرراً فعلاً بأسباب قابلة للقياس." },
+            { "language": "tr", "text": "Olumlu dış iletişim gerçeği süslememelidir. Küratörlü pilot ifadesi, seçim gerçekten ölçülebilir nedenlerle gerekçelendirildiğinde güçlüdür." },
+            { "language": "ru", "text": "Позитивная внешняя коммуникация не должна приукрашивать реальность. Кураторский пилот силен, когда выбор действительно обоснован измеримыми причинами." },
+            { "language": "ckb", "text": "پەیوەندیکردنی دەرەوەی ئەرێنی نابێت ڕاستی جوانکاری بکات. pilotی هەڵبژێردراو کاتێک بەهێزە کە هەڵبژاردنەکە بە هۆکاری پێوانەکراو بەڕاستی پاساو بدرێت." },
+            { "language": "kmr", "text": "Ragihandina derveyî ya erênî divê rastiyê xweş neke. Piloteke hilbijartî wê demê xurt e ku hilbijartin bi sedemên pîvandinê bi rastî were hincet kirin." },
+            { "language": "pl", "text": "Pozytywna komunikacja zewnętrzna nie może upiększać rzeczywistości. Pilotaż kuratorowany jest mocny, gdy wybór jest naprawdę uzasadniony mierzalnymi powodami." },
+            { "language": "ro", "text": "Comunicarea externă pozitivă nu trebuie să cosmetizeze realitatea. Pilot curat este puternic când selecția este justificată real prin motive măsurabile." },
+            { "language": "sq", "text": "Komunikimi i jashtëm pozitiv nuk duhet ta zbukurojë realitetin. Pilot i kuruar është i fortë kur zgjedhja arsyetohet vërtet me arsye të matshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "implementation",
+          "text": "Grenzen wirken weniger hart, wenn sie mit einer zweiten Welle verbunden werden. So bleibt der Ausschluss temporär und nachvollziehbar.",
+          "translations": [
+            { "language": "en", "text": "Boundaries sound less harsh when they are connected to a second wave. That makes exclusion temporary and understandable." },
+            { "language": "fa", "text": "مرزها وقتی به موج دوم وصل شوند کمتر سخت به نظر می‌رسند. این باعث می‌شود کنارگذاشتن موقت و قابل‌فهم باشد." },
+            { "language": "ar", "text": "تبدو الحدود أقل حدة عندما ترتبط بموجة ثانية. هكذا يصبح الاستبعاد مؤقتاً ومفهوماً." },
+            { "language": "tr", "text": "Sınırlar ikinci dalgayla bağlantılı olduğunda daha az sert duyulur. Böylece dışarıda bırakma geçici ve anlaşılır olur." },
+            { "language": "ru", "text": "Границы звучат менее жестко, когда связаны со второй волной. Так исключение становится временным и понятным." },
+            { "language": "ckb", "text": "سنوورەکان کەمتر توند دەنگ دەدەن، کاتێک بە شەپۆلی دووەم دەبەسترێنەوە. بەمە دەرخستنەکە کاتی و تێگەیشتوو دەبێت." },
+            { "language": "kmr", "text": "Sînor kêm tund xuya dikin dema bi pêla duyem ve girêdayî bin. Wisa derxistin demkî û têgihiştî dibe." },
+            { "language": "pl", "text": "Granice brzmią mniej ostro, gdy są połączone z drugą falą. Wykluczenie staje się wtedy tymczasowe i zrozumiałe." },
+            { "language": "ro", "text": "Limitele sună mai puțin dur când sunt legate de un al doilea val. Astfel excluderea devine temporară și inteligibilă." },
+            { "language": "sq", "text": "Kufijtë tingëllojnë më pak të ashpër kur lidhen me një valë të dytë. Kështu përjashtimi bëhet i përkohshëm dhe i kuptueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "decision-quality",
+          "text": "Review-Kriterien verhindern spätere Streitfragen. Gute Kriterien sind messbar, vorher bekannt und für beide Seiten relevant.",
+          "translations": [
+            { "language": "en", "text": "Review criteria prevent later disputes. Good criteria are measurable, known in advance, and relevant to both sides." },
+            { "language": "fa", "text": "معیارهای بازبینی از اختلاف‌های بعدی جلوگیری می‌کنند. معیار خوب قابل اندازه‌گیری، از قبل شناخته‌شده و برای هر دو طرف مرتبط است." },
+            { "language": "ar", "text": "تمنع معايير المراجعة الخلافات اللاحقة. المعايير الجيدة قابلة للقياس، ومعروفة مسبقاً، وذات صلة بالطرفين." },
+            { "language": "tr", "text": "Değerlendirme kriterleri sonraki tartışmaları önler. İyi kriterler ölçülebilir, önceden bilinir ve iki taraf için de ilgilidir." },
+            { "language": "ru", "text": "Критерии проверки предотвращают будущие споры. Хорошие критерии измеримы, известны заранее и релевантны для обеих сторон." },
+            { "language": "ckb", "text": "پێوەرەکانی پێداچوونەوە ڕێگری لە ناکۆکیی دواتر دەکەن. پێوەری باش پێوانەکراوە، پێشتر ناسراوە و بۆ هەردوو لا گرنگە." },
+            { "language": "kmr", "text": "Pîvanên vekolînê pirsên nakokî yên paşê asteng dikin. Pîvanên baş têne pîvandin, ji berê ve zanîn û ji bo her du aliyan têkildar in." },
+            { "language": "pl", "text": "Kryteria przeglądu zapobiegają późniejszym sporom. Dobre kryteria są mierzalne, znane z góry i istotne dla obu stron." },
+            { "language": "ro", "text": "Criteriile de revizuire previn disputele ulterioare. Criteriile bune sunt măsurabile, cunoscute dinainte și relevante pentru ambele părți." },
+            { "language": "sq", "text": "Kriteret e rishikimit parandalojnë mosmarrëveshjet e mëvonshme. Kriteret e mira janë të matshme, të njohura paraprakisht dhe të rëndësishme për të dyja palët." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "multi-stakeholder-negotiation",
+          "placement": "hero",
+          "purpose": "Show a neutral workplace negotiation with several teams balancing priorities and pilot criteria.",
+          "altText": "A clean educational illustration of a workplace negotiation with sales, support, and product roles around a meeting table.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A workplace negotiation with sales, support, and product roles around a meeting table." },
+            { "language": "fa", "text": "یک مذاکره کاری با نقش‌های فروش، پشتیبانی و محصول دور میز جلسه." },
+            { "language": "ar", "text": "تفاوض في مكان العمل مع أدوار المبيعات والدعم والمنتج حول طاولة اجتماع." },
+            { "language": "tr", "text": "Toplantı masası etrafında satış, destek ve ürün rollerinin yer aldığı bir işyeri müzakeresi." },
+            { "language": "ru", "text": "Рабочие переговоры с ролями продаж, поддержки и продукта за столом совещаний." },
+            { "language": "ckb", "text": "دانوساندنێکی کاری بە ڕۆڵەکانی فرۆشتن، پشتگیری و بەرهەم لە دەوری مێزی کۆبوونەوە." },
+            { "language": "kmr", "text": "Danûstandineke kar bi rolên firotan, piştgirî û berhemê li dora maseya civînê." },
+            { "language": "pl", "text": "Negocjacje w pracy z rolami sprzedaży, wsparcia i produktu przy stole spotkań." },
+            { "language": "ro", "text": "O negociere la locul de muncă cu roluri de vânzări, suport și produs în jurul unei mese de ședință." },
+            { "language": "sq", "text": "Një negociatë pune me role shitjesh, mbështetjeje dhe produkti rreth një tavoline takimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adults in a German workplace meeting room, sales, support, and product representatives discussing a staged pilot plan with simple abstract cards for criteria and review, no readable private text, no logos, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

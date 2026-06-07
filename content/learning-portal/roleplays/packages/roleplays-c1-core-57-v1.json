@@ -1,0 +1,851 @@
+{
+  "packageId": "roleplays-c1-core-57-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 57 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 57",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ueber-klimaschutz-und-soziale-folgen-argumentieren",
+      "linkedDialogueSlug": null,
+      "title": "Über Klimaschutz und soziale Folgen argumentieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Arguing about climate protection and social consequences" },
+        { "language": "fa", "text": "استدلال درباره حفاظت از اقلیم و پیامدهای اجتماعی" },
+        { "language": "ar", "text": "المجادلة حول حماية المناخ والآثار الاجتماعية" },
+        { "language": "tr", "text": "İklim koruması ve sosyal sonuçlar hakkında argüman kurmak" },
+        { "language": "ru", "text": "Аргументировать о защите климата и социальных последствиях" },
+        { "language": "ckb", "text": "بەڵگەهێنانەوە دەربارەی پاراستنی کەشوهەوا و ئەنجامە کۆمەڵایەتییەکان" },
+        { "language": "kmr", "text": "Arguman kirin li ser parastina avhewa û encamên civakî" },
+        { "language": "pl", "text": "Argumentowanie o ochronie klimatu i skutkach społecznych" },
+        { "language": "ro", "text": "Argumentarea despre protecția climei și consecințele sociale" },
+        { "language": "sq", "text": "Argumentimi për mbrojtjen e klimës dhe pasojat shoqërore" }
+      ],
+      "description": "In einer Prüfungssimulation diskutiert die Gruppe einen städtischen Vorschlag: Parkplätze sollen reduziert und der Nahverkehr günstiger werden. Sie sollen Klimaschutz, soziale Belastung, Kosten, Umsetzbarkeit und Ausgleichsmaßnahmen differenziert abwägen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an exam simulation, the group discusses a city proposal: parking spaces should be reduced and public transport made cheaper. You should weigh climate protection, social burden, costs, feasibility, and compensatory measures in a nuanced way." },
+        { "language": "fa", "text": "در یک شبیه‌سازی امتحان، گروه درباره یک پیشنهاد شهری بحث می‌کند: پارکینگ‌ها کاهش یابند و حمل‌ونقل عمومی ارزان‌تر شود. باید حفاظت از اقلیم، فشار اجتماعی، هزینه‌ها، امکان اجرا و اقدامات جبرانی را دقیق بسنجید." },
+        { "language": "ar", "text": "في محاكاة امتحانية تناقش المجموعة اقتراحاً بلدياً: تقليل أماكن الوقوف وجعل النقل العام أرخص. عليك الموازنة بدقة بين حماية المناخ والعبء الاجتماعي والتكاليف وقابلية التنفيذ وإجراءات التعويض." },
+        { "language": "tr", "text": "Bir sınav simülasyonunda grup bir şehir önerisini tartışır: park yerleri azaltılacak ve toplu taşıma ucuzlatılacaktır. İklim korumasını, sosyal yükü, maliyetleri, uygulanabilirliği ve telafi önlemlerini nüanslı tartmalısınız." },
+        { "language": "ru", "text": "В экзаменационной симуляции группа обсуждает городское предложение: сократить парковочные места и сделать общественный транспорт дешевле. Нужно дифференцированно взвесить защиту климата, социальную нагрузку, затраты, реализуемость и компенсационные меры." },
+        { "language": "ckb", "text": "لە شبیه‌سازیی تاقیکردنەوەدا گروپەکە پێشنیارێکی شارەوانی گفتوگۆ دەکات: شوێنی پارککردن کەم بکرێتەوە و هاتوچۆی گشتی هەرزانتر بکرێت. پێویستە پاراستنی کەشوهەوا، فشاری کۆمەڵایەتی، تێچوو، جێبەجێکردن و ڕێکاری قەرەبووکردنەوە بە وردی هەڵبسەنگێنیت." },
+        { "language": "kmr", "text": "Di şêwazeke azmûnê de kom pêşniyareke bajarî gotûbêj dike: cihên parkkirinê werin kêmkirin û veguhestina giştî erzan bibe. Divê parastina avhewa, barê civakî, lêçûn, pêkanîn û tedbîrên telafîkirinê bi hûrgilî bisengînin." },
+        { "language": "pl", "text": "W symulacji egzaminacyjnej grupa omawia propozycję miasta: miejsca parkingowe mają zostać ograniczone, a transport publiczny tańszy. Należy zniuansowanie zważyć ochronę klimatu, obciążenia społeczne, koszty, wykonalność i działania kompensacyjne." },
+        { "language": "ro", "text": "Într-o simulare de examen, grupul discută o propunere urbană: locurile de parcare să fie reduse, iar transportul public să devină mai ieftin. Trebuie să cântăriți nuanțat protecția climei, povara socială, costurile, fezabilitatea și măsurile compensatorii." },
+        { "language": "sq", "text": "Në një simulim provimi, grupi diskuton një propozim të qytetit: vendet e parkimit të pakësohen dhe transporti publik të bëhet më i lirë. Duhet të peshoni me nuanca mbrojtjen e klimës, barrën shoqërore, kostot, zbatueshmërinë dhe masat kompensuese." }
+      ],
+      "learnerGoal": "Eine Klimaschutzmaßnahme differenziert diskutieren: ökologische Dringlichkeit anerkennen, soziale Folgen benennen, Kosten und Umsetzbarkeit prüfen, Ausgleich vorschlagen und eine begründete Priorität formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss a climate-protection measure in a nuanced way: acknowledge ecological urgency, name social consequences, examine costs and feasibility, propose compensation, and formulate a justified priority." },
+        { "language": "fa", "text": "یک اقدام حفاظت از اقلیم را دقیق بحث کنید: فوریت زیست‌محیطی را بپذیرید، پیامدهای اجتماعی را نام ببرید، هزینه و امکان اجرا را بررسی کنید، جبران پیشنهاد دهید و اولویتی مستدل بیان کنید." },
+        { "language": "ar", "text": "ناقش إجراء لحماية المناخ بدقة: اعترف بالإلحاح البيئي، وسمّ الآثار الاجتماعية، وافحص التكلفة وقابلية التنفيذ، واقترح تعويضاً، وصغ أولوية مبررة." },
+        { "language": "tr", "text": "Bir iklim koruma önlemini nüanslı tartışın: ekolojik aciliyeti kabul edin, sosyal sonuçları adlandırın, maliyet ve uygulanabilirliği inceleyin, telafi önerin ve gerekçeli bir öncelik formüle edin." },
+        { "language": "ru", "text": "Дифференцированно обсудить меру защиты климата: признать экологическую срочность, назвать социальные последствия, проверить затраты и реализуемость, предложить компенсацию и сформулировать обоснованный приоритет." },
+        { "language": "ckb", "text": "ڕێکاری پاراستنی کەشوهەوا بە وردی گفتوگۆ بکە: پەلەی ژینگەیی بناسە، ئەنجامە کۆمەڵایەتییەکان ناو ببە، تێچوو و جێبەجێکردن بپشکنە، قەرەبوو پێشنیار بکە و ئەولەویەتێکی بەڵگەدار دابڕێژە." },
+        { "language": "kmr", "text": "Tedbîreke parastina avhewa bi hûrgilî gotûbêj bikin: lezgîniya ekolojîk qebûl bikin, encamên civakî bi nav bikin, lêçûn û pêkanînê kontrol bikin, telafî pêşniyar bikin û pêşengiyeke bi sedem formule bikin." },
+        { "language": "pl", "text": "Zniuansowanie omówić działanie na rzecz klimatu: uznać pilność ekologiczną, nazwać skutki społeczne, sprawdzić koszty i wykonalność, zaproponować rekompensatę i sformułować uzasadniony priorytet." },
+        { "language": "ro", "text": "Discutați nuanțat o măsură de protecție climatică: recunoașteți urgența ecologică, numiți consecințele sociale, verificați costurile și fezabilitatea, propuneți compensare și formulați o prioritate justificată." },
+        { "language": "sq", "text": "Diskutoni me nuanca një masë për mbrojtjen e klimës: pranoni urgjencën ekologjike, përmendni pasojat shoqërore, shqyrtoni kostot dhe zbatueshmërinë, propozoni kompensim dhe formuloni një përparësi të arsyetuar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "society",
+      "topics": ["everyday-life", "education-and-training"],
+      "examProfiles": ["c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 57,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant arguing about climate and social impact" },
+            { "language": "fa", "text": "شرکت‌کننده‌ای که درباره اقلیم و پیامد اجتماعی استدلال می‌کند" },
+            { "language": "ar", "text": "مشارك يجادل حول المناخ والأثر الاجتماعي" },
+            { "language": "tr", "text": "İklim ve sosyal etki hakkında argüman kuran katılımcı" },
+            { "language": "ru", "text": "Участник, аргументирующий о климате и социальном воздействии" },
+            { "language": "ckb", "text": "بەشداربووێک کە دەربارەی کەشوهەوا و کاریگەریی کۆمەڵایەتی بەڵگە دەهێنێتەوە" },
+            { "language": "kmr", "text": "Beşdarek ku li ser avhewa û bandora civakî arguman dike" },
+            { "language": "pl", "text": "Uczestnik argumentujący o klimacie i skutkach społecznych" },
+            { "language": "ro", "text": "Participant care argumentează despre climă și impact social" },
+            { "language": "sq", "text": "Pjesëmarrës që argumenton për klimën dhe ndikimin shoqëror" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderator/in",
+          "translations": [
+            { "language": "en", "text": "Discussion moderator" },
+            { "language": "fa", "text": "گرداننده بحث" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Tartışma moderatörü" },
+            { "language": "ru", "text": "Модератор дискуссии" },
+            { "language": "ckb", "text": "ڕێکخەری گفتوگۆ" },
+            { "language": "kmr", "text": "Moderatorê gotûbêjê" },
+            { "language": "pl", "text": "Moderator dyskusji" },
+            { "language": "ro", "text": "Moderator de discuție" },
+            { "language": "sq", "text": "Moderator i diskutimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Eine Stadt will Parkflächen reduzieren, Radwege ausbauen und den Nahverkehr günstiger machen. Kritiker befürchten höhere Belastungen für Pendler und kleine Betriebe. Wie eröffnen Sie die Diskussion?",
+          "translations": [
+            { "language": "en", "text": "A city wants to reduce parking areas, expand bike lanes, and make public transport cheaper. Critics fear higher burdens for commuters and small businesses. How do you open the discussion?" },
+            { "language": "fa", "text": "یک شهر می‌خواهد پارکینگ‌ها را کم کند، مسیرهای دوچرخه را گسترش دهد و حمل‌ونقل عمومی را ارزان‌تر کند. منتقدان از فشار بیشتر بر رفت‌وآمدکنندگان و کسب‌وکارهای کوچک می‌ترسند. بحث را چگونه آغاز می‌کنید؟" },
+            { "language": "ar", "text": "تريد مدينة تقليل مساحات الوقوف وتوسيع مسارات الدراجات وجعل النقل العام أرخص. يخشى المنتقدون أعباء أعلى على المسافرين يومياً والشركات الصغيرة. كيف تفتح النقاش؟" },
+            { "language": "tr", "text": "Bir şehir park alanlarını azaltmak, bisiklet yollarını genişletmek ve toplu taşımayı ucuzlatmak istiyor. Eleştirmenler işe gidip gelenler ve küçük işletmeler için daha fazla yükten korkuyor. Tartışmayı nasıl açarsınız?" },
+            { "language": "ru", "text": "Город хочет сократить парковочные площади, расширить велодорожки и удешевить общественный транспорт. Критики опасаются большей нагрузки для пассажиров и малого бизнеса. Как Вы откроете дискуссию?" },
+            { "language": "ckb", "text": "شارێک دەیەوێت شوێنی پارککردن کەم بکاتەوە، ڕێگای پاسکیل فراوان بکات و هاتوچۆی گشتی هەرزانتر بکات. ڕەخنەگران لە فشاری زیاتر بۆ هاتووچۆکەران و کارگای بچووک دەترسن. چۆن گفتوگۆکە دەست پێدەکەیت؟" },
+            { "language": "kmr", "text": "Bajarek dixwaze qadên parkkirinê kêm bike, rêyên bisiklêtê fireh bike û veguhestina giştî erzan bike. Rexnegir ji barê zêdetir ji bo rêwiyan û karsaziyên biçûk ditirsin. Hûn gotûbêjê çawa vedikin?" },
+            { "language": "pl", "text": "Miasto chce ograniczyć miejsca parkingowe, rozbudować drogi rowerowe i obniżyć cenę transportu publicznego. Krytycy obawiają się większych obciążeń dla dojeżdżających i małych firm. Jak rozpocząłby Pan dyskusję?" },
+            { "language": "ro", "text": "Un oraș vrea să reducă parcările, să extindă pistele de biciclete și să ieftinească transportul public. Criticii se tem de poveri mai mari pentru navetiști și firme mici. Cum deschideți discuția?" },
+            { "language": "sq", "text": "Një qytet dëshiron të zvogëlojë hapësirat e parkimit, të zgjerojë korsitë e biçikletave dhe ta bëjë transportin publik më të lirë. Kritikët druajnë barrë më të madhe për udhëtarët e përditshëm dhe bizneset e vogla. Si e hapni diskutimin?" }
+          ],
+          "function": "open-climate-social-discussion",
+          "toneNote": "formal and balanced"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Vorschlag weder als reine Zumutung noch als einfache Lösung darstellen. Klimaschutz ist dringend, aber politisch tragfähig wird er nur, wenn Kosten, Alternativen und soziale Ausgleichsmaßnahmen mitgedacht werden.",
+          "translations": [
+            { "language": "en", "text": "I would present the proposal neither as a pure imposition nor as a simple solution. Climate protection is urgent, but it becomes politically viable only if costs, alternatives, and social compensation measures are considered as well." },
+            { "language": "fa", "text": "پیشنهاد را نه صرفاً تحمیل و نه راه‌حل ساده نشان می‌دهم. حفاظت از اقلیم فوری است، اما فقط وقتی از نظر سیاسی قابل‌حمل می‌شود که هزینه‌ها، جایگزین‌ها و اقدامات جبرانی اجتماعی هم دیده شوند." },
+            { "language": "ar", "text": "لن أعرض الاقتراح كعبء صرف ولا كحل بسيط. حماية المناخ ملحة، لكنها تصبح قابلة سياسياً فقط إذا أُخذت التكاليف والبدائل وإجراءات التعويض الاجتماعي في الحسبان." },
+            { "language": "tr", "text": "Öneriyi ne yalnızca bir dayatma ne de basit bir çözüm olarak sunardım. İklim koruması acildir, ama maliyetler, alternatifler ve sosyal telafi önlemleri birlikte düşünülürse siyasi olarak taşınabilir olur." },
+            { "language": "ru", "text": "Я бы представил предложение ни как чистое бремя, ни как простое решение. Защита климата срочна, но политически жизнеспособной она становится только тогда, когда учитываются затраты, альтернативы и социальные компенсационные меры." },
+            { "language": "ckb", "text": "پێشنیارەکە نە وەک بارێکی تەواو و نە وەک چارەسەرێکی سادە پیشان دەدەم. پاراستنی کەشوهەوا پەلەیە، بەڵام تەنها کاتێک لە ڕووی سیاسییەوە هەڵگیر دەبێت کە تێچوو، جێگرەوەکان و ڕێکاری قەرەبووی کۆمەڵایەتی پێکەوە بیر لێ بکرێتەوە." },
+            { "language": "kmr", "text": "Ez pêşniyarê ne wek barê tenê û ne jî wek çareseriyeke sade nîşan didim. Parastina avhewa lezgîn e, lê tenê dema lêçûn, alternatîf û tedbîrên telafiya civakî bi hev re bên fikirîn siyaseten hilgir dibe." },
+            { "language": "pl", "text": "Nie przedstawiłbym propozycji ani jako czystego obciążenia, ani jako prostego rozwiązania. Ochrona klimatu jest pilna, ale politycznie nośna staje się dopiero wtedy, gdy uwzględnia się koszty, alternatywy i społeczne działania kompensacyjne." },
+            { "language": "ro", "text": "Nu aș prezenta propunerea nici ca pură povară, nici ca soluție simplă. Protecția climei este urgentă, dar devine sustenabilă politic doar dacă sunt gândite împreună costurile, alternativele și măsurile sociale compensatorii." },
+            { "language": "sq", "text": "Nuk do ta paraqisja propozimin as si barrë të pastër, as si zgjidhje të thjeshtë. Mbrojtja e klimës është urgjente, por bëhet politikisht e qëndrueshme vetëm kur merren parasysh kostot, alternativat dhe masat kompensuese shoqërore." }
+          ],
+          "function": "balanced-opening",
+          "toneNote": "nuanced",
+          "expectedLearnerAction": "Acknowledge urgency while requiring fairness and feasibility."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Welche sozialen Folgen müsste man vor der Umsetzung genauer prüfen?",
+          "translations": [
+            { "language": "en", "text": "Which social consequences would need to be examined more closely before implementation?" },
+            { "language": "fa", "text": "پیش از اجرا کدام پیامدهای اجتماعی باید دقیق‌تر بررسی شوند؟" },
+            { "language": "ar", "text": "ما الآثار الاجتماعية التي ينبغي فحصها بدقة أكبر قبل التنفيذ؟" },
+            { "language": "tr", "text": "Uygulamadan önce hangi sosyal sonuçların daha yakından incelenmesi gerekir?" },
+            { "language": "ru", "text": "Какие социальные последствия нужно было бы подробнее проверить перед реализацией?" },
+            { "language": "ckb", "text": "پێش جێبەجێکردن پێویستە کام ئەنجامە کۆمەڵایەتییەکان بە وردی زیاتر بپشکنرێن؟" },
+            { "language": "kmr", "text": "Berî pêkanînê divê kîjan encamên civakî bi hûrgilî zêdetir bên kontrolkirin?" },
+            { "language": "pl", "text": "Jakie skutki społeczne należałoby dokładniej sprawdzić przed wdrożeniem?" },
+            { "language": "ro", "text": "Ce consecințe sociale ar trebui analizate mai atent înainte de implementare?" },
+            { "language": "sq", "text": "Cilat pasoja shoqërore duhet të shqyrtohen më saktë para zbatimit?" }
+          ],
+          "function": "ask-social-impacts",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Man müsste prüfen, wer tatsächlich Alternativen hat: Menschen mit Schichtarbeit, Pflegeaufgaben, geringem Einkommen oder schlechter ÖPNV-Anbindung tragen andere Lasten als Personen, die flexibel umsteigen können.",
+          "translations": [
+            { "language": "en", "text": "One would need to examine who actually has alternatives: people with shift work, care duties, low income, or poor public-transport connections carry different burdens than people who can switch flexibly." },
+            { "language": "fa", "text": "باید بررسی کرد چه کسانی واقعاً جایگزین دارند: افراد با کار شیفتی، وظایف مراقبتی، درآمد کم یا دسترسی ضعیف به حمل‌ونقل عمومی بار متفاوتی نسبت به کسانی دارند که می‌توانند انعطاف‌پذیر جابه‌جا شوند." },
+            { "language": "ar", "text": "ينبغي فحص من لديه بدائل فعلاً: الأشخاص ذوو العمل بنظام الورديات أو واجبات الرعاية أو الدخل المنخفض أو اتصال ضعيف بالنقل العام يتحملون أعباء مختلفة عن أشخاص يستطيعون التحول بمرونة." },
+            { "language": "tr", "text": "Kimin gerçekten alternatifi olduğu incelenmelidir: vardiyalı çalışan, bakım sorumluluğu olan, düşük gelirli ya da toplu taşımaya kötü erişen insanlar, esnek biçimde geçiş yapabilenlerden farklı yükler taşır." },
+            { "language": "ru", "text": "Нужно проверить, у кого действительно есть альтернативы: люди со сменной работой, обязанностями ухода, низким доходом или плохим доступом к общественному транспорту несут другие нагрузки, чем те, кто может гибко пересесть." },
+            { "language": "ckb", "text": "پێویستە بپشکنرێت کێ بەڕاستی جێگرەوەی هەیە: خەڵکی کاری شیفتی، ئەرکی چاودێری، داهاتی کەم یان پەیوەندیی خراپی هاتوچۆی گشتی بارێکی جیاواز هەڵدەگرن لەوانەی دەتوانن بە نەرمى بگۆڕن." },
+            { "language": "kmr", "text": "Divê were kontrolkirin ka kî bi rastî alternatîf heye: kesên bi karê şîftê, erkên lênêrînê, dahata kêm an girêdana xirab a veguhestina giştî barên cuda digirin ji kesên ku dikarin bi nermî veguherin." },
+            { "language": "pl", "text": "Trzeba sprawdzić, kto rzeczywiście ma alternatywy: osoby pracujące zmianowo, mające obowiązki opiekuńcze, niskie dochody lub słabe połączenia komunikacyjne ponoszą inne obciążenia niż osoby, które mogą elastycznie się przesiąść." },
+            { "language": "ro", "text": "Ar trebui verificat cine are cu adevărat alternative: persoanele cu muncă în schimburi, obligații de îngrijire, venit redus sau conexiuni slabe la transportul public poartă alte poveri decât persoanele care pot trece flexibil la alt mod." },
+            { "language": "sq", "text": "Duhet kontrolluar kush ka vërtet alternativa: njerëzit me punë me turne, detyra kujdesi, të ardhura të ulëta ose lidhje të dobët me transportin publik mbajnë barrë tjetër nga ata që mund të kalojnë fleksibilisht." }
+          ],
+          "function": "name-affected-groups-without-stereotype",
+          "toneNote": "specific and fair",
+          "expectedLearnerAction": "Name who is affected and why, without reducing the issue to slogans."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Wie kann man verhindern, dass soziale Einwände nur als Ausrede gegen Klimaschutz benutzt werden?",
+          "translations": [
+            { "language": "en", "text": "How can one prevent social objections from being used merely as an excuse against climate protection?" },
+            { "language": "fa", "text": "چگونه می‌توان جلوگیری کرد که اعتراض‌های اجتماعی فقط بهانه‌ای علیه حفاظت از اقلیم شوند؟" },
+            { "language": "ar", "text": "كيف يمكن منع استخدام الاعتراضات الاجتماعية مجرد ذريعة ضد حماية المناخ؟" },
+            { "language": "tr", "text": "Sosyal itirazların iklim korumasına karşı yalnızca bahane olarak kullanılmasını nasıl önleyebiliriz?" },
+            { "language": "ru", "text": "Как предотвратить использование социальных возражений лишь как предлога против защиты климата?" },
+            { "language": "ckb", "text": "چۆن دەتوانرێت ڕێگری بکرێت کە ناڕەزایەتییە کۆمەڵایەتییەکان تەنها وەک بیانوو دژ بە پاراستنی کەشوهەوا بەکاربهێنرێن؟" },
+            { "language": "kmr", "text": "Çawa dikare were astengkirin ku nerazîbûnên civakî tenê wek hincet li dijî parastina avhewa bên bikaranîn?" },
+            { "language": "pl", "text": "Jak zapobiec temu, by argumenty społeczne były używane jedynie jako wymówka przeciw ochronie klimatu?" },
+            { "language": "ro", "text": "Cum se poate preveni ca obiecțiile sociale să fie folosite doar ca pretext împotriva protecției climei?" },
+            { "language": "sq", "text": "Si mund të parandalohet që kundërshtimet shoqërore të përdoren vetëm si justifikim kundër mbrojtjes së klimës?" }
+          ],
+          "function": "ask-avoid-excuse",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Indem man soziale Einwände konkret macht: Welche Gruppe ist betroffen, wie stark, wie lange und mit welcher Alternative? Dann wird aus einem pauschalen Nein eine prüfbare Frage nach Ausgleich und Reihenfolge.",
+          "translations": [
+            { "language": "en", "text": "By making social objections concrete: which group is affected, how strongly, for how long, and with which alternative? Then a blanket no becomes a checkable question of compensation and sequencing." },
+            { "language": "fa", "text": "با مشخص کردن اعتراض‌های اجتماعی: کدام گروه آسیب می‌بیند، چقدر شدید، چه مدت و با چه جایگزینی؟ آن‌وقت «نه» کلی به پرسشی قابل بررسی درباره جبران و ترتیب اجرا تبدیل می‌شود." },
+            { "language": "ar", "text": "بجعل الاعتراضات الاجتماعية ملموسة: أي مجموعة تتأثر، إلى أي حد، ولمدة كم، وبأي بديل؟ عندئذ يتحول الرفض العام إلى سؤال قابل للفحص حول التعويض والترتيب." },
+            { "language": "tr", "text": "Sosyal itirazları somutlaştırarak: hangi grup, ne kadar güçlü, ne kadar süreyle ve hangi alternatifle etkileniyor? Böylece toptan bir hayır, telafi ve sıra hakkında kontrol edilebilir bir soruya dönüşür." },
+            { "language": "ru", "text": "Делая социальные возражения конкретными: какая группа затронута, насколько сильно, как долго и с какой альтернативой? Тогда огульное «нет» превращается в проверяемый вопрос компенсации и последовательности." },
+            { "language": "ckb", "text": "بە دیاریکردنی ناڕەزایەتییە کۆمەڵایەتییەکان: کام گروپ کاریگەریی لەسەرە، بە چەند هێز، بۆ چەند ماوە و بە چ جێگرەوەیەک؟ ئەوکات نەخێری گشتی دەبێتە پرسیارێکی پشکنراو دەربارەی قەرەبوو و ڕیزبەندی." },
+            { "language": "kmr", "text": "Bi konkretkirina nerazîbûnên civakî: kîjan kom tê bandorkirin, çiqas, çend dem û bi kîjan alternatîfê? Wê demê 'na'ya giştî dibe pirseke kontrolbar li ser telafî û rêzê." },
+            { "language": "pl", "text": "Przez konkretyzację zastrzeżeń społecznych: która grupa jest dotknięta, jak mocno, jak długo i z jaką alternatywą? Wtedy ogólne „nie” staje się sprawdzalnym pytaniem o kompensację i kolejność." },
+            { "language": "ro", "text": "Făcând obiecțiile sociale concrete: ce grup este afectat, cât de puternic, cât timp și cu ce alternativă? Atunci un nu general devine o întrebare verificabilă despre compensare și ordine." },
+            { "language": "sq", "text": "Duke i bërë konkrete kundërshtimet shoqërore: cili grup preket, sa fort, për sa kohë dhe me çfarë alternative? Atëherë një jo e përgjithshme bëhet pyetje e kontrollueshme për kompensim dhe radhë zbatimi." }
+          ],
+          "function": "turn-objections-into-criteria",
+          "toneNote": "analytical",
+          "expectedLearnerAction": "Convert social concerns into testable criteria rather than dismissing them."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Welche Ausgleichsmaßnahmen wären in diesem Beispiel sinnvoll?",
+          "translations": [
+            { "language": "en", "text": "Which compensatory measures would make sense in this example?" },
+            { "language": "fa", "text": "در این مثال چه اقدامات جبرانی منطقی است؟" },
+            { "language": "ar", "text": "ما إجراءات التعويض المنطقية في هذا المثال؟" },
+            { "language": "tr", "text": "Bu örnekte hangi telafi önlemleri mantıklı olur?" },
+            { "language": "ru", "text": "Какие компенсационные меры были бы разумны в этом примере?" },
+            { "language": "ckb", "text": "لە ئەم نموونەیەدا کام ڕێکاری قەرەبووکردنەوە گونجاوە؟" },
+            { "language": "kmr", "text": "Di vê nimûneyê de kîjan tedbîrên telafîkirinê guncan in?" },
+            { "language": "pl", "text": "Jakie działania kompensacyjne miałyby sens w tym przykładzie?" },
+            { "language": "ro", "text": "Ce măsuri compensatorii ar avea sens în acest exemplu?" },
+            { "language": "sq", "text": "Cilat masa kompensuese do të kishin kuptim në këtë shembull?" }
+          ],
+          "function": "ask-compensation",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Sinnvoll wären ein günstiges Sozialticket, bessere Taktung zu Randzeiten, Lieferzonen für kleine Betriebe und eine Übergangsphase. Wichtig ist, dass Ausgleich nicht erst nach Protesten, sondern von Anfang an Teil des Plans ist.",
+          "translations": [
+            { "language": "en", "text": "A cheap social ticket, better frequency at off-peak times, delivery zones for small businesses, and a transition phase would make sense. It is important that compensation is part of the plan from the beginning, not only after protests." },
+            { "language": "fa", "text": "بلیط اجتماعی ارزان، زمان‌بندی بهتر در ساعت‌های حاشیه‌ای، مناطق بارگیری برای کسب‌وکارهای کوچک و دوره گذار منطقی‌اند. مهم است که جبران از ابتدا بخشی از برنامه باشد، نه فقط بعد از اعتراض‌ها." },
+            { "language": "ar", "text": "سيكون منطقياً توفير تذكرة اجتماعية رخيصة، وتواتر أفضل في الأوقات الطرفية، ومناطق توصيل للشركات الصغيرة، ومرحلة انتقالية. المهم أن يكون التعويض جزءاً من الخطة منذ البداية، لا بعد الاحتجاجات فقط." },
+            { "language": "tr", "text": "Uygun fiyatlı bir sosyal bilet, yoğun olmayan saatlerde daha iyi sefer sıklığı, küçük işletmeler için teslimat bölgeleri ve bir geçiş aşaması mantıklı olur. Telafinin protestolardan sonra değil, baştan planın parçası olması önemlidir." },
+            { "language": "ru", "text": "Разумными были бы недорогой социальный билет, лучшая частота в периферийные часы, зоны доставки для малого бизнеса и переходный этап. Важно, чтобы компенсация была частью плана с самого начала, а не только после протестов." },
+            { "language": "ckb", "text": "بلیتی کۆمەڵایەتیی هەرزان، کاتی هاتوچۆی باشتر لە کاتە لاوەکییەکان، ناوچەی گەیاندن بۆ کارگای بچووک و ماوەی گواستنەوە گونجاون. گرنگە قەرەبوو نە تەنها دوای ناڕەزایەتی، بەڵکوو لە سەرەتاوە بەشێک لە پلانەکە بێت." },
+            { "language": "kmr", "text": "Bilêteke civakî ya erzan, frekansa baştir di demên kêlekî de, deverên radestkirinê ji bo karsaziyên biçûk û qonaxeke derbasbûnê guncan in. Girîng e ku telafî ne tenê piştî protestoyan, lê ji destpêkê ve beşek ji planê be." },
+            { "language": "pl", "text": "Sensowne byłyby tani bilet socjalny, lepsza częstotliwość poza szczytem, strefy dostaw dla małych firm i okres przejściowy. Ważne, by kompensacja była częścią planu od początku, a nie dopiero po protestach." },
+            { "language": "ro", "text": "Ar avea sens un abonament social ieftin, frecvență mai bună la ore marginale, zone de livrare pentru firme mici și o fază de tranziție. Este important ca compensarea să fie parte a planului de la început, nu abia după proteste." },
+            { "language": "sq", "text": "Do të kishin kuptim një biletë sociale e lirë, frekuencë më e mirë në oraret anësore, zona shpërndarjeje për biznese të vogla dhe një fazë kalimtare. Është e rëndësishme që kompensimi të jetë pjesë e planit që në fillim, jo vetëm pas protestave." }
+          ],
+          "function": "propose-compensation-measures",
+          "toneNote": "practical",
+          "expectedLearnerAction": "Propose targeted compensation and implementation sequencing."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Wie würden Sie mit dem Vorwurf umgehen, solche Maßnahmen seien zu teuer?",
+          "translations": [
+            { "language": "en", "text": "How would you deal with the accusation that such measures are too expensive?" },
+            { "language": "fa", "text": "با این اعتراض که چنین اقداماتی خیلی گران‌اند چگونه برخورد می‌کنید؟" },
+            { "language": "ar", "text": "كيف ستتعامل مع الاتهام بأن مثل هذه الإجراءات مكلفة جداً؟" },
+            { "language": "tr", "text": "Bu tür önlemlerin çok pahalı olduğu suçlamasıyla nasıl başa çıkarsınız?" },
+            { "language": "ru", "text": "Как бы Вы отреагировали на упрек, что такие меры слишком дороги?" },
+            { "language": "ckb", "text": "چۆن مامەڵە دەکەیت لەگەڵ ئەو تۆمەتەی کە ئەم ڕێکارانە زۆر گرانن؟" },
+            { "language": "kmr", "text": "Hûn bi tawanbariya ku ev tedbîr pir biha ne çawa mijûl dibin?" },
+            { "language": "pl", "text": "Jak poradziłby Pan sobie z zarzutem, że takie działania są zbyt drogie?" },
+            { "language": "ro", "text": "Cum ați aborda acuzația că astfel de măsuri sunt prea scumpe?" },
+            { "language": "sq", "text": "Si do ta trajtonit akuzën se masa të tilla janë shumë të shtrenjta?" }
+          ],
+          "function": "ask-cost-objection",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Kosten muss man ernst nehmen, aber nicht isoliert betrachten. Man sollte kurzfristige Ausgaben, langfristige Schäden, Gesundheitsfolgen und Verteilungseffekte vergleichen. Günstig ist nicht immer gerecht, und gerecht ist nicht immer kostenlos.",
+          "translations": [
+            { "language": "en", "text": "Costs must be taken seriously, but not viewed in isolation. One should compare short-term spending, long-term damage, health consequences, and distribution effects. Cheap is not always fair, and fair is not always free." },
+            { "language": "fa", "text": "هزینه‌ها را باید جدی گرفت، اما جداگانه ندید. باید هزینه‌های کوتاه‌مدت، خسارت‌های بلندمدت، پیامدهای سلامت و اثرات توزیعی را مقایسه کرد. ارزان همیشه عادلانه نیست، و عادلانه همیشه رایگان نیست." },
+            { "language": "ar", "text": "يجب أخذ التكاليف بجدية، لكن لا ينبغي النظر إليها بمعزل. ينبغي مقارنة النفقات القصيرة المدى، والأضرار الطويلة المدى، والآثار الصحية، وآثار التوزيع. الرخيص ليس دائماً عادلاً، والعادل ليس دائماً مجانياً." },
+            { "language": "tr", "text": "Maliyetleri ciddiye almak gerekir, ama yalıtılmış biçimde görmemek gerekir. Kısa vadeli harcamaları, uzun vadeli zararları, sağlık sonuçlarını ve dağılım etkilerini karşılaştırmak gerekir. Ucuz her zaman adil değildir, adil olan da her zaman ücretsiz değildir." },
+            { "language": "ru", "text": "Затраты нужно воспринимать серьезно, но не рассматривать изолированно. Следует сравнивать краткосрочные расходы, долгосрочный ущерб, последствия для здоровья и распределительные эффекты. Дешево не всегда справедливо, а справедливо не всегда бесплатно." },
+            { "language": "ckb", "text": "پێویستە تێچوو بە جدی وەربگیرێت، بەڵام جیا لە هەموو شتێک نەبینرێت. پێویستە خەرجیی کورتخایەن، زیانی درێژخایەن، ئەنجامی تەندروستی و کاریگەریی دابەشکردن بەراورد بکرێن. هەرزان هەمیشە دادپەروەرانە نییە، و دادپەروەرانەش هەمیشە بەخۆڕایی نییە." },
+            { "language": "kmr", "text": "Divê lêçûn bi ciddî were girtin, lê ne bi tenê were dîtin. Divê xercên kurt-dem, zirarên dirêj-dem, encamên tenduristiyê û bandorên belavkirinê bên berhevkirin. Erzan her dem adil nîne, û adil jî her dem bêpere nîne." },
+            { "language": "pl", "text": "Koszty trzeba traktować poważnie, ale nie w izolacji. Należy porównać wydatki krótkoterminowe, szkody długoterminowe, skutki zdrowotne i efekty dystrybucyjne. Tanie nie zawsze jest sprawiedliwe, a sprawiedliwe nie zawsze darmowe." },
+            { "language": "ro", "text": "Costurile trebuie luate în serios, dar nu privite izolat. Trebuie comparate cheltuielile pe termen scurt, daunele pe termen lung, consecințele asupra sănătății și efectele de distribuție. Ieftin nu este întotdeauna echitabil, iar echitabil nu este întotdeauna gratuit." },
+            { "language": "sq", "text": "Kostot duhen marrë seriozisht, por jo të shihen të izoluara. Duhet krahasuar shpenzimet afatshkurtra, dëmet afatgjata, pasojat shëndetësore dhe efektet e shpërndarjes. E lira nuk është gjithmonë e drejtë, dhe e drejta nuk është gjithmonë falas." }
+          ],
+          "function": "answer-cost-objection",
+          "toneNote": "analytical",
+          "expectedLearnerAction": "Treat costs seriously while widening the comparison."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "moderator",
+          "baseText": "Fassen Sie Ihre Position zusammen: Unter welchen Bedingungen wäre die Maßnahme vertretbar?",
+          "translations": [
+            { "language": "en", "text": "Summarize your position: under which conditions would the measure be justifiable?" },
+            { "language": "fa", "text": "موضع خود را جمع‌بندی کنید: تحت چه شرایطی این اقدام قابل دفاع است؟" },
+            { "language": "ar", "text": "لخّص موقفك: تحت أي شروط سيكون الإجراء مبرراً؟" },
+            { "language": "tr", "text": "Pozisyonunuzu özetleyin: önlem hangi koşullar altında savunulabilir olur?" },
+            { "language": "ru", "text": "Подведите итог своей позиции: при каких условиях эта мера была бы оправданной?" },
+            { "language": "ckb", "text": "هەڵوێستەکەت کورت بکەوە: لە ژێر کام مەرجەدا ئەم ڕێکارە بەرگریپێکراو دەبێت؟" },
+            { "language": "kmr", "text": "Helwesta xwe kurt bikin: di bin kîjan şertan de ev tedbîr dikare were parastin?" },
+            { "language": "pl", "text": "Proszę podsumować swoje stanowisko: pod jakimi warunkami działanie byłoby uzasadnione?" },
+            { "language": "ro", "text": "Rezumați-vă poziția: în ce condiții ar fi măsura justificabilă?" },
+            { "language": "sq", "text": "Përmblidhni qëndrimin tuaj: në cilat kushte masa do të ishte e justifikueshme?" }
+          ],
+          "function": "ask-final-condition",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Vertretbar wäre die Maßnahme, wenn sie messbar zum Klimaschutz beiträgt, realistische Alternativen schafft und soziale Härten von Anfang an abfedert. Dann ist Klimaschutz nicht gegen soziale Gerechtigkeit gerichtet, sondern an sie gebunden.",
+          "translations": [
+            { "language": "en", "text": "The measure would be justifiable if it measurably contributes to climate protection, creates realistic alternatives, and cushions social hardship from the start. Then climate protection is not directed against social justice, but tied to it." },
+            { "language": "fa", "text": "این اقدام زمانی قابل دفاع است که به‌طور قابل اندازه‌گیری به حفاظت از اقلیم کمک کند، جایگزین‌های واقع‌بینانه بسازد و سختی‌های اجتماعی را از ابتدا کاهش دهد. آن‌وقت حفاظت از اقلیم علیه عدالت اجتماعی نیست، بلکه به آن وابسته است." },
+            { "language": "ar", "text": "سيكون الإجراء مبرراً إذا ساهم بشكل قابل للقياس في حماية المناخ، وخلق بدائل واقعية، وخفف المشقات الاجتماعية منذ البداية. عندئذ لا تكون حماية المناخ موجهة ضد العدالة الاجتماعية، بل مرتبطة بها." },
+            { "language": "tr", "text": "Önlem, iklim korumasına ölçülebilir katkı sağlarsa, gerçekçi alternatifler yaratırsa ve sosyal zorlukları baştan hafifletirse savunulabilir olur. O zaman iklim koruması sosyal adalete karşı değil, ona bağlıdır." },
+            { "language": "ru", "text": "Мера была бы оправданной, если она измеримо способствует защите климата, создает реалистичные альтернативы и с самого начала смягчает социальные трудности. Тогда защита климата направлена не против социальной справедливости, а связана с ней." },
+            { "language": "ckb", "text": "ئەم ڕێکارە کاتێک بەرگریپێکراو دەبێت کە بە شێوەی پێوانەکراو یارمەتی پاراستنی کەشوهەوا بدات، جێگرەوەی واقیعی دروست بکات و لە سەرەتاوە قورساییە کۆمەڵایەتییەکان سووک بکات. ئەوکات پاراستنی کەشوهەوا دژ بە دادپەروەریی کۆمەڵایەتی نییە، بەڵکوو پێیەوە بەستراوە." },
+            { "language": "kmr", "text": "Tedbîr dikare were parastin heke bi awayekî pîvanbar alîkariya parastina avhewa bike, alternatîfên rastîn biafirîne û ji destpêkê ve dijwariyên civakî sivik bike. Wê demê parastina avhewa ne li dijî adaleta civakî ye, lê bi wê ve girêdayî ye." },
+            { "language": "pl", "text": "Działanie byłoby uzasadnione, jeśli mierzalnie przyczynia się do ochrony klimatu, tworzy realistyczne alternatywy i od początku łagodzi społeczne trudności. Wtedy ochrona klimatu nie jest skierowana przeciw sprawiedliwości społecznej, lecz z nią powiązana." },
+            { "language": "ro", "text": "Măsura ar fi justificabilă dacă contribuie măsurabil la protecția climei, creează alternative realiste și amortizează dificultățile sociale de la început. Atunci protecția climei nu este îndreptată împotriva justiției sociale, ci legată de ea." },
+            { "language": "sq", "text": "Masa do të ishte e justifikueshme nëse kontribuon në mënyrë të matshme në mbrojtjen e klimës, krijon alternativa realiste dhe zbut vështirësitë shoqërore që në fillim. Atëherë mbrojtja e klimës nuk drejtohet kundër drejtësisë shoqërore, por lidhet me të." }
+          ],
+          "function": "final-conditioned-position",
+          "toneNote": "summative",
+          "expectedLearnerAction": "State clear conditions that combine climate effect, feasibility, and social fairness."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "urgency-with-fairness",
+              "text": "Klimaschutz ist dringend, aber tragfähig wird er nur, wenn Kosten, Alternativen und sozialer Ausgleich von Anfang an mitgeplant werden.",
+              "translations": [
+                { "language": "en", "text": "Climate protection is urgent, but it becomes viable only if costs, alternatives, and social compensation are planned from the start." },
+                { "language": "fa", "text": "حفاظت از اقلیم فوری است، اما فقط وقتی قابل‌حمل می‌شود که هزینه‌ها، جایگزین‌ها و جبران اجتماعی از ابتدا برنامه‌ریزی شوند." },
+                { "language": "ar", "text": "حماية المناخ ملحة، لكنها تصبح قابلة للتحمل فقط إذا خُطط للتكاليف والبدائل والتعويض الاجتماعي منذ البداية." },
+                { "language": "tr", "text": "İklim koruması acildir, ama maliyetler, alternatifler ve sosyal telafi baştan planlanırsa taşınabilir olur." },
+                { "language": "ru", "text": "Защита климата срочна, но жизнеспособной она становится только тогда, когда затраты, альтернативы и социальная компенсация планируются с самого начала." },
+                { "language": "ckb", "text": "پاراستنی کەشوهەوا پەلەیە، بەڵام تەنها کاتێک هەڵگیر دەبێت کە تێچوو، جێگرەوە و قەرەبووی کۆمەڵایەتی لە سەرەتاوە پلان بکرێن." },
+                { "language": "kmr", "text": "Parastina avhewa lezgîn e, lê tenê heke lêçûn, alternatîf û telafiya civakî ji destpêkê ve bên plankirin hilgir dibe." },
+                { "language": "pl", "text": "Ochrona klimatu jest pilna, ale staje się nośna dopiero wtedy, gdy koszty, alternatywy i kompensacja społeczna są planowane od początku." },
+                { "language": "ro", "text": "Protecția climei este urgentă, dar devine sustenabilă doar dacă costurile, alternativele și compensarea socială sunt planificate de la început." },
+                { "language": "sq", "text": "Mbrojtja e klimës është urgjente, por bëhet e qëndrueshme vetëm nëse kostot, alternativat dhe kompensimi shoqëror planifikohen që në fillim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Dringlichkeit mit politischer und sozialer Tragfähigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer connects urgency with political and social viability." },
+                { "language": "fa", "text": "خوب است: پاسخ فوریت را با قابل‌حمل بودن سیاسی و اجتماعی پیوند می‌دهد." },
+                { "language": "ar", "text": "جيد: تربط الإجابة الإلحاح بالقابلية السياسية والاجتماعية." },
+                { "language": "tr", "text": "İyi: yanıt aciliyeti siyasi ve sosyal taşınabilirlikle bağlıyor." },
+                { "language": "ru", "text": "Хорошо: ответ связывает срочность с политической и социальной жизнеспособностью." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پەلەیی بە هەڵگیرایی سیاسی و کۆمەڵایەتی دەبەستێتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv lezgîniyê bi hilgirbûna siyasî û civakî ve girê dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy pilność z nośnością polityczną i społeczną." },
+                { "language": "ro", "text": "Bine: răspunsul conectează urgența cu sustenabilitatea politică și socială." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh urgjencën me qëndrueshmërinë politike dhe shoqërore." }
+              ],
+              "explanationKey": "urgency-fairness"
+            },
+            {
+              "id": "climate-first",
+              "text": "Ich würde betonen, dass Klimaschutz Vorrang haben muss, weil spätere Schäden viel größer sind als aktuelle Unbequemlichkeiten.",
+              "translations": [
+                { "language": "en", "text": "I would emphasize that climate protection must take priority because later damage is much greater than current inconvenience." },
+                { "language": "fa", "text": "تأکید می‌کنم که حفاظت از اقلیم باید اولویت داشته باشد، چون خسارت‌های بعدی بسیار بزرگ‌تر از ناراحتی‌های فعلی‌اند." },
+                { "language": "ar", "text": "سأؤكد أن حماية المناخ يجب أن تكون لها الأولوية لأن الأضرار اللاحقة أكبر بكثير من الإزعاج الحالي." },
+                { "language": "tr", "text": "İklim korumasının öncelikli olması gerektiğini vurgulardım, çünkü sonraki zararlar bugünkü rahatsızlıklardan çok daha büyüktür." },
+                { "language": "ru", "text": "Я бы подчеркнул, что защита климата должна иметь приоритет, потому что будущий ущерб гораздо больше нынешних неудобств." },
+                { "language": "ckb", "text": "جەخت دەکەمەوە کە پاراستنی کەشوهەوا پێویستە ئەولەویەت بێت، چونکە زیانەکانی داهاتوو زۆر گەورەترن لە ناڕەحەتیی ئێستا." },
+                { "language": "kmr", "text": "Ez tekez dikim ku divê parastina avhewa pêşeng be, ji ber ku zirarên paşê ji nerehetiyên niha gelek mezintir in." },
+                { "language": "pl", "text": "Podkreśliłbym, że ochrona klimatu musi mieć pierwszeństwo, bo późniejsze szkody są znacznie większe niż obecne niedogodności." },
+                { "language": "ro", "text": "Aș sublinia că protecția climei trebuie să aibă prioritate, deoarece daunele ulterioare sunt mult mai mari decât neplăcerile actuale." },
+                { "language": "sq", "text": "Do të theksoja se mbrojtja e klimës duhet të ketë përparësi, sepse dëmet e mëvonshme janë shumë më të mëdha se shqetësimet aktuale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einseitig: Die Dringlichkeit stimmt, aber soziale Belastungen werden als bloße Unbequemlichkeit abgewertet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too one-sided: the urgency is valid, but social burdens are devalued as mere inconvenience." },
+                { "language": "fa", "text": "زیادی یک‌طرفه است: فوریت درست است، اما فشارهای اجتماعی به ناراحتی ساده تقلیل داده می‌شوند." },
+                { "language": "ar", "text": "أحادية جداً: الإلحاح صحيح، لكن الأعباء الاجتماعية تُقلل إلى مجرد إزعاج." },
+                { "language": "tr", "text": "Çok tek taraflı: aciliyet doğru, ama sosyal yükler yalnızca rahatsızlık olarak değersizleştiriliyor." },
+                { "language": "ru", "text": "Слишком односторонне: срочность верна, но социальные нагрузки обесцениваются как простые неудобства." },
+                { "language": "ckb", "text": "زۆر یەک‌لایەنەیە: پەلەیی ڕاستە، بەڵام بارە کۆمەڵایەتییەکان وەک ناڕەحەتیی سادە کەم‌بەها دەکرێن." },
+                { "language": "kmr", "text": "Pir yekalî ye: lezgînî rast e, lê barên civakî wek nerehetiya sade kêmnirx dibin." },
+                { "language": "pl", "text": "Zbyt jednostronnie: pilność jest trafna, ale obciążenia społeczne zostają zredukowane do zwykłej niedogodności." },
+                { "language": "ro", "text": "Prea unilateral: urgența este corectă, dar poverile sociale sunt devalorizate ca simple neplăceri." },
+                { "language": "sq", "text": "Shumë e njëanshme: urgjenca është e saktë, por barrat shoqërore zhvlerësohen si shqetësime të thjeshta." }
+              ],
+              "explanationKey": "avoid-social-dismissal"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "who-has-alternatives",
+              "text": "Man muss prüfen, wer reale Alternativen hat: Schichtarbeit, Pflegeaufgaben, Einkommen und ÖPNV-Anbindung entscheiden darüber, wie stark die Belastung ist.",
+              "translations": [
+                { "language": "en", "text": "One must check who has real alternatives: shift work, care duties, income, and public-transport connections determine how heavy the burden is." },
+                { "language": "fa", "text": "باید بررسی کرد چه کسی جایگزین واقعی دارد: کار شیفتی، وظایف مراقبتی، درآمد و دسترسی به حمل‌ونقل عمومی تعیین می‌کنند فشار چقدر سنگین است." },
+                { "language": "ar", "text": "يجب فحص من لديه بدائل حقيقية: العمل بنظام الورديات، وواجبات الرعاية، والدخل، والاتصال بالنقل العام تحدد مدى ثقل العبء." },
+                { "language": "tr", "text": "Kimin gerçek alternatifi olduğu kontrol edilmelidir: vardiyalı iş, bakım görevleri, gelir ve toplu taşıma bağlantısı yükün ne kadar ağır olduğunu belirler." },
+                { "language": "ru", "text": "Нужно проверить, у кого есть реальные альтернативы: сменная работа, обязанности ухода, доход и связь с общественным транспортом определяют, насколько тяжела нагрузка." },
+                { "language": "ckb", "text": "پێویستە بپشکنرێت کێ جێگرەوەی ڕاستەقینەی هەیە: کاری شیفتی، ئەرکی چاودێری، داهات و پەیوەندیی هاتوچۆی گشتی دیاری دەکەن بارەکە چەند قورسە." },
+                { "language": "kmr", "text": "Divê were kontrolkirin ka kî alternatîfên rastîn hene: karê şîftê, erkên lênêrînê, dahat û girêdana veguhestina giştî diyar dikin bar çiqas giran e." },
+                { "language": "pl", "text": "Trzeba sprawdzić, kto ma realne alternatywy: praca zmianowa, obowiązki opiekuńcze, dochód i połączenia komunikacyjne decydują o sile obciążenia." },
+                { "language": "ro", "text": "Trebuie verificat cine are alternative reale: munca în schimburi, obligațiile de îngrijire, venitul și legătura la transport public decid cât de mare este povara." },
+                { "language": "sq", "text": "Duhet kontrolluar kush ka alternativa reale: puna me turne, detyrat e kujdesit, të ardhurat dhe lidhja me transportin publik vendosin sa e rëndë është barra." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort macht soziale Folgen prüfbar und vermeidet pauschale Opfer- oder Schuldzuschreibungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer makes social consequences checkable and avoids blanket victim or blame attributions." },
+                { "language": "fa", "text": "خوب است: پاسخ پیامدهای اجتماعی را قابل بررسی می‌کند و از نسبت دادن کلی قربانی/مقصر دوری می‌کند." },
+                { "language": "ar", "text": "جيد: تجعل الإجابة الآثار الاجتماعية قابلة للفحص وتتجنب نسب الضحية أو اللوم بشكل عام." },
+                { "language": "tr", "text": "İyi: yanıt sosyal sonuçları kontrol edilebilir kılıyor ve genelleyici mağdur ya da suç atıflarından kaçınıyor." },
+                { "language": "ru", "text": "Хорошо: ответ делает социальные последствия проверяемыми и избегает огульного приписывания жертвы или вины." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ئەنجامە کۆمەڵایەتییەکان پشکنراو دەکات و لە تۆمارکردنی گشتیی قوربانی یان تاوان دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv encamên civakî kontrolbar dike û ji nisbetdayînên giştî yên qurban an tawanê dûr dikeve." },
+                { "language": "pl", "text": "Dobrze: odpowiedź czyni skutki społeczne sprawdzalnymi i unika ogólnych przypisań ofiary lub winy." },
+                { "language": "ro", "text": "Bine: răspunsul face consecințele sociale verificabile și evită atribuiri generale de victimă sau vină." },
+                { "language": "sq", "text": "Mirë: përgjigjja i bën pasojat shoqërore të kontrollueshme dhe shmang atribuime të përgjithshme viktimë/faj." }
+              ],
+              "explanationKey": "affected-groups-criteria"
+            },
+            {
+              "id": "everyone-adapts",
+              "text": "Alle werden sich etwas umstellen müssen; deshalb sollte man die Maßnahme nicht wegen einzelner Belastungen verzögern.",
+              "translations": [
+                { "language": "en", "text": "Everyone will have to adjust somewhat; therefore the measure should not be delayed because of individual burdens." },
+                { "language": "fa", "text": "همه باید کمی خود را تطبیق دهند؛ بنابراین نباید اقدام را به خاطر فشارهای فردی به تعویق انداخت." },
+                { "language": "ar", "text": "سيضطر الجميع إلى التكيف قليلاً؛ لذلك لا ينبغي تأخير الإجراء بسبب أعباء فردية." },
+                { "language": "tr", "text": "Herkes biraz uyum sağlamak zorunda kalacak; bu yüzden önlem tekil yükler nedeniyle geciktirilmemelidir." },
+                { "language": "ru", "text": "Всем придется немного перестроиться; поэтому меру не следует задерживать из-за отдельных нагрузок." },
+                { "language": "ckb", "text": "هەموو کەس پێویستە کەمێک خۆی بگۆڕێت؛ بۆیە نابێت ڕێکارەکە بەهۆی بارە تاکەکەسییەکان دوا بخرێت." },
+                { "language": "kmr", "text": "Hemû kes dê hinekî xwe biguherînin; ji ber vê nabe tedbîr ji ber barên takekesî were paşxistin." },
+                { "language": "pl", "text": "Wszyscy będą musieli się trochę przestawić; dlatego nie należy opóźniać działania z powodu pojedynczych obciążeń." },
+                { "language": "ro", "text": "Toți vor trebui să se adapteze puțin; de aceea măsura nu ar trebui amânată din cauza unor poveri individuale." },
+                { "language": "sq", "text": "Të gjithë do të duhet të përshtaten disi; prandaj masa nuk duhet vonuar për shkak të disa barrëve individuale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu hart: Die Antwort erkennt Umstellung an, prüft aber nicht, ob Belastungen ungleich oder vermeidbar sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too harsh: the answer recognizes adjustment, but does not check whether burdens are unequal or avoidable." },
+                { "language": "fa", "text": "زیادی سخت است: پاسخ تغییر را می‌پذیرد، اما بررسی نمی‌کند آیا فشارها نابرابر یا قابل اجتناب‌اند یا نه." },
+                { "language": "ar", "text": "قاسية جداً: تعترف الإجابة بالتكيف، لكنها لا تفحص هل الأعباء غير متساوية أو قابلة للتجنب." },
+                { "language": "tr", "text": "Çok sert: yanıt uyumu kabul ediyor, ama yüklerin eşitsiz ya da önlenebilir olup olmadığını kontrol etmiyor." },
+                { "language": "ru", "text": "Слишком жестко: ответ признает перестройку, но не проверяет, являются ли нагрузки неравными или предотвратимыми." },
+                { "language": "ckb", "text": "زۆر توندە: وەڵامەکە گۆڕانکاری دەناسێت، بەڵام ناپشکنێت ئایا بارەکان نایەکسان یان خۆپارێزراون." },
+                { "language": "kmr", "text": "Pir tund e: bersiv guherînê nas dike, lê kontrol nake ka bar ne wekhev an têne astengkirin an na." },
+                { "language": "pl", "text": "Zbyt ostro: odpowiedź uznaje konieczność zmiany, ale nie sprawdza, czy obciążenia są nierówne lub możliwe do uniknięcia." },
+                { "language": "ro", "text": "Prea dur: răspunsul recunoaște adaptarea, dar nu verifică dacă poverile sunt inegale sau evitabile." },
+                { "language": "sq", "text": "Shumë e ashpër: përgjigjja pranon përshtatjen, por nuk kontrollon nëse barrat janë të pabarabarta ose të shmangshme." }
+              ],
+              "explanationKey": "avoid-burden-dismissal"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "objections-as-criteria",
+              "text": "Soziale Einwände sollten konkretisiert werden: Wer ist betroffen, wie stark, wie lange und mit welcher Alternative? Dann kann man Ausgleich und Reihenfolge prüfen.",
+              "translations": [
+                { "language": "en", "text": "Social objections should be made concrete: who is affected, how strongly, for how long, and with which alternative? Then compensation and sequencing can be examined." },
+                { "language": "fa", "text": "اعتراض‌های اجتماعی باید مشخص شوند: چه کسی آسیب می‌بیند، چقدر، چه مدت و با چه جایگزینی؟ سپس می‌توان جبران و ترتیب اجرا را بررسی کرد." },
+                { "language": "ar", "text": "ينبغي جعل الاعتراضات الاجتماعية ملموسة: من يتأثر، إلى أي حد، ولمدة كم، وبأي بديل؟ عندها يمكن فحص التعويض والترتيب." },
+                { "language": "tr", "text": "Sosyal itirazlar somutlaştırılmalıdır: kim etkileniyor, ne kadar, ne kadar süreyle ve hangi alternatifle? O zaman telafi ve sıra incelenebilir." },
+                { "language": "ru", "text": "Социальные возражения следует конкретизировать: кто затронут, насколько сильно, как долго и с какой альтернативой? Тогда можно проверить компенсацию и последовательность." },
+                { "language": "ckb", "text": "ناڕەزایەتییە کۆمەڵایەتییەکان پێویستە دیاری بکرێن: کێ کاریگەریی لەسەرە، چەند زۆر، بۆ چەند ماوە و بە چ جێگرەوەیەک؟ ئەوکات دەتوانرێت قەرەبوو و ڕیزبەندی بپشکنرێت." },
+                { "language": "kmr", "text": "Divê nerazîbûnên civakî konkret bibin: kî tê bandorkirin, çiqas, çend dem û bi kîjan alternatîfê? Wê demê telafî û rêz dikarin bên kontrolkirin." },
+                { "language": "pl", "text": "Zastrzeżenia społeczne należy skonkretyzować: kto jest dotknięty, jak mocno, jak długo i z jaką alternatywą? Wtedy można sprawdzić kompensację i kolejność." },
+                { "language": "ro", "text": "Obiecțiile sociale trebuie concretizate: cine este afectat, cât de puternic, cât timp și cu ce alternativă? Atunci se pot verifica compensarea și ordinea." },
+                { "language": "sq", "text": "Kundërshtimet shoqërore duhen konkretizuar: kush preket, sa fort, për sa kohë dhe me çfarë alternative? Atëherë mund të kontrollohen kompensimi dhe radha." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt soziale Einwände ernst, ohne sie automatisch als Vetorecht zu behandeln.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer takes social objections seriously without automatically treating them as a veto." },
+                { "language": "fa", "text": "خوب است: پاسخ اعتراض‌های اجتماعی را جدی می‌گیرد، بدون اینکه خودکار آنها را حق وتو بداند." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة الاعتراضات الاجتماعية بجدية من دون معاملتها تلقائياً كحق نقض." },
+                { "language": "tr", "text": "İyi: yanıt sosyal itirazları ciddiye alıyor, ama otomatik olarak veto hakkı gibi ele almıyor." },
+                { "language": "ru", "text": "Хорошо: ответ серьезно относится к социальным возражениям, не рассматривая их автоматически как право вето." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ناڕەزایەتییە کۆمەڵایەتییەکان بە جدی وەردەگرێت، بەبێ ئەوەی خۆکارانە وەک مافی ڤیتۆ مامەڵەیان پێ بکات." },
+                { "language": "kmr", "text": "Baş e: bersiv nerazîbûnên civakî bi ciddî digire bê ku wan bixweber wek mafê veto bibîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź traktuje zastrzeżenia społeczne poważnie, nie uznając ich automatycznie za prawo weta." },
+                { "language": "ro", "text": "Bine: răspunsul ia în serios obiecțiile sociale fără a le trata automat ca drept de veto." },
+                { "language": "sq", "text": "Mirë: përgjigjja i merr seriozisht kundërshtimet shoqërore pa i trajtuar automatikisht si të drejtë vetoje." }
+              ],
+              "explanationKey": "concerns-into-criteria"
+            },
+            {
+              "id": "set-deadline-despite-objections",
+              "text": "Man sollte eine klare Frist setzen, damit soziale Einwände die notwendige Veränderung nicht immer weiter verschieben.",
+              "translations": [
+                { "language": "en", "text": "One should set a clear deadline so that social objections do not keep postponing the necessary change." },
+                { "language": "fa", "text": "باید یک مهلت روشن گذاشت تا اعتراض‌های اجتماعی تغییر ضروری را مدام عقب نیندازند." },
+                { "language": "ar", "text": "ينبغي تحديد مهلة واضحة كي لا تؤجل الاعتراضات الاجتماعية التغيير الضروري باستمرار." },
+                { "language": "tr", "text": "Sosyal itirazların gerekli değişimi sürekli ertelememesi için net bir süre belirlenmelidir." },
+                { "language": "ru", "text": "Следует установить ясный срок, чтобы социальные возражения не откладывали необходимое изменение снова и снова." },
+                { "language": "ckb", "text": "پێویستە ماوەیەکی ڕوون دابنرێت بۆ ئەوەی ناڕەزایەتییە کۆمەڵایەتییەکان گۆڕانی پێویست بەردەوام دوا نەخەن." },
+                { "language": "kmr", "text": "Divê demeke zelal were danîn da ku nerazîbûnên civakî guhertina pêwîst her tim paş nexin." },
+                { "language": "pl", "text": "Należy wyznaczyć jasny termin, aby zastrzeżenia społeczne nie odkładały ciągle koniecznej zmiany." },
+                { "language": "ro", "text": "Ar trebui stabilit un termen clar, pentru ca obiecțiile sociale să nu amâne mereu schimbarea necesară." },
+                { "language": "sq", "text": "Duhet vendosur një afat i qartë që kundërshtimet shoqërore të mos e shtyjnë vazhdimisht ndryshimin e nevojshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Fristen können helfen, ersetzen aber keine Prüfung der Belastung und keinen Ausgleich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete: deadlines can help, but they do not replace examining burdens or providing compensation." },
+                { "language": "fa", "text": "قابل‌تصور اما ناقص است: مهلت می‌تواند کمک کند، اما جای بررسی فشار و جبران را نمی‌گیرد." },
+                { "language": "ar", "text": "معقول لكنه غير كامل: المهل قد تساعد، لكنها لا تعوض فحص العبء ولا التعويض." },
+                { "language": "tr", "text": "Makul ama eksik: süreler yardımcı olabilir, fakat yükün incelenmesi ve telafinin yerini tutmaz." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: сроки могут помочь, но не заменяют проверки нагрузки и компенсации." },
+                { "language": "ckb", "text": "شیاوی بیرکردنەوەیە، بەڵام تەواو نییە: ماوە دەتوانێت یارمەتی بدات، بەڵام شوێنی پشکنینی بار و قەرەبوو ناگرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê netemam e: dem dikarin alîkar bin, lê şûna kontrola barê û telafiyê nagirin." },
+                { "language": "pl", "text": "Plausybilne, ale niepełne: terminy mogą pomóc, lecz nie zastępują sprawdzenia obciążeń ani kompensacji." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: termenele pot ajuta, dar nu înlocuiesc verificarea poverii și compensarea." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: afatet mund të ndihmojnë, por nuk zëvendësojnë kontrollin e barrës dhe kompensimin." }
+              ],
+              "explanationKey": "deadline-not-enough"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "targeted-compensation",
+              "text": "Sinnvoll wären Sozialticket, bessere Takte zu Randzeiten, Lieferzonen für kleine Betriebe und eine Übergangsphase, die von Anfang an im Plan steht.",
+              "translations": [
+                { "language": "en", "text": "A social ticket, better frequency at off-peak times, delivery zones for small businesses, and a transition phase included from the start would make sense." },
+                { "language": "fa", "text": "بلیط اجتماعی، زمان‌بندی بهتر در ساعت‌های حاشیه‌ای، مناطق بارگیری برای کسب‌وکارهای کوچک و دوره گذار که از ابتدا در برنامه باشد منطقی‌اند." },
+                { "language": "ar", "text": "سيكون منطقياً توفير تذكرة اجتماعية، وتواتر أفضل في الأوقات الطرفية، ومناطق توصيل للشركات الصغيرة، ومرحلة انتقالية موجودة في الخطة منذ البداية." },
+                { "language": "tr", "text": "Sosyal bilet, yoğun olmayan saatlerde daha iyi sefer sıklığı, küçük işletmeler için teslimat bölgeleri ve baştan plana dahil bir geçiş aşaması mantıklı olur." },
+                { "language": "ru", "text": "Разумными были бы социальный билет, лучшая частота в периферийные часы, зоны доставки для малого бизнеса и переходный этап, заложенный в план с самого начала." },
+                { "language": "ckb", "text": "بلیتی کۆمەڵایەتی، کاتی باشتر لە کاتە لاوەکییەکان، ناوچەی گەیاندن بۆ کارگای بچووک و ماوەی گواستنەوە کە لە سەرەتاوە لە پلاندا بێت گونجاون." },
+                { "language": "kmr", "text": "Bilêta civakî, frekansa baştir di demên kêlekî de, deverên radestkirinê ji bo karsaziyên biçûk û qonaxa derbasbûnê ya ji destpêkê ve di planê de guncan in." },
+                { "language": "pl", "text": "Sensowne byłyby bilet socjalny, lepsza częstotliwość poza szczytem, strefy dostaw dla małych firm i okres przejściowy wpisany w plan od początku." },
+                { "language": "ro", "text": "Ar avea sens abonament social, frecvență mai bună la ore marginale, zone de livrare pentru firme mici și o fază de tranziție inclusă în plan de la început." },
+                { "language": "sq", "text": "Do të kishin kuptim bileta sociale, frekuencë më e mirë në oraret anësore, zona shpërndarjeje për bizneset e vogla dhe një fazë kalimtare e përfshirë në plan që në fillim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort ist praktisch, zielgruppenspezifisch und macht Ausgleich zum Bestandteil der Maßnahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer is practical, target-group-specific, and makes compensation part of the measure." },
+                { "language": "fa", "text": "خوب است: پاسخ عملی و متناسب با گروه‌های هدف است و جبران را بخشی از اقدام می‌کند." },
+                { "language": "ar", "text": "جيد: الإجابة عملية وموجهة لفئات محددة وتجعل التعويض جزءاً من الإجراء." },
+                { "language": "tr", "text": "İyi: yanıt pratik, hedef gruba özel ve telafiyi önlemin parçası yapıyor." },
+                { "language": "ru", "text": "Хорошо: ответ практичен, ориентирован на целевые группы и делает компенсацию частью меры." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە کردارییە، تایبەتە بە گروپی ئامانج و قەرەبوو دەکاتە بەشێک لە ڕێکارەکە." },
+                { "language": "kmr", "text": "Baş e: bersiv pratîk e, taybetî komên armancê ye û telafiyê dike beşek ji tedbîrê." },
+                { "language": "pl", "text": "Dobrze: odpowiedź jest praktyczna, skierowana do grup docelowych i czyni kompensację częścią działania." },
+                { "language": "ro", "text": "Bine: răspunsul este practic, specific grupurilor țintă și face compensarea parte a măsurii." },
+                { "language": "sq", "text": "Mirë: përgjigjja është praktike, specifike për grupet e synuara dhe e bën kompensimin pjesë të masës." }
+              ],
+              "explanationKey": "targeted-compensation"
+            },
+            {
+              "id": "general-subsidy",
+              "text": "Man könnte alle Tickets etwas günstiger machen, damit die Maßnahme insgesamt akzeptabler wirkt.",
+              "translations": [
+                { "language": "en", "text": "One could make all tickets somewhat cheaper so that the measure seems more acceptable overall." },
+                { "language": "fa", "text": "می‌توان همه بلیط‌ها را کمی ارزان‌تر کرد تا اقدام در مجموع قابل‌قبول‌تر به نظر برسد." },
+                { "language": "ar", "text": "يمكن جعل كل التذاكر أرخص قليلاً كي يبدو الإجراء أكثر قبولاً عموماً." },
+                { "language": "tr", "text": "Tüm biletler biraz ucuzlatılabilir, böylece önlem genel olarak daha kabul edilebilir görünür." },
+                { "language": "ru", "text": "Можно немного удешевить все билеты, чтобы мера в целом выглядела более приемлемой." },
+                { "language": "ckb", "text": "دەتوانرێت هەموو بلیتەکان کەمێک هەرزانتر بکرێن بۆ ئەوەی ڕێکارەکە بە گشتی قبوڵکراوتر دەربکەوێت." },
+                { "language": "kmr", "text": "Dikare hemû bilêt hinekî erzan bibin da ku tedbîr bi giştî qebûlkirîtir xuya bike." },
+                { "language": "pl", "text": "Można nieco obniżyć ceny wszystkich biletów, żeby działanie ogólnie wydawało się bardziej akceptowalne." },
+                { "language": "ro", "text": "S-ar putea ieftini puțin toate biletele, pentru ca măsura să pară în ansamblu mai acceptabilă." },
+                { "language": "sq", "text": "Mund të bëhen të gjitha biletat pak më të lira që masa të duket përgjithësisht më e pranueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unspezifisch: Eine allgemeine Verbilligung kann helfen, adressiert aber besondere Belastungen nicht gezielt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unspecific: a general price reduction can help, but does not target special burdens." },
+                { "language": "fa", "text": "زیادی نامشخص است: کاهش عمومی قیمت می‌تواند کمک کند، اما فشارهای خاص را هدفمند حل نمی‌کند." },
+                { "language": "ar", "text": "غير محددة بما يكفي: التخفيض العام قد يساعد، لكنه لا يستهدف الأعباء الخاصة." },
+                { "language": "tr", "text": "Çok belirsiz: genel indirim yardımcı olabilir, fakat özel yükleri hedeflemez." },
+                { "language": "ru", "text": "Слишком неспецифично: общее удешевление может помочь, но не адресует особые нагрузки целенаправленно." },
+                { "language": "ckb", "text": "زۆر نادیارە: هەرزانکردنی گشتی دەتوانێت یارمەتی بدات، بەڵام بارە تایبەتەکان بە ئامانج ناگرێت." },
+                { "language": "kmr", "text": "Pir ne taybet e: erzanbûna giştî dikare alîkar be, lê barên taybet bi armanc nagire." },
+                { "language": "pl", "text": "Zbyt niespecyficznie: ogólna obniżka może pomóc, ale nie adresuje szczególnych obciążeń." },
+                { "language": "ro", "text": "Prea nespecific: o ieftinire generală poate ajuta, dar nu vizează poverile speciale." },
+                { "language": "sq", "text": "Shumë jo specifike: ulja e përgjithshme mund të ndihmojë, por nuk adreson barrat e veçanta." }
+              ],
+              "explanationKey": "general-subsidy-insufficient"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "costs-in-context",
+              "text": "Kosten sind wichtig, aber man muss kurzfristige Ausgaben mit langfristigen Schäden, Gesundheitsfolgen und Verteilungseffekten vergleichen.",
+              "translations": [
+                { "language": "en", "text": "Costs are important, but one must compare short-term spending with long-term damage, health consequences, and distribution effects." },
+                { "language": "fa", "text": "هزینه‌ها مهم‌اند، اما باید هزینه‌های کوتاه‌مدت را با خسارت‌های بلندمدت، پیامدهای سلامت و اثرات توزیعی مقایسه کرد." },
+                { "language": "ar", "text": "التكاليف مهمة، لكن يجب مقارنة النفقات القصيرة المدى بالأضرار الطويلة المدى والآثار الصحية وآثار التوزيع." },
+                { "language": "tr", "text": "Maliyetler önemlidir, ama kısa vadeli harcamalar uzun vadeli zararlar, sağlık sonuçları ve dağılım etkileriyle karşılaştırılmalıdır." },
+                { "language": "ru", "text": "Затраты важны, но нужно сравнивать краткосрочные расходы с долгосрочным ущербом, последствиями для здоровья и распределительными эффектами." },
+                { "language": "ckb", "text": "تێچوو گرنگە، بەڵام پێویستە خەرجیی کورتخایەن لەگەڵ زیانی درێژخایەن، ئەنجامی تەندروستی و کاریگەریی دابەشکردن بەراورد بکرێت." },
+                { "language": "kmr", "text": "Lêçûn girîng in, lê divê xercên kurt-dem bi zirarên dirêj-dem, encamên tenduristiyê û bandorên belavkirinê re bên berhevkirin." },
+                { "language": "pl", "text": "Koszty są ważne, ale trzeba porównać wydatki krótkoterminowe ze szkodami długoterminowymi, skutkami zdrowotnymi i efektami dystrybucyjnymi." },
+                { "language": "ro", "text": "Costurile sunt importante, dar trebuie comparate cheltuielile pe termen scurt cu daunele pe termen lung, consecințele asupra sănătății și efectele de distribuție." },
+                { "language": "sq", "text": "Kostot janë të rëndësishme, por duhen krahasuar shpenzimet afatshkurtra me dëmet afatgjata, pasojat shëndetësore dhe efektet e shpërndarjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt den Kostenpunkt ernst und erweitert ihn um langfristige und soziale Kosten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer takes the cost issue seriously and expands it to long-term and social costs." },
+                { "language": "fa", "text": "خوب است: پاسخ مسئله هزینه را جدی می‌گیرد و آن را به هزینه‌های بلندمدت و اجتماعی گسترش می‌دهد." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة مسألة التكلفة بجدية وتوسعها إلى تكاليف طويلة المدى واجتماعية." },
+                { "language": "tr", "text": "İyi: yanıt maliyet konusunu ciddiye alıyor ve onu uzun vadeli ve sosyal maliyetlere genişletiyor." },
+                { "language": "ru", "text": "Хорошо: ответ серьезно относится к затратам и расширяет их до долгосрочных и социальных издержек." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە خاڵی تێچوو بە جدی وەردەگرێت و بۆ تێچووی درێژخایەن و کۆمەڵایەتی فراوانی دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv mijara lêçûnê bi ciddî digire û wê ber bi lêçûnên dirêj-dem û civakî ve fireh dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź traktuje koszty poważnie i rozszerza je o koszty długoterminowe oraz społeczne." },
+                { "language": "ro", "text": "Bine: răspunsul ia în serios costurile și le extinde la costuri pe termen lung și sociale." },
+                { "language": "sq", "text": "Mirë: përgjigjja e merr seriozisht koston dhe e zgjeron te kostot afatgjata dhe shoqërore." }
+              ],
+              "explanationKey": "costs-context"
+            },
+            {
+              "id": "budget-first",
+              "text": "Wenn die Stadt kein Geld hat, sollte sie zuerst nur die Maßnahmen umsetzen, die fast nichts kosten.",
+              "translations": [
+                { "language": "en", "text": "If the city has no money, it should first implement only measures that cost almost nothing." },
+                { "language": "fa", "text": "اگر شهر پول ندارد، ابتدا فقط اقداماتی را اجرا کند که تقریباً هیچ هزینه‌ای ندارند." },
+                { "language": "ar", "text": "إذا لم يكن لدى المدينة مال، فعليها أولاً تنفيذ الإجراءات التي لا تكلف تقريباً شيئاً." },
+                { "language": "tr", "text": "Şehrin parası yoksa önce neredeyse hiç maliyeti olmayan önlemleri uygulamalıdır." },
+                { "language": "ru", "text": "Если у города нет денег, сначала следует реализовывать только меры, которые почти ничего не стоят." },
+                { "language": "ckb", "text": "ئەگەر شارەکە پارەی نییە، پێویستە سەرەتا تەنها ئەو ڕێکارانە جێبەجێ بکات کە نزیکەی هیچ تێچوویان نییە." },
+                { "language": "kmr", "text": "Heke bajar pere tune be, divê pêşî tenê tedbîrên ku hema bê lêçûn in pêk bîne." },
+                { "language": "pl", "text": "Jeśli miasto nie ma pieniędzy, powinno najpierw realizować tylko działania, które prawie nic nie kosztują." },
+                { "language": "ro", "text": "Dacă orașul nu are bani, ar trebui să implementeze mai întâi doar măsurile care nu costă aproape nimic." },
+                { "language": "sq", "text": "Nëse qyteti nuk ka para, së pari duhet të zbatojë vetëm masat që pothuajse nuk kushtojnë asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng: Haushaltsgrenzen sind real, aber ein reiner Nullkostenmaßstab blendet Nutzen, Folgekosten und Gerechtigkeit aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: budget limits are real, but a pure zero-cost standard ignores benefits, follow-up costs, and fairness." },
+                { "language": "fa", "text": "زیادی محدود است: محدودیت بودجه واقعی است، اما معیار صرفاً بدون هزینه، فایده، هزینه‌های بعدی و عدالت را نادیده می‌گیرد." },
+                { "language": "ar", "text": "ضيق جداً: حدود الميزانية حقيقية، لكن معيار الصفر تكلفة يتجاهل الفائدة والتكاليف اللاحقة والعدالة." },
+                { "language": "tr", "text": "Çok dar: bütçe sınırları gerçektir, ama yalnızca sıfır maliyet ölçütü faydayı, sonraki maliyetleri ve adaleti görmezden gelir." },
+                { "language": "ru", "text": "Слишком узко: бюджетные ограничения реальны, но чистый критерий нулевых затрат игнорирует пользу, последующие расходы и справедливость." },
+                { "language": "ckb", "text": "زۆر تەسکە: سنووری بودجە ڕاستە، بەڵام پێوەری تەنها بێ‌تێچوو سوود، تێچووی داهاتوو و دادپەروەری پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Pir teng e: sînorên budceyê rast in, lê pîvana tenê bê-lêçûn sûd, lêçûnên paşê û adiliyê ji bîr dike." },
+                { "language": "pl", "text": "Zbyt wąsko: ograniczenia budżetowe są realne, ale czysty standard zerowych kosztów pomija korzyści, koszty następcze i sprawiedliwość." },
+                { "language": "ro", "text": "Prea îngust: limitele bugetare sunt reale, dar un criteriu pur de cost zero ignoră beneficiile, costurile ulterioare și echitatea." },
+                { "language": "sq", "text": "Shumë e ngushtë: kufijtë buxhetorë janë realë, por një kriter vetëm pa kosto shpërfill përfitimin, kostot e mëvonshme dhe drejtësinë." }
+              ],
+              "explanationKey": "zero-cost-too-narrow"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "conditioned-justification",
+              "text": "Vertretbar ist die Maßnahme, wenn sie messbar wirkt, realistische Alternativen schafft und soziale Härten von Anfang an abfedert.",
+              "translations": [
+                { "language": "en", "text": "The measure is justifiable if it has a measurable effect, creates realistic alternatives, and cushions social hardship from the start." },
+                { "language": "fa", "text": "این اقدام وقتی قابل دفاع است که اثر قابل اندازه‌گیری داشته باشد، جایگزین‌های واقع‌بینانه بسازد و سختی‌های اجتماعی را از ابتدا کاهش دهد." },
+                { "language": "ar", "text": "يكون الإجراء مبرراً إذا كان له أثر قابل للقياس، وخلق بدائل واقعية، وخفف المشقات الاجتماعية منذ البداية." },
+                { "language": "tr", "text": "Önlem, ölçülebilir etki yaratır, gerçekçi alternatifler oluşturur ve sosyal zorlukları baştan hafifletirse savunulabilir olur." },
+                { "language": "ru", "text": "Мера оправдана, если она измеримо действует, создает реалистичные альтернативы и с самого начала смягчает социальные трудности." },
+                { "language": "ckb", "text": "ڕێکارەکە کاتێک بەرگریپێکراوە کە کاریگەریی پێوانەکراوی هەبێت، جێگرەوەی واقیعی دروست بکات و لە سەرەتاوە قورساییە کۆمەڵایەتییەکان سووک بکات." },
+                { "language": "kmr", "text": "Tedbîr heke bandora pîvanbar hebe, alternatîfên rastîn biafirîne û ji destpêkê ve dijwariyên civakî sivik bike dikare were parastin." },
+                { "language": "pl", "text": "Działanie jest uzasadnione, jeśli mierzalnie działa, tworzy realistyczne alternatywy i od początku łagodzi społeczne trudności." },
+                { "language": "ro", "text": "Măsura este justificabilă dacă are efect măsurabil, creează alternative realiste și amortizează dificultățile sociale de la început." },
+                { "language": "sq", "text": "Masa është e justifikueshme nëse ka efekt të matshëm, krijon alternativa realiste dhe zbut vështirësitë shoqërore që në fillim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Schlussposition nennt überprüfbare Bedingungen und verbindet Klimaeffekt mit sozialer Fairness.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the final position names checkable conditions and connects climate effect with social fairness." },
+                { "language": "fa", "text": "خوب است: موضع پایانی شرایط قابل بررسی را نام می‌برد و اثر اقلیمی را با عدالت اجتماعی پیوند می‌دهد." },
+                { "language": "ar", "text": "جيد: يسمي الموقف الختامي شروطاً قابلة للفحص ويربط الأثر المناخي بالعدالة الاجتماعية." },
+                { "language": "tr", "text": "İyi: son pozisyon kontrol edilebilir koşulları adlandırıyor ve iklim etkisini sosyal adaletle bağlıyor." },
+                { "language": "ru", "text": "Хорошо: итоговая позиция называет проверяемые условия и связывает климатический эффект с социальной справедливостью." },
+                { "language": "ckb", "text": "باشە: هەڵوێستی کۆتایی مەرجی پشکنراو ناو دەبات و کاریگەریی کەشوهەوا بە دادپەروەریی کۆمەڵایەتی دەبەستێتەوە." },
+                { "language": "kmr", "text": "Baş e: helwesta dawî şertên kontrolbar bi nav dike û bandora avhewa bi adaleta civakî ve girê dide." },
+                { "language": "pl", "text": "Dobrze: stanowisko końcowe nazywa sprawdzalne warunki i łączy efekt klimatyczny ze sprawiedliwością społeczną." },
+                { "language": "ro", "text": "Bine: poziția finală numește condiții verificabile și leagă efectul climatic de echitatea socială." },
+                { "language": "sq", "text": "Mirë: qëndrimi përfundimtar përmend kushte të kontrollueshme dhe lidh efektin klimatik me drejtësinë shoqërore." }
+              ],
+              "explanationKey": "measurable-fair-feasible"
+            },
+            {
+              "id": "support-if-majority",
+              "text": "Ich würde die Maßnahme unterstützen, wenn eine Mehrheit sie akzeptiert und die wichtigsten Nachteile erklärt wurden.",
+              "translations": [
+                { "language": "en", "text": "I would support the measure if a majority accepts it and the most important disadvantages have been explained." },
+                { "language": "fa", "text": "اگر اکثریت آن را بپذیرند و مهم‌ترین معایب توضیح داده شده باشند، از اقدام حمایت می‌کنم." },
+                { "language": "ar", "text": "سأدعم الإجراء إذا قبلته الأغلبية وشرحت أهم العيوب." },
+                { "language": "tr", "text": "Çoğunluk kabul eder ve en önemli dezavantajlar açıklanmış olursa önlemi desteklerdim." },
+                { "language": "ru", "text": "Я бы поддержал меру, если большинство ее принимает и основные недостатки объяснены." },
+                { "language": "ckb", "text": "پشتیوانی لە ڕێکارەکە دەکەم ئەگەر زۆرینە قبوڵی بکات و گرنگترین لاوازییەکان ڕوون کرابنەوە." },
+                { "language": "kmr", "text": "Ez piştgirî didim tedbîrê heke pirranî qebûl bike û kêmasiyên herî girîng hatibin ravekirin." },
+                { "language": "pl", "text": "Poparłbym działanie, jeśli większość je akceptuje i wyjaśniono najważniejsze wady." },
+                { "language": "ro", "text": "Aș susține măsura dacă o majoritate o acceptă și cele mai importante dezavantaje au fost explicate." },
+                { "language": "sq", "text": "Do ta mbështesja masën nëse shumica e pranon dhe janë shpjeguar disavantazhet kryesore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Mehrheitsakzeptanz und Erklärung reichen nicht, wenn Wirkung, Alternativen und soziale Abfederung unklar bleiben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: majority acceptance and explanation are not enough if effect, alternatives, and social cushioning remain unclear." },
+                { "language": "fa", "text": "ضعیف است: پذیرش اکثریت و توضیح کافی نیست اگر اثر، جایگزین‌ها و کاهش فشار اجتماعی روشن نباشد." },
+                { "language": "ar", "text": "ضعيفة جداً: قبول الأغلبية والشرح لا يكفيان إذا بقي الأثر والبدائل والتخفيف الاجتماعي غير واضحة." },
+                { "language": "tr", "text": "Zayıf: çoğunluk kabulü ve açıklama, etki, alternatifler ve sosyal hafifletme belirsiz kalırsa yeterli değildir." },
+                { "language": "ru", "text": "Слабо: принятия большинством и объяснения недостаточно, если эффект, альтернативы и социальное смягчение остаются неясными." },
+                { "language": "ckb", "text": "لاوازە: قبوڵی زۆرینە و ڕوونکردنەوە بەس نییە ئەگەر کاریگەری، جێگرەوە و سووککردنی کۆمەڵایەتی ناڕوون بمێننەوە." },
+                { "language": "kmr", "text": "Lawaz e: qebûlkirina pirranî û ravekirin bes nîne heke bandor, alternatîf û sivikkirina civakî nezelal bimînin." },
+                { "language": "pl", "text": "Zbyt słabo: akceptacja większości i wyjaśnienie nie wystarczą, jeśli efekt, alternatywy i społeczne złagodzenie pozostają niejasne." },
+                { "language": "ro", "text": "Prea slab: acceptarea majorității și explicația nu ajung dacă efectul, alternativele și amortizarea socială rămân neclare." },
+                { "language": "sq", "text": "Shumë e dobët: pranimi i shumicës dhe shpjegimi nuk mjaftojnë nëse efekti, alternativat dhe zbutja shoqërore mbeten të paqarta." }
+              ],
+              "explanationKey": "majority-not-enough"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "opening-note",
+          "text": "Eine starke C1-Eröffnung vermeidet beide Kurzschlüsse: Klimaschutz als einfache Lösung und soziale Folgen als bloße Ausrede.",
+          "translations": [
+            { "language": "en", "text": "A strong C1 opening avoids both shortcuts: climate protection as a simple solution and social consequences as a mere excuse." },
+            { "language": "fa", "text": "آغاز قوی در C1 از هر دو ساده‌سازی دوری می‌کند: حفاظت از اقلیم به‌عنوان راه‌حل ساده و پیامدهای اجتماعی به‌عنوان بهانه صرف." },
+            { "language": "ar", "text": "تتجنب افتتاحية C1 القوية كلا الاختزالين: حماية المناخ كحل بسيط والآثار الاجتماعية كذريعة فقط." },
+            { "language": "tr", "text": "Güçlü bir C1 açılışı iki kestirmeden de kaçınır: iklim korumasını basit çözüm, sosyal sonuçları yalnızca bahane görmek." },
+            { "language": "ru", "text": "Сильное начало C1 избегает обеих упрощенностей: защиты климата как простого решения и социальных последствий как простого предлога." },
+            { "language": "ckb", "text": "دەستپێکی بەهێزی C1 لە هەردوو کورتکردنەوە دوور دەکەوێتەوە: پاراستنی کەشوهەوا وەک چارەسەری سادە و ئەنجامە کۆمەڵایەتییەکان وەک بیانووی سادە." },
+            { "language": "kmr", "text": "Destpêka bihêz a C1 ji her du kurtkirinan dûr dikeve: parastina avhewa wek çareseriyeke sade û encamên civakî wek hincetek tenê." },
+            { "language": "pl", "text": "Mocne otwarcie C1 unika dwóch skrótów: ochrony klimatu jako prostego rozwiązania i skutków społecznych jako zwykłej wymówki." },
+            { "language": "ro", "text": "O deschidere C1 puternică evită ambele scurtături: protecția climei ca soluție simplă și consecințele sociale ca simplu pretext." },
+            { "language": "sq", "text": "Një hapje e fortë C1 shmang të dyja shkurtesat: mbrojtjen e klimës si zgjidhje të thjeshtë dhe pasojat shoqërore si justifikim të thjeshtë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "fairness-note",
+          "text": "Soziale Fairness beginnt mit der Frage, wer realistische Alternativen hat und wer nur theoretisch wählen kann.",
+          "translations": [
+            { "language": "en", "text": "Social fairness begins with the question of who has realistic alternatives and who can choose only in theory." },
+            { "language": "fa", "text": "عدالت اجتماعی با این پرسش شروع می‌شود که چه کسی جایگزین واقعی دارد و چه کسی فقط در نظریه حق انتخاب دارد." },
+            { "language": "ar", "text": "تبدأ العدالة الاجتماعية بسؤال من لديه بدائل واقعية ومن يستطيع الاختيار نظرياً فقط." },
+            { "language": "tr", "text": "Sosyal adalet, kimin gerçekçi alternatifleri olduğu ve kimin yalnızca teoride seçebildiği sorusuyla başlar." },
+            { "language": "ru", "text": "Социальная справедливость начинается с вопроса, у кого есть реалистичные альтернативы, а кто может выбирать только теоретически." },
+            { "language": "ckb", "text": "دادپەروەریی کۆمەڵایەتی بەو پرسیارە دەست پێدەکات کە کێ جێگرەوەی واقیعی هەیە و کێ تەنها بە تیۆری دەتوانێت هەڵبژێرێت." },
+            { "language": "kmr", "text": "Adaleta civakî bi vê pirsê dest pê dike ku kî alternatîfên rastîn hene û kî tenê di teoriyê de dikare hilbijêre." },
+            { "language": "pl", "text": "Sprawiedliwość społeczna zaczyna się od pytania, kto ma realistyczne alternatywy, a kto może wybierać tylko teoretycznie." },
+            { "language": "ro", "text": "Echitatea socială începe cu întrebarea cine are alternative realiste și cine poate alege doar teoretic." },
+            { "language": "sq", "text": "Drejtësia shoqërore fillon me pyetjen kush ka alternativa realiste dhe kush mund të zgjedhë vetëm teorikisht." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "criteria-note",
+          "text": "Einwände werden produktiv, wenn sie Kriterien liefern: Betroffenheit, Dauer, Stärke, Alternative und Ausgleich.",
+          "translations": [
+            { "language": "en", "text": "Objections become productive when they provide criteria: affectedness, duration, intensity, alternative, and compensation." },
+            { "language": "fa", "text": "اعتراض‌ها وقتی سازنده می‌شوند که معیار بدهند: میزان تأثر، مدت، شدت، جایگزین و جبران." },
+            { "language": "ar", "text": "تصبح الاعتراضات منتجة عندما تقدم معايير: التأثر، والمدة، والشدة، والبديل، والتعويض." },
+            { "language": "tr", "text": "İtirazlar kriter sağladığında üretken olur: etkilenme, süre, yoğunluk, alternatif ve telafi." },
+            { "language": "ru", "text": "Возражения становятся продуктивными, когда дают критерии: затронутость, длительность, сила, альтернатива и компенсация." },
+            { "language": "ckb", "text": "ناڕەزایەتی کاتێک بەرهەمدار دەبێت کە پێوەر بدات: کاریگەری، ماوە، هێز، جێگرەوە و قەرەبوو." },
+            { "language": "kmr", "text": "Nerazîbûn dema pîvanan bidin berhemdar dibin: bandorbûn, dem, hêz, alternatîf û telafî." },
+            { "language": "pl", "text": "Zastrzeżenia stają się produktywne, gdy dostarczają kryteriów: dotknięcie, czas trwania, siłę, alternatywę i kompensację." },
+            { "language": "ro", "text": "Obiecțiile devin productive când oferă criterii: afectare, durată, intensitate, alternativă și compensare." },
+            { "language": "sq", "text": "Kundërshtimet bëhen produktive kur japin kritere: prekja, kohëzgjatja, forca, alternativa dhe kompensimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "compensation-note",
+          "text": "Ausgleich ist am überzeugendsten, wenn er vor der Umsetzung mitgeplant und nicht nach Protesten improvisiert wird.",
+          "translations": [
+            { "language": "en", "text": "Compensation is most convincing when it is planned before implementation and not improvised after protests." },
+            { "language": "fa", "text": "جبران وقتی قانع‌کننده‌تر است که پیش از اجرا برنامه‌ریزی شود، نه اینکه بعد از اعتراض‌ها بداهه ساخته شود." },
+            { "language": "ar", "text": "يكون التعويض أكثر إقناعاً عندما يُخطط له قبل التنفيذ ولا يُرتجل بعد الاحتجاجات." },
+            { "language": "tr", "text": "Telafi, uygulamadan önce planlandığında ve protestolardan sonra doğaçlama yapılmadığında en ikna edicidir." },
+            { "language": "ru", "text": "Компенсация наиболее убедительна, когда она планируется до реализации, а не импровизируется после протестов." },
+            { "language": "ckb", "text": "قەرەبوو کاتێک قایلکەرترە کە پێش جێبەجێکردن پلان بکرێت و نە دوای ناڕەزایەتی بە پەلە دروست بکرێت." },
+            { "language": "kmr", "text": "Telafî dema berî pêkanînê were plankirin û ne piştî protestoyan bi lez were çêkirin herî qane dike." },
+            { "language": "pl", "text": "Kompensacja jest najbardziej przekonująca, gdy planuje się ją przed wdrożeniem, a nie improwizuje po protestach." },
+            { "language": "ro", "text": "Compensarea este cea mai convingătoare când este planificată înainte de implementare și nu improvizată după proteste." },
+            { "language": "sq", "text": "Kompensimi është më bindës kur planifikohet para zbatimit dhe nuk improvizohet pas protestave." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "Eine starke Schlussposition verbindet messbaren Klimaeffekt, realistische Alternativen und soziale Abfederung.",
+          "translations": [
+            { "language": "en", "text": "A strong final position connects measurable climate effect, realistic alternatives, and social cushioning." },
+            { "language": "fa", "text": "موضع پایانی قوی اثر اقلیمی قابل اندازه‌گیری، جایگزین‌های واقع‌بینانه و کاهش فشار اجتماعی را به هم وصل می‌کند." },
+            { "language": "ar", "text": "الموقف الختامي القوي يربط الأثر المناخي القابل للقياس والبدائل الواقعية والتخفيف الاجتماعي." },
+            { "language": "tr", "text": "Güçlü bir son pozisyon ölçülebilir iklim etkisini, gerçekçi alternatifleri ve sosyal hafifletmeyi bağlar." },
+            { "language": "ru", "text": "Сильная итоговая позиция связывает измеримый климатический эффект, реалистичные альтернативы и социальное смягчение." },
+            { "language": "ckb", "text": "هەڵوێستی کۆتاییی بەهێز کاریگەریی کەشوهەوایی پێوانەکراو، جێگرەوەی واقیعی و سووککردنی کۆمەڵایەتی پێکەوە دەبەستێت." },
+            { "language": "kmr", "text": "Helwesta dawî ya bihêz bandora avhewayî ya pîvanbar, alternatîfên rastîn û sivikkirina civakî girê dide." },
+            { "language": "pl", "text": "Mocne stanowisko końcowe łączy mierzalny efekt klimatyczny, realistyczne alternatywy i społeczne złagodzenie." },
+            { "language": "ro", "text": "O poziție finală puternică leagă efectul climatic măsurabil, alternativele realiste și amortizarea socială." },
+            { "language": "sq", "text": "Një qëndrim përfundimtar i fortë lidh efektin klimatik të matshëm, alternativat realiste dhe zbutjen shoqërore." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "climate-social-impact-city-discussion",
+          "placement": "header",
+          "purpose": "Show a neutral city discussion about public transport, cycling infrastructure, small businesses, and social fairness.",
+          "altText": "Eine neutrale Illustration einer Stadtteilrunde zu Klimaschutz, Nahverkehr und sozialem Ausgleich.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a neighborhood discussion about climate protection, public transport, and social compensation." },
+            { "language": "fa", "text": "تصویری بی‌طرف از یک بحث محله‌ای درباره حفاظت از اقلیم، حمل‌ونقل عمومی و جبران اجتماعی." },
+            { "language": "ar", "text": "رسم محايد لنقاش حي حول حماية المناخ والنقل العام والتعويض الاجتماعي." },
+            { "language": "tr", "text": "İklim koruması, toplu taşıma ve sosyal telafi hakkında bir mahalle tartışmasının tarafsız illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация районной дискуссии о защите климата, общественном транспорте и социальной компенсации." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە گفتوگۆی گەڕەک دەربارەی پاراستنی کەشوهەوا، هاتوچۆی گشتی و قەرەبووی کۆمەڵایەتی." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya gotûbêja taxê li ser parastina avhewa, veguhestina giştî û telafiya civakî." },
+            { "language": "pl", "text": "Neutralna ilustracja dyskusji dzielnicowej o ochronie klimatu, transporcie publicznym i kompensacji społecznej." },
+            { "language": "ro", "text": "O ilustrație neutră a unei discuții de cartier despre protecția climei, transport public și compensare socială." },
+            { "language": "sq", "text": "Një ilustrim neutral i një diskutimi lagjeje për mbrojtjen e klimës, transportin publik dhe kompensimin shoqëror." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adults in a community meeting room reviewing an abstract city mobility map, icons for bus, bicycle, delivery zone and accessibility without readable text, calm civic discussion, no party symbols, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

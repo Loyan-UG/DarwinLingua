@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-29-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 29 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 29",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-ausnahmeregelung-beantragen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Ausnahmeregelung beantragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Requesting an exception" },
+        { "language": "fa", "text": "درخواست یک استثنا در روند اداری" },
+        { "language": "ar", "text": "طلب استثناء في إجراء إداري" },
+        { "language": "tr", "text": "İdari süreçte istisna talep etmek" },
+        { "language": "ru", "text": "Запрос исключения в административной процедуре" },
+        { "language": "ckb", "text": "داواکردنی جیاوازییەک لە ڕەوتی فەرمانگەیی" },
+        { "language": "kmr", "text": "Daxwaza îstîsnayekê di pêvajoya îdarî de" },
+        { "language": "pl", "text": "Wnioskowanie o wyjątek w procedurze urzędowej" },
+        { "language": "ro", "text": "Solicitarea unei excepții într-o procedură administrativă" },
+        { "language": "sq", "text": "Kërkimi i një përjashtimi në një procedurë administrative" }
+      ],
+      "description": "Sie bitten bei einer Behörde um Prüfung, ob eine eng begrenzte Ausnahmeregelung möglich ist. Sie argumentieren mit Nachweisen, Folgen und Verhältnismäßigkeit, ohne einen Anspruch zu behaupten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You ask a public office to review whether a narrowly limited exception is possible. You argue with evidence, consequences, and proportionality without claiming an entitlement." },
+        { "language": "fa", "text": "شما از یک اداره می‌خواهید بررسی کند آیا یک استثنای محدود ممکن است یا نه. با مدارک، پیامدها و تناسب درخواست استدلال می‌کنید، بدون اینکه ادعای حق قطعی داشته باشید." },
+        { "language": "ar", "text": "تطلب من جهة إدارية فحص ما إذا كان استثناء محدود جداً ممكناً. تستند إلى الأدلة والعواقب والتناسب من دون الادعاء بحق مؤكد." },
+        { "language": "tr", "text": "Bir kurumdan dar kapsamlı bir istisnanın mümkün olup olmadığını incelemesini istiyorsunuz. Kesin hak iddia etmeden belge, sonuç ve orantılılık üzerinden gerekçe sunuyorsunuz." },
+        { "language": "ru", "text": "Вы просите ведомство проверить, возможно ли строго ограниченное исключение. Вы аргументируете доказательствами, последствиями и соразмерностью, не заявляя о безусловном праве." },
+        { "language": "ckb", "text": "لە فەرمانگەیەک داوا دەکەیت بپشکنێت ئایا جیاوازییەکی سنووردار دەکرێت یان نا. بە بەڵگە، ئاکام و هاوسەنگی داواکە پشتگیری دەکەیت، بەبێ ئەوەی بانگەشەی مافی دڵنیابکەیت." },
+        { "language": "kmr", "text": "Hûn ji saziyeke îdarî dixwazin kontrol bike ka îstîsnayeke teng-sînorkirî gengaz e yan na. Hûn bi belge, encam û rêjeyê hincet tînin, bêyî ku mafekî qut îdia bikin." },
+        { "language": "pl", "text": "Prosi Pan urząd o sprawdzenie, czy możliwy jest wąsko ograniczony wyjątek. Argumentuje Pan dokumentami, skutkami i proporcjonalnością, bez twierdzenia, że ma Pan bezwarunkowe roszczenie." },
+        { "language": "ro", "text": "Solicitați unei autorități să verifice dacă este posibilă o excepție strict limitată. Argumentați cu dovezi, consecințe și proporționalitate, fără a pretinde un drept automat." },
+        { "language": "sq", "text": "I kërkoni një institucioni të kontrollojë nëse është i mundur një përjashtim shumë i kufizuar. Argumentoni me prova, pasoja dhe proporcionalitet, pa pretenduar një të drejtë të sigurt." }
+      ],
+      "learnerGoal": "Eine mögliche Ausnahme vorsichtig beantragen: Regel anerkennen, besondere Folge belegen, eine begrenzte Lösung vorschlagen und eine aktenfähige Zusammenfassung formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Request a possible exception carefully: acknowledge the rule, support the special consequence, propose a limited solution, and formulate a file-ready summary." },
+        { "language": "fa", "text": "یک استثنای احتمالی را محتاطانه درخواست کنید: قاعده را بپذیرید، پیامد خاص را با مدرک نشان دهید، راه‌حلی محدود پیشنهاد کنید و خلاصه‌ای مناسب پرونده بیان کنید." },
+        { "language": "ar", "text": "اطلب استثناءً محتملاً بحذر: اعترف بالقاعدة، وادعم النتيجة الخاصة بدليل، واقترح حلاً محدوداً، وصغ ملخصاً صالحاً للملف." },
+        { "language": "tr", "text": "Olası bir istisnayı dikkatli biçimde talep edin: kuralı kabul edin, özel sonucu belgeleyin, sınırlı bir çözüm önerin ve dosyaya uygun bir özet kurun." },
+        { "language": "ru", "text": "Осторожно запросить возможное исключение: признать правило, подтвердить особое последствие, предложить ограниченное решение и сформулировать резюме для дела." },
+        { "language": "ckb", "text": "جیاوازییەکی ئەگەری بە وریایی داوا بکە: ڕێساکە وەربگرە، ئاکامی تایبەت بە بەڵگە پشتگیری بکە، چارەسەرێکی سنووردار پێشنیار بکە و پوختەیەکی گونجاو بۆ کەیس بڵێ." },
+        { "language": "kmr", "text": "Îstîsnayeke gengaz bi hişyarî bixwazin: qaîdeyê qebûl bikin, encama taybet bi belge piştgirî bikin, çareseriyeke sînorkirî pêşniyar bikin û kurteyeke guncaw ji bo dosyeyê ava bikin." },
+        { "language": "pl", "text": "Ostrożnie poprosić o możliwy wyjątek: uznać zasadę, udokumentować szczególny skutek, zaproponować ograniczone rozwiązanie i sformułować podsumowanie do akt." },
+        { "language": "ro", "text": "Solicitați cu prudență o posibilă excepție: recunoașteți regula, susțineți consecința specială cu dovezi, propuneți o soluție limitată și formulați un rezumat potrivit pentru dosar." },
+        { "language": "sq", "text": "Kërkoni me kujdes një përjashtim të mundshëm: pranoni rregullin, mbështetni pasojën e veçantë me prova, propozoni zgjidhje të kufizuar dhe formuloni përmbledhje për dosje." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 17,
+      "isPublished": true,
+      "sortOrder": 29,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller/in",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌کننده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikues" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeitung",
+          "translations": [
+            { "language": "en", "text": "Caseworker" },
+            { "language": "fa", "text": "کارمند پرونده" },
+            { "language": "ar", "text": "الموظف المسؤول" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karmendê dozê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționar responsabil" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie möchten eine Ausnahmeregelung beantragen. Worum geht es genau?",
+          "translations": [
+            { "language": "en", "text": "You would like to request an exception. What exactly is this about?" },
+            { "language": "fa", "text": "شما می‌خواهید درخواست یک استثنا بدهید. دقیقاً موضوع چیست؟" },
+            { "language": "ar", "text": "تود أن تطلب استثناءً. ما الموضوع بالضبط؟" },
+            { "language": "tr", "text": "Bir istisna talep etmek istiyorsunuz. Konu tam olarak nedir?" },
+            { "language": "ru", "text": "Вы хотите запросить исключение. О чём именно идёт речь?" },
+            { "language": "ckb", "text": "دەتەوێت داوای جیاوازییەک بکەیت. بابەتەکە بە وردی چییە؟" },
+            { "language": "kmr", "text": "Hûn dixwazin daxwaza îstîsnayekê bikin. Mijar bi rastî çi ye?" },
+            { "language": "pl", "text": "Chce Pan złożyć wniosek o wyjątek. Czego dokładnie dotyczy sprawa?" },
+            { "language": "ro", "text": "Doriți să solicitați o excepție. Despre ce este vorba exact?" },
+            { "language": "sq", "text": "Dëshironi të kërkoni një përjashtim. Për çfarë bëhet fjalë saktësisht?" }
+          ],
+          "function": "opening-question",
+          "toneNote": "formal, prüfend",
+          "expectedLearnerAction": "Ausnahme sachlich und begrenzt einführen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte nicht behaupten, dass mir eine Ausnahme zusteht. Ich bitte nur um Prüfung, ob in meinem Fall eine eng begrenzte Lösung möglich ist: Mein Ausbildungsvertrag beginnt am 1. August, der Betrieb braucht bis zum 20. Juli eine Bestätigung, und der reguläre Termin liegt erst am 5. August.",
+          "translations": [
+            { "language": "en", "text": "I do not want to claim that I am entitled to an exception. I am only asking for a review of whether a narrowly limited solution is possible in my case: my vocational training contract starts on August 1, the company needs confirmation by July 20, and the regular appointment is not until August 5." },
+            { "language": "fa", "text": "نمی‌خواهم ادعا کنم که حتماً حق استثنا دارم. فقط درخواست می‌کنم بررسی شود آیا در مورد من راه‌حلی محدود ممکن است یا نه: قرارداد آموزش حرفه‌ای من از اول اوت شروع می‌شود، کارفرما تا ۲۰ ژوئیه به یک تأییدیه نیاز دارد و وقت عادی تازه ۵ اوت است." },
+            { "language": "ar", "text": "لا أريد أن أدعي أن لي حقاً في استثناء. أطلب فقط فحص ما إذا كان حل محدود جداً ممكناً في حالتي: عقد التدريب المهني يبدأ في 1 أغسطس، والشركة تحتاج إلى تأكيد حتى 20 يوليو، والموعد العادي ليس إلا في 5 أغسطس." },
+            { "language": "tr", "text": "Bir istisnaya kesin hakkım olduğunu iddia etmek istemiyorum. Yalnızca benim durumumda dar kapsamlı bir çözümün mümkün olup olmadığının incelenmesini rica ediyorum: mesleki eğitim sözleşmem 1 Ağustos'ta başlıyor, işletmenin 20 Temmuz'a kadar onaya ihtiyacı var ve normal randevu ancak 5 Ağustos'ta." },
+            { "language": "ru", "text": "Я не хочу утверждать, что мне полагается исключение. Я лишь прошу проверить, возможно ли в моём случае строго ограниченное решение: мой договор о профессиональном обучении начинается 1 августа, предприятие должно получить подтверждение до 20 июля, а обычная запись только 5 августа." },
+            { "language": "ckb", "text": "نامەوێت بانگەشە بکەم کە جیاوازییەک بە دڵنیایی بۆ من دەبێت. تەنها داوا دەکەم بپشکنرێت ئایا لە کەیسی من چارەسەرێکی سنووردار دەکرێت یان نا: گرێبەستی فێرکاری پیشەیی من لە ١ی ئاب دەست پێدەکات، شوێنی کار تا ٢٠ی تەمموز پێویستی بە پشتڕاستکردنەوە هەیە، و کاتی ئاسایی تەنها لە ٥ی ئابە." },
+            { "language": "kmr", "text": "Ez naxwazim bibêjim ku îstîsnayek bi qetî ji min re heye. Ez tenê daxwaza kontrolê dikim ka di doza min de çareseriyeke teng-sînorkirî gengaz e yan na: peymana perwerdehiya pîşeyî ya min di 1ê Tebaxê de dest pê dike, karxane heya 20ê Tîrmehê piştrastkirinê divê, û randevûya asayî tenê di 5ê Tebaxê de ye." },
+            { "language": "pl", "text": "Nie chcę twierdzić, że przysługuje mi wyjątek. Proszę jedynie o sprawdzenie, czy w mojej sprawie możliwe jest wąsko ograniczone rozwiązanie: moja umowa szkolenia zawodowego zaczyna się 1 sierpnia, zakład potrzebuje potwierdzenia do 20 lipca, a zwykły termin jest dopiero 5 sierpnia." },
+            { "language": "ro", "text": "Nu vreau să susțin că mi se cuvine automat o excepție. Solicit doar verificarea dacă în cazul meu este posibilă o soluție strict limitată: contractul meu de formare profesională începe la 1 august, angajatorul are nevoie de confirmare până la 20 iulie, iar programarea obișnuită este abia pe 5 august." },
+            { "language": "sq", "text": "Nuk dua të pretendoj se më takon patjetër një përjashtim. Kërkoj vetëm të kontrollohet nëse në rastin tim është e mundur një zgjidhje shumë e kufizuar: kontrata ime e formimit profesional fillon më 1 gusht, punëdhënësi ka nevojë për konfirmim deri më 20 korrik dhe takimi i rregullt është vetëm më 5 gusht." }
+          ],
+          "function": "limited-exception-request",
+          "toneNote": "vorsichtig, nicht fordernd",
+          "expectedLearnerAction": "Regel respektieren und Prüfbitte mit Daten begründen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Warum reicht der reguläre Termin aus Ihrer Sicht nicht aus?",
+          "translations": [
+            { "language": "en", "text": "Why, from your point of view, is the regular appointment not sufficient?" },
+            { "language": "fa", "text": "از نظر شما چرا وقت عادی کافی نیست؟" },
+            { "language": "ar", "text": "لماذا لا يكفي الموعد العادي من وجهة نظرك؟" },
+            { "language": "tr", "text": "Sizin açınızdan normal randevu neden yeterli değil?" },
+            { "language": "ru", "text": "Почему, с вашей точки зрения, обычной записи недостаточно?" },
+            { "language": "ckb", "text": "لە ڕوانگەی تۆوە بۆچی کاتی ئاسایی بەس نییە؟" },
+            { "language": "kmr", "text": "Ji nêrîna we ve çima randevûya asayî têr nake?" },
+            { "language": "pl", "text": "Dlaczego z Pana punktu widzenia zwykły termin nie wystarcza?" },
+            { "language": "ro", "text": "De ce, din punctul dumneavoastră de vedere, programarea obișnuită nu este suficientă?" },
+            { "language": "sq", "text": "Pse, sipas jush, takimi i rregullt nuk mjafton?" }
+          ],
+          "function": "consequence-question",
+          "toneNote": "formal",
+          "expectedLearnerAction": "Besondere Folge konkret erklären"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Der Betrieb hat schriftlich mitgeteilt, dass der Vertrag ohne fristgerechte Bestätigung nicht aktiviert werden kann. Das hätte Folgen für den Ausbildungsbeginn, die Anmeldung bei der Krankenkasse und die Einsatzplanung. Deshalb geht es mir nicht um eine bevorzugte Behandlung, sondern um die Frage, ob ein kleiner vorgezogener Dokumentencheck möglich ist.",
+          "translations": [
+            { "language": "en", "text": "The company has stated in writing that the contract cannot be activated without confirmation on time. That would affect the start of training, health-insurance registration, and work scheduling. That is why I am not asking for preferential treatment, but asking whether a small early document check is possible." },
+            { "language": "fa", "text": "کارفرما به‌صورت کتبی اعلام کرده که بدون تأییدیه به‌موقع، قرارداد فعال نمی‌شود. این روی شروع آموزش، ثبت‌نام بیمه درمانی و برنامه‌ریزی محل کار اثر می‌گذارد. بنابراین هدفم برخورد ویژه نیست، بلکه می‌پرسم آیا یک بررسی کوتاه و زودتر مدارک ممکن است یا نه." },
+            { "language": "ar", "text": "أبلغت الشركة كتابة أن العقد لا يمكن تفعيله من دون تأكيد في الوقت المناسب. وهذا سيؤثر في بداية التدريب والتسجيل لدى التأمين الصحي وتخطيط العمل. لذلك لا أطلب معاملة تفضيلية، بل أسأل عما إذا كان فحص مبكر صغير للوثائق ممكناً." },
+            { "language": "tr", "text": "İşletme, zamanında onay olmadan sözleşmenin etkinleştirilemeyeceğini yazılı olarak bildirdi. Bu, eğitimin başlangıcını, sağlık sigortası kaydını ve çalışma planlamasını etkiler. Bu yüzden ayrıcalıklı muamele istemiyorum; yalnızca küçük bir erken belge kontrolünün mümkün olup olmadığını soruyorum." },
+            { "language": "ru", "text": "Предприятие письменно сообщило, что без своевременного подтверждения договор не может быть активирован. Это повлияло бы на начало обучения, регистрацию в медицинской страховке и планирование работы. Поэтому я прошу не о привилегии, а о проверке, возможна ли небольшая предварительная проверка документов." },
+            { "language": "ckb", "text": "شوێنی کار بە نووسراوی ڕایگەیاندووە کە بەبێ پشتڕاستکردنەوەی لە کاتی خۆیدا گرێبەستەکە چالاک ناکرێت. ئەمە کاریگەری لەسەر دەستپێکی فێرکاری، تۆمارکردن لە بیمەی تەندروستی و پلانی کاری دەبێت. بۆیە مەبەستم مامەڵەی پێشخستن نییە، بەڵکو دەپرسم ئایا پشکنینێکی بچووکی پێشوەختەی بەڵگەکان دەکرێت یان نا." },
+            { "language": "kmr", "text": "Karxane bi nivîskî ragihandiye ku bêyî piştrastkirina di demê xwe de peyman nayê çalak kirin. Ev li destpêka perwerdehiyê, tomarbûna li bîmeya tenduristiyê û plansaziya kar bandor dike. Ji ber vê yekê ez daxwaza muameleya taybet nakim; ez dipirsim ka kontrola belgeyan a piçûk û pêşwext gengaz e yan na." },
+            { "language": "pl", "text": "Zakład poinformował pisemnie, że bez terminowego potwierdzenia umowa nie może zostać aktywowana. Miałoby to skutki dla rozpoczęcia szkolenia, zgłoszenia do kasy chorych i planowania pracy. Dlatego nie chodzi mi o preferencyjne traktowanie, lecz o pytanie, czy możliwa jest mała wcześniejsza kontrola dokumentów." },
+            { "language": "ro", "text": "Angajatorul a comunicat în scris că, fără confirmare la timp, contractul nu poate fi activat. Aceasta ar afecta începutul formării, înscrierea la asigurarea de sănătate și planificarea activității. De aceea nu solicit tratament preferențial, ci întreb dacă este posibilă o mică verificare anticipată a documentelor." },
+            { "language": "sq", "text": "Punëdhënësi ka njoftuar me shkrim se kontrata nuk mund të aktivizohet pa konfirmim në kohë. Kjo do të ndikonte te fillimi i formimit, regjistrimi në sigurimin shëndetësor dhe planifikimi i punës. Prandaj nuk kërkoj trajtim të privilegjuar, por pyes nëse është e mundur një kontroll i vogël paraprak i dokumenteve." }
+          ],
+          "function": "proportional-consequence",
+          "toneNote": "belegt, verhältnismäßig",
+          "expectedLearnerAction": "Folgen belegen und die Ausnahme klein halten"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Wir müssen aber alle Antragsteller gleich behandeln. Eine Ausnahme kann nicht einfach wegen Zeitdruck gemacht werden.",
+          "translations": [
+            { "language": "en", "text": "But we have to treat all applicants equally. An exception cannot simply be made because of time pressure." },
+            { "language": "fa", "text": "اما ما باید با همه درخواست‌کنندگان یکسان رفتار کنیم. فقط به خاطر فشار زمانی نمی‌شود به‌سادگی استثنا قائل شد." },
+            { "language": "ar", "text": "لكن يجب أن نعامل جميع مقدمي الطلبات بالتساوي. لا يمكن إجراء استثناء لمجرد وجود ضغط زمني." },
+            { "language": "tr", "text": "Ancak tüm başvuru sahiplerine eşit davranmak zorundayız. Sadece zaman baskısı nedeniyle kolayca istisna yapılamaz." },
+            { "language": "ru", "text": "Но мы должны одинаково относиться ко всем заявителям. Исключение нельзя просто сделать из-за давления сроков." },
+            { "language": "ckb", "text": "بەڵام پێویستە مامەڵەی یەکسان لەگەڵ هەموو داواکەران بکەین. جیاوازی تەنها بەهۆی فشاری کاتەوە بە سادەیی ناکرێت." },
+            { "language": "kmr", "text": "Lê em divê bi hemû daxwazkaran re wekhev tev bigerin. Îstîsna tenê ji ber tengasiya demê bi hêsanî nayê kirin." },
+            { "language": "pl", "text": "Musimy jednak traktować wszystkich wnioskodawców równo. Wyjątku nie można zrobić po prostu z powodu presji czasu." },
+            { "language": "ro", "text": "Trebuie însă să tratăm toți solicitanții în mod egal. O excepție nu poate fi făcută pur și simplu din cauza presiunii timpului." },
+            { "language": "sq", "text": "Megjithatë duhet t'i trajtojmë të gjithë aplikuesit në mënyrë të barabartë. Një përjashtim nuk mund të bëhet thjesht për shkak të presionit të kohës." }
+          ],
+          "function": "equal-treatment-objection",
+          "toneNote": "sachlich, begrenzend",
+          "expectedLearnerAction": "Gleichbehandlung anerkennen und Anfrage neu rahmen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich, und genau deshalb formuliere ich es als Prüfbitte. Ich bitte nicht darum, andere Fälle zu verdrängen, sondern darum zu prüfen, ob bei vollständigen Unterlagen und einer dokumentierten schweren Folge eine kurze Vorabprüfung im Rahmen Ihrer Regeln möglich ist.",
+          "translations": [
+            { "language": "en", "text": "I understand that, and that is exactly why I am formulating this as a request for review. I am not asking to displace other cases, but to check whether, with complete documents and a documented serious consequence, a short preliminary review is possible within your rules." },
+            { "language": "fa", "text": "این را می‌فهمم و دقیقاً به همین دلیل آن را به‌عنوان درخواست بررسی مطرح می‌کنم. نمی‌خواهم پرونده‌های دیگر کنار زده شوند؛ فقط می‌خواهم بررسی شود آیا با مدارک کامل و پیامد جدی مستند، یک بررسی کوتاه اولیه در چارچوب مقررات شما ممکن است یا نه." },
+            { "language": "ar", "text": "أفهم ذلك، ولهذا بالضبط أصوغ الأمر كطلب فحص. لا أطلب إزاحة حالات أخرى، بل فحص ما إذا كانت مراجعة أولية قصيرة ممكنة ضمن قواعدكم عندما تكون الوثائق كاملة والنتيجة الخطيرة موثقة." },
+            { "language": "tr", "text": "Bunu anlıyorum; tam da bu nedenle bunu bir inceleme talebi olarak ifade ediyorum. Diğer dosyaların önüne geçmeyi istemiyorum; eksiksiz belgeler ve belgelenmiş ciddi bir sonuç olduğunda kurallarınız çerçevesinde kısa bir ön kontrol mümkün mü, bunu kontrol etmenizi rica ediyorum." },
+            { "language": "ru", "text": "Я это понимаю, и именно поэтому формулирую это как просьбу о проверке. Я не прошу отодвинуть другие дела, а прошу проверить, возможна ли краткая предварительная проверка в рамках ваших правил при полных документах и документально подтверждённом серьёзном последствии." },
+            { "language": "ckb", "text": "ئەمە تێدەگەم، و بە هەمان هۆکارەوە وەک داواکاری پشکنین دەیڵێم. داوا ناکەم کە کەیسی کەسانی تر لاببرێت، بەڵکو داوا دەکەم بپشکنرێت ئایا لەگەڵ بەڵگەی تەواو و ئاکامی قورسی بەڵگەدار پشکنینێکی کورت لە چوارچێوەی ڕێساکانتاندا دەکرێت یان نا." },
+            { "language": "kmr", "text": "Ez vê fam dikim, û ji ber vê yekê ez wê wek daxwaza kontrolê dibêjim. Ez naxwazim dozên din werin paşguhkirin; ez dixwazim were kontrolkirin ka bi belgeyên temam û encameke giran a belgekirî kontrola pêşîn a kurt di çarçoveya qaîdeyên we de gengaz e yan na." },
+            { "language": "pl", "text": "Rozumiem to i właśnie dlatego formułuję to jako prośbę o sprawdzenie. Nie proszę o przesunięcie innych spraw, lecz o sprawdzenie, czy przy kompletnych dokumentach i udokumentowanym poważnym skutku możliwa jest krótka wstępna kontrola w ramach Państwa zasad." },
+            { "language": "ro", "text": "Înțeleg acest lucru și tocmai de aceea formulez cererea ca solicitare de verificare. Nu cer să fie date la o parte alte cazuri, ci să se verifice dacă, având documente complete și o consecință gravă documentată, este posibilă o scurtă verificare preliminară în cadrul regulilor dumneavoastră." },
+            { "language": "sq", "text": "E kuptoj këtë dhe pikërisht për këtë e formuloj si kërkesë për kontroll. Nuk kërkoj të shtyhen rastet e tjera, por të kontrollohet nëse, me dokumente të plota dhe një pasojë serioze të dokumentuar, është i mundur një kontroll i shkurtër paraprak brenda rregullave tuaja." }
+          ],
+          "function": "equal-treatment-repair",
+          "toneNote": "respektvoll, präzise",
+          "expectedLearnerAction": "Einwand aufnehmen und begrenzte Prüfbitte stärken"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Welche Unterlagen haben Sie für diese Prüfung dabei?",
+          "translations": [
+            { "language": "en", "text": "Which documents do you have with you for this review?" },
+            { "language": "fa", "text": "برای این بررسی چه مدارکی همراه دارید؟" },
+            { "language": "ar", "text": "ما الوثائق التي لديك من أجل هذا الفحص؟" },
+            { "language": "tr", "text": "Bu inceleme için hangi belgeler yanınızda?" },
+            { "language": "ru", "text": "Какие документы у вас есть для этой проверки?" },
+            { "language": "ckb", "text": "بۆ ئەم پشکنینە چ بەڵگەیەکت لەگەڵە؟" },
+            { "language": "kmr", "text": "Ji bo vê kontrolê kîjan belge bi we re hene?" },
+            { "language": "pl", "text": "Jakie dokumenty ma Pan przy sobie do tej kontroli?" },
+            { "language": "ro", "text": "Ce documente aveți pentru această verificare?" },
+            { "language": "sq", "text": "Cilat dokumente keni me vete për këtë kontroll?" }
+          ],
+          "function": "document-request",
+          "toneNote": "formal",
+          "expectedLearnerAction": "Unterlagen geordnet nennen"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich habe den Ausbildungsvertrag, die E-Mail des Betriebs mit der Frist vom 20. Juli, den ausgefüllten Antrag, meine Meldebescheinigung und eine Kopie meines Ausweises. Die Originale liegen hier links, die Kopien für Ihre Akte rechts.",
+          "translations": [
+            { "language": "en", "text": "I have the vocational training contract, the company's email with the July 20 deadline, the completed application, my registration certificate, and a copy of my ID. The originals are here on the left, the copies for your file on the right." },
+            { "language": "fa", "text": "قرارداد آموزش حرفه‌ای، ایمیل کارفرما با مهلت ۲۰ ژوئیه، فرم درخواست تکمیل‌شده، گواهی ثبت محل سکونت و کپی کارت شناسایی را دارم. اصل مدارک اینجا سمت چپ است و کپی‌ها برای پرونده شما سمت راست." },
+            { "language": "ar", "text": "لدي عقد التدريب المهني، وبريد الشركة الإلكتروني مع مهلة 20 يوليو، والطلب المكتمل، وشهادة التسجيل في السكن، ونسخة من هويتي. الأصول هنا على اليسار، والنسخ الخاصة بملفكم على اليمين." },
+            { "language": "tr", "text": "Mesleki eğitim sözleşmesi, işletmenin 20 Temmuz tarihli süreyi belirten e-postası, doldurulmuş başvuru, ikamet kayıt belgem ve kimlik fotokopim var. Asıllar solda, dosyanız için kopyalar sağda." },
+            { "language": "ru", "text": "У меня есть договор о профессиональном обучении, письмо предприятия со сроком 20 июля, заполненное заявление, справка о регистрации места жительства и копия удостоверения личности. Оригиналы здесь слева, копии для вашего дела справа." },
+            { "language": "ckb", "text": "گرێبەستی فێرکاری پیشەیی، ئیمەیلی شوێنی کار بە ماوەی ٢٠ی تەمموز، فۆرمی داواکاری پڕکراوە، گواهی نیشتەجێبوون و کۆپی ناسنامەم هەیە. ئەسڵەکان لێرە لای چەپن، کۆپییەکان بۆ کەیسی ئێوە لای ڕاستن." },
+            { "language": "kmr", "text": "Peymana perwerdehiya pîşeyî, e-nameya karxaneyê bi muhleta 20ê Tîrmehê, daxwaza tijîkirî, belgeya tomarbûna niştecîhbûnê û kopiyek nasnameya min hene. Resen li vir li milê çepê ne, kopî ji bo dosyeya we li rastê ne." },
+            { "language": "pl", "text": "Mam umowę szkolenia zawodowego, e-mail zakładu z terminem 20 lipca, wypełniony wniosek, zaświadczenie o meldunku i kopię dokumentu tożsamości. Oryginały są tutaj po lewej, kopie do Państwa akt po prawej." },
+            { "language": "ro", "text": "Am contractul de formare profesională, e-mailul angajatorului cu termenul de 20 iulie, cererea completată, certificatul de domiciliu și o copie a actului de identitate. Originalele sunt aici în stânga, copiile pentru dosarul dumneavoastră în dreapta." },
+            { "language": "sq", "text": "Kam kontratën e formimit profesional, emailin e punëdhënësit me afatin e 20 korrikut, kërkesën e plotësuar, vërtetimin e vendbanimit dhe një kopje të dokumentit të identitetit. Origjinalet janë këtu majtas, kopjet për dosjen tuaj djathtas." }
+          ],
+          "function": "document-organization",
+          "toneNote": "geordnet, serviceorientiert",
+          "expectedLearnerAction": "Dokumente vollständig und prüfbar präsentieren"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Was genau wäre aus Ihrer Sicht die kleinste Lösung, die Ihnen helfen würde?",
+          "translations": [
+            { "language": "en", "text": "From your point of view, what exactly would be the smallest solution that would help you?" },
+            { "language": "fa", "text": "از نظر شما دقیقاً کوچک‌ترین راه‌حلی که کمک می‌کند چیست؟" },
+            { "language": "ar", "text": "ما هو بالضبط أصغر حل قد يساعدك من وجهة نظرك؟" },
+            { "language": "tr", "text": "Sizin açınızdan size yardımcı olacak en küçük çözüm tam olarak ne olurdu?" },
+            { "language": "ru", "text": "Что именно, с вашей точки зрения, было бы самым маленьким решением, которое вам помогло бы?" },
+            { "language": "ckb", "text": "لە ڕوانگەی تۆوە بە وردی بچووکترین چارەسەر کە یارمەتیت دەدات چییە؟" },
+            { "language": "kmr", "text": "Ji nêrîna we ve bi rastî biçûktirîn çareserî ku alîkariya we bike çi ye?" },
+            { "language": "pl", "text": "Co dokładnie byłoby z Pana punktu widzenia najmniejszym rozwiązaniem, które by Panu pomogło?" },
+            { "language": "ro", "text": "Care ar fi, din punctul dumneavoastră de vedere, cea mai mică soluție care v-ar ajuta?" },
+            { "language": "sq", "text": "Cila do të ishte, sipas jush, zgjidhja më e vogël që do t'ju ndihmonte?" }
+          ],
+          "function": "minimal-remedy-question",
+          "toneNote": "lösungsorientiert",
+          "expectedLearnerAction": "Begrenzte Alternativen nennen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Am hilfreichsten wäre eine kurze Vorabprüfung der Vollständigkeit. Falls das nicht möglich ist, würde auch eine schriftliche Bestätigung reichen, dass meine Unterlagen vollständig eingegangen sind. Wenn beides nicht geht, bitte ich um einen kurzen Hinweis, welcher nächste Schritt vor dem 20. Juli realistisch ist.",
+          "translations": [
+            { "language": "en", "text": "The most helpful option would be a short preliminary check of completeness. If that is not possible, a written confirmation that my documents have been received in full would also be enough. If neither is possible, I would ask for a brief note on which next step before July 20 is realistic." },
+            { "language": "fa", "text": "کمک‌کننده‌ترین گزینه یک بررسی کوتاه اولیه درباره کامل بودن مدارک است. اگر این ممکن نیست، یک تأییدیه کتبی که مدارکم کامل دریافت شده‌اند هم کافی است. اگر هیچ‌کدام ممکن نیست، لطفاً کوتاه بفرمایید قبل از ۲۰ ژوئیه کدام قدم بعدی واقع‌بینانه است." },
+            { "language": "ar", "text": "أكثر ما يساعد هو فحص أولي قصير لاكتمال الوثائق. إذا لم يكن ذلك ممكناً، فيكفي أيضاً تأكيد كتابي بأن وثائقي وصلت كاملة. وإذا لم يكن كلاهما ممكناً، أرجو إرشاداً قصيراً حول الخطوة الواقعية التالية قبل 20 يوليو." },
+            { "language": "tr", "text": "En çok yardımcı olacak şey, belgelerin tamlığına ilişkin kısa bir ön kontrol olurdu. Bu mümkün değilse, belgelerimin eksiksiz teslim alındığına dair yazılı bir onay da yeterli olur. İkisi de mümkün değilse, 20 Temmuz'dan önce hangi sonraki adımın gerçekçi olduğuna dair kısa bir bilgi rica ederim." },
+            { "language": "ru", "text": "Самым полезным была бы краткая предварительная проверка полноты документов. Если это невозможно, достаточно было бы и письменного подтверждения, что мои документы получены полностью. Если невозможно и то и другое, я прошу кратко указать, какой следующий шаг до 20 июля реалистичен." },
+            { "language": "ckb", "text": "زۆرترین یارمەتی ئەوە دەبێت پشکنینێکی کورت و پێشوەختەی تەواوبوونی بەڵگەکان بکرێت. ئەگەر ئەمە نەکرێت، پشتڕاستکردنەوەیەکی نووسراوی ئەوەی بەڵگەکانم بە تەواوی وەرگیراون بەسە. ئەگەر هەردووکی نەکرێت، داوا دەکەم بە کورتی بڵێن پێش ٢٠ی تەمموز کام هەنگاوی داهاتوو واقیعییە." },
+            { "language": "kmr", "text": "Ya herî alîkar kontrola pêşîn a kurt a temambûna belgeyan e. Ger ev ne gengaz be, piştrastkirineke nivîskî ku belgeyên min bi temamî hatine wergirtin jî têr e. Ger her du jî ne gengaz bin, ez daxwaza agahiyeke kurt dikim ka berî 20ê Tîrmehê kîjan gaveke din rast e." },
+            { "language": "pl", "text": "Najbardziej pomocna byłaby krótka wstępna kontrola kompletności. Jeśli to nie jest możliwe, wystarczyłoby także pisemne potwierdzenie, że moje dokumenty wpłynęły w całości. Jeśli żadna z tych opcji nie jest możliwa, proszę o krótką informację, jaki następny krok przed 20 lipca jest realistyczny." },
+            { "language": "ro", "text": "Cel mai util ar fi o scurtă verificare preliminară a completitudinii. Dacă acest lucru nu este posibil, ar fi suficientă și o confirmare scrisă că documentele mele au fost primite complet. Dacă niciuna dintre variante nu este posibilă, vă rog să-mi indicați pe scurt ce pas următor înainte de 20 iulie este realist." },
+            { "language": "sq", "text": "Më e dobishmja do të ishte një kontroll i shkurtër paraprak i plotësisë së dokumenteve. Nëse kjo nuk është e mundur, do të mjaftonte edhe një konfirmim me shkrim se dokumentet e mia janë pranuar të plota. Nëse asnjëra nuk është e mundur, ju lutem më tregoni shkurt cili hap tjetër para 20 korrikut është realist." }
+          ],
+          "function": "minimal-remedy-proposal",
+          "toneNote": "konkret, flexibel",
+          "expectedLearnerAction": "Mehrere kleine, realistische Optionen anbieten"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Ich kann die Unterlagen aufnehmen. Können Sie mir den Kern Ihrer Bitte noch einmal so zusammenfassen, dass ich ihn in die Akte übernehmen kann?",
+          "translations": [
+            { "language": "en", "text": "I can take the documents. Can you summarize the core of your request once more so that I can add it to the file?" },
+            { "language": "fa", "text": "می‌توانم مدارک را دریافت کنم. می‌توانید اصل درخواستتان را یک‌بار دیگر طوری خلاصه کنید که بتوانم در پرونده ثبت کنم؟" },
+            { "language": "ar", "text": "يمكنني استلام الوثائق. هل يمكنك تلخيص جوهر طلبك مرة أخرى بحيث أستطيع إدخاله في الملف؟" },
+            { "language": "tr", "text": "Belgeleri alabilirim. Talebinizin özünü dosyaya ekleyebileceğim şekilde tekrar özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Я могу принять документы. Можете ещё раз кратко сформулировать суть вашей просьбы так, чтобы я мог внести её в дело?" },
+            { "language": "ckb", "text": "دەتوانم بەڵگەکان وەربگرم. دەتوانیت ناوەڕۆکی داواکەت جارێکی تر بە شێوەیەک پوختە بکەیت کە بتوانم لە کەیسدا تۆماری بکەم؟" },
+            { "language": "kmr", "text": "Ez dikarim belgeyan wergirim. Hûn dikarin navoka daxwaza xwe careke din bi awayekî kurte bikin ku ez wê têxim dosyeyê?" },
+            { "language": "pl", "text": "Mogę przyjąć dokumenty. Czy może Pan jeszcze raz podsumować sedno swojej prośby tak, abym mógł wpisać je do akt?" },
+            { "language": "ro", "text": "Pot prelua documentele. Puteți rezuma încă o dată esența solicitării dumneavoastră astfel încât să o pot include în dosar?" },
+            { "language": "sq", "text": "Mund t'i pranoj dokumentet. A mund ta përmblidhni edhe një herë thelbin e kërkesës suaj në mënyrë që ta përfshij në dosje?" }
+          ],
+          "function": "file-summary-request",
+          "toneNote": "formal, dokumentierend",
+          "expectedLearnerAction": "Aktenfähige Zusammenfassung formulieren"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Gern. Ich bitte um Prüfung, ob wegen des Ausbildungsbeginns am 1. August und der schriftlich belegten Bestätigungsfrist bis zum 20. Juli eine begrenzte Vorabprüfung oder zumindest eine Vollständigkeitsbestätigung möglich ist. Ich erkenne den regulären Ablauf an und bitte nicht um eine endgültige Entscheidung außerhalb des Verfahrens.",
+          "translations": [
+            { "language": "en", "text": "Of course. I am requesting a review of whether, because of the August 1 training start and the written proof of the July 20 confirmation deadline, a limited preliminary check or at least a confirmation of completeness is possible. I acknowledge the regular process and am not asking for a final decision outside the procedure." },
+            { "language": "fa", "text": "بله. درخواست می‌کنم بررسی شود آیا به دلیل شروع آموزش در اول اوت و مهلت تأییدیه تا ۲۰ ژوئیه که کتبی ثابت شده، یک بررسی محدود اولیه یا دست‌کم تأیید کامل بودن مدارک ممکن است یا نه. روند عادی را می‌پذیرم و درخواست تصمیم نهایی خارج از فرایند ندارم." },
+            { "language": "ar", "text": "بكل سرور. أطلب فحص ما إذا كان، بسبب بدء التدريب في 1 أغسطس وبسبب مهلة التأكيد المثبتة كتابياً حتى 20 يوليو، ممكناً إجراء فحص أولي محدود أو على الأقل تأكيد اكتمال الوثائق. أعترف بالإجراء العادي ولا أطلب قراراً نهائياً خارج المسار." },
+            { "language": "tr", "text": "Memnuniyetle. 1 Ağustos'taki eğitim başlangıcı ve 20 Temmuz'a kadar olan yazılı olarak belgelenmiş onay süresi nedeniyle sınırlı bir ön kontrolün ya da en azından eksiksizlik onayının mümkün olup olmadığının incelenmesini rica ediyorum. Normal süreci kabul ediyorum ve prosedür dışında nihai bir karar istemiyorum." },
+            { "language": "ru", "text": "Конечно. Я прошу проверить, возможно ли из-за начала обучения 1 августа и письменно подтверждённого срока подтверждения до 20 июля провести ограниченную предварительную проверку или хотя бы выдать подтверждение полноты документов. Я признаю обычный порядок и не прошу окончательного решения вне процедуры." },
+            { "language": "ckb", "text": "بە خۆشییەوە. داوا دەکەم بپشکنرێت ئایا بەهۆی دەستپێکی فێرکاری لە ١ی ئاب و ماوەی پشتڕاستکردنەوە تا ٢٠ی تەمموز کە بە نووسراوی بەڵگەدارە، پشکنینێکی سنوورداری پێشوەختە یان لانیکەم پشتڕاستکردنەوەی تەواوبوونی بەڵگەکان دەکرێت یان نا. ڕەوتی ئاسایی وەردەگرم و داوای بڕیاری کۆتایی لە دەرەوەی ڕێکارەکە ناکەم." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Ez daxwaza kontrolê dikim ka ji ber destpêka perwerdehiyê di 1ê Tebaxê de û muhleta piştrastkirinê ya bi nivîskî belgekirî heya 20ê Tîrmehê, kontrola pêşîn a sînorkirî an herî kêm piştrastkirina temambûna belgeyan gengaz e yan na. Ez pêvajoya asayî qebûl dikim û daxwaza biryareke dawî li derveyî rêkarê nakim." },
+            { "language": "pl", "text": "Oczywiście. Proszę o sprawdzenie, czy ze względu na rozpoczęcie szkolenia 1 sierpnia i pisemnie udokumentowany termin potwierdzenia do 20 lipca możliwa jest ograniczona kontrola wstępna albo przynajmniej potwierdzenie kompletności dokumentów. Uznaję zwykły tryb i nie proszę o ostateczną decyzję poza procedurą." },
+            { "language": "ro", "text": "Desigur. Solicit verificarea dacă, din cauza începutului formării la 1 august și a termenului de confirmare până la 20 iulie dovedit în scris, este posibilă o verificare preliminară limitată sau cel puțin o confirmare a completitudinii. Recunosc procedura obișnuită și nu solicit o decizie finală în afara procedurii." },
+            { "language": "sq", "text": "Me kënaqësi. Kërkoj të kontrollohet nëse, për shkak të fillimit të formimit më 1 gusht dhe afatit të konfirmimit deri më 20 korrik të dëshmuar me shkrim, është i mundur një kontroll paraprak i kufizuar ose të paktën një konfirmim i plotësisë së dokumenteve. E pranoj procesin e rregullt dhe nuk kërkoj vendim përfundimtar jashtë procedurës." }
+          ],
+          "function": "file-ready-summary",
+          "toneNote": "präzise, aktenfähig",
+          "expectedLearnerAction": "Begrenzte Prüfbitte und Anerkennung des Verfahrens zusammenfassen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct-careful-opening",
+              "text": "Ich bitte nur um Prüfung, ob in meinem Fall eine eng begrenzte Lösung möglich ist.",
+              "translations": [
+                { "language": "en", "text": "I am only asking for a review of whether a narrowly limited solution is possible in my case." },
+                { "language": "fa", "text": "فقط درخواست می‌کنم بررسی شود آیا در مورد من راه‌حلی محدود ممکن است یا نه." },
+                { "language": "ar", "text": "أطلب فقط فحص ما إذا كان حل محدود جداً ممكناً في حالتي." },
+                { "language": "tr", "text": "Yalnızca benim durumumda dar kapsamlı bir çözümün mümkün olup olmadığının incelenmesini rica ediyorum." },
+                { "language": "ru", "text": "Я лишь прошу проверить, возможно ли в моём случае строго ограниченное решение." },
+                { "language": "ckb", "text": "تەنها داوا دەکەم بپشکنرێت ئایا لە کەیسی من چارەسەرێکی سنووردار دەکرێت یان نا." },
+                { "language": "kmr", "text": "Ez tenê daxwaza kontrolê dikim ka di doza min de çareseriyeke teng-sînorkirî gengaz e yan na." },
+                { "language": "pl", "text": "Proszę jedynie o sprawdzenie, czy w mojej sprawie możliwe jest wąsko ograniczone rozwiązanie." },
+                { "language": "ro", "text": "Solicit doar verificarea dacă în cazul meu este posibilă o soluție strict limitată." },
+                { "language": "sq", "text": "Kërkoj vetëm të kontrollohet nëse në rastin tim është e mundur një zgjidhje shumë e kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung ist vorsichtig, respektiert das Verfahren und vermeidet Anspruchssprache.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The wording is careful, respects the procedure, and avoids entitlement language." },
+                { "language": "fa", "text": "قوی: جمله‌بندی محتاطانه است، روند را محترم می‌شمارد و از زبان ادعای حق قطعی دوری می‌کند." },
+                { "language": "ar", "text": "قوي: الصياغة حذرة وتحترم الإجراء وتتجنب لغة الادعاء بحق مؤكد." },
+                { "language": "tr", "text": "Güçlü: İfade dikkatli, prosedüre saygılı ve kesin hak iddiası dilinden uzak." },
+                { "language": "ru", "text": "Сильно: формулировка осторожна, уважает процедуру и избегает языка безусловного требования." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە وریایە، ڕێز لە ڕێکارەکە دەگرێت و لە زمانی بانگەشەی مافی دڵنیا دوورە." },
+                { "language": "kmr", "text": "Xurt e: Gotin hişyar e, rêkarê rêz dike û ji zimanê îdiaya mafê qut dûr e." },
+                { "language": "pl", "text": "Mocne: sformułowanie jest ostrożne, respektuje procedurę i unika języka bezwarunkowego roszczenia." },
+                { "language": "ro", "text": "Puternic: formularea este prudentă, respectă procedura și evită limbajul de drept automat." },
+                { "language": "sq", "text": "E fortë: formulimi është i kujdesshëm, respekton procedurën dhe shmang gjuhën e pretendimit të sigurt." }
+              ],
+              "explanationKey": "careful-exception-opening"
+            },
+            {
+              "id": "weak-too-entitled",
+              "text": "Ich brauche diese Ausnahme, weil der Termin sonst für mich zu spät ist.",
+              "translations": [
+                { "language": "en", "text": "I need this exception because otherwise the appointment is too late for me." },
+                { "language": "fa", "text": "من به این استثنا نیاز دارم، چون در غیر این صورت وقت برای من خیلی دیر است." },
+                { "language": "ar", "text": "أحتاج إلى هذا الاستثناء لأن الموعد سيكون متأخراً جداً بالنسبة لي." },
+                { "language": "tr", "text": "Bu istisnaya ihtiyacım var, çünkü aksi halde randevu benim için çok geç." },
+                { "language": "ru", "text": "Мне нужно это исключение, потому что иначе запись для меня слишком поздно." },
+                { "language": "ckb", "text": "پێویستم بە ئەم جیاوازییە هەیە، چونکە ئەگەر نا کاتەکە بۆ من زۆر درەنگە." },
+                { "language": "kmr", "text": "Pêdiviya min bi vê îstîsnayê heye, ji ber ku wekî din randevû ji bo min pir dereng e." },
+                { "language": "pl", "text": "Potrzebuję tego wyjątku, bo inaczej termin jest dla mnie zbyt późny." },
+                { "language": "ro", "text": "Am nevoie de această excepție, deoarece altfel programarea este prea târzie pentru mine." },
+                { "language": "sq", "text": "Kam nevojë për këtë përjashtim, sepse përndryshe takimi është shumë vonë për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu schwach: Der Satz nennt nur persönlichen Zeitdruck, nicht Regelanerkennung, Nachweis und begrenzte Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too weak: The sentence names only personal time pressure, not rule acknowledgment, evidence, and a limited solution." },
+                { "language": "fa", "text": "قابل تصور است، اما ضعیف: جمله فقط فشار زمانی شخصی را می‌گوید، نه پذیرش قاعده، مدرک و راه‌حل محدود." },
+                { "language": "ar", "text": "معقول لكنه ضعيف: الجملة تذكر فقط ضغط الوقت الشخصي، لا الاعتراف بالقاعدة والدليل والحل المحدود." },
+                { "language": "tr", "text": "Makul ama zayıf: Cümle yalnızca kişisel zaman baskısını söylüyor; kural kabulü, kanıt ve sınırlı çözüm yok." },
+                { "language": "ru", "text": "Похоже на возможный ответ, но слишком слабо: фраза называет только личное давление сроков, без признания правила, доказательства и ограниченного решения." },
+                { "language": "ckb", "text": "قایلە، بەڵام لاوازە: ڕستەکە تەنها فشاری کاتی کەسی دەڵێت، نە وەرگرتنی ڕێسا، بەڵگە و چارەسەری سنووردار." },
+                { "language": "kmr", "text": "Gengaz e lê lawaz e: Hevok tenê tengasiya demê ya kesane dibêje, ne qebûlkirina qaîdeyê, belge û çareseriya sînorkirî." },
+                { "language": "pl", "text": "Plausible, ale zbyt słabe: zdanie wskazuje tylko osobistą presję czasu, bez uznania zasady, dowodu i ograniczonego rozwiązania." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: propoziția menționează doar presiunea personală a timpului, nu recunoașterea regulii, dovada și soluția limitată." },
+                { "language": "sq", "text": "E besueshme, por e dobët: fjalia përmend vetëm presionin personal të kohës, jo pranimin e rregullit, provën dhe zgjidhjen e kufizuar." }
+              ],
+              "explanationKey": "too-personal-time-pressure"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct-document-consequence",
+              "text": "Der Betrieb hat die Frist schriftlich bestätigt, und ohne diese Bestätigung kann der Vertrag nicht aktiviert werden.",
+              "translations": [
+                { "language": "en", "text": "The company confirmed the deadline in writing, and without this confirmation the contract cannot be activated." },
+                { "language": "fa", "text": "کارفرما مهلت را کتبی تأیید کرده و بدون این تأییدیه قرارداد فعال نمی‌شود." },
+                { "language": "ar", "text": "أكدت الشركة المهلة كتابة، ومن دون هذا التأكيد لا يمكن تفعيل العقد." },
+                { "language": "tr", "text": "İşletme süreyi yazılı olarak doğruladı ve bu onay olmadan sözleşme etkinleştirilemiyor." },
+                { "language": "ru", "text": "Предприятие письменно подтвердило срок, и без этого подтверждения договор не может быть активирован." },
+                { "language": "ckb", "text": "شوێنی کار ماوەکەی بە نووسراوی پشتڕاستکردووەتەوە، و بەبێ ئەم پشتڕاستکردنەوەیە گرێبەستەکە چالاک ناکرێت." },
+                { "language": "kmr", "text": "Karxane muhlet bi nivîskî piştrast kiriye, û bêyî vê piştrastkirinê peyman nayê çalak kirin." },
+                { "language": "pl", "text": "Zakład potwierdził termin pisemnie, a bez tego potwierdzenia umowa nie może zostać aktywowana." },
+                { "language": "ro", "text": "Angajatorul a confirmat termenul în scris, iar fără această confirmare contractul nu poate fi activat." },
+                { "language": "sq", "text": "Punëdhënësi e ka konfirmuar afatin me shkrim dhe pa këtë konfirmim kontrata nuk mund të aktivizohet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Folge ist konkret und durch ein Dokument belegbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The consequence is concrete and can be supported by a document." },
+                { "language": "fa", "text": "قوی: پیامد مشخص است و با مدرک قابل اثبات است." },
+                { "language": "ar", "text": "قوي: النتيجة محددة ويمكن إثباتها بمستند." },
+                { "language": "tr", "text": "Güçlü: Sonuç somut ve belgeyle kanıtlanabilir." },
+                { "language": "ru", "text": "Сильно: последствие конкретно и подтверждается документом." },
+                { "language": "ckb", "text": "بەهێزە: ئاکامەکە دیاریکراوە و بە بەڵگە پشتگیری دەکرێت." },
+                { "language": "kmr", "text": "Xurt e: Encam şênber e û bi belge dikare were piştgirîkirin." },
+                { "language": "pl", "text": "Mocne: skutek jest konkretny i można go udokumentować." },
+                { "language": "ro", "text": "Puternic: consecința este concretă și poate fi susținută prin document." },
+                { "language": "sq", "text": "E fortë: pasoja është konkrete dhe mund të mbështetet me dokument." }
+              ],
+              "explanationKey": "documented-consequence"
+            },
+            {
+              "id": "weak-vague-urgent",
+              "text": "Es ist einfach sehr dringend, und ich möchte die Ausbildung nicht verlieren.",
+              "translations": [
+                { "language": "en", "text": "It is simply very urgent, and I do not want to lose the training place." },
+                { "language": "fa", "text": "موضوع فقط خیلی فوری است و نمی‌خواهم جای آموزش را از دست بدهم." },
+                { "language": "ar", "text": "الأمر عاجل جداً ببساطة، ولا أريد أن أفقد مكان التدريب." },
+                { "language": "tr", "text": "Konu sadece çok acil ve eğitim yerini kaybetmek istemiyorum." },
+                { "language": "ru", "text": "Это просто очень срочно, и я не хочу потерять место обучения." },
+                { "language": "ckb", "text": "بابەتەکە تەنها زۆر پەلەیە، و نامەوێت شوێنی فێرکارییەکە لەدەست بدەم." },
+                { "language": "kmr", "text": "Mijar tenê pir lezgîn e, û ez naxwazim cihê perwerdehiyê ji dest bidim." },
+                { "language": "pl", "text": "To po prostu bardzo pilne i nie chcę stracić miejsca szkolenia." },
+                { "language": "ro", "text": "Este pur și simplu foarte urgent și nu vreau să pierd locul de formare." },
+                { "language": "sq", "text": "Është thjesht shumë urgjente dhe nuk dua ta humbas vendin e formimit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: In einem C1-Gespräch sollte die Dringlichkeit mit Frist, Dokument und konkreter Folge verbunden werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: In a C1 conversation, urgency should be linked to a deadline, a document, and a concrete consequence." },
+                { "language": "fa", "text": "بیش از حد کلی است: در گفت‌وگوی C1 باید فوریت به مهلت، مدرک و پیامد مشخص وصل شود." },
+                { "language": "ar", "text": "عام جداً: في محادثة C1 ينبغي ربط الاستعجال بمهلة ووثيقة ونتيجة محددة." },
+                { "language": "tr", "text": "Çok genel: C1 düzeyinde aciliyet süre, belge ve somut sonuçla bağlanmalıdır." },
+                { "language": "ru", "text": "Слишком общее: в разговоре уровня C1 срочность следует связать со сроком, документом и конкретным последствием." },
+                { "language": "ckb", "text": "زۆر گشتییە: لە گفتوگۆی C1دا پەلەبوون پێویستە بە ماوە، بەڵگە و ئاکامی دیاریکراوەوە ببەسترێت." },
+                { "language": "kmr", "text": "Pir gelemperî ye: Di axaftineke C1 de lezgînî divê bi muhlet, belge û encameke şênber ve were girêdan." },
+                { "language": "pl", "text": "Zbyt ogólne: w rozmowie C1 pilność powinna być połączona z terminem, dokumentem i konkretnym skutkiem." },
+                { "language": "ro", "text": "Prea general: într-o conversație C1, urgența trebuie legată de termen, document și consecință concretă." },
+                { "language": "sq", "text": "Shumë e përgjithshme: në një bisedë C1 urgjenca duhet të lidhet me afatin, dokumentin dhe pasojën konkrete." }
+              ],
+              "explanationKey": "vague-urgency"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct-acknowledge-equality",
+              "text": "Ich erkenne die Gleichbehandlung an und bitte nur um Prüfung im Rahmen Ihrer Regeln.",
+              "translations": [
+                { "language": "en", "text": "I acknowledge equal treatment and am only asking for a review within your rules." },
+                { "language": "fa", "text": "اصل رفتار برابر را می‌پذیرم و فقط درخواست بررسی در چارچوب مقررات شما دارم." },
+                { "language": "ar", "text": "أعترف بمبدأ المعاملة المتساوية وأطلب فقط فحصاً ضمن قواعدكم." },
+                { "language": "tr", "text": "Eşit muamele ilkesini kabul ediyorum ve yalnızca kurallarınız çerçevesinde inceleme istiyorum." },
+                { "language": "ru", "text": "Я признаю принцип равного отношения и прошу только о проверке в рамках ваших правил." },
+                { "language": "ckb", "text": "بنەمای مامەڵەی یەکسان وەردەگرم و تەنها داوای پشکنین لە چوارچێوەی ڕێساکانتاندا دەکەم." },
+                { "language": "kmr", "text": "Ez prensîba tevgera wekhev qebûl dikim û tenê daxwaza kontrolê di çarçoveya qaîdeyên we de dikim." },
+                { "language": "pl", "text": "Uznaję zasadę równego traktowania i proszę jedynie o sprawdzenie w ramach Państwa zasad." },
+                { "language": "ro", "text": "Recunosc principiul tratamentului egal și solicit doar verificarea în cadrul regulilor dumneavoastră." },
+                { "language": "sq", "text": "E pranoj parimin e trajtimit të barabartë dhe kërkoj vetëm kontroll brenda rregullave tuaja." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Einwand wird aufgenommen, ohne die eigene Bitte aufzugeben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The objection is acknowledged without abandoning your own request." },
+                { "language": "fa", "text": "قوی: ایراد طرف مقابل پذیرفته می‌شود، بدون اینکه اصل درخواست رها شود." },
+                { "language": "ar", "text": "قوي: يتم استيعاب الاعتراض من دون التخلي عن الطلب." },
+                { "language": "tr", "text": "Güçlü: İtiraz dikkate alınıyor, ancak kendi talebinizden vazgeçilmiyor." },
+                { "language": "ru", "text": "Сильно: возражение принято, но собственная просьба не оставлена." },
+                { "language": "ckb", "text": "بەهێزە: ڕەخنەکە وەردەگیرێت بەبێ ئەوەی داواکەی خۆت بەجێبهێڵیت." },
+                { "language": "kmr", "text": "Xurt e: Nerazîbûn tê wergirtin bêyî ku daxwaza xwe berdin." },
+                { "language": "pl", "text": "Mocne: zastrzeżenie zostaje przyjęte, ale własna prośba nie zostaje porzucona." },
+                { "language": "ro", "text": "Puternic: obiecția este preluată fără a renunța la propria solicitare." },
+                { "language": "sq", "text": "E fortë: kundërshtimi pranohet pa hequr dorë nga kërkesa juaj." }
+              ],
+              "explanationKey": "equal-treatment-repair"
+            },
+            {
+              "id": "weak-dismiss-equality",
+              "text": "Ich verstehe den Grundsatz, aber mein Fall ist wichtiger als die anderen.",
+              "translations": [
+                { "language": "en", "text": "I understand the principle, but my case is more important than the others." },
+                { "language": "fa", "text": "اصل موضوع را می‌فهمم، اما پرونده من از بقیه مهم‌تر است." },
+                { "language": "ar", "text": "أفهم المبدأ، لكن حالتي أهم من الحالات الأخرى." },
+                { "language": "tr", "text": "İlkeyi anlıyorum, ama benim durumum diğerlerinden daha önemli." },
+                { "language": "ru", "text": "Я понимаю принцип, но мой случай важнее других." },
+                { "language": "ckb", "text": "بنەماکە تێدەگەم، بەڵام کەیسی من لەوانی تر گرنگترە." },
+                { "language": "kmr", "text": "Ez prensîbê fam dikim, lê doza min ji yên din girîngtir e." },
+                { "language": "pl", "text": "Rozumiem zasadę, ale moja sprawa jest ważniejsza niż inne." },
+                { "language": "ro", "text": "Înțeleg principiul, dar cazul meu este mai important decât celelalte." },
+                { "language": "sq", "text": "E kuptoj parimin, por rasti im është më i rëndësishëm se të tjerët." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Der Satz klingt bevorzugend und untergräbt die Anerkennung der Regel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: The sentence sounds preferential and undermines acknowledgment of the rule." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: جمله حالت ترجیح‌خواهی دارد و پذیرش قاعده را تضعیف می‌کند." },
+                { "language": "ar", "text": "ضعيف استراتيجياً: تبدو الجملة كطلب تفضيل وتضعف الاعتراف بالقاعدة." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: Cümle ayrıcalık ister gibi duyulur ve kural kabulünü zayıflatır." },
+                { "language": "ru", "text": "Стратегически слабо: фраза звучит как требование привилегии и ослабляет признание правила." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: ڕستەکە وەک داوای پێشخستن دەنگ دەدات و وەرگرتنی ڕێساکە لاواز دەکات." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: Hevok wek daxwaza pêşketinê tê bihîstin û qebûlkirina qaîdeyê lawaz dike." },
+                { "language": "pl", "text": "Strategicznie słabe: zdanie brzmi jak żądanie uprzywilejowania i osłabia uznanie zasady." },
+                { "language": "ro", "text": "Strategic slab: propoziția sună ca o cerere de favorizare și slăbește recunoașterea regulii." },
+                { "language": "sq", "text": "E dobët strategjikisht: fjalia tingëllon si kërkesë për favorizim dhe dobëson pranimin e rregullit." }
+              ],
+              "explanationKey": "dismisses-equal-treatment"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct-organized-documents",
+              "text": "Die Originale liegen links, die Kopien für Ihre Akte rechts.",
+              "translations": [
+                { "language": "en", "text": "The originals are on the left, the copies for your file on the right." },
+                { "language": "fa", "text": "اصل مدارک سمت چپ است و کپی‌ها برای پرونده شما سمت راست." },
+                { "language": "ar", "text": "الأصول على اليسار والنسخ الخاصة بملفكم على اليمين." },
+                { "language": "tr", "text": "Asıllar solda, dosyanız için kopyalar sağda." },
+                { "language": "ru", "text": "Оригиналы слева, копии для вашего дела справа." },
+                { "language": "ckb", "text": "ئەسڵەکان لای چەپن، کۆپییەکان بۆ کەیسی ئێوە لای ڕاستن." },
+                { "language": "kmr", "text": "Resen li çepê ne, kopî ji bo dosyeya we li rastê ne." },
+                { "language": "pl", "text": "Oryginały są po lewej, kopie do Państwa akt po prawej." },
+                { "language": "ro", "text": "Originalele sunt în stânga, copiile pentru dosarul dumneavoastră în dreapta." },
+                { "language": "sq", "text": "Origjinalet janë majtas, kopjet për dosjen tuaj djathtas." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Ordnung der Unterlagen reduziert Rückfragen und erleichtert die Aktenarbeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Organized documents reduce follow-up questions and make file work easier." },
+                { "language": "fa", "text": "قوی: مرتب بودن مدارک پرسش‌های بعدی را کم می‌کند و کار پرونده را آسان‌تر می‌سازد." },
+                { "language": "ar", "text": "قوي: ترتيب الوثائق يقلل الأسئلة اللاحقة ويسهل العمل على الملف." },
+                { "language": "tr", "text": "Güçlü: Düzenli belgeler ek soruları azaltır ve dosya çalışmasını kolaylaştırır." },
+                { "language": "ru", "text": "Сильно: упорядоченные документы уменьшают дополнительные вопросы и облегчают работу с делом." },
+                { "language": "ckb", "text": "بەهێزە: ڕێکخستنی بەڵگەکان پرسیارەکانی دواتر کەم دەکات و کاری کەیس ئاسانتر دەکات." },
+                { "language": "kmr", "text": "Xurt e: Rêxistina belgeyan pirsên paşîn kêm dike û karê dosyeyê hêsantir dike." },
+                { "language": "pl", "text": "Mocne: uporządkowane dokumenty ograniczają pytania dodatkowe i ułatwiają pracę z aktami." },
+                { "language": "ro", "text": "Puternic: documentele ordonate reduc întrebările ulterioare și ușurează lucrul la dosar." },
+                { "language": "sq", "text": "E fortë: dokumentet e rregulluara zvogëlojnë pyetjet pasuese dhe lehtësojnë punën me dosjen." }
+              ],
+              "explanationKey": "organized-document-handover"
+            },
+            {
+              "id": "weak-unsorted-documents",
+              "text": "Ich habe alles irgendwo in der Mappe; Sie können es gern selbst heraussuchen.",
+              "translations": [
+                { "language": "en", "text": "I have everything somewhere in the folder; you can look for it yourself if you like." },
+                { "language": "fa", "text": "همه چیز جایی داخل پوشه است؛ اگر خواستید خودتان می‌توانید پیدایش کنید." },
+                { "language": "ar", "text": "كل شيء موجود في مكان ما داخل الملف؛ يمكنكم أن تبحثوا عنه بأنفسكم إذا أردتم." },
+                { "language": "tr", "text": "Her şey dosyanın içinde bir yerde; isterseniz kendiniz arayabilirsiniz." },
+                { "language": "ru", "text": "У меня всё где-то в папке; можете сами поискать, если хотите." },
+                { "language": "ckb", "text": "هەموو شتێک لە شوێنێک لەناو پەڕگەکەدایە؛ ئەگەر دەتانەوێت خۆتان دەتوانن بیگەڕێن." },
+                { "language": "kmr", "text": "Her tişt li ciyekî di peldankê de ye; heke hûn bixwazin hûn dikarin xwe bigerin." },
+                { "language": "pl", "text": "Wszystko mam gdzieś w teczce; może Pan sam poszukać, jeśli chce." },
+                { "language": "ro", "text": "Am totul pe undeva în mapă; puteți căuta singur dacă doriți." },
+                { "language": "sq", "text": "I kam të gjitha diku në dosje; nëse dëshironi, mund t'i kërkoni vetë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unprofessionell: Die Bitte um Ausnahme wird stärker, wenn die Unterlagen prüfbereit sortiert sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Unprofessional: The request for an exception becomes stronger when the documents are sorted and ready for review." },
+                { "language": "fa", "text": "غیرحرفه‌ای است: درخواست استثنا وقتی قوی‌تر می‌شود که مدارک مرتب و آماده بررسی باشند." },
+                { "language": "ar", "text": "غير مهني: يصبح طلب الاستثناء أقوى عندما تكون الوثائق مرتبة وجاهزة للفحص." },
+                { "language": "tr", "text": "Profesyonel değil: Belgeler düzenli ve incelemeye hazır olduğunda istisna talebi güçlenir." },
+                { "language": "ru", "text": "Непрофессионально: просьба об исключении сильнее, когда документы отсортированы и готовы к проверке." },
+                { "language": "ckb", "text": "ناپیشەییە: داوای جیاوازی بەهێزتر دەبێت کاتێک بەڵگەکان ڕێکخراو و ئامادەی پشکنین بن." },
+                { "language": "kmr", "text": "Ne pîşeyî ye: Daxwaza îstîsnayê xurtir dibe dema belge rêxistî û amade ji bo kontrolê bin." },
+                { "language": "pl", "text": "Nieprofesjonalne: prośba o wyjątek jest mocniejsza, gdy dokumenty są uporządkowane i gotowe do sprawdzenia." },
+                { "language": "ro", "text": "Neprofesionist: solicitarea de excepție devine mai solidă când documentele sunt ordonate și pregătite pentru verificare." },
+                { "language": "sq", "text": "Joprofesionale: kërkesa për përjashtim bëhet më e fortë kur dokumentet janë të rregulluara dhe gati për kontroll." }
+              ],
+              "explanationKey": "unsorted-documents"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct-minimal-options",
+              "text": "Eine Vorabprüfung, eine Vollständigkeitsbestätigung oder ein realistischer nächster Schritt würden mir helfen.",
+              "translations": [
+                { "language": "en", "text": "A preliminary check, a confirmation of completeness, or a realistic next step would help me." },
+                { "language": "fa", "text": "یک بررسی اولیه، تأیید کامل بودن مدارک یا یک قدم بعدی واقع‌بینانه به من کمک می‌کند." },
+                { "language": "ar", "text": "الفحص الأولي أو تأكيد اكتمال الوثائق أو خطوة تالية واقعية سيساعدني." },
+                { "language": "tr", "text": "Bir ön kontrol, eksiksizlik onayı ya da gerçekçi bir sonraki adım bana yardımcı olur." },
+                { "language": "ru", "text": "Предварительная проверка, подтверждение полноты документов или реалистичный следующий шаг помогли бы мне." },
+                { "language": "ckb", "text": "پشکنینی پێشوەختە، پشتڕاستکردنەوەی تەواوبوونی بەڵگەکان یان هەنگاوێکی داهاتووی واقیعی یارمەتیم دەدات." },
+                { "language": "kmr", "text": "Kontrola pêşîn, piştrastkirina temambûna belgeyan an gaveke din a rast alîkariya min dike." },
+                { "language": "pl", "text": "Kontrola wstępna, potwierdzenie kompletności albo realistyczny następny krok pomogłyby mi." },
+                { "language": "ro", "text": "O verificare preliminară, o confirmare a completitudinii sau un pas următor realist m-ar ajuta." },
+                { "language": "sq", "text": "Një kontroll paraprak, një konfirmim i plotësisë ose një hap tjetër realist do të më ndihmonte." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte bietet mehrere kleine Optionen statt einer maximalen Forderung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request offers several small options instead of one maximum demand." },
+                { "language": "fa", "text": "قوی: درخواست چند گزینه کوچک ارائه می‌دهد، نه یک مطالبه حداکثری." },
+                { "language": "ar", "text": "قوي: يقدم الطلب عدة خيارات صغيرة بدلاً من مطلب أقصى واحد." },
+                { "language": "tr", "text": "Güçlü: Talep tek bir azami istek yerine birkaç küçük seçenek sunuyor." },
+                { "language": "ru", "text": "Сильно: просьба предлагает несколько небольших вариантов вместо одного максимального требования." },
+                { "language": "ckb", "text": "بەهێزە: داواکە چەند هەڵبژاردەیەکی بچووک پێشکەش دەکات، نە یەک داواکاری زۆر." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz çend vebijarkên piçûk pêşkêş dike, ne daxwazeke herî zêde." },
+                { "language": "pl", "text": "Mocne: prośba oferuje kilka małych opcji zamiast jednego maksymalnego żądania." },
+                { "language": "ro", "text": "Puternic: solicitarea oferă mai multe opțiuni mici în locul unei cereri maxime." },
+                { "language": "sq", "text": "E fortë: kërkesa ofron disa opsione të vogla në vend të një kërkese maksimale." }
+              ],
+              "explanationKey": "minimal-remedy-options"
+            },
+            {
+              "id": "weak-final-approval-demand",
+              "text": "Am besten wäre, wenn Sie die Sache heute direkt vollständig genehmigen.",
+              "translations": [
+                { "language": "en", "text": "It would be best if you fully approved the matter directly today." },
+                { "language": "fa", "text": "بهترین حالت این است که امروز همین‌جا کل موضوع را کامل تأیید کنید." },
+                { "language": "ar", "text": "الأفضل أن توافقوا على الأمر بالكامل اليوم مباشرة." },
+                { "language": "tr", "text": "En iyisi, konuyu bugün doğrudan tamamen onaylamanız olur." },
+                { "language": "ru", "text": "Лучше всего было бы, если бы вы сегодня сразу полностью одобрили это дело." },
+                { "language": "ckb", "text": "باشترین ئەوەیە کە ئەمڕۆ ڕاستەوخۆ هەموو بابەتەکە بە تەواوی پەسەند بکەن." },
+                { "language": "kmr", "text": "Ya herî baş ew e ku hûn îro mijarê rasterast bi temamî pejirînin." },
+                { "language": "pl", "text": "Najlepiej byłoby, gdyby dziś od razu zatwierdzili Państwo całą sprawę." },
+                { "language": "ro", "text": "Cel mai bine ar fi să aprobați complet cazul chiar astăzi." },
+                { "language": "sq", "text": "Më e mira do të ishte ta miratonit plotësisht çështjen sot direkt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu weitgehend: Für diese Situation ist eine begrenzte Prüf- oder Bestätigungsbitte realistischer als eine Sofortgenehmigung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too far-reaching: In this situation, a limited review or confirmation request is more realistic than immediate approval." },
+                { "language": "fa", "text": "بیش از حد گسترده است: در این موقعیت درخواست بررسی یا تأیید محدود واقع‌بینانه‌تر از تأیید فوری است." },
+                { "language": "ar", "text": "واسع أكثر من اللازم: في هذه الحالة يكون طلب فحص أو تأكيد محدود أكثر واقعية من الموافقة الفورية." },
+                { "language": "tr", "text": "Çok kapsamlı: Bu durumda sınırlı bir inceleme veya onay talebi, anında onaydan daha gerçekçidir." },
+                { "language": "ru", "text": "Слишком широко: в этой ситуации ограниченная просьба о проверке или подтверждении реалистичнее, чем немедленное одобрение." },
+                { "language": "ckb", "text": "زۆر فراوانە: لەم دۆخەدا داواکاری پشکنین یان پشتڕاستکردنەوەی سنووردار لە پەسەندکردنی خێرا واقیعیترە." },
+                { "language": "kmr", "text": "Pir fireh e: Di vê rewşê de daxwaza kontrol an piştrastkirina sînorkirî ji pejirandina tavilê rasttir e." },
+                { "language": "pl", "text": "Zbyt daleko idące: w tej sytuacji ograniczona prośba o sprawdzenie lub potwierdzenie jest bardziej realistyczna niż natychmiastowa zgoda." },
+                { "language": "ro", "text": "Prea amplu: în această situație, o solicitare limitată de verificare sau confirmare este mai realistă decât aprobarea imediată." },
+                { "language": "sq", "text": "Shkon shumë larg: në këtë situatë një kërkesë e kufizuar për kontroll ose konfirmim është më realiste se miratimi i menjëhershëm." }
+              ],
+              "explanationKey": "too-large-remedy"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct-file-summary",
+              "text": "Ich bitte um Prüfung einer begrenzten Vorabprüfung oder Vollständigkeitsbestätigung und erkenne den regulären Ablauf an.",
+              "translations": [
+                { "language": "en", "text": "I request a review of a limited preliminary check or confirmation of completeness and acknowledge the regular process." },
+                { "language": "fa", "text": "درخواست بررسی یک کنترل اولیه محدود یا تأیید کامل بودن مدارک را دارم و روند عادی را می‌پذیرم." },
+                { "language": "ar", "text": "أطلب فحص إمكانية مراجعة أولية محدودة أو تأكيد اكتمال الوثائق، وأعترف بالإجراء العادي." },
+                { "language": "tr", "text": "Sınırlı bir ön kontrolün veya eksiksizlik onayının incelenmesini rica ediyorum ve normal süreci kabul ediyorum." },
+                { "language": "ru", "text": "Я прошу проверить возможность ограниченной предварительной проверки или подтверждения полноты документов и признаю обычный порядок." },
+                { "language": "ckb", "text": "داوای پشکنینی پشکنینێکی سنوورداری پێشوەختە یان پشتڕاستکردنەوەی تەواوبوونی بەڵگەکان دەکەم و ڕەوتی ئاسایی وەردەگرم." },
+                { "language": "kmr", "text": "Ez daxwaza kontrola kontrola pêşîn a sînorkirî an piştrastkirina temambûna belgeyan dikim û pêvajoya asayî qebûl dikim." },
+                { "language": "pl", "text": "Proszę o sprawdzenie ograniczonej kontroli wstępnej albo potwierdzenia kompletności i uznaję zwykły tryb." },
+                { "language": "ro", "text": "Solicit verificarea unei verificări preliminare limitate sau a unei confirmări a completitudinii și recunosc procedura obișnuită." },
+                { "language": "sq", "text": "Kërkoj kontrollin e një verifikimi paraprak të kufizuar ose konfirmimin e plotësisë dhe e pranoj procesin e rregullt." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung ist aktenfähig, begrenzt und verfahrensbewusst.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary is suitable for the file, limited, and aware of the procedure." },
+                { "language": "fa", "text": "قوی: خلاصه برای پرونده مناسب، محدود و آگاه به روند اداری است." },
+                { "language": "ar", "text": "قوي: الملخص مناسب للملف ومحدود وواع بالإجراء." },
+                { "language": "tr", "text": "Güçlü: Özet dosyaya uygun, sınırlı ve prosedür bilincine sahip." },
+                { "language": "ru", "text": "Сильно: резюме подходит для дела, ограничено и учитывает процедуру." },
+                { "language": "ckb", "text": "بەهێزە: پوختەکە گونجاوە بۆ کەیس، سنووردارە و ئاگاداری ڕێکارەکەیە." },
+                { "language": "kmr", "text": "Xurt e: Kurte ji bo dosyeyê guncaw e, sînorkirî ye û hişmendiya rêkarê heye." },
+                { "language": "pl", "text": "Mocne: podsumowanie nadaje się do akt, jest ograniczone i świadome procedury." },
+                { "language": "ro", "text": "Puternic: rezumatul este potrivit pentru dosar, limitat și conștient de procedură." },
+                { "language": "sq", "text": "E fortë: përmbledhja është e përshtatshme për dosje, e kufizuar dhe e vetëdijshme për procedurën." }
+              ],
+              "explanationKey": "file-ready-exception-summary"
+            },
+            {
+              "id": "weak-emotional-summary",
+              "text": "Ohne Hilfe der Behörde verliere ich wahrscheinlich meine ganze Ausbildung.",
+              "translations": [
+                { "language": "en", "text": "Without help from the public office, I will probably lose my entire training place." },
+                { "language": "fa", "text": "بدون کمک اداره احتمالاً کل جای آموزش حرفه‌ای‌ام را از دست می‌دهم." },
+                { "language": "ar", "text": "من دون مساعدة الجهة الإدارية سأفقد على الأرجح مكان التدريب كله." },
+                { "language": "tr", "text": "Kurumun yardımı olmadan muhtemelen tüm mesleki eğitim yerimi kaybedeceğim." },
+                { "language": "ru", "text": "Без помощи ведомства я, вероятно, потеряю всё место обучения." },
+                { "language": "ckb", "text": "بەبێ یارمەتی فەرمانگەکە ئەگەری زۆرە هەموو شوێنی فێرکاری پیشەییەکەم لەدەست بدەم." },
+                { "language": "kmr", "text": "Bê alîkariya saziyê ez dibe ku hemû cihê perwerdehiya pîşeyî ji dest bidim." },
+                { "language": "pl", "text": "Bez pomocy urzędu prawdopodobnie stracę całe miejsce szkolenia zawodowego." },
+                { "language": "ro", "text": "Fără ajutorul autorității voi pierde probabil întregul loc de formare profesională." },
+                { "language": "sq", "text": "Pa ndihmën e institucionit ndoshta do ta humbas gjithë vendin e formimit profesional." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber als Aktennotiz zu emotional: Besser sind Frist, Nachweis, begrenzte Bitte und Verfahrensanerkennung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too emotional for a file note: deadline, evidence, limited request, and acknowledgment of the procedure are better." },
+                { "language": "fa", "text": "قابل فهم است، اما برای یادداشت پرونده بیش از حد احساسی است: مهلت، مدرک، درخواست محدود و پذیرش روند بهتر است." },
+                { "language": "ar", "text": "مفهوم، لكنه عاطفي أكثر من اللازم كملاحظة للملف: الأفضل ذكر المهلة والدليل والطلب المحدود والاعتراف بالإجراء." },
+                { "language": "tr", "text": "Anlaşılır, ancak dosya notu için fazla duygusal: süre, kanıt, sınırlı talep ve prosedür kabulü daha iyidir." },
+                { "language": "ru", "text": "Понятно, но слишком эмоционально для заметки в дело: лучше указать срок, доказательство, ограниченную просьбу и признание процедуры." },
+                { "language": "ckb", "text": "تێگەیشتن پێدەکرێت، بەڵام بۆ تێبینی کەیس زۆر هەستیارە: ماوە، بەڵگە، داوای سنووردار و وەرگرتنی ڕێکار باشترە." },
+                { "language": "kmr", "text": "Tê famkirin, lê ji bo nîşeya dosyeyê pir hestyar e: muhlet, belge, daxwaza sînorkirî û qebûlkirina rêkarê baştir in." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt emocjonalne jako notatka do akt: lepsze są termin, dowód, ograniczona prośba i uznanie procedury." },
+                { "language": "ro", "text": "De înțeles, dar prea emoțional ca notă la dosar: mai bune sunt termenul, dovada, cererea limitată și recunoașterea procedurii." },
+                { "language": "sq", "text": "E kuptueshme, por shumë emocionale për shënim në dosje: më mirë janë afati, prova, kërkesa e kufizuar dhe pranimi i procedurës." }
+              ],
+              "explanationKey": "too-emotional-file-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "opening-strategy",
+          "text": "Bei einer Ausnahmeregelung ist die erste Formulierung entscheidend: Bitten Sie um Prüfung, nicht um bevorzugte Behandlung.",
+          "translations": [
+            { "language": "en", "text": "When requesting an exception, the first wording is crucial: ask for a review, not for preferential treatment." },
+            { "language": "fa", "text": "در درخواست استثنا، جمله اول تعیین‌کننده است: درخواست بررسی کنید، نه برخورد ترجیحی." },
+            { "language": "ar", "text": "عند طلب استثناء تكون الصياغة الأولى حاسمة: اطلب فحصاً لا معاملة تفضيلية." },
+            { "language": "tr", "text": "İstisna talebinde ilk ifade belirleyicidir: ayrıcalıklı muamele değil, inceleme isteyin." },
+            { "language": "ru", "text": "При запросе исключения первая формулировка решающая: просите о проверке, а не о привилегированном отношении." },
+            { "language": "ckb", "text": "لە داواکردنی جیاوازیدا یەکەم دەربڕین گرنگە: داوای پشکنین بکە، نە مامەڵەی پێشخستن." },
+            { "language": "kmr", "text": "Di daxwaza îstîsnayê de gotina yekem girîng e: daxwaza kontrolê bikin, ne muameleya taybet." },
+            { "language": "pl", "text": "Przy wnioskowaniu o wyjątek pierwsze sformułowanie jest kluczowe: proś o sprawdzenie, nie o uprzywilejowanie." },
+            { "language": "ro", "text": "La solicitarea unei excepții, prima formulare este decisivă: cereți verificare, nu tratament preferențial." },
+            { "language": "sq", "text": "Kur kërkoni përjashtim, formulimi i parë është vendimtar: kërkoni kontroll, jo trajtim të privilegjuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "C1-Qualität entsteht hier durch Verhältnismäßigkeit: konkretes Dokument, konkrete Frist, konkrete Folge.",
+          "translations": [
+            { "language": "en", "text": "C1 quality here comes from proportionality: a concrete document, a concrete deadline, a concrete consequence." },
+            { "language": "fa", "text": "کیفیت C1 اینجا از تناسب می‌آید: مدرک مشخص، مهلت مشخص، پیامد مشخص." },
+            { "language": "ar", "text": "تظهر جودة C1 هنا من خلال التناسب: وثيقة محددة، مهلة محددة، نتيجة محددة." },
+            { "language": "tr", "text": "Burada C1 kalitesi orantılılıktan gelir: somut belge, somut süre, somut sonuç." },
+            { "language": "ru", "text": "Качество C1 здесь возникает из соразмерности: конкретный документ, конкретный срок, конкретное последствие." },
+            { "language": "ckb", "text": "کوالیتی C1 لێرە لە هاوسەنگییەوە دروست دەبێت: بەڵگەی دیاریکراو، ماوەی دیاریکراو، ئاکامی دیاریکراو." },
+            { "language": "kmr", "text": "Kalîteya C1 li vir ji rêjeyê tê: belgeya şênber, muhleta şênber, encama şênber." },
+            { "language": "pl", "text": "Jakość C1 powstaje tu przez proporcjonalność: konkretny dokument, konkretny termin, konkretny skutek." },
+            { "language": "ro", "text": "Calitatea C1 apare aici prin proporționalitate: document concret, termen concret, consecință concretă." },
+            { "language": "sq", "text": "Cilësia C1 këtu vjen nga proporcionaliteti: dokument konkret, afat konkret, pasojë konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "social-risk",
+          "text": "Wenn die Behörde Gleichbehandlung nennt, reagieren Sie nicht defensiv. Anerkennen Sie den Punkt und grenzen Sie Ihre Bitte enger ein.",
+          "translations": [
+            { "language": "en", "text": "When the public office mentions equal treatment, do not react defensively. Acknowledge the point and narrow your request." },
+            { "language": "fa", "text": "وقتی اداره از رفتار برابر صحبت می‌کند، دفاعی واکنش نشان ندهید. نکته را بپذیرید و درخواست خود را محدودتر کنید." },
+            { "language": "ar", "text": "عندما تذكر الجهة الإدارية المعاملة المتساوية، لا ترد بشكل دفاعي. اعترف بالنقطة وضيّق طلبك." },
+            { "language": "tr", "text": "Kurum eşit muameleden söz ettiğinde savunmacı tepki vermeyin. Noktayı kabul edin ve talebinizi daraltın." },
+            { "language": "ru", "text": "Когда ведомство говорит о равном отношении, не реагируйте оборонительно. Признайте этот пункт и сузьте свою просьбу." },
+            { "language": "ckb", "text": "کاتێک فەرمانگە باس لە مامەڵەی یەکسان دەکات، بە شێوەی بەرگرییەوە وەڵام مەدەرەوە. خاڵەکە وەربگرە و داواکەت سنووردارتر بکە." },
+            { "language": "kmr", "text": "Dema saziyê qala tevgera wekhev dike, bersiveke parastinî nedin. Xalê qebûl bikin û daxwaza xwe tengtir bikin." },
+            { "language": "pl", "text": "Gdy urząd mówi o równym traktowaniu, nie reaguj defensywnie. Uznaj ten punkt i zawęź swoją prośbę." },
+            { "language": "ro", "text": "Când autoritatea menționează tratamentul egal, nu reacționați defensiv. Recunoașteți punctul și restrângeți solicitarea." },
+            { "language": "sq", "text": "Kur institucioni përmend trajtimin e barabartë, mos reagoni në mënyrë mbrojtëse. Pranojeni pikën dhe ngushtoni kërkesën tuaj." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "solution-design",
+          "text": "Eine gute Ausnahmebitte bietet kleine Alternativen: Vorabprüfung, Vollständigkeitsbestätigung oder realistischer nächster Schritt.",
+          "translations": [
+            { "language": "en", "text": "A good exception request offers small alternatives: preliminary check, confirmation of completeness, or a realistic next step." },
+            { "language": "fa", "text": "درخواست خوب برای استثنا گزینه‌های کوچک ارائه می‌دهد: بررسی اولیه، تأیید کامل بودن مدارک یا قدم بعدی واقع‌بینانه." },
+            { "language": "ar", "text": "طلب الاستثناء الجيد يقدم بدائل صغيرة: فحص أولي، تأكيد اكتمال الوثائق، أو خطوة تالية واقعية." },
+            { "language": "tr", "text": "İyi bir istisna talebi küçük alternatifler sunar: ön kontrol, eksiksizlik onayı veya gerçekçi bir sonraki adım." },
+            { "language": "ru", "text": "Хорошая просьба об исключении предлагает небольшие альтернативы: предварительная проверка, подтверждение полноты или реалистичный следующий шаг." },
+            { "language": "ckb", "text": "داوای باش بۆ جیاوازی هەڵبژاردەی بچووک پێشکەش دەکات: پشکنینی پێشوەختە، پشتڕاستکردنەوەی تەواوبوون یان هەنگاوی داهاتووی واقیعی." },
+            { "language": "kmr", "text": "Daxwaza baş a îstîsnayê alternatîfên piçûk pêşkêş dike: kontrola pêşîn, piştrastkirina temambûnê an gaveke din a rast." },
+            { "language": "pl", "text": "Dobra prośba o wyjątek oferuje małe alternatywy: kontrolę wstępną, potwierdzenie kompletności albo realistyczny następny krok." },
+            { "language": "ro", "text": "O solicitare bună de excepție oferă alternative mici: verificare preliminară, confirmare a completitudinii sau pas următor realist." },
+            { "language": "sq", "text": "Një kërkesë e mirë për përjashtim ofron alternativa të vogla: kontroll paraprak, konfirmim të plotësisë ose hap tjetër realist." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Die Schlussformel sollte aktenfähig sein: Anlass, Nachweis, begrenzte Bitte und Anerkennung des regulären Verfahrens.",
+          "translations": [
+            { "language": "en", "text": "The closing formula should be suitable for the file: reason, evidence, limited request, and acknowledgment of the regular procedure." },
+            { "language": "fa", "text": "جمع‌بندی پایانی باید مناسب پرونده باشد: علت، مدرک، درخواست محدود و پذیرش روند عادی." },
+            { "language": "ar", "text": "ينبغي أن تكون الصيغة الختامية مناسبة للملف: السبب، الدليل، الطلب المحدود، والاعتراف بالإجراء العادي." },
+            { "language": "tr", "text": "Kapanış ifadesi dosyaya uygun olmalıdır: neden, kanıt, sınırlı talep ve normal prosedürün kabulü." },
+            { "language": "ru", "text": "Заключительная формула должна подходить для дела: повод, доказательство, ограниченная просьба и признание обычной процедуры." },
+            { "language": "ckb", "text": "کۆتایی پێویستە گونجاو بۆ کەیس بێت: هۆکار، بەڵگە، داوای سنووردار و وەرگرتنی ڕێکاری ئاسایی." },
+            { "language": "kmr", "text": "Formula dawî divê ji bo dosyeyê guncaw be: sedem, belge, daxwaza sînorkirî û qebûlkirina pêvajoya asayî." },
+            { "language": "pl", "text": "Formuła końcowa powinna nadawać się do akt: powód, dowód, ograniczona prośba i uznanie zwykłej procedury." },
+            { "language": "ro", "text": "Formula finală trebuie să fie potrivită pentru dosar: motiv, dovadă, cerere limitată și recunoașterea procedurii obișnuite." },
+            { "language": "sq", "text": "Formula përmbyllëse duhet të jetë e përshtatshme për dosje: arsye, provë, kërkesë e kufizuar dhe pranim i procedurës së rregullt." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "government-office-exception-request",
+          "placement": "hero",
+          "purpose": "Show a calm formal conversation at a German public-office counter where an applicant presents organized documents for a narrowly limited exception request.",
+          "altText": "Eine Person beantragt an einem Behördenschalter vorsichtig eine begrenzte Ausnahmeregelung mit geordneten Unterlagen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A person carefully requests a limited exception at a public-office counter with organized documents." },
+            { "language": "fa", "text": "فردی پشت باجه اداره با مدارک مرتب، محتاطانه درخواست یک استثنای محدود می‌کند." },
+            { "language": "ar", "text": "شخص يطلب بحذر استثناءً محدوداً عند شباك جهة إدارية مع وثائق مرتبة." },
+            { "language": "tr", "text": "Bir kişi resmi kurum gişesinde düzenli belgelerle dikkatli biçimde sınırlı bir istisna talep ediyor." },
+            { "language": "ru", "text": "Человек у окна ведомства осторожно просит об ограниченном исключении с упорядоченными документами." },
+            { "language": "ckb", "text": "کەسێک لە پشت پەنجەرەی فەرمانگە بە بەڵگەی ڕێکخراو بە وریایی داوای جیاوازییەکی سنووردار دەکات." },
+            { "language": "kmr", "text": "Kesek li şûşeya saziyê bi belgeyên rêxistî bi hişyarî daxwaza îstîsnayeke sînorkirî dike." },
+            { "language": "pl", "text": "Osoba przy okienku urzędu ostrożnie prosi o ograniczony wyjątek, mając uporządkowane dokumenty." },
+            { "language": "ro", "text": "O persoană solicită cu prudență o excepție limitată la un ghișeu public, cu documente ordonate." },
+            { "language": "sq", "text": "Një person kërkon me kujdes një përjashtim të kufizuar në sportelin e një institucioni, me dokumente të rregulluara." }
+          ],
+          "imagePrompt": "Clean educational illustration of a German public-office counter. A calm adult applicant presents organized documents and a written employer deadline while speaking respectfully with a caseworker; no readable personal data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

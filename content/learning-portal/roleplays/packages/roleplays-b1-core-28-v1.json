@@ -1,0 +1,932 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-28-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 28 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 28",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-eine-entschaedigung-bei-verspaetung-nachfragen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Entschädigung bei Verspätung nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Asking about compensation for a delay" },
+        { "language": "fa", "text": "پرسیدن درباره غرامت برای تأخیر" },
+        { "language": "ar", "text": "السؤال عن تعويض بسبب التأخير" },
+        { "language": "tr", "text": "Gecikme için tazminat sormak" },
+        { "language": "ru", "text": "Уточнить компенсацию за задержку" },
+        { "language": "ckb", "text": "پرسیارکردن دەربارەی قەرەبووی دواکەوتن" },
+        { "language": "kmr", "text": "Li ser tezmînata derengmayînê pirsîn" },
+        { "language": "pl", "text": "Pytanie o odszkodowanie za opóźnienie" },
+        { "language": "ro", "text": "Întrebarea despre despăgubire pentru întârziere" },
+        { "language": "sq", "text": "Pyetje për kompensim për vonesë" }
+      ],
+      "description": "Du bist am Service-Schalter im Bahnhof, weil dein Zug deutlich verspätet angekommen ist. Du fragst nach dem richtigen Formular, den nötigen Nachweisen und der Frist.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at the service counter in the train station because your train arrived with a significant delay. You ask about the correct form, the required evidence, and the deadline." },
+        { "language": "fa", "text": "در باجه خدمات ایستگاه هستی، چون قطارت با تأخیر زیادی رسیده است. درباره فرم درست، مدارک لازم و مهلت سؤال می‌کنی." },
+        { "language": "ar", "text": "أنت عند مكتب الخدمة في محطة القطار لأن قطارك وصل بتأخير واضح. تسأل عن النموذج الصحيح والإثباتات المطلوبة والمهلة." },
+        { "language": "tr", "text": "Trenin ciddi bir gecikmeyle geldiği için istasyondaki hizmet gişesindesin. Doğru formu, gerekli kanıtları ve süreyi soruyorsun." },
+        { "language": "ru", "text": "Ты у стойки сервиса на вокзале, потому что поезд прибыл с большой задержкой. Ты спрашиваешь о нужном формуляре, доказательствах и сроке." },
+        { "language": "ckb", "text": "لە باجەی خزمەتگوزاری لە وێستگەی شەمەندەفەردایت، چونکە شەمەندەفەرەکەت بە دواکەوتنی زۆر گەیشتووە. دەربارەی فۆڕمی دروست، بەڵگەی پێویست و ماوەکە دەپرسیت." },
+        { "language": "kmr", "text": "Tu li ber kontûara xizmetê ya rawestgeha trenê yî, ji ber ku trena te bi derengiyeke mezin gihîştiye. Tu li ser forma rast, belgeyên pêwîst û dema dawî pirs dikî." },
+        { "language": "pl", "text": "Jesteś przy punkcie obsługi na dworcu, ponieważ twój pociąg przyjechał ze znacznym opóźnieniem. Pytasz o właściwy formularz, potrzebne dowody i termin." },
+        { "language": "ro", "text": "Ești la ghișeul de servicii din gară, deoarece trenul tău a sosit cu o întârziere mare. Întrebi despre formularul corect, dovezile necesare și termenul-limită." },
+        { "language": "sq", "text": "Je te sporteli i shërbimit në stacion, sepse treni yt mbërriti me vonesë të madhe. Pyet për formularin e duhur, provat e nevojshme dhe afatin." }
+      ],
+      "learnerGoal": "Frage sachlich nach Entschädigung, kläre Formular, Nachweise und Frist und fasse den nächsten Schritt zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask factually about compensation, clarify the form, evidence, and deadline, and summarize the next step." },
+        { "language": "fa", "text": "واقع‌گرایانه درباره غرامت سؤال کن، فرم، مدارک و مهلت را روشن کن و قدم بعدی را جمع‌بندی کن." },
+        { "language": "ar", "text": "اسأل بموضوعية عن التعويض، ووضح النموذج والإثباتات والمهلة، ثم لخّص الخطوة التالية." },
+        { "language": "tr", "text": "Tazminatı sakin ve somut biçimde sor, formu, kanıtları ve süreyi netleştir ve sonraki adımı özetle." },
+        { "language": "ru", "text": "Спокойно уточни компенсацию, формуляр, доказательства и срок, а затем подведи итог следующего шага." },
+        { "language": "ckb", "text": "بە شێوەی بابەتی دەربارەی قەرەبوو بپرسە، فۆڕم، بەڵگە و ماوەکە ڕوون بکەرەوە و هەنگاوی دواتر کورت بکەرەوە." },
+        { "language": "kmr", "text": "Bi awayekî rast li ser tezmînatê bipirse, form, belge û dema dawî zelal bike û gava paşê kurt bike." },
+        { "language": "pl", "text": "Rzeczowo zapytaj o odszkodowanie, wyjaśnij formularz, dowody i termin oraz podsumuj następny krok." },
+        { "language": "ro", "text": "Întreabă obiectiv despre despăgubire, clarifică formularul, dovezile și termenul, apoi rezumă pasul următor." },
+        { "language": "sq", "text": "Pyet në mënyrë faktike për kompensimin, sqaro formularin, provat dhe afatin, pastaj përmblidh hapin tjetër." }
+      ],
+      "cefrLevel": "B1",
+      "category": "transport",
+      "topics": ["transport-and-travel", "documents-and-administration"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "ask-for-information",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2580,
+      "roles": [
+        {
+          "roleKey": "rail-service-agent",
+          "displayName": "Bahn-Service",
+          "translations": [
+            { "language": "en", "text": "Rail service" },
+            { "language": "fa", "text": "خدمات راه‌آهن" },
+            { "language": "ar", "text": "خدمة السكك الحديدية" },
+            { "language": "tr", "text": "Tren hizmetleri" },
+            { "language": "ru", "text": "Сервис железной дороги" },
+            { "language": "ckb", "text": "خزمەتگوزاریی شەمەندەفەر" },
+            { "language": "kmr", "text": "Xizmeta trenê" },
+            { "language": "pl", "text": "Obsługa kolei" },
+            { "language": "ro", "text": "Serviciul feroviar" },
+            { "language": "sq", "text": "Shërbimi hekurudhor" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Reisende",
+          "translations": [
+            { "language": "en", "text": "Passenger" },
+            { "language": "fa", "text": "مسافر" },
+            { "language": "ar", "text": "مسافرة" },
+            { "language": "tr", "text": "Yolcu" },
+            { "language": "ru", "text": "Пассажирка" },
+            { "language": "ckb", "text": "گەشتیار" },
+            { "language": "kmr", "text": "Rêwî" },
+            { "language": "pl", "text": "Podróżna" },
+            { "language": "ro", "text": "Călătoare" },
+            { "language": "sq", "text": "Udhëtare" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Guten Tag. Wie kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. How can I help you?" },
+            { "language": "fa", "text": "روز بخیر. چطور می‌توانم به شما کمک کنم؟" },
+            { "language": "ar", "text": "مرحباً. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Roj baş. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Dzień dobry. Jak mogę pani pomóc?" },
+            { "language": "ro", "text": "Bună ziua. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Mein Zug nach Köln ist gestern mit etwa 75 Minuten Verspätung angekommen. Ich möchte fragen, ob ich eine Entschädigung beantragen kann.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. My train to Cologne arrived yesterday with about 75 minutes of delay. I would like to ask whether I can apply for compensation." },
+            { "language": "fa", "text": "روز بخیر. قطار من به کلن دیروز حدود ۷۵ دقیقه با تأخیر رسید. می‌خواهم بپرسم آیا می‌توانم درخواست غرامت بدهم." },
+            { "language": "ar", "text": "مرحباً. وصل قطاري إلى كولونيا أمس بتأخير حوالي 75 دقيقة. أود أن أسأل هل يمكنني تقديم طلب تعويض." },
+            { "language": "tr", "text": "İyi günler. Dün Köln trenim yaklaşık 75 dakika gecikmeyle geldi. Tazminat başvurusu yapıp yapamayacağımı sormak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Мой поезд в Кёльн вчера прибыл примерно с задержкой 75 минут. Я хочу спросить, могу ли я подать заявление на компенсацию." },
+            { "language": "ckb", "text": "ڕۆژ باش. شەمەندەفەرەکەم بۆ کۆلن دوێنێ نزیکەی ٧٥ خولەک بە دواکەوتن گەیشت. دەمەوێ بپرسم ئایا دەتوانم داوای قەرەبوو بکەم." },
+            { "language": "kmr", "text": "Roj baş. Trena min a Kölnê doh bi nêzîkî 75 xulek derengî gihîşt. Dixwazim bipirsim gelo dikarim serîlêdana tezmînatê bikim." },
+            { "language": "pl", "text": "Dzień dobry. Mój pociąg do Kolonii przyjechał wczoraj z około 75-minutowym opóźnieniem. Chciałabym zapytać, czy mogę złożyć wniosek o odszkodowanie." },
+            { "language": "ro", "text": "Bună ziua. Trenul meu spre Köln a sosit ieri cu aproximativ 75 de minute întârziere. Aș dori să întreb dacă pot solicita despăgubire." },
+            { "language": "sq", "text": "Mirëdita. Treni im për në Këln mbërriti dje me rreth 75 minuta vonesë. Dua të pyes nëse mund të kërkoj kompensim." }
+          ],
+          "function": "state-problem",
+          "expectedLearnerAction": "State destination, delay length, and purpose of the request."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Das kann möglich sein. Haben Sie die Fahrkarte und einen Nachweis über die Verspätung dabei?",
+          "translations": [
+            { "language": "en", "text": "That may be possible. Do you have the ticket and proof of the delay with you?" },
+            { "language": "fa", "text": "ممکن است امکان‌پذیر باشد. بلیت و مدرکی درباره تأخیر همراهتان هست؟" },
+            { "language": "ar", "text": "قد يكون ذلك ممكناً. هل لديك التذكرة وإثبات التأخير معك؟" },
+            { "language": "tr", "text": "Bu mümkün olabilir. Biletiniz ve gecikmeye dair bir kanıt yanınızda mı?" },
+            { "language": "ru", "text": "Это может быть возможно. У вас есть билет и подтверждение задержки?" },
+            { "language": "ckb", "text": "ڕەنگە ئەمە گونجاو بێت. بلیت و بەڵگەی دواکەوتنەکەت لەگەڵدایە؟" },
+            { "language": "kmr", "text": "Ev gengaz e. Bilêt û belgeya derengiyê bi we re hene?" },
+            { "language": "pl", "text": "To może być możliwe. Czy ma pani przy sobie bilet i dowód opóźnienia?" },
+            { "language": "ro", "text": "Este posibil. Aveți la dumneavoastră biletul și o dovadă a întârzierii?" },
+            { "language": "sq", "text": "Kjo mund të jetë e mundur. A e keni biletën dhe një provë të vonesës me vete?" }
+          ],
+          "function": "request-evidence"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich habe das digitale Ticket und einen Screenshot aus der App. Reicht das, oder brauche ich noch eine Bestätigung vom Service?",
+          "translations": [
+            { "language": "en", "text": "I have the digital ticket and a screenshot from the app. Is that enough, or do I also need a confirmation from the service desk?" },
+            { "language": "fa", "text": "بلیت دیجیتال و یک اسکرین‌شات از اپلیکیشن را دارم. این کافی است یا هنوز به تأییدیه از بخش خدمات نیاز دارم؟" },
+            { "language": "ar", "text": "لدي التذكرة الرقمية ولقطة شاشة من التطبيق. هل هذا يكفي، أم أحتاج أيضاً إلى تأكيد من مكتب الخدمة؟" },
+            { "language": "tr", "text": "Dijital biletim ve uygulamadan bir ekran görüntüm var. Bu yeterli mi, yoksa ayrıca hizmet masasından bir onay gerekir mi?" },
+            { "language": "ru", "text": "У меня есть электронный билет и скриншот из приложения. Этого достаточно или мне нужно ещё подтверждение от сервиса?" },
+            { "language": "ckb", "text": "بلیتە دیجیتاڵەکەم و وێنەیەکی شاشە لە ئەپەکە هەیە. ئەمە بەسە، یان پێویستم بە پشتڕاستکردنەوەیەک لە خزمەتگوزارییە؟" },
+            { "language": "kmr", "text": "Bilêta dîjîtal û wêneyekî ekranê ji sepanê cem min heye. Ev bes e, yan jî divê piştrastkirinek ji xizmetê hebe?" },
+            { "language": "pl", "text": "Mam bilet elektroniczny i zrzut ekranu z aplikacji. Czy to wystarczy, czy potrzebuję jeszcze potwierdzenia z obsługi?" },
+            { "language": "ro", "text": "Am biletul digital și o captură de ecran din aplicație. Este suficient sau mai am nevoie de o confirmare de la serviciu?" },
+            { "language": "sq", "text": "Kam biletën digjitale dhe një fotografi ekrani nga aplikacioni. A mjafton kjo, apo më duhet edhe një konfirmim nga shërbimi?" }
+          ],
+          "function": "clarify-evidence",
+          "expectedLearnerAction": "Name available evidence and ask what else is required."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Das reicht meistens. Sie müssen das Fahrgastrechte-Formular ausfüllen und Ticket, Verbindung und tatsächliche Ankunftszeit angeben.",
+          "translations": [
+            { "language": "en", "text": "That is usually enough. You need to fill out the passenger rights form and state the ticket, connection, and actual arrival time." },
+            { "language": "fa", "text": "معمولاً این کافی است. باید فرم حقوق مسافران را پر کنید و بلیت، مسیر و زمان واقعی رسیدن را بنویسید." },
+            { "language": "ar", "text": "هذا يكفي عادة. يجب أن تملئي نموذج حقوق الركاب وتذكري التذكرة والرحلة ووقت الوصول الفعلي." },
+            { "language": "tr", "text": "Bu genellikle yeterlidir. Yolcu hakları formunu doldurmalı; bileti, bağlantıyı ve gerçek varış saatini belirtmelisiniz." },
+            { "language": "ru", "text": "Обычно этого достаточно. Нужно заполнить формуляр прав пассажиров и указать билет, маршрут и фактическое время прибытия." },
+            { "language": "ckb", "text": "زۆرجار ئەمە بەسە. دەبێت فۆڕمی مافەکانی گەشتیار پڕ بکەنەوە و بلیت، پەیوەندیی گەشت و کاتی ڕاستەقینەی گەیشتن بنووسن." },
+            { "language": "kmr", "text": "Ev bi gelemperî bes e. Divê hûn forma mafên rêwiyan dagirin û bilêt, girêdana rêwîtiyê û dema rastîn a gihîştinê binivîsin." },
+            { "language": "pl", "text": "To zwykle wystarczy. Musi pani wypełnić formularz praw pasażera i podać bilet, połączenie oraz rzeczywisty czas przyjazdu." },
+            { "language": "ro", "text": "De obicei este suficient. Trebuie să completați formularul pentru drepturile pasagerilor și să indicați biletul, legătura și ora reală a sosirii." },
+            { "language": "sq", "text": "Zakonisht kjo mjafton. Duhet të plotësoni formularin e të drejtave të udhëtarëve dhe të shënoni biletën, lidhjen dhe orën reale të mbërritjes." }
+          ],
+          "function": "explain-process"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Bis wann muss ich das Formular abgeben, und bekomme ich die Entschädigung auf mein Bankkonto überwiesen?",
+          "translations": [
+            { "language": "en", "text": "By when do I have to submit the form, and will the compensation be transferred to my bank account?" },
+            { "language": "fa", "text": "تا چه زمانی باید فرم را تحویل بدهم و آیا غرامت به حساب بانکی من واریز می‌شود؟" },
+            { "language": "ar", "text": "إلى متى يجب أن أقدم النموذج، وهل سيتم تحويل التعويض إلى حسابي البنكي؟" },
+            { "language": "tr", "text": "Formu ne zamana kadar vermem gerekiyor ve tazminat banka hesabıma aktarılır mı?" },
+            { "language": "ru", "text": "До какого срока я должна подать формуляр, и будет ли компенсация перечислена на мой банковский счёт?" },
+            { "language": "ckb", "text": "تا کەی دەبێت فۆڕمەکە پێشکەش بکەم، و ئایا قەرەبووەکە دەخرێتە سەر حیسابی بانکییەکەم؟" },
+            { "language": "kmr", "text": "Divê ez formê heta kengî radest bikim, û tezmînat wê li hesabê min ê bankê were şandin?" },
+            { "language": "pl", "text": "Do kiedy muszę złożyć formularz i czy odszkodowanie zostanie przelane na moje konto bankowe?" },
+            { "language": "ro", "text": "Până când trebuie să depun formularul și despăgubirea va fi transferată în contul meu bancar?" },
+            { "language": "sq", "text": "Deri kur duhet ta dorëzoj formularin dhe a do të kalojë kompensimi në llogarinë time bankare?" }
+          ],
+          "function": "ask-deadline-payment",
+          "expectedLearnerAction": "Clarify deadline and payment method."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Sie können den Antrag online oder hier am Schalter stellen. Am besten machen Sie das zeitnah; die Bankverbindung tragen Sie direkt im Formular ein.",
+          "translations": [
+            { "language": "en", "text": "You can submit the application online or here at the counter. It is best to do it soon; you enter the bank details directly in the form." },
+            { "language": "fa", "text": "می‌توانید درخواست را آنلاین یا همین‌جا در باجه ثبت کنید. بهتر است زود انجامش بدهید؛ اطلاعات بانکی را مستقیم در فرم وارد می‌کنید." },
+            { "language": "ar", "text": "يمكنك تقديم الطلب عبر الإنترنت أو هنا عند المكتب. من الأفضل أن تفعلي ذلك قريباً؛ تكتبين بيانات الحساب البنكي مباشرة في النموذج." },
+            { "language": "tr", "text": "Başvuruyu çevrim içi veya burada gişede yapabilirsiniz. En iyisi bunu kısa sürede yapmak; banka bilgilerinizi doğrudan forma yazarsınız." },
+            { "language": "ru", "text": "Вы можете подать заявление онлайн или здесь у стойки. Лучше сделать это в ближайшее время; банковские реквизиты вы указываете прямо в формуляре." },
+            { "language": "ckb", "text": "دەتوانن داواکارییەکە ئۆنلاین یان لێرە لە باجەکە پێشکەش بکەن. باشترە زوو ئەنجامی بدەن؛ زانیاریی بانکی ڕاستەوخۆ لە فۆڕمەکەدا دەنووسن." },
+            { "language": "kmr", "text": "Hûn dikarin daxwaznameyê serhêl an li vir li kontûarê bidin. Baş e zû bikin; agahiyên bankê rasterast di formê de dinivîsin." },
+            { "language": "pl", "text": "Może pani złożyć wniosek online albo tutaj przy okienku. Najlepiej zrobić to szybko; dane bankowe wpisuje się bezpośrednio w formularzu." },
+            { "language": "ro", "text": "Puteți depune cererea online sau aici, la ghișeu. Cel mai bine este să o faceți curând; datele bancare le treceți direct în formular." },
+            { "language": "sq", "text": "Mund ta paraqitni kërkesën online ose këtu te sporteli. Është më mirë ta bëni sa më shpejt; të dhënat bankare i shkruani direkt në formular." }
+          ],
+          "function": "give-next-step"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke. Dann fülle ich das Fahrgastrechte-Formular aus, füge Ticket und Screenshot hinzu und trage meine Bankverbindung ein.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will fill out the passenger rights form, attach the ticket and screenshot, and enter my bank details." },
+            { "language": "fa", "text": "ممنون. پس فرم حقوق مسافران را پر می‌کنم، بلیت و اسکرین‌شات را ضمیمه می‌کنم و اطلاعات بانکی‌ام را وارد می‌کنم." },
+            { "language": "ar", "text": "شكراً. إذن سأملأ نموذج حقوق الركاب، وأرفق التذكرة ولقطة الشاشة، وأكتب بيانات حسابي البنكي." },
+            { "language": "tr", "text": "Teşekkür ederim. O zaman yolcu hakları formunu dolduracağım, bileti ve ekran görüntüsünü ekleyeceğim ve banka bilgilerimi yazacağım." },
+            { "language": "ru", "text": "Спасибо. Тогда я заполню формуляр прав пассажиров, приложу билет и скриншот и укажу свои банковские реквизиты." },
+            { "language": "ckb", "text": "سوپاس. ئەوا فۆڕمی مافەکانی گەشتیار پڕ دەکەمەوە، بلیت و وێنەی شاشە زیاد دەکەم و زانیاریی بانکییەکەم دەنووسم." },
+            { "language": "kmr", "text": "Spas. Hingê ez forma mafên rêwiyan dagirim, bilêt û wêneyê ekranê lê zêde dikim û agahiyên bankê dinivîsim." },
+            { "language": "pl", "text": "Dziękuję. W takim razie wypełnię formularz praw pasażera, dołączę bilet i zrzut ekranu oraz wpiszę dane bankowe." },
+            { "language": "ro", "text": "Mulțumesc. Atunci completez formularul pentru drepturile pasagerilor, atașez biletul și captura de ecran și trec datele bancare." },
+            { "language": "sq", "text": "Faleminderit. Atëherë do të plotësoj formularin e të drejtave të udhëtarëve, do të bashkëngjis biletën dhe fotografinë e ekranit dhe do të shkruaj të dhënat bankare." }
+          ],
+          "function": "summarize-next-step",
+          "expectedLearnerAction": "Summarize the form, evidence, and payment data."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag. Mein Zug nach Köln ist gestern mit etwa 75 Minuten Verspätung angekommen. Ich möchte fragen, ob ich eine Entschädigung beantragen kann.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. My train to Cologne arrived yesterday with about 75 minutes of delay. I would like to ask whether I can apply for compensation." },
+                { "language": "fa", "text": "روز بخیر. قطار من به کلن دیروز حدود ۷۵ دقیقه با تأخیر رسید. می‌خواهم بپرسم آیا می‌توانم درخواست غرامت بدهم." },
+                { "language": "ar", "text": "مرحباً. وصل قطاري إلى كولونيا أمس بتأخير حوالي 75 دقيقة. أود أن أسأل هل يمكنني تقديم طلب تعويض." },
+                { "language": "tr", "text": "İyi günler. Dün Köln trenim yaklaşık 75 dakika gecikmeyle geldi. Tazminat başvurusu yapıp yapamayacağımı sormak istiyorum." },
+                { "language": "ru", "text": "Добрый день. Мой поезд в Кёльн вчера прибыл примерно с задержкой 75 минут. Я хочу спросить, могу ли я подать заявление на компенсацию." },
+                { "language": "ckb", "text": "ڕۆژ باش. شەمەندەفەرەکەم بۆ کۆلن دوێنێ نزیکەی ٧٥ خولەک بە دواکەوتن گەیشت. دەمەوێ بپرسم ئایا دەتوانم داوای قەرەبوو بکەم." },
+                { "language": "kmr", "text": "Roj baş. Trena min a Kölnê doh bi nêzîkî 75 xulek derengî gihîşt. Dixwazim bipirsim gelo dikarim serîlêdana tezmînatê bikim." },
+                { "language": "pl", "text": "Dzień dobry. Mój pociąg do Kolonii przyjechał wczoraj z około 75-minutowym opóźnieniem. Chciałabym zapytać, czy mogę złożyć wniosek o odszkodowanie." },
+                { "language": "ro", "text": "Bună ziua. Trenul meu spre Köln a sosit ieri cu aproximativ 75 de minute întârziere. Aș dori să întreb dacă pot solicita despăgubire." },
+                { "language": "sq", "text": "Mirëdita. Treni im për në Këln mbërriti dje me rreth 75 minuta vonesë. Dua të pyes nëse mund të kërkoj kompensim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist vollständig: Ziel, Dauer der Verspätung und Anliegen sind klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is complete: destination, delay length, and request are clear." },
+                { "language": "fa", "text": "این کامل است: مقصد، مدت تأخیر و درخواست روشن هستند." },
+                { "language": "ar", "text": "هذا كامل: الوجهة ومدة التأخير والطلب واضحة." },
+                { "language": "tr", "text": "Bu tamdır: hedef, gecikme süresi ve talep nettir." },
+                { "language": "ru", "text": "Это полно: пункт назначения, длительность задержки и просьба ясны." },
+                { "language": "ckb", "text": "ئەمە تەواوە: مەبەست، ماوەی دواکەوتن و داواکاری ڕوونن." },
+                { "language": "kmr", "text": "Ev temam e: armanc, dirêjahiya derengiyê û daxwaz zelal in." },
+                { "language": "pl", "text": "To jest pełne: cel podróży, długość opóźnienia i prośba są jasne." },
+                { "language": "ro", "text": "Este complet: destinația, durata întârzierii și solicitarea sunt clare." },
+                { "language": "sq", "text": "Kjo është e plotë: destinacioni, kohëzgjatja e vonesës dhe kërkesa janë të qarta." }
+              ],
+              "explanationKey": "clear-delay-request"
+            },
+            {
+              "id": "b",
+              "text": "Mein Zug war gestern sehr spät. Bekomme ich dafür Geld zurück?",
+              "translations": [
+                { "language": "en", "text": "My train was very late yesterday. Do I get money back for that?" },
+                { "language": "fa", "text": "قطار من دیروز خیلی دیر بود. بابتش پولی پس می‌گیرم؟" },
+                { "language": "ar", "text": "كان قطاري متأخراً جداً أمس. هل أسترد مالاً بسبب ذلك؟" },
+                { "language": "tr", "text": "Trenim dün çok gecikti. Bunun için para geri alır mıyım?" },
+                { "language": "ru", "text": "Мой поезд вчера сильно опоздал. Я получу за это деньги назад?" },
+                { "language": "ckb", "text": "شەمەندەفەرەکەم دوێنێ زۆر دواکەوت. بۆ ئەمە پارەم بۆ دەگەڕێتەوە؟" },
+                { "language": "kmr", "text": "Trena min doh pir dereng bû. Ji bo vê ez pere paşve digirim?" },
+                { "language": "pl", "text": "Mój pociąg był wczoraj bardzo spóźniony. Czy dostanę za to zwrot pieniędzy?" },
+                { "language": "ro", "text": "Trenul meu a întârziat mult ieri. Primesc bani înapoi pentru asta?" },
+                { "language": "sq", "text": "Treni im ishte shumë vonë dje. A marr para mbrapsht për këtë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber für B1 zu ungenau: Ziel, Dauer der Verspätung und Antrag fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too imprecise for B1: destination, delay length, and application are missing." },
+                { "language": "fa", "text": "قابل فهم است، اما برای B1 خیلی نامشخص است: مقصد، مدت تأخیر و درخواست رسمی کم است." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه غير دقيق لمستوى B1: الوجهة ومدة التأخير والطلب غير مذكورة." },
+                { "language": "tr", "text": "Anlaşılır, ama B1 için fazla belirsiz: hedef, gecikme süresi ve başvuru eksik." },
+                { "language": "ru", "text": "Это понятно, но для B1 слишком неточно: нет пункта назначения, длительности задержки и заявления." },
+                { "language": "ckb", "text": "تێدەگەین، بەڵام بۆ B1 زۆر ناڕوونە: مەبەست، ماوەی دواکەوتن و داواکاری نییە." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê ji bo B1 pir nezelal e: armanc, dirêjahiya derengiyê û serîlêdan kêm in." },
+                { "language": "pl", "text": "To jest zrozumiałe, ale za mało precyzyjne na B1: brakuje celu podróży, długości opóźnienia i wniosku." },
+                { "language": "ro", "text": "Este de înțeles, dar prea neclar pentru B1: lipsesc destinația, durata întârzierii și cererea." },
+                { "language": "sq", "text": "Është e kuptueshme, por shumë e pasaktë për B1: mungojnë destinacioni, kohëzgjatja e vonesës dhe kërkesa." }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich habe das digitale Ticket und einen Screenshot aus der App. Reicht das, oder brauche ich noch eine Bestätigung vom Service?",
+              "translations": [
+                { "language": "en", "text": "I have the digital ticket and a screenshot from the app. Is that enough, or do I also need a confirmation from the service desk?" },
+                { "language": "fa", "text": "بلیت دیجیتال و یک اسکرین‌شات از اپلیکیشن را دارم. این کافی است یا هنوز به تأییدیه از بخش خدمات نیاز دارم؟" },
+                { "language": "ar", "text": "لدي التذكرة الرقمية ولقطة شاشة من التطبيق. هل هذا يكفي، أم أحتاج أيضاً إلى تأكيد من مكتب الخدمة؟" },
+                { "language": "tr", "text": "Dijital biletim ve uygulamadan bir ekran görüntüm var. Bu yeterli mi, yoksa ayrıca hizmet masasından bir onay gerekir mi?" },
+                { "language": "ru", "text": "У меня есть электронный билет и скриншот из приложения. Этого достаточно или мне нужно ещё подтверждение от сервиса?" },
+                { "language": "ckb", "text": "بلیتە دیجیتاڵەکەم و وێنەیەکی شاشە لە ئەپەکە هەیە. ئەمە بەسە، یان پێویستم بە پشتڕاستکردنەوەیەک لە خزمەتگوزارییە؟" },
+                { "language": "kmr", "text": "Bilêta dîjîtal û wêneyekî ekranê ji sepanê cem min heye. Ev bes e, yan jî divê piştrastkirinek ji xizmetê hebe?" },
+                { "language": "pl", "text": "Mam bilet elektroniczny i zrzut ekranu z aplikacji. Czy to wystarczy, czy potrzebuję jeszcze potwierdzenia z obsługi?" },
+                { "language": "ro", "text": "Am biletul digital și o captură de ecran din aplicație. Este suficient sau mai am nevoie de o confirmare de la serviciu?" },
+                { "language": "sq", "text": "Kam biletën digjitale dhe një fotografi ekrani nga aplikacioni. A mjafton kjo, apo më duhet edhe një konfirmim nga shërbimi?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du nennst vorhandene Nachweise und fragst konkret nach fehlenden Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you name the evidence you have and ask specifically about missing documents." },
+                { "language": "fa", "text": "خوب است: مدارکی را که داری می‌گویی و دقیقاً درباره مدارک کم سؤال می‌کنی." },
+                { "language": "ar", "text": "جيد: تذكرين الإثباتات الموجودة وتسألين تحديداً عن المستندات الناقصة." },
+                { "language": "tr", "text": "İyi: elindeki kanıtları söylüyor ve eksik belgeleri somut olarak soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты называешь имеющиеся доказательства и конкретно спрашиваешь о недостающих документах." },
+                { "language": "ckb", "text": "باشە: ئەو بەڵگانەی هەتە دەڵێیت و بە وردی دەربارەی بەڵگەی کەم دەپرسیت." },
+                { "language": "kmr", "text": "Baş e: tu belgeyên heyî dibêjî û bi taybetî li ser belgeyên kêm pirs dikî." },
+                { "language": "pl", "text": "Dobrze: podajesz posiadane dowody i konkretnie pytasz o brakujące dokumenty." },
+                { "language": "ro", "text": "Bine: numești dovezile pe care le ai și întrebi concret despre documentele lipsă." },
+                { "language": "sq", "text": "Mirë: përmend provat që ke dhe pyet konkretisht për dokumentet që mungojnë." }
+              ],
+              "explanationKey": "evidence-and-follow-up"
+            },
+            {
+              "id": "b",
+              "text": "Ich habe alles in der App. Das müsste doch reichen, oder?",
+              "translations": [
+                { "language": "en", "text": "I have everything in the app. That should be enough, shouldn't it?" },
+                { "language": "fa", "text": "همه چیز را در اپلیکیشن دارم. این باید کافی باشد، نه؟" },
+                { "language": "ar", "text": "لدي كل شيء في التطبيق. من المفترض أن يكون هذا كافياً، أليس كذلك؟" },
+                { "language": "tr", "text": "Her şey uygulamada var. Bu yeterli olmalı, değil mi?" },
+                { "language": "ru", "text": "У меня всё есть в приложении. Этого ведь должно хватить, верно?" },
+                { "language": "ckb", "text": "هەموو شتێکم لە ئەپەکەدایە. ئەمە دەبێت بەس بێت، وانییە؟" },
+                { "language": "kmr", "text": "Hemû tişt di sepanê de cem min heye. Divê ev bes be, ne?" },
+                { "language": "pl", "text": "Mam wszystko w aplikacji. To chyba powinno wystarczyć, prawda?" },
+                { "language": "ro", "text": "Am totul în aplicație. Ar trebui să fie suficient, nu?" },
+                { "language": "sq", "text": "I kam të gjitha në aplikacion. Kjo duhet të mjaftojë, apo jo?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist nicht falsch, aber sie bleibt zu allgemein und fragt nicht nach konkreten Nachweisen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is not wrong, but it remains too general and does not ask about specific evidence." },
+                { "language": "fa", "text": "پاسخ غلط نیست، اما خیلی کلی می‌ماند و درباره مدارک مشخص سؤال نمی‌کند." },
+                { "language": "ar", "text": "الجواب ليس خطأ، لكنه عام جداً ولا يسأل عن إثباتات محددة." },
+                { "language": "tr", "text": "Cevap yanlış değil, ama çok genel kalıyor ve somut kanıtları sormuyor." },
+                { "language": "ru", "text": "Ответ не неправильный, но слишком общий и не спрашивает о конкретных доказательствах." },
+                { "language": "ckb", "text": "وەڵامەکە هەڵە نییە، بەڵام زۆر گشتییە و دەربارەی بەڵگەی دیاریکراو ناپرسێت." },
+                { "language": "kmr", "text": "Bersiv ne şaş e, lê pir giştî dimîne û li ser belgeyên taybet napirse." },
+                { "language": "pl", "text": "Odpowiedź nie jest błędna, ale jest zbyt ogólna i nie pyta o konkretne dowody." },
+                { "language": "ro", "text": "Răspunsul nu este greșit, dar rămâne prea general și nu întreabă despre dovezi concrete." },
+                { "language": "sq", "text": "Përgjigjja nuk është gabim, por mbetet shumë e përgjithshme dhe nuk pyet për prova konkrete." }
+              ],
+              "explanationKey": "missing-specific-evidence"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke. Dann fülle ich das Fahrgastrechte-Formular aus, füge Ticket und Screenshot hinzu und trage meine Bankverbindung ein.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will fill out the passenger rights form, attach the ticket and screenshot, and enter my bank details." },
+                { "language": "fa", "text": "ممنون. پس فرم حقوق مسافران را پر می‌کنم، بلیت و اسکرین‌شات را ضمیمه می‌کنم و اطلاعات بانکی‌ام را وارد می‌کنم." },
+                { "language": "ar", "text": "شكراً. إذن سأملأ نموذج حقوق الركاب، وأرفق التذكرة ولقطة الشاشة، وأكتب بيانات حسابي البنكي." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman yolcu hakları formunu dolduracağım, bileti ve ekran görüntüsünü ekleyeceğim ve banka bilgilerimi yazacağım." },
+                { "language": "ru", "text": "Спасибо. Тогда я заполню формуляр прав пассажиров, приложу билет и скриншот и укажу свои банковские реквизиты." },
+                { "language": "ckb", "text": "سوپاس. ئەوا فۆڕمی مافەکانی گەشتیار پڕ دەکەمەوە، بلیت و وێنەی شاشە زیاد دەکەم و زانیاریی بانکییەکەم دەنووسم." },
+                { "language": "kmr", "text": "Spas. Hingê ez forma mafên rêwiyan dagirim, bilêt û wêneyê ekranê lê zêde dikim û agahiyên bankê dinivîsim." },
+                { "language": "pl", "text": "Dziękuję. W takim razie wypełnię formularz praw pasażera, dołączę bilet i zrzut ekranu oraz wpiszę dane bankowe." },
+                { "language": "ro", "text": "Mulțumesc. Atunci completez formularul pentru drepturile pasagerilor, atașez biletul și captura de ecran și trec datele bancare." },
+                { "language": "sq", "text": "Faleminderit. Atëherë do të plotësoj formularin e të drejtave të udhëtarëve, do të bashkëngjis biletën dhe fotografinë e ekranit dhe do të shkruaj të dhënat bankare." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Zusammenfassung ist prüfungstauglich, weil sie alle nächsten Schritte enthält.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The summary is exam-ready because it includes all next steps." },
+                { "language": "fa", "text": "جمع‌بندی برای امتحان مناسب است، چون همه قدم‌های بعدی را شامل می‌شود." },
+                { "language": "ar", "text": "الملخص مناسب للامتحان لأنه يتضمن كل الخطوات التالية." },
+                { "language": "tr", "text": "Özet sınav için uygundur, çünkü tüm sonraki adımları içerir." },
+                { "language": "ru", "text": "Резюме подходит для экзамена, потому что включает все следующие шаги." },
+                { "language": "ckb", "text": "کورتکردنەوەکە بۆ تاقیکردنەوە گونجاوە، چونکە هەموو هەنگاوەکانی دواتر لەخۆدەگرێت." },
+                { "language": "kmr", "text": "Kurteyê ji bo ezmûnê guncan e, ji ber ku hemû gavên paşê tê de ne." },
+                { "language": "pl", "text": "Podsumowanie nadaje się na egzamin, bo zawiera wszystkie następne kroki." },
+                { "language": "ro", "text": "Rezumatul este potrivit pentru examen, deoarece include toți pașii următori." },
+                { "language": "sq", "text": "Përmbledhja është e përshtatshme për provim, sepse përfshin të gjithë hapat e ardhshëm." }
+              ],
+              "explanationKey": "complete-summary"
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann mache ich das online.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will do it online." },
+                { "language": "fa", "text": "ممنون، پس آن را آنلاین انجام می‌دهم." },
+                { "language": "ar", "text": "شكراً، إذن سأفعل ذلك عبر الإنترنت." },
+                { "language": "tr", "text": "Teşekkürler, o zaman bunu çevrim içi yaparım." },
+                { "language": "ru", "text": "Спасибо, тогда я сделаю это онлайн." },
+                { "language": "ckb", "text": "سوپاس، ئەوا ئۆنلاین ئەنجامی دەدەم." },
+                { "language": "kmr", "text": "Spas, hingê ez wê serhêl dikim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie zrobię to online." },
+                { "language": "ro", "text": "Mulțumesc, atunci fac asta online." },
+                { "language": "sq", "text": "Faleminderit, atëherë do ta bëj online." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu kurz: Formular, Nachweise und Bankdaten werden nicht gesichert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too short: form, evidence, and bank details are not secured." },
+                { "language": "fa", "text": "مودبانه است، اما خیلی کوتاه است: فرم، مدارک و اطلاعات بانکی مشخص نمی‌شوند." },
+                { "language": "ar", "text": "هذا مهذب، لكنه قصير جداً: النموذج والإثباتات والبيانات البنكية غير مؤكدة." },
+                { "language": "tr", "text": "Bu kibar, ama çok kısa: form, kanıtlar ve banka bilgileri güvenceye alınmıyor." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко: формуляр, доказательства и банковские данные не закреплены." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر کورتە: فۆڕم، بەڵگە و زانیاریی بانکی پشتڕاست ناکرێنەوە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir kurt e: form, belge û agahiyên bankê piştrast nabin." },
+                { "language": "pl", "text": "To jest uprzejme, ale za krótkie: formularz, dowody i dane bankowe nie są potwierdzone." },
+                { "language": "ro", "text": "Este politicos, dar prea scurt: formularul, dovezile și datele bancare nu sunt clarificate." },
+                { "language": "sq", "text": "Është e sjellshme, por shumë e shkurtër: formulari, provat dhe të dhënat bankare nuk sigurohen." }
+              ],
+              "explanationKey": "summary-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei Entschädigungsfragen sollten Grund, Nachweis, Formular, Frist und nächster Schritt klar genannt werden.",
+          "translations": [
+            { "language": "en", "text": "B1 target: for compensation questions, reason, evidence, form, deadline, and next step should be stated clearly." },
+            { "language": "fa", "text": "هدف B1: در سؤال‌های مربوط به غرامت باید دلیل، مدرک، فرم، مهلت و قدم بعدی روشن گفته شود." },
+            { "language": "ar", "text": "هدف B1: في أسئلة التعويض يجب ذكر السبب والإثبات والنموذج والمهلة والخطوة التالية بوضوح." },
+            { "language": "tr", "text": "B1 hedefi: tazminat sorularında neden, kanıt, form, süre ve sonraki adım açıkça belirtilmelidir." },
+            { "language": "ru", "text": "Цель B1: в вопросах компенсации нужно ясно назвать причину, доказательство, формуляр, срок и следующий шаг." },
+            { "language": "ckb", "text": "ئامانجی B1: لە پرسیارەکانی قەرەبوودا دەبێت هۆکار، بەڵگە، فۆڕم، ماوە و هەنگاوی دواتر بە ڕوونی بگوترێن." },
+            { "language": "kmr", "text": "Armanca B1: di pirsên tezmînatê de divê sedem, belge, form, dema dawî û gava paşê zelal bêne gotin." },
+            { "language": "pl", "text": "Cel B1: przy pytaniach o odszkodowanie trzeba jasno podać powód, dowód, formularz, termin i następny krok." },
+            { "language": "ro", "text": "Obiectiv B1: la întrebările despre despăgubire trebuie menționate clar motivul, dovada, formularul, termenul și pasul următor." },
+            { "language": "sq", "text": "Qëllimi B1: në pyetjet për kompensim duhet të thuhet qartë arsyeja, prova, formulari, afati dhe hapi tjetër." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-im-hotel-eine-loesung-fuer-ein-problem-finden",
+      "linkedDialogueSlug": null,
+      "title": "Im Hotel eine Lösung für ein Problem finden",
+      "titleTranslations": [
+        { "language": "en", "text": "Finding a solution for a problem at a hotel" },
+        { "language": "fa", "text": "پیدا کردن راه‌حل برای مشکلی در هتل" },
+        { "language": "ar", "text": "إيجاد حل لمشكلة في الفندق" },
+        { "language": "tr", "text": "Otelde bir sorun için çözüm bulmak" },
+        { "language": "ru", "text": "Найти решение проблемы в отеле" },
+        { "language": "ckb", "text": "دۆزینەوەی چارەسەر بۆ کێشەیەک لە هۆتێل" },
+        { "language": "kmr", "text": "Li otêlê ji bo pirsgirêkekê çareserî dîtin" },
+        { "language": "pl", "text": "Znalezienie rozwiązania problemu w hotelu" },
+        { "language": "ro", "text": "Găsirea unei soluții pentru o problemă la hotel" },
+        { "language": "sq", "text": "Gjetja e një zgjidhjeje për një problem në hotel" }
+      ],
+      "description": "Du sprichst an der Hotelrezeption über ein Zimmerproblem. Du bleibst höflich, erklärst die Auswirkung und vergleichst zwei mögliche Lösungen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak at the hotel reception about a room problem. You stay polite, explain the impact, and compare two possible solutions." },
+        { "language": "fa", "text": "در پذیرش هتل درباره مشکلی در اتاق صحبت می‌کنی. مودب می‌مانی، اثر مشکل را توضیح می‌دهی و دو راه‌حل ممکن را مقایسه می‌کنی." },
+        { "language": "ar", "text": "تتحدث في استقبال الفندق عن مشكلة في الغرفة. تبقى مهذباً، وتشرح التأثير، وتقارن بين حلين ممكنين." },
+        { "language": "tr", "text": "Otel resepsiyonunda bir oda sorunu hakkında konuşuyorsun. Kibar kalıyor, etkisini açıklıyor ve iki olası çözümü karşılaştırıyorsun." },
+        { "language": "ru", "text": "Ты говоришь на ресепшене отеля о проблеме в номере. Ты остаёшься вежливым, объясняешь последствия и сравниваешь два возможных решения." },
+        { "language": "ckb", "text": "لە پێشوازیی هۆتێل دەربارەی کێشەیەکی ژوور قسە دەکەیت. بە ڕێز دەمێنیتەوە، کاریگەرییەکە ڕوون دەکەیتەوە و دوو چارەسەری گونجاو بەراورد دەکەیت." },
+        { "language": "kmr", "text": "Tu li resepsiyona otêlê li ser pirsgirêka odeyê diaxivî. Tu bi rêz dimînî, bandorê şirove dikî û du çareseriyên gengaz berawird dikî." },
+        { "language": "pl", "text": "Rozmawiasz w recepcji hotelu o problemie z pokojem. Zachowujesz uprzejmość, wyjaśniasz skutki i porównujesz dwa możliwe rozwiązania." },
+        { "language": "ro", "text": "Vorbești la recepția hotelului despre o problemă cu camera. Rămâi politicos, explici efectul și compari două soluții posibile." },
+        { "language": "sq", "text": "Flet në recepsionin e hotelit për një problem me dhomën. Qëndron i sjellshëm, shpjegon ndikimin dhe krahason dy zgjidhje të mundshme." }
+      ],
+      "learnerGoal": "Erkläre das Zimmerproblem konkret, bitte um eine passende Lösung und bestätige die Vereinbarung am Ende.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain the room problem concretely, ask for a suitable solution, and confirm the arrangement at the end." },
+        { "language": "fa", "text": "مشکل اتاق را مشخص توضیح بده، درخواست راه‌حل مناسب کن و در پایان توافق را تأیید کن." },
+        { "language": "ar", "text": "اشرح مشكلة الغرفة بشكل محدد، واطلب حلاً مناسباً، ثم أكد الاتفاق في النهاية." },
+        { "language": "tr", "text": "Oda sorununu somut biçimde açıkla, uygun bir çözüm iste ve sonunda anlaşmayı onayla." },
+        { "language": "ru", "text": "Конкретно объясни проблему с номером, попроси подходящее решение и в конце подтверди договорённость." },
+        { "language": "ckb", "text": "کێشەی ژوورەکە بە وردی ڕوون بکەرەوە، داوای چارەسەری گونجاو بکە و لە کۆتاییدا ڕێککەوتنەکە پشتڕاست بکەرەوە." },
+        { "language": "kmr", "text": "Pirsgirêka odeyê bi awayekî taybet şirove bike, çareseriyeke guncan bixwaze û di dawiyê de lihevhatinê piştrast bike." },
+        { "language": "pl", "text": "Konkretnie wyjaśnij problem z pokojem, poproś o odpowiednie rozwiązanie i na końcu potwierdź ustalenie." },
+        { "language": "ro", "text": "Explică problema camerei concret, cere o soluție potrivită și confirmă înțelegerea la final." },
+        { "language": "sq", "text": "Shpjego konkretisht problemin e dhomës, kërko një zgjidhje të përshtatshme dhe konfirmo marrëveshjen në fund." }
+      ],
+      "cefrLevel": "B1",
+      "category": "travel",
+      "topics": ["transport-and-travel", "customer-service"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2590,
+      "roles": [
+        {
+          "roleKey": "hotel-reception",
+          "displayName": "Hotelrezeption",
+          "translations": [
+            { "language": "en", "text": "Hotel reception" },
+            { "language": "fa", "text": "پذیرش هتل" },
+            { "language": "ar", "text": "استقبال الفندق" },
+            { "language": "tr", "text": "Otel resepsiyonu" },
+            { "language": "ru", "text": "Ресепшен отеля" },
+            { "language": "ckb", "text": "پێشوازیی هۆتێل" },
+            { "language": "kmr", "text": "Resepsiyona otêlê" },
+            { "language": "pl", "text": "Recepcja hotelowa" },
+            { "language": "ro", "text": "Recepția hotelului" },
+            { "language": "sq", "text": "Recepsioni i hotelit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Gast",
+          "translations": [
+            { "language": "en", "text": "Guest" },
+            { "language": "fa", "text": "مهمان" },
+            { "language": "ar", "text": "ضيف" },
+            { "language": "tr", "text": "Misafir" },
+            { "language": "ru", "text": "Гость" },
+            { "language": "ckb", "text": "میوان" },
+            { "language": "kmr", "text": "Mêvan" },
+            { "language": "pl", "text": "Gość" },
+            { "language": "ro", "text": "Oaspete" },
+            { "language": "sq", "text": "Mysafir" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "hotel-reception",
+          "baseText": "Guten Abend. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Good evening. What can I do for you?" },
+            { "language": "fa", "text": "عصر بخیر. چه کاری می‌توانم برای شما انجام بدهم؟" },
+            { "language": "ar", "text": "مساء الخير. ماذا يمكنني أن أفعل من أجلك؟" },
+            { "language": "tr", "text": "İyi akşamlar. Sizin için ne yapabilirim?" },
+            { "language": "ru", "text": "Добрый вечер. Что я могу для вас сделать?" },
+            { "language": "ckb", "text": "ئێوارە باش. چ کارێک دەتوانم بۆتان بکەم؟" },
+            { "language": "kmr", "text": "Êvar baş. Ez dikarim ji bo we çi bikim?" },
+            { "language": "pl", "text": "Dobry wieczór. Co mogę dla pana zrobić?" },
+            { "language": "ro", "text": "Bună seara. Ce pot face pentru dumneavoastră?" },
+            { "language": "sq", "text": "Mirëmbrëma. Çfarë mund të bëj për ju?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Abend. Ich bin in Zimmer 312. Das Zimmer ist wegen der Baustelle sehr laut, und das Fenster schließt nicht richtig.",
+          "translations": [
+            { "language": "en", "text": "Good evening. I am in room 312. The room is very noisy because of the construction site, and the window does not close properly." },
+            { "language": "fa", "text": "عصر بخیر. من در اتاق ۳۱۲ هستم. اتاق به خاطر محل ساخت‌وساز خیلی پر سر و صداست و پنجره درست بسته نمی‌شود." },
+            { "language": "ar", "text": "مساء الخير. أنا في الغرفة 312. الغرفة صاخبة جداً بسبب ورشة البناء، والنافذة لا تغلق جيداً." },
+            { "language": "tr", "text": "İyi akşamlar. 312 numaralı odadayım. İnşaat yüzünden oda çok gürültülü ve pencere tam kapanmıyor." },
+            { "language": "ru", "text": "Добрый вечер. Я в номере 312. В номере очень шумно из-за стройки, и окно закрывается плохо." },
+            { "language": "ckb", "text": "ئێوارە باش. من لە ژووری ٣١٢م. ژوورەکە بەهۆی شوێنی دروستکردنەوە زۆر پڕدەنگە، و پەنجەرەکە باش داخراو نابێت." },
+            { "language": "kmr", "text": "Êvar baş. Ez li odeya 312 im. Ji ber cihê avakirinê ode pir dengdar e, û pencere baş nayê girtin." },
+            { "language": "pl", "text": "Dobry wieczór. Jestem w pokoju 312. Pokój jest bardzo głośny z powodu budowy, a okno nie domyka się dobrze." },
+            { "language": "ro", "text": "Bună seara. Sunt în camera 312. Camera este foarte zgomotoasă din cauza șantierului, iar fereastra nu se închide bine." },
+            { "language": "sq", "text": "Mirëmbrëma. Jam në dhomën 312. Dhoma është shumë e zhurmshme për shkak të kantierit dhe dritarja nuk mbyllet siç duhet." }
+          ],
+          "function": "state-problem",
+          "expectedLearnerAction": "Explain the room number, concrete problem, and practical impact."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "hotel-reception",
+          "baseText": "Das tut mir leid. Haben Sie dadurch heute Nacht nicht schlafen können?",
+          "translations": [
+            { "language": "en", "text": "I am sorry. Were you unable to sleep tonight because of that?" },
+            { "language": "fa", "text": "متأسفم. به همین دلیل امشب نتوانستید بخوابید؟" },
+            { "language": "ar", "text": "أنا آسف. هل لم تستطع النوم الليلة بسبب ذلك؟" },
+            { "language": "tr", "text": "Üzgünüm. Bu yüzden bu gece uyuyamadınız mı?" },
+            { "language": "ru", "text": "Мне жаль. Вы из-за этого не смогли спать сегодня ночью?" },
+            { "language": "ckb", "text": "ببورە. بەهۆی ئەمەوە ئەمشەو نەیتوانی بخەویت؟" },
+            { "language": "kmr", "text": "Mixabin. Ji ber vê îşev we nikarî razê?" },
+            { "language": "pl", "text": "Przykro mi. Czy z tego powodu nie mógł pan dziś w nocy spać?" },
+            { "language": "ro", "text": "Îmi pare rău. Din cauza asta nu ați putut dormi în această noapte?" },
+            { "language": "sq", "text": "Më vjen keq. A nuk mundët të flinit sonte për shkak të kësaj?" }
+          ],
+          "function": "ask-impact"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich habe nur wenig geschlafen. Wenn möglich, hätte ich gern ein ruhigeres Zimmer. Falls das nicht geht, wäre ein Preisnachlass eine faire Lösung.",
+          "translations": [
+            { "language": "en", "text": "Yes, I slept very little. If possible, I would like a quieter room. If that is not possible, a price reduction would be a fair solution." },
+            { "language": "fa", "text": "بله، خیلی کم خوابیدم. اگر ممکن باشد، یک اتاق آرام‌تر می‌خواهم. اگر این ممکن نیست، تخفیف قیمت راه‌حل منصفانه‌ای است." },
+            { "language": "ar", "text": "نعم، نمت قليلاً فقط. إذا أمكن، أود غرفة أكثر هدوءاً. وإذا لم يكن ذلك ممكناً، فسيكون تخفيض السعر حلاً عادلاً." },
+            { "language": "tr", "text": "Evet, çok az uyudum. Mümkünse daha sessiz bir oda isterim. Bu mümkün değilse, fiyat indirimi adil bir çözüm olur." },
+            { "language": "ru", "text": "Да, я очень мало спал. Если возможно, я хотел бы более тихий номер. Если это невозможно, скидка была бы справедливым решением." },
+            { "language": "ckb", "text": "بەڵێ، زۆر کەم خەوم لێکەوت. ئەگەر دەکرێت، ژوورێکی بێدەنگترم دەوێت. ئەگەر ئەمە نەکرێت، داشکاندنی نرخ چارەسەرێکی دادپەروەرانە دەبێت." },
+            { "language": "kmr", "text": "Erê, min pir kêm razayî. Heke gengaz be, ez odeyekî bêdengtir dixwazim. Heke ev nebe, kêmkirina bihayê çareseriyeke adilane ye." },
+            { "language": "pl", "text": "Tak, spałem bardzo mało. Jeśli to możliwe, chciałbym cichszy pokój. Jeśli to niemożliwe, obniżka ceny byłaby uczciwym rozwiązaniem." },
+            { "language": "ro", "text": "Da, am dormit foarte puțin. Dacă este posibil, aș dori o cameră mai liniștită. Dacă nu se poate, o reducere de preț ar fi o soluție corectă." },
+            { "language": "sq", "text": "Po, kam fjetur shumë pak. Nëse është e mundur, do të doja një dhomë më të qetë. Nëse kjo nuk bëhet, një ulje çmimi do të ishte zgjidhje e drejtë." }
+          ],
+          "function": "request-solution",
+          "expectedLearnerAction": "Explain impact and compare two realistic solutions."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "hotel-reception",
+          "baseText": "Ich prüfe das sofort. Wir hätten ab 15 Uhr ein ruhigeres Zimmer zum Innenhof. Einen kleinen Nachlass kann ich anbieten, wenn Sie im jetzigen Zimmer bleiben.",
+          "translations": [
+            { "language": "en", "text": "I will check that right away. From 3 p.m. we would have a quieter room facing the inner courtyard. I can offer a small reduction if you stay in the current room." },
+            { "language": "fa", "text": "فوراً بررسی می‌کنم. از ساعت ۱۵ یک اتاق آرام‌تر رو به حیاط داخلی داریم. اگر در اتاق فعلی بمانید، می‌توانم تخفیف کوچکی پیشنهاد کنم." },
+            { "language": "ar", "text": "سأتحقق من ذلك فوراً. لدينا ابتداءً من الساعة الثالثة غرفة أهدأ تطل على الفناء الداخلي. أستطيع أن أقدم تخفيضاً صغيراً إذا بقيت في الغرفة الحالية." },
+            { "language": "tr", "text": "Bunu hemen kontrol ediyorum. Saat 15'ten itibaren iç avluya bakan daha sessiz bir odamız var. Mevcut odada kalırsanız küçük bir indirim sunabilirim." },
+            { "language": "ru", "text": "Я сразу это проверю. С 15:00 у нас будет более тихий номер во внутренний двор. Если вы останетесь в текущем номере, я могу предложить небольшую скидку." },
+            { "language": "ckb", "text": "یەکسەر ئەمە دەپشکنم. لە کاتژمێر ١٥ەوە ژوورێکی بێدەنگترمان هەیە کە ڕوو لە حەوشەی ناوخۆیە. ئەگەر لە ژووری ئێستادا بمێنیتەوە، دەتوانم داشکاندنێکی بچووک پێشنیار بکەم." },
+            { "language": "kmr", "text": "Ez vê yekê niha kontrol dikim. Ji saet 15ê pê ve odeyekî bêdengtir ber bi hewşa hundir heye. Heke hûn li odeya niha bimînin, ez dikarim kêmkirineke biçûk pêşniyar bikim." },
+            { "language": "pl", "text": "Sprawdzę to od razu. Od godziny 15 mielibyśmy cichszy pokój od strony dziedzińca. Mogę zaproponować niewielką zniżkę, jeśli zostanie pan w obecnym pokoju." },
+            { "language": "ro", "text": "Verific imediat. De la ora 15 am avea o cameră mai liniștită spre curtea interioară. Pot oferi o mică reducere dacă rămâneți în camera actuală." },
+            { "language": "sq", "text": "Do ta kontrolloj menjëherë. Nga ora 15 kemi një dhomë më të qetë nga oborri i brendshëm. Mund të ofroj një ulje të vogël nëse qëndroni në dhomën aktuale." }
+          ],
+          "function": "offer-options"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich gern in das ruhigere Zimmer wechseln. Können Sie mein Gepäck bis 15 Uhr aufbewahren?",
+          "translations": [
+            { "language": "en", "text": "Then I would like to move to the quieter room. Can you store my luggage until 3 p.m.?" },
+            { "language": "fa", "text": "پس دوست دارم به اتاق آرام‌تر منتقل شوم. می‌توانید چمدانم را تا ساعت ۱۵ نگه دارید؟" },
+            { "language": "ar", "text": "إذن أود الانتقال إلى الغرفة الأهدأ. هل يمكنكم حفظ أمتعتي حتى الساعة الثالثة؟" },
+            { "language": "tr", "text": "O zaman daha sessiz odaya geçmek isterim. Bavulumu saat 15'e kadar saklayabilir misiniz?" },
+            { "language": "ru", "text": "Тогда я хотел бы переехать в более тихий номер. Вы можете сохранить мой багаж до 15:00?" },
+            { "language": "ckb", "text": "ئەوا دەمەوێت بۆ ژوورە بێدەنگترەکە بگوازمەوە. دەتوانن بارەکانم تا کاتژمێر ١٥ بهێڵنەوە؟" },
+            { "language": "kmr", "text": "Hingê ez dixwazim biçim odeya bêdengtir. Hûn dikarin bagajê min heta saet 15ê biparêzin?" },
+            { "language": "pl", "text": "W takim razie chciałbym przenieść się do cichszego pokoju. Czy mogą państwo przechować mój bagaż do godziny 15?" },
+            { "language": "ro", "text": "Atunci aș dori să mă mut în camera mai liniștită. Puteți păstra bagajul meu până la ora 15?" },
+            { "language": "sq", "text": "Atëherë do të doja të kaloj në dhomën më të qetë. A mund ta ruani bagazhin tim deri në orën 15?" }
+          ],
+          "function": "choose-option",
+          "expectedLearnerAction": "Choose one option and ask a practical follow-up question."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "hotel-reception",
+          "baseText": "Ja, selbstverständlich. Wir bewahren Ihr Gepäck an der Rezeption auf, und Sie bekommen um 15 Uhr die neue Schlüsselkarte.",
+          "translations": [
+            { "language": "en", "text": "Yes, of course. We will store your luggage at reception, and you will receive the new key card at 3 p.m." },
+            { "language": "fa", "text": "بله، حتماً. چمدان شما را در پذیرش نگه می‌داریم و ساعت ۱۵ کارت کلید جدید را دریافت می‌کنید." },
+            { "language": "ar", "text": "نعم، بالطبع. سنحفظ أمتعتك في الاستقبال، وستحصل على بطاقة المفتاح الجديدة في الساعة الثالثة." },
+            { "language": "tr", "text": "Evet, elbette. Bavulunuzu resepsiyonda saklayacağız ve saat 15'te yeni anahtar kartını alacaksınız." },
+            { "language": "ru", "text": "Да, конечно. Мы сохраним ваш багаж на ресепшене, а в 15:00 вы получите новую ключ-карту." },
+            { "language": "ckb", "text": "بەڵێ، بێگومان. بارەکانتان لە پێشوازی هەڵدەگرین، و لە کاتژمێر ١٥ کارتی کلیلی نوێ وەردەگرن." },
+            { "language": "kmr", "text": "Erê, bê guman. Em ê bagajê we li resepsiyonê biparêzin, û hûn saet 15ê karta kilîta nû distînin." },
+            { "language": "pl", "text": "Tak, oczywiście. Przechowamy pana bagaż w recepcji, a o godzinie 15 otrzyma pan nową kartę do pokoju." },
+            { "language": "ro", "text": "Da, desigur. Vă păstrăm bagajul la recepție, iar la ora 15 primiți noul card de acces." },
+            { "language": "sq", "text": "Po, sigurisht. Do ta ruajmë bagazhin tuaj në recepsion dhe në orën 15 do të merrni kartën e re të çelësit." }
+          ],
+          "function": "confirm-solution"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann gebe ich mein Gepäck gleich an der Rezeption ab und komme um 15 Uhr für die neue Schlüsselkarte zurück.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will leave my luggage at reception now and come back at 3 p.m. for the new key card." },
+            { "language": "fa", "text": "خیلی ممنون. پس الان چمدانم را در پذیرش می‌گذارم و ساعت ۱۵ برای کارت کلید جدید برمی‌گردم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأترك أمتعتي الآن في الاستقبال وأعود في الساعة الثالثة لأخذ بطاقة المفتاح الجديدة." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman bavulumu şimdi resepsiyona bırakacağım ve saat 15'te yeni anahtar kartı için geri geleceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я сейчас оставлю багаж на ресепшене и вернусь в 15:00 за новой ключ-картой." },
+            { "language": "ckb", "text": "زۆر سوپاس. ئەوا ئێستا بارەکانم لە پێشوازی دادەنێم و لە کاتژمێر ١٥ بۆ کارتی کلیلی نوێ دەگەڕێمەوە." },
+            { "language": "kmr", "text": "Gelek spas. Hingê ez niha bagajê xwe li resepsiyonê dihêlim û saet 15ê ji bo karta kilîta nû vedigerim." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie zostawię teraz bagaż w recepcji i wrócę o godzinie 15 po nową kartę do pokoju." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci las acum bagajul la recepție și revin la ora 15 pentru noul card de acces." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë po e lë tani bagazhin në recepsion dhe kthehem në orën 15 për kartën e re të çelësit." }
+          ],
+          "function": "summarize-solution",
+          "expectedLearnerAction": "Confirm the chosen solution, time, and next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Abend. Ich bin in Zimmer 312. Das Zimmer ist wegen der Baustelle sehr laut, und das Fenster schließt nicht richtig.",
+              "translations": [
+                { "language": "en", "text": "Good evening. I am in room 312. The room is very noisy because of the construction site, and the window does not close properly." },
+                { "language": "fa", "text": "عصر بخیر. من در اتاق ۳۱۲ هستم. اتاق به خاطر محل ساخت‌وساز خیلی پر سر و صداست و پنجره درست بسته نمی‌شود." },
+                { "language": "ar", "text": "مساء الخير. أنا في الغرفة 312. الغرفة صاخبة جداً بسبب ورشة البناء، والنافذة لا تغلق جيداً." },
+                { "language": "tr", "text": "İyi akşamlar. 312 numaralı odadayım. İnşaat yüzünden oda çok gürültülü ve pencere tam kapanmıyor." },
+                { "language": "ru", "text": "Добрый вечер. Я в номере 312. В номере очень шумно из-за стройки, и окно закрывается плохо." },
+                { "language": "ckb", "text": "ئێوارە باش. من لە ژووری ٣١٢م. ژوورەکە بەهۆی شوێنی دروستکردنەوە زۆر پڕدەنگە، و پەنجەرەکە باش داخراو نابێت." },
+                { "language": "kmr", "text": "Êvar baş. Ez li odeya 312 im. Ji ber cihê avakirinê ode pir dengdar e, û pencere baş nayê girtin." },
+                { "language": "pl", "text": "Dobry wieczór. Jestem w pokoju 312. Pokój jest bardzo głośny z powodu budowy, a okno nie domyka się dobrze." },
+                { "language": "ro", "text": "Bună seara. Sunt în camera 312. Camera este foarte zgomotoasă din cauza șantierului, iar fereastra nu se închide bine." },
+                { "language": "sq", "text": "Mirëmbrëma. Jam në dhomën 312. Dhoma është shumë e zhurmshme për shkak të kantierit dhe dritarja nuk mbyllet siç duhet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist konkret und höflich: Zimmernummer, Problem und Ursache sind klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is concrete and polite: room number, problem, and cause are clear." },
+                { "language": "fa", "text": "این مشخص و مودبانه است: شماره اتاق، مشکل و علت روشن هستند." },
+                { "language": "ar", "text": "هذا محدد ومهذب: رقم الغرفة والمشكلة والسبب واضحة." },
+                { "language": "tr", "text": "Bu somut ve kibardır: oda numarası, sorun ve neden açıktır." },
+                { "language": "ru", "text": "Это конкретно и вежливо: номер комнаты, проблема и причина ясны." },
+                { "language": "ckb", "text": "ئەمە دیاریکراو و ڕێزدارانەیە: ژمارەی ژوور، کێشە و هۆکار ڕوونن." },
+                { "language": "kmr", "text": "Ev taybet û bi rêz e: hejmara odeyê, pirsgirêk û sedem zelal in." },
+                { "language": "pl", "text": "To jest konkretne i uprzejme: numer pokoju, problem i przyczyna są jasne." },
+                { "language": "ro", "text": "Este concret și politicos: numărul camerei, problema și cauza sunt clare." },
+                { "language": "sq", "text": "Kjo është konkrete dhe e sjellshme: numri i dhomës, problemi dhe shkaku janë të qarta." }
+              ],
+              "explanationKey": "specific-room-problem"
+            },
+            {
+              "id": "b",
+              "text": "Mit meinem Zimmer stimmt etwas nicht. Können Sie bitte etwas machen?",
+              "translations": [
+                { "language": "en", "text": "Something is wrong with my room. Could you please do something?" },
+                { "language": "fa", "text": "یک چیزی در اتاقم درست نیست. می‌توانید لطفاً کاری بکنید؟" },
+                { "language": "ar", "text": "هناك شيء غير صحيح في غرفتي. هل يمكنكم فعل شيء من فضلكم؟" },
+                { "language": "tr", "text": "Odamda bir şey doğru değil. Lütfen bir şey yapabilir misiniz?" },
+                { "language": "ru", "text": "С моим номером что-то не так. Вы можете что-нибудь сделать?" },
+                { "language": "ckb", "text": "شتێک لە ژوورەکەمدا باش نییە. دەتوانن تکایە شتێک بکەن؟" },
+                { "language": "kmr", "text": "Di odeya min de tiştek ne rast e. Ji kerema xwe hûn dikarin tiştek bikin?" },
+                { "language": "pl", "text": "Coś jest nie tak z moim pokojem. Czy mogą państwo coś zrobić?" },
+                { "language": "ro", "text": "Ceva nu este în regulă cu camera mea. Puteți face ceva, vă rog?" },
+                { "language": "sq", "text": "Diçka nuk është në rregull me dhomën time. A mund të bëni diçka, ju lutem?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu ungenau: Rezeption und Prüfung brauchen Zimmernummer und konkrete Beschreibung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too vague: reception and inspection need the room number and a concrete description." },
+                { "language": "fa", "text": "مودبانه است، اما خیلی نامشخص است: پذیرش و بررسی به شماره اتاق و توضیح مشخص نیاز دارند." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير دقيق: الاستقبال والفحص يحتاجان إلى رقم الغرفة ووصف محدد." },
+                { "language": "tr", "text": "Bu kibar, ama fazla belirsiz: resepsiyon ve kontrol için oda numarası ve somut açıklama gerekir." },
+                { "language": "ru", "text": "Это вежливо, но слишком неопределённо: ресепшену и проверке нужны номер комнаты и конкретное описание." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر ناڕوونە: پێشوازی و پشکنین پێویستیان بە ژمارەی ژوور و ڕوونکردنەوەی دیاریکراو هەیە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir nezelal e: resepsiyon û kontrol hewceyî hejmara odeyê û şiroveya taybet in." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt nieprecyzyjne: recepcja i kontrola potrzebują numeru pokoju oraz konkretnego opisu." },
+                { "language": "ro", "text": "Este politicos, dar prea neclar: recepția și verificarea au nevoie de numărul camerei și de o descriere concretă." },
+                { "language": "sq", "text": "Është e sjellshme, por shumë e paqartë: recepsioni dhe kontrolli kanë nevojë për numrin e dhomës dhe një përshkrim konkret." }
+              ],
+              "explanationKey": "room-problem-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, ich habe nur wenig geschlafen. Wenn möglich, hätte ich gern ein ruhigeres Zimmer. Falls das nicht geht, wäre ein Preisnachlass eine faire Lösung.",
+              "translations": [
+                { "language": "en", "text": "Yes, I slept very little. If possible, I would like a quieter room. If that is not possible, a price reduction would be a fair solution." },
+                { "language": "fa", "text": "بله، خیلی کم خوابیدم. اگر ممکن باشد، یک اتاق آرام‌تر می‌خواهم. اگر این ممکن نیست، تخفیف قیمت راه‌حل منصفانه‌ای است." },
+                { "language": "ar", "text": "نعم، نمت قليلاً فقط. إذا أمكن، أود غرفة أكثر هدوءاً. وإذا لم يكن ذلك ممكناً، فسيكون تخفيض السعر حلاً عادلاً." },
+                { "language": "tr", "text": "Evet, çok az uyudum. Mümkünse daha sessiz bir oda isterim. Bu mümkün değilse, fiyat indirimi adil bir çözüm olur." },
+                { "language": "ru", "text": "Да, я очень мало спал. Если возможно, я хотел бы более тихий номер. Если это невозможно, скидка была бы справедливым решением." },
+                { "language": "ckb", "text": "بەڵێ، زۆر کەم خەوم لێکەوت. ئەگەر دەکرێت، ژوورێکی بێدەنگترم دەوێت. ئەگەر ئەمە نەکرێت، داشکاندنی نرخ چارەسەرێکی دادپەروەرانە دەبێت." },
+                { "language": "kmr", "text": "Erê, min pir kêm razayî. Heke gengaz be, ez odeyekî bêdengtir dixwazim. Heke ev nebe, kêmkirina bihayê çareseriyeke adilane ye." },
+                { "language": "pl", "text": "Tak, spałem bardzo mało. Jeśli to możliwe, chciałbym cichszy pokój. Jeśli to niemożliwe, obniżka ceny byłaby uczciwym rozwiązaniem." },
+                { "language": "ro", "text": "Da, am dormit foarte puțin. Dacă este posibil, aș dori o cameră mai liniștită. Dacă nu se poate, o reducere de preț ar fi o soluție corectă." },
+                { "language": "sq", "text": "Po, kam fjetur shumë pak. Nëse është e mundur, do të doja një dhomë më të qetë. Nëse kjo nuk bëhet, një ulje çmimi do të ishte zgjidhje e drejtë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du erklärst die Auswirkung und nennst zwei realistische Lösungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you explain the impact and name two realistic solutions." },
+                { "language": "fa", "text": "خوب است: اثر مشکل را توضیح می‌دهی و دو راه‌حل واقعی می‌گویی." },
+                { "language": "ar", "text": "جيد: تشرح التأثير وتذكر حلين واقعيين." },
+                { "language": "tr", "text": "İyi: etkiyi açıklıyor ve iki gerçekçi çözüm söylüyorsun." },
+                { "language": "ru", "text": "Хорошо: ты объясняешь последствия и называешь два реалистичных решения." },
+                { "language": "ckb", "text": "باشە: کاریگەرییەکە ڕوون دەکەیتەوە و دوو چارەسەری ڕاستەقینە دەڵێیت." },
+                { "language": "kmr", "text": "Baş e: tu bandorê şirove dikî û du çareseriyên rastîn dibêjî." },
+                { "language": "pl", "text": "Dobrze: wyjaśniasz skutek i podajesz dwa realistyczne rozwiązania." },
+                { "language": "ro", "text": "Bine: explici efectul și numești două soluții realiste." },
+                { "language": "sq", "text": "Mirë: shpjegon ndikimin dhe përmend dy zgjidhje realiste." }
+              ],
+              "explanationKey": "impact-and-options"
+            },
+            {
+              "id": "b",
+              "text": "Ich möchte einfach ein besseres Zimmer oder weniger bezahlen.",
+              "translations": [
+                { "language": "en", "text": "I simply want a better room or to pay less." },
+                { "language": "fa", "text": "من فقط یک اتاق بهتر یا پرداخت کمتر می‌خواهم." },
+                { "language": "ar", "text": "أريد فقط غرفة أفضل أو أن أدفع أقل." },
+                { "language": "tr", "text": "Sadece daha iyi bir oda ya da daha az ödemek istiyorum." },
+                { "language": "ru", "text": "Я просто хочу номер получше или платить меньше." },
+                { "language": "ckb", "text": "تەنها ژوورێکی باشتر یان پارەدانێکی کەمترم دەوێت." },
+                { "language": "kmr", "text": "Ez tenê odeyekî baştir an jî kêmtir dayîn dixwazim." },
+                { "language": "pl", "text": "Chcę po prostu lepszy pokój albo zapłacić mniej." },
+                { "language": "ro", "text": "Vreau pur și simplu o cameră mai bună sau să plătesc mai puțin." },
+                { "language": "sq", "text": "Thjesht dua një dhomë më të mirë ose të paguaj më pak." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Lösungsidee ist plausibel, aber die Begründung und höfliche Formulierung fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The solution idea is plausible, but the reason and polite wording are missing." },
+                { "language": "fa", "text": "ایده راه‌حل قابل قبول است، اما دلیل و بیان مودبانه کم است." },
+                { "language": "ar", "text": "فكرة الحل معقولة، لكن السبب والصياغة المهذبة غير موجودين." },
+                { "language": "tr", "text": "Çözüm fikri makul, ama gerekçe ve kibar ifade eksik." },
+                { "language": "ru", "text": "Идея решения правдоподобна, но нет обоснования и вежливой формулировки." },
+                { "language": "ckb", "text": "بیرۆکەی چارەسەر گونجاوە، بەڵام هۆکار و دەربڕینی ڕێزدارانە کەمە." },
+                { "language": "kmr", "text": "Ramanê çareseriyê gengaz e, lê sedem û gotina bi rêz kêm in." },
+                { "language": "pl", "text": "Pomysł rozwiązania jest sensowny, ale brakuje uzasadnienia i uprzejmego sformułowania." },
+                { "language": "ro", "text": "Ideea de soluție este plauzibilă, dar lipsesc motivul și formularea politicoasă." },
+                { "language": "sq", "text": "Ideja e zgjidhjes është e arsyeshme, por mungon arsyeja dhe formulimi i sjellshëm." }
+              ],
+              "explanationKey": "solution-without-reason"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann gebe ich mein Gepäck gleich an der Rezeption ab und komme um 15 Uhr für die neue Schlüsselkarte zurück.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will leave my luggage at reception now and come back at 3 p.m. for the new key card." },
+                { "language": "fa", "text": "خیلی ممنون. پس الان چمدانم را در پذیرش می‌گذارم و ساعت ۱۵ برای کارت کلید جدید برمی‌گردم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأترك أمتعتي الآن في الاستقبال وأعود في الساعة الثالثة لأخذ بطاقة المفتاح الجديدة." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman bavulumu şimdi resepsiyona bırakacağım ve saat 15'te yeni anahtar kartı için geri geleceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я сейчас оставлю багаж на ресепшене и вернусь в 15:00 за новой ключ-картой." },
+                { "language": "ckb", "text": "زۆر سوپاس. ئەوا ئێستا بارەکانم لە پێشوازی دادەنێم و لە کاتژمێر ١٥ بۆ کارتی کلیلی نوێ دەگەڕێمەوە." },
+                { "language": "kmr", "text": "Gelek spas. Hingê ez niha bagajê xwe li resepsiyonê dihêlim û saet 15ê ji bo karta kilîta nû vedigerim." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie zostawię teraz bagaż w recepcji i wrócę o godzinie 15 po nową kartę do pokoju." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci las acum bagajul la recepție și revin la ora 15 pentru noul card de acces." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë po e lë tani bagazhin në recepsion dhe kthehem në orën 15 për kartën e re të çelësit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Zusammenfassung bestätigt Zeit, Gepäck und Schlüsselkarte klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The summary clearly confirms the time, luggage, and key card." },
+                { "language": "fa", "text": "جمع‌بندی زمان، چمدان و کارت کلید را روشن تأیید می‌کند." },
+                { "language": "ar", "text": "الملخص يؤكد الوقت والأمتعة وبطاقة المفتاح بوضوح." },
+                { "language": "tr", "text": "Özet zamanı, bagajı ve anahtar kartını net biçimde onaylıyor." },
+                { "language": "ru", "text": "Резюме ясно подтверждает время, багаж и ключ-карту." },
+                { "language": "ckb", "text": "کورتکردنەوەکە کات، بار و کارتی کلیل بە ڕوونی پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Kurteyê dem, bagaj û karta kilîtê zelal piştrast dike." },
+                { "language": "pl", "text": "Podsumowanie jasno potwierdza godzinę, bagaż i kartę do pokoju." },
+                { "language": "ro", "text": "Rezumatul confirmă clar ora, bagajul și cardul de acces." },
+                { "language": "sq", "text": "Përmbledhja konfirmon qartë orën, bagazhin dhe kartën e çelësit." }
+              ],
+              "explanationKey": "hotel-summary"
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann komme ich später wieder.",
+              "translations": [
+                { "language": "en", "text": "Thanks, then I will come back later." },
+                { "language": "fa", "text": "ممنون، پس بعداً برمی‌گردم." },
+                { "language": "ar", "text": "شكراً، إذن سأعود لاحقاً." },
+                { "language": "tr", "text": "Teşekkürler, o zaman daha sonra tekrar gelirim." },
+                { "language": "ru", "text": "Спасибо, тогда я вернусь позже." },
+                { "language": "ckb", "text": "سوپاس، ئەوا دواتر دەگەڕێمەوە." },
+                { "language": "kmr", "text": "Spas, hingê ez paşê vedigerim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie wrócę później." },
+                { "language": "ro", "text": "Mulțumesc, atunci revin mai târziu." },
+                { "language": "sq", "text": "Faleminderit, atëherë kthehem më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu unklar: Die Uhrzeit und der Umgang mit dem Gepäck fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly, but too unclear: the time and what happens with the luggage are missing." },
+                { "language": "fa", "text": "دوستانه است، اما خیلی نامشخص است: ساعت و وضعیت چمدان کم است." },
+                { "language": "ar", "text": "هذا ودود، لكنه غير واضح بما يكفي: الوقت وما سيحدث للأمتعة غير مذكورين." },
+                { "language": "tr", "text": "Bu samimi, ama çok belirsiz: saat ve bavulla ne olacağı eksik." },
+                { "language": "ru", "text": "Это дружелюбно, но слишком неясно: не хватает времени и того, что будет с багажом." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر ناڕوونە: کات و چارەی بارەکان کەمە." },
+                { "language": "kmr", "text": "Ev dostane ye, lê pir nezelal e: dem û rewşa bagajê kêm in." },
+                { "language": "pl", "text": "To brzmi życzliwie, ale jest zbyt niejasne: brakuje godziny i informacji o bagażu." },
+                { "language": "ro", "text": "Este prietenos, dar prea neclar: lipsesc ora și ce se întâmplă cu bagajul." },
+                { "language": "sq", "text": "Është miqësore, por shumë e paqartë: mungon ora dhe çfarë ndodh me bagazhin." }
+              ],
+              "explanationKey": "hotel-summary-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei Hotelproblemen helfen konkrete Fakten, eine höfliche Wirkungserklärung und zwei realistische Lösungsvorschläge.",
+          "translations": [
+            { "language": "en", "text": "B1 target: with hotel problems, concrete facts, a polite explanation of the impact, and two realistic solution suggestions help." },
+            { "language": "fa", "text": "هدف B1: در مشکلات هتل، واقعیت‌های مشخص، توضیح مودبانه اثر مشکل و دو پیشنهاد راه‌حل واقعی کمک می‌کنند." },
+            { "language": "ar", "text": "هدف B1: في مشاكل الفندق تساعد الحقائق المحددة وشرح التأثير بأدب واقتراح حلين واقعيين." },
+            { "language": "tr", "text": "B1 hedefi: otel sorunlarında somut bilgiler, etkinin kibar açıklaması ve iki gerçekçi çözüm önerisi yardımcı olur." },
+            { "language": "ru", "text": "Цель B1: при проблемах в отеле помогают конкретные факты, вежливое объяснение последствий и два реалистичных предложения решения." },
+            { "language": "ckb", "text": "ئامانجی B1: لە کێشەکانی هۆتێلدا ڕاستییە دیاریکراوەکان، ڕوونکردنەوەی ڕێزدارانەی کاریگەری و دوو پێشنیاری چارەسەری ڕاستەقینە یارمەتی دەدەن." },
+            { "language": "kmr", "text": "Armanca B1: di pirsgirêkên otêlê de rastiyên taybet, şiroveya bi rêz a bandorê û du pêşniyarên çareseriyê yên rastîn alîkar in." },
+            { "language": "pl", "text": "Cel B1: przy problemach w hotelu pomagają konkretne fakty, uprzejme wyjaśnienie skutku i dwie realistyczne propozycje rozwiązania." },
+            { "language": "ro", "text": "Obiectiv B1: la problemele din hotel ajută faptele concrete, explicarea politicoasă a efectului și două propuneri realiste de soluție." },
+            { "language": "sq", "text": "Qëllimi B1: te problemet në hotel ndihmojnë faktet konkrete, shpjegimi i sjellshëm i ndikimit dhe dy propozime reale zgjidhjeje." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

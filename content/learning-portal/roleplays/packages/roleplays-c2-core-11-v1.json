@@ -1,0 +1,855 @@
+{
+  "packageId": "roleplays-c2-core-11-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 11 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 11",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-reputationsschaden-sachlich-besprechen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Reputationsschaden sachlich besprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing reputational damage factually" },
+        { "language": "fa", "text": "گفت‌وگوی واقع‌محور درباره آسیب اعتباری" },
+        { "language": "ar", "text": "مناقشة ضرر بالسمعة بصورة موضوعية" },
+        { "language": "tr", "text": "İtibar zararını nesnel biçimde görüşmek" },
+        { "language": "ru", "text": "Предметно обсудить репутационный ущерб" },
+        { "language": "ckb", "text": "باسکردنی زیانی ناوبانگ بە شێوەی بابەتی" },
+        { "language": "kmr", "text": "Gotûbêjkirina zirara navûdengê bi awayekî rastîgir" },
+        { "language": "pl", "text": "Rzeczowe omówienie szkody wizerunkowej" },
+        { "language": "ro", "text": "Discutarea factuală a unui prejudiciu de reputație" },
+        { "language": "sq", "text": "Diskutimi faktik i dëmit reputacional" }
+      ],
+      "description": "Nach einer missverständlich formulierten Nachhaltigkeitsaussage entsteht öffentliche Kritik. Mehrere Kunden fragen nach, ob das Unternehmen bewusst übertrieben hat. Sie müssen intern eine sachliche Kommunikationslinie formulieren, die Fakten, Wahrnehmung, Verantwortung und nächste Schritte trennt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After an ambiguously worded sustainability statement, public criticism emerges. Several customers ask whether the company deliberately exaggerated. Internally, you must formulate a factual communication line that separates facts, perception, responsibility, and next steps." },
+        { "language": "fa", "text": "پس از یک ادعای پایداری که مبهم بیان شده، انتقاد عمومی شکل می‌گیرد. چند مشتری می‌پرسند آیا شرکت عمداً اغراق کرده است. شما باید در داخل یک خط ارتباطی واقع‌محور تدوین کنید که واقعیت‌ها، برداشت عمومی، مسئولیت و قدم‌های بعدی را از هم جدا کند." },
+        { "language": "ar", "text": "بعد تصريح عن الاستدامة صيغ بصورة ملتبسة، تظهر انتقادات علنية. يسأل عدة عملاء هل بالغت الشركة عمداً. داخلياً يجب أن تصوغوا خط تواصل موضوعياً يفصل بين الحقائق والانطباع والمسؤولية والخطوات التالية." },
+        { "language": "tr", "text": "Belirsiz biçimde ifade edilmiş bir sürdürülebilirlik açıklamasından sonra kamuoyunda eleştiri doğar. Birkaç müşteri şirketin bilinçli olarak abartıp abartmadığını sorar. İçeride gerçekleri, algıyı, sorumluluğu ve sonraki adımları ayıran nesnel bir iletişim çizgisi oluşturmanız gerekir." },
+        { "language": "ru", "text": "После двусмысленно сформулированного заявления об устойчивости возникает публичная критика. Несколько клиентов спрашивают, не преувеличила ли компания сознательно. Внутри нужно сформулировать предметную коммуникационную линию, которая разделяет факты, восприятие, ответственность и следующие шаги." },
+        { "language": "ckb", "text": "دوای دەربڕینێکی پایداری کە بە شێوەیەکی دووماناکراو نووسراوە، ڕەخنەی گشتی دروست دەبێت. چەند کڕیارێک دەپرسن ئایا کۆمپانیا بە ئەنقەست زیادەڕۆیی کردووە. لە ناوخۆدا دەبێت هێڵێکی پەیوەندی بابەتی دابنێیت کە ڕاستییەکان، تێگەیشتن، بەرپرسیاریەتی و هەنگاوە داهاتووەکان جیا بکاتەوە." },
+        { "language": "kmr", "text": "Piştî daxuyaniyeke domdariyê ya duwate hatî nivîsandin, rexneya giştî çêdibe. Çend xerîdar dipirsin gelo şirket bi zanebûn zêde gotiye. Li hundir divê xeta têkiliyeke rastîgir ava bikin ku rastî, têgihiştin, berpirsiyarî û gavên din ji hev veqetîne." },
+        { "language": "pl", "text": "Po niejednoznacznie sformułowanym komunikacie o zrównoważonym rozwoju pojawia się publiczna krytyka. Kilku klientów pyta, czy firma świadomie przesadziła. Wewnętrznie trzeba sformułować rzeczową linię komunikacji, która oddziela fakty, odbiór, odpowiedzialność i kolejne kroki." },
+        { "language": "ro", "text": "După o afirmație despre sustenabilitate formulată ambiguu, apare critică publică. Mai mulți clienți întreabă dacă firma a exagerat în mod intenționat. Intern trebuie să formulați o linie de comunicare factuală care separă faptele, percepția, responsabilitatea și pașii următori." },
+        { "language": "sq", "text": "Pas një deklarate për qëndrueshmërinë të formuluar në mënyrë të paqartë, lind kritikë publike. Disa klientë pyesin nëse kompania ka ekzagjeruar qëllimisht. Brenda kompanisë duhet të formuloni një linjë komunikimi faktike që ndan faktet, perceptimin, përgjegjësinë dhe hapat e ardhshëm." }
+      ],
+      "learnerGoal": "Eine reputationskritische Lage professionell besprechen: Vorwürfe nicht reflexhaft abwehren, gesicherte Fakten benennen, missverständliche Wirkung anerkennen, keine überzogene Schuldformel verwenden und eine überprüfbare Reaktion vorbereiten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss a reputation-critical situation professionally: do not reflexively reject accusations, name verified facts, acknowledge misleading impact, avoid exaggerated admissions of guilt, and prepare a verifiable response." },
+        { "language": "fa", "text": "یک وضعیت حساس برای اعتبار را حرفه‌ای بررسی کنید: اتهام‌ها را واکنشی رد نکنید، واقعیت‌های تأییدشده را نام ببرید، اثر گمراه‌کننده را بپذیرید، از فرمول اغراق‌آمیزِ اعتراف به تقصیر دوری کنید و پاسخی قابل بررسی آماده کنید." },
+        { "language": "ar", "text": "ناقشوا وضعاً حرجاً للسمعة باحتراف: لا ترفضوا الاتهامات برد فعل تلقائي، اذكروا الحقائق المؤكدة، واعترفوا بالأثر المضلل، وتجنبوا صيغة ذنب مبالغاً فيها، وحضروا رداً قابلاً للتحقق." },
+        { "language": "tr", "text": "İtibar açısından kritik bir durumu profesyonelce görüşün: suçlamaları refleksle reddetmeyin, doğrulanmış gerçekleri belirtin, yanıltıcı etkiyi kabul edin, abartılı bir suç kabulü formülü kullanmayın ve denetlenebilir bir yanıt hazırlayın." },
+        { "language": "ru", "text": "Профессионально обсудить репутационно критичную ситуацию: не отвергать обвинения рефлекторно, назвать проверенные факты, признать вводящий в заблуждение эффект, не использовать чрезмерную формулу признания вины и подготовить проверяемый ответ." },
+        { "language": "ckb", "text": "دۆخێکی گرنگ بۆ ناوبانگ بە پیشەیی باس بکە: تۆمەتەکان بە شێوەیەکی کاردانەوەیی ڕەت مەکەوە، ڕاستییە پشتڕاستکراوەکان ناو ببه، کاریگەری گمڕاکەر بناسە، فۆرمولەی زیادەڕۆیی داننان بە تاوان بەکار مەهێنە و وەڵامێکی قابل پشکنین ئامادە بکە." },
+        { "language": "kmr", "text": "Rewşeke krîtîk a navûdengê bi profesyonelî gotûbêj bikin: sûcdariyan bi refleksê red nekin, rastiyên piştrastkirî bi nav bikin, bandora şaş-rêber qebûl bikin, formula sûcpejirandina zêde nekar bînin û bersiveke kontrolbar amade bikin." },
+        { "language": "pl", "text": "Profesjonalnie omówić sytuację krytyczną dla reputacji: nie odrzucać zarzutów odruchowo, nazwać potwierdzone fakty, uznać mylący efekt, nie używać przesadnej formuły winy i przygotować weryfikowalną reakcję." },
+        { "language": "ro", "text": "Discutați profesional o situație critică pentru reputație: nu respingeți acuzațiile reflex, numiți faptele verificate, recunoașteți efectul derutant, evitați o formulă exagerată de vină și pregătiți un răspuns verificabil." },
+        { "language": "sq", "text": "Diskutoni profesionalisht një situatë kritike për reputacionin: mos i refuzoni akuzat në mënyrë refleksive, emërtoni faktet e verifikuara, pranoni efektin çorientues, shmangni një formulë të ekzagjeruar faji dhe përgatitni një përgjigje të verifikueshme." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 11,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kommunikationsleitung",
+          "translations": [
+            { "language": "en", "text": "Communications lead" },
+            { "language": "fa", "text": "مسئول ارتباطات" },
+            { "language": "ar", "text": "مسؤول التواصل" },
+            { "language": "tr", "text": "İletişim sorumlusu" },
+            { "language": "ru", "text": "Руководитель коммуникаций" },
+            { "language": "ckb", "text": "بەرپرسی پەیوەندییەکان" },
+            { "language": "kmr", "text": "Berpirsê têkiliyê" },
+            { "language": "pl", "text": "Kierownik komunikacji" },
+            { "language": "ro", "text": "Responsabil comunicare" },
+            { "language": "sq", "text": "Përgjegjës i komunikimit" }
+          ]
+        },
+        {
+          "roleKey": "management",
+          "displayName": "Geschäftsführung",
+          "translations": [
+            { "language": "en", "text": "Management" },
+            { "language": "fa", "text": "مدیریت ارشد" },
+            { "language": "ar", "text": "الإدارة" },
+            { "language": "tr", "text": "Yönetim" },
+            { "language": "ru", "text": "Руководство" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی" },
+            { "language": "kmr", "text": "Rêveberî" },
+            { "language": "pl", "text": "Zarząd" },
+            { "language": "ro", "text": "Conducere" },
+            { "language": "sq", "text": "Drejtoria" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Fachkollegin",
+          "translations": [
+            { "language": "en", "text": "Subject-matter colleague" },
+            { "language": "fa", "text": "همکار تخصصی" },
+            { "language": "ar", "text": "زميلة متخصصة" },
+            { "language": "tr", "text": "Uzman iş arkadaşı" },
+            { "language": "ru", "text": "Профильная коллега" },
+            { "language": "ckb", "text": "هاوکارە پسپۆڕەکە" },
+            { "language": "kmr", "text": "Hevkara pispor" },
+            { "language": "pl", "text": "Specjalistka z zespołu" },
+            { "language": "ro", "text": "Colegă de specialitate" },
+            { "language": "sq", "text": "Kolege e fushës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Die Kritik verbreitet sich schneller als erwartet. Der Kernvorwurf lautet, unsere Nachhaltigkeitsaussage habe mehr versprochen, als die Daten tatsächlich hergeben.",
+          "translations": [
+            { "language": "en", "text": "The criticism is spreading faster than expected. The core accusation is that our sustainability statement promised more than the data actually supports." },
+            { "language": "fa", "text": "انتقاد سریع‌تر از انتظار پخش می‌شود. اتهام اصلی این است که ادعای پایداری ما بیش از چیزی وعده داده که داده‌ها واقعاً پشتیبانی می‌کنند." },
+            { "language": "ar", "text": "تنتشر الانتقادات أسرع مما توقعنا. جوهر الاتهام هو أن تصريحنا عن الاستدامة وعد بأكثر مما تدعمه البيانات فعلاً." },
+            { "language": "tr", "text": "Eleştiri beklenenden hızlı yayılıyor. Temel suçlama, sürdürülebilirlik açıklamamızın verilerin gerçekten desteklediğinden fazlasını vaat ettiği yönünde." },
+            { "language": "ru", "text": "Критика распространяется быстрее, чем ожидалось. Главный упрек в том, что наше заявление об устойчивости обещало больше, чем на самом деле подтверждают данные." },
+            { "language": "ckb", "text": "ڕەخنەکە خێراتر لە چاوەڕوانی بڵاو دەبێتەوە. تۆمەتە سەرەکییەکە ئەوەیە کە دەربڕینی پایداریی ئێمە زیاتر لەوە بەڵێن داوە کە داتاکان بەڕاستی پشتگیری دەکەن." },
+            { "language": "kmr", "text": "Rexne ji ya ku me hêvî dikir bileztir belav dibe. Sûcdariya bingehîn ev e ku daxuyaniya domdariyê ya me ji tişta ku dane rastî piştgirî dikin zêdetir soz daye." },
+            { "language": "pl", "text": "Krytyka rozprzestrzenia się szybciej, niż oczekiwaliśmy. Główny zarzut brzmi, że nasze stwierdzenie o zrównoważonym rozwoju obiecywało więcej, niż faktycznie potwierdzają dane." },
+            { "language": "ro", "text": "Critica se răspândește mai repede decât ne așteptam. Acuzația centrală este că afirmația noastră despre sustenabilitate a promis mai mult decât susțin efectiv datele." },
+            { "language": "sq", "text": "Kritika po përhapet më shpejt se sa pritej. Akuza kryesore është se deklarata jonë për qëndrueshmërinë ka premtuar më shumë sesa mbështesin realisht të dhënat." }
+          ],
+          "function": "describes reputational risk",
+          "toneNote": "urgent, factual"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Wir sollten die Lage in vier Ebenen trennen: Was ist faktisch belegt, was wurde öffentlich verstanden, wo haben wir missverständlich formuliert, und welche Korrektur können wir überprüfbar zusagen.",
+          "translations": [
+            { "language": "en", "text": "We should separate the situation into four layers: what is factually documented, what was understood publicly, where we worded things ambiguously, and which correction we can verifiably promise." },
+            { "language": "fa", "text": "باید وضعیت را در چهار سطح جدا کنیم: چه چیزی واقعاً مستند است، در افکار عمومی چه برداشتی شده، کجا مبهم بیان کرده‌ایم، و چه اصلاحی را می‌توانیم به‌صورت قابل بررسی وعده بدهیم." },
+            { "language": "ar", "text": "ينبغي أن نفصل الوضع إلى أربعة مستويات: ما المثبت فعلياً، وما الذي فهمه الجمهور، وأين صغنا الكلام بصورة ملتبسة، وأي تصحيح يمكن أن نعد به بصورة قابلة للتحقق." },
+            { "language": "tr", "text": "Durumu dört düzeyde ayırmalıyız: fiilen ne kanıtlanmış, kamuoyu ne anlamış, nerede belirsiz ifade etmişiz ve hangi düzeltmeyi denetlenebilir biçimde vaat edebiliriz." },
+            { "language": "ru", "text": "Нужно разделить ситуацию на четыре уровня: что фактически подтверждено, как это было понято публично, где мы сформулировали двусмысленно и какую корректировку можем проверяемо пообещать." },
+            { "language": "ckb", "text": "دەبێت دۆخەکە لە چوار ئاست جیا بکەینەوە: چی بە ڕاستی بەڵگەدارە، چی لە گشتی تێگەیشتراوە، لە کوێدا بە دوومانایی دەربڕیوە، و کام ڕاستکردنەوە دەتوانین بە شێوەی قابل پشکنین بەڵێن بدەین." },
+            { "language": "kmr", "text": "Divê em rewşê di çar astan de ji hev veqetînin: çi bi rastî belgekirî ye, giştî çi fêm kiriye, em li ku derê duwate gotine, û em kîjan sererastkirinê dikarin bi awayekî kontrolbar soz bidin." },
+            { "language": "pl", "text": "Powinniśmy rozdzielić sytuację na cztery poziomy: co jest faktycznie udokumentowane, jak odebrała to opinia publiczna, gdzie sformułowaliśmy coś niejednoznacznie i jaką korektę możemy obiecać w sposób weryfikowalny." },
+            { "language": "ro", "text": "Ar trebui să separăm situația în patru planuri: ce este dovedit factual, ce s-a înțeles public, unde am formulat ambiguu și ce corecție putem promite în mod verificabil." },
+            { "language": "sq", "text": "Duhet ta ndajmë situatën në katër nivele: çfarë është e dokumentuar faktikisht, çfarë është kuptuar publikisht, ku kemi formuluar në mënyrë të paqartë dhe cilin korrigjim mund ta premtojmë në mënyrë të verifikueshme." }
+          ],
+          "function": "structures the reputation discussion",
+          "toneNote": "analytical, calm",
+          "expectedLearnerAction": "Separate facts, public perception, wording responsibility, and verifiable correction."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "management",
+          "baseText": "Mir ist wichtig, dass wir nicht den Eindruck erwecken, wir hätten bewusst getäuscht. Können wir nicht einfach schreiben, der Vorwurf sei falsch?",
+          "translations": [
+            { "language": "en", "text": "It is important to me that we do not create the impression that we deliberately misled anyone. Can't we simply write that the accusation is false?" },
+            { "language": "fa", "text": "برای من مهم است که این برداشت ایجاد نشود که ما عمداً کسی را گمراه کرده‌ایم. نمی‌توانیم ساده بنویسیم که اتهام نادرست است؟" },
+            { "language": "ar", "text": "يهمني ألا نخلق انطباعاً بأننا ضللنا أحداً عمداً. ألا يمكننا ببساطة أن نكتب إن الاتهام غير صحيح؟" },
+            { "language": "tr", "text": "Kimseyi bilinçli olarak yanılttığımız izlenimini yaratmamamız benim için önemli. Suçlamanın yanlış olduğunu basitçe yazamaz mıyız?" },
+            { "language": "ru", "text": "Мне важно, чтобы мы не создали впечатление, будто сознательно кого-то ввели в заблуждение. Разве нельзя просто написать, что обвинение неверно?" },
+            { "language": "ckb", "text": "بۆ من گرنگە ئەو تێگەیشتنە دروست نەکەین کە ئێمە بە ئەنقەست کەسێکمان گمڕا کردووە. ناتوانین بە سادەیی بنووسین کە تۆمەتەکە هەڵەیە؟" },
+            { "language": "kmr", "text": "Ji bo min girîng e ku em wê têgihiştinê çênekin ku me bi zanebûn kesek şaş rêber kiriye. Em nikarin tenê binivîsin ku sûcdarî şaş e?" },
+            { "language": "pl", "text": "Zależy mi na tym, żebyśmy nie stworzyli wrażenia, że świadomie kogoś wprowadziliśmy w błąd. Czy nie możemy po prostu napisać, że zarzut jest fałszywy?" },
+            { "language": "ro", "text": "Pentru mine este important să nu creăm impresia că am indus pe cineva în eroare intenționat. Nu putem pur și simplu să scriem că acuzația este falsă?" },
+            { "language": "sq", "text": "Për mua është e rëndësishme të mos krijojmë përshtypjen se kemi mashtruar dikë qëllimisht. A nuk mund të shkruajmë thjesht se akuza është e pavërtetë?" }
+          ],
+          "function": "pushes for defensive denial",
+          "toneNote": "concerned, defensive"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein pauschales Dementi wäre zu grob. Wir können klar sagen, dass die Daten einen bestimmten Teil der Aussage stützen. Gleichzeitig sollten wir anerkennen, dass die Formulierung weiter ausgelegt werden konnte, als fachlich beabsichtigt war.",
+          "translations": [
+            { "language": "en", "text": "A blanket denial would be too crude. We can clearly say that the data supports a specific part of the statement. At the same time, we should acknowledge that the wording could be interpreted more broadly than was technically intended." },
+            { "language": "fa", "text": "یک تکذیب کلی بیش از حد خام است. می‌توانیم روشن بگوییم که داده‌ها بخش مشخصی از ادعا را پشتیبانی می‌کنند. هم‌زمان باید بپذیریم که عبارت می‌توانست گسترده‌تر از قصد تخصصی ما تفسیر شود." },
+            { "language": "ar", "text": "النفي الشامل سيكون فظاً أكثر من اللازم. يمكننا أن نقول بوضوح إن البيانات تدعم جزءاً محدداً من التصريح. وفي الوقت نفسه ينبغي أن نعترف بأن الصياغة كان يمكن تفسيرها بشكل أوسع مما كان مقصوداً فنياً." },
+            { "language": "tr", "text": "Genel bir yalanlama fazla kaba olur. Verilerin açıklamanın belirli bir bölümünü desteklediğini açıkça söyleyebiliriz. Aynı zamanda ifadenin teknik olarak amaçlanandan daha geniş yorumlanabildiğini kabul etmeliyiz." },
+            { "language": "ru", "text": "Общее опровержение было бы слишком грубым. Мы можем ясно сказать, что данные подтверждают определенную часть заявления. Одновременно следует признать, что формулировка могла быть истолкована шире, чем предполагалось профессионально." },
+            { "language": "ckb", "text": "ڕەتکردنەوەی گشتی زۆر خام دەبێت. دەتوانین بە ڕوونی بڵێین داتاکان بەشێکی دیاریکراوی دەربڕینەکە پشتگیری دەکەن. هاوکات دەبێت بناسین کە دەربڕینەکە دەتوانرا فراوانتر لەوەی پسپۆڕانە مەبەست بوو لێک بدرێتەوە." },
+            { "language": "kmr", "text": "Redkirineke giştî dê pir qels be. Em dikarin zelal bibêjin ku dane beşeke diyar a daxuyaniyê piştgirî dikin. Di heman demê de divê em qebûl bikin ku formulasyon dikaribû ji ya ku bi pisporî mebest bû firehtir were şîrovekirin." },
+            { "language": "pl", "text": "Ogólne dementi byłoby zbyt toporne. Możemy jasno powiedzieć, że dane potwierdzają określoną część komunikatu. Jednocześnie powinniśmy uznać, że sformułowanie mogło zostać odczytane szerzej, niż zamierzano merytorycznie." },
+            { "language": "ro", "text": "O dezmințire generală ar fi prea brută. Putem spune clar că datele susțin o anumită parte a afirmației. În același timp ar trebui să recunoaștem că formularea putea fi interpretată mai larg decât fusese intenționat din punct de vedere tehnic." },
+            { "language": "sq", "text": "Një mohim i përgjithshëm do të ishte tepër i ashpër. Mund të themi qartë se të dhënat mbështesin një pjesë të caktuar të deklaratës. Njëkohësisht duhet të pranojmë se formulimi mund të interpretohej më gjerë sesa ishte synuar teknikisht." }
+          ],
+          "function": "rejects blanket denial and proposes nuanced wording",
+          "toneNote": "precise, diplomatic",
+          "expectedLearnerAction": "Avoid both over-denial and exaggerated admission."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Eine Journalistin fragt bereits, ob wir Greenwashing betrieben haben. Wenn wir dieses Wort aufnehmen, verstärken wir den Vorwurf vielleicht noch.",
+          "translations": [
+            { "language": "en", "text": "A journalist is already asking whether we engaged in greenwashing. If we take up that word, we may reinforce the accusation even more." },
+            { "language": "fa", "text": "یک خبرنگار همین حالا می‌پرسد آیا ما سبزشویی کرده‌ایم. اگر این واژه را وارد پاسخ کنیم، شاید اتهام را بیشتر تقویت کنیم." },
+            { "language": "ar", "text": "تسأل صحفية بالفعل هل مارسنا الغسل الأخضر. إذا استخدمنا هذه الكلمة، فقد نعزز الاتهام أكثر." },
+            { "language": "tr", "text": "Bir gazeteci şimdiden yeşil aklama yapıp yapmadığımızı soruyor. Bu kelimeyi kullanırsak suçlamayı daha da güçlendirebiliriz." },
+            { "language": "ru", "text": "Журналистка уже спрашивает, занимались ли мы гринвошингом. Если мы подхватим это слово, возможно, еще сильнее усилим обвинение." },
+            { "language": "ckb", "text": "ڕۆژنامەنووسێک هەر ئێستا دەپرسێت ئایا ئێمە شۆردنی سەوزمان کردووە. ئەگەر ئەم وشەیە بەکاربهێنین، ڕەنگە تۆمەتەکە زیاتر بەهێز بکەین." },
+            { "language": "kmr", "text": "Rojnamevanek niha dipirse gelo me keskşûştin kiriye. Ger em vî peyvî bigirin, dibe ku sûcdariyê hîn zêdetir bihêz bikin." },
+            { "language": "pl", "text": "Dziennikarka już pyta, czy dopuściliśmy się greenwashingu. Jeśli podejmiemy to słowo, możemy jeszcze wzmocnić zarzut." },
+            { "language": "ro", "text": "O jurnalistă întreabă deja dacă am practicat spălarea verde a imaginii. Dacă preluăm acest cuvânt, poate întărim și mai mult acuzația." },
+            { "language": "sq", "text": "Një gazetare tashmë pyet nëse kemi bërë pastrim të gjelbër të imazhit. Nëse e përdorim atë fjalë, ndoshta e forcojmë edhe më shumë akuzën." }
+          ],
+          "function": "raises loaded-term risk",
+          "toneNote": "cautious"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir müssen den Begriff nicht als Selbstbeschreibung übernehmen. Besser ist: Wir nehmen die Frage nach Übertreibung ernst, legen offen, was die Daten belegen, und korrigieren die Formulierung dort, wo sie mehr Nähe zur Aussage erzeugt hat, als sachlich gedeckt war.",
+          "translations": [
+            { "language": "en", "text": "We do not have to adopt the term as a self-description. Better is: we take the question of exaggeration seriously, disclose what the data proves, and correct the wording where it created more closeness to the claim than was factually covered." },
+            { "language": "fa", "text": "لازم نیست آن اصطلاح را به‌عنوان توصیف خودمان بپذیریم. بهتر است بگوییم: پرسش درباره اغراق را جدی می‌گیریم، روشن می‌کنیم داده‌ها چه چیزی را اثبات می‌کنند، و آنجا که عبارت بیش از پشتوانه واقعی به ادعا نزدیک شده، آن را اصلاح می‌کنیم." },
+            { "language": "ar", "text": "لا يجب أن نتبنى المصطلح كوصف لأنفسنا. الأفضل هو: نأخذ سؤال المبالغة بجدية، ونوضح ما تثبته البيانات، ونصحح الصياغة حيث صنعت قرباً من الادعاء أكبر مما تغطيه الحقائق." },
+            { "language": "tr", "text": "Bu terimi kendi tanımımız olarak üstlenmek zorunda değiliz. Daha iyisi şu: abartı sorusunu ciddiye alırız, verilerin neyi kanıtladığını açıklarız ve ifadenin olgusal olarak karşılanandan daha güçlü bir iddia yakınlığı yarattığı yerlerde dili düzeltiriz." },
+            { "language": "ru", "text": "Нам не нужно принимать этот термин как самоописание. Лучше так: мы серьезно относимся к вопросу о преувеличении, раскрываем, что подтверждают данные, и корректируем формулировку там, где она создала более близкое впечатление к заявлению, чем было фактически покрыто." },
+            { "language": "ckb", "text": "پێویست ناکات ئەو زاراوەیە وەک وەسفی خۆمان وەربگرین. باشتر ئەوەیە: پرسیاری زیادەڕۆیی بە جدی وەردەگرین، ڕوون دەکەینەوە داتاکان چی دەسەلمێنن، و لەو شوێنەی دەربڕینەکە نزیکییەکی زیاتر بە بانگەشەکە دروست کردووە لەوەی ڕاستی پشتگیری دەکات، دەیڕاستکەینەوە." },
+            { "language": "kmr", "text": "Ne hewce ye em vî têgehî wekî xwe-wesifandinê qebûl bikin. Baştir ev e: em pirsa zêdegoyiyê cidî digirin, eşkere dikin dane çi îspat dikin, û formulasyonê li wir sererast dikin ku ji ya rastî piştgirî dikir nêzîkatiyeke zêdetir bi îdiayê re çêkir." },
+            { "language": "pl", "text": "Nie musimy przejmować tego terminu jako samookreślenia. Lepiej: traktujemy pytanie o przesadę poważnie, ujawniamy, co potwierdzają dane, i korygujemy sformułowanie tam, gdzie stworzyło ono większą bliskość do twierdzenia, niż było merytorycznie pokryte." },
+            { "language": "ro", "text": "Nu trebuie să preluăm termenul ca autodescriere. Mai bine: luăm în serios întrebarea privind exagerarea, arătăm ce dovedesc datele și corectăm formularea acolo unde a creat o apropiere mai mare de afirmație decât era acoperit factual." },
+            { "language": "sq", "text": "Nuk duhet ta marrim termin si vetëpërshkrim. Më mirë: e marrim seriozisht pyetjen për ekzagjerimin, tregojmë çfarë provojnë të dhënat dhe korrigjojmë formulimin aty ku krijoi më shumë afërsi me pretendimin sesa mbulohej faktikisht." }
+          ],
+          "function": "handles loaded accusation without repeating it as identity",
+          "toneNote": "careful, strategic",
+          "expectedLearnerAction": "Address the substance of a loaded accusation without adopting its label."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "management",
+          "baseText": "Ich habe trotzdem Sorge, dass jede Anerkennung eines Formulierungsfehlers als Schuldeingeständnis gelesen wird.",
+          "translations": [
+            { "language": "en", "text": "I am still worried that any acknowledgement of a wording error will be read as an admission of guilt." },
+            { "language": "fa", "text": "با این حال نگرانم که هر پذیرشی درباره خطای فرمول‌بندی به‌عنوان اعتراف به تقصیر خوانده شود." },
+            { "language": "ar", "text": "ما زلت قلقاً من أن أي اعتراف بخطأ في الصياغة سيُقرأ كاعتراف بالذنب." },
+            { "language": "tr", "text": "Yine de herhangi bir ifade hatasını kabul etmenin suç kabulü olarak okunacağından endişeliyim." },
+            { "language": "ru", "text": "Я все же опасаюсь, что любое признание ошибки формулировки будет прочитано как признание вины." },
+            { "language": "ckb", "text": "هێشتا نیگەرانم کە هەر ناسینەوەیەکی هەڵەی دەربڕین وەک داننان بە تاوان بخوێندرێتەوە." },
+            { "language": "kmr", "text": "Ez hîn jî xemgîn im ku her qebûlkirina şaşiya formulasyonê wekî pejirandina sûcê were xwendin." },
+            { "language": "pl", "text": "Mimo to obawiam się, że każde uznanie błędu w sformułowaniu zostanie odczytane jako przyznanie się do winy." },
+            { "language": "ro", "text": "Totuși mă îngrijorează că orice recunoaștere a unei erori de formulare va fi citită ca o recunoaștere a vinovăției." },
+            { "language": "sq", "text": "Megjithatë shqetësohem se çdo pranim i një gabimi në formulim do të lexohet si pranim faji." }
+          ],
+          "function": "raises admission-risk concern",
+          "toneNote": "risk-averse"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das Risiko besteht, aber Schweigen oder reine Abwehr ist reputativ oft teurer. Wir können die Anerkennung präzise begrenzen: Die Datenlage ist nicht frei erfunden, aber die öffentliche Wirkung der Formulierung war weitergehend, als wir verantworten wollen.",
+          "translations": [
+            { "language": "en", "text": "That risk exists, but silence or pure defense is often more costly for reputation. We can limit the acknowledgement precisely: the data basis was not invented, but the public impact of the wording went further than we want to stand behind." },
+            { "language": "fa", "text": "این ریسک وجود دارد، اما سکوت یا دفاع صرف از نظر اعتباری اغلب پرهزینه‌تر است. می‌توانیم پذیرش را دقیق محدود کنیم: مبنای داده‌ها ساختگی نبوده، اما اثر عمومی عبارت فراتر از چیزی بوده که می‌خواهیم مسئولانه پشت آن بایستیم." },
+            { "language": "ar", "text": "هذا الخطر موجود، لكن الصمت أو الدفاع الخالص غالباً أكثر كلفة للسمعة. يمكننا أن نحد الاعتراف بدقة: قاعدة البيانات ليست مختلقة، لكن الأثر العام للصياغة ذهب أبعد مما نريد تحمله." },
+            { "language": "tr", "text": "Bu risk var, ancak sessizlik veya salt savunma itibar açısından çoğu zaman daha pahalıdır. Kabulü kesin biçimde sınırlayabiliriz: veri temeli uydurma değildir, fakat ifadenin kamusal etkisi, arkasında sorumlulukla durmak istediğimiz sınırın ötesine geçmiştir." },
+            { "language": "ru", "text": "Такой риск есть, но молчание или чистая защита часто дороже для репутации. Мы можем точно ограничить признание: база данных не была выдумана, но публичный эффект формулировки оказался шире, чем мы готовы ответственно поддерживать." },
+            { "language": "ckb", "text": "ئەو مەترسییە هەیە، بەڵام بێدەنگی یان بەرگریی تەواو لە ڕووی ناوبانگەوە زۆرجار گرانترە. دەتوانین ناسینەوەکە بە وردی سنووردار بکەین: بنەمای داتاکان لە خۆوە دروست نەکراوە، بەڵام کاریگەری گشتیی دەربڕینەکە فراوانتر بوو لەوەی دەمەوێت بە بەرپرسیاریەتی پشتگیری بکەین." },
+            { "language": "kmr", "text": "Ev xeter heye, lê bêdengî an parastina tenê ji bo navûdengê gelek caran biha ye. Em dikarin qebûlkirinê bi hûrgilî sînor bikin: bingeha daneyan ji xwe ve nehatiye çêkirin, lê bandora giştî ya formulasyonê ji sînorê ku em dixwazin bi berpirsiyarî piştgirî bikin firehtir bû." },
+            { "language": "pl", "text": "Takie ryzyko istnieje, ale milczenie albo czysta obrona często kosztują reputacyjnie więcej. Możemy precyzyjnie ograniczyć uznanie: podstawa danych nie została wymyślona, ale publiczny efekt sformułowania poszedł dalej, niż chcemy odpowiedzialnie firmować." },
+            { "language": "ro", "text": "Riscul există, dar tăcerea sau apărarea pură este adesea mai costisitoare pentru reputație. Putem limita precis recunoașterea: baza de date nu a fost inventată, dar efectul public al formulării a mers mai departe decât vrem să susținem responsabil." },
+            { "language": "sq", "text": "Ky rrezik ekziston, por heshtja ose mbrojtja e pastër shpesh kushton më shumë për reputacionin. Mund ta kufizojmë saktë pranimin: baza e të dhënave nuk është shpikur, por efekti publik i formulimit shkoi më larg sesa duam ta mbështesim me përgjegjësi." }
+          ],
+          "function": "balances admission risk and credibility risk",
+          "toneNote": "strategic, measured",
+          "expectedLearnerAction": "Use a limited acknowledgement that protects credibility without over-admitting."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Dann brauchen wir eine erste Formulierung, die heute noch an Kunden und Presse gehen kann. Sie muss kurz sein, aber nicht ausweichend.",
+          "translations": [
+            { "language": "en", "text": "Then we need an initial wording that can go to customers and the press today. It has to be brief, but not evasive." },
+            { "language": "fa", "text": "پس به یک متن اولیه نیاز داریم که همین امروز برای مشتریان و رسانه‌ها ارسال شود. باید کوتاه باشد، اما طفره‌آمیز نباشد." },
+            { "language": "ar", "text": "إذن نحتاج إلى صياغة أولية يمكن إرسالها اليوم إلى العملاء والصحافة. يجب أن تكون قصيرة، لكنها غير مراوغة." },
+            { "language": "tr", "text": "O zaman bugün müşterilere ve basına gönderilebilecek ilk bir metne ihtiyacımız var. Kısa olmalı, ama kaçamak olmamalı." },
+            { "language": "ru", "text": "Тогда нам нужна первичная формулировка, которую сегодня можно отправить клиентам и прессе. Она должна быть короткой, но не уклончивой." },
+            { "language": "ckb", "text": "ئەوا پێویستمان بە دەربڕینێکی یەکەم هەیە کە ئەمڕۆ بۆ کڕیاران و میدیا بنێردرێت. دەبێت کورت بێت، بەڵام خۆدزینەوە نەبێت." },
+            { "language": "kmr", "text": "Wê demê hewcedariya me bi formulasyoneke destpêkê heye ku îro ji xerîdar û çapemeniyê re were şandin. Divê kurt be, lê xwe-dûrxistin nebe." },
+            { "language": "pl", "text": "W takim razie potrzebujemy pierwszego sformułowania, które dziś może trafić do klientów i prasy. Musi być krótkie, ale nie wymijające." },
+            { "language": "ro", "text": "Atunci avem nevoie de o primă formulare care poate merge astăzi către clienți și presă. Trebuie să fie scurtă, dar nu evazivă." },
+            { "language": "sq", "text": "Atëherë na duhet një formulim fillestar që mund t'u dërgohet sot klientëve dhe shtypit. Duhet të jetë i shkurtër, por jo shmangës." }
+          ],
+          "function": "requests public response wording",
+          "toneNote": "practical"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Mein Vorschlag: Wir nehmen die Kritik ernst. Die zugrunde liegenden Daten belegen eine Verbesserung in einem begrenzten Bereich; unsere Formulierung konnte jedoch einen umfassenderen Eindruck erzeugen. Wir präzisieren die Aussage heute, veröffentlichen die Datengrundlage und prüfen unsere Freigabeprozesse.",
+          "translations": [
+            { "language": "en", "text": "My proposal: we take the criticism seriously. The underlying data shows an improvement in a limited area; however, our wording could create a broader impression. We will clarify the statement today, publish the data basis, and review our approval processes." },
+            { "language": "fa", "text": "پیشنهاد من: ما انتقاد را جدی می‌گیریم. داده‌های زیربنایی بهبود را در یک حوزه محدود نشان می‌دهند؛ با این حال فرمول‌بندی ما می‌توانست برداشت گسترده‌تری ایجاد کند. امروز ادعا را دقیق‌تر می‌کنیم، مبنای داده‌ها را منتشر می‌کنیم و فرایندهای تأیید خود را بررسی می‌کنیم." },
+            { "language": "ar", "text": "اقتراحي: نأخذ النقد بجدية. تظهر البيانات الأساسية تحسناً في مجال محدود؛ لكن صياغتنا كان يمكن أن تخلق انطباعاً أوسع. سنوضح التصريح اليوم، وننشر أساس البيانات، ونراجع عمليات الموافقة لدينا." },
+            { "language": "tr", "text": "Önerim: eleştiriyi ciddiye alıyoruz. Temel veriler sınırlı bir alanda iyileşme gösteriyor; ancak ifademiz daha geniş bir izlenim yaratabiliyordu. Açıklamayı bugün netleştiriyoruz, veri temelini yayımlıyoruz ve onay süreçlerimizi gözden geçiriyoruz." },
+            { "language": "ru", "text": "Мое предложение: мы серьезно относимся к критике. Базовые данные показывают улучшение в ограниченной области; однако наша формулировка могла создать более широкий эффект. Сегодня мы уточним заявление, опубликуем основу данных и проверим наши процессы согласования." },
+            { "language": "ckb", "text": "پێشنیاری من: ڕەخنەکە بە جدی وەردەگرین. داتای بنەڕەتی باشبوونێک لە بوارێکی سنوورداردا دەسەلمێنێت؛ بەڵام دەربڕینی ئێمە دەتوانرا تێگەیشتنێکی فراوانتر دروست بکات. ئەمڕۆ بانگەشەکە وردتر دەکەین، بنەمای داتاکان بڵاو دەکەینەوە و پرۆسەکانی ڕەزامەندیی خۆمان دەپشکنین." },
+            { "language": "kmr", "text": "Pêşniyara min: em rexneyê cidî digirin. Daneyên bingehîn başbûnekê di qada sînordar de nîşan didin; lê formulasyona me dikaribû bandoreke firehtir çêbike. Em îro daxuyanîyê hûrgilîtir dikin, bingeha daneyan belav dikin û prosesên pejirandinê yên xwe kontrol dikin." },
+            { "language": "pl", "text": "Moja propozycja: traktujemy krytykę poważnie. Dane bazowe potwierdzają poprawę w ograniczonym obszarze; jednak nasze sformułowanie mogło stworzyć szersze wrażenie. Dziś doprecyzujemy komunikat, opublikujemy podstawę danych i sprawdzimy nasze procesy zatwierdzania." },
+            { "language": "ro", "text": "Propunerea mea: luăm critica în serios. Datele de bază dovedesc o îmbunătățire într-un domeniu limitat; totuși formularea noastră putea crea o impresie mai amplă. Precizăm astăzi afirmația, publicăm baza de date și verificăm procesele noastre de aprobare." },
+            { "language": "sq", "text": "Propozimi im: e marrim kritikën seriozisht. Të dhënat bazë tregojnë një përmirësim në një fushë të kufizuar; megjithatë formulimi ynë mund të krijonte një përshtypje më të gjerë. Sot e saktësojmë deklaratën, publikojmë bazën e të dhënave dhe shqyrtojmë proceset tona të miratimit." }
+          ],
+          "function": "drafts balanced external wording",
+          "toneNote": "concise, accountable",
+          "expectedLearnerAction": "Offer wording that combines criticism, facts, wording correction, and process review."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "management",
+          "baseText": "Das ist tragfähig. Intern müssen aber alle dieselbe Linie verwenden, sonst entstehen morgen wieder neue Versionen.",
+          "translations": [
+            { "language": "en", "text": "That is workable. Internally, however, everyone must use the same line; otherwise new versions will appear again tomorrow." },
+            { "language": "fa", "text": "این قابل اتکاست. اما در داخل همه باید از همان خط استفاده کنند، وگرنه فردا دوباره روایت‌های تازه ایجاد می‌شود." },
+            { "language": "ar", "text": "هذا قابل للاعتماد. لكن داخلياً يجب أن يستخدم الجميع الخط نفسه، وإلا ستظهر غداً نسخ جديدة مرة أخرى." },
+            { "language": "tr", "text": "Bu taşınabilir bir çizgi. Ancak içeride herkes aynı çizgiyi kullanmalı; aksi halde yarın yine yeni versiyonlar ortaya çıkar." },
+            { "language": "ru", "text": "Это устойчиво. Но внутри все должны использовать одну и ту же линию, иначе завтра снова появятся новые версии." },
+            { "language": "ckb", "text": "ئەمە جێگیرە. بەڵام لە ناوخۆدا هەمووان دەبێت هەمان هێڵ بەکاربهێنن، ئەگەر نا سبەی جارێکی تر وەشانە نوێیەکان دروست دەبن." },
+            { "language": "kmr", "text": "Ev guncav e. Lê li hundir divê hemû kes heman xetê bikar bînin, naxwe sibê dîsa guhertoyên nû derdikevin." },
+            { "language": "pl", "text": "To jest nośne. Wewnętrznie jednak wszyscy muszą używać tej samej linii, inaczej jutro znów powstaną nowe wersje." },
+            { "language": "ro", "text": "Este solid. Intern însă toți trebuie să folosească aceeași linie, altfel mâine apar din nou versiuni noi." },
+            { "language": "sq", "text": "Kjo është e qëndrueshme. Por brenda kompanisë të gjithë duhet të përdorin të njëjtën linjë, përndryshe nesër do të dalin sërish versione të reja." }
+          ],
+          "function": "asks for internal alignment",
+          "toneNote": "pragmatic"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann schließen wir so: Bis 16 Uhr gibt es eine freigegebene Kernbotschaft, eine kurze Fragen-und-Antworten-Liste für Vertrieb und Service sowie eine klare Zuständigkeit für Rückfragen. Niemand improvisiert eigene Bewertungen; neue Fakten laufen über die Kommunikationsleitung.",
+          "translations": [
+            { "language": "en", "text": "Then we will close like this: by 4 p.m. there will be an approved core message, a short question-and-answer list for sales and service, and clear responsibility for follow-up questions. Nobody improvises their own assessments; new facts go through the communications lead." },
+            { "language": "fa", "text": "پس این‌طور جمع‌بندی می‌کنیم: تا ساعت ۱۶ یک پیام اصلی تأییدشده، یک فهرست کوتاه پرسش و پاسخ برای فروش و خدمات، و مسئولیت روشن برای پرسش‌های بعدی آماده می‌شود. هیچ‌کس ارزیابی شخصی بداهه نمی‌گوید؛ واقعیت‌های جدید از مسیر مسئول ارتباطات عبور می‌کنند." },
+            { "language": "ar", "text": "إذن نختتم هكذا: حتى الساعة الرابعة ستكون هناك رسالة أساسية معتمدة، وقائمة قصيرة من الأسئلة والأجوبة للمبيعات والخدمة، ومسؤولية واضحة عن الاستفسارات اللاحقة. لا يرتجل أحد تقييماته الخاصة؛ والحقائق الجديدة تمر عبر مسؤول التواصل." },
+            { "language": "tr", "text": "O halde şöyle kapatıyoruz: saat 16'ya kadar onaylanmış bir ana mesaj, satış ve hizmet için kısa bir soru-cevap listesi ve sonraki sorular için net bir sorumluluk olacak. Kimse kendi değerlendirmelerini doğaçlama yapmayacak; yeni gerçekler iletişim sorumlusu üzerinden ilerleyecek." },
+            { "language": "ru", "text": "Тогда завершаем так: до 16:00 будет утвержденное ключевое сообщение, короткий список вопросов и ответов для продаж и сервиса, а также четкая ответственность за последующие вопросы. Никто не импровизирует собственные оценки; новые факты проходят через руководство коммуникаций." },
+            { "language": "ckb", "text": "کەواتە ئاوا کۆتایی پێدەهێنین: تا کاتژمێر ١٦ پەیامی سەرەکیی پەسەندکراو، لیستی کورتی پرسیار و وەڵام بۆ فرۆشتن و خزمەتگوزاری، و بەرپرسیاریەتیی ڕوون بۆ پرسیارە دواترەکان دەبێت. هیچ کەسێک هەڵسەنگاندنی خۆی لەخۆوە ناکات؛ ڕاستییە نوێیەکان لە ڕێگەی بەرپرسی پەیوەندییەکانەوە دەچن." },
+            { "language": "kmr", "text": "Wê demê em wiha diqedînin: heta saet 16ê dê peyama bingehîn a pejirandî, lîsteyeke kurt a pirs û bersivan ji bo firotan û xizmetê, û berpirsiyariya zelal ji bo pirsên din hebe. Kes nirxandinên xwe ji xwe ve nake; rastiyên nû di rêya berpirsê têkiliyê re derbas dibin." },
+            { "language": "pl", "text": "W takim razie zamykamy tak: do godziny 16 będzie zatwierdzony komunikat główny, krótka lista pytań i odpowiedzi dla sprzedaży oraz obsługi, a także jasna odpowiedzialność za dalsze pytania. Nikt nie improwizuje własnych ocen; nowe fakty przechodzą przez kierownika komunikacji." },
+            { "language": "ro", "text": "Atunci încheiem astfel: până la ora 16 va exista un mesaj central aprobat, o listă scurtă de întrebări și răspunsuri pentru vânzări și servicii, precum și o responsabilitate clară pentru întrebările ulterioare. Nimeni nu improvizează evaluări proprii; faptele noi trec prin responsabilul de comunicare." },
+            { "language": "sq", "text": "Atëherë e mbyllim kështu: deri në orën 16 do të ketë një mesazh kryesor të miratuar, një listë të shkurtër pyetje-përgjigje për shitjet dhe shërbimin, si edhe përgjegjësi të qartë për pyetjet pasuese. Askush nuk improvizon vlerësime personale; faktet e reja kalojnë përmes përgjegjësit të komunikimit." }
+          ],
+          "function": "closes with internal alignment and governance",
+          "toneNote": "decisive, organized",
+          "expectedLearnerAction": "Close with approved message, internal guidance, owner, and fact-control process."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir sollten die Lage in vier Ebenen trennen: Was ist faktisch belegt, was wurde öffentlich verstanden, wo haben wir missverständlich formuliert, und welche Korrektur können wir überprüfbar zusagen.",
+              "translations": [
+                { "language": "en", "text": "We should separate the situation into four layers: what is factually documented, what was understood publicly, where we worded things ambiguously, and which correction we can verifiably promise." },
+                { "language": "fa", "text": "باید وضعیت را در چهار سطح جدا کنیم: چه چیزی واقعاً مستند است، در افکار عمومی چه برداشتی شده، کجا مبهم بیان کرده‌ایم، و چه اصلاحی را می‌توانیم به‌صورت قابل بررسی وعده بدهیم." },
+                { "language": "ar", "text": "ينبغي أن نفصل الوضع إلى أربعة مستويات: ما المثبت فعلياً، وما الذي فهمه الجمهور، وأين صغنا الكلام بصورة ملتبسة، وأي تصحيح يمكن أن نعد به بصورة قابلة للتحقق." },
+                { "language": "tr", "text": "Durumu dört düzeyde ayırmalıyız: fiilen ne kanıtlanmış, kamuoyu ne anlamış, nerede belirsiz ifade etmişiz ve hangi düzeltmeyi denetlenebilir biçimde vaat edebiliriz." },
+                { "language": "ru", "text": "Нужно разделить ситуацию на четыре уровня: что фактически подтверждено, как это было понято публично, где мы сформулировали двусмысленно и какую корректировку можем проверяемо пообещать." },
+                { "language": "ckb", "text": "دەبێت دۆخەکە لە چوار ئاست جیا بکەینەوە: چی بە ڕاستی بەڵگەدارە، چی لە گشتی تێگەیشتراوە، لە کوێدا بە دوومانایی دەربڕیوە، و کام ڕاستکردنەوە دەتوانین بە شێوەی قابل پشکنین بەڵێن بدەین." },
+                { "language": "kmr", "text": "Divê em rewşê di çar astan de ji hev veqetînin: çi bi rastî belgekirî ye, giştî çi fêm kiriye, em li ku derê duwate gotine, û em kîjan sererastkirinê dikarin bi awayekî kontrolbar soz bidin." },
+                { "language": "pl", "text": "Powinniśmy rozdzielić sytuację na cztery poziomy: co jest faktycznie udokumentowane, jak odebrała to opinia publiczna, gdzie sformułowaliśmy coś niejednoznacznie i jaką korektę możemy obiecać w sposób weryfikowalny." },
+                { "language": "ro", "text": "Ar trebui să separăm situația în patru planuri: ce este dovedit factual, ce s-a înțeles public, unde am formulat ambiguu și ce corecție putem promite în mod verificabil." },
+                { "language": "sq", "text": "Duhet ta ndajmë situatën në katër nivele: çfarë është e dokumentuar faktikisht, çfarë është kuptuar publikisht, ku kemi formuluar në mënyrë të paqartë dhe cilin korrigjim mund ta premtojmë në mënyrë të verifikueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort verhindert reflexhafte Abwehr und schafft eine belastbare Analyseordnung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response prevents reflexive defense and creates a reliable analytical structure." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ از دفاع واکنشی جلوگیری می‌کند و یک ساختار تحلیلی قابل اتکا می‌سازد." },
+                { "language": "ar", "text": "جيد جداً: تمنع الإجابة الدفاع التلقائي وتخلق بنية تحليلية موثوقة." },
+                { "language": "tr", "text": "Çok iyi: cevap refleks savunmayı önler ve güvenilir bir analiz yapısı kurar." },
+                { "language": "ru", "text": "Очень хорошо: ответ предотвращает рефлекторную защиту и создает надежную аналитическую структуру." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ڕێ لە بەرگریی کاردانەوەیی دەگرێت و ڕێکخستنێکی شیکاریی باوەڕپێکراو دروست دەکات." },
+                { "language": "kmr", "text": "Pir baş: bersiv parastina refleksî digire û avahiyeke analîtîk a pêbawer çêdike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź zapobiega odruchowej obronie i tworzy solidny porządek analizy." },
+                { "language": "ro", "text": "Foarte bine: răspunsul previne apărarea reflexă și creează o structură analitică solidă." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja parandalon mbrojtjen refleksive dhe krijon një strukturë analitike të besueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten zuerst prüfen, ob die Kritik überhaupt berechtigt ist, bevor wir öffentlich reagieren.",
+              "translations": [
+                { "language": "en", "text": "We should first check whether the criticism is justified at all before we respond publicly." },
+                { "language": "fa", "text": "باید اول بررسی کنیم اصلاً انتقاد موجه است یا نه، بعد عمومی پاسخ بدهیم." },
+                { "language": "ar", "text": "ينبغي أولاً أن نتحقق مما إذا كان النقد مبرراً أصلاً قبل أن نرد علناً." },
+                { "language": "tr", "text": "Kamuya yanıt vermeden önce eleştirinin gerçekten haklı olup olmadığını kontrol etmeliyiz." },
+                { "language": "ru", "text": "Сначала нужно проверить, обоснована ли критика вообще, прежде чем публично реагировать." },
+                { "language": "ckb", "text": "پێویستە یەکەم جار بپشکنین ئایا ڕەخنەکە هەر لە بنەڕەتدا ڕەوایە یان نا، پاشان بە گشتی وەڵام بدەینەوە." },
+                { "language": "kmr", "text": "Divê pêşî kontrol bikin gelo rexne qet rast e yan na, berî ku em bi giştî bersiv bidin." },
+                { "language": "pl", "text": "Najpierw powinniśmy sprawdzić, czy krytyka w ogóle jest uzasadniona, zanim zareagujemy publicznie." },
+                { "language": "ro", "text": "Ar trebui mai întâi să verificăm dacă critica este justificată înainte de a reacționa public." },
+                { "language": "sq", "text": "Duhet së pari të kontrollojmë nëse kritika është fare e arsyeshme para se të reagojmë publikisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu eng: Die Antwort behandelt nur Berechtigung, nicht öffentliche Wirkung, Formulierungsrisiko und korrigierbare Schritte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too narrow: the response addresses only justification, not public impact, wording risk, and correctable steps." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد محدود: پاسخ فقط موجه بودن را بررسی می‌کند، نه اثر عمومی، ریسک فرمول‌بندی و قدم‌های قابل اصلاح." },
+                { "language": "ar", "text": "ممكن، لكنه ضيق أكثر من اللازم: يتناول الرد المشروعية فقط، لا الأثر العام وخطر الصياغة والخطوات القابلة للتصحيح." },
+                { "language": "tr", "text": "Makul, ama fazla dar: cevap yalnızca haklılığı ele alır; kamusal etkiyi, ifade riskini ve düzeltilebilir adımları değil." },
+                { "language": "ru", "text": "Правдоподобно, но слишком узко: ответ касается только обоснованности, а не публичного эффекта, риска формулировки и корректируемых шагов." },
+                { "language": "ckb", "text": "ڕەنگە گونجاو بێت، بەڵام زۆر تەسکە: وەڵامەکە تەنها ڕەوابوون باس دەکات، نە کاریگەری گشتی، مەترسی دەربڕین و هەنگاوە قابل ڕاستکردنەوەکان." },
+                { "language": "kmr", "text": "Gengaz e, lê pir teng e: bersiv tenê rastbûnê digire, ne bandora giştî, xetera formulasyonê û gavên sererastbar." },
+                { "language": "pl", "text": "Brzmi rozsądnie, ale jest zbyt wąskie: odpowiedź dotyczy tylko zasadności, a nie efektu publicznego, ryzyka sformułowania i kroków korygujących." },
+                { "language": "ro", "text": "Plauzibil, dar prea îngust: răspunsul tratează doar justificarea, nu efectul public, riscul de formulare și pașii corectabili." },
+                { "language": "sq", "text": "E besueshme, por shumë e ngushtë: përgjigjja trajton vetëm arsyeshmërinë, jo efektin publik, rrezikun e formulimit dhe hapat e korrigjueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ein pauschales Dementi wäre zu grob. Wir können klar sagen, dass die Daten einen bestimmten Teil der Aussage stützen. Gleichzeitig sollten wir anerkennen, dass die Formulierung weiter ausgelegt werden konnte, als fachlich beabsichtigt war.",
+              "translations": [
+                { "language": "en", "text": "A blanket denial would be too crude. We can clearly say that the data supports a specific part of the statement. At the same time, we should acknowledge that the wording could be interpreted more broadly than was technically intended." },
+                { "language": "fa", "text": "یک تکذیب کلی بیش از حد خام است. می‌توانیم روشن بگوییم که داده‌ها بخش مشخصی از ادعا را پشتیبانی می‌کنند. هم‌زمان باید بپذیریم که عبارت می‌توانست گسترده‌تر از قصد تخصصی ما تفسیر شود." },
+                { "language": "ar", "text": "النفي الشامل سيكون فظاً أكثر من اللازم. يمكننا أن نقول بوضوح إن البيانات تدعم جزءاً محدداً من التصريح. وفي الوقت نفسه ينبغي أن نعترف بأن الصياغة كان يمكن تفسيرها بشكل أوسع مما كان مقصوداً فنياً." },
+                { "language": "tr", "text": "Genel bir yalanlama fazla kaba olur. Verilerin açıklamanın belirli bir bölümünü desteklediğini açıkça söyleyebiliriz. Aynı zamanda ifadenin teknik olarak amaçlanandan daha geniş yorumlanabildiğini kabul etmeliyiz." },
+                { "language": "ru", "text": "Общее опровержение было бы слишком грубым. Мы можем ясно сказать, что данные подтверждают определенную часть заявления. Одновременно следует признать, что формулировка могла быть истолкована шире, чем предполагалось профессионально." },
+                { "language": "ckb", "text": "ڕەتکردنەوەی گشتی زۆر خام دەبێت. دەتوانین بە ڕوونی بڵێین داتاکان بەشێکی دیاریکراوی دەربڕینەکە پشتگیری دەکەن. هاوکات دەبێت بناسین کە دەربڕینەکە دەتوانرا فراوانتر لەوەی پسپۆڕانە مەبەست بوو لێک بدرێتەوە." },
+                { "language": "kmr", "text": "Redkirineke giştî dê pir qels be. Em dikarin zelal bibêjin ku dane beşeke diyar a daxuyaniyê piştgirî dikin. Di heman demê de divê em qebûl bikin ku formulasyon dikaribû ji ya ku bi pisporî mebest bû firehtir were şîrovekirin." },
+                { "language": "pl", "text": "Ogólne dementi byłoby zbyt toporne. Możemy jasno powiedzieć, że dane potwierdzają określoną część komunikatu. Jednocześnie powinniśmy uznać, że sformułowanie mogło zostać odczytane szerzej, niż zamierzano merytorycznie." },
+                { "language": "ro", "text": "O dezmințire generală ar fi prea brută. Putem spune clar că datele susțin o anumită parte a afirmației. În același timp ar trebui să recunoaștem că formularea putea fi interpretată mai larg decât fusese intenționat din punct de vedere tehnic." },
+                { "language": "sq", "text": "Një mohim i përgjithshëm do të ishte tepër i ashpër. Mund të themi qartë se të dhënat mbështesin një pjesë të caktuar të deklaratës. Njëkohësisht duhet të pranojmë se formulimi mund të interpretohej më gjerë sesa ishte synuar teknikisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort schützt vor Überkorrektur und vor pauschaler Abwehr.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response protects against overcorrection and blanket defense." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ هم از اصلاح افراطی جلوگیری می‌کند و هم از دفاع کلی." },
+                { "language": "ar", "text": "جيد جداً: تحمي الإجابة من التصحيح المفرط ومن الدفاع الشامل." },
+                { "language": "tr", "text": "Çok iyi: cevap hem aşırı düzeltmeden hem de genel savunmadan korur." },
+                { "language": "ru", "text": "Очень хорошо: ответ защищает и от чрезмерной коррекции, и от общего оборонительного отрицания." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە لە ڕاستکردنەوەی زیادە و بەرگریی گشتی دەپارێزێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv ji sererastkirina zêde û parastina giştî diparêze." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź chroni przed nadmierną korektą i przed ogólną obroną." },
+                { "language": "ro", "text": "Foarte bine: răspunsul protejează împotriva supracorectării și a apărării generale." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja mbron si nga korrigjimi i tepruar, ashtu edhe nga mbrojtja e përgjithshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten schreiben, dass die Kritik auf einer Fehlinterpretation beruht und unsere Daten korrekt sind.",
+              "translations": [
+                { "language": "en", "text": "We should write that the criticism is based on a misinterpretation and that our data is correct." },
+                { "language": "fa", "text": "باید بنویسیم که انتقاد بر پایه سوءبرداشت است و داده‌های ما درست هستند." },
+                { "language": "ar", "text": "ينبغي أن نكتب إن النقد قائم على سوء تفسير وإن بياناتنا صحيحة." },
+                { "language": "tr", "text": "Eleştirinin yanlış yorumlamaya dayandığını ve verilerimizin doğru olduğunu yazmalıyız." },
+                { "language": "ru", "text": "Нужно написать, что критика основана на неправильной интерпретации и что наши данные корректны." },
+                { "language": "ckb", "text": "دەبێت بنووسین کە ڕەخنەکە لەسەر هەڵە تێگەیشتن دامەزراوە و داتاکانی ئێمە ڕاستن." },
+                { "language": "kmr", "text": "Divê em binivîsin ku rexne li ser şaş-fêmkirinê ye û daneyên me rast in." },
+                { "language": "pl", "text": "Powinniśmy napisać, że krytyka opiera się na błędnej interpretacji, a nasze dane są poprawne." },
+                { "language": "ro", "text": "Ar trebui să scriem că critica se bazează pe o interpretare greșită și că datele noastre sunt corecte." },
+                { "language": "sq", "text": "Duhet të shkruajmë se kritika bazohet në keqinterpretim dhe se të dhënat tona janë të sakta." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Die Antwort schiebt die Wahrnehmung vollständig auf andere und erkennt das eigene Formulierungsrisiko nicht an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: the response shifts perception entirely onto others and does not acknowledge the company's own wording risk." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: پاسخ برداشت را کاملاً به دیگران نسبت می‌دهد و ریسک فرمول‌بندی خود شرکت را نمی‌پذیرد." },
+                { "language": "ar", "text": "ضعيفة استراتيجياً: تنقل الإجابة الانطباع بالكامل إلى الآخرين ولا تعترف بخطر الصياغة لدى الشركة نفسها." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: cevap algıyı tamamen başkalarına yükler ve şirketin kendi ifade riskini kabul etmez." },
+                { "language": "ru", "text": "Стратегически слабо: ответ полностью перекладывает восприятие на других и не признает собственного риска формулировки." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: وەڵامەکە تێگەیشتنەکە بە تەواوی دەخاتە سەر ئەوانی تر و مەترسی دەربڕینی خۆی کۆمپانیا ناناسێت." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: bersiv têgihiştinê bi tevahî dixe ser yên din û xetera formulasyona xwe ya şirketê qebûl nake." },
+                { "language": "pl", "text": "Strategicznie słabe: odpowiedź całkowicie przerzuca odbiór na innych i nie uznaje własnego ryzyka sformułowania." },
+                { "language": "ro", "text": "Slab strategic: răspunsul mută percepția complet asupra altora și nu recunoaște riscul propriei formulări." },
+                { "language": "sq", "text": "Strategjikisht e dobët: përgjigjja e zhvendos perceptimin tërësisht te të tjerët dhe nuk pranon rrezikun e formulimit të vetë kompanisë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir müssen den Begriff nicht als Selbstbeschreibung übernehmen. Besser ist: Wir nehmen die Frage nach Übertreibung ernst, legen offen, was die Daten belegen, und korrigieren die Formulierung dort, wo sie mehr Nähe zur Aussage erzeugt hat, als sachlich gedeckt war.",
+              "translations": [
+                { "language": "en", "text": "We do not have to adopt the term as a self-description. Better is: we take the question of exaggeration seriously, disclose what the data proves, and correct the wording where it created more closeness to the claim than was factually covered." },
+                { "language": "fa", "text": "لازم نیست آن اصطلاح را به‌عنوان توصیف خودمان بپذیریم. بهتر است بگوییم: پرسش درباره اغراق را جدی می‌گیریم، روشن می‌کنیم داده‌ها چه چیزی را اثبات می‌کنند، و آنجا که عبارت بیش از پشتوانه واقعی به ادعا نزدیک شده، آن را اصلاح می‌کنیم." },
+                { "language": "ar", "text": "لا يجب أن نتبنى المصطلح كوصف لأنفسنا. الأفضل هو: نأخذ سؤال المبالغة بجدية، ونوضح ما تثبته البيانات، ونصحح الصياغة حيث صنعت قرباً من الادعاء أكبر مما تغطيه الحقائق." },
+                { "language": "tr", "text": "Bu terimi kendi tanımımız olarak üstlenmek zorunda değiliz. Daha iyisi şu: abartı sorusunu ciddiye alırız, verilerin neyi kanıtladığını açıklarız ve ifadenin olgusal olarak karşılanandan daha güçlü bir iddia yakınlığı yarattığı yerlerde dili düzeltiriz." },
+                { "language": "ru", "text": "Нам не нужно принимать этот термин как самоописание. Лучше так: мы серьезно относимся к вопросу о преувеличении, раскрываем, что подтверждают данные, и корректируем формулировку там, где она создала более близкое впечатление к заявлению, чем было фактически покрыто." },
+                { "language": "ckb", "text": "پێویست ناکات ئەو زاراوەیە وەک وەسفی خۆمان وەربگرین. باشتر ئەوەیە: پرسیاری زیادەڕۆیی بە جدی وەردەگرین، ڕوون دەکەینەوە داتاکان چی دەسەلمێنن، و لەو شوێنەی دەربڕینەکە نزیکییەکی زیاتر بە بانگەشەکە دروست کردووە لەوەی ڕاستی پشتگیری دەکات، دەیڕاستکەینەوە." },
+                { "language": "kmr", "text": "Ne hewce ye em vî têgehî wekî xwe-wesifandinê qebûl bikin. Baştir ev e: em pirsa zêdegoyiyê cidî digirin, eşkere dikin dane çi îspat dikin, û formulasyonê li wir sererast dikin ku ji ya rastî piştgirî dikir nêzîkatiyeke zêdetir bi îdiayê re çêkir." },
+                { "language": "pl", "text": "Nie musimy przejmować tego terminu jako samookreślenia. Lepiej: traktujemy pytanie o przesadę poważnie, ujawniamy, co potwierdzają dane, i korygujemy sformułowanie tam, gdzie stworzyło ono większą bliskość do twierdzenia, niż było merytorycznie pokryte." },
+                { "language": "ro", "text": "Nu trebuie să preluăm termenul ca autodescriere. Mai bine: luăm în serios întrebarea privind exagerarea, arătăm ce dovedesc datele și corectăm formularea acolo unde a creat o apropiere mai mare de afirmație decât era acoperit factual." },
+                { "language": "sq", "text": "Nuk duhet ta marrim termin si vetëpërshkrim. Më mirë: e marrim seriozisht pyetjen për ekzagjerimin, tregojmë çfarë provojnë të dhënat dhe korrigjojmë formulimin aty ku krijoi më shumë afërsi me pretendimin sesa mbulohej faktikisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort beantwortet die Sache, ohne den belasteten Begriff als Eigenetikett zu übernehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response addresses the substance without adopting the loaded term as a self-label." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ به اصل موضوع می‌پردازد، بدون اینکه اصطلاح بارگذاری‌شده را به‌عنوان برچسب خود بپذیرد." },
+                { "language": "ar", "text": "جيد جداً: تعالج الإجابة جوهر المسألة من دون تبني المصطلح المشحون كوسم ذاتي." },
+                { "language": "tr", "text": "Çok iyi: cevap konunun özünü ele alır, ama yüklü terimi kendi etiketi olarak benimsemez." },
+                { "language": "ru", "text": "Очень хорошо: ответ касается сути, не принимая нагруженный термин как собственную метку." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بابەتەکە وەڵام دەداتەوە، بێ ئەوەی زاراوە بارکراوەکە وەک پێناسەی خۆی وەربگرێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv mijarê bersiv dide bêyî ku têgeha barkirî wekî etîketa xwe qebûl bike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź odnosi się do sedna, nie przejmując obciążonego terminu jako własnej etykiety." },
+                { "language": "ro", "text": "Foarte bine: răspunsul abordează fondul fără a prelua termenul încărcat ca etichetă proprie." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja trajton thelbin pa e marrë termin e ngarkuar si etiketë të vetën." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten das Wort vermeiden und stattdessen schreiben, dass unsere Nachhaltigkeitsarbeit seit Jahren anerkannt ist.",
+              "translations": [
+                { "language": "en", "text": "We should avoid the word and instead write that our sustainability work has been recognized for years." },
+                { "language": "fa", "text": "باید از آن واژه دوری کنیم و به جای آن بنویسیم که کار ما در زمینه پایداری سال‌هاست شناخته شده است." },
+                { "language": "ar", "text": "ينبغي أن نتجنب الكلمة ونكتب بدلاً من ذلك أن عملنا في الاستدامة معترف به منذ سنوات." },
+                { "language": "tr", "text": "Bu kelimeden kaçınmalı ve bunun yerine sürdürülebilirlik çalışmalarımızın yıllardır tanındığını yazmalıyız." },
+                { "language": "ru", "text": "Нужно избегать этого слова и вместо этого написать, что наша работа в области устойчивости признана уже много лет." },
+                { "language": "ckb", "text": "دەبێت لەو وشەیە دوور بکەوینەوە و لە جیاتی ئەوە بنووسین کە کاری پایداریی ئێمە ساڵانێکە دانپێدانراوە." },
+                { "language": "kmr", "text": "Divê em ji vî peyvî dûr bimînin û li şûna wê binivîsin ku xebata me ya domdariyê gelek sal e hatiye nasîn." },
+                { "language": "pl", "text": "Powinniśmy unikać tego słowa i zamiast tego napisać, że nasza praca na rzecz zrównoważonego rozwoju jest od lat uznawana." },
+                { "language": "ro", "text": "Ar trebui să evităm cuvântul și să scriem în schimb că munca noastră privind sustenabilitatea este recunoscută de ani de zile." },
+                { "language": "sq", "text": "Duhet ta shmangim fjalën dhe në vend të saj të shkruajmë se puna jonë për qëndrueshmërinë është e njohur prej vitesh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend: Die Antwort vermeidet zwar den Begriff, beantwortet aber weder Datenlage noch konkrete Kritik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive: the response avoids the term, but answers neither the data basis nor the concrete criticism." },
+                { "language": "fa", "text": "بیش از حد طفره‌آمیز: پاسخ از اصطلاح دوری می‌کند، اما نه مبنای داده‌ها را جواب می‌دهد و نه انتقاد مشخص را." },
+                { "language": "ar", "text": "مراوغة أكثر من اللازم: تتجنب الإجابة المصطلح، لكنها لا تجيب عن قاعدة البيانات ولا عن النقد المحدد." },
+                { "language": "tr", "text": "Çok kaçamak: cevap terimden kaçınır, ama ne veri temelini ne de somut eleştiriyi yanıtlar." },
+                { "language": "ru", "text": "Слишком уклончиво: ответ избегает термина, но не отвечает ни на основу данных, ни на конкретную критику." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە: وەڵامەکە لە زاراوەکە دوور دەکەوێتەوە، بەڵام نە بنەمای داتاکان وەڵام دەداتەوە و نە ڕەخنەی دیاریکراو." },
+                { "language": "kmr", "text": "Pir xwe-dûrxistin e: bersiv ji têgehê dûr dikeve, lê ne bingeha daneyan bersiv dide ne jî rexneya konkret." },
+                { "language": "pl", "text": "Zbyt wymijająco: odpowiedź unika terminu, ale nie odpowiada ani na podstawę danych, ani na konkretną krytykę." },
+                { "language": "ro", "text": "Prea evaziv: răspunsul evită termenul, dar nu răspunde nici bazei de date, nici criticii concrete." },
+                { "language": "sq", "text": "Shumë shmangëse: përgjigjja e shmang termin, por nuk i përgjigjet as bazës së të dhënave, as kritikës konkrete." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das Risiko besteht, aber Schweigen oder reine Abwehr ist reputativ oft teurer. Wir können die Anerkennung präzise begrenzen: Die Datenlage ist nicht frei erfunden, aber die öffentliche Wirkung der Formulierung war weitergehend, als wir verantworten wollen.",
+              "translations": [
+                { "language": "en", "text": "That risk exists, but silence or pure defense is often more costly for reputation. We can limit the acknowledgement precisely: the data basis was not invented, but the public impact of the wording went further than we want to stand behind." },
+                { "language": "fa", "text": "این ریسک وجود دارد، اما سکوت یا دفاع صرف از نظر اعتباری اغلب پرهزینه‌تر است. می‌توانیم پذیرش را دقیق محدود کنیم: مبنای داده‌ها ساختگی نبوده، اما اثر عمومی عبارت فراتر از چیزی بوده که می‌خواهیم مسئولانه پشت آن بایستیم." },
+                { "language": "ar", "text": "هذا الخطر موجود، لكن الصمت أو الدفاع الخالص غالباً أكثر كلفة للسمعة. يمكننا أن نحد الاعتراف بدقة: قاعدة البيانات ليست مختلقة، لكن الأثر العام للصياغة ذهب أبعد مما نريد تحمله." },
+                { "language": "tr", "text": "Bu risk var, ancak sessizlik veya salt savunma itibar açısından çoğu zaman daha pahalıdır. Kabulü kesin biçimde sınırlayabiliriz: veri temeli uydurma değildir, fakat ifadenin kamusal etkisi, arkasında sorumlulukla durmak istediğimiz sınırın ötesine geçmiştir." },
+                { "language": "ru", "text": "Такой риск есть, но молчание или чистая защита часто дороже для репутации. Мы можем точно ограничить признание: база данных не была выдумана, но публичный эффект формулировки оказался шире, чем мы готовы ответственно поддерживать." },
+                { "language": "ckb", "text": "ئەو مەترسییە هەیە، بەڵام بێدەنگی یان بەرگریی تەواو لە ڕووی ناوبانگەوە زۆرجار گرانترە. دەتوانین ناسینەوەکە بە وردی سنووردار بکەین: بنەمای داتاکان لە خۆوە دروست نەکراوە، بەڵام کاریگەری گشتیی دەربڕینەکە فراوانتر بوو لەوەی دەمەوێت بە بەرپرسیاریەتی پشتگیری بکەین." },
+                { "language": "kmr", "text": "Ev xeter heye, lê bêdengî an parastina tenê ji bo navûdengê gelek caran biha ye. Em dikarin qebûlkirinê bi hûrgilî sînor bikin: bingeha daneyan ji xwe ve nehatiye çêkirin, lê bandora giştî ya formulasyonê ji sînorê ku em dixwazin bi berpirsiyarî piştgirî bikin firehtir bû." },
+                { "language": "pl", "text": "Takie ryzyko istnieje, ale milczenie albo czysta obrona często kosztują reputacyjnie więcej. Możemy precyzyjnie ograniczyć uznanie: podstawa danych nie została wymyślona, ale publiczny efekt sformułowania poszedł dalej, niż chcemy odpowiedzialnie firmować." },
+                { "language": "ro", "text": "Riscul există, dar tăcerea sau apărarea pură este adesea mai costisitoare pentru reputație. Putem limita precis recunoașterea: baza de date nu a fost inventată, dar efectul public al formulării a mers mai departe decât vrem să susținem responsabil." },
+                { "language": "sq", "text": "Ky rrezik ekziston, por heshtja ose mbrojtja e pastër shpesh kushton më shumë për reputacionin. Mund ta kufizojmë saktë pranimin: baza e të dhënave nuk është shpikur, por efekti publik i formulimit shkoi më larg sesa duam ta mbështesim me përgjegjësi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort benennt das Risiko, aber bleibt handlungsfähig und sprachlich präzise.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response names the risk but remains actionable and linguistically precise." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ ریسک را نام می‌برد، اما عملی و از نظر زبانی دقیق می‌ماند." },
+                { "language": "ar", "text": "جيد جداً: تسمي الإجابة الخطر، لكنها تبقى قابلة للتنفيذ ودقيقة لغوياً." },
+                { "language": "tr", "text": "Çok iyi: cevap riski adlandırır, ama eyleme dönük ve dilsel olarak kesin kalır." },
+                { "language": "ru", "text": "Очень хорошо: ответ называет риск, но остается действенным и языково точным." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە مەترسییەکە ناو دەبات، بەڵام کردەیی و لە ڕووی زمانەوە ورد دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir baş: bersiv xeterê bi nav dike, lê karbar û ji aliyê zimanî ve hûrgilî dimîne." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź nazywa ryzyko, ale pozostaje sprawcza i językowo precyzyjna." },
+                { "language": "ro", "text": "Foarte bine: răspunsul numește riscul, dar rămâne acționabil și precis lingvistic." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e emërton rrezikun, por mbetet e zbatueshme dhe gjuhësisht e saktë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verstehe die Sorge, deshalb sollten wir den Fehler nicht erwähnen und uns nur auf die guten Daten beziehen.",
+              "translations": [
+                { "language": "en", "text": "I understand the concern, so we should not mention the mistake and should refer only to the good data." },
+                { "language": "fa", "text": "نگرانی را درک می‌کنم، بنابراین نباید خطا را ذکر کنیم و فقط به داده‌های خوب اشاره کنیم." },
+                { "language": "ar", "text": "أفهم القلق، لذلك لا ينبغي أن نذكر الخطأ وأن نشير فقط إلى البيانات الجيدة." },
+                { "language": "tr", "text": "Endişeyi anlıyorum, bu yüzden hatadan bahsetmemeli ve yalnızca iyi verilere atıf yapmalıyız." },
+                { "language": "ru", "text": "Я понимаю опасение, поэтому не стоит упоминать ошибку и нужно ссылаться только на хорошие данные." },
+                { "language": "ckb", "text": "نیگەرانییەکە تێدەگەم، بۆیە نابێت هەڵەکە باس بکەین و تەنها ئاماژە بە داتای باش بدەین." },
+                { "language": "kmr", "text": "Ez xemgîniyê têdigihîjim, ji ber vê divê em şaşiyê behs nekin û tenê behsa daneyên baş bikin." },
+                { "language": "pl", "text": "Rozumiem obawę, dlatego nie powinniśmy wspominać o błędzie i odwołać się tylko do dobrych danych." },
+                { "language": "ro", "text": "Înțeleg îngrijorarea, de aceea nu ar trebui să menționăm eroarea și să ne referim doar la datele bune." },
+                { "language": "sq", "text": "E kuptoj shqetësimin, prandaj nuk duhet ta përmendim gabimin dhe duhet t'u referohemi vetëm të dhënave të mira." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu riskant: Die Antwort reduziert kurzfristig Angriffsfläche, erhöht aber langfristig den Eindruck von Ausweichen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too risky: the response reduces exposure in the short term but increases the impression of evasion in the long term." },
+                { "language": "fa", "text": "بیش از حد پرریسک: پاسخ در کوتاه‌مدت سطح حمله را کم می‌کند، اما در بلندمدت برداشت طفره رفتن را افزایش می‌دهد." },
+                { "language": "ar", "text": "خطرة أكثر من اللازم: تقلل الإجابة مساحة الهجوم على المدى القصير، لكنها تزيد على المدى الطويل انطباع المراوغة." },
+                { "language": "tr", "text": "Çok riskli: cevap kısa vadede saldırı alanını azaltır, ama uzun vadede kaçınma izlenimini artırır." },
+                { "language": "ru", "text": "Слишком рискованно: ответ краткосрочно снижает уязвимость, но долгосрочно усиливает впечатление уклонения." },
+                { "language": "ckb", "text": "زۆر مەترسیدارە: وەڵامەکە لە ماوەی کورتدا ڕووبەری هێرش کەم دەکاتەوە، بەڵام لە ماوەی درێژدا تێگەیشتنی خۆدزینەوە زیاد دەکات." },
+                { "language": "kmr", "text": "Pir xeternak e: bersiv di demeke kurt de qada êrişê kêm dike, lê di demeke dirêj de têgihiştina xwe-dûrxistinê zêde dike." },
+                { "language": "pl", "text": "Zbyt ryzykowne: odpowiedź krótkoterminowo zmniejsza podatność na atak, ale długoterminowo zwiększa wrażenie uniku." },
+                { "language": "ro", "text": "Prea riscant: răspunsul reduce pe termen scurt suprafața de atac, dar pe termen lung crește impresia de evitare." },
+                { "language": "sq", "text": "Shumë e rrezikshme: përgjigjja ul përkohësisht sipërfaqen e sulmit, por afatgjatë rrit përshtypjen e shmangies." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mein Vorschlag: Wir nehmen die Kritik ernst. Die zugrunde liegenden Daten belegen eine Verbesserung in einem begrenzten Bereich; unsere Formulierung konnte jedoch einen umfassenderen Eindruck erzeugen. Wir präzisieren die Aussage heute, veröffentlichen die Datengrundlage und prüfen unsere Freigabeprozesse.",
+              "translations": [
+                { "language": "en", "text": "My proposal: we take the criticism seriously. The underlying data shows an improvement in a limited area; however, our wording could create a broader impression. We will clarify the statement today, publish the data basis, and review our approval processes." },
+                { "language": "fa", "text": "پیشنهاد من: ما انتقاد را جدی می‌گیریم. داده‌های زیربنایی بهبود را در یک حوزه محدود نشان می‌دهند؛ با این حال فرمول‌بندی ما می‌توانست برداشت گسترده‌تری ایجاد کند. امروز ادعا را دقیق‌تر می‌کنیم، مبنای داده‌ها را منتشر می‌کنیم و فرایندهای تأیید خود را بررسی می‌کنیم." },
+                { "language": "ar", "text": "اقتراحي: نأخذ النقد بجدية. تظهر البيانات الأساسية تحسناً في مجال محدود؛ لكن صياغتنا كان يمكن أن تخلق انطباعاً أوسع. سنوضح التصريح اليوم، وننشر أساس البيانات، ونراجع عمليات الموافقة لدينا." },
+                { "language": "tr", "text": "Önerim: eleştiriyi ciddiye alıyoruz. Temel veriler sınırlı bir alanda iyileşme gösteriyor; ancak ifademiz daha geniş bir izlenim yaratabiliyordu. Açıklamayı bugün netleştiriyoruz, veri temelini yayımlıyoruz ve onay süreçlerimizi gözden geçiriyoruz." },
+                { "language": "ru", "text": "Мое предложение: мы серьезно относимся к критике. Базовые данные показывают улучшение в ограниченной области; однако наша формулировка могла создать более широкий эффект. Сегодня мы уточним заявление, опубликуем основу данных и проверим наши процессы согласования." },
+                { "language": "ckb", "text": "پێشنیاری من: ڕەخنەکە بە جدی وەردەگرین. داتای بنەڕەتی باشبوونێک لە بوارێکی سنوورداردا دەسەلمێنێت؛ بەڵام دەربڕینی ئێمە دەتوانرا تێگەیشتنێکی فراوانتر دروست بکات. ئەمڕۆ بانگەشەکە وردتر دەکەین، بنەمای داتاکان بڵاو دەکەینەوە و پرۆسەکانی ڕەزامەندیی خۆمان دەپشکنین." },
+                { "language": "kmr", "text": "Pêşniyara min: em rexneyê cidî digirin. Daneyên bingehîn başbûnekê di qada sînordar de nîşan didin; lê formulasyona me dikaribû bandoreke firehtir çêbike. Em îro daxuyanîyê hûrgilîtir dikin, bingeha daneyan belav dikin û prosesên pejirandinê yên xwe kontrol dikin." },
+                { "language": "pl", "text": "Moja propozycja: traktujemy krytykę poważnie. Dane bazowe potwierdzają poprawę w ograniczonym obszarze; jednak nasze sformułowanie mogło stworzyć szersze wrażenie. Dziś doprecyzujemy komunikat, opublikujemy podstawę danych i sprawdzimy nasze procesy zatwierdzania." },
+                { "language": "ro", "text": "Propunerea mea: luăm critica în serios. Datele de bază dovedesc o îmbunătățire într-un domeniu limitat; totuși formularea noastră putea crea o impresie mai amplă. Precizăm astăzi afirmația, publicăm baza de date și verificăm procesele noastre de aprobare." },
+                { "language": "sq", "text": "Propozimi im: e marrim kritikën seriozisht. Të dhënat bazë tregojnë një përmirësim në një fushë të kufizuar; megjithatë formulimi ynë mund të krijonte një përshtypje më të gjerë. Sot e saktësojmë deklaratën, publikojmë bazën e të dhënave dhe shqyrtojmë proceset tona të miratimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Formulierung ist kurz, faktisch und korrigierend, ohne unnötig dramatisch zu werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the wording is brief, factual, and corrective without becoming unnecessarily dramatic." },
+                { "language": "fa", "text": "خیلی خوب: متن کوتاه، واقع‌محور و اصلاحی است، بدون اینکه بی‌دلیل نمایشی شود." },
+                { "language": "ar", "text": "جيد جداً: الصياغة قصيرة وموضوعية وتصحيحية من دون أن تصبح درامية بلا داع." },
+                { "language": "tr", "text": "Çok iyi: ifade kısa, olgusal ve düzeltici; gereksiz dramatikleşmiyor." },
+                { "language": "ru", "text": "Очень хорошо: формулировка короткая, фактическая и корректирующая, без лишней драматизации." },
+                { "language": "ckb", "text": "زۆر باش: دەربڕینەکە کورت، ڕاستی-محەوەر و ڕاستکەرەوەیە، بێ ئەوەی بێ پێویست دراماتیکی بێت." },
+                { "language": "kmr", "text": "Pir baş: formulasyon kurt, rastîgir û sererastker e, bêyî ku bêhewce dramatîk bibe." },
+                { "language": "pl", "text": "Bardzo dobrze: sformułowanie jest krótkie, rzeczowe i korygujące, bez niepotrzebnego dramatyzowania." },
+                { "language": "ro", "text": "Foarte bine: formularea este scurtă, factuală și corectivă, fără să devină inutil dramatică." },
+                { "language": "sq", "text": "Shumë mirë: formulimi është i shkurtër, faktik dhe korrigjues, pa u bërë panevojshëm dramatik." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir bedauern, dass unsere Kommunikation missverstanden wurde, und betonen, dass Nachhaltigkeit weiterhin ein zentraler Wert unseres Unternehmens ist.",
+              "translations": [
+                { "language": "en", "text": "We regret that our communication was misunderstood and emphasize that sustainability remains a core value of our company." },
+                { "language": "fa", "text": "متأسفیم که ارتباط ما بد فهمیده شد و تأکید می‌کنیم که پایداری همچنان یکی از ارزش‌های اصلی شرکت ماست." },
+                { "language": "ar", "text": "نأسف لأن تواصلنا أسيء فهمه ونؤكد أن الاستدامة ما زالت قيمة أساسية لشركتنا." },
+                { "language": "tr", "text": "İletişimimizin yanlış anlaşılmasından üzüntü duyuyor ve sürdürülebilirliğin şirketimizin temel değeri olmaya devam ettiğini vurguluyoruz." },
+                { "language": "ru", "text": "Мы сожалеем, что наша коммуникация была неправильно понята, и подчеркиваем, что устойчивость остается ключевой ценностью нашей компании." },
+                { "language": "ckb", "text": "داخمان پێدەکەوێت کە پەیوەندییەکەمان هەڵە تێگەیشترا و جەخت دەکەینەوە کە پایداری هێشتا بەهایەکی سەرەکیی کۆمپانیاکەمانە." },
+                { "language": "kmr", "text": "Em xemgîn in ku têkiliya me şaş hate fêmkirin û tekez dikin ku domdarî hîn jî nirxeke bingehîn a şirketa me ye." },
+                { "language": "pl", "text": "Żałujemy, że nasza komunikacja została źle zrozumiana, i podkreślamy, że zrównoważony rozwój nadal jest centralną wartością naszej firmy." },
+                { "language": "ro", "text": "Regretăm că comunicarea noastră a fost înțeleasă greșit și subliniem că sustenabilitatea rămâne o valoare centrală a companiei noastre." },
+                { "language": "sq", "text": "Na vjen keq që komunikimi ynë u keqkuptua dhe theksojmë se qëndrueshmëria mbetet një vlerë qendrore e kompanisë sonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu glatt: Die Antwort klingt professionell, vermeidet aber konkrete Daten, Korrektur und überprüfbare Maßnahmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too polished: the response sounds professional but avoids concrete data, correction, and verifiable measures." },
+                { "language": "fa", "text": "بیش از حد صیقلی است: پاسخ حرفه‌ای به نظر می‌رسد، اما از داده مشخص، اصلاح و اقدام قابل بررسی دوری می‌کند." },
+                { "language": "ar", "text": "مصقولة أكثر من اللازم: تبدو الإجابة مهنية لكنها تتجنب البيانات المحددة والتصحيح والإجراءات القابلة للتحقق." },
+                { "language": "tr", "text": "Çok cilalı: cevap profesyonel duyuluyor, ama somut veri, düzeltme ve denetlenebilir önlemlerden kaçınıyor." },
+                { "language": "ru", "text": "Слишком сглаженно: ответ звучит профессионально, но избегает конкретных данных, корректировки и проверяемых мер." },
+                { "language": "ckb", "text": "زۆر جوانکراوە: وەڵامەکە پیشەیی دەنگ دەدات، بەڵام لە داتای دیاریکراو، ڕاستکردنەوە و هەنگاوی قابل پشکنین دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Pir şûştî ye: bersiv profesyonel tê bihîstin, lê ji daneyên konkret, sererastkirin û pîvanên kontrolbar dûr dikeve." },
+                { "language": "pl", "text": "Zbyt wygładzone: odpowiedź brzmi profesjonalnie, ale omija konkretne dane, korektę i weryfikowalne działania." },
+                { "language": "ro", "text": "Prea lustruit: răspunsul sună profesional, dar evită datele concrete, corecția și măsurile verificabile." },
+                { "language": "sq", "text": "Shumë e lëmuar: përgjigjja tingëllon profesionale, por shmang të dhënat konkrete, korrigjimin dhe masat e verifikueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann schließen wir so: Bis 16 Uhr gibt es eine freigegebene Kernbotschaft, eine kurze Fragen-und-Antworten-Liste für Vertrieb und Service sowie eine klare Zuständigkeit für Rückfragen. Niemand improvisiert eigene Bewertungen; neue Fakten laufen über die Kommunikationsleitung.",
+              "translations": [
+                { "language": "en", "text": "Then we will close like this: by 4 p.m. there will be an approved core message, a short question-and-answer list for sales and service, and clear responsibility for follow-up questions. Nobody improvises their own assessments; new facts go through the communications lead." },
+                { "language": "fa", "text": "پس این‌طور جمع‌بندی می‌کنیم: تا ساعت ۱۶ یک پیام اصلی تأییدشده، یک فهرست کوتاه پرسش و پاسخ برای فروش و خدمات، و مسئولیت روشن برای پرسش‌های بعدی آماده می‌شود. هیچ‌کس ارزیابی شخصی بداهه نمی‌گوید؛ واقعیت‌های جدید از مسیر مسئول ارتباطات عبور می‌کنند." },
+                { "language": "ar", "text": "إذن نختتم هكذا: حتى الساعة الرابعة ستكون هناك رسالة أساسية معتمدة، وقائمة قصيرة من الأسئلة والأجوبة للمبيعات والخدمة، ومسؤولية واضحة عن الاستفسارات اللاحقة. لا يرتجل أحد تقييماته الخاصة؛ والحقائق الجديدة تمر عبر مسؤول التواصل." },
+                { "language": "tr", "text": "O halde şöyle kapatıyoruz: saat 16'ya kadar onaylanmış bir ana mesaj, satış ve hizmet için kısa bir soru-cevap listesi ve sonraki sorular için net bir sorumluluk olacak. Kimse kendi değerlendirmelerini doğaçlama yapmayacak; yeni gerçekler iletişim sorumlusu üzerinden ilerleyecek." },
+                { "language": "ru", "text": "Тогда завершаем так: до 16:00 будет утвержденное ключевое сообщение, короткий список вопросов и ответов для продаж и сервиса, а также четкая ответственность за последующие вопросы. Никто не импровизирует собственные оценки; новые факты проходят через руководство коммуникаций." },
+                { "language": "ckb", "text": "کەواتە ئاوا کۆتایی پێدەهێنین: تا کاتژمێر ١٦ پەیامی سەرەکیی پەسەندکراو، لیستی کورتی پرسیار و وەڵام بۆ فرۆشتن و خزمەتگوزاری، و بەرپرسیاریەتیی ڕوون بۆ پرسیارە دواترەکان دەبێت. هیچ کەسێک هەڵسەنگاندنی خۆی لەخۆوە ناکات؛ ڕاستییە نوێیەکان لە ڕێگەی بەرپرسی پەیوەندییەکانەوە دەچن." },
+                { "language": "kmr", "text": "Wê demê em wiha diqedînin: heta saet 16ê dê peyama bingehîn a pejirandî, lîsteyeke kurt a pirs û bersivan ji bo firotan û xizmetê, û berpirsiyariya zelal ji bo pirsên din hebe. Kes nirxandinên xwe ji xwe ve nake; rastiyên nû di rêya berpirsê têkiliyê re derbas dibin." },
+                { "language": "pl", "text": "W takim razie zamykamy tak: do godziny 16 będzie zatwierdzony komunikat główny, krótka lista pytań i odpowiedzi dla sprzedaży oraz obsługi, a także jasna odpowiedzialność za dalsze pytania. Nikt nie improwizuje własnych ocen; nowe fakty przechodzą przez kierownika komunikacji." },
+                { "language": "ro", "text": "Atunci încheiem astfel: până la ora 16 va exista un mesaj central aprobat, o listă scurtă de întrebări și răspunsuri pentru vânzări și servicii, precum și o responsabilitate clară pentru întrebările ulterioare. Nimeni nu improvizează evaluări proprii; faptele noi trec prin responsabilul de comunicare." },
+                { "language": "sq", "text": "Atëherë e mbyllim kështu: deri në orën 16 do të ketë një mesazh kryesor të miratuar, një listë të shkurtër pyetje-përgjigje për shitjet dhe shërbimin, si edhe përgjegjësi të qartë për pyetjet pasuese. Askush nuk improvizon vlerësime personale; faktet e reja kalojnë përmes përgjegjësit të komunikimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Der Abschluss verhindert neue widersprüchliche Versionen und schafft interne Disziplin.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the closing prevents new contradictory versions and creates internal discipline." },
+                { "language": "fa", "text": "خیلی خوب: جمع‌بندی از روایت‌های متناقض تازه جلوگیری می‌کند و انضباط داخلی می‌سازد." },
+                { "language": "ar", "text": "جيد جداً: تمنع الخاتمة نسخاً متناقضة جديدة وتخلق انضباطاً داخلياً." },
+                { "language": "tr", "text": "Çok iyi: kapanış yeni çelişkili versiyonları önler ve iç disiplin oluşturur." },
+                { "language": "ru", "text": "Очень хорошо: завершение предотвращает новые противоречивые версии и создает внутреннюю дисциплину." },
+                { "language": "ckb", "text": "زۆر باش: کۆتاییەکە ڕێ لە وەشانە دژ بەیەکی نوێ دەگرێت و دیسیپلینی ناوخۆ دروست دەکات." },
+                { "language": "kmr", "text": "Pir baş: dawî rê li guhertoyên nû yên dijber digire û dîsîplîna hundir çêdike." },
+                { "language": "pl", "text": "Bardzo dobrze: zakończenie zapobiega nowym sprzecznym wersjom i tworzy wewnętrzną dyscyplinę." },
+                { "language": "ro", "text": "Foarte bine: închiderea previne noi versiuni contradictorii și creează disciplină internă." },
+                { "language": "sq", "text": "Shumë mirë: mbyllja parandalon versione të reja kontradiktore dhe krijon disiplinë të brendshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann informieren wir alle Teams, dass sie bei Fragen auf die heutige Stellungnahme verweisen sollen.",
+              "translations": [
+                { "language": "en", "text": "Then we will inform all teams that they should refer to today's statement if questions arise." },
+                { "language": "fa", "text": "پس به همه تیم‌ها اطلاع می‌دهیم که در صورت پرسش، به بیانیه امروز ارجاع دهند." },
+                { "language": "ar", "text": "إذن نبلغ جميع الفرق بأن يحيلوا إلى بيان اليوم عند وجود أسئلة." },
+                { "language": "tr", "text": "O zaman tüm ekiplere, sorular olduğunda bugünkü açıklamaya yönlendirmeleri gerektiğini bildiririz." },
+                { "language": "ru", "text": "Тогда мы сообщим всем командам, что при вопросах они должны ссылаться на сегодняшнее заявление." },
+                { "language": "ckb", "text": "کەواتە هەموو تیمەکان ئاگادار دەکەینەوە کە لە کاتی پرسیاردا ئاماژە بە لێدوانی ئەمڕۆ بکەن." },
+                { "language": "kmr", "text": "Wê demê em hemû tîman agahdar dikin ku dema pirs hebin divê wan bi daxuyaniya îro ve girê bidin." },
+                { "language": "pl", "text": "Wtedy poinformujemy wszystkie zespoły, że w razie pytań mają odsyłać do dzisiejszego stanowiska." },
+                { "language": "ro", "text": "Atunci informăm toate echipele că, în cazul întrebărilor, trebuie să trimită la declarația de astăzi." },
+                { "language": "sq", "text": "Atëherë i informojmë të gjitha ekipet që në rast pyetjesh t'i referohen deklaratës së sotme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unvollständig: Die Antwort hat keine freigegebene Kernbotschaft, keine Fragenliste, keine Zuständigkeit und keinen Umgang mit neuen Fakten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too incomplete: the response has no approved core message, no question list, no responsibility, and no handling of new facts." },
+                { "language": "fa", "text": "بیش از حد ناقص: پاسخ نه پیام اصلی تأییدشده دارد، نه فهرست پرسش‌ها، نه مسئولیت مشخص، و نه شیوه برخورد با واقعیت‌های جدید." },
+                { "language": "ar", "text": "ناقصة أكثر من اللازم: لا تتضمن الإجابة رسالة أساسية معتمدة ولا قائمة أسئلة ولا مسؤولية ولا طريقة للتعامل مع حقائق جديدة." },
+                { "language": "tr", "text": "Çok eksik: cevapta onaylanmış ana mesaj, soru listesi, sorumluluk ve yeni gerçeklerle başa çıkma yolu yok." },
+                { "language": "ru", "text": "Слишком неполно: в ответе нет утвержденного ключевого сообщения, списка вопросов, ответственности и способа работы с новыми фактами." },
+                { "language": "ckb", "text": "زۆر ناتەواوە: وەڵامەکە نە پەیامی سەرەکی پەسەندکراو هەیە، نە لیستی پرسیار، نە بەرپرسیاریەتی، و نە مامەڵەکردن لەگەڵ ڕاستیی نوێ." },
+                { "language": "kmr", "text": "Pir netemam e: di bersivê de ne peyama bingehîn a pejirandî heye, ne lîsteya pirsan, ne berpirsiyarî û ne awayê mijûlbûna bi rastiyên nû." },
+                { "language": "pl", "text": "Zbyt niepełne: odpowiedź nie ma zatwierdzonego komunikatu głównego, listy pytań, odpowiedzialności ani sposobu postępowania z nowymi faktami." },
+                { "language": "ro", "text": "Prea incomplet: răspunsul nu are mesaj central aprobat, listă de întrebări, responsabilitate și nici gestionarea faptelor noi." },
+                { "language": "sq", "text": "Shumë e paplotë: përgjigjja nuk ka mesazh kryesor të miratuar, listë pyetjesh, përgjegjësi dhe as mënyrë për të trajtuar faktet e reja." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "structure",
+          "text": "C2-Kommunikation trennt hier nicht nur richtig und falsch, sondern auch Beleglage, Wirkung und korrigierbare Verantwortung.",
+          "translations": [
+            { "language": "en", "text": "C2 communication here separates not only right and wrong, but also evidence, impact, and correctable responsibility." },
+            { "language": "fa", "text": "ارتباط سطح C2 در اینجا فقط درست و غلط را جدا نمی‌کند، بلکه وضعیت شواهد، اثر و مسئولیت قابل اصلاح را هم جدا می‌کند." },
+            { "language": "ar", "text": "تواصل مستوى C2 هنا لا يفصل بين الصحيح والخطأ فقط، بل أيضاً بين حالة الأدلة والأثر والمسؤولية القابلة للتصحيح." },
+            { "language": "tr", "text": "Burada C2 iletişimi yalnızca doğru ve yanlışı değil, kanıt durumu, etki ve düzeltilebilir sorumluluğu da ayırır." },
+            { "language": "ru", "text": "Коммуникация уровня C2 здесь разделяет не только верное и неверное, но и доказательную базу, эффект и исправляемую ответственность." },
+            { "language": "ckb", "text": "پەیوەندی ئاستی C2 لێرە تەنها ڕاست و هەڵە جیا ناکاتەوە، بەڵکو دۆخی بەڵگە، کاریگەری و بەرپرسیاریەتی قابل ڕاستکردنەوەش جیا دەکاتەوە." },
+            { "language": "kmr", "text": "Têkiliya asta C2 li vir ne tenê rast û şaş ji hev veqetîne, lê rewşa belgeyan, bandor û berpirsiyariya sererastbar jî." },
+            { "language": "pl", "text": "Komunikacja C2 oddziela tutaj nie tylko prawdę i fałsz, lecz także stan dowodów, efekt i odpowiedzialność możliwą do korekty." },
+            { "language": "ro", "text": "Comunicarea C2 separă aici nu doar corectul și greșitul, ci și starea dovezilor, efectul și responsabilitatea corectabilă." },
+            { "language": "sq", "text": "Komunikimi C2 këtu nuk ndan vetëm të saktën dhe të gabuarën, por edhe gjendjen e provave, efektin dhe përgjegjësinë e korrigjueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "nuance",
+          "text": "Ein pauschales Dementi kann in einer Reputationskrise härter wirken als eine präzise begrenzte Korrektur.",
+          "translations": [
+            { "language": "en", "text": "In a reputational crisis, a blanket denial can sound harsher than a precisely limited correction." },
+            { "language": "fa", "text": "در بحران اعتباری، تکذیب کلی می‌تواند سخت‌تر از یک اصلاح دقیق و محدود به نظر برسد." },
+            { "language": "ar", "text": "في أزمة السمعة، قد يبدو النفي الشامل أقسى من تصحيح محدود بدقة." },
+            { "language": "tr", "text": "Bir itibar krizinde genel bir yalanlama, kesin biçimde sınırlanmış bir düzeltmeden daha sert duyulabilir." },
+            { "language": "ru", "text": "В репутационном кризисе общее опровержение может звучать жестче, чем точно ограниченная корректировка." },
+            { "language": "ckb", "text": "لە قەیرانی ناوبانگدا، ڕەتکردنەوەی گشتی دەتوانێت توندتر لە ڕاستکردنەوەیەکی بە وردی سنووردار دەنگ بدات." },
+            { "language": "kmr", "text": "Di qeyrana navûdengê de, redkirineke giştî dikare ji sererastkirineke bi hûrgilî sînorkirî tundtir were bihîstin." },
+            { "language": "pl", "text": "W kryzysie reputacyjnym ogólne dementi może brzmieć ostrzej niż precyzyjnie ograniczona korekta." },
+            { "language": "ro", "text": "Într-o criză de reputație, o dezmințire generală poate suna mai dur decât o corecție precis limitată." },
+            { "language": "sq", "text": "Në një krizë reputacioni, një mohim i përgjithshëm mund të tingëllojë më ashpër se një korrigjim i kufizuar saktë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "word-choice",
+          "text": "Belastete Begriffe müssen nicht ignoriert werden; man kann ihre Sache beantworten, ohne sie als Eigenetikett zu übernehmen.",
+          "translations": [
+            { "language": "en", "text": "Loaded terms do not have to be ignored; you can answer their substance without adopting them as self-labels." },
+            { "language": "fa", "text": "لازم نیست اصطلاحات بارگذاری‌شده نادیده گرفته شوند؛ می‌توان به محتوای آن‌ها پاسخ داد، بدون اینکه آن‌ها را به‌عنوان برچسب خود پذیرفت." },
+            { "language": "ar", "text": "لا يجب تجاهل المصطلحات المشحونة؛ يمكن الرد على مضمونها من دون تبنيها كوسوم ذاتية." },
+            { "language": "tr", "text": "Yüklü terimler görmezden gelinmek zorunda değildir; onların özüne yanıt verilebilir, ama öz etiket olarak benimsenmeyebilir." },
+            { "language": "ru", "text": "Нагруженные термины не обязательно игнорировать; можно ответить на их суть, не принимая их как собственные метки." },
+            { "language": "ckb", "text": "زاراوە بارکراوەکان پێویست ناکات پشتگوێ بخرێن؛ دەتوانرێت وەڵامی ناوەڕۆکیان بدرێتەوە، بێ ئەوەی وەک پێناسەی خۆ وەربگیرێن." },
+            { "language": "kmr", "text": "Têgehên barkirî ne hewce ye bêne paşguhkirin; mirov dikare bersiva naveroka wan bide bêyî ku wan wekî etîketa xwe qebûl bike." },
+            { "language": "pl", "text": "Obciążonych terminów nie trzeba ignorować; można odpowiedzieć na ich treść, nie przyjmując ich jako własnych etykiet." },
+            { "language": "ro", "text": "Termenii încărcați nu trebuie ignorați; li se poate răspunde pe fond fără a-i prelua ca etichete proprii." },
+            { "language": "sq", "text": "Termat e ngarkuar nuk duhen domosdoshmërisht injoruar; mund t'i përgjigjesh thelbit të tyre pa i marrë si etiketa të vetes." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "public-response",
+          "text": "Eine glaubwürdige erste Stellungnahme enthält Kritikannahme, begrenzte Faktenlage, Korrektur und überprüfbare Maßnahme.",
+          "translations": [
+            { "language": "en", "text": "A credible initial statement contains acceptance of criticism, limited facts, correction, and a verifiable measure." },
+            { "language": "fa", "text": "یک بیانیه اولیه معتبر شامل پذیرش انتقاد، وضعیت محدود واقعیت‌ها، اصلاح و اقدام قابل بررسی است." },
+            { "language": "ar", "text": "يتضمن البيان الأول الموثوق قبول النقد، وحقائق محدودة، وتصحيحاً، وإجراءً قابلاً للتحقق." },
+            { "language": "tr", "text": "Güvenilir bir ilk açıklama, eleştirinin kabulünü, sınırlı olguları, düzeltmeyi ve denetlenebilir bir önlemi içerir." },
+            { "language": "ru", "text": "Достоверное первичное заявление содержит принятие критики, ограниченную фактическую базу, корректировку и проверяемую меру." },
+            { "language": "ckb", "text": "لێدوانێکی یەکەمی باوەڕپێکراو ناسینی ڕەخنە، دۆخی سنوورداری ڕاستییەکان، ڕاستکردنەوە و هەنگاوی قابل پشکنین لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Daxuyaniyeke destpêkê ya pêbawer qebûlkirina rexneyê, rastiyên sînordar, sererastkirin û pîvaneke kontrolbar dihewîne." },
+            { "language": "pl", "text": "Wiarygodne pierwsze stanowisko zawiera przyjęcie krytyki, ograniczony stan faktów, korektę i weryfikowalne działanie." },
+            { "language": "ro", "text": "O primă declarație credibilă conține acceptarea criticii, fapte limitate, corecție și o măsură verificabilă." },
+            { "language": "sq", "text": "Një deklaratë e parë e besueshme përmban pranimin e kritikës, fakte të kufizuara, korrigjim dhe një masë të verifikueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "governance",
+          "text": "Reputationsschutz endet nicht mit einem Satz nach außen; intern braucht es eine freigegebene Linie und klare Zuständigkeit.",
+          "translations": [
+            { "language": "en", "text": "Reputation protection does not end with one external sentence; internally it requires an approved line and clear responsibility." },
+            { "language": "fa", "text": "حفاظت از اعتبار با یک جمله بیرونی تمام نمی‌شود؛ در داخل به خط تأییدشده و مسئولیت روشن نیاز دارد." },
+            { "language": "ar", "text": "حماية السمعة لا تنتهي بجملة خارجية واحدة؛ داخلياً تحتاج إلى خط معتمد ومسؤولية واضحة." },
+            { "language": "tr", "text": "İtibar koruması dışarıya yönelik tek bir cümleyle bitmez; içeride onaylanmış bir çizgi ve net sorumluluk gerekir." },
+            { "language": "ru", "text": "Защита репутации не заканчивается одной внешней фразой; внутри нужна утвержденная линия и четкая ответственность." },
+            { "language": "ckb", "text": "پاراستنی ناوبانگ بە ڕستەیەکی دەرەکی کۆتایی نایەت؛ لە ناوخۆدا پێویستی بە هێڵێکی پەسەندکراو و بەرپرسیاریەتیی ڕوون هەیە." },
+            { "language": "kmr", "text": "Parastina navûdengê bi hevokeke derve naqede; li hundir hewce bi xeteke pejirandî û berpirsiyariya zelal heye." },
+            { "language": "pl", "text": "Ochrona reputacji nie kończy się na jednym zdaniu na zewnątrz; wewnętrznie potrzebuje zatwierdzonej linii i jasnej odpowiedzialności." },
+            { "language": "ro", "text": "Protejarea reputației nu se termină cu o frază externă; intern are nevoie de o linie aprobată și responsabilitate clară." },
+            { "language": "sq", "text": "Mbrojtja e reputacionit nuk përfundon me një fjali të jashtme; brenda kërkon një linjë të miratuar dhe përgjegjësi të qartë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "reputation-response-meeting",
+          "placement": "detail-header",
+          "purpose": "Illustrate a professional communications meeting about a public criticism response without showing real brands or media logos.",
+          "altText": "Ein ruhiger Besprechungsraum mit drei Erwachsenen, einem Laptop ohne Logo und neutralen Notizen zu einer Kommunikationslinie.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm meeting room with three adults, a laptop without a logo, and neutral notes about a communication line." },
+            { "language": "fa", "text": "یک اتاق جلسه آرام با سه بزرگسال، یک لپ‌تاپ بدون نشان تجاری و یادداشت‌های خنثی درباره خط ارتباطی." },
+            { "language": "ar", "text": "غرفة اجتماع هادئة فيها ثلاثة بالغين وحاسوب محمول بلا شعار وملاحظات محايدة حول خط تواصل." },
+            { "language": "tr", "text": "Üç yetişkinin bulunduğu sakin bir toplantı odası, logosuz bir dizüstü bilgisayar ve iletişim çizgisine dair nötr notlar." },
+            { "language": "ru", "text": "Спокойная переговорная с тремя взрослыми, ноутбуком без логотипа и нейтральными заметками о коммуникационной линии." },
+            { "language": "ckb", "text": "ژووری کۆبوونەوەیەکی ئارام لەگەڵ سێ گەورەسال، لاپتۆپێکی بێ لوگۆ و تێبینیی بێلایەن دەربارەی هێڵی پەیوەندی." },
+            { "language": "kmr", "text": "Jûreke civînê ya aram bi sê mezinan, laptopê bê logo û notên bêalî li ser xeta têkiliyê." },
+            { "language": "pl", "text": "Spokojna sala spotkań z trzema dorosłymi, laptopem bez logo i neutralnymi notatkami o linii komunikacji." },
+            { "language": "ro", "text": "O sală de ședințe calmă cu trei adulți, un laptop fără logo și note neutre despre o linie de comunicare." },
+            { "language": "sq", "text": "Një sallë e qetë takimi me tre të rritur, një laptop pa logo dhe shënime neutrale për një linjë komunikimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, professional communications meeting in a neutral German office, three diverse adults discussing a public criticism response, laptop without logo, neutral notes, no readable text, no brand names, no private data, accessible composition, calm serious tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

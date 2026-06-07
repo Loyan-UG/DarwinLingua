@@ -1,0 +1,816 @@
+{
+  "packageId": "roleplays-c1-core-77-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 77 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 77",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ein-politisches-thema-ausgewogen-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Ein politisches Thema ausgewogen diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing a political topic in a balanced way" },
+        { "language": "fa", "text": "بحث متوازن درباره یک موضوع سیاسی" },
+        { "language": "ar", "text": "مناقشة موضوع سياسي بطريقة متوازنة" },
+        { "language": "tr", "text": "Siyasi bir konuyu dengeli biçimde tartışmak" },
+        { "language": "ru", "text": "Сбалансированное обсуждение политической темы" },
+        { "language": "ckb", "text": "گفتوگۆی هاوسەنگ دەربارەی بابەتێکی سیاسی" },
+        { "language": "kmr", "text": "Gotûbêja hevseng li ser mijareke siyasî" },
+        { "language": "pl", "text": "Wyważona dyskusja na temat polityczny" },
+        { "language": "ro", "text": "Discutarea echilibrată a unui subiect politic" },
+        { "language": "sq", "text": "Diskutim i balancuar për një temë politike" }
+      ],
+      "description": "In einer formalen Prüfungsdiskussion sprechen Sie über die Frage, ob das Wahlalter auf 16 Jahre gesenkt werden sollte. Sie vermeiden Schlagworte und wägen demokratische Teilhabe gegen politische Reife ab.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a formal exam discussion, you talk about whether the voting age should be lowered to 16. You avoid slogans and weigh democratic participation against political maturity." },
+        { "language": "fa", "text": "در یک بحث رسمی امتحانی درباره این صحبت می‌کنید که آیا سن رأی دادن باید به ۱۶ سال کاهش یابد یا نه. از شعار پرهیز می‌کنید و مشارکت دموکراتیک را در برابر بلوغ سیاسی می‌سنجید." },
+        { "language": "ar", "text": "في نقاش امتحاني رسمي تتحدث عن سؤال ما إذا كان ينبغي خفض سن التصويت إلى 16 عاماً. تتجنب الشعارات وتوازن بين المشاركة الديمقراطية والنضج السياسي." },
+        { "language": "tr", "text": "Resmi bir sınav tartışmasında oy verme yaşının 16'ya düşürülüp düşürülmemesi hakkında konuşursunuz. Sloganlardan kaçınır, demokratik katılımı siyasi olgunlukla tartarsınız." },
+        { "language": "ru", "text": "В формальной экзаменационной дискуссии Вы говорите о том, следует ли снизить возраст голосования до 16 лет. Вы избегаете лозунгов и взвешиваете демократическое участие и политическую зрелость." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی فەرمیی تاقیکردنەوەدا باس لەوە دەکەیت ئایا تەمەنی دەنگدان دەبێت بۆ ١٦ ساڵ کەم بکرێتەوە یان نا. لە دروشم دوور دەکەویتەوە و بەشداری دیموکراتی لە بەرامبەر پێگەیشتوویی سیاسی هەڵدەسەنگێنیت." },
+        { "language": "kmr", "text": "Di gotûbêjeke fermî ya azmûnê de hûn li ser vê pirsê diaxivin ka divê temenê dengdanê were daxistin heta 16 salî an na. Hûn ji dirûşman dûr dimînin û beşdariya demokratîk bi gihîştina siyasî re dipîvin." },
+        { "language": "pl", "text": "W formalnej dyskusji egzaminacyjnej rozmawia Pan/Pani o tym, czy wiek wyborczy powinien zostać obniżony do 16 lat. Unika Pan/Pani haseł i waży udział demokratyczny wobec dojrzałości politycznej." },
+        { "language": "ro", "text": "Într-o discuție formală de examen vorbiți despre întrebarea dacă vârsta de vot ar trebui coborâtă la 16 ani. Evitați sloganurile și cântăriți participarea democratică în raport cu maturitatea politică." },
+        { "language": "sq", "text": "Në një diskutim formal provimi flisni për pyetjen nëse mosha e votimit duhet ulur në 16 vjeç. Shmangni sloganet dhe peshoni pjesëmarrjen demokratike kundrejt pjekurisë politike." }
+      ],
+      "learnerGoal": "Ein politisches Thema differenziert diskutieren: Begriffe klären, beide Seiten fair darstellen, Gegenargumente aufnehmen, Bedingungen nennen und eine begründete Schlussposition formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss a political topic in a differentiated way: clarify terms, present both sides fairly, take up counterarguments, name conditions, and formulate a justified final position." },
+        { "language": "fa", "text": "یک موضوع سیاسی را تفکیک‌شده بحث کنید: مفاهیم را روشن کنید، هر دو طرف را منصفانه نشان دهید، استدلال‌های مخالف را بگیرید، شرط‌ها را نام ببرید و موضع پایانی مستدل بسازید." },
+        { "language": "ar", "text": "ناقش موضوعاً سياسياً بطريقة متمايزة: وضح المفاهيم، واعرض الجانبين بإنصاف، وتناول الحجج المضادة، واذكر الشروط، وصغ موقفاً ختامياً مبرراً." },
+        { "language": "tr", "text": "Siyasi bir konuyu ayrıntılı biçimde tartışın: kavramları açıklayın, iki tarafı adil biçimde sunun, karşı argümanları ele alın, koşulları belirtin ve gerekçeli bir sonuç görüşü formüle edin." },
+        { "language": "ru", "text": "Дифференцированно обсудить политическую тему: прояснить понятия, честно представить обе стороны, учесть контраргументы, назвать условия и сформулировать обоснованную итоговую позицию." },
+        { "language": "ckb", "text": "بابەتێکی سیاسی بە جیاوازکردنەوە گفتوگۆ بکە: چەمکەکان ڕوون بکە، هەردوو لا بە دادپەروەرانە پیشان بدە، بەڵگەی بەرامبەر وەربگرە، مەرجەکان ناو ببە و هەڵوێستی کۆتایی بە هۆکار داڕێژە." },
+        { "language": "kmr", "text": "Mijareke siyasî bi cudakirinê gotûbêj bikin: têgehan zelal bikin, her du aliyan bi dadperwerî nîşan bidin, argumanên dijber bigirin, mercan nav bikin û helwesta dawî ya hincetkirî formule bikin." },
+        { "language": "pl", "text": "Omówić temat polityczny w sposób zniuansowany: wyjaśnić pojęcia, uczciwie przedstawić obie strony, podjąć kontrargumenty, nazwać warunki i sformułować uzasadnione stanowisko końcowe." },
+        { "language": "ro", "text": "Discutați diferențiat un subiect politic: clarificați conceptele, prezentați corect ambele părți, preluați contraargumentele, numiți condițiile și formulați o poziție finală justificată." },
+        { "language": "sq", "text": "Diskutoni në mënyrë të diferencuar një temë politike: qartësoni termat, paraqitni drejt të dyja anët, merrni kundërargumentet, përmendni kushtet dhe formuloni një qëndrim përfundimtar të arsyetuar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 77,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsteilnehmer/in A",
+          "translations": [
+            { "language": "en", "text": "Discussion participant A" },
+            { "language": "fa", "text": "شرکت‌کننده بحث A" },
+            { "language": "ar", "text": "مشارك في النقاش A" },
+            { "language": "tr", "text": "Tartışma katılımcısı A" },
+            { "language": "ru", "text": "Участник дискуссии A" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ A" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê A" },
+            { "language": "pl", "text": "Uczestnik dyskusji A" },
+            { "language": "ro", "text": "Participant la discuție A" },
+            { "language": "sq", "text": "Pjesëmarrës diskutimi A" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Diskussionsteilnehmer/in B",
+          "translations": [
+            { "language": "en", "text": "Discussion participant B" },
+            { "language": "fa", "text": "شرکت‌کننده بحث B" },
+            { "language": "ar", "text": "مشارك في النقاش B" },
+            { "language": "tr", "text": "Tartışma katılımcısı B" },
+            { "language": "ru", "text": "Участник дискуссии B" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ B" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê B" },
+            { "language": "pl", "text": "Uczestnik dyskusji B" },
+            { "language": "ro", "text": "Participant la discuție B" },
+            { "language": "sq", "text": "Pjesëmarrës diskutimi B" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Ich finde, das Wahlalter sollte auf 16 gesenkt werden. Junge Menschen sind von politischen Entscheidungen betroffen, also sollten sie auch mitentscheiden dürfen.",
+          "translations": [
+            { "language": "en", "text": "I think the voting age should be lowered to 16. Young people are affected by political decisions, so they should also be allowed to help decide." },
+            { "language": "fa", "text": "به نظر من سن رأی دادن باید به ۱۶ کاهش یابد. جوانان از تصمیم‌های سیاسی تأثیر می‌گیرند، پس باید اجازه داشته باشند در تصمیم‌گیری هم نقش داشته باشند." },
+            { "language": "ar", "text": "أرى أن سن التصويت ينبغي أن يخفض إلى 16 عاماً. الشباب يتأثرون بالقرارات السياسية، لذلك يجب أن يسمح لهم بالمشاركة في اتخاذ القرار." },
+            { "language": "tr", "text": "Bence oy verme yaşı 16'ya düşürülmeli. Gençler siyasi kararlardan etkileniyor, bu yüzden karar vermeye de katılabilmeliler." },
+            { "language": "ru", "text": "Я считаю, что возраст голосования следует снизить до 16 лет. Молодые люди затронуты политическими решениями, поэтому они тоже должны иметь право участвовать в принятии решений." },
+            { "language": "ckb", "text": "من پێم وایە تەمەنی دەنگدان دەبێت بۆ ١٦ کەم بکرێتەوە. گەنجان لە بڕیارە سیاسییەکان کاریگەر دەبن، کەواتە دەبێت مافی بەشداری لە بڕیاردانیشیان هەبێت." },
+            { "language": "kmr", "text": "Ez bawer dikim ku divê temenê dengdanê were daxistin heta 16 salî. Ciwan ji biryarên siyasî bandor dibînin, ji ber vê yekê divê destûr hebe ku ew jî beşdarî biryardanê bibin." },
+            { "language": "pl", "text": "Uważam, że wiek wyborczy powinien zostać obniżony do 16 lat. Młodzi ludzie są dotknięci decyzjami politycznymi, więc powinni też móc współdecydować." },
+            { "language": "ro", "text": "Cred că vârsta de vot ar trebui coborâtă la 16 ani. Tinerii sunt afectați de deciziile politice, deci ar trebui să poată și ei participa la decizie." },
+            { "language": "sq", "text": "Mendoj se mosha e votimit duhet ulur në 16 vjeç. Të rinjtë preken nga vendimet politike, prandaj duhet të lejohen edhe të bashkëvendosin." }
+          ],
+          "function": "state-position",
+          "toneNote": "clear opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Der Gedanke der Beteiligung ist überzeugend. Ich würde ihn aber nicht allein entscheiden lassen, sondern zusätzlich fragen, welche politische Bildung und welche Verantwortung mit dem Wahlrecht verbunden sind.",
+          "translations": [
+            { "language": "en", "text": "The idea of participation is convincing. But I would not let it decide the issue on its own; I would also ask what political education and what responsibility are connected with the right to vote." },
+            { "language": "fa", "text": "ایده مشارکت قانع‌کننده است. اما من اجازه نمی‌دهم این ایده به‌تنهایی مسئله را تعیین کند؛ علاوه بر آن می‌پرسم چه آموزش سیاسی و چه مسئولیتی با حق رأی مرتبط است." },
+            { "language": "ar", "text": "فكرة المشاركة مقنعة. لكنني لا أجعلها وحدها تحسم المسألة، بل أسأل أيضاً أي تعليم سياسي وأي مسؤولية يرتبطان بحق التصويت." },
+            { "language": "tr", "text": "Katılım düşüncesi ikna edici. Ancak konuyu tek başına onun belirlemesine izin vermezdim; ayrıca oy hakkıyla hangi siyasi eğitimin ve hangi sorumluluğun bağlantılı olduğunu sorardım." },
+            { "language": "ru", "text": "Идея участия убедительна. Но я бы не позволил(а) ей одной решать вопрос, а дополнительно спросил(а), какое политическое образование и какая ответственность связаны с избирательным правом." },
+            { "language": "ckb", "text": "بیرۆکەی بەشداری قەناعەتپێکەرە. بەڵام من ناهێڵم ئەو بە تەنها بابەتەکە بڕیار بدات، بەڵکو هەروەها دەپرسیم کام پەروەردەی سیاسی و کام بەرپرسیاری لەگەڵ مافی دەنگدان پەیوەستە." },
+            { "language": "kmr", "text": "Ramanê beşdariyê qanîker e. Lê ez nahêlim ku ew bi tenê mijarê biryar bide; ez herwiha dipirsim kîjan perwerdeya siyasî û kîjan berpirsiyarî bi mafê dengdanê ve girêdayî ne." },
+            { "language": "pl", "text": "Idea uczestnictwa jest przekonująca. Nie pozwolił(a)bym jednak, aby sama rozstrzygała sprawę; zapytał(a)bym dodatkowo, jaka edukacja polityczna i jaka odpowiedzialność wiążą się z prawem wyborczym." },
+            { "language": "ro", "text": "Ideea participării este convingătoare. Dar nu aș lăsa-o să decidă singură problema; aș întreba în plus ce educație politică și ce responsabilitate sunt legate de dreptul de vot." },
+            { "language": "sq", "text": "Ideja e pjesëmarrjes është bindëse. Por nuk do ta lija të vendoste e vetme çështjen; do të pyesja edhe çfarë edukimi politik dhe çfarë përgjegjësie lidhen me të drejtën e votës." }
+          ],
+          "function": "balance-first-argument",
+          "toneNote": "acknowledge and qualify"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Aber viele Erwachsene informieren sich auch kaum. Ist es dann fair, gerade Jugendlichen mangelnde Reife vorzuhalten?",
+          "translations": [
+            { "language": "en", "text": "But many adults hardly inform themselves either. Is it fair, then, to accuse young people in particular of lacking maturity?" },
+            { "language": "fa", "text": "اما بسیاری از بزرگسالان هم به‌ندرت خود را آگاه می‌کنند. پس آیا منصفانه است که دقیقاً جوانان را به کمبود بلوغ متهم کنیم؟" },
+            { "language": "ar", "text": "لكن كثيراً من البالغين لا يطلعون أنفسهم جيداً أيضاً. هل من العدل إذن أن نأخذ على الشباب تحديداً نقص النضج؟" },
+            { "language": "tr", "text": "Ama birçok yetişkin de neredeyse hiç bilgi edinmiyor. O zaman özellikle gençlerin olgunluk eksikliğiyle suçlanması adil mi?" },
+            { "language": "ru", "text": "Но многие взрослые тоже почти не информируются. Справедливо ли тогда упрекать именно молодежь в недостаточной зрелости?" },
+            { "language": "ckb", "text": "بەڵام زۆرێک لە پێگەیشتووانیش زۆر کەم خۆیان ئاگادار دەکەنەوە. کەواتە ئایا دادپەروەرانەیە بە تایبەتی گەنجان بە کەمی پێگەیشتوویی تاوانبار بکرێن؟" },
+            { "language": "kmr", "text": "Lê gelek mezin jî xwe pir kêm agahdar dikin. Hingê ma dadperwer e ku bi taybetî ciwan bi kêmbûna gihîştinê werin tawanbarkirin?" },
+            { "language": "pl", "text": "Ale wielu dorosłych też prawie się nie informuje. Czy zatem sprawiedliwe jest zarzucanie właśnie młodzieży braku dojrzałości?" },
+            { "language": "ro", "text": "Dar mulți adulți se informează și ei foarte puțin. Este atunci corect să li se reproșeze tocmai tinerilor lipsa de maturitate?" },
+            { "language": "sq", "text": "Por edhe shumë të rritur informohen shumë pak. A është atëherë e drejtë që pikërisht të rinjve t'u përmendet mungesa e pjekurisë?" }
+          ],
+          "function": "challenge-counterargument",
+          "toneNote": "fair challenge"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein berechtigter Einwand. Politische Reife lässt sich nicht einfach am Alter messen. Trotzdem kann der Staat bei einer Absenkung des Wahlalters stärker begründen müssen, wie Schulen darauf vorbereiten.",
+          "translations": [
+            { "language": "en", "text": "That is a justified objection. Political maturity cannot simply be measured by age. Still, if the voting age is lowered, the state may have to explain more strongly how schools prepare for it." },
+            { "language": "fa", "text": "این ایراد بجایی است. بلوغ سیاسی را نمی‌توان ساده با سن سنجید. با این حال، اگر سن رأی دادن کاهش یابد، دولت باید قوی‌تر توضیح دهد مدارس چگونه برای آن آماده می‌کنند." },
+            { "language": "ar", "text": "هذا اعتراض مبرر. لا يمكن قياس النضج السياسي ببساطة بالعمر. ومع ذلك، إذا خُفض سن التصويت، فقد يتعين على الدولة أن تبرر بقوة أكبر كيف تهيئ المدارس لذلك." },
+            { "language": "tr", "text": "Bu haklı bir itiraz. Siyasi olgunluk basitçe yaşla ölçülemez. Yine de oy verme yaşı düşürülürse devlet, okulların buna nasıl hazırladığını daha güçlü gerekçelendirmek zorunda kalabilir." },
+            { "language": "ru", "text": "Это обоснованное возражение. Политическую зрелость нельзя просто измерять возрастом. Тем не менее при снижении возраста голосования государству, возможно, придется сильнее обосновать, как школы к этому готовят." },
+            { "language": "ckb", "text": "ئەمە تێبینییەکی بەجێیە. پێگەیشتوویی سیاسی بە سادگی بە تەمەن ناپێورێت. بەڵام ئەگەر تەمەنی دەنگدان کەم بکرێتەوە، ڕەنگە دەوڵەت پێویستی بە هۆکاری بەهێزتر هەبێت بۆ ئەوەی قوتابخانەکان چۆن ئامادەکاری دەکەن." },
+            { "language": "kmr", "text": "Ev nerînekî rewa ye. Gihîştina siyasî bi hêsanî bi temen nayê pîvan. Lê dîsa jî heke temenê dengdanê were daxistin, dewlet dikare pêwîst be bi hêztir rave bike ka dibistan çawa amade dikin." },
+            { "language": "pl", "text": "To uzasadnione zastrzeżenie. Dojrzałości politycznej nie da się po prostu mierzyć wiekiem. Mimo to przy obniżeniu wieku wyborczego państwo może musieć mocniej uzasadnić, jak szkoły do tego przygotowują." },
+            { "language": "ro", "text": "Este o obiecție justificată. Maturitatea politică nu poate fi măsurată pur și simplu prin vârstă. Totuși, dacă vârsta de vot este coborâtă, statul ar putea trebui să justifice mai puternic cum pregătesc școlile pentru aceasta." },
+            { "language": "sq", "text": "Ky është një kundërshtim i arsyeshëm. Pjekuria politike nuk mund të matet thjesht me moshë. Megjithatë, nëse mosha e votimit ulet, shteti mund të duhet të arsyetojë më fort se si shkollat përgatisin për këtë." }
+          ],
+          "function": "respond-with-condition",
+          "toneNote": "nuanced concession"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Sie würden also zustimmen, aber nur unter Bedingungen?",
+          "translations": [
+            { "language": "en", "text": "So you would agree, but only under conditions?" },
+            { "language": "fa", "text": "پس شما موافقید، اما فقط تحت شرایطی؟" },
+            { "language": "ar", "text": "إذن ستوافق، لكن فقط بشروط؟" },
+            { "language": "tr", "text": "Yani kabul edersiniz, ama yalnızca koşullar altında mı?" },
+            { "language": "ru", "text": "То есть Вы согласились бы, но только при определенных условиях?" },
+            { "language": "ckb", "text": "کەواتە تۆ ڕازی دەبیت، بەڵام تەنها بە مەرج؟" },
+            { "language": "kmr", "text": "Yanî hûn ê razî bibin, lê tenê bi mercan?" },
+            { "language": "pl", "text": "Czyli zgodził(a)by się Pan/Pani, ale tylko pod warunkami?" },
+            { "language": "ro", "text": "Deci ați fi de acord, dar doar în anumite condiții?" },
+            { "language": "sq", "text": "Pra do të pajtoheshit, por vetëm me kushte?" }
+          ],
+          "function": "clarify-position",
+          "toneNote": "position check"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich würde eine Senkung nicht grundsätzlich ablehnen. Meine Bedingung wäre aber, dass politische Bildung nicht nur kurz vor der Wahl stattfindet, sondern kontinuierlich und kontrovers im Unterricht behandelt wird.",
+          "translations": [
+            { "language": "en", "text": "Yes, I would not reject a lowering in principle. But my condition would be that political education does not happen only shortly before the election, but is treated continuously and controversially in class." },
+            { "language": "fa", "text": "بله، من کاهش سن را اساساً رد نمی‌کنم. اما شرط من این است که آموزش سیاسی فقط کمی قبل از انتخابات رخ ندهد، بلکه پیوسته و به‌صورت چندجانبه در کلاس مطرح شود." },
+            { "language": "ar", "text": "نعم، لن أرفض الخفض من حيث المبدأ. لكن شرطي هو ألا يحدث التعليم السياسي قبل الانتخابات بقليل فقط، بل أن يعالج باستمرار وبصورة جدلية في الدرس." },
+            { "language": "tr", "text": "Evet, düşürmeyi ilke olarak reddetmezdim. Ama koşulum, siyasi eğitimin yalnızca seçimden kısa süre önce gerçekleşmemesi; derste sürekli ve tartışmalı biçimde ele alınması olurdu." },
+            { "language": "ru", "text": "Да, я бы не отвергал(а) снижение в принципе. Но моим условием было бы, чтобы политическое образование проходило не только незадолго до выборов, а постоянно и с учетом разных позиций на уроках." },
+            { "language": "ckb", "text": "بەڵێ، من کەمکردنەوەکە بە بنەڕەتی ڕەت ناکەمەوە. بەڵام مەرجەم ئەوە دەبێت کە پەروەردەی سیاسی تەنها کەمێک پێش هەڵبژاردن ڕوونەدات، بەڵکو بەردەوام و بە شێوەی جیاوازی لە وانەدا باس بکرێت." },
+            { "language": "kmr", "text": "Erê, ez daxistina temenê bi prensîp red nakim. Lê merca min ew e ku perwerdeya siyasî ne tenê demeke kurt berî hilbijartinê be, lê bi domdarî û bi awayekî piralî di dersê de were nîqaşkirin." },
+            { "language": "pl", "text": "Tak, nie odrzucał(a)bym obniżenia zasadniczo. Moim warunkiem byłoby jednak to, aby edukacja polityczna nie odbywała się tylko krótko przed wyborami, lecz była omawiana stale i kontrowersyjnie na lekcjach." },
+            { "language": "ro", "text": "Da, nu aș respinge în principiu coborârea vârstei. Dar condiția mea ar fi ca educația politică să nu aibă loc doar cu puțin timp înainte de alegeri, ci să fie tratată continuu și controversat la clasă." },
+            { "language": "sq", "text": "Po, nuk do ta refuzoja në parim uljen. Por kushti im do të ishte që edukimi politik të mos ndodhë vetëm pak para zgjedhjeve, por të trajtohet vazhdimisht dhe me këndvështrime të ndryshme në mësim." }
+          ],
+          "function": "state-conditional-position",
+          "toneNote": "conditional agreement"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Könnte man dagegen sagen, dass solche Bedingungen die Reform unnötig verzögern?",
+          "translations": [
+            { "language": "en", "text": "Could one argue against that by saying such conditions unnecessarily delay the reform?" },
+            { "language": "fa", "text": "آیا می‌توان در برابر آن گفت که چنین شرط‌هایی اصلاح را بی‌دلیل به تأخیر می‌اندازند؟" },
+            { "language": "ar", "text": "هل يمكن الاعتراض على ذلك بالقول إن مثل هذه الشروط تؤخر الإصلاح بلا ضرورة؟" },
+            { "language": "tr", "text": "Buna karşı, böyle koşulların reformu gereksiz yere geciktirdiği söylenebilir mi?" },
+            { "language": "ru", "text": "Можно ли возразить, что такие условия излишне задерживают реформу?" },
+            { "language": "ckb", "text": "ئایا دەتوانرێت بەرامبەر ئەوە بوترێت کە ئەم جۆرە مەرجانە چاکسازییەکە بە بێ پێویست دوا دەخەن؟" },
+            { "language": "kmr", "text": "Ma dikare li dijî vê were gotin ku mercên wisa reformê bêhewce dereng dixin?" },
+            { "language": "pl", "text": "Czy można przeciw temu powiedzieć, że takie warunki niepotrzebnie opóźniają reformę?" },
+            { "language": "ro", "text": "S-ar putea spune împotrivă că astfel de condiții întârzie inutil reforma?" },
+            { "language": "sq", "text": "A mund të thuhet kundër kësaj se kushte të tilla e vonojnë pa nevojë reformën?" }
+          ],
+          "function": "raise-implementation-objection",
+          "toneNote": "implementation challenge"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das Risiko besteht. Deshalb würde ich zwischen einer politischen Entscheidung und ihrer Umsetzung unterscheiden: Man kann die Reform beschließen und zugleich einen verbindlichen Zeitplan für politische Bildung festlegen.",
+          "translations": [
+            { "language": "en", "text": "That risk exists. Therefore I would distinguish between a political decision and its implementation: one can decide on the reform and at the same time set a binding timetable for political education." },
+            { "language": "fa", "text": "این خطر وجود دارد. به همین دلیل من بین تصمیم سیاسی و اجرای آن تفاوت می‌گذارم: می‌توان اصلاح را تصویب کرد و هم‌زمان یک جدول زمانی الزام‌آور برای آموزش سیاسی تعیین کرد." },
+            { "language": "ar", "text": "هذا الخطر موجود. لذلك أميز بين القرار السياسي وتنفيذه: يمكن إقرار الإصلاح وفي الوقت نفسه وضع جدول زمني ملزم للتعليم السياسي." },
+            { "language": "tr", "text": "Bu risk var. Bu yüzden siyasi karar ile uygulamasını ayırırdım: reform karara bağlanabilir ve aynı zamanda siyasi eğitim için bağlayıcı bir takvim belirlenebilir." },
+            { "language": "ru", "text": "Такой риск есть. Поэтому я бы различал(а) политическое решение и его реализацию: реформу можно принять и одновременно установить обязательный график политического образования." },
+            { "language": "ckb", "text": "ئەم مەترسییە هەیە. بۆیە من جیاوازی دادەنێم لە نێوان بڕیاری سیاسی و جێبەجێکردنی: دەتوانرێت چاکسازییەکە بڕیار بدرێت و هەمان کات خشتەیەکی کاتی پابەند بۆ پەروەردەی سیاسی دابنرێت." },
+            { "language": "kmr", "text": "Ev xeter heye. Ji ber vê yekê ez di navbera biryara siyasî û bicihanîna wê de cudahî dikim: mirov dikare reformê biryar bide û di heman demê de plansaziya demê ya girêdayî ji bo perwerdeya siyasî destnîşan bike." },
+            { "language": "pl", "text": "Takie ryzyko istnieje. Dlatego rozróżnił(a)bym decyzję polityczną i jej wdrożenie: można uchwalić reformę, a jednocześnie ustalić wiążący harmonogram edukacji politycznej." },
+            { "language": "ro", "text": "Acest risc există. De aceea aș distinge între o decizie politică și implementarea ei: reforma poate fi decisă și în același timp se poate stabili un calendar obligatoriu pentru educația politică." },
+            { "language": "sq", "text": "Ky rrezik ekziston. Prandaj do të dalloja midis vendimit politik dhe zbatimit të tij: reforma mund të miratohet dhe njëkohësisht të caktohet një afat detyrues për edukimin politik." }
+          ],
+          "function": "distinguish-decision-implementation",
+          "toneNote": "implementation nuance"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Dann brauchen wir für die Prüfung noch einen klaren Vergleich zwischen Vorteil und Risiko.",
+          "translations": [
+            { "language": "en", "text": "Then for the exam we still need a clear comparison between benefit and risk." },
+            { "language": "fa", "text": "پس برای آزمون هنوز به یک مقایسه روشن بین مزیت و خطر نیاز داریم." },
+            { "language": "ar", "text": "إذن نحتاج في الامتحان إلى مقارنة واضحة بين الفائدة والخطر." },
+            { "language": "tr", "text": "O halde sınav için avantaj ile risk arasında açık bir karşılaştırmaya ihtiyacımız var." },
+            { "language": "ru", "text": "Тогда для экзамена нам еще нужно четкое сравнение между преимуществом и риском." },
+            { "language": "ckb", "text": "کەواتە بۆ تاقیکردنەوە هێشتا پێویستمان بە بەراوردێکی ڕوونە لە نێوان سوود و مەترسی." },
+            { "language": "kmr", "text": "Hingê ji bo azmûnê hêj me hewceyê berhevkirineke zelal di navbera sûd û xeterê de heye." },
+            { "language": "pl", "text": "W takim razie do egzaminu potrzebujemy jeszcze jasnego porównania między korzyścią a ryzykiem." },
+            { "language": "ro", "text": "Atunci pentru examen mai avem nevoie de o comparație clară între avantaj și risc." },
+            { "language": "sq", "text": "Atëherë për provimin na duhet ende një krahasim i qartë midis përfitimit dhe rrezikut." }
+          ],
+          "function": "request-comparison",
+          "toneNote": "exam structure"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Der Vorteil liegt in früher demokratischer Beteiligung und ernst genommener Jugendperspektive. Das Risiko liegt in symbolischer Politik, wenn Schulen und Parteien Jugendliche zwar umwerben, aber nicht wirklich zur Urteilsbildung befähigen.",
+          "translations": [
+            { "language": "en", "text": "The benefit lies in earlier democratic participation and in taking young people's perspective seriously. The risk lies in symbolic politics if schools and parties court young people but do not really enable them to form judgments." },
+            { "language": "fa", "text": "مزیت در مشارکت دموکراتیک زودتر و جدی گرفتن نگاه جوانان است. خطر در سیاست نمادین است، اگر مدارس و احزاب جوانان را جذب کنند اما واقعاً آن‌ها را برای شکل دادن قضاوت توانمند نکنند." },
+            { "language": "ar", "text": "تكمن الفائدة في المشاركة الديمقراطية المبكرة وفي أخذ منظور الشباب بجدية. ويكمن الخطر في سياسة رمزية إذا حاولت المدارس والأحزاب كسب الشباب لكنها لا تمكنهم فعلاً من تكوين الحكم." },
+            { "language": "tr", "text": "Avantaj, daha erken demokratik katılımda ve gençlerin bakış açısının ciddiye alınmasında yatar. Risk ise, okullar ve partiler gençlere yaklaşır ama onları gerçekten yargı oluşturma konusunda güçlendirmezse sembolik siyasettedir." },
+            { "language": "ru", "text": "Преимущество заключается в более раннем демократическом участии и серьезном отношении к перспективе молодежи. Риск заключается в символической политике, если школы и партии привлекают молодежь, но на самом деле не дают ей возможности формировать суждение." },
+            { "language": "ckb", "text": "سوودەکە لە بەشداری دیموکراتی پێشوەختتر و بە جدی وەرگرتنی دیدی گەنجانەدایە. مەترسییەکە لە سیاسییەکی هێماییدایە ئەگەر قوتابخانە و پارتەکان گەنجان ڕابکێشن، بەڵام بەڕاستی توانای دروستکردنی بڕیار و هەڵسەنگاندنیان پێ نەدەن." },
+            { "language": "kmr", "text": "Sûd di beşdariya demokratîk a zûtir û girînggirtina perspektîfa ciwanan de ye. Xeter di siyaseta sembolîk de ye, heke dibistan û partî ciwanan bikişînin lê bi rastî wan ji bo çêkirina dadweriyê hêzdar nekin." },
+            { "language": "pl", "text": "Korzyść polega na wcześniejszym udziale demokratycznym i poważnym potraktowaniu perspektywy młodzieży. Ryzyko leży w polityce symbolicznej, jeśli szkoły i partie zabiegają o młodych ludzi, ale naprawdę nie umożliwiają im kształtowania osądu." },
+            { "language": "ro", "text": "Avantajul constă în participarea democratică mai timpurie și în luarea în serios a perspectivei tinerilor. Riscul constă în politica simbolică, dacă școlile și partidele îi curtează pe tineri, dar nu îi abilitează cu adevărat să își formeze judecata." },
+            { "language": "sq", "text": "Përfitimi qëndron te pjesëmarrja më e hershme demokratike dhe marrja seriozisht e perspektivës së të rinjve. Rreziku qëndron te politika simbolike, nëse shkollat dhe partitë i afrojnë të rinjtë, por nuk i aftësojnë realisht për të formuar gjykim." }
+          ],
+          "function": "compare-benefit-risk",
+          "toneNote": "balanced comparison"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Wie würden Sie Ihre Schlussposition knapp formulieren?",
+          "translations": [
+            { "language": "en", "text": "How would you formulate your final position briefly?" },
+            { "language": "fa", "text": "موضع پایانی خود را چگونه کوتاه فرمول‌بندی می‌کنید؟" },
+            { "language": "ar", "text": "كيف تصوغ موقفك الختامي باختصار؟" },
+            { "language": "tr", "text": "Son görüşünüzü kısaca nasıl formüle ederdiniz?" },
+            { "language": "ru", "text": "Как бы Вы кратко сформулировали свою итоговую позицию?" },
+            { "language": "ckb", "text": "هەڵوێستی کۆتاییت بە کورتی چۆن دادەڕێژیت؟" },
+            { "language": "kmr", "text": "Hûn helwesta xwe ya dawî bi kurtî çawa formule dikin?" },
+            { "language": "pl", "text": "Jak krótko sformułował(a)by Pan/Pani swoje stanowisko końcowe?" },
+            { "language": "ro", "text": "Cum ați formula pe scurt poziția dumneavoastră finală?" },
+            { "language": "sq", "text": "Si do ta formulonit shkurt qëndrimin tuaj përfundimtar?" }
+          ],
+          "function": "ask-closing-position",
+          "toneNote": "closing prompt"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Absenkung des Wahlalters befürworten, wenn sie mit verbindlicher politischer Bildung verbunden wird. Dann ist sie nicht nur ein Signal an Jugendliche, sondern ein ernsthafter Schritt zu mehr demokratischer Teilhabe.",
+          "translations": [
+            { "language": "en", "text": "I would support lowering the voting age if it is connected with binding political education. Then it is not only a signal to young people, but a serious step toward more democratic participation." },
+            { "language": "fa", "text": "من کاهش سن رأی دادن را تأیید می‌کنم اگر با آموزش سیاسی الزام‌آور همراه باشد. در این صورت فقط علامتی برای جوانان نیست، بلکه گامی جدی به سوی مشارکت دموکراتیک بیشتر است." },
+            { "language": "ar", "text": "سأؤيد خفض سن التصويت إذا ارتبط بتعليم سياسي ملزم. عندئذ لا يكون مجرد إشارة للشباب، بل خطوة جادة نحو مزيد من المشاركة الديمقراطية." },
+            { "language": "tr", "text": "Oy verme yaşının düşürülmesini, bağlayıcı siyasi eğitimle bağlantılıysa desteklerdim. O zaman bu yalnızca gençlere verilen bir işaret değil, daha fazla demokratik katılıma doğru ciddi bir adım olur." },
+            { "language": "ru", "text": "Я бы поддержал(а) снижение возраста голосования, если оно будет связано с обязательным политическим образованием. Тогда это не только сигнал молодежи, а серьезный шаг к большему демократическому участию." },
+            { "language": "ckb", "text": "من کەمکردنەوەی تەمەنی دەنگدان پشتگیری دەکەم ئەگەر لەگەڵ پەروەردەی سیاسی پابەند پەیوەست بکرێت. ئەو کاتە تەنها هێمایەک بۆ گەنجان نییە، بەڵکو هەنگاوێکی جدییە بۆ بەشداری دیموکراتی زیاتر." },
+            { "language": "kmr", "text": "Ez ê daxistina temenê dengdanê piştgirî bikim heke bi perwerdeya siyasî ya girêdayî ve were girêdan. Hingê ew ne tenê nîşanek ji bo ciwanan e, lê gaveke cidî ye ber bi zêdetir beşdariya demokratîk ve." },
+            { "language": "pl", "text": "Poparł(a)bym obniżenie wieku wyborczego, jeśli byłoby powiązane z obowiązkową edukacją polityczną. Wtedy nie jest to tylko sygnał dla młodzieży, lecz poważny krok ku większemu udziałowi demokratycznemu." },
+            { "language": "ro", "text": "Aș susține coborârea vârstei de vot dacă este legată de educație politică obligatorie. Atunci nu este doar un semnal către tineri, ci un pas serios către mai multă participare democratică." },
+            { "language": "sq", "text": "Do ta mbështesja uljen e moshës së votimit nëse lidhet me edukim politik të detyrueshëm. Atëherë nuk është vetëm një sinjal për të rinjtë, por një hap serioz drejt më shumë pjesëmarrjeje demokratike." }
+          ],
+          "function": "conditional-closing-position",
+          "toneNote": "reasoned conclusion"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Gedanke der Beteiligung ist überzeugend. Ich würde ihn aber nicht allein entscheiden lassen, sondern zusätzlich fragen, welche politische Bildung und welche Verantwortung mit dem Wahlrecht verbunden sind.",
+              "translations": [
+                { "language": "en", "text": "The idea of participation is convincing. But I would not let it decide the issue on its own; I would also ask what political education and what responsibility are connected with the right to vote." },
+                { "language": "fa", "text": "ایده مشارکت قانع‌کننده است. اما من اجازه نمی‌دهم این ایده به‌تنهایی مسئله را تعیین کند؛ علاوه بر آن می‌پرسم چه آموزش سیاسی و چه مسئولیتی با حق رأی مرتبط است." },
+                { "language": "ar", "text": "فكرة المشاركة مقنعة. لكنني لا أجعلها وحدها تحسم المسألة، بل أسأل أيضاً أي تعليم سياسي وأي مسؤولية يرتبطان بحق التصويت." },
+                { "language": "tr", "text": "Katılım düşüncesi ikna edici. Ancak konuyu tek başına onun belirlemesine izin vermezdim; ayrıca oy hakkıyla hangi siyasi eğitimin ve hangi sorumluluğun bağlantılı olduğunu sorardım." },
+                { "language": "ru", "text": "Идея участия убедительна. Но я бы не позволил(а) ей одной решать вопрос, а дополнительно спросил(а), какое политическое образование и какая ответственность связаны с избирательным правом." },
+                { "language": "ckb", "text": "بیرۆکەی بەشداری قەناعەتپێکەرە. بەڵام من ناهێڵم ئەو بە تەنها بابەتەکە بڕیار بدات، بەڵکو هەروەها دەپرسیم کام پەروەردەی سیاسی و کام بەرپرسیاری لەگەڵ مافی دەنگدان پەیوەستە." },
+                { "language": "kmr", "text": "Ramanê beşdariyê qanîker e. Lê ez nahêlim ku ew bi tenê mijarê biryar bide; ez herwiha dipirsim kîjan perwerdeya siyasî û kîjan berpirsiyarî bi mafê dengdanê ve girêdayî ne." },
+                { "language": "pl", "text": "Idea uczestnictwa jest przekonująca. Nie pozwolił(a)bym jednak, aby sama rozstrzygała sprawę; zapytał(a)bym dodatkowo, jaka edukacja polityczna i jaka odpowiedzialność wiążą się z prawem wyborczym." },
+                { "language": "ro", "text": "Ideea participării este convingătoare. Dar nu aș lăsa-o să decidă singură problema; aș întreba în plus ce educație politică și ce responsabilitate sunt legate de dreptul de vot." },
+                { "language": "sq", "text": "Ideja e pjesëmarrjes është bindëse. Por nuk do ta lija të vendoste e vetme çështjen; do të pyesja edhe çfarë edukimi politik dhe çfarë përgjegjësie lidhen me të drejtën e votës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Sie würdigen das Argument, ohne in ein Schlagwort zu verfallen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: you acknowledge the argument without falling into a slogan." },
+                { "language": "fa", "text": "قوی: استدلال را ارزش‌گذاری می‌کنید، بدون اینکه به شعار تبدیل شود." },
+                { "language": "ar", "text": "قوي: تقدر الحجة من دون الوقوع في شعار." },
+                { "language": "tr", "text": "Güçlü: argümanı takdir ediyor, slogana düşmüyorsunuz." },
+                { "language": "ru", "text": "Сильно: Вы признаете аргумент, не превращая его в лозунг." },
+                { "language": "ckb", "text": "بەهێزە: بەڵگەکە بەرز دەنرخێنیت بێ ئەوەی ببێتە دروشم." },
+                { "language": "kmr", "text": "Xurt e: hûn argumanê dinirxînin bêyî ku bikeve dirûşmê." },
+                { "language": "pl", "text": "Mocne: docenia Pan/Pani argument, nie popadając w slogan." },
+                { "language": "ro", "text": "Puternic: apreciați argumentul fără să cădeți într-un slogan." },
+                { "language": "sq", "text": "E fortë: e vlerësoni argumentin pa rënë në slogan." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, Jugendliche sollen wählen dürfen, weil Demokratie bedeutet, dass alle Menschen eine Stimme haben.",
+              "translations": [
+                { "language": "en", "text": "Yes, young people should be allowed to vote because democracy means that all people have a voice." },
+                { "language": "fa", "text": "بله، جوانان باید اجازه رأی دادن داشته باشند، چون دموکراسی یعنی همه مردم صدا داشته باشند." },
+                { "language": "ar", "text": "نعم، يجب أن يسمح للشباب بالتصويت لأن الديمقراطية تعني أن لكل الناس صوتاً." },
+                { "language": "tr", "text": "Evet, gençler oy kullanabilmeli, çünkü demokrasi herkesin bir sesi olması demektir." },
+                { "language": "ru", "text": "Да, молодежи нужно разрешить голосовать, потому что демократия означает, что у всех людей есть голос." },
+                { "language": "ckb", "text": "بەڵێ، گەنجان دەبێت مافی دەنگدانیان هەبێت، چونکە دیموکراسی واتە هەموو خەڵک دەنگیان هەبێت." },
+                { "language": "kmr", "text": "Erê, divê ciwan destûra dengdanê hebin, ji ber ku demokrasi tê wateya ku hemû kes dengê xwe hene." },
+                { "language": "pl", "text": "Tak, młodzi ludzie powinni móc głosować, ponieważ demokracja oznacza, że wszyscy ludzie mają głos." },
+                { "language": "ro", "text": "Da, tinerii ar trebui să poată vota, deoarece democrația înseamnă că toți oamenii au o voce." },
+                { "language": "sq", "text": "Po, të rinjtë duhet të lejohen të votojnë, sepse demokracia do të thotë që të gjithë njerëzit kanë zë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu sloganhaft: Die Antwort nennt ein Ideal, prüft aber keine Bedingung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too slogan-like: the answer names an ideal, but checks no condition." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما بیش از حد شعاری است: پاسخ یک آرمان را می‌گوید، اما شرطی را بررسی نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه شعاري جداً: تذكر الإجابة مثالاً أعلى لكنها لا تفحص أي شرط." },
+                { "language": "tr", "text": "Makul ama fazla slogan gibi: cevap bir ideal söylüyor, fakat hiçbir koşulu incelemiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком лозунгово: ответ называет идеал, но не проверяет условия." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر دروشمییە: وەڵام ئایدیالێک دەڵێت، بەڵام هیچ مەرجێک ناپشکنێت." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir wek dirûşm e: bersiv îdealekê dibêje, lê mercêkê kontrol nake." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale zbyt hasłowo: odpowiedź nazywa ideał, lecz nie sprawdza żadnego warunku." },
+                { "language": "ro", "text": "Plauzibil, dar prea sloganistic: răspunsul numește un ideal, dar nu verifică nicio condiție." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë sloganistike: përgjigjja përmend një ideal, por nuk kontrollon asnjë kusht." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das ist ein berechtigter Einwand. Politische Reife lässt sich nicht einfach am Alter messen. Trotzdem kann der Staat bei einer Absenkung des Wahlalters stärker begründen müssen, wie Schulen darauf vorbereiten.",
+              "translations": [
+                { "language": "en", "text": "That is a justified objection. Political maturity cannot simply be measured by age. Still, if the voting age is lowered, the state may have to explain more strongly how schools prepare for it." },
+                { "language": "fa", "text": "این ایراد بجایی است. بلوغ سیاسی را نمی‌توان ساده با سن سنجید. با این حال، اگر سن رأی دادن کاهش یابد، دولت باید قوی‌تر توضیح دهد مدارس چگونه برای آن آماده می‌کنند." },
+                { "language": "ar", "text": "هذا اعتراض مبرر. لا يمكن قياس النضج السياسي ببساطة بالعمر. ومع ذلك، إذا خُفض سن التصويت، فقد يتعين على الدولة أن تبرر بقوة أكبر كيف تهيئ المدارس لذلك." },
+                { "language": "tr", "text": "Bu haklı bir itiraz. Siyasi olgunluk basitçe yaşla ölçülemez. Yine de oy verme yaşı düşürülürse devlet, okulların buna nasıl hazırladığını daha güçlü gerekçelendirmek zorunda kalabilir." },
+                { "language": "ru", "text": "Это обоснованное возражение. Политическую зрелость нельзя просто измерять возрастом. Тем не менее при снижении возраста голосования государству, возможно, придется сильнее обосновать, как школы к этому готовят." },
+                { "language": "ckb", "text": "ئەمە تێبینییەکی بەجێیە. پێگەیشتوویی سیاسی بە سادگی بە تەمەن ناپێورێت. بەڵام ئەگەر تەمەنی دەنگدان کەم بکرێتەوە، ڕەنگە دەوڵەت پێویستی بە هۆکاری بەهێزتر هەبێت بۆ ئەوەی قوتابخانەکان چۆن ئامادەکاری دەکەن." },
+                { "language": "kmr", "text": "Ev nerînekî rewa ye. Gihîştina siyasî bi hêsanî bi temen nayê pîvan. Lê dîsa jî heke temenê dengdanê were daxistin, dewlet dikare pêwîst be bi hêztir rave bike ka dibistan çawa amade dikin." },
+                { "language": "pl", "text": "To uzasadnione zastrzeżenie. Dojrzałości politycznej nie da się po prostu mierzyć wiekiem. Mimo to przy obniżeniu wieku wyborczego państwo może musieć mocniej uzasadnić, jak szkoły do tego przygotowują." },
+                { "language": "ro", "text": "Este o obiecție justificată. Maturitatea politică nu poate fi măsurată pur și simplu prin vârstă. Totuși, dacă vârsta de vot este coborâtă, statul ar putea trebui să justifice mai puternic cum pregătesc școlile pentru aceasta." },
+                { "language": "sq", "text": "Ky është një kundërshtim i arsyeshëm. Pjekuria politike nuk mund të matet thjesht me moshë. Megjithatë, nëse mosha e votimit ulet, shteti mund të duhet të arsyetojë më fort se si shkollat përgatisin për këtë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert den Einwand und behält trotzdem eine prüfbare Bedingung bei.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer accepts the objection and still keeps a testable condition." },
+                { "language": "fa", "text": "قوی: پاسخ ایراد را می‌پذیرد و با این حال یک شرط قابل بررسی را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: تقبل الإجابة الاعتراض ومع ذلك تحافظ على شرط قابل للفحص." },
+                { "language": "tr", "text": "Güçlü: cevap itirazı kabul ediyor ve yine de değerlendirilebilir bir koşulu koruyor." },
+                { "language": "ru", "text": "Сильно: ответ принимает возражение и все же сохраняет проверяемое условие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام تێبینییەکە قبوڵ دەکات و هێشتا مەرجێکی پشکنراو دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv nerînê dipejirîne û dîsa mercêke kontrolbar diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź przyjmuje zastrzeżenie, a mimo to zachowuje sprawdzalny warunek." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă obiecția și păstrează totuși o condiție verificabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon kundërshtimin dhe megjithatë ruan një kusht të verifikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das stimmt, Erwachsene sind auch nicht immer gut informiert, deshalb sollte man Jugendliche nicht anders behandeln.",
+              "translations": [
+                { "language": "en", "text": "That is true, adults are not always well informed either, so young people should not be treated differently." },
+                { "language": "fa", "text": "درست است، بزرگسالان هم همیشه خوب آگاه نیستند، پس نباید با جوانان متفاوت رفتار کرد." },
+                { "language": "ar", "text": "هذا صحيح، البالغون أيضاً ليسوا دائماً مطلعين جيداً، لذلك لا ينبغي معاملة الشباب بشكل مختلف." },
+                { "language": "tr", "text": "Bu doğru, yetişkinler de her zaman iyi bilgilenmiş değildir, bu yüzden gençlere farklı davranılmamalı." },
+                { "language": "ru", "text": "Это верно, взрослые тоже не всегда хорошо информированы, поэтому с молодежью не следует обращаться иначе." },
+                { "language": "ckb", "text": "ئەمە ڕاستە، پێگەیشتووانیش هەمیشە باش ئاگادار نین، بۆیە نابێت مامەڵەی جیاواز لەگەڵ گەنجان بکرێت." },
+                { "language": "kmr", "text": "Ev rast e, mezin jî her dem baş agahdar nînin, ji ber vê yekê divê bi ciwanan cuda neyê reftar kirin." },
+                { "language": "pl", "text": "To prawda, dorośli też nie zawsze są dobrze poinformowani, dlatego młodzieży nie powinno się traktować inaczej." },
+                { "language": "ro", "text": "Este adevărat, nici adulții nu sunt întotdeauna bine informați, de aceea tinerii nu ar trebui tratați diferit." },
+                { "language": "sq", "text": "Kjo është e vërtetë, as të rriturit nuk janë gjithmonë mirë të informuar, prandaj të rinjtë nuk duhet të trajtohen ndryshe." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu kurz: Die Antwort übernimmt den Einwand, ohne politische Bildung oder Verantwortung einzubauen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too short: the answer takes over the objection without adding political education or responsibility." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی کوتاه است: پاسخ ایراد را می‌گیرد، بدون اینکه آموزش سیاسی یا مسئولیت را وارد کند." },
+                { "language": "ar", "text": "مقبول لكنه قصير جداً: تتبنى الإجابة الاعتراض من دون إدخال التعليم السياسي أو المسؤولية." },
+                { "language": "tr", "text": "Makul ama fazla kısa: cevap itirazı alıyor, fakat siyasi eğitim veya sorumluluk eklemiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком кратко: ответ принимает возражение, не добавляя политическое образование или ответственность." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر کورتە: وەڵام تێبینییەکە وەردەگرێت بێ ئەوەی پەروەردەی سیاسی یان بەرپرسیاری زیاد بکات." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir kurt e: bersiv nerînê digire bêyî ku perwerdeya siyasî an berpirsiyarî lê zêde bike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt krótkie: odpowiedź przejmuje zastrzeżenie bez dodania edukacji politycznej lub odpowiedzialności." },
+                { "language": "ro", "text": "Plauzibil, dar prea scurt: răspunsul preia obiecția fără să introducă educația politică sau responsabilitatea." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e shkurtër: përgjigjja e merr kundërshtimin pa shtuar edukimin politik ose përgjegjësinë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, ich würde eine Senkung nicht grundsätzlich ablehnen. Meine Bedingung wäre aber, dass politische Bildung nicht nur kurz vor der Wahl stattfindet, sondern kontinuierlich und kontrovers im Unterricht behandelt wird.",
+              "translations": [
+                { "language": "en", "text": "Yes, I would not reject a lowering in principle. But my condition would be that political education does not happen only shortly before the election, but is treated continuously and controversially in class." },
+                { "language": "fa", "text": "بله، من کاهش سن را اساساً رد نمی‌کنم. اما شرط من این است که آموزش سیاسی فقط کمی قبل از انتخابات رخ ندهد، بلکه پیوسته و به‌صورت چندجانبه در کلاس مطرح شود." },
+                { "language": "ar", "text": "نعم، لن أرفض الخفض من حيث المبدأ. لكن شرطي هو ألا يحدث التعليم السياسي قبل الانتخابات بقليل فقط، بل أن يعالج باستمرار وبصورة جدلية في الدرس." },
+                { "language": "tr", "text": "Evet, düşürmeyi ilke olarak reddetmezdim. Ama koşulum, siyasi eğitimin yalnızca seçimden kısa süre önce gerçekleşmemesi; derste sürekli ve tartışmalı biçimde ele alınması olurdu." },
+                { "language": "ru", "text": "Да, я бы не отвергал(а) снижение в принципе. Но моим условием было бы, чтобы политическое образование проходило не только незадолго до выборов, а постоянно и с учетом разных позиций на уроках." },
+                { "language": "ckb", "text": "بەڵێ، من کەمکردنەوەکە بە بنەڕەتی ڕەت ناکەمەوە. بەڵام مەرجەم ئەوە دەبێت کە پەروەردەی سیاسی تەنها کەمێک پێش هەڵبژاردن ڕوونەدات، بەڵکو بەردەوام و بە شێوەی جیاوازی لە وانەدا باس بکرێت." },
+                { "language": "kmr", "text": "Erê, ez daxistina temenê bi prensîp red nakim. Lê merca min ew e ku perwerdeya siyasî ne tenê demeke kurt berî hilbijartinê be, lê bi domdarî û bi awayekî piralî di dersê de were nîqaşkirin." },
+                { "language": "pl", "text": "Tak, nie odrzucał(a)bym obniżenia zasadniczo. Moim warunkiem byłoby jednak to, aby edukacja polityczna nie odbywała się tylko krótko przed wyborami, lecz była omawiana stale i kontrowersyjnie na lekcjach." },
+                { "language": "ro", "text": "Da, nu aș respinge în principiu coborârea vârstei. Dar condiția mea ar fi ca educația politică să nu aibă loc doar cu puțin timp înainte de alegeri, ci să fie tratată continuu și controversat la clasă." },
+                { "language": "sq", "text": "Po, nuk do ta refuzoja në parim uljen. Por kushti im do të ishte që edukimi politik të mos ndodhë vetëm pak para zgjedhjeve, por të trajtohet vazhdimisht dhe me këndvështrime të ndryshme në mësim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Position ist erkennbar, aber an eine konkrete Voraussetzung gebunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the position is clear, but tied to a concrete prerequisite." },
+                { "language": "fa", "text": "قوی: موضع قابل تشخیص است، اما به یک پیش‌شرط مشخص بسته شده است." },
+                { "language": "ar", "text": "قوي: الموقف واضح لكنه مرتبط بشرط مسبق ملموس." },
+                { "language": "tr", "text": "Güçlü: görüş belirgin, ama somut bir ön koşula bağlı." },
+                { "language": "ru", "text": "Сильно: позиция понятна, но связана с конкретным условием." },
+                { "language": "ckb", "text": "بەهێزە: هەڵوێستەکە دیارە، بەڵام بە پێشمەرجێکی دیاریکراوەوە بەستراوە." },
+                { "language": "kmr", "text": "Xurt e: helwest xuya ye, lê bi mercêke pêşîn a konkret ve girêdayî ye." },
+                { "language": "pl", "text": "Mocne: stanowisko jest rozpoznawalne, ale związane z konkretnym warunkiem wstępnym." },
+                { "language": "ro", "text": "Puternic: poziția este clară, dar legată de o condiție concretă." },
+                { "language": "sq", "text": "E fortë: qëndrimi është i qartë, por i lidhur me një parakusht konkret." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, ich stimme zu, wenn Jugendliche vorher gut informiert werden und wissen, worum es geht.",
+              "translations": [
+                { "language": "en", "text": "Yes, I agree if young people are well informed beforehand and know what it is about." },
+                { "language": "fa", "text": "بله، موافقم اگر جوانان از قبل خوب آگاه شوند و بدانند موضوع چیست." },
+                { "language": "ar", "text": "نعم، أوافق إذا تم إعلام الشباب جيداً مسبقاً وعرفوا ما يدور حوله الأمر." },
+                { "language": "tr", "text": "Evet, gençler önceden iyi bilgilendirilirse ve konunun ne olduğunu bilirlerse katılırım." },
+                { "language": "ru", "text": "Да, я согласен/согласна, если молодежь заранее хорошо информируют и она знает, о чем идет речь." },
+                { "language": "ckb", "text": "بەڵێ، ڕازیم ئەگەر گەنجان پێشتر باش ئاگادار بکرێنەوە و بزانن بابەتەکە چییە." },
+                { "language": "kmr", "text": "Erê, ez razî me heke ciwan berê baş agahdar bibin û bizanin mijar çi ye." },
+                { "language": "pl", "text": "Tak, zgadzam się, jeśli młodzi ludzie wcześniej zostaną dobrze poinformowani i będą wiedzieć, o co chodzi." },
+                { "language": "ro", "text": "Da, sunt de acord dacă tinerii sunt bine informați înainte și știu despre ce este vorba." },
+                { "language": "sq", "text": "Po, pajtohem nëse të rinjtë informohen mirë më parë dhe e dinë për çfarë bëhet fjalë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unscharf: `gut informiert` bleibt vage und nennt keine dauerhafte politische Bildung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise: `well informed` remains vague and does not name lasting political education." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما مبهم است: «خوب آگاه» مبهم می‌ماند و آموزش سیاسی پایدار را نام نمی‌برد." },
+                { "language": "ar", "text": "مقبول لكنه غير دقيق: «مطلعين جيداً» يبقى غامضاً ولا يذكر تعليماً سياسياً مستمراً." },
+                { "language": "tr", "text": "Makul ama belirsiz: `iyi bilgilendirilmiş` belirsiz kalıyor ve sürekli siyasi eğitimi belirtmiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: «хорошо информированы» остается расплывчатым и не называет устойчивое политическое образование." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام ناڕوونە: «باش ئاگادار» ناڕوون دەمێنێت و پەروەردەی سیاسی بەردەوام ناو نابات." },
+                { "language": "kmr", "text": "Wek guncav e, lê nezelal e: `baş agahdar` nezelal dimîne û perwerdeya siyasî ya domdar nav nake." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest nieprecyzyjne: „dobrze poinformowani” pozostaje mgliste i nie nazywa trwałej edukacji politycznej." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis: `bine informați` rămâne vag și nu numește educația politică durabilă." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e pasaktë: “mirë të informuar” mbetet e paqartë dhe nuk përmend edukim politik të qëndrueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das Risiko besteht. Deshalb würde ich zwischen einer politischen Entscheidung und ihrer Umsetzung unterscheiden: Man kann die Reform beschließen und zugleich einen verbindlichen Zeitplan für politische Bildung festlegen.",
+              "translations": [
+                { "language": "en", "text": "That risk exists. Therefore I would distinguish between a political decision and its implementation: one can decide on the reform and at the same time set a binding timetable for political education." },
+                { "language": "fa", "text": "این خطر وجود دارد. به همین دلیل من بین تصمیم سیاسی و اجرای آن تفاوت می‌گذارم: می‌توان اصلاح را تصویب کرد و هم‌زمان یک جدول زمانی الزام‌آور برای آموزش سیاسی تعیین کرد." },
+                { "language": "ar", "text": "هذا الخطر موجود. لذلك أميز بين القرار السياسي وتنفيذه: يمكن إقرار الإصلاح وفي الوقت نفسه وضع جدول زمني ملزم للتعليم السياسي." },
+                { "language": "tr", "text": "Bu risk var. Bu yüzden siyasi karar ile uygulamasını ayırırdım: reform karara bağlanabilir ve aynı zamanda siyasi eğitim için bağlayıcı bir takvim belirlenebilir." },
+                { "language": "ru", "text": "Такой риск есть. Поэтому я бы различал(а) политическое решение и его реализацию: реформу можно принять и одновременно установить обязательный график политического образования." },
+                { "language": "ckb", "text": "ئەم مەترسییە هەیە. بۆیە من جیاوازی دادەنێم لە نێوان بڕیاری سیاسی و جێبەجێکردنی: دەتوانرێت چاکسازییەکە بڕیار بدرێت و هەمان کات خشتەیەکی کاتی پابەند بۆ پەروەردەی سیاسی دابنرێت." },
+                { "language": "kmr", "text": "Ev xeter heye. Ji ber vê yekê ez di navbera biryara siyasî û bicihanîna wê de cudahî dikim: mirov dikare reformê biryar bide û di heman demê de plansaziya demê ya girêdayî ji bo perwerdeya siyasî destnîşan bike." },
+                { "language": "pl", "text": "Takie ryzyko istnieje. Dlatego rozróżnił(a)bym decyzję polityczną i jej wdrożenie: można uchwalić reformę, a jednocześnie ustalić wiążący harmonogram edukacji politycznej." },
+                { "language": "ro", "text": "Acest risc există. De aceea aș distinge între o decizie politică și implementarea ei: reforma poate fi decisă și în același timp se poate stabili un calendar obligatoriu pentru educația politică." },
+                { "language": "sq", "text": "Ky rrezik ekziston. Prandaj do të dalloja midis vendimit politik dhe zbatimit të tij: reforma mund të miratohet dhe njëkohësisht të caktohet një afat detyrues për edukimin politik." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt das Reformtempo ernst und vermeidet trotzdem eine falsche Alternative.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes the pace of reform seriously while still avoiding a false alternative." },
+                { "language": "fa", "text": "قوی: پاسخ سرعت اصلاح را جدی می‌گیرد و با این حال از دوگانه‌سازی غلط پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: تأخذ الإجابة وتيرة الإصلاح بجدية ومع ذلك تتجنب بديلاً زائفاً." },
+                { "language": "tr", "text": "Güçlü: cevap reform hızını ciddiye alıyor ve yine de yanlış bir ikilemden kaçınıyor." },
+                { "language": "ru", "text": "Сильно: ответ серьезно относится к темпу реформы и при этом избегает ложной альтернативы." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام خێرایی چاکسازی بە جدی وەردەگرێت و هێشتا لە دووگژەی هەڵە دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv lezgîniya reformê cidî digire û dîsa ji alternatîfa şaş dûr dikeve." },
+                { "language": "pl", "text": "Mocne: odpowiedź poważnie traktuje tempo reformy, a jednocześnie unika fałszywej alternatywy." },
+                { "language": "ro", "text": "Puternic: răspunsul ia în serios ritmul reformei și evită totuși o alternativă falsă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr seriozisht ritmin e reformës dhe megjithatë shmang një alternativë të rreme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das stimmt, aber ohne gute Vorbereitung sollte man die Reform vielleicht lieber verschieben.",
+              "translations": [
+                { "language": "en", "text": "That is true, but without good preparation the reform should perhaps rather be postponed." },
+                { "language": "fa", "text": "درست است، اما بدون آمادگی خوب شاید بهتر باشد اصلاح را به تعویق انداخت." },
+                { "language": "ar", "text": "هذا صحيح، لكن من دون إعداد جيد ربما ينبغي تأجيل الإصلاح." },
+                { "language": "tr", "text": "Bu doğru, ama iyi hazırlık olmadan reformu belki ertelemek daha iyi olur." },
+                { "language": "ru", "text": "Это верно, но без хорошей подготовки реформу, возможно, лучше отложить." },
+                { "language": "ckb", "text": "ئەمە ڕاستە، بەڵام بێ ئامادەکاری باش ڕەنگە باشتر بێت چاکسازییەکە دوا بخرێت." },
+                { "language": "kmr", "text": "Ev rast e, lê bê amadekariyeke baş dibe ku çêtir be reform were paşxistin." },
+                { "language": "pl", "text": "To prawda, ale bez dobrego przygotowania może lepiej byłoby odłożyć reformę." },
+                { "language": "ro", "text": "Este adevărat, dar fără o bună pregătire poate ar fi mai bine ca reforma să fie amânată." },
+                { "language": "sq", "text": "Kjo është e vërtetë, por pa përgatitje të mirë ndoshta do të ishte më mirë që reforma të shtyhej." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht differenziert genug: Die Antwort sieht nur Verschiebung, nicht Beschluss plus verbindliche Umsetzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not differentiated enough: the answer sees only postponement, not decision plus binding implementation." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما به‌اندازه کافی تفکیک‌شده نیست: پاسخ فقط تعویق را می‌بیند، نه تصویب همراه با اجرای الزام‌آور." },
+                { "language": "ar", "text": "مقبول لكنه غير متمايز بما يكفي: ترى الإجابة التأجيل فقط، لا القرار مع التنفيذ الملزم." },
+                { "language": "tr", "text": "Makul ama yeterince ayrıntılı değil: cevap yalnızca ertelemeyi görüyor, karar artı bağlayıcı uygulamayı değil." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно дифференцированно: ответ видит только отсрочку, а не решение плюс обязательную реализацию." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام بەشی پێویست جیاوازکراو نییە: وەڵام تەنها دواخستن دەبینێت، نەک بڕیار لەگەڵ جێبەجێکردنی پابەند." },
+                { "language": "kmr", "text": "Wek guncav e, lê bi qasî pêwîst cudakirî nîne: bersiv tenê paşxistinê dibîne, ne biryar û bicihanîna girêdayî." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale nie jest wystarczająco zniuansowane: odpowiedź widzi tylko odroczenie, a nie decyzję plus wiążące wdrożenie." },
+                { "language": "ro", "text": "Plauzibil, dar nu suficient de diferențiat: răspunsul vede doar amânarea, nu decizie plus implementare obligatorie." },
+                { "language": "sq", "text": "Duket e besueshme, por jo mjaft e diferencuar: përgjigjja sheh vetëm shtyrjen, jo vendim plus zbatim të detyrueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Vorteil liegt in früher demokratischer Beteiligung und ernst genommener Jugendperspektive. Das Risiko liegt in symbolischer Politik, wenn Schulen und Parteien Jugendliche zwar umwerben, aber nicht wirklich zur Urteilsbildung befähigen.",
+              "translations": [
+                { "language": "en", "text": "The benefit lies in earlier democratic participation and in taking young people's perspective seriously. The risk lies in symbolic politics if schools and parties court young people but do not really enable them to form judgments." },
+                { "language": "fa", "text": "مزیت در مشارکت دموکراتیک زودتر و جدی گرفتن نگاه جوانان است. خطر در سیاست نمادین است، اگر مدارس و احزاب جوانان را جذب کنند اما واقعاً آن‌ها را برای شکل دادن قضاوت توانمند نکنند." },
+                { "language": "ar", "text": "تكمن الفائدة في المشاركة الديمقراطية المبكرة وفي أخذ منظور الشباب بجدية. ويكمن الخطر في سياسة رمزية إذا حاولت المدارس والأحزاب كسب الشباب لكنها لا تمكنهم فعلاً من تكوين الحكم." },
+                { "language": "tr", "text": "Avantaj, daha erken demokratik katılımda ve gençlerin bakış açısının ciddiye alınmasında yatar. Risk ise, okullar ve partiler gençlere yaklaşır ama onları gerçekten yargı oluşturma konusunda güçlendirmezse sembolik siyasettedir." },
+                { "language": "ru", "text": "Преимущество заключается в более раннем демократическом участии и серьезном отношении к перспективе молодежи. Риск заключается в символической политике, если школы и партии привлекают молодежь, но на самом деле не дают ей возможности формировать суждение." },
+                { "language": "ckb", "text": "سوودەکە لە بەشداری دیموکراتی پێشوەختتر و بە جدی وەرگرتنی دیدی گەنجانەدایە. مەترسییەکە لە سیاسییەکی هێماییدایە ئەگەر قوتابخانە و پارتەکان گەنجان ڕابکێشن، بەڵام بەڕاستی توانای دروستکردنی بڕیار و هەڵسەنگاندنیان پێ نەدەن." },
+                { "language": "kmr", "text": "Sûd di beşdariya demokratîk a zûtir û girînggirtina perspektîfa ciwanan de ye. Xeter di siyaseta sembolîk de ye, heke dibistan û partî ciwanan bikişînin lê bi rastî wan ji bo çêkirina dadweriyê hêzdar nekin." },
+                { "language": "pl", "text": "Korzyść polega na wcześniejszym udziale demokratycznym i poważnym potraktowaniu perspektywy młodzieży. Ryzyko leży w polityce symbolicznej, jeśli szkoły i partie zabiegają o młodych ludzi, ale naprawdę nie umożliwiają im kształtowania osądu." },
+                { "language": "ro", "text": "Avantajul constă în participarea democratică mai timpurie și în luarea în serios a perspectivei tinerilor. Riscul constă în politica simbolică, dacă școlile și partidele îi curtează pe tineri, dar nu îi abilitează cu adevărat să își formeze judecata." },
+                { "language": "sq", "text": "Përfitimi qëndron te pjesëmarrja më e hershme demokratike dhe marrja seriozisht e perspektivës së të rinjve. Rreziku qëndron te politika simbolike, nëse shkollat dhe partitë i afrojnë të rinjtë, por nuk i aftësojnë realisht për të formuar gjykim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Vergleich nennt Vorteil und Risiko symmetrisch und ohne Parolen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the comparison names benefit and risk symmetrically and without slogans." },
+                { "language": "fa", "text": "قوی: مقایسه مزیت و خطر را متقارن و بدون شعار نام می‌برد." },
+                { "language": "ar", "text": "قوي: تذكر المقارنة الفائدة والخطر بشكل متناظر ومن دون شعارات." },
+                { "language": "tr", "text": "Güçlü: karşılaştırma avantajı ve riski simetrik ve slogansız adlandırıyor." },
+                { "language": "ru", "text": "Сильно: сравнение симметрично называет преимущество и риск, без лозунгов." },
+                { "language": "ckb", "text": "بەهێزە: بەراوردەکە سوود و مەترسی بە هاوسەنگی و بێ دروشم ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: berhevkirin sûd û xeterê bi hevsengî û bê dirûşm nav dike." },
+                { "language": "pl", "text": "Mocne: porównanie nazywa korzyść i ryzyko symetrycznie i bez haseł." },
+                { "language": "ro", "text": "Puternic: comparația numește avantajul și riscul simetric și fără sloganuri." },
+                { "language": "sq", "text": "E fortë: krahasimi përmend përfitimin dhe rrezikun në mënyrë simetrike dhe pa slogane." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Vorteil ist mehr Demokratie, das Risiko ist, dass manche Jugendliche vielleicht noch nicht genug wissen.",
+              "translations": [
+                { "language": "en", "text": "The benefit is more democracy; the risk is that some young people may not yet know enough." },
+                { "language": "fa", "text": "مزیت دموکراسی بیشتر است؛ خطر این است که برخی جوانان شاید هنوز به‌اندازه کافی ندانند." },
+                { "language": "ar", "text": "الفائدة هي مزيد من الديمقراطية، والخطر هو أن بعض الشباب ربما لا يعرفون ما يكفي بعد." },
+                { "language": "tr", "text": "Avantaj daha fazla demokrasidir; risk ise bazı gençlerin belki henüz yeterince bilmemesidir." },
+                { "language": "ru", "text": "Преимущество — больше демократии; риск — что некоторые молодые люди, возможно, еще недостаточно знают." },
+                { "language": "ckb", "text": "سوودەکە دیموکراسی زیاترە؛ مەترسییەکە ئەوەیە هەندێک گەنج ڕەنگە هێشتا بەشی پێویست نەزانن." },
+                { "language": "kmr", "text": "Sûd zêdetir demokrasi ye; xeter ew e ku dibe ku hin ciwan hê bi qasî pêwîst nizanibin." },
+                { "language": "pl", "text": "Korzyścią jest więcej demokracji; ryzykiem jest to, że niektórzy młodzi ludzie mogą jeszcze nie wiedzieć wystarczająco dużo." },
+                { "language": "ro", "text": "Avantajul este mai multă democrație; riscul este că unii tineri poate nu știu încă destul." },
+                { "language": "sq", "text": "Përfitimi është më shumë demokraci; rreziku është që disa të rinj ndoshta ende nuk dinë mjaftueshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu grob: Die Antwort bleibt auf Schlagwortniveau und erklärt den Mechanismus nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too rough: the answer stays at slogan level and does not explain the mechanism." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی خام است: پاسخ در سطح شعار می‌ماند و سازوکار را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه خشن جداً: تبقى الإجابة على مستوى الشعار ولا تشرح الآلية." },
+                { "language": "tr", "text": "Makul ama fazla kaba: cevap slogan düzeyinde kalıyor ve mekanizmayı açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком грубо: ответ остается на уровне лозунга и не объясняет механизм." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر سادە و خامە: وەڵام لە ئاستی دروشمدا دەمێنێت و میکانیزم ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir qels e: bersiv li asta dirûşmê dimîne û mekanîzmê rave nake." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ogólne: odpowiedź pozostaje na poziomie hasła i nie wyjaśnia mechanizmu." },
+                { "language": "ro", "text": "Plauzibil, dar prea grosier: răspunsul rămâne la nivel de slogan și nu explică mecanismul." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e ashpër: përgjigjja mbetet në nivel slogani dhe nuk shpjegon mekanizmin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde die Absenkung des Wahlalters befürworten, wenn sie mit verbindlicher politischer Bildung verbunden wird. Dann ist sie nicht nur ein Signal an Jugendliche, sondern ein ernsthafter Schritt zu mehr demokratischer Teilhabe.",
+              "translations": [
+                { "language": "en", "text": "I would support lowering the voting age if it is connected with binding political education. Then it is not only a signal to young people, but a serious step toward more democratic participation." },
+                { "language": "fa", "text": "من کاهش سن رأی دادن را تأیید می‌کنم اگر با آموزش سیاسی الزام‌آور همراه باشد. در این صورت فقط علامتی برای جوانان نیست، بلکه گامی جدی به سوی مشارکت دموکراتیک بیشتر است." },
+                { "language": "ar", "text": "سأؤيد خفض سن التصويت إذا ارتبط بتعليم سياسي ملزم. عندئذ لا يكون مجرد إشارة للشباب، بل خطوة جادة نحو مزيد من المشاركة الديمقراطية." },
+                { "language": "tr", "text": "Oy verme yaşının düşürülmesini, bağlayıcı siyasi eğitimle bağlantılıysa desteklerdim. O zaman bu yalnızca gençlere verilen bir işaret değil, daha fazla demokratik katılıma doğru ciddi bir adım olur." },
+                { "language": "ru", "text": "Я бы поддержал(а) снижение возраста голосования, если оно будет связано с обязательным политическим образованием. Тогда это не только сигнал молодежи, а серьезный шаг к большему демократическому участию." },
+                { "language": "ckb", "text": "من کەمکردنەوەی تەمەنی دەنگدان پشتگیری دەکەم ئەگەر لەگەڵ پەروەردەی سیاسی پابەند پەیوەست بکرێت. ئەو کاتە تەنها هێمایەک بۆ گەنجان نییە، بەڵکو هەنگاوێکی جدییە بۆ بەشداری دیموکراتی زیاتر." },
+                { "language": "kmr", "text": "Ez ê daxistina temenê dengdanê piştgirî bikim heke bi perwerdeya siyasî ya girêdayî ve were girêdan. Hingê ew ne tenê nîşanek ji bo ciwanan e, lê gaveke cidî ye ber bi zêdetir beşdariya demokratîk ve." },
+                { "language": "pl", "text": "Poparł(a)bym obniżenie wieku wyborczego, jeśli byłoby powiązane z obowiązkową edukacją polityczną. Wtedy nie jest to tylko sygnał dla młodzieży, lecz poważny krok ku większemu udziałowi demokratycznemu." },
+                { "language": "ro", "text": "Aș susține coborârea vârstei de vot dacă este legată de educație politică obligatorie. Atunci nu este doar un semnal către tineri, ci un pas serios către mai multă participare democratică." },
+                { "language": "sq", "text": "Do ta mbështesja uljen e moshës së votimit nëse lidhet me edukim politik të detyrueshëm. Atëherë nuk është vetëm një sinjal për të rinjtë, por një hap serioz drejt më shumë pjesëmarrjeje demokratike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussposition ist eindeutig, begründet und an eine Bedingung gebunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the final position is clear, justified, and tied to a condition." },
+                { "language": "fa", "text": "قوی: موضع پایانی روشن، مستدل و به یک شرط بسته شده است." },
+                { "language": "ar", "text": "قوي: الموقف الختامي واضح ومبرر ومرتبط بشرط." },
+                { "language": "tr", "text": "Güçlü: son görüş açık, gerekçeli ve bir koşula bağlı." },
+                { "language": "ru", "text": "Сильно: итоговая позиция ясна, обоснована и связана с условием." },
+                { "language": "ckb", "text": "بەهێزە: هەڵوێستی کۆتایی ڕوونە، هۆکاری هەیە و بە مەرجێکەوە بەستراوە." },
+                { "language": "kmr", "text": "Xurt e: helwesta dawî zelal, hincetkirî û bi mercêkê ve girêdayî ye." },
+                { "language": "pl", "text": "Mocne: stanowisko końcowe jest jasne, uzasadnione i związane z warunkiem." },
+                { "language": "ro", "text": "Puternic: poziția finală este clară, justificată și legată de o condiție." },
+                { "language": "sq", "text": "E fortë: qëndrimi përfundimtar është i qartë, i arsyetuar dhe i lidhur me një kusht." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Zusammenfassend bin ich eher dafür, weil Jugendliche wichtig sind und die Demokratie dadurch moderner wird.",
+              "translations": [
+                { "language": "en", "text": "In summary, I am rather in favor because young people are important and democracy becomes more modern through it." },
+                { "language": "fa", "text": "در جمع‌بندی، من بیشتر موافقم، چون جوانان مهم هستند و دموکراسی با این کار مدرن‌تر می‌شود." },
+                { "language": "ar", "text": "خلاصة القول إنني أميل إلى التأييد لأن الشباب مهمون والديمقراطية تصبح بذلك أكثر حداثة." },
+                { "language": "tr", "text": "Özetle, daha çok destekliyorum çünkü gençler önemlidir ve demokrasi bununla daha modern olur." },
+                { "language": "ru", "text": "В заключение, я скорее за, потому что молодежь важна, и демократия благодаря этому становится современнее." },
+                { "language": "ckb", "text": "لە کۆتاییدا، من زیاتر لەگەڵیدام چونکە گەنجان گرنگن و دیموکراسی بەهۆی ئەمە نوێتر دەبێت." },
+                { "language": "kmr", "text": "Bi kurtî, ez zêdetir alîgir im ji ber ku ciwan girîng in û demokrasi bi vê yekê nûjentir dibe." },
+                { "language": "pl", "text": "Podsumowując, jestem raczej za, ponieważ młodzi ludzie są ważni, a demokracja staje się przez to nowocześniejsza." },
+                { "language": "ro", "text": "În concluzie, sunt mai degrabă pentru, deoarece tinerii sunt importanți și democrația devine astfel mai modernă." },
+                { "language": "sq", "text": "Në përmbledhje, jam më shumë pro, sepse të rinjtë janë të rëndësishëm dhe demokracia bëhet më moderne me këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht C1-stark: Die Begründung bleibt positiv, aber unpräzise und ohne Bedingung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not strong at C1: the justification remains positive, but imprecise and without a condition." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما برای C1 قوی نیست: دلیل مثبت است، اما دقیق نیست و شرط ندارد." },
+                { "language": "ar", "text": "مقبول لكنه ليس قوياً في C1: يبقى التبرير إيجابياً لكنه غير دقيق ومن دون شرط." },
+                { "language": "tr", "text": "Makul ama C1 için güçlü değil: gerekçe olumlu kalıyor, fakat belirsiz ve koşulsuz." },
+                { "language": "ru", "text": "Правдоподобно, но не сильно для C1: обоснование остается позитивным, но неточным и без условия." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام بۆ C1 بەهێز نییە: هۆکارەکە ئەرێنی دەمێنێت، بەڵام ناورد و بێ مەرجە." },
+                { "language": "kmr", "text": "Wek guncav e, lê ji bo C1 xurt nîne: hincet erênî dimîne, lê ne hûrgilî û bê merc e." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale nie jest mocne na C1: uzasadnienie pozostaje pozytywne, lecz nieprecyzyjne i bez warunku." },
+                { "language": "ro", "text": "Plauzibil, dar nu este puternic la C1: justificarea rămâne pozitivă, dar imprecisă și fără condiție." },
+                { "language": "sq", "text": "Duket e besueshme, por nuk është e fortë për C1: arsyetimi mbetet pozitiv, por i pasaktë dhe pa kusht." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei politischen Themen wirkt eine Antwort stärker, wenn sie zuerst den legitimen Kern der Gegenseite anerkennt.",
+          "translations": [
+            { "language": "en", "text": "With political topics, an answer sounds stronger when it first acknowledges the legitimate core of the other side." },
+            { "language": "fa", "text": "در موضوعات سیاسی، پاسخ زمانی قوی‌تر به نظر می‌رسد که ابتدا هسته مشروع طرف مقابل را بپذیرد." },
+            { "language": "ar", "text": "في المواضيع السياسية تبدو الإجابة أقوى عندما تعترف أولاً بالنواة المشروعة للطرف الآخر." },
+            { "language": "tr", "text": "Siyasi konularda bir cevap, önce karşı tarafın meşru çekirdeğini kabul ettiğinde daha güçlü duyulur." },
+            { "language": "ru", "text": "В политических темах ответ звучит сильнее, если сначала признает легитимное ядро другой стороны." },
+            { "language": "ckb", "text": "لە بابەتە سیاسییەکاندا وەڵام کاتێک بەهێزتر دەنگ دەدات کە سەرەتا ناوەڕۆکی ڕەوای لایەنی بەرامبەر بپەژێنێت." },
+            { "language": "kmr", "text": "Di mijarên siyasî de bersiv wê demê xurtir xuya dike ku pêşî navenda rewa ya aliyê din bipejirîne." },
+            { "language": "pl", "text": "W tematach politycznych odpowiedź brzmi mocniej, gdy najpierw uznaje uzasadnione sedno drugiej strony." },
+            { "language": "ro", "text": "În subiectele politice, un răspuns sună mai puternic atunci când recunoaște mai întâi nucleul legitim al celeilalte părți." },
+            { "language": "sq", "text": "Në temat politike, një përgjigje tingëllon më e fortë kur së pari pranon bërthamën legjitime të palës tjetër." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "C1-Diskussionen profitieren von Bedingungen wie `wenn sie mit ... verbunden wird`, weil dadurch eine differenzierte Position entsteht.",
+          "translations": [
+            { "language": "en", "text": "C1 discussions benefit from conditions such as `if it is connected with ...`, because this creates a differentiated position." },
+            { "language": "fa", "text": "بحث‌های C1 از شرط‌هایی مثل «اگر با ... همراه باشد» سود می‌برند، چون این کار موضعی تفکیک‌شده می‌سازد." },
+            { "language": "ar", "text": "تستفيد نقاشات C1 من شروط مثل «إذا ارتبط بـ ...»، لأن ذلك يخلق موقفاً متمايزاً." },
+            { "language": "tr", "text": "C1 tartışmaları `... ile bağlantılıysa` gibi koşullardan yararlanır, çünkü böylece ayrıntılı bir görüş oluşur." },
+            { "language": "ru", "text": "Дискуссии C1 выигрывают от условий вроде «если это связано с ...», потому что так возникает дифференцированная позиция." },
+            { "language": "ckb", "text": "گفتوگۆکانی C1 لە مەرجەکانی وەک «ئەگەر لەگەڵ ... پەیوەست بکرێت» سوود وەردەگرن، چونکە ئەمە هەڵوێستێکی جیاوازکراو دروست دەکات." },
+            { "language": "kmr", "text": "Gotûbêjên C1 ji mercên wek `heke bi ... ve were girêdan` sûd digirin, ji ber ku bi vî awayî helwesteke cudakirî çêdibe." },
+            { "language": "pl", "text": "Dyskusje na poziomie C1 korzystają z warunków typu „jeśli jest powiązane z ...”, ponieważ tworzy to zniuansowane stanowisko." },
+            { "language": "ro", "text": "Discuțiile C1 beneficiază de condiții precum `dacă este legată de ...`, deoarece astfel apare o poziție diferențiată." },
+            { "language": "sq", "text": "Diskutimet C1 përfitojnë nga kushte si “nëse lidhet me ...”, sepse kështu krijohet një qëndrim i diferencuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "content",
+          "text": "Ein ausgewogener Vergleich nennt nicht nur zwei Seiten, sondern erklärt auch, warum beide politisch relevant sind.",
+          "translations": [
+            { "language": "en", "text": "A balanced comparison does not only name two sides, but also explains why both are politically relevant." },
+            { "language": "fa", "text": "یک مقایسه متوازن فقط دو طرف را نام نمی‌برد، بلکه توضیح می‌دهد چرا هر دو از نظر سیاسی مهم هستند." },
+            { "language": "ar", "text": "المقارنة المتوازنة لا تذكر الجانبين فقط، بل تشرح أيضاً لماذا كلاهما مهم سياسياً." },
+            { "language": "tr", "text": "Dengeli bir karşılaştırma yalnızca iki tarafı adlandırmaz, ikisinin de neden siyasi olarak önemli olduğunu açıklar." },
+            { "language": "ru", "text": "Сбалансированное сравнение не только называет две стороны, но и объясняет, почему обе политически важны." },
+            { "language": "ckb", "text": "بەراوردێکی هاوسەنگ تەنها دوو لا ناو نابات، بەڵکو ڕوونیش دەکاتەوە بۆچی هەردووکیان لە ڕووی سیاسییەوە گرنگن." },
+            { "language": "kmr", "text": "Berhevkirineke hevseng tenê du aliyan nav nake, lê herwiha rave dike çima her du jî siyaseten girîng in." },
+            { "language": "pl", "text": "Wyważone porównanie nie tylko nazywa dwie strony, lecz także wyjaśnia, dlaczego obie są politycznie istotne." },
+            { "language": "ro", "text": "O comparație echilibrată nu numește doar două părți, ci explică și de ce ambele sunt relevante politic." },
+            { "language": "sq", "text": "Një krahasim i balancuar nuk përmend vetëm dy anët, por shpjegon edhe pse të dyja janë politikisht të rëndësishme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "exam-technique",
+          "text": "Eine starke Schlussposition kombiniert Richtung, Bedingung und Begründung. `Eher dafür` allein bleibt zu schwach.",
+          "translations": [
+            { "language": "en", "text": "A strong final position combines direction, condition, and justification. `Rather in favor` alone remains too weak." },
+            { "language": "fa", "text": "یک موضع پایانی قوی جهت، شرط و دلیل را ترکیب می‌کند. «بیشتر موافقم» به‌تنهایی ضعیف می‌ماند." },
+            { "language": "ar", "text": "يجمع الموقف الختامي القوي بين الاتجاه والشرط والتبرير. «أميل إلى التأييد» وحدها تبقى ضعيفة." },
+            { "language": "tr", "text": "Güçlü bir sonuç görüşü yön, koşul ve gerekçeyi birleştirir. `Daha çok destekliyorum` tek başına zayıf kalır." },
+            { "language": "ru", "text": "Сильная итоговая позиция сочетает направление, условие и обоснование. Одного «скорее за» слишком мало." },
+            { "language": "ckb", "text": "هەڵوێستی کۆتایی بەهێز ئاراستە، مەرج و هۆکار پێکەوە دەکات. «زیاتر لەگەڵم» بە تەنها لاواز دەمێنێت." },
+            { "language": "kmr", "text": "Helwesta dawî ya xurt araste, merc û hincetê têkildar dike. `Zêdetir alîgir im` tenê qels dimîne." },
+            { "language": "pl", "text": "Mocne stanowisko końcowe łączy kierunek, warunek i uzasadnienie. Samo „raczej jestem za” pozostaje zbyt słabe." },
+            { "language": "ro", "text": "O poziție finală puternică îmbină direcția, condiția și justificarea. `Sunt mai degrabă pentru` singur rămâne prea slab." },
+            { "language": "sq", "text": "Një qëndrim përfundimtar i fortë kombinon drejtimin, kushtin dhe arsyetimin. “Jam më shumë pro” vetëm mbetet shumë e dobët." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "balanced-political-discussion",
+          "placement": "detail-hero",
+          "purpose": "Show a neutral formal exam discussion with two adult candidates weighing a political topic in a calm setting.",
+          "altText": "Zwei Prüfungsteilnehmende diskutieren in einem Prüfungsraum sachlich ein politisches Thema.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two exam candidates discuss a political topic calmly in an exam room." },
+            { "language": "fa", "text": "دو شرکت‌کننده آزمون در اتاق امتحان با آرامش درباره یک موضوع سیاسی بحث می‌کنند." },
+            { "language": "ar", "text": "يناقش ممتحنان موضوعاً سياسياً بهدوء في غرفة امتحان." },
+            { "language": "tr", "text": "İki sınav adayı bir sınav odasında siyasi bir konuyu sakin biçimde tartışır." },
+            { "language": "ru", "text": "Два участника экзамена спокойно обсуждают политическую тему в экзаменационной комнате." },
+            { "language": "ckb", "text": "دوو بەشداربووی تاقیکردنەوە لە ژووری تاقیکردنەوەدا بە ئارامی بابەتێکی سیاسی گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Du beşdarên azmûnê di odeya azmûnê de bi aramî mijareke siyasî gotûbêj dikin." },
+            { "language": "pl", "text": "Dwie osoby zdające spokojnie dyskutują temat polityczny w sali egzaminacyjnej." },
+            { "language": "ro", "text": "Doi candidați la examen discută calm un subiect politic într-o sală de examen." },
+            { "language": "sq", "text": "Dy kandidatë provimi diskutojnë qetësisht një temë politike në një sallë provimi." }
+          ],
+          "imagePrompt": "Clean educational illustration of a neutral formal oral exam discussion in Germany: two diverse adult candidates seated at a table, calmly discussing a civic topic with notes, no party symbols, no flags, no logos, no private data, no readable text inside the image, accessible composition, soft neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

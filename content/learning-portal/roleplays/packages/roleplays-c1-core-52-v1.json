@@ -1,0 +1,841 @@
+{
+  "packageId": "roleplays-c1-core-52-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 52 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 52",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-datenschutz-und-komfort-gegeneinander-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Datenschutz und Komfort gegeneinander abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weighing data protection against convenience" },
+        { "language": "fa", "text": "سنجیدن حریم خصوصی و راحتی در برابر هم" },
+        { "language": "ar", "text": "الموازنة بين حماية البيانات والراحة" },
+        { "language": "tr", "text": "Veri koruma ile konforu birbirine karşı tartmak" },
+        { "language": "ru", "text": "Взвешивать защиту данных и удобство" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی پاراستنی داتا و ئاسانی لە بەرامبەر یەکتر" },
+        { "language": "kmr", "text": "Hevsengkirina parastina daneyan û rehetiyê" },
+        { "language": "pl", "text": "Ważenie ochrony danych i wygody" },
+        { "language": "ro", "text": "Cântărirea protecției datelor și a confortului" },
+        { "language": "sq", "text": "Peshimi i mbrojtjes së të dhënave kundrejt komoditetit" }
+      ],
+      "description": "In einer Diskussionsrunde vergleichen Sie Datenschutz und digitale Bequemlichkeit im Alltag. Sie sollen praktische Vorteile anerkennen, Risiken nicht dramatisieren und konkrete Regeln für eine bewusste Datennutzung formulieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a discussion round, you compare data protection and digital convenience in daily life. You should acknowledge practical benefits, avoid dramatizing risks, and formulate concrete rules for conscious data use." },
+        { "language": "fa", "text": "در یک بحث گروهی، حریم خصوصی و راحتی دیجیتال در زندگی روزمره را مقایسه می‌کنید. باید مزایای عملی را بپذیرید، خطرها را اغراق‌آمیز نکنید و قواعد مشخصی برای استفاده آگاهانه از داده بیان کنید." },
+        { "language": "ar", "text": "في جولة نقاش تقارن بين حماية البيانات والراحة الرقمية في الحياة اليومية. يجب أن تعترف بالفوائد العملية، وألا تهول المخاطر، وأن تصوغ قواعد ملموسة لاستخدام واعٍ للبيانات." },
+        { "language": "tr", "text": "Bir tartışma turunda günlük yaşamda veri koruma ile dijital kolaylığı karşılaştırıyorsunuz. Pratik yararları kabul etmeli, riskleri dramatize etmemeli ve bilinçli veri kullanımı için somut kurallar formüle etmelisiniz." },
+        { "language": "ru", "text": "На дискуссии вы сравниваете защиту данных и цифровое удобство в повседневной жизни. Нужно признать практические преимущества, не драматизировать риски и сформулировать конкретные правила осознанного использования данных." },
+        { "language": "ckb", "text": "لە بازنەی گفتوگۆدا پاراستنی داتا و ئاسانیی دیجیتاڵ لە ژیانی ڕۆژانەدا بەراورد دەکەیت. پێویستە سوودە کردارەکان قبوڵ بکەیت، مەترسییەکان زۆر گەورە نەکەیت و ڕێسای دیاریکراو بۆ بەکارهێنانی ئاگادارانەی داتا دابڕێژیت." },
+        { "language": "kmr", "text": "Di gera gotûbêjê de hûn parastina daneyan û rehetiya dîjîtal di jiyana rojane de didin ber hev. Divê sûdên pratîk qebûl bikin, metirsiyan zêde dramatîze nekin û rêzikên taybet ji bo bikaranîna hişyar a daneyan formule bikin." },
+        { "language": "pl", "text": "W rundzie dyskusyjnej porównuje Pan ochronę danych i cyfrową wygodę w codziennym życiu. Ma Pan uznać praktyczne korzyści, nie dramatyzować ryzyk i sformułować konkretne zasady świadomego używania danych." },
+        { "language": "ro", "text": "Într-o rundă de discuție comparați protecția datelor și comoditatea digitală în viața de zi cu zi. Trebuie să recunoașteți beneficiile practice, să nu dramatizați riscurile și să formulați reguli concrete pentru folosirea conștientă a datelor." },
+        { "language": "sq", "text": "Në një rreth diskutimi krahasoni mbrojtjen e të dhënave dhe komoditetin digjital në jetën e përditshme. Duhet të pranoni përfitimet praktike, të mos dramatizoni rreziqet dhe të formuloni rregulla konkrete për përdorim të vetëdijshëm të të dhënave." }
+      ],
+      "learnerGoal": "Eine differenzierte Abwägung leisten: konkrete Komfortgewinne nennen, Datenschutzrisiken verständlich einordnen, Einwilligungsmüdigkeit erklären, Datenminimierung als Prinzip anwenden und am Ende eine praktikable Entscheidungshilfe formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Make a nuanced assessment: name concrete convenience gains, classify data-protection risks understandably, explain consent fatigue, apply data minimisation as a principle, and formulate a practical decision aid at the end." },
+        { "language": "fa", "text": "ارزیابی دقیق انجام دهید: سودهای مشخص راحتی را نام ببرید، خطرهای حریم خصوصی را قابل فهم ارزیابی کنید، خستگی از رضایت‌نامه‌ها را توضیح دهید، حداقل‌سازی داده را به‌عنوان اصل به کار ببرید و در پایان راهنمای تصمیم‌گیری عملی بیان کنید." },
+        { "language": "ar", "text": "قدّم موازنة متمايزة: سمّ مكاسب الراحة الملموسة، وصنّف مخاطر حماية البيانات بصورة مفهومة، واشرح إرهاق الموافقة، وطبق مبدأ تقليل البيانات، وصغ في النهاية أداة قرار عملية." },
+        { "language": "tr", "text": "Ayrıntılı bir değerlendirme yapın: somut konfor kazanımlarını adlandırın, veri koruma risklerini anlaşılır biçimde sınıflandırın, onay yorgunluğunu açıklayın, veri minimizasyonunu ilke olarak uygulayın ve sonunda pratik bir karar yardımı formüle edin." },
+        { "language": "ru", "text": "Сделать дифференцированное взвешивание: назвать конкретные удобства, понятно оценить риски защиты данных, объяснить усталость от согласий, применить принцип минимизации данных и в конце сформулировать практическую помощь для принятия решения." },
+        { "language": "ckb", "text": "هەڵسەنگاندنێکی ورد بکە: سوودە دیاریکراوەکانی ئاسانی ناو ببە، مەترسییەکانی پاراستنی داتا بە تێگەیشتووی هەڵبسەنگێنە، ماندووبوونی ڕەزامەندییەکان ڕوون بکەوە، کەمکردنەوەی داتا وەک بنەما بەکاربهێنە و لە کۆتاییدا یارمەتییەکی کرداری بۆ بڕیار دابڕێژە." },
+        { "language": "kmr", "text": "Hevsengkirineke hûrgilî bikin: sûdên rehetiyê yên taybet bi nav bikin, metirsiyên parastina daneyan bi têgihîştbarî binirxînin, westana razîbûnê rave bikin, kêmkirina daneyan wek prensîb bikar bînin û di dawiyê de alîkariyeke biryarê ya pratîk formule bikin." },
+        { "language": "pl", "text": "Dokonać zniuansowanego ważenia: nazwać konkretne zyski wygody, zrozumiale sklasyfikować ryzyka ochrony danych, wyjaśnić zmęczenie zgodami, zastosować zasadę minimalizacji danych i na końcu sformułować praktyczną pomoc decyzyjną." },
+        { "language": "ro", "text": "Realizați o cântărire nuanțată: numiți câștiguri concrete de confort, încadrați inteligibil riscurile de protecție a datelor, explicați oboseala consimțământului, aplicați principiul minimizării datelor și formulați la final un ajutor practic de decizie." },
+        { "language": "sq", "text": "Bëni një vlerësim të nuancuar: përmendni fitime konkrete komoditeti, klasifikoni qartë rreziqet e mbrojtjes së të dhënave, shpjegoni lodhjen nga pëlqimet, zbatoni parimin e minimizimit të të dhënave dhe në fund formuloni një ndihmë praktike për vendimmarrje." }
+      ],
+      "cefrLevel": "C1",
+      "category": "society",
+      "topics": ["everyday-life", "business-communication"],
+      "examProfiles": ["c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "compare-options",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 52,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant weighing data protection and convenience" },
+            { "language": "fa", "text": "شرکت‌کننده‌ای که حریم خصوصی و راحتی را می‌سنجد" },
+            { "language": "ar", "text": "مشارك يوازن بين حماية البيانات والراحة" },
+            { "language": "tr", "text": "Veri koruma ve konforu tartan katılımcı" },
+            { "language": "ru", "text": "Участник, взвешивающий защиту данных и удобство" },
+            { "language": "ckb", "text": "بەشداربووێک کە پاراستنی داتا و ئاسانی هەڵدەسەنگێنێت" },
+            { "language": "kmr", "text": "Beşdarek ku parastina daneyan û rehetiyê dihesibîne" },
+            { "language": "pl", "text": "Uczestnik ważący ochronę danych i wygodę" },
+            { "language": "ro", "text": "Participant care cântărește protecția datelor și confortul" },
+            { "language": "sq", "text": "Pjesëmarrës që peshon mbrojtjen e të dhënave dhe komoditetin" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderator/in",
+          "translations": [
+            { "language": "en", "text": "Discussion moderator" },
+            { "language": "fa", "text": "گرداننده بحث" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Tartışma moderatörü" },
+            { "language": "ru", "text": "Модератор дискуссии" },
+            { "language": "ckb", "text": "ڕێکخەری گفتوگۆ" },
+            { "language": "kmr", "text": "Moderatorê gotûbêjê" },
+            { "language": "pl", "text": "Moderator dyskusji" },
+            { "language": "ro", "text": "Moderator de discuție" },
+            { "language": "sq", "text": "Moderator i diskutimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Heute geht es um die Frage, ob digitale Bequemlichkeit den Verlust an Datenschutz rechtfertigt. Bitte vermeiden Sie einfache Parolen und beginnen Sie mit einer abgewogenen Position.",
+          "translations": [
+            { "language": "en", "text": "Today the question is whether digital convenience justifies the loss of data protection. Please avoid simple slogans and begin with a balanced position." },
+            { "language": "fa", "text": "امروز موضوع این است که آیا راحتی دیجیتال از دست دادن حریم خصوصی را توجیه می‌کند یا نه. لطفاً از شعارهای ساده پرهیز کنید و با موضعی سنجیده شروع کنید." },
+            { "language": "ar", "text": "يدور الموضوع اليوم حول ما إذا كانت الراحة الرقمية تبرر فقدان حماية البيانات. يرجى تجنب الشعارات البسيطة والبدء بموقف متوازن." },
+            { "language": "tr", "text": "Bugün dijital konforun veri koruma kaybını haklı çıkarıp çıkarmadığı sorusunu tartışıyoruz. Lütfen basit sloganlardan kaçının ve dengeli bir pozisyonla başlayın." },
+            { "language": "ru", "text": "Сегодня речь идет о том, оправдывает ли цифровое удобство потерю защиты данных. Пожалуйста, избегайте простых лозунгов и начните со взвешенной позиции." },
+            { "language": "ckb", "text": "ئەمڕۆ باس لەو پرسیارە دەکەین کە ئایا ئاسانیی دیجیتاڵ لەدەستدانی پاراستنی داتا پاساو دەدات یان نا. تکایە لە دروشمی سادە دوور بکەوە و بە هەڵوێستێکی هاوسەنگ دەست پێ بکە." },
+            { "language": "kmr", "text": "Îro pirsa me ew e ka gelo rehetiya dîjîtal windakirina parastina daneyan rewa dike an na. Ji kerema xwe ji şîarên hêsan dûr bisekinin û bi helwesteke hevseng dest pê bikin." },
+            { "language": "pl", "text": "Dziś chodzi o pytanie, czy cyfrowa wygoda usprawiedliwia utratę ochrony danych. Proszę unikać prostych haseł i zacząć od wyważonego stanowiska." },
+            { "language": "ro", "text": "Astăzi discutăm dacă comoditatea digitală justifică pierderea protecției datelor. Vă rog să evitați lozincile simple și să începeți cu o poziție echilibrată." },
+            { "language": "sq", "text": "Sot flasim nëse komoditeti digjital e justifikon humbjen e mbrojtjes së të dhënave. Ju lutem shmangni parullat e thjeshta dhe filloni me një qëndrim të balancuar." }
+          ],
+          "function": "open-comparison",
+          "toneNote": "formal and analytical"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Gegensatz nicht absolut sehen. Viele digitale Dienste sind bequem, weil sie Wege, Wartezeiten und Papier reduzieren. Problematisch wird es, wenn dafür mehr Daten gesammelt werden, als für den konkreten Zweck nötig sind.",
+          "translations": [
+            { "language": "en", "text": "I would not see the contrast as absolute. Many digital services are convenient because they reduce travel, waiting times, and paper. It becomes problematic when more data is collected for that than is necessary for the concrete purpose." },
+            { "language": "fa", "text": "من این تضاد را مطلق نمی‌بینم. بسیاری از خدمات دیجیتال راحت‌اند، چون رفت‌وآمد، زمان انتظار و کاغذبازی را کم می‌کنند. مشکل وقتی شروع می‌شود که برای این کار بیش از آنچه برای هدف مشخص لازم است داده جمع‌آوری شود." },
+            { "language": "ar", "text": "لا أرى التعارض مطلقاً. كثير من الخدمات الرقمية مريحة لأنها تقلل الطرق وأوقات الانتظار والورق. يصبح الأمر إشكالياً عندما تُجمع بيانات أكثر مما يلزم للغرض المحدد." },
+            { "language": "tr", "text": "Bu karşıtlığı mutlak görmem. Birçok dijital hizmet yol, bekleme süresi ve kağıt işini azalttığı için rahattır. Sorun, bunun için somut amaçtan daha fazla veri toplanınca başlar." },
+            { "language": "ru", "text": "Я не стал бы видеть это противопоставление как абсолютное. Многие цифровые услуги удобны, потому что сокращают поездки, ожидание и бумажную работу. Проблема возникает, когда для этого собирается больше данных, чем нужно для конкретной цели." },
+            { "language": "ckb", "text": "من ئەم دژایەتییە بە ڕەها نابینم. زۆر خزمەتگوزاریی دیجیتاڵ ئاسانن، چونکە ڕێگا، کاتی چاوەڕوانی و کاغەزکاری کەم دەکەنەوە. کێشە کاتێکە کە بۆ ئەوە داتای زیاتر لە پێویستی ئامانجی دیاریکراو کۆدەکرێتەوە." },
+            { "language": "kmr", "text": "Ez vê dijberiyê wekî tiştek mutleq nabînim. Gelek xizmetên dîjîtal rehet in, ji ber ku rê, demên bendewarî û kaxezê kêm dikin. Pirsgirêk dema çêdibe ku ji bo wê zêdetir dane ji ya ji bo armanca taybet pêwîst were komkirin." },
+            { "language": "pl", "text": "Nie widziałbym tego przeciwieństwa jako absolutnego. Wiele usług cyfrowych jest wygodnych, bo zmniejsza dojazdy, czas oczekiwania i papier. Problem pojawia się, gdy zbiera się do tego więcej danych, niż potrzeba do konkretnego celu." },
+            { "language": "ro", "text": "Nu aș vedea opoziția ca absolută. Multe servicii digitale sunt comode pentru că reduc drumurile, timpii de așteptare și hârtia. Devine problematic când pentru aceasta se colectează mai multe date decât sunt necesare scopului concret." },
+            { "language": "sq", "text": "Nuk do ta shihja këtë kundërshti si absolute. Shumë shërbime digjitale janë komode sepse ulin rrugët, pritjet dhe letrat. Problemi lind kur për këtë mblidhen më shumë të dhëna sesa nevojiten për qëllimin konkret." }
+          ],
+          "function": "balanced-opening",
+          "toneNote": "nuanced",
+          "expectedLearnerAction": "Avoid absolutism and introduce purpose limitation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Können Sie ein Beispiel nennen, bei dem Komfort tatsächlich sinnvoll ist, aber trotzdem eine Datenschutzgrenze braucht?",
+          "translations": [
+            { "language": "en", "text": "Can you name an example where convenience is genuinely useful, but still needs a data-protection boundary?" },
+            { "language": "fa", "text": "می‌توانید مثالی بزنید که در آن راحتی واقعاً مفید است، اما همچنان به مرز حریم خصوصی نیاز دارد؟" },
+            { "language": "ar", "text": "هل يمكنك ذكر مثال تكون فيه الراحة مفيدة فعلاً، لكنها تحتاج مع ذلك إلى حد لحماية البيانات؟" },
+            { "language": "tr", "text": "Konforun gerçekten yararlı olduğu, ama yine de veri koruma sınırına ihtiyaç duyduğu bir örnek verebilir misiniz?" },
+            { "language": "ru", "text": "Можете привести пример, где удобство действительно полезно, но все же нужна граница защиты данных?" },
+            { "language": "ckb", "text": "دەتوانیت نموونەیەک بڵێیت کە ئاسانی بەڕاستی بەسوودە، بەڵام هێشتا پێویستی بە سنووری پاراستنی داتا هەیە؟" },
+            { "language": "kmr", "text": "Ma hûn dikarin mînakek bibêjin ku reheti bi rastî sûdmend be, lê hîn jî sînorek parastina daneyan pêwîst bike?" },
+            { "language": "pl", "text": "Czy może Pan podać przykład, w którym wygoda rzeczywiście ma sens, ale mimo to potrzebuje granicy ochrony danych?" },
+            { "language": "ro", "text": "Puteți da un exemplu în care confortul este într-adevăr util, dar are totuși nevoie de o limită de protecție a datelor?" },
+            { "language": "sq", "text": "A mund të jepni një shembull ku komoditeti është vërtet i dobishëm, por prapë ka nevojë për një kufi të mbrojtjes së të dhënave?" }
+          ],
+          "function": "ask-concrete-example"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein Beispiel ist eine Verkehrs-App: Standortdaten helfen, Verspätungen und Alternativen in Echtzeit zu sehen. Gleichzeitig sollte die App erklären, ob der Standort dauerhaft gespeichert wird, und eine Nutzung ohne personalisiertes Profil ermöglichen.",
+          "translations": [
+            { "language": "en", "text": "One example is a transport app: location data helps show delays and alternatives in real time. At the same time, the app should explain whether the location is stored permanently and allow use without a personalized profile." },
+            { "language": "fa", "text": "یک مثال اپلیکیشن حمل‌ونقل است: داده مکان کمک می‌کند تأخیرها و مسیرهای جایگزین را لحظه‌ای ببینیم. هم‌زمان اپ باید توضیح دهد آیا مکان به‌طور دائمی ذخیره می‌شود یا نه، و استفاده بدون پروفایل شخصی‌سازی‌شده را ممکن کند." },
+            { "language": "ar", "text": "مثال ذلك تطبيق المواصلات: تساعد بيانات الموقع في رؤية التأخيرات والبدائل في الوقت الحقيقي. وفي الوقت نفسه ينبغي للتطبيق أن يوضح هل يُخزن الموقع دائماً، وأن يتيح الاستخدام من دون ملف شخصي مخصص." },
+            { "language": "tr", "text": "Bir örnek ulaşım uygulamasıdır: konum verileri gecikmeleri ve alternatifleri gerçek zamanlı görmeye yardımcı olur. Aynı zamanda uygulama konumun kalıcı kaydedilip kaydedilmediğini açıklamalı ve kişiselleştirilmiş profil olmadan kullanıma izin vermelidir." },
+            { "language": "ru", "text": "Пример — транспортное приложение: данные местоположения помогают видеть задержки и альтернативы в реальном времени. Одновременно приложение должно объяснять, хранится ли местоположение постоянно, и позволять использование без персонализированного профиля." },
+            { "language": "ckb", "text": "نموونەیەک ئەپی گواستنەوەیە: داتای شوێن یارمەتی دەدات دواکەوتن و جێگرەوەکان بە کاتی ڕاستەقینە ببینرێن. هاوکات پێویستە ئەپەکە ڕوون بکاتەوە ئایا شوێنەکە بەردەوام هەڵدەگیرێت یان نا، و بەکارهێنان بەبێ پڕۆفایلی کەسی‌کراوە ڕێگە پێبدات." },
+            { "language": "kmr", "text": "Mînakek sepana veguhestinê ye: daneyên cihê alîkar in da ku derengî û alternatîfan di dema rast de bibînin. Di heman demê de divê sepanê rave bike ka cih bi domdarî tê hilanîn an na, û bikaranîna bê profîla kesanekirî gengaz bike." },
+            { "language": "pl", "text": "Przykładem jest aplikacja transportowa: dane lokalizacyjne pomagają widzieć opóźnienia i alternatywy w czasie rzeczywistym. Jednocześnie aplikacja powinna wyjaśniać, czy lokalizacja jest trwale zapisywana, i umożliwiać użycie bez spersonalizowanego profilu." },
+            { "language": "ro", "text": "Un exemplu este o aplicație de transport: datele de localizare ajută la observarea întârzierilor și alternativelor în timp real. În același timp, aplicația ar trebui să explice dacă locația este stocată permanent și să permită folosirea fără profil personalizat." },
+            { "language": "sq", "text": "Një shembull është një aplikacion transporti: të dhënat e vendndodhjes ndihmojnë të shihen vonesat dhe alternativat në kohë reale. Njëkohësisht aplikacioni duhet të shpjegojë nëse vendndodhja ruhet vazhdimisht dhe të lejojë përdorim pa profil të personalizuar." }
+          ],
+          "function": "example-with-safeguards",
+          "expectedLearnerAction": "Use a practical example and define transparency and profile limits."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Viele Menschen klicken Einwilligungen weg, weil sie im Alltag keine Zeit haben. Wie berücksichtigen Sie diese Einwilligungsmüdigkeit?",
+          "translations": [
+            { "language": "en", "text": "Many people click consent notices away because they have no time in daily life. How do you take this consent fatigue into account?" },
+            { "language": "fa", "text": "خیلی‌ها رضایت‌نامه‌ها را سریع می‌بندند، چون در زندگی روزمره وقت ندارند. این خستگی از رضایت‌نامه‌ها را چگونه در نظر می‌گیرید؟" },
+            { "language": "ar", "text": "كثير من الناس يضغطون على إشعارات الموافقة سريعاً لأنهم لا يملكون وقتاً في الحياة اليومية. كيف تأخذ إرهاق الموافقة هذا في الحسبان؟" },
+            { "language": "tr", "text": "Birçok insan günlük yaşamda zamanı olmadığı için onay bildirimlerini geçip gider. Bu onay yorgunluğunu nasıl hesaba katıyorsunuz?" },
+            { "language": "ru", "text": "Многие люди быстро закрывают согласия, потому что в повседневности у них нет времени. Как вы учитываете эту усталость от согласий?" },
+            { "language": "ckb", "text": "زۆر کەس ڕەزامەندییەکان بە خێرایی داخەیت، چونکە لە ژیانی ڕۆژانەدا کاتی نییە. چۆن ئەم ماندووبوونی ڕەزامەندییەکان لەبەرچاو دەگریت؟" },
+            { "language": "kmr", "text": "Gelek kes di jiyana rojane de dem tune ye û agahiyên razîbûnê zû diqefilînin. Hûn vê westana razîbûnê çawa li ber çavan digirin?" },
+            { "language": "pl", "text": "Wiele osób odklikuje zgody, bo w codzienności nie ma czasu. Jak uwzględnia Pan to zmęczenie zgodami?" },
+            { "language": "ro", "text": "Mulți oameni închid rapid consimțămintele pentru că nu au timp în viața de zi cu zi. Cum luați în considerare această oboseală a consimțământului?" },
+            { "language": "sq", "text": "Shumë njerëz i mbyllin pëlqimet shpejt sepse në përditshmëri nuk kanë kohë. Si e merrni parasysh këtë lodhje nga pëlqimet?" }
+          ],
+          "function": "introduce-consent-fatigue"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Gerade deshalb darf Verantwortung nicht allein auf Nutzerinnen und Nutzer abgewälzt werden. Anbieter sollten Voreinstellungen datensparsam wählen, verständlich erklären und Komfort nicht daran knüpfen, dass man unnötige Daten freigibt.",
+          "translations": [
+            { "language": "en", "text": "For precisely that reason, responsibility must not be shifted solely onto users. Providers should choose data-saving default settings, explain understandably, and not tie convenience to releasing unnecessary data." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل نباید مسئولیت فقط به کاربران منتقل شود. ارائه‌دهندگان باید تنظیمات پیش‌فرض کم‌داده انتخاب کنند، قابل فهم توضیح دهند و راحتی را وابسته به دادن داده‌های غیرضروری نکنند." },
+            { "language": "ar", "text": "لهذا السبب بالذات لا يجوز نقل المسؤولية إلى المستخدمين وحدهم. ينبغي للمزودين اختيار إعدادات افتراضية مقتصدة في البيانات، والشرح بصورة مفهومة، وألا يربطوا الراحة بإتاحة بيانات غير ضرورية." },
+            { "language": "tr", "text": "Tam da bu nedenle sorumluluk yalnızca kullanıcılara yüklenmemelidir. Sağlayıcılar veri tasarruflu varsayılan ayarlar seçmeli, anlaşılır açıklamalı ve konforu gereksiz veri paylaşımına bağlamamalıdır." },
+            { "language": "ru", "text": "Именно поэтому ответственность нельзя перекладывать только на пользователей. Провайдеры должны выбирать экономные по данным настройки по умолчанию, понятно объяснять и не связывать удобство с передачей ненужных данных." },
+            { "language": "ckb", "text": "هەر بۆ ئەوە نابێت بەرپرسیارێتی تەنها بخرێتە سەر بەکارهێنەران. دابینکەران پێویستە ڕێکخستنە بنەڕەتییە کەم‌داتاکان هەڵبژێرن، بە ڕوونی ڕوون بکەنەوە و ئاسانی بە دانی داتای ناپێویستەوە گرێ نەدەن." },
+            { "language": "kmr", "text": "Tam ji ber vê yekê divê berpirsiyarî tenê li ser bikarhêneran neyê avêtin. Peydaker divê mîhengên xwerû yên kêm-dane hilbijêrin, bi têgihîştbarî rave bikin û rehetiyê bi daneyên nepêwîst ve girê nedin." },
+            { "language": "pl", "text": "Właśnie dlatego odpowiedzialności nie wolno przerzucać wyłącznie na użytkowników. Dostawcy powinni wybierać domyślne ustawienia oszczędne w danych, jasno wyjaśniać i nie wiązać wygody z udostępnianiem zbędnych danych." },
+            { "language": "ro", "text": "Tocmai de aceea responsabilitatea nu trebuie mutată doar pe utilizatori. Furnizorii ar trebui să aleagă setări implicite economice în date, să explice inteligibil și să nu lege confortul de cedarea datelor inutile." },
+            { "language": "sq", "text": "Pikërisht për këtë arsye përgjegjësia nuk duhet t'u kalohet vetëm përdoruesve. Ofruesit duhet të zgjedhin cilësime parazgjedhje që kursejnë të dhëna, të shpjegojnë qartë dhe të mos e lidhin komoditetin me dhënien e të dhënave të panevojshme." }
+          ],
+          "function": "shift-to-provider-responsibility",
+          "expectedLearnerAction": "Address consent fatigue through defaults, transparency, and provider responsibility."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Wie würden Sie im Alltag entscheiden, ob Sie einem Dienst bestimmte Daten geben oder lieber auf etwas Komfort verzichten?",
+          "translations": [
+            { "language": "en", "text": "How would you decide in daily life whether to give a service certain data or rather give up some convenience?" },
+            { "language": "fa", "text": "در زندگی روزمره چگونه تصمیم می‌گیرید که به یک سرویس داده مشخصی بدهید یا ترجیح دهید از کمی راحتی صرف‌نظر کنید؟" },
+            { "language": "ar", "text": "كيف تقرر في الحياة اليومية هل تعطي خدمةً بيانات معينة أم تفضل التخلي عن بعض الراحة؟" },
+            { "language": "tr", "text": "Günlük yaşamda bir hizmete belirli verileri verip vermemeye ya da biraz konfordan vazgeçmeye nasıl karar verirsiniz?" },
+            { "language": "ru", "text": "Как вы в повседневности решаете, дать ли сервису определенные данные или лучше отказаться от части удобства?" },
+            { "language": "ckb", "text": "لە ژیانی ڕۆژانەدا چۆن بڕیار دەدەیت کە بە خزمەتگوزارییەک داتای دیاریکراو بدەیت یان باشترە لە هەندێک ئاسانی وازبهێنیت؟" },
+            { "language": "kmr", "text": "Di jiyana rojane de hûn çawa biryar didin ka daneyên taybet bidin xizmetekê an baştir e ji hin rehetiyê dest berdin?" },
+            { "language": "pl", "text": "Jak w codzienności zdecydowałby Pan, czy dać usłudze określone dane, czy raczej zrezygnować z części wygody?" },
+            { "language": "ro", "text": "Cum ați decide în viața de zi cu zi dacă dați unui serviciu anumite date sau preferați să renunțați la puțin confort?" },
+            { "language": "sq", "text": "Si do të vendosnit në përditshmëri nëse t'i jepni një shërbimi të dhëna të caktuara apo më mirë të hiqni dorë nga pak komoditet?" }
+          ],
+          "function": "ask-decision-rule"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde drei Fragen stellen: Braucht der Dienst diese Daten wirklich für die Funktion? Kann ich sie später löschen oder ändern? Und gibt es eine weniger datenintensive Alternative, die fast denselben Nutzen bringt?",
+          "translations": [
+            { "language": "en", "text": "I would ask three questions: Does the service really need this data for the function? Can I delete or change it later? And is there a less data-intensive alternative that provides almost the same benefit?" },
+            { "language": "fa", "text": "من سه سؤال می‌پرسم: آیا سرویس واقعاً برای این عملکرد به این داده‌ها نیاز دارد؟ آیا بعداً می‌توانم آن‌ها را حذف یا تغییر دهم؟ و آیا جایگزینی با داده کمتر وجود دارد که تقریباً همان فایده را بدهد؟" },
+            { "language": "ar", "text": "سأطرح ثلاثة أسئلة: هل تحتاج الخدمة فعلاً إلى هذه البيانات من أجل الوظيفة؟ هل أستطيع حذفها أو تغييرها لاحقاً؟ وهل يوجد بديل أقل استهلاكاً للبيانات يقدم الفائدة نفسها تقريباً؟" },
+            { "language": "tr", "text": "Üç soru sorardım: Hizmet bu veriye işlev için gerçekten ihtiyaç duyuyor mu? Daha sonra silebilir veya değiştirebilir miyim? Ve neredeyse aynı yararı sağlayan daha az veri yoğun bir alternatif var mı?" },
+            { "language": "ru", "text": "Я бы задал три вопроса: действительно ли сервису нужны эти данные для функции? Могу ли я позже удалить или изменить их? И есть ли менее интенсивная по данным альтернатива, которая дает почти ту же пользу?" },
+            { "language": "ckb", "text": "من سێ پرسیار دەکەم: ئایا خزمەتگوزارییەکە بەڕاستی بۆ ئەو کارە پێویستی بە ئەم داتایە هەیە؟ ئایا دواتر دەتوانم بیسڕمەوە یان بیگۆڕم؟ و ئایا جێگرەوەیەکی کەم‌داتاتر هەیە کە نزیکەی هەمان سوود بدات؟" },
+            { "language": "kmr", "text": "Ez sê pirs dikim: Ma xizmet bi rastî ji bo wê fonksiyonê van daneyan dixwaze? Ma ez dikarim paşê wan jê bibim an biguherînim? Û ma alternatîfeke kêmtir dane-hevî heye ku hema heman sûdê bide?" },
+            { "language": "pl", "text": "Zadałbym trzy pytania: Czy usługa naprawdę potrzebuje tych danych do funkcji? Czy mogę je później usunąć lub zmienić? I czy istnieje mniej danychochłonna alternatywa, która daje prawie tę samą korzyść?" },
+            { "language": "ro", "text": "Aș pune trei întrebări: Are serviciul cu adevărat nevoie de aceste date pentru funcție? Le pot șterge sau modifica mai târziu? Și există o alternativă mai puțin intensivă în date care aduce aproape același beneficiu?" },
+            { "language": "sq", "text": "Do të bëja tri pyetje: A i duhen vërtet shërbimit këto të dhëna për funksionin? A mund t'i fshij ose ndryshoj më vonë? Dhe a ka një alternativë me më pak të dhëna që sjell pothuajse të njëjtin përfitim?" }
+          ],
+          "function": "three-question-rule",
+          "expectedLearnerAction": "Offer a practical decision rule based on necessity, control, and alternatives."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Was sagen Sie zu dem Argument, dass personalisierte Dienste nur funktionieren, wenn man ausreichend Daten teilt?",
+          "translations": [
+            { "language": "en", "text": "What do you say to the argument that personalized services only work if you share enough data?" },
+            { "language": "fa", "text": "در برابر این استدلال چه می‌گویید که خدمات شخصی‌سازی‌شده فقط وقتی کار می‌کنند که داده کافی به اشتراک گذاشته شود؟" },
+            { "language": "ar", "text": "ماذا تقول للحجة إن الخدمات المخصصة لا تعمل إلا إذا شارك المرء بيانات كافية؟" },
+            { "language": "tr", "text": "Kişiselleştirilmiş hizmetlerin ancak yeterli veri paylaşıldığında çalıştığı argümanına ne dersiniz?" },
+            { "language": "ru", "text": "Что вы скажете на аргумент, что персонализированные сервисы работают только при достаточном обмене данными?" },
+            { "language": "ckb", "text": "لە بەرامبەر ئەو ئارگیومێنتە چی دەڵێیت کە خزمەتگوزارییە کەسی‌کراوەکان تەنها کاتێک کار دەکەن کە داتای پێویست هاوبەش بکرێت؟" },
+            { "language": "kmr", "text": "Hûn li hember argumana ku xizmetên kesanekirî tenê dema ku dane têr were parvekirin dixebitin çi dibêjin?" },
+            { "language": "pl", "text": "Co powiedziałby Pan na argument, że usługi spersonalizowane działają tylko wtedy, gdy udostępnia się wystarczająco dużo danych?" },
+            { "language": "ro", "text": "Ce spuneți despre argumentul că serviciile personalizate funcționează doar dacă se partajează suficiente date?" },
+            { "language": "sq", "text": "Çfarë thoni për argumentin se shërbimet e personalizuara funksionojnë vetëm kur ndahen mjaftueshëm të dhëna?" }
+          ],
+          "function": "introduce-personalization-argument"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das stimmt teilweise, aber Personalisierung ist kein Freibrief. Man kann zwischen notwendigen Daten, optionaler Verbesserung und reinem Marketing unterscheiden. Komfort sollte also abgestuft angeboten werden, nicht nach dem Prinzip alles oder nichts.",
+          "translations": [
+            { "language": "en", "text": "That is partly true, but personalization is not a blank cheque. One can distinguish between necessary data, optional improvement, and pure marketing. Convenience should therefore be offered in levels, not according to an all-or-nothing principle." },
+            { "language": "fa", "text": "این تا حدی درست است، اما شخصی‌سازی مجوز نامحدود نیست. می‌توان بین داده‌های ضروری، بهبود اختیاری و بازاریابی صرف تفاوت گذاشت. بنابراین راحتی باید درجه‌بندی‌شده ارائه شود، نه بر اساس اصل همه یا هیچ." },
+            { "language": "ar", "text": "هذا صحيح جزئياً، لكن التخصيص ليس تفويضاً مفتوحاً. يمكن التمييز بين البيانات الضرورية والتحسين الاختياري والتسويق الصرف. لذلك ينبغي تقديم الراحة بدرجات، لا وفق مبدأ الكل أو لا شيء." },
+            { "language": "tr", "text": "Bu kısmen doğru, ama kişiselleştirme açık çek değildir. Gerekli veri, isteğe bağlı iyileştirme ve saf pazarlama arasında ayrım yapılabilir. Konfor bu yüzden ya hep ya hiç ilkesine göre değil, kademeli sunulmalıdır." },
+            { "language": "ru", "text": "Это частично верно, но персонализация не является открытым разрешением. Можно различать необходимые данные, необязательное улучшение и чистый маркетинг. Поэтому удобство должно предлагаться по уровням, а не по принципу все или ничего." },
+            { "language": "ckb", "text": "ئەمە بەشێکی ڕاستە، بەڵام کەسی‌کردن چێکی سپی نییە. دەتوانرێت جیاوازی بکرێت لە نێوان داتای پێویست، باشترکردنی هەڵبژاردەیی و بازاڕکردنی تەنیا. بۆیە ئاسانی پێویستە بە پلە پلە پێشکەش بکرێت، نە بە بنەمای هەموو یان هیچ." },
+            { "language": "kmr", "text": "Ev bi beşek rast e, lê kesanekirin çekeke spî nîne. Mirov dikare di navbera daneyên pêwîst, baştirkirina vebijêrkî û bazirganiya tenê de cudahî bike. Ji ber vê divê reheti bi astan were pêşkêşkirin, ne bi prensîba hemû an tu tişt." },
+            { "language": "pl", "text": "To częściowo prawda, ale personalizacja nie jest wolną ręką. Można rozróżnić dane konieczne, opcjonalne ulepszenie i czysty marketing. Wygoda powinna więc być oferowana stopniowo, a nie według zasady wszystko albo nic." },
+            { "language": "ro", "text": "Este parțial adevărat, dar personalizarea nu este un cec în alb. Se poate distinge între date necesare, îmbunătățire opțională și marketing pur. Confortul ar trebui deci oferit pe niveluri, nu după principiul totul sau nimic." },
+            { "language": "sq", "text": "Kjo është pjesërisht e vërtetë, por personalizimi nuk është leje e pakufizuar. Mund të dallohet mes të dhënave të nevojshme, përmirësimit opsional dhe marketingut të pastër. Prandaj komoditeti duhet ofruar me nivele, jo sipas parimit gjithçka ose asgjë." }
+          ],
+          "function": "differentiate-personalization",
+          "expectedLearnerAction": "Accept part of the argument and separate necessary, optional, and marketing data."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "moderator",
+          "baseText": "Bitte fassen Sie Ihre Abwägung in einer alltagstauglichen Empfehlung zusammen.",
+          "translations": [
+            { "language": "en", "text": "Please summarize your weighing in a recommendation suitable for daily life." },
+            { "language": "fa", "text": "لطفاً سنجش خود را در قالب توصیه‌ای مناسب زندگی روزمره خلاصه کنید." },
+            { "language": "ar", "text": "لخّص من فضلك موازنتك في توصية مناسبة للحياة اليومية." },
+            { "language": "tr", "text": "Lütfen değerlendirmenizi günlük yaşama uygun bir öneri olarak özetleyin." },
+            { "language": "ru", "text": "Пожалуйста, подытожьте свое взвешивание в рекомендации, пригодной для повседневной жизни." },
+            { "language": "ckb", "text": "تکایە هەڵسەنگاندنەکەت بە پێشنیارێکی گونجاو بۆ ژیانی ڕۆژانە کورت بکەوە." },
+            { "language": "kmr", "text": "Ji kerema xwe hevsengkirina xwe di pêşniyareke guncaw ji bo jiyana rojane de kurt bikin." },
+            { "language": "pl", "text": "Proszę podsumować swoje ważenie w rekomendacji przydatnej na co dzień." },
+            { "language": "ro", "text": "Vă rog să rezumați cântărirea dumneavoastră într-o recomandare potrivită pentru viața de zi cu zi." },
+            { "language": "sq", "text": "Ju lutem përmblidhni peshimin tuaj në një rekomandim të përshtatshëm për jetën e përditshme." }
+          ],
+          "function": "ask-final-recommendation"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Meine Empfehlung lautet: Komfort nutzen, aber datenarm beginnen. Was für die Funktion nötig ist, kann man freigeben; was nur Werbung, Profilbildung oder dauerhafte Nachverfolgung verbessert, sollte bewusst optional bleiben.",
+          "translations": [
+            { "language": "en", "text": "My recommendation is: use convenience, but start with little data. What is necessary for the function can be released; what only improves advertising, profiling, or permanent tracking should consciously remain optional." },
+            { "language": "fa", "text": "توصیه من این است: از راحتی استفاده کنیم، اما با داده کم شروع کنیم. آنچه برای عملکرد لازم است می‌تواند داده شود؛ اما چیزی که فقط تبلیغات، پروفایل‌سازی یا ردیابی دائمی را بهتر می‌کند باید آگاهانه اختیاری بماند." },
+            { "language": "ar", "text": "توصيتي هي: استخدام الراحة، لكن البدء ببيانات قليلة. ما يلزم للوظيفة يمكن إتاحته؛ أما ما يحسن فقط الإعلان أو بناء الملف الشخصي أو التتبع الدائم فينبغي أن يبقى اختيارياً بوعي." },
+            { "language": "tr", "text": "Önerim şudur: konforu kullanmak, ama az veriyle başlamak. İşlev için gerekli olan paylaşılabilir; yalnızca reklamı, profil oluşturmayı veya sürekli takibi iyileştiren şey bilinçli olarak isteğe bağlı kalmalıdır." },
+            { "language": "ru", "text": "Моя рекомендация: пользоваться удобством, но начинать с минимального объема данных. То, что необходимо для функции, можно предоставить; то, что лишь улучшает рекламу, профилирование или постоянное отслеживание, должно осознанно оставаться необязательным." },
+            { "language": "ckb", "text": "پێشنیارەکەم ئەمەیە: ئاسانی بەکاربهێنە، بەڵام بە داتای کەم دەست پێ بکە. ئەوەی بۆ کارکردن پێویستە دەتوانرێت بدرێت؛ ئەوەی تەنها ڕیکلام، پڕۆفایل‌سازی یان شوێنکەوتنی بەردەوام باشتر دەکات پێویستە بە ئاگایی هەڵبژاردەیی بمێنێتەوە." },
+            { "language": "kmr", "text": "Pêşniyara min ev e: rehetiyê bikar bînin, lê bi dane kêm dest pê bikin. Ya ji bo fonksiyonê pêwîst e dikare were berdan; ya ku tenê reklaman, avakirina profîlê an şopandina domdar baştir dike divê bi hişyarî vebijêrkî bimîne." },
+            { "language": "pl", "text": "Moja rekomendacja brzmi: korzystać z wygody, ale zaczynać oszczędnie w danych. To, co jest potrzebne do funkcji, można udostępnić; to, co tylko poprawia reklamę, profilowanie lub stałe śledzenie, powinno świadomie pozostać opcjonalne." },
+            { "language": "ro", "text": "Recomandarea mea este: folosiți confortul, dar începeți cu puține date. Ce este necesar pentru funcție poate fi oferit; ceea ce îmbunătățește doar publicitatea, profilarea sau urmărirea permanentă ar trebui să rămână conștient opțional." },
+            { "language": "sq", "text": "Rekomandimi im është: përdorni komoditetin, por filloni me pak të dhëna. Ajo që nevojitet për funksionin mund të jepet; ajo që përmirëson vetëm reklamat, profilizimin ose ndjekjen e vazhdueshme duhet të mbetet me vetëdije opsionale." }
+          ],
+          "function": "final-practical-recommendation",
+          "expectedLearnerAction": "Summarize with a practical low-data default and clear optional categories."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "balanced-purpose-limitation",
+              "text": "Ich würde den Gegensatz nicht absolut sehen. Viele digitale Dienste sind bequem, weil sie Wege, Wartezeiten und Papier reduzieren. Problematisch wird es, wenn dafür mehr Daten gesammelt werden, als für den konkreten Zweck nötig sind.",
+              "translations": [
+                { "language": "en", "text": "I would not see the contrast as absolute. Many digital services are convenient because they reduce travel, waiting times, and paper. It becomes problematic when more data is collected for that than is necessary for the concrete purpose." },
+                { "language": "fa", "text": "من این تضاد را مطلق نمی‌بینم. بسیاری از خدمات دیجیتال راحت‌اند، چون رفت‌وآمد، زمان انتظار و کاغذبازی را کم می‌کنند. مشکل وقتی شروع می‌شود که برای این کار بیش از آنچه برای هدف مشخص لازم است داده جمع‌آوری شود." },
+                { "language": "ar", "text": "لا أرى التعارض مطلقاً. كثير من الخدمات الرقمية مريحة لأنها تقلل الطرق وأوقات الانتظار والورق. يصبح الأمر إشكالياً عندما تُجمع بيانات أكثر مما يلزم للغرض المحدد." },
+                { "language": "tr", "text": "Bu karşıtlığı mutlak görmem. Birçok dijital hizmet yol, bekleme süresi ve kağıt işini azalttığı için rahattır. Sorun, bunun için somut amaçtan daha fazla veri toplanınca başlar." },
+                { "language": "ru", "text": "Я не стал бы видеть это противопоставление как абсолютное. Многие цифровые услуги удобны, потому что сокращают поездки, ожидание и бумажную работу. Проблема возникает, когда для этого собирается больше данных, чем нужно для конкретной цели." },
+                { "language": "ckb", "text": "من ئەم دژایەتییە بە ڕەها نابینم. زۆر خزمەتگوزاریی دیجیتاڵ ئاسانن، چونکە ڕێگا، کاتی چاوەڕوانی و کاغەزکاری کەم دەکەنەوە. کێشە کاتێکە کە بۆ ئەوە داتای زیاتر لە پێویستی ئامانجی دیاریکراو کۆدەکرێتەوە." },
+                { "language": "kmr", "text": "Ez vê dijberiyê wekî tiştek mutleq nabînim. Gelek xizmetên dîjîtal rehet in, ji ber ku rê, demên bendewarî û kaxezê kêm dikin. Pirsgirêk dema çêdibe ku ji bo wê zêdetir dane ji ya ji bo armanca taybet pêwîst were komkirin." },
+                { "language": "pl", "text": "Nie widziałbym tego przeciwieństwa jako absolutnego. Wiele usług cyfrowych jest wygodnych, bo zmniejsza dojazdy, czas oczekiwania i papier. Problem pojawia się, gdy zbiera się do tego więcej danych, niż potrzeba do konkretnego celu." },
+                { "language": "ro", "text": "Nu aș vedea opoziția ca absolută. Multe servicii digitale sunt comode pentru că reduc drumurile, timpii de așteptare și hârtia. Devine problematic când pentru aceasta se colectează mai multe date decât sunt necesare scopului concret." },
+                { "language": "sq", "text": "Nuk do ta shihja këtë kundërshti si absolute. Shumë shërbime digjitale janë komode sepse ulin rrugët, pritjet dhe letrat. Problemi lind kur për këtë mblidhen më shumë të dhëna sesa nevojiten për qëllimin konkret." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort vermeidet Parolen und führt direkt das Prinzip der Zweckbindung ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer avoids slogans and directly introduces the principle of purpose limitation." },
+                { "language": "fa", "text": "خوب است: پاسخ از شعار پرهیز می‌کند و مستقیم اصل محدودبودن به هدف را وارد می‌کند." },
+                { "language": "ar", "text": "جيد: تتجنب الإجابة الشعارات وتُدخل مباشرة مبدأ الارتباط بالغرض." },
+                { "language": "tr", "text": "İyi: yanıt sloganlardan kaçınır ve doğrudan amaç sınırlılığı ilkesini getirir." },
+                { "language": "ru", "text": "Хорошо: ответ избегает лозунгов и сразу вводит принцип привязки к цели." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە لە دروشم دوور دەکەوێتەوە و ڕاستەوخۆ بنەمای بەستنەوە بە ئامانج دەهێنێتە ناوەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv ji şîaran dûr dikeve û rasterast prensîba girêdana bi armancê ve tîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź unika haseł i od razu wprowadza zasadę ograniczenia celu." },
+                { "language": "ro", "text": "Bine: răspunsul evită lozincile și introduce direct principiul limitării la scop." },
+                { "language": "sq", "text": "Mirë: përgjigjja shmang parullat dhe fut drejtpërdrejt parimin e kufizimit sipas qëllimit." }
+              ],
+              "explanationKey": "purpose-limitation-opening"
+            },
+            {
+              "id": "privacy-more-important-slogan",
+              "text": "Datenschutz ist immer wichtiger als Komfort, deshalb sollte man möglichst wenige digitale Dienste nutzen.",
+              "translations": [
+                { "language": "en", "text": "Data protection is always more important than convenience, so one should use as few digital services as possible." },
+                { "language": "fa", "text": "حریم خصوصی همیشه از راحتی مهم‌تر است، بنابراین باید تا حد امکان از خدمات دیجیتال کمتری استفاده کرد." },
+                { "language": "ar", "text": "حماية البيانات أهم دائماً من الراحة، لذلك ينبغي استخدام أقل عدد ممكن من الخدمات الرقمية." },
+                { "language": "tr", "text": "Veri koruma her zaman konfordan daha önemlidir, bu yüzden mümkün olduğunca az dijital hizmet kullanılmalıdır." },
+                { "language": "ru", "text": "Защита данных всегда важнее удобства, поэтому следует пользоваться как можно меньшим числом цифровых услуг." },
+                { "language": "ckb", "text": "پاراستنی داتا هەمیشە لە ئاسانی گرنگترە، بۆیە پێویستە تا دەکرێت خزمەتگوزاریی دیجیتاڵی کەمتر بەکاربهێنرێت." },
+                { "language": "kmr", "text": "Parastina daneyan her dem ji rehetiyê girîngtir e, ji ber vê divê herî kêm xizmetên dîjîtal werin bikaranîn." },
+                { "language": "pl", "text": "Ochrona danych jest zawsze ważniejsza niż wygoda, dlatego należy korzystać z możliwie niewielu usług cyfrowych." },
+                { "language": "ro", "text": "Protecția datelor este întotdeauna mai importantă decât confortul, deci ar trebui folosite cât mai puține servicii digitale." },
+                { "language": "sq", "text": "Mbrojtja e të dhënave është gjithmonë më e rëndësishme se komoditeti, prandaj duhet të përdoren sa më pak shërbime digjitale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu absolut: Die Antwort zeigt Haltung, aber keine differenzierte Abwägung und keine praktischen Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too absolute: the answer shows a stance, but no nuanced weighing and no practical criteria." },
+                { "language": "fa", "text": "زیادی مطلق است: پاسخ موضع دارد، اما سنجش دقیق و معیار عملی ندارد." },
+                { "language": "ar", "text": "مطلقة جداً: تُظهر الإجابة موقفاً، لكنها لا تقدم موازنة متمايزة ولا معايير عملية." },
+                { "language": "tr", "text": "Çok mutlak: yanıt tutum gösterir, ama ayrıntılı tartma ve pratik ölçüt sunmaz." },
+                { "language": "ru", "text": "Слишком категорично: ответ показывает позицию, но не дает дифференцированного взвешивания и практических критериев." },
+                { "language": "ckb", "text": "زۆر ڕەهایە: وەڵامەکە هەڵوێست نیشان دەدات، بەڵام هەڵسەنگاندنی ورد و پێوەری کردار نییە." },
+                { "language": "kmr", "text": "Pir mutleq e: bersiv helwest nîşan dide, lê hevsengkirina hûrgilî û pîvanên pratîk nade." },
+                { "language": "pl", "text": "Zbyt absolutnie: odpowiedź pokazuje stanowisko, ale nie daje zniuansowanego ważenia ani praktycznych kryteriów." },
+                { "language": "ro", "text": "Prea absolut: răspunsul arată o poziție, dar nu o cântărire nuanțată și nici criterii practice." },
+                { "language": "sq", "text": "Shumë absolute: përgjigjja tregon qëndrim, por jo peshim të nuancuar dhe as kritere praktike." }
+              ],
+              "explanationKey": "avoid-absolute-slogan"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "transport-app-with-limits",
+              "text": "Ein Beispiel ist eine Verkehrs-App: Standortdaten helfen, Verspätungen und Alternativen in Echtzeit zu sehen. Gleichzeitig sollte die App erklären, ob der Standort dauerhaft gespeichert wird, und eine Nutzung ohne personalisiertes Profil ermöglichen.",
+              "translations": [
+                { "language": "en", "text": "One example is a transport app: location data helps show delays and alternatives in real time. At the same time, the app should explain whether the location is stored permanently and allow use without a personalized profile." },
+                { "language": "fa", "text": "یک مثال اپلیکیشن حمل‌ونقل است: داده مکان کمک می‌کند تأخیرها و مسیرهای جایگزین را لحظه‌ای ببینیم. هم‌زمان اپ باید توضیح دهد آیا مکان به‌طور دائمی ذخیره می‌شود یا نه، و استفاده بدون پروفایل شخصی‌سازی‌شده را ممکن کند." },
+                { "language": "ar", "text": "مثال ذلك تطبيق المواصلات: تساعد بيانات الموقع في رؤية التأخيرات والبدائل في الوقت الحقيقي. وفي الوقت نفسه ينبغي للتطبيق أن يوضح هل يُخزن الموقع دائماً، وأن يتيح الاستخدام من دون ملف شخصي مخصص." },
+                { "language": "tr", "text": "Bir örnek ulaşım uygulamasıdır: konum verileri gecikmeleri ve alternatifleri gerçek zamanlı görmeye yardımcı olur. Aynı zamanda uygulama konumun kalıcı kaydedilip kaydedilmediğini açıklamalı ve kişiselleştirilmiş profil olmadan kullanıma izin vermelidir." },
+                { "language": "ru", "text": "Пример — транспортное приложение: данные местоположения помогают видеть задержки и альтернативы в реальном времени. Одновременно приложение должно объяснять, хранится ли местоположение постоянно, и позволять использование без персонализированного профиля." },
+                { "language": "ckb", "text": "نموونەیەک ئەپی گواستنەوەیە: داتای شوێن یارمەتی دەدات دواکەوتن و جێگرەوەکان بە کاتی ڕاستەقینە ببینرێن. هاوکات پێویستە ئەپەکە ڕوون بکاتەوە ئایا شوێنەکە بەردەوام هەڵدەگیرێت یان نا، و بەکارهێنان بەبێ پڕۆفایلی کەسی‌کراوە ڕێگە پێبدات." },
+                { "language": "kmr", "text": "Mînakek sepana veguhestinê ye: daneyên cihê alîkar in da ku derengî û alternatîfan di dema rast de bibînin. Di heman demê de divê sepanê rave bike ka cih bi domdarî tê hilanîn an na, û bikaranîna bê profîla kesanekirî gengaz bike." },
+                { "language": "pl", "text": "Przykładem jest aplikacja transportowa: dane lokalizacyjne pomagają widzieć opóźnienia i alternatywy w czasie rzeczywistym. Jednocześnie aplikacja powinna wyjaśniać, czy lokalizacja jest trwale zapisywana, i umożliwiać użycie bez spersonalizowanego profilu." },
+                { "language": "ro", "text": "Un exemplu este o aplicație de transport: datele de localizare ajută la observarea întârzierilor și alternativelor în timp real. În același timp, aplicația ar trebui să explice dacă locația este stocată permanent și să permită folosirea fără profil personalizat." },
+                { "language": "sq", "text": "Një shembull është një aplikacion transporti: të dhënat e vendndodhjes ndihmojnë të shihen vonesat dhe alternativat në kohë reale. Njëkohësisht aplikacioni duhet të shpjegojë nëse vendndodhja ruhet vazhdimisht dhe të lejojë përdorim pa profil të personalizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Beispiel nennt einen echten Komfortgewinn und macht die Datenschutzgrenze prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the example names a real convenience gain and makes the data-protection boundary verifiable." },
+                { "language": "fa", "text": "خوب است: مثال یک سود واقعی راحتی را می‌گوید و مرز حریم خصوصی را قابل بررسی می‌کند." },
+                { "language": "ar", "text": "جيد: يذكر المثال مكسب راحة حقيقياً ويجعل حد حماية البيانات قابلاً للتحقق." },
+                { "language": "tr", "text": "İyi: örnek gerçek bir konfor kazanımını belirtir ve veri koruma sınırını denetlenebilir yapar." },
+                { "language": "ru", "text": "Хорошо: пример называет реальный выигрыш удобства и делает границу защиты данных проверяемой." },
+                { "language": "ckb", "text": "باشە: نموونەکە سوودی ڕاستەقینەی ئاسانی ناو دەبات و سنووری پاراستنی داتا پشکنراو دەکات." },
+                { "language": "kmr", "text": "Baş e: mînak sûdeke rast a rehetiyê bi nav dike û sînorê parastina daneyan kontrolbar dike." },
+                { "language": "pl", "text": "Dobrze: przykład nazywa realny zysk wygody i czyni granicę ochrony danych sprawdzalną." },
+                { "language": "ro", "text": "Bine: exemplul numește un câștig real de confort și face limita de protecție a datelor verificabilă." },
+                { "language": "sq", "text": "Mirë: shembulli përmend një fitim real komoditeti dhe e bën kufirin e mbrojtjes së të dhënave të verifikueshëm." }
+              ],
+              "explanationKey": "concrete-example-with-limit"
+            },
+            {
+              "id": "transport-app-only-comfort",
+              "text": "Eine Verkehrs-App ist praktisch, weil man schneller sieht, wann der nächste Bus kommt und welchen Weg man nehmen sollte.",
+              "translations": [
+                { "language": "en", "text": "A transport app is practical because you can see faster when the next bus comes and which route to take." },
+                { "language": "fa", "text": "اپلیکیشن حمل‌ونقل کاربردی است، چون سریع‌تر می‌بینید اتوبوس بعدی کی می‌آید و کدام مسیر را باید بروید." },
+                { "language": "ar", "text": "تطبيق المواصلات عملي لأنك ترى بسرعة أكبر متى يأتي الحافلة التالية وأي طريق ينبغي أن تسلك." },
+                { "language": "tr", "text": "Ulaşım uygulaması pratiktir, çünkü sonraki otobüsün ne zaman geldiğini ve hangi yolu kullanmanız gerektiğini daha hızlı görürsünüz." },
+                { "language": "ru", "text": "Транспортное приложение практично, потому что быстрее видно, когда придет следующий автобус и какой путь выбрать." },
+                { "language": "ckb", "text": "ئەپی گواستنەوە کردارە، چونکە خێراتر دەبینیت پاسەکەی دواتر کەی دێت و کام ڕێگا دەبێت بگریت." },
+                { "language": "kmr", "text": "Sepana veguhestinê pratîk e, ji ber ku hûn zûtir dibînin otobûsa din kengî tê û kîjan rê divê were girtin." },
+                { "language": "pl", "text": "Aplikacja transportowa jest praktyczna, bo szybciej widać, kiedy przyjedzie następny autobus i jaką drogę wybrać." },
+                { "language": "ro", "text": "O aplicație de transport este practică, deoarece vedeți mai repede când vine următorul autobuz și ce drum să luați." },
+                { "language": "sq", "text": "Një aplikacion transporti është praktik sepse shihni më shpejt kur vjen autobusi tjetër dhe cilën rrugë duhet të merrni." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Die Antwort nennt Komfort, aber keine Datenschutzgrenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete: the answer names convenience, but no data-protection boundary." },
+                { "language": "fa", "text": "قابل‌باور اما ناقص است: پاسخ راحتی را می‌گوید، اما مرز حریم خصوصی ندارد." },
+                { "language": "ar", "text": "معقولة لكنها غير مكتملة: تذكر الإجابة الراحة، لكنها لا تذكر حداً لحماية البيانات." },
+                { "language": "tr", "text": "Makul ama eksik: yanıt konforu belirtir, ancak veri koruma sınırı yoktur." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: ответ называет удобство, но не границу защиты данных." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام ناتەواوە: وەڵامەکە ئاسانی دەڵێت، بەڵام سنووری پاراستنی داتا نییە." },
+                { "language": "kmr", "text": "Gengaz e, lê netemam e: bersiv rehetiyê dibêje, lê sînorê parastina daneyan tune ye." },
+                { "language": "pl", "text": "Plausybilne, ale niepełne: odpowiedź nazywa wygodę, lecz nie granicę ochrony danych." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: răspunsul numește confortul, dar nu limita de protecție a datelor." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: përgjigjja përmend komoditetin, por jo kufirin e mbrojtjes së të dhënave." }
+              ],
+              "explanationKey": "add-privacy-boundary"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "provider-defaults-responsibility",
+              "text": "Gerade deshalb darf Verantwortung nicht allein auf Nutzerinnen und Nutzer abgewälzt werden. Anbieter sollten Voreinstellungen datensparsam wählen, verständlich erklären und Komfort nicht daran knüpfen, dass man unnötige Daten freigibt.",
+              "translations": [
+                { "language": "en", "text": "For precisely that reason, responsibility must not be shifted solely onto users. Providers should choose data-saving default settings, explain understandably, and not tie convenience to releasing unnecessary data." },
+                { "language": "fa", "text": "دقیقاً به همین دلیل نباید مسئولیت فقط به کاربران منتقل شود. ارائه‌دهندگان باید تنظیمات پیش‌فرض کم‌داده انتخاب کنند، قابل فهم توضیح دهند و راحتی را وابسته به دادن داده‌های غیرضروری نکنند." },
+                { "language": "ar", "text": "لهذا السبب بالذات لا يجوز نقل المسؤولية إلى المستخدمين وحدهم. ينبغي للمزودين اختيار إعدادات افتراضية مقتصدة في البيانات، والشرح بصورة مفهومة، وألا يربطوا الراحة بإتاحة بيانات غير ضرورية." },
+                { "language": "tr", "text": "Tam da bu nedenle sorumluluk yalnızca kullanıcılara yüklenmemelidir. Sağlayıcılar veri tasarruflu varsayılan ayarlar seçmeli, anlaşılır açıklamalı ve konforu gereksiz veri paylaşımına bağlamamalıdır." },
+                { "language": "ru", "text": "Именно поэтому ответственность нельзя перекладывать только на пользователей. Провайдеры должны выбирать экономные по данным настройки по умолчанию, понятно объяснять и не связывать удобство с передачей ненужных данных." },
+                { "language": "ckb", "text": "هەر بۆ ئەوە نابێت بەرپرسیارێتی تەنها بخرێتە سەر بەکارهێنەران. دابینکەران پێویستە ڕێکخستنە بنەڕەتییە کەم‌داتاکان هەڵبژێرن، بە ڕوونی ڕوون بکەنەوە و ئاسانی بە دانی داتای ناپێویستەوە گرێ نەدەن." },
+                { "language": "kmr", "text": "Tam ji ber vê yekê divê berpirsiyarî tenê li ser bikarhêneran neyê avêtin. Peydaker divê mîhengên xwerû yên kêm-dane hilbijêrin, bi têgihîştbarî rave bikin û rehetiyê bi daneyên nepêwîst ve girê nedin." },
+                { "language": "pl", "text": "Właśnie dlatego odpowiedzialności nie wolno przerzucać wyłącznie na użytkowników. Dostawcy powinni wybierać domyślne ustawienia oszczędne w danych, jasno wyjaśniać i nie wiązać wygody z udostępnianiem zbędnych danych." },
+                { "language": "ro", "text": "Tocmai de aceea responsabilitatea nu trebuie mutată doar pe utilizatori. Furnizorii ar trebui să aleagă setări implicite economice în date, să explice inteligibil și să nu lege confortul de cedarea datelor inutile." },
+                { "language": "sq", "text": "Pikërisht për këtë arsye përgjegjësia nuk duhet t'u kalohet vetëm përdoruesve. Ofruesit duhet të zgjedhin cilësime parazgjedhje që kursejnë të dhëna, të shpjegojnë qartë dhe të mos e lidhin komoditetin me dhënien e të dhënave të panevojshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort erklärt Einwilligungsmüdigkeit und verschiebt Verantwortung nicht einseitig auf Einzelne.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer explains consent fatigue and does not shift responsibility one-sidedly onto individuals." },
+                { "language": "fa", "text": "خوب است: پاسخ خستگی از رضایت‌نامه‌ها را توضیح می‌دهد و مسئولیت را یک‌طرفه به افراد منتقل نمی‌کند." },
+                { "language": "ar", "text": "جيد: تشرح الإجابة إرهاق الموافقة ولا تنقل المسؤولية من طرف واحد إلى الأفراد." },
+                { "language": "tr", "text": "İyi: yanıt onay yorgunluğunu açıklar ve sorumluluğu tek taraflı bireylere yüklemez." },
+                { "language": "ru", "text": "Хорошо: ответ объясняет усталость от согласий и не перекладывает ответственность односторонне на отдельных людей." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ماندووبوونی ڕەزامەندییەکان ڕوون دەکاتەوە و بەرپرسیارێتی بە یەک‌لایەنی ناخاتە سەر تاکەکان." },
+                { "language": "kmr", "text": "Baş e: bersiv westana razîbûnê rave dike û berpirsiyariyê yekalî li ser kesan naavêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wyjaśnia zmęczenie zgodami i nie przerzuca odpowiedzialności jednostronnie na pojedyncze osoby." },
+                { "language": "ro", "text": "Bine: răspunsul explică oboseala consimțământului și nu mută responsabilitatea unilateral asupra indivizilor." },
+                { "language": "sq", "text": "Mirë: përgjigjja shpjegon lodhjen nga pëlqimet dhe nuk e kalon përgjegjësinë njëanshëm te individët." }
+              ],
+              "explanationKey": "provider-responsibility"
+            },
+            {
+              "id": "users-should-read-everything",
+              "text": "Dann müssen Nutzerinnen und Nutzer eben genauer lesen, bevor sie auf Zustimmen klicken.",
+              "translations": [
+                { "language": "en", "text": "Then users simply have to read more carefully before clicking agree." },
+                { "language": "fa", "text": "پس کاربران باید قبل از کلیک روی موافقت، دقیق‌تر بخوانند." },
+                { "language": "ar", "text": "إذن على المستخدمين ببساطة أن يقرأوا بدقة أكبر قبل الضغط على موافق." },
+                { "language": "tr", "text": "O zaman kullanıcılar kabul etmeden önce daha dikkatli okumalıdır." },
+                { "language": "ru", "text": "Тогда пользователи просто должны внимательнее читать, прежде чем нажимать согласие." },
+                { "language": "ckb", "text": "کەواتە بەکارهێنەران پێویستە پێش کرتەکردن لەسەر ڕەزامەندی وردتر بخوێننەوە." },
+                { "language": "kmr", "text": "Wê demê divê bikarhêner berî ku li razîbûnê bikirtînin hûrgilîtir bixwînin." },
+                { "language": "pl", "text": "Wtedy użytkownicy muszą po prostu dokładniej czytać, zanim klikną zgodę." },
+                { "language": "ro", "text": "Atunci utilizatorii trebuie pur și simplu să citească mai atent înainte de a apăsa accept." },
+                { "language": "sq", "text": "Atëherë përdoruesit thjesht duhet të lexojnë më me kujdes para se të klikojnë pranoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kurz gegriffen: Die Antwort ignoriert Zeitdruck, komplexe Texte und die Verantwortung der Anbieter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: the answer ignores time pressure, complex texts, and provider responsibility." },
+                { "language": "fa", "text": "نگاه خیلی محدود است: پاسخ فشار زمان، متن‌های پیچیده و مسئولیت ارائه‌دهندگان را نادیده می‌گیرد." },
+                { "language": "ar", "text": "ضيقة جداً: تتجاهل الإجابة ضغط الوقت والنصوص المعقدة ومسؤولية المزودين." },
+                { "language": "tr", "text": "Çok dar: yanıt zaman baskısını, karmaşık metinleri ve sağlayıcı sorumluluğunu görmezden gelir." },
+                { "language": "ru", "text": "Слишком узко: ответ игнорирует нехватку времени, сложные тексты и ответственность провайдеров." },
+                { "language": "ckb", "text": "زۆر تەسکە: وەڵامەکە فشاری کات، دەقە ئاڵۆزەکان و بەرپرسیارێتی دابینکەران پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Pir teng e: bersiv zexta demê, nivîsên tevlihev û berpirsiyariya peydakeran paşguh dike." },
+                { "language": "pl", "text": "Zbyt wąsko: odpowiedź ignoruje presję czasu, złożone teksty i odpowiedzialność dostawców." },
+                { "language": "ro", "text": "Prea îngust: răspunsul ignoră presiunea timpului, textele complexe și responsabilitatea furnizorilor." },
+                { "language": "sq", "text": "Shumë e ngushtë: përgjigjja shpërfill presionin e kohës, tekstet komplekse dhe përgjegjësinë e ofruesve." }
+              ],
+              "explanationKey": "avoid-user-blame"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "three-question-rule",
+              "text": "Ich würde drei Fragen stellen: Braucht der Dienst diese Daten wirklich für die Funktion? Kann ich sie später löschen oder ändern? Und gibt es eine weniger datenintensive Alternative, die fast denselben Nutzen bringt?",
+              "translations": [
+                { "language": "en", "text": "I would ask three questions: Does the service really need this data for the function? Can I delete or change it later? And is there a less data-intensive alternative that provides almost the same benefit?" },
+                { "language": "fa", "text": "من سه سؤال می‌پرسم: آیا سرویس واقعاً برای این عملکرد به این داده‌ها نیاز دارد؟ آیا بعداً می‌توانم آن‌ها را حذف یا تغییر دهم؟ و آیا جایگزینی با داده کمتر وجود دارد که تقریباً همان فایده را بدهد؟" },
+                { "language": "ar", "text": "سأطرح ثلاثة أسئلة: هل تحتاج الخدمة فعلاً إلى هذه البيانات من أجل الوظيفة؟ هل أستطيع حذفها أو تغييرها لاحقاً؟ وهل يوجد بديل أقل استهلاكاً للبيانات يقدم الفائدة نفسها تقريباً؟" },
+                { "language": "tr", "text": "Üç soru sorardım: Hizmet bu veriye işlev için gerçekten ihtiyaç duyuyor mu? Daha sonra silebilir veya değiştirebilir miyim? Ve neredeyse aynı yararı sağlayan daha az veri yoğun bir alternatif var mı?" },
+                { "language": "ru", "text": "Я бы задал три вопроса: действительно ли сервису нужны эти данные для функции? Могу ли я позже удалить или изменить их? И есть ли менее интенсивная по данным альтернатива, которая дает почти ту же пользу?" },
+                { "language": "ckb", "text": "من سێ پرسیار دەکەم: ئایا خزمەتگوزارییەکە بەڕاستی بۆ ئەو کارە پێویستی بە ئەم داتایە هەیە؟ ئایا دواتر دەتوانم بیسڕمەوە یان بیگۆڕم؟ و ئایا جێگرەوەیەکی کەم‌داتاتر هەیە کە نزیکەی هەمان سوود بدات؟" },
+                { "language": "kmr", "text": "Ez sê pirs dikim: Ma xizmet bi rastî ji bo wê fonksiyonê van daneyan dixwaze? Ma ez dikarim paşê wan jê bibim an biguherînim? Û ma alternatîfeke kêmtir dane-hevî heye ku hema heman sûdê bide?" },
+                { "language": "pl", "text": "Zadałbym trzy pytania: Czy usługa naprawdę potrzebuje tych danych do funkcji? Czy mogę je później usunąć lub zmienić? I czy istnieje mniej danychochłonna alternatywa, która daje prawie tę samą korzyść?" },
+                { "language": "ro", "text": "Aș pune trei întrebări: Are serviciul cu adevărat nevoie de aceste date pentru funcție? Le pot șterge sau modifica mai târziu? Și există o alternativă mai puțin intensivă în date care aduce aproape același beneficiu?" },
+                { "language": "sq", "text": "Do të bëja tri pyetje: A i duhen vërtet shërbimit këto të dhëna për funksionin? A mund t'i fshij ose ndryshoj më vonë? Dhe a ka një alternativë me më pak të dhëna që sjell pothuajse të njëjtin përfitim?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort liefert eine klare Entscheidungshilfe statt nur eine allgemeine Haltung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer provides a clear decision aid instead of only a general attitude." },
+                { "language": "fa", "text": "خوب است: پاسخ به جای فقط یک نگرش کلی، راهنمای تصمیم‌گیری روشن می‌دهد." },
+                { "language": "ar", "text": "جيد: تقدم الإجابة أداة قرار واضحة بدلاً من موقف عام فقط." },
+                { "language": "tr", "text": "İyi: yanıt yalnızca genel tutum değil, net bir karar yardımı verir." },
+                { "language": "ru", "text": "Хорошо: ответ дает ясную помощь для решения, а не только общее отношение." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە یارمەتییەکی ڕوونی بڕیار دەدات، نە تەنها هەڵوێستێکی گشتی." },
+                { "language": "kmr", "text": "Baş e: bersiv alîkariyeke zelal a biryarê dide, ne tenê helwesteke giştî." },
+                { "language": "pl", "text": "Dobrze: odpowiedź daje jasną pomoc decyzyjną, a nie tylko ogólną postawę." },
+                { "language": "ro", "text": "Bine: răspunsul oferă un ajutor clar de decizie, nu doar o atitudine generală." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep një ndihmë të qartë për vendimmarrje, jo vetëm një qëndrim të përgjithshëm." }
+              ],
+              "explanationKey": "decision-rule"
+            },
+            {
+              "id": "depends-on-feeling",
+              "text": "Ich würde nach Gefühl entscheiden und bei sehr privaten Dingen eher vorsichtig sein.",
+              "translations": [
+                { "language": "en", "text": "I would decide by feeling and be rather careful with very private things." },
+                { "language": "fa", "text": "من بر اساس حس خود تصمیم می‌گیرم و در چیزهای خیلی خصوصی نسبتاً محتاط می‌مانم." },
+                { "language": "ar", "text": "سأقرر بحسب الشعور، وسأكون حذراً إلى حد ما في الأمور الخاصة جداً." },
+                { "language": "tr", "text": "Hissime göre karar verirdim ve çok özel konularda daha dikkatli olurdum." },
+                { "language": "ru", "text": "Я бы решал по ощущению и был бы скорее осторожен с очень личными вещами." },
+                { "language": "ckb", "text": "من بە پێی هەستم بڕیار دەدەم و لە شتە زۆر تایبەتییەکاندا تا ڕادەیەک وریا دەبم." },
+                { "language": "kmr", "text": "Ez li gorî hestê xwe biryar didim û di tiştên gelek taybet de zêdetir hişyar dibim." },
+                { "language": "pl", "text": "Decydowałbym według odczucia i przy bardzo prywatnych rzeczach byłbym raczej ostrożny." },
+                { "language": "ro", "text": "Aș decide după sentiment și aș fi mai degrabă atent la lucrurile foarte private." },
+                { "language": "sq", "text": "Do të vendosja sipas ndjesisë dhe për gjëra shumë private do të isha më i kujdesshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unpräzise: Die Antwort ist plausibel, aber für C1 fehlt ein nachvollziehbares Kriteriensystem.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer is plausible, but for C1 it lacks a comprehensible system of criteria." },
+                { "language": "fa", "text": "زیادی نامشخص است: پاسخ قابل‌باور است، اما برای C1 سیستم معیار قابل فهم ندارد." },
+                { "language": "ar", "text": "غير دقيقة بما يكفي: الإجابة معقولة، لكنها تفتقر في C1 إلى نظام معايير مفهوم." },
+                { "language": "tr", "text": "Çok belirsiz: yanıt makul, ama C1 için anlaşılır bir ölçüt sistemi eksik." },
+                { "language": "ru", "text": "Слишком неточно: ответ правдоподобен, но для C1 не хватает понятной системы критериев." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە باوەڕپێکراوە، بەڵام بۆ C1 سیستەمی پێوەری تێگەیشتوو کەمە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv gengaz e, lê ji bo C1 pergala pîvanên têgihîştbar kêm e." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: odpowiedź jest plausybilna, ale na C1 brakuje zrozumiałego systemu kryteriów." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul este plauzibil, dar pentru C1 lipsește un sistem inteligibil de criterii." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja është e besueshme, por për C1 mungon një sistem kriteresh i kuptueshëm." }
+              ],
+              "explanationKey": "avoid-feeling-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "personalization-levels",
+              "text": "Das stimmt teilweise, aber Personalisierung ist kein Freibrief. Man kann zwischen notwendigen Daten, optionaler Verbesserung und reinem Marketing unterscheiden. Komfort sollte also abgestuft angeboten werden, nicht nach dem Prinzip alles oder nichts.",
+              "translations": [
+                { "language": "en", "text": "That is partly true, but personalization is not a blank cheque. One can distinguish between necessary data, optional improvement, and pure marketing. Convenience should therefore be offered in levels, not according to an all-or-nothing principle." },
+                { "language": "fa", "text": "این تا حدی درست است، اما شخصی‌سازی مجوز نامحدود نیست. می‌توان بین داده‌های ضروری، بهبود اختیاری و بازاریابی صرف تفاوت گذاشت. بنابراین راحتی باید درجه‌بندی‌شده ارائه شود، نه بر اساس اصل همه یا هیچ." },
+                { "language": "ar", "text": "هذا صحيح جزئياً، لكن التخصيص ليس تفويضاً مفتوحاً. يمكن التمييز بين البيانات الضرورية والتحسين الاختياري والتسويق الصرف. لذلك ينبغي تقديم الراحة بدرجات، لا وفق مبدأ الكل أو لا شيء." },
+                { "language": "tr", "text": "Bu kısmen doğru, ama kişiselleştirme açık çek değildir. Gerekli veri, isteğe bağlı iyileştirme ve saf pazarlama arasında ayrım yapılabilir. Konfor bu yüzden ya hep ya hiç ilkesine göre değil, kademeli sunulmalıdır." },
+                { "language": "ru", "text": "Это частично верно, но персонализация не является открытым разрешением. Можно различать необходимые данные, необязательное улучшение и чистый маркетинг. Поэтому удобство должно предлагаться по уровням, а не по принципу все или ничего." },
+                { "language": "ckb", "text": "ئەمە بەشێکی ڕاستە، بەڵام کەسی‌کردن چێکی سپی نییە. دەتوانرێت جیاوازی بکرێت لە نێوان داتای پێویست، باشترکردنی هەڵبژاردەیی و بازاڕکردنی تەنیا. بۆیە ئاسانی پێویستە بە پلە پلە پێشکەش بکرێت، نە بە بنەمای هەموو یان هیچ." },
+                { "language": "kmr", "text": "Ev bi beşek rast e, lê kesanekirin çekeke spî nîne. Mirov dikare di navbera daneyên pêwîst, baştirkirina vebijêrkî û bazirganiya tenê de cudahî bike. Ji ber vê divê reheti bi astan were pêşkêşkirin, ne bi prensîba hemû an tu tişt." },
+                { "language": "pl", "text": "To częściowo prawda, ale personalizacja nie jest wolną ręką. Można rozróżnić dane konieczne, opcjonalne ulepszenie i czysty marketing. Wygoda powinna więc być oferowana stopniowo, a nie według zasady wszystko albo nic." },
+                { "language": "ro", "text": "Este parțial adevărat, dar personalizarea nu este un cec în alb. Se poate distinge între date necesare, îmbunătățire opțională și marketing pur. Confortul ar trebui deci oferit pe niveluri, nu după principiul totul sau nimic." },
+                { "language": "sq", "text": "Kjo është pjesërisht e vërtetë, por personalizimi nuk është leje e pakufizuar. Mund të dallohet mes të dhënave të nevojshme, përmirësimit opsional dhe marketingut të pastër. Prandaj komoditeti duhet ofruar me nivele, jo sipas parimit gjithçka ose asgjë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort akzeptiert den Nutzen von Personalisierung, begrenzt ihn aber durch Kategorien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer accepts the benefit of personalization, but limits it through categories." },
+                { "language": "fa", "text": "خوب است: پاسخ فایده شخصی‌سازی را می‌پذیرد، اما آن را با دسته‌بندی‌ها محدود می‌کند." },
+                { "language": "ar", "text": "جيد: تقبل الإجابة فائدة التخصيص، لكنها تحدها من خلال فئات." },
+                { "language": "tr", "text": "İyi: yanıt kişiselleştirmenin yararını kabul eder, ama onu kategorilerle sınırlar." },
+                { "language": "ru", "text": "Хорошо: ответ принимает пользу персонализации, но ограничивает ее категориями." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە سوودی کەسی‌کردن قبوڵ دەکات، بەڵام بە پۆلەکان سنوورداری دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv sûda kesanekirinê dipejirîne, lê bi kategoriyan wê sînordar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź uznaje korzyść personalizacji, ale ogranicza ją kategoriami." },
+                { "language": "ro", "text": "Bine: răspunsul acceptă beneficiul personalizării, dar îl limitează prin categorii." },
+                { "language": "sq", "text": "Mirë: përgjigjja pranon përfitimin e personalizimit, por e kufizon atë përmes kategorive." }
+              ],
+              "explanationKey": "categorize-personalization"
+            },
+            {
+              "id": "personalization-needs-data",
+              "text": "Wenn man gute Empfehlungen will, muss man eben auch mehr Daten teilen; sonst funktioniert Personalisierung nicht richtig.",
+              "translations": [
+                { "language": "en", "text": "If you want good recommendations, you simply have to share more data; otherwise personalization does not work properly." },
+                { "language": "fa", "text": "اگر پیشنهادهای خوب می‌خواهید، باید داده بیشتری هم به اشتراک بگذارید؛ وگرنه شخصی‌سازی درست کار نمی‌کند." },
+                { "language": "ar", "text": "إذا أردت توصيات جيدة، فعليك ببساطة مشاركة مزيد من البيانات؛ وإلا فلن تعمل التخصيصات جيداً." },
+                { "language": "tr", "text": "İyi öneriler istiyorsanız daha fazla veri paylaşmanız gerekir; yoksa kişiselleştirme düzgün çalışmaz." },
+                { "language": "ru", "text": "Если нужны хорошие рекомендации, приходится делиться большим количеством данных; иначе персонализация не работает как следует." },
+                { "language": "ckb", "text": "ئەگەر پێشنیاری باش دەتەوێت، پێویستە داتای زیاتر هاوبەش بکەیت؛ ئەگەر نا کەسی‌کردن بە باشی کار ناکات." },
+                { "language": "kmr", "text": "Heke hûn pêşniyarên baş dixwazin, divê zêdetir dane parve bikin; wekî din kesanekirin baş naxebite." },
+                { "language": "pl", "text": "Jeśli chce się dobrych rekomendacji, trzeba po prostu udostępnić więcej danych; inaczej personalizacja nie działa prawidłowo." },
+                { "language": "ro", "text": "Dacă doriți recomandări bune, trebuie pur și simplu să partajați mai multe date; altfel personalizarea nu funcționează corect." },
+                { "language": "sq", "text": "Nëse doni rekomandime të mira, duhet thjesht të ndani më shumë të dhëna; përndryshe personalizimi nuk funksionon siç duhet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Antwort akzeptiert den Nutzen, unterscheidet aber nicht zwischen notwendigen und verzichtbaren Daten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping: the answer accepts the benefit, but does not distinguish between necessary and dispensable data." },
+                { "language": "fa", "text": "زیادی کلی است: پاسخ فایده را می‌پذیرد، اما بین داده ضروری و قابل‌چشم‌پوشی فرق نمی‌گذارد." },
+                { "language": "ar", "text": "عامة جداً: تقبل الإجابة الفائدة، لكنها لا تميز بين البيانات الضرورية والقابلة للاستغناء." },
+                { "language": "tr", "text": "Çok genelleyici: yanıt yararı kabul eder, ama gerekli ve vazgeçilebilir veri arasında ayrım yapmaz." },
+                { "language": "ru", "text": "Слишком обобщенно: ответ принимает пользу, но не различает необходимые и лишние данные." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە سوود قبوڵ دەکات، بەڵام داتای پێویست و داتای دەتوانرێت واز لێ بهێنرێت جیا ناکاتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv sûdê dipejirîne, lê di navbera daneyên pêwîst û yên dikarin werin berdan de cudahî nake." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź uznaje korzyść, ale nie rozróżnia danych koniecznych i zbędnych." },
+                { "language": "ro", "text": "Prea general: răspunsul acceptă beneficiul, dar nu distinge între date necesare și dispensabile." },
+                { "language": "sq", "text": "Shumë përgjithësuese: përgjigjja pranon përfitimin, por nuk dallon mes të dhënave të nevojshme dhe të panevojshme." }
+              ],
+              "explanationKey": "distinguish-data-categories"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "low-data-default-summary",
+              "text": "Meine Empfehlung lautet: Komfort nutzen, aber datenarm beginnen. Was für die Funktion nötig ist, kann man freigeben; was nur Werbung, Profilbildung oder dauerhafte Nachverfolgung verbessert, sollte bewusst optional bleiben.",
+              "translations": [
+                { "language": "en", "text": "My recommendation is: use convenience, but start with little data. What is necessary for the function can be released; what only improves advertising, profiling, or permanent tracking should consciously remain optional." },
+                { "language": "fa", "text": "توصیه من این است: از راحتی استفاده کنیم، اما با داده کم شروع کنیم. آنچه برای عملکرد لازم است می‌تواند داده شود؛ اما چیزی که فقط تبلیغات، پروفایل‌سازی یا ردیابی دائمی را بهتر می‌کند باید آگاهانه اختیاری بماند." },
+                { "language": "ar", "text": "توصيتي هي: استخدام الراحة، لكن البدء ببيانات قليلة. ما يلزم للوظيفة يمكن إتاحته؛ أما ما يحسن فقط الإعلان أو بناء الملف الشخصي أو التتبع الدائم فينبغي أن يبقى اختيارياً بوعي." },
+                { "language": "tr", "text": "Önerim şudur: konforu kullanmak, ama az veriyle başlamak. İşlev için gerekli olan paylaşılabilir; yalnızca reklamı, profil oluşturmayı veya sürekli takibi iyileştiren şey bilinçli olarak isteğe bağlı kalmalıdır." },
+                { "language": "ru", "text": "Моя рекомендация: пользоваться удобством, но начинать с минимального объема данных. То, что необходимо для функции, можно предоставить; то, что лишь улучшает рекламу, профилирование или постоянное отслеживание, должно осознанно оставаться необязательным." },
+                { "language": "ckb", "text": "پێشنیارەکەم ئەمەیە: ئاسانی بەکاربهێنە، بەڵام بە داتای کەم دەست پێ بکە. ئەوەی بۆ کارکردن پێویستە دەتوانرێت بدرێت؛ ئەوەی تەنها ڕیکلام، پڕۆفایل‌سازی یان شوێنکەوتنی بەردەوام باشتر دەکات پێویستە بە ئاگایی هەڵبژاردەیی بمێنێتەوە." },
+                { "language": "kmr", "text": "Pêşniyara min ev e: rehetiyê bikar bînin, lê bi dane kêm dest pê bikin. Ya ji bo fonksiyonê pêwîst e dikare were berdan; ya ku tenê reklaman, avakirina profîlê an şopandina domdar baştir dike divê bi hişyarî vebijêrkî bimîne." },
+                { "language": "pl", "text": "Moja rekomendacja brzmi: korzystać z wygody, ale zaczynać oszczędnie w danych. To, co jest potrzebne do funkcji, można udostępnić; to, co tylko poprawia reklamę, profilowanie lub stałe śledzenie, powinno świadomie pozostać opcjonalne." },
+                { "language": "ro", "text": "Recomandarea mea este: folosiți confortul, dar începeți cu puține date. Ce este necesar pentru funcție poate fi oferit; ceea ce îmbunătățește doar publicitatea, profilarea sau urmărirea permanentă ar trebui să rămână conștient opțional." },
+                { "language": "sq", "text": "Rekomandimi im është: përdorni komoditetin, por filloni me pak të dhëna. Ajo që nevojitet për funksionin mund të jepet; ajo që përmirëson vetëm reklamat, profilizimin ose ndjekjen e vazhdueshme duhet të mbetet me vetëdije opsionale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Empfehlung ist kurz, praktisch und trennt notwendige Daten von Profilbildung und Tracking.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the recommendation is short, practical, and separates necessary data from profiling and tracking." },
+                { "language": "fa", "text": "خوب است: توصیه کوتاه، عملی و جداکننده داده ضروری از پروفایل‌سازی و ردیابی است." },
+                { "language": "ar", "text": "جيد: التوصية قصيرة وعملية وتفصل البيانات الضرورية عن بناء الملف الشخصي والتتبع." },
+                { "language": "tr", "text": "İyi: öneri kısa, pratik ve gerekli veriyi profil oluşturma ile takipten ayırıyor." },
+                { "language": "ru", "text": "Хорошо: рекомендация короткая, практичная и отделяет необходимые данные от профилирования и отслеживания." },
+                { "language": "ckb", "text": "باشە: پێشنیارەکە کورت، کردارە و داتای پێویست لە پڕۆفایل‌سازی و شوێنکەوتن جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: pêşniyar kurt, pratîk e û daneyên pêwîst ji avakirina profîlê û şopandinê veqetîne." },
+                { "language": "pl", "text": "Dobrze: rekomendacja jest krótka, praktyczna i oddziela dane konieczne od profilowania i śledzenia." },
+                { "language": "ro", "text": "Bine: recomandarea este scurtă, practică și separă datele necesare de profilare și urmărire." },
+                { "language": "sq", "text": "Mirë: rekomandimi është i shkurtër, praktik dhe ndan të dhënat e nevojshme nga profilizimi dhe ndjekja." }
+              ],
+              "explanationKey": "low-data-default"
+            },
+            {
+              "id": "balanced-but-vague-summary",
+              "text": "Man sollte Datenschutz ernst nehmen, aber auch nicht auf jeden digitalen Vorteil verzichten.",
+              "translations": [
+                { "language": "en", "text": "One should take data protection seriously, but also not give up every digital advantage." },
+                { "language": "fa", "text": "باید حریم خصوصی را جدی گرفت، اما نباید از هر مزیت دیجیتال هم صرف‌نظر کرد." },
+                { "language": "ar", "text": "ينبغي أخذ حماية البيانات بجدية، لكن لا ينبغي أيضاً التخلي عن كل فائدة رقمية." },
+                { "language": "tr", "text": "Veri koruma ciddiye alınmalı, ama her dijital avantajdan da vazgeçilmemeli." },
+                { "language": "ru", "text": "Следует серьезно относиться к защите данных, но не отказываться от каждого цифрового преимущества." },
+                { "language": "ckb", "text": "پێویستە پاراستنی داتا بە جدی وەربگیرێت، بەڵام نابێت لە هەموو سوودێکی دیجیتاڵیش وازبهێنرێت." },
+                { "language": "kmr", "text": "Divê parastina daneyan bi giranî were girtin, lê divê ji her sûda dîjîtal jî dest neyê berdan." },
+                { "language": "pl", "text": "Należy poważnie traktować ochronę danych, ale też nie rezygnować z każdej cyfrowej korzyści." },
+                { "language": "ro", "text": "Protecția datelor trebuie luată în serios, dar nu trebuie renunțat la fiecare avantaj digital." },
+                { "language": "sq", "text": "Mbrojtja e të dhënave duhet marrë seriozisht, por nuk duhet hequr dorë nga çdo përfitim digjital." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort klingt ausgewogen, gibt aber keine konkrete Entscheidungsregel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer sounds balanced, but gives no concrete decision rule." },
+                { "language": "fa", "text": "زیادی کلی است: پاسخ متعادل به نظر می‌رسد، اما قاعده تصمیم‌گیری مشخصی نمی‌دهد." },
+                { "language": "ar", "text": "عامة جداً: تبدو الإجابة متوازنة، لكنها لا تقدم قاعدة قرار ملموسة." },
+                { "language": "tr", "text": "Çok genel: yanıt dengeli geliyor, ama somut karar kuralı vermiyor." },
+                { "language": "ru", "text": "Слишком общо: ответ звучит сбалансированно, но не дает конкретного правила решения." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە هاوسەنگ دەردەکەوێت، بەڵام ڕێسای دیاریکراوی بڕیار نادات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv hevseng xuya dike, lê rêzikeke taybet a biryarê nade." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź brzmi wyważenie, ale nie daje konkretnej reguły decyzyjnej." },
+                { "language": "ro", "text": "Prea general: răspunsul sună echilibrat, dar nu oferă o regulă concretă de decizie." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja tingëllon e balancuar, por nuk jep një rregull konkret vendimmarrjeje." }
+              ],
+              "explanationKey": "avoid-vague-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "purpose-limitation-note",
+          "text": "Eine starke Abwägung beginnt nicht mit Verzicht oder Begeisterung, sondern mit Zweckbindung und Datenminimierung.",
+          "translations": [
+            { "language": "en", "text": "A strong weighing does not begin with renunciation or enthusiasm, but with purpose limitation and data minimisation." },
+            { "language": "fa", "text": "سنجش قوی نه با صرف‌نظر کردن یا شیفتگی، بلکه با محدودبودن به هدف و حداقل‌سازی داده شروع می‌شود." },
+            { "language": "ar", "text": "الموازنة القوية لا تبدأ بالتخلي أو الحماس، بل بالارتباط بالغرض وتقليل البيانات." },
+            { "language": "tr", "text": "Güçlü bir tartma vazgeçiş veya coşkuyla değil, amaç sınırlılığı ve veri minimizasyonuyla başlar." },
+            { "language": "ru", "text": "Сильное взвешивание начинается не с отказа или восторга, а с привязки к цели и минимизации данных." },
+            { "language": "ckb", "text": "هەڵسەنگاندنی بەهێز نە بە وازهێنان یان سەرسامی، بەڵکوو بە بەستنەوە بە ئامانج و کەمکردنەوەی داتا دەست پێ دەکات." },
+            { "language": "kmr", "text": "Hevsengkirina xurt ne bi destberdan an heyecanê dest pê dike, lê bi girêdana armancê û kêmkirina daneyan." },
+            { "language": "pl", "text": "Mocne ważenie nie zaczyna się od rezygnacji ani entuzjazmu, lecz od ograniczenia celu i minimalizacji danych." },
+            { "language": "ro", "text": "O cântărire puternică nu începe cu renunțare sau entuziasm, ci cu limitarea la scop și minimizarea datelor." },
+            { "language": "sq", "text": "Një peshim i fortë nuk fillon me heqje dorë ose entuziazëm, por me kufizim sipas qëllimit dhe minimizim të të dhënave." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "example-note",
+          "text": "Konkrete Beispiele wirken auf C1-Niveau erst dann überzeugend, wenn Nutzen und Kontrollpunkt zusammen genannt werden.",
+          "translations": [
+            { "language": "en", "text": "At C1 level, concrete examples become convincing only when benefit and control point are named together." },
+            { "language": "fa", "text": "در سطح C1 مثال مشخص فقط وقتی قانع‌کننده است که فایده و نقطه کنترل با هم بیان شوند." },
+            { "language": "ar", "text": "في مستوى C1 لا تصبح الأمثلة الملموسة مقنعة إلا عندما تُذكر الفائدة ونقطة التحكم معاً." },
+            { "language": "tr", "text": "C1 düzeyinde somut örnekler ancak yarar ve kontrol noktası birlikte belirtildiğinde ikna edici olur." },
+            { "language": "ru", "text": "На уровне C1 конкретные примеры убедительны только тогда, когда вместе названы польза и точка контроля." },
+            { "language": "ckb", "text": "لە ئاستی C1دا نموونەی دیاریکراو تەنها کاتێک قایلکەرە کە سوود و خاڵی کۆنترۆڵ پێکەوە ناو ببرێن." },
+            { "language": "kmr", "text": "Di asta C1 de mînakên taybet tenê dema qane dikin ku sûd û xala kontrolê bi hev re werin gotin." },
+            { "language": "pl", "text": "Na poziomie C1 konkretne przykłady przekonują dopiero wtedy, gdy razem nazwane są korzyść i punkt kontroli." },
+            { "language": "ro", "text": "La nivel C1 exemplele concrete devin convingătoare doar când beneficiul și punctul de control sunt numite împreună." },
+            { "language": "sq", "text": "Në nivelin C1 shembujt konkretë bindin vetëm kur përfitimi dhe pika e kontrollit përmenden bashkë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "consent-fatigue-note",
+          "text": "Einwilligungsmüdigkeit ist kein individuelles Versagen, sondern ein Design- und Verantwortungsproblem.",
+          "translations": [
+            { "language": "en", "text": "Consent fatigue is not individual failure, but a design and responsibility problem." },
+            { "language": "fa", "text": "خستگی از رضایت‌نامه‌ها شکست فردی نیست، بلکه مشکل طراحی و مسئولیت است." },
+            { "language": "ar", "text": "إرهاق الموافقة ليس فشلاً فردياً، بل مشكلة تصميم ومسؤولية." },
+            { "language": "tr", "text": "Onay yorgunluğu bireysel başarısızlık değil, tasarım ve sorumluluk problemidir." },
+            { "language": "ru", "text": "Усталость от согласий — не индивидуальная неудача, а проблема дизайна и ответственности." },
+            { "language": "ckb", "text": "ماندووبوونی ڕەزامەندی شکستێکی تاکەکەسی نییە، بەڵکوو کێشەی دیزاین و بەرپرسیارێتییە." },
+            { "language": "kmr", "text": "Westana razîbûnê ne têkçûna kesane ye, lê pirsgirêka sêwiran û berpirsiyariyê ye." },
+            { "language": "pl", "text": "Zmęczenie zgodami nie jest indywidualną porażką, lecz problemem projektu i odpowiedzialności." },
+            { "language": "ro", "text": "Oboseala consimțământului nu este un eșec individual, ci o problemă de design și responsabilitate." },
+            { "language": "sq", "text": "Lodhja nga pëlqimet nuk është dështim individual, por problem dizajni dhe përgjegjësie." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "criteria-note",
+          "text": "Eine gute Entscheidungshilfe macht sichtbar: Zweck, Kontrolle und Alternative.",
+          "translations": [
+            { "language": "en", "text": "A good decision aid makes visible: purpose, control, and alternative." },
+            { "language": "fa", "text": "راهنمای تصمیم‌گیری خوب سه چیز را روشن می‌کند: هدف، کنترل و جایگزین." },
+            { "language": "ar", "text": "أداة القرار الجيدة تُظهر: الغرض والتحكم والبديل." },
+            { "language": "tr", "text": "İyi bir karar yardımı şunları görünür kılar: amaç, kontrol ve alternatif." },
+            { "language": "ru", "text": "Хорошая помощь для решения показывает: цель, контроль и альтернативу." },
+            { "language": "ckb", "text": "یارمەتیی باشی بڕیار ئەمانە دەردەخات: ئامانج، کۆنترۆڵ و جێگرەوە." },
+            { "language": "kmr", "text": "Alîkariyeke biryarê ya baş van xuya dike: armanc, kontrol û alternatîf." },
+            { "language": "pl", "text": "Dobra pomoc decyzyjna uwidacznia: cel, kontrolę i alternatywę." },
+            { "language": "ro", "text": "Un ajutor bun de decizie face vizibile: scopul, controlul și alternativa." },
+            { "language": "sq", "text": "Një ndihmë e mirë vendimmarrjeje e bën të dukshme: qëllimin, kontrollin dhe alternativën." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "low-data-default-note",
+          "text": "Die Schlussregel ist stark, weil sie Komfort nicht ablehnt, aber mit datenarmen Voreinstellungen beginnt.",
+          "translations": [
+            { "language": "en", "text": "The final rule is strong because it does not reject convenience, but starts with low-data defaults." },
+            { "language": "fa", "text": "قاعده پایانی قوی است، چون راحتی را رد نمی‌کند، اما با تنظیمات کم‌داده شروع می‌کند." },
+            { "language": "ar", "text": "القاعدة الختامية قوية لأنها لا ترفض الراحة، لكنها تبدأ بإعدادات قليلة البيانات." },
+            { "language": "tr", "text": "Son kural güçlüdür, çünkü konforu reddetmez ama az veri içeren varsayılanlarla başlar." },
+            { "language": "ru", "text": "Итоговое правило сильное, потому что не отвергает удобство, но начинает с настроек с малым объемом данных." },
+            { "language": "ckb", "text": "ڕێسای کۆتایی بەهێزە، چونکە ئاسانی ڕەت ناکاتەوە، بەڵام بە ڕێکخستنە کەم‌داتاکان دەست پێ دەکات." },
+            { "language": "kmr", "text": "Rêzika dawî xurt e, ji ber ku rehetiyê red nake, lê bi mîhengên xwerû yên kêm-dane dest pê dike." },
+            { "language": "pl", "text": "Końcowa reguła jest mocna, bo nie odrzuca wygody, ale zaczyna od ustawień oszczędnych w danych." },
+            { "language": "ro", "text": "Regula finală este puternică, deoarece nu respinge confortul, ci începe cu setări implicite sărace în date." },
+            { "language": "sq", "text": "Rregulli përfundimtar është i fortë sepse nuk e refuzon komoditetin, por fillon me cilësime me pak të dhëna." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "privacy-convenience-discussion",
+          "placement": "header",
+          "purpose": "Show a language-course discussion comparing privacy and convenience with abstract app cards, data-minimisation checklist, and transport-service example.",
+          "altText": "Eine neutrale Illustration einer Diskussionsrunde über Datenschutz und digitalen Komfort mit App-Karten, Datenminimierungs-Checkliste und Verkehrsbeispiel.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a discussion round about data protection and digital convenience with app cards, data-minimisation checklist, and transport example." },
+            { "language": "fa", "text": "تصویری بی‌طرف از بحث گروهی درباره حریم خصوصی و راحتی دیجیتال با کارت‌های اپلیکیشن، فهرست حداقل‌سازی داده و مثال حمل‌ونقل." },
+            { "language": "ar", "text": "رسم محايد لجولة نقاش حول حماية البيانات والراحة الرقمية مع بطاقات تطبيقات وقائمة تقليل البيانات ومثال مواصلات." },
+            { "language": "tr", "text": "Uygulama kartları, veri minimizasyonu kontrol listesi ve ulaşım örneğiyle veri koruma ve dijital konfor üzerine tarafsız bir tartışma illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация дискуссии о защите данных и цифровом удобстве с карточками приложений, чек-листом минимизации данных и транспортным примером." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە بازنەی گفتوگۆ دەربارەی پاراستنی داتا و ئاسانیی دیجیتاڵ بە کارتی ئەپ، لیستی کەمکردنەوەی داتا و نموونەی گواستنەوە." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya gera gotûbêjê li ser parastina daneyan û rehetiya dîjîtal bi kartên sepanê, lîsteya kêmkirina daneyan û mînaka veguhestinê." },
+            { "language": "pl", "text": "Neutralna ilustracja rundy dyskusyjnej o ochronie danych i cyfrowej wygodzie z kartami aplikacji, listą minimalizacji danych i przykładem transportowym." },
+            { "language": "ro", "text": "O ilustrație neutră a unei runde de discuție despre protecția datelor și comoditatea digitală, cu carduri de aplicații, listă de minimizare a datelor și exemplu de transport." },
+            { "language": "sq", "text": "Një ilustrim neutral i një rrethi diskutimi për mbrojtjen e të dhënave dhe komoditetin digjital me karta aplikacionesh, listë minimizimi të të dhënave dhe shembull transporti." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adult language learners comparing privacy and digital convenience, abstract app cards, data-minimisation checklist, public transport icon, no readable private data, no logos, calm German classroom context, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

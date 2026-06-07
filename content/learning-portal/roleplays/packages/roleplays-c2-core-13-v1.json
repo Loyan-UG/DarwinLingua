@@ -1,0 +1,871 @@
+{
+  "packageId": "roleplays-c2-core-13-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 13 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 13",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-podiumsdiskussion-mit-kontroverse-leiten",
+      "linkedDialogueSlug": null,
+      "title": "Eine Podiumsdiskussion mit Kontroverse leiten",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating a controversial panel discussion" },
+        { "language": "fa", "text": "مدیریت یک میزگرد جنجالی" },
+        { "language": "ar", "text": "إدارة نقاش منصة مثير للجدل" },
+        { "language": "tr", "text": "Tartışmalı bir paneli yönetmek" },
+        { "language": "ru", "text": "Вести спорную панельную дискуссию" },
+        { "language": "ckb", "text": "بەڕێوەبردنی پانێڵێکی مشتومڕئامێز" },
+        { "language": "kmr", "text": "Rêvebirina panelê gotûbêja nakok" },
+        { "language": "pl", "text": "Prowadzenie kontrowersyjnej dyskusji panelowej" },
+        { "language": "ro", "text": "Moderarea unei dezbateri de panel controversate" },
+        { "language": "sq", "text": "Drejtimi i një paneli diskutimi kontrovers" }
+      ],
+      "description": "Bei einer öffentlichen Diskussion über eine verkehrsberuhigte Innenstadt stehen sich lokale Geschäftsinteressen und eine Klimainitiative gegenüber. Die Beiträge werden persönlicher, das Publikum reagiert unruhig, und Sie müssen als Moderation neutral bleiben, Positionen fair zusammenfassen und die Debatte auf konkrete, beantwortbare Fragen zurückführen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "At a public discussion about a traffic-calmed city center, local business interests and a climate initiative face each other. Contributions become more personal, the audience reacts restlessly, and as moderator you must remain neutral, summarize positions fairly, and bring the debate back to concrete, answerable questions." },
+        { "language": "fa", "text": "در یک گفت‌وگوی عمومی درباره آرام‌سازی ترافیک مرکز شهر، منافع کسب‌وکارهای محلی و یک ابتکار اقلیمی روبه‌روی هم قرار می‌گیرند. صحبت‌ها شخصی‌تر می‌شوند، حضار بی‌قرار واکنش نشان می‌دهند و شما به‌عنوان مجری باید بی‌طرف بمانید، مواضع را منصفانه جمع‌بندی کنید و بحث را به پرسش‌های مشخص و قابل پاسخ برگردانید." },
+        { "language": "ar", "text": "في نقاش عام حول تهدئة المرور في وسط المدينة، تتقابل مصالح الأعمال المحلية مع مبادرة مناخية. تصبح المداخلات أكثر شخصية، ويتفاعل الجمهور بقلق، وبصفتكم مدير النقاش يجب أن تبقوا محايدين، وتلخصوا المواقف بإنصاف، وتعيدوا النقاش إلى أسئلة ملموسة قابلة للإجابة." },
+        { "language": "tr", "text": "Şehir merkezinde trafiğin sakinleştirilmesi üzerine bir kamu tartışmasında yerel işletme çıkarları ile bir iklim girişimi karşı karşıya gelir. Katkılar daha kişisel hale gelir, izleyiciler huzursuz tepki verir ve moderatör olarak tarafsız kalmanız, pozisyonları adil özetlemeniz ve tartışmayı somut, yanıtlanabilir sorulara geri getirmeniz gerekir." },
+        { "language": "ru", "text": "На публичной дискуссии о снижении автомобильного движения в центре города сталкиваются интересы местного бизнеса и климатической инициативы. Выступления становятся более личными, публика реагирует беспокойно, и как модератор вы должны сохранять нейтралитет, справедливо резюмировать позиции и возвращать дебаты к конкретным вопросам, на которые можно ответить." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی گشتی دەربارەی ئارامکردنەوەی هاتوچۆ لە ناوەندی شار، بەرژەوەندی بازرگانییە ناوخۆییەکان و دەستپێشخەرییەکی کەشوهەوا بەرامبەر یەک دەوەستن. بەشدارییەکان زیاتر کەسی دەبن، ئامادەبووان بە نائارامی کاردانەوە دەدەن، و تۆ وەک بەڕێوەبەر دەبێت بێلایەن بمێنیت، هەڵوێستەکان بە دادپەروەری کورت بکەیتەوە و باسەکە بگەڕێنیتەوە بۆ پرسیاری دیاریکراو و قابل وەڵامدانەوە." },
+        { "language": "kmr", "text": "Di gotûbêjeke giştî li ser aramkirina trafîka navenda bajêr de, berjewendiyên bazirganên herêmî û destpêşxeriya avhewayê li hember hev in. Beşdarî zêdetir kesane dibin, temaşevan bi bêaramî bersiv didin, û wekî moderator divê hûn bêalî bimînin, helwestan bi dadwerî kurt bikin û gotûbêjê vegerînin ser pirsên konkret û bersivbar." },
+        { "language": "pl", "text": "Podczas publicznej dyskusji o uspokojeniu ruchu w centrum miasta ścierają się interesy lokalnych przedsiębiorców i inicjatywy klimatycznej. Wypowiedzi stają się bardziej osobiste, publiczność reaguje niespokojnie, a jako moderator musi Pan/Pani zachować neutralność, uczciwie podsumować stanowiska i sprowadzić debatę do konkretnych pytań, na które da się odpowiedzieć." },
+        { "language": "ro", "text": "La o discuție publică despre calmarea traficului în centrul orașului, interesele afacerilor locale și o inițiativă climatică se află față în față. Intervențiile devin mai personale, publicul reacționează neliniștit, iar ca moderator trebuie să rămâneți neutru, să rezumați corect pozițiile și să readuceți dezbaterea la întrebări concrete, la care se poate răspunde." },
+        { "language": "sq", "text": "Në një diskutim publik për qetësimin e trafikut në qendër të qytetit, interesat e bizneseve lokale dhe një nismë klimatike përballen. Ndërhyrjet bëhen më personale, publiku reagon i shqetësuar dhe si moderator duhet të mbeteni neutral, të përmblidhni drejt pozicionet dhe ta ktheni debatin te pyetje konkrete e të përgjigjshme." }
+      ],
+      "learnerGoal": "Eine polarisierte öffentliche Diskussion souverän moderieren: zugespitzte Aussagen entschärfen, Positionen fair paraphrasieren, persönliche Unterstellungen stoppen, das Publikum orientieren und die Debatte in konkrete nächste Fragen überführen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate a polarized public discussion confidently: de-escalate pointed statements, paraphrase positions fairly, stop personal insinuations, orient the audience, and move the debate into concrete next questions." },
+        { "language": "fa", "text": "یک گفت‌وگوی عمومی قطبی‌شده را با تسلط مدیریت کنید: گفته‌های تند را آرام کنید، مواضع را منصفانه بازگویی کنید، نسبت‌دادن‌های شخصی را متوقف کنید، به مخاطبان جهت بدهید و بحث را به پرسش‌های بعدی مشخص تبدیل کنید." },
+        { "language": "ar", "text": "أديروا نقاشاً عاماً مستقطباً بثبات: خففوا حدة العبارات المتطرفة، وأعيدوا صياغة المواقف بإنصاف، وأوقفوا الإيحاءات الشخصية، ووجهوا الجمهور، وانقلوا النقاش إلى أسئلة تالية ملموسة." },
+        { "language": "tr", "text": "Kutuplaşmış bir kamu tartışmasını güvenle yönetin: keskin ifadeleri yatıştırın, pozisyonları adil biçimde yeniden ifade edin, kişisel ima ve ithamları durdurun, izleyiciyi yönlendirin ve tartışmayı somut sonraki sorulara taşıyın." },
+        { "language": "ru", "text": "Уверенно модерировать поляризованную публичную дискуссию: смягчать резкие высказывания, справедливо переформулировать позиции, останавливать личные намеки, ориентировать аудиторию и переводить дебаты в конкретные следующие вопросы." },
+        { "language": "ckb", "text": "گفتوگۆیەکی گشتیی قطبیبوو بە دڵنیایی بەڕێوە ببە: دەربڕینە توندەکان هێور بکەوە، هەڵوێستەکان بە دادپەروەری دووبارە بڵێوە، ئاماژە کەسییەکان بوەستێنە، ئامادەبووان ئاراستە بکە و باسەکە بگوازەوە بۆ پرسیارە داهاتووە دیاریکراوەکان." },
+        { "language": "kmr", "text": "Gotûbêjeke giştî ya polarîzekirî bi bawerî rêve bibin: gotinên tûj aram bikin, helwestan bi dadwerî ji nû ve bibêjin, têkildanên kesane rawestînin, temaşevanan rêberî bikin û gotûbêjê veguhezînin ser pirsên din ên konkret." },
+        { "language": "pl", "text": "Pewnie moderować spolaryzowaną dyskusję publiczną: łagodzić zaostrzone wypowiedzi, uczciwie parafrazować stanowiska, zatrzymywać osobiste insynuacje, orientować publiczność i przenosić debatę do konkretnych kolejnych pytań." },
+        { "language": "ro", "text": "Moderați cu siguranță o discuție publică polarizată: dezamorsați afirmațiile tăioase, parafrazați corect pozițiile, opriți insinuările personale, orientați publicul și transformați dezbaterea în întrebări următoare concrete." },
+        { "language": "sq", "text": "Moderoni me siguri një diskutim publik të polarizuar: zbutni deklaratat e mprehta, parafrazoni drejt pozicionet, ndaloni nënkuptimet personale, orientoni publikun dhe e ktheni debatin në pyetje të ardhshme konkrete." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-discussion",
+      "topics": ["social-and-relationships", "education-and-training"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "discuss-plan",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 13,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مجری" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderator" }
+          ]
+        },
+        {
+          "roleKey": "business-owner",
+          "displayName": "Geschäftsinhaberin",
+          "translations": [
+            { "language": "en", "text": "Business owner" },
+            { "language": "fa", "text": "صاحب کسب‌وکار" },
+            { "language": "ar", "text": "صاحبة عمل" },
+            { "language": "tr", "text": "İşletme sahibi" },
+            { "language": "ru", "text": "Владелица бизнеса" },
+            { "language": "ckb", "text": "خاوەنی بازرگانی" },
+            { "language": "kmr", "text": "Xwedîkar" },
+            { "language": "pl", "text": "Właścicielka firmy" },
+            { "language": "ro", "text": "Proprietară de afacere" },
+            { "language": "sq", "text": "Pronare biznesi" }
+          ]
+        },
+        {
+          "roleKey": "initiative-speaker",
+          "displayName": "Sprecher der Initiative",
+          "translations": [
+            { "language": "en", "text": "Initiative speaker" },
+            { "language": "fa", "text": "سخنگوی ابتکار" },
+            { "language": "ar", "text": "متحدث المبادرة" },
+            { "language": "tr", "text": "Girişim sözcüsü" },
+            { "language": "ru", "text": "Представитель инициативы" },
+            { "language": "ckb", "text": "قسەکەری دەستپێشخەری" },
+            { "language": "kmr", "text": "Axaftvanê destpêşxeriyê" },
+            { "language": "pl", "text": "Rzecznik inicjatywy" },
+            { "language": "ro", "text": "Purtătorul de cuvânt al inițiativei" },
+            { "language": "sq", "text": "Zëdhënës i nismës" }
+          ]
+        },
+        {
+          "roleKey": "organizer",
+          "displayName": "Veranstalterin",
+          "translations": [
+            { "language": "en", "text": "Organizer" },
+            { "language": "fa", "text": "برگزارکننده" },
+            { "language": "ar", "text": "منظمة الفعالية" },
+            { "language": "tr", "text": "Düzenleyici" },
+            { "language": "ru", "text": "Организатор" },
+            { "language": "ckb", "text": "ڕێکخەر" },
+            { "language": "kmr", "text": "Rêxistinvan" },
+            { "language": "pl", "text": "Organizatorka" },
+            { "language": "ro", "text": "Organizatoare" },
+            { "language": "sq", "text": "Organizatore" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "organizer",
+          "baseText": "Die Stimmung ist angespannt. Wenn es persönlich wird, brauchen wir eine klare Moderation, sonst verliert das Publikum den Überblick.",
+          "translations": [
+            { "language": "en", "text": "The mood is tense. If it becomes personal, we need clear moderation; otherwise the audience will lose track." },
+            { "language": "fa", "text": "فضا پرتنش است. اگر بحث شخصی شود، به مدیریت روشن نیاز داریم؛ وگرنه مخاطبان رشته بحث را گم می‌کنند." },
+            { "language": "ar", "text": "الأجواء متوترة. إذا أصبح النقاش شخصياً، نحتاج إلى إدارة واضحة، وإلا سيفقد الجمهور الخيط." },
+            { "language": "tr", "text": "Ortam gergin. Tartışma kişiselleşirse net bir moderasyona ihtiyacımız var; yoksa izleyici konuyu takip edemez." },
+            { "language": "ru", "text": "Настроение напряженное. Если начнутся личные выпады, нужна четкая модерация, иначе публика потеряет нить." },
+            { "language": "ckb", "text": "کەشەکە پڕ فشارە. ئەگەر باسەکە کەسی بێت، پێویستمان بە بەڕێوەبردنی ڕوون هەیە، ئەگەر نا ئامادەبووان سەرەداوی باسەکە لەدەست دەدەن." },
+            { "language": "kmr", "text": "Atmosfer teng e. Ger mijar kesane bibe, hewce bi moderasyoneke zelal heye, naxwe temaşevan dê rêya mijarê winda bikin." },
+            { "language": "pl", "text": "Nastrój jest napięty. Jeśli zrobi się osobiście, potrzebujemy jasnej moderacji, inaczej publiczność straci orientację." },
+            { "language": "ro", "text": "Atmosfera este tensionată. Dacă devine personal, avem nevoie de o moderare clară, altfel publicul va pierde firul." },
+            { "language": "sq", "text": "Atmosfera është e tensionuar. Nëse bëhet personale, na duhet moderim i qartë, përndryshe publiku do ta humbasë fillin." }
+          ],
+          "function": "sets moderation challenge",
+          "toneNote": "concerned, practical"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich eröffne mit einem klaren Rahmen: Heute geht es nicht darum, eine Seite moralisch zu besiegen, sondern die konkreten Zielkonflikte sichtbar zu machen: Erreichbarkeit, wirtschaftliche Folgen, Klimaeffekt und soziale Ausnahmen.",
+          "translations": [
+            { "language": "en", "text": "I will open with a clear frame: today is not about morally defeating one side, but about making the concrete trade-offs visible: accessibility, economic consequences, climate impact, and social exceptions." },
+            { "language": "fa", "text": "با یک چارچوب روشن شروع می‌کنم: امروز هدف این نیست که یک طرف از نظر اخلاقی شکست داده شود، بلکه باید تعارض‌های مشخص قابل مشاهده شوند: دسترسی، پیامدهای اقتصادی، اثر اقلیمی و استثناهای اجتماعی." },
+            { "language": "ar", "text": "سأفتتح بإطار واضح: لا يتعلق الأمر اليوم بهزيمة طرف أخلاقياً، بل بجعل تعارضات الأهداف الملموسة مرئية: الوصول، والآثار الاقتصادية، والأثر المناخي، والاستثناءات الاجتماعية." },
+            { "language": "tr", "text": "Net bir çerçeveyle açacağım: bugün mesele bir tarafı ahlaken yenmek değil, somut hedef çatışmalarını görünür kılmak: erişilebilirlik, ekonomik sonuçlar, iklim etkisi ve sosyal istisnalar." },
+            { "language": "ru", "text": "Я открою четкой рамкой: сегодня речь не о том, чтобы морально победить одну сторону, а о том, чтобы сделать видимыми конкретные конфликты целей: доступность, экономические последствия, климатический эффект и социальные исключения." },
+            { "language": "ckb", "text": "بە چوارچێوەیەکی ڕوون دەست پێدەکەم: ئەمڕۆ مەبەست ئەوە نییە لایەنێک لە ڕووی ئەخلاقییەوە ببەزێنرێت، بەڵکو ئەو ناکۆکییە دیاریکراوانەی ئامانجەکان ببینرێن: دەستپێگەیشتن، کاریگەری ئابووری، کاریگەری کەشوهەوا و دەرچوونە کۆمەڵایەتییەکان." },
+            { "language": "kmr", "text": "Ez bi çarçoveyeke zelal dest pê dikim: îro ne li ser wê ye ku aliyek bi exlaqî were têkbirin, lê ku nakokiyên armancên konkret xuya bibin: gihîştin, encamên aborî, bandora avhewayê û derketinên civakî." },
+            { "language": "pl", "text": "Otworzę jasną ramą: dziś nie chodzi o moralne pokonanie jednej strony, lecz o pokazanie konkretnych konfliktów celów: dostępności, skutków gospodarczych, efektu klimatycznego i wyjątków społecznych." },
+            { "language": "ro", "text": "Deschid cu un cadru clar: astăzi nu este vorba despre înfrângerea morală a unei părți, ci despre a face vizibile conflictele concrete de obiective: accesibilitate, consecințe economice, efect climatic și excepții sociale." },
+            { "language": "sq", "text": "Do ta hap me një kornizë të qartë: sot nuk bëhet fjalë për ta mposhtur moralisht një palë, por për t'i bërë të dukshme konfliktet konkrete të objektivave: qasjen, pasojat ekonomike, efektin klimatik dhe përjashtimet sociale." }
+          ],
+          "function": "sets neutral debate frame",
+          "toneNote": "formal, orienting",
+          "expectedLearnerAction": "Open with a neutral frame that names the conflict dimensions."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "business-owner",
+          "baseText": "Für kleine Geschäfte ist das kein abstrakter Zielkonflikt. Wenn Kundinnen und Kunden nicht mehr vorfahren können, verlieren wir Umsatz, während andere sich dafür als fortschrittlich feiern lassen.",
+          "translations": [
+            { "language": "en", "text": "For small shops this is not an abstract trade-off. If customers can no longer drive up, we lose revenue while others get to celebrate themselves as progressive." },
+            { "language": "fa", "text": "برای فروشگاه‌های کوچک این یک تعارض هدف انتزاعی نیست. اگر مشتریان دیگر نتوانند با خودرو تا نزدیک فروشگاه بیایند، ما درآمد از دست می‌دهیم، در حالی که دیگران خودشان را پیشرو معرفی می‌کنند." },
+            { "language": "ar", "text": "بالنسبة إلى المتاجر الصغيرة، هذا ليس تعارض أهداف مجرداً. إذا لم يعد الزبائن يستطيعون الوصول بالسيارة، نفقد نحن الإيرادات بينما يحتفل آخرون بأنفسهم كمتقدمين." },
+            { "language": "tr", "text": "Küçük işletmeler için bu soyut bir hedef çatışması değil. Müşteriler artık arabayla yaklaşamazsa biz ciro kaybederiz, başkaları ise kendilerini ilerici diye kutlar." },
+            { "language": "ru", "text": "Для небольших магазинов это не абстрактный конфликт целей. Если покупатели больше не смогут подъезжать, мы потеряем оборот, пока другие будут праздновать себя как прогрессивных." },
+            { "language": "ckb", "text": "بۆ دوکانە بچووکەکان ئەمە ناکۆکییەکی ئامانجی ئەبستراکت نییە. ئەگەر کڕیاران نەتوانن بە ئۆتۆمبێل نزیک ببنەوە، ئێمە داهات لەدەست دەدەین، لە کاتێکدا ئەوانی تر خۆیان وەک پێشکەوتوو پیشان دەدەن." },
+            { "language": "kmr", "text": "Ji bo dikanên biçûk ev ne nakokiyeke armancî ya abstrakt e. Ger xerîdar êdî nikaribin bi otomobîl nêzîk bibin, em dahat winda dikin, lê yên din xwe wekî pêşketî pîroz dikin." },
+            { "language": "pl", "text": "Dla małych sklepów to nie jest abstrakcyjny konflikt celów. Jeśli klienci nie będą mogli już podjechać, stracimy obrót, podczas gdy inni będą świętować swoją postępowość." },
+            { "language": "ro", "text": "Pentru magazinele mici nu este un conflict abstract de obiective. Dacă clienții nu mai pot veni cu mașina aproape, noi pierdem venituri, în timp ce alții se pot celebra ca progresiști." },
+            { "language": "sq", "text": "Për dyqanet e vogla kjo nuk është një konflikt abstrakt objektivash. Nëse klientët nuk mund të afrohen më me makinë, ne humbim të ardhura, ndërsa të tjerët festojnë veten si përparimtarë." }
+          ],
+          "function": "states economic concern with provocation",
+          "toneNote": "frustrated"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich halte zwei Punkte fest: Sie sprechen über konkrete Erreichbarkeit und Umsatzrisiken. Die Bemerkung über Motive der Gegenseite nehme ich nicht als Argument auf, damit wir bei überprüfbaren Fragen bleiben.",
+          "translations": [
+            { "language": "en", "text": "I will note two points: you are talking about concrete accessibility and revenue risks. I will not take up the remark about the other side's motives as an argument, so that we stay with verifiable questions." },
+            { "language": "fa", "text": "دو نکته را ثبت می‌کنم: شما درباره دسترسی مشخص و ریسک‌های درآمدی صحبت می‌کنید. اشاره به انگیزه‌های طرف مقابل را به‌عنوان استدلال وارد نمی‌کنم تا نزد پرسش‌های قابل بررسی بمانیم." },
+            { "language": "ar", "text": "أسجل نقطتين: أنتم تتحدثون عن إمكانية وصول ملموسة ومخاطر على الإيرادات. لن أتعامل مع الملاحظة حول دوافع الطرف الآخر كحجة، حتى نبقى عند الأسئلة القابلة للتحقق." },
+            { "language": "tr", "text": "İki noktayı kaydediyorum: somut erişilebilirlik ve ciro risklerinden söz ediyorsunuz. Karşı tarafın motivasyonlarına dair yorumu argüman olarak almayacağım; böylece doğrulanabilir sorularda kalırız." },
+            { "language": "ru", "text": "Я фиксирую два пункта: вы говорите о конкретной доступности и рисках выручки. Замечание о мотивах другой стороны я не беру как аргумент, чтобы мы оставались при проверяемых вопросах." },
+            { "language": "ckb", "text": "دوو خاڵ تۆمار دەکەم: ئێوە دەربارەی دەستپێگەیشتنی دیاریکراو و مەترسیی داهات قسە دەکەن. تێبینیی دەربارەی پاڵنەری لایەنی بەرامبەر وەک بەڵگە وەرناگرم، بۆ ئەوەی لەسەر پرسیاری قابل پشکنین بمێنینەوە." },
+            { "language": "kmr", "text": "Ez du xal tomar dikim: hûn li ser gihîştina konkret û xetereyên dahatê diaxivin. Şîroveya li ser mebestên aliyê din wekî arguman nagirim, da ku em li ser pirsên kontrolbar bimînin." },
+            { "language": "pl", "text": "Odnotowuję dwa punkty: mówi Pani o konkretnej dostępności i ryzyku dla obrotu. Uwagę o motywach drugiej strony nie przyjmuję jako argumentu, abyśmy pozostali przy pytaniach możliwych do sprawdzenia." },
+            { "language": "ro", "text": "Rețin două puncte: vorbiți despre accesibilitate concretă și riscuri de venituri. Observația despre motivele celeilalte părți nu o preiau ca argument, ca să rămânem la întrebări verificabile." },
+            { "language": "sq", "text": "Mbaj shënim dy pika: ju flisni për qasje konkrete dhe rreziqe për të ardhurat. Vërejtjen për motivet e palës tjetër nuk e marr si argument, që të mbetemi te pyetjet e verifikueshme." }
+          ],
+          "function": "fairly summarizes and blocks personal motive framing",
+          "toneNote": "neutral, firm",
+          "expectedLearnerAction": "Separate valid substance from personal insinuation."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "initiative-speaker",
+          "baseText": "Wenn jedes Veränderungsprojekt sofort als Angriff auf den Handel dargestellt wird, kommen wir nie aus der Blockade heraus. Die Innenstadt gehört nicht nur denen, die Parkplätze brauchen.",
+          "translations": [
+            { "language": "en", "text": "If every change project is immediately portrayed as an attack on commerce, we will never get out of the blockade. The city center does not belong only to those who need parking spaces." },
+            { "language": "fa", "text": "اگر هر پروژه تغییر فوراً به‌عنوان حمله به کسب‌وکارها نمایش داده شود، هیچ‌وقت از بن‌بست خارج نمی‌شویم. مرکز شهر فقط متعلق به کسانی نیست که به جای پارک نیاز دارند." },
+            { "language": "ar", "text": "إذا صُوّر كل مشروع تغيير فوراً كأنه هجوم على التجارة، فلن نخرج أبداً من حالة الانسداد. وسط المدينة لا يخص فقط من يحتاجون إلى مواقف سيارات." },
+            { "language": "tr", "text": "Her değişim projesi hemen ticarete saldırı gibi sunulursa, tıkanıklıktan asla çıkamayız. Şehir merkezi yalnızca park yerine ihtiyaç duyanlara ait değildir." },
+            { "language": "ru", "text": "Если каждый проект изменений сразу изображается как атака на торговлю, мы никогда не выйдем из блокировки. Центр города принадлежит не только тем, кому нужны парковочные места." },
+            { "language": "ckb", "text": "ئەگەر هەر پرۆژەیەکی گۆڕانکاری دەستبەجێ وەک هێرش بۆ سەر بازرگانی پیشان بدرێت، هەرگیز لە گیرەکە دەرناچین. ناوەندی شار تەنها هی ئەوانە نییە کە پێویستیان بە شوێنی پارککردن هەیە." },
+            { "language": "kmr", "text": "Ger her projeya guherînê tavilê wekî êriş li ser bazirganî were nîşandan, em tu carî ji astengiyê dernakevin. Navenda bajêr ne tenê ya kesên ku hewce bi cihê parkê ne." },
+            { "language": "pl", "text": "Jeśli każdy projekt zmiany od razu przedstawia się jako atak na handel, nigdy nie wyjdziemy z blokady. Centrum miasta nie należy tylko do tych, którzy potrzebują miejsc parkingowych." },
+            { "language": "ro", "text": "Dacă fiecare proiect de schimbare este prezentat imediat ca un atac asupra comerțului, nu vom ieși niciodată din blocaj. Centrul orașului nu aparține doar celor care au nevoie de parcări." },
+            { "language": "sq", "text": "Nëse çdo projekt ndryshimi paraqitet menjëherë si sulm ndaj tregtisë, nuk do të dalim kurrë nga bllokimi. Qendra e qytetit nuk u përket vetëm atyre që kanë nevojë për vende parkimi." }
+          ],
+          "function": "counters with broad public-space claim",
+          "toneNote": "pointed"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich greife den sachlichen Kern auf: Es geht um die Frage, wem öffentliche Fläche dient und nach welchen Kriterien sie verteilt wird. Die Formulierung von der Blockade verschärft den Ton; ich übersetze sie in die Frage, welche Bedingungen Veränderung zumutbar machen.",
+          "translations": [
+            { "language": "en", "text": "I will take up the substantive core: this is about whom public space serves and by which criteria it is distributed. The wording about blockade sharpens the tone; I translate it into the question of which conditions make change reasonable." },
+            { "language": "fa", "text": "هسته محتوایی را برمی‌دارم: بحث بر سر این است که فضای عمومی به چه کسانی خدمت می‌کند و بر اساس چه معیارهایی تقسیم می‌شود. عبارت بن‌بست لحن را تندتر می‌کند؛ من آن را به این پرسش تبدیل می‌کنم که چه شرایطی تغییر را قابل تحمل می‌کند." },
+            { "language": "ar", "text": "سألتقط الجوهر الموضوعي: المسألة هي لمن تخدم المساحة العامة وبأي معايير توزع. صياغة الانسداد تزيد حدة النبرة؛ أترجمها إلى سؤال: ما الشروط التي تجعل التغيير مقبولاً؟" },
+            { "language": "tr", "text": "Maddi özü alıyorum: mesele kamusal alanın kime hizmet ettiği ve hangi kriterlere göre dağıtıldığıdır. Tıkanıklık ifadesi tonu sertleştiriyor; bunu değişimi makul kılan koşullar nelerdir sorusuna çeviriyorum." },
+            { "language": "ru", "text": "Я беру содержательное ядро: речь о том, кому служит общественное пространство и по каким критериям оно распределяется. Формулировка о блокаде обостряет тон; я перевожу ее в вопрос о том, какие условия делают изменения приемлемыми." },
+            { "language": "ckb", "text": "ناوەڕۆکی بابەتییەکە وەردەگرم: باسەکە ئەوەیە شوێنی گشتی خزمەت بە کێ دەکات و بە کام پێوەر دابەش دەکرێت. دەربڕینی گیرەکە لحنەکە توندتر دەکات؛ من دەیگۆڕم بۆ ئەو پرسیارەی کام مەرج گۆڕانکاری دەکاتە شتێکی قابل قبوڵکردن." },
+            { "language": "kmr", "text": "Ez naveroka rastî digirim: mijar ew e ku qada giştî ji kê re xizmet dike û li gorî kîjan pîvanan tê dabeşkirin. Gotina astengiyê tonê tûjtir dike; ez wê vediguhezînim pirsa ka kîjan şert guherînê qebûlbar dikin." },
+            { "language": "pl", "text": "Podejmuję rzeczowe jądro: chodzi o to, komu służy przestrzeń publiczna i według jakich kryteriów jest dzielona. Sformułowanie o blokadzie zaostrza ton; przekładam je na pytanie, jakie warunki czynią zmianę akceptowalną." },
+            { "language": "ro", "text": "Preiau nucleul factual: este vorba despre cui servește spațiul public și după ce criterii este distribuit. Formularea despre blocaj înăsprește tonul; o traduc în întrebarea ce condiții fac schimbarea suportabilă." },
+            { "language": "sq", "text": "Marr thelbin faktik: bëhet fjalë se kujt i shërben hapësira publike dhe sipas cilave kritere ndahet. Formulimi për bllokimin e ashpërson tonin; unë e përkthej në pyetjen se cilat kushte e bëjnë ndryshimin të pranueshëm." }
+          ],
+          "function": "translates escalation into an answerable question",
+          "toneNote": "neutral, reframing",
+          "expectedLearnerAction": "Extract the substantive question from an escalating statement."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "business-owner",
+          "baseText": "Dann beantworten Sie bitte konkret: Wie kommen ältere Kundinnen, Lieferdienste und Menschen mit Einschränkungen in die Innenstadt, ohne dass wir alles auf eigene Kosten auffangen?",
+          "translations": [
+            { "language": "en", "text": "Then please answer concretely: how will older customers, delivery services, and people with disabilities get into the city center without us having to absorb everything at our own expense?" },
+            { "language": "fa", "text": "پس لطفاً مشخص پاسخ دهید: مشتریان سالمند، خدمات تحویل و افراد دارای محدودیت چگونه وارد مرکز شهر می‌شوند، بدون اینکه ما همه چیز را با هزینه خودمان جبران کنیم؟" },
+            { "language": "ar", "text": "إذن أجيبوا بصورة ملموسة: كيف سيصل الزبائن الأكبر سناً وخدمات التوصيل والأشخاص ذوو القيود إلى وسط المدينة من دون أن نتحمل نحن كل شيء على حسابنا؟" },
+            { "language": "tr", "text": "O zaman lütfen somut yanıt verin: yaşlı müşteriler, teslimat hizmetleri ve kısıtlılığı olan insanlar, her şeyi bizim kendi masrafımızla karşılamamız gerekmeden şehir merkezine nasıl ulaşacak?" },
+            { "language": "ru", "text": "Тогда ответьте, пожалуйста, конкретно: как пожилые покупатели, службы доставки и люди с ограничениями будут попадать в центр города, чтобы нам не пришлось покрывать все за свой счет?" },
+            { "language": "ckb", "text": "ئەوا تکایە بە دیاری وەڵام بدەنەوە: کڕیارانی تەمەنمەند، خزمەتگوزارییەکانی گەیاندن و کەسانی خاوەن سنوورداری چۆن دەگەنە ناوەندی شار، بێ ئەوەی ئێمە هەموو شتێک بە خەرجی خۆمان هەڵبگرین؟" },
+            { "language": "kmr", "text": "Wê demê ji kerema xwe bi konkret bersiv bidin: xerîdarên temenmezin, xizmetên radestkirinê û kesên bi sînordariyan çawa digihîjin navenda bajêr, bêyî ku em her tiştî bi xercê xwe hilgirin?" },
+            { "language": "pl", "text": "W takim razie proszę odpowiedzieć konkretnie: jak starsi klienci, dostawcy i osoby z ograniczeniami dotrą do centrum, bez tego, żebyśmy wszystko brali na własny koszt?" },
+            { "language": "ro", "text": "Atunci răspundeți concret: cum ajung clienții în vârstă, serviciile de livrare și persoanele cu limitări în centrul orașului fără ca noi să suportăm totul pe cheltuiala proprie?" },
+            { "language": "sq", "text": "Atëherë përgjigjuni konkretisht: si do të hyjnë në qendër klientët e moshuar, shërbimet e dorëzimit dhe personat me kufizime pa qenë ne të detyruar t'i mbulojmë të gjitha me shpenzimet tona?" }
+          ],
+          "function": "asks concrete accessibility question",
+          "toneNote": "demanding but substantive"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist eine beantwortbare Frage, und ich gebe sie in dieser Form weiter: Welche Ausnahmen, Lieferfenster und Unterstützungen sind nötig, damit die Maßnahme nicht einseitig auf Handel und mobilitätseingeschränkte Menschen abgewälzt wird?",
+          "translations": [
+            { "language": "en", "text": "That is an answerable question, and I will pass it on in this form: which exceptions, delivery windows, and support measures are needed so that the measure is not shifted one-sidedly onto businesses and people with mobility limitations?" },
+            { "language": "fa", "text": "این یک پرسش قابل پاسخ است، و آن را به همین شکل منتقل می‌کنم: چه استثناها، بازه‌های تحویل و حمایت‌هایی لازم است تا این اقدام یک‌طرفه بر دوش کسب‌وکارها و افراد دارای محدودیت حرکتی نیفتد؟" },
+            { "language": "ar", "text": "هذا سؤال قابل للإجابة، وسأنقله بهذه الصيغة: ما الاستثناءات ونوافذ التسليم وأشكال الدعم اللازمة حتى لا تُحمّل هذه التدبيرات بشكل أحادي على التجارة والأشخاص ذوي قيود الحركة؟" },
+            { "language": "tr", "text": "Bu yanıtlanabilir bir soru ve bunu bu biçimde aktaracağım: önlemin tek taraflı olarak ticaretin ve hareket kısıtlılığı olan insanların üzerine yıkılmaması için hangi istisnalar, teslimat pencereleri ve destekler gereklidir?" },
+            { "language": "ru", "text": "Это вопрос, на который можно ответить, и я передам его в такой форме: какие исключения, окна доставки и меры поддержки нужны, чтобы эта мера не была односторонне переложена на торговлю и людей с ограниченной мобильностью?" },
+            { "language": "ckb", "text": "ئەمە پرسیارێکی قابل وەڵامدانەوەیە، و بەو شێوەیە دەیگوازمەوە: کام دەرچوون، کاتی گەیاندن و پشتگیرییەکان پێویستن بۆ ئەوەی ئەم ڕێکارە بە یەک لایەنە نەخرێتە سەر بازرگانی و کەسانی خاوەن سنوورداری جووڵە؟" },
+            { "language": "kmr", "text": "Ev pirseke bersivbar e, û ez wê bi vî awayî radigihînim: kîjan derketin, demên radestkirinê û piştgirî hewce ne da ku ev tedbîr yekalî neyê avêtin ser bazirganî û kesên bi sînordariya tevgerê?" },
+            { "language": "pl", "text": "To jest pytanie, na które da się odpowiedzieć, i przekażę je w tej formie: jakie wyjątki, okna dostaw i formy wsparcia są potrzebne, aby środek nie został jednostronnie przerzucony na handel i osoby o ograniczonej mobilności?" },
+            { "language": "ro", "text": "Aceasta este o întrebare la care se poate răspunde și o transmit în această formă: ce excepții, ferestre de livrare și sprijin sunt necesare pentru ca măsura să nu fie transferată unilateral asupra comerțului și persoanelor cu mobilitate redusă?" },
+            { "language": "sq", "text": "Kjo është një pyetje e përgjigjshme dhe do ta përcjell në këtë formë: cilat përjashtime, dritare dorëzimi dhe mbështetje nevojiten që masa të mos kalojë njëanshëm mbi tregtinë dhe njerëzit me kufizime lëvizjeje?" }
+          ],
+          "function": "turns pressure into structured policy question",
+          "toneNote": "precise, constructive",
+          "expectedLearnerAction": "Convert a heated challenge into a policy design question."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "organizer",
+          "baseText": "Im Publikum wird es unruhig, weil manche sofort eine Ja-oder-Nein-Antwort erwarten. Wir müssen die Diskussion sortieren, ohne sie abzuwürgen.",
+          "translations": [
+            { "language": "en", "text": "The audience is getting restless because some people expect an immediate yes-or-no answer. We need to structure the discussion without cutting it off." },
+            { "language": "fa", "text": "در میان حضار بی‌قراری ایجاد شده، چون برخی فوراً پاسخ بله یا نه می‌خواهند. باید بحث را مرتب کنیم، بدون اینکه آن را خفه کنیم." },
+            { "language": "ar", "text": "أصبح الجمهور مضطرباً لأن بعضهم يتوقع إجابة فورية بنعم أو لا. يجب أن ننظم النقاش من دون أن نخنقه." },
+            { "language": "tr", "text": "İzleyiciler huzursuzlanıyor, çünkü bazıları hemen evet-hayır yanıtı bekliyor. Tartışmayı boğmadan yapılandırmamız gerekiyor." },
+            { "language": "ru", "text": "Публика начинает беспокоиться, потому что некоторые сразу ждут ответа да или нет. Нам нужно структурировать дискуссию, не заглушая ее." },
+            { "language": "ckb", "text": "لە ناو ئامادەبوواندا نائارامی دروست دەبێت چونکە هەندێک کەس دەستبەجێ وەڵامی بەڵێ یان نا چاوەڕوان دەکەن. دەبێت باسەکە ڕێک بخەین، بێ ئەوەی بیخنکێنین." },
+            { "language": "kmr", "text": "Di nav temaşevanan de bêaramî çêdibe ji ber ku hin kes tavilê bersiva erê an na hêvî dikin. Divê em gotûbêjê rêz bikin bêyî ku wê qut bikin." },
+            { "language": "pl", "text": "Publiczność się niecierpliwi, bo część osób oczekuje natychmiastowej odpowiedzi tak albo nie. Musimy uporządkować dyskusję, nie dusząc jej." },
+            { "language": "ro", "text": "Publicul devine neliniștit pentru că unii așteaptă imediat un răspuns da sau nu. Trebuie să ordonăm discuția fără să o sufocăm." },
+            { "language": "sq", "text": "Publiku po bëhet i shqetësuar sepse disa presin menjëherë një përgjigje po ose jo. Duhet ta strukturojmë diskutimin pa e mbytur atë." }
+          ],
+          "function": "signals audience pressure",
+          "toneNote": "urgent"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich strukturiere es in drei kurze Runden: Erstens nennt jede Seite eine Maßnahme, die sie für unverzichtbar hält. Zweitens nennt sie ein Risiko der eigenen Position. Drittens formulieren wir eine Bedingung, unter der ein Pilotprojekt vertretbar wäre.",
+          "translations": [
+            { "language": "en", "text": "I will structure it into three short rounds: first, each side names one measure it considers indispensable. Second, it names one risk of its own position. Third, we formulate one condition under which a pilot project would be defensible." },
+            { "language": "fa", "text": "آن را در سه دور کوتاه ساختار می‌دهم: اول، هر طرف یک اقدامی را نام می‌برد که برایش ضروری است. دوم، یک ریسک موضع خود را نام می‌برد. سوم، یک شرط را فرمول‌بندی می‌کنیم که تحت آن یک پروژه آزمایشی قابل دفاع باشد." },
+            { "language": "ar", "text": "سأقسمها إلى ثلاث جولات قصيرة: أولاً، يذكر كل طرف إجراءً واحداً يراه لا غنى عنه. ثانياً، يذكر خطراً واحداً في موقفه هو. ثالثاً، نصوغ شرطاً يكون بموجبه مشروع تجريبي مقبولاً." },
+            { "language": "tr", "text": "Bunu üç kısa turda yapılandırıyorum: birincisi, her taraf vazgeçilmez gördüğü bir önlemi söyler. İkincisi, kendi pozisyonunun bir riskini söyler. Üçüncüsü, bir pilot projenin savunulabilir olacağı bir koşul formüle ederiz." },
+            { "language": "ru", "text": "Я структурирую это в три коротких раунда: во-первых, каждая сторона называет одну меру, которую считает необходимой. Во-вторых, называет один риск собственной позиции. В-третьих, мы формулируем условие, при котором пилотный проект был бы оправдан." },
+            { "language": "ckb", "text": "ئەمە بە سێ خولی کورت ڕێک دەخەم: یەکەم، هەر لایەنێک ڕێکارێک ناو دەبات کە بە پێویستی بێ جێگرەوەی دەزانێت. دووەم، مەترسییەکی هەڵوێستی خۆی ناو دەبات. سێیەم، مەرجێک دادەنێین کە لە ژێریدا پرۆژەیەکی تاقیکردنەوە قابل بەرگری بێت." },
+            { "language": "kmr", "text": "Ez vê di sê dorên kurt de rêz dikim: yekem, her alî tedbîrekê bi nav dike ku wê bêalternatîf dibîne. Duyem, xetereyeke helwesta xwe bi nav dike. Sêyem, em şertê ku li gorî wê projeyeke ceribandinê parastbar be, formul dikin." },
+            { "language": "pl", "text": "Uporządkuję to w trzech krótkich rundach: po pierwsze, każda strona nazwie jeden środek, który uważa za niezbędny. Po drugie, nazwie jedno ryzyko własnego stanowiska. Po trzecie, sformułujemy warunek, pod którym projekt pilotażowy byłby do obrony." },
+            { "language": "ro", "text": "O structurez în trei runde scurte: mai întâi, fiecare parte numește o măsură pe care o consideră indispensabilă. În al doilea rând, numește un risc al propriei poziții. În al treilea rând, formulăm o condiție sub care un proiect pilot ar fi justificabil." },
+            { "language": "sq", "text": "Do ta strukturoj në tre raunde të shkurtra: së pari, secila palë emërton një masë që e konsideron të domosdoshme. Së dyti, emërton një rrezik të pozicionit të vet. Së treti, formulojmë një kusht nën të cilin një projekt pilot do të ishte i mbrojtshëm." }
+          ],
+          "function": "creates balanced panel structure",
+          "toneNote": "firm, procedural",
+          "expectedLearnerAction": "Redirect the panel into symmetrical, answerable rounds."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "initiative-speaker",
+          "baseText": "Mit dieser Struktur kann ich arbeiten. Wenn auch die Risiken der eigenen Position benannt werden, klingt es weniger wie ein Schlagabtausch.",
+          "translations": [
+            { "language": "en", "text": "I can work with that structure. If the risks of one's own position are also named, it sounds less like an exchange of blows." },
+            { "language": "fa", "text": "با این ساختار می‌توانم کار کنم. اگر ریسک‌های موضع خود هم نام برده شوند، کمتر شبیه جدال ضربه‌ای به نظر می‌رسد." },
+            { "language": "ar", "text": "يمكنني العمل بهذه البنية. إذا ذُكرت أيضاً مخاطر الموقف الخاص، فسيبدو الأمر أقل كأنه تبادل ضربات." },
+            { "language": "tr", "text": "Bu yapıyla çalışabilirim. Kendi pozisyonunun riskleri de adlandırılırsa, bu daha az karşılıklı atışma gibi duyulur." },
+            { "language": "ru", "text": "С такой структурой я могу работать. Если также называются риски собственной позиции, это меньше звучит как обмен ударами." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ ئەم پێکهاتەیە کار بکەم. ئەگەر مەترسییەکانی هەڵوێستی خۆش ناو ببرێن، کەمتر وەک لێکدانەوەی توند دەنگ دەدات." },
+            { "language": "kmr", "text": "Ez dikarim bi vê avahiyê re bixebitim. Ger xetereyên helwesta xwe jî bêne gotin, ew kêm zêdetir wekî pevçûna gotinan tê bihîstin." },
+            { "language": "pl", "text": "Z taką strukturą mogę pracować. Jeśli nazywa się także ryzyka własnego stanowiska, brzmi to mniej jak wymiana ciosów." },
+            { "language": "ro", "text": "Pot lucra cu această structură. Dacă sunt numite și riscurile propriei poziții, sună mai puțin ca un schimb de lovituri." },
+            { "language": "sq", "text": "Mund të punoj me këtë strukturë. Nëse përmenden edhe rreziqet e pozicionit të vet, tingëllon më pak si shkëmbim goditjesh." }
+          ],
+          "function": "accepts structure",
+          "toneNote": "constructive"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann schließen wir diese Phase so: Wir haben den Konflikt nicht aufgelöst, aber präzisiert. Für die nächste Runde halten wir fest: konkrete Erreichbarkeit, messbarer Klimaeffekt, soziale Ausnahmen und wirtschaftliche Übergangsregeln gehören gemeinsam auf den Tisch.",
+          "translations": [
+            { "language": "en", "text": "Then we will close this phase like this: we have not resolved the conflict, but we have made it more precise. For the next round, we will record: concrete accessibility, measurable climate effect, social exceptions, and economic transition rules belong on the table together." },
+            { "language": "fa", "text": "پس این مرحله را این‌گونه جمع‌بندی می‌کنیم: تعارض را حل نکرده‌ایم، اما آن را دقیق‌تر کرده‌ایم. برای دور بعد ثبت می‌کنیم: دسترسی مشخص، اثر اقلیمی قابل اندازه‌گیری، استثناهای اجتماعی و قواعد گذار اقتصادی باید هم‌زمان روی میز باشند." },
+            { "language": "ar", "text": "إذن نختتم هذه المرحلة هكذا: لم نحل النزاع، لكننا جعلناه أدق. للجولة التالية نثبت: الوصول الملموس، والأثر المناخي القابل للقياس، والاستثناءات الاجتماعية، وقواعد الانتقال الاقتصادية يجب أن تكون معاً على الطاولة." },
+            { "language": "tr", "text": "O halde bu aşamayı şöyle kapatıyoruz: çatışmayı çözmedik, ama daha kesin hale getirdik. Bir sonraki tur için şunu kaydediyoruz: somut erişilebilirlik, ölçülebilir iklim etkisi, sosyal istisnalar ve ekonomik geçiş kuralları birlikte masada olmalı." },
+            { "language": "ru", "text": "Тогда завершим этот этап так: мы не разрешили конфликт, но уточнили его. Для следующего раунда фиксируем: конкретная доступность, измеримый климатический эффект, социальные исключения и экономические правила перехода должны обсуждаться вместе." },
+            { "language": "ckb", "text": "کەواتە ئەم قۆناغە ئاوا کۆتایی پێدەهێنین: ناکۆکییەکەمان چارەسەر نەکرد، بەڵام وردترمان کرد. بۆ خولی داهاتوو تۆمار دەکەین: دەستپێگەیشتنی دیاریکراو، کاریگەری کەشوهەوایی قابل پێوانەکردن، دەرچوونە کۆمەڵایەتییەکان و ڕێساکانی گواستنەوەی ئابووری دەبێت پێکەوە لەسەر مێز بن." },
+            { "language": "kmr", "text": "Wê demê em vê qonaxê wiha diqedînin: me nakokî çareser nekir, lê me hûrgilîtir kir. Ji bo dora din em tomar dikin: gihîştina konkret, bandora avhewayê ya pîvandbar, derketinên civakî û rêzikên derbasbûna aborî divê bi hev re li ser maseyê bin." },
+            { "language": "pl", "text": "W takim razie zamykamy ten etap tak: nie rozwiązaliśmy konfliktu, ale go doprecyzowaliśmy. Na następną rundę zapisujemy: konkretna dostępność, mierzalny efekt klimatyczny, wyjątki społeczne i gospodarcze zasady przejściowe muszą być omawiane razem." },
+            { "language": "ro", "text": "Atunci încheiem această fază astfel: nu am rezolvat conflictul, dar l-am precizat. Pentru runda următoare consemnăm: accesibilitatea concretă, efectul climatic măsurabil, excepțiile sociale și regulile economice de tranziție trebuie puse împreună pe masă." },
+            { "language": "sq", "text": "Atëherë e mbyllim këtë fazë kështu: nuk e kemi zgjidhur konfliktin, por e kemi bërë më të saktë. Për raundin tjetër shënojmë: qasja konkrete, efekti klimatik i matshëm, përjashtimet sociale dhe rregullat ekonomike të tranzicionit duhet të jenë bashkë në tryezë." }
+          ],
+          "function": "closes with fair synthesis and next-step frame",
+          "toneNote": "balanced, conclusive",
+          "expectedLearnerAction": "Close without false consensus and preserve a concrete next-step agenda."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich eröffne mit einem klaren Rahmen: Heute geht es nicht darum, eine Seite moralisch zu besiegen, sondern die konkreten Zielkonflikte sichtbar zu machen: Erreichbarkeit, wirtschaftliche Folgen, Klimaeffekt und soziale Ausnahmen.",
+              "translations": [
+                { "language": "en", "text": "I will open with a clear frame: today is not about morally defeating one side, but about making the concrete trade-offs visible: accessibility, economic consequences, climate impact, and social exceptions." },
+                { "language": "fa", "text": "با یک چارچوب روشن شروع می‌کنم: امروز هدف این نیست که یک طرف از نظر اخلاقی شکست داده شود، بلکه باید تعارض‌های مشخص قابل مشاهده شوند: دسترسی، پیامدهای اقتصادی، اثر اقلیمی و استثناهای اجتماعی." },
+                { "language": "ar", "text": "سأفتتح بإطار واضح: لا يتعلق الأمر اليوم بهزيمة طرف أخلاقياً، بل بجعل تعارضات الأهداف الملموسة مرئية: الوصول، والآثار الاقتصادية، والأثر المناخي، والاستثناءات الاجتماعية." },
+                { "language": "tr", "text": "Net bir çerçeveyle açacağım: bugün mesele bir tarafı ahlaken yenmek değil, somut hedef çatışmalarını görünür kılmak: erişilebilirlik, ekonomik sonuçlar, iklim etkisi ve sosyal istisnalar." },
+                { "language": "ru", "text": "Я открою четкой рамкой: сегодня речь не о том, чтобы морально победить одну сторону, а о том, чтобы сделать видимыми конкретные конфликты целей: доступность, экономические последствия, климатический эффект и социальные исключения." },
+                { "language": "ckb", "text": "بە چوارچێوەیەکی ڕوون دەست پێدەکەم: ئەمڕۆ مەبەست ئەوە نییە لایەنێک لە ڕووی ئەخلاقییەوە ببەزێنرێت، بەڵکو ئەو ناکۆکییە دیاریکراوانەی ئامانجەکان ببینرێن: دەستپێگەیشتن، کاریگەری ئابووری، کاریگەری کەشوهەوا و دەرچوونە کۆمەڵایەتییەکان." },
+                { "language": "kmr", "text": "Ez bi çarçoveyeke zelal dest pê dikim: îro ne li ser wê ye ku aliyek bi exlaqî were têkbirin, lê ku nakokiyên armancên konkret xuya bibin: gihîştin, encamên aborî, bandora avhewayê û derketinên civakî." },
+                { "language": "pl", "text": "Otworzę jasną ramą: dziś nie chodzi o moralne pokonanie jednej strony, lecz o pokazanie konkretnych konfliktów celów: dostępności, skutków gospodarczych, efektu klimatycznego i wyjątków społecznych." },
+                { "language": "ro", "text": "Deschid cu un cadru clar: astăzi nu este vorba despre înfrângerea morală a unei părți, ci despre a face vizibile conflictele concrete de obiective: accesibilitate, consecințe economice, efect climatic și excepții sociale." },
+                { "language": "sq", "text": "Do ta hap me një kornizë të qartë: sot nuk bëhet fjalë për ta mposhtur moralisht një palë, por për t'i bërë të dukshme konfliktet konkrete të objektivave: qasjen, pasojat ekonomike, efektin klimatik dhe përjashtimet sociale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Eröffnung nimmt die moralische Schärfe heraus und schafft Orientierung für das Publikum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the opening takes out the moral sharpness and gives the audience orientation." },
+                { "language": "fa", "text": "خیلی خوب: آغاز بحث تندی اخلاقی را کم می‌کند و به مخاطبان جهت می‌دهد." },
+                { "language": "ar", "text": "جيد جداً: الافتتاح يخفف الحدة الأخلاقية ويمنح الجمهور توجهاً." },
+                { "language": "tr", "text": "Çok iyi: açılış ahlaki sertliği azaltır ve izleyiciye yön verir." },
+                { "language": "ru", "text": "Очень хорошо: вступление снимает моральную резкость и дает аудитории ориентир." },
+                { "language": "ckb", "text": "زۆر باش: دەستپێکردنەکە توندیی ئەخلاقی کەم دەکاتەوە و ئاراستە بە ئامادەبووان دەدات." },
+                { "language": "kmr", "text": "Pir baş: destpêk tûjiya exlaqî kêm dike û rê nîşanî temaşevanan dide." },
+                { "language": "pl", "text": "Bardzo dobrze: otwarcie zdejmuje moralną ostrość i daje publiczności orientację." },
+                { "language": "ro", "text": "Foarte bine: deschiderea scoate asprimea morală și oferă publicului orientare." },
+                { "language": "sq", "text": "Shumë mirë: hapja heq mprehtësinë morale dhe i jep orientim publikut." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich eröffne mit dem Hinweis, dass beide Seiten ihre Argumente sachlich vortragen sollen.",
+              "translations": [
+                { "language": "en", "text": "I will open by pointing out that both sides should present their arguments factually." },
+                { "language": "fa", "text": "با این تذکر شروع می‌کنم که هر دو طرف باید استدلال‌های خود را واقع‌محور بیان کنند." },
+                { "language": "ar", "text": "سأفتتح بالتنبيه إلى أن على الطرفين عرض حججهما بصورة موضوعية." },
+                { "language": "tr", "text": "Her iki tarafın argümanlarını nesnel biçimde sunması gerektiğini belirterek açacağım." },
+                { "language": "ru", "text": "Я начну с указания, что обе стороны должны излагать свои аргументы предметно." },
+                { "language": "ckb", "text": "بەو ئاگادارکردنەوەیە دەست پێدەکەم کە هەردوو لایەن دەبێت بەڵگەکانیان بە شێوەی بابەتی بڵێن." },
+                { "language": "kmr", "text": "Ez bi vê hişyariyê dest pê dikim ku her du alî divê argumanên xwe bi awayekî rastîgir pêşkêş bikin." },
+                { "language": "pl", "text": "Otworzę uwagą, że obie strony powinny rzeczowo przedstawić swoje argumenty." },
+                { "language": "ro", "text": "Deschid cu observația că ambele părți ar trebui să își prezinte argumentele factual." },
+                { "language": "sq", "text": "Do ta hap me vërejtjen se të dyja palët duhet t'i paraqesin argumentet në mënyrë faktike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Der Satz fordert Sachlichkeit, gibt dem Publikum aber keine inhaltliche Landkarte der Kontroverse.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the sentence asks for factuality but gives the audience no content map of the controversy." },
+                { "language": "fa", "text": "بیش از حد کلی است: جمله واقع‌محوری می‌خواهد، اما نقشه محتوایی اختلاف را به مخاطبان نمی‌دهد." },
+                { "language": "ar", "text": "عام أكثر من اللازم: تطلب الجملة الموضوعية، لكنها لا تقدم للجمهور خريطة محتوى للجدل." },
+                { "language": "tr", "text": "Çok genel: cümle nesnellik ister, ama izleyiciye tartışmanın içerik haritasını vermez." },
+                { "language": "ru", "text": "Слишком общо: фраза требует предметности, но не дает аудитории содержательной карты спора." },
+                { "language": "ckb", "text": "زۆر گشتییە: ڕستەکە بابەتیبوون دەخوازێت، بەڵام نەخشەی ناوەڕۆکی ناکۆکییەکە بە ئامادەبووان نادات." },
+                { "language": "kmr", "text": "Pir giştî ye: hevok rastîgiriyê dixwaze, lê nexşeya naveroka nakokiyê nade temaşevanan." },
+                { "language": "pl", "text": "Zbyt ogólnie: zdanie prosi o rzeczowość, ale nie daje publiczności mapy treści sporu." },
+                { "language": "ro", "text": "Prea general: propoziția cere factualitate, dar nu oferă publicului o hartă de conținut a controversei." },
+                { "language": "sq", "text": "Shumë e përgjithshme: fjalia kërkon fakticitet, por nuk i jep publikut një hartë përmbajtjeje të polemikës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich halte zwei Punkte fest: Sie sprechen über konkrete Erreichbarkeit und Umsatzrisiken. Die Bemerkung über Motive der Gegenseite nehme ich nicht als Argument auf, damit wir bei überprüfbaren Fragen bleiben.",
+              "translations": [
+                { "language": "en", "text": "I will note two points: you are talking about concrete accessibility and revenue risks. I will not take up the remark about the other side's motives as an argument, so that we stay with verifiable questions." },
+                { "language": "fa", "text": "دو نکته را ثبت می‌کنم: شما درباره دسترسی مشخص و ریسک‌های درآمدی صحبت می‌کنید. اشاره به انگیزه‌های طرف مقابل را به‌عنوان استدلال وارد نمی‌کنم تا نزد پرسش‌های قابل بررسی بمانیم." },
+                { "language": "ar", "text": "أسجل نقطتين: أنتم تتحدثون عن إمكانية وصول ملموسة ومخاطر على الإيرادات. لن أتعامل مع الملاحظة حول دوافع الطرف الآخر كحجة، حتى نبقى عند الأسئلة القابلة للتحقق." },
+                { "language": "tr", "text": "İki noktayı kaydediyorum: somut erişilebilirlik ve ciro risklerinden söz ediyorsunuz. Karşı tarafın motivasyonlarına dair yorumu argüman olarak almayacağım; böylece doğrulanabilir sorularda kalırız." },
+                { "language": "ru", "text": "Я фиксирую два пункта: вы говорите о конкретной доступности и рисках выручки. Замечание о мотивах другой стороны я не беру как аргумент, чтобы мы оставались при проверяемых вопросах." },
+                { "language": "ckb", "text": "دوو خاڵ تۆمار دەکەم: ئێوە دەربارەی دەستپێگەیشتنی دیاریکراو و مەترسیی داهات قسە دەکەن. تێبینیی دەربارەی پاڵنەری لایەنی بەرامبەر وەک بەڵگە وەرناگرم، بۆ ئەوەی لەسەر پرسیاری قابل پشکنین بمێنینەوە." },
+                { "language": "kmr", "text": "Ez du xal tomar dikim: hûn li ser gihîştina konkret û xetereyên dahatê diaxivin. Şîroveya li ser mebestên aliyê din wekî arguman nagirim, da ku em li ser pirsên kontrolbar bimînin." },
+                { "language": "pl", "text": "Odnotowuję dwa punkty: mówi Pani o konkretnej dostępności i ryzyku dla obrotu. Uwagę o motywach drugiej strony nie przyjmuję jako argumentu, abyśmy pozostali przy pytaniach możliwych do sprawdzenia." },
+                { "language": "ro", "text": "Rețin două puncte: vorbiți despre accesibilitate concretă și riscuri de venituri. Observația despre motivele celeilalte părți nu o preiau ca argument, ca să rămânem la întrebări verificabile." },
+                { "language": "sq", "text": "Mbaj shënim dy pika: ju flisni për qasje konkrete dhe rreziqe për të ardhurat. Vërejtjen për motivet e palës tjetër nuk e marr si argument, që të mbetemi te pyetjet e verifikueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort schützt die Substanz der Aussage und stoppt zugleich persönliche Zuschreibungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response protects the substance of the statement while also stopping personal attributions." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ محتوای اصلی گفته را حفظ می‌کند و هم‌زمان نسبت‌دادن‌های شخصی را متوقف می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تحمي الإجابة جوهر القول وتوقف في الوقت نفسه الإسنادات الشخصية." },
+                { "language": "tr", "text": "Çok iyi: cevap ifadenin özünü korur ve aynı zamanda kişisel atıfları durdurur." },
+                { "language": "ru", "text": "Очень хорошо: ответ сохраняет суть высказывания и одновременно останавливает личные приписывания." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ناوەڕۆکی قسەکە دەپارێزێت و هاوکات نسبتدانە کەسییەکان دەوەستێنێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv naveroka gotinê diparêze û di heman demê de têkildanên kesane rawestîne." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź chroni treść wypowiedzi i jednocześnie zatrzymuje osobiste przypisywanie motywów." },
+                { "language": "ro", "text": "Foarte bine: răspunsul protejează substanța afirmației și oprește totodată atribuțiile personale." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja mbron thelbin e deklaratës dhe njëkohësisht ndalon atribuimet personale." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Bitte bleiben Sie sachlich und vermeiden Sie persönliche Spitzen gegen die andere Seite.",
+              "translations": [
+                { "language": "en", "text": "Please stay factual and avoid personal jabs against the other side." },
+                { "language": "fa", "text": "لطفاً واقع‌محور بمانید و از کنایه‌های شخصی علیه طرف مقابل پرهیز کنید." },
+                { "language": "ar", "text": "يرجى البقاء موضوعيين وتجنب اللمزات الشخصية ضد الطرف الآخر." },
+                { "language": "tr", "text": "Lütfen nesnel kalın ve diğer tarafa karşı kişisel iğnelemelerden kaçının." },
+                { "language": "ru", "text": "Пожалуйста, оставайтесь предметными и избегайте личных выпадов против другой стороны." },
+                { "language": "ckb", "text": "تکایە بابەتی بمێننەوە و لە نوکەکەوتنی کەسی دژی لایەنی تر دوور بکەونەوە." },
+                { "language": "kmr", "text": "Ji kerema xwe rastîgir bimînin û ji gotinên kesane li dijî aliyê din dûr bikevin." },
+                { "language": "pl", "text": "Proszę pozostać rzeczowym i unikać osobistych przytyków wobec drugiej strony." },
+                { "language": "ro", "text": "Vă rog să rămâneți factual și să evitați înțepăturile personale împotriva celeilalte părți." },
+                { "language": "sq", "text": "Ju lutem qëndroni faktikë dhe shmangni thumbimet personale ndaj palës tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber unvollständig: Die Antwort stoppt den Ton, fasst aber den berechtigten Sachpunkt nicht fair zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but incomplete: the response stops the tone but does not fairly summarize the legitimate substantive point." },
+                { "language": "fa", "text": "غلط نیست، اما ناقص است: پاسخ لحن را متوقف می‌کند، اما نکته محتوایی معتبر را منصفانه جمع‌بندی نمی‌کند." },
+                { "language": "ar", "text": "ليست خاطئة، لكنها ناقصة: توقف الإجابة النبرة، لكنها لا تلخص النقطة الموضوعية المشروعة بإنصاف." },
+                { "language": "tr", "text": "Yanlış değil, ama eksik: cevap tonu durdurur, ancak haklı içerik noktasını adil biçimde özetlemez." },
+                { "language": "ru", "text": "Не неверно, но неполно: ответ останавливает тон, но не справедливо резюмирует обоснованный содержательный пункт." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام ناتەواوە: وەڵامەکە لحنەکە دەوەستێنێت، بەڵام خاڵی بابەتی ڕەوا بە دادپەروەری کورت ناکاتەوە." },
+                { "language": "kmr", "text": "Ne şaş e, lê netemam e: bersiv tonê rawestîne, lê xala rast a naverokî bi dadwerî kurt nake." },
+                { "language": "pl", "text": "Nie jest błędne, ale niepełne: odpowiedź zatrzymuje ton, lecz nie podsumowuje uczciwie zasadnego punktu merytorycznego." },
+                { "language": "ro", "text": "Nu este greșit, dar este incomplet: răspunsul oprește tonul, dar nu rezumă corect punctul factual legitim." },
+                { "language": "sq", "text": "Nuk është gabim, por është e paplotë: përgjigjja ndalon tonin, por nuk përmbledh drejt pikën e vlefshme përmbajtësore." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich greife den sachlichen Kern auf: Es geht um die Frage, wem öffentliche Fläche dient und nach welchen Kriterien sie verteilt wird. Die Formulierung von der Blockade verschärft den Ton; ich übersetze sie in die Frage, welche Bedingungen Veränderung zumutbar machen.",
+              "translations": [
+                { "language": "en", "text": "I will take up the substantive core: this is about whom public space serves and by which criteria it is distributed. The wording about blockade sharpens the tone; I translate it into the question of which conditions make change reasonable." },
+                { "language": "fa", "text": "هسته محتوایی را برمی‌دارم: بحث بر سر این است که فضای عمومی به چه کسانی خدمت می‌کند و بر اساس چه معیارهایی تقسیم می‌شود. عبارت بن‌بست لحن را تندتر می‌کند؛ من آن را به این پرسش تبدیل می‌کنم که چه شرایطی تغییر را قابل تحمل می‌کند." },
+                { "language": "ar", "text": "سألتقط الجوهر الموضوعي: المسألة هي لمن تخدم المساحة العامة وبأي معايير توزع. صياغة الانسداد تزيد حدة النبرة؛ أترجمها إلى سؤال: ما الشروط التي تجعل التغيير مقبولاً؟" },
+                { "language": "tr", "text": "Maddi özü alıyorum: mesele kamusal alanın kime hizmet ettiği ve hangi kriterlere göre dağıtıldığıdır. Tıkanıklık ifadesi tonu sertleştiriyor; bunu değişimi makul kılan koşullar nelerdir sorusuna çeviriyorum." },
+                { "language": "ru", "text": "Я беру содержательное ядро: речь о том, кому служит общественное пространство и по каким критериям оно распределяется. Формулировка о блокаде обостряет тон; я перевожу ее в вопрос о том, какие условия делают изменения приемлемыми." },
+                { "language": "ckb", "text": "ناوەڕۆکی بابەتییەکە وەردەگرم: باسەکە ئەوەیە شوێنی گشتی خزمەت بە کێ دەکات و بە کام پێوەر دابەش دەکرێت. دەربڕینی گیرەکە لحنەکە توندتر دەکات؛ من دەیگۆڕم بۆ ئەو پرسیارەی کام مەرج گۆڕانکاری دەکاتە شتێکی قابل قبوڵکردن." },
+                { "language": "kmr", "text": "Ez naveroka rastî digirim: mijar ew e ku qada giştî ji kê re xizmet dike û li gorî kîjan pîvanan tê dabeşkirin. Gotina astengiyê tonê tûjtir dike; ez wê vediguhezînim pirsa ka kîjan şert guherînê qebûlbar dikin." },
+                { "language": "pl", "text": "Podejmuję rzeczowe jądro: chodzi o to, komu służy przestrzeń publiczna i według jakich kryteriów jest dzielona. Sformułowanie o blokadzie zaostrza ton; przekładam je na pytanie, jakie warunki czynią zmianę akceptowalną." },
+                { "language": "ro", "text": "Preiau nucleul factual: este vorba despre cui servește spațiul public și după ce criterii este distribuit. Formularea despre blocaj înăsprește tonul; o traduc în întrebarea ce condiții fac schimbarea suportabilă." },
+                { "language": "sq", "text": "Marr thelbin faktik: bëhet fjalë se kujt i shërben hapësira publike dhe sipas cilave kritere ndahet. Formulimi për bllokimin e ashpërson tonin; unë e përkthej në pyetjen se cilat kushte e bëjnë ndryshimin të pranueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort übersetzt Zuspitzung in eine moderierbare Frage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response translates escalation into a moderatable question." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ تندی را به یک پرسش قابل مدیریت تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تترجم الإجابة التصعيد إلى سؤال قابل للإدارة." },
+                { "language": "tr", "text": "Çok iyi: cevap keskinliği yönetilebilir bir soruya çevirir." },
+                { "language": "ru", "text": "Очень хорошо: ответ переводит обострение в вопрос, который можно модерировать." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە توندی دەگۆڕێت بۆ پرسیارێکی قابل بەڕێوەبردن." },
+                { "language": "kmr", "text": "Pir baş: bersiv tûjiyê vediguhezîne pirseke moderatorîbar." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź przekłada zaostrzenie na pytanie możliwe do moderowania." },
+                { "language": "ro", "text": "Foarte bine: răspunsul traduce escaladarea într-o întrebare moderabilă." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e përkthen përshkallëzimin në një pyetje të moderueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich bitte darum, nicht von Blockade zu sprechen, sondern konkrete Vorschläge zu machen.",
+              "translations": [
+                { "language": "en", "text": "I ask that we not speak of blockade, but instead make concrete proposals." },
+                { "language": "fa", "text": "درخواست می‌کنم از بن‌بست صحبت نکنیم، بلکه پیشنهادهای مشخص ارائه کنیم." },
+                { "language": "ar", "text": "أطلب ألا نتحدث عن انسداد، بل أن نقدم اقتراحات ملموسة." },
+                { "language": "tr", "text": "Blokajdan söz etmememizi, bunun yerine somut öneriler yapmamızı rica ediyorum." },
+                { "language": "ru", "text": "Я прошу не говорить о блокаде, а предлагать конкретные предложения." },
+                { "language": "ckb", "text": "داوا دەکەم قسە لە گیر نەکەین، بەڵکو پێشنیاری دیاریکراو بکەین." },
+                { "language": "kmr", "text": "Ez dixwazim em behsa astengiyê nekin, lê pêşniyarên konkret bikin." },
+                { "language": "pl", "text": "Proszę, abyśmy nie mówili o blokadzie, lecz składali konkretne propozycje." },
+                { "language": "ro", "text": "Vă rog să nu vorbim despre blocaj, ci să facem propuneri concrete." },
+                { "language": "sq", "text": "Kërkoj të mos flasim për bllokim, por të bëjmë propozime konkrete." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort setzt eine Grenze, aber sie rettet den sachlichen Kern der Aussage nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: the response sets a boundary but does not rescue the substantive core of the statement." },
+                { "language": "fa", "text": "بیش از حد کوتاه: پاسخ مرز می‌گذارد، اما هسته محتوایی گفته را نجات نمی‌دهد." },
+                { "language": "ar", "text": "مختصرة أكثر من اللازم: تضع الإجابة حداً، لكنها لا تنقذ الجوهر الموضوعي للقول." },
+                { "language": "tr", "text": "Çok kısa: cevap sınır koyar, ama ifadenin maddi özünü kurtarmaz." },
+                { "language": "ru", "text": "Слишком кратко: ответ ставит границу, но не сохраняет содержательное ядро высказывания." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە سنوور دادەنێت، بەڵام ناوەڕۆکی بابەتی قسەکە ڕزگار ناکات." },
+                { "language": "kmr", "text": "Pir kurt e: bersiv sînor datîne, lê naveroka rastî ya gotinê rizgar nake." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź stawia granicę, ale nie ratuje rzeczowego jądra wypowiedzi." },
+                { "language": "ro", "text": "Prea scurt: răspunsul pune o limită, dar nu salvează nucleul factual al afirmației." },
+                { "language": "sq", "text": "Shumë e shkurtër: përgjigjja vendos kufi, por nuk shpëton thelbin faktik të deklaratës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das ist eine beantwortbare Frage, und ich gebe sie in dieser Form weiter: Welche Ausnahmen, Lieferfenster und Unterstützungen sind nötig, damit die Maßnahme nicht einseitig auf Handel und mobilitätseingeschränkte Menschen abgewälzt wird?",
+              "translations": [
+                { "language": "en", "text": "That is an answerable question, and I will pass it on in this form: which exceptions, delivery windows, and support measures are needed so that the measure is not shifted one-sidedly onto businesses and people with mobility limitations?" },
+                { "language": "fa", "text": "این یک پرسش قابل پاسخ است، و آن را به همین شکل منتقل می‌کنم: چه استثناها، بازه‌های تحویل و حمایت‌هایی لازم است تا این اقدام یک‌طرفه بر دوش کسب‌وکارها و افراد دارای محدودیت حرکتی نیفتد؟" },
+                { "language": "ar", "text": "هذا سؤال قابل للإجابة، وسأنقله بهذه الصيغة: ما الاستثناءات ونوافذ التسليم وأشكال الدعم اللازمة حتى لا تُحمّل هذه التدبيرات بشكل أحادي على التجارة والأشخاص ذوي قيود الحركة؟" },
+                { "language": "tr", "text": "Bu yanıtlanabilir bir soru ve bunu bu biçimde aktaracağım: önlemin tek taraflı olarak ticaretin ve hareket kısıtlılığı olan insanların üzerine yıkılmaması için hangi istisnalar, teslimat pencereleri ve destekler gereklidir?" },
+                { "language": "ru", "text": "Это вопрос, на который можно ответить, и я передам его в такой форме: какие исключения, окна доставки и меры поддержки нужны, чтобы эта мера не была односторонне переложена на торговлю и людей с ограниченной мобильностью?" },
+                { "language": "ckb", "text": "ئەمە پرسیارێکی قابل وەڵامدانەوەیە، و بەو شێوەیە دەیگوازمەوە: کام دەرچوون، کاتی گەیاندن و پشتگیرییەکان پێویستن بۆ ئەوەی ئەم ڕێکارە بە یەک لایەنە نەخرێتە سەر بازرگانی و کەسانی خاوەن سنوورداری جووڵە؟" },
+                { "language": "kmr", "text": "Ev pirseke bersivbar e, û ez wê bi vî awayî radigihînim: kîjan derketin, demên radestkirinê û piştgirî hewce ne da ku ev tedbîr yekalî neyê avêtin ser bazirganî û kesên bi sînordariya tevgerê?" },
+                { "language": "pl", "text": "To jest pytanie, na które da się odpowiedzieć, i przekażę je w tej formie: jakie wyjątki, okna dostaw i formy wsparcia są potrzebne, aby środek nie został jednostronnie przerzucony na handel i osoby o ograniczonej mobilności?" },
+                { "language": "ro", "text": "Aceasta este o întrebare la care se poate răspunde și o transmit în această formă: ce excepții, ferestre de livrare și sprijin sunt necesare pentru ca măsura să nu fie transferată unilateral asupra comerțului și persoanelor cu mobilitate redusă?" },
+                { "language": "sq", "text": "Kjo është një pyetje e përgjigjshme dhe do ta përcjell në këtë formë: cilat përjashtime, dritare dorëzimi dhe mbështetje nevojiten që masa të mos kalojë njëanshëm mbi tregtinë dhe njerëzit me kufizime lëvizjeje?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort würdigt die Sorge und macht daraus eine konkrete Gestaltungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response acknowledges the concern and turns it into a concrete design question." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ نگرانی را به رسمیت می‌شناسد و آن را به پرسش طراحی مشخص تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تعترف الإجابة بالقلق وتحوله إلى سؤال تصميم ملموس." },
+                { "language": "tr", "text": "Çok iyi: cevap endişeyi kabul eder ve onu somut bir tasarım sorusuna çevirir." },
+                { "language": "ru", "text": "Очень хорошо: ответ признает опасение и превращает его в конкретный вопрос проектирования." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە نیگەرانییەکە بەڕەسمی دەناسێت و دەیکاتە پرسیارێکی دیزاینی دیاریکراو." },
+                { "language": "kmr", "text": "Pir baş: bersiv xemgîniyê qebûl dike û wê vediguhezîne pirseke sêwiranê ya konkret." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź uznaje obawę i zamienia ją w konkretne pytanie projektowe." },
+                { "language": "ro", "text": "Foarte bine: răspunsul recunoaște îngrijorarea și o transformă într-o întrebare concretă de proiectare." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e pranon shqetësimin dhe e kthen në një pyetje konkrete projektimi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das sind wichtige Punkte, die die Stadtverwaltung im weiteren Verfahren prüfen muss.",
+              "translations": [
+                { "language": "en", "text": "Those are important points that the city administration must examine in the further procedure." },
+                { "language": "fa", "text": "این‌ها نکات مهمی هستند که شهرداری باید در روند بعدی بررسی کند." },
+                { "language": "ar", "text": "هذه نقاط مهمة يجب على إدارة المدينة فحصها في الإجراء اللاحق." },
+                { "language": "tr", "text": "Bunlar şehir yönetiminin sonraki süreçte incelemesi gereken önemli noktalar." },
+                { "language": "ru", "text": "Это важные пункты, которые городская администрация должна проверить в дальнейшей процедуре." },
+                { "language": "ckb", "text": "ئەمانە خاڵی گرنگن کە بەڕێوەبەرایەتی شار دەبێت لە پرۆسەی دواتردا بیانپشکنێت." },
+                { "language": "kmr", "text": "Ev xalên girîng in ku rêveberiya bajêr divê di prosesa din de wan kontrol bike." },
+                { "language": "pl", "text": "To ważne punkty, które administracja miasta musi sprawdzić w dalszej procedurze." },
+                { "language": "ro", "text": "Sunt puncte importante pe care administrația orașului trebuie să le verifice în procedura următoare." },
+                { "language": "sq", "text": "Këto janë pika të rëndësishme që administrata e qytetit duhet t'i shqyrtojë në procedurën e mëtejshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend: Die Antwort erkennt die Punkte an, formuliert sie aber nicht als präzise Arbeitsfrage für die Diskussion.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive: the response acknowledges the points but does not formulate them as a precise working question for the discussion." },
+                { "language": "fa", "text": "بیش از حد طفره‌آمیز: پاسخ نکات را می‌پذیرد، اما آن‌ها را به پرسش کاری دقیق برای بحث تبدیل نمی‌کند." },
+                { "language": "ar", "text": "مراوغة أكثر من اللازم: تعترف الإجابة بالنقاط، لكنها لا تصوغها كسؤال عمل دقيق للنقاش." },
+                { "language": "tr", "text": "Çok kaçamak: cevap noktaları kabul eder, ama onları tartışma için kesin bir çalışma sorusuna dönüştürmez." },
+                { "language": "ru", "text": "Слишком уклончиво: ответ признает пункты, но не формулирует их как точный рабочий вопрос для дискуссии." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە: وەڵامەکە خاڵەکان دەناسێت، بەڵام ناکاتە پرسیارێکی کاری ورد بۆ گفتوگۆکە." },
+                { "language": "kmr", "text": "Pir xwe-dûrxistin e: bersiv xalan qebûl dike, lê wan wekî pirseke karî ya hûrgilî ji bo gotûbêjê formul nake." },
+                { "language": "pl", "text": "Zbyt wymijająco: odpowiedź uznaje punkty, ale nie formułuje ich jako precyzyjnego pytania roboczego dla dyskusji." },
+                { "language": "ro", "text": "Prea evaziv: răspunsul recunoaște punctele, dar nu le formulează ca întrebare de lucru precisă pentru discuție." },
+                { "language": "sq", "text": "Shumë shmangëse: përgjigjja i pranon pikat, por nuk i formulon si pyetje pune të saktë për diskutimin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich strukturiere es in drei kurze Runden: Erstens nennt jede Seite eine Maßnahme, die sie für unverzichtbar hält. Zweitens nennt sie ein Risiko der eigenen Position. Drittens formulieren wir eine Bedingung, unter der ein Pilotprojekt vertretbar wäre.",
+              "translations": [
+                { "language": "en", "text": "I will structure it into three short rounds: first, each side names one measure it considers indispensable. Second, it names one risk of its own position. Third, we formulate one condition under which a pilot project would be defensible." },
+                { "language": "fa", "text": "آن را در سه دور کوتاه ساختار می‌دهم: اول، هر طرف یک اقدامی را نام می‌برد که برایش ضروری است. دوم، یک ریسک موضع خود را نام می‌برد. سوم، یک شرط را فرمول‌بندی می‌کنیم که تحت آن یک پروژه آزمایشی قابل دفاع باشد." },
+                { "language": "ar", "text": "سأقسمها إلى ثلاث جولات قصيرة: أولاً، يذكر كل طرف إجراءً واحداً يراه لا غنى عنه. ثانياً، يذكر خطراً واحداً في موقفه هو. ثالثاً، نصوغ شرطاً يكون بموجبه مشروع تجريبي مقبولاً." },
+                { "language": "tr", "text": "Bunu üç kısa turda yapılandırıyorum: birincisi, her taraf vazgeçilmez gördüğü bir önlemi söyler. İkincisi, kendi pozisyonunun bir riskini söyler. Üçüncüsü, bir pilot projenin savunulabilir olacağı bir koşul formüle ederiz." },
+                { "language": "ru", "text": "Я структурирую это в три коротких раунда: во-первых, каждая сторона называет одну меру, которую считает необходимой. Во-вторых, называет один риск собственной позиции. В-третьих, мы формулируем условие, при котором пилотный проект был бы оправдан." },
+                { "language": "ckb", "text": "ئەمە بە سێ خولی کورت ڕێک دەخەم: یەکەم، هەر لایەنێک ڕێکارێک ناو دەبات کە بە پێویستی بێ جێگرەوەی دەزانێت. دووەم، مەترسییەکی هەڵوێستی خۆی ناو دەبات. سێیەم، مەرجێک دادەنێین کە لە ژێریدا پرۆژەیەکی تاقیکردنەوە قابل بەرگری بێت." },
+                { "language": "kmr", "text": "Ez vê di sê dorên kurt de rêz dikim: yekem, her alî tedbîrekê bi nav dike ku wê bêalternatîf dibîne. Duyem, xetereyeke helwesta xwe bi nav dike. Sêyem, em şertê ku li gorî wê projeyeke ceribandinê parastbar be, formul dikin." },
+                { "language": "pl", "text": "Uporządkuję to w trzech krótkich rundach: po pierwsze, każda strona nazwie jeden środek, który uważa za niezbędny. Po drugie, nazwie jedno ryzyko własnego stanowiska. Po trzecie, sformułujemy warunek, pod którym projekt pilotażowy byłby do obrony." },
+                { "language": "ro", "text": "O structurez în trei runde scurte: mai întâi, fiecare parte numește o măsură pe care o consideră indispensabilă. În al doilea rând, numește un risc al propriei poziții. În al treilea rând, formulăm o condiție sub care un proiect pilot ar fi justificabil." },
+                { "language": "sq", "text": "Do ta strukturoj në tre raunde të shkurtra: së pari, secila palë emërton një masë që e konsideron të domosdoshme. Së dyti, emërton një rrezik të pozicionit të vet. Së treti, formulojmë një kusht nën të cilin një projekt pilot do të ishte i mbrojtshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Struktur ist symmetrisch und zwingt beide Seiten zu Substanz und Selbstbegrenzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the structure is symmetrical and forces both sides toward substance and self-limitation." },
+                { "language": "fa", "text": "خیلی خوب: ساختار متقارن است و هر دو طرف را به محتوا و محدودسازی خود وادار می‌کند." },
+                { "language": "ar", "text": "جيد جداً: البنية متناظرة وتجبر الطرفين على المضمون والحد من الذات." },
+                { "language": "tr", "text": "Çok iyi: yapı simetriktir ve iki tarafı da içerik ve öz sınırlamaya zorlar." },
+                { "language": "ru", "text": "Очень хорошо: структура симметрична и заставляет обе стороны идти к содержанию и самоограничению." },
+                { "language": "ckb", "text": "زۆر باش: پێکهاتەکە هاوسەنگە و هەردوو لایەن ناچار دەکات بۆ ناوەڕۆک و سنووردارکردنی خۆیان بچن." },
+                { "language": "kmr", "text": "Pir baş: avahî simetrîk e û her du aliyan neçar dike ku ber bi naverok û xwe-sînorkirinê ve biçin." },
+                { "language": "pl", "text": "Bardzo dobrze: struktura jest symetryczna i zmusza obie strony do treści oraz samoograniczenia." },
+                { "language": "ro", "text": "Foarte bine: structura este simetrică și obligă ambele părți la substanță și autolimitare." },
+                { "language": "sq", "text": "Shumë mirë: struktura është simetrike dhe i detyron të dyja palët drejt përmbajtjes dhe vetëkufizimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich schlage vor, dass jede Seite noch einmal kurz erklärt, was ihr wichtig ist.",
+              "translations": [
+                { "language": "en", "text": "I suggest that each side briefly explains again what is important to them." },
+                { "language": "fa", "text": "پیشنهاد می‌کنم هر طرف یک بار دیگر کوتاه توضیح دهد چه چیزی برایش مهم است." },
+                { "language": "ar", "text": "أقترح أن يشرح كل طرف مرة أخرى بإيجاز ما هو مهم بالنسبة إليه." },
+                { "language": "tr", "text": "Her tarafın kendisi için neyin önemli olduğunu bir kez daha kısaca açıklamasını öneriyorum." },
+                { "language": "ru", "text": "Я предлагаю, чтобы каждая сторона еще раз коротко объяснила, что для нее важно." },
+                { "language": "ckb", "text": "پێشنیار دەکەم هەر لایەنێک جارێکی تر بە کورتی ڕوون بکاتەوە چی بۆی گرنگە." },
+                { "language": "kmr", "text": "Ez pêşniyar dikim ku her alî careke din bi kurtî şîrove bike çi ji bo wî girîng e." },
+                { "language": "pl", "text": "Proponuję, aby każda strona jeszcze raz krótko wyjaśniła, co jest dla niej ważne." },
+                { "language": "ro", "text": "Propun ca fiecare parte să explice încă o dată pe scurt ce este important pentru ea." },
+                { "language": "sq", "text": "Propozoj që secila palë të shpjegojë edhe një herë shkurt çfarë është e rëndësishme për të." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Die Antwort lässt die Debatte wahrscheinlich wieder in bekannte Positionsreden zurückfallen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open: the response will likely let the debate fall back into familiar position speeches." },
+                { "language": "fa", "text": "بیش از حد باز است: پاسخ احتمالاً بحث را دوباره به سخنرانی‌های موضعی آشنا برمی‌گرداند." },
+                { "language": "ar", "text": "مفتوحة أكثر من اللازم: ستجعل الإجابة النقاش غالباً يعود إلى خطابات المواقف المعروفة." },
+                { "language": "tr", "text": "Çok açık uçlu: cevap tartışmayı muhtemelen bilinen pozisyon konuşmalarına geri düşürür." },
+                { "language": "ru", "text": "Слишком открыто: ответ, скорее всего, снова вернет дебаты к привычным позиционным выступлениям." },
+                { "language": "ckb", "text": "زۆر کراوەیە: وەڵامەکە بە ئەگەری زۆر باسەکە دەگەڕێنێتەوە بۆ قسەکانی هەڵوێستی ناسراو." },
+                { "language": "kmr", "text": "Pir vekirî ye: bersiv bi îhtîmaleke mezin gotûbêjê vedigerîne axaftinên helwestî yên naskirî." },
+                { "language": "pl", "text": "Zbyt otwarte: odpowiedź prawdopodobnie zepchnie debatę z powrotem w znane mowy stanowiskowe." },
+                { "language": "ro", "text": "Prea deschis: răspunsul va lăsa probabil dezbaterea să revină la discursuri de poziție cunoscute." },
+                { "language": "sq", "text": "Shumë e hapur: përgjigjja ka gjasa ta kthejë debatin te fjalimet e njohura të pozicioneve." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann schließen wir diese Phase so: Wir haben den Konflikt nicht aufgelöst, aber präzisiert. Für die nächste Runde halten wir fest: konkrete Erreichbarkeit, messbarer Klimaeffekt, soziale Ausnahmen und wirtschaftliche Übergangsregeln gehören gemeinsam auf den Tisch.",
+              "translations": [
+                { "language": "en", "text": "Then we will close this phase like this: we have not resolved the conflict, but we have made it more precise. For the next round, we will record: concrete accessibility, measurable climate effect, social exceptions, and economic transition rules belong on the table together." },
+                { "language": "fa", "text": "پس این مرحله را این‌گونه جمع‌بندی می‌کنیم: تعارض را حل نکرده‌ایم، اما آن را دقیق‌تر کرده‌ایم. برای دور بعد ثبت می‌کنیم: دسترسی مشخص، اثر اقلیمی قابل اندازه‌گیری، استثناهای اجتماعی و قواعد گذار اقتصادی باید هم‌زمان روی میز باشند." },
+                { "language": "ar", "text": "إذن نختتم هذه المرحلة هكذا: لم نحل النزاع، لكننا جعلناه أدق. للجولة التالية نثبت: الوصول الملموس، والأثر المناخي القابل للقياس، والاستثناءات الاجتماعية، وقواعد الانتقال الاقتصادية يجب أن تكون معاً على الطاولة." },
+                { "language": "tr", "text": "O halde bu aşamayı şöyle kapatıyoruz: çatışmayı çözmedik, ama daha kesin hale getirdik. Bir sonraki tur için şunu kaydediyoruz: somut erişilebilirlik, ölçülebilir iklim etkisi, sosyal istisnalar ve ekonomik geçiş kuralları birlikte masada olmalı." },
+                { "language": "ru", "text": "Тогда завершим этот этап так: мы не разрешили конфликт, но уточнили его. Для следующего раунда фиксируем: конкретная доступность, измеримый климатический эффект, социальные исключения и экономические правила перехода должны обсуждаться вместе." },
+                { "language": "ckb", "text": "کەواتە ئەم قۆناغە ئاوا کۆتایی پێدەهێنین: ناکۆکییەکەمان چارەسەر نەکرد، بەڵام وردترمان کرد. بۆ خولی داهاتوو تۆمار دەکەین: دەستپێگەیشتنی دیاریکراو، کاریگەری کەشوهەوایی قابل پێوانەکردن، دەرچوونە کۆمەڵایەتییەکان و ڕێساکانی گواستنەوەی ئابووری دەبێت پێکەوە لەسەر مێز بن." },
+                { "language": "kmr", "text": "Wê demê em vê qonaxê wiha diqedînin: me nakokî çareser nekir, lê me hûrgilîtir kir. Ji bo dora din em tomar dikin: gihîştina konkret, bandora avhewayê ya pîvandbar, derketinên civakî û rêzikên derbasbûna aborî divê bi hev re li ser maseyê bin." },
+                { "language": "pl", "text": "W takim razie zamykamy ten etap tak: nie rozwiązaliśmy konfliktu, ale go doprecyzowaliśmy. Na następną rundę zapisujemy: konkretna dostępność, mierzalny efekt klimatyczny, wyjątki społeczne i gospodarcze zasady przejściowe muszą być omawiane razem." },
+                { "language": "ro", "text": "Atunci încheiem această fază astfel: nu am rezolvat conflictul, dar l-am precizat. Pentru runda următoare consemnăm: accesibilitatea concretă, efectul climatic măsurabil, excepțiile sociale și regulile economice de tranziție trebuie puse împreună pe masă." },
+                { "language": "sq", "text": "Atëherë e mbyllim këtë fazë kështu: nuk e kemi zgjidhur konfliktin, por e kemi bërë më të saktë. Për raundin tjetër shënojmë: qasja konkrete, efekti klimatik i matshëm, përjashtimet sociale dhe rregullat ekonomike të tranzicionit duhet të jenë bashkë në tryezë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Der Abschluss verspricht keinen falschen Konsens, sondern sichert eine faire nächste Arbeitsgrundlage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the closing does not promise false consensus, but secures a fair next working basis." },
+                { "language": "fa", "text": "خیلی خوب: جمع‌بندی اجماع کاذب وعده نمی‌دهد، بلکه مبنای کاری منصفانه بعدی را تثبیت می‌کند." },
+                { "language": "ar", "text": "جيد جداً: لا تعد الخاتمة بإجماع زائف، بل تؤمن أساس عمل عادل للمرحلة التالية." },
+                { "language": "tr", "text": "Çok iyi: kapanış sahte uzlaşı vaat etmez, adil bir sonraki çalışma temelini güvenceye alır." },
+                { "language": "ru", "text": "Очень хорошо: завершение не обещает ложного консенсуса, а закрепляет справедливую следующую рабочую основу." },
+                { "language": "ckb", "text": "زۆر باش: کۆتاییەکە بەڵێنی کۆدەنگیی ساختە نادات، بەڵکو بنەمای کاری داهاتووی دادپەروەرانە دڵنیا دەکات." },
+                { "language": "kmr", "text": "Pir baş: dawî sozê lihevhatina derewîn nade, lê bingeheke karî ya din a dadwerane ewle dike." },
+                { "language": "pl", "text": "Bardzo dobrze: zakończenie nie obiecuje fałszywego konsensu, lecz zabezpiecza uczciwą kolejną podstawę pracy." },
+                { "language": "ro", "text": "Foarte bine: închiderea nu promite consens fals, ci asigură o bază de lucru următoare corectă." },
+                { "language": "sq", "text": "Shumë mirë: mbyllja nuk premton konsensus të rremë, por siguron një bazë të drejtë për punën e ardhshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann schließen wir damit, dass beide Seiten ihre wichtigsten Punkte genannt haben und die Debatte später fortgesetzt wird.",
+              "translations": [
+                { "language": "en", "text": "Then we will close by saying that both sides have named their most important points and that the debate will continue later." },
+                { "language": "fa", "text": "پس با این جمع‌بندی می‌کنیم که هر دو طرف مهم‌ترین نکات خود را گفته‌اند و بحث بعداً ادامه پیدا می‌کند." },
+                { "language": "ar", "text": "إذن نختتم بالقول إن الطرفين ذكرا أهم نقاطهما وإن النقاش سيستمر لاحقاً." },
+                { "language": "tr", "text": "O halde iki tarafın da en önemli noktalarını söylediğini ve tartışmanın daha sonra devam edeceğini belirterek kapatırız." },
+                { "language": "ru", "text": "Тогда завершим тем, что обе стороны назвали свои важнейшие пункты и дискуссия будет продолжена позже." },
+                { "language": "ckb", "text": "کەواتە بەوە کۆتایی پێدەهێنین کە هەردوو لایەن گرنگترین خاڵەکانیان وتووە و باسەکە دواتر بەردەوام دەبێت." },
+                { "language": "kmr", "text": "Wê demê em bi vê diqedînin ku her du alî xalên xwe yên herî girîng gotin û gotûbêj dê paşê bidome." },
+                { "language": "pl", "text": "W takim razie zamkniemy stwierdzeniem, że obie strony nazwały swoje najważniejsze punkty i debata będzie później kontynuowana." },
+                { "language": "ro", "text": "Atunci încheiem spunând că ambele părți și-au numit punctele cele mai importante și că dezbaterea va continua mai târziu." },
+                { "language": "sq", "text": "Atëherë e mbyllim duke thënë se të dyja palët i kanë përmendur pikat e tyre më të rëndësishme dhe debati do të vazhdojë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort beendet formal, aber sie bewahrt keine konkrete gemeinsame Arbeitsagenda.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the response closes formally but does not preserve a concrete shared working agenda." },
+                { "language": "fa", "text": "بیش از حد ضعیف: پاسخ به‌صورت رسمی تمام می‌کند، اما دستور کار مشترک مشخصی حفظ نمی‌کند." },
+                { "language": "ar", "text": "ضعيفة أكثر من اللازم: تنهي الإجابة النقاش شكلياً، لكنها لا تحفظ جدول عمل مشتركاً ملموساً." },
+                { "language": "tr", "text": "Çok zayıf: cevap biçimsel olarak kapatır, ama somut ortak çalışma gündemini korumaz." },
+                { "language": "ru", "text": "Слишком слабо: ответ формально завершает, но не сохраняет конкретную общую рабочую повестку." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە بە فەرمی کۆتایی پێدەهێنێت، بەڵام ئەجێندای کاری هاوبەشی دیاریکراو ناپارێزێت." },
+                { "language": "kmr", "text": "Pir lawaz e: bersiv bi fermî diqedîne, lê ajandaya karî ya hevpar a konkret naparêze." },
+                { "language": "pl", "text": "Zbyt słabo: odpowiedź formalnie zamyka, ale nie zachowuje konkretnej wspólnej agendy pracy." },
+                { "language": "ro", "text": "Prea slab: răspunsul încheie formal, dar nu păstrează o agendă comună concretă de lucru." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja e mbyll formalisht, por nuk ruan një agjendë të përbashkët konkrete pune." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "neutral-frame",
+          "text": "Eine starke Moderation macht den Konflikt sichtbar, ohne ihn moralisch vorzuentscheiden.",
+          "translations": [
+            { "language": "en", "text": "Strong moderation makes the conflict visible without morally pre-deciding it." },
+            { "language": "fa", "text": "مدیریت قوی تعارض را قابل مشاهده می‌کند، بدون اینکه از نظر اخلاقی از پیش درباره آن حکم بدهد." },
+            { "language": "ar", "text": "الإدارة القوية تجعل النزاع مرئياً من دون أن تحسمه أخلاقياً مسبقاً." },
+            { "language": "tr", "text": "Güçlü moderasyon çatışmayı görünür kılar, ama onu ahlaken önceden karara bağlamaz." },
+            { "language": "ru", "text": "Сильная модерация делает конфликт видимым, не предрешая его морально." },
+            { "language": "ckb", "text": "بەڕێوەبردنی بەهێز ناکۆکییەکە دەردەخات بێ ئەوەی لە ڕووی ئەخلاقییەوە پێشتر بڕیاری لەسەر بدات." },
+            { "language": "kmr", "text": "Moderasyona bihêz nakokiyê xuya dike bêyî ku wê ji aliyê exlaqî ve berê biryar bide." },
+            { "language": "pl", "text": "Silna moderacja pokazuje konflikt, nie rozstrzygając go moralnie z góry." },
+            { "language": "ro", "text": "O moderare puternică face conflictul vizibil fără să îl decidă moral dinainte." },
+            { "language": "sq", "text": "Moderimi i fortë e bën konfliktin të dukshëm pa e paravendosur moralisht." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "de-escalation",
+          "text": "C2-Moderation rettet den berechtigten Sachpunkt und stoppt gleichzeitig Motivunterstellungen.",
+          "translations": [
+            { "language": "en", "text": "C2 moderation preserves the legitimate substantive point while stopping motive attributions." },
+            { "language": "fa", "text": "مدیریت C2 نکته محتوایی معتبر را حفظ می‌کند و هم‌زمان نسبت‌دادن انگیزه را متوقف می‌کند." },
+            { "language": "ar", "text": "تحفظ إدارة C2 النقطة الموضوعية المشروعة وتوقف في الوقت نفسه إسناد الدوافع." },
+            { "language": "tr", "text": "C2 moderasyon haklı içerik noktasını korur ve aynı zamanda motivasyon atıflarını durdurur." },
+            { "language": "ru", "text": "Модерация C2 сохраняет обоснованный содержательный пункт и одновременно останавливает приписывание мотивов." },
+            { "language": "ckb", "text": "بەڕێوەبردنی C2 خاڵی بابەتی ڕەوا دەپارێزێت و هاوکات نسبتدانی پاڵنەر دەوەستێنێت." },
+            { "language": "kmr", "text": "Moderasyona C2 xala naverokî ya rast diparêze û di heman demê de têkildana mebestan rawestîne." },
+            { "language": "pl", "text": "Moderacja C2 zachowuje zasadny punkt merytoryczny i jednocześnie zatrzymuje przypisywanie motywów." },
+            { "language": "ro", "text": "Moderarea C2 păstrează punctul factual legitim și oprește în același timp atribuirea motivelor." },
+            { "language": "sq", "text": "Moderimi C2 ruan pikën e vlefshme përmbajtësore dhe njëkohësisht ndalon atribuimin e motiveve." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "reframing",
+          "text": "Zuspitzungen werden produktiv, wenn sie in präzise Bedingungen und Kriterien übersetzt werden.",
+          "translations": [
+            { "language": "en", "text": "Pointed statements become productive when they are translated into precise conditions and criteria." },
+            { "language": "fa", "text": "گفته‌های تند زمانی سازنده می‌شوند که به شرایط و معیارهای دقیق تبدیل شوند." },
+            { "language": "ar", "text": "تصبح العبارات الحادة منتجة عندما تُترجم إلى شروط ومعايير دقيقة." },
+            { "language": "tr", "text": "Keskin ifadeler kesin koşullara ve kriterlere çevrildiğinde üretken olur." },
+            { "language": "ru", "text": "Резкие высказывания становятся продуктивными, когда переводятся в точные условия и критерии." },
+            { "language": "ckb", "text": "دەربڕینە توندەکان کاتێک بەرهەمدار دەبن کە بگۆڕدرێن بۆ مەرج و پێوەری ورد." },
+            { "language": "kmr", "text": "Gotinên tûj wê demê berhemdar dibin ku veguhezê şert û pîvanên hûrgilî." },
+            { "language": "pl", "text": "Zaostrzone wypowiedzi stają się produktywne, gdy przekłada się je na precyzyjne warunki i kryteria." },
+            { "language": "ro", "text": "Afirmațiile tăioase devin productive când sunt traduse în condiții și criterii precise." },
+            { "language": "sq", "text": "Deklaratat e mprehta bëhen produktive kur përkthehen në kushte dhe kritere të sakta." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "structure",
+          "text": "Symmetrische Runden verhindern, dass eine Seite nur fordert und die andere nur reagieren muss.",
+          "translations": [
+            { "language": "en", "text": "Symmetrical rounds prevent one side from only making demands while the other only has to react." },
+            { "language": "fa", "text": "دورهای متقارن مانع می‌شوند که یک طرف فقط مطالبه کند و طرف دیگر فقط مجبور به واکنش باشد." },
+            { "language": "ar", "text": "الجولات المتناظرة تمنع أن يطالب طرف فقط بينما يضطر الآخر إلى الرد فقط." },
+            { "language": "tr", "text": "Simetrik turlar, bir tarafın yalnızca talep etmesini ve diğerinin yalnızca tepki vermek zorunda kalmasını önler." },
+            { "language": "ru", "text": "Симметричные раунды предотвращают ситуацию, когда одна сторона только требует, а другая только вынуждена реагировать." },
+            { "language": "ckb", "text": "خولە هاوسەنگەکان ڕێ لەوە دەگرن کە لایەنێک تەنها داوا بکات و ئەوی تر تەنها ناچار بە کاردانەوە بێت." },
+            { "language": "kmr", "text": "Dorên simetrîk rê nadin ku aliyek tenê daxwaz bike û aliyê din tenê neçar be bersiv bide." },
+            { "language": "pl", "text": "Symetryczne rundy zapobiegają temu, by jedna strona tylko żądała, a druga tylko musiała reagować." },
+            { "language": "ro", "text": "Rundele simetrice împiedică o parte să doar ceară, iar cealaltă doar să fie nevoită să reacționeze." },
+            { "language": "sq", "text": "Raundet simetrike pengojnë që njëra palë vetëm të kërkojë dhe tjetra vetëm të detyrohet të reagojë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "synthesis",
+          "text": "Ein fairer Abschluss darf offen lassen, was offen ist, muss aber die nächste Arbeitsfrage präzise sichern.",
+          "translations": [
+            { "language": "en", "text": "A fair closing may leave open what is still open, but must precisely secure the next working question." },
+            { "language": "fa", "text": "جمع‌بندی منصفانه می‌تواند آنچه هنوز باز است باز بگذارد، اما باید پرسش کاری بعدی را دقیق تثبیت کند." },
+            { "language": "ar", "text": "يجوز للخاتمة العادلة أن تترك ما هو مفتوح مفتوحاً، لكنها يجب أن تؤمن بدقة سؤال العمل التالي." },
+            { "language": "tr", "text": "Adil bir kapanış açık kalan şeyi açık bırakabilir, ama sonraki çalışma sorusunu kesin biçimde güvenceye almalıdır." },
+            { "language": "ru", "text": "Справедливое завершение может оставить открытым то, что открыто, но должно точно закрепить следующий рабочий вопрос." },
+            { "language": "ckb", "text": "کۆتاییەکی دادپەروەرانە دەتوانێت ئەوەی کراوەیە کراوە بهێڵێتەوە، بەڵام دەبێت پرسیاری کاری داهاتوو بە وردی دڵنیا بکات." },
+            { "language": "kmr", "text": "Dawiyeke dadwerane dikare ya vekirî vekirî bihêle, lê divê pirsa karî ya din bi hûrgilî ewle bike." },
+            { "language": "pl", "text": "Uczciwe zakończenie może zostawić otwarte to, co pozostaje otwarte, ale musi precyzyjnie zabezpieczyć kolejne pytanie robocze." },
+            { "language": "ro", "text": "O închidere corectă poate lăsa deschis ceea ce este deschis, dar trebuie să asigure precis următoarea întrebare de lucru." },
+            { "language": "sq", "text": "Një mbyllje e drejtë mund ta lërë të hapur atë që është e hapur, por duhet të sigurojë saktë pyetjen e ardhshme të punës." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "public-panel-discussion",
+          "placement": "detail-header",
+          "purpose": "Illustrate a neutral public panel discussion with a moderator and two speakers in a civic education setting.",
+          "altText": "Eine neutrale Podiumsdiskussion mit Moderatorin, zwei sprechenden Erwachsenen und einem ruhigen Publikum in einem Gemeindesaal.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral panel discussion with a moderator, two adult speakers, and a calm audience in a community hall." },
+            { "language": "fa", "text": "یک میزگرد بی‌طرف با مجری، دو سخنران بزرگسال و مخاطبان آرام در یک سالن اجتماعی." },
+            { "language": "ar", "text": "نقاش منصة محايد مع مديرة نقاش ومتحدثين بالغين وجمهور هادئ في قاعة مجتمعية." },
+            { "language": "tr", "text": "Bir toplum salonunda moderatör, iki yetişkin konuşmacı ve sakin izleyicilerle nötr bir panel tartışması." },
+            { "language": "ru", "text": "Нейтральная панельная дискуссия с модератором, двумя взрослыми выступающими и спокойной аудиторией в общественном зале." },
+            { "language": "ckb", "text": "پانێڵێکی بێلایەن لەگەڵ بەڕێوەبەر، دوو قسەکەری گەورەسال و ئامادەبووانی ئارام لە هۆڵێکی کۆمەڵایەتی." },
+            { "language": "kmr", "text": "Panelê gotûbêjeke bêalî bi moderatorekê, du axaftvanên mezin û temaşevanên aram di salona civakî de." },
+            { "language": "pl", "text": "Neutralna dyskusja panelowa z moderatorką, dwojgiem dorosłych mówców i spokojną publicznością w sali społecznej." },
+            { "language": "ro", "text": "O dezbatere de panel neutră cu moderatoare, doi vorbitori adulți și un public calm într-o sală comunitară." },
+            { "language": "sq", "text": "Një diskutim neutral paneli me moderatore, dy folës të rritur dhe publik të qetë në një sallë komunitare." }
+          ],
+          "imagePrompt": "Clean educational illustration, civic community hall in Germany, neutral public panel discussion, moderator seated between two diverse adult speakers, calm audience, microphones without logos, no readable text, no political party symbols, no private data, accessible composition, constructive serious tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-39-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 39 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 39",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-belastungsgrenze-im-beruf-erklaeren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Belastungsgrenze im Beruf erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a work-related strain limit" },
+        { "language": "fa", "text": "توضیح مرز تحمل فشار در کار" },
+        { "language": "ar", "text": "شرح حد التحمل المهني" },
+        { "language": "tr", "text": "İşteki yüklenme sınırını açıklamak" },
+        { "language": "ru", "text": "Объяснение предела нагрузки на работе" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی سنووری فشار لە کاردا" },
+        { "language": "kmr", "text": "Ravekirina sînorê barê li kar" },
+        { "language": "pl", "text": "Wyjaśnienie granicy obciążenia w pracy" },
+        { "language": "ro", "text": "Explicarea limitei de solicitare la muncă" },
+        { "language": "sq", "text": "Shpjegimi i kufirit të ngarkesës në punë" }
+      ],
+      "description": "Sie sprechen in der Arztpraxis über wiederkehrende Erschöpfung, Kopfschmerzen und Konzentrationsabfall nach langen Schichten im Kundenservice. Sie möchten nicht pauschal arbeitsunfähig wirken, sondern eine medizinisch nachvollziehbare Grenze beschreiben: welche Tätigkeiten noch gehen, wann Fehler zunehmen, welche Pausen helfen und welche befristete Anpassung realistisch wäre.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are speaking at a doctor's office about recurring exhaustion, headaches, and loss of concentration after long shifts in customer service. You do not want to sound broadly unable to work, but to describe a medically understandable limit: which tasks are still possible, when mistakes increase, which breaks help, and which temporary adjustment would be realistic." },
+        { "language": "fa", "text": "در مطب پزشک درباره خستگی تکرارشونده، سردرد و افت تمرکز پس از شیفت‌های طولانی در خدمات مشتری صحبت می‌کنید. نمی‌خواهید کلی به نظر برسد که قادر به کار نیستید، بلکه می‌خواهید یک مرز قابل فهم پزشکی را توضیح دهید: چه کارهایی هنوز ممکن است، چه زمانی خطاها بیشتر می‌شوند، چه استراحت‌هایی کمک می‌کنند و چه تنظیم موقتی واقع‌بینانه است." },
+        { "language": "ar", "text": "تتحدثون في عيادة الطبيب عن إرهاق متكرر وصداع وانخفاض في التركيز بعد ورديات طويلة في خدمة العملاء. لا تريدون الظهور وكأنكم غير قادرين على العمل بشكل عام، بل وصف حد مفهوم طبيًا: ما المهام التي ما زالت ممكنة، ومتى تزداد الأخطاء، وأي فترات راحة تساعد، وأي تعديل مؤقت يكون واقعيًا." },
+        { "language": "tr", "text": "Doktor muayenehanesinde müşteri hizmetlerinde uzun vardiyalardan sonra tekrarlayan bitkinlik, baş ağrısı ve konsantrasyon düşüşü hakkında konuşuyorsunuz. Genel olarak çalışamaz görünmek istemiyorsunuz; tıbben anlaşılır bir sınır tanımlamak istiyorsunuz: hangi görevler hâlâ mümkün, hatalar ne zaman artıyor, hangi molalar yardımcı oluyor ve hangi geçici uyarlama gerçekçi olur." },
+        { "language": "ru", "text": "Вы говорите в кабинете врача о повторяющемся истощении, головных болях и снижении концентрации после длинных смен в службе поддержки клиентов. Вы не хотите звучать так, будто вообще не можете работать, а хотите описать медицински понятный предел: какие задачи еще возможны, когда ошибок становится больше, какие перерывы помогают и какая временная адаптация реалистична." },
+        { "language": "ckb", "text": "لە مطبی پزیشکدا دەربارەی ماندوویی دووبارەبووە، سەرئێشە و دابەزینی تەرکیز دوای شیفتە درێژەکان لە خزمەتگوزاریی کڕیاران قسە دەکەیت. ناتەوێت بە گشتی وەک کەسێک دەربکەویت کە ناتوانێت کار بکات، بەڵکو دەتەوێت سنوورێکی لە ڕووی پزیشکییەوە تێگەیشتوو ڕوون بکەیت: کام ئەرکەکان هێشتا دەکرێن، کەی هەڵەکان زیاد دەبن، کام پشوودان یارمەتیدەرە و کام ڕێکخستنی کاتی واقع‌بینانەیە." },
+        { "language": "kmr", "text": "Hûn li polîklînîka bijîşkî li ser westiyayiya dubare, serêş û kêmboona têgihiştinê piştî şiftên dirêj di xizmeta mişteriyan de diaxivin. Hûn naxwazin bi giştî wek kesekî ku nikare bixebite xuya bibin, lê dixwazin sînorekî ji aliyê bijîşkî ve fêmbar rave bikin: kîjan kar hê gengaz in, kengê xeletî zêde dibin, kîjan bêhnvedan alîkar in û kîjan lihevhatina demkî realistîk e." },
+        { "language": "pl", "text": "Rozmawia Pan/Pani w gabinecie lekarskim o nawracającym wyczerpaniu, bólach głowy i spadku koncentracji po długich zmianach w obsłudze klienta. Nie chce Pan/Pani brzmieć ogólnie jak osoba niezdolna do pracy, lecz opisać medycznie zrozumiałą granicę: które zadania są jeszcze możliwe, kiedy wzrasta liczba błędów, jakie przerwy pomagają i jaka tymczasowa zmiana byłaby realistyczna." },
+        { "language": "ro", "text": "Discutați la cabinetul medical despre epuizare recurentă, dureri de cap și scăderea concentrării după ture lungi în serviciul pentru clienți. Nu doriți să păreți în general incapabil de muncă, ci să descrieți o limită inteligibilă medical: ce activități mai sunt posibile, când cresc greșelile, ce pauze ajută și ce adaptare temporară ar fi realistă." },
+        { "language": "sq", "text": "Flisni në ordinancën e mjekut për lodhje të përsëritur, dhimbje koke dhe rënie të përqendrimit pas turneve të gjata në shërbimin ndaj klientit. Nuk doni të tingëlloni sikur nuk mund të punoni fare, por të përshkruani një kufi të kuptueshëm mjekësor: cilat detyra janë ende të mundshme, kur shtohen gabimet, cilat pushime ndihmojnë dhe cili përshtatim i përkohshëm do të ishte realist." }
+      ],
+      "learnerGoal": "Eine berufliche Belastungsgrenze differenziert erklären: Symptome, Auslöser und Arbeitsfolgen trennen, vorhandene Leistungsfähigkeit nicht ausblenden, konkrete Grenzen und hilfreiche Anpassungen nennen und eine befristete ärztliche Einschätzung erbitten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a work-related strain limit in a differentiated way: separate symptoms, triggers, and work consequences, do not hide remaining ability, name concrete limits and helpful adjustments, and request a time-limited medical assessment." },
+        { "language": "fa", "text": "مرز تحمل فشار کاری را تفکیک‌شده توضیح دهید: علائم، محرک‌ها و پیامدهای کاری را جدا کنید، توانایی باقی‌مانده را پنهان نکنید، محدودیت‌ها و تنظیم‌های کمک‌کننده را مشخص بگویید و یک ارزیابی پزشکی محدود به زمان بخواهید." },
+        { "language": "ar", "text": "اشرحوا حد التحمل المهني بتفصيل: افصلوا بين الأعراض والمحفزات والآثار على العمل، ولا تخفوا القدرة المتبقية، واذكروا حدودًا محددة وتعديلات مساعدة، واطلبوا تقييمًا طبيًا محدود المدة." },
+        { "language": "tr", "text": "İşle ilgili yüklenme sınırını ayrıntılı açıklayın: belirtileri, tetikleyicileri ve iş sonuçlarını ayırın, kalan çalışma gücünü gizlemeyin, somut sınırları ve yardımcı uyarlamaları belirtin ve süreyle sınırlı bir tıbbi değerlendirme isteyin." },
+        { "language": "ru", "text": "Дифференцированно объясните предел нагрузки на работе: разделите симптомы, триггеры и последствия для работы, не скрывайте оставшуюся работоспособность, назовите конкретные ограничения и полезные адаптации и попросите ограниченную по времени медицинскую оценку." },
+        { "language": "ckb", "text": "سنووری فشاری کاری بە جیاکردنەوەی ورد ڕوون بکە: نیشانەکان، هۆکارە هەڵخەڕێنەرەکان و کاریگەرییەکانی کار جیا بکە، توانای ماوە مەشارەوە، سنوورە دیاریکراوەکان و ڕێکخستنە یارمەتیدەرەکان ناوببە و داوای هەڵسەنگاندنێکی پزیشکیی سنووردار بە کات بکە." },
+        { "language": "kmr", "text": "Sînorê barê kar bi awayekî cuda rave bikin: nîşan, destpêker û encamên kar ji hev veqetînin, şiyana mayî venemeşêrin, sînorên konkret û lihevhatinên alîkar nav bikin û nirxandineke bijîşkî ya bi demê sînorkirî bixwazin." },
+        { "language": "pl", "text": "Wyjaśnić granicę obciążenia zawodowego w sposób zróżnicowany: oddzielić objawy, wyzwalacze i skutki dla pracy, nie ukrywać pozostałej zdolności, nazwać konkretne granice i pomocne dostosowania oraz poprosić o ograniczoną czasowo ocenę lekarską." },
+        { "language": "ro", "text": "Explicați diferențiat limita de solicitare profesională: separați simptomele, declanșatorii și consecințele la muncă, nu ascundeți capacitatea rămasă, numiți limite concrete și adaptări utile și solicitați o evaluare medicală limitată în timp." },
+        { "language": "sq", "text": "Shpjegoni në mënyrë të diferencuar kufirin e ngarkesës në punë: ndani simptomat, shkaktarët dhe pasojat në punë, mos e fshihni aftësinë e mbetur, përmendni kufij konkretë dhe përshtatje ndihmuese dhe kërkoni një vlerësim mjekësor të kufizuar në kohë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "health",
+      "topics": ["appointments-and-health", "work-and-jobs"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 39,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacienti" }
+          ]
+        },
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Bijîşk" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medicul" },
+            { "language": "sq", "text": "Mjekja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Sie haben erwähnt, dass die Beschwerden vor allem nach langen Schichten auftreten. Können Sie genauer beschreiben, was am Arbeitsplatz noch funktioniert und wo die Grenze erreicht ist?",
+          "translations": [
+            { "language": "en", "text": "You mentioned that the symptoms occur mainly after long shifts. Can you describe more precisely what still works at the workplace and where the limit is reached?" },
+            { "language": "fa", "text": "گفتید علائم بیشتر پس از شیفت‌های طولانی ظاهر می‌شوند. می‌توانید دقیق‌تر توضیح دهید در محل کار چه چیزهایی هنوز ممکن است و کجا مرز تحمل می‌رسد؟" },
+            { "language": "ar", "text": "ذكرتم أن الأعراض تظهر خصوصًا بعد ورديات طويلة. هل يمكنكم وصف ما الذي ما زال يعمل في مكان العمل وأين يصل الحد؟" },
+            { "language": "tr", "text": "Şikâyetlerin özellikle uzun vardiyalardan sonra ortaya çıktığını söylediniz. İş yerinde neyin hâlâ yürüdüğünü ve sınırın nerede dolduğunu daha kesin anlatabilir misiniz?" },
+            { "language": "ru", "text": "Вы упомянули, что жалобы возникают прежде всего после длинных смен. Можете точнее описать, что на рабочем месте еще получается и где достигается предел?" },
+            { "language": "ckb", "text": "ئاماژەت کرد کە نیشانەکان بە تایبەتی دوای شیفتە درێژەکان دەردەکەون. دەتوانیت بە وردتر ڕوون بکەیت لە شوێنی کاردا چی هێشتا دەکرێت و لە کوێدا سنوورەکە دەگات؟" },
+            { "language": "kmr", "text": "We got ku gilî bi taybetî piştî şiftên dirêj derdikevin. Ma hûn dikarin bi hûrgilî rave bikin li cihê kar çi hê dixebite û sînor li ku tê gihîştin?" },
+            { "language": "pl", "text": "Wspomniał Pan/Pani, że dolegliwości pojawiają się głównie po długich zmianach. Czy może Pan/Pani dokładniej opisać, co w pracy jeszcze funkcjonuje, a gdzie granica zostaje osiągnięta?" },
+            { "language": "ro", "text": "Ați menționat că simptomele apar mai ales după ture lungi. Puteți descrie mai precis ce încă funcționează la locul de muncă și unde este atinsă limita?" },
+            { "language": "sq", "text": "Përmendët se shqetësimet shfaqen sidomos pas turneve të gjata. A mund të përshkruani më saktë çfarë ende funksionon në punë dhe ku arrihet kufiri?" }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte das nicht dramatisieren: Kurze Kundengespräche und schriftliche Nacharbeit gehen noch. Kritisch wird es nach etwa fünf Stunden durchgehendem Telefonieren; dann nehmen Kopfschmerzen, Wortfindungsprobleme und Fehler bei Kundendaten deutlich zu.",
+          "translations": [
+            { "language": "en", "text": "I do not want to dramatize it: short customer calls and written wrap-up work are still possible. It becomes critical after about five hours of continuous phone work; then headaches, word-finding problems, and mistakes in customer data increase clearly." },
+            { "language": "fa", "text": "نمی‌خواهم موضوع را بزرگ‌نمایی کنم: گفت‌وگوهای کوتاه با مشتری و کارهای کتبی بعد از تماس هنوز ممکن است. وضعیت پس از حدود پنج ساعت تلفن مداوم بحرانی می‌شود؛ آن‌وقت سردرد، مشکل پیدا کردن کلمات و خطا در اطلاعات مشتری به‌طور واضح زیاد می‌شود." },
+            { "language": "ar", "text": "لا أريد تضخيم الأمر: المكالمات القصيرة مع العملاء والعمل الكتابي اللاحق ما زالا ممكنين. يصبح الأمر حرجًا بعد نحو خمس ساعات من الاتصال المتواصل؛ عندها يزداد الصداع وصعوبات إيجاد الكلمات والأخطاء في بيانات العملاء بوضوح." },
+            { "language": "tr", "text": "Bunu dramatize etmek istemiyorum: kısa müşteri görüşmeleri ve yazılı son işler hâlâ mümkün. Yaklaşık beş saat kesintisiz telefon görüşmesinden sonra kritik oluyor; o zaman baş ağrısı, kelime bulma güçlüğü ve müşteri verilerinde hatalar belirgin artıyor." },
+            { "language": "ru", "text": "Я не хочу драматизировать: короткие разговоры с клиентами и письменная последующая работа еще возможны. Критично становится примерно после пяти часов непрерывных телефонных разговоров; тогда заметно усиливаются головные боли, трудности с подбором слов и ошибки в данных клиентов." },
+            { "language": "ckb", "text": "ناتەوێت بابەتەکە زیادەڕۆ بکەم: گفتوگۆی کورتی کڕیار و کاری نووسراوی دوای پەیوەندی هێشتا دەکرێت. دوای نزیکەی پێنج کاتژمێر تەلەفۆنی بەردەوام، دۆخەکە گرنگ دەبێت؛ ئەوکات سەرئێشە، کێشەی دۆزینەوەی وشە و هەڵە لە زانیاریی کڕیاران بە ڕوونی زیاد دەبن." },
+            { "language": "kmr", "text": "Ez naxwazim vê mezin bikim: axaftinên kurt ên mişteriyan û karê nivîskî yê piştî axaftinê hê gengaz in. Piştî nêzîkî pênc saetan telefonkirina bê navber krîtîk dibe; wê demê serêş, zehmetiya peyv-dîtinê û xeletiyên daneyên mişteriyan bi zelalî zêde dibin." },
+            { "language": "pl", "text": "Nie chcę tego dramatyzować: krótkie rozmowy z klientami i pisemna praca po rozmowie są jeszcze możliwe. Krytycznie robi się po około pięciu godzinach ciągłego telefonowania; wtedy wyraźnie nasilają się bóle głowy, problemy z doborem słów i błędy w danych klientów." },
+            { "language": "ro", "text": "Nu vreau să dramatizez: convorbirile scurte cu clienții și munca scrisă de după apel încă merg. Devine critic după aproximativ cinci ore de telefonie continuă; atunci cresc clar durerile de cap, dificultățile de găsire a cuvintelor și greșelile în datele clienților." },
+            { "language": "sq", "text": "Nuk dua ta dramatizoj: bisedat e shkurtra me klientët dhe puna me shkrim pas tyre ende janë të mundshme. Bëhet kritike pas rreth pesë orësh telefonatash të pandërprera; atëherë shtohen qartë dhimbjet e kokës, vështirësitë për të gjetur fjalët dhe gabimet në të dhënat e klientëve." }
+          ],
+          "function": "functional-limit",
+          "toneNote": "Nicht pauschal arbeitsunfähig klingen; konkrete Restfähigkeit und Grenze nennen.",
+          "expectedLearnerAction": "Describe remaining ability, trigger, symptoms, and concrete work effect."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Das ist hilfreich, weil es nicht nur um Müdigkeit geht, sondern um messbare Folgen im Arbeitsablauf. Gibt es Faktoren, die die Grenze verschieben?",
+          "translations": [
+            { "language": "en", "text": "That is helpful because it is not only about tiredness, but about measurable consequences in the work routine. Are there factors that shift the limit?" },
+            { "language": "fa", "text": "این مفید است، چون فقط موضوع خستگی نیست، بلکه پیامدهای قابل مشاهده در روند کار است. آیا عواملی وجود دارد که این مرز را جابه‌جا کند؟" },
+            { "language": "ar", "text": "هذا مفيد، لأنه لا يتعلق بالتعب فقط، بل بآثار قابلة للملاحظة في سير العمل. هل توجد عوامل تغير هذا الحد؟" },
+            { "language": "tr", "text": "Bu yardımcı oluyor, çünkü konu sadece yorgunluk değil; iş akışında gözlemlenebilir sonuçlar var. Bu sınırı değiştiren etkenler var mı?" },
+            { "language": "ru", "text": "Это полезно, потому что речь не только об усталости, а об измеримых последствиях в рабочем ходе. Есть ли факторы, которые сдвигают этот предел?" },
+            { "language": "ckb", "text": "ئەمە یارمەتیدەرە، چونکە تەنها ماندوویی نییە، بەڵکو کاریگەرییەکی پێوانەکراوە لە ڕەوتی کاردا. ئایا هۆکار هەیە کە ئەم سنوورە بگۆڕێت؟" },
+            { "language": "kmr", "text": "Ev alîkar e, ji ber ku ne tenê li ser westiyayiyê ye, lê li ser encamên pîvanbar di rêça kar de ye. Ma faktor hene ku vî sînorî biguhezînin?" },
+            { "language": "pl", "text": "To pomocne, bo nie chodzi tylko o zmęczenie, lecz o mierzalne skutki w przebiegu pracy. Czy są czynniki, które przesuwają tę granicę?" },
+            { "language": "ro", "text": "Asta este util, pentru că nu este vorba doar despre oboseală, ci despre consecințe măsurabile în fluxul de lucru. Există factori care mută această limită?" },
+            { "language": "sq", "text": "Kjo është e dobishme, sepse nuk bëhet fjalë vetëm për lodhje, por për pasoja të matshme në rrjedhën e punës. A ka faktorë që e zhvendosin këtë kufi?" }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja. Wenn zwischen den Telefonblöcken echte Pausen liegen und ich schwierige Fälle schriftlich statt mündlich vorbereiten kann, bleibe ich stabiler. Doppelschichten und kurzfristige Wechsel zwischen sehr lauten und sehr ruhigen Aufgaben verschlechtern es dagegen.",
+          "translations": [
+            { "language": "en", "text": "Yes. When there are real breaks between phone blocks and I can prepare difficult cases in writing rather than orally, I remain more stable. Double shifts and short-notice changes between very loud and very quiet tasks make it worse, however." },
+            { "language": "fa", "text": "بله. وقتی بین بلوک‌های تلفنی استراحت واقعی وجود دارد و می‌توانم پرونده‌های دشوار را کتبی نه شفاهی آماده کنم، پایدارتر می‌مانم. اما شیفت‌های دوگانه و تغییرهای کوتاه‌مهلت بین کارهای بسیار پرصدا و بسیار آرام وضعیت را بدتر می‌کند." },
+            { "language": "ar", "text": "نعم. عندما تكون هناك فترات راحة حقيقية بين كتل الهاتف ويمكنني تحضير الحالات الصعبة كتابة بدلًا من شفهيًا، أبقى أكثر استقرارًا. أما الورديات المزدوجة والتغييرات القصيرة الأجل بين مهام صاخبة جدًا وهادئة جدًا فتزيد الأمر سوءًا." },
+            { "language": "tr", "text": "Evet. Telefon blokları arasında gerçek molalar olduğunda ve zor vakaları sözlü değil yazılı hazırlayabildiğimde daha dengeli kalıyorum. Buna karşılık çift vardiyalar ve çok gürültülü ile çok sessiz görevler arasında kısa süreli değişimler durumu kötüleştiriyor." },
+            { "language": "ru", "text": "Да. Когда между телефонными блоками есть настоящие перерывы и я могу готовить сложные случаи письменно, а не устно, я остаюсь стабильнее. А двойные смены и внезапные переходы между очень шумными и очень тихими задачами ухудшают состояние." },
+            { "language": "ckb", "text": "بەڵێ. کاتێک لەنێوان بەشەکانی تەلەفۆندا پشووی ڕاستەقینە هەیە و دەتوانم کەیسە قورسەکان بە نووسراوی نەک بە دەنگی ئامادە بکەم، جێگیرتر دەمێنم. بەڵام شیفتی دووانە و گۆڕانی خێرا لەنێوان ئەرکی زۆر دەنگدار و زۆر ئارامدا خراپتری دەکات." },
+            { "language": "kmr", "text": "Erê. Dema di navbera blokên telefonê de bêhnvedanên rastîn hebin û ez bikaribim rewşên zehmet bi nivîskî ne bi devkî amade bikim, ez stabîltir dimînim. Lê şiftên ducarî û guhertinên di demeke kurt de di navbera karên pir dengdar û pir bêdeng de wê xirabtir dikin." },
+            { "language": "pl", "text": "Tak. Kiedy między blokami telefonicznymi są prawdziwe przerwy i mogę przygotowywać trudne sprawy pisemnie zamiast ustnie, pozostaję stabilniejszy/stabilniejsza. Natomiast podwójne zmiany i nagłe przejścia między bardzo głośnymi i bardzo cichymi zadaniami to pogarszają." },
+            { "language": "ro", "text": "Da. Când există pauze reale între blocurile de telefonie și pot pregăti cazurile dificile în scris, nu oral, rămân mai stabil. În schimb, turele duble și schimbările rapide între sarcini foarte zgomotoase și foarte liniștite agravează situația." },
+            { "language": "sq", "text": "Po. Kur ka pushime të vërteta mes blloqeve telefonike dhe mund t'i përgatis rastet e vështira me shkrim, jo me gojë, mbetem më stabil. Ndërsa turnet e dyfishta dhe kalimet afatshkurtra mes detyrave shumë të zhurmshme dhe shumë të qeta e përkeqësojnë." }
+          ],
+          "function": "triggers-and-relief",
+          "toneNote": "Auslöser und entlastende Bedingungen konkret unterscheiden.",
+          "expectedLearnerAction": "Name helpful and harmful work conditions precisely."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Für eine ärztliche Einschätzung wäre wichtig, dass wir zwischen einer vollständigen Arbeitsunfähigkeit und einer befristeten Einschränkung unterscheiden. Welche Anpassung wäre realistisch, ohne Ihre Arbeit völlig zu unterbrechen?",
+          "translations": [
+            { "language": "en", "text": "For a medical assessment, it would be important to distinguish between complete inability to work and a temporary limitation. Which adjustment would be realistic without interrupting your work completely?" },
+            { "language": "fa", "text": "برای ارزیابی پزشکی مهم است که بین ناتوانی کامل از کار و محدودیت موقت تفاوت بگذاریم. چه تنظیمی واقع‌بینانه است بدون اینکه کار شما کاملاً قطع شود؟" },
+            { "language": "ar", "text": "للتقييم الطبي من المهم التمييز بين العجز الكامل عن العمل وتقييد مؤقت. أي تعديل سيكون واقعيًا من دون إيقاف عملكم تمامًا؟" },
+            { "language": "tr", "text": "Tıbbi değerlendirme için tam iş göremezlik ile geçici kısıtlama arasında ayrım yapmak önemli olur. İşinizi tamamen kesmeden hangi uyarlama gerçekçi olur?" },
+            { "language": "ru", "text": "Для медицинской оценки важно различать полную нетрудоспособность и временное ограничение. Какая адаптация была бы реалистичной без полного прекращения вашей работы?" },
+            { "language": "ckb", "text": "بۆ هەڵسەنگاندنی پزیشکی گرنگە جیاوازی بکەین لەنێوان ناتوانایی تەواو لە کار و سنووردارکردنی کاتی. کام ڕێکخستن واقع‌بینانە دەبێت بەبێ ئەوەی کارەکەت بە تەواوی بوەستێت؟" },
+            { "language": "kmr", "text": "Ji bo nirxandineke bijîşkî girîng e ku em di navbera bêşiyana karê ya tevahî û sînorkirineke demkî de cudahî bikin. Kîjan lihevhatin realistîk e bêyî ku karê we bi tevahî bê rawestandin?" },
+            { "language": "pl", "text": "Dla oceny lekarskiej ważne byłoby odróżnienie całkowitej niezdolności do pracy od czasowego ograniczenia. Jakie dostosowanie byłoby realistyczne bez całkowitego przerywania pracy?" },
+            { "language": "ro", "text": "Pentru o evaluare medicală ar fi important să distingem între incapacitate completă de muncă și o limitare temporară. Ce adaptare ar fi realistă fără a vă întrerupe complet munca?" },
+            { "language": "sq", "text": "Për një vlerësim mjekësor do të ishte e rëndësishme të dallojmë mes paaftësisë së plotë për punë dhe një kufizimi të përkohshëm. Cili përshtatim do të ishte realist pa e ndërprerë plotësisht punën tuaj?" }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Realistisch wäre für zwei Wochen: höchstens fünf Stunden Telefonarbeit am Stück vermeiden, nach zwei Stunden eine echte Pause einplanen und komplexe Fälle schriftlich vorbereiten. Ich kann weiterarbeiten, aber nicht in der bisherigen Dichte.",
+          "translations": [
+            { "language": "en", "text": "For two weeks, this would be realistic: avoid more than five hours of phone work in one stretch, schedule a real break after two hours, and prepare complex cases in writing. I can continue working, but not at the previous intensity." },
+            { "language": "fa", "text": "برای دو هفته این واقع‌بینانه است: از بیش از پنج ساعت کار تلفنی پیوسته پرهیز شود، بعد از دو ساعت یک استراحت واقعی برنامه‌ریزی شود و پرونده‌های پیچیده کتبی آماده شوند. می‌توانم به کار ادامه دهم، اما نه با تراکم قبلی." },
+            { "language": "ar", "text": "لمدة أسبوعين سيكون هذا واقعيًا: تجنب أكثر من خمس ساعات من العمل الهاتفي المتواصل، وتخطيط راحة حقيقية بعد ساعتين، وتحضير الحالات المعقدة كتابة. أستطيع مواصلة العمل، لكن ليس بالكثافة السابقة." },
+            { "language": "tr", "text": "İki hafta için gerçekçi olan şu olur: tek parçada beş saatten fazla telefon işinden kaçınmak, iki saatten sonra gerçek bir mola planlamak ve karmaşık vakaları yazılı hazırlamak. Çalışmaya devam edebilirim, ama önceki yoğunlukta değil." },
+            { "language": "ru", "text": "На две недели реалистично было бы: избегать более пяти часов телефонной работы подряд, планировать настоящий перерыв после двух часов и готовить сложные случаи письменно. Я могу продолжать работать, но не с прежней плотностью." },
+            { "language": "ckb", "text": "بۆ دوو هەفتە ئەمە واقع‌بینانە دەبێت: زیاتر لە پێنج کاتژمێر کاری تەلەفۆنی بەردەوام دوور بکرێت، دوای دوو کاتژمێر پشووی ڕاستەقینە پلان بکرێت و کەیسە ئاڵۆزەکان بە نووسراوی ئامادە بکرێن. دەتوانم بەردەوام کار بکەم، بەڵام نە بە چڕیی پێشوو." },
+            { "language": "kmr", "text": "Ji bo du hefteyan ev realistîk e: ji zêdetirî pênc saetan karê telefonê li pey hev dûr ketin, piştî du saetan bêhnvedaneke rastîn plan kirin û rewşên aloz bi nivîskî amade kirin. Ez dikarim berdewam bixebitim, lê ne bi tengahiya berê." },
+            { "language": "pl", "text": "Na dwa tygodnie realistyczne byłoby: unikać więcej niż pięciu godzin pracy telefonicznej bez przerwy, zaplanować prawdziwą przerwę po dwóch godzinach i przygotowywać złożone sprawy pisemnie. Mogę dalej pracować, ale nie w dotychczasowej intensywności." },
+            { "language": "ro", "text": "Pentru două săptămâni ar fi realist: evitarea a mai mult de cinci ore de muncă telefonică fără întrerupere, planificarea unei pauze reale după două ore și pregătirea în scris a cazurilor complexe. Pot continua să lucrez, dar nu la densitatea de până acum." },
+            { "language": "sq", "text": "Për dy javë do të ishte realiste: të shmangen më shumë se pesë orë pune telefonike pa ndërprerje, të planifikohet një pushim i vërtetë pas dy orësh dhe rastet komplekse të përgatiten me shkrim. Mund të vazhdoj të punoj, por jo me intensitetin e mëparshëm." }
+          ],
+          "function": "temporary-adjustment",
+          "toneNote": "Befristete und überprüfbare Anpassung statt allgemeiner Entlastung formulieren.",
+          "expectedLearnerAction": "Propose a time-limited adjustment with concrete limits."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Das klingt nachvollziehbar. Wir sollten zusätzlich festlegen, woran wir merken, ob diese Anpassung ausreicht oder ob eine stärkere Entlastung nötig wird.",
+          "translations": [
+            { "language": "en", "text": "That sounds understandable. We should also define how we will notice whether this adjustment is sufficient or whether stronger relief becomes necessary." },
+            { "language": "fa", "text": "این قابل فهم به نظر می‌رسد. باید علاوه بر آن مشخص کنیم از کجا می‌فهمیم این تنظیم کافی است یا اینکه کاهش فشار بیشتری لازم می‌شود." },
+            { "language": "ar", "text": "يبدو ذلك مفهومًا. ينبغي أيضًا أن نحدد كيف سنعرف ما إذا كان هذا التعديل كافيًا أو ما إذا كانت هناك حاجة إلى تخفيف أكبر." },
+            { "language": "tr", "text": "Bu anlaşılır görünüyor. Ayrıca bu uyarlamanın yeterli olup olmadığını ya da daha güçlü bir hafifletmenin gerekip gerekmediğini nasıl anlayacağımızı belirlemeliyiz." },
+            { "language": "ru", "text": "Это звучит понятно. Нам также следует определить, по чему мы поймем, достаточно ли этой адаптации или потребуется более сильное снижение нагрузки." },
+            { "language": "ckb", "text": "ئەمە تێگەیشتوو دەردەکەوێت. پێویستە جگە لەوە دیاری بکەین چۆن دەزانین ئەم ڕێکخستنە بەسە یان کەمکردنەوەی فشارێکی بەهێزتر پێویست دەبێت." },
+            { "language": "kmr", "text": "Ev fêmbar xuya dike. Her wiha divê em diyar bikin em çawa dizanin ka ev lihevhatin bes e an sivikkirineke xurtir pêwîst dibe." },
+            { "language": "pl", "text": "To brzmi zrozumiale. Powinniśmy dodatkowo ustalić, po czym poznamy, czy to dostosowanie wystarczy, czy potrzebne będzie większe odciążenie." },
+            { "language": "ro", "text": "Sună inteligibil. Ar trebui să stabilim suplimentar cum observăm dacă această adaptare este suficientă sau dacă devine necesară o reducere mai puternică a solicitării." },
+            { "language": "sq", "text": "Kjo tingëllon e kuptueshme. Duhet të përcaktojmë gjithashtu si do ta kuptojmë nëse ky përshtatim mjafton ose nëse nevojitet lehtësim më i fortë." }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Als Kriterien würde ich festhalten: weniger Kopfschmerzen am Abend, keine Häufung von Datenfehlern und keine Wortfindungsprobleme in Kundengesprächen. Wenn das trotz Anpassung bleibt, müssten wir die Grenze neu bewerten.",
+          "translations": [
+            { "language": "en", "text": "As criteria, I would note: fewer headaches in the evening, no accumulation of data errors, and no word-finding problems in customer calls. If that remains despite the adjustment, we would need to reassess the limit." },
+            { "language": "fa", "text": "به‌عنوان معیار ثبت می‌کنم: سردرد کمتر در عصر، نبود تجمع خطاهای داده و نبود مشکل پیدا کردن کلمات در گفت‌وگوهای مشتری. اگر با وجود تنظیم ادامه داشت، باید مرز را دوباره ارزیابی کنیم." },
+            { "language": "ar", "text": "كمعايير سأذكر: صداع أقل في المساء، وعدم تراكم أخطاء البيانات، وعدم وجود صعوبات في إيجاد الكلمات في محادثات العملاء. إذا بقي ذلك رغم التعديل، فعلينا إعادة تقييم الحد." },
+            { "language": "tr", "text": "Ölçüt olarak şunları kaydederim: akşam daha az baş ağrısı, veri hatalarında birikme olmaması ve müşteri görüşmelerinde kelime bulma sorunları olmaması. Uyarlamaya rağmen bunlar kalırsa sınırı yeniden değerlendirmemiz gerekir." },
+            { "language": "ru", "text": "В качестве критериев я бы отметил: меньше головной боли вечером, отсутствие накопления ошибок в данных и отсутствие трудностей с подбором слов в разговорах с клиентами. Если это сохранится несмотря на адаптацию, нам нужно будет заново оценить предел." },
+            { "language": "ckb", "text": "وەک پێوەر تۆمار دەکەم: سەرئێشەی کەمتر لە ئێوارە، نەبوونی کۆبوونەوەی هەڵەی زانیاری و نەبوونی کێشەی دۆزینەوەی وشە لە گفتوگۆی کڕیاردا. ئەگەر ئەمە بە وجودی ڕێکخستنەکە بمێنێت، پێویستە سنوورەکە دووبارە هەڵبسەنگێنین." },
+            { "language": "kmr", "text": "Wek pîvan ez van qeyd dikim: serêşa kêmtir êvarê, nebûna komkirina xeletiyên daneyan û nebûna zehmetiya peyv-dîtinê di axaftinên mişteriyan de. Heke ev bi lihevhatinê jî bimîne, divê em sînorê ji nû ve binirxînin." },
+            { "language": "pl", "text": "Jako kryteria zapisałbym/zapisałabym: mniej bólów głowy wieczorem, brak nagromadzenia błędów w danych i brak problemów z doborem słów w rozmowach z klientami. Jeśli mimo dostosowania to pozostanie, będziemy musieli ponownie ocenić granicę." },
+            { "language": "ro", "text": "Ca criterii aș nota: mai puține dureri de cap seara, fără acumulare de greșeli în date și fără probleme de găsire a cuvintelor în convorbirile cu clienții. Dacă acestea rămân în ciuda adaptării, va trebui să reevaluăm limita." },
+            { "language": "sq", "text": "Si kritere do të shënoja: më pak dhimbje koke në mbrëmje, pa grumbullim gabimesh në të dhëna dhe pa vështirësi për të gjetur fjalët në bisedat me klientët. Nëse kjo mbetet pavarësisht përshtatjes, duhet ta rivlerësojmë kufirin." }
+          ],
+          "function": "review-criteria",
+          "toneNote": "Kriterien nennen, die Arbeit und Gesundheit verbinden.",
+          "expectedLearnerAction": "Define observable criteria for reassessing the work limit."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Ich kann eine befristete Einschätzung formulieren: keine generelle Arbeitsunfähigkeit, aber vorübergehend reduzierte Telefonbelastung, planbare Pausen und erneute Kontrolle in zwei Wochen.",
+          "translations": [
+            { "language": "en", "text": "I can formulate a time-limited assessment: no general inability to work, but temporarily reduced phone strain, plannable breaks, and a review in two weeks." },
+            { "language": "fa", "text": "می‌توانم یک ارزیابی محدود به زمان بنویسم: نه ناتوانی کلی از کار، بلکه کاهش موقت فشار تلفنی، استراحت‌های قابل برنامه‌ریزی و کنترل دوباره در دو هفته." },
+            { "language": "ar", "text": "يمكنني صياغة تقييم محدود المدة: ليس عجزًا عامًا عن العمل، بل تقليل مؤقت للعبء الهاتفي، وفترات راحة قابلة للتخطيط، ومراجعة بعد أسبوعين." },
+            { "language": "tr", "text": "Süreyle sınırlı bir değerlendirme yazabilirim: genel iş göremezlik değil, geçici olarak azaltılmış telefon yükü, planlanabilir molalar ve iki hafta sonra kontrol." },
+            { "language": "ru", "text": "Я могу сформулировать ограниченную по времени оценку: не общая нетрудоспособность, а временно сниженная телефонная нагрузка, планируемые перерывы и повторный контроль через две недели." },
+            { "language": "ckb", "text": "دەتوانم هەڵسەنگاندنێکی سنووردار بە کات داڕێژم: نە ناتوانایی گشتی لە کار، بەڵکو کەمکردنەوەی کاتی باری تەلەفۆنی، پشووی پلانکراو و کۆنترۆڵی دووبارە لە دوو هەفتەدا." },
+            { "language": "kmr", "text": "Ez dikarim nirxandineke bi demê sînorkirî binivîsim: ne bêşiyana karê ya giştî, lê kêmkirina demkî ya bara telefonê, bêhnvedanên planbar û kontrola dîsa piştî du hefteyan." },
+            { "language": "pl", "text": "Mogę sformułować ocenę ograniczoną czasowo: nie ogólną niezdolność do pracy, lecz tymczasowo zmniejszone obciążenie telefoniczne, planowane przerwy i ponowną kontrolę za dwa tygodnie." },
+            { "language": "ro", "text": "Pot formula o evaluare limitată în timp: nu incapacitate generală de muncă, ci reducere temporară a solicitării telefonice, pauze planificabile și control din nou peste două săptămâni." },
+            { "language": "sq", "text": "Mund të formuloj një vlerësim të kufizuar në kohë: jo paaftësi e përgjithshme për punë, por ulje e përkohshme e ngarkesës telefonike, pushime të planifikueshme dhe kontroll pas dy javësh." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das passt. Bitte halten Sie fest, dass ich grundsätzlich arbeitsfähig bin, aber vorübergehend keine langen Telefonblöcke und keine Doppelschichten übernehmen sollte. In zwei Wochen prüfen wir anhand der genannten Kriterien, ob die Anpassung reicht.",
+          "translations": [
+            { "language": "en", "text": "That fits. Please state that I am basically able to work, but temporarily should not take on long phone blocks or double shifts. In two weeks, we will check using the criteria named whether the adjustment is enough." },
+            { "language": "fa", "text": "این مناسب است. لطفاً ثبت کنید که من اصولاً قادر به کار هستم، اما به‌طور موقت نباید بلوک‌های تلفنی طولانی و شیفت‌های دوگانه را بر عهده بگیرم. دو هفته دیگر با معیارهای گفته‌شده بررسی می‌کنیم که آیا تنظیم کافی است یا نه." },
+            { "language": "ar", "text": "هذا مناسب. يرجى ذكر أنني قادر على العمل من حيث المبدأ، لكن مؤقتًا لا ينبغي أن أتولى كتل هاتف طويلة أو ورديات مزدوجة. بعد أسبوعين نتحقق بالمعايير المذكورة مما إذا كان التعديل كافيًا." },
+            { "language": "tr", "text": "Bu uygun. Lütfen temelde çalışabilir olduğumu, ancak geçici olarak uzun telefon blokları ve çift vardiyalar üstlenmemem gerektiğini belirtin. İki hafta sonra, belirtilen ölçütlere göre uyarlamanın yeterli olup olmadığını kontrol ederiz." },
+            { "language": "ru", "text": "Это подходит. Пожалуйста, укажите, что в принципе я трудоспособен, но временно не должен брать длинные телефонные блоки и двойные смены. Через две недели мы проверим по названным критериям, достаточно ли адаптации." },
+            { "language": "ckb", "text": "ئەمە گونجاوە. تکایە تۆمار بکەن کە من بە بنەڕەت توانای کارکردنم هەیە، بەڵام بە کاتی نابێت بەشە تەلەفۆنییە درێژەکان و شیفتی دووانە وەربگرم. لە دوو هەفتەدا بە پێی پێوەرە ناوبراوەکان دەپشکنین ئایا ڕێکخستنەکە بەسە یان نا." },
+            { "language": "kmr", "text": "Ev guncav e. Ji kerema xwe qeyd bikin ku ez bi bingehîn dikarim bixebitim, lê demkî divê blokên dirêj ên telefonê û şiftên ducarî negirim. Piştî du hefteyan em li gor pîvanên navkirî kontrol dikin ka lihevhatin bes e an na." },
+            { "language": "pl", "text": "To pasuje. Proszę zapisać, że zasadniczo jestem zdolny/zdolna do pracy, ale tymczasowo nie powinienem/nie powinnam przejmować długich bloków telefonicznych ani podwójnych zmian. Za dwa tygodnie sprawdzimy według wymienionych kryteriów, czy dostosowanie wystarcza." },
+            { "language": "ro", "text": "Asta se potrivește. Vă rog să notați că sunt în principiu apt de muncă, dar temporar nu ar trebui să preiau blocuri lungi de telefonie și ture duble. Peste două săptămâni verificăm pe baza criteriilor numite dacă adaptarea este suficientă." },
+            { "language": "sq", "text": "Kjo përshtatet. Ju lutem shënoni se në parim jam i aftë për punë, por përkohësisht nuk duhet të marr blloqe të gjata telefonike dhe turne të dyfishta. Pas dy javësh kontrollojmë sipas kritereve të përmendura nëse përshtatja mjafton." }
+          ],
+          "function": "bounded-work-summary",
+          "toneNote": "Arbeitsfähigkeit, Grenze und Kontrolltermin gemeinsam nennen.",
+          "expectedLearnerAction": "Summarize ability, temporary limits, and review criteria."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte das nicht dramatisieren: Kurze Kundengespräche und schriftliche Nacharbeit gehen noch. Kritisch wird es nach etwa fünf Stunden durchgehendem Telefonieren; dann nehmen Kopfschmerzen, Wortfindungsprobleme und Fehler bei Kundendaten deutlich zu.",
+              "translations": [
+                { "language": "en", "text": "I do not want to dramatize it: short customer calls and written wrap-up work are still possible. It becomes critical after about five hours of continuous phone work; then headaches, word-finding problems, and mistakes in customer data increase clearly." },
+                { "language": "fa", "text": "نمی‌خواهم موضوع را بزرگ‌نمایی کنم: گفت‌وگوهای کوتاه با مشتری و کارهای کتبی بعد از تماس هنوز ممکن است. وضعیت پس از حدود پنج ساعت تلفن مداوم بحرانی می‌شود؛ آن‌وقت سردرد، مشکل پیدا کردن کلمات و خطا در اطلاعات مشتری به‌طور واضح زیاد می‌شود." },
+                { "language": "ar", "text": "لا أريد تضخيم الأمر: المكالمات القصيرة مع العملاء والعمل الكتابي اللاحق ما زالا ممكنين. يصبح الأمر حرجًا بعد نحو خمس ساعات من الاتصال المتواصل؛ عندها يزداد الصداع وصعوبات إيجاد الكلمات والأخطاء في بيانات العملاء بوضوح." },
+                { "language": "tr", "text": "Bunu dramatize etmek istemiyorum: kısa müşteri görüşmeleri ve yazılı son işler hâlâ mümkün. Yaklaşık beş saat kesintisiz telefon görüşmesinden sonra kritik oluyor; o zaman baş ağrısı, kelime bulma güçlüğü ve müşteri verilerinde hatalar belirgin artıyor." },
+                { "language": "ru", "text": "Я не хочу драматизировать: короткие разговоры с клиентами и письменная последующая работа еще возможны. Критично становится примерно после пяти часов непрерывных телефонных разговоров; тогда заметно усиливаются головные боли, трудности с подбором слов и ошибки в данных клиентов." },
+                { "language": "ckb", "text": "ناتەوێت بابەتەکە زیادەڕۆ بکەم: گفتوگۆی کورتی کڕیار و کاری نووسراوی دوای پەیوەندی هێشتا دەکرێت. دوای نزیکەی پێنج کاتژمێر تەلەفۆنی بەردەوام، دۆخەکە گرنگ دەبێت؛ ئەوکات سەرئێشە، کێشەی دۆزینەوەی وشە و هەڵە لە زانیاریی کڕیاران بە ڕوونی زیاد دەبن." },
+                { "language": "kmr", "text": "Ez naxwazim vê mezin bikim: axaftinên kurt ên mişteriyan û karê nivîskî yê piştî axaftinê hê gengaz in. Piştî nêzîkî pênc saetan telefonkirina bê navber krîtîk dibe; wê demê serêş, zehmetiya peyv-dîtinê û xeletiyên daneyên mişteriyan bi zelalî zêde dibin." },
+                { "language": "pl", "text": "Nie chcę tego dramatyzować: krótkie rozmowy z klientami i pisemna praca po rozmowie są jeszcze możliwe. Krytycznie robi się po około pięciu godzinach ciągłego telefonowania; wtedy wyraźnie nasilają się bóle głowy, problemy z doborem słów i błędy w danych klientów." },
+                { "language": "ro", "text": "Nu vreau să dramatizez: convorbirile scurte cu clienții și munca scrisă de după apel încă merg. Devine critic după aproximativ cinci ore de telefonie continuă; atunci cresc clar durerile de cap, dificultățile de găsire a cuvintelor și greșelile în datele clienților." },
+                { "language": "sq", "text": "Nuk dua ta dramatizoj: bisedat e shkurtra me klientët dhe puna me shkrim pas tyre ende janë të mundshme. Bëhet kritike pas rreth pesë orësh telefonatash të pandërprera; atëherë shtohen qartë dhimbjet e kokës, vështirësitë për të gjetur fjalët dhe gabimet në të dhënat e klientëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt Restfähigkeit, Grenze und konkrete Arbeitsfolgen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names remaining ability, limit, and concrete work consequences." },
+                { "language": "fa", "text": "قوی: پاسخ توانایی باقی‌مانده، مرز تحمل و پیامدهای مشخص کاری را نام می‌برد." },
+                { "language": "ar", "text": "قوي: الجواب يذكر القدرة المتبقية والحد والآثار العملية المحددة." },
+                { "language": "tr", "text": "Güçlü: Yanıt kalan çalışma gücünü, sınırı ve somut iş sonuçlarını belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ называет оставшуюся способность, предел и конкретные последствия для работы." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە توانای ماوە، سنوور و کاریگەریی دیاریکراوی کار ناودەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv şiyana mayî, sînor û encamên konkret ên kar nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa pozostałą zdolność, granicę i konkretne skutki dla pracy." },
+                { "language": "ro", "text": "Puternic: răspunsul numește capacitatea rămasă, limita și consecințele concrete la muncă." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmend aftësinë e mbetur, kufirin dhe pasojat konkrete në punë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich bin nach der Arbeit einfach völlig fertig und brauche weniger Stress.",
+              "translations": [
+                { "language": "en", "text": "After work I am simply completely exhausted and need less stress." },
+                { "language": "fa", "text": "بعد از کار کاملاً از پا می‌افتم و به فشار کمتری نیاز دارم." },
+                { "language": "ar", "text": "بعد العمل أكون ببساطة منهكًا تمامًا وأحتاج إلى ضغط أقل." },
+                { "language": "tr", "text": "İşten sonra tamamen bitmiş oluyorum ve daha az strese ihtiyacım var." },
+                { "language": "ru", "text": "После работы я просто полностью вымотан и нуждаюсь в меньшем стрессе." },
+                { "language": "ckb", "text": "دوای کار بە تەواوی ماندوو دەبم و پێویستم بە فشاری کەمترە." },
+                { "language": "kmr", "text": "Piştî kar ez bi tevahî westiyayî dibim û pêwîstiya min bi stresê kêmtir heye." },
+                { "language": "pl", "text": "Po pracy jestem po prostu całkowicie wykończony/wykończona i potrzebuję mniej stresu." },
+                { "language": "ro", "text": "După muncă sunt pur și simplu complet epuizat și am nevoie de mai puțin stres." },
+                { "language": "sq", "text": "Pas punës jam thjesht krejt i rraskapitur dhe kam nevojë për më pak stres." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein. Für eine ärztliche Einschätzung fehlen konkrete Tätigkeiten, Grenze und Folgen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general. For a medical assessment, concrete tasks, limit, and consequences are missing." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی کلی است. برای ارزیابی پزشکی، کارهای مشخص، مرز تحمل و پیامدها کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه عام جدًا. للتقييم الطبي تنقص المهام المحددة والحد والآثار." },
+                { "language": "tr", "text": "Akla yatkın, ama çok genel. Tıbbi değerlendirme için somut görevler, sınır ve sonuçlar eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общее. Для медицинской оценки не хватает конкретных задач, предела и последствий." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر گشتییە. بۆ هەڵسەنگاندنی پزیشکی ئەرکی دیاریکراو، سنوور و کاریگەرییەکان کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir giştî ye. Ji bo nirxandina bijîşkî karên konkret, sînor û encam kêm in." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt ogólne. Do oceny lekarskiej brakuje konkretnych zadań, granicy i skutków." },
+                { "language": "ro", "text": "Plauzibil, dar prea general. Pentru o evaluare medicală lipsesc activități concrete, limita și consecințele." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme. Për një vlerësim mjekësor mungojnë detyrat konkrete, kufiri dhe pasojat." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja. Wenn zwischen den Telefonblöcken echte Pausen liegen und ich schwierige Fälle schriftlich statt mündlich vorbereiten kann, bleibe ich stabiler. Doppelschichten und kurzfristige Wechsel zwischen sehr lauten und sehr ruhigen Aufgaben verschlechtern es dagegen.",
+              "translations": [
+                { "language": "en", "text": "Yes. When there are real breaks between phone blocks and I can prepare difficult cases in writing rather than orally, I remain more stable. Double shifts and short-notice changes between very loud and very quiet tasks make it worse, however." },
+                { "language": "fa", "text": "بله. وقتی بین بلوک‌های تلفنی استراحت واقعی وجود دارد و می‌توانم پرونده‌های دشوار را کتبی نه شفاهی آماده کنم، پایدارتر می‌مانم. اما شیفت‌های دوگانه و تغییرهای کوتاه‌مهلت بین کارهای بسیار پرصدا و بسیار آرام وضعیت را بدتر می‌کند." },
+                { "language": "ar", "text": "نعم. عندما تكون هناك فترات راحة حقيقية بين كتل الهاتف ويمكنني تحضير الحالات الصعبة كتابة بدلًا من شفهيًا، أبقى أكثر استقرارًا. أما الورديات المزدوجة والتغييرات القصيرة الأجل بين مهام صاخبة جدًا وهادئة جدًا فتزيد الأمر سوءًا." },
+                { "language": "tr", "text": "Evet. Telefon blokları arasında gerçek molalar olduğunda ve zor vakaları sözlü değil yazılı hazırlayabildiğimde daha dengeli kalıyorum. Buna karşılık çift vardiyalar ve çok gürültülü ile çok sessiz görevler arasında kısa süreli değişimler durumu kötüleştiriyor." },
+                { "language": "ru", "text": "Да. Когда между телефонными блоками есть настоящие перерывы и я могу готовить сложные случаи письменно, а не устно, я остаюсь стабильнее. А двойные смены и внезапные переходы между очень шумными и очень тихими задачами ухудшают состояние." },
+                { "language": "ckb", "text": "بەڵێ. کاتێک لەنێوان بەشەکانی تەلەفۆندا پشووی ڕاستەقینە هەیە و دەتوانم کەیسە قورسەکان بە نووسراوی نەک بە دەنگی ئامادە بکەم، جێگیرتر دەمێنم. بەڵام شیفتی دووانە و گۆڕانی خێرا لەنێوان ئەرکی زۆر دەنگدار و زۆر ئارامدا خراپتری دەکات." },
+                { "language": "kmr", "text": "Erê. Dema di navbera blokên telefonê de bêhnvedanên rastîn hebin û ez bikaribim rewşên zehmet bi nivîskî ne bi devkî amade bikim, ez stabîltir dimînim. Lê şiftên ducarî û guhertinên di demeke kurt de di navbera karên pir dengdar û pir bêdeng de wê xirabtir dikin." },
+                { "language": "pl", "text": "Tak. Kiedy między blokami telefonicznymi są prawdziwe przerwy i mogę przygotowywać trudne sprawy pisemnie zamiast ustnie, pozostaję stabilniejszy/stabilniejsza. Natomiast podwójne zmiany i nagłe przejścia między bardzo głośnymi i bardzo cichymi zadaniami to pogarszają." },
+                { "language": "ro", "text": "Da. Când există pauze reale între blocurile de telefonie și pot pregăti cazurile dificile în scris, nu oral, rămân mai stabil. În schimb, turele duble și schimbările rapide între sarcini foarte zgomotoase și foarte liniștite agravează situația." },
+                { "language": "sq", "text": "Po. Kur ka pushime të vërteta mes blloqeve telefonike dhe mund t'i përgatis rastet e vështira me shkrim, jo me gojë, mbetem më stabil. Ndërsa turnet e dyfishta dhe kalimet afatshkurtra mes detyrave shumë të zhurmshme dhe shumë të qeta e përkeqësojnë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort unterscheidet belastende und entlastende Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer distinguishes burdensome and relieving conditions." },
+                { "language": "fa", "text": "قوی: پاسخ شرایط فشارزا و کاهش‌دهنده فشار را از هم جدا می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يميز بين الظروف المرهقة والمخففة." },
+                { "language": "tr", "text": "Güçlü: Yanıt zorlayıcı ve rahatlatıcı koşulları ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ различает нагружающие и облегчающие условия." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بارگران و بارسووککەرەوەکان جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv şertên barkirinê û sivikkirinê ji hev veqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź odróżnia warunki obciążające i odciążające." },
+                { "language": "ro", "text": "Puternic: răspunsul distinge condițiile solicitante și cele de ușurare." },
+                { "language": "sq", "text": "E fortë: përgjigjja dallon kushtet rënduese dhe lehtësuese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Es ist besonders schlimm, wenn der Tag anstrengend ist und ich kaum Pausen habe.",
+              "translations": [
+                { "language": "en", "text": "It is especially bad when the day is demanding and I barely have breaks." },
+                { "language": "fa", "text": "وقتی روز سخت است و تقریباً استراحت ندارم، به‌خصوص بد می‌شود." },
+                { "language": "ar", "text": "يكون الأمر سيئًا بشكل خاص عندما يكون اليوم مرهقًا ولا تكاد تكون لدي فترات راحة." },
+                { "language": "tr", "text": "Gün zorlayıcı olduğunda ve neredeyse hiç mola olmadığında özellikle kötü oluyor." },
+                { "language": "ru", "text": "Особенно плохо, когда день напряженный и у меня почти нет перерывов." },
+                { "language": "ckb", "text": "بە تایبەتی خراپ دەبێت کاتێک ڕۆژەکە قورسە و نزیکەی هیچ پشووم نییە." },
+                { "language": "kmr", "text": "Bi taybetî xirab dibe dema roj zehmet be û hema bêhnvedan tune be." },
+                { "language": "pl", "text": "Szczególnie źle jest, gdy dzień jest wymagający i prawie nie mam przerw." },
+                { "language": "ro", "text": "Este deosebit de rău când ziua este solicitantă și abia am pauze." },
+                { "language": "sq", "text": "Është veçanërisht keq kur dita është e rëndë dhe pothuajse nuk kam pushime." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unspezifisch. Die Antwort nennt keine Art der Aufgabe und keine hilfreiche Gegenbedingung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too unspecific. The answer names no type of task and no helpful counter-condition." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی نامشخص است. پاسخ نوع کار و شرط کمک‌کننده را نام نمی‌برد." },
+                { "language": "ar", "text": "مفهوم، لكنه غير محدد بما يكفي. الجواب لا يذكر نوع المهمة ولا شرطًا مساعدًا مضادًا." },
+                { "language": "tr", "text": "Akla yatkın, ama çok belirsiz. Yanıt görev türünü ve yardımcı karşı koşulu belirtmiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неопределенно. Ответ не называет тип задачи и полезное противоположное условие." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر نادیارە. وەڵامەکە جۆری ئەرک و مەرجی یارمەتیدەری پێچەوانە ناودەبات." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e. Bersiv cureya kar û şertê alîkar ê berevajî nav nake." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt niesprecyzowane. Odpowiedź nie nazywa rodzaju zadania ani pomocnego warunku przeciwnego." },
+                { "language": "ro", "text": "Plauzibil, dar prea nespecific. Răspunsul nu numește tipul sarcinii și nicio condiție opusă utilă." },
+                { "language": "sq", "text": "E besueshme, por shumë e paspecifikuar. Përgjigjja nuk përmend llojin e detyrës dhe as një kusht ndihmues të kundërt." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Realistisch wäre für zwei Wochen: höchstens fünf Stunden Telefonarbeit am Stück vermeiden, nach zwei Stunden eine echte Pause einplanen und komplexe Fälle schriftlich vorbereiten. Ich kann weiterarbeiten, aber nicht in der bisherigen Dichte.",
+              "translations": [
+                { "language": "en", "text": "For two weeks, this would be realistic: avoid more than five hours of phone work in one stretch, schedule a real break after two hours, and prepare complex cases in writing. I can continue working, but not at the previous intensity." },
+                { "language": "fa", "text": "برای دو هفته این واقع‌بینانه است: از بیش از پنج ساعت کار تلفنی پیوسته پرهیز شود، بعد از دو ساعت یک استراحت واقعی برنامه‌ریزی شود و پرونده‌های پیچیده کتبی آماده شوند. می‌توانم به کار ادامه دهم، اما نه با تراکم قبلی." },
+                { "language": "ar", "text": "لمدة أسبوعين سيكون هذا واقعيًا: تجنب أكثر من خمس ساعات من العمل الهاتفي المتواصل، وتخطيط راحة حقيقية بعد ساعتين، وتحضير الحالات المعقدة كتابة. أستطيع مواصلة العمل، لكن ليس بالكثافة السابقة." },
+                { "language": "tr", "text": "İki hafta için gerçekçi olan şu olur: tek parçada beş saatten fazla telefon işinden kaçınmak, iki saatten sonra gerçek bir mola planlamak ve karmaşık vakaları yazılı hazırlamak. Çalışmaya devam edebilirim, ama önceki yoğunlukta değil." },
+                { "language": "ru", "text": "На две недели реалистично было бы: избегать более пяти часов телефонной работы подряд, планировать настоящий перерыв после двух часов и готовить сложные случаи письменно. Я могу продолжать работать, но не с прежней плотностью." },
+                { "language": "ckb", "text": "بۆ دوو هەفتە ئەمە واقع‌بینانە دەبێت: زیاتر لە پێنج کاتژمێر کاری تەلەفۆنی بەردەوام دوور بکرێت، دوای دوو کاتژمێر پشووی ڕاستەقینە پلان بکرێت و کەیسە ئاڵۆزەکان بە نووسراوی ئامادە بکرێن. دەتوانم بەردەوام کار بکەم، بەڵام نە بە چڕیی پێشوو." },
+                { "language": "kmr", "text": "Ji bo du hefteyan ev realistîk e: ji zêdetirî pênc saetan karê telefonê li pey hev dûr ketin, piştî du saetan bêhnvedaneke rastîn plan kirin û rewşên aloz bi nivîskî amade kirin. Ez dikarim berdewam bixebitim, lê ne bi tengahiya berê." },
+                { "language": "pl", "text": "Na dwa tygodnie realistyczne byłoby: unikać więcej niż pięciu godzin pracy telefonicznej bez przerwy, zaplanować prawdziwą przerwę po dwóch godzinach i przygotowywać złożone sprawy pisemnie. Mogę dalej pracować, ale nie w dotychczasowej intensywności." },
+                { "language": "ro", "text": "Pentru două săptămâni ar fi realist: evitarea a mai mult de cinci ore de muncă telefonică fără întrerupere, planificarea unei pauze reale după două ore și pregătirea în scris a cazurilor complexe. Pot continua să lucrez, dar nu la densitatea de până acum." },
+                { "language": "sq", "text": "Për dy javë do të ishte realiste: të shmangen më shumë se pesë orë pune telefonike pa ndërprerje, të planifikohet një pushim i vërtetë pas dy orësh dhe rastet komplekse të përgatiten me shkrim. Mund të vazhdoj të punoj, por jo me intensitetin e mëparshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bleibt befristet, konkret und arbeitsbezogen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer remains time-limited, concrete, and work-related." },
+                { "language": "fa", "text": "قوی: پاسخ محدود به زمان، مشخص و مرتبط با کار می‌ماند." },
+                { "language": "ar", "text": "قوي: الجواب يبقى محدود المدة ومحددًا ومرتبطًا بالعمل." },
+                { "language": "tr", "text": "Güçlü: Yanıt süreyle sınırlı, somut ve işle ilgili kalıyor." },
+                { "language": "ru", "text": "Сильно: ответ остается ограниченным по времени, конкретным и связанным с работой." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنووردار بە کات، دیاریکراو و پەیوەندیدار بە کار دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv bi demê sînorkirî, konkret û bi kar ve girêdayî dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź pozostaje ograniczona czasowo, konkretna i związana z pracą." },
+                { "language": "ro", "text": "Puternic: răspunsul rămâne limitat în timp, concret și legat de muncă." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbetet e kufizuar në kohë, konkrete dhe e lidhur me punën." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Am besten wäre, wenn ich erst einmal weniger arbeiten müsste.",
+              "translations": [
+                { "language": "en", "text": "It would be best if I simply had to work less for now." },
+                { "language": "fa", "text": "بهتر است فعلاً فقط کمتر کار کنم." },
+                { "language": "ar", "text": "الأفضل أن أعمل أقل مؤقتًا." },
+                { "language": "tr", "text": "En iyisi şimdilik daha az çalışmam olurdu." },
+                { "language": "ru", "text": "Лучше всего было бы, если бы я пока просто работал меньше." },
+                { "language": "ckb", "text": "باشتر وایە سەرەتا کەمتر کار بکەم." },
+                { "language": "kmr", "text": "Çêtir e ku ez niha hinekî kêmtir bixebitim." },
+                { "language": "pl", "text": "Najlepiej byłoby, gdybym na razie po prostu mniej pracował/pracowała." },
+                { "language": "ro", "text": "Cel mai bine ar fi să lucrez pur și simplu mai puțin pentru moment." },
+                { "language": "sq", "text": "Më mirë do të ishte që për momentin thjesht të punoja më pak." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unpräzise. Es fehlen Dauer, Art der Reduktion und medizinisch nachvollziehbare Grenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise. Duration, type of reduction, and a medically understandable limit are missing." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی نامشخص است. مدت، نوع کاهش و مرز قابل فهم پزشکی کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه غير دقيق بما يكفي. تنقص المدة ونوع التخفيض وحد طبي مفهوم." },
+                { "language": "tr", "text": "Akla yatkın, ama çok belirsiz. Süre, azaltma türü ve tıbben anlaşılır sınır eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно. Не хватает срока, вида снижения и медицински понятного предела." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر نادیارە. ماوە، جۆری کەمکردنەوە و سنووری تێگەیشتووی پزیشکی کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e. Dem, cureya kêmkirinê û sînorekî bijîşkî yê fêmbar kêm in." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt nieprecyzyjne. Brakuje czasu trwania, rodzaju redukcji i medycznie zrozumiałej granicy." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis. Lipsesc durata, tipul reducerii și o limită inteligibilă medical." },
+                { "language": "sq", "text": "E besueshme, por shumë e pasaktë. Mungojnë kohëzgjatja, lloji i uljes dhe një kufi i kuptueshëm mjekësor." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Als Kriterien würde ich festhalten: weniger Kopfschmerzen am Abend, keine Häufung von Datenfehlern und keine Wortfindungsprobleme in Kundengesprächen. Wenn das trotz Anpassung bleibt, müssten wir die Grenze neu bewerten.",
+              "translations": [
+                { "language": "en", "text": "As criteria, I would note: fewer headaches in the evening, no accumulation of data errors, and no word-finding problems in customer calls. If that remains despite the adjustment, we would need to reassess the limit." },
+                { "language": "fa", "text": "به‌عنوان معیار ثبت می‌کنم: سردرد کمتر در عصر، نبود تجمع خطاهای داده و نبود مشکل پیدا کردن کلمات در گفت‌وگوهای مشتری. اگر با وجود تنظیم ادامه داشت، باید مرز را دوباره ارزیابی کنیم." },
+                { "language": "ar", "text": "كمعايير سأذكر: صداع أقل في المساء، وعدم تراكم أخطاء البيانات، وعدم وجود صعوبات في إيجاد الكلمات في محادثات العملاء. إذا بقي ذلك رغم التعديل، فعلينا إعادة تقييم الحد." },
+                { "language": "tr", "text": "Ölçüt olarak şunları kaydederim: akşam daha az baş ağrısı, veri hatalarında birikme olmaması ve müşteri görüşmelerinde kelime bulma sorunları olmaması. Uyarlamaya rağmen bunlar kalırsa sınırı yeniden değerlendirmemiz gerekir." },
+                { "language": "ru", "text": "В качестве критериев я бы отметил: меньше головной боли вечером, отсутствие накопления ошибок в данных и отсутствие трудностей с подбором слов в разговорах с клиентами. Если это сохранится несмотря на адаптацию, нам нужно будет заново оценить предел." },
+                { "language": "ckb", "text": "وەک پێوەر تۆمار دەکەم: سەرئێشەی کەمتر لە ئێوارە، نەبوونی کۆبوونەوەی هەڵەی زانیاری و نەبوونی کێشەی دۆزینەوەی وشە لە گفتوگۆی کڕیاردا. ئەگەر ئەمە بە وجودی ڕێکخستنەکە بمێنێت، پێویستە سنوورەکە دووبارە هەڵبسەنگێنین." },
+                { "language": "kmr", "text": "Wek pîvan ez van qeyd dikim: serêşa kêmtir êvarê, nebûna komkirina xeletiyên daneyan û nebûna zehmetiya peyv-dîtinê di axaftinên mişteriyan de. Heke ev bi lihevhatinê jî bimîne, divê em sînorê ji nû ve binirxînin." },
+                { "language": "pl", "text": "Jako kryteria zapisałbym/zapisałabym: mniej bólów głowy wieczorem, brak nagromadzenia błędów w danych i brak problemów z doborem słów w rozmowach z klientami. Jeśli mimo dostosowania to pozostanie, będziemy musieli ponownie ocenić granicę." },
+                { "language": "ro", "text": "Ca criterii aș nota: mai puține dureri de cap seara, fără acumulare de greșeli în date și fără probleme de găsire a cuvintelor în convorbirile cu clienții. Dacă acestea rămân în ciuda adaptării, va trebui să reevaluăm limita." },
+                { "language": "sq", "text": "Si kritere do të shënoja: më pak dhimbje koke në mbrëmje, pa grumbullim gabimesh në të dhëna dhe pa vështirësi për të gjetur fjalët në bisedat me klientët. Nëse kjo mbetet pavarësisht përshtatjes, duhet ta rivlerësojmë kufirin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht die Belastungsgrenze überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer makes the strain limit reviewable." },
+                { "language": "fa", "text": "قوی: پاسخ مرز تحمل فشار را قابل بازبینی می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يجعل حد التحمل قابلًا للمراجعة." },
+                { "language": "tr", "text": "Güçlü: Yanıt yüklenme sınırını yeniden değerlendirilebilir hâle getiriyor." },
+                { "language": "ru", "text": "Сильно: ответ делает предел нагрузки проверяемым." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنووری فشار دەکاتە شتێکی پشکنراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sînorê barê kontrolbar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź czyni granicę obciążenia możliwą do sprawdzenia." },
+                { "language": "ro", "text": "Puternic: răspunsul face limita de solicitare verificabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën kufirin e ngarkesës të rishikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn ich mich nach zwei Wochen besser fühle, war es wahrscheinlich genug.",
+              "translations": [
+                { "language": "en", "text": "If I feel better after two weeks, it was probably enough." },
+                { "language": "fa", "text": "اگر بعد از دو هفته حالم بهتر باشد، احتمالاً کافی بوده است." },
+                { "language": "ar", "text": "إذا شعرت بتحسن بعد أسبوعين، فربما كان ذلك كافيًا." },
+                { "language": "tr", "text": "İki hafta sonra daha iyi hissedersem muhtemelen yeterli olmuştur." },
+                { "language": "ru", "text": "Если через две недели я почувствую себя лучше, вероятно, этого было достаточно." },
+                { "language": "ckb", "text": "ئەگەر دوای دوو هەفتە باشتر هەستم کرد، ڕەنگە بەس بووبێت." },
+                { "language": "kmr", "text": "Heke piştî du hefteyan ez xwe baştir hîs bikim, dibe ku bes bûbe." },
+                { "language": "pl", "text": "Jeśli po dwóch tygodniach poczuję się lepiej, to prawdopodobnie wystarczyło." },
+                { "language": "ro", "text": "Dacă după două săptămâni mă simt mai bine, probabil a fost suficient." },
+                { "language": "sq", "text": "Nëse pas dy javësh ndihem më mirë, ndoshta ka mjaftuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage. Ein Gesamtgefühl reicht nicht, wenn Arbeitsfehler, Kopfschmerzen und Konzentration die Kernpunkte sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague. A general feeling is not enough when work errors, headaches, and concentration are the core points." },
+                { "language": "fa", "text": "بیش از حد مبهم است. حس کلی کافی نیست وقتی خطاهای کاری، سردرد و تمرکز نکات اصلی هستند." },
+                { "language": "ar", "text": "غامض جدًا. الشعور العام لا يكفي عندما تكون أخطاء العمل والصداع والتركيز هي النقاط الأساسية." },
+                { "language": "tr", "text": "Çok belirsiz. İş hataları, baş ağrısı ve konsantrasyon temel noktalar olduğunda genel his yeterli değildir." },
+                { "language": "ru", "text": "Слишком расплывчато. Общее самочувствие недостаточно, когда ключевыми являются ошибки в работе, головные боли и концентрация." },
+                { "language": "ckb", "text": "زۆر ناڕوونە. هەستی گشتی بەس نییە کاتێک هەڵەی کار، سەرئێشە و تەرکیز خاڵە سەرەکییەکانن." },
+                { "language": "kmr", "text": "Pir nezelal e. Hesta giştî bes nîne dema xeletiyên kar, serêş û têgihiştin xalên bingehîn bin." },
+                { "language": "pl", "text": "Zbyt ogólne. Ogólne samopoczucie nie wystarczy, gdy głównymi punktami są błędy w pracy, bóle głowy i koncentracja." },
+                { "language": "ro", "text": "Prea vag. O senzație generală nu este suficientă când erorile la muncă, durerile de cap și concentrarea sunt punctele centrale." },
+                { "language": "sq", "text": "Shumë e paqartë. Ndjesia e përgjithshme nuk mjafton kur gabimet në punë, dhimbjet e kokës dhe përqendrimi janë pikat kryesore." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das passt. Bitte halten Sie fest, dass ich grundsätzlich arbeitsfähig bin, aber vorübergehend keine langen Telefonblöcke und keine Doppelschichten übernehmen sollte. In zwei Wochen prüfen wir anhand der genannten Kriterien, ob die Anpassung reicht.",
+              "translations": [
+                { "language": "en", "text": "That fits. Please state that I am basically able to work, but temporarily should not take on long phone blocks or double shifts. In two weeks, we will check using the criteria named whether the adjustment is enough." },
+                { "language": "fa", "text": "این مناسب است. لطفاً ثبت کنید که من اصولاً قادر به کار هستم، اما به‌طور موقت نباید بلوک‌های تلفنی طولانی و شیفت‌های دوگانه را بر عهده بگیرم. دو هفته دیگر با معیارهای گفته‌شده بررسی می‌کنیم که آیا تنظیم کافی است یا نه." },
+                { "language": "ar", "text": "هذا مناسب. يرجى ذكر أنني قادر على العمل من حيث المبدأ، لكن مؤقتًا لا ينبغي أن أتولى كتل هاتف طويلة أو ورديات مزدوجة. بعد أسبوعين نتحقق بالمعايير المذكورة مما إذا كان التعديل كافيًا." },
+                { "language": "tr", "text": "Bu uygun. Lütfen temelde çalışabilir olduğumu, ancak geçici olarak uzun telefon blokları ve çift vardiyalar üstlenmemem gerektiğini belirtin. İki hafta sonra, belirtilen ölçütlere göre uyarlamanın yeterli olup olmadığını kontrol ederiz." },
+                { "language": "ru", "text": "Это подходит. Пожалуйста, укажите, что в принципе я трудоспособен, но временно не должен брать длинные телефонные блоки и двойные смены. Через две недели мы проверим по названным критериям, достаточно ли адаптации." },
+                { "language": "ckb", "text": "ئەمە گونجاوە. تکایە تۆمار بکەن کە من بە بنەڕەت توانای کارکردنم هەیە، بەڵام بە کاتی نابێت بەشە تەلەفۆنییە درێژەکان و شیفتی دووانە وەربگرم. لە دوو هەفتەدا بە پێی پێوەرە ناوبراوەکان دەپشکنین ئایا ڕێکخستنەکە بەسە یان نا." },
+                { "language": "kmr", "text": "Ev guncav e. Ji kerema xwe qeyd bikin ku ez bi bingehîn dikarim bixebitim, lê demkî divê blokên dirêj ên telefonê û şiftên ducarî negirim. Piştî du hefteyan em li gor pîvanên navkirî kontrol dikin ka lihevhatin bes e an na." },
+                { "language": "pl", "text": "To pasuje. Proszę zapisać, że zasadniczo jestem zdolny/zdolna do pracy, ale tymczasowo nie powinienem/nie powinnam przejmować długich bloków telefonicznych ani podwójnych zmian. Za dwa tygodnie sprawdzimy według wymienionych kryteriów, czy dostosowanie wystarcza." },
+                { "language": "ro", "text": "Asta se potrivește. Vă rog să notați că sunt în principiu apt de muncă, dar temporar nu ar trebui să preiau blocuri lungi de telefonie și ture duble. Peste două săptămâni verificăm pe baza criteriilor numite dacă adaptarea este suficientă." },
+                { "language": "sq", "text": "Kjo përshtatet. Ju lutem shënoni se në parim jam i aftë për punë, por përkohësisht nuk duhet të marr blloqe të gjata telefonike dhe turne të dyfishta. Pas dy javësh kontrollojmë sipas kritereve të përmendura nëse përshtatja mjafton." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussantwort trennt Arbeitsfähigkeit, temporäre Grenze und Kontrolle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final answer separates ability to work, temporary limit, and review." },
+                { "language": "fa", "text": "قوی: پاسخ پایانی توانایی کار، مرز موقت و کنترل را جدا می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب الختامي يميز بين القدرة على العمل والحد المؤقت والمراجعة." },
+                { "language": "tr", "text": "Güçlü: Son yanıt çalışma gücünü, geçici sınırı ve kontrolü ayırıyor." },
+                { "language": "ru", "text": "Сильно: финальный ответ разделяет трудоспособность, временный предел и контроль." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامی کۆتایی توانای کار، سنووری کاتی و کۆنترۆڵ جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiva dawî şiyana karê, sînorê demkî û kontrolê ji hev veqetîne." },
+                { "language": "pl", "text": "Mocne: końcowa odpowiedź oddziela zdolność do pracy, tymczasową granicę i kontrolę." },
+                { "language": "ro", "text": "Puternic: răspunsul final separă capacitatea de muncă, limita temporară și controlul." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfundimtare ndan aftësinë për punë, kufirin e përkohshëm dhe kontrollin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Bitte schreiben Sie einfach, dass ich zurzeit nicht voll belastbar bin.",
+              "translations": [
+                { "language": "en", "text": "Please simply write that I am currently not fully resilient." },
+                { "language": "fa", "text": "لطفاً فقط بنویسید که فعلاً کاملاً تحمل فشار ندارم." },
+                { "language": "ar", "text": "يرجى فقط كتابة أنني حاليًا لست قادرًا على التحمل الكامل." },
+                { "language": "tr", "text": "Lütfen sadece şu anda tam yüklenmeye dayanıklı olmadığımı yazın." },
+                { "language": "ru", "text": "Пожалуйста, просто напишите, что сейчас я не полностью выдерживаю нагрузку." },
+                { "language": "ckb", "text": "تکایە تەنها بنووسن کە ئێستا بە تەواوی توانای هەڵگرتنی فشارم نییە." },
+                { "language": "kmr", "text": "Ji kerema xwe tenê binivîsin ku ez niha bi tevahî tehamula barê nakim." },
+                { "language": "pl", "text": "Proszę po prostu napisać, że obecnie nie jestem w pełni obciążalny/obciążalna." },
+                { "language": "ro", "text": "Vă rog să scrieți pur și simplu că momentan nu pot suporta solicitare completă." },
+                { "language": "sq", "text": "Ju lutem shkruani thjesht se aktualisht nuk jam plotësisht i përballueshëm ndaj ngarkesës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Eine verwertbare Einschätzung braucht Tätigkeiten, Dauer, Grenze und Kontrollzeitpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. A usable assessment needs tasks, duration, limit, and review date." },
+                { "language": "fa", "text": "بیش از حد کلی است. ارزیابی قابل استفاده به کارها، مدت، مرز و زمان کنترل نیاز دارد." },
+                { "language": "ar", "text": "عام جدًا. التقييم القابل للاستخدام يحتاج إلى مهام ومدة وحد وموعد مراجعة." },
+                { "language": "tr", "text": "Çok genel. Kullanılabilir bir değerlendirme görevler, süre, sınır ve kontrol tarihi gerektirir." },
+                { "language": "ru", "text": "Слишком общее. Пригодной оценке нужны задачи, длительность, предел и дата контроля." },
+                { "language": "ckb", "text": "زۆر گشتییە. هەڵسەنگاندنی بەکارهاتوو پێویستی بە ئەرک، ماوە، سنوور و کاتی کۆنترۆڵ هەیە." },
+                { "language": "kmr", "text": "Pir giştî ye. Nirxandineke bikêr pêwîstî bi kar, dem, sînor û dema kontrolê heye." },
+                { "language": "pl", "text": "Zbyt ogólne. Użyteczna ocena potrzebuje zadań, czasu trwania, granicy i terminu kontroli." },
+                { "language": "ro", "text": "Prea general. O evaluare utilizabilă are nevoie de activități, durată, limită și data controlului." },
+                { "language": "sq", "text": "Shumë e përgjithshme. Një vlerësim i përdorshëm ka nevojë për detyra, kohëzgjatje, kufi dhe datë kontrolli." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "functional-limit",
+          "text": "Eine Belastungsgrenze wird überzeugend, wenn Restfähigkeit und Grenze zugleich sichtbar werden.",
+          "translations": [
+            { "language": "en", "text": "A strain limit becomes convincing when remaining ability and limit become visible at the same time." },
+            { "language": "fa", "text": "مرز تحمل فشار زمانی قانع‌کننده می‌شود که توانایی باقی‌مانده و مرز هم‌زمان دیده شوند." },
+            { "language": "ar", "text": "يصبح حد التحمل مقنعًا عندما تظهر القدرة المتبقية والحد في الوقت نفسه." },
+            { "language": "tr", "text": "Yüklenme sınırı, kalan güç ve sınır aynı anda görünür olduğunda ikna edici olur." },
+            { "language": "ru", "text": "Предел нагрузки становится убедительным, когда одновременно видны оставшаяся способность и предел." },
+            { "language": "ckb", "text": "سنووری فشار کاتێک قایلکەر دەبێت کە توانای ماوە و سنوورەکە بەیەکەوە دیار بن." },
+            { "language": "kmr", "text": "Sînorê barê dema bawerkirî dibe ku şiyana mayî û sînor bi hev re xuya bibin." },
+            { "language": "pl", "text": "Granica obciążenia staje się przekonująca, gdy jednocześnie widać pozostałą zdolność i granicę." },
+            { "language": "ro", "text": "O limită de solicitare devine convingătoare când capacitatea rămasă și limita devin vizibile simultan." },
+            { "language": "sq", "text": "Kufiri i ngarkesës bëhet bindës kur aftësia e mbetur dhe kufiri bëhen të dukshme njëkohësisht." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "triggers-and-relief",
+          "text": "Auslöser und entlastende Bedingungen sollten getrennt genannt werden.",
+          "translations": [
+            { "language": "en", "text": "Triggers and relieving conditions should be named separately." },
+            { "language": "fa", "text": "محرک‌ها و شرایط کاهش‌دهنده فشار باید جداگانه نام برده شوند." },
+            { "language": "ar", "text": "ينبغي ذكر المحفزات والظروف المخففة بشكل منفصل." },
+            { "language": "tr", "text": "Tetikleyiciler ve rahatlatıcı koşullar ayrı ayrı belirtilmelidir." },
+            { "language": "ru", "text": "Триггеры и облегчающие условия следует называть отдельно." },
+            { "language": "ckb", "text": "هۆکارە هەڵخەڕێنەرەکان و مەرجە بارسووککەرەوەکان پێویستە بە جیا ناوببرێن." },
+            { "language": "kmr", "text": "Destpêker û şertên sivikkirinê divê cuda werin navkirin." },
+            { "language": "pl", "text": "Wyzwalacze i warunki odciążające należy nazwać oddzielnie." },
+            { "language": "ro", "text": "Declanșatorii și condițiile de ușurare ar trebui numite separat." },
+            { "language": "sq", "text": "Shkaktarët dhe kushtet lehtësuese duhet të përmenden veçmas." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "temporary-adjustment",
+          "text": "Befristete, konkrete Anpassungen sind besser verwertbar als allgemeine Entlastungswünsche.",
+          "translations": [
+            { "language": "en", "text": "Time-limited, concrete adjustments are more usable than general wishes for relief." },
+            { "language": "fa", "text": "تنظیم‌های مشخص و محدود به زمان از خواسته‌های کلی برای کاهش فشار قابل استفاده‌ترند." },
+            { "language": "ar", "text": "التعديلات المحددة والمحدودة المدة أكثر قابلية للاستخدام من رغبات التخفيف العامة." },
+            { "language": "tr", "text": "Süreyle sınırlı, somut uyarlamalar genel rahatlama isteklerinden daha kullanışlıdır." },
+            { "language": "ru", "text": "Ограниченные по времени конкретные адаптации более пригодны, чем общие пожелания разгрузки." },
+            { "language": "ckb", "text": "ڕێکخستنە دیاریکراو و سنووردارەکانی کات لە داواکاریی گشتیی کەمکردنەوەی فشار بەکارهێنانترن." },
+            { "language": "kmr", "text": "Lihevhatinên bi demê sînorkirî û konkret ji daxwazên giştî yên sivikkirinê bikêrtir in." },
+            { "language": "pl", "text": "Ograniczone czasowo, konkretne dostosowania są bardziej użyteczne niż ogólne życzenia odciążenia." },
+            { "language": "ro", "text": "Adaptările concrete, limitate în timp, sunt mai utilizabile decât dorințele generale de reducere a solicitării." },
+            { "language": "sq", "text": "Përshtatjet konkrete, të kufizuara në kohë, janë më të përdorshme se dëshirat e përgjithshme për lehtësim." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "bounded-work-summary",
+          "text": "Die Schlussformel sollte Arbeitsfähigkeit, Grenze, Dauer und Kontrolle zusammenführen.",
+          "translations": [
+            { "language": "en", "text": "The closing formula should bring together ability to work, limit, duration, and review." },
+            { "language": "fa", "text": "فرمول پایانی باید توانایی کار، مرز، مدت و کنترل را کنار هم بیاورد." },
+            { "language": "ar", "text": "ينبغي أن تجمع الصيغة الختامية بين القدرة على العمل والحد والمدة والمراجعة." },
+            { "language": "tr", "text": "Son ifade çalışma gücünü, sınırı, süreyi ve kontrolü bir araya getirmelidir." },
+            { "language": "ru", "text": "Заключительная формула должна объединять трудоспособность, предел, длительность и контроль." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی پێویستە توانای کار، سنوور، ماوە و کۆنترۆڵ پێکەوە بهێنێت." },
+            { "language": "kmr", "text": "Formûla dawî divê şiyana karê, sînor, dem û kontrolê bi hev re bîne." },
+            { "language": "pl", "text": "Formuła końcowa powinna łączyć zdolność do pracy, granicę, czas trwania i kontrolę." },
+            { "language": "ro", "text": "Formula finală ar trebui să aducă împreună capacitatea de muncă, limita, durata și controlul." },
+            { "language": "sq", "text": "Formula përfundimtare duhet të bashkojë aftësinë për punë, kufirin, kohëzgjatjen dhe kontrollin." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-work-strain-limit",
+          "placement": "detail-header",
+          "purpose": "Illustrate a calm doctor-office conversation where a patient explains work-related strain limits and realistic temporary adjustments.",
+          "altText": "Ein Patient und eine Ärztin besprechen in einer deutschen Praxis sachlich berufliche Belastungsgrenzen, Pausen und eine befristete Anpassung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A patient and a doctor calmly discuss work-related strain limits, breaks, and a temporary adjustment in a German medical office." },
+            { "language": "fa", "text": "یک بیمار و پزشک در مطب آلمان با آرامش درباره مرزهای فشار کاری، استراحت‌ها و تنظیم موقت صحبت می‌کنند." },
+            { "language": "ar", "text": "مريض وطبيبة يناقشان بهدوء في عيادة ألمانية حدود التحمل المهني وفترات الراحة وتعديلًا مؤقتًا." },
+            { "language": "tr", "text": "Bir hasta ve doktor, Alman bir muayenehanede işle ilgili yüklenme sınırları, molalar ve geçici uyarlama hakkında sakin biçimde konuşuyor." },
+            { "language": "ru", "text": "Пациент и врач спокойно обсуждают в немецком кабинете пределы нагрузки на работе, перерывы и временную адаптацию." },
+            { "language": "ckb", "text": "نەخۆشێک و پزیشکێک لە مطبێکی ئەڵمانیدا بە ئارامی دەربارەی سنووری فشاری کاری، پشوودان و ڕێکخستنی کاتی قسە دەکەن." },
+            { "language": "kmr", "text": "Nexweşek û bijîşkek li polîklînîkeke Alman bi aramî li ser sînorên barê kar, bêhnvedan û lihevhatina demkî diaxivin." },
+            { "language": "pl", "text": "Pacjent i lekarka spokojnie omawiają w niemieckim gabinecie granice obciążenia zawodowego, przerwy i tymczasowe dostosowanie." },
+            { "language": "ro", "text": "Un pacient și o doctoriță discută calm într-un cabinet german limitele solicitării profesionale, pauzele și o adaptare temporară." },
+            { "language": "sq", "text": "Një pacient dhe një mjeke diskutojnë qetësisht në një ordinancë gjermane kufijtë e ngarkesës në punë, pushimet dhe një përshtatje të përkohshme." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult patient and doctor seated in a German medical office, neutral folder and simple non-readable work schedule marks, calm discussion about temporary work strain limits and breaks, no logos, no private data, no dramatic emergency scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

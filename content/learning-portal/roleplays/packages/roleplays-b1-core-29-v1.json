@@ -1,0 +1,932 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-29-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 29 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 29",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-einen-verlorenen-gegenstand-beschreiben",
+      "linkedDialogueSlug": null,
+      "title": "Einen verlorenen Gegenstand beschreiben",
+      "titleTranslations": [
+        { "language": "en", "text": "Describing a lost item" },
+        { "language": "fa", "text": "توصیف یک وسیله گم‌شده" },
+        { "language": "ar", "text": "وصف غرض مفقود" },
+        { "language": "tr", "text": "Kaybolan bir eşyayı tarif etmek" },
+        { "language": "ru", "text": "Описать потерянную вещь" },
+        { "language": "ckb", "text": "وەسفکردنی شتێکی ونبوو" },
+        { "language": "kmr", "text": "Tiştekî winda şirove kirin" },
+        { "language": "pl", "text": "Opisanie zgubionego przedmiotu" },
+        { "language": "ro", "text": "Descrierea unui obiect pierdut" },
+        { "language": "sq", "text": "Përshkrimi i një sendi të humbur" }
+      ],
+      "description": "Du meldest dich am Fundbüro im Bahnhof, weil du einen Rucksack im Zug verloren hast. Du beschreibst den Gegenstand, den Ort, die Zeit und hinterlässt Kontaktdaten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You contact the lost-and-found office at the train station because you lost a backpack on the train. You describe the item, place, time, and leave contact details." },
+        { "language": "fa", "text": "به دفتر اشیای گمشده در ایستگاه مراجعه می‌کنی، چون یک کوله‌پشتی را در قطار گم کرده‌ای. وسیله، مکان، زمان و اطلاعات تماس را توضیح می‌دهی." },
+        { "language": "ar", "text": "تتواصل مع مكتب المفقودات في محطة القطار لأنك فقدت حقيبة ظهر في القطار. تصف الغرض والمكان والوقت وتترك بيانات الاتصال." },
+        { "language": "tr", "text": "Trende bir sırt çantası kaybettiğin için istasyondaki kayıp eşya bürosuna başvuruyorsun. Eşyayı, yeri, zamanı ve iletişim bilgilerini açıklıyorsun." },
+        { "language": "ru", "text": "Ты обращаешься в бюро находок на вокзале, потому что потерял рюкзак в поезде. Ты описываешь вещь, место, время и оставляешь контактные данные." },
+        { "language": "ckb", "text": "لە نووسینگەی شتە ونبووەکان لە وێستگەی شەمەندەفەر پەیوەندی دەکەیت، چونکە جانتایەکی پشتت لە شەمەندەفەر ون کردووە. شتەکە، شوێن، کات و زانیاریی پەیوەندی وەسف دەکەیت." },
+        { "language": "kmr", "text": "Tu li nivîsgeha tiştên winda ya rawestgeha trenê serî lê didî, ji ber ku te çenteyek piştê di trenê de winda kiriye. Tu tişt, cih, dem û agahiyên têkiliyê şirove dikî." },
+        { "language": "pl", "text": "Zgłaszasz się do biura rzeczy znalezionych na dworcu, bo zgubiłeś plecak w pociągu. Opisujesz przedmiot, miejsce, czas i zostawiasz dane kontaktowe." },
+        { "language": "ro", "text": "Te adresezi biroului de obiecte pierdute din gară deoarece ai pierdut un rucsac în tren. Descrii obiectul, locul, ora și lași date de contact." },
+        { "language": "sq", "text": "Paraqitesh në zyrën e sendeve të humbura në stacion, sepse ke humbur një çantë shpine në tren. Përshkruan sendin, vendin, kohën dhe lë të dhënat e kontaktit." }
+      ],
+      "learnerGoal": "Beschreibe den verlorenen Gegenstand mit genauen Details und kläre, wie du informiert wirst, falls er gefunden wird.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Describe the lost item with precise details and clarify how you will be informed if it is found." },
+        { "language": "fa", "text": "وسیله گم‌شده را با جزئیات دقیق توصیف کن و روشن کن اگر پیدا شد چطور به تو اطلاع می‌دهند." },
+        { "language": "ar", "text": "صف الغرض المفقود بتفاصيل دقيقة ووضح كيف سيتم إبلاغك إذا تم العثور عليه." },
+        { "language": "tr", "text": "Kaybolan eşyayı net ayrıntılarla tarif et ve bulunursa sana nasıl haber verileceğini netleştir." },
+        { "language": "ru", "text": "Опиши потерянную вещь с точными деталями и уточни, как тебя уведомят, если её найдут." },
+        { "language": "ckb", "text": "شتە ونبووەکە بە وردەکاریی ڕوون وەسف بکە و ڕوون بکەرەوە ئەگەر بدۆزرێتەوە چۆن ئاگادارت دەکەنەوە." },
+        { "language": "kmr", "text": "Tiştê winda bi hûrguliyên zelal şirove bike û zelal bike heke were dîtin dê çawa agahdar bibî." },
+        { "language": "pl", "text": "Opisz zgubiony przedmiot dokładnie i wyjaśnij, jak zostaniesz poinformowany, jeśli się znajdzie." },
+        { "language": "ro", "text": "Descrie obiectul pierdut cu detalii precise și clarifică modul în care vei fi informat dacă este găsit." },
+        { "language": "sq", "text": "Përshkruaj sendin e humbur me detaje të sakta dhe sqaro si do të njoftohesh nëse gjendet." }
+      ],
+      "cefrLevel": "B1",
+      "category": "travel",
+      "topics": ["transport-and-travel", "customer-service"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "explain-problem",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2600,
+      "roles": [
+        {
+          "roleKey": "lost-property-office",
+          "displayName": "Fundbüro",
+          "translations": [
+            { "language": "en", "text": "Lost-and-found office" },
+            { "language": "fa", "text": "دفتر اشیای گمشده" },
+            { "language": "ar", "text": "مكتب المفقودات" },
+            { "language": "tr", "text": "Kayıp eşya bürosu" },
+            { "language": "ru", "text": "Бюро находок" },
+            { "language": "ckb", "text": "نووسینگەی شتە ونبووەکان" },
+            { "language": "kmr", "text": "Nivîsgeha tiştên winda" },
+            { "language": "pl", "text": "Biuro rzeczy znalezionych" },
+            { "language": "ro", "text": "Biroul de obiecte pierdute" },
+            { "language": "sq", "text": "Zyra e sendeve të humbura" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Reisender",
+          "translations": [
+            { "language": "en", "text": "Passenger" },
+            { "language": "fa", "text": "مسافر" },
+            { "language": "ar", "text": "مسافر" },
+            { "language": "tr", "text": "Yolcu" },
+            { "language": "ru", "text": "Пассажир" },
+            { "language": "ckb", "text": "گەشتیار" },
+            { "language": "kmr", "text": "Rêwî" },
+            { "language": "pl", "text": "Podróżny" },
+            { "language": "ro", "text": "Călător" },
+            { "language": "sq", "text": "Udhëtar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "lost-property-office",
+          "baseText": "Guten Tag, Fundbüro der Bahn. Was haben Sie verloren?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, rail lost-and-found office. What have you lost?" },
+            { "language": "fa", "text": "روز بخیر، دفتر اشیای گمشده راه‌آهن. چه چیزی گم کرده‌اید؟" },
+            { "language": "ar", "text": "مرحباً، مكتب المفقودات للسكك الحديدية. ماذا فقدت؟" },
+            { "language": "tr", "text": "İyi günler, demiryolu kayıp eşya bürosu. Ne kaybettiniz?" },
+            { "language": "ru", "text": "Добрый день, бюро находок железной дороги. Что вы потеряли?" },
+            { "language": "ckb", "text": "ڕۆژ باش، نووسینگەی شتە ونبووەکانی شەمەندەفەر. چیتان ون کردووە؟" },
+            { "language": "kmr", "text": "Roj baş, nivîsgeha tiştên winda ya trenê. We çi winda kiriye?" },
+            { "language": "pl", "text": "Dzień dobry, kolejowe biuro rzeczy znalezionych. Co pan zgubił?" },
+            { "language": "ro", "text": "Bună ziua, biroul de obiecte pierdute al căilor ferate. Ce ați pierdut?" },
+            { "language": "sq", "text": "Mirëdita, zyra e sendeve të humbura e hekurudhës. Çfarë keni humbur?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe gestern im RE 7 nach Köln einen schwarzen Rucksack verloren. Er hat einen blauen Schlüsselanhänger an der Seite.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. Yesterday I lost a black backpack on the RE 7 to Cologne. It has a blue key ring on the side." },
+            { "language": "fa", "text": "روز بخیر. دیروز در قطار RE 7 به سمت کلن یک کوله‌پشتی مشکی گم کردم. کنار آن یک جاکلیدی آبی دارد." },
+            { "language": "ar", "text": "مرحباً. فقدت أمس حقيبة ظهر سوداء في قطار RE 7 المتجه إلى كولونيا. عليها علاقة مفاتيح زرقاء من الجانب." },
+            { "language": "tr", "text": "İyi günler. Dün Köln yönündeki RE 7'de siyah bir sırt çantası kaybettim. Yan tarafında mavi bir anahtarlık var." },
+            { "language": "ru", "text": "Добрый день. Вчера я потерял чёрный рюкзак в RE 7 в сторону Кёльна. Сбоку на нём синий брелок." },
+            { "language": "ckb", "text": "ڕۆژ باش. دوێنێ لە RE 7 بەرەو کۆلن جانتایەکی پشتی ڕەشم ون کرد. لە لاوە کلیلدانێکی شینی پێوەیە." },
+            { "language": "kmr", "text": "Roj baş. Doh di RE 7 ber bi Kölnê de çenteyekî piştê yê reş min winda kir. Li aliyê wê kilîtdanekî şîn heye." },
+            { "language": "pl", "text": "Dzień dobry. Wczoraj zgubiłem czarny plecak w RE 7 do Kolonii. Ma z boku niebieski brelok." },
+            { "language": "ro", "text": "Bună ziua. Ieri am pierdut un rucsac negru în RE 7 spre Köln. Are pe lateral un breloc albastru." },
+            { "language": "sq", "text": "Mirëdita. Dje humba një çantë shpine të zezë në RE 7 për në Këln. Ka një mbajtëse çelësash blu anash." }
+          ],
+          "function": "state-lost-item",
+          "expectedLearnerAction": "Name item, train, destination, color, and one identifying detail."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "lost-property-office",
+          "baseText": "Können Sie noch sagen, wann und ungefähr wo im Zug Sie den Rucksack zuletzt gesehen haben?",
+          "translations": [
+            { "language": "en", "text": "Can you also say when and roughly where on the train you last saw the backpack?" },
+            { "language": "fa", "text": "می‌توانید بگویید آخرین بار کِی و تقریباً کجای قطار کوله‌پشتی را دیدید؟" },
+            { "language": "ar", "text": "هل يمكنك أيضاً أن تقول متى وأين تقريباً في القطار رأيت الحقيبة آخر مرة؟" },
+            { "language": "tr", "text": "Sırt çantasını en son ne zaman ve trenin yaklaşık neresinde gördüğünüzü de söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Можете также сказать, когда и примерно где в поезде вы в последний раз видели рюкзак?" },
+            { "language": "ckb", "text": "دەتوانن بڵێن کەی و نزیکەی لە کوێی شەمەندەفەرەکە دوا جار جانتاکەتان بینی؟" },
+            { "language": "kmr", "text": "Hûn dikarin bibêjin kengî û bi nêzîkî li ku derê di trenê de cara dawî çentê dît?" },
+            { "language": "pl", "text": "Czy może pan jeszcze powiedzieć, kiedy i mniej więcej gdzie w pociągu ostatnio widział pan plecak?" },
+            { "language": "ro", "text": "Puteți spune și când și aproximativ unde în tren ați văzut ultima dată rucsacul?" },
+            { "language": "sq", "text": "A mund të thoni edhe kur dhe afërsisht ku në tren e patë për herë të fundit çantën?" }
+          ],
+          "function": "ask-details"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich saß im Wagen direkt hinter dem Fahrradbereich. Ausgestiegen bin ich gegen 17:10 Uhr in Köln. Im Rucksack sind ein Ladegerät und ein Ordner mit Kopien.",
+          "translations": [
+            { "language": "en", "text": "I sat in the carriage directly behind the bicycle area. I got off in Cologne at around 5:10 p.m. In the backpack there is a charger and a folder with copies." },
+            { "language": "fa", "text": "در واگنی نشسته بودم که مستقیم پشت بخش دوچرخه بود. حدود ساعت ۱۷:۱۰ در کلن پیاده شدم. داخل کوله یک شارژر و یک پوشه با کپی‌هاست." },
+            { "language": "ar", "text": "كنت جالساً في العربة مباشرة خلف منطقة الدراجات. نزلت في كولونيا حوالي الساعة 17:10. في الحقيبة شاحن وملف فيه نسخ." },
+            { "language": "tr", "text": "Bisiklet bölümünün hemen arkasındaki vagonda oturuyordum. Köln'de yaklaşık 17:10'da indim. Çantada bir şarj cihazı ve fotokopili bir dosya var." },
+            { "language": "ru", "text": "Я сидел в вагоне прямо за зоной для велосипедов. В Кёльне я вышел примерно в 17:10. В рюкзаке зарядное устройство и папка с копиями." },
+            { "language": "ckb", "text": "لە واگۆنێکدا دانیشتبووم کە ڕاستەوخۆ پشت ناوچەی پاسکیلەکان بوو. نزیکەی کاتژمێر ١٧:١٠ لە کۆلن دابەزیم. لە جانتاکەدا شارجەرێک و فایلی کۆپییەکان هەیە." },
+            { "language": "kmr", "text": "Ez di vagona rast li pişt beşa bisiklêtan de rûniştibûm. Ez li Kölnê nêzîkî saet 17:10 daketim. Di çentê de şarjker û dosyayek bi kopiyan hene." },
+            { "language": "pl", "text": "Siedziałem w wagonie bezpośrednio za strefą rowerową. Wysiadłem w Kolonii około 17:10. W plecaku jest ładowarka i teczka z kopiami." },
+            { "language": "ro", "text": "Stăteam în vagonul direct în spatele zonei pentru biciclete. Am coborât la Köln în jurul orei 17:10. În rucsac sunt un încărcător și un dosar cu copii." },
+            { "language": "sq", "text": "Isha ulur në vagonin menjëherë pas zonës së biçikletave. Zbrita në Këln rreth orës 17:10. Në çantë ka një karikues dhe një dosje me kopje." }
+          ],
+          "function": "give-location-details",
+          "expectedLearnerAction": "Give precise location, time, and contents."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "lost-property-office",
+          "baseText": "Gut, ich nehme eine Verlustmeldung auf. Wir brauchen noch Ihren Namen, eine Telefonnummer und eine E-Mail-Adresse.",
+          "translations": [
+            { "language": "en", "text": "Good, I will record a loss report. We still need your name, a phone number, and an email address." },
+            { "language": "fa", "text": "خوب، یک گزارش گم‌شدن ثبت می‌کنم. هنوز به نام، شماره تلفن و ایمیل شما نیاز داریم." },
+            { "language": "ar", "text": "حسناً، سأُسجل بلاغ فقدان. نحتاج أيضاً إلى اسمك ورقم هاتف وبريد إلكتروني." },
+            { "language": "tr", "text": "Tamam, bir kayıp bildirimi alıyorum. Ayrıca adınıza, telefon numaranıza ve e-posta adresinize ihtiyacımız var." },
+            { "language": "ru", "text": "Хорошо, я оформлю заявление о потере. Нам ещё нужны ваше имя, номер телефона и адрес электронной почты." },
+            { "language": "ckb", "text": "باشە، ڕاپۆرتێکی ونبوون تۆمار دەکەم. هێشتا پێویستمان بە ناو، ژمارەی تەلەفۆن و ناونیشانی ئیمەیڵتان هەیە." },
+            { "language": "kmr", "text": "Baş e, ez raporek wendabûnê tomar dikim. Hîn jî em navê we, hejmareya telefonê û navnîşana e-nameyê dixwazin." },
+            { "language": "pl", "text": "Dobrze, przyjmę zgłoszenie zagubienia. Potrzebujemy jeszcze pana imienia i nazwiska, numeru telefonu i adresu e-mail." },
+            { "language": "ro", "text": "Bine, înregistrez o declarație de pierdere. Mai avem nevoie de numele dumneavoastră, un număr de telefon și o adresă de e-mail." },
+            { "language": "sq", "text": "Mirë, do të regjistroj një njoftim humbjeje. Na duhet edhe emri juaj, një numër telefoni dhe një adresë emaili." }
+          ],
+          "function": "request-contact"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Natürlich. Meine Telefonnummer ist 0176 234567, und meine E-Mail-Adresse ist amir.beispiel@example.com. Wie werde ich informiert, falls der Rucksack gefunden wird?",
+          "translations": [
+            { "language": "en", "text": "Of course. My phone number is 0176 234567, and my email address is amir.beispiel@example.com. How will I be informed if the backpack is found?" },
+            { "language": "fa", "text": "البته. شماره تلفنم 0176 234567 است و ایمیلم amir.beispiel@example.com است. اگر کوله پیدا شود چطور به من اطلاع می‌دهید؟" },
+            { "language": "ar", "text": "بالطبع. رقم هاتفي هو 0176 234567، وبريدي الإلكتروني هو amir.beispiel@example.com. كيف سيتم إبلاغي إذا عُثر على الحقيبة؟" },
+            { "language": "tr", "text": "Elbette. Telefon numaram 0176 234567, e-posta adresim amir.beispiel@example.com. Çanta bulunursa bana nasıl haber verilecek?" },
+            { "language": "ru", "text": "Конечно. Мой номер телефона 0176 234567, а электронная почта amir.beispiel@example.com. Как меня уведомят, если рюкзак найдётся?" },
+            { "language": "ckb", "text": "بێگومان. ژمارەی تەلەفۆنم 0176 234567ە، و ئیمەیڵەکەم amir.beispiel@example.comە. ئەگەر جانتاکە بدۆزرێتەوە چۆن ئاگادار دەکرێمەوە؟" },
+            { "language": "kmr", "text": "Bê guman. Hejmara telefona min 0176 234567 e, û e-nameya min amir.beispiel@example.com e. Heke çente were dîtin ez çawa agahdar dibim?" },
+            { "language": "pl", "text": "Oczywiście. Mój numer telefonu to 0176 234567, a adres e-mail to amir.beispiel@example.com. Jak zostanę poinformowany, jeśli plecak się znajdzie?" },
+            { "language": "ro", "text": "Desigur. Numărul meu de telefon este 0176 234567, iar adresa mea de e-mail este amir.beispiel@example.com. Cum voi fi informat dacă rucsacul este găsit?" },
+            { "language": "sq", "text": "Sigurisht. Numri im i telefonit është 0176 234567 dhe adresa ime e emailit është amir.beispiel@example.com. Si do të njoftohem nëse gjendet çanta?" }
+          ],
+          "function": "give-contact-and-ask-process",
+          "expectedLearnerAction": "Provide contact details and ask about notification process."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "lost-property-office",
+          "baseText": "Wenn wir den Rucksack finden, bekommen Sie eine E-Mail. Zur Abholung bringen Sie bitte Ihren Ausweis mit.",
+          "translations": [
+            { "language": "en", "text": "If we find the backpack, you will receive an email. Please bring your ID when you pick it up." },
+            { "language": "fa", "text": "اگر کوله‌پشتی را پیدا کنیم، یک ایمیل دریافت می‌کنید. برای تحویل گرفتن لطفاً کارت شناسایی همراه داشته باشید." },
+            { "language": "ar", "text": "إذا وجدنا الحقيبة، ستتلقى بريداً إلكترونياً. عند الاستلام يرجى إحضار بطاقة الهوية." },
+            { "language": "tr", "text": "Çantayı bulursak size e-posta gelir. Teslim almak için lütfen kimliğinizi getirin." },
+            { "language": "ru", "text": "Если мы найдём рюкзак, вы получите электронное письмо. Для получения возьмите с собой удостоверение личности." },
+            { "language": "ckb", "text": "ئەگەر جانتاکە بدۆزینەوە، ئیمەیڵێکتان پێدەگات. بۆ وەرگرتن تکایە ناسنامەتان لەگەڵ بێنن." },
+            { "language": "kmr", "text": "Heke em çentê bibînin, hûn e-nameyekê distînin. Ji bo standinê ji kerema xwe nasnameya xwe bînin." },
+            { "language": "pl", "text": "Jeśli znajdziemy plecak, otrzyma pan e-mail. Przy odbiorze proszę zabrać dokument tożsamości." },
+            { "language": "ro", "text": "Dacă găsim rucsacul, veți primi un e-mail. Pentru ridicare, vă rugăm să aduceți actul de identitate." },
+            { "language": "sq", "text": "Nëse e gjejmë çantën, do të merrni një email. Për ta marrë, ju lutem sillni dokumentin e identitetit." }
+          ],
+          "function": "explain-notification"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann ist die Verlustmeldung mit Beschreibung und Kontaktdaten aufgenommen, und ich warte auf eine E-Mail vom Fundbüro.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then the loss report has been recorded with description and contact details, and I will wait for an email from the lost-and-found office." },
+            { "language": "fa", "text": "خیلی ممنون. پس گزارش گم‌شدن با توضیح و اطلاعات تماس ثبت شده است و منتظر ایمیل دفتر اشیای گمشده می‌مانم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن تم تسجيل بلاغ الفقدان مع الوصف وبيانات الاتصال، وسأنتظر بريداً إلكترونياً من مكتب المفقودات." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde kayıp bildirimi açıklama ve iletişim bilgileriyle kaydedildi, ben de kayıp eşya bürosundan e-posta bekleyeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Значит, заявление о потере с описанием и контактными данными оформлено, и я буду ждать письмо из бюро находок." },
+            { "language": "ckb", "text": "زۆر سوپاس. ئەوا ڕاپۆرتی ونبوون لەگەڵ وەسف و زانیاریی پەیوەندی تۆمار کرا، و چاوەڕێی ئیمەیڵێک لە نووسینگەی شتە ونبووەکان دەکەم." },
+            { "language": "kmr", "text": "Gelek spas. Hingê rapora wendabûnê bi şirove û agahiyên têkiliyê hate tomar kirin, û ez ê li benda e-nameyek ji nivîsgeha tiştên winda bim." },
+            { "language": "pl", "text": "Dziękuję bardzo. Czyli zgłoszenie zagubienia z opisem i danymi kontaktowymi zostało przyjęte, a ja poczekam na e-mail z biura rzeczy znalezionych." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Deci declarația de pierdere a fost înregistrată cu descrierea și datele de contact, iar eu aștept un e-mail de la biroul de obiecte pierdute." },
+            { "language": "sq", "text": "Faleminderit shumë. Pra njoftimi i humbjes me përshkrimin dhe të dhënat e kontaktit u regjistrua, dhe unë do të pres një email nga zyra e sendeve të humbura." }
+          ],
+          "function": "summarize-process",
+          "expectedLearnerAction": "Summarize report, contact, and notification process."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag. Ich habe gestern im RE 7 nach Köln einen schwarzen Rucksack verloren. Er hat einen blauen Schlüsselanhänger an der Seite.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. Yesterday I lost a black backpack on the RE 7 to Cologne. It has a blue key ring on the side." },
+                { "language": "fa", "text": "روز بخیر. دیروز در قطار RE 7 به سمت کلن یک کوله‌پشتی مشکی گم کردم. کنار آن یک جاکلیدی آبی دارد." },
+                { "language": "ar", "text": "مرحباً. فقدت أمس حقيبة ظهر سوداء في قطار RE 7 المتجه إلى كولونيا. عليها علاقة مفاتيح زرقاء من الجانب." },
+                { "language": "tr", "text": "İyi günler. Dün Köln yönündeki RE 7'de siyah bir sırt çantası kaybettim. Yan tarafında mavi bir anahtarlık var." },
+                { "language": "ru", "text": "Добрый день. Вчера я потерял чёрный рюкзак в RE 7 в сторону Кёльна. Сбоку на нём синий брелок." },
+                { "language": "ckb", "text": "ڕۆژ باش. دوێنێ لە RE 7 بەرەو کۆلن جانتایەکی پشتی ڕەشم ون کرد. لە لاوە کلیلدانێکی شینی پێوەیە." },
+                { "language": "kmr", "text": "Roj baş. Doh di RE 7 ber bi Kölnê de çenteyekî piştê yê reş min winda kir. Li aliyê wê kilîtdanekî şîn heye." },
+                { "language": "pl", "text": "Dzień dobry. Wczoraj zgubiłem czarny plecak w RE 7 do Kolonii. Ma z boku niebieski brelok." },
+                { "language": "ro", "text": "Bună ziua. Ieri am pierdut un rucsac negru în RE 7 spre Köln. Are pe lateral un breloc albastru." },
+                { "language": "sq", "text": "Mirëdita. Dje humba një çantë shpine të zezë në RE 7 për në Këln. Ka një mbajtëse çelësash blu anash." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist gut, weil Gegenstand, Zug, Richtung, Farbe und Erkennungsmerkmal genannt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is good because item, train, direction, color, and identifying feature are named." },
+                { "language": "fa", "text": "خوب است، چون وسیله، قطار، مسیر، رنگ و نشانه تشخیص گفته شده‌اند." },
+                { "language": "ar", "text": "هذا جيد لأن الغرض والقطار والاتجاه واللون والعلامة المميزة مذكورة." },
+                { "language": "tr", "text": "Bu iyi, çünkü eşya, tren, yön, renk ve ayırt edici özellik söyleniyor." },
+                { "language": "ru", "text": "Это хорошо, потому что названы вещь, поезд, направление, цвет и отличительный признак." },
+                { "language": "ckb", "text": "ئەمە باشە، چونکە شت، شەمەندەفەر، ئاراستە، ڕەنگ و نیشانەی ناسینەوە گوتراون." },
+                { "language": "kmr", "text": "Ev baş e, ji ber ku tişt, tren, alî, reng û nîşana nasînê hatine gotin." },
+                { "language": "pl", "text": "To jest dobre, bo podane są przedmiot, pociąg, kierunek, kolor i cecha rozpoznawcza." },
+                { "language": "ro", "text": "Este bine, deoarece sunt menționate obiectul, trenul, direcția, culoarea și semnul distinctiv." },
+                { "language": "sq", "text": "Kjo është mirë, sepse përmenden sendi, treni, drejtimi, ngjyra dhe shenja dalluese." }
+              ],
+              "explanationKey": "specific-item-description"
+            },
+            {
+              "id": "b",
+              "text": "Ich habe im Zug eine Tasche verloren. Sie ist dunkel.",
+              "translations": [
+                { "language": "en", "text": "I lost a bag on the train. It is dark." },
+                { "language": "fa", "text": "در قطار یک کیف گم کردم. تیره است." },
+                { "language": "ar", "text": "فقدت حقيبة في القطار. لونها داكن." },
+                { "language": "tr", "text": "Trende bir çanta kaybettim. Koyu renkli." },
+                { "language": "ru", "text": "Я потерял сумку в поезде. Она тёмная." },
+                { "language": "ckb", "text": "لە شەمەندەفەر جانتایەکم ون کرد. ڕەنگی تاریکە." },
+                { "language": "kmr", "text": "Di trenê de çenteyek min winda kir. Ew tarî ye." },
+                { "language": "pl", "text": "Zgubiłem torbę w pociągu. Jest ciemna." },
+                { "language": "ro", "text": "Am pierdut o geantă în tren. Este închisă la culoare." },
+                { "language": "sq", "text": "Kam humbur një çantë në tren. Është e errët." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist plausibel, aber zu ungenau: Zugnummer, Richtung und ein klares Merkmal fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is plausible, but too vague: train number, direction, and a clear feature are missing." },
+                { "language": "fa", "text": "قابل قبول است، اما خیلی کلی است: شماره قطار، مسیر و نشانه روشن کم است." },
+                { "language": "ar", "text": "هذا معقول، لكنه غير دقيق: رقم القطار والاتجاه وعلامة واضحة غير مذكورة." },
+                { "language": "tr", "text": "Bu makul, ama çok belirsiz: tren numarası, yön ve net bir özellik eksik." },
+                { "language": "ru", "text": "Это правдоподобно, но слишком неточно: не хватает номера поезда, направления и чёткого признака." },
+                { "language": "ckb", "text": "ئەمە گونجاوە، بەڵام زۆر ناڕوونە: ژمارەی شەمەندەفەر، ئاراستە و نیشانەیەکی ڕوون کەمە." },
+                { "language": "kmr", "text": "Ev gengaz e, lê pir nezelal e: hejmara trenê, alî û nîşaneyeke zelal kêm in." },
+                { "language": "pl", "text": "To jest możliwe, ale zbyt ogólne: brakuje numeru pociągu, kierunku i wyraźnej cechy." },
+                { "language": "ro", "text": "Este plauzibil, dar prea vag: lipsesc numărul trenului, direcția și un semn clar." },
+                { "language": "sq", "text": "Është e mundshme, por shumë e paqartë: mungojnë numri i trenit, drejtimi dhe një shenjë e qartë." }
+              ],
+              "explanationKey": "too-vague-item"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich saß im Wagen direkt hinter dem Fahrradbereich. Ausgestiegen bin ich gegen 17:10 Uhr in Köln. Im Rucksack sind ein Ladegerät und ein Ordner mit Kopien.",
+              "translations": [
+                { "language": "en", "text": "I sat in the carriage directly behind the bicycle area. I got off in Cologne at around 5:10 p.m. In the backpack there is a charger and a folder with copies." },
+                { "language": "fa", "text": "در واگنی نشسته بودم که مستقیم پشت بخش دوچرخه بود. حدود ساعت ۱۷:۱۰ در کلن پیاده شدم. داخل کوله یک شارژر و یک پوشه با کپی‌هاست." },
+                { "language": "ar", "text": "كنت جالساً في العربة مباشرة خلف منطقة الدراجات. نزلت في كولونيا حوالي الساعة 17:10. في الحقيبة شاحن وملف فيه نسخ." },
+                { "language": "tr", "text": "Bisiklet bölümünün hemen arkasındaki vagonda oturuyordum. Köln'de yaklaşık 17:10'da indim. Çantada bir şarj cihazı ve fotokopili bir dosya var." },
+                { "language": "ru", "text": "Я сидел в вагоне прямо за зоной для велосипедов. В Кёльне я вышел примерно в 17:10. В рюкзаке зарядное устройство и папка с копиями." },
+                { "language": "ckb", "text": "لە واگۆنێکدا دانیشتبووم کە ڕاستەوخۆ پشت ناوچەی پاسکیلەکان بوو. نزیکەی کاتژمێر ١٧:١٠ لە کۆلن دابەزیم. لە جانتاکەدا شارجەرێک و فایلی کۆپییەکان هەیە." },
+                { "language": "kmr", "text": "Ez di vagona rast li pişt beşa bisiklêtan de rûniştibûm. Ez li Kölnê nêzîkî saet 17:10 daketim. Di çentê de şarjker û dosyayek bi kopiyan hene." },
+                { "language": "pl", "text": "Siedziałem w wagonie bezpośrednio za strefą rowerową. Wysiadłem w Kolonii około 17:10. W plecaku jest ładowarka i teczka z kopiami." },
+                { "language": "ro", "text": "Stăteam în vagonul direct în spatele zonei pentru biciclete. Am coborât la Köln în jurul orei 17:10. În rucsac sunt un încărcător și un dosar cu copii." },
+                { "language": "sq", "text": "Isha ulur në vagonin menjëherë pas zonës së biçikletave. Zbrita në Këln rreth orës 17:10. Në çantë ka një karikues dhe një dosje me kopje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Ort, Zeit und Inhalt helfen dem Fundbüro beim Zuordnen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: place, time, and contents help the lost-and-found office identify it." },
+                { "language": "fa", "text": "خوب است: مکان، زمان و محتوا به دفتر اشیای گمشده کمک می‌کند آن را تشخیص دهد." },
+                { "language": "ar", "text": "جيد: المكان والوقت والمحتوى تساعد مكتب المفقودات على التعرف عليه." },
+                { "language": "tr", "text": "İyi: yer, zaman ve içerik kayıp eşya bürosunun onu eşleştirmesine yardım eder." },
+                { "language": "ru", "text": "Хорошо: место, время и содержимое помогают бюро находок опознать вещь." },
+                { "language": "ckb", "text": "باشە: شوێن، کات و ناوەڕۆک یارمەتی نووسینگەی شتە ونبووەکان دەدات بۆ ناسینەوە." },
+                { "language": "kmr", "text": "Baş e: cih, dem û naverok alîkariya nivîsgeha tiştên winda dikin ku wê nas bike." },
+                { "language": "pl", "text": "Dobrze: miejsce, czas i zawartość pomagają biuru rzeczy znalezionych w identyfikacji." },
+                { "language": "ro", "text": "Bine: locul, ora și conținutul ajută biroul de obiecte pierdute la identificare." },
+                { "language": "sq", "text": "Mirë: vendi, koha dhe përmbajtja ndihmojnë zyrën e sendeve të humbura ta identifikojë." }
+              ],
+              "explanationKey": "specific-location-time"
+            },
+            {
+              "id": "b",
+              "text": "Ich glaube, ich habe ihn irgendwo im Zug liegen lassen. Im Rucksack sind ein paar Sachen.",
+              "translations": [
+                { "language": "en", "text": "I think I left it somewhere on the train. There are a few things in the backpack." },
+                { "language": "fa", "text": "فکر می‌کنم آن را جایی در قطار جا گذاشته‌ام. داخل کوله چند چیز هست." },
+                { "language": "ar", "text": "أعتقد أنني تركته في مكان ما في القطار. في الحقيبة بعض الأشياء." },
+                { "language": "tr", "text": "Sanırım onu trenin bir yerinde bıraktım. Çantada birkaç şey var." },
+                { "language": "ru", "text": "Думаю, я оставил его где-то в поезде. В рюкзаке есть несколько вещей." },
+                { "language": "ckb", "text": "پێم وایە لە شوێنێکی شەمەندەفەرەکە جێم هێشتووە. لە جانتاکەدا چەند شتێک هەیە." },
+                { "language": "kmr", "text": "Ez difikirim min ew li cihkî di trenê de hişt. Di çentê de çend tişt hene." },
+                { "language": "pl", "text": "Myślę, że zostawiłem go gdzieś w pociągu. W plecaku jest kilka rzeczy." },
+                { "language": "ro", "text": "Cred că l-am lăsat undeva în tren. În rucsac sunt câteva lucruri." },
+                { "language": "sq", "text": "Mendoj se e lashë diku në tren. Në çantë ka disa gjëra." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das klingt natürlich, aber für eine Verlustmeldung fehlen Ort, Zeit und konkrete Inhalte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This sounds natural, but for a loss report, place, time, and concrete contents are missing." },
+                { "language": "fa", "text": "طبیعی به نظر می‌رسد، اما برای گزارش گم‌شدن، مکان، زمان و محتویات مشخص کم است." },
+                { "language": "ar", "text": "هذا يبدو طبيعياً، لكن في بلاغ الفقدان ينقص المكان والوقت والمحتوى المحدد." },
+                { "language": "tr", "text": "Doğal geliyor, ama kayıp bildirimi için yer, zaman ve somut içerik eksik." },
+                { "language": "ru", "text": "Звучит естественно, но для заявления о потере не хватает места, времени и конкретного содержимого." },
+                { "language": "ckb", "text": "سروشتی دەردەکەوێت، بەڵام بۆ ڕاپۆرتی ونبوون شوێن، کات و ناوەڕۆکی دیاریکراو کەمە." },
+                { "language": "kmr", "text": "Xwezayî tê, lê ji bo rapora wendabûnê cih, dem û naveroka taybet kêm in." },
+                { "language": "pl", "text": "Brzmi naturalnie, ale w zgłoszeniu zagubienia brakuje miejsca, czasu i konkretnych rzeczy w środku." },
+                { "language": "ro", "text": "Sună natural, dar pentru o declarație de pierdere lipsesc locul, ora și conținutul concret." },
+                { "language": "sq", "text": "Tingëllon natyrshëm, por për njoftimin e humbjes mungojnë vendi, koha dhe përmbajtja konkrete." }
+              ],
+              "explanationKey": "missing-location-time"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann ist die Verlustmeldung mit Beschreibung und Kontaktdaten aufgenommen, und ich warte auf eine E-Mail vom Fundbüro.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then the loss report has been recorded with description and contact details, and I will wait for an email from the lost-and-found office." },
+                { "language": "fa", "text": "خیلی ممنون. پس گزارش گم‌شدن با توضیح و اطلاعات تماس ثبت شده است و منتظر ایمیل دفتر اشیای گمشده می‌مانم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن تم تسجيل بلاغ الفقدان مع الوصف وبيانات الاتصال، وسأنتظر بريداً إلكترونياً من مكتب المفقودات." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde kayıp bildirimi açıklama ve iletişim bilgileriyle kaydedildi, ben de kayıp eşya bürosundan e-posta bekleyeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Значит, заявление о потере с описанием и контактными данными оформлено, и я буду ждать письмо из бюро находок." },
+                { "language": "ckb", "text": "زۆر سوپاس. ئەوا ڕاپۆرتی ونبوون لەگەڵ وەسف و زانیاریی پەیوەندی تۆمار کرا، و چاوەڕێی ئیمەیڵێک لە نووسینگەی شتە ونبووەکان دەکەم." },
+                { "language": "kmr", "text": "Gelek spas. Hingê rapora wendabûnê bi şirove û agahiyên têkiliyê hate tomar kirin, û ez ê li benda e-nameyek ji nivîsgeha tiştên winda bim." },
+                { "language": "pl", "text": "Dziękuję bardzo. Czyli zgłoszenie zagubienia z opisem i danymi kontaktowymi zostało przyjęte, a ja poczekam na e-mail z biura rzeczy znalezionych." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Deci declarația de pierdere a fost înregistrată cu descrierea și datele de contact, iar eu aștept un e-mail de la biroul de obiecte pierdute." },
+                { "language": "sq", "text": "Faleminderit shumë. Pra njoftimi i humbjes me përshkrimin dhe të dhënat e kontaktit u regjistrua, dhe unë do të pres një email nga zyra e sendeve të humbura." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Zusammenfassung sichert den Ablauf und zeigt, dass du die nächsten Schritte verstanden hast.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The summary secures the process and shows that you understood the next steps." },
+                { "language": "fa", "text": "جمع‌بندی روند را مشخص می‌کند و نشان می‌دهد قدم‌های بعدی را فهمیده‌ای." },
+                { "language": "ar", "text": "الملخص يثبت الإجراءات ويظهر أنك فهمت الخطوات التالية." },
+                { "language": "tr", "text": "Özet süreci güvenceye alır ve sonraki adımları anladığını gösterir." },
+                { "language": "ru", "text": "Резюме закрепляет процесс и показывает, что ты понял следующие шаги." },
+                { "language": "ckb", "text": "کورتکردنەوەکە پرۆسەکە مسۆگەر دەکات و پیشان دەدات هەنگاوەکانی دواترت تێگەیشتووە." },
+                { "language": "kmr", "text": "Kurteyê pêvajoyê piştrast dike û nîşan dide ku te gavên paşê fêm kirine." },
+                { "language": "pl", "text": "Podsumowanie zabezpiecza proces i pokazuje, że rozumiesz kolejne kroki." },
+                { "language": "ro", "text": "Rezumatul clarifică procesul și arată că ai înțeles pașii următori." },
+                { "language": "sq", "text": "Përmbledhja siguron procesin dhe tregon se i ke kuptuar hapat e ardhshëm." }
+              ],
+              "explanationKey": "complete-loss-summary"
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann melden Sie sich bei mir.",
+              "translations": [
+                { "language": "en", "text": "Thanks, then you will contact me." },
+                { "language": "fa", "text": "ممنون، پس با من تماس می‌گیرید." },
+                { "language": "ar", "text": "شكراً، إذن ستتواصلون معي." },
+                { "language": "tr", "text": "Teşekkürler, o zaman benimle iletişime geçersiniz." },
+                { "language": "ru", "text": "Спасибо, тогда вы со мной свяжетесь." },
+                { "language": "ckb", "text": "سوپاس، ئەوا پەیوەندیم پێوە دەکەن." },
+                { "language": "kmr", "text": "Spas, hingê hûn bi min re têkilî datînin." },
+                { "language": "pl", "text": "Dziękuję, czyli państwo się ze mną skontaktują." },
+                { "language": "ro", "text": "Mulțumesc, atunci mă contactați." },
+                { "language": "sq", "text": "Faleminderit, atëherë do të më kontaktoni." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber es fasst Beschreibung, Kontaktdaten und Benachrichtigungsweg nicht zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but it does not summarize the description, contact details, and notification method." },
+                { "language": "fa", "text": "مودبانه است، اما توضیح، اطلاعات تماس و روش اطلاع‌رسانی را جمع‌بندی نمی‌کند." },
+                { "language": "ar", "text": "هذا مهذب، لكنه لا يلخص الوصف وبيانات الاتصال وطريقة الإبلاغ." },
+                { "language": "tr", "text": "Bu kibar, ama açıklamayı, iletişim bilgilerini ve bildirim yolunu özetlemiyor." },
+                { "language": "ru", "text": "Это вежливо, но не резюмирует описание, контактные данные и способ уведомления." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام وەسف، زانیاریی پەیوەندی و ڕێگای ئاگادارکردنەوە کورت ناکاتەوە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê şirove, agahiyên têkiliyê û awayê agahdarkirinê kurt nake." },
+                { "language": "pl", "text": "To jest uprzejme, ale nie podsumowuje opisu, danych kontaktowych i sposobu powiadomienia." },
+                { "language": "ro", "text": "Este politicos, dar nu rezumă descrierea, datele de contact și metoda de notificare." },
+                { "language": "sq", "text": "Është e sjellshme, por nuk përmbledh përshkrimin, të dhënat e kontaktit dhe mënyrën e njoftimit." }
+              ],
+              "explanationKey": "summary-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei einer Verlustmeldung zählen konkrete Merkmale, Ort, Zeit, Inhalt und ein klarer Kontaktweg.",
+          "translations": [
+            { "language": "en", "text": "B1 target: in a loss report, concrete features, place, time, contents, and a clear contact route matter." },
+            { "language": "fa", "text": "هدف B1: در گزارش گم‌شدن، ویژگی‌های مشخص، مکان، زمان، محتوا و راه تماس روشن مهم هستند." },
+            { "language": "ar", "text": "هدف B1: في بلاغ الفقدان تهم العلامات المحددة والمكان والوقت والمحتوى وطريقة الاتصال الواضحة." },
+            { "language": "tr", "text": "B1 hedefi: kayıp bildiriminde somut özellikler, yer, zaman, içerik ve net iletişim yolu önemlidir." },
+            { "language": "ru", "text": "Цель B1: в заявлении о потере важны конкретные признаки, место, время, содержимое и понятный способ связи." },
+            { "language": "ckb", "text": "ئامانجی B1: لە ڕاپۆرتی ونبووندا تایبەتمەندیی دیاریکراو، شوێن، کات، ناوەڕۆک و ڕێگای پەیوەندیی ڕوون گرنگن." },
+            { "language": "kmr", "text": "Armanca B1: di rapora wendabûnê de taybetmendiyên zelal, cih, dem, naverok û rêya têkiliyê ya zelal girîng in." },
+            { "language": "pl", "text": "Cel B1: w zgłoszeniu zgubienia liczą się konkretne cechy, miejsce, czas, zawartość i jasna droga kontaktu." },
+            { "language": "ro", "text": "Obiectiv B1: într-o declarație de pierdere contează semnele concrete, locul, ora, conținutul și o cale clară de contact." },
+            { "language": "sq", "text": "Qëllimi B1: në njoftimin e humbjes kanë rëndësi tiparet konkrete, vendi, koha, përmbajtja dhe mënyra e qartë e kontaktit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-einladung-mit-alternative-ablehnen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Einladung mit Alternative ablehnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Declining an invitation with an alternative" },
+        { "language": "fa", "text": "رد کردن دعوت با پیشنهاد جایگزین" },
+        { "language": "ar", "text": "رفض دعوة مع اقتراح بديل" },
+        { "language": "tr", "text": "Bir daveti alternatif önererek reddetmek" },
+        { "language": "ru", "text": "Отказаться от приглашения с альтернативой" },
+        { "language": "ckb", "text": "ڕەتکردنەوەی بانگهێشت لەگەڵ پێشنیاری جێگرەوە" },
+        { "language": "kmr", "text": "Vexwendinek bi alternatîfekê red kirin" },
+        { "language": "pl", "text": "Odmowa zaproszenia z alternatywą" },
+        { "language": "ro", "text": "Refuzarea unei invitații cu o alternativă" },
+        { "language": "sq", "text": "Refuzimi i një ftese me alternativë" }
+      ],
+      "description": "Ein Freund lädt dich zu einem Treffen ein. Du kannst nicht kommen, möchtest aber die Beziehung pflegen und schlägst einen konkreten Ersatztermin vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "A friend invites you to a meeting. You cannot come, but you want to maintain the relationship and suggest a concrete alternative date." },
+        { "language": "fa", "text": "یک دوست تو را به یک دیدار دعوت می‌کند. نمی‌توانی بروی، اما می‌خواهی رابطه را حفظ کنی و یک زمان جایگزین مشخص پیشنهاد می‌دهی." },
+        { "language": "ar", "text": "يدعوك صديق إلى لقاء. لا تستطيع الحضور، لكنك تريد الحفاظ على العلاقة وتقترح موعداً بديلاً محدداً." },
+        { "language": "tr", "text": "Bir arkadaşın seni buluşmaya davet ediyor. Gelemiyorsun, ama ilişkiyi korumak istiyor ve somut bir alternatif tarih öneriyorsun." },
+        { "language": "ru", "text": "Друг приглашает тебя на встречу. Ты не можешь прийти, но хочешь сохранить отношения и предлагаешь конкретное другое время." },
+        { "language": "ckb", "text": "هاوڕێیەک بانگهێشتت دەکات بۆ دیدارێک. ناتوانیت بچیت، بەڵام دەتەوێت پەیوەندییەکە بپارێزیت و کاتێکی جێگرەوەی دیاریکراو پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Hevalek te bo hevdîtinekê vedixwîne. Tu nikarî biçî, lê dixwazî têkiliyê biparêzî û demeke alternatîf a zelal pêşniyar dikî." },
+        { "language": "pl", "text": "Znajomy zaprasza cię na spotkanie. Nie możesz przyjść, ale chcesz zadbać o relację i proponujesz konkretny termin zastępczy." },
+        { "language": "ro", "text": "Un prieten te invită la o întâlnire. Nu poți veni, dar vrei să păstrezi relația și propui o dată alternativă concretă." },
+        { "language": "sq", "text": "Një mik të fton në një takim. Nuk mund të shkosh, por dëshiron ta ruash marrëdhënien dhe propozon një datë alternative konkrete." }
+      ],
+      "learnerGoal": "Lehne freundlich ab, nenne einen kurzen Grund und schlage eine konkrete Alternative vor.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Decline kindly, give a short reason, and suggest a concrete alternative." },
+        { "language": "fa", "text": "دوستانه رد کن، یک دلیل کوتاه بگو و یک جایگزین مشخص پیشنهاد بده." },
+        { "language": "ar", "text": "ارفض بلطف، واذكر سبباً قصيراً، واقترح بديلاً محدداً." },
+        { "language": "tr", "text": "Nazikçe reddet, kısa bir neden söyle ve somut bir alternatif öner." },
+        { "language": "ru", "text": "Дружелюбно откажись, назови краткую причину и предложи конкретную альтернативу." },
+        { "language": "ckb", "text": "بە دۆستانە ڕەت بکەرەوە، هۆکارێکی کورت بڵێ و جێگرەوەیەکی دیاریکراو پێشنیار بکە." },
+        { "language": "kmr", "text": "Bi awayekî dostane red bike, sedemeke kurt bibêje û alternatîfeke zelal pêşniyar bike." },
+        { "language": "pl", "text": "Odmów życzliwie, podaj krótki powód i zaproponuj konkretną alternatywę." },
+        { "language": "ro", "text": "Refuză prietenos, dă un motiv scurt și propune o alternativă concretă." },
+        { "language": "sq", "text": "Refuzo me mirësi, jep një arsye të shkurtër dhe propozo një alternativë konkrete." }
+      ],
+      "cefrLevel": "B1",
+      "category": "social",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "refuse-politely",
+      "interactionMode": "face-to-face",
+      "register": "informal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2610,
+      "roles": [
+        {
+          "roleKey": "friend",
+          "displayName": "Freund",
+          "translations": [
+            { "language": "en", "text": "Friend" },
+            { "language": "fa", "text": "دوست" },
+            { "language": "ar", "text": "صديق" },
+            { "language": "tr", "text": "Arkadaş" },
+            { "language": "ru", "text": "Друг" },
+            { "language": "ckb", "text": "هاوڕێ" },
+            { "language": "kmr", "text": "Heval" },
+            { "language": "pl", "text": "Znajomy" },
+            { "language": "ro", "text": "Prieten" },
+            { "language": "sq", "text": "Mik" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Du",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "تو" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Sen" },
+            { "language": "ru", "text": "Ты" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Tu" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Tu" },
+            { "language": "sq", "text": "Ti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "friend",
+          "baseText": "Hey, wir grillen am Samstag im Park. Hast du Lust mitzukommen?",
+          "translations": [
+            { "language": "en", "text": "Hey, we are having a barbecue in the park on Saturday. Would you like to come?" },
+            { "language": "fa", "text": "سلام، شنبه در پارک گریل داریم. دوست داری بیایی؟" },
+            { "language": "ar", "text": "مرحباً، سنشوي في الحديقة يوم السبت. هل ترغب في المجيء؟" },
+            { "language": "tr", "text": "Selam, cumartesi parkta mangal yapıyoruz. Gelmek ister misin?" },
+            { "language": "ru", "text": "Привет, в субботу мы жарим гриль в парке. Хочешь пойти с нами?" },
+            { "language": "ckb", "text": "سڵاو، شەممە لە پارکەکە گریل دەکەین. دەتەوێت لەگەڵمان بێیت؟" },
+            { "language": "kmr", "text": "Slav, em roja şemiyê li parkê grill dikin. Tu dixwazî bi me re were?" },
+            { "language": "pl", "text": "Hej, w sobotę robimy grilla w parku. Masz ochotę przyjść?" },
+            { "language": "ro", "text": "Hei, sâmbătă facem grătar în parc. Ai chef să vii?" },
+            { "language": "sq", "text": "Hej, të shtunën bëjmë grill në park. Ke dëshirë të vish?" }
+          ],
+          "function": "invite"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke für die Einladung, das klingt schön. Am Samstag kann ich leider nicht, weil meine Familie zu Besuch kommt.",
+          "translations": [
+            { "language": "en", "text": "Thanks for the invitation, that sounds nice. Unfortunately I cannot on Saturday because my family is visiting." },
+            { "language": "fa", "text": "ممنون بابت دعوت، خیلی خوب به نظر می‌رسد. متأسفانه شنبه نمی‌توانم، چون خانواده‌ام به دیدنم می‌آیند." },
+            { "language": "ar", "text": "شكراً على الدعوة، يبدو ذلك جميلاً. للأسف لا أستطيع يوم السبت لأن عائلتي ستزورني." },
+            { "language": "tr", "text": "Davet için teşekkürler, kulağa güzel geliyor. Ne yazık ki cumartesi gelemem, çünkü ailem ziyarete geliyor." },
+            { "language": "ru", "text": "Спасибо за приглашение, звучит здорово. К сожалению, в субботу я не могу, потому что ко мне приезжает семья." },
+            { "language": "ckb", "text": "سوپاس بۆ بانگهێشتەکە، جوان دەردەکەوێت. بەداخەوە شەممە ناتوانم، چونکە خێزانەکەم سەردانم دەکەن." },
+            { "language": "kmr", "text": "Spas ji bo vexwendinê, xweş xuya dike. Mixabin roja şemiyê nikarim, ji ber ku malbata min tê serdanê." },
+            { "language": "pl", "text": "Dzięki za zaproszenie, brzmi fajnie. Niestety w sobotę nie mogę, bo przyjeżdża do mnie rodzina." },
+            { "language": "ro", "text": "Mulțumesc pentru invitație, sună frumos. Din păcate sâmbătă nu pot, pentru că vine familia mea în vizită." },
+            { "language": "sq", "text": "Faleminderit për ftesën, tingëllon bukur. Fatkeqësisht të shtunën nuk mundem, sepse më vjen familja për vizitë." }
+          ],
+          "function": "decline-with-reason",
+          "expectedLearnerAction": "Thank, decline, and give a short reason."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "friend",
+          "baseText": "Schade. Vielleicht könntest du später kurz vorbeikommen?",
+          "translations": [
+            { "language": "en", "text": "That's a pity. Maybe you could stop by briefly later?" },
+            { "language": "fa", "text": "حیف شد. شاید بتوانی بعداً کوتاه سر بزنی؟" },
+            { "language": "ar", "text": "هذا مؤسف. ربما تستطيع أن تمرّ لاحقاً لفترة قصيرة؟" },
+            { "language": "tr", "text": "Yazık. Belki daha sonra kısa süre uğrayabilirsin?" },
+            { "language": "ru", "text": "Жаль. Может быть, ты сможешь ненадолго зайти позже?" },
+            { "language": "ckb", "text": "بەداخەوە. ڕەنگە دواتر بۆ ماوەیەکی کورت سەردانێک بکەیت؟" },
+            { "language": "kmr", "text": "Heyf. Belkî tu paşê demeke kurt derbas bibî?" },
+            { "language": "pl", "text": "Szkoda. Może mógłbyś wpaść na chwilę później?" },
+            { "language": "ro", "text": "Păcat. Poate ai putea trece mai târziu pentru puțin timp?" },
+            { "language": "sq", "text": "Sa keq. Ndoshta mund të kalosh pak më vonë?" }
+          ],
+          "function": "ask-alternative"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Am Abend wird es wahrscheinlich auch schwierig. Aber ich hätte am Sonntag Nachmittag Zeit, oder wir könnten uns nächste Woche auf einen Kaffee treffen.",
+          "translations": [
+            { "language": "en", "text": "In the evening it will probably also be difficult. But I would have time on Sunday afternoon, or we could meet for coffee next week." },
+            { "language": "fa", "text": "عصر هم احتمالاً سخت است. اما یکشنبه بعدازظهر وقت دارم، یا می‌توانیم هفته آینده برای قهوه همدیگر را ببینیم." },
+            { "language": "ar", "text": "في المساء سيكون الأمر صعباً على الأرجح أيضاً. لكن لدي وقت بعد ظهر الأحد، أو يمكننا أن نلتقي الأسبوع القادم على قهوة." },
+            { "language": "tr", "text": "Akşam da muhtemelen zor olacak. Ama pazar öğleden sonra zamanım var ya da gelecek hafta kahve içmek için buluşabiliriz." },
+            { "language": "ru", "text": "Вечером, вероятно, тоже будет сложно. Но у меня есть время в воскресенье днём, или мы можем встретиться на кофе на следующей неделе." },
+            { "language": "ckb", "text": "ئێوارەش بە گومان زەحمەت دەبێت. بەڵام یەکشەممە دوای نیوەڕۆ کاتم هەیە، یان دەتوانین هەفتەی داهاتوو بۆ قاوەیەک یەکتر ببینین." },
+            { "language": "kmr", "text": "Êvar jî dibe ku zehmet be. Lê roja yekşemê piştî nîvro demê min heye, an em dikarin hefteya bê li ser qehweyekê hev bibînin." },
+            { "language": "pl", "text": "Wieczorem też pewnie będzie trudno. Ale mam czas w niedzielę po południu albo moglibyśmy spotkać się w przyszłym tygodniu na kawę." },
+            { "language": "ro", "text": "Seara probabil va fi și ea dificilă. Dar aș avea timp duminică după-amiază sau ne-am putea întâlni săptămâna viitoare la o cafea." },
+            { "language": "sq", "text": "Edhe në mbrëmje ndoshta do të jetë e vështirë. Por kam kohë të dielën pasdite, ose mund të takohemi javën tjetër për një kafe." }
+          ],
+          "function": "offer-alternatives",
+          "expectedLearnerAction": "Keep the relationship warm and offer concrete alternatives."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "friend",
+          "baseText": "Sonntag Nachmittag klingt gut. Sollen wir uns im Parkcafé treffen?",
+          "translations": [
+            { "language": "en", "text": "Sunday afternoon sounds good. Shall we meet at the park café?" },
+            { "language": "fa", "text": "یکشنبه بعدازظهر خوب به نظر می‌رسد. در کافه پارک همدیگر را ببینیم؟" },
+            { "language": "ar", "text": "بعد ظهر الأحد يبدو جيداً. هل نلتقي في مقهى الحديقة؟" },
+            { "language": "tr", "text": "Pazar öğleden sonra iyi geliyor. Park kafede buluşalım mı?" },
+            { "language": "ru", "text": "Воскресенье днём звучит хорошо. Встретимся в кафе в парке?" },
+            { "language": "ckb", "text": "یەکشەممە دوای نیوەڕۆ باش دەردەکەوێت. لە کافەی پارکەکە یەکتر ببینین؟" },
+            { "language": "kmr", "text": "Yekşem piştî nîvro baş xuya dike. Em li kafeya parkê hev bibînin?" },
+            { "language": "pl", "text": "Niedzielne popołudnie brzmi dobrze. Spotkamy się w kawiarni w parku?" },
+            { "language": "ro", "text": "Duminică după-amiază sună bine. Ne întâlnim la cafeneaua din parc?" },
+            { "language": "sq", "text": "E diela pasdite tingëllon mirë. Të takohemi në kafenenë e parkut?" }
+          ],
+          "function": "accept-alternative"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja, gern. Sonntag um 15 Uhr im Parkcafé passt mir gut. Wenn es stark regnet, können wir kurz vorher noch schreiben.",
+          "translations": [
+            { "language": "en", "text": "Yes, gladly. Sunday at 3 p.m. at the park café works well for me. If it rains heavily, we can text shortly before." },
+            { "language": "fa", "text": "بله، با خوشحالی. یکشنبه ساعت ۱۵ در کافه پارک برایم خوب است. اگر باران شدید بیاید، کمی قبلش می‌توانیم پیام بدهیم." },
+            { "language": "ar", "text": "نعم، بكل سرور. الأحد الساعة الثالثة في مقهى الحديقة يناسبني جيداً. إذا هطل مطر شديد، يمكننا أن نكتب لبعضنا قبلها بقليل." },
+            { "language": "tr", "text": "Evet, memnuniyetle. Pazar saat 15'te park kafede benim için uygun. Şiddetli yağmur yağarsa, hemen önce yazışabiliriz." },
+            { "language": "ru", "text": "Да, с удовольствием. В воскресенье в 15:00 в кафе в парке мне подходит. Если будет сильный дождь, мы можем незадолго до этого списаться." },
+            { "language": "ckb", "text": "بەڵێ، بە خۆشییەوە. یەکشەممە کاتژمێر ١٥ لە کافەی پارکەکە بۆ من گونجاوە. ئەگەر بارانی توند ببارێت، دەتوانین کەمێک پێشتر نامە بنێرین." },
+            { "language": "kmr", "text": "Erê, bi kêfxweşî. Yekşem saet 15 li kafeya parkê ji bo min guncan e. Heke baran pir bikeve, em dikarin demeke kurt berê hev re binivîsin." },
+            { "language": "pl", "text": "Tak, chętnie. Niedziela o 15 w kawiarni w parku bardzo mi pasuje. Jeśli będzie mocno padać, możemy napisać do siebie chwilę wcześniej." },
+            { "language": "ro", "text": "Da, cu plăcere. Duminică la ora 15 la cafeneaua din parc îmi convine. Dacă plouă tare, ne putem scrie cu puțin timp înainte." },
+            { "language": "sq", "text": "Po, me kënaqësi. E diela në orën 15 në kafenenë e parkut më përshtatet mirë. Nëse bie shumë shi, mund t'i shkruajmë njëri-tjetrit pak më parë." }
+          ],
+          "function": "confirm-plan",
+          "expectedLearnerAction": "Confirm time, place, and a practical fallback."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "friend",
+          "baseText": "Super, dann machen wir das so. Ich freue mich.",
+          "translations": [
+            { "language": "en", "text": "Great, then let's do that. I'm looking forward to it." },
+            { "language": "fa", "text": "عالی، پس همین کار را می‌کنیم. خوشحال می‌شوم." },
+            { "language": "ar", "text": "رائع، إذن نفعل ذلك هكذا. أنا متحمس." },
+            { "language": "tr", "text": "Harika, o zaman böyle yapalım. Sabırsızlanıyorum." },
+            { "language": "ru", "text": "Отлично, тогда так и сделаем. Я рад." },
+            { "language": "ckb", "text": "زۆر باش، ئەوا وا دەکەین. دڵخۆشم." },
+            { "language": "kmr", "text": "Gelek baş, hingê em wisa dikin. Ez kêfxweş im." },
+            { "language": "pl", "text": "Super, to tak zrobimy. Cieszę się." },
+            { "language": "ro", "text": "Super, atunci așa facem. Mă bucur." },
+            { "language": "sq", "text": "Shumë mirë, atëherë kështu bëjmë. Më vjen mirë." }
+          ],
+          "function": "close-agreement"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich mich auch. Danke, dass du so flexibel bist. Dann sehen wir uns am Sonntag um 15 Uhr im Parkcafé.",
+          "translations": [
+            { "language": "en", "text": "Me too. Thanks for being so flexible. Then we will see each other on Sunday at 3 p.m. at the park café." },
+            { "language": "fa", "text": "من هم همین‌طور. ممنون که این‌قدر انعطاف‌پذیر هستی. پس یکشنبه ساعت ۱۵ در کافه پارک همدیگر را می‌بینیم." },
+            { "language": "ar", "text": "وأنا أيضاً. شكراً لأنك مرن هكذا. إذن نلتقي يوم الأحد الساعة الثالثة في مقهى الحديقة." },
+            { "language": "tr", "text": "Ben de. Bu kadar esnek olduğun için teşekkürler. O zaman pazar saat 15'te park kafede görüşürüz." },
+            { "language": "ru", "text": "Я тоже. Спасибо, что ты такой гибкий. Тогда увидимся в воскресенье в 15:00 в кафе в парке." },
+            { "language": "ckb", "text": "منیش. سوپاس کە ئەوەندە نەرم و نیانت. ئەوا یەکشەممە کاتژمێر ١٥ لە کافەی پارکەکە یەکتر دەبینین." },
+            { "language": "kmr", "text": "Ez jî. Spas ku tu ewqas nerm î. Hingê em roja yekşemê saet 15 li kafeya parkê hev dibînin." },
+            { "language": "pl", "text": "Ja też. Dzięki, że jesteś taki elastyczny. W takim razie widzimy się w niedzielę o 15 w kawiarni w parku." },
+            { "language": "ro", "text": "Și eu. Mulțumesc că ești atât de flexibil. Atunci ne vedem duminică la ora 15 la cafeneaua din parc." },
+            { "language": "sq", "text": "Edhe unë. Faleminderit që je kaq fleksibël. Atëherë shihemi të dielën në orën 15 në kafenenë e parkut." }
+          ],
+          "function": "warm-summary",
+          "expectedLearnerAction": "End warmly and repeat the new plan."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke für die Einladung, das klingt schön. Am Samstag kann ich leider nicht, weil meine Familie zu Besuch kommt.",
+              "translations": [
+                { "language": "en", "text": "Thanks for the invitation, that sounds nice. Unfortunately I cannot on Saturday because my family is visiting." },
+                { "language": "fa", "text": "ممنون بابت دعوت، خیلی خوب به نظر می‌رسد. متأسفانه شنبه نمی‌توانم، چون خانواده‌ام به دیدنم می‌آیند." },
+                { "language": "ar", "text": "شكراً على الدعوة، يبدو ذلك جميلاً. للأسف لا أستطيع يوم السبت لأن عائلتي ستزورني." },
+                { "language": "tr", "text": "Davet için teşekkürler, kulağa güzel geliyor. Ne yazık ki cumartesi gelemem, çünkü ailem ziyarete geliyor." },
+                { "language": "ru", "text": "Спасибо за приглашение, звучит здорово. К сожалению, в субботу я не могу, потому что ко мне приезжает семья." },
+                { "language": "ckb", "text": "سوپاس بۆ بانگهێشتەکە، جوان دەردەکەوێت. بەداخەوە شەممە ناتوانم، چونکە خێزانەکەم سەردانم دەکەن." },
+                { "language": "kmr", "text": "Spas ji bo vexwendinê, xweş xuya dike. Mixabin roja şemiyê nikarim, ji ber ku malbata min tê serdanê." },
+                { "language": "pl", "text": "Dzięki za zaproszenie, brzmi fajnie. Niestety w sobotę nie mogę, bo przyjeżdża do mnie rodzina." },
+                { "language": "ro", "text": "Mulțumesc pentru invitație, sună frumos. Din păcate sâmbătă nu pot, pentru că vine familia mea în vizită." },
+                { "language": "sq", "text": "Faleminderit për ftesën, tingëllon bukur. Fatkeqësisht të shtunën nuk mundem, sepse më vjen familja për vizitë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist freundlich: Dank, Absage und kurzer Grund sind enthalten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly: thanks, refusal, and a short reason are included." },
+                { "language": "fa", "text": "دوستانه است: تشکر، رد کردن و دلیل کوتاه وجود دارد." },
+                { "language": "ar", "text": "هذا ودود: الشكر والرفض والسبب القصير موجودة." },
+                { "language": "tr", "text": "Bu dostane: teşekkür, ret ve kısa neden var." },
+                { "language": "ru", "text": "Это дружелюбно: есть благодарность, отказ и краткая причина." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە: سوپاس، ڕەتکردنەوە و هۆکاری کورت تێدایە." },
+                { "language": "kmr", "text": "Ev dostane ye: spas, redkirin û sedemeke kurt hene." },
+                { "language": "pl", "text": "To jest życzliwe: zawiera podziękowanie, odmowę i krótki powód." },
+                { "language": "ro", "text": "Este prietenos: include mulțumirea, refuzul și un motiv scurt." },
+                { "language": "sq", "text": "Është miqësore: përmban falënderim, refuzim dhe një arsye të shkurtër." }
+              ],
+              "explanationKey": "friendly-refusal"
+            },
+            {
+              "id": "b",
+              "text": "Samstag geht nicht, ich habe etwas vor.",
+              "translations": [
+                { "language": "en", "text": "Saturday does not work, I have plans." },
+                { "language": "fa", "text": "شنبه نمی‌شود، برنامه دارم." },
+                { "language": "ar", "text": "السبت لا يناسبني، لدي شيء آخر." },
+                { "language": "tr", "text": "Cumartesi olmaz, bir planım var." },
+                { "language": "ru", "text": "В субботу не получится, у меня планы." },
+                { "language": "ckb", "text": "شەممە ناگونجێت، کارێکم هەیە." },
+                { "language": "kmr", "text": "Şemî nabe, planek min heye." },
+                { "language": "pl", "text": "Sobota nie pasuje, mam coś zaplanowane." },
+                { "language": "ro", "text": "Sâmbătă nu merge, am ceva planificat." },
+                { "language": "sq", "text": "Të shtunën nuk bëhet, kam diçka në plan." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist nicht unhöflich, aber zu knapp: Dank und positive Beziehungssignale fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is not impolite, but too brief: thanks and positive relationship signals are missing." },
+                { "language": "fa", "text": "بی‌ادبانه نیست، اما خیلی کوتاه است: تشکر و نشانه مثبت برای حفظ رابطه کم است." },
+                { "language": "ar", "text": "هذا ليس غير مهذب، لكنه قصير جداً: الشكر والإشارات الإيجابية للعلاقة غير موجودة." },
+                { "language": "tr", "text": "Bu kaba değil, ama çok kısa: teşekkür ve olumlu ilişki sinyalleri eksik." },
+                { "language": "ru", "text": "Это не невежливо, но слишком кратко: нет благодарности и позитивного сигнала для отношений." },
+                { "language": "ckb", "text": "ئەمە بێ‌ڕێزی نییە، بەڵام زۆر کورتە: سوپاس و نیشانەی ئەرێنی بۆ پەیوەندی کەمە." },
+                { "language": "kmr", "text": "Ev ne bê rêz e, lê pir kurt e: spas û nîşaneyên erênî yên têkiliyê kêm in." },
+                { "language": "pl", "text": "To nie jest nieuprzejme, ale zbyt krótkie: brakuje podziękowania i pozytywnego sygnału dla relacji." },
+                { "language": "ro", "text": "Nu este nepoliticos, dar este prea scurt: lipsesc mulțumirea și semnalele pozitive pentru relație." },
+                { "language": "sq", "text": "Nuk është e pasjellshme, por është shumë e shkurtër: mungon falënderimi dhe sinjali pozitiv për marrëdhënien." }
+              ],
+              "explanationKey": "too-brief-social"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Am Abend wird es wahrscheinlich auch schwierig. Aber ich hätte am Sonntag Nachmittag Zeit, oder wir könnten uns nächste Woche auf einen Kaffee treffen.",
+              "translations": [
+                { "language": "en", "text": "In the evening it will probably also be difficult. But I would have time on Sunday afternoon, or we could meet for coffee next week." },
+                { "language": "fa", "text": "عصر هم احتمالاً سخت است. اما یکشنبه بعدازظهر وقت دارم، یا می‌توانیم هفته آینده برای قهوه همدیگر را ببینیم." },
+                { "language": "ar", "text": "في المساء سيكون الأمر صعباً على الأرجح أيضاً. لكن لدي وقت بعد ظهر الأحد، أو يمكننا أن نلتقي الأسبوع القادم على قهوة." },
+                { "language": "tr", "text": "Akşam da muhtemelen zor olacak. Ama pazar öğleden sonra zamanım var ya da gelecek hafta kahve içmek için buluşabiliriz." },
+                { "language": "ru", "text": "Вечером, вероятно, тоже будет сложно. Но у меня есть время в воскресенье днём, или мы можем встретиться на кофе на следующей неделе." },
+                { "language": "ckb", "text": "ئێوارەش بە گومان زەحمەت دەبێت. بەڵام یەکشەممە دوای نیوەڕۆ کاتم هەیە، یان دەتوانین هەفتەی داهاتوو بۆ قاوەیەک یەکتر ببینین." },
+                { "language": "kmr", "text": "Êvar jî dibe ku zehmet be. Lê roja yekşemê piştî nîvro demê min heye, an em dikarin hefteya bê li ser qehweyekê hev bibînin." },
+                { "language": "pl", "text": "Wieczorem też pewnie będzie trudno. Ale mam czas w niedzielę po południu albo moglibyśmy spotkać się w przyszłym tygodniu na kawę." },
+                { "language": "ro", "text": "Seara probabil va fi și ea dificilă. Dar aș avea timp duminică după-amiază sau ne-am putea întâlni săptămâna viitoare la o cafea." },
+                { "language": "sq", "text": "Edhe në mbrëmje ndoshta do të jetë e vështirë. Por kam kohë të dielën pasdite, ose mund të takohemi javën tjetër për një kafe." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du bleibst freundlich und gibst zwei konkrete Alternativen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you stay friendly and give two concrete alternatives." },
+                { "language": "fa", "text": "خوب است: دوستانه می‌مانی و دو جایگزین مشخص می‌دهی." },
+                { "language": "ar", "text": "جيد: تبقى ودوداً وتقدم بديلين محددين." },
+                { "language": "tr", "text": "İyi: dostça kalıyor ve iki somut alternatif sunuyorsun." },
+                { "language": "ru", "text": "Хорошо: ты остаёшься дружелюбным и предлагаешь две конкретные альтернативы." },
+                { "language": "ckb", "text": "باشە: دۆستانە دەمێنیتەوە و دوو جێگرەوەی دیاریکراو پێشنیار دەکەیت." },
+                { "language": "kmr", "text": "Baş e: tu dostane dimînî û du alternatîfên zelal pêşniyar dikî." },
+                { "language": "pl", "text": "Dobrze: pozostajesz życzliwy i podajesz dwie konkretne alternatywy." },
+                { "language": "ro", "text": "Bine: rămâi prietenos și oferi două alternative concrete." },
+                { "language": "sq", "text": "Mirë: mbetesh miqësor dhe jep dy alternativa konkrete." }
+              ],
+              "explanationKey": "concrete-alternatives"
+            },
+            {
+              "id": "b",
+              "text": "Später geht auch nicht. Wir sehen uns ein anderes Mal.",
+              "translations": [
+                { "language": "en", "text": "Later also does not work. We will see each other another time." },
+                { "language": "fa", "text": "بعداً هم نمی‌شود. یک وقت دیگر همدیگر را می‌بینیم." },
+                { "language": "ar", "text": "لاحقاً أيضاً لا يناسبني. نلتقي مرة أخرى." },
+                { "language": "tr", "text": "Daha sonra da olmaz. Başka bir zaman görüşürüz." },
+                { "language": "ru", "text": "Позже тоже не получится. Увидимся в другой раз." },
+                { "language": "ckb", "text": "دواتریش ناگونجێت. جارێکی تر یەکتر دەبینین." },
+                { "language": "kmr", "text": "Paşê jî nabe. Em careke din hev dibînin." },
+                { "language": "pl", "text": "Później też nie pasuje. Zobaczymy się innym razem." },
+                { "language": "ro", "text": "Nici mai târziu nu merge. Ne vedem altă dată." },
+                { "language": "sq", "text": "As më vonë nuk bëhet. Shihem një herë tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist möglich, aber zu unkonkret: Eine echte Alternative mit Tag oder Zeit fehlt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is possible, but too vague: a real alternative with a day or time is missing." },
+                { "language": "fa", "text": "ممکن است، اما خیلی نامشخص است: یک جایگزین واقعی با روز یا ساعت کم است." },
+                { "language": "ar", "text": "هذا ممكن، لكنه غير محدد: ينقص بديل حقيقي مع يوم أو وقت." },
+                { "language": "tr", "text": "Bu mümkün, ama çok belirsiz: gün ya da saat içeren gerçek bir alternatif eksik." },
+                { "language": "ru", "text": "Это возможно, но слишком неопределённо: нет настоящей альтернативы с днём или временем." },
+                { "language": "ckb", "text": "ئەمە دەکرێت، بەڵام زۆر ناڕوونە: جێگرەوەیەکی ڕاستەقینە لەگەڵ ڕۆژ یان کات کەمە." },
+                { "language": "kmr", "text": "Ev gengaz e, lê pir nezelal e: alternatîfeke rastîn bi roj an dem kêm e." },
+                { "language": "pl", "text": "To jest możliwe, ale zbyt niekonkretne: brakuje prawdziwej alternatywy z dniem albo godziną." },
+                { "language": "ro", "text": "Este posibil, dar prea neconcret: lipsește o alternativă reală cu zi sau oră." },
+                { "language": "sq", "text": "Është e mundshme, por shumë e paqartë: mungon një alternativë reale me ditë ose orë." }
+              ],
+              "explanationKey": "alternative-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich mich auch. Danke, dass du so flexibel bist. Dann sehen wir uns am Sonntag um 15 Uhr im Parkcafé.",
+              "translations": [
+                { "language": "en", "text": "Me too. Thanks for being so flexible. Then we will see each other on Sunday at 3 p.m. at the park café." },
+                { "language": "fa", "text": "من هم همین‌طور. ممنون که این‌قدر انعطاف‌پذیر هستی. پس یکشنبه ساعت ۱۵ در کافه پارک همدیگر را می‌بینیم." },
+                { "language": "ar", "text": "وأنا أيضاً. شكراً لأنك مرن هكذا. إذن نلتقي يوم الأحد الساعة الثالثة في مقهى الحديقة." },
+                { "language": "tr", "text": "Ben de. Bu kadar esnek olduğun için teşekkürler. O zaman pazar saat 15'te park kafede görüşürüz." },
+                { "language": "ru", "text": "Я тоже. Спасибо, что ты такой гибкий. Тогда увидимся в воскресенье в 15:00 в кафе в парке." },
+                { "language": "ckb", "text": "منیش. سوپاس کە ئەوەندە نەرم و نیانت. ئەوا یەکشەممە کاتژمێر ١٥ لە کافەی پارکەکە یەکتر دەبینین." },
+                { "language": "kmr", "text": "Ez jî. Spas ku tu ewqas nerm î. Hingê em roja yekşemê saet 15 li kafeya parkê hev dibînin." },
+                { "language": "pl", "text": "Ja też. Dzięki, że jesteś taki elastyczny. W takim razie widzimy się w niedzielę o 15 w kawiarni w parku." },
+                { "language": "ro", "text": "Și eu. Mulțumesc că ești atât de flexibil. Atunci ne vedem duminică la ora 15 la cafeneaua din parc." },
+                { "language": "sq", "text": "Edhe unë. Faleminderit që je kaq fleksibël. Atëherë shihemi të dielën në orën 15 në kafenenë e parkut." }
+              ],
+              "isCorrect": true,
+              "feedback": "Der Abschluss ist warm und konkret: Beziehungssignal, Dank, Tag, Uhrzeit und Ort sind enthalten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The closing is warm and concrete: relationship signal, thanks, day, time, and place are included." },
+                { "language": "fa", "text": "پایان گرم و مشخص است: نشانه رابطه، تشکر، روز، ساعت و مکان وجود دارد." },
+                { "language": "ar", "text": "الخاتمة ودودة ومحددة: إشارة العلاقة والشكر واليوم والوقت والمكان موجودة." },
+                { "language": "tr", "text": "Kapanış sıcak ve somut: ilişki sinyali, teşekkür, gün, saat ve yer var." },
+                { "language": "ru", "text": "Завершение тёплое и конкретное: есть сигнал отношений, благодарность, день, время и место." },
+                { "language": "ckb", "text": "کۆتاییەکە گەرم و دیاریکراوە: نیشانەی پەیوەندی، سوپاس، ڕۆژ، کات و شوێن تێدایە." },
+                { "language": "kmr", "text": "Dawî germ û zelal e: nîşana têkiliyê, spas, roj, dem û cih hene." },
+                { "language": "pl", "text": "Zakończenie jest ciepłe i konkretne: zawiera sygnał relacji, podziękowanie, dzień, godzinę i miejsce." },
+                { "language": "ro", "text": "Încheierea este caldă și concretă: include semnalul relației, mulțumirea, ziua, ora și locul." },
+                { "language": "sq", "text": "Mbyllja është e ngrohtë dhe konkrete: përfshin sinjalin e marrëdhënies, falënderimin, ditën, orën dhe vendin." }
+              ],
+              "explanationKey": "warm-clear-closing"
+            },
+            {
+              "id": "b",
+              "text": "Okay, bis dann.",
+              "translations": [
+                { "language": "en", "text": "Okay, see you then." },
+                { "language": "fa", "text": "باشه، تا بعد." },
+                { "language": "ar", "text": "حسناً، إلى اللقاء." },
+                { "language": "tr", "text": "Tamam, görüşürüz." },
+                { "language": "ru", "text": "Хорошо, до встречи." },
+                { "language": "ckb", "text": "باشە، تا دواتر." },
+                { "language": "kmr", "text": "Baş e, heta hingê." },
+                { "language": "pl", "text": "Okej, do zobaczenia." },
+                { "language": "ro", "text": "Bine, pe curând." },
+                { "language": "sq", "text": "Në rregull, shihemi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist natürlich, aber für B1 zu knapp: Der neue Termin wird nicht gesichert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is natural, but too brief for B1: the new appointment is not secured." },
+                { "language": "fa", "text": "طبیعی است، اما برای B1 خیلی کوتاه است: زمان جدید تثبیت نمی‌شود." },
+                { "language": "ar", "text": "هذا طبيعي، لكنه قصير جداً لمستوى B1: الموعد الجديد غير مؤكد." },
+                { "language": "tr", "text": "Bu doğal, ama B1 için çok kısa: yeni randevu netleşmiyor." },
+                { "language": "ru", "text": "Это естественно, но для B1 слишком кратко: новая встреча не закреплена." },
+                { "language": "ckb", "text": "ئەمە سروشتییە، بەڵام بۆ B1 زۆر کورتە: کاتی نوێ پشتڕاست ناکرێتەوە." },
+                { "language": "kmr", "text": "Ev xwezayî ye, lê ji bo B1 pir kurt e: hevdîtina nû nayê piştrastkirin." },
+                { "language": "pl", "text": "To jest naturalne, ale za krótkie na B1: nowy termin nie jest potwierdzony." },
+                { "language": "ro", "text": "Este natural, dar prea scurt pentru B1: noua întâlnire nu este confirmată." },
+                { "language": "sq", "text": "Është natyrale, por shumë e shkurtër për B1: takimi i ri nuk konfirmohet." }
+              ],
+              "explanationKey": "closing-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Eine freundliche Absage braucht Dank, kurzen Grund, Beziehungssignal und eine konkrete Alternative.",
+          "translations": [
+            { "language": "en", "text": "B1 target: a friendly refusal needs thanks, a short reason, a relationship signal, and a concrete alternative." },
+            { "language": "fa", "text": "هدف B1: رد دوستانه به تشکر، دلیل کوتاه، نشانه حفظ رابطه و جایگزین مشخص نیاز دارد." },
+            { "language": "ar", "text": "هدف B1: الرفض الودود يحتاج إلى شكر وسبب قصير وإشارة للعلاقة وبديل محدد." },
+            { "language": "tr", "text": "B1 hedefi: dostça bir ret; teşekkür, kısa neden, ilişki sinyali ve somut alternatif gerektirir." },
+            { "language": "ru", "text": "Цель B1: дружелюбный отказ требует благодарности, краткой причины, сигнала отношений и конкретной альтернативы." },
+            { "language": "ckb", "text": "ئامانجی B1: ڕەتکردنەوەی دۆستانە پێویستی بە سوپاس، هۆکاری کورت، نیشانەی پەیوەندی و جێگرەوەی دیاریکراو هەیە." },
+            { "language": "kmr", "text": "Armanca B1: redkirineke dostane hewceyî spas, sedemeke kurt, nîşana têkiliyê û alternatîfeke zelal e." },
+            { "language": "pl", "text": "Cel B1: życzliwa odmowa wymaga podziękowania, krótkiego powodu, sygnału relacji i konkretnej alternatywy." },
+            { "language": "ro", "text": "Obiectiv B1: un refuz prietenos are nevoie de mulțumire, motiv scurt, semnal de relație și alternativă concretă." },
+            { "language": "sq", "text": "Qëllimi B1: një refuzim miqësor ka nevojë për falënderim, arsye të shkurtër, sinjal marrëdhënieje dhe alternativë konkrete." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "packageId": "roleplays-b2-core-29-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 29 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 29",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-schaden-beim-einzug-dokumentieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Schaden beim Einzug dokumentieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Document damage when moving in" },
+        { "language": "fa", "text": "ثبت خسارت هنگام تحویل گرفتن خانه" },
+        { "language": "ar", "text": "توثيق ضرر عند الانتقال إلى السكن" },
+        { "language": "tr", "text": "Taşınırken bir hasarı belgelemek" },
+        { "language": "ru", "text": "Задокументировать повреждение при въезде" },
+        { "language": "ckb", "text": "تۆمارکردنی زیان کاتی چوونە ناو خانوو" },
+        { "language": "kmr", "text": "Dema koçkirinê ziyanekê belge kirin" },
+        { "language": "pl", "text": "Udokumentowanie szkody przy wprowadzaniu się" },
+        { "language": "ro", "text": "Documentarea unei daune la mutare" },
+        { "language": "sq", "text": "Dokumentimi i një dëmi gjatë hyrjes në banesë" }
+      ],
+      "description": "Du bist bei der Wohnungsübergabe und bemerkst mehrere sichtbare Mängel. Du möchtest sie sachlich in das Übergabeprotokoll aufnehmen lassen, Fotos erwähnen und eine schriftliche Vereinbarung zum nächsten Schritt bekommen, ohne den Vermieter direkt zu beschuldigen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at the apartment handover and notice several visible defects. You want to have them recorded factually in the handover protocol, mention photos, and get a written agreement on the next step without directly blaming the landlord." },
+        { "language": "fa", "text": "تو در جلسه تحویل آپارتمان هستی و چند نقص قابل مشاهده می‌بینی. می‌خواهی آن‌ها به‌صورت مستند در صورت‌جلسه تحویل ثبت شوند، عکس‌ها را ذکر کنی و بدون متهم کردن مستقیم صاحبخانه، درباره قدم بعدی توافق کتبی بگیری." },
+        { "language": "ar", "text": "أنت في موعد تسليم الشقة وتلاحظ عدة عيوب ظاهرة. تريد تسجيلها بشكل موضوعي في محضر التسليم، وذكر الصور، والحصول على اتفاق مكتوب بشأن الخطوة التالية دون اتهام المؤجر مباشرة." },
+        { "language": "tr", "text": "Daire tesliminde birkaç görünür kusur fark edersin. Bunların teslim tutanağına nesnel biçimde yazılmasını, fotoğrafları belirtmeyi ve ev sahibini doğrudan suçlamadan sonraki adım için yazılı bir anlaşma almayı istersin." },
+        { "language": "ru", "text": "Вы на передаче квартиры и замечаете несколько видимых дефектов. Вы хотите объективно внести их в акт передачи, упомянуть фотографии и получить письменную договоренность о следующем шаге, не обвиняя арендодателя напрямую." },
+        { "language": "ckb", "text": "تۆ لە کاتی تەحویلی خانوودایت و چەند کەم‌وکورتییەکی دیار دەبینیت. دەتەوێت بە شێوەی بێلایەن لە پڕۆتۆکۆلی تەحویلدا تۆمار بکرێن، وێنەکان ئاماژە پێ بکرێن و بێ ئەوەی خاوەن خانوو ڕاستەوخۆ تاوانبار بکەیت، ڕێککەوتنێکی نووسراو بۆ هەنگاوی داهاتوو وەربگریت." },
+        { "language": "kmr", "text": "Tu di radestkirina apartmanê de yî û çend kêmasiyên xuya dibînî. Tu dixwazî ew bi awayekî rast û bêalî di protokola radestkirinê de bên nivîsandin, wêneyan bibêjî û bêyî ku xwediyê xanî rasterast sûcdar bikî li ser gava paşê peymaneke nivîskî bistînî." },
+        { "language": "pl", "text": "Jesteś przy przekazaniu mieszkania i zauważasz kilka widocznych usterek. Chcesz rzeczowo wpisać je do protokołu przekazania, wspomnieć o zdjęciach i uzyskać pisemne ustalenie następnego kroku bez bezpośredniego obwiniania wynajmującego." },
+        { "language": "ro", "text": "Ești la predarea apartamentului și observi mai multe defecte vizibile. Vrei să fie consemnate obiectiv în procesul-verbal de predare, să menționezi fotografiile și să obții un acord scris privind pasul următor, fără să acuzi direct proprietarul." },
+        { "language": "sq", "text": "Je në dorëzimin e banesës dhe vëren disa mangësi të dukshme. Dëshiron që ato të shënohen në mënyrë faktike në procesverbalin e dorëzimit, të përmendësh fotot dhe të marrësh një marrëveshje me shkrim për hapin tjetër pa e fajësuar drejtpërdrejt qiradhënësin." }
+      ],
+      "learnerGoal": "Beschreibe Schäden genau, belege sie mit Fotos, bitte um Aufnahme ins Übergabeprotokoll und bestätige schriftlich, wer bis wann den nächsten Schritt übernimmt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Describe damage precisely, support it with photos, ask for it to be included in the handover protocol, and confirm in writing who will take the next step by when." },
+        { "language": "fa", "text": "خسارت‌ها را دقیق توضیح بده، با عکس پشتیبانی کن، درخواست کن در صورت‌جلسه تحویل ثبت شوند و کتبی تأیید کن چه کسی تا چه زمانی قدم بعدی را انجام می‌دهد." },
+        { "language": "ar", "text": "صف الأضرار بدقة، وادعمها بالصور، واطلب إدراجها في محضر التسليم، وأكد كتابةً من سيتولى الخطوة التالية وإلى أي موعد." },
+        { "language": "tr", "text": "Hasarları ayrıntılı anlat, fotoğraflarla destekle, teslim tutanağına yazılmasını iste ve bir sonraki adımı kimin ne zamana kadar üstleneceğini yazılı olarak teyit et." },
+        { "language": "ru", "text": "Точно опишите повреждения, подтвердите их фотографиями, попросите внести их в акт передачи и письменно подтвердите, кто и до какого срока берет на себя следующий шаг." },
+        { "language": "ckb", "text": "زیانەکان بە وردی باس بکە، بە وێنە پشتگیریان بکە، داوا بکە لە پڕۆتۆکۆلی تەحویلدا تۆمار بکرێن و بە نووسراو پشتڕاست بکە کێ تا کەی هەنگاوی داهاتوو دەگرێتە ئەستۆ." },
+        { "language": "kmr", "text": "Ziyanan bi hûrgulî rave bike, bi wêneyan piştgirî bike, daxwaza nivîsandina wan di protokola radestkirinê de bike û bi nivîskî piştrast bike ka kî heta kengê gava paşê digire ser xwe." },
+        { "language": "pl", "text": "Dokładnie opisz szkody, poprzyj je zdjęciami, poproś o wpisanie do protokołu przekazania i pisemnie potwierdź, kto do kiedy wykona następny krok." },
+        { "language": "ro", "text": "Descrie precis daunele, susține-le cu fotografii, cere includerea lor în procesul-verbal de predare și confirmă în scris cine preia următorul pas și până când." },
+        { "language": "sq", "text": "Përshkruaj saktë dëmet, mbështeti me foto, kërko që të futen në procesverbalin e dorëzimit dhe konfirmo me shkrim kush e merr hapin tjetër dhe deri kur." }
+      ],
+      "cefrLevel": "B2",
+      "category": "housing",
+      "topics": [
+        "housing",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "taskType": "explain-problem",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "roles": [
+        {
+          "roleKey": "landlord",
+          "displayName": "Vermieter",
+          "translations": [
+            { "language": "en", "text": "Landlord" },
+            { "language": "fa", "text": "صاحبخانه" },
+            { "language": "ar", "text": "المؤجر" },
+            { "language": "tr", "text": "Ev sahibi" },
+            { "language": "ru", "text": "Арендодатель" },
+            { "language": "ckb", "text": "خاوەن خانوو" },
+            { "language": "kmr", "text": "Xwediyê xanî" },
+            { "language": "pl", "text": "Wynajmujący" },
+            { "language": "ro", "text": "Proprietarul" },
+            { "language": "sq", "text": "Qiradhënësi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mieterin",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجرة" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендатор" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemczyni" },
+            { "language": "ro", "text": "Chiriașă" },
+            { "language": "sq", "text": "Qiramarrësja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "landlord",
+          "baseText": "Guten Tag, Frau Karimi. Wir gehen jetzt gemeinsam durch die Wohnung und füllen danach das Übergabeprotokoll aus.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, Ms. Karimi. We will now go through the apartment together and then fill out the handover protocol." },
+            { "language": "fa", "text": "سلام خانم کریمی. الان با هم آپارتمان را بررسی می‌کنیم و بعد صورت‌جلسه تحویل را پر می‌کنیم." },
+            { "language": "ar", "text": "مرحباً سيدة كريمي. سنفحص الشقة معاً الآن ثم نملأ محضر التسليم." },
+            { "language": "tr", "text": "İyi günler Bayan Karimi. Şimdi daireyi birlikte gezeceğiz ve ardından teslim tutanağını dolduracağız." },
+            { "language": "ru", "text": "Добрый день, госпожа Карими. Сейчас мы вместе осмотрим квартиру, а затем заполним акт передачи." },
+            { "language": "ckb", "text": "ڕۆژ باش، خانم کەریمی. ئێستا پێکەوە بە خانووەکەدا دەچین و پاشان پڕۆتۆکۆلی تەحویل پڕدەکەینەوە." },
+            { "language": "kmr", "text": "Roj baş, Xanim Karimi. Em ê niha bi hev re di apartmanê de bigerin û paşê protokola radestkirinê tijî bikin." },
+            { "language": "pl", "text": "Dzień dobry, pani Karimi. Teraz wspólnie przejdziemy przez mieszkanie, a potem wypełnimy protokół przekazania." },
+            { "language": "ro", "text": "Bună ziua, doamnă Karimi. Vom trece acum împreună prin apartament și apoi vom completa procesul-verbal de predare." },
+            { "language": "sq", "text": "Mirëdita, zonja Karimi. Tani do ta shohim banesën së bashku dhe pastaj do të plotësojmë procesverbalin e dorëzimit." }
+          ],
+          "function": "opening",
+          "toneNote": "formal handover opening",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Bevor ich unterschreibe, würde ich gern drei Punkte dokumentieren: einen Kratzer im Wohnzimmerboden, einen feuchten Fleck am Küchenfenster und eine lockere Steckdose im Schlafzimmer.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Before I sign, I would like to document three points: a scratch in the living room floor, a damp spot by the kitchen window, and a loose socket in the bedroom." },
+            { "language": "fa", "text": "ممنون. قبل از اینکه امضا کنم، می‌خواهم سه مورد را ثبت کنیم: یک خراش روی کف اتاق نشیمن، یک لکه رطوبت کنار پنجره آشپزخانه و یک پریز شل در اتاق خواب." },
+            { "language": "ar", "text": "شكراً. قبل أن أوقع، أود توثيق ثلاث نقاط: خدشاً في أرضية غرفة المعيشة، وبقعة رطوبة عند نافذة المطبخ، ومقبساً غير ثابت في غرفة النوم." },
+            { "language": "tr", "text": "Teşekkür ederim. İmzalamadan önce üç noktayı belgelemek isterim: oturma odası zemininde bir çizik, mutfak penceresinde nemli bir leke ve yatak odasında gevşek bir priz." },
+            { "language": "ru", "text": "Спасибо. Перед тем как подписать, я хотела бы задокументировать три пункта: царапину на полу в гостиной, влажное пятно у кухонного окна и плохо закрепленную розетку в спальне." },
+            { "language": "ckb", "text": "سوپاس. پێش ئەوەی واژۆ بکەم، دەمەوێت سێ خاڵ تۆمار بکەین: هەڵکەنراوێک لە زەوی ژووری دانیشتن، لکه‌ی شێ لە لاوەی پەنجەرەی چێشتخانە و پریزێکی شل لە ژووری خەوتن." },
+            { "language": "kmr", "text": "Spas. Berî ku ez îmze bikim, ez dixwazim sê xal belge bikim: xêzek li erdê odeya rûniştinê, lekeke şil li pencereya metbexê û prîzeke lax li odeya razanê." },
+            { "language": "pl", "text": "Dziękuję. Zanim podpiszę, chciałabym udokumentować trzy punkty: rysę na podłodze w salonie, wilgotną plamę przy oknie w kuchni i luźne gniazdko w sypialni." },
+            { "language": "ro", "text": "Mulțumesc. Înainte să semnez, aș dori să documentăm trei aspecte: o zgârietură în podeaua din sufragerie, o pată de umezeală la fereastra din bucătărie și o priză slăbită în dormitor." },
+            { "language": "sq", "text": "Faleminderit. Para se të nënshkruaj, do të doja të dokumentojmë tri pika: një gërvishtje në dyshemenë e dhomës së ndenjes, një njollë lagështie te dritarja e kuzhinës dhe një prizë të liruar në dhomën e gjumit." }
+          ],
+          "function": "state-items",
+          "toneNote": "formal and factual",
+          "expectedLearnerAction": "Nenne die Schäden vor der Unterschrift klar, sachlich und vollständig."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "landlord",
+          "baseText": "Der Kratzer könnte schon älter sein. Haben Sie dazu konkrete Fotos oder eine genaue Beschreibung?",
+          "translations": [
+            { "language": "en", "text": "The scratch could already be older. Do you have specific photos or a precise description?" },
+            { "language": "fa", "text": "این خراش ممکن است از قبل بوده باشد. آیا عکس مشخص یا توضیح دقیق دارید؟" },
+            { "language": "ar", "text": "قد يكون الخدش قديماً. هل لديك صور محددة أو وصف دقيق؟" },
+            { "language": "tr", "text": "Çizik daha eski olabilir. Bunun için somut fotoğraflarınız veya ayrıntılı bir açıklamanız var mı?" },
+            { "language": "ru", "text": "Царапина могла быть уже раньше. У вас есть конкретные фотографии или точное описание?" },
+            { "language": "ckb", "text": "هەڵکەنراوەکە ڕەنگە پێشتر هەبووبێت. وێنەی دیاریکراو یان وەسفێکی وردت هەیە؟" },
+            { "language": "kmr", "text": "Dibe ku xêz ji berê ve hebe. Ma wêneyên taybetî an danasîneke hûrgulî heye?" },
+            { "language": "pl", "text": "Ta rysa mogła być już wcześniej. Czy ma pani konkretne zdjęcia albo dokładny opis?" },
+            { "language": "ro", "text": "Zgârietura ar putea fi mai veche. Aveți fotografii concrete sau o descriere exactă?" },
+            { "language": "sq", "text": "Gërvishtja mund të jetë më e vjetër. A keni foto konkrete ose një përshkrim të saktë?" }
+          ],
+          "function": "request-evidence",
+          "toneNote": "asks for proof",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich habe Fotos mit Datum. Der Kratzer ist links neben der Balkontür und etwa 40 Zentimeter lang. Den feuchten Fleck sieht man unten am Küchenfenster. Ich würde beides gern mit genauer Lage ins Protokoll aufnehmen.",
+          "translations": [
+            { "language": "en", "text": "Yes, I have photos with the date. The scratch is to the left of the balcony door and about 40 centimeters long. The damp spot can be seen at the bottom of the kitchen window. I would like to include both in the protocol with the exact location." },
+            { "language": "fa", "text": "بله، عکس‌هایی با تاریخ دارم. خراش سمت چپ درِ بالکن است و حدود ۴۰ سانتی‌متر طول دارد. لکه رطوبت پایین پنجره آشپزخانه دیده می‌شود. مایلم هر دو مورد با محل دقیق در صورت‌جلسه ثبت شوند." },
+            { "language": "ar", "text": "نعم، لدي صور مع التاريخ. الخدش يقع يسار باب الشرفة وطوله نحو 40 سنتيمتراً. وتظهر بقعة الرطوبة أسفل نافذة المطبخ. أود إدراج الأمرين في المحضر مع الموقع الدقيق." },
+            { "language": "tr", "text": "Evet, tarihli fotoğraflarım var. Çizik balkon kapısının solunda ve yaklaşık 40 santimetre uzunluğunda. Nemli leke mutfak penceresinin alt kısmında görülüyor. İkisini de tam konumuyla tutanağa almak isterim." },
+            { "language": "ru", "text": "Да, у меня есть фотографии с датой. Царапина находится слева от балконной двери и примерно 40 сантиметров длиной. Влажное пятно видно внизу у кухонного окна. Я хотела бы внести оба пункта в акт с точным местоположением." },
+            { "language": "ckb", "text": "بەڵێ، وێنەی بە ڕێکەوتەم هەیە. هەڵکەنراوەکە لە چەپی دەرگای بالکۆنە و نزیکەی ٤٠ سانتیمەتر درێژە. لکه‌ی شێ لە خوارەوەی پەنجەرەی چێشتخانە دەبینرێت. دەمەوێت هەردوو بە شوێنی وردەوە لە پڕۆتۆکۆلەکەدا تۆمار بکرێن." },
+            { "language": "kmr", "text": "Erê, wêneyên bi dîrokê hene. Xêz li aliyê çepê yê deriyê balkonê ye û nêzî 40 santîmetre dirêj e. Leka şil li jêrê pencereya metbexê xuya ye. Ez dixwazim her du bi cihê hûrgulî di protokolê de bên nivîsandin." },
+            { "language": "pl", "text": "Tak, mam zdjęcia z datą. Rysa jest po lewej stronie drzwi balkonowych i ma około 40 centymetrów długości. Wilgotną plamę widać na dole przy oknie kuchennym. Chciałabym wpisać oba punkty do protokołu z dokładnym położeniem." },
+            { "language": "ro", "text": "Da, am fotografii cu dată. Zgârietura este în stânga ușii balconului și are aproximativ 40 de centimetri. Pata de umezeală se vede jos, la fereastra din bucătărie. Aș dori ca ambele să fie trecute în procesul-verbal cu poziția exactă." },
+            { "language": "sq", "text": "Po, kam foto me datë. Gërvishtja është majtas pranë derës së ballkonit dhe është rreth 40 centimetra e gjatë. Njolla e lagështisë shihet poshtë te dritarja e kuzhinës. Do të doja që të dyja të përfshihen në procesverbal me vendndodhje të saktë." }
+          ],
+          "function": "provide-evidence",
+          "toneNote": "precise documentation",
+          "expectedLearnerAction": "Beschreibe Lage, Größe und Nachweis, statt nur allgemein von einem Schaden zu sprechen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "landlord",
+          "baseText": "Die Steckdose sollte sich ein Elektriker ansehen. Beim Fleck müssen wir prüfen, ob es ein alter Wasserschaden oder nur Kondenswasser ist.",
+          "translations": [
+            { "language": "en", "text": "An electrician should look at the socket. With the spot, we need to check whether it is old water damage or just condensation." },
+            { "language": "fa", "text": "پریز را باید یک برق‌کار بررسی کند. درباره لکه باید بررسی کنیم که آیا آسیب قدیمی ناشی از آب است یا فقط بخار و میعان." },
+            { "language": "ar", "text": "ينبغي أن يفحص كهربائي المقبس. أما البقعة فعلينا أن نتحقق هل هي ضرر قديم بسبب الماء أم مجرد تكاثف." },
+            { "language": "tr", "text": "Prizi bir elektrikçinin görmesi gerekir. Leke konusunda bunun eski bir su hasarı mı yoksa sadece yoğuşma mı olduğunu kontrol etmeliyiz." },
+            { "language": "ru", "text": "Розетку должен посмотреть электрик. Что касается пятна, нам нужно проверить, старое ли это повреждение от воды или просто конденсат." },
+            { "language": "ckb", "text": "پریزەکە دەبێت کارەباکارێک ببینێت. لەبارەی لکه‌کە دەبێت بپشکنین ئایا زیانی ئاوی کۆنە یان تەنها شێبوونی هەوا و کۆبوونەوەی ئاوە." },
+            { "language": "kmr", "text": "Divê elektrîkerek li prîzê binêre. Ji bo lekê divê em kontrol bikin ka ew ziyana avê ya kevn e an tenê kondens e." },
+            { "language": "pl", "text": "Gniazdko powinien obejrzeć elektryk. Przy plamie musimy sprawdzić, czy to stara szkoda po wodzie, czy tylko skroplona para." },
+            { "language": "ro", "text": "Priza ar trebui verificată de un electrician. În cazul petei trebuie să verificăm dacă este o daună veche de apă sau doar condens." },
+            { "language": "sq", "text": "Prizën duhet ta shohë një elektricist. Për njollën duhet të kontrollojmë nëse është dëm i vjetër nga uji apo vetëm kondensim." }
+          ],
+          "function": "assess-next-step",
+          "toneNote": "technical assessment",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das ist in Ordnung. Mir ist wichtig, dass im Protokoll neutral steht: bei Übergabe sichtbar, Fotos liegen vor, weitere Prüfung durch Vermieter oder Fachfirma. Können wir zusätzlich eine Frist für die Rückmeldung vereinbaren?",
+          "translations": [
+            { "language": "en", "text": "That is fine. What matters to me is that the protocol states neutrally: visible at handover, photos available, further inspection by landlord or specialist company. Can we also agree on a deadline for the feedback?" },
+            { "language": "fa", "text": "اشکالی ندارد. برای من مهم است که در صورت‌جلسه بی‌طرفانه نوشته شود: هنگام تحویل قابل مشاهده بوده، عکس‌ها موجود است، بررسی بیشتر توسط صاحبخانه یا شرکت تخصصی انجام می‌شود. آیا می‌توانیم علاوه بر این یک مهلت برای پاسخ تعیین کنیم؟" },
+            { "language": "ar", "text": "لا بأس بذلك. المهم بالنسبة لي أن يذكر المحضر بحياد: ظاهر عند التسليم، الصور موجودة، فحص إضافي من قبل المؤجر أو شركة متخصصة. هل يمكننا أيضاً الاتفاق على مهلة للرد؟" },
+            { "language": "tr", "text": "Bu uygundur. Benim için önemli olan tutanakta tarafsız biçimde şu yazsın: teslim sırasında görülebilir, fotoğraflar mevcut, ev sahibi veya uzman firma tarafından ek kontrol yapılacak. Ayrıca geri dönüş için bir süre belirleyebilir miyiz?" },
+            { "language": "ru", "text": "Это нормально. Для меня важно, чтобы в акте нейтрально было указано: видно при передаче, фотографии имеются, дальнейшая проверка арендодателем или специализированной фирмой. Можем ли мы дополнительно договориться о сроке обратной связи?" },
+            { "language": "ckb", "text": "ئەمە باشە. بۆ من گرنگە لە پڕۆتۆکۆلەکەدا بە بێلایەنی بنووسرێت: کاتی تەحویل دیار بووە، وێنەکان هەن، پشکنینی زیاتر لەلایەن خاوەن خانوو یان کۆمپانیایەکی پسپۆڕ. دەتوانین هەروەها ماوەیەک بۆ وەڵامدانەوە ڕێک بکەین؟" },
+            { "language": "kmr", "text": "Ev baş e. Ji bo min girîng e ku di protokolê de bêalî wisa were nivîsandin: di radestkirinê de xuya bû, wêne hene, kontrola zêdetir ji aliyê xwediyê xanî an şîrketeke pispor ve. Ma em dikarin ji bo vegerê jî muhletekê li hev bikin?" },
+            { "language": "pl", "text": "To w porządku. Ważne jest dla mnie, aby w protokole neutralnie zapisano: widoczne przy przekazaniu, zdjęcia dostępne, dalsza kontrola przez wynajmującego lub firmę specjalistyczną. Czy możemy dodatkowo ustalić termin odpowiedzi?" },
+            { "language": "ro", "text": "Este în regulă. Pentru mine este important ca în procesul-verbal să scrie neutru: vizibil la predare, fotografii disponibile, verificare ulterioară de către proprietar sau firmă specializată. Putem stabili și un termen pentru răspuns?" },
+            { "language": "sq", "text": "Kjo është në rregull. Për mua është e rëndësishme që në procesverbal të shkruhet paanshëm: e dukshme gjatë dorëzimit, fotot ekzistojnë, kontroll i mëtejshëm nga qiradhënësi ose një firmë e specializuar. A mund të caktojmë edhe një afat për përgjigje?" }
+          ],
+          "function": "request-neutral-protocol",
+          "toneNote": "neutral legal-administrative phrasing",
+          "expectedLearnerAction": "Formuliere den Protokolleintrag neutral und bitte um eine Frist, ohne Schuld zuzuweisen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "landlord",
+          "baseText": "Ich kann das so aufnehmen. Eine Rückmeldung bis Ende nächster Woche ist realistisch. Die Fotos können Sie mir bitte heute noch per E-Mail schicken.",
+          "translations": [
+            { "language": "en", "text": "I can include it that way. Feedback by the end of next week is realistic. Please send me the photos by email today." },
+            { "language": "fa", "text": "می‌توانم آن را همین‌طور ثبت کنم. پاسخ تا پایان هفته آینده واقع‌بینانه است. لطفاً عکس‌ها را امروز با ایمیل برای من بفرستید." },
+            { "language": "ar", "text": "يمكنني إدراج ذلك بهذه الصيغة. الرد حتى نهاية الأسبوع المقبل واقعي. من فضلك أرسلي لي الصور اليوم عبر البريد الإلكتروني." },
+            { "language": "tr", "text": "Bunu bu şekilde kaydedebilirim. Gelecek haftanın sonuna kadar geri dönüş gerçekçi. Fotoğrafları lütfen bugün bana e-posta ile gönderin." },
+            { "language": "ru", "text": "Я могу внести это таким образом. Ответ до конца следующей недели реалистичен. Пожалуйста, отправьте мне фотографии сегодня по электронной почте." },
+            { "language": "ckb", "text": "دەتوانم بەم شێوەیە تۆماری بکەم. وەڵامدانەوە تا کۆتایی هەفتەی داهاتوو ڕاستەقینەیە. تکایە وێنەکان ئەمڕۆ بە ئیمەیل بۆم بنێرن." },
+            { "language": "kmr", "text": "Ez dikarim wê wisa binivîsim. Veger heta dawiya hefteya bê rastîn e. Ji kerema xwe wêneyan îro bi e-nameyê ji min re bişînin." },
+            { "language": "pl", "text": "Mogę to tak wpisać. Odpowiedź do końca przyszłego tygodnia jest realistyczna. Proszę wysłać mi zdjęcia jeszcze dziś e-mailem." },
+            { "language": "ro", "text": "Pot consemna așa. Un răspuns până la sfârșitul săptămânii viitoare este realist. Vă rog să îmi trimiteți fotografiile astăzi prin e-mail." },
+            { "language": "sq", "text": "Mund ta shënoj kështu. Një përgjigje deri në fund të javës së ardhshme është realiste. Ju lutem m'i dërgoni fotot sot me email." }
+          ],
+          "function": "accept-protocol-step",
+          "toneNote": "formal agreement",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Gern. Dann würde ich die Fotos heute schicken und bitte darum, dass im Protokoll auch steht: Rückmeldung zur Prüfung bis Ende nächster Woche. Kann ich vor der Unterschrift kurz kontrollieren, ob alle drei Punkte eingetragen sind?",
+          "translations": [
+            { "language": "en", "text": "Gladly. Then I will send the photos today and ask that the protocol also state: feedback on the inspection by the end of next week. May I briefly check before signing that all three points have been entered?" },
+            { "language": "fa", "text": "حتماً. پس عکس‌ها را امروز می‌فرستم و خواهش می‌کنم در صورت‌جلسه هم نوشته شود: پاسخ درباره بررسی تا پایان هفته آینده. آیا می‌توانم قبل از امضا کوتاه کنترل کنم که هر سه مورد ثبت شده‌اند؟" },
+            { "language": "ar", "text": "بكل سرور. إذن سأرسل الصور اليوم، وأرجو أن يذكر المحضر أيضاً: الرد بشأن الفحص حتى نهاية الأسبوع المقبل. هل يمكنني قبل التوقيع أن أتحقق بسرعة من إدراج النقاط الثلاث؟" },
+            { "language": "tr", "text": "Memnuniyetle. O halde fotoğrafları bugün göndereceğim ve tutanakta ayrıca şu yazsın istiyorum: kontrolle ilgili geri dönüş gelecek haftanın sonuna kadar. İmzadan önce üç noktanın da yazıldığını kısaca kontrol edebilir miyim?" },
+            { "language": "ru", "text": "Конечно. Тогда я отправлю фотографии сегодня и прошу также указать в акте: обратная связь по проверке до конца следующей недели. Могу ли я перед подписью коротко проверить, что все три пункта внесены?" },
+            { "language": "ckb", "text": "بە دڵنیاییەوە. کەواتە وێنەکان ئەمڕۆ دەنێرم و داوا دەکەم لە پڕۆتۆکۆلەکەدا هەروەها بنووسرێت: وەڵامدانەوە لەبارەی پشکنین تا کۆتایی هەفتەی داهاتوو. دەتوانم پێش واژۆکردن بە کورتی پشکنین بکەم کە هەرسێ خاڵەکە تۆمار کراون؟" },
+            { "language": "kmr", "text": "Bi dilxwazî. Wê demê ez wêneyan îro dişînim û daxwaz dikim ku di protokolê de ev jî hebe: veger li ser kontrolê heta dawiya hefteya bê. Ma ez dikarim berî îmzeyê bi kurtî kontrol bikim ku her sê xal hatine nivîsandin?" },
+            { "language": "pl", "text": "Chętnie. W takim razie wyślę zdjęcia dzisiaj i proszę, aby w protokole znalazł się też zapis: odpowiedź w sprawie kontroli do końca przyszłego tygodnia. Czy przed podpisaniem mogę krótko sprawdzić, czy wpisano wszystkie trzy punkty?" },
+            { "language": "ro", "text": "Cu plăcere. Atunci trimit fotografiile astăzi și vă rog ca în procesul-verbal să fie trecut și: răspuns privind verificarea până la sfârșitul săptămânii viitoare. Pot verifica scurt înainte de semnare dacă toate cele trei puncte au fost introduse?" },
+            { "language": "sq", "text": "Me kënaqësi. Atëherë do t'i dërgoj fotot sot dhe kërkoj që në procesverbal të shkruhet edhe: përgjigje për kontrollin deri në fund të javës së ardhshme. A mund të kontrolloj shkurt para nënshkrimit nëse të tri pikat janë futur?" }
+          ],
+          "function": "confirm-before-signing",
+          "toneNote": "careful and formal",
+          "expectedLearnerAction": "Bestätige deinen eigenen nächsten Schritt und sichere die Protokollformulierung vor der Unterschrift ab."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "landlord",
+          "baseText": "Ja, selbstverständlich. Ich trage die drei Punkte jetzt ein und ergänze die Frist für die Rückmeldung.",
+          "translations": [
+            { "language": "en", "text": "Yes, of course. I will enter the three points now and add the deadline for the feedback." },
+            { "language": "fa", "text": "بله، حتماً. من الان هر سه مورد را وارد می‌کنم و مهلت پاسخ را هم اضافه می‌کنم." },
+            { "language": "ar", "text": "نعم، بالطبع. سأدرج النقاط الثلاث الآن وأضيف مهلة الرد." },
+            { "language": "tr", "text": "Evet, elbette. Üç noktayı şimdi yazıyorum ve geri dönüş süresini ekliyorum." },
+            { "language": "ru", "text": "Да, конечно. Я сейчас внесу три пункта и добавлю срок для обратной связи." },
+            { "language": "ckb", "text": "بەڵێ، بە دڵنیاییەوە. ئێستا هەرسێ خاڵەکە تۆمار دەکەم و ماوەی وەڵامدانەوەش زیاد دەکەم." },
+            { "language": "kmr", "text": "Erê, bê guman. Ez niha her sê xalan dinivîsim û muhleta vegerê jî zêde dikim." },
+            { "language": "pl", "text": "Tak, oczywiście. Wpisuję teraz trzy punkty i dodaję termin odpowiedzi." },
+            { "language": "ro", "text": "Da, desigur. Introduc acum cele trei puncte și adaug termenul pentru răspuns." },
+            { "language": "sq", "text": "Po, patjetër. Po i fus tani të tri pikat dhe po shtoj afatin për përgjigje." }
+          ],
+          "function": "confirm-entry",
+          "toneNote": "agreement",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich prüfe kurz: Kratzer am Wohnzimmerboden, feuchter Fleck am Küchenfenster, lockere Steckdose im Schlafzimmer, Fotos folgen per E-Mail und Rückmeldung bis Ende nächster Woche. So kann ich unterschreiben.",
+          "translations": [
+            { "language": "en", "text": "Thank you. I will check briefly: scratch in the living room floor, damp spot by the kitchen window, loose socket in the bedroom, photos to follow by email, and feedback by the end of next week. With that, I can sign." },
+            { "language": "fa", "text": "ممنون. کوتاه بررسی می‌کنم: خراش روی کف اتاق نشیمن، لکه رطوبت کنار پنجره آشپزخانه، پریز شل در اتاق خواب، عکس‌ها با ایمیل ارسال می‌شوند و پاسخ تا پایان هفته آینده. با این صورت می‌توانم امضا کنم." },
+            { "language": "ar", "text": "شكراً. أتحقق باختصار: خدش في أرضية غرفة المعيشة، بقعة رطوبة عند نافذة المطبخ، مقبس غير ثابت في غرفة النوم، الصور ستُرسل بالبريد الإلكتروني والرد حتى نهاية الأسبوع المقبل. بهذه الصيغة يمكنني التوقيع." },
+            { "language": "tr", "text": "Teşekkür ederim. Kısaca kontrol ediyorum: oturma odası zemininde çizik, mutfak penceresinde nemli leke, yatak odasında gevşek priz, fotoğraflar e-posta ile gönderilecek ve gelecek haftanın sonuna kadar geri dönüş yapılacak. Bu şekilde imzalayabilirim." },
+            { "language": "ru", "text": "Спасибо. Я коротко проверю: царапина на полу в гостиной, влажное пятно у кухонного окна, плохо закрепленная розетка в спальне, фотографии будут отправлены по электронной почте и ответ до конца следующей недели. В таком виде я могу подписать." },
+            { "language": "ckb", "text": "سوپاس. بە کورتی پشکنین دەکەم: هەڵکەنراو لە زەوی ژووری دانیشتن، لکه‌ی شێ لە لاوەی پەنجەرەی چێشتخانە، پریزی شل لە ژووری خەوتن، وێنەکان بە ئیمەیل دەنێردرێن و وەڵامدانەوە تا کۆتایی هەفتەی داهاتوو. بەم شێوەیە دەتوانم واژۆ بکەم." },
+            { "language": "kmr", "text": "Spas. Ez bi kurtî kontrol dikim: xêz li erdê odeya rûniştinê, leka şil li pencereya metbexê, prîza lax li odeya razanê, wêne bi e-nameyê tên şandin û veger heta dawiya hefteya bê. Bi vê awayê ez dikarim îmze bikim." },
+            { "language": "pl", "text": "Dziękuję. Krótko sprawdzam: rysa na podłodze w salonie, wilgotna plama przy oknie kuchennym, luźne gniazdko w sypialni, zdjęcia zostaną dosłane e-mailem i odpowiedź do końca przyszłego tygodnia. W takiej formie mogę podpisać." },
+            { "language": "ro", "text": "Mulțumesc. Verific pe scurt: zgârietură în podeaua din sufragerie, pată de umezeală la fereastra din bucătărie, priză slăbită în dormitor, fotografiile urmează prin e-mail și răspuns până la sfârșitul săptămânii viitoare. Așa pot semna." },
+            { "language": "sq", "text": "Faleminderit. Po kontrolloj shkurt: gërvishtje në dyshemenë e dhomës së ndenjes, njollë lagështie te dritarja e kuzhinës, prizë e liruar në dhomën e gjumit, fotot dërgohen me email dhe përgjigjja deri në fund të javës së ardhshme. Kështu mund të nënshkruaj." }
+          ],
+          "function": "final-check",
+          "toneNote": "clear final confirmation",
+          "expectedLearnerAction": "Kontrolliere vor der Unterschrift alle vereinbarten Punkte und fasse sie knapp zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Bevor ich unterschreibe, würde ich gern drei Punkte dokumentieren: einen Kratzer im Wohnzimmerboden, einen feuchten Fleck am Küchenfenster und eine lockere Steckdose im Schlafzimmer.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Before I sign, I would like to document three points: a scratch in the living room floor, a damp spot by the kitchen window, and a loose socket in the bedroom." },
+                { "language": "fa", "text": "ممنون. قبل از اینکه امضا کنم، می‌خواهم سه مورد را ثبت کنیم: یک خراش روی کف اتاق نشیمن، یک لکه رطوبت کنار پنجره آشپزخانه و یک پریز شل در اتاق خواب." },
+                { "language": "ar", "text": "شكراً. قبل أن أوقع، أود توثيق ثلاث نقاط: خدشاً في أرضية غرفة المعيشة، وبقعة رطوبة عند نافذة المطبخ، ومقبساً غير ثابت في غرفة النوم." },
+                { "language": "tr", "text": "Teşekkür ederim. İmzalamadan önce üç noktayı belgelemek isterim: oturma odası zemininde bir çizik, mutfak penceresinde nemli bir leke ve yatak odasında gevşek bir priz." },
+                { "language": "ru", "text": "Спасибо. Перед тем как подписать, я хотела бы задокументировать три пункта: царапину на полу в гостиной, влажное пятно у кухонного окна и плохо закрепленную розетку в спальне." },
+                { "language": "ckb", "text": "سوپاس. پێش ئەوەی واژۆ بکەم، دەمەوێت سێ خاڵ تۆمار بکەین: هەڵکەنراوێک لە زەوی ژووری دانیشتن، لکه‌ی شێ لە لاوەی پەنجەرەی چێشتخانە و پریزێکی شل لە ژووری خەوتن." },
+                { "language": "kmr", "text": "Spas. Berî ku ez îmze bikim, ez dixwazim sê xal belge bikim: xêzek li erdê odeya rûniştinê, lekeke şil li pencereya metbexê û prîzeke lax li odeya razanê." },
+                { "language": "pl", "text": "Dziękuję. Zanim podpiszę, chciałabym udokumentować trzy punkty: rysę na podłodze w salonie, wilgotną plamę przy oknie w kuchni i luźne gniazdko w sypialni." },
+                { "language": "ro", "text": "Mulțumesc. Înainte să semnez, aș dori să documentăm trei aspecte: o zgârietură în podeaua din sufragerie, o pată de umezeală la fereastra din bucătărie și o priză slăbită în dormitor." },
+                { "language": "sq", "text": "Faleminderit. Para se të nënshkruaj, do të doja të dokumentojmë tri pika: një gërvishtje në dyshemenë e dhomës së ndenjes, një njollë lagështie te dritarja e kuzhinës dhe një prizë të liruar në dhomën e gjumit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt die Schäden vor der Unterschrift vollständig und sachlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names the damage completely and factually before signing." },
+                { "language": "fa", "text": "خوب است: پاسخ قبل از امضا خسارت‌ها را کامل و مستند نام می‌برد." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة الأضرار كاملة وبشكل موضوعي قبل التوقيع." },
+                { "language": "tr", "text": "İyi: cevap imzadan önce hasarları eksiksiz ve nesnel biçimde belirtiyor." },
+                { "language": "ru", "text": "Хорошо: ответ полностью и фактически называет повреждения до подписи." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پێش واژۆکردن زیانەکان بە تەواوی و بە شێوەی ڕاستی ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: bersiv berî îmzeyê ziyanê bi temamî û bi rastî bi nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź przed podpisem pełnie i rzeczowo wymienia szkody." },
+                { "language": "ro", "text": "Bine: răspunsul numește complet și obiectiv daunele înainte de semnare." },
+                { "language": "sq", "text": "Mirë: përgjigjja i përmend dëmet plotësisht dhe faktikisht para nënshkrimit." }
+              ],
+              "explanationKey": "b2-move-in-document-before-signing"
+            },
+            {
+              "id": "weak-too-vague",
+              "text": "Hier ist einiges nicht in Ordnung. Das sollten wir irgendwie notieren.",
+              "translations": [
+                { "language": "en", "text": "Several things are not right here. We should somehow note that." },
+                { "language": "fa", "text": "اینجا چند چیز درست نیست. باید یک‌جوری آن را یادداشت کنیم." },
+                { "language": "ar", "text": "هناك عدة أمور غير سليمة هنا. ينبغي أن ندوّن ذلك بطريقة ما." },
+                { "language": "tr", "text": "Burada bazı şeyler düzgün değil. Bunu bir şekilde not etmeliyiz." },
+                { "language": "ru", "text": "Здесь кое-что не в порядке. Нужно как-то это записать." },
+                { "language": "ckb", "text": "لێرە چەند شتێک ڕێک نییە. پێویستە بە شێوەیەک تۆماری بکەین." },
+                { "language": "kmr", "text": "Li vir hin tişt nebaş in. Divê em bi awayekî wan binivîsin." },
+                { "language": "pl", "text": "Tutaj kilka rzeczy jest nie w porządku. Powinniśmy to jakoś zanotować." },
+                { "language": "ro", "text": "Aici sunt câteva lucruri în neregulă. Ar trebui să le notăm cumva." },
+                { "language": "sq", "text": "Këtu disa gjëra nuk janë në rregull. Duhet t'i shënojmë disi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort klingt berechtigt, nennt aber keine konkreten Schäden und ist für ein Protokoll zu schwach.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer sounds justified, but it names no concrete damage and is too weak for a protocol." },
+                { "language": "fa", "text": "زیادی نامشخص است: پاسخ منطقی به نظر می‌رسد، اما خسارت مشخصی نام نمی‌برد و برای صورت‌جلسه کافی نیست." },
+                { "language": "ar", "text": "غير دقيقة بما يكفي: تبدو الإجابة مبررة، لكنها لا تذكر أضراراً محددة وهي ضعيفة للمحضر." },
+                { "language": "tr", "text": "Çok belirsiz: cevap haklı görünüyor, ama somut hasar belirtmiyor ve tutanak için zayıf kalıyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ звучит обоснованно, но не называет конкретных повреждений и слишком слаб для акта." },
+                { "language": "ckb", "text": "زۆر نادیارە: وەڵامەکە ڕەوا دەنگ دەدات، بەڵام هیچ زیانێکی دیاریکراو ناو نابات و بۆ پڕۆتۆکۆل لاوازە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv rast xuya dike, lê ziyanên taybetî bi nav nake û ji bo protokolê lawaz e." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: odpowiedź brzmi zasadnie, ale nie nazywa konkretnych szkód i jest za słaba do protokołu." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul pare justificat, dar nu numește daune concrete și este prea slab pentru procesul-verbal." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja duket e arsyeshme, por nuk përmend dëme konkrete dhe është e dobët për procesverbal." }
+              ],
+              "explanationKey": "b2-move-in-avoid-vague-damage"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, ich habe Fotos mit Datum. Der Kratzer ist links neben der Balkontür und etwa 40 Zentimeter lang. Den feuchten Fleck sieht man unten am Küchenfenster. Ich würde beides gern mit genauer Lage ins Protokoll aufnehmen.",
+              "translations": [
+                { "language": "en", "text": "Yes, I have photos with the date. The scratch is to the left of the balcony door and about 40 centimeters long. The damp spot can be seen at the bottom of the kitchen window. I would like to include both in the protocol with the exact location." },
+                { "language": "fa", "text": "بله، عکس‌هایی با تاریخ دارم. خراش سمت چپ درِ بالکن است و حدود ۴۰ سانتی‌متر طول دارد. لکه رطوبت پایین پنجره آشپزخانه دیده می‌شود. مایلم هر دو مورد با محل دقیق در صورت‌جلسه ثبت شوند." },
+                { "language": "ar", "text": "نعم، لدي صور مع التاريخ. الخدش يقع يسار باب الشرفة وطوله نحو 40 سنتيمتراً. وتظهر بقعة الرطوبة أسفل نافذة المطبخ. أود إدراج الأمرين في المحضر مع الموقع الدقيق." },
+                { "language": "tr", "text": "Evet, tarihli fotoğraflarım var. Çizik balkon kapısının solunda ve yaklaşık 40 santimetre uzunluğunda. Nemli leke mutfak penceresinin alt kısmında görülüyor. İkisini de tam konumuyla tutanağa almak isterim." },
+                { "language": "ru", "text": "Да, у меня есть фотографии с датой. Царапина находится слева от балконной двери и примерно 40 сантиметров длиной. Влажное пятно видно внизу у кухонного окна. Я хотела бы внести оба пункта в акт с точным местоположением." },
+                { "language": "ckb", "text": "بەڵێ، وێنەی بە ڕێکەوتەم هەیە. هەڵکەنراوەکە لە چەپی دەرگای بالکۆنە و نزیکەی ٤٠ سانتیمەتر درێژە. لکه‌ی شێ لە خوارەوەی پەنجەرەی چێشتخانە دەبینرێت. دەمەوێت هەردوو بە شوێنی وردەوە لە پڕۆتۆکۆلەکەدا تۆمار بکرێن." },
+                { "language": "kmr", "text": "Erê, wêneyên bi dîrokê hene. Xêz li aliyê çepê yê deriyê balkonê ye û nêzî 40 santîmetre dirêj e. Leka şil li jêrê pencereya metbexê xuya ye. Ez dixwazim her du bi cihê hûrgulî di protokolê de bên nivîsandin." },
+                { "language": "pl", "text": "Tak, mam zdjęcia z datą. Rysa jest po lewej stronie drzwi balkonowych i ma około 40 centymetrów długości. Wilgotną plamę widać na dole przy oknie kuchennym. Chciałabym wpisać oba punkty do protokołu z dokładnym położeniem." },
+                { "language": "ro", "text": "Da, am fotografii cu dată. Zgârietura este în stânga ușii balconului și are aproximativ 40 de centimetri. Pata de umezeală se vede jos, la fereastra din bucătărie. Aș dori ca ambele să fie trecute în procesul-verbal cu poziția exactă." },
+                { "language": "sq", "text": "Po, kam foto me datë. Gërvishtja është majtas pranë derës së ballkonit dhe është rreth 40 centimetra e gjatë. Njolla e lagështisë shihet poshtë te dritarja e kuzhinës. Do të doja që të dyja të përfshihen në procesverbal me vendndodhje të saktë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Nachweis, genaue Lage und sachliche Bitte um Protokolleintrag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer combines evidence, exact location, and a factual request for a protocol entry." },
+                { "language": "fa", "text": "خوب است: پاسخ مدرک، محل دقیق و درخواست مستند برای ثبت در صورت‌جلسه را با هم می‌آورد." },
+                { "language": "ar", "text": "جيد: تجمع الإجابة بين الدليل والموقع الدقيق وطلب موضوعي لإدراجها في المحضر." },
+                { "language": "tr", "text": "İyi: cevap kanıtı, tam konumu ve tutanak kaydı için nesnel talebi birleştiriyor." },
+                { "language": "ru", "text": "Хорошо: ответ соединяет доказательство, точное местоположение и фактическую просьбу о внесении в акт." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگە، شوێنی ورد و داوای بێلایەن بۆ تۆمارکردن لە پڕۆتۆکۆلدا پێکەوە دەهێنێت." },
+                { "language": "kmr", "text": "Baş e: bersiv belge, cihê hûrgulî û daxwaza rast a ji bo nivîsandina protokolê têkildar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy dowód, dokładne położenie i rzeczową prośbę o wpis do protokołu." },
+                { "language": "ro", "text": "Bine: răspunsul combină dovada, poziția exactă și cererea obiectivă de consemnare în procesul-verbal." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh provën, vendndodhjen e saktë dhe kërkesën faktike për shënim në procesverbal." }
+              ],
+              "explanationKey": "b2-move-in-evidence-location"
+            },
+            {
+              "id": "weak-photo-only",
+              "text": "Ich habe Fotos davon. Das müsste eigentlich reichen.",
+              "translations": [
+                { "language": "en", "text": "I have photos of it. That should actually be enough." },
+                { "language": "fa", "text": "از آن عکس دارم. در واقع همین باید کافی باشد." },
+                { "language": "ar", "text": "لدي صور لذلك. هذا ينبغي أن يكون كافياً في الواقع." },
+                { "language": "tr", "text": "Bunun fotoğrafları var. Aslında bu yeterli olmalı." },
+                { "language": "ru", "text": "У меня есть фотографии этого. Вообще-то этого должно быть достаточно." },
+                { "language": "ckb", "text": "وێنەم لەوە هەیە. ئەمە دەبێت لە ڕاستیدا بەس بێت." },
+                { "language": "kmr", "text": "Wêneyên min ji wê hene. Ev di rastiyê de divê têr bike." },
+                { "language": "pl", "text": "Mam tego zdjęcia. To właściwie powinno wystarczyć." },
+                { "language": "ro", "text": "Am fotografii cu asta. De fapt ar trebui să fie suficient." },
+                { "language": "sq", "text": "Kam foto të kësaj. Kjo në fakt duhet të mjaftojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Fotos helfen, ersetzen aber im Protokoll nicht Lage, Umfang und konkrete Beschreibung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete: photos help, but in the protocol they do not replace location, extent, and concrete description." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما کامل نیست: عکس کمک می‌کند، ولی در صورت‌جلسه جای محل، اندازه و توضیح دقیق را نمی‌گیرد." },
+                { "language": "ar", "text": "ممكنة، لكنها غير كاملة: الصور تساعد، لكنها لا تعوض في المحضر عن الموقع والحجم والوصف المحدد." },
+                { "language": "tr", "text": "Mantıklı ama eksik: fotoğraflar yardımcı olur, fakat tutanakta konum, kapsam ve somut açıklamanın yerini tutmaz." },
+                { "language": "ru", "text": "Возможно, но неполно: фотографии помогают, но в акте не заменяют местоположение, объем и конкретное описание." },
+                { "language": "ckb", "text": "قابلی قبوڵە، بەڵام تەواو نییە: وێنە یارمەتیدەرە، بەڵام لە پڕۆتۆکۆلدا جێی شوێن، قەبارە و وەسفی دیاریکراو ناگرێتەوە." },
+                { "language": "kmr", "text": "Têgihîştinbar e, lê netemam e: wêne alîkar in, lê di protokolê de cih, mezinahî û danasîna taybetî nayên şûna wan." },
+                { "language": "pl", "text": "Możliwe, ale niepełne: zdjęcia pomagają, lecz w protokole nie zastępują położenia, zakresu i konkretnego opisu." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: fotografiile ajută, dar în procesul-verbal nu înlocuiesc poziția, dimensiunea și descrierea concretă." },
+                { "language": "sq", "text": "E mundshme, por e paplotë: fotot ndihmojnë, por në procesverbal nuk zëvendësojnë vendndodhjen, përmasën dhe përshkrimin konkret." }
+              ],
+              "explanationKey": "b2-move-in-photo-not-enough"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Das ist in Ordnung. Mir ist wichtig, dass im Protokoll neutral steht: bei Übergabe sichtbar, Fotos liegen vor, weitere Prüfung durch Vermieter oder Fachfirma. Können wir zusätzlich eine Frist für die Rückmeldung vereinbaren?",
+              "translations": [
+                { "language": "en", "text": "That is fine. What matters to me is that the protocol states neutrally: visible at handover, photos available, further inspection by landlord or specialist company. Can we also agree on a deadline for the feedback?" },
+                { "language": "fa", "text": "اشکالی ندارد. برای من مهم است که در صورت‌جلسه بی‌طرفانه نوشته شود: هنگام تحویل قابل مشاهده بوده، عکس‌ها موجود است، بررسی بیشتر توسط صاحبخانه یا شرکت تخصصی انجام می‌شود. آیا می‌توانیم علاوه بر این یک مهلت برای پاسخ تعیین کنیم؟" },
+                { "language": "ar", "text": "لا بأس بذلك. المهم بالنسبة لي أن يذكر المحضر بحياد: ظاهر عند التسليم، الصور موجودة، فحص إضافي من قبل المؤجر أو شركة متخصصة. هل يمكننا أيضاً الاتفاق على مهلة للرد؟" },
+                { "language": "tr", "text": "Bu uygundur. Benim için önemli olan tutanakta tarafsız biçimde şu yazsın: teslim sırasında görülebilir, fotoğraflar mevcut, ev sahibi veya uzman firma tarafından ek kontrol yapılacak. Ayrıca geri dönüş için bir süre belirleyebilir miyiz?" },
+                { "language": "ru", "text": "Это нормально. Для меня важно, чтобы в акте нейтрально было указано: видно при передаче, фотографии имеются, дальнейшая проверка арендодателем или специализированной фирмой. Можем ли мы дополнительно договориться о сроке обратной связи?" },
+                { "language": "ckb", "text": "ئەمە باشە. بۆ من گرنگە لە پڕۆتۆکۆلەکەدا بە بێلایەنی بنووسرێت: کاتی تەحویل دیار بووە، وێنەکان هەن، پشکنینی زیاتر لەلایەن خاوەن خانوو یان کۆمپانیایەکی پسپۆڕ. دەتوانین هەروەها ماوەیەک بۆ وەڵامدانەوە ڕێک بکەین؟" },
+                { "language": "kmr", "text": "Ev baş e. Ji bo min girîng e ku di protokolê de bêalî wisa were nivîsandin: di radestkirinê de xuya bû, wêne hene, kontrola zêdetir ji aliyê xwediyê xanî an şîrketeke pispor ve. Ma em dikarin ji bo vegerê jî muhletekê li hev bikin?" },
+                { "language": "pl", "text": "To w porządku. Ważne jest dla mnie, aby w protokole neutralnie zapisano: widoczne przy przekazaniu, zdjęcia dostępne, dalsza kontrola przez wynajmującego lub firmę specjalistyczną. Czy możemy dodatkowo ustalić termin odpowiedzi?" },
+                { "language": "ro", "text": "Este în regulă. Pentru mine este important ca în procesul-verbal să scrie neutru: vizibil la predare, fotografii disponibile, verificare ulterioară de către proprietar sau firmă specializată. Putem stabili și un termen pentru răspuns?" },
+                { "language": "sq", "text": "Kjo është në rregull. Për mua është e rëndësishme që në procesverbal të shkruhet paanshëm: e dukshme gjatë dorëzimit, fotot ekzistojnë, kontroll i mëtejshëm nga qiradhënësi ose një firmë e specializuar. A mund të caktojmë edhe një afat për përgjigje?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort formuliert ohne Schuldzuweisung und verbindet Protokolltext mit einer Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer phrases it without assigning blame and connects the protocol text with a deadline." },
+                { "language": "fa", "text": "خوب است: پاسخ بدون نسبت دادن تقصیر جمله‌بندی می‌کند و متن صورت‌جلسه را با یک مهلت وصل می‌کند." },
+                { "language": "ar", "text": "جيد: تصوغ الإجابة الأمر دون إلقاء اللوم وتربط نص المحضر بمهلة." },
+                { "language": "tr", "text": "İyi: cevap suç yüklemeden ifade ediyor ve tutanak metnini bir süreyle bağlıyor." },
+                { "language": "ru", "text": "Хорошо: ответ формулирует без обвинения и связывает текст акта со сроком." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بێ تاوانبارکردن داڕێژراوە و دەقی پڕۆتۆکۆل بە ماوەیەکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Baş e: bersiv bê sûcdarkirin tê formulekirin û nivîsa protokolê bi muhletê ve girê dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź formułuje sprawę bez przypisywania winy i łączy tekst protokołu z terminem." },
+                { "language": "ro", "text": "Bine: răspunsul formulează fără a atribui vina și leagă textul procesului-verbal de un termen." },
+                { "language": "sq", "text": "Mirë: përgjigjja formulohet pa fajësim dhe e lidh tekstin e procesverbalit me një afat." }
+              ],
+              "explanationKey": "b2-move-in-neutral-protocol-deadline"
+            },
+            {
+              "id": "weak-blaming",
+              "text": "Dann schreiben Sie bitte, dass diese Schäden von Ihnen noch repariert werden müssen.",
+              "translations": [
+                { "language": "en", "text": "Then please write that these damages still have to be repaired by you." },
+                { "language": "fa", "text": "پس لطفاً بنویسید که این خسارت‌ها هنوز باید توسط شما تعمیر شوند." },
+                { "language": "ar", "text": "إذن اكتب من فضلك أن هذه الأضرار يجب أن تُصلح من قبلكم." },
+                { "language": "tr", "text": "O zaman lütfen bu hasarların sizin tarafınızdan onarılması gerektiğini yazın." },
+                { "language": "ru", "text": "Тогда, пожалуйста, напишите, что эти повреждения еще должны быть отремонтированы вами." },
+                { "language": "ckb", "text": "کەواتە تکایە بنووسن کە ئەم زیانانە هێشتا دەبێت لەلایەن ئێوەوە چاک بکرێنەوە." },
+                { "language": "kmr", "text": "Wê demê ji kerema xwe binivîsin ku divê ev ziyan hîn ji aliyê we ve werin sererastkirin." },
+                { "language": "pl", "text": "W takim razie proszę napisać, że te szkody muszą jeszcze zostać przez pana naprawione." },
+                { "language": "ro", "text": "Atunci vă rog să scrieți că aceste daune trebuie încă reparate de dumneavoastră." },
+                { "language": "sq", "text": "Atëherë ju lutem shkruani që këto dëme duhet ende të riparohen nga ju." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu früh festgelegt: Die Antwort fordert schon eine Verantwortung, obwohl erst Prüfung und Dokumentation vereinbart werden sollten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too fixed too early: the answer already demands responsibility, although inspection and documentation should first be agreed." },
+                { "language": "fa", "text": "زیادی زود نتیجه‌گیری می‌کند: پاسخ از همین حالا مسئولیت مطالبه می‌کند، در حالی که اول باید بررسی و ثبت توافق شود." },
+                { "language": "ar", "text": "حسم مبكر جداً: تطالب الإجابة بالمسؤولية منذ الآن، مع أن الاتفاق ينبغي أن يكون أولاً على الفحص والتوثيق." },
+                { "language": "tr", "text": "Çok erken kesinleştiriyor: cevap şimdiden sorumluluk talep ediyor, oysa önce kontrol ve belgeleme üzerinde anlaşılmalı." },
+                { "language": "ru", "text": "Слишком рано зафиксировано: ответ уже требует ответственности, хотя сначала нужно договориться о проверке и документировании." },
+                { "language": "ckb", "text": "زۆر زوو بڕیار دەدات: وەڵامەکە لە ئێستاوە بەرپرسیارێتی داوا دەکات، کاتێک پێویستە سەرەتا ڕێککەوتن لەسەر پشکنین و تۆمارکردن بکرێت." },
+                { "language": "kmr", "text": "Pir zû diyarkirî ye: bersiv ji niha berpirsiyarî dixwaze, lê divê berê li ser kontrol û belgekirinê li hev were kirin." },
+                { "language": "pl", "text": "Zbyt wcześnie przesądza: odpowiedź już żąda odpowiedzialności, choć najpierw należy uzgodnić kontrolę i dokumentację." },
+                { "language": "ro", "text": "Prea categoric prea devreme: răspunsul cere deja responsabilitate, deși mai întâi ar trebui convenite verificarea și documentarea." },
+                { "language": "sq", "text": "Shumë e përcaktuar herët: përgjigjja kërkon tashmë përgjegjësi, megjithëse së pari duhet rënë dakord për kontrollin dhe dokumentimin." }
+              ],
+              "explanationKey": "b2-move-in-avoid-premature-blame"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Gern. Dann würde ich die Fotos heute schicken und bitte darum, dass im Protokoll auch steht: Rückmeldung zur Prüfung bis Ende nächster Woche. Kann ich vor der Unterschrift kurz kontrollieren, ob alle drei Punkte eingetragen sind?",
+              "translations": [
+                { "language": "en", "text": "Gladly. Then I will send the photos today and ask that the protocol also state: feedback on the inspection by the end of next week. May I briefly check before signing that all three points have been entered?" },
+                { "language": "fa", "text": "حتماً. پس عکس‌ها را امروز می‌فرستم و خواهش می‌کنم در صورت‌جلسه هم نوشته شود: پاسخ درباره بررسی تا پایان هفته آینده. آیا می‌توانم قبل از امضا کوتاه کنترل کنم که هر سه مورد ثبت شده‌اند؟" },
+                { "language": "ar", "text": "بكل سرور. إذن سأرسل الصور اليوم، وأرجو أن يذكر المحضر أيضاً: الرد بشأن الفحص حتى نهاية الأسبوع المقبل. هل يمكنني قبل التوقيع أن أتحقق بسرعة من إدراج النقاط الثلاث؟" },
+                { "language": "tr", "text": "Memnuniyetle. O halde fotoğrafları bugün göndereceğim ve tutanakta ayrıca şu yazsın istiyorum: kontrolle ilgili geri dönüş gelecek haftanın sonuna kadar. İmzadan önce üç noktanın da yazıldığını kısaca kontrol edebilir miyim?" },
+                { "language": "ru", "text": "Конечно. Тогда я отправлю фотографии сегодня и прошу также указать в акте: обратная связь по проверке до конца следующей недели. Могу ли я перед подписью коротко проверить, что все три пункта внесены?" },
+                { "language": "ckb", "text": "بە دڵنیاییەوە. کەواتە وێنەکان ئەمڕۆ دەنێرم و داوا دەکەم لە پڕۆتۆکۆلەکەدا هەروەها بنووسرێت: وەڵامدانەوە لەبارەی پشکنین تا کۆتایی هەفتەی داهاتوو. دەتوانم پێش واژۆکردن بە کورتی پشکنین بکەم کە هەرسێ خاڵەکە تۆمار کراون؟" },
+                { "language": "kmr", "text": "Bi dilxwazî. Wê demê ez wêneyan îro dişînim û daxwaz dikim ku di protokolê de ev jî hebe: veger li ser kontrolê heta dawiya hefteya bê. Ma ez dikarim berî îmzeyê bi kurtî kontrol bikim ku her sê xal hatine nivîsandin?" },
+                { "language": "pl", "text": "Chętnie. W takim razie wyślę zdjęcia dzisiaj i proszę, aby w protokole znalazł się też zapis: odpowiedź w sprawie kontroli do końca przyszłego tygodnia. Czy przed podpisaniem mogę krótko sprawdzić, czy wpisano wszystkie trzy punkty?" },
+                { "language": "ro", "text": "Cu plăcere. Atunci trimit fotografiile astăzi și vă rog ca în procesul-verbal să fie trecut și: răspuns privind verificarea până la sfârșitul săptămânii viitoare. Pot verifica scurt înainte de semnare dacă toate cele trei puncte au fost introduse?" },
+                { "language": "sq", "text": "Me kënaqësi. Atëherë do t'i dërgoj fotot sot dhe kërkoj që në procesverbal të shkruhet edhe: përgjigje për kontrollin deri në fund të javës së ardhshme. A mund të kontrolloj shkurt para nënshkrimit nëse të tri pikat janë futur?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet deinen Beitrag, die Frist und die Kontrolle vor der Unterschrift.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer connects your contribution, the deadline, and the check before signing." },
+                { "language": "fa", "text": "خوب است: پاسخ قدم خودت، مهلت و کنترل قبل از امضا را به هم وصل می‌کند." },
+                { "language": "ar", "text": "جيد: تربط الإجابة بين مساهمتك والمهلة والتحقق قبل التوقيع." },
+                { "language": "tr", "text": "İyi: cevap senin katkını, süreyi ve imzadan önceki kontrolü birleştiriyor." },
+                { "language": "ru", "text": "Хорошо: ответ связывает ваш вклад, срок и проверку перед подписью." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەشداریی خۆت، ماوە و پشکنینی پێش واژۆکردن پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Baş e: bersiv beşdariya te, muhlet û kontrola berî îmzeyê bi hev ve girê dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy twój wkład, termin i kontrolę przed podpisem." },
+                { "language": "ro", "text": "Bine: răspunsul leagă contribuția ta, termenul și verificarea înainte de semnare." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh kontributin tënd, afatin dhe kontrollin para nënshkrimit." }
+              ],
+              "explanationKey": "b2-move-in-check-before-signing"
+            },
+            {
+              "id": "weak-trust-without-check",
+              "text": "Gut, dann unterschreibe ich schon mal und schicke die Fotos später.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will sign now and send the photos later." },
+                { "language": "fa", "text": "خوب، پس من فعلاً امضا می‌کنم و عکس‌ها را بعداً می‌فرستم." },
+                { "language": "ar", "text": "حسناً، إذن سأوقع الآن وأرسل الصور لاحقاً." },
+                { "language": "tr", "text": "Tamam, o halde şimdi imzalayayım ve fotoğrafları sonra göndereyim." },
+                { "language": "ru", "text": "Хорошо, тогда я пока подпишу и отправлю фотографии позже." },
+                { "language": "ckb", "text": "باشە، کەواتە ئێستا واژۆ دەکەم و وێنەکان دواتر دەنێرم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez niha îmze dikim û wêneyan paşê dişînim." },
+                { "language": "pl", "text": "Dobrze, w takim razie już podpiszę i wyślę zdjęcia później." },
+                { "language": "ro", "text": "Bine, atunci semnez acum și trimit fotografiile mai târziu." },
+                { "language": "sq", "text": "Mirë, atëherë po nënshkruaj tani dhe fotot i dërgoj më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant: Ohne Kontrolle vor der Unterschrift fehlt dir die Sicherheit, dass alle Punkte wirklich im Protokoll stehen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but risky: without checking before signing, you lack certainty that all points are really in the protocol." },
+                { "language": "fa", "text": "قابل تصور است، اما پرریسک: بدون کنترل قبل از امضا مطمئن نیستی که همه موارد واقعاً در صورت‌جلسه آمده‌اند." },
+                { "language": "ar", "text": "ممكنة، لكنها محفوفة بالمخاطر: دون التحقق قبل التوقيع لا تكون لديك ضمانة أن كل النقاط موجودة فعلاً في المحضر." },
+                { "language": "tr", "text": "Mantıklı görünebilir ama riskli: imzadan önce kontrol etmeden tüm noktaların gerçekten tutanakta olduğundan emin olamazsın." },
+                { "language": "ru", "text": "Возможно, но рискованно: без проверки перед подписью у вас нет уверенности, что все пункты действительно внесены в акт." },
+                { "language": "ckb", "text": "قابلی تێگەیشتنە، بەڵام مەترسیدارە: بێ پشکنینی پێش واژۆکردن دڵنیا نابیت کە هەموو خاڵەکان بەڕاستی لە پڕۆتۆکۆلەکەدا هەن." },
+                { "language": "kmr", "text": "Têgihîştinbar e, lê rîskdar e: bê kontrola berî îmzeyê tu piştrast nabî ku hemû xal rastî di protokolê de hene." },
+                { "language": "pl", "text": "Możliwe, ale ryzykowne: bez kontroli przed podpisem nie masz pewności, że wszystkie punkty naprawdę są w protokole." },
+                { "language": "ro", "text": "Plauzibil, dar riscant: fără verificare înainte de semnare nu ai siguranța că toate punctele sunt într-adevăr în procesul-verbal." },
+                { "language": "sq", "text": "E mundshme, por me rrezik: pa kontroll para nënshkrimit nuk ke siguri që të gjitha pikat janë vërtet në procesverbal." }
+              ],
+              "explanationKey": "b2-move-in-do-not-sign-before-check"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Ich prüfe kurz: Kratzer am Wohnzimmerboden, feuchter Fleck am Küchenfenster, lockere Steckdose im Schlafzimmer, Fotos folgen per E-Mail und Rückmeldung bis Ende nächster Woche. So kann ich unterschreiben.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I will check briefly: scratch in the living room floor, damp spot by the kitchen window, loose socket in the bedroom, photos to follow by email, and feedback by the end of next week. With that, I can sign." },
+                { "language": "fa", "text": "ممنون. کوتاه بررسی می‌کنم: خراش روی کف اتاق نشیمن، لکه رطوبت کنار پنجره آشپزخانه، پریز شل در اتاق خواب، عکس‌ها با ایمیل ارسال می‌شوند و پاسخ تا پایان هفته آینده. با این صورت می‌توانم امضا کنم." },
+                { "language": "ar", "text": "شكراً. أتحقق باختصار: خدش في أرضية غرفة المعيشة، بقعة رطوبة عند نافذة المطبخ، مقبس غير ثابت في غرفة النوم، الصور ستُرسل بالبريد الإلكتروني والرد حتى نهاية الأسبوع المقبل. بهذه الصيغة يمكنني التوقيع." },
+                { "language": "tr", "text": "Teşekkür ederim. Kısaca kontrol ediyorum: oturma odası zemininde çizik, mutfak penceresinde nemli leke, yatak odasında gevşek priz, fotoğraflar e-posta ile gönderilecek ve gelecek haftanın sonuna kadar geri dönüş yapılacak. Bu şekilde imzalayabilirim." },
+                { "language": "ru", "text": "Спасибо. Я коротко проверю: царапина на полу в гостиной, влажное пятно у кухонного окна, плохо закрепленная розетка в спальне, фотографии будут отправлены по электронной почте и ответ до конца следующей недели. В таком виде я могу подписать." },
+                { "language": "ckb", "text": "سوپاس. بە کورتی پشکنین دەکەم: هەڵکەنراو لە زەوی ژووری دانیشتن، لکه‌ی شێ لە لاوەی پەنجەرەی چێشتخانە، پریزی شل لە ژووری خەوتن، وێنەکان بە ئیمەیل دەنێردرێن و وەڵامدانەوە تا کۆتایی هەفتەی داهاتوو. بەم شێوەیە دەتوانم واژۆ بکەم." },
+                { "language": "kmr", "text": "Spas. Ez bi kurtî kontrol dikim: xêz li erdê odeya rûniştinê, leka şil li pencereya metbexê, prîza lax li odeya razanê, wêne bi e-nameyê tên şandin û veger heta dawiya hefteya bê. Bi vê awayê ez dikarim îmze bikim." },
+                { "language": "pl", "text": "Dziękuję. Krótko sprawdzam: rysa na podłodze w salonie, wilgotna plama przy oknie kuchennym, luźne gniazdko w sypialni, zdjęcia zostaną dosłane e-mailem i odpowiedź do końca przyszłego tygodnia. W takiej formie mogę podpisać." },
+                { "language": "ro", "text": "Mulțumesc. Verific pe scurt: zgârietură în podeaua din sufragerie, pată de umezeală la fereastra din bucătărie, priză slăbită în dormitor, fotografiile urmează prin e-mail și răspuns până la sfârșitul săptămânii viitoare. Așa pot semna." },
+                { "language": "sq", "text": "Faleminderit. Po kontrolloj shkurt: gërvishtje në dyshemenë e dhomës së ndenjes, njollë lagështie te dritarja e kuzhinës, prizë e liruar në dhomën e gjumit, fotot dërgohen me email dhe përgjigjja deri në fund të javës së ardhshme. Kështu mund të nënshkruaj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Schlussantwort prüft alle Protokollpunkte und macht erst danach die Unterschrift möglich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the closing answer checks all protocol points and only then makes signing possible." },
+                { "language": "fa", "text": "خوب است: پاسخ پایانی همه موارد صورت‌جلسه را کنترل می‌کند و فقط بعد از آن امضا را ممکن می‌کند." },
+                { "language": "ar", "text": "جيد: تتحقق الإجابة الختامية من كل نقاط المحضر وتجعل التوقيع ممكناً بعد ذلك فقط." },
+                { "language": "tr", "text": "İyi: kapanış cevabı tüm tutanak noktalarını kontrol eder ve ancak bundan sonra imzayı mümkün kılar." },
+                { "language": "ru", "text": "Хорошо: заключительный ответ проверяет все пункты акта и только после этого делает подпись возможной." },
+                { "language": "ckb", "text": "باشە: وەڵامی کۆتایی هەموو خاڵەکانی پڕۆتۆکۆل دەپشکنێت و تەنها پاشان واژۆکردن دەکاتە شتێکی گونجاو." },
+                { "language": "kmr", "text": "Baş e: bersiva dawî hemû xalên protokolê kontrol dike û tenê paşê îmzekirinê gengaz dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź końcowa sprawdza wszystkie punkty protokołu i dopiero potem umożliwia podpis." },
+                { "language": "ro", "text": "Bine: răspunsul final verifică toate punctele procesului-verbal și abia apoi face posibilă semnarea." },
+                { "language": "sq", "text": "Mirë: përgjigjja përfundimtare kontrollon të gjitha pikat e procesverbalit dhe vetëm pastaj e bën të mundur nënshkrimin." }
+              ],
+              "explanationKey": "b2-move-in-final-protocol-check"
+            },
+            {
+              "id": "weak-missing-deadline",
+              "text": "Danke, die Schäden stehen jetzt im Protokoll. Dann unterschreibe ich.",
+              "translations": [
+                { "language": "en", "text": "Thank you, the damage is now in the protocol. Then I will sign." },
+                { "language": "fa", "text": "ممنون، خسارت‌ها الان در صورت‌جلسه آمده‌اند. پس امضا می‌کنم." },
+                { "language": "ar", "text": "شكراً، الأضرار الآن في المحضر. إذن سأوقع." },
+                { "language": "tr", "text": "Teşekkür ederim, hasarlar artık tutanakta. O halde imzalıyorum." },
+                { "language": "ru", "text": "Спасибо, повреждения теперь внесены в акт. Тогда я подпишу." },
+                { "language": "ckb", "text": "سوپاس، زیانەکان ئێستا لە پڕۆتۆکۆلەکەدان. کەواتە واژۆ دەکەم." },
+                { "language": "kmr", "text": "Spas, ziyan niha di protokolê de ne. Wê demê ez îmze dikim." },
+                { "language": "pl", "text": "Dziękuję, szkody są teraz w protokole. W takim razie podpiszę." },
+                { "language": "ro", "text": "Mulțumesc, daunele sunt acum în procesul-verbal. Atunci semnez." },
+                { "language": "sq", "text": "Faleminderit, dëmet tani janë në procesverbal. Atëherë po nënshkruaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Fast richtig, aber unvollständig: Die Antwort erwähnt die Schäden, lässt aber Fotos, Rückmeldefrist und nächsten Schritt weg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Almost right, but incomplete: the answer mentions the damage, but leaves out photos, feedback deadline, and next step." },
+                { "language": "fa", "text": "تقریباً درست است، اما کامل نیست: پاسخ خسارت‌ها را می‌گوید، ولی عکس‌ها، مهلت پاسخ و قدم بعدی را حذف می‌کند." },
+                { "language": "ar", "text": "تقريباً صحيح، لكنه غير كامل: تذكر الإجابة الأضرار، لكنها تترك الصور ومهلة الرد والخطوة التالية." },
+                { "language": "tr", "text": "Neredeyse doğru ama eksik: cevap hasarları söylüyor, fakat fotoğrafları, geri dönüş süresini ve sonraki adımı atlıyor." },
+                { "language": "ru", "text": "Почти правильно, но неполно: ответ упоминает повреждения, но пропускает фотографии, срок обратной связи и следующий шаг." },
+                { "language": "ckb", "text": "نزیکە لە ڕاست، بەڵام تەواو نییە: وەڵامەکە زیانەکان ناو دەبات، بەڵام وێنەکان، ماوەی وەڵامدانەوە و هەنگاوی داهاتوو جێدەهێڵێت." },
+                { "language": "kmr", "text": "Hema rast e, lê netemam e: bersiv ziyanê dibêje, lê wêne, muhleta vegerê û gava paşê dihêle." },
+                { "language": "pl", "text": "Prawie dobrze, ale niepełnie: odpowiedź wspomina szkody, lecz pomija zdjęcia, termin odpowiedzi i następny krok." },
+                { "language": "ro", "text": "Aproape corect, dar incomplet: răspunsul menționează daunele, dar omite fotografiile, termenul de răspuns și pasul următor." },
+                { "language": "sq", "text": "Pothuajse e saktë, por e paplotë: përgjigjja përmend dëmet, por lë jashtë fotot, afatin e përgjigjes dhe hapin tjetër." }
+              ],
+              "explanationKey": "b2-move-in-include-deadline"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei der Wohnungsübergabe sollten Schäden vor der Unterschrift konkret genannt werden. Allgemeine Formulierungen sind später schwer nachzuweisen.",
+          "translations": [
+            { "language": "en", "text": "At an apartment handover, damage should be named concretely before signing. General wording is hard to prove later." },
+            { "language": "fa", "text": "در تحویل آپارتمان، خسارت‌ها باید قبل از امضا مشخص نام برده شوند. جمله‌بندی کلی بعداً سخت قابل اثبات است." },
+            { "language": "ar", "text": "عند تسليم الشقة ينبغي ذكر الأضرار بشكل محدد قبل التوقيع. الصياغات العامة يصعب إثباتها لاحقاً." },
+            { "language": "tr", "text": "Daire tesliminde hasarlar imzadan önce somut olarak belirtilmelidir. Genel ifadeleri daha sonra kanıtlamak zordur." },
+            { "language": "ru", "text": "При передаче квартиры повреждения нужно конкретно назвать до подписи. Общие формулировки позже трудно доказать." },
+            { "language": "ckb", "text": "لە کاتی تەحویلی خانوودا دەبێت زیانەکان پێش واژۆکردن بە دیاری ناو ببرێن. دەربڕینی گشتی دواتر سەختە بسەلمێنرێت." },
+            { "language": "kmr", "text": "Di radestkirina apartmanê de divê ziyan berî îmzeyê bi taybetî bên gotin. Gotinên giştî paşê zehmet in ku bên îsbat kirin." },
+            { "language": "pl", "text": "Przy przekazaniu mieszkania szkody należy konkretnie nazwać przed podpisem. Ogólne sformułowania trudno później udowodnić." },
+            { "language": "ro", "text": "La predarea apartamentului, daunele trebuie numite concret înainte de semnare. Formulările generale sunt greu de dovedit ulterior." },
+            { "language": "sq", "text": "Gjatë dorëzimit të banesës, dëmet duhet të përmenden konkretisht para nënshkrimit. Formulimet e përgjithshme janë të vështira për t'u provuar më vonë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language",
+          "text": "Starke B2-Dokumentation nennt Ort, Umfang und Nachweis. So wird aus einer Beschwerde ein prüfbarer Protokolleintrag.",
+          "translations": [
+            { "language": "en", "text": "Strong B2 documentation names location, extent, and evidence. This turns a complaint into a verifiable protocol entry." },
+            { "language": "fa", "text": "مستندسازی قوی سطح B2 محل، اندازه و مدرک را نام می‌برد. این کار شکایت را به یک ثبت قابل بررسی در صورت‌جلسه تبدیل می‌کند." },
+            { "language": "ar", "text": "التوثيق القوي في مستوى B2 يذكر الموقع والحجم والدليل. بذلك تتحول الشكوى إلى إدراج قابل للتحقق في المحضر." },
+            { "language": "tr", "text": "Güçlü B2 belgelemesi konumu, kapsamı ve kanıtı belirtir. Böylece şikayet doğrulanabilir bir tutanak kaydına dönüşür." },
+            { "language": "ru", "text": "Сильная документация уровня B2 называет место, объем и доказательство. Так жалоба превращается в проверяемую запись в акте." },
+            { "language": "ckb", "text": "تۆمارکردنی بەهێزی B2 شوێن، قەبارە و بەڵگە ناو دەبات. بەمە شکایەت دەگۆڕێت بۆ تۆمارێکی قابل پشکنین لە پڕۆتۆکۆلدا." },
+            { "language": "kmr", "text": "Belgekirina bihêz a B2 cih, mezinahî û belgeyê bi nav dike. Bi vê gilî dibe qeydeke kontrolkirinbar di protokolê de." },
+            { "language": "pl", "text": "Silna dokumentacja B2 podaje miejsce, zakres i dowód. Dzięki temu skarga staje się sprawdzalnym wpisem do protokołu." },
+            { "language": "ro", "text": "Documentarea B2 solidă numește locul, dimensiunea și dovada. Astfel, o reclamație devine o consemnare verificabilă în procesul-verbal." },
+            { "language": "sq", "text": "Dokumentimi i fortë B2 përmend vendin, përmasën dhe provën. Kështu ankesa kthehet në shënim të verifikueshëm në procesverbal." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "politeness-note",
+          "text": "Neutraler Protokollstil vermeidet Streit: sichtbar bei Übergabe, Fotos liegen vor, weitere Prüfung folgt.",
+          "translations": [
+            { "language": "en", "text": "Neutral protocol style avoids conflict: visible at handover, photos available, further inspection follows." },
+            { "language": "fa", "text": "سبک بی‌طرفانه صورت‌جلسه از اختلاف جلوگیری می‌کند: هنگام تحویل قابل مشاهده بوده، عکس‌ها موجود است، بررسی بیشتر انجام می‌شود." },
+            { "language": "ar", "text": "الأسلوب المحايد في المحضر يتجنب الخلاف: ظاهر عند التسليم، الصور موجودة، والفحص الإضافي سيتبع." },
+            { "language": "tr", "text": "Tarafsız tutanak dili tartışmayı önler: teslim sırasında görünür, fotoğraflar mevcut, ek kontrol yapılacak." },
+            { "language": "ru", "text": "Нейтральный стиль акта избегает спора: видно при передаче, фотографии имеются, дальнейшая проверка следует." },
+            { "language": "ckb", "text": "شێوازی بێلایەنی پڕۆتۆکۆل ڕێ لە ناکۆکی دەگرێت: کاتی تەحویل دیار بووە، وێنەکان هەن، پشکنینی زیاتر دەکرێت." },
+            { "language": "kmr", "text": "Şêwaza bêalî ya protokolê nakokiyê dûr dixe: di radestkirinê de xuya bû, wêne hene, kontrola zêdetir tê." },
+            { "language": "pl", "text": "Neutralny styl protokołu zapobiega sporowi: widoczne przy przekazaniu, zdjęcia dostępne, nastąpi dalsza kontrola." },
+            { "language": "ro", "text": "Stilul neutru al procesului-verbal evită conflictul: vizibil la predare, fotografii disponibile, urmează verificare suplimentară." },
+            { "language": "sq", "text": "Stili i paanshëm i procesverbalit shmang konfliktin: e dukshme gjatë dorëzimit, fotot ekzistojnë, vijon kontrolli i mëtejshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Die Schlusskontrolle schützt dich: Erst wenn Schaden, Nachweis, Frist und nächster Schritt stimmen, ist die Unterschrift sinnvoll.",
+          "translations": [
+            { "language": "en", "text": "The final check protects you: signing makes sense only when damage, evidence, deadline, and next step are correct." },
+            { "language": "fa", "text": "کنترل نهایی از تو محافظت می‌کند: فقط وقتی خسارت، مدرک، مهلت و قدم بعدی درست باشند، امضا منطقی است." },
+            { "language": "ar", "text": "التحقق النهائي يحميك: التوقيع يكون منطقياً فقط عندما تكون الأضرار والدليل والمهلة والخطوة التالية صحيحة." },
+            { "language": "tr", "text": "Son kontrol seni korur: hasar, kanıt, süre ve sonraki adım doğruysa imza anlamlıdır." },
+            { "language": "ru", "text": "Финальная проверка защищает вас: подпись имеет смысл только тогда, когда повреждение, доказательство, срок и следующий шаг верны." },
+            { "language": "ckb", "text": "پشکنینی کۆتایی پارێزگاری لێت دەکات: تەنها کاتێک زیان، بەڵگە، ماوە و هەنگاوی داهاتوو ڕاست بن، واژۆکردن مانادارە." },
+            { "language": "kmr", "text": "Kontrola dawî te diparêze: îmze tenê dema ku ziyan, belge, muhlet û gava paşê rast bin watedar e." },
+            { "language": "pl", "text": "Końcowa kontrola cię chroni: podpis ma sens dopiero wtedy, gdy zgadzają się szkoda, dowód, termin i następny krok." },
+            { "language": "ro", "text": "Verificarea finală te protejează: semnarea are sens doar când dauna, dovada, termenul și pasul următor sunt corecte." },
+            { "language": "sq", "text": "Kontrolli përfundimtar të mbron: nënshkrimi ka kuptim vetëm kur dëmi, prova, afati dhe hapi tjetër janë të sakta." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3290
+    }
+  ]
+}

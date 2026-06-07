@@ -1,0 +1,669 @@
+{
+  "packageId": "roleplays-b2-core-73-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 73 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 73",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed B2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-erfahrung-strukturiert-erzaehlen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Erfahrung strukturiert erzählen",
+      "titleTranslations": [
+        { "language": "en", "text": "Tell an experience in a structured way" },
+        { "language": "fa", "text": "تعریف کردن یک تجربه به‌صورت ساختارمند" },
+        { "language": "ar", "text": "رواية تجربة بطريقة منظمة" },
+        { "language": "tr", "text": "Bir deneyimi yapılandırılmış şekilde anlatmak" },
+        { "language": "ru", "text": "Структурированно рассказать об опыте" },
+        { "language": "ckb", "text": "گێڕانەوەی ئەزموونێک بە شێوەی ڕێکخراو" },
+        { "language": "kmr", "text": "Tecrubeyekê bi awayekî rêkûpêk vegotin" },
+        { "language": "pl", "text": "Opowiedzieć doświadczenie w uporządkowany sposób" },
+        { "language": "ro", "text": "Povestește o experiență într-un mod structurat" },
+        { "language": "sq", "text": "Trego një përvojë në mënyrë të strukturuar" }
+      ],
+      "description": "Du sollst in einer B2-Prüfung eine Erfahrung aus einem Kursprojekt erzählen: Es gab ein Missverständnis mit einer Datei, und du musstest die Situation sachlich lösen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a B2 exam, you should tell about an experience from a course project: there was a misunderstanding with a file, and you had to solve the situation objectively." },
+        { "language": "fa", "text": "در یک آزمون B2 باید درباره تجربه‌ای از یک پروژه کلاسی صحبت کنی: یک سوءتفاهم درباره یک فایل پیش آمد و تو مجبور شدی موقعیت را منطقی حل کنی." },
+        { "language": "ar", "text": "في امتحان B2 عليك أن تروي تجربة من مشروع دورة: حدث سوء تفاهم بشأن ملف، وكان عليك حل الموقف بموضوعية." },
+        { "language": "tr", "text": "Bir B2 sınavında bir kurs projesinden deneyimini anlatmalısın: bir dosya konusunda yanlış anlaşılma oldu ve durumu nesnel biçimde çözmen gerekti." },
+        { "language": "ru", "text": "На экзамене B2 нужно рассказать об опыте из курсового проекта: возникло недоразумение с файлом, и вам пришлось объективно решить ситуацию." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی B2دا دەبێت دەربارەی ئەزموونێک لە پڕۆژەی کۆرس قسە بکەیت: تێنەگەیشتنێک دەربارەی فایلێک ڕوویدا و تۆ پێویست بوو بارودۆخەکە بە شێوەی بابەتی چارەسەر بکەیت." },
+        { "language": "kmr", "text": "Di ezmûna B2 de divê tu li ser tecrubeyek ji projeyeke kursê biaxivî: li ser pelê têgihiştineke şaş çêbû û divê te rewşê bi awayekî objektîf çareser bikira." },
+        { "language": "pl", "text": "Na egzaminie B2 masz opowiedzieć o doświadczeniu z projektu kursowego: doszło do nieporozumienia z plikiem i trzeba było rzeczowo rozwiązać sytuację." },
+        { "language": "ro", "text": "La un examen B2 trebuie să povestești o experiență dintr-un proiect de curs: a apărut o neînțelegere cu un fișier și a trebuit să rezolvi situația obiectiv." },
+        { "language": "sq", "text": "Në një provim B2 duhet të tregosh një përvojë nga një projekt kursi: pati një keqkuptim me një skedar dhe duhej ta zgjidhje situatën në mënyrë objektive." }
+      ],
+      "learnerGoal": "Eine Erfahrung klar strukturieren: Situation, Problem, Reaktion, Ergebnis und persönliche Schlussfolgerung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure an experience clearly: situation, problem, reaction, result, and personal conclusion." },
+        { "language": "fa", "text": "یک تجربه را روشن ساختار بده: موقعیت، مشکل، واکنش، نتیجه و برداشت شخصی." },
+        { "language": "ar", "text": "نظم التجربة بوضوح: الموقف، المشكلة، رد الفعل، النتيجة، والاستنتاج الشخصي." },
+        { "language": "tr", "text": "Bir deneyimi açıkça yapılandır: durum, sorun, tepki, sonuç ve kişisel çıkarım." },
+        { "language": "ru", "text": "Четко структурировать опыт: ситуация, проблема, реакция, результат и личный вывод." },
+        { "language": "ckb", "text": "ئەزموونێک بە ڕوونی ڕێکبخە: بارودۆخ، کێشە، وەڵامدانەوە، ئەنجام و دەرئەنجامی کەسی." },
+        { "language": "kmr", "text": "Tecrubeyekê zelal rêz bike: rewş, pirsgirêk, bersiv, encam û derseke kesane." },
+        { "language": "pl", "text": "Jasno uporządkuj doświadczenie: sytuacja, problem, reakcja, rezultat i osobisty wniosek." },
+        { "language": "ro", "text": "Structurează clar o experiență: situație, problemă, reacție, rezultat și concluzie personală." },
+        { "language": "sq", "text": "Strukturo qartë një përvojë: situata, problemi, reagimi, rezultati dhe përfundimi personal." }
+      ],
+      "cefrLevel": "B2",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["goethe-b2", "telc-b2"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "describe-experience",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "sortOrder": 73,
+      "roles": [
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfende Person",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnvan" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminuesi" }
+          ]
+        },
+        {
+          "roleKey": "listener",
+          "displayName": "Zuhörende Person",
+          "translations": [
+            { "language": "en", "text": "Listener" },
+            { "language": "fa", "text": "شنونده" },
+            { "language": "ar", "text": "المستمع" },
+            { "language": "tr", "text": "Dinleyici" },
+            { "language": "ru", "text": "Слушатель" },
+            { "language": "ckb", "text": "گوێگر" },
+            { "language": "kmr", "text": "Guhdar" },
+            { "language": "pl", "text": "Słuchacz" },
+            { "language": "ro", "text": "Ascultător" },
+            { "language": "sq", "text": "Dëgjuesi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Du",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "تو" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Sen" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Tu" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Tu" },
+            { "language": "sq", "text": "Ti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Erzählen Sie bitte von einer Erfahrung, bei der Sie ein Problem in einer Gruppe lösen mussten. Achten Sie auf eine klare Struktur.",
+          "translations": [
+            { "language": "en", "text": "Please tell about an experience where you had to solve a problem in a group. Pay attention to a clear structure." },
+            { "language": "fa", "text": "لطفاً درباره تجربه‌ای صحبت کنید که در آن مجبور بودید مشکلی را در یک گروه حل کنید. به ساختار روشن توجه کنید." },
+            { "language": "ar", "text": "من فضلك تحدث عن تجربة كان عليك فيها حل مشكلة داخل مجموعة. انتبه إلى بنية واضحة." },
+            { "language": "tr", "text": "Lütfen bir grupta bir sorunu çözmek zorunda kaldığınız bir deneyimden bahsedin. Açık bir yapıya dikkat edin." },
+            { "language": "ru", "text": "Пожалуйста, расскажите об опыте, когда вам пришлось решать проблему в группе. Обратите внимание на четкую структуру." },
+            { "language": "ckb", "text": "تکایە دەربارەی ئەزموونێک بگێڕەوە کە تێیدا پێویست بوو کێشەیەک لە گرووپێکدا چارەسەر بکەیت. ئاگاداری پێکهاتەی ڕوون بە." },
+            { "language": "kmr", "text": "Ji kerema xwe li ser tecrubeyek biaxive ku tê de diviya te pirsgirêkek di komekê de çareser bikira. Bala xwe bidin avahiyeke zelal." },
+            { "language": "pl", "text": "Proszę opowiedzieć o doświadczeniu, w którym musiał/a Pan/Pani rozwiązać problem w grupie. Proszę zwrócić uwagę na jasną strukturę." },
+            { "language": "ro", "text": "Vă rog să povestiți o experiență în care a trebuit să rezolvați o problemă într-un grup. Acordați atenție unei structuri clare." },
+            { "language": "sq", "text": "Ju lutem tregoni për një përvojë ku ju është dashur të zgjidhni një problem në grup. Kushtojini vëmendje një strukture të qartë." }
+          ],
+          "function": "task-setup",
+          "toneNote": "Die Prüfungsaufgabe verlangt keine lange Chronologie, sondern eine klare Erzählstruktur."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gern. Ich erzähle von einem Kursprojekt im letzten Monat. Die Situation war, dass wir zu viert eine kurze Präsentation vorbereiten sollten. Das Problem entstand, weil zwei Versionen derselben Datei im Umlauf waren.",
+          "translations": [
+            { "language": "en", "text": "Gladly. I will tell about a course project last month. The situation was that four of us had to prepare a short presentation. The problem arose because two versions of the same file were circulating." },
+            { "language": "fa", "text": "با کمال میل. درباره یک پروژه کلاسی در ماه گذشته صحبت می‌کنم. موقعیت این بود که چهار نفره باید یک ارائه کوتاه آماده می‌کردیم. مشکل از آنجا پیش آمد که دو نسخه از یک فایل در گردش بود." },
+            { "language": "ar", "text": "بكل سرور. سأروي عن مشروع دورة في الشهر الماضي. كان الوضع أننا كنا أربعة أشخاص نعد عرضاً قصيراً. نشأت المشكلة لأن نسختين من الملف نفسه كانتا متداولتين." },
+            { "language": "tr", "text": "Memnuniyetle. Geçen ayki bir kurs projesinden söz edeceğim. Durum şu idi: dört kişi kısa bir sunum hazırlamalıydık. Sorun, aynı dosyanın iki farklı versiyonunun dolaşımda olmasıyla ortaya çıktı." },
+            { "language": "ru", "text": "С удовольствием. Я расскажу о курсовом проекте в прошлом месяце. Ситуация была такая: вчетвером мы должны были подготовить короткую презентацию. Проблема возникла, потому что в обращении были две версии одного файла." },
+            { "language": "ckb", "text": "بەدڵنیاییەوە. دەربارەی پڕۆژەیەکی کۆرس لە مانگی ڕابردوو دەگێڕمەوە. بارودۆخەکە ئەوە بوو کە چوار کەس بووین و دەبوو پێشکەشکردنێکی کورت ئامادە بکەین. کێشەکە دروست بوو چونکە دوو وەشانی هەمان فایل لە دەستدا دەسوڕان." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Ez li ser projeyeke kursê ya meha borî vedibêjim. Rewş ew bû ku em çar kes bûn û diviya me pêşkêşiyeke kurt amade bikira. Pirsgirêk çêbû ji ber ku du guhertoyên heman pelê di nav de belav bûn." },
+            { "language": "pl", "text": "Chętnie. Opowiem o projekcie kursowym z zeszłego miesiąca. Sytuacja była taka, że we czworo mieliśmy przygotować krótką prezentację. Problem powstał, ponieważ krążyły dwie wersje tego samego pliku." },
+            { "language": "ro", "text": "Cu plăcere. Voi povesti despre un proiect de curs de luna trecută. Situația era că patru persoane trebuiau să pregătim o prezentare scurtă. Problema a apărut deoarece circulau două versiuni ale aceluiași fișier." },
+            { "language": "sq", "text": "Me kënaqësi. Do të tregoj për një projekt kursi muajin e kaluar. Situata ishte se katër veta duhej të përgatisnim një prezantim të shkurtër. Problemi lindi sepse qarkullonin dy versione të të njëjtit skedar." }
+          ],
+          "function": "structured-opening",
+          "toneNote": "Stark: Zeit, Kontext und Problem werden direkt genannt.",
+          "expectedLearnerAction": "Start with time, context, group setting, and the core problem."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "listener",
+          "baseText": "Was ist dadurch konkret passiert?",
+          "translations": [
+            { "language": "en", "text": "What exactly happened as a result?" },
+            { "language": "fa", "text": "در نتیجه دقیقاً چه اتفاقی افتاد؟" },
+            { "language": "ar", "text": "ماذا حدث بالتحديد نتيجة لذلك؟" },
+            { "language": "tr", "text": "Bunun sonucunda somut olarak ne oldu?" },
+            { "language": "ru", "text": "Что конкретно из-за этого произошло?" },
+            { "language": "ckb", "text": "لە ئەنجامدا بە وردی چی ڕوویدا؟" },
+            { "language": "kmr", "text": "Ji ber vê bi taybetî çi qewimî?" },
+            { "language": "pl", "text": "Co konkretnie się przez to stało?" },
+            { "language": "ro", "text": "Ce s-a întâmplat concret din această cauză?" },
+            { "language": "sq", "text": "Çfarë ndodhi konkretisht si rezultat?" }
+          ],
+          "function": "ask-for-problem-detail",
+          "toneNote": "Die Nachfrage fordert genaue Darstellung statt allgemeiner Beschwerde."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Am Abend vor der Präsentation merkten wir, dass der Teil mit den Beispielen fehlte. Zuerst habe ich die Situation sachlich zusammengefasst: Welche Version ist aktuell, wer hat welche Änderung gemacht, und was brauchen wir noch unbedingt?",
+          "translations": [
+            { "language": "en", "text": "On the evening before the presentation, we noticed that the section with the examples was missing. First, I summarized the situation objectively: which version is current, who made which change, and what do we still absolutely need?" },
+            { "language": "fa", "text": "شب قبل از ارائه متوجه شدیم بخش مثال‌ها حذف شده است. اول موقعیت را بی‌طرفانه جمع‌بندی کردم: کدام نسخه جدید است، چه کسی کدام تغییر را انجام داده و چه چیزی هنوز حتماً لازم داریم؟" },
+            { "language": "ar", "text": "في المساء قبل العرض لاحظنا أن الجزء الذي يحتوي على الأمثلة مفقود. أولاً لخّصت الموقف بموضوعية: أي نسخة هي الحالية، من قام بأي تغيير، وما الذي نحتاجه حتماً بعد؟" },
+            { "language": "tr", "text": "Sunumdan önceki akşam örneklerin olduğu bölümün eksik olduğunu fark ettik. Önce durumu nesnel biçimde özetledim: hangi versiyon güncel, kim hangi değişikliği yaptı ve hâlâ kesin olarak neye ihtiyacımız var?" },
+            { "language": "ru", "text": "Вечером перед презентацией мы заметили, что раздел с примерами отсутствует. Сначала я объективно резюмировал ситуацию: какая версия актуальна, кто какое изменение сделал и что нам еще обязательно нужно?" },
+            { "language": "ckb", "text": "شەوی پێش پێشکەشکردنەکە زانیمان بەشی نموونەکان ونە. سەرەتا بارودۆخەکەم بە بابەتی کورت کردەوە: کام وەشان نوێیە، کێ کام گۆڕانکاری کردووە و چی هێشتا بە دڵنیایی پێویستمانە؟" },
+            { "language": "kmr", "text": "Êvara berî pêşkêşiyê me dît ku beşa nimûneyan tune ye. Pêşî min rewşê bi awayekî objektîf kurt kir: kîjan guherto nû ye, kî kîjan guhertin kiriye û hîn bi teqezî çi hewce ye?" },
+            { "language": "pl", "text": "Wieczorem przed prezentacją zauważyliśmy, że brakuje części z przykładami. Najpierw rzeczowo podsumowałem sytuację: która wersja jest aktualna, kto zrobił jaką zmianę i czego jeszcze koniecznie potrzebujemy?" },
+            { "language": "ro", "text": "În seara dinaintea prezentării am observat că lipsea partea cu exemplele. Mai întâi am rezumat obiectiv situația: care versiune este actuală, cine a făcut ce modificare și de ce mai avem neapărat nevoie?" },
+            { "language": "sq", "text": "Mbrëmjen para prezantimit vumë re se mungonte pjesa me shembuj. Së pari e përmblodha situatën në mënyrë objektive: cili version është aktual, kush bëri cilin ndryshim dhe çfarë na duhet patjetër ende?" }
+          ],
+          "function": "describe-problem-and-first-reaction",
+          "toneNote": "B2: Problem konkretisieren und Reaktion nicht emotional, sondern sachlich darstellen.",
+          "expectedLearnerAction": "Describe the concrete problem and the first step taken to clarify it."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Warum war die Situation für Sie schwierig?",
+          "translations": [
+            { "language": "en", "text": "Why was the situation difficult for you?" },
+            { "language": "fa", "text": "چرا این موقعیت برای شما دشوار بود؟" },
+            { "language": "ar", "text": "لماذا كان الموقف صعباً بالنسبة لك؟" },
+            { "language": "tr", "text": "Bu durum sizin için neden zordu?" },
+            { "language": "ru", "text": "Почему эта ситуация была для вас трудной?" },
+            { "language": "ckb", "text": "بۆچی ئەم بارودۆخە بۆ تۆ قورس بوو؟" },
+            { "language": "kmr", "text": "Çima ev rewş ji bo we zehmet bû?" },
+            { "language": "pl", "text": "Dlaczego ta sytuacja była dla Pana/Pani trudna?" },
+            { "language": "ro", "text": "De ce a fost situația dificilă pentru dumneavoastră?" },
+            { "language": "sq", "text": "Pse ishte kjo situatë e vështirë për ju?" }
+          ],
+          "function": "ask-for-difficulty",
+          "toneNote": "Die Antwort soll nicht klagen, sondern soziale Schwierigkeit erklären."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Schwierig war, dass niemand beschuldigt werden wollte. Deshalb habe ich bewusst zwischen Person und Problem getrennt. Ich sagte: Es geht nicht darum, wer schuld ist, sondern darum, bis morgen eine gemeinsame Endversion zu haben.",
+          "translations": [
+            { "language": "en", "text": "What was difficult was that nobody wanted to be blamed. That is why I deliberately separated the person from the problem. I said: it is not about who is at fault, but about having a shared final version by tomorrow." },
+            { "language": "fa", "text": "دشواری این بود که هیچ‌کس نمی‌خواست مقصر شناخته شود. برای همین آگاهانه شخص را از مشکل جدا کردم. گفتم: مسئله این نیست که چه کسی مقصر است، بلکه این است که تا فردا یک نسخه نهایی مشترک داشته باشیم." },
+            { "language": "ar", "text": "كان الصعب أن لا أحد أراد أن يُلام. لذلك فصلت عن قصد بين الشخص والمشكلة. قلت: لا يتعلق الأمر بمن هو المخطئ، بل بأن يكون لدينا نسخة نهائية مشتركة حتى الغد." },
+            { "language": "tr", "text": "Zor olan, kimsenin suçlanmak istememesiydi. Bu yüzden bilinçli olarak kişi ile sorunu ayırdım. Şunu söyledim: mesele kimin suçlu olduğu değil, yarına kadar ortak bir son versiyona sahip olmaktır." },
+            { "language": "ru", "text": "Трудность была в том, что никто не хотел быть обвиненным. Поэтому я сознательно отделил человека от проблемы. Я сказал: дело не в том, кто виноват, а в том, чтобы к завтрашнему дню иметь общую финальную версию." },
+            { "language": "ckb", "text": "قورسەکە ئەوە بوو کە هیچ کەسێک نەیدەویست تاوانبار بکرێت. بۆیە بە ئاگایی کەس و کێشەکەم جیاکردەوە. گوتم: مەسەلە ئەوە نییە کێ تاوانبارە، بەڵکو ئەوەیە تا سبەی وەشانێکی کۆتایی هاوبەشمان هەبێت." },
+            { "language": "kmr", "text": "Ya zehmet ew bû ku kes nedixwest sûcdar were dîtin. Ji ber vê min bi zanebûn kes û pirsgirêk veqetand. Min got: mijar ne ew e kî sûcdar e, lê ew e ku heta sibê guhertoyeke dawî ya hevpar hebe." },
+            { "language": "pl", "text": "Trudne było to, że nikt nie chciał zostać obwiniony. Dlatego świadomie oddzieliłem osobę od problemu. Powiedziałem: nie chodzi o to, kto jest winny, lecz o to, żeby do jutra mieć wspólną wersję końcową." },
+            { "language": "ro", "text": "Dificil era că nimeni nu voia să fie învinovățit. De aceea am separat conștient persoana de problemă. Am spus: nu este vorba despre cine este vinovat, ci despre a avea până mâine o versiune finală comună." },
+            { "language": "sq", "text": "E vështirë ishte se askush nuk donte të fajësohej. Prandaj e ndava me vetëdije personin nga problemi. Thashë: nuk bëhet fjalë kush ka faj, por që deri nesër të kemi një version përfundimtar të përbashkët." }
+          ],
+          "function": "explain-social-difficulty",
+          "toneNote": "Stark: soziale Spannung erklären und deeskalierende Sprache zeigen.",
+          "expectedLearnerAction": "Explain the social difficulty and how you avoided blame."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "listener",
+          "baseText": "Wie haben Sie die Lösung organisiert?",
+          "translations": [
+            { "language": "en", "text": "How did you organize the solution?" },
+            { "language": "fa", "text": "راه‌حل را چطور سازمان‌دهی کردید؟" },
+            { "language": "ar", "text": "كيف نظمت الحل؟" },
+            { "language": "tr", "text": "Çözümü nasıl organize ettiniz?" },
+            { "language": "ru", "text": "Как вы организовали решение?" },
+            { "language": "ckb", "text": "چارەسەرەکەت چۆن ڕێکخست؟" },
+            { "language": "kmr", "text": "Te çareserî çawa organîze kir?" },
+            { "language": "pl", "text": "Jak zorganizował/a Pan/Pani rozwiązanie?" },
+            { "language": "ro", "text": "Cum ați organizat soluția?" },
+            { "language": "sq", "text": "Si e organizuat zgjidhjen?" }
+          ],
+          "function": "ask-for-solution-process",
+          "toneNote": "Jetzt soll die Handlung präzise werden."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wir haben eine gemeinsame Datei angelegt, die alte Version gesperrt und die fehlenden Beispiele aufgeteilt. Ich habe die Einleitung und den Übergang überarbeitet, zwei andere haben die Beispiele ergänzt, und eine Person hat am Ende nur noch die Formatierung geprüft.",
+          "translations": [
+            { "language": "en", "text": "We created one shared file, locked the old version, and divided up the missing examples. I revised the introduction and transition, two others added the examples, and one person only checked the formatting at the end." },
+            { "language": "fa", "text": "یک فایل مشترک ساختیم، نسخه قدیمی را بستیم و مثال‌های کم‌شده را تقسیم کردیم. من مقدمه و بخش گذار را بازنویسی کردم، دو نفر دیگر مثال‌ها را اضافه کردند و یک نفر در پایان فقط قالب‌بندی را بررسی کرد." },
+            { "language": "ar", "text": "أنشأنا ملفاً مشتركاً، وأغلقنا النسخة القديمة، وقسمنا الأمثلة الناقصة. راجعت أنا المقدمة والانتقال، وأضاف شخصان آخران الأمثلة، وفحص شخص واحد في النهاية التنسيق فقط." },
+            { "language": "tr", "text": "Ortak bir dosya oluşturduk, eski versiyonu kilitledik ve eksik örnekleri paylaştırdık. Ben giriş ve geçiş bölümünü düzelttim, iki kişi örnekleri ekledi ve bir kişi sonunda sadece biçimlendirmeyi kontrol etti." },
+            { "language": "ru", "text": "Мы создали общий файл, заблокировали старую версию и разделили недостающие примеры. Я переработал вступление и переход, двое других добавили примеры, а один человек в конце только проверил форматирование." },
+            { "language": "ckb", "text": "فایلێکی هاوبەشمان دروست کرد، وەشانی کۆنمان داخست و نموونە ونبووەکانمان دابەش کرد. من پێشەکی و گواستنەوەکەم چاک کردەوە، دوو کەسی تر نموونەکان زیاد کرد و کەسێک لە کۆتاییدا تەنها فۆرماتکردنەکەی پشکنین." },
+            { "language": "kmr", "text": "Me pelekî hevpar çêkir, guhertoya kevn girt û nimûneyên kêm belav kirin. Min destpêk û veguhestinê sererast kir, du kesên din nimûne zêde kirin û kesek di dawiyê de tenê format kontrol kir." },
+            { "language": "pl", "text": "Utworzyliśmy jeden wspólny plik, zablokowaliśmy starą wersję i podzieliliśmy brakujące przykłady. Ja poprawiłem wstęp i przejście, dwie inne osoby uzupełniły przykłady, a jedna osoba na końcu sprawdziła tylko formatowanie." },
+            { "language": "ro", "text": "Am creat un fișier comun, am blocat versiunea veche și am împărțit exemplele lipsă. Eu am revizuit introducerea și tranziția, alte două persoane au completat exemplele, iar o persoană a verificat la final doar formatarea." },
+            { "language": "sq", "text": "Krijuam një skedar të përbashkët, bllokuam versionin e vjetër dhe ndamë shembujt që mungonin. Unë rishikova hyrjen dhe kalimin, dy të tjerë shtuan shembujt dhe një person në fund kontrolloi vetëm formatimin." }
+          ],
+          "function": "describe-solution",
+          "toneNote": "Die Lösung wird mit konkreten Schritten und Rollen beschrieben.",
+          "expectedLearnerAction": "Describe the solution process with roles and concrete actions."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Was war das Ergebnis, und was haben Sie daraus gelernt?",
+          "translations": [
+            { "language": "en", "text": "What was the result, and what did you learn from it?" },
+            { "language": "fa", "text": "نتیجه چه بود و از آن چه یاد گرفتید؟" },
+            { "language": "ar", "text": "ما النتيجة، وماذا تعلمت منها؟" },
+            { "language": "tr", "text": "Sonuç ne oldu ve bundan ne öğrendiniz?" },
+            { "language": "ru", "text": "Каков был результат и что вы из этого извлекли?" },
+            { "language": "ckb", "text": "ئەنجام چی بوو و لەوە چی فێر بوویت؟" },
+            { "language": "kmr", "text": "Encam çi bû û te ji vê çi hîn bû?" },
+            { "language": "pl", "text": "Jaki był rezultat i czego się Pan/Pani z tego nauczył/a?" },
+            { "language": "ro", "text": "Care a fost rezultatul și ce ați învățat din asta?" },
+            { "language": "sq", "text": "Cili ishte rezultati dhe çfarë mësuat prej kësaj?" }
+          ],
+          "function": "ask-result-learning",
+          "toneNote": "Die Antwort braucht Ergebnis plus persönliche Schlussfolgerung."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Die Präsentation war am Ende nicht perfekt, aber vollständig und verständlich. Gelernt habe ich, dass eine Gruppe klare Dateinamen, eine verantwortliche Person für die Endversion und kurze Kontrollpunkte braucht. Seitdem spreche ich solche Regeln früher an.",
+          "translations": [
+            { "language": "en", "text": "In the end, the presentation was not perfect, but complete and understandable. I learned that a group needs clear file names, one person responsible for the final version, and short control points. Since then, I raise such rules earlier." },
+            { "language": "fa", "text": "در پایان ارائه کامل و قابل‌فهم بود، هرچند بی‌نقص نبود. یاد گرفتم که یک گروه به نام‌گذاری روشن فایل‌ها، یک نفر مسئول نسخه نهایی و کنترل‌های کوتاه نیاز دارد. از آن زمان چنین قواعدی را زودتر مطرح می‌کنم." },
+            { "language": "ar", "text": "في النهاية لم يكن العرض مثالياً، لكنه كان كاملاً ومفهوماً. تعلمت أن المجموعة تحتاج إلى أسماء ملفات واضحة، وشخص مسؤول عن النسخة النهائية، ونقاط تحقق قصيرة. منذ ذلك الحين أطرح مثل هذه القواعد مبكراً." },
+            { "language": "tr", "text": "Sonunda sunum mükemmel değildi, ama eksiksiz ve anlaşılırdı. Bir grubun net dosya adlarına, son versiyondan sorumlu bir kişiye ve kısa kontrol noktalarına ihtiyaç duyduğunu öğrendim. O zamandan beri böyle kuralları daha erken gündeme getiriyorum." },
+            { "language": "ru", "text": "В итоге презентация была не идеальной, но полной и понятной. Я понял, что группе нужны ясные имена файлов, один ответственный за финальную версию и короткие контрольные точки. С тех пор я поднимаю такие правила раньше." },
+            { "language": "ckb", "text": "لە کۆتاییدا پێشکەشکردنەکە بێکەموکوڕی نەبوو، بەڵام تەواو و تێگەیشتنی بوو. فێر بووم کە گرووپ پێویستی بە ناوی ڕوونی فایل، کەسێکی بەرپرسی وەشانی کۆتایی و خاڵی کۆنترۆڵی کورت هەیە. لەو کاتەوە ئەم یاسایانە زووەتر باس دەکەم." },
+            { "language": "kmr", "text": "Di dawiyê de pêşkêşî ne bêkêmasî bû, lê temam û têgihiştî bû. Ez hîn bûm ku komek hewceyê navên pelan ên zelal, kesekî berpirs ji guhertoya dawî û xalên kontrolê yên kurt e. Ji wê demê ve ez van rêgezan zûtir dibêjim." },
+            { "language": "pl", "text": "Na końcu prezentacja nie była idealna, ale była kompletna i zrozumiała. Nauczyłem się, że grupa potrzebuje jasnych nazw plików, jednej osoby odpowiedzialnej za wersję końcową i krótkich punktów kontrolnych. Od tego czasu poruszam takie zasady wcześniej." },
+            { "language": "ro", "text": "La final prezentarea nu a fost perfectă, dar a fost completă și ușor de înțeles. Am învățat că un grup are nevoie de nume clare pentru fișiere, de o persoană responsabilă pentru versiunea finală și de puncte scurte de control. De atunci menționez astfel de reguli mai devreme." },
+            { "language": "sq", "text": "Në fund prezantimi nuk ishte i përsosur, por ishte i plotë dhe i kuptueshëm. Mësova se një grup ka nevojë për emra të qartë skedarësh, një person përgjegjës për versionin final dhe pika të shkurtra kontrolli. Që atëherë i përmend këto rregulla më herët." }
+          ],
+          "function": "result-and-learning",
+          "toneNote": "Stark: realistisches Ergebnis plus übertragbare Schlussfolgerung.",
+          "expectedLearnerAction": "End with result and a clear lesson learned."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich nenne zuerst Zeit, Kontext und Problem: letzten Monat, Kursprojekt, zwei Versionen derselben Datei.",
+              "translations": [
+                { "language": "en", "text": "I first name time, context, and problem: last month, course project, two versions of the same file." },
+                { "language": "fa", "text": "اول زمان، زمینه و مشکل را می‌گویم: ماه گذشته، پروژه کلاسی، دو نسخه از یک فایل." },
+                { "language": "ar", "text": "أذكر أولاً الوقت والسياق والمشكلة: الشهر الماضي، مشروع دورة، نسختان من الملف نفسه." },
+                { "language": "tr", "text": "Önce zamanı, bağlamı ve sorunu söylerim: geçen ay, kurs projesi, aynı dosyanın iki versiyonu." },
+                { "language": "ru", "text": "Сначала я называю время, контекст и проблему: прошлый месяц, курсовой проект, две версии одного файла." },
+                { "language": "ckb", "text": "سەرەتا کات، چوارچێوە و کێشەکە دەڵێم: مانگی ڕابردوو، پڕۆژەی کۆرس، دوو وەشانی هەمان فایل." },
+                { "language": "kmr", "text": "Ez pêşî dem, çarçove û pirsgirêkê dibêjim: meha borî, projeya kursê, du guhertoyên heman pelê." },
+                { "language": "pl", "text": "Najpierw podaję czas, kontekst i problem: zeszły miesiąc, projekt kursowy, dwie wersje tego samego pliku." },
+                { "language": "ro", "text": "Mai întâi numesc timpul, contextul și problema: luna trecută, proiect de curs, două versiuni ale aceluiași fișier." },
+                { "language": "sq", "text": "Së pari përmend kohën, kontekstin dhe problemin: muajin e kaluar, projekt kursi, dy versione të të njëjtit skedar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong answer: it gives the listener orientation before details.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong answer: it gives the listener orientation before details." },
+                { "language": "fa", "text": "پاسخ قوی: قبل از جزئیات به شنونده جهت می‌دهد." },
+                { "language": "ar", "text": "إجابة قوية: تعطي المستمع توجيهاً قبل التفاصيل." },
+                { "language": "tr", "text": "Güçlü cevap: ayrıntılardan önce dinleyene yön verir." },
+                { "language": "ru", "text": "Сильный ответ: дает слушателю ориентацию до деталей." },
+                { "language": "ckb", "text": "وەڵامی بەهێزە: پێش وردەکارییەکان ئاراستە بە گوێگر دەدات." },
+                { "language": "kmr", "text": "Bersiveke xurt e: berî hûrguliyan rê li guhdar dide." },
+                { "language": "pl", "text": "Mocna odpowiedź: daje słuchaczowi orientację przed szczegółami." },
+                { "language": "ro", "text": "Răspuns puternic: oferă ascultătorului orientare înainte de detalii." },
+                { "language": "sq", "text": "Përgjigje e fortë: i jep dëgjuesit orientim para hollësive." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde einfach von Anfang an alles erzählen, damit nichts fehlt.",
+              "translations": [
+                { "language": "en", "text": "I would simply tell everything from the beginning so that nothing is missing." },
+                { "language": "fa", "text": "فقط از اول همه چیز را تعریف می‌کنم تا چیزی جا نماند." },
+                { "language": "ar", "text": "سأروي ببساطة كل شيء من البداية حتى لا ينقص شيء." },
+                { "language": "tr", "text": "Hiçbir şey eksik kalmasın diye her şeyi en baştan anlatırdım." },
+                { "language": "ru", "text": "Я бы просто рассказал все с самого начала, чтобы ничего не пропустить." },
+                { "language": "ckb", "text": "تەنها لە سەرەتاوە هەموو شتێک دەگێڕمەوە بۆ ئەوەی هیچ شتێک ون نەبێت." },
+                { "language": "kmr", "text": "Ez ê tenê ji destpêkê ve her tiştî bibêjim da ku tiştek kêm nemîne." },
+                { "language": "pl", "text": "Po prostu opowiedziałbym wszystko od początku, żeby niczego nie zabrakło." },
+                { "language": "ro", "text": "Aș povesti pur și simplu totul de la început, ca să nu lipsească nimic." },
+                { "language": "sq", "text": "Thjesht do ta tregoja gjithçka nga fillimi që të mos mungojë asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weak: it may become too long and unstructured for an exam answer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: it may become too long and unstructured for an exam answer." },
+                { "language": "fa", "text": "ممکن است قابل‌قبول به نظر برسد، اما ضعیف است: ممکن است برای پاسخ امتحانی زیادی طولانی و بی‌ساختار شود." },
+                { "language": "ar", "text": "قد تبدو مقبولة لكنها ضعيفة: قد تصبح طويلة جداً وغير منظمة لإجابة امتحان." },
+                { "language": "tr", "text": "Makül görünebilir ama zayıf: sınav cevabı için fazla uzun ve dağınık olabilir." },
+                { "language": "ru", "text": "Звучит возможно, но слабо: для экзаменационного ответа это может стать слишком длинным и неструктурированным." },
+                { "language": "ckb", "text": "لە ڕواڵەتدا دەگونجێت بەڵام لاوازە: بۆ وەڵامی تاقیکردنەوە زۆر درێژ و بێ ڕێکخستن دەبێت." },
+                { "language": "kmr", "text": "Dibe ku maqûl xuya bike lê lawaz e: ji bo bersiva ezmûnê dibe pir dirêj û bêavahî be." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest słabe: odpowiedź egzaminacyjna może być zbyt długa i nieuporządkowana." },
+                { "language": "ro", "text": "Pare posibil, dar este slab: poate deveni prea lung și nestructurat pentru un răspuns de examen." },
+                { "language": "sq", "text": "Duket e mundshme, por është e dobët: mund të bëhet shumë e gjatë dhe e pastrukturuar për përgjigje provimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich fasse zuerst sachlich zusammen, welche Datei aktuell ist und welche Inhalte noch fehlen.",
+              "translations": [
+                { "language": "en", "text": "First I summarize objectively which file is current and which content is still missing." },
+                { "language": "fa", "text": "اول بی‌طرفانه جمع‌بندی می‌کنم کدام فایل جدید است و چه محتواهایی هنوز کم است." },
+                { "language": "ar", "text": "ألخص أولاً بموضوعية أي ملف هو الحالي وأي محتوى ما زال ناقصاً." },
+                { "language": "tr", "text": "Önce hangi dosyanın güncel olduğunu ve hangi içeriklerin hâlâ eksik olduğunu nesnel biçimde özetlerim." },
+                { "language": "ru", "text": "Сначала я объективно резюмирую, какой файл актуален и какого содержания еще не хватает." },
+                { "language": "ckb", "text": "سەرەتا بە بابەتی کورت دەکەمەوە کام فایل نوێیە و کام ناوەڕۆک هێشتا کەمە." },
+                { "language": "kmr", "text": "Pêşî ez bi awayekî objektîf kurt dikim kîjan pel nû ye û kîjan naverok hîn kêm e." },
+                { "language": "pl", "text": "Najpierw rzeczowo podsumowuję, który plik jest aktualny i jakich treści jeszcze brakuje." },
+                { "language": "ro", "text": "Mai întâi rezum obiectiv care fișier este actual și ce conținut mai lipsește." },
+                { "language": "sq", "text": "Së pari përmbledh në mënyrë objektive cili skedar është aktual dhe çfarë përmbajtjeje mungon ende." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong answer: it describes a clear first reaction instead of blame.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong answer: it describes a clear first reaction instead of blame." },
+                { "language": "fa", "text": "پاسخ قوی: به جای سرزنش، واکنش اول روشن را توصیف می‌کند." },
+                { "language": "ar", "text": "إجابة قوية: تصف رد فعل أول واضحاً بدلاً من اللوم." },
+                { "language": "tr", "text": "Güçlü cevap: suçlama yerine net bir ilk tepkiyi anlatır." },
+                { "language": "ru", "text": "Сильный ответ: описывает ясную первую реакцию вместо обвинения." },
+                { "language": "ckb", "text": "وەڵامی بەهێزە: لە جیاتی تاوانبارکردن، وەڵامدانەوەی یەکەمی ڕوون باس دەکات." },
+                { "language": "kmr", "text": "Bersiveke xurt e: li şûna sûcdarkirinê bersiva yekem a zelal vedibêje." },
+                { "language": "pl", "text": "Mocna odpowiedź: opisuje jasną pierwszą reakcję zamiast obwiniania." },
+                { "language": "ro", "text": "Răspuns puternic: descrie o primă reacție clară în locul învinovățirii." },
+                { "language": "sq", "text": "Përgjigje e fortë: përshkruan një reagim të parë të qartë në vend të fajësimit." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich sage zuerst, dass jemand die Datei falsch gespeichert hat.",
+              "translations": [
+                { "language": "en", "text": "First I say that someone saved the file incorrectly." },
+                { "language": "fa", "text": "اول می‌گویم که کسی فایل را اشتباه ذخیره کرده است." },
+                { "language": "ar", "text": "أقول أولاً إن شخصاً ما حفظ الملف بشكل خاطئ." },
+                { "language": "tr", "text": "Önce birinin dosyayı yanlış kaydettiğini söylerim." },
+                { "language": "ru", "text": "Сначала я говорю, что кто-то неправильно сохранил файл." },
+                { "language": "ckb", "text": "سەرەتا دەڵێم کە کەسێک فایلەکەی بە هەڵە پاشەکەوت کردووە." },
+                { "language": "kmr", "text": "Pêşî ez dibêjim ku kesek pelê şaş tomar kiriye." },
+                { "language": "pl", "text": "Najpierw mówię, że ktoś źle zapisał plik." },
+                { "language": "ro", "text": "Mai întâi spun că cineva a salvat greșit fișierul." },
+                { "language": "sq", "text": "Së pari them se dikush e ka ruajtur gabim skedarin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too blaming: it may be true, but it does not help the group solve the problem.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too blaming: it may be true, but it does not help the group solve the problem." },
+                { "language": "fa", "text": "بیش از حد سرزنش‌آمیز است: شاید درست باشد، اما به گروه برای حل مشکل کمک نمی‌کند." },
+                { "language": "ar", "text": "فيه لوم زائد: قد يكون صحيحاً، لكنه لا يساعد المجموعة على حل المشكلة." },
+                { "language": "tr", "text": "Fazla suçlayıcı: doğru olabilir ama grubun sorunu çözmesine yardım etmez." },
+                { "language": "ru", "text": "Слишком обвинительно: это может быть правдой, но не помогает группе решить проблему." },
+                { "language": "ckb", "text": "زۆر تاوانبارکەرە: ڕەنگە ڕاست بێت، بەڵام یارمەتی گرووپ نادات کێشەکە چارەسەر بکات." },
+                { "language": "kmr", "text": "Pir sûcdarkirî ye: dibe rast be, lê alîkariya komê nake ku pirsgirêkê çareser bike." },
+                { "language": "pl", "text": "Zbyt oskarżające: może być prawdą, ale nie pomaga grupie rozwiązać problemu." },
+                { "language": "ro", "text": "Prea acuzator: poate fi adevărat, dar nu ajută grupul să rezolve problema." },
+                { "language": "sq", "text": "Shumë fajësuese: mund të jetë e vërtetë, por nuk e ndihmon grupin të zgjidhë problemin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich trenne Person und Problem: Es geht nicht um Schuld, sondern um eine gemeinsame Endversion.",
+              "translations": [
+                { "language": "en", "text": "I separate the person from the problem: it is not about blame, but about a shared final version." },
+                { "language": "fa", "text": "شخص را از مشکل جدا می‌کنم: مسئله تقصیر نیست، بلکه نسخه نهایی مشترک است." },
+                { "language": "ar", "text": "أفصل بين الشخص والمشكلة: لا يتعلق الأمر باللوم، بل بالنسخة النهائية المشتركة." },
+                { "language": "tr", "text": "Kişi ile sorunu ayırırım: mesele suç değil, ortak son versiyondur." },
+                { "language": "ru", "text": "Я отделяю человека от проблемы: речь не о вине, а об общей финальной версии." },
+                { "language": "ckb", "text": "کەس و کێشە جیا دەکەمەوە: مەسەلە تاوان نییە، بەڵکو وەشانی کۆتایی هاوبەشە." },
+                { "language": "kmr", "text": "Ez kes û pirsgirêkê veqetînim: mijar sûc nîne, lê guhertoya dawî ya hevpar e." },
+                { "language": "pl", "text": "Oddzielam osobę od problemu: nie chodzi o winę, lecz o wspólną wersję końcową." },
+                { "language": "ro", "text": "Separ persoana de problemă: nu este vorba despre vină, ci despre o versiune finală comună." },
+                { "language": "sq", "text": "E ndaj personin nga problemi: nuk bëhet fjalë për faj, por për një version final të përbashkët." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong answer: it explains a social difficulty and a de-escalating strategy.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong answer: it explains a social difficulty and a de-escalating strategy." },
+                { "language": "fa", "text": "پاسخ قوی: دشواری اجتماعی و راهبرد کاهش تنش را توضیح می‌دهد." },
+                { "language": "ar", "text": "إجابة قوية: تشرح صعوبة اجتماعية واستراتيجية تهدئة." },
+                { "language": "tr", "text": "Güçlü cevap: sosyal zorluğu ve gerilimi azaltan stratejiyi açıklar." },
+                { "language": "ru", "text": "Сильный ответ: объясняет социальную трудность и стратегию деэскалации." },
+                { "language": "ckb", "text": "وەڵامی بەهێزە: قورساییەکی کۆمەڵایەتی و ستراتیژی کەمکردنەوەی گرژی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiveke xurt e: zehmetiyeke civakî û stratejiyeke aramkirinê rave dike." },
+                { "language": "pl", "text": "Mocna odpowiedź: wyjaśnia trudność społeczną i strategię deeskalacji." },
+                { "language": "ro", "text": "Răspuns puternic: explică o dificultate socială și o strategie de detensionare." },
+                { "language": "sq", "text": "Përgjigje e fortë: shpjegon një vështirësi sociale dhe një strategji uljeje tensioni." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich sage, dass solche Fehler in Gruppen leider normal sind.",
+              "translations": [
+                { "language": "en", "text": "I say that such mistakes are unfortunately normal in groups." },
+                { "language": "fa", "text": "می‌گویم که چنین اشتباه‌هایی متأسفانه در گروه‌ها عادی است." },
+                { "language": "ar", "text": "أقول إن مثل هذه الأخطاء للأسف عادية في المجموعات." },
+                { "language": "tr", "text": "Böyle hataların gruplarda maalesef normal olduğunu söylerim." },
+                { "language": "ru", "text": "Я говорю, что такие ошибки, к сожалению, нормальны в группах." },
+                { "language": "ckb", "text": "دەڵێم ئەم جۆرە هەڵانە بەداخەوە لە گرووپەکاندا ئاساییە." },
+                { "language": "kmr", "text": "Ez dibêjim ku ev cure şaşî mixabin di koman de normal in." },
+                { "language": "pl", "text": "Mówię, że takie błędy niestety są normalne w grupach." },
+                { "language": "ro", "text": "Spun că astfel de greșeli sunt, din păcate, normale în grupuri." },
+                { "language": "sq", "text": "Them se gabime të tilla fatkeqësisht janë normale në grupe." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but incomplete: it reduces tension, but it does not show what you did to solve the issue.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but incomplete: it reduces tension, but it does not show what you did to solve the issue." },
+                { "language": "fa", "text": "ممکن است قابل‌قبول باشد، اما ناقص است: تنش را کم می‌کند، اما نشان نمی‌دهد برای حل مشکل چه کردی." },
+                { "language": "ar", "text": "قد تكون مقبولة لكنها ناقصة: تخفف التوتر، لكنها لا تظهر ماذا فعلت لحل المشكلة." },
+                { "language": "tr", "text": "Makül ama eksik: gerilimi azaltır, fakat sorunu çözmek için ne yaptığını göstermez." },
+                { "language": "ru", "text": "Звучит возможно, но неполно: снижает напряжение, но не показывает, что вы сделали для решения." },
+                { "language": "ckb", "text": "دەگونجێت بەڵام ناتەواوە: گرژی کەم دەکاتەوە، بەڵام نیشان نادات تۆ بۆ چارەسەر چی کرد." },
+                { "language": "kmr", "text": "Maqûl lê ne temam e: tengezariyê kêm dike, lê nîşan nade te ji bo çareseriyê çi kir." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest niepełne: zmniejsza napięcie, lecz nie pokazuje, co zrobiłeś/zrobiłaś, aby rozwiązać problem." },
+                { "language": "ro", "text": "Pare posibil, dar este incomplet: reduce tensiunea, dar nu arată ce ai făcut pentru a rezolva problema." },
+                { "language": "sq", "text": "Duket e mundshme, por është e paplotë: ul tensionin, por nuk tregon çfarë bëre për ta zgjidhur problemin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Das Ergebnis war eine vollständige Präsentation; gelernt habe ich klare Dateinamen, Verantwortlichkeit und Kontrollpunkte.",
+              "translations": [
+                { "language": "en", "text": "The result was a complete presentation; I learned clear file names, responsibility, and control points." },
+                { "language": "fa", "text": "نتیجه یک ارائه کامل بود؛ یاد گرفتم نام‌گذاری روشن فایل‌ها، مسئولیت‌پذیری و نقطه‌های کنترل لازم است." },
+                { "language": "ar", "text": "كانت النتيجة عرضاً كاملاً؛ تعلمت أهمية أسماء الملفات الواضحة والمسؤولية ونقاط التحقق." },
+                { "language": "tr", "text": "Sonuç eksiksiz bir sunumdu; net dosya adları, sorumluluk ve kontrol noktalarını öğrendim." },
+                { "language": "ru", "text": "Результатом стала полная презентация; я понял важность ясных имен файлов, ответственности и контрольных точек." },
+                { "language": "ckb", "text": "ئەنجام پێشکەشکردنێکی تەواو بوو؛ فێر بووم ناوی ڕوونی فایل، بەرپرسیارێتی و خاڵەکانی کۆنترۆڵ گرنگن." },
+                { "language": "kmr", "text": "Encam pêşkêşiyeke temam bû; ez hîn bûm navên pelan ên zelal, berpirsiyarî û xalên kontrolê girîng in." },
+                { "language": "pl", "text": "Rezultatem była kompletna prezentacja; nauczyłem się jasnych nazw plików, odpowiedzialności i punktów kontrolnych." },
+                { "language": "ro", "text": "Rezultatul a fost o prezentare completă; am învățat nume clare de fișiere, responsabilitate și puncte de control." },
+                { "language": "sq", "text": "Rezultati ishte një prezantim i plotë; mësova emra të qartë skedarësh, përgjegjësi dhe pika kontrolli." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong answer: it closes the story with result and transferable learning.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong answer: it closes the story with result and transferable learning." },
+                { "language": "fa", "text": "پاسخ قوی: داستان را با نتیجه و یادگیری قابل انتقال می‌بندد." },
+                { "language": "ar", "text": "إجابة قوية: تنهي القصة بنتيجة وتعلم قابل للتطبيق في مواقف أخرى." },
+                { "language": "tr", "text": "Güçlü cevap: hikayeyi sonuç ve aktarılabilir öğrenmeyle kapatır." },
+                { "language": "ru", "text": "Сильный ответ: завершает рассказ результатом и переносимым уроком." },
+                { "language": "ckb", "text": "وەڵامی بەهێزە: چیرۆکەکە بە ئەنجام و فێربوونێکی گواستراوە دادەخات." },
+                { "language": "kmr", "text": "Bersiveke xurt e: çîrokê bi encam û dersê veguhezbar diqedîne." },
+                { "language": "pl", "text": "Mocna odpowiedź: zamyka historię wynikiem i wnioskiem do wykorzystania w przyszłości." },
+                { "language": "ro", "text": "Răspuns puternic: încheie povestea cu rezultat și învățare transferabilă." },
+                { "language": "sq", "text": "Përgjigje e fortë: e mbyll historinë me rezultat dhe mësim të transferueshëm." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Am Ende hat es irgendwie geklappt, und beim nächsten Mal machen wir es besser.",
+              "translations": [
+                { "language": "en", "text": "In the end it worked out in a vague way, and next time we will do it better." },
+                { "language": "fa", "text": "در پایان بالاخره به شکلی درست شد، و دفعه بعد بهتر انجام می‌دهیم." },
+                { "language": "ar", "text": "في النهاية نجح الأمر بشكل ما، وفي المرة القادمة سنفعله بشكل أفضل." },
+                { "language": "tr", "text": "Sonunda bir şekilde oldu ve bir dahaki sefere daha iyisini yaparız." },
+                { "language": "ru", "text": "В конце как-то получилось, и в следующий раз мы сделаем лучше." },
+                { "language": "ckb", "text": "لە کۆتاییدا بە شێوەیەک سەرکەوت و جارێکی تر باشتر دەیکەین." },
+                { "language": "kmr", "text": "Di dawiyê de bi awayekî çêbû û cara din em ê baştir bikin." },
+                { "language": "pl", "text": "Na końcu jakoś się udało, a następnym razem zrobimy to lepiej." },
+                { "language": "ro", "text": "Până la urmă a mers cumva, iar data viitoare vom face mai bine." },
+                { "language": "sq", "text": "Në fund disi funksionoi dhe herën tjetër do ta bëjmë më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too vague for B2: it gives no concrete result and no specific lesson learned.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague for B2: it gives no concrete result and no specific lesson learned." },
+                { "language": "fa", "text": "برای B2 خیلی مبهم است: نتیجه مشخص و یادگیری دقیق نمی‌دهد." },
+                { "language": "ar", "text": "غامضة جداً لمستوى B2: لا تقدم نتيجة ملموسة ولا درساً محدداً." },
+                { "language": "tr", "text": "B2 için fazla belirsiz: somut sonuç ve belirli bir öğrenme sunmuyor." },
+                { "language": "ru", "text": "Слишком расплывчато для B2: нет конкретного результата и конкретного урока." },
+                { "language": "ckb", "text": "بۆ B2 زۆر نادیارە: ئەنجامی دیاریکراو و فێربوونی ورد نادات." },
+                { "language": "kmr", "text": "Ji bo B2 pir nezelal e: encameke zehf diyar û derseke taybet nade." },
+                { "language": "pl", "text": "Zbyt ogólne na B2: nie daje konkretnego wyniku ani konkretnego wniosku." },
+                { "language": "ro", "text": "Prea vag pentru B2: nu oferă rezultat concret și nici o lecție specifică." },
+                { "language": "sq", "text": "Shumë e paqartë për B2: nuk jep rezultat konkret dhe as mësim të veçantë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "exam-tip",
+          "text": "A structured experience starts with time, context, and the core problem.",
+          "translations": [
+            { "language": "en", "text": "A structured experience starts with time, context, and the core problem." },
+            { "language": "fa", "text": "یک تجربه ساختارمند با زمان، زمینه و مشکل اصلی شروع می‌شود." },
+            { "language": "ar", "text": "تبدأ التجربة المنظمة بالوقت والسياق والمشكلة الأساسية." },
+            { "language": "tr", "text": "Yapılandırılmış bir deneyim zaman, bağlam ve temel sorunla başlar." },
+            { "language": "ru", "text": "Структурированный рассказ начинается со времени, контекста и основной проблемы." },
+            { "language": "ckb", "text": "ئەزموونی ڕێکخراو بە کات، چوارچێوە و کێشەی سەرەکی دەست پێدەکات." },
+            { "language": "kmr", "text": "Tecrubeyeke rêkûpêk bi dem, çarçove û pirsgirêka sereke dest pê dike." },
+            { "language": "pl", "text": "Uporządkowane doświadczenie zaczyna się od czasu, kontekstu i głównego problemu." },
+            { "language": "ro", "text": "O experiență structurată începe cu timpul, contextul și problema principală." },
+            { "language": "sq", "text": "Një përvojë e strukturuar fillon me kohën, kontekstin dhe problemin kryesor." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "quality-note",
+          "text": "In B2 storytelling, describe your reaction as an action, not only as a feeling.",
+          "translations": [
+            { "language": "en", "text": "In B2 storytelling, describe your reaction as an action, not only as a feeling." },
+            { "language": "fa", "text": "در روایت B2، واکنش خود را به‌صورت اقدام توصیف کن، نه فقط احساس." },
+            { "language": "ar", "text": "في السرد بمستوى B2، صف رد فعلك كفعل، لا كمجرد شعور." },
+            { "language": "tr", "text": "B2 anlatımında tepkini sadece duygu olarak değil, eylem olarak anlat." },
+            { "language": "ru", "text": "В рассказе уровня B2 описывайте реакцию как действие, а не только как чувство." },
+            { "language": "ckb", "text": "لە گێڕانەوەی B2دا وەڵامدانەوەت وەک کردار باس بکە، نەک تەنها وەک هەست." },
+            { "language": "kmr", "text": "Di vegotina B2 de, bersiva xwe wekî kiryar rave bike, ne tenê wekî hest." },
+            { "language": "pl", "text": "W opowiadaniu B2 opisz swoją reakcję jako działanie, nie tylko jako uczucie." },
+            { "language": "ro", "text": "În relatarea B2, descrie reacția ta ca acțiune, nu doar ca sentiment." },
+            { "language": "sq", "text": "Në tregimin B2, përshkruaje reagimin si veprim, jo vetëm si ndjenjë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "exam-tip",
+          "text": "Separating people from the problem makes the story mature and professional.",
+          "translations": [
+            { "language": "en", "text": "Separating people from the problem makes the story mature and professional." },
+            { "language": "fa", "text": "جدا کردن افراد از مشکل، روایت را پخته و حرفه‌ای می‌کند." },
+            { "language": "ar", "text": "فصل الأشخاص عن المشكلة يجعل القصة ناضجة ومهنية." },
+            { "language": "tr", "text": "İnsanları sorundan ayırmak anlatıyı olgun ve profesyonel kılar." },
+            { "language": "ru", "text": "Отделение людей от проблемы делает рассказ зрелым и профессиональным." },
+            { "language": "ckb", "text": "جیاکردنەوەی کەسان لە کێشەکە چیرۆکەکە پێگەیشتوو و پیشەیی دەکات." },
+            { "language": "kmr", "text": "Veqetandina kesan ji pirsgirêkê çîrokê gihîştî û pîşeyî dike." },
+            { "language": "pl", "text": "Oddzielenie osób od problemu sprawia, że historia brzmi dojrzale i profesjonalnie." },
+            { "language": "ro", "text": "Separarea oamenilor de problemă face povestea matură și profesională." },
+            { "language": "sq", "text": "Ndarja e njerëzve nga problemi e bën tregimin të pjekur dhe profesional." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "quality-note",
+          "text": "A strong ending includes both result and lesson learned, not only that it worked out.",
+          "translations": [
+            { "language": "en", "text": "A strong ending includes both result and lesson learned, not only that it worked out." },
+            { "language": "fa", "text": "پایان قوی هم نتیجه دارد و هم چیزی که یاد گرفته‌ای، نه فقط اینکه بالاخره شد." },
+            { "language": "ar", "text": "النهاية القوية تشمل النتيجة وما تعلمته، وليس فقط أن الأمر نجح." },
+            { "language": "tr", "text": "Güçlü bir kapanış hem sonucu hem de öğrenilen dersi içerir, sadece işe yaradığını değil." },
+            { "language": "ru", "text": "Сильное завершение включает и результат, и урок, а не только то, что все получилось." },
+            { "language": "ckb", "text": "کۆتایی بەهێز هەم ئەنجام و هەم ئەوەی فێر بوویت لەخۆدەگرێت، نەک تەنها ئەوەی سەرکەوت." },
+            { "language": "kmr", "text": "Dawiya xurt hem encam hem jî dersa hînbûyî di nav de digire, ne tenê ku ew çêbû." },
+            { "language": "pl", "text": "Mocne zakończenie zawiera zarówno wynik, jak i wniosek, a nie tylko informację, że się udało." },
+            { "language": "ro", "text": "Un final puternic include atât rezultatul, cât și lecția învățată, nu doar faptul că a mers." },
+            { "language": "sq", "text": "Një mbyllje e fortë përfshin edhe rezultatin edhe mësimin, jo vetëm se doli mirë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "structured-experience-exam",
+          "placement": "detail-hero",
+          "purpose": "Set an exam speaking context for structured experience storytelling.",
+          "altText": "Exam candidate using simple note cards labeled by sequence icons for situation, problem, reaction, result, and learning.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Exam candidate using simple note cards labeled by sequence icons for situation, problem, reaction, result, and learning." },
+            { "language": "fa", "text": "داوطلب امتحان با کارت‌های یادداشت ساده که با نمادهای توالی برای موقعیت، مشکل، واکنش، نتیجه و یادگیری مشخص شده‌اند." },
+            { "language": "ar", "text": "مرشح امتحان يستخدم بطاقات ملاحظات بسيطة عليها رموز تسلسل للموقف والمشكلة ورد الفعل والنتيجة والتعلم." },
+            { "language": "tr", "text": "Durum, sorun, tepki, sonuç ve öğrenme için sıra ikonlarıyla işaretlenmiş basit not kartları kullanan sınav adayı." },
+            { "language": "ru", "text": "Экзаменационный кандидат использует простые карточки с иконками последовательности для ситуации, проблемы, реакции, результата и обучения." },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە کارتی تێبینی سادە بەکاردەهێنێت کە بە نیشانەی ڕیزبەندی بۆ بارودۆخ، کێشە، وەڵامدانەوە، ئەنجام و فێربوون دیاری کراون." },
+            { "language": "kmr", "text": "Namzetê ezmûnê kartên notê yên sade bi îkonên rêzê ji bo rewş, pirsgirêk, bersiv, encam û hînbûnê bikar tîne." },
+            { "language": "pl", "text": "Kandydat egzaminacyjny używa prostych kart notatek oznaczonych ikonami kolejności dla sytuacji, problemu, reakcji, wyniku i nauki." },
+            { "language": "ro", "text": "Candidat la examen folosind carduri simple cu pictograme de secvență pentru situație, problemă, reacție, rezultat și învățare." },
+            { "language": "sq", "text": "Kandidat provimi që përdor karta të thjeshta shënimesh me ikona renditjeje për situatën, problemin, reagimin, rezultatin dhe mësimin." }
+          ],
+          "imagePrompt": "Clean educational illustration of a neutral German exam speaking setting. An adult candidate uses simple note cards with abstract sequence icons for situation, problem, reaction, result, and learning. No readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

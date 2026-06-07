@@ -1,0 +1,626 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-10-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 10 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 10",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-im-jour-fixe-einen-statusbericht-geben",
+      "linkedDialogueSlug": null,
+      "title": "Im Jour fixe einen Statusbericht geben",
+      "titleTranslations": [
+        { "language": "en", "text": "Giving a status report in a regular team meeting" },
+        { "language": "fa", "text": "دادن گزارش وضعیت در جلسه منظم تیمی" },
+        { "language": "ar", "text": "تقديم تقرير حالة في اجتماع فريق دوري" },
+        { "language": "tr", "text": "Düzenli ekip toplantısında durum raporu vermek" },
+        { "language": "ru", "text": "Дать отчёт о статусе на регулярной встрече команды" },
+        { "language": "ckb", "text": "پێدانی ڕاپۆرتی دۆخ لە کۆبوونەوەیەکی بەردەوامی تیمدا" },
+        { "language": "kmr", "text": "Di civîna birêkûpêk a tîmê de rapora rewşê dayîn" },
+        { "language": "pl", "text": "Przedstawienie statusu na regularnym spotkaniu zespołu" },
+        { "language": "ro", "text": "Prezentarea unui raport de status într-o ședință periodică de echipă" },
+        { "language": "sq", "text": "Dhënia e një raporti statusi në një takim të rregullt ekipi" }
+      ],
+      "description": "Im wöchentlichen Jour fixe sollst du den Stand eines Kundenprojekts berichten. Du erklärst Fortschritt, offenen Blocker, Risiko für den Termin, benötigte Unterstützung und den nächsten verbindlichen Schritt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In the weekly team meeting, you need to report the status of a customer project. You explain progress, an open blocker, the schedule risk, the support needed, and the next binding step." },
+        { "language": "fa", "text": "در جلسه هفتگی تیم باید وضعیت یک پروژه مشتری را گزارش بدهی. پیشرفت، blocker باز، ریسک زمان‌بندی، پشتیبانی مورد نیاز و قدم بعدی الزام‌آور را توضیح می‌دهی." },
+        { "language": "ar", "text": "في الاجتماع الأسبوعي للفريق يجب أن تعرض حالة مشروع عميل. تشرح التقدم، والعائق المفتوح، وخطر الموعد، والدعم المطلوب، والخطوة الملزمة التالية." },
+        { "language": "tr", "text": "Haftalık ekip toplantısında bir müşteri projesinin durumunu raporlaman gerekiyor. İlerlemeyi, açık engeli, takvim riskini, gereken desteği ve bağlayıcı sonraki adımı açıklıyorsun." },
+        { "language": "ru", "text": "На еженедельной встрече команды нужно сообщить статус клиентского проекта. Ты объясняешь прогресс, открытый блокер, риск для срока, нужную поддержку и следующий обязательный шаг." },
+        { "language": "ckb", "text": "لە کۆبوونەوەی هەفتانەی تیمدا دەبێت دۆخی پرۆژەیەکی کڕیار ڕاپۆرت بکەیت. پێشکەوتن، بەربەستی کراوە، مەترسی کات، پشتیوانی پێویست و هەنگاوی داهاتووی پابەند ڕوون دەکەیتەوە." },
+        { "language": "kmr", "text": "Di civîna heftane ya tîmê de divê tu rewşa projeyeke mişterî rapor bikî. Tu pêşketinê, astengiya vekirî, xetera demê, piştgiriya pêwîst û gava paşîn a girêdayî rave dikî." },
+        { "language": "pl", "text": "Na cotygodniowym spotkaniu zespołu masz przedstawić status projektu klienta. Wyjaśniasz postęp, otwartą blokadę, ryzyko dla terminu, potrzebne wsparcie i kolejny wiążący krok." },
+        { "language": "ro", "text": "În ședința săptămânală a echipei trebuie să raportezi statusul unui proiect pentru client. Explici progresul, blocajul deschis, riscul pentru termen, sprijinul necesar și următorul pas obligatoriu." },
+        { "language": "sq", "text": "Në takimin javor të ekipit duhet të raportosh statusin e një projekti për klientin. Shpjegon përparimin, pengesën e hapur, rrezikun për afatin, mbështetjen e nevojshme dhe hapin e ardhshëm të detyrueshëm." }
+      ],
+      "learnerGoal": "Gib einen strukturierten Statusbericht: Nenne Fortschritt, Blocker, Terminrisiko, benötigte Entscheidung und nächsten Schritt, ohne zu dramatisieren oder Probleme zu verharmlosen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Give a structured status report: name progress, blocker, schedule risk, decision needed, and next step without exaggerating or minimizing problems." },
+        { "language": "fa", "text": "یک گزارش وضعیت ساختارمند بده: پیشرفت، blocker، ریسک زمان‌بندی، تصمیم مورد نیاز و قدم بعدی را بگو، بدون بزرگ‌نمایی یا کوچک‌نمایی مشکل." },
+        { "language": "ar", "text": "قدّم تقرير حالة منظماً: اذكر التقدم والعائق وخطر الموعد والقرار المطلوب والخطوة التالية من دون تهويل المشكلة أو التقليل منها." },
+        { "language": "tr", "text": "Yapılandırılmış bir durum raporu ver: ilerlemeyi, engeli, takvim riskini, gereken kararı ve sonraki adımı belirt; sorunları abartmadan ya da küçümsemeden." },
+        { "language": "ru", "text": "Дай структурированный отчёт о статусе: назови прогресс, блокер, риск для срока, нужное решение и следующий шаг, не драматизируя и не умаляя проблемы." },
+        { "language": "ckb", "text": "ڕاپۆرتێکی ڕێکخراوی دۆخ بدە: پێشکەوتن، بەربەست، مەترسی کات، بڕیاری پێویست و هەنگاوی داهاتوو ناو ببە، بە بێ گەورەکردنەوە یان بچووککردنەوەی کێشە." },
+        { "language": "kmr", "text": "Raporeke rewşê ya rêkxistî bide: pêşketin, astengî, xetera demê, biryara pêwîst û gava paşîn nav bike, bê mezinkirin an biçûkkirina pirsgirêkan." },
+        { "language": "pl", "text": "Przedstaw uporządkowany status: nazwij postęp, blokadę, ryzyko terminu, potrzebną decyzję i kolejny krok, bez dramatyzowania ani bagatelizowania problemów." },
+        { "language": "ro", "text": "Oferă un raport de status structurat: numește progresul, blocajul, riscul pentru termen, decizia necesară și pasul următor, fără să dramatizezi sau să minimalizezi problemele." },
+        { "language": "sq", "text": "Jep një raport statusi të strukturuar: përmend përparimin, pengesën, rrezikun për afatin, vendimin e nevojshëm dhe hapin tjetër, pa dramatizuar ose minimizuar problemet." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 13,
+      "isPublished": true,
+      "sortOrder": 3100,
+      "roles": [
+        {
+          "roleKey": "teamlead",
+          "displayName": "Teamleitung",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "قائدة الفريق" },
+            { "language": "tr", "text": "Ekip lideri" },
+            { "language": "ru", "text": "Руководитель команды" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Lider zespołu" },
+            { "language": "ro", "text": "Coordonatorul echipei" },
+            { "language": "sq", "text": "Drejtuesi i ekipit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teamlead",
+          "baseText": "Lass uns mit deinem Projekt anfangen. Kannst du uns bitte kurz den aktuellen Stand geben?",
+          "translations": [
+            { "language": "en", "text": "Let us start with your project. Could you please briefly give us the current status?" },
+            { "language": "fa", "text": "بیایید با پروژه تو شروع کنیم. لطفاً می‌توانی کوتاه وضعیت فعلی را بگویی؟" },
+            { "language": "ar", "text": "لنبدأ بمشروعك. هل يمكنك أن تعطينا باختصار الحالة الحالية؟" },
+            { "language": "tr", "text": "Projenle başlayalım. Bize kısaca güncel durumu aktarabilir misin?" },
+            { "language": "ru", "text": "Давайте начнём с твоего проекта. Можешь кратко дать текущий статус?" },
+            { "language": "ckb", "text": "با بە پرۆژەکەت دەست پێ بکەین. دەتوانیت بە کورتی دۆخی ئێستا بڵێیت؟" },
+            { "language": "kmr", "text": "Ka em bi projeya te dest pê bikin. Tu dikarî bi kurtî rewşa niha bidî me?" },
+            { "language": "pl", "text": "Zacznijmy od twojego projektu. Czy możesz krótko przedstawić aktualny status?" },
+            { "language": "ro", "text": "Să începem cu proiectul tău. Poți să ne dai pe scurt statusul actual?" },
+            { "language": "sq", "text": "Le të fillojmë me projektin tënd. A mund të na japësh shkurt statusin aktual?" }
+          ],
+          "function": "open-status-report"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gern. Der Kernprozess und das Dashboard sind fertig getestet. Offen ist noch der Datenzugang für den Export; dadurch entsteht ein Terminrisiko für die vollständige Kundenabnahme am Freitag.",
+          "translations": [
+            { "language": "en", "text": "Gladly. The core process and the dashboard have been fully tested. The data access for the export is still open; that creates a schedule risk for the full customer acceptance on Friday." },
+            { "language": "fa", "text": "حتماً. فرایند اصلی و داشبورد کامل تست شده‌اند. دسترسی داده برای خروجی هنوز باز مانده است؛ به همین دلیل برای پذیرش کامل مشتری در روز جمعه ریسک زمان‌بندی ایجاد شده است." },
+            { "language": "ar", "text": "بكل سرور. تم اختبار العملية الأساسية ولوحة المعلومات بالكامل. ما زال الوصول إلى البيانات للتصدير مفتوحاً؛ وهذا يخلق خطراً على موعد القبول الكامل من العميل يوم الجمعة." },
+            { "language": "tr", "text": "Memnuniyetle. Temel süreç ve gösterge paneli tamamen test edildi. Dışa aktarma için veri erişimi hâlâ açık; bu da cuma günkü tam müşteri kabulü için takvim riski yaratıyor." },
+            { "language": "ru", "text": "Конечно. Основной процесс и панель полностью протестированы. Доступ к данным для экспорта ещё открыт; из-за этого возникает риск для полной клиентской приёмки в пятницу." },
+            { "language": "ckb", "text": "بە دڵنیاییەوە. پرۆسەی سەرەکی و داشبۆرد بە تەواوی تاقی کراونەتەوە. دەستگەیشتن بە داتا بۆ هەناردەکردن هێشتا کراوەیە؛ ئەمە مەترسی کات بۆ وەرگرتنی تەواوی کڕیار لە هەینی دروست دەکات." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Pêvajoya bingehîn û tablo bi tevahî hatine ceribandin. Gihîştina daneyan ji bo derxistinê hîn vekirî ye; ev ji bo pejirandina tevahî ya mişterî roja Înê xetera demê çê dike." },
+            { "language": "pl", "text": "Oczywiście. Proces podstawowy i panel zostały w pełni przetestowane. Nadal otwarty jest dostęp do danych dla eksportu; to tworzy ryzyko terminu dla pełnej akceptacji klienta w piątek." },
+            { "language": "ro", "text": "Sigur. Procesul central și panoul au fost testate complet. Accesul la date pentru export este încă deschis; acest lucru creează un risc de termen pentru acceptarea completă de către client vineri." },
+            { "language": "sq", "text": "Me kënaqësi. Procesi kryesor dhe paneli janë testuar plotësisht. Qasja në të dhëna për eksportin është ende e hapur; kjo krijon rrezik afati për pranimin e plotë nga klienti të premten." }
+          ],
+          "function": "structured-status-start",
+          "expectedLearnerAction": "Give a concise status with completed work, open blocker, and schedule risk."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "teamlead",
+          "baseText": "Wie stark gefährdet der offene Datenzugang den Termin? Müssen wir den Freitag schon verschieben?",
+          "translations": [
+            { "language": "en", "text": "How much does the open data access put the deadline at risk? Do we already need to move Friday?" },
+            { "language": "fa", "text": "دسترسی داده که هنوز باز است تا چه حد زمان را به خطر می‌اندازد؟ آیا باید از حالا جمعه را جابه‌جا کنیم؟" },
+            { "language": "ar", "text": "إلى أي درجة يعرّض الوصول المفتوح إلى البيانات الموعد للخطر؟ هل علينا أن نؤجل يوم الجمعة بالفعل؟" },
+            { "language": "tr", "text": "Açık veri erişimi tarihi ne kadar riske sokuyor? Cuma gününü şimdiden ertelememiz gerekiyor mu?" },
+            { "language": "ru", "text": "Насколько открытый вопрос с доступом к данным угрожает сроку? Нужно ли уже переносить пятницу?" },
+            { "language": "ckb", "text": "دەستگەیشتنی داتای کراوە تا چەند کاتەکە دەخاتە مەترسییەوە؟ ئایا پێویستە هەر ئێستا هەینی دوا بخەین؟" },
+            { "language": "kmr", "text": "Gihîştina daneyên vekirî heta çiqas demê dixe xeterê? Divê em roja Înê ji niha ve paş bixin?" },
+            { "language": "pl", "text": "Jak bardzo otwarty dostęp do danych zagraża terminowi? Czy musimy już przesuwać piątek?" },
+            { "language": "ro", "text": "Cât de mult pune accesul deschis la date în pericol termenul? Trebuie deja să mutăm ziua de vineri?" },
+            { "language": "sq", "text": "Sa shumë e rrezikon afatin qasja ende e hapur në të dhëna? A duhet ta shtyjmë tashmë të premten?" }
+          ],
+          "function": "ask-risk-level"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Termin noch nicht verschieben. Wenn wir den Zugang bis Mittwochmittag bekommen, bleibt Freitag realistisch. Wenn nicht, sollten wir am Mittwoch auf eine Teilabnahme umstellen.",
+          "translations": [
+            { "language": "en", "text": "I would not move the date yet. If we get access by Wednesday noon, Friday remains realistic. If not, we should switch to a partial acceptance on Wednesday." },
+            { "language": "fa", "text": "فعلاً تاریخ را جابه‌جا نمی‌کنم. اگر تا ظهر چهارشنبه دسترسی را بگیریم، جمعه همچنان واقع‌بینانه است. اگر نه، باید چهارشنبه به پذیرش جزئی تغییر مسیر بدهیم." },
+            { "language": "ar", "text": "لن أؤجل الموعد الآن. إذا حصلنا على الوصول حتى ظهر الأربعاء، يبقى يوم الجمعة واقعياً. وإذا لم يحدث ذلك، فعلينا يوم الأربعاء التحول إلى قبول جزئي." },
+            { "language": "tr", "text": "Tarihi henüz değiştirmezdim. Erişimi çarşamba öğlene kadar alırsak cuma hâlâ gerçekçi. Aksi halde çarşamba günü kısmi kabule geçmeliyiz." },
+            { "language": "ru", "text": "Я бы пока не переносил дату. Если мы получим доступ до полудня среды, пятница остаётся реалистичной. Если нет, в среду нужно перейти на частичную приёмку." },
+            { "language": "ckb", "text": "من هێشتا کاتەکە دوا ناخەم. ئەگەر تا نیوەڕۆی چوارشەممە دەستگەیشتن وەربگرین، هەینی هێشتا واقیعییە. ئەگەر نا، دەبێت چوارشەممە بگۆڕین بۆ وەرگرتنی بەشێک." },
+            { "language": "kmr", "text": "Ez ê demê hîn paş nexînim. Heke em heta nîvroya Çarşemê gihîştinê bistînin, roja Înê hîn rastîn e. Heke na, divê Çarşemê em veguherin pejirandineke beşî." },
+            { "language": "pl", "text": "Nie przesuwałbym jeszcze terminu. Jeśli dostaniemy dostęp do środy w południe, piątek pozostaje realny. Jeśli nie, w środę powinniśmy przejść na odbiór częściowy." },
+            { "language": "ro", "text": "Nu aș muta încă termenul. Dacă primim accesul până miercuri la prânz, vineri rămâne realist. Dacă nu, miercuri ar trebui să trecem la o acceptare parțială." },
+            { "language": "sq", "text": "Nuk do ta shtyja ende datën. Nëse marrim qasjen deri të mërkurën në mesditë, e premtja mbetet realiste. Nëse jo, të mërkurën duhet të kalojmë në pranim të pjesshëm." }
+          ],
+          "function": "conditional-risk-assessment",
+          "expectedLearnerAction": "Explain risk with a decision threshold and a fallback date instead of giving a vague warning."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teamlead",
+          "baseText": "Was brauchst du vom Team, damit wir die Chance auf Freitag halten?",
+          "translations": [
+            { "language": "en", "text": "What do you need from the team so that we can keep the chance of Friday?" },
+            { "language": "fa", "text": "از تیم چه چیزی نیاز داری تا شانس جمعه را حفظ کنیم؟" },
+            { "language": "ar", "text": "ماذا تحتاج من الفريق لكي نحافظ على فرصة يوم الجمعة؟" },
+            { "language": "tr", "text": "Cuma ihtimalini koruyabilmemiz için ekipten neye ihtiyacın var?" },
+            { "language": "ru", "text": "Что тебе нужно от команды, чтобы мы сохранили шанс на пятницу?" },
+            { "language": "ckb", "text": "لە تیم چی پێویستت پێیە بۆ ئەوەی شانسی هەینی بهێڵینەوە؟" },
+            { "language": "kmr", "text": "Ji tîmê çi pêwîstî te heye da ku em şansa roja Înê biparêzin?" },
+            { "language": "pl", "text": "Czego potrzebujesz od zespołu, żebyśmy utrzymali szansę na piątek?" },
+            { "language": "ro", "text": "De ce ai nevoie de la echipă ca să păstrăm șansa pentru vineri?" },
+            { "language": "sq", "text": "Çfarë të duhet nga ekipi që të ruajmë mundësinë për të premten?" }
+          ],
+          "function": "ask-support"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich brauche heute eine Entscheidung, wer den Datenzugang mit IT klärt. Außerdem würde ich die Dokumentation um einen Tag nach hinten schieben, damit wir den Testlauf priorisieren können.",
+          "translations": [
+            { "language": "en", "text": "I need a decision today on who will clarify the data access with IT. I would also move the documentation back by one day so that we can prioritize the test run." },
+            { "language": "fa", "text": "امروز به یک تصمیم نیاز دارم که چه کسی دسترسی داده را با IT روشن می‌کند. همچنین مستندسازی را یک روز عقب می‌برم تا بتوانیم اجرای تست را اولویت بدهیم." },
+            { "language": "ar", "text": "أحتاج اليوم إلى قرار بشأن من سيوضح الوصول إلى البيانات مع قسم تقنية المعلومات. كما سأؤجل التوثيق يوماً واحداً حتى نستطيع إعطاء أولوية للتشغيل الاختباري." },
+            { "language": "tr", "text": "Bugün veri erişimini IT ile kimin netleştireceğine dair bir karara ihtiyacım var. Ayrıca test çalışmasını önceliklendirebilmemiz için dokümantasyonu bir gün geriye alırdım." },
+            { "language": "ru", "text": "Сегодня мне нужно решение, кто прояснит доступ к данным с IT. Кроме того, я бы сдвинул документацию на один день, чтобы мы могли приоритизировать тестовый прогон." },
+            { "language": "ckb", "text": "ئەمڕۆ پێویستم بە بڕیارێکە کە کێ دەستگەیشتنی داتا لەگەڵ IT ڕوون دەکاتەوە. هەروەها بەڵگەنامەکردن ڕۆژێک دوا دەخەم بۆ ئەوەی بتوانین تاقیکردنەوەکە پێشینە بکەین." },
+            { "language": "kmr", "text": "Îro pêwîstiya min bi biryarekê heye ku kî dê gihîştina daneyan bi IT re zelal bike. Her wiha ez belgekirinê rojek paş dixim da ku em ceribandina testê pêşî bikin." },
+            { "language": "pl", "text": "Potrzebuję dziś decyzji, kto wyjaśni dostęp do danych z IT. Przesunąłbym też dokumentację o jeden dzień, żebyśmy mogli nadać priorytet przebiegowi testowemu." },
+            { "language": "ro", "text": "Am nevoie astăzi de o decizie privind cine clarifică accesul la date cu IT. Aș muta și documentația cu o zi mai târziu, ca să putem prioritiza testul." },
+            { "language": "sq", "text": "Sot më duhet një vendim se kush do ta sqarojë qasjen në të dhëna me IT. Gjithashtu do ta shtyja dokumentimin me një ditë, që të mund t'i japim përparësi testimit." }
+          ],
+          "function": "request-decision-and-priority-shift",
+          "expectedLearnerAction": "Ask for a concrete owner decision and propose a realistic priority trade-off."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "teamlead",
+          "baseText": "Wenn wir die Dokumentation verschieben, merkt das der Kunde später?",
+          "translations": [
+            { "language": "en", "text": "If we move the documentation, will the customer notice that later?" },
+            { "language": "fa", "text": "اگر مستندسازی را عقب بیندازیم، مشتری بعداً متوجه می‌شود؟" },
+            { "language": "ar", "text": "إذا أجلنا التوثيق، هل سيلاحظ العميل ذلك لاحقاً؟" },
+            { "language": "tr", "text": "Dokümantasyonu ertelersek müşteri bunu sonra fark eder mi?" },
+            { "language": "ru", "text": "Если мы сдвинем документацию, клиент потом это заметит?" },
+            { "language": "ckb", "text": "ئەگەر بەڵگەنامەکردن دوا بخەین، کڕیار دواتر هەستی پێ دەکات؟" },
+            { "language": "kmr", "text": "Heke em belgekirinê paş bixin, mişterî paşê wê dibîne?" },
+            { "language": "pl", "text": "Jeśli przesuniemy dokumentację, czy klient później to zauważy?" },
+            { "language": "ro", "text": "Dacă amânăm documentația, clientul va observa asta mai târziu?" },
+            { "language": "sq", "text": "Nëse e shtyjmë dokumentimin, a do ta vërejë klienti më vonë?" }
+          ],
+          "function": "ask-impact"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Für den Termin am Freitag nicht direkt. Die Kurzbeschreibung ist fertig. Die ausführliche Dokumentation würde am Montag folgen; das sollten wir dem Kunden transparent ankündigen.",
+          "translations": [
+            { "language": "en", "text": "Not directly for the appointment on Friday. The short description is ready. The detailed documentation would follow on Monday; we should announce that transparently to the customer." },
+            { "language": "fa", "text": "برای جلسه جمعه مستقیماً نه. توضیح کوتاه آماده است. مستندات کامل روز دوشنبه می‌آید؛ این را باید شفاف به مشتری اعلام کنیم." },
+            { "language": "ar", "text": "ليس بشكل مباشر بالنسبة لموعد الجمعة. الوصف المختصر جاهز. ستتبع الوثائق التفصيلية يوم الاثنين؛ وينبغي أن نعلن ذلك للعميل بشفافية." },
+            { "language": "tr", "text": "Cuma günkü randevu için doğrudan değil. Kısa açıklama hazır. Ayrıntılı dokümantasyon pazartesi gelir; bunu müşteriye şeffaf biçimde duyurmalıyız." },
+            { "language": "ru", "text": "Для встречи в пятницу напрямую нет. Краткое описание готово. Подробная документация последует в понедельник; это нужно прозрачно сообщить клиенту." },
+            { "language": "ckb", "text": "بۆ دیداری هەینی ڕاستەوخۆ نا. وەسفی کورت ئامادەیە. بەڵگەنامەی ورد دووشەممە دەگات؛ پێویستە ئەمە بە ڕوونی بە کڕیار ڕابگەیەنین." },
+            { "language": "kmr", "text": "Ji bo hevdîtina roja Înê rasterast na. Danasîna kurt amade ye. Belgekirina berfireh dê roja Duşemê were; divê em vê bi zelalî ji mişterî re ragihînin." },
+            { "language": "pl", "text": "Nie bezpośrednio dla spotkania w piątek. Krótki opis jest gotowy. Pełna dokumentacja pojawiłaby się w poniedziałek; powinniśmy jasno zapowiedzieć to klientowi." },
+            { "language": "ro", "text": "Nu direct pentru întâlnirea de vineri. Descrierea scurtă este gata. Documentația detaliată ar urma luni; ar trebui să anunțăm asta transparent clientului." },
+            { "language": "sq", "text": "Jo drejtpërdrejt për takimin e së premtes. Përshkrimi i shkurtër është gati. Dokumentimi i plotë do të vijonte të hënën; këtë duhet t'ia njoftojmë klientit qartë." }
+          ],
+          "function": "explain-impact-and-communication",
+          "expectedLearnerAction": "Separate customer-visible impact from internal trade-off and propose transparent communication."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teamlead",
+          "baseText": "Gut. Kannst du das bitte für das Protokoll zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "Good. Could you please summarize that for the minutes?" },
+            { "language": "fa", "text": "خوب. لطفاً می‌توانی این را برای صورت‌جلسه جمع‌بندی کنی؟" },
+            { "language": "ar", "text": "جيد. هل يمكنك تلخيص ذلك من فضلك للمحضر؟" },
+            { "language": "tr", "text": "İyi. Bunu toplantı tutanağı için özetleyebilir misin?" },
+            { "language": "ru", "text": "Хорошо. Можешь, пожалуйста, резюмировать это для протокола?" },
+            { "language": "ckb", "text": "باشە. دەتوانیت ئەمە بۆ تۆماری کۆبوونەوەکە پوختە بکەیت؟" },
+            { "language": "kmr", "text": "Baş e. Tu dikarî vê ji bo protokolê kurte bikî?" },
+            { "language": "pl", "text": "Dobrze. Czy możesz to proszę podsumować do protokołu?" },
+            { "language": "ro", "text": "Bine. Poți, te rog, să rezumi asta pentru procesul-verbal?" },
+            { "language": "sq", "text": "Mirë. A mund ta përmbledhësh këtë për procesverbalin?" }
+          ],
+          "function": "ask-minutes-summary"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Zusammengefasst: Kernprozess und Dashboard sind fertig, der Export hängt noch am Datenzugang. Bis Mittwochmittag klärt Anna das mit IT; danach entscheiden wir, ob Freitag Vollabnahme oder Teilabnahme wird.",
+          "translations": [
+            { "language": "en", "text": "In summary: the core process and dashboard are finished, the export still depends on data access. Anna will clarify this with IT by Wednesday noon; after that we decide whether Friday will be full or partial acceptance." },
+            { "language": "fa", "text": "جمع‌بندی: فرایند اصلی و داشبورد آماده‌اند، خروجی هنوز به دسترسی داده وابسته است. آنا تا ظهر چهارشنبه این را با IT روشن می‌کند؛ بعد از آن تصمیم می‌گیریم جمعه پذیرش کامل باشد یا پذیرش جزئی." },
+            { "language": "ar", "text": "الخلاصة: العملية الأساسية ولوحة المعلومات جاهزتان، والتصدير ما زال يعتمد على الوصول إلى البيانات. ستوضح آنا ذلك مع قسم تقنية المعلومات حتى ظهر الأربعاء؛ وبعدها نقرر هل يكون يوم الجمعة قبولاً كاملاً أم جزئياً." },
+            { "language": "tr", "text": "Özetle: temel süreç ve gösterge paneli hazır, dışa aktarma hâlâ veri erişimine bağlı. Anna bunu çarşamba öğlene kadar IT ile netleştirecek; sonra cuma gününün tam kabul mü yoksa kısmi kabul mü olacağına karar vereceğiz." },
+            { "language": "ru", "text": "Итак: основной процесс и панель готовы, экспорт всё ещё зависит от доступа к данным. Анна прояснит это с IT до полудня среды; после этого мы решим, будет ли в пятницу полная или частичная приёмка." },
+            { "language": "ckb", "text": "بە پوختە: پرۆسەی سەرەکی و داشبۆرد تەواون، هەناردەکردن هێشتا پشت بە دەستگەیشتنی داتا دەبەستێت. ئانا تا نیوەڕۆی چوارشەممە ئەمە لەگەڵ IT ڕوون دەکاتەوە؛ پاشان بڕیار دەدەین هەینی وەرگرتنی تەواو بێت یان وەرگرتنی بەشێک." },
+            { "language": "kmr", "text": "Bi kurtî: pêvajoya bingehîn û tablo qediyane, derxistin hîn girêdayî gihîştina daneyan e. Anna heta nîvroya Çarşemê vê bi IT re zelal dike; paşê em biryar didin ka roja Înê pejirandina tevahî ye an beşî." },
+            { "language": "pl", "text": "Podsumowując: proces podstawowy i panel są gotowe, eksport nadal zależy od dostępu do danych. Anna wyjaśni to z IT do środy w południe; potem zdecydujemy, czy w piątek będzie odbiór pełny czy częściowy." },
+            { "language": "ro", "text": "Pe scurt: procesul central și panoul sunt gata, exportul depinde încă de accesul la date. Anna va clarifica asta cu IT până miercuri la prânz; apoi decidem dacă vineri va fi acceptare completă sau parțială." },
+            { "language": "sq", "text": "Në përmbledhje: procesi kryesor dhe paneli janë gati, eksporti ende varet nga qasja në të dhëna. Anna do ta sqarojë këtë me IT deri të mërkurën në mesditë; pastaj vendosim nëse të premten do të ketë pranim të plotë apo të pjesshëm." }
+          ],
+          "function": "summarize-for-minutes",
+          "expectedLearnerAction": "Summarize progress, blocker, owner, deadline, and decision point for meeting minutes."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "structured-status-with-risk",
+              "text": "Gern. Der Kernprozess und das Dashboard sind fertig getestet. Offen ist noch der Datenzugang für den Export; dadurch entsteht ein Terminrisiko für die vollständige Kundenabnahme am Freitag.",
+              "translations": [
+                { "language": "en", "text": "Gladly. The core process and the dashboard have been fully tested. The data access for the export is still open; that creates a schedule risk for the full customer acceptance on Friday." },
+                { "language": "fa", "text": "حتماً. فرایند اصلی و داشبورد کامل تست شده‌اند. دسترسی داده برای خروجی هنوز باز مانده است؛ به همین دلیل برای پذیرش کامل مشتری در روز جمعه ریسک زمان‌بندی ایجاد شده است." },
+                { "language": "ar", "text": "بكل سرور. تم اختبار العملية الأساسية ولوحة المعلومات بالكامل. ما زال الوصول إلى البيانات للتصدير مفتوحاً؛ وهذا يخلق خطراً على موعد القبول الكامل من العميل يوم الجمعة." },
+                { "language": "tr", "text": "Memnuniyetle. Temel süreç ve gösterge paneli tamamen test edildi. Dışa aktarma için veri erişimi hâlâ açık; bu da cuma günkü tam müşteri kabulü için takvim riski yaratıyor." },
+                { "language": "ru", "text": "Конечно. Основной процесс и панель полностью протестированы. Доступ к данным для экспорта ещё открыт; из-за этого возникает риск для полной клиентской приёмки в пятницу." },
+                { "language": "ckb", "text": "بە دڵنیاییەوە. پرۆسەی سەرەکی و داشبۆرد بە تەواوی تاقی کراونەتەوە. دەستگەیشتن بە داتا بۆ هەناردەکردن هێشتا کراوەیە؛ ئەمە مەترسی کات بۆ وەرگرتنی تەواوی کڕیار لە هەینی دروست دەکات." },
+                { "language": "kmr", "text": "Bi kêfxweşî. Pêvajoya bingehîn û tablo bi tevahî hatine ceribandin. Gihîştina daneyan ji bo derxistinê hîn vekirî ye; ev ji bo pejirandina tevahî ya mişterî roja Înê xetera demê çê dike." },
+                { "language": "pl", "text": "Oczywiście. Proces podstawowy i panel zostały w pełni przetestowane. Nadal otwarty jest dostęp do danych dla eksportu; to tworzy ryzyko terminu dla pełnej akceptacji klienta w piątek." },
+                { "language": "ro", "text": "Sigur. Procesul central și panoul au fost testate complet. Accesul la date pentru export este încă deschis; acest lucru creează un risc de termen pentru acceptarea completă de către client vineri." },
+                { "language": "sq", "text": "Me kënaqësi. Procesi kryesor dhe paneli janë testuar plotësisht. Qasja në të dhëna për eksportin është ende e hapur; kjo krijon rrezik afati për pranimin e plotë nga klienti të premten." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: the status is structured and connects the open blocker to a concrete risk.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the status is structured and connects the open blocker to a concrete risk." },
+                { "language": "fa", "text": "خوب است: گزارش ساختار دارد و blocker باز را به یک ریسک مشخص وصل می‌کند." },
+                { "language": "ar", "text": "جيد: الحالة منظمة وتربط العائق المفتوح بخطر ملموس." },
+                { "language": "tr", "text": "İyi: durum yapılandırılmış ve açık engeli somut bir riskle ilişkilendiriyor." },
+                { "language": "ru", "text": "Хорошо: статус структурирован и связывает открытый блокер с конкретным риском." },
+                { "language": "ckb", "text": "باشە: دۆخەکە ڕێکخراوە و بەربەستی کراوە بە مەترسییەکی دیاریکراو دەبەستێتەوە." },
+                { "language": "kmr", "text": "Baş e: rewş rêkxistî ye û astengiya vekirî bi xetereke diyarkirî ve girê dide." },
+                { "language": "pl", "text": "Dobrze: status jest uporządkowany i łączy otwartą blokadę z konkretnym ryzykiem." },
+                { "language": "ro", "text": "Bine: statusul este structurat și leagă blocajul deschis de un risc concret." },
+                { "language": "sq", "text": "Mirë: statusi është i strukturuar dhe e lidh pengesën e hapur me një rrezik konkret." }
+              ],
+              "explanationKey": "structured-status"
+            },
+            {
+              "id": "too-general-progress",
+              "text": "Es läuft eigentlich gut. Wir sind fast fertig, nur beim Export gibt es noch ein paar Kleinigkeiten, die wir wahrscheinlich bald lösen.",
+              "translations": [
+                { "language": "en", "text": "It is actually going well. We are almost done; only the export still has a few small things that we will probably solve soon." },
+                { "language": "fa", "text": "در کل خوب پیش می‌رود. تقریباً تمام شده‌ایم، فقط در بخش خروجی چند چیز کوچک مانده که احتمالاً به‌زودی حل می‌کنیم." },
+                { "language": "ar", "text": "الأمور تسير في الواقع بشكل جيد. نحن شبه منتهين؛ فقط في التصدير توجد بعض التفاصيل الصغيرة التي سنحلها على الأرجح قريباً." },
+                { "language": "tr", "text": "Aslında iyi gidiyor. Neredeyse bitirdik; sadece dışa aktarmada muhtemelen yakında çözeceğimiz birkaç küçük şey var." },
+                { "language": "ru", "text": "В целом всё идёт хорошо. Мы почти закончили, только в экспорте есть несколько мелочей, которые мы, вероятно, скоро решим." },
+                { "language": "ckb", "text": "لە ڕاستیدا باش دەڕوات. نزیکەی تەواو بووین؛ تەنها لە هەناردەکردندا چەند شتێکی بچووک ماوە کە بە گشتی زوو چارەسەریان دەکەین." },
+                { "language": "kmr", "text": "Bi rastî baş diçe. Em nêzîkî qedandinê ne; tenê di derxistinê de çend tiştên biçûk hene ku dibe em zû çareser bikin." },
+                { "language": "pl", "text": "Właściwie idzie dobrze. Jesteśmy prawie gotowi, tylko przy eksporcie jest jeszcze kilka drobiazgów, które pewnie wkrótce rozwiążemy." },
+                { "language": "ro", "text": "De fapt merge bine. Suntem aproape gata, doar la export mai sunt câteva lucruri mici pe care probabil le vom rezolva curând." },
+                { "language": "sq", "text": "Në fakt po shkon mirë. Jemi pothuajse gati, vetëm te eksporti kanë mbetur disa gjëra të vogla që ndoshta do t'i zgjidhim shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weak: it sounds positive, but it hides the blocker and gives no measurable risk.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: it sounds positive, but it hides the blocker and gives no measurable risk." },
+                { "language": "fa", "text": "قابل‌تصور اما ضعیف است: مثبت به نظر می‌رسد، اما blocker را پنهان می‌کند و ریسک قابل سنجش نمی‌دهد." },
+                { "language": "ar", "text": "محتمل لكنه ضعيف: يبدو إيجابياً، لكنه يخفي العائق ولا يقدم خطراً قابلاً للقياس." },
+                { "language": "tr", "text": "Makul ama zayıf: olumlu duyuluyor, fakat engeli gizliyor ve ölçülebilir risk vermiyor." },
+                { "language": "ru", "text": "Возможно, но слабо: звучит позитивно, но скрывает блокер и не даёт измеримого риска." },
+                { "language": "ckb", "text": "گونجاوە بەڵام لاوازە: ئەرێنی دەردەکەوێت، بەڵام بەربەستەکە دەشارێتەوە و مەترسی پێوانەکراو نادات." },
+                { "language": "kmr", "text": "Gengaz lê lawaz e: erênî xuya dike, lê astengiyê veşêre û xetereke pîvanbar nade." },
+                { "language": "pl", "text": "Prawdopodobne, ale słabe: brzmi pozytywnie, lecz ukrywa blokadę i nie podaje mierzalnego ryzyka." },
+                { "language": "ro", "text": "Plauzibil, dar slab: sună pozitiv, dar ascunde blocajul și nu oferă un risc măsurabil." },
+                { "language": "sq", "text": "E besueshme, por e dobët: tingëllon pozitive, por fsheh pengesën dhe nuk jep rrezik të matshëm." }
+              ],
+              "explanationKey": "vague-status"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "conditional-timeline",
+              "text": "Ich würde den Termin noch nicht verschieben. Wenn wir den Zugang bis Mittwochmittag bekommen, bleibt Freitag realistisch. Wenn nicht, sollten wir am Mittwoch auf eine Teilabnahme umstellen.",
+              "translations": [
+                { "language": "en", "text": "I would not move the date yet. If we get access by Wednesday noon, Friday remains realistic. If not, we should switch to a partial acceptance on Wednesday." },
+                { "language": "fa", "text": "فعلاً تاریخ را جابه‌جا نمی‌کنم. اگر تا ظهر چهارشنبه دسترسی را بگیریم، جمعه همچنان واقع‌بینانه است. اگر نه، باید چهارشنبه به پذیرش جزئی تغییر مسیر بدهیم." },
+                { "language": "ar", "text": "لن أؤجل الموعد الآن. إذا حصلنا على الوصول حتى ظهر الأربعاء، يبقى يوم الجمعة واقعياً. وإذا لم يحدث ذلك، فعلينا يوم الأربعاء التحول إلى قبول جزئي." },
+                { "language": "tr", "text": "Tarihi henüz değiştirmezdim. Erişimi çarşamba öğlene kadar alırsak cuma hâlâ gerçekçi. Aksi halde çarşamba günü kısmi kabule geçmeliyiz." },
+                { "language": "ru", "text": "Я бы пока не переносил дату. Если мы получим доступ до полудня среды, пятница остаётся реалистичной. Если нет, в среду нужно перейти на частичную приёмку." },
+                { "language": "ckb", "text": "من هێشتا کاتەکە دوا ناخەم. ئەگەر تا نیوەڕۆی چوارشەممە دەستگەیشتن وەربگرین، هەینی هێشتا واقیعییە. ئەگەر نا، دەبێت چوارشەممە بگۆڕین بۆ وەرگرتنی بەشێک." },
+                { "language": "kmr", "text": "Ez ê demê hîn paş nexînim. Heke em heta nîvroya Çarşemê gihîştinê bistînin, roja Înê hîn rastîn e. Heke na, divê Çarşemê em veguherin pejirandineke beşî." },
+                { "language": "pl", "text": "Nie przesuwałbym jeszcze terminu. Jeśli dostaniemy dostęp do środy w południe, piątek pozostaje realny. Jeśli nie, w środę powinniśmy przejść na odbiór częściowy." },
+                { "language": "ro", "text": "Nu aș muta încă termenul. Dacă primim accesul până miercuri la prânz, vineri rămâne realist. Dacă nu, miercuri ar trebui să trecem la o acceptare parțială." },
+                { "language": "sq", "text": "Nuk do ta shtyja ende datën. Nëse marrim qasjen deri të mërkurën në mesditë, e premtja mbetet realiste. Nëse jo, të mërkurën duhet të kalojmë në pranim të pjesshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives a clear threshold and a fallback instead of a vague warning.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives a clear threshold and a fallback instead of a vague warning." },
+                { "language": "fa", "text": "خوب است: به‌جای هشدار مبهم، آستانه تصمیم و راه جایگزین مشخص می‌دهد." },
+                { "language": "ar", "text": "جيد: يقدم عتبة واضحة وخطة بديلة بدلاً من تحذير مبهم." },
+                { "language": "tr", "text": "İyi: belirsiz bir uyarı yerine net bir eşik ve yedek plan veriyor." },
+                { "language": "ru", "text": "Хорошо: вместо расплывчатого предупреждения даётся чёткий порог и запасной вариант." },
+                { "language": "ckb", "text": "باشە: بەجێی ئاگادارکردنەوەی ناڕوون، سنووری بڕیار و جێگرەوەی ڕوون دەدات." },
+                { "language": "kmr", "text": "Baş e: li şûna hişyariyeke nezelal, astekî biryarê û plana cîgir dide." },
+                { "language": "pl", "text": "Dobrze: zamiast niejasnego ostrzeżenia daje jasny próg i plan awaryjny." },
+                { "language": "ro", "text": "Bine: oferă un prag clar și o variantă de rezervă în locul unui avertisment vag." },
+                { "language": "sq", "text": "Mirë: jep një prag të qartë dhe një plan rezervë në vend të një paralajmërimi të paqartë." }
+              ],
+              "explanationKey": "conditional-risk"
+            },
+            {
+              "id": "premature-delay",
+              "text": "Ich würde Freitag lieber direkt absagen, damit wir gar nicht erst in Stress geraten.",
+              "translations": [
+                { "language": "en", "text": "I would rather cancel Friday directly so that we do not get stressed in the first place." },
+                { "language": "fa", "text": "ترجیح می‌دهم جمعه را مستقیم لغو کنیم تا اصلاً تحت فشار قرار نگیریم." },
+                { "language": "ar", "text": "أفضل أن نلغي يوم الجمعة مباشرة حتى لا نقع تحت ضغط أصلاً." },
+                { "language": "tr", "text": "Hiç strese girmemek için cumayı doğrudan iptal etmeyi tercih ederim." },
+                { "language": "ru", "text": "Я бы предпочёл сразу отменить пятницу, чтобы мы вообще не попали в стресс." },
+                { "language": "ckb", "text": "پێم باشترە هەینی ڕاستەوخۆ هەڵبوەشێنینەوە بۆ ئەوەی هەر لە بنەڕەتدا نەکەوینە ژێر فشار." },
+                { "language": "kmr", "text": "Ez tercîh dikim ku roja Înê rasterast betal bikin da ku em qet bikevin bin stresê." },
+                { "language": "pl", "text": "Wolałbym od razu odwołać piątek, żebyśmy w ogóle nie weszli w stres." },
+                { "language": "ro", "text": "Aș prefera să anulăm direct ziua de vineri, ca să nu intrăm deloc în stres." },
+                { "language": "sq", "text": "Do të preferoja ta anulonim drejtpërdrejt të premten, që të mos hyjmë fare në stres." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too defensive: it avoids risk but gives up a realistic option before the decision point.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: it avoids risk but gives up a realistic option before the decision point." },
+                { "language": "fa", "text": "بیش از حد تدافعی است: ریسک را کم می‌کند، اما قبل از نقطه تصمیم یک گزینه واقع‌بینانه را کنار می‌گذارد." },
+                { "language": "ar", "text": "دفاعي جداً: يتجنب الخطر، لكنه يتخلى عن خيار واقعي قبل نقطة القرار." },
+                { "language": "tr", "text": "Çok savunmacı: riski azaltıyor, ancak karar noktasından önce gerçekçi bir seçenekten vazgeçiyor." },
+                { "language": "ru", "text": "Слишком оборонительно: риск избегается, но реалистичный вариант отбрасывается до точки решения." },
+                { "language": "ckb", "text": "زۆر بەرگرییانەیە: مەترسی دوور دەخاتەوە، بەڵام پێش خاڵی بڕیار هەڵبژاردەیەکی واقیعی واز دەهێنێت." },
+                { "language": "kmr", "text": "Pir parastinî ye: xeterê dûr dixe, lê berî xala biryarê ji vebijêrkeke rastîn dest berdide." },
+                { "language": "pl", "text": "Zbyt defensywnie: unika ryzyka, ale rezygnuje z realistycznej opcji przed punktem decyzji." },
+                { "language": "ro", "text": "Prea defensiv: evită riscul, dar renunță la o opțiune realistă înainte de punctul de decizie." },
+                { "language": "sq", "text": "Shumë mbrojtëse: shmang rrezikun, por heq dorë nga një opsion realist para pikës së vendimit." }
+              ],
+              "explanationKey": "premature-cancel"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "owner-and-priority-request",
+              "text": "Ich brauche heute eine Entscheidung, wer den Datenzugang mit IT klärt. Außerdem würde ich die Dokumentation um einen Tag nach hinten schieben, damit wir den Testlauf priorisieren können.",
+              "translations": [
+                { "language": "en", "text": "I need a decision today on who will clarify the data access with IT. I would also move the documentation back by one day so that we can prioritize the test run." },
+                { "language": "fa", "text": "امروز به یک تصمیم نیاز دارم که چه کسی دسترسی داده را با IT روشن می‌کند. همچنین مستندسازی را یک روز عقب می‌برم تا بتوانیم اجرای تست را اولویت بدهیم." },
+                { "language": "ar", "text": "أحتاج اليوم إلى قرار بشأن من سيوضح الوصول إلى البيانات مع قسم تقنية المعلومات. كما سأؤجل التوثيق يوماً واحداً حتى نستطيع إعطاء أولوية للتشغيل الاختباري." },
+                { "language": "tr", "text": "Bugün veri erişimini IT ile kimin netleştireceğine dair bir karara ihtiyacım var. Ayrıca test çalışmasını önceliklendirebilmemiz için dokümantasyonu bir gün geriye alırdım." },
+                { "language": "ru", "text": "Сегодня мне нужно решение, кто прояснит доступ к данным с IT. Кроме того, я бы сдвинул документацию на один день, чтобы мы могли приоритизировать тестовый прогон." },
+                { "language": "ckb", "text": "ئەمڕۆ پێویستم بە بڕیارێکە کە کێ دەستگەیشتنی داتا لەگەڵ IT ڕوون دەکاتەوە. هەروەها بەڵگەنامەکردن ڕۆژێک دوا دەخەم بۆ ئەوەی بتوانین تاقیکردنەوەکە پێشینە بکەین." },
+                { "language": "kmr", "text": "Îro pêwîstiya min bi biryarekê heye ku kî dê gihîştina daneyan bi IT re zelal bike. Her wiha ez belgekirinê rojek paş dixim da ku em ceribandina testê pêşî bikin." },
+                { "language": "pl", "text": "Potrzebuję dziś decyzji, kto wyjaśni dostęp do danych z IT. Przesunąłbym też dokumentację o jeden dzień, żebyśmy mogli nadać priorytet przebiegowi testowemu." },
+                { "language": "ro", "text": "Am nevoie astăzi de o decizie privind cine clarifică accesul la date cu IT. Aș muta și documentația cu o zi mai târziu, ca să putem prioritiza testul." },
+                { "language": "sq", "text": "Sot më duhet një vendim se kush do ta sqarojë qasjen në të dhëna me IT. Gjithashtu do ta shtyja dokumentimin me një ditë, që të mund t'i japim përparësi testimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: it asks for a named owner and explains the priority trade-off.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: it asks for a named owner and explains the priority trade-off." },
+                { "language": "fa", "text": "خوب است: مسئول مشخص می‌خواهد و جابه‌جایی اولویت را توضیح می‌دهد." },
+                { "language": "ar", "text": "جيد: يطلب مسؤولاً محدداً ويشرح المفاضلة في الأولويات." },
+                { "language": "tr", "text": "İyi: belirli bir sorumlu istiyor ve öncelik değişimini açıklıyor." },
+                { "language": "ru", "text": "Хорошо: запрашивается конкретный ответственный и объясняется смена приоритетов." },
+                { "language": "ckb", "text": "باشە: بەرپرسی دیاریکراو داوا دەکات و گۆڕینی پێشینەیی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: berpirsê diyarkirî dixwaze û guherîna pêşîniyê rave dike." },
+                { "language": "pl", "text": "Dobrze: prosi o konkretnego właściciela tematu i wyjaśnia zmianę priorytetu." },
+                { "language": "ro", "text": "Bine: cere un responsabil clar și explică schimbul de priorități." },
+                { "language": "sq", "text": "Mirë: kërkon një përgjegjës të qartë dhe shpjegon shkëmbimin e prioriteteve." }
+              ],
+              "explanationKey": "owner-priority"
+            },
+            {
+              "id": "support-too-unclear",
+              "text": "Ich brauche einfach ein bisschen Unterstützung von irgendwem, sonst wird es vielleicht schwierig.",
+              "translations": [
+                { "language": "en", "text": "I simply need a bit of support from someone, otherwise it may become difficult." },
+                { "language": "fa", "text": "فقط کمی پشتیبانی از یک نفر لازم دارم، وگرنه شاید سخت شود." },
+                { "language": "ar", "text": "أحتاج فقط إلى بعض الدعم من شخص ما، وإلا فقد يصبح الأمر صعباً." },
+                { "language": "tr", "text": "Sadece birinden biraz desteğe ihtiyacım var, yoksa belki zorlaşabilir." },
+                { "language": "ru", "text": "Мне просто нужна небольшая поддержка от кого-нибудь, иначе, возможно, будет сложно." },
+                { "language": "ckb", "text": "تەنها کەمێک پشتیوانی لە کەسێک پێویستمە، ئەگەر نا لەوانەیە سەخت بێت." },
+                { "language": "kmr", "text": "Tenê piştgiriyeke hindik ji kesekî pêwîstiya min heye, wekî din dibe ku dijwar bibe." },
+                { "language": "pl", "text": "Po prostu potrzebuję trochę wsparcia od kogoś, inaczej może być trudno." },
+                { "language": "ro", "text": "Am nevoie pur și simplu de puțin sprijin de la cineva, altfel poate deveni dificil." },
+                { "language": "sq", "text": "Thjesht më duhet pak mbështetje nga dikush, përndryshe mund të bëhet e vështirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too unclear: it does not name the needed decision, owner, or priority change.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unclear: it does not name the needed decision, owner, or priority change." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: تصمیم لازم، مسئول یا تغییر اولویت را نام نمی‌برد." },
+                { "language": "ar", "text": "غير واضح كفاية: لا يذكر القرار المطلوب ولا المسؤول ولا تغيير الأولوية." },
+                { "language": "tr", "text": "Çok belirsiz: gereken kararı, sorumluyu veya öncelik değişimini belirtmiyor." },
+                { "language": "ru", "text": "Слишком неясно: не названы нужное решение, ответственный или изменение приоритета." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: بڕیاری پێویست، بەرپرس یان گۆڕینی پێشینەیی ناو نابە." },
+                { "language": "kmr", "text": "Pir nezelal e: biryara pêwîst, berpirs an guherîna pêşîniyê nav nake." },
+                { "language": "pl", "text": "Zbyt niejasne: nie wskazuje potrzebnej decyzji, właściciela ani zmiany priorytetu." },
+                { "language": "ro", "text": "Prea neclar: nu numește decizia necesară, responsabilul sau schimbarea priorității." },
+                { "language": "sq", "text": "Shumë e paqartë: nuk përmend vendimin e nevojshëm, përgjegjësin ose ndryshimin e prioritetit." }
+              ],
+              "explanationKey": "unclear-support"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "minutes-ready-summary",
+              "text": "Zusammengefasst: Kernprozess und Dashboard sind fertig, der Export hängt noch am Datenzugang. Bis Mittwochmittag klärt Anna das mit IT; danach entscheiden wir, ob Freitag Vollabnahme oder Teilabnahme wird.",
+              "translations": [
+                { "language": "en", "text": "In summary: the core process and dashboard are finished, the export still depends on data access. Anna will clarify this with IT by Wednesday noon; after that we decide whether Friday will be full or partial acceptance." },
+                { "language": "fa", "text": "جمع‌بندی: فرایند اصلی و داشبورد آماده‌اند، خروجی هنوز به دسترسی داده وابسته است. آنا تا ظهر چهارشنبه این را با IT روشن می‌کند؛ بعد از آن تصمیم می‌گیریم جمعه پذیرش کامل باشد یا پذیرش جزئی." },
+                { "language": "ar", "text": "الخلاصة: العملية الأساسية ولوحة المعلومات جاهزتان، والتصدير ما زال يعتمد على الوصول إلى البيانات. ستوضح آنا ذلك مع قسم تقنية المعلومات حتى ظهر الأربعاء؛ وبعدها نقرر هل يكون يوم الجمعة قبولاً كاملاً أم جزئياً." },
+                { "language": "tr", "text": "Özetle: temel süreç ve gösterge paneli hazır, dışa aktarma hâlâ veri erişimine bağlı. Anna bunu çarşamba öğlene kadar IT ile netleştirecek; sonra cuma gününün tam kabul mü yoksa kısmi kabul mü olacağına karar vereceğiz." },
+                { "language": "ru", "text": "Итак: основной процесс и панель готовы, экспорт всё ещё зависит от доступа к данным. Анна прояснит это с IT до полудня среды; после этого мы решим, будет ли в пятницу полная или частичная приёмка." },
+                { "language": "ckb", "text": "بە پوختە: پرۆسەی سەرەکی و داشبۆرد تەواون، هەناردەکردن هێشتا پشت بە دەستگەیشتنی داتا دەبەستێت. ئانا تا نیوەڕۆی چوارشەممە ئەمە لەگەڵ IT ڕوون دەکاتەوە؛ پاشان بڕیار دەدەین هەینی وەرگرتنی تەواو بێت یان وەرگرتنی بەشێک." },
+                { "language": "kmr", "text": "Bi kurtî: pêvajoya bingehîn û tablo qediyane, derxistin hîn girêdayî gihîştina daneyan e. Anna heta nîvroya Çarşemê vê bi IT re zelal dike; paşê em biryar didin ka roja Înê pejirandina tevahî ye an beşî." },
+                { "language": "pl", "text": "Podsumowując: proces podstawowy i panel są gotowe, eksport nadal zależy od dostępu do danych. Anna wyjaśni to z IT do środy w południe; potem zdecydujemy, czy w piątek będzie odbiór pełny czy częściowy." },
+                { "language": "ro", "text": "Pe scurt: procesul central și panoul sunt gata, exportul depinde încă de accesul la date. Anna va clarifica asta cu IT până miercuri la prânz; apoi decidem dacă vineri va fi acceptare completă sau parțială." },
+                { "language": "sq", "text": "Në përmbledhje: procesi kryesor dhe paneli janë gati, eksporti ende varet nga qasja në të dhëna. Anna do ta sqarojë këtë me IT deri të mërkurën në mesditë; pastaj vendosim nëse të premten do të ketë pranim të plotë apo të pjesshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this summary is ready for minutes because it includes status, blocker, owner, date, and decision point.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this summary is ready for minutes because it includes status, blocker, owner, date, and decision point." },
+                { "language": "fa", "text": "خوب است: این جمع‌بندی برای صورت‌جلسه آماده است، چون وضعیت، blocker، مسئول، تاریخ و نقطه تصمیم را دارد." },
+                { "language": "ar", "text": "جيد: هذا الملخص مناسب للمحضر لأنه يتضمن الحالة والعائق والمسؤول والموعد ونقطة القرار." },
+                { "language": "tr", "text": "İyi: bu özet tutanak için hazır, çünkü durumu, engeli, sorumluyu, tarihi ve karar noktasını içeriyor." },
+                { "language": "ru", "text": "Хорошо: это резюме готово для протокола, потому что включает статус, блокер, ответственного, дату и точку решения." },
+                { "language": "ckb", "text": "باشە: ئەم پوختەیە بۆ تۆماری کۆبوونەوە ئامادەیە، چونکە دۆخ، بەربەست، بەرپرس، کات و خاڵی بڕیار تێدایە." },
+                { "language": "kmr", "text": "Baş e: ev kurte ji bo protokolê amade ye, ji ber ku rewş, astengî, berpirs, dem û xala biryarê tê de hene." },
+                { "language": "pl", "text": "Dobrze: to podsumowanie nadaje się do protokołu, bo zawiera status, blokadę, właściciela, datę i punkt decyzji." },
+                { "language": "ro", "text": "Bine: acest rezumat este potrivit pentru procesul-verbal, deoarece include statusul, blocajul, responsabilul, data și punctul de decizie." },
+                { "language": "sq", "text": "Mirë: kjo përmbledhje është gati për procesverbal, sepse përfshin statusin, pengesën, përgjegjësin, datën dhe pikën e vendimit." }
+              ],
+              "explanationKey": "minutes-summary"
+            },
+            {
+              "id": "summary-missing-decision",
+              "text": "Zusammengefasst: Wir sind weit gekommen, es gibt noch ein Problem mit dem Export, und wir versuchen, das bis Freitag zu lösen.",
+              "translations": [
+                { "language": "en", "text": "In summary: we have made a lot of progress, there is still a problem with the export, and we are trying to solve it by Friday." },
+                { "language": "fa", "text": "جمع‌بندی: خیلی پیشرفت کرده‌ایم، هنوز مشکلی با خروجی وجود دارد و تلاش می‌کنیم تا جمعه آن را حل کنیم." },
+                { "language": "ar", "text": "الخلاصة: لقد أحرزنا تقدماً كبيراً، وما زالت هناك مشكلة في التصدير، ونحاول حلها حتى يوم الجمعة." },
+                { "language": "tr", "text": "Özetle: oldukça ilerledik, dışa aktarma ile ilgili hâlâ bir sorun var ve bunu cumaya kadar çözmeye çalışıyoruz." },
+                { "language": "ru", "text": "Итак: мы значительно продвинулись, с экспортом ещё есть проблема, и мы пытаемся решить её до пятницы." },
+                { "language": "ckb", "text": "بە پوختە: زۆر پێشکەوتووین، هێشتا کێشەیەک لە هەناردەکردن هەیە و هەوڵ دەدەین تا هەینی چارەسەری بکەین." },
+                { "language": "kmr", "text": "Bi kurtî: em gelek pêşketine, hîn pirsgirêkek bi derxistinê heye û em hewl didin heta roja Înê çareser bikin." },
+                { "language": "pl", "text": "Podsumowując: sporo osiągnęliśmy, nadal jest problem z eksportem i próbujemy go rozwiązać do piątku." },
+                { "language": "ro", "text": "Pe scurt: am avansat mult, mai există o problemă cu exportul și încercăm să o rezolvăm până vineri." },
+                { "language": "sq", "text": "Në përmbledhje: kemi përparuar shumë, ka ende një problem me eksportin dhe po përpiqemi ta zgjidhim deri të premten." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but incomplete: it has no owner, no decision threshold, and no fallback if Friday becomes unrealistic.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but incomplete: it has no owner, no decision threshold, and no fallback if Friday becomes unrealistic." },
+                { "language": "fa", "text": "قابل‌قبول اما ناقص است: مسئول، آستانه تصمیم و جایگزین در صورت غیرواقعی شدن جمعه ندارد." },
+                { "language": "ar", "text": "مقبول لكنه ناقص: لا يتضمن مسؤولاً ولا عتبة قرار ولا خطة بديلة إذا أصبح يوم الجمعة غير واقعي." },
+                { "language": "tr", "text": "Makul ama eksik: sorumlu, karar eşiği ve cuma gerçekçi olmazsa yedek plan yok." },
+                { "language": "ru", "text": "Возможно, но неполно: нет ответственного, порога решения и запасного варианта, если пятница станет нереалистичной." },
+                { "language": "ckb", "text": "گونجاوە بەڵام ناتەواوە: بەرپرس، سنووری بڕیار و جێگرەوەی نییە ئەگەر هەینی نەبێتە واقیعی." },
+                { "language": "kmr", "text": "Gengaz lê netemam e: berpirs, asta biryarê û plana cîgir tune ye heke roja Înê ne rastîn bibe." },
+                { "language": "pl", "text": "Prawdopodobne, ale niepełne: brakuje właściciela, progu decyzji i planu awaryjnego, jeśli piątek okaże się nierealny." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: nu are responsabil, prag de decizie și variantă de rezervă dacă vineri devine nerealist." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: nuk ka përgjegjës, prag vendimi dhe plan rezervë nëse e premtja bëhet jorealiste." }
+              ],
+              "explanationKey": "incomplete-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy-note",
+          "text": "A B2 status report should separate completed work, open blocker, and risk instead of saying only that things are going well.",
+          "translations": [
+            { "language": "en", "text": "A B2 status report should separate completed work, open blocker, and risk instead of saying only that things are going well." },
+            { "language": "fa", "text": "گزارش وضعیت B2 باید کار انجام‌شده، blocker باز و ریسک را جدا کند، نه اینکه فقط بگوید همه چیز خوب پیش می‌رود." },
+            { "language": "ar", "text": "ينبغي أن يميز تقرير الحالة في مستوى B2 بين العمل المنجز والعائق المفتوح والخطر، لا أن يقول فقط إن الأمور تسير جيداً." },
+            { "language": "tr", "text": "B2 düzeyinde bir durum raporu, sadece işlerin iyi gittiğini söylemek yerine tamamlanan işi, açık engeli ve riski ayırmalıdır." },
+            { "language": "ru", "text": "Отчёт о статусе на уровне B2 должен разделять выполненную работу, открытый блокер и риск, а не просто говорить, что всё идёт хорошо." },
+            { "language": "ckb", "text": "ڕاپۆرتی دۆخی B2 دەبێت کاری تەواوبوو، بەربەستی کراوە و مەترسی جیا بکاتەوە، نەک تەنها بڵێت هەموو شتێک باش دەڕوات." },
+            { "language": "kmr", "text": "Rapora rewşê ya B2 divê karê qediyayî, astengiya vekirî û xeterê ji hev veqetîne, ne tenê bibêje her tişt baş diçe." },
+            { "language": "pl", "text": "Raport statusowy B2 powinien oddzielać wykonaną pracę, otwartą blokadę i ryzyko, zamiast mówić tylko, że wszystko idzie dobrze." },
+            { "language": "ro", "text": "Un raport de status B2 trebuie să separe munca finalizată, blocajul deschis și riscul, nu doar să spună că lucrurile merg bine." },
+            { "language": "sq", "text": "Një raport statusi B2 duhet të ndajë punën e përfunduar, pengesën e hapur dhe rrezikun, jo vetëm të thotë se gjërat po shkojnë mirë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "process-note",
+          "text": "Use a conditional timeline when the risk is real but not yet final.",
+          "translations": [
+            { "language": "en", "text": "Use a conditional timeline when the risk is real but not yet final." },
+            { "language": "fa", "text": "وقتی ریسک واقعی است اما هنوز قطعی نیست، از زمان‌بندی مشروط استفاده کن." },
+            { "language": "ar", "text": "استخدم جدولاً زمنياً مشروطاً عندما يكون الخطر حقيقياً لكنه غير نهائي بعد." },
+            { "language": "tr", "text": "Risk gerçek ama henüz kesin değilse koşullu bir zaman çizelgesi kullan." },
+            { "language": "ru", "text": "Используй условный график, когда риск реален, но ещё не окончателен." },
+            { "language": "ckb", "text": "کاتێک مەترسی ڕاستەقینەیە بەڵام هێشتا کۆتایی نییە، کاتخشتەی مەرجدار بەکاربهێنە." },
+            { "language": "kmr", "text": "Dema xeter rastîn e lê hîn dawî nîne, demnameyeke bi şert bi kar bîne." },
+            { "language": "pl", "text": "Używaj warunkowego harmonogramu, gdy ryzyko jest realne, ale jeszcze nie ostateczne." },
+            { "language": "ro", "text": "Folosește un calendar condiționat când riscul este real, dar nu este încă definitiv." },
+            { "language": "sq", "text": "Përdor një afat kohor të kushtëzuar kur rreziku është real, por ende jo përfundimtar." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "decision-note",
+          "text": "Status reports become useful when they name what decision is needed and who should own the next action.",
+          "translations": [
+            { "language": "en", "text": "Status reports become useful when they name what decision is needed and who should own the next action." },
+            { "language": "fa", "text": "گزارش وضعیت وقتی مفید می‌شود که بگوید چه تصمیمی لازم است و مسئول اقدام بعدی کیست." },
+            { "language": "ar", "text": "تصبح تقارير الحالة مفيدة عندما تذكر القرار المطلوب ومن ينبغي أن يتحمل مسؤولية الإجراء التالي." },
+            { "language": "tr", "text": "Durum raporları, hangi kararın gerektiğini ve sonraki eylemin kime ait olduğunu söylediğinde yararlı olur." },
+            { "language": "ru", "text": "Отчёты о статусе становятся полезными, когда называют нужное решение и ответственного за следующий шаг." },
+            { "language": "ckb", "text": "ڕاپۆرتەکانی دۆخ کاتێک بەسوود دەبن کە بڵێن چ بڕیارێک پێویستە و کێ دەبێت خاوەنی هەنگاوی داهاتوو بێت." },
+            { "language": "kmr", "text": "Raporên rewşê dema bi kêr tên ku bibêjin kîjan biryar pêwîst e û kî divê xwediyê çalakiya paşîn be." },
+            { "language": "pl", "text": "Raporty statusowe są użyteczne, gdy wskazują potrzebną decyzję i osobę odpowiedzialną za następne działanie." },
+            { "language": "ro", "text": "Rapoartele de status devin utile când numesc decizia necesară și cine ar trebui să dețină acțiunea următoare." },
+            { "language": "sq", "text": "Raportet e statusit bëhen të dobishme kur përmendin vendimin e nevojshëm dhe kush duhet të mbajë veprimin tjetër." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary-note",
+          "text": "A meeting summary should be specific enough that someone absent can understand the owner, deadline, and decision point.",
+          "translations": [
+            { "language": "en", "text": "A meeting summary should be specific enough that someone absent can understand the owner, deadline, and decision point." },
+            { "language": "fa", "text": "جمع‌بندی جلسه باید آن‌قدر مشخص باشد که فرد غایب هم مسئول، ضرب‌الاجل و نقطه تصمیم را بفهمد." },
+            { "language": "ar", "text": "ينبغي أن يكون ملخص الاجتماع محدداً بما يكفي لكي يفهم الشخص الغائب المسؤول والموعد ونقطة القرار." },
+            { "language": "tr", "text": "Toplantı özeti, bulunmayan birinin de sorumluyu, son tarihi ve karar noktasını anlayacağı kadar somut olmalıdır." },
+            { "language": "ru", "text": "Резюме встречи должно быть достаточно конкретным, чтобы отсутствующий понял ответственного, срок и точку решения." },
+            { "language": "ckb", "text": "پوختەی کۆبوونەوە دەبێت بەو ڕادەیە دیاریکراو بێت کە کەسی ئامادەنەبووش بەرپرس، کاتی کۆتایی و خاڵی بڕیار تێبگات." },
+            { "language": "kmr", "text": "Kurteya civînê divê têra xwe diyarkirî be da ku kesekî ne amade jî berpirs, dawîdem û xala biryarê fam bike." },
+            { "language": "pl", "text": "Podsumowanie spotkania powinno być na tyle konkretne, aby osoba nieobecna zrozumiała właściciela, termin i punkt decyzji." },
+            { "language": "ro", "text": "Rezumatul unei ședințe trebuie să fie suficient de specific încât cineva absent să înțeleagă responsabilul, termenul și punctul de decizie." },
+            { "language": "sq", "text": "Përmbledhja e takimit duhet të jetë mjaft konkrete që edhe dikush që mungon të kuptojë përgjegjësin, afatin dhe pikën e vendimit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

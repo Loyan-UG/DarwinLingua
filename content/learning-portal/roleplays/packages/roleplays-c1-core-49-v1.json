@@ -1,0 +1,841 @@
+{
+  "packageId": "roleplays-c1-core-49-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 49 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 49",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-dienstleistung-nach-qualitaetskriterien-bewerten",
+      "linkedDialogueSlug": null,
+      "title": "Eine Dienstleistung nach Qualitätskriterien bewerten",
+      "titleTranslations": [
+        { "language": "en", "text": "Evaluating a service based on quality criteria" },
+        { "language": "fa", "text": "ارزیابی یک خدمت بر اساس معیارهای کیفیت" },
+        { "language": "ar", "text": "تقييم خدمة وفق معايير الجودة" },
+        { "language": "tr", "text": "Bir hizmeti kalite ölçütlerine göre değerlendirmek" },
+        { "language": "ru", "text": "Оценить услугу по критериям качества" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی خزمەتگوزارییەک بە پێی پێوەرەکانی کوالیتی" },
+        { "language": "kmr", "text": "Nirxandina xizmetekê li gorî pîvanên kalîteyê" },
+        { "language": "pl", "text": "Ocena usługi według kryteriów jakości" },
+        { "language": "ro", "text": "Evaluarea unui serviciu după criterii de calitate" },
+        { "language": "sq", "text": "Vlerësimi i një shërbimi sipas kritereve të cilësisë" }
+      ],
+      "description": "Nach einer Reparatur am Service-Schalter werden Sie um eine mündliche Rückmeldung gebeten. Sie möchten fair bleiben: Der Kontakt war freundlich, aber Reaktionszeit, Kostentransparenz und Übergabe waren aus Ihrer Sicht nicht klar genug.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a repair at the service counter, you are asked for verbal feedback. You want to stay fair: the contact was friendly, but response time, cost transparency, and handover were not clear enough from your point of view." },
+        { "language": "fa", "text": "پس از یک تعمیر در باجه خدمات، از شما بازخورد شفاهی می‌خواهند. می‌خواهید منصفانه بمانید: برخورد دوستانه بود، اما از نظر شما زمان پاسخ، شفافیت هزینه و تحویل کار به اندازه کافی روشن نبود." },
+        { "language": "ar", "text": "بعد إصلاح عند مكتب الخدمة يُطلب منك تقديم ملاحظات شفهية. تريد أن تبقى منصفاً: كان التواصل ودياً، لكن وقت الاستجابة وشفافية التكلفة وتسليم الخدمة لم تكن واضحة بما يكفي من وجهة نظرك." },
+        { "language": "tr", "text": "Servis bankosunda yapılan bir onarımdan sonra sizden sözlü geri bildirim istenir. Adil kalmak istiyorsunuz: iletişim güler yüzlüydü, ancak yanıt süresi, maliyet şeffaflığı ve teslim süreci size göre yeterince net değildi." },
+        { "language": "ru", "text": "После ремонта у сервисной стойки вас просят дать устную обратную связь. Вы хотите остаться справедливым: общение было доброжелательным, но время реакции, прозрачность стоимости и передача результата, по вашему мнению, были недостаточно ясными." },
+        { "language": "ckb", "text": "دوای چاککردنەوەیەک لە کاونتەری خزمەتگوزاری، داوای فیدباکی زارەکی لێت دەکرێت. دەتەوێت دادپەروەر بمێنیت: پەیوەندییەکە دۆستانە بوو، بەڵام کاتی وەڵامدانەوە، ڕوونیی تێچوو و ڕادەستکردن لە بۆچوونی تۆدا بەشی پێویست ڕوون نەبوون." },
+        { "language": "kmr", "text": "Piştî tamîrekê li kontora xizmetê, ji we daxwaza paşvegerandina devkî tê kirin. Hûn dixwazin adil bimînin: têkilî dostane bû, lê dema bersivê, zelaliya lêçûnê û radestkirin li gorî we têr zelal nebûn." },
+        { "language": "pl", "text": "Po naprawie przy stanowisku serwisowym proszą Pana o ustną opinię. Chce Pan pozostać fair: kontakt był uprzejmy, ale czas reakcji, przejrzystość kosztów i odbiór usługi nie były z Pana perspektywy wystarczająco jasne." },
+        { "language": "ro", "text": "După o reparație la ghișeul de service vi se cere feedback verbal. Doriți să rămâneți corect: contactul a fost prietenos, dar timpul de răspuns, transparența costurilor și predarea nu au fost suficient de clare din punctul dumneavoastră de vedere." },
+        { "language": "sq", "text": "Pas një riparimi te sporteli i shërbimit, ju kërkohet reagim gojor. Doni të mbeteni të drejtë: kontakti ishte miqësor, por koha e përgjigjes, transparenca e kostos dhe dorëzimi nuk ishin mjaft të qarta sipas jush." }
+      ],
+      "learnerGoal": "Eine Dienstleistung differenziert bewerten: positive Aspekte anerkennen, Qualitätskriterien nennen, konkrete Beispiele geben, subjektiven Eindruck von überprüfbaren Punkten trennen und eine realistische Verbesserungserwartung formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Evaluate a service in a nuanced way: acknowledge positive aspects, name quality criteria, give concrete examples, separate subjective impression from verifiable points, and formulate a realistic improvement expectation." },
+        { "language": "fa", "text": "یک خدمت را با دقت ارزیابی کنید: نکات مثبت را بپذیرید، معیارهای کیفیت را نام ببرید، مثال‌های مشخص بدهید، برداشت شخصی را از نکات قابل بررسی جدا کنید و انتظار بهبود واقع‌بینانه بیان کنید." },
+        { "language": "ar", "text": "قيّم خدمة بشكل متوازن: اعترف بالجوانب الإيجابية، وسمّ معايير الجودة، وقدّم أمثلة محددة، وافصل الانطباع الشخصي عن النقاط القابلة للفحص، وصغ توقعاً واقعياً للتحسين." },
+        { "language": "tr", "text": "Bir hizmeti ayrıntılı değerlendirin: olumlu yönleri kabul edin, kalite ölçütlerini belirtin, somut örnekler verin, öznel izlenimi denetlenebilir noktalardan ayırın ve gerçekçi bir iyileştirme beklentisi formüle edin." },
+        { "language": "ru", "text": "Дифференцированно оценить услугу: признать положительные стороны, назвать критерии качества, привести конкретные примеры, отделить субъективное впечатление от проверяемых пунктов и сформулировать реалистичное ожидание улучшения." },
+        { "language": "ckb", "text": "خزمەتگوزارییەک بە وردی هەڵسەنگێنە: لایەنە باشەکان بسەلمێنە، پێوەرەکانی کوالیتی ناو ببە، نموونەی دیاریکراو بدە، هەستی تاکەکەسی لە خاڵە پشکنراوەکان جیا بکەوە و چاوەڕوانییەکی ڕاستەقینەی باشترکردن داڕێژە." },
+        { "language": "kmr", "text": "Xizmetekê bi hûrgulî binirxînin: aliyên erênî bipejirînin, pîvanên kalîteyê bi nav bikin, nimûneyên konkret bidin, hesta kesane ji xalên kontrolbar veqetînin û hêviyeke rast a başkirinê biafirînin." },
+        { "language": "pl", "text": "Ocenić usługę w sposób zróżnicowany: uznać pozytywne aspekty, nazwać kryteria jakości, podać konkretne przykłady, oddzielić subiektywne wrażenie od sprawdzalnych punktów i sformułować realistyczne oczekiwanie poprawy." },
+        { "language": "ro", "text": "Evaluați nuanțat un serviciu: recunoașteți aspectele pozitive, numiți criteriile de calitate, dați exemple concrete, separați impresia subiectivă de punctele verificabile și formulați o așteptare realistă de îmbunătățire." },
+        { "language": "sq", "text": "Vlerësoni një shërbim në mënyrë të nuancuar: pranoni aspektet pozitive, emërtoni kriteret e cilësisë, jepni shembuj konkretë, ndani përshtypjen subjektive nga pikat e verifikueshme dhe formuloni një pritje realiste për përmirësim." }
+      ],
+      "cefrLevel": "C1",
+      "category": "customer-service",
+      "topics": ["customer-service", "business-communication"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "give-opinion",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 49,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kund/in",
+          "translations": [
+            { "language": "en", "text": "Customer giving quality feedback" },
+            { "language": "fa", "text": "مشتری که بازخورد کیفی می‌دهد" },
+            { "language": "ar", "text": "العميل الذي يقدم ملاحظات جودة" },
+            { "language": "tr", "text": "Kalite geri bildirimi veren müşteri" },
+            { "language": "ru", "text": "Клиент, дающий отзыв о качестве" },
+            { "language": "ckb", "text": "کڕیارێک کە فیدباکی کوالیتی دەدات" },
+            { "language": "kmr", "text": "Mişteriyê ku paşvegerandina kalîteyê dide" },
+            { "language": "pl", "text": "Klient przekazujący opinię jakościową" },
+            { "language": "ro", "text": "Client care oferă feedback de calitate" },
+            { "language": "sq", "text": "Klienti që jep reagim për cilësinë" }
+          ]
+        },
+        {
+          "roleKey": "agent",
+          "displayName": "Serviceleitung",
+          "translations": [
+            { "language": "en", "text": "Service manager" },
+            { "language": "fa", "text": "مسئول خدمات" },
+            { "language": "ar", "text": "مسؤول الخدمة" },
+            { "language": "tr", "text": "Servis sorumlusu" },
+            { "language": "ru", "text": "Руководитель сервиса" },
+            { "language": "ckb", "text": "بەرپرسی خزمەتگوزاری" },
+            { "language": "kmr", "text": "Berpirsiyarê xizmetê" },
+            { "language": "pl", "text": "Kierownik serwisu" },
+            { "language": "ro", "text": "Responsabilul de service" },
+            { "language": "sq", "text": "Përgjegjësi i shërbimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "agent",
+          "baseText": "Bevor Sie gehen: Wir sammeln Rückmeldungen zu unserem Reparaturservice. Wie würden Sie die Dienstleistung insgesamt bewerten?",
+          "translations": [
+            { "language": "en", "text": "Before you leave: we collect feedback on our repair service. How would you evaluate the service overall?" },
+            { "language": "fa", "text": "قبل از اینکه بروید: ما درباره خدمات تعمیرمان بازخورد جمع‌آوری می‌کنیم. در مجموع این خدمت را چگونه ارزیابی می‌کنید؟" },
+            { "language": "ar", "text": "قبل أن تغادر: نجمع ملاحظات حول خدمة الإصلاح لدينا. كيف تقيّم الخدمة عموماً؟" },
+            { "language": "tr", "text": "Gitmeden önce: onarım servisimiz hakkında geri bildirim topluyoruz. Hizmeti genel olarak nasıl değerlendirirsiniz?" },
+            { "language": "ru", "text": "Перед тем как вы уйдете: мы собираем отзывы о нашем ремонтном сервисе. Как бы вы в целом оценили услугу?" },
+            { "language": "ckb", "text": "پێش ئەوەی بچیت: ئێمە فیدباک دەربارەی خزمەتی چاککردنەوەمان کۆ دەکەینەوە. بە گشتی ئەم خزمەتگوزارییە چۆن هەڵدەسەنگێنیت؟" },
+            { "language": "kmr", "text": "Berî ku hûn biçin: em li ser xizmeta tamîrê ya xwe paşvegerandin kom dikin. Hûn xizmetê bi giştî çawa dinirxînin?" },
+            { "language": "pl", "text": "Zanim Pan wyjdzie: zbieramy opinie o naszym serwisie naprawczym. Jak ogólnie oceniłby Pan usługę?" },
+            { "language": "ro", "text": "Înainte să plecați: colectăm feedback despre serviciul nostru de reparații. Cum ați evalua serviciul în ansamblu?" },
+            { "language": "sq", "text": "Para se të largoheni: po mbledhim reagime për shërbimin tonë të riparimit. Si do ta vlerësonit shërbimin në përgjithësi?" }
+          ],
+          "function": "request-feedback",
+          "toneNote": "formal and open"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Insgesamt war der Kontakt freundlich, aber bei drei Qualitätskriterien sehe ich Verbesserungsbedarf: Reaktionszeit, Kostentransparenz und Übergabe des reparierten Geräts.",
+          "translations": [
+            { "language": "en", "text": "Overall, the contact was friendly, but I see room for improvement in three quality criteria: response time, cost transparency, and handover of the repaired device." },
+            { "language": "fa", "text": "در مجموع برخورد دوستانه بود، اما در سه معیار کیفیت نیاز به بهبود می‌بینم: زمان پاسخ، شفافیت هزینه و تحویل دستگاه تعمیرشده." },
+            { "language": "ar", "text": "بشكل عام كان التواصل ودياً، لكنني أرى حاجة إلى تحسين في ثلاثة معايير جودة: وقت الاستجابة، وشفافية التكلفة، وتسليم الجهاز المُصلح." },
+            { "language": "tr", "text": "Genel olarak iletişim güler yüzlüydü, ancak üç kalite ölçütünde iyileştirme ihtiyacı görüyorum: yanıt süresi, maliyet şeffaflığı ve onarılan cihazın teslimi." },
+            { "language": "ru", "text": "В целом общение было доброжелательным, но по трем критериям качества я вижу необходимость улучшения: время реакции, прозрачность стоимости и передача отремонтированного устройства." },
+            { "language": "ckb", "text": "بە گشتی پەیوەندییەکە دۆستانە بوو، بەڵام لە سێ پێوەری کوالیتیدا پێویستی بە باشترکردن دەبینم: کاتی وەڵامدانەوە، ڕوونیی تێچوو و ڕادەستکردنی ئامێری چاککراو." },
+            { "language": "kmr", "text": "Bi giştî têkilî dostane bû, lê di sê pîvanên kalîteyê de ez hewcedariya başkirinê dibînim: dema bersivê, zelaliya lêçûnê û radestkirina amûra hatî tamîrkirin." },
+            { "language": "pl", "text": "Ogólnie kontakt był uprzejmy, ale w trzech kryteriach jakości widzę potrzebę poprawy: czas reakcji, przejrzystość kosztów i odbiór naprawionego urządzenia." },
+            { "language": "ro", "text": "În ansamblu contactul a fost prietenos, dar la trei criterii de calitate văd nevoie de îmbunătățire: timpul de răspuns, transparența costurilor și predarea aparatului reparat." },
+            { "language": "sq", "text": "Në përgjithësi kontakti ishte miqësor, por në tri kritere cilësie shoh nevojë për përmirësim: koha e përgjigjes, transparenca e kostos dhe dorëzimi i pajisjes së riparuar." }
+          ],
+          "function": "give-balanced-overview",
+          "toneNote": "balanced and precise",
+          "expectedLearnerAction": "Acknowledge the positive part and name quality criteria."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "agent",
+          "baseText": "Können Sie diese drei Punkte mit Beispielen erläutern? Dann kann ich Ihre Rückmeldung genauer weitergeben.",
+          "translations": [
+            { "language": "en", "text": "Can you explain these three points with examples? Then I can pass on your feedback more precisely." },
+            { "language": "fa", "text": "می‌توانید این سه نکته را با مثال توضیح دهید؟ آن وقت می‌توانم بازخورد شما را دقیق‌تر منتقل کنم." },
+            { "language": "ar", "text": "هل يمكنك توضيح هذه النقاط الثلاث بأمثلة؟ عندها أستطيع نقل ملاحظاتك بدقة أكبر." },
+            { "language": "tr", "text": "Bu üç noktayı örneklerle açıklayabilir misiniz? O zaman geri bildiriminizi daha doğru iletebilirim." },
+            { "language": "ru", "text": "Можете пояснить эти три пункта примерами? Тогда я смогу точнее передать ваш отзыв." },
+            { "language": "ckb", "text": "دەتوانیت ئەم سێ خاڵە بە نموونە ڕوون بکەیتەوە؟ ئەو کات دەتوانم فیدباکەکەت بە وردتر بگەیەنم." },
+            { "language": "kmr", "text": "Hûn dikarin van sê xalan bi nimûneyan rave bikin? Wê demê ez dikarim paşvegerandina we bi hûrgulîtir bigihînim." },
+            { "language": "pl", "text": "Czy może Pan wyjaśnić te trzy punkty przykładami? Wtedy mogę dokładniej przekazać Pańską opinię." },
+            { "language": "ro", "text": "Puteți explica aceste trei puncte cu exemple? Atunci pot transmite feedbackul dumneavoastră mai precis." },
+            { "language": "sq", "text": "A mund t'i shpjegoni këto tri pika me shembuj? Atëherë mund ta përcjell më saktë reagimin tuaj." }
+          ],
+          "function": "ask-examples"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Gern. Die Diagnose war für den nächsten Tag angekündigt, kam aber erst nach drei Tagen. Außerdem wurde ein Materialposten berechnet, der vorher nicht erklärt wurde, und bei der Abholung gab es keinen kurzen Funktionstest.",
+          "translations": [
+            { "language": "en", "text": "Of course. The diagnosis was announced for the next day, but only came after three days. In addition, a material item was charged that had not been explained beforehand, and there was no brief function test at pickup." },
+            { "language": "fa", "text": "بله. تشخیص برای روز بعد اعلام شده بود، اما فقط بعد از سه روز آمد. علاوه بر آن، یک مورد هزینه مواد حساب شد که قبلاً توضیح داده نشده بود، و هنگام تحویل گرفتن، تست کوتاه عملکرد انجام نشد." },
+            { "language": "ar", "text": "بكل سرور. كان التشخيص معلناً لليوم التالي، لكنه جاء بعد ثلاثة أيام فقط. بالإضافة إلى ذلك، حُسب بند مواد لم يُشرح مسبقاً، ولم يكن هناك اختبار وظيفي قصير عند الاستلام." },
+            { "language": "tr", "text": "Memnuniyetle. Tanı ertesi gün için duyurulmuştu, ancak ancak üç gün sonra geldi. Ayrıca önceden açıklanmayan bir malzeme kalemi ücretlendirildi ve teslim alırken kısa bir işlev testi yapılmadı." },
+            { "language": "ru", "text": "Конечно. Диагностика была обещана на следующий день, но пришла только через три дня. Кроме того, была начислена позиция за материал, которая заранее не объяснялась, а при получении не было короткой проверки работы." },
+            { "language": "ckb", "text": "بە دڵخۆشی. دەرچوونی دیاریکردن بۆ ڕۆژی دواتر ڕاگەیەندرابوو، بەڵام دوای سێ ڕۆژ هات. هەروەها خەرجییەکی ماددە هەژمارکرا کە پێشتر ڕوون نەکرابوو، و لە کاتی وەرگرتن هیچ تاقیکردنەوەیەکی کورتی کارکردن نەبوو." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Tespît ji bo roja din hatibû ragihandin, lê tenê piştî sê rojan hat. Herwiha tiştekî maddeyê hat hesabkirin ku berê nehatibû ravekirin, û di wergirtinê de testeke kurt a karکردنê tune bû." },
+            { "language": "pl", "text": "Chętnie. Diagnoza była zapowiedziana na następny dzień, ale przyszła dopiero po trzech dniach. Poza tym naliczono pozycję materiałową, której wcześniej nie wyjaśniono, a przy odbiorze nie było krótkiego testu działania." },
+            { "language": "ro", "text": "Sigur. Diagnosticul fusese anunțat pentru ziua următoare, dar a venit abia după trei zile. În plus, a fost facturată o poziție de material care nu fusese explicată înainte, iar la ridicare nu a existat un test scurt de funcționare." },
+            { "language": "sq", "text": "Me kënaqësi. Diagnoza ishte njoftuar për ditën tjetër, por erdhi vetëm pas tri ditësh. Përveç kësaj, u faturua një zë materiali që nuk ishte shpjeguar më parë, dhe gjatë marrjes nuk pati një test të shkurtër funksionimi." }
+          ],
+          "function": "give-concrete-examples",
+          "expectedLearnerAction": "Give dated, observable examples for each criterion."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "agent",
+          "baseText": "Das kann ich nachvollziehen. Gleichzeitig kann es bei Reparaturen zu Verzögerungen oder zusätzlichen Materialkosten kommen. Wie würden Sie das einordnen?",
+          "translations": [
+            { "language": "en", "text": "I can understand that. At the same time, repairs can involve delays or additional material costs. How would you classify that?" },
+            { "language": "fa", "text": "این را می‌توانم درک کنم. هم‌زمان در تعمیرات ممکن است تأخیر یا هزینه مواد اضافی پیش بیاید. شما این را چگونه دسته‌بندی می‌کنید؟" },
+            { "language": "ar", "text": "أستطيع فهم ذلك. وفي الوقت نفسه قد تحدث تأخيرات أو تكاليف مواد إضافية في الإصلاحات. كيف تصنف ذلك؟" },
+            { "language": "tr", "text": "Bunu anlayabiliyorum. Aynı zamanda onarımlarda gecikmeler veya ek malzeme maliyetleri olabilir. Bunu nasıl sınıflandırırsınız?" },
+            { "language": "ru", "text": "Я могу это понять. В то же время при ремонте могут возникать задержки или дополнительные расходы на материалы. Как бы вы это оценили?" },
+            { "language": "ckb", "text": "ئەمە دەتوانم تێبگەم. هاوکات لە چاککردنەوەدا دەتوانێت دواکردن یان تێچووی ماددەی زیادە ڕوو بدات. تۆ ئەمە چۆن ڕیزدەکەیت؟" },
+            { "language": "kmr", "text": "Ez vê fam dikim. Di heman demê de di tamîran de dikare derengî an lêçûnên maddeyê yên zêde çêbibin. Hûn vê çawa dinirxînin?" },
+            { "language": "pl", "text": "Rozumiem to. Jednocześnie przy naprawach mogą pojawić się opóźnienia lub dodatkowe koszty materiałowe. Jak by Pan to ujął?" },
+            { "language": "ro", "text": "Pot înțelege asta. În același timp, la reparații pot apărea întârzieri sau costuri materiale suplimentare. Cum ați încadra acest lucru?" },
+            { "language": "sq", "text": "Këtë mund ta kuptoj. Njëkohësisht, te riparimet mund të ketë vonesa ose kosto shtesë materiali. Si do ta klasifikonit këtë?" }
+          ],
+          "function": "invite-nuance"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Mir geht es nicht darum, dass jede Reparatur exakt planbar sein muss. Mein Punkt ist, dass Abweichungen aktiv erklärt werden sollten: bei Fristen, bei Mehrkosten und beim Nachweis, dass das Gerät wirklich funktioniert.",
+          "translations": [
+            { "language": "en", "text": "My point is not that every repair must be exactly predictable. My point is that deviations should be explained proactively: deadlines, additional costs, and proof that the device actually works." },
+            { "language": "fa", "text": "منظورم این نیست که هر تعمیر باید دقیقاً قابل پیش‌بینی باشد. نکته من این است که انحراف‌ها باید فعالانه توضیح داده شوند: در مهلت‌ها، در هزینه‌های اضافی و در اثبات اینکه دستگاه واقعاً کار می‌کند." },
+            { "language": "ar", "text": "لا أقصد أن كل إصلاح يجب أن يكون قابلاً للتخطيط بدقة. نقطتي هي أن الانحرافات ينبغي أن تُشرح بشكل نشط: في المواعيد، وفي التكاليف الإضافية، وفي إثبات أن الجهاز يعمل فعلاً." },
+            { "language": "tr", "text": "Demek istediğim her onarımın tam olarak öngörülebilir olması gerektiği değil. Noktam şu: sapmalar aktif biçimde açıklanmalı; sürelerde, ek maliyetlerde ve cihazın gerçekten çalıştığının kanıtında." },
+            { "language": "ru", "text": "Речь не о том, что каждый ремонт должен быть точно предсказуемым. Мой пункт в том, что отклонения нужно активно объяснять: по срокам, дополнительным расходам и подтверждению, что устройство действительно работает." },
+            { "language": "ckb", "text": "مەبەستم ئەوە نییە کە هەر چاککردنەوەیەک دەبێت بە وردی پێشبینی بکرێت. خاڵەکەم ئەوەیە کە جیاوازییەکان دەبێت بە چالاکی ڕوون بکرێنەوە: لە مۆڵەتەکان، لە تێچووی زیادە و لە بەڵگەی ئەوەی ئامێرەکە بەڕاستی کار دەکات." },
+            { "language": "kmr", "text": "Mebesta min ne ew e ku divê her tamîr bi temamî were pêşbînîkirin. Xala min ew e ku guhertin divê bi çalakî bên ravekirin: di deman de, di lêçûnên zêde de û di belgeya ku amûr rastî dixebite de." },
+            { "language": "pl", "text": "Nie chodzi mi o to, że każdą naprawę trzeba dokładnie przewidzieć. Chodzi mi o to, że odstępstwa powinny być aktywnie wyjaśniane: przy terminach, przy dodatkowych kosztach i przy potwierdzeniu, że urządzenie rzeczywiście działa." },
+            { "language": "ro", "text": "Nu este vorba ca fiecare reparație să poată fi planificată exact. Punctul meu este că abaterile ar trebui explicate activ: la termene, la costuri suplimentare și la dovada că aparatul funcționează cu adevărat." },
+            { "language": "sq", "text": "Nuk dua të them se çdo riparim duhet të jetë saktësisht i parashikueshëm. Pika ime është se devijimet duhet të shpjegohen në mënyrë aktive: te afatet, te kostot shtesë dhe te prova që pajisja funksionon vërtet." }
+          ],
+          "function": "separate-expectation-and-reality",
+          "expectedLearnerAction": "Acknowledge complexity, then define the quality expectation."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "agent",
+          "baseText": "Welche konkrete Verbesserung würden Sie uns empfehlen, damit diese Punkte im Serviceprozess besser aufgefangen werden?",
+          "translations": [
+            { "language": "en", "text": "Which concrete improvement would you recommend so that these points are handled better in the service process?" },
+            { "language": "fa", "text": "چه بهبود مشخصی پیشنهاد می‌کنید تا این نکات در فرایند خدمات بهتر پوشش داده شوند؟" },
+            { "language": "ar", "text": "ما التحسين المحدد الذي توصي به لكي تُعالج هذه النقاط بشكل أفضل في عملية الخدمة؟" },
+            { "language": "tr", "text": "Bu noktaların servis sürecinde daha iyi karşılanması için hangi somut iyileştirmeyi önerirsiniz?" },
+            { "language": "ru", "text": "Какое конкретное улучшение вы бы порекомендовали, чтобы эти пункты лучше учитывались в сервисном процессе?" },
+            { "language": "ckb", "text": "کام باشترکردنی دیاریکراو پێشنیار دەکەیت بۆ ئەوەی ئەم خاڵانە لە پڕۆسەی خزمەتگوزاری باشتر گرنگی پێ بدرێن؟" },
+            { "language": "kmr", "text": "Hûn kîjan başkirina konkret pêşniyar dikin da ku ev xal di pêvajoya xizmetê de baştir bên girtin?" },
+            { "language": "pl", "text": "Jaką konkretną poprawę by Pan polecił, aby te punkty były lepiej uwzględniane w procesie serwisowym?" },
+            { "language": "ro", "text": "Ce îmbunătățire concretă ne-ați recomanda pentru ca aceste puncte să fie gestionate mai bine în procesul de service?" },
+            { "language": "sq", "text": "Cilin përmirësim konkret do të rekomandonit që këto pika të trajtohen më mirë në procesin e shërbimit?" }
+          ],
+          "function": "ask-improvement"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde drei Standards vorschlagen: eine Zwischenmeldung bei Verzögerung, eine kurze Freigabe vor zusätzlichen Kosten und bei der Abholung eine Checkliste mit Funktionstest und offener Restfrage.",
+          "translations": [
+            { "language": "en", "text": "I would suggest three standards: an interim update in case of delay, a brief approval before additional costs, and at pickup a checklist with function test and any remaining open question." },
+            { "language": "fa", "text": "سه استاندارد پیشنهاد می‌کنم: اطلاع‌رسانی میانی در صورت تأخیر، تأیید کوتاه پیش از هزینه اضافی، و هنگام تحویل گرفتن، چک‌لیستی با تست عملکرد و هر پرسش باز باقی‌مانده." },
+            { "language": "ar", "text": "أقترح ثلاثة معايير: إشعاراً وسيطاً عند التأخير، وموافقة قصيرة قبل التكاليف الإضافية، وقائمة فحص عند الاستلام مع اختبار وظيفي وأي سؤال متبقٍ مفتوح." },
+            { "language": "tr", "text": "Üç standart öneririm: gecikmede ara bilgilendirme, ek maliyetten önce kısa onay ve teslim alırken işlev testiyle ve açık kalan soruyla birlikte bir kontrol listesi." },
+            { "language": "ru", "text": "Я бы предложил три стандарта: промежуточное сообщение при задержке, короткое согласование перед дополнительными расходами и при получении чек-лист с проверкой работы и оставшимся открытым вопросом." },
+            { "language": "ckb", "text": "سێ ستاندارد پێشنیار دەکەم: ئاگادارکردنەوەی ناوەندی لە کاتی دواکردن، ڕەزامەندییەکی کورت پێش تێچووی زیادە، و لە کاتی وەرگرتن چێکلیستێک بە تاقیکردنەوەی کارکردن و هەر پرسیارێکی کراوەی ماوە." },
+            { "language": "kmr", "text": "Ez sê standard pêşniyar dikim: agahdariya navberê dema derengî hebe, pejirandineke kurt berî lêçûnên zêde, û di wergirtinê de lîsteyeke kontrolê bi testa karکردنê û pirsên vekirî yên mayî." },
+            { "language": "pl", "text": "Zaproponowałbym trzy standardy: informację pośrednią przy opóźnieniu, krótką zgodę przed dodatkowymi kosztami oraz przy odbiorze listę kontrolną z testem działania i ewentualnym pytaniem otwartym." },
+            { "language": "ro", "text": "Aș propune trei standarde: o informare intermediară în caz de întârziere, o aprobare scurtă înainte de costuri suplimentare și la ridicare o listă de verificare cu test de funcționare și întrebare rămasă deschisă." },
+            { "language": "sq", "text": "Do të propozoja tri standarde: një njoftim ndërmjetës në rast vonese, një miratim të shkurtër para kostove shtesë dhe gjatë marrjes një listë kontrolli me test funksionimi dhe pyetjen e hapur të mbetur." }
+          ],
+          "function": "propose-quality-standards",
+          "expectedLearnerAction": "Turn criticism into actionable quality standards."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "agent",
+          "baseText": "Ich kann das als Feedback aufnehmen. Es ist allerdings keine formale Beschwerde und führt nicht automatisch zu einer Erstattung.",
+          "translations": [
+            { "language": "en", "text": "I can record this as feedback. However, it is not a formal complaint and does not automatically lead to a refund." },
+            { "language": "fa", "text": "می‌توانم این را به‌عنوان بازخورد ثبت کنم. البته این شکایت رسمی نیست و به‌طور خودکار به بازپرداخت منجر نمی‌شود." },
+            { "language": "ar", "text": "يمكنني تسجيل ذلك كملاحظات. لكنه ليس شكوى رسمية ولا يؤدي تلقائياً إلى استرداد." },
+            { "language": "tr", "text": "Bunu geri bildirim olarak kaydedebilirim. Ancak bu resmi bir şikayet değildir ve otomatik olarak iadeye yol açmaz." },
+            { "language": "ru", "text": "Я могу зафиксировать это как отзыв. Однако это не формальная жалоба и не ведет автоматически к возврату." },
+            { "language": "ckb", "text": "دەتوانم ئەمە وەک فیدباک تۆمار بکەم. بەڵام ئەمە سکاڵای فەرمی نییە و خۆکارانە نابێتە هۆی گەڕاندنەوەی پارە." },
+            { "language": "kmr", "text": "Ez dikarim vê wekî paşvegerandin tomar bikim. Lê ev gilîkirina fermî nîne û bixweber nabe sedema vegerandina pere." },
+            { "language": "pl", "text": "Mogę zapisać to jako opinię. Nie jest to jednak formalna skarga i nie prowadzi automatycznie do zwrotu." },
+            { "language": "ro", "text": "Pot înregistra acest lucru ca feedback. Totuși, nu este o reclamație formală și nu duce automat la rambursare." },
+            { "language": "sq", "text": "Mund ta regjistroj këtë si reagim. Megjithatë, nuk është ankesë formale dhe nuk çon automatikisht në rimbursim." }
+          ],
+          "function": "set-boundary"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das ist für mich in Ordnung. Mir geht es heute um Qualitätsrückmeldung. Wichtig wäre nur, dass sie nicht als allgemeine Unzufriedenheit, sondern nach den genannten Kriterien weitergegeben wird.",
+          "translations": [
+            { "language": "en", "text": "That is fine with me. Today I am concerned with quality feedback. It would only be important that it is passed on not as general dissatisfaction, but according to the criteria mentioned." },
+            { "language": "fa", "text": "این برای من قابل قبول است. امروز موضوع من بازخورد کیفیت است. فقط مهم است که این نه به‌عنوان نارضایتی کلی، بلکه بر اساس معیارهای گفته‌شده منتقل شود." },
+            { "language": "ar", "text": "هذا مناسب بالنسبة لي. ما يهمني اليوم هو ملاحظات الجودة. المهم فقط ألا تُنقل كعدم رضا عام، بل وفق المعايير المذكورة." },
+            { "language": "tr", "text": "Bu benim için uygundur. Bugün benim konum kalite geri bildirimidir. Önemli olan bunun genel memnuniyetsizlik olarak değil, belirtilen ölçütlere göre iletilmesidir." },
+            { "language": "ru", "text": "Для меня это нормально. Сегодня речь для меня идет об отзыве о качестве. Важно лишь, чтобы он был передан не как общее недовольство, а по названным критериям." },
+            { "language": "ckb", "text": "ئەمە بۆ من باشە. ئەمڕۆ بابەتم فیدباکی کوالیتییە. تەنها گرنگە ئەوە وەک ناڕەزاییی گشتی نەگوازرێتەوە، بەڵکوو بە پێی پێوەرە ناوبراوەکان." },
+            { "language": "kmr", "text": "Ev ji bo min baş e. Îro mijara min paşvegerandina kalîteyê ye. Tenê girîng e ku ew ne wekî nerazîbûna giştî, lê li gorî pîvanên gotî were gihandin." },
+            { "language": "pl", "text": "To jest dla mnie w porządku. Dzisiaj chodzi mi o opinię jakościową. Ważne byłoby tylko, aby przekazano ją nie jako ogólne niezadowolenie, lecz według wymienionych kryteriów." },
+            { "language": "ro", "text": "Pentru mine este în regulă. Astăzi mă interesează feedbackul de calitate. Ar fi important doar să fie transmis nu ca nemulțumire generală, ci după criteriile menționate." },
+            { "language": "sq", "text": "Kjo është në rregull për mua. Sot më intereson reagimi për cilësinë. E rëndësishme është vetëm që të përcillet jo si pakënaqësi e përgjithshme, por sipas kritereve të përmendura." }
+          ],
+          "function": "clarify-feedback-purpose",
+          "expectedLearnerAction": "Accept the boundary and preserve the quality focus."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "agent",
+          "baseText": "Verstanden. Ich notiere Ihre Rückmeldung unter Servicequalität mit den Unterpunkten Reaktionszeit, Kostentransparenz und Übergabe. Möchten Sie dazu eine kurze Bestätigung?",
+          "translations": [
+            { "language": "en", "text": "Understood. I will note your feedback under service quality with the subpoints response time, cost transparency, and handover. Would you like a brief confirmation of that?" },
+            { "language": "fa", "text": "متوجه شدم. بازخورد شما را زیر عنوان کیفیت خدمات با زیرمجموعه‌های زمان پاسخ، شفافیت هزینه و تحویل ثبت می‌کنم. آیا یک تأیید کوتاه برای آن می‌خواهید؟" },
+            { "language": "ar", "text": "فهمت. سأدوّن ملاحظاتك تحت جودة الخدمة مع النقاط الفرعية: وقت الاستجابة وشفافية التكلفة والتسليم. هل تريد تأكيداً قصيراً بذلك؟" },
+            { "language": "tr", "text": "Anladım. Geri bildiriminizi hizmet kalitesi altında yanıt süresi, maliyet şeffaflığı ve teslim alt başlıklarıyla not ediyorum. Buna dair kısa bir onay ister misiniz?" },
+            { "language": "ru", "text": "Понял. Я запишу ваш отзыв в разделе качества сервиса с подпунктами время реакции, прозрачность стоимости и передача. Хотите краткое подтверждение?" },
+            { "language": "ckb", "text": "تێگەیشتم. فیدباکەکەت لەژێر کوالیتی خزمەتگوزاری بە ژێرخاڵەکانی کاتی وەڵامدانەوە، ڕوونیی تێچوو و ڕادەستکردن تۆمار دەکەم. ئایا پشتڕاستکردنەوەیەکی کورتت دەوێت؟" },
+            { "language": "kmr", "text": "Fêm kir. Ez paşvegerandina we di bin kalîteya xizmetê de bi xalên dema bersivê, zelaliya lêçûnê û radestkirinê tomar dikim. Hûn pejirandineke kurt dixwazin?" },
+            { "language": "pl", "text": "Rozumiem. Zanotuję Pańską opinię pod hasłem jakość serwisu z podpunktami czas reakcji, przejrzystość kosztów i odbiór. Czy chciałby Pan krótkie potwierdzenie?" },
+            { "language": "ro", "text": "Am înțeles. Notez feedbackul dumneavoastră la calitatea serviciului, cu subpunctele timp de răspuns, transparența costurilor și predare. Doriți o scurtă confirmare?" },
+            { "language": "sq", "text": "E kuptova. Do ta shënoj reagimin tuaj te cilësia e shërbimit me nën-pikat koha e përgjigjes, transparenca e kostos dhe dorëzimi. Dëshironi një konfirmim të shkurtër?" }
+          ],
+          "function": "confirm-categorization"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte. Dann fasse ich zusammen: Positiv war der freundliche Kontakt; kritisch waren Reaktionszeit, Kostentransparenz und Übergabe. Meine Erwartung ist eine klarere Zwischenkommunikation und ein verbindlicher Abschlusscheck.",
+          "translations": [
+            { "language": "en", "text": "Yes, please. Then I will summarize: the friendly contact was positive; response time, cost transparency, and handover were critical. My expectation is clearer interim communication and a binding final check." },
+            { "language": "fa", "text": "بله، لطفاً. پس خلاصه می‌کنم: نکته مثبت برخورد دوستانه بود؛ نکات انتقادی زمان پاسخ، شفافیت هزینه و تحویل بودند. انتظار من ارتباط میانی روشن‌تر و بررسی نهایی الزام‌آور است." },
+            { "language": "ar", "text": "نعم، من فضلك. إذن ألخص: كان التواصل الودي إيجابياً؛ وكانت النقاط النقدية وقت الاستجابة وشفافية التكلفة والتسليم. توقعي هو تواصل وسيط أوضح وفحص ختامي ملزم." },
+            { "language": "tr", "text": "Evet, lütfen. O halde özetliyorum: olumlu olan güler yüzlü iletişimdi; eleştirel noktalar yanıt süresi, maliyet şeffaflığı ve teslimdi. Beklentim daha açık ara iletişim ve bağlayıcı bir son kontroldür." },
+            { "language": "ru", "text": "Да, пожалуйста. Тогда я резюмирую: положительным было доброжелательное общение; критичными были время реакции, прозрачность стоимости и передача. Мое ожидание — более ясная промежуточная коммуникация и обязательная финальная проверка." },
+            { "language": "ckb", "text": "بەڵێ، تکایە. کەواتە پوختە دەکەم: پەیوەندیی دۆستانە لایەنی باش بوو؛ کاتی وەڵامدانەوە، ڕوونیی تێچوو و ڕادەستکردن خاڵە ڕەخنەییەکان بوون. چاوەڕوانیم پەیوەندیی ناوەندیی ڕوونتر و پشکنینی کۆتاییی پابەندە." },
+            { "language": "kmr", "text": "Erê, ji kerema xwe. Wê demê ez kurt dikim: têkiliya dostane erênî bû; xalên rexneyî dema bersivê, zelaliya lêçûnê û radestkirin bûn. Hêviya min têkiliya navberê ya zelaltir û kontrola dawî ya girêdayî ye." },
+            { "language": "pl", "text": "Tak, proszę. Podsumuję więc: pozytywny był uprzejmy kontakt; krytyczne były czas reakcji, przejrzystość kosztów i odbiór. Moje oczekiwanie to jaśniejsza komunikacja pośrednia i wiążąca kontrola końcowa." },
+            { "language": "ro", "text": "Da, vă rog. Atunci rezum: pozitiv a fost contactul prietenos; critice au fost timpul de răspuns, transparența costurilor și predarea. Așteptarea mea este o comunicare intermediară mai clară și o verificare finală obligatorie." },
+            { "language": "sq", "text": "Po, ju lutem. Atëherë përmbledh: pozitiv ishte kontakti miqësor; kritike ishin koha e përgjigjes, transparenca e kostos dhe dorëzimi. Pritja ime është komunikim ndërmjetës më i qartë dhe kontroll përfundimtar i detyrueshëm." }
+          ],
+          "function": "close-with-quality-summary",
+          "expectedLearnerAction": "Summarize positive aspect, critical criteria, and improvement expectation."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "balanced-criteria-overview",
+              "text": "Insgesamt war der Kontakt freundlich, aber bei drei Qualitätskriterien sehe ich Verbesserungsbedarf: Reaktionszeit, Kostentransparenz und Übergabe des reparierten Geräts.",
+              "translations": [
+                { "language": "en", "text": "Overall, the contact was friendly, but I see room for improvement in three quality criteria: response time, cost transparency, and handover of the repaired device." },
+                { "language": "fa", "text": "در مجموع برخورد دوستانه بود، اما در سه معیار کیفیت نیاز به بهبود می‌بینم: زمان پاسخ، شفافیت هزینه و تحویل دستگاه تعمیرشده." },
+                { "language": "ar", "text": "بشكل عام كان التواصل ودياً، لكنني أرى حاجة إلى تحسين في ثلاثة معايير جودة: وقت الاستجابة، وشفافية التكلفة، وتسليم الجهاز المُصلح." },
+                { "language": "tr", "text": "Genel olarak iletişim güler yüzlüydü, ancak üç kalite ölçütünde iyileştirme ihtiyacı görüyorum: yanıt süresi, maliyet şeffaflığı ve onarılan cihazın teslimi." },
+                { "language": "ru", "text": "В целом общение было доброжелательным, но по трем критериям качества я вижу необходимость улучшения: время реакции, прозрачность стоимости и передача отремонтированного устройства." },
+                { "language": "ckb", "text": "بە گشتی پەیوەندییەکە دۆستانە بوو، بەڵام لە سێ پێوەری کوالیتیدا پێویستی بە باشترکردن دەبینم: کاتی وەڵامدانەوە، ڕوونیی تێچوو و ڕادەستکردنی ئامێری چاککراو." },
+                { "language": "kmr", "text": "Bi giştî têkilî dostane bû, lê di sê pîvanên kalîteyê de ez hewcedariya başkirinê dibînim: dema bersivê, zelaliya lêçûnê û radestkirina amûra hatî tamîrkirin." },
+                { "language": "pl", "text": "Ogólnie kontakt był uprzejmy, ale w trzech kryteriach jakości widzę potrzebę poprawy: czas reakcji, przejrzystość kosztów i odbiór naprawionego urządzenia." },
+                { "language": "ro", "text": "În ansamblu contactul a fost prietenos, dar la trei criterii de calitate văd nevoie de îmbunătățire: timpul de răspuns, transparența costurilor și predarea aparatului reparat." },
+                { "language": "sq", "text": "Në përgjithësi kontakti ishte miqësor, por në tri kritere cilësie shoh nevojë për përmirësim: koha e përgjigjes, transparenca e kostos dhe dorëzimi i pajisjes së riparuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Anerkennung mit klaren Qualitätskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer combines recognition with clear quality criteria." },
+                { "language": "fa", "text": "خوب است: پاسخ قدردانی را با معیارهای روشن کیفیت ترکیب می‌کند." },
+                { "language": "ar", "text": "جيد: تجمع الإجابة بين الاعتراف الإيجابي ومعايير جودة واضحة." },
+                { "language": "tr", "text": "İyi: yanıt takdiri net kalite ölçütleriyle birleştirir." },
+                { "language": "ru", "text": "Хорошо: ответ сочетает признание положительного с ясными критериями качества." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە داننان بە باشییەکان لەگەڵ پێوەرە ڕوونەکانی کوالیتی کۆ دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv pejirandina erênî bi pîvanên zelal ên kalîteyê re yek dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy uznanie z jasnymi kryteriami jakości." },
+                { "language": "ro", "text": "Bine: răspunsul combină recunoașterea cu criterii clare de calitate." },
+                { "language": "sq", "text": "Mirë: përgjigjja bashkon vlerësimin pozitiv me kritere të qarta cilësie." }
+              ],
+              "explanationKey": "balanced-criteria-first"
+            },
+            {
+              "id": "general-not-good",
+              "text": "Der Service war insgesamt okay, aber der Ablauf war nicht wirklich gut und sollte verbessert werden.",
+              "translations": [
+                { "language": "en", "text": "The service was overall okay, but the process was not really good and should be improved." },
+                { "language": "fa", "text": "خدمات در مجموع قابل قبول بود، اما روند واقعاً خوب نبود و باید بهتر شود." },
+                { "language": "ar", "text": "كانت الخدمة عموماً مقبولة، لكن الإجراء لم يكن جيداً حقاً ويجب تحسينه." },
+                { "language": "tr", "text": "Hizmet genel olarak idare ederdi, ama süreç gerçekten iyi değildi ve iyileştirilmeli." },
+                { "language": "ru", "text": "Сервис в целом был нормальным, но процесс был не очень хорошим и должен быть улучшен." },
+                { "language": "ckb", "text": "خزمەتگوزارییەکە بە گشتی باش بوو، بەڵام ڕەوتەکە بەڕاستی باش نەبوو و دەبێت باشتر بکرێت." },
+                { "language": "kmr", "text": "Xizmet bi giştî baş bû, lê pêvajo rastî ne baş bû û divê were başkirin." },
+                { "language": "pl", "text": "Usługa była ogólnie w porządku, ale przebieg nie był naprawdę dobry i powinien zostać poprawiony." },
+                { "language": "ro", "text": "Serviciul a fost în ansamblu acceptabil, dar procesul nu a fost chiar bun și ar trebui îmbunătățit." },
+                { "language": "sq", "text": "Shërbimi në përgjithësi ishte në rregull, por procesi nuk ishte vërtet i mirë dhe duhet përmirësuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort ist höflich, aber ohne Kriterien kann der Service daraus wenig lernen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer is polite, but without criteria the service can learn little from it." },
+                { "language": "fa", "text": "زیادی کلی است: پاسخ مودبانه است، اما بدون معیار، بخش خدمات چیز زیادی از آن یاد نمی‌گیرد." },
+                { "language": "ar", "text": "عام جداً: الإجابة مهذبة، لكن من دون معايير لا يستطيع قسم الخدمة الاستفادة كثيراً منها." },
+                { "language": "tr", "text": "Çok genel: yanıt kibar, ama ölçüt olmadan servis bundan az şey öğrenebilir." },
+                { "language": "ru", "text": "Слишком общо: ответ вежливый, но без критериев сервис мало чему из него научится." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە مودەبە، بەڵام بەبێ پێوەر خزمەتگوزاری زۆر کەم لێی فێر دەبێت." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv bi edeb e, lê bê pîvan xizmet dikare kêm tişt jê fêr bibe." },
+                { "language": "pl", "text": "Zbyt ogólnie: odpowiedź jest uprzejma, ale bez kryteriów serwis niewiele może się z niej nauczyć." },
+                { "language": "ro", "text": "Prea general: răspunsul este politicos, dar fără criterii serviciul poate învăța puțin din el." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja është e sjellshme, por pa kritere shërbimi mëson pak prej saj." }
+              ],
+              "explanationKey": "avoid-general-feedback"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "examples-for-each-criterion",
+              "text": "Die Diagnose war für den nächsten Tag angekündigt, kam aber erst nach drei Tagen. Ein Materialposten wurde vorher nicht erklärt, und bei der Abholung gab es keinen kurzen Funktionstest.",
+              "translations": [
+                { "language": "en", "text": "The diagnosis was announced for the next day, but only came after three days. A material item was not explained beforehand, and there was no brief function test at pickup." },
+                { "language": "fa", "text": "تشخیص برای روز بعد اعلام شده بود، اما بعد از سه روز آمد. یک مورد هزینه مواد قبلاً توضیح داده نشده بود، و هنگام تحویل گرفتن تست کوتاه عملکرد انجام نشد." },
+                { "language": "ar", "text": "كان التشخيص معلناً لليوم التالي، لكنه جاء بعد ثلاثة أيام فقط. لم يُشرح بند مواد مسبقاً، ولم يكن هناك اختبار وظيفي قصير عند الاستلام." },
+                { "language": "tr", "text": "Tanı ertesi gün için duyurulmuştu, ancak üç gün sonra geldi. Bir malzeme kalemi önceden açıklanmadı ve teslim alırken kısa bir işlev testi yoktu." },
+                { "language": "ru", "text": "Диагностика была обещана на следующий день, но пришла только через три дня. Одна позиция за материал заранее не объяснялась, а при получении не было короткой проверки работы." },
+                { "language": "ckb", "text": "دیاریکردن بۆ ڕۆژی دواتر ڕاگەیەندرابوو، بەڵام دوای سێ ڕۆژ هات. خەرجییەکی ماددە پێشتر ڕوون نەکرابوو، و لە کاتی وەرگرتن تاقیکردنەوەیەکی کورتی کارکردن نەبوو." },
+                { "language": "kmr", "text": "Tespît ji bo roja din hatibû ragihandin, lê piştî sê rojan hat. Tiştekî maddeyê berê nehatibû ravekirin û di wergirtinê de testeke kurt a karکردنê tune bû." },
+                { "language": "pl", "text": "Diagnoza była zapowiedziana na następny dzień, ale przyszła dopiero po trzech dniach. Pozycja materiałowa nie została wcześniej wyjaśniona, a przy odbiorze nie było krótkiego testu działania." },
+                { "language": "ro", "text": "Diagnosticul fusese anunțat pentru ziua următoare, dar a venit abia după trei zile. O poziție de material nu fusese explicată înainte, iar la ridicare nu a existat un test scurt de funcționare." },
+                { "language": "sq", "text": "Diagnoza ishte njoftuar për ditën tjetër, por erdhi pas tri ditësh. Një zë materiali nuk ishte shpjeguar më parë, dhe gjatë marrjes nuk pati test të shkurtër funksionimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Beispiele sind beobachtbar und passen jeweils zu einem Qualitätskriterium.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the examples are observable and each fits a quality criterion." },
+                { "language": "fa", "text": "خوب است: مثال‌ها قابل مشاهده‌اند و هر کدام با یک معیار کیفیت تناسب دارند." },
+                { "language": "ar", "text": "جيد: الأمثلة قابلة للملاحظة وكل واحد منها يناسب معيار جودة." },
+                { "language": "tr", "text": "İyi: örnekler gözlemlenebilir ve her biri bir kalite ölçütüne uyar." },
+                { "language": "ru", "text": "Хорошо: примеры наблюдаемы и каждый соответствует критерию качества." },
+                { "language": "ckb", "text": "باشە: نموونەکان بینراون و هەر یەکەیان لەگەڵ پێوەرێکی کوالیتی دەگونجێت." },
+                { "language": "kmr", "text": "Baş e: nimûne xuya ne û her yek bi pîvaneke kalîteyê re têkildar e." },
+                { "language": "pl", "text": "Dobrze: przykłady są obserwowalne i każdy pasuje do kryterium jakości." },
+                { "language": "ro", "text": "Bine: exemplele sunt observabile și fiecare se potrivește unui criteriu de calitate." },
+                { "language": "sq", "text": "Mirë: shembujt janë të vëzhgueshëm dhe secili i përshtatet një kriteri cilësie." }
+              ],
+              "explanationKey": "observable-examples"
+            },
+            {
+              "id": "two-complaints-without-criteria",
+              "text": "Ich habe länger gewartet als erwartet, und die Rechnung war am Ende höher. Das fand ich unangenehm.",
+              "translations": [
+                { "language": "en", "text": "I waited longer than expected, and the bill was higher in the end. I found that unpleasant." },
+                { "language": "fa", "text": "بیشتر از انتظار منتظر ماندم و در پایان فاکتور بالاتر بود. این برایم ناخوشایند بود." },
+                { "language": "ar", "text": "انتظرت أطول مما توقعت، وكانت الفاتورة في النهاية أعلى. وجدت ذلك مزعجاً." },
+                { "language": "tr", "text": "Beklediğimden daha uzun bekledim ve fatura sonunda daha yüksekti. Bunu rahatsız edici buldum." },
+                { "language": "ru", "text": "Я ждал дольше, чем ожидал, и счет в итоге был выше. Мне это было неприятно." },
+                { "language": "ckb", "text": "زیاتر لەوەی چاوەڕوانم دەکرد چاوەڕوان بووم، و فاکتورەکە لە کۆتاییدا بەرزتر بوو. ئەمە بۆم ناخۆش بوو." },
+                { "language": "kmr", "text": "Ez ji ya ku hêvî dikir dirêjtir li bendê mam, û fatûre di dawiyê de bilindtir bû. Ev ji bo min nerehet bû." },
+                { "language": "pl", "text": "Czekałem dłużej, niż oczekiwałem, a rachunek na końcu był wyższy. Uznałem to za nieprzyjemne." },
+                { "language": "ro", "text": "Am așteptat mai mult decât mă așteptam, iar factura a fost la final mai mare. Mi s-a părut neplăcut." },
+                { "language": "sq", "text": "Prita më gjatë se sa prisja, dhe fatura në fund ishte më e lartë. Kjo më dukej e pakëndshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Die Antwort nennt Empfinden, aber keine konkreten Ankündigungen oder Übergabepunkte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but incomplete: the answer names feelings, but no concrete announcements or handover points." },
+                { "language": "fa", "text": "قابل‌باور اما ناقص است: پاسخ احساس را بیان می‌کند، اما هیچ اعلام قبلی مشخص یا نکته تحویل را نمی‌گوید." },
+                { "language": "ar", "text": "معقولة لكنها ناقصة: تسمي الإجابة الشعور، لكنها لا تذكر إعلانات محددة أو نقاط تسليم." },
+                { "language": "tr", "text": "Makul ama eksik: yanıt hissi belirtir, ama somut duyuruları veya teslim noktalarını söylemez." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: ответ называет ощущение, но не конкретные обещания или пункты передачи." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام ناتەواوە: وەڵامەکە هەست ناو دەبات، بەڵام ڕاگەیاندنی دیاریکراو یان خاڵەکانی ڕادەستکردن ناڵێت." },
+                { "language": "kmr", "text": "Guncaw e lê netemam e: bersiv hestê bi nav dike, lê ragihandinên konkret an xalên radestkirinê nabêje." },
+                { "language": "pl", "text": "Wiarygodne, ale niepełne: odpowiedź nazywa odczucie, lecz nie konkretne zapowiedzi ani punkty odbioru." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: răspunsul numește impresia, dar nu anunțuri concrete sau puncte de predare." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: përgjigjja përmend ndjenjën, por jo njoftime konkrete ose pika dorëzimi." }
+              ],
+              "explanationKey": "examples-need-anchors"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "deviations-need-explanation",
+              "text": "Mir geht es nicht darum, dass jede Reparatur exakt planbar sein muss. Mein Punkt ist, dass Abweichungen aktiv erklärt werden sollten.",
+              "translations": [
+                { "language": "en", "text": "My point is not that every repair must be exactly predictable. My point is that deviations should be explained proactively." },
+                { "language": "fa", "text": "منظورم این نیست که هر تعمیر باید دقیقاً قابل پیش‌بینی باشد. نکته من این است که انحراف‌ها باید فعالانه توضیح داده شوند." },
+                { "language": "ar", "text": "لا أقصد أن كل إصلاح يجب أن يكون قابلاً للتخطيط بدقة. نقطتي هي أن الانحرافات ينبغي أن تُشرح بشكل نشط." },
+                { "language": "tr", "text": "Demek istediğim her onarımın tam olarak öngörülebilir olması değil. Noktam, sapmaların aktif biçimde açıklanması gerektiği." },
+                { "language": "ru", "text": "Речь не о том, что каждый ремонт должен быть точно предсказуемым. Мой пункт в том, что отклонения нужно активно объяснять." },
+                { "language": "ckb", "text": "مەبەستم ئەوە نییە کە هەر چاککردنەوەیەک دەبێت بە وردی پێشبینی بکرێت. خاڵەکەم ئەوەیە کە جیاوازییەکان دەبێت بە چالاکی ڕوون بکرێنەوە." },
+                { "language": "kmr", "text": "Mebesta min ne ew e ku divê her tamîr bi temamî were pêşbînîkirin. Xala min ew e ku guhertin divê bi çalakî bên ravekirin." },
+                { "language": "pl", "text": "Nie chodzi mi o to, że każdą naprawę trzeba dokładnie przewidzieć. Chodzi mi o to, że odstępstwa powinny być aktywnie wyjaśniane." },
+                { "language": "ro", "text": "Nu este vorba ca fiecare reparație să poată fi planificată exact. Punctul meu este că abaterile ar trebui explicate activ." },
+                { "language": "sq", "text": "Nuk dua të them se çdo riparim duhet të jetë saktësisht i parashikueshëm. Pika ime është se devijimet duhet të shpjegohen në mënyrë aktive." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort akzeptiert normale Unsicherheit, fordert aber transparente Kommunikation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer accepts normal uncertainty but asks for transparent communication." },
+                { "language": "fa", "text": "خوب است: پاسخ عدم قطعیت معمول را می‌پذیرد، اما ارتباط شفاف می‌خواهد." },
+                { "language": "ar", "text": "جيد: تقبل الإجابة عدم اليقين الطبيعي، لكنها تطلب تواصلاً شفافاً." },
+                { "language": "tr", "text": "İyi: yanıt normal belirsizliği kabul eder, ancak şeffaf iletişim ister." },
+                { "language": "ru", "text": "Хорошо: ответ признает обычную неопределенность, но требует прозрачной коммуникации." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە نادڵنیاییی ئاسایی قبوڵ دەکات، بەڵام پەیوەندیی ڕوون داوا دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv nezelaliya asayî dipejirîne, lê têkiliya zelal dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź akceptuje normalną niepewność, ale wymaga przejrzystej komunikacji." },
+                { "language": "ro", "text": "Bine: răspunsul acceptă incertitudinea normală, dar cere comunicare transparentă." },
+                { "language": "sq", "text": "Mirë: përgjigjja pranon pasigurinë normale, por kërkon komunikim transparent." }
+              ],
+              "explanationKey": "nuance-with-standard"
+            },
+            {
+              "id": "felt-poorly-informed",
+              "text": "Ich hatte einfach das Gefühl, nicht gut informiert zu sein. Deshalb war der Ablauf für mich unbefriedigend.",
+              "translations": [
+                { "language": "en", "text": "I simply had the feeling of not being well informed. That is why the process was unsatisfactory for me." },
+                { "language": "fa", "text": "فقط این احساس را داشتم که خوب اطلاع‌رسانی نشده‌ام. به همین دلیل روند برای من رضایت‌بخش نبود." },
+                { "language": "ar", "text": "كان لدي ببساطة شعور بأنني لم أُبلّغ جيداً. لذلك كان الإجراء غير مرضٍ بالنسبة لي." },
+                { "language": "tr", "text": "Sadece iyi bilgilendirilmediğim hissine kapıldım. Bu nedenle süreç benim için tatmin edici değildi." },
+                { "language": "ru", "text": "У меня просто было ощущение, что меня плохо информировали. Поэтому процесс был для меня неудовлетворительным." },
+                { "language": "ckb", "text": "تەنها هەستم ئەوە بوو کە بە باشی ئاگادار نەکراومەتەوە. بۆیە ڕەوتەکە بۆ من ڕازیكەر نەبوو." },
+                { "language": "kmr", "text": "Tenê hesta min ew bû ku ez baş nehatime agahdarkirin. Ji ber vê yekê pêvajo ji bo min razîker nebû." },
+                { "language": "pl", "text": "Miałem po prostu poczucie, że nie byłem dobrze informowany. Dlatego przebieg był dla mnie niezadowalający." },
+                { "language": "ro", "text": "Am avut pur și simplu sentimentul că nu am fost bine informat. De aceea procesul a fost nesatisfăcător pentru mine." },
+                { "language": "sq", "text": "Thjesht kisha ndjesinë se nuk isha informuar mirë. Prandaj procesi ishte i pakënaqshëm për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu subjektiv: Ohne Erwartungsstandard bleibt unklar, was verbessert werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too subjective: without an expectation standard, it remains unclear what should be improved." },
+                { "language": "fa", "text": "قابل‌باور اما زیادی شخصی است: بدون معیار انتظار، روشن نیست چه چیزی باید بهتر شود." },
+                { "language": "ar", "text": "معقولة لكنها ذاتية جداً: من دون معيار توقع يبقى غير واضح ما الذي يجب تحسينه." },
+                { "language": "tr", "text": "Makul ama fazla öznel: beklenti standardı olmadan neyin iyileştirileceği belirsiz kalır." },
+                { "language": "ru", "text": "Правдоподобно, но слишком субъективно: без стандарта ожиданий неясно, что именно нужно улучшить." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر تاکەکەسییە: بەبێ ستانداردی چاوەڕوانی، ڕوون نییە چی دەبێت باشتر بکرێت." },
+                { "language": "kmr", "text": "Guncaw e lê pir kesane ye: bê standarda hêviyê nezelal dimîne ka çi divê were başkirin." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt subiektywne: bez standardu oczekiwań nie wiadomo, co ma zostać poprawione." },
+                { "language": "ro", "text": "Plauzibil, dar prea subiectiv: fără un standard de așteptare rămâne neclar ce trebuie îmbunătățit." },
+                { "language": "sq", "text": "E besueshme, por shumë subjektive: pa një standard pritjeje mbetet e paqartë çfarë duhet përmirësuar." }
+              ],
+              "explanationKey": "subjective-needs-standard"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "three-actionable-standards",
+              "text": "Ich würde drei Standards vorschlagen: eine Zwischenmeldung bei Verzögerung, eine kurze Freigabe vor zusätzlichen Kosten und bei der Abholung eine Checkliste mit Funktionstest.",
+              "translations": [
+                { "language": "en", "text": "I would suggest three standards: an interim update in case of delay, a brief approval before additional costs, and at pickup a checklist with function test." },
+                { "language": "fa", "text": "سه استاندارد پیشنهاد می‌کنم: اطلاع‌رسانی میانی در صورت تأخیر، تأیید کوتاه پیش از هزینه اضافی، و هنگام تحویل گرفتن چک‌لیستی با تست عملکرد." },
+                { "language": "ar", "text": "أقترح ثلاثة معايير: إشعاراً وسيطاً عند التأخير، وموافقة قصيرة قبل التكاليف الإضافية، وقائمة فحص عند الاستلام مع اختبار وظيفي." },
+                { "language": "tr", "text": "Üç standart öneririm: gecikmede ara bilgilendirme, ek maliyetten önce kısa onay ve teslim alırken işlev testiyle bir kontrol listesi." },
+                { "language": "ru", "text": "Я бы предложил три стандарта: промежуточное сообщение при задержке, короткое согласование перед дополнительными расходами и при получении чек-лист с проверкой работы." },
+                { "language": "ckb", "text": "سێ ستاندارد پێشنیار دەکەم: ئاگادارکردنەوەی ناوەندی لە کاتی دواکردن، ڕەزامەندییەکی کورت پێش تێچووی زیادە، و لە کاتی وەرگرتن چێکلیستێک بە تاقیکردنەوەی کارکردن." },
+                { "language": "kmr", "text": "Ez sê standard pêşniyar dikim: agahdariya navberê dema derengî hebe, pejirandineke kurt berî lêçûnên zêde, û di wergirtinê de lîsteyeke kontrolê bi testa karکردنê." },
+                { "language": "pl", "text": "Zaproponowałbym trzy standardy: informację pośrednią przy opóźnieniu, krótką zgodę przed dodatkowymi kosztami oraz przy odbiorze listę kontrolną z testem działania." },
+                { "language": "ro", "text": "Aș propune trei standarde: o informare intermediară în caz de întârziere, o aprobare scurtă înainte de costuri suplimentare și la ridicare o listă de verificare cu test de funcționare." },
+                { "language": "sq", "text": "Do të propozoja tri standarde: një njoftim ndërmjetës në rast vonese, një miratim të shkurtër para kostove shtesë dhe gjatë marrjes një listë kontrolli me test funksionimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Kritik wird in konkrete, umsetzbare Standards übersetzt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the criticism is translated into concrete, actionable standards." },
+                { "language": "fa", "text": "خوب است: نقد به استانداردهای مشخص و قابل اجرا تبدیل می‌شود." },
+                { "language": "ar", "text": "جيد: تُترجم الملاحظة النقدية إلى معايير محددة قابلة للتنفيذ." },
+                { "language": "tr", "text": "İyi: eleştiri somut ve uygulanabilir standartlara çevrilir." },
+                { "language": "ru", "text": "Хорошо: критика переводится в конкретные, выполнимые стандарты." },
+                { "language": "ckb", "text": "باشە: ڕەخنەکە دەگۆڕدرێت بۆ ستانداردی دیاریکراو و جێبەجێکراو." },
+                { "language": "kmr", "text": "Baş e: rexne vediguhere standardên konkret û cihbicihkirî." },
+                { "language": "pl", "text": "Dobrze: krytyka zostaje przełożona na konkretne, możliwe do wdrożenia standardy." },
+                { "language": "ro", "text": "Bine: critica este transformată în standarde concrete și aplicabile." },
+                { "language": "sq", "text": "Mirë: kritika përkthehet në standarde konkrete dhe të zbatueshme." }
+              ],
+              "explanationKey": "turn-feedback-into-standards"
+            },
+            {
+              "id": "discount-as-improvement",
+              "text": "Vielleicht könnten Sie mir beim nächsten Mal einen Rabatt anbieten, damit ich den Aufwand besser akzeptieren kann.",
+              "translations": [
+                { "language": "en", "text": "Perhaps you could offer me a discount next time so that I can accept the effort more easily." },
+                { "language": "fa", "text": "شاید دفعه بعد بتوانید به من تخفیف بدهید تا این زحمت را راحت‌تر قبول کنم." },
+                { "language": "ar", "text": "ربما يمكنكم أن تعرضوا عليّ خصماً في المرة القادمة لكي أتقبل الجهد بسهولة أكبر." },
+                { "language": "tr", "text": "Belki bir dahaki sefere bana indirim sunabilirsiniz, böylece zahmeti daha kolay kabul edebilirim." },
+                { "language": "ru", "text": "Возможно, в следующий раз вы могли бы предложить мне скидку, чтобы мне было легче принять эти усилия." },
+                { "language": "ckb", "text": "لەوانەیە جارێکی داهاتوو بتوانن داشکاندنم پێشکەش بکەن، بۆ ئەوەی ئەم ماندووبوونە ئاسانتر قبوڵ بکەم." },
+                { "language": "kmr", "text": "Belkî cara din hûn dikarin daxistinekê pêşkêşî min bikin, da ku ez westandinê hêsantir qebûl bikim." },
+                { "language": "pl", "text": "Może następnym razem mogliby Państwo zaoferować mi rabat, żebym łatwiej zaakceptował ten wysiłek." },
+                { "language": "ro", "text": "Poate data viitoare mi-ați putea oferi o reducere, ca să accept mai ușor efortul." },
+                { "language": "sq", "text": "Ndoshta herën tjetër mund të më ofroni një zbritje, që ta pranoj më lehtë mundimin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Ein Rabatt kann nett sein, verbessert aber die genannten Qualitätskriterien nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: a discount can be nice, but it does not improve the quality criteria mentioned." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: تخفیف می‌تواند خوشایند باشد، اما معیارهای کیفیت گفته‌شده را بهتر نمی‌کند." },
+                { "language": "ar", "text": "ضعيفة استراتيجياً: قد يكون الخصم لطيفاً، لكنه لا يحسن معايير الجودة المذكورة." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: indirim hoş olabilir, ama belirtilen kalite ölçütlerini iyileştirmez." },
+                { "language": "ru", "text": "Стратегически слабо: скидка может быть приятной, но она не улучшает названные критерии качества." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: داشکاندن دەتوانێت خۆش بێت، بەڵام پێوەرەکانی کوالیتی ناوبراو باشتر ناکات." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: daxistin dikare xweş be, lê pîvanên kalîteyê yên gotî baştir nake." },
+                { "language": "pl", "text": "Strategicznie słabe: rabat może być miły, ale nie poprawia wymienionych kryteriów jakości." },
+                { "language": "ro", "text": "Slab strategic: o reducere poate fi plăcută, dar nu îmbunătățește criteriile de calitate menționate." },
+                { "language": "sq", "text": "Strategjikisht e dobët: zbritja mund të jetë e këndshme, por nuk përmirëson kriteret e përmendura të cilësisë." }
+              ],
+              "explanationKey": "avoid-compensation-detour"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "preserve-quality-category",
+              "text": "Mir geht es heute um Qualitätsrückmeldung. Wichtig wäre nur, dass sie nicht als allgemeine Unzufriedenheit, sondern nach den genannten Kriterien weitergegeben wird.",
+              "translations": [
+                { "language": "en", "text": "Today I am concerned with quality feedback. It would only be important that it is passed on not as general dissatisfaction, but according to the criteria mentioned." },
+                { "language": "fa", "text": "امروز موضوع من بازخورد کیفیت است. فقط مهم است که این نه به‌عنوان نارضایتی کلی، بلکه بر اساس معیارهای گفته‌شده منتقل شود." },
+                { "language": "ar", "text": "ما يهمني اليوم هو ملاحظات الجودة. المهم فقط ألا تُنقل كعدم رضا عام، بل وفق المعايير المذكورة." },
+                { "language": "tr", "text": "Bugün benim konum kalite geri bildirimidir. Önemli olan bunun genel memnuniyetsizlik olarak değil, belirtilen ölçütlere göre iletilmesidir." },
+                { "language": "ru", "text": "Сегодня речь для меня идет об отзыве о качестве. Важно лишь, чтобы он был передан не как общее недовольство, а по названным критериям." },
+                { "language": "ckb", "text": "ئەمڕۆ بابەتم فیدباکی کوالیتییە. تەنها گرنگە ئەوە وەک ناڕەزاییی گشتی نەگوازرێتەوە، بەڵکوو بە پێی پێوەرە ناوبراوەکان." },
+                { "language": "kmr", "text": "Îro mijara min paşvegerandina kalîteyê ye. Tenê girîng e ku ew ne wekî nerazîbûna giştî, lê li gorî pîvanên gotî were gihandin." },
+                { "language": "pl", "text": "Dzisiaj chodzi mi o opinię jakościową. Ważne byłoby tylko, aby przekazano ją nie jako ogólne niezadowolenie, lecz według wymienionych kryteriów." },
+                { "language": "ro", "text": "Astăzi mă interesează feedbackul de calitate. Ar fi important doar să fie transmis nu ca nemulțumire generală, ci după criteriile menționate." },
+                { "language": "sq", "text": "Sot më intereson reagimi për cilësinë. E rëndësishme është vetëm që të përcillet jo si pakënaqësi e përgjithshme, por sipas kritereve të përmendura." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort akzeptiert die Grenze und schützt zugleich die genaue Einordnung des Feedbacks.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer accepts the boundary while preserving the exact classification of the feedback." },
+                { "language": "fa", "text": "خوب است: پاسخ مرز را می‌پذیرد و هم‌زمان دسته‌بندی دقیق بازخورد را حفظ می‌کند." },
+                { "language": "ar", "text": "جيد: تقبل الإجابة الحد وتُبقي في الوقت نفسه التصنيف الدقيق للملاحظات." },
+                { "language": "tr", "text": "İyi: yanıt sınırı kabul eder ve aynı zamanda geri bildirimin doğru sınıflandırmasını korur." },
+                { "language": "ru", "text": "Хорошо: ответ принимает границу и одновременно сохраняет точную классификацию отзыва." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە سنوورەکە قبوڵ دەکات و هاوکات پۆلێنکردنی وردی فیدباکەکە دەپارێزێت." },
+                { "language": "kmr", "text": "Baş e: bersiv sînorê dipejirîne û di heman demê de dabeşkirina rast a paşvegerandinê diparêze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź akceptuje granicę, a jednocześnie chroni dokładną klasyfikację opinii." },
+                { "language": "ro", "text": "Bine: răspunsul acceptă limita și păstrează totodată încadrarea exactă a feedbackului." },
+                { "language": "sq", "text": "Mirë: përgjigjja e pranon kufirin dhe njëkohësisht ruan klasifikimin e saktë të reagimit." }
+              ],
+              "explanationKey": "clarify-category"
+            },
+            {
+              "id": "write-it-somewhere",
+              "text": "Dann schreiben Sie es bitte irgendwo auf. Hauptsache, jemand liest es irgendwann.",
+              "translations": [
+                { "language": "en", "text": "Then please write it down somewhere. The main thing is that someone reads it at some point." },
+                { "language": "fa", "text": "پس لطفاً آن را جایی بنویسید. مهم این است که بالاخره یک نفر آن را بخواند." },
+                { "language": "ar", "text": "إذن اكتبوه من فضلكم في مكان ما. المهم أن يقرأه شخص ما في وقت ما." },
+                { "language": "tr", "text": "O zaman lütfen bunu bir yere yazın. Önemli olan, birinin bir gün okuması." },
+                { "language": "ru", "text": "Тогда, пожалуйста, запишите это где-нибудь. Главное, чтобы кто-нибудь когда-нибудь это прочитал." },
+                { "language": "ckb", "text": "کەواتە تکایە لە شوێنێکدا بینووسن. گرنگ ئەوەیە کە کەسێک جارێک بیخوێنێتەوە." },
+                { "language": "kmr", "text": "Wê demê ji kerema xwe wê li deverekê binivîsin. Girîng ew e ku kesek rojekê bixwîne." },
+                { "language": "pl", "text": "W takim razie proszę to gdzieś zapisać. Najważniejsze, żeby ktoś to kiedyś przeczytał." },
+                { "language": "ro", "text": "Atunci vă rog să notați undeva. Important este ca cineva să citească la un moment dat." },
+                { "language": "sq", "text": "Atëherë ju lutem shkruajeni diku. Kryesorja është që dikush ta lexojë dikur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unpräzise: Die Antwort gibt die Kontrolle über Kategorie, Inhalt und Nutzen der Rückmeldung ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer gives up control over category, content, and usefulness of the feedback." },
+                { "language": "fa", "text": "زیادی غیردقیق است: پاسخ کنترل دسته‌بندی، محتوا و فایده بازخورد را رها می‌کند." },
+                { "language": "ar", "text": "غير دقيقة بما يكفي: تتخلى الإجابة عن التحكم في الفئة والمحتوى وفائدة الملاحظات." },
+                { "language": "tr", "text": "Çok belirsiz: yanıt geri bildirimin kategorisi, içeriği ve yararı üzerindeki kontrolü bırakır." },
+                { "language": "ru", "text": "Слишком неточно: ответ отдает контроль над категорией, содержанием и пользой отзыва." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە کۆنترۆڵی پۆل، ناوەڕۆک و سوودی فیدباکەکە وازدەهێنێت." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv kontrola kategorî, naverok û sûda paşvegerandinê berdide." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: odpowiedź oddaje kontrolę nad kategorią, treścią i użytecznością opinii." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul renunță la controlul asupra categoriei, conținutului și utilității feedbackului." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja heq dorë nga kontrolli mbi kategorinë, përmbajtjen dhe dobishmërinë e reagimit." }
+              ],
+              "explanationKey": "avoid-vague-recording"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "quality-summary-close",
+              "text": "Positiv war der freundliche Kontakt; kritisch waren Reaktionszeit, Kostentransparenz und Übergabe. Meine Erwartung ist eine klarere Zwischenkommunikation und ein verbindlicher Abschlusscheck.",
+              "translations": [
+                { "language": "en", "text": "The friendly contact was positive; response time, cost transparency, and handover were critical. My expectation is clearer interim communication and a binding final check." },
+                { "language": "fa", "text": "نکته مثبت برخورد دوستانه بود؛ نکات انتقادی زمان پاسخ، شفافیت هزینه و تحویل بودند. انتظار من ارتباط میانی روشن‌تر و بررسی نهایی الزام‌آور است." },
+                { "language": "ar", "text": "كان التواصل الودي إيجابياً؛ وكانت النقاط النقدية وقت الاستجابة وشفافية التكلفة والتسليم. توقعي هو تواصل وسيط أوضح وفحص ختامي ملزم." },
+                { "language": "tr", "text": "Olumlu olan güler yüzlü iletişimdi; eleştirel noktalar yanıt süresi, maliyet şeffaflığı ve teslimdi. Beklentim daha açık ara iletişim ve bağlayıcı bir son kontroldür." },
+                { "language": "ru", "text": "Положительным было доброжелательное общение; критичными были время реакции, прозрачность стоимости и передача. Мое ожидание — более ясная промежуточная коммуникация и обязательная финальная проверка." },
+                { "language": "ckb", "text": "پەیوەندیی دۆستانە لایەنی باش بوو؛ کاتی وەڵامدانەوە، ڕوونیی تێچوو و ڕادەستکردن خاڵە ڕەخنەییەکان بوون. چاوەڕوانیم پەیوەندیی ناوەندیی ڕوونتر و پشکنینی کۆتاییی پابەندە." },
+                { "language": "kmr", "text": "Têkiliya dostane erênî bû; xalên rexneyî dema bersivê, zelaliya lêçûnê û radestkirin bûn. Hêviya min têkiliya navberê ya zelaltir û kontrola dawî ya girêdayî ye." },
+                { "language": "pl", "text": "Pozytywny był uprzejmy kontakt; krytyczne były czas reakcji, przejrzystość kosztów i odbiór. Moje oczekiwanie to jaśniejsza komunikacja pośrednia i wiążąca kontrola końcowa." },
+                { "language": "ro", "text": "Pozitiv a fost contactul prietenos; critice au fost timpul de răspuns, transparența costurilor și predarea. Așteptarea mea este o comunicare intermediară mai clară și o verificare finală obligatorie." },
+                { "language": "sq", "text": "Pozitiv ishte kontakti miqësor; kritike ishin koha e përgjigjes, transparenca e kostos dhe dorëzimi. Pritja ime është komunikim ndërmjetës më i qartë dhe kontroll përfundimtar i detyrueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Zusammenfassung bleibt fair, kriterienscharf und handlungsorientiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the summary remains fair, criterion-focused, and action-oriented." },
+                { "language": "fa", "text": "خوب است: خلاصه منصفانه، معیارمحور و عملی می‌ماند." },
+                { "language": "ar", "text": "جيد: يبقى الملخص منصفاً ومركزاً على المعايير وموجهاً نحو العمل." },
+                { "language": "tr", "text": "İyi: özet adil, ölçüt odaklı ve eyleme dönük kalır." },
+                { "language": "ru", "text": "Хорошо: резюме остается справедливым, ориентированным на критерии и действие." },
+                { "language": "ckb", "text": "باشە: پوختەکە دادپەروەر، پێوەرمەحور و کردەوەئامێز دەمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: kurtasî adil, pîvan-navendî û çalakî-navendî dimîne." },
+                { "language": "pl", "text": "Dobrze: podsumowanie pozostaje fair, skoncentrowane na kryteriach i ukierunkowane na działanie." },
+                { "language": "ro", "text": "Bine: rezumatul rămâne corect, centrat pe criterii și orientat spre acțiune." },
+                { "language": "sq", "text": "Mirë: përmbledhja mbetet e drejtë, e fokusuar te kriteret dhe e orientuar drejt veprimit." }
+              ],
+              "explanationKey": "final-quality-summary"
+            },
+            {
+              "id": "polite-but-empty-close",
+              "text": "Vielen Dank, dann hoffe ich einfach, dass der Service beim nächsten Mal besser läuft.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much, then I simply hope that the service will run better next time." },
+                { "language": "fa", "text": "خیلی ممنون، پس فقط امیدوارم دفعه بعد خدمات بهتر پیش برود." },
+                { "language": "ar", "text": "شكراً جزيلاً، إذن آمل فقط أن تسير الخدمة بشكل أفضل في المرة القادمة." },
+                { "language": "tr", "text": "Çok teşekkürler, o zaman sadece servisin bir dahaki sefere daha iyi işlemesini umuyorum." },
+                { "language": "ru", "text": "Большое спасибо, тогда я просто надеюсь, что в следующий раз сервис пройдет лучше." },
+                { "language": "ckb", "text": "زۆر سوپاس، کەواتە تەنها هیوادارم جارێکی داهاتوو خزمەتگوزاری باشتر بچێتە پێش." },
+                { "language": "kmr", "text": "Gelek spas, wê demê ez tenê hêvî dikim ku cara din xizmet baştir derbas bibe." },
+                { "language": "pl", "text": "Bardzo dziękuję, mam więc po prostu nadzieję, że następnym razem serwis pójdzie lepiej." },
+                { "language": "ro", "text": "Vă mulțumesc mult, atunci sper pur și simplu ca serviciul să meargă mai bine data viitoare." },
+                { "language": "sq", "text": "Shumë faleminderit, atëherë thjesht shpresoj që shërbimi herën tjetër të shkojë më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu leer: Der Abschluss ist höflich, hält aber keine Kriterien oder Verbesserungserwartung fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too empty: the closing is polite, but records no criteria or improvement expectation." },
+                { "language": "fa", "text": "زیادی خالی است: پایان مودبانه است، اما هیچ معیار یا انتظار بهبود را ثبت نمی‌کند." },
+                { "language": "ar", "text": "فارغة أكثر من اللازم: الخاتمة مهذبة لكنها لا تسجل أي معايير أو توقع تحسين." },
+                { "language": "tr", "text": "Çok boş: kapanış kibar, ama hiçbir ölçüt veya iyileştirme beklentisi kaydetmez." },
+                { "language": "ru", "text": "Слишком пусто: завершение вежливое, но не фиксирует критерии или ожидание улучшения." },
+                { "language": "ckb", "text": "زۆر بەتاڵە: کۆتایییەکە مودەبە، بەڵام هیچ پێوەر یان چاوەڕوانیی باشترکردن تۆمار ناکات." },
+                { "language": "kmr", "text": "Pir vala ye: dawî bi edeb e, lê tu pîvan an hêviya başkirinê tomar nake." },
+                { "language": "pl", "text": "Zbyt pusto: zakończenie jest uprzejme, ale nie zapisuje kryteriów ani oczekiwania poprawy." },
+                { "language": "ro", "text": "Prea gol: încheierea este politicoasă, dar nu fixează criterii sau așteptări de îmbunătățire." },
+                { "language": "sq", "text": "Shumë bosh: mbyllja është e sjellshme, por nuk fikson kritere ose pritje për përmirësim." }
+              ],
+              "explanationKey": "avoid-empty-politeness"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criteria-note",
+          "text": "Auf C1-Niveau wird Feedback stärker, wenn es nicht nur bewertet, sondern nach Kriterien geordnet wird.",
+          "translations": [
+            { "language": "en", "text": "At C1 level, feedback becomes stronger when it not only evaluates, but is organized by criteria." },
+            { "language": "fa", "text": "در سطح C1، بازخورد وقتی قوی‌تر می‌شود که فقط قضاوت نکند، بلکه بر اساس معیارها مرتب شود." },
+            { "language": "ar", "text": "في مستوى C1 تصبح الملاحظات أقوى عندما لا تقيّم فقط، بل تُرتب حسب المعايير." },
+            { "language": "tr", "text": "C1 düzeyinde geri bildirim yalnızca değerlendirmekle kalmayıp ölçütlere göre düzenlendiğinde güçlenir." },
+            { "language": "ru", "text": "На уровне C1 отзыв становится сильнее, когда он не только оценивает, но и структурируется по критериям." },
+            { "language": "ckb", "text": "لە ئاستی C1دا فیدباک بەهێزتر دەبێت کاتێک تەنها هەڵسەنگاندن ناکات، بەڵکوو بە پێی پێوەرەکان ڕێک دەخرێت." },
+            { "language": "kmr", "text": "Di asta C1 de paşvegerandin xurtir dibe dema ku ne tenê dinirxîne, lê li gorî pîvanan rêz dibe." },
+            { "language": "pl", "text": "Na poziomie C1 opinia staje się mocniejsza, gdy nie tylko ocenia, lecz jest uporządkowana według kryteriów." },
+            { "language": "ro", "text": "La nivel C1, feedbackul devine mai puternic atunci când nu doar evaluează, ci este ordonat după criterii." },
+            { "language": "sq", "text": "Në nivelin C1, reagimi bëhet më i fortë kur jo vetëm vlerëson, por renditet sipas kritereve." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "example-note",
+          "text": "Gute Beispiele sind beobachtbar: angekündigte Frist, erklärte Kostenposition und überprüfbare Übergabe.",
+          "translations": [
+            { "language": "en", "text": "Good examples are observable: announced deadline, explained cost item, and verifiable handover." },
+            { "language": "fa", "text": "مثال‌های خوب قابل مشاهده‌اند: مهلت اعلام‌شده، مورد هزینه توضیح‌داده‌شده و تحویل قابل بررسی." },
+            { "language": "ar", "text": "الأمثلة الجيدة قابلة للملاحظة: مهلة معلنة، وبند تكلفة مشروح، وتسليم قابل للفحص." },
+            { "language": "tr", "text": "İyi örnekler gözlemlenebilir: duyurulan süre, açıklanan maliyet kalemi ve denetlenebilir teslim." },
+            { "language": "ru", "text": "Хорошие примеры наблюдаемы: объявленный срок, объясненная позиция расходов и проверяемая передача." },
+            { "language": "ckb", "text": "نموونە باشەکان بینراون: مۆڵەتی ڕاگەیەندراو، خەرجیی ڕوونکراو و ڕادەستکردنی پشکنراو." },
+            { "language": "kmr", "text": "Nimûneyên baş xuya ne: dema ragihandî, xala lêçûnê ya ravekirî û radestkirina kontrolbar." },
+            { "language": "pl", "text": "Dobre przykłady są obserwowalne: zapowiedziany termin, wyjaśniona pozycja kosztów i sprawdzalny odbiór." },
+            { "language": "ro", "text": "Exemplele bune sunt observabile: termen anunțat, poziție de cost explicată și predare verificabilă." },
+            { "language": "sq", "text": "Shembujt e mirë janë të vëzhgueshëm: afat i njoftuar, zë kostoje i shpjeguar dhe dorëzim i verifikueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "nuance-note",
+          "text": "Starke Kritik akzeptiert normale Komplexität, ohne den Qualitätsanspruch aufzugeben.",
+          "translations": [
+            { "language": "en", "text": "Strong criticism accepts normal complexity without giving up the quality expectation." },
+            { "language": "fa", "text": "نقد قوی پیچیدگی معمول را می‌پذیرد، بدون اینکه از انتظار کیفیت دست بکشد." },
+            { "language": "ar", "text": "النقد القوي يقبل التعقيد الطبيعي من دون التخلي عن توقع الجودة." },
+            { "language": "tr", "text": "Güçlü eleştiri normal karmaşıklığı kabul eder, ama kalite beklentisinden vazgeçmez." },
+            { "language": "ru", "text": "Сильная критика принимает обычную сложность, не отказываясь от ожидания качества." },
+            { "language": "ckb", "text": "ڕەخنەی بەهێز ئاڵۆزیی ئاسایی قبوڵ دەکات، بەبێ ئەوەی دەست لە چاوەڕوانیی کوالیتی هەڵبگرێت." },
+            { "language": "kmr", "text": "Rexneya xurt tevliheviya asayî dipejirîne, bê ku ji hêviya kalîteyê dev berde." },
+            { "language": "pl", "text": "Mocna krytyka akceptuje normalną złożoność, nie rezygnując z oczekiwania jakości." },
+            { "language": "ro", "text": "Critica puternică acceptă complexitatea normală fără să renunțe la așteptarea de calitate." },
+            { "language": "sq", "text": "Kritika e fortë pranon kompleksitetin normal pa hequr dorë nga pritja e cilësisë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "improvement-note",
+          "text": "Eine Verbesserungserwartung ist überzeugender, wenn sie als Prozessstandard formuliert wird.",
+          "translations": [
+            { "language": "en", "text": "An improvement expectation is more convincing when formulated as a process standard." },
+            { "language": "fa", "text": "انتظار بهبود وقتی قانع‌کننده‌تر است که به‌عنوان استاندارد فرایند بیان شود." },
+            { "language": "ar", "text": "يكون توقع التحسين أكثر إقناعاً عندما يُصاغ كمعيار إجرائي." },
+            { "language": "tr", "text": "Bir iyileştirme beklentisi süreç standardı olarak formüle edildiğinde daha ikna edicidir." },
+            { "language": "ru", "text": "Ожидание улучшения убедительнее, когда оно сформулировано как стандарт процесса." },
+            { "language": "ckb", "text": "چاوەڕوانیی باشترکردن قایلکەرترە کاتێک وەک ستانداردی پڕۆسە داڕێژرێت." },
+            { "language": "kmr", "text": "Hêviya başkirinê bawerkerîtir e dema ku wekî standarda pêvajoyê were gotin." },
+            { "language": "pl", "text": "Oczekiwanie poprawy jest bardziej przekonujące, gdy zostaje sformułowane jako standard procesu." },
+            { "language": "ro", "text": "O așteptare de îmbunătățire este mai convingătoare când este formulată ca standard de proces." },
+            { "language": "sq", "text": "Një pritje për përmirësim është më bindëse kur formulohet si standard procesi." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "Die Abschlussformel verbindet Wertschätzung, Kritik und Erwartung in einer übernehmbaren Notiz.",
+          "translations": [
+            { "language": "en", "text": "The closing formula connects appreciation, criticism, and expectation in a note that can be taken over." },
+            { "language": "fa", "text": "فرمول پایانی قدردانی، نقد و انتظار را در یادداشتی قابل ثبت به هم وصل می‌کند." },
+            { "language": "ar", "text": "تربط صيغة الخاتمة بين التقدير والنقد والتوقع في ملاحظة يمكن اعتمادها." },
+            { "language": "tr", "text": "Kapanış formülü takdiri, eleştiriyi ve beklentiyi aktarılabilir bir notta birleştirir." },
+            { "language": "ru", "text": "Заключительная формула соединяет признательность, критику и ожидание в заметке, которую можно перенять." },
+            { "language": "ckb", "text": "فۆرمولی کۆتایی سوپاس، ڕەخنە و چاوەڕوانی لە تێبینییەکی وەرگیراودا پێکەوە دەبەستێت." },
+            { "language": "kmr", "text": "Formûla dawî spasdarî, rexne û hêvî di notekê de ku dikare were girtin girê dide." },
+            { "language": "pl", "text": "Formuła końcowa łączy uznanie, krytykę i oczekiwanie w notatce możliwej do przejęcia." },
+            { "language": "ro", "text": "Formula de încheiere leagă aprecierea, critica și așteptarea într-o notă preluabilă." },
+            { "language": "sq", "text": "Formula përmbyllëse lidh vlerësimin, kritikën dhe pritjen në një shënim të përdorshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "service-quality-feedback-counter",
+          "placement": "header",
+          "purpose": "Show a calm service-counter feedback conversation with a repaired device, quality checklist, and neutral service notes.",
+          "altText": "Eine neutrale Illustration eines Service-Schalters mit repariertem Gerät, Qualitätscheckliste und sachlichem Feedbackgespräch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a service counter with a repaired device, quality checklist, and factual feedback conversation." },
+            { "language": "fa", "text": "تصویری بی‌طرف از باجه خدمات با دستگاه تعمیرشده، چک‌لیست کیفیت و گفتگوی بازخورد منطقی." },
+            { "language": "ar", "text": "رسم محايد لمكتب خدمة مع جهاز مُصلح وقائمة فحص جودة وحديث ملاحظات موضوعي." },
+            { "language": "tr", "text": "Onarılmış cihaz, kalite kontrol listesi ve nesnel geri bildirim görüşmesi olan servis bankosunun tarafsız illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация сервисной стойки с отремонтированным устройством, чек-листом качества и предметным разговором об отзыве." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە کاونتەری خزمەتگوزاری بە ئامێری چاککراو، چێکلیستی کوالیتی و گفتوگۆی فیدباکی بابەتی." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya kontora xizmetê bi amûra tamîrkirî, lîsteya kontrola kalîteyê û axaftina paşvegerandina rast." },
+            { "language": "pl", "text": "Neutralna ilustracja stanowiska serwisowego z naprawionym urządzeniem, listą kontroli jakości i rzeczową rozmową zwrotną." },
+            { "language": "ro", "text": "O ilustrație neutră a unui ghișeu de service cu aparat reparat, listă de verificare a calității și conversație factuală de feedback." },
+            { "language": "sq", "text": "Një ilustrim neutral i një sporteli shërbimi me pajisje të riparuar, listë kontrolli cilësie dhe bisedë faktike reagimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, service counter in Germany with adult customer and service manager discussing a repaired device, abstract quality checklist with no readable private data, calm professional tone, no logos, accessible composition, neutral customer-service setting.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

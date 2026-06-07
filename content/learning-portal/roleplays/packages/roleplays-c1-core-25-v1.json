@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-25-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 25 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 25",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-komplexen-behoerdenfall-strukturieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen komplexen Behördenfall strukturieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Structuring a complex administrative case" },
+        { "language": "fa", "text": "ساختار دادن به یک پرونده اداری پیچیده" },
+        { "language": "ar", "text": "تنظيم حالة إدارية معقدة" },
+        { "language": "tr", "text": "Karmaşık bir resmi kurum dosyasını yapılandırmak" },
+        { "language": "ru", "text": "Структурирование сложного административного дела" },
+        { "language": "ckb", "text": "ڕێکخستنی کەیسێکی ئاڵۆزی فەرمانگە" },
+        { "language": "kmr", "text": "Rêxistina doseyeke îdarî ya tevlihev" },
+        { "language": "pl", "text": "Uporządkowanie złożonej sprawy urzędowej" },
+        { "language": "ro", "text": "Structurarea unui caz administrativ complex" },
+        { "language": "sq", "text": "Strukturimi i një rasti administrativ kompleks" }
+      ],
+      "description": "Sie sprechen mit einer Behörde über einen Antrag, bei dem mehrere Daten, Nachweise und Rückmeldungen zusammenhängen. Sie ordnen den Fall mündlich so, dass die Sachbearbeitung schnell prüfen kann, was entschieden werden soll.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with a public office about an application involving several dates, documents, and responses. You organize the case orally so that the caseworker can quickly check what decision is needed." },
+        { "language": "fa", "text": "شما با یک اداره درباره درخواستی صحبت می‌کنید که چند تاریخ، مدرک و پاسخ اداری به هم مربوط‌اند. پرونده را شفاهی طوری مرتب می‌کنید که کارمند بتواند سریع بررسی کند چه تصمیمی لازم است." },
+        { "language": "ar", "text": "تتحدث مع جهة إدارية عن طلب تتداخل فيه عدة تواريخ ومستندات وردود. تنظم الحالة شفهياً بحيث يستطيع الموظف التحقق بسرعة مما ينبغي البت فيه." },
+        { "language": "tr", "text": "Bir resmi kurumla, birden fazla tarih, belge ve geri bildirimin bağlantılı olduğu bir başvuru hakkında konuşursunuz. Dosyayı sözlü olarak öyle düzenlersiniz ki görevli hangi kararın gerektiğini hızlıca kontrol edebilsin." },
+        { "language": "ru", "text": "Вы говорите с ведомством о заявлении, в котором связаны несколько дат, подтверждений и ответов. Вы устно структурируете дело так, чтобы сотрудник быстро проверил, какое решение требуется." },
+        { "language": "ckb", "text": "تۆ لەگەڵ فەرمانگەیەک لەسەر داواکارییەک قسە دەکەیت کە چەند بەروار، بەڵگە و وەڵامی فەرمی پەیوەست بە یەکترن. کەیسەکە بە زارەکی بە جۆرێک ڕێک دەخەیت کە کارمەند بتوانێت بە خێرایی بپشکنێت چ بڕیارێک پێویستە." },
+        { "language": "kmr", "text": "Hûn bi saziyeke îdarî re li ser daxwaznameyekê diaxivin ku çend dîrok, belge û bersivên fermî tê de bi hev ve girêdayî ne. Hûn dozê bi devkî wisa rêxistin dikin ku karmend zû kontrol bike ka çi biryarê pêwîst e." },
+        { "language": "pl", "text": "Rozmawia Pan z urzędem o wniosku, w którym łączy się kilka dat, dokumentów i odpowiedzi. Ustnie porządkuje Pan sprawę tak, aby urzędnik mógł szybko sprawdzić, jaka decyzja jest potrzebna." },
+        { "language": "ro", "text": "Vorbiți cu o autoritate despre o cerere în care se leagă mai multe date, documente și răspunsuri. Structurați cazul oral astfel încât funcționarul să poată verifica rapid ce decizie este necesară." },
+        { "language": "sq", "text": "Flisni me një zyrë publike për një kërkesë ku lidhen disa data, dokumente dhe përgjigje. E strukturoni rastin me gojë në mënyrë që nëpunësi të kontrollojë shpejt çfarë vendimi nevojitet." }
+      ],
+      "learnerGoal": "Einen komplexen Behördenfall klar darstellen: Hintergrund, zeitliche Abfolge, vorhandene Nachweise, offener Punkt und gewünschte Entscheidung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Present a complex administrative case clearly: background, timeline, available documents, open point, and requested decision." },
+        { "language": "fa", "text": "یک پرونده اداری پیچیده را روشن ارائه کنید: زمینه، ترتیب زمانی، مدارک موجود، نقطه باز و تصمیم درخواستی." },
+        { "language": "ar", "text": "اعرض حالة إدارية معقدة بوضوح: الخلفية، التسلسل الزمني، المستندات الموجودة، النقطة المفتوحة والقرار المطلوب." },
+        { "language": "tr", "text": "Karmaşık bir idari dosyayı açık sunun: arka plan, zaman sırası, mevcut belgeler, açık nokta ve istenen karar." },
+        { "language": "ru", "text": "Чётко представить сложное административное дело: фон, хронологию, имеющиеся документы, открытый вопрос и запрашиваемое решение." },
+        { "language": "ckb", "text": "کەیسێکی ئاڵۆزی فەرمانگە بە ڕوونی پێشکەش بکە: پاشخان، ڕیزبەندی کات، بەڵگەی هەبوو، خاڵی کراوە و بڕیاری داواکراو." },
+        { "language": "kmr", "text": "Doseksa îdarî ya tevlihev bi zelalî pêşkêş bikin: paşxane, rêza demê, belgeyên heyî, xala vekirî û biryara xwestî." },
+        { "language": "pl", "text": "Jasno przedstawić złożoną sprawę urzędową: tło, chronologię, dostępne dokumenty, punkt otwarty i oczekiwaną decyzję." },
+        { "language": "ro", "text": "Prezentați clar un caz administrativ complex: context, cronologie, documente disponibile, punct deschis și decizia solicitată." },
+        { "language": "sq", "text": "Paraqisni qartë një rast administrativ kompleks: sfondin, rrjedhën kohore, dokumentet ekzistuese, pikën e hapur dhe vendimin e kërkuar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 25,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller/in",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌کننده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikues" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeitung",
+          "translations": [
+            { "language": "en", "text": "Caseworker" },
+            { "language": "fa", "text": "کارمند پرونده" },
+            { "language": "ar", "text": "الموظف المسؤول" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karmendê dozê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționar responsabil" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie sind wegen Ihres Antrags hier. Ich sehe mehrere Einträge im System. Können Sie den Fall bitte kurz und geordnet zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "You are here about your application. I see several entries in the system. Could you please summarize the case briefly and in an organized way?" },
+            { "language": "fa", "text": "شما برای درخواستتان اینجا هستید. من چند ثبت مختلف در سیستم می‌بینم. ممکن است پرونده را کوتاه و منظم خلاصه کنید؟" },
+            { "language": "ar", "text": "أنت هنا بخصوص طلبك. أرى عدة إدخالات في النظام. هل يمكنك تلخيص الحالة بإيجاز وبشكل منظم؟" },
+            { "language": "tr", "text": "Başvurunuz nedeniyle buradasınız. Sistemde birkaç kayıt görüyorum. Dosyayı lütfen kısa ve düzenli biçimde özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Вы здесь по поводу вашего заявления. В системе я вижу несколько записей. Можете кратко и структурированно подытожить дело?" },
+            { "language": "ckb", "text": "تۆ بۆ داواکارییەکەت لێرەیت. لە سیستەمدا چەند تۆمارێک دەبینم. دەتوانیت کەیسەکە بە کورتی و ڕێکخراوی پوختە بکەیت؟" },
+            { "language": "kmr", "text": "Hûn ji bo daxwaznameya xwe li vir in. Ez di pergalê de çend tomar dibînim. Hûn dikarin dozê bi kurtî û rêxistî kurt bikin?" },
+            { "language": "pl", "text": "Jest Pan tutaj w sprawie swojego wniosku. Widzę w systemie kilka wpisów. Czy może Pan krótko i uporządkowanie podsumować sprawę?" },
+            { "language": "ro", "text": "Sunteți aici pentru cererea dumneavoastră. Văd mai multe înregistrări în sistem. Puteți rezuma cazul pe scurt și structurat?" },
+            { "language": "sq", "text": "Jeni këtu për kërkesën tuaj. Shoh disa shënime në sistem. A mund ta përmblidhni rastin shkurt dhe me rregull?" }
+          ],
+          "function": "case-summary-request",
+          "toneNote": "formal, prüfend",
+          "expectedLearnerAction": "Fall in Hintergrund, Aktenzeichen und offenen Punkt gliedern"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gerne. Es geht um meinen Antrag mit dem Aktenzeichen 24-418. Ich habe den Antrag vor acht Wochen gestellt, danach wurde ein zusätzlicher Wohnsitznachweis angefordert. Diesen habe ich nachgereicht; offen ist jetzt, ob die Unterlagen vollständig sind und ob der Antrag an die zuständige Stelle weitergeleitet werden kann.",
+          "translations": [
+            { "language": "en", "text": "Of course. This concerns my application with file number 24-418. I submitted the application eight weeks ago; afterward an additional proof of residence was requested. I submitted it later; what is open now is whether the documents are complete and whether the application can be forwarded to the responsible unit." },
+            { "language": "fa", "text": "حتماً. موضوع مربوط به درخواست من با شماره پرونده 24-418 است. هشت هفته پیش درخواست را ارائه کردم، سپس مدرک تکمیلی محل سکونت خواسته شد. آن را بعداً ارسال کردم؛ اکنون سؤال باز این است که آیا مدارک کامل‌اند و آیا درخواست می‌تواند به بخش مسئول فرستاده شود یا نه." },
+            { "language": "ar", "text": "بكل سرور. يتعلق الأمر بطلبي ذي رقم الملف 24-418. قدمت الطلب قبل ثمانية أسابيع، ثم طُلب إثبات سكن إضافي. قدمته لاحقاً؛ والنقطة المفتوحة الآن هي ما إذا كانت المستندات مكتملة وما إذا كان يمكن إحالة الطلب إلى الجهة المختصة." },
+            { "language": "tr", "text": "Elbette. Konu 24-418 dosya numaralı başvurumla ilgili. Başvuruyu sekiz hafta önce yaptım, ardından ek bir ikamet belgesi istendi. Bunu sonradan sundum; şu anda açık olan nokta, belgelerin tamamlanıp tamamlanmadığı ve başvurunun yetkili birime iletilip iletilemeyeceğidir." },
+            { "language": "ru", "text": "Конечно. Речь о моём заявлении с номером дела 24-418. Я подал заявление восемь недель назад, затем был запрошен дополнительный документ о месте жительства. Я его дослал; сейчас открытый вопрос в том, полны ли документы и можно ли передать заявление в ответственное подразделение." },
+            { "language": "ckb", "text": "بە دڵنیایی. بابەتەکە پەیوەندیدارە بە داواکارییەکەم بە ژمارەی کەیسی 24-418. هەشت هەفتە پێش ئێستا داواکارییەکەم پێشکەش کرد، پاشان بەڵگەی زیادەی شوێنی نیشتەجێبوون داوا کرا. ئەوەم دوایی ناردەوە؛ ئێستا خاڵی کراوە ئەوەیە ئایا بەڵگەکان تەواون و ئایا داواکارییەکە دەتوانرێت بنێردرێت بۆ بەشی بەرپرسیار." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Mijar li ser daxwaznameya min a bi jimareya dosyeyê 24-418 e. Min daxwazname heşt hefte berê şand, paşê belgeyeke din a niştecihbûnê hate xwestin. Min ew paşê şand; niha xala vekirî ew e ka belge temam in û daxwazname dikare ji beşa berpirs re were şandin yan na." },
+            { "language": "pl", "text": "Oczywiście. Chodzi o mój wniosek o numerze akt 24-418. Złożyłem wniosek osiem tygodni temu, potem poproszono o dodatkowe potwierdzenie miejsca zamieszkania. Dosłałem je; teraz otwarte jest pytanie, czy dokumenty są kompletne i czy wniosek może zostać przekazany do właściwej komórki." },
+            { "language": "ro", "text": "Sigur. Este vorba despre cererea mea cu numărul de dosar 24-418. Am depus cererea acum opt săptămâni, apoi mi s-a cerut o dovadă suplimentară a domiciliului. Am trimis-o ulterior; punctul deschis este acum dacă documentele sunt complete și dacă cererea poate fi transmisă compartimentului competent." },
+            { "language": "sq", "text": "Me kënaqësi. Bëhet fjalë për kërkesën time me numrin e dosjes 24-418. E kam dorëzuar kërkesën para tetë javësh, më pas u kërkua një dëshmi shtesë e vendbanimit. E kam dërguar më pas; pika e hapur tani është nëse dokumentet janë të plota dhe nëse kërkesa mund t'i përcillet njësisë përgjegjëse." }
+          ],
+          "function": "structured-case-opening",
+          "toneNote": "klar, geordnet",
+          "expectedLearnerAction": "Aktenzeichen, Hintergrund und offene Frage nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Ich sehe hier unterschiedliche Daten. Können Sie die zeitliche Reihenfolge bitte genauer darstellen?",
+          "translations": [
+            { "language": "en", "text": "I see different dates here. Could you please present the timeline more precisely?" },
+            { "language": "fa", "text": "اینجا تاریخ‌های مختلفی می‌بینم. ممکن است ترتیب زمانی را دقیق‌تر توضیح دهید؟" },
+            { "language": "ar", "text": "أرى هنا تواريخ مختلفة. هل يمكنك عرض التسلسل الزمني بدقة أكبر؟" },
+            { "language": "tr", "text": "Burada farklı tarihler görüyorum. Zaman sırasını lütfen daha kesin anlatabilir misiniz?" },
+            { "language": "ru", "text": "Я вижу здесь разные даты. Можете точнее изложить хронологию?" },
+            { "language": "ckb", "text": "لێرە بەرواری جیاواز دەبینم. دەتوانیت ڕیزبەندی کات بە وردی زیاتر بخەیتەڕوو؟" },
+            { "language": "kmr", "text": "Ez li vir dîrokên cuda dibînim. Hûn dikarin rêza demê rasttir pêşkêş bikin?" },
+            { "language": "pl", "text": "Widzę tutaj różne daty. Czy może Pan dokładniej przedstawić chronologię?" },
+            { "language": "ro", "text": "Văd aici date diferite. Puteți prezenta cronologia mai precis?" },
+            { "language": "sq", "text": "Shoh këtu data të ndryshme. A mund ta paraqisni më saktë rrjedhën kohore?" }
+          ],
+          "function": "timeline-request",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Chronologie knapp und lückenlos darstellen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja. Am 3. März habe ich den Antrag online eingereicht. Am 18. März kam die Nachricht, dass der Wohnsitznachweis fehle. Am 21. März habe ich den Nachweis hochgeladen und am 22. März eine automatische Eingangsbestätigung erhalten. Seitdem steht der Status unverändert auf 'Nachreichung offen'.",
+          "translations": [
+            { "language": "en", "text": "Yes. On March 3, I submitted the application online. On March 18, I received a message saying that the proof of residence was missing. On March 21, I uploaded the document, and on March 22 I received an automatic confirmation of receipt. Since then, the status has remained unchanged as 'additional submission open'." },
+            { "language": "fa", "text": "بله. در ۳ مارس درخواست را آنلاین ثبت کردم. در ۱۸ مارس پیام آمد که مدرک محل سکونت ناقص است. در ۲۱ مارس مدرک را بارگذاری کردم و در ۲۲ مارس تأیید دریافت خودکار گرفتم. از آن زمان وضعیت بدون تغییر روی «ارسال تکمیلی باز است» مانده است." },
+            { "language": "ar", "text": "نعم. في 3 مارس قدمت الطلب عبر الإنترنت. في 18 مارس وصلت رسالة بأن إثبات السكن ناقص. في 21 مارس رفعت الإثبات، وفي 22 مارس تلقيت تأكيد استلام آلياً. منذ ذلك الحين بقيت الحالة بلا تغيير على 'استكمال المستندات مفتوح'." },
+            { "language": "tr", "text": "Evet. 3 Mart'ta başvuruyu çevrimiçi sundum. 18 Mart'ta ikamet belgesinin eksik olduğuna dair mesaj geldi. 21 Mart'ta belgeyi yükledim ve 22 Mart'ta otomatik alındı onayı aldım. O zamandan beri durum değişmeden 'ek belge açık' olarak görünüyor." },
+            { "language": "ru", "text": "Да. 3 марта я подал заявление онлайн. 18 марта пришло сообщение, что отсутствует подтверждение места жительства. 21 марта я загрузил документ, а 22 марта получил автоматическое подтверждение получения. С тех пор статус без изменений стоит как 'досылка открыта'." },
+            { "language": "ckb", "text": "بەڵێ. لە ٣ی ئاداردا داواکارییەکەم ئۆنلاین پێشکەش کرد. لە ١٨ی ئاداردا پەیامێک هات کە بەڵگەی شوێنی نیشتەجێبوون کەمە. لە ٢١ی ئاداردا بەڵگەکەم بارکرد و لە ٢٢ی ئاداردا پشتڕاستکردنەوەی خۆکاری وەرگرتن وەرگرت. لەو کاتەوە دۆخەکە بەبێ گۆڕان ماوە لەسەر 'پێشکەشکردنی زیادە کراوەیە'." },
+            { "language": "kmr", "text": "Erê. Di 3ê Adarê de min daxwazname online şand. Di 18ê Adarê de peyam hat ku belgeya niştecihbûnê kêm e. Di 21ê Adarê de min belge barkir û di 22ê Adarê de piştrastkirina wergirtinê ya otomatik wergirt. Ji wê demê ve rewş bê guhertin li ser 'şandina zêde vekirî ye' maye." },
+            { "language": "pl", "text": "Tak. 3 marca złożyłem wniosek online. 18 marca przyszła informacja, że brakuje potwierdzenia miejsca zamieszkania. 21 marca wgrałem dokument, a 22 marca otrzymałem automatyczne potwierdzenie wpływu. Od tego czasu status pozostaje bez zmian jako 'uzupełnienie otwarte'." },
+            { "language": "ro", "text": "Da. Pe 3 martie am depus cererea online. Pe 18 martie am primit mesaj că lipsește dovada domiciliului. Pe 21 martie am încărcat dovada, iar pe 22 martie am primit o confirmare automată de primire. De atunci, statusul a rămas neschimbat la „completare deschisă”." },
+            { "language": "sq", "text": "Po. Më 3 mars e dorëzova kërkesën online. Më 18 mars erdhi mesazhi se mungonte dëshmia e vendbanimit. Më 21 mars e ngarkova dokumentin dhe më 22 mars mora një konfirmim automatik të pranimit. Që atëherë statusi ka mbetur pa ndryshim në 'plotësim i hapur'." }
+          ],
+          "function": "timeline-answer",
+          "toneNote": "chronologisch, knapp",
+          "expectedLearnerAction": "Daten und Status klar verbinden"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Welche Nachweise liegen Ihnen vor, damit ich prüfen kann, ob der Vorgang vollständig dokumentiert ist?",
+          "translations": [
+            { "language": "en", "text": "Which documents do you have so I can check whether the process is fully documented?" },
+            { "language": "fa", "text": "چه مدارکی همراه دارید تا بتوانم بررسی کنم آیا روند پرونده کامل مستند شده است یا نه؟" },
+            { "language": "ar", "text": "ما المستندات المتوفرة لديك حتى أستطيع التحقق مما إذا كانت العملية موثقة بالكامل؟" },
+            { "language": "tr", "text": "Sürecin tamamen belgelendirilip belgelendirilmediğini kontrol edebilmem için hangi belgeler yanınızda?" },
+            { "language": "ru", "text": "Какие подтверждения у вас есть, чтобы я мог проверить, полностью ли документирован процесс?" },
+            { "language": "ckb", "text": "کام بەڵگەکانت لەگەڵدایە تا بتوانم بپشکنم ئایا ڕەوتەکە بە تەواوی بەڵگەدار کراوە یان نا؟" },
+            { "language": "kmr", "text": "Kîjan belge li cem we hene da ku ez kontrol bikim gelo pêvajo bi tevahî belgekirî ye yan na?" },
+            { "language": "pl", "text": "Jakie potwierdzenia ma Pan przy sobie, żebym mógł sprawdzić, czy sprawa jest w pełni udokumentowana?" },
+            { "language": "ro", "text": "Ce dovezi aveți la dumneavoastră ca să pot verifica dacă procedura este complet documentată?" },
+            { "language": "sq", "text": "Çfarë dokumentesh keni me vete që të mund të kontrolloj nëse procesi është dokumentuar plotësisht?" }
+          ],
+          "function": "documents-request",
+          "toneNote": "sachlich",
+          "expectedLearnerAction": "Nachweise kategorisiert nennen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich habe drei Nachweise dabei: die ursprüngliche Online-Bestätigung vom 3. März, die Aufforderung zur Nachreichung vom 18. März und die automatische Eingangsbestätigung vom 22. März. Zusätzlich habe ich den Wohnsitznachweis als PDF auf dem Telefon und kann ihn bei Bedarf sofort erneut senden.",
+          "translations": [
+            { "language": "en", "text": "I have three documents with me: the original online confirmation from March 3, the request for additional submission from March 18, and the automatic confirmation of receipt from March 22. In addition, I have the proof of residence as a PDF on my phone and can resend it immediately if needed." },
+            { "language": "fa", "text": "سه مدرک همراه دارم: تأییدیه آنلاین اولیه از ۳ مارس، درخواست ارسال تکمیلی از ۱۸ مارس و تأیید دریافت خودکار از ۲۲ مارس. علاوه بر این، مدرک محل سکونت را به صورت PDF روی تلفن دارم و در صورت نیاز می‌توانم فوراً دوباره ارسال کنم." },
+            { "language": "ar", "text": "لدي ثلاثة مستندات: التأكيد الإلكتروني الأصلي من 3 مارس، وطلب استكمال المستندات من 18 مارس، وتأكيد الاستلام الآلي من 22 مارس. إضافة إلى ذلك لدي إثبات السكن بصيغة PDF على الهاتف ويمكنني إرساله فوراً مرة أخرى عند الحاجة." },
+            { "language": "tr", "text": "Yanımda üç belge var: 3 Mart tarihli ilk çevrimiçi onay, 18 Mart tarihli ek belge talebi ve 22 Mart tarihli otomatik alındı onayı. Ayrıca ikamet belgesi telefonda PDF olarak var ve gerekirse hemen tekrar gönderebilirim." },
+            { "language": "ru", "text": "У меня есть три подтверждения: первоначальное онлайн-подтверждение от 3 марта, запрос на досылку от 18 марта и автоматическое подтверждение получения от 22 марта. Кроме того, подтверждение места жительства есть у меня на телефоне в PDF, и при необходимости я могу сразу отправить его снова." },
+            { "language": "ckb", "text": "سێ بەڵگەم لەگەڵدایە: پشتڕاستکردنەوەی ئۆنلاینە سەرەتاییەکەی ٣ی ئادار، داواکاری پێشکەشکردنی زیادەی ١٨ی ئادار و پشتڕاستکردنەوەی خۆکاری وەرگرتنی ٢٢ی ئادار. هەروەها بەڵگەی شوێنی نیشتەجێبوون وەک PDF لەسەر تەلەفۆنەکەم هەیە و ئەگەر پێویست بوو دەتوانم دەستبەجێ دووبارە بینێرم." },
+            { "language": "kmr", "text": "Sê belge li cem min hene: piştrastkirina online ya destpêkê ya 3ê Adarê, daxwaza şandina zêde ya 18ê Adarê û piştrastkirina otomatik a wergirtinê ya 22ê Adarê. Her wiha belgeya niştecihbûnê wek PDF li ser telefonê min heye û heke pêwîst be dikarim tavilê dîsa bişînim." },
+            { "language": "pl", "text": "Mam przy sobie trzy potwierdzenia: pierwotne potwierdzenie online z 3 marca, wezwanie do uzupełnienia z 18 marca i automatyczne potwierdzenie wpływu z 22 marca. Dodatkowo mam potwierdzenie miejsca zamieszkania jako PDF w telefonie i w razie potrzeby mogę je od razu ponownie wysłać." },
+            { "language": "ro", "text": "Am trei dovezi la mine: confirmarea online inițială din 3 martie, solicitarea de completare din 18 martie și confirmarea automată de primire din 22 martie. În plus, am dovada domiciliului ca PDF pe telefon și o pot retrimite imediat dacă este nevoie." },
+            { "language": "sq", "text": "Kam me vete tre dëshmi: konfirmimin fillestar online të 3 marsit, kërkesën për plotësim të 18 marsit dhe konfirmimin automatik të pranimit të 22 marsit. Përveç kësaj, dëshminë e vendbanimit e kam si PDF në telefon dhe mund ta ridërgoj menjëherë nëse duhet." }
+          ],
+          "function": "documents-categorized",
+          "toneNote": "vollständig, hilfreich",
+          "expectedLearnerAction": "Dokumente nach Funktion ordnen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Im System steht weiterhin, dass ein aktueller Wohnsitznachweis fehlt. Es kann sein, dass die Datei nicht richtig zugeordnet wurde.",
+          "translations": [
+            { "language": "en", "text": "The system still says that a current proof of residence is missing. It may be that the file was not assigned correctly." },
+            { "language": "fa", "text": "در سیستم هنوز نوشته شده که مدرک به‌روز محل سکونت موجود نیست. ممکن است فایل درست به پرونده وصل نشده باشد." },
+            { "language": "ar", "text": "ما زال النظام يذكر أن إثبات السكن الحالي مفقود. قد يكون الملف لم يُربط بشكل صحيح." },
+            { "language": "tr", "text": "Sistemde hâlâ güncel ikamet belgesinin eksik olduğu yazıyor. Dosya doğru eşleştirilmemiş olabilir." },
+            { "language": "ru", "text": "В системе всё ещё указано, что отсутствует актуальное подтверждение места жительства. Возможно, файл был неправильно привязан." },
+            { "language": "ckb", "text": "لە سیستەمدا هێشتا نووسراوە کە بەڵگەی نوێی شوێنی نیشتەجێبوون کەمە. لەوانەیە فایلەکە بە دروستی بە کەیسەکەوە نەبەسترابێت." },
+            { "language": "kmr", "text": "Di pergalê de hîn jî hatiye nivîsandin ku belgeya niştecihbûnê ya nû kêm e. Dibe ku pel bi rastî nehatibe girêdan." },
+            { "language": "pl", "text": "W systemie nadal widnieje, że brakuje aktualnego potwierdzenia miejsca zamieszkania. Możliwe, że plik nie został prawidłowo przypisany." },
+            { "language": "ro", "text": "În sistem apare în continuare că lipsește dovada actuală a domiciliului. Este posibil ca fișierul să nu fi fost atribuit corect." },
+            { "language": "sq", "text": "Në sistem ende shënohet se mungon dëshmia aktuale e vendbanimit. Mund të jetë që skedari nuk është lidhur siç duhet." }
+          ],
+          "function": "missing-document-status",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Fehlerquelle sachlich aufnehmen"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke für den Hinweis. Dann würde ich gern zweierlei klären: Erstens, ob der hochgeladene Nachweis technisch auffindbar ist, und zweitens, ob Sie einen aktuelleren Nachweis benötigen. Falls die Datei nicht zugeordnet wurde, kann ich sie jetzt erneut unter dem Aktenzeichen senden.",
+          "translations": [
+            { "language": "en", "text": "Thank you for pointing that out. I would like to clarify two things: first, whether the uploaded document can be found technically, and second, whether you need a more current proof. If the file was not assigned, I can resend it now with the file number." },
+            { "language": "fa", "text": "ممنون از توضیح. می‌خواهم دو نکته را روشن کنم: اول اینکه آیا مدرک بارگذاری‌شده از نظر فنی قابل پیدا کردن است، و دوم اینکه آیا مدرک جدیدتری لازم دارید. اگر فایل به پرونده وصل نشده، می‌توانم همین حالا آن را با شماره پرونده دوباره ارسال کنم." },
+            { "language": "ar", "text": "شكراً على التوضيح. أود أن أوضح أمرين: أولاً، هل يمكن العثور تقنياً على المستند المرفوع، وثانياً، هل تحتاجون إلى إثبات أحدث. إذا لم يُربط الملف، يمكنني إرساله الآن مجدداً مع رقم الملف." },
+            { "language": "tr", "text": "Bilgi için teşekkür ederim. İki şeyi açıklığa kavuşturmak isterim: Birincisi, yüklenen belgenin teknik olarak bulunup bulunamadığı; ikincisi, daha güncel bir belgeye ihtiyacınız olup olmadığı. Dosya eşleştirilmediyse, şimdi dosya numarasıyla tekrar gönderebilirim." },
+            { "language": "ru", "text": "Спасибо за указание. Я хотел бы уточнить два момента: во-первых, можно ли технически найти загруженный документ, и во-вторых, нужен ли вам более актуальный документ. Если файл не был привязан, я могу сейчас отправить его повторно с номером дела." },
+            { "language": "ckb", "text": "سوپاس بۆ ئاگادارکردنەوەکە. دەمەوێت دوو شت ڕوون بکەمەوە: یەکەم، ئایا بەڵگەی بارکراو لە ڕووی تەکنیکییەوە دۆزرایەوە؛ دووەم، ئایا بەڵگەی نوێترتان پێویستە. ئەگەر فایلەکە نەبەسترابێت، دەتوانم ئێستا بە ژمارەی کەیسەکە دووبارە بینێرم." },
+            { "language": "kmr", "text": "Spas ji bo agahdarîyê. Ez dixwazim du tiştan zelal bikim: yekem, gelo belgeya barkirî bi teknîkî tê dîtin; duyem, gelo belgeyeke nûtir pêwîst e. Heke pel nehatiye girêdan, ez dikarim niha bi jimareya dosyeyê dîsa bişînim." },
+            { "language": "pl", "text": "Dziękuję za informację. Chciałbym wyjaśnić dwie kwestie: po pierwsze, czy wgrany dokument jest technicznie odnajdywalny, a po drugie, czy potrzebują Państwo bardziej aktualnego potwierdzenia. Jeśli plik nie został przypisany, mogę go teraz ponownie wysłać z numerem akt." },
+            { "language": "ro", "text": "Vă mulțumesc pentru precizare. Aș dori să clarific două lucruri: în primul rând, dacă documentul încărcat poate fi găsit tehnic, și în al doilea rând, dacă aveți nevoie de o dovadă mai recentă. Dacă fișierul nu a fost atribuit, îl pot retrimite acum cu numărul de dosar." },
+            { "language": "sq", "text": "Faleminderit për sqarimin. Do të doja të qartësoja dy gjëra: së pari, nëse dokumenti i ngarkuar mund të gjendet teknikisht, dhe së dyti, nëse keni nevojë për një dëshmi më të re. Nëse skedari nuk është lidhur, mund ta ridërgoj tani me numrin e dosjes." }
+          ],
+          "function": "clarify-missing-document",
+          "toneNote": "sachlich, lösungsorientiert",
+          "expectedLearnerAction": "Offenen Punkt in Prüffragen zerlegen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Was genau möchten Sie heute erreichen: eine Entscheidung, eine Weiterleitung oder nur eine Auskunft zum Stand?",
+          "translations": [
+            { "language": "en", "text": "What exactly would you like to achieve today: a decision, a forwarding, or only information about the status?" },
+            { "language": "fa", "text": "امروز دقیقاً چه می‌خواهید به دست بیاورید: تصمیم، ارجاع پرونده، یا فقط اطلاع از وضعیت؟" },
+            { "language": "ar", "text": "ما الذي تريد تحقيقه اليوم تحديداً: قرار، إحالة، أم مجرد معلومات عن الحالة؟" },
+            { "language": "tr", "text": "Bugün tam olarak ne elde etmek istiyorsunuz: bir karar mı, yönlendirme mi, yoksa yalnızca durum bilgisi mi?" },
+            { "language": "ru", "text": "Чего именно вы хотите добиться сегодня: решения, передачи дальше или только информации о статусе?" },
+            { "language": "ckb", "text": "ئەمڕۆ بە وردی دەتەوێت چی بەدەست بهێنیت: بڕیار، ناردنەوە، یان تەنها زانیاری لەسەر دۆخ؟" },
+            { "language": "kmr", "text": "Hûn îro bi taybetî dixwazin çi bi dest bixin: biryar, şandin, an tenê agahî li ser rewşê?" },
+            { "language": "pl", "text": "Co dokładnie chciałby Pan dziś osiągnąć: decyzję, przekazanie sprawy czy tylko informację o statusie?" },
+            { "language": "ro", "text": "Ce doriți să obțineți exact astăzi: o decizie, o transmitere mai departe sau doar informații despre status?" },
+            { "language": "sq", "text": "Çfarë dëshironi të arrini saktësisht sot: një vendim, përcjellje të çështjes, apo vetëm informacion mbi statusin?" }
+          ],
+          "function": "requested-outcome",
+          "toneNote": "fokussierend",
+          "expectedLearnerAction": "Konkretes Ziel formulieren"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Mein Ziel wäre zunächst eine Klärung des Bearbeitungsstands. Falls der Nachweis auffindbar ist, bitte ich um die Weiterleitung an die zuständige Stelle. Falls noch etwas fehlt, hätte ich gern eine kurze schriftliche Information, welches Dokument genau benötigt wird und bis wann ich es nachreichen soll.",
+          "translations": [
+            { "language": "en", "text": "My initial goal would be to clarify the processing status. If the proof can be found, I ask that the application be forwarded to the responsible unit. If something is still missing, I would like brief written information stating exactly which document is needed and by when I should submit it." },
+            { "language": "fa", "text": "هدف اولیه من روشن شدن وضعیت بررسی است. اگر مدرک قابل پیدا کردن است، درخواست می‌کنم پرونده به بخش مسئول ارجاع شود. اگر هنوز چیزی ناقص است، لطفاً یک اطلاع کوتاه کتبی بدهید که دقیقاً کدام مدرک لازم است و تا چه زمانی باید آن را ارسال کنم." },
+            { "language": "ar", "text": "هدفي أولاً هو توضيح حالة المعالجة. إذا كان الإثبات قابلاً للعثور عليه، أطلب إحالة الطلب إلى الجهة المختصة. وإذا كان شيء ما ما زال ناقصاً، أود معلومات مكتوبة قصيرة توضح أي مستند مطلوب بالضبط وإلى أي موعد يجب تقديمه." },
+            { "language": "tr", "text": "İlk hedefim işlem durumunun açıklığa kavuşmasıdır. Belge bulunabiliyorsa, başvurunun yetkili birime iletilmesini rica ederim. Hâlâ eksik bir şey varsa, tam olarak hangi belgenin gerektiğini ve ne zamana kadar sunmam gerektiğini kısa yazılı bilgi olarak almak isterim." },
+            { "language": "ru", "text": "Моя первая цель — прояснить статус обработки. Если документ можно найти, прошу передать заявление в ответственное подразделение. Если чего-то ещё не хватает, я хотел бы получить краткую письменную информацию, какой именно документ нужен и до какого срока его нужно дослать." },
+            { "language": "ckb", "text": "ئامانجی سەرەتاییم ڕوونکردنەوەی دۆخی مامەڵەکردنەکەیە. ئەگەر بەڵگەکە دۆزرایەوە، داوا دەکەم داواکارییەکە بۆ بەشی بەرپرسیار بنێردرێت. ئەگەر هێشتا شتێک کەمە، تکایە زانیارییەکی کورتی نووسراوم بدەن کە بە وردی کام بەڵگە پێویستە و تا کەی دەبێت بینێرم." },
+            { "language": "kmr", "text": "Armanca min a destpêkê zelalkirina rewşa pêvajoyê ye. Heke belge tê dîtin, ez daxwaz dikim ku daxwazname ji beşa berpirs re were şandin. Heke hîn tiştek kêm be, ez agahiyeke kurt a nivîskî dixwazim ku kîjan belge bi rastî pêwîst e û heta kengî divê bişînim." },
+            { "language": "pl", "text": "Moim pierwszym celem jest wyjaśnienie stanu rozpatrywania. Jeśli dokument jest odnajdywalny, proszę o przekazanie wniosku do właściwej komórki. Jeśli nadal czegoś brakuje, chciałbym krótką pisemną informację, jaki dokładnie dokument jest potrzebny i do kiedy mam go dosłać." },
+            { "language": "ro", "text": "Scopul meu inițial ar fi clarificarea stadiului de procesare. Dacă dovada poate fi găsită, vă rog să transmiteți cererea către compartimentul competent. Dacă mai lipsește ceva, aș dori o scurtă informare scrisă care să precizeze exact ce document este necesar și până când trebuie să îl trimit." },
+            { "language": "sq", "text": "Qëllimi im fillestar është sqarimi i statusit të përpunimit. Nëse dëshmia mund të gjendet, kërkoj që kërkesa t'i përcillet njësisë përgjegjëse. Nëse ende mungon diçka, do të doja një informacion të shkurtër me shkrim se cili dokument nevojitet saktësisht dhe deri kur duhet ta dorëzoj." }
+          ],
+          "function": "requested-decision",
+          "toneNote": "konkret, höflich",
+          "expectedLearnerAction": "Ziel und Alternativen klar formulieren"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Ich notiere das. Können Sie den Sachverhalt für die Akte noch einmal in einem Satz zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "I will note that. Could you summarize the facts once more in one sentence for the file?" },
+            { "language": "fa", "text": "این را یادداشت می‌کنم. ممکن است موضوع را برای پرونده یک بار دیگر در یک جمله خلاصه کنید؟" },
+            { "language": "ar", "text": "سأدوّن ذلك. هل يمكنك تلخيص الوقائع مرة أخرى في جملة واحدة للملف؟" },
+            { "language": "tr", "text": "Bunu not ediyorum. Dosya için durumu bir cümlede tekrar özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Я это запишу. Можете ещё раз одним предложением подытожить обстоятельства для дела?" },
+            { "language": "ckb", "text": "ئەمە تێبینی دەکەم. دەتوانیت بابەتەکە جارێکی تر بۆ کەیسەکە لە یەک ڕستەدا پوختە بکەیت؟" },
+            { "language": "kmr", "text": "Ez vê dinivîsim. Hûn dikarin rewşê careke din ji bo dosyeyê di yek hevokê de kurt bikin?" },
+            { "language": "pl", "text": "Zanotuję to. Czy może Pan jeszcze raz podsumować stan faktyczny do akt w jednym zdaniu?" },
+            { "language": "ro", "text": "Notez acest lucru. Puteți rezuma încă o dată situația pentru dosar într-o singură propoziție?" },
+            { "language": "sq", "text": "Po e shënoj këtë. A mund ta përmblidhni edhe një herë gjendjen për dosjen në një fjali?" }
+          ],
+          "function": "file-summary-request",
+          "toneNote": "aktenbezogen",
+          "expectedLearnerAction": "Eine aktenfähige Zusammenfassung geben"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Der Antrag 24-418 wurde am 3. März gestellt; der am 18. März angeforderte Wohnsitznachweis wurde am 21. März hochgeladen und am 22. März bestätigt, daher bitte ich um Prüfung der Zuordnung und entweder Weiterleitung des vollständigen Antrags oder schriftliche Benennung der noch fehlenden Unterlagen.",
+          "translations": [
+            { "language": "en", "text": "Application 24-418 was submitted on March 3; the proof of residence requested on March 18 was uploaded on March 21 and confirmed on March 22, so I ask that the assignment be checked and that either the complete application be forwarded or the still missing documents be named in writing." },
+            { "language": "fa", "text": "درخواست 24-418 در ۳ مارس ارائه شد؛ مدرک محل سکونت که در ۱۸ مارس خواسته شده بود در ۲۱ مارس بارگذاری و در ۲۲ مارس تأیید شد، بنابراین درخواست می‌کنم اتصال آن بررسی شود و یا درخواست کامل ارجاع شود یا مدارک هنوز ناقص به صورت کتبی نام برده شوند." },
+            { "language": "ar", "text": "قُدم الطلب 24-418 في 3 مارس؛ وإثبات السكن المطلوب في 18 مارس رُفع في 21 مارس وتم تأكيده في 22 مارس، لذلك أطلب التحقق من ربطه وإما إحالة الطلب المكتمل أو تسمية المستندات التي ما زالت ناقصة كتابياً." },
+            { "language": "tr", "text": "24-418 numaralı başvuru 3 Mart'ta yapıldı; 18 Mart'ta istenen ikamet belgesi 21 Mart'ta yüklendi ve 22 Mart'ta onaylandı, bu nedenle eşleştirmenin kontrol edilmesini ve ya tamamlanmış başvurunun iletilmesini ya da hâlâ eksik belgelerin yazılı olarak belirtilmesini rica ederim." },
+            { "language": "ru", "text": "Заявление 24-418 было подано 3 марта; подтверждение места жительства, запрошенное 18 марта, было загружено 21 марта и подтверждено 22 марта, поэтому прошу проверить привязку и либо передать полный пакет, либо письменно назвать ещё отсутствующие документы." },
+            { "language": "ckb", "text": "داواکاری 24-418 لە ٣ی ئادار پێشکەش کرا؛ بەڵگەی شوێنی نیشتەجێبوون کە لە ١٨ی ئادار داوا کرابوو لە ٢١ی ئادار بارکرا و لە ٢٢ی ئادار پشتڕاست کرایەوە، بۆیە داوا دەکەم بەستنەوەکە بپشکنرێت و یان داواکاری تەواو بنێردرێت یان بەڵگەکانی هێشتا کەم بە نووسراو ناو ببرێن." },
+            { "language": "kmr", "text": "Daxwaznameya 24-418 di 3ê Adarê de hate şandin; belgeya niştecihbûnê ya di 18ê Adarê de hatî xwestin di 21ê Adarê de hate barkirin û di 22ê Adarê de hate piştrastkirin, ji ber vê yekê ez daxwaz dikim girêdan bê kontrolkirin û an daxwaznameya temam were şandin an belgeyên hîn kêm bi nivîskî werin navkirin." },
+            { "language": "pl", "text": "Wniosek 24-418 został złożony 3 marca; potwierdzenie miejsca zamieszkania wymagane 18 marca zostało wgrane 21 marca i potwierdzone 22 marca, dlatego proszę o sprawdzenie przypisania oraz albo przekazanie kompletnego wniosku, albo pisemne wskazanie nadal brakujących dokumentów." },
+            { "language": "ro", "text": "Cererea 24-418 a fost depusă pe 3 martie; dovada domiciliului solicitată pe 18 martie a fost încărcată pe 21 martie și confirmată pe 22 martie, de aceea solicit verificarea atribuirii și fie transmiterea cererii complete, fie indicarea în scris a documentelor care încă lipsesc." },
+            { "language": "sq", "text": "Kërkesa 24-418 u dorëzua më 3 mars; dëshmia e vendbanimit e kërkuar më 18 mars u ngarkua më 21 mars dhe u konfirmua më 22 mars, prandaj kërkoj të kontrollohet lidhja dhe ose kërkesa e plotë të përcillet, ose dokumentet që ende mungojnë të emërtohen me shkrim." }
+          ],
+          "function": "file-ready-summary",
+          "toneNote": "präzise, aktenfähig",
+          "expectedLearnerAction": "Chronologie und gewünschte Entscheidung verdichten"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Es geht um Aktenzeichen 24-418: Antrag gestellt, Nachweis nachgereicht, offen ist die Vollständigkeit und Weiterleitung.",
+              "translations": [
+                { "language": "en", "text": "It concerns file number 24-418: application submitted, proof supplied later, completeness and forwarding are open." },
+                { "language": "fa", "text": "موضوع شماره پرونده 24-418 است: درخواست ثبت شده، مدرک تکمیلی ارسال شده، کامل بودن و ارجاع هنوز باز است." },
+                { "language": "ar", "text": "يتعلق الأمر برقم الملف 24-418: قُدم الطلب، واستُكمل الإثبات لاحقاً، وما زالت مسألة الاكتمال والإحالة مفتوحة." },
+                { "language": "tr", "text": "Konu 24-418 dosya numarasıyla ilgili: başvuru yapıldı, belge sonradan sunuldu, tamlık ve iletme açık." },
+                { "language": "ru", "text": "Речь о деле 24-418: заявление подано, документ дослан, открыты полнота и передача дальше." },
+                { "language": "ckb", "text": "بابەتەکە ژمارەی کەیسی 24-418ە: داواکاری پێشکەش کراوە، بەڵگە دوایی نێردراوە، تەواوبوون و ناردنەوە کراوەن." },
+                { "language": "kmr", "text": "Mijar li ser dosyeya 24-418 e: daxwazname hatî şandin, belge paşê hatî şandin, temambûn û şandin hîn vekirî ne." },
+                { "language": "pl", "text": "Chodzi o numer akt 24-418: wniosek złożony, dokument dosłany, otwarte są kompletność i przekazanie." },
+                { "language": "ro", "text": "Este vorba despre dosarul 24-418: cerere depusă, dovadă trimisă ulterior, completitudinea și transmiterea sunt deschise." },
+                { "language": "sq", "text": "Bëhet fjalë për dosjen 24-418: kërkesa u dorëzua, dëshmia u dërgua më pas, plotësia dhe përcjellja janë ende të hapura." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ordnet den Fall sofort nach Aktenzeichen, Handlung und offenem Punkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer immediately organizes the case by file number, action, and open point." },
+                { "language": "fa", "text": "قوی: پاسخ پرونده را فوراً بر اساس شماره پرونده، اقدام و نقطه باز مرتب می‌کند." },
+                { "language": "ar", "text": "قوي: تنظم الإجابة الحالة فوراً حسب رقم الملف والإجراء والنقطة المفتوحة." },
+                { "language": "tr", "text": "Güçlü: Yanıt dosyayı hemen dosya numarası, işlem ve açık nokta üzerinden düzenliyor." },
+                { "language": "ru", "text": "Сильно: ответ сразу структурирует дело по номеру, действию и открытому пункту." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کەیسەکە دەستبەجێ بە ژمارەی کەیس، کردار و خاڵی کراوە ڕێک دەخات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv dozê tavilê bi jimareya dosyeyê, kiryar û xala vekirî rêxistin dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź od razu porządkuje sprawę według numeru akt, działania i punktu otwartego." },
+                { "language": "ro", "text": "Puternic: răspunsul organizează imediat cazul după număr de dosar, acțiune și punct deschis." },
+                { "language": "sq", "text": "E fortë: përgjigjja e rendit menjëherë rastin sipas numrit të dosjes, veprimit dhe pikës së hapur." }
+              ],
+              "explanationKey": "case-opening-structure"
+            },
+            {
+              "id": "weak-long-story",
+              "text": "Ich habe schon mehrmals etwas geschickt und warte seit Wochen, aber der Status ändert sich einfach nicht.",
+              "translations": [
+                { "language": "en", "text": "I have sent something several times and have been waiting for weeks, but the status simply does not change." },
+                { "language": "fa", "text": "من چند بار چیزی فرستاده‌ام و هفته‌هاست منتظرم، اما وضعیت اصلاً تغییر نمی‌کند." },
+                { "language": "ar", "text": "لقد أرسلت شيئاً عدة مرات وأنتظر منذ أسابيع، لكن الحالة لا تتغير أبداً." },
+                { "language": "tr", "text": "Birkaç kez bir şey gönderdim ve haftalardır bekliyorum, ama durum hiç değişmiyor." },
+                { "language": "ru", "text": "Я уже несколько раз что-то отправлял и жду неделями, но статус просто не меняется." },
+                { "language": "ckb", "text": "چەند جار شتێکم ناردووە و چەند هەفتەیە چاوەڕێم، بەڵام دۆخەکە هەر ناگۆڕێت." },
+                { "language": "kmr", "text": "Min çend caran tiştek şandiye û çend hefte ye ez li bendê me, lê rewş qet naguherê." },
+                { "language": "pl", "text": "Wysyłałem już coś kilka razy i czekam od tygodni, ale status po prostu się nie zmienia." },
+                { "language": "ro", "text": "Am trimis deja ceva de mai multe ori și aștept de săptămâni, dar statusul pur și simplu nu se schimbă." },
+                { "language": "sq", "text": "Kam dërguar diçka disa herë dhe po pres prej javësh, por statusi thjesht nuk ndryshon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nachvollziehbar, aber zu ungeordnet: Die Behörde bekommt weder Aktenzeichen noch klare Prüffrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable but too unstructured: The office gets neither a file number nor a clear checking question." },
+                { "language": "fa", "text": "قابل فهم اما بی‌ساختار است: اداره نه شماره پرونده می‌گیرد و نه سؤال بررسی روشن." },
+                { "language": "ar", "text": "مفهوم لكنه غير منظم: لا تحصل الجهة على رقم ملف ولا سؤال فحص واضح." },
+                { "language": "tr", "text": "Anlaşılır ama fazla düzensiz: Kurum ne dosya numarası ne de açık bir kontrol sorusu alıyor." },
+                { "language": "ru", "text": "Понятно, но слишком неструктурированно: ведомство не получает ни номера дела, ни ясного вопроса для проверки." },
+                { "language": "ckb", "text": "تێگەیشتراوە بەڵام زۆر بێ ڕێکخستنە: فەرمانگە نە ژمارەی کەیس و نە پرسیاری پشکنینی ڕوون وەردەگرێت." },
+                { "language": "kmr", "text": "Têgihiştbar e lê pir bê rêxistin e: Sazî ne jimareya dosyeyê û ne pirsa kontrolê ya zelal distîne." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt nieuporządkowane: urząd nie otrzymuje ani numeru akt, ani jasnego pytania do sprawdzenia." },
+                { "language": "ro", "text": "De înțeles, dar prea nestructurat: autoritatea nu primește nici număr de dosar, nici întrebare clară de verificare." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e paorganizuar: zyra nuk merr as numër dosjeje, as pyetje të qartë kontrolli." }
+              ],
+              "explanationKey": "unstructured-opening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "3. März Antrag, 18. März Nachforderung, 21. März Upload, 22. März Eingangsbestätigung, seitdem Status unverändert.",
+              "translations": [
+                { "language": "en", "text": "March 3 application, March 18 request, March 21 upload, March 22 confirmation of receipt, status unchanged since then." },
+                { "language": "fa", "text": "۳ مارس درخواست، ۱۸ مارس درخواست تکمیل، ۲۱ مارس بارگذاری، ۲۲ مارس تأیید دریافت، از آن زمان وضعیت بدون تغییر." },
+                { "language": "ar", "text": "3 مارس الطلب، 18 مارس طلب الاستكمال، 21 مارس رفع الملف، 22 مارس تأكيد الاستلام، ومنذ ذلك الحين الحالة بلا تغيير." },
+                { "language": "tr", "text": "3 Mart başvuru, 18 Mart ek talep, 21 Mart yükleme, 22 Mart alındı onayı, o zamandan beri durum değişmedi." },
+                { "language": "ru", "text": "3 марта заявление, 18 марта запрос, 21 марта загрузка, 22 марта подтверждение получения, с тех пор статус без изменений." },
+                { "language": "ckb", "text": "٣ی ئادار داواکاری، ١٨ی ئادار داواکاری زیادە، ٢١ی ئادار بارکردن، ٢٢ی ئادار پشتڕاستکردنەوەی وەرگرتن، لەو کاتەوە دۆخ نەگۆڕاوە." },
+                { "language": "kmr", "text": "3ê Adarê daxwazname, 18ê Adarê daxwaza zêde, 21ê Adarê barkirin, 22ê Adarê piştrastkirina wergirtinê, ji wê demê ve rewş neguheriye." },
+                { "language": "pl", "text": "3 marca wniosek, 18 marca wezwanie, 21 marca wgranie, 22 marca potwierdzenie wpływu, od tego czasu status bez zmian." },
+                { "language": "ro", "text": "3 martie cerere, 18 martie solicitare, 21 martie încărcare, 22 martie confirmare de primire, de atunci status neschimbat." },
+                { "language": "sq", "text": "3 mars kërkesa, 18 mars kërkesa për plotësim, 21 mars ngarkimi, 22 mars konfirmimi i pranimit, që atëherë statusi pa ndryshim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist chronologisch und prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer is chronological and checkable." },
+                { "language": "fa", "text": "قوی: پاسخ زمان‌بندی‌شده و قابل بررسی است." },
+                { "language": "ar", "text": "قوي: الإجابة مرتبة زمنياً وقابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: Yanıt kronolojik ve kontrol edilebilir." },
+                { "language": "ru", "text": "Сильно: ответ хронологичен и проверяем." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کات‌بەندی کراو و پشکنراوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv kronolojîk û kontrolbar e." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest chronologiczna i sprawdzalna." },
+                { "language": "ro", "text": "Puternic: răspunsul este cronologic și verificabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja është kronologjike dhe e verifikueshme." }
+              ],
+              "explanationKey": "chronological-summary"
+            },
+            {
+              "id": "weak-date-overload",
+              "text": "Ich glaube, es war irgendwann Anfang März, dann kam noch eine Nachricht, und danach habe ich die Datei ziemlich schnell hochgeladen.",
+              "translations": [
+                { "language": "en", "text": "I think it was sometime in early March, then another message came, and after that I uploaded the file fairly quickly." },
+                { "language": "fa", "text": "فکر می‌کنم اوایل مارس بود، بعد یک پیام دیگر آمد و بعد از آن فایل را نسبتاً سریع بارگذاری کردم." },
+                { "language": "ar", "text": "أعتقد أن ذلك كان في وقت ما في بداية مارس، ثم وصلت رسالة أخرى، وبعد ذلك رفعت الملف بسرعة نسبية." },
+                { "language": "tr", "text": "Sanırım Mart başlarında bir zamandı, sonra başka bir mesaj geldi ve ardından dosyayı oldukça hızlı yükledim." },
+                { "language": "ru", "text": "Кажется, это было где-то в начале марта, потом пришло ещё одно сообщение, а после этого я довольно быстро загрузил файл." },
+                { "language": "ckb", "text": "پێم وایە لە سەرەتای ئاداردا بوو، پاشان پەیامێکی تر هات و دوای ئەوە فایلەکەم زۆر خێرا بارکرد." },
+                { "language": "kmr", "text": "Ez difikirim ew li destpêka Adarê bû, paşê peyameke din hat û piştî wê min pel bi lez barkir." },
+                { "language": "pl", "text": "Myślę, że to było jakoś na początku marca, potem przyszła jeszcze wiadomość, a później dość szybko wgrałem plik." },
+                { "language": "ro", "text": "Cred că a fost cândva la începutul lui martie, apoi a venit încă un mesaj, iar după aceea am încărcat fișierul destul de repede." },
+                { "language": "sq", "text": "Mendoj se ishte diku në fillim të marsit, pastaj erdhi edhe një mesazh, dhe më pas e ngarkova skedarin mjaft shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort klingt glaubwürdig, lässt aber die Daten nicht zuverlässig prüfen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: The answer sounds believable but does not allow the dates to be checked reliably." },
+                { "language": "fa", "text": "بیش از حد نام دقیق است: پاسخ قابل باور است، اما اجازه نمی‌دهد تاریخ‌ها قابل اتکا بررسی شوند." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: تبدو الإجابة قابلة للتصديق لكنها لا تسمح بفحص التواريخ بشكل موثوق." },
+                { "language": "tr", "text": "Fazla belirsiz: Yanıt inandırıcı geliyor, ama tarihlerin güvenilir biçimde kontrol edilmesini sağlamıyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ звучит правдоподобно, но не позволяет надёжно проверить даты." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە باوەڕپێکراو دەنگ دەدات، بەڵام ڕێگە نادات بەروارەکان بە پشتڕاستی بپشکنرێن." },
+                { "language": "kmr", "text": "Pir nezelal e: Bersiv bawerbar dixuye, lê rê nade dîrok bi pêbawerî werin kontrolkirin." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: odpowiedź brzmi wiarygodnie, ale nie pozwala rzetelnie sprawdzić dat." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul pare credibil, dar nu permite verificarea fiabilă a datelor." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja tingëllon e besueshme, por nuk lejon kontroll të besueshëm të datave." }
+              ],
+              "explanationKey": "imprecise-timeline"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich habe Online-Bestätigung, Nachforderung, Eingangsbestätigung und den Wohnsitznachweis als PDF dabei.",
+              "translations": [
+                { "language": "en", "text": "I have the online confirmation, the request for additional submission, the confirmation of receipt, and the proof of residence as a PDF with me." },
+                { "language": "fa", "text": "تأییدیه آنلاین، درخواست تکمیل، تأیید دریافت و مدرک محل سکونت را به صورت PDF همراه دارم." },
+                { "language": "ar", "text": "لدي التأكيد الإلكتروني وطلب الاستكمال وتأكيد الاستلام وإثبات السكن بصيغة PDF." },
+                { "language": "tr", "text": "Çevrimiçi onay, ek belge talebi, alındı onayı ve ikamet belgesi PDF olarak yanımda." },
+                { "language": "ru", "text": "У меня есть онлайн-подтверждение, запрос на досылку, подтверждение получения и подтверждение места жительства в PDF." },
+                { "language": "ckb", "text": "پشتڕاستکردنەوەی ئۆنلاین، داواکاری پێشکەشکردنی زیادە، پشتڕاستکردنەوەی وەرگرتن و بەڵگەی شوێنی نیشتەجێبوون وەک PDF لەگەڵدایە." },
+                { "language": "kmr", "text": "Piştrastkirina online, daxwaza şandina zêde, piştrastkirina wergirtinê û belgeya niştecihbûnê wek PDF li cem min hene." },
+                { "language": "pl", "text": "Mam przy sobie potwierdzenie online, wezwanie do uzupełnienia, potwierdzenie wpływu i potwierdzenie miejsca zamieszkania jako PDF." },
+                { "language": "ro", "text": "Am la mine confirmarea online, solicitarea de completare, confirmarea de primire și dovada domiciliului ca PDF." },
+                { "language": "sq", "text": "Kam me vete konfirmimin online, kërkesën për plotësim, konfirmimin e pranimit dhe dëshminë e vendbanimit si PDF." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt Dokumente nach Funktion und bietet eine sofortige Lösung an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names documents by function and offers an immediate solution." },
+                { "language": "fa", "text": "قوی: پاسخ مدارک را بر اساس نقششان نام می‌برد و راه‌حل فوری پیشنهاد می‌دهد." },
+                { "language": "ar", "text": "قوي: تسمي الإجابة المستندات حسب وظيفتها وتقدم حلاً فورياً." },
+                { "language": "tr", "text": "Güçlü: Yanıt belgeleri işlevlerine göre adlandırıyor ve hemen çözüm öneriyor." },
+                { "language": "ru", "text": "Сильно: ответ называет документы по функции и предлагает немедленное решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەڵگەکان بە پێی ڕۆڵیان ناو دەبات و چارەسەری دەستبەجێ پێشنیار دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv belgeyan li gorî fonksiyonê bi nav dike û çareseriyeke tavilê pêşniyar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa dokumenty według funkcji i proponuje natychmiastowe rozwiązanie." },
+                { "language": "ro", "text": "Puternic: răspunsul numește documentele după funcție și oferă o soluție imediată." },
+                { "language": "sq", "text": "E fortë: përgjigjja i emërton dokumentet sipas funksionit dhe ofron zgjidhje të menjëhershme." }
+              ],
+              "explanationKey": "documents-by-function"
+            },
+            {
+              "id": "weak-unsorted-documents",
+              "text": "Ich habe alle E-Mails und Dateien irgendwo auf dem Telefon und kann danach suchen.",
+              "translations": [
+                { "language": "en", "text": "I have all emails and files somewhere on my phone and can search for them." },
+                { "language": "fa", "text": "همه ایمیل‌ها و فایل‌ها را جایی روی تلفن دارم و می‌توانم دنبالش بگردم." },
+                { "language": "ar", "text": "لدي كل الرسائل والملفات في مكان ما على الهاتف ويمكنني البحث عنها." },
+                { "language": "tr", "text": "Tüm e-postalar ve dosyalar telefonda bir yerde var, arayabilirim." },
+                { "language": "ru", "text": "Все письма и файлы где-то на телефоне, я могу поискать." },
+                { "language": "ckb", "text": "هەموو ئیمەیڵ و فایلەکان لە شوێنێک لەسەر تەلەفۆنەکەم هەن و دەتوانم بگەڕێم." },
+                { "language": "kmr", "text": "Hemû e-name û pel li cihêkî li ser telefonê min hene û ez dikarim lê bigerim." },
+                { "language": "pl", "text": "Mam wszystkie maile i pliki gdzieś w telefonie i mogę ich poszukać." },
+                { "language": "ro", "text": "Am toate e-mailurile și fișierele pe undeva în telefon și pot să le caut." },
+                { "language": "sq", "text": "I kam të gjitha email-et dhe skedarët diku në telefon dhe mund t'i kërkoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unsortiert: Die Antwort ist hilfsbereit, kostet aber Zeit und benennt die Nachweise nicht prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unsorted: The answer is helpful but costs time and does not name the documents in a checkable way." },
+                { "language": "fa", "text": "بیش از حد نامرتب است: پاسخ کمک‌کننده است، اما وقت می‌گیرد و مدارک را قابل بررسی نام نمی‌برد." },
+                { "language": "ar", "text": "غير مرتب كفاية: الإجابة مفيدة لكنها تستهلك وقتاً ولا تسمي المستندات بطريقة قابلة للفحص." },
+                { "language": "tr", "text": "Fazla dağınık: Yanıt yardımcı ama zaman alır ve belgeleri kontrol edilebilir biçimde adlandırmaz." },
+                { "language": "ru", "text": "Слишком неупорядоченно: ответ готов помочь, но отнимает время и не называет документы проверяемо." },
+                { "language": "ckb", "text": "زۆر بێ ڕێکخستنە: وەڵامەکە یارمەتیدەرە، بەڵام کات دەبات و بەڵگەکان بە شێوەی پشکنراو ناو نابێت." },
+                { "language": "kmr", "text": "Pir bê rêxistin e: Bersiv alîkar e, lê dem dixwe û belgeyan bi awayekî kontrolbar bi nav nake." },
+                { "language": "pl", "text": "Zbyt nieuporządkowane: odpowiedź jest pomocna, ale zabiera czas i nie nazywa dokumentów sprawdzalnie." },
+                { "language": "ro", "text": "Prea nesortat: răspunsul este util, dar consumă timp și nu numește documentele verificabil." },
+                { "language": "sq", "text": "Shumë e paorganizuar: përgjigjja është ndihmuese, por merr kohë dhe nuk i emërton dokumentet në mënyrë të verifikueshme." }
+              ],
+              "explanationKey": "unsorted-documents"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Bitte prüfen wir erst, ob die Datei auffindbar ist; falls nicht, sende ich den Nachweis jetzt erneut mit Aktenzeichen.",
+              "translations": [
+                { "language": "en", "text": "Please let us first check whether the file can be found; if not, I will resend the proof now with the file number." },
+                { "language": "fa", "text": "لطفاً اول بررسی کنیم آیا فایل قابل پیدا کردن است؛ اگر نه، همین حالا مدرک را با شماره پرونده دوباره ارسال می‌کنم." },
+                { "language": "ar", "text": "لنراجع أولاً ما إذا كان يمكن العثور على الملف؛ وإذا لم يكن كذلك فسأرسل الإثبات الآن مجدداً مع رقم الملف." },
+                { "language": "tr", "text": "Lütfen önce dosyanın bulunup bulunamadığını kontrol edelim; bulunamazsa belgeyi şimdi dosya numarasıyla tekrar gönderirim." },
+                { "language": "ru", "text": "Давайте сначала проверим, можно ли найти файл; если нет, я сейчас повторно отправлю документ с номером дела." },
+                { "language": "ckb", "text": "تکایە سەرەتا بپشکنین ئایا فایلەکە دۆزرایەوە؛ ئەگەر نا، ئێستا بەڵگەکە بە ژمارەی کەیس دووبارە دەنێرم." },
+                { "language": "kmr", "text": "Kerema xwe pêşî kontrol bikin ka pel tê dîtin; heke na, ez niha belgeyê bi jimareya dosyeyê dîsa dişînim." },
+                { "language": "pl", "text": "Proszę najpierw sprawdzić, czy plik jest odnajdywalny; jeśli nie, wyślę teraz dokument ponownie z numerem akt." },
+                { "language": "ro", "text": "Vă rog să verificăm mai întâi dacă fișierul poate fi găsit; dacă nu, retrimit acum dovada cu numărul de dosar." },
+                { "language": "sq", "text": "Ju lutem, së pari të kontrollojmë nëse skedari mund të gjendet; nëse jo, e ridërgoj tani dëshminë me numrin e dosjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zerlegt den offenen Punkt in Prüfung und sofortige Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer splits the open point into a check and an immediate solution." },
+                { "language": "fa", "text": "قوی: پاسخ نقطه باز را به بررسی و راه‌حل فوری تقسیم می‌کند." },
+                { "language": "ar", "text": "قوي: تقسم الإجابة النقطة المفتوحة إلى فحص وحل فوري." },
+                { "language": "tr", "text": "Güçlü: Yanıt açık noktayı kontrol ve anında çözüm olarak ikiye ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ делит открытый вопрос на проверку и немедленное решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە خاڵی کراوە دەکات بە پشکنین و چارەسەری دەستبەجێ." },
+                { "language": "kmr", "text": "Xurt e: Bersiv xala vekirî dike kontrol û çareseriya tavilê." },
+                { "language": "pl", "text": "Mocne: odpowiedź dzieli punkt otwarty na sprawdzenie i natychmiastowe rozwiązanie." },
+                { "language": "ro", "text": "Puternic: răspunsul împarte punctul deschis în verificare și soluție imediată." },
+                { "language": "sq", "text": "E fortë: përgjigjja e ndan pikën e hapur në kontroll dhe zgjidhje të menjëhershme." }
+              ],
+              "explanationKey": "check-and-fix"
+            },
+            {
+              "id": "weak-blame-system",
+              "text": "Dann muss im System ein Fehler sein, denn ich habe die Datei definitiv hochgeladen.",
+              "translations": [
+                { "language": "en", "text": "Then there must be an error in the system, because I definitely uploaded the file." },
+                { "language": "fa", "text": "پس حتماً در سیستم خطایی هست، چون من قطعاً فایل را بارگذاری کرده‌ام." },
+                { "language": "ar", "text": "إذن لا بد أن هناك خطأ في النظام، لأنني رفعت الملف بالتأكيد." },
+                { "language": "tr", "text": "O zaman sistemde bir hata olmalı, çünkü dosyayı kesinlikle yükledim." },
+                { "language": "ru", "text": "Тогда в системе должна быть ошибка, потому что я точно загрузил файл." },
+                { "language": "ckb", "text": "ئەوا حەتمەن هەڵەیەک لە سیستەمدا هەیە، چونکە من بە دڵنیایی فایلەکەم بارکردووە." },
+                { "language": "kmr", "text": "Wê demê divê di pergalê de xeletiyek hebe, ji ber ku min pel bi teqezî barkiriye." },
+                { "language": "pl", "text": "W takim razie musi być błąd w systemie, bo na pewno wgrałem plik." },
+                { "language": "ro", "text": "Atunci trebuie să fie o eroare în sistem, pentru că sigur am încărcat fișierul." },
+                { "language": "sq", "text": "Atëherë duhet të ketë një gabim në sistem, sepse unë e kam ngarkuar patjetër skedarin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu konfrontativ: Die Aussage kann stimmen, hilft aber weniger als eine konkrete Prüf- und Nachreichoption.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too confrontational: The statement may be true, but it helps less than a concrete check and resubmission option." },
+                { "language": "fa", "text": "بیش از حد تقابلی است: ممکن است حرف درست باشد، اما کمتر از یک گزینه بررسی و ارسال دوباره کمک می‌کند." },
+                { "language": "ar", "text": "تصادمي أكثر من اللازم: قد تكون العبارة صحيحة، لكنها أقل فائدة من خيار فحص وإعادة إرسال محدد." },
+                { "language": "tr", "text": "Fazla karşı karşıya getirici: İfade doğru olabilir, ama somut kontrol ve yeniden gönderme seçeneğinden daha az yardımcı olur." },
+                { "language": "ru", "text": "Слишком конфронтационно: утверждение может быть верным, но помогает меньше, чем конкретная проверка и возможность повторной отправки." },
+                { "language": "ckb", "text": "زۆر ڕووبەڕووانەیە: قسەکە لەوانەیە ڕاست بێت، بەڵام لە هەڵبژاردەی پشکنین و دووبارە ناردنی دیاریکراو کەمتر یارمەتی دەدات." },
+                { "language": "kmr", "text": "Pir rûbirû ye: Gotin dikare rast be, lê ji bijardeya kontrol û şandina dîsa ya şênber kêmtir alîkar e." },
+                { "language": "pl", "text": "Zbyt konfrontacyjne: stwierdzenie może być prawdziwe, ale mniej pomaga niż konkretna opcja sprawdzenia i ponownego dosłania." },
+                { "language": "ro", "text": "Prea confruntativ: afirmația poate fi adevărată, dar ajută mai puțin decât o opțiune concretă de verificare și retrimitere." },
+                { "language": "sq", "text": "Shumë konfrontuese: pohimi mund të jetë i vërtetë, por ndihmon më pak se një opsion konkret kontrolli dhe ridërgimi." }
+              ],
+              "explanationKey": "system-blame"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich bitte entweder um Weiterleitung des vollständigen Antrags oder um schriftliche Benennung der fehlenden Unterlagen.",
+              "translations": [
+                { "language": "en", "text": "I ask either for the complete application to be forwarded or for the missing documents to be named in writing." },
+                { "language": "fa", "text": "درخواست می‌کنم یا درخواست کامل ارجاع شود یا مدارک ناقص به صورت کتبی نام برده شوند." },
+                { "language": "ar", "text": "أطلب إما إحالة الطلب المكتمل أو تسمية المستندات الناقصة كتابياً." },
+                { "language": "tr", "text": "Ya tamamlanmış başvurunun iletilmesini ya da eksik belgelerin yazılı olarak belirtilmesini rica ederim." },
+                { "language": "ru", "text": "Я прошу либо передать полный пакет, либо письменно назвать отсутствующие документы." },
+                { "language": "ckb", "text": "داوا دەکەم یان داواکاری تەواو بنێردرێت یان بەڵگە کەمەکان بە نووسراو ناو ببرێن." },
+                { "language": "kmr", "text": "Ez daxwaz dikim an daxwaznameya temam were şandin an belgeyên kêm bi nivîskî werin navkirin." },
+                { "language": "pl", "text": "Proszę albo o przekazanie kompletnego wniosku, albo o pisemne wskazanie brakujących dokumentów." },
+                { "language": "ro", "text": "Solicit fie transmiterea cererii complete, fie indicarea în scris a documentelor lipsă." },
+                { "language": "sq", "text": "Kërkoj ose përcjelljen e kërkesës së plotë, ose emërtimin me shkrim të dokumenteve që mungojnë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt ein klares Ziel und eine sinnvolle Alternative.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names a clear goal and a useful alternative." },
+                { "language": "fa", "text": "قوی: پاسخ یک هدف روشن و یک جایگزین منطقی نام می‌برد." },
+                { "language": "ar", "text": "قوي: تسمي الإجابة هدفاً واضحاً وبديلاً مفيداً." },
+                { "language": "tr", "text": "Güçlü: Yanıt net bir hedef ve anlamlı bir alternatif belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ называет ясную цель и разумную альтернативу." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئامانجێکی ڕوون و جێگرەوەیەکی گونجاو ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv armanceke zelal û alternatîfeke watedar bi nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź wskazuje jasny cel i sensowną alternatywę." },
+                { "language": "ro", "text": "Puternic: răspunsul numește un scop clar și o alternativă utilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja emërton një qëllim të qartë dhe një alternativë të dobishme." }
+              ],
+              "explanationKey": "requested-outcome-clear"
+            },
+            {
+              "id": "weak-status-only",
+              "text": "Ich möchte einfach wissen, warum es so lange dauert.",
+              "translations": [
+                { "language": "en", "text": "I simply want to know why it is taking so long." },
+                { "language": "fa", "text": "فقط می‌خواهم بدانم چرا این‌قدر طول کشیده است." },
+                { "language": "ar", "text": "أريد فقط أن أعرف لماذا يستغرق الأمر كل هذا الوقت." },
+                { "language": "tr", "text": "Sadece neden bu kadar uzun sürdüğünü bilmek istiyorum." },
+                { "language": "ru", "text": "Я просто хочу знать, почему это так долго длится." },
+                { "language": "ckb", "text": "تەنها دەمەوێت بزانم بۆچی ئەوەندە کاتی بردووە." },
+                { "language": "kmr", "text": "Ez tenê dixwazim bizanim çima ev qas dirêj dibe." },
+                { "language": "pl", "text": "Chcę po prostu wiedzieć, dlaczego to tak długo trwa." },
+                { "language": "ro", "text": "Vreau doar să știu de ce durează atât de mult." },
+                { "language": "sq", "text": "Dua thjesht të di pse po zgjat kaq shumë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu wenig handlungsorientiert: Die Behörde weiß nicht, ob Sie Auskunft, Weiterleitung oder Nachforderung brauchen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable but not action-oriented enough: The office does not know whether you need information, forwarding, or a request for missing documents." },
+                { "language": "fa", "text": "قابل فهم اما به اندازه کافی اقدام‌محور نیست: اداره نمی‌داند شما اطلاع، ارجاع یا درخواست مدرک ناقص می‌خواهید." },
+                { "language": "ar", "text": "مفهوم لكنه غير موجه نحو إجراء كفاية: لا تعرف الجهة هل تحتاج إلى معلومة أم إحالة أم طلب مستندات ناقصة." },
+                { "language": "tr", "text": "Anlaşılır ama yeterince eylem odaklı değil: Kurum bilgi mi, iletme mi yoksa eksik belge talebi mi istediğinizi bilmiyor." },
+                { "language": "ru", "text": "Понятно, но недостаточно ориентировано на действие: ведомство не знает, нужна ли вам информация, передача или запрос недостающих документов." },
+                { "language": "ckb", "text": "تێگەیشتراوە بەڵام بەس کردارمحور نییە: فەرمانگە نازانێت زانیاری، ناردنەوە یان داواکاری بەڵگەی کەم دەتەوێت." },
+                { "language": "kmr", "text": "Têgihiştbar e lê têr kiryar-berbiçav nîne: Sazî nizane hûn agahî, şandin an daxwaza belgeyên kêm dixwazin." },
+                { "language": "pl", "text": "Zrozumiałe, ale za mało ukierunkowane na działanie: urząd nie wie, czy potrzebuje Pan informacji, przekazania czy wezwania do uzupełnienia." },
+                { "language": "ro", "text": "De înțeles, dar insuficient orientat spre acțiune: autoritatea nu știe dacă aveți nevoie de informații, transmitere sau solicitare de documente lipsă." },
+                { "language": "sq", "text": "E kuptueshme, por jo mjaft e orientuar drejt veprimit: zyra nuk e di nëse keni nevojë për informacion, përcjellje apo kërkesë për dokumente që mungojnë." }
+              ],
+              "explanationKey": "status-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Antrag wurde gestellt, der Nachweis wurde bestätigt; bitte prüfen Sie die Zuordnung und leiten Sie den Antrag weiter oder benennen Sie fehlende Unterlagen schriftlich.",
+              "translations": [
+                { "language": "en", "text": "The application was submitted, the proof was confirmed; please check the assignment and forward the application or name missing documents in writing." },
+                { "language": "fa", "text": "درخواست ثبت شده، مدرک تأیید شده است؛ لطفاً اتصال آن را بررسی کنید و درخواست را ارجاع دهید یا مدارک ناقص را کتبی نام ببرید." },
+                { "language": "ar", "text": "قُدم الطلب وتم تأكيد الإثبات؛ يرجى فحص الربط وإحالة الطلب أو تسمية المستندات الناقصة كتابياً." },
+                { "language": "tr", "text": "Başvuru yapıldı, belge onaylandı; lütfen eşleştirmeyi kontrol edin ve başvuruyu iletin ya da eksik belgeleri yazılı olarak belirtin." },
+                { "language": "ru", "text": "Заявление подано, документ подтверждён; пожалуйста, проверьте привязку и передайте заявление дальше или письменно назовите недостающие документы." },
+                { "language": "ckb", "text": "داواکاری پێشکەش کراوە، بەڵگە پشتڕاست کراوە؛ تکایە بەستنەوەکە بپشکنە و داواکارییەکە بنێرەوە یان بەڵگەی کەم بە نووسراو ناو ببە." },
+                { "language": "kmr", "text": "Daxwazname hatî şandin, belge hatî piştrastkirin; kerema xwe girêdanê kontrol bikin û daxwazname bişînin an belgeyên kêm bi nivîskî bi nav bikin." },
+                { "language": "pl", "text": "Wniosek został złożony, dokument potwierdzony; proszę sprawdzić przypisanie i przekazać wniosek albo pisemnie wskazać brakujące dokumenty." },
+                { "language": "ro", "text": "Cererea a fost depusă, dovada a fost confirmată; vă rog să verificați atribuirea și să transmiteți cererea sau să indicați în scris documentele lipsă." },
+                { "language": "sq", "text": "Kërkesa u dorëzua, dëshmia u konfirmua; ju lutem kontrolloni lidhjen dhe përcillni kërkesën ose emërtoni me shkrim dokumentet që mungojnë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung ist kurz, aktenfähig und entscheidungsorientiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary is brief, suitable for the file, and decision-oriented." },
+                { "language": "fa", "text": "قوی: خلاصه کوتاه، مناسب ثبت در پرونده و تصمیم‌محور است." },
+                { "language": "ar", "text": "قوي: الملخص قصير ومناسب للملف وموجه نحو القرار." },
+                { "language": "tr", "text": "Güçlü: Özet kısa, dosyaya uygun ve karar odaklı." },
+                { "language": "ru", "text": "Сильно: резюме краткое, пригодное для дела и ориентировано на решение." },
+                { "language": "ckb", "text": "بەهێزە: پوختەکە کورتە، بۆ کەیس گونجاوە و بڕیارمحورە." },
+                { "language": "kmr", "text": "Xurt e: Kurte kurt, ji bo dosyeyê guncaw û biryar-berbiçav e." },
+                { "language": "pl", "text": "Mocne: podsumowanie jest krótkie, odpowiednie do akt i ukierunkowane na decyzję." },
+                { "language": "ro", "text": "Puternic: rezumatul este scurt, potrivit pentru dosar și orientat spre decizie." },
+                { "language": "sq", "text": "E fortë: përmbledhja është e shkurtër, e përshtatshme për dosje dhe e orientuar drejt vendimit." }
+              ],
+              "explanationKey": "file-ready-summary"
+            },
+            {
+              "id": "weak-emotional-summary",
+              "text": "Ich habe alles rechtzeitig gemacht und brauche jetzt endlich eine Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "I did everything on time and now finally need a response." },
+                { "language": "fa", "text": "من همه چیز را به‌موقع انجام داده‌ام و حالا بالاخره به یک پاسخ نیاز دارم." },
+                { "language": "ar", "text": "لقد فعلت كل شيء في الوقت المناسب وأحتاج الآن أخيراً إلى رد." },
+                { "language": "tr", "text": "Her şeyi zamanında yaptım ve artık nihayet bir yanıt almam gerekiyor." },
+                { "language": "ru", "text": "Я всё сделал вовремя и теперь наконец нуждаюсь в ответе." },
+                { "language": "ckb", "text": "من هەموو شتێکم لە کاتی خۆیدا کردووە و ئێستا بەڕاستی پێویستم بە وەڵامێکە." },
+                { "language": "kmr", "text": "Min her tişt di demê xwe de kiriye û niha dawî bersivekê dixwazim." },
+                { "language": "pl", "text": "Zrobiłem wszystko na czas i teraz wreszcie potrzebuję odpowiedzi." },
+                { "language": "ro", "text": "Am făcut totul la timp și acum am nevoie în sfârșit de un răspuns." },
+                { "language": "sq", "text": "I kam bërë të gjitha në kohë dhe tani më në fund kam nevojë për një përgjigje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber nicht aktenfähig: Die Zusammenfassung nennt weder Chronologie noch konkrete Entscheidungsoption.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but not suitable for the file: The summary names neither chronology nor a concrete decision option." },
+                { "language": "fa", "text": "قابل فهم اما مناسب پرونده نیست: خلاصه نه ترتیب زمانی را می‌گوید و نه گزینه تصمیم مشخص را." },
+                { "language": "ar", "text": "مفهوم لكنه غير مناسب للملف: لا يذكر الملخص لا التسلسل الزمني ولا خيار قرار محدداً." },
+                { "language": "tr", "text": "Anlaşılır ama dosyaya uygun değil: Özet ne kronoloji ne de somut karar seçeneği belirtiyor." },
+                { "language": "ru", "text": "Понятно, но непригодно для дела: резюме не называет ни хронологию, ни конкретный вариант решения." },
+                { "language": "ckb", "text": "تێگەیشتراوە بەڵام بۆ کەیس گونجاو نییە: پوختەکە نە ڕیزبەندی کات و نە هەڵبژاردەی بڕیاری دیاریکراو ناو دەبات." },
+                { "language": "kmr", "text": "Têgihiştbar e lê ji bo dosyeyê guncaw nîne: Kurte ne kronolojî û ne bijardeya biryara şênber bi nav dike." },
+                { "language": "pl", "text": "Zrozumiałe, ale nieodpowiednie do akt: podsumowanie nie podaje ani chronologii, ani konkretnej opcji decyzji." },
+                { "language": "ro", "text": "De înțeles, dar nepotrivit pentru dosar: rezumatul nu numește nici cronologia, nici o opțiune concretă de decizie." },
+                { "language": "sq", "text": "E kuptueshme, por jo e përshtatshme për dosje: përmbledhja nuk përmend as kronologjinë, as një opsion konkret vendimi." }
+              ],
+              "explanationKey": "not-file-ready"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "structure-note",
+          "text": "Bei komplexen Behördenfällen hilft eine klare Reihenfolge: Aktenzeichen, Anlass, bereits erledigte Schritte, offener Punkt.",
+          "translations": [
+            { "language": "en", "text": "In complex administrative cases, a clear order helps: file number, reason, steps already completed, open point." },
+            { "language": "fa", "text": "در پرونده‌های اداری پیچیده، ترتیب روشن کمک می‌کند: شماره پرونده، علت مراجعه، گام‌های انجام‌شده، نقطه باز." },
+            { "language": "ar", "text": "في الحالات الإدارية المعقدة يساعد ترتيب واضح: رقم الملف، السبب، الخطوات المنجزة، النقطة المفتوحة." },
+            { "language": "tr", "text": "Karmaşık idari dosyalarda net bir sıra yardımcı olur: dosya numarası, neden, tamamlanmış adımlar, açık nokta." },
+            { "language": "ru", "text": "В сложных административных делах помогает чёткий порядок: номер дела, причина, уже выполненные шаги, открытый пункт." },
+            { "language": "ckb", "text": "لە کەیسە ئاڵۆزەکانی فەرمانگەدا ڕیزێکی ڕوون یارمەتی دەدات: ژمارەی کەیس، هۆکار، هەنگاوە ئەنجامدراوەکان، خاڵی کراوە." },
+            { "language": "kmr", "text": "Di dozên îdarî yên tevlihev de rêzeke zelal alîkar e: jimareya dosyeyê, sedem, gavên jixwe qediya, xala vekirî." },
+            { "language": "pl", "text": "W złożonych sprawach urzędowych pomaga jasna kolejność: numer akt, powód, wykonane kroki, punkt otwarty." },
+            { "language": "ro", "text": "În cazurile administrative complexe ajută o ordine clară: număr de dosar, motiv, pași deja făcuți, punct deschis." },
+            { "language": "sq", "text": "Në rastet administrative komplekse ndihmon një rend i qartë: numri i dosjes, arsyeja, hapat e kryer, pika e hapur." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "timeline-note",
+          "text": "Eine präzise Chronologie verhindert, dass der Fall wie eine Beschwerde wirkt, obwohl eigentlich eine Prüfung nötig ist.",
+          "translations": [
+            { "language": "en", "text": "A precise timeline prevents the case from sounding like a complaint when what is actually needed is a check." },
+            { "language": "fa", "text": "خط زمانی دقیق باعث می‌شود پرونده مثل شکایت به نظر نرسد، در حالی که در اصل بررسی لازم است." },
+            { "language": "ar", "text": "يمنع التسلسل الزمني الدقيق أن تبدو الحالة كشكوى بينما المطلوب فعلاً هو الفحص." },
+            { "language": "tr", "text": "Kesin bir zaman çizelgesi, aslında kontrol gerekirken dosyanın şikâyet gibi duyulmasını önler." },
+            { "language": "ru", "text": "Точная хронология не даёт делу звучать как жалоба, когда на самом деле нужна проверка." },
+            { "language": "ckb", "text": "ڕیزبەندی کاتی ورد ڕێ دەگرێت کە کەیسەکە وەک سکاڵا دەربکەوێت، لە کاتێکدا بە ڕاستی پشکنین پێویستە." },
+            { "language": "kmr", "text": "Kronolojiyeke rast rê nade ku doz wek gilî were bihîstin, dema ku bi rastî kontrol pêwîst e." },
+            { "language": "pl", "text": "Precyzyjna chronologia zapobiega temu, by sprawa brzmiała jak skarga, choć potrzebne jest właściwie sprawdzenie." },
+            { "language": "ro", "text": "O cronologie precisă împiedică situația să sune ca o reclamație atunci când de fapt este nevoie de verificare." },
+            { "language": "sq", "text": "Një kronologji e saktë e pengon rastin të tingëllojë si ankesë, kur në fakt nevojitet kontroll." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "documents-note",
+          "text": "Dokumente sollten nicht nur genannt, sondern nach ihrer Funktion im Verfahren sortiert werden.",
+          "translations": [
+            { "language": "en", "text": "Documents should not only be named, but sorted by their function in the procedure." },
+            { "language": "fa", "text": "مدارک نباید فقط نام برده شوند، بلکه باید بر اساس نقششان در روند پرونده مرتب شوند." },
+            { "language": "ar", "text": "ينبغي ألا تُذكر المستندات فقط، بل أن تُرتب حسب وظيفتها في الإجراء." },
+            { "language": "tr", "text": "Belgeler yalnızca adlandırılmamalı, süreçteki işlevlerine göre sıralanmalıdır." },
+            { "language": "ru", "text": "Документы нужно не только назвать, но и отсортировать по их функции в процедуре." },
+            { "language": "ckb", "text": "بەڵگەکان نابێت تەنها ناو ببرێن، بەڵکو دەبێت بە پێی ڕۆڵیان لە ڕەوتەکەدا ڕێک بخرێن." },
+            { "language": "kmr", "text": "Belge ne tenê divê werin navkirin, lê li gorî fonksiyona xwe di pêvajoyê de werin rêzkirin." },
+            { "language": "pl", "text": "Dokumenty należy nie tylko wymienić, lecz uporządkować według ich funkcji w procedurze." },
+            { "language": "ro", "text": "Documentele nu trebuie doar numite, ci ordonate după funcția lor în procedură." },
+            { "language": "sq", "text": "Dokumentet nuk duhet vetëm të përmenden, por të renditen sipas funksionit të tyre në procedurë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "tone-note",
+          "text": "Sachliche Alternativen wirken stärker als Schuldzuweisungen: prüfen, neu zuordnen, erneut senden.",
+          "translations": [
+            { "language": "en", "text": "Factual alternatives are stronger than blame: check, reassign, resend." },
+            { "language": "fa", "text": "گزینه‌های عینی از سرزنش قوی‌ترند: بررسی، اتصال دوباره، ارسال دوباره." },
+            { "language": "ar", "text": "البدائل الموضوعية أقوى من اللوم: الفحص، إعادة الربط، إعادة الإرسال." },
+            { "language": "tr", "text": "Nesnel alternatifler suçlamadan daha etkilidir: kontrol etmek, yeniden eşleştirmek, yeniden göndermek." },
+            { "language": "ru", "text": "Предметные альтернативы сильнее обвинений: проверить, привязать заново, отправить повторно." },
+            { "language": "ckb", "text": "هەڵبژاردە بابەتییەکان لە تاوانبارکردن بەهێزترن: پشکنین، دووبارە بەستنەوە، دووبارە ناردن." },
+            { "language": "kmr", "text": "Alternatîfên babetî ji sûcdarkirinê xurtir in: kontrolkirin, dîsa girêdan, dîsa şandin." },
+            { "language": "pl", "text": "Rzeczowe alternatywy działają mocniej niż przypisywanie winy: sprawdzić, przypisać ponownie, wysłać ponownie." },
+            { "language": "ro", "text": "Alternativele factuale sunt mai puternice decât atribuirea vinei: verificare, reatribuire, retrimitere." },
+            { "language": "sq", "text": "Alternativat faktike janë më të forta se fajësimi: kontroll, rilidhje, ridërgim." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing-note",
+          "text": "Eine aktenfähige Zusammenfassung verbindet Chronologie, Nachweis und gewünschte nächste Entscheidung in einem Satz.",
+          "translations": [
+            { "language": "en", "text": "A file-ready summary connects chronology, proof, and the requested next decision in one sentence." },
+            { "language": "fa", "text": "خلاصه مناسب پرونده، خط زمانی، مدرک و تصمیم بعدی درخواستی را در یک جمله به هم وصل می‌کند." },
+            { "language": "ar", "text": "يربط الملخص المناسب للملف بين التسلسل الزمني والإثبات والقرار التالي المطلوب في جملة واحدة." },
+            { "language": "tr", "text": "Dosyaya uygun bir özet, kronolojiyi, belgeyi ve istenen sonraki kararı tek cümlede bağlar." },
+            { "language": "ru", "text": "Пригодное для дела резюме связывает хронологию, доказательство и запрашиваемое следующее решение в одном предложении." },
+            { "language": "ckb", "text": "پوختەی گونجاو بۆ کەیس، ڕیزبەندی کات، بەڵگە و بڕیاری داهاتووی داواکراو لە یەک ڕستەدا دەبەستێتەوە." },
+            { "language": "kmr", "text": "Kurteya guncaw ji bo dosyeyê kronolojî, belge û biryara din a xwestî di yek hevokê de girê dide." },
+            { "language": "pl", "text": "Podsumowanie odpowiednie do akt łączy chronologię, dowód i oczekiwaną następną decyzję w jednym zdaniu." },
+            { "language": "ro", "text": "Un rezumat potrivit pentru dosar leagă cronologia, dovada și următoarea decizie solicitată într-o singură propoziție." },
+            { "language": "sq", "text": "Një përmbledhje e përshtatshme për dosje lidh kronologjinë, dëshminë dhe vendimin e radhës të kërkuar në një fjali." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "government-office-case-structure",
+          "placement": "header",
+          "purpose": "Show a neutral public-office counter where an adult applicant organizes documents for a caseworker without readable personal data.",
+          "altText": "An adult applicant at a public-office counter organizes abstract documents and a file number card for a caseworker, with no readable private data.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An adult applicant at a public-office counter organizes abstract documents and a file number card for a caseworker, with no readable private data." },
+            { "language": "fa", "text": "یک درخواست‌کننده بزرگسال پشت باجه اداره، مدارک انتزاعی و کارت شماره پرونده را برای کارمند مرتب می‌کند، بدون داده شخصی خوانا." },
+            { "language": "ar", "text": "مقدم طلب بالغ عند شباك إدارة ينظم مستندات مجردة وبطاقة رقم ملف للموظف، من دون بيانات شخصية مقروءة." },
+            { "language": "tr", "text": "Bir kamu dairesi bankosunda yetişkin bir başvuru sahibi, görevli için soyut belgeleri ve dosya numarası kartını düzenliyor; okunabilir özel veri yok." },
+            { "language": "ru", "text": "Взрослый заявитель у стойки ведомства упорядочивает абстрактные документы и карточку с номером дела для сотрудника, без читаемых личных данных." },
+            { "language": "ckb", "text": "داواکەرێکی گەورەساڵ لە بەرامبەر باجی فەرمانگەدا بەڵگە ئەبستراکتەکان و کارتی ژمارەی کەیس بۆ کارمەند ڕێک دەخات، بەبێ داتای کەسیی خوێندراو." },
+            { "language": "kmr", "text": "Daxwazkarekî mezin li ber kontûara saziyê belgeyên abstrakt û karta jimareya dosyeyê ji bo karmend rêxistin dike, bê daneyên kesane yên xwendinbar." },
+            { "language": "pl", "text": "Dorosły wnioskodawca przy stanowisku urzędowym porządkuje abstrakcyjne dokumenty i kartę numeru akt dla urzędnika, bez czytelnych danych prywatnych." },
+            { "language": "ro", "text": "Un solicitant adult la ghișeul unei instituții organizează documente abstracte și un card cu număr de dosar pentru funcționar, fără date private lizibile." },
+            { "language": "sq", "text": "Një aplikues i rritur te sporteli i zyrës publike organizon dokumente abstrakte dhe një kartë numri dosjeje për nëpunësin, pa të dhëna private të lexueshme." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult applicant at a German public-office counter organizing abstract documents and a file-number card for a caseworker, no readable text, no real logos, no private data, calm formal atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

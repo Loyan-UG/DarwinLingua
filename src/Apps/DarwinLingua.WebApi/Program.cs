@@ -528,11 +528,13 @@ app.MapGet(
         string? ownerType,
         string? ownerSlug,
         string? q,
+        string? primaryMeaningLanguageCode,
         IExerciseQueryService exerciseQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await exerciseQueryService.GetPublishedExerciseSetsAsync(
                     new ExerciseSetListFilterModel(cefrLevel, ownerType, ownerSlug, q),
+                    primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -540,20 +542,22 @@ app.MapGet(
     "/api/catalog/exercise-sets/{slug}",
     async (
         string slug,
+        string? primaryMeaningLanguageCode,
         IExerciseQueryService exerciseQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await exerciseQueryService.GetPublishedExerciseSetBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await exerciseQueryService.GetPublishedExerciseSetBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/exercises/{slug}",
     async (
         string slug,
+        string? primaryMeaningLanguageCode,
         IExerciseQueryService exerciseQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await exerciseQueryService.GetPublishedExerciseBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await exerciseQueryService.GetPublishedExerciseBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
@@ -561,12 +565,14 @@ app.MapPost(
         async (
             string slug,
             ExerciseAttemptRequestModel request,
+            string? primaryMeaningLanguageCode,
             IExerciseAttemptService attemptService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
                     async () => await attemptService.EvaluateAttemptAsync(
                         slug,
                         request,
+                        primaryMeaningLanguageCode ?? "en",
                         cancellationToken).ConfigureAwait(false))
                 .ConfigureAwait(false))
     .RequireRateLimiting("ExerciseAttempts");
@@ -576,6 +582,7 @@ app.MapPost(
     async (
         string slug,
         ExerciseAttemptRequestModel request,
+        string? primaryMeaningLanguageCode,
         IExerciseAttemptService attemptService,
         ClaimsPrincipal principal,
         CancellationToken cancellationToken) =>
@@ -584,6 +591,7 @@ app.MapPost(
                     slug,
                     request,
                     GetRequiredUserId(principal),
+                    primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false))
     .RequireAuthorization()
@@ -632,36 +640,40 @@ app.MapGet(
 
 app.MapGet(
     "/api/catalog/courses",
-    async (
-        string? cefrLevel,
-        string? q,
-        ICourseQueryService courseQueryService,
-        CancellationToken cancellationToken) =>
-        await ResolveQueryRequestAsync(
+        async (
+            string? cefrLevel,
+            string? q,
+            string? primaryMeaningLanguageCode,
+            ICourseQueryService courseQueryService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
                 async () => await courseQueryService.GetPublishedCoursePathsAsync(
                     new CoursePathListFilterModel(cefrLevel, q),
+                    primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
-            .ConfigureAwait(false));
+                .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/courses/{slug}",
-    async (
-        string slug,
-        ICourseQueryService courseQueryService,
-        CancellationToken cancellationToken) =>
-        await ResolveQueryRequestAsync(
-                async () => await courseQueryService.GetPublishedCoursePathBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
-            .ConfigureAwait(false));
+        async (
+            string slug,
+            string? primaryMeaningLanguageCode,
+            ICourseQueryService courseQueryService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
+                async () => await courseQueryService.GetPublishedCoursePathBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/course-lessons/{slug}",
-    async (
-        string slug,
-        ICourseQueryService courseQueryService,
-        CancellationToken cancellationToken) =>
-        await ResolveQueryRequestAsync(
-                async () => await courseQueryService.GetPublishedCourseLessonBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
-            .ConfigureAwait(false));
+        async (
+            string slug,
+            string? primaryMeaningLanguageCode,
+            ICourseQueryService courseQueryService,
+            CancellationToken cancellationToken) =>
+            await ResolveQueryRequestAsync(
+                async () => await courseQueryService.GetPublishedCourseLessonBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/writing-templates",

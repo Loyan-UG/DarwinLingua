@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-46-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 46 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 46",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-komplexe-reklamation-strukturieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine komplexe Reklamation strukturieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Structuring a complex complaint" },
+        { "language": "fa", "text": "ساختاردهی یک شکایت پیچیده" },
+        { "language": "ar", "text": "تنظيم شكوى معقدة" },
+        { "language": "tr", "text": "Karmaşık bir şikayeti yapılandırmak" },
+        { "language": "ru", "text": "Структурировать сложную рекламацию" },
+        { "language": "ckb", "text": "ڕێکخستنی سکاڵایەکی ئاڵۆز" },
+        { "language": "kmr", "text": "Reklamasyoneke tevlihev rêxistin" },
+        { "language": "pl", "text": "Uporządkowanie złożonej reklamacji" },
+        { "language": "ro", "text": "Structurarea unei reclamații complexe" },
+        { "language": "sq", "text": "Strukturimi i një ankese komplekse" }
+      ],
+      "description": "Sie reklamieren telefonisch einen fehlerhaften Reparatur- und Lieferservice. Es gab mehrere Kontakte, einen Ersatztermin und widersprüchliche Aussagen. Sie strukturieren den Fall so, dass der Kundenservice Chronologie, Mangel, bisherige Lösungsversuche, konkrete Auswirkung und gewünschte Abhilfe getrennt nachvollziehen kann.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You make a complaint by phone about a faulty repair and delivery service. There have been several contacts, a replacement appointment, and contradictory statements. You structure the case so customer service can separately understand the chronology, defect, previous solution attempts, concrete impact, and requested remedy." },
+        { "language": "fa", "text": "شما تلفنی درباره خدمات تعمیر و تحویل معیوب شکایت می‌کنید. چند تماس، یک وقت جایگزین و اظهارات متناقض وجود داشته است. پرونده را طوری ساختار می‌دهید که خدمات مشتریان بتواند chronology، نقص، تلاش‌های قبلی برای حل، اثر مشخص و راه‌حل درخواستی را جداگانه بفهمد." },
+        { "language": "ar", "text": "تقدم شكوى هاتفية بشأن خدمة إصلاح وتسليم معيبة. كانت هناك عدة اتصالات وموعد بديل وتصريحات متناقضة. تنظم الحالة بحيث يستطيع موظف خدمة العملاء فهم التسلسل الزمني والعيب ومحاولات الحل السابقة والأثر المحدد والتعويض المطلوب بشكل منفصل." },
+        { "language": "tr", "text": "Hatalı bir onarım ve teslimat hizmeti hakkında telefonla şikayet ediyorsunuz. Birkaç temas, bir yedek randevu ve çelişkili açıklamalar oldu. Dosyayı müşteri hizmetlerinin kronolojiyi, kusuru, önceki çözüm girişimlerini, somut etkiyi ve talep edilen çözümü ayrı ayrı anlayabileceği şekilde yapılandırıyorsunuz." },
+        { "language": "ru", "text": "Вы по телефону подаете рекламацию по поводу ошибочной услуги ремонта и доставки. Было несколько контактов, новая дата и противоречивые ответы. Вы структурируете случай так, чтобы служба поддержки отдельно поняла хронологию, дефект, предыдущие попытки решения, конкретные последствия и требуемое устранение." },
+        { "language": "ckb", "text": "تۆ بە تەلەفۆن سکاڵا لەسەر خزمەتگوزاریی چاککردنەوە و گەیاندنی هەڵەدار دەکەیت. چەند پەیوەندی، کاتێکی جێگرەوە و قسەی ناکۆک هەبووە. دۆسیەکە وا ڕێک دەخەیت کە خزمەتگوزاری کڕیاران بتوانێت ڕیزبەندی کات، کەموکوڕی، هەوڵە پێشووترەکانی چارەسەر، کاریگەریی دیاریکراو و چارەسەری داواکراو بە جیا بفهمێت." },
+        { "language": "kmr", "text": "Hûn bi telefonê li ser xizmeta tamîr û gihandina şaş reklamasyonê dikin. Çend têkilî, randevûyek cîgir û gotinên nakok hebûn. Hûn dozê wisa rêxistin dikin ku xizmeta mişteriyan kronolojî, kêmasî, hewlên çareseriyê yên berê, bandora konkret û çareseriya xwestî cuda fam bike." },
+        { "language": "pl", "text": "Telefonicznie składa Pan reklamację dotyczącą wadliwej usługi naprawy i dostawy. Było kilka kontaktów, termin zastępczy i sprzeczne informacje. Porządkuje Pan sprawę tak, aby obsługa klienta mogła oddzielnie zrozumieć chronologię, wadę, dotychczasowe próby rozwiązania, konkretny skutek i oczekiwane rozwiązanie." },
+        { "language": "ro", "text": "Faceți telefonic o reclamație despre un serviciu defectuos de reparație și livrare. Au existat mai multe contacte, o programare de înlocuire și afirmații contradictorii. Structurați cazul astfel încât serviciul clienți să poată înțelege separat cronologia, defectul, încercările anterioare de soluționare, efectul concret și remediul cerut." },
+        { "language": "sq", "text": "Bëni me telefon një ankesë për një shërbim riparimi dhe dorëzimi me problem. Ka pasur disa kontakte, një takim zëvendësues dhe deklarata kontradiktore. E strukturoni rastin që shërbimi ndaj klientit të kuptojë veçmas kronologjinë, defektin, përpjekjet e mëparshme për zgjidhje, ndikimin konkret dhe zgjidhjen e kërkuar." }
+      ],
+      "learnerGoal": "Eine komplexe Reklamation klar strukturieren: Chronologie, Mangel, bisherige Kontakte, konkrete Auswirkung und gewünschte Abhilfe trennen, ohne emotional zu eskalieren, und eine schriftliche Bestätigung mit Frist sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure a complex complaint clearly: separate chronology, defect, previous contacts, concrete impact, and requested remedy without escalating emotionally, and secure written confirmation with a deadline." },
+        { "language": "fa", "text": "یک شکایت پیچیده را روشن ساختار دهید: chronology، نقص، تماس‌های قبلی، اثر مشخص و راه‌حل درخواستی را جدا کنید، بدون تشدید احساسی، و تأیید کتبی با مهلت بگیرید." },
+        { "language": "ar", "text": "نظم شكوى معقدة بوضوح: افصل بين التسلسل الزمني والعيب والاتصالات السابقة والأثر المحدد والتعويض المطلوب من دون تصعيد عاطفي، واحصل على تأكيد مكتوب بمهلة." },
+        { "language": "tr", "text": "Karmaşık bir şikayeti net yapılandırın: kronolojiyi, kusuru, önceki temasları, somut etkiyi ve talep edilen çözümü duygusal olarak tırmandırmadan ayırın ve süreli yazılı onay alın." },
+        { "language": "ru", "text": "Четко структурировать сложную рекламацию: разделить хронологию, дефект, предыдущие контакты, конкретные последствия и требуемое решение без эмоциональной эскалации и получить письменное подтверждение со сроком." },
+        { "language": "ckb", "text": "سکاڵایەکی ئاڵۆز بە ڕوونی ڕێک بخە: ڕیزبەندی کات، کەموکوڕی، پەیوەندییە پێشووترەکان، کاریگەریی دیاریکراو و چارەسەری داواکراو جیا بکەوە، بەبێ توندکردنەوەی هەستی، و پشتڕاستکردنەوەی نووسراو بە مۆڵەت وەربگرە." },
+        { "language": "kmr", "text": "Reklamasyoneke tevlihev bi zelalî rêxistin bikin: kronolojî, kêmasî, têkiliyên berê, bandora konkret û çareseriya xwestî cuda bikin bê ku bi hestî bilind bikin, û piştrastkirina nivîskî bi demekê bistînin." },
+        { "language": "pl", "text": "Jasno uporządkować złożoną reklamację: oddzielić chronologię, wadę, wcześniejsze kontakty, konkretny skutek i oczekiwane rozwiązanie bez emocjonalnej eskalacji oraz uzyskać pisemne potwierdzenie z terminem." },
+        { "language": "ro", "text": "Structurați clar o reclamație complexă: separați cronologia, defectul, contactele anterioare, efectul concret și remediul cerut fără escaladare emoțională și obțineți confirmare scrisă cu termen." },
+        { "language": "sq", "text": "Strukturoni qartë një ankesë komplekse: ndani kronologjinë, defektin, kontaktet e mëparshme, ndikimin konkret dhe zgjidhjen e kërkuar pa përshkallëzim emocional dhe siguroni konfirmim me shkrim me afat." }
+      ],
+      "cefrLevel": "C1",
+      "category": "customer-service",
+      "topics": ["customer-service", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "complaint-handling"],
+      "taskType": "complain-politely",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 46,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kund/in",
+          "translations": [
+            { "language": "en", "text": "Customer making a structured complaint" },
+            { "language": "fa", "text": "مشتری که شکایت ساختاریافته مطرح می‌کند" },
+            { "language": "ar", "text": "العميل الذي يقدم شكوى منظمة" },
+            { "language": "tr", "text": "Yapılandırılmış şikayet yapan müşteri" },
+            { "language": "ru", "text": "Клиент, подающий структурированную рекламацию" },
+            { "language": "ckb", "text": "کڕیارێک کە سکاڵای ڕێکخراو دەخاتەڕوو" },
+            { "language": "kmr", "text": "Mişteriyê ku reklamasyona rêxistî dike" },
+            { "language": "pl", "text": "Klient składający uporządkowaną reklamację" },
+            { "language": "ro", "text": "Clientul care face o reclamație structurată" },
+            { "language": "sq", "text": "Klienti që bën një ankesë të strukturuar" }
+          ]
+        },
+        {
+          "roleKey": "agent",
+          "displayName": "Beschwerdeservice",
+          "translations": [
+            { "language": "en", "text": "Complaint service agent" },
+            { "language": "fa", "text": "کارشناس رسیدگی به شکایات" },
+            { "language": "ar", "text": "موظف خدمة الشكاوى" },
+            { "language": "tr", "text": "Şikayet hizmetleri temsilcisi" },
+            { "language": "ru", "text": "Сотрудник службы рекламаций" },
+            { "language": "ckb", "text": "کارمەندی خزمەتگوزاری سکاڵاکان" },
+            { "language": "kmr", "text": "Nûnerê xizmeta reklamasyonê" },
+            { "language": "pl", "text": "Pracownik działu reklamacji" },
+            { "language": "ro", "text": "Agent al serviciului de reclamații" },
+            { "language": "sq", "text": "Agjent i shërbimit të ankesave" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "agent",
+          "baseText": "Guten Tag, Beschwerdeservice. Ich sehe hier mehrere Vorgänge zu Ihrer Bestellung. Können Sie kurz sagen, was heute geklärt werden soll?",
+          "translations": [
+            { "language": "en", "text": "Good day, complaint service. I see several cases regarding your order here. Can you briefly say what should be clarified today?" },
+            { "language": "fa", "text": "روز بخیر، بخش رسیدگی به شکایات. اینجا چند پرونده مربوط به سفارش شما می‌بینم. می‌توانید کوتاه بگویید امروز چه چیزی باید روشن شود؟" },
+            { "language": "ar", "text": "مرحباً، خدمة الشكاوى. أرى هنا عدة معاملات تتعلق بطلبك. هل يمكنك أن تقول بإيجاز ما الذي يجب توضيحه اليوم؟" },
+            { "language": "tr", "text": "İyi günler, şikayet servisi. Burada siparişinizle ilgili birkaç işlem görüyorum. Bugün neyin açıklığa kavuşması gerektiğini kısaca söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Добрый день, служба рекламаций. Я вижу здесь несколько процессов по вашему заказу. Можете коротко сказать, что сегодня нужно прояснить?" },
+            { "language": "ckb", "text": "ڕۆژباش، خزمەتگوزاری سکاڵاکان. لێرە چەند مامەڵەیەک دەبینم لەسەر داواکارییەکەتان. دەتوانن بە کورتی بڵێن ئەمڕۆ چی دەبێت ڕوون بکرێتەوە؟" },
+            { "language": "kmr", "text": "Roj baş, xizmeta reklamasyonê. Ez li vir çend pêvajoyên li ser fermana we dibînim. Hûn dikarin bi kurtî bibêjin îro divê çi were zelalkirin?" },
+            { "language": "pl", "text": "Dzień dobry, dział reklamacji. Widzę tutaj kilka spraw dotyczących Pana zamówienia. Czy może Pan krótko powiedzieć, co ma zostać dziś wyjaśnione?" },
+            { "language": "ro", "text": "Bună ziua, serviciul de reclamații. Văd aici mai multe proceduri legate de comanda dumneavoastră. Puteți spune pe scurt ce trebuie clarificat astăzi?" },
+            { "language": "sq", "text": "Mirëdita, shërbimi i ankesave. Këtu shoh disa procese për porosinë tuaj. Mund të thoni shkurt çfarë duhet të sqarohet sot?" }
+          ],
+          "function": "open-complex-case",
+          "toneNote": "The agent signals that the case is already messy.",
+          "expectedLearnerAction": "Give a structured overview rather than repeating every detail at once."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich würde den Fall gern in vier Punkten ordnen: erstens die Chronologie, zweitens der weiterhin bestehende Mangel, drittens die bisherigen Lösungsversuche und viertens die Abhilfe, die ich jetzt für angemessen halte.",
+          "translations": [
+            { "language": "en", "text": "Good day. I would like to organize the case in four points: first the chronology, second the defect that still exists, third the previous attempts to resolve it, and fourth the remedy I now consider appropriate." },
+            { "language": "fa", "text": "روز بخیر. مایل هستم پرونده را در چهار نکته مرتب کنم: اول chronology، دوم نقصی که هنوز وجود دارد، سوم تلاش‌های قبلی برای حل، و چهارم راه‌حلی که اکنون مناسب می‌دانم." },
+            { "language": "ar", "text": "مرحباً. أود تنظيم الحالة في أربع نقاط: أولاً التسلسل الزمني، ثانياً العيب الذي ما زال قائماً، ثالثاً محاولات الحل السابقة، ورابعاً التعويض الذي أراه مناسباً الآن." },
+            { "language": "tr", "text": "İyi günler. Dosyayı dört noktada düzenlemek isterim: birincisi kronoloji, ikincisi hâlâ devam eden kusur, üçüncüsü önceki çözüm girişimleri ve dördüncüsü şimdi uygun gördüğüm çözüm." },
+            { "language": "ru", "text": "Добрый день. Я хотел бы упорядочить случай по четырем пунктам: во-первых, хронология, во-вторых, сохраняющийся дефект, в-третьих, предыдущие попытки решения и, в-четвертых, устранение, которое я сейчас считаю уместным." },
+            { "language": "ckb", "text": "ڕۆژباش. دەمەوێت دۆسیەکە لە چوار خاڵدا ڕێک بخەم: یەکەم ڕیزبەندی کات، دووەم کەموکوڕییەکەی هێشتا ماوە، سێیەم هەوڵە پێشووترەکانی چارەسەر، و چوارەم ئەو چارەسەرەی ئێستا بە گونجاوی دەزانم." },
+            { "language": "kmr", "text": "Roj baş. Ez dixwazim dozê di çar xalan de rêxistin bikim: yekem kronolojî, duyem kêmasiya ku hîn heye, sêyem hewlên çareseriyê yên berê û çarem çareseriya ku ez niha guncaw dibînim." },
+            { "language": "pl", "text": "Dzień dobry. Chciałbym uporządkować sprawę w czterech punktach: po pierwsze chronologia, po drugie nadal istniejąca wada, po trzecie dotychczasowe próby rozwiązania i po czwarte rozwiązanie, które uważam teraz za właściwe." },
+            { "language": "ro", "text": "Bună ziua. Aș dori să ordonez cazul în patru puncte: mai întâi cronologia, apoi defectul care încă există, apoi încercările anterioare de soluționare și, în al patrulea rând, remediul pe care îl consider acum adecvat." },
+            { "language": "sq", "text": "Mirëdita. Do të doja ta rregulloj rastin në katër pika: së pari kronologjia, së dyti defekti që ende ekziston, së treti përpjekjet e mëparshme për zgjidhje dhe së katërti zgjidhja që tani e konsideroj të përshtatshme." }
+          ],
+          "function": "structure-case",
+          "toneNote": "The learner creates a roadmap before giving details.",
+          "expectedLearnerAction": "Use an explicit structure so the listener can follow the complex complaint."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "agent",
+          "baseText": "Das hilft. Beginnen wir mit der Chronologie. Welche Daten sind für Sie entscheidend?",
+          "translations": [
+            { "language": "en", "text": "That helps. Let us start with the chronology. Which dates are decisive for you?" },
+            { "language": "fa", "text": "این کمک می‌کند. با chronology شروع کنیم. کدام تاریخ‌ها برای شما تعیین‌کننده هستند؟" },
+            { "language": "ar", "text": "هذا يساعد. لنبدأ بالتسلسل الزمني. ما التواريخ الحاسمة بالنسبة لك؟" },
+            { "language": "tr", "text": "Bu yardımcı olur. Kronolojiyle başlayalım. Sizin için hangi tarihler belirleyici?" },
+            { "language": "ru", "text": "Это помогает. Начнем с хронологии. Какие даты для вас решающие?" },
+            { "language": "ckb", "text": "ئەمە یارمەتی دەدات. با بە ڕیزبەندی کات دەست پێ بکەین. کام بەروارەکان بۆتان گرنگن؟" },
+            { "language": "kmr", "text": "Ev alîkar e. Em bi kronolojiyê dest pê bikin. Kîjan tarîx ji bo we girîng in?" },
+            { "language": "pl", "text": "To pomaga. Zacznijmy od chronologii. Które daty są dla Pana decydujące?" },
+            { "language": "ro", "text": "Asta ajută. Să începem cu cronologia. Ce date sunt decisive pentru dumneavoastră?" },
+            { "language": "sq", "text": "Kjo ndihmon. Le të fillojmë me kronologjinë. Cilat data janë vendimtare për ju?" }
+          ],
+          "function": "request-chronology",
+          "toneNote": "The agent accepts the structure.",
+          "expectedLearnerAction": "Give dates without adding emotional commentary."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Am 3. April wurde das Gerät geliefert, am 5. April habe ich den Defekt gemeldet, am 12. April kam der erste Reparaturtermin, und am 18. April wurde mir telefonisch ein Ersatzgerät zugesagt. Am 24. April erhielt ich aber nur eine Standardantwort ohne konkreten Termin.",
+          "translations": [
+            { "language": "en", "text": "The device was delivered on April 3, I reported the defect on April 5, the first repair appointment took place on April 12, and on April 18 I was promised a replacement device by phone. On April 24, however, I only received a standard reply without a concrete date." },
+            { "language": "fa", "text": "دستگاه در ۳ آوریل تحویل شد، من در ۵ آوریل نقص را گزارش کردم، اولین وقت تعمیر در ۱۲ آوریل انجام شد، و در ۱۸ آوریل تلفنی به من وعده دستگاه جایگزین داده شد. اما در ۲۴ آوریل فقط یک پاسخ استاندارد بدون تاریخ مشخص دریافت کردم." },
+            { "language": "ar", "text": "تم تسليم الجهاز في 3 أبريل، وأبلغت عن العيب في 5 أبريل، وجاء موعد الإصلاح الأول في 12 أبريل، وفي 18 أبريل وُعدت هاتفياً بجهاز بديل. لكن في 24 أبريل تلقيت فقط رداً عاماً من دون موعد محدد." },
+            { "language": "tr", "text": "Cihaz 3 Nisan'da teslim edildi, kusuru 5 Nisan'da bildirdim, ilk onarım randevusu 12 Nisan'da yapıldı ve 18 Nisan'da telefonda bana yedek cihaz sözü verildi. Ancak 24 Nisan'da somut tarih içermeyen standart bir yanıt aldım." },
+            { "language": "ru", "text": "Устройство было доставлено 3 апреля, дефект я сообщил 5 апреля, первый ремонтный визит был 12 апреля, а 18 апреля мне по телефону пообещали замену. Но 24 апреля я получил только стандартный ответ без конкретной даты." },
+            { "language": "ckb", "text": "ئامێرەکە لە ٣ی نیسان گەیەندرا، لە ٥ی نیسان کەموکوڕییەکەم ڕاپۆرت کرد، لە ١٢ی نیسان یەکەم کاتی چاککردنەوە هات، و لە ١٨ی نیسان بە تەلەفۆن بەڵێنی ئامێری جێگرەوەم پێدرا. بەڵام لە ٢٤ی نیسان تەنها وەڵامێکی ستانداردم وەرگرت بەبێ کاتی دیاریکراو." },
+            { "language": "kmr", "text": "Amûr di 3ê Nîsanê de hat gihandin, min di 5ê Nîsanê de kêmasî ragihand, randevûya yekem a tamîrê di 12ê Nîsanê de hat, û di 18ê Nîsanê de bi telefonê amûreke cîgir ji min re hat sozdan. Lê di 24ê Nîsanê de min tenê bersiveke standard bê tarîxeke konkret wergirt." },
+            { "language": "pl", "text": "Urządzenie dostarczono 3 kwietnia, 5 kwietnia zgłosiłem wadę, 12 kwietnia odbył się pierwszy termin naprawy, a 18 kwietnia telefonicznie obiecano mi urządzenie zastępcze. 24 kwietnia otrzymałem jednak tylko standardową odpowiedź bez konkretnego terminu." },
+            { "language": "ro", "text": "Dispozitivul a fost livrat pe 3 aprilie, pe 5 aprilie am raportat defectul, pe 12 aprilie a avut loc prima programare de reparație, iar pe 18 aprilie mi s-a promis telefonic un dispozitiv de înlocuire. Pe 24 aprilie am primit însă doar un răspuns standard fără termen concret." },
+            { "language": "sq", "text": "Pajisja u dorëzua më 3 prill, defektin e raportova më 5 prill, takimi i parë i riparimit ishte më 12 prill dhe më 18 prill më premtuan me telefon pajisje zëvendësuese. Por më 24 prill mora vetëm një përgjigje standarde pa datë konkrete." }
+          ],
+          "function": "provide-chronology",
+          "toneNote": "The learner gives a compact dated timeline.",
+          "expectedLearnerAction": "Keep the chronology short and checkable."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "agent",
+          "baseText": "Zum Defekt selbst steht hier nur: Gerät funktioniert eingeschränkt. Können Sie präzisieren, was nach der Reparatur weiterhin nicht funktioniert?",
+          "translations": [
+            { "language": "en", "text": "Regarding the defect itself, the note here only says: device works with limitations. Can you specify what still does not work after the repair?" },
+            { "language": "fa", "text": "درباره خود نقص اینجا فقط نوشته شده: دستگاه با محدودیت کار می‌کند. می‌توانید دقیق‌تر بگویید بعد از تعمیر چه چیزی همچنان کار نمی‌کند؟" },
+            { "language": "ar", "text": "بالنسبة إلى العيب نفسه، مكتوب هنا فقط: الجهاز يعمل بشكل محدود. هل يمكنك توضيح ما الذي لا يزال لا يعمل بعد الإصلاح؟" },
+            { "language": "tr", "text": "Kusurun kendisi için burada sadece şu yazıyor: cihaz sınırlı çalışıyor. Onarımdan sonra hâlâ neyin çalışmadığını netleştirebilir misiniz?" },
+            { "language": "ru", "text": "По самому дефекту здесь только указано: устройство работает с ограничениями. Можете уточнить, что после ремонта все еще не работает?" },
+            { "language": "ckb", "text": "لەسەر خودی کەموکوڕییەکە لێرە تەنها نووسراوە: ئامێرەکە بە سنوورداری کار دەکات. دەتوانن ڕوونتر بکەنەوە کە دوای چاککردنەوە چی هێشتا کار ناکات؟" },
+            { "language": "kmr", "text": "Li ser kêmasiya bixwe li vir tenê hatiye nivîsîn: amûr bi tixûbdarî dixebite. Hûn dikarin zelal bikin ku piştî tamîrê çi hîn naxebite?" },
+            { "language": "pl", "text": "Co do samej wady, tutaj jest tylko wpis: urządzenie działa z ograniczeniami. Czy może Pan doprecyzować, co po naprawie nadal nie działa?" },
+            { "language": "ro", "text": "Despre defectul în sine aici scrie doar: dispozitivul funcționează limitat. Puteți preciza ce nu funcționează încă după reparație?" },
+            { "language": "sq", "text": "Për vetë defektin këtu shkruan vetëm: pajisja funksionon me kufizime. Mund të sqaroni çfarë ende nuk funksionon pas riparimit?" }
+          ],
+          "function": "request-defect-specifics",
+          "toneNote": "The agent needs a precise defect description.",
+          "expectedLearnerAction": "Describe the defect in observable terms, not as general dissatisfaction."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Seit der Reparatur startet das Gerät zwar, bricht aber nach etwa zehn Minuten mit derselben Fehlermeldung ab. Das ist kein Komfortproblem: Ich kann die Leistung, für die ich bezahlt habe, praktisch nicht nutzen.",
+          "translations": [
+            { "language": "en", "text": "Since the repair, the device does start, but it stops after about ten minutes with the same error message. This is not a comfort issue: in practice I cannot use the service I paid for." },
+            { "language": "fa", "text": "از زمان تعمیر، دستگاه روشن می‌شود، اما بعد از حدود ده دقیقه با همان پیام خطا قطع می‌شود. این مسئله راحتی نیست: عملاً نمی‌توانم خدمتی را که برایش پول داده‌ام استفاده کنم." },
+            { "language": "ar", "text": "منذ الإصلاح يبدأ الجهاز فعلاً، لكنه يتوقف بعد نحو عشر دقائق بالرسالة الخطأ نفسها. هذه ليست مشكلة راحة: عملياً لا أستطيع استخدام الخدمة التي دفعت ثمنها." },
+            { "language": "tr", "text": "Onarımdan beri cihaz çalışmaya başlıyor, ancak yaklaşık on dakika sonra aynı hata mesajıyla duruyor. Bu bir konfor sorunu değil: parasını ödediğim hizmeti pratikte kullanamıyorum." },
+            { "language": "ru", "text": "После ремонта устройство запускается, но примерно через десять минут останавливается с тем же сообщением об ошибке. Это не вопрос удобства: фактически я не могу пользоваться услугой, за которую заплатил." },
+            { "language": "ckb", "text": "لە دوای چاککردنەوەوە ئامێرەکە دەست پێ دەکات، بەڵام دوای نزیکەی دە خولەک بە هەمان پەیامی هەڵە دەوەستێت. ئەمە کێشەی ئاسوودەیی نییە: بە کردار ناتوانم ئەو خزمەتگوزارییە بەکاربهێنم کە پارەم بۆی داوە." },
+            { "language": "kmr", "text": "Ji piştî tamîrê ve amûr dest pê dike, lê piştî nêzî deh xulek bi heman peyama şaşiyê disekine. Ev ne pirsgirêka rehetiyê ye: bi rastî ez nikarim xizmeta ku min dravê wê daye bi kar bînim." },
+            { "language": "pl", "text": "Od naprawy urządzenie wprawdzie się uruchamia, ale po około dziesięciu minutach przerywa pracę z tym samym komunikatem błędu. To nie jest problem komfortu: praktycznie nie mogę korzystać z usługi, za którą zapłaciłem." },
+            { "language": "ro", "text": "De la reparație, dispozitivul pornește, dar se oprește după aproximativ zece minute cu același mesaj de eroare. Nu este o problemă de confort: practic nu pot folosi serviciul pentru care am plătit." },
+            { "language": "sq", "text": "Që nga riparimi, pajisja ndizet, por pas rreth dhjetë minutash ndalon me të njëjtin mesazh gabimi. Kjo nuk është çështje komoditeti: praktikisht nuk mund ta përdor shërbimin për të cilin kam paguar." }
+          ],
+          "function": "specific-defect-and-impact",
+          "toneNote": "The learner distinguishes a real service failure from minor dissatisfaction.",
+          "expectedLearnerAction": "Name observable defect and practical impact."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "agent",
+          "baseText": "Ich verstehe. Bisher wurde offenbar versucht, den Fehler zu reparieren. Warum reicht aus Ihrer Sicht ein weiterer Reparaturtermin nicht aus?",
+          "translations": [
+            { "language": "en", "text": "I understand. Apparently attempts have been made so far to repair the error. From your point of view, why would another repair appointment be insufficient?" },
+            { "language": "fa", "text": "می‌فهمم. ظاهراً تا الان تلاش شده خطا تعمیر شود. از نظر شما چرا یک وقت تعمیر دیگر کافی نیست؟" },
+            { "language": "ar", "text": "أفهم. يبدو أنه تمت محاولة إصلاح الخطأ حتى الآن. من وجهة نظرك، لماذا لا يكفي موعد إصلاح آخر؟" },
+            { "language": "tr", "text": "Anlıyorum. Görünüşe göre şimdiye kadar hatayı onarmaya çalışılmış. Sizin açınızdan neden başka bir onarım randevusu yeterli değil?" },
+            { "language": "ru", "text": "Понимаю. До сих пор, по-видимому, пытались исправить ошибку. Почему, с вашей точки зрения, еще одного ремонта недостаточно?" },
+            { "language": "ckb", "text": "تێدەگەم. دیارە تا ئێستا هەوڵ دراوە هەڵەکە چاک بکرێتەوە. لە دیدی ئێوەوە بۆچی کاتی چاککردنەوەیەکی تر بەس نییە؟" },
+            { "language": "kmr", "text": "Ez fam dikim. Xuya ye heta niha hewl hatiye dayîn ku şaşî were tamîrkirin. Li gorî we çima randevûyeke din a tamîrê têr nake?" },
+            { "language": "pl", "text": "Rozumiem. Dotychczas najwyraźniej próbowano naprawić błąd. Dlaczego z Pana perspektywy kolejny termin naprawy nie wystarczy?" },
+            { "language": "ro", "text": "Înțeleg. Se pare că până acum s-a încercat repararea erorii. Din punctul dumneavoastră de vedere, de ce nu este suficientă încă o programare de reparație?" },
+            { "language": "sq", "text": "E kuptoj. Deri tani duket se është tentuar të riparohet gabimi. Nga këndvështrimi juaj, pse nuk mjafton një takim tjetër riparimi?" }
+          ],
+          "function": "challenge-remedy",
+          "toneNote": "The agent asks why the requested remedy should go beyond another repair.",
+          "expectedLearnerAction": "Justify the remedy with previous attempts and proportionality."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ein weiterer Termin wäre für mich nur dann sinnvoll, wenn er verbindlich ist und ein Ersatzgerät bereitsteht. Nach zwei erfolglosen Kontakten und einer widersprüchlichen Zusage halte ich entweder einen Austausch innerhalb von fünf Werktagen oder eine Rückabwicklung für verhältnismäßig.",
+          "translations": [
+            { "language": "en", "text": "Another appointment would only make sense to me if it is binding and a replacement device is ready. After two unsuccessful contacts and a contradictory promise, I consider either an exchange within five business days or cancellation of the transaction proportionate." },
+            { "language": "fa", "text": "یک وقت دیگر فقط وقتی برای من منطقی است که الزام‌آور باشد و دستگاه جایگزین آماده باشد. بعد از دو تماس ناموفق و یک وعده متناقض، یا تعویض ظرف پنج روز کاری یا برگرداندن معامله را متناسب می‌دانم." },
+            { "language": "ar", "text": "سيكون موعد آخر منطقياً بالنسبة لي فقط إذا كان ملزماً وكان جهاز بديل جاهزاً. بعد اتصالين غير ناجحين ووعد متناقض، أرى أن الاستبدال خلال خمسة أيام عمل أو التراجع عن العملية أمر متناسب." },
+            { "language": "tr", "text": "Başka bir randevu benim için ancak bağlayıcı olursa ve yedek cihaz hazırsa anlamlı olur. İki başarısız temas ve çelişkili bir taahhütten sonra, beş iş günü içinde değişim ya da işlemin geri alınmasını orantılı görüyorum." },
+            { "language": "ru", "text": "Еще один визит для меня имеет смысл только тогда, если он будет обязательным и будет готова замена. После двух неудачных контактов и противоречивого обещания я считаю соразмерным либо обмен в течение пяти рабочих дней, либо обратное оформление сделки." },
+            { "language": "ckb", "text": "کاتی تر بۆ من تەنها ئەوکات مانادارە کە پابەند بێت و ئامێری جێگرەوە ئامادە بێت. دوای دوو پەیوەندیی بێ ئەنجام و بەڵێنێکی ناکۆک، یان گۆڕینەوە لە ماوەی پێنج ڕۆژی کاری یان هەڵوەشاندنەوەی مامەڵەکە بە گونجاو دەزانم." },
+            { "language": "kmr", "text": "Randevûyeke din ji bo min tenê wê demê manedar e ku girêdayî be û amûreke cîgir amade be. Piştî du têkiliyên bê encam û sozeke nakok, ez an guhertin di nav pênc rojên kar de an vegerandina danûstandinê wekî rêjeyî dibînim." },
+            { "language": "pl", "text": "Kolejny termin miałby dla mnie sens tylko wtedy, gdyby był wiążący i dostępne było urządzenie zastępcze. Po dwóch nieskutecznych kontaktach i sprzecznej obietnicy uważam za proporcjonalne albo wymianę w ciągu pięciu dni roboczych, albo odstąpienie od transakcji." },
+            { "language": "ro", "text": "O altă programare ar avea sens pentru mine doar dacă este fermă și există un dispozitiv de înlocuire pregătit. După două contacte fără rezultat și o promisiune contradictorie, consider proporțional fie schimbul în cinci zile lucrătoare, fie anularea tranzacției." },
+            { "language": "sq", "text": "Një takim tjetër do të kishte kuptim për mua vetëm nëse është i detyrueshëm dhe një pajisje zëvendësuese është gati. Pas dy kontakteve pa rezultat dhe një premtimi kontradiktor, e shoh të arsyeshëm ose zëvendësimin brenda pesë ditëve pune, ose kthimin e transaksionit." }
+          ],
+          "function": "proportional-remedy",
+          "toneNote": "The learner offers options and justifies escalation of remedy.",
+          "expectedLearnerAction": "Explain why the requested remedy follows from previous failed attempts."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "agent",
+          "baseText": "Ich kann einen Austausch prüfen lassen. Eine Rückabwicklung müsste separat freigegeben werden. Was wäre für Sie die bevorzugte Lösung?",
+          "translations": [
+            { "language": "en", "text": "I can have an exchange reviewed. Cancellation of the transaction would need separate approval. What would be your preferred solution?" },
+            { "language": "fa", "text": "می‌توانم بررسی تعویض را انجام دهم. برگرداندن معامله باید جداگانه تأیید شود. راه‌حل ترجیحی شما چیست؟" },
+            { "language": "ar", "text": "يمكنني أن أطلب فحص الاستبدال. التراجع عن العملية يحتاج إلى موافقة منفصلة. ما الحل المفضل لديك؟" },
+            { "language": "tr", "text": "Değişimin incelenmesini sağlayabilirim. İşlemin geri alınması ayrıca onaylanmalıdır. Sizin tercih ettiğiniz çözüm nedir?" },
+            { "language": "ru", "text": "Я могу передать обмен на проверку. Обратное оформление сделки должно быть одобрено отдельно. Какое решение для вас предпочтительно?" },
+            { "language": "ckb", "text": "دەتوانم پشکنینی گۆڕینەوە بخەمەڕوو. هەڵوەشاندنەوەی مامەڵەکە دەبێت بە جیا پەسەند بکرێت. چارەسەری پەسەندکراوی ئێوە چییە؟" },
+            { "language": "kmr", "text": "Ez dikarim guhertinê bidim kontrolkirin. Vegerandina danûstandinê divê cuda were erêkirin. Çareseriya ku hûn tercîh dikin çi ye?" },
+            { "language": "pl", "text": "Mogę zlecić sprawdzenie wymiany. Odstąpienie od transakcji musiałoby zostać zatwierdzone osobno. Jakie rozwiązanie byłoby dla Pana preferowane?" },
+            { "language": "ro", "text": "Pot cere verificarea schimbului. Anularea tranzacției ar trebui aprobată separat. Care ar fi soluția preferată pentru dumneavoastră?" },
+            { "language": "sq", "text": "Mund ta dërgoj për shqyrtim zëvendësimin. Kthimi i transaksionit duhet të miratohet veçmas. Cila do të ishte zgjidhja juaj e preferuar?" }
+          ],
+          "function": "ask-priority",
+          "toneNote": "The agent asks the learner to prioritize a remedy.",
+          "expectedLearnerAction": "Choose a primary remedy and keep a fallback."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Meine bevorzugte Lösung ist ein funktionsfähiges Ersatzgerät mit bestätigtem Liefertermin. Falls das bis Freitag nicht verbindlich bestätigt werden kann, bitte ich um Prüfung der Rückabwicklung und um eine schriftliche Begründung, falls sie abgelehnt wird.",
+          "translations": [
+            { "language": "en", "text": "My preferred solution is a functioning replacement device with a confirmed delivery date. If that cannot be confirmed as binding by Friday, I ask for review of cancellation of the transaction and a written explanation if it is rejected." },
+            { "language": "fa", "text": "راه‌حل ترجیحی من یک دستگاه جایگزین سالم با تاریخ تحویل تأییدشده است. اگر تا جمعه نتوان آن را الزام‌آور تأیید کرد، درخواست بررسی برگرداندن معامله و در صورت رد، توضیح کتبی دارم." },
+            { "language": "ar", "text": "الحل المفضل لدي هو جهاز بديل يعمل مع موعد تسليم مؤكد. إذا لم يمكن تأكيد ذلك بشكل ملزم حتى يوم الجمعة، أطلب فحص التراجع عن العملية وتبريراً مكتوباً إذا تم رفضه." },
+            { "language": "tr", "text": "Tercih ettiğim çözüm, onaylı teslim tarihi olan çalışır bir yedek cihazdır. Bu cuma gününe kadar bağlayıcı olarak onaylanamazsa, işlemin geri alınmasının incelenmesini ve reddedilirse yazılı gerekçe verilmesini rica ediyorum." },
+            { "language": "ru", "text": "Мое предпочтительное решение — исправная замена с подтвержденной датой доставки. Если это не может быть обязательно подтверждено до пятницы, я прошу проверить обратное оформление сделки и дать письменное обоснование в случае отказа." },
+            { "language": "ckb", "text": "چارەسەری پەسەندکراوم ئامێرێکی جێگرەوەی کارا بە بەرواری گەیاندنی پشتڕاستکراوە. ئەگەر ئەمە تا هەینی بە پابەندی پشتڕاست نەکرێتەوە، داوای پشکنینی هەڵوەشاندنەوەی مامەڵەکە و ڕوونکردنەوەی نووسراو دەکەم ئەگەر ڕەت بکرێتەوە." },
+            { "language": "kmr", "text": "Çareseriya ku ez tercîh dikim amûreke cîgir a dixebite bi tarîxa gihandinê ya piştrastkirî ye. Heke ev heta înê bi girêdayî neyê piştrastkirin, ez daxwaza kontrola vegerandina danûstandinê û hinceta nivîskî dikim heke were redkirin." },
+            { "language": "pl", "text": "Moim preferowanym rozwiązaniem jest sprawne urządzenie zastępcze z potwierdzonym terminem dostawy. Jeśli nie da się tego wiążąco potwierdzić do piątku, proszę o sprawdzenie odstąpienia od transakcji i pisemne uzasadnienie w razie odmowy." },
+            { "language": "ro", "text": "Soluția mea preferată este un dispozitiv de înlocuire funcțional cu termen de livrare confirmat. Dacă acest lucru nu poate fi confirmat ferm până vineri, solicit verificarea anulării tranzacției și o justificare scrisă dacă este respinsă." },
+            { "language": "sq", "text": "Zgjidhja ime e preferuar është një pajisje zëvendësuese funksionale me datë dorëzimi të konfirmuar. Nëse kjo nuk mund të konfirmohet detyrueshëm deri të premten, kërkoj shqyrtimin e kthimit të transaksionit dhe një arsyetim me shkrim nëse refuzohet." }
+          ],
+          "function": "primary-remedy-with-fallback",
+          "toneNote": "The learner prioritizes exchange but protects the fallback path.",
+          "expectedLearnerAction": "Name preferred remedy, deadline, fallback, and written reason."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "agent",
+          "baseText": "Ich nehme auf: Austausch als bevorzugte Lösung, verbindliche Rückmeldung bis Freitag und sonst Prüfung der Rückabwicklung. Soll ich Ihnen eine Zusammenfassung per E-Mail schicken?",
+          "translations": [
+            { "language": "en", "text": "I am recording: exchange as the preferred solution, binding response by Friday, otherwise review of cancellation of the transaction. Should I send you a summary by email?" },
+            { "language": "fa", "text": "ثبت می‌کنم: تعویض به عنوان راه‌حل ترجیحی، پاسخ الزام‌آور تا جمعه، و در غیر این صورت بررسی برگرداندن معامله. آیا خلاصه را برایتان ایمیل کنم؟" },
+            { "language": "ar", "text": "أسجل: الاستبدال كحل مفضل، رد ملزم حتى الجمعة، وإلا فحص التراجع عن العملية. هل أرسل لك ملخصاً بالبريد الإلكتروني؟" },
+            { "language": "tr", "text": "Not ediyorum: tercih edilen çözüm olarak değişim, cumaya kadar bağlayıcı geri bildirim, aksi halde işlemin geri alınmasının incelenmesi. Size e-postayla bir özet göndereyim mi?" },
+            { "language": "ru", "text": "Я записываю: обмен как предпочтительное решение, обязательный ответ до пятницы, иначе проверка обратного оформления сделки. Отправить вам резюме по электронной почте?" },
+            { "language": "ckb", "text": "تۆمار دەکەم: گۆڕینەوە وەک چارەسەری پەسەندکراو، وەڵامی پابەند تا هەینی و ئەگەر نا پشکنینی هەڵوەشاندنەوەی مامەڵەکە. ئایا کورتەیەک بە ئیمەیل بۆتان بنێرم؟" },
+            { "language": "kmr", "text": "Ez tomar dikim: guhertin wekî çareseriya tercîhkirî, bersiva girêdayî heta înê û wekî din kontrola vegerandina danûstandinê. Ez kurteyekê bi e-nameyê ji we re bişînim?" },
+            { "language": "pl", "text": "Zapisuję: wymiana jako preferowane rozwiązanie, wiążąca odpowiedź do piątku, a w przeciwnym razie sprawdzenie odstąpienia od transakcji. Czy mam wysłać Panu podsumowanie e-mailem?" },
+            { "language": "ro", "text": "Notez: schimb ca soluție preferată, răspuns ferm până vineri și altfel verificarea anulării tranzacției. Să vă trimit un rezumat prin e-mail?" },
+            { "language": "sq", "text": "Po shënoj: zëvendësim si zgjidhje e preferuar, përgjigje detyruese deri të premten dhe përndryshe shqyrtim i kthimit të transaksionit. T'ju dërgoj një përmbledhje me email?" }
+          ],
+          "function": "confirm-summary-offer",
+          "toneNote": "The agent is ready to document the process.",
+          "expectedLearnerAction": "Ask for exact written elements and reference number."
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte mit Vorgangsnummer, der Chronologie, dem beschriebenen Mangel, der bevorzugten Lösung und der Frist bis Freitag. Dann kann ich später nachvollziehen, was vereinbart wurde, ohne den Fall wieder von vorne erklären zu müssen.",
+          "translations": [
+            { "language": "en", "text": "Yes, please include the case number, the chronology, the described defect, the preferred solution, and the deadline until Friday. Then I can later trace what was agreed without having to explain the case again from the beginning." },
+            { "language": "fa", "text": "بله، لطفاً با شماره پرونده، chronology، نقص توضیح‌داده‌شده، راه‌حل ترجیحی و مهلت تا جمعه. این‌طور بعداً می‌توانم پیگیری کنم چه چیزی توافق شده، بدون اینکه پرونده را دوباره از ابتدا توضیح دهم." },
+            { "language": "ar", "text": "نعم، من فضلك مع رقم المعاملة والتسلسل الزمني والعيب الموصوف والحل المفضل والمهلة حتى الجمعة. عندها أستطيع لاحقاً تتبع ما تم الاتفاق عليه من دون أن أضطر إلى شرح الحالة من البداية مرة أخرى." },
+            { "language": "tr", "text": "Evet, lütfen işlem numarası, kronoloji, açıklanan kusur, tercih edilen çözüm ve cuma gününe kadar olan süreyle birlikte. Böylece daha sonra neyin kararlaştırıldığını takip edebilirim, dosyayı tekrar baştan açıklamak zorunda kalmadan." },
+            { "language": "ru", "text": "Да, пожалуйста, с номером дела, хронологией, описанным дефектом, предпочтительным решением и сроком до пятницы. Тогда я позже смогу отследить, что было согласовано, не объясняя случай снова с самого начала." },
+            { "language": "ckb", "text": "بەڵێ، تکایە بە ژمارەی مامەڵە، ڕیزبەندی کات، کەموکوڕیی باسکراو، چارەسەری پەسەندکراو و مۆڵەت تا هەینی. ئەو کات دواتر دەتوانم بزانم چی ڕێکەوتووە، بەبێ ئەوەی دۆسیەکە جارێکی تر لە سەرەتاوە ڕوون بکەمەوە." },
+            { "language": "kmr", "text": "Erê, ji kerema xwe bi jimareya pêvajoyê, kronolojî, kêmasiya ravekirî, çareseriya tercîhkirî û demê heta înê. Wê demê ez dikarim paşê bibînim çi hat lihevkirin bê ku dozê careke din ji destpêkê ve rave bikim." },
+            { "language": "pl", "text": "Tak, proszę z numerem sprawy, chronologią, opisanym defektem, preferowanym rozwiązaniem i terminem do piątku. Wtedy później mogę odtworzyć, co zostało ustalone, bez ponownego wyjaśniania sprawy od początku." },
+            { "language": "ro", "text": "Da, vă rog, cu numărul dosarului, cronologia, defectul descris, soluția preferată și termenul până vineri. Apoi pot urmări mai târziu ce s-a convenit fără să explic cazul din nou de la început." },
+            { "language": "sq", "text": "Po, ju lutem me numrin e rastit, kronologjinë, defektin e përshkruar, zgjidhjen e preferuar dhe afatin deri të premten. Kështu më vonë mund të ndjek çfarë u ra dakord, pa e shpjeguar rastin përsëri nga fillimi." }
+          ],
+          "function": "written-summary-close",
+          "toneNote": "The learner asks for a reusable written record.",
+          "expectedLearnerAction": "Close by securing written traceability."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "four-point-structure",
+              "text": "Ich würde den Fall gern in vier Punkten ordnen: Chronologie, Mangel, bisherige Lösungsversuche und gewünschte Abhilfe.",
+              "translations": [
+                { "language": "en", "text": "I would like to organize the case in four points: chronology, defect, previous solution attempts, and requested remedy." },
+                { "language": "fa", "text": "مایل هستم پرونده را در چهار نکته مرتب کنم: chronology، نقص، تلاش‌های قبلی برای حل و راه‌حل درخواستی." },
+                { "language": "ar", "text": "أود تنظيم الحالة في أربع نقاط: التسلسل الزمني، العيب، محاولات الحل السابقة، والتعويض المطلوب." },
+                { "language": "tr", "text": "Dosyayı dört noktada düzenlemek isterim: kronoloji, kusur, önceki çözüm girişimleri ve talep edilen çözüm." },
+                { "language": "ru", "text": "Я хотел бы упорядочить случай по четырем пунктам: хронология, дефект, предыдущие попытки решения и требуемое устранение." },
+                { "language": "ckb", "text": "دەمەوێت دۆسیەکە لە چوار خاڵدا ڕێک بخەم: ڕیزبەندی کات، کەموکوڕی، هەوڵە پێشووترەکانی چارەسەر و چارەسەری داواکراو." },
+                { "language": "kmr", "text": "Ez dixwazim dozê di çar xalan de rêxistin bikim: kronolojî, kêmasî, hewlên çareseriyê yên berê û çareseriya xwestî." },
+                { "language": "pl", "text": "Chciałbym uporządkować sprawę w czterech punktach: chronologia, wada, dotychczasowe próby rozwiązania i oczekiwane rozwiązanie." },
+                { "language": "ro", "text": "Aș dori să ordonez cazul în patru puncte: cronologie, defect, încercări anterioare de soluționare și remediu cerut." },
+                { "language": "sq", "text": "Do të doja ta rregulloj rastin në katër pika: kronologjia, defekti, përpjekjet e mëparshme për zgjidhje dhe zgjidhja e kërkuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort schafft sofort Orientierung und verhindert, dass ein komplexer Fall ungeordnet wirkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer creates orientation immediately and prevents a complex case from seeming disorganized." },
+                { "language": "fa", "text": "خوب است: پاسخ فوراً جهت می‌دهد و مانع می‌شود پرونده پیچیده نامرتب به نظر برسد." },
+                { "language": "ar", "text": "جيد: توفر الإجابة توجيهاً فورياً وتمنع أن تبدو الحالة المعقدة غير منظمة." },
+                { "language": "tr", "text": "İyi: Yanıt hemen yön verir ve karmaşık bir dosyanın dağınık görünmesini engeller." },
+                { "language": "ru", "text": "Хорошо: ответ сразу задает структуру и не дает сложному случаю выглядеть неупорядоченным." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە دەستبەجێ ئاراستە دەدات و ڕێگری دەکات دۆسیەی ئاڵۆز بێ ڕێکخستن دەربکەوێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv yekser rê nîşan dide û nahêle doza tevlihev bê rêxistin xuya bike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź od razu porządkuje sytuację i zapobiega wrażeniu chaosu w złożonej sprawie." },
+                { "language": "ro", "text": "Bine: răspunsul oferă imediat orientare și împiedică un caz complex să pară dezordonat." },
+                { "language": "sq", "text": "Mirë: përgjigjja krijon menjëherë orientim dhe parandalon që një rast kompleks të duket i çrregullt." }
+              ],
+              "explanationKey": "structure-first"
+            },
+            {
+              "id": "unstructured-frustration",
+              "text": "Ich habe schon so oft angerufen, und langsam ist das wirklich nicht mehr akzeptabel.",
+              "translations": [
+                { "language": "en", "text": "I have called so many times already, and by now this is really no longer acceptable." },
+                { "language": "fa", "text": "من تا حالا بارها تماس گرفته‌ام و دیگر واقعاً قابل قبول نیست." },
+                { "language": "ar", "text": "لقد اتصلت مرات كثيرة بالفعل، وهذا لم يعد مقبولاً حقاً." },
+                { "language": "tr", "text": "Zaten o kadar çok aradım ki artık bu gerçekten kabul edilemez." },
+                { "language": "ru", "text": "Я уже столько раз звонил, и это действительно уже неприемлемо." },
+                { "language": "ckb", "text": "من تا ئێستا چەندین جار تەلەفۆنم کردووە، و ئیتر ئەمە بەڕاستی قبوڵکراو نییە." },
+                { "language": "kmr", "text": "Min heta niha gelek caran telefon kiriye, û êdî ev bi rastî nayê qebûlkirin." },
+                { "language": "pl", "text": "Dzwoniłem już tyle razy i teraz naprawdę nie jest to już akceptowalne." },
+                { "language": "ro", "text": "Am sunat deja de atâtea ori și, sincer, asta nu mai este acceptabil." },
+                { "language": "sq", "text": "Kam telefonuar kaq shumë herë dhe tani kjo vërtet nuk është më e pranueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu ungeordnet: Der Ärger ist nachvollziehbar, hilft dem Service aber nicht, den Fall zu bearbeiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too unstructured: the frustration is nachvollziehbar, but it does not help customer service process the case." },
+                { "language": "fa", "text": "قابل درک است، اما زیادی نامرتب: ناراحتی قابل فهم است، ولی به خدمات مشتریان برای رسیدگی به پرونده کمک نمی‌کند." },
+                { "language": "ar", "text": "مفهوم، لكنه غير منظم جداً: الغضب مفهوم، لكنه لا يساعد خدمة العملاء على معالجة الحالة." },
+                { "language": "tr", "text": "Anlaşılır, ama çok düzensiz: öfke anlaşılır, fakat müşteri hizmetlerinin dosyayı işlemesine yardımcı olmaz." },
+                { "language": "ru", "text": "Понятно, но слишком неструктурировано: раздражение nachvollнимо, но не помогает службе поддержки обработать случай." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام زۆر بێ ڕێکخستنە: تووڕەییەکە تێگەیشتووە، بەڵام یارمەتی خزمەتگوزاری کڕیاران نادات دۆسیەکە کار بکات." },
+                { "language": "kmr", "text": "Têgihîştî ye, lê pir bê rêxistin e: acizbûn tê famkirin, lê alîkariya xizmeta mişteriyan nake ku dozê bixebitîne." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt nieuporządkowane: frustracja jest zrozumiała, ale nie pomaga obsłudze klienta opracować sprawy." },
+                { "language": "ro", "text": "De înțeles, dar prea nestructurat: frustrarea este firească, dar nu ajută serviciul clienți să proceseze cazul." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e pastrukturuar: zemërimi kuptohet, por nuk e ndihmon shërbimin ndaj klientit të trajtojë rastin." }
+              ],
+              "explanationKey": "avoid-unstructured-frustration"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "dated-chronology",
+              "text": "Am 3. April geliefert, am 5. April gemeldet, am 12. April repariert, am 18. April Ersatz zugesagt und am 24. April nur Standardantwort erhalten.",
+              "translations": [
+                { "language": "en", "text": "Delivered on April 3, reported on April 5, repaired on April 12, replacement promised on April 18, and only a standard reply received on April 24." },
+                { "language": "fa", "text": "۳ آوریل تحویل شد، ۵ آوریل گزارش شد، ۱۲ آوریل تعمیر شد، ۱۸ آوریل جایگزین وعده داده شد و ۲۴ آوریل فقط پاسخ استاندارد دریافت شد." },
+                { "language": "ar", "text": "تم التسليم في 3 أبريل، والإبلاغ في 5 أبريل، والإصلاح في 12 أبريل، ووُعد بالاستبدال في 18 أبريل، وفي 24 أبريل وصل رد عام فقط." },
+                { "language": "tr", "text": "3 Nisan'da teslim edildi, 5 Nisan'da bildirildi, 12 Nisan'da onarıldı, 18 Nisan'da yedek sözü verildi ve 24 Nisan'da sadece standart yanıt alındı." },
+                { "language": "ru", "text": "Доставлено 3 апреля, сообщено 5 апреля, ремонт 12 апреля, замена обещана 18 апреля, а 24 апреля получен только стандартный ответ." },
+                { "language": "ckb", "text": "لە ٣ی نیسان گەیەندرا، ٥ی نیسان ڕاپۆرت کرا، ١٢ی نیسان چاککرا، ١٨ی نیسان بەڵێنی جێگرەوە درا و ٢٤ی نیسان تەنها وەڵامی ستاندارد وەرگیرا." },
+                { "language": "kmr", "text": "Di 3ê Nîsanê de hat gihandin, di 5ê Nîsanê de hat ragihandin, di 12ê Nîsanê de hat tamîrkirin, di 18ê Nîsanê de cîgir hat sozdan û di 24ê Nîsanê de tenê bersiva standard hat wergirtin." },
+                { "language": "pl", "text": "Dostarczono 3 kwietnia, zgłoszono 5 kwietnia, naprawiono 12 kwietnia, 18 kwietnia obiecano wymianę, a 24 kwietnia otrzymano tylko odpowiedź standardową." },
+                { "language": "ro", "text": "Livrat pe 3 aprilie, raportat pe 5 aprilie, reparat pe 12 aprilie, înlocuire promisă pe 18 aprilie și doar răspuns standard primit pe 24 aprilie." },
+                { "language": "sq", "text": "Dorëzuar më 3 prill, raportuar më 5 prill, riparuar më 12 prill, zëvendësim i premtuar më 18 prill dhe më 24 prill vetëm përgjigje standarde." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Daten sind knapp, überprüfbar und trennen Chronologie von Bewertung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The dates are concise, verifiable, and separate chronology from evaluation." },
+                { "language": "fa", "text": "خوب است: تاریخ‌ها کوتاه، قابل بررسی و جدا از ارزیابی هستند." },
+                { "language": "ar", "text": "جيد: التواريخ موجزة وقابلة للتحقق وتفصل التسلسل عن التقييم." },
+                { "language": "tr", "text": "İyi: Tarihler kısa, denetlenebilir ve kronolojiyi değerlendirmeden ayırır." },
+                { "language": "ru", "text": "Хорошо: даты краткие, проверяемые и отделяют хронологию от оценки." },
+                { "language": "ckb", "text": "باشە: بەروارەکان کورت، پشکنراو و جیا لە هەڵسەنگاندنن." },
+                { "language": "kmr", "text": "Baş e: Tarîx kurt, kontrolbar û ji nirxandinê cuda ne." },
+                { "language": "pl", "text": "Dobrze: daty są krótkie, sprawdzalne i oddzielają chronologię od oceny." },
+                { "language": "ro", "text": "Bine: datele sunt concise, verificabile și separă cronologia de evaluare." },
+                { "language": "sq", "text": "Mirë: datat janë të shkurtra, të verifikueshme dhe ndajnë kronologjinë nga vlerësimi." }
+              ],
+              "explanationKey": "chronology-with-dates"
+            },
+            {
+              "id": "chronology-with-blame",
+              "text": "Seit Anfang April geht das hin und her, weil niemand bei Ihnen richtig zuständig war.",
+              "translations": [
+                { "language": "en", "text": "Since early April this has been going back and forth because no one at your company was properly responsible." },
+                { "language": "fa", "text": "از اوایل آوریل این موضوع مدام رفت و برگشت داشته، چون هیچ‌کس در شرکت شما واقعاً مسئول نبود." },
+                { "language": "ar", "text": "منذ بداية أبريل ظل الأمر يتنقل ذهاباً وإياباً لأن لا أحد لديكم كان مسؤولاً بشكل صحيح." },
+                { "language": "tr", "text": "Nisan başından beri bu ileri geri gidiyor, çünkü sizde kimse doğru dürüst sorumlu değildi." },
+                { "language": "ru", "text": "С начала апреля это тянется туда-сюда, потому что у вас никто толком не был ответственным." },
+                { "language": "ckb", "text": "لە سەرەتای نیسانەوە ئەمە هاتوچۆیە، چونکە هیچ کەسێک لەلای ئێوە بە باشی بەرپرسیار نەبوو." },
+                { "language": "kmr", "text": "Ji destpêka Nîsanê ve ev diçe û tê, ji ber ku li cem we kesek rast berpirsiyar nebû." },
+                { "language": "pl", "text": "Od początku kwietnia sprawa krąży tam i z powrotem, bo u Państwa nikt naprawdę nie był odpowiedzialny." },
+                { "language": "ro", "text": "De la începutul lui aprilie totul merge înainte și înapoi, pentru că la dumneavoastră nimeni nu a fost cu adevărat responsabil." },
+                { "language": "sq", "text": "Që nga fillimi i prillit kjo po shkon sa andej-këtej, sepse te ju askush nuk ishte vërtet përgjegjës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu bewertend: Die Kritik kann stimmen, aber ohne Daten verliert der Kundenservice die konkrete Bearbeitungslinie.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evaluative: the criticism may be true, but without dates customer service loses the concrete processing line." },
+                { "language": "fa", "text": "زیادی ارزیابانه است: شاید انتقاد درست باشد، اما بدون تاریخ، خدمات مشتریان خط رسیدگی مشخص را از دست می‌دهد." },
+                { "language": "ar", "text": "تقييمي جداً: قد يكون النقد صحيحاً، لكن من دون تواريخ تفقد خدمة العملاء خط المعالجة المحدد." },
+                { "language": "tr", "text": "Çok değerlendirici: eleştiri doğru olabilir, ama tarihler olmadan müşteri hizmetleri somut işlem çizgisini kaybeder." },
+                { "language": "ru", "text": "Слишком оценочно: критика может быть верной, но без дат служба поддержки теряет конкретную линию обработки." },
+                { "language": "ckb", "text": "زۆر هەڵسەنگاندنە: ڕەخنەکە ڕەنگە ڕاست بێت، بەڵام بەبێ بەروار خزمەتگوزاری کڕیاران هێڵی دیاریکراوی کارکردن لەدەست دەدات." },
+                { "language": "kmr", "text": "Pir nirxandinî ye: rexne dikare rast be, lê bê tarîx xizmeta mişteriyan rêza konkret a xebitandinê winda dike." },
+                { "language": "pl", "text": "Zbyt oceniająco: krytyka może być słuszna, ale bez dat obsługa traci konkretną linię działania." },
+                { "language": "ro", "text": "Prea evaluativ: critica poate fi corectă, dar fără date serviciul clienți pierde linia concretă de procesare." },
+                { "language": "sq", "text": "Shumë vlerësuese: kritika mund të jetë e drejtë, por pa data shërbimi ndaj klientit humb vijën konkrete të trajtimit." }
+              ],
+              "explanationKey": "avoid-blame-before-dates"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "observable-defect-impact",
+              "text": "Das Gerät startet, bricht aber nach etwa zehn Minuten mit derselben Fehlermeldung ab; ich kann die bezahlte Leistung praktisch nicht nutzen.",
+              "translations": [
+                { "language": "en", "text": "The device starts, but stops after about ten minutes with the same error message; in practice I cannot use the service I paid for." },
+                { "language": "fa", "text": "دستگاه روشن می‌شود، اما بعد از حدود ده دقیقه با همان پیام خطا قطع می‌شود؛ عملاً نمی‌توانم خدمتی را که برایش پول داده‌ام استفاده کنم." },
+                { "language": "ar", "text": "يبدأ الجهاز، لكنه يتوقف بعد نحو عشر دقائق بالرسالة الخطأ نفسها؛ عملياً لا أستطيع استخدام الخدمة التي دفعت ثمنها." },
+                { "language": "tr", "text": "Cihaz çalışmaya başlıyor, ancak yaklaşık on dakika sonra aynı hata mesajıyla duruyor; parasını ödediğim hizmeti pratikte kullanamıyorum." },
+                { "language": "ru", "text": "Устройство запускается, но примерно через десять минут останавливается с тем же сообщением об ошибке; фактически я не могу пользоваться оплаченной услугой." },
+                { "language": "ckb", "text": "ئامێرەکە دەست پێ دەکات، بەڵام دوای نزیکەی دە خولەک بە هەمان پەیامی هەڵە دەوەستێت؛ بە کردار ناتوانم خزمەتگوزاریی پارەدراو بەکاربهێنم." },
+                { "language": "kmr", "text": "Amûr dest pê dike, lê piştî nêzî deh xulek bi heman peyama şaşiyê disekine; bi rastî ez nikarim xizmeta ku min dravê wê daye bi kar bînim." },
+                { "language": "pl", "text": "Urządzenie się uruchamia, ale po około dziesięciu minutach przerywa pracę z tym samym komunikatem błędu; praktycznie nie mogę korzystać z opłaconej usługi." },
+                { "language": "ro", "text": "Dispozitivul pornește, dar se oprește după aproximativ zece minute cu același mesaj de eroare; practic nu pot folosi serviciul plătit." },
+                { "language": "sq", "text": "Pajisja ndizet, por pas rreth dhjetë minutash ndalon me të njëjtin mesazh gabimi; praktikisht nuk mund ta përdor shërbimin e paguar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort beschreibt den Mangel beobachtbar und zeigt die konkrete Auswirkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer describes the defect observably and shows the concrete impact." },
+                { "language": "fa", "text": "خوب است: پاسخ نقص را قابل مشاهده توضیح می‌دهد و اثر مشخص را نشان می‌دهد." },
+                { "language": "ar", "text": "جيد: تصف الإجابة العيب بشكل قابل للملاحظة وتظهر الأثر المحدد." },
+                { "language": "tr", "text": "İyi: Yanıt kusuru gözlemlenebilir biçimde açıklar ve somut etkiyi gösterir." },
+                { "language": "ru", "text": "Хорошо: ответ описывает дефект наблюдаемым образом и показывает конкретные последствия." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە کەموکوڕییەکە بە شێوەی بینراو باس دەکات و کاریگەریی دیاریکراو پیشان دەدات." },
+                { "language": "kmr", "text": "Baş e: Bersiv kêmasiyê bi awayekî dîtbar rave dike û bandora konkret nîşan dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź opisuje wadę w sposób obserwowalny i pokazuje konkretny skutek." },
+                { "language": "ro", "text": "Bine: răspunsul descrie defectul observabil și arată efectul concret." },
+                { "language": "sq", "text": "Mirë: përgjigjja e përshkruan defektin në mënyrë të vëzhgueshme dhe tregon ndikimin konkret." }
+              ],
+              "explanationKey": "observable-defect"
+            },
+            {
+              "id": "vague-defect",
+              "text": "Es funktioniert einfach nicht richtig, und ich bin damit insgesamt sehr unzufrieden.",
+              "translations": [
+                { "language": "en", "text": "It simply does not work properly, and overall I am very dissatisfied with it." },
+                { "language": "fa", "text": "فقط درست کار نمی‌کند و در کل از آن خیلی ناراضی هستم." },
+                { "language": "ar", "text": "إنه ببساطة لا يعمل بشكل صحيح، وأنا عموماً غير راضٍ عنه كثيراً." },
+                { "language": "tr", "text": "Basitçe düzgün çalışmıyor ve genel olarak bundan çok memnun değilim." },
+                { "language": "ru", "text": "Он просто работает неправильно, и в целом я им очень недоволен." },
+                { "language": "ckb", "text": "تەنها بە باشی کار ناکات و بە گشتی زۆر لێی ناڕازیم." },
+                { "language": "kmr", "text": "Ew tenê rast naxebite û ez bi giştî ji wê pir nerazî me." },
+                { "language": "pl", "text": "Po prostu nie działa prawidłowo i ogólnie jestem z tego bardzo niezadowolony." },
+                { "language": "ro", "text": "Pur și simplu nu funcționează corect și sunt în general foarte nemulțumit." },
+                { "language": "sq", "text": "Thjesht nuk funksionon si duhet dhe në përgjithësi jam shumë i pakënaqur me të." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Der Service braucht konkrete Symptome, sonst bleibt die Reklamation schwer prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: customer service needs concrete symptoms, otherwise the complaint remains difficult to verify." },
+                { "language": "fa", "text": "زیادی کلی است: خدمات مشتریان به نشانه‌های مشخص نیاز دارد، وگرنه شکایت به سختی قابل بررسی می‌ماند." },
+                { "language": "ar", "text": "عام جداً: تحتاج خدمة العملاء إلى أعراض محددة، وإلا تبقى الشكوى صعبة التحقق." },
+                { "language": "tr", "text": "Çok genel: müşteri hizmetleri somut belirtilere ihtiyaç duyar, aksi halde şikayetin doğrulanması zor kalır." },
+                { "language": "ru", "text": "Слишком обобщенно: службе поддержки нужны конкретные симптомы, иначе рекламацию трудно проверить." },
+                { "language": "ckb", "text": "زۆر گشتییە: خزمەتگوزاری کڕیاران پێویستی بە نیشانەی دیاریکراوە، ئەگەر نا سکاڵاکە بە زەحمەت پشکنراو دەبێت." },
+                { "language": "kmr", "text": "Pir giştî ye: xizmeta mişteriyan pêdiviya wê bi nîşanên konkret heye, wekî din reklamasyon zehmet tê kontrolkirin." },
+                { "language": "pl", "text": "Zbyt ogólnie: obsługa klienta potrzebuje konkretnych objawów, inaczej reklamacja pozostaje trudna do sprawdzenia." },
+                { "language": "ro", "text": "Prea general: serviciul clienți are nevoie de simptome concrete, altfel reclamația rămâne greu de verificat." },
+                { "language": "sq", "text": "Shumë e përgjithshme: shërbimi ndaj klientit ka nevojë për simptoma konkrete, përndryshe ankesa mbetet e vështirë për t'u verifikuar." }
+              ],
+              "explanationKey": "avoid-vague-defect"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "proportional-options",
+              "text": "Nach zwei erfolglosen Kontakten halte ich entweder einen Austausch innerhalb von fünf Werktagen oder eine Rückabwicklung für verhältnismäßig.",
+              "translations": [
+                { "language": "en", "text": "After two unsuccessful contacts, I consider either an exchange within five business days or cancellation of the transaction proportionate." },
+                { "language": "fa", "text": "بعد از دو تماس ناموفق، یا تعویض ظرف پنج روز کاری یا برگرداندن معامله را متناسب می‌دانم." },
+                { "language": "ar", "text": "بعد اتصالين غير ناجحين، أرى أن الاستبدال خلال خمسة أيام عمل أو التراجع عن العملية أمر متناسب." },
+                { "language": "tr", "text": "İki başarısız temastan sonra, beş iş günü içinde değişim ya da işlemin geri alınmasını orantılı görüyorum." },
+                { "language": "ru", "text": "После двух неудачных контактов я считаю соразмерным либо обмен в течение пяти рабочих дней, либо обратное оформление сделки." },
+                { "language": "ckb", "text": "دوای دوو پەیوەندیی بێ ئەنجام، یان گۆڕینەوە لە ماوەی پێنج ڕۆژی کاری یان هەڵوەشاندنەوەی مامەڵەکە بە گونجاو دەزانم." },
+                { "language": "kmr", "text": "Piştî du têkiliyên bê encam, ez an guhertin di nav pênc rojên kar de an vegerandina danûstandinê wekî rêjeyî dibînim." },
+                { "language": "pl", "text": "Po dwóch nieskutecznych kontaktach uważam za proporcjonalne albo wymianę w ciągu pięciu dni roboczych, albo odstąpienie od transakcji." },
+                { "language": "ro", "text": "După două contacte fără rezultat, consider proporțional fie schimbul în cinci zile lucrătoare, fie anularea tranzacției." },
+                { "language": "sq", "text": "Pas dy kontakteve pa rezultat, e shoh të arsyeshëm ose zëvendësimin brenda pesë ditëve pune, ose kthimin e transaksionit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort begründet, warum die gewünschte Abhilfe über einen bloßen neuen Termin hinausgeht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer explains why the requested remedy goes beyond merely scheduling another appointment." },
+                { "language": "fa", "text": "خوب است: پاسخ توضیح می‌دهد چرا راه‌حل درخواستی فراتر از یک وقت جدید ساده است." },
+                { "language": "ar", "text": "جيد: تشرح الإجابة لماذا يتجاوز التعويض المطلوب مجرد موعد جديد." },
+                { "language": "tr", "text": "İyi: Yanıt talep edilen çözümün neden sadece yeni bir randevunun ötesine geçtiğini açıklar." },
+                { "language": "ru", "text": "Хорошо: ответ объясняет, почему требуемое устранение выходит за рамки простой новой даты." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕوون دەکاتەوە بۆچی چارەسەری داواکراو لە کاتی نوێی سادە زیاترە." },
+                { "language": "kmr", "text": "Baş e: Bersiv rave dike çima çareseriya xwestî ji randevûyeke nû ya tenê wêdetir e." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wyjaśnia, dlaczego oczekiwane rozwiązanie wykracza poza sam nowy termin." },
+                { "language": "ro", "text": "Bine: răspunsul explică de ce remediul cerut depășește simpla programare a unui nou termen." },
+                { "language": "sq", "text": "Mirë: përgjigjja shpjegon pse zgjidhja e kërkuar shkon përtej një takimi të ri të thjeshtë." }
+              ],
+              "explanationKey": "proportional-remedy"
+            },
+            {
+              "id": "unbounded-demand",
+              "text": "Nach allem, was passiert ist, möchte ich keine weitere Reparatur akzeptieren.",
+              "translations": [
+                { "language": "en", "text": "After everything that has happened, I do not want to accept another repair." },
+                { "language": "fa", "text": "بعد از همه چیزهایی که اتفاق افتاده، نمی‌خواهم تعمیر دیگری را قبول کنم." },
+                { "language": "ar", "text": "بعد كل ما حدث، لا أريد قبول إصلاح آخر." },
+                { "language": "tr", "text": "Yaşananlardan sonra başka bir onarımı kabul etmek istemiyorum." },
+                { "language": "ru", "text": "После всего, что произошло, я не хочу соглашаться на еще один ремонт." },
+                { "language": "ckb", "text": "دوای هەموو ئەوەی ڕوویداوە، نامەوێت چاککردنەوەیەکی تر قبوڵ بکەم." },
+                { "language": "kmr", "text": "Piştî hemû tiştên ku qewimîn, ez naxwazim tamîreke din qebûl bikim." },
+                { "language": "pl", "text": "Po wszystkim, co się wydarzyło, nie chcę akceptować kolejnej naprawy." },
+                { "language": "ro", "text": "După tot ce s-a întâmplat, nu vreau să accept încă o reparație." },
+                { "language": "sq", "text": "Pas gjithçkaje që ka ndodhur, nuk dua të pranoj një riparim tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nachvollziehbar, aber unvollständig: Ohne Alternative, Frist und Begründung bleibt die Forderung zu wenig verhandelbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but incomplete: without an alternative, deadline, and justification, the demand is not negotiable enough." },
+                { "language": "fa", "text": "قابل درک است، اما ناقص: بدون جایگزین، مهلت و دلیل، درخواست به اندازه کافی قابل مذاکره نیست." },
+                { "language": "ar", "text": "مفهوم، لكنه غير مكتمل: من دون بديل وموعد وتبرير تبقى المطالبة غير قابلة للتفاوض بما يكفي." },
+                { "language": "tr", "text": "Anlaşılır, ama eksik: alternatif, süre ve gerekçe olmadan talep yeterince müzakere edilebilir değildir." },
+                { "language": "ru", "text": "Понятно, но неполно: без альтернативы, срока и обоснования требование недостаточно пригодно для переговоров." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام ناتەواوە: بەبێ جێگرەوە، مۆڵەت و پاساو، داواکارییەکە بەس گفتوگۆپێکراو نییە." },
+                { "language": "kmr", "text": "Têgihîştî ye, lê netemam e: bê alternatîf, dem û sedem, daxwaz têr nabe ji bo danûstandinê." },
+                { "language": "pl", "text": "Zrozumiałe, ale niepełne: bez alternatywy, terminu i uzasadnienia żądanie jest za mało negocjowalne." },
+                { "language": "ro", "text": "De înțeles, dar incomplet: fără alternativă, termen și justificare, cererea este prea puțin negociabilă." },
+                { "language": "sq", "text": "E kuptueshme, por e paplotë: pa alternativë, afat dhe arsyetim, kërkesa nuk është mjaft e negociueshme." }
+              ],
+              "explanationKey": "avoid-unbounded-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "preferred-remedy-fallback",
+              "text": "Bevorzugt ist ein Ersatzgerät mit bestätigtem Liefertermin; falls das bis Freitag nicht geht, bitte ich um Prüfung der Rückabwicklung.",
+              "translations": [
+                { "language": "en", "text": "The preferred solution is a replacement device with a confirmed delivery date; if that is not possible by Friday, I ask for review of cancellation of the transaction." },
+                { "language": "fa", "text": "راه‌حل ترجیحی یک دستگاه جایگزین با تاریخ تحویل تأییدشده است؛ اگر تا جمعه ممکن نباشد، درخواست بررسی برگرداندن معامله دارم." },
+                { "language": "ar", "text": "الحل المفضل هو جهاز بديل مع موعد تسليم مؤكد؛ إذا لم يكن ذلك ممكناً حتى الجمعة، أطلب فحص التراجع عن العملية." },
+                { "language": "tr", "text": "Tercih edilen çözüm, onaylı teslim tarihi olan bir yedek cihazdır; bu cuma gününe kadar mümkün olmazsa işlemin geri alınmasının incelenmesini rica ediyorum." },
+                { "language": "ru", "text": "Предпочтительное решение — замена с подтвержденной датой доставки; если это невозможно до пятницы, я прошу проверить обратное оформление сделки." },
+                { "language": "ckb", "text": "چارەسەری پەسەندکراو ئامێری جێگرەوەیەکە بە بەرواری گەیاندنی پشتڕاستکراو؛ ئەگەر تا هەینی نەکرێت، داوای پشکنینی هەڵوەشاندنەوەی مامەڵەکە دەکەم." },
+                { "language": "kmr", "text": "Çareseriya tercîhkirî amûreke cîgir bi tarîxa gihandinê ya piştrastkirî ye; heke ev heta înê nebe, ez daxwaza kontrola vegerandina danûstandinê dikim." },
+                { "language": "pl", "text": "Preferowanym rozwiązaniem jest urządzenie zastępcze z potwierdzonym terminem dostawy; jeśli do piątku nie będzie to możliwe, proszę o sprawdzenie odstąpienia od transakcji." },
+                { "language": "ro", "text": "Soluția preferată este un dispozitiv de înlocuire cu termen de livrare confirmat; dacă acest lucru nu este posibil până vineri, solicit verificarea anulării tranzacției." },
+                { "language": "sq", "text": "Zgjidhja e preferuar është një pajisje zëvendësuese me datë dorëzimi të konfirmuar; nëse kjo nuk bëhet deri të premten, kërkoj shqyrtimin e kthimit të transaksionit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort priorisiert eine Lösung, lässt aber einen klar begründeten Ersatzweg offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer prioritizes one solution while keeping a clearly justified fallback open." },
+                { "language": "fa", "text": "خوب است: پاسخ یک راه‌حل را اولویت می‌دهد، اما مسیر جایگزین روشن و موجه را باز نگه می‌دارد." },
+                { "language": "ar", "text": "جيد: تعطي الإجابة أولوية لحل واحد وتبقي مساراً بديلاً مبرراً واضحاً مفتوحاً." },
+                { "language": "tr", "text": "İyi: Yanıt bir çözümü önceliklendirir, ama açık gerekçeli bir yedek yolu açık tutar." },
+                { "language": "ru", "text": "Хорошо: ответ расставляет приоритеты и оставляет открытым четко обоснованный запасной путь." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە چارەسەرێک پێش دەخات، بەڵام ڕێگای جێگرەوەی ڕوون و پاساودار کراوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv çareseriyekê pêş dixe, lê rêyeke cîgir a bi sedema zelal vekirî dihêle." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nadaje priorytet jednemu rozwiązaniu, ale pozostawia otwartą jasno uzasadnioną ścieżkę awaryjną." },
+                { "language": "ro", "text": "Bine: răspunsul prioritizează o soluție, dar păstrează deschisă o cale de rezervă clar justificată." },
+                { "language": "sq", "text": "Mirë: përgjigjja i jep përparësi një zgjidhjeje, por lë hapur një rrugë rezervë të qartë dhe të arsyetuar." }
+              ],
+              "explanationKey": "priority-plus-fallback"
+            },
+            {
+              "id": "two-equal-demands",
+              "text": "Ich möchte entweder sofort ein Ersatzgerät oder mein Geld zurück, sonst ist das für mich nicht akzeptabel.",
+              "translations": [
+                { "language": "en", "text": "I want either a replacement device immediately or my money back, otherwise this is not acceptable to me." },
+                { "language": "fa", "text": "یا فوراً دستگاه جایگزین می‌خواهم یا پولم را پس می‌خواهم، وگرنه برای من قابل قبول نیست." },
+                { "language": "ar", "text": "أريد إما جهازاً بديلاً فوراً أو استرداد مالي، وإلا فهذا غير مقبول بالنسبة لي." },
+                { "language": "tr", "text": "Ya hemen yedek cihaz istiyorum ya da paramı geri istiyorum, aksi halde bu benim için kabul edilemez." },
+                { "language": "ru", "text": "Я хочу либо немедленно замену, либо возврат денег, иначе для меня это неприемлемо." },
+                { "language": "ckb", "text": "یان دەستبەجێ ئامێری جێگرەوە دەوێت یان پارەکەم دەوێتەوە، ئەگەر نا ئەمە بۆ من قبوڵکراو نییە." },
+                { "language": "kmr", "text": "Ez an tavilê amûreke cîgir dixwazim an jî dravê xwe vedixwazim, wekî din ev ji bo min nayê qebûlkirin." },
+                { "language": "pl", "text": "Chcę albo natychmiast urządzenie zastępcze, albo zwrot pieniędzy, inaczej nie jest to dla mnie akceptowalne." },
+                { "language": "ro", "text": "Vreau fie imediat un dispozitiv de înlocuire, fie banii înapoi, altfel nu este acceptabil pentru mine." },
+                { "language": "sq", "text": "Dua ose menjëherë një pajisje zëvendësuese, ose paratë mbrapsht, përndryshe kjo nuk është e pranueshme për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu hart und zu wenig gestuft: Es fehlt die bevorzugte Lösung, die realistische Frist und der Grund für den Fallback.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too harsh and not staged enough: the preferred solution, realistic deadline, and reason for the fallback are missing." },
+                { "language": "fa", "text": "زیادی سخت و بدون مرحله‌بندی است: راه‌حل ترجیحی، مهلت واقع‌بینانه و دلیل مسیر جایگزین کم است." },
+                { "language": "ar", "text": "حازم جداً وغير متدرج بما يكفي: الحل المفضل والمهلة الواقعية وسبب المسار البديل غير موجودة." },
+                { "language": "tr", "text": "Çok sert ve yeterince aşamalı değil: tercih edilen çözüm, gerçekçi süre ve yedek yolun nedeni eksik." },
+                { "language": "ru", "text": "Слишком жестко и недостаточно поэтапно: отсутствуют предпочтительное решение, реалистичный срок и причина запасного пути." },
+                { "language": "ckb", "text": "زۆر توند و کەم قۆناغبەندکراوە: چارەسەری پەسەندکراو، مۆڵەتی واقیعی و هۆکاری ڕێگای جێگرەوە نییە." },
+                { "language": "kmr", "text": "Pir tund û ne têr qonaxî ye: çareseriya tercîhkirî, dema rast û sedema rêya cîgir kêm in." },
+                { "language": "pl", "text": "Zbyt ostro i zbyt mało etapowo: brakuje preferowanego rozwiązania, realistycznego terminu i powodu dla ścieżki awaryjnej." },
+                { "language": "ro", "text": "Prea dur și prea puțin etapizat: lipsesc soluția preferată, termenul realist și motivul pentru varianta de rezervă." },
+                { "language": "sq", "text": "Shumë e ashpër dhe jo mjaft e shkallëzuar: mungojnë zgjidhja e preferuar, afati realist dhe arsyeja për rrugën rezervë." }
+              ],
+              "explanationKey": "avoid-hard-ultimatum"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "written-traceability",
+              "text": "Bitte senden Sie mir die Vorgangsnummer, Chronologie, den beschriebenen Mangel, die bevorzugte Lösung und die Frist per E-Mail.",
+              "translations": [
+                { "language": "en", "text": "Please send me the case number, chronology, described defect, preferred solution, and deadline by email." },
+                { "language": "fa", "text": "لطفاً شماره پرونده، chronology، نقص توضیح‌داده‌شده، راه‌حل ترجیحی و مهلت را ایمیل کنید." },
+                { "language": "ar", "text": "يرجى إرسال رقم المعاملة والتسلسل الزمني والعيب الموصوف والحل المفضل والمهلة بالبريد الإلكتروني." },
+                { "language": "tr", "text": "Lütfen işlem numarasını, kronolojiyi, açıklanan kusuru, tercih edilen çözümü ve süreyi e-postayla gönderin." },
+                { "language": "ru", "text": "Пожалуйста, отправьте мне по электронной почте номер дела, хронологию, описанный дефект, предпочтительное решение и срок." },
+                { "language": "ckb", "text": "تکایە ژمارەی مامەڵە، ڕیزبەندی کات، کەموکوڕیی باسکراو، چارەسەری پەسەندکراو و مۆڵەت بە ئیمەیل بنێرن." },
+                { "language": "kmr", "text": "Ji kerema xwe jimareya pêvajoyê, kronolojî, kêmasiya ravekirî, çareseriya tercîhkirî û demê bi e-nameyê bişînin." },
+                { "language": "pl", "text": "Proszę przesłać mi e-mailem numer sprawy, chronologię, opisany defekt, preferowane rozwiązanie i termin." },
+                { "language": "ro", "text": "Vă rog să îmi trimiteți prin e-mail numărul dosarului, cronologia, defectul descris, soluția preferată și termenul." },
+                { "language": "sq", "text": "Ju lutem më dërgoni me email numrin e rastit, kronologjinë, defektin e përshkruar, zgjidhjen e preferuar dhe afatin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Der Abschluss macht die Reklamation später nachvollziehbar und reduziert Wiederholungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The closing makes the complaint traceable later and reduces repetition." },
+                { "language": "fa", "text": "خوب است: پایان، شکایت را بعداً قابل پیگیری می‌کند و تکرار را کم می‌کند." },
+                { "language": "ar", "text": "جيد: تجعل الخاتمة الشكوى قابلة للتتبع لاحقاً وتقلل التكرار." },
+                { "language": "tr", "text": "İyi: Kapanış şikayeti daha sonra izlenebilir kılar ve tekrarı azaltır." },
+                { "language": "ru", "text": "Хорошо: завершение делает рекламацию отслеживаемой позже и уменьшает повторения." },
+                { "language": "ckb", "text": "باشە: کۆتاییەکە سکاڵاکە دواتر شوێنپێهەڵگر دەکات و دووبارەکردنەوە کەم دەکات." },
+                { "language": "kmr", "text": "Baş e: Girtin reklamasyonê paşê şopbar dike û dubarekirinê kêm dike." },
+                { "language": "pl", "text": "Dobrze: zakończenie czyni reklamację później możliwą do odtworzenia i ogranicza powtórzenia." },
+                { "language": "ro", "text": "Bine: încheierea face reclamația urmărită ulterior și reduce repetările." },
+                { "language": "sq", "text": "Mirë: mbyllja e bën ankesën të gjurmueshme më vonë dhe ul përsëritjet." }
+              ],
+              "explanationKey": "written-summary"
+            },
+            {
+              "id": "friendly-but-vague-close",
+              "text": "Danke, dann hoffe ich, dass diesmal alles klappt und ich bald etwas höre.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I hope everything works this time and I hear something soon." },
+                { "language": "fa", "text": "ممنون، پس امیدوارم این بار همه چیز درست شود و به‌زودی خبری بشنوم." },
+                { "language": "ar", "text": "شكراً، إذن آمل أن ينجح كل شيء هذه المرة وأن أسمع شيئاً قريباً." },
+                { "language": "tr", "text": "Teşekkürler, o zaman bu kez her şeyin yoluna girmesini ve yakında haber almayı umuyorum." },
+                { "language": "ru", "text": "Спасибо, тогда надеюсь, что на этот раз все получится и я скоро что-то услышу." },
+                { "language": "ckb", "text": "سوپاس، کەواتە هیوادارم ئەم جارە هەموو شتێک باش بڕوات و زوو هەواڵێک ببیستم." },
+                { "language": "kmr", "text": "Spas, wê demê ez hêvî dikim vê carê her tişt bikeve rê û ez zû agahiyekê bibihîzim." },
+                { "language": "pl", "text": "Dziękuję, mam więc nadzieję, że tym razem wszystko się uda i wkrótce coś usłyszę." },
+                { "language": "ro", "text": "Mulțumesc, atunci sper că de data aceasta totul va merge bine și voi auzi ceva curând." },
+                { "language": "sq", "text": "Faleminderit, atëherë shpresoj që këtë herë gjithçka të shkojë mirë dhe të dëgjoj diçka së shpejti." }
+              ],
+              "isCorrect": false,
+              "feedback": "Freundlich, aber zu vage: Ohne schriftliche Zusammenfassung bleibt die nächste Bearbeitung wieder vom Zufall abhängig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Friendly, but too vague: without a written summary, the next processing step again depends on chance." },
+                { "language": "fa", "text": "دوستانه است، اما زیادی مبهم: بدون خلاصه کتبی، رسیدگی بعدی دوباره به شانس وابسته می‌شود." },
+                { "language": "ar", "text": "ودود، لكنه غامض جداً: من دون ملخص مكتوب تبقى المعالجة التالية معتمدة على الصدفة مرة أخرى." },
+                { "language": "tr", "text": "Dostça, ama çok belirsiz: yazılı özet olmadan sonraki işlem yine şansa bağlı kalır." },
+                { "language": "ru", "text": "Дружелюбно, но слишком расплывчато: без письменного резюме следующая обработка снова зависит от случайности." },
+                { "language": "ckb", "text": "دۆستانەیە، بەڵام زۆر نادیارە: بەبێ کورتەی نووسراو، کارکردنی داهاتوو جارێکی تر پشت بە ڕێکەوت دەبەستێت." },
+                { "language": "kmr", "text": "Dostane ye, lê pir nezelal e: bê kurteya nivîskî, xebitandina paşê dîsa bi tesadufê ve girêdayî dimîne." },
+                { "language": "pl", "text": "Przyjaźnie, ale zbyt niejasno: bez pisemnego podsumowania kolejna obsługa znów zależy od przypadku." },
+                { "language": "ro", "text": "Prietenos, dar prea vag: fără rezumat scris, următoarea procesare depinde din nou de întâmplare." },
+                { "language": "sq", "text": "Miqësore, por shumë e paqartë: pa përmbledhje me shkrim, trajtimi i radhës varet përsëri nga rastësia." }
+              ],
+              "explanationKey": "avoid-vague-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "structure-note",
+          "text": "Bei komplexen Reklamationen ist Struktur oft wichtiger als Lautstärke: Wer sortiert, wirkt glaubwürdiger.",
+          "translations": [
+            { "language": "en", "text": "In complex complaints, structure is often more important than volume: someone who organizes the case sounds more credible." },
+            { "language": "fa", "text": "در شکایت‌های پیچیده، ساختار اغلب مهم‌تر از بلند صحبت کردن است: کسی که پرونده را مرتب می‌کند، معتبرتر به نظر می‌رسد." },
+            { "language": "ar", "text": "في الشكاوى المعقدة تكون البنية غالباً أهم من رفع الصوت: من ينظم الحالة يبدو أكثر مصداقية." },
+            { "language": "tr", "text": "Karmaşık şikayetlerde yapı çoğu zaman sesten önemlidir: dosyayı düzenleyen kişi daha güvenilir görünür." },
+            { "language": "ru", "text": "В сложных рекламациях структура часто важнее громкости: тот, кто упорядочивает случай, выглядит убедительнее." },
+            { "language": "ckb", "text": "لە سکاڵای ئاڵۆزدا ڕێکخستن زۆرجار لە دەنگبەرزی گرنگترە: ئەوەی دۆسیە ڕێک دەخات باوەڕپێکراوتر دەردەکەوێت." },
+            { "language": "kmr", "text": "Di reklamasyonên tevlihev de rêxistin gelek caran ji deng bilindtir girîngtir e: kesê ku dozê rêxistin dike bawerhêjtir xuya dike." },
+            { "language": "pl", "text": "W złożonych reklamacjach struktura bywa ważniejsza niż głośny ton: kto porządkuje sprawę, brzmi wiarygodniej." },
+            { "language": "ro", "text": "În reclamațiile complexe, structura este adesea mai importantă decât tonul ridicat: cine organizează cazul pare mai credibil." },
+            { "language": "sq", "text": "Në ankesat komplekse, struktura shpesh është më e rëndësishme se zëri i lartë: kush e organizon rastin duket më i besueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "chronology-note",
+          "text": "Eine gute Chronologie nennt nur die entscheidenden Daten und lässt Bewertungen zunächst weg.",
+          "translations": [
+            { "language": "en", "text": "A good chronology names only the decisive dates and initially leaves out evaluations." },
+            { "language": "fa", "text": "chronology خوب فقط تاریخ‌های تعیین‌کننده را می‌گوید و ابتدا ارزیابی‌ها را کنار می‌گذارد." },
+            { "language": "ar", "text": "التسلسل الزمني الجيد يذكر فقط التواريخ الحاسمة ويترك التقييمات في البداية." },
+            { "language": "tr", "text": "İyi bir kronoloji yalnızca belirleyici tarihleri söyler ve başlangıçta değerlendirmeleri dışarıda bırakır." },
+            { "language": "ru", "text": "Хорошая хронология называет только решающие даты и сначала оставляет оценки в стороне." },
+            { "language": "ckb", "text": "ڕیزبەندی کاتی باش تەنها بەروارە گرنگەکان دەڵێت و سەرەتا هەڵسەنگاندنەکان لا دەدات." },
+            { "language": "kmr", "text": "Kronolojiyeke baş tenê tarîxên girîng nav dike û nirxandinan di destpêkê de dihêle." },
+            { "language": "pl", "text": "Dobra chronologia podaje tylko decydujące daty i na początku pomija oceny." },
+            { "language": "ro", "text": "O cronologie bună numește doar datele decisive și lasă inițial deoparte evaluările." },
+            { "language": "sq", "text": "Një kronologji e mirë përmend vetëm datat vendimtare dhe fillimisht lë jashtë vlerësimet." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "defect-note",
+          "text": "Ein Mangel wird stärker, wenn er beobachtbar beschrieben und mit einer konkreten Nutzungseinschränkung verbunden wird.",
+          "translations": [
+            { "language": "en", "text": "A defect becomes stronger as an argument when it is described observably and linked to a concrete limitation of use." },
+            { "language": "fa", "text": "نقص وقتی به عنوان استدلال قوی‌تر می‌شود که قابل مشاهده توصیف شود و با محدودیت استفاده مشخص پیوند بخورد." },
+            { "language": "ar", "text": "يصبح العيب أقوى كحجة عندما يوصف بشكل قابل للملاحظة ويرتبط بقيد استخدام محدد." },
+            { "language": "tr", "text": "Bir kusur, gözlemlenebilir biçimde anlatılıp somut bir kullanım kısıtlamasıyla bağlandığında daha güçlü bir argüman olur." },
+            { "language": "ru", "text": "Дефект становится сильнее как аргумент, когда он описан наблюдаемым образом и связан с конкретным ограничением использования." },
+            { "language": "ckb", "text": "کەموکوڕی وەک پاساو کاتێک بەهێزتر دەبێت کە بە شێوەی بینراو باس بکرێت و بە سنوورداربوونی بەکارهێنانی دیاریکراوەوە ببەسترێتەوە." },
+            { "language": "kmr", "text": "Kêmasî wekî argûman wê demê xurtir dibe ku bi awayekî dîtbar were ravekirin û bi tixûbdariyeke bikaranînê ya konkret ve were girêdan." },
+            { "language": "pl", "text": "Wada staje się silniejszym argumentem, gdy jest opisana obserwowalnie i powiązana z konkretnym ograniczeniem użytkowania." },
+            { "language": "ro", "text": "Un defect devine mai puternic ca argument când este descris observabil și legat de o limitare concretă de utilizare." },
+            { "language": "sq", "text": "Një defekt bëhet argument më i fortë kur përshkruhet në mënyrë të vëzhgueshme dhe lidhet me një kufizim konkret përdorimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "remedy-note",
+          "text": "Eine reife Beschwerde nennt eine bevorzugte Lösung und einen fairen Fallback, statt nur Druck aufzubauen.",
+          "translations": [
+            { "language": "en", "text": "A mature complaint names a preferred solution and a fair fallback instead of merely applying pressure." },
+            { "language": "fa", "text": "شکایت پخته یک راه‌حل ترجیحی و یک fallback منصفانه می‌گوید، نه اینکه فقط فشار ایجاد کند." },
+            { "language": "ar", "text": "الشكوى الناضجة تذكر حلاً مفضلاً ومساراً بديلاً عادلاً بدلاً من مجرد الضغط." },
+            { "language": "tr", "text": "Olgun bir şikayet yalnızca baskı kurmak yerine tercih edilen çözümü ve adil bir yedek yolu belirtir." },
+            { "language": "ru", "text": "Зрелая рекламация называет предпочтительное решение и справедливый запасной вариант, а не просто создает давление." },
+            { "language": "ckb", "text": "سکاڵای پێگەیشتوو چارەسەری پەسەندکراو و ڕێگای جێگرەوەی دادپەروەرانە دەڵێت، نە تەنها فشار دروست بکات." },
+            { "language": "kmr", "text": "Reklamasyoneke gihîştî çareseriya tercîhkirî û rêyeke cîgir a adil nav dike, ne tenê zext çêdike." },
+            { "language": "pl", "text": "Dojrzała reklamacja wskazuje preferowane rozwiązanie i uczciwą ścieżkę awaryjną, zamiast tylko wywierać presję." },
+            { "language": "ro", "text": "O reclamație matură numește o soluție preferată și o rezervă corectă, nu doar pune presiune." },
+            { "language": "sq", "text": "Një ankesë e pjekur përmend një zgjidhje të preferuar dhe një rrugë rezervë të drejtë, në vend që vetëm të krijojë presion." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "documentation-note",
+          "text": "Eine schriftliche Zusammenfassung ist kein Misstrauen, sondern schützt beide Seiten vor erneuter Unklarheit.",
+          "translations": [
+            { "language": "en", "text": "A written summary is not mistrust; it protects both sides from renewed ambiguity." },
+            { "language": "fa", "text": "خلاصه کتبی نشانه بی‌اعتمادی نیست؛ از هر دو طرف در برابر ابهام دوباره محافظت می‌کند." },
+            { "language": "ar", "text": "الملخص المكتوب ليس عدم ثقة، بل يحمي الطرفين من غموض جديد." },
+            { "language": "tr", "text": "Yazılı özet güvensizlik değildir; iki tarafı da yeniden belirsizlikten korur." },
+            { "language": "ru", "text": "Письменное резюме — это не недоверие, а защита обеих сторон от новой неясности." },
+            { "language": "ckb", "text": "کورتەی نووسراو بێ متمانەیی نییە، بەڵکوو هەردوو لا لە نادیاریی دووبارە دەپارێزێت." },
+            { "language": "kmr", "text": "Kurteya nivîskî ne bêbawerî ye, lê her du aliyan ji nezelaliya nû diparêze." },
+            { "language": "pl", "text": "Pisemne podsumowanie nie jest brakiem zaufania, lecz chroni obie strony przed ponowną niejasnością." },
+            { "language": "ro", "text": "Un rezumat scris nu este neîncredere, ci protejează ambele părți de o nouă neclaritate." },
+            { "language": "sq", "text": "Një përmbledhje me shkrim nuk është mosbesim, por mbron të dyja palët nga paqartësi e re." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "structured-complex-complaint-service-call",
+          "placement": "header",
+          "purpose": "Show a calm customer complaint call with structured notes, dates, and service documents.",
+          "altText": "Eine neutrale Illustration eines strukturierten Beschwerdetelefonats mit Notizen, Kalenderdaten und Serviceunterlagen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a structured complaint phone call with notes, calendar dates, and service documents." },
+            { "language": "fa", "text": "تصویری بی‌طرف از تماس تلفنی شکایت ساختاریافته با یادداشت‌ها، تاریخ‌های تقویم و مدارک خدمات." },
+            { "language": "ar", "text": "رسم محايد لمكالمة شكوى منظمة مع ملاحظات وتواريخ تقويم ومستندات خدمة." },
+            { "language": "tr", "text": "Notlar, takvim tarihleri ve hizmet belgeleriyle yapılandırılmış bir şikayet telefon görüşmesinin tarafsız illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация структурированного телефонного звонка с рекламацией, заметками, датами календаря и сервисными документами." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە پەیوەندی تەلەفۆنی سکاڵای ڕێکخراو بە تێبینی، بەرواری ساڵنامە و بەڵگەی خزمەتگوزاری." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya telefonê reklamasyona rêxistî bi notan, tarîxên salnameyê û belgeyên xizmetê." },
+            { "language": "pl", "text": "Neutralna ilustracja uporządkowanej rozmowy reklamacyjnej z notatkami, datami w kalendarzu i dokumentami serwisowymi." },
+            { "language": "ro", "text": "O ilustrație neutră a unui apel de reclamație structurat cu notițe, date de calendar și documente de service." },
+            { "language": "sq", "text": "Një ilustrim neutral i një telefonate ankese të strukturuar me shënime, data kalendari dhe dokumente shërbimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, adult customer on a phone call at a desk, structured complaint notes with generic date boxes, service documents, calm professional mood, no readable private data, no logos, accessible composition, neutral German customer-service context.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

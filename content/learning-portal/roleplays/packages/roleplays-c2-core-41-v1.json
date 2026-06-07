@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-41-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 41 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 41",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-mit-der-krankenkasse-einen-sonderfall-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Mit der Krankenkasse einen Sonderfall verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating a special case with the health insurance provider" },
+        { "language": "fa", "text": "مذاکره درباره یک مورد خاص با بیمه درمانی" },
+        { "language": "ar", "text": "التفاوض بشأن حالة خاصة مع التأمين الصحي" },
+        { "language": "tr", "text": "Sağlık sigortasıyla özel bir durumu müzakere etmek" },
+        { "language": "ru", "text": "Обсуждение особого случая с медицинской страховкой" },
+        { "language": "ckb", "text": "وتووێژ لەگەڵ بیمەی تەندروستی دەربارەی کەیسێکی تایبەت" },
+        { "language": "kmr", "text": "Danûstandina rewşeke taybet bi sîgorteya tenduristiyê re" },
+        { "language": "pl", "text": "Negocjowanie szczególnego przypadku z kasą chorych" },
+        { "language": "ro", "text": "Negocierea unui caz special cu casa de asigurări de sănătate" },
+        { "language": "sq", "text": "Negocimi i një rasti të veçantë me sigurimin shëndetësor" }
+      ],
+      "description": "Sie telefonieren mit Ihrer Krankenkasse, weil eine spezialisierte Therapie nur in einer weiter entfernten Praxis kurzfristig möglich ist. Sie möchten keine Sonderbehandlung ohne Grundlage verlangen, sondern mit ärztlicher Verordnung, fehlenden lokalen Terminen, beruflichen Folgen und einer begrenzten Kostenübernahme sachlich verhandeln.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are calling your health insurance provider because a specialized therapy is only available at short notice in a practice farther away. You do not want to demand special treatment without basis, but to negotiate factually with a doctor's prescription, missing local appointments, work consequences, and limited cost coverage." },
+        { "language": "fa", "text": "با بیمه درمانی تماس می‌گیرید، چون یک درمان تخصصی فقط در مطبی دورتر و در زمان نزدیک ممکن است. نمی‌خواهید بدون مبنا درخواست برخورد ویژه کنید، بلکه می‌خواهید با نسخه پزشک، نبود وقت محلی، پیامدهای کاری و پوشش هزینه محدود، منطقی مذاکره کنید." },
+        { "language": "ar", "text": "تتصلون بالتأمين الصحي لأن علاجًا متخصصًا لا يتوفر في وقت قريب إلا في عيادة أبعد. لا تريدون المطالبة بمعاملة خاصة بلا أساس، بل التفاوض بموضوعية اعتمادًا على وصفة طبية وعدم وجود مواعيد محلية وآثار مهنية وتغطية محدودة للتكاليف." },
+        { "language": "tr", "text": "Sağlık sigortanızı arıyorsunuz, çünkü uzmanlaşmış bir tedavi kısa sürede yalnızca daha uzaktaki bir muayenehanede mümkün. Dayanaksız özel muamele istemek değil, doktor reçetesi, yerel randevu bulunmaması, iş sonuçları ve sınırlı masraf karşılamasıyla nesnel biçimde müzakere etmek istiyorsunuz." },
+        { "language": "ru", "text": "Вы звоните в медицинскую страховку, потому что специализированная терапия в ближайшее время доступна только в более удаленной практике. Вы не хотите требовать особого обращения без основания, а хотите предметно обсудить врачебное назначение, отсутствие местных записей, последствия для работы и ограниченное покрытие расходов." },
+        { "language": "ckb", "text": "پەیوەندی بە بیمەی تەندروستی دەکەیت، چونکە چارەسەرێکی تایبەتمەند تەنها لە مطبێکی دوورتر و بە کاتی نزیک دەستدەکەوێت. ناتەوێت داوای مامەڵەی تایبەت بەبێ بنەما بکەیت، بەڵکو دەتەوێت بە ڕەچەتەی پزیشک، نەبوونی کاتی ناوخۆیی، کاریگەریی کاری و داپۆشینی سنوورداری تێچوو بە بابەتی وتووێژ بکەیت." },
+        { "language": "kmr", "text": "Hûn telefonî sîgorteya tenduristiyê dikin, ji ber ku terapiyeke pisporî tenê li polîklînîkeke dûrtir di demeke nêzîk de gengaz e. Hûn naxwazin bê bingeh daxwaza muameleya taybet bikin, lê dixwazin bi reçeteya bijîşkî, nebûna randevûyên herêmî, encamên kar û vegirtina mesrefê ya sînorkirî bi awayekî babetî danûstandin bikin." },
+        { "language": "pl", "text": "Dzwoni Pan/Pani do kasy chorych, ponieważ specjalistyczna terapia jest szybko dostępna tylko w bardziej oddalonej praktyce. Nie chce Pan/Pani żądać szczególnego traktowania bez podstaw, lecz rzeczowo negocjować na podstawie skierowania lekarskiego, braku lokalnych terminów, konsekwencji zawodowych i ograniczonego pokrycia kosztów." },
+        { "language": "ro", "text": "Sunați la casa de asigurări de sănătate deoarece o terapie specializată este disponibilă rapid doar într-un cabinet mai îndepărtat. Nu doriți să cereți tratament special fără bază, ci să negociați factual cu prescripție medicală, lipsa programărilor locale, consecințe profesionale și acoperire limitată a costurilor." },
+        { "language": "sq", "text": "Telefononi sigurimin shëndetësor sepse një terapi e specializuar është e mundur shpejt vetëm në një ordinancë më të largët. Nuk doni të kërkoni trajtim të veçantë pa bazë, por të negocioni në mënyrë faktike me rekomandim mjekësor, mungesë takimesh lokale, pasoja në punë dhe mbulim të kufizuar të kostove." }
+      ],
+      "learnerGoal": "Einen Sonderfall mit der Krankenkasse verhandeln: Anspruch nicht behaupten, sondern Unterlagen, fehlende Alternativen, konkrete Folgen und einen begrenzten Antrag strukturiert darstellen und eine schriftliche prüffähige Entscheidung erbitten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate a special case with the health insurance provider: do not assert entitlement, but present documents, missing alternatives, concrete consequences, and a limited request in a structured way, and ask for a written decision that can be reviewed." },
+        { "language": "fa", "text": "یک مورد خاص را با بیمه درمانی مذاکره کنید: حق را صرفاً ادعا نکنید، بلکه مدارک، نبود گزینه‌های جایگزین، پیامدهای مشخص و درخواست محدود را ساختارمند توضیح دهید و یک تصمیم کتبی قابل بررسی بخواهید." },
+        { "language": "ar", "text": "تفاوضوا بشأن حالة خاصة مع التأمين الصحي: لا تؤكدوا الحق فقط، بل اعرضوا المستندات وغياب البدائل والآثار المحددة والطلب المحدود بشكل منظم، واطلبوا قرارًا خطيًا قابلًا للمراجعة." },
+        { "language": "tr", "text": "Sağlık sigortasıyla özel bir durumu müzakere edin: hak iddia etmek yerine belgeleri, alternatiflerin bulunmamasını, somut sonuçları ve sınırlı talebi yapılandırılmış biçimde sunun ve incelenebilir yazılı bir karar isteyin." },
+        { "language": "ru", "text": "Обсудите особый случай со страховкой: не утверждайте право безусловно, а структурированно представьте документы, отсутствие альтернатив, конкретные последствия и ограниченный запрос и попросите письменное проверяемое решение." },
+        { "language": "ckb", "text": "کەیسێکی تایبەت لەگەڵ بیمەی تەندروستی وتووێژ بکە: مافەکە تەنها بانگەشە مەکە، بەڵکو بە ڕێکخراوی بەڵگەکان، نەبوونی جێگرەوە، کاریگەرییە دیاریکراوەکان و داواکاریی سنووردار پیشان بدە و داوای بڕیارێکی نووسراوی پێداچوونەوەکراو بکە." },
+        { "language": "kmr", "text": "Rewşeke taybet bi sîgorteya tenduristiyê re danûstandin bikin: mafê tenê îdia nekin, lê belge, nebûna alternatîfan, encamên konkret û daxwazeke sînorkirî bi rêkûpêk pêşkêş bikin û biryareke nivîskî ya vekolînbar bixwazin." },
+        { "language": "pl", "text": "Negocjować szczególny przypadek z kasą chorych: nie twierdzić po prostu, że roszczenie przysługuje, lecz uporządkowanie przedstawić dokumenty, brak alternatyw, konkretne skutki i ograniczony wniosek oraz poprosić o pisemną decyzję możliwą do sprawdzenia." },
+        { "language": "ro", "text": "Negociați un caz special cu casa de asigurări: nu afirmați pur și simplu un drept, ci prezentați structurat documentele, lipsa alternativelor, consecințele concrete și o cerere limitată și solicitați o decizie scrisă verificabilă." },
+        { "language": "sq", "text": "Negocioni një rast të veçantë me sigurimin shëndetësor: mos pretendoni thjesht të drejtën, por paraqisni në mënyrë të strukturuar dokumentet, mungesën e alternativave, pasojat konkrete dhe kërkesën e kufizuar dhe kërkoni një vendim me shkrim të verifikueshëm." }
+      ],
+      "cefrLevel": "C2",
+      "category": "health",
+      "topics": ["appointments-and-health", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 41,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Versicherte Person",
+          "translations": [
+            { "language": "en", "text": "Insured person" },
+            { "language": "fa", "text": "فرد بیمه‌شده" },
+            { "language": "ar", "text": "الشخص المؤمن عليه" },
+            { "language": "tr", "text": "Sigortalı kişi" },
+            { "language": "ru", "text": "Застрахованное лицо" },
+            { "language": "ckb", "text": "کەسی بیمەکراو" },
+            { "language": "kmr", "text": "Kesê sîgortekirî" },
+            { "language": "pl", "text": "Osoba ubezpieczona" },
+            { "language": "ro", "text": "Persoana asigurată" },
+            { "language": "sq", "text": "Personi i siguruar" }
+          ]
+        },
+        {
+          "roleKey": "insurance-agent",
+          "displayName": "Sachbearbeiterin",
+          "translations": [
+            { "language": "en", "text": "Case officer" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "موظفة معالجة الطلب" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Специалист по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karbidesta dosyayê" },
+            { "language": "pl", "text": "Pracowniczka prowadząca sprawę" },
+            { "language": "ro", "text": "Funcționara de caz" },
+            { "language": "sq", "text": "Nëpunësja e çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "insurance-agent",
+          "baseText": "Guten Tag, Sie sprechen mit der Leistungsabteilung. Worum geht es bei Ihrem Antrag genau?",
+          "translations": [
+            { "language": "en", "text": "Good day, you are speaking with the benefits department. What exactly is your application about?" },
+            { "language": "fa", "text": "روز بخیر، با بخش خدمات و پوشش هزینه صحبت می‌کنید. درخواست شما دقیقاً درباره چیست؟" },
+            { "language": "ar", "text": "نهاركم سعيد، تتحدثون مع قسم الاستحقاقات. ما موضوع طلبكم بالضبط؟" },
+            { "language": "tr", "text": "İyi günler, haklar ve ödemeler departmanıyla görüşüyorsunuz. Başvurunuz tam olarak neyle ilgili?" },
+            { "language": "ru", "text": "Добрый день, вы говорите с отделом страховых услуг. О чем именно ваше заявление?" },
+            { "language": "ckb", "text": "ڕۆژباش، لەگەڵ بەشی خزمەت و داپۆشین قسە دەکەیت. داواکارییەکەت بە وردی دەربارەی چییە؟" },
+            { "language": "kmr", "text": "Roj baş, hûn bi beşa maf û dayînê re diaxivin. Daxwaza we bi rastî li ser çi ye?" },
+            { "language": "pl", "text": "Dzień dobry, rozmawia Pan/Pani z działem świadczeń. Czego dokładnie dotyczy Pana/Pani wniosek?" },
+            { "language": "ro", "text": "Bună ziua, vorbiți cu departamentul de prestații. Despre ce este exact cererea dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita, po flisni me departamentin e përfitimeve. Për çfarë bëhet fjalë saktësisht në kërkesën tuaj?" }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Es geht nicht um eine allgemeine Ausnahme, sondern um einen begrenzten Sonderfall: Meine Ärztin hat eine spezialisierte Therapie verordnet, vor Ort gibt es aber erst in drei Monaten Termine. Die weiter entfernte Praxis könnte nächste Woche beginnen.",
+          "translations": [
+            { "language": "en", "text": "This is not about a general exception, but about a limited special case: my doctor prescribed a specialized therapy, but local appointments are only available in three months. The practice farther away could start next week." },
+            { "language": "fa", "text": "موضوع یک استثنای کلی نیست، بلکه یک مورد خاص محدود است: پزشکم یک درمان تخصصی تجویز کرده، اما در محل خودمان فقط سه ماه دیگر وقت وجود دارد. مطب دورتر می‌تواند هفته آینده شروع کند." },
+            { "language": "ar", "text": "الأمر لا يتعلق باستثناء عام، بل بحالة خاصة محدودة: طبيبتي وصفت علاجًا متخصصًا، لكن المواعيد المحلية لا تتوفر إلا بعد ثلاثة أشهر. العيادة الأبعد يمكن أن تبدأ الأسبوع المقبل." },
+            { "language": "tr", "text": "Bu genel bir istisna değil, sınırlı bir özel durum: doktorum uzmanlaşmış bir tedavi yazdı, fakat yerelde ancak üç ay sonra randevu var. Daha uzaktaki muayenehane gelecek hafta başlayabilir." },
+            { "language": "ru", "text": "Речь не об общей исключительной льготе, а об ограниченном особом случае: врач назначила специализированную терапию, но на месте записи есть только через три месяца. Более удаленная практика может начать на следующей неделе." },
+            { "language": "ckb", "text": "بابەتەکە دەربارەی هەڵاواردنێکی گشتی نییە، بەڵکو کەیسێکی تایبەتی سنووردارە: پزیشکەکەم چارەسەرێکی تایبەتمەندی نووسیوە، بەڵام لە ناوچەکەمان تەنها دوای سێ مانگ کات هەیە. مطبی دوورتر دەتوانێت هەفتەی داهاتوو دەست پێ بکات." },
+            { "language": "kmr", "text": "Ev ne li ser îstîsnayeke giştî ye, lê li ser rewşeke taybet a sînorkirî ye: bijîşka min terapiyeke pisporî nivîsî, lê li herêmê randevû tenê piştî sê mehan hene. Polîklînîka dûrtir dikare hefteya bê dest pê bike." },
+            { "language": "pl", "text": "Nie chodzi o ogólny wyjątek, lecz o ograniczony szczególny przypadek: lekarka przepisała specjalistyczną terapię, ale lokalnie terminy są dopiero za trzy miesiące. Bardziej oddalona praktyka mogłaby zacząć w przyszłym tygodniu." },
+            { "language": "ro", "text": "Nu este vorba despre o excepție generală, ci despre un caz special limitat: medicul mi-a prescris o terapie specializată, dar local există programări abia peste trei luni. Cabinetul mai îndepărtat ar putea începe săptămâna viitoare." },
+            { "language": "sq", "text": "Nuk bëhet fjalë për një përjashtim të përgjithshëm, por për një rast të veçantë të kufizuar: mjekja ime ka përshkruar një terapi të specializuar, por në zonë ka takime vetëm pas tre muajsh. Ordinanca më e largët mund të fillojë javën tjetër." }
+          ],
+          "function": "limited-special-case",
+          "toneNote": "Keinen Anspruch behaupten; den Sonderfall begrenzen und belegen.",
+          "expectedLearnerAction": "Present the case as limited, documented, and time-sensitive."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "insurance-agent",
+          "baseText": "Grundsätzlich übernehmen wir nur zugelassene Behandlungen im üblichen Versorgungsbereich. Haben Sie Unterlagen, die die Dringlichkeit und die fehlenden Alternativen belegen?",
+          "translations": [
+            { "language": "en", "text": "In principle, we only cover approved treatments within the usual care area. Do you have documents proving the urgency and the lack of alternatives?" },
+            { "language": "fa", "text": "اصولاً ما فقط درمان‌های تأییدشده در محدوده معمول خدمات را پوشش می‌دهیم. آیا مدارکی دارید که فوریت و نبود جایگزین‌ها را ثابت کند؟" },
+            { "language": "ar", "text": "من حيث المبدأ نغطي فقط العلاجات المعتمدة ضمن نطاق الرعاية المعتاد. هل لديكم مستندات تثبت الاستعجال وغياب البدائل؟" },
+            { "language": "tr", "text": "Prensip olarak yalnızca olağan bakım bölgesindeki onaylı tedavileri karşılıyoruz. Aciliyeti ve alternatiflerin bulunmadığını belgeleyen evrakınız var mı?" },
+            { "language": "ru", "text": "В принципе мы покрываем только утвержденные виды лечения в обычной зоне обслуживания. У вас есть документы, подтверждающие срочность и отсутствие альтернатив?" },
+            { "language": "ckb", "text": "بە بنەڕەت ئێمە تەنها چارەسەرە پەسەندکراوەکان لە ناوچەی ئاسایی خزمەتدا داپۆشین. ئایا بەڵگە هەیە کە پەلە و نەبوونی جێگرەوە بسەلمێنێت؟" },
+            { "language": "kmr", "text": "Bi bingehîn em tenê dermankirinên pejirandî di qada asayî ya xizmetê de vedigirin. Belge hene ku lezgînî û nebûna alternatîfan îspat bikin?" },
+            { "language": "pl", "text": "Co do zasady pokrywamy tylko zatwierdzone leczenia w zwykłym obszarze zaopatrzenia. Czy ma Pan/Pani dokumenty potwierdzające pilność i brak alternatyw?" },
+            { "language": "ro", "text": "În principiu, acoperim doar tratamente aprobate în zona obișnuită de îngrijire. Aveți documente care dovedesc urgența și lipsa alternativelor?" },
+            { "language": "sq", "text": "Në parim, mbulojmë vetëm trajtime të miratuara brenda zonës së zakonshme të kujdesit. A keni dokumente që vërtetojnë urgjencën dhe mungesën e alternativave?" }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja. Ich habe die Verordnung, eine kurze ärztliche Begründung und Absagen von drei Praxen im Umkreis. Außerdem kann mein Arbeitgeber bestätigen, dass die Verzögerung meine Einsatzfähigkeit in den nächsten Wochen konkret beeinträchtigt.",
+          "translations": [
+            { "language": "en", "text": "Yes. I have the prescription, a short medical justification, and refusals from three practices in the area. My employer can also confirm that the delay concretely affects my ability to work over the next few weeks." },
+            { "language": "fa", "text": "بله. نسخه، یک توضیح کوتاه پزشکی و پاسخ منفی سه مطب در اطراف را دارم. علاوه بر آن، کارفرمایم می‌تواند تأیید کند که تأخیر در هفته‌های آینده به‌طور مشخص توان کاری مرا تحت تأثیر قرار می‌دهد." },
+            { "language": "ar", "text": "نعم. لدي الوصفة وتبرير طبي قصير ورفض من ثلاث عيادات في المنطقة. ويمكن لصاحب العمل أيضًا تأكيد أن التأخير يؤثر بشكل محدد في قدرتي على العمل خلال الأسابيع المقبلة." },
+            { "language": "tr", "text": "Evet. Reçete, kısa bir tıbbi gerekçe ve çevredeki üç muayenehaneden olumsuz yanıt var. Ayrıca işverenim gecikmenin önümüzdeki haftalarda çalışma gücümü somut olarak etkilediğini doğrulayabilir." },
+            { "language": "ru", "text": "Да. У меня есть назначение, краткое медицинское обоснование и отказы трех практик в округе. Кроме того, работодатель может подтвердить, что задержка конкретно влияет на мою работоспособность в ближайшие недели." },
+            { "language": "ckb", "text": "بەڵێ. ڕەچەتەکە، پاساوێکی کورتی پزیشکی و ڕەتکردنەوەی سێ مطب لە ناوچەکەدا هەیە. هەروەها خاوەنکارەکەم دەتوانێت پشتڕاست بکاتەوە کە دواخستنەکە لە هەفتەکانی داهاتوودا بە دیاریکراوی کاریگەری لە توانای کارکردنم دەکات." },
+            { "language": "kmr", "text": "Erê. Reçete, sedemeke kurt a bijîşkî û redkirinên sê polîklînîkan li derdorê hene. Her wiha kardêrê min dikare piştrast bike ku derengmayîn di hefteyên bê de bi awayekî konkret şiyana karê min bandor dike." },
+            { "language": "pl", "text": "Tak. Mam skierowanie, krótkie uzasadnienie lekarskie i odmowy z trzech praktyk w okolicy. Ponadto mój pracodawca może potwierdzić, że opóźnienie konkretnie wpływa na moją zdolność do pracy w najbliższych tygodniach." },
+            { "language": "ro", "text": "Da. Am prescripția, o scurtă justificare medicală și refuzuri de la trei cabinete din zonă. În plus, angajatorul meu poate confirma că întârzierea îmi afectează concret capacitatea de muncă în următoarele săptămâni." },
+            { "language": "sq", "text": "Po. Kam rekomandimin, një arsyetim të shkurtër mjekësor dhe refuzime nga tri ordinanca në zonë. Përveç kësaj, punëdhënësi im mund të konfirmojë se vonesa ndikon konkretisht në aftësinë time për punë në javët e ardhshme." }
+          ],
+          "function": "document-evidence",
+          "toneNote": "Unterlagen und Folgen nennen, ohne Druck aufzubauen.",
+          "expectedLearnerAction": "List documents, local refusals, and concrete consequences."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "insurance-agent",
+          "baseText": "Eine Bestätigung des Arbeitgebers ist für uns nur ergänzend relevant. Entscheidend bleibt die medizinische Notwendigkeit. Was genau beantragen Sie: die Therapie selbst, Fahrtkosten oder beides?",
+          "translations": [
+            { "language": "en", "text": "An employer confirmation is only additionally relevant for us. The decisive factor remains medical necessity. What exactly are you applying for: the therapy itself, travel costs, or both?" },
+            { "language": "fa", "text": "تأیید کارفرما برای ما فقط نقش تکمیلی دارد. عامل تعیین‌کننده همچنان ضرورت پزشکی است. دقیقاً چه چیزی درخواست می‌کنید: خود درمان، هزینه رفت‌وآمد، یا هر دو؟" },
+            { "language": "ar", "text": "تأكيد صاحب العمل مهم لنا فقط بشكل تكميلي. العامل الحاسم يبقى الضرورة الطبية. ما الذي تطلبونه بالضبط: العلاج نفسه، تكاليف السفر، أم كلاهما؟" },
+            { "language": "tr", "text": "İşveren onayı bizim için yalnızca tamamlayıcı önemdedir. Belirleyici olan tıbbi gerekliliktir. Tam olarak neye başvuruyorsunuz: tedavinin kendisine, yol masraflarına mı, yoksa ikisine birden mi?" },
+            { "language": "ru", "text": "Подтверждение работодателя для нас имеет лишь дополнительное значение. Решающее значение остается за медицинской необходимостью. Что именно вы запрашиваете: саму терапию, транспортные расходы или и то и другое?" },
+            { "language": "ckb", "text": "پشتڕاستکردنەوەی خاوەنکار بۆ ئێمە تەنها بە شێوەی تەواوکەر گرنگە. بڕیارده‌ر هێشتا پێویستی پزیشکییە. بە وردی چی داوا دەکەیت: خودی چارەسەرەکە، تێچووی هاتوچۆ، یان هەردووکیان؟" },
+            { "language": "kmr", "text": "Piştrastkirina kardêr ji bo me tenê wek temamker girîng e. Ya diyarker hîn jî pêwîstiya bijîşkî ye. Hûn bi rastî daxwaza çi dikin: terapiyê bixwe, mesrefên rêwîtiyê, an herduyan?" },
+            { "language": "pl", "text": "Potwierdzenie pracodawcy ma dla nas jedynie znaczenie uzupełniające. Decydująca pozostaje konieczność medyczna. O co dokładnie Pan/Pani wnioskuje: o samą terapię, koszty dojazdu czy jedno i drugie?" },
+            { "language": "ro", "text": "Confirmarea angajatorului este pentru noi relevantă doar suplimentar. Decisivă rămâne necesitatea medicală. Ce solicitați exact: terapia în sine, costurile de transport sau ambele?" },
+            { "language": "sq", "text": "Konfirmimi i punëdhënësit është për ne vetëm plotësues. Vendimtare mbetet domosdoshmëria mjekësore. Çfarë kërkoni saktësisht: vetë terapinë, shpenzimet e udhëtimit apo të dyja?" }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich beantrage zuerst die befristete Genehmigung der Behandlung in dieser Praxis. Bei den Fahrtkosten würde ich eine Teilübernahme prüfen lassen, aber die Therapieentscheidung sollte nicht daran scheitern, wenn nur dieser Punkt offen ist.",
+          "translations": [
+            { "language": "en", "text": "I am first applying for temporary approval of treatment at this practice. For travel costs, I would ask you to review partial coverage, but the therapy decision should not fail on that point if only that remains open." },
+            { "language": "fa", "text": "اول درخواست تأیید موقت درمان در این مطب را دارم. درباره هزینه رفت‌وآمد می‌خواهم پوشش جزئی بررسی شود، اما اگر فقط این مورد باز بماند، تصمیم درباره درمان نباید به خاطر آن رد شود." },
+            { "language": "ar", "text": "أطلب أولًا الموافقة المؤقتة على العلاج في هذه العيادة. وبالنسبة إلى تكاليف السفر، أود فحص تغطية جزئية، لكن قرار العلاج لا ينبغي أن يفشل بسبب هذه النقطة إذا كانت وحدها ما زالت مفتوحة." },
+            { "language": "tr", "text": "Önce bu muayenehanede tedavinin süreli onayını talep ediyorum. Yol masrafları için kısmi karşılamanın incelenmesini isterim, ancak yalnızca bu nokta açık kalırsa tedavi kararı buna takılmamalı." },
+            { "language": "ru", "text": "Сначала я прошу временное одобрение лечения в этой практике. По транспортным расходам я хотел бы проверить частичное покрытие, но решение по терапии не должно сорваться из-за этого пункта, если только он остается открытым." },
+            { "language": "ckb", "text": "سەرەتا داوای پەسەندکردنی کاتی چارەسەر لەم مطبەدا دەکەم. بۆ تێچووی هاتوچۆ دەمەوێت داپۆشینی بەشی پشکنرێت، بەڵام ئەگەر تەنها ئەو خاڵە کراوە بمێنێت، بڕیاری چارەسەر نابێت لەسەر ئەوە شکست بخوات." },
+            { "language": "kmr", "text": "Ez pêşî daxwaza pejirandina demkî ya dermankirinê li vê polîklînîkê dikim. Ji bo mesrefên rêwîtiyê ez dixwazim vegirtina beşekê bê vekolîn, lê biryara terapiyê divê li ser vê xalê bi tenê nesekine heke tenê ev xal vekirî bimîne." },
+            { "language": "pl", "text": "Najpierw wnioskuję o czasową zgodę na leczenie w tej praktyce. W sprawie kosztów dojazdu chciałbym/chciałabym poprosić o sprawdzenie częściowego pokrycia, ale decyzja o terapii nie powinna upaść z tego powodu, jeśli tylko ten punkt pozostaje otwarty." },
+            { "language": "ro", "text": "Solicit mai întâi aprobarea temporară a tratamentului în acest cabinet. Pentru costurile de transport aș dori să se verifice o acoperire parțială, dar decizia privind terapia nu ar trebui să eșueze din cauza acestui punct dacă doar el rămâne deschis." },
+            { "language": "sq", "text": "Së pari kërkoj miratimin e përkohshëm të trajtimit në këtë ordinancë. Për shpenzimet e udhëtimit do të doja të shqyrtohej një mbulim i pjesshëm, por vendimi për terapinë nuk duhet të dështojë për këtë pikë nëse vetëm ajo mbetet e hapur." }
+          ],
+          "function": "limited-request",
+          "toneNote": "Hauptantrag und Nebenpunkt trennen.",
+          "expectedLearnerAction": "Prioritize the treatment approval and make travel costs secondary."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "insurance-agent",
+          "baseText": "Das ist präziser. Für die Entscheidung brauchen wir aber eine schriftliche Begründung, warum ein späterer Beginn medizinisch nachteilig wäre. Können Sie das von Ihrer Ärztin nachreichen?",
+          "translations": [
+            { "language": "en", "text": "That is more precise. For the decision, however, we need a written explanation of why a later start would be medically disadvantageous. Can you submit that from your doctor later?" },
+            { "language": "fa", "text": "این دقیق‌تر است. اما برای تصمیم به یک توضیح کتبی نیاز داریم که چرا شروع دیرتر از نظر پزشکی زیان‌آور است. آیا می‌توانید آن را بعداً از پزشکتان ارائه کنید؟" },
+            { "language": "ar", "text": "هذا أدق. لكن للقرار نحتاج إلى تبرير خطي يوضح لماذا سيكون البدء المتأخر ضارًا طبيًا. هل يمكنكم تقديم ذلك لاحقًا من طبيبتكم؟" },
+            { "language": "tr", "text": "Bu daha net. Ancak karar için daha geç başlamanın tıbben neden dezavantajlı olacağını açıklayan yazılı bir gerekçe gerekiyor. Bunu doktorunuzdan sonradan sunabilir misiniz?" },
+            { "language": "ru", "text": "Это точнее. Но для решения нам нужно письменное обоснование, почему более позднее начало было бы медицински неблагоприятным. Можете ли вы позже предоставить это от врача?" },
+            { "language": "ckb", "text": "ئەمە وردترە. بەڵام بۆ بڕیار پێویستمان بە پاساوێکی نووسراوە هەیە کە بۆچی دەستپێکی دواتر لە ڕووی پزیشکییەوە زیانبەخش دەبێت. دەتوانیت ئەوە دواتر لە پزیشکەکەتەوە پێشکەش بکەیت؟" },
+            { "language": "kmr", "text": "Ev hûrgiltir e. Lê ji bo biryarê pêwîstiya me bi sedemeke nivîskî heye ku çima destpêkirina derengtir ji aliyê bijîşkî ve nebaş be. Hûn dikarin wê ji bijîşka xwe paşê bişînin?" },
+            { "language": "pl", "text": "To jest precyzyjniejsze. Do decyzji potrzebujemy jednak pisemnego uzasadnienia, dlaczego późniejszy początek byłby medycznie niekorzystny. Czy może Pan/Pani dosłać to od swojej lekarki?" },
+            { "language": "ro", "text": "Este mai precis. Pentru decizie avem însă nevoie de o justificare scrisă privind motivul pentru care un început mai târziu ar fi dezavantajos medical. O puteți trimite ulterior de la medic?" },
+            { "language": "sq", "text": "Kjo është më e saktë. Por për vendimin na duhet një arsyetim me shkrim pse një fillim më i vonë do të ishte i pafavorshëm nga ana mjekësore. A mund ta dorëzoni më vonë nga mjekja juaj?" }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich kann das bis Freitag nachreichen. Könnten Sie den Antrag bis dahin als unvollständig, aber fristwahrend erfassen und mir schriftlich bestätigen, welche Unterlagen noch fehlen?",
+          "translations": [
+            { "language": "en", "text": "Yes, I can submit that by Friday. Could you record the application as incomplete but deadline-preserving until then and confirm in writing which documents are still missing?" },
+            { "language": "fa", "text": "بله، می‌توانم تا جمعه ارائه کنم. آیا می‌توانید تا آن زمان درخواست را به‌عنوان ناقص اما حافظ مهلت ثبت کنید و کتبی تأیید کنید که کدام مدارک هنوز کم است؟" },
+            { "language": "ar", "text": "نعم، يمكنني تقديم ذلك حتى يوم الجمعة. هل يمكنكم تسجيل الطلب حتى ذلك الحين كغير مكتمل لكنه يحفظ المهلة، وتأكيد المستندات التي ما زالت ناقصة كتابة؟" },
+            { "language": "tr", "text": "Evet, bunu cuma gününe kadar sunabilirim. O zamana kadar başvuruyu tamamlanmamış ama süreyi koruyan şekilde kaydedip hangi belgelerin hâlâ tamamlanması gerektiğini yazılı olarak teyit edebilir misiniz?" },
+            { "language": "ru", "text": "Да, я могу предоставить это до пятницы. Можете ли вы до тех пор зарегистрировать заявление как неполное, но сохраняющее срок, и письменно подтвердить, каких документов еще не хватает?" },
+            { "language": "ckb", "text": "بەڵێ، دەتوانم تا هەینی پێشکەشی بکەم. دەتوانن تا ئەو کاتە داواکارییەکە وەک ناتەواو بەڵام پارێزەری مۆڵەت تۆمار بکەن و بە نووسراوی پشتڕاست بکەنەوە کام بەڵگەکان هێشتا کەمە؟" },
+            { "language": "kmr", "text": "Erê, ez dikarim heta Înê bişînim. Ma hûn dikarin heta wê demê daxwazê wek netemam lê parastina demê tomar bikin û bi nivîskî piştrast bikin kîjan belge hîn kêm in?" },
+            { "language": "pl", "text": "Tak, mogę dosłać to do piątku. Czy mogliby Państwo do tego czasu zarejestrować wniosek jako niekompletny, ale zachowujący termin, i pisemnie potwierdzić, których dokumentów jeszcze brakuje?" },
+            { "language": "ro", "text": "Da, pot trimite asta până vineri. Ați putea înregistra cererea până atunci ca incompletă, dar cu termenul păstrat, și să-mi confirmați în scris ce documente mai lipsesc?" },
+            { "language": "sq", "text": "Po, mund ta dorëzoj deri të premten. A mund ta regjistroni kërkesën deri atëherë si të paplotë, por me afat të ruajtur, dhe të më konfirmoni me shkrim cilat dokumente mungojnë ende?" }
+          ],
+          "function": "deadline-safe-follow-up",
+          "toneNote": "Nachreichung anbieten und Fristwahrung schriftlich sichern.",
+          "expectedLearnerAction": "Ask for deadline-safe registration and written missing-document list."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "insurance-agent",
+          "baseText": "Das kann ich so vermerken. Eine Vorabzusage kann ich telefonisch nicht geben, aber ich kann den Vorgang priorisieren, sobald die ärztliche Begründung vorliegt.",
+          "translations": [
+            { "language": "en", "text": "I can note it that way. I cannot give advance approval by phone, but I can prioritize the case once the medical justification is available." },
+            { "language": "fa", "text": "می‌توانم این‌طور ثبت کنم. نمی‌توانم تلفنی تأیید قبلی بدهم، اما وقتی توضیح پزشکی موجود شد، می‌توانم پرونده را در اولویت قرار دهم." },
+            { "language": "ar", "text": "يمكنني تدوين ذلك بهذه الطريقة. لا أستطيع إعطاء موافقة مسبقة عبر الهاتف، لكن يمكنني إعطاء الملف أولوية بمجرد توفر التبرير الطبي." },
+            { "language": "tr", "text": "Bunu böyle not edebilirim. Telefonda ön onay veremem, ancak tıbbi gerekçe geldiğinde dosyayı önceliklendirebilirim." },
+            { "language": "ru", "text": "Я могу так отметить. Предварительное согласие по телефону я дать не могу, но могу присвоить делу приоритет, как только будет медицинское обоснование." },
+            { "language": "ckb", "text": "دەتوانم بەو شێوەیە تۆماری بکەم. ناتوانم بە تەلەفۆن پەسەندی پێشوەختە بدەم، بەڵام دەتوانم کەیسەکە لە پێشەوە دابنێم کاتێک پاساوی پزیشکی هات." },
+            { "language": "kmr", "text": "Ez dikarim wisa tomar bikim. Ez nikarim bi telefonê pejirandina pêşîn bidim, lê dikarim gava sedema bijîşkî hebe dosyayê pêşî bikim." },
+            { "language": "pl", "text": "Mogę to tak odnotować. Nie mogę udzielić telefonicznej wstępnej zgody, ale mogę nadać sprawie priorytet, gdy tylko będzie dostępne uzasadnienie lekarskie." },
+            { "language": "ro", "text": "Pot nota astfel. Nu pot da o aprobare preliminară telefonic, dar pot prioritiza cazul imediat ce justificarea medicală este disponibilă." },
+            { "language": "sq", "text": "Mund ta shënoj kështu. Nuk mund të jap miratim paraprak me telefon, por mund ta vendos çështjen me përparësi sapo të jetë i disponueshëm arsyetimi mjekësor." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Danke. Dann fasse ich zusammen: Der Antrag betrifft zunächst die befristete Genehmigung der weiter entfernten Praxis; die ärztliche Zusatzbegründung reiche ich bis Freitag nach, und Sie bestätigen mir schriftlich den Eingang, die fehlenden Unterlagen und den priorisierten Prüfweg.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will summarize: the application first concerns temporary approval for the practice farther away; I will submit the additional medical justification by Friday, and you will confirm in writing the receipt, the missing documents, and the prioritized review path." },
+            { "language": "fa", "text": "ممنون. پس خلاصه می‌کنم: درخواست ابتدا مربوط به تأیید موقت مطب دورتر است؛ توضیح تکمیلی پزشکی را تا جمعه ارائه می‌کنم، و شما دریافت، مدارک ناقص و مسیر بررسی اولویت‌دار را کتبی برایم تأیید می‌کنید." },
+            { "language": "ar", "text": "شكرًا. إذن ألخص: يتعلق الطلب أولًا بالموافقة المؤقتة على العيادة الأبعد؛ سأقدم التبرير الطبي الإضافي حتى يوم الجمعة، وأنتم تؤكدون لي كتابةً الاستلام والمستندات الناقصة ومسار الفحص ذي الأولوية." },
+            { "language": "tr", "text": "Teşekkür ederim. O zaman özetliyorum: başvuru öncelikle daha uzaktaki muayenehanenin süreli onayıyla ilgilidir; ek tıbbi gerekçeyi cuma gününe kadar sunacağım ve siz bana alındıyı, tamamlanacak belgeleri ve öncelikli inceleme yolunu yazılı olarak teyit edeceksiniz." },
+            { "language": "ru", "text": "Спасибо. Тогда я резюмирую: заявление сначала касается временного одобрения более удаленной практики; дополнительное медицинское обоснование я предоставлю до пятницы, а вы письменно подтвердите получение, недостающие документы и приоритетный путь проверки." },
+            { "language": "ckb", "text": "سوپاس. کەواتە پوختە دەکەم: داواکارییەکە سەرەتا پەیوەندی بە پەسەندکردنی کاتی مطبی دوورترەوە هەیە؛ پاساوی پزیشکیی زیادە تا هەینی پێشکەش دەکەم، و ئێوە بە نووسراوی گەیشتن، بەڵگە کەمەکان و ڕێگای پشکنینی پێشینەدار پشتڕاست دەکەنەوە." },
+            { "language": "kmr", "text": "Spas. Wê demê ez kurt dikim: daxwaz pêşî li ser pejirandina demkî ya polîklînîka dûrtir e; sedema bijîşkî ya zêde ez heta Înê dişînim, û hûn bi nivîskî gihîştin, belgeyên kêm û rêya vekolîna pêşî piştrast dikin." },
+            { "language": "pl", "text": "Dziękuję. Podsumowuję więc: wniosek dotyczy najpierw czasowej zgody na bardziej oddaloną praktykę; dodatkowe uzasadnienie lekarskie dosyłam do piątku, a Państwo potwierdzają mi pisemnie wpływ, brakujące dokumenty i priorytetową ścieżkę sprawdzenia." },
+            { "language": "ro", "text": "Mulțumesc. Atunci rezum: cererea privește mai întâi aprobarea temporară a cabinetului mai îndepărtat; trimit justificarea medicală suplimentară până vineri, iar dumneavoastră îmi confirmați în scris primirea, documentele lipsă și calea de verificare prioritară." },
+            { "language": "sq", "text": "Faleminderit. Atëherë e përmbledh: kërkesa fillimisht ka të bëjë me miratimin e përkohshëm të ordinancës më të largët; arsyetimin shtesë mjekësor e dorëzoj deri të premten, dhe ju më konfirmoni me shkrim marrjen, dokumentet që mungojnë dhe rrugën e shqyrtimit me përparësi." }
+          ],
+          "function": "written-summary",
+          "toneNote": "Schluss präzise, schriftlich und prüffähig formulieren.",
+          "expectedLearnerAction": "Summarize request, missing document, and written confirmation path."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Es geht nicht um eine allgemeine Ausnahme, sondern um einen begrenzten Sonderfall: Meine Ärztin hat eine spezialisierte Therapie verordnet, vor Ort gibt es aber erst in drei Monaten Termine. Die weiter entfernte Praxis könnte nächste Woche beginnen.",
+              "translations": [
+                { "language": "en", "text": "This is not about a general exception, but about a limited special case: my doctor prescribed a specialized therapy, but local appointments are only available in three months. The practice farther away could start next week." },
+                { "language": "fa", "text": "موضوع یک استثنای کلی نیست، بلکه یک مورد خاص محدود است: پزشکم یک درمان تخصصی تجویز کرده، اما در محل خودمان فقط سه ماه دیگر وقت وجود دارد. مطب دورتر می‌تواند هفته آینده شروع کند." },
+                { "language": "ar", "text": "الأمر لا يتعلق باستثناء عام، بل بحالة خاصة محدودة: طبيبتي وصفت علاجًا متخصصًا، لكن المواعيد المحلية لا تتوفر إلا بعد ثلاثة أشهر. العيادة الأبعد يمكن أن تبدأ الأسبوع المقبل." },
+                { "language": "tr", "text": "Bu genel bir istisna değil, sınırlı bir özel durum: doktorum uzmanlaşmış bir tedavi yazdı, fakat yerelde ancak üç ay sonra randevu var. Daha uzaktaki muayenehane gelecek hafta başlayabilir." },
+                { "language": "ru", "text": "Речь не об общей исключительной льготе, а об ограниченном особом случае: врач назначила специализированную терапию, но на месте записи есть только через три месяца. Более удаленная практика может начать на следующей неделе." },
+                { "language": "ckb", "text": "بابەتەکە دەربارەی هەڵاواردنێکی گشتی نییە، بەڵکو کەیسێکی تایبەتی سنووردارە: پزیشکەکەم چارەسەرێکی تایبەتمەندی نووسیوە، بەڵام لە ناوچەکەمان تەنها دوای سێ مانگ کات هەیە. مطبی دوورتر دەتوانێت هەفتەی داهاتوو دەست پێ بکات." },
+                { "language": "kmr", "text": "Ev ne li ser îstîsnayeke giştî ye, lê li ser rewşeke taybet a sînorkirî ye: bijîşka min terapiyeke pisporî nivîsî, lê li herêmê randevû tenê piştî sê mehan hene. Polîklînîka dûrtir dikare hefteya bê dest pê bike." },
+                { "language": "pl", "text": "Nie chodzi o ogólny wyjątek, lecz o ograniczony szczególny przypadek: lekarka przepisała specjalistyczną terapię, ale lokalnie terminy są dopiero za trzy miesiące. Bardziej oddalona praktyka mogłaby zacząć w przyszłym tygodniu." },
+                { "language": "ro", "text": "Nu este vorba despre o excepție generală, ci despre un caz special limitat: medicul mi-a prescris o terapie specializată, dar local există programări abia peste trei luni. Cabinetul mai îndepărtat ar putea începe săptămâna viitoare." },
+                { "language": "sq", "text": "Nuk bëhet fjalë për një përjashtim të përgjithshëm, por për një rast të veçantë të kufizuar: mjekja ime ka përshkruar një terapi të specializuar, por në zonë ka takime vetëm pas tre muajsh. Ordinanca më e largët mund të fillojë javën tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort begrenzt den Sonderfall und nennt Verordnung, fehlende Termine und konkrete Dringlichkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer limits the special case and names prescription, missing appointments, and concrete urgency." },
+                { "language": "fa", "text": "قوی: پاسخ مورد خاص را محدود می‌کند و نسخه، نبود وقت و فوریت مشخص را نام می‌برد." },
+                { "language": "ar", "text": "قوي: الجواب يحدد الحالة الخاصة ويذكر الوصفة وغياب المواعيد والاستعجال المحدد." },
+                { "language": "tr", "text": "Güçlü: Yanıt özel durumu sınırlandırıyor ve reçete, randevu bulunmaması ve somut aciliyeti belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ ограничивает особый случай и называет назначение, отсутствие записей и конкретную срочность." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کەیسە تایبەتەکە سنووردار دەکات و ڕەچەتە، نەبوونی کات و پەلەی دیاریکراو ناودەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rewşa taybet sînordar dike û reçete, nebûna randevû û lezgîniya konkret nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź ogranicza szczególny przypadek i nazywa skierowanie, brak terminów oraz konkretną pilność." },
+                { "language": "ro", "text": "Puternic: răspunsul limitează cazul special și numește prescripția, lipsa programărilor și urgența concretă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kufizon rastin e veçantë dhe përmend rekomandimin, mungesën e takimeve dhe urgjencën konkrete." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich brauche eine schnelle Lösung, weil die normale Versorgung für mich gerade nicht ausreicht.",
+              "translations": [
+                { "language": "en", "text": "I need a quick solution because the normal care is not enough for me at the moment." },
+                { "language": "fa", "text": "به یک راه‌حل سریع نیاز دارم، چون خدمات معمول فعلاً برای من کافی نیست." },
+                { "language": "ar", "text": "أحتاج إلى حل سريع لأن الرعاية العادية لا تكفيني حاليًا." },
+                { "language": "tr", "text": "Hızlı bir çözüme ihtiyacım var, çünkü normal bakım şu anda benim için yeterli değil." },
+                { "language": "ru", "text": "Мне нужно быстрое решение, потому что обычное обслуживание сейчас для меня недостаточно." },
+                { "language": "ckb", "text": "پێویستم بە چارەسەرێکی خێرایە، چونکە خزمەتی ئاسایی ئێستا بۆ من بەس نییە." },
+                { "language": "kmr", "text": "Pêwîstiya min bi çareseriyeke lez heye, ji ber ku xizmeta asayî niha ji bo min bes nake." },
+                { "language": "pl", "text": "Potrzebuję szybkiego rozwiązania, ponieważ zwykła opieka obecnie mi nie wystarcza." },
+                { "language": "ro", "text": "Am nevoie de o soluție rapidă, deoarece îngrijirea obișnuită nu îmi este suficientă momentan." },
+                { "language": "sq", "text": "Kam nevojë për një zgjidhje të shpejtë, sepse kujdesi i zakonshëm aktualisht nuk më mjafton." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein. Für eine Krankenkasse fehlen Verordnung, Alternativenprüfung und konkrete zeitliche Dringlichkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general. For a health insurance provider, prescription, alternative review, and concrete time urgency are missing." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی کلی است. برای بیمه درمانی، نسخه، بررسی جایگزین‌ها و فوریت زمانی مشخص کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه عام جدًا. بالنسبة للتأمين الصحي تنقص الوصفة وفحص البدائل والاستعجال الزمني المحدد." },
+                { "language": "tr", "text": "Akla yatkın, ama çok genel. Sağlık sigortası için reçete, alternatif incelemesi ve somut zaman aciliyeti tamamlanmamış." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общее. Для страховки не хватает назначения, проверки альтернатив и конкретной временной срочности." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر گشتییە. بۆ بیمەی تەندروستی ڕەچەتە، پشکنینی جێگرەوە و پەلەی کاتی دیاریکراو کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir giştî ye. Ji bo sîgorteya tenduristiyê reçete, vekolîna alternatîfan û lezgîniya demî ya konkret kêm in." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt ogólne. Dla kasy chorych brakuje skierowania, sprawdzenia alternatyw i konkretnej pilności czasowej." },
+                { "language": "ro", "text": "Plauzibil, dar prea general. Pentru casa de asigurări lipsesc prescripția, verificarea alternativelor și urgența temporală concretă." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme. Për sigurimin shëndetësor mungojnë rekomandimi, shqyrtimi i alternativave dhe urgjenca konkrete kohore." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja. Ich habe die Verordnung, eine kurze ärztliche Begründung und Absagen von drei Praxen im Umkreis. Außerdem kann mein Arbeitgeber bestätigen, dass die Verzögerung meine Einsatzfähigkeit in den nächsten Wochen konkret beeinträchtigt.",
+              "translations": [
+                { "language": "en", "text": "Yes. I have the prescription, a short medical justification, and refusals from three practices in the area. My employer can also confirm that the delay concretely affects my ability to work over the next few weeks." },
+                { "language": "fa", "text": "بله. نسخه، یک توضیح کوتاه پزشکی و پاسخ منفی سه مطب در اطراف را دارم. علاوه بر آن، کارفرمایم می‌تواند تأیید کند که تأخیر در هفته‌های آینده به‌طور مشخص توان کاری مرا تحت تأثیر قرار می‌دهد." },
+                { "language": "ar", "text": "نعم. لدي الوصفة وتبرير طبي قصير ورفض من ثلاث عيادات في المنطقة. ويمكن لصاحب العمل أيضًا تأكيد أن التأخير يؤثر بشكل محدد في قدرتي على العمل خلال الأسابيع المقبلة." },
+                { "language": "tr", "text": "Evet. Reçete, kısa bir tıbbi gerekçe ve çevredeki üç muayenehaneden olumsuz yanıt var. Ayrıca işverenim gecikmenin önümüzdeki haftalarda çalışma gücümü somut olarak etkilediğini doğrulayabilir." },
+                { "language": "ru", "text": "Да. У меня есть назначение, краткое медицинское обоснование и отказы трех практик в округе. Кроме того, работодатель может подтвердить, что задержка конкретно влияет на мою работоспособность в ближайшие недели." },
+                { "language": "ckb", "text": "بەڵێ. ڕەچەتەکە، پاساوێکی کورتی پزیشکی و ڕەتکردنەوەی سێ مطب لە ناوچەکەدا هەیە. هەروەها خاوەنکارەکەم دەتوانێت پشتڕاست بکاتەوە کە دواخستنەکە لە هەفتەکانی داهاتوودا بە دیاریکراوی کاریگەری لە توانای کارکردنم دەکات." },
+                { "language": "kmr", "text": "Erê. Reçete, sedemeke kurt a bijîşkî û redkirinên sê polîklînîkan li derdorê hene. Her wiha kardêrê min dikare piştrast bike ku derengmayîn di hefteyên bê de bi awayekî konkret şiyana karê min bandor dike." },
+                { "language": "pl", "text": "Tak. Mam skierowanie, krótkie uzasadnienie lekarskie i odmowy z trzech praktyk w okolicy. Ponadto mój pracodawca może potwierdzić, że opóźnienie konkretnie wpływa na moją zdolność do pracy w najbliższych tygodniach." },
+                { "language": "ro", "text": "Da. Am prescripția, o scurtă justificare medicală și refuzuri de la trei cabinete din zonă. În plus, angajatorul meu poate confirma că întârzierea îmi afectează concret capacitatea de muncă în următoarele săptămâni." },
+                { "language": "sq", "text": "Po. Kam rekomandimin, një arsyetim të shkurtër mjekësor dhe refuzime nga tri ordinanca në zonë. Përveç kësaj, punëdhënësi im mund të konfirmojë se vonesa ndikon konkretisht në aftësinë time për punë në javët e ardhshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt medizinische Unterlagen, Alternativenprüfung und ergänzende berufliche Folgen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates medical documents, alternative review, and additional work consequences." },
+                { "language": "fa", "text": "قوی: پاسخ مدارک پزشکی، بررسی جایگزین‌ها و پیامدهای کاری تکمیلی را جدا می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يميز بين المستندات الطبية وفحص البدائل والآثار المهنية التكميلية." },
+                { "language": "tr", "text": "Güçlü: Yanıt tıbbi belgeleri, alternatif incelemesini ve ek iş sonuçlarını ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ разделяет медицинские документы, проверку альтернатив и дополнительные последствия для работы." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەڵگەی پزیشکی، پشکنینی جێگرەوە و کاریگەرییە کارییە تەواوکەرەکان جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv belgeyên bijîşkî, vekolîna alternatîfan û encamên kar ên temamker ji hev veqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela dokumenty medyczne, sprawdzenie alternatyw i uzupełniające skutki zawodowe." },
+                { "language": "ro", "text": "Puternic: răspunsul separă documentele medicale, verificarea alternativelor și consecințele profesionale suplimentare." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan dokumentet mjekësore, shqyrtimin e alternativave dhe pasojat shtesë në punë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Meine Ärztin sagt, dass es sinnvoll wäre, und mein Arbeitgeber hätte auch ein Interesse daran, dass es schnell geht.",
+              "translations": [
+                { "language": "en", "text": "My doctor says it would make sense, and my employer would also have an interest in it happening quickly." },
+                { "language": "fa", "text": "پزشکم می‌گوید منطقی است، و کارفرمایم هم علاقه دارد که سریع انجام شود." },
+                { "language": "ar", "text": "تقول طبيبتي إن ذلك سيكون منطقيًا، وصاحب العمل لديه أيضًا مصلحة في أن يتم بسرعة." },
+                { "language": "tr", "text": "Doktorum bunun mantıklı olacağını söylüyor, işverenimin de hızlı olmasında çıkarı var." },
+                { "language": "ru", "text": "Мой врач говорит, что это было бы разумно, и работодатель тоже заинтересован, чтобы это произошло быстро." },
+                { "language": "ckb", "text": "پزیشکەکەم دەڵێت ئەمە مانادار دەبێت، و خاوەنکارەکەمیش بەرژەوەندیی هەیە کە خێرا بێت." },
+                { "language": "kmr", "text": "Bijîşka min dibêje ew maqûl e, û kardêrê min jî berjewendiya wî heye ku ew zû bibe." },
+                { "language": "pl", "text": "Moja lekarka mówi, że byłoby to sensowne, a mój pracodawca też byłby zainteresowany, żeby poszło szybko." },
+                { "language": "ro", "text": "Medicul meu spune că ar avea sens, iar angajatorul meu ar avea și el interesul să meargă repede." },
+                { "language": "sq", "text": "Mjekja ime thotë se do të kishte kuptim, dhe punëdhënësi im gjithashtu do të kishte interes që të shkojë shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach. Die Aussage klingt nachvollziehbar, aber sie ersetzt keine prüffähigen Unterlagen und keine Alternativenliste.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak. The statement sounds understandable, but it does not replace reviewable documents or a list of alternatives." },
+                { "language": "fa", "text": "ضعیف است. جمله قابل فهم است، اما جای مدارک قابل بررسی و فهرست جایگزین‌ها را نمی‌گیرد." },
+                { "language": "ar", "text": "ضعيف جدًا. العبارة مفهومة، لكنها لا تعوض المستندات القابلة للفحص ولا قائمة البدائل." },
+                { "language": "tr", "text": "Çok zayıf. İfade anlaşılır, ama incelenebilir belgelerin ve alternatif listesinin yerini tutmaz." },
+                { "language": "ru", "text": "Слишком слабо. Формулировка понятна, но не заменяет проверяемых документов и списка альтернатив." },
+                { "language": "ckb", "text": "زۆر لاوازە. قسەکە تێگەیشتووە، بەڵام جێگەی بەڵگەی پێداچوونەوەکراو و لیستی جێگرەوە ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir lawaz e. Gotin fêmbar e, lê cihê belgeyên vekolînbar û lîsteya alternatîfan nagire." },
+                { "language": "pl", "text": "Zbyt słabe. Wypowiedź brzmi zrozumiale, ale nie zastępuje sprawdzalnych dokumentów ani listy alternatyw." },
+                { "language": "ro", "text": "Prea slab. Afirmația sună inteligibil, dar nu înlocuiește documente verificabile și o listă de alternative." },
+                { "language": "sq", "text": "Shumë e dobët. Deklarata tingëllon e kuptueshme, por nuk zëvendëson dokumentet e verifikueshme dhe listën e alternativave." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich beantrage zuerst die befristete Genehmigung der Behandlung in dieser Praxis. Bei den Fahrtkosten würde ich eine Teilübernahme prüfen lassen, aber die Therapieentscheidung sollte nicht daran scheitern, wenn nur dieser Punkt offen ist.",
+              "translations": [
+                { "language": "en", "text": "I am first applying for temporary approval of treatment at this practice. For travel costs, I would ask you to review partial coverage, but the therapy decision should not fail on that point if only that remains open." },
+                { "language": "fa", "text": "اول درخواست تأیید موقت درمان در این مطب را دارم. درباره هزینه رفت‌وآمد می‌خواهم پوشش جزئی بررسی شود، اما اگر فقط این مورد باز بماند، تصمیم درباره درمان نباید به خاطر آن رد شود." },
+                { "language": "ar", "text": "أطلب أولًا الموافقة المؤقتة على العلاج في هذه العيادة. وبالنسبة إلى تكاليف السفر، أود فحص تغطية جزئية، لكن قرار العلاج لا ينبغي أن يفشل بسبب هذه النقطة إذا كانت وحدها ما زالت مفتوحة." },
+                { "language": "tr", "text": "Önce bu muayenehanede tedavinin süreli onayını talep ediyorum. Yol masrafları için kısmi karşılamanın incelenmesini isterim, ancak yalnızca bu nokta açık kalırsa tedavi kararı buna takılmamalı." },
+                { "language": "ru", "text": "Сначала я прошу временное одобрение лечения в этой практике. По транспортным расходам я хотел бы проверить частичное покрытие, но решение по терапии не должно сорваться из-за этого пункта, если только он остается открытым." },
+                { "language": "ckb", "text": "سەرەتا داوای پەسەندکردنی کاتی چارەسەر لەم مطبەدا دەکەم. بۆ تێچووی هاتوچۆ دەمەوێت داپۆشینی بەشی پشکنرێت، بەڵام ئەگەر تەنها ئەو خاڵە کراوە بمێنێت، بڕیاری چارەسەر نابێت لەسەر ئەوە شکست بخوات." },
+                { "language": "kmr", "text": "Ez pêşî daxwaza pejirandina demkî ya dermankirinê li vê polîklînîkê dikim. Ji bo mesrefên rêwîtiyê ez dixwazim vegirtina beşekê bê vekolîn, lê biryara terapiyê divê li ser vê xalê bi tenê nesekine heke tenê ev xal vekirî bimîne." },
+                { "language": "pl", "text": "Najpierw wnioskuję o czasową zgodę na leczenie w tej praktyce. W sprawie kosztów dojazdu chciałbym/chciałabym poprosić o sprawdzenie częściowego pokrycia, ale decyzja o terapii nie powinna upaść z tego powodu, jeśli tylko ten punkt pozostaje otwarty." },
+                { "language": "ro", "text": "Solicit mai întâi aprobarea temporară a tratamentului în acest cabinet. Pentru costurile de transport aș dori să se verifice o acoperire parțială, dar decizia privind terapia nu ar trebui să eșueze din cauza acestui punct dacă doar el rămâne deschis." },
+                { "language": "sq", "text": "Së pari kërkoj miratimin e përkohshëm të trajtimit në këtë ordinancë. Për shpenzimet e udhëtimit do të doja të shqyrtohej një mbulim i pjesshëm, por vendimi për terapinë nuk duhet të dështojë për këtë pikë nëse vetëm ajo mbetet e hapur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Hauptantrag und Nebenfrage werden sauber getrennt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The main request and secondary issue are clearly separated." },
+                { "language": "fa", "text": "قوی: درخواست اصلی و موضوع فرعی به‌خوبی جدا شده‌اند." },
+                { "language": "ar", "text": "قوي: تم الفصل بوضوح بين الطلب الرئيسي والمسألة الثانوية." },
+                { "language": "tr", "text": "Güçlü: Ana talep ve yan konu temiz biçimde ayrılmış." },
+                { "language": "ru", "text": "Сильно: основной запрос и второстепенный вопрос четко разделены." },
+                { "language": "ckb", "text": "بەهێزە: داواکاریی سەرەکی و پرسی لاوەکی بە پاکی جیا کراونەتەوە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaza sereke û pirsa duyemîn bi zelalî ji hev veqetîne." },
+                { "language": "pl", "text": "Mocne: główny wniosek i kwestia poboczna są jasno oddzielone." },
+                { "language": "ro", "text": "Puternic: cererea principală și chestiunea secundară sunt separate clar." },
+                { "language": "sq", "text": "E fortë: kërkesa kryesore dhe çështja dytësore janë ndarë qartë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde gern wissen, ob Sie die Behandlung und die Fahrtkosten komplett übernehmen können.",
+              "translations": [
+                { "language": "en", "text": "I would like to know whether you can fully cover the treatment and the travel costs." },
+                { "language": "fa", "text": "می‌خواهم بدانم آیا می‌توانید درمان و هزینه رفت‌وآمد را کامل پوشش دهید." },
+                { "language": "ar", "text": "أود أن أعرف ما إذا كان بإمكانكم تغطية العلاج وتكاليف السفر بالكامل." },
+                { "language": "tr", "text": "Tedaviyi ve yol masraflarını tamamen karşılayıp karşılayamayacağınızı öğrenmek isterim." },
+                { "language": "ru", "text": "Я хотел бы узнать, можете ли вы полностью покрыть лечение и транспортные расходы." },
+                { "language": "ckb", "text": "دەمەوێت بزانم ئایا دەتوانن چارەسەرەکە و تێچووی هاتوچۆ بە تەواوی داپۆشن." },
+                { "language": "kmr", "text": "Ez dixwazim bizanim ka hûn dikarin terapiyê û mesrefên rêwîtiyê bi tevahî vegirin." },
+                { "language": "pl", "text": "Chciałbym/chciałabym wiedzieć, czy mogą Państwo w całości pokryć leczenie i koszty dojazdu." },
+                { "language": "ro", "text": "Aș dori să știu dacă puteți acoperi complet tratamentul și costurile de transport." },
+                { "language": "sq", "text": "Do të doja të dija nëse mund ta mbuloni plotësisht trajtimin dhe shpenzimet e udhëtimit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber strategisch schwächer. Die volle Kostenübernahme vermischt Hauptziel und Nebenfrage und macht die Verhandlung breiter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but strategically weaker. Full coverage mixes the main goal and secondary issue and broadens the negotiation." },
+                { "language": "fa", "text": "اشتباه نیست، اما از نظر راهبردی ضعیف‌تر است. پوشش کامل هزینه هدف اصلی و موضوع فرعی را مخلوط می‌کند و مذاکره را گسترده‌تر می‌سازد." },
+                { "language": "ar", "text": "ليس خطأ، لكنه أضعف استراتيجيًا. التغطية الكاملة تخلط الهدف الرئيسي بالمسألة الثانوية وتوسع التفاوض." },
+                { "language": "tr", "text": "Yanlış değil, ama stratejik olarak daha zayıf. Tam karşılama ana hedefle yan konuyu karıştırır ve müzakereyi genişletir." },
+                { "language": "ru", "text": "Не неверно, но стратегически слабее. Полное покрытие смешивает главную цель и второстепенный вопрос и расширяет переговоры." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام لە ڕووی ستراتیژییەوە لاوازترە. داپۆشینی تەواو ئامانجی سەرەکی و پرسی لاوەکی تێکەڵ دەکات و وتووێژەکە فراوانتر دەکات." },
+                { "language": "kmr", "text": "Ne şaş e, lê ji aliyê stratejîk ve lawaztir e. Vegirtina tevahî armanca sereke û pirsa duyemîn tevlihev dike û danûstandinê firehtir dike." },
+                { "language": "pl", "text": "Nie jest błędne, ale strategicznie słabsze. Pełne pokrycie miesza główny cel z kwestią poboczną i poszerza negocjacje." },
+                { "language": "ro", "text": "Nu este greșit, dar strategic este mai slab. Acoperirea completă amestecă obiectivul principal cu chestiunea secundară și lărgește negocierea." },
+                { "language": "sq", "text": "Nuk është gabim, por strategjikisht më e dobët. Mbulimi i plotë përzien qëllimin kryesor me çështjen dytësore dhe e zgjeron negociatën." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, ich kann das bis Freitag nachreichen. Könnten Sie den Antrag bis dahin als unvollständig, aber fristwahrend erfassen und mir schriftlich bestätigen, welche Unterlagen noch fehlen?",
+              "translations": [
+                { "language": "en", "text": "Yes, I can submit that by Friday. Could you record the application as incomplete but deadline-preserving until then and confirm in writing which documents are still missing?" },
+                { "language": "fa", "text": "بله، می‌توانم تا جمعه ارائه کنم. آیا می‌توانید تا آن زمان درخواست را به‌عنوان ناقص اما حافظ مهلت ثبت کنید و کتبی تأیید کنید که کدام مدارک هنوز کم است؟" },
+                { "language": "ar", "text": "نعم، يمكنني تقديم ذلك حتى يوم الجمعة. هل يمكنكم تسجيل الطلب حتى ذلك الحين كغير مكتمل لكنه يحفظ المهلة، وتأكيد المستندات التي ما زالت ناقصة كتابة؟" },
+                { "language": "tr", "text": "Evet, bunu cuma gününe kadar sunabilirim. O zamana kadar başvuruyu tamamlanmamış ama süreyi koruyan şekilde kaydedip hangi belgelerin hâlâ tamamlanması gerektiğini yazılı olarak teyit edebilir misiniz?" },
+                { "language": "ru", "text": "Да, я могу предоставить это до пятницы. Можете ли вы до тех пор зарегистрировать заявление как неполное, но сохраняющее срок, и письменно подтвердить, каких документов еще не хватает?" },
+                { "language": "ckb", "text": "بەڵێ، دەتوانم تا هەینی پێشکەشی بکەم. دەتوانن تا ئەو کاتە داواکارییەکە وەک ناتەواو بەڵام پارێزەری مۆڵەت تۆمار بکەن و بە نووسراوی پشتڕاست بکەنەوە کام بەڵگەکان هێشتا کەمە؟" },
+                { "language": "kmr", "text": "Erê, ez dikarim heta Înê bişînim. Ma hûn dikarin heta wê demê daxwazê wek netemam lê parastina demê tomar bikin û bi nivîskî piştrast bikin kîjan belge hîn kêm in?" },
+                { "language": "pl", "text": "Tak, mogę dosłać to do piątku. Czy mogliby Państwo do tego czasu zarejestrować wniosek jako niekompletny, ale zachowujący termin, i pisemnie potwierdzić, których dokumentów jeszcze brakuje?" },
+                { "language": "ro", "text": "Da, pot trimite asta până vineri. Ați putea înregistra cererea până atunci ca incompletă, dar cu termenul păstrat, și să-mi confirmați în scris ce documente mai lipsesc?" },
+                { "language": "sq", "text": "Po, mund ta dorëzoj deri të premten. A mund ta regjistroni kërkesën deri atëherë si të paplotë, por me afat të ruajtur, dhe të më konfirmoni me shkrim cilat dokumente mungojnë ende?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Nachreichung, Fristwahrung und schriftliche Klarheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects later submission, deadline preservation, and written clarity." },
+                { "language": "fa", "text": "قوی: پاسخ ارائه بعدی، حفظ مهلت و شفافیت کتبی را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يربط بين التقديم اللاحق وحفظ المهلة والوضوح الكتابي." },
+                { "language": "tr", "text": "Güçlü: Yanıt sonradan sunma, süreyi koruma ve yazılı açıklığı birleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ связывает последующую подачу, сохранение срока и письменную ясность." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێشکەشکردنی دواتر، پاراستنی مۆڵەت و ڕوونی نووسراو پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv şandina paşê, parastina demê û zelaliya nivîskî bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy dosłanie dokumentów, zachowanie terminu i pisemną jasność." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă trimiterea ulterioară, păstrarea termenului și claritatea scrisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh dorëzimin e mëvonshëm, ruajtjen e afatit dhe qartësinë me shkrim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich kann die Begründung nachreichen. Bitte prüfen Sie den Antrag schon einmal so weit wie möglich.",
+              "translations": [
+                { "language": "en", "text": "I can submit the justification later. Please review the application as far as possible in the meantime." },
+                { "language": "fa", "text": "می‌توانم توضیح را بعداً ارائه کنم. لطفاً فعلاً درخواست را تا حد ممکن بررسی کنید." },
+                { "language": "ar", "text": "يمكنني تقديم التبرير لاحقًا. يرجى فحص الطلب قدر الإمكان في هذه الأثناء." },
+                { "language": "tr", "text": "Gerekçeyi sonradan sunabilirim. Lütfen başvuruyu şimdiden mümkün olduğunca inceleyin." },
+                { "language": "ru", "text": "Я могу предоставить обоснование позже. Пожалуйста, пока проверьте заявление насколько возможно." },
+                { "language": "ckb", "text": "دەتوانم پاساوەکە دواتر پێشکەش بکەم. تکایە داواکارییەکە لە ئێستادا تا دەتوانن پشکنن." },
+                { "language": "kmr", "text": "Ez dikarim sedemê paşê bişînim. Ji kerema xwe daxwazê niha heta ku gengaz e vekolin." },
+                { "language": "pl", "text": "Mogę dosłać uzasadnienie później. Proszę w międzyczasie sprawdzić wniosek tak dalece, jak to możliwe." },
+                { "language": "ro", "text": "Pot trimite justificarea ulterior. Vă rog să verificați între timp cererea pe cât posibil." },
+                { "language": "sq", "text": "Mund ta dorëzoj arsyetimin më vonë. Ju lutem shqyrtojeni ndërkohë kërkesën sa të jetë e mundur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig. Es fehlt die klare Bitte um fristwahrende Erfassung und schriftliche Liste der fehlenden Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete. The clear request for deadline-preserving registration and a written list of missing documents is missing." },
+                { "language": "fa", "text": "قابل قبول است، اما ناقص است. درخواست روشن برای ثبت حافظ مهلت و فهرست کتبی مدارک ناقص کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه غير مكتمل. تنقصه المطالبة الواضحة بالتسجيل الحافظ للمهلة وقائمة خطية بالمستندات الناقصة." },
+                { "language": "tr", "text": "Akla yatkın, ama tamamlanmamış. Süreyi koruyan kayıt ve tamamlanacak belgelerin yazılı listesi için açık talep yok." },
+                { "language": "ru", "text": "Правдоподобно, но неполно. Не хватает четкой просьбы о регистрации с сохранением срока и письменного списка недостающих документов." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام ناتەواوە. داوای ڕوون بۆ تۆمارکردنی پارێزەری مۆڵەت و لیستی نووسراوی بەڵگە کەمەکان کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê netemam e. Daxwaza zelal ji bo tomarkirina parastina demê û lîsteya nivîskî ya belgeyên kêm tune ye." },
+                { "language": "pl", "text": "Prawdopodobne, ale niepełne. Brakuje jasnej prośby o rejestrację zachowującą termin i pisemną listę brakujących dokumentów." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet. Lipsește cererea clară de înregistrare cu păstrarea termenului și lista scrisă a documentelor lipsă." },
+                { "language": "sq", "text": "E besueshme, por e paplotë. Mungon kërkesa e qartë për regjistrim me afat të ruajtur dhe lista me shkrim e dokumenteve që mungojnë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke. Dann fasse ich zusammen: Der Antrag betrifft zunächst die befristete Genehmigung der weiter entfernten Praxis; die ärztliche Zusatzbegründung reiche ich bis Freitag nach, und Sie bestätigen mir schriftlich den Eingang, die fehlenden Unterlagen und den priorisierten Prüfweg.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will summarize: the application first concerns temporary approval for the practice farther away; I will submit the additional medical justification by Friday, and you will confirm in writing the receipt, the missing documents, and the prioritized review path." },
+                { "language": "fa", "text": "ممنون. پس خلاصه می‌کنم: درخواست ابتدا مربوط به تأیید موقت مطب دورتر است؛ توضیح تکمیلی پزشکی را تا جمعه ارائه می‌کنم، و شما دریافت، مدارک ناقص و مسیر بررسی اولویت‌دار را کتبی برایم تأیید می‌کنید." },
+                { "language": "ar", "text": "شكرًا. إذن ألخص: يتعلق الطلب أولًا بالموافقة المؤقتة على العيادة الأبعد؛ سأقدم التبرير الطبي الإضافي حتى يوم الجمعة، وأنتم تؤكدون لي كتابةً الاستلام والمستندات الناقصة ومسار الفحص ذي الأولوية." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman özetliyorum: başvuru öncelikle daha uzaktaki muayenehanenin süreli onayıyla ilgilidir; ek tıbbi gerekçeyi cuma gününe kadar sunacağım ve siz bana alındıyı, tamamlanacak belgeleri ve öncelikli inceleme yolunu yazılı olarak teyit edeceksiniz." },
+                { "language": "ru", "text": "Спасибо. Тогда я резюмирую: заявление сначала касается временного одобрения более удаленной практики; дополнительное медицинское обоснование я предоставлю до пятницы, а вы письменно подтвердите получение, недостающие документы и приоритетный путь проверки." },
+                { "language": "ckb", "text": "سوپاس. کەواتە پوختە دەکەم: داواکارییەکە سەرەتا پەیوەندی بە پەسەندکردنی کاتی مطبی دوورترەوە هەیە؛ پاساوی پزیشکیی زیادە تا هەینی پێشکەش دەکەم، و ئێوە بە نووسراوی گەیشتن، بەڵگە کەمەکان و ڕێگای پشکنینی پێشینەدار پشتڕاست دەکەنەوە." },
+                { "language": "kmr", "text": "Spas. Wê demê ez kurt dikim: daxwaz pêşî li ser pejirandina demkî ya polîklînîka dûrtir e; sedema bijîşkî ya zêde ez heta Înê dişînim, û hûn bi nivîskî gihîştin, belgeyên kêm û rêya vekolîna pêşî piştrast dikin." },
+                { "language": "pl", "text": "Dziękuję. Podsumowuję więc: wniosek dotyczy najpierw czasowej zgody na bardziej oddaloną praktykę; dodatkowe uzasadnienie lekarskie dosyłam do piątku, a Państwo potwierdzają mi pisemnie wpływ, brakujące dokumenty i priorytetową ścieżkę sprawdzenia." },
+                { "language": "ro", "text": "Mulțumesc. Atunci rezum: cererea privește mai întâi aprobarea temporară a cabinetului mai îndepărtat; trimit justificarea medicală suplimentară până vineri, iar dumneavoastră îmi confirmați în scris primirea, documentele lipsă și calea de verificare prioritară." },
+                { "language": "sq", "text": "Faleminderit. Atëherë e përmbledh: kërkesa fillimisht ka të bëjë me miratimin e përkohshëm të ordinancës më të largët; arsyetimin shtesë mjekësor e dorëzoj deri të premten, dhe ju më konfirmoni me shkrim marrjen, dokumentet që mungojnë dhe rrugën e shqyrtimit me përparësi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussantwort macht Antrag, Nachreichung und schriftliche Bestätigung prüffähig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final answer makes the request, later submission, and written confirmation reviewable." },
+                { "language": "fa", "text": "قوی: پاسخ پایانی درخواست، ارائه بعدی و تأیید کتبی را قابل بررسی می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب الختامي يجعل الطلب والتقديم اللاحق والتأكيد الكتابي قابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: Son yanıt başvuruyu, sonradan sunumu ve yazılı teyidi incelenebilir kılıyor." },
+                { "language": "ru", "text": "Сильно: финальный ответ делает запрос, последующую подачу и письменное подтверждение проверяемыми." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامی کۆتایی داواکاری، پێشکەشکردنی دواتر و پشتڕاستکردنەوەی نووسراو دەکاتە پێداچوونەوەکراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiva dawî daxwaz, şandina paşê û piştrastkirina nivîskî vekolînbar dike." },
+                { "language": "pl", "text": "Mocne: końcowa odpowiedź czyni wniosek, dosłanie dokumentów i pisemne potwierdzenie sprawdzalnymi." },
+                { "language": "ro", "text": "Puternic: răspunsul final face cererea, trimiterea ulterioară și confirmarea scrisă verificabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfundimtare e bën kërkesën, dorëzimin e mëvonshëm dhe konfirmimin me shkrim të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann schicke ich die Begründung nach und hoffe, dass Sie den Antrag möglichst schnell genehmigen.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will send the justification later and hope that you approve the application as quickly as possible." },
+                { "language": "fa", "text": "ممنون، پس توضیح را بعداً می‌فرستم و امیدوارم درخواست را هرچه سریع‌تر تأیید کنید." },
+                { "language": "ar", "text": "شكرًا، إذن سأرسل التبرير لاحقًا وآمل أن توافقوا على الطلب بأسرع ما يمكن." },
+                { "language": "tr", "text": "Teşekkür ederim, o zaman gerekçeyi sonradan gönderirim ve başvuruyu olabildiğince hızlı onaylamanızı umarım." },
+                { "language": "ru", "text": "Спасибо, тогда я позже отправлю обоснование и надеюсь, что вы одобрите заявление как можно быстрее." },
+                { "language": "ckb", "text": "سوپاس، ئەوا پاساوەکە دواتر دەنێرم و هیوادارم داواکارییەکە بە خێرایی پەسەند بکەن." },
+                { "language": "kmr", "text": "Spas, wê demê ez sedemê paşê dişînim û hêvî dikim hûn daxwazê herî zû pejirînin." },
+                { "language": "pl", "text": "Dziękuję, w takim razie dosyłam uzasadnienie i mam nadzieję, że zatwierdzą Państwo wniosek możliwie szybko." },
+                { "language": "ro", "text": "Mulțumesc, atunci trimit justificarea ulterior și sper că aprobați cererea cât mai repede." },
+                { "language": "sq", "text": "Faleminderit, atëherë e dërgoj arsyetimin më vonë dhe shpresoj ta miratoni kërkesën sa më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber zu unverbindlich. Für C2 fehlt die schriftliche Sicherung von Eingang, fehlenden Unterlagen und Prüfweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite, but too non-binding. At C2, written confirmation of receipt, missing documents, and review path is missing." },
+                { "language": "fa", "text": "مودبانه است، اما بیش از حد غیرالزام‌آور است. برای C2، تضمین کتبی دریافت، مدارک ناقص و مسیر بررسی کم است." },
+                { "language": "ar", "text": "مهذب، لكنه غير ملزم بما يكفي. في C2 ينقص التأكيد الكتابي للاستلام والمستندات الناقصة ومسار الفحص." },
+                { "language": "tr", "text": "Kibar, ama fazla bağlayıcılıktan uzak. C2 için alındı, tamamlanacak belgeler ve inceleme yoluna dair yazılı güvence yok." },
+                { "language": "ru", "text": "Вежливо, но слишком необязательно. Для C2 не хватает письменной фиксации получения, недостающих документов и пути проверки." },
+                { "language": "ckb", "text": "ڕێزدارانەیە، بەڵام زۆر نا پابەندکەرە. بۆ C2 دڵنیایی نووسراوی گەیشتن، بەڵگە کەمەکان و ڕێگای پشکنین کەمە." },
+                { "language": "kmr", "text": "Bi rêz e, lê pir nepeyman e. Ji bo C2 piştrastkirina nivîskî ya gihîştinê, belgeyên kêm û rêya vekolînê kêm e." },
+                { "language": "pl", "text": "Uprzejme, ale zbyt niewiążące. Na C2 brakuje pisemnego zabezpieczenia wpływu, brakujących dokumentów i ścieżki sprawdzenia." },
+                { "language": "ro", "text": "Politicos, dar prea neangajant. Pentru C2 lipsește asigurarea scrisă a primirii, documentelor lipsă și căii de verificare." },
+                { "language": "sq", "text": "E sjellshme, por shumë jo e detyrueshme. Për C2 mungon sigurimi me shkrim për marrjen, dokumentet që mungojnë dhe rrugën e shqyrtimit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "limited-special-case",
+          "text": "Ein Sonderfall wird stärker, wenn er eng begrenzt und mit konkreten Alternativen belegt wird.",
+          "translations": [
+            { "language": "en", "text": "A special case becomes stronger when it is narrowly limited and supported with concrete alternatives." },
+            { "language": "fa", "text": "یک مورد خاص زمانی قوی‌تر می‌شود که محدود و با گزینه‌های جایگزین مشخص مستند شود." },
+            { "language": "ar", "text": "تصبح الحالة الخاصة أقوى عندما تكون محدودة بدقة ومدعومة ببدائل محددة." },
+            { "language": "tr", "text": "Özel durum, dar biçimde sınırlandırılıp somut alternatiflerle desteklendiğinde güçlenir." },
+            { "language": "ru", "text": "Особый случай становится сильнее, когда он узко ограничен и подтвержден конкретными альтернативами." },
+            { "language": "ckb", "text": "کەیسێکی تایبەت کاتێک بەهێزتر دەبێت کە بە توندی سنووردار و بە جێگرەوەی دیاریکراو پشتگیری بکرێت." },
+            { "language": "kmr", "text": "Rewşeke taybet dema xurttir dibe ku teng sînorkirî be û bi alternatîfên konkret were piştgirîkirin." },
+            { "language": "pl", "text": "Szczególny przypadek staje się mocniejszy, gdy jest wąsko ograniczony i poparty konkretnymi alternatywami." },
+            { "language": "ro", "text": "Un caz special devine mai puternic când este limitat strict și susținut cu alternative concrete." },
+            { "language": "sq", "text": "Një rast i veçantë bëhet më i fortë kur kufizohet ngushtë dhe mbështetet me alternativa konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "document-evidence",
+          "text": "Bei Versicherungsfragen zählen prüffähige Unterlagen mehr als bloße Dringlichkeit.",
+          "translations": [
+            { "language": "en", "text": "In insurance matters, reviewable documents count more than mere urgency." },
+            { "language": "fa", "text": "در مسائل بیمه‌ای، مدارک قابل بررسی از صرف فوریت مهم‌ترند." },
+            { "language": "ar", "text": "في مسائل التأمين تكون المستندات القابلة للفحص أهم من مجرد الاستعجال." },
+            { "language": "tr", "text": "Sigorta konularında incelenebilir belgeler, salt aciliyetten daha önemlidir." },
+            { "language": "ru", "text": "В страховых вопросах проверяемые документы важнее простой срочности." },
+            { "language": "ckb", "text": "لە کاروباری بیمەدا بەڵگەی پێداچوونەوەکراو لە پەلەی تەنها گرنگترە." },
+            { "language": "kmr", "text": "Di mijarên sîgorteyê de belgeyên vekolînbar ji lezgîniya tenê girîngtir in." },
+            { "language": "pl", "text": "W sprawach ubezpieczeniowych sprawdzalne dokumenty liczą się bardziej niż sama pilność." },
+            { "language": "ro", "text": "În chestiuni de asigurare, documentele verificabile contează mai mult decât simpla urgență." },
+            { "language": "sq", "text": "Në çështjet e sigurimit, dokumentet e verifikueshme vlejnë më shumë se thjesht urgjenca." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "limited-request",
+          "text": "Ein begrenzter Hauptantrag erhöht die Chance auf eine klare Entscheidung.",
+          "translations": [
+            { "language": "en", "text": "A limited main request increases the chance of a clear decision." },
+            { "language": "fa", "text": "درخواست اصلی محدود، شانس تصمیم روشن را بیشتر می‌کند." },
+            { "language": "ar", "text": "يزيد الطلب الرئيسي المحدود فرصة الحصول على قرار واضح." },
+            { "language": "tr", "text": "Sınırlı bir ana talep, net karar şansını artırır." },
+            { "language": "ru", "text": "Ограниченный основной запрос повышает шанс на ясное решение." },
+            { "language": "ckb", "text": "داواکاریی سەرەکیی سنووردار چانسی بڕیاری ڕوون زیاد دەکات." },
+            { "language": "kmr", "text": "Daxwazeke sereke ya sînorkirî şansa biryareke zelal zêde dike." },
+            { "language": "pl", "text": "Ograniczony główny wniosek zwiększa szansę na jasną decyzję." },
+            { "language": "ro", "text": "O cerere principală limitată crește șansa unei decizii clare." },
+            { "language": "sq", "text": "Një kërkesë kryesore e kufizuar rrit mundësinë për një vendim të qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "written-summary",
+          "text": "Am Ende sollte klar sein, was beantragt ist, was nachgereicht wird und was schriftlich bestätigt wird.",
+          "translations": [
+            { "language": "en", "text": "At the end, it should be clear what is being requested, what will be submitted later, and what will be confirmed in writing." },
+            { "language": "fa", "text": "در پایان باید روشن باشد چه چیزی درخواست شده، چه چیزی بعداً ارائه می‌شود و چه چیزی کتبی تأیید می‌شود." },
+            { "language": "ar", "text": "في النهاية ينبغي أن يكون واضحًا ما المطلوب، وما الذي سيقدم لاحقًا، وما الذي سيؤكد كتابةً." },
+            { "language": "tr", "text": "Sonunda neyin talep edildiği, neyin sonradan sunulacağı ve neyin yazılı teyit edileceği açık olmalıdır." },
+            { "language": "ru", "text": "В конце должно быть ясно, что запрошено, что будет предоставлено позже и что будет подтверждено письменно." },
+            { "language": "ckb", "text": "لە کۆتاییدا پێویستە ڕوون بێت چی داوا کراوە، چی دواتر پێشکەش دەکرێت و چی بە نووسراوی پشتڕاست دەکرێتەوە." },
+            { "language": "kmr", "text": "Di dawiyê de divê zelal be çi tê daxwazkirin, çi paşê tê şandin û çi bi nivîskî tê piştrastkirin." },
+            { "language": "pl", "text": "Na końcu powinno być jasne, o co złożono wniosek, co zostanie dosłane i co zostanie potwierdzone pisemnie." },
+            { "language": "ro", "text": "La final trebuie să fie clar ce se solicită, ce se va trimite ulterior și ce va fi confirmat în scris." },
+            { "language": "sq", "text": "Në fund duhet të jetë e qartë çfarë kërkohet, çfarë do të dorëzohet më vonë dhe çfarë do të konfirmohet me shkrim." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "health-insurance-special-case-phone-call",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal phone call with a health insurance provider about a documented special case and limited coverage request.",
+          "altText": "Eine versicherte Person telefoniert mit der Krankenkasse und ordnet Verordnung, Absagen lokaler Praxen und fehlende Unterlagen auf dem Schreibtisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An insured person calls the health insurance provider and organizes a prescription, refusals from local practices, and missing documents on the desk." },
+            { "language": "fa", "text": "یک فرد بیمه‌شده با بیمه درمانی تماس می‌گیرد و نسخه، پاسخ‌های منفی مطب‌های محلی و مدارک ناقص را روی میز مرتب می‌کند." },
+            { "language": "ar", "text": "شخص مؤمن عليه يتصل بالتأمين الصحي ويرتب على المكتب وصفة ورفض العيادات المحلية والمستندات الناقصة." },
+            { "language": "tr", "text": "Sigortalı bir kişi sağlık sigortasını arıyor ve masada reçeteyi, yerel muayenehanelerden gelen retleri ve tamamlanacak belgeleri düzenliyor." },
+            { "language": "ru", "text": "Застрахованное лицо звонит в медицинскую страховку и раскладывает на столе назначение, отказы местных практик и недостающие документы." },
+            { "language": "ckb", "text": "کەسێکی بیمەکراو پەیوەندی بە بیمەی تەندروستی دەکات و ڕەچەتە، ڕەتکردنەوەی مطبە ناوخۆییەکان و بەڵگە کەمەکان لەسەر مێز ڕێکدەخات." },
+            { "language": "kmr", "text": "Kesekî sîgortekirî telefonî sîgorteya tenduristiyê dike û reçete, redkirinên polîklînîkên herêmî û belgeyên kêm li ser maseyê rêz dike." },
+            { "language": "pl", "text": "Osoba ubezpieczona dzwoni do kasy chorych i porządkuje na biurku skierowanie, odmowy lokalnych praktyk oraz brakujące dokumenty." },
+            { "language": "ro", "text": "O persoană asigurată sună la casa de asigurări și organizează pe birou prescripția, refuzurile cabinetelor locale și documentele lipsă." },
+            { "language": "sq", "text": "Një person i siguruar telefonon sigurimin shëndetësor dhe rregullon në tavolinë rekomandimin, refuzimet nga ordinancat lokale dhe dokumentet që mungojnë." }
+          ],
+          "imagePrompt": "Clean educational illustration, insured person making a formal phone call at a desk, simple non-readable prescription sheet and document checklist, calm German health insurance context, no logos, no private data, no dramatic medical scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+{
+  "packageId": "roleplays-c2-core-28-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 28 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 28",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-widerspruch-in-der-argumentation-aufloesen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Widerspruch in der Argumentation auflösen",
+      "titleTranslations": [
+        { "language": "en", "text": "Resolving a contradiction in the argument" },
+        { "language": "fa", "text": "حل کردن تناقض در استدلال" },
+        { "language": "ar", "text": "حل تناقض في الحجة" },
+        { "language": "tr", "text": "Tartışmadaki çelişkiyi çözmek" },
+        { "language": "ru", "text": "Разрешение противоречия в аргументации" },
+        { "language": "ckb", "text": "چارەسەرکردنی ناکۆکی لە بەڵگەهێنانەوەدا" },
+        { "language": "kmr", "text": "Çareserkirina nakokiyê di argûmanê de" },
+        { "language": "pl", "text": "Rozwiązanie sprzeczności w argumentacji" },
+        { "language": "ro", "text": "Rezolvarea unei contradicții în argumentație" },
+        { "language": "sq", "text": "Zgjidhja e një kundërthënieje në argumentim" }
+      ],
+      "description": "In einem Seminar zur Bildungs- und Arbeitsmarktintegration wird Ihnen ein Widerspruch vorgehalten: Sie haben Sprachzertifikate als hilfreiche Mindeststandards beschrieben, aber zugleich ihre ausschließende Wirkung kritisiert. Sie sollen zeigen, dass kein echter Widerspruch vorliegt, indem Sie Funktion, Verwendung und Geltungsbereich der Zertifikate sauber trennen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a seminar on education and labor-market integration, someone points out an apparent contradiction: you described language certificates as useful minimum standards, but also criticized their excluding effect. You need to show that this is not a real contradiction by clearly separating their function, use, and scope." },
+        { "language": "fa", "text": "در سمیناری درباره ادغام آموزشی و بازار کار، به شما یک تناقض ظاهری نسبت داده می‌شود: شما گواهی‌های زبان را معیارهای حداقلی مفید دانسته‌اید، اما هم‌زمان اثر حذف‌کننده آن‌ها را نقد کرده‌اید. باید نشان دهید این تناقض واقعی نیست، چون کارکرد، شیوه استفاده و دامنه اعتبار گواهی‌ها را دقیق از هم جدا می‌کنید." },
+        { "language": "ar", "text": "في ندوة عن الاندماج التعليمي وسوق العمل يُشار إلى تناقض ظاهري في كلامكم: وصفتم شهادات اللغة بأنها معايير دنيا مفيدة، لكنكم انتقدتم أيضاً أثرها الإقصائي. عليكم أن تبينوا أن ذلك ليس تناقضاً حقيقياً عبر فصل الوظيفة والاستخدام ونطاق الصلاحية بوضوح." },
+        { "language": "tr", "text": "Eğitim ve iş piyasasına uyum konulu bir seminerde size görünürde bir çelişki yöneltiliyor: dil sertifikalarını yararlı asgari standartlar olarak tanımladınız, ama aynı zamanda dışlayıcı etkilerini eleştirdiniz. Sertifikaların işlevini, kullanımını ve geçerlilik alanını net ayırarak bunun gerçek bir çelişki olmadığını göstermeniz gerekir." },
+        { "language": "ru", "text": "На семинаре об интеграции в образовании и на рынке труда вам указывают на кажущееся противоречие: вы описали языковые сертификаты как полезные минимальные стандарты, но одновременно критиковали их исключающий эффект. Нужно показать, что это не настоящее противоречие, четко разделив функцию, применение и сферу действия сертификатов." },
+        { "language": "ckb", "text": "لە سیمینارێک دەربارەی یەکگرتنی پەروەردە و بازاڕی کاردا ناکۆکییەکی دەرکەوتوو لە قسەکانتدا دەهێنرێتەوە: بڕوانامەکانی زمانت وەک ستانداردی کەمینەی بەسوود باس کردووە، بەڵام کاریگەریی دەرخستنیشت ڕەخنە کردووە. دەبێت پیشان بدەیت ئەمە ناکۆکیی ڕاستەقینە نییە بەوەی کارکرد، بەکارهێنان و سنووری بڕوانامەکان بە ڕوونی جیا دەکەیتەوە." },
+        { "language": "kmr", "text": "Di semînarekê li ser entegrasyona perwerde û bazara kar de nakokiyek xuya li gotina we tê gotin: we sertîfîkayên ziman wekî standardên kêmtirîn ên bikêr şirove kirin, lê bandora wan a derxistinê jî rexne kir. Divê hûn nîşan bidin ku ev nakokiyeke rastîn nîne, bi cudakirina zelal a fonksiyon, bikaranîn û qada derbasbûna sertîfîkayan." },
+        { "language": "pl", "text": "Na seminarium o integracji edukacyjnej i rynku pracy ktoś wskazuje pozorną sprzeczność: opisał pan certyfikaty językowe jako użyteczne standardy minimalne, a jednocześnie krytykował ich wykluczające działanie. Trzeba pokazać, że nie jest to realna sprzeczność, jasno oddzielając funkcję, użycie i zakres obowiązywania certyfikatów." },
+        { "language": "ro", "text": "Într-un seminar despre integrarea educațională și pe piața muncii vi se indică o contradicție aparentă: ați descris certificatele de limbă ca standarde minime utile, dar ați criticat și efectul lor de excludere. Trebuie să arătați că nu este o contradicție reală, separând clar funcția, folosirea și domeniul lor de aplicare." },
+        { "language": "sq", "text": "Në një seminar për integrimin arsimor dhe tregun e punës ju vihet në dukje një kundërthënie e dukshme: i përshkruat certifikatat e gjuhës si standarde minimale të dobishme, por njëkohësisht kritikuat efektin e tyre përjashtues. Duhet të tregoni se nuk ka kundërthënie reale duke ndarë qartë funksionin, përdorimin dhe fushën e vlefshmërisë së certifikatave." }
+      ],
+      "learnerGoal": "Einen scheinbaren Widerspruch in der eigenen Argumentation auflösen: Begriffe klären, Ebenen trennen, den Geltungsbereich der These begrenzen und eine präzise Synthese geben.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Resolve an apparent contradiction in your own argument: clarify concepts, separate levels, limit the scope of the thesis, and give a precise synthesis." },
+        { "language": "fa", "text": "یک تناقض ظاهری در استدلال خود را حل کنید: مفاهیم را روشن کنید، سطح‌ها را جدا کنید، دامنه تز را محدود کنید و جمع‌بندی دقیق بدهید." },
+        { "language": "ar", "text": "حلوا تناقضاً ظاهرياً في حجتكم: وضحوا المفاهيم، وافصلوا المستويات، وحددوا نطاق الفرضية، وقدموا تركيباً دقيقاً." },
+        { "language": "tr", "text": "Kendi argümanınızdaki görünür çelişkiyi çözün: kavramları netleştirin, düzeyleri ayırın, tezin kapsamını sınırlayın ve kesin bir sentez verin." },
+        { "language": "ru", "text": "Разрешите кажущееся противоречие в собственной аргументации: уточните понятия, разделите уровни, ограничьте сферу тезиса и дайте точный синтез." },
+        { "language": "ckb", "text": "ناکۆکییەکی دەرکەوتوو لە بەڵگەهێنانەوەی خۆتدا چارەسەر بکە: چەمکەکان ڕوون بکەوە، ئاستەکان جیا بکەوە، سنووری تێزەکە دیاری بکە و کۆکردنەوەیەکی ورد بدە." },
+        { "language": "kmr", "text": "Nakokiyeke xuya di argûmana xwe de çareser bikin: têgehan zelal bikin, astan cuda bikin, qada tezê sînordar bikin û sentezeke rast bidin." },
+        { "language": "pl", "text": "Rozwiązać pozorną sprzeczność we własnej argumentacji: wyjaśnić pojęcia, oddzielić poziomy, ograniczyć zakres tezy i podać precyzyjną syntezę." },
+        { "language": "ro", "text": "Rezolvați o contradicție aparentă din propria argumentație: clarificați conceptele, separați nivelurile, limitați domeniul tezei și oferiți o sinteză precisă." },
+        { "language": "sq", "text": "Zgjidhni një kundërthënie të dukshme në argumentimin tuaj: sqaroni konceptet, ndani nivelet, kufizoni fushën e tezës dhe jepni një sintezë të saktë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "agree-disagree",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 28,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Seminarteilnehmer",
+          "translations": [
+            { "language": "en", "text": "Seminar participant" },
+            { "language": "fa", "text": "شرکت‌کننده سمینار" },
+            { "language": "ar", "text": "مشارك في الندوة" },
+            { "language": "tr", "text": "Seminer katılımcısı" },
+            { "language": "ru", "text": "Участник семинара" },
+            { "language": "ckb", "text": "بەشداربووی سیمینار" },
+            { "language": "kmr", "text": "Beşdarê semînerê" },
+            { "language": "pl", "text": "Uczestnik seminarium" },
+            { "language": "ro", "text": "Participant la seminar" },
+            { "language": "sq", "text": "Pjesëmarrës në seminar" }
+          ]
+        },
+        {
+          "roleKey": "lecturer",
+          "displayName": "Dozentin",
+          "translations": [
+            { "language": "en", "text": "Lecturer" },
+            { "language": "fa", "text": "مدرس" },
+            { "language": "ar", "text": "المحاضرة" },
+            { "language": "tr", "text": "Öğretim görevlisi" },
+            { "language": "ru", "text": "Преподавательница" },
+            { "language": "ckb", "text": "وانەبێژ" },
+            { "language": "kmr", "text": "Mamoste" },
+            { "language": "pl", "text": "Prowadząca" },
+            { "language": "ro", "text": "Lectoră" },
+            { "language": "sq", "text": "Lektorja" }
+          ]
+        },
+        {
+          "roleKey": "student-a",
+          "displayName": "Kritische Teilnehmerin",
+          "translations": [
+            { "language": "en", "text": "Critical participant" },
+            { "language": "fa", "text": "شرکت‌کننده منتقد" },
+            { "language": "ar", "text": "مشاركة ناقدة" },
+            { "language": "tr", "text": "Eleştirel katılımcı" },
+            { "language": "ru", "text": "Критически настроенная участница" },
+            { "language": "ckb", "text": "بەشداربووی ڕەخنەگر" },
+            { "language": "kmr", "text": "Beşdara rexnegir" },
+            { "language": "pl", "text": "Krytyczna uczestniczka" },
+            { "language": "ro", "text": "Participantă critică" },
+            { "language": "sq", "text": "Pjesëmarrëse kritike" }
+          ]
+        },
+        {
+          "roleKey": "student-b",
+          "displayName": "Seminarteilnehmerin",
+          "translations": [
+            { "language": "en", "text": "Seminar participant" },
+            { "language": "fa", "text": "شرکت‌کننده سمینار" },
+            { "language": "ar", "text": "مشاركة في الندوة" },
+            { "language": "tr", "text": "Seminer katılımcısı" },
+            { "language": "ru", "text": "Участница семинара" },
+            { "language": "ckb", "text": "بەشداربووی سیمینار" },
+            { "language": "kmr", "text": "Beşdara semînerê" },
+            { "language": "pl", "text": "Uczestniczka seminarium" },
+            { "language": "ro", "text": "Participantă la seminar" },
+            { "language": "sq", "text": "Pjesëmarrëse në seminar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "lecturer",
+          "baseText": "Sie haben einerseits gesagt, Sprachzertifikate seien für fairen Zugang wichtig. Andererseits kritisieren Sie, dass Zertifikate Menschen ausschließen können. Ist das nicht ein Widerspruch?",
+          "translations": [
+            { "language": "en", "text": "On the one hand, you said that language certificates are important for fair access. On the other hand, you criticize that certificates can exclude people. Is that not a contradiction?" },
+            { "language": "fa", "text": "از یک طرف گفتید گواهی‌های زبان برای دسترسی عادلانه مهم‌اند. از طرف دیگر نقد می‌کنید که گواهی‌ها می‌توانند افراد را حذف کنند. آیا این تناقض نیست؟" },
+            { "language": "ar", "text": "من جهة قلتم إن شهادات اللغة مهمة للوصول العادل. ومن جهة أخرى تنتقدون أن الشهادات يمكن أن تستبعد الناس. أليس هذا تناقضاً؟" },
+            { "language": "tr", "text": "Bir yandan dil sertifikalarının adil erişim için önemli olduğunu söylediniz. Öte yandan sertifikaların insanları dışlayabileceğini eleştiriyorsunuz. Bu bir çelişki değil mi?" },
+            { "language": "ru", "text": "С одной стороны, вы сказали, что языковые сертификаты важны для справедливого доступа. С другой стороны, вы критикуете, что сертификаты могут исключать людей. Разве это не противоречие?" },
+            { "language": "ckb", "text": "لە لایەکەوە وتت بڕوانامەکانی زمان بۆ گەیشتنی دادپەروەرانە گرنگن. لە لایەکی ترەوە ڕەخنە دەکەیت کە بڕوانامەکان دەتوانن خەڵک دەر بخەن. ئەمە ناکۆکی نییە؟" },
+            { "language": "kmr", "text": "Ji aliyekê ve we got ku sertîfîkayên ziman ji bo gihîştina adil girîng in. Ji aliyekî din ve hûn rexne dikin ku sertîfîka dikarin mirovan derxin. Ev ne nakokî ye?" },
+            { "language": "pl", "text": "Z jednej strony powiedział pan, że certyfikaty językowe są ważne dla sprawiedliwego dostępu. Z drugiej strony krytykuje pan, że certyfikaty mogą ludzi wykluczać. Czy to nie sprzeczność?" },
+            { "language": "ro", "text": "Pe de o parte ați spus că certificatele de limbă sunt importante pentru acces echitabil. Pe de altă parte criticați faptul că certificatele pot exclude oameni. Nu este o contradicție?" },
+            { "language": "sq", "text": "Nga njëra anë thatë se certifikatat e gjuhës janë të rëndësishme për qasje të drejtë. Nga ana tjetër kritikoni se certifikatat mund të përjashtojnë njerëz. A nuk është kjo kundërthënie?" }
+          ],
+          "function": "challenge-apparent-contradiction",
+          "toneNote": "Kritisch, aber sachlich."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Es ist nur dann ein Widerspruch, wenn man Zertifikate entweder als Garant für Fairness oder als grundsätzlich ungerecht versteht. Ich unterscheide zwischen ihrer diagnostischen Funktion und ihrer Verwendung als starre Zugangsschranke.",
+          "translations": [
+            { "language": "en", "text": "It is only a contradiction if certificates are understood either as a guarantee of fairness or as fundamentally unjust. I distinguish between their diagnostic function and their use as a rigid access barrier." },
+            { "language": "fa", "text": "این فقط وقتی تناقض است که گواهی‌ها را یا تضمین‌کننده عدالت بدانیم یا ذاتاً ناعادلانه. من میان کارکرد تشخیصی آن‌ها و استفاده از آن‌ها به‌عنوان مانع خشک دسترسی تفاوت می‌گذارم." },
+            { "language": "ar", "text": "يكون ذلك تناقضاً فقط إذا فُهمت الشهادات إما كضمان للإنصاف أو كأمر غير عادل من حيث المبدأ. أنا أميز بين وظيفتها التشخيصية واستخدامها كحاجز وصول جامد." },
+            { "language": "tr", "text": "Bu ancak sertifikalar ya adaletin garantisi ya da temelde haksız bir şey olarak görülürse çelişkidir. Ben onların tanılayıcı işlevi ile katı bir erişim engeli olarak kullanılmasını ayırıyorum." },
+            { "language": "ru", "text": "Это противоречие только тогда, когда сертификаты понимают либо как гарантию справедливости, либо как принципиально несправедливый инструмент. Я различаю их диагностическую функцию и их использование как жесткого барьера доступа." },
+            { "language": "ckb", "text": "ئەمە تەنها کاتێک ناکۆکییە کە بڕوانامەکان یان وەک گەرەنتیی دادپەروەری، یان وەک شتێکی لە بنەڕەتدا نادادپەروەرانە تێبگەین. من جیاوازی دەکەم لە نێوان کارکردی دەستنیشانکەریان و بەکارهێنانیان وەک بەربەستی ڕەقی گەیشتن." },
+            { "language": "kmr", "text": "Ev tenê wê demê nakokî ye ku sertîfîka an wekî garantiya adaletê an jî wekî tiştek bingehîn neadil bên fêmkirin. Ez di navbera fonksiyona wan a teşhîskirinê û bikaranîna wan wekî astengeke hişk a gihîştinê de cudahî dikim." },
+            { "language": "pl", "text": "To jest sprzeczność tylko wtedy, gdy certyfikaty rozumie się albo jako gwarancję sprawiedliwości, albo jako coś zasadniczo niesprawiedliwego. Rozróżniam ich funkcję diagnostyczną i użycie jako sztywnej bariery dostępu." },
+            { "language": "ro", "text": "Este o contradicție doar dacă certificatele sunt înțelese fie ca garanție a echității, fie ca fundamental nedrepte. Eu disting între funcția lor diagnostică și folosirea lor ca barieră rigidă de acces." },
+            { "language": "sq", "text": "Kjo është kundërthënie vetëm nëse certifikatat kuptohen ose si garanci e drejtësisë, ose si thelbësisht të padrejta. Unë dalloj funksionin e tyre diagnostik nga përdorimi i tyre si pengesë e ngurtë hyrjeje." }
+          ],
+          "function": "separate-concepts",
+          "toneNote": "Präzise und klärend.",
+          "expectedLearnerAction": "Clarify that the contradiction depends on a false binary."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "student-a",
+          "baseText": "Können Sie diesen Unterschied genauer erklären?",
+          "translations": [
+            { "language": "en", "text": "Can you explain this difference more precisely?" },
+            { "language": "fa", "text": "می‌توانید این تفاوت را دقیق‌تر توضیح دهید؟" },
+            { "language": "ar", "text": "هل يمكنكم شرح هذا الفرق بدقة أكبر؟" },
+            { "language": "tr", "text": "Bu farkı daha ayrıntılı açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Можете объяснить это различие точнее?" },
+            { "language": "ckb", "text": "دەتوانیت ئەم جیاوازییە بە وردی زیاتر ڕوون بکەیتەوە؟" },
+            { "language": "kmr", "text": "Hûn dikarin vê cudahiyê hûrgilîtir rave bikin?" },
+            { "language": "pl", "text": "Czy może pan dokładniej wyjaśnić tę różnicę?" },
+            { "language": "ro", "text": "Puteți explica mai precis această diferență?" },
+            { "language": "sq", "text": "A mund ta shpjegoni më saktë këtë dallim?" }
+          ],
+          "function": "ask-for-precision"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein Zertifikat kann zeigen, ob jemand sprachliche Mindestanforderungen erfüllt. Problematisch wird es, wenn es als einziges Kriterium gilt und andere Nachweise, Lernbiografie oder institutionelle Unterstützung ausblendet.",
+          "translations": [
+            { "language": "en", "text": "A certificate can show whether someone meets minimum language requirements. It becomes problematic when it counts as the only criterion and ignores other evidence, learning history, or institutional support." },
+            { "language": "fa", "text": "یک گواهی می‌تواند نشان دهد آیا فرد حداقل الزامات زبانی را دارد یا نه. مشکل وقتی آغاز می‌شود که تنها معیار باشد و مدارک دیگر، مسیر یادگیری یا حمایت نهادی را نادیده بگیرد." },
+            { "language": "ar", "text": "يمكن للشهادة أن تبين هل يستوفي شخص ما المتطلبات اللغوية الدنيا. تصبح مشكلة عندما تُعد المعيار الوحيد وتغفل أدلة أخرى أو سيرة التعلم أو الدعم المؤسسي." },
+            { "language": "tr", "text": "Bir sertifika kişinin asgari dil gereklerini karşılayıp karşılamadığını gösterebilir. Sorun, tek ölçüt sayıldığında ve başka kanıtları, öğrenme geçmişini ya da kurumsal desteği dışarıda bıraktığında ortaya çıkar." },
+            { "language": "ru", "text": "Сертификат может показать, выполняет ли человек минимальные языковые требования. Проблема возникает, когда он считается единственным критерием и игнорирует другие доказательства, учебную биографию или институциональную поддержку." },
+            { "language": "ckb", "text": "بڕوانامە دەتوانێت پیشان بدات کەسێک پێداویستییە زمانییە کەمینەکان جێبەجێ دەکات یان نا. کێشە دەبێت کاتێک وەک تاکە پێوەر حساب دەکرێت و بەڵگەی تر، مێژووی فێربوون یان پشتگیریی دامەزراوەیی نادیدە دەگرێت." },
+            { "language": "kmr", "text": "Sertîfîka dikare nîşan bide ka kesek daxwazên kêmtirîn ên ziman pêk tîne an na. Ew pirsgirêk dibe dema ku wekî tenê pîvan tê hesibandin û belgeyên din, dîroka fêrbûnê an piştgiriya sazî ji ber çavan dûr dixe." },
+            { "language": "pl", "text": "Certyfikat może pokazać, czy ktoś spełnia minimalne wymagania językowe. Problem pojawia się wtedy, gdy staje się jedynym kryterium i pomija inne dowody, biografię uczenia się albo wsparcie instytucjonalne." },
+            { "language": "ro", "text": "Un certificat poate arăta dacă cineva îndeplinește cerințele lingvistice minime. Devine problematic când este singurul criteriu și ignoră alte dovezi, parcursul de învățare sau sprijinul instituțional." },
+            { "language": "sq", "text": "Një certifikatë mund të tregojë nëse dikush i plotëson kërkesat minimale gjuhësore. Bëhet problematike kur vlen si kriteri i vetëm dhe lë jashtë prova të tjera, historinë e të nxënit ose mbështetjen institucionale." }
+          ],
+          "function": "explain-mechanism",
+          "toneNote": "Analytisch.",
+          "expectedLearnerAction": "Explain the mechanism that turns a useful measure into a problem."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "lecturer",
+          "baseText": "Heißt das, Sie befürworten Zertifikate oder lehnen Sie sie ab?",
+          "translations": [
+            { "language": "en", "text": "Does that mean you support certificates or reject them?" },
+            { "language": "fa", "text": "یعنی شما از گواهی‌ها حمایت می‌کنید یا آن‌ها را رد می‌کنید؟" },
+            { "language": "ar", "text": "هل يعني ذلك أنكم تؤيدون الشهادات أم ترفضونها؟" },
+            { "language": "tr", "text": "Bu, sertifikaları desteklediğiniz mi yoksa reddettiğiniz mi anlamına geliyor?" },
+            { "language": "ru", "text": "Это значит, что вы поддерживаете сертификаты или отвергаете их?" },
+            { "language": "ckb", "text": "ئایا ئەمە واتە پشتیوانی لە بڕوانامەکان دەکەیت یان ڕەت دەکەیتەوە؟" },
+            { "language": "kmr", "text": "Ma ev tê wê wateyê ku hûn piştgirî didin sertîfîkayan an wan red dikin?" },
+            { "language": "pl", "text": "Czy to znaczy, że popiera pan certyfikaty, czy je odrzuca?" },
+            { "language": "ro", "text": "Înseamnă că susțineți certificatele sau le respingeți?" },
+            { "language": "sq", "text": "A do të thotë kjo se i mbështetni certifikatat apo i kundërshtoni ato?" }
+          ],
+          "function": "force-position"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich befürworte sie als begrenztes Instrument, nicht als endgültiges Urteil über Teilhabefähigkeit. Sie können Transparenz schaffen, dürfen aber nicht verdecken, dass Zugang auch von Beratung, Anerkennung und realistischen Brückenangeboten abhängt.",
+          "translations": [
+            { "language": "en", "text": "I support them as a limited instrument, not as a final judgment about someone's ability to participate. They can create transparency, but they must not hide the fact that access also depends on counseling, recognition, and realistic bridging options." },
+            { "language": "fa", "text": "من از آن‌ها به‌عنوان ابزاری محدود حمایت می‌کنم، نه به‌عنوان حکم نهایی درباره توانایی مشارکت. آن‌ها می‌توانند شفافیت ایجاد کنند، اما نباید پنهان کنند که دسترسی به مشاوره، به‌رسمیت‌شناسی و مسیرهای گذار واقع‌بینانه هم وابسته است." },
+            { "language": "ar", "text": "أنا أؤيدها كأداة محدودة، لا كحكم نهائي على القدرة على المشاركة. يمكنها أن تخلق شفافية، لكنها لا يجوز أن تخفي أن الوصول يعتمد أيضاً على الاستشارة والاعتراف وخيارات انتقال واقعية." },
+            { "language": "tr", "text": "Onları sınırlı bir araç olarak destekliyorum; katılım yeterliliği hakkında nihai hüküm olarak değil. Şeffaflık sağlayabilirler, fakat erişimin danışmanlığa, tanımaya ve gerçekçi geçiş olanaklarına da bağlı olduğunu gizlememelidirler." },
+            { "language": "ru", "text": "Я поддерживаю их как ограниченный инструмент, а не как окончательный вердикт о способности участвовать. Они могут создавать прозрачность, но не должны скрывать, что доступ зависит также от консультации, признания и реалистичных переходных возможностей." },
+            { "language": "ckb", "text": "من پشتیوانییان دەکەم وەک ئامرازێکی سنووردار، نە وەک حوکمی کۆتایی دەربارەی توانای بەشداری. دەتوانن شەفافیەت دروست بکەن، بەڵام نابێت ئەوە بشارنەوە کە گەیشتن هەروەها بە ڕاوێژکاری، دانپێدانان و ڕێگەی گواستنەوەی ڕاستەقینەوە گرێدراوە." },
+            { "language": "kmr", "text": "Ez piştgirî didim wan wekî amûrek sînordar, ne wekî biryara dawî li ser şiyana beşdarbûnê. Ew dikarin zelaliyê çêkin, lê divê venaşêrin ku gihîştin bi şêwirmendî, nasandin û derfetên derbasbûnê yên rastîn ve jî girêdayî ye." },
+            { "language": "pl", "text": "Popieram je jako ograniczone narzędzie, a nie jako ostateczny wyrok o zdolności do uczestnictwa. Mogą tworzyć przejrzystość, ale nie mogą przesłaniać tego, że dostęp zależy też od doradztwa, uznania i realistycznych ścieżek pomostowych." },
+            { "language": "ro", "text": "Le susțin ca instrument limitat, nu ca verdict final asupra capacității de participare. Pot crea transparență, dar nu trebuie să ascundă că accesul depinde și de consiliere, recunoaștere și soluții realiste de tranziție." },
+            { "language": "sq", "text": "I mbështes si instrument të kufizuar, jo si gjykim përfundimtar mbi aftësinë për pjesëmarrje. Ato mund të krijojnë transparencë, por nuk duhet të fshehin se qasja varet edhe nga këshillimi, njohja dhe mundësitë realiste kalimtare." }
+          ],
+          "function": "take-nuanced-position",
+          "toneNote": "Abgewogen.",
+          "expectedLearnerAction": "Take a clear but non-binary position."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "student-b",
+          "baseText": "Wo liegt dann die Grenze Ihrer Kritik?",
+          "translations": [
+            { "language": "en", "text": "Where, then, is the limit of your criticism?" },
+            { "language": "fa", "text": "پس مرز نقد شما کجاست؟" },
+            { "language": "ar", "text": "أين تقع إذن حدود نقدكم؟" },
+            { "language": "tr", "text": "O halde eleştirinizin sınırı nerede?" },
+            { "language": "ru", "text": "Где тогда проходит граница вашей критики?" },
+            { "language": "ckb", "text": "کەواتە سنووری ڕەخنەکەت لە کوێیە؟" },
+            { "language": "kmr", "text": "Wê demê sînorê rexneya we li ku ye?" },
+            { "language": "pl", "text": "Gdzie zatem leży granica pańskiej krytyki?" },
+            { "language": "ro", "text": "Unde este atunci limita criticii dumneavoastră?" },
+            { "language": "sq", "text": "Ku qëndron atëherë kufiri i kritikës suaj?" }
+          ],
+          "function": "ask-scope-limit"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Meine Kritik richtet sich nicht gegen Nachweise an sich, sondern gegen ihre überdehnte Verwendung. Für sicherheitsrelevante oder akademisch anspruchsvolle Kontexte sind Standards sinnvoll; ungerecht wird es, wenn sie ohne Übergänge und Zusatzwege als absolute Hürde wirken.",
+          "translations": [
+            { "language": "en", "text": "My criticism is not directed against evidence as such, but against its overextended use. For safety-relevant or academically demanding contexts, standards make sense; it becomes unfair when they function as absolute barriers without transitions and additional routes." },
+            { "language": "fa", "text": "نقد من علیه مدرک به‌خودی‌خود نیست، بلکه علیه استفاده بیش‌ازحد گسترده از آن است. برای زمینه‌های مرتبط با ایمنی یا دانشگاهیِ دشوار، استانداردها منطقی‌اند؛ ناعادلانه وقتی می‌شود که بدون مسیرهای گذار و راه‌های مکمل به مانع مطلق تبدیل شوند." },
+            { "language": "ar", "text": "لا يتوجه نقدي ضد الإثباتات بحد ذاتها، بل ضد استخدامها المفرط. في السياقات المتعلقة بالسلامة أو ذات المتطلبات الأكاديمية العالية تكون المعايير معقولة؛ ويصبح الأمر غير عادل عندما تعمل كحاجز مطلق بلا مسارات انتقالية أو طرق إضافية." },
+            { "language": "tr", "text": "Eleştirim kanıtlara kendi başına değil, onların aşırı genişletilmiş kullanımına yöneliktir. Güvenlikle ilgili ya da akademik olarak zorlayıcı bağlamlarda standartlar anlamlıdır; geçişler ve ek yollar olmadan mutlak engel haline geldiklerinde haksızlaşırlar." },
+            { "language": "ru", "text": "Моя критика направлена не против подтверждений как таковых, а против их чрезмерно расширенного использования. В контекстах, связанных с безопасностью или высокими академическими требованиями, стандарты оправданны; несправедливость возникает, когда они без переходов и дополнительных путей действуют как абсолютный барьер." },
+            { "language": "ckb", "text": "ڕەخنەکەم دژی بەڵگەکان بەخۆیان نییە، بەڵکو دژی بەکارهێنانی زۆر فراوانیانە. بۆ بارودۆخی پەیوەندیدار بە ئاسایش یان ئەکادیمیی قورس، ستانداردەکان مانادارن؛ نادادپەروەرانە دەبێت کاتێک بەبێ گواستنەوە و ڕێگەی زیادە وەک بەربەستی ڕەها کار دەکەن." },
+            { "language": "kmr", "text": "Rexneya min ne li dijî belgeyan bi xwe ye, lê li dijî bikaranîna wan a zêde fireh e. Ji bo qonaxên girêdayî ewlehiyê an akademîkî dijwar, standard watedar in; lê neadil dibe dema ku bê derbas û rêyên zêde wekî astenga mutleq dixebitin." },
+            { "language": "pl", "text": "Moja krytyka nie jest skierowana przeciw dowodom samym w sobie, lecz przeciw ich nadmiernie rozszerzonemu użyciu. W kontekstach istotnych dla bezpieczeństwa albo wymagających akademicko standardy mają sens; niesprawiedliwość pojawia się, gdy bez przejść i dróg dodatkowych działają jak absolutna bariera." },
+            { "language": "ro", "text": "Critica mea nu vizează dovezile în sine, ci folosirea lor excesiv extinsă. Pentru contexte relevante pentru siguranță sau solicitante academic, standardele au sens; devine nedrept când funcționează ca bariere absolute fără tranziții și căi suplimentare." },
+            { "language": "sq", "text": "Kritika ime nuk drejtohet kundër provave në vetvete, por kundër përdorimit të tyre të tepruar. Për kontekste të rëndësishme për sigurinë ose akademikisht kërkuese, standardet kanë kuptim; bëhet e padrejtë kur pa kalime dhe rrugë shtesë veprojnë si pengesë absolute." }
+          ],
+          "function": "limit-scope",
+          "toneNote": "Differenziert.",
+          "expectedLearnerAction": "Limit the critique without abandoning the original claim."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "lecturer",
+          "baseText": "Wie würden Sie den scheinbaren Widerspruch in einem Satz auflösen?",
+          "translations": [
+            { "language": "en", "text": "How would you resolve the apparent contradiction in one sentence?" },
+            { "language": "fa", "text": "این تناقض ظاهری را در یک جمله چگونه حل می‌کنید؟" },
+            { "language": "ar", "text": "كيف تحلون هذا التناقض الظاهري في جملة واحدة؟" },
+            { "language": "tr", "text": "Bu görünür çelişkiyi tek cümlede nasıl çözersiniz?" },
+            { "language": "ru", "text": "Как бы вы разрешили это кажущееся противоречие одним предложением?" },
+            { "language": "ckb", "text": "ئەم ناکۆکییە دەرکەوتووە بە یەک ڕستە چۆن چارەسەر دەکەیت؟" },
+            { "language": "kmr", "text": "Hûn vê nakokiya xuya bi yek hevokê çawa çareser dikin?" },
+            { "language": "pl", "text": "Jak rozwiązałby pan tę pozorną sprzeczność w jednym zdaniu?" },
+            { "language": "ro", "text": "Cum ați rezolva această contradicție aparentă într-o singură propoziție?" },
+            { "language": "sq", "text": "Si do ta zgjidhnit këtë kundërthënie të dukshme me një fjali?" }
+          ],
+          "function": "ask-synthesis"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Sprachzertifikate sind fair, wenn sie Mindestanforderungen transparent machen; sie werden unfair, wenn sie als einziges und endgültiges Urteil über berufliche oder akademische Teilhabe dienen.",
+          "translations": [
+            { "language": "en", "text": "Language certificates are fair when they make minimum requirements transparent; they become unfair when they serve as the only and final judgment on professional or academic participation." },
+            { "language": "fa", "text": "گواهی‌های زبان وقتی عادلانه‌اند که حداقل الزامات را شفاف کنند؛ وقتی ناعادلانه می‌شوند که تنها و نهایی‌ترین حکم درباره مشارکت شغلی یا دانشگاهی باشند." },
+            { "language": "ar", "text": "تكون شهادات اللغة عادلة عندما تجعل المتطلبات الدنيا شفافة؛ وتصبح غير عادلة عندما تعمل كالحكم الوحيد والنهائي على المشاركة المهنية أو الأكاديمية." },
+            { "language": "tr", "text": "Dil sertifikaları asgari gerekleri şeffaf kıldığında adildir; mesleki veya akademik katılım hakkında tek ve nihai hüküm olarak kullanıldığında haksızlaşırlar." },
+            { "language": "ru", "text": "Языковые сертификаты справедливы, когда делают минимальные требования прозрачными; они становятся несправедливыми, когда служат единственным и окончательным приговором о профессиональном или академическом участии." },
+            { "language": "ckb", "text": "بڕوانامەکانی زمان دادپەروەرانەن کاتێک پێداویستییە کەمینەکان شفاف دەکەن؛ نادادپەروەرانە دەبن کاتێک وەک تاکە و کۆتاییترین حوکم دەربارەی بەشداریی پیشەیی یان ئەکادیمی بەکار دەهێنرێن." },
+            { "language": "kmr", "text": "Sertîfîkayên ziman adil in dema ku daxwazên kêmtirîn zelal dikin; ew neadil dibin dema ku wekî tenê û dawîn biryar li ser beşdariya pîşeyî an akademîkî dixebitin." },
+            { "language": "pl", "text": "Certyfikaty językowe są sprawiedliwe, gdy czynią minimalne wymagania przejrzystymi; stają się niesprawiedliwe, gdy służą jako jedyny i ostateczny osąd uczestnictwa zawodowego lub akademickiego." },
+            { "language": "ro", "text": "Certificatele de limbă sunt echitabile când fac transparente cerințele minime; devin nedrepte când servesc drept singura și definitiva judecată asupra participării profesionale sau academice." },
+            { "language": "sq", "text": "Certifikatat e gjuhës janë të drejta kur i bëjnë transparente kërkesat minimale; bëhen të padrejta kur shërbejnë si gjykimi i vetëm dhe përfundimtar mbi pjesëmarrjen profesionale ose akademike." }
+          ],
+          "function": "synthesize-position",
+          "toneNote": "Knapp und abschließend.",
+          "expectedLearnerAction": "Resolve the contradiction in a precise synthesis."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Es ist nur dann ein Widerspruch, wenn man Zertifikate entweder als Garant für Fairness oder als grundsätzlich ungerecht versteht. Ich unterscheide zwischen ihrer diagnostischen Funktion und ihrer Verwendung als starre Zugangsschranke.",
+              "translations": [
+                { "language": "en", "text": "It is only a contradiction if certificates are understood either as a guarantee of fairness or as fundamentally unjust. I distinguish between their diagnostic function and their use as a rigid access barrier." },
+                { "language": "fa", "text": "این فقط وقتی تناقض است که گواهی‌ها را یا تضمین‌کننده عدالت بدانیم یا ذاتاً ناعادلانه. من میان کارکرد تشخیصی آن‌ها و استفاده از آن‌ها به‌عنوان مانع خشک دسترسی تفاوت می‌گذارم." },
+                { "language": "ar", "text": "يكون ذلك تناقضاً فقط إذا فُهمت الشهادات إما كضمان للإنصاف أو كأمر غير عادل من حيث المبدأ. أنا أميز بين وظيفتها التشخيصية واستخدامها كحاجز وصول جامد." },
+                { "language": "tr", "text": "Bu ancak sertifikalar ya adaletin garantisi ya da temelde haksız bir şey olarak görülürse çelişkidir. Ben onların tanılayıcı işlevi ile katı bir erişim engeli olarak kullanılmasını ayırıyorum." },
+                { "language": "ru", "text": "Это противоречие только тогда, когда сертификаты понимают либо как гарантию справедливости, либо как принципиально несправедливый инструмент. Я различаю их диагностическую функцию и их использование как жесткого барьера доступа." },
+                { "language": "ckb", "text": "ئەمە تەنها کاتێک ناکۆکییە کە بڕوانامەکان یان وەک گەرەنتیی دادپەروەری، یان وەک شتێکی لە بنەڕەتدا نادادپەروەرانە تێبگەین. من جیاوازی دەکەم لە نێوان کارکردی دەستنیشانکەریان و بەکارهێنانیان وەک بەربەستی ڕەقی گەیشتن." },
+                { "language": "kmr", "text": "Ev tenê wê demê nakokî ye ku sertîfîka an wekî garantiya adaletê an jî wekî tiştek bingehîn neadil bên fêmkirin. Ez di navbera fonksiyona wan a teşhîskirinê û bikaranîna wan wekî astengeke hişk a gihîştinê de cudahî dikim." },
+                { "language": "pl", "text": "To jest sprzeczność tylko wtedy, gdy certyfikaty rozumie się albo jako gwarancję sprawiedliwości, albo jako coś zasadniczo niesprawiedliwego. Rozróżniam ich funkcję diagnostyczną i użycie jako sztywnej bariery dostępu." },
+                { "language": "ro", "text": "Este o contradicție doar dacă certificatele sunt înțelese fie ca garanție a echității, fie ca fundamental nedrepte. Eu disting între funcția lor diagnostică și folosirea lor ca barieră rigidă de acces." },
+                { "language": "sq", "text": "Kjo është kundërthënie vetëm nëse certifikatat kuptohen ose si garanci e drejtësisë, ose si thelbësisht të padrejta. Unë dalloj funksionin e tyre diagnostik nga përdorimi i tyre si pengesë e ngurtë hyrjeje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort löst den Widerspruch durch eine klare begriffliche Trennung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer resolves the contradiction through a clear conceptual distinction." },
+                { "language": "fa", "text": "قوی است: پاسخ تناقض را با یک تمایز مفهومی روشن حل می‌کند." },
+                { "language": "ar", "text": "قوي: يحل الجواب التناقض عبر تمييز مفهومي واضح." },
+                { "language": "tr", "text": "Güçlü: yanıt çelişkiyi net bir kavramsal ayrımla çözüyor." },
+                { "language": "ru", "text": "Сильно: ответ разрешает противоречие через ясное понятийное различение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ناکۆکی بە جیاکردنەوەیەکی چەمکیی ڕوون چارەسەر دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv nakokiyê bi cudahiyeke têgehî ya zelal çareser dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź rozwiązuje sprzeczność przez jasne rozróżnienie pojęciowe." },
+                { "language": "ro", "text": "Puternic: răspunsul rezolvă contradicția printr-o distincție conceptuală clară." },
+                { "language": "sq", "text": "E fortë: përgjigjja e zgjidh kundërthënien përmes një dallimi konceptual të qartë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich meine eigentlich, dass Zertifikate wichtig sind, aber man sie nicht zu streng nehmen sollte.",
+              "translations": [
+                { "language": "en", "text": "I actually mean that certificates are important, but one should not take them too strictly." },
+                { "language": "fa", "text": "من در واقع منظورم این است که گواهی‌ها مهم‌اند، اما نباید آن‌ها را خیلی سخت گرفت." },
+                { "language": "ar", "text": "أقصد في الحقيقة أن الشهادات مهمة، لكن لا ينبغي التعامل معها بصرامة كبيرة." },
+                { "language": "tr", "text": "Aslında sertifikaların önemli olduğunu, ama çok katı ele alınmaması gerektiğini kastediyorum." },
+                { "language": "ru", "text": "Я, собственно, имею в виду, что сертификаты важны, но не нужно относиться к ним слишком строго." },
+                { "language": "ckb", "text": "لە ڕاستیدا مەبەستم ئەوەیە کە بڕوانامەکان گرنگن، بەڵام نابێت زۆر بە توندی وەریان بگرین." },
+                { "language": "kmr", "text": "Ez bi rastî dibêjim ku sertîfîka girîng in, lê divê mirov wan pir hişk negire." },
+                { "language": "pl", "text": "Właściwie chodzi mi o to, że certyfikaty są ważne, ale nie należy traktować ich zbyt rygorystycznie." },
+                { "language": "ro", "text": "De fapt vreau să spun că certificatele sunt importante, dar nu trebuie luate prea strict." },
+                { "language": "sq", "text": "Në fakt dua të them se certifikatat janë të rëndësishme, por nuk duhen marrë shumë rreptësisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage für C2. Es fehlt die klare Trennung zwischen Funktion und Verwendung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague for C2. It lacks the clear distinction between function and use." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما برای C2 خیلی مبهم است. تمایز روشن میان کارکرد و استفاده کم است." },
+                { "language": "ar", "text": "مقبول ظاهرياً، لكنه مبهم جداً لمستوى C2. ينقصه التمييز الواضح بين الوظيفة والاستخدام." },
+                { "language": "tr", "text": "Makûl görünüyor, ama C2 için fazla belirsiz. İşlev ile kullanım arasındaki net ayrım eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато для C2. Не хватает ясного различия между функцией и применением." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام بۆ C2 زۆر ناڕوونە. جیاوازیی ڕوون لە نێوان کارکرد و بەکارهێناندا کەمە." },
+                { "language": "kmr", "text": "Wekî maqûl xuya dike, lê ji bo C2 pir nezelal e. Cudahiyeke zelal di navbera fonksiyon û bikaranînê de kêm e." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ogólne na C2. Brakuje jasnego rozróżnienia między funkcją a użyciem." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag pentru C2. Lipsește distincția clară dintre funcție și utilizare." },
+                { "language": "sq", "text": "Duket e besueshme, por është tepër e paqartë për C2. Mungon dallimi i qartë mes funksionit dhe përdorimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ein Zertifikat kann zeigen, ob jemand sprachliche Mindestanforderungen erfüllt. Problematisch wird es, wenn es als einziges Kriterium gilt und andere Nachweise, Lernbiografie oder institutionelle Unterstützung ausblendet.",
+              "translations": [
+                { "language": "en", "text": "A certificate can show whether someone meets minimum language requirements. It becomes problematic when it counts as the only criterion and ignores other evidence, learning history, or institutional support." },
+                { "language": "fa", "text": "یک گواهی می‌تواند نشان دهد آیا فرد حداقل الزامات زبانی را دارد یا نه. مشکل وقتی آغاز می‌شود که تنها معیار باشد و مدارک دیگر، مسیر یادگیری یا حمایت نهادی را نادیده بگیرد." },
+                { "language": "ar", "text": "يمكن للشهادة أن تبين هل يستوفي شخص ما المتطلبات اللغوية الدنيا. تصبح مشكلة عندما تُعد المعيار الوحيد وتغفل أدلة أخرى أو سيرة التعلم أو الدعم المؤسسي." },
+                { "language": "tr", "text": "Bir sertifika kişinin asgari dil gereklerini karşılayıp karşılamadığını gösterebilir. Sorun, tek ölçüt sayıldığında ve başka kanıtları, öğrenme geçmişini ya da kurumsal desteği dışarıda bıraktığında ortaya çıkar." },
+                { "language": "ru", "text": "Сертификат может показать, выполняет ли человек минимальные языковые требования. Проблема возникает, когда он считается единственным критерием и игнорирует другие доказательства, учебную биографию или институциональную поддержку." },
+                { "language": "ckb", "text": "بڕوانامە دەتوانێت پیشان بدات کەسێک پێداویستییە زمانییە کەمینەکان جێبەجێ دەکات یان نا. کێشە دەبێت کاتێک وەک تاکە پێوەر حساب دەکرێت و بەڵگەی تر، مێژووی فێربوون یان پشتگیریی دامەزراوەیی نادیدە دەگرێت." },
+                { "language": "kmr", "text": "Sertîfîka dikare nîşan bide ka kesek daxwazên kêmtirîn ên ziman pêk tîne an na. Ew pirsgirêk dibe dema ku wekî tenê pîvan tê hesibandin û belgeyên din, dîroka fêrbûnê an piştgiriya sazî ji ber çavan dûr dixe." },
+                { "language": "pl", "text": "Certyfikat może pokazać, czy ktoś spełnia minimalne wymagania językowe. Problem pojawia się wtedy, gdy staje się jedynym kryterium i pomija inne dowody, biografię uczenia się albo wsparcie instytucjonalne." },
+                { "language": "ro", "text": "Un certificat poate arăta dacă cineva îndeplinește cerințele lingvistice minime. Devine problematic când este singurul criteriu și ignoră alte dovezi, parcursul de învățare sau sprijinul instituțional." },
+                { "language": "sq", "text": "Një certifikatë mund të tregojë nëse dikush i plotëson kërkesat minimale gjuhësore. Bëhet problematike kur vlen si kriteri i vetëm dhe lë jashtë prova të tjera, historinë e të nxënit ose mbështetjen institucionale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt den Mechanismus des Problems, nicht nur die eigene Meinung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer explains the mechanism of the problem, not just the speaker's opinion." },
+                { "language": "fa", "text": "قوی است: پاسخ سازوکار مشکل را توضیح می‌دهد، نه فقط نظر گوینده را." },
+                { "language": "ar", "text": "قوي: يشرح الجواب آلية المشكلة، لا مجرد رأي المتحدث." },
+                { "language": "tr", "text": "Güçlü: yanıt yalnızca konuşanın görüşünü değil, sorunun mekanizmasını açıklıyor." },
+                { "language": "ru", "text": "Сильно: ответ объясняет механизм проблемы, а не только мнение говорящего." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە میکانیزمی کێشەکە ڕوون دەکاتەوە، نەک تەنها بۆچوونی قسەکەر." },
+                { "language": "kmr", "text": "Xurt e: bersiv mekanîzmaya pirsgirêkê rave dike, ne tenê raya axêver." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia mechanizm problemu, a nie tylko opinię mówiącego." },
+                { "language": "ro", "text": "Puternic: răspunsul explică mecanismul problemei, nu doar opinia vorbitorului." },
+                { "language": "sq", "text": "E fortë: përgjigjja shpjegon mekanizmin e problemit, jo vetëm mendimin e folësit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Andere Nachweise können manchmal auch helfen, wenn ein Zertifikat nicht ganz passend ist.",
+              "translations": [
+                { "language": "en", "text": "Other evidence can sometimes also help if a certificate is not entirely suitable." },
+                { "language": "fa", "text": "مدارک دیگر هم گاهی می‌توانند کمک کنند، اگر یک گواهی کاملاً مناسب نباشد." },
+                { "language": "ar", "text": "يمكن أن تساعد أدلة أخرى أحياناً أيضاً إذا لم تكن الشهادة مناسبة تماماً." },
+                { "language": "tr", "text": "Bir sertifika tam uygun değilse başka kanıtlar da bazen yardımcı olabilir." },
+                { "language": "ru", "text": "Другие доказательства иногда тоже могут помочь, если сертификат не совсем подходит." },
+                { "language": "ckb", "text": "بەڵگەی تر هەندێک جار دەتوانێت یارمەتیدەر بێت، ئەگەر بڕوانامەکە تەواو گونجاو نەبێت." },
+                { "language": "kmr", "text": "Belgeyên din carinan dikarin alîkar bin, heke sertîfîka bi tevahî negunce." },
+                { "language": "pl", "text": "Inne dowody mogą czasem też pomóc, jeśli certyfikat nie jest całkiem odpowiedni." },
+                { "language": "ro", "text": "Alte dovezi pot ajuta uneori dacă un certificat nu este pe deplin potrivit." },
+                { "language": "sq", "text": "Prova të tjera ndonjëherë mund të ndihmojnë, nëse një certifikatë nuk është plotësisht e përshtatshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn. Die Antwort nennt eine Ergänzung, erklärt aber nicht, warum ein einziges Kriterium problematisch wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too thin. The answer names an addition, but does not explain why a single criterion becomes problematic." },
+                { "language": "fa", "text": "قابل قبول است، اما کم‌عمق. پاسخ یک مکمل را نام می‌برد، اما توضیح نمی‌دهد چرا یک معیار واحد مشکل‌ساز می‌شود." },
+                { "language": "ar", "text": "مقبول، لكنه ضعيف. يذكر الجواب إضافة، لكنه لا يشرح لماذا يصبح المعيار الوحيد مشكلة." },
+                { "language": "tr", "text": "Makûl, ama zayıf. Yanıt bir ek unsur söylüyor, fakat tek ölçütün neden sorunlu hale geldiğini açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком слабо. Ответ называет дополнение, но не объясняет, почему единственный критерий становится проблемой." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام لاوازە. وەڵامەکە زیادەیەک ناودەبات، بەڵام ڕوون ناکاتەوە بۆچی تاکە پێوەر کێشەدار دەبێت." },
+                { "language": "kmr", "text": "Maqûl e, lê lawaz e. Bersiv zêdekirinek nav dike, lê rave nake ka çima tenê pîvan pirsgirêk dibe." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt płytkie. Odpowiedź wymienia uzupełnienie, lecz nie wyjaśnia, dlaczego jedno kryterium staje się problemem." },
+                { "language": "ro", "text": "Plauzibil, dar prea subțire. Răspunsul numește o completare, dar nu explică de ce un singur criteriu devine problematic." },
+                { "language": "sq", "text": "E besueshme, por e cekët. Përgjigjja përmend një plotësim, por nuk shpjegon pse një kriter i vetëm bëhet problematik." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich befürworte sie als begrenztes Instrument, nicht als endgültiges Urteil über Teilhabefähigkeit. Sie können Transparenz schaffen, dürfen aber nicht verdecken, dass Zugang auch von Beratung, Anerkennung und realistischen Brückenangeboten abhängt.",
+              "translations": [
+                { "language": "en", "text": "I support them as a limited instrument, not as a final judgment about someone's ability to participate. They can create transparency, but they must not hide the fact that access also depends on counseling, recognition, and realistic bridging options." },
+                { "language": "fa", "text": "من از آن‌ها به‌عنوان ابزاری محدود حمایت می‌کنم، نه به‌عنوان حکم نهایی درباره توانایی مشارکت. آن‌ها می‌توانند شفافیت ایجاد کنند، اما نباید پنهان کنند که دسترسی به مشاوره، به‌رسمیت‌شناسی و مسیرهای گذار واقع‌بینانه هم وابسته است." },
+                { "language": "ar", "text": "أنا أؤيدها كأداة محدودة، لا كحكم نهائي على القدرة على المشاركة. يمكنها أن تخلق شفافية، لكنها لا يجوز أن تخفي أن الوصول يعتمد أيضاً على الاستشارة والاعتراف وخيارات انتقال واقعية." },
+                { "language": "tr", "text": "Onları sınırlı bir araç olarak destekliyorum; katılım yeterliliği hakkında nihai hüküm olarak değil. Şeffaflık sağlayabilirler, fakat erişimin danışmanlığa, tanımaya ve gerçekçi geçiş olanaklarına da bağlı olduğunu gizlememelidirler." },
+                { "language": "ru", "text": "Я поддерживаю их как ограниченный инструмент, а не как окончательный вердикт о способности участвовать. Они могут создавать прозрачность, но не должны скрывать, что доступ зависит также от консультации, признания и реалистичных переходных возможностей." },
+                { "language": "ckb", "text": "من پشتیوانییان دەکەم وەک ئامرازێکی سنووردار، نە وەک حوکمی کۆتایی دەربارەی توانای بەشداری. دەتوانن شەفافیەت دروست بکەن، بەڵام نابێت ئەوە بشارنەوە کە گەیشتن هەروەها بە ڕاوێژکاری، دانپێدانان و ڕێگەی گواستنەوەی ڕاستەقینەوە گرێدراوە." },
+                { "language": "kmr", "text": "Ez piştgirî didim wan wekî amûrek sînordar, ne wekî biryara dawî li ser şiyana beşdarbûnê. Ew dikarin zelaliyê çêkin, lê divê venaşêrin ku gihîştin bi şêwirmendî, nasandin û derfetên derbasbûnê yên rastîn ve jî girêdayî ye." },
+                { "language": "pl", "text": "Popieram je jako ograniczone narzędzie, a nie jako ostateczny wyrok o zdolności do uczestnictwa. Mogą tworzyć przejrzystość, ale nie mogą przesłaniać tego, że dostęp zależy też od doradztwa, uznania i realistycznych ścieżek pomostowych." },
+                { "language": "ro", "text": "Le susțin ca instrument limitat, nu ca verdict final asupra capacității de participare. Pot crea transparență, dar nu trebuie să ascundă că accesul depinde și de consiliere, recunoaștere și soluții realiste de tranziție." },
+                { "language": "sq", "text": "I mbështes si instrument të kufizuar, jo si gjykim përfundimtar mbi aftësinë për pjesëmarrje. Ato mund të krijojnë transparencë, por nuk duhet të fshehin se qasja varet edhe nga këshillimi, njohja dhe mundësitë realiste kalimtare." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Position ist klar, aber nicht binär.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the position is clear, but not binary." },
+                { "language": "fa", "text": "قوی است: موضع روشن است، اما صفر و یکی نیست." },
+                { "language": "ar", "text": "قوي: الموقف واضح لكنه ليس ثنائياً." },
+                { "language": "tr", "text": "Güçlü: pozisyon net, ama ikili değil." },
+                { "language": "ru", "text": "Сильно: позиция ясная, но не бинарная." },
+                { "language": "ckb", "text": "بەهێزە: هەڵوێستەکە ڕوونە، بەڵام دووانە نییە." },
+                { "language": "kmr", "text": "Xurt e: helwest zelal e, lê ne dualî ye." },
+                { "language": "pl", "text": "Mocne: stanowisko jest jasne, ale nie zero-jedynkowe." },
+                { "language": "ro", "text": "Puternic: poziția este clară, dar nu binară." },
+                { "language": "sq", "text": "E fortë: qëndrimi është i qartë, por jo binar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich bin weder dafür noch dagegen; es kommt auf den Einzelfall an.",
+              "translations": [
+                { "language": "en", "text": "I am neither for nor against them; it depends on the individual case." },
+                { "language": "fa", "text": "من نه موافقم نه مخالف؛ به مورد مشخص بستگی دارد." },
+                { "language": "ar", "text": "أنا لست معها ولا ضدها؛ الأمر يعتمد على الحالة الفردية." },
+                { "language": "tr", "text": "Ne taraftarıyım ne karşıyım; somut duruma bağlı." },
+                { "language": "ru", "text": "Я не за и не против; все зависит от конкретного случая." },
+                { "language": "ckb", "text": "من نە لەگەڵم نە دژم؛ بە بابەتی تاکەکەسییەکەوە گرێدراوە." },
+                { "language": "kmr", "text": "Ez ne alîgir im ne dijber; ev girêdayî rewşa taybet e." },
+                { "language": "pl", "text": "Nie jestem ani za, ani przeciw; to zależy od konkretnego przypadku." },
+                { "language": "ro", "text": "Nu sunt nici pentru, nici împotrivă; depinde de cazul concret." },
+                { "language": "sq", "text": "Nuk jam as pro, as kundër; varet nga rasti konkret." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend. Für C2 braucht die Antwort Kriterien, nicht nur den Hinweis auf Einzelfälle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive. At C2, the answer needs criteria, not just a mention of individual cases." },
+                { "language": "fa", "text": "بیش از حد طفره‌رو است. در C2 پاسخ به معیار نیاز دارد، نه فقط اشاره به موردهای خاص." },
+                { "language": "ar", "text": "مراوغ أكثر من اللازم. في مستوى C2 يحتاج الجواب إلى معايير، لا مجرد إشارة إلى الحالات الفردية." },
+                { "language": "tr", "text": "Fazla kaçamak. C2'de yanıtın ölçütlere ihtiyacı var; sadece tekil durumlara atıf yetmez." },
+                { "language": "ru", "text": "Слишком уклончиво. На C2 ответу нужны критерии, а не только ссылка на отдельные случаи." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە. لە C2 وەڵام پێویستی بە پێوەرە، نەک تەنها ئاماژە بە بابەتی تاکەکەسی." },
+                { "language": "kmr", "text": "Pir dûrketin e. Li C2 bersiv pêdivî bi pîvanan heye, ne tenê amaje bi rewşên taybet." },
+                { "language": "pl", "text": "Zbyt wymijające. Na C2 odpowiedź potrzebuje kryteriów, a nie tylko wskazania na pojedyncze przypadki." },
+                { "language": "ro", "text": "Prea evaziv. La C2 răspunsul are nevoie de criterii, nu doar de trimitere la cazuri individuale." },
+                { "language": "sq", "text": "Tepër shmangëse. Në C2 përgjigjja ka nevojë për kritere, jo vetëm për referim te rastet individuale." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Meine Kritik richtet sich nicht gegen Nachweise an sich, sondern gegen ihre überdehnte Verwendung. Für sicherheitsrelevante oder akademisch anspruchsvolle Kontexte sind Standards sinnvoll; ungerecht wird es, wenn sie ohne Übergänge und Zusatzwege als absolute Hürde wirken.",
+              "translations": [
+                { "language": "en", "text": "My criticism is not directed against evidence as such, but against its overextended use. For safety-relevant or academically demanding contexts, standards make sense; it becomes unfair when they function as absolute barriers without transitions and additional routes." },
+                { "language": "fa", "text": "نقد من علیه مدرک به‌خودی‌خود نیست، بلکه علیه استفاده بیش‌ازحد گسترده از آن است. برای زمینه‌های مرتبط با ایمنی یا دانشگاهیِ دشوار، استانداردها منطقی‌اند؛ ناعادلانه وقتی می‌شود که بدون مسیرهای گذار و راه‌های مکمل به مانع مطلق تبدیل شوند." },
+                { "language": "ar", "text": "لا يتوجه نقدي ضد الإثباتات بحد ذاتها، بل ضد استخدامها المفرط. في السياقات المتعلقة بالسلامة أو ذات المتطلبات الأكاديمية العالية تكون المعايير معقولة؛ ويصبح الأمر غير عادل عندما تعمل كحاجز مطلق بلا مسارات انتقالية أو طرق إضافية." },
+                { "language": "tr", "text": "Eleştirim kanıtlara kendi başına değil, onların aşırı genişletilmiş kullanımına yöneliktir. Güvenlikle ilgili ya da akademik olarak zorlayıcı bağlamlarda standartlar anlamlıdır; geçişler ve ek yollar olmadan mutlak engel haline geldiklerinde haksızlaşırlar." },
+                { "language": "ru", "text": "Моя критика направлена не против подтверждений как таковых, а против их чрезмерно расширенного использования. В контекстах, связанных с безопасностью или высокими академическими требованиями, стандарты оправданны; несправедливость возникает, когда они без переходов и дополнительных путей действуют как абсолютный барьер." },
+                { "language": "ckb", "text": "ڕەخنەکەم دژی بەڵگەکان بەخۆیان نییە، بەڵکو دژی بەکارهێنانی زۆر فراوانیانە. بۆ بارودۆخی پەیوەندیدار بە ئاسایش یان ئەکادیمیی قورس، ستانداردەکان مانادارن؛ نادادپەروەرانە دەبێت کاتێک بەبێ گواستنەوە و ڕێگەی زیادە وەک بەربەستی ڕەها کار دەکەن." },
+                { "language": "kmr", "text": "Rexneya min ne li dijî belgeyan bi xwe ye, lê li dijî bikaranîna wan a zêde fireh e. Ji bo qonaxên girêdayî ewlehiyê an akademîkî dijwar, standard watedar in; lê neadil dibe dema ku bê derbas û rêyên zêde wekî astenga mutleq dixebitin." },
+                { "language": "pl", "text": "Moja krytyka nie jest skierowana przeciw dowodom samym w sobie, lecz przeciw ich nadmiernie rozszerzonemu użyciu. W kontekstach istotnych dla bezpieczeństwa albo wymagających akademicko standardy mają sens; niesprawiedliwość pojawia się, gdy bez przejść i dróg dodatkowych działają jak absolutna bariera." },
+                { "language": "ro", "text": "Critica mea nu vizează dovezile în sine, ci folosirea lor excesiv extinsă. Pentru contexte relevante pentru siguranță sau solicitante academic, standardele au sens; devine nedrept când funcționează ca bariere absolute fără tranziții și căi suplimentare." },
+                { "language": "sq", "text": "Kritika ime nuk drejtohet kundër provave në vetvete, por kundër përdorimit të tyre të tepruar. Për kontekste të rëndësishme për sigurinë ose akademikisht kërkuese, standardet kanë kuptim; bëhet e padrejtë kur pa kalime dhe rrugë shtesë veprojnë si pengesë absolute." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Kritik wird begrenzt, ohne den Standards grundsätzlich ihre Berechtigung abzusprechen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the criticism is limited without denying standards their basic legitimacy." },
+                { "language": "fa", "text": "قوی است: نقد محدود می‌شود، بدون اینکه مشروعیت بنیادی استانداردها رد شود." },
+                { "language": "ar", "text": "قوي: يحدد النقد من دون إنكار المشروعية الأساسية للمعايير." },
+                { "language": "tr", "text": "Güçlü: eleştiri sınırlandırılıyor, standartların temel meşruiyeti reddedilmiyor." },
+                { "language": "ru", "text": "Сильно: критика ограничена, но базовая легитимность стандартов не отрицается." },
+                { "language": "ckb", "text": "بەهێزە: ڕەخنەکە سنووردار دەکرێت، بەبێ ئەوەی ڕەوایەتیی بنەڕەتی ستانداردەکان ڕەت بکرێتەوە." },
+                { "language": "kmr", "text": "Xurt e: rexne tê sînordarkirin bêyî ku rewayetiya bingehîn a standardan were redkirin." },
+                { "language": "pl", "text": "Mocne: krytyka zostaje ograniczona bez odmawiania standardom podstawowej zasadności." },
+                { "language": "ro", "text": "Puternic: critica este limitată fără a nega legitimitatea de bază a standardelor." },
+                { "language": "sq", "text": "E fortë: kritika kufizohet pa mohuar legjitimitetin bazë të standardeve." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte Zertifikate nur dort verlangen, wo sie wirklich nötig sind.",
+              "translations": [
+                { "language": "en", "text": "Certificates should only be required where they are truly necessary." },
+                { "language": "fa", "text": "گواهی‌ها فقط جایی باید خواسته شوند که واقعاً لازم‌اند." },
+                { "language": "ar", "text": "ينبغي طلب الشهادات فقط حيث تكون ضرورية فعلاً." },
+                { "language": "tr", "text": "Sertifikalar yalnızca gerçekten gerekli oldukları yerde istenmelidir." },
+                { "language": "ru", "text": "Сертификаты следует требовать только там, где они действительно необходимы." },
+                { "language": "ckb", "text": "دەبێت بڕوانامە تەنها لەو شوێنانە داوا بکرێت کە بەڕاستی پێویستە." },
+                { "language": "kmr", "text": "Divê sertîfîka tenê li cihên ku bi rastî pêwîst in bên xwestin." },
+                { "language": "pl", "text": "Certyfikatów należy wymagać tylko tam, gdzie są naprawdę potrzebne." },
+                { "language": "ro", "text": "Certificatele ar trebui cerute doar acolo unde sunt cu adevărat necesare." },
+                { "language": "sq", "text": "Certifikatat duhen kërkuar vetëm aty ku janë vërtet të nevojshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein. Es fehlen Beispiele für berechtigte Standards und für ungerechte absolute Hürden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general. It lacks examples of justified standards and unfair absolute barriers." },
+                { "language": "fa", "text": "قابل قبول است، اما خیلی کلی. مثال‌هایی از استانداردهای موجه و مانع‌های مطلق ناعادلانه ندارد." },
+                { "language": "ar", "text": "مقبول، لكنه عام جداً. تنقصه أمثلة على المعايير المبررة والحواجز المطلقة غير العادلة." },
+                { "language": "tr", "text": "Makûl, ama fazla genel. Haklı standartlara ve haksız mutlak engellere örnekler eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общее. Не хватает примеров оправданных стандартов и несправедливых абсолютных барьеров." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر گشتییە. نموونەی ستانداردی ڕەوا و بەربەستی ڕەهای نادادپەروەرانەی تێدا نییە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir giştî ye. Nimûneyên standardên rewa û astengên mutleq ên neadil kêm in." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne. Brakuje przykładów uzasadnionych standardów i niesprawiedliwych barier absolutnych." },
+                { "language": "ro", "text": "Plauzibil, dar prea general. Lipsesc exemple de standarde justificate și bariere absolute nedrepte." },
+                { "language": "sq", "text": "E besueshme, por tepër e përgjithshme. Mungojnë shembuj për standarde të arsyeshme dhe pengesa absolute të padrejta." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sprachzertifikate sind fair, wenn sie Mindestanforderungen transparent machen; sie werden unfair, wenn sie als einziges und endgültiges Urteil über berufliche oder akademische Teilhabe dienen.",
+              "translations": [
+                { "language": "en", "text": "Language certificates are fair when they make minimum requirements transparent; they become unfair when they serve as the only and final judgment on professional or academic participation." },
+                { "language": "fa", "text": "گواهی‌های زبان وقتی عادلانه‌اند که حداقل الزامات را شفاف کنند؛ وقتی ناعادلانه می‌شوند که تنها و نهایی‌ترین حکم درباره مشارکت شغلی یا دانشگاهی باشند." },
+                { "language": "ar", "text": "تكون شهادات اللغة عادلة عندما تجعل المتطلبات الدنيا شفافة؛ وتصبح غير عادلة عندما تعمل كالحكم الوحيد والنهائي على المشاركة المهنية أو الأكاديمية." },
+                { "language": "tr", "text": "Dil sertifikaları asgari gerekleri şeffaf kıldığında adildir; mesleki veya akademik katılım hakkında tek ve nihai hüküm olarak kullanıldığında haksızlaşırlar." },
+                { "language": "ru", "text": "Языковые сертификаты справедливы, когда делают минимальные требования прозрачными; они становятся несправедливыми, когда служат единственным и окончательным приговором о профессиональном или академическом участии." },
+                { "language": "ckb", "text": "بڕوانامەکانی زمان دادپەروەرانەن کاتێک پێداویستییە کەمینەکان شفاف دەکەن؛ نادادپەروەرانە دەبن کاتێک وەک تاکە و کۆتاییترین حوکم دەربارەی بەشداریی پیشەیی یان ئەکادیمی بەکار دەهێنرێن." },
+                { "language": "kmr", "text": "Sertîfîkayên ziman adil in dema ku daxwazên kêmtirîn zelal dikin; ew neadil dibin dema ku wekî tenê û dawîn biryar li ser beşdariya pîşeyî an akademîkî dixebitin." },
+                { "language": "pl", "text": "Certyfikaty językowe są sprawiedliwe, gdy czynią minimalne wymagania przejrzystymi; stają się niesprawiedliwe, gdy służą jako jedyny i ostateczny osąd uczestnictwa zawodowego lub akademickiego." },
+                { "language": "ro", "text": "Certificatele de limbă sunt echitabile când fac transparente cerințele minime; devin nedrepte când servesc drept singura și definitiva judecată asupra participării profesionale sau academice." },
+                { "language": "sq", "text": "Certifikatat e gjuhës janë të drejta kur i bëjnë transparente kërkesat minimale; bëhen të padrejta kur shërbejnë si gjykimi i vetëm dhe përfundimtar mbi pjesëmarrjen profesionale ose akademike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Synthese verbindet beide Seiten in einem überprüfbaren Satz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the synthesis connects both sides in a testable sentence." },
+                { "language": "fa", "text": "قوی است: جمع‌بندی هر دو طرف را در جمله‌ای قابل بررسی پیوند می‌دهد." },
+                { "language": "ar", "text": "قوي: يربط التركيب بين الجانبين في جملة قابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: sentez iki tarafı sınanabilir bir cümlede bağlıyor." },
+                { "language": "ru", "text": "Сильно: синтез соединяет обе стороны в проверяемом предложении." },
+                { "language": "ckb", "text": "بەهێزە: کۆکردنەوەکە هەردوو لا لە ڕستەیەکی پشکنراودا پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: sentez her du aliyan di hevokeke ceribandî de girê dide." },
+                { "language": "pl", "text": "Mocne: synteza łączy obie strony w zdaniu możliwym do sprawdzenia." },
+                { "language": "ro", "text": "Puternic: sinteza leagă ambele părți într-o propoziție verificabilă." },
+                { "language": "sq", "text": "E fortë: sinteza i lidh të dyja anët në një fjali të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Zertifikate sind manchmal fair und manchmal unfair.",
+              "translations": [
+                { "language": "en", "text": "Certificates are sometimes fair and sometimes unfair." },
+                { "language": "fa", "text": "گواهی‌ها گاهی عادلانه‌اند و گاهی ناعادلانه." },
+                { "language": "ar", "text": "الشهادات تكون أحياناً عادلة وأحياناً غير عادلة." },
+                { "language": "tr", "text": "Sertifikalar bazen adildir, bazen haksızdır." },
+                { "language": "ru", "text": "Сертификаты иногда справедливы, а иногда несправедливы." },
+                { "language": "ckb", "text": "بڕوانامەکان هەندێک جار دادپەروەرانەن و هەندێک جار نادادپەروەرانە." },
+                { "language": "kmr", "text": "Sertîfîka carinan adil in û carinan neadil in." },
+                { "language": "pl", "text": "Certyfikaty są czasem sprawiedliwe, a czasem niesprawiedliwe." },
+                { "language": "ro", "text": "Certificatele sunt uneori echitabile și uneori nedrepte." },
+                { "language": "sq", "text": "Certifikatat janë ndonjëherë të drejta dhe ndonjëherë të padrejta." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Der Satz löst den Widerspruch nicht, weil er keine Bedingung und keinen Geltungsbereich nennt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. The sentence does not resolve the contradiction because it names neither a condition nor a scope." },
+                { "language": "fa", "text": "بیش از حد کلی است. جمله تناقض را حل نمی‌کند، چون نه شرط می‌آورد و نه دامنه اعتبار." },
+                { "language": "ar", "text": "عام جداً. لا يحل الجملة التناقض لأنها لا تذكر شرطاً ولا نطاقاً." },
+                { "language": "tr", "text": "Fazla genel. Cümle çelişkiyi çözmüyor, çünkü ne koşul ne de kapsam söylüyor." },
+                { "language": "ru", "text": "Слишком общее. Предложение не разрешает противоречие, потому что не называет ни условия, ни сферы действия." },
+                { "language": "ckb", "text": "زۆر گشتییە. ڕستەکە ناکۆکی چارەسەر ناکات، چونکە نە مەرج ناودەبات نە سنووری کارکرد." },
+                { "language": "kmr", "text": "Pir giştî ye. Hevok nakokiyê çareser nake, ji ber ku ne merc û ne jî qada derbasbûnê nav dike." },
+                { "language": "pl", "text": "Zbyt ogólne. Zdanie nie rozwiązuje sprzeczności, bo nie podaje ani warunku, ani zakresu." },
+                { "language": "ro", "text": "Prea general. Propoziția nu rezolvă contradicția deoarece nu numește nici o condiție, nici un domeniu de aplicare." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Fjalia nuk e zgjidh kundërthënien sepse nuk jep as kusht, as fushë vlefshmërie." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "conceptual-distinction",
+          "text": "Ein scheinbarer Widerspruch löst sich oft durch die Trennung von Funktion und Verwendung.",
+          "translations": [
+            { "language": "en", "text": "An apparent contradiction is often resolved by separating function from use." },
+            { "language": "fa", "text": "یک تناقض ظاهری اغلب با جدا کردن کارکرد از شیوه استفاده حل می‌شود." },
+            { "language": "ar", "text": "غالباً يُحل التناقض الظاهري بفصل الوظيفة عن الاستخدام." },
+            { "language": "tr", "text": "Görünür bir çelişki çoğu zaman işlev ile kullanımın ayrılmasıyla çözülür." },
+            { "language": "ru", "text": "Кажущееся противоречие часто разрешается через разделение функции и применения." },
+            { "language": "ckb", "text": "ناکۆکیی دەرکەوتوو زۆرجار بە جیاکردنەوەی کارکرد لە بەکارهێنان چارەسەر دەبێت." },
+            { "language": "kmr", "text": "Nakokiyeke xuya gelek caran bi cudakirina fonksiyon û bikaranînê çareser dibe." },
+            { "language": "pl", "text": "Pozorna sprzeczność często rozwiązuje się przez oddzielenie funkcji od użycia." },
+            { "language": "ro", "text": "O contradicție aparentă se rezolvă adesea prin separarea funcției de utilizare." },
+            { "language": "sq", "text": "Një kundërthënie e dukshme shpesh zgjidhet duke ndarë funksionin nga përdorimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "mechanism",
+          "text": "C2-Argumentation benennt nicht nur ein Problem, sondern den Mechanismus des Problems.",
+          "translations": [
+            { "language": "en", "text": "C2 argumentation names not only a problem, but also the mechanism of the problem." },
+            { "language": "fa", "text": "استدلال C2 فقط مشکل را نام نمی‌برد، بلکه سازوکار مشکل را هم توضیح می‌دهد." },
+            { "language": "ar", "text": "لا تسمي حجة C2 المشكلة فقط، بل تسمي أيضاً آلية المشكلة." },
+            { "language": "tr", "text": "C2 düzeyinde argümantasyon yalnızca sorunu değil, sorunun mekanizmasını da adlandırır." },
+            { "language": "ru", "text": "Аргументация C2 называет не только проблему, но и механизм проблемы." },
+            { "language": "ckb", "text": "بەڵگەهێنانەوەی C2 تەنها کێشەکە ناوناوێت، بەڵکو میکانیزمی کێشەکەش باس دەکات." },
+            { "language": "kmr", "text": "Argûmentasyona C2 ne tenê pirsgirêkê nav dike, lê mekanîzmaya pirsgirêkê jî nav dike." },
+            { "language": "pl", "text": "Argumentacja C2 nazywa nie tylko problem, lecz także mechanizm problemu." },
+            { "language": "ro", "text": "Argumentarea C2 numește nu doar problema, ci și mecanismul problemei." },
+            { "language": "sq", "text": "Argumentimi C2 nuk emërton vetëm problemin, por edhe mekanizmin e problemit." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "scope-limit",
+          "text": "Eine starke Begrenzung sagt, wo die Kritik gilt und wo sie nicht gilt.",
+          "translations": [
+            { "language": "en", "text": "A strong limitation states where the criticism applies and where it does not." },
+            { "language": "fa", "text": "محدودسازی قوی می‌گوید نقد کجا معتبر است و کجا معتبر نیست." },
+            { "language": "ar", "text": "التحديد القوي يقول أين ينطبق النقد وأين لا ينطبق." },
+            { "language": "tr", "text": "Güçlü bir sınırlandırma eleştirinin nerede geçerli olduğunu ve nerede olmadığını söyler." },
+            { "language": "ru", "text": "Сильное ограничение говорит, где критика применима, а где нет." },
+            { "language": "ckb", "text": "سنووردارکردنی بەهێز دەڵێت ڕەخنەکە لە کوێدا کار دەکات و لە کوێدا نا." },
+            { "language": "kmr", "text": "Sînordarkirineke xurt dibêje rexne li ku derbas e û li ku derbas nîne." },
+            { "language": "pl", "text": "Mocne ograniczenie mówi, gdzie krytyka obowiązuje, a gdzie nie." },
+            { "language": "ro", "text": "O limitare puternică spune unde se aplică critica și unde nu." },
+            { "language": "sq", "text": "Një kufizim i fortë tregon ku vlen kritika dhe ku nuk vlen." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "synthesis",
+          "text": "Eine gute Synthese verbindet beide Seiten in einem prüfbaren Satz.",
+          "translations": [
+            { "language": "en", "text": "A good synthesis connects both sides in a testable sentence." },
+            { "language": "fa", "text": "یک جمع‌بندی خوب هر دو طرف را در جمله‌ای قابل بررسی به هم وصل می‌کند." },
+            { "language": "ar", "text": "يربط التركيب الجيد بين الجانبين في جملة قابلة للفحص." },
+            { "language": "tr", "text": "İyi bir sentez iki tarafı sınanabilir bir cümlede birleştirir." },
+            { "language": "ru", "text": "Хороший синтез соединяет обе стороны в проверяемом предложении." },
+            { "language": "ckb", "text": "کۆکردنەوەی باش هەردوو لا لە ڕستەیەکی پشکنراودا پێکەوە دەبەستێت." },
+            { "language": "kmr", "text": "Sentezeke baş her du aliyan di hevokeke ceribandî de girê dide." },
+            { "language": "pl", "text": "Dobra synteza łączy obie strony w zdaniu możliwym do sprawdzenia." },
+            { "language": "ro", "text": "O sinteză bună leagă ambele părți într-o propoziție verificabilă." },
+            { "language": "sq", "text": "Një sintezë e mirë i lidh të dyja anët në një fjali të verifikueshme." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "argument-contradiction-seminar",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal seminar where a participant resolves an apparent contradiction in an argument about language certificates.",
+          "altText": "Eine kleine Gruppe Erwachsener diskutiert in einem Seminarraum sachlich über Sprachzertifikate, Zugang und faire Standards, mit Notizen und Laptop.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A small group of adults discusses language certificates, access, and fair standards in a seminar room, with notes and a laptop." },
+            { "language": "fa", "text": "گروهی کوچک از بزرگسالان در اتاق سمینار درباره گواهی‌های زبان، دسترسی و استانداردهای عادلانه با یادداشت و لپ‌تاپ بحث می‌کنند." },
+            { "language": "ar", "text": "مجموعة صغيرة من البالغين تناقش في قاعة ندوة شهادات اللغة والوصول والمعايير العادلة، مع ملاحظات وحاسوب محمول." },
+            { "language": "tr", "text": "Küçük bir yetişkin grubu bir seminer odasında notlar ve dizüstü bilgisayarla dil sertifikaları, erişim ve adil standartları tartışıyor." },
+            { "language": "ru", "text": "Небольшая группа взрослых в семинарской комнате обсуждает языковые сертификаты, доступ и справедливые стандарты, с заметками и ноутбуком." },
+            { "language": "ckb", "text": "گرووپێکی بچووکی گەورەساڵان لە ژووری سیمیناردا بە تێبینی و لاپتۆپ دەربارەی بڕوانامەی زمان، گەیشتن و ستانداردی دادپەروەرانە گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Komake biçûk ji mezinan di odeya semînerê de bi not û laptopê li ser sertîfîkayên ziman, gihîştin û standardên adil diaxivin." },
+            { "language": "pl", "text": "Mała grupa dorosłych dyskutuje w sali seminaryjnej o certyfikatach językowych, dostępie i sprawiedliwych standardach, z notatkami i laptopem." },
+            { "language": "ro", "text": "Un mic grup de adulți discută într-o sală de seminar despre atestări lingvistice, acces și standarde echitabile, cu notițe și calculator portabil." },
+            { "language": "sq", "text": "Një grup i vogël të rriturish diskuton në një dhomë seminari për certifikatat e gjuhës, qasjen dhe standardet e drejta, me shënime dhe laptop." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult students and lecturer in a German seminar room, participant explaining an apparent contradiction in an argument about language certificates and fair access, notebooks and laptop on table, whiteboard with abstract balance-scale shapes but no readable text, no logos, no private data, accessible composition, calm formal academic mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-26-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 26 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 26",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-amtliche-entscheidung-sachlich-anzweifeln",
+      "linkedDialogueSlug": null,
+      "title": "Eine amtliche Entscheidung sachlich anzweifeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Questioning an official decision objectively" },
+        { "language": "fa", "text": "زیر سؤال بردن محترمانه یک تصمیم اداری" },
+        { "language": "ar", "text": "التشكيك في قرار رسمي بشكل موضوعي" },
+        { "language": "tr", "text": "Resmi bir kararı nesnel biçimde sorgulamak" },
+        { "language": "ru", "text": "Деловое оспаривание официального решения" },
+        { "language": "ckb", "text": "گومانکردنی بابەتی لە بڕیارێکی فەرمی" },
+        { "language": "kmr", "text": "Bi awayekî rastûrast biryareke fermî lêpirsîn" },
+        { "language": "pl", "text": "Rzeczowe zakwestionowanie decyzji urzędowej" },
+        { "language": "ro", "text": "Contestarea obiectivă a unei decizii oficiale" },
+        { "language": "sq", "text": "Vënia në dyshim me objektivitet e një vendimi zyrtar" }
+      ],
+      "description": "Sie sprechen mit einer Behörde über einen ablehnenden Bescheid. Sie bleiben ruhig, beziehen sich auf konkrete Textstellen und Nachweise und bitten um eine prüfbare Begründung, ohne den formellen Rechtsweg zu ersetzen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with a public office about a negative decision. You stay calm, refer to specific passages and documents, and ask for a checkable reason without replacing the formal legal route." },
+        { "language": "fa", "text": "شما با یک اداره درباره یک تصمیم ردکننده صحبت می‌کنید. آرام می‌مانید، به بخش‌های مشخص متن و مدارک اشاره می‌کنید و بدون جایگزین کردن مسیر رسمی اعتراض، دلیل قابل بررسی می‌خواهید." },
+        { "language": "ar", "text": "تتحدث مع جهة إدارية عن قرار بالرفض. تبقى هادئاً، وتشير إلى مواضع محددة في النص والمستندات، وتطلب تعليلاً قابلاً للفحص دون استبدال المسار القانوني الرسمي." },
+        { "language": "tr", "text": "Bir resmi kurumla olumsuz bir karar hakkında konuşursunuz. Sakin kalır, metindeki belirli bölümlere ve belgelere atıf yapar, resmi itiraz yolunun yerine geçmeden kontrol edilebilir bir gerekçe istersiniz." },
+        { "language": "ru", "text": "Вы говорите с ведомством об отказном решении. Вы сохраняете спокойствие, ссылаетесь на конкретные места текста и документы и просите проверяемое обоснование, не заменяя формальную процедуру обжалования." },
+        { "language": "ckb", "text": "تۆ لەگەڵ فەرمانگەیەک لەسەر بڕیارێکی ڕەتکردنەوە قسە دەکەیت. ئارام دەمێنیت، ئاماژە بە شوێنە دیاریکراوەکانی دەق و بەڵگەکان دەکەیت و داوای هۆکاری پشکنراو دەکەیت، بەبێ ئەوەی ڕێگای فەرمی ناڕەزایی جێگرەوە بکەیت." },
+        { "language": "kmr", "text": "Hûn bi saziyeke îdarî re li ser biryareke redkirinê diaxivin. Hûn aram dimînin, behsa cihên diyar di nivîsê û belgeyan dikin û sedemeke kontrolbar dixwazin, bê ku riya fermî ya îtirazê biguherînin." },
+        { "language": "pl", "text": "Rozmawia Pan z urzędem o decyzji odmownej. Zachowuje Pan spokój, odwołuje się do konkretnych fragmentów pisma i dokumentów oraz prosi o sprawdzalne uzasadnienie, nie zastępując formalnej drogi odwoławczej." },
+        { "language": "ro", "text": "Vorbiți cu o autoritate despre o decizie de respingere. Rămâneți calm, vă referiți la pasaje și documente concrete și cereți o motivare verificabilă, fără a înlocui calea formală de contestare." },
+        { "language": "sq", "text": "Flisni me një zyrë publike për një vendim refuzues. Qëndroni i qetë, i referoheni pjesëve konkrete të tekstit dhe dokumenteve dhe kërkoni një arsyetim të verifikueshëm, pa zëvendësuar rrugën formale të ankimit." }
+      ],
+      "learnerGoal": "Eine Entscheidung sachlich hinterfragen: Textstelle nennen, vorhandene Nachweise anführen, Begründung erbitten und den formellen Rechtsweg respektieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Question a decision objectively: name the passage, cite existing documents, ask for the reasoning, and respect the formal legal route." },
+        { "language": "fa", "text": "یک تصمیم را محترمانه زیر سؤال ببرید: بخش متن را نام ببرید، مدارک موجود را ذکر کنید، دلیل بخواهید و مسیر رسمی اعتراض را رعایت کنید." },
+        { "language": "ar", "text": "اسأل عن قرار بشكل موضوعي: سم موضع النص، واذكر المستندات الموجودة، واطلب التعليل، واحترم المسار القانوني الرسمي." },
+        { "language": "tr", "text": "Bir kararı nesnel biçimde sorgulayın: metindeki bölümü belirtin, mevcut belgeleri gösterin, gerekçeyi isteyin ve resmi itiraz yoluna saygı gösterin." },
+        { "language": "ru", "text": "Делово поставить решение под вопрос: назвать место в тексте, сослаться на имеющиеся документы, попросить обоснование и уважать формальную процедуру." },
+        { "language": "ckb", "text": "بڕیارێک بە شێوەی بابەتی بپرسەوە: شوێنی دەقەکە ناو ببە، بەڵگەی هەبوو بهێنە، داوای هۆکار بکە و ڕێگای فەرمی ناڕەزایی ڕێز بگرە." },
+        { "language": "kmr", "text": "Biryarekê bi awayekî rastûrast bipirsin: cihê nivîsê bi nav bikin, belgeyên heyî bibêjin, sedemê bixwazin û rêya fermî ya îtirazê rêz bikin." },
+        { "language": "pl", "text": "Rzeczowo zakwestionować decyzję: wskazać fragment tekstu, przywołać dostępne dokumenty, poprosić o uzasadnienie i uszanować formalną drogę odwoławczą." },
+        { "language": "ro", "text": "Contestați obiectiv o decizie: numiți pasajul, indicați documentele existente, cereți motivarea și respectați calea formală de contestare." },
+        { "language": "sq", "text": "Vëreni në dyshim një vendim me objektivitet: përmendni pjesën e tekstit, sillni dokumentet ekzistuese, kërkoni arsyetim dhe respektoni rrugën formale të ankimit." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "agree-disagree",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "isPublished": true,
+      "sortOrder": 26,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller/in",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌کننده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikues" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeitung",
+          "translations": [
+            { "language": "en", "text": "Caseworker" },
+            { "language": "fa", "text": "کارمند پرونده" },
+            { "language": "ar", "text": "الموظف المسؤول" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی کەیس" },
+            { "language": "kmr", "text": "Karmendê dozê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționar responsabil" },
+            { "language": "sq", "text": "Nëpunësi i çështjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie haben einen ablehnenden Bescheid erhalten und möchten dazu etwas klären. Worum geht es genau?",
+          "translations": [
+            { "language": "en", "text": "You received a negative decision and would like to clarify something about it. What exactly is the issue?" },
+            { "language": "fa", "text": "شما یک تصمیم ردکننده دریافت کرده‌اید و می‌خواهید نکته‌ای را درباره آن روشن کنید. دقیقاً موضوع چیست؟" },
+            { "language": "ar", "text": "لقد تلقيت قراراً بالرفض وتود توضيح أمر بشأنه. ما الموضوع بالضبط؟" },
+            { "language": "tr", "text": "Olumsuz bir karar aldınız ve bununla ilgili bir şeyi açıklığa kavuşturmak istiyorsunuz. Tam olarak konu nedir?" },
+            { "language": "ru", "text": "Вы получили отказное решение и хотите кое-что по нему уточнить. В чём именно вопрос?" },
+            { "language": "ckb", "text": "تۆ بڕیارێکی ڕەتکردنەوەت وەرگرتووە و دەتەوێت شتێک لەسەری ڕوون بکەیتەوە. بە وردی بابەتەکە چییە؟" },
+            { "language": "kmr", "text": "We biryareke redkirinê wergirtiye û hûn dixwazin tiştekî li ser wê zelal bikin. Mijar bi rastî çi ye?" },
+            { "language": "pl", "text": "Otrzymał Pan decyzję odmowną i chce Pan coś w tej sprawie wyjaśnić. O co dokładnie chodzi?" },
+            { "language": "ro", "text": "Ați primit o decizie de respingere și doriți să clarificați ceva în legătură cu ea. Despre ce este vorba exact?" },
+            { "language": "sq", "text": "Keni marrë një vendim refuzues dhe dëshironi të sqaroni diçka rreth tij. Për çfarë bëhet fjalë saktësisht?" }
+          ],
+          "function": "opening-clarification",
+          "toneNote": "formal, offen",
+          "expectedLearnerAction": "Entscheidung ruhig benennen und konkreten Prüfpunkt ankündigen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte den Bescheid nicht pauschal angreifen, sondern eine konkrete Begründung verstehen. Im Bescheid steht, es liege kein ausreichender Einkommensnachweis vor. Ich hatte aber am 4. April Gehaltsabrechnungen und den Arbeitsvertrag hochgeladen. Deshalb möchte ich klären, ob diese Unterlagen in die Entscheidung einbezogen wurden.",
+          "translations": [
+            { "language": "en", "text": "I do not want to attack the decision in general, but to understand a specific reason. The decision says there is no sufficient proof of income. However, on April 4 I uploaded payslips and the employment contract. That is why I would like to clarify whether these documents were included in the decision." },
+            { "language": "fa", "text": "نمی‌خواهم تصمیم را کلی رد کنم، بلکه می‌خواهم یک دلیل مشخص را بفهمم. در تصمیم نوشته شده مدرک کافی درآمد وجود ندارد. اما من در ۴ آوریل فیش‌های حقوقی و قرارداد کار را بارگذاری کرده بودم. بنابراین می‌خواهم روشن کنم آیا این مدارک در تصمیم لحاظ شده‌اند یا نه." },
+            { "language": "ar", "text": "لا أريد مهاجمة القرار بشكل عام، بل أريد فهم سبب محدد. يذكر القرار أنه لا يوجد إثبات دخل كاف. لكنني رفعت في 4 أبريل كشوف الرواتب وعقد العمل. لذلك أود توضيح ما إذا كانت هذه المستندات قد أُخذت في القرار." },
+            { "language": "tr", "text": "Karara genel olarak saldırmak istemiyorum, belirli bir gerekçeyi anlamak istiyorum. Kararda yeterli gelir belgesi bulunmadığı yazıyor. Ancak 4 Nisan'da maaş bordrolarını ve iş sözleşmesini yüklemiştim. Bu nedenle bu belgelerin karara dahil edilip edilmediğini açıklığa kavuşturmak istiyorum." },
+            { "language": "ru", "text": "Я не хочу в целом нападать на решение, а хочу понять конкретное обоснование. В решении сказано, что отсутствует достаточное подтверждение дохода. Но 4 апреля я загрузил расчётные листки и трудовой договор. Поэтому я хотел бы уточнить, были ли эти документы учтены при принятии решения." },
+            { "language": "ckb", "text": "نامەوێت بڕیارەکە بە شێوەی گشتی هێرش بکەمە سەر، بەڵکو دەمەوێت هۆکارێکی دیاریکراو تێبگەم. لە بڕیارەکەدا نووسراوە بەڵگەی داهاتی پێویست نییە. بەڵام من لە ٤ی نیساندا پەڕەکانی مووچە و گرێبەستی کارم بارکردبوو. بۆیە دەمەوێت ڕوون بکرێتەوە ئایا ئەم بەڵگانە لە بڕیارەکەدا لەبەرچاو گیراون یان نا." },
+            { "language": "kmr", "text": "Ez naxwazim biryarê bi giştî rexne bikim, lê dixwazim sedemeke diyar fam bikim. Di biryarê de hatiye nivîsîn ku belgeya dahatê ya têr tune ye. Lê min di 4ê Nîsanê de bordroyên meaşê û peymana kar barkiribû. Ji ber vê ez dixwazim zelal bikim ka ev belge di biryarê de hatine hesibandin yan na." },
+            { "language": "pl", "text": "Nie chcę ogólnie atakować decyzji, lecz zrozumieć konkretną podstawę. W decyzji napisano, że nie ma wystarczającego potwierdzenia dochodu. Tymczasem 4 kwietnia wgrałem paski wynagrodzeń i umowę o pracę. Dlatego chcę wyjaśnić, czy te dokumenty zostały uwzględnione w decyzji." },
+            { "language": "ro", "text": "Nu vreau să atac decizia în general, ci să înțeleg o motivare concretă. În decizie scrie că nu există o dovadă suficientă a venitului. Totuși, pe 4 aprilie am încărcat fluturașii de salariu și contractul de muncă. De aceea vreau să clarific dacă aceste documente au fost luate în considerare." },
+            { "language": "sq", "text": "Nuk dua ta sulmoj vendimin në përgjithësi, por të kuptoj një arsye konkrete. Në vendim thuhet se nuk ka dëshmi të mjaftueshme të të ardhurave. Por më 4 prill kisha ngarkuar listëpagesat dhe kontratën e punës. Prandaj dua të sqaroj nëse këto dokumente janë marrë parasysh në vendim." }
+          ],
+          "function": "objective-challenge",
+          "toneNote": "ruhig, präzise",
+          "expectedLearnerAction": "Entscheidung nicht pauschal angreifen, sondern konkreten Widerspruch nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Auf welche Stelle im Bescheid beziehen Sie sich genau?",
+          "translations": [
+            { "language": "en", "text": "Which exact passage in the decision are you referring to?" },
+            { "language": "fa", "text": "دقیقاً به کدام بخش از تصمیم اشاره می‌کنید؟" },
+            { "language": "ar", "text": "إلى أي موضع محدد في القرار تشير؟" },
+            { "language": "tr", "text": "Karardaki tam olarak hangi bölüme atıf yapıyorsunuz?" },
+            { "language": "ru", "text": "На какое именно место в решении вы ссылаетесь?" },
+            { "language": "ckb", "text": "بە وردی ئاماژە بە کام شوێنی بڕیارەکە دەکەیت؟" },
+            { "language": "kmr", "text": "Hûn bi rastî behsa kîjan cihê biryarê dikin?" },
+            { "language": "pl", "text": "Do którego dokładnie miejsca w decyzji Pan się odnosi?" },
+            { "language": "ro", "text": "La ce pasaj exact din decizie vă referiți?" },
+            { "language": "sq", "text": "Cilës pjesë të saktë të vendimit i referoheni?" }
+          ],
+          "function": "passage-request",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Textstelle und Nachweisbezug nennen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich beziehe mich auf den zweiten Absatz der Begründung. Dort heißt es, ein regelmäßiges Einkommen sei nicht nachgewiesen. In meiner Upload-Bestätigung vom 4. April sind aber die Gehaltsabrechnungen für Februar und März sowie der Arbeitsvertrag einzeln aufgeführt.",
+          "translations": [
+            { "language": "en", "text": "I am referring to the second paragraph of the reasoning. It says there that regular income has not been proven. However, in my upload confirmation from April 4, the payslips for February and March and the employment contract are listed individually." },
+            { "language": "fa", "text": "من به بند دومِ بخش دلایل اشاره می‌کنم. آنجا نوشته شده درآمد منظم اثبات نشده است. اما در تأییدیه بارگذاری من از ۴ آوریل، فیش‌های حقوقی فوریه و مارس و قرارداد کار جداگانه فهرست شده‌اند." },
+            { "language": "ar", "text": "أشير إلى الفقرة الثانية من التعليل. هناك يقال إن الدخل المنتظم لم يثبت. لكن في تأكيد الرفع الخاص بي من 4 أبريل، ذُكرت كشوف راتب فبراير ومارس وعقد العمل كل على حدة." },
+            { "language": "tr", "text": "Gerekçenin ikinci paragrafına atıf yapıyorum. Orada düzenli gelirin kanıtlanmadığı yazıyor. Ancak 4 Nisan tarihli yükleme onayımda Şubat ve Mart maaş bordroları ile iş sözleşmesi ayrı ayrı listelenmiş." },
+            { "language": "ru", "text": "Я ссылаюсь на второй абзац обоснования. Там сказано, что регулярный доход не подтверждён. Однако в моём подтверждении загрузки от 4 апреля отдельно перечислены расчётные листки за февраль и март, а также трудовой договор." },
+            { "language": "ckb", "text": "ئاماژە بە بڕگەی دووەمی هۆکارەکە دەکەم. لەوێدا وتراوە داهاتی بەردەوام نەسەلمێنراوە. بەڵام لە پشتڕاستکردنەوەی بارکردنەکەم لە ٤ی نیساندا، پەڕەکانی مووچەی شوبات و ئادار و گرێبەستی کار بە جیاجیا ناونراون." },
+            { "language": "kmr", "text": "Ez behsa paragrafê duyem ê sedemê dikim. Li wir hatiye gotin ku dahata birêkûpêk nehatiye îsbatkirin. Lê di piştrastkirina barkirina min a 4ê Nîsanê de bordroyên meaşê yên Sibat û Adarê û peymana kar yek bi yek hatine nivîsîn." },
+            { "language": "pl", "text": "Odnoszę się do drugiego akapitu uzasadnienia. Napisano tam, że regularny dochód nie został wykazany. Natomiast w moim potwierdzeniu wgrania z 4 kwietnia osobno wymieniono paski wynagrodzeń za luty i marzec oraz umowę o pracę." },
+            { "language": "ro", "text": "Mă refer la al doilea paragraf al motivării. Acolo se spune că un venit regulat nu a fost dovedit. Totuși, în confirmarea mea de încărcare din 4 aprilie sunt enumerate separat fluturașii de salariu pentru februarie și martie și contractul de muncă." },
+            { "language": "sq", "text": "I referohem paragrafit të dytë të arsyetimit. Aty thuhet se nuk është dëshmuar një e ardhur e rregullt. Megjithatë, në konfirmimin tim të ngarkimit të 4 prillit janë renditur veçmas listëpagesat për shkurt dhe mars si dhe kontrata e punës." }
+          ],
+          "function": "evidence-specific-reference",
+          "toneNote": "präzise, nachweisorientiert",
+          "expectedLearnerAction": "Textstelle mit Upload-Bestätigung verknüpfen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Es kann sein, dass die Unterlagen formal vorlagen, aber inhaltlich nicht ausgereicht haben. Der Vertrag ist befristet, richtig?",
+          "translations": [
+            { "language": "en", "text": "It may be that the documents were formally present but were not sufficient in substance. The contract is fixed-term, correct?" },
+            { "language": "fa", "text": "ممکن است مدارک از نظر شکلی موجود بوده باشند، اما از نظر محتوایی کافی نبوده باشند. قرارداد مدت‌دار است، درست است؟" },
+            { "language": "ar", "text": "قد تكون المستندات موجودة شكلياً لكنها غير كافية من حيث المحتوى. العقد محدد المدة، أليس كذلك؟" },
+            { "language": "tr", "text": "Belgeler biçimsel olarak mevcut olmuş olabilir, ancak içerik açısından yeterli bulunmamış olabilir. Sözleşme süreli, doğru mu?" },
+            { "language": "ru", "text": "Возможно, документы формально были, но по содержанию оказались недостаточными. Договор срочный, верно?" },
+            { "language": "ckb", "text": "لەوانەیە بەڵگەکان بە شێوەی فەرمی هەبووبن، بەڵام لە ناوەڕۆکدا بەس نەبووبن. گرێبەستەکە کاتی دیاریکراوی هەیە، ڕاستە؟" },
+            { "language": "kmr", "text": "Dibe ku belge bi awayekî fermî hebûn, lê ji aliyê naverokê ve têr nebûn. Peyman dem-sînor e, rast e?" },
+            { "language": "pl", "text": "Możliwe, że dokumenty formalnie były, ale merytorycznie nie wystarczyły. Umowa jest na czas określony, prawda?" },
+            { "language": "ro", "text": "Este posibil ca documentele să fi existat formal, dar să nu fi fost suficiente ca conținut. Contractul este pe perioadă determinată, corect?" },
+            { "language": "sq", "text": "Mund të jetë që dokumentet kanë ekzistuar formalisht, por nuk kanë qenë të mjaftueshme në përmbajtje. Kontrata është me afat të caktuar, apo jo?" }
+          ],
+          "function": "possible-reason",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Teilargument anerkennen und konkret nach fehlendem Kriterium fragen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja, der Vertrag ist befristet, und ich verstehe, dass das für die Prognose relevant sein kann. Er läuft jedoch noch 18 Monate, die Probezeit ist beendet und die letzten beiden Abrechnungen zeigen ein gleichbleibendes Einkommen. Wenn dennoch eine Arbeitgeberbestätigung erforderlich ist, möchte ich gern wissen, ob genau das der fehlende Nachweis ist.",
+          "translations": [
+            { "language": "en", "text": "Yes, the contract is fixed-term, and I understand that this can be relevant for the forecast. However, it still runs for 18 months, the probation period is over, and the last two payslips show steady income. If an employer confirmation is still required, I would like to know whether that is exactly the missing proof." },
+            { "language": "fa", "text": "بله، قرارداد مدت‌دار است و می‌فهمم که این می‌تواند برای ارزیابی آینده مهم باشد. اما هنوز ۱۸ ماه اعتبار دارد، دوره آزمایشی تمام شده و دو فیش حقوقی آخر درآمد ثابت نشان می‌دهند. اگر با این حال تأییدیه کارفرما لازم است، می‌خواهم بدانم آیا دقیقاً همان مدرکِ ناقص است یا نه." },
+            { "language": "ar", "text": "نعم، العقد محدد المدة، وأفهم أن ذلك قد يكون مهماً للتقدير المستقبلي. لكنه يستمر 18 شهراً أخرى، وفترة التجربة انتهت، وآخر كشفين للراتب يظهران دخلاً ثابتاً. إذا كانت هناك حاجة مع ذلك إلى تأكيد من صاحب العمل، فأود أن أعرف هل هذا بالضبط هو الإثبات الناقص." },
+            { "language": "tr", "text": "Evet, sözleşme süreli ve bunun öngörü açısından önemli olabileceğini anlıyorum. Ancak hâlâ 18 ay geçerli, deneme süresi bitti ve son iki bordro düzenli gelir gösteriyor. Buna rağmen işveren onayı gerekiyorsa, eksik belgenin tam olarak bu olup olmadığını öğrenmek isterim." },
+            { "language": "ru", "text": "Да, договор срочный, и я понимаю, что это может быть важно для прогноза. Однако он действует ещё 18 месяцев, испытательный срок завершён, а последние два расчётных листка показывают стабильный доход. Если всё же требуется подтверждение работодателя, я хотел бы знать, является ли именно оно недостающим документом." },
+            { "language": "ckb", "text": "بەڵێ، گرێبەستەکە کاتی دیاریکراوی هەیە، و تێدەگەم ئەمە دەتوانێت بۆ پێشبینی گرنگ بێت. بەڵام هێشتا ١٨ مانگی ماوە، ماوەی تاقیکردنەوە تەواو بووە و دوو پەڕەی مووچەی دوایی داهاتی جێگیر پیشان دەدەن. ئەگەر هێشتا پشتڕاستکردنەوەی کارخاوەن پێویستە، دەمەوێت بزانم ئایا ئەوە بە وردی بەڵگەی کەمەکەیە." },
+            { "language": "kmr", "text": "Erê, peyman dem-sînor e, û ez fam dikim ku ev dikare ji bo pêşbînî girîng be. Lê ew hîn 18 meh derbasdar e, dema ceribandinê qediya ye û du bordroyên dawî dahateke domdar nîşan didin. Heke dîsa piştrastkirina kardêr pêwîst be, ez dixwazim bizanim gelo belgeya kêm tam ew e yan na." },
+            { "language": "pl", "text": "Tak, umowa jest na czas określony i rozumiem, że może to być istotne dla prognozy. Obowiązuje jednak jeszcze przez 18 miesięcy, okres próbny się zakończył, a dwa ostatnie paski wynagrodzeń pokazują stały dochód. Jeśli mimo to potrzebne jest potwierdzenie pracodawcy, chciałbym wiedzieć, czy dokładnie tego dokumentu brakuje." },
+            { "language": "ro", "text": "Da, contractul este pe perioadă determinată și înțeleg că acest lucru poate fi relevant pentru prognoză. Totuși, mai este valabil 18 luni, perioada de probă s-a încheiat, iar ultimele două fluturași arată un venit constant. Dacă totuși este necesară o confirmare de la angajator, aș vrea să știu dacă exact aceasta este dovada lipsă." },
+            { "language": "sq", "text": "Po, kontrata është me afat të caktuar dhe e kuptoj se kjo mund të jetë e rëndësishme për parashikimin. Megjithatë, ajo vlen edhe për 18 muaj, periudha e provës ka përfunduar dhe dy listëpagesat e fundit tregojnë të ardhura të qëndrueshme. Nëse megjithatë kërkohet një konfirmim nga punëdhënësi, dua të di nëse pikërisht ky është dokumenti që mungon." }
+          ],
+          "function": "acknowledge-and-clarify-criterion",
+          "toneNote": "differenziert, nicht defensiv",
+          "expectedLearnerAction": "Gegenargument anerkennen und fehlendes Kriterium erfragen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Was erwarten Sie jetzt konkret von uns? Eine sofortige Änderung der Entscheidung kann ich am Schalter nicht zusagen.",
+          "translations": [
+            { "language": "en", "text": "What exactly do you expect from us now? I cannot promise an immediate change of the decision at the counter." },
+            { "language": "fa", "text": "الان دقیقاً چه انتظاری از ما دارید؟ من نمی‌توانم پشت باجه تغییر فوری تصمیم را قول بدهم." },
+            { "language": "ar", "text": "ماذا تتوقع منا الآن بشكل محدد؟ لا أستطيع أن أعد بتغيير فوري للقرار عند الشباك." },
+            { "language": "tr", "text": "Şimdi bizden tam olarak ne bekliyorsunuz? Gişede kararın hemen değişeceğini vaat edemem." },
+            { "language": "ru", "text": "Чего именно вы сейчас от нас ожидаете? Я не могу у окна обещать немедленное изменение решения." },
+            { "language": "ckb", "text": "ئێستا بە وردی چ چاوەڕوانییەکت لێمان هەیە؟ لە پشت پەنجەرە ناتوانم گۆڕینی دەستبەجێی بڕیارەکە بەڵێن بدەم." },
+            { "language": "kmr", "text": "Niha hûn bi rastî çi ji me hêvî dikin? Ez nikarim li şûşeyê guhertina tavilê ya biryarê soz bidim." },
+            { "language": "pl", "text": "Czego konkretnie Pan teraz od nas oczekuje? Przy okienku nie mogę obiecać natychmiastowej zmiany decyzji." },
+            { "language": "ro", "text": "Ce așteptați concret de la noi acum? La ghișeu nu pot promite modificarea imediată a deciziei." },
+            { "language": "sq", "text": "Çfarë prisni konkretisht nga ne tani? Në sportel nuk mund të premtoj ndryshim të menjëhershëm të vendimit." }
+          ],
+          "function": "expectation-boundary",
+          "toneNote": "begrenzend",
+          "expectedLearnerAction": "Realisierbares Ziel statt sofortiger Entscheidung formulieren"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Mir geht es heute nicht um eine mündliche Aufhebung des Bescheids. Ich bitte um zwei Dinge: erstens um Prüfung, ob die genannten Unterlagen der Akte zugeordnet wurden, und zweitens um eine schriftliche Auskunft, falls ein bestimmter Nachweis trotz dieser Unterlagen weiterhin fehlt.",
+          "translations": [
+            { "language": "en", "text": "I understand that. Today I am not asking for the decision to be revoked orally. I am asking for two things: first, a check whether the documents named were assigned to the file, and second, written information if a specific proof is still missing despite these documents." },
+            { "language": "fa", "text": "این را می‌فهمم. امروز دنبال لغو شفاهی تصمیم نیستم. دو چیز می‌خواهم: اول بررسی شود آیا مدارک نام‌برده به پرونده وصل شده‌اند، و دوم اگر با وجود این مدارک هنوز مدرک مشخصی کم است، اطلاع کتبی داده شود." },
+            { "language": "ar", "text": "أفهم ذلك. لا أطلب اليوم إلغاء القرار شفهياً. أطلب أمرين: أولاً التحقق مما إذا كانت المستندات المذكورة قد أُلحقت بالملف، وثانياً إفادة خطية إذا كان إثبات معين ما يزال ناقصاً رغم هذه المستندات." },
+            { "language": "tr", "text": "Bunu anlıyorum. Bugün kararın sözlü olarak kaldırılmasını istemiyorum. İki şey rica ediyorum: birincisi, adı geçen belgelerin dosyaya atanıp atanmadığının kontrol edilmesi; ikincisi, bu belgelere rağmen belirli bir kanıt hâlâ eksikse bunun yazılı olarak bildirilmesi." },
+            { "language": "ru", "text": "Я это понимаю. Сегодня я не прошу устно отменить решение. Я прошу о двух вещах: во-первых, проверить, были ли указанные документы прикреплены к делу, и во-вторых, письменно сообщить, если несмотря на эти документы всё ещё отсутствует конкретное подтверждение." },
+            { "language": "ckb", "text": "ئەمە تێدەگەم. ئەمڕۆ مەبەستم هەڵوەشاندنەوەی زارەکیی بڕیارەکە نییە. داوای دوو شت دەکەم: یەکەم پشکنینی ئەوەی ئایا بەڵگە ناوبراوەکان بە کەیسەکەوە بەستراون، دووەم زانیاریی نووسراو ئەگەر سەرەڕای ئەم بەڵگانە هێشتا بەڵگەیەکی دیاریکراو کەم بێت." },
+            { "language": "kmr", "text": "Ez vê fam dikim. Îro armanca min rakirina devkî ya biryarê nîne. Ez du tiştan dixwazim: yekem kontrol ku belgeyên navkirî bi dosyeyê ve hatine girêdan yan na, û duyem agahiyeke nivîskî heke tevî van belgeyan belgeyeke diyar hîn kêm be." },
+            { "language": "pl", "text": "Rozumiem to. Dzisiaj nie chodzi mi o ustne uchylenie decyzji. Proszę o dwie rzeczy: po pierwsze o sprawdzenie, czy wymienione dokumenty przypisano do akt, a po drugie o pisemną informację, jeśli mimo tych dokumentów nadal brakuje konkretnego potwierdzenia." },
+            { "language": "ro", "text": "Înțeleg acest lucru. Astăzi nu cer anularea verbală a deciziei. Solicit două lucruri: mai întâi verificarea dacă documentele menționate au fost atribuite dosarului, iar apoi o informare scrisă dacă, în ciuda acestor documente, lipsește în continuare o dovadă concretă." },
+            { "language": "sq", "text": "E kuptoj këtë. Sot nuk po kërkoj anulimin me gojë të vendimit. Kërkoj dy gjëra: së pari, të kontrollohet nëse dokumentet e përmendura janë lidhur me dosjen, dhe së dyti, një informacion me shkrim nëse, pavarësisht këtyre dokumenteve, mungon ende një dëshmi konkrete." }
+          ],
+          "function": "realistic-request",
+          "toneNote": "kooperativ, klar",
+          "expectedLearnerAction": "Realisierbare Prüfbitte mit zwei klaren Punkten formulieren"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Für eine rechtliche Überprüfung müssten Sie die Frist im Bescheid beachten. Soll ich Ihnen erklären, wie Sie das von der heutigen Klärung trennen können?",
+          "translations": [
+            { "language": "en", "text": "For a legal review, you would have to observe the deadline in the decision. Shall I explain how you can separate that from today's clarification?" },
+            { "language": "fa", "text": "برای بررسی حقوقی باید مهلت نوشته‌شده در تصمیم را رعایت کنید. توضیح بدهم چطور می‌توانید آن را از روشن‌سازی امروز جدا کنید؟" },
+            { "language": "ar", "text": "للمراجعة القانونية يجب عليك مراعاة المهلة المذكورة في القرار. هل أشرح لك كيف يمكنك فصل ذلك عن توضيح اليوم؟" },
+            { "language": "tr", "text": "Hukuki bir inceleme için karardaki süreye uymanız gerekir. Bunu bugünkü açıklığa kavuşturmadan nasıl ayırabileceğinizi açıklayayım mı?" },
+            { "language": "ru", "text": "Для юридической проверки вам нужно соблюдать срок, указанный в решении. Объяснить, как отделить это от сегодняшнего уточнения?" },
+            { "language": "ckb", "text": "بۆ پشکنینی یاسایی پێویستە ماوەی ناو بڕیارەکە ڕەچاو بکەیت. ڕوون بکەمەوە چۆن دەتوانیت ئەوە لە ڕوونکردنەوەی ئەمڕۆ جیا بکەیتەوە؟" },
+            { "language": "kmr", "text": "Ji bo kontrola hiqûqî divê hûn muhleta di biryarê de binirxînin. Ma ez rave bikim ka hûn çawa dikarin wê ji zelalkirina îro veqetînin?" },
+            { "language": "pl", "text": "Do kontroli prawnej musi Pan zachować termin podany w decyzji. Czy mam wyjaśnić, jak oddzielić to od dzisiejszego wyjaśnienia?" },
+            { "language": "ro", "text": "Pentru o verificare juridică trebuie să respectați termenul din decizie. Să vă explic cum puteți separa acest lucru de clarificarea de astăzi?" },
+            { "language": "sq", "text": "Për një shqyrtim ligjor duhet të respektoni afatin në vendim. A t'ju shpjegoj si mund ta ndani këtë nga sqarimi i sotëm?" }
+          ],
+          "function": "legal-route-boundary",
+          "toneNote": "informierend",
+          "expectedLearnerAction": "Frist und Klärung unterscheiden"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja, bitte. Ich möchte die Frist nicht versäumen und werde den formellen Weg prüfen. Gleichzeitig wäre es für die Begründung wichtig zu wissen, ob die Unterlagen nur nicht zugeordnet wurden oder ob sie inhaltlich nicht ausreichen.",
+          "translations": [
+            { "language": "en", "text": "Yes, please. I do not want to miss the deadline and will check the formal route. At the same time, it would be important for the reasoning to know whether the documents were merely not assigned or whether they are not sufficient in substance." },
+            { "language": "fa", "text": "بله، لطفاً. نمی‌خواهم مهلت را از دست بدهم و مسیر رسمی را بررسی می‌کنم. هم‌زمان برای تنظیم دلیل مهم است بدانم آیا مدارک فقط به پرونده وصل نشده‌اند یا از نظر محتوایی کافی نیستند." },
+            { "language": "ar", "text": "نعم، من فضلك. لا أريد أن أفوّت المهلة وسأراجع المسار الرسمي. وفي الوقت نفسه من المهم للتعليل أن أعرف هل لم تُربط المستندات بالملف فقط أم أنها غير كافية من حيث المحتوى." },
+            { "language": "tr", "text": "Evet, lütfen. Süreyi kaçırmak istemiyorum ve resmi yolu kontrol edeceğim. Aynı zamanda gerekçe için belgelerin yalnızca dosyaya atanmadığını mı yoksa içerik açısından yetersiz mi olduğunu bilmek önemli olur." },
+            { "language": "ru", "text": "Да, пожалуйста. Я не хочу пропустить срок и проверю формальный путь. В то же время для обоснования важно знать, были ли документы просто не привязаны к делу или они недостаточны по содержанию." },
+            { "language": "ckb", "text": "بەڵێ، تکایە. نامەوێت ماوەکە لەدەست بدەم و ڕێگای فەرمی دەپشکنم. لە هەمان کاتدا بۆ هۆکارەکە گرنگە بزانم ئایا بەڵگەکان تەنها بە کەیسەکەوە نەبەستراون یان لە ناوەڕۆکدا بەس نین." },
+            { "language": "kmr", "text": "Erê, kerema xwe. Ez naxwazim muhletê ji dest bidim û ez ê riya fermî kontrol bikim. Di heman demê de ji bo sedemê girîng e ku ez bizanim gelo belge tenê bi dosyeyê ve nehatine girêdan an ji aliyê naverokê ve têr nînin." },
+            { "language": "pl", "text": "Tak, proszę. Nie chcę przegapić terminu i sprawdzę drogę formalną. Jednocześnie dla uzasadnienia ważne byłoby wiedzieć, czy dokumenty tylko nie zostały przypisane do akt, czy też merytorycznie nie wystarczają." },
+            { "language": "ro", "text": "Da, vă rog. Nu vreau să pierd termenul și voi verifica calea formală. În același timp, pentru motivare ar fi important să știu dacă documentele doar nu au fost atribuite dosarului sau dacă nu sunt suficiente ca fond." },
+            { "language": "sq", "text": "Po, ju lutem. Nuk dua ta humbas afatin dhe do ta kontrolloj rrugën formale. Njëkohësisht, për arsyetimin do të ishte e rëndësishme të di nëse dokumentet thjesht nuk janë lidhur me dosjen apo nuk janë të mjaftueshme në përmbajtje." }
+          ],
+          "function": "deadline-and-clarification",
+          "toneNote": "vorsichtig, strategisch",
+          "expectedLearnerAction": "Rechtsweg respektieren und Informationsbedarf begründen"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Können Sie zum Abschluss noch einmal in einem Satz formulieren, was ich für die Akte notieren soll?",
+          "translations": [
+            { "language": "en", "text": "To finish, can you formulate once more in one sentence what I should note for the file?" },
+            { "language": "fa", "text": "برای پایان، می‌توانید در یک جمله بگویید چه چیزی را برای پرونده یادداشت کنم؟" },
+            { "language": "ar", "text": "في الختام، هل يمكنك صياغة ما يجب أن أدونه في الملف في جملة واحدة؟" },
+            { "language": "tr", "text": "Son olarak, dosya için ne not etmem gerektiğini bir cümlede tekrar ifade edebilir misiniz?" },
+            { "language": "ru", "text": "В завершение можете ещё раз одним предложением сформулировать, что мне записать в дело?" },
+            { "language": "ckb", "text": "بۆ کۆتایی، دەتوانیت جارێکی تر بە یەک ڕستە بڵێیت چی بۆ کەیسەکە تۆمار بکەم؟" },
+            { "language": "kmr", "text": "Ji bo dawiyê, hûn dikarin careke din bi yek hevokê bibêjin ka ez çi ji bo dosyeyê binivîsim?" },
+            { "language": "pl", "text": "Na zakończenie, czy może Pan jeszcze raz w jednym zdaniu sformułować, co mam zanotować do akt?" },
+            { "language": "ro", "text": "La final, puteți formula încă o dată într-o propoziție ce ar trebui să notez la dosar?" },
+            { "language": "sq", "text": "Në fund, a mund ta formuloni edhe një herë me një fjali se çfarë duhet të shënoj në dosje?" }
+          ],
+          "function": "file-note-request",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Aktenfähige Zusammenfassung liefern"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Bitte notieren Sie, dass ich die Entscheidung wegen der Begründung zum Einkommensnachweis sachlich überprüfen lassen möchte, weil laut Upload-Bestätigung Gehaltsabrechnungen und Arbeitsvertrag vorlagen, und dass ich um schriftliche Klärung bitte, ob diese Unterlagen berücksichtigt wurden oder welcher Nachweis konkret fehlt.",
+          "translations": [
+            { "language": "en", "text": "Please note that I would like the decision to be reviewed objectively because of the reasoning on proof of income, since according to the upload confirmation payslips and the employment contract were available, and that I ask for written clarification whether these documents were considered or which proof is specifically missing." },
+            { "language": "fa", "text": "لطفاً یادداشت کنید که می‌خواهم تصمیم به دلیل بخش مربوط به مدرک درآمد به‌صورت محترمانه بررسی شود، چون طبق تأییدیه بارگذاری، فیش‌های حقوقی و قرارداد کار موجود بوده‌اند، و درخواست دارم کتبی روشن شود آیا این مدارک در نظر گرفته شده‌اند یا دقیقاً کدام مدرک کم است." },
+            { "language": "ar", "text": "يرجى تدوين أنني أطلب مراجعة القرار بشكل موضوعي بسبب التعليل المتعلق بإثبات الدخل، لأن كشوف الرواتب وعقد العمل كانت موجودة حسب تأكيد الرفع، وأنني أطلب توضيحاً خطياً عما إذا كانت هذه المستندات قد أُخذت في الاعتبار أو أي إثبات محدد ناقص." },
+            { "language": "tr", "text": "Lütfen, gelir belgesine ilişkin gerekçe nedeniyle kararın nesnel olarak incelenmesini istediğimi, çünkü yükleme onayına göre maaş bordroları ve iş sözleşmesinin mevcut olduğunu, ayrıca bu belgelerin dikkate alınıp alınmadığının veya tam olarak hangi belgenin eksik olduğunun yazılı olarak açıklanmasını istediğimi not edin." },
+            { "language": "ru", "text": "Пожалуйста, отметьте, что я прошу делово проверить решение из-за обоснования по подтверждению дохода, поскольку согласно подтверждению загрузки расчётные листки и трудовой договор были предоставлены, и что я прошу письменно уточнить, были ли эти документы учтены или какое именно подтверждение отсутствует." },
+            { "language": "ckb", "text": "تکایە تۆمار بکە کە من دەمەوێت بڕیارەکە بە هۆی هۆکاری پەیوەندیدار بە بەڵگەی داهات بە شێوەی بابەتی بپشکنرێت، چونکە بە پێی پشتڕاستکردنەوەی بارکردن پەڕەکانی مووچە و گرێبەستی کار هەبوون، و داوا دەکەم بە نووسراو ڕوون بکرێتەوە ئایا ئەم بەڵگانە لەبەرچاو گیراون یان کام بەڵگە بە وردی کەمە." },
+            { "language": "kmr", "text": "Kerema xwe binivîsin ku ez dixwazim biryar ji ber sedema belgeya dahatê bi awayekî rastûrast were kontrolkirin, ji ber ku li gorî piştrastkirina barkirinê bordroyên meaşê û peymana kar hebûn, û ez daxwaza zelalkirina nivîskî dikim ka ev belge hatine hesibandin yan kîjan belge bi taybetî kêm e." },
+            { "language": "pl", "text": "Proszę zanotować, że proszę o rzeczowe sprawdzenie decyzji ze względu na uzasadnienie dotyczące potwierdzenia dochodu, ponieważ według potwierdzenia wgrania dostępne były paski wynagrodzeń i umowa o pracę, oraz że proszę o pisemne wyjaśnienie, czy te dokumenty uwzględniono albo którego konkretnie dokumentu brakuje." },
+            { "language": "ro", "text": "Vă rog să notați că doresc ca decizia să fie verificată obiectiv din cauza motivării privind dovada venitului, deoarece potrivit confirmării de încărcare existau fluturașii de salariu și contractul de muncă, și că solicit clarificare scrisă dacă aceste documente au fost luate în considerare sau ce dovadă lipsește concret." },
+            { "language": "sq", "text": "Ju lutem shënoni se dua që vendimi të shqyrtohet objektiv për shkak të arsyetimit mbi dëshminë e të ardhurave, sepse sipas konfirmimit të ngarkimit ishin dorëzuar listëpagesat dhe kontrata e punës, dhe se kërkoj sqarim me shkrim nëse këto dokumente janë marrë parasysh ose cila dëshmi mungon konkretisht." }
+          ],
+          "function": "file-ready-summary",
+          "toneNote": "formal, zusammenfassend",
+          "expectedLearnerAction": "Prüfbitte, Beleglage und schriftliche Klärung in einem Satz bündeln"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich greife den Bescheid nicht pauschal an, sondern möchte klären, ob die hochgeladenen Einkommensnachweise berücksichtigt wurden.",
+              "translations": [
+                { "language": "en", "text": "I am not attacking the decision in general; I want to clarify whether the uploaded income proofs were considered." },
+                { "language": "fa", "text": "من تصمیم را کلی رد نمی‌کنم؛ می‌خواهم روشن کنم آیا مدارک درآمد بارگذاری‌شده لحاظ شده‌اند یا نه." },
+                { "language": "ar", "text": "لا أهاجم القرار بشكل عام؛ أريد توضيح ما إذا كانت إثباتات الدخل المرفوعة قد أُخذت في الاعتبار." },
+                { "language": "tr", "text": "Karara genel olarak saldırmıyorum; yüklenen gelir belgelerinin dikkate alınıp alınmadığını açıklığa kavuşturmak istiyorum." },
+                { "language": "ru", "text": "Я не оспариваю решение в целом; я хочу уточнить, были ли учтены загруженные подтверждения дохода." },
+                { "language": "ckb", "text": "من بڕیارەکە بە گشتی هێرش ناکەمە سەر؛ دەمەوێت ڕوون بکەمەوە ئایا بەڵگەکانی داهاتی بارکراو لەبەرچاو گیراون یان نا." },
+                { "language": "kmr", "text": "Ez biryarê bi giştî rexne nakim; dixwazim zelal bikim ka belgeyên dahatê yên barkirî hatine hesibandin yan na." },
+                { "language": "pl", "text": "Nie atakuję decyzji ogólnie; chcę wyjaśnić, czy uwzględniono wgrane potwierdzenia dochodu." },
+                { "language": "ro", "text": "Nu atac decizia în general; vreau să clarific dacă dovezile de venit încărcate au fost luate în considerare." },
+                { "language": "sq", "text": "Nuk po e sulmoj vendimin në përgjithësi; dua të sqaroj nëse dëshmitë e të ardhurave të ngarkuara janë marrë parasysh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort senkt die Spannung und nennt sofort den prüfbaren Punkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer reduces tension and immediately names the checkable point." },
+                { "language": "fa", "text": "قوی: پاسخ تنش را کم می‌کند و فوراً نکته قابل بررسی را نام می‌برد." },
+                { "language": "ar", "text": "قوي: تخفف الإجابة التوتر وتسمي فوراً النقطة القابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: Yanıt gerilimi azaltıyor ve kontrol edilebilir noktayı hemen belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ снижает напряжение и сразу называет проверяемый пункт." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گرژی کەم دەکاتەوە و دەستبەجێ خاڵی پشکنراو ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv tengaviyê kêm dike û xala kontrolbar tavilê bi nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź obniża napięcie i od razu wskazuje sprawdzalny punkt." },
+                { "language": "ro", "text": "Puternic: răspunsul reduce tensiunea și numește imediat punctul verificabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja ul tensionin dhe emërton menjëherë pikën e verifikueshme." }
+              ],
+              "explanationKey": "focused-challenge"
+            },
+            {
+              "id": "weak-too-broad",
+              "text": "Der Bescheid ist aus meiner Sicht falsch und sollte noch einmal komplett geprüft werden.",
+              "translations": [
+                { "language": "en", "text": "In my view, the decision is wrong and should be checked completely again." },
+                { "language": "fa", "text": "از نظر من تصمیم اشتباه است و باید دوباره کامل بررسی شود." },
+                { "language": "ar", "text": "من وجهة نظري القرار خاطئ ويجب فحصه بالكامل مرة أخرى." },
+                { "language": "tr", "text": "Bana göre karar yanlış ve tamamen yeniden kontrol edilmelidir." },
+                { "language": "ru", "text": "На мой взгляд, решение неверно и должно быть полностью проверено ещё раз." },
+                { "language": "ckb", "text": "لە ڕوانگەی منەوە بڕیارەکە هەڵەیە و دەبێت جارێکی تر بە تەواوی بپشکنرێت." },
+                { "language": "kmr", "text": "Li gorî min biryar xelet e û divê careke din bi tevahî were kontrolkirin." },
+                { "language": "pl", "text": "Moim zdaniem decyzja jest błędna i powinna zostać jeszcze raz w całości sprawdzona." },
+                { "language": "ro", "text": "Din punctul meu de vedere, decizia este greșită și ar trebui verificată complet încă o dată." },
+                { "language": "sq", "text": "Sipas mendimit tim, vendimi është i gabuar dhe duhet kontrolluar edhe një herë i tëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu breit: Die Aussage ist verständlich, nennt aber keine Textstelle und keinen konkreten Nachweis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad: The statement is understandable but names no passage and no specific document." },
+                { "language": "fa", "text": "بیش از حد کلی است: جمله قابل فهم است، اما نه بخش متن را می‌گوید و نه مدرک مشخص را." },
+                { "language": "ar", "text": "واسع أكثر من اللازم: العبارة مفهومة لكنها لا تذكر موضعاً في النص ولا مستنداً محدداً." },
+                { "language": "tr", "text": "Fazla geniş: İfade anlaşılır, ama ne metin bölümü ne de belirli belge adlandırıyor." },
+                { "language": "ru", "text": "Слишком широко: высказывание понятно, но не называет ни место в тексте, ни конкретный документ." },
+                { "language": "ckb", "text": "زۆر گشتییە: دەربڕینەکە تێگەیشتراوە، بەڵام نە شوێنی دەق و نە بەڵگەی دیاریکراو ناو دەبات." },
+                { "language": "kmr", "text": "Pir fireh e: Gotin têgihiştbar e, lê ne cihê nivîsê û ne belgeyeke diyar bi nav dike." },
+                { "language": "pl", "text": "Zbyt ogólne: wypowiedź jest zrozumiała, ale nie wskazuje fragmentu tekstu ani konkretnego dokumentu." },
+                { "language": "ro", "text": "Prea larg: afirmația este de înțeles, dar nu numește niciun pasaj și niciun document concret." },
+                { "language": "sq", "text": "Shumë e përgjithshme: pohimi është i kuptueshëm, por nuk përmend as pjesë teksti, as dokument konkret." }
+              ],
+              "explanationKey": "broad-challenge"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Im zweiten Absatz steht, regelmäßiges Einkommen sei nicht nachgewiesen; die Upload-Bestätigung nennt aber Gehaltsabrechnungen und Arbeitsvertrag.",
+              "translations": [
+                { "language": "en", "text": "The second paragraph says regular income was not proven; however, the upload confirmation lists payslips and the employment contract." },
+                { "language": "fa", "text": "در بند دوم نوشته شده درآمد منظم اثبات نشده؛ اما تأییدیه بارگذاری فیش‌های حقوقی و قرارداد کار را نام می‌برد." },
+                { "language": "ar", "text": "تذكر الفقرة الثانية أن الدخل المنتظم لم يثبت؛ لكن تأكيد الرفع يسمي كشوف الرواتب وعقد العمل." },
+                { "language": "tr", "text": "İkinci paragrafta düzenli gelirin kanıtlanmadığı yazıyor; ancak yükleme onayı maaş bordrolarını ve iş sözleşmesini listeliyor." },
+                { "language": "ru", "text": "Во втором абзаце сказано, что регулярный доход не подтверждён; однако подтверждение загрузки перечисляет расчётные листки и трудовой договор." },
+                { "language": "ckb", "text": "لە بڕگەی دووەمدا نووسراوە داهاتی بەردەوام نەسەلمێنراوە؛ بەڵام پشتڕاستکردنەوەی بارکردن پەڕەکانی مووچە و گرێبەستی کار ناو دەبات." },
+                { "language": "kmr", "text": "Di paragrafê duyem de hatiye nivîsîn ku dahata birêkûpêk nehatiye îsbatkirin; lê piştrastkirina barkirinê bordroyên meaşê û peymana kar bi nav dike." },
+                { "language": "pl", "text": "W drugim akapicie napisano, że regularny dochód nie został wykazany; potwierdzenie wgrania wymienia jednak paski wynagrodzeń i umowę o pracę." },
+                { "language": "ro", "text": "În al doilea paragraf scrie că venitul regulat nu a fost dovedit; confirmarea de încărcare menționează însă fluturașii de salariu și contractul de muncă." },
+                { "language": "sq", "text": "Në paragrafin e dytë thuhet se të ardhurat e rregullta nuk janë dëshmuar; por konfirmimi i ngarkimit përmend listëpagesat dhe kontratën e punës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Textstelle und Gegenbeleg präzise.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects the passage and the counter-evidence precisely." },
+                { "language": "fa", "text": "قوی: پاسخ بخش متن و مدرک مقابل را دقیق به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة بدقة بين موضع النص والدليل المقابل." },
+                { "language": "tr", "text": "Güçlü: Yanıt metin bölümünü ve karşı kanıtı kesin biçimde bağlıyor." },
+                { "language": "ru", "text": "Сильно: ответ точно связывает место в тексте и встречное доказательство." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە شوێنی دەق و بەڵگەی بەرامبەر بە وردی دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv cihê nivîsê û belgeya dijber bi rastî bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź precyzyjnie łączy fragment tekstu z przeciwdowodem." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă precis pasajul de dovada contrară." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh saktë pjesën e tekstit me provën përkatëse." }
+              ],
+              "explanationKey": "passage-and-evidence"
+            },
+            {
+              "id": "weak-document-list-only",
+              "text": "Ich habe viele Unterlagen eingereicht, unter anderem auch etwas zum Einkommen.",
+              "translations": [
+                { "language": "en", "text": "I submitted many documents, including something about income." },
+                { "language": "fa", "text": "من مدارک زیادی ارائه کرده‌ام، از جمله چیزی درباره درآمد." },
+                { "language": "ar", "text": "قدمت مستندات كثيرة، من بينها شيء يتعلق بالدخل." },
+                { "language": "tr", "text": "Birçok belge sundum, bunların arasında gelirle ilgili bir şey de vardı." },
+                { "language": "ru", "text": "Я подал много документов, в том числе что-то о доходе." },
+                { "language": "ckb", "text": "من زۆر بەڵگەم پێشکەش کردووە، لەوانەش شتێک سەبارەت بە داهات." },
+                { "language": "kmr", "text": "Min gelek belge şandine, di nav wan de tiştek li ser dahatê jî hebû." },
+                { "language": "pl", "text": "Złożyłem wiele dokumentów, między innymi coś dotyczącego dochodu." },
+                { "language": "ro", "text": "Am depus multe documente, inclusiv ceva despre venit." },
+                { "language": "sq", "text": "Kam dorëzuar shumë dokumente, ndër të tjera edhe diçka për të ardhurat." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Es fehlen Absatz, Dokumentnamen und Upload-Datum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: The paragraph, document names, and upload date are missing." },
+                { "language": "fa", "text": "بیش از حد مبهم است: بند، نام مدارک و تاریخ بارگذاری کم است." },
+                { "language": "ar", "text": "غير دقيق كفاية: الفقرة وأسماء المستندات وتاريخ الرفع مفقودة." },
+                { "language": "tr", "text": "Fazla belirsiz: Paragraf, belge adları ve yükleme tarihi eksik." },
+                { "language": "ru", "text": "Слишком неточно: отсутствуют абзац, названия документов и дата загрузки." },
+                { "language": "ckb", "text": "زۆر ناوردە: بڕگە، ناوی بەڵگەکان و بەرواری بارکردن کەمە." },
+                { "language": "kmr", "text": "Pir nezelal e: Paragraf, navên belgeyan û dîroka barkirinê kêm in." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: brakuje akapitu, nazw dokumentów i daty wgrania." },
+                { "language": "ro", "text": "Prea imprecis: lipsesc paragraful, numele documentelor și data încărcării." },
+                { "language": "sq", "text": "Shumë e pasaktë: mungojnë paragrafi, emrat e dokumenteve dhe data e ngarkimit." }
+              ],
+              "explanationKey": "vague-evidence"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich sehe den Punkt mit der Befristung; können Sie mir sagen, ob deshalb eine Arbeitgeberbestätigung fehlt?",
+              "translations": [
+                { "language": "en", "text": "I see the point about the fixed term; can you tell me whether an employer confirmation is missing for that reason?" },
+                { "language": "fa", "text": "نکته مربوط به مدت‌دار بودن را می‌فهمم؛ می‌توانید بگویید آیا به همین دلیل تأییدیه کارفرما کم است؟" },
+                { "language": "ar", "text": "أفهم نقطة تحديد المدة؛ هل يمكنك أن تخبرني هل ينقص تأكيد من صاحب العمل لهذا السبب؟" },
+                { "language": "tr", "text": "Süreli olma noktasını anlıyorum; bu nedenle işveren onayının eksik olup olmadığını söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Я понимаю пункт о срочности договора; можете сказать, отсутствует ли поэтому подтверждение работодателя?" },
+                { "language": "ckb", "text": "خاڵی کاتی دیاریکراو تێدەگەم؛ دەتوانیت بڵێیت ئایا بە هۆی ئەوە پشتڕاستکردنەوەی کارخاوەن کەمە؟" },
+                { "language": "kmr", "text": "Ez xala dem-sînorkirinê dibînim; hûn dikarin bibêjin ka ji ber vê piştrastkirina kardêr kêm e?" },
+                { "language": "pl", "text": "Rozumiem kwestię umowy na czas określony; czy może Pan powiedzieć, czy z tego powodu brakuje potwierdzenia pracodawcy?" },
+                { "language": "ro", "text": "Înțeleg punctul privind durata determinată; îmi puteți spune dacă din acest motiv lipsește o confirmare de la angajator?" },
+                { "language": "sq", "text": "E kuptoj pikën për afatin e caktuar; a mund të më thoni nëse për këtë arsye mungon një konfirmim nga punëdhënësi?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Sie akzeptieren das Gegenargument und machen daraus eine konkrete Klärungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: You accept the counter-argument and turn it into a concrete clarification question." },
+                { "language": "fa", "text": "قوی: شما استدلال مقابل را می‌پذیرید و آن را به سؤال روشن و مشخص تبدیل می‌کنید." },
+                { "language": "ar", "text": "قوي: تقبل الحجة المقابلة وتحولها إلى سؤال توضيحي محدد." },
+                { "language": "tr", "text": "Güçlü: Karşı argümanı kabul edip somut bir açıklama sorusuna dönüştürüyorsunuz." },
+                { "language": "ru", "text": "Сильно: вы принимаете контраргумент и превращаете его в конкретный уточняющий вопрос." },
+                { "language": "ckb", "text": "بەهێزە: تۆ بەڵگەی بەرامبەر وەردەگریت و دەیکەیت بە پرسیارێکی ڕوونکردنەوەی دیاریکراو." },
+                { "language": "kmr", "text": "Xurt e: Hûn argumana dijber qebûl dikin û wê dikin pirseke zelalkirinê ya şênber." },
+                { "language": "pl", "text": "Mocne: przyjmuje Pan kontrargument i zamienia go w konkretne pytanie wyjaśniające." },
+                { "language": "ro", "text": "Puternic: acceptați contraargumentul și îl transformați într-o întrebare concretă de clarificare." },
+                { "language": "sq", "text": "E fortë: e pranoni kundërargumentin dhe e ktheni në një pyetje konkrete sqaruese." }
+              ],
+              "explanationKey": "concession-to-criterion"
+            },
+            {
+              "id": "weak-ignore-counterpoint",
+              "text": "Aber ich habe doch einen Arbeitsvertrag, deshalb müsste das eigentlich reichen.",
+              "translations": [
+                { "language": "en", "text": "But I do have an employment contract, so that should actually be enough." },
+                { "language": "fa", "text": "اما من که قرارداد کار دارم، پس در واقع باید کافی باشد." },
+                { "language": "ar", "text": "لكن لدي عقد عمل، لذلك يفترض أن يكون ذلك كافياً." },
+                { "language": "tr", "text": "Ama benim bir iş sözleşmem var, bu yüzden aslında yeterli olmalı." },
+                { "language": "ru", "text": "Но у меня ведь есть трудовой договор, значит, этого вообще-то должно хватить." },
+                { "language": "ckb", "text": "بەڵام من گرێبەستی کارم هەیە، بۆیە لە بنەڕەتدا دەبێت بەس بێت." },
+                { "language": "kmr", "text": "Lê peymana kar a min heye, ji ber vê divê ew bi rastî têr be." },
+                { "language": "pl", "text": "Ale przecież mam umowę o pracę, więc to właściwie powinno wystarczyć." },
+                { "language": "ro", "text": "Dar am totuși un contract de muncă, deci ar trebui de fapt să fie suficient." },
+                { "language": "sq", "text": "Por unë kam kontratë pune, prandaj në fakt duhet të mjaftojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einfach: Die Antwort ignoriert die mögliche Rolle der Befristung und fragt nicht nach dem fehlenden Kriterium.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple: The answer ignores the possible role of the fixed term and does not ask about the missing criterion." },
+                { "language": "fa", "text": "بیش از حد ساده است: پاسخ نقش احتمالی مدت‌دار بودن را نادیده می‌گیرد و درباره معیار ناقص سؤال نمی‌کند." },
+                { "language": "ar", "text": "بسيط أكثر من اللازم: تتجاهل الإجابة الدور المحتمل لتحديد المدة ولا تسأل عن المعيار الناقص." },
+                { "language": "tr", "text": "Fazla basit: Yanıt süreli olmanın olası rolünü görmezden geliyor ve eksik kriteri sormuyor." },
+                { "language": "ru", "text": "Слишком просто: ответ игнорирует возможную роль срочности договора и не спрашивает о недостающем критерии." },
+                { "language": "ckb", "text": "زۆر سادەیە: وەڵامەکە ڕۆڵی ئەگەری کاتی دیاریکراو نادیدە دەگرێت و لەبارەی پێوەری کەمەوە ناپرسێت." },
+                { "language": "kmr", "text": "Pir hêsan e: Bersiv rola mumkin a dem-sînorkirinê ji bîr dike û li ser pîvana kêm napirse." },
+                { "language": "pl", "text": "Zbyt proste: odpowiedź pomija możliwą rolę umowy terminowej i nie pyta o brakujące kryterium." },
+                { "language": "ro", "text": "Prea simplu: răspunsul ignoră rolul posibil al duratei determinate și nu întreabă despre criteriul lipsă." },
+                { "language": "sq", "text": "Shumë e thjeshtë: përgjigjja e injoron rolin e mundshëm të afatit të caktuar dhe nuk pyet për kriterin që mungon." }
+              ],
+              "explanationKey": "ignores-counterpoint"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich bitte nicht um eine mündliche Aufhebung, sondern um Prüfung der Zuordnung und um schriftliche Benennung eines fehlenden Nachweises.",
+              "translations": [
+                { "language": "en", "text": "I am not asking for an oral revocation, but for a check of the assignment and for written naming of any missing proof." },
+                { "language": "fa", "text": "من درخواست لغو شفاهی ندارم، بلکه بررسی اتصال مدارک و نام بردن کتبی از مدرک ناقص را می‌خواهم." },
+                { "language": "ar", "text": "لا أطلب إلغاءً شفهياً، بل فحص الربط وتسمية أي إثبات ناقص كتابياً." },
+                { "language": "tr", "text": "Sözlü bir kaldırma istemiyorum; belgelerin atanmasının kontrolünü ve eksik bir kanıtın yazılı olarak belirtilmesini istiyorum." },
+                { "language": "ru", "text": "Я не прошу устной отмены, а прошу проверить привязку документов и письменно назвать недостающее подтверждение." },
+                { "language": "ckb", "text": "من داوای هەڵوەشاندنەوەی زارەکی ناکەم، بەڵکو پشکنینی بەستنەوە و ناوبردنی نووسراوی بەڵگەی کەم دەکەم." },
+                { "language": "kmr", "text": "Ez daxwaza rakirina devkî nakim, lê daxwaza kontrola girêdanê û navkirina nivîskî ya belgeya kêm dikim." },
+                { "language": "pl", "text": "Nie proszę o ustne uchylenie, lecz o sprawdzenie przypisania i pisemne wskazanie brakującego dokumentu." },
+                { "language": "ro", "text": "Nu cer o anulare verbală, ci verificarea atribuirii și indicarea în scris a unei dovezi lipsă." },
+                { "language": "sq", "text": "Nuk kërkoj anulim me gojë, por kontroll të lidhjes së dokumenteve dhe emërtim me shkrim të dëshmisë që mungon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte ist realistisch, prüfbar und respektiert die Grenze der Sachbearbeitung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is realistic, checkable, and respects the caseworker's limits." },
+                { "language": "fa", "text": "قوی: درخواست واقع‌بینانه، قابل بررسی و مطابق حدود اختیار کارمند است." },
+                { "language": "ar", "text": "قوي: الطلب واقعي وقابل للفحص ويحترم حدود الموظف." },
+                { "language": "tr", "text": "Güçlü: Rica gerçekçi, kontrol edilebilir ve görevlinin sınırlarına saygılı." },
+                { "language": "ru", "text": "Сильно: просьба реалистична, проверяема и уважает пределы полномочий сотрудника." },
+                { "language": "ckb", "text": "بەهێزە: داواکارییەکە واقیعی، پشکنراو و ڕێزگرتنە لە سنووری کارمەند." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz rast, kontrolbar û rêzgirtî ji sînorên karmend e." },
+                { "language": "pl", "text": "Mocne: prośba jest realistyczna, sprawdzalna i respektuje granice pracownika." },
+                { "language": "ro", "text": "Puternic: solicitarea este realistă, verificabilă și respectă limitele funcționarului." },
+                { "language": "sq", "text": "E fortë: kërkesa është realiste, e verifikueshme dhe respekton kufijtë e nëpunësit." }
+              ],
+              "explanationKey": "realistic-request"
+            },
+            {
+              "id": "weak-demand-change",
+              "text": "Dann möchte ich, dass die Entscheidung heute noch geändert wird.",
+              "translations": [
+                { "language": "en", "text": "Then I want the decision to be changed today." },
+                { "language": "fa", "text": "پس می‌خواهم تصمیم همین امروز تغییر کند." },
+                { "language": "ar", "text": "إذن أريد أن يتم تغيير القرار اليوم." },
+                { "language": "tr", "text": "O zaman kararın bugün değiştirilmesini istiyorum." },
+                { "language": "ru", "text": "Тогда я хочу, чтобы решение изменили уже сегодня." },
+                { "language": "ckb", "text": "ئەوا دەمەوێت بڕیارەکە هەر ئەمڕۆ بگۆڕدرێت." },
+                { "language": "kmr", "text": "Wê demê ez dixwazim biryar îro were guhertin." },
+                { "language": "pl", "text": "W takim razie chcę, żeby decyzja została zmieniona jeszcze dzisiaj." },
+                { "language": "ro", "text": "Atunci vreau ca decizia să fie schimbată chiar astăzi." },
+                { "language": "sq", "text": "Atëherë dua që vendimi të ndryshohet që sot." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unrealistisch: Das verlangt eine Entscheidung, die am Schalter meist nicht zugesagt werden kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unrealistic: This demands a decision that usually cannot be promised at the counter." },
+                { "language": "fa", "text": "بیش از حد غیرواقع‌بینانه است: این چیزی را می‌خواهد که معمولاً پشت باجه قابل قول دادن نیست." },
+                { "language": "ar", "text": "غير واقعي أكثر من اللازم: يطلب قراراً لا يمكن عادة الوعد به عند الشباك." },
+                { "language": "tr", "text": "Fazla gerçekçi değil: Gişede genellikle vaat edilemeyecek bir karar talep ediyor." },
+                { "language": "ru", "text": "Слишком нереалистично: это требует решения, которое у окна обычно не могут обещать." },
+                { "language": "ckb", "text": "زۆر ناواقیعییە: ئەمە داوای بڕیارێک دەکات کە زۆرجار لە پشت پەنجەرە بەڵێن نادرێت." },
+                { "language": "kmr", "text": "Pir ne rast e: Ev biryarek dixwaze ku bi gelemperî li şûşeyê soz nayê dayîn." },
+                { "language": "pl", "text": "Zbyt nierealistyczne: żąda decyzji, której zwykle nie można obiecać przy okienku." },
+                { "language": "ro", "text": "Prea nerealist: cere o decizie care de obicei nu poate fi promisă la ghișeu." },
+                { "language": "sq", "text": "Shumë jorealiste: kërkon një vendim që zakonisht nuk mund të premtohet në sportel." }
+              ],
+              "explanationKey": "unrealistic-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich achte auf die Frist; für die Begründung brauche ich aber die Klärung, ob die Unterlagen nicht zugeordnet oder inhaltlich unzureichend waren.",
+              "translations": [
+                { "language": "en", "text": "I will pay attention to the deadline; for the reasoning, however, I need clarification whether the documents were not assigned or were insufficient in substance." },
+                { "language": "fa", "text": "من مهلت را رعایت می‌کنم؛ اما برای دلیل‌نویسی لازم دارم روشن شود مدارک وصل نشده بودند یا از نظر محتوایی ناکافی بودند." },
+                { "language": "ar", "text": "سأنتبه إلى المهلة؛ لكنني أحتاج للتعليل إلى توضيح هل لم تُربط المستندات أم كانت غير كافية من حيث المحتوى." },
+                { "language": "tr", "text": "Süreye dikkat edeceğim; ancak gerekçe için belgelerin atanmadığını mı yoksa içerik açısından yetersiz mi olduğunu açıklığa kavuşturmam gerekiyor." },
+                { "language": "ru", "text": "Я буду следить за сроком; однако для обоснования мне нужно уточнить, были ли документы не привязаны или недостаточны по содержанию." },
+                { "language": "ckb", "text": "من ئاگاداری ماوەکە دەبم؛ بەڵام بۆ هۆکارنووسین پێویستم بە ڕوونکردنەوەی ئەوەیە ئایا بەڵگەکان نەبەستراون یان لە ناوەڕۆکدا ناکافی بوون." },
+                { "language": "kmr", "text": "Ez ê balê bidim muhletê; lê ji bo sedemê pêwîst e zelal bibe gelo belge nehatine girêdan an ji aliyê naverokê ve têr nebûn." },
+                { "language": "pl", "text": "Będę pilnował terminu; do uzasadnienia potrzebuję jednak wyjaśnienia, czy dokumenty nie zostały przypisane, czy były merytorycznie niewystarczające." },
+                { "language": "ro", "text": "Voi fi atent la termen; pentru motivare însă am nevoie de clarificarea dacă documentele nu au fost atribuite sau au fost insuficiente ca fond." },
+                { "language": "sq", "text": "Do ta respektoj afatin; por për arsyetimin më duhet sqarimi nëse dokumentet nuk janë lidhur me dosjen apo kanë qenë të pamjaftueshme në përmbajtje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Fristwahrung und inhaltliche Klärung sauber.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer clearly separates observing the deadline from clarifying the substance." },
+                { "language": "fa", "text": "قوی: پاسخ رعایت مهلت و روشن‌سازی محتوایی را تمیز از هم جدا می‌کند." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بوضوح بين حفظ المهلة والتوضيح الموضوعي." },
+                { "language": "tr", "text": "Güçlü: Yanıt süreyi korumayı ve içerik açıklamasını net biçimde ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ чётко разделяет соблюдение срока и содержательное уточнение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پاراستنی ماوە و ڕوونکردنەوەی ناوەڕۆکی بە ڕوونی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv parastina muhletê û zelalkirina naverokê bi zelalî ji hev veqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź jasno oddziela pilnowanie terminu od wyjaśnienia merytorycznego." },
+                { "language": "ro", "text": "Puternic: răspunsul separă clar respectarea termenului de clarificarea de fond." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan qartë respektimin e afatit nga sqarimi përmbajtësor." }
+              ],
+              "explanationKey": "deadline-plus-substance"
+            },
+            {
+              "id": "weak-deadline-only",
+              "text": "Gut, dann lege ich einfach Widerspruch ein und warte ab.",
+              "translations": [
+                { "language": "en", "text": "Fine, then I will simply file an objection and wait." },
+                { "language": "fa", "text": "خوب، پس فقط اعتراض رسمی می‌دهم و صبر می‌کنم." },
+                { "language": "ar", "text": "حسناً، إذن سأقدم اعتراضاً فقط وأنتظر." },
+                { "language": "tr", "text": "Tamam, o zaman sadece itiraz eder ve beklerim." },
+                { "language": "ru", "text": "Хорошо, тогда я просто подам возражение и подожду." },
+                { "language": "ckb", "text": "باشە، ئەوا تەنها ناڕەزایی فەرمی پێشکەش دەکەم و چاوەڕێ دەکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez tenê îtirazê pêşkêş dikim û li bendê dimînim." },
+                { "language": "pl", "text": "Dobrze, w takim razie po prostu złożę odwołanie i poczekam." },
+                { "language": "ro", "text": "Bine, atunci depun pur și simplu contestație și aștept." },
+                { "language": "sq", "text": "Mirë, atëherë thjesht bëj ankim dhe pres." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu passiv: Sie verlieren die Chance, die Begründung gezielter vorzubereiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too passive: You lose the chance to prepare the reasoning more precisely." },
+                { "language": "fa", "text": "اشتباه نیست، اما بیش از حد منفعل است: فرصت آماده‌کردن دقیق‌تر دلیل را از دست می‌دهید." },
+                { "language": "ar", "text": "ليس خطأ، لكنه سلبي أكثر من اللازم: تفقد فرصة إعداد التعليل بدقة أكبر." },
+                { "language": "tr", "text": "Yanlış değil, ama fazla pasif: Gerekçeyi daha hedefli hazırlama şansını kaybedersiniz." },
+                { "language": "ru", "text": "Не неверно, но слишком пассивно: вы теряете шанс подготовить обоснование точнее." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر پاسیوە: دەرفەتی ئامادەکردنی هۆکار بە وردی زیاتر لەدەست دەدەیت." },
+                { "language": "kmr", "text": "Xelet nîne, lê pir pasîv e: Hûn derfeta amadekirina sedemê ya rasttir ji dest didin." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt bierne: traci Pan szansę na dokładniejsze przygotowanie uzasadnienia." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea pasiv: pierdeți șansa de a pregăti motivarea mai precis." },
+                { "language": "sq", "text": "Nuk është gabim, por është shumë pasive: humbisni mundësinë ta përgatitni arsyetimin më saktë." }
+              ],
+              "explanationKey": "passive-objection-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Bitte notieren Sie die sachliche Prüfbitte zum Einkommensnachweis und die Frage, ob die hochgeladenen Unterlagen berücksichtigt wurden.",
+              "translations": [
+                { "language": "en", "text": "Please note the objective review request concerning proof of income and the question whether the uploaded documents were considered." },
+                { "language": "fa", "text": "لطفاً درخواست بررسی محترمانه درباره مدرک درآمد و این سؤال را یادداشت کنید که آیا مدارک بارگذاری‌شده لحاظ شده‌اند یا نه." },
+                { "language": "ar", "text": "يرجى تدوين طلب المراجعة الموضوعية بشأن إثبات الدخل والسؤال عما إذا كانت المستندات المرفوعة قد أُخذت في الاعتبار." },
+                { "language": "tr", "text": "Lütfen gelir belgesine ilişkin nesnel inceleme talebini ve yüklenen belgelerin dikkate alınıp alınmadığı sorusunu not edin." },
+                { "language": "ru", "text": "Пожалуйста, отметьте деловую просьбу о проверке подтверждения дохода и вопрос, были ли учтены загруженные документы." },
+                { "language": "ckb", "text": "تکایە داواکاری پشکنینی بابەتی سەبارەت بە بەڵگەی داهات و پرسیاری ئەوە تۆمار بکە کە ئایا بەڵگە بارکراوەکان لەبەرچاو گیراون یان نا." },
+                { "language": "kmr", "text": "Kerema xwe daxwaza kontrola rastûrast li ser belgeya dahatê û pirsa ka belgeyên barkirî hatine hesibandin yan na binivîsin." },
+                { "language": "pl", "text": "Proszę zanotować rzeczową prośbę o sprawdzenie potwierdzenia dochodu oraz pytanie, czy uwzględniono wgrane dokumenty." },
+                { "language": "ro", "text": "Vă rog să notați solicitarea obiectivă de verificare privind dovada venitului și întrebarea dacă documentele încărcate au fost luate în considerare." },
+                { "language": "sq", "text": "Ju lutem shënoni kërkesën objektive për kontroll mbi dëshminë e të ardhurave dhe pyetjen nëse dokumentet e ngarkuara janë marrë parasysh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung ist knapp, sachlich und in der Akte verwendbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary is brief, objective, and usable in the file." },
+                { "language": "fa", "text": "قوی: خلاصه کوتاه، محترمانه و قابل استفاده در پرونده است." },
+                { "language": "ar", "text": "قوي: الملخص قصير وموضوعي وقابل للاستخدام في الملف." },
+                { "language": "tr", "text": "Güçlü: Özet kısa, nesnel ve dosyada kullanılabilir." },
+                { "language": "ru", "text": "Сильно: резюме краткое, деловое и пригодное для дела." },
+                { "language": "ckb", "text": "بەهێزە: پوختەکە کورت، بابەتی و بۆ کەیس بەکارهێنراوە." },
+                { "language": "kmr", "text": "Xurt e: Kurte kurt, rastûrast û ji bo dosyeyê bikêr e." },
+                { "language": "pl", "text": "Mocne: podsumowanie jest krótkie, rzeczowe i użyteczne w aktach." },
+                { "language": "ro", "text": "Puternic: rezumatul este scurt, obiectiv și utilizabil în dosar." },
+                { "language": "sq", "text": "E fortë: përmbledhja është e shkurtër, objektive dhe e përdorshme në dosje." }
+              ],
+              "explanationKey": "file-ready-note"
+            },
+            {
+              "id": "weak-too-long-summary",
+              "text": "Bitte notieren Sie, dass ich die Entscheidung unfair finde, weil ich eigentlich alles richtig gemacht habe.",
+              "translations": [
+                { "language": "en", "text": "Please note that I find the decision unfair because I actually did everything correctly." },
+                { "language": "fa", "text": "لطفاً یادداشت کنید که من تصمیم را ناعادلانه می‌دانم، چون در واقع همه چیز را درست انجام داده‌ام." },
+                { "language": "ar", "text": "يرجى تدوين أنني أرى القرار غير عادل لأنني في الواقع فعلت كل شيء بشكل صحيح." },
+                { "language": "tr", "text": "Lütfen kararı haksız bulduğumu not edin, çünkü aslında her şeyi doğru yaptım." },
+                { "language": "ru", "text": "Пожалуйста, отметьте, что я считаю решение несправедливым, потому что фактически всё сделал правильно." },
+                { "language": "ckb", "text": "تکایە تۆمار بکە کە من بڕیارەکە نادادپەروەرانە دەبینم، چونکە لە ڕاستیدا هەموو شتێکم بە دروستی کردووە." },
+                { "language": "kmr", "text": "Kerema xwe binivîsin ku ez biryarê neadil dibînim, ji ber ku min bi rastî her tişt rast kiriye." },
+                { "language": "pl", "text": "Proszę zanotować, że uważam decyzję za niesprawiedliwą, bo właściwie wszystko zrobiłem poprawnie." },
+                { "language": "ro", "text": "Vă rog să notați că mi se pare decizia nedreaptă, deoarece de fapt am făcut totul corect." },
+                { "language": "sq", "text": "Ju lutem shënoni se e konsideroj vendimin të padrejtë, sepse në fakt i kam bërë të gjitha siç duhet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wertend: Die Aussage ist emotional nachvollziehbar, aber für die Akte weniger hilfreich als Beleg, Textstelle und Prüfbitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evaluative: The statement is emotionally understandable, but less useful for the file than evidence, passage, and review request." },
+                { "language": "fa", "text": "بیش از حد ارزشی است: جمله از نظر احساسی قابل فهم است، اما برای پرونده کمتر از مدرک، بخش متن و درخواست بررسی کمک می‌کند." },
+                { "language": "ar", "text": "تقييمي أكثر من اللازم: العبارة مفهومة عاطفياً، لكنها أقل فائدة للملف من الدليل وموضع النص وطلب المراجعة." },
+                { "language": "tr", "text": "Fazla değerlendirici: İfade duygusal olarak anlaşılır, ama dosya için kanıt, metin bölümü ve inceleme talebinden daha az yararlıdır." },
+                { "language": "ru", "text": "Слишком оценочно: высказывание эмоционально понятно, но для дела менее полезно, чем доказательство, место в тексте и просьба о проверке." },
+                { "language": "ckb", "text": "زۆر هەڵسەنگاندنە: قسەکە لە ڕووی هەستییەوە تێگەیشتراوە، بەڵام بۆ کەیس لە بەڵگە، شوێنی دەق و داواکاری پشکنین کەمتر یارمەتیدەرە." },
+                { "language": "kmr", "text": "Pir nirxandinî ye: Gotin ji aliyê hestî ve têgihiştbar e, lê ji bo dosyeyê ji belge, cihê nivîsê û daxwaza kontrolê kêmtir alîkar e." },
+                { "language": "pl", "text": "Zbyt oceniające: wypowiedź jest emocjonalnie zrozumiała, ale dla akt mniej pomocna niż dowód, fragment tekstu i prośba o sprawdzenie." },
+                { "language": "ro", "text": "Prea evaluativ: afirmația este de înțeles emoțional, dar mai puțin utilă pentru dosar decât dovada, pasajul și solicitarea de verificare." },
+                { "language": "sq", "text": "Shumë vlerësuese: pohimi është i kuptueshëm emocionalisht, por për dosjen ndihmon më pak se prova, pjesa e tekstit dhe kërkesa për kontroll." }
+              ],
+              "explanationKey": "evaluative-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Beginnen Sie mit einem begrenzten Prüfpunkt. So klingt die Nachfrage sachlich und nicht wie ein pauschaler Vorwurf.",
+          "translations": [
+            { "language": "en", "text": "Start with a limited review point. This makes the question sound objective rather than like a general accusation." },
+            { "language": "fa", "text": "با یک نکته بررسی محدود شروع کنید. این باعث می‌شود سؤال محترمانه و نه مثل اتهام کلی شنیده شود." },
+            { "language": "ar", "text": "ابدأ بنقطة فحص محددة. هكذا يبدو السؤال موضوعياً لا كاتهام عام." },
+            { "language": "tr", "text": "Sınırlı bir kontrol noktasıyla başlayın. Böylece soru genel bir suçlama değil, nesnel bir açıklama gibi duyulur." },
+            { "language": "ru", "text": "Начните с ограниченного пункта проверки. Так вопрос звучит делово, а не как общее обвинение." },
+            { "language": "ckb", "text": "بە خاڵێکی پشکنینی سنووردار دەست پێبکە. بەم شێوەیە پرسیارەکە بابەتی دەنگ دەدات، نە وەک تۆمەتێکی گشتی." },
+            { "language": "kmr", "text": "Bi xaleke kontrolê ya sînorkirî dest pê bikin. Bi vî awayî pirs rastûrast tê bihîstin, ne wek tawanbarkirineke giştî." },
+            { "language": "pl", "text": "Zacznij od ograniczonego punktu sprawdzenia. Wtedy pytanie brzmi rzeczowo, a nie jak ogólny zarzut." },
+            { "language": "ro", "text": "Începeți cu un punct de verificare limitat. Astfel întrebarea sună obiectiv, nu ca o acuzație generală." },
+            { "language": "sq", "text": "Filloni me një pikë kontrolli të kufizuar. Kështu pyetja tingëllon objektive dhe jo si akuzë e përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Bei C1 reicht 'ich habe Unterlagen geschickt' nicht. Nennen Sie Textstelle, Dokument und Datum.",
+          "translations": [
+            { "language": "en", "text": "At C1, 'I sent documents' is not enough. Name the passage, document, and date." },
+            { "language": "fa", "text": "در سطح C1 گفتن «مدارک فرستاده‌ام» کافی نیست. بخش متن، مدرک و تاریخ را نام ببرید." },
+            { "language": "ar", "text": "في مستوى C1 لا يكفي قول 'أرسلت مستندات'. سم موضع النص والمستند والتاريخ." },
+            { "language": "tr", "text": "C1 düzeyinde 'belge gönderdim' yeterli değildir. Metin bölümünü, belgeyi ve tarihi belirtin." },
+            { "language": "ru", "text": "На уровне C1 недостаточно сказать 'я отправил документы'. Назовите место в тексте, документ и дату." },
+            { "language": "ckb", "text": "لە ئاستی C1دا 'بەڵگەم ناردووە' بەس نییە. شوێنی دەق، بەڵگە و بەروار ناو ببە." },
+            { "language": "kmr", "text": "Di asta C1 de 'min belge şandine' têr nake. Cihê nivîsê, belge û dîrokê bi nav bikin." },
+            { "language": "pl", "text": "Na poziomie C1 'wysłałem dokumenty' nie wystarcza. Wskaż fragment tekstu, dokument i datę." },
+            { "language": "ro", "text": "La C1 nu este suficient să spuneți „am trimis documente”. Numiți pasajul, documentul și data." },
+            { "language": "sq", "text": "Në nivelin C1 nuk mjafton të thuash 'kam dërguar dokumente'. Përmendni pjesën e tekstit, dokumentin dhe datën." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "boundary",
+          "text": "Eine gute Prüfbitte verlangt keine sofortige Entscheidung. Sie macht den nächsten prüfbaren Schritt klar.",
+          "translations": [
+            { "language": "en", "text": "A good review request does not demand an immediate decision. It makes the next checkable step clear." },
+            { "language": "fa", "text": "یک درخواست بررسی خوب تصمیم فوری نمی‌خواهد. قدم بعدی قابل بررسی را روشن می‌کند." },
+            { "language": "ar", "text": "طلب المراجعة الجيد لا يطالب بقرار فوري. بل يوضح الخطوة التالية القابلة للفحص." },
+            { "language": "tr", "text": "İyi bir inceleme talebi hemen karar istemez. Bir sonraki kontrol edilebilir adımı netleştirir." },
+            { "language": "ru", "text": "Хорошая просьба о проверке не требует немедленного решения. Она делает следующий проверяемый шаг ясным." },
+            { "language": "ckb", "text": "داواکاری پشکنینی باش بڕیاری دەستبەجێ ناوێت. هەنگاوی داهاتووی پشکنراو ڕوون دەکات." },
+            { "language": "kmr", "text": "Daxwaza kontrolê ya baş biryara tavilê naxwaze. Ew gava din a kontrolbar zelal dike." },
+            { "language": "pl", "text": "Dobra prośba o sprawdzenie nie żąda natychmiastowej decyzji. Wyjaśnia kolejny sprawdzalny krok." },
+            { "language": "ro", "text": "O solicitare bună de verificare nu cere o decizie imediată. Ea clarifică următorul pas verificabil." },
+            { "language": "sq", "text": "Një kërkesë e mirë për kontroll nuk kërkon vendim të menjëhershëm. Ajo e bën të qartë hapin tjetër të verifikueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Trennen Sie Fristwahrung und Sachklärung. So vermeiden Sie, dass ein wichtiges Rechtsmittel durch ein Gespräch ersetzt wirkt.",
+          "translations": [
+            { "language": "en", "text": "Separate observing the deadline from clarifying the substance. This avoids making an important formal remedy seem replaced by a conversation." },
+            { "language": "fa", "text": "رعایت مهلت و روشن‌سازی موضوع را جدا کنید. این مانع می‌شود گفت‌وگو جایگزین یک راه رسمی مهم به نظر برسد." },
+            { "language": "ar", "text": "افصل بين حفظ المهلة وتوضيح الموضوع. هكذا تتجنب أن يبدو الحديث بديلاً عن وسيلة قانونية مهمة." },
+            { "language": "tr", "text": "Süreyi korumayı ve konuyu açıklığa kavuşturmayı ayırın. Böylece önemli bir resmi yolun konuşmayla değiştirilmiş gibi görünmesini önlersiniz." },
+            { "language": "ru", "text": "Разделяйте соблюдение срока и содержательное уточнение. Так вы избегаете впечатления, что важная формальная мера заменяется разговором." },
+            { "language": "ckb", "text": "پاراستنی ماوە و ڕوونکردنەوەی بابەت جیا بکەوە. بەم شێوەیە ڕێگایەکی فەرمی گرنگ وەک جێگرەوەی گفتوگۆ دەرناکەوێت." },
+            { "language": "kmr", "text": "Parastina muhletê û zelalkirina naverokê ji hev veqetînin. Bi vî awayî rêya fermî ya girîng wek ku bi axaftinê hatiye guhertin xuya nake." },
+            { "language": "pl", "text": "Oddziel pilnowanie terminu od wyjaśnienia merytorycznego. Dzięki temu ważny środek formalny nie wygląda na zastąpiony rozmową." },
+            { "language": "ro", "text": "Separați respectarea termenului de clarificarea de fond. Astfel evitați ca o cale formală importantă să pară înlocuită de o discuție." },
+            { "language": "sq", "text": "Ndani respektimin e afatit nga sqarimi përmbajtësor. Kështu shmangni që një mjet formal i rëndësishëm të duket i zëvendësuar nga një bisedë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Eine aktenfähige Zusammenfassung enthält Anlass, Beleglage und gewünschte Klärung, aber keine emotionalen Bewertungen.",
+          "translations": [
+            { "language": "en", "text": "A file-ready summary contains the reason, evidence situation, and requested clarification, but no emotional evaluations." },
+            { "language": "fa", "text": "یک خلاصه مناسب پرونده شامل دلیل مراجعه، وضعیت مدارک و روشن‌سازی خواسته‌شده است، نه قضاوت احساسی." },
+            { "language": "ar", "text": "الملخص المناسب للملف يتضمن السبب ووضع الأدلة والتوضيح المطلوب، لا تقييمات عاطفية." },
+            { "language": "tr", "text": "Dosyaya uygun bir özet gerekçeyi, belge durumunu ve istenen açıklamayı içerir; duygusal değerlendirme içermez." },
+            { "language": "ru", "text": "Подходящее для дела резюме содержит повод, ситуацию с доказательствами и запрошенное уточнение, но не эмоциональные оценки." },
+            { "language": "ckb", "text": "پوختەی گونجاو بۆ کەیس هۆکار، دۆخی بەڵگەکان و ڕوونکردنەوەی داواکراو لەخۆ دەگرێت، نە هەڵسەنگاندنی هەستی." },
+            { "language": "kmr", "text": "Kurteya guncaw ji bo dosyeyê sedem, rewşa belgeyan û zelalkirina xwestî dihewîne, ne nirxandinên hestî." },
+            { "language": "pl", "text": "Podsumowanie odpowiednie do akt zawiera powód, stan dowodów i oczekiwane wyjaśnienie, ale nie emocjonalne oceny." },
+            { "language": "ro", "text": "Un rezumat potrivit pentru dosar conține motivul, situația dovezilor și clarificarea solicitată, dar nu evaluări emoționale." },
+            { "language": "sq", "text": "Një përmbledhje e përshtatshme për dosje përmban arsyen, gjendjen e provave dhe sqarimin e kërkuar, por jo vlerësime emocionale." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "government-office-decision-review",
+          "placement": "hero",
+          "purpose": "Show a calm public-office conversation about a formal decision, with documents on the counter and no real personal data.",
+          "altText": "Eine Person spricht ruhig mit einer Sachbearbeiterin an einem Behördenschalter über einen Bescheid.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A person calmly speaks with a caseworker at a public-office counter about an official decision." },
+            { "language": "fa", "text": "فردی با آرامش پشت باجه اداره با کارمند پرونده درباره یک تصمیم اداری صحبت می‌کند." },
+            { "language": "ar", "text": "شخص يتحدث بهدوء مع موظفة عند شباك جهة إدارية حول قرار رسمي." },
+            { "language": "tr", "text": "Bir kişi resmi kurum gişesinde bir kararla ilgili görevliyle sakin biçimde konuşuyor." },
+            { "language": "ru", "text": "Человек спокойно говорит с сотрудницей у окна ведомства об официальном решении." },
+            { "language": "ckb", "text": "کەسێک بە ئارامی لە پشت پەنجەرەی فەرمانگە لەگەڵ کارمەندێک لەسەر بڕیارێکی فەرمی قسە دەکات." },
+            { "language": "kmr", "text": "Kesek bi aramî li şûşeya saziyê bi karmendekê re li ser biryareke fermî diaxive." },
+            { "language": "pl", "text": "Osoba spokojnie rozmawia z urzędniczką przy okienku o decyzji urzędowej." },
+            { "language": "ro", "text": "O persoană vorbește calm cu o funcționară la ghișeu despre o decizie oficială." },
+            { "language": "sq", "text": "Një person flet qetësisht me një nëpunëse në sportelin e një zyre publike për një vendim zyrtar." }
+          ],
+          "imagePrompt": "Clean educational illustration of a German public-office counter. A calm adult applicant discusses an official letter with a professional caseworker; neutral documents on the counter with no readable personal data, no logos, diverse adults, accessible composition, soft daylight, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

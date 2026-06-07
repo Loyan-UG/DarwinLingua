@@ -1,0 +1,806 @@
+{
+  "packageId": "roleplays-c1-core-12-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 12 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 12",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ein-schwieriges-feedbackgespraech-fuehren",
+      "linkedDialogueSlug": null,
+      "title": "Ein schwieriges Feedbackgespräch führen",
+      "titleTranslations": [
+        { "language": "en", "text": "Leading a difficult feedback conversation" },
+        { "language": "fa", "text": "هدایت یک گفت‌وگوی بازخورد دشوار" },
+        { "language": "ar", "text": "إدارة محادثة تغذية راجعة صعبة" },
+        { "language": "tr", "text": "Zor bir geri bildirim görüşmesi yürütmek" },
+        { "language": "ru", "text": "Провести сложный разговор с обратной связью" },
+        { "language": "ckb", "text": "بەڕێوەبردنی گفتوگۆیەکی دژواری فیدباک" },
+        { "language": "kmr", "text": "Rêvebirina axaftineke dijwar a vegerandinê" },
+        { "language": "pl", "text": "Przeprowadzenie trudnej rozmowy feedbackowej" },
+        { "language": "ro", "text": "Conducerea unei discuții dificile de feedback" },
+        { "language": "sq", "text": "Drejtimi i një bisede të vështirë feedback-u" }
+      ],
+      "description": "In einem C1-Arbeitsgespräch geben Sie einer Kollegin kritisches Feedback zu wiederholten Übergabefehlern, ohne die Beziehung zu beschädigen oder die Standards zu verwässern.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 workplace conversation, you give a colleague critical feedback about repeated handover errors without damaging the relationship or diluting the standards." },
+        { "language": "fa", "text": "در یک گفت‌وگوی کاری سطح C1، به یک همکار درباره خطاهای تکراری در تحویل کار بازخورد انتقادی می‌دهید، بدون اینکه رابطه آسیب ببیند یا استانداردها مبهم شوند." },
+        { "language": "ar", "text": "في محادثة عمل بمستوى C1، تقدم لزميلة تغذية راجعة نقدية حول أخطاء متكررة في التسليم دون الإضرار بالعلاقة أو إضعاف المعايير." },
+        { "language": "tr", "text": "C1 düzeyinde bir iş görüşmesinde, bir çalışma arkadaşınıza tekrarlanan devir hataları hakkında ilişkiye zarar vermeden ve standartları sulandırmadan eleştirel geri bildirim verirsiniz." },
+        { "language": "ru", "text": "В рабочем разговоре уровня C1 вы даете коллеге критическую обратную связь о повторяющихся ошибках передачи, не разрушая отношения и не размывая стандарты." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی کاری ئاستی C1دا، بە هاوکارێک فیدباکی ڕەخنەیی دەدەیت لەسەر هەڵە دووبارەبووەکانی گواستنەوەی کار، بەبێ زیان گەیاندن بە پەیوەندی یان لاوازکردنی ستانداردەکان." },
+        { "language": "kmr", "text": "Di axaftineke kar a asta C1 de, hûn ji hevkarekê re derbarê şaşiyên dubare yên radestkirinê vegerandineke rexneyî didin bêyî ku têkilî xerab bibe an standard lawaz bibin." },
+        { "language": "pl", "text": "W rozmowie zawodowej na poziomie C1 dajesz koleżance krytyczny feedback dotyczący powtarzających się błędów przy przekazaniu pracy, nie niszcząc relacji ani nie rozmywając standardów." },
+        { "language": "ro", "text": "Într-o conversație profesională de nivel C1, oferiți unei colege feedback critic despre erori repetate la predare, fără să deteriorați relația sau să diluați standardele." },
+        { "language": "sq", "text": "Në një bisedë pune të nivelit C1, i jepni një kolege feedback kritik për gabime të përsëritura në dorëzim pa dëmtuar marrëdhënien ose pa zbutur standardet." }
+      ],
+      "learnerGoal": "Ein schwieriges Feedbackgespräch führen: Beobachtung und Wirkung trennen, Standards klar benennen, die Reaktion der Kollegin aufnehmen, konkrete Unterstützung anbieten und verbindliche nächste Schritte vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Lead a difficult feedback conversation: separate observation and impact, name standards clearly, take up the colleague's reaction, offer concrete support, and agree on binding next steps." },
+        { "language": "fa", "text": "یک گفت‌وگوی بازخورد دشوار را هدایت کنید: مشاهده و اثر را جدا کنید، استانداردها را روشن نام ببرید، واکنش همکار را بگیرید، حمایت مشخص پیشنهاد کنید و گام‌های بعدی الزام‌آور توافق کنید." },
+        { "language": "ar", "text": "أدر محادثة تغذية راجعة صعبة: افصل بين الملاحظة والأثر، واذكر المعايير بوضوح، وتناول رد فعل الزميلة، واعرض دعماً ملموساً، واتفق على خطوات تالية ملزمة." },
+        { "language": "tr", "text": "Zor bir geri bildirim görüşmesi yürütün: gözlem ile etkiyi ayırın, standartları net belirtin, çalışma arkadaşının tepkisini ele alın, somut destek sunun ve bağlayıcı sonraki adımlar üzerinde anlaşın." },
+        { "language": "ru", "text": "Провести сложный разговор с обратной связью: отделить наблюдение от эффекта, ясно назвать стандарты, принять реакцию коллеги, предложить конкретную поддержку и согласовать обязательные следующие шаги." },
+        { "language": "ckb", "text": "گفتوگۆیەکی دژواری فیدباک بەڕێوە ببە: تێبینی و کاریگەری جیا بکە، ستانداردەکان بە ڕوونی ناو ببە، وەڵامی هاوکارەکە وەربگرە، پشتگیریی ڕوون پێشنیار بکە و هەنگاوە داهاتووە پابەندەکان ڕێک بکە." },
+        { "language": "kmr", "text": "Axaftineke dijwar a vegerandinê rêve bibin: dîtin û bandorê veqetînin, standardan zelal nav bikin, bersiva hevkarê bigirin, piştgiriyeke konkret pêşniyar bikin û gavên din ên girêdayî li hev bikin." },
+        { "language": "pl", "text": "Przeprowadź trudną rozmowę feedbackową: oddziel obserwację od skutku, jasno nazwij standardy, podejmij reakcję koleżanki, zaoferuj konkretne wsparcie i uzgodnij wiążące kolejne kroki." },
+        { "language": "ro", "text": "Conduceți o discuție dificilă de feedback: separați observația de impact, numiți clar standardele, preluați reacția colegei, oferiți sprijin concret și conveniți pași următori obligatorii." },
+        { "language": "sq", "text": "Drejtoni një bisedë të vështirë feedback-u: ndani vëzhgimin nga ndikimi, përmendni qartë standardet, merrni parasysh reagimin e koleges, ofroni mbështetje konkrete dhe bini dakord për hapa të detyrueshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 12,
+      "roles": [
+        {
+          "roleKey": "team-lead",
+          "displayName": "Teamleitung",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "قائد الفريق" },
+            { "language": "tr", "text": "Ekip lideri" },
+            { "language": "ru", "text": "Руководитель команды" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Lider zespołu" },
+            { "language": "ro", "text": "Coordonatorul echipei" },
+            { "language": "sq", "text": "Drejtuesi i ekipit" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "Çalışma arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka" },
+            { "language": "ro", "text": "Colega" },
+            { "language": "sq", "text": "Kolegia" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Sie",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "شما" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Siz" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Hûn" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Dumneavoastră" },
+            { "language": "sq", "text": "Ju" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "team-lead",
+          "baseText": "Danke, dass Sie sich Zeit nehmen. Ich möchte heute über die Übergaben der letzten drei Wochen sprechen. Mir geht es nicht um einen Vorwurf, sondern darum, dass wir die Qualität wieder stabil bekommen.",
+          "translations": [
+            { "language": "en", "text": "Thank you for taking the time. Today I would like to talk about the handovers from the last three weeks. I am not interested in blaming you, but in stabilizing the quality again." },
+            { "language": "fa", "text": "ممنون که وقت گذاشتید. امروز می‌خواهم درباره تحویل‌های سه هفته گذشته صحبت کنم. هدفم سرزنش نیست، بلکه این است که کیفیت را دوباره پایدار کنیم." },
+            { "language": "ar", "text": "شكراً لتخصيص الوقت. أود اليوم أن أتحدث عن عمليات التسليم خلال الأسابيع الثلاثة الماضية. لا يهمني توجيه اللوم، بل أن نعيد استقرار الجودة." },
+            { "language": "tr", "text": "Zaman ayırdığınız için teşekkür ederim. Bugün son üç haftadaki devirleri konuşmak istiyorum. Amacım suçlamak değil, kaliteyi yeniden istikrarlı hale getirmek." },
+            { "language": "ru", "text": "Спасибо, что нашли время. Сегодня я хотел бы поговорить о передачах за последние три недели. Мне важно не обвинение, а то, чтобы мы снова стабилизировали качество." },
+            { "language": "ckb", "text": "سوپاس بۆ ئەوەی کاتت دانا. ئەمڕۆ دەمەوێت باس لە گواستنەوەکانی سێ هەفتەی ڕابردوو بکەم. مەبەستم تاوانبارکردن نییە، بەڵکو ئەوەیە کە کوالیتی دووبارە جێگیر بکەین." },
+            { "language": "kmr", "text": "Spas ku we dem veqetand. Îro ez dixwazim li ser radestkirinên sê hefteyên dawî biaxivim. Armanca min sûcdarkirin nîne, lê ew e ku em kalîteyê dîsa aram bikin." },
+            { "language": "pl", "text": "Dziękuję, że znalazła Pani czas. Dziś chciałbym porozmawiać o przekazaniach z ostatnich trzech tygodni. Nie chodzi mi o zarzut, lecz o to, żebyśmy znów ustabilizowali jakość." },
+            { "language": "ro", "text": "Mulțumesc că v-ați făcut timp. Astăzi aș vrea să vorbim despre predările din ultimele trei săptămâni. Nu urmăresc să acuz, ci să stabilizăm din nou calitatea." },
+            { "language": "sq", "text": "Faleminderit që gjetët kohë. Sot dua të flasim për dorëzimet e tre javëve të fundit. Nuk synoj fajësim, por që ta stabilizojmë përsëri cilësinë." }
+          ],
+          "function": "feedback-opening",
+          "toneNote": "Die Teamleitung eröffnet klar, aber nicht anklagend.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte mit einer konkreten Beobachtung beginnen: In drei Übergaben fehlten jeweils die Risikohinweise zu offenen Kundenfragen. Dadurch musste der Support nachfragen, und zwei Rückmeldungen gingen verspätet raus.",
+          "translations": [
+            { "language": "en", "text": "I would like to begin with a concrete observation: in three handovers, the risk notes on open customer questions were missing. As a result, support had to ask follow-up questions, and two responses went out late." },
+            { "language": "fa", "text": "می‌خواهم با یک مشاهده مشخص شروع کنم: در سه تحویل، هر بار یادداشت‌های ریسک درباره پرسش‌های باز مشتریان نبود. در نتیجه پشتیبانی مجبور شد دوباره سؤال کند و دو پاسخ با تأخیر ارسال شد." },
+            { "language": "ar", "text": "أود أن أبدأ بملاحظة محددة: في ثلاث عمليات تسليم، كانت ملاحظات المخاطر حول أسئلة العملاء المفتوحة مفقودة. ونتيجة لذلك اضطر الدعم إلى الاستفسار، وخرج ردان متأخرين." },
+            { "language": "tr", "text": "Somut bir gözlemle başlamak istiyorum: üç devirde açık müşteri sorularına ilişkin risk notları eksikti. Bu nedenle destek ekibi yeniden sormak zorunda kaldı ve iki yanıt gecikmeli çıktı." },
+            { "language": "ru", "text": "Я хотел бы начать с конкретного наблюдения: в трех передачах отсутствовали указания на риски по открытым вопросам клиентов. Из-за этого поддержке пришлось уточнять, и два ответа ушли с задержкой." },
+            { "language": "ckb", "text": "دەمەوێت بە تێبینییەکی ڕوون دەست پێبکەم: لە سێ گواستنەوەدا، تێبینییەکانی مەترسی بۆ پرسیارە کراوەکانی کڕیاران نەبوون. بەهۆی ئەمە پشتیوانی ناچار بوو پرسیاری زیاتر بکات و دوو وەڵام بە دواخستن نێردران." },
+            { "language": "kmr", "text": "Ez dixwazim bi dîtineke konkret dest pê bikim: di sê radestkirinan de notên xeterê yên derbarê pirsên vekirî yên mişteriyan kêm bûn. Ji ber vê yekê piştgirî neçar ma pirsên din bike, û du bersiv dereng hatin şandin." },
+            { "language": "pl", "text": "Chciałbym zacząć od konkretnej obserwacji: w trzech przekazaniach brakowało wskazówek dotyczących ryzyka przy otwartych pytaniach klientów. W efekcie support musiał dopytywać, a dwie odpowiedzi wyszły z opóźnieniem." },
+            { "language": "ro", "text": "Aș vrea să încep cu o observație concretă: în trei predări au lipsit notele de risc privind întrebările deschise ale clienților. Din acest motiv, suportul a trebuit să clarifice, iar două răspunsuri au fost trimise cu întârziere." },
+            { "language": "sq", "text": "Dua të filloj me një vëzhgim konkret: në tre dorëzime mungonin shënimet e rrezikut për pyetjet e hapura të klientëve. Si rezultat, mbështetja duhej të pyeste sërish dhe dy përgjigje dolën me vonesë." }
+          ],
+          "function": "specific-observation-impact",
+          "toneNote": "C1: Beobachtung und Wirkung werden konkret genannt, ohne Charakterurteil.",
+          "expectedLearnerAction": "Name a concrete observation and its impact without personal judgment."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Ich verstehe den Punkt, aber die letzten Wochen waren extrem voll. Ich hatte das Gefühl, dass ich nur noch hinterherlaufe.",
+          "translations": [
+            { "language": "en", "text": "I understand the point, but the last few weeks were extremely busy. I felt like I was only chasing after things." },
+            { "language": "fa", "text": "نکته را می‌فهمم، اما چند هفته گذشته خیلی شلوغ بود. احساس می‌کردم فقط دارم دنبال کارها می‌دوم." },
+            { "language": "ar", "text": "أفهم النقطة، لكن الأسابيع الماضية كانت مزدحمة للغاية. شعرت أنني أركض فقط خلف الأمور." },
+            { "language": "tr", "text": "Noktayı anlıyorum, ama son haftalar aşırı yoğundu. Sanki sürekli işlerin peşinden koşuyormuşum gibi hissettim." },
+            { "language": "ru", "text": "Я понимаю этот момент, но последние недели были крайне загруженными. У меня было ощущение, что я только бегу за задачами." },
+            { "language": "ckb", "text": "خاڵەکە تێدەگەم، بەڵام هەفتەکانی ڕابردوو زۆر قورس بوون. هەستم دەکرد تەنها دوای کارەکان دەکەوم." },
+            { "language": "kmr", "text": "Ez xalê têdigihim, lê hefteyên dawî pir tijî bûn. Min hest dikir ku ez tenê li dû karan dimeşim." },
+            { "language": "pl", "text": "Rozumiem ten punkt, ale ostatnie tygodnie były ekstremalnie intensywne. Miałam wrażenie, że tylko gonię za sprawami." },
+            { "language": "ro", "text": "Înțeleg punctul, dar ultimele săptămâni au fost extrem de încărcate. Am avut senzația că doar alerg după lucruri." },
+            { "language": "sq", "text": "E kuptoj pikën, por javët e fundit ishin jashtëzakonisht të ngarkuara. Kisha ndjesinë se vetëm po vrapoja pas gjërave." }
+          ],
+          "function": "defensive-context",
+          "toneNote": "Die Kollegin erklärt Belastung, ohne das Problem komplett abzustreiten.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die hohe Belastung sehe ich, und sie erklärt einen Teil der Situation. Gleichzeitig bleibt der Standard wichtig: Wenn offene Risiken nicht markiert sind, kann das nächste Team nicht zuverlässig übernehmen.",
+          "translations": [
+            { "language": "en", "text": "I see the high workload, and it explains part of the situation. At the same time, the standard remains important: if open risks are not marked, the next team cannot take over reliably." },
+            { "language": "fa", "text": "فشار کاری بالا را می‌بینم و بخشی از وضعیت را توضیح می‌دهد. همزمان استاندارد همچنان مهم است: اگر ریسک‌های باز علامت‌گذاری نشوند، تیم بعدی نمی‌تواند قابل اتکا کار را تحویل بگیرد." },
+            { "language": "ar", "text": "أرى العبء العالي، وهو يفسر جزءاً من الوضع. وفي الوقت نفسه يبقى المعيار مهماً: إذا لم تُعلّم المخاطر المفتوحة، فلن يستطيع الفريق التالي تولي العمل بشكل موثوق." },
+            { "language": "tr", "text": "Yüksek iş yükünü görüyorum ve bu durumun bir kısmını açıklıyor. Aynı zamanda standart önemini koruyor: açık riskler işaretlenmezse sonraki ekip güvenilir şekilde devralamaz." },
+            { "language": "ru", "text": "Я вижу высокую нагрузку, и она объясняет часть ситуации. Одновременно стандарт остается важным: если открытые риски не отмечены, следующая команда не может надежно принять работу." },
+            { "language": "ckb", "text": "بارکاریی زۆر دەبینم و بەشێک لە دۆخەکە ڕوون دەکاتەوە. بە هەمان کات ستاندارد گرنگ دەمێنێتەوە: ئەگەر مەترسییە کراوەکان نیشانە نەکرێن، تیمی داهاتوو ناتوانێت بە پشتپێبەستنی کارەکە وەربگرێت." },
+            { "language": "kmr", "text": "Ez barê kar ê bilind dibînim, û ew beşek ji rewşê rave dike. Di heman demê de standard girîng dimîne: heke xeterên vekirî neyên nîşankirin, tîma din nikare bi ewle radest bigire." },
+            { "language": "pl", "text": "Widzę duże obciążenie i ono wyjaśnia część sytuacji. Jednocześnie standard pozostaje ważny: jeśli otwarte ryzyka nie są oznaczone, kolejny zespół nie może niezawodnie przejąć pracy." },
+            { "language": "ro", "text": "Văd încărcarea mare, iar ea explică o parte din situație. În același timp, standardul rămâne important: dacă riscurile deschise nu sunt marcate, echipa următoare nu poate prelua fiabil." },
+            { "language": "sq", "text": "E shoh ngarkesën e lartë dhe ajo shpjegon një pjesë të situatës. Njëkohësisht standardi mbetet i rëndësishëm: nëse rreziqet e hapura nuk shënohen, ekipi tjetër nuk mund ta marrë punën në mënyrë të besueshme." }
+          ],
+          "function": "empathy-and-standard",
+          "toneNote": "Die Antwort nimmt Belastung auf, lässt aber den Qualitätsstandard stehen.",
+          "expectedLearnerAction": "Acknowledge workload while preserving the standard."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Ich habe Sorge, dass das jetzt so klingt, als wäre ich nicht sorgfältig genug. Das trifft mich schon.",
+          "translations": [
+            { "language": "en", "text": "I am worried this now sounds as if I am not careful enough. That does affect me." },
+            { "language": "fa", "text": "نگرانم که الان این‌طور شنیده شود که من به‌اندازه کافی دقیق نیستم. این واقعاً روی من اثر می‌گذارد." },
+            { "language": "ar", "text": "أخشى أن يبدو الأمر الآن كأنني لست دقيقة بما يكفي. هذا يؤثر فيّ فعلاً." },
+            { "language": "tr", "text": "Bunun şimdi yeterince dikkatli değilmişim gibi duyulmasından endişeliyim. Bu beni gerçekten etkiliyor." },
+            { "language": "ru", "text": "Я боюсь, что сейчас это звучит так, будто я недостаточно внимательна. Это меня задевает." },
+            { "language": "ckb", "text": "نیگەرانم ئێستا وا دەنگ بدات کە من بە تەواوی ورد نینم. ئەمە بەڕاستی کاریگەری لەسەرم دەکات." },
+            { "language": "kmr", "text": "Ez xem dikim ku ev niha wekî ku ez bi têrî baldar nînim were bihîstin. Ev rastî bandorê li min dike." },
+            { "language": "pl", "text": "Obawiam się, że teraz brzmi to tak, jakbym nie była wystarczająco dokładna. To mnie dotyka." },
+            { "language": "ro", "text": "Mă tem că acum sună ca și cum nu aș fi suficient de atentă. Asta mă afectează." },
+            { "language": "sq", "text": "Kam frikë se tani tingëllon sikur nuk jam mjaftueshëm e kujdesshme. Kjo më prek vërtet." }
+          ],
+          "function": "emotional-reaction",
+          "toneNote": "Die Kollegin reagiert persönlich betroffen.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das möchte ich ausdrücklich trennen: Ich stelle nicht Ihre Sorgfalt grundsätzlich infrage. Ich spreche über ein wiederkehrendes Muster in den Übergaben, das wir gemeinsam korrigieren müssen.",
+          "translations": [
+            { "language": "en", "text": "I want to separate that explicitly: I am not questioning your care in general. I am speaking about a recurring pattern in the handovers that we need to correct together." },
+            { "language": "fa", "text": "می‌خواهم این را صریح جدا کنم: من دقت شما را به‌طور کلی زیر سؤال نمی‌برم. درباره یک الگوی تکرارشونده در تحویل‌ها صحبت می‌کنم که باید با هم اصلاح کنیم." },
+            { "language": "ar", "text": "أود أن أفصل ذلك بوضوح: أنا لا أشكك في دقتك عموماً. أتحدث عن نمط متكرر في عمليات التسليم يجب أن نصححه معاً." },
+            { "language": "tr", "text": "Bunu açıkça ayırmak istiyorum: genel olarak dikkatinizi sorgulamıyorum. Birlikte düzeltmemiz gereken, devirlerde tekrarlayan bir kalıptan söz ediyorum." },
+            { "language": "ru", "text": "Я хочу четко это разделить: я не ставлю под сомнение вашу внимательность в целом. Я говорю о повторяющемся шаблоне в передачах, который нам нужно исправить вместе." },
+            { "language": "ckb", "text": "دەمەوێت ئەمە بە ڕوونی جیا بکەمەوە: من بە گشتی وردبوونی تۆ ناخەمە ژێر پرسیار. باس لە شێوەیەکی دووبارەبوو لە گواستنەوەکان دەکەم کە دەبێت پێکەوە چاکی بکەین." },
+            { "language": "kmr", "text": "Ez dixwazim vê eşkere veqetînim: ez bi giştî baldarîya we nakim bin pirs. Ez li ser şêweyeke dubare di radestkirinan de diaxivim ku divê em bi hev re rast bikin." },
+            { "language": "pl", "text": "Chcę to wyraźnie oddzielić: nie kwestionuję Pani staranności ogólnie. Mówię o powtarzającym się wzorcu w przekazaniach, który musimy wspólnie skorygować." },
+            { "language": "ro", "text": "Vreau să separ explicit aceste lucruri: nu pun la îndoială atenția dumneavoastră în general. Vorbesc despre un tipar recurent în predări, pe care trebuie să îl corectăm împreună." },
+            { "language": "sq", "text": "Dua ta ndaj qartë këtë: nuk po vë në dyshim kujdesin tuaj në përgjithësi. Po flas për një model të përsëritur në dorëzime që duhet ta korrigjojmë së bashku." }
+          ],
+          "function": "personal-repair",
+          "toneNote": "C1: Die Antwort repariert die Beziehung, ohne den Sachpunkt aufzugeben.",
+          "expectedLearnerAction": "Separate personal value from the recurring performance pattern."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "team-lead",
+          "baseText": "Welche Erwartung würden Sie jetzt konkret formulieren, damit es nicht nur bei einem allgemeinen Appell bleibt?",
+          "translations": [
+            { "language": "en", "text": "What expectation would you formulate now so it does not remain just a general appeal?" },
+            { "language": "fa", "text": "الان چه انتظاری را مشخص فرمول‌بندی می‌کنید تا فقط در حد یک درخواست کلی نماند؟" },
+            { "language": "ar", "text": "ما التوقع الذي ستصوغه الآن تحديداً حتى لا يبقى الأمر مجرد نداء عام؟" },
+            { "language": "tr", "text": "Bunun sadece genel bir çağrı olarak kalmaması için şimdi hangi beklentiyi somut formüle ederdiniz?" },
+            { "language": "ru", "text": "Какое ожидание вы сейчас сформулировали бы конкретно, чтобы это не осталось общим призывом?" },
+            { "language": "ckb", "text": "ئێستا چاوەڕوانییەکە چۆن بە ڕوونی داڕێژیت تاکو تەنها داواکارییەکی گشتی نەبێت؟" },
+            { "language": "kmr", "text": "Hûn ê niha kîjan hêviyê konkret biafirînin da ku ev tenê bangeke giştî nemîne?" },
+            { "language": "pl", "text": "Jakie oczekiwanie sformułowałby Pan/Pani teraz konkretnie, żeby nie pozostało tylko ogólnym apelem?" },
+            { "language": "ro", "text": "Ce așteptare ați formula acum concret, ca să nu rămână doar un apel general?" },
+            { "language": "sq", "text": "Çfarë pritjeje do të formulonit tani konkretisht, që të mos mbetet vetëm një thirrje e përgjithshme?" }
+          ],
+          "function": "ask-for-standard",
+          "toneNote": "Die Teamleitung fordert eine konkrete Erwartung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ab der nächsten Übergabe erwarte ich, dass offene Kundenfragen mit einem kurzen Risikohinweis markiert werden: Was ist offen, welche Auswirkung hätte es, und wer entscheidet, falls bis 14 Uhr keine Klärung vorliegt?",
+          "translations": [
+            { "language": "en", "text": "From the next handover on, I expect open customer questions to be marked with a brief risk note: what is open, what impact would it have, and who decides if there is no clarification by 2 p.m.?" },
+            { "language": "fa", "text": "از تحویل بعدی انتظار دارم پرسش‌های باز مشتریان با یک یادداشت کوتاه ریسک علامت‌گذاری شوند: چه چیزی باز است، چه اثری می‌تواند داشته باشد، و اگر تا ساعت ۱۴ روشن نشد چه کسی تصمیم می‌گیرد؟" },
+            { "language": "ar", "text": "اعتباراً من التسليم التالي، أتوقع أن تُعلّم أسئلة العملاء المفتوحة بملاحظة مخاطر قصيرة: ما المفتوح، وما أثره المحتمل، ومن يقرر إذا لم يتم التوضيح حتى الساعة الثانية؟" },
+            { "language": "tr", "text": "Bir sonraki devirden itibaren açık müşteri sorularının kısa bir risk notuyla işaretlenmesini bekliyorum: ne açık, etkisi ne olur ve saat 14'e kadar netleşmezse kim karar verir?" },
+            { "language": "ru", "text": "Начиная со следующей передачи, я ожидаю, что открытые вопросы клиентов будут отмечаться краткой пометкой о риске: что открыто, какой эффект это может иметь и кто принимает решение, если до 14:00 нет ясности?" },
+            { "language": "ckb", "text": "لە گواستنەوەی داهاتووەوە چاوەڕوانم پرسیارە کراوەکانی کڕیاران بە تێبینییەکی کورتی مەترسی نیشانە بکرێن: چی کراوەیە، کاریگەرییەکە چی دەبێت، و ئەگەر تا کاتژمێر ١٤ ڕوون نەبوو کێ بڕیار دەدات؟" },
+            { "language": "kmr", "text": "Ji radestkirina din pê ve ez hêvî dikim ku pirsên vekirî yên mişteriyan bi noteke kurt a xeterê werin nîşankirin: çi vekirî ye, bandora wê çi dibe, û heke heta saet 14 zelalî tune be kî biryar dide?" },
+            { "language": "pl", "text": "Od kolejnego przekazania oczekuję, że otwarte pytania klientów będą oznaczane krótką notą ryzyka: co jest otwarte, jaki byłby wpływ i kto decyduje, jeśli do 14:00 nie ma wyjaśnienia?" },
+            { "language": "ro", "text": "Începând cu următoarea predare, mă aștept ca întrebările deschise ale clienților să fie marcate cu o scurtă notă de risc: ce este deschis, ce impact ar avea și cine decide dacă până la ora 14 nu există clarificare?" },
+            { "language": "sq", "text": "Nga dorëzimi i ardhshëm pres që pyetjet e hapura të klientëve të shënohen me një shënim të shkurtër rreziku: çfarë mbetet hapur, çfarë ndikimi do të kishte dhe kush vendos nëse deri në orën 14 nuk ka sqarim?" }
+          ],
+          "function": "concrete-standard",
+          "toneNote": "Die Erwartung ist konkret, überprüfbar und auf den Arbeitsablauf bezogen.",
+          "expectedLearnerAction": "Formulate a concrete and verifiable expectation."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Das ist nachvollziehbar. Ich bin mir nur unsicher, ob ich in der Hektik immer einschätzen kann, was wirklich ein Risiko ist.",
+          "translations": [
+            { "language": "en", "text": "That makes sense. I am just unsure whether, in the rush, I can always assess what really counts as a risk." },
+            { "language": "fa", "text": "قابل فهم است. فقط مطمئن نیستم که در شلوغی همیشه بتوانم تشخیص بدهم چه چیزی واقعاً ریسک حساب می‌شود." },
+            { "language": "ar", "text": "هذا مفهوم. لست متأكدة فقط مما إذا كنت أستطيع دائماً في العجلة تقدير ما يُعد خطراً فعلاً." },
+            { "language": "tr", "text": "Bu anlaşılır. Sadece yoğunlukta neyin gerçekten risk sayıldığını her zaman değerlendirebilir miyim, emin değilim." },
+            { "language": "ru", "text": "Это понятно. Я только не уверена, что в спешке всегда смогу оценить, что действительно считается риском." },
+            { "language": "ckb", "text": "ئەمە تێگەیشتووە. تەنها دڵنیا نیم لە پەلەدا هەمیشە بتوانم هەڵبسەنگێنم چی بەڕاستی مەترسییە." },
+            { "language": "kmr", "text": "Ev têgihiştî ye. Ez tenê ne piştrast im ka di lezê de her dem dikarim binirxînim ka çi bi rastî xeter e." },
+            { "language": "pl", "text": "To jest zrozumiałe. Nie jestem tylko pewna, czy w pośpiechu zawsze potrafię ocenić, co naprawdę jest ryzykiem." },
+            { "language": "ro", "text": "Este de înțeles. Doar că nu sunt sigură dacă, în grabă, pot evalua mereu ce este cu adevărat un risc." },
+            { "language": "sq", "text": "Kjo është e kuptueshme. Vetëm nuk jam e sigurt nëse në nxitim mund ta vlerësoj gjithmonë çfarë është vërtet rrezik." }
+          ],
+          "function": "support-need",
+          "toneNote": "Die Kollegin öffnet einen Unterstützungsbedarf.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann machen wir es praktisch: Für die nächsten zwei Wochen nutzen wir eine Drei-Punkte-Checkliste. Zusätzlich schaue ich mir die ersten beiden Übergaben mit Ihnen an, damit wir die Einschätzung gemeinsam kalibrieren.",
+          "translations": [
+            { "language": "en", "text": "Then let's make it practical: for the next two weeks, we will use a three-point checklist. In addition, I will review the first two handovers with you so that we can calibrate the assessment together." },
+            { "language": "fa", "text": "پس آن را عملی می‌کنیم: برای دو هفته آینده از یک چک‌لیست سه‌نقطه‌ای استفاده می‌کنیم. علاوه بر آن، دو تحویل اول را با شما بررسی می‌کنم تا ارزیابی را با هم تنظیم کنیم." },
+            { "language": "ar", "text": "إذن نجعل الأمر عملياً: خلال الأسبوعين القادمين سنستخدم قائمة تحقق من ثلاث نقاط. بالإضافة إلى ذلك سأراجع أول عمليتي تسليم معك حتى نضبط التقييم معاً." },
+            { "language": "tr", "text": "O zaman bunu pratik hale getirelim: önümüzdeki iki hafta üç maddelik bir kontrol listesi kullanacağız. Ayrıca ilk iki devri sizinle birlikte gözden geçireceğim, böylece değerlendirmeyi birlikte ayarlarız." },
+            { "language": "ru", "text": "Тогда сделаем это практично: в ближайшие две недели мы используем чек-лист из трех пунктов. Кроме того, первые две передачи я посмотрю вместе с вами, чтобы мы вместе откалибровали оценку." },
+            { "language": "ckb", "text": "ئەوا با کرداریی بکەین: بۆ دوو هەفتەی داهاتوو چێکلیستێکی سێ خاڵی بەکاردەهێنین. هەروەها دوو گواستنەوەی یەکەم لەگەڵ تۆ پێدا دەچمەوە تاکو هەڵسەنگاندنەکە پێکەوە ڕێک بخەین." },
+            { "language": "kmr", "text": "Wê demê em wê pratîk bikin: ji bo du hefteyên din em lîsteya kontrolê ya sê xalan bi kar tînin. Herwiha ez ê du radestkirinên yekem bi we re bibînim da ku em nirxandinê bi hev re kalîbre bikin." },
+            { "language": "pl", "text": "W takim razie zróbmy to praktycznie: przez najbliższe dwa tygodnie użyjemy trzypunktowej checklisty. Dodatkowo przejrzę z Panią pierwsze dwa przekazania, abyśmy wspólnie skalibrowali ocenę." },
+            { "language": "ro", "text": "Atunci facem lucrurile practic: pentru următoarele două săptămâni folosim o listă de verificare în trei puncte. În plus, voi analiza cu dumneavoastră primele două predări, ca să calibrăm împreună evaluarea." },
+            { "language": "sq", "text": "Atëherë e bëjmë praktike: për dy javët e ardhshme përdorim një listë kontrolli me tre pika. Përveç kësaj, do t’i rishikoj me ju dy dorëzimet e para, që ta kalibrojmë së bashku vlerësimin." }
+          ],
+          "function": "support-and-calibration",
+          "toneNote": "Die Antwort verbindet klare Erwartung mit konkreter Unterstützung.",
+          "expectedLearnerAction": "Offer support without removing responsibility."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "team-lead",
+          "baseText": "Wie schließen Sie das Gespräch ab, damit es verbindlich ist, aber nicht wie eine Drohung wirkt?",
+          "translations": [
+            { "language": "en", "text": "How do you close the conversation so it is binding but does not sound like a threat?" },
+            { "language": "fa", "text": "گفت‌وگو را چطور تمام می‌کنید که الزام‌آور باشد اما شبیه تهدید به نظر نرسد؟" },
+            { "language": "ar", "text": "كيف تنهي المحادثة بحيث تكون ملزمة لكنها لا تبدو كتهديد؟" },
+            { "language": "tr", "text": "Görüşmeyi nasıl kapatırsınız ki bağlayıcı olsun ama tehdit gibi duyulmasın?" },
+            { "language": "ru", "text": "Как вы завершите разговор, чтобы он был обязательным, но не звучал как угроза?" },
+            { "language": "ckb", "text": "گفتوگۆکە چۆن کۆتایی پێدەهێنیت تاکو پابەند بێت، بەڵام وەک هەڕەشە دەنگ نەدات؟" },
+            { "language": "kmr", "text": "Hûn ê axaftinê çawa bi dawî bikin da ku girêdayî be, lê wekî gef xuya neke?" },
+            { "language": "pl", "text": "Jak zakończy Pan/Pani rozmowę, żeby była wiążąca, ale nie brzmiała jak groźba?" },
+            { "language": "ro", "text": "Cum încheiați conversația astfel încât să fie obligatorie, dar să nu sune ca o amenințare?" },
+            { "language": "sq", "text": "Si e mbyllni bisedën që të jetë detyruese, por të mos tingëllojë si kërcënim?" }
+          ],
+          "function": "ask-for-closing",
+          "toneNote": "Die Teamleitung fragt nach einer verbindlichen Abschlussformulierung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Wir halten fest: Ab morgen nutzen Sie die Risikohinweise in jeder relevanten Übergabe. Am Freitag schauen wir gemeinsam auf zwei Beispiele und prüfen, ob die Markierung klar genug war. Mir ist wichtig, dass Sie damit sicherer werden und die Übergaben wieder verlässlich sind.",
+          "translations": [
+            { "language": "en", "text": "We will record this: from tomorrow on, you will use the risk notes in every relevant handover. On Friday we will look at two examples together and check whether the marking was clear enough. It is important to me that you become more confident with this and that the handovers are reliable again." },
+            { "language": "fa", "text": "ثبت می‌کنیم: از فردا در هر تحویل مرتبط از یادداشت‌های ریسک استفاده می‌کنید. جمعه با هم دو نمونه را بررسی می‌کنیم و می‌بینیم علامت‌گذاری به اندازه کافی روشن بوده یا نه. برای من مهم است که شما در این کار مطمئن‌تر شوید و تحویل‌ها دوباره قابل اتکا باشند." },
+            { "language": "ar", "text": "سنثبت ذلك: اعتباراً من الغد ستستخدمين ملاحظات المخاطر في كل تسليم ذي صلة. يوم الجمعة سنراجع معاً مثالين ونفحص ما إذا كان التعليم واضحاً بما يكفي. يهمني أن تصبحي أكثر ثقة في ذلك وأن تعود عمليات التسليم موثوقة." },
+            { "language": "tr", "text": "Bunu kayda geçiriyoruz: yarından itibaren her ilgili devirde risk notlarını kullanacaksınız. Cuma günü birlikte iki örneğe bakacağız ve işaretlemenin yeterince açık olup olmadığını kontrol edeceğiz. Benim için önemli olan, bu konuda daha güvenli hale gelmeniz ve devirlerin yeniden güvenilir olmasıdır." },
+            { "language": "ru", "text": "Зафиксируем: с завтрашнего дня вы используете пометки о риске в каждой релевантной передаче. В пятницу мы вместе посмотрим два примера и проверим, достаточно ли ясной была маркировка. Для меня важно, чтобы вы стали увереннее в этом, а передачи снова были надежными." },
+            { "language": "ckb", "text": "تۆمار دەکەین: لە سبەیەوە لە هەر گواستنەوەیەکی پەیوەندیداردا تێبینییەکانی مەترسی بەکاردەهێنیت. هەینی پێکەوە دوو نموونە دەبینین و دەپشکنین نیشانەکردنەکە بە تەواوی ڕوون بوو یان نا. بۆ من گرنگە تۆ لەم کارەدا دڵنیاتر بیت و گواستنەوەکان دووبارە پشتپێبەستوو بن." },
+            { "language": "kmr", "text": "Em qeyd dikin: ji sibê pê ve hûn di her radestkirina peywendîdar de notên xeterê bi kar tînin. Roja înê em bi hev re li du mînakan dinêrin û kontrol dikin ka nîşankirin bi têrî zelal bû an na. Ji bo min girîng e ku hûn di vê de ewletir bibin û radestkirin dîsa pêbawer bin." },
+            { "language": "pl", "text": "Ustalamy: od jutra używa Pani wskazówek ryzyka przy każdym istotnym przekazaniu. W piątek wspólnie obejrzymy dwa przykłady i sprawdzimy, czy oznaczenie było wystarczająco jasne. Ważne jest dla mnie, żeby czuła się Pani w tym pewniej i żeby przekazania znów były niezawodne." },
+            { "language": "ro", "text": "Consemnăm: de mâine folosiți notele de risc în fiecare predare relevantă. Vineri ne uităm împreună la două exemple și verificăm dacă marcarea a fost suficient de clară. Pentru mine este important să deveniți mai sigură în acest lucru și predările să fie din nou fiabile." },
+            { "language": "sq", "text": "E fiksojmë kështu: nga nesër përdorni shënimet e rrezikut në çdo dorëzim përkatës. Të premten shohim së bashku dy shembuj dhe kontrollojmë nëse shënimi ishte mjaft i qartë. Për mua është e rëndësishme që të bëheni më e sigurt në këtë dhe dorëzimet të jenë sërish të besueshme." }
+          ],
+          "function": "binding-supportive-closing",
+          "toneNote": "Die Abschlussformulierung ist verbindlich, konkret und unterstützend.",
+          "expectedLearnerAction": "Close with binding next steps and supportive intent."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich möchte mit einer konkreten Beobachtung beginnen: In drei Übergaben fehlten jeweils die Risikohinweise zu offenen Kundenfragen. Dadurch musste der Support nachfragen, und zwei Rückmeldungen gingen verspätet raus.",
+              "translations": [
+                { "language": "en", "text": "I would like to begin with a concrete observation: in three handovers, the risk notes on open customer questions were missing. As a result, support had to ask follow-up questions, and two responses went out late." },
+                { "language": "fa", "text": "می‌خواهم با یک مشاهده مشخص شروع کنم: در سه تحویل، هر بار یادداشت‌های ریسک درباره پرسش‌های باز مشتریان نبود. در نتیجه پشتیبانی مجبور شد دوباره سؤال کند و دو پاسخ با تأخیر ارسال شد." },
+                { "language": "ar", "text": "أود أن أبدأ بملاحظة محددة: في ثلاث عمليات تسليم، كانت ملاحظات المخاطر حول أسئلة العملاء المفتوحة مفقودة. ونتيجة لذلك اضطر الدعم إلى الاستفسار، وخرج ردان متأخرين." },
+                { "language": "tr", "text": "Somut bir gözlemle başlamak istiyorum: üç devirde açık müşteri sorularına ilişkin risk notları eksikti. Bu nedenle destek ekibi yeniden sormak zorunda kaldı ve iki yanıt gecikmeli çıktı." },
+                { "language": "ru", "text": "Я хотел бы начать с конкретного наблюдения: в трех передачах отсутствовали указания на риски по открытым вопросам клиентов. Из-за этого поддержке пришлось уточнять, и два ответа ушли с задержкой." },
+                { "language": "ckb", "text": "دەمەوێت بە تێبینییەکی ڕوون دەست پێبکەم: لە سێ گواستنەوەدا، تێبینییەکانی مەترسی بۆ پرسیارە کراوەکانی کڕیاران نەبوون. بەهۆی ئەمە پشتیوانی ناچار بوو پرسیاری زیاتر بکات و دوو وەڵام بە دواخستن نێردران." },
+                { "language": "kmr", "text": "Ez dixwazim bi dîtineke konkret dest pê bikim: di sê radestkirinan de notên xeterê yên derbarê pirsên vekirî yên mişteriyan kêm bûn. Ji ber vê yekê piştgirî neçar ma pirsên din bike, û du bersiv dereng hatin şandin." },
+                { "language": "pl", "text": "Chciałbym zacząć od konkretnej obserwacji: w trzech przekazaniach brakowało wskazówek dotyczących ryzyka przy otwartych pytaniach klientów. W efekcie support musiał dopytywać, a dwie odpowiedzi wyszły z opóźnieniem." },
+                { "language": "ro", "text": "Aș vrea să încep cu o observație concretă: în trei predări au lipsit notele de risc privind întrebările deschise ale clienților. Din acest motiv, suportul a trebuit să clarifice, iar două răspunsuri au fost trimise cu întârziere." },
+                { "language": "sq", "text": "Dua të filloj me një vëzhgim konkret: në tre dorëzime mungonin shënimet e rrezikut për pyetjet e hapura të klientëve. Si rezultat, mbështetja duhej të pyeste sërish dhe dy përgjigje dolën me vonesë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort startet mit beobachtbarem Verhalten und konkreter Wirkung statt mit einer Charakterbewertung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer starts with observable behavior and concrete impact rather than a character judgment." },
+                { "language": "fa", "text": "قوی: پاسخ با رفتار قابل مشاهده و اثر مشخص شروع می‌کند، نه با قضاوت درباره شخصیت." },
+                { "language": "ar", "text": "قوي: يبدأ الجواب بسلوك قابل للملاحظة وأثر ملموس بدلاً من حكم على الشخصية." },
+                { "language": "tr", "text": "Güçlü: cevap karakter yargısı yerine gözlemlenebilir davranış ve somut etkiyle başlar." },
+                { "language": "ru", "text": "Сильно: ответ начинается с наблюдаемого поведения и конкретного эффекта, а не с оценки характера." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە ڕەفتاری بینراو و کاریگەریی ڕوون دەست پێدەکات، نە بە هەڵسەنگاندنی کەسایەتی." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi reftarê xuya û bandora konkret dest pê dike, ne bi nirxandina karakterê." },
+                { "language": "pl", "text": "Mocne: odpowiedź zaczyna od obserwowalnego zachowania i konkretnego skutku, a nie od oceny charakteru." },
+                { "language": "ro", "text": "Puternic: răspunsul începe cu comportament observabil și impact concret, nu cu o judecată de caracter." },
+                { "language": "sq", "text": "E fortë: përgjigjja nis me sjellje të vëzhgueshme dhe ndikim konkret, jo me gjykim karakteri." }
+              ],
+              "explanationKey": "observable-feedback"
+            },
+            {
+              "id": "weak",
+              "text": "Mir ist aufgefallen, dass die Übergaben zuletzt nicht immer vollständig waren und dadurch im Support zusätzliche Arbeit entstanden ist.",
+              "translations": [
+                { "language": "en", "text": "I noticed that the handovers were not always complete recently and that this created additional work in support." },
+                { "language": "fa", "text": "متوجه شدم که تحویل‌ها اخیراً همیشه کامل نبودند و به همین دلیل در پشتیبانی کار اضافه ایجاد شد." },
+                { "language": "ar", "text": "لاحظت أن عمليات التسليم مؤخراً لم تكن دائماً كاملة، وأن ذلك سبب عملاً إضافياً في الدعم." },
+                { "language": "tr", "text": "Son zamanlarda devirlerin her zaman tam olmadığını ve bunun destek ekibinde ek iş yarattığını fark ettim." },
+                { "language": "ru", "text": "Я заметил, что передачи в последнее время не всегда были полными, и из-за этого в поддержке возникала дополнительная работа." },
+                { "language": "ckb", "text": "تێبینیم کرد کە گواستنەوەکان لەم دواییانەدا هەمیشە تەواو نەبوون و بەهۆی ئەمە کارێکی زیادە لە پشتیوانیدا دروست بوو." },
+                { "language": "kmr", "text": "Min dît ku radestkirinên dawî her dem temam nebûn û ji ber vê di piştgiriyê de karê zêde çêbû." },
+                { "language": "pl", "text": "Zauważyłem, że przekazania ostatnio nie zawsze były pełne i przez to w supporcie powstała dodatkowa praca." },
+                { "language": "ro", "text": "Am observat că predările nu au fost mereu complete în ultima vreme și că acest lucru a creat muncă suplimentară în suport." },
+                { "language": "sq", "text": "Vura re se dorëzimet kohët e fundit nuk ishin gjithmonë të plota dhe kjo krijoi punë shtesë në mbështetje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu weich: Die Antwort vermeidet Druck, nennt aber weder Häufigkeit noch konkrete Auswirkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too soft: the answer avoids pressure but names neither frequency nor concrete impact." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی نرم: پاسخ فشار ایجاد نمی‌کند، اما نه تعداد دفعات را می‌گوید و نه اثر مشخص را." },
+                { "language": "ar", "text": "معقول لكنه لين جداً: يتجنب الجواب الضغط، لكنه لا يذكر التكرار ولا الأثر المحدد." },
+                { "language": "tr", "text": "Makuldür ama çok yumuşak: cevap baskıyı önler, ancak ne sıklığı ne de somut etkiyi belirtir." },
+                { "language": "ru", "text": "Правдоподобно, но слишком мягко: ответ избегает давления, но не называет ни частоту, ни конкретный эффект." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر نەرمە: وەڵامەکە لە فشاردان دوور دەکەوێتەوە، بەڵام نە دووبارەبوون و نە کاریگەریی ڕوون ناو دەبات." },
+                { "language": "kmr", "text": "Bawerbar e lê pir nerm e: bersiv ji zextê dûr dikeve, lê ne dubarebûnê û ne bandora konkret nav dike." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt miękkie: odpowiedź unika presji, ale nie podaje ani częstotliwości, ani konkretnego skutku." },
+                { "language": "ro", "text": "Plauzibil, dar prea blând: răspunsul evită presiunea, dar nu numește nici frecvența, nici impactul concret." },
+                { "language": "sq", "text": "E besueshme, por shumë e butë: përgjigjja shmang presionin, por nuk përmend as shpeshtësinë, as ndikimin konkret." }
+              ],
+              "explanationKey": "soft-feedback-without-specifics"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die hohe Belastung sehe ich, und sie erklärt einen Teil der Situation. Gleichzeitig bleibt der Standard wichtig: Wenn offene Risiken nicht markiert sind, kann das nächste Team nicht zuverlässig übernehmen.",
+              "translations": [
+                { "language": "en", "text": "I see the high workload, and it explains part of the situation. At the same time, the standard remains important: if open risks are not marked, the next team cannot take over reliably." },
+                { "language": "fa", "text": "فشار کاری بالا را می‌بینم و بخشی از وضعیت را توضیح می‌دهد. همزمان استاندارد همچنان مهم است: اگر ریسک‌های باز علامت‌گذاری نشوند، تیم بعدی نمی‌تواند قابل اتکا کار را تحویل بگیرد." },
+                { "language": "ar", "text": "أرى العبء العالي، وهو يفسر جزءاً من الوضع. وفي الوقت نفسه يبقى المعيار مهماً: إذا لم تُعلّم المخاطر المفتوحة، فلن يستطيع الفريق التالي تولي العمل بشكل موثوق." },
+                { "language": "tr", "text": "Yüksek iş yükünü görüyorum ve bu durumun bir kısmını açıklıyor. Aynı zamanda standart önemini koruyor: açık riskler işaretlenmezse sonraki ekip güvenilir şekilde devralamaz." },
+                { "language": "ru", "text": "Я вижу высокую нагрузку, и она объясняет часть ситуации. Одновременно стандарт остается важным: если открытые риски не отмечены, следующая команда не может надежно принять работу." },
+                { "language": "ckb", "text": "بارکاریی زۆر دەبینم و بەشێک لە دۆخەکە ڕوون دەکاتەوە. بە هەمان کات ستاندارد گرنگ دەمێنێتەوە: ئەگەر مەترسییە کراوەکان نیشانە نەکرێن، تیمی داهاتوو ناتوانێت بە پشتپێبەستنی کارەکە وەربگرێت." },
+                { "language": "kmr", "text": "Ez barê kar ê bilind dibînim, û ew beşek ji rewşê rave dike. Di heman demê de standard girîng dimîne: heke xeterên vekirî neyên nîşankirin, tîma din nikare bi ewle radest bigire." },
+                { "language": "pl", "text": "Widzę duże obciążenie i ono wyjaśnia część sytuacji. Jednocześnie standard pozostaje ważny: jeśli otwarte ryzyka nie są oznaczone, kolejny zespół nie może niezawodnie przejąć pracy." },
+                { "language": "ro", "text": "Văd încărcarea mare, iar ea explică o parte din situație. În același timp, standardul rămâne important: dacă riscurile deschise nu sunt marcate, echipa următoare nu poate prelua fiabil." },
+                { "language": "sq", "text": "E shoh ngarkesën e lartë dhe ajo shpjegon një pjesë të situatës. Njëkohësisht standardi mbetet i rëndësishëm: nëse rreziqet e hapura nuk shënohen, ekipi tjetër nuk mund ta marrë punën në mënyrë të besueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort würdigt den Kontext, relativiert aber den Standard nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer acknowledges the context without relativizing the standard." },
+                { "language": "fa", "text": "قوی: پاسخ زمینه را می‌پذیرد، اما استاندارد را نسبی و کم‌اهمیت نمی‌کند." },
+                { "language": "ar", "text": "قوي: يعترف الجواب بالسياق دون أن ينسّب المعيار أو يضعفه." },
+                { "language": "tr", "text": "Güçlü: cevap bağlamı kabul eder, ancak standardı göreceli hale getirmez." },
+                { "language": "ru", "text": "Сильно: ответ признает контекст, но не делает стандарт относительным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دەوروبەرەکە وەردەگرێت، بەڵام ستانداردەکە نسبی ناکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv çarçoveyê dipejirîne, lê standardê nake nisbetî." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje kontekst, ale nie relatywizuje standardu." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște contextul, dar nu relativizează standardul." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon kontekstin, por nuk e relativizon standardin." }
+              ],
+              "explanationKey": "empathy-with-standard"
+            },
+            {
+              "id": "weak",
+              "text": "Ich verstehe, dass die Belastung hoch war. Trotzdem müssen die Übergaben natürlich vollständig sein.",
+              "translations": [
+                { "language": "en", "text": "I understand that the workload was high. Still, the handovers naturally have to be complete." },
+                { "language": "fa", "text": "می‌فهمم فشار کاری بالا بوده است. با این حال تحویل‌ها طبیعتاً باید کامل باشند." },
+                { "language": "ar", "text": "أفهم أن العبء كان عالياً. ومع ذلك يجب طبعاً أن تكون عمليات التسليم كاملة." },
+                { "language": "tr", "text": "İş yükünün yüksek olduğunu anlıyorum. Yine de devirlerin elbette tam olması gerekiyor." },
+                { "language": "ru", "text": "Я понимаю, что нагрузка была высокой. Тем не менее передачи, конечно, должны быть полными." },
+                { "language": "ckb", "text": "تێدەگەم بارکاری زۆر بووە. بەڵام بە هەر حال گواستنەوەکان دەبێت تەواو بن." },
+                { "language": "kmr", "text": "Ez têdigihim ku barê kar bilind bû. Dîsa jî radestkirin divê bi temamî temam bin." },
+                { "language": "pl", "text": "Rozumiem, że obciążenie było duże. Mimo to przekazania oczywiście muszą być kompletne." },
+                { "language": "ro", "text": "Înțeleg că încărcarea a fost mare. Totuși predările trebuie, desigur, să fie complete." },
+                { "language": "sq", "text": "E kuptoj që ngarkesa ishte e lartë. Megjithatë dorëzimet natyrisht duhet të jenë të plota." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber hart: Die Antwort benennt den Standard, zeigt aber kaum, warum er fachlich wichtig ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but harsh: the answer names the standard but barely shows why it matters professionally." },
+                { "language": "fa", "text": "قابل‌باور اما سخت: پاسخ استاندارد را می‌گوید، اما تقریباً نشان نمی‌دهد چرا از نظر کاری مهم است." },
+                { "language": "ar", "text": "معقول لكنه قاس: يذكر الجواب المعيار، لكنه بالكاد يوضح لماذا هو مهم مهنياً." },
+                { "language": "tr", "text": "Makuldür ama sert: cevap standardı belirtir, ancak bunun mesleki olarak neden önemli olduğunu pek göstermez." },
+                { "language": "ru", "text": "Правдоподобно, но жестко: ответ называет стандарт, но почти не показывает, почему он профессионально важен." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام توندە: وەڵامەکە ستاندارد ناو دەبات، بەڵام بە زەحمەت پیشان دەدات بۆچی پیشەییانە گرنگە." },
+                { "language": "kmr", "text": "Bawerbar e lê tund e: bersiv standardê nav dike, lê hema nîşan nade çima ew ji aliyê pîşeyî ve girîng e." },
+                { "language": "pl", "text": "Prawdopodobne, ale twarde: odpowiedź nazywa standard, lecz prawie nie pokazuje, dlaczego jest zawodowo ważny." },
+                { "language": "ro", "text": "Plauzibil, dar dur: răspunsul numește standardul, dar arată prea puțin de ce este important profesional." },
+                { "language": "sq", "text": "E besueshme, por e ashpër: përgjigjja përmend standardin, por mezi tregon pse është i rëndësishëm profesionalisht." }
+              ],
+              "explanationKey": "standard-without-rationale"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das möchte ich ausdrücklich trennen: Ich stelle nicht Ihre Sorgfalt grundsätzlich infrage. Ich spreche über ein wiederkehrendes Muster in den Übergaben, das wir gemeinsam korrigieren müssen.",
+              "translations": [
+                { "language": "en", "text": "I want to separate that explicitly: I am not questioning your care in general. I am speaking about a recurring pattern in the handovers that we need to correct together." },
+                { "language": "fa", "text": "می‌خواهم این را صریح جدا کنم: من دقت شما را به‌طور کلی زیر سؤال نمی‌برم. درباره یک الگوی تکرارشونده در تحویل‌ها صحبت می‌کنم که باید با هم اصلاح کنیم." },
+                { "language": "ar", "text": "أود أن أفصل ذلك بوضوح: أنا لا أشكك في دقتك عموماً. أتحدث عن نمط متكرر في عمليات التسليم يجب أن نصححه معاً." },
+                { "language": "tr", "text": "Bunu açıkça ayırmak istiyorum: genel olarak dikkatinizi sorgulamıyorum. Birlikte düzeltmemiz gereken, devirlerde tekrarlayan bir kalıptan söz ediyorum." },
+                { "language": "ru", "text": "Я хочу четко это разделить: я не ставлю под сомнение вашу внимательность в целом. Я говорю о повторяющемся шаблоне в передачах, который нам нужно исправить вместе." },
+                { "language": "ckb", "text": "دەمەوێت ئەمە بە ڕوونی جیا بکەمەوە: من بە گشتی وردبوونی تۆ ناخەمە ژێر پرسیار. باس لە شێوەیەکی دووبارەبوو لە گواستنەوەکان دەکەم کە دەبێت پێکەوە چاکی بکەین." },
+                { "language": "kmr", "text": "Ez dixwazim vê eşkere veqetînim: ez bi giştî baldarîya we nakim bin pirs. Ez li ser şêweyeke dubare di radestkirinan de diaxivim ku divê em bi hev re rast bikin." },
+                { "language": "pl", "text": "Chcę to wyraźnie oddzielić: nie kwestionuję Pani staranności ogólnie. Mówię o powtarzającym się wzorcu w przekazaniach, który musimy wspólnie skorygować." },
+                { "language": "ro", "text": "Vreau să separ explicit aceste lucruri: nu pun la îndoială atenția dumneavoastră în general. Vorbesc despre un tipar recurent în predări, pe care trebuie să îl corectăm împreună." },
+                { "language": "sq", "text": "Dua ta ndaj qartë këtë: nuk po vë në dyshim kujdesin tuaj në përgjithësi. Po flas për një model të përsëritur në dorëzime që duhet ta korrigjojmë së bashku." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort repariert die Beziehung und hält gleichzeitig am sachlichen Muster fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer repairs the relationship while still holding onto the factual pattern." },
+                { "language": "fa", "text": "قوی: پاسخ رابطه را ترمیم می‌کند و همزمان الگوی واقعی را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: يصلح الجواب العلاقة، وفي الوقت نفسه يتمسك بالنمط الموضوعي." },
+                { "language": "tr", "text": "Güçlü: cevap ilişkiyi onarır ve aynı zamanda olgusal kalıbı korur." },
+                { "language": "ru", "text": "Сильно: ответ восстанавливает отношения и одновременно удерживает фактический шаблон." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پەیوەندی چاک دەکاتەوە و هەمان کات شێوە ڕاستییەکە دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv têkilî rast dike û di heman demê de şêweya rastiyê diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź naprawia relację, a jednocześnie trzyma się rzeczowego wzorca." },
+                { "language": "ro", "text": "Puternic: răspunsul repară relația și păstrează în același timp tiparul factual." },
+                { "language": "sq", "text": "E fortë: përgjigjja riparon marrëdhënien dhe njëkohësisht mban modelin faktik." }
+              ],
+              "explanationKey": "relationship-repair-with-facts"
+            },
+            {
+              "id": "weak",
+              "text": "So war das nicht gemeint. Ich wollte nur sagen, dass wir bei den Übergaben sorgfältiger werden müssen.",
+              "translations": [
+                { "language": "en", "text": "That is not how I meant it. I only wanted to say that we need to become more careful with the handovers." },
+                { "language": "fa", "text": "منظورم این نبود. فقط می‌خواستم بگویم باید در تحویل‌ها دقیق‌تر شویم." },
+                { "language": "ar", "text": "لم أقصد ذلك بهذه الطريقة. أردت فقط أن أقول إن علينا أن نكون أكثر دقة في عمليات التسليم." },
+                { "language": "tr", "text": "Bunu öyle demek istemedim. Sadece devirlerde daha dikkatli olmamız gerektiğini söylemek istedim." },
+                { "language": "ru", "text": "Я не это имел в виду. Я только хотел сказать, что нам нужно быть внимательнее при передачах." },
+                { "language": "ckb", "text": "مەبەستم ئەوە نەبوو. تەنها دەمویست بڵێم دەبێت لە گواستنەوەکاندا وردتر بین." },
+                { "language": "kmr", "text": "Armanca min ew nebû. Min tenê dixwest bibêjim ku divê em di radestkirinan de baldartir bibin." },
+                { "language": "pl", "text": "Nie to miałem na myśli. Chciałem tylko powiedzieć, że musimy być dokładniejsi przy przekazaniach." },
+                { "language": "ro", "text": "Nu asta am vrut să spun. Am vrut doar să spun că trebuie să fim mai atenți la predări." },
+                { "language": "sq", "text": "Nuk e kisha me atë kuptim. Doja vetëm të thosha se duhet të bëhemi më të kujdesshëm në dorëzime." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unpräzise: Die Antwort beruhigt kurz, kehrt aber zu einer allgemeinen Aussage zurück.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but imprecise: the answer calms briefly but returns to a general statement." },
+                { "language": "fa", "text": "قابل‌باور اما غیر دقیق: پاسخ کوتاه آرام می‌کند، اما دوباره به یک جمله کلی برمی‌گردد." },
+                { "language": "ar", "text": "معقول لكنه غير دقيق: يهدئ الجواب لفترة قصيرة، لكنه يعود إلى عبارة عامة." },
+                { "language": "tr", "text": "Makuldür ama belirsiz: cevap kısa süre yatıştırır, ancak genel bir ifadeye geri döner." },
+                { "language": "ru", "text": "Правдоподобно, но неточно: ответ кратко успокаивает, но возвращается к общему утверждению." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام ناوردە: وەڵامەکە بۆ ماوەیەکی کورت ئارام دەکات، بەڵام دەگەڕێتەوە بۆ وتەیەکی گشتی." },
+                { "language": "kmr", "text": "Bawerbar e lê ne hûr e: bersiv demek kurt aram dike, lê vedigere gotineke giştî." },
+                { "language": "pl", "text": "Prawdopodobne, ale nieprecyzyjne: odpowiedź na chwilę uspokaja, ale wraca do ogólnego stwierdzenia." },
+                { "language": "ro", "text": "Plauzibil, dar imprecis: răspunsul liniștește pe moment, dar revine la o afirmație generală." },
+                { "language": "sq", "text": "E besueshme, por jo e saktë: përgjigjja qetëson shkurt, por kthehet te një deklaratë e përgjithshme." }
+              ],
+              "explanationKey": "brief-repair-general-feedback"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ab der nächsten Übergabe erwarte ich, dass offene Kundenfragen mit einem kurzen Risikohinweis markiert werden: Was ist offen, welche Auswirkung hätte es, und wer entscheidet, falls bis 14 Uhr keine Klärung vorliegt?",
+              "translations": [
+                { "language": "en", "text": "From the next handover on, I expect open customer questions to be marked with a brief risk note: what is open, what impact would it have, and who decides if there is no clarification by 2 p.m.?" },
+                { "language": "fa", "text": "از تحویل بعدی انتظار دارم پرسش‌های باز مشتریان با یک یادداشت کوتاه ریسک علامت‌گذاری شوند: چه چیزی باز است، چه اثری می‌تواند داشته باشد، و اگر تا ساعت ۱۴ روشن نشد چه کسی تصمیم می‌گیرد؟" },
+                { "language": "ar", "text": "اعتباراً من التسليم التالي، أتوقع أن تُعلّم أسئلة العملاء المفتوحة بملاحظة مخاطر قصيرة: ما المفتوح، وما أثره المحتمل، ومن يقرر إذا لم يتم التوضيح حتى الساعة الثانية؟" },
+                { "language": "tr", "text": "Bir sonraki devirden itibaren açık müşteri sorularının kısa bir risk notuyla işaretlenmesini bekliyorum: ne açık, etkisi ne olur ve saat 14'e kadar netleşmezse kim karar verir?" },
+                { "language": "ru", "text": "Начиная со следующей передачи, я ожидаю, что открытые вопросы клиентов будут отмечаться краткой пометкой о риске: что открыто, какой эффект это может иметь и кто принимает решение, если до 14:00 нет ясности?" },
+                { "language": "ckb", "text": "لە گواستنەوەی داهاتووەوە چاوەڕوانم پرسیارە کراوەکانی کڕیاران بە تێبینییەکی کورتی مەترسی نیشانە بکرێن: چی کراوەیە، کاریگەرییەکە چی دەبێت، و ئەگەر تا کاتژمێر ١٤ ڕوون نەبوو کێ بڕیار دەدات؟" },
+                { "language": "kmr", "text": "Ji radestkirina din pê ve ez hêvî dikim ku pirsên vekirî yên mişteriyan bi noteke kurt a xeterê werin nîşankirin: çi vekirî ye, bandora wê çi dibe, û heke heta saet 14 zelalî tune be kî biryar dide?" },
+                { "language": "pl", "text": "Od kolejnego przekazania oczekuję, że otwarte pytania klientów będą oznaczane krótką notą ryzyka: co jest otwarte, jaki byłby wpływ i kto decyduje, jeśli do 14:00 nie ma wyjaśnienia?" },
+                { "language": "ro", "text": "Începând cu următoarea predare, mă aștept ca întrebările deschise ale clienților să fie marcate cu o scurtă notă de risc: ce este deschis, ce impact ar avea și cine decide dacă până la ora 14 nu există clarificare?" },
+                { "language": "sq", "text": "Nga dorëzimi i ardhshëm pres që pyetjet e hapura të klientëve të shënohen me një shënim të shkurtër rreziku: çfarë mbetet hapur, çfarë ndikimi do të kishte dhe kush vendos nëse deri në orën 14 nuk ka sqarim?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht den Standard überprüfbar und gibt eine klare Entscheidungslogik vor.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer makes the standard verifiable and provides a clear decision logic." },
+                { "language": "fa", "text": "قوی: پاسخ استاندارد را قابل بررسی می‌کند و منطق تصمیم روشن می‌دهد." },
+                { "language": "ar", "text": "قوي: يجعل الجواب المعيار قابلاً للتحقق ويقدم منطق قرار واضحاً." },
+                { "language": "tr", "text": "Güçlü: cevap standardı doğrulanabilir hale getirir ve net bir karar mantığı sunar." },
+                { "language": "ru", "text": "Сильно: ответ делает стандарт проверяемым и задает ясную логику принятия решения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ستانداردەکە پشکنراو دەکات و لۆژیکی بڕیاری ڕوون دەدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv standardê kontrolbar dike û mantiqa biryarê ya zelal dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź czyni standard sprawdzalnym i daje jasną logikę decyzyjną." },
+                { "language": "ro", "text": "Puternic: răspunsul face standardul verificabil și oferă o logică decizională clară." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën standardin të verifikueshëm dhe jep një logjikë të qartë vendimi." }
+              ],
+              "explanationKey": "verifiable-expectation"
+            },
+            {
+              "id": "weak",
+              "text": "Ab der nächsten Übergabe sollten offene Punkte klarer markiert werden, damit der Support schneller reagieren kann.",
+              "translations": [
+                { "language": "en", "text": "From the next handover on, open points should be marked more clearly so support can react faster." },
+                { "language": "fa", "text": "از تحویل بعدی باید نکات باز روشن‌تر علامت‌گذاری شوند تا پشتیبانی سریع‌تر واکنش نشان دهد." },
+                { "language": "ar", "text": "اعتباراً من التسليم التالي ينبغي تعليم النقاط المفتوحة بوضوح أكبر حتى يستطيع الدعم الرد بسرعة أكبر." },
+                { "language": "tr", "text": "Bir sonraki devirden itibaren açık noktalar daha net işaretlenmeli ki destek daha hızlı tepki verebilsin." },
+                { "language": "ru", "text": "Начиная со следующей передачи, открытые пункты следует отмечать яснее, чтобы поддержка могла быстрее реагировать." },
+                { "language": "ckb", "text": "لە گواستنەوەی داهاتووەوە خاڵە کراوەکان دەبێت ڕوونتر نیشانە بکرێن تاکو پشتیوانی خێراتر وەڵام بداتەوە." },
+                { "language": "kmr", "text": "Ji radestkirina din pê ve divê xalên vekirî zelaltir werin nîşankirin da ku piştgirî zûtir bersiv bide." },
+                { "language": "pl", "text": "Od kolejnego przekazania otwarte punkty powinny być wyraźniej oznaczane, aby support mógł szybciej reagować." },
+                { "language": "ro", "text": "Începând cu următoarea predare, punctele deschise ar trebui marcate mai clar, ca suportul să poată reacționa mai repede." },
+                { "language": "sq", "text": "Nga dorëzimi i ardhshëm pikat e hapura duhet të shënohen më qartë, që mbështetja të reagojë më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Antwort nennt eine Richtung, aber keine Kriterien für gute Markierung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too general: the answer names a direction, but no criteria for good marking." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی کلی: پاسخ جهت را می‌گوید، اما معیارهای علامت‌گذاری خوب را نمی‌دهد." },
+                { "language": "ar", "text": "معقول لكنه عام جداً: يذكر الجواب اتجاهاً، لكنه لا يقدم معايير للتعليم الجيد." },
+                { "language": "tr", "text": "Makuldür ama çok genel: cevap yönü belirtir, ancak iyi işaretleme için kriter vermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общее: ответ задает направление, но не дает критериев хорошей маркировки." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر گشتییە: وەڵامەکە ئاراستە ناو دەبات، بەڵام پێوەری نیشانەکردنی باش نادات." },
+                { "language": "kmr", "text": "Bawerbar e lê pir giştî ye: bersiv rêçikê nav dike, lê pîvanên nîşankirina baş nade." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt ogólne: odpowiedź wskazuje kierunek, lecz nie daje kryteriów dobrego oznaczenia." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul numește o direcție, dar nu oferă criterii pentru o marcare bună." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: përgjigjja jep një drejtim, por jo kritere për shënim të mirë." }
+              ],
+              "explanationKey": "direction-without-criteria"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dann machen wir es praktisch: Für die nächsten zwei Wochen nutzen wir eine Drei-Punkte-Checkliste. Zusätzlich schaue ich mir die ersten beiden Übergaben mit Ihnen an, damit wir die Einschätzung gemeinsam kalibrieren.",
+              "translations": [
+                { "language": "en", "text": "Then let's make it practical: for the next two weeks, we will use a three-point checklist. In addition, I will review the first two handovers with you so that we can calibrate the assessment together." },
+                { "language": "fa", "text": "پس آن را عملی می‌کنیم: برای دو هفته آینده از یک چک‌لیست سه‌نقطه‌ای استفاده می‌کنیم. علاوه بر آن، دو تحویل اول را با شما بررسی می‌کنم تا ارزیابی را با هم تنظیم کنیم." },
+                { "language": "ar", "text": "إذن نجعل الأمر عملياً: خلال الأسبوعين القادمين سنستخدم قائمة تحقق من ثلاث نقاط. بالإضافة إلى ذلك سأراجع أول عمليتي تسليم معك حتى نضبط التقييم معاً." },
+                { "language": "tr", "text": "O zaman bunu pratik hale getirelim: önümüzdeki iki hafta üç maddelik bir kontrol listesi kullanacağız. Ayrıca ilk iki devri sizinle birlikte gözden geçireceğim, böylece değerlendirmeyi birlikte ayarlarız." },
+                { "language": "ru", "text": "Тогда сделаем это практично: в ближайшие две недели мы используем чек-лист из трех пунктов. Кроме того, первые две передачи я посмотрю вместе с вами, чтобы мы вместе откалибровали оценку." },
+                { "language": "ckb", "text": "ئەوا با کرداریی بکەین: بۆ دوو هەفتەی داهاتوو چێکلیستێکی سێ خاڵی بەکاردەهێنین. هەروەها دوو گواستنەوەی یەکەم لەگەڵ تۆ پێدا دەچمەوە تاکو هەڵسەنگاندنەکە پێکەوە ڕێک بخەین." },
+                { "language": "kmr", "text": "Wê demê em wê pratîk bikin: ji bo du hefteyên din em lîsteya kontrolê ya sê xalan bi kar tînin. Herwiha ez ê du radestkirinên yekem bi we re bibînim da ku em nirxandinê bi hev re kalîbre bikin." },
+                { "language": "pl", "text": "W takim razie zróbmy to praktycznie: przez najbliższe dwa tygodnie użyjemy trzypunktowej checklisty. Dodatkowo przejrzę z Panią pierwsze dwa przekazania, abyśmy wspólnie skalibrowali ocenę." },
+                { "language": "ro", "text": "Atunci facem lucrurile practic: pentru următoarele două săptămâni folosim o listă de verificare în trei puncte. În plus, voi analiza cu dumneavoastră primele două predări, ca să calibrăm împreună evaluarea." },
+                { "language": "sq", "text": "Atëherë e bëjmë praktike: për dy javët e ardhshme përdorim një listë kontrolli me tre pika. Përveç kësaj, do t’i rishikoj me ju dy dorëzimet e para, që ta kalibrojmë së bashku vlerësimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bietet Unterstützung, ohne die Verantwortung für die künftigen Übergaben wegzunehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer offers support without removing responsibility for future handovers." },
+                { "language": "fa", "text": "قوی: پاسخ حمایت ارائه می‌دهد، بدون اینکه مسئولیت تحویل‌های آینده را از فرد بگیرد." },
+                { "language": "ar", "text": "قوي: يقدم الجواب دعماً دون سحب المسؤولية عن عمليات التسليم المستقبلية." },
+                { "language": "tr", "text": "Güçlü: cevap destek sunar, ancak gelecekteki devirler için sorumluluğu ortadan kaldırmaz." },
+                { "language": "ru", "text": "Сильно: ответ предлагает поддержку, не снимая ответственности за будущие передачи." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پشتگیری پێشنیار دەکات، بەبێ ئەوەی بەرپرسیارێتیی گواستنەوەکانی داهاتوو لاببات." },
+                { "language": "kmr", "text": "Xurt e: bersiv piştgirî pêşniyar dike bêyî ku berpirsiyariya radestkirinên paşerojê rake." },
+                { "language": "pl", "text": "Mocne: odpowiedź oferuje wsparcie, nie zdejmując odpowiedzialności za przyszłe przekazania." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă sprijin fără să elimine responsabilitatea pentru predările viitoare." },
+                { "language": "sq", "text": "E fortë: përgjigjja ofron mbështetje pa hequr përgjegjësinë për dorëzimet e ardhshme." }
+              ],
+              "explanationKey": "support-with-accountability"
+            },
+            {
+              "id": "weak",
+              "text": "Dann können wir eine Checkliste verwenden, damit es für Sie leichter wird, offene Risiken zu erkennen.",
+              "translations": [
+                { "language": "en", "text": "Then we can use a checklist so it becomes easier for you to recognize open risks." },
+                { "language": "fa", "text": "پس می‌توانیم از یک چک‌لیست استفاده کنیم تا تشخیص ریسک‌های باز برای شما آسان‌تر شود." },
+                { "language": "ar", "text": "إذن يمكننا استخدام قائمة تحقق حتى يصبح من الأسهل عليك التعرف إلى المخاطر المفتوحة." },
+                { "language": "tr", "text": "O zaman açık riskleri tanımanız kolaylaşsın diye bir kontrol listesi kullanabiliriz." },
+                { "language": "ru", "text": "Тогда мы можем использовать чек-лист, чтобы вам было легче распознавать открытые риски." },
+                { "language": "ckb", "text": "ئەوا دەتوانین چێکلیستێک بەکاربهێنین تاکو ناسینی مەترسییە کراوەکان بۆت ئاسانتر بێت." },
+                { "language": "kmr", "text": "Wê demê em dikarin lîsteyeke kontrolê bi kar bînin da ku nasîna xeterên vekirî ji bo we hêsantir bibe." },
+                { "language": "pl", "text": "W takim razie możemy używać checklisty, żeby łatwiej było Pani rozpoznawać otwarte ryzyka." },
+                { "language": "ro", "text": "Atunci putem folosi o listă de verificare ca să vă fie mai ușor să recunoașteți riscurile deschise." },
+                { "language": "sq", "text": "Atëherë mund të përdorim një listë kontrolli që ta keni më të lehtë të njihni rreziqet e hapura." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig verbindlich: Die Antwort bietet Hilfe, aber keinen Zeitraum und keine gemeinsame Kalibrierung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but not binding enough: the answer offers help, but no timeframe and no shared calibration." },
+                { "language": "fa", "text": "قابل‌باور اما به اندازه کافی الزام‌آور نیست: پاسخ کمک پیشنهاد می‌کند، اما نه زمان‌بندی دارد و نه تنظیم مشترک." },
+                { "language": "ar", "text": "معقول لكنه غير ملزم بما يكفي: يقدم الجواب مساعدة، لكنه لا يتضمن إطاراً زمنياً ولا ضبطاً مشتركاً." },
+                { "language": "tr", "text": "Makuldür ama yeterince bağlayıcı değildir: cevap yardım sunar, ancak zaman çerçevesi ve ortak ayarlama yoktur." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно обязательно: ответ предлагает помощь, но без срока и совместной калибровки." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام بە تەواوی پابەند نییە: وەڵامەکە یارمەتی پێشنیار دەکات، بەڵام کات و ڕێکخستنی هاوبەشی نییە." },
+                { "language": "kmr", "text": "Bawerbar e lê ne têr girêdayî ye: bersiv alîkarî pêşniyar dike, lê dem û kalîbrekirina hevpar tune." },
+                { "language": "pl", "text": "Prawdopodobne, ale za mało wiążące: odpowiedź oferuje pomoc, ale bez czasu i wspólnej kalibracji." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient de obligatoriu: răspunsul oferă ajutor, dar fără termen și fără calibrare comună." },
+                { "language": "sq", "text": "E besueshme, por jo mjaftueshëm detyruese: përgjigjja ofron ndihmë, por pa afat dhe pa kalibrim të përbashkët." }
+              ],
+              "explanationKey": "support-without-follow-up"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "feedback-structure",
+          "text": "Schwieriges Feedback braucht eine beobachtbare Grundlage: Was ist passiert, wie oft, und welche Wirkung hatte es?",
+          "translations": [
+            { "language": "en", "text": "Difficult feedback needs an observable basis: what happened, how often, and what impact did it have?" },
+            { "language": "fa", "text": "بازخورد دشوار به مبنای قابل مشاهده نیاز دارد: چه اتفاقی افتاد، چند بار، و چه اثری داشت؟" },
+            { "language": "ar", "text": "تحتاج التغذية الراجعة الصعبة إلى أساس قابل للملاحظة: ماذا حدث، وكم مرة، وما الأثر؟" },
+            { "language": "tr", "text": "Zor geri bildirim gözlemlenebilir bir temele ihtiyaç duyar: ne oldu, kaç kez oldu ve etkisi neydi?" },
+            { "language": "ru", "text": "Сложной обратной связи нужна наблюдаемая основа: что произошло, как часто и какой был эффект?" },
+            { "language": "ckb", "text": "فیدباکی دژوار پێویستی بە بنەمایەکی بینراو هەیە: چی ڕوویدا، چەند جار، و کاریگەرییەکە چی بوو؟" },
+            { "language": "kmr", "text": "Vegerandina dijwar bingeheke xuya dixwaze: çi qewimî, çend caran, û bandora wê çi bû?" },
+            { "language": "pl", "text": "Trudny feedback potrzebuje obserwowalnej podstawy: co się stało, jak często i jaki miało skutek?" },
+            { "language": "ro", "text": "Feedbackul dificil are nevoie de o bază observabilă: ce s-a întâmplat, cât de des și ce impact a avut?" },
+            { "language": "sq", "text": "Feedback-u i vështirë ka nevojë për bazë të vëzhgueshme: çfarë ndodhi, sa shpesh dhe çfarë ndikimi pati?" }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "empathy-and-boundary",
+          "text": "Empathie heißt nicht, den Standard aufzugeben. Gute Sprache anerkennt Belastung und erklärt trotzdem die fachliche Notwendigkeit.",
+          "translations": [
+            { "language": "en", "text": "Empathy does not mean giving up the standard. Good language acknowledges pressure while still explaining the professional necessity." },
+            { "language": "fa", "text": "همدلی به معنای کنار گذاشتن استاندارد نیست. زبان خوب فشار را می‌پذیرد و در عین حال ضرورت تخصصی را توضیح می‌دهد." },
+            { "language": "ar", "text": "التعاطف لا يعني التخلي عن المعيار. اللغة الجيدة تعترف بالضغط وتشرح مع ذلك الضرورة المهنية." },
+            { "language": "tr", "text": "Empati standardı bırakmak anlamına gelmez. İyi dil yükü kabul eder ve yine de mesleki gerekliliği açıklar." },
+            { "language": "ru", "text": "Эмпатия не означает отказ от стандарта. Хорошая речь признает нагрузку и при этом объясняет профессиональную необходимость." },
+            { "language": "ckb", "text": "هاوسۆزی مانای وازهێنان لە ستاندارد نییە. زمانی باش فشار وەردەگرێت و هەمان کات پێویستیی پیشەیی ڕوون دەکاتەوە." },
+            { "language": "kmr", "text": "Hevhesî nayê wateya devjêberdana standardê. Zimanê baş zextê dipejirîne û dîsa jî hewcedariya pîşeyî rave dike." },
+            { "language": "pl", "text": "Empatia nie oznacza rezygnacji ze standardu. Dobry język uznaje obciążenie, a mimo to wyjaśnia zawodową konieczność." },
+            { "language": "ro", "text": "Empatia nu înseamnă renunțarea la standard. Limbajul bun recunoaște presiunea și explică totuși necesitatea profesională." },
+            { "language": "sq", "text": "Empatia nuk do të thotë të heqësh dorë nga standardi. Gjuha e mirë e pranon presionin dhe megjithatë shpjegon domosdoshmërinë profesionale." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "social-repair",
+          "text": "Wenn Feedback persönlich ankommt, trennen Sie Person, Absicht und Muster. So bleibt die Beziehung geschützt und das Thema sichtbar.",
+          "translations": [
+            { "language": "en", "text": "When feedback feels personal, separate person, intention, and pattern. That protects the relationship while keeping the issue visible." },
+            { "language": "fa", "text": "وقتی بازخورد شخصی برداشت می‌شود، فرد، نیت و الگو را جدا کنید. این کار رابطه را حفظ می‌کند و موضوع را هم قابل دیدن نگه می‌دارد." },
+            { "language": "ar", "text": "عندما تُفهم التغذية الراجعة بشكل شخصي، افصل بين الشخص والنية والنمط. بذلك تبقى العلاقة محمية ويبقى الموضوع ظاهراً." },
+            { "language": "tr", "text": "Geri bildirim kişisel algılandığında kişi, niyet ve kalıbı ayırın. Böylece ilişki korunur ve konu görünür kalır." },
+            { "language": "ru", "text": "Когда обратная связь воспринимается лично, отделяйте человека, намерение и шаблон. Так отношения защищены, а тема остается видимой." },
+            { "language": "ckb", "text": "کاتێک فیدباک بە شێوەی کەسی وەردەگیرێت، کەس، مەبەست و شێوە جیا بکە. بەم شێوەیە پەیوەندی دەپارێزرێت و بابەتەکەش دیار دەمێنێتەوە." },
+            { "language": "kmr", "text": "Dema vegerandin wekî kesane were girtin, kes, armanc û şêwazê veqetînin. Bi vî awayî têkilî tê parastin û mijar xuya dimîne." },
+            { "language": "pl", "text": "Gdy feedback jest odbierany osobiście, oddziel osobę, intencję i wzorzec. W ten sposób relacja jest chroniona, a temat pozostaje widoczny." },
+            { "language": "ro", "text": "Când feedbackul este primit personal, separați persoana, intenția și tiparul. Astfel relația rămâne protejată, iar tema rămâne vizibilă." },
+            { "language": "sq", "text": "Kur feedback-u merret personalisht, ndani personin, qëllimin dhe modelin. Kështu marrëdhënia mbrohet dhe tema mbetet e dukshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "expectation-setting",
+          "text": "Eine starke Erwartung enthält Zeitpunkt, Handlung und Entscheidungskriterium. Allgemeine Appelle reichen bei wiederholten Mustern nicht.",
+          "translations": [
+            { "language": "en", "text": "A strong expectation contains timing, action, and decision criterion. General appeals are not enough for recurring patterns." },
+            { "language": "fa", "text": "انتظار قوی شامل زمان، اقدام و معیار تصمیم است. درخواست‌های کلی برای الگوهای تکراری کافی نیستند." },
+            { "language": "ar", "text": "التوقع القوي يتضمن الوقت والفعل ومعيار القرار. النداءات العامة لا تكفي مع الأنماط المتكررة." },
+            { "language": "tr", "text": "Güçlü bir beklenti zaman, eylem ve karar kriteri içerir. Tekrarlayan kalıplarda genel çağrılar yetmez." },
+            { "language": "ru", "text": "Сильное ожидание содержит срок, действие и критерий решения. Общих призывов при повторяющихся шаблонах недостаточно." },
+            { "language": "ckb", "text": "چاوەڕوانییەکی بەهێز کات، کردار و پێوەری بڕیار لەخۆ دەگرێت. داواکاریی گشتی بۆ شێوە دووبارەبووەکان بەس نییە." },
+            { "language": "kmr", "text": "Hêviyeke xurt dem, çalakî û pîvana biryarê dihewîne. Bangên giştî ji bo şêweyên dubare têrê nakin." },
+            { "language": "pl", "text": "Silne oczekiwanie zawiera termin, działanie i kryterium decyzji. Ogólne apele nie wystarczają przy powtarzających się wzorcach." },
+            { "language": "ro", "text": "O așteptare puternică include moment, acțiune și criteriu de decizie. Apelurile generale nu sunt suficiente pentru tipare recurente." },
+            { "language": "sq", "text": "Një pritje e fortë përmban kohën, veprimin dhe kriterin e vendimit. Thirrjet e përgjithshme nuk mjaftojnë për modele të përsëritura." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "implementation",
+          "text": "Unterstützung wirkt nur verbindlich, wenn sie mit Zeitraum, Beispielen und gemeinsamer Auswertung verbunden ist.",
+          "translations": [
+            { "language": "en", "text": "Support only becomes binding when it is linked to a timeframe, examples, and shared review." },
+            { "language": "fa", "text": "حمایت فقط وقتی الزام‌آور می‌شود که با زمان‌بندی، نمونه‌ها و بازبینی مشترک همراه باشد." },
+            { "language": "ar", "text": "لا يصبح الدعم ملزماً إلا عندما يرتبط بإطار زمني وأمثلة ومراجعة مشتركة." },
+            { "language": "tr", "text": "Destek ancak zaman çerçevesi, örnekler ve ortak değerlendirmeyle bağlandığında bağlayıcı olur." },
+            { "language": "ru", "text": "Поддержка становится обязательной только тогда, когда связана со сроком, примерами и совместным разбором." },
+            { "language": "ckb", "text": "پشتگیری تەنها کاتێک پابەند دەبێت کە بە کات، نموونە و پێداچوونەوەی هاوبەش ببەسترێتەوە." },
+            { "language": "kmr", "text": "Piştgirî tenê dema ku bi dem, mînak û vekolîna hevpar ve girêdayî be, girêdayî dibe." },
+            { "language": "pl", "text": "Wsparcie staje się wiążące dopiero wtedy, gdy jest powiązane z czasem, przykładami i wspólną oceną." },
+            { "language": "ro", "text": "Sprijinul devine obligatoriu doar când este legat de termen, exemple și evaluare comună." },
+            { "language": "sq", "text": "Mbështetja bëhet detyruese vetëm kur lidhet me afatin, shembujt dhe vlerësimin e përbashkët." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "difficult-feedback-conversation",
+          "placement": "hero",
+          "purpose": "Show a neutral workplace feedback conversation with calm tone, concrete notes, and a supportive next-step plan.",
+          "altText": "A clean educational illustration of a calm workplace feedback conversation with concrete notes and next steps.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm workplace feedback conversation with concrete notes and next steps." },
+            { "language": "fa", "text": "یک گفت‌وگوی آرام بازخورد کاری با یادداشت‌های مشخص و گام‌های بعدی." },
+            { "language": "ar", "text": "محادثة تغذية راجعة هادئة في العمل مع ملاحظات محددة وخطوات تالية." },
+            { "language": "tr", "text": "Somut notlar ve sonraki adımlarla sakin bir işyeri geri bildirim görüşmesi." },
+            { "language": "ru", "text": "Спокойный рабочий разговор с обратной связью, конкретными заметками и следующими шагами." },
+            { "language": "ckb", "text": "گفتوگۆیەکی ئارامی فیدباکی کاری بە تێبینیی ڕوون و هەنگاوە داهاتووەکان." },
+            { "language": "kmr", "text": "Axaftineke aram a vegerandina kar bi notên konkret û gavên din." },
+            { "language": "pl", "text": "Spokojna rozmowa feedbackowa w pracy z konkretnymi notatkami i kolejnymi krokami." },
+            { "language": "ro", "text": "O discuție calmă de feedback la locul de muncă, cu note concrete și pași următori." },
+            { "language": "sq", "text": "Një bisedë e qetë feedback-u në punë me shënime konkrete dhe hapa të ardhshëm." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adults in a German workplace meeting room, calm one-to-one feedback conversation, abstract checklist and next-step cards, no readable private text, no logos, respectful professional atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

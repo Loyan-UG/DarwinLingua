@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-42-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 42 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 42",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-ein-sensibles-angehoerigengespraech-fuehren",
+      "linkedDialogueSlug": null,
+      "title": "Ein sensibles Angehörigengespräch führen",
+      "titleTranslations": [
+        { "language": "en", "text": "Having a sensitive conversation with a family member" },
+        { "language": "fa", "text": "انجام گفت‌وگوی حساس با یکی از اعضای خانواده" },
+        { "language": "ar", "text": "إجراء حوار حساس مع أحد أفراد الأسرة" },
+        { "language": "tr", "text": "Bir aile üyesiyle hassas bir görüşme yapmak" },
+        { "language": "ru", "text": "Проведение деликатного разговора с родственником" },
+        { "language": "ckb", "text": "ئەنجامدانی گفتوگۆیەکی هەستیار لەگەڵ ئەندامێکی خێزان" },
+        { "language": "kmr", "text": "Gotûbêjeke hestiyar bi endamekî malbatê re kirin" },
+        { "language": "pl", "text": "Przeprowadzenie delikatnej rozmowy z członkiem rodziny" },
+        { "language": "ro", "text": "Purtarea unei discuții sensibile cu un membru al familiei" },
+        { "language": "sq", "text": "Zhvillimi i një bisede të ndjeshme me një anëtar të familjes" }
+      ],
+      "description": "Sie sprechen mit Ihrer Schwester über die Unterstützung Ihrer Mutter nach einem Krankenhausaufenthalt. Sie möchten Sorge ausdrücken, ohne über Ihre Mutter hinweg zu entscheiden, die Privatsphäre respektieren und zugleich konkrete Aufgaben, Grenzen und den nächsten gemeinsamen Schritt klären.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are speaking with your sister about supporting your mother after a hospital stay. You want to express concern without deciding over your mother's head, respect privacy, and at the same time clarify concrete tasks, limits, and the next shared step." },
+        { "language": "fa", "text": "با خواهرتان درباره حمایت از مادرتان پس از بستری در بیمارستان صحبت می‌کنید. می‌خواهید نگرانی را بیان کنید، بدون اینکه به جای مادرتان تصمیم بگیرید، حریم خصوصی را رعایت کنید و هم‌زمان کارهای مشخص، مرزها و قدم مشترک بعدی را روشن کنید." },
+        { "language": "ar", "text": "تتحدثون مع أختكم عن دعم والدتكم بعد إقامة في المستشفى. تريدون التعبير عن القلق من دون اتخاذ قرار بدلًا من والدتكم، واحترام الخصوصية، وفي الوقت نفسه توضيح المهام المحددة والحدود والخطوة المشتركة التالية." },
+        { "language": "tr", "text": "Kız kardeşinizle annenizin hastane yatışından sonra desteklenmesi hakkında konuşuyorsunuz. Annenizin yerine karar vermeden kaygınızı ifade etmek, mahremiyete saygı göstermek ve aynı zamanda somut görevleri, sınırları ve sonraki ortak adımı netleştirmek istiyorsunuz." },
+        { "language": "ru", "text": "Вы говорите с сестрой о поддержке вашей матери после пребывания в больнице. Вы хотите выразить обеспокоенность, не принимая решения за мать, уважать приватность и одновременно прояснить конкретные задачи, границы и следующий общий шаг." },
+        { "language": "ckb", "text": "لەگەڵ خوشکەکەت دەربارەی پشتگیری لە دایکت دوای مانەوەیەک لە نەخۆشخانە قسە دەکەیت. دەتەوێت نیگەرانی دەرببڕیت بەبێ ئەوەی لەبری دایکت بڕیار بدەیت، تایبەتمەندی ڕێز بکەیت و هەمان کات ئەرکە دیاریکراوەکان، سنوورەکان و هەنگاوی هاوبەشی داهاتوو ڕوون بکەیت." },
+        { "language": "kmr", "text": "Hûn bi xwişka xwe re li ser piştgiriya diya xwe piştî mayîna li nexweşxaneyê diaxivin. Hûn dixwazin fikarê nîşan bidin bêyî ku li şûna diya xwe biryar bidin, taybetîtiyê rêz bikin û di heman demê de karên konkret, sînor û gava hevpar a paşê zelal bikin." },
+        { "language": "pl", "text": "Rozmawia Pan/Pani z siostrą o wsparciu dla matki po pobycie w szpitalu. Chce Pan/Pani wyrazić troskę, nie decydując za matkę, uszanować prywatność i jednocześnie wyjaśnić konkretne zadania, granice oraz następny wspólny krok." },
+        { "language": "ro", "text": "Discutați cu sora dumneavoastră despre sprijinirea mamei după o internare. Doriți să exprimați îngrijorare fără a decide peste capul mamei, să respectați viața privată și în același timp să clarificați sarcini concrete, limite și următorul pas comun." },
+        { "language": "sq", "text": "Flisni me motrën tuaj për mbështetjen e nënës pas një qëndrimi në spital. Doni të shprehni shqetësim pa vendosur në vend të nënës, të respektoni privatësinë dhe njëkohësisht të qartësoni detyrat konkrete, kufijtë dhe hapin e përbashkët të radhës." }
+      ],
+      "learnerGoal": "Ein sensibles Angehörigengespräch führen: Beobachtungen statt Vorwürfe formulieren, die betroffene Person einbeziehen, praktische Aufgaben fair verteilen, eigene Grenzen nennen und einen respektvollen nächsten Schritt vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Have a sensitive family-member conversation: formulate observations instead of accusations, include the affected person, distribute practical tasks fairly, name your own limits, and agree on a respectful next step." },
+        { "language": "fa", "text": "یک گفت‌وگوی حساس خانوادگی انجام دهید: به‌جای سرزنش، مشاهده‌ها را بیان کنید، فرد اصلی را درگیر کنید، کارهای عملی را عادلانه تقسیم کنید، مرزهای خود را بگویید و قدم بعدی محترمانه توافق کنید." },
+        { "language": "ar", "text": "أجروا حوارًا عائليًا حساسًا: صوغوا الملاحظات بدل الاتهامات، وأشركوا الشخص المعني، ووزعوا المهام العملية بعدل، واذكروا حدودكم، واتفقوا على خطوة تالية محترمة." },
+        { "language": "tr", "text": "Hassas bir aile görüşmesi yapın: suçlama yerine gözlemleri ifade edin, etkilenen kişiyi dahil edin, pratik görevleri adil dağıtın, kendi sınırlarınızı belirtin ve saygılı bir sonraki adım üzerinde anlaşın." },
+        { "language": "ru", "text": "Проведите деликатный семейный разговор: формулируйте наблюдения вместо обвинений, включайте затронутого человека, справедливо распределяйте практические задачи, называйте собственные границы и согласуйте уважительный следующий шаг." },
+        { "language": "ckb", "text": "گفتوگۆیەکی هەستیار لەگەڵ ئەندامی خێزان بکە: تێبینییەکان لەجیاتی تاوانبارکردن دابڕێژە، کەسی پەیوەندیدار بەشدار بکە، ئەرکە پراکتیکییەکان بە دادپەروەری دابەش بکە، سنوورەکانی خۆت ناوببە و هەنگاوێکی داهاتووی ڕێزدارانە ڕێکبکە." },
+        { "language": "kmr", "text": "Gotûbêjeke hestiyar a malbatî bikin: li şûna tawanbar kirinê çavdêriyan bibêjin, kesê bandor lê bûyî tê de bikin, karên pratîkî adil parve bikin, sînorên xwe nav bikin û gaveke paşê ya bi rêz li hev bikin." },
+        { "language": "pl", "text": "Przeprowadzić delikatną rozmowę rodzinną: formułować obserwacje zamiast zarzutów, włączyć osobę, której sprawa dotyczy, sprawiedliwie podzielić praktyczne zadania, nazwać własne granice i uzgodnić pełen szacunku następny krok." },
+        { "language": "ro", "text": "Purtați o discuție familială sensibilă: formulați observații în loc de acuzații, implicați persoana afectată, împărțiți echitabil sarcinile practice, numiți propriile limite și conveniți un pas următor respectuos." },
+        { "language": "sq", "text": "Zhvilloni një bisedë të ndjeshme familjare: formuloni vëzhgime në vend të akuzave, përfshini personin e prekur, ndani drejt detyrat praktike, përmendni kufijtë tuaj dhe bini dakord për një hap të ardhshëm me respekt." }
+      ],
+      "cefrLevel": "C2",
+      "category": "health",
+      "topics": ["appointments-and-health", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 42,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Geschwisterteil",
+          "translations": [
+            { "language": "en", "text": "Sibling" },
+            { "language": "fa", "text": "خواهر یا برادر" },
+            { "language": "ar", "text": "الأخ أو الأخت" },
+            { "language": "tr", "text": "Kardeş" },
+            { "language": "ru", "text": "Брат или сестра" },
+            { "language": "ckb", "text": "برا یان خوشک" },
+            { "language": "kmr", "text": "Xwişk an bira" },
+            { "language": "pl", "text": "Rodzeństwo" },
+            { "language": "ro", "text": "Frate sau soră" },
+            { "language": "sq", "text": "Vëlla ose motër" }
+          ]
+        },
+        {
+          "roleKey": "sibling",
+          "displayName": "Schwester",
+          "translations": [
+            { "language": "en", "text": "Sister" },
+            { "language": "fa", "text": "خواهر" },
+            { "language": "ar", "text": "الأخت" },
+            { "language": "tr", "text": "Kız kardeş" },
+            { "language": "ru", "text": "Сестра" },
+            { "language": "ckb", "text": "خوشک" },
+            { "language": "kmr", "text": "Xwişk" },
+            { "language": "pl", "text": "Siostra" },
+            { "language": "ro", "text": "Sora" },
+            { "language": "sq", "text": "Motra" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "sibling",
+          "baseText": "Du wolltest wegen Mama sprechen. Ich hoffe, es geht jetzt nicht darum, dass wir über ihren Kopf hinweg alles neu organisieren.",
+          "translations": [
+            { "language": "en", "text": "You wanted to talk because of Mom. I hope this is not about reorganizing everything over her head." },
+            { "language": "fa", "text": "می‌خواستی درباره مامان صحبت کنیم. امیدوارم قرار نباشد همه چیز را بدون نظر او از نو سازمان‌دهی کنیم." },
+            { "language": "ar", "text": "أردت أن نتحدث بسبب أمي. آمل ألا يكون الأمر عن إعادة تنظيم كل شيء من دون أخذ رأيها." },
+            { "language": "tr", "text": "Annem için konuşmak istedin. Umarım onun fikrini almadan her şeyi yeniden düzenlemekten söz etmiyoruz." },
+            { "language": "ru", "text": "Ты хотел поговорить из-за мамы. Надеюсь, речь не о том, чтобы все переорганизовать без ее участия." },
+            { "language": "ckb", "text": "ویستت دەربارەی دایکم قسە بکەین. هیوادارم مەبەست ئەوە نەبێت کە بەبێ ڕای ئەو هەموو شتێک لە نوێوە ڕێکبخەین." },
+            { "language": "kmr", "text": "Te xwest li ser dayikê biaxivîn. Ez hêvî dikim ne li ser wê ye ku em bêyî wê hemû tişt ji nû ve rêxistin bikin." },
+            { "language": "pl", "text": "Chciałeś/Chciałaś porozmawiać o mamie. Mam nadzieję, że nie chodzi o to, żeby wszystko reorganizować bez jej udziału." },
+            { "language": "ro", "text": "Ai vrut să vorbim despre mama. Sper că nu este vorba să reorganizăm totul peste capul ei." },
+            { "language": "sq", "text": "Deshe të flisnim për mamanë. Shpresoj të mos bëhet fjalë që të riorganizojmë gjithçka pa e përfshirë atë." }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Genau das möchte ich vermeiden. Mir geht es zuerst um Beobachtungen: Sie ist nach der Entlassung unsicher auf den Beinen, vergisst manchmal Termine und wirkt erschöpft. Ich möchte mit ihr sprechen, aber vorher klären, welche Unterstützung wir realistisch anbieten können.",
+          "translations": [
+            { "language": "en", "text": "That is exactly what I want to avoid. My first concern is observations: after discharge she is unsteady on her feet, sometimes forgets appointments, and seems exhausted. I want to speak with her, but first clarify what support we can realistically offer." },
+            { "language": "fa", "text": "دقیقاً می‌خواهم از همین پرهیز کنم. اول درباره مشاهده‌ها صحبت می‌کنم: بعد از ترخیص روی پاهایش کمی نامطمئن است، گاهی وقت‌ها را فراموش می‌کند و خسته به نظر می‌رسد. می‌خواهم با خودش صحبت کنم، اما قبلش روشن کنیم چه حمایتی را واقعاً می‌توانیم پیشنهاد بدهیم." },
+            { "language": "ar", "text": "هذا بالضبط ما أريد تجنبه. يهمني أولًا عرض ملاحظات: بعد الخروج من المستشفى أصبحت غير ثابتة قليلًا في المشي، وتنسى أحيانًا المواعيد، وتبدو مرهقة. أريد أن أتحدث معها، لكن قبل ذلك نوضح أي دعم يمكننا تقديمه بشكل واقعي." },
+            { "language": "tr", "text": "Tam olarak bundan kaçınmak istiyorum. Önce gözlemlerden söz ediyorum: taburcu olduktan sonra ayakta biraz güvensiz, bazen randevuları unutuyor ve yorgun görünüyor. Onunla konuşmak istiyorum, ama önce gerçekçi olarak hangi desteği sunabileceğimizi netleştirelim." },
+            { "language": "ru", "text": "Именно этого я хочу избежать. Сначала речь о наблюдениях: после выписки она неуверенно держится на ногах, иногда забывает записи и выглядит уставшей. Я хочу поговорить с ней, но сначала прояснить, какую поддержку мы реально можем предложить." },
+            { "language": "ckb", "text": "هەمان ئەوە دەمەوێت ڕێگری لێ بکەم. سەرەتا بابەتەکە تێبینییەکانە: دوای دەرچوون لە نەخۆشخانە لەسەر پێی خۆی دڵنیا نییە، هەندێک جار کاتەکان لەبیر دەکات و ماندوو دەردەکەوێت. دەمەوێت لەگەڵ خۆی قسە بکەم، بەڵام پێشتر ڕوون بکەین چ پشتگیرییەک بە واقع‌بینانە دەتوانین پێشکەش بکەین." },
+            { "language": "kmr", "text": "Ez dixwazim rast vê yekê dûr bixim. Pêşî mijar çavdêrî ne: piştî derxistinê li ser lingên xwe hinek neewle ye, carinan randevûyan ji bîr dike û westiyayî xuya dike. Ez dixwazim bi wê re biaxivim, lê pêşî zelal bikin ka em dikarin çi piştgirî bi rastî pêşkêş bikin." },
+            { "language": "pl", "text": "Właśnie tego chcę uniknąć. Najpierw chodzi mi o obserwacje: po wypisie jest niepewna na nogach, czasem zapomina o terminach i wygląda na wyczerpaną. Chcę z nią porozmawiać, ale najpierw wyjaśnijmy, jakie wsparcie możemy realistycznie zaoferować." },
+            { "language": "ro", "text": "Exact asta vreau să evit. Îmi pasă mai întâi de observații: după externare este nesigură pe picioare, uneori uită programările și pare epuizată. Vreau să vorbesc cu ea, dar înainte să clarificăm ce sprijin putem oferi realist." },
+            { "language": "sq", "text": "Pikërisht këtë dua të shmang. Së pari më interesojnë vëzhgimet: pas daljes nga spitali është e pasigurt në këmbë, ndonjëherë harron takimet dhe duket e lodhur. Dua të flas me të, por më parë të qartësojmë çfarë mbështetjeje mund të ofrojmë realisht." }
+          ],
+          "function": "observation-not-accusation",
+          "toneNote": "Beobachtungen nennen, ohne die Mutter oder die Schwester zu beschuldigen.",
+          "expectedLearnerAction": "Frame concern as observations and keep the affected person involved."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "sibling",
+          "baseText": "Ich verstehe die Sorge, aber Mama ist sehr empfindlich, wenn sie das Gefühl hat, kontrolliert zu werden. Wie willst du das ansprechen?",
+          "translations": [
+            { "language": "en", "text": "I understand the concern, but Mom is very sensitive when she feels controlled. How do you want to bring it up?" },
+            { "language": "fa", "text": "نگرانی را می‌فهمم، اما مامان وقتی احساس کند کنترل می‌شود خیلی حساس است. چطور می‌خواهی مطرحش کنی؟" },
+            { "language": "ar", "text": "أفهم القلق، لكن أمي حساسة جدًا عندما تشعر بأنها مراقبة أو مسيطر عليها. كيف تريد أن تطرح الأمر؟" },
+            { "language": "tr", "text": "Kaygıyı anlıyorum, ama annem kontrol edildiğini hissettiğinde çok hassas oluyor. Bunu nasıl açmak istiyorsun?" },
+            { "language": "ru", "text": "Я понимаю тревогу, но мама очень чувствительна, когда ей кажется, что ее контролируют. Как ты хочешь это поднять?" },
+            { "language": "ckb", "text": "نیگەرانییەکە تێدەگەم، بەڵام دایکم کاتێک هەست بکات کۆنترۆڵ دەکرێت زۆر هەستیارە. چۆن دەتەوێت ئەمە باس بکەیت؟" },
+            { "language": "kmr", "text": "Ez fikarê fêm dikim, lê dayik dema hest bike tê kontrolkirin pir hestiyar e. Tu dixwazî çawa vê mijarê vekî?" },
+            { "language": "pl", "text": "Rozumiem troskę, ale mama jest bardzo wrażliwa, kiedy ma poczucie, że ktoś ją kontroluje. Jak chcesz to poruszyć?" },
+            { "language": "ro", "text": "Înțeleg îngrijorarea, dar mama este foarte sensibilă când simte că este controlată. Cum vrei să abordezi asta?" },
+            { "language": "sq", "text": "E kuptoj shqetësimin, por mamaja është shumë e ndjeshme kur ndien se po kontrollohet. Si do ta hapësh këtë temë?" }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde nicht mit Pflegebedürftigkeit beginnen, sondern mit einer offenen Frage: Was fällt ihr seit der Entlassung schwer, und wobei wünscht sie sich selbst Hilfe? Erst danach würde ich unsere Beobachtungen vorsichtig ergänzen.",
+          "translations": [
+            { "language": "en", "text": "I would not start with need for care, but with an open question: what has been difficult for her since discharge, and where does she herself want help? Only after that would I carefully add our observations." },
+            { "language": "fa", "text": "با واژه نیاز به مراقبت شروع نمی‌کنم، بلکه با یک سؤال باز: از زمان ترخیص چه چیزهایی برای خودش سخت شده و خودش در چه چیزهایی کمک می‌خواهد؟ فقط بعد از آن مشاهده‌های خودمان را با احتیاط اضافه می‌کنم." },
+            { "language": "ar", "text": "لن أبدأ بموضوع الحاجة إلى الرعاية، بل بسؤال مفتوح: ما الذي أصبح صعبًا عليها منذ الخروج، وفي أي شيء ترغب هي نفسها في المساعدة؟ وبعد ذلك فقط أضيف ملاحظاتنا بحذر." },
+            { "language": "tr", "text": "Bakım ihtiyacıyla başlamazdım, açık bir soruyla başlardım: taburcu olduğundan beri ne ona zor geliyor ve kendisi nerede yardım istiyor? Ancak ondan sonra gözlemlerimizi dikkatlice eklerdim." },
+            { "language": "ru", "text": "Я бы не начинал с нуждаемости в уходе, а с открытого вопроса: что ей трудно после выписки и в чем она сама хотела бы помощи? Только после этого я осторожно добавил бы наши наблюдения." },
+            { "language": "ckb", "text": "بە پێویستی بە چاودێری دەست پێ ناکەم، بەڵکو بە پرسیارێکی کراوە: لە دوای دەرچوون چی بۆی قورس بووە و خۆی لە چیدا یارمەتی دەوێت؟ تەنها دوای ئەوە تێبینییەکانی خۆمان بە وریایی زیاد دەکەم." },
+            { "language": "kmr", "text": "Ez bi pêwîstiya lênêrînê dest pê nakim, lê bi pirsereke vekirî: ji derxistinê vir ve çi ji bo wê dijwar e, û ew bi xwe di çi de alîkarî dixwaze? Tenê piştî wê ez çavdêriyên me bi hişyarî zêde dikim." },
+            { "language": "pl", "text": "Nie zacząłbym/zaczęłabym od potrzeby opieki, lecz od pytania otwartego: co jest dla niej trudne od wypisu i w czym sama chciałaby pomocy? Dopiero potem ostrożnie dodałbym/dodałabym nasze obserwacje." },
+            { "language": "ro", "text": "Nu aș începe cu nevoia de îngrijire, ci cu o întrebare deschisă: ce i se pare greu de la externare și unde își dorește ea însăși ajutor? Abia după aceea aș adăuga cu grijă observațiile noastre." },
+            { "language": "sq", "text": "Nuk do të filloja me nevojën për kujdes, por me një pyetje të hapur: çfarë i është bërë e vështirë që nga dalja nga spitali dhe ku dëshiron vetë ndihmë? Vetëm pas kësaj do të shtoja me kujdes vëzhgimet tona." }
+          ],
+          "function": "privacy-respecting-entry",
+          "toneNote": "Die Selbstbestimmung der betroffenen Person sprachlich schützen.",
+          "expectedLearnerAction": "Open with the person's perspective before adding family observations."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "sibling",
+          "baseText": "Das klingt besser. Trotzdem müssen wir klären, wer was übernimmt. Ich kann nicht jeden zweiten Tag vorbeifahren.",
+          "translations": [
+            { "language": "en", "text": "That sounds better. Still, we have to clarify who takes over what. I cannot drive over every other day." },
+            { "language": "fa", "text": "این بهتر به نظر می‌رسد. با این حال باید روشن کنیم چه کسی چه کاری را بر عهده می‌گیرد. من نمی‌توانم یک روز در میان سر بزنم." },
+            { "language": "ar", "text": "هذا يبدو أفضل. ومع ذلك يجب أن نوضح من سيتولى ماذا. لا أستطيع الذهاب إليها كل يومين." },
+            { "language": "tr", "text": "Bu daha iyi geliyor. Yine de kimin neyi üstleneceğini netleştirmeliyiz. Ben iki günde bir gidemem." },
+            { "language": "ru", "text": "Это звучит лучше. Но все равно нужно прояснить, кто что берет на себя. Я не могу приезжать через день." },
+            { "language": "ckb", "text": "ئەمە باشتر دەردەکەوێت. بەڵام هێشتا پێویستە ڕوون بکەین کێ چی وەردەگرێت. من ناتوانم هەر دوو ڕۆژ جارێک سەردان بکەم." },
+            { "language": "kmr", "text": "Ev baştir xuya dike. Lê dîsa divê em zelal bikin kî çi digire ser xwe. Ez nikarim her du rojan carekê biçim." },
+            { "language": "pl", "text": "To brzmi lepiej. Mimo to musimy wyjaśnić, kto co przejmie. Nie mogę przyjeżdżać co drugi dzień." },
+            { "language": "ro", "text": "Asta sună mai bine. Totuși trebuie să clarificăm cine preia ce. Nu pot merge la ea din două în două zile." },
+            { "language": "sq", "text": "Kjo tingëllon më mirë. Megjithatë duhet të qartësojmë kush merr përsipër çfarë. Unë nuk mund të shkoj çdo dy ditë." }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das erwarte ich auch nicht. Ich kann die Arzttermine und die Medikamentenliste übernehmen. Du könntest vielleicht einmal pro Woche einkaufen, wenn Mama das möchte. Für den Rest sollten wir mit ihr über ambulante Hilfe sprechen, statt es stillschweigend unter uns aufzuteilen.",
+          "translations": [
+            { "language": "en", "text": "I do not expect that either. I can take over the doctor's appointments and the medication list. You could perhaps do shopping once a week, if Mom wants that. For the rest, we should speak with her about outpatient help instead of silently dividing it between us." },
+            { "language": "fa", "text": "من هم چنین انتظاری ندارم. من می‌توانم وقت‌های پزشک و فهرست داروها را بر عهده بگیرم. تو شاید بتوانی هفته‌ای یک بار خرید را انجام بدهی، اگر مامان بخواهد. درباره بقیه بهتر است با خودش درباره کمک بیرونی صحبت کنیم، نه اینکه بی‌صدا بین خودمان تقسیمش کنیم." },
+            { "language": "ar", "text": "أنا لا أتوقع ذلك أيضًا. أستطيع تولي مواعيد الطبيب وقائمة الأدوية. يمكنك ربما التسوق مرة في الأسبوع إذا أرادت أمي ذلك. أما الباقي فينبغي أن نتحدث معها عن مساعدة منزلية بدلًا من تقسيمه بيننا بصمت." },
+            { "language": "tr", "text": "Ben de bunu beklemiyorum. Doktor randevularını ve ilaç listesini ben üstlenebilirim. Annem isterse sen belki haftada bir alışveriş yapabilirsin. Geri kalanı sessizce aramızda paylaşmak yerine onunla evde destek hakkında konuşmalıyız." },
+            { "language": "ru", "text": "Я этого тоже не ожидаю. Я могу взять на себя врачебные записи и список лекарств. Ты, возможно, могла бы раз в неделю делать покупки, если мама этого захочет. Об остальном нам следует поговорить с ней о помощи на дому, а не молча делить это между собой." },
+            { "language": "ckb", "text": "منیش ئەوە چاوەڕوان ناکەم. دەتوانم کاتەکانی پزیشک و لیستی دەرمانەکان وەربگرم. تۆ ڕەنگە بتوانیت هەفتەی جارێک بازاڕ بکەیت، ئەگەر دایکم بیەوێت. بۆ ئەوانی تر پێویستە لەگەڵ خۆی دەربارەی یارمەتی ماڵەوە قسە بکەین، نەک بە بێدەنگی لەنێوان خۆمان دابەشی بکەین." },
+            { "language": "kmr", "text": "Ez jî vê hêvî nakim. Ez dikarim randevûyên bijîşkî û lîsteya dermanan bigirim ser xwe. Tu belkî hefteyê carekê kirînê bikî, heke dayik bixwaze. Ji bo mayî divê em bi wê re li ser alîkariya malê biaxivin, ne ku wê bêdeng di navbera xwe de parve bikin." },
+            { "language": "pl", "text": "Tego też nie oczekuję. Mogę przejąć terminy lekarskie i listę leków. Ty mogłabyś może raz w tygodniu zrobić zakupy, jeśli mama tego chce. O reszcie powinniśmy porozmawiać z nią o pomocy ambulatoryjnej, zamiast po cichu dzielić to między siebie." },
+            { "language": "ro", "text": "Nici eu nu mă aștept la asta. Pot prelua programările medicale și lista de medicamente. Tu ai putea poate face cumpărăturile o dată pe săptămână, dacă mama dorește. Pentru rest, ar trebui să vorbim cu ea despre ajutor la domiciliu, în loc să împărțim tacit între noi." },
+            { "language": "sq", "text": "As unë nuk e pres këtë. Mund të marr përsipër takimet mjekësore dhe listën e barnave. Ti ndoshta mund të bësh pazarin një herë në javë, nëse mamaja e dëshiron. Për pjesën tjetër duhet të flasim me të për ndihmë në shtëpi, në vend që ta ndajmë në heshtje mes nesh." }
+          ],
+          "function": "fair-task-division",
+          "toneNote": "Konkrete Aufgaben anbieten und externe Hilfe nicht als Scheitern darstellen.",
+          "expectedLearnerAction": "Offer own contribution, ask for limited contribution, and include the mother in further decisions."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "sibling",
+          "baseText": "Ich habe nur Sorge, dass sie sich abgeschoben fühlt, wenn wir sofort externe Hilfe erwähnen.",
+          "translations": [
+            { "language": "en", "text": "I am just worried that she will feel pushed aside if we mention outside help immediately." },
+            { "language": "fa", "text": "فقط نگرانم اگر فوراً کمک بیرونی را مطرح کنیم، احساس کند کنار گذاشته شده است." },
+            { "language": "ar", "text": "أنا قلقة فقط من أن تشعر وكأننا نزيحها جانبًا إذا ذكرنا المساعدة الخارجية فورًا." },
+            { "language": "tr", "text": "Sadece dışarıdan yardımı hemen söylersek kendini bir kenara itilmiş hisseder diye kaygılanıyorum." },
+            { "language": "ru", "text": "Я просто боюсь, что она почувствует себя отодвинутой, если мы сразу упомянем внешнюю помощь." },
+            { "language": "ckb", "text": "تەنها نیگەرانم ئەگەر دەستبەجێ یارمەتی دەرەکی باس بکەین، هەست بکات وەک ئەوەی لای دەخەین." },
+            { "language": "kmr", "text": "Ez tenê fikar dikim ku heke em alîkariya derveyî yekser bibêjin, ew hest bike hatiye alîkirin." },
+            { "language": "pl", "text": "Martwię się tylko, że poczuje się odsunięta, jeśli od razu wspomnimy o pomocy z zewnątrz." },
+            { "language": "ro", "text": "Mă tem doar că se va simți dată la o parte dacă menționăm imediat ajutorul extern." },
+            { "language": "sq", "text": "Vetëm shqetësohem se do të ndihet e lënë mënjanë nëse përmendim menjëherë ndihmën e jashtme." }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann formulieren wir es nicht als Entlastung für uns, sondern als zusätzliche Wahlmöglichkeit für sie: Sie entscheidet, ob sie nur familiäre Unterstützung möchte oder ob eine neutrale Person bei Haushalt, Wegen oder Medikamenten hilft.",
+          "translations": [
+            { "language": "en", "text": "Then we should not phrase it as relief for us, but as an additional option for her: she decides whether she wants only family support or whether a neutral person helps with household tasks, errands, or medication." },
+            { "language": "fa", "text": "پس آن را به‌عنوان کاهش بار از دوش خودمان بیان نکنیم، بلکه به‌عنوان یک امکان انتخاب اضافی برای او: خودش تصمیم می‌گیرد فقط حمایت خانواده را می‌خواهد یا یک فرد بی‌طرف در کارهای خانه، رفت‌وآمدها یا داروها کمک کند." },
+            { "language": "ar", "text": "إذن لا نصوغ الأمر كراحة لنا، بل كخيار إضافي لها: هي تقرر هل تريد دعم العائلة فقط أم أن يساعد شخص محايد في البيت أو المشاوير أو الأدوية." },
+            { "language": "tr", "text": "O zaman bunu bizim yükümüzü azaltmak olarak değil, onun için ek bir seçenek olarak ifade edelim: sadece aile desteği mi istediğine, yoksa ev işleri, dışarıdaki işler veya ilaçlarda tarafsız bir kişinin yardım etmesine mi karar verir." },
+            { "language": "ru", "text": "Тогда сформулируем это не как разгрузку для нас, а как дополнительный вариант для нее: она решает, хочет ли только семейную поддержку или чтобы нейтральный человек помогал с домом, поездками или лекарствами." },
+            { "language": "ckb", "text": "ئەوا بە شێوەی کەمکردنەوەی بار لەسەر خۆمان دایمەزرێنین، بەڵکو وەک هەڵبژاردەیەکی زیادە بۆ ئەو: خۆی بڕیار دەدات ئایا تەنها پشتگیریی خێزان دەوێت یان کەسێکی بێلایەن لە کاری ماڵ، ڕۆیشتنەکان یان دەرمانەکان یارمەتی بدات." },
+            { "language": "kmr", "text": "Wê demê em wê ne wek sivikkirina barê me, lê wek vebijêrkeke zêde ji bo wê bibêjin: ew biryar dide ka tenê piştgiriya malbatê dixwaze an kesekî bêalî di karên malê, rêçûn an dermanan de alîkar be." },
+            { "language": "pl", "text": "Wtedy nie ujmujmy tego jako odciążenia dla nas, lecz jako dodatkową możliwość wyboru dla niej: ona decyduje, czy chce tylko wsparcia rodziny, czy też neutralnej osoby do pomocy w domu, sprawunkach lub lekach." },
+            { "language": "ro", "text": "Atunci să nu formulăm asta ca o ușurare pentru noi, ci ca o opțiune suplimentară pentru ea: ea decide dacă dorește doar sprijin familial sau dacă o persoană neutră ajută la gospodărie, drumuri sau medicamente." },
+            { "language": "sq", "text": "Atëherë të mos e formulojmë si lehtësim për ne, por si një mundësi shtesë zgjedhjeje për të: ajo vendos nëse dëshiron vetëm mbështetje familjare apo nëse një person neutral ndihmon me shtëpinë, vajtjet ose barnat." }
+          ],
+          "function": "choice-preserving-support",
+          "toneNote": "Externe Hilfe als Wahlmöglichkeit und nicht als Abschieben rahmen.",
+          "expectedLearnerAction": "Reframe support as autonomy-preserving choice."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "sibling",
+          "baseText": "Damit kann ich mitgehen. Lass uns aber vermeiden, direkt eine Liste vor ihr auszubreiten. Das könnte sie überfordern.",
+          "translations": [
+            { "language": "en", "text": "I can go along with that. But let us avoid spreading out a whole list in front of her right away. That could overwhelm her." },
+            { "language": "fa", "text": "با این می‌توانم همراهی کنم. اما بیایید پرهیز کنیم که فوراً یک فهرست کامل جلوی او پهن کنیم. ممکن است او را بیش از حد تحت فشار بگذارد." },
+            { "language": "ar", "text": "يمكنني أن أوافق على ذلك. لكن لنتجنب عرض قائمة كاملة أمامها مباشرة. قد يرهقها ذلك." },
+            { "language": "tr", "text": "Buna katılabilirim. Ama hemen önüne tam bir liste sermekten kaçınalım. Bu onu bunaltabilir." },
+            { "language": "ru", "text": "С этим я могу согласиться. Но давай не будем сразу выкладывать перед ней целый список. Это может ее перегрузить." },
+            { "language": "ckb", "text": "لەگەڵ ئەمە دەتوانم بڕۆم. بەڵام با دوور بکەوین لەوەی دەستبەجێ لیستێکی تەواو لەپێشی دابنێین. ئەمە دەتوانێت باری زۆر بخاتە سەری." },
+            { "language": "kmr", "text": "Ez dikarim bi vê re razî bim. Lê bila em dûr bikevin ji wê ku yekser lîsteyeke tevahî li ber wê vekin. Ew dikare wê zêde bar bike." },
+            { "language": "pl", "text": "Z tym mogę się zgodzić. Unikajmy jednak rozkładania przed nią od razu całej listy. To mogłoby ją przytłoczyć." },
+            { "language": "ro", "text": "Cu asta pot fi de acord. Dar să evităm să-i punem imediat în față o listă întreagă. Ar putea să o copleșească." },
+            { "language": "sq", "text": "Me këtë mund të pajtohem. Por të shmangim t'i shpalosim menjëherë një listë të tërë përpara. Kjo mund ta mbingarkojë." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Einverstanden. Wir beginnen mit zwei Fragen an sie: Was soll unbedingt so bleiben wie bisher, und wobei wäre Entlastung willkommen? Danach schlagen wir nur drei konkrete Punkte vor: Termine, Einkaufen und ein unverbindliches Beratungsgespräch.",
+          "translations": [
+            { "language": "en", "text": "Agreed. We will start with two questions for her: what should definitely stay as it has been, and where would relief be welcome? After that we suggest only three concrete points: appointments, shopping, and a non-binding counseling conversation." },
+            { "language": "fa", "text": "موافقم. با دو سؤال از خودش شروع می‌کنیم: چه چیزی حتماً باید مثل قبل بماند، و در چه چیزی کمک خوشایند است؟ بعد فقط سه مورد مشخص پیشنهاد می‌دهیم: وقت‌ها، خرید، و یک گفت‌وگوی مشاوره‌ای غیرالزام‌آور." },
+            { "language": "ar", "text": "متفقون. نبدأ بسؤالين لها: ما الذي يجب أن يبقى كما كان بالتأكيد، وفي أي شيء سيكون التخفيف مرحبًا به؟ بعد ذلك نقترح ثلاث نقاط محددة فقط: المواعيد، التسوق، وحوار استشاري غير ملزم." },
+            { "language": "tr", "text": "Anlaştık. Ona iki soruyla başlarız: ne kesinlikle eskisi gibi kalmalı ve nerede destek iyi olur? Sonra yalnızca üç somut nokta öneririz: randevular, alışveriş ve bağlayıcı olmayan bir danışma görüşmesi." },
+            { "language": "ru", "text": "Согласен. Мы начнем с двух вопросов к ней: что обязательно должно остаться как прежде и где помощь была бы желательна? После этого предложим только три конкретных пункта: записи, покупки и необязательную консультацию." },
+            { "language": "ckb", "text": "ڕازیم. بە دوو پرسیار بۆ ئەو دەست پێ دەکەین: چی پێویستە بە دڵنیایی وەک پێشوو بمێنێت، و لە چیدا کەمکردنەوەی بار بەخێرهاتن دەبێت؟ پاشان تەنها سێ خاڵی دیاریکراو پێشنیار دەکەین: کاتەکان، بازاڕکردن و گفتوگۆی ڕاوێژی نابەستەر." },
+            { "language": "kmr", "text": "Li hev hat. Em bi du pirsan ji wê re dest pê dikin: çi divê bi dilniyayî wek berê bimîne, û di çi de sivikkirin xêrhatî be? Piştî wê tenê sê xalên konkret pêşniyar dikin: randevû, kirîn û gotûbêjeke şêwirmendiyê ya ne girêdayî." },
+            { "language": "pl", "text": "Zgoda. Zaczynamy od dwóch pytań do niej: co koniecznie ma pozostać jak dotąd i w czym odciążenie byłoby mile widziane? Potem proponujemy tylko trzy konkretne punkty: terminy, zakupy i niezobowiązującą rozmowę doradczą." },
+            { "language": "ro", "text": "De acord. Începem cu două întrebări pentru ea: ce trebuie neapărat să rămână ca până acum și unde ar fi binevenită o ușurare? După aceea propunem doar trei puncte concrete: programări, cumpărături și o discuție de consiliere fără obligații." },
+            { "language": "sq", "text": "Dakord. Fillojmë me dy pyetje për të: çfarë duhet patjetër të mbetet si më parë dhe ku do të ishte e mirëpritur lehtësimi? Pastaj propozojmë vetëm tri pika konkrete: takimet, pazarin dhe një bisedë këshilluese jo detyruese." }
+          ],
+          "function": "respectful-next-step",
+          "toneNote": "Nächsten Schritt klein halten und mit Fragen statt Beschluss beginnen.",
+          "expectedLearnerAction": "Close with questions, limited options, and a respectful next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau das möchte ich vermeiden. Mir geht es zuerst um Beobachtungen: Sie ist nach der Entlassung unsicher auf den Beinen, vergisst manchmal Termine und wirkt erschöpft. Ich möchte mit ihr sprechen, aber vorher klären, welche Unterstützung wir realistisch anbieten können.",
+              "translations": [
+                { "language": "en", "text": "That is exactly what I want to avoid. My first concern is observations: after discharge she is unsteady on her feet, sometimes forgets appointments, and seems exhausted. I want to speak with her, but first clarify what support we can realistically offer." },
+                { "language": "fa", "text": "دقیقاً می‌خواهم از همین پرهیز کنم. اول درباره مشاهده‌ها صحبت می‌کنم: بعد از ترخیص روی پاهایش کمی نامطمئن است، گاهی وقت‌ها را فراموش می‌کند و خسته به نظر می‌رسد. می‌خواهم با خودش صحبت کنم، اما قبلش روشن کنیم چه حمایتی را واقعاً می‌توانیم پیشنهاد بدهیم." },
+                { "language": "ar", "text": "هذا بالضبط ما أريد تجنبه. يهمني أولًا عرض ملاحظات: بعد الخروج من المستشفى أصبحت غير ثابتة قليلًا في المشي، وتنسى أحيانًا المواعيد، وتبدو مرهقة. أريد أن أتحدث معها، لكن قبل ذلك نوضح أي دعم يمكننا تقديمه بشكل واقعي." },
+                { "language": "tr", "text": "Tam olarak bundan kaçınmak istiyorum. Önce gözlemlerden söz ediyorum: taburcu olduktan sonra ayakta biraz güvensiz, bazen randevuları unutuyor ve yorgun görünüyor. Onunla konuşmak istiyorum, ama önce gerçekçi olarak hangi desteği sunabileceğimizi netleştirelim." },
+                { "language": "ru", "text": "Именно этого я хочу избежать. Сначала речь о наблюдениях: после выписки она неуверенно держится на ногах, иногда забывает записи и выглядит уставшей. Я хочу поговорить с ней, но сначала прояснить, какую поддержку мы реально можем предложить." },
+                { "language": "ckb", "text": "هەمان ئەوە دەمەوێت ڕێگری لێ بکەم. سەرەتا بابەتەکە تێبینییەکانە: دوای دەرچوون لە نەخۆشخانە لەسەر پێی خۆی دڵنیا نییە، هەندێک جار کاتەکان لەبیر دەکات و ماندوو دەردەکەوێت. دەمەوێت لەگەڵ خۆی قسە بکەم، بەڵام پێشتر ڕوون بکەین چ پشتگیرییەک بە واقع‌بینانە دەتوانین پێشکەش بکەین." },
+                { "language": "kmr", "text": "Ez dixwazim rast vê yekê dûr bixim. Pêşî mijar çavdêrî ne: piştî derxistinê li ser lingên xwe hinek neewle ye, carinan randevûyan ji bîr dike û westiyayî xuya dike. Ez dixwazim bi wê re biaxivim, lê pêşî zelal bikin ka em dikarin çi piştgirî bi rastî pêşkêş bikin." },
+                { "language": "pl", "text": "Właśnie tego chcę uniknąć. Najpierw chodzi mi o obserwacje: po wypisie jest niepewna na nogach, czasem zapomina o terminach i wygląda na wyczerpaną. Chcę z nią porozmawiać, ale najpierw wyjaśnijmy, jakie wsparcie możemy realistycznie zaoferować." },
+                { "language": "ro", "text": "Exact asta vreau să evit. Îmi pasă mai întâi de observații: după externare este nesigură pe picioare, uneori uită programările și pare epuizată. Vreau să vorbesc cu ea, dar înainte să clarificăm ce sprijin putem oferi realist." },
+                { "language": "sq", "text": "Pikërisht këtë dua të shmang. Së pari më interesojnë vëzhgimet: pas daljes nga spitali është e pasigurt në këmbë, ndonjëherë harron takimet dhe duket e lodhur. Dua të flas me të, por më parë të qartësojmë çfarë mbështetjeje mund të ofrojmë realisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet Bevormundung und beginnt mit überprüfbaren Beobachtungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer avoids paternalism and starts with verifiable observations." },
+                { "language": "fa", "text": "قوی: پاسخ از قیم‌مآبی پرهیز می‌کند و با مشاهده‌های قابل بررسی شروع می‌شود." },
+                { "language": "ar", "text": "قوي: الجواب يتجنب الوصاية ويبدأ بملاحظات قابلة للتحقق." },
+                { "language": "tr", "text": "Güçlü: Yanıt üstten karar vermekten kaçınıyor ve doğrulanabilir gözlemlerle başlıyor." },
+                { "language": "ru", "text": "Сильно: ответ избегает опеки сверху и начинается с проверяемых наблюдений." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە سەرپەرشتیی زۆر دوور دەکەوێتەوە و بە تێبینیی پشکنراو دەست پێ دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ji serdestiyê dûr dikeve û bi çavdêriyên kontrolbar dest pê dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika protekcjonalności i zaczyna od sprawdzalnych obserwacji." },
+                { "language": "ro", "text": "Puternic: răspunsul evită paternalismul și începe cu observații verificabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang paternalizmin dhe fillon me vëzhgime të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich finde, wir müssen jetzt schnell entscheiden, weil sie allein nicht mehr zurechtkommt.",
+              "translations": [
+                { "language": "en", "text": "I think we have to decide quickly now because she can no longer manage alone." },
+                { "language": "fa", "text": "به نظرم الان باید سریع تصمیم بگیریم، چون او دیگر به‌تنهایی از عهده برنمی‌آید." },
+                { "language": "ar", "text": "أعتقد أننا يجب أن نقرر بسرعة الآن لأنها لم تعد قادرة على تدبر أمورها وحدها." },
+                { "language": "tr", "text": "Bence şimdi hızlı karar vermeliyiz, çünkü artık tek başına idare edemiyor." },
+                { "language": "ru", "text": "Я думаю, нам сейчас нужно быстро решить, потому что она больше не справляется одна." },
+                { "language": "ckb", "text": "پێم وایە ئێستا پێویستە بە خێرایی بڕیار بدەین، چونکە ئیتر بە تەنها ناتوانێت ڕابچێت." },
+                { "language": "kmr", "text": "Ez difikirim divê em niha zû biryar bidin, ji ber ku ew êdî bi tena xwe nikare xwe bi rê ve bibe." },
+                { "language": "pl", "text": "Uważam, że musimy teraz szybko zdecydować, bo ona już sama sobie nie radzi." },
+                { "language": "ro", "text": "Cred că trebuie să decidem repede acum, pentru că ea nu se mai descurcă singură." },
+                { "language": "sq", "text": "Mendoj se tani duhet të vendosim shpejt, sepse ajo nuk ia del më vetëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu bevormundend. Es fehlen Beobachtungen, Einbeziehung der Mutter und realistische Unterstützung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too paternalistic. Observations, inclusion of the mother, and realistic support are missing." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد قیم‌مآبانه است. مشاهده‌ها، درگیر کردن مادر و حمایت واقع‌بینانه کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه وصائي جدًا. تنقص الملاحظات وإشراك الأم والدعم الواقعي." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla üstten. Gözlemler, annenin dahil edilmesi ve gerçekçi destek yok." },
+                { "language": "ru", "text": "Правдоподобно, но слишком покровительственно. Не хватает наблюдений, включения матери и реалистичной поддержки." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر سەرپەرشتییە. تێبینی، بەشدارکردنی دایک و پشتگیریی واقع‌بینانە کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir serdestî ye. Çavdêrî, tê de kirina dayikê û piştgiriya rastîn kêm in." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt protekcjonalne. Brakuje obserwacji, włączenia matki i realistycznego wsparcia." },
+                { "language": "ro", "text": "Plauzibil, dar prea paternalist. Lipsesc observațiile, implicarea mamei și sprijinul realist." },
+                { "language": "sq", "text": "E besueshme, por shumë paternaliste. Mungojnë vëzhgimet, përfshirja e nënës dhe mbështetja realiste." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde nicht mit Pflegebedürftigkeit beginnen, sondern mit einer offenen Frage: Was fällt ihr seit der Entlassung schwer, und wobei wünscht sie sich selbst Hilfe? Erst danach würde ich unsere Beobachtungen vorsichtig ergänzen.",
+              "translations": [
+                { "language": "en", "text": "I would not start with need for care, but with an open question: what has been difficult for her since discharge, and where does she herself want help? Only after that would I carefully add our observations." },
+                { "language": "fa", "text": "با واژه نیاز به مراقبت شروع نمی‌کنم، بلکه با یک سؤال باز: از زمان ترخیص چه چیزهایی برای خودش سخت شده و خودش در چه چیزهایی کمک می‌خواهد؟ فقط بعد از آن مشاهده‌های خودمان را با احتیاط اضافه می‌کنم." },
+                { "language": "ar", "text": "لن أبدأ بموضوع الحاجة إلى الرعاية، بل بسؤال مفتوح: ما الذي أصبح صعبًا عليها منذ الخروج، وفي أي شيء ترغب هي نفسها في المساعدة؟ وبعد ذلك فقط أضيف ملاحظاتنا بحذر." },
+                { "language": "tr", "text": "Bakım ihtiyacıyla başlamazdım, açık bir soruyla başlardım: taburcu olduğundan beri ne ona zor geliyor ve kendisi nerede yardım istiyor? Ancak ondan sonra gözlemlerimizi dikkatlice eklerdim." },
+                { "language": "ru", "text": "Я бы не начинал с нуждаемости в уходе, а с открытого вопроса: что ей трудно после выписки и в чем она сама хотела бы помощи? Только после этого я осторожно добавил бы наши наблюдения." },
+                { "language": "ckb", "text": "بە پێویستی بە چاودێری دەست پێ ناکەم، بەڵکو بە پرسیارێکی کراوە: لە دوای دەرچوون چی بۆی قورس بووە و خۆی لە چیدا یارمەتی دەوێت؟ تەنها دوای ئەوە تێبینییەکانی خۆمان بە وریایی زیاد دەکەم." },
+                { "language": "kmr", "text": "Ez bi pêwîstiya lênêrînê dest pê nakim, lê bi pirsereke vekirî: ji derxistinê vir ve çi ji bo wê dijwar e, û ew bi xwe di çi de alîkarî dixwaze? Tenê piştî wê ez çavdêriyên me bi hişyarî zêde dikim." },
+                { "language": "pl", "text": "Nie zacząłbym/zaczęłabym od potrzeby opieki, lecz od pytania otwartego: co jest dla niej trudne od wypisu i w czym sama chciałaby pomocy? Dopiero potem ostrożnie dodałbym/dodałabym nasze obserwacje." },
+                { "language": "ro", "text": "Nu aș începe cu nevoia de îngrijire, ci cu o întrebare deschisă: ce i se pare greu de la externare și unde își dorește ea însăși ajutor? Abia după aceea aș adăuga cu grijă observațiile noastre." },
+                { "language": "sq", "text": "Nuk do të filloja me nevojën për kujdes, por me një pyetje të hapur: çfarë i është bërë e vështirë që nga dalja nga spitali dhe ku dëshiron vetë ndihmë? Vetëm pas kësaj do të shtoja me kujdes vëzhgimet tona." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt Selbstbestimmung und öffnet das Gespräch mit Fragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer protects self-determination and opens the conversation with questions." },
+                { "language": "fa", "text": "قوی: پاسخ از خودمختاری محافظت می‌کند و گفت‌وگو را با سؤال باز می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يحمي حق تقرير المصير ويفتح الحوار بالأسئلة." },
+                { "language": "tr", "text": "Güçlü: Yanıt öz belirlemeyi koruyor ve görüşmeyi sorularla açıyor." },
+                { "language": "ru", "text": "Сильно: ответ защищает самоопределение и открывает разговор вопросами." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە خۆبڕیاریدان دەپارێزێت و گفتوگۆکە بە پرسیار دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv xwebiryariyê diparêze û gotûbêjê bi pirsan vedike." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni samostanowienie i otwiera rozmowę pytaniami." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează autodeterminarea și deschide discuția cu întrebări." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron vetëvendosjen dhe e hap bisedën me pyetje." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde ihr sagen, dass wir uns Sorgen machen und deshalb Hilfe organisieren sollten.",
+              "translations": [
+                { "language": "en", "text": "I would tell her that we are worried and should therefore organize help." },
+                { "language": "fa", "text": "به او می‌گویم که نگران هستیم و بنابراین باید کمک سازمان‌دهی کنیم." },
+                { "language": "ar", "text": "سأقول لها إننا قلقون ولذلك ينبغي أن ننظم مساعدة." },
+                { "language": "tr", "text": "Ona kaygılandığımızı ve bu yüzden yardım düzenlememiz gerektiğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал ей, что мы беспокоимся и поэтому должны организовать помощь." },
+                { "language": "ckb", "text": "پێی دەڵێم کە ئێمە نیگەرانین و بۆیە پێویستە یارمەتی ڕێکبخەین." },
+                { "language": "kmr", "text": "Ez ê jê re bibêjim ku em fikar in û ji ber vê divê alîkarî rêxistin bikin." },
+                { "language": "pl", "text": "Powiedziałbym/Powiedziałabym jej, że się martwimy i dlatego powinniśmy zorganizować pomoc." },
+                { "language": "ro", "text": "I-aș spune că suntem îngrijorați și că de aceea ar trebui să organizăm ajutor." },
+                { "language": "sq", "text": "Do t'i thosha se jemi të shqetësuar dhe prandaj duhet të organizojmë ndihmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu direkt. Die Sorge ist berechtigt, aber die Formulierung legt die Entscheidung schon vor dem Gespräch fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too direct. The concern is valid, but the wording fixes the decision before the conversation." },
+                { "language": "fa", "text": "بیش از حد مستقیم است. نگرانی موجه است، اما جمله تصمیم را قبل از گفت‌وگو تعیین می‌کند." },
+                { "language": "ar", "text": "مباشر جدًا. القلق مبرر، لكن الصياغة تحدد القرار قبل الحوار." },
+                { "language": "tr", "text": "Fazla doğrudan. Kaygı haklı, ama ifade kararı görüşmeden önce belirliyor." },
+                { "language": "ru", "text": "Слишком прямо. Тревога обоснована, но формулировка фиксирует решение до разговора." },
+                { "language": "ckb", "text": "زۆر ڕاستەوخۆیە. نیگەرانی ڕەوایە، بەڵام داڕشتنەکە بڕیارەکە پێش گفتوگۆ دیاری دەکات." },
+                { "language": "kmr", "text": "Pir rasterast e. Fikar rast e, lê gotin biryarê berî gotûbêjê diyar dike." },
+                { "language": "pl", "text": "Zbyt bezpośrednie. Troska jest uzasadniona, ale sformułowanie ustala decyzję przed rozmową." },
+                { "language": "ro", "text": "Prea direct. Îngrijorarea este justificată, dar formularea fixează decizia înainte de discuție." },
+                { "language": "sq", "text": "Shumë e drejtpërdrejtë. Shqetësimi është i arsyeshëm, por formulimi e vendos vendimin para bisedës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das erwarte ich auch nicht. Ich kann die Arzttermine und die Medikamentenliste übernehmen. Du könntest vielleicht einmal pro Woche einkaufen, wenn Mama das möchte. Für den Rest sollten wir mit ihr über ambulante Hilfe sprechen, statt es stillschweigend unter uns aufzuteilen.",
+              "translations": [
+                { "language": "en", "text": "I do not expect that either. I can take over the doctor's appointments and the medication list. You could perhaps do shopping once a week, if Mom wants that. For the rest, we should speak with her about outpatient help instead of silently dividing it between us." },
+                { "language": "fa", "text": "من هم چنین انتظاری ندارم. من می‌توانم وقت‌های پزشک و فهرست داروها را بر عهده بگیرم. تو شاید بتوانی هفته‌ای یک بار خرید را انجام بدهی، اگر مامان بخواهد. درباره بقیه بهتر است با خودش درباره کمک بیرونی صحبت کنیم، نه اینکه بی‌صدا بین خودمان تقسیمش کنیم." },
+                { "language": "ar", "text": "أنا لا أتوقع ذلك أيضًا. أستطيع تولي مواعيد الطبيب وقائمة الأدوية. يمكنك ربما التسوق مرة في الأسبوع إذا أرادت أمي ذلك. أما الباقي فينبغي أن نتحدث معها عن مساعدة منزلية بدلًا من تقسيمه بيننا بصمت." },
+                { "language": "tr", "text": "Ben de bunu beklemiyorum. Doktor randevularını ve ilaç listesini ben üstlenebilirim. Annem isterse sen belki haftada bir alışveriş yapabilirsin. Geri kalanı sessizce aramızda paylaşmak yerine onunla evde destek hakkında konuşmalıyız." },
+                { "language": "ru", "text": "Я этого тоже не ожидаю. Я могу взять на себя врачебные записи и список лекарств. Ты, возможно, могла бы раз в неделю делать покупки, если мама этого захочет. Об остальном нам следует поговорить с ней о помощи на дому, а не молча делить это между собой." },
+                { "language": "ckb", "text": "منیش ئەوە چاوەڕوان ناکەم. دەتوانم کاتەکانی پزیشک و لیستی دەرمانەکان وەربگرم. تۆ ڕەنگە بتوانیت هەفتەی جارێک بازاڕ بکەیت، ئەگەر دایکم بیەوێت. بۆ ئەوانی تر پێویستە لەگەڵ خۆی دەربارەی یارمەتی ماڵەوە قسە بکەین، نەک بە بێدەنگی لەنێوان خۆمان دابەشی بکەین." },
+                { "language": "kmr", "text": "Ez jî vê hêvî nakim. Ez dikarim randevûyên bijîşkî û lîsteya dermanan bigirim ser xwe. Tu belkî hefteyê carekê kirînê bikî, heke dayik bixwaze. Ji bo mayî divê em bi wê re li ser alîkariya malê biaxivin, ne ku wê bêdeng di navbera xwe de parve bikin." },
+                { "language": "pl", "text": "Tego też nie oczekuję. Mogę przejąć terminy lekarskie i listę leków. Ty mogłabyś może raz w tygodniu zrobić zakupy, jeśli mama tego chce. O reszcie powinniśmy porozmawiać z nią o pomocy ambulatoryjnej, zamiast po cichu dzielić to między siebie." },
+                { "language": "ro", "text": "Nici eu nu mă aștept la asta. Pot prelua programările medicale și lista de medicamente. Tu ai putea poate face cumpărăturile o dată pe săptămână, dacă mama dorește. Pentru rest, ar trebui să vorbim cu ea despre ajutor la domiciliu, în loc să împărțim tacit între noi." },
+                { "language": "sq", "text": "As unë nuk e pres këtë. Mund të marr përsipër takimet mjekësore dhe listën e barnave. Ti ndoshta mund të bësh pazarin një herë në javë, nëse mamaja e dëshiron. Për pjesën tjetër duhet të flasim me të për ndihmë në shtëpi, në vend që ta ndajmë në heshtje mes nesh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet eigene Verantwortung, begrenzte Bitte und Einbeziehung der Mutter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects one's own responsibility, a limited request, and inclusion of the mother." },
+                { "language": "fa", "text": "قوی: پاسخ مسئولیت خود، درخواست محدود و درگیر کردن مادر را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يربط بين المسؤولية الشخصية والطلب المحدود وإشراك الأم." },
+                { "language": "tr", "text": "Güçlü: Yanıt kendi sorumluluğunu, sınırlı isteği ve annenin dahil edilmesini birleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ соединяет собственную ответственность, ограниченную просьбу и включение матери." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرپرسیاریەتیی خۆی، داواکاریی سنووردار و بەشدارکردنی دایک پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv berpirsiyariya xwe, daxwazeke sînorkirî û tê de kirina dayikê bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy własną odpowiedzialność, ograniczoną prośbę i włączenie matki." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă propria responsabilitate, cererea limitată și implicarea mamei." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh përgjegjësinë vetjake, kërkesën e kufizuar dhe përfshirjen e nënës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann teilen wir es eben so auf, dass jeder das übernimmt, was zeitlich gerade möglich ist.",
+              "translations": [
+                { "language": "en", "text": "Then we will simply divide it so that everyone takes on what is currently possible time-wise." },
+                { "language": "fa", "text": "پس آن را همین‌طور تقسیم می‌کنیم که هر کس هر چیزی را که از نظر زمانی ممکن است بر عهده بگیرد." },
+                { "language": "ar", "text": "إذن نقسمه ببساطة بحيث يتولى كل واحد ما يمكنه من حيث الوقت حاليًا." },
+                { "language": "tr", "text": "O zaman herkes zaman açısından şu anda mümkün olanı üstlenecek şekilde paylaşırız." },
+                { "language": "ru", "text": "Тогда просто разделим так, чтобы каждый взял на себя то, что сейчас возможно по времени." },
+                { "language": "ckb", "text": "ئەوا بەو شێوەیە دابەشی دەکەین کە هەر کەس ئەوەی لە ڕووی کاتەوە ئێستا دەکرێت وەربگرێت." },
+                { "language": "kmr", "text": "Wê demê em wê wisa parve dikin ku her kes tiştê ku niha ji aliyê demê ve gengaz e bigire ser xwe." },
+                { "language": "pl", "text": "Wtedy po prostu podzielimy to tak, że każdy przejmie to, co akurat czasowo jest możliwe." },
+                { "language": "ro", "text": "Atunci împărțim pur și simplu astfel încât fiecare să preia ce este posibil în prezent ca timp." },
+                { "language": "sq", "text": "Atëherë e ndajmë thjesht në mënyrë që secili të marrë përsipër atë që është aktualisht e mundur nga koha." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu lose. Die Antwort berücksichtigt Zeitgrenzen, aber nicht den Wunsch der Mutter und keine konkrete Struktur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too loose. The answer considers time limits, but not the mother's wishes and no concrete structure." },
+                { "language": "fa", "text": "بیش از حد شل است. پاسخ محدودیت زمانی را در نظر می‌گیرد، اما خواست مادر و ساختار مشخص ندارد." },
+                { "language": "ar", "text": "فضفاض جدًا. الجواب يراعي حدود الوقت، لكنه لا يراعي رغبة الأم ولا يقدم هيكلًا محددًا." },
+                { "language": "tr", "text": "Fazla gevşek. Yanıt zaman sınırlarını dikkate alıyor, ama annenin isteğini ve somut yapıyı içermiyor." },
+                { "language": "ru", "text": "Слишком расплывчато. Ответ учитывает временные границы, но не желание матери и не дает конкретной структуры." },
+                { "language": "ckb", "text": "زۆر شل و نادیارە. وەڵامەکە سنووری کات لەبەرچاو دەگرێت، بەڵام خواستی دایک و ڕێکخستنی دیاریکراوی نییە." },
+                { "language": "kmr", "text": "Pir fireh e. Bersiv sînorên demê li ber çavan digire, lê daxwaza dayikê û avahiyeke konkret tune ye." },
+                { "language": "pl", "text": "Zbyt luźne. Odpowiedź uwzględnia granice czasowe, ale nie życzenie matki ani konkretną strukturę." },
+                { "language": "ro", "text": "Prea vag. Răspunsul ia în calcul limitele de timp, dar nu dorința mamei și nici o structură concretă." },
+                { "language": "sq", "text": "Shumë e lirshme. Përgjigjja merr parasysh kufijtë kohorë, por jo dëshirën e nënës dhe as një strukturë konkrete." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann formulieren wir es nicht als Entlastung für uns, sondern als zusätzliche Wahlmöglichkeit für sie: Sie entscheidet, ob sie nur familiäre Unterstützung möchte oder ob eine neutrale Person bei Haushalt, Wegen oder Medikamenten hilft.",
+              "translations": [
+                { "language": "en", "text": "Then we should not phrase it as relief for us, but as an additional option for her: she decides whether she wants only family support or whether a neutral person helps with household tasks, errands, or medication." },
+                { "language": "fa", "text": "پس آن را به‌عنوان کاهش بار از دوش خودمان بیان نکنیم، بلکه به‌عنوان یک امکان انتخاب اضافی برای او: خودش تصمیم می‌گیرد فقط حمایت خانواده را می‌خواهد یا یک فرد بی‌طرف در کارهای خانه، رفت‌وآمدها یا داروها کمک کند." },
+                { "language": "ar", "text": "إذن لا نصوغ الأمر كراحة لنا، بل كخيار إضافي لها: هي تقرر هل تريد دعم العائلة فقط أم أن يساعد شخص محايد في البيت أو المشاوير أو الأدوية." },
+                { "language": "tr", "text": "O zaman bunu bizim yükümüzü azaltmak olarak değil, onun için ek bir seçenek olarak ifade edelim: sadece aile desteği mi istediğine, yoksa ev işleri, dışarıdaki işler veya ilaçlarda tarafsız bir kişinin yardım etmesine mi karar verir." },
+                { "language": "ru", "text": "Тогда сформулируем это не как разгрузку для нас, а как дополнительный вариант для нее: она решает, хочет ли только семейную поддержку или чтобы нейтральный человек помогал с домом, поездками или лекарствами." },
+                { "language": "ckb", "text": "ئەوا بە شێوەی کەمکردنەوەی بار لەسەر خۆمان دایمەزرێنین، بەڵکو وەک هەڵبژاردەیەکی زیادە بۆ ئەو: خۆی بڕیار دەدات ئایا تەنها پشتگیریی خێزان دەوێت یان کەسێکی بێلایەن لە کاری ماڵ، ڕۆیشتنەکان یان دەرمانەکان یارمەتی بدات." },
+                { "language": "kmr", "text": "Wê demê em wê ne wek sivikkirina barê me, lê wek vebijêrkeke zêde ji bo wê bibêjin: ew biryar dide ka tenê piştgiriya malbatê dixwaze an kesekî bêalî di karên malê, rêçûn an dermanan de alîkar be." },
+                { "language": "pl", "text": "Wtedy nie ujmujmy tego jako odciążenia dla nas, lecz jako dodatkową możliwość wyboru dla niej: ona decyduje, czy chce tylko wsparcia rodziny, czy też neutralnej osoby do pomocy w domu, sprawunkach lub lekach." },
+                { "language": "ro", "text": "Atunci să nu formulăm asta ca o ușurare pentru noi, ci ca o opțiune suplimentară pentru ea: ea decide dacă dorește doar sprijin familial sau dacă o persoană neutră ajută la gospodărie, drumuri sau medicamente." },
+                { "language": "sq", "text": "Atëherë të mos e formulojmë si lehtësim për ne, por si një mundësi shtesë zgjedhjeje për të: ajo vendos nëse dëshiron vetëm mbështetje familjare apo nëse një person neutral ndihmon me shtëpinë, vajtjet ose barnat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht externe Hilfe zu einer Wahlmöglichkeit und schützt Würde.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer turns outside help into an option and protects dignity." },
+                { "language": "fa", "text": "قوی: پاسخ کمک بیرونی را به یک گزینه انتخاب تبدیل می‌کند و کرامت را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يحول المساعدة الخارجية إلى خيار ويحمي الكرامة." },
+                { "language": "tr", "text": "Güçlü: Yanıt dışarıdan yardımı bir seçeneğe dönüştürüyor ve onuru koruyor." },
+                { "language": "ru", "text": "Сильно: ответ превращает внешнюю помощь в вариант выбора и защищает достоинство." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە یارمەتی دەرەکی دەکاتە هەڵبژاردە و شکۆ دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv alîkariya derveyî dike vebijêrk û rûmetê diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź zamienia pomoc z zewnątrz w możliwość wyboru i chroni godność." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă ajutorul extern într-o opțiune și protejează demnitatea." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen ndihmën e jashtme në një mundësi zgjedhjeje dhe mbron dinjitetin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können ihr sagen, dass externe Hilfe uns alle entlasten würde und deshalb vernünftig wäre.",
+              "translations": [
+                { "language": "en", "text": "We can tell her that outside help would relieve all of us and would therefore be reasonable." },
+                { "language": "fa", "text": "می‌توانیم به او بگوییم که کمک بیرونی بار همه ما را کمتر می‌کند و بنابراین منطقی است." },
+                { "language": "ar", "text": "يمكننا أن نقول لها إن المساعدة الخارجية ستخفف عنا جميعًا ولذلك ستكون منطقية." },
+                { "language": "tr", "text": "Ona dışarıdan yardımın hepimizi rahatlatacağını ve bu yüzden mantıklı olacağını söyleyebiliriz." },
+                { "language": "ru", "text": "Мы можем сказать ей, что внешняя помощь разгрузила бы всех нас и поэтому была бы разумной." },
+                { "language": "ckb", "text": "دەتوانین پێی بڵێین کە یارمەتی دەرەکی بار لەسەر هەموومان کەم دەکاتەوە و بۆیە مانادارە." },
+                { "language": "kmr", "text": "Em dikarin jê re bibêjin ku alîkariya derveyî barê me hemûyan sivik dike û ji ber vê maqûl e." },
+                { "language": "pl", "text": "Możemy jej powiedzieć, że pomoc z zewnątrz odciążyłaby nas wszystkich i dlatego byłaby rozsądna." },
+                { "language": "ro", "text": "Îi putem spune că ajutorul extern ne-ar ușura pe toți și de aceea ar fi rezonabil." },
+                { "language": "sq", "text": "Mund t'i themi se ndihma e jashtme do të na lehtësonte të gjithëve dhe prandaj do të ishte e arsyeshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Sachlich möglich, aber riskant. Die Begründung stellt die Entlastung der Familie vor die Selbstbestimmung der Mutter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Factually possible, but risky. The reason places family relief before the mother's self-determination." },
+                { "language": "fa", "text": "از نظر محتوایی ممکن است، اما پرریسک است. دلیل، کاهش بار خانواده را جلوتر از خودمختاری مادر قرار می‌دهد." },
+                { "language": "ar", "text": "ممكن من حيث المضمون، لكنه محفوف بالمخاطر. يضع السبب راحة الأسرة قبل حق الأم في تقرير نفسها." },
+                { "language": "tr", "text": "İçerik olarak mümkün, ama riskli. Gerekçe aile rahatlamasını annenin öz belirlemesinin önüne koyuyor." },
+                { "language": "ru", "text": "По сути возможно, но рискованно. Обоснование ставит разгрузку семьи выше самоопределения матери." },
+                { "language": "ckb", "text": "لە ڕووی بابەتییەوە دەکرێت، بەڵام مەترسیدارە. پاساوەکە کەمکردنەوەی باری خێزان لە پێش خۆبڕیاریدانی دایک دادەنێت." },
+                { "language": "kmr", "text": "Ji aliyê mijarê ve gengaz e, lê xeternak e. Sedem sivikkirina malbatê li pêş xwebiryariya dayikê datîne." },
+                { "language": "pl", "text": "Rzeczowo możliwe, ale ryzykowne. Uzasadnienie stawia odciążenie rodziny przed samostanowieniem matki." },
+                { "language": "ro", "text": "Faptic posibil, dar riscant. Motivarea pune ușurarea familiei înaintea autodeterminării mamei." },
+                { "language": "sq", "text": "Faktikisht e mundur, por e rrezikshme. Arsyetimi e vendos lehtësimin e familjes para vetëvendosjes së nënës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Einverstanden. Wir beginnen mit zwei Fragen an sie: Was soll unbedingt so bleiben wie bisher, und wobei wäre Entlastung willkommen? Danach schlagen wir nur drei konkrete Punkte vor: Termine, Einkaufen und ein unverbindliches Beratungsgespräch.",
+              "translations": [
+                { "language": "en", "text": "Agreed. We will start with two questions for her: what should definitely stay as it has been, and where would relief be welcome? After that we suggest only three concrete points: appointments, shopping, and a non-binding counseling conversation." },
+                { "language": "fa", "text": "موافقم. با دو سؤال از خودش شروع می‌کنیم: چه چیزی حتماً باید مثل قبل بماند، و در چه چیزی کمک خوشایند است؟ بعد فقط سه مورد مشخص پیشنهاد می‌دهیم: وقت‌ها، خرید، و یک گفت‌وگوی مشاوره‌ای غیرالزام‌آور." },
+                { "language": "ar", "text": "متفقون. نبدأ بسؤالين لها: ما الذي يجب أن يبقى كما كان بالتأكيد، وفي أي شيء سيكون التخفيف مرحبًا به؟ بعد ذلك نقترح ثلاث نقاط محددة فقط: المواعيد، التسوق، وحوار استشاري غير ملزم." },
+                { "language": "tr", "text": "Anlaştık. Ona iki soruyla başlarız: ne kesinlikle eskisi gibi kalmalı ve nerede destek iyi olur? Sonra yalnızca üç somut nokta öneririz: randevular, alışveriş ve bağlayıcı olmayan bir danışma görüşmesi." },
+                { "language": "ru", "text": "Согласен. Мы начнем с двух вопросов к ней: что обязательно должно остаться как прежде и где помощь была бы желательна? После этого предложим только три конкретных пункта: записи, покупки и необязательную консультацию." },
+                { "language": "ckb", "text": "ڕازیم. بە دوو پرسیار بۆ ئەو دەست پێ دەکەین: چی پێویستە بە دڵنیایی وەک پێشوو بمێنێت، و لە چیدا کەمکردنەوەی بار بەخێرهاتن دەبێت؟ پاشان تەنها سێ خاڵی دیاریکراو پێشنیار دەکەین: کاتەکان، بازاڕکردن و گفتوگۆی ڕاوێژی نابەستەر." },
+                { "language": "kmr", "text": "Li hev hat. Em bi du pirsan ji wê re dest pê dikin: çi divê bi dilniyayî wek berê bimîne, û di çi de sivikkirin xêrhatî be? Piştî wê tenê sê xalên konkret pêşniyar dikin: randevû, kirîn û gotûbêjeke şêwirmendiyê ya ne girêdayî." },
+                { "language": "pl", "text": "Zgoda. Zaczynamy od dwóch pytań do niej: co koniecznie ma pozostać jak dotąd i w czym odciążenie byłoby mile widziane? Potem proponujemy tylko trzy konkretne punkty: terminy, zakupy i niezobowiązującą rozmowę doradczą." },
+                { "language": "ro", "text": "De acord. Începem cu două întrebări pentru ea: ce trebuie neapărat să rămână ca până acum și unde ar fi binevenită o ușurare? După aceea propunem doar trei puncte concrete: programări, cumpărături și o discuție de consiliere fără obligații." },
+                { "language": "sq", "text": "Dakord. Fillojmë me dy pyetje për të: çfarë duhet patjetër të mbetet si më parë dhe ku do të ishte e mirëpritur lehtësimi? Pastaj propozojmë vetëm tri pika konkrete: takimet, pazarin dhe një bisedë këshilluese jo detyruese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussantwort begrenzt den nächsten Schritt und beginnt mit der Perspektive der Mutter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final answer limits the next step and begins with the mother's perspective." },
+                { "language": "fa", "text": "قوی: پاسخ پایانی قدم بعدی را محدود می‌کند و با دیدگاه مادر شروع می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب الختامي يحد الخطوة التالية ويبدأ من منظور الأم." },
+                { "language": "tr", "text": "Güçlü: Son yanıt sonraki adımı sınırlandırıyor ve annenin bakış açısıyla başlıyor." },
+                { "language": "ru", "text": "Сильно: финальный ответ ограничивает следующий шаг и начинается с перспективы матери." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامی کۆتایی هەنگاوی داهاتوو سنووردار دەکات و بە دیدی دایک دەست پێ دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiva dawî gava paşê sînordar dike û bi perspektîfa dayikê dest pê dike." },
+                { "language": "pl", "text": "Mocne: końcowa odpowiedź ogranicza następny krok i zaczyna od perspektywy matki." },
+                { "language": "ro", "text": "Puternic: răspunsul final limitează pasul următor și începe cu perspectiva mamei." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfundimtare e kufizon hapin tjetër dhe fillon me këndvështrimin e nënës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Einverstanden. Wir erklären ihr ruhig, welche Punkte wir für problematisch halten, und schlagen dann Hilfe vor.",
+              "translations": [
+                { "language": "en", "text": "Agreed. We calmly explain which points we consider problematic and then suggest help." },
+                { "language": "fa", "text": "موافقم. آرام توضیح می‌دهیم کدام موارد را مشکل‌زا می‌دانیم و بعد کمک پیشنهاد می‌کنیم." },
+                { "language": "ar", "text": "متفقون. نشرح لها بهدوء النقاط التي نراها إشكالية ثم نقترح المساعدة." },
+                { "language": "tr", "text": "Anlaştık. Ona hangi noktaları sorunlu gördüğümüzü sakin biçimde açıklarız ve sonra yardım öneririz." },
+                { "language": "ru", "text": "Согласен. Мы спокойно объясним ей, какие пункты считаем проблемными, а затем предложим помощь." },
+                { "language": "ckb", "text": "ڕازیم. بە ئارامی پێی ڕوون دەکەین کام خاڵان بە کێشەدار دەبینین و پاشان یارمەتی پێشنیار دەکەین." },
+                { "language": "kmr", "text": "Li hev hat. Em bi aramî jê re rave dikin kîjan xal ji me re pirsgirêk xuya dikin û paşê alîkarî pêşniyar dikin." },
+                { "language": "pl", "text": "Zgoda. Spokojnie wyjaśnimy jej, które punkty uważamy za problematyczne, a potem zaproponujemy pomoc." },
+                { "language": "ro", "text": "De acord. Îi explicăm calm ce puncte considerăm problematice și apoi propunem ajutor." },
+                { "language": "sq", "text": "Dakord. I shpjegojmë qetësisht cilat pika i konsiderojmë problematike dhe pastaj propozojmë ndihmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Ruhig, aber noch zu familienzentriert. Die Perspektive der Mutter kommt erst nach der Bewertung durch andere.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Calm, but still too family-centered. The mother's perspective comes only after others' assessment." },
+                { "language": "fa", "text": "آرام است، اما هنوز بیش از حد خانواده‌محور است. دیدگاه مادر فقط بعد از ارزیابی دیگران می‌آید." },
+                { "language": "ar", "text": "هادئ، لكنه ما زال متمركزًا حول الأسرة كثيرًا. يأتي منظور الأم فقط بعد تقييم الآخرين." },
+                { "language": "tr", "text": "Sakin, ama hâlâ fazla aile merkezli. Annenin bakış açısı ancak başkalarının değerlendirmesinden sonra geliyor." },
+                { "language": "ru", "text": "Спокойно, но все еще слишком ориентировано на семью. Перспектива матери появляется только после оценки других." },
+                { "language": "ckb", "text": "ئارامە، بەڵام هێشتا زۆر خێزان‌ناوەندە. دیدی دایک تەنها دوای هەڵسەنگاندنی ئەوانی تر دێت." },
+                { "language": "kmr", "text": "Aram e, lê hîn jî pir malbat-navendî ye. Perspektîfa dayikê tenê piştî nirxandina kesên din tê." },
+                { "language": "pl", "text": "Spokojne, ale nadal zbyt skoncentrowane na rodzinie. Perspektywa matki pojawia się dopiero po ocenie innych." },
+                { "language": "ro", "text": "Calm, dar încă prea centrat pe familie. Perspectiva mamei apare abia după evaluarea celorlalți." },
+                { "language": "sq", "text": "E qetë, por ende shumë e përqendruar te familja. Këndvështrimi i nënës vjen vetëm pas vlerësimit të të tjerëve." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "observation-not-accusation",
+          "text": "Sensible Angehörigengespräche beginnen besser mit Beobachtungen als mit fertigen Beschlüssen.",
+          "translations": [
+            { "language": "en", "text": "Sensitive family-member conversations begin better with observations than with ready-made decisions." },
+            { "language": "fa", "text": "گفت‌وگوهای حساس خانوادگی بهتر است با مشاهده‌ها شروع شوند، نه با تصمیم‌های از پیش آماده." },
+            { "language": "ar", "text": "تبدأ الحوارات العائلية الحساسة بشكل أفضل بالملاحظات لا بالقرارات الجاهزة." },
+            { "language": "tr", "text": "Hassas aile görüşmeleri hazır kararlarla değil, gözlemlerle daha iyi başlar." },
+            { "language": "ru", "text": "Деликатные семейные разговоры лучше начинать с наблюдений, а не с готовых решений." },
+            { "language": "ckb", "text": "گفتوگۆی هەستیاری خێزانی باشترە بە تێبینی دەست پێ بکات نەک بە بڕیاری ئامادەکراو." },
+            { "language": "kmr", "text": "Gotûbêjên hestiyar ên malbatî baştir e bi çavdêriyan dest pê bikin, ne bi biryarên amade." },
+            { "language": "pl", "text": "Delikatne rozmowy rodzinne lepiej zaczynać od obserwacji niż od gotowych decyzji." },
+            { "language": "ro", "text": "Discuțiile familiale sensibile încep mai bine cu observații decât cu decizii gata făcute." },
+            { "language": "sq", "text": "Bisedat e ndjeshme familjare fillojnë më mirë me vëzhgime sesa me vendime të gatshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "privacy-respecting-entry",
+          "text": "Offene Fragen schützen Würde und Selbstbestimmung der betroffenen Person.",
+          "translations": [
+            { "language": "en", "text": "Open questions protect the dignity and self-determination of the affected person." },
+            { "language": "fa", "text": "پرسش‌های باز، کرامت و خودمختاری فرد اصلی را حفظ می‌کنند." },
+            { "language": "ar", "text": "تحمي الأسئلة المفتوحة كرامة الشخص المعني وحقه في تقرير نفسه." },
+            { "language": "tr", "text": "Açık sorular, etkilenen kişinin onurunu ve öz belirlemesini korur." },
+            { "language": "ru", "text": "Открытые вопросы защищают достоинство и самоопределение затронутого человека." },
+            { "language": "ckb", "text": "پرسیاری کراوە شکۆ و خۆبڕیاریدانی کەسی پەیوەندیدار دەپارێزێت." },
+            { "language": "kmr", "text": "Pirsên vekirî rûmet û xwebiryariya kesê bandor lê bûyî diparêzin." },
+            { "language": "pl", "text": "Pytania otwarte chronią godność i samostanowienie osoby, której sprawa dotyczy." },
+            { "language": "ro", "text": "Întrebările deschise protejează demnitatea și autodeterminarea persoanei afectate." },
+            { "language": "sq", "text": "Pyetjet e hapura mbrojnë dinjitetin dhe vetëvendosjen e personit të prekur." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "fair-task-division",
+          "text": "Faire Aufteilung heißt: eigene Beiträge, Grenzen und externe Optionen zugleich nennen.",
+          "translations": [
+            { "language": "en", "text": "Fair distribution means naming your own contributions, limits, and outside options at the same time." },
+            { "language": "fa", "text": "تقسیم عادلانه یعنی هم‌زمان سهم خود، مرزها و گزینه‌های بیرونی را نام ببرید." },
+            { "language": "ar", "text": "التوزيع العادل يعني ذكر مساهمتكم وحدودكم والخيارات الخارجية في الوقت نفسه." },
+            { "language": "tr", "text": "Adil paylaşım, kendi katkınızı, sınırlarınızı ve dış seçenekleri aynı anda belirtmek demektir." },
+            { "language": "ru", "text": "Справедливое распределение означает одновременно называть собственный вклад, границы и внешние варианты." },
+            { "language": "ckb", "text": "دابەشکردنی دادپەروەرانە واتە بەیەکەوە بەشداری خۆت، سنوورەکان و هەڵبژاردە دەرەکییەکان ناوببەیت." },
+            { "language": "kmr", "text": "Parvekirina adil tê wateya navkirina beşdariya xwe, sînor û vebijêrkên derveyî bi hev re." },
+            { "language": "pl", "text": "Sprawiedliwy podział oznacza jednoczesne nazwanie własnego wkładu, granic i opcji zewnętrznych." },
+            { "language": "ro", "text": "Împărțirea echitabilă înseamnă să numiți simultan contribuțiile proprii, limitele și opțiunile externe." },
+            { "language": "sq", "text": "Ndarja e drejtë do të thotë të përmendësh njëkohësisht kontributin tënd, kufijtë dhe opsionet e jashtme." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "respectful-next-step",
+          "text": "Ein guter Abschluss begrenzt die Vorschläge und startet mit der Perspektive der betroffenen Person.",
+          "translations": [
+            { "language": "en", "text": "A good closing limits the suggestions and starts with the affected person's perspective." },
+            { "language": "fa", "text": "پایان خوب پیشنهادها را محدود می‌کند و با دیدگاه فرد اصلی شروع می‌شود." },
+            { "language": "ar", "text": "الخاتمة الجيدة تحد الاقتراحات وتبدأ من منظور الشخص المعني." },
+            { "language": "tr", "text": "İyi bir kapanış önerileri sınırlar ve etkilenen kişinin bakış açısıyla başlar." },
+            { "language": "ru", "text": "Хорошее завершение ограничивает предложения и начинается с перспективы затронутого человека." },
+            { "language": "ckb", "text": "کۆتایییەکی باش پێشنیارەکان سنووردار دەکات و بە دیدی کەسی پەیوەندیدار دەست پێ دەکات." },
+            { "language": "kmr", "text": "Dawiyeke baş pêşniyaran sînordar dike û bi perspektîfa kesê bandor lê bûyî dest pê dike." },
+            { "language": "pl", "text": "Dobre zakończenie ogranicza propozycje i zaczyna od perspektywy osoby, której sprawa dotyczy." },
+            { "language": "ro", "text": "O încheiere bună limitează propunerile și începe de la perspectiva persoanei afectate." },
+            { "language": "sq", "text": "Një përmbyllje e mirë i kufizon propozimet dhe fillon nga këndvështrimi i personit të prekur." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "sensitive-family-care-conversation",
+          "placement": "detail-header",
+          "purpose": "Illustrate a respectful family conversation about support after a hospital stay, privacy, and practical next steps.",
+          "altText": "Zwei Geschwister sitzen an einem Küchentisch und planen respektvoll ein Gespräch über Unterstützung nach einem Krankenhausaufenthalt.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two siblings sit at a kitchen table and respectfully plan a conversation about support after a hospital stay." },
+            { "language": "fa", "text": "دو خواهر یا برادر پشت میز آشپزخانه نشسته‌اند و با احترام برای گفت‌وگو درباره حمایت پس از بستری در بیمارستان برنامه‌ریزی می‌کنند." },
+            { "language": "ar", "text": "يجلس أخوان أو أختان على طاولة المطبخ ويخططان باحترام لحوار حول الدعم بعد إقامة في المستشفى." },
+            { "language": "tr", "text": "İki kardeş mutfak masasında oturuyor ve hastane yatışından sonra destek hakkında saygılı bir görüşmeyi planlıyor." },
+            { "language": "ru", "text": "Двое родственников сидят за кухонным столом и уважительно планируют разговор о поддержке после пребывания в больнице." },
+            { "language": "ckb", "text": "دوو برا یان خوشک لەسەر مێزی چێشتخانە دانیشتوون و بە ڕێزەوە پلانی گفتوگۆیەک دەکەن دەربارەی پشتگیری دوای مانەوە لە نەخۆشخانە." },
+            { "language": "kmr", "text": "Du xwişk an bira li ser maseya metbexê rûniştine û bi rêz planeke gotûbêjê li ser piştgirî piştî nexweşxaneyê dikin." },
+            { "language": "pl", "text": "Dwoje rodzeństwa siedzi przy kuchennym stole i z szacunkiem planuje rozmowę o wsparciu po pobycie w szpitalu." },
+            { "language": "ro", "text": "Doi frați stau la masa din bucătărie și planifică respectuos o discuție despre sprijin după o internare." },
+            { "language": "sq", "text": "Dy motra ose vëllezër ulen në tryezën e kuzhinës dhe planifikojnë me respekt një bisedë për mbështetje pas një qëndrimi në spital." }
+          ],
+          "imagePrompt": "Clean educational illustration, two siblings seated at a kitchen table with a simple non-readable calendar and medication checklist, calm respectful family planning conversation about support after hospital stay, no logos, no private data, no dramatic medical scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

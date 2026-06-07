@@ -1,0 +1,703 @@
+{
+  "packageId": "roleplays-c2-core-52-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 52 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 52",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-entschuldigung-mit-verantwortung-formulieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Entschuldigung mit Verantwortung formulieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Formulating an apology with responsibility" },
+        { "language": "fa", "text": "بیان عذرخواهی همراه با پذیرش مسئولیت" },
+        { "language": "ar", "text": "صياغة اعتذار مع تحمل المسؤولية" },
+        { "language": "tr", "text": "Sorumluluk içeren bir özür formüle etmek" },
+        { "language": "ru", "text": "Сформулировать извинение с ответственностью" },
+        { "language": "ckb", "text": "دابڕینی داوای لێبوردن لەگەڵ وەرگرتنی بەرپرسیاری" },
+        { "language": "kmr", "text": "Formulekirina lêborînê bi berpirsiyarî" },
+        { "language": "pl", "text": "Sformułowanie przeprosin z odpowiedzialnością" },
+        { "language": "ro", "text": "Formularea unei scuze cu asumare" },
+        { "language": "sq", "text": "Formulimi i një kërkese faljeje me përgjegjësi" }
+      ],
+      "description": "Sie haben in einer kleinen Runde eine Information erwähnt, die Ihnen im Vertrauen gesagt wurde. Die andere Person fühlt sich bloßgestellt. Ziel ist, sich nicht zu rechtfertigen, sondern den Vertrauensbruch zu benennen, die Wirkung anzuerkennen und eine konkrete Änderung für künftige Gespräche vorzuschlagen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a small group, you mentioned information that had been told to you in confidence. The other person feels exposed. The goal is not to justify yourself, but to name the breach of trust, acknowledge the impact, and propose a concrete change for future conversations." },
+        { "language": "fa", "text": "شما در یک جمع کوچک اطلاعاتی را مطرح کرده‌اید که محرمانه به شما گفته شده بود. طرف مقابل احساس می‌کند در معرض نگاه دیگران قرار گرفته است. هدف این است که خودتان را توجیه نکنید، بلکه شکستن اعتماد را نام ببرید، اثر آن را بپذیرید و برای گفت‌وگوهای آینده یک تغییر مشخص پیشنهاد دهید." },
+        { "language": "ar", "text": "ذكرتم في مجموعة صغيرة معلومة قيلت لكم بثقة. يشعر الطرف الآخر بأنه كُشف أمام الآخرين. الهدف ليس تبرير أنفسكم، بل تسمية خرق الثقة، والاعتراف بالأثر، واقتراح تغيير ملموس للمحادثات القادمة." },
+        { "language": "tr", "text": "Küçük bir grupta, size güven içinde söylenmiş bir bilgiyi dile getirdiniz. Diğer kişi kendini açığa çıkarılmış hissediyor. Amaç kendinizi savunmak değil, güvenin zedelendiğini adlandırmak, etkisini kabul etmek ve gelecekteki konuşmalar için somut bir değişiklik önermektir." },
+        { "language": "ru", "text": "В небольшой компании вы упомянули информацию, которую вам сказали доверительно. Другой человек чувствует себя выставленным перед другими. Цель — не оправдываться, а назвать нарушение доверия, признать последствия и предложить конкретное изменение для будущих разговоров." },
+        { "language": "ckb", "text": "لە کۆمەڵێکی بچووکدا زانیارییەکت باس کردووە کە بە متمانە پێت گوترابوو. کەسی بەرامبەر هەست دەکات لەبەردەم ئەوانی تر ئاشکرا کراوە. ئامانج ئەوە نییە خۆت پاساو بدەیت، بەڵکو شکاندنی متمانە ناوببەیت، کاریگەرییەکە بپەسەند بکەیت و بۆ گفتوگۆکانی داهاتوو گۆڕانکارییەکی دیاریکراو پێشنیار بکەیت." },
+        { "language": "kmr", "text": "Di komeke biçûk de we agahiyek got ku bi bawerî ji we re hatibû gotin. Kesê din xwe li ber çavên kesên din vekirî dibîne. Armanc ew nîne ku hûn xwe biparêzin, lê şikestina baweriyê nav bikin, bandorê qebûl bikin û ji bo axaftinên paşerojê guhertineke berbiçav pêşniyar bikin." },
+        { "language": "pl", "text": "W małym gronie wspomniał/a Pan/Pani informację, którą powierzono w zaufaniu. Druga osoba czuje się wystawiona na widok innych. Celem nie jest usprawiedliwianie się, lecz nazwanie naruszenia zaufania, uznanie skutku i zaproponowanie konkretnej zmiany na przyszłe rozmowy." },
+        { "language": "ro", "text": "Într-un grup mic, ați menționat o informație care v-a fost spusă în încredere. Cealaltă persoană se simte expusă. Scopul nu este să vă justificați, ci să numiți ruperea încrederii, să recunoașteți efectul și să propuneți o schimbare concretă pentru discuțiile viitoare." },
+        { "language": "sq", "text": "Në një grup të vogël përmendët një informacion që ju ishte thënë në mirëbesim. Personi tjetër ndihet i ekspozuar. Qëllimi nuk është të justifikoheni, por të emërtoni prishjen e besimit, të pranoni ndikimin dhe të propozoni një ndryshim konkret për bisedat e ardhshme." }
+      ],
+      "learnerGoal": "Eine verantwortliche Entschuldigung formulieren: den konkreten Fehler benennen, die Wirkung auf die andere Person anerkennen, keine Absicht als Entschuldigung vorschieben, eine überprüfbare Verhaltensänderung anbieten und Raum für die Reaktion lassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Formulate a responsible apology: name the concrete mistake, acknowledge the impact on the other person, do not use intention as an excuse, offer a verifiable change in behavior, and leave room for the reaction." },
+        { "language": "fa", "text": "یک عذرخواهی مسئولانه بیان کنید: خطای مشخص را نام ببرید، اثر آن بر طرف مقابل را بپذیرید، نیت خود را بهانه نکنید، یک تغییر رفتاری قابل پیگیری پیشنهاد دهید و برای واکنش طرف مقابل فضا بگذارید." },
+        { "language": "ar", "text": "صوغوا اعتذارًا مسؤولًا: سمّوا الخطأ المحدد، واعترفوا بأثره على الطرف الآخر، ولا تجعلوا النية عذرًا، وقدّموا تغييرًا سلوكيًا قابلًا للتحقق، واتركوا مساحة للرد." },
+        { "language": "tr", "text": "Sorumlu bir özür kurun: somut hatayı adlandırın, diğer kişi üzerindeki etkiyi kabul edin, niyeti mazeret olarak öne sürmeyin, takip edilebilir bir davranış değişikliği sunun ve tepki için alan bırakın." },
+        { "language": "ru", "text": "Сформулировать ответственное извинение: назвать конкретную ошибку, признать влияние на другого человека, не выставлять намерение как оправдание, предложить проверяемое изменение поведения и оставить место для реакции." },
+        { "language": "ckb", "text": "داوای لێبوردنێکی بەرپرسیارانە دابڕێژە: هەڵەی دیاریکراو ناوببە، کاریگەری لەسەر کەسی بەرامبەر بپەسەند بکە، نیت وەک پاساو مەهێنە، گۆڕانکارییەکی ڕەفتاریی پشکنینکراو پێشکەش بکە و بۆ کاردانەوە شوێن بهێڵە." },
+        { "language": "kmr", "text": "Lêborîneke bi berpirsiyarî formule bikin: xeletiya berbiçav nav bikin, bandora li ser kesê din qebûl bikin, niyetê wek hincet pêş nekeşin, guhertineke reftarî ya şopandinbar pêşkêş bikin û ji bo bersivê cih bihêlin." },
+        { "language": "pl", "text": "Sformułować odpowiedzialne przeprosiny: nazwać konkretny błąd, uznać wpływ na drugą osobę, nie używać intencji jako wymówki, zaproponować sprawdzalną zmianę zachowania i zostawić miejsce na reakcję." },
+        { "language": "ro", "text": "Formulați o scuză responsabilă: numiți greșeala concretă, recunoașteți efectul asupra celeilalte persoane, nu folosiți intenția ca scuză, oferiți o schimbare de comportament verificabilă și lăsați loc pentru reacție." },
+        { "language": "sq", "text": "Formuloni një falje të përgjegjshme: emërtoni gabimin konkret, pranoni ndikimin te personi tjetër, mos e përdorni qëllimin si justifikim, ofroni një ndryshim sjelljeje të verifikueshëm dhe lini hapësirë për reagim." }
+      ],
+      "cefrLevel": "C2",
+      "category": "social",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 52,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Entschuldigende Person",
+          "translations": [
+            { "language": "en", "text": "Person apologizing" },
+            { "language": "fa", "text": "فرد عذرخواهی‌کننده" },
+            { "language": "ar", "text": "الشخص المعتذر" },
+            { "language": "tr", "text": "Özür dileyen kişi" },
+            { "language": "ru", "text": "Извиняющийся человек" },
+            { "language": "ckb", "text": "کەسی داوای لێبوردن دەکات" },
+            { "language": "kmr", "text": "Kesê lêborîn dixwaze" },
+            { "language": "pl", "text": "Osoba przepraszająca" },
+            { "language": "ro", "text": "Persoana care își cere scuze" },
+            { "language": "sq", "text": "Personi që kërkon falje" }
+          ]
+        },
+        {
+          "roleKey": "speaker",
+          "displayName": "Verletzte Person",
+          "translations": [
+            { "language": "en", "text": "Hurt person" },
+            { "language": "fa", "text": "فرد رنجیده" },
+            { "language": "ar", "text": "الشخص المتأذي" },
+            { "language": "tr", "text": "İncinmiş kişi" },
+            { "language": "ru", "text": "Задетый человек" },
+            { "language": "ckb", "text": "کەسی ئازارلێکەوتوو" },
+            { "language": "kmr", "text": "Kesê dilşikestî" },
+            { "language": "pl", "text": "Osoba zraniona" },
+            { "language": "ro", "text": "Persoana rănită" },
+            { "language": "sq", "text": "Personi i lënduar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "speaker",
+          "baseText": "Ich möchte das nicht einfach stehen lassen. Du hast gestern in der Runde etwas erwähnt, das ich dir im Vertrauen gesagt hatte. Für mich war das beschämend.",
+          "translations": [
+            { "language": "en", "text": "I do not want to just leave this as it is. Yesterday in the group you mentioned something I had told you in confidence. For me, that was embarrassing." },
+            { "language": "fa", "text": "نمی‌خواهم این موضوع را همین‌طور رها کنم. دیروز در جمع چیزی را گفتی که من به‌صورت محرمانه به تو گفته بودم. برای من شرم‌آور بود." },
+            { "language": "ar", "text": "لا أريد أن أترك الأمر هكذا. أمس في المجموعة ذكرت شيئًا كنت قد قلته لك بثقة. كان ذلك محرجًا بالنسبة لي." },
+            { "language": "tr", "text": "Bunu öylece bırakmak istemiyorum. Dün grupta sana güven içinde söylediğim bir şeyi dile getirdin. Benim için utanç vericiydi." },
+            { "language": "ru", "text": "Я не хочу просто оставить это как есть. Вчера в кругу людей ты упомянул то, что я сказал тебе доверительно. Для меня это было стыдно." },
+            { "language": "ckb", "text": "نامەوێت ئەم بابەتە بەو شێوەیە جێبهێڵم. دوێنێ لە کۆمەڵەکەدا شتێکت باس کرد کە من بە متمانە پێم گوتبوویت. بۆ من شەرمەزارکەر بوو." },
+            { "language": "kmr", "text": "Ez naxwazim vê yekê wisa bihêlim. Do we di komê de tiştek got ku min bi bawerî ji te re gotibû. Ji bo min şermokî bû." },
+            { "language": "pl", "text": "Nie chcę tego po prostu zostawić. Wczoraj w grupie wspomniał/a Pan/Pani coś, co powiedziałem/Powiedziałam w zaufaniu. Dla mnie to było zawstydzające." },
+            { "language": "ro", "text": "Nu vreau să las asta așa. Ieri, în grup, ați menționat ceva ce vă spusesem în încredere. Pentru mine a fost jenant." },
+            { "language": "sq", "text": "Nuk dua ta lë këtë thjesht kështu. Dje në grup përmende diçka që ta kisha thënë në mirëbesim. Për mua ishte turpëruese." }
+          ],
+          "function": "harm-named"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Du hast recht, das war mein Fehler. Ich habe etwas weitergegeben, das nicht in die Runde gehörte. Es tut mir leid, dass ich dein Vertrauen damit verletzt habe.",
+          "translations": [
+            { "language": "en", "text": "You are right; that was my mistake. I passed on something that did not belong in the group. I am sorry that I hurt your trust by doing that." },
+            { "language": "fa", "text": "حق با توست، این اشتباه من بود. چیزی را منتقل کردم که به آن جمع مربوط نبود. متأسفم که با این کار اعتماد تو را آسیب زدم." },
+            { "language": "ar", "text": "أنت محق، كان ذلك خطئي. نقلت شيئًا لم يكن مكانه في تلك المجموعة. يؤسفني أنني أضررت بثقتك بذلك." },
+            { "language": "tr", "text": "Haklısın, bu benim hatamdı. O gruba ait olmayan bir şeyi aktardım. Bununla güvenini zedelediğim için üzgünüm." },
+            { "language": "ru", "text": "Ты прав, это была моя ошибка. Я передал то, чему не место было в этой группе. Мне жаль, что я этим нарушил твое доверие." },
+            { "language": "ckb", "text": "ڕاست دەکەیت، ئەمە هەڵەی من بوو. شتێکم گواستەوە کە جێگەی لەو کۆمەڵەدا نەبوو. پەشیمانم کە بەمە متمانەی تۆم ئازار دا." },
+            { "language": "kmr", "text": "Tu rast dibêjî, ev xeletiya min bû. Min tiştek veguhast ku ne cihê wê di wê komê de bû. Ez xemgîn im ku min bi vê yekê baweriya te birîndar kir." },
+            { "language": "pl", "text": "Masz rację, to był mój błąd. Przekazałem/Przekazałam coś, czego nie powinno było być w tej grupie. Przykro mi, że naruszyłem/naruszyłam w ten sposób twoje zaufanie." },
+            { "language": "ro", "text": "Aveți dreptate, a fost greșeala mea. Am transmis ceva ce nu își avea locul în acel grup. Îmi pare rău că v-am rănit încrederea prin asta." },
+            { "language": "sq", "text": "Ke të drejtë, ishte gabimi im. Përcolla diçka që nuk i përkiste atij grupi. Më vjen keq që me këtë e dëmtova besimin tënd." }
+          ],
+          "function": "responsible-apology"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "speaker",
+          "baseText": "Mir geht es nicht nur um die Information selbst. Ich hatte danach das Gefühl, mich vor den anderen erklären zu müssen.",
+          "translations": [
+            { "language": "en", "text": "It is not only about the information itself. Afterwards I felt I had to explain myself in front of the others." },
+            { "language": "fa", "text": "مسئله فقط خود اطلاعات نیست. بعد از آن احساس کردم باید جلوی دیگران خودم را توضیح بدهم." },
+            { "language": "ar", "text": "الأمر لا يتعلق بالمعلومة نفسها فقط. بعد ذلك شعرت أن عليّ أن أشرح نفسي أمام الآخرين." },
+            { "language": "tr", "text": "Mesele sadece bilginin kendisi değil. Sonrasında başkalarının önünde kendimi açıklamak zorunda kaldığımı hissettim." },
+            { "language": "ru", "text": "Дело не только в самой информации. После этого у меня было чувство, что мне нужно объясняться перед другими." },
+            { "language": "ckb", "text": "بابەتەکە تەنها زانیارییەکە خۆی نییە. دوای ئەوە هەستم کرد دەبێت لەبەردەم ئەوانی تر خۆم ڕوون بکەمەوە." },
+            { "language": "kmr", "text": "Mijar ne tenê agahî bixwe ye. Piştî wê min hest kir ku divê ez xwe li ber kesên din rave bikim." },
+            { "language": "pl", "text": "Nie chodzi tylko o samą informację. Potem miałem/miałam poczucie, że muszę tłumaczyć się przed innymi." },
+            { "language": "ro", "text": "Nu este vorba doar despre informația în sine. După aceea am simțit că trebuie să mă explic în fața celorlalți." },
+            { "language": "sq", "text": "Nuk bëhet fjalë vetëm për vetë informacionin. Pas kësaj pata ndjesinë se duhej të shpjegohesha para të tjerëve." }
+          ],
+          "function": "impact-clarified"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Ich habe dich nicht nur inhaltlich übergangen, sondern dich in eine Situation gebracht, in der du dich rechtfertigen musstest. Das war nicht in Ordnung.",
+          "translations": [
+            { "language": "en", "text": "I understand that. I not only overstepped regarding the content; I also put you in a situation where you had to justify yourself. That was not okay." },
+            { "language": "fa", "text": "این را می‌فهمم. من فقط از نظر محتوا از مرز تو عبور نکردم، بلکه تو را در موقعیتی گذاشتم که مجبور شدی خودت را توجیه کنی. این درست نبود." },
+            { "language": "ar", "text": "أفهم ذلك. لم أتجاوزك من ناحية المحتوى فقط، بل وضعتك في موقف اضطررت فيه إلى تبرير نفسك. هذا لم يكن صحيحًا." },
+            { "language": "tr", "text": "Bunu anlıyorum. Sadece içerik açısından sınırını aşmadım; seni kendini savunmak zorunda kaldığın bir duruma da soktum. Bu doğru değildi." },
+            { "language": "ru", "text": "Я это понимаю. Я не только перешел границу по содержанию, но и поставил тебя в ситуацию, где тебе пришлось оправдываться. Это было неправильно." },
+            { "language": "ckb", "text": "ئەمە تێدەگەم. من تەنها لە ناوەڕۆکدا سنوورم نەبڕی، بەڵکو تۆم خستە دۆخێکەوە کە دەبوو خۆت پاساو بدەیت. ئەمە دروست نەبوو." },
+            { "language": "kmr", "text": "Ez vê fam dikim. Min ne tenê ji aliyê naverokê ve sînor derbas kir, lê te xist rewşekê ku diviyabû tu xwe biparêzî. Ev rast nebû." },
+            { "language": "pl", "text": "Rozumiem to. Nie tylko przekroczyłem/przekroczyłam granicę treści, lecz także postawiłem/postawiłam cię w sytuacji, w której musiałeś/musiałaś się tłumaczyć. To nie było w porządku." },
+            { "language": "ro", "text": "Înțeleg asta. Nu doar că am trecut peste limita conținutului, ci v-am pus într-o situație în care a trebuit să vă justificați. Nu a fost în regulă." },
+            { "language": "sq", "text": "E kuptoj këtë. Nuk e kalova vetëm kufirin e përmbajtjes, por të vendosa edhe në një situatë ku duhej të justifikoheshe. Kjo nuk ishte në rregull." }
+          ],
+          "function": "impact-acknowledged"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "speaker",
+          "baseText": "Ich höre das, aber ich frage mich, ob du es wirklich verstanden hast oder nur jetzt die richtigen Worte findest.",
+          "translations": [
+            { "language": "en", "text": "I hear that, but I wonder whether you really understood it or are just finding the right words now." },
+            { "language": "fa", "text": "این را می‌شنوم، اما از خودم می‌پرسم آیا واقعاً فهمیده‌ای یا فقط الان واژه‌های درست را پیدا کرده‌ای." },
+            { "language": "ar", "text": "أسمع ذلك، لكنني أتساءل هل فهمت الأمر فعلًا أم أنك فقط تجد الكلمات المناسبة الآن." },
+            { "language": "tr", "text": "Bunu duyuyorum, ama gerçekten anlayıp anlamadığını ya da şimdi sadece doğru sözleri bulup bulmadığını merak ediyorum." },
+            { "language": "ru", "text": "Я это слышу, но думаю, действительно ли ты понял это или просто сейчас находишь правильные слова." },
+            { "language": "ckb", "text": "ئەمە دەبیستم، بەڵام لە خۆم دەپرسێم ئایا بەڕاستی تێگەیشتوویت یان تەنها ئێستا وشەی دروست دەدۆزیتەوە." },
+            { "language": "kmr", "text": "Ez vê dibihîzim, lê dipirsim ka tu bi rastî fam kirî an tenê niha peyvên rast dibînî." },
+            { "language": "pl", "text": "Słyszę to, ale zastanawiam się, czy naprawdę to zrozumiałeś/zrozumiałaś, czy tylko teraz znajdujesz właściwe słowa." },
+            { "language": "ro", "text": "Aud asta, dar mă întreb dacă ați înțeles cu adevărat sau doar găsiți acum cuvintele potrivite." },
+            { "language": "sq", "text": "E dëgjoj këtë, por pyes veten nëse e ke kuptuar vërtet apo thjesht tani po gjen fjalët e duhura." }
+          ],
+          "function": "trust-question"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das ist eine berechtigte Frage. Ich kann Vertrauen nicht mit einem Satz reparieren. Konkret werde ich künftig vor jeder persönlichen Information fragen, ob und in welchem Rahmen ich sie erwähnen darf.",
+          "translations": [
+            { "language": "en", "text": "That is a legitimate question. I cannot repair trust with one sentence. Concretely, in the future I will ask before any personal information whether and in what setting I may mention it." },
+            { "language": "fa", "text": "این پرسش بجایی است. من نمی‌توانم اعتماد را با یک جمله ترمیم کنم. به‌طور مشخص، از این به بعد قبل از هر اطلاعات شخصی می‌پرسم آیا و در چه چارچوبی اجازه دارم آن را مطرح کنم." },
+            { "language": "ar", "text": "هذا سؤال مشروع. لا أستطيع إصلاح الثقة بجملة واحدة. بشكل ملموس، سأَسأل في المستقبل قبل أي معلومة شخصية هل يجوز لي ذكرها وفي أي إطار." },
+            { "language": "tr", "text": "Bu haklı bir soru. Güveni tek cümleyle onaramam. Somut olarak, bundan sonra her kişisel bilgiden önce onu söyleyip söyleyemeyeceğimi ve hangi çerçevede söyleyebileceğimi soracağım." },
+            { "language": "ru", "text": "Это обоснованный вопрос. Я не могу восстановить доверие одной фразой. Конкретно: в будущем перед любой личной информацией я буду спрашивать, можно ли и в каком кругу ее упоминать." },
+            { "language": "ckb", "text": "ئەم پرسیارە شایستەیە. ناتوانم متمانە بە یەک ڕستە چاک بکەمەوە. بە شێوەیەکی دیاریکراو، لە داهاتوودا پێش هەر زانیارییەکی کەسی دەپرسێم ئایا دەتوانم بیباس بکەم و لە چ چوارچێوەیەکدا." },
+            { "language": "kmr", "text": "Ev pirseke rewa ye. Ez nikarim baweriyê bi yek hevokê tamîr bikim. Bi awayekî berbiçav, paşerojê berî her agahiyeke kesane ez ê bipirsim ka ez dikarim wê bêjim û di kîjan çarçoveyê de." },
+            { "language": "pl", "text": "To uzasadnione pytanie. Nie naprawię zaufania jednym zdaniem. Konkretnie: w przyszłości przed każdą osobistą informacją zapytam, czy i w jakim gronie mogę ją wspomnieć." },
+            { "language": "ro", "text": "Este o întrebare justificată. Nu pot repara încrederea printr-o singură propoziție. Concret, pe viitor voi întreba înainte de orice informație personală dacă și în ce cadru o pot menționa." },
+            { "language": "sq", "text": "Kjo është një pyetje e drejtë. Nuk mund ta riparoj besimin me një fjali. Konkretisht, në të ardhmen para çdo informacioni personal do të pyes nëse dhe në çfarë rrethi mund ta përmend." }
+          ],
+          "function": "behavior-change"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "speaker",
+          "baseText": "Ich möchte außerdem nicht, dass du den anderen jetzt erklärst, was genau privat war. Das würde es nur größer machen.",
+          "translations": [
+            { "language": "en", "text": "I also do not want you to explain to the others now what exactly was private. That would only make it bigger." },
+            { "language": "fa", "text": "همچنین نمی‌خواهم الان برای دیگران توضیح بدهی دقیقاً چه چیزی خصوصی بود. این فقط موضوع را بزرگ‌تر می‌کند." },
+            { "language": "ar", "text": "كما أنني لا أريد أن تشرح الآن للآخرين ما الذي كان خاصًا بالضبط. هذا سيجعل الأمر أكبر فقط." },
+            { "language": "tr", "text": "Ayrıca şimdi diğerlerine tam olarak neyin özel olduğunu açıklamanı istemiyorum. Bu konuyu sadece büyütür." },
+            { "language": "ru", "text": "Я также не хочу, чтобы ты сейчас объяснял другим, что именно было личным. Это только сделало бы тему больше." },
+            { "language": "ckb", "text": "هەروەها نامەوێت ئێستا بۆ ئەوانی تر ڕوون بکەیتەوە کە چی بە وردی تایبەتی بوو. ئەمە تەنها بابەتەکە گەورەتر دەکات." },
+            { "language": "kmr", "text": "Herwiha ez naxwazim tu niha ji kesên din re rave bikî ka rastî çi taybet bû. Ev tenê mijarê mezintir dike." },
+            { "language": "pl", "text": "Nie chcę też, żebyś teraz wyjaśniał/wyjaśniała innym, co dokładnie było prywatne. To tylko powiększyłoby sprawę." },
+            { "language": "ro", "text": "De asemenea, nu vreau să le explicați acum celorlalți ce anume era privat. Asta ar mări doar problema." },
+            { "language": "sq", "text": "Gjithashtu nuk dua që tani t'u shpjegosh të tjerëve se çfarë saktësisht ishte private. Kjo vetëm do ta zmadhonte çështjen." }
+          ],
+          "function": "repair-boundary"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann mache ich es nicht größer. Wenn du möchtest, sage ich nur allgemein: Ich habe gestern eine Grenze überschritten und kläre das direkt mit dir. Keine Details.",
+          "translations": [
+            { "language": "en", "text": "Then I will not make it bigger. If you want, I will only say generally: yesterday I crossed a boundary and I am clarifying it directly with you. No details." },
+            { "language": "fa", "text": "پس آن را بزرگ‌تر نمی‌کنم. اگر بخواهی، فقط به‌طور کلی می‌گویم: دیروز از یک مرز عبور کردم و آن را مستقیم با تو روشن می‌کنم. بدون جزئیات." },
+            { "language": "ar", "text": "إذًا لن أكبر الأمر. إذا أردت، سأقول بشكل عام فقط: أمس تجاوزت حدًا، وأنا أوضح ذلك مباشرة معك. بلا تفاصيل." },
+            { "language": "tr", "text": "O zaman konuyu büyütmem. İstersen sadece genel olarak şunu söylerim: Dün bir sınırı aştım ve bunu doğrudan seninle netleştiriyorum. Ayrıntı yok." },
+            { "language": "ru", "text": "Тогда я не буду расширять тему. Если ты хочешь, я скажу только в общем: вчера я перешел границу и проясняю это напрямую с тобой. Без деталей." },
+            { "language": "ckb", "text": "ئەوا بابەتەکە گەورەتر ناکەم. ئەگەر بتەوێت، تەنها بە گشتی دەڵێم: دوێنێ سنوورێکم بڕی و ڕاستەوخۆ لەگەڵ تۆ ڕوونی دەکەمەوە. بێ وردەکاری." },
+            { "language": "kmr", "text": "Hingê ez mijarê mezintir nakim. Heke tu bixwazî, ez tenê bi giştî dibêjim: do min sînorek derbas kir û vê yekê rasterast bi te re zelal dikim. Bê hûrgilî." },
+            { "language": "pl", "text": "W takim razie nie powiększę sprawy. Jeśli chcesz, powiem tylko ogólnie: wczoraj przekroczyłem/przekroczyłam granicę i wyjaśniam to bezpośrednio z tobą. Bez szczegółów." },
+            { "language": "ro", "text": "Atunci nu voi mări problema. Dacă doriți, spun doar general: ieri am depășit o limită și clarific asta direct cu dumneavoastră. Fără detalii." },
+            { "language": "sq", "text": "Atëherë nuk do ta zmadhoj çështjen. Nëse dëshiron, them vetëm në përgjithësi: dje kalova një kufi dhe po e sqaroj drejtpërdrejt me ty. Pa detaje." }
+          ],
+          "function": "bounded-repair"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "speaker",
+          "baseText": "Das wäre in Ordnung. Ich brauche trotzdem etwas Zeit, bis ich dir wieder so offen etwas erzähle.",
+          "translations": [
+            { "language": "en", "text": "That would be okay. Still, I need some time before I tell you something so openly again." },
+            { "language": "fa", "text": "این قابل قبول است. با این حال، کمی زمان لازم دارم تا دوباره چیزی را این‌قدر باز با تو در میان بگذارم." },
+            { "language": "ar", "text": "سيكون ذلك مقبولًا. ومع ذلك أحتاج إلى بعض الوقت قبل أن أخبرك بشيء بهذه الصراحة مرة أخرى." },
+            { "language": "tr", "text": "Bu uygun olur. Yine de sana tekrar bu kadar açık bir şey anlatmadan önce biraz zamana ihtiyacım var." },
+            { "language": "ru", "text": "Это было бы нормально. Но мне все равно нужно немного времени, прежде чем я снова расскажу тебе что-то так открыто." },
+            { "language": "ckb", "text": "ئەمە باش دەبێت. بەڵام هێشتا پێویستم بە کەمێک کاتە پێش ئەوەی جارێکی تر بەو ڕادەیە کراوە شتێکت پێ بڵێم." },
+            { "language": "kmr", "text": "Ev baş dibe. Lê dîsa jî ez hewceyê demekê me berî ku ez careke din tiştek bi vî qasî vekirî ji te re bibêjim." },
+            { "language": "pl", "text": "To byłoby w porządku. Mimo to potrzebuję trochę czasu, zanim znowu opowiem ci coś tak otwarcie." },
+            { "language": "ro", "text": "Asta ar fi în regulă. Totuși am nevoie de puțin timp până să vă spun din nou ceva atât de deschis." },
+            { "language": "sq", "text": "Kjo do të ishte në rregull. Megjithatë më duhet pak kohë para se të të tregoj përsëri diçka kaq hapur." }
+          ],
+          "function": "time-boundary"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das respektiere ich. Ich werde nicht auf sofortige Normalität drängen. Mir ist wichtig, dass du siehst: Ich habe verstanden, was ich beschädigt habe, und ich ändere mein Verhalten.",
+          "translations": [
+            { "language": "en", "text": "I respect that. I will not push for immediate normality. What matters to me is that you see: I have understood what I damaged, and I am changing my behavior." },
+            { "language": "fa", "text": "به این احترام می‌گذارم. برای بازگشت فوری به حالت عادی فشار نمی‌آورم. برایم مهم است که ببینی: فهمیده‌ام چه چیزی را آسیب زده‌ام و رفتارم را تغییر می‌دهم." },
+            { "language": "ar", "text": "أحترم ذلك. لن أضغط من أجل عودة فورية إلى الوضع الطبيعي. المهم بالنسبة لي أن ترى أنني فهمت ما أضررت به، وأنني أغير سلوكي." },
+            { "language": "tr", "text": "Buna saygı duyuyorum. Hemen normale dönülmesi için baskı yapmayacağım. Benim için önemli olan şunu görmen: neye zarar verdiğimi anladım ve davranışımı değiştiriyorum." },
+            { "language": "ru", "text": "Я это уважаю. Я не буду давить, чтобы все сразу стало как прежде. Для меня важно, чтобы ты видел: я понял, что повредил, и меняю свое поведение." },
+            { "language": "ckb", "text": "ڕێزی لێ دەگرم. فشار ناکەم کە دەستبەجێ هەموو شتێک ئاسایی ببێتەوە. بۆ من گرنگە ببینیت: تێگەیشتووم چییم زیان پێگەیاندووە و ڕەفتارم دەگۆڕم." },
+            { "language": "kmr", "text": "Ez rêzê lê digirim. Ez ê zext nekim ku her tişt tavilê vegere rewşa asayî. Ji bo min girîng e ku tu bibînî: min fam kir çi min xerab kir û ez reftara xwe diguherînim." },
+            { "language": "pl", "text": "Szanuję to. Nie będę naciskać na natychmiastowy powrót do normalności. Ważne jest dla mnie, żebyś zobaczył/zobaczyła: zrozumiałem/zrozumiałam, co uszkodziłem/uszkodziłam, i zmieniam swoje zachowanie." },
+            { "language": "ro", "text": "Respect asta. Nu voi presa pentru o revenire imediată la normal. Pentru mine este important să vedeți: am înțeles ce am deteriorat și îmi schimb comportamentul." },
+            { "language": "sq", "text": "E respektoj këtë. Nuk do të shtyj për normalitet të menjëhershëm. Për mua është e rëndësishme të shohësh: e kam kuptuar çfarë kam dëmtuar dhe po ndryshoj sjelljen time." }
+          ],
+          "function": "close-with-respect"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Du hast recht, das war mein Fehler. Ich habe etwas weitergegeben, das nicht in die Runde gehörte. Es tut mir leid, dass ich dein Vertrauen damit verletzt habe.",
+              "translations": [
+                { "language": "en", "text": "You are right; that was my mistake. I passed on something that did not belong in the group. I am sorry that I hurt your trust by doing that." },
+                { "language": "fa", "text": "حق با توست، این اشتباه من بود. چیزی را منتقل کردم که به آن جمع مربوط نبود. متأسفم که با این کار اعتماد تو را آسیب زدم." },
+                { "language": "ar", "text": "أنت محق، كان ذلك خطئي. نقلت شيئًا لم يكن مكانه في تلك المجموعة. يؤسفني أنني أضررت بثقتك بذلك." },
+                { "language": "tr", "text": "Haklısın, bu benim hatamdı. O gruba ait olmayan bir şeyi aktardım. Bununla güvenini zedelediğim için üzgünüm." },
+                { "language": "ru", "text": "Ты прав, это была моя ошибка. Я передал то, чему не место было в этой группе. Мне жаль, что я этим нарушил твое доверие." },
+                { "language": "ckb", "text": "ڕاست دەکەیت، ئەمە هەڵەی من بوو. شتێکم گواستەوە کە جێگەی لەو کۆمەڵەدا نەبوو. پەشیمانم کە بەمە متمانەی تۆم ئازار دا." },
+                { "language": "kmr", "text": "Tu rast dibêjî, ev xeletiya min bû. Min tiştek veguhast ku ne cihê wê di wê komê de bû. Ez xemgîn im ku min bi vê yekê baweriya te birîndar kir." },
+                { "language": "pl", "text": "Masz rację, to był mój błąd. Przekazałem/Przekazałam coś, czego nie powinno było być w tej grupie. Przykro mi, że naruszyłem/naruszyłam w ten sposób twoje zaufanie." },
+                { "language": "ro", "text": "Aveți dreptate, a fost greșeala mea. Am transmis ceva ce nu își avea locul în acel grup. Îmi pare rău că v-am rănit încrederea prin asta." },
+                { "language": "sq", "text": "Ke të drejtë, ishte gabimi im. Përcolla diçka që nuk i përkiste atij grupi. Më vjen keq që me këtë e dëmtova besimin tënd." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort benennt den Fehler und das verletzte Vertrauen, ohne eine Ausrede vorzuschieben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer names the mistake and the damaged trust without putting forward an excuse." },
+                { "language": "fa", "text": "درست است: پاسخ خطا و اعتماد آسیب‌دیده را نام می‌برد، بدون اینکه بهانه‌ای جلو بکشد." },
+                { "language": "ar", "text": "صحيح: تسمي الإجابة الخطأ والثقة المتضررة من دون تقديم عذر." },
+                { "language": "tr", "text": "Doğru: cevap hatayı ve zedelenen güveni adlandırır, mazeret öne sürmez." },
+                { "language": "ru", "text": "Правильно: ответ называет ошибку и нарушенное доверие, не выдвигая оправдание." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە هەڵە و متمانەی ئازاردراو ناودەبات، بەبێ ئەوەی پاساو پێش بخات." },
+                { "language": "kmr", "text": "Rast e: bersiv xeletî û baweriya birîndar nav dike, bê ku hincetek pêş bixe." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nazywa błąd i naruszone zaufanie, nie wysuwając wymówki." },
+                { "language": "ro", "text": "Corect: răspunsul numește greșeala și încrederea rănită, fără să aducă o scuză." },
+                { "language": "sq", "text": "Saktë: përgjigjja emërton gabimin dhe besimin e dëmtuar, pa nxjerrë justifikim." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Es tut mir leid, falls das für dich unangenehm war. Ich habe es nicht böse gemeint.",
+              "translations": [
+                { "language": "en", "text": "I am sorry if that was uncomfortable for you. I did not mean it badly." },
+                { "language": "fa", "text": "متأسفم اگر این برایت ناخوشایند بود. منظور بدی نداشتم." },
+                { "language": "ar", "text": "آسف إذا كان ذلك غير مريح لك. لم أقصد شيئًا سيئًا." },
+                { "language": "tr", "text": "Bu senin için rahatsız ediciyse üzgünüm. Kötü niyetle söylemedim." },
+                { "language": "ru", "text": "Мне жаль, если тебе было неприятно. Я не имел плохого намерения." },
+                { "language": "ckb", "text": "پەشیمانم ئەگەر ئەمە بۆ تۆ ناخۆش بوو. مەبەستم خراپ نەبوو." },
+                { "language": "kmr", "text": "Ez xemgîn im heke ev ji bo te nerehet bû. Mebesta min ne xerab bû." },
+                { "language": "pl", "text": "Przykro mi, jeśli było ci z tym nieprzyjemnie. Nie miałem/nie miałam złych intencji." },
+                { "language": "ro", "text": "Îmi pare rău dacă a fost neplăcut pentru dumneavoastră. Nu am avut intenții rele." },
+                { "language": "sq", "text": "Më vjen keq nëse kjo ishte e pakëndshme për ty. Nuk e kisha me qëllim të keq." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort macht den Schaden unsicher und stellt die eigene Absicht in den Vordergrund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the answer makes the harm sound uncertain and puts your own intention in the foreground." },
+                { "language": "fa", "text": "ضعیف است: پاسخ آسیب را نامطمئن نشان می‌دهد و نیت خودتان را در مرکز قرار می‌دهد." },
+                { "language": "ar", "text": "ضعيف جدًا: تجعل الإجابة الضرر غير مؤكد وتضع نيتكم في المقدمة." },
+                { "language": "tr", "text": "Zayıf: cevap zararı belirsiz gösterir ve kendi niyetinizi öne çıkarır." },
+                { "language": "ru", "text": "Слабо: ответ делает вред неопределенным и выдвигает на первый план ваше намерение." },
+                { "language": "ckb", "text": "لاوازە: وەڵامەکە زیانەکە نادڵنیا پیشان دەدات و نیتی خۆت دەخاتە پێشەوە." },
+                { "language": "kmr", "text": "Lawaz e: bersiv ziyanê nezelal nîşan dide û niyeta we tîne pêş." },
+                { "language": "pl", "text": "Za słabe: odpowiedź pokazuje szkodę jako niepewną i wysuwa na pierwszy plan własną intencję." },
+                { "language": "ro", "text": "Prea slab: răspunsul face prejudiciul să pară nesigur și pune în prim-plan propria intenție." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja e bën dëmin të duket i pasigurt dhe vë në plan të parë qëllimin tuaj." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das verstehe ich. Ich habe dich nicht nur inhaltlich übergangen, sondern dich in eine Situation gebracht, in der du dich rechtfertigen musstest. Das war nicht in Ordnung.",
+              "translations": [
+                { "language": "en", "text": "I understand that. I not only overstepped regarding the content; I also put you in a situation where you had to justify yourself. That was not okay." },
+                { "language": "fa", "text": "این را می‌فهمم. من فقط از نظر محتوا از مرز تو عبور نکردم، بلکه تو را در موقعیتی گذاشتم که مجبور شدی خودت را توجیه کنی. این درست نبود." },
+                { "language": "ar", "text": "أفهم ذلك. لم أتجاوزك من ناحية المحتوى فقط، بل وضعتك في موقف اضطررت فيه إلى تبرير نفسك. هذا لم يكن صحيحًا." },
+                { "language": "tr", "text": "Bunu anlıyorum. Sadece içerik açısından sınırını aşmadım; seni kendini savunmak zorunda kaldığın bir duruma da soktum. Bu doğru değildi." },
+                { "language": "ru", "text": "Я это понимаю. Я не только перешел границу по содержанию, но и поставил тебя в ситуацию, где тебе пришлось оправдываться. Это было неправильно." },
+                { "language": "ckb", "text": "ئەمە تێدەگەم. من تەنها لە ناوەڕۆکدا سنوورم نەبڕی، بەڵکو تۆم خستە دۆخێکەوە کە دەبوو خۆت پاساو بدەیت. ئەمە دروست نەبوو." },
+                { "language": "kmr", "text": "Ez vê fam dikim. Min ne tenê ji aliyê naverokê ve sînor derbas kir, lê te xist rewşekê ku diviyabû tu xwe biparêzî. Ev rast nebû." },
+                { "language": "pl", "text": "Rozumiem to. Nie tylko przekroczyłem/przekroczyłam granicę treści, lecz także postawiłem/postawiłam cię w sytuacji, w której musiałeś/musiałaś się tłumaczyć. To nie było w porządku." },
+                { "language": "ro", "text": "Înțeleg asta. Nu doar că am trecut peste limita conținutului, ci v-am pus într-o situație în care a trebuit să vă justificați. Nu a fost în regulă." },
+                { "language": "sq", "text": "E kuptoj këtë. Nuk e kalova vetëm kufirin e përmbajtjes, por të vendosa edhe në një situatë ku duhej të justifikoheshe. Kjo nuk ishte në rregull." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort erkennt die soziale Wirkung an, nicht nur den formalen Fehler.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer acknowledges the social impact, not only the formal mistake." },
+                { "language": "fa", "text": "درست است: پاسخ اثر اجتماعی را می‌پذیرد، نه فقط خطای رسمی را." },
+                { "language": "ar", "text": "صحيح: تعترف الإجابة بالأثر الاجتماعي، لا بالخطأ الشكلي فقط." },
+                { "language": "tr", "text": "Doğru: cevap yalnızca biçimsel hatayı değil, sosyal etkiyi kabul eder." },
+                { "language": "ru", "text": "Правильно: ответ признает социальное воздействие, а не только формальную ошибку." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە کاریگەریی کۆمەڵایەتی پەسەند دەکات، نە تەنها هەڵەی فۆڕمی." },
+                { "language": "kmr", "text": "Rast e: bersiv bandora civakî qebûl dike, ne tenê xeletiya fermî." },
+                { "language": "pl", "text": "Dobrze: odpowiedź uznaje skutek społeczny, a nie tylko formalny błąd." },
+                { "language": "ro", "text": "Corect: răspunsul recunoaște impactul social, nu doar greșeala formală." },
+                { "language": "sq", "text": "Saktë: përgjigjja pranon ndikimin shoqëror, jo vetëm gabimin formal." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich verstehe, dass es unangenehm war, aber die anderen haben es bestimmt nicht so schlimm gemeint.",
+              "translations": [
+                { "language": "en", "text": "I understand that it was uncomfortable, but the others surely did not mean it so badly." },
+                { "language": "fa", "text": "می‌فهمم که ناخوشایند بود، اما حتماً بقیه آن را آن‌قدر بد برداشت نکرده‌اند." },
+                { "language": "ar", "text": "أفهم أنه كان غير مريح، لكن الآخرين بالتأكيد لم يقصدوا الأمر بهذا السوء." },
+                { "language": "tr", "text": "Bunun rahatsız edici olduğunu anlıyorum, ama diğerleri kesinlikle bunu o kadar kötü anlamamıştır." },
+                { "language": "ru", "text": "Я понимаю, что это было неприятно, но другие наверняка не имели в виду ничего настолько плохого." },
+                { "language": "ckb", "text": "تێدەگەم کە ناخۆش بوو، بەڵام دڵنیام ئەوانی تر ئەوەیان ئەوەندە خراپ مەبەست نەبوو." },
+                { "language": "kmr", "text": "Ez fam dikim ku ev nerehet bû, lê bêguman kesên din ew qas xerab qesd nekiribûn." },
+                { "language": "pl", "text": "Rozumiem, że to było nieprzyjemne, ale inni na pewno nie odebrali tego aż tak źle." },
+                { "language": "ro", "text": "Înțeleg că a fost neplăcut, dar ceilalți sigur nu au luat-o chiar atât de rău." },
+                { "language": "sq", "text": "E kuptoj që ishte e pakëndshme, por të tjerët me siguri nuk e kanë marrë aq keq." }
+              ],
+              "isCorrect": false,
+              "feedback": "Problematisch: Die Antwort relativiert das Erleben der anderen Person, statt es ernst zu nehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Problematic: the answer downplays the other person's experience instead of taking it seriously." },
+                { "language": "fa", "text": "مشکل‌دار است: پاسخ تجربه طرف مقابل را کم‌اهمیت می‌کند، به جای اینکه آن را جدی بگیرد." },
+                { "language": "ar", "text": "إشكالي: تقلل الإجابة من تجربة الطرف الآخر بدلًا من أخذها بجدية." },
+                { "language": "tr", "text": "Sorunlu: cevap diğer kişinin deneyimini ciddiye almak yerine hafifletir." },
+                { "language": "ru", "text": "Проблемно: ответ преуменьшает переживание другого человека вместо того, чтобы отнестись к нему серьезно." },
+                { "language": "ckb", "text": "کێشەدارە: وەڵامەکە ئەزموونی کەسی بەرامبەر کەم دەکاتەوە، لەبری ئەوەی بە جدی وەری بگرێت." },
+                { "language": "kmr", "text": "Pirsgirêkdar e: bersiv ezmûna kesê din kêm dike, li şûna ku wê ciddî bigire." },
+                { "language": "pl", "text": "Problem: odpowiedź umniejsza doświadczenie drugiej osoby zamiast potraktować je poważnie." },
+                { "language": "ro", "text": "Problematic: răspunsul minimalizează trăirea celeilalte persoane în loc să o ia în serios." },
+                { "language": "sq", "text": "Problem: përgjigjja e zvogëlon përjetimin e personit tjetër në vend që ta marrë seriozisht." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das ist eine berechtigte Frage. Ich kann Vertrauen nicht mit einem Satz reparieren. Konkret werde ich künftig vor jeder persönlichen Information fragen, ob und in welchem Rahmen ich sie erwähnen darf.",
+              "translations": [
+                { "language": "en", "text": "That is a legitimate question. I cannot repair trust with one sentence. Concretely, in the future I will ask before any personal information whether and in what setting I may mention it." },
+                { "language": "fa", "text": "این پرسش بجایی است. من نمی‌توانم اعتماد را با یک جمله ترمیم کنم. به‌طور مشخص، از این به بعد قبل از هر اطلاعات شخصی می‌پرسم آیا و در چه چارچوبی اجازه دارم آن را مطرح کنم." },
+                { "language": "ar", "text": "هذا سؤال مشروع. لا أستطيع إصلاح الثقة بجملة واحدة. بشكل ملموس، سأَسأل في المستقبل قبل أي معلومة شخصية هل يجوز لي ذكرها وفي أي إطار." },
+                { "language": "tr", "text": "Bu haklı bir soru. Güveni tek cümleyle onaramam. Somut olarak, bundan sonra her kişisel bilgiden önce onu söyleyip söyleyemeyeceğimi ve hangi çerçevede söyleyebileceğimi soracağım." },
+                { "language": "ru", "text": "Это обоснованный вопрос. Я не могу восстановить доверие одной фразой. Конкретно: в будущем перед любой личной информацией я буду спрашивать, можно ли и в каком кругу ее упоминать." },
+                { "language": "ckb", "text": "ئەم پرسیارە شایستەیە. ناتوانم متمانە بە یەک ڕستە چاک بکەمەوە. بە شێوەیەکی دیاریکراو، لە داهاتوودا پێش هەر زانیارییەکی کەسی دەپرسێم ئایا دەتوانم بیباس بکەم و لە چ چوارچێوەیەکدا." },
+                { "language": "kmr", "text": "Ev pirseke rewa ye. Ez nikarim baweriyê bi yek hevokê tamîr bikim. Bi awayekî berbiçav, paşerojê berî her agahiyeke kesane ez ê bipirsim ka ez dikarim wê bêjim û di kîjan çarçoveyê de." },
+                { "language": "pl", "text": "To uzasadnione pytanie. Nie naprawię zaufania jednym zdaniem. Konkretnie: w przyszłości przed każdą osobistą informacją zapytam, czy i w jakim gronie mogę ją wspomnieć." },
+                { "language": "ro", "text": "Este o întrebare justificată. Nu pot repara încrederea printr-o singură propoziție. Concret, pe viitor voi întreba înainte de orice informație personală dacă și în ce cadru o pot menționa." },
+                { "language": "sq", "text": "Kjo është një pyetje e drejtë. Nuk mund ta riparoj besimin me një fjali. Konkretisht, në të ardhmen para çdo informacioni personal do të pyes nëse dhe në çfarë rrethi mund ta përmend." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort akzeptiert, dass Vertrauen Zeit braucht, und nennt eine klare neue Regel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer accepts that trust takes time and names a clear new rule." },
+                { "language": "fa", "text": "درست است: پاسخ می‌پذیرد که اعتماد زمان می‌خواهد و یک قاعده جدید روشن نام می‌برد." },
+                { "language": "ar", "text": "صحيح: تقبل الإجابة أن الثقة تحتاج إلى وقت وتسمّي قاعدة جديدة واضحة." },
+                { "language": "tr", "text": "Doğru: cevap güvenin zaman istediğini kabul eder ve net yeni bir kural adlandırır." },
+                { "language": "ru", "text": "Правильно: ответ принимает, что доверие требует времени, и называет ясное новое правило." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە پەسەند دەکات کە متمانە کات دەوێت و یاسایەکی نوێی ڕوون ناودەبات." },
+                { "language": "kmr", "text": "Rast e: bersiv qebûl dike ku bawerî dem dixwaze û rêgezeke nû ya zelal nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź przyjmuje, że zaufanie potrzebuje czasu, i nazywa jasną nową zasadę." },
+                { "language": "ro", "text": "Corect: răspunsul acceptă că încrederea are nevoie de timp și numește o regulă nouă clară." },
+                { "language": "sq", "text": "Saktë: përgjigjja pranon se besimi kërkon kohë dhe emërton një rregull të ri të qartë." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich verspreche, dass so etwas nie wieder vorkommt.",
+              "translations": [
+                { "language": "en", "text": "I promise that something like this will never happen again." },
+                { "language": "fa", "text": "قول می‌دهم چنین چیزی دیگر هرگز اتفاق نیفتد." },
+                { "language": "ar", "text": "أعد بأن شيئًا كهذا لن يحدث مرة أخرى أبدًا." },
+                { "language": "tr", "text": "Böyle bir şeyin bir daha asla olmayacağına söz veriyorum." },
+                { "language": "ru", "text": "Я обещаю, что такое больше никогда не повторится." },
+                { "language": "ckb", "text": "بەڵێن دەدەم شتی وا جارێکی تر هەرگیز ڕوونەدات." },
+                { "language": "kmr", "text": "Ez soz didim ku tiştekî wisa qet careke din çênebe." },
+                { "language": "pl", "text": "Obiecuję, że coś takiego już nigdy się nie zdarzy." },
+                { "language": "ro", "text": "Promit că așa ceva nu se va mai întâmpla niciodată." },
+                { "language": "sq", "text": "Premtoj se diçka e tillë nuk do të ndodhë më kurrë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu absolut: Die Antwort klingt stark, bleibt aber ohne überprüfbare Änderung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too absolute: the answer sounds strong, but remains without a verifiable change." },
+                { "language": "fa", "text": "بیش از حد مطلق است: پاسخ قوی به نظر می‌رسد، اما بدون تغییر قابل پیگیری می‌ماند." },
+                { "language": "ar", "text": "مطلق جدًا: تبدو الإجابة قوية، لكنها تبقى بلا تغيير قابل للتحقق." },
+                { "language": "tr", "text": "Fazla kesin: cevap güçlü duyulur, ama takip edilebilir bir değişiklik içermez." },
+                { "language": "ru", "text": "Слишком абсолютно: ответ звучит сильно, но остается без проверяемого изменения." },
+                { "language": "ckb", "text": "زۆر ڕەهایە: وەڵامەکە بەهێز دەردەکەوێت، بەڵام بێ گۆڕانکارییەکی پشکنینکراو دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir teqez e: bersiv xurt xuya dike, lê bê guhertineke kontrolbar dimîne." },
+                { "language": "pl", "text": "Zbyt absolutne: odpowiedź brzmi mocno, ale pozostaje bez sprawdzalnej zmiany." },
+                { "language": "ro", "text": "Prea absolut: răspunsul sună puternic, dar rămâne fără o schimbare verificabilă." },
+                { "language": "sq", "text": "Shumë absolute: përgjigjja tingëllon e fortë, por mbetet pa ndryshim të verifikueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dann mache ich es nicht größer. Wenn du möchtest, sage ich nur allgemein: Ich habe gestern eine Grenze überschritten und kläre das direkt mit dir. Keine Details.",
+              "translations": [
+                { "language": "en", "text": "Then I will not make it bigger. If you want, I will only say generally: yesterday I crossed a boundary and I am clarifying it directly with you. No details." },
+                { "language": "fa", "text": "پس آن را بزرگ‌تر نمی‌کنم. اگر بخواهی، فقط به‌طور کلی می‌گویم: دیروز از یک مرز عبور کردم و آن را مستقیم با تو روشن می‌کنم. بدون جزئیات." },
+                { "language": "ar", "text": "إذًا لن أكبر الأمر. إذا أردت، سأقول بشكل عام فقط: أمس تجاوزت حدًا، وأنا أوضح ذلك مباشرة معك. بلا تفاصيل." },
+                { "language": "tr", "text": "O zaman konuyu büyütmem. İstersen sadece genel olarak şunu söylerim: Dün bir sınırı aştım ve bunu doğrudan seninle netleştiriyorum. Ayrıntı yok." },
+                { "language": "ru", "text": "Тогда я не буду расширять тему. Если ты хочешь, я скажу только в общем: вчера я перешел границу и проясняю это напрямую с тобой. Без деталей." },
+                { "language": "ckb", "text": "ئەوا بابەتەکە گەورەتر ناکەم. ئەگەر بتەوێت، تەنها بە گشتی دەڵێم: دوێنێ سنوورێکم بڕی و ڕاستەوخۆ لەگەڵ تۆ ڕوونی دەکەمەوە. بێ وردەکاری." },
+                { "language": "kmr", "text": "Hingê ez mijarê mezintir nakim. Heke tu bixwazî, ez tenê bi giştî dibêjim: do min sînorek derbas kir û vê yekê rasterast bi te re zelal dikim. Bê hûrgilî." },
+                { "language": "pl", "text": "W takim razie nie powiększę sprawy. Jeśli chcesz, powiem tylko ogólnie: wczoraj przekroczyłem/przekroczyłam granicę i wyjaśniam to bezpośrednio z tobą. Bez szczegółów." },
+                { "language": "ro", "text": "Atunci nu voi mări problema. Dacă doriți, spun doar general: ieri am depășit o limită și clarific asta direct cu dumneavoastră. Fără detalii." },
+                { "language": "sq", "text": "Atëherë nuk do ta zmadhoj çështjen. Nëse dëshiron, them vetëm në përgjithësi: dje kalova një kufi dhe po e sqaroj drejtpërdrejt me ty. Pa detaje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort schützt die Privatheit und bietet trotzdem eine knappe soziale Korrektur an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer protects privacy while still offering a brief social correction." },
+                { "language": "fa", "text": "درست است: پاسخ حریم خصوصی را حفظ می‌کند و همزمان یک اصلاح اجتماعی کوتاه پیشنهاد می‌دهد." },
+                { "language": "ar", "text": "صحيح: تحمي الإجابة الخصوصية وتقدم في الوقت نفسه تصحيحًا اجتماعيًا قصيرًا." },
+                { "language": "tr", "text": "Doğru: cevap mahremiyeti korur ve yine de kısa bir sosyal düzeltme sunar." },
+                { "language": "ru", "text": "Правильно: ответ защищает приватность и при этом предлагает краткую социальную корректировку." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە تایبەتمەندی دەپارێزێت و هەمان کات ڕاستکردنەوەیەکی کۆمەڵایەتی کورت پێشکەش دەکات." },
+                { "language": "kmr", "text": "Rast e: bersiv taybetiyê diparêze û di heman demê de sererastkirineke civakî ya kurt pêşkêş dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź chroni prywatność, a jednocześnie oferuje krótką korektę społeczną." },
+                { "language": "ro", "text": "Corect: răspunsul protejează intimitatea și oferă totuși o scurtă corectare socială." },
+                { "language": "sq", "text": "Saktë: përgjigjja mbron privatësinë dhe njëkohësisht ofron një korrigjim të shkurtër shoqëror." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich kann allen erklären, dass sie das einfach vergessen sollen.",
+              "translations": [
+                { "language": "en", "text": "I can explain to everyone that they should simply forget it." },
+                { "language": "fa", "text": "می‌توانم به همه توضیح بدهم که فقط آن را فراموش کنند." },
+                { "language": "ar", "text": "أستطيع أن أشرح للجميع أنهم يجب أن ينسوا الأمر ببساطة." },
+                { "language": "tr", "text": "Herkese bunu sadece unutmaları gerektiğini açıklayabilirim." },
+                { "language": "ru", "text": "Я могу объяснить всем, что им нужно просто забыть это." },
+                { "language": "ckb", "text": "دەتوانم بۆ هەمووان ڕوون بکەمەوە کە تەنها ئەوە لەبیر بکەن." },
+                { "language": "kmr", "text": "Ez dikarim ji hemûyan re rave bikim ku divê ew vê yekê tenê ji bîr bikin." },
+                { "language": "pl", "text": "Mogę wyjaśnić wszystkim, że mają po prostu o tym zapomnieć." },
+                { "language": "ro", "text": "Pot să le explic tuturor că ar trebui pur și simplu să uite asta." },
+                { "language": "sq", "text": "Mund t'u shpjegoj të gjithëve se thjesht duhet ta harrojnë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Schwach: Diese Antwort nimmt der anderen Person Kontrolle und zieht erneut Aufmerksamkeit auf das private Thema.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Weak: this answer takes control away from the other person and draws attention to the private topic again." },
+                { "language": "fa", "text": "ضعیف است: این پاسخ کنترل را از طرف مقابل می‌گیرد و دوباره توجه را به موضوع خصوصی جلب می‌کند." },
+                { "language": "ar", "text": "ضعيف: تسلب هذه الإجابة السيطرة من الطرف الآخر وتلفت الانتباه مرة أخرى إلى الموضوع الخاص." },
+                { "language": "tr", "text": "Zayıf: bu cevap kontrolü diğer kişiden alır ve dikkati yeniden özel konuya çeker." },
+                { "language": "ru", "text": "Слабо: этот ответ забирает контроль у другого человека и снова привлекает внимание к личной теме." },
+                { "language": "ckb", "text": "لاوازە: ئەم وەڵامە کۆنترۆڵ لە کەسی بەرامبەر دەستێنێت و دیسان سەرنج دەباتەوە سەر بابەتی تایبەتی." },
+                { "language": "kmr", "text": "Lawaz e: ev bersiv kontrolê ji kesê din digire û dîsa balê dikişîne ser mijara taybet." },
+                { "language": "pl", "text": "Słabe: ta odpowiedź odbiera drugiej osobie kontrolę i ponownie kieruje uwagę na prywatny temat." },
+                { "language": "ro", "text": "Slab: acest răspuns ia controlul celeilalte persoane și atrage din nou atenția asupra subiectului privat." },
+                { "language": "sq", "text": "E dobët: kjo përgjigje ia merr kontrollin personit tjetër dhe tërheq përsëri vëmendjen te tema private." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das respektiere ich. Ich werde nicht auf sofortige Normalität drängen. Mir ist wichtig, dass du siehst: Ich habe verstanden, was ich beschädigt habe, und ich ändere mein Verhalten.",
+              "translations": [
+                { "language": "en", "text": "I respect that. I will not push for immediate normality. What matters to me is that you see: I have understood what I damaged, and I am changing my behavior." },
+                { "language": "fa", "text": "به این احترام می‌گذارم. برای بازگشت فوری به حالت عادی فشار نمی‌آورم. برایم مهم است که ببینی: فهمیده‌ام چه چیزی را آسیب زده‌ام و رفتارم را تغییر می‌دهم." },
+                { "language": "ar", "text": "أحترم ذلك. لن أضغط من أجل عودة فورية إلى الوضع الطبيعي. المهم بالنسبة لي أن ترى أنني فهمت ما أضررت به، وأنني أغير سلوكي." },
+                { "language": "tr", "text": "Buna saygı duyuyorum. Hemen normale dönülmesi için baskı yapmayacağım. Benim için önemli olan şunu görmen: neye zarar verdiğimi anladım ve davranışımı değiştiriyorum." },
+                { "language": "ru", "text": "Я это уважаю. Я не буду давить, чтобы все сразу стало как прежде. Для меня важно, чтобы ты видел: я понял, что повредил, и меняю свое поведение." },
+                { "language": "ckb", "text": "ڕێزی لێ دەگرم. فشار ناکەم کە دەستبەجێ هەموو شتێک ئاسایی ببێتەوە. بۆ من گرنگە ببینیت: تێگەیشتووم چییم زیان پێگەیاندووە و ڕەفتارم دەگۆڕم." },
+                { "language": "kmr", "text": "Ez rêzê lê digirim. Ez ê zext nekim ku her tişt tavilê vegere rewşa asayî. Ji bo min girîng e ku tu bibînî: min fam kir çi min xerab kir û ez reftara xwe diguherînim." },
+                { "language": "pl", "text": "Szanuję to. Nie będę naciskać na natychmiastowy powrót do normalności. Ważne jest dla mnie, żebyś zobaczył/zobaczyła: zrozumiałem/zrozumiałam, co uszkodziłem/uszkodziłam, i zmieniam swoje zachowanie." },
+                { "language": "ro", "text": "Respect asta. Nu voi presa pentru o revenire imediată la normal. Pentru mine este important să vedeți: am înțeles ce am deteriorat și îmi schimb comportamentul." },
+                { "language": "sq", "text": "E respektoj këtë. Nuk do të shtyj për normalitet të menjëhershëm. Për mua është e rëndësishme të shohësh: e kam kuptuar çfarë kam dëmtuar dhe po ndryshoj sjelljen time." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss respektiert die Grenze und verbindet Einsicht mit künftigem Verhalten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the closing respects the boundary and connects insight with future behavior." },
+                { "language": "fa", "text": "قوی است: پایان‌بندی به مرز احترام می‌گذارد و فهم مسئله را با رفتار آینده پیوند می‌دهد." },
+                { "language": "ar", "text": "قوي: تحترم الخاتمة الحد وتربط الفهم بالسلوك المستقبلي." },
+                { "language": "tr", "text": "Güçlü: kapanış sınıra saygı duyar ve kavrayışı gelecekteki davranışla bağlar." },
+                { "language": "ru", "text": "Сильно: завершение уважает границу и связывает понимание с будущим поведением." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە ڕێز لە سنوور دەگرێت و تێگەیشتن بە ڕەفتاری داهاتووەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: dawî rêzê li sînorê digire û têgihiştinê bi reftara paşerojê ve girê dide." },
+                { "language": "pl", "text": "Mocne: zakończenie szanuje granicę i łączy zrozumienie z przyszłym zachowaniem." },
+                { "language": "ro", "text": "Puternic: încheierea respectă limita și leagă înțelegerea de comportamentul viitor." },
+                { "language": "sq", "text": "E fortë: mbyllja respekton kufirin dhe lidh të kuptuarit me sjelljen e ardhshme." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Dann sag mir einfach, wann wieder alles normal ist.",
+              "translations": [
+                { "language": "en", "text": "Then just tell me when everything is normal again." },
+                { "language": "fa", "text": "پس فقط به من بگو کی دوباره همه چیز عادی است." },
+                { "language": "ar", "text": "إذن أخبرني فقط متى يعود كل شيء طبيعيًا." },
+                { "language": "tr", "text": "O zaman bana sadece her şeyin ne zaman normale döndüğünü söyle." },
+                { "language": "ru", "text": "Тогда просто скажи мне, когда все снова будет нормально." },
+                { "language": "ckb", "text": "ئەوا تەنها پێم بڵێ کەی هەموو شتێک دیسان ئاسایی دەبێتەوە." },
+                { "language": "kmr", "text": "Hingê tenê ji min re bêje kengî her tişt dîsa asayî dibe." },
+                { "language": "pl", "text": "W takim razie po prostu powiedz mi, kiedy znów wszystko będzie normalnie." },
+                { "language": "ro", "text": "Atunci spuneți-mi pur și simplu când totul este din nou normal." },
+                { "language": "sq", "text": "Atëherë thjesht më thuaj kur gjithçka është përsëri normale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu drängend: Die Antwort legt die Reparatur wieder als Aufgabe bei der anderen Person ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too pushy: the answer puts the repair back onto the other person as their task." },
+                { "language": "fa", "text": "بیش از حد فشارآور است: پاسخ ترمیم رابطه را دوباره به‌عنوان وظیفه طرف مقابل می‌گذارد." },
+                { "language": "ar", "text": "ضاغط جدًا: تعيد الإجابة مهمة الإصلاح إلى الطرف الآخر." },
+                { "language": "tr", "text": "Fazla baskılı: cevap onarımı yeniden diğer kişinin görevi haline getirir." },
+                { "language": "ru", "text": "Слишком давит: ответ снова перекладывает восстановление на другого человека как его задачу." },
+                { "language": "ckb", "text": "زۆر فشارە: وەڵامەکە چاککردنەوەکە دیسان وەک ئەرکی کەسی بەرامبەر دادەنێت." },
+                { "language": "kmr", "text": "Pir zextê dike: bersiv tamîrê dîsa wek erkê kesê din datîne." },
+                { "language": "pl", "text": "Zbyt naciskające: odpowiedź znów przerzuca naprawę na drugą osobę jako jej zadanie." },
+                { "language": "ro", "text": "Prea insistent: răspunsul pune din nou repararea pe umerii celeilalte persoane." },
+                { "language": "sq", "text": "Shumë shtytëse: përgjigjja ia kthen përsëri riparimin personit tjetër si detyrë të tij." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "responsibility",
+          "text": "Eine tragfähige Entschuldigung beginnt mit dem konkreten Fehler. Absichtserklärungen kommen erst danach, wenn überhaupt.",
+          "translations": [
+            { "language": "en", "text": "A solid apology starts with the concrete mistake. Statements of intention come only afterwards, if at all." },
+            { "language": "fa", "text": "یک عذرخواهی محکم با خطای مشخص شروع می‌شود. توضیح نیت، اگر لازم باشد، فقط بعد از آن می‌آید." },
+            { "language": "ar", "text": "يبدأ الاعتذار المتماسك بالخطأ المحدد. تأتي تصريحات النية بعد ذلك فقط، إن لزم الأمر أصلًا." },
+            { "language": "tr", "text": "Sağlam bir özür somut hatayla başlar. Niyet açıklamaları ancak sonra gelir, hatta gerekiyorsa." },
+            { "language": "ru", "text": "Убедительное извинение начинается с конкретной ошибки. Объяснения намерения идут только потом, если вообще нужны." },
+            { "language": "ckb", "text": "داوای لێبوردنێکی بەهێز بە هەڵەی دیاریکراو دەست پێدەکات. ڕوونکردنەوەی نیت تەنها دوای ئەوە دێت، ئەگەر پێویست بوو." },
+            { "language": "kmr", "text": "Lêborîneke bihêz bi xeletiya berbiçav dest pê dike. Ravekirina niyetê tenê paşê tê, heke hewce be." },
+            { "language": "pl", "text": "Nośne przeprosiny zaczynają się od konkretnego błędu. Wyjaśnienia intencji przychodzą dopiero później, jeśli w ogóle." },
+            { "language": "ro", "text": "O scuză solidă începe cu greșeala concretă. Explicațiile despre intenție vin abia după aceea, dacă sunt necesare." },
+            { "language": "sq", "text": "Një falje e qëndrueshme fillon me gabimin konkret. Shpjegimet e qëllimit vijnë vetëm më pas, nëse nevojiten." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "impact",
+          "text": "Auf C2-Niveau reicht Bedauern nicht: Die Wirkung auf die andere Person muss präzise benannt werden.",
+          "translations": [
+            { "language": "en", "text": "At C2 level, regret is not enough: the impact on the other person must be named precisely." },
+            { "language": "fa", "text": "در سطح C2، تأسف کافی نیست: اثر بر طرف مقابل باید دقیق نام برده شود." },
+            { "language": "ar", "text": "في مستوى C2 لا يكفي الأسف: يجب تسمية الأثر على الطرف الآخر بدقة." },
+            { "language": "tr", "text": "C2 düzeyinde pişmanlık yetmez: diğer kişi üzerindeki etki kesin biçimde adlandırılmalıdır." },
+            { "language": "ru", "text": "На уровне C2 сожаления недостаточно: влияние на другого человека нужно назвать точно." },
+            { "language": "ckb", "text": "لە ئاستی C2دا پەشیمانی بەس نییە: کاریگەری لەسەر کەسی بەرامبەر دەبێت بە وردی ناوببرێت." },
+            { "language": "kmr", "text": "Di asta C2 de xemgînî têr nake: bandora li ser kesê din divê bi hûrgilî bê navkirin." },
+            { "language": "pl", "text": "Na poziomie C2 żal nie wystarcza: trzeba precyzyjnie nazwać wpływ na drugą osobę." },
+            { "language": "ro", "text": "La nivel C2, regretul nu este suficient: efectul asupra celeilalte persoane trebuie numit precis." },
+            { "language": "sq", "text": "Në nivelin C2, keqardhja nuk mjafton: ndikimi te personi tjetër duhet emërtuar saktë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "behavior-change",
+          "text": "Vertrauen wird durch überprüfbare neue Regeln eher wieder aufgebaut als durch große Versprechen.",
+          "translations": [
+            { "language": "en", "text": "Trust is rebuilt more through verifiable new rules than through big promises." },
+            { "language": "fa", "text": "اعتماد بیشتر با قواعد جدید قابل پیگیری بازسازی می‌شود تا با وعده‌های بزرگ." },
+            { "language": "ar", "text": "تُبنى الثقة من جديد عبر قواعد جديدة قابلة للتحقق أكثر من الوعود الكبيرة." },
+            { "language": "tr", "text": "Güven, büyük sözlerden çok takip edilebilir yeni kurallarla yeniden kurulur." },
+            { "language": "ru", "text": "Доверие скорее восстанавливается через проверяемые новые правила, чем через большие обещания." },
+            { "language": "ckb", "text": "متمانە زیاتر بە یاسای نوێی پشکنینکراو دروست دەبێتەوە نە بە بەڵێنی گەورە." },
+            { "language": "kmr", "text": "Bawerî zêdetir bi rêgezên nû yên kontrolbar ji nû ve ava dibe, ne bi sozên mezin." },
+            { "language": "pl", "text": "Zaufanie odbudowuje się raczej przez sprawdzalne nowe zasady niż przez wielkie obietnice." },
+            { "language": "ro", "text": "Încrederea se reconstruiește mai degrabă prin reguli noi verificabile decât prin promisiuni mari." },
+            { "language": "sq", "text": "Besimi rindërtohet më shumë përmes rregullave të reja të verifikueshme sesa përmes premtimeve të mëdha." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "respect-boundary",
+          "text": "Ein guter Abschluss akzeptiert, dass Vergebung oder Normalität nicht eingefordert werden kann.",
+          "translations": [
+            { "language": "en", "text": "A good closing accepts that forgiveness or normality cannot be demanded." },
+            { "language": "fa", "text": "یک پایان‌بندی خوب می‌پذیرد که نمی‌توان بخشش یا بازگشت به حالت عادی را مطالبه کرد." },
+            { "language": "ar", "text": "الخاتمة الجيدة تقبل أنه لا يمكن المطالبة بالمغفرة أو العودة إلى الوضع الطبيعي." },
+            { "language": "tr", "text": "İyi bir kapanış, affın ya da normale dönüşün talep edilemeyeceğini kabul eder." },
+            { "language": "ru", "text": "Хорошее завершение принимает, что прощение или нормальность нельзя требовать." },
+            { "language": "ckb", "text": "کۆتاییەکی باش پەسەند دەکات کە ناتوانرێت لێبوردن یان گەڕانەوە بۆ ئاسایی داوا بکرێت." },
+            { "language": "kmr", "text": "Dawiyeke baş qebûl dike ku lêborîn an vegera rewşa asayî nayê xwestin wek mafekî." },
+            { "language": "pl", "text": "Dobre zakończenie uznaje, że przebaczenia ani normalności nie można żądać." },
+            { "language": "ro", "text": "O încheiere bună acceptă că iertarea sau normalitatea nu pot fi cerute." },
+            { "language": "sq", "text": "Një mbyllje e mirë pranon se falja ose normaliteti nuk mund të kërkohen me detyrim." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "responsible-apology-table",
+          "placement": "detail-header",
+          "purpose": "Show a private, respectful conversation after a social mistake.",
+          "altText": "Zwei Erwachsene sitzen an einem ruhigen Tisch und sprechen respektvoll über eine verletzte Grenze.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two people sit at a quiet table and speak respectfully about a crossed boundary." },
+            { "language": "fa", "text": "دو بزرگسال پشت یک میز آرام نشسته‌اند و محترمانه درباره مرزی که نقض شده صحبت می‌کنند." },
+            { "language": "ar", "text": "شخصان بالغان يجلسان إلى طاولة هادئة ويتحدثان باحترام عن حد تم تجاوزه." },
+            { "language": "tr", "text": "İki yetişkin sakin bir masada oturur ve aşılmış bir sınır hakkında saygılı biçimde konuşur." },
+            { "language": "ru", "text": "Двое взрослых сидят за спокойным столом и уважительно говорят о нарушенной границе." },
+            { "language": "ckb", "text": "دوو پێگەیشتوو لەسەر مێزێکی ئارام دانیشتوون و بە ڕێزەوە دەربارەی سنوورێکی بڕاو قسە دەکەن." },
+            { "language": "kmr", "text": "Du kesên gihîştî li ser maseyeke aram rûniştine û bi rêz li ser sînorekî derbasbûyî diaxivin." },
+            { "language": "pl", "text": "Dwie dorosłe osoby siedzą przy spokojnym stole i rozmawiają z szacunkiem o przekroczonej granicy." },
+            { "language": "ro", "text": "Doi adulți stau la o masă liniștită și discută respectuos despre o limită depășită." },
+            { "language": "sq", "text": "Dy të rritur ulen në një tavolinë të qetë dhe flasin me respekt për një kufi të kaluar." }
+          ],
+          "imagePrompt": "Clean educational illustration, two diverse people seated at a quiet table in a neutral community room, respectful serious conversation, calm body language, no text inside the image, no logos, no private data, accessible composition, soft natural colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

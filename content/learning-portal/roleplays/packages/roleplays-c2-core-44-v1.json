@@ -1,0 +1,709 @@
+{
+  "packageId": "roleplays-c2-core-44-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 44 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 44",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-modernisierungsmassnahme-kritisch-besprechen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Modernisierungsmaßnahme kritisch besprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Critically discussing a modernization measure" },
+        { "language": "fa", "text": "بررسی انتقادی یک اقدام نوسازی" },
+        { "language": "ar", "text": "مناقشة إجراء تحديثي بشكل نقدي" },
+        { "language": "tr", "text": "Bir yenileme önlemini eleştirel biçimde görüşmek" },
+        { "language": "ru", "text": "Критическое обсуждение меры модернизации" },
+        { "language": "ckb", "text": "گفتوگۆی ڕەخنەگرانە لەسەر هەنگاوێکی نوێکردنەوە" },
+        { "language": "kmr", "text": "Gotûbêja rexneyî li ser pêngaveke nûjenkirinê" },
+        { "language": "pl", "text": "Krytyczne omówienie działania modernizacyjnego" },
+        { "language": "ro", "text": "Discutarea critică a unei măsuri de modernizare" },
+        { "language": "sq", "text": "Diskutim kritik i një mase modernizimi" }
+      ],
+      "description": "Sie sprechen mit der Hausverwaltung über eine angekündigte Modernisierung im Gebäude. Die Maßnahme kann sinnvoll sein, aber Kosten, Bauzeit, Zugang zur Wohnung und schriftliche Informationen sind noch unklar. Sie sollen kritisch nachfragen, ohne pauschal zu blockieren oder rechtliche Ansprüche zu behaupten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with property management about an announced modernization in the building. The measure may be useful, but costs, construction time, apartment access, and written information are still unclear. You should ask critical questions without blocking everything or claiming legal rights." },
+        { "language": "fa", "text": "شما با مدیریت ساختمان درباره نوسازی اعلام‌شده در ساختمان صحبت می‌کنید. این اقدام ممکن است مفید باشد، اما هزینه‌ها، زمان کار، دسترسی به خانه و اطلاعات کتبی هنوز روشن نیستند. باید انتقادی سؤال کنید، بدون اینکه همه چیز را کلی رد کنید یا ادعای حقوقی مطرح کنید." },
+        { "language": "ar", "text": "تتحدثون مع إدارة العقار حول تحديث مُعلن في المبنى. قد يكون الإجراء مفيدًا، لكن التكاليف ومدة الأعمال والدخول إلى الشقة والمعلومات المكتوبة ما زالت غير واضحة. عليكم طرح أسئلة نقدية من دون رفض عام أو ادعاء حقوق قانونية." },
+        { "language": "tr", "text": "Binada duyurulan bir yenileme hakkında bina yönetimiyle konuşuyorsunuz. Önlem yararlı olabilir, fakat maliyetler, çalışma süresi, eve giriş ve yazılı bilgiler henüz net değildir. Her şeyi toptan engellemeden veya hukuki hak iddiasında bulunmadan eleştirel sorular sormalısınız." },
+        { "language": "ru", "text": "Вы разговариваете с управляющей компанией об объявленной модернизации в доме. Мера может быть полезной, но расходы, сроки работ, доступ в квартиру и письменная информация еще не ясны. Вам нужно задавать критические вопросы, не блокируя все в целом и не заявляя юридические требования." },
+        { "language": "ckb", "text": "تۆ لەگەڵ بەڕێوەبەرایەتی خانوو دەربارەی نوێکردنەوەیەکی ڕاگەیەنراو لە بیناکە گفتوگۆ دەکەیت. ڕەنگە هەنگاوەکە سوودبەخش بێت، بەڵام تێچوو، ماوەی کار، چوونەژوورەوە بۆ خانوو و زانیاریی نووسراو هێشتا ڕوون نین. پێویستە پرسیاری ڕەخنەگرانە بکەیت، بەبێ ئەوەی هەموو شتێک بە گشتی ڕەت بکەیت یان داوای یاسایی بکەیت." },
+        { "language": "kmr", "text": "Hûn bi rêveberiya avahiyê re li ser nûjenkirineke ragihandî di avahiyê de diaxivin. Pêngav dikare bikêr be, lê lêçûn, demê kar, ketina malê û agahiyên nivîskî hîn ne zelal in. Divê pirsên rexneyî bikin bêyî ku hemû tiştê bi giştî asteng bikin an mafên qanûnî îdia bikin." },
+        { "language": "pl", "text": "Rozmawia Pan/Pani z administracją budynku o zapowiedzianej modernizacji. Działanie może być sensowne, ale koszty, czas prac, dostęp do mieszkania i informacje pisemne nadal są niejasne. Trzeba zadawać krytyczne pytania bez ogólnego blokowania sprawy i bez zgłaszania roszczeń prawnych." },
+        { "language": "ro", "text": "Discutați cu administrarea imobilului despre o modernizare anunțată în clădire. Măsura poate fi utilă, dar costurile, durata lucrărilor, accesul în locuință și informațiile scrise sunt încă neclare. Trebuie să puneți întrebări critice fără să blocați totul în mod general sau să invocați pretenții juridice." },
+        { "language": "sq", "text": "Flisni me administrimin e ndërtesës për një modernizim të njoftuar. Masa mund të jetë e dobishme, por kostot, kohëzgjatja e punimeve, hyrja në banesë dhe informacionet me shkrim ende nuk janë të qarta. Duhet të bëni pyetje kritike pa e bllokuar gjithçka dhe pa pretenduar të drejta ligjore." }
+      ],
+      "learnerGoal": "Eine angekündigte Modernisierung differenziert besprechen: Nutzen anerkennen, offene Kosten- und Bauzeitfragen benennen, Zugang und Belastung konkretisieren, Alternativen erfragen und eine schriftliche Zusammenfassung verlangen, ohne Rechtsberatung zu spielen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss an announced modernization in a differentiated way: acknowledge potential benefit, name open cost and construction-time questions, clarify access and burden, ask about alternatives, and request a written summary without pretending to give legal advice." },
+        { "language": "fa", "text": "یک نوسازی اعلام‌شده را دقیق و چندجانبه بررسی کنید: فایده احتمالی را بپذیرید، سؤال‌های باز درباره هزینه و زمان کار را نام ببرید، دسترسی و فشار عملی را روشن کنید، درباره گزینه‌های جایگزین بپرسید و بدون نقش مشاور حقوقی، خلاصه کتبی بخواهید." },
+        { "language": "ar", "text": "ناقشوا تحديثًا مُعلنًا بصورة متمايزة: اعترفوا بالفائدة المحتملة، واذكروا الأسئلة المفتوحة حول الكلفة ومدة الأعمال، ووضحوا الدخول والعبء، واسألوا عن البدائل، واطلبوا ملخصًا مكتوبًا من دون التظاهر بتقديم استشارة قانونية." },
+        { "language": "tr", "text": "Duyurulan bir yenilemeyi ayrıntılı biçimde görüşün: olası faydayı kabul edin, maliyet ve çalışma süresiyle ilgili açık soruları belirtin, erişim ve yükü somutlaştırın, alternatifleri sorun ve hukuki danışmanlık yapıyormuş gibi davranmadan yazılı özet isteyin." },
+        { "language": "ru", "text": "Обсудите объявленную модернизацию дифференцированно: признайте возможную пользу, назовите открытые вопросы о расходах и сроках работ, уточните доступ и нагрузку, спросите об альтернативах и запросите письменное резюме, не изображая юридическую консультацию." },
+        { "language": "ckb", "text": "نوێکردنەوەیەکی ڕاگەیەنراو بە وردی گفتوگۆ بکە: سوودی ئەگەری بناسە، پرسیارە کراوەکانی تێچوو و ماوەی کار ناوببە، چوونەژوورەوە و بارگرانی ڕوون بکە، دەربارەی جێگرەوەکان بپرسە و بەبێ ڕاوێژکاری یاسایی، پوختەیەکی نووسراو داوا بکە." },
+        { "language": "kmr", "text": "Nûjenkirineke ragihandî bi hûrgilî gotûbêj bikin: sûda gengaz qebûl bikin, pirsên vekirî yên lêçûn û demê kar nav bikin, ketin û barê rojane zelal bikin, li ser alternatîfan bipirsin û bêyî şêwirmendiya qanûnî kurteyek nivîskî bixwazin." },
+        { "language": "pl", "text": "Omówić zapowiedzianą modernizację w sposób zróżnicowany: uznać możliwą korzyść, nazwać otwarte pytania o koszty i czas prac, doprecyzować dostęp i uciążliwości, zapytać o alternatywy i poprosić o pisemne podsumowanie bez udawania porady prawnej." },
+        { "language": "ro", "text": "Discutați diferențiat o modernizare anunțată: recunoașteți utilitatea posibilă, numiți întrebările deschise despre costuri și durata lucrărilor, clarificați accesul și impactul, întrebați despre alternative și solicitați un rezumat scris fără să simulați consultanță juridică." },
+        { "language": "sq", "text": "Diskutoni në mënyrë të nuancuar një modernizim të njoftuar: pranoni përfitimin e mundshëm, përmendni pyetjet e hapura për koston dhe kohën e punimeve, sqaroni hyrjen dhe ngarkesën, pyesni për alternativa dhe kërkoni përmbledhje me shkrim pa pretenduar këshillim ligjor." }
+      ],
+      "cefrLevel": "C2",
+      "category": "housing",
+      "topics": ["housing", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "agree-disagree",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 44,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Mieterin",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجرة" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендаторка" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemczyni" },
+            { "language": "ro", "text": "Chiriașa" },
+            { "language": "sq", "text": "Qiramarrësja" }
+          ]
+        },
+        {
+          "roleKey": "property-manager",
+          "displayName": "Hausverwaltung",
+          "translations": [
+            { "language": "en", "text": "Property management" },
+            { "language": "fa", "text": "مدیریت ساختمان" },
+            { "language": "ar", "text": "إدارة العقار" },
+            { "language": "tr", "text": "Bina yönetimi" },
+            { "language": "ru", "text": "Управляющая компания" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی خانوو" },
+            { "language": "kmr", "text": "Rêveberiya avahiyê" },
+            { "language": "pl", "text": "Administracja budynku" },
+            { "language": "ro", "text": "Administrarea imobilului" },
+            { "language": "sq", "text": "Administrimi i ndërtesës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "property-manager",
+          "baseText": "Danke, dass Sie zum Termin gekommen sind. Wir möchten die geplante Dämmung der Fassade und den Austausch einiger Fenster vorstellen. Grundsätzlich soll das Haus dadurch energieeffizienter werden.",
+          "translations": [
+            { "language": "en", "text": "Thank you for coming to the appointment. We would like to present the planned facade insulation and replacement of some windows. In principle, the house should become more energy-efficient as a result." },
+            { "language": "fa", "text": "ممنون که برای این قرار آمدید. می‌خواهیم عایق‌کاری برنامه‌ریزی‌شده نمای ساختمان و تعویض چند پنجره را توضیح بدهیم. در اصل قرار است خانه از نظر انرژی کارآمدتر شود." },
+            { "language": "ar", "text": "شكرًا لحضوركم الموعد. نود عرض العزل المخطط للواجهة واستبدال بعض النوافذ. من حيث المبدأ يفترض أن يصبح المبنى أكثر كفاءة في استهلاك الطاقة." },
+            { "language": "tr", "text": "Randevuya geldiğiniz için teşekkür ederiz. Planlanan cephe yalıtımını ve bazı pencerelerin değişimini sunmak istiyoruz. Temelde evin enerji açısından daha verimli olması amaçlanıyor." },
+            { "language": "ru", "text": "Спасибо, что пришли на встречу. Мы хотим представить планируемое утепление фасада и замену некоторых окон. В целом дом должен стать более энергоэффективным." },
+            { "language": "ckb", "text": "سوپاس بۆ ئەوەی بۆ ئەم کاتە هاتن. دەتەوێت گەرمیپارێزیی پێشبینیکراوی ڕووکاری بینا و گۆڕینی هەندێک پەنجەرە ڕوون بکەینەوە. بە گشتی دەبێت خانووەکە لە ڕووی وزەوە کاراتر بێت." },
+            { "language": "kmr", "text": "Spas ku hûn ji bo vê hevdîtinê hatin. Em dixwazin izolekirina planbûyî ya rûyê avahiyê û guhertina hin pencereyan bidin nasîn. Bi giştî divê xanî ji aliyê enerjiyê ve karatir bibe." },
+            { "language": "pl", "text": "Dziękujemy, że przyszedł/przyszła Pan/Pani na spotkanie. Chcemy przedstawić planowane ocieplenie fasady i wymianę części okien. Zasadniczo budynek ma dzięki temu stać się bardziej energooszczędny." },
+            { "language": "ro", "text": "Vă mulțumim că ați venit la întâlnire. Dorim să prezentăm izolarea planificată a fațadei și înlocuirea unor ferestre. În principiu, clădirea ar trebui să devină mai eficientă energetic." },
+            { "language": "sq", "text": "Faleminderit që erdhët në takim. Duam të paraqesim izolimin e planifikuar të fasadës dhe zëvendësimin e disa dritareve. Në parim, ndërtesa duhet të bëhet më efikase në energji." }
+          ],
+          "function": "open-topic",
+          "toneNote": "Sachlicher Einstieg mit positivem Nutzenrahmen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich sehe den möglichen Nutzen durchaus. Mir ist aber wichtig, dass wir die Maßnahme nicht nur als technische Verbesserung besprechen, sondern auch die offenen Punkte zu Kosten, Bauzeit, Wohnbelastung und schriftlicher Information sauber trennen.",
+          "translations": [
+            { "language": "en", "text": "I do see the possible benefit. But it is important to me that we do not discuss the measure only as a technical improvement, but also clearly separate the open points on costs, construction time, disruption at home, and written information." },
+            { "language": "fa", "text": "من فایده احتمالی را می‌بینم. اما برایم مهم است که این اقدام را فقط به‌عنوان بهبود فنی بررسی نکنیم، بلکه نکات باز درباره هزینه‌ها، زمان کار، فشار روی زندگی در خانه و اطلاعات کتبی را هم روشن و جدا کنیم." },
+            { "language": "ar", "text": "أنا أرى الفائدة المحتملة فعلًا. لكن من المهم عندي ألا نناقش الإجراء فقط كتحسين تقني، بل أن نفصل بوضوح النقاط المفتوحة حول التكاليف ومدة الأعمال والعبء على السكن والمعلومات المكتوبة." },
+            { "language": "tr", "text": "Olası faydayı elbette görüyorum. Ancak bu önlemi yalnızca teknik bir iyileştirme olarak değil, maliyetler, çalışma süresi, evdeki yük ve yazılı bilgi konularındaki açık noktaları da ayrı ayrı ele alarak konuşmamız benim için önemli." },
+            { "language": "ru", "text": "Я вполне вижу возможную пользу. Но мне важно, чтобы мы обсуждали эту меру не только как техническое улучшение, а также четко разделили открытые вопросы о расходах, сроках работ, бытовой нагрузке и письменной информации." },
+            { "language": "ckb", "text": "من سوودی ئەگەری بەڕوونی دەبینم. بەڵام بۆ من گرنگە ئەم هەنگاوە تەنها وەک باشترکردنێکی تەکنیکی باس نەکەین، بەڵکو خاڵە کراوەکانی تێچوو، ماوەی کار، بارگرانی لە ژیانی ناو ماڵ و زانیاریی نووسراو بە پاکی جیا بکەینەوە." },
+            { "language": "kmr", "text": "Ez sûda gengaz bi rastî dibînim. Lê ji bo min girîng e ku em vê pêngavê tenê wek başkirineke teknîkî gotûbêj nekin, lê xalên vekirî yên lêçûn, demê kar, barê jiyana malê û agahiyên nivîskî jî zelal veqetînin." },
+            { "language": "pl", "text": "Widzę możliwą korzyść. Ważne jest jednak dla mnie, abyśmy nie omawiali tego działania tylko jako technicznego ulepszenia, lecz jasno oddzielili otwarte kwestie kosztów, czasu prac, uciążliwości w mieszkaniu i informacji pisemnych." },
+            { "language": "ro", "text": "Văd într-adevăr utilitatea posibilă. Totuși, pentru mine este important să nu discutăm măsura doar ca îmbunătățire tehnică, ci să separăm clar punctele deschise privind costurile, durata lucrărilor, impactul asupra locuirii și informațiile scrise." },
+            { "language": "sq", "text": "E shoh qartë përfitimin e mundshëm. Por për mua është e rëndësishme që masën të mos e diskutojmë vetëm si përmirësim teknik, por të ndajmë qartë pikat e hapura për kostot, kohën e punimeve, ngarkesën në banesë dhe informacionin me shkrim." }
+          ],
+          "function": "balanced-critical-framing",
+          "expectedLearnerAction": "Nutzen anerkennen und zugleich die offenen Prüfpunkte strukturieren."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "property-manager",
+          "baseText": "Die genaue Kostenwirkung können wir heute noch nicht endgültig beziffern. Wir gehen aber davon aus, dass die Investition langfristig zu niedrigeren Energiekosten beiträgt.",
+          "translations": [
+            { "language": "en", "text": "We cannot give a final figure for the exact cost effect today. But we assume that the investment will contribute to lower energy costs in the long term." },
+            { "language": "fa", "text": "امروز هنوز نمی‌توانیم اثر دقیق هزینه‌ای را نهایی عددگذاری کنیم. اما فرض ما این است که این سرمایه‌گذاری در بلندمدت به کاهش هزینه انرژی کمک می‌کند." },
+            { "language": "ar", "text": "لا نستطيع اليوم تحديد الأثر الدقيق على التكاليف بشكل نهائي. لكننا نفترض أن الاستثمار سيساهم على المدى الطويل في خفض تكاليف الطاقة." },
+            { "language": "tr", "text": "Kesin maliyet etkisini bugün nihai olarak rakamlandıramıyoruz. Ancak yatırımın uzun vadede daha düşük enerji giderlerine katkı sağlayacağını varsayıyoruz." },
+            { "language": "ru", "text": "Точное влияние на расходы мы сегодня еще не можем окончательно назвать в цифрах. Но мы исходим из того, что инвестиция в долгосрочной перспективе поможет снизить энергозатраты." },
+            { "language": "ckb", "text": "ئێمە ناتوانین ئەمڕۆ کاریگەریی وردی تێچوو بە ژمارەی کۆتایی دیاری بکەین. بەڵام پێمان وایە ئەم وەبەرهێنانە لە ماوەی درێژدا یارمەتی کەمکردنەوەی تێچووی وزە دەدات." },
+            { "language": "kmr", "text": "Em nikarin îro bandora rast a lêçûnê bi hejmarên dawî diyar bikin. Lê em texmîn dikin ku ev veberhênan di demeke dirêj de alîkariyê dide kêmkirina lêçûnên enerjiyê." },
+            { "language": "pl", "text": "Nie możemy dziś ostatecznie określić dokładnego wpływu na koszty. Zakładamy jednak, że inwestycja w dłuższej perspektywie przyczyni się do niższych kosztów energii." },
+            { "language": "ro", "text": "Nu putem cuantifica astăzi definitiv efectul exact asupra costurilor. Totuși, presupunem că investiția va contribui pe termen lung la costuri energetice mai mici." },
+            { "language": "sq", "text": "Sot nuk mund ta përcaktojmë përfundimisht ndikimin e saktë në kosto. Por supozojmë se investimi do të kontribuojë afatgjatë në kosto më të ulëta energjie." }
+          ],
+          "function": "state-uncertainty"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Gerade weil die Zahlen noch offen sind, brauche ich eine belastbare schriftliche Darstellung: Welche Kostenbestandteile sind sicher, welche sind Schätzungen, und welche Auswirkungen auf die Miete oder Nebenkosten werden nur geprüft?",
+          "translations": [
+            { "language": "en", "text": "Precisely because the figures are still open, I need a reliable written explanation: which cost components are certain, which are estimates, and which effects on rent or service charges are only being reviewed?" },
+            { "language": "fa", "text": "دقیقاً چون عددها هنوز روشن نیستند، من به توضیح کتبی قابل اتکا نیاز دارم: کدام بخش‌های هزینه قطعی‌اند، کدام‌ها برآورد هستند، و کدام اثرها بر اجاره یا هزینه‌های جانبی فقط در حال بررسی‌اند؟" },
+            { "language": "ar", "text": "لأن الأرقام ما زالت مفتوحة بالضبط، أحتاج إلى عرض مكتوب موثوق: ما مكونات التكلفة المؤكدة، وما التقديرات، وما الآثار على الإيجار أو الرسوم الجانبية التي لا تزال قيد الفحص فقط؟" },
+            { "language": "tr", "text": "Rakamlar hâlâ açık olduğu için güvenilir bir yazılı açıklamaya ihtiyacım var: Hangi maliyet kalemleri kesin, hangileri tahmin, kira veya yan giderler üzerindeki hangi etkiler yalnızca inceleniyor?" },
+            { "language": "ru", "text": "Именно потому, что цифры еще открыты, мне нужно надежное письменное объяснение: какие составляющие расходов уже определены, какие являются оценками, а какие последствия для аренды или коммунальных платежей только проверяются?" },
+            { "language": "ckb", "text": "چون ژمارەکان هێشتا کراوەن، من پێویستم بە ڕوونکردنەوەیەکی نووسراوی پشتپێبەستراو هەیە: کام بەشەکانی تێچوو دڵنیان، کامەیان تەنها پێشبینییە، و کام کاریگەری لەسەر کرێ یان تێچووی لاوەکی تەنها لەژێر پشکنینە؟" },
+            { "language": "kmr", "text": "Ji ber ku hejmar hîn vekirî ne, ez pêdivî bi ravekirineke nivîskî ya pêbawer heye: kîjan beşên lêçûnê teqez in, kîjan texmîn in, û kîjan bandorên li ser kirê an lêçûnên alî hîn tenê têne lêkolîn kirin?" },
+            { "language": "pl", "text": "Właśnie dlatego, że liczby są nadal otwarte, potrzebuję wiarygodnego pisemnego przedstawienia: które składniki kosztów są pewne, które są szacunkami, a które skutki dla czynszu lub opłat są dopiero sprawdzane?" },
+            { "language": "ro", "text": "Tocmai pentru că cifrele sunt încă deschise, am nevoie de o prezentare scrisă solidă: care componente de cost sunt sigure, care sunt estimări și ce efecte asupra chiriei sau cheltuielilor auxiliare sunt doar analizate?" },
+            { "language": "sq", "text": "Pikërisht sepse shifrat janë ende të hapura, më duhet një paraqitje e besueshme me shkrim: cilët komponentë të kostos janë të sigurt, cilët janë vlerësime dhe cilat ndikime në qira ose shpenzime anësore po shqyrtohen vetëm?" }
+          ],
+          "function": "request-written-cost-breakdown",
+          "expectedLearnerAction": "Unklare Kosten in sichere Bestandteile, Schätzungen und Prüfpunkte zerlegen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "property-manager",
+          "baseText": "Das lässt sich vorbereiten. Schwieriger ist die Bauzeit: Für die Fenster brauchen die Firmen Zugang zu den Wohnungen, und der genaue Ablauf hängt von Wetter und Lieferterminen ab.",
+          "translations": [
+            { "language": "en", "text": "That can be prepared. The construction time is more difficult: for the windows, the companies need access to the apartments, and the exact sequence depends on weather and delivery dates." },
+            { "language": "fa", "text": "این را می‌توان آماده کرد. بخش دشوارتر زمان کار است: برای پنجره‌ها شرکت‌ها باید به خانه‌ها دسترسی داشته باشند، و روند دقیق به آب‌وهوا و زمان تحویل بستگی دارد." },
+            { "language": "ar", "text": "يمكن إعداد ذلك. الأصعب هو مدة الأعمال: بالنسبة للنوافذ تحتاج الشركات إلى الدخول إلى الشقق، والتسلسل الدقيق يعتمد على الطقس ومواعيد التسليم." },
+            { "language": "tr", "text": "Bu hazırlanabilir. Daha zor olan çalışma süresidir: pencereler için firmaların evlere girmesi gerekiyor ve kesin akış hava durumuna ve teslim tarihlerine bağlıdır." },
+            { "language": "ru", "text": "Это можно подготовить. Сложнее со сроками работ: для окон компаниям нужен доступ в квартиры, а точный порядок зависит от погоды и сроков поставки." },
+            { "language": "ckb", "text": "ئەوە دەتوانرێت ئامادە بکرێت. بەشی قورس‌تر ماوەی کارە: بۆ پەنجەرەکان کۆمپانیاکان پێویستیان بە چوونەژوورەوەی خانووەکان هەیە، و ڕیزبەندی ورد بە کەشوهەوا و کاتی گەیاندنەوەوە پەیوەستە." },
+            { "language": "kmr", "text": "Ew dikare were amadekirin. Tişta dijwartir demê kar e: ji bo pencereyan şirket pêdivî bi ketina nav malan hene, û rêza rast bi hewa û demên radestkirinê ve girêdayî ye." },
+            { "language": "pl", "text": "To można przygotować. Trudniejszy jest czas prac: przy oknach firmy potrzebują dostępu do mieszkań, a dokładny przebieg zależy od pogody i terminów dostaw." },
+            { "language": "ro", "text": "Acest lucru poate fi pregătit. Mai dificilă este durata lucrărilor: pentru ferestre firmele au nevoie de acces în locuințe, iar desfășurarea exactă depinde de vreme și de termenele de livrare." },
+            { "language": "sq", "text": "Kjo mund të përgatitet. Më e vështirë është koha e punimeve: për dritaret, kompanitë kanë nevojë për hyrje në banesa dhe rrjedha e saktë varet nga moti dhe datat e dorëzimit." }
+          ],
+          "function": "name-scheduling-constraints"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir die Unsicherheit nicht glätten, sondern planbar machen. Ich bitte um Zeitfenster, Vorlauf für Termine, Regeln für Schlüssel oder Anwesenheit und eine Kontaktstelle, falls ein Termin kurzfristig ausfällt.",
+          "translations": [
+            { "language": "en", "text": "Then we should not smooth over the uncertainty, but make it plannable. I am asking for time windows, advance notice for appointments, rules for keys or presence, and a contact point if an appointment is canceled at short notice." },
+            { "language": "fa", "text": "پس نباید ابهام را صاف و بی‌اهمیت نشان دهیم، بلکه باید آن را قابل برنامه‌ریزی کنیم. من بازه‌های زمانی، مهلت اطلاع قبلی برای قرارها، قواعد مربوط به کلید یا حضور، و یک نقطه تماس برای لغو ناگهانی قرار را می‌خواهم." },
+            { "language": "ar", "text": "إذن لا ينبغي تلطيف عدم اليقين، بل جعله قابلًا للتخطيط. أطلب نوافذ زمنية، وإشعارًا مسبقًا للمواعيد، وقواعد للمفاتيح أو الحضور، وجهة اتصال إذا أُلغي موعد في وقت قصير." },
+            { "language": "tr", "text": "O halde belirsizliği yok saymamalı, planlanabilir hâle getirmeliyiz. Zaman aralıkları, randevular için önceden bildirim, anahtar veya evde bulunma kuralları ve bir randevu kısa sürede iptal olursa başvurulacak bir iletişim noktası istiyorum." },
+            { "language": "ru", "text": "Тогда не стоит сглаживать неопределенность, а нужно сделать ее планируемой. Я прошу временные окна, предварительное уведомление о встречах, правила для ключей или присутствия и контактное лицо на случай краткосрочной отмены." },
+            { "language": "ckb", "text": "ئەوا نابێت نادڵنیایییەکە بسڕینەوە، بەڵکو پێویستە بیکەینە شتێکی پلاندانراو. داوای ماوەی کاتی، ئاگادارکردنەوەی پێشوەخت بۆ کاتەکان، ڕێسای کلیل یان ئامادەبوون، و شوێنی پەیوەندی دەکەم ئەگەر کاتێک لە کاتی نزیکدا هەڵبوەشێتەوە." },
+            { "language": "kmr", "text": "Wê gavê divê em nezelaliyê nexapînin, lê wê bikin tiştekî planbar. Ez demên taybet, agahdariya pêşwext ji bo randevûyan, rêzikên kilît an amadebûnê, û xalek têkiliyê dixwazim heke randevûyek di demeke nêz de betal bibe." },
+            { "language": "pl", "text": "W takim razie nie powinniśmy wygładzać niepewności, lecz uczynić ją planowalną. Proszę o przedziały czasowe, wcześniejsze powiadomienie o terminach, zasady dotyczące kluczy lub obecności oraz punkt kontaktowy, jeśli termin nagle wypadnie." },
+            { "language": "ro", "text": "Atunci nu ar trebui să netezim incertitudinea, ci să o facem planificabilă. Solicit intervale orare, anunț prealabil pentru programări, reguli pentru chei sau prezență și un punct de contact dacă o programare cade din scurt." },
+            { "language": "sq", "text": "Atëherë nuk duhet ta zbusim pasigurinë, por ta bëjmë të planifikueshme. Kërkoj intervale kohore, njoftim paraprak për takimet, rregulla për çelësat ose praninë dhe një kontakt nëse një takim anulohet papritur." }
+          ],
+          "function": "turn-uncertainty-into-process",
+          "expectedLearnerAction": "Bauzeitunsicherheit in konkrete Prozessregeln übersetzen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "property-manager",
+          "baseText": "Ein Teil der Belastung ist leider unvermeidbar. Wir können aber prüfen, ob besonders laute Arbeiten gebündelt werden und ob einzelne Haushalte bei Bedarf frühere Informationen erhalten.",
+          "translations": [
+            { "language": "en", "text": "Part of the disruption is unfortunately unavoidable. But we can check whether especially loud work can be bundled and whether individual households can receive earlier information if needed." },
+            { "language": "fa", "text": "بخشی از فشار متأسفانه اجتناب‌ناپذیر است. اما می‌توانیم بررسی کنیم که آیا کارهای بسیار پرصدا را می‌شود متمرکز کرد و آیا برخی خانوارها در صورت نیاز زودتر اطلاعات بگیرند." },
+            { "language": "ar", "text": "جزء من العبء للأسف لا يمكن تجنبه. لكن يمكننا فحص ما إذا كان بالإمكان تجميع الأعمال المزعجة جدًا، وما إذا كان بإمكان بعض الأسر الحصول على معلومات أبكر عند الحاجة." },
+            { "language": "tr", "text": "Yükün bir kısmı maalesef kaçınılmaz. Ancak özellikle gürültülü çalışmaların birleştirilip birleştirilemeyeceğini ve bazı hanelerin gerektiğinde daha erken bilgi alıp alamayacağını inceleyebiliriz." },
+            { "language": "ru", "text": "Часть нагрузки, к сожалению, неизбежна. Но мы можем проверить, можно ли сгруппировать особенно шумные работы и могут ли отдельные домохозяйства при необходимости получать информацию раньше." },
+            { "language": "ckb", "text": "بەشێک لە بارگرانی بەداخەوە ناتوانرێت دوور بخرێتەوە. بەڵام دەتوانین بپشکنین ئایا کارە زۆر دەنگدارەکان دەکرێت کۆبکرێنەوە و ئایا هەندێک خێزان دەتوانن پێشوەخت‌تر زانیاری وەربگرن ئەگەر پێویست بوو." },
+            { "language": "kmr", "text": "Beşek ji barê rojane mixabin neçar e. Lê em dikarin binêrin ka karên pir dengdar dikarin werin komkirin û hin malbat dikarin heke pêdivî be agahiyên zûtir bistînin." },
+            { "language": "pl", "text": "Część uciążliwości jest niestety nieunikniona. Możemy jednak sprawdzić, czy szczególnie głośne prace da się połączyć i czy poszczególne gospodarstwa mogą w razie potrzeby otrzymywać wcześniejsze informacje." },
+            { "language": "ro", "text": "O parte din impact este, din păcate, inevitabilă. Putem însă verifica dacă lucrările deosebit de zgomotoase pot fi grupate și dacă unele gospodării pot primi informații mai devreme la nevoie." },
+            { "language": "sq", "text": "Një pjesë e ngarkesës fatkeqësisht është e pashmangshme. Por mund të kontrollojmë nëse punimet veçanërisht të zhurmshme mund të grupohen dhe nëse disa familje mund të marrin informacion më herët kur është e nevojshme." }
+          ],
+          "function": "offer-partial-mitigation"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das wäre hilfreich, wenn es nicht nur als freundliche Absicht stehen bleibt. Können wir festhalten, welche Belastungen gebündelt werden sollen, welche Haushalte wegen Schichtarbeit oder Krankheit früher informiert werden und bis wann Sie das prüfen?",
+          "translations": [
+            { "language": "en", "text": "That would be helpful if it does not remain only a friendly intention. Can we record which disruptions are to be bundled, which households should be informed earlier because of shift work or illness, and by when you will check this?" },
+            { "language": "fa", "text": "این کمک‌کننده است، اگر فقط در حد نیت خوب نماند. آیا می‌توانیم ثبت کنیم کدام فشارها باید متمرکز شوند، کدام خانوارها به‌خاطر شیفت کاری یا بیماری زودتر مطلع شوند، و شما تا چه زمانی این را بررسی می‌کنید؟" },
+            { "language": "ar", "text": "سيكون ذلك مفيدًا إذا لم يبق مجرد نية لطيفة. هل يمكننا تسجيل ما هي الأعباء التي ينبغي تجميعها، وأي الأسر ينبغي إعلامها أبكر بسبب العمل بنظام الورديات أو المرض، وحتى متى ستفحصون ذلك؟" },
+            { "language": "tr", "text": "Bu, yalnızca iyi niyet olarak kalmazsa yararlı olur. Hangi yüklerin birleştirileceğini, vardiyalı çalışma veya hastalık nedeniyle hangi hanelerin daha erken bilgilendirileceğini ve bunu ne zamana kadar inceleyeceğinizi yazabilir miyiz?" },
+            { "language": "ru", "text": "Это было бы полезно, если не останется просто добрым намерением. Можем ли мы зафиксировать, какие нагрузки следует объединить, какие домохозяйства из-за сменной работы или болезни должны быть уведомлены раньше и до какого срока вы это проверите?" },
+            { "language": "ckb", "text": "ئەوە یارمەتیدەر دەبێت ئەگەر تەنها وەک نیتێکی باش نەمێنێتەوە. دەتوانین تۆمار بکەین کام بارگرانییەکان پێویستە کۆبکرێنەوە، کام خێزانەکان بەهۆی کاری شێفت یان نەخۆشی پێویستە زووتر ئاگادار بکرێنەوە، و ئێوە تا کەی ئەوە دەپشکنن؟" },
+            { "language": "kmr", "text": "Ew ê alîkar be heke tenê wek niyeteke baş nemîne. Em dikarin tomar bikin kîjan bar divê werin komkirin, kîjan malbat ji ber xebata şiftê an nexweşiyê divê zûtir agahdar bibin, û hûn heta kengê vê kontrol dikin?" },
+            { "language": "pl", "text": "To byłoby pomocne, jeśli nie pozostanie tylko życzliwą intencją. Czy możemy zapisać, które uciążliwości mają zostać połączone, które gospodarstwa mają być informowane wcześniej z powodu pracy zmianowej lub choroby i do kiedy Państwo to sprawdzą?" },
+            { "language": "ro", "text": "Ar fi util dacă nu rămâne doar o intenție binevoitoare. Putem consemna ce impacturi ar trebui grupate, ce gospodării ar trebui informate mai devreme din cauza lucrului în schimburi sau a bolii și până când verificați acest lucru?" },
+            { "language": "sq", "text": "Kjo do të ishte e dobishme nëse nuk mbetet vetëm një qëllim i mirë. A mund të shënojmë cilat ngarkesa duhet të grupohen, cilat familje duhet të informohen më herët për shkak të punës me turne ose sëmundjes, dhe deri kur do ta kontrolloni këtë?" }
+          ],
+          "function": "turn-mitigation-into-commitment",
+          "expectedLearnerAction": "Freundliche Zusage in prüfbare Kriterien und Frist übersetzen."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "property-manager",
+          "baseText": "Wir können Ihnen eine Zusammenfassung der offenen Punkte schicken und die Rückmeldungen der Bewohner sammeln. Ich möchte aber vermeiden, dass die Modernisierung grundsätzlich in Frage gestellt wird.",
+          "translations": [
+            { "language": "en", "text": "We can send you a summary of the open points and collect residents' feedback. But I want to avoid the modernization being questioned in principle." },
+            { "language": "fa", "text": "می‌توانیم خلاصه‌ای از نکات باز برای شما بفرستیم و بازخورد ساکنان را جمع کنیم. اما می‌خواهم از این پرهیز کنم که اصل نوسازی زیر سؤال برود." },
+            { "language": "ar", "text": "يمكننا أن نرسل لكم ملخصًا بالنقاط المفتوحة ونجمع ملاحظات السكان. لكنني أريد تجنب التشكيك في التحديث من حيث المبدأ." },
+            { "language": "tr", "text": "Size açık noktaların bir özetini gönderebilir ve sakinlerin geri bildirimlerini toplayabiliriz. Ancak yenilemenin temelden sorgulanmasını önlemek istiyorum." },
+            { "language": "ru", "text": "Мы можем отправить вам резюме открытых пунктов и собрать отзывы жильцов. Но я хотел бы избежать того, чтобы модернизация ставилась под сомнение в принципе." },
+            { "language": "ckb", "text": "دەتوانین پوختەیەک لە خاڵە کراوەکان بۆتان بنێرین و وەڵامی دانیشتووان کۆبکەینەوە. بەڵام دەمەوێت دوور بکەوم لەوەی بنەمای نوێکردنەوەکە بە گشتی بخەینە ژێر پرسیارەوە." },
+            { "language": "kmr", "text": "Em dikarin kurteyek ji xalên vekirî ji we re bişînin û bersivên niştecihan kom bikin. Lê ez dixwazim ku nûjenkirin bi bingehîn neyê pirsîn." },
+            { "language": "pl", "text": "Możemy wysłać Panu/Pani podsumowanie otwartych punktów i zebrać opinie mieszkańców. Chciałbym jednak uniknąć tego, aby modernizacja była zasadniczo kwestionowana." },
+            { "language": "ro", "text": "Vă putem trimite un rezumat al punctelor deschise și putem colecta feedbackul locatarilor. Totuși, vreau să evit ca modernizarea să fie pusă în discuție în principiu." },
+            { "language": "sq", "text": "Mund t'ju dërgojmë një përmbledhje të pikave të hapura dhe të mbledhim reagimet e banorëve. Por dua të shmang që modernizimi të vihet në dyshim në parim." }
+          ],
+          "function": "protect-project-frame"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich stelle die Maßnahme nicht pauschal in Frage. Mein Vorschlag ist: Sie schicken bis Freitag eine schriftliche Übersicht zu Kostenstand, Zeitplan, Zugang, Belastungsminderung und Alternativen. Danach können die Bewohner gezielt Rückfragen stellen, statt über Gerüchte zu diskutieren.",
+          "translations": [
+            { "language": "en", "text": "I am not questioning the measure in general. My proposal is this: by Friday, you send a written overview of cost status, schedule, access, mitigation of disruption, and alternatives. After that, residents can ask targeted follow-up questions instead of discussing rumors." },
+            { "language": "fa", "text": "من اصل اقدام را به‌طور کلی زیر سؤال نمی‌برم. پیشنهاد من این است: تا جمعه یک مرور کتبی درباره وضعیت هزینه‌ها، برنامه زمانی، دسترسی، کاهش فشار و گزینه‌های جایگزین بفرستید. بعد از آن ساکنان می‌توانند به‌جای بحث درباره شایعات، سؤال‌های دقیق بپرسند." },
+            { "language": "ar", "text": "أنا لا أشكك في الإجراء بشكل عام. اقتراحي هو: ترسلون حتى يوم الجمعة عرضًا مكتوبًا عن وضع التكاليف والجدول الزمني والدخول وتقليل العبء والبدائل. بعد ذلك يستطيع السكان طرح أسئلة متابعة محددة بدل مناقشة الشائعات." },
+            { "language": "tr", "text": "Önlemi genel olarak sorgulamıyorum. Önerim şu: Cuma gününe kadar maliyet durumu, zaman planı, erişim, yükün azaltılması ve alternatifler hakkında yazılı bir özet gönderin. Sonrasında sakinler söylentileri konuşmak yerine hedefli sorular sorabilir." },
+            { "language": "ru", "text": "Я не ставлю меру под сомнение в целом. Мое предложение: до пятницы вы отправляете письменный обзор статуса расходов, графика, доступа, снижения нагрузки и альтернатив. После этого жильцы смогут задавать точные вопросы, а не обсуждать слухи." },
+            { "language": "ckb", "text": "من ئەم هەنگاوە بە گشتی ناخەمە ژێر پرسیارەوە. پێشنیارم ئەمەیە: تا هەینی پوختەیەکی نووسراو دەربارەی دۆخی تێچوو، خشتەی کات، چوونەژوورەوە، کەمکردنەوەی بارگرانی و جێگرەوەکان بنێرن. پاشان دانیشتووان دەتوانن پرسیاری دیاریکراو بکەن، نەک دەربارەی قسەوباس گفتوگۆ بکەن." },
+            { "language": "kmr", "text": "Ez pêngavê bi giştî napirsim. Pêşniyara min ev e: heta Înê kurteyeke nivîskî li ser rewşa lêçûnê, planê demê, ketin, kêmkirina barê rojane û alternatîfan bişînin. Paşê niştecih dikarin pirsên armancdar bikin, ne ku li ser gotegotan biaxivin." },
+            { "language": "pl", "text": "Nie kwestionuję działania ogólnie. Moja propozycja jest taka: do piątku wyślą Państwo pisemny przegląd stanu kosztów, harmonogramu, dostępu, ograniczenia uciążliwości i alternatyw. Potem mieszkańcy będą mogli zadawać konkretne pytania zamiast dyskutować o plotkach." },
+            { "language": "ro", "text": "Nu pun măsura în discuție în mod general. Propunerea mea este următoarea: până vineri trimiteți o prezentare scrisă despre stadiul costurilor, calendar, acces, reducerea impactului și alternative. După aceea, locatarii pot pune întrebări țintite în loc să discute zvonuri." },
+            { "language": "sq", "text": "Nuk e vë masën në dyshim në përgjithësi. Propozimi im është ky: deri të premten dërgoni një përmbledhje me shkrim për gjendjen e kostove, planin kohor, hyrjen, uljen e ngarkesës dhe alternativat. Pas kësaj, banorët mund të bëjnë pyetje të sakta në vend që të diskutojnë thashetheme." }
+          ],
+          "function": "close-with-written-next-step",
+          "expectedLearnerAction": "Kritik als strukturierte Klärung und nicht als Blockade formulieren."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich sehe den möglichen Nutzen durchaus. Mir ist aber wichtig, dass wir die Maßnahme nicht nur als technische Verbesserung besprechen, sondern auch die offenen Punkte zu Kosten, Bauzeit, Wohnbelastung und schriftlicher Information sauber trennen.",
+              "translations": [
+                { "language": "en", "text": "I do see the possible benefit. But it is important to me that we do not discuss the measure only as a technical improvement, but also clearly separate the open points on costs, construction time, disruption at home, and written information." },
+                { "language": "fa", "text": "من فایده احتمالی را می‌بینم، اما مهم است که علاوه بر بهبود فنی، هزینه، زمان کار، فشار زندگی و اطلاعات کتبی را جدا بررسی کنیم." },
+                { "language": "ar", "text": "أرى الفائدة المحتملة، لكن من المهم أن نفصل أيضًا التكاليف ومدة الأعمال والعبء السكني والمعلومات المكتوبة." },
+                { "language": "tr", "text": "Olası faydayı görüyorum, ancak teknik iyileştirmenin yanında maliyet, çalışma süresi, evdeki yük ve yazılı bilgileri ayrı ele almamız önemli." },
+                { "language": "ru", "text": "Я вижу возможную пользу, но важно отдельно обсудить не только техническое улучшение, но и расходы, сроки, нагрузку и письменную информацию." },
+                { "language": "ckb", "text": "من سوودی ئەگەری دەبینم، بەڵام گرنگە لەگەڵ باشترکردنی تەکنیکی، تێچوو و ماوەی کار و بارگرانی ژیان و زانیاریی نووسراو جیا بکەینەوە." },
+                { "language": "kmr", "text": "Ez sûda gengaz dibînim, lê girîng e ku ji bilî başkirina teknîkî, lêçûn, demê kar, barê malê û agahiyên nivîskî veqetînin." },
+                { "language": "pl", "text": "Widzę możliwą korzyść, ale ważne jest, by obok ulepszenia technicznego oddzielić koszty, czas prac, uciążliwości i informacje pisemne." },
+                { "language": "ro", "text": "Văd utilitatea posibilă, dar este important să separăm și costurile, durata lucrărilor, impactul locuirii și informațiile scrise." },
+                { "language": "sq", "text": "E shoh përfitimin e mundshëm, por është e rëndësishme të ndajmë edhe kostot, kohën e punimeve, ngarkesën në banesë dhe informacionin me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Diese Antwort anerkennt den Nutzen, setzt aber sofort eine differenzierte Klärungsstruktur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This answer acknowledges the benefit but immediately sets a differentiated clarification structure." },
+                { "language": "fa", "text": "این پاسخ فایده را می‌پذیرد، اما فوراً ساختار روشن‌سازی چندجانبه می‌گذارد." },
+                { "language": "ar", "text": "هذه الإجابة تعترف بالفائدة، لكنها تضع فورًا بنية توضيح متمايزة." },
+                { "language": "tr", "text": "Bu cevap faydayı kabul eder, ama hemen ayrıntılı bir açıklığa kavuşturma yapısı kurar." },
+                { "language": "ru", "text": "Этот ответ признает пользу, но сразу задает дифференцированную структуру прояснения." },
+                { "language": "ckb", "text": "ئەم وەڵامە سوودەکە دەناسێت، بەڵام دەستبەجێ ڕێکخستنێکی جیاکراوە بۆ ڕوونکردنەوە دادەنێت." },
+                { "language": "kmr", "text": "Ev bersiv sûdê qebûl dike, lê yekser avahiya zelalkirineke hûrgilî datîne." },
+                { "language": "pl", "text": "Ta odpowiedź uznaje korzyść, ale od razu tworzy zróżnicowaną strukturę wyjaśnienia." },
+                { "language": "ro", "text": "Acest răspuns recunoaște utilitatea, dar stabilește imediat o structură diferențiată de clarificare." },
+                { "language": "sq", "text": "Kjo përgjigje e pranon përfitimin, por vendos menjëherë një strukturë të nuancuar sqarimi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich bin grundsätzlich nicht gegen Modernisierung, aber so lange die Kosten nicht feststehen, kann man dazu eigentlich nichts sagen.",
+              "translations": [
+                { "language": "en", "text": "I am not fundamentally against modernization, but as long as the costs are not fixed, one cannot really say anything about it." },
+                { "language": "fa", "text": "من اصولاً مخالف نوسازی نیستم، اما تا وقتی هزینه‌ها مشخص نیستند، عملاً نمی‌شود چیزی گفت." },
+                { "language": "ar", "text": "أنا لست ضد التحديث من حيث المبدأ، لكن ما دامت التكاليف غير محددة فلا يمكن فعليًا قول شيء عنه." },
+                { "language": "tr", "text": "Temelde yenilemeye karşı değilim, ama maliyetler belli olmadığı sürece bu konuda pek bir şey söylenemez." },
+                { "language": "ru", "text": "Я в принципе не против модернизации, но пока расходы не определены, об этом по сути нечего сказать." },
+                { "language": "ckb", "text": "من بە بنەما دژی نوێکردنەوە نیم، بەڵام تا تێچووەکان دیار نەبن، بەڕاستی ناتوانرێت شتێک لەبارەی بگوترێت." },
+                { "language": "kmr", "text": "Ez bi bingehîn dijî nûjenkirinê nînim, lê heta lêçûn diyar nebin, mirov nikare zêde tiştek bêje." },
+                { "language": "pl", "text": "Zasadniczo nie jestem przeciw modernizacji, ale dopóki koszty nie są ustalone, właściwie nie można nic powiedzieć." },
+                { "language": "ro", "text": "În principiu nu sunt împotriva modernizării, dar cât timp costurile nu sunt stabilite, nu se poate spune prea mult." },
+                { "language": "sq", "text": "Në parim nuk jam kundër modernizimit, por për sa kohë kostot nuk janë të përcaktuara, nuk mund të thuhet shumë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist nicht falsch, bleibt aber passiv und formuliert keine konkreten Klärungspunkte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is not wrong, but it remains passive and does not formulate concrete clarification points." },
+                { "language": "fa", "text": "پاسخ غلط نیست، اما منفعل می‌ماند و نکات روشن‌سازی مشخص مطرح نمی‌کند." },
+                { "language": "ar", "text": "الإجابة ليست خاطئة، لكنها تبقى سلبية ولا تصوغ نقاط توضيح محددة." },
+                { "language": "tr", "text": "Cevap yanlış değil, fakat pasif kalıyor ve somut açıklık noktaları belirtmiyor." },
+                { "language": "ru", "text": "Ответ не неверный, но остается пассивным и не формулирует конкретные пункты для прояснения." },
+                { "language": "ckb", "text": "وەڵامەکە هەڵە نییە، بەڵام ناپالاک دەمێنێتەوە و خاڵی ڕوونکردنەوەی دیاریکراو دانانێت." },
+                { "language": "kmr", "text": "Bersiv şaş nîne, lê pasîf dimîne û xalên zelalkirinê yên konkret nayêje." },
+                { "language": "pl", "text": "Odpowiedź nie jest błędna, ale pozostaje bierna i nie formułuje konkretnych punktów wyjaśnienia." },
+                { "language": "ro", "text": "Răspunsul nu este greșit, dar rămâne pasiv și nu formulează puncte concrete de clarificare." },
+                { "language": "sq", "text": "Përgjigjja nuk është e gabuar, por mbetet pasive dhe nuk formulon pika konkrete sqarimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gerade weil die Zahlen noch offen sind, brauche ich eine belastbare schriftliche Darstellung: Welche Kostenbestandteile sind sicher, welche sind Schätzungen, und welche Auswirkungen auf die Miete oder Nebenkosten werden nur geprüft?",
+              "translations": [
+                { "language": "en", "text": "Precisely because the figures are still open, I need a reliable written explanation: which cost components are certain, which are estimates, and which effects on rent or service charges are only being reviewed?" },
+                { "language": "fa", "text": "دقیقاً چون عددها هنوز روشن نیستند، توضیح کتبی قابل اتکا می‌خواهم: کدام هزینه‌ها قطعی‌اند، کدام‌ها برآوردند، و کدام اثرها فقط بررسی می‌شوند؟" },
+                { "language": "ar", "text": "لأن الأرقام ما زالت مفتوحة، أحتاج إلى توضيح مكتوب موثوق: ما التكاليف المؤكدة، وما التقديرات، وما الآثار التي لا تزال قيد الفحص؟" },
+                { "language": "tr", "text": "Rakamlar hâlâ açık olduğu için güvenilir bir yazılı açıklama istiyorum: hangi maliyetler kesin, hangileri tahmin, hangi etkiler yalnızca inceleniyor?" },
+                { "language": "ru", "text": "Именно потому, что цифры открыты, мне нужно надежное письменное объяснение: какие расходы определены, какие оценочные, а какие эффекты только проверяются?" },
+                { "language": "ckb", "text": "چون ژمارەکان هێشتا کراوەن، ڕوونکردنەوەیەکی نووسراوی پشتپێبەستراو دەوێت: کام تێچوو دڵنیایە، کام پێشبینییە، و کام کاریگەری تەنها دەپشکنرێت؟" },
+                { "language": "kmr", "text": "Ji ber ku hejmar hîn vekirî ne, ez ravekirineke nivîskî ya pêbawer dixwazim: kîjan lêçûn teqez in, kîjan texmîn in, û kîjan bandor hîn tenê têne lêkolîn kirin?" },
+                { "language": "pl", "text": "Właśnie dlatego, że liczby są otwarte, potrzebuję wiarygodnego pisemnego wyjaśnienia: które koszty są pewne, które szacowane, a które skutki są tylko sprawdzane?" },
+                { "language": "ro", "text": "Tocmai pentru că cifrele sunt deschise, am nevoie de o explicație scrisă solidă: ce costuri sunt sigure, care sunt estimări și ce efecte sunt doar analizate?" },
+                { "language": "sq", "text": "Pikërisht sepse shifrat janë ende të hapura, më duhet një shpjegim i besueshëm me shkrim: cilat kosto janë të sigurta, cilat janë vlerësime dhe cilat ndikime po shqyrtohen vetëm?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort verhindert Spekulation und verlangt eine belastbare Kostenlogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer prevents speculation and asks for a reliable cost logic." },
+                { "language": "fa", "text": "این پاسخ جلوی حدس‌زدن را می‌گیرد و منطق هزینه‌ای قابل اتکا می‌خواهد." },
+                { "language": "ar", "text": "تمنع الإجابة التخمين وتطلب منطق تكلفة موثوقًا." },
+                { "language": "tr", "text": "Bu cevap spekülasyonu önler ve güvenilir bir maliyet mantığı ister." },
+                { "language": "ru", "text": "Ответ предотвращает спекуляции и требует надежной логики расходов." },
+                { "language": "ckb", "text": "ئەم وەڵامە ڕێ لە گومانەکان دەگرێت و لۆژیکی تێچووی پشتپێبەستراو داوا دەکات." },
+                { "language": "kmr", "text": "Ev bersiv pêşî li texmînan digire û mantiqa lêçûnê ya pêbawer dixwaze." },
+                { "language": "pl", "text": "Ta odpowiedź zapobiega spekulacjom i domaga się wiarygodnej logiki kosztów." },
+                { "language": "ro", "text": "Răspunsul previne speculațiile și cere o logică solidă a costurilor." },
+                { "language": "sq", "text": "Përgjigjja shmang spekulimet dhe kërkon logjikë të besueshme të kostove." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn die Kosten noch nicht feststehen, sollte man die Modernisierung vielleicht besser verschieben.",
+              "translations": [
+                { "language": "en", "text": "If the costs are not fixed yet, perhaps the modernization should be postponed." },
+                { "language": "fa", "text": "اگر هزینه‌ها هنوز مشخص نیستند، شاید بهتر باشد نوسازی عقب بیفتد." },
+                { "language": "ar", "text": "إذا لم تكن التكاليف محددة بعد، فربما من الأفضل تأجيل التحديث." },
+                { "language": "tr", "text": "Maliyetler henüz belli değilse, yenileme belki ertelenmelidir." },
+                { "language": "ru", "text": "Если расходы еще не определены, возможно, модернизацию лучше отложить." },
+                { "language": "ckb", "text": "ئەگەر تێچووەکان هێشتا دیار نەبن، ڕەنگە باشتر بێت نوێکردنەوەکە دوا بخرێت." },
+                { "language": "kmr", "text": "Heke lêçûn hîn diyar nebin, belkî çêtir e nûjenkirin were paşxistin." },
+                { "language": "pl", "text": "Jeśli koszty nie są jeszcze ustalone, może lepiej odłożyć modernizację." },
+                { "language": "ro", "text": "Dacă nu sunt stabilite costurile, poate ar fi mai bine să se amâne modernizarea." },
+                { "language": "sq", "text": "Nëse kostot nuk janë përcaktuar ende, ndoshta modernizimi duhet shtyrë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist plausibel, aber zu früh blockierend; es fragt nicht nach belastbaren Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is plausible, but blocks too early; it does not ask for reliable documents." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی زود حالت مانع می‌گیرد و مدارک قابل اتکا نمی‌خواهد." },
+                { "language": "ar", "text": "هذا معقول، لكنه يعرقل مبكرًا ولا يطلب مستندات موثوقة." },
+                { "language": "tr", "text": "Bu makul, ama çok erken engelleyici olur; güvenilir belgeler istemez." },
+                { "language": "ru", "text": "Это правдоподобно, но слишком рано блокирует и не запрашивает надежные документы." },
+                { "language": "ckb", "text": "ئەوە باوەڕپێکراوە، بەڵام زۆر زوو ڕێگر دەبێت و بەڵگەی پشتپێبەستراو داوا ناکات." },
+                { "language": "kmr", "text": "Ev maqûl e, lê pir zû asteng dike û belgeyên pêbawer naxwaze." },
+                { "language": "pl", "text": "To brzmi wiarygodnie, ale zbyt wcześnie blokuje sprawę i nie prosi o rzetelne dokumenty." },
+                { "language": "ro", "text": "Este plauzibil, dar blochează prea devreme și nu cere documente solide." },
+                { "language": "sq", "text": "Është e besueshme, por bllokon shumë herët dhe nuk kërkon dokumente të qëndrueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollten wir die Unsicherheit nicht glätten, sondern planbar machen. Ich bitte um Zeitfenster, Vorlauf für Termine, Regeln für Schlüssel oder Anwesenheit und eine Kontaktstelle, falls ein Termin kurzfristig ausfällt.",
+              "translations": [
+                { "language": "en", "text": "Then we should not smooth over the uncertainty, but make it plannable. I am asking for time windows, advance notice, rules for keys or presence, and a contact point if an appointment is canceled at short notice." },
+                { "language": "fa", "text": "پس نباید ابهام را کم‌اهمیت نشان دهیم، بلکه باید قابل برنامه‌ریزی‌اش کنیم: بازه زمانی، اطلاع قبلی، قواعد کلید یا حضور، و تماس برای لغو ناگهانی." },
+                { "language": "ar", "text": "إذن لا ينبغي تلطيف عدم اليقين، بل جعله قابلًا للتخطيط: نوافذ زمنية، إشعار مسبق، قواعد للمفاتيح أو الحضور، وجهة اتصال عند الإلغاء المفاجئ." },
+                { "language": "tr", "text": "O halde belirsizliği yok saymamalı, planlanabilir hâle getirmeliyiz: zaman aralıkları, ön bildirim, anahtar veya hazır bulunma kuralları ve ani iptal için iletişim noktası." },
+                { "language": "ru", "text": "Тогда неопределенность нужно не сглаживать, а сделать планируемой: временные окна, предварительное уведомление, правила ключей или присутствия и контакт при внезапной отмене." },
+                { "language": "ckb", "text": "ئەوا نابێت نادڵنیایییەکە بسڕینەوە، بەڵکو بیکەینە پلاندانراو: ماوەی کاتی، ئاگادارکردنەوەی پێشوەخت، ڕێسای کلیل یان ئامادەبوون، و پەیوەندی بۆ هەڵبوەشانەوەی ناگهانی." },
+                { "language": "kmr", "text": "Wê gavê nezelaliyê nexapînin, lê wê bikin planbar: demên taybet, agahdariya pêşwext, rêzikên kilît an amadebûnê û xala têkiliyê ji bo betalkirina ji nişka ve." },
+                { "language": "pl", "text": "Wtedy nie należy wygładzać niepewności, lecz uczynić ją planowalną: przedziały czasowe, wcześniejsze powiadomienie, zasady kluczy lub obecności i kontakt przy nagłym odwołaniu." },
+                { "language": "ro", "text": "Atunci nu trebuie netezită incertitudinea, ci făcută planificabilă: intervale orare, anunț prealabil, reguli pentru chei sau prezență și contact pentru anulări din scurt." },
+                { "language": "sq", "text": "Atëherë pasiguria nuk duhet zbutur, por bërë e planifikueshme: intervale kohore, njoftim paraprak, rregulla për çelësa ose prani dhe kontakt për anulim të papritur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort übersetzt unklare Bauzeit in konkrete Prozessregeln.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer translates unclear construction time into concrete process rules." },
+                { "language": "fa", "text": "این پاسخ زمان نامشخص کار را به قواعد عملی مشخص تبدیل می‌کند." },
+                { "language": "ar", "text": "تحول الإجابة مدة الأعمال غير الواضحة إلى قواعد عملية محددة." },
+                { "language": "tr", "text": "Bu cevap belirsiz çalışma süresini somut süreç kurallarına çevirir." },
+                { "language": "ru", "text": "Ответ переводит неясные сроки работ в конкретные правила процесса." },
+                { "language": "ckb", "text": "ئەم وەڵامە ماوەی کاری نادیار دەگۆڕێت بۆ ڕێسای کرداری دیاریکراو." },
+                { "language": "kmr", "text": "Ev bersiv demê kar ê nezelal vediguherîne rêzikên pêvajoyê yên konkret." },
+                { "language": "pl", "text": "Ta odpowiedź przekłada niejasny czas prac na konkretne zasady procesu." },
+                { "language": "ro", "text": "Răspunsul transformă durata neclară a lucrărilor în reguli concrete de proces." },
+                { "language": "sq", "text": "Përgjigjja e kthen kohën e paqartë të punimeve në rregulla konkrete procesi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann müssten wir einfach flexibel bleiben und schauen, was die Firmen jeweils vorschlagen.",
+              "translations": [
+                { "language": "en", "text": "Then we would simply have to stay flexible and see what the companies propose each time." },
+                { "language": "fa", "text": "پس باید فقط انعطاف‌پذیر بمانیم و ببینیم شرکت‌ها هر بار چه پیشنهاد می‌کنند." },
+                { "language": "ar", "text": "إذن علينا فقط أن نبقى مرنين ونرى ما تقترحه الشركات في كل مرة." },
+                { "language": "tr", "text": "O zaman sadece esnek kalmalı ve firmaların her seferinde ne önerdiğine bakmalıyız." },
+                { "language": "ru", "text": "Тогда нам просто нужно оставаться гибкими и смотреть, что каждый раз предлагают компании." },
+                { "language": "ckb", "text": "ئەوا پێویستە تەنها نەرم بن و ببینین کۆمپانیاکان هەر جار چی پێشنیار دەکەن." },
+                { "language": "kmr", "text": "Wê gavê divê em tenê nerm bimînin û bibînin şirket her car çi pêşniyar dikin." },
+                { "language": "pl", "text": "Wtedy musielibyśmy po prostu pozostać elastyczni i zobaczyć, co firmy za każdym razem zaproponują." },
+                { "language": "ro", "text": "Atunci ar trebui pur și simplu să rămânem flexibili și să vedem ce propun firmele de fiecare dată." },
+                { "language": "sq", "text": "Atëherë duhet thjesht të mbetemi fleksibël dhe të shohim çfarë propozojnë kompanitë çdo herë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Flexibilität allein ist zu schwach; C2 verlangt klare Regeln für planbare Unsicherheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Flexibility alone is too weak; C2 requires clear rules for plannable uncertainty." },
+                { "language": "fa", "text": "انعطاف‌پذیری به‌تنهایی کافی نیست؛ سطح C2 قواعد روشن برای ابهام قابل برنامه‌ریزی می‌خواهد." },
+                { "language": "ar", "text": "المرونة وحدها ضعيفة؛ مستوى C2 يتطلب قواعد واضحة لعدم يقين قابل للتخطيط." },
+                { "language": "tr", "text": "Yalnızca esneklik zayıf kalır; C2 planlanabilir belirsizlik için açık kurallar gerektirir." },
+                { "language": "ru", "text": "Одной гибкости недостаточно; уровень C2 требует четких правил для планируемой неопределенности." },
+                { "language": "ckb", "text": "نەرمی بە تەنها لاوازە؛ C2 ڕێسای ڕوون بۆ نادڵنیایی پلاندانراو دەوێت." },
+                { "language": "kmr", "text": "Nermbûn bi tenê lawaz e; C2 ji bo nezelaliya planbar rêzikên zelal dixwaze." },
+                { "language": "pl", "text": "Sama elastyczność jest zbyt słaba; C2 wymaga jasnych zasad dla planowalnej niepewności." },
+                { "language": "ro", "text": "Flexibilitatea singură este prea slabă; C2 cere reguli clare pentru incertitudine planificabilă." },
+                { "language": "sq", "text": "Fleksibiliteti vetëm është i dobët; C2 kërkon rregulla të qarta për pasiguri të planifikueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das wäre hilfreich, wenn es nicht nur als freundliche Absicht stehen bleibt. Können wir festhalten, welche Belastungen gebündelt werden sollen, welche Haushalte wegen Schichtarbeit oder Krankheit früher informiert werden und bis wann Sie das prüfen?",
+              "translations": [
+                { "language": "en", "text": "That would be helpful if it does not remain only a friendly intention. Can we record which disruptions are to be bundled, which households should be informed earlier because of shift work or illness, and by when you will check this?" },
+                { "language": "fa", "text": "این مفید است اگر فقط نیت خوب نماند. می‌توانیم ثبت کنیم کدام فشارها متمرکز شوند، چه خانوارهایی زودتر مطلع شوند، و تا چه زمانی بررسی می‌کنید؟" },
+                { "language": "ar", "text": "هذا مفيد إذا لم يبق مجرد نية طيبة. هل يمكن تسجيل الأعباء التي ستُجمع، والأسر التي ستُبلغ أبكر، والموعد الذي ستفحصون فيه ذلك؟" },
+                { "language": "tr", "text": "Bu, yalnızca iyi niyet olarak kalmazsa yararlı olur. Hangi yüklerin birleştirileceğini, hangi hanelerin daha erken bilgilendirileceğini ve bunu ne zamana kadar inceleyeceğinizi yazabilir miyiz?" },
+                { "language": "ru", "text": "Это полезно, если не останется просто добрым намерением. Можем ли мы зафиксировать, какие нагрузки объединяются, какие домохозяйства уведомляются раньше и до какого срока вы это проверите?" },
+                { "language": "ckb", "text": "ئەوە سوودبەخشە ئەگەر تەنها وەک نیتێکی باش نەمێنێت. دەتوانین تۆمار بکەین کام بارگرانی کۆدەکرێتەوە، کام خێزان زووتر ئاگادار دەکرێنەوە، و تا کەی دەپشکنن؟" },
+                { "language": "kmr", "text": "Ev ê alîkar be heke tenê wek niyeteke baş nemîne. Em dikarin tomar bikin kîjan bar têne komkirin, kîjan malbat zûtir agahdar dibin, û hûn heta kengê vê kontrol dikin?" },
+                { "language": "pl", "text": "To pomocne, jeśli nie pozostanie tylko dobrą intencją. Czy możemy zapisać, które uciążliwości będą łączone, które gospodarstwa dostaną informację wcześniej i do kiedy Państwo to sprawdzą?" },
+                { "language": "ro", "text": "Este util dacă nu rămâne doar o intenție bună. Putem consemna ce impacturi vor fi grupate, ce gospodării vor fi informate mai devreme și până când verificați acest lucru?" },
+                { "language": "sq", "text": "Është e dobishme nëse nuk mbetet vetëm një qëllim i mirë. A mund të shënojmë cilat ngarkesa do të grupohen, cilat familje do të informohen më herët dhe deri kur do ta kontrolloni këtë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort verwandelt Entgegenkommen in Kriterien, Zuständigkeit und Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer turns accommodation into criteria, responsibility, and a deadline." },
+                { "language": "fa", "text": "این پاسخ همکاری کلی را به معیار، مسئولیت و مهلت تبدیل می‌کند." },
+                { "language": "ar", "text": "تحول الإجابة المرونة العامة إلى معايير ومسؤولية وموعد." },
+                { "language": "tr", "text": "Bu cevap iyi niyeti kriterlere, sorumluluğa ve süreye çevirir." },
+                { "language": "ru", "text": "Ответ превращает уступку в критерии, ответственность и срок." },
+                { "language": "ckb", "text": "ئەم وەڵامە هاوکاریی گشتی دەگۆڕێت بۆ پێوەر، بەرپرسیارێتی و مۆڵەت." },
+                { "language": "kmr", "text": "Ev bersiv alîkariyê vediguherîne pîvan, berpirsiyarî û dem." },
+                { "language": "pl", "text": "Ta odpowiedź zamienia życzliwość w kryteria, odpowiedzialność i termin." },
+                { "language": "ro", "text": "Răspunsul transformă disponibilitatea în criterii, responsabilitate și termen." },
+                { "language": "sq", "text": "Përgjigjja e kthen gatishmërinë në kritere, përgjegjësi dhe afat." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Es wäre gut, wenn Sie die besonders lauten Arbeiten so kurz wie möglich halten könnten.",
+              "translations": [
+                { "language": "en", "text": "It would be good if you could keep the especially loud work as short as possible." },
+                { "language": "fa", "text": "خوب می‌شود اگر بتوانید کارهای خیلی پرصدا را تا حد ممکن کوتاه نگه دارید." },
+                { "language": "ar", "text": "سيكون جيدًا إذا أمكنكم جعل الأعمال المزعجة جدًا قصيرة قدر الإمكان." },
+                { "language": "tr", "text": "Özellikle gürültülü çalışmaları mümkün olduğunca kısa tutabilirseniz iyi olur." },
+                { "language": "ru", "text": "Было бы хорошо, если бы вы могли сделать особенно шумные работы как можно короче." },
+                { "language": "ckb", "text": "باش دەبێت ئەگەر بتوانن کارە زۆر دەنگدارەکان تا دەتوانرێت کورت بکەن." },
+                { "language": "kmr", "text": "Baş e heke hûn karên pir dengdar heta gengaz kurt bikin." },
+                { "language": "pl", "text": "Byłoby dobrze, gdyby mogli Państwo jak najbardziej skrócić szczególnie głośne prace." },
+                { "language": "ro", "text": "Ar fi bine dacă ați putea menține lucrările foarte zgomotoase cât mai scurte." },
+                { "language": "sq", "text": "Do të ishte mirë nëse punimet shumë të zhurmshme do t'i mbanit sa më të shkurtra." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist höflich, aber zu allgemein; sie nennt keine Prüffrist und keine betroffenen Gruppen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is polite but too general; it names no review deadline and no affected groups." },
+                { "language": "fa", "text": "پاسخ مؤدبانه است، اما خیلی کلی است؛ مهلت بررسی و گروه‌های تحت تأثیر را مشخص نمی‌کند." },
+                { "language": "ar", "text": "الإجابة مهذبة لكنها عامة جدًا؛ لا تذكر موعد فحص ولا مجموعات متأثرة." },
+                { "language": "tr", "text": "Cevap kibar ama çok genel; inceleme süresi ve etkilenen grupları belirtmiyor." },
+                { "language": "ru", "text": "Ответ вежливый, но слишком общий; нет срока проверки и затронутых групп." },
+                { "language": "ckb", "text": "وەڵامەکە ڕێزدارانەیە، بەڵام زۆر گشتییە؛ مۆڵەتی پشکنین و گرووپە کاریگەرکراوەکان ناوبەر ناکات." },
+                { "language": "kmr", "text": "Bersiv bi rêz e, lê pir giştî ye; dema kontrolê û komên bandorbûyî nav nake." },
+                { "language": "pl", "text": "Odpowiedź jest uprzejma, ale zbyt ogólna; nie podaje terminu sprawdzenia ani dotkniętych grup." },
+                { "language": "ro", "text": "Răspunsul este politicos, dar prea general; nu numește termen de verificare și grupuri afectate." },
+                { "language": "sq", "text": "Përgjigjja është e sjellshme, por tepër e përgjithshme; nuk përmend afat kontrolli dhe grupe të prekura." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich stelle die Maßnahme nicht pauschal in Frage. Mein Vorschlag ist: Sie schicken bis Freitag eine schriftliche Übersicht zu Kostenstand, Zeitplan, Zugang, Belastungsminderung und Alternativen. Danach können die Bewohner gezielt Rückfragen stellen, statt über Gerüchte zu diskutieren.",
+              "translations": [
+                { "language": "en", "text": "I am not questioning the measure in general. My proposal is this: by Friday, you send a written overview of cost status, schedule, access, mitigation of disruption, and alternatives. After that, residents can ask targeted follow-up questions instead of discussing rumors." },
+                { "language": "fa", "text": "من اصل اقدام را کلی زیر سؤال نمی‌برم. پیشنهاد من این است: تا جمعه مرور کتبی درباره وضعیت هزینه، زمان‌بندی، دسترسی، کاهش فشار و گزینه‌ها بفرستید؛ بعد ساکنان سؤال‌های دقیق می‌پرسند." },
+                { "language": "ar", "text": "أنا لا أشكك في الإجراء عمومًا. اقتراحي: ترسلون حتى الجمعة عرضًا مكتوبًا عن وضع التكاليف والجدول والدخول وتقليل العبء والبدائل؛ ثم يطرح السكان أسئلة محددة." },
+                { "language": "tr", "text": "Önlemi genel olarak sorgulamıyorum. Önerim şu: Cuma gününe kadar maliyet durumu, zaman planı, erişim, yük azaltma ve alternatifler hakkında yazılı özet gönderin; sonra sakinler hedefli sorular sorar." },
+                { "language": "ru", "text": "Я не ставлю меру под сомнение в целом. Мое предложение: до пятницы отправить письменный обзор расходов, графика, доступа, снижения нагрузки и альтернатив; затем жильцы зададут точные вопросы." },
+                { "language": "ckb", "text": "من ئەم هەنگاوە بە گشتی ناخەمە ژێر پرسیارەوە. پێشنیارم ئەمەیە: تا هەینی پوختەی نووسراو لەسەر دۆخی تێچوو، خشتەی کات، چوونەژوورەوە، کەمکردنەوەی بارگرانی و جێگرەوەکان بنێرن؛ پاشان دانیشتووان پرسیاری دیاریکراو دەکەن." },
+                { "language": "kmr", "text": "Ez pêngavê bi giştî napirsim. Pêşniyara min ev e: heta Înê kurteyeke nivîskî li ser rewşa lêçûnê, plana demê, ketin, kêmkirina barê rojane û alternatîfan bişînin; paşê niştecih pirsên armancdar dikin." },
+                { "language": "pl", "text": "Nie kwestionuję działania ogólnie. Proponuję: do piątku wyślą Państwo pisemny przegląd kosztów, harmonogramu, dostępu, ograniczenia uciążliwości i alternatyw; potem mieszkańcy zadadzą konkretne pytania." },
+                { "language": "ro", "text": "Nu pun măsura în discuție în mod general. Propun: până vineri trimiteți o prezentare scrisă despre costuri, calendar, acces, reducerea impactului și alternative; apoi locatarii pun întrebări țintite." },
+                { "language": "sq", "text": "Nuk e vë masën në dyshim në përgjithësi. Propozimi im: deri të premten dërgoni përmbledhje me shkrim për kostot, planin, hyrjen, uljen e ngarkesës dhe alternativat; pastaj banorët bëjnë pyetje të sakta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort schützt den Modernisierungsrahmen und verlangt zugleich eine klare schriftliche Entscheidungsgrundlage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer protects the modernization frame while requesting a clear written basis for decisions." },
+                { "language": "fa", "text": "این پاسخ چارچوب نوسازی را حفظ می‌کند و هم‌زمان مبنای کتبی روشن برای تصمیم می‌خواهد." },
+                { "language": "ar", "text": "تحمي الإجابة إطار التحديث وتطلب في الوقت نفسه أساسًا مكتوبًا واضحًا للقرار." },
+                { "language": "tr", "text": "Bu cevap yenileme çerçevesini korur ve aynı zamanda karar için açık yazılı temel ister." },
+                { "language": "ru", "text": "Ответ сохраняет рамку модернизации и одновременно требует ясную письменную основу для решения." },
+                { "language": "ckb", "text": "ئەم وەڵامە چوارچێوەی نوێکردنەوە دەپارێزێت و هاوکات بنەمایەکی نووسراوی ڕوون بۆ بڕیار داوا دەکات." },
+                { "language": "kmr", "text": "Ev bersiv çarçoveya nûjenkirinê diparêze û di heman demê de bingehek nivîskî ya zelal ji bo biryarê dixwaze." },
+                { "language": "pl", "text": "Ta odpowiedź chroni ramę modernizacji i jednocześnie prosi o jasną pisemną podstawę decyzji." },
+                { "language": "ro", "text": "Răspunsul protejează cadrul modernizării și cere totodată o bază scrisă clară pentru decizie." },
+                { "language": "sq", "text": "Përgjigjja ruan kornizën e modernizimit dhe njëkohësisht kërkon bazë të qartë me shkrim për vendim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann warten wir am besten auf Ihre Zusammenfassung und melden uns, falls noch Fragen auftauchen.",
+              "translations": [
+                { "language": "en", "text": "Then it is best if we wait for your summary and get back to you if further questions arise." },
+                { "language": "fa", "text": "پس بهتر است منتظر خلاصه شما بمانیم و اگر سؤال دیگری پیش آمد، خبر بدهیم." },
+                { "language": "ar", "text": "إذن من الأفضل أن ننتظر ملخصكم ونتواصل إذا ظهرت أسئلة أخرى." },
+                { "language": "tr", "text": "O zaman en iyisi özetinizi bekleyelim ve başka sorular çıkarsa size dönelim." },
+                { "language": "ru", "text": "Тогда лучше подождем вашего резюме и свяжемся, если появятся дополнительные вопросы." },
+                { "language": "ckb", "text": "ئەوا باشترە چاوەڕێی پوختەکەتان بین و ئەگەر پرسیاری تر هاتە پێش، پەیوەندی بکەین." },
+                { "language": "kmr", "text": "Wê gavê çêtir e em li benda kurteya we bimînin û heke pirsên din derketin, vegerin we." },
+                { "language": "pl", "text": "W takim razie najlepiej poczekamy na Państwa podsumowanie i zgłosimy się, jeśli pojawią się dalsze pytania." },
+                { "language": "ro", "text": "Atunci cel mai bine așteptăm rezumatul dumneavoastră și revenim dacă apar alte întrebări." },
+                { "language": "sq", "text": "Atëherë më mirë presim përmbledhjen tuaj dhe ju kontaktojmë nëse dalin pyetje të tjera." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist höflich, aber zu offen; sie nennt weder Inhalte noch Frist noch Zweck der Rückfragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is polite but too open; it names neither contents, deadline, nor purpose of the follow-up questions." },
+                { "language": "fa", "text": "پاسخ مؤدبانه است، اما خیلی باز است؛ نه محتوا، نه مهلت، نه هدف پرسش‌های بعدی را مشخص می‌کند." },
+                { "language": "ar", "text": "الإجابة مهذبة لكنها مفتوحة جدًا؛ لا تذكر المحتوى ولا الموعد ولا هدف أسئلة المتابعة." },
+                { "language": "tr", "text": "Cevap kibar ama çok açık uçlu; içerik, süre ve sonraki soruların amacını belirtmiyor." },
+                { "language": "ru", "text": "Ответ вежливый, но слишком открытый; он не называет ни содержание, ни срок, ни цель последующих вопросов." },
+                { "language": "ckb", "text": "وەڵامەکە ڕێزدارانەیە، بەڵام زۆر کراوەیە؛ نە ناوەڕۆک، نە مۆڵەت، نە ئامانجی پرسیارە داهاتووەکان ناوبەر ناکات." },
+                { "language": "kmr", "text": "Bersiv bi rêz e, lê pir vekirî ye; ne naverok, ne dem, ne armanca pirsên paşê nav dike." },
+                { "language": "pl", "text": "Odpowiedź jest uprzejma, ale zbyt otwarta; nie wskazuje treści, terminu ani celu pytań." },
+                { "language": "ro", "text": "Răspunsul este politicos, dar prea deschis; nu numește conținutul, termenul sau scopul întrebărilor ulterioare." },
+                { "language": "sq", "text": "Përgjigjja është e sjellshme, por shumë e hapur; nuk përmend përmbajtjen, afatin apo qëllimin e pyetjeve pasuese." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "balanced-entry",
+          "text": "Kritik wirkt stärker, wenn sie den möglichen Nutzen anerkennt und danach die offenen Prüfpunkte sauber ordnet.",
+          "translations": [
+            { "language": "en", "text": "Criticism is stronger when it acknowledges possible benefit and then clearly organizes the open review points." },
+            { "language": "fa", "text": "انتقاد زمانی قوی‌تر است که فایده احتمالی را بپذیرد و سپس نکات باز بررسی را مرتب کند." },
+            { "language": "ar", "text": "يكون النقد أقوى عندما يعترف بالفائدة المحتملة ثم يرتب نقاط الفحص المفتوحة بوضوح." },
+            { "language": "tr", "text": "Eleştiri, olası faydayı kabul edip açık inceleme noktalarını düzenlediğinde daha güçlü olur." },
+            { "language": "ru", "text": "Критика сильнее, когда признает возможную пользу и затем четко упорядочивает открытые пункты проверки." },
+            { "language": "ckb", "text": "ڕەخنە کاتێک بەهێزترە کە سوودی ئەگەری دەناسێت و پاشان خاڵە کراوەکانی پشکنین بە پاکی ڕێکدەخات." },
+            { "language": "kmr", "text": "Rexne hêztir e dema sûda gengaz qebûl dike û paşê xalên vekirî yên kontrolê bi zelalî rêz dike." },
+            { "language": "pl", "text": "Krytyka jest silniejsza, gdy uznaje możliwą korzyść, a potem porządkuje otwarte punkty weryfikacji." },
+            { "language": "ro", "text": "Critica este mai puternică atunci când recunoaște utilitatea posibilă și apoi ordonează clar punctele deschise de verificare." },
+            { "language": "sq", "text": "Kritika është më e fortë kur pranon përfitimin e mundshëm dhe pastaj rendit qartë pikat e hapura të kontrollit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "cost-clarity",
+          "text": "Bei Kostenfragen sollten sichere Zahlen, Schätzungen und noch ungeprüfte Auswirkungen getrennt werden.",
+          "translations": [
+            { "language": "en", "text": "For cost questions, confirmed figures, estimates, and still-unchecked effects should be separated." },
+            { "language": "fa", "text": "در پرسش‌های هزینه، عددهای قطعی، برآوردها و اثرهای هنوز بررسی‌نشده باید جدا شوند." },
+            { "language": "ar", "text": "في أسئلة التكلفة ينبغي فصل الأرقام المؤكدة عن التقديرات والآثار غير المفحوصة بعد." },
+            { "language": "tr", "text": "Maliyet sorularında kesin rakamlar, tahminler ve henüz incelenmemiş etkiler ayrılmalıdır." },
+            { "language": "ru", "text": "В вопросах расходов нужно разделять подтвержденные цифры, оценки и еще не проверенные эффекты." },
+            { "language": "ckb", "text": "لە پرسیارەکانی تێچوو، ژمارە دڵنیاکان، پێشبینییەکان و کاریگەرییە هێشتا پشکنراوە نەکراوەکان پێویستە جیا بکرێنەوە." },
+            { "language": "kmr", "text": "Di pirsên lêçûnê de hejmarên piştrast, texmîn û bandorên hîn nekontrolkirî divê werin veqetandin." },
+            { "language": "pl", "text": "W pytaniach o koszty trzeba oddzielać liczby potwierdzone, szacunki i skutki jeszcze niesprawdzone." },
+            { "language": "ro", "text": "În întrebările despre costuri trebuie separate cifrele confirmate, estimările și efectele încă neverificate." },
+            { "language": "sq", "text": "Në pyetjet për koston duhet të ndahen shifrat e konfirmuara, vlerësimet dhe ndikimet ende të pakontrolluara." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "process-rules",
+          "text": "Planbarkeit entsteht nicht durch vage Flexibilität, sondern durch Zeitfenster, Vorlauf, Zuständigkeit und Ausfallregel.",
+          "translations": [
+            { "language": "en", "text": "Plannability does not come from vague flexibility, but from time windows, advance notice, responsibility, and cancellation rules." },
+            { "language": "fa", "text": "قابلیت برنامه‌ریزی از انعطاف مبهم نمی‌آید، بلکه از بازه زمانی، اطلاع قبلی، مسئولیت و قاعده لغو می‌آید." },
+            { "language": "ar", "text": "القابلية للتخطيط لا تأتي من مرونة غامضة، بل من نوافذ زمنية وإشعار مسبق ومسؤولية وقاعدة إلغاء." },
+            { "language": "tr", "text": "Planlanabilirlik belirsiz esneklikten değil, zaman aralıkları, ön bildirim, sorumluluk ve iptal kuralından doğar." },
+            { "language": "ru", "text": "Планируемость возникает не из расплывчатой гибкости, а из временных окон, предварительного уведомления, ответственности и правила отмены." },
+            { "language": "ckb", "text": "توانای پلاندانان لە نەرمیی نادیارەوە نایەت، بەڵکو لە ماوەی کاتی، ئاگادارکردنەوەی پێشوەخت، بەرپرسیارێتی و ڕێسای هەڵوەشانەوە دێت." },
+            { "language": "kmr", "text": "Planbarî ji nermbûna nezelal nayê, lê ji demên taybet, agahdariya pêşwext, berpirsiyarî û rêzika betalkirinê tê." },
+            { "language": "pl", "text": "Planowalność nie wynika z mglistej elastyczności, lecz z przedziałów czasowych, wcześniejszego powiadomienia, odpowiedzialności i zasad odwołania." },
+            { "language": "ro", "text": "Planificabilitatea nu vine din flexibilitate vagă, ci din intervale orare, anunț prealabil, responsabilitate și regulă de anulare." },
+            { "language": "sq", "text": "Planifikueshmëria nuk vjen nga fleksibilitet i paqartë, por nga intervale kohore, njoftim paraprak, përgjegjësi dhe rregull anulimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "documented-close",
+          "text": "Ein guter Abschluss schützt beide Seiten: Er blockiert nicht pauschal, verlangt aber eine schriftliche Grundlage für gezielte Rückfragen.",
+          "translations": [
+            { "language": "en", "text": "A good closing protects both sides: it does not block generally, but asks for a written basis for targeted follow-up questions." },
+            { "language": "fa", "text": "پایان خوب از هر دو طرف محافظت می‌کند: کلی مانع نمی‌شود، اما مبنای کتبی برای سؤال‌های دقیق می‌خواهد." },
+            { "language": "ar", "text": "الخاتمة الجيدة تحمي الطرفين: لا تعرقل بشكل عام، لكنها تطلب أساسًا مكتوبًا لأسئلة متابعة محددة." },
+            { "language": "tr", "text": "İyi bir kapanış iki tarafı da korur: genel olarak engellemez, fakat hedefli sorular için yazılı temel ister." },
+            { "language": "ru", "text": "Хорошее завершение защищает обе стороны: оно не блокирует в целом, но требует письменную основу для точных последующих вопросов." },
+            { "language": "ckb", "text": "کۆتایییەکی باش هەردوو لا دەپارێزێت: بە گشتی ڕێگر نابێت، بەڵام بنەمای نووسراو بۆ پرسیاری دیاریکراو داوا دەکات." },
+            { "language": "kmr", "text": "Dawiyeke baş her du aliyan diparêze: bi giştî asteng nake, lê bingehek nivîskî ji bo pirsên armancdar dixwaze." },
+            { "language": "pl", "text": "Dobre zakończenie chroni obie strony: nie blokuje ogólnie, ale prosi o pisemną podstawę do konkretnych pytań." },
+            { "language": "ro", "text": "O încheiere bună protejează ambele părți: nu blochează general, dar cere o bază scrisă pentru întrebări țintite." },
+            { "language": "sq", "text": "Një përmbyllje e mirë mbron të dyja palët: nuk bllokon në përgjithësi, por kërkon bazë me shkrim për pyetje të sakta." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "modernization-measure-building-meeting",
+          "placement": "detail-header",
+          "purpose": "Illustrate a structured tenant and property-management discussion about a planned building modernization.",
+          "altText": "Eine Mieterin und eine Hausverwaltung besprechen an einem Tisch einen Modernisierungsplan mit Kalender und Kostenübersicht.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A tenant and property management discuss a modernization plan at a table with a calendar and cost overview." },
+            { "language": "fa", "text": "یک مستأجر و مدیریت ساختمان پشت میز درباره برنامه نوسازی با تقویم و مرور هزینه‌ها صحبت می‌کنند." },
+            { "language": "ar", "text": "مستأجرة وإدارة عقار تناقشان على طاولة خطة تحديث مع تقويم وعرض للتكاليف." },
+            { "language": "tr", "text": "Bir kiracı ve bina yönetimi, masada takvim ve maliyet özetiyle bir yenileme planını görüşüyor." },
+            { "language": "ru", "text": "Арендаторка и управляющая компания обсуждают за столом план модернизации с календарем и обзором расходов." },
+            { "language": "ckb", "text": "کرێچییەک و بەڕێوەبەرایەتی خانوو لەسەر مێزێک پلانی نوێکردنەوە بە تەقویم و پوختەی تێچوو گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Kirêdar û rêveberiya avahiyê li ser maseyê plana nûjenkirinê bi salname û kurteya lêçûnê gotûbêj dikin." },
+            { "language": "pl", "text": "Najemczyni i administracja budynku omawiają przy stole plan modernizacji z kalendarzem i zestawieniem kosztów." },
+            { "language": "ro", "text": "O chiriașă și administrarea imobilului discută la masă un plan de modernizare cu calendar și prezentare a costurilor." },
+            { "language": "sq", "text": "Një qiramarrëse dhe administrimi i ndërtesës diskutojnë në tryezë një plan modernizimi me kalendar dhe pasqyrë kostosh." }
+          ],
+          "imagePrompt": "Clean educational illustration, tenant and property-management representative at a table, non-readable modernization plan, calendar, cost overview sheet, calm housing discussion, no logos, no private data, no dramatic scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,833 @@
+{
+  "packageId": "roleplays-c2-core-05-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 05 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 05",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-verhandlung-mit-gesichtsverlust-vermeiden",
+      "linkedDialogueSlug": null,
+      "title": "In einer Verhandlung Gesichtsverlust vermeiden",
+      "titleTranslations": [
+        { "language": "en", "text": "Avoiding loss of face in a negotiation" },
+        { "language": "fa", "text": "جلوگیری از آبروریزی در یک مذاکره" },
+        { "language": "ar", "text": "تجنب فقدان ماء الوجه في تفاوض" },
+        { "language": "tr", "text": "Bir müzakerede itibar kaybını önlemek" },
+        { "language": "ru", "text": "Избежать потери лица на переговорах" },
+        { "language": "ckb", "text": "ڕێگری لە لەدەستدانی ڕوو لە گفتوگۆیەکدا" },
+        { "language": "kmr", "text": "Di danûstandinekê de rûreşbûnê dûr xistin" },
+        { "language": "pl", "text": "Unikanie utraty twarzy w negocjacjach" },
+        { "language": "ro", "text": "Evitarea pierderii prestigiului într-o negociere" },
+        { "language": "sq", "text": "Shmangia e humbjes së fytyrës në një negociatë" }
+      ],
+      "description": "Ein externer Partner hat öffentlich zugesagt, eine Schnittstelle bis Ende des Monats zu liefern. Inzwischen ist klar, dass der Termin unrealistisch ist. Sie müssen die Vereinbarung ändern, ohne die andere Seite bloßzustellen oder die Zusammenarbeit zu beschädigen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "An external partner has publicly promised to deliver an interface by the end of the month. It is now clear that the deadline is unrealistic. You must change the agreement without exposing the other side or damaging the cooperation." },
+        { "language": "fa", "text": "یک شریک خارجی به‌صورت عمومی وعده داده است که تا پایان ماه یک رابط فنی تحویل دهد. حالا روشن شده که این زمان‌بندی واقع‌بینانه نیست. شما باید توافق را تغییر دهید، بدون اینکه طرف مقابل را در موضع بد قرار دهید یا همکاری را خراب کنید." },
+        { "language": "ar", "text": "وعد شريك خارجي علناً بتسليم واجهة تقنية حتى نهاية الشهر. أصبح واضحاً الآن أن الموعد غير واقعي. عليك تغيير الاتفاق من دون إحراج الطرف الآخر أو الإضرار بالتعاون." },
+        { "language": "tr", "text": "Dış bir ortak, ay sonuna kadar bir arayüz teslim edeceğini kamuya açık biçimde vaat etti. Artık bu tarihin gerçekçi olmadığı açık. Diğer tarafı zor durumda bırakmadan veya iş birliğine zarar vermeden anlaşmayı değiştirmeniz gerekiyor." },
+        { "language": "ru", "text": "Внешний партнер публично пообещал поставить интерфейс к концу месяца. Теперь ясно, что срок нереалистичен. Вам нужно изменить соглашение, не выставляя другую сторону в неловком положении и не повреждая сотрудничество." },
+        { "language": "ckb", "text": "شەریکێکی دەرەکی بە ئاشکرا بەڵێنی داوە کە تا کۆتایی مانگ نێوانڕووکارییەکی پەیوەندی ڕادەست بکات. ئێستا ڕوونە کە کاتەکە واقیعی نییە. دەبێت ڕێککەوتنەکە بگۆڕیت، بێ ئەوەی لایەنی بەرامبەر شەرمەزار بکەیت یان هاوکارییەکە زیان ببینێت." },
+        { "language": "kmr", "text": "Hevkarê derveyî bi awayekî eşkere soz daye ku heta dawiya mehê navrûyekê radest bike. Niha zelal e ku ew dem ne realîstîk e. Divê hûn peymanê biguherînin bêyî ku aliyê din şerm bikin an hevkariyê zirar bikin." },
+        { "language": "pl", "text": "Zewnętrzny partner publicznie obiecał dostarczyć interfejs do końca miesiąca. Teraz jasne jest, że termin jest nierealistyczny. Musi Pan/Pani zmienić ustalenie, nie kompromitując drugiej strony ani nie niszcząc współpracy." },
+        { "language": "ro", "text": "Un partener extern a promis public că va livra o interfață până la sfârșitul lunii. Acum este clar că termenul este nerealist. Trebuie să modificați acordul fără a expune cealaltă parte sau a afecta colaborarea." },
+        { "language": "sq", "text": "Një partner i jashtëm ka premtuar publikisht se do të dorëzojë një ndërfaqe deri në fund të muajit. Tani është e qartë se afati nuk është realist. Ju duhet ta ndryshoni marrëveshjen pa e turpëruar palën tjetër ose pa dëmtuar bashkëpunimin." }
+      ],
+      "learnerGoal": "Eine überzogene öffentliche Zusage neu verhandeln: Gesichtsverlust vermeiden, die Realität klar benennen, Verantwortung nicht abschieben, eine alternative Formulierung anbieten und einen tragfähigen neuen Lieferplan vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Renegotiate an overextended public promise: avoid loss of face, name reality clearly, avoid shifting blame, offer alternative wording, and agree on a viable new delivery plan." },
+        { "language": "fa", "text": "یک وعده عمومی بیش از حد خوش‌بینانه را دوباره مذاکره کنید: از آبروریزی جلوگیری کنید، واقعیت را روشن بگویید، مسئولیت را به گردن دیگری نیندازید، فرمول‌بندی جایگزین پیشنهاد دهید و برنامه تحویل جدید و قابل‌اتکا توافق کنید." },
+        { "language": "ar", "text": "أعد التفاوض على وعد علني مبالغ فيه: تجنب فقدان ماء الوجه، وسم الواقع بوضوح، ولا تنقل اللوم، وقدم صياغة بديلة، واتفق على خطة تسليم جديدة قابلة للحمل." },
+        { "language": "tr", "text": "Aşırı iyimser bir kamu vaadini yeniden müzakere edin: itibar kaybını önleyin, gerçeği açıkça adlandırın, suçu başkasına atmayın, alternatif bir ifade sunun ve uygulanabilir yeni bir teslim planı üzerinde anlaşın." },
+        { "language": "ru", "text": "Заново согласовать чрезмерно оптимистичное публичное обещание: избежать потери лица, ясно назвать реальность, не перекладывать ответственность, предложить альтернативную формулировку и согласовать жизнеспособный новый план поставки." },
+        { "language": "ckb", "text": "بەڵێنییەکی گشتی زۆر گەشبینانە دووبارە گفتوگۆ بکە: ڕێگری لە لەدەستدانی ڕوو بکە، واقیع بە ڕوونی ناو ببه، بەرپرسیارێتی مەگوازەوە، دەربڕینی جێگرەوە پێشنیار بکە و پلانی نوێی ڕادەستکردنی بەهێز ڕێکبخە." },
+        { "language": "kmr", "text": "Sozeke eşkere ya pir hêvîdarî dîsa danûstandin bikin: rûreşbûnê dûr bixin, rastiyê zelal bi nav bikin, berpirsiyariyê neguhezînin, gotineke alternatîf pêşkêş bikin û plana radestkirina nû ya bihêz li hev bikin." },
+        { "language": "pl", "text": "Ponownie negocjować przesadnie optymistyczną publiczną obietnicę: uniknąć utraty twarzy, jasno nazwać rzeczywistość, nie przerzucać odpowiedzialności, zaproponować alternatywne sformułowanie i uzgodnić nośny nowy plan dostawy." },
+        { "language": "ro", "text": "Renegociați o promisiune publică prea ambițioasă: evitați pierderea prestigiului, numiți clar realitatea, nu mutați vina, oferiți o formulare alternativă și conveniți un nou plan de livrare solid." },
+        { "language": "sq", "text": "Rinegocioni një premtim publik tepër optimist: shmangni humbjen e fytyrës, emërtoni qartë realitetin, mos e zhvendosni fajin, ofroni formulim alternativ dhe bini dakord për një plan të ri dorëzimi të qëndrueshëm." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 5,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Projektleitung",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مدیر پروژه" },
+            { "language": "ar", "text": "مدير المشروع" },
+            { "language": "tr", "text": "Proje yöneticisi" },
+            { "language": "ru", "text": "Руководитель проекта" },
+            { "language": "ckb", "text": "بەڕێوەبەری پڕۆژە" },
+            { "language": "kmr", "text": "Rêveberê projeyê" },
+            { "language": "pl", "text": "Kierownik projektu" },
+            { "language": "ro", "text": "Manager de proiect" },
+            { "language": "sq", "text": "Drejtues projekti" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Lieferpartner",
+          "translations": [
+            { "language": "en", "text": "Delivery partner" },
+            { "language": "fa", "text": "شریک تحویل" },
+            { "language": "ar", "text": "شريك التسليم" },
+            { "language": "tr", "text": "Teslimat ortağı" },
+            { "language": "ru", "text": "Партнер по поставке" },
+            { "language": "ckb", "text": "شەریکی ڕادەستکردن" },
+            { "language": "kmr", "text": "Hevkarê radestkirinê" },
+            { "language": "pl", "text": "Partner dostawczy" },
+            { "language": "ro", "text": "Partener de livrare" },
+            { "language": "sq", "text": "Partner dorëzimi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Wir haben dem Lenkungskreis letzte Woche zugesagt, dass die Schnittstelle Ende des Monats steht. Intern sehen wir jetzt, dass wir dafür mindestens drei zusätzliche Wochen brauchen.",
+          "translations": [
+            { "language": "en", "text": "Last week we promised the steering committee that the interface would be ready by the end of the month. Internally, we now see that we need at least three additional weeks for that." },
+            { "language": "fa", "text": "هفته گذشته به کمیته راهبری وعده دادیم که رابط فنی تا پایان ماه آماده است. حالا در داخل می‌بینیم که برای آن دست‌کم سه هفته دیگر نیاز داریم." },
+            { "language": "ar", "text": "وعدنا لجنة التوجيه الأسبوع الماضي بأن تكون الواجهة جاهزة بحلول نهاية الشهر. داخلياً نرى الآن أننا نحتاج إلى ثلاثة أسابيع إضافية على الأقل." },
+            { "language": "tr", "text": "Geçen hafta yönlendirme kuruluna arayüzün ay sonuna kadar hazır olacağını vaat ettik. Şimdi içeride bunun için en az üç ek haftaya ihtiyacımız olduğunu görüyoruz." },
+            { "language": "ru", "text": "На прошлой неделе мы пообещали управляющему комитету, что интерфейс будет готов к концу месяца. Внутри мы теперь видим, что нам нужно как минимум еще три недели." },
+            { "language": "ckb", "text": "هەفتەی ڕابردوو بە کۆمیتەی ڕێبەریمان بەڵێن دا کە نێوانڕووکاری پەیوەندییەکە تا کۆتایی مانگ ئامادە دەبێت. ئێستا لە ناوخۆدا دەبینین کە بۆ ئەمە لانیکەم سێ هەفتەی زیاترمان پێویستە." },
+            { "language": "kmr", "text": "Hefteya borî me ji komîteya rêveberiyê re soz da ku navrû heta dawiya mehê amade dibe. Niha hundirîn dibînin ku ji bo vê herî kêm sê hefteyên din hewce ne." },
+            { "language": "pl", "text": "W zeszłym tygodniu obiecaliśmy komitetowi sterującemu, że interfejs będzie gotowy do końca miesiąca. Wewnętrznie widzimy teraz, że potrzebujemy na to co najmniej trzech dodatkowych tygodni." },
+            { "language": "ro", "text": "Săptămâna trecută am promis comitetului de coordonare că interfața va fi gata până la sfârșitul lunii. Intern vedem acum că avem nevoie de cel puțin trei săptămâni suplimentare." },
+            { "language": "sq", "text": "Javën e kaluar i premtuam komitetit drejtues se ndërfaqja do të ishte gati deri në fund të muajit. Tani brenda shohim se na duhen të paktën tri javë shtesë." }
+          ],
+          "function": "state-overpromised-deadline",
+          "toneNote": "admission of unrealistic promise"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir das nicht als Korrektur eines Fehlers inszenieren, sondern als Präzisierung des Lieferumfangs. Entscheidend ist, dass der Lenkungskreis einen neuen Plan bekommt, ohne dass Ihre Zusage öffentlich entwertet wird.",
+          "translations": [
+            { "language": "en", "text": "Then we should not stage this as correcting a mistake, but as refining the delivery scope. What matters is that the steering committee receives a new plan without publicly devaluing your commitment." },
+            { "language": "fa", "text": "پس نباید آن را به‌عنوان اصلاح یک اشتباه نمایش دهیم، بلکه به‌عنوان دقیق‌تر کردن دامنه تحویل. نکته مهم این است که کمیته راهبری برنامه جدید بگیرد، بدون اینکه وعده شما علناً بی‌اعتبار شود." },
+            { "language": "ar", "text": "إذن لا ينبغي أن نعرض الأمر كتصحيح خطأ، بل كتدقيق لنطاق التسليم. المهم أن تحصل لجنة التوجيه على خطة جديدة من دون أن تفقد تعهداتكم قيمتها علناً." },
+            { "language": "tr", "text": "O zaman bunu bir hatayı düzeltme olarak değil, teslim kapsamını netleştirme olarak kurgulamalıyız. Önemli olan, yönlendirme kurulunun yeni bir plan alması ve sizin taahhüdünüzün kamuya açık biçimde değersizleşmemesidir." },
+            { "language": "ru", "text": "Тогда нам не следует подавать это как исправление ошибки, а как уточнение объема поставки. Важно, чтобы управляющий комитет получил новый план, не обесценивая публично ваше обещание." },
+            { "language": "ckb", "text": "ئەوا نابێت ئەمە وەک ڕاستکردنەوەی هەڵەیەک نیشان بدەین، بەڵکو وەک وردکردنەوەی سنووری ڕادەستکردن. گرنگ ئەوەیە کۆمیتەی ڕێبەری پلانی نوێ وەربگرێت، بێ ئەوەی بەڵێنەکەتان بە ئاشکرا بێ‌بها بکرێت." },
+            { "language": "kmr", "text": "Wê demê divê em vê ne wek rastkirina xeletiyekê, lê wek zelalkirina qada radestkirinê pêşkêş bikin. Girîng ew e ku komîteya rêveberiyê planeke nû bistîne bêyî ku soza we bi eşkere bêqîmet bibe." },
+            { "language": "pl", "text": "Wtedy nie powinniśmy przedstawiać tego jako korekty błędu, lecz jako doprecyzowanie zakresu dostawy. Kluczowe jest, aby komitet sterujący dostał nowy plan bez publicznego dewaluowania Państwa zobowiązania." },
+            { "language": "ro", "text": "Atunci nu ar trebui să prezentăm asta ca pe corectarea unei greșeli, ci ca pe o precizare a sferei livrării. Esențial este ca comitetul de coordonare să primească un nou plan fără ca angajamentul dumneavoastră să fie devalorizat public." },
+            { "language": "sq", "text": "Atëherë nuk duhet ta paraqesim si korrigjim gabimi, por si saktësim të fushës së dorëzimit. Vendimtare është që komiteti drejtues të marrë një plan të ri pa u zhvlerësuar publikisht premtimi juaj." }
+          ],
+          "function": "reframe-change-with-face-saving",
+          "toneNote": "protective but realistic"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Wenn wir das zu weich formulieren, sieht es so aus, als wollten wir die Verzögerung verstecken. Wenn wir es zu hart formulieren, stehen wir schlecht da.",
+          "translations": [
+            { "language": "en", "text": "If we phrase it too softly, it looks as if we want to hide the delay. If we phrase it too harshly, we look bad." },
+            { "language": "fa", "text": "اگر آن را زیادی نرم بیان کنیم، انگار می‌خواهیم تأخیر را پنهان کنیم. اگر زیادی تند بیان کنیم، خودمان بد جلوه می‌کنیم." },
+            { "language": "ar", "text": "إذا صغناه بلطف زائد بدا وكأننا نريد إخفاء التأخير. وإذا صغناه بقسوة زائدة ظهرنا بمظهر سيئ." },
+            { "language": "tr", "text": "Bunu fazla yumuşak ifade edersek gecikmeyi saklamak istiyormuşuz gibi görünür. Fazla sert ifade edersek biz kötü görünürüz." },
+            { "language": "ru", "text": "Если мы сформулируем это слишком мягко, будет выглядеть, будто мы хотим скрыть задержку. Если слишком жестко, мы сами будем выглядеть плохо." },
+            { "language": "ckb", "text": "ئەگەر زۆر نەرم دابڕێژین، وەک ئەوە دەردەکەوێت دەمانەوێت دواخستنەکە بشارینەوە. ئەگەر زۆر توند دابڕێژین، ئێمە خراپ دەردەکەوین." },
+            { "language": "kmr", "text": "Heke em wê pir nerm formule bikin, wekî ku em dixwazin derengbûnê veşêrin xuya dike. Heke pir hişk formule bikin, em xirab xuya dikin." },
+            { "language": "pl", "text": "Jeśli sformułujemy to zbyt miękko, będzie wyglądało, jakbyśmy chcieli ukryć opóźnienie. Jeśli zbyt ostro, sami wypadniemy źle." },
+            { "language": "ro", "text": "Dacă formulăm prea blând, pare că vrem să ascundem întârzierea. Dacă formulăm prea dur, arătăm noi rău." },
+            { "language": "sq", "text": "Nëse e formulojmë shumë butë, duket sikur duam ta fshehim vonesën. Nëse e formulojmë shumë ashpër, dalim keq ne vetë." }
+          ],
+          "function": "describe-face-saving-dilemma",
+          "toneNote": "reputation concern"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb würde ich die Spannung offen, aber nicht anklagend benennen: Der ursprüngliche Zieltermin bleibt unser Referenzpunkt; für eine belastbare Übergabe brauchen wir jedoch einen Zwischenschritt mit begrenztem Funktionsumfang.",
+          "translations": [
+            { "language": "en", "text": "That is exactly why I would name the tension openly, but not accusatorily: the original target date remains our reference point; however, for a robust handover we need an intermediate step with limited functionality." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل من تنش را صریح اما غیراتهامی بیان می‌کنم: تاریخ هدف اولیه همچنان نقطه مرجع ماست؛ با این حال برای تحویل قابل‌اتکا به یک مرحله میانی با دامنه عملکرد محدود نیاز داریم." },
+            { "language": "ar", "text": "لهذا السبب بالضبط سأسمّي التوتر بصراحة لكن من دون اتهام: يبقى الموعد الأصلي نقطة مرجعنا؛ ومع ذلك نحتاج لتسليم موثوق إلى خطوة وسيطة بنطاق وظيفي محدود." },
+            { "language": "tr", "text": "Tam da bu yüzden gerilimi açık ama suçlayıcı olmayan biçimde adlandırırdım: ilk hedef tarih referans noktamız olarak kalır; ancak sağlam bir teslim için sınırlı işlev kapsamına sahip bir ara adıma ihtiyacımız var." },
+            { "language": "ru", "text": "Именно поэтому я бы назвал напряжение открыто, но без обвинения: первоначальная целевая дата остается нашей точкой отсчета; однако для надежной передачи нам нужен промежуточный шаг с ограниченным функциональным объемом." },
+            { "language": "ckb", "text": "ڕێک بۆیە من گرژییەکە بە ئاشکرا، بەڵام بێ تۆمەت ناو دەبەم: کاتی ئامانجی سەرەتایی هێشتا خاڵی ئاماژەی ئێمەیە؛ بەڵام بۆ ڕادەستکردنی بەهێز پێویستمان بە هەنگاوێکی ناوەندی هەیە بە سنووری کارایی کەمتر." },
+            { "language": "kmr", "text": "Rast ji ber vê ez tengezarîyê vekirî, lê ne tawanbarane bi nav dikim: roja armanca destpêkê hîn jî xalê referansa me ye; lê ji bo radestkirineke bihêz pêdiviya me bi gaveke navîn bi qada fonksiyonê ya sînordar heye." },
+            { "language": "pl", "text": "Właśnie dlatego nazwałbym/nazwałabym napięcie otwarcie, ale bez oskarżania: pierwotny termin docelowy pozostaje naszym punktem odniesienia; jednak do solidnego przekazania potrzebujemy kroku pośredniego z ograniczonym zakresem funkcji." },
+            { "language": "ro", "text": "Tocmai de aceea aș numi tensiunea deschis, dar fără acuzații: termenul țintă inițial rămâne punctul nostru de referință; însă pentru o predare solidă avem nevoie de un pas intermediar cu funcționalitate limitată." },
+            { "language": "sq", "text": "Pikërisht për këtë do ta emërtoja tensionin hapur, por jo në mënyrë akuzuese: afati fillestar mbetet pika jonë e referimit; megjithatë për një dorëzim të qëndrueshëm na duhet një hap i ndërmjetëm me funksionalitet të kufizuar." }
+          ],
+          "function": "name-tension-without-blame",
+          "toneNote": "precise diplomatic language"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Was wäre dann der konkrete neue Vorschlag? Wir können nicht einfach drei Wochen Verschiebung ankündigen.",
+          "translations": [
+            { "language": "en", "text": "What would the concrete new proposal be, then? We cannot simply announce a three-week postponement." },
+            { "language": "fa", "text": "پس پیشنهاد جدید دقیقاً چه خواهد بود؟ نمی‌توانیم فقط سه هفته تأخیر را اعلام کنیم." },
+            { "language": "ar", "text": "ما هو إذن الاقتراح الجديد الملموس؟ لا يمكننا أن نعلن ببساطة تأجيلاً لثلاثة أسابيع." },
+            { "language": "tr", "text": "O halde somut yeni öneri ne olurdu? Sadece üç haftalık ertelemeyi duyuramayız." },
+            { "language": "ru", "text": "Какое тогда конкретное новое предложение? Мы не можем просто объявить перенос на три недели." },
+            { "language": "ckb", "text": "ئەوا پێشنیاری نوێی دیاریکراو چی دەبێت؟ ناتوانین تەنها دواخستنی سێ هەفتە ڕابگەیەنین." },
+            { "language": "kmr", "text": "Wê demê pêşniyara nû ya konkret çi dibe? Em nikarin tenê taloqkirina sê hefteyan ragihînin." },
+            { "language": "pl", "text": "Jaka byłaby więc konkretna nowa propozycja? Nie możemy po prostu ogłosić trzytygodniowego przesunięcia." },
+            { "language": "ro", "text": "Care ar fi atunci propunerea nouă concretă? Nu putem pur și simplu anunța o amânare de trei săptămâni." },
+            { "language": "sq", "text": "Cili do të ishte atëherë propozimi i ri konkret? Nuk mund të njoftojmë thjesht shtyrjen me tri javë." }
+          ],
+          "function": "request-concrete-alternative",
+          "toneNote": "need for action"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde zwei Lieferpunkte vorschlagen: Ende des Monats eine testbare Basisversion für die Kernprozesse, drei Wochen später die vollständige Schnittstelle. So halten wir das öffentliche Versprechen teilweise ein und machen den Rest planbar.",
+          "translations": [
+            { "language": "en", "text": "I would propose two delivery points: by the end of the month, a testable basic version for the core processes, and three weeks later the complete interface. That way we partially keep the public promise and make the rest plannable." },
+            { "language": "fa", "text": "من دو نقطه تحویل پیشنهاد می‌دهم: تا پایان ماه یک نسخه پایه قابل‌تست برای فرایندهای اصلی، و سه هفته بعد رابط کامل. این‌طور بخشی از وعده عمومی را حفظ می‌کنیم و باقی کار را قابل‌برنامه‌ریزی می‌کنیم." },
+            { "language": "ar", "text": "سأقترح نقطتي تسليم: حتى نهاية الشهر نسخة أساسية قابلة للاختبار للعمليات الأساسية، وبعد ثلاثة أسابيع الواجهة الكاملة. هكذا نفي بالوعد العلني جزئياً ونجعل الباقي قابلاً للتخطيط." },
+            { "language": "tr", "text": "İki teslim noktası önerirdim: ay sonunda çekirdek süreçler için test edilebilir bir temel sürüm, üç hafta sonra da tam arayüz. Böylece kamuya açık vaadi kısmen tutar ve geri kalanı planlanabilir hale getiririz." },
+            { "language": "ru", "text": "Я бы предложил две точки поставки: к концу месяца тестируемую базовую версию для основных процессов, а через три недели - полный интерфейс. Так мы частично выполняем публичное обещание и делаем остальное планируемым." },
+            { "language": "ckb", "text": "من دوو خاڵی ڕادەستکردن پێشنیار دەکەم: تا کۆتایی مانگ وەشانی بنەڕەتیی تاقیکراوە بۆ پرۆسە سەرەکییەکان، و سێ هەفتە دواتر نێوانڕووکاری پەیوەندیی تەواو. بەمە بەشێک لە بەڵێنی گشتی جێبەجێ دەکەین و دەکرێت بۆ بەشی دیکە پلان دابنرێت." },
+            { "language": "kmr", "text": "Ez du xalên radestkirinê pêşniyar dikim: heta dawiya mehê guhertoyeke bingehîn a testkirbar ji bo pêvajoyên navendî, û sê hefte paşê navrûya temam. Wisa em soza eşkere beşekê pêk tînin û mayî planbar dikin." },
+            { "language": "pl", "text": "Zaproponowałbym/zaproponowałabym dwa punkty dostawy: do końca miesiąca testowalną wersję podstawową dla procesów kluczowych, a trzy tygodnie później pełny interfejs. W ten sposób częściowo dotrzymujemy publicznej obietnicy i czynimy resztę planowalną." },
+            { "language": "ro", "text": "Aș propune două puncte de livrare: până la sfârșitul lunii o versiune de bază testabilă pentru procesele principale, iar trei săptămâni mai târziu interfața completă. Astfel respectăm parțial promisiunea publică și facem restul planificabil." },
+            { "language": "sq", "text": "Do të propozoja dy pika dorëzimi: deri në fund të muajit një version bazë të testueshëm për proceset kryesore dhe tri javë më vonë ndërfaqen e plotë. Kështu e mbajmë pjesërisht premtimin publik dhe e bëjmë pjesën tjetër të planifikueshme." }
+          ],
+          "function": "offer-two-step-delivery-plan",
+          "toneNote": "face-saving concrete plan"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Ich fürchte trotzdem, dass es als Rückzug gelesen wird. Der Lenkungskreis erwartet eine klare Aussage, nicht nur eine neue Verpackung.",
+          "translations": [
+            { "language": "en", "text": "I still fear it will be read as backing down. The steering committee expects a clear statement, not just new packaging." },
+            { "language": "fa", "text": "با این حال می‌ترسم به‌عنوان عقب‌نشینی خوانده شود. کمیته راهبری انتظار بیان روشن دارد، نه فقط بسته‌بندی جدید." },
+            { "language": "ar", "text": "ما زلت أخشى أن يُقرأ الأمر كتراجع. لجنة التوجيه تتوقع تصريحاً واضحاً، لا مجرد تغليف جديد." },
+            { "language": "tr", "text": "Yine de bunun geri adım olarak okunmasından korkuyorum. Yönlendirme kurulu sadece yeni bir ambalaj değil, net bir ifade bekliyor." },
+            { "language": "ru", "text": "Я все же опасаюсь, что это будет воспринято как отступление. Управляющий комитет ожидает ясного заявления, а не просто новой упаковки." },
+            { "language": "ckb", "text": "هێشتا دەترسم وەک پاشگەزبوونەوە بخوێندرێتەوە. کۆمیتەی ڕێبەری چاوەڕێی دەربڕینی ڕوونە، نە تەنها پێچانەوەی نوێ." },
+            { "language": "kmr", "text": "Ez hîn ditirsim ku wek paşveçûn were xwendin. Komîteya rêveberiyê gotineke zelal dixwaze, ne tenê pakêtkirineke nû." },
+            { "language": "pl", "text": "Nadal obawiam się, że zostanie to odczytane jako wycofanie się. Komitet sterujący oczekuje jasnego komunikatu, a nie tylko nowego opakowania." },
+            { "language": "ro", "text": "Totuși mă tem că va fi citit ca un pas înapoi. Comitetul de coordonare așteaptă o afirmație clară, nu doar un ambalaj nou." },
+            { "language": "sq", "text": "Megjithatë kam frikë se do të lexohet si tërheqje. Komiteti drejtues pret një deklaratë të qartë, jo vetëm paketim të ri." }
+          ],
+          "function": "challenge-reframing-as-spin",
+          "toneNote": "concern about credibility"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann kombinieren wir Klarheit mit Schutz: Wir sagen, dass die vollständige Lieferung mehr Absicherung braucht als zunächst angenommen. Gleichzeitig bieten wir bis Ende des Monats eine überprüfbare Teilleistung an, damit der Fortschritt sichtbar bleibt.",
+          "translations": [
+            { "language": "en", "text": "Then we combine clarity with protection: we say that the complete delivery needs more safeguards than initially assumed. At the same time, we offer a verifiable partial delivery by the end of the month so that progress remains visible." },
+            { "language": "fa", "text": "پس شفافیت را با حفظ اعتبار ترکیب می‌کنیم: می‌گوییم تحویل کامل به پوشش و اطمینان بیشتری از آنچه ابتدا تصور شده بود نیاز دارد. همزمان تا پایان ماه یک خروجی جزئی قابل‌بررسی ارائه می‌دهیم تا پیشرفت قابل‌دیدن بماند." },
+            { "language": "ar", "text": "إذن نجمع الوضوح مع الحماية: نقول إن التسليم الكامل يحتاج إلى ضمانات أكثر مما افترض في البداية. وفي الوقت نفسه نقدم حتى نهاية الشهر إنجازاً جزئياً قابلاً للتحقق حتى يبقى التقدم مرئياً." },
+            { "language": "tr", "text": "O zaman açıklığı korumayla birleştiririz: tam teslimatın başlangıçta varsayılandan daha fazla güvence gerektirdiğini söyleriz. Aynı zamanda ilerleme görünür kalsın diye ay sonuna kadar doğrulanabilir bir kısmi teslim sunarız." },
+            { "language": "ru", "text": "Тогда мы сочетаем ясность с защитой: говорим, что полная поставка требует большей страховки, чем предполагалось сначала. Одновременно до конца месяца предлагаем проверяемую частичную поставку, чтобы прогресс оставался видимым." },
+            { "language": "ckb", "text": "ئەوا ڕوونی لەگەڵ پاراستن تێکەڵ دەکەین: دەڵێین ڕادەستکردنی تەواو پێویستی بە دڵنیایی زیاتری هەیە لەوەی سەرەتا گریمانە کرابوو. لە هەمان کاتدا تا کۆتایی مانگ بەشێکی پشکنراو پێشکەش دەکەین بۆ ئەوەی پێشکەوتن دیار بمێنێت." },
+            { "language": "kmr", "text": "Wê demê em zelalî bi parastinê re têkildar dikin: em dibêjin radestkirina temam ji ya ku di destpêkê de hatiye hesibandin zêdetir ewlehî hewce dike. Di heman demê de em heta dawiya mehê beşeke kontrolkirbar pêşkêş dikin da ku pêşveçûn xuya bimîne." },
+            { "language": "pl", "text": "Wtedy łączymy jasność z ochroną: mówimy, że pełna dostawa wymaga większego zabezpieczenia, niż początkowo zakładano. Jednocześnie do końca miesiąca oferujemy weryfikowalną część dostawy, aby postęp pozostał widoczny." },
+            { "language": "ro", "text": "Atunci combinăm claritatea cu protecția: spunem că livrarea completă are nevoie de mai multe garanții decât s-a presupus inițial. În același timp oferim până la sfârșitul lunii o livrare parțială verificabilă, astfel încât progresul să rămână vizibil." },
+            { "language": "sq", "text": "Atëherë kombinojmë qartësinë me mbrojtjen: themi se dorëzimi i plotë ka nevojë për më shumë sigurim sesa u mendua fillimisht. Njëkohësisht ofrojmë deri në fund të muajit një dorëzim të pjesshëm të verifikueshëm, që progresi të mbetet i dukshëm." }
+          ],
+          "function": "combine-clarity-and-face-saving",
+          "toneNote": "credible reframing"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Welche Formulierung würden Sie im Lenkungskreis verwenden?",
+          "translations": [
+            { "language": "en", "text": "What wording would you use in the steering committee?" },
+            { "language": "fa", "text": "در کمیته راهبری چه فرمول‌بندی‌ای استفاده می‌کنید؟" },
+            { "language": "ar", "text": "ما الصياغة التي ستستخدمها في لجنة التوجيه؟" },
+            { "language": "tr", "text": "Yönlendirme kurulunda hangi ifadeyi kullanırdınız?" },
+            { "language": "ru", "text": "Какую формулировку вы бы использовали в управляющем комитете?" },
+            { "language": "ckb", "text": "لە کۆمیتەی ڕێبەریدا چ دەربڕینێک بەکار دەهێنیت؟" },
+            { "language": "kmr", "text": "Di komîteya rêveberiyê de hûn dê kîjan gotinê bikar bînin?" },
+            { "language": "pl", "text": "Jakiego sformułowania użyłby/użyłaby Pan/Pani w komitecie sterującym?" },
+            { "language": "ro", "text": "Ce formulare ați folosi în comitetul de coordonare?" },
+            { "language": "sq", "text": "Çfarë formulimi do të përdornit në komitetin drejtues?" }
+          ],
+          "function": "request-exact-wording",
+          "toneNote": "needs executive language"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Der Zieltermin bleibt wichtig, deshalb liefern wir Ende des Monats eine testbare Basisversion. Für die vollständige Schnittstelle schlagen wir einen abgesicherten Termin drei Wochen später vor, damit Qualität und Anschlussfähigkeit nicht gegeneinander ausgespielt werden.",
+          "translations": [
+            { "language": "en", "text": "I would say: the target date remains important, which is why we will deliver a testable basic version at the end of the month. For the complete interface, we propose a safeguarded date three weeks later so that quality and connectivity are not played off against each other." },
+            { "language": "fa", "text": "می‌گویم: تاریخ هدف همچنان مهم است، به همین دلیل تا پایان ماه یک نسخه پایه قابل‌تست تحویل می‌دهیم. برای رابط کامل، یک تاریخ مطمئن سه هفته بعد پیشنهاد می‌کنیم تا کیفیت و قابلیت اتصال در برابر هم قرار نگیرند." },
+            { "language": "ar", "text": "سأقول: يبقى الموعد المستهدف مهماً، لذلك سنسلم في نهاية الشهر نسخة أساسية قابلة للاختبار. وبالنسبة إلى الواجهة الكاملة نقترح موعداً مؤمناً بعد ثلاثة أسابيع، حتى لا توضع الجودة وقابلية الربط ضد بعضهما." },
+            { "language": "tr", "text": "Şöyle derdim: hedef tarih önemli kalıyor, bu nedenle ay sonunda test edilebilir bir temel sürüm teslim ediyoruz. Tam arayüz için üç hafta sonrasına güvence altına alınmış bir tarih öneriyoruz; böylece kalite ile bağlantı kabiliyeti birbirine karşı oynatılmaz." },
+            { "language": "ru", "text": "Я бы сказал: целевая дата остается важной, поэтому к концу месяца мы поставляем тестируемую базовую версию. Для полного интерфейса мы предлагаем защищенный срок через три недели, чтобы качество и подключаемость не противопоставлялись друг другу." },
+            { "language": "ckb", "text": "دەڵێم: کاتی ئامانج هێشتا گرنگە، بۆیە تا کۆتایی مانگ وەشانی بنەڕەتیی تاقیکراوە ڕادەست دەکەین. بۆ نێوانڕووکاری پەیوەندیی تەواو، کاتێکی دڵنیا سێ هەفتە دواتر پێشنیار دەکەین، بۆ ئەوەی کوالیتی و توانای پەیوەستبوون بەرامبەر یەک دانەنرێن." },
+            { "language": "kmr", "text": "Ez dê bêjim: roja armancê hîn girîng e, ji ber vê heta dawiya mehê guhertoyeke bingehîn a testkirbar radest dikin. Ji bo navrûya temam, em rojeke ewlekirî sê hefte paşê pêşniyar dikin, da ku kalîte û girêdanbarî li dijî hev neyên danîn." },
+            { "language": "pl", "text": "Powiedziałbym/powiedziałabym: termin docelowy pozostaje ważny, dlatego do końca miesiąca dostarczymy testowalną wersję podstawową. Dla pełnego interfejsu proponujemy zabezpieczony termin trzy tygodnie później, aby jakości i możliwości podłączenia nie rozgrywać przeciwko sobie." },
+            { "language": "ro", "text": "Aș spune: termenul țintă rămâne important, de aceea livrăm la sfârșitul lunii o versiune de bază testabilă. Pentru interfața completă propunem un termen asigurat trei săptămâni mai târziu, astfel încât calitatea și conectabilitatea să nu fie puse una împotriva celeilalte." },
+            { "language": "sq", "text": "Do të thosha: afati i synuar mbetet i rëndësishëm, prandaj në fund të muajit dorëzojmë një version bazë të testueshëm. Për ndërfaqen e plotë propozojmë një afat të siguruar tri javë më vonë, që cilësia dhe lidhshmëria të mos vendosen kundër njëra-tjetrës." }
+          ],
+          "function": "deliver-face-saving-wording",
+          "toneNote": "executive-ready"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Damit kann ich arbeiten. Wir brauchen aber eine klare interne Verantwortlichkeit, damit der zweite Termin nicht wieder rutscht.",
+          "translations": [
+            { "language": "en", "text": "I can work with that. But we need clear internal responsibility so that the second date does not slip again." },
+            { "language": "fa", "text": "با این می‌توانم کار کنم. اما به مسئولیت داخلی روشن نیاز داریم تا تاریخ دوم دوباره عقب نیفتد." },
+            { "language": "ar", "text": "يمكنني العمل بهذا. لكننا نحتاج إلى مسؤولية داخلية واضحة حتى لا ينزلق الموعد الثاني مرة أخرى." },
+            { "language": "tr", "text": "Bununla çalışabilirim. Ancak ikinci tarihin yeniden kaymaması için net iç sorumluluğa ihtiyacımız var." },
+            { "language": "ru", "text": "С этим я могу работать. Но нам нужна четкая внутренняя ответственность, чтобы второй срок снова не сдвинулся." },
+            { "language": "ckb", "text": "دەتوانم بە ئەمە کار بکەم. بەڵام پێویستمان بە بەرپرسیارێتی ناوخۆیی ڕوونە بۆ ئەوەی کاتی دووەم دووبارە نەخلیسکێت." },
+            { "language": "kmr", "text": "Ez dikarim bi vê bixebitim. Lê pêdiviya me bi berpirsiyariya hundirîn a zelal heye da ku roja duyem dîsa nekeve paş." },
+            { "language": "pl", "text": "Z tym mogę pracować. Potrzebujemy jednak jasnej odpowiedzialności wewnętrznej, żeby drugi termin znów się nie przesunął." },
+            { "language": "ro", "text": "Cu asta pot lucra. Dar avem nevoie de o responsabilitate internă clară, ca al doilea termen să nu alunece din nou." },
+            { "language": "sq", "text": "Me këtë mund të punoj. Por na duhet përgjegjësi e brendshme e qartë që afati i dytë të mos rrëshqasë përsëri." }
+          ],
+          "function": "ask-for-accountability",
+          "toneNote": "implementation control"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann halten wir drei Punkte fest: Basisversion bis Monatsende mit gemeinsamem Abnahmetest, vollständige Schnittstelle drei Wochen später, und ein wöchentlicher Risikostatus mit Entscheidungspfad, falls eine Abhängigkeit blockiert.",
+          "translations": [
+            { "language": "en", "text": "Then we record three points: a basic version by month-end with a joint acceptance test, the complete interface three weeks later, and a weekly risk status with a decision path if a dependency blocks progress." },
+            { "language": "fa", "text": "پس سه نکته را ثبت می‌کنیم: نسخه پایه تا پایان ماه همراه با تست پذیرش مشترک، رابط کامل سه هفته بعد، و وضعیت هفتگی ریسک با مسیر تصمیم‌گیری اگر یک وابستگی مانع پیشرفت شود." },
+            { "language": "ar", "text": "إذن نثبت ثلاث نقاط: نسخة أساسية حتى نهاية الشهر مع اختبار قبول مشترك، والواجهة الكاملة بعد ثلاثة أسابيع، وحالة مخاطر أسبوعية مع مسار قرار إذا عطلت تبعية ما التقدم." },
+            { "language": "tr", "text": "O halde üç noktayı kayda geçiririz: ay sonuna kadar ortak kabul testiyle temel sürüm, üç hafta sonra tam arayüz ve bir bağımlılık ilerlemeyi engellerse karar yoluyla haftalık risk durumu." },
+            { "language": "ru", "text": "Тогда фиксируем три пункта: базовая версия к концу месяца с совместным приемочным тестом, полный интерфейс через три недели и еженедельный статус рисков с путем решения, если зависимость блокирует прогресс." },
+            { "language": "ckb", "text": "ئەوا سێ خاڵ تۆمار دەکەین: وەشانی بنەڕەتی تا کۆتایی مانگ لەگەڵ تاقیکردنەوەی وەرگرتنی هاوبەش، نێوانڕووکاری پەیوەندیی تەواو سێ هەفتە دواتر، و دۆخی هەفتانەی مەترسی لەگەڵ ڕێڕەوی بڕیار ئەگەر پەیوەستبوونێک پێشکەوتن بلۆک بکات." },
+            { "language": "kmr", "text": "Wê demê em sê xal tomar dikin: guhertoya bingehîn heta dawiya mehê bi testa qebûlkirinê ya hevpar, navrûya temam sê hefte paşê, û statûya xeterê ya heftane bi rêya biryarê heke girêdanek pêşveçûnê asteng bike." },
+            { "language": "pl", "text": "Wtedy zapisujemy trzy punkty: wersja podstawowa do końca miesiąca ze wspólnym testem odbioru, pełny interfejs trzy tygodnie później oraz cotygodniowy status ryzyka ze ścieżką decyzji, jeśli zależność zablokuje postęp." },
+            { "language": "ro", "text": "Atunci consemnăm trei puncte: versiune de bază până la sfârșitul lunii cu test de acceptanță comun, interfața completă trei săptămâni mai târziu și un status săptămânal de risc cu traseu decizional dacă o dependență blochează progresul." },
+            { "language": "sq", "text": "Atëherë regjistrojmë tri pika: version bazë deri në fund të muajit me test pranimi të përbashkët, ndërfaqja e plotë tri javë më vonë dhe status javor rreziku me rrugë vendimmarrjeje nëse një varësi bllokon progresin." }
+          ],
+          "function": "close-with-accountability-plan",
+          "toneNote": "concrete and binding closure"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollten wir das nicht als Korrektur eines Fehlers inszenieren, sondern als Präzisierung des Lieferumfangs. Entscheidend ist, dass der Lenkungskreis einen neuen Plan bekommt, ohne dass Ihre Zusage öffentlich entwertet wird.",
+              "translations": [
+                { "language": "en", "text": "Then we should not stage this as correcting a mistake, but as refining the delivery scope. What matters is that the steering committee receives a new plan without publicly devaluing your commitment." },
+                { "language": "fa", "text": "پس نباید آن را به‌عنوان اصلاح یک اشتباه نمایش دهیم، بلکه به‌عنوان دقیق‌تر کردن دامنه تحویل. نکته مهم این است که کمیته راهبری برنامه جدید بگیرد، بدون اینکه وعده شما علناً بی‌اعتبار شود." },
+                { "language": "ar", "text": "إذن لا ينبغي أن نعرض الأمر كتصحيح خطأ، بل كتدقيق لنطاق التسليم. المهم أن تحصل لجنة التوجيه على خطة جديدة من دون أن تفقد تعهداتكم قيمتها علناً." },
+                { "language": "tr", "text": "O zaman bunu bir hatayı düzeltme olarak değil, teslim kapsamını netleştirme olarak kurgulamalıyız. Önemli olan, yönlendirme kurulunun yeni bir plan alması ve sizin taahhüdünüzün kamuya açık biçimde değersizleşmemesidir." },
+                { "language": "ru", "text": "Тогда нам не следует подавать это как исправление ошибки, а как уточнение объема поставки. Важно, чтобы управляющий комитет получил новый план, не обесценивая публично ваше обещание." },
+                { "language": "ckb", "text": "ئەوا نابێت ئەمە وەک ڕاستکردنەوەی هەڵەیەک نیشان بدەین، بەڵکو وەک وردکردنەوەی سنووری ڕادەستکردن. گرنگ ئەوەیە کۆمیتەی ڕێبەری پلانی نوێ وەربگرێت، بێ ئەوەی بەڵێنەکەتان بە ئاشکرا بێ‌بها بکرێت." },
+                { "language": "kmr", "text": "Wê demê divê em vê ne wek rastkirina xeletiyekê, lê wek zelalkirina qada radestkirinê pêşkêş bikin. Girîng ew e ku komîteya rêveberiyê planeke nû bistîne bêyî ku soza we bi eşkere bêqîmet bibe." },
+                { "language": "pl", "text": "Wtedy nie powinniśmy przedstawiać tego jako korekty błędu, lecz jako doprecyzowanie zakresu dostawy. Kluczowe jest, aby komitet sterujący dostał nowy plan bez publicznego dewaluowania Państwa zobowiązania." },
+                { "language": "ro", "text": "Atunci nu ar trebui să prezentăm asta ca pe corectarea unei greșeli, ci ca pe o precizare a sferei livrării. Esențial este ca comitetul de coordonare să primească un nou plan fără ca angajamentul dumneavoastră să fie devalorizat public." },
+                { "language": "sq", "text": "Atëherë nuk duhet ta paraqesim si korrigjim gabimi, por si saktësim të fushës së dorëzimit. Vendimtare është që komiteti drejtues të marrë një plan të ri pa u zhvlerësuar publikisht premtimi juaj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt das Gesicht der Partnerseite und verschiebt die Diskussion auf Lieferumfang und neuen Plan.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer protects the partner's face and shifts the discussion to delivery scope and a new plan." },
+                { "language": "fa", "text": "قوی: پاسخ اعتبار طرف مقابل را حفظ می‌کند و بحث را به دامنه تحویل و برنامه جدید منتقل می‌کند." },
+                { "language": "ar", "text": "قوي: تحمي الإجابة ماء وجه الطرف الشريك وتنقل النقاش إلى نطاق التسليم والخطة الجديدة." },
+                { "language": "tr", "text": "Güçlü: cevap partner tarafın itibarını korur ve tartışmayı teslim kapsamına ve yeni plana taşır." },
+                { "language": "ru", "text": "Сильно: ответ защищает лицо партнера и переносит обсуждение на объем поставки и новый план." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕووی لایەنی شەریک دەپارێزێت و گفتوگۆکە دەگوازێتەوە بۆ سنووری ڕادەستکردن و پلانی نوێ." },
+                { "language": "kmr", "text": "Xurt e: bersiv rûyê aliyê hevkar diparêze û nîqaşê dibe ser qada radestkirinê û plana nû." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni twarz partnera i przenosi dyskusję na zakres dostawy oraz nowy plan." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează prestigiul partenerului și mută discuția spre sfera livrării și noul plan." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron fytyrën e palës partnere dhe e zhvendos diskutimin te fusha e dorëzimit dhe plani i ri." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten offen sagen, dass der ursprüngliche Termin nicht zu halten ist und wir drei Wochen mehr brauchen.",
+              "translations": [
+                { "language": "en", "text": "We should openly say that the original deadline cannot be kept and that we need three more weeks." },
+                { "language": "fa", "text": "باید صریح بگوییم که تاریخ اولیه قابل حفظ نیست و سه هفته بیشتر نیاز داریم." },
+                { "language": "ar", "text": "ينبغي أن نقول بصراحة إن الموعد الأصلي لا يمكن الالتزام به وإننا نحتاج إلى ثلاثة أسابيع إضافية." },
+                { "language": "tr", "text": "Başlangıçtaki tarihin tutulamayacağını ve üç hafta daha gerektiğini açıkça söylemeliyiz." },
+                { "language": "ru", "text": "Мы должны открыто сказать, что первоначальный срок нельзя удержать и что нам нужно еще три недели." },
+                { "language": "ckb", "text": "دەبێت بە ئاشکرا بڵێین کە کاتی سەرەتایی ناتوانرێت بپارێزرێت و سێ هەفتەی زیاترمان پێویستە." },
+                { "language": "kmr", "text": "Divê em vekirî bêjin ku roja destpêkê nikare were parastin û sê hefteyên din hewce ne." },
+                { "language": "pl", "text": "Powinniśmy otwarcie powiedzieć, że pierwotnego terminu nie da się dotrzymać i potrzebujemy trzech tygodni więcej." },
+                { "language": "ro", "text": "Ar trebui să spunem deschis că termenul inițial nu poate fi respectat și că avem nevoie de încă trei săptămâni." },
+                { "language": "sq", "text": "Duhet të themi hapur se afati fillestar nuk mund të mbahet dhe se na duhen edhe tri javë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu frontal: Die Antwort ist ehrlich, bietet aber keinen gesichtswahrenden Rahmen und keinen neuen Nutzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too frontal: the answer is honest, but offers no face-saving frame and no new value." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی مستقیم است: پاسخ صادقانه است، اما چارچوب حفظ اعتبار و ارزش جدید ارائه نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه مباشر جداً: الإجابة صادقة، لكنها لا تقدم إطاراً يحفظ ماء الوجه ولا قيمة جديدة." },
+                { "language": "tr", "text": "Makul ama fazla cepheden: cevap dürüst, fakat itibar koruyan bir çerçeve ve yeni değer sunmuyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком прямолинейно: ответ честный, но не предлагает рамку сохранения лица и новой ценности." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر ڕاستەوخۆیە: وەڵامەکە ڕاستگۆیە، بەڵام چوارچێوەی پاراستنی ڕوو و بەهای نوێ پێشکەش ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir rasterast e: bersiv rast e, lê çarçoveyeke parastina rû û nirxeke nû nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt frontalne: odpowiedź jest uczciwa, lecz nie daje ramy ratującej twarz ani nowej wartości." },
+                { "language": "ro", "text": "Plauzibil, dar prea frontal: răspunsul este onest, dar nu oferă un cadru de protejare a prestigiului și nici o valoare nouă." },
+                { "language": "sq", "text": "E besueshme, por shumë ballore: përgjigjja është e sinqertë, por nuk ofron kornizë për ruajtjen e fytyrës dhe as vlerë të re." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau deshalb würde ich die Spannung offen, aber nicht anklagend benennen: Der ursprüngliche Zieltermin bleibt unser Referenzpunkt; für eine belastbare Übergabe brauchen wir jedoch einen Zwischenschritt mit begrenztem Funktionsumfang.",
+              "translations": [
+                { "language": "en", "text": "That is exactly why I would name the tension openly, but not accusatorily: the original target date remains our reference point; however, for a robust handover we need an intermediate step with limited functionality." },
+                { "language": "fa", "text": "دقیقاً به همین دلیل من تنش را صریح اما غیراتهامی بیان می‌کنم: تاریخ هدف اولیه همچنان نقطه مرجع ماست؛ با این حال برای تحویل قابل‌اتکا به یک مرحله میانی با دامنه عملکرد محدود نیاز داریم." },
+                { "language": "ar", "text": "لهذا السبب بالضبط سأسمّي التوتر بصراحة لكن من دون اتهام: يبقى الموعد الأصلي نقطة مرجعنا؛ ومع ذلك نحتاج لتسليم موثوق إلى خطوة وسيطة بنطاق وظيفي محدود." },
+                { "language": "tr", "text": "Tam da bu yüzden gerilimi açık ama suçlayıcı olmayan biçimde adlandırırdım: ilk hedef tarih referans noktamız olarak kalır; ancak sağlam bir teslim için sınırlı işlev kapsamına sahip bir ara adıma ihtiyacımız var." },
+                { "language": "ru", "text": "Именно поэтому я бы назвал напряжение открыто, но без обвинения: первоначальная целевая дата остается нашей точкой отсчета; однако для надежной передачи нам нужен промежуточный шаг с ограниченным функциональным объемом." },
+                { "language": "ckb", "text": "ڕێک بۆیە من گرژییەکە بە ئاشکرا، بەڵام بێ تۆمەت ناو دەبەم: کاتی ئامانجی سەرەتایی هێشتا خاڵی ئاماژەی ئێمەیە؛ بەڵام بۆ ڕادەستکردنی بەهێز پێویستمان بە هەنگاوێکی ناوەندی هەیە بە سنووری کارایی کەمتر." },
+                { "language": "kmr", "text": "Rast ji ber vê ez tengezarîyê vekirî, lê ne tawanbarane bi nav dikim: roja armanca destpêkê hîn jî xalê referansa me ye; lê ji bo radestkirineke bihêz pêdiviya me bi gaveke navîn bi qada fonksiyonê ya sînordar heye." },
+                { "language": "pl", "text": "Właśnie dlatego nazwałbym/nazwałabym napięcie otwarcie, ale bez oskarżania: pierwotny termin docelowy pozostaje naszym punktem odniesienia; jednak do solidnego przekazania potrzebujemy kroku pośredniego z ograniczonym zakresem funkcji." },
+                { "language": "ro", "text": "Tocmai de aceea aș numi tensiunea deschis, dar fără acuzații: termenul țintă inițial rămâne punctul nostru de referință; însă pentru o predare solidă avem nevoie de un pas intermediar cu funcționalitate limitată." },
+                { "language": "sq", "text": "Pikërisht për këtë do ta emërtoja tensionin hapur, por jo në mënyrë akuzuese: afati fillestar mbetet pika jonë e referimit; megjithatë për një dorëzim të qëndrueshëm na duhet një hap i ndërmjetëm me funksionalitet të kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist klar, ohne Schuld zuzuweisen, und macht die Änderung fachlich begründbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer is clear without assigning blame and makes the change professionally justifiable." },
+                { "language": "fa", "text": "قوی: پاسخ روشن است، بدون اینکه تقصیر نسبت دهد، و تغییر را از نظر تخصصی قابل‌توجیه می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة واضحة من دون إلقاء اللوم، وتجعل التغيير قابلاً للتبرير مهنياً." },
+                { "language": "tr", "text": "Güçlü: cevap suç yüklemeden nettir ve değişikliği uzmanlık açısından gerekçelendirilebilir kılar." },
+                { "language": "ru", "text": "Сильно: ответ ясен без возложения вины и делает изменение профессионально обоснованным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕوونە بێ ئەوەی تاوان دابنێت و گۆڕانەکە بە پیشەیی پاساو دەدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv bê tawanbarî zelal e û guhertinê ji aliyê pisporî ve bi sedem dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest jasna bez przypisywania winy i czyni zmianę merytorycznie uzasadnioną." },
+                { "language": "ro", "text": "Puternic: răspunsul este clar fără a atribui vină și face schimbarea justificabilă profesional." },
+                { "language": "sq", "text": "E fortë: përgjigjja është e qartë pa caktuar faj dhe e bën ndryshimin profesionalisht të justifikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten sagen, dass es eine kleine Anpassung gibt und der Termin deshalb neu bewertet wird.",
+              "translations": [
+                { "language": "en", "text": "We should say that there is a small adjustment and the deadline is therefore being reassessed." },
+                { "language": "fa", "text": "باید بگوییم یک اصلاح کوچک وجود دارد و به همین دلیل تاریخ دوباره ارزیابی می‌شود." },
+                { "language": "ar", "text": "ينبغي أن نقول إن هناك تعديلاً صغيراً ولذلك يعاد تقييم الموعد." },
+                { "language": "tr", "text": "Küçük bir uyarlama olduğunu ve bu nedenle tarihin yeniden değerlendirildiğini söylemeliyiz." },
+                { "language": "ru", "text": "Мы должны сказать, что есть небольшая корректировка и поэтому срок пересматривается." },
+                { "language": "ckb", "text": "دەبێت بڵێین کەمێک گۆڕانکاری هەیە و بۆیە کاتەکە دووبارە هەڵسەنگاندن دەکرێت." },
+                { "language": "kmr", "text": "Divê em bêjin ku sererastkirineke piçûk heye û ji ber vê roj dîsa tê nirxandin." },
+                { "language": "pl", "text": "Powinniśmy powiedzieć, że jest małe dostosowanie i dlatego termin jest ponownie oceniany." },
+                { "language": "ro", "text": "Ar trebui să spunem că există o mică ajustare și de aceea termenul este reevaluat." },
+                { "language": "sq", "text": "Duhet të themi se ka një përshtatje të vogël dhe prandaj afati po rivlerësohet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu beschönigend: Die Antwort vermeidet Gesichtsverlust, wirkt aber wie Vernebelung und erklärt den fachlichen Grund nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too euphemistic: the answer avoids loss of face, but sounds like fogging and does not explain the professional reason." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی زیبا جلوه می‌دهد: پاسخ از آبروریزی جلوگیری می‌کند، اما شبیه مبهم‌سازی است و دلیل تخصصی را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه يجمّل كثيراً: يتجنب الجواب فقدان ماء الوجه، لكنه يبدو كتمويش ولا يشرح السبب المهني." },
+                { "language": "tr", "text": "Makul ama fazla yumuşatıcı: cevap itibar kaybını önler, fakat bulanıklaştırma gibi gelir ve uzmanlık nedenini açıklamaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком приукрашено: ответ избегает потери лица, но звучит как затуманивание и не объясняет профессиональную причину." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر جوان دەیکات: وەڵامەکە ڕێگری لە لەدەستدانی ڕوو دەکات، بەڵام وەک لێڵکردن دەنگ دەدات و هۆکاری پیشەیی ڕوون ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir xweş dike: bersiv rûreşbûnê dûr dixe, lê wek nezelalkirinê tê bihîstin û sedema pisporî rave nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt upiększające: odpowiedź unika utraty twarzy, lecz brzmi jak zaciemnianie i nie wyjaśnia merytorycznego powodu." },
+                { "language": "ro", "text": "Plauzibil, dar prea cosmetizat: răspunsul evită pierderea prestigiului, dar sună ca o încețoșare și nu explică motivul profesional." },
+                { "language": "sq", "text": "E besueshme, por shumë zbukuruese: përgjigjja shmang humbjen e fytyrës, por tingëllon si mjegullim dhe nuk shpjegon arsyen profesionale." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde zwei Lieferpunkte vorschlagen: Ende des Monats eine testbare Basisversion für die Kernprozesse, drei Wochen später die vollständige Schnittstelle. So halten wir das öffentliche Versprechen teilweise ein und machen den Rest planbar.",
+              "translations": [
+                { "language": "en", "text": "I would propose two delivery points: by the end of the month, a testable basic version for the core processes, and three weeks later the complete interface. That way we partially keep the public promise and make the rest plannable." },
+                { "language": "fa", "text": "من دو نقطه تحویل پیشنهاد می‌دهم: تا پایان ماه یک نسخه پایه قابل‌تست برای فرایندهای اصلی، و سه هفته بعد رابط کامل. این‌طور بخشی از وعده عمومی را حفظ می‌کنیم و باقی کار را قابل‌برنامه‌ریزی می‌کنیم." },
+                { "language": "ar", "text": "سأقترح نقطتي تسليم: حتى نهاية الشهر نسخة أساسية قابلة للاختبار للعمليات الأساسية، وبعد ثلاثة أسابيع الواجهة الكاملة. هكذا نفي بالوعد العلني جزئياً ونجعل الباقي قابلاً للتخطيط." },
+                { "language": "tr", "text": "İki teslim noktası önerirdim: ay sonunda çekirdek süreçler için test edilebilir bir temel sürüm, üç hafta sonra da tam arayüz. Böylece kamuya açık vaadi kısmen tutar ve geri kalanı planlanabilir hale getiririz." },
+                { "language": "ru", "text": "Я бы предложил две точки поставки: к концу месяца тестируемую базовую версию для основных процессов, а через три недели - полный интерфейс. Так мы частично выполняем публичное обещание и делаем остальное планируемым." },
+                { "language": "ckb", "text": "من دوو خاڵی ڕادەستکردن پێشنیار دەکەم: تا کۆتایی مانگ وەشانی بنەڕەتیی تاقیکراوە بۆ پرۆسە سەرەکییەکان، و سێ هەفتە دواتر نێوانڕووکاری پەیوەندیی تەواو. بەمە بەشێک لە بەڵێنی گشتی جێبەجێ دەکەین و دەکرێت بۆ بەشی دیکە پلان دابنرێت." },
+                { "language": "kmr", "text": "Ez du xalên radestkirinê pêşniyar dikim: heta dawiya mehê guhertoyeke bingehîn a testkirbar ji bo pêvajoyên navendî, û sê hefte paşê navrûya temam. Wisa em soza eşkere beşekê pêk tînin û mayî planbar dikin." },
+                { "language": "pl", "text": "Zaproponowałbym/zaproponowałabym dwa punkty dostawy: do końca miesiąca testowalną wersję podstawową dla procesów kluczowych, a trzy tygodnie później pełny interfejs. W ten sposób częściowo dotrzymujemy publicznej obietnicy i czynimy resztę planowalną." },
+                { "language": "ro", "text": "Aș propune două puncte de livrare: până la sfârșitul lunii o versiune de bază testabilă pentru procesele principale, iar trei săptămâni mai târziu interfața completă. Astfel respectăm parțial promisiunea publică și facem restul planificabil." },
+                { "language": "sq", "text": "Do të propozoja dy pika dorëzimi: deri në fund të muajit një version bazë të testueshëm për proceset kryesore dhe tri javë më vonë ndërfaqen e plotë. Kështu e mbajmë pjesërisht premtimin publik dhe e bëjmë pjesën tjetër të planifikueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ersetzt eine reine Verschiebung durch einen zweistufigen Nutzen und schützt damit die öffentliche Zusage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer replaces a mere postponement with two-stage value and thereby protects the public promise." },
+                { "language": "fa", "text": "قوی: پاسخ یک تأخیر صرف را با ارزش دو مرحله‌ای جایگزین می‌کند و به این ترتیب وعده عمومی را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: تستبدل الإجابة التأجيل المجرد بقيمة على مرحلتين، وبذلك تحمي الوعد العلني." },
+                { "language": "tr", "text": "Güçlü: cevap salt ertelemeyi iki aşamalı değerle değiştirir ve böylece kamuya açık vaadi korur." },
+                { "language": "ru", "text": "Сильно: ответ заменяет простую отсрочку двухэтапной ценностью и тем самым защищает публичное обещание." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دواخستنێکی سادە دەگۆڕێت بە بەهای دوو قۆناغی و بەمە بەڵێنی گشتی دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv taloqkirineke tenê bi nirxeke du-astî diguherîne û bi vê soza eşkere diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź zastępuje samo przesunięcie dwustopniową wartością i w ten sposób chroni publiczną obietnicę." },
+                { "language": "ro", "text": "Puternic: răspunsul înlocuiește o simplă amânare cu valoare în două etape și astfel protejează promisiunea publică." },
+                { "language": "sq", "text": "E fortë: përgjigjja zëvendëson një shtyrje të thjeshtë me vlerë me dy faza dhe kështu mbron premtimin publik." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir könnten den Termin um drei Wochen verschieben und bis dahin regelmäßig über Fortschritte berichten.",
+              "translations": [
+                { "language": "en", "text": "We could postpone the deadline by three weeks and report regularly on progress until then." },
+                { "language": "fa", "text": "می‌توانیم تاریخ را سه هفته عقب بیندازیم و تا آن زمان مرتب درباره پیشرفت گزارش دهیم." },
+                { "language": "ar", "text": "يمكننا تأجيل الموعد ثلاثة أسابيع وتقديم تقارير منتظمة عن التقدم حتى ذلك الحين." },
+                { "language": "tr", "text": "Tarihi üç hafta erteleyebilir ve o zamana kadar düzenli olarak ilerleme hakkında rapor verebiliriz." },
+                { "language": "ru", "text": "Мы могли бы перенести срок на три недели и до тех пор регулярно сообщать о прогрессе." },
+                { "language": "ckb", "text": "دەتوانین کاتەکە سێ هەفتە دوا بخەین و تا ئەو کاتە بەردەوام لەسەر پێشکەوتن ڕاپۆرت بدەین." },
+                { "language": "kmr", "text": "Em dikarin rojê sê hefte taloq bikin û heta wê demê bi rêkûpêk li ser pêşveçûnê rapor bidin." },
+                { "language": "pl", "text": "Moglibyśmy przesunąć termin o trzy tygodnie i do tego czasu regularnie raportować postępy." },
+                { "language": "ro", "text": "Am putea amâna termenul cu trei săptămâni și până atunci să raportăm regulat progresul." },
+                { "language": "sq", "text": "Mund ta shtyjmë afatin me tri javë dhe deri atëherë të raportojmë rregullisht për progresin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig: Die Antwort bietet Kontrolle, aber keinen sichtbaren Teilerfolg bis zum ursprünglichen Termin.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not enough: the answer offers control, but no visible partial success by the original date." },
+                { "language": "fa", "text": "قابل‌تصور است، اما کافی نیست: پاسخ کنترل ارائه می‌دهد، اما تا تاریخ اولیه هیچ موفقیت جزئی قابل‌دیدن نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه غير كاف: تقدم الإجابة رقابة، لكنها لا تقدم نجاحاً جزئياً مرئياً حتى الموعد الأصلي." },
+                { "language": "tr", "text": "Makul ama yetersiz: cevap kontrol sunar, fakat ilk tarihe kadar görünür bir kısmi başarı sunmaz." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно: ответ предлагает контроль, но не видимый частичный успех к первоначальному сроку." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام بەس نییە: وەڵامەکە کۆنترۆڵ پێشکەش دەکات، بەڵام تا کاتی سەرەتایی هیچ سەرکەوتنی بەشی دیار نادات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê bes nake: bersiv kontrolê pêşkêş dike, lê heta roja destpêkê serkeftineke beşî ya xuya nade." },
+                { "language": "pl", "text": "Wiarygodne, ale za mało: odpowiedź daje kontrolę, lecz nie daje widocznego częściowego sukcesu do pierwotnego terminu." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient: răspunsul oferă control, dar nu un succes parțial vizibil până la termenul inițial." },
+                { "language": "sq", "text": "E besueshme, por jo e mjaftueshme: përgjigjja ofron kontroll, por jo sukses të pjesshëm të dukshëm deri në afatin fillestar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann kombinieren wir Klarheit mit Schutz: Wir sagen, dass die vollständige Lieferung mehr Absicherung braucht als zunächst angenommen. Gleichzeitig bieten wir bis Ende des Monats eine überprüfbare Teilleistung an, damit der Fortschritt sichtbar bleibt.",
+              "translations": [
+                { "language": "en", "text": "Then we combine clarity with protection: we say that the complete delivery needs more safeguards than initially assumed. At the same time, we offer a verifiable partial delivery by the end of the month so that progress remains visible." },
+                { "language": "fa", "text": "پس شفافیت را با حفظ اعتبار ترکیب می‌کنیم: می‌گوییم تحویل کامل به پوشش و اطمینان بیشتری از آنچه ابتدا تصور شده بود نیاز دارد. همزمان تا پایان ماه یک خروجی جزئی قابل‌بررسی ارائه می‌دهیم تا پیشرفت قابل‌دیدن بماند." },
+                { "language": "ar", "text": "إذن نجمع الوضوح مع الحماية: نقول إن التسليم الكامل يحتاج إلى ضمانات أكثر مما افترض في البداية. وفي الوقت نفسه نقدم حتى نهاية الشهر إنجازاً جزئياً قابلاً للتحقق حتى يبقى التقدم مرئياً." },
+                { "language": "tr", "text": "O zaman açıklığı korumayla birleştiririz: tam teslimatın başlangıçta varsayılandan daha fazla güvence gerektirdiğini söyleriz. Aynı zamanda ilerleme görünür kalsın diye ay sonuna kadar doğrulanabilir bir kısmi teslim sunarız." },
+                { "language": "ru", "text": "Тогда мы сочетаем ясность с защитой: говорим, что полная поставка требует большей страховки, чем предполагалось сначала. Одновременно до конца месяца предлагаем проверяемую частичную поставку, чтобы прогресс оставался видимым." },
+                { "language": "ckb", "text": "ئەوا ڕوونی لەگەڵ پاراستن تێکەڵ دەکەین: دەڵێین ڕادەستکردنی تەواو پێویستی بە دڵنیایی زیاتری هەیە لەوەی سەرەتا گریمانە کرابوو. لە هەمان کاتدا تا کۆتایی مانگ بەشێکی پشکنراو پێشکەش دەکەین بۆ ئەوەی پێشکەوتن دیار بمێنێت." },
+                { "language": "kmr", "text": "Wê demê em zelalî bi parastinê re têkildar dikin: em dibêjin radestkirina temam ji ya ku di destpêkê de hatiye hesibandin zêdetir ewlehî hewce dike. Di heman demê de em heta dawiya mehê beşeke kontrolkirbar pêşkêş dikin da ku pêşveçûn xuya bimîne." },
+                { "language": "pl", "text": "Wtedy łączymy jasność z ochroną: mówimy, że pełna dostawa wymaga większego zabezpieczenia, niż początkowo zakładano. Jednocześnie do końca miesiąca oferujemy weryfikowalną część dostawy, aby postęp pozostał widoczny." },
+                { "language": "ro", "text": "Atunci combinăm claritatea cu protecția: spunem că livrarea completă are nevoie de mai multe garanții decât s-a presupus inițial. În același timp oferim până la sfârșitul lunii o livrare parțială verificabilă, astfel încât progresul să rămână vizibil." },
+                { "language": "sq", "text": "Atëherë kombinojmë qartësinë me mbrojtjen: themi se dorëzimi i plotë ka nevojë për më shumë sigurim sesa u mendua fillimisht. Njëkohësisht ofrojmë deri në fund të muajit një dorëzim të pjesshëm të verifikueshëm, që progresi të mbetet i dukshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet reine Verpackung, weil sie Klarheit und sichtbare Leistung verbindet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids mere packaging because it connects clarity with visible delivery." },
+                { "language": "fa", "text": "قوی: پاسخ از بسته‌بندی صرف پرهیز می‌کند، چون شفافیت را با خروجی قابل‌دیدن پیوند می‌دهد." },
+                { "language": "ar", "text": "قوي: تتجنب الإجابة مجرد التغليف لأنها تربط الوضوح بإنجاز مرئي." },
+                { "language": "tr", "text": "Güçlü: cevap yalnızca ambalajdan kaçınır, çünkü açıklığı görünür teslimatla birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ избегает простой упаковки, потому что соединяет ясность с видимой поставкой." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە پێچانەوەی سادە دوور دەکەوێتەوە، چونکە ڕوونی لەگەڵ ڕادەستکردنی دیار پەیوەست دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji pakêtkirina tenê dûr dikeve, ji ber ku zelalî bi radestkirina xuya ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika samego opakowania, bo łączy jasność z widoczną dostawą." },
+                { "language": "ro", "text": "Puternic: răspunsul evită simplul ambalaj, deoarece leagă claritatea de o livrare vizibilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang paketimin e thjeshtë, sepse lidh qartësinë me dorëzim të dukshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sagen klar, dass wir mehr Zeit brauchen, und betonen, dass die Qualität sonst leiden würde.",
+              "translations": [
+                { "language": "en", "text": "We clearly say that we need more time and emphasize that quality would otherwise suffer." },
+                { "language": "fa", "text": "روشن می‌گوییم که به زمان بیشتری نیاز داریم و تأکید می‌کنیم که در غیر این صورت کیفیت آسیب می‌بیند." },
+                { "language": "ar", "text": "نقول بوضوح إننا نحتاج إلى مزيد من الوقت ونؤكد أن الجودة ستتضرر وإلا." },
+                { "language": "tr", "text": "Daha fazla zamana ihtiyacımız olduğunu açıkça söyler ve aksi halde kalitenin zarar göreceğini vurgularız." },
+                { "language": "ru", "text": "Мы ясно говорим, что нам нужно больше времени, и подчеркиваем, что иначе пострадает качество." },
+                { "language": "ckb", "text": "بە ڕوونی دەڵێین پێویستمان بە کاتی زیاترە و جەخت دەکەینەوە کە ئەگەر نا کوالیتی زیان دەبینێت." },
+                { "language": "kmr", "text": "Em zelal dibêjin ku pêdiviya me bi demeke zêdetir heye û tekez dikin ku wekî din kalîte dê zirar bibîne." },
+                { "language": "pl", "text": "Mówimy jasno, że potrzebujemy więcej czasu, i podkreślamy, że inaczej ucierpi jakość." },
+                { "language": "ro", "text": "Spunem clar că avem nevoie de mai mult timp și subliniem că altfel calitatea ar avea de suferit." },
+                { "language": "sq", "text": "Themi qartë se na duhet më shumë kohë dhe theksojmë se përndryshe cilësia do të dëmtohej." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig differenziert: Die Antwort nennt Qualität, bietet aber keine Teilleistung und keinen Ausweg aus dem Gesichtsverlust.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but insufficiently differentiated: the answer names quality, but offers no partial delivery and no way out of loss of face." },
+                { "language": "fa", "text": "قابل‌تصور است، اما به‌اندازه کافی تفکیک‌شده نیست: پاسخ کیفیت را نام می‌برد، اما خروجی جزئی و راه خروج از آبروریزی ارائه نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه غير متمايز بما يكفي: تذكر الإجابة الجودة، لكنها لا تقدم تسليماً جزئياً ولا مخرجاً من فقدان ماء الوجه." },
+                { "language": "tr", "text": "Makul ama yeterince ayrıştırılmış değil: cevap kaliteyi söyler, fakat kısmi teslim ve itibar kaybından çıkış yolu sunmaz." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно дифференцированно: ответ называет качество, но не предлагает частичную поставку и выход из потери лица." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام بەشیار نەکراوە: وەڵامەکە کوالیتی ناو دەبات، بەڵام ڕادەستکردنی بەشی و ڕێگای دەرچوون لە لەدەستدانی ڕوو پێشکەش ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê ne bes cuda ye: bersiv kalîteyê bi nav dike, lê radestkirina beşî û rêya derketinê ji rûreşbûnê nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt mało zróżnicowane: odpowiedź nazywa jakość, lecz nie oferuje częściowej dostawy ani wyjścia z utraty twarzy." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient diferențiat: răspunsul numește calitatea, dar nu oferă livrare parțială și nici ieșire din pierderea prestigiului." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e diferencuar: përgjigjja përmend cilësinë, por nuk ofron dorëzim të pjesshëm dhe as rrugëdalje nga humbja e fytyrës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde sagen: Der Zieltermin bleibt wichtig, deshalb liefern wir Ende des Monats eine testbare Basisversion. Für die vollständige Schnittstelle schlagen wir einen abgesicherten Termin drei Wochen später vor, damit Qualität und Anschlussfähigkeit nicht gegeneinander ausgespielt werden.",
+              "translations": [
+                { "language": "en", "text": "I would say: the target date remains important, which is why we will deliver a testable basic version at the end of the month. For the complete interface, we propose a safeguarded date three weeks later so that quality and connectivity are not played off against each other." },
+                { "language": "fa", "text": "می‌گویم: تاریخ هدف همچنان مهم است، به همین دلیل تا پایان ماه یک نسخه پایه قابل‌تست تحویل می‌دهیم. برای رابط کامل، یک تاریخ مطمئن سه هفته بعد پیشنهاد می‌کنیم تا کیفیت و قابلیت اتصال در برابر هم قرار نگیرند." },
+                { "language": "ar", "text": "سأقول: يبقى الموعد المستهدف مهماً، لذلك سنسلم في نهاية الشهر نسخة أساسية قابلة للاختبار. وبالنسبة إلى الواجهة الكاملة نقترح موعداً مؤمناً بعد ثلاثة أسابيع، حتى لا توضع الجودة وقابلية الربط ضد بعضهما." },
+                { "language": "tr", "text": "Şöyle derdim: hedef tarih önemli kalıyor, bu nedenle ay sonunda test edilebilir bir temel sürüm teslim ediyoruz. Tam arayüz için üç hafta sonrasına güvence altına alınmış bir tarih öneriyoruz; böylece kalite ile bağlantı kabiliyeti birbirine karşı oynatılmaz." },
+                { "language": "ru", "text": "Я бы сказал: целевая дата остается важной, поэтому к концу месяца мы поставляем тестируемую базовую версию. Для полного интерфейса мы предлагаем защищенный срок через три недели, чтобы качество и подключаемость не противопоставлялись друг другу." },
+                { "language": "ckb", "text": "دەڵێم: کاتی ئامانج هێشتا گرنگە، بۆیە تا کۆتایی مانگ وەشانی بنەڕەتیی تاقیکراوە ڕادەست دەکەین. بۆ نێوانڕووکاری پەیوەندیی تەواو، کاتێکی دڵنیا سێ هەفتە دواتر پێشنیار دەکەین، بۆ ئەوەی کوالیتی و توانای پەیوەستبوون بەرامبەر یەک دانەنرێن." },
+                { "language": "kmr", "text": "Ez dê bêjim: roja armancê hîn girîng e, ji ber vê heta dawiya mehê guhertoyeke bingehîn a testkirbar radest dikin. Ji bo navrûya temam, em rojeke ewlekirî sê hefte paşê pêşniyar dikin, da ku kalîte û girêdanbarî li dijî hev neyên danîn." },
+                { "language": "pl", "text": "Powiedziałbym/powiedziałabym: termin docelowy pozostaje ważny, dlatego do końca miesiąca dostarczymy testowalną wersję podstawową. Dla pełnego interfejsu proponujemy zabezpieczony termin trzy tygodnie później, aby jakości i możliwości podłączenia nie rozgrywać przeciwko sobie." },
+                { "language": "ro", "text": "Aș spune: termenul țintă rămâne important, de aceea livrăm la sfârșitul lunii o versiune de bază testabilă. Pentru interfața completă propunem un termen asigurat trei săptămâni mai târziu, astfel încât calitatea și conectabilitatea să nu fie puse una împotriva celeilalte." },
+                { "language": "sq", "text": "Do të thosha: afati i synuar mbetet i rëndësishëm, prandaj në fund të muajit dorëzojmë një version bazë të testueshëm. Për ndërfaqen e plotë propozojmë një afat të siguruar tri javë më vonë, që cilësia dhe lidhshmëria të mos vendosen kundër njëra-tjetrës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung verbindet Respekt vor dem ursprünglichen Termin mit einer überprüfbaren neuen Zusage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the wording connects respect for the original date with a verifiable new commitment." },
+                { "language": "fa", "text": "قوی: فرمول‌بندی احترام به تاریخ اولیه را با تعهد جدید قابل‌بررسی پیوند می‌دهد." },
+                { "language": "ar", "text": "قوي: تربط الصياغة احترام الموعد الأصلي بتعهد جديد قابل للتحقق." },
+                { "language": "tr", "text": "Güçlü: formülasyon ilk tarihe saygıyı doğrulanabilir yeni bir taahhütle birleştirir." },
+                { "language": "ru", "text": "Сильно: формулировка соединяет уважение к первоначальному сроку с проверяемым новым обязательством." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە ڕێزگرتن لە کاتی سەرەتایی لەگەڵ پابەندیی نوێی پشکنراو پەیوەست دەکات." },
+                { "language": "kmr", "text": "Xurt e: formulekirin rêzgirtina roja destpêkê bi sozê nû yê kontrolkirbar ve girê dide." },
+                { "language": "pl", "text": "Mocne: sformułowanie łączy szacunek dla pierwotnego terminu z weryfikowalnym nowym zobowiązaniem." },
+                { "language": "ro", "text": "Puternic: formularea leagă respectul pentru termenul inițial de un nou angajament verificabil." },
+                { "language": "sq", "text": "E fortë: formulimi lidh respektin për afatin fillestar me një angazhim të ri të verifikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir liefern erst eine Basisversion und später die vollständige Schnittstelle, weil der ursprüngliche Termin zu eng war.",
+              "translations": [
+                { "language": "en", "text": "We will first deliver a basic version and later the complete interface because the original deadline was too tight." },
+                { "language": "fa", "text": "ابتدا یک نسخه پایه تحویل می‌دهیم و بعداً رابط کامل، چون تاریخ اولیه خیلی فشرده بود." },
+                { "language": "ar", "text": "سنسلم أولاً نسخة أساسية ثم الواجهة الكاملة لاحقاً، لأن الموعد الأصلي كان ضيقاً جداً." },
+                { "language": "tr", "text": "Önce temel bir sürüm, sonra tam arayüz teslim edeceğiz, çünkü ilk tarih çok dardı." },
+                { "language": "ru", "text": "Сначала мы поставим базовую версию, а позже полный интерфейс, потому что первоначальный срок был слишком тесным." },
+                { "language": "ckb", "text": "سەرەتا وەشانی بنەڕەتی ڕادەست دەکەین و دواتر نێوانڕووکاری پەیوەندیی تەواو، چونکە کاتی سەرەتایی زۆر تەنگ بوو." },
+                { "language": "kmr", "text": "Em pêşî guhertoyeke bingehîn û paşê navrûya temam radest dikin, ji ber ku roja destpêkê pir teng bû." },
+                { "language": "pl", "text": "Najpierw dostarczymy wersję podstawową, a później pełny interfejs, ponieważ pierwotny termin był zbyt napięty." },
+                { "language": "ro", "text": "Vom livra mai întâi o versiune de bază și ulterior interfața completă, deoarece termenul inițial era prea strâns." },
+                { "language": "sq", "text": "Së pari do të dorëzojmë një version bazë dhe më vonë ndërfaqen e plotë, sepse afati fillestar ishte shumë i ngushtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu platt: Die Antwort benennt den Plan, klingt aber wie eine nachträgliche Entschuldigung und schützt die Zusage kaum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too flat: the answer names the plan, but sounds like a retrospective excuse and barely protects the commitment." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی ساده است: پاسخ برنامه را می‌گوید، اما شبیه عذرخواهی پس از ماجراست و وعده را چندان حفظ نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه مسطح جداً: تذكر الإجابة الخطة، لكنها تبدو كعذر لاحق ولا تحمي التعهد كثيراً." },
+                { "language": "tr", "text": "Makul ama fazla düz: cevap planı söyler, fakat sonradan gelen mazeret gibi duyulur ve taahhüdü pek korumaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком плоско: ответ называет план, но звучит как последующее оправдание и почти не защищает обещание." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر سادەیە: وەڵامەکە پلان دەڵێت، بەڵام وەک بیانوی دواتر دەنگ دەدات و بەڵێنەکە زۆر ناپارێزێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir rast e: bersiv planê bi nav dike, lê wek behaneyeke paşê tê bihîstin û sozê pir naparêze." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt płaskie: odpowiedź nazywa plan, lecz brzmi jak późniejsza wymówka i słabo chroni zobowiązanie." },
+                { "language": "ro", "text": "Plauzibil, dar prea plat: răspunsul numește planul, dar sună ca o scuză ulterioară și protejează prea puțin angajamentul." },
+                { "language": "sq", "text": "E besueshme, por shumë e sheshtë: përgjigjja e emërton planin, por tingëllon si justifikim i mëvonshëm dhe e mbron pak premtimin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann halten wir drei Punkte fest: Basisversion bis Monatsende mit gemeinsamem Abnahmetest, vollständige Schnittstelle drei Wochen später, und ein wöchentlicher Risikostatus mit Entscheidungspfad, falls eine Abhängigkeit blockiert.",
+              "translations": [
+                { "language": "en", "text": "Then we record three points: a basic version by month-end with a joint acceptance test, the complete interface three weeks later, and a weekly risk status with a decision path if a dependency blocks progress." },
+                { "language": "fa", "text": "پس سه نکته را ثبت می‌کنیم: نسخه پایه تا پایان ماه همراه با تست پذیرش مشترک، رابط کامل سه هفته بعد، و وضعیت هفتگی ریسک با مسیر تصمیم‌گیری اگر یک وابستگی مانع پیشرفت شود." },
+                { "language": "ar", "text": "إذن نثبت ثلاث نقاط: نسخة أساسية حتى نهاية الشهر مع اختبار قبول مشترك، والواجهة الكاملة بعد ثلاثة أسابيع، وحالة مخاطر أسبوعية مع مسار قرار إذا عطلت تبعية ما التقدم." },
+                { "language": "tr", "text": "O halde üç noktayı kayda geçiririz: ay sonuna kadar ortak kabul testiyle temel sürüm, üç hafta sonra tam arayüz ve bir bağımlılık ilerlemeyi engellerse karar yoluyla haftalık risk durumu." },
+                { "language": "ru", "text": "Тогда фиксируем три пункта: базовая версия к концу месяца с совместным приемочным тестом, полный интерфейс через три недели и еженедельный статус рисков с путем решения, если зависимость блокирует прогресс." },
+                { "language": "ckb", "text": "ئەوا سێ خاڵ تۆمار دەکەین: وەشانی بنەڕەتی تا کۆتایی مانگ لەگەڵ تاقیکردنەوەی وەرگرتنی هاوبەش، نێوانڕووکاری پەیوەندیی تەواو سێ هەفتە دواتر، و دۆخی هەفتانەی مەترسی لەگەڵ ڕێڕەوی بڕیار ئەگەر پەیوەستبوونێک پێشکەوتن بلۆک بکات." },
+                { "language": "kmr", "text": "Wê demê em sê xal tomar dikin: guhertoya bingehîn heta dawiya mehê bi testa qebûlkirinê ya hevpar, navrûya temam sê hefte paşê, û statûya xeterê ya heftane bi rêya biryarê heke girêdanek pêşveçûnê asteng bike." },
+                { "language": "pl", "text": "Wtedy zapisujemy trzy punkty: wersja podstawowa do końca miesiąca ze wspólnym testem odbioru, pełny interfejs trzy tygodnie później oraz cotygodniowy status ryzyka ze ścieżką decyzji, jeśli zależność zablokuje postęp." },
+                { "language": "ro", "text": "Atunci consemnăm trei puncte: versiune de bază până la sfârșitul lunii cu test de acceptanță comun, interfața completă trei săptămâni mai târziu și un status săptămânal de risc cu traseu decizional dacă o dependență blochează progresul." },
+                { "language": "sq", "text": "Atëherë regjistrojmë tri pika: version bazë deri në fund të muajit me test pranimi të përbashkët, ndërfaqja e plotë tri javë më vonë dhe status javor rreziku me rrugë vendimmarrjeje nëse një varësi bllokon progresin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schließt mit Leistung, Termin, Kontrolle und Eskalationspfad.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer closes with delivery, date, control, and escalation path." },
+                { "language": "fa", "text": "قوی: پاسخ با خروجی، زمان، کنترل و مسیر escalation پایان می‌یابد." },
+                { "language": "ar", "text": "قوي: تختتم الإجابة بالتسليم والموعد والرقابة ومسار التصعيد." },
+                { "language": "tr", "text": "Güçlü: cevap teslimat, tarih, kontrol ve eskalasyon yolu ile kapanır." },
+                { "language": "ru", "text": "Сильно: ответ завершается поставкой, сроком, контролем и путем эскалации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە ڕادەستکردن، کات، کۆنترۆڵ و ڕێڕەوی escalation کۆتایی دێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi radestkirin, roj, kontrol û rêya eskalasyonê diqede." },
+                { "language": "pl", "text": "Mocne: odpowiedź kończy się dostawą, terminem, kontrolą i ścieżką eskalacji." },
+                { "language": "ro", "text": "Puternic: răspunsul se încheie cu livrare, termen, control și traseu de escaladare." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbyllet me dorëzim, afat, kontroll dhe rrugë eskalimi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann einigen wir uns auf die zwei Termine und sprechen jede Woche über den aktuellen Stand.",
+              "translations": [
+                { "language": "en", "text": "Then we agree on the two dates and talk every week about the current status." },
+                { "language": "fa", "text": "پس روی دو تاریخ توافق می‌کنیم و هر هفته درباره وضعیت فعلی صحبت می‌کنیم." },
+                { "language": "ar", "text": "إذن نتفق على الموعدين ونتحدث كل أسبوع عن الوضع الحالي." },
+                { "language": "tr", "text": "O zaman iki tarih üzerinde anlaşır ve her hafta mevcut durum hakkında konuşuruz." },
+                { "language": "ru", "text": "Тогда мы согласуем две даты и каждую неделю будем говорить о текущем статусе." },
+                { "language": "ckb", "text": "ئەوا لەسەر دوو کاتەکە ڕێک دەکەوین و هەموو هەفتەیەک دەربارەی دۆخی ئێستا قسە دەکەین." },
+                { "language": "kmr", "text": "Wê demê em li ser her du rojan li hev dikin û her hefte li ser rewşa heyî diaxivin." },
+                { "language": "pl", "text": "Wtedy uzgadniamy dwa terminy i co tydzień rozmawiamy o aktualnym stanie." },
+                { "language": "ro", "text": "Atunci convenim cele două termene și vorbim în fiecare săptămână despre stadiul actual." },
+                { "language": "sq", "text": "Atëherë biem dakord për dy afatet dhe flasim çdo javë për gjendjen aktuale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn: Die Antwort lässt Abnahmetest, Risikostatus und Entscheidungspfad offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too thin: the answer leaves the acceptance test, risk status, and decision path open." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کم‌عمق است: پاسخ تست پذیرش، وضعیت ریسک و مسیر تصمیم‌گیری را باز می‌گذارد." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف: يترك الجواب اختبار القبول وحالة المخاطر ومسار القرار مفتوحة." },
+                { "language": "tr", "text": "Makul ama zayıf: cevap kabul testini, risk durumunu ve karar yolunu açık bırakır." },
+                { "language": "ru", "text": "Правдоподобно, но слишком тонко: ответ оставляет открытыми приемочный тест, статус риска и путь решения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر لاوازە: وەڵامەکە تاقیکردنەوەی وەرگرتن، دۆخی مەترسی و ڕێڕەوی بڕیار کراوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir nazik e: bersiv testa qebûlkirinê, statûya xeterê û rêya biryarê vekirî dihêle." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt płytkie: odpowiedź pozostawia otwarte test odbioru, status ryzyka i ścieżkę decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea subțire: răspunsul lasă deschise testul de acceptanță, statusul de risc și traseul decizional." },
+                { "language": "sq", "text": "E besueshme, por shumë e cekët: përgjigjja lë të hapura testin e pranimit, statusin e rrezikut dhe rrugën vendimmarrëse." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Gesichtswahrung bedeutet nicht Beschönigung; sie schafft einen Rahmen, in dem die andere Seite die Realität akzeptieren kann.",
+          "translations": [
+            { "language": "en", "text": "Saving face does not mean whitewashing; it creates a frame in which the other side can accept reality." },
+            { "language": "fa", "text": "حفظ آبرو به معنی زیبا جلوه‌دادن نیست؛ چارچوبی می‌سازد که طرف مقابل بتواند واقعیت را بپذیرد." },
+            { "language": "ar", "text": "حفظ ماء الوجه لا يعني التجميل؛ إنه يخلق إطاراً يستطيع فيه الطرف الآخر قبول الواقع." },
+            { "language": "tr", "text": "İtibarı korumak durumu süslemek değildir; diğer tarafın gerçeği kabul edebileceği bir çerçeve kurar." },
+            { "language": "ru", "text": "Сохранение лица не означает приукрашивание; оно создает рамку, в которой другая сторона может принять реальность." },
+            { "language": "ckb", "text": "پاراستنی ڕوو بە مانای جوانکردن نییە؛ چوارچێوەیەک دروست دەکات کە لایەنی بەرامبەر بتوانێت واقیع قبوڵ بکات." },
+            { "language": "kmr", "text": "Parastina rû nayê wateya xweşkirinê; ew çarçoveyek çêdike ku aliyê din dikare rastiyê qebûl bike." },
+            { "language": "pl", "text": "Ratowanie twarzy nie oznacza upiększania; tworzy ramę, w której druga strona może zaakceptować rzeczywistość." },
+            { "language": "ro", "text": "Protejarea prestigiului nu înseamnă cosmetizare; creează un cadru în care cealaltă parte poate accepta realitatea." },
+            { "language": "sq", "text": "Ruajtja e fytyrës nuk do të thotë zbukurim; krijon një kornizë ku pala tjetër mund të pranojë realitetin." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language",
+          "text": "C2-Verhandlungsdeutsch benennt Spannung offen, vermeidet aber Formulierungen, die eine Seite bloßstellen.",
+          "translations": [
+            { "language": "en", "text": "C2 negotiation German names tension openly, but avoids phrasing that exposes one side." },
+            { "language": "fa", "text": "زبان مذاکره در سطح C2 تنش را صریح نام می‌برد، اما از فرمول‌بندی‌هایی که یک طرف را در موضع بد قرار دهد پرهیز می‌کند." },
+            { "language": "ar", "text": "لغة التفاوض في مستوى C2 تسمي التوتر بصراحة، لكنها تتجنب الصيغ التي تحرج طرفاً." },
+            { "language": "tr", "text": "C2 düzeyinde müzakere Almancası gerilimi açıkça adlandırır, ancak bir tarafı zor durumda bırakan ifadelerden kaçınır." },
+            { "language": "ru", "text": "Немецкий переговоров уровня C2 открыто называет напряжение, но избегает формулировок, выставляющих одну сторону в неловком положении." },
+            { "language": "ckb", "text": "ئەڵمانی گفتوگۆی ئاستی C2 گرژی بە ئاشکرا ناو دەبات، بەڵام لە دەربڕینەکان دوور دەکەوێتەوە کە لایەنێک شەرمەزار بکات." },
+            { "language": "kmr", "text": "Almaniya danûstandinê ya asta C2 tengezarîyê vekirî bi nav dike, lê ji gotinên ku aliyekî şerm bikin dûr dikeve." },
+            { "language": "pl", "text": "Niemiecki negocjacyjny na poziomie C2 otwarcie nazywa napięcie, ale unika sformułowań kompromitujących jedną stronę." },
+            { "language": "ro", "text": "Germana de negociere la nivel C2 numește deschis tensiunea, dar evită formulările care expun o parte." },
+            { "language": "sq", "text": "Gjermanishtja e negociatave në nivel C2 e emërton hapur tensionin, por shmang formulimet që e ekspozojnë njërën palë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "content",
+          "text": "Eine Verschiebung wirkt stärker, wenn sie als Teilleistung plus abgesicherter Folgetermin formuliert wird.",
+          "translations": [
+            { "language": "en", "text": "A postponement is stronger when framed as a partial delivery plus a safeguarded follow-up date." },
+            { "language": "fa", "text": "تأخیر وقتی قوی‌تر پذیرفته می‌شود که به‌صورت خروجی جزئی همراه با تاریخ بعدی مطمئن بیان شود." },
+            { "language": "ar", "text": "يكون التأجيل أقوى عندما يصاغ كتسليم جزئي مع موعد لاحق مؤمن." },
+            { "language": "tr", "text": "Bir erteleme, kısmi teslimat artı güvence altına alınmış takip tarihi olarak çerçevelendiğinde daha güçlü görünür." },
+            { "language": "ru", "text": "Перенос выглядит сильнее, когда он сформулирован как частичная поставка плюс защищенная последующая дата." },
+            { "language": "ckb", "text": "دواخستن کاتێک بەهێزتر دەردەکەوێت کە وەک ڕادەستکردنی بەشی لەگەڵ کاتی دواتری دڵنیا دابڕێژرێت." },
+            { "language": "kmr", "text": "Taloqkirin dema wek radestkirina beşî û roja paşerojê ya ewlekirî tê formulekirin xurtir xuya dike." },
+            { "language": "pl", "text": "Przesunięcie działa mocniej, gdy jest ujęte jako częściowa dostawa plus zabezpieczony termin następczy." },
+            { "language": "ro", "text": "O amânare este mai puternică atunci când este formulată ca livrare parțială plus termen ulterior asigurat." },
+            { "language": "sq", "text": "Një shtyrje tingëllon më e fortë kur formulohet si dorëzim i pjesshëm plus afat pasues i siguruar." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Eine gute Formulierung schützt die alte Zusage, ohne die neue Realität zu verschleiern.",
+          "translations": [
+            { "language": "en", "text": "Good wording protects the old commitment without obscuring the new reality." },
+            { "language": "fa", "text": "فرمول‌بندی خوب وعده قبلی را حفظ می‌کند، بدون اینکه واقعیت جدید را پنهان کند." },
+            { "language": "ar", "text": "الصياغة الجيدة تحمي التعهد القديم من دون حجب الواقع الجديد." },
+            { "language": "tr", "text": "İyi bir ifade eski taahhüdü korur, ama yeni gerçeği gizlemez." },
+            { "language": "ru", "text": "Хорошая формулировка защищает прежнее обещание, не скрывая новую реальность." },
+            { "language": "ckb", "text": "دەربڕینی باش بەڵێنی کۆن دەپارێزێت بێ ئەوەی واقیعی نوێ بشارێتەوە." },
+            { "language": "kmr", "text": "Gotina baş soza kevn diparêze bêyî ku rastiya nû veşêre." },
+            { "language": "pl", "text": "Dobre sformułowanie chroni stare zobowiązanie, nie zaciemniając nowej rzeczywistości." },
+            { "language": "ro", "text": "O formulare bună protejează angajamentul vechi fără a ascunde noua realitate." },
+            { "language": "sq", "text": "Një formulim i mirë mbron premtimin e vjetër pa e fshehur realitetin e ri." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "strategy",
+          "text": "Der Abschluss braucht mehr als Termine: Er braucht Abnahme, Risikokontrolle und einen Entscheidungspfad.",
+          "translations": [
+            { "language": "en", "text": "The closing needs more than dates: it needs acceptance, risk control, and a decision path." },
+            { "language": "fa", "text": "جمع‌بندی فقط به تاریخ نیاز ندارد: به پذیرش، کنترل ریسک و مسیر تصمیم‌گیری نیاز دارد." },
+            { "language": "ar", "text": "تحتاج الخاتمة إلى أكثر من مواعيد: تحتاج إلى قبول ورقابة مخاطر ومسار قرار." },
+            { "language": "tr", "text": "Kapanış tarihlerden fazlasına ihtiyaç duyar: kabul, risk kontrolü ve karar yolu gerekir." },
+            { "language": "ru", "text": "Завершению нужны не только даты: нужны приемка, контроль рисков и путь решения." },
+            { "language": "ckb", "text": "کۆتایی پێویستی بە زیاتر لە کاتەکان هەیە: پێویستی بە وەرگرتن، کۆنترۆڵی مەترسی و ڕێڕەوی بڕیار هەیە." },
+            { "language": "kmr", "text": "Dawî ji rojan zêdetir dixwaze: qebûlkirin, kontrola xeterê û rêya biryarê hewce ye." },
+            { "language": "pl", "text": "Zakończenie potrzebuje więcej niż terminów: potrzebuje odbioru, kontroli ryzyka i ścieżki decyzji." },
+            { "language": "ro", "text": "Încheierea are nevoie de mai mult decât termene: are nevoie de acceptanță, control al riscului și traseu decizional." },
+            { "language": "sq", "text": "Mbyllja ka nevojë për më shumë se afate: ka nevojë për pranim, kontroll rreziku dhe rrugë vendimmarrjeje." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "face-saving-negotiation",
+          "placement": "hero",
+          "purpose": "Show a calm formal negotiation between project leads where a revised delivery plan is discussed respectfully.",
+          "altText": "Eine ruhige formale Verhandlung mit zwei Projektteams an einem Besprechungstisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm formal negotiation with two project teams at a meeting table." },
+            { "language": "fa", "text": "یک مذاکره رسمی آرام با دو تیم پروژه پشت میز جلسه." },
+            { "language": "ar", "text": "تفاوض رسمي هادئ مع فريقي مشروع حول طاولة اجتماع." },
+            { "language": "tr", "text": "Bir toplantı masasında iki proje ekibiyle sakin ve resmi bir müzakere." },
+            { "language": "ru", "text": "Спокойные официальные переговоры двух проектных команд за столом переговоров." },
+            { "language": "ckb", "text": "گفتوگۆیەکی فەرمی ئارام بە دوو تیمی پڕۆژە لەسەر مێزی کۆبوونەوە." },
+            { "language": "kmr", "text": "Danûstandineke fermî ya aram bi du tîmên projeyê li ser maseya civînê." },
+            { "language": "pl", "text": "Spokojne formalne negocjacje dwóch zespołów projektowych przy stole konferencyjnym." },
+            { "language": "ro", "text": "O negociere formală calmă cu două echipe de proiect la o masă de întâlnire." },
+            { "language": "sq", "text": "Një negociatë formale e qetë me dy ekipe projekti në një tryezë takimi." }
+          ],
+          "imagePrompt": "Clean educational illustration of a respectful formal negotiation: two diverse project teams at a meeting table reviewing a simple delivery timeline without readable text, calm serious atmosphere, no logos, no private data, accessible composition, neutral professional colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

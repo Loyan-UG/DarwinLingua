@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-36-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 36 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 36",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-pflege-oder-betreuungsbedarf-beschreiben",
+      "linkedDialogueSlug": null,
+      "title": "Einen Pflege- oder Betreuungsbedarf beschreiben",
+      "titleTranslations": [
+        { "language": "en", "text": "Describing a care or support need" },
+        { "language": "fa", "text": "توضیح دادن نیاز به مراقبت یا پشتیبانی" },
+        { "language": "ar", "text": "وصف الحاجة إلى رعاية أو دعم" },
+        { "language": "tr", "text": "Bakım veya destek ihtiyacını açıklamak" },
+        { "language": "ru", "text": "Описание потребности в уходе или поддержке" },
+        { "language": "ckb", "text": "باسکردنی پێویستی بە چاودێری یان پشتیوانی" },
+        { "language": "kmr", "text": "Ravekirina hewcedariya lênêrînê an piştgiriyê" },
+        { "language": "pl", "text": "Opisanie potrzeby opieki lub wsparcia" },
+        { "language": "ro", "text": "Descrierea unei nevoi de îngrijire sau sprijin" },
+        { "language": "sq", "text": "Përshkrimi i nevojës për kujdes ose mbështetje" }
+      ],
+      "description": "Sie sprechen in einer Pflegeberatung über die veränderte Alltagssituation Ihrer Mutter. Sie beschreiben beobachtbare Einschränkungen, vorhandene Ressourcen und konkrete Unterstützungswünsche, ohne über sie hinweg zu entscheiden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak at a care advisory service about your mother's changed everyday situation. You describe observable limitations, existing strengths, and concrete support wishes without deciding over her head." },
+        { "language": "fa", "text": "شما در یک مشاوره مراقبتی درباره تغییر وضعیت روزمره مادرتان صحبت می‌کنید. محدودیت‌های قابل مشاهده، توانایی‌های موجود و درخواست‌های مشخص برای پشتیبانی را توضیح می‌دهید، بدون اینکه به جای او تصمیم بگیرید." },
+        { "language": "ar", "text": "تتحدث في استشارة رعاية عن تغير الوضع اليومي لوالدتك. تصف القيود القابلة للملاحظة والقدرات الموجودة ورغبات الدعم المحددة من دون أن تقرر نيابة عنها." },
+        { "language": "tr", "text": "Bir bakım danışmanlığında annenizin değişen günlük durumundan bahsediyorsunuz. Onun yerine karar vermeden gözlemlenebilir kısıtlamaları, mevcut güçlü yanları ve somut destek isteklerini açıklıyorsunuz." },
+        { "language": "ru", "text": "Вы говорите в консультации по уходу об изменившейся повседневной ситуации вашей матери. Вы описываете наблюдаемые ограничения, имеющиеся ресурсы и конкретные пожелания поддержки, не решая за неё." },
+        { "language": "ckb", "text": "لە ڕاوێژکاری چاودێریدا دەربارەی گۆڕانی دۆخی ڕۆژانەی دایکت قسە دەکەیت. سنووردارییە بینراوەکان، تواناکانی هەنووکە و داواکارییە دیاریکراوەکانی پشتیوانی باس دەکەیت، بەبێ ئەوەی لەبری ئەو بڕیار بدەیت." },
+        { "language": "kmr", "text": "Hûn di şêwirmendiya lênêrînê de li ser rewşa rojane ya diya xwe ya guherî diaxivin. Hûn sînordariyên têne dîtin, hêzên heyî û daxwazên konkret ên piştgiriyê rave dikin bêyî ku li şûna wê biryar bidin." },
+        { "language": "pl", "text": "Rozmawia Pan w poradni opiekuńczej o zmienionej codzienności swojej matki. Opisuje Pan obserwowalne ograniczenia, istniejące zasoby i konkretne życzenia dotyczące wsparcia, nie decydując za nią." },
+        { "language": "ro", "text": "Vorbiți într-un serviciu de consiliere pentru îngrijire despre schimbarea vieții de zi cu zi a mamei dumneavoastră. Descrieți limitări observabile, resurse existente și dorințe concrete de sprijin fără a decide în locul ei." },
+        { "language": "sq", "text": "Flisni në një këshillim për kujdes për ndryshimin e përditshmërisë së nënës suaj. Përshkruani kufizime të vëzhgueshme, aftësi ekzistuese dhe kërkesa konkrete për mbështetje pa vendosur në vend të saj." }
+      ],
+      "learnerGoal": "Einen Pflege- oder Betreuungsbedarf würdevoll schildern: konkrete Alltagssituationen, Risiken, vorhandene Selbstständigkeit, familiäre Grenzen und nächste Schritte für Unterstützung formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Describe a care or support need with dignity: formulate concrete everyday situations, risks, remaining independence, family limits, and next steps for support." },
+        { "language": "fa", "text": "نیاز به مراقبت یا پشتیبانی را با حفظ شأن توضیح دهید: موقعیت‌های مشخص روزمره، خطرها، استقلال باقی‌مانده، محدودیت‌های خانواده و گام‌های بعدی برای پشتیبانی را بیان کنید." },
+        { "language": "ar", "text": "صف الحاجة إلى رعاية أو دعم بكرامة: صغ مواقف يومية ملموسة ومخاطر واستقلالية متبقية وحدود الأسرة والخطوات التالية للدعم." },
+        { "language": "tr", "text": "Bir bakım veya destek ihtiyacını saygın biçimde anlatın: somut günlük durumları, riskleri, kalan bağımsızlığı, aile sınırlarını ve destek için sonraki adımları formüle edin." },
+        { "language": "ru", "text": "Достойно описать потребность в уходе или поддержке: сформулировать конкретные бытовые ситуации, риски, сохранившуюся самостоятельность, семейные пределы и следующие шаги для поддержки." },
+        { "language": "ckb", "text": "پێویستی بە چاودێری یان پشتیوانی بە شێوەیەکی ڕێزدار باس بکە: دۆخە دیاریکراوەکانی ڕۆژانە، مەترسییەکان، سەربەخۆیی ماوە، سنووری خێزان و هەنگاوەکانی دواتر بۆ پشتیوانی دەرببڕە." },
+        { "language": "kmr", "text": "Hewcedariya lênêrînê an piştgiriyê bi rêzdarî rave bikin: rewşên rojane yên konkret, rîsk, xweseriya mayî, sînorên malbatê û gavên paşîn ên piştgiriyê formul bikin." },
+        { "language": "pl", "text": "Godnie opisać potrzebę opieki lub wsparcia: sformułować konkretne sytuacje codzienne, ryzyka, zachowaną samodzielność, granice rodziny i następne kroki wsparcia." },
+        { "language": "ro", "text": "Descrieți cu demnitate o nevoie de îngrijire sau sprijin: formulați situații cotidiene concrete, riscuri, independența rămasă, limitele familiei și pașii următori pentru sprijin." },
+        { "language": "sq", "text": "Përshkruani me dinjitet një nevojë për kujdes ose mbështetje: formuloni situata konkrete të përditshme, rreziqe, pavarësinë e mbetur, kufijtë e familjes dhe hapat e ardhshëm për mbështetje." }
+      ],
+      "cefrLevel": "C1",
+      "category": "health",
+      "topics": ["appointments-and-health", "social-and-relationships"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 36,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Angehörige/r",
+          "translations": [
+            { "language": "en", "text": "Family member" },
+            { "language": "fa", "text": "عضو خانواده" },
+            { "language": "ar", "text": "فرد من العائلة" },
+            { "language": "tr", "text": "Aile üyesi" },
+            { "language": "ru", "text": "Родственник" },
+            { "language": "ckb", "text": "ئەندامی خێزان" },
+            { "language": "kmr", "text": "Endamê malbatê" },
+            { "language": "pl", "text": "Członek rodziny" },
+            { "language": "ro", "text": "Membru al familiei" },
+            { "language": "sq", "text": "Anëtar i familjes" }
+          ]
+        },
+        {
+          "roleKey": "advisor",
+          "displayName": "Pflegeberaterin",
+          "translations": [
+            { "language": "en", "text": "Care advisor" },
+            { "language": "fa", "text": "مشاور مراقبت" },
+            { "language": "ar", "text": "مستشارة الرعاية" },
+            { "language": "tr", "text": "Bakım danışmanı" },
+            { "language": "ru", "text": "Консультант по уходу" },
+            { "language": "ckb", "text": "ڕاوێژکاری چاودێری" },
+            { "language": "kmr", "text": "Şêwirmenda lênêrînê" },
+            { "language": "pl", "text": "Doradczyni ds. opieki" },
+            { "language": "ro", "text": "Consilieră pentru îngrijire" },
+            { "language": "sq", "text": "Këshilltare për kujdes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "advisor",
+          "baseText": "Guten Tag. Sie möchten über die Situation Ihrer Mutter sprechen. Was hat sich im Alltag so verändert, dass Sie jetzt Beratung suchen?",
+          "translations": [
+            { "language": "en", "text": "Good day. You would like to talk about your mother's situation. What has changed in everyday life so that you are now seeking advice?" },
+            { "language": "fa", "text": "روز بخیر. شما می‌خواهید درباره وضعیت مادرتان صحبت کنید. چه چیزی در زندگی روزمره تغییر کرده که اکنون به دنبال مشاوره هستید؟" },
+            { "language": "ar", "text": "نهارك سعيد. تريد أن تتحدث عن وضع والدتك. ما الذي تغير في الحياة اليومية بحيث تبحث الآن عن استشارة؟" },
+            { "language": "tr", "text": "İyi günler. Annenizin durumu hakkında konuşmak istiyorsunuz. Günlük yaşamda ne değişti de şimdi danışmanlık arıyorsunuz?" },
+            { "language": "ru", "text": "Добрый день. Вы хотите поговорить о ситуации вашей матери. Что изменилось в быту настолько, что вы сейчас ищете консультацию?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەتەوێت دەربارەی دۆخی دایکت قسە بکەیت. چی لە ژیانی ڕۆژانەدا گۆڕاوە کە ئێستا ڕاوێژ دەگەڕێیت؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn dixwazin li ser rewşa diya xwe biaxivin. Di jiyana rojane de çi guherî ku niha hûn şêwirê digerin?" },
+            { "language": "pl", "text": "Dzień dobry. Chce Pan porozmawiać o sytuacji swojej matki. Co zmieniło się w codzienności tak, że szuka Pan teraz porady?" },
+            { "language": "ro", "text": "Bună ziua. Doriți să vorbiți despre situația mamei dumneavoastră. Ce s-a schimbat în viața de zi cu zi încât căutați acum consiliere?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironi të flisni për situatën e nënës suaj. Çfarë ka ndryshuar në jetën e përditshme që tani kërkoni këshillim?" }
+          ],
+          "function": "opening-question",
+          "toneNote": "formal, einladend",
+          "expectedLearnerAction": "Anlass und Perspektive eröffnen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte zuerst betonen, dass meine Mutter vieles noch selbst entscheidet und das auch so bleiben soll. Seit einem Sturz vor sechs Wochen braucht sie aber bei mehreren Alltagsschritten deutlich mehr Unterstützung als früher, vor allem morgens und wenn sie das Haus verlassen muss.",
+          "translations": [
+            { "language": "en", "text": "I would first like to emphasize that my mother still makes many decisions herself, and that should remain the case. Since a fall six weeks ago, however, she needs clearly more support than before with several everyday steps, especially in the morning and when she has to leave the house." },
+            { "language": "fa", "text": "اول می‌خواهم تأکید کنم که مادرم هنوز درباره خیلی چیزها خودش تصمیم می‌گیرد و همین هم باید حفظ شود. اما از زمان زمین خوردن شش هفته پیش، در چند کار روزمره به پشتیبانی خیلی بیشتری نسبت به قبل نیاز دارد، مخصوصاً صبح‌ها و وقتی باید از خانه بیرون برود." },
+            { "language": "ar", "text": "أريد أولاً أن أؤكد أن والدتي لا تزال تقرر أشياء كثيرة بنفسها، وينبغي أن يبقى الأمر كذلك. لكن منذ سقوطها قبل ستة أسابيع تحتاج إلى دعم أكثر بكثير من السابق في عدة خطوات يومية، خصوصاً صباحاً وعندما تضطر إلى مغادرة المنزل." },
+            { "language": "tr", "text": "Önce annemin hâlâ birçok konuda kendisinin karar verdiğini ve bunun böyle kalması gerektiğini vurgulamak istiyorum. Ancak altı hafta önceki düşmeden beri, özellikle sabahları ve evden çıkması gerektiğinde, birçok günlük adımda eskisinden belirgin biçimde daha fazla desteğe ihtiyaç duyuyor." },
+            { "language": "ru", "text": "Сначала я хочу подчеркнуть, что моя мать по-прежнему многое решает сама, и так должно остаться. Но после падения шесть недель назад ей в нескольких бытовых действиях нужно значительно больше поддержки, чем раньше, особенно утром и когда ей нужно выйти из дома." },
+            { "language": "ckb", "text": "سەرەتا دەمەوێت جەخت بکەمەوە کە دایکم هێشتا لە زۆر شتدا خۆی بڕیار دەدات و پێویستە ئەمە هەر بمێنێت. بەڵام لە دوای کەوتنەکەی شەش هەفتە پێش ئێستا، لە چەند هەنگاوێکی ڕۆژانەدا زۆر زیاتر لە پێشتر پشتیوانی پێویستە، بە تایبەتی بەیانیان و کاتێک پێویستە لە ماڵەوە بچێتە دەرەوە." },
+            { "language": "kmr", "text": "Ez dixwazim pêşî bibêjim ku diya min hîn gelek tiştan bi xwe biryar dide û divê ev wisa bimîne. Lê ji dema ketina wê ya şeş hefteyan berê ve, ew di çend gavên rojane de ji berê gelek zêdetir piştgiriyê dixwaze, bi taybetî sibehê û dema divê ji malê derkeve." },
+            { "language": "pl", "text": "Najpierw chcę podkreślić, że moja matka nadal o wielu sprawach decyduje sama i tak powinno pozostać. Jednak od upadku sprzed sześciu tygodni potrzebuje przy kilku codziennych czynnościach znacznie więcej wsparcia niż wcześniej, zwłaszcza rano i gdy musi wyjść z domu." },
+            { "language": "ro", "text": "Mai întâi vreau să subliniez că mama mea încă ia singură multe decizii și așa ar trebui să rămână. Totuși, de la o căzătură de acum șase săptămâni, are nevoie de mult mai mult sprijin decât înainte la mai mulți pași zilnici, mai ales dimineața și când trebuie să iasă din casă." },
+            { "language": "sq", "text": "Së pari dua të theksoj se nëna ime ende merr vetë shumë vendime dhe kjo duhet të mbetet kështu. Por që nga rrëzimi para gjashtë javësh, ajo ka nevojë për dukshëm më shumë mbështetje se më parë në disa hapa të përditshëm, sidomos në mëngjes dhe kur duhet të dalë nga shtëpia." }
+          ],
+          "function": "dignified-opening",
+          "toneNote": "respektvoll, konkret",
+          "expectedLearnerAction": "Selbstständigkeit und Unterstützungsbedarf gleichzeitig benennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "advisor",
+          "baseText": "Welche konkreten Tätigkeiten sind schwieriger geworden? Bitte unterscheiden Sie zwischen Unterstützung, die sie nur manchmal braucht, und Dingen, die regelmäßig nicht mehr zuverlässig klappen.",
+          "translations": [
+            { "language": "en", "text": "Which concrete activities have become more difficult? Please distinguish between support she needs only sometimes and things that regularly no longer work reliably." },
+            { "language": "fa", "text": "کدام کارهای مشخص سخت‌تر شده‌اند؟ لطفاً بین پشتیبانی‌ای که فقط گاهی نیاز دارد و کارهایی که دیگر به‌طور منظم قابل اعتماد انجام نمی‌شوند تفاوت بگذارید." },
+            { "language": "ar", "text": "أي أنشطة محددة أصبحت أصعب؟ من فضلك ميّز بين دعم تحتاجه أحياناً فقط وأمور لم تعد تنجح بانتظام وبشكل موثوق." },
+            { "language": "tr", "text": "Hangi somut faaliyetler zorlaştı? Lütfen yalnızca bazen ihtiyaç duyduğu destek ile düzenli olarak artık güvenilir biçimde yürümeyen şeyleri ayırın." },
+            { "language": "ru", "text": "Какие конкретные действия стали труднее? Пожалуйста, различайте поддержку, которая нужна ей лишь иногда, и вещи, которые регулярно уже не получаются надёжно." },
+            { "language": "ckb", "text": "کام کارە دیاریکراوەکان سەختتر بوون؟ تکایە جیاوازی بکە لە نێوان پشتیوانییەکەی تەنها هەندێک جار پێویستە و ئەو شتانەی کە بەردەوام بە متمانەوە ئیتر سەرناکەون." },
+            { "language": "kmr", "text": "Kîjan karên konkret dijwartir bûne? Ji kerema xwe cihê bikin di navbera piştgiriya ku ew tenê carinan dixwaze û tiştên ku êdî bi awayekî birêkûpêk û ewle naçin." },
+            { "language": "pl", "text": "Które konkretne czynności stały się trudniejsze? Proszę odróżnić wsparcie potrzebne tylko czasami od rzeczy, które regularnie nie działają już niezawodnie." },
+            { "language": "ro", "text": "Ce activități concrete au devenit mai dificile? Vă rog să distingeți între sprijinul de care are nevoie doar uneori și lucrurile care în mod regulat nu mai funcționează sigur." },
+            { "language": "sq", "text": "Cilat veprimtari konkrete janë bërë më të vështira? Ju lutem dalloni mes mbështetjes që i nevojitet vetëm ndonjëherë dhe gjërave që rregullisht nuk funksionojnë më me siguri." }
+          ],
+          "function": "specificity-request",
+          "toneNote": "präzisierend",
+          "expectedLearnerAction": "Regelmäßigkeit und Beispiele trennen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Regelmäßig schwierig sind das Duschen, das Sortieren der Medikamente und der Weg zur Hausärztin, weil sie auf der Treppe unsicher wird. Beim Kochen braucht sie eher Kontrolle im Hintergrund: Sie kann einfache Mahlzeiten zubereiten, vergisst aber manchmal den Herd rechtzeitig auszuschalten.",
+          "translations": [
+            { "language": "en", "text": "Showering, sorting medication, and the way to the family doctor are regularly difficult because she becomes unsteady on the stairs. With cooking she rather needs background supervision: she can prepare simple meals but sometimes forgets to turn off the stove in time." },
+            { "language": "fa", "text": "دوش گرفتن، مرتب کردن داروها و رفتن تا پزشک خانواده به‌طور منظم سخت است، چون روی پله‌ها احساس ناامنی می‌کند. در آشپزی بیشتر به نظارت در پس‌زمینه نیاز دارد: می‌تواند غذاهای ساده آماده کند، اما گاهی فراموش می‌کند اجاق را به‌موقع خاموش کند." },
+            { "language": "ar", "text": "الاستحمام وترتيب الأدوية والطريق إلى طبيبة الأسرة صعبة بانتظام، لأنها تصبح غير ثابتة على الدرج. في الطبخ تحتاج أكثر إلى مراقبة من الخلفية: تستطيع تحضير وجبات بسيطة، لكنها تنسى أحياناً إطفاء الموقد في الوقت المناسب." },
+            { "language": "tr", "text": "Duş almak, ilaçları düzenlemek ve aile hekimine gitmek düzenli olarak zor, çünkü merdivende dengesizleşiyor. Yemek yaparken daha çok arka planda kontrol gerekiyor: basit yemekler hazırlayabiliyor ama bazen ocağı zamanında kapatmayı unutuyor." },
+            { "language": "ru", "text": "Регулярно трудны душ, сортировка лекарств и путь к семейному врачу, потому что на лестнице она чувствует себя неуверенно. При готовке ей скорее нужен фоновый контроль: она может готовить простые блюда, но иногда забывает вовремя выключить плиту." },
+            { "language": "ckb", "text": "بەردەوام دووش گرتن، ڕێکخستنی دەرمانەکان و ڕێگای چوون بۆ پزیشکی خێزان سەختن، چونکە لەسەر پێپلیکان دڵنیا نامێنێت. لە چێشتلێناندا زیاتر پێویستی بە چاودێرییەکی پشتەوە هەیە: دەتوانێت خواردنی سادە ئامادە بکات، بەڵام هەندێک جار لە خامۆشکردنی کوورەکە لە کاتی خۆیدا بیر دەکاتەوە." },
+            { "language": "kmr", "text": "Bi rêkûpêk şuştin, rêzkirina dermanan û rêya doktorê malbatê dijwar in, ji ber ku ew li ser derenceyan bê ewle dibe. Di pijandinê de zêdetir kontrola paşxanê dixwaze: dikare xwarinên hêsan amade bike, lê carinan ji bîr dike ku sobeyê di demê de bigire." },
+            { "language": "pl", "text": "Regularnie trudne są prysznic, sortowanie leków i droga do lekarki rodzinnej, bo na schodach staje się niepewna. Przy gotowaniu potrzebuje raczej kontroli w tle: potrafi przygotować proste posiłki, ale czasem zapomina w porę wyłączyć kuchenkę." },
+            { "language": "ro", "text": "În mod regulat sunt dificile dușul, sortarea medicamentelor și drumul la medicul de familie, deoarece devine nesigură pe scări. La gătit are mai degrabă nevoie de supraveghere discretă: poate pregăti mese simple, dar uneori uită să oprească aragazul la timp." },
+            { "language": "sq", "text": "Rregullisht janë të vështira dushi, renditja e ilaçeve dhe rruga te mjekja e familjes, sepse në shkallë bëhet e pasigurt. Në gatim i duhet më shumë mbikëqyrje në sfond: mund të përgatisë ushqime të thjeshta, por ndonjëherë harron ta fikë sobën në kohë." }
+          ],
+          "function": "specific-limitations",
+          "toneNote": "präzise, würdevoll",
+          "expectedLearnerAction": "Konkrete Tätigkeiten und Risiko benennen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "advisor",
+          "baseText": "Was ist bereits organisiert, und wo reichen die bisherigen Lösungen nicht aus?",
+          "translations": [
+            { "language": "en", "text": "What is already organized, and where are the existing solutions not sufficient?" },
+            { "language": "fa", "text": "چه چیزهایی قبلاً سازمان‌دهی شده و راه‌حل‌های فعلی کجا کافی نیستند؟" },
+            { "language": "ar", "text": "ما الذي تم تنظيمه بالفعل، وأين لا تكفي الحلول الحالية؟" },
+            { "language": "tr", "text": "Şu anda neler organize edildi ve mevcut çözümler nerede yeterli değil?" },
+            { "language": "ru", "text": "Что уже организовано, и где прежних решений недостаточно?" },
+            { "language": "ckb", "text": "چی پێشتر ڕێکخراوە و چارەسەرە هەنووکەییەکان لە کوێ بەس نین؟" },
+            { "language": "kmr", "text": "Çi jixwe hatî organîzekirin û li ku çareseriyên heyî têr nakin?" },
+            { "language": "pl", "text": "Co jest już zorganizowane i gdzie dotychczasowe rozwiązania nie wystarczają?" },
+            { "language": "ro", "text": "Ce este deja organizat și unde nu sunt suficiente soluțiile de până acum?" },
+            { "language": "sq", "text": "Çfarë është organizuar tashmë dhe ku nuk mjaftojnë zgjidhjet e deritanishme?" }
+          ],
+          "function": "resources-question",
+          "toneNote": "lösungsorientiert",
+          "expectedLearnerAction": "Ressourcen und Lücken darstellen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir haben einen Nachbarn als Notfallkontakt, ich bin zweimal pro Woche dort, und ein Essensdienst läuft probeweise. Trotzdem entstehen Lücken: Wenn ich beruflich unterwegs bin, ist abends niemand da, der kurz prüft, ob Medikamente genommen wurden oder ob sie nach einem unsicheren Tag Hilfe braucht.",
+          "translations": [
+            { "language": "en", "text": "We have a neighbor as an emergency contact, I am there twice a week, and a meal service is running as a trial. Still, gaps arise: when I travel for work, no one is there in the evening to briefly check whether medication was taken or whether she needs help after an unsteady day." },
+            { "language": "fa", "text": "ما یک همسایه را به‌عنوان تماس اضطراری داریم، من هفته‌ای دو بار آنجا هستم و یک سرویس غذا به‌صورت آزمایشی فعال است. با این حال فاصله‌هایی ایجاد می‌شود: وقتی برای کار در سفر هستم، شب کسی نیست که کوتاه بررسی کند آیا داروها خورده شده‌اند یا آیا بعد از یک روز نامطمئن به کمک نیاز دارد." },
+            { "language": "ar", "text": "لدينا جار كجهة اتصال طارئة، وأنا أكون هناك مرتين في الأسبوع، وخدمة الطعام تعمل تجريبياً. ومع ذلك تظهر فجوات: عندما أكون في سفر عمل، لا يوجد أحد مساءً ليتحقق سريعاً مما إذا كانت الأدوية أُخذت أو ما إذا كانت تحتاج إلى مساعدة بعد يوم غير مستقر." },
+            { "language": "tr", "text": "Acil durumda aranacak kişi olarak bir komşumuz var, ben haftada iki kez oradayım ve yemek servisi deneme olarak çalışıyor. Yine de boşluklar oluşuyor: iş nedeniyle şehir dışındayken akşam ilaçların alınıp alınmadığını veya dengesiz bir günün ardından yardıma ihtiyacı olup olmadığını kısaca kontrol edecek kimse yok." },
+            { "language": "ru", "text": "У нас есть сосед как экстренный контакт, я бываю там два раза в неделю, и служба питания работает пробно. Тем не менее остаются пробелы: когда я в командировке, вечером нет никого, кто коротко проверил бы, приняты ли лекарства или нужна ли ей помощь после неустойчивого дня." },
+            { "language": "ckb", "text": "دراوسێیەکمان وەک پەیوەندی پەلە هەیە، من هەفتانە دوو جار لەوێم، و خزمەتی خواردن بە شێوەی تاقیکردنەوە کار دەکات. بەڵام هێشتا بۆشایی دروست دەبێت: کاتێک بەهۆی کارەوە لە گەشتم، ئێواران کەس نییە کە بە کورتی بپشکنێت ئایا دەرمانەکان خواردراون یان دوای ڕۆژێکی نادڵنیا یارمەتی پێویستە." },
+            { "language": "kmr", "text": "Cîranekî me wekî têkiliya lezgîn heye, ez heftê du caran li wir im, û xizmeta xwarinê bi ceribandinê dimeşe. Dîsa jî valahî çêdibin: dema ez ji ber karê li rêwîtiyê me, êvarê kes tune ye ku kurt binêre gelo derman hatine xwarin an piştî rojeke neewle alîkarî dixwaze." },
+            { "language": "pl", "text": "Mamy sąsiada jako kontakt alarmowy, jestem tam dwa razy w tygodniu, a usługa dostarczania posiłków działa próbnie. Mimo to powstają luki: kiedy jestem służbowo poza domem, wieczorem nie ma nikogo, kto krótko sprawdzi, czy leki zostały przyjęte albo czy po niepewnym dniu potrzebuje pomocy." },
+            { "language": "ro", "text": "Avem un vecin ca persoană de contact în caz de urgență, eu sunt acolo de două ori pe săptămână, iar un serviciu de masă funcționează de probă. Totuși apar goluri: când sunt plecat cu serviciul, seara nu este nimeni care să verifice scurt dacă medicamentele au fost luate sau dacă are nevoie de ajutor după o zi nesigură." },
+            { "language": "sq", "text": "Kemi një fqinj si kontakt emergjence, unë jam atje dy herë në javë dhe një shërbim ushqimi po funksionon provë. Megjithatë krijohen boshllëqe: kur jam në udhëtim pune, në mbrëmje nuk ka askënd që të kontrollojë shkurt nëse janë marrë ilaçet ose nëse ajo ka nevojë për ndihmë pas një dite të pasigurt." }
+          ],
+          "function": "resources-and-gaps",
+          "toneNote": "konkret, nicht anklagend",
+          "expectedLearnerAction": "Vorhandene Hilfe und Versorgungslücken zeigen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "advisor",
+          "baseText": "Geht es Ihnen eher um eine sofortige Entlastung, um eine formelle Einschätzung für einen Pflegegrad oder um eine Kombination aus beidem?",
+          "translations": [
+            { "language": "en", "text": "Are you mainly looking for immediate relief, a formal assessment for a care level, or a combination of both?" },
+            { "language": "fa", "text": "هدف شما بیشتر کاهش فشار فوری است، ارزیابی رسمی برای درجه مراقبت، یا ترکیبی از هر دو؟" },
+            { "language": "ar", "text": "هل يتعلق الأمر أكثر بتخفيف فوري، أم بتقييم رسمي لدرجة الرعاية، أم بمزيج من الاثنين؟" },
+            { "language": "tr", "text": "Daha çok acil bir rahatlama mı, bakım derecesi için resmî bir değerlendirme mi, yoksa ikisinin birleşimi mi söz konusu?" },
+            { "language": "ru", "text": "Речь для вас скорее о немедленном облегчении, о формальной оценке для степени ухода или о сочетании обоих?" },
+            { "language": "ckb", "text": "ئایا زیاتر مەبەستت سووککردنەوەی خێرای بارە، یان هەڵسەنگاندنی فەرمی بۆ ئاستی چاودێری، یان تێکەڵەی هەردووکیان؟" },
+            { "language": "kmr", "text": "Ma mijara we zêdetir sivikkirina lezgîn e, an nirxandina fermî ji bo asta lênêrînê, an têkeliyek ji her duyan?" },
+            { "language": "pl", "text": "Czy chodzi Panu raczej o natychmiastowe odciążenie, formalną ocenę stopnia opieki, czy połączenie obu?" },
+            { "language": "ro", "text": "Vă interesează mai degrabă o degrevare imediată, o evaluare formală pentru un grad de îngrijire sau o combinație între cele două?" },
+            { "language": "sq", "text": "A bëhet fjalë më shumë për lehtësim të menjëhershëm, për një vlerësim formal për nivel kujdesi, apo për një kombinim të të dyjave?" }
+          ],
+          "function": "request-clarification",
+          "toneNote": "beratend",
+          "expectedLearnerAction": "Prioritäten formulieren"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Eine Kombination wäre sinnvoll. Kurzfristig brauchen wir eine verlässliche Lösung für Abendkontrollen und Arztwege. Parallel möchte ich wissen, ob ein Antrag auf einen Pflegegrad realistisch ist und welche Unterlagen dafür die Situation meiner Mutter fair abbilden.",
+          "translations": [
+            { "language": "en", "text": "A combination would make sense. In the short term we need a reliable solution for evening checks and trips to the doctor. At the same time I would like to know whether an application for a care level is realistic and which documents would fairly reflect my mother's situation." },
+            { "language": "fa", "text": "ترکیبی از هر دو منطقی است. کوتاه‌مدت به یک راه‌حل قابل اعتماد برای کنترل‌های عصر و رفت‌وآمد به پزشک نیاز داریم. هم‌زمان می‌خواهم بدانم آیا درخواست درجه مراقبت واقع‌بینانه است و چه مدارکی وضعیت مادرم را منصفانه نشان می‌دهد." },
+            { "language": "ar", "text": "سيكون الجمع بينهما مناسباً. على المدى القصير نحتاج إلى حل موثوق للفحوصات المسائية والذهاب إلى الطبيب. وفي الوقت نفسه أريد أن أعرف هل طلب درجة رعاية واقعي، وما الوثائق التي تعرض وضع والدتي بشكل عادل." },
+            { "language": "tr", "text": "Bir kombinasyon mantıklı olur. Kısa vadede akşam kontrolleri ve doktor yolları için güvenilir bir çözüme ihtiyacımız var. Aynı zamanda bakım derecesi başvurusunun gerçekçi olup olmadığını ve hangi belgelerin annemin durumunu adil biçimde yansıttığını bilmek istiyorum." },
+            { "language": "ru", "text": "Сочетание было бы разумным. В краткосрочной перспективе нам нужно надёжное решение для вечерних проверок и поездок к врачу. Параллельно я хотел бы знать, реалистично ли заявление на степень ухода и какие документы честно отражают ситуацию моей матери." },
+            { "language": "ckb", "text": "تێکەڵەیەک لە هەردووکیان گونجاوە. لە ماوەی کورتدا پێویستمان بە چارەسەرێکی متمانەپێکراو هەیە بۆ پشکنینی ئێواران و ڕێگای پزیشک. هاوکات دەمەوێت بزانم ئایا داواکاری بۆ ئاستی چاودێری واقیعییە و کام بەڵگە دۆخی دایکم بە دادپەروەری پیشان دەدات." },
+            { "language": "kmr", "text": "Têkeliyek maqûl e. Di demeke kurt de em çareseriyeke bawerbar ji bo kontrolên êvarê û rêyên doktorê dixwazin. Hevdem ez dixwazim bizanim gelo daxwaza asta lênêrînê rast e û kîjan belge rewşa diya min bi dadwerî nîşan didin." },
+            { "language": "pl", "text": "Połączenie byłoby sensowne. Krótkoterminowo potrzebujemy niezawodnego rozwiązania dla kontroli wieczornych i wizyt u lekarza. Równocześnie chcę wiedzieć, czy wniosek o stopień opieki jest realistyczny i jakie dokumenty uczciwie oddają sytuację mojej matki." },
+            { "language": "ro", "text": "O combinație ar fi potrivită. Pe termen scurt avem nevoie de o soluție sigură pentru verificările de seară și drumurile la medic. În paralel vreau să știu dacă o cerere pentru un grad de îngrijire este realistă și ce documente reflectă corect situația mamei mele." },
+            { "language": "sq", "text": "Një kombinim do të kishte kuptim. Afatshkurtër na duhet një zgjidhje e besueshme për kontrollet e mbrëmjes dhe rrugët te mjeku. Paralelisht dua të di nëse një kërkesë për nivel kujdesi është realiste dhe cilat dokumente e pasqyrojnë drejt situatën e nënës sime." }
+          ],
+          "function": "prioritized-request",
+          "toneNote": "strukturiert",
+          "expectedLearnerAction": "Soforthilfe und formelle Klärung verbinden"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "advisor",
+          "baseText": "Hat Ihre Mutter zugestimmt, dass wir diese Punkte hier besprechen? Und gibt es Unterlagen, die Sie bereits mitgebracht haben?",
+          "translations": [
+            { "language": "en", "text": "Has your mother agreed that we discuss these points here? And are there documents you have already brought with you?" },
+            { "language": "fa", "text": "آیا مادرتان موافقت کرده که این نکات را اینجا مطرح کنیم؟ و آیا مدارکی هست که قبلاً همراه آورده باشید؟" },
+            { "language": "ar", "text": "هل وافقت والدتك على أن نناقش هذه النقاط هنا؟ وهل توجد وثائق أحضرتها معك بالفعل؟" },
+            { "language": "tr", "text": "Anneniz bu noktaları burada konuşmamıza onay verdi mi? Ve yanınızda getirdiğiniz belgeler var mı?" },
+            { "language": "ru", "text": "Ваша мать согласилась, чтобы мы обсуждали эти пункты здесь? И есть ли документы, которые вы уже принесли?" },
+            { "language": "ckb", "text": "ئایا دایکت ڕازی بووە کە ئەم خاڵانە لێرە گفتوگۆ بکەین؟ و ئایا بەڵگەیەک هەیە کە پێشتر هێناوتە؟" },
+            { "language": "kmr", "text": "Ma diya we razî bûye ku em van xalan li vir nîqaş bikin? Û belge hene ku we jixwe anîne?" },
+            { "language": "pl", "text": "Czy Pana matka zgodziła się, żebyśmy omawiali tutaj te punkty? I czy są dokumenty, które już Pan przyniósł?" },
+            { "language": "ro", "text": "Mama dumneavoastră a fost de acord să discutăm aceste puncte aici? Și există documente pe care le-ați adus deja?" },
+            { "language": "sq", "text": "A ka rënë dakord nëna juaj që t'i diskutojmë këto pika këtu? Dhe a ka dokumente që i keni sjellë tashmë?" }
+          ],
+          "function": "consent-and-documents",
+          "toneNote": "datenschutzbewusst",
+          "expectedLearnerAction": "Einwilligung und Unterlagen nennen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja, sie hat zugestimmt, dass ich den Termin wahrnehme, und sie möchte bei Entscheidungen einbezogen werden. Ich habe den Entlassbrief nach dem Sturz, den aktuellen Medikamentenplan und eine kurze Liste mit Alltagssituationen dabei. Falls nötig, kann meine Mutter beim nächsten Termin selbst dazukommen.",
+          "translations": [
+            { "language": "en", "text": "Yes, she agreed that I attend the appointment, and she wants to be included in decisions. I have the discharge letter after the fall, the current medication plan, and a short list of everyday situations with me. If necessary, my mother can join the next appointment herself." },
+            { "language": "fa", "text": "بله، او موافقت کرده که من این قرار را انجام بدهم و می‌خواهد در تصمیم‌ها دخیل باشد. نامه ترخیص بعد از زمین خوردن، برنامه فعلی داروها و یک فهرست کوتاه از موقعیت‌های روزمره را همراه دارم. اگر لازم باشد، مادرم می‌تواند در قرار بعدی خودش هم شرکت کند." },
+            { "language": "ar", "text": "نعم، وافقت على أن أحضر الموعد، وتريد أن تُشرك في القرارات. معي خطاب الخروج بعد السقوط وخطة الأدوية الحالية وقائمة قصيرة بمواقف يومية. إذا لزم الأمر، يمكن لوالدتي أن تحضر بنفسها في الموعد التالي." },
+            { "language": "tr", "text": "Evet, randevuya benim gelmemi kabul etti ve kararlara dahil edilmek istiyor. Düşmeden sonraki taburcu yazısı, güncel ilaç planı ve günlük durumlara ilişkin kısa bir liste yanımda. Gerekirse annem bir sonraki randevuya kendisi de katılabilir." },
+            { "language": "ru", "text": "Да, она согласилась, чтобы я пришёл на этот приём, и хочет участвовать в решениях. У меня с собой выписка после падения, актуальный план лекарств и короткий список бытовых ситуаций. Если нужно, моя мать может сама присоединиться на следующей встрече." },
+            { "language": "ckb", "text": "بەڵێ، ڕازی بووە کە من ئەم کاتە دیاریکراوە وەرگرم، و دەتەوێت لە بڕیارەکاندا بەشدار بێت. نامەی دەرچوون دوای کەوتنەکە، پلانی هەنووکەی دەرمانەکان و لیستێکی کورت لە دۆخە ڕۆژانەکانم پێیە. ئەگەر پێویست بێت، دایکم دەتوانێت لە کاتی داهاتوودا خۆی بەشداری بکات." },
+            { "language": "kmr", "text": "Erê, ew razî bûye ku ez vê hevdîtinê bikim, û dixwaze di biryaran de tê de bê. Nameya derketinê piştî ketinê, plana dermanên niha û lîsteyeke kurt a rewşên rojane bi min re hene. Ger pêwîst be, diya min dikare di hevdîtina paşîn de bixwe jî beşdar bibe." },
+            { "language": "pl", "text": "Tak, zgodziła się, żebym przyszedł na ten termin, i chce być włączana w decyzje. Mam przy sobie wypis po upadku, aktualny plan leków i krótką listę sytuacji codziennych. W razie potrzeby moja matka może sama dołączyć na następnym spotkaniu." },
+            { "language": "ro", "text": "Da, a fost de acord să vin eu la această programare și vrea să fie implicată în decizii. Am cu mine scrisoarea de externare după căzătură, planul actual de medicamente și o listă scurtă cu situații cotidiene. Dacă este necesar, mama mea poate participa personal la următoarea întâlnire." },
+            { "language": "sq", "text": "Po, ajo ka rënë dakord që unë ta ndjek këtë takim dhe dëshiron të përfshihet në vendime. Kam me vete letrën e daljes pas rrëzimit, planin aktual të ilaçeve dhe një listë të shkurtër me situata të përditshme. Nëse duhet, nëna ime mund të vijë vetë në takimin tjetër." }
+          ],
+          "function": "consent-and-evidence",
+          "toneNote": "datenschutzsensibel, respektvoll",
+          "expectedLearnerAction": "Einwilligung, Unterlagen und Beteiligung der Person sichern"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "advisor",
+          "baseText": "Fassen Sie zum Schluss bitte zusammen, was Sie sich als nächsten Schritt wünschen, damit ich den Beratungsvermerk passend formulieren kann.",
+          "translations": [
+            { "language": "en", "text": "To close, please summarize what you would like as the next step so that I can formulate the advisory note appropriately." },
+            { "language": "fa", "text": "در پایان لطفاً خلاصه کنید گام بعدی مورد نظر شما چیست تا بتوانم یادداشت مشاوره را مناسب تنظیم کنم." },
+            { "language": "ar", "text": "في الختام، من فضلك لخّص ما الذي تريده كخطوة تالية لكي أستطيع صياغة ملاحظة الاستشارة بشكل مناسب." },
+            { "language": "tr", "text": "Son olarak, danışma notunu uygun şekilde formüle edebilmem için sonraki adım olarak ne istediğinizi özetler misiniz?" },
+            { "language": "ru", "text": "В завершение, пожалуйста, резюмируйте, какой следующий шаг вы хотели бы, чтобы я мог правильно сформулировать консультационную запись." },
+            { "language": "ckb", "text": "لە کۆتاییدا تکایە کورت بکەوە کە وەک هەنگاوی دواتر چیت دەوێت، بۆ ئەوەی بتوانم تێبینی ڕاوێژکارییەکە بە گونجاوی دابڕێژم." },
+            { "language": "kmr", "text": "Di dawiyê de ji kerema xwe kurt bikin ku hûn wekî gava paşîn çi dixwazin, da ku ez nîşeya şêwirê bi awayekî guncaw formul bikim." },
+            { "language": "pl", "text": "Na koniec proszę podsumować, czego życzy Pan sobie jako następnego kroku, żebym mogła odpowiednio sformułować notatkę z porady." },
+            { "language": "ro", "text": "La final, vă rog să rezumați ce doriți ca pas următor, ca să pot formula potrivit nota de consiliere." },
+            { "language": "sq", "text": "Në fund, ju lutem përmblidhni çfarë dëshironi si hap të ardhshëm, që ta formuloj siç duhet shënimin e këshillimit." }
+          ],
+          "function": "summary-request",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Konkrete nächste Schritte zusammenfassen"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich bitte um eine Einschätzung, welche Unterstützung kurzfristig möglich ist und ob wir einen Pflegegrad-Antrag vorbereiten sollten. Wichtig ist mir, dass die Hilfe meine Mutter schützt, ohne ihr unnötig Selbstständigkeit zu nehmen, und dass wir die Abend- und Arztwege verlässlich abdecken.",
+          "translations": [
+            { "language": "en", "text": "I ask for an assessment of what support is possible in the short term and whether we should prepare an application for a care level. It is important to me that the help protects my mother without unnecessarily taking away her independence, and that we reliably cover evenings and trips to the doctor." },
+            { "language": "fa", "text": "درخواست می‌کنم ارزیابی شود چه پشتیبانی‌ای کوتاه‌مدت ممکن است و آیا باید درخواست درجه مراقبت را آماده کنیم. برای من مهم است که کمک از مادرم محافظت کند، بدون اینکه بی‌دلیل استقلالش را بگیرد، و اینکه عصرها و رفت‌وآمدهای پزشک را قابل اعتماد پوشش دهیم." },
+            { "language": "ar", "text": "أطلب تقييماً لما هو ممكن من دعم على المدى القصير، وما إذا كان ينبغي أن نعد طلب درجة رعاية. من المهم لي أن تحمي المساعدة والدتي من دون أن تسلبها استقلاليتها بلا ضرورة، وأن نغطي المساء والذهاب إلى الطبيب بشكل موثوق." },
+            { "language": "tr", "text": "Kısa vadede hangi desteğin mümkün olduğuna ve bakım derecesi başvurusu hazırlamamız gerekip gerekmediğine dair bir değerlendirme rica ediyorum. Yardımın annemi koruması ama gereksiz yere bağımsızlığını almaması ve akşamları ile doktor yollarını güvenilir biçimde karşılamamız benim için önemli." },
+            { "language": "ru", "text": "Я прошу оценить, какая поддержка возможна в краткосрочной перспективе и следует ли нам подготовить заявление на степень ухода. Для меня важно, чтобы помощь защищала мою мать, не отнимая у неё без необходимости самостоятельность, и чтобы мы надёжно закрыли вечера и поездки к врачу." },
+            { "language": "ckb", "text": "داوای هەڵسەنگاندن دەکەم کە لە ماوەی کورتدا کام پشتیوانییەک گونجاوە و ئایا پێویستە داواکاری ئاستی چاودێری ئامادە بکەین. بۆ من گرنگە یارمەتییەکە دایکم بپارێزێت، بەبێ ئەوەی بەبێ پێویست سەربەخۆیی لێ بستێنێت، و ئێواران و ڕێگاکانی پزیشک بە متمانە دابپۆشین." },
+            { "language": "kmr", "text": "Ez daxwaza nirxandinê dikim ku di demeke kurt de kîjan piştgirî gengaz e û gelo em divê daxwaza asta lênêrînê amade bikin. Ji bo min girîng e ku alîkarî diya min biparêze bêyî ku bê hewce xweseriya wê jê bistîne, û em êvaran û rêyên doktorê bi bawerî bigirin." },
+            { "language": "pl", "text": "Proszę o ocenę, jakie wsparcie jest możliwe krótkoterminowo i czy powinniśmy przygotować wniosek o stopień opieki. Ważne jest dla mnie, aby pomoc chroniła moją matkę, nie odbierając jej niepotrzebnie samodzielności, i abyśmy niezawodnie zabezpieczyli wieczory oraz wizyty u lekarza." },
+            { "language": "ro", "text": "Solicit o evaluare a sprijinului posibil pe termen scurt și dacă ar trebui să pregătim o cerere pentru grad de îngrijire. Pentru mine este important ca ajutorul să o protejeze pe mama mea fără să îi ia inutil independența și să acoperim sigur serile și drumurile la medic." },
+            { "language": "sq", "text": "Kërkoj një vlerësim se çfarë mbështetjeje është e mundur afatshkurtër dhe nëse duhet të përgatisim një kërkesë për nivel kujdesi. Për mua është e rëndësishme që ndihma ta mbrojë nënën time pa ia marrë panevojshëm pavarësinë dhe që të mbulojmë me siguri mbrëmjet dhe rrugët te mjeku." }
+          ],
+          "function": "final-summary",
+          "toneNote": "klar, würdevoll",
+          "expectedLearnerAction": "Nächsten Schritt und Würdeprinzip zusammenfassen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-balanced-opening",
+              "text": "Sie entscheidet noch vieles selbst, aber seit dem Sturz braucht sie bei bestimmten Alltagsschritten regelmäßig mehr Unterstützung.",
+              "translations": [
+                { "language": "en", "text": "She still decides many things herself, but since the fall she regularly needs more support with certain everyday steps." },
+                { "language": "fa", "text": "او هنوز خیلی چیزها را خودش تصمیم می‌گیرد، اما از زمان زمین خوردن در بعضی کارهای روزمره به‌طور منظم به پشتیبانی بیشتری نیاز دارد." },
+                { "language": "ar", "text": "هي لا تزال تقرر أشياء كثيرة بنفسها، لكن منذ السقوط تحتاج بانتظام إلى دعم أكبر في خطوات يومية معينة." },
+                { "language": "tr", "text": "Hâlâ birçok şeyi kendisi kararlaştırıyor, ancak düşmeden beri belirli günlük adımlarda düzenli olarak daha fazla desteğe ihtiyaç duyuyor." },
+                { "language": "ru", "text": "Она всё ещё многое решает сама, но после падения регулярно нуждается в большей поддержке в определённых бытовых действиях." },
+                { "language": "ckb", "text": "هێشتا زۆر شت خۆی بڕیار دەدات، بەڵام لە دوای کەوتنەکە لە هەندێک هەنگاوی ڕۆژانەدا بەردەوام پشتیوانی زیاتر پێویستە." },
+                { "language": "kmr", "text": "Ew hîn gelek tiştan bi xwe biryar dide, lê ji dema ketinê ve di hin gavên rojane de bi rêkûpêk piştgiriya zêdetir dixwaze." },
+                { "language": "pl", "text": "Nadal wiele spraw rozstrzyga sama, ale od upadku regularnie potrzebuje więcej wsparcia przy określonych codziennych czynnościach." },
+                { "language": "ro", "text": "Încă decide singură multe lucruri, dar de la căzătură are nevoie regulat de mai mult sprijin la anumite activități zilnice." },
+                { "language": "sq", "text": "Ajo ende vendos vetë shumë gjëra, por që nga rrëzimi ka nevojë rregullisht për më shumë mbështetje në disa hapa të përditshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt die Würde der Mutter und benennt trotzdem den konkreten Unterstützungsbedarf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer protects the mother's dignity while still naming the concrete support need." },
+                { "language": "fa", "text": "قوی: پاسخ شأن مادر را حفظ می‌کند و در عین حال نیاز مشخص به پشتیبانی را نام می‌برد." },
+                { "language": "ar", "text": "قوي: الإجابة تحمي كرامة الأم ومع ذلك تسمي الحاجة المحددة إلى الدعم." },
+                { "language": "tr", "text": "Güçlü: Yanıt annenin saygınlığını koruyor ve yine de somut destek ihtiyacını belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ сохраняет достоинство матери и при этом называет конкретную потребность в поддержке." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێزی دایکەکە دەپارێزێت و هەمان کاتدا پێویستی دیاریکراوی پشتیوانی ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rûmeta dayikê diparêze û hevdem hewcedariya konkret a piştgiriyê nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni godność matki, a jednocześnie nazywa konkretną potrzebę wsparcia." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează demnitatea mamei și totuși numește nevoia concretă de sprijin." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron dinjitetin e nënës dhe megjithatë emërton nevojën konkrete për mbështetje." }
+              ],
+              "explanationKey": "dignity-and-need"
+            },
+            {
+              "id": "weak-overgeneralized-opening",
+              "text": "Sie kommt im Alltag nicht mehr richtig zurecht, deshalb brauchen wir jetzt wahrscheinlich Pflege.",
+              "translations": [
+                { "language": "en", "text": "She no longer really manages everyday life, so we probably need care now." },
+                { "language": "fa", "text": "او دیگر واقعاً از پس زندگی روزمره برنمی‌آید، بنابراین احتمالاً الان به مراقبت نیاز داریم." },
+                { "language": "ar", "text": "لم تعد تدبر الحياة اليومية جيداً، لذلك ربما نحتاج الآن إلى رعاية." },
+                { "language": "tr", "text": "Günlük yaşamı artık tam olarak idare edemiyor, bu yüzden muhtemelen şimdi bakıma ihtiyacımız var." },
+                { "language": "ru", "text": "Она уже не очень справляется с бытом, поэтому нам, вероятно, теперь нужен уход." },
+                { "language": "ckb", "text": "ئیدی باش ناتوانێت ڕۆژانەی خۆی بەڕێوە ببات، بۆیە ئەگەر پێویستمان بە چاودێری هەبێت." },
+                { "language": "kmr", "text": "Ew êdî di rojane de rast nikare xwe birêve bibe, ji ber vê em belkî niha lênêrînê dixwazin." },
+                { "language": "pl", "text": "Nie radzi sobie już właściwie w codzienności, dlatego prawdopodobnie potrzebujemy teraz opieki." },
+                { "language": "ro", "text": "Nu se mai descurcă bine în viața de zi cu zi, de aceea probabil avem nevoie acum de îngrijire." },
+                { "language": "sq", "text": "Ajo nuk ia del më mirë në përditshmëri, prandaj ndoshta tani na duhet kujdes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Es fehlen Selbstständigkeit, Anlass und konkrete Bereiche. Die Formulierung klingt schneller entmündigend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping: independence, reason, and concrete areas are missing. The wording can sound disempowering more quickly." },
+                { "language": "fa", "text": "بیش از حد کلی است: استقلال، دلیل و حوزه‌های مشخص کم است. این بیان سریع‌تر حالت سلب اختیار پیدا می‌کند." },
+                { "language": "ar", "text": "عام جداً: تنقص الاستقلالية والسبب والمجالات المحددة. الصياغة قد تبدو بسرعة وكأنها تسلبها حق القرار." },
+                { "language": "tr", "text": "Çok genel: bağımsızlık, neden ve somut alanlar eksik. İfade daha çabuk yetkisizleştirici duyulabilir." },
+                { "language": "ru", "text": "Слишком обобщённо: не хватает самостоятельности, причины и конкретных областей. Формулировка быстрее звучит как лишение самостоятельности." },
+                { "language": "ckb", "text": "زۆر گشتییە: سەربەخۆیی، هۆکار و بوارە دیاریکراوەکان کەمن. دەربڕینەکە زوو وەک لێسەندنەوەی دەسەڵات دەبیسترێت." },
+                { "language": "kmr", "text": "Pir giştî ye: xweserî, sedem û qadên konkret kêm in. Gotin zûtir wekî kêmkirina desthilatê tê bihîstin." },
+                { "language": "pl", "text": "Zbyt ogólne: brakuje samodzielności, powodu i konkretnych obszarów. Sformułowanie szybciej brzmi jak odbieranie sprawczości." },
+                { "language": "ro", "text": "Prea general: lipsesc independența, motivul și domeniile concrete. Formularea poate suna rapid ca o lipsire de autonomie." },
+                { "language": "sq", "text": "Shumë e përgjithshme: mungojnë pavarësia, arsyeja dhe fushat konkrete. Formulimi mund të tingëllojë shpejt si heqje e autonomisë." }
+              ],
+              "explanationKey": "too-sweeping"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-specific-activities",
+              "text": "Regelmäßig schwierig sind Körperpflege, Medikamente und Wege außer Haus; beim Kochen geht es eher um Sicherheitskontrolle.",
+              "translations": [
+                { "language": "en", "text": "Personal care, medication, and trips outside the home are regularly difficult; with cooking it is more about safety supervision." },
+                { "language": "fa", "text": "مراقبت بدنی، داروها و رفت‌وآمد بیرون از خانه به‌طور منظم سخت هستند؛ در آشپزی بیشتر موضوع نظارت ایمنی است." },
+                { "language": "ar", "text": "الرعاية الشخصية والأدوية والخروج من المنزل صعبة بانتظام؛ أما الطبخ فيتعلق أكثر بمراقبة السلامة." },
+                { "language": "tr", "text": "Kişisel bakım, ilaçlar ve ev dışına çıkmak düzenli olarak zor; yemek yaparken konu daha çok güvenlik kontrolü." },
+                { "language": "ru", "text": "Личная гигиена, лекарства и выходы из дома регулярно трудны; при готовке речь скорее о контроле безопасности." },
+                { "language": "ckb", "text": "چاودێری جەستە، دەرمانەکان و چوونە دەرەوە لە ماڵ بەردەوام سەختن؛ لە چێشتلێناندا زیاتر بابەتەکە چاودێری ئاسایشە." },
+                { "language": "kmr", "text": "Lênêrîna laş, derman û derketina derveyî malê bi rêkûpêk dijwar in; di pijandinê de mijar zêdetir kontrola ewlehiyê ye." },
+                { "language": "pl", "text": "Pielęgnacja ciała, leki i wyjścia z domu są regularnie trudne; przy gotowaniu chodzi raczej o kontrolę bezpieczeństwa." },
+                { "language": "ro", "text": "Îngrijirea corporală, medicamentele și ieșirile din casă sunt regulat dificile; la gătit este mai degrabă vorba de supraveghere de siguranță." },
+                { "language": "sq", "text": "Kujdesi trupor, ilaçet dhe daljet nga shtëpia janë rregullisht të vështira; në gatim bëhet fjalë më shumë për kontroll sigurie." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt verschiedene Unterstützungsarten und bleibt beobachtbar statt bewertend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates different types of support and remains observable rather than judgmental." },
+                { "language": "fa", "text": "قوی: پاسخ انواع مختلف پشتیبانی را جدا می‌کند و به جای قضاوت، قابل مشاهده می‌ماند." },
+                { "language": "ar", "text": "قوي: الإجابة تميز بين أنواع مختلفة من الدعم وتبقى قابلة للملاحظة بدلاً من الحكم." },
+                { "language": "tr", "text": "Güçlü: Yanıt farklı destek türlerini ayırıyor ve yargılayıcı değil, gözlemlenebilir kalıyor." },
+                { "language": "ru", "text": "Сильно: ответ различает разные виды поддержки и остаётся наблюдаемым, а не оценочным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە جۆرە جیاوازەکانی پشتیوانی جیا دەکاتەوە و لەبری هەڵسەنگاندن بە بینراوی دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv cureyên cuda yên piştgiriyê cihê dike û li şûna nirxandinê tê dîtin dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź rozdziela różne rodzaje wsparcia i pozostaje obserwowalna zamiast oceniająca." },
+                { "language": "ro", "text": "Puternic: răspunsul separă diferite tipuri de sprijin și rămâne observabil, nu evaluativ." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan lloje të ndryshme mbështetjeje dhe mbetet e vëzhgueshme, jo gjykuese." }
+              ],
+              "explanationKey": "observable-categories"
+            },
+            {
+              "id": "weak-missing-regularity",
+              "text": "Manchmal braucht sie Hilfe im Haushalt und bei Arztterminen, aber es ist schwer zu sagen, wie oft.",
+              "translations": [
+                { "language": "en", "text": "Sometimes she needs help with the household and doctor's appointments, but it is hard to say how often." },
+                { "language": "fa", "text": "گاهی در کارهای خانه و قرارهای پزشک به کمک نیاز دارد، اما سخت است بگوییم چند وقت یک بار." },
+                { "language": "ar", "text": "أحياناً تحتاج إلى مساعدة في المنزل ومواعيد الطبيب، لكن من الصعب القول كم مرة." },
+                { "language": "tr", "text": "Bazen ev işleri ve doktor randevularında yardıma ihtiyaç duyuyor, ama ne sıklıkta olduğunu söylemek zor." },
+                { "language": "ru", "text": "Иногда ей нужна помощь по дому и с визитами к врачу, но трудно сказать, как часто." },
+                { "language": "ckb", "text": "هەندێک جار لە کارەکانی ماڵ و کاتەکانی پزیشکدا یارمەتی پێویستە، بەڵام سەختە بگوترێت چەند جار." },
+                { "language": "kmr", "text": "Carinan di karên malê û hevdîtinên doktorê de alîkarî dixwaze, lê gotina ku çiqas caran dijwar e." },
+                { "language": "pl", "text": "Czasami potrzebuje pomocy w domu i przy wizytach lekarskich, ale trudno powiedzieć, jak często." },
+                { "language": "ro", "text": "Uneori are nevoie de ajutor în gospodărie și la programările medicale, dar este greu de spus cât de des." },
+                { "language": "sq", "text": "Ndonjëherë ka nevojë për ndihmë në shtëpi dhe te takimet me mjekun, por është e vështirë të thuhet sa shpesh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau: Für Beratung und mögliche Einstufung fehlen Häufigkeit, konkrete Tätigkeiten und Risiko.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise: frequency, concrete activities, and risk are missing for advice and possible classification." },
+                { "language": "fa", "text": "قابل قبول است، اما بیش از حد نامشخص: برای مشاوره و احتمالاً درجه‌بندی، تکرار، کارهای مشخص و خطر کم است." },
+                { "language": "ar", "text": "مقبول، لكنه غير دقيق جداً: تنقص التكرارية والأنشطة المحددة والخطر للاستشارة وربما التصنيف." },
+                { "language": "tr", "text": "Makûl, ama fazla belirsiz: danışmanlık ve olası sınıflandırma için sıklık, somut faaliyetler ve risk eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: для консультации и возможной оценки не хватает частоты, конкретных действий и риска." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر ناڕوونە: بۆ ڕاوێژ و ئەگەری پۆلێنکردن، دووبارەبوونەوە، کارە دیاریکراوەکان و مەترسی کەمن." },
+                { "language": "kmr", "text": "Guncan e, lê pir nezelal e: ji bo şêwir û dabeşkirina gengaz, pircarî, karên konkret û rîsk kêm in." },
+                { "language": "pl", "text": "Plausible, ale zbyt nieprecyzyjne: do porady i możliwej klasyfikacji brakuje częstotliwości, konkretnych czynności i ryzyka." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis: pentru consiliere și posibilă încadrare lipsesc frecvența, activitățile concrete și riscul." },
+                { "language": "sq", "text": "E besueshme, por shumë e pasaktë: për këshillim dhe klasifikim të mundshëm mungojnë shpeshtësia, veprimet konkrete dhe rreziku." }
+              ],
+              "explanationKey": "missing-frequency"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-resources-and-gaps",
+              "text": "Es gibt bereits Nachbarschaftshilfe, Familienbesuche und einen Essensdienst; die Lücke liegt vor allem bei Abendkontrollen und unsicheren Tagen.",
+              "translations": [
+                { "language": "en", "text": "There is already neighbor help, family visits, and a meal service; the gap is mainly evening checks and unsteady days." },
+                { "language": "fa", "text": "کمک همسایه، دیدارهای خانواده و سرویس غذا از قبل وجود دارد؛ فاصله اصلی در کنترل‌های عصر و روزهای نامطمئن است." },
+                { "language": "ar", "text": "هناك بالفعل مساعدة من الجيران وزيارات عائلية وخدمة طعام؛ الفجوة تكمن أساساً في الفحوصات المسائية والأيام غير المستقرة." },
+                { "language": "tr", "text": "Komşu yardımı, aile ziyaretleri ve yemek servisi zaten var; boşluk özellikle akşam kontrollerinde ve dengesiz günlerde." },
+                { "language": "ru", "text": "Уже есть помощь соседа, семейные визиты и служба питания; пробел в основном в вечерних проверках и неустойчивых днях." },
+                { "language": "ckb", "text": "یارمەتی دراوسێ، سەردانی خێزان و خزمەتی خواردن پێشتر هەیە؛ بۆشاییەکە زیاتر لە پشکنینی ئێواران و ڕۆژە نادڵنیاکانە." },
+                { "language": "kmr", "text": "Alîkariya cîran, serdanên malbatê û xizmeta xwarinê jixwe hene; valahî bi taybetî di kontrolên êvarê û rojên neewle de ye." },
+                { "language": "pl", "text": "Jest już pomoc sąsiedzka, wizyty rodzinne i usługa posiłków; luka dotyczy głównie kontroli wieczornych i niepewnych dni." },
+                { "language": "ro", "text": "Există deja ajutor de la vecini, vizite ale familiei și un serviciu de masă; golul este mai ales la verificările de seară și în zilele nesigure." },
+                { "language": "sq", "text": "Ka tashmë ndihmë nga fqinjët, vizita familjare dhe shërbim ushqimi; boshllëku është sidomos te kontrollet e mbrëmjes dhe ditët e pasigurta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt, dass nicht alles fehlt, sondern dass bestimmte Versorgungslücken geschlossen werden müssen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer shows that not everything is missing, but specific care gaps need to be closed." },
+                { "language": "fa", "text": "قوی: پاسخ نشان می‌دهد همه چیز کم نیست، بلکه باید فاصله‌های مشخص در پوشش مراقبت بسته شوند." },
+                { "language": "ar", "text": "قوي: الإجابة تُظهر أن ليس كل شيء مفقوداً، بل يجب سد فجوات رعاية محددة." },
+                { "language": "tr", "text": "Güçlü: Yanıt her şeyin eksik olmadığını, belirli bakım boşluklarının kapatılması gerektiğini gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ показывает, что отсутствует не всё, а нужно закрыть конкретные пробелы в обеспечении." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پیشان دەدات هەموو شتێک کەم نییە، بەڵکو پێویستە بۆشاییە دیاریکراوەکانی چاودێری داخڕێن." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nîşan dide ku ne her tişt kêm e, lê divê valahiyên konkret ên lênêrînê bên girtin." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje, że nie brakuje wszystkiego, lecz trzeba zamknąć konkretne luki w opiece." },
+                { "language": "ro", "text": "Puternic: răspunsul arată că nu lipsește totul, ci trebuie acoperite anumite goluri de îngrijire." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon se nuk mungon gjithçka, por duhen mbyllur boshllëqe konkrete në kujdes." }
+              ],
+              "explanationKey": "resources-before-gaps"
+            },
+            {
+              "id": "weak-family-overload-only",
+              "text": "Wir schaffen das als Familie einfach nicht mehr und brauchen jemanden, der mehr übernimmt.",
+              "translations": [
+                { "language": "en", "text": "As a family we simply cannot manage it anymore and need someone to take over more." },
+                { "language": "fa", "text": "ما به‌عنوان خانواده دیگر از عهده‌اش برنمی‌آییم و به کسی نیاز داریم که بیشتر بر عهده بگیرد." },
+                { "language": "ar", "text": "نحن كعائلة لم نعد نستطيع تدبر الأمر ونحتاج إلى شخص يتولى المزيد." },
+                { "language": "tr", "text": "Aile olarak artık bunu başaramıyoruz ve daha fazlasını üstlenecek birine ihtiyacımız var." },
+                { "language": "ru", "text": "Как семья мы просто уже не справляемся, и нам нужен кто-то, кто возьмёт на себя больше." },
+                { "language": "ckb", "text": "ئێمە وەک خێزان ئیتر ناتوانین ئەمە بەڕێوە ببەین و پێویستمان بە کەسێکە زیاتر لە ئەستۆ بگرێت." },
+                { "language": "kmr", "text": "Em wekî malbat êdî nikarin vê bikin û kesekî dixwazin ku zêdetir bigire ser xwe." },
+                { "language": "pl", "text": "Jako rodzina po prostu już sobie nie radzimy i potrzebujemy kogoś, kto przejmie więcej." },
+                { "language": "ro", "text": "Ca familie pur și simplu nu mai facem față și avem nevoie de cineva care să preia mai mult." },
+                { "language": "sq", "text": "Si familje thjesht nuk ia dalim më dhe na duhet dikush që të marrë më shumë përsipër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber unvollständig: Die familiäre Grenze ist wichtig, ersetzt aber nicht die Beschreibung vorhandener Hilfe und konkreter Lücken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but incomplete: the family limit matters, but it does not replace describing existing help and concrete gaps." },
+                { "language": "fa", "text": "قابل فهم است، اما ناقص: محدودیت خانواده مهم است، ولی جای توضیح کمک موجود و فاصله‌های مشخص را نمی‌گیرد." },
+                { "language": "ar", "text": "مفهوم، لكنه غير كامل: حدود الأسرة مهمة، لكنها لا تعوض وصف المساعدة الموجودة والفجوات المحددة." },
+                { "language": "tr", "text": "Anlaşılır, ama eksik: aile sınırı önemlidir, fakat mevcut yardım ve somut boşlukların açıklamasının yerini tutmaz." },
+                { "language": "ru", "text": "Понятно, но неполно: семейный предел важен, но он не заменяет описание имеющейся помощи и конкретных пробелов." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام ناتەواوە: سنووری خێزان گرنگە، بەڵام جێگای باسکردنی یارمەتی هەنووکە و بۆشاییە دیاریکراوەکان ناگرێتەوە." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê netemam e: sînorê malbatê girîng e, lê şûna ravekirina alîkariya heyî û valahiyên konkret nagire." },
+                { "language": "pl", "text": "Zrozumiałe, ale niepełne: granica rodziny jest ważna, lecz nie zastępuje opisu istniejącej pomocy i konkretnych luk." },
+                { "language": "ro", "text": "De înțeles, dar incomplet: limita familiei este importantă, dar nu înlocuiește descrierea ajutorului existent și a golurilor concrete." },
+                { "language": "sq", "text": "E kuptueshme, por e paplotë: kufiri i familjes është i rëndësishëm, por nuk zëvendëson përshkrimin e ndihmës ekzistuese dhe boshllëqeve konkrete." }
+              ],
+              "explanationKey": "family-limit-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-combined-request",
+              "text": "Wir brauchen kurzfristige Entlastung und zugleich eine realistische Einschätzung, ob ein Pflegegrad-Antrag vorbereitet werden sollte.",
+              "translations": [
+                { "language": "en", "text": "We need short-term relief and at the same time a realistic assessment of whether an application for a care level should be prepared." },
+                { "language": "fa", "text": "ما به کاهش فشار کوتاه‌مدت و هم‌زمان به ارزیابی واقع‌بینانه نیاز داریم که آیا باید درخواست درجه مراقبت آماده شود یا نه." },
+                { "language": "ar", "text": "نحتاج إلى تخفيف قصير المدى وفي الوقت نفسه إلى تقييم واقعي لما إذا كان ينبغي إعداد طلب درجة رعاية." },
+                { "language": "tr", "text": "Kısa vadeli rahatlamaya ve aynı zamanda bakım derecesi başvurusunun hazırlanıp hazırlanmaması konusunda gerçekçi bir değerlendirmeye ihtiyacımız var." },
+                { "language": "ru", "text": "Нам нужно краткосрочное облегчение и одновременно реалистичная оценка, следует ли готовить заявление на степень ухода." },
+                { "language": "ckb", "text": "پێویستمان بە سووککردنەوەی ماوەکورت و هەمان کات هەڵسەنگاندنێکی واقیعی هەیە کە ئایا پێویستە داواکاری ئاستی چاودێری ئامادە بکرێت." },
+                { "language": "kmr", "text": "Em sivikkirina demkurt û hevdem nirxandineke rast dixwazin ku gelo divê daxwaza asta lênêrînê were amadekirin." },
+                { "language": "pl", "text": "Potrzebujemy krótkoterminowego odciążenia i jednocześnie realistycznej oceny, czy należy przygotować wniosek o stopień opieki." },
+                { "language": "ro", "text": "Avem nevoie de degrevare pe termen scurt și în același timp de o evaluare realistă dacă ar trebui pregătită o cerere pentru grad de îngrijire." },
+                { "language": "sq", "text": "Na duhet lehtësim afatshkurtër dhe njëkohësisht një vlerësim realist nëse duhet përgatitur një kërkesë për nivel kujdesi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort setzt eine klare Priorität, ohne die formelle Klärung oder die Soforthilfe gegeneinander auszuspielen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer sets a clear priority without playing formal clarification and immediate relief against each other." },
+                { "language": "fa", "text": "قوی: پاسخ اولویت روشنی می‌گذارد، بدون اینکه روشن‌سازی رسمی و کمک فوری را در برابر هم قرار دهد." },
+                { "language": "ar", "text": "قوي: الإجابة تحدد أولوية واضحة من دون وضع التوضيح الرسمي والتخفيف الفوري ضد بعضهما." },
+                { "language": "tr", "text": "Güçlü: Yanıt, resmî açıklama ile acil rahatlamayı birbirine karşı koymadan net bir öncelik belirliyor." },
+                { "language": "ru", "text": "Сильно: ответ задаёт ясный приоритет, не противопоставляя формальное уточнение и немедленное облегчение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێشینەیەکی ڕوون دادەنێت، بەبێ ئەوەی ڕوونکردنەوەی فەرمی و یارمەتی خێرا دژی یەک بخات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pêşîneyeke zelal datîne bêyî ku zelalkirina fermî û sivikkirina lezgîn li dijî hev bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź stawia jasny priorytet, nie przeciwstawiając formalnego wyjaśnienia i natychmiastowego odciążenia." },
+                { "language": "ro", "text": "Puternic: răspunsul stabilește o prioritate clară fără a pune clarificarea formală și degrevarea imediată una împotriva celeilalte." },
+                { "language": "sq", "text": "E fortë: përgjigjja vendos një prioritet të qartë pa vënë përballë sqarimin formal dhe lehtësimin e menjëhershëm." }
+              ],
+              "explanationKey": "dual-track-request"
+            },
+            {
+              "id": "weak-formal-only",
+              "text": "Ich möchte vor allem wissen, ob sie einen Pflegegrad bekommt; alles andere können wir später klären.",
+              "translations": [
+                { "language": "en", "text": "I mainly want to know whether she will get a care level; everything else we can clarify later." },
+                { "language": "fa", "text": "بیشتر می‌خواهم بدانم آیا درجه مراقبت می‌گیرد یا نه؛ بقیه چیزها را می‌توانیم بعداً روشن کنیم." },
+                { "language": "ar", "text": "أريد أساساً أن أعرف هل ستحصل على درجة رعاية؛ كل شيء آخر يمكننا توضيحه لاحقاً." },
+                { "language": "tr", "text": "Öncelikle bakım derecesi alıp alamayacağını bilmek istiyorum; diğer her şeyi sonra açıklığa kavuşturabiliriz." },
+                { "language": "ru", "text": "В основном я хочу знать, получит ли она степень ухода; всё остальное мы можем уточнить позже." },
+                { "language": "ckb", "text": "زۆرتر دەمەوێت بزانم ئایا ئاستی چاودێری وەردەگرێت؛ هەموو شتی تر دواتر ڕوون دەکەینەوە." },
+                { "language": "kmr", "text": "Ez herî zêde dixwazim bizanim gelo ew asta lênêrînê werdigire; her tiştê din em paşê zelal dikin." },
+                { "language": "pl", "text": "Przede wszystkim chcę wiedzieć, czy dostanie stopień opieki; wszystko inne możemy wyjaśnić później." },
+                { "language": "ro", "text": "Vreau în primul rând să știu dacă va primi un grad de îngrijire; restul îl putem clarifica mai târziu." },
+                { "language": "sq", "text": "Kryesisht dua të di nëse do të marrë nivel kujdesi; gjithçka tjetër mund ta sqarojmë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch zu eng: Die akute Versorgungslücke bleibt offen, obwohl sie im Alltag gerade das dringendste Problem ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically too narrow: the immediate care gap remains open, although it is currently the most urgent everyday problem." },
+                { "language": "fa", "text": "از نظر راهبردی بیش از حد محدود است: فاصله مراقبتی فوری باز می‌ماند، در حالی که همین الان فوری‌ترین مشکل روزمره است." },
+                { "language": "ar", "text": "ضيق استراتيجياً: تبقى فجوة الرعاية العاجلة مفتوحة، رغم أنها حالياً المشكلة اليومية الأكثر إلحاحاً." },
+                { "language": "tr", "text": "Stratejik olarak fazla dar: acil bakım boşluğu açık kalıyor, oysa şu anda günlük yaşamdaki en acil sorun bu." },
+                { "language": "ru", "text": "Стратегически слишком узко: срочный пробел в обеспечении остаётся открытым, хотя сейчас это самая неотложная бытовая проблема." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە زۆر تەسکە: بۆشایی چاودێری خێرا کراوە دەمێنێت، هەرچەندە ئێستا گرنگترین کێشەی ڕۆژانەیە." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve pir teng e: valahiya lênêrîna lezgîn vekirî dimîne, tevî ku ew niha pirsgirêka herî lezgîn a rojane ye." },
+                { "language": "pl", "text": "Strategicznie zbyt wąskie: pilna luka w opiece pozostaje otwarta, choć to obecnie najpilniejszy problem codzienny." },
+                { "language": "ro", "text": "Strategic prea îngust: golul de îngrijire imediată rămâne deschis, deși acum este cea mai urgentă problemă cotidiană." },
+                { "language": "sq", "text": "Strategjikisht shumë e ngushtë: boshllëku i menjëhershëm i kujdesit mbetet i hapur, megjithëse tani është problemi më urgjent i përditshëm." }
+              ],
+              "explanationKey": "formal-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-consent-and-documents",
+              "text": "Sie hat zugestimmt und möchte beteiligt bleiben; ich bringe medizinische Unterlagen und eine sachliche Alltagsliste mit.",
+              "translations": [
+                { "language": "en", "text": "She has agreed and wants to remain involved; I am bringing medical documents and a factual everyday-life list." },
+                { "language": "fa", "text": "او موافقت کرده و می‌خواهد همچنان دخیل بماند؛ من مدارک پزشکی و یک فهرست عینی از موقعیت‌های روزمره همراه دارم." },
+                { "language": "ar", "text": "لقد وافقت وتريد أن تبقى مشاركة؛ أحضر وثائق طبية وقائمة يومية موضوعية." },
+                { "language": "tr", "text": "Onay verdi ve dahil kalmak istiyor; tıbbi belgeler ve nesnel bir günlük yaşam listesi getiriyorum." },
+                { "language": "ru", "text": "Она согласилась и хочет оставаться вовлечённой; я приношу медицинские документы и фактический список бытовых ситуаций." },
+                { "language": "ckb", "text": "ڕازی بووە و دەتەوێت بەشدار بمێنێت؛ من بەڵگەی پزیشکی و لیستێکی بابەتیی ڕۆژانە دەهێنم." },
+                { "language": "kmr", "text": "Ew razî bûye û dixwaze beşdar bimîne; ez belgeyên bijîşkî û lîsteyeke rojane ya rastî tînim." },
+                { "language": "pl", "text": "Zgodziła się i chce pozostać włączona; przynoszę dokumenty medyczne i rzeczową listę codziennych sytuacji." },
+                { "language": "ro", "text": "A fost de acord și vrea să rămână implicată; aduc documente medicale și o listă factuală a situațiilor cotidiene." },
+                { "language": "sq", "text": "Ajo ka rënë dakord dhe dëshiron të mbetet e përfshirë; sjell dokumente mjekësore dhe një listë faktike të situatave të përditshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Datenschutz, Beteiligung der Mutter und Belegbasis werden in einem Satz sauber verbunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Data protection, the mother's involvement, and the evidence basis are cleanly connected in one sentence." },
+                { "language": "fa", "text": "قوی: حفاظت داده، مشارکت مادر و پایه مدارک در یک جمله تمیز به هم وصل شده‌اند." },
+                { "language": "ar", "text": "قوي: حماية البيانات ومشاركة الأم وأساس الوثائق مرتبطة بوضوح في جملة واحدة." },
+                { "language": "tr", "text": "Güçlü: Veri koruma, annenin katılımı ve belge temeli tek cümlede temiz biçimde bağlanıyor." },
+                { "language": "ru", "text": "Сильно: защита данных, участие матери и доказательная база аккуратно связаны в одном предложении." },
+                { "language": "ckb", "text": "بەهێزە: پاراستنی داتا، بەشداری دایک و بنەمای بەڵگە لە یەک ڕستەدا بە پاکی پێکەوە دەبەسترێن." },
+                { "language": "kmr", "text": "Xurt e: Parastina daneyan, beşdarbûna dayikê û bingehê belgeyan di yek hevokê de paqij têne girêdan." },
+                { "language": "pl", "text": "Mocne: ochrona danych, udział matki i podstawa dokumentów są jasno połączone w jednym zdaniu." },
+                { "language": "ro", "text": "Puternic: protecția datelor, implicarea mamei și baza documentară sunt legate clar într-o singură propoziție." },
+                { "language": "sq", "text": "E fortë: mbrojtja e të dhënave, përfshirja e nënës dhe baza e dokumenteve lidhen qartë në një fjali." }
+              ],
+              "explanationKey": "consent-documents"
+            },
+            {
+              "id": "weak-decide-for-her",
+              "text": "Ich entscheide das für sie, weil sie sich mit solchen Anträgen ohnehin nicht auskennt.",
+              "translations": [
+                { "language": "en", "text": "I decide that for her because she is not familiar with such applications anyway." },
+                { "language": "fa", "text": "من این را برای او تصمیم می‌گیرم، چون او به هر حال با چنین درخواست‌هایی آشنا نیست." },
+                { "language": "ar", "text": "أنا أقرر ذلك عنها لأنها لا تعرف أصلاً مثل هذه الطلبات." },
+                { "language": "tr", "text": "Bunu onun yerine ben kararlaştırıyorum, çünkü zaten böyle başvuruları bilmiyor." },
+                { "language": "ru", "text": "Я решаю это за неё, потому что она всё равно не разбирается в таких заявлениях." },
+                { "language": "ckb", "text": "من ئەمە لەبری ئەو بڕیار دەدەم، چونکە بە هرحاڵ لە داواکارییەکانی وەها تێناگات." },
+                { "language": "kmr", "text": "Ez vê li şûna wê biryar didim, ji ber ku ew bi van daxwazan zaten nas nake." },
+                { "language": "pl", "text": "Ja decyduję za nią, bo ona i tak nie zna się na takich wnioskach." },
+                { "language": "ro", "text": "Eu decid asta pentru ea, deoarece oricum nu se pricepe la astfel de cereri." },
+                { "language": "sq", "text": "Unë vendos për të, sepse ajo gjithsesi nuk i njeh këto kërkesa." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht geeignet: Die Antwort klingt entmündigend und ignoriert Einwilligung, Beteiligung und Würde.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not suitable: The answer sounds disempowering and ignores consent, involvement, and dignity." },
+                { "language": "fa", "text": "مناسب نیست: پاسخ حالت سلب اختیار دارد و رضایت، مشارکت و شأن را نادیده می‌گیرد." },
+                { "language": "ar", "text": "غير مناسب: الإجابة تبدو كأنها تسلبها القرار وتتجاهل الموافقة والمشاركة والكرامة." },
+                { "language": "tr", "text": "Uygun değil: Yanıt yetkisizleştirici duyuluyor ve onay, katılım ve saygınlığı yok sayıyor." },
+                { "language": "ru", "text": "Не подходит: ответ звучит как лишение самостоятельности и игнорирует согласие, участие и достоинство." },
+                { "language": "ckb", "text": "گونجاو نییە: وەڵامەکە وەک لێسەندنەوەی دەسەڵات دەبیسترێت و ڕەزامەندی، بەشداری و ڕێز پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Guncaw nîne: Bersiv wekî kêmkirina desthilatê tê bihîstin û razîbûn, beşdarbûn û rûmetê paşguh dike." },
+                { "language": "pl", "text": "Nieodpowiednie: odpowiedź brzmi jak odbieranie sprawczości i ignoruje zgodę, udział oraz godność." },
+                { "language": "ro", "text": "Nepotrivit: răspunsul sună ca o lipsire de autonomie și ignoră consimțământul, implicarea și demnitatea." },
+                { "language": "sq", "text": "E papërshtatshme: përgjigjja tingëllon si heqje autonomie dhe injoron pëlqimin, përfshirjen dhe dinjitetin." }
+              ],
+              "explanationKey": "disempowering"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "strong-dignified-summary",
+              "text": "Ich bitte um kurzfristige Unterstützung und eine Einschätzung zum Pflegegrad, damit meine Mutter geschützt bleibt und zugleich möglichst selbstständig entscheiden kann.",
+              "translations": [
+                { "language": "en", "text": "I ask for short-term support and an assessment regarding the care level so that my mother remains protected and at the same time can decide as independently as possible." },
+                { "language": "fa", "text": "درخواست پشتیبانی کوتاه‌مدت و ارزیابی درباره درجه مراقبت دارم تا مادرم محافظت شود و هم‌زمان تا حد ممکن مستقل تصمیم بگیرد." },
+                { "language": "ar", "text": "أطلب دعماً قصير المدى وتقييماً بخصوص درجة الرعاية، لكي تبقى والدتي محمية وفي الوقت نفسه تستطيع أن تقرر باستقلالية قدر الإمكان." },
+                { "language": "tr", "text": "Annemin korunması ve aynı zamanda mümkün olduğunca bağımsız karar verebilmesi için kısa vadeli destek ve bakım derecesi konusunda değerlendirme rica ediyorum." },
+                { "language": "ru", "text": "Я прошу краткосрочную поддержку и оценку по степени ухода, чтобы моя мать оставалась защищённой и одновременно могла решать максимально самостоятельно." },
+                { "language": "ckb", "text": "داوای پشتیوانی ماوەکورت و هەڵسەنگاندن دەربارەی ئاستی چاودێری دەکەم، بۆ ئەوەی دایکم پارێزراو بمێنێت و هەمان کات تا دەتوانێت سەربەخۆ بڕیار بدات." },
+                { "language": "kmr", "text": "Ez daxwaza piştgiriya demkurt û nirxandina li ser asta lênêrînê dikim, da ku diya min parastî bimîne û hevdem bi qasî gengaz bi xwe biryar bide." },
+                { "language": "pl", "text": "Proszę o krótkoterminowe wsparcie i ocenę dotyczącą stopnia opieki, aby moja matka była chroniona i jednocześnie mogła decydować możliwie samodzielnie." },
+                { "language": "ro", "text": "Solicit sprijin pe termen scurt și o evaluare privind gradul de îngrijire, astfel încât mama mea să fie protejată și în același timp să poată decide cât mai independent." },
+                { "language": "sq", "text": "Kërkoj mbështetje afatshkurtër dhe vlerësim për nivelin e kujdesit, që nëna ime të mbetet e mbrojtur dhe njëkohësisht të vendosë sa më pavarur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss verbindet konkrete Hilfe, formelle Prüfung und das Prinzip der Selbstständigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The close connects concrete help, formal review, and the principle of independence." },
+                { "language": "fa", "text": "قوی: جمع‌بندی کمک مشخص، بررسی رسمی و اصل استقلال را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: الخاتمة تربط بين المساعدة المحددة والفحص الرسمي ومبدأ الاستقلالية." },
+                { "language": "tr", "text": "Güçlü: Kapanış somut yardımı, resmî değerlendirmeyi ve bağımsızlık ilkesini birleştiriyor." },
+                { "language": "ru", "text": "Сильно: завершение связывает конкретную помощь, формальную проверку и принцип самостоятельности." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە یارمەتی دیاریکراو، پشکنینی فەرمی و بنەمای سەربەخۆیی پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: Dawî alîkariya konkret, vekolîna fermî û prensîba xweseriyê bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: zakończenie łączy konkretną pomoc, formalną ocenę i zasadę samodzielności." },
+                { "language": "ro", "text": "Puternic: încheierea leagă ajutorul concret, verificarea formală și principiul independenței." },
+                { "language": "sq", "text": "E fortë: përmbyllja lidh ndihmën konkrete, shqyrtimin formal dhe parimin e pavarësisë." }
+              ],
+              "explanationKey": "dignified-closing"
+            },
+            {
+              "id": "weak-only-protection",
+              "text": "Ich möchte vor allem sicherstellen, dass ihr nichts passiert; dafür müssen wir möglichst viel Hilfe organisieren.",
+              "translations": [
+                { "language": "en", "text": "I mainly want to make sure that nothing happens to her; for that we need to organize as much help as possible." },
+                { "language": "fa", "text": "بیشتر می‌خواهم مطمئن شوم اتفاقی برای او نمی‌افتد؛ برای این باید تا حد ممکن کمک زیادی سازمان‌دهی کنیم." },
+                { "language": "ar", "text": "أريد قبل كل شيء أن أضمن ألا يحدث لها شيء؛ لذلك يجب أن ننظم أكبر قدر ممكن من المساعدة." },
+                { "language": "tr", "text": "Öncelikle ona bir şey olmamasını sağlamak istiyorum; bunun için mümkün olduğunca çok yardım organize etmeliyiz." },
+                { "language": "ru", "text": "В первую очередь я хочу убедиться, что с ней ничего не случится; для этого нужно организовать как можно больше помощи." },
+                { "language": "ckb", "text": "زۆرتر دەمەوێت دڵنیا بم هیچ شتێکی بەسەر نەیەت؛ بۆ ئەمە پێویستە تا دەتوانین یارمەتی زۆر ڕێکبخەین." },
+                { "language": "kmr", "text": "Ez herî zêde dixwazim misoger bikim ku tiştek li wê nebe; ji bo vê divê em qasî gengaz zêde alîkarî organîze bikin." },
+                { "language": "pl", "text": "Przede wszystkim chcę zapewnić, żeby nic jej się nie stało; dlatego musimy zorganizować jak najwięcej pomocy." },
+                { "language": "ro", "text": "Vreau mai ales să mă asigur că nu i se întâmplă nimic; pentru asta trebuie să organizăm cât mai mult ajutor." },
+                { "language": "sq", "text": "Dua kryesisht të sigurohem që asgjë të mos i ndodhë; për këtë duhet të organizojmë sa më shumë ndihmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber einseitig: Schutz ist wichtig, aber ohne Selbstständigkeit und konkrete Schritte wirkt die Bitte übervorsichtig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but one-sided: protection is important, but without independence and concrete steps the request sounds overcautious." },
+                { "language": "fa", "text": "قابل قبول است، اما یک‌طرفه: محافظت مهم است، اما بدون استقلال و گام‌های مشخص، درخواست بیش از حد محتاطانه به نظر می‌رسد." },
+                { "language": "ar", "text": "مقبول، لكنه أحادي الجانب: الحماية مهمة، لكن من دون استقلالية وخطوات محددة يبدو الطلب حذراً أكثر من اللازم." },
+                { "language": "tr", "text": "Makûl, ama tek yönlü: koruma önemlidir, ancak bağımsızlık ve somut adımlar olmadan istek aşırı temkinli duyulur." },
+                { "language": "ru", "text": "Правдоподобно, но односторонне: защита важна, но без самостоятельности и конкретных шагов просьба звучит чрезмерно осторожно." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام یەکلایەنەیە: پاراستن گرنگە، بەڵام بەبێ سەربەخۆیی و هەنگاوی دیاریکراو داواکارییەکە زۆر وریا دەبیسترێت." },
+                { "language": "kmr", "text": "Guncan e, lê yekalî ye: parastin girîng e, lê bê xweserî û gavên konkret daxwaz pir hişyar tê bihîstin." },
+                { "language": "pl", "text": "Plausible, ale jednostronne: ochrona jest ważna, lecz bez samodzielności i konkretnych kroków prośba brzmi nadmiernie ostrożnie." },
+                { "language": "ro", "text": "Plauzibil, dar unilateral: protecția este importantă, dar fără independență și pași concreți cererea sună prea precaut." },
+                { "language": "sq", "text": "E besueshme, por e njëanshme: mbrojtja është e rëndësishme, por pa pavarësi dhe hapa konkretë kërkesa tingëllon tepër e kujdesshme." }
+              ],
+              "explanationKey": "protection-only"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "dignity",
+          "text": "Bei Pflegebedarf ist die Balance wichtig: Unterstützung klar benennen, aber die Person nicht auf Hilflosigkeit reduzieren.",
+          "translations": [
+            { "language": "en", "text": "With care needs, balance matters: name support clearly, but do not reduce the person to helplessness." },
+            { "language": "fa", "text": "در نیاز به مراقبت، تعادل مهم است: پشتیبانی را روشن نام ببرید، اما فرد را به درماندگی تقلیل ندهید." },
+            { "language": "ar", "text": "عند الحاجة إلى الرعاية يكون التوازن مهماً: سمِّ الدعم بوضوح، لكن لا تختزل الشخص في العجز." },
+            { "language": "tr", "text": "Bakım ihtiyacında denge önemlidir: desteği açıkça adlandırın, ama kişiyi çaresizliğe indirgemeyin." },
+            { "language": "ru", "text": "При потребности в уходе важен баланс: ясно назвать поддержку, но не сводить человека к беспомощности." },
+            { "language": "ckb", "text": "لە پێویستی چاودێریدا هاوسەنگی گرنگە: پشتیوانی بە ڕوونی ناو ببە، بەڵام کەسەکە تەنها بە بێتوانایی کەم مەکەرەوە." },
+            { "language": "kmr", "text": "Di hewcedariya lênêrînê de hevsengî girîng e: piştgiriyê zelal nav bikin, lê kesê tenê bi bêalîkarî kêm nekin." },
+            { "language": "pl", "text": "Przy potrzebie opieki ważna jest równowaga: jasno nazwać wsparcie, ale nie sprowadzać osoby do bezradności." },
+            { "language": "ro", "text": "În cazul nevoii de îngrijire contează echilibrul: numiți clar sprijinul, dar nu reduceți persoana la neputință." },
+            { "language": "sq", "text": "Në nevojën për kujdes ka rëndësi ekuilibri: emërtoni qartë mbështetjen, por mos e reduktoni personin në pafuqishmëri." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "observable-detail",
+          "text": "Konkrete Tätigkeiten, Häufigkeit und Risiko helfen mehr als allgemeine Aussagen wie „sie schafft es nicht mehr“.",
+          "translations": [
+            { "language": "en", "text": "Concrete activities, frequency, and risk help more than general statements such as \"she can no longer manage\"." },
+            { "language": "fa", "text": "کارهای مشخص، تکرار و خطر بیشتر از جمله‌های کلی مثل «دیگر از عهده‌اش برنمی‌آید» کمک می‌کنند." },
+            { "language": "ar", "text": "الأنشطة المحددة والتكرار والخطر تساعد أكثر من عبارات عامة مثل «لم تعد تستطيع التدبر»." },
+            { "language": "tr", "text": "Somut faaliyetler, sıklık ve risk, \"artık başaramıyor\" gibi genel ifadelerden daha çok yardımcı olur." },
+            { "language": "ru", "text": "Конкретные действия, частота и риск помогают больше, чем общие фразы вроде «она уже не справляется»." },
+            { "language": "ckb", "text": "کارە دیاریکراوەکان، دووبارەبوونەوە و مەترسی زیاتر یارمەتی دەدەن لە دەربڕینی گشتی وەک «ئیتر ناتوانێت»." },
+            { "language": "kmr", "text": "Karên konkret, pircarî û rîsk ji gotinên giştî wekî \"êdî nikare\" zêdetir alîkar in." },
+            { "language": "pl", "text": "Konkretne czynności, częstotliwość i ryzyko pomagają bardziej niż ogólne stwierdzenia typu „już sobie nie radzi”." },
+            { "language": "ro", "text": "Activitățile concrete, frecvența și riscul ajută mai mult decât afirmații generale precum „nu se mai descurcă”." },
+            { "language": "sq", "text": "Veprimet konkrete, shpeshtësia dhe rreziku ndihmojnë më shumë se deklarata të përgjithshme si “nuk ia del më”." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "resources-first",
+          "text": "Wer vorhandene Hilfe nennt, wirkt nicht dramatisch; danach lassen sich Lücken gezielter begründen.",
+          "translations": [
+            { "language": "en", "text": "Naming existing help does not sound dramatic; afterward, gaps can be justified more precisely." },
+            { "language": "fa", "text": "نام بردن از کمک‌های موجود حالت اغراق ندارد؛ بعد از آن می‌توان فاصله‌ها را دقیق‌تر توجیه کرد." },
+            { "language": "ar", "text": "ذكر المساعدة الموجودة لا يبدو تهويلاً؛ وبعد ذلك يمكن تبرير الفجوات بدقة أكبر." },
+            { "language": "tr", "text": "Mevcut yardımı belirtmek dramatik duyulmaz; ardından boşluklar daha hedefli gerekçelendirilebilir." },
+            { "language": "ru", "text": "Упоминание имеющейся помощи не звучит драматично; после этого пробелы можно обосновать точнее." },
+            { "language": "ckb", "text": "ناوبردنی یارمەتی هەنووکە زیادەڕەوی نییە؛ پاشان دەتوانرێت بۆشاییەکان بە ئامانجدارتر ڕوون بکرێنەوە." },
+            { "language": "kmr", "text": "Navkirina alîkariya heyî dramatîk nayê bihîstin; piştre valahî bi armancdarî zêdetir dikarin bêne sedemkirin." },
+            { "language": "pl", "text": "Nazwanie istniejącej pomocy nie brzmi dramatycznie; potem luki można uzasadnić bardziej precyzyjnie." },
+            { "language": "ro", "text": "Numirea ajutorului existent nu sună dramatic; apoi golurile pot fi justificate mai țintit." },
+            { "language": "sq", "text": "Përmendja e ndihmës ekzistuese nuk tingëllon dramatike; më pas boshllëqet mund të arsyetohen më saktë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "dual-track",
+          "text": "Eine gute Bitte trennt kurzfristige Entlastung von formeller Einstufung, ohne eines von beiden zu vergessen.",
+          "translations": [
+            { "language": "en", "text": "A good request separates short-term relief from formal classification without forgetting either one." },
+            { "language": "fa", "text": "درخواست خوب کاهش فشار کوتاه‌مدت را از درجه‌بندی رسمی جدا می‌کند، بدون اینکه هیچ‌کدام را فراموش کند." },
+            { "language": "ar", "text": "الطلب الجيد يفصل بين التخفيف القصير المدى والتصنيف الرسمي من دون أن ينسى أياً منهما." },
+            { "language": "tr", "text": "İyi bir rica kısa vadeli rahatlamayı resmî sınıflandırmadan ayırır, ama ikisini de unutmaz." },
+            { "language": "ru", "text": "Хорошая просьба отделяет краткосрочное облегчение от формальной классификации, не забывая ни одно из них." },
+            { "language": "ckb", "text": "داواکارییەکی باش سووککردنەوەی ماوەکورت لە پۆلێنکردنی فەرمی جیا دەکاتەوە، بەبێ ئەوەی هیچ کامیان لەبیر بکات." },
+            { "language": "kmr", "text": "Daxwazeke baş sivikkirina demkurt ji dabeşkirina fermî cihê dike bêyî ku yek ji wan ji bîr bike." },
+            { "language": "pl", "text": "Dobra prośba oddziela krótkoterminowe odciążenie od formalnej klasyfikacji, nie zapominając o żadnym z nich." },
+            { "language": "ro", "text": "O cerere bună separă degrevarea pe termen scurt de încadrarea formală fără să uite vreuna dintre ele." },
+            { "language": "sq", "text": "Një kërkesë e mirë e ndan lehtësimin afatshkurtër nga klasifikimi formal pa harruar asnjërën." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing",
+          "text": "Der Abschluss sollte Schutz, Selbstständigkeit und konkrete nächste Schritte gemeinsam enthalten.",
+          "translations": [
+            { "language": "en", "text": "The close should contain protection, independence, and concrete next steps together." },
+            { "language": "fa", "text": "جمع‌بندی باید محافظت، استقلال و گام‌های بعدی مشخص را با هم داشته باشد." },
+            { "language": "ar", "text": "ينبغي أن تتضمن الخاتمة الحماية والاستقلالية والخطوات التالية المحددة معاً." },
+            { "language": "tr", "text": "Kapanış koruma, bağımsızlık ve somut sonraki adımları birlikte içermelidir." },
+            { "language": "ru", "text": "Завершение должно одновременно содержать защиту, самостоятельность и конкретные следующие шаги." },
+            { "language": "ckb", "text": "کۆتایی پێویستە پاراستن، سەربەخۆیی و هەنگاوە دیاریکراوەکانی دواتر پێکەوە لەخۆ بگرێت." },
+            { "language": "kmr", "text": "Dawî divê parastin, xweserî û gavên paşîn ên konkret bi hev re dihewîne." },
+            { "language": "pl", "text": "Zakończenie powinno łącznie zawierać ochronę, samodzielność i konkretne następne kroki." },
+            { "language": "ro", "text": "Încheierea ar trebui să conțină împreună protecția, independența și pașii următori concreți." },
+            { "language": "sq", "text": "Përmbyllja duhet të përmbajë së bashku mbrojtjen, pavarësinë dhe hapat e ardhshëm konkretë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "care-advice-family-member",
+          "placement": "hero",
+          "purpose": "Show a respectful care-advice conversation with everyday support notes, consent, and next-step planning.",
+          "altText": "Eine Angehörige bespricht in einer Pflegeberatung Alltagssituationen, vorhandene Hilfe und nächste Unterstützungsschritte.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A family member discusses everyday situations, existing help, and next support steps in a care advisory meeting." },
+            { "language": "fa", "text": "یکی از اعضای خانواده در مشاوره مراقبتی درباره موقعیت‌های روزمره، کمک موجود و گام‌های بعدی پشتیبانی صحبت می‌کند." },
+            { "language": "ar", "text": "فرد من العائلة يناقش في استشارة رعاية مواقف يومية والمساعدة الموجودة وخطوات الدعم التالية." },
+            { "language": "tr", "text": "Bir aile üyesi bakım danışmanlığında günlük durumları, mevcut yardımı ve sonraki destek adımlarını konuşuyor." },
+            { "language": "ru", "text": "Родственник обсуждает в консультации по уходу бытовые ситуации, имеющуюся помощь и следующие шаги поддержки." },
+            { "language": "ckb", "text": "ئەندامێکی خێزان لە ڕاوێژکاری چاودێریدا دەربارەی دۆخە ڕۆژانەکان، یارمەتی هەنووکە و هەنگاوەکانی دواتری پشتیوانی گفتوگۆ دەکات." },
+            { "language": "kmr", "text": "Endamekî malbatê di şêwirmendiya lênêrînê de li ser rewşên rojane, alîkariya heyî û gavên paşîn ên piştgiriyê diaxive." },
+            { "language": "pl", "text": "Członek rodziny omawia w poradni opiekuńczej sytuacje codzienne, istniejącą pomoc i kolejne kroki wsparcia." },
+            { "language": "ro", "text": "Un membru al familiei discută într-o consiliere pentru îngrijire situații cotidiene, ajutorul existent și pașii următori de sprijin." },
+            { "language": "sq", "text": "Një anëtar familjeje diskuton në këshillim për kujdes situata të përditshme, ndihmën ekzistuese dhe hapat e ardhshëm të mbështetjes." }
+          ],
+          "imagePrompt": "Clean educational illustration of a respectful care-advice meeting in Germany. A family member and a care advisor review simple notes about morning routine, medication, stairs, meals, and evening checks; no readable private data, no logos, diverse adults, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

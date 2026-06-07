@@ -1,0 +1,969 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-18-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 18 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-beim-arzt-nach-behandlungsoptionen-fragen",
+      "title": "Beim Arzt nach Behandlungsoptionen fragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask the doctor about treatment options" },
+        { "language": "fa", "text": "پرسیدن از پزشک درباره گزینه‌های درمان" },
+        { "language": "ar", "text": "السؤال عند الطبيب عن خيارات العلاج" },
+        { "language": "tr", "text": "Doktora tedavi seçeneklerini sormak" },
+        { "language": "ru", "text": "Спросить врача о вариантах лечения" },
+        { "language": "ckb", "text": "پرسیارکردن لە پزیشک دەربارەی هەڵبژاردەکانی چارەسەر" },
+        { "language": "kmr", "text": "Li cem doktor li ser vebijarkên dermankirinê pirsîn" },
+        { "language": "pl", "text": "Zapytać lekarza o opcje leczenia" },
+        { "language": "ro", "text": "Să întrebi medicul despre opțiunile de tratament" },
+        { "language": "sq", "text": "Të pyesësh mjekun për mundësitë e trajtimit" }
+      ],
+      "description": "Nach der Untersuchung erklärt die Ärztin zwei mögliche Behandlungswege. Du fragst nach Wirkung, Nebenwirkungen, Alltagseinschränkungen und ihrer Empfehlung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After the examination, the doctor explains two possible treatment paths. You ask about effect, side effects, daily-life limitations, and her recommendation." },
+        { "language": "fa", "text": "بعد از معاینه، پزشک دو مسیر درمانی ممکن را توضیح می‌دهد. درباره اثر، عوارض، محدودیت‌های روزمره و توصیه او سؤال می‌کنی." },
+        { "language": "ar", "text": "بعد الفحص، تشرح الطبيبة طريقتين محتملتين للعلاج. تسأل عن التأثير والآثار الجانبية والقيود اليومية وتوصيتها." },
+        { "language": "tr", "text": "Muayeneden sonra doktor iki olası tedavi yolunu açıklar. Etki, yan etkiler, günlük kısıtlamalar ve onun önerisi hakkında sorarsın." },
+        { "language": "ru", "text": "После осмотра врач объясняет два возможных пути лечения. Ты спрашиваешь о действии, побочных эффектах, ограничениях в быту и ее рекомендации." },
+        { "language": "ckb", "text": "دوای پشکنین، پزیشک دوو ڕێگای چارەسەری گونجاو ڕوون دەکاتەوە. دەربارەی کاریگەری، کاریگەریی لاوەکی، سنوورداریی ڕۆژانە و ڕاسپاردەکەی دەپرسی." },
+        { "language": "kmr", "text": "Piştî kontrolê, doktor du rêyên dermankirinê yên gengaz şirove dike. Tu li ser bandor, bandorên alî, sînordariyên rojane û pêşniyara wê dipirsî." },
+        { "language": "pl", "text": "Po badaniu lekarka wyjaśnia dwie możliwe drogi leczenia. Pytasz o działanie, skutki uboczne, ograniczenia w codzienności i jej zalecenie." },
+        { "language": "ro", "text": "După examinare, medicul explică două căi posibile de tratament. Întrebi despre efect, reacții adverse, limitări zilnice și recomandarea ei." },
+        { "language": "sq", "text": "Pas kontrollit, mjekja shpjegon dy mënyra të mundshme trajtimi. Pyet për efektin, efektet anësore, kufizimet e përditshme dhe rekomandimin e saj." }
+      ],
+      "learnerGoal": "Du kannst zwei Behandlungsoptionen vergleichen, nach Risiken fragen und eine ärztliche Empfehlung verständlich zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can compare two treatment options, ask about risks, and summarize a medical recommendation clearly." },
+        { "language": "fa", "text": "می‌توانی دو گزینه درمان را مقایسه کنی، درباره خطرها بپرسی و توصیه پزشک را روشن جمع‌بندی کنی." },
+        { "language": "ar", "text": "يمكنك مقارنة خيارين للعلاج، والسؤال عن المخاطر، وتلخيص توصية طبية بوضوح." },
+        { "language": "tr", "text": "İki tedavi seçeneğini karşılaştırabilir, riskleri sorabilir ve doktor önerisini anlaşılır şekilde özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь сравнить два варианта лечения, спросить о рисках и понятно подытожить рекомендацию врача." },
+        { "language": "ckb", "text": "دەتوانیت دوو هەڵبژاردەی چارەسەر بەراورد بکەیت، دەربارەی مەترسییەکان بپرسی و ڕاسپاردەی پزیشک بە ڕوونی کورت بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî du vebijarkên dermankirinê berhev bikî, li ser metirsiyan bipirsî û pêşniyara doktorê bi zelalî kurt bikî." },
+        { "language": "pl", "text": "Potrafisz porównać dwie opcje leczenia, zapytać o ryzyka i jasno podsumować zalecenie lekarza." },
+        { "language": "ro", "text": "Poți compara două opțiuni de tratament, poți întreba despre riscuri și poți rezuma clar recomandarea medicului." },
+        { "language": "sq", "text": "Mund të krahasosh dy mundësi trajtimi, të pyesësh për rreziqet dhe të përmbledhësh qartë rekomandimin e mjekut." }
+      ],
+      "cefrLevel": "B1",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "everyday-life"
+      ],
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2380,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Doktor" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medic" },
+            { "language": "sq", "text": "Mjeke" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Die Untersuchung ist unauffällig. Wegen Ihrer Beschwerden gibt es zwei Möglichkeiten: erst einmal Schonung und ein entzündungshemmendes Mittel, oder wir machen zusätzlich eine Überweisung zur Fachärztin.",
+          "translations": [
+            { "language": "en", "text": "The examination is not concerning. Because of your symptoms, there are two options: first rest and an anti-inflammatory medicine, or we also make a referral to a specialist." },
+            { "language": "fa", "text": "معاینه مورد نگران‌کننده‌ای نشان نمی‌دهد. با توجه به علائم شما دو امکان هست: اول استراحت و یک داروی ضدالتهاب، یا علاوه بر آن ارجاع به پزشک متخصص بدهیم." },
+            { "language": "ar", "text": "الفحص غير مقلق. بسبب أعراضك هناك خياران: أولًا الراحة ودواء مضاد للالتهاب، أو نقوم أيضًا بإحالة إلى طبيبة مختصة." },
+            { "language": "tr", "text": "Muayene dikkat çekici değil. Şikayetleriniz nedeniyle iki seçenek var: önce dinlenme ve iltihap önleyici bir ilaç, ya da ayrıca uzman doktora sevk yaparız." },
+            { "language": "ru", "text": "Осмотр без заметных отклонений. Из-за ваших жалоб есть два варианта: сначала покой и противовоспалительное средство, или дополнительно направление к специалисту." },
+            { "language": "ckb", "text": "پشکنینەکە شتێکی نیگەرانی پیشان نادات. بەهۆی ئازارەکانتان دوو هەڵبژاردە هەیە: سەرەتا پشوو و دەرمانێکی دژەهەڵئاوسان، یان هەروەها ڕەوانەکردن بۆ پزیشکی پسپۆڕ بکەین." },
+            { "language": "kmr", "text": "Kontrol tiştekî xemgîn nîşan nade. Ji ber êşên we du vebijark hene: pêşî bêhnvedan û dermanekî dijî iltîhabê, an jî em her weha şandinek ji bo pisporê bikin." },
+            { "language": "pl", "text": "Badanie nie wykazuje nic niepokojącego. Ze względu na pana dolegliwości są dwie możliwości: najpierw oszczędzanie się i lek przeciwzapalny albo dodatkowo skierowanie do specjalistki." },
+            { "language": "ro", "text": "Examinarea nu arată nimic îngrijorător. Din cauza simptomelor dumneavoastră există două posibilități: mai întâi repaus și un medicament antiinflamator, sau facem și o trimitere la specialistă." },
+            { "language": "sq", "text": "Kontrolli nuk tregon diçka shqetësuese. Për shkak të shqetësimeve tuaja ka dy mundësi: së pari pushim dhe një ilaç kundër inflamacionit, ose bëjmë edhe një referim te mjekja specialiste." }
+          ],
+          "function": "explain-options",
+          "toneNote": "Medical explanation with two options.",
+          "expectedLearnerAction": "Ask to compare the options."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Können Sie mir bitte erklären, worin der Unterschied zwischen den beiden Möglichkeiten liegt und welche Sie in meinem Fall zuerst empfehlen würden?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Could you please explain the difference between the two options and which one you would recommend first in my case?" },
+            { "language": "fa", "text": "ممنون. ممکن است لطفاً توضیح بدهید تفاوت این دو امکان چیست و در مورد من اول کدام را توصیه می‌کنید؟" },
+            { "language": "ar", "text": "شكرًا. هل يمكن أن تشرحي لي من فضلك ما الفرق بين الخيارين وأيهما تنصحين به أولًا في حالتي؟" },
+            { "language": "tr", "text": "Teşekkürler. Lütfen iki seçenek arasındaki farkı ve benim durumumda önce hangisini önerdiğinizi açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Спасибо. Не могли бы вы объяснить, в чем разница между двумя вариантами и какой вы сначала рекомендуете в моем случае?" },
+            { "language": "ckb", "text": "سوپاس. دەتوانن تکایە ڕوون بکەنەوە جیاوازی نێوان ئەم دوو هەڵبژاردەیە چییە و لە حاڵەتی مندا سەرەتا کامیان ڕادەسپێرن؟" },
+            { "language": "kmr", "text": "Spas. Hûn dikarin ji kerema xwe şirove bikin cudahiya di navbera her du vebijarkan de çi ye û di rewşa min de pêşî kîjanê pêşniyar dikin?" },
+            { "language": "pl", "text": "Dziękuję. Czy może mi pani wyjaśnić, na czym polega różnica między tymi dwiema możliwościami i którą zaleca pani najpierw w moim przypadku?" },
+            { "language": "ro", "text": "Mulțumesc. Îmi puteți explica, vă rog, care este diferența dintre cele două posibilități și pe care ați recomanda-o mai întâi în cazul meu?" },
+            { "language": "sq", "text": "Faleminderit. A mund të më shpjegoni ju lutem cili është ndryshimi midis dy mundësive dhe cilën do të rekomandonit fillimisht në rastin tim?" }
+          ],
+          "function": "compare-options-question",
+          "toneNote": "Polite comparison and recommendation request.",
+          "expectedLearnerAction": "Ask for difference and recommendation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Die erste Möglichkeit ist weniger aufwendig. Wir beobachten, ob es besser wird. Die Überweisung ist sinnvoll, wenn die Beschwerden trotz Ruhe bleiben oder stärker werden.",
+          "translations": [
+            { "language": "en", "text": "The first option is less involved. We observe whether it improves. The referral makes sense if the symptoms remain despite rest or get worse." },
+            { "language": "fa", "text": "امکان اول کم‌زحمت‌تر است. بررسی می‌کنیم آیا بهتر می‌شود یا نه. ارجاع زمانی منطقی است که علائم با وجود استراحت باقی بمانند یا بدتر شوند." },
+            { "language": "ar", "text": "الخيار الأول أقل تعقيدًا. نراقب ما إذا كان الوضع يتحسن. الإحالة مفيدة إذا بقيت الأعراض رغم الراحة أو أصبحت أقوى." },
+            { "language": "tr", "text": "İlk seçenek daha az zahmetli. Daha iyi olup olmayacağını gözlemleriz. Şikayetler dinlenmeye rağmen kalırsa veya artarsa sevk mantıklıdır." },
+            { "language": "ru", "text": "Первый вариант менее сложный. Мы наблюдаем, станет ли лучше. Направление имеет смысл, если жалобы сохранятся несмотря на покой или усилятся." },
+            { "language": "ckb", "text": "هەڵبژاردەی یەکەم کەمتر ئاڵۆزە. چاودێری دەکەین ئایا باشتر دەبێت یان نا. ڕەوانەکردن گونجاوە ئەگەر ئازارەکان بە پشووەوە بمێنن یان توندتر بن." },
+            { "language": "kmr", "text": "Vebijarka yekem kêm zefmet e. Em temaşe dikin ka baştir dibe an na. Şandin wateyê heye heke êş tevî bêhnvedanê bimînin an xurtir bibin." },
+            { "language": "pl", "text": "Pierwsza możliwość jest mniej skomplikowana. Obserwujemy, czy będzie lepiej. Skierowanie ma sens, jeśli dolegliwości mimo odpoczynku zostaną albo się nasilą." },
+            { "language": "ro", "text": "Prima posibilitate este mai puțin complicată. Observăm dacă se îmbunătățește. Trimiterea are sens dacă simptomele rămân în ciuda repausului sau se intensifică." },
+            { "language": "sq", "text": "Mundësia e parë është më pak e ndërlikuar. Vëzhgojmë nëse përmirësohet. Referimi ka kuptim nëse shqetësimet mbeten pavarësisht pushimit ose bëhen më të forta." }
+          ],
+          "function": "compare-options-answer",
+          "toneNote": "Explains criteria without overpromising.",
+          "expectedLearnerAction": "Ask about side effects and daily-life behavior."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Welche Nebenwirkungen kann das Mittel haben, und darf ich damit normal arbeiten oder sollte ich ein paar Tage vorsichtiger sein?",
+          "translations": [
+            { "language": "en", "text": "What side effects can the medicine have, and can I work normally with it or should I be more careful for a few days?" },
+            { "language": "fa", "text": "این دارو چه عوارضی ممکن است داشته باشد و آیا می‌توانم با آن عادی کار کنم یا باید چند روز محتاط‌تر باشم؟" },
+            { "language": "ar", "text": "ما الآثار الجانبية التي يمكن أن تكون لهذا الدواء، وهل يمكنني العمل بشكل طبيعي معه أم يجب أن أكون أكثر حذرًا لبضعة أيام؟" },
+            { "language": "tr", "text": "Bu ilacın hangi yan etkileri olabilir ve onunla normal çalışabilir miyim, yoksa birkaç gün daha dikkatli mi olmalıyım?" },
+            { "language": "ru", "text": "Какие побочные эффекты может иметь это средство, и могу ли я с ним нормально работать или мне несколько дней быть осторожнее?" },
+            { "language": "ckb", "text": "ئەم دەرمانە چ کاریگەریی لاوەکییەکی دەبێت، و دەتوانم پێی بە شێوەی ئاسایی کار بکەم یان دەبێت چەند ڕۆژ ئاگادارتر بم؟" },
+            { "language": "kmr", "text": "Ev derman dikare çi bandorên alî hebe, û ez dikarim bi wî normal bixebitim an divê çend roj hinekî baldarتر bim?" },
+            { "language": "pl", "text": "Jakie skutki uboczne może mieć ten lek i czy mogę z nim normalnie pracować, czy powinienem przez kilka dni bardziej uważać?" },
+            { "language": "ro", "text": "Ce reacții adverse poate avea medicamentul și pot lucra normal cu el sau ar trebui să fiu mai atent câteva zile?" },
+            { "language": "sq", "text": "Çfarë efektesh anësore mund të ketë ilaçi dhe a mund të punoj normalisht me të apo duhet të jem më i kujdesshëm për disa ditë?" }
+          ],
+          "function": "ask-side-effects-and-daily-life",
+          "toneNote": "Practical safety question.",
+          "expectedLearnerAction": "Ask about side effects and everyday restrictions."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Manche Menschen bekommen Magenprobleme. Nehmen Sie es deshalb bitte nach dem Essen. Körperlich schwere Arbeit sollten Sie für zwei Tage vermeiden.",
+          "translations": [
+            { "language": "en", "text": "Some people get stomach problems. Therefore please take it after eating. You should avoid physically heavy work for two days." },
+            { "language": "fa", "text": "بعضی افراد دچار مشکل معده می‌شوند. بنابراین لطفاً آن را بعد از غذا مصرف کنید. کار بدنی سنگین را دو روز انجام ندهید." },
+            { "language": "ar", "text": "بعض الناس يصابون بمشاكل في المعدة. لذلك يرجى تناوله بعد الطعام. يجب أن تتجنب العمل البدني الثقيل لمدة يومين." },
+            { "language": "tr", "text": "Bazı insanlarda mide sorunları olur. Bu yüzden lütfen yemekten sonra alın. Fiziksel olarak ağır işi iki gün kaçınmalısınız." },
+            { "language": "ru", "text": "У некоторых людей бывают проблемы с желудком. Поэтому принимайте его после еды. Тяжелой физической работы следует избегать два дня." },
+            { "language": "ckb", "text": "هەندێک کەس کێشەی گەدەیان دەبێت. بۆیە تکایە دوای خواردنەوە بیخۆن. کاری جەستەیی قورس بۆ دوو ڕۆژ پێویستە نەکەن." },
+            { "language": "kmr", "text": "Hin kesan pirsgirêkên zikê çêdibin. Ji ber vê ji kerema xwe piştî xwarinê bixwin. Divê du roj karê laşî yê giran nekin." },
+            { "language": "pl", "text": "Niektóre osoby mają problemy żołądkowe. Dlatego proszę brać go po jedzeniu. Ciężkiej pracy fizycznej powinien pan unikać przez dwa dni." },
+            { "language": "ro", "text": "Unii oameni au probleme de stomac. De aceea, vă rog să îl luați după masă. Ar trebui să evitați munca fizică grea timp de două zile." },
+            { "language": "sq", "text": "Disa njerëz kanë probleme me stomakun. Prandaj ju lutem merreni pas ushqimit. Punën e rëndë fizike duhet ta shmangni për dy ditë." }
+          ],
+          "function": "give-side-effect-advice",
+          "toneNote": "Specific but simple advice.",
+          "expectedLearnerAction": "Ask what to do if symptoms persist."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wenn es nach zwei Tagen nicht besser ist, soll ich dann direkt wiederkommen oder erst telefonisch nachfragen?",
+          "translations": [
+            { "language": "en", "text": "If it is not better after two days, should I come back directly or first ask by phone?" },
+            { "language": "fa", "text": "اگر بعد از دو روز بهتر نشد، باید مستقیم دوباره مراجعه کنم یا اول تلفنی سؤال کنم؟" },
+            { "language": "ar", "text": "إذا لم يتحسن الأمر بعد يومين، هل يجب أن أعود مباشرة أم أسأل أولًا عبر الهاتف؟" },
+            { "language": "tr", "text": "İki gün sonra daha iyi olmazsa doğrudan geri mi gelmeliyim, yoksa önce telefonla mı sormalıyım?" },
+            { "language": "ru", "text": "Если через два дня не станет лучше, мне сразу прийти снова или сначала спросить по телефону?" },
+            { "language": "ckb", "text": "ئەگەر دوای دوو ڕۆژ باشتر نەبوو، دەبێت ڕاستەوخۆ بگەڕێمەوە یان سەرەتا بە تەلەفۆن بپرسم؟" },
+            { "language": "kmr", "text": "Heke piştî du rojan baştir nebe, divê rasterast vegerim an pêşî bi telefonê bipirsim?" },
+            { "language": "pl", "text": "Jeśli po dwóch dniach nie będzie lepiej, powinienem od razu wrócić czy najpierw zapytać telefonicznie?" },
+            { "language": "ro", "text": "Dacă după două zile nu este mai bine, ar trebui să revin direct sau să întreb mai întâi telefonic?" },
+            { "language": "sq", "text": "Nëse pas dy ditësh nuk përmirësohet, duhet të kthehem direkt apo të pyes fillimisht me telefon?" }
+          ],
+          "function": "ask-follow-up-plan",
+          "toneNote": "Clarifies next action.",
+          "expectedLearnerAction": "Ask for next-step criteria."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Rufen Sie bitte an, wenn es gleich bleibt. Wenn die Schmerzen deutlich stärker werden oder Atemnot dazukommt, kommen Sie sofort wieder.",
+          "translations": [
+            { "language": "en", "text": "Please call if it stays the same. If the pain becomes clearly stronger or shortness of breath is added, come back immediately." },
+            { "language": "fa", "text": "اگر همان‌طور ماند لطفاً تماس بگیرید. اگر درد به‌طور واضح شدیدتر شد یا تنگی نفس اضافه شد، فوراً دوباره مراجعه کنید." },
+            { "language": "ar", "text": "يرجى الاتصال إذا بقي الوضع كما هو. إذا أصبح الألم أقوى بوضوح أو أضيف ضيق نفس، فارجع فورًا." },
+            { "language": "tr", "text": "Aynı kalırsa lütfen arayın. Ağrı belirgin şekilde artarsa veya nefes darlığı eklenirse hemen geri gelin." },
+            { "language": "ru", "text": "Пожалуйста, позвоните, если всё останется так же. Если боль явно усилится или появится одышка, приходите сразу." },
+            { "language": "ckb", "text": "تکایە پەیوەندی بکەن ئەگەر هەمان شێوە مایەوە. ئەگەر ئازارەکە بە ڕوونی توندتر بوو یان هەناسەبڕکێ زیاد بوو، دەستبەجێ بگەڕێنەوە." },
+            { "language": "kmr", "text": "Ji kerema xwe telefon bikin heke wek xwe bimîne. Heke êş bi zelalî xurtir bibe an bêhnçikî lê zêde bibe, tavilê vegerin." },
+            { "language": "pl", "text": "Proszę zadzwonić, jeśli pozostanie tak samo. Jeśli ból wyraźnie się nasili albo dojdzie duszność, proszę natychmiast wrócić." },
+            { "language": "ro", "text": "Vă rog să sunați dacă rămâne la fel. Dacă durerea devine clar mai puternică sau apare lipsa de aer, reveniți imediat." },
+            { "language": "sq", "text": "Ju lutem telefononi nëse mbetet njësoj. Nëse dhimbja bëhet dukshëm më e fortë ose shtohet vështirësia në frymëmarrje, kthehuni menjëherë." }
+          ],
+          "function": "give-warning-signs",
+          "toneNote": "Clear safety threshold.",
+          "expectedLearnerAction": "Summarize recommendation."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Also nehme ich das Mittel nach dem Essen, schone mich zwei Tage und rufe an, wenn es nicht besser wird. Bei stärkeren Schmerzen oder Atemnot komme ich sofort wieder.",
+          "translations": [
+            { "language": "en", "text": "So I will take the medicine after eating, take it easy for two days, and call if it does not get better. If the pain gets stronger or I have shortness of breath, I will come back immediately." },
+            { "language": "fa", "text": "پس دارو را بعد از غذا مصرف می‌کنم، دو روز مراقب خودم هستم و اگر بهتر نشد تماس می‌گیرم. در صورت درد شدیدتر یا تنگی نفس فوراً دوباره مراجعه می‌کنم." },
+            { "language": "ar", "text": "إذن سأتناول الدواء بعد الطعام، وأرتاح لمدة يومين، وأتصل إذا لم يتحسن الوضع. عند ألم أقوى أو ضيق نفس سأعود فورًا." },
+            { "language": "tr", "text": "Yani ilacı yemekten sonra alacağım, iki gün kendimi zorlamayacağım ve daha iyi olmazsa arayacağım. Ağrı artarsa veya nefes darlığı olursa hemen geri geleceğim." },
+            { "language": "ru", "text": "Итак, я принимаю лекарство после еды, два дня берегу себя и звоню, если не станет лучше. При более сильной боли или одышке сразу вернусь." },
+            { "language": "ckb", "text": "کەواتە دەرمانەکە دوای خواردنەوە دەخۆم، دوو ڕۆژ خۆم دەپارێزم و ئەگەر باشتر نەبوو پەیوەندی دەکەم. لە کاتی ئازاری توندتر یان هەناسەبڕکێدا دەستبەجێ دەگەڕێمەوە." },
+            { "language": "kmr", "text": "Wate ez dermanê piştî xwarinê dixwim, du roj xwe diparêzim û heke baştir nebe telefon dikim. Di êşa xurtir an bêhnçikiyê de tavilê vedigerim." },
+            { "language": "pl", "text": "Czyli biorę lek po jedzeniu, oszczędzam się przez dwa dni i dzwonię, jeśli nie będzie lepiej. Przy silniejszym bólu albo duszności wrócę natychmiast." },
+            { "language": "ro", "text": "Deci iau medicamentul după masă, mă menajez două zile și sun dacă nu se îmbunătățește. La dureri mai puternice sau lipsă de aer revin imediat." },
+            { "language": "sq", "text": "Pra e marr ilaçin pas ushqimit, pushoj për dy ditë dhe telefonoj nëse nuk përmirësohet. Nëse dhimbja forcohet ose kam vështirësi në frymëmarrje, kthehem menjëherë." }
+          ],
+          "function": "summarize-medical-plan",
+          "toneNote": "Repeats treatment, restriction, and warning signs.",
+          "expectedLearnerAction": "Summarize option, use, and escalation rule."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "compare-and-recommendation",
+              "text": "Danke. Können Sie mir bitte erklären, worin der Unterschied zwischen den beiden Möglichkeiten liegt und welche Sie in meinem Fall zuerst empfehlen würden?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Could you please explain the difference between the two options and which one you would recommend first in my case?" },
+                { "language": "fa", "text": "ممنون. ممکن است لطفاً توضیح بدهید تفاوت این دو امکان چیست و در مورد من اول کدام را توصیه می‌کنید؟" },
+                { "language": "ar", "text": "شكرًا. هل يمكن أن تشرحي لي من فضلك ما الفرق بين الخيارين وأيهما تنصحين به أولًا في حالتي؟" },
+                { "language": "tr", "text": "Teşekkürler. Lütfen iki seçenek arasındaki farkı ve benim durumumda önce hangisini önerdiğinizi açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Спасибо. Не могли бы вы объяснить, в чем разница между двумя вариантами и какой вы сначала рекомендуете в моем случае?" },
+                { "language": "ckb", "text": "سوپاس. دەتوانن تکایە ڕوون بکەنەوە جیاوازی نێوان ئەم دوو هەڵبژاردەیە چییە و لە حاڵەتی مندا سەرەتا کامیان ڕادەسپێرن؟" },
+                { "language": "kmr", "text": "Spas. Hûn dikarin ji kerema xwe şirove bikin cudahiya di navbera her du vebijarkan de çi ye û di rewşa min de pêşî kîjanê pêşniyar dikin?" },
+                { "language": "pl", "text": "Dziękuję. Czy może mi pani wyjaśnić, na czym polega różnica między tymi dwiema możliwościami i którą zaleca pani najpierw w moim przypadku?" },
+                { "language": "ro", "text": "Mulțumesc. Îmi puteți explica, vă rog, care este diferența dintre cele două posibilități și pe care ați recomanda-o mai întâi în cazul meu?" },
+                { "language": "sq", "text": "Faleminderit. A mund të më shpjegoni ju lutem cili është ndryshimi midis dy mundësive dhe cilën do të rekomandonit fillimisht në rastin tim?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fragst nicht nur nach Namen der Optionen, sondern nach Unterschied und Empfehlung für deinen Fall.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You ask not only for the names of the options, but for the difference and the recommendation for your case." },
+                { "language": "fa", "text": "خوب است: فقط نام گزینه‌ها را نمی‌پرسی، بلکه درباره تفاوت و توصیه برای مورد خودت سؤال می‌کنی." },
+                { "language": "ar", "text": "جيد: لا تسأل فقط عن أسماء الخيارات، بل عن الفرق والتوصية لحالتك." },
+                { "language": "tr", "text": "İyi: Sadece seçeneklerin adlarını değil, farkı ve kendi durumun için öneriyi soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты спрашиваешь не только названия вариантов, а разницу и рекомендацию для своего случая." },
+                { "language": "ckb", "text": "باشە: تەنها ناوی هەڵبژاردەکان ناپرسی، بەڵکو جیاوازی و ڕاسپاردە بۆ حاڵەتی خۆت دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Tu ne tenê navên vebijarkan dipirsî, lê cudahî û pêşniyarê ji bo rewşa xwe dipirsî." },
+                { "language": "pl", "text": "Dobrze: nie pytasz tylko o nazwy opcji, ale o różnicę i zalecenie dla twojego przypadku." },
+                { "language": "ro", "text": "Bine: nu întrebi doar numele opțiunilor, ci diferența și recomandarea pentru cazul tău." },
+                { "language": "sq", "text": "Mirë: nuk pyet vetëm për emrat e mundësive, por për dallimin dhe rekomandimin për rastin tënd." }
+              ]
+            },
+            {
+              "id": "too-passive-option",
+              "text": "Okay, dann mache ich einfach das, was Sie sagen.",
+              "translations": [
+                { "language": "en", "text": "Okay, then I will simply do what you say." },
+                { "language": "fa", "text": "باشه، پس فقط همان کاری را می‌کنم که شما می‌گویید." },
+                { "language": "ar", "text": "حسنًا، إذن سأفعل ببساطة ما تقولينه." },
+                { "language": "tr", "text": "Tamam, o zaman sadece sizin söylediğinizi yaparım." },
+                { "language": "ru", "text": "Хорошо, тогда я просто сделаю то, что вы скажете." },
+                { "language": "ckb", "text": "باشە، ئەوا تەنها ئەوە دەکەم کە ئێوە دەڵێن." },
+                { "language": "kmr", "text": "Baş e, wê demê ez tenê tiştê hûn dibêjin dikim." },
+                { "language": "pl", "text": "Dobrze, wtedy po prostu zrobię to, co pani powie." },
+                { "language": "ro", "text": "Bine, atunci fac pur și simplu ce spuneți." },
+                { "language": "sq", "text": "Në rregull, atëherë thjesht bëj atë që thoni ju." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu passiv: Du bekommst keine Erklärung zu Wirkung, Risiken oder Entscheidungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too passive: You get no explanation about effect, risks, or decision criteria." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی منفعل است: توضیحی درباره اثر، خطرها یا معیار تصمیم نمی‌گیری." },
+                { "language": "ar", "text": "معقول لكنه سلبي جدًا: لا تحصل على شرح عن التأثير أو المخاطر أو معايير القرار." },
+                { "language": "tr", "text": "Makul ama fazla pasif: Etki, riskler veya karar ölçütleri hakkında açıklama almıyorsun." },
+                { "language": "ru", "text": "Возможно, но слишком пассивно: ты не получаешь объяснения о действии, рисках или критериях решения." },
+                { "language": "ckb", "text": "گونجاو دەردەکەوێت، بەڵام زۆر پاسیڤە: هیچ ڕوونکردنەوەیەک دەربارەی کاریگەری، مەترسی یان پێوەری بڕیار وەرناگریت." },
+                { "language": "kmr", "text": "Pêkan e, lê pir pasîf e: Tu tu şirovekirin li ser bandor, metirsî an pîvanên biryarê nagirî." },
+                { "language": "pl", "text": "Brzmi możliwie, ale zbyt biernie: nie otrzymujesz wyjaśnienia o działaniu, ryzykach ani kryteriach decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea pasiv: nu primești explicații despre efect, riscuri sau criterii de decizie." },
+                { "language": "sq", "text": "E mundshme, por shumë pasive: nuk merr shpjegim për efektin, rreziqet ose kriteret e vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "side-effects-and-work",
+              "text": "Welche Nebenwirkungen kann das Mittel haben, und darf ich damit normal arbeiten oder sollte ich ein paar Tage vorsichtiger sein?",
+              "translations": [
+                { "language": "en", "text": "What side effects can the medicine have, and can I work normally with it or should I be more careful for a few days?" },
+                { "language": "fa", "text": "این دارو چه عوارضی ممکن است داشته باشد و آیا می‌توانم با آن عادی کار کنم یا باید چند روز محتاط‌تر باشم؟" },
+                { "language": "ar", "text": "ما الآثار الجانبية التي يمكن أن تكون لهذا الدواء، وهل يمكنني العمل بشكل طبيعي معه أم يجب أن أكون أكثر حذرًا لبضعة أيام؟" },
+                { "language": "tr", "text": "Bu ilacın hangi yan etkileri olabilir ve onunla normal çalışabilir miyim, yoksa birkaç gün daha dikkatli mi olmalıyım?" },
+                { "language": "ru", "text": "Какие побочные эффекты может иметь это средство, и могу ли я с ним нормально работать или мне несколько дней быть осторожнее?" },
+                { "language": "ckb", "text": "ئەم دەرمانە چ کاریگەریی لاوەکییەکی دەبێت، و دەتوانم پێی بە شێوەی ئاسایی کار بکەم یان دەبێت چەند ڕۆژ ئاگادارتر بم؟" },
+                { "language": "kmr", "text": "Ev derman dikare çi bandorên alî hebe, û ez dikarim bi wî normal bixebitim an divê çend roj hinekî baldarتر bim?" },
+                { "language": "pl", "text": "Jakie skutki uboczne może mieć ten lek i czy mogę z nim normalnie pracować, czy powinienem przez kilka dni bardziej uważać?" },
+                { "language": "ro", "text": "Ce reacții adverse poate avea medicamentul și pot lucra normal cu el sau ar trebui să fiu mai atent câteva zile?" },
+                { "language": "sq", "text": "Çfarë efektesh anësore mund të ketë ilaçi dhe a mund të punoj normalisht me të apo duhet të jem më i kujdesshëm për disa ditë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du verbindest Nebenwirkungen mit einer praktischen Alltagsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You connect side effects with a practical daily-life question." },
+                { "language": "fa", "text": "خوب است: عوارض را با یک سؤال عملی درباره زندگی روزمره وصل می‌کنی." },
+                { "language": "ar", "text": "جيد: تربط الآثار الجانبية بسؤال عملي عن الحياة اليومية." },
+                { "language": "tr", "text": "İyi: Yan etkileri günlük yaşamla ilgili pratik bir soruya bağlıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты связываешь побочные эффекты с практическим вопросом повседневной жизни." },
+                { "language": "ckb", "text": "باشە: کاریگەریی لاوەکی بە پرسیارێکی کرداری ژیانی ڕۆژانەوە دەبەستیت." },
+                { "language": "kmr", "text": "Baş e: Tu bandorên alî bi pirseke pratîk a jiyana rojane ve girê didî." },
+                { "language": "pl", "text": "Dobrze: łączysz skutki uboczne z praktycznym pytaniem z codzienności." },
+                { "language": "ro", "text": "Bine: legi reacțiile adverse de o întrebare practică din viața zilnică." },
+                { "language": "sq", "text": "Mirë: i lidh efektet anësore me një pyetje praktike të jetës së përditshme." }
+              ]
+            },
+            {
+              "id": "side-effects-too-narrow",
+              "text": "Hat das Mittel Nebenwirkungen?",
+              "translations": [
+                { "language": "en", "text": "Does the medicine have side effects?" },
+                { "language": "fa", "text": "آیا این دارو عوارض دارد؟" },
+                { "language": "ar", "text": "هل لهذا الدواء آثار جانبية؟" },
+                { "language": "tr", "text": "Bu ilacın yan etkileri var mı?" },
+                { "language": "ru", "text": "Есть ли у этого лекарства побочные эффекты?" },
+                { "language": "ckb", "text": "ئایا ئەم دەرمانە کاریگەریی لاوەکی هەیە؟" },
+                { "language": "kmr", "text": "Ma ev derman bandorên alî hene?" },
+                { "language": "pl", "text": "Czy ten lek ma skutki uboczne?" },
+                { "language": "ro", "text": "Are medicamentul reacții adverse?" },
+                { "language": "sq", "text": "A ka ky ilaç efekte anësore?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu kurz: Du fragst nicht, was das für Arbeit, Alltag oder Verhalten bedeutet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too short: You do not ask what that means for work, daily life, or behavior." },
+                { "language": "fa", "text": "غلط نیست، اما خیلی کوتاه است: نمی‌پرسی این برای کار، زندگی روزمره یا رفتار چه معنی دارد." },
+                { "language": "ar", "text": "ليس خطأ، لكنه قصير جدًا: لا تسأل ماذا يعني ذلك للعمل أو الحياة اليومية أو السلوك." },
+                { "language": "tr", "text": "Yanlış değil ama çok kısa: Bunun iş, günlük yaşam veya davranış için ne anlama geldiğini sormuyorsun." },
+                { "language": "ru", "text": "Не неправильно, но слишком кратко: ты не спрашиваешь, что это значит для работы, быта или поведения." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر کورتە: ناپرسی ئەمە بۆ کار، ژیانی ڕۆژانە یان ڕەفتار چی مانایەکی هەیە." },
+                { "language": "kmr", "text": "Ne şaş e, lê pir kurt e: Tu napirsî ev ji bo kar, jiyana rojane an tevgerê çi tê wateyê." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt krótkie: nie pytasz, co to oznacza dla pracy, codzienności albo zachowania." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea scurt: nu întrebi ce înseamnă asta pentru muncă, viața zilnică sau comportament." },
+                { "language": "sq", "text": "Nuk është gabim, por është shumë e shkurtër: nuk pyet çfarë do të thotë kjo për punën, jetën e përditshme ose sjelljen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-treatment-summary",
+              "text": "Also nehme ich das Mittel nach dem Essen, schone mich zwei Tage und rufe an, wenn es nicht besser wird. Bei stärkeren Schmerzen oder Atemnot komme ich sofort wieder.",
+              "translations": [
+                { "language": "en", "text": "So I will take the medicine after eating, take it easy for two days, and call if it does not get better. If the pain gets stronger or I have shortness of breath, I will come back immediately." },
+                { "language": "fa", "text": "پس دارو را بعد از غذا مصرف می‌کنم، دو روز مراقب خودم هستم و اگر بهتر نشد تماس می‌گیرم. در صورت درد شدیدتر یا تنگی نفس فوراً دوباره مراجعه می‌کنم." },
+                { "language": "ar", "text": "إذن سأتناول الدواء بعد الطعام، وأرتاح لمدة يومين، وأتصل إذا لم يتحسن الوضع. عند ألم أقوى أو ضيق نفس سأعود فورًا." },
+                { "language": "tr", "text": "Yani ilacı yemekten sonra alacağım, iki gün kendimi zorlamayacağım ve daha iyi olmazsa arayacağım. Ağrı artarsa veya nefes darlığı olursa hemen geri geleceğim." },
+                { "language": "ru", "text": "Итак, я принимаю лекарство после еды, два дня берегу себя и звоню, если не станет лучше. При более сильной боли или одышке сразу вернусь." },
+                { "language": "ckb", "text": "کەواتە دەرمانەکە دوای خواردنەوە دەخۆم، دوو ڕۆژ خۆم دەپارێزم و ئەگەر باشتر نەبوو پەیوەندی دەکەم. لە کاتی ئازاری توندتر یان هەناسەبڕکێدا دەستبەجێ دەگەڕێمەوە." },
+                { "language": "kmr", "text": "Wate ez dermanê piştî xwarinê dixwim, du roj xwe diparêzim û heke baştir nebe telefon dikim. Di êşa xurtir an bêhnçikiyê de tavilê vedigerim." },
+                { "language": "pl", "text": "Czyli biorę lek po jedzeniu, oszczędzam się przez dwa dni i dzwonię, jeśli nie będzie lepiej. Przy silniejszym bólu albo duszności wrócę natychmiast." },
+                { "language": "ro", "text": "Deci iau medicamentul după masă, mă menajez două zile și sun dacă nu se îmbunătățește. La dureri mai puternice sau lipsă de aer revin imediat." },
+                { "language": "sq", "text": "Pra e marr ilaçin pas ushqimit, pushoj për dy ditë dhe telefonoj nëse nuk përmirësohet. Nëse dhimbja forcohet ose kam vështirësi në frymëmarrje, kthehem menjëherë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du wiederholst Einnahme, Verhalten, Telefonkontakt und Warnzeichen vollständig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You fully repeat how to take it, behavior, phone contact, and warning signs." },
+                { "language": "fa", "text": "خوب است: نحوه مصرف، رفتار، تماس تلفنی و نشانه‌های هشدار را کامل تکرار می‌کنی." },
+                { "language": "ar", "text": "جيد: تكرر طريقة التناول والسلوك والاتصال الهاتفي وعلامات التحذير بشكل كامل." },
+                { "language": "tr", "text": "İyi: Kullanımı, davranışı, telefonla iletişimi ve uyarı işaretlerini tam olarak tekrar ediyorsun." },
+                { "language": "ru", "text": "Хорошо: ты полностью повторяешь прием, поведение, телефонный контакт и тревожные признаки." },
+                { "language": "ckb", "text": "باشە: شێوازی خواردن، ڕەفتار، پەیوەندی تەلەفۆنی و نیشانەکانی ئاگادارکردنەوە بە تەواوی دووبارە دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu xwarina dermanê, tevger, têkiliya telefonê û nîşanên hişyariyê bi tevahî dubare dikî." },
+                { "language": "pl", "text": "Dobrze: w pełni powtarzasz sposób przyjmowania, zachowanie, kontakt telefoniczny i sygnały ostrzegawcze." },
+                { "language": "ro", "text": "Bine: repeți complet administrarea, comportamentul, contactul telefonic și semnele de alarmă." },
+                { "language": "sq", "text": "Mirë: përsërit plotësisht mënyrën e marrjes, sjelljen, kontaktin telefonik dhe shenjat paralajmëruese." }
+              ]
+            },
+            {
+              "id": "summary-missing-warning-signs",
+              "text": "Alles klar, ich nehme das Mittel und melde mich, wenn ich noch Fragen habe.",
+              "translations": [
+                { "language": "en", "text": "All right, I will take the medicine and contact you if I still have questions." },
+                { "language": "fa", "text": "باشه، دارو را مصرف می‌کنم و اگر هنوز سؤالی داشتم خبر می‌دهم." },
+                { "language": "ar", "text": "حسنًا، سأتناول الدواء وأتواصل إذا بقيت لدي أسئلة." },
+                { "language": "tr", "text": "Tamam, ilacı alırım ve hâlâ sorularım olursa haber veririm." },
+                { "language": "ru", "text": "Хорошо, я буду принимать лекарство и свяжусь, если останутся вопросы." },
+                { "language": "ckb", "text": "باشە، دەرمانەکە دەخۆم و ئەگەر هێشتا پرسیارم هەبوو پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Baş e, ez dermanê dixwim û heke hîn pirsên min hebin têkilî dikim." },
+                { "language": "pl", "text": "W porządku, będę brał lek i odezwę się, jeśli będę miał jeszcze pytania." },
+                { "language": "ro", "text": "În regulă, iau medicamentul și vă contactez dacă mai am întrebări." },
+                { "language": "sq", "text": "Në rregull, do ta marr ilaçin dhe do të kontaktoj nëse kam ende pyetje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unvollständig: Einnahmezeit, Schonung und Warnzeichen fehlen in deiner Zusammenfassung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too incomplete: The time of taking it, rest, and warning signs are missing from your summary." },
+                { "language": "fa", "text": "خیلی ناقص است: زمان مصرف، استراحت و نشانه‌های هشدار در جمع‌بندی تو کم است." },
+                { "language": "ar", "text": "غير كامل جدًا: وقت التناول والراحة وعلامات التحذير مفقودة في ملخصك." },
+                { "language": "tr", "text": "Çok eksik: Kullanım zamanı, dinlenme ve uyarı işaretleri özetinde eksik." },
+                { "language": "ru", "text": "Слишком неполно: в твоем итоге нет времени приема, покоя и тревожных признаков." },
+                { "language": "ckb", "text": "زۆر ناتەواوە: کاتی خواردن، پشوو و نیشانەکانی ئاگادارکردنەوە لە کورتکردنەوەکەتدا کەمە." },
+                { "language": "kmr", "text": "Pir ne temam e: Dema xwarinê, bêhnvedan û nîşanên hişyariyê di kurteya te de kêm in." },
+                { "language": "pl", "text": "Zbyt niepełne: w twoim podsumowaniu brakuje czasu przyjmowania, oszczędzania się i sygnałów ostrzegawczych." },
+                { "language": "ro", "text": "Prea incomplet: lipsesc ora administrării, repausul și semnele de alarmă din rezumatul tău." },
+                { "language": "sq", "text": "Shumë e paplotë: në përmbledhjen tënde mungojnë koha e marrjes, pushimi dhe shenjat paralajmëruese." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "health-information-note",
+          "text": "Bei Behandlungsoptionen ist eine gute B1-Rückfrage konkret: Unterschied, Nebenwirkungen, Alltag, Empfehlung und Warnzeichen.",
+          "translations": [
+            { "language": "en", "text": "For treatment options, a good B1 follow-up question is concrete: difference, side effects, daily life, recommendation, and warning signs." },
+            { "language": "fa", "text": "در گزینه‌های درمان، سؤال تکمیلی خوب B1 مشخص است: تفاوت، عوارض، زندگی روزمره، توصیه و نشانه‌های هشدار." },
+            { "language": "ar", "text": "في خيارات العلاج، يكون سؤال المتابعة الجيد في B1 محددًا: الفرق والآثار الجانبية والحياة اليومية والتوصية وعلامات التحذير." },
+            { "language": "tr", "text": "Tedavi seçeneklerinde iyi bir B1 takip sorusu somuttur: fark, yan etkiler, günlük yaşam, öneri ve uyarı işaretleri." },
+            { "language": "ru", "text": "При вариантах лечения хороший уточняющий вопрос B1 конкретен: разница, побочные эффекты, быт, рекомендация и тревожные признаки." },
+            { "language": "ckb", "text": "لە هەڵبژاردەکانی چارەسەردا پرسیاری دووبارەی باشی B1 دیاریکراوە: جیاوازی، کاریگەریی لاوەکی، ژیانی ڕۆژانە، ڕاسپاردە و نیشانەکانی ئاگادارکردنەوە." },
+            { "language": "kmr", "text": "Di vebijarkên dermankirinê de pirsa şopandinê ya B1 ya baş konkret e: cudahî, bandorên alî, jiyana rojane, pêşniyar û nîşanên hişyariyê." },
+            { "language": "pl", "text": "Przy opcjach leczenia dobre pytanie uzupełniające B1 jest konkretne: różnica, skutki uboczne, codzienność, zalecenie i sygnały ostrzegawcze." },
+            { "language": "ro", "text": "La opțiunile de tratament, o întrebare bună de B1 este concretă: diferență, reacții adverse, viață zilnică, recomandare și semne de alarmă." },
+            { "language": "sq", "text": "Për mundësitë e trajtimit, një pyetje e mirë pasuese B1 është konkrete: dallimi, efektet anësore, jeta e përditshme, rekomandimi dhe shenjat paralajmëruese." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-krankschreibung-klaeren",
+      "title": "Eine Krankschreibung klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarify a sick note" },
+        { "language": "fa", "text": "روشن‌کردن موضوع گواهی بیماری" },
+        { "language": "ar", "text": "توضيح مسألة الإجازة المرضية" },
+        { "language": "tr", "text": "Hastalık raporunu netleştirmek" },
+        { "language": "ru", "text": "Уточнить больничный лист" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی نووسراوی نەخۆشی" },
+        { "language": "kmr", "text": "Rapora nexweşiyê zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnić zwolnienie lekarskie" },
+        { "language": "ro", "text": "Să clarifici concediul medical" },
+        { "language": "sq", "text": "Të sqarosh raportin mjekësor" }
+      ],
+      "description": "Nach einer Untersuchung fragst du, ob du eine Krankschreibung brauchst, für wie lange sie gilt und was dein Arbeitgeber elektronisch bekommt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After an examination, you ask whether you need a sick note, how long it is valid, and what your employer receives electronically." },
+        { "language": "fa", "text": "بعد از معاینه می‌پرسی آیا به گواهی بیماری نیاز داری، تا چه مدتی معتبر است و کارفرما چه چیزی را الکترونیکی دریافت می‌کند." },
+        { "language": "ar", "text": "بعد الفحص تسأل إن كنت تحتاج إلى إجازة مرضية، وكم مدتها، وما الذي يحصل عليه صاحب العمل إلكترونيًا." },
+        { "language": "tr", "text": "Muayeneden sonra hastalık raporuna ihtiyacın olup olmadığını, ne kadar geçerli olduğunu ve işverenin elektronik olarak ne aldığını soruyorsun." },
+        { "language": "ru", "text": "После осмотра ты спрашиваешь, нужен ли больничный, как долго он действует и что работодатель получает электронно." },
+        { "language": "ckb", "text": "دوای پشکنین دەپرسی ئایا پێویستت بە نووسراوی نەخۆشی هەیە، بۆ چەند ماوە کاریگەرە و خاوەنکار بە شێوەی ئەلیکترۆنی چی وەردەگرێت." },
+        { "language": "kmr", "text": "Piştî kontrolê tu dipirsî gelo rapora nexweşiyê pêwîst e, çiqas dem derbasdar e û kargerê te bi awayê elektronîk çi werdigire." },
+        { "language": "pl", "text": "Po badaniu pytasz, czy potrzebujesz zwolnienia lekarskiego, jak długo ono obowiązuje i co pracodawca otrzymuje elektronicznie." },
+        { "language": "ro", "text": "După o examinare întrebi dacă ai nevoie de concediu medical, cât timp este valabil și ce primește angajatorul electronic." },
+        { "language": "sq", "text": "Pas kontrollit pyet nëse ke nevojë për raport mjekësor, sa gjatë vlen dhe çfarë merr punëdhënësi elektronikisht." }
+      ],
+      "learnerGoal": "Du kannst eine Krankschreibung mit Dauer, Arbeitgeberprozess und Rückkehrtermin korrekt nachfragen und zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can correctly ask about and summarize a sick note with duration, employer process, and return date." },
+        { "language": "fa", "text": "می‌توانی درباره گواهی بیماری با مدت، روند کارفرما و زمان برگشت درست سؤال کنی و جمع‌بندی کنی." },
+        { "language": "ar", "text": "يمكنك السؤال عن الإجازة المرضية وتلخيصها بشكل صحيح مع المدة وإجراء صاحب العمل وموعد العودة." },
+        { "language": "tr", "text": "Hastalık raporunu süre, işveren süreci ve işe dönüş tarihiyle doğru şekilde sorup özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь правильно спросить и подытожить больничный с длительностью, процессом для работодателя и датой возвращения." },
+        { "language": "ckb", "text": "دەتوانیت دەربارەی نووسراوی نەخۆشی بە ماوە، ڕێکاری خاوەنکار و کاتی گەڕانەوە بە دروستی بپرسی و کورت بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî li ser rapora nexweşiyê bi dem, pêvajoya karger û dema vegerê rast bipirsî û kurt bikî." },
+        { "language": "pl", "text": "Potrafisz poprawnie zapytać o zwolnienie lekarskie i podsumować je z czasem trwania, procedurą pracodawcy i datą powrotu." },
+        { "language": "ro", "text": "Poți întreba corect despre concediul medical și îl poți rezuma cu durata, procesul pentru angajator și data revenirii." },
+        { "language": "sq", "text": "Mund të pyesësh saktë për raportin mjekësor dhe ta përmbledhësh me kohëzgjatjen, procesin për punëdhënësin dhe datën e kthimit." }
+      ],
+      "cefrLevel": "B1",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "work-and-jobs"
+      ],
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2390,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Doktor" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medic" },
+            { "language": "sq", "text": "Mjeke" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Sie sollten sich bis Ende der Woche ausruhen und nicht arbeiten gehen. Ich stelle Ihnen eine Krankschreibung aus.",
+          "translations": [
+            { "language": "en", "text": "You should rest until the end of the week and not go to work. I will issue you a sick note." },
+            { "language": "fa", "text": "شما باید تا پایان هفته استراحت کنید و سر کار نروید. برایتان گواهی بیماری صادر می‌کنم." },
+            { "language": "ar", "text": "ينبغي أن ترتاح حتى نهاية الأسبوع ولا تذهب إلى العمل. سأصدر لك إجازة مرضية." },
+            { "language": "tr", "text": "Hafta sonuna kadar dinlenmeli ve işe gitmemelisiniz. Size bir hastalık raporu düzenleyeceğim." },
+            { "language": "ru", "text": "Вам следует отдыхать до конца недели и не ходить на работу. Я оформлю вам больничный." },
+            { "language": "ckb", "text": "پێویستە تا کۆتایی هەفتە پشوو بدەن و نەچنە کار. بۆتان نووسراوی نەخۆشی دەردەکەم." },
+            { "language": "kmr", "text": "Divê heta dawiya hefteyê bêhnvedanê bikin û neçin kar. Ez ji we re rapora nexweşiyê derdixim." },
+            { "language": "pl", "text": "Powinien pan odpoczywać do końca tygodnia i nie iść do pracy. Wystawię panu zwolnienie lekarskie." },
+            { "language": "ro", "text": "Ar trebui să vă odihniți până la sfârșitul săptămânii și să nu mergeți la muncă. Vă eliberez concediu medical." },
+            { "language": "sq", "text": "Duhet të pushoni deri në fund të javës dhe të mos shkoni në punë. Do t'ju lëshoj një raport mjekësor." }
+          ],
+          "function": "state-sick-note",
+          "toneNote": "Direct medical-administrative instruction.",
+          "expectedLearnerAction": "Ask duration and employer process."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Für wie viele Tage gilt die Krankschreibung genau, und muss ich meinem Arbeitgeber noch etwas selbst schicken?",
+          "translations": [
+            { "language": "en", "text": "Thank you. For exactly how many days is the sick note valid, and do I still have to send my employer anything myself?" },
+            { "language": "fa", "text": "ممنون. گواهی بیماری دقیقاً برای چند روز معتبر است و آیا باید خودم چیزی برای کارفرما بفرستم؟" },
+            { "language": "ar", "text": "شكرًا. لكم يومًا بالضبط تسري الإجازة المرضية، وهل يجب أن أرسل شيئًا بنفسي إلى صاحب العمل؟" },
+            { "language": "tr", "text": "Teşekkürler. Hastalık raporu tam olarak kaç gün geçerli ve işverenime kendim bir şey göndermem gerekiyor mu?" },
+            { "language": "ru", "text": "Спасибо. На сколько дней точно действует больничный, и нужно ли мне самому что-то отправить работодателю?" },
+            { "language": "ckb", "text": "سوپاس. نووسراوی نەخۆشی بە وردی بۆ چەند ڕۆژ کاریگەرە، و ئایا دەبێت خۆم شتێک بۆ خاوەنکار بنێرم؟" },
+            { "language": "kmr", "text": "Spas. Rapora nexweşiyê bi rastî ji bo çend rojan derbasdar e, û divê ez tiştek bi xwe ji kargerê xwe re bişînim?" },
+            { "language": "pl", "text": "Dziękuję. Na ile dokładnie dni obowiązuje zwolnienie i czy muszę sam coś jeszcze wysłać pracodawcy?" },
+            { "language": "ro", "text": "Mulțumesc. Pentru câte zile exact este valabil concediul medical și trebuie să trimit eu ceva angajatorului?" },
+            { "language": "sq", "text": "Faleminderit. Për sa ditë saktësisht vlen raporti mjekësor dhe a duhet t'i dërgoj vetë diçka punëdhënësit?" }
+          ],
+          "function": "ask-duration-and-employer-process",
+          "toneNote": "Precise administrative follow-up.",
+          "expectedLearnerAction": "Ask duration and process."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Sie sind von heute bis einschließlich Freitag krankgeschrieben. Die elektronische Meldung kann Ihr Arbeitgeber abrufen. Sie sollten ihn aber über die Dauer informieren.",
+          "translations": [
+            { "language": "en", "text": "You are on sick leave from today through Friday inclusive. Your employer can retrieve the electronic notification. But you should inform them about the duration." },
+            { "language": "fa", "text": "شما از امروز تا جمعه به‌صورت شامل گواهی بیماری دارید. کارفرمایتان می‌تواند اعلام الکترونیکی را دریافت کند. اما باید او را درباره مدت خبر کنید." },
+            { "language": "ar", "text": "أنت في إجازة مرضية من اليوم وحتى يوم الجمعة شاملًا. يمكن لصاحب العمل استدعاء البلاغ الإلكتروني. لكن يجب أن تُعلمه بالمدة." },
+            { "language": "tr", "text": "Bugünden cuma günü dahil olmak üzere hastalık raporlusunuz. İşvereniniz elektronik bildirimi alabilir. Ancak süre hakkında onu bilgilendirmelisiniz." },
+            { "language": "ru", "text": "Вы на больничном с сегодняшнего дня по пятницу включительно. Работодатель может получить электронное уведомление. Но вы должны сообщить ему о длительности." },
+            { "language": "ckb", "text": "ئێوە لە ئەمڕۆوە تا هەینی بە شمول نووسراوی نەخۆشیتان هەیە. خاوەنکارتان دەتوانێت ئاگادارکردنەوەی ئەلیکترۆنی وەربگرێت. بەڵام پێویستە دەربارەی ماوەکە ئاگاداری بکەنەوە." },
+            { "language": "kmr", "text": "Hûn ji îro heta roja înê jî di rapora nexweşiyê de ne. Kargerê we dikare agahdariya elektronîk bistîne. Lê divê hûn wî li ser demê agahdar bikin." },
+            { "language": "pl", "text": "Jest pan na zwolnieniu od dzisiaj do piątku włącznie. Pracodawca może pobrać elektroniczne zgłoszenie. Powinien pan jednak poinformować go o czasie trwania." },
+            { "language": "ro", "text": "Sunteți în concediu medical de astăzi până vineri inclusiv. Angajatorul poate prelua notificarea electronică. Dar ar trebui să îl informați despre durată." },
+            { "language": "sq", "text": "Jeni me raport mjekësor nga sot deri të premten përfshirë. Punëdhënësi mund ta marrë njoftimin elektronik. Por duhet ta informoni për kohëzgjatjen." }
+          ],
+          "function": "explain-eau-process",
+          "toneNote": "Explains electronic sick note process simply.",
+          "expectedLearnerAction": "Ask if printed copy is needed."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Bekomme ich trotzdem eine Bescheinigung für mich, damit ich die Daten noch einmal prüfen kann?",
+          "translations": [
+            { "language": "en", "text": "I understand. Will I still get a certificate for myself so that I can check the details again?" },
+            { "language": "fa", "text": "متوجه شدم. با این حال آیا یک گواهی برای خودم می‌گیرم تا بتوانم اطلاعات را دوباره بررسی کنم؟" },
+            { "language": "ar", "text": "فهمت. هل سأحصل رغم ذلك على شهادة لنفسي حتى أتمكن من التحقق من البيانات مرة أخرى؟" },
+            { "language": "tr", "text": "Anladım. Yine de bilgileri tekrar kontrol edebilmem için kendim için bir belge alacak mıyım?" },
+            { "language": "ru", "text": "Понимаю. Получу ли я всё же справку для себя, чтобы еще раз проверить данные?" },
+            { "language": "ckb", "text": "تێگەیشتم. بەوەشەوە ئایا بۆ خۆم بەڵگەیەک وەردەگرم بۆ ئەوەی زانیارییەکان جارێکی تر بپشکنم؟" },
+            { "language": "kmr", "text": "Fam kir. Ma ez dîsa ji bo xwe belgeyek werdigirim da ku agahiyan carek din kontrol bikim?" },
+            { "language": "pl", "text": "Rozumiem. Czy mimo to otrzymam zaświadczenie dla siebie, żebym mógł jeszcze raz sprawdzić dane?" },
+            { "language": "ro", "text": "Am înțeles. Primesc totuși o adeverință pentru mine, ca să pot verifica încă o dată datele?" },
+            { "language": "sq", "text": "E kuptova. A do të marr megjithatë një vërtetim për vete, që t'i kontrolloj të dhënat edhe një herë?" }
+          ],
+          "function": "ask-personal-copy",
+          "toneNote": "Checks own documentation without assuming employer needs paper.",
+          "expectedLearnerAction": "Ask about own copy."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Ja, Sie bekommen einen Ausdruck für Ihre Unterlagen. Für den Arbeitgeber reicht normalerweise die elektronische Meldung.",
+          "translations": [
+            { "language": "en", "text": "Yes, you will get a printout for your records. For the employer, the electronic notification is normally enough." },
+            { "language": "fa", "text": "بله، برای پرونده خودتان یک نسخه چاپی می‌گیرید. برای کارفرما معمولاً اعلام الکترونیکی کافی است." },
+            { "language": "ar", "text": "نعم، ستحصل على نسخة مطبوعة لسجلاتك. بالنسبة لصاحب العمل، يكفي عادة البلاغ الإلكتروني." },
+            { "language": "tr", "text": "Evet, kendi belgeleriniz için bir çıktı alacaksınız. İşveren için normalde elektronik bildirim yeterlidir." },
+            { "language": "ru", "text": "Да, вы получите распечатку для своих документов. Для работодателя обычно достаточно электронного уведомления." },
+            { "language": "ckb", "text": "بەڵێ، بۆ بەڵگەنامەکانی خۆتان چاپکراوێک وەردەگرن. بۆ خاوەنکار بە شێوەی ئاسایی ئاگادارکردنەوەی ئەلیکترۆنی بەسە." },
+            { "language": "kmr", "text": "Erê, hûn ji bo belgeyên xwe çapek werdigirin. Ji bo karger bi gelemperî agahdariya elektronîk bes e." },
+            { "language": "pl", "text": "Tak, otrzyma pan wydruk do swoich dokumentów. Dla pracodawcy zwykle wystarczy zgłoszenie elektroniczne." },
+            { "language": "ro", "text": "Da, primiți o copie tipărită pentru documentele dumneavoastră. Pentru angajator, de obicei este suficientă notificarea electronică." },
+            { "language": "sq", "text": "Po, do të merrni një kopje të printuar për dokumentet tuaja. Për punëdhënësin zakonisht mjafton njoftimi elektronik." }
+          ],
+          "function": "confirm-personal-copy",
+          "toneNote": "Clarifies personal and employer copies.",
+          "expectedLearnerAction": "Ask about return to work or extension."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wenn ich am Freitag noch nicht fit bin, soll ich dann vorher wieder anrufen, oder reicht ein neuer Termin am Montag?",
+          "translations": [
+            { "language": "en", "text": "If I am still not fit on Friday, should I call again beforehand, or is a new appointment on Monday enough?" },
+            { "language": "fa", "text": "اگر جمعه هنوز آماده کار نبودم، باید قبلش دوباره تماس بگیرم یا یک وقت جدید برای دوشنبه کافی است؟" },
+            { "language": "ar", "text": "إذا لم أكن في حالة جيدة يوم الجمعة، هل يجب أن أتصل مرة أخرى قبل ذلك، أم يكفي موعد جديد يوم الاثنين؟" },
+            { "language": "tr", "text": "Cuma günü hâlâ iyi değilsem önceden tekrar aramalı mıyım, yoksa pazartesi yeni bir randevu yeterli mi?" },
+            { "language": "ru", "text": "Если в пятницу я всё еще не буду в форме, мне заранее снова позвонить или достаточно нового приема в понедельник?" },
+            { "language": "ckb", "text": "ئەگەر هەینی هێشتا باش نەبووم، دەبێت پێشتر جارێکی تر پەیوەندی بکەم، یان کاتێکی نوێ لە دووشەممە بەسە؟" },
+            { "language": "kmr", "text": "Heke roja înê hîn baş nebim, divê berê carek din telefon bikim, an demeke nû roja duşemê bes e?" },
+            { "language": "pl", "text": "Jeśli w piątek nadal nie będę w formie, powinienem wcześniej ponownie zadzwonić czy wystarczy nowy termin w poniedziałek?" },
+            { "language": "ro", "text": "Dacă vineri încă nu sunt apt, ar trebui să sun din nou înainte sau este suficientă o nouă programare luni?" },
+            { "language": "sq", "text": "Nëse të premten ende nuk jam mirë, duhet të telefonoj përsëri më herët apo mjafton një takim i ri të hënën?" }
+          ],
+          "function": "ask-extension-process",
+          "toneNote": "Clarifies process before sick note expires.",
+          "expectedLearnerAction": "Ask about extension timing."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Rufen Sie bitte am Freitagvormittag an, wenn es nicht besser ist. Dann entscheiden wir, ob die Krankschreibung verlängert werden muss.",
+          "translations": [
+            { "language": "en", "text": "Please call on Friday morning if it is not better. Then we will decide whether the sick note needs to be extended." },
+            { "language": "fa", "text": "اگر بهتر نشد، لطفاً جمعه صبح تماس بگیرید. بعد تصمیم می‌گیریم آیا گواهی بیماری باید تمدید شود یا نه." },
+            { "language": "ar", "text": "يرجى الاتصال صباح الجمعة إذا لم يتحسن الوضع. عندها نقرر ما إذا كان يجب تمديد الإجازة المرضية." },
+            { "language": "tr", "text": "Daha iyi olmazsa lütfen cuma sabahı arayın. O zaman hastalık raporunun uzatılıp uzatılmayacağına karar veririz." },
+            { "language": "ru", "text": "Пожалуйста, позвоните в пятницу утром, если не станет лучше. Тогда решим, нужно ли продлить больничный." },
+            { "language": "ckb", "text": "تکایە هەینی بەیانی پەیوەندی بکەن ئەگەر باشتر نەبوو. ئەوکات بڕیار دەدەین ئایا نووسراوی نەخۆشی دەبێت درێژ بکرێتەوە یان نا." },
+            { "language": "kmr", "text": "Ji kerema xwe roja înê sibê telefon bikin heke baştir nebe. Wê demê em biryar didin gelo rapora nexweşiyê divê dirêj bibe." },
+            { "language": "pl", "text": "Proszę zadzwonić w piątek przed południem, jeśli nie będzie lepiej. Wtedy zdecydujemy, czy zwolnienie trzeba przedłużyć." },
+            { "language": "ro", "text": "Vă rog să sunați vineri dimineață dacă nu este mai bine. Atunci decidem dacă trebuie prelungit concediul medical." },
+            { "language": "sq", "text": "Ju lutem telefononi të premten paradite nëse nuk përmirësohet. Atëherë vendosim nëse raporti mjekësor duhet zgjatur." }
+          ],
+          "function": "explain-extension-process",
+          "toneNote": "Gives clear timing for follow-up.",
+          "expectedLearnerAction": "Summarize duration, employer process, and follow-up."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann informiere ich meinen Arbeitgeber heute über die Krankschreibung bis Freitag, behalte den Ausdruck für mich und rufe Freitagvormittag an, falls es nicht besser ist.",
+          "translations": [
+            { "language": "en", "text": "Then I will inform my employer today about the sick note through Friday, keep the printout for myself, and call on Friday morning if it is not better." },
+            { "language": "fa", "text": "پس امروز کارفرمایم را درباره گواهی بیماری تا جمعه خبر می‌کنم، نسخه چاپی را برای خودم نگه می‌دارم و اگر بهتر نشد جمعه صبح تماس می‌گیرم." },
+            { "language": "ar", "text": "إذن سأُعلم صاحب العمل اليوم بالإجازة المرضية حتى الجمعة، وأحتفظ بالنسخة المطبوعة لنفسي، وأتصل صباح الجمعة إذا لم يتحسن الوضع." },
+            { "language": "tr", "text": "O zaman bugün işverenime cuma gününe kadar hastalık raporlu olduğumu bildiririm, çıktıyı kendim için saklarım ve daha iyi olmazsa cuma sabahı ararım." },
+            { "language": "ru", "text": "Тогда сегодня сообщу работодателю о больничном до пятницы, оставлю распечатку себе и позвоню в пятницу утром, если не станет лучше." },
+            { "language": "ckb", "text": "ئەوا ئەمڕۆ خاوەنکارم ئاگادار دەکەمەوە دەربارەی نووسراوی نەخۆشی تا هەینی، چاپکراوەکە بۆ خۆم دەهێڵمەوە و ئەگەر باشتر نەبوو هەینی بەیانی پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Wê demê ez îro kargerê xwe li ser rapora nexweşiyê heta roja înê agahdar dikim, çapê ji bo xwe dihêlim û heke baştir nebe roja înê sibê telefon dikim." },
+            { "language": "pl", "text": "W takim razie dziś poinformuję pracodawcę o zwolnieniu do piątku, wydruk zachowam dla siebie i zadzwonię w piątek przed południem, jeśli nie będzie lepiej." },
+            { "language": "ro", "text": "Atunci îmi informez astăzi angajatorul despre concediul medical până vineri, păstrez copia tipărită pentru mine și sun vineri dimineață dacă nu este mai bine." },
+            { "language": "sq", "text": "Atëherë sot e informoj punëdhënësin për raportin mjekësor deri të premten, e mbaj kopjen e printuar për vete dhe telefonoj të premten paradite nëse nuk përmirësohet." }
+          ],
+          "function": "summary-and-closing",
+          "toneNote": "Summarizes sick note duration and follow-up process.",
+          "expectedLearnerAction": "Confirm duration, employer information, and next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "duration-and-employer-process",
+              "text": "Danke. Für wie viele Tage gilt die Krankschreibung genau, und muss ich meinem Arbeitgeber noch etwas selbst schicken?",
+              "translations": [
+                { "language": "en", "text": "Thank you. For exactly how many days is the sick note valid, and do I still have to send my employer anything myself?" },
+                { "language": "fa", "text": "ممنون. گواهی بیماری دقیقاً برای چند روز معتبر است و آیا باید خودم چیزی برای کارفرما بفرستم؟" },
+                { "language": "ar", "text": "شكرًا. لكم يومًا بالضبط تسري الإجازة المرضية، وهل يجب أن أرسل شيئًا بنفسي إلى صاحب العمل؟" },
+                { "language": "tr", "text": "Teşekkürler. Hastalık raporu tam olarak kaç gün geçerli ve işverenime kendim bir şey göndermem gerekiyor mu?" },
+                { "language": "ru", "text": "Спасибо. На сколько дней точно действует больничный, и нужно ли мне самому что-то отправить работодателю?" },
+                { "language": "ckb", "text": "سوپاس. نووسراوی نەخۆشی بە وردی بۆ چەند ڕۆژ کاریگەرە، و ئایا دەبێت خۆم شتێک بۆ خاوەنکار بنێرم؟" },
+                { "language": "kmr", "text": "Spas. Rapora nexweşiyê bi rastî ji bo çend rojan derbasdar e, û divê ez tiştek bi xwe ji kargerê xwe re bişînim?" },
+                { "language": "pl", "text": "Dziękuję. Na ile dokładnie dni obowiązuje zwolnienie i czy muszę sam coś jeszcze wysłać pracodawcy?" },
+                { "language": "ro", "text": "Mulțumesc. Pentru câte zile exact este valabil concediul medical și trebuie să trimit eu ceva angajatorului?" },
+                { "language": "sq", "text": "Faleminderit. Për sa ditë saktësisht vlen raporti mjekësor dhe a duhet t'i dërgoj vetë diçka punëdhënësit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du klärst sowohl die Dauer als auch den Prozess mit dem Arbeitgeber.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You clarify both the duration and the process with the employer." },
+                { "language": "fa", "text": "خوب است: هم مدت را روشن می‌کنی و هم روند مربوط به کارفرما را." },
+                { "language": "ar", "text": "جيد: توضح المدة وكذلك الإجراء مع صاحب العمل." },
+                { "language": "tr", "text": "İyi: Hem süreyi hem de işverenle ilgili süreci netleştiriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты уточняешь и длительность, и процесс с работодателем." },
+                { "language": "ckb", "text": "باشە: هەم ماوەکە و هەم ڕێکاری پەیوەندیدار بە خاوەنکار ڕوون دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu hem demê hem jî pêvajoya bi karger re zelal dikî." },
+                { "language": "pl", "text": "Dobrze: wyjaśniasz zarówno czas trwania, jak i procedurę z pracodawcą." },
+                { "language": "ro", "text": "Bine: clarifici atât durata, cât și procesul cu angajatorul." },
+                { "language": "sq", "text": "Mirë: sqaron si kohëzgjatjen, ashtu edhe procesin me punëdhënësin." }
+              ]
+            },
+            {
+              "id": "only-thank-you",
+              "text": "Danke, dann sage ich meiner Arbeit Bescheid.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will inform my work." },
+                { "language": "fa", "text": "ممنون، پس به محل کارم خبر می‌دهم." },
+                { "language": "ar", "text": "شكرًا، إذن سأُخبر عملي." },
+                { "language": "tr", "text": "Teşekkürler, o zaman işime haber veririm." },
+                { "language": "ru", "text": "Спасибо, тогда я сообщу на работу." },
+                { "language": "ckb", "text": "سوپاس، ئەوا ئاگاداری کارەکەم دەکەمەوە." },
+                { "language": "kmr", "text": "Spas, wê demê ez karê xwe agahdar dikim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie poinformuję pracę." },
+                { "language": "ro", "text": "Mulțumesc, atunci îmi anunț serviciul." },
+                { "language": "sq", "text": "Faleminderit, atëherë e njoftoj punën time." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Du weißt danach nicht genau, bis wann die Krankschreibung gilt oder was elektronisch passiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: After that you do not know exactly how long the sick note is valid or what happens electronically." },
+                { "language": "fa", "text": "خیلی کوتاه است: بعد از آن دقیق نمی‌دانی گواهی تا چه زمانی معتبر است یا چه چیزی الکترونیکی اتفاق می‌افتد." },
+                { "language": "ar", "text": "قصير جدًا: بعد ذلك لا تعرف بالضبط حتى متى تسري الإجازة المرضية أو ماذا يحدث إلكترونيًا." },
+                { "language": "tr", "text": "Çok kısa: Sonrasında hastalık raporunun tam olarak ne zamana kadar geçerli olduğunu veya elektronik olarak ne olduğunu bilmezsin." },
+                { "language": "ru", "text": "Слишком кратко: после этого ты не знаешь точно, до какого срока действует больничный и что происходит электронно." },
+                { "language": "ckb", "text": "زۆر کورتە: دواتر بە وردی نازانیت نووسراوی نەخۆشی تا کەی کاریگەرە یان بە شێوەی ئەلیکترۆنی چی ڕوودەدات." },
+                { "language": "kmr", "text": "Pir kurt e: Piştî wê tu bi rastî nizanî rapora nexweşiyê heta kengî derbasdar e an bi awayê elektronîk çi dibe." },
+                { "language": "pl", "text": "Zbyt krótko: potem nie wiesz dokładnie, do kiedy obowiązuje zwolnienie ani co dzieje się elektronicznie." },
+                { "language": "ro", "text": "Prea scurt: după aceea nu știi exact până când este valabil concediul sau ce se întâmplă electronic." },
+                { "language": "sq", "text": "Shumë e shkurtër: pas kësaj nuk e di saktësisht deri kur vlen raporti ose çfarë ndodh elektronikisht." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "extension-process-question",
+              "text": "Wenn ich am Freitag noch nicht fit bin, soll ich dann vorher wieder anrufen, oder reicht ein neuer Termin am Montag?",
+              "translations": [
+                { "language": "en", "text": "If I am still not fit on Friday, should I call again beforehand, or is a new appointment on Monday enough?" },
+                { "language": "fa", "text": "اگر جمعه هنوز آماده کار نبودم، باید قبلش دوباره تماس بگیرم یا یک وقت جدید برای دوشنبه کافی است؟" },
+                { "language": "ar", "text": "إذا لم أكن في حالة جيدة يوم الجمعة، هل يجب أن أتصل مرة أخرى قبل ذلك، أم يكفي موعد جديد يوم الاثنين؟" },
+                { "language": "tr", "text": "Cuma günü hâlâ iyi değilsem önceden tekrar aramalı mıyım, yoksa pazartesi yeni bir randevu yeterli mi?" },
+                { "language": "ru", "text": "Если в пятницу я всё еще не буду в форме, мне заранее снова позвонить или достаточно нового приема в понедельник?" },
+                { "language": "ckb", "text": "ئەگەر هەینی هێشتا باش نەبووم، دەبێت پێشتر جارێکی تر پەیوەندی بکەم، یان کاتێکی نوێ لە دووشەممە بەسە؟" },
+                { "language": "kmr", "text": "Heke roja înê hîn baş nebim, divê berê carek din telefon bikim, an demeke nû roja duşemê bes e?" },
+                { "language": "pl", "text": "Jeśli w piątek nadal nie będę w formie, powinienem wcześniej ponownie zadzwonić czy wystarczy nowy termin w poniedziałek?" },
+                { "language": "ro", "text": "Dacă vineri încă nu sunt apt, ar trebui să sun din nou înainte sau este suficientă o nouă programare luni?" },
+                { "language": "sq", "text": "Nëse të premten ende nuk jam mirë, duhet të telefonoj përsëri më herët apo mjafton një takim i ri të hënën?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fragst rechtzeitig nach dem Verfahren, bevor die Krankschreibung abläuft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You ask about the procedure in time before the sick note expires." },
+                { "language": "fa", "text": "خوب است: قبل از تمام‌شدن گواهی بیماری به‌موقع درباره روند سؤال می‌کنی." },
+                { "language": "ar", "text": "جيد: تسأل عن الإجراء في الوقت المناسب قبل انتهاء الإجازة المرضية." },
+                { "language": "tr", "text": "İyi: Hastalık raporu bitmeden önce zamanında süreci soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты вовремя спрашиваешь о процедуре до окончания больничного." },
+                { "language": "ckb", "text": "باشە: پێش تەواوبوونی نووسراوی نەخۆشی بە کاتی خۆی دەربارەی ڕێکارەکە دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Tu berî ku rapora nexweşiyê biqede di demê de li ser pêvajoyê dipirsî." },
+                { "language": "pl", "text": "Dobrze: pytasz o procedurę odpowiednio wcześnie, zanim zwolnienie wygaśnie." },
+                { "language": "ro", "text": "Bine: întrebi la timp despre procedură, înainte să expire concediul medical." },
+                { "language": "sq", "text": "Mirë: pyet me kohë për procedurën para se të skadojë raporti mjekësor." }
+              ]
+            },
+            {
+              "id": "extension-too-late",
+              "text": "Wenn es nicht besser ist, komme ich irgendwann nächste Woche wieder.",
+              "translations": [
+                { "language": "en", "text": "If it is not better, I will come back sometime next week." },
+                { "language": "fa", "text": "اگر بهتر نشد، یک وقتی هفته آینده دوباره می‌آیم." },
+                { "language": "ar", "text": "إذا لم يتحسن، سأعود في وقت ما الأسبوع القادم." },
+                { "language": "tr", "text": "Daha iyi olmazsa gelecek hafta bir ara tekrar gelirim." },
+                { "language": "ru", "text": "Если не станет лучше, я как-нибудь на следующей неделе вернусь." },
+                { "language": "ckb", "text": "ئەگەر باشتر نەبوو، کاتێک لە هەفتەی داهاتوو دەگەڕێمەوە." },
+                { "language": "kmr", "text": "Heke baştir nebe, ez hefteya bê demekê carek din vedigerim." },
+                { "language": "pl", "text": "Jeśli nie będzie lepiej, wrócę kiedyś w przyszłym tygodniu." },
+                { "language": "ro", "text": "Dacă nu este mai bine, revin cândva săptămâna viitoare." },
+                { "language": "sq", "text": "Nëse nuk përmirësohet, do të kthehem dikur javën tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unklar: Für eine mögliche Verlängerung brauchst du einen konkreten Zeitpunkt und ein klares Vorgehen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unclear: For a possible extension you need a concrete time and a clear procedure." },
+                { "language": "fa", "text": "خیلی نامشخص است: برای تمدید احتمالی به زمان مشخص و روند روشن نیاز داری." },
+                { "language": "ar", "text": "غير واضح جدًا: للتمديد المحتمل تحتاج إلى وقت محدد وإجراء واضح." },
+                { "language": "tr", "text": "Çok belirsiz: Olası bir uzatma için somut bir zaman ve net bir süreç gerekir." },
+                { "language": "ru", "text": "Слишком неясно: для возможного продления нужны конкретное время и четкая процедура." },
+                { "language": "ckb", "text": "زۆر نادیارە: بۆ درێژکردنەوەی گونجاو پێویستت بە کاتێکی دیار و ڕێکارێکی ڕوونە." },
+                { "language": "kmr", "text": "Pir nezelal e: Ji bo dirêjkirineke gengaz demeke konkret û pêvajoyeke zelal pêwîst e." },
+                { "language": "pl", "text": "Zbyt niejasne: do możliwego przedłużenia potrzebujesz konkretnego terminu i jasnej procedury." },
+                { "language": "ro", "text": "Prea neclar: pentru o posibilă prelungire ai nevoie de un moment concret și o procedură clară." },
+                { "language": "sq", "text": "Shumë e paqartë: për një zgjatje të mundshme të duhet një kohë konkrete dhe një procedurë e qartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-sick-note-summary",
+              "text": "Dann informiere ich meinen Arbeitgeber heute über die Krankschreibung bis Freitag, behalte den Ausdruck für mich und rufe Freitagvormittag an, falls es nicht besser ist.",
+              "translations": [
+                { "language": "en", "text": "Then I will inform my employer today about the sick note through Friday, keep the printout for myself, and call on Friday morning if it is not better." },
+                { "language": "fa", "text": "پس امروز کارفرمایم را درباره گواهی بیماری تا جمعه خبر می‌کنم، نسخه چاپی را برای خودم نگه می‌دارم و اگر بهتر نشد جمعه صبح تماس می‌گیرم." },
+                { "language": "ar", "text": "إذن سأُعلم صاحب العمل اليوم بالإجازة المرضية حتى الجمعة، وأحتفظ بالنسخة المطبوعة لنفسي، وأتصل صباح الجمعة إذا لم يتحسن الوضع." },
+                { "language": "tr", "text": "O zaman bugün işverenime cuma gününe kadar hastalık raporlu olduğumu bildiririm, çıktıyı kendim için saklarım ve daha iyi olmazsa cuma sabahı ararım." },
+                { "language": "ru", "text": "Тогда сегодня сообщу работодателю о больничном до пятницы, оставлю распечатку себе и позвоню в пятницу утром, если не станет лучше." },
+                { "language": "ckb", "text": "ئەوا ئەمڕۆ خاوەنکارم ئاگادار دەکەمەوە دەربارەی نووسراوی نەخۆشی تا هەینی، چاپکراوەکە بۆ خۆم دەهێڵمەوە و ئەگەر باشتر نەبوو هەینی بەیانی پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Wê demê ez îro kargerê xwe li ser rapora nexweşiyê heta roja înê agahdar dikim, çapê ji bo xwe dihêlim û heke baştir nebe roja înê sibê telefon dikim." },
+                { "language": "pl", "text": "W takim razie dziś poinformuję pracodawcę o zwolnieniu do piątku, wydruk zachowam dla siebie i zadzwonię w piątek przed południem, jeśli nie będzie lepiej." },
+                { "language": "ro", "text": "Atunci îmi informez astăzi angajatorul despre concediul medical până vineri, păstrez copia tipărită pentru mine și sun vineri dimineață dacă nu este mai bine." },
+                { "language": "sq", "text": "Atëherë sot e informoj punëdhënësin për raportin mjekësor deri të premten, e mbaj kopjen e printuar për vete dhe telefonoj të premten paradite nëse nuk përmirësohet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du wiederholst Dauer, Arbeitgeberinformation, eigene Unterlagen und den nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You repeat the duration, employer information, your own records, and the next step." },
+                { "language": "fa", "text": "خوب است: مدت، اطلاع به کارفرما، مدارک خودت و قدم بعدی را تکرار می‌کنی." },
+                { "language": "ar", "text": "جيد: تكرر المدة وإبلاغ صاحب العمل ونسختك الخاصة والخطوة التالية." },
+                { "language": "tr", "text": "İyi: Süreyi, işveren bilgilendirmesini, kendi belgelerini ve sonraki adımı tekrar ediyorsun." },
+                { "language": "ru", "text": "Хорошо: ты повторяешь длительность, информацию для работодателя, свои документы и следующий шаг." },
+                { "language": "ckb", "text": "باشە: ماوە، ئاگادارکردنەوەی خاوەنکار، بەڵگەکانی خۆت و هەنگاوی دواتر دووبارە دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu dem, agahdarkirina karger, belgeyên xwe û gava din dubare dikî." },
+                { "language": "pl", "text": "Dobrze: powtarzasz czas trwania, informację dla pracodawcy, własne dokumenty i następny krok." },
+                { "language": "ro", "text": "Bine: repeți durata, informarea angajatorului, documentele tale și pasul următor." },
+                { "language": "sq", "text": "Mirë: përsërit kohëzgjatjen, njoftimin e punëdhënësit, dokumentet e tua dhe hapin pasues." }
+              ]
+            },
+            {
+              "id": "summary-missing-extension",
+              "text": "Gut, dann gebe ich meinem Arbeitgeber Bescheid und ruhe mich aus.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will inform my employer and rest." },
+                { "language": "fa", "text": "خوب، پس به کارفرمایم خبر می‌دهم و استراحت می‌کنم." },
+                { "language": "ar", "text": "حسنًا، إذن سأُخبر صاحب العمل وأرتاح." },
+                { "language": "tr", "text": "Tamam, o zaman işverenime haber veririm ve dinlenirim." },
+                { "language": "ru", "text": "Хорошо, тогда я сообщу работодателю и буду отдыхать." },
+                { "language": "ckb", "text": "باشە، ئەوا خاوەنکارم ئاگادار دەکەمەوە و پشوو دەدەم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez kargerê xwe agahdar dikim û bêhnvedanê dikim." },
+                { "language": "pl", "text": "Dobrze, w takim razie poinformuję pracodawcę i odpocznę." },
+                { "language": "ro", "text": "Bine, atunci îmi anunț angajatorul și mă odihnesc." },
+                { "language": "sq", "text": "Mirë, atëherë e njoftoj punëdhënësin dhe pushoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Es fehlen Ende der Krankschreibung, Ausdruck für dich und der Anruf am Freitagvormittag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: The end date of the sick note, the printout for you, and the call on Friday morning are missing." },
+                { "language": "fa", "text": "خیلی کوتاه است: پایان گواهی بیماری، نسخه چاپی برای خودت و تماس جمعه صبح کم است." },
+                { "language": "ar", "text": "قصير جدًا: نهاية الإجازة المرضية والنسخة المطبوعة لك والاتصال صباح الجمعة مفقودة." },
+                { "language": "tr", "text": "Çok kısa: Hastalık raporunun bitişi, senin için çıktı ve cuma sabahı arama eksik." },
+                { "language": "ru", "text": "Слишком кратко: не хватает даты окончания больничного, распечатки для себя и звонка в пятницу утром." },
+                { "language": "ckb", "text": "زۆر کورتە: کۆتایی نووسراوی نەخۆشی، چاپکراو بۆ خۆت و پەیوەندی هەینی بەیانی کەمە." },
+                { "language": "kmr", "text": "Pir kurt e: Dawiya rapora nexweşiyê, çap ji bo te û telefonê roja înê sibê kêm in." },
+                { "language": "pl", "text": "Zbyt krótko: brakuje końca zwolnienia, wydruku dla ciebie i telefonu w piątek przed południem." },
+                { "language": "ro", "text": "Prea scurt: lipsesc data de sfârșit a concediului, copia pentru tine și apelul de vineri dimineață." },
+                { "language": "sq", "text": "Shumë e shkurtër: mungojnë fundi i raportit mjekësor, kopja për ty dhe telefonata të premten paradite." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "administration-note",
+          "text": "Bei einer Krankschreibung sind drei Punkte wichtig: genaue Dauer, Information an den Arbeitgeber und was du tun sollst, wenn du noch nicht gesund bist.",
+          "translations": [
+            { "language": "en", "text": "With a sick note, three points are important: exact duration, information to the employer, and what you should do if you are not yet healthy." },
+            { "language": "fa", "text": "در گواهی بیماری سه نکته مهم است: مدت دقیق، اطلاع به کارفرما و اینکه اگر هنوز خوب نشدی چه باید بکنی." },
+            { "language": "ar", "text": "في الإجازة المرضية، هناك ثلاث نقاط مهمة: المدة الدقيقة، إبلاغ صاحب العمل، وما يجب أن تفعله إذا لم تكن قد تعافيت بعد." },
+            { "language": "tr", "text": "Hastalık raporunda üç nokta önemlidir: kesin süre, işverene bilgi ve henüz iyileşmediysen ne yapman gerektiği." },
+            { "language": "ru", "text": "В больничном важны три пункта: точная длительность, информация работодателю и что делать, если ты еще не здоров." },
+            { "language": "ckb", "text": "لە نووسراوی نەخۆشیدا سێ خاڵ گرنگن: ماوەی ورد، ئاگادارکردنەوەی خاوەنکار و ئەوەی ئەگەر هێشتا باش نەبوویت چی بکەیت." },
+            { "language": "kmr", "text": "Di rapora nexweşiyê de sê xal girîng in: dema rast, agahdarkirina karger û divê çi bikî heke hîn sax nebî." },
+            { "language": "pl", "text": "Przy zwolnieniu lekarskim ważne są trzy punkty: dokładny czas trwania, informacja dla pracodawcy i co zrobić, jeśli nadal nie jesteś zdrowy." },
+            { "language": "ro", "text": "La concediul medical sunt importante trei puncte: durata exactă, informarea angajatorului și ce trebuie să faci dacă nu ești încă sănătos." },
+            { "language": "sq", "text": "Te raporti mjekësor janë të rëndësishme tri pika: kohëzgjatja e saktë, njoftimi i punëdhënësit dhe çfarë duhet të bësh nëse ende nuk je shëruar." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

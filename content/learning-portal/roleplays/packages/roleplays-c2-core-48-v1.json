@@ -1,0 +1,703 @@
+{
+  "packageId": "roleplays-c2-core-48-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 48 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 48",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-uebergabestreit-diplomatisch-loesen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Übergabestreit diplomatisch lösen",
+      "titleTranslations": [
+        { "language": "en", "text": "Resolving an apartment handover dispute diplomatically" },
+        { "language": "fa", "text": "حل دیپلماتیک اختلاف هنگام تحویل آپارتمان" },
+        { "language": "ar", "text": "حل خلاف عند تسليم الشقة بدبلوماسية" },
+        { "language": "tr", "text": "Daire teslimindeki anlaşmazlığı diplomatik biçimde çözmek" },
+        { "language": "ru", "text": "Дипломатичное решение спора при передаче квартиры" },
+        { "language": "ckb", "text": "چارەسەرکردنی ناکۆکیی تەسلیمکردنی شوقە بە دیپلۆماسی" },
+        { "language": "kmr", "text": "Çareserkirina nakokiya radestkirina apartmanê bi awayekî dîplomatîk" },
+        { "language": "pl", "text": "Dyplomatyczne rozwiązanie sporu przy przekazaniu mieszkania" },
+        { "language": "ro", "text": "Rezolvarea diplomatică a unui litigiu la predarea apartamentului" },
+        { "language": "sq", "text": "Zgjidhja diplomatike e një mosmarrëveshjeje gjatë dorëzimit të banesës" }
+      ],
+      "description": "Sie übergeben Ihre Wohnung. Die Hausverwaltung beanstandet Kratzer im Parkett und Flecken an der Wand. Sie möchten den Konflikt nicht eskalieren, aber auch keine unklare Verantwortung übernehmen. Ziel ist ein präzises Übergabeprotokoll mit Beobachtungen, strittigen Punkten, Belegen, Prüfschritten und einer fairen Zwischenlösung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are handing over your apartment. Property management objects to scratches in the parquet and marks on the wall. You do not want to escalate the conflict, but you also do not want to accept unclear responsibility. The goal is a precise handover record with observations, disputed points, evidence, review steps, and a fair interim solution." },
+        { "language": "fa", "text": "شما آپارتمان خود را تحویل می‌دهید. مدیریت ساختمان به خط‌وخش‌های پارکت و لکه‌های دیوار ایراد می‌گیرد. نمی‌خواهید اختلاف را تشدید کنید، اما نمی‌خواهید مسئولیت نامشخصی را هم بپذیرید. هدف یک صورت‌جلسه دقیق تحویل با مشاهدات، موارد مورد اختلاف، مدارک، مراحل بررسی و یک راه‌حل موقت منصفانه است." },
+        { "language": "ar", "text": "تسلّمون شقتكم. تعترض إدارة العقار على خدوش في الأرضية الخشبية وبقع على الجدار. لا تريدون تصعيد الخلاف، لكنكم لا تريدون أيضًا قبول مسؤولية غير واضحة. الهدف محضر تسليم دقيق يتضمن الملاحظات والنقاط المختلف عليها والأدلة وخطوات الفحص وحلًا مؤقتًا عادلًا." },
+        { "language": "tr", "text": "Dairenizi teslim ediyorsunuz. Bina yönetimi parkedeki çiziklere ve duvardaki lekelere itiraz ediyor. Anlaşmazlığı büyütmek istemiyorsunuz, fakat belirsiz bir sorumluluğu da üstlenmek istemiyorsunuz. Amaç gözlemler, tartışmalı noktalar, kanıtlar, inceleme adımları ve adil bir ara çözüm içeren kesin bir teslim tutanağıdır." },
+        { "language": "ru", "text": "Вы сдаете квартиру. Управляющая компания указывает на царапины на паркете и пятна на стене. Вы не хотите обострять спор, но также не хотите брать на себя неясную ответственность. Цель — точный акт передачи с наблюдениями, спорными пунктами, доказательствами, шагами проверки и справедливым промежуточным решением." },
+        { "language": "ckb", "text": "تۆ شوقەکەت تەسلیم دەکەیت. بەڕێوەبەرایەتی خانوو سەرنج دەداتە خەش لە پارکێت و پەڵە لە دیوار. ناتەوێت ناکۆکییەکە توند بکەیت، بەڵام ناتەوێت بەرپرسیارییەکی ناڕوونیش وەربگریت. ئامانج پڕۆتۆکۆڵێکی وردی تەسلیمکردنە بە بینینەکان، خاڵە ناکۆکەکان، بەڵگەکان، هەنگاوەکانی پشکنین و چارەسەرێکی کاتی دادپەروەرانە." },
+        { "language": "kmr", "text": "Hûn apartmana xwe radest dikin. Rêveberiya avahiyê li ser xêzên parketê û lekeyên dîwarê îtîraz dike. Hûn naxwazin nakokiyê mezin bikin, lê naxwazin berpirsiyariyeke nezelal jî qebûl bikin. Armanc protokoleke radestkirinê ya rast e bi dîtinan, xalên nakok, belgeyan, gavên kontrolê û çareseriyeke navber a dadmend." },
+        { "language": "pl", "text": "Przekazuje Pan/Pani mieszkanie. Administracja zgłasza zastrzeżenia do rys na parkiecie i plam na ścianie. Nie chce Pan/Pani eskalować konfliktu, ale też nie chce przyjąć niejasnej odpowiedzialności. Celem jest precyzyjny protokół przekazania z obserwacjami, punktami nieuzgodnionymi, dowodami, krokami weryfikacji i uczciwym rozwiązaniem pośrednim." },
+        { "language": "ro", "text": "Predați apartamentul. Administrarea imobilului contestă zgârieturi în parchet și pete pe perete. Nu doriți să escaladați conflictul, dar nici să acceptați o responsabilitate neclară. Scopul este un proces-verbal precis de predare cu observații, puncte contestate, dovezi, pași de verificare și o soluție intermediară echitabilă." },
+        { "language": "sq", "text": "Po dorëzoni banesën. Administrimi i ndërtesës kundërshton gërvishtjet në parket dhe njollat në mur. Nuk doni ta përshkallëzoni konfliktin, por as të pranoni përgjegjësi të paqartë. Qëllimi është një procesverbal i saktë dorëzimi me vëzhgime, pika të diskutueshme, prova, hapa verifikimi dhe një zgjidhje të përkohshme të drejtë." }
+      ],
+      "learnerGoal": "Einen Übergabestreit diplomatisch klären: Beobachtung und Bewertung trennen, vorhandene Belege nennen, strittige Punkte schriftlich markieren, keine pauschale Schuld übernehmen und eine faire Prüfung mit konkretem nächsten Schritt vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify a handover dispute diplomatically: separate observation from assessment, name existing evidence, mark disputed points in writing, avoid accepting broad blame, and agree on a fair review with a concrete next step." },
+        { "language": "fa", "text": "اختلاف تحویل را دیپلماتیک روشن کنید: مشاهده را از ارزیابی جدا کنید، مدارک موجود را نام ببرید، موارد اختلافی را کتبی مشخص کنید، مسئولیت کلی نپذیرید و بر سر بررسی منصفانه با قدم بعدی مشخص توافق کنید." },
+        { "language": "ar", "text": "وضّحوا خلاف التسليم بدبلوماسية: افصلوا الملاحظة عن التقييم، واذكروا الأدلة الموجودة، وحددوا النقاط المختلف عليها كتابة، ولا تقبلوا لومًا عامًا، واتفقوا على فحص عادل مع خطوة تالية محددة." },
+        { "language": "tr", "text": "Teslim anlaşmazlığını diplomatik biçimde netleştirin: gözlem ile değerlendirmeyi ayırın, mevcut kanıtları belirtin, tartışmalı noktaları yazılı işaretleyin, genel bir suç üstlenmeyin ve somut bir sonraki adımla adil inceleme üzerinde anlaşın." },
+        { "language": "ru", "text": "Дипломатично проясните спор при передаче: отделите наблюдение от оценки, назовите имеющиеся доказательства, письменно отметьте спорные пункты, не принимайте общую вину и договоритесь о справедливой проверке с конкретным следующим шагом." },
+        { "language": "ckb", "text": "ناکۆکیی تەسلیمکردن بە دیپلۆماسی ڕوون بکە: بینین و هەڵسەنگاندن جیا بکەوە، بەڵگەی هەبوو ناوببە، خاڵە ناکۆکەکان بە نووسراو دیاری بکە، بەرپرسیاری گشتی وەرنەگرە و لەسەر پشکنینێکی دادپەروەرانە بە هەنگاوی داهاتووی دیاریکراو ڕێک بکەوە." },
+        { "language": "kmr", "text": "Nakokiya radestkirinê bi dîplomasî zelal bikin: dîtin û nirxandinê ji hev veqetînin, belgeyên heyî nav bikin, xalên nakok bi nivîskî nîşan bikin, sûcdarkirineke giştî qebûl nekin û li ser kontrola dadmend bi gaveke paşê ya diyar li hev bikin." },
+        { "language": "pl", "text": "Dyplomatycznie wyjaśnić spór przy przekazaniu: oddzielić obserwację od oceny, wskazać istniejące dowody, zaznaczyć nieuzgodnione punkty pisemnie, nie przyjmować ogólnej winy i uzgodnić uczciwą weryfikację z konkretnym kolejnym krokiem." },
+        { "language": "ro", "text": "Clarificați diplomatic litigiul de predare: separați observația de evaluare, numiți dovezile existente, marcați în scris punctele contestate, nu acceptați o vină generală și conveniți o verificare echitabilă cu un pas următor concret." },
+        { "language": "sq", "text": "Sqaroni diplomatikisht mosmarrëveshjen e dorëzimit: ndani vëzhgimin nga vlerësimi, përmendni provat ekzistuese, shënoni me shkrim pikat e diskutueshme, mos pranoni faj të përgjithshëm dhe bini dakord për një verifikim të drejtë me hap të radhës konkret." }
+      ],
+      "cefrLevel": "C2",
+      "category": "housing",
+      "topics": ["housing", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 48,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Mieterin",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجرة" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендаторка" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemczyni" },
+            { "language": "ro", "text": "Chiriașa" },
+            { "language": "sq", "text": "Qiramarrësja" }
+          ]
+        },
+        {
+          "roleKey": "property-management",
+          "displayName": "Hausverwaltung",
+          "translations": [
+            { "language": "en", "text": "Property management" },
+            { "language": "fa", "text": "مدیریت ساختمان" },
+            { "language": "ar", "text": "إدارة العقار" },
+            { "language": "tr", "text": "Bina yönetimi" },
+            { "language": "ru", "text": "Управляющая компания" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی خانوو" },
+            { "language": "kmr", "text": "Rêveberiya avahiyê" },
+            { "language": "pl", "text": "Administracja" },
+            { "language": "ro", "text": "Administrarea imobilului" },
+            { "language": "sq", "text": "Administrimi i ndërtesës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "property-management",
+          "baseText": "Beim Rundgang sind uns mehrere Kratzer im Parkett und zwei dunkle Stellen an der Wand aufgefallen. Das müssten wir als Schaden im Übergabeprotokoll festhalten.",
+          "translations": [
+            { "language": "en", "text": "During the walk-through, we noticed several scratches in the parquet and two dark marks on the wall. We would need to record that as damage in the handover report." },
+            { "language": "fa", "text": "در بازدید، چند خط‌وخش در پارکت و دو لکه تیره روی دیوار دیدیم. باید این را به‌عنوان خسارت در صورت‌جلسه تحویل ثبت کنیم." },
+            { "language": "ar", "text": "أثناء الجولة لاحظنا عدة خدوش في الأرضية الخشبية وبقعتين داكنتين على الجدار. يجب أن نسجل ذلك كضرر في محضر التسليم." },
+            { "language": "tr", "text": "Kontrol sırasında parkede birkaç çizik ve duvarda iki koyu leke fark ettik. Bunu teslim tutanağına hasar olarak yazmamız gerekir." },
+            { "language": "ru", "text": "Во время осмотра мы заметили несколько царапин на паркете и два темных пятна на стене. Это нужно зафиксировать в акте передачи как повреждение." },
+            { "language": "ckb", "text": "لە کاتی پشکنینەکەدا چەند خەشێک لە پارکێت و دوو پەڵەی تاریک لە دیوارمان بینی. پێویستە ئەمە وەک زیان لە پڕۆتۆکۆڵی تەسلیمکردن تۆمار بکەین." },
+            { "language": "kmr", "text": "Di kontrolê de me çend xêz li parketê û du lekên tarî li dîwarê dîtin. Divê em vê wek ziyan di protokola radestkirinê de tomar bikin." },
+            { "language": "pl", "text": "Podczas oględzin zauważyliśmy kilka rys na parkiecie i dwie ciemne plamy na ścianie. Musielibyśmy wpisać to do protokołu przekazania jako szkodę." },
+            { "language": "ro", "text": "La verificare am observat mai multe zgârieturi în parchet și două pete întunecate pe perete. Ar trebui să consemnăm acest lucru ca daună în procesul-verbal de predare." },
+            { "language": "sq", "text": "Gjatë kontrollit vumë re disa gërvishtje në parket dhe dy njolla të errëta në mur. Do të duhej ta shënonim këtë si dëmtim në procesverbalin e dorëzimit." }
+          ],
+          "function": "problem-framing"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte die Punkte gern sauber aufnehmen, aber zwischen Beobachtung und Bewertung unterscheiden. Die Kratzer sind teilweise schon auf den Einzugsfotos zu sehen; bei den Wandstellen sollten wir erst klären, ob es Abnutzung, Reinigung oder Reparatur betrifft.",
+          "translations": [
+            { "language": "en", "text": "I would like to record the points properly, but distinguish between observation and assessment. Some of the scratches are already visible in the move-in photos; for the wall marks, we should first clarify whether this concerns wear, cleaning, or repair." },
+            { "language": "fa", "text": "مایلم موارد را دقیق ثبت کنیم، اما مشاهده را از ارزیابی جدا کنیم. بخشی از خط‌وخش‌ها در عکس‌های زمان ورود هم دیده می‌شود؛ درباره لکه‌های دیوار ابتدا باید روشن کنیم موضوع فرسودگی، تمیزکاری یا تعمیر است." },
+            { "language": "ar", "text": "أود أن نسجل النقاط بدقة، لكن أن نفرق بين الملاحظة والتقييم. بعض الخدوش ظاهرة أصلًا في صور الدخول؛ أما بقع الجدار فينبغي أولًا أن نوضح هل يتعلق الأمر بالاستهلاك أو التنظيف أو الإصلاح." },
+            { "language": "tr", "text": "Noktaları düzgün kaydetmek isterim, fakat gözlem ile değerlendirmeyi ayırmak gerekir. Çiziklerin bir kısmı taşınma fotoğraflarında zaten görünüyor; duvardaki yerlerde ise önce bunun yıpranma mı, temizlik mi, onarım mı olduğunu netleştirmeliyiz." },
+            { "language": "ru", "text": "Я хотела бы аккуратно зафиксировать эти пункты, но разделить наблюдение и оценку. Часть царапин уже видна на фотографиях при въезде; по пятнам на стене сначала нужно уточнить, идет ли речь об износе, чистке или ремонте." },
+            { "language": "ckb", "text": "دەمەوێت خاڵەکان بە وردی تۆمار بکەین، بەڵام بینین و هەڵسەنگاندن جیا بکەینەوە. بەشێک لە خەشەکان لە وێنەکانی کاتی چوونەناوەوەش دەردەکەون؛ بۆ پەڵەکانی دیوار پێویستە سەرەتا ڕوون بکەین ئاخۆ بابەتەکە بەکارهێنانی ئاساییە، پاککردنەوەیە یان چاککردنەوە." },
+            { "language": "kmr", "text": "Ez dixwazim xalên hanê bi rêkûpêk tomar bikin, lê dîtin û nirxandinê ji hev veqetînin. Beşek ji xêzan jixwe di wêneyên dema ketinê de xuya ne; li ser lekên dîwarê divê pêşî zelal bikin ka ev şilavbûnê, paqijkirinê an sererastkirinê digire." },
+            { "language": "pl", "text": "Chciałabym dokładnie ująć te punkty, ale odróżnić obserwację od oceny. Część rys widać już na zdjęciach z wprowadzenia się; przy plamach na ścianie powinniśmy najpierw ustalić, czy chodzi o zużycie, czyszczenie czy naprawę." },
+            { "language": "ro", "text": "Aș dori să consemnăm corect punctele, dar să separăm observația de evaluare. Unele zgârieturi se văd deja în fotografiile de la mutare; la petele de pe perete ar trebui să clarificăm mai întâi dacă este vorba de uzură, curățare sau reparație." },
+            { "language": "sq", "text": "Do të doja t’i regjistronim pikat saktë, por të dallojmë vëzhgimin nga vlerësimi. Disa nga gërvishtjet duken tashmë në fotot e hyrjes; për njollat e murit duhet të sqarojmë fillimisht nëse bëhet fjalë për përdorim normal, pastrim apo riparim." }
+          ],
+          "function": "separate-observation-assessment"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "property-management",
+          "baseText": "Aus unserer Sicht sieht das nicht mehr nach normaler Abnutzung aus. Wenn wir es offenlassen, bekommen wir später Probleme mit der Abrechnung der Kaution.",
+          "translations": [
+            { "language": "en", "text": "From our point of view, this no longer looks like normal wear. If we leave it open, we will have problems later when settling the deposit." },
+            { "language": "fa", "text": "از نظر ما این دیگر شبیه فرسودگی عادی نیست. اگر آن را باز بگذاریم، بعداً در تسویه ودیعه مشکل پیدا می‌کنیم." },
+            { "language": "ar", "text": "من وجهة نظرنا لم يعد هذا يبدو كاستهلاك عادي. إذا تركناه مفتوحًا فسنواجه لاحقًا مشكلات عند تسوية مبلغ التأمين." },
+            { "language": "tr", "text": "Bizim açımızdan bu artık normal yıpranma gibi görünmüyor. Bunu açık bırakırsak depozito hesabında sonradan sorun yaşarız." },
+            { "language": "ru", "text": "С нашей точки зрения это уже не похоже на обычный износ. Если оставить вопрос открытым, потом возникнут проблемы при расчете залога." },
+            { "language": "ckb", "text": "لە دیدی ئێمەوە ئەمە چیتر وەک بەکارهێنانی ئاسایی ناچێت. ئەگەر بە کراوەیی بیهێڵینەوە، دواتر لە حیسابکردنی بارمتەکەدا کێشەمان دەبێت." },
+            { "language": "kmr", "text": "Ji aliyê me ve ev êdî wek şilavbûna asayî xuya nake. Heke em wê vekirî bihêlin, paşê di hesabkirina depozîtê de pirsgirêk çêdibe." },
+            { "language": "pl", "text": "Z naszej perspektywy nie wygląda to już na normalne zużycie. Jeśli zostawimy to otwarte, później będziemy mieć problemy przy rozliczeniu kaucji." },
+            { "language": "ro", "text": "Din punctul nostru de vedere, acest lucru nu mai pare uzură normală. Dacă îl lăsăm deschis, vom avea probleme mai târziu la decontarea garanției." },
+            { "language": "sq", "text": "Nga këndvështrimi ynë kjo nuk duket më si konsum normal. Nëse e lëmë të hapur, më vonë do të kemi probleme në llogaritjen e garancisë." }
+          ],
+          "function": "management-concern"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Dann schlage ich vor, wir formulieren im Protokoll: Die Hausverwaltung sieht einen möglichen Schaden, die Mieterin bestreitet die Zuordnung teilweise und verweist auf Einzugsfotos. So ist Ihre Position dokumentiert, ohne dass ich pauschal eine Schuld anerkenne.",
+          "translations": [
+            { "language": "en", "text": "I understand that. Then I suggest we write in the report: property management sees possible damage; the tenant partly disputes the attribution and refers to move-in photos. That documents your position without my broadly accepting blame." },
+            { "language": "fa", "text": "این را می‌فهمم. پس پیشنهاد می‌کنم در صورت‌جلسه بنویسیم: مدیریت ساختمان یک خسارت احتمالی می‌بیند، مستأجر انتساب آن را تا حدی رد می‌کند و به عکس‌های زمان ورود ارجاع می‌دهد. این‌طور موضع شما ثبت می‌شود، بدون اینکه من به‌طور کلی تقصیر را بپذیرم." },
+            { "language": "ar", "text": "أفهم ذلك. إذن أقترح أن نكتب في المحضر: ترى إدارة العقار ضررًا محتملًا، وتعترض المستأجرة جزئيًا على نسبته إليها وتشير إلى صور الدخول. هكذا توثقون موقفكم من دون أن أقرّ أنا بمسؤولية عامة." },
+            { "language": "tr", "text": "Bunu anlıyorum. O hâlde tutanağa şöyle yazmayı öneririm: Bina yönetimi olası bir hasar görüyor; kiracı bu ilişkilendirmeye kısmen itiraz ediyor ve taşınma fotoğraflarına atıf yapıyor. Böylece sizin pozisyonunuz belgelenir, ben de genel bir kusur kabul etmiş olmam." },
+            { "language": "ru", "text": "Я это понимаю. Тогда предлагаю записать в акте: управляющая компания видит возможное повреждение, арендаторка частично оспаривает отнесение к себе и ссылается на фотографии при въезде. Так ваша позиция будет зафиксирована, без того чтобы я в целом признала вину." },
+            { "language": "ckb", "text": "ئەمە تێدەگەم. ئەوا پێشنیار دەکەم لە پڕۆتۆکۆڵەکەدا بنووسین: بەڕێوەبەرایەتی خانوو زیانێکی ئەگەری دەبینێت، کرێچی بەشێک لە پەیوەستکردنەکە ڕەت دەکاتەوە و ئاماژە بە وێنەکانی کاتی چوونەناوەوە دەکات. بەم شێوەیە هەڵوێستی ئێوە تۆمار دەبێت، بەبێ ئەوەی من بە گشتی گوناه وەربگرم." },
+            { "language": "kmr", "text": "Ez vê fam dikim. Hingê ez pêşniyar dikim em di protokolê de binivîsin: Rêveberiya avahiyê ziyaneke gengaz dibîne; kirêdar girêdana wê beşekî red dike û balê dikişîne ser wêneyên dema ketinê. Bi vî awayî helwesta we tê belgekirin, bê ku ez bi giştî sûc qebûl bikim." },
+            { "language": "pl", "text": "Rozumiem to. Proponuję więc zapisać w protokole: administracja widzi możliwą szkodę, najemczyni częściowo kwestionuje przypisanie i wskazuje zdjęcia z wprowadzenia się. W ten sposób Państwa stanowisko jest udokumentowane, a ja nie przyjmuję ogólnej winy." },
+            { "language": "ro", "text": "Înțeleg acest lucru. Atunci propun să formulăm în procesul-verbal: administrarea imobilului vede o posibilă daună, chiriașa contestă parțial atribuirea și face trimitere la fotografiile de la mutare. Astfel poziția dumneavoastră este documentată, fără ca eu să recunosc o vină generală." },
+            { "language": "sq", "text": "E kuptoj këtë. Atëherë propozoj të shkruajmë në procesverbal: administrimi i ndërtesës sheh një dëmtim të mundshëm, qiramarrësja e kundërshton pjesërisht lidhjen me të dhe i referohet fotove të hyrjes. Kështu dokumentohet qëndrimi juaj, pa pranuar unë faj të përgjithshëm." }
+          ],
+          "function": "protocol-wording"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "property-management",
+          "baseText": "Bei den Wandstellen könnte es mit Reinigung erledigt sein. Beim Parkett brauchen wir wahrscheinlich eine Einschätzung des Handwerkers.",
+          "translations": [
+            { "language": "en", "text": "The wall marks might be resolved with cleaning. For the parquet, we will probably need a tradesperson's assessment." },
+            { "language": "fa", "text": "ممکن است لکه‌های دیوار با تمیزکاری حل شود. برای پارکت احتمالاً به ارزیابی یک تعمیرکار نیاز داریم." },
+            { "language": "ar", "text": "قد تُحل بقع الجدار بالتنظيف. أما الأرضية الخشبية فربما نحتاج إلى تقييم حرفي." },
+            { "language": "tr", "text": "Duvardaki izler temizlikle çözülebilir. Parke için muhtemelen ustanın değerlendirmesine ihtiyacımız var." },
+            { "language": "ru", "text": "Пятна на стене, возможно, можно устранить чисткой. По паркету, вероятно, потребуется оценка мастера." },
+            { "language": "ckb", "text": "پەڵەکانی دیوار لەوانەیە بە پاککردنەوە چارەسەر ببێت. بۆ پارکێت پێدەچێت پێویستمان بە هەڵسەنگاندنی پیشەوەرێک بێت." },
+            { "language": "kmr", "text": "Lekên dîwarê dibe ku bi paqijkirinê çareser bibin. Ji bo parketê em bi îhtimalê hewceyê nirxandina hosteyekî ne." },
+            { "language": "pl", "text": "Plamy na ścianie można być może usunąć czyszczeniem. Przy parkiecie prawdopodobnie potrzebujemy oceny fachowca." },
+            { "language": "ro", "text": "Petele de pe perete ar putea fi rezolvate prin curățare. Pentru parchet probabil avem nevoie de evaluarea unui meseriaș." },
+            { "language": "sq", "text": "Njollat në mur mund të zgjidhen me pastrim. Për parketin ndoshta na duhet vlerësimi i një mjeshtri." }
+          ],
+          "function": "possible-split"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das wäre ein praktikabler Weg. Können wir die Wandstellen als Reinigungsvorbehalt notieren und beim Parkett eine Kostenschätzung einholen, bevor über einen Abzug von der Kaution entschieden wird?",
+          "translations": [
+            { "language": "en", "text": "That would be a workable approach. Can we note the wall marks as subject to cleaning and obtain a cost estimate for the parquet before any decision is made about a deduction from the deposit?" },
+            { "language": "fa", "text": "این راه عملی‌ای است. آیا می‌توانیم لکه‌های دیوار را با قید بررسی پس از تمیزکاری ثبت کنیم و برای پارکت پیش از هر تصمیم درباره کسر از ودیعه، برآورد هزینه بگیریم؟" },
+            { "language": "ar", "text": "هذا طريق عملي. هل يمكن أن نسجل بقع الجدار مع تحفظ متعلق بالتنظيف، وأن نحصل على تقدير تكلفة للأرضية الخشبية قبل اتخاذ أي قرار بشأن الخصم من مبلغ التأمين؟" },
+            { "language": "tr", "text": "Bu uygulanabilir bir yol olur. Duvar izlerini temizlik kaydıyla not edip, depozitodan kesinti kararı verilmeden önce parke için maliyet tahmini alabilir miyiz?" },
+            { "language": "ru", "text": "Это был бы практичный путь. Можем ли мы отметить пятна на стене как вопрос, зависящий от чистки, а по паркету получить смету до решения о вычете из залога?" },
+            { "language": "ckb", "text": "ئەمە ڕێگایەکی کردەیی دەبێت. دەتوانین پەڵەکانی دیوار وەک خاڵێک بنووسین کە دوای پاککردنەوە پشکنین دەکرێت، و بۆ پارکێت پێش بڕیار لەسەر کەمکردنەوە لە بارمتە، خەرجییەکە هەڵبسەنگێنین؟" },
+            { "language": "kmr", "text": "Ev dê rêyeke bikêrhatî be. Ma em dikarin lekên dîwarê wek mijarek bi şertê paqijkirinê tomar bikin û ji bo parketê berî biryara derxistina ji depozîtê nirxekî lêçûnê bistînin?" },
+            { "language": "pl", "text": "To byłaby praktyczna droga. Czy możemy zanotować plamy na ścianie z zastrzeżeniem czyszczenia, a przy parkiecie uzyskać kosztorys, zanim zapadnie decyzja o potrąceniu z kaucji?" },
+            { "language": "ro", "text": "Aceasta ar fi o cale practică. Putem nota petele de pe perete ca fiind condiționate de curățare și să obținem o estimare de cost pentru parchet înainte de a decide o reținere din garanție?" },
+            { "language": "sq", "text": "Kjo do të ishte një rrugë praktike. A mund t’i shënojmë njollat e murit me rezervën e pastrimit dhe për parketin të marrim një vlerësim kostoje para se të vendoset për zbritje nga garancia?" }
+          ],
+          "function": "compromise-proposal"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "property-management",
+          "baseText": "Wenn wir das so aufnehmen, brauchen wir aber Ihre Unterschrift unter dem Protokoll. Sonst ist die Übergabe für uns nicht abgeschlossen.",
+          "translations": [
+            { "language": "en", "text": "If we record it that way, we still need your signature on the report. Otherwise, the handover is not completed for us." },
+            { "language": "fa", "text": "اگر این‌طور ثبت کنیم، باز هم امضای شما زیر صورت‌جلسه لازم است. وگرنه از نظر ما تحویل کامل نشده است." },
+            { "language": "ar", "text": "إذا سجلناه بهذه الطريقة، فسنحتاج مع ذلك إلى توقيعكم على المحضر. وإلا فلن يكون التسليم مكتملًا بالنسبة لنا." },
+            { "language": "tr", "text": "Bunu böyle kaydedersek yine de tutanakta imzanıza ihtiyacımız var. Aksi halde teslim bizim açımızdan tamamlanmış sayılmaz." },
+            { "language": "ru", "text": "Если мы зафиксируем это таким образом, нам все равно нужна ваша подпись под актом. Иначе передача для нас не завершена." },
+            { "language": "ckb", "text": "ئەگەر بەم شێوەیە تۆماری بکەین، هێشتا پێویستمان بە واژۆی تۆ لە ژێر پڕۆتۆکۆڵەکە دەبێت. ئەگەرنا لە دیدی ئێمەوە تەسلیمکردن تەواو نابێت." },
+            { "language": "kmr", "text": "Heke em wê bi vî awayî tomar bikin, dîsa jî em hewceyê îmzeya we li bin protokolê ne. Na, ji bo me radestkirin temam nabe." },
+            { "language": "pl", "text": "Jeśli tak to ujmiemy, nadal potrzebujemy Pana/Pani podpisu pod protokołem. W przeciwnym razie przekazanie nie jest dla nas zakończone." },
+            { "language": "ro", "text": "Dacă consemnăm astfel, avem totuși nevoie de semnătura dumneavoastră pe procesul-verbal. Altfel, predarea nu este încheiată pentru noi." },
+            { "language": "sq", "text": "Nëse e regjistrojmë kështu, na duhet megjithatë nënshkrimi juaj në procesverbal. Përndryshe dorëzimi nuk është i përfunduar për ne." }
+          ],
+          "function": "signature-pressure"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich unterschreibe gern den Erhalt und die beobachteten Punkte, aber mit dem Zusatz, dass die Zuordnung und die Kostenfrage strittig bleiben. So blockiere ich die Übergabe nicht, und beide Seiten behalten ihre Position nachvollziehbar fest.",
+          "translations": [
+            { "language": "en", "text": "I am happy to sign receipt and the observed points, but with the addition that attribution and the cost question remain disputed. That way I do not block the handover, and both sides keep their positions clearly recorded." },
+            { "language": "fa", "text": "من با کمال میل دریافت و موارد مشاهده‌شده را امضا می‌کنم، اما با این قید که انتساب و مسئله هزینه همچنان مورد اختلاف است. این‌طور تحویل را مسدود نمی‌کنم و موضع هر دو طرف هم روشن ثبت می‌شود." },
+            { "language": "ar", "text": "أوقّع بكل سرور على الاستلام والنقاط الملاحظة، لكن مع إضافة أن النسبة ومسألة التكاليف تبقيان موضع خلاف. بهذه الطريقة لا أعطل التسليم، ويظل موقف الطرفين موثقًا بوضوح." },
+            { "language": "tr", "text": "Teslimi ve gözlemlenen noktaları memnuniyetle imzalarım, ancak ilişkilendirme ve maliyet konusunun tartışmalı kaldığı ek notuyla. Böylece teslimi engellemem, iki tarafın pozisyonu da anlaşılır biçimde kayıtlı kalır." },
+            { "language": "ru", "text": "Я готова подписать получение и зафиксированные пункты, но с дополнением, что отнесение и вопрос расходов остаются спорными. Так я не блокирую передачу, и позиции обеих сторон понятно зафиксированы." },
+            { "language": "ckb", "text": "من بە دڵخۆشی واژۆ دەکەم بۆ وەرگرتن و خاڵە بینراوەکان، بەڵام بە زیادکردنی ئەوەی پەیوەستکردن و پرسی خەرجی هێشتا ناکۆکە. بەم شێوەیە تەسلیمکردن ناگرم و هەردوو لاش هەڵوێستیان بە ڕوونی تۆمار دەکەن." },
+            { "language": "kmr", "text": "Ez bi dilxweşî wergirtinê û xalên dîtî îmze dikim, lê bi lêzêdekirina ku girêdan û pirsa lêçûnê hê jî nakok in. Bi vî awayî ez radestkirinê asteng nakim û her du alî helwesta xwe bi zelalî tomar dikin." },
+            { "language": "pl", "text": "Chętnie podpiszę odbiór i odnotowane punkty, ale z dopiskiem, że przypisanie i kwestia kosztów pozostają nieuzgodnione. W ten sposób nie blokuję przekazania, a stanowiska obu stron pozostają jasno zapisane." },
+            { "language": "ro", "text": "Semnez cu plăcere primirea și punctele observate, dar cu mențiunea că atribuirea și chestiunea costurilor rămân contestate. Astfel nu blochez predarea, iar pozițiile ambelor părți sunt consemnate clar." },
+            { "language": "sq", "text": "Me kënaqësi nënshkruaj marrjen dhe pikat e vëzhguara, por me shtesën se lidhja dhe çështja e kostove mbeten të diskutueshme. Kështu nuk e bllokoj dorëzimin dhe qëndrimet e të dyja palëve regjistrohen qartë." }
+          ],
+          "function": "conditional-signature"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "property-management",
+          "baseText": "Gut, dann ergänze ich diesen Zusatz. Wir behalten die Fotos bei der Akte und melden uns nach der Einschätzung des Handwerkers.",
+          "translations": [
+            { "language": "en", "text": "All right, then I will add that note. We will keep the photos in the file and get back to you after the tradesperson's assessment." },
+            { "language": "fa", "text": "خوب، پس این قید را اضافه می‌کنم. عکس‌ها را در پرونده نگه می‌داریم و بعد از ارزیابی تعمیرکار با شما تماس می‌گیریم." },
+            { "language": "ar", "text": "حسنًا، إذن سأضيف هذه الملاحظة. سنحتفظ بالصور في الملف ونتواصل معكم بعد تقييم الحرفي." },
+            { "language": "tr", "text": "Tamam, o halde bu notu ekliyorum. Fotoğrafları dosyada tutacağız ve ustanın değerlendirmesinden sonra size döneceğiz." },
+            { "language": "ru", "text": "Хорошо, тогда я добавлю эту отметку. Мы оставим фотографии в деле и свяжемся с вами после оценки мастера." },
+            { "language": "ckb", "text": "باشە، ئەوا ئەم تێبینییە زیاد دەکەم. وێنەکان لە دۆسیەکەدا دەهێڵینەوە و دوای هەڵسەنگاندنی پیشەوەرەکە پەیوەندیتان پێوە دەکەین." },
+            { "language": "kmr", "text": "Baş e, hingê ez vê têbînîyê zêde dikim. Em wêneyan di dosyayê de dihêlin û piştî nirxandina hosteyê bi we re têkilî dikin." },
+            { "language": "pl", "text": "Dobrze, w takim razie dodam tę adnotację. Zachowamy zdjęcia w aktach i skontaktujemy się po ocenie fachowca." },
+            { "language": "ro", "text": "Bine, atunci adaug această mențiune. Păstrăm fotografiile la dosar și vă contactăm după evaluarea meseriașului." },
+            { "language": "sq", "text": "Mirë, atëherë po e shtoj këtë shënim. Do t’i mbajmë fotot në dosje dhe do t’ju kontaktojmë pas vlerësimit të mjeshtrit." }
+          ],
+          "function": "agreement"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Danke. Bitte schicken Sie mir heute eine Kopie des Protokolls mit dem Zusatz, den Fotos als Anlage und einem Zeitrahmen für die Einschätzung. Dann ist für beide Seiten klar, was übergeben wurde und was noch geprüft wird.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Please send me a copy of the report today with the added note, the photos as attachments, and a timeframe for the assessment. Then it is clear for both sides what has been handed over and what still needs review." },
+            { "language": "fa", "text": "ممنون. لطفاً امروز یک نسخه از صورت‌جلسه را با همان قید، عکس‌ها به‌عنوان پیوست و بازه زمانی ارزیابی برایم بفرستید. آن‌وقت برای هر دو طرف روشن است چه چیزی تحویل شده و چه چیزی هنوز باید بررسی شود." },
+            { "language": "ar", "text": "شكرًا. يُرجى إرسال نسخة من المحضر اليوم مع الإضافة والصور كمرفقات وإطار زمني للتقييم. عندئذ يكون واضحًا للطرفين ما الذي تم تسليمه وما الذي لا يزال قيد الفحص." },
+            { "language": "tr", "text": "Teşekkür ederim. Lütfen bugün tutanağın bir kopyasını ek notla, fotoğrafları ek olarak ve değerlendirme için zaman aralığıyla gönderin. Böylece iki taraf için neyin teslim edildiği ve neyin hâlâ inceleneceği net olur." },
+            { "language": "ru", "text": "Спасибо. Пожалуйста, отправьте мне сегодня копию акта с этой отметкой, фотографиями в приложении и сроком оценки. Тогда обеим сторонам будет ясно, что передано и что еще проверяется." },
+            { "language": "ckb", "text": "سوپاس. تکایە ئەمڕۆ کۆپییەک لە پڕۆتۆکۆڵەکە لەگەڵ ئەو زیادکراوە، وێنەکان وەک هاوپێچ و ماوەیەک بۆ هەڵسەنگاندن بنێرن. ئەوسا بۆ هەردوو لا ڕوون دەبێت چی تەسلیم کراوە و چی هێشتا پشکنین دەکرێت." },
+            { "language": "kmr", "text": "Spas. Ji kerema xwe îro kopiyek ji protokolê bi wê lêzêdekirinê, wêneyan wek pêvek û demek ji bo nirxandinê bişînin. Hingê ji bo her du aliyan zelal e ka çi hatiye radestkirin û çi hê tê kontrolkirin." },
+            { "language": "pl", "text": "Dziękuję. Proszę przesłać mi dziś kopię protokołu z tą adnotacją, zdjęciami jako załącznikami i ramą czasową oceny. Wtedy dla obu stron będzie jasne, co zostało przekazane, a co jest jeszcze sprawdzane." },
+            { "language": "ro", "text": "Mulțumesc. Vă rog să-mi trimiteți astăzi o copie a procesului-verbal cu mențiunea, fotografiile ca anexe și un interval de timp pentru evaluare. Astfel este clar pentru ambele părți ce a fost predat și ce mai trebuie verificat." },
+            { "language": "sq", "text": "Faleminderit. Ju lutem më dërgoni sot një kopje të procesverbalit me shënimin, fotot si shtojca dhe një afat për vlerësimin. Kështu është e qartë për të dyja palët çfarë është dorëzuar dhe çfarë ende duhet verifikuar." }
+          ],
+          "function": "written-close"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich möchte die Punkte gern sauber aufnehmen, aber zwischen Beobachtung und Bewertung unterscheiden. Die Kratzer sind teilweise schon auf den Einzugsfotos zu sehen; bei den Wandstellen sollten wir erst klären, ob es Abnutzung, Reinigung oder Reparatur betrifft.",
+              "translations": [
+                { "language": "en", "text": "I would like to record the points properly, but distinguish between observation and assessment. Some of the scratches are already visible in the move-in photos; for the wall marks, we should first clarify whether this concerns wear, cleaning, or repair." },
+                { "language": "fa", "text": "مایلم موارد را دقیق ثبت کنیم، اما مشاهده را از ارزیابی جدا کنیم. بخشی از خط‌وخش‌ها در عکس‌های زمان ورود هم دیده می‌شود؛ درباره لکه‌های دیوار ابتدا باید روشن کنیم موضوع فرسودگی، تمیزکاری یا تعمیر است." },
+                { "language": "ar", "text": "أود أن نسجل النقاط بدقة، لكن أن نفرق بين الملاحظة والتقييم. بعض الخدوش ظاهرة أصلًا في صور الدخول؛ أما بقع الجدار فينبغي أولًا أن نوضح هل يتعلق الأمر بالاستهلاك أو التنظيف أو الإصلاح." },
+                { "language": "tr", "text": "Noktaları düzgün kaydetmek isterim, fakat gözlem ile değerlendirmeyi ayırmak gerekir. Çiziklerin bir kısmı taşınma fotoğraflarında zaten görünüyor; duvardaki yerlerde ise önce bunun yıpranma mı, temizlik mi, onarım mı olduğunu netleştirmeliyiz." },
+                { "language": "ru", "text": "Я хотела бы аккуратно зафиксировать эти пункты, но разделить наблюдение и оценку. Часть царапин уже видна на фотографиях при въезде; по пятнам на стене сначала нужно уточнить, идет ли речь об износе, чистке или ремонте." },
+                { "language": "ckb", "text": "دەمەوێت خاڵەکان بە وردی تۆمار بکەین، بەڵام بینین و هەڵسەنگاندن جیا بکەینەوە. بەشێک لە خەشەکان لە وێنەکانی کاتی چوونەناوەوەش دەردەکەون؛ بۆ پەڵەکانی دیوار پێویستە سەرەتا ڕوون بکەین بابەتەکە بەکارهێنانی ئاساییە، پاککردنەوەیە یان چاککردنەوە." },
+                { "language": "kmr", "text": "Ez dixwazim xalên hanê bi rêkûpêk tomar bikin, lê dîtin û nirxandinê ji hev veqetînin. Beşek ji xêzan jixwe di wêneyên dema ketinê de xuya ne; li ser lekên dîwarê divê pêşî zelal bikin ka ev şilavbûnê, paqijkirinê an sererastkirinê digire." },
+                { "language": "pl", "text": "Chciałabym dokładnie ująć te punkty, ale odróżnić obserwację od oceny. Część rys widać już na zdjęciach z wprowadzenia się; przy plamach na ścianie powinniśmy najpierw ustalić, czy chodzi o zużycie, czyszczenie czy naprawę." },
+                { "language": "ro", "text": "Aș dori să consemnăm corect punctele, dar să separăm observația de evaluare. Unele zgârieturi se văd deja în fotografiile de la mutare; la petele de pe perete ar trebui să clarificăm mai întâi dacă este vorba de uzură, curățare sau reparație." },
+                { "language": "sq", "text": "Do të doja t’i regjistronim pikat saktë, por të dallojmë vëzhgimin nga vlerësimi. Disa nga gërvishtjet duken tashmë në fotot e hyrjes; për njollat e murit duhet të sqarojmë fillimisht nëse bëhet fjalë për përdorim normal, pastrim apo riparim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Fakten und Bewertung und verhindert, dass das Protokoll sofort als Schuldanerkenntnis wirkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer separates facts and assessment and prevents the report from immediately sounding like an admission of blame." },
+                { "language": "fa", "text": "قوی است: پاسخ واقعیت‌ها و ارزیابی را جدا می‌کند و نمی‌گذارد صورت‌جلسه فوراً شبیه پذیرش تقصیر شود." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بين الحقائق والتقييم وتمنع أن يبدو المحضر فورًا كإقرار بالمسؤولية." },
+                { "language": "tr", "text": "Güçlü: cevap olguları ve değerlendirmeyi ayırır, tutanağın hemen kusur kabulü gibi görünmesini önler." },
+                { "language": "ru", "text": "Сильно: ответ отделяет факты от оценки и не дает акту сразу выглядеть как признание вины." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕاستی و هەڵسەنگاندن جیا دەکاتەوە و ڕێ نادات پڕۆتۆکۆڵەکە دەستبەجێ وەک داننان بە گوناه دەربکەوێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv rastiyan û nirxandinê ji hev veqetîne û nahêle protokol zû wek qebûlkirina sûcê xuya bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela fakty od oceny i zapobiega temu, by protokół od razu brzmiał jak przyznanie winy." },
+                { "language": "ro", "text": "Puternic: răspunsul separă faptele de evaluare și împiedică procesul-verbal să pară imediat o recunoaștere a vinei." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan faktet nga vlerësimi dhe nuk lejon që procesverbali të duket menjëherë si pranim faji." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich sehe das anders, aber schreiben Sie es erst einmal auf; ich kümmere mich später darum.",
+              "translations": [
+                { "language": "en", "text": "I see it differently, but write it down for now; I will deal with it later." },
+                { "language": "fa", "text": "من این را طور دیگری می‌بینم، اما فعلاً بنویسید؛ بعداً پیگیری می‌کنم." },
+                { "language": "ar", "text": "أرى الأمر بشكل مختلف، لكن اكتبوه الآن؛ سأهتم به لاحقًا." },
+                { "language": "tr", "text": "Ben bunu farklı görüyorum, ama şimdilik yazın; sonra ilgilenirim." },
+                { "language": "ru", "text": "Я вижу это иначе, но пока запишите; я займусь этим позже." },
+                { "language": "ckb", "text": "من بە شێوەیەکی تر دەیبینم، بەڵام ئێستا بنووسن؛ دواتر خۆم پێوە دەگیرم." },
+                { "language": "kmr", "text": "Ez vê cuda dibînim, lê niha binivîsin; ez paşê pê re mijûl dibim." },
+                { "language": "pl", "text": "Widzę to inaczej, ale proszę to na razie zapisać; zajmę się tym później." },
+                { "language": "ro", "text": "Eu văd lucrurile diferit, dar scrieți deocamdată; mă ocup mai târziu." },
+                { "language": "sq", "text": "Unë e shoh ndryshe, por shkruajeni tani për tani; do të merrem më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau: Der Einwand bleibt ohne Belege, ohne Trennung von Beobachtung und Bewertung und ohne Formulierung fürs Protokoll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: the objection remains without evidence, without separating observation from assessment, and without wording for the report." },
+                { "language": "fa", "text": "قابل‌باور است، اما بیش از حد مبهم: اعتراض بدون مدرک، بدون جداسازی مشاهده از ارزیابی و بدون متن مناسب برای صورت‌جلسه می‌ماند." },
+                { "language": "ar", "text": "محتمل لكنه غير دقيق بما يكفي: يبقى الاعتراض بلا أدلة، وبلا فصل بين الملاحظة والتقييم، وبلا صياغة للمحضر." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: itiraz kanıtsız, gözlem ile değerlendirme ayrılmadan ve tutanak için ifade olmadan kalıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: возражение остается без доказательств, без разделения наблюдения и оценки и без формулировки для акта." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر ناڕوونە: ناڕەزاییەکە بەبێ بەڵگە، بەبێ جیاکردنەوەی بینین و هەڵسەنگاندن و بەبێ دەقێک بۆ پڕۆتۆکۆڵەکە دەمێنێتەوە." },
+                { "language": "kmr", "text": "Gengaz e lê pir nezelal e: îtîraz bê belge, bê veqetandina dîtin û nirxandinê û bê gotineke ji bo protokolê dimîne." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt nieprecyzyjne: zastrzeżenie pozostaje bez dowodów, bez oddzielenia obserwacji od oceny i bez brzmienia do protokołu." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: obiecția rămâne fără dovezi, fără separarea observației de evaluare și fără formulare pentru procesul-verbal." },
+                { "language": "sq", "text": "E besueshme, por tepër e paqartë: kundërshtimi mbetet pa prova, pa ndarë vëzhgimin nga vlerësimi dhe pa formulim për procesverbalin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das verstehe ich. Dann schlage ich vor, wir formulieren im Protokoll: Die Hausverwaltung sieht einen möglichen Schaden, die Mieterin bestreitet die Zuordnung teilweise und verweist auf Einzugsfotos. So ist Ihre Position dokumentiert, ohne dass ich pauschal eine Schuld anerkenne.",
+              "translations": [
+                { "language": "en", "text": "I understand that. Then I suggest we write in the report: property management sees possible damage; the tenant partly disputes the attribution and refers to move-in photos. That documents your position without my broadly accepting blame." },
+                { "language": "fa", "text": "این را می‌فهمم. پس پیشنهاد می‌کنم در صورت‌جلسه بنویسیم: مدیریت ساختمان یک خسارت احتمالی می‌بیند، مستأجر انتساب آن را تا حدی رد می‌کند و به عکس‌های زمان ورود ارجاع می‌دهد. این‌طور موضع شما ثبت می‌شود، بدون اینکه من به‌طور کلی تقصیر را بپذیرم." },
+                { "language": "ar", "text": "أفهم ذلك. إذن أقترح أن نكتب في المحضر: ترى إدارة العقار ضررًا محتملًا، وتعترض المستأجرة جزئيًا على نسبته إليها وتشير إلى صور الدخول. هكذا توثقون موقفكم من دون أن أقرّ أنا بمسؤولية عامة." },
+                { "language": "tr", "text": "Bunu anlıyorum. O hâlde tutanağa şöyle yazmayı öneririm: Bina yönetimi olası bir hasar görüyor; kiracı bu ilişkilendirmeye kısmen itiraz ediyor ve taşınma fotoğraflarına atıf yapıyor. Böylece sizin pozisyonunuz belgelenir, ben de genel bir kusur kabul etmiş olmam." },
+                { "language": "ru", "text": "Я это понимаю. Тогда предлагаю записать в акте: управляющая компания видит возможное повреждение, арендаторка частично оспаривает отнесение к себе и ссылается на фотографии при въезде. Так ваша позиция будет зафиксирована, без того чтобы я в целом признала вину." },
+                { "language": "ckb", "text": "ئەمە تێدەگەم. ئەوا پێشنیار دەکەم لە پڕۆتۆکۆڵەکەدا بنووسین: بەڕێوەبەرایەتی خانوو زیانێکی ئەگەری دەبینێت، کرێچی بەشێک لە پەیوەستکردنەکە ڕەت دەکاتەوە و ئاماژە بە وێنەکانی کاتی چوونەناوەوە دەکات. بەم شێوەیە هەڵوێستی ئێوە تۆمار دەبێت، بەبێ ئەوەی من بە گشتی گوناه وەربگرم." },
+                { "language": "kmr", "text": "Ez vê fam dikim. Hingê ez pêşniyar dikim em di protokolê de binivîsin: Rêveberiya avahiyê ziyaneke gengaz dibîne; kirêdar girêdana wê beşekî red dike û balê dikişîne ser wêneyên dema ketinê. Bi vî awayî helwesta we tê belgekirin, bê ku ez bi giştî sûc qebûl bikim." },
+                { "language": "pl", "text": "Rozumiem to. Proponuję więc zapisać w protokole: administracja widzi możliwą szkodę, najemczyni częściowo kwestionuje przypisanie i wskazuje zdjęcia z wprowadzenia się. W ten sposób Państwa stanowisko jest udokumentowane, a ja nie przyjmuję ogólnej winy." },
+                { "language": "ro", "text": "Înțeleg acest lucru. Atunci propun să formulăm în procesul-verbal: administrarea imobilului vede o posibilă daună, chiriașa contestă parțial atribuirea și face trimitere la fotografiile de la mutare. Astfel poziția dumneavoastră este documentată, fără ca eu să recunosc o vină generală." },
+                { "language": "sq", "text": "E kuptoj këtë. Atëherë propozoj të shkruajmë në procesverbal: administrimi i ndërtesës sheh një dëmtim të mundshëm, qiramarrësja e kundërshton pjesërisht lidhjen me të dhe i referohet fotove të hyrjes. Kështu dokumentohet qëndrimi juaj, pa pranuar unë faj të përgjithshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Formulierung gibt beiden Seiten eine dokumentierte Position, ohne den Streitpunkt künstlich zu schließen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the wording gives both sides a documented position without artificially closing the disputed point." },
+                { "language": "fa", "text": "بسیار خوب: این عبارت به هر دو طرف موضعی ثبت‌شده می‌دهد، بدون اینکه مورد اختلاف به‌طور مصنوعی بسته شود." },
+                { "language": "ar", "text": "جيد جدًا: تمنح الصياغة الطرفين موقفًا موثقًا من دون إغلاق النقطة المختلف عليها بشكل مصطنع." },
+                { "language": "tr", "text": "Çok iyi: ifade iki tarafa da belgelenmiş bir pozisyon verir, tartışmalı noktayı yapay biçimde kapatmaz." },
+                { "language": "ru", "text": "Очень хорошо: формулировка дает обеим сторонам зафиксированную позицию, не закрывая спорный пункт искусственно." },
+                { "language": "ckb", "text": "زۆر باشە: دەقەکە بە هەردوو لا هەڵوێستێکی تۆمارکراو دەدات، بەبێ ئەوەی خاڵی ناکۆکەکە بە شێوەی دەستکرد دابخات." },
+                { "language": "kmr", "text": "Pir baş e: gotinê her du aliyan xwedî helwesteke belgekirî dike, bê ku xala nakok bi awayekî çêkirî bigire." },
+                { "language": "pl", "text": "Bardzo dobrze: sformułowanie daje obu stronom udokumentowane stanowisko, nie zamykając sztucznie punktu nieuzgodnionego." },
+                { "language": "ro", "text": "Foarte bine: formularea oferă ambelor părți o poziție documentată, fără a închide artificial punctul contestat." },
+                { "language": "sq", "text": "Shumë mirë: formulimi u jep të dyja palëve një qëndrim të dokumentuar, pa e mbyllur artificialisht pikën e diskutueshme." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich unterschreibe nichts, solange Sie das als Schaden bezeichnen.",
+              "translations": [
+                { "language": "en", "text": "I will not sign anything as long as you call that damage." },
+                { "language": "fa", "text": "تا وقتی شما این را خسارت بنامید، هیچ چیزی را امضا نمی‌کنم." },
+                { "language": "ar", "text": "لن أوقّع أي شيء ما دمتم تسمون ذلك ضررًا." },
+                { "language": "tr", "text": "Siz buna hasar dediğiniz sürece hiçbir şey imzalamam." },
+                { "language": "ru", "text": "Я ничего не подпишу, пока вы называете это повреждением." },
+                { "language": "ckb", "text": "تا ئێوە ئەمە بە زیان ناوببەن، هیچ شتێک واژۆ ناکەم." },
+                { "language": "kmr", "text": "Heta ku hûn vê wek ziyan bi nav bikin, ez tiştekê îmze nakim." },
+                { "language": "pl", "text": "Nic nie podpiszę, dopóki nazywają Państwo to szkodą." },
+                { "language": "ro", "text": "Nu semnez nimic cât timp numiți acest lucru daună." },
+                { "language": "sq", "text": "Nuk nënshkruaj asgjë për sa kohë e quani këtë dëmtim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber riskant: Die Antwort blockiert die Übergabe, statt eine strittige Zusatzformulierung anzubieten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable but risky: the answer blocks the handover instead of offering an added disputed wording." },
+                { "language": "fa", "text": "قابل‌فهم است، اما پرریسک: پاسخ تحویل را مسدود می‌کند، به‌جای اینکه عبارت تکمیلیِ مورد اختلاف پیشنهاد کند." },
+                { "language": "ar", "text": "مفهوم لكنه محفوف بالمخاطر: تعطل الإجابة التسليم بدلًا من اقتراح صياغة إضافية للنقطة المختلف عليها." },
+                { "language": "tr", "text": "Anlaşılır ama riskli: cevap teslimi engeller, tartışmalı ek ifade önermek yerine." },
+                { "language": "ru", "text": "Понятно, но рискованно: ответ блокирует передачу вместо того, чтобы предложить дополнительную спорную формулировку." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام پڕمەترسییە: وەڵامەکە تەسلیمکردن دەگرێت، لەبری ئەوەی دەقێکی زیادەی ناکۆک پێشنیار بکات." },
+                { "language": "kmr", "text": "Têgihiştî ye lê bi rîsk e: bersiv radestkirinê asteng dike, li şûna ku gotineke zêde ya nakok pêşniyar bike." },
+                { "language": "pl", "text": "Zrozumiałe, ale ryzykowne: odpowiedź blokuje przekazanie zamiast zaproponować dodatkowe brzmienie dla punktu nieuzgodnionego." },
+                { "language": "ro", "text": "De înțeles, dar riscant: răspunsul blochează predarea în loc să ofere o formulare suplimentară contestată." },
+                { "language": "sq", "text": "E kuptueshme, por me rrezik: përgjigjja bllokon dorëzimin në vend që të ofrojë një formulim shtesë të diskutueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das wäre ein praktikabler Weg. Können wir die Wandstellen als Reinigungsvorbehalt notieren und beim Parkett eine Kostenschätzung einholen, bevor über einen Abzug von der Kaution entschieden wird?",
+              "translations": [
+                { "language": "en", "text": "That would be a workable approach. Can we note the wall marks as subject to cleaning and obtain a cost estimate for the parquet before any decision is made about a deduction from the deposit?" },
+                { "language": "fa", "text": "این راه عملی‌ای است. آیا می‌توانیم لکه‌های دیوار را با قید بررسی پس از تمیزکاری ثبت کنیم و برای پارکت پیش از هر تصمیم درباره کسر از ودیعه، برآورد هزینه بگیریم؟" },
+                { "language": "ar", "text": "هذا طريق عملي. هل يمكن أن نسجل بقع الجدار مع تحفظ متعلق بالتنظيف، وأن نحصل على تقدير تكلفة للأرضية الخشبية قبل اتخاذ أي قرار بشأن الخصم من مبلغ التأمين؟" },
+                { "language": "tr", "text": "Bu uygulanabilir bir yol olur. Duvar izlerini temizlik kaydıyla not edip, depozitodan kesinti kararı verilmeden önce parke için maliyet tahmini alabilir miyiz?" },
+                { "language": "ru", "text": "Это был бы практичный путь. Можем ли мы отметить пятна на стене как вопрос, зависящий от чистки, а по паркету получить смету до решения о вычете из залога?" },
+                { "language": "ckb", "text": "ئەمە ڕێگایەکی کردەیی دەبێت. دەتوانین پەڵەکانی دیوار وەک خاڵێک بنووسین کە دوای پاککردنەوە پشکنین دەکرێت، و بۆ پارکێت پێش بڕیار لەسەر کەمکردنەوە لە بارمتە، خەرجییەکە هەڵبسەنگێنین؟" },
+                { "language": "kmr", "text": "Ev dê rêyeke bikêrhatî be. Ma em dikarin lekên dîwarê wek mijarek bi şertê paqijkirinê tomar bikin û ji bo parketê berî biryara derxistina ji depozîtê nirxekî lêçûnê bistînin?" },
+                { "language": "pl", "text": "To byłaby praktyczna droga. Czy możemy zanotować plamy na ścianie z zastrzeżeniem czyszczenia, a przy parkiecie uzyskać kosztorys, zanim zapadnie decyzja o potrąceniu z kaucji?" },
+                { "language": "ro", "text": "Aceasta ar fi o cale practică. Putem nota petele de pe perete ca fiind condiționate de curățare și să obținem o estimare de cost pentru parchet înainte de a decide o reținere din garanție?" },
+                { "language": "sq", "text": "Kjo do të ishte një rrugë praktike. A mund t’i shënojmë njollat e murit me rezervën e pastrimit dhe për parketin të marrim një vlerësim kostoje para se të vendoset për zbritje nga garancia?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort übersetzt den Streit in Prüfschritte und verhindert einen vorschnellen Kautionsabzug.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer turns the dispute into review steps and prevents a premature deduction from the deposit." },
+                { "language": "fa", "text": "درست است: پاسخ اختلاف را به مراحل بررسی تبدیل می‌کند و از کسر زودهنگام از ودیعه جلوگیری می‌کند." },
+                { "language": "ar", "text": "صحيح: تحول الإجابة الخلاف إلى خطوات فحص وتمنع خصمًا متسرعًا من مبلغ التأمين." },
+                { "language": "tr", "text": "Doğru: cevap anlaşmazlığı inceleme adımlarına dönüştürür ve depozitodan acele kesintiyi önler." },
+                { "language": "ru", "text": "Правильно: ответ переводит спор в шаги проверки и предотвращает преждевременный вычет из залога." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە ناکۆکییەکە دەگۆڕێت بۆ هەنگاوەکانی پشکنین و ڕێ لە کەمکردنەوەی پێشوەخت لە بارمتە دەگرێت." },
+                { "language": "kmr", "text": "Rast e: bersiv nakokiyê dike gavên kontrolê û rê li derxistina zû ji depozîtê digire." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zamienia spór w kroki weryfikacyjne i zapobiega przedwczesnemu potrąceniu z kaucji." },
+                { "language": "ro", "text": "Corect: răspunsul transformă litigiul în pași de verificare și împiedică o reținere prematură din garanție." },
+                { "language": "sq", "text": "Saktë: përgjigjja e kthen mosmarrëveshjen në hapa verifikimi dhe parandalon zbritjen e parakohshme nga garancia." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Dann lassen wir erst den Handwerker kommen, und danach sehen wir weiter.",
+              "translations": [
+                { "language": "en", "text": "Then let us first have the tradesperson come, and after that we will see." },
+                { "language": "fa", "text": "پس اول اجازه بدهیم تعمیرکار بیاید، بعد ببینیم چه می‌شود." },
+                { "language": "ar", "text": "إذن لنترك الحرفي يأتي أولًا، وبعد ذلك نرى." },
+                { "language": "tr", "text": "O zaman önce usta gelsin, sonra bakarız." },
+                { "language": "ru", "text": "Тогда пусть сначала придет мастер, а потом посмотрим." },
+                { "language": "ckb", "text": "ئەوا با سەرەتا پیشەوەرەکە بێت، دواتر دەبینین." },
+                { "language": "kmr", "text": "Hingê bila pêşî hoste were, paşê em dibînin." },
+                { "language": "pl", "text": "W takim razie najpierw niech przyjdzie fachowiec, a potem zobaczymy." },
+                { "language": "ro", "text": "Atunci să vină mai întâi meseriașul, iar după aceea vedem." },
+                { "language": "sq", "text": "Atëherë le të vijë së pari mjeshtri, pastaj shohim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort klingt kooperativ, regelt aber weder die Wandstellen noch die Kaution noch den Zeitpunkt der Entscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: the answer sounds cooperative, but regulates neither the wall marks, nor the deposit, nor the timing of the decision." },
+                { "language": "fa", "text": "ضعیف است: پاسخ همکاری‌آمیز به نظر می‌رسد، اما نه لکه‌های دیوار را تنظیم می‌کند، نه ودیعه را، نه زمان تصمیم را." },
+                { "language": "ar", "text": "ضعيف جدًا: تبدو الإجابة تعاونية، لكنها لا تنظم بقع الجدار ولا مبلغ التأمين ولا توقيت القرار." },
+                { "language": "tr", "text": "Zayıf: cevap işbirlikçi görünür, ama ne duvar izlerini ne depozitoyu ne de karar zamanını düzenler." },
+                { "language": "ru", "text": "Слишком слабо: ответ звучит кооперативно, но не регулирует ни пятна на стене, ни залог, ни срок решения." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە هاوکاری دەردەکەوێت، بەڵام نە پەڵەکانی دیوار ڕێکدەخات، نە بارمتە، نە کاتی بڕیار." },
+                { "language": "kmr", "text": "Pir lawaz e: bersiv wek hevkarî xuya dike, lê ne lekên dîwarê, ne depozîtê û ne dema biryarê rêk dixe." },
+                { "language": "pl", "text": "Za słabe: odpowiedź brzmi współpracująco, ale nie reguluje ani plam na ścianie, ani kaucji, ani terminu decyzji." },
+                { "language": "ro", "text": "Prea slab: răspunsul sună cooperant, dar nu reglementează nici petele de pe perete, nici garanția, nici momentul deciziei." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja tingëllon bashkëpunuese, por nuk rregullon as njollat në mur, as garancinë, as kohën e vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich unterschreibe gern den Erhalt und die beobachteten Punkte, aber mit dem Zusatz, dass die Zuordnung und die Kostenfrage strittig bleiben. So blockiere ich die Übergabe nicht, und beide Seiten behalten ihre Position nachvollziehbar fest.",
+              "translations": [
+                { "language": "en", "text": "I am happy to sign receipt and the observed points, but with the addition that attribution and the cost question remain disputed. That way I do not block the handover, and both sides keep their positions clearly recorded." },
+                { "language": "fa", "text": "من با کمال میل دریافت و موارد مشاهده‌شده را امضا می‌کنم، اما با این قید که انتساب و مسئله هزینه همچنان مورد اختلاف است. این‌طور تحویل را مسدود نمی‌کنم و موضع هر دو طرف هم روشن ثبت می‌شود." },
+                { "language": "ar", "text": "أوقّع بكل سرور على الاستلام والنقاط الملاحظة، لكن مع إضافة أن النسبة ومسألة التكاليف تبقيان موضع خلاف. بهذه الطريقة لا أعطل التسليم، ويظل موقف الطرفين موثقًا بوضوح." },
+                { "language": "tr", "text": "Teslimi ve gözlemlenen noktaları memnuniyetle imzalarım, ancak ilişkilendirme ve maliyet konusunun tartışmalı kaldığı ek notuyla. Böylece teslimi engellemem, iki tarafın pozisyonu da anlaşılır biçimde kayıtlı kalır." },
+                { "language": "ru", "text": "Я готова подписать получение и зафиксированные пункты, но с дополнением, что отнесение и вопрос расходов остаются спорными. Так я не блокирую передачу, и позиции обеих сторон понятно зафиксированы." },
+                { "language": "ckb", "text": "من بە دڵخۆشی واژۆ دەکەم بۆ وەرگرتن و خاڵە بینراوەکان، بەڵام بە زیادکردنی ئەوەی پەیوەستکردن و پرسی خەرجی هێشتا ناکۆکە. بەم شێوەیە تەسلیمکردن ناگرم و هەردوو لاش هەڵوێستیان بە ڕوونی تۆمار دەکەن." },
+                { "language": "kmr", "text": "Ez bi dilxweşî wergirtinê û xalên dîtî îmze dikim, lê bi lêzêdekirina ku girêdan û pirsa lêçûnê hê jî nakok in. Bi vî awayî ez radestkirinê asteng nakim û her du alî helwesta xwe bi zelalî tomar dikin." },
+                { "language": "pl", "text": "Chętnie podpiszę odbiór i odnotowane punkty, ale z dopiskiem, że przypisanie i kwestia kosztów pozostają nieuzgodnione. W ten sposób nie blokuję przekazania, a stanowiska obu stron pozostają jasno zapisane." },
+                { "language": "ro", "text": "Semnez cu plăcere primirea și punctele observate, dar cu mențiunea că atribuirea și chestiunea costurilor rămân contestate. Astfel nu blochez predarea, iar pozițiile ambelor părți sunt consemnate clar." },
+                { "language": "sq", "text": "Me kënaqësi nënshkruaj marrjen dhe pikat e vëzhguara, por me shtesën se lidhja dhe çështja e kostove mbeten të diskutueshme. Kështu nuk e bllokoj dorëzimin dhe qëndrimet e të dyja palëve regjistrohen qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Unterschrift wird nicht verweigert, sondern präzise begrenzt. Das hält die Übergabe handlungsfähig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the signature is not refused, but precisely limited. That keeps the handover workable." },
+                { "language": "fa", "text": "درست است: امضا رد نمی‌شود، بلکه دقیقاً محدود می‌شود. این تحویل را قابل انجام نگه می‌دارد." },
+                { "language": "ar", "text": "صحيح: لا يُرفض التوقيع، بل يُحدد بدقة. هذا يبقي التسليم قابلًا للتنفيذ." },
+                { "language": "tr", "text": "Doğru: imza reddedilmiyor, kesin biçimde sınırlandırılıyor. Bu, teslimi uygulanabilir tutar." },
+                { "language": "ru", "text": "Правильно: подпись не отклоняется, а точно ограничивается. Это сохраняет передачу рабочей." },
+                { "language": "ckb", "text": "دروستە: واژۆ ڕەت ناکرێتەوە، بەڵکو بە وردی سنووردار دەکرێت. ئەمە تەسلیمکردن بە کرداریدا دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Rast e: îmze nayê redkirin, lê bi rastî tê sînorkirin. Ev radestkirinê bikêrhatî dihêle." },
+                { "language": "pl", "text": "Dobrze: podpis nie jest odmawiany, lecz precyzyjnie ograniczony. To utrzymuje przekazanie jako wykonalne." },
+                { "language": "ro", "text": "Corect: semnătura nu este refuzată, ci limitată precis. Aceasta menține predarea funcțională." },
+                { "language": "sq", "text": "Saktë: nënshkrimi nuk refuzohet, por kufizohet saktë. Kjo e mban dorëzimin të zbatueshëm." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich unterschreibe, wenn Sie mir mündlich zusagen, dass nichts von der Kaution abgezogen wird.",
+              "translations": [
+                { "language": "en", "text": "I will sign if you verbally promise me that nothing will be deducted from the deposit." },
+                { "language": "fa", "text": "اگر شفاهی به من قول بدهید که چیزی از ودیعه کم نمی‌شود، امضا می‌کنم." },
+                { "language": "ar", "text": "سأوقّع إذا وعدتموني شفهيًا بأنه لن يُخصم شيء من مبلغ التأمين." },
+                { "language": "tr", "text": "Depozitodan hiçbir şey kesilmeyeceğini sözlü olarak garanti ederseniz imzalarım." },
+                { "language": "ru", "text": "Я подпишу, если вы устно пообещаете, что из залога ничего не вычтут." },
+                { "language": "ckb", "text": "ئەگەر بە دەمی دڵنیام بکەنەوە کە هیچ شتێک لە بارمتە کەم ناکرێتەوە، واژۆ دەکەم." },
+                { "language": "kmr", "text": "Heke hûn bi devkî soz bidin ku tiştek ji depozîtê nayê derxistin, ez îmze dikim." },
+                { "language": "pl", "text": "Podpiszę, jeśli ustnie obiecają Państwo, że nic nie zostanie potrącone z kaucji." },
+                { "language": "ro", "text": "Semnez dacă îmi promiteți verbal că nu se va reține nimic din garanție." },
+                { "language": "sq", "text": "Do të nënshkruaj nëse më premtoni gojarisht se nuk do të zbritet asgjë nga garancia." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht optimal: Eine mündliche Zusage ist schwach. Besser ist eine schriftliche, begrenzte Zusatzformulierung im Protokoll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not ideal: a verbal promise is weak. A written, limited added wording in the report is better." },
+                { "language": "fa", "text": "ایده‌آل نیست: قول شفاهی ضعیف است. عبارت تکمیلی کتبی و محدود در صورت‌جلسه بهتر است." },
+                { "language": "ar", "text": "ليس مثاليًا: الوعد الشفهي ضعيف. الأفضل صياغة إضافية مكتوبة ومحددة في المحضر." },
+                { "language": "tr", "text": "İdeal değil: sözlü garanti zayıftır. Tutanakta yazılı ve sınırlı ek ifade daha iyidir." },
+                { "language": "ru", "text": "Не идеально: устное обещание слабо. Лучше письменная и ограниченная дополнительная формулировка в акте." },
+                { "language": "ckb", "text": "باشترین نییە: بەڵێنی دەمی لاوازە. دەقێکی زیادەی نووسراو و سنووردار لە پڕۆتۆکۆڵەکە باشترە." },
+                { "language": "kmr", "text": "Ne baştirîn e: soza devkî lawaz e. Di protokolê de gotineke zêde ya nivîskî û sînorkirî çêtir e." },
+                { "language": "pl", "text": "Nieoptymalne: ustna obietnica jest słaba. Lepsze jest pisemne, ograniczone dodatkowe brzmienie w protokole." },
+                { "language": "ro", "text": "Nu este optim: o promisiune verbală este slabă. Este mai bună o formulare suplimentară scrisă și limitată în procesul-verbal." },
+                { "language": "sq", "text": "Jo ideale: premtimi gojor është i dobët. Më mirë është një formulim shtesë me shkrim dhe i kufizuar në procesverbal." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Danke. Bitte schicken Sie mir heute eine Kopie des Protokolls mit dem Zusatz, den Fotos als Anlage und einem Zeitrahmen für die Einschätzung. Dann ist für beide Seiten klar, was übergeben wurde und was noch geprüft wird.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Please send me a copy of the report today with the added note, the photos as attachments, and a timeframe for the assessment. Then it is clear for both sides what has been handed over and what still needs review." },
+                { "language": "fa", "text": "ممنون. لطفاً امروز یک نسخه از صورت‌جلسه را با همان قید، عکس‌ها به‌عنوان پیوست و بازه زمانی ارزیابی برایم بفرستید. آن‌وقت برای هر دو طرف روشن است چه چیزی تحویل شده و چه چیزی هنوز باید بررسی شود." },
+                { "language": "ar", "text": "شكرًا. يُرجى إرسال نسخة من المحضر اليوم مع الإضافة والصور كمرفقات وإطار زمني للتقييم. عندئذ يكون واضحًا للطرفين ما الذي تم تسليمه وما الذي لا يزال قيد الفحص." },
+                { "language": "tr", "text": "Teşekkür ederim. Lütfen bugün tutanağın bir kopyasını ek notla, fotoğrafları ek olarak ve değerlendirme için zaman aralığıyla gönderin. Böylece iki taraf için neyin teslim edildiği ve neyin hâlâ inceleneceği net olur." },
+                { "language": "ru", "text": "Спасибо. Пожалуйста, отправьте мне сегодня копию акта с этой отметкой, фотографиями в приложении и сроком оценки. Тогда обеим сторонам будет ясно, что передано и что еще проверяется." },
+                { "language": "ckb", "text": "سوپاس. تکایە ئەمڕۆ کۆپییەک لە پڕۆتۆکۆڵەکە لەگەڵ ئەو زیادکراوە، وێنەکان وەک هاوپێچ و ماوەیەک بۆ هەڵسەنگاندن بنێرن. ئەوسا بۆ هەردوو لا ڕوون دەبێت چی تەسلیم کراوە و چی هێشتا پشکنین دەکرێت." },
+                { "language": "kmr", "text": "Spas. Ji kerema xwe îro kopiyek ji protokolê bi wê lêzêdekirinê, wêneyan wek pêvek û demek ji bo nirxandinê bişînin. Hingê ji bo her du aliyan zelal e ka çi hatiye radestkirin û çi hê tê kontrolkirin." },
+                { "language": "pl", "text": "Dziękuję. Proszę przesłać mi dziś kopię protokołu z tą adnotacją, zdjęciami jako załącznikami i ramą czasową oceny. Wtedy dla obu stron będzie jasne, co zostało przekazane, a co jest jeszcze sprawdzane." },
+                { "language": "ro", "text": "Mulțumesc. Vă rog să-mi trimiteți astăzi o copie a procesului-verbal cu mențiunea, fotografiile ca anexe și un interval de timp pentru evaluare. Astfel este clar pentru ambele părți ce a fost predat și ce mai trebuie verificat." },
+                { "language": "sq", "text": "Faleminderit. Ju lutem më dërgoni sot një kopje të procesverbalit me shënimin, fotot si shtojca dhe një afat për vlerësimin. Kështu është e qartë për të dyja palët çfarë është dorëzuar dhe çfarë ende duhet verifikuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Der Abschluss nennt Dokument, Anlagen und Frist. Dadurch bleibt die Einigung überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the closing names the document, attachments, and timeframe. That keeps the agreement verifiable." },
+                { "language": "fa", "text": "بسیار خوب: پایان‌بندی سند، پیوست‌ها و مهلت را نام می‌برد. این توافق را قابل پیگیری نگه می‌دارد." },
+                { "language": "ar", "text": "جيد جدًا: تذكر الخاتمة الوثيقة والمرفقات والمهلة. بذلك يبقى الاتفاق قابلًا للتحقق." },
+                { "language": "tr", "text": "Çok iyi: kapanış belgeyi, ekleri ve süreyi belirtir. Böylece anlaşma denetlenebilir kalır." },
+                { "language": "ru", "text": "Очень хорошо: завершение называет документ, приложения и срок. Так договоренность остается проверяемой." },
+                { "language": "ckb", "text": "زۆر باشە: کۆتاییەکە بەڵگە، هاوپێچ و ماوە ناودەبات. بەمە ڕێککەوتنەکە پشکنینکراو دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir baş e: dawî belge, pêvek û demê nav dike. Bi vê yekê lihevhatin dikare were kontrolkirin." },
+                { "language": "pl", "text": "Bardzo dobrze: zakończenie wskazuje dokument, załączniki i termin. Dzięki temu uzgodnienie pozostaje możliwe do sprawdzenia." },
+                { "language": "ro", "text": "Foarte bine: încheierea numește documentul, anexele și termenul. Astfel acordul rămâne verificabil." },
+                { "language": "sq", "text": "Shumë mirë: mbyllja përmend dokumentin, shtojcat dhe afatin. Kështu marrëveshja mbetet e verifikueshme." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Gut, dann warte ich auf Ihre Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "All right, then I will wait for your response." },
+                { "language": "fa", "text": "خوب، پس منتظر پاسخ شما می‌مانم." },
+                { "language": "ar", "text": "حسنًا، إذن سأنتظر ردكم." },
+                { "language": "tr", "text": "Tamam, o zaman cevabınızı bekleyeceğim." },
+                { "language": "ru", "text": "Хорошо, тогда я буду ждать вашего ответа." },
+                { "language": "ckb", "text": "باشە، ئەوا چاوەڕێی وەڵامتان دەبم." },
+                { "language": "kmr", "text": "Baş e, hingê ez li benda bersiva we dimînim." },
+                { "language": "pl", "text": "Dobrze, w takim razie poczekam na Państwa odpowiedź." },
+                { "language": "ro", "text": "Bine, atunci aștept răspunsul dumneavoastră." },
+                { "language": "sq", "text": "Mirë, atëherë do të pres përgjigjen tuaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort ist höflich, sichert aber weder Protokollkopie noch Anlagen noch Zeitrahmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer is polite, but secures neither a copy of the report, nor attachments, nor a timeframe." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ مؤدبانه است، اما نه نسخه صورت‌جلسه را تضمین می‌کند، نه پیوست‌ها را، نه بازه زمانی را." },
+                { "language": "ar", "text": "عام جدًا: الإجابة مهذبة، لكنها لا تضمن نسخة من المحضر ولا المرفقات ولا الإطار الزمني." },
+                { "language": "tr", "text": "Fazla genel: cevap nazik, ama ne tutanak kopyasını ne ekleri ne de süreyi güvenceye alır." },
+                { "language": "ru", "text": "Слишком обще: ответ вежливый, но не обеспечивает ни копию акта, ни приложения, ни срок." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە ڕێزدارە، بەڵام نە کۆپی پڕۆتۆکۆڵ، نە هاوپێچ، نە ماوە دڵنیا دەکاتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv bi rêz e, lê ne kopiya protokolê, ne pêvek û ne demê misoger dike." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź jest uprzejma, ale nie zabezpiecza ani kopii protokołu, ani załączników, ani terminu." },
+                { "language": "ro", "text": "Prea general: răspunsul este politicos, dar nu asigură nici copia procesului-verbal, nici anexele, nici termenul." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja është e sjellshme, por nuk siguron as kopjen e procesverbalit, as shtojcat, as afatin." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "observation-vs-assessment",
+          "text": "Bei Übergaben ist die wichtigste C2-Leistung oft nicht ein stärkerer Vorwurf, sondern eine saubere Trennung von Beobachtung und Bewertung.",
+          "translations": [
+            { "language": "en", "text": "In handovers, the key C2 skill is often not making a stronger accusation, but cleanly separating observation from assessment." },
+            { "language": "fa", "text": "در تحویل‌ها، توانایی اصلی C2 اغلب اتهام قوی‌تر نیست، بلکه جداسازی دقیق مشاهده از ارزیابی است." },
+            { "language": "ar", "text": "في عمليات التسليم، المهارة الأساسية في C2 غالبًا ليست اتهامًا أقوى، بل فصلًا دقيقًا بين الملاحظة والتقييم." },
+            { "language": "tr", "text": "Teslimlerde temel C2 becerisi çoğu zaman daha güçlü suçlama değil, gözlem ile değerlendirmeyi temiz biçimde ayırmaktır." },
+            { "language": "ru", "text": "При передаче ключевой навык C2 часто не в более сильном обвинении, а в четком разделении наблюдения и оценки." },
+            { "language": "ckb", "text": "لە تەسلیمکردنەکاندا گرنگترین توانای C2 زۆرجار تۆمەتێکی بەهێزتر نییە، بەڵکو جیاکردنەوەی پاکی بینین و هەڵسەنگاندنە." },
+            { "language": "kmr", "text": "Di radestkirinan de şiyana sereke ya C2 gelek caran tawanbareke xurtir nîne, lê veqetandina paqij a dîtin û nirxandinê ye." },
+            { "language": "pl", "text": "Przy przekazaniu kluczową umiejętnością C2 często nie jest mocniejszy zarzut, lecz czyste oddzielenie obserwacji od oceny." },
+            { "language": "ro", "text": "La predări, abilitatea C2 esențială nu este adesea o acuzație mai puternică, ci separarea clară a observației de evaluare." },
+            { "language": "sq", "text": "Në dorëzime, aftësia kryesore C2 shpesh nuk është akuzë më e fortë, por ndarja e qartë e vëzhgimit nga vlerësimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "documented-disagreement",
+          "text": "Eine gute Protokollformulierung erlaubt beiden Seiten, ihre Position festzuhalten, ohne den Konflikt zu verschärfen.",
+          "translations": [
+            { "language": "en", "text": "A good report wording allows both sides to record their position without intensifying the conflict." },
+            { "language": "fa", "text": "عبارت خوب در صورت‌جلسه به هر دو طرف اجازه می‌دهد موضعشان را ثبت کنند، بدون اینکه اختلاف را تشدید کند." },
+            { "language": "ar", "text": "تسمح صياغة جيدة في المحضر للطرفين بتوثيق موقفهما من دون تشديد الخلاف." },
+            { "language": "tr", "text": "İyi bir tutanak ifadesi, iki tarafın da pozisyonunu kaydetmesini sağlar ve anlaşmazlığı büyütmez." },
+            { "language": "ru", "text": "Хорошая формулировка в акте позволяет обеим сторонам зафиксировать позицию, не усиливая конфликт." },
+            { "language": "ckb", "text": "دەقێکی باشی پڕۆتۆکۆڵ ڕێ دەدات هەردوو لا هەڵوێستیان تۆمار بکەن، بەبێ ئەوەی ناکۆکییەکە توندتر بکات." },
+            { "language": "kmr", "text": "Gotineke baş a protokolê dihêle her du alî helwesta xwe tomar bikin, bê ku nakokiyê xurtir bike." },
+            { "language": "pl", "text": "Dobre brzmienie protokołu pozwala obu stronom zapisać stanowisko bez zaostrzania konfliktu." },
+            { "language": "ro", "text": "O formulare bună în procesul-verbal permite ambelor părți să-și consemneze poziția fără a intensifica conflictul." },
+            { "language": "sq", "text": "Një formulim i mirë në procesverbal u lejon të dyja palëve të regjistrojnë qëndrimin pa e ashpërsuar konfliktin." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "review-before-deduction",
+          "text": "Eine diplomatische Lösung macht aus pauschalen Forderungen konkrete Prüfschritte, besonders vor Entscheidungen über die Kaution.",
+          "translations": [
+            { "language": "en", "text": "A diplomatic solution turns broad demands into concrete review steps, especially before decisions about the deposit." },
+            { "language": "fa", "text": "راه‌حل دیپلماتیک خواسته‌های کلی را به مراحل بررسی مشخص تبدیل می‌کند، به‌ویژه پیش از تصمیم درباره ودیعه." },
+            { "language": "ar", "text": "تحول الحلول الدبلوماسية المطالب العامة إلى خطوات فحص محددة، خاصة قبل القرارات المتعلقة بمبلغ التأمين." },
+            { "language": "tr", "text": "Diplomatik çözüm, genel talepleri somut inceleme adımlarına dönüştürür; özellikle depozito kararlarından önce." },
+            { "language": "ru", "text": "Дипломатичное решение превращает общие требования в конкретные шаги проверки, особенно перед решениями о залоге." },
+            { "language": "ckb", "text": "چارەسەری دیپلۆماسی داواکارییە گشتییەکان دەگۆڕێت بۆ هەنگاوی پشکنینی دیاریکراو، بە تایبەتی پێش بڕیارەکانی بارمتە." },
+            { "language": "kmr", "text": "Çareseriya dîplomatîk daxwazên giştî dike gavên kontrolê yên berbiçav, bi taybetî berî biryarên li ser depozîtê." },
+            { "language": "pl", "text": "Dyplomatyczne rozwiązanie zamienia ogólne żądania w konkretne kroki weryfikacji, zwłaszcza przed decyzjami dotyczącymi kaucji." },
+            { "language": "ro", "text": "O soluție diplomatică transformă cererile generale în pași concreți de verificare, mai ales înaintea deciziilor privind garanția." },
+            { "language": "sq", "text": "Një zgjidhje diplomatike i kthen kërkesat e përgjithshme në hapa konkretë verifikimi, sidomos para vendimeve për garancinë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "written-close",
+          "text": "Der letzte Schritt muss die mündliche Einigung in ein prüfbares Dokument mit Anlagen und Zeitrahmen übersetzen.",
+          "translations": [
+            { "language": "en", "text": "The final step must translate the verbal agreement into a verifiable document with attachments and a timeframe." },
+            { "language": "fa", "text": "قدم آخر باید توافق شفاهی را به سندی قابل بررسی با پیوست‌ها و بازه زمانی تبدیل کند." },
+            { "language": "ar", "text": "يجب أن تحول الخطوة الأخيرة الاتفاق الشفهي إلى وثيقة قابلة للتحقق مع مرفقات وإطار زمني." },
+            { "language": "tr", "text": "Son adım, sözlü anlaşmayı ekleri ve süresi olan denetlenebilir bir belgeye çevirmelidir." },
+            { "language": "ru", "text": "Последний шаг должен перевести устную договоренность в проверяемый документ с приложениями и сроком." },
+            { "language": "ckb", "text": "هەنگاوی کۆتایی دەبێت ڕێککەوتنی دەمی بگۆڕێت بۆ بەڵگەیەکی پشکنینکراو لەگەڵ هاوپێچ و ماوە." },
+            { "language": "kmr", "text": "Gava dawî divê lihevhatina devkî bike belgeyeke kontrolbar bi pêvek û demê." },
+            { "language": "pl", "text": "Ostatni krok musi przełożyć ustne uzgodnienie na sprawdzalny dokument z załącznikami i terminem." },
+            { "language": "ro", "text": "Ultimul pas trebuie să transforme acordul verbal într-un document verificabil cu anexe și termen." },
+            { "language": "sq", "text": "Hapi i fundit duhet ta kthejë marrëveshjen gojore në një dokument të verifikueshëm me shtojca dhe afat." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "apartment-handover-protocol",
+          "placement": "detail-header",
+          "purpose": "Show a calm apartment handover with protocol documents, keys, and non-readable photos.",
+          "altText": "Eine Mieterin und eine Person der Hausverwaltung stehen in einer leeren Wohnung neben einem Übergabeprotokoll, Schlüsseln und nicht lesbaren Fotos.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A tenant and a property-management representative stand in an empty apartment next to a handover report, keys, and non-readable photos." },
+            { "language": "fa", "text": "یک مستأجر و نماینده مدیریت ساختمان در آپارتمانی خالی کنار صورت‌جلسه تحویل، کلیدها و عکس‌های غیرقابل‌خواندن ایستاده‌اند." },
+            { "language": "ar", "text": "تقف مستأجرة وممثل عن إدارة العقار في شقة فارغة بجانب محضر تسليم ومفاتيح وصور غير قابلة للقراءة." },
+            { "language": "tr", "text": "Bir kiracı ve bina yönetimi temsilcisi boş bir dairede teslim tutanağı, anahtarlar ve okunamayan fotoğrafların yanında duruyor." },
+            { "language": "ru", "text": "Арендаторка и представитель управляющей компании стоят в пустой квартире рядом с актом передачи, ключами и нечитаемыми фотографиями." },
+            { "language": "ckb", "text": "کرێچییەک و نوێنەری بەڕێوەبەرایەتی خانوو لە شوقەیەکی چۆڵدا لە تەنیشت پڕۆتۆکۆڵی تەسلیمکردن، کلیلەکان و وێنەی نەخوێندراوە وەستاون." },
+            { "language": "kmr", "text": "Kirêdarek û nûnerê rêveberiya avahiyê di apartmaneke vala de li kêleka protokola radestkirinê, mifteyan û wêneyên nexwendbar radiwestin." },
+            { "language": "pl", "text": "Najemczyni i przedstawiciel administracji stoją w pustym mieszkaniu obok protokołu przekazania, kluczy i nieczytelnych zdjęć." },
+            { "language": "ro", "text": "O chiriașă și un reprezentant al administrării stau într-un apartament gol lângă un proces-verbal de predare, chei și fotografii ilizibile." },
+            { "language": "sq", "text": "Një qiramarrëse dhe një përfaqësues i administrimit qëndrojnë në një banesë të zbrazët pranë procesverbalit të dorëzimit, çelësave dhe fotove të palexueshme." }
+          ],
+          "imagePrompt": "Clean educational illustration of an apartment handover in an empty German flat, tenant and property-management representative reviewing a handover report, keys on a table, non-readable photos of parquet and wall marks, calm diplomatic mood, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

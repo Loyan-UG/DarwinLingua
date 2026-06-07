@@ -20,10 +20,12 @@ public sealed class CoursesController(
     public async Task<IActionResult> Index(string? cefrLevel, string? q, CancellationToken cancellationToken)
     {
         CoursePathListFilterModel filter = new(LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel), string.IsNullOrWhiteSpace(q) ? null : q.Trim());
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
         IReadOnlyList<CoursePathListItemModel> courses;
         try
         {
-            courses = await catalogApiClient.GetCoursesAsync(filter, cancellationToken).ConfigureAwait(false);
+            courses = await catalogApiClient.GetCoursesAsync(filter, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or OperationCanceledException)
         {
@@ -31,26 +33,29 @@ public sealed class CoursesController(
             courses = [];
         }
 
-        return View(new CourseIndexPageViewModel(courses, LearningPortalFilterConventions.CefrLevels, filter.CefrLevel, filter.Query));
+        return View(new CourseIndexPageViewModel(courses, LearningPortalFilterConventions.CefrLevels, filter.CefrLevel, filter.Query, primaryMeaningLanguageCode ?? "en"));
     }
 
     [HttpGet("{slug}", Name = "Courses_Detail")]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
-        CoursePathDetailModel? course = await catalogApiClient.GetCourseBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
-        return course is null ? NotFound() : View(new CourseDetailPageViewModel(course));
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
+        CoursePathDetailModel? course = await catalogApiClient.GetCourseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        return course is null ? NotFound() : View(new CourseDetailPageViewModel(course, primaryMeaningLanguageCode ?? "en"));
     }
 
     [HttpGet("{courseSlug}/{lessonSlug}", Name = "CourseLessons_Detail")]
     public async Task<IActionResult> Lesson(string courseSlug, string lessonSlug, CancellationToken cancellationToken)
     {
-        CourseLessonDetailModel? lesson = await catalogApiClient.GetCourseLessonBySlugAsync(lessonSlug, cancellationToken).ConfigureAwait(false);
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
+        CourseLessonDetailModel? lesson = await catalogApiClient.GetCourseLessonBySlugAsync(lessonSlug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         if (lesson is null || !string.Equals(lesson.CoursePathSlug, courseSlug, StringComparison.OrdinalIgnoreCase))
         {
             return NotFound();
         }
 
-        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         UserContentProgressModel? progress = null;
         try
         {
@@ -66,6 +71,6 @@ public sealed class CoursesController(
             logger.LogWarning(ex, "Course lesson progress could not be tracked for {LessonSlug}.", lesson.Slug);
         }
 
-        return View(new CourseLessonPageViewModel(lesson, progress));
+        return View(new CourseLessonPageViewModel(lesson, progress, primaryMeaningLanguageCode ?? "en"));
     }
 }

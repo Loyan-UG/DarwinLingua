@@ -1,0 +1,816 @@
+{
+  "packageId": "roleplays-c2-core-03-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 03 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 03",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-krisenkommunikation-intern-abstimmen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Krisenkommunikation intern abstimmen",
+      "titleTranslations": [
+        { "language": "en", "text": "Aligning internal crisis communication" },
+        { "language": "fa", "text": "هماهنگ‌کردن ارتباطات داخلی در بحران" },
+        { "language": "ar", "text": "تنسيق التواصل الداخلي في أزمة" },
+        { "language": "tr", "text": "İç kriz iletişimini koordine etmek" },
+        { "language": "ru", "text": "Согласование внутренней кризисной коммуникации" },
+        { "language": "ckb", "text": "هاوئاهەنگکردنی پەیوەندی ناوخۆیی لە قەیراندا" },
+        { "language": "kmr", "text": "Hevrêzkirina ragihandina hundirîn a krîzê" },
+        { "language": "pl", "text": "Uzgodnienie wewnętrznej komunikacji kryzysowej" },
+        { "language": "ro", "text": "Alinierea comunicării interne de criză" },
+        { "language": "sq", "text": "Koordinimi i komunikimit të brendshëm në krizë" }
+      ],
+      "description": "Nach einem Abrechnungsfehler wurden mehrere Kunden falsch informiert. Mitarbeitende fragen, was sie sagen dürfen, die Rechtsabteilung mahnt zur Vorsicht, und die Geschäftsführung will Vertrauen erhalten. Sie stimmen eine interne Botschaft ab, die weder beschönigt noch unnötig eskaliert.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a billing error, several customers were incorrectly informed. Employees ask what they may say, legal urges caution, and management wants to preserve trust. You align an internal message that neither glosses over the issue nor escalates it unnecessarily." },
+        { "language": "fa", "text": "پس از یک خطای صورتحساب، به چند مشتری اطلاعات نادرست داده شده است. کارکنان می‌پرسند چه چیزی می‌توانند بگویند، بخش حقوقی احتیاط می‌خواهد، و مدیریت می‌خواهد اعتماد حفظ شود. شما پیام داخلی‌ای را هماهنگ می‌کنید که نه موضوع را زیبا جلوه دهد و نه بی‌دلیل آن را تشدید کند." },
+        { "language": "ar", "text": "بعد خطأ في الفوترة تم إبلاغ عدة عملاء بمعلومات غير صحيحة. يسأل الموظفون عما يمكنهم قوله، والقسم القانوني يدعو إلى الحذر، والإدارة تريد الحفاظ على الثقة. تنسق رسالة داخلية لا تجمل المشكلة ولا تصعدها بلا داع." },
+        { "language": "tr", "text": "Bir faturalandırma hatasından sonra birkaç müşteriye yanlış bilgi verildi. Çalışanlar ne söyleyebileceklerini soruyor, hukuk birimi dikkat istiyor ve yönetim güveni korumak istiyor. Sorunu ne güzelleştiren ne de gereksiz yere tırmandıran bir iç mesajı koordine edersiniz." },
+        { "language": "ru", "text": "После ошибки в выставлении счетов несколько клиентов получили неверную информацию. Сотрудники спрашивают, что им можно говорить, юридический отдел призывает к осторожности, а руководство хочет сохранить доверие. Вы согласуете внутреннее сообщение, которое не приукрашивает проблему и не раздувает ее без необходимости." },
+        { "language": "ckb", "text": "دوای هەڵەیەکی فاکتورکردن، چەند کڕیارێک بە زانیاری هەڵە ئاگادار کرانەوە. کارمەندان دەپرسن چی دەتوانن بڵێن، بەشی یاسایی داوای وریایی دەکات، و بەڕێوەبردن دەیەوێت متمانە بپارێزێت. تۆ پەیامێکی ناوخۆیی هاوئاهەنگ دەکەیت کە نە کێشەکە جوان بکات و نە بەبێ پێویست توندی بکاتەوە." },
+        { "language": "kmr", "text": "Piştî xeletiyeke hesabkirinê, çend xerîdar bi agahiyên şaş hatin agahdarkirin. Karmend dipirsin ka çi dikarin bibêjin, beşa hiqûqî bang li hişyariyê dike, û rêveberî dixwaze baweriyê biparêze. Hûn peyameke hundirîn hevrêz dikin ku ne pirsgirêkê xweşik nîşan bide, ne jî bêhewce wê mezin bike." },
+        { "language": "pl", "text": "Po błędzie rozliczeniowym kilku klientów otrzymało nieprawidłowe informacje. Pracownicy pytają, co wolno im mówić, dział prawny zaleca ostrożność, a kierownictwo chce utrzymać zaufanie. Uzgadnia Pan/Pani komunikat wewnętrzny, który ani nie upiększa problemu, ani nie eskaluje go niepotrzebnie." },
+        { "language": "ro", "text": "După o eroare de facturare, mai mulți clienți au fost informați greșit. Angajații întreabă ce au voie să spună, departamentul juridic cere prudență, iar conducerea vrea să păstreze încrederea. Aliniați un mesaj intern care nici nu cosmetizează problema, nici nu o escaladează inutil." },
+        { "language": "sq", "text": "Pas një gabimi faturimi, disa klientë u informuan gabimisht. Punonjësit pyesin çfarë mund të thonë, departamenti ligjor kërkon kujdes dhe drejtimi dëshiron të ruajë besimin. Ju koordinoni një mesazh të brendshëm që as nuk e zbukuron problemin, as nuk e përshkallëzon pa nevojë." }
+      ],
+      "learnerGoal": "Eine interne Krisenbotschaft abstimmen: Transparenz und Vorsicht ausbalancieren, Verantwortung sprachlich sauber fassen, Spekulation vermeiden, Mitarbeitenden handlungsfähige Formulierungen geben und den nächsten Abstimmungsschritt festlegen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Align an internal crisis message: balance transparency and caution, phrase responsibility cleanly, avoid speculation, give employees usable wording, and define the next alignment step." },
+        { "language": "fa", "text": "یک پیام داخلی بحران را هماهنگ کنید: شفافیت و احتیاط را متعادل کنید، مسئولیت را دقیق و تمیز بیان کنید، از حدس‌زدن پرهیز کنید، به کارکنان فرمول‌بندی قابل‌استفاده بدهید و گام بعدی هماهنگی را مشخص کنید." },
+        { "language": "ar", "text": "نسق رسالة أزمة داخلية: وازن بين الشفافية والحذر، وصغ المسؤولية بدقة، وتجنب التكهن، وأعط الموظفين صيغاً قابلة للاستخدام، وحدد خطوة التنسيق التالية." },
+        { "language": "tr", "text": "Bir iç kriz mesajını koordine edin: şeffaflık ile dikkati dengeleyin, sorumluluğu temiz biçimde ifade edin, spekülasyondan kaçının, çalışanlara kullanılabilir ifadeler verin ve sonraki koordinasyon adımını belirleyin." },
+        { "language": "ru", "text": "Согласовать внутреннее кризисное сообщение: сбалансировать прозрачность и осторожность, точно сформулировать ответственность, избегать спекуляций, дать сотрудникам рабочие формулировки и определить следующий шаг согласования." },
+        { "language": "ckb", "text": "پەیامێکی ناوخۆیی قەیران هاوئاهەنگ بکە: شەفافیەت و وریایی هاوسەنگ بکە، بەرپرسیارێتی بە زمانی پاک و ورد دابڕێژە، لە گریمانە دووربکەوە، دەربڕینی بەکارهێنراو بدە بە کارمەندان و هەنگاوی داهاتووی هاوئاهەنگی دیاری بکە." },
+        { "language": "kmr", "text": "Peyameke hundirîn a krîzê hevrêz bikin: zelalî û hişyariyê hevseng bikin, berpirsiyarî bi zimanekî paqij formule bikin, ji texmînê dûr bimînin, gotinên bikaranînê bidin karmendan û gaveke din a hevrêzkirinê diyar bikin." },
+        { "language": "pl", "text": "Uzgodnić wewnętrzny komunikat kryzysowy: zrównoważyć przejrzystość i ostrożność, czysto językowo ująć odpowiedzialność, unikać spekulacji, dać pracownikom użyteczne sformułowania i ustalić kolejny krok uzgodnień." },
+        { "language": "ro", "text": "Aliniați un mesaj intern de criză: echilibrați transparența și prudența, formulați responsabilitatea clar, evitați speculațiile, oferiți angajaților formulări utilizabile și stabiliți următorul pas de aliniere." },
+        { "language": "sq", "text": "Koordinoni një mesazh të brendshëm krize: balanconi transparencën dhe kujdesin, formuloni qartë përgjegjësinë, shmangni spekulimin, jepuni punonjësve formulime të përdorshme dhe përcaktoni hapin tjetër të koordinimit." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "discuss-plan",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 3,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kommunikationsleitung",
+          "translations": [
+            { "language": "en", "text": "Head of communications" },
+            { "language": "fa", "text": "مدیر ارتباطات" },
+            { "language": "ar", "text": "مدير التواصل" },
+            { "language": "tr", "text": "İletişim yöneticisi" },
+            { "language": "ru", "text": "Руководитель коммуникаций" },
+            { "language": "ckb", "text": "بەڕێوەبەری پەیوەندییەکان" },
+            { "language": "kmr", "text": "Rêveberê ragihandinê" },
+            { "language": "pl", "text": "Kierownik komunikacji" },
+            { "language": "ro", "text": "Director de comunicare" },
+            { "language": "sq", "text": "Drejtues i komunikimit" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Leitung Recht und Betrieb",
+          "translations": [
+            { "language": "en", "text": "Head of legal and operations" },
+            { "language": "fa", "text": "مدیر حقوقی و عملیات" },
+            { "language": "ar", "text": "مدير الشؤون القانونية والعمليات" },
+            { "language": "tr", "text": "Hukuk ve operasyon yöneticisi" },
+            { "language": "ru", "text": "Руководитель юридического отдела и операций" },
+            { "language": "ckb", "text": "بەڕێوەبەری یاسا و ئۆپەراسیۆن" },
+            { "language": "kmr", "text": "Rêveberê hiqûq û operasyonê" },
+            { "language": "pl", "text": "Kierownik działu prawnego i operacji" },
+            { "language": "ro", "text": "Director juridic și operațional" },
+            { "language": "sq", "text": "Drejtues i ligjorit dhe operacioneve" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Wir brauchen in den nächsten zwei Stunden eine interne Linie. Der Abrechnungsfehler ist bestätigt, aber die genaue Zahl betroffener Kunden wird noch geprüft. Die Teams fragen bereits, was sie am Telefon sagen sollen.",
+          "translations": [
+            { "language": "en", "text": "We need an internal line within the next two hours. The billing error is confirmed, but the exact number of affected customers is still being checked. Teams are already asking what they should say on the phone." },
+            { "language": "fa", "text": "در دو ساعت آینده به یک خط ارتباطی داخلی نیاز داریم. خطای صورتحساب تأیید شده، اما تعداد دقیق مشتریان متأثر هنوز در حال بررسی است. تیم‌ها همین حالا می‌پرسند پشت تلفن چه باید بگویند." },
+            { "language": "ar", "text": "نحتاج خلال الساعتين القادمتين إلى خط داخلي موحد. خطأ الفوترة مؤكد، لكن العدد الدقيق للعملاء المتأثرين ما زال قيد الفحص. الفرق تسأل بالفعل ماذا ينبغي أن تقول على الهاتف." },
+            { "language": "tr", "text": "Önümüzdeki iki saat içinde iç iletişim çizgisine ihtiyacımız var. Faturalandırma hatası doğrulandı, ancak etkilenen müşteri sayısı hâlâ inceleniyor. Ekipler telefonda ne söylemeleri gerektiğini şimdiden soruyor." },
+            { "language": "ru", "text": "В ближайшие два часа нам нужна внутренняя линия коммуникации. Ошибка в счетах подтверждена, но точное число затронутых клиентов еще проверяется. Команды уже спрашивают, что им говорить по телефону." },
+            { "language": "ckb", "text": "لە دوو کاتژمێری داهاتوودا پێویستمان بە هێڵێکی ناوخۆیی هەیە. هەڵەی فاکتورکردن پشتڕاست کراوەتەوە، بەڵام ژمارەی وردی کڕیارانی کاریگەرکراو هێشتا پشکنین دەکرێت. تیمەکان پێشتر دەپرسن لە تەلەفۆن چی بڵێن." },
+            { "language": "kmr", "text": "Di du saetên bê de pêdiviya me bi xetekê hundirîn heye. Xeletiya hesabkirinê hate piştrastkirin, lê hejmarê rast ê xerîdarên bandorkirî hê tê kontrolkirin. Tîm jixwe dipirsin ka li telefonê çi bêjin." },
+            { "language": "pl", "text": "W ciągu najbliższych dwóch godzin potrzebujemy wewnętrznej linii komunikacji. Błąd rozliczeniowy jest potwierdzony, ale dokładna liczba dotkniętych klientów jest jeszcze sprawdzana. Zespoły już pytają, co mają mówić przez telefon." },
+            { "language": "ro", "text": "În următoarele două ore avem nevoie de o linie internă. Eroarea de facturare este confirmată, dar numărul exact al clienților afectați este încă verificat. Echipele întreabă deja ce ar trebui să spună la telefon." },
+            { "language": "sq", "text": "Brenda dy orëve të ardhshme na duhet një linjë e brendshme komunikimi. Gabimi i faturimit është konfirmuar, por numri i saktë i klientëve të prekur ende po verifikohet. Ekipet po pyesin tashmë çfarë duhet të thonë në telefon." }
+          ],
+          "function": "state-urgent-communication-need",
+          "toneNote": "time pressure with incomplete facts"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Botschaft in drei Ebenen trennen: Was ist gesichert, was wird noch geprüft, und was dürfen Mitarbeitende verbindlich zusagen. So vermeiden wir sowohl Verharmlosung als auch Spekulation.",
+          "translations": [
+            { "language": "en", "text": "I would separate the message into three levels: what is confirmed, what is still being checked, and what employees may promise with certainty. That way we avoid both minimization and speculation." },
+            { "language": "fa", "text": "من پیام را به سه سطح جدا می‌کنم: چه چیزی قطعی است، چه چیزی هنوز بررسی می‌شود، و کارکنان چه چیزی را می‌توانند الزام‌آور وعده بدهند. این‌طور هم از کوچک‌نمایی جلوگیری می‌کنیم و هم از حدس‌زدن." },
+            { "language": "ar", "text": "سأفصل الرسالة إلى ثلاثة مستويات: ما هو مؤكد، وما لا يزال قيد الفحص، وما يمكن للموظفين التعهد به بشكل ملزم. بهذه الطريقة نتجنب التهوين والتكهن في الوقت نفسه." },
+            { "language": "tr", "text": "Mesajı üç düzeye ayırırdım: kesin olan nedir, hâlâ ne inceleniyor ve çalışanlar neyi bağlayıcı biçimde taahhüt edebilir. Böylece hem küçümsemeyi hem de spekülasyonu önleriz." },
+            { "language": "ru", "text": "Я бы разделил сообщение на три уровня: что подтверждено, что еще проверяется и что сотрудники могут обещать уверенно. Так мы избегаем и преуменьшения, и спекуляций." },
+            { "language": "ckb", "text": "من پەیامەکە دەکەمە سێ ئاست: چی دڵنیاکراوە، چی هێشتا پشکنین دەکرێت، و کارمەندان چی دەتوانن بە پابەندی بەڵێن بدەن. بەم شێوەیە هەم بچووککردنەوە و هەم گریمانە دوور دەخەینەوە." },
+            { "language": "kmr", "text": "Ez peyamê li sê astan cuda dikim: çi piştrast e, çi hê tê kontrolkirin, û karmend dikarin çi bi awayekî girêdayî soz bidin. Wisa em hem piçûkkirinê hem jî texmînê dûr dixin." },
+            { "language": "pl", "text": "Podzieliłbym/podzieliłabym komunikat na trzy poziomy: co jest potwierdzone, co nadal jest sprawdzane i co pracownicy mogą wiążąco obiecać. W ten sposób unikamy zarówno bagatelizowania, jak i spekulacji." },
+            { "language": "ro", "text": "Aș separa mesajul pe trei niveluri: ce este confirmat, ce este încă verificat și ce pot promite angajații în mod ferm. Astfel evităm atât minimalizarea, cât și speculațiile." },
+            { "language": "sq", "text": "Do ta ndaja mesazhin në tri nivele: çfarë është e konfirmuar, çfarë po verifikohet ende dhe çfarë mund të premtojnë punonjësit në mënyrë të detyrueshme. Kështu shmangim si minimizimin, ashtu edhe spekulimin." }
+          ],
+          "function": "structure-crisis-message",
+          "toneNote": "clear crisis framing"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Rechtlich möchte ich vermeiden, dass wir Schuld eingestehen, bevor alle Details geprüft sind. Gleichzeitig können wir den Mitarbeitenden nicht nur sagen: Bitte nichts sagen.",
+          "translations": [
+            { "language": "en", "text": "From a legal perspective, I want to avoid admitting fault before all details have been checked. At the same time, we cannot simply tell employees: please say nothing." },
+            { "language": "fa", "text": "از نظر حقوقی می‌خواهم از پذیرش تقصیر قبل از بررسی همه جزئیات جلوگیری کنیم. همزمان نمی‌توانیم فقط به کارکنان بگوییم: لطفاً چیزی نگویید." },
+            { "language": "ar", "text": "من الناحية القانونية أريد تجنب الاعتراف بالمسؤولية قبل فحص كل التفاصيل. وفي الوقت نفسه لا يمكننا أن نقول للموظفين فقط: من فضلكم لا تقولوا شيئاً." },
+            { "language": "tr", "text": "Hukuken tüm ayrıntılar incelenmeden kusur kabul etmekten kaçınmak istiyorum. Aynı zamanda çalışanlara sadece 'lütfen hiçbir şey söylemeyin' diyemeyiz." },
+            { "language": "ru", "text": "С юридической точки зрения я хочу избежать признания вины до проверки всех деталей. В то же время мы не можем просто сказать сотрудникам: пожалуйста, ничего не говорите." },
+            { "language": "ckb", "text": "لە ڕووی یاساییەوە دەمەوێت لە دانپێدان بە تاوان پێش پشکنینی هەموو وردەکارییەکان دوور بکەوینەوە. لە هەمان کاتدا ناتوانین تەنها بە کارمەندان بڵێین: تکایە هیچ مەڵێن." },
+            { "language": "kmr", "text": "Ji aliyê hiqûqî ve dixwazim em berî kontrolkirina hemû hûrgiliyên xwe sûcdar nîşan nedin. Di heman demê de em nikarin tenê ji karmendan re bêjin: ji kerema xwe tiştek nebêjin." },
+            { "language": "pl", "text": "Z prawnego punktu widzenia chcę uniknąć przyznania winy, zanim wszystkie szczegóły zostaną sprawdzone. Jednocześnie nie możemy po prostu powiedzieć pracownikom: proszę nic nie mówić." },
+            { "language": "ro", "text": "Din punct de vedere juridic vreau să evităm recunoașterea vinovăției înainte ca toate detaliile să fie verificate. În același timp, nu le putem spune angajaților doar: vă rugăm să nu spuneți nimic." },
+            { "language": "sq", "text": "Nga ana ligjore dua të shmangim pranimin e fajit para se të verifikohen të gjitha detajet. Në të njëjtën kohë nuk mund t'u themi punonjësve thjesht: ju lutem mos thoni asgjë." }
+          ],
+          "function": "legal-caution-with-operational-need",
+          "toneNote": "balanced legal concern"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir nicht von Schuld sprechen, sondern von einem bestätigten Fehler in der Abrechnung. Die Verantwortung formulieren wir operativ: Wir prüfen die betroffenen Vorgänge, korrigieren fehlerhafte Informationen und informieren Kunden aktiv, sobald der Abgleich abgeschlossen ist.",
+          "translations": [
+            { "language": "en", "text": "Then we should not speak of fault, but of a confirmed billing error. We formulate responsibility operationally: we are reviewing the affected cases, correcting incorrect information, and actively informing customers once reconciliation is complete." },
+            { "language": "fa", "text": "پس نباید از تقصیر صحبت کنیم، بلکه از یک خطای تأییدشده در صورتحساب. مسئولیت را عملیاتی بیان می‌کنیم: موارد متأثر را بررسی می‌کنیم، اطلاعات نادرست را اصلاح می‌کنیم و پس از پایان تطبیق، مشتریان را فعالانه آگاه می‌کنیم." },
+            { "language": "ar", "text": "إذن لا ينبغي أن نتحدث عن ذنب، بل عن خطأ مؤكد في الفوترة. نصوغ المسؤولية عملياً: نفحص العمليات المتأثرة، ونصحح المعلومات الخاطئة، ونبلغ العملاء بنشاط بمجرد اكتمال المطابقة." },
+            { "language": "tr", "text": "O zaman kusurdan değil, doğrulanmış bir faturalandırma hatasından söz etmeliyiz. Sorumluluğu operasyonel biçimde formüle ederiz: etkilenen işlemleri inceliyoruz, yanlış bilgileri düzeltiyoruz ve eşleştirme tamamlanınca müşterileri aktif olarak bilgilendiriyoruz." },
+            { "language": "ru", "text": "Тогда нам следует говорить не о вине, а о подтвержденной ошибке в выставлении счетов. Ответственность формулируем операционно: мы проверяем затронутые случаи, исправляем неверную информацию и активно информируем клиентов после завершения сверки." },
+            { "language": "ckb", "text": "ئەوا نابێت لەسەر تاوان قسە بکەین، بەڵکو لەسەر هەڵەیەکی پشتڕاستکراوە لە فاکتورکردن. بەرپرسیارێتی بە شێوەی ئۆپەراسیۆنی دابڕێژین: دۆخە کاریگەرکراوەکان دەپشکنین، زانیاریی هەڵە ڕاست دەکەینەوە و کڕیاران بە چالاکی ئاگادار دەکەین کاتێک هاوتاکردن تەواو بوو." },
+            { "language": "kmr", "text": "Wê demê divê em ne li ser sûc, lê li ser xeletiyeke piştrastkirî ya hesabkirinê biaxivin. Berpirsiyariyê operasyonî formule dikin: em rewşên bandorkirî kontrol dikin, agahiyên şaş rast dikin û dema hevberdan qediya xerîdaran bi awayekî çalak agahdar dikin." },
+            { "language": "pl", "text": "Wtedy nie powinniśmy mówić o winie, lecz o potwierdzonym błędzie rozliczeniowym. Odpowiedzialność ujmujemy operacyjnie: sprawdzamy dotknięte sprawy, korygujemy błędne informacje i aktywnie informujemy klientów po zakończeniu uzgodnienia danych." },
+            { "language": "ro", "text": "Atunci nu ar trebui să vorbim despre vină, ci despre o eroare de facturare confirmată. Formulăm responsabilitatea operațional: verificăm cazurile afectate, corectăm informațiile greșite și informăm activ clienții după finalizarea reconcilierii." },
+            { "language": "sq", "text": "Atëherë nuk duhet të flasim për faj, por për një gabim të konfirmuar në faturim. Përgjegjësinë e formulojmë në mënyrë operative: po verifikojmë rastet e prekura, po korrigjojmë informacionet e gabuara dhe po informojmë aktivisht klientët sapo të përfundojë rakordimi." }
+          ],
+          "function": "phrase-responsibility-without-legal-overreach",
+          "toneNote": "precise and non-speculative"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Die Geschäftsführung möchte aber ein Signal von Verantwortung. Wenn die Formulierung zu technisch klingt, wirkt sie defensiv.",
+          "translations": [
+            { "language": "en", "text": "Management does want a signal of responsibility, though. If the wording sounds too technical, it will seem defensive." },
+            { "language": "fa", "text": "اما مدیریت می‌خواهد نشانه‌ای از مسئولیت‌پذیری دیده شود. اگر فرمول‌بندی زیادی فنی به نظر برسد، دفاعی جلوه می‌کند." },
+            { "language": "ar", "text": "لكن الإدارة تريد إشارة إلى تحمل المسؤولية. إذا بدت الصياغة تقنية جداً فستبدو دفاعية." },
+            { "language": "tr", "text": "Yönetim yine de bir sorumluluk sinyali istiyor. Formülasyon fazla teknik duyulursa savunmacı görünür." },
+            { "language": "ru", "text": "Но руководство хочет сигнала ответственности. Если формулировка звучит слишком технически, она будет выглядеть оборонительной." },
+            { "language": "ckb", "text": "بەڵام بەڕێوەبردن دەیەوێت ئاماژەیەک لە بەرپرسیارێتی هەبێت. ئەگەر دەربڕینەکە زۆر تەکنیکی دەنگ بدات، وەک بەرگری دەردەکەوێت." },
+            { "language": "kmr", "text": "Lê rêveberî dixwaze nîşaneke berpirsiyariyê hebe. Heke formulekirin pir teknîkî were bihîstin, ew parastinî xuya dike." },
+            { "language": "pl", "text": "Kierownictwo chce jednak sygnału odpowiedzialności. Jeśli sformułowanie brzmi zbyt technicznie, będzie wyglądało defensywnie." },
+            { "language": "ro", "text": "Conducerea vrea totuși un semnal de responsabilitate. Dacă formularea sună prea tehnic, va părea defensivă." },
+            { "language": "sq", "text": "Drejtimi megjithatë dëshiron një sinjal përgjegjësie. Nëse formulimi tingëllon shumë teknik, do të duket mbrojtës." }
+          ],
+          "function": "request-trust-building-language",
+          "toneNote": "trust concern"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann ergänzen wir einen Vertrauenssatz: Wir nehmen die Irritation ernst und möchten vermeiden, dass Mitarbeitende oder Kunden mit halben Informationen arbeiten müssen. Das zeigt Verantwortung, ohne mehr zu behaupten, als wir gesichert wissen.",
+          "translations": [
+            { "language": "en", "text": "Then we add a trust-building sentence: we take the confusion seriously and want to prevent employees or customers from having to work with partial information. That shows responsibility without claiming more than we know for certain." },
+            { "language": "fa", "text": "پس یک جمله اعتمادساز اضافه می‌کنیم: ما سردرگمی ایجادشده را جدی می‌گیریم و می‌خواهیم جلوگیری کنیم که کارکنان یا مشتریان با اطلاعات ناقص کار کنند. این مسئولیت‌پذیری را نشان می‌دهد، بدون اینکه بیش از دانسته‌های قطعی ادعا کنیم." },
+            { "language": "ar", "text": "إذن نضيف جملة لبناء الثقة: نحن نأخذ الارتباك على محمل الجد ونريد أن نمنع الموظفين أو العملاء من العمل بمعلومات ناقصة. هذا يظهر المسؤولية من دون الادعاء بأكثر مما نعرفه بشكل مؤكد." },
+            { "language": "tr", "text": "O zaman güven oluşturan bir cümle ekleriz: oluşan kafa karışıklığını ciddiye alıyoruz ve çalışanların ya da müşterilerin eksik bilgilerle çalışmak zorunda kalmasını önlemek istiyoruz. Bu, kesin bildiğimizden fazlasını iddia etmeden sorumluluk gösterir." },
+            { "language": "ru", "text": "Тогда добавим фразу, создающую доверие: мы серьезно относимся к возникшей неясности и хотим избежать ситуации, в которой сотрудники или клиенты вынуждены работать с неполной информацией. Это показывает ответственность, не утверждая больше, чем мы достоверно знаем." },
+            { "language": "ckb", "text": "ئەوا ڕستەیەکی متمانەساز زیاد دەکەین: ئێمە سەرلێشێواوی دروستبوو بە جدی وەردەگرین و دەمانەوێت ڕێگری بکەین کە کارمەندان یان کڕیاران ناچار بن بە زانیاری نیوەچڵ کار بکەن. ئەمە بەرپرسیارێتی نیشان دەدات بێ ئەوەی زیاتر لەوەی بە دڵنیایی دەیزانین بانگەشە بکات." },
+            { "language": "kmr", "text": "Wê demê em hevokeke bawerî-avakirinê lê zêde dikin: em tevliheviyê bi cidî digirin û dixwazin rê li ber vê bigirin ku karmend an xerîdar bi agahiyên nîvî kar bikin. Ev berpirsiyarî nîşan dide bêyî ku em zêdetir ji ya ku bi ewle dizanin îdia bikin." },
+            { "language": "pl", "text": "Wtedy dodajemy zdanie budujące zaufanie: traktujemy powstałe zamieszanie poważnie i chcemy uniknąć sytuacji, w której pracownicy lub klienci muszą pracować na częściowych informacjach. To pokazuje odpowiedzialność, nie twierdząc więcej, niż wiemy na pewno." },
+            { "language": "ro", "text": "Atunci adăugăm o propoziție care construiește încredere: luăm în serios confuzia creată și vrem să evităm ca angajații sau clienții să trebuiască să lucreze cu informații incomplete. Asta arată responsabilitate fără a afirma mai mult decât știm sigur." },
+            { "language": "sq", "text": "Atëherë shtojmë një fjali që ndërton besim: e marrim seriozisht paqartësinë e krijuar dhe duam të shmangim që punonjësit ose klientët të punojnë me informacione të pjesshme. Kjo tregon përgjegjësi pa pretenduar më shumë sesa dimë me siguri." }
+          ],
+          "function": "add-trust-without-overclaiming",
+          "toneNote": "empathetic but bounded"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Was geben wir den Mitarbeitenden konkret für Kundengespräche? Ein abstrakter Hinweis hilft ihnen im Moment nicht.",
+          "translations": [
+            { "language": "en", "text": "What exactly do we give employees for customer conversations? An abstract note does not help them right now." },
+            { "language": "fa", "text": "برای مکالمه با مشتریان دقیقاً چه چیزی به کارکنان می‌دهیم؟ یک اشاره انتزاعی در این لحظه به آن‌ها کمک نمی‌کند." },
+            { "language": "ar", "text": "ما الذي نعطيه للموظفين تحديداً لمحادثات العملاء؟ ملاحظة مجردة لا تساعدهم في هذه اللحظة." },
+            { "language": "tr", "text": "Çalışanlara müşteri görüşmeleri için somut olarak ne veriyoruz? Soyut bir not şu anda onlara yardımcı olmaz." },
+            { "language": "ru", "text": "Что конкретно мы даем сотрудникам для разговоров с клиентами? Абстрактная подсказка сейчас им не поможет." },
+            { "language": "ckb", "text": "بۆ گفتوگۆی کڕیاران بە وردی چی دەدەین بە کارمەندان؟ ئاماژەیەکی ئەبستراکت لەم ساتەدا یارمەتیان نادات." },
+            { "language": "kmr", "text": "Em ji karmendan re ji bo axaftinên xerîdaran bi konkret çi didin? Nîşaneyeke abstrakt niha alîkariya wan nake." },
+            { "language": "pl", "text": "Co konkretnie dajemy pracownikom do rozmów z klientami? Abstrakcyjna wskazówka w tej chwili im nie pomoże." },
+            { "language": "ro", "text": "Ce le oferim concret angajaților pentru discuțiile cu clienții? O indicație abstractă nu îi ajută acum." },
+            { "language": "sq", "text": "Çfarë u japim konkretisht punonjësve për bisedat me klientët? Një udhëzim abstrakt nuk i ndihmon tani." }
+          ],
+          "function": "ask-for-usable-wording",
+          "toneNote": "operational urgency"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wir geben ihnen eine kurze Gesprächsformel: Der Fehler ist erkannt, die betroffenen Vorgänge werden geprüft, und Kundinnen und Kunden erhalten eine korrigierte Information, sobald der Abgleich abgeschlossen ist. Für Einzelfälle sollen sie keine Beträge nennen, sondern an das Krisenteam weitergeben.",
+          "translations": [
+            { "language": "en", "text": "We give them a short call formula: the error has been identified, the affected cases are being checked, and customers will receive corrected information once reconciliation is complete. For individual cases, they should not name amounts, but forward the case to the crisis team." },
+            { "language": "fa", "text": "به آن‌ها یک فرمول کوتاه برای مکالمه می‌دهیم: خطا شناسایی شده، موارد متأثر در حال بررسی است، و مشتریان پس از پایان تطبیق اطلاعات اصلاح‌شده دریافت می‌کنند. برای موارد فردی نباید مبلغی اعلام کنند، بلکه باید موضوع را به تیم بحران منتقل کنند." },
+            { "language": "ar", "text": "نعطيهم صيغة قصيرة للمحادثة: تم التعرف على الخطأ، وتتم مراجعة العمليات المتأثرة، وسيحصل العملاء على معلومات مصححة بمجرد اكتمال المطابقة. في الحالات الفردية لا ينبغي أن يذكروا مبالغ، بل يحيلوا الحالة إلى فريق الأزمة." },
+            { "language": "tr", "text": "Onlara kısa bir görüşme formülü veririz: hata tespit edildi, etkilenen işlemler inceleniyor ve müşteriler eşleştirme tamamlandığında düzeltilmiş bilgi alacak. Tekil vakalarda tutar belirtmemeli, konuyu kriz ekibine aktarmalılar." },
+            { "language": "ru", "text": "Мы даем им короткую формулу для разговора: ошибка выявлена, затронутые случаи проверяются, и клиенты получат исправленную информацию после завершения сверки. По отдельным случаям им не следует называть суммы, а нужно передавать их кризисной команде." },
+            { "language": "ckb", "text": "فۆرمولێکی کورتی گفتوگۆیان پێدەدەین: هەڵەکە ناسراوە، دۆخە کاریگەرکراوەکان پشکنین دەکرێن، و کڕیاران دوای تەواوبوونی هاوتاکردن زانیاری ڕاستکراوە وەردەگرن. بۆ دۆخی تاکەکەسی نابێت بڕی پارە بڵێن، بەڵکو دەبێت بۆ تیمی قەیران بینێرن." },
+            { "language": "kmr", "text": "Em formuleke kurt a axaftinê didin wan: xeletî hate nasîn, rewşên bandorkirî têne kontrolkirin, û xerîdar dê dema hevberdan qediya agahiyên rastkirî bistînin. Ji bo rewşên kesane divê mîqdar nebinin, lê wan bidin tîma krîzê." },
+            { "language": "pl", "text": "Dajemy im krótką formułę rozmowy: błąd został rozpoznany, dotknięte sprawy są sprawdzane, a klienci otrzymają skorygowaną informację po zakończeniu uzgodnienia danych. W pojedynczych przypadkach nie powinni podawać kwot, lecz przekazywać sprawę zespołowi kryzysowemu." },
+            { "language": "ro", "text": "Le oferim o formulă scurtă de conversație: eroarea a fost identificată, cazurile afectate sunt verificate, iar clienții vor primi informații corectate după finalizarea reconcilierii. Pentru cazuri individuale nu trebuie să menționeze sume, ci să transmită cazul echipei de criză." },
+            { "language": "sq", "text": "U japim një formulë të shkurtër bisede: gabimi është identifikuar, rastet e prekura po verifikohen dhe klientët do të marrin informacion të korrigjuar sapo të përfundojë rakordimi. Për raste individuale nuk duhet të përmendin shuma, por t'ia kalojnë çështjen ekipit të krizës." }
+          ],
+          "function": "provide-call-script",
+          "toneNote": "actionable wording"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Und wenn jemand fragt, ob wir den Fehler verursacht haben? Diese Frage wird kommen.",
+          "translations": [
+            { "language": "en", "text": "And if someone asks whether we caused the error? That question will come." },
+            { "language": "fa", "text": "و اگر کسی بپرسد آیا ما باعث خطا شده‌ایم؟ این سؤال حتماً می‌آید." },
+            { "language": "ar", "text": "وإذا سأل أحدهم عما إذا كنا نحن من تسبب في الخطأ؟ سيأتي هذا السؤال." },
+            { "language": "tr", "text": "Peki biri hataya bizim neden olup olmadığımızı sorarsa? Bu soru gelecek." },
+            { "language": "ru", "text": "А если кто-то спросит, вызвали ли мы ошибку? Этот вопрос обязательно появится." },
+            { "language": "ckb", "text": "ئەگەر کەسێک بپرسێت ئایا ئێمە بووینە هۆی هەڵەکە؟ ئەم پرسیارە دێت." },
+            { "language": "kmr", "text": "Û heke kesek bipirse ka me bû sedema xeletiyê? Ev pirs dê bê." },
+            { "language": "pl", "text": "A jeśli ktoś zapyta, czy to my spowodowaliśmy błąd? To pytanie się pojawi." },
+            { "language": "ro", "text": "Și dacă cineva întreabă dacă noi am cauzat eroarea? Această întrebare va apărea." },
+            { "language": "sq", "text": "Po nëse dikush pyet nëse ne e shkaktuam gabimin? Kjo pyetje do të vijë." }
+          ],
+          "function": "ask-about-accountability-question",
+          "toneNote": "anticipated difficult question"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann lautet die Antwort: Wir haben einen Fehler in unserem Abrechnungsprozess festgestellt und übernehmen die Klärung. Zur Ursache äußern wir uns erst, wenn die technische und fachliche Prüfung abgeschlossen ist. Das ist ehrlich, aber nicht spekulativ.",
+          "translations": [
+            { "language": "en", "text": "Then the answer is: we have identified an error in our billing process and are taking responsibility for clarification. We will comment on the cause only once the technical and functional review is complete. That is honest, but not speculative." },
+            { "language": "fa", "text": "پس پاسخ این است: ما خطایی را در فرایند صورتحساب خود شناسایی کرده‌ایم و روشن‌کردن موضوع را بر عهده می‌گیریم. درباره علت فقط زمانی اظهارنظر می‌کنیم که بررسی فنی و تخصصی کامل شده باشد. این صادقانه است، اما حدسی نیست." },
+            { "language": "ar", "text": "إذن يكون الجواب: لقد حددنا خطأ في عملية الفوترة لدينا ونتولى توضيحه. سنعلق على السبب فقط عندما يكتمل الفحص التقني والمهني. هذا صادق لكنه ليس تكهنياً." },
+            { "language": "tr", "text": "O zaman cevap şu olur: faturalandırma sürecimizde bir hata tespit ettik ve açıklığa kavuşturmayı üstleniyoruz. Nedene ilişkin açıklamayı ancak teknik ve uzmanlık incelemesi tamamlandığında yapacağız. Bu dürüsttür, ama spekülatif değildir." },
+            { "language": "ru", "text": "Тогда ответ такой: мы выявили ошибку в нашем процессе выставления счетов и берем на себя ее прояснение. О причине мы будем говорить только после завершения технической и содержательной проверки. Это честно, но не спекулятивно." },
+            { "language": "ckb", "text": "ئەوا وەڵامەکە ئەمەیە: ئێمە هەڵەیەکمان لە پرۆسەی فاکتورکردنی خۆماندا دۆزیوەتەوە و ڕوونکردنەوەکە وەردەگرین. لەسەر هۆکارەکە تەنها کاتێک قسە دەکەین کە پشکنینی تەکنیکی و پیشەیی تەواو بووبێت. ئەمە ڕاستگۆیە، بەڵام گریمانە نییە." },
+            { "language": "kmr", "text": "Wê demê bersiv ev e: me xeletiyek di pêvajoya hesabkirina xwe de nas kiriye û zelalkirinê werdigirin. Li ser sedemê em tenê dema kontrola teknîkî û pisporî qediya îfade dikin. Ev rast e, lê ne texmînî ye." },
+            { "language": "pl", "text": "Wtedy odpowiedź brzmi: stwierdziliśmy błąd w naszym procesie rozliczeniowym i przejmujemy wyjaśnienie. O przyczynie wypowiemy się dopiero po zakończeniu kontroli technicznej i merytorycznej. To jest uczciwe, ale nie spekulacyjne." },
+            { "language": "ro", "text": "Atunci răspunsul este: am identificat o eroare în procesul nostru de facturare și ne asumăm clarificarea. Ne vom pronunța asupra cauzei doar după finalizarea verificării tehnice și de specialitate. Este onest, dar nu speculativ." },
+            { "language": "sq", "text": "Atëherë përgjigjja është: kemi identifikuar një gabim në procesin tonë të faturimit dhe marrim përsipër sqarimin. Për shkakun do të shprehemi vetëm pasi të përfundojë kontrolli teknik dhe profesional. Kjo është e sinqertë, por jo spekulative." }
+          ],
+          "function": "answer-accountability-without-speculation",
+          "toneNote": "responsible and bounded"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Gut. Was ist der nächste Abstimmungsschritt? Ich möchte vermeiden, dass parallel drei Versionen im Umlauf sind.",
+          "translations": [
+            { "language": "en", "text": "Good. What is the next alignment step? I want to avoid having three versions circulating in parallel." },
+            { "language": "fa", "text": "خوب. گام بعدی هماهنگی چیست؟ می‌خواهم جلوگیری کنم که سه نسخه همزمان در گردش باشد." },
+            { "language": "ar", "text": "جيد. ما خطوة التنسيق التالية؟ أريد تجنب تداول ثلاث نسخ بالتوازي." },
+            { "language": "tr", "text": "İyi. Sonraki koordinasyon adımı nedir? Paralel olarak üç versiyonun dolaşmasını önlemek istiyorum." },
+            { "language": "ru", "text": "Хорошо. Какой следующий шаг согласования? Я хочу избежать ситуации, когда параллельно циркулируют три версии." },
+            { "language": "ckb", "text": "باشە. هەنگاوی داهاتووی هاوئاهەنگی چییە؟ دەمەوێت ڕێگری بکەم کە سێ وەشان بە هاوکات بڵاو بن." },
+            { "language": "kmr", "text": "Baş e. Gava din a hevrêzkirinê çi ye? Ez dixwazim rê li ber wê bigirim ku sê guhertoyên cuda bi hev re belav bibin." },
+            { "language": "pl", "text": "Dobrze. Jaki jest następny krok uzgodnień? Chcę uniknąć sytuacji, w której równolegle krążą trzy wersje." },
+            { "language": "ro", "text": "Bine. Care este următorul pas de aliniere? Vreau să evit ca trei versiuni să circule în paralel." },
+            { "language": "sq", "text": "Mirë. Cili është hapi tjetër i koordinimit? Dua të shmang që tri versione të qarkullojnë paralelisht." }
+          ],
+          "function": "request-governance-step",
+          "toneNote": "control versioning"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich schlage vor: Wir frieren diese Kernbotschaft für zwei Stunden ein, Recht prüft nur die Haftungsformulierung, Betrieb ergänzt den Eskalationsweg, und danach geht genau eine Version an Teamleitungen und Kundenservice.",
+          "translations": [
+            { "language": "en", "text": "I suggest this: we freeze this core message for two hours, legal only checks the liability wording, operations adds the escalation path, and after that exactly one version goes to team leads and customer service." },
+            { "language": "fa", "text": "پیشنهاد من این است: این پیام اصلی را برای دو ساعت ثابت می‌کنیم، حقوقی فقط فرمول‌بندی مسئولیت را بررسی می‌کند، عملیات مسیر escalation را اضافه می‌کند، و بعد دقیقاً یک نسخه برای سرپرستان تیم و خدمات مشتری ارسال می‌شود." },
+            { "language": "ar", "text": "أقترح ما يلي: نجمد هذه الرسالة الأساسية لمدة ساعتين، يفحص القسم القانوني فقط صياغة المسؤولية، وتضيف العمليات مسار التصعيد، وبعد ذلك تذهب نسخة واحدة فقط إلى قادة الفرق وخدمة العملاء." },
+            { "language": "tr", "text": "Şunu öneriyorum: bu çekirdek mesajı iki saatliğine sabitliyoruz, hukuk yalnızca sorumluluk ifadesini kontrol ediyor, operasyon eskalasyon yolunu ekliyor ve ardından ekip liderlerine ve müşteri hizmetlerine tam olarak tek bir versiyon gidiyor." },
+            { "language": "ru", "text": "Я предлагаю так: мы фиксируем это основное сообщение на два часа, юридический отдел проверяет только формулировку ответственности, операции добавляют путь эскалации, и после этого ровно одна версия идет руководителям команд и клиентскому сервису." },
+            { "language": "ckb", "text": "پێشنیارم ئەمەیە: ئەم پەیامە سەرەکییە بۆ دوو کاتژمێر جێگیر دەکەین، یاسایی تەنها دەربڕینی بەرپرسیارێتی دەپشکنێت، ئۆپەراسیۆن ڕێڕەوی escalation زیاد دەکات، و دوای ئەوە تەنها یەک وەشان دەچێت بۆ سەرپەرشتیارانی تیم و خزمەتی کڕیار." },
+            { "language": "kmr", "text": "Ez wiha pêşniyar dikim: em vê peyama bingehîn ji bo du saetan qefil dikin, hiqûq tenê gotina berpirsiyariyê kontrol dike, operasyon rêya eskalasyonê lê zêde dike, û piştî wê tenê guhertoyek diçe cem serokên tîmê û xizmeta xerîdaran." },
+            { "language": "pl", "text": "Proponuję tak: zamrażamy ten komunikat bazowy na dwie godziny, dział prawny sprawdza tylko sformułowanie odpowiedzialności, operacje dodają ścieżkę eskalacji, a potem dokładnie jedna wersja trafia do liderów zespołów i obsługi klienta." },
+            { "language": "ro", "text": "Propun următorul lucru: înghețăm acest mesaj de bază timp de două ore, juridicul verifică doar formularea răspunderii, operaționalul adaugă traseul de escaladare, iar apoi exact o versiune merge către liderii de echipă și serviciul clienți." },
+            { "language": "sq", "text": "Propozoj kështu: e ngrijmë këtë mesazh bazë për dy orë, ligjori kontrollon vetëm formulimin e përgjegjësisë, operacionet shtojnë rrugën e eskalimit dhe pas kësaj saktësisht një version u dërgohet drejtuesve të ekipeve dhe shërbimit ndaj klientit." }
+          ],
+          "function": "define-single-version-governance",
+          "toneNote": "decision-ready closure"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde die Botschaft in drei Ebenen trennen: Was ist gesichert, was wird noch geprüft, und was dürfen Mitarbeitende verbindlich zusagen. So vermeiden wir sowohl Verharmlosung als auch Spekulation.",
+              "translations": [
+                { "language": "en", "text": "I would separate the message into three levels: what is confirmed, what is still being checked, and what employees may promise with certainty. That way we avoid both minimization and speculation." },
+                { "language": "fa", "text": "من پیام را به سه سطح جدا می‌کنم: چه چیزی قطعی است، چه چیزی هنوز بررسی می‌شود، و کارکنان چه چیزی را می‌توانند الزام‌آور وعده بدهند. این‌طور هم از کوچک‌نمایی جلوگیری می‌کنیم و هم از حدس‌زدن." },
+                { "language": "ar", "text": "سأفصل الرسالة إلى ثلاثة مستويات: ما هو مؤكد، وما لا يزال قيد الفحص، وما يمكن للموظفين التعهد به بشكل ملزم. بهذه الطريقة نتجنب التهوين والتكهن في الوقت نفسه." },
+                { "language": "tr", "text": "Mesajı üç düzeye ayırırdım: kesin olan nedir, hâlâ ne inceleniyor ve çalışanlar neyi bağlayıcı biçimde taahhüt edebilir. Böylece hem küçümsemeyi hem de spekülasyonu önleriz." },
+                { "language": "ru", "text": "Я бы разделил сообщение на три уровня: что подтверждено, что еще проверяется и что сотрудники могут обещать уверенно. Так мы избегаем и преуменьшения, и спекуляций." },
+                { "language": "ckb", "text": "من پەیامەکە دەکەمە سێ ئاست: چی دڵنیاکراوە، چی هێشتا پشکنین دەکرێت، و کارمەندان چی دەتوانن بە پابەندی بەڵێن بدەن. بەم شێوەیە هەم بچووککردنەوە و هەم گریمانە دوور دەخەینەوە." },
+                { "language": "kmr", "text": "Ez peyamê li sê astan cuda dikim: çi piştrast e, çi hê tê kontrolkirin, û karmend dikarin çi bi awayekî girêdayî soz bidin. Wisa em hem piçûkkirinê hem jî texmînê dûr dixin." },
+                { "language": "pl", "text": "Podzieliłbym/podzieliłabym komunikat na trzy poziomy: co jest potwierdzone, co nadal jest sprawdzane i co pracownicy mogą wiążąco obiecać. W ten sposób unikamy zarówno bagatelizowania, jak i spekulacji." },
+                { "language": "ro", "text": "Aș separa mesajul pe trei niveluri: ce este confirmat, ce este încă verificat și ce pot promite angajații în mod ferm. Astfel evităm atât minimalizarea, cât și speculațiile." },
+                { "language": "sq", "text": "Do ta ndaja mesazhin në tri nivele: çfarë është e konfirmuar, çfarë po verifikohet ende dhe çfarë mund të premtojnë punonjësit në mënyrë të detyrueshme. Kështu shmangim si minimizimin, ashtu edhe spekulimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schafft sofort Ordnung und trennt Fakten, Prüfstand und verbindliche Zusagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer immediately creates order and separates facts, items under review, and binding promises." },
+                { "language": "fa", "text": "قوی: پاسخ فوراً نظم ایجاد می‌کند و واقعیت‌ها، موارد در حال بررسی و وعده‌های الزام‌آور را جدا می‌کند." },
+                { "language": "ar", "text": "قوي: تخلق الإجابة نظاماً فورياً وتفصل بين الحقائق وما هو قيد الفحص والتعهدات الملزمة." },
+                { "language": "tr", "text": "Güçlü: cevap hemen düzen kurar ve gerçekleri, incelenen noktaları ve bağlayıcı sözleri ayırır." },
+                { "language": "ru", "text": "Сильно: ответ сразу создает порядок и разделяет факты, проверяемые пункты и обязательные обещания." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دەستبەجێ ڕێکخستن دروست دەکات و ڕاستییەکان، شتە پشکنراوەکان و بەڵێنی پابەند جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv tavilê rêkûpêkî çêdike û rastiyan, tiştên di kontrolê de û sozên girêdayî cuda dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź od razu porządkuje sytuację i oddziela fakty, kwestie weryfikowane oraz wiążące obietnice." },
+                { "language": "ro", "text": "Puternic: răspunsul creează imediat ordine și separă faptele, elementele în verificare și promisiunile ferme." },
+                { "language": "sq", "text": "E fortë: përgjigjja krijon menjëherë rregull dhe ndan faktet, çështjet në verifikim dhe premtimet detyruese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten den Teams sagen, dass sie ruhig bleiben und nur gesicherte Informationen weitergeben.",
+              "translations": [
+                { "language": "en", "text": "We should tell the teams to stay calm and only pass on confirmed information." },
+                { "language": "fa", "text": "باید به تیم‌ها بگوییم آرام بمانند و فقط اطلاعات قطعی را منتقل کنند." },
+                { "language": "ar", "text": "ينبغي أن نقول للفرق أن تبقى هادئة وأن تنقل المعلومات المؤكدة فقط." },
+                { "language": "tr", "text": "Ekiplere sakin kalmalarını ve yalnızca kesin bilgileri aktarmalarını söylemeliyiz." },
+                { "language": "ru", "text": "Мы должны сказать командам сохранять спокойствие и передавать только подтвержденную информацию." },
+                { "language": "ckb", "text": "دەبێت بە تیمەکان بڵێین ئارام بن و تەنها زانیاری دڵنیاکراو بگوازنەوە." },
+                { "language": "kmr", "text": "Divê em ji tîman re bêjin aram bimînin û tenê agahiyên piştrast derbas bikin." },
+                { "language": "pl", "text": "Powinniśmy powiedzieć zespołom, żeby zachowały spokój i przekazywały tylko potwierdzone informacje." },
+                { "language": "ro", "text": "Ar trebui să le spunem echipelor să rămână calme și să transmită doar informații confirmate." },
+                { "language": "sq", "text": "Duhet t'u themi ekipeve të qëndrojnë të qeta dhe të përcjellin vetëm informacione të konfirmuara." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Antwort gibt keine Struktur für ungeprüfte Punkte und keine verbindliche Gesprächsgrenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: the answer gives no structure for unverified points and no binding conversation boundary." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی کلی است: پاسخ برای موارد بررسی‌نشده ساختار نمی‌دهد و مرز الزام‌آور مکالمه مشخص نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه عام جداً: لا تقدم الإجابة بنية للنقاط غير المفحوصة ولا حداً ملزماً للمحادثة." },
+                { "language": "tr", "text": "Makul ama fazla genel: cevap doğrulanmamış noktalar için yapı ve bağlayıcı konuşma sınırı vermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком обще: ответ не дает структуры для непроверенных пунктов и обязательной границы разговора." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر گشتییە: وەڵامەکە بۆ خاڵە پشکنین‌نەکراوەکان پێکهاتە و سنووری پابەندی گفتوگۆ نادات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir giştî ye: bersiv ji bo xalên nepiştrast struktur û sînorê axaftinê yê girêdayî nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne: odpowiedź nie daje struktury dla kwestii niesprawdzonych ani wiążącej granicy rozmowy." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul nu oferă structură pentru punctele neverificate și nici o limită fermă de conversație." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: përgjigjja nuk jep strukturë për pikat e paverifikuara dhe as kufi detyrues bisede." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollten wir nicht von Schuld sprechen, sondern von einem bestätigten Fehler in der Abrechnung. Die Verantwortung formulieren wir operativ: Wir prüfen die betroffenen Vorgänge, korrigieren fehlerhafte Informationen und informieren Kunden aktiv, sobald der Abgleich abgeschlossen ist.",
+              "translations": [
+                { "language": "en", "text": "Then we should not speak of fault, but of a confirmed billing error. We formulate responsibility operationally: we are reviewing the affected cases, correcting incorrect information, and actively informing customers once reconciliation is complete." },
+                { "language": "fa", "text": "پس نباید از تقصیر صحبت کنیم، بلکه از یک خطای تأییدشده در صورتحساب. مسئولیت را عملیاتی بیان می‌کنیم: موارد متأثر را بررسی می‌کنیم، اطلاعات نادرست را اصلاح می‌کنیم و پس از پایان تطبیق، مشتریان را فعالانه آگاه می‌کنیم." },
+                { "language": "ar", "text": "إذن لا ينبغي أن نتحدث عن ذنب، بل عن خطأ مؤكد في الفوترة. نصوغ المسؤولية عملياً: نفحص العمليات المتأثرة، ونصحح المعلومات الخاطئة، ونبلغ العملاء بنشاط بمجرد اكتمال المطابقة." },
+                { "language": "tr", "text": "O zaman kusurdan değil, doğrulanmış bir faturalandırma hatasından söz etmeliyiz. Sorumluluğu operasyonel biçimde formüle ederiz: etkilenen işlemleri inceliyoruz, yanlış bilgileri düzeltiyoruz ve eşleştirme tamamlanınca müşterileri aktif olarak bilgilendiriyoruz." },
+                { "language": "ru", "text": "Тогда нам следует говорить не о вине, а о подтвержденной ошибке в выставлении счетов. Ответственность формулируем операционно: мы проверяем затронутые случаи, исправляем неверную информацию и активно информируем клиентов после завершения сверки." },
+                { "language": "ckb", "text": "ئەوا نابێت لەسەر تاوان قسە بکەین، بەڵکو لەسەر هەڵەیەکی پشتڕاستکراوە لە فاکتورکردن. بەرپرسیارێتی بە شێوەی ئۆپەراسیۆنی دابڕێژین: دۆخە کاریگەرکراوەکان دەپشکنین، زانیاریی هەڵە ڕاست دەکەینەوە و کڕیاران بە چالاکی ئاگادار دەکەین کاتێک هاوتاکردن تەواو بوو." },
+                { "language": "kmr", "text": "Wê demê divê em ne li ser sûc, lê li ser xeletiyeke piştrastkirî ya hesabkirinê biaxivin. Berpirsiyariyê operasyonî formule dikin: em rewşên bandorkirî kontrol dikin, agahiyên şaş rast dikin û dema hevberdan qediya xerîdaran bi awayekî çalak agahdar dikin." },
+                { "language": "pl", "text": "Wtedy nie powinniśmy mówić o winie, lecz o potwierdzonym błędzie rozliczeniowym. Odpowiedzialność ujmujemy operacyjnie: sprawdzamy dotknięte sprawy, korygujemy błędne informacje i aktywnie informujemy klientów po zakończeniu uzgodnienia danych." },
+                { "language": "ro", "text": "Atunci nu ar trebui să vorbim despre vină, ci despre o eroare de facturare confirmată. Formulăm responsabilitatea operațional: verificăm cazurile afectate, corectăm informațiile greșite și informăm activ clienții după finalizarea reconcilierii." },
+                { "language": "sq", "text": "Atëherë nuk duhet të flasim për faj, por për një gabim të konfirmuar në faturim. Përgjegjësinë e formulojmë në mënyrë operative: po verifikojmë rastet e prekura, po korrigjojmë informacionet e gabuara dhe po informojmë aktivisht klientët sapo të përfundojë rakordimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet juristische Überdehnung, benennt aber konkrete Verantwortung und nächste Handlungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids legal overreach, but names concrete responsibility and next actions." },
+                { "language": "fa", "text": "قوی: پاسخ از فراتر رفتن حقوقی پرهیز می‌کند، اما مسئولیت و اقدامات بعدی را مشخص می‌کند." },
+                { "language": "ar", "text": "قوي: تتجنب الإجابة التوسع القانوني، لكنها تسمي مسؤولية ملموسة وخطوات تالية." },
+                { "language": "tr", "text": "Güçlü: cevap hukuki aşırıya kaçmayı önler, ama somut sorumluluğu ve sonraki adımları belirtir." },
+                { "language": "ru", "text": "Сильно: ответ избегает юридического перебора, но называет конкретную ответственность и следующие действия." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە زێدەڕۆیی یاسایی دوور دەکەوێتەوە، بەڵام بەرپرسیارێتی و هەنگاوە داهاتووەکان ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji zêdegavkirina hiqûqî dûr dimîne, lê berpirsiyariya konkret û gavên din bi nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika prawnego przegięcia, ale nazywa konkretną odpowiedzialność i kolejne działania." },
+                { "language": "ro", "text": "Puternic: răspunsul evită depășirea juridică, dar numește responsabilitatea concretă și acțiunile următoare." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang tejkalimin ligjor, por emërton përgjegjësinë konkrete dhe veprimet e radhës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten sagen, dass wir den Fehler bedauern und alles tun, um ihn schnell zu klären.",
+              "translations": [
+                { "language": "en", "text": "We should say that we regret the error and are doing everything to clarify it quickly." },
+                { "language": "fa", "text": "باید بگوییم که از خطا متأسفیم و همه کار می‌کنیم تا سریع آن را روشن کنیم." },
+                { "language": "ar", "text": "ينبغي أن نقول إننا نأسف للخطأ ونفعل كل شيء لتوضيحه بسرعة." },
+                { "language": "tr", "text": "Hatadan üzüntü duyduğumuzu ve hızlıca açıklığa kavuşturmak için her şeyi yaptığımızı söylemeliyiz." },
+                { "language": "ru", "text": "Мы должны сказать, что сожалеем об ошибке и делаем все, чтобы быстро ее прояснить." },
+                { "language": "ckb", "text": "دەبێت بڵێین لە هەڵەکە داخمان گرتووە و هەموو شتێک دەکەین بۆ ئەوەی خێرا ڕوونی بکەینەوە." },
+                { "language": "kmr", "text": "Divê em bêjin ku ji xeletiyê mixabin in û her tiştî dikin da ku zû zelal bikin." },
+                { "language": "pl", "text": "Powinniśmy powiedzieć, że żałujemy błędu i robimy wszystko, aby szybko go wyjaśnić." },
+                { "language": "ro", "text": "Ar trebui să spunem că regretăm eroarea și facem totul pentru a o clarifica rapid." },
+                { "language": "sq", "text": "Duhet të themi se na vjen keq për gabimin dhe po bëjmë gjithçka për ta sqaruar shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unpräzise: Die Antwort zeigt Haltung, liefert aber keine klare operative Linie für Mitarbeitende.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise: the answer shows attitude, but gives employees no clear operational line." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی نامشخص است: پاسخ موضع نشان می‌دهد، اما خط عملیاتی روشنی به کارکنان نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه غير دقيق بما يكفي: تظهر الإجابة موقفاً، لكنها لا تقدم للموظفين خطاً عملياً واضحاً." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: cevap tutum gösterir, fakat çalışanlara net bir operasyonel çizgi vermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: ответ показывает позицию, но не дает сотрудникам четкой операционной линии." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر نادروستە: وەڵامەکە هەڵوێست نیشان دەدات، بەڵام هێڵێکی ئۆپەراسیۆنی ڕوون نادات بە کارمەندان." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir nezelal e: bersiv helwest nîşan dide, lê xetekê operasyonî ya zelal nade karmendan." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt nieprecyzyjne: odpowiedź pokazuje postawę, ale nie daje pracownikom jasnej linii operacyjnej." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis: răspunsul arată atitudine, dar nu oferă angajaților o linie operațională clară." },
+                { "language": "sq", "text": "E besueshme, por shumë e pasaktë: përgjigjja tregon qëndrim, por nuk u jep punonjësve një linjë të qartë operative." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann ergänzen wir einen Vertrauenssatz: Wir nehmen die Irritation ernst und möchten vermeiden, dass Mitarbeitende oder Kunden mit halben Informationen arbeiten müssen. Das zeigt Verantwortung, ohne mehr zu behaupten, als wir gesichert wissen.",
+              "translations": [
+                { "language": "en", "text": "Then we add a trust-building sentence: we take the confusion seriously and want to prevent employees or customers from having to work with partial information. That shows responsibility without claiming more than we know for certain." },
+                { "language": "fa", "text": "پس یک جمله اعتمادساز اضافه می‌کنیم: ما سردرگمی ایجادشده را جدی می‌گیریم و می‌خواهیم جلوگیری کنیم که کارکنان یا مشتریان با اطلاعات ناقص کار کنند. این مسئولیت‌پذیری را نشان می‌دهد، بدون اینکه بیش از دانسته‌های قطعی ادعا کنیم." },
+                { "language": "ar", "text": "إذن نضيف جملة لبناء الثقة: نحن نأخذ الارتباك على محمل الجد ونريد أن نمنع الموظفين أو العملاء من العمل بمعلومات ناقصة. هذا يظهر المسؤولية من دون الادعاء بأكثر مما نعرفه بشكل مؤكد." },
+                { "language": "tr", "text": "O zaman güven oluşturan bir cümle ekleriz: oluşan kafa karışıklığını ciddiye alıyoruz ve çalışanların ya da müşterilerin eksik bilgilerle çalışmak zorunda kalmasını önlemek istiyoruz. Bu, kesin bildiğimizden fazlasını iddia etmeden sorumluluk gösterir." },
+                { "language": "ru", "text": "Тогда добавим фразу, создающую доверие: мы серьезно относимся к возникшей неясности и хотим избежать ситуации, в которой сотрудники или клиенты вынуждены работать с неполной информацией. Это показывает ответственность, не утверждая больше, чем мы достоверно знаем." },
+                { "language": "ckb", "text": "ئەوا ڕستەیەکی متمانەساز زیاد دەکەین: ئێمە سەرلێشێواوی دروستبوو بە جدی وەردەگرین و دەمانەوێت ڕێگری بکەین کە کارمەندان یان کڕیاران ناچار بن بە زانیاری نیوەچڵ کار بکەن. ئەمە بەرپرسیارێتی نیشان دەدات بێ ئەوەی زیاتر لەوەی بە دڵنیایی دەیزانین بانگەشە بکات." },
+                { "language": "kmr", "text": "Wê demê em hevokeke bawerî-avakirinê lê zêde dikin: em tevliheviyê bi cidî digirin û dixwazin rê li ber vê bigirin ku karmend an xerîdar bi agahiyên nîvî kar bikin. Ev berpirsiyarî nîşan dide bêyî ku em zêdetir ji ya ku bi ewle dizanin îdia bikin." },
+                { "language": "pl", "text": "Wtedy dodajemy zdanie budujące zaufanie: traktujemy powstałe zamieszanie poważnie i chcemy uniknąć sytuacji, w której pracownicy lub klienci muszą pracować na częściowych informacjach. To pokazuje odpowiedzialność, nie twierdząc więcej, niż wiemy na pewno." },
+                { "language": "ro", "text": "Atunci adăugăm o propoziție care construiește încredere: luăm în serios confuzia creată și vrem să evităm ca angajații sau clienții să trebuiască să lucreze cu informații incomplete. Asta arată responsabilitate fără a afirma mai mult decât știm sigur." },
+                { "language": "sq", "text": "Atëherë shtojmë një fjali që ndërton besim: e marrim seriozisht paqartësinë e krijuar dhe duam të shmangim që punonjësit ose klientët të punojnë me informacione të pjesshme. Kjo tregon përgjegjësi pa pretenduar më shumë sesa dimë me siguri." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Empathie, Verantwortung und Begrenzung des Wissensstands.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer combines empathy, responsibility, and limitation of the current knowledge level." },
+                { "language": "fa", "text": "قوی: پاسخ همدلی، مسئولیت‌پذیری و محدودیت سطح دانسته‌های فعلی را با هم ترکیب می‌کند." },
+                { "language": "ar", "text": "قوي: تجمع الإجابة بين التعاطف والمسؤولية وحدود مستوى المعرفة الحالي." },
+                { "language": "tr", "text": "Güçlü: cevap empatiyi, sorumluluğu ve mevcut bilgi düzeyinin sınırını birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ соединяет эмпатию, ответственность и ограничение текущего уровня знаний." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هاوسۆزی، بەرپرسیارێتی و سنووری ئاستی زانیاریی ئێستا پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv empatiyê, berpirsiyarî û sînorê asta agahiyên heyî digihîne hev." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy empatię, odpowiedzialność i ograniczenie aktualnego stanu wiedzy." },
+                { "language": "ro", "text": "Puternic: răspunsul combină empatia, responsabilitatea și limitarea nivelului actual de cunoaștere." },
+                { "language": "sq", "text": "E fortë: përgjigjja bashkon empatinë, përgjegjësinë dhe kufizimin e nivelit aktual të njohurisë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können sagen, dass wir die Situation ernst nehmen und später weitere Informationen liefern.",
+              "translations": [
+                { "language": "en", "text": "We can say that we take the situation seriously and will provide further information later." },
+                { "language": "fa", "text": "می‌توانیم بگوییم که وضعیت را جدی می‌گیریم و بعداً اطلاعات بیشتری ارائه می‌دهیم." },
+                { "language": "ar", "text": "يمكننا أن نقول إننا نأخذ الوضع على محمل الجد وسنقدم معلومات إضافية لاحقاً." },
+                { "language": "tr", "text": "Durumu ciddiye aldığımızı ve daha sonra ek bilgi vereceğimizi söyleyebiliriz." },
+                { "language": "ru", "text": "Мы можем сказать, что серьезно относимся к ситуации и позже предоставим дополнительную информацию." },
+                { "language": "ckb", "text": "دەتوانین بڵێین کە دۆخەکە بە جدی وەردەگرین و دواتر زانیاری زیاتر پێشکەش دەکەین." },
+                { "language": "kmr", "text": "Em dikarin bêjin ku em rewşê bi cidî digirin û paşê agahiyên zêdetir pêşkêş dikin." },
+                { "language": "pl", "text": "Możemy powiedzieć, że traktujemy sytuację poważnie i później przekażemy dalsze informacje." },
+                { "language": "ro", "text": "Putem spune că luăm situația în serios și vom oferi informații suplimentare mai târziu." },
+                { "language": "sq", "text": "Mund të themi se e marrim situatën seriozisht dhe do të japim më shumë informacion më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn: Die Antwort klingt verträglich, erklärt aber nicht, warum halbe Informationen vermieden werden müssen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too thin: the answer sounds acceptable, but does not explain why partial information must be avoided." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کم‌عمق است: پاسخ قابل‌قبول به نظر می‌رسد، اما توضیح نمی‌دهد چرا باید از اطلاعات ناقص پرهیز شود." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف: يبدو الجواب مناسباً، لكنه لا يشرح لماذا يجب تجنب المعلومات الناقصة." },
+                { "language": "tr", "text": "Makul ama zayıf: cevap kabul edilebilir duyulur, fakat eksik bilgiden neden kaçınılması gerektiğini açıklamaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком тонко: ответ звучит приемлемо, но не объясняет, почему нужно избегать неполной информации." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر لاوازە: وەڵامەکە گونجاو دەنگ دەدات، بەڵام ڕوون ناکات بۆچی دەبێت لە زانیاری نیوەچڵ دوور بکەوینەوە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir nazik e: bersiv qebûlkirbar xuya dike, lê rave nake çima divê ji agahiyên nîvî dûr bimînin." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt płytkie: odpowiedź brzmi akceptowalnie, ale nie wyjaśnia, dlaczego trzeba unikać częściowych informacji." },
+                { "language": "ro", "text": "Plauzibil, dar prea subțire: răspunsul sună acceptabil, dar nu explică de ce trebuie evitate informațiile incomplete." },
+                { "language": "sq", "text": "E besueshme, por shumë e cekët: përgjigjja tingëllon e pranueshme, por nuk shpjegon pse duhet shmangur informacioni i pjesshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir geben ihnen eine kurze Gesprächsformel: Der Fehler ist erkannt, die betroffenen Vorgänge werden geprüft, und Kundinnen und Kunden erhalten eine korrigierte Information, sobald der Abgleich abgeschlossen ist. Für Einzelfälle sollen sie keine Beträge nennen, sondern an das Krisenteam weitergeben.",
+              "translations": [
+                { "language": "en", "text": "We give them a short call formula: the error has been identified, the affected cases are being checked, and customers will receive corrected information once reconciliation is complete. For individual cases, they should not name amounts, but forward the case to the crisis team." },
+                { "language": "fa", "text": "به آن‌ها یک فرمول کوتاه برای مکالمه می‌دهیم: خطا شناسایی شده، موارد متأثر در حال بررسی است، و مشتریان پس از پایان تطبیق اطلاعات اصلاح‌شده دریافت می‌کنند. برای موارد فردی نباید مبلغی اعلام کنند، بلکه باید موضوع را به تیم بحران منتقل کنند." },
+                { "language": "ar", "text": "نعطيهم صيغة قصيرة للمحادثة: تم التعرف على الخطأ، وتتم مراجعة العمليات المتأثرة، وسيحصل العملاء على معلومات مصححة بمجرد اكتمال المطابقة. في الحالات الفردية لا ينبغي أن يذكروا مبالغ، بل يحيلوا الحالة إلى فريق الأزمة." },
+                { "language": "tr", "text": "Onlara kısa bir görüşme formülü veririz: hata tespit edildi, etkilenen işlemler inceleniyor ve müşteriler eşleştirme tamamlandığında düzeltilmiş bilgi alacak. Tekil vakalarda tutar belirtmemeli, konuyu kriz ekibine aktarmalılar." },
+                { "language": "ru", "text": "Мы даем им короткую формулу для разговора: ошибка выявлена, затронутые случаи проверяются, и клиенты получат исправленную информацию после завершения сверки. По отдельным случаям им не следует называть суммы, а нужно передавать их кризисной команде." },
+                { "language": "ckb", "text": "فۆرمولێکی کورتی گفتوگۆیان پێدەدەین: هەڵەکە ناسراوە، دۆخە کاریگەرکراوەکان پشکنین دەکرێن، و کڕیاران دوای تەواوبوونی هاوتاکردن زانیاری ڕاستکراوە وەردەگرن. بۆ دۆخی تاکەکەسی نابێت بڕی پارە بڵێن، بەڵکو دەبێت بۆ تیمی قەیران بینێرن." },
+                { "language": "kmr", "text": "Em formuleke kurt a axaftinê didin wan: xeletî hate nasîn, rewşên bandorkirî têne kontrolkirin, û xerîdar dê dema hevberdan qediya agahiyên rastkirî bistînin. Ji bo rewşên kesane divê mîqdar nebinin, lê wan bidin tîma krîzê." },
+                { "language": "pl", "text": "Dajemy im krótką formułę rozmowy: błąd został rozpoznany, dotknięte sprawy są sprawdzane, a klienci otrzymają skorygowaną informację po zakończeniu uzgodnienia danych. W pojedynczych przypadkach nie powinni podawać kwot, lecz przekazywać sprawę zespołowi kryzysowemu." },
+                { "language": "ro", "text": "Le oferim o formulă scurtă de conversație: eroarea a fost identificată, cazurile afectate sunt verificate, iar clienții vor primi informații corectate după finalizarea reconcilierii. Pentru cazuri individuale nu trebuie să menționeze sume, ci să transmită cazul echipei de criză." },
+                { "language": "sq", "text": "U japim një formulë të shkurtër bisede: gabimi është identifikuar, rastet e prekura po verifikohen dhe klientët do të marrin informacion të korrigjuar sapo të përfundojë rakordimi. Për raste individuale nuk duhet të përmendin shuma, por t'ia kalojnë çështjen ekipit të krizës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist kurz, wiederholbar und schützt Mitarbeitende vor ungesicherten Detailzusagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer is short, repeatable, and protects employees from making unverified detailed promises." },
+                { "language": "fa", "text": "قوی: پاسخ کوتاه، قابل‌تکرار و محافظ کارکنان در برابر وعده‌های جزئیات تأییدنشده است." },
+                { "language": "ar", "text": "قوي: الإجابة قصيرة وقابلة للتكرار وتحمي الموظفين من تقديم تعهدات تفصيلية غير مؤكدة." },
+                { "language": "tr", "text": "Güçlü: cevap kısa, tekrarlanabilir ve çalışanları doğrulanmamış ayrıntılı taahhütlerden korur." },
+                { "language": "ru", "text": "Сильно: ответ короткий, повторяемый и защищает сотрудников от неподтвержденных детальных обещаний." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کورتە، دووبارەکردنەوەی ئاسانە و کارمەندان لە بەڵێنی وردی دڵنیا نەکراو دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv kurt, dubarekirbar û karmendan ji sozên hûrgilî yên nepiştrast diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest krótka, powtarzalna i chroni pracowników przed niesprawdzonymi szczegółowymi obietnicami." },
+                { "language": "ro", "text": "Puternic: răspunsul este scurt, repetabil și protejează angajații de promisiuni detaliate neverificate." },
+                { "language": "sq", "text": "E fortë: përgjigjja është e shkurtër, e përsëritshme dhe mbron punonjësit nga premtimet e detajuara të paverifikuara." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sie sollen erklären, dass der Fall geprüft wird und dass wir uns wieder melden.",
+              "translations": [
+                { "language": "en", "text": "They should explain that the case is being checked and that we will get back to them." },
+                { "language": "fa", "text": "آن‌ها باید توضیح دهند که موضوع در حال بررسی است و ما دوباره تماس می‌گیریم." },
+                { "language": "ar", "text": "ينبغي أن يوضحوا أن الحالة قيد الفحص وأننا سنعود إليهم." },
+                { "language": "tr", "text": "Vakanın incelendiğini ve tekrar geri döneceğimizi açıklamalılar." },
+                { "language": "ru", "text": "Они должны объяснить, что случай проверяется и что мы снова свяжемся." },
+                { "language": "ckb", "text": "دەبێت ڕوون بکەنەوە کە دۆخەکە پشکنین دەکرێت و ئێمە دووبارە پەیوەندی دەکەینەوە." },
+                { "language": "kmr", "text": "Divê rave bikin ku rewş tê kontrolkirin û em dê dîsa vegerin." },
+                { "language": "pl", "text": "Powinni wyjaśnić, że sprawa jest sprawdzana i że odezwiemy się ponownie." },
+                { "language": "ro", "text": "Ar trebui să explice că cazul este verificat și că vom reveni." },
+                { "language": "sq", "text": "Duhet të shpjegojnë se rasti po verifikohet dhe se do të kthehemi me përgjigje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu knapp: Die Antwort enthält keinen Hinweis auf den bestätigten Fehler, keine korrigierte Information und keine Eskalationsgrenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too brief: the answer contains no reference to the confirmed error, no corrected information, and no escalation boundary." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کوتاه است: پاسخ نه به خطای تأییدشده اشاره می‌کند، نه اطلاعات اصلاح‌شده دارد و نه مرز escalation مشخص می‌کند." },
+                { "language": "ar", "text": "مقبول لكنه مختصر جداً: لا يتضمن الجواب إشارة إلى الخطأ المؤكد ولا معلومات مصححة ولا حد تصعيد." },
+                { "language": "tr", "text": "Makul ama fazla kısa: cevap doğrulanmış hataya, düzeltilmiş bilgiye ve eskalasyon sınırına değinmez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком кратко: ответ не содержит ссылки на подтвержденную ошибку, исправленную информацию и границу эскалации." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر کورتە: وەڵامەکە ئاماژە بە هەڵەی پشتڕاستکراوە، زانیاری ڕاستکراوە و سنووری escalation ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir kurt e: bersiv behsa xeletiya piştrastkirî, agahiyên rastkirî û sînorê eskalasyonê nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt krótkie: odpowiedź nie zawiera odniesienia do potwierdzonego błędu, skorygowanej informacji ani granicy eskalacji." },
+                { "language": "ro", "text": "Plauzibil, dar prea scurt: răspunsul nu conține referire la eroarea confirmată, informație corectată sau limită de escaladare." },
+                { "language": "sq", "text": "E besueshme, por shumë e shkurtër: përgjigjja nuk përmban referim te gabimi i konfirmuar, informacion të korrigjuar apo kufi eskalimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann lautet die Antwort: Wir haben einen Fehler in unserem Abrechnungsprozess festgestellt und übernehmen die Klärung. Zur Ursache äußern wir uns erst, wenn die technische und fachliche Prüfung abgeschlossen ist. Das ist ehrlich, aber nicht spekulativ.",
+              "translations": [
+                { "language": "en", "text": "Then the answer is: we have identified an error in our billing process and are taking responsibility for clarification. We will comment on the cause only once the technical and functional review is complete. That is honest, but not speculative." },
+                { "language": "fa", "text": "پس پاسخ این است: ما خطایی را در فرایند صورتحساب خود شناسایی کرده‌ایم و روشن‌کردن موضوع را بر عهده می‌گیریم. درباره علت فقط زمانی اظهارنظر می‌کنیم که بررسی فنی و تخصصی کامل شده باشد. این صادقانه است، اما حدسی نیست." },
+                { "language": "ar", "text": "إذن يكون الجواب: لقد حددنا خطأ في عملية الفوترة لدينا ونتولى توضيحه. سنعلق على السبب فقط عندما يكتمل الفحص التقني والمهني. هذا صادق لكنه ليس تكهنياً." },
+                { "language": "tr", "text": "O zaman cevap şu olur: faturalandırma sürecimizde bir hata tespit ettik ve açıklığa kavuşturmayı üstleniyoruz. Nedene ilişkin açıklamayı ancak teknik ve uzmanlık incelemesi tamamlandığında yapacağız. Bu dürüsttür, ama spekülatif değildir." },
+                { "language": "ru", "text": "Тогда ответ такой: мы выявили ошибку в нашем процессе выставления счетов и берем на себя ее прояснение. О причине мы будем говорить только после завершения технической и содержательной проверки. Это честно, но не спекулятивно." },
+                { "language": "ckb", "text": "ئەوا وەڵامەکە ئەمەیە: ئێمە هەڵەیەکمان لە پرۆسەی فاکتورکردنی خۆماندا دۆزیوەتەوە و ڕوونکردنەوەکە وەردەگرین. لەسەر هۆکارەکە تەنها کاتێک قسە دەکەین کە پشکنینی تەکنیکی و پیشەیی تەواو بووبێت. ئەمە ڕاستگۆیە، بەڵام گریمانە نییە." },
+                { "language": "kmr", "text": "Wê demê bersiv ev e: me xeletiyek di pêvajoya hesabkirina xwe de nas kiriye û zelalkirinê werdigirin. Li ser sedemê em tenê dema kontrola teknîkî û pisporî qediya îfade dikin. Ev rast e, lê ne texmînî ye." },
+                { "language": "pl", "text": "Wtedy odpowiedź brzmi: stwierdziliśmy błąd w naszym procesie rozliczeniowym i przejmujemy wyjaśnienie. O przyczynie wypowiemy się dopiero po zakończeniu kontroli technicznej i merytorycznej. To jest uczciwe, ale nie spekulacyjne." },
+                { "language": "ro", "text": "Atunci răspunsul este: am identificat o eroare în procesul nostru de facturare și ne asumăm clarificarea. Ne vom pronunța asupra cauzei doar după finalizarea verificării tehnice și de specialitate. Este onest, dar nu speculativ." },
+                { "language": "sq", "text": "Atëherë përgjigjja është: kemi identifikuar një gabim në procesin tonë të faturimit dhe marrim përsipër sqarimin. Për shkakun do të shprehemi vetëm pasi të përfundojë kontrolli teknik dhe profesional. Kjo është e sinqertë, por jo spekulative." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt Verantwortung, ohne voreilig Ursache oder Schuld festzulegen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer shows responsibility without prematurely fixing cause or fault." },
+                { "language": "fa", "text": "قوی: پاسخ مسئولیت‌پذیری نشان می‌دهد، بدون اینکه زودهنگام علت یا تقصیر را قطعی کند." },
+                { "language": "ar", "text": "قوي: تظهر الإجابة المسؤولية من دون تثبيت السبب أو الذنب قبل الأوان." },
+                { "language": "tr", "text": "Güçlü: cevap sorumluluk gösterir, ama nedeni veya kusuru erken kesinleştirmez." },
+                { "language": "ru", "text": "Сильно: ответ показывает ответственность, не закрепляя преждевременно причину или вину." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرپرسیارێتی نیشان دەدات بێ ئەوەی زوو هۆکار یان تاوان جێگیر بکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv berpirsiyarî nîşan dide bêyî ku sedem an sûc zû diyar bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje odpowiedzialność, nie przesądzając przedwcześnie przyczyny ani winy." },
+                { "language": "ro", "text": "Puternic: răspunsul arată responsabilitate fără a fixa prematur cauza sau vina." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon përgjegjësi pa përcaktuar para kohe shkakun ose fajin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können sagen, dass wir noch nicht genau wissen, wodurch der Fehler entstanden ist.",
+              "translations": [
+                { "language": "en", "text": "We can say that we do not yet know exactly what caused the error." },
+                { "language": "fa", "text": "می‌توانیم بگوییم هنوز دقیقاً نمی‌دانیم خطا از چه چیزی ایجاد شده است." },
+                { "language": "ar", "text": "يمكننا أن نقول إننا لا نعرف بعد بدقة ما الذي تسبب في الخطأ." },
+                { "language": "tr", "text": "Hatanın tam olarak neden kaynaklandığını henüz bilmediğimizi söyleyebiliriz." },
+                { "language": "ru", "text": "Мы можем сказать, что пока точно не знаем, из-за чего возникла ошибка." },
+                { "language": "ckb", "text": "دەتوانین بڵێین هێشتا بە وردی نازانین هەڵەکە لە چییەوە دروست بووە." },
+                { "language": "kmr", "text": "Em dikarin bêjin ku em hê bi rastî nizanin xeletî ji çi çêbûye." },
+                { "language": "pl", "text": "Możemy powiedzieć, że jeszcze dokładnie nie wiemy, z czego powstał błąd." },
+                { "language": "ro", "text": "Putem spune că încă nu știm exact din ce a apărut eroarea." },
+                { "language": "sq", "text": "Mund të themi se ende nuk e dimë saktësisht nga çfarë ka ardhur gabimi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu schwach: Die Antwort vermeidet Spekulation, zeigt aber keine Übernahme der Klärung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too weak: the answer avoids speculation, but does not show ownership of clarification." },
+                { "language": "fa", "text": "قابل‌تصور است، اما ضعیف است: پاسخ از حدس‌زدن پرهیز می‌کند، اما نشان نمی‌دهد روشن‌کردن موضوع بر عهده گرفته شده است." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف: تتجنب الإجابة التكهن، لكنها لا تظهر تولي مسؤولية التوضيح." },
+                { "language": "tr", "text": "Makul ama zayıf: cevap spekülasyondan kaçınır, fakat açıklığa kavuşturmayı üstlendiğini göstermez." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: ответ избегает спекуляций, но не показывает принятие ответственности за прояснение." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام لاوازە: وەڵامەکە لە گریمانە دوور دەکەوێتەوە، بەڵام نیشان نادات ڕوونکردنەوەکە وەرگیراوە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê lawaz e: bersiv ji texmînê dûr dimîne, lê nîşan nade ku zelalkirin hatiye girtin." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt słabe: odpowiedź unika spekulacji, lecz nie pokazuje przejęcia wyjaśnienia." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: răspunsul evită speculația, dar nu arată asumarea clarificării." },
+                { "language": "sq", "text": "E besueshme, por e dobët: përgjigjja shmang spekulimin, por nuk tregon marrjen përsipër të sqarimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich schlage vor: Wir frieren diese Kernbotschaft für zwei Stunden ein, Recht prüft nur die Haftungsformulierung, Betrieb ergänzt den Eskalationsweg, und danach geht genau eine Version an Teamleitungen und Kundenservice.",
+              "translations": [
+                { "language": "en", "text": "I suggest this: we freeze this core message for two hours, legal only checks the liability wording, operations adds the escalation path, and after that exactly one version goes to team leads and customer service." },
+                { "language": "fa", "text": "پیشنهاد من این است: این پیام اصلی را برای دو ساعت ثابت می‌کنیم، حقوقی فقط فرمول‌بندی مسئولیت را بررسی می‌کند، عملیات مسیر escalation را اضافه می‌کند، و بعد دقیقاً یک نسخه برای سرپرستان تیم و خدمات مشتری ارسال می‌شود." },
+                { "language": "ar", "text": "أقترح ما يلي: نجمد هذه الرسالة الأساسية لمدة ساعتين، يفحص القسم القانوني فقط صياغة المسؤولية، وتضيف العمليات مسار التصعيد، وبعد ذلك تذهب نسخة واحدة فقط إلى قادة الفرق وخدمة العملاء." },
+                { "language": "tr", "text": "Şunu öneriyorum: bu çekirdek mesajı iki saatliğine sabitliyoruz, hukuk yalnızca sorumluluk ifadesini kontrol ediyor, operasyon eskalasyon yolunu ekliyor ve ardından ekip liderlerine ve müşteri hizmetlerine tam olarak tek bir versiyon gidiyor." },
+                { "language": "ru", "text": "Я предлагаю так: мы фиксируем это основное сообщение на два часа, юридический отдел проверяет только формулировку ответственности, операции добавляют путь эскалации, и после этого ровно одна версия идет руководителям команд и клиентскому сервису." },
+                { "language": "ckb", "text": "پێشنیارم ئەمەیە: ئەم پەیامە سەرەکییە بۆ دوو کاتژمێر جێگیر دەکەین، یاسایی تەنها دەربڕینی بەرپرسیارێتی دەپشکنێت، ئۆپەراسیۆن ڕێڕەوی escalation زیاد دەکات، و دوای ئەوە تەنها یەک وەشان دەچێت بۆ سەرپەرشتیارانی تیم و خزمەتی کڕیار." },
+                { "language": "kmr", "text": "Ez wiha pêşniyar dikim: em vê peyama bingehîn ji bo du saetan qefil dikin, hiqûq tenê gotina berpirsiyariyê kontrol dike, operasyon rêya eskalasyonê lê zêde dike, û piştî wê tenê guhertoyek diçe cem serokên tîmê û xizmeta xerîdaran." },
+                { "language": "pl", "text": "Proponuję tak: zamrażamy ten komunikat bazowy na dwie godziny, dział prawny sprawdza tylko sformułowanie odpowiedzialności, operacje dodają ścieżkę eskalacji, a potem dokładnie jedna wersja trafia do liderów zespołów i obsługi klienta." },
+                { "language": "ro", "text": "Propun următorul lucru: înghețăm acest mesaj de bază timp de două ore, juridicul verifică doar formularea răspunderii, operaționalul adaugă traseul de escaladare, iar apoi exact o versiune merge către liderii de echipă și serviciul clienți." },
+                { "language": "sq", "text": "Propozoj kështu: e ngrijmë këtë mesazh bazë për dy orë, ligjori kontrollon vetëm formulimin e përgjegjësisë, operacionet shtojnë rrugën e eskalimit dhe pas kësaj saktësisht një version u dërgohet drejtuesve të ekipeve dhe shërbimit ndaj klientit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schließt mit Governance, Zuständigkeiten und Versionenkontrolle statt nur mit gutem Willen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer closes with governance, responsibilities, and version control rather than only good intentions." },
+                { "language": "fa", "text": "قوی: پاسخ با governance، مسئولیت‌ها و کنترل نسخه پایان می‌یابد، نه فقط با نیت خوب." },
+                { "language": "ar", "text": "قوي: تختتم الإجابة بالحوكمة والمسؤوليات وضبط النسخ بدلاً من النوايا الحسنة فقط." },
+                { "language": "tr", "text": "Güçlü: cevap yalnızca iyi niyetle değil, yönetişim, sorumluluklar ve versiyon kontrolüyle kapanır." },
+                { "language": "ru", "text": "Сильно: ответ завершается управлением, ответственностями и контролем версий, а не только добрыми намерениями." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە governance، بەرپرسیارێتی و کۆنترۆڵی وەشان کۆتایی دێت، نە تەنها بە نیازێکی باش." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi rêveberî, berpirsiyarî û kontrola guhertoyê diqede, ne tenê bi niyeta baş." },
+                { "language": "pl", "text": "Mocne: odpowiedź kończy się governance, odpowiedzialnościami i kontrolą wersji, a nie tylko dobrą wolą." },
+                { "language": "ro", "text": "Puternic: răspunsul se încheie cu guvernanță, responsabilități și controlul versiunilor, nu doar cu bune intenții." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbyllet me qeverisje, përgjegjësi dhe kontroll versionesh, jo vetëm me vullnet të mirë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir schicken die aktuelle Fassung an Recht und Betrieb und warten auf ihre Rückmeldungen.",
+              "translations": [
+                { "language": "en", "text": "We send the current version to legal and operations and wait for their feedback." },
+                { "language": "fa", "text": "نسخه فعلی را برای حقوقی و عملیات می‌فرستیم و منتظر بازخورد آن‌ها می‌مانیم." },
+                { "language": "ar", "text": "نرسل النسخة الحالية إلى القانوني والعمليات وننتظر ملاحظاتهم." },
+                { "language": "tr", "text": "Mevcut versiyonu hukuk ve operasyona gönderip geri bildirimlerini bekleriz." },
+                { "language": "ru", "text": "Мы отправляем текущую версию в юридический отдел и операции и ждем их обратной связи." },
+                { "language": "ckb", "text": "وەشانی ئێستا دەنێرین بۆ یاسایی و ئۆپەراسیۆن و چاوەڕێی فیدباکیان دەکەین." },
+                { "language": "kmr", "text": "Em guhertoya heyî dişînin hiqûq û operasyonê û li bersivên wan disekinin." },
+                { "language": "pl", "text": "Wysyłamy obecną wersję do działu prawnego i operacji i czekamy na ich informację zwrotną." },
+                { "language": "ro", "text": "Trimitem versiunea actuală către juridic și operațional și așteptăm feedbackul lor." },
+                { "language": "sq", "text": "Ia dërgojmë versionin aktual ligjorit dhe operacioneve dhe presim komentet e tyre." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu offen: Die Antwort verhindert nicht, dass mehrere Versionen entstehen und Zuständigkeiten unklar bleiben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too open: the answer does not prevent multiple versions from emerging and responsibilities from remaining unclear." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی باز است: پاسخ مانع ایجاد چند نسخه نمی‌شود و مسئولیت‌ها همچنان مبهم می‌مانند." },
+                { "language": "ar", "text": "مقبول لكنه مفتوح جداً: لا يمنع الجواب ظهور عدة نسخ ولا بقاء المسؤوليات غامضة." },
+                { "language": "tr", "text": "Makul ama fazla açık: cevap birden fazla versiyon oluşmasını ve sorumlulukların belirsiz kalmasını engellemez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком открыто: ответ не предотвращает появление нескольких версий и неясность ответственностей." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر کراوەیە: وەڵامەکە ڕێگری لە دروستبوونی چەند وەشان و مانەوەی لێڵی بەرپرسیارێتی ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir vekirî ye: bersiv rê li ber çêbûna çend guhertoyan û nezelaliya berpirsiyariyan nagire." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt otwarte: odpowiedź nie zapobiega powstaniu kilku wersji ani niejasności odpowiedzialności." },
+                { "language": "ro", "text": "Plauzibil, dar prea deschis: răspunsul nu împiedică apariția mai multor versiuni și menținerea responsabilităților neclare." },
+                { "language": "sq", "text": "E besueshme, por shumë e hapur: përgjigjja nuk parandalon krijimin e disa versioneve dhe mbetjen e përgjegjësive të paqarta." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "In Krisenkommunikation ist die Trennung von gesicherten Fakten, Prüfstand und Zusagen wichtiger als eine besonders elegante Formulierung.",
+          "translations": [
+            { "language": "en", "text": "In crisis communication, separating confirmed facts, items under review, and promises is more important than especially elegant wording." },
+            { "language": "fa", "text": "در ارتباطات بحران، جداکردن واقعیت‌های قطعی، موارد در حال بررسی و وعده‌ها از فرمول‌بندی خیلی زیبا مهم‌تر است." },
+            { "language": "ar", "text": "في تواصل الأزمات يكون فصل الحقائق المؤكدة وما هو قيد الفحص والتعهدات أهم من صياغة أنيقة جداً." },
+            { "language": "tr", "text": "Kriz iletişiminde doğrulanmış gerçekleri, incelenen noktaları ve taahhütleri ayırmak, çok zarif bir formülasyondan daha önemlidir." },
+            { "language": "ru", "text": "В кризисной коммуникации разделение подтвержденных фактов, проверяемых пунктов и обещаний важнее особенно элегантной формулировки." },
+            { "language": "ckb", "text": "لە پەیوەندی قەیراندا جیاکردنەوەی ڕاستییە دڵنیاکراوەکان، شتە پشکنراوەکان و بەڵێنەکان گرنگترە لە دەربڕینێکی زۆر جوان." },
+            { "language": "kmr", "text": "Di ragihandina krîzê de cudakirina rastiyên piştrast, tiştên di kontrolê de û sozan ji formulekirineke gelek xweşik girîngtir e." },
+            { "language": "pl", "text": "W komunikacji kryzysowej oddzielenie potwierdzonych faktów, kwestii weryfikowanych i obietnic jest ważniejsze niż szczególnie eleganckie sformułowanie." },
+            { "language": "ro", "text": "În comunicarea de criză, separarea faptelor confirmate, a elementelor în verificare și a promisiunilor este mai importantă decât o formulare deosebit de elegantă." },
+            { "language": "sq", "text": "Në komunikimin e krizës, ndarja e fakteve të konfirmuara, çështjeve në verifikim dhe premtimeve është më e rëndësishme se një formulim veçanërisht elegant." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "Ein Vertrauenssatz darf nicht weichspülen; er sollte zeigen, warum die Grenze des Wissensstands selbst verantwortungsvoll ist.",
+          "translations": [
+            { "language": "en", "text": "A trust-building sentence must not whitewash; it should show why the limit of current knowledge is itself responsible." },
+            { "language": "fa", "text": "جمله اعتمادساز نباید موضوع را آبکی یا زیبا جلوه دهد؛ باید نشان دهد چرا مرز دانسته‌های فعلی خودش مسئولانه است." },
+            { "language": "ar", "text": "لا ينبغي لجملة بناء الثقة أن تجمل الأمر؛ ينبغي أن تظهر لماذا يكون حد المعرفة الحالي بحد ذاته مسؤولاً." },
+            { "language": "tr", "text": "Güven kuran bir cümle durumu yumuşatmamalı; mevcut bilgi sınırının neden başlı başına sorumlu olduğunu göstermelidir." },
+            { "language": "ru", "text": "Фраза, создающая доверие, не должна сглаживать проблему; она должна показать, почему граница текущих знаний сама по себе ответственна." },
+            { "language": "ckb", "text": "ڕستەی متمانەساز نابێت کێشەکە سپی بکات؛ دەبێت نیشان بدات بۆچی سنووری زانیاریی ئێستا خۆی بەرپرسیارانەیە." },
+            { "language": "kmr", "text": "Hevoka bawerî-avakirinê divê tiştan spî neke; divê nîşan bide çima sînorê zanîna heyî bixwe berpirsiyar e." },
+            { "language": "pl", "text": "Zdanie budujące zaufanie nie może wybielać sprawy; powinno pokazać, dlaczego granica aktualnej wiedzy sama jest odpowiedzialna." },
+            { "language": "ro", "text": "O propoziție care construiește încredere nu trebuie să cosmetizeze; ar trebui să arate de ce limita cunoașterii actuale este ea însăși responsabilă." },
+            { "language": "sq", "text": "Një fjali që ndërton besim nuk duhet ta zbardhë çështjen; duhet të tregojë pse kufiri i njohurisë aktuale është vetë përgjegjës." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "content",
+          "text": "Mitarbeitende brauchen in der Krise keine abstrakte Haltung, sondern wiederholbare Sätze und klare Grenzen für Einzelfälle.",
+          "translations": [
+            { "language": "en", "text": "In a crisis, employees do not need an abstract stance, but repeatable sentences and clear boundaries for individual cases." },
+            { "language": "fa", "text": "در بحران، کارکنان به موضع انتزاعی نیاز ندارند، بلکه به جمله‌های قابل‌تکرار و مرزهای روشن برای موارد فردی نیاز دارند." },
+            { "language": "ar", "text": "في الأزمة لا يحتاج الموظفون إلى موقف مجرد، بل إلى جمل قابلة للتكرار وحدود واضحة للحالات الفردية." },
+            { "language": "tr", "text": "Krizde çalışanların soyut bir tutuma değil, tekrarlanabilir cümlelere ve tekil vakalar için net sınırlara ihtiyacı vardır." },
+            { "language": "ru", "text": "В кризис сотрудникам нужна не абстрактная позиция, а повторяемые фразы и четкие границы для отдельных случаев." },
+            { "language": "ckb", "text": "لە قەیراندا کارمەندان پێویستیان بە هەڵوێستی ئەبستراکت نییە، بەڵکو بە ڕستەی دووبارەکردنەوەی ئاسان و سنووری ڕوون بۆ دۆخی تاکەکەسی هەیە." },
+            { "language": "kmr", "text": "Di krîzê de karmend hewcedarê helwesteke abstrakt nînin, lê hewcedarê hevokên dubarekirbar û sînorên zelal ji bo rewşên kesane ne." },
+            { "language": "pl", "text": "W kryzysie pracownicy nie potrzebują abstrakcyjnej postawy, lecz powtarzalnych zdań i jasnych granic dla pojedynczych przypadków." },
+            { "language": "ro", "text": "În criză, angajații nu au nevoie de o atitudine abstractă, ci de propoziții repetabile și limite clare pentru cazuri individuale." },
+            { "language": "sq", "text": "Në krizë, punonjësit nuk kanë nevojë për qëndrim abstrakt, por për fjali të përsëritshme dhe kufij të qartë për raste individuale." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "strategy",
+          "text": "Ein guter Abschluss verhindert Parallelkommunikation: eine Kernbotschaft, enge Prüfschritte, klare Zuständigkeiten.",
+          "translations": [
+            { "language": "en", "text": "A good closing prevents parallel communication: one core message, narrow review steps, clear responsibilities." },
+            { "language": "fa", "text": "جمع‌بندی خوب جلوی ارتباطات موازی را می‌گیرد: یک پیام اصلی، مراحل بررسی محدود، مسئولیت‌های روشن." },
+            { "language": "ar", "text": "الخاتمة الجيدة تمنع التواصل الموازي: رسالة أساسية واحدة، خطوات مراجعة ضيقة، ومسؤوليات واضحة." },
+            { "language": "tr", "text": "İyi bir kapanış paralel iletişimi önler: tek çekirdek mesaj, dar kontrol adımları, net sorumluluklar." },
+            { "language": "ru", "text": "Хорошее завершение предотвращает параллельную коммуникацию: одно основное сообщение, узкие шаги проверки, четкие ответственности." },
+            { "language": "ckb", "text": "کۆتایی باش ڕێگری لە پەیوەندی هاوکات دەکات: یەک پەیامی سەرەکی، هەنگاوە پشکنینی سنووردار، بەرپرسیارێتی ڕوون." },
+            { "language": "kmr", "text": "Dawiyeke baş ragihandina paralel digire: peyameke bingehîn, gavên kontrolê yên teng, berpirsiyariyên zelal." },
+            { "language": "pl", "text": "Dobre zakończenie zapobiega komunikacji równoległej: jeden komunikat bazowy, wąskie kroki kontroli, jasne odpowiedzialności." },
+            { "language": "ro", "text": "O încheiere bună previne comunicarea paralelă: un mesaj de bază, pași de verificare restrânși, responsabilități clare." },
+            { "language": "sq", "text": "Një mbyllje e mirë parandalon komunikimin paralel: një mesazh bazë, hapa të ngushtë verifikimi, përgjegjësi të qarta." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "internal-crisis-communication",
+          "placement": "hero",
+          "purpose": "Show a calm internal crisis communication meeting with legal, operations, and communications aligning one message.",
+          "altText": "Eine ruhige interne Krisenbesprechung mit drei Erwachsenen an einem Besprechungstisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm internal crisis meeting with three adults at a meeting table." },
+            { "language": "fa", "text": "یک جلسه داخلی آرام درباره بحران با سه بزرگسال پشت میز جلسه." },
+            { "language": "ar", "text": "اجتماع أزمة داخلي هادئ مع ثلاثة بالغين حول طاولة اجتماع." },
+            { "language": "tr", "text": "Bir toplantı masasında üç yetişkinle sakin bir iç kriz toplantısı." },
+            { "language": "ru", "text": "Спокойное внутреннее кризисное совещание с тремя взрослыми за столом переговоров." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی ناوخۆیی ئارام بۆ قەیران بە سێ کەسی پێگەیشتوو لەسەر مێزی کۆبوونەوە." },
+            { "language": "kmr", "text": "Civîneke hundirîn a krîzê ya aram bi sê mezinan li ser maseya civînê." },
+            { "language": "pl", "text": "Spokojne wewnętrzne spotkanie kryzysowe z trzema dorosłymi przy stole konferencyjnym." },
+            { "language": "ro", "text": "O ședință internă calmă de criză cu trei adulți la o masă de întâlnire." },
+            { "language": "sq", "text": "Një takim i qetë i brendshëm krize me tre të rritur në një tryezë mbledhjeje." }
+          ],
+          "imagePrompt": "Clean educational illustration of an internal crisis communication meeting: three diverse adults in a neutral office, one simple shared document on a table without readable text, calm serious atmosphere, no logos, no private data, accessible composition, soft professional colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

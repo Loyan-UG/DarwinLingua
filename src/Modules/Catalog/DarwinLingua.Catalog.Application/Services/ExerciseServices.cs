@@ -3,32 +3,35 @@ using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Catalog.Application.Services;
 
 internal sealed class ExerciseQueryService(IExerciseRepository repository) : IExerciseQueryService
 {
-    public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, CancellationToken cancellationToken) =>
-        repository.GetPublishedExerciseSetsAsync(filter, cancellationToken);
+    public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExerciseSetsAsync(filter, primaryMeaningLanguageCode, cancellationToken);
 
-    public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, CancellationToken cancellationToken) =>
-        repository.GetPublishedExerciseSetBySlugAsync(slug, cancellationToken);
+    public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExerciseSetBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
 
-    public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, CancellationToken cancellationToken) =>
-        repository.GetPublishedExercisesAsync(filter, cancellationToken);
+    public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExercisesAsync(filter, primaryMeaningLanguageCode, cancellationToken);
 
-    public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, CancellationToken cancellationToken) =>
-        repository.GetPublishedExerciseBySlugAsync(slug, cancellationToken);
+    public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExerciseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
 }
 
 internal sealed class ExerciseAttemptService(IExerciseRepository repository) : IExerciseAttemptService
 {
     private const int MaxSubmittedAnswerJsonLength = 4096;
+    private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
     public async Task<ExerciseAttemptResultModel?> SubmitAttemptAsync(
         string slug,
         ExerciseAttemptRequestModel request,
         string userId,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request);
@@ -43,6 +46,10 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
 
         bool isCorrect = ExerciseAnswerEvaluator.Evaluate(exercise.ExerciseType, exercise.AnswerKeyJson, submittedAnswerJson);
         string explanation = isCorrect ? exercise.CorrectExplanation : exercise.IncorrectExplanation;
+        LanguageCode primaryLanguage = ResolveRequestedLanguage(primaryMeaningLanguageCode);
+        string? learnerLanguageExplanation = isCorrect
+            ? ResolveText(exercise.CorrectExplanationTranslationsJson, primaryLanguage)
+            : ResolveText(exercise.IncorrectExplanationTranslationsJson, primaryLanguage);
         DateTime attemptedAtUtc = DateTime.UtcNow;
 
         UserExerciseAttempt attempt = new(
@@ -60,14 +67,18 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
             exercise.Slug,
             isCorrect,
             explanation,
+            learnerLanguageExplanation,
             exercise.Hint,
+            ResolveText(exercise.HintTranslationsJson, primaryLanguage),
             exercise.CommonMistakeNote,
+            ResolveText(exercise.CommonMistakeNoteTranslationsJson, primaryLanguage),
             attemptedAtUtc);
     }
 
     public async Task<ExerciseAttemptResultModel?> EvaluateAttemptAsync(
         string slug,
         ExerciseAttemptRequestModel request,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request);
@@ -81,13 +92,20 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
 
         bool isCorrect = ExerciseAnswerEvaluator.Evaluate(exercise.ExerciseType, exercise.AnswerKeyJson, submittedAnswerJson);
         string explanation = isCorrect ? exercise.CorrectExplanation : exercise.IncorrectExplanation;
+        LanguageCode primaryLanguage = ResolveRequestedLanguage(primaryMeaningLanguageCode);
+        string? learnerLanguageExplanation = isCorrect
+            ? ResolveText(exercise.CorrectExplanationTranslationsJson, primaryLanguage)
+            : ResolveText(exercise.IncorrectExplanationTranslationsJson, primaryLanguage);
 
         return new ExerciseAttemptResultModel(
             exercise.Slug,
             isCorrect,
             explanation,
+            learnerLanguageExplanation,
             exercise.Hint,
+            ResolveText(exercise.HintTranslationsJson, primaryLanguage),
             exercise.CommonMistakeNote,
+            ResolveText(exercise.CommonMistakeNoteTranslationsJson, primaryLanguage),
             DateTime.UtcNow);
     }
 
@@ -130,6 +148,63 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
             throw new DomainRuleException("Submitted answer JSON is malformed.");
         }
     }
+
+    private static string? ResolveText(string json, LanguageCode primaryLanguage)
+    {
+        if (string.IsNullOrWhiteSpace(json))
+        {
+            return null;
+        }
+
+        try
+        {
+            StoredTranslation[] translations = JsonSerializer.Deserialize<StoredTranslation[]>(json, JsonOptions) ?? [];
+            return translations
+                .Where(translation => TryResolveLanguage(translation.Language) == primaryLanguage)
+                .Select(translation => translation.Text)
+                .FirstOrDefault(text => !string.IsNullOrWhiteSpace(text));
+        }
+        catch (JsonException)
+        {
+            return null;
+        }
+    }
+
+    private static LanguageCode ResolveRequestedLanguage(string? languageCode)
+    {
+        if (string.IsNullOrWhiteSpace(languageCode))
+        {
+            return LanguageCode.From("en");
+        }
+
+        try
+        {
+            return LanguageCode.From(languageCode.Trim().ToLowerInvariant());
+        }
+        catch
+        {
+            return LanguageCode.From("en");
+        }
+    }
+
+    private static LanguageCode? TryResolveLanguage(string? languageCode)
+    {
+        if (string.IsNullOrWhiteSpace(languageCode))
+        {
+            return null;
+        }
+
+        try
+        {
+            return LanguageCode.From(languageCode.Trim().ToLowerInvariant());
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private sealed record StoredTranslation(string? Language, string? Text);
 }
 
 public static class ExerciseAnswerEvaluator

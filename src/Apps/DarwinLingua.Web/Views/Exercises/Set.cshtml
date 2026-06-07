@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.ExerciseSetPageViewModel
 @{
     ViewData["Title"] = Model.ExerciseSet.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
@@ -9,7 +10,15 @@
         <a class="button button--secondary button--compact" asp-controller="Exercises" asp-action="Index">@T["All exercise sets"]</a>
     </div>
     <h1 class="headline-md">@Model.ExerciseSet.Title</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.ExerciseSet.LearnerLanguageTitle))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.ExerciseSet.LearnerLanguageTitle</p>
+    }
     <p class="body-lg">@Model.ExerciseSet.Description</p>
+    @if (!string.IsNullOrWhiteSpace(Model.ExerciseSet.LearnerLanguageDescription))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.ExerciseSet.LearnerLanguageDescription</p>
+    }
 </section>
 
 <section class="grid-two-col">
@@ -18,7 +27,15 @@
         <article class="panel stack-md">
             <span class="eyebrow">@T[exercise.ExerciseType] · @T[exercise.TargetSkill]</span>
             <h2 class="headline-sm"><a asp-controller="Exercises" asp-action="Detail" asp-route-slug="@exercise.Slug">@exercise.Title</a></h2>
+            @if (!string.IsNullOrWhiteSpace(exercise.LearnerLanguageTitle))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @exercise.LearnerLanguageTitle</p>
+            }
             <p>@exercise.Instruction</p>
+            @if (!string.IsNullOrWhiteSpace(exercise.LearnerLanguageInstruction))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @exercise.LearnerLanguageInstruction</p>
+            }
             <a class="button button--secondary" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@exercise.Slug">@T["Start exercise"]</a>
         </article>
     }

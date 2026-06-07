@@ -1,0 +1,985 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-11-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 11 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-eine-schriftliche-bestaetigung-erbitten",
+      "title": "Eine schriftliche Bestätigung erbitten",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask for written confirmation" },
+        { "language": "fa", "text": "درخواست تأیید کتبی" },
+        { "language": "ar", "text": "طلب تأكيد خطي" },
+        { "language": "tr", "text": "Yazılı onay istemek" },
+        { "language": "ru", "text": "Попросить письменное подтверждение" },
+        { "language": "ckb", "text": "داواکردنی پشتڕاستکردنەوەی نووسراو" },
+        { "language": "kmr", "text": "Daxwaza piştrastkirina nivîskî kirin" },
+        { "language": "pl", "text": "Poprosić o pisemne potwierdzenie" },
+        { "language": "ro", "text": "Să ceri o confirmare scrisă" },
+        { "language": "sq", "text": "Të kërkosh konfirmim me shkrim" }
+      ],
+      "description": "Du hast am Telefon mit dem Amt vereinbart, dass du ein fehlendes Dokument per E-Mail nachreichen darfst. Du bittest um eine kurze schriftliche Bestätigung mit Frist und Adresse.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You agreed by phone with the public office that you may submit a missing document by email. You ask for a short written confirmation with deadline and address." },
+        { "language": "fa", "text": "با اداره تلفنی توافق کرده‌ای که می‌توانی یک مدرک ناقص را از طریق ایمیل ارسال کنی. حالا یک تأیید کتبی کوتاه با مهلت و آدرس می‌خواهی." },
+        { "language": "ar", "text": "اتفقت هاتفيًا مع الدائرة على أنه يمكنك إرسال مستند ناقص بالبريد الإلكتروني. تطلب الآن تأكيدًا خطيًا قصيرًا يتضمن المهلة والعنوان." },
+        { "language": "tr", "text": "Resmi daireyle telefonda eksik bir belgeyi e-posta ile gönderebileceğin konusunda anlaştın. Şimdi süre ve adres içeren kısa bir yazılı onay istiyorsun." },
+        { "language": "ru", "text": "Ты договорился по телефону с ведомством, что можешь дослать недостающий документ по электронной почте. Теперь ты просишь краткое письменное подтверждение со сроком и адресом." },
+        { "language": "ckb", "text": "بە تەلەفۆن لەگەڵ فەرمانگە ڕێککەوتوویت کە دەتوانیت بەڵگەنامەیەکی کەم بە ئیمەیڵ بنێریت. ئێستا داوای پشتڕاستکردنەوەیەکی کورت بە نووسراو دەکەیت لەگەڵ مۆڵەت و ناونیشان." },
+        { "language": "kmr", "text": "Te bi telefonê bi nivîsgehê re li hev kiriye ku tu dikarî belgeyeke kêm bi e-nameyê bişînî. Niha tu daxwaza piştrastkirineke kurt a nivîskî bi dem û navnîşanê dikî." },
+        { "language": "pl", "text": "Uzgodniłeś telefonicznie z urzędem, że możesz dosłać brakujący dokument e-mailem. Prosisz o krótkie pisemne potwierdzenie z terminem i adresem." },
+        { "language": "ro", "text": "Ai stabilit telefonic cu instituția că poți trimite un document lipsă prin e-mail. Ceri o scurtă confirmare scrisă cu termen și adresă." },
+        { "language": "sq", "text": "Ke rënë dakord me zyrën në telefon se mund të dërgosh me email një dokument që mungon. Kërkon një konfirmim të shkurtër me shkrim me afat dhe adresë." }
+      ],
+      "learnerGoal": "Du kannst höflich um eine schriftliche Bestätigung bitten, den Grund nennen und den vereinbarten Abgabeweg genau zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can politely ask for written confirmation, state the reason, and summarize the agreed submission channel precisely." },
+        { "language": "fa", "text": "می‌توانی محترمانه درخواست تأیید کتبی کنی، دلیل را بگویی و راه توافق‌شده برای ارسال را دقیق جمع‌بندی کنی." },
+        { "language": "ar", "text": "يمكنك أن تطلب بأدب تأكيدًا خطيًا، وأن تذكر السبب، وأن تلخص طريقة التسليم المتفق عليها بدقة." },
+        { "language": "tr", "text": "Nazikçe yazılı onay isteyebilir, sebebini söyleyebilir ve üzerinde anlaşılan teslim yolunu net biçimde özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь вежливо попросить письменное подтверждение, назвать причину и точно подытожить согласованный способ подачи." },
+        { "language": "ckb", "text": "دەتوانیت بەڕێزەوە داوای پشتڕاستکردنەوەی نووسراو بکەیت، هۆکارەکە بڵێیت و ڕێگای پێشکەشکردنی ڕێککەوتوو بە وردی کۆبکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî bi rêzdarî daxwaza piştrastkirina nivîskî bikî, sedemê bibêjî û rêya radestkirina lihevhatî bi zelalî kom bikî." },
+        { "language": "pl", "text": "Potrafisz uprzejmie poprosić o pisemne potwierdzenie, podać powód i dokładnie podsumować uzgodniony sposób złożenia." },
+        { "language": "ro", "text": "Poți cere politicos o confirmare scrisă, poți spune motivul și poți rezuma exact calea de trimitere stabilită." },
+        { "language": "sq", "text": "Mund të kërkosh me mirësjellje konfirmim me shkrim, të tregosh arsyen dhe të përmbledhësh saktë mënyrën e dorëzimit të rënë dakord." }
+      ],
+      "cefrLevel": "B1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "documents-and-administration"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "examProfiles": [
+        "dtz-a2-b1"
+      ],
+      "sortOrder": 2240,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin im Amt",
+          "translations": [
+            { "language": "en", "text": "Office employee" },
+            { "language": "fa", "text": "کارمند اداره" },
+            { "language": "ar", "text": "موظفة الدائرة" },
+            { "language": "tr", "text": "Daire görevlisi" },
+            { "language": "ru", "text": "Сотрудница ведомства" },
+            { "language": "ckb", "text": "کارمەندی فەرمانگە" },
+            { "language": "kmr", "text": "Karmenda nivîsgehê" },
+            { "language": "pl", "text": "Pracowniczka urzędu" },
+            { "language": "ro", "text": "Funcționară" },
+            { "language": "sq", "text": "Punonjëse e zyrës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Anruferin oder Anrufer",
+          "translations": [
+            { "language": "en", "text": "Caller" },
+            { "language": "fa", "text": "تماس‌گیرنده" },
+            { "language": "ar", "text": "المتصل" },
+            { "language": "tr", "text": "Arayan kişi" },
+            { "language": "ru", "text": "Звонящий" },
+            { "language": "ckb", "text": "پەیوەندیکەر" },
+            { "language": "kmr", "text": "Kesê telefon dike" },
+            { "language": "pl", "text": "Osoba dzwoniąca" },
+            { "language": "ro", "text": "Persoană care sună" },
+            { "language": "sq", "text": "Telefonues" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Amt für Bürgerdienste, guten Tag. Sie sprechen mit Frau Keller.",
+          "translations": [
+            { "language": "en", "text": "Office for citizen services, good day. You are speaking with Ms. Keller." },
+            { "language": "fa", "text": "اداره خدمات شهروندی، روز بخیر. با خانم کلر صحبت می‌کنید." },
+            { "language": "ar", "text": "مكتب خدمات المواطنين، نهارك سعيد. تتحدث مع السيدة كيلر." },
+            { "language": "tr", "text": "Vatandaş hizmetleri dairesi, iyi günler. Keller Hanım ile görüşüyorsunuz." },
+            { "language": "ru", "text": "Служба по делам граждан, добрый день. Вы говорите с госпожой Келлер." },
+            { "language": "ckb", "text": "فەرمانگەی خزمەتگوزاری هاووڵاتیان، ڕۆژباش. لەگەڵ خانمی کێلەر دەدوێن." },
+            { "language": "kmr", "text": "Nivîsgeha xizmetên welatiyan, roj baş. Hûn bi Xatûn Keller re diaxivin." },
+            { "language": "pl", "text": "Urząd obsługi mieszkańców, dzień dobry. Rozmawia pan z panią Keller." },
+            { "language": "ro", "text": "Serviciul pentru cetățeni, bună ziua. Vorbiți cu doamna Keller." },
+            { "language": "sq", "text": "Zyra për shërbime qytetare, mirëdita. Po flisni me zonjën Keller." }
+          ],
+          "function": "phone-opening",
+          "toneNote": "Formal phone opening.",
+          "expectedLearnerAction": "Refer to the previous phone agreement."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Wir hatten gerade besprochen, dass ich die fehlende Bescheinigung per E-Mail nachreichen darf.",
+          "translations": [
+            { "language": "en", "text": "Good day. We had just discussed that I may submit the missing certificate by email." },
+            { "language": "fa", "text": "روز بخیر. همین الان صحبت کردیم که می‌توانم گواهی ناقص را از طریق ایمیل ارسال کنم." },
+            { "language": "ar", "text": "نهارك سعيد. كنا قد تحدثنا للتو عن أنه يمكنني إرسال الشهادة الناقصة بالبريد الإلكتروني." },
+            { "language": "tr", "text": "İyi günler. Az önce eksik belgeyi e-posta ile gönderebileceğimi konuşmuştuk." },
+            { "language": "ru", "text": "Добрый день. Мы только что обсудили, что я могу дослать недостающую справку по электронной почте." },
+            { "language": "ckb", "text": "ڕۆژباش. ئێستا قسەمان کرد کە دەتوانم بڕوانامەی کەم بە ئیمەیڵ بنێرم." },
+            { "language": "kmr", "text": "Roj baş. Me niha axivî ku ez dikarim belgeya kêm bi e-nameyê bişînim." },
+            { "language": "pl", "text": "Dzień dobry. Przed chwilą ustaliliśmy, że mogę dosłać brakujące zaświadczenie e-mailem." },
+            { "language": "ro", "text": "Bună ziua. Tocmai am discutat că pot trimite adeverința lipsă prin e-mail." },
+            { "language": "sq", "text": "Mirëdita. Sapo biseduam që mund ta dërgoj vërtetimin që mungon me email." }
+          ],
+          "function": "refer-previous-agreement",
+          "toneNote": "Connects to previous agreement.",
+          "expectedLearnerAction": "Name the agreement clearly."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Ja, genau. Das ist in Ihrem Fall möglich, wenn die E-Mail bis Freitag eingeht.",
+          "translations": [
+            { "language": "en", "text": "Yes, exactly. In your case, that is possible if the email arrives by Friday." },
+            { "language": "fa", "text": "بله، دقیقاً. در مورد شما این کار ممکن است، اگر ایمیل تا جمعه برسد." },
+            { "language": "ar", "text": "نعم، بالضبط. في حالتك هذا ممكن إذا وصل البريد الإلكتروني حتى يوم الجمعة." },
+            { "language": "tr", "text": "Evet, aynen. Sizin durumunuzda e-posta cuma gününe kadar ulaşırsa bu mümkün." },
+            { "language": "ru", "text": "Да, именно. В вашем случае это возможно, если письмо поступит до пятницы." },
+            { "language": "ckb", "text": "بەڵێ، ڕاستە. لە دۆخی ئێوەدا ئەمە دەکرێت ئەگەر ئیمەیڵەکە تا هەینی بگات." },
+            { "language": "kmr", "text": "Erê, rast e. Di rewşa we de ev gengaz e, ger e-name heta roja înê bigihêje." },
+            { "language": "pl", "text": "Tak, dokładnie. W pana przypadku jest to możliwe, jeśli e-mail dotrze do piątku." },
+            { "language": "ro", "text": "Da, exact. În cazul dumneavoastră este posibil dacă e-mailul ajunge până vineri." },
+            { "language": "sq", "text": "Po, saktësisht. Në rastin tuaj kjo është e mundur nëse emaili mbërrin deri të premten." }
+          ],
+          "function": "confirm-agreement",
+          "toneNote": "Confirms condition.",
+          "expectedLearnerAction": "Ask for written confirmation."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Könnten Sie mir das bitte kurz schriftlich bestätigen? Dann kann ich mich später darauf beziehen.",
+          "translations": [
+            { "language": "en", "text": "Could you please briefly confirm that in writing? Then I can refer to it later." },
+            { "language": "fa", "text": "ممکن است لطفاً این را کوتاه به‌صورت کتبی تأیید کنید؟ بعداً می‌توانم به آن استناد کنم." },
+            { "language": "ar", "text": "هل يمكنكم من فضلكم تأكيد ذلك كتابةً بشكل مختصر؟ عندها يمكنني الرجوع إليه لاحقًا." },
+            { "language": "tr", "text": "Bunu lütfen kısaca yazılı olarak onaylar mısınız? Böylece daha sonra buna dayanabilirim." },
+            { "language": "ru", "text": "Не могли бы вы кратко подтвердить это письменно? Тогда я смогу сослаться на это позже." },
+            { "language": "ckb", "text": "دەتوانن تکایە ئەمە بە کورتی بە نووسراو پشتڕاست بکەنەوە؟ ئەوکات دواتر دەتوانم ئاماژەی پێ بکەم." },
+            { "language": "kmr", "text": "Ma hûn dikarin ji kerema xwe vê bi kurtî bi nivîskî piştrast bikin? Wê demê ez dikarim paşê pê ve girê bidim." },
+            { "language": "pl", "text": "Czy mogłaby pani krótko potwierdzić to na piśmie? Wtedy będę mógł się do tego później odnieść." },
+            { "language": "ro", "text": "Ați putea, vă rog, să îmi confirmați pe scurt acest lucru în scris? Atunci mă pot referi la asta mai târziu." },
+            { "language": "sq", "text": "A mund ta konfirmoni ju lutem shkurt me shkrim? Atëherë mund t'i referohem më vonë." }
+          ],
+          "function": "request-written-confirmation",
+          "toneNote": "Polite and justified.",
+          "expectedLearnerAction": "Ask for written confirmation and give a reason."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Ja, ich kann Ihnen eine kurze E-Mail mit der Frist und der Adresse schicken.",
+          "translations": [
+            { "language": "en", "text": "Yes, I can send you a short email with the deadline and the address." },
+            { "language": "fa", "text": "بله، می‌توانم یک ایمیل کوتاه با مهلت و آدرس برایتان بفرستم." },
+            { "language": "ar", "text": "نعم، يمكنني أن أرسل لك بريدًا إلكترونيًا قصيرًا يتضمن المهلة والعنوان." },
+            { "language": "tr", "text": "Evet, size süre ve adresi içeren kısa bir e-posta gönderebilirim." },
+            { "language": "ru", "text": "Да, я могу отправить вам короткое письмо со сроком и адресом." },
+            { "language": "ckb", "text": "بەڵێ، دەتوانم ئیمەیڵێکی کورت لەگەڵ مۆڵەت و ناونیشان بۆتان بنێرم." },
+            { "language": "kmr", "text": "Erê, ez dikarim e-nameyeke kurt bi dem û navnîşanê ji we re bişînim." },
+            { "language": "pl", "text": "Tak, mogę wysłać panu krótkiego e-maila z terminem i adresem." },
+            { "language": "ro", "text": "Da, vă pot trimite un e-mail scurt cu termenul și adresa." },
+            { "language": "sq", "text": "Po, mund t'ju dërgoj një email të shkurtër me afatin dhe adresën." }
+          ],
+          "function": "offer-confirmation",
+          "toneNote": "Offers written confirmation.",
+          "expectedLearnerAction": "Ask what should be included."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Könnten Sie bitte auch erwähnen, dass eine gescannte Kopie reicht und kein Original per Post nötig ist?",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Could you also mention that a scanned copy is enough and no original by post is necessary?" },
+            { "language": "fa", "text": "خیلی ممنون. ممکن است لطفاً همچنین بنویسید که یک کپی اسکن‌شده کافی است و اصل مدرک از طریق پست لازم نیست؟" },
+            { "language": "ar", "text": "شكرًا جزيلًا. هل يمكنكم أيضًا ذكر أن نسخة ممسوحة ضوئيًا تكفي وأن الأصل بالبريد غير ضروري؟" },
+            { "language": "tr", "text": "Çok teşekkür ederim. Taranmış bir kopyanın yeterli olduğunu ve asıl belgenin posta ile gerekli olmadığını da belirtebilir misiniz?" },
+            { "language": "ru", "text": "Большое спасибо. Не могли бы вы также указать, что сканированной копии достаточно и оригинал по почте не нужен?" },
+            { "language": "ckb", "text": "زۆر سوپاس. دەتوانن تکایە ئەوەش بنووسن کە کۆپییەکی سکەنکراو بەسە و ڕەسەنی بەڵگەکە بە پۆست پێویست نییە؟" },
+            { "language": "kmr", "text": "Gelek spas. Ma hûn dikarin jî binivîsin ku kopiyeke skenkirî bes e û orîjînal bi posteyê ne pêwîst e?" },
+            { "language": "pl", "text": "Bardzo dziękuję. Czy mogłaby pani też wspomnieć, że wystarczy zeskanowana kopia i oryginał pocztą nie jest potrzebny?" },
+            { "language": "ro", "text": "Vă mulțumesc mult. Ați putea menționa și că o copie scanată este suficientă și că originalul prin poștă nu este necesar?" },
+            { "language": "sq", "text": "Shumë faleminderit. A mund të përmendni gjithashtu se mjafton një kopje e skanuar dhe nuk nevojitet origjinali me postë?" }
+          ],
+          "function": "ask-confirmation-content",
+          "toneNote": "Specific confirmation content.",
+          "expectedLearnerAction": "Ask to include the key condition."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Ja, das nehme ich mit auf. Die E-Mail geht heute noch an die Adresse, die Sie im Antrag angegeben haben.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will include that. The email will be sent today to the address you provided in the application." },
+            { "language": "fa", "text": "بله، آن را هم اضافه می‌کنم. ایمیل امروز به آدرسی فرستاده می‌شود که در درخواست نوشته‌اید." },
+            { "language": "ar", "text": "نعم، سأضيف ذلك. سيُرسل البريد الإلكتروني اليوم إلى العنوان الذي ذكرته في الطلب." },
+            { "language": "tr", "text": "Evet, bunu da ekleyeceğim. E-posta bugün başvuruda belirttiğiniz adrese gönderilecek." },
+            { "language": "ru", "text": "Да, я это добавлю. Письмо будет отправлено сегодня на адрес, который вы указали в заявлении." },
+            { "language": "ckb", "text": "بەڵێ، ئەوەش زیاد دەکەم. ئیمەیڵەکە ئەمڕۆ بۆ ئەو ناونیشانە دەنێردرێت کە لە داواکارییەکەدا نووسیوتانە." },
+            { "language": "kmr", "text": "Erê, ez wê jî lê zêde dikim. E-name îro ji navnîşana ku we di daxwazê de daye re tê şandin." },
+            { "language": "pl", "text": "Tak, uwzględnię to. E-mail zostanie dziś wysłany na adres podany przez pana we wniosku." },
+            { "language": "ro", "text": "Da, includ și acest lucru. E-mailul pleacă astăzi la adresa pe care ați indicat-o în cerere." },
+            { "language": "sq", "text": "Po, do ta përfshij edhe këtë. Emaili do të dërgohet sot në adresën që keni dhënë në kërkesë." }
+          ],
+          "function": "confirm-email-dispatch",
+          "toneNote": "Confirms dispatch and recipient address.",
+          "expectedLearnerAction": "Summarize confirmation details."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Sehr gut, danke. Ich warte heute auf Ihre E-Mail und reiche die gescannte Bescheinigung bis Freitag an die bestätigte Adresse nach.",
+          "translations": [
+            { "language": "en", "text": "Very good, thank you. I will wait for your email today and submit the scanned certificate by Friday to the confirmed address." },
+            { "language": "fa", "text": "خیلی خوب، ممنون. امروز منتظر ایمیل شما می‌مانم و گواهی اسکن‌شده را تا جمعه به آدرس تأییدشده ارسال می‌کنم." },
+            { "language": "ar", "text": "جيد جدًا، شكرًا. سأنتظر بريدكم الإلكتروني اليوم، وسأرسل الشهادة الممسوحة ضوئيًا حتى يوم الجمعة إلى العنوان المؤكد." },
+            { "language": "tr", "text": "Çok iyi, teşekkür ederim. Bugün e-postanızı bekleyeceğim ve taranmış belgeyi cuma gününe kadar onaylanan adrese göndereceğim." },
+            { "language": "ru", "text": "Очень хорошо, спасибо. Сегодня я буду ждать ваше письмо и до пятницы отправлю сканированную справку на подтвержденный адрес." },
+            { "language": "ckb", "text": "زۆر باشە، سوپاس. ئەمڕۆ چاوەڕێی ئیمەیڵەکەتان دەکەم و بڕوانامەی سکەنکراو تا هەینی بۆ ناونیشانی پشتڕاستکراوە دەنێرم." },
+            { "language": "kmr", "text": "Gelek baş, spas. Ez îro li benda e-nameya we dimînim û belgeya skenkirî heta roja înê ji navnîşana piştrastkirî re dişînim." },
+            { "language": "pl", "text": "Bardzo dobrze, dziękuję. Poczekam dziś na pani e-mail i do piątku wyślę zeskanowane zaświadczenie na potwierdzony adres." },
+            { "language": "ro", "text": "Foarte bine, mulțumesc. Aștept astăzi e-mailul dumneavoastră și trimit adeverința scanată până vineri la adresa confirmată." },
+            { "language": "sq", "text": "Shumë mirë, faleminderit. Sot do të pres emailin tuaj dhe do ta dërgoj vërtetimin e skanuar deri të premten në adresën e konfirmuar." }
+          ],
+          "function": "summarize-confirmation",
+          "toneNote": "Complete final summary.",
+          "expectedLearnerAction": "Confirm email, deadline, document, and address."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Wir hatten gerade besprochen, dass ich die fehlende Bescheinigung per E-Mail nachreichen darf.",
+              "translations": [
+                { "language": "en", "text": "Good day. We had just discussed that I may submit the missing certificate by email." },
+                { "language": "fa", "text": "روز بخیر. همین الان صحبت کردیم که می‌توانم گواهی ناقص را از طریق ایمیل ارسال کنم." },
+                { "language": "ar", "text": "نهارك سعيد. كنا قد تحدثنا للتو عن أنه يمكنني إرسال الشهادة الناقصة بالبريد الإلكتروني." },
+                { "language": "tr", "text": "İyi günler. Az önce eksik belgeyi e-posta ile gönderebileceğimi konuşmuştuk." },
+                { "language": "ru", "text": "Добрый день. Мы только что обсудили, что я могу дослать недостающую справку по электронной почте." },
+                { "language": "ckb", "text": "ڕۆژباش. ئێستا قسەمان کرد کە دەتوانم بڕوانامەی کەم بە ئیمەیڵ بنێرم." },
+                { "language": "kmr", "text": "Roj baş. Me niha axivî ku ez dikarim belgeya kêm bi e-nameyê bişînim." },
+                { "language": "pl", "text": "Dzień dobry. Przed chwilą ustaliliśmy, że mogę dosłać brakujące zaświadczenie e-mailem." },
+                { "language": "ro", "text": "Bună ziua. Tocmai am discutat că pot trimite adeverința lipsă prin e-mail." },
+                { "language": "sq", "text": "Mirëdita. Sapo biseduam që mund ta dërgoj vërtetimin që mungon me postë elektronike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt die konkrete telefonische Vereinbarung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer names the concrete phone agreement." },
+                { "language": "fa", "text": "خوب است: پاسخ توافق تلفنی مشخص را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يذكر الاتفاق الهاتفي المحدد." },
+                { "language": "tr", "text": "İyi: Cevap somut telefon anlaşmasını söylüyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет конкретную телефонную договоренность." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕێککەوتنی تەلەفۆنی دیاریکراو دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv lihevhatina telefonî ya diyar dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wskazuje konkretną telefoniczną umowę." },
+                { "language": "ro", "text": "Bine: răspunsul numește acordul telefonic concret." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend marrëveshjen konkrete telefonike." }
+              ],
+              "explanationKey": "name-phone-agreement"
+            },
+            {
+              "id": "too-unclear",
+              "text": "Guten Tag. Ich brauche eine Bestätigung von Ihnen.",
+              "translations": [
+                { "language": "en", "text": "Good day. I need a confirmation from you." },
+                { "language": "fa", "text": "روز بخیر. من از شما یک تأیید لازم دارم." },
+                { "language": "ar", "text": "نهارك سعيد. أحتاج إلى تأكيد منكم." },
+                { "language": "tr", "text": "İyi günler. Sizden bir onaya ihtiyacım var." },
+                { "language": "ru", "text": "Добрый день. Мне нужно от вас подтверждение." },
+                { "language": "ckb", "text": "ڕۆژباش. پێویستم بە پشتڕاستکردنەوەیەک لە ئێوە هەیە." },
+                { "language": "kmr", "text": "Roj baş. Pêwîstiya min bi piştrastkirinekê ji we heye." },
+                { "language": "pl", "text": "Dzień dobry. Potrzebuję od państwa potwierdzenia." },
+                { "language": "ro", "text": "Bună ziua. Am nevoie de o confirmare de la dumneavoastră." },
+                { "language": "sq", "text": "Mirëdita. Më duhet një konfirmim nga ju." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber zu unklar: Es fehlt, welche Vereinbarung bestätigt werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too unclear: it does not say which agreement should be confirmed." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی نامشخص است: نمی‌گوید کدام توافق باید تأیید شود." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه غير واضح كفاية: لا يذكر أي اتفاق يجب تأكيده." },
+                { "language": "tr", "text": "Bu anlaşılır, ama çok belirsiz: hangi anlaşmanın onaylanacağı söylenmiyor." },
+                { "language": "ru", "text": "Это понятно, но слишком неясно: не сказано, какую договоренность нужно подтвердить." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتووە، بەڵام زۆر ناڕوونە: ناڵێت کام ڕێککەوتن پێویستە پشتڕاست بکرێتەوە." },
+                { "language": "kmr", "text": "Ev tê fêmkirin, lê pir nezelal e: nabêje kîjan lihevhatin divê were piştrastkirin." },
+                { "language": "pl", "text": "To jest zrozumiałe, ale zbyt niejasne: nie wiadomo, jaką umowę trzeba potwierdzić." },
+                { "language": "ro", "text": "Este de înțeles, dar prea neclar: nu spune ce acord trebuie confirmat." },
+                { "language": "sq", "text": "Është e kuptueshme, por shumë e paqartë: nuk thotë cilën marrëveshje duhet të konfirmojnë." }
+              ],
+              "explanationKey": "too-unclear"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Könnten Sie mir das bitte kurz schriftlich bestätigen? Dann kann ich mich später darauf beziehen.",
+              "translations": [
+                { "language": "en", "text": "Could you please briefly confirm that in writing? Then I can refer to it later." },
+                { "language": "fa", "text": "ممکن است لطفاً این را کوتاه به‌صورت کتبی تأیید کنید؟ بعداً می‌توانم به آن استناد کنم." },
+                { "language": "ar", "text": "هل يمكنكم من فضلكم تأكيد ذلك كتابةً بشكل مختصر؟ عندها يمكنني الرجوع إليه لاحقًا." },
+                { "language": "tr", "text": "Bunu lütfen kısaca yazılı olarak onaylar mısınız? Böylece daha sonra buna dayanabilirim." },
+                { "language": "ru", "text": "Не могли бы вы кратко подтвердить это письменно? Тогда я смогу сослаться на это позже." },
+                { "language": "ckb", "text": "دەتوانن تکایە ئەمە بە کورتی بە نووسراو پشتڕاست بکەنەوە؟ ئەوکات دواتر دەتوانم ئاماژەی پێ بکەم." },
+                { "language": "kmr", "text": "Ma hûn dikarin ji kerema xwe vê bi kurtî bi nivîskî piştrast bikin? Wê demê ez dikarim paşê pê ve girê bidim." },
+                { "language": "pl", "text": "Czy mogłaby pani krótko potwierdzić to na piśmie? Wtedy będę mógł się do tego później odnieść." },
+                { "language": "ro", "text": "Ați putea, vă rog, să îmi confirmați pe scurt acest lucru în scris? Atunci mă pot referi la asta mai târziu." },
+                { "language": "sq", "text": "A mund ta konfirmoni ju lutem shkurt me shkrim? Atëherë mund t'i referohem më vonë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Bitte ist höflich und erklärt den praktischen Grund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The request is polite and explains the practical reason." },
+                { "language": "fa", "text": "خوب است: درخواست محترمانه است و دلیل عملی را توضیح می‌دهد." },
+                { "language": "ar", "text": "جيد: الطلب مهذب ويشرح السبب العملي." },
+                { "language": "tr", "text": "İyi: Rica nazik ve pratik sebebi açıklıyor." },
+                { "language": "ru", "text": "Хорошо: просьба вежливая и объясняет практическую причину." },
+                { "language": "ckb", "text": "باشە: داواکارییەکە بەڕێزە و هۆکاری کرداری ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Daxwaz rêzdar e û sedema pratîk rave dike." },
+                { "language": "pl", "text": "Dobrze: prośba jest uprzejma i wyjaśnia praktyczny powód." },
+                { "language": "ro", "text": "Bine: cererea este politicoasă și explică motivul practic." },
+                { "language": "sq", "text": "Mirë: kërkesa është e sjellshme dhe shpjegon arsyen praktike." }
+              ],
+              "explanationKey": "polite-confirmation-request"
+            },
+            {
+              "id": "too-demanding",
+              "text": "Schicken Sie mir das bitte sofort schriftlich.",
+              "translations": [
+                { "language": "en", "text": "Please send that to me in writing immediately." },
+                { "language": "fa", "text": "لطفاً همین را فوراً به‌صورت کتبی برای من بفرستید." },
+                { "language": "ar", "text": "أرسلوا لي ذلك خطيًا فورًا من فضلكم." },
+                { "language": "tr", "text": "Lütfen bunu bana hemen yazılı olarak gönderin." },
+                { "language": "ru", "text": "Пожалуйста, немедленно отправьте мне это письменно." },
+                { "language": "ckb", "text": "تکایە ئەمە دەستبەجێ بە نووسراو بۆم بنێرن." },
+                { "language": "kmr", "text": "Ji kerema xwe vê yekser bi nivîskî ji min re bişînin." },
+                { "language": "pl", "text": "Proszę mi to natychmiast wysłać na piśmie." },
+                { "language": "ro", "text": "Vă rog să îmi trimiteți asta imediat în scris." },
+                { "language": "sq", "text": "Ju lutem ma dërgoni këtë menjëherë me shkrim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Bitte ist verständlich, klingt aber im Amt zu fordernd und nennt keinen Grund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The request is understandable, but sounds too demanding for a public office and gives no reason." },
+                { "language": "fa", "text": "درخواست قابل فهم است، اما در اداره بیش از حد مطالبه‌گرانه به نظر می‌رسد و دلیلی نمی‌گوید." },
+                { "language": "ar", "text": "الطلب مفهوم، لكنه يبدو آمِرًا جدًا في الدائرة ولا يذكر سببًا." },
+                { "language": "tr", "text": "Rica anlaşılır, ama resmi dairede fazla talepkar duyuluyor ve sebep söylemiyor." },
+                { "language": "ru", "text": "Просьба понятна, но для ведомства звучит слишком требовательно и не называет причину." },
+                { "language": "ckb", "text": "داواکارییەکە تێگەیشتووە، بەڵام لە فەرمانگەدا زۆر فەرماندانە دەنگ دەدات و هۆکار ناڵێت." },
+                { "language": "kmr", "text": "Daxwaz tê fêmkirin, lê li nivîsgehê pir daxwazkar xuya dike û sedem nabêje." },
+                { "language": "pl", "text": "Prośba jest zrozumiała, ale w urzędzie brzmi zbyt roszczeniowo i nie podaje powodu." },
+                { "language": "ro", "text": "Cererea este de înțeles, dar sună prea imperativ la instituție și nu dă un motiv." },
+                { "language": "sq", "text": "Kërkesa është e kuptueshme, por në zyrë tingëllon shumë kërkuese dhe nuk jep arsye." }
+              ],
+              "explanationKey": "too-demanding"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Sehr gut, danke. Ich warte heute auf Ihre E-Mail und reiche die gescannte Bescheinigung bis Freitag an die bestätigte Adresse nach.",
+              "translations": [
+                { "language": "en", "text": "Very good, thank you. I will wait for your email today and submit the scanned certificate by Friday to the confirmed address." },
+                { "language": "fa", "text": "خیلی خوب، ممنون. امروز منتظر ایمیل شما می‌مانم و گواهی اسکن‌شده را تا جمعه به آدرس تأییدشده ارسال می‌کنم." },
+                { "language": "ar", "text": "جيد جدًا، شكرًا. سأنتظر بريدكم الإلكتروني اليوم، وسأرسل الشهادة الممسوحة ضوئيًا حتى يوم الجمعة إلى العنوان المؤكد." },
+                { "language": "tr", "text": "Çok iyi, teşekkür ederim. Bugün e-postanızı bekleyeceğim ve taranmış belgeyi cuma gününe kadar onaylanan adrese göndereceğim." },
+                { "language": "ru", "text": "Очень хорошо, спасибо. Сегодня я буду ждать ваше письмо и до пятницы отправлю сканированную справку на подтвержденный адрес." },
+                { "language": "ckb", "text": "زۆر باشە، سوپاس. ئەمڕۆ چاوەڕێی ئیمەیڵەکەتان دەکەم و بڕوانامەی سکەنکراو تا هەینی بۆ ناونیشانی پشتڕاستکراوە دەنێرم." },
+                { "language": "kmr", "text": "Gelek baş, spas. Ez îro li benda e-nameya we dimînim û belgeya skenkirî heta roja înê ji navnîşana piştrastkirî re dişînim." },
+                { "language": "pl", "text": "Bardzo dobrze, dziękuję. Poczekam dziś na pani e-mail i do piątku wyślę zeskanowane zaświadczenie na potwierdzony adres." },
+                { "language": "ro", "text": "Foarte bine, mulțumesc. Aștept astăzi e-mailul dumneavoastră și trimit adeverința scanată până vineri la adresa confirmată." },
+                { "language": "sq", "text": "Shumë mirë, faleminderit. Sot do të pres emailin tuaj dhe do ta dërgoj vërtetimin e skanuar deri të premten në adresën e konfirmuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bestätigt E-Mail, Dokument, Frist und Adresse.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer confirms email, document, deadline, and address." },
+                { "language": "fa", "text": "خوب است: پاسخ ایمیل، مدرک، مهلت و آدرس را تأیید می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يؤكد البريد الإلكتروني والمستند والمهلة والعنوان." },
+                { "language": "tr", "text": "İyi: Cevap e-postayı, belgeyi, süreyi ve adresi onaylıyor." },
+                { "language": "ru", "text": "Хорошо: ответ подтверждает письмо, документ, срок и адрес." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ئیمەیڵ، بەڵگەنامە، مۆڵەت و ناونیشان پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv e-name, belge, dem û navnîşan piştrast dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź potwierdza e-mail, dokument, termin i adres." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă e-mailul, documentul, termenul și adresa." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon emailin, dokumentin, afatin dhe adresën." }
+              ],
+              "explanationKey": "complete-confirmation-summary"
+            },
+            {
+              "id": "too-vague",
+              "text": "Okay, dann warte ich auf die E-Mail.",
+              "translations": [
+                { "language": "en", "text": "Okay, then I will wait for the email." },
+                { "language": "fa", "text": "باشه، پس منتظر ایمیل می‌مانم." },
+                { "language": "ar", "text": "حسنًا، إذن سأنتظر البريد الإلكتروني." },
+                { "language": "tr", "text": "Tamam, o zaman e-postayı bekleyeceğim." },
+                { "language": "ru", "text": "Хорошо, тогда я буду ждать письмо." },
+                { "language": "ckb", "text": "باشە، ئەوا چاوەڕێی ئیمەیڵەکە دەکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez li benda e-nameyê dimînim." },
+                { "language": "pl", "text": "Dobrze, w takim razie poczekam na e-mail." },
+                { "language": "ro", "text": "Bine, atunci aștept e-mailul." },
+                { "language": "sq", "text": "Në rregull, atëherë do të pres emailin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu knapp: Frist, Dokument und bestätigte Adresse fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too brief: deadline, document, and confirmed address are missing." },
+                { "language": "fa", "text": "محترمانه است، اما خیلی کوتاه است: مهلت، مدرک و آدرس تأییدشده کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه قصير جدًا: المهلة والمستند والعنوان المؤكد ناقصة." },
+                { "language": "tr", "text": "Bu nazik, ama çok kısa: süre, belge ve onaylanan adres eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко: не хватает срока, документа и подтвержденного адреса." },
+                { "language": "ckb", "text": "ئەمە بەڕێزە، بەڵام زۆر کورته: مۆڵەت، بەڵگەنامە و ناونیشانی پشتڕاستکراوە کەمە." },
+                { "language": "kmr", "text": "Ev rêzdar e, lê pir kurt e: dem, belge û navnîşana piştrastkirî kêm in." },
+                { "language": "pl", "text": "To jest grzeczne, ale zbyt krótkie: brakuje terminu, dokumentu i potwierdzonego adresu." },
+                { "language": "ro", "text": "Este politicos, dar prea scurt: lipsesc termenul, documentul și adresa confirmată." },
+                { "language": "sq", "text": "Është e sjellshme, por shumë e shkurtër: mungojnë afati, dokumenti dhe adresa e konfirmuar." }
+              ],
+              "explanationKey": "missing-confirmation-details"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Wenn du um eine schriftliche Bestätigung bittest, nenne die Vereinbarung, den Grund für die Bestätigung und die Details, die in der Nachricht stehen sollen.",
+          "translations": [
+            { "language": "en", "text": "When you ask for written confirmation, name the agreement, the reason for the confirmation, and the details that should be in the message." },
+            { "language": "fa", "text": "وقتی تأیید کتبی می‌خواهی، توافق، دلیل نیاز به تأیید و جزئیاتی را بگو که باید در پیام نوشته شود." },
+            { "language": "ar", "text": "عندما تطلب تأكيدًا خطيًا، اذكر الاتفاق وسبب الحاجة إلى التأكيد والتفاصيل التي يجب أن تكون في الرسالة." },
+            { "language": "tr", "text": "Yazılı onay istediğinde anlaşmayı, onaya neden ihtiyaç duyduğunu ve mesajda bulunması gereken ayrıntıları söyle." },
+            { "language": "ru", "text": "Когда ты просишь письменное подтверждение, назови договоренность, причину подтверждения и детали, которые должны быть в сообщении." },
+            { "language": "ckb", "text": "کاتێک داوای پشتڕاستکردنەوەی نووسراو دەکەیت، ڕێککەوتنەکە، هۆکاری پێویستی پشتڕاستکردنەوە و وردەکارییەکانی ناو پەیامەکە بڵێ." },
+            { "language": "kmr", "text": "Dema tu daxwaza piştrastkirina nivîskî dikî, lihevhatinê, sedema piştrastkirinê û hûrgiliyên ku divê di peyamê de bin bibêje." },
+            { "language": "pl", "text": "Gdy prosisz o pisemne potwierdzenie, podaj ustalenie, powód potwierdzenia i szczegóły, które mają się znaleźć w wiadomości." },
+            { "language": "ro", "text": "Când ceri o confirmare scrisă, numește acordul, motivul confirmării și detaliile care trebuie să apară în mesaj." },
+            { "language": "sq", "text": "Kur kërkon konfirmim me shkrim, përmend marrëveshjen, arsyen për konfirmim dhe hollësitë që duhet të jenë në mesazh." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-ein-amtliches-missverstaendnis-klaeren",
+      "title": "Ein amtliches Missverständnis klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarify an official misunderstanding" },
+        { "language": "fa", "text": "روشن‌کردن یک سوءتفاهم اداری" },
+        { "language": "ar", "text": "توضيح سوء فهم إداري" },
+        { "language": "tr", "text": "Resmi bir yanlış anlaşılmayı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Прояснить административное недоразумение" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی تێگەیشتنێکی هەڵەی فەرمی" },
+        { "language": "kmr", "text": "Têgihiştineke şaş a fermî zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnić urzędowe nieporozumienie" },
+        { "language": "ro", "text": "Să clarifici o neînțelegere administrativă" },
+        { "language": "sq", "text": "Të sqarosh një keqkuptim zyrtar" }
+      ],
+      "description": "Du bist im Amt, weil du eine Regel anders verstanden hast. Du erklärst, was du verstanden hast, vergleichst es mit dem Schreiben und fragst nach der genauen richtigen Bedeutung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at a public office because you understood a rule differently. You explain what you understood, compare it with the letter, and ask for the exact correct meaning." },
+        { "language": "fa", "text": "در اداره هستی، چون یک قانون را متفاوت فهمیده‌ای. توضیح می‌دهی چه چیزی فهمیده‌ای، آن را با نامه مقایسه می‌کنی و معنی دقیق درست را می‌پرسی." },
+        { "language": "ar", "text": "أنت في الدائرة لأنك فهمت قاعدة بطريقة مختلفة. تشرح ما فهمته، وتقارنه بالرسالة، وتسأل عن المعنى الصحيح الدقيق." },
+        { "language": "tr", "text": "Resmi dairedesin, çünkü bir kuralı farklı anlamışsın. Ne anladığını açıklıyor, yazıyla karşılaştırıyor ve tam doğru anlamı soruyorsun." },
+        { "language": "ru", "text": "Ты в ведомстве, потому что понял правило иначе. Ты объясняешь, что понял, сравниваешь это с письмом и спрашиваешь точное правильное значение." },
+        { "language": "ckb", "text": "لە فەرمانگەیت، چونکە یاسایەکت بە شێوەیەکی تر تێگەیشتوویت. ڕوون دەکەیتەوە چی تێگەیشتوویت، لەگەڵ نامەکە بەراوردی دەکەیت و واتای ورد و دروست دەپرسی." },
+        { "language": "kmr", "text": "Tu li nivîsgehê yî, ji ber ku te rêgelek cuda fêm kiriye. Tu rave dikî ka te çi fêm kiriye, wê bi nameyê re berhev dikî û wateya rast a diyar dipirsî." },
+        { "language": "pl", "text": "Jesteś w urzędzie, ponieważ inaczej zrozumiałeś zasadę. Wyjaśniasz, co zrozumiałeś, porównujesz to z pismem i pytasz o dokładne właściwe znaczenie." },
+        { "language": "ro", "text": "Ești la instituție pentru că ai înțeles diferit o regulă. Explici ce ai înțeles, compari cu scrisoarea și întrebi care este sensul corect exact." },
+        { "language": "sq", "text": "Je në zyrë sepse e ke kuptuar ndryshe një rregull. Shpjegon çfarë ke kuptuar, e krahason me shkresën dhe pyet për kuptimin e saktë." }
+      ],
+      "learnerGoal": "Du kannst ein Missverständnis höflich reparieren, deine bisherige Interpretation nennen und die genaue richtige Anweisung bestätigen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can politely repair a misunderstanding, name your previous interpretation, and confirm the exact correct instruction." },
+        { "language": "fa", "text": "می‌توانی محترمانه یک سوءتفاهم را اصلاح کنی، برداشت قبلی خودت را بگویی و دستور دقیق درست را تأیید کنی." },
+        { "language": "ar", "text": "يمكنك إصلاح سوء فهم بأدب، وذكر تفسيرك السابق، وتأكيد التعليمات الصحيحة الدقيقة." },
+        { "language": "tr", "text": "Bir yanlış anlaşılmayı nazikçe düzeltebilir, önceki yorumunu söyleyebilir ve tam doğru talimatı onaylayabilirsin." },
+        { "language": "ru", "text": "Ты можешь вежливо исправить недоразумение, назвать свое прежнее понимание и подтвердить точную правильную инструкцию." },
+        { "language": "ckb", "text": "دەتوانیت بەڕێزەوە تێگەیشتنێکی هەڵە ڕاست بکەیتەوە، لێکدانەوەی پێشووت بڵێیت و ڕێنمایی ورد و دروست پشتڕاست بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî têgihiştineke şaş bi rêzdarî rast bikî, şîroveya xwe ya berê bibêjî û rêwerza rast a diyar piştrast bikî." },
+        { "language": "pl", "text": "Potrafisz uprzejmie naprawić nieporozumienie, nazwać swoją wcześniejszą interpretację i potwierdzić dokładną właściwą instrukcję." },
+        { "language": "ro", "text": "Poți repara politicos o neînțelegere, poți numi interpretarea ta anterioară și poți confirma instrucțiunea exactă corectă." },
+        { "language": "sq", "text": "Mund të sqarosh me mirësjellje një keqkuptim, të përmendësh interpretimin tënd të mëparshëm dhe të konfirmosh udhëzimin e saktë." }
+      ],
+      "cefrLevel": "B1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "documents-and-administration"
+      ],
+      "interactionMode": "government-office",
+      "register": "formal",
+      "taskType": "handle-misunderstanding",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "dtz-a2-b1"
+      ],
+      "sortOrder": 2250,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin im Amt",
+          "translations": [
+            { "language": "en", "text": "Office employee" },
+            { "language": "fa", "text": "کارمند اداره" },
+            { "language": "ar", "text": "موظفة الدائرة" },
+            { "language": "tr", "text": "Daire görevlisi" },
+            { "language": "ru", "text": "Сотрудница ведомства" },
+            { "language": "ckb", "text": "کارمەندی فەرمانگە" },
+            { "language": "kmr", "text": "Karmenda nivîsgehê" },
+            { "language": "pl", "text": "Pracowniczka urzędu" },
+            { "language": "ro", "text": "Funcționară" },
+            { "language": "sq", "text": "Punonjëse e zyrës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Besucherin oder Besucher",
+          "translations": [
+            { "language": "en", "text": "Visitor" },
+            { "language": "fa", "text": "مراجعه‌کننده" },
+            { "language": "ar", "text": "مراجع" },
+            { "language": "tr", "text": "Başvuran kişi" },
+            { "language": "ru", "text": "Посетитель" },
+            { "language": "ckb", "text": "سەردانکەر" },
+            { "language": "kmr", "text": "Serdanvan" },
+            { "language": "pl", "text": "Petent" },
+            { "language": "ro", "text": "Persoană solicitantă" },
+            { "language": "sq", "text": "Vizitor" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag. Sie haben eine Frage zu den Unterlagen für Ihren Antrag?",
+          "translations": [
+            { "language": "en", "text": "Good day. You have a question about the documents for your application?" },
+            { "language": "fa", "text": "روز بخیر. درباره مدارک درخواستتان سؤال دارید؟" },
+            { "language": "ar", "text": "نهارك سعيد. لديك سؤال عن المستندات الخاصة بطلبك؟" },
+            { "language": "tr", "text": "İyi günler. Başvurunuz için belgeler hakkında bir sorunuz var, değil mi?" },
+            { "language": "ru", "text": "Добрый день. У вас вопрос по документам для вашего заявления?" },
+            { "language": "ckb", "text": "ڕۆژباش. پرسیارتان دەربارەی بەڵگەنامەکانی داواکارییەکەتان هەیە؟" },
+            { "language": "kmr", "text": "Roj baş. Pirsa we li ser belgeyên daxwaza we heye?" },
+            { "language": "pl", "text": "Dzień dobry. Ma pan pytanie dotyczące dokumentów do wniosku?" },
+            { "language": "ro", "text": "Bună ziua. Aveți o întrebare despre documentele pentru cererea dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita. Keni një pyetje për dokumentet e kërkesës suaj?" }
+          ],
+          "function": "open-document-question",
+          "toneNote": "Formal office opening.",
+          "expectedLearnerAction": "Explain the misunderstanding."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich glaube, es gab ein Missverständnis. Am Telefon habe ich verstanden, dass ein Scan reicht. In Ihrem Schreiben steht aber, dass das Original nötig ist.",
+          "translations": [
+            { "language": "en", "text": "Yes, I think there was a misunderstanding. On the phone, I understood that a scan is enough. But your letter says that the original is necessary." },
+            { "language": "fa", "text": "بله، فکر می‌کنم سوءتفاهمی پیش آمده است. تلفنی فهمیدم که اسکن کافی است. اما در نامه شما نوشته شده که اصل مدرک لازم است." },
+            { "language": "ar", "text": "نعم، أعتقد أنه حدث سوء فهم. في الهاتف فهمت أن النسخة الممسوحة تكفي. لكن في رسالتكم مكتوب أن الأصل ضروري." },
+            { "language": "tr", "text": "Evet, sanırım bir yanlış anlaşılma oldu. Telefonda taramanın yeterli olduğunu anladım. Ama yazınızda asıl belgenin gerekli olduğu yazıyor." },
+            { "language": "ru", "text": "Да, думаю, произошло недоразумение. По телефону я понял, что скана достаточно. Но в вашем письме написано, что нужен оригинал." },
+            { "language": "ckb", "text": "بەڵێ، پێم وایە تێگەیشتنێکی هەڵە ڕوویداوە. لە تەلەفۆندا تێگەیشتم کە سکەن بەسە. بەڵام لە نامەکەتاندا نووسراوە کە ڕەسەنەکە پێویستە." },
+            { "language": "kmr", "text": "Erê, ez difikirim têgihiştineke şaş çêbûye. Di telefonê de min fêm kir ku sken bes e. Lê di nameya we de hatiye nivîsîn ku orîjînal pêwîst e." },
+            { "language": "pl", "text": "Tak, myślę, że doszło do nieporozumienia. Przez telefon zrozumiałem, że wystarczy skan. Ale w państwa piśmie jest napisane, że potrzebny jest oryginał." },
+            { "language": "ro", "text": "Da, cred că a fost o neînțelegere. La telefon am înțeles că este suficient un scan. Dar în scrisoarea dumneavoastră scrie că este necesar originalul." },
+            { "language": "sq", "text": "Po, mendoj se ka pasur një keqkuptim. Në telefon kuptova se mjafton skanimi. Por në shkresën tuaj thuhet se nevojitet origjinali." }
+          ],
+          "function": "name-misunderstanding",
+          "toneNote": "Polite repair language.",
+          "expectedLearnerAction": "Compare phone understanding and written instruction."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Bei diesem Antrag brauchen wir tatsächlich das Original, weil die Kopie amtlich beglaubigt werden muss.",
+          "translations": [
+            { "language": "en", "text": "For this application, we actually need the original because the copy must be officially certified." },
+            { "language": "fa", "text": "برای این درخواست واقعاً اصل مدرک را لازم داریم، چون کپی باید به‌صورت رسمی برابر اصل شود." },
+            { "language": "ar", "text": "في هذا الطلب نحتاج فعلًا إلى الأصل، لأن النسخة يجب أن تُصدّق رسميًا." },
+            { "language": "tr", "text": "Bu başvuru için gerçekten asıl belgeye ihtiyacımız var, çünkü kopyanın resmi olarak onaylanması gerekiyor." },
+            { "language": "ru", "text": "Для этого заявления нам действительно нужен оригинал, потому что копия должна быть официально заверена." },
+            { "language": "ckb", "text": "بۆ ئەم داواکارییە بەڕاستی پێویستمان بە ڕەسەنەکەیە، چونکە کۆپییەکە دەبێت بە فەرمی پشتڕاست بکرێتەوە." },
+            { "language": "kmr", "text": "Ji bo vê daxwazê bi rastî orîjînal pêwîst e, ji ber ku divê kopî bi fermî were pejirandin." },
+            { "language": "pl", "text": "Przy tym wniosku rzeczywiście potrzebujemy oryginału, ponieważ kopia musi zostać urzędowo poświadczona." },
+            { "language": "ro", "text": "Pentru această cerere avem într-adevăr nevoie de original, deoarece copia trebuie certificată oficial." },
+            { "language": "sq", "text": "Për këtë kërkesë na duhet vërtet origjinali, sepse kopja duhet të vërtetohet zyrtarisht." }
+          ],
+          "function": "explain-correct-rule",
+          "toneNote": "Explains exact rule.",
+          "expectedLearnerAction": "Confirm the exact interpretation."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Danke für die Erklärung. Heißt das, ich soll das Original per Post schicken und keine Kopie online hochladen?",
+          "translations": [
+            { "language": "en", "text": "Thank you for the explanation. Does that mean I should send the original by post and not upload a copy online?" },
+            { "language": "fa", "text": "ممنون از توضیح. یعنی باید اصل مدرک را با پست بفرستم و کپی را آنلاین بارگذاری نکنم؟" },
+            { "language": "ar", "text": "شكرًا على التوضيح. هل يعني ذلك أنني يجب أن أرسل الأصل بالبريد ولا أرفع نسخة عبر الإنترنت؟" },
+            { "language": "tr", "text": "Açıklama için teşekkür ederim. Bu, asıl belgeyi posta ile göndermem ve çevrimiçi kopya yüklememem gerektiği anlamına mı geliyor?" },
+            { "language": "ru", "text": "Спасибо за объяснение. Это значит, что я должен отправить оригинал по почте и не загружать копию онлайн?" },
+            { "language": "ckb", "text": "سوپاس بۆ ڕوونکردنەوەکە. ئەمە واتە پێویستە ڕەسەنەکە بە پۆست بنێرم و کۆپی ئۆنلاین بار نەکەم؟" },
+            { "language": "kmr", "text": "Spas ji bo ravekirinê. Ev tê wê wateyê ku divê ez orîjînal bi posteyê bişînim û kopî serhêl bar nekim?" },
+            { "language": "pl", "text": "Dziękuję za wyjaśnienie. Czy to znaczy, że mam wysłać oryginał pocztą i nie przesyłać kopii online?" },
+            { "language": "ro", "text": "Mulțumesc pentru explicație. Asta înseamnă că trebuie să trimit originalul prin poștă și să nu încarc o copie online?" },
+            { "language": "sq", "text": "Faleminderit për shpjegimin. A do të thotë kjo se duhet ta dërgoj origjinalin me postë dhe të mos ngarkoj kopje online?" }
+          ],
+          "function": "confirm-exact-interpretation",
+          "toneNote": "Checks precise meaning.",
+          "expectedLearnerAction": "Ask for exact interpretation and channel."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Genau. Bitte schicken Sie das Original per Post oder geben Sie es hier am Schalter ab.",
+          "translations": [
+            { "language": "en", "text": "Exactly. Please send the original by post or hand it in here at the counter." },
+            { "language": "fa", "text": "دقیقاً. لطفاً اصل مدرک را با پست بفرستید یا اینجا در باجه تحویل دهید." },
+            { "language": "ar", "text": "بالضبط. يرجى إرسال الأصل بالبريد أو تسليمه هنا عند الشباك." },
+            { "language": "tr", "text": "Aynen. Lütfen asıl belgeyi posta ile gönderin ya da burada gişeye teslim edin." },
+            { "language": "ru", "text": "Именно. Пожалуйста, отправьте оригинал по почте или сдайте его здесь на стойке." },
+            { "language": "ckb", "text": "ڕاستە. تکایە ڕەسەنەکە بە پۆست بنێرن یان لێرە لە پەنجەرەکەدا پێشکەشی بکەن." },
+            { "language": "kmr", "text": "Rast e. Ji kerema xwe orîjînal bi posteyê bişînin an li vir li ser maseyê radest bikin." },
+            { "language": "pl", "text": "Dokładnie. Proszę wysłać oryginał pocztą albo złożyć go tutaj przy okienku." },
+            { "language": "ro", "text": "Exact. Vă rog să trimiteți originalul prin poștă sau să îl depuneți aici la ghișeu." },
+            { "language": "sq", "text": "Saktësisht. Ju lutem dërgojeni origjinalin me postë ose dorëzojeni këtu në sportel." }
+          ],
+          "function": "state-correct-action",
+          "toneNote": "Gives two allowed channels.",
+          "expectedLearnerAction": "Ask whether the original is returned."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Bekomme ich das Original nach der Prüfung zurück, oder bleibt es bei Ihrer Akte?",
+          "translations": [
+            { "language": "en", "text": "I understand. Will I get the original back after the review, or will it stay in your file?" },
+            { "language": "fa", "text": "متوجه شدم. آیا بعد از بررسی اصل مدرک را پس می‌گیرم، یا در پرونده شما می‌ماند؟" },
+            { "language": "ar", "text": "فهمت. هل سأستعيد الأصل بعد المراجعة، أم سيبقى في ملفكم؟" },
+            { "language": "tr", "text": "Anladım. Kontrolden sonra asıl belgeyi geri alacak mıyım, yoksa dosyanızda mı kalacak?" },
+            { "language": "ru", "text": "Понимаю. Получу ли я оригинал обратно после проверки или он останется в вашем деле?" },
+            { "language": "ckb", "text": "تێگەیشتم. ئایا دوای پشکنین ڕەسەنەکە وەردەگرمەوە، یان لە پەڕگەی ئێوەدا دەمێنێتەوە؟" },
+            { "language": "kmr", "text": "Ez têgihîştim. Ma ez piştî kontrolê orîjînalê vedigirim, an ew di dosyaya we de dimîne?" },
+            { "language": "pl", "text": "Rozumiem. Czy po sprawdzeniu dostanę oryginał z powrotem, czy zostanie on w państwa aktach?" },
+            { "language": "ro", "text": "Înțeleg. Primesc originalul înapoi după verificare sau rămâne la dosarul dumneavoastră?" },
+            { "language": "sq", "text": "E kuptoj. A do ta marr origjinalin mbrapsht pas kontrollit, apo mbetet në dosjen tuaj?" }
+          ],
+          "function": "ask-return-original",
+          "toneNote": "Relevant follow-up about document handling.",
+          "expectedLearnerAction": "Ask what happens to the original."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Sie bekommen es zurück. Wir machen hier eine beglaubigte Kopie und schicken Ihnen das Original danach wieder zu.",
+          "translations": [
+            { "language": "en", "text": "You will get it back. We make a certified copy here and then send the original back to you." },
+            { "language": "fa", "text": "آن را پس می‌گیرید. ما اینجا یک کپی برابر اصل تهیه می‌کنیم و بعد اصل مدرک را دوباره برایتان می‌فرستیم." },
+            { "language": "ar", "text": "ستستعيده. سنعمل هنا نسخة مصدقة ثم نرسل الأصل إليك مرة أخرى." },
+            { "language": "tr", "text": "Onu geri alacaksınız. Burada onaylı bir kopya çıkarıyoruz ve ardından asıl belgeyi size geri gönderiyoruz." },
+            { "language": "ru", "text": "Вы получите его обратно. Мы сделаем здесь заверенную копию и затем снова отправим вам оригинал." },
+            { "language": "ckb", "text": "ئەوە وەردەگرنەوە. ئێمە لێرە کۆپییەکی پشتڕاستکراو دەکەین و دواتر ڕەسەنەکە دووبارە بۆتان دەنێرینەوە." },
+            { "language": "kmr", "text": "Hûn wê vedigirin. Em li vir kopiyeke pejirandî çêdikin û paşê orîjînalê dîsa ji we re dişînin." },
+            { "language": "pl", "text": "Dostanie go pan z powrotem. Zrobimy tutaj poświadczoną kopię, a potem odeślemy panu oryginał." },
+            { "language": "ro", "text": "Îl primiți înapoi. Facem aici o copie certificată și apoi vă trimitem originalul înapoi." },
+            { "language": "sq", "text": "Do ta merrni mbrapsht. Ne bëjmë këtu një kopje të vërtetuar dhe pastaj jua dërgojmë përsëri origjinalin." }
+          ],
+          "function": "explain-return",
+          "toneNote": "Clarifies document return.",
+          "expectedLearnerAction": "Summarize correct instruction."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke, jetzt ist es klar. Ich schicke das Original per Post und warte, bis Sie mir das Original nach der Beglaubigung zurücksenden.",
+          "translations": [
+            { "language": "en", "text": "Thank you, now it is clear. I will send the original by post and wait until you send it back to me after certification." },
+            { "language": "fa", "text": "ممنون، حالا روشن شد. اصل مدرک را با پست می‌فرستم و منتظر می‌مانم تا بعد از برابر اصل کردن، آن را برایم برگردانید." },
+            { "language": "ar", "text": "شكرًا، الآن الأمر واضح. سأرسل الأصل بالبريد وسأنتظر حتى تعيدوه إليّ بعد التصديق." },
+            { "language": "tr", "text": "Teşekkür ederim, şimdi netleşti. Asıl belgeyi posta ile göndereceğim ve onaydan sonra bana geri göndermenizi bekleyeceğim." },
+            { "language": "ru", "text": "Спасибо, теперь ясно. Я отправлю оригинал по почте и буду ждать, пока вы вернете его мне после заверения." },
+            { "language": "ckb", "text": "سوپاس، ئێستا ڕوون بوو. ڕەسەنەکە بە پۆست دەنێرم و چاوەڕێ دەکەم تا دوای پشتڕاستکردنەوە ڕەسەنەکە بۆم بنێرنەوە." },
+            { "language": "kmr", "text": "Spas, niha zelal e. Ez orîjînal bi posteyê dişînim û li bendê dimînim heta hûn piştî pejirandinê orîjînalê ji min re vegerînin." },
+            { "language": "pl", "text": "Dziękuję, teraz jest jasne. Wyślę oryginał pocztą i poczekam, aż odeślą mi go państwo po poświadczeniu." },
+            { "language": "ro", "text": "Mulțumesc, acum este clar. Trimit originalul prin poștă și aștept până mi-l trimiteți înapoi după certificare." },
+            { "language": "sq", "text": "Faleminderit, tani është e qartë. Do ta dërgoj origjinalin me postë dhe do të pres derisa të ma ktheni pas vërtetimit." }
+          ],
+          "function": "summarize-correct-rule",
+          "toneNote": "Complete misunderstanding repair.",
+          "expectedLearnerAction": "Confirm exact corrected understanding."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, ich glaube, es gab ein Missverständnis. Am Telefon habe ich verstanden, dass ein Scan reicht. In Ihrem Schreiben steht aber, dass das Original nötig ist.",
+              "translations": [
+                { "language": "en", "text": "Yes, I think there was a misunderstanding. On the phone, I understood that a scan is enough. But your letter says that the original is necessary." },
+                { "language": "fa", "text": "بله، فکر می‌کنم سوءتفاهمی پیش آمده است. تلفنی فهمیدم که اسکن کافی است. اما در نامه شما نوشته شده که اصل مدرک لازم است." },
+                { "language": "ar", "text": "نعم، أعتقد أنه حدث سوء فهم. في الهاتف فهمت أن النسخة الممسوحة تكفي. لكن في رسالتكم مكتوب أن الأصل ضروري." },
+                { "language": "tr", "text": "Evet, sanırım bir yanlış anlaşılma oldu. Telefonda taramanın yeterli olduğunu anladım. Ama yazınızda asıl belgenin gerekli olduğu yazıyor." },
+                { "language": "ru", "text": "Да, думаю, произошло недоразумение. По телефону я понял, что скана достаточно. Но в вашем письме написано, что нужен оригинал." },
+                { "language": "ckb", "text": "بەڵێ، پێم وایە تێگەیشتنێکی هەڵە ڕوویداوە. لە تەلەفۆندا تێگەیشتم کە سکەن بەسە. بەڵام لە نامەکەتاندا نووسراوە کە ڕەسەنەکە پێویستە." },
+                { "language": "kmr", "text": "Erê, ez difikirim têgihiştineke şaş çêbûye. Di telefonê de min fêm kir ku sken bes e. Lê di nameya we de hatiye nivîsîn ku orîjînal pêwîst e." },
+                { "language": "pl", "text": "Tak, myślę, że doszło do nieporozumienia. Przez telefon zrozumiałem, że wystarczy skan. Ale w państwa piśmie jest napisane, że potrzebny jest oryginał." },
+                { "language": "ro", "text": "Da, cred că a fost o neînțelegere. La telefon am înțeles că este suficientă o copie digitală. Dar în scrisoarea dumneavoastră scrie că este necesar originalul." },
+                { "language": "sq", "text": "Po, mendoj se ka pasur një keqkuptim. Në telefon kuptova se mjafton skanimi. Por në shkresën tuaj thuhet se nevojitet origjinali." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort repariert das Missverständnis höflich und vergleicht zwei Informationen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer repairs the misunderstanding politely and compares two pieces of information." },
+                { "language": "fa", "text": "خوب است: پاسخ سوءتفاهم را محترمانه اصلاح می‌کند و دو اطلاعات را مقایسه می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يصلح سوء الفهم بأدب ويقارن بين معلومتين." },
+                { "language": "tr", "text": "İyi: Cevap yanlış anlaşılmayı nazikçe düzeltiyor ve iki bilgiyi karşılaştırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ вежливо исправляет недоразумение и сравнивает две информации." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڕێزەوە تێگەیشتنە هەڵەکە ڕاست دەکاتەوە و دوو زانیاری بەراورد دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv têgihiştina şaş bi rêzdarî rast dike û du agahiyan berhev dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź uprzejmie naprawia nieporozumienie i porównuje dwie informacje." },
+                { "language": "ro", "text": "Bine: răspunsul repară politicos neînțelegerea și compară două informații." },
+                { "language": "sq", "text": "Mirë: përgjigjja e sqaron me mirësjellje keqkuptimin dhe krahason dy informacione." }
+              ],
+              "explanationKey": "repair-misunderstanding"
+            },
+            {
+              "id": "too-vague",
+              "text": "Ich habe das anders verstanden.",
+              "translations": [
+                { "language": "en", "text": "I understood that differently." },
+                { "language": "fa", "text": "من این را طور دیگری فهمیده بودم." },
+                { "language": "ar", "text": "فهمت ذلك بطريقة مختلفة." },
+                { "language": "tr", "text": "Ben bunu farklı anlamıştım." },
+                { "language": "ru", "text": "Я понял это иначе." },
+                { "language": "ckb", "text": "من ئەمە بە شێوەیەکی تر تێگەیشتبووم." },
+                { "language": "kmr", "text": "Min ev cuda fêm kiribû." },
+                { "language": "pl", "text": "Zrozumiałem to inaczej." },
+                { "language": "ro", "text": "Am înțeles asta altfel." },
+                { "language": "sq", "text": "Unë e kisha kuptuar ndryshe." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist ein guter Anfang, aber zu knapp: Es fehlt, was du verstanden hast und was im Schreiben steht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a good start, but too brief: it does not say what you understood and what the letter says." },
+                { "language": "fa", "text": "شروع خوبی است، اما خیلی کوتاه است: نمی‌گوید تو چه فهمیده‌ای و در نامه چه نوشته شده است." },
+                { "language": "ar", "text": "هذه بداية جيدة، لكنها قصيرة جدًا: لا تقول ماذا فهمت وما المكتوب في الرسالة." },
+                { "language": "tr", "text": "Bu iyi bir başlangıç, ama çok kısa: ne anladığını ve yazıda ne yazdığını söylemiyor." },
+                { "language": "ru", "text": "Это хорошее начало, но слишком кратко: не сказано, что ты понял и что написано в письме." },
+                { "language": "ckb", "text": "ئەمە دەستپێکێکی باشە، بەڵام زۆر کورته: ناڵێت تۆ چی تێگەیشتوویت و لە نامەکەدا چی نووسراوە." },
+                { "language": "kmr", "text": "Ev destpêkeke baş e, lê pir kurt e: nabêje te çi fêm kiriye û di nameyê de çi hatiye nivîsîn." },
+                { "language": "pl", "text": "To dobry początek, ale za krótki: nie mówi, co zrozumiałeś i co jest w piśmie." },
+                { "language": "ro", "text": "Este un început bun, dar prea scurt: nu spune ce ai înțeles și ce scrie în scrisoare." },
+                { "language": "sq", "text": "Është një fillim i mirë, por shumë i shkurtër: nuk thotë çfarë ke kuptuar dhe çfarë shkruhet në letër." }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke für die Erklärung. Heißt das, ich soll das Original per Post schicken und keine Kopie online hochladen?",
+              "translations": [
+                { "language": "en", "text": "Thank you for the explanation. Does that mean I should send the original by post and not upload a copy online?" },
+                { "language": "fa", "text": "ممنون از توضیح. یعنی باید اصل مدرک را با پست بفرستم و کپی را آنلاین بارگذاری نکنم؟" },
+                { "language": "ar", "text": "شكرًا على التوضيح. هل يعني ذلك أنني يجب أن أرسل الأصل بالبريد ولا أرفع نسخة عبر الإنترنت؟" },
+                { "language": "tr", "text": "Açıklama için teşekkür ederim. Bu, asıl belgeyi posta ile göndermem ve çevrimiçi kopya yüklememem gerektiği anlamına mı geliyor?" },
+                { "language": "ru", "text": "Спасибо за объяснение. Это значит, что я должен отправить оригинал по почте и не загружать копию онлайн?" },
+                { "language": "ckb", "text": "سوپاس بۆ ڕوونکردنەوەکە. ئەمە واتە پێویستە ڕەسەنەکە بە پۆست بنێرم و کۆپی ئۆنلاین بار نەکەم؟" },
+                { "language": "kmr", "text": "Spas ji bo ravekirinê. Ev tê wê wateyê ku divê ez orîjînal bi posteyê bişînim û kopî serhêl bar nekim?" },
+                { "language": "pl", "text": "Dziękuję za wyjaśnienie. Czy to znaczy, że mam wysłać oryginał pocztą i nie przesyłać kopii online?" },
+                { "language": "ro", "text": "Mulțumesc pentru explicație. Asta înseamnă că trebuie să trimit originalul prin poștă și să nu încarc o copie online?" },
+                { "language": "sq", "text": "Faleminderit për shpjegimin. A do të thotë kjo se duhet ta dërgoj origjinalin me postë dhe të mos ngarkoj kopje online?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage prüft die genaue Bedeutung und den richtigen Abgabeweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The question checks the exact meaning and the correct submission channel." },
+                { "language": "fa", "text": "خوب است: پرسش معنی دقیق و راه درست تحویل را بررسی می‌کند." },
+                { "language": "ar", "text": "جيد: السؤال يتحقق من المعنى الدقيق وطريقة التسليم الصحيحة." },
+                { "language": "tr", "text": "İyi: Soru tam anlamı ve doğru teslim yolunu kontrol ediyor." },
+                { "language": "ru", "text": "Хорошо: вопрос проверяет точное значение и правильный способ подачи." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە واتای ورد و ڕێگای دروستی پێشکەشکردن دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Pirs wateya rast û rêya rast a radestkirinê kontrol dike." },
+                { "language": "pl", "text": "Dobrze: pytanie sprawdza dokładne znaczenie i właściwy sposób złożenia." },
+                { "language": "ro", "text": "Bine: întrebarea verifică sensul exact și calea corectă de depunere." },
+                { "language": "sq", "text": "Mirë: pyetja kontrollon kuptimin e saktë dhe mënyrën e duhur të dorëzimit." }
+              ],
+              "explanationKey": "confirm-exact-meaning"
+            },
+            {
+              "id": "missing-channel",
+              "text": "Also soll ich das Original schicken?",
+              "translations": [
+                { "language": "en", "text": "So should I send the original?" },
+                { "language": "fa", "text": "پس باید اصل مدرک را بفرستم؟" },
+                { "language": "ar", "text": "إذن هل يجب أن أرسل الأصل؟" },
+                { "language": "tr", "text": "Yani asıl belgeyi göndermeli miyim?" },
+                { "language": "ru", "text": "То есть мне нужно отправить оригинал?" },
+                { "language": "ckb", "text": "واتە پێویستە ڕەسەنەکە بنێرم؟" },
+                { "language": "kmr", "text": "Yanî divê ez orîjînalê bişînim?" },
+                { "language": "pl", "text": "Czyli mam wysłać oryginał?" },
+                { "language": "ro", "text": "Deci trebuie să trimit originalul?" },
+                { "language": "sq", "text": "Pra duhet ta dërgoj origjinalin?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage ist relevant, aber unvollständig: Es fehlt, ob per Post oder online und ob eine Kopie reicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question is relevant, but incomplete: it does not ask whether by post or online and whether a copy is enough." },
+                { "language": "fa", "text": "پرسش مرتبط است، اما کامل نیست: نمی‌پرسد با پست یا آنلاین، و آیا کپی کافی است یا نه." },
+                { "language": "ar", "text": "السؤال مناسب، لكنه غير كامل: لا يسأل هل يكون ذلك بالبريد أم عبر الإنترنت وهل تكفي النسخة." },
+                { "language": "tr", "text": "Soru ilgili, ama eksik: posta ile mi çevrimiçi mi ve kopyanın yeterli olup olmadığı sorulmuyor." },
+                { "language": "ru", "text": "Вопрос уместен, но неполный: не спрашивает, по почте или онлайн, и достаточно ли копии." },
+                { "language": "ckb", "text": "پرسیارەکە پەیوەندیدارە، بەڵام تەواو نییە: ناپرسێت بە پۆست یان ئۆنلاین و ئایا کۆپی بەسە یان نا." },
+                { "language": "kmr", "text": "Pirs têkildar e, lê ne temam e: napirse bi posteyê an serhêl û gelo kopî bes e an na." },
+                { "language": "pl", "text": "Pytanie jest trafne, ale niepełne: nie pyta, czy pocztą czy online i czy kopia wystarczy." },
+                { "language": "ro", "text": "Întrebarea este relevantă, dar incompletă: nu întreabă dacă prin poștă sau online și dacă o copie este suficientă." },
+                { "language": "sq", "text": "Pyetja është e rëndësishme, por jo e plotë: nuk pyet nëse me postë apo online dhe nëse mjafton kopja." }
+              ],
+              "explanationKey": "missing-channel"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke, jetzt ist es klar. Ich schicke das Original per Post und warte, bis Sie mir das Original nach der Beglaubigung zurücksenden.",
+              "translations": [
+                { "language": "en", "text": "Thank you, now it is clear. I will send the original by post and wait until you send it back to me after certification." },
+                { "language": "fa", "text": "ممنون، حالا روشن شد. اصل مدرک را با پست می‌فرستم و منتظر می‌مانم تا بعد از برابر اصل کردن، آن را برایم برگردانید." },
+                { "language": "ar", "text": "شكرًا، الآن الأمر واضح. سأرسل الأصل بالبريد وسأنتظر حتى تعيدوه إليّ بعد التصديق." },
+                { "language": "tr", "text": "Teşekkür ederim, şimdi netleşti. Asıl belgeyi posta ile göndereceğim ve onaydan sonra bana geri göndermenizi bekleyeceğim." },
+                { "language": "ru", "text": "Спасибо, теперь ясно. Я отправлю оригинал по почте и буду ждать, пока вы вернете его мне после заверения." },
+                { "language": "ckb", "text": "سوپاس، ئێستا ڕوون بوو. ڕەسەنەکە بە پۆست دەنێرم و چاوەڕێ دەکەم تا دوای پشتڕاستکردنەوە ڕەسەنەکە بۆم بنێرنەوە." },
+                { "language": "kmr", "text": "Spas, niha zelal e. Ez orîjînal bi posteyê dişînim û li bendê dimînim heta hûn piştî pejirandinê orîjînalê ji min re vegerînin." },
+                { "language": "pl", "text": "Dziękuję, teraz jest jasne. Wyślę oryginał pocztą i poczekam, aż odeślą mi go państwo po poświadczeniu." },
+                { "language": "ro", "text": "Mulțumesc, acum este clar. Trimit originalul prin poștă și aștept până mi-l trimiteți înapoi după certificare." },
+                { "language": "sq", "text": "Faleminderit, tani është e qartë. Do ta dërgoj origjinalin me postë dhe do të pres derisa të ma ktheni pas vërtetimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bestätigt die korrigierte Anweisung vollständig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer fully confirms the corrected instruction." },
+                { "language": "fa", "text": "خوب است: پاسخ دستور اصلاح‌شده را کامل تأیید می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يؤكد التعليمات المصححة بالكامل." },
+                { "language": "tr", "text": "İyi: Cevap düzeltilmiş talimatı tam olarak onaylıyor." },
+                { "language": "ru", "text": "Хорошо: ответ полностью подтверждает исправленную инструкцию." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕێنمایی ڕاستکراوەکە بە تەواوی پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv rêwerza rastkirî bi temamî piştrast dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź w pełni potwierdza poprawioną instrukcję." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă complet instrucțiunea corectată." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon plotësisht udhëzimin e korrigjuar." }
+              ],
+              "explanationKey": "complete-corrected-instruction"
+            },
+            {
+              "id": "too-short",
+              "text": "Okay, dann schicke ich es.",
+              "translations": [
+                { "language": "en", "text": "Okay, then I will send it." },
+                { "language": "fa", "text": "باشه، پس آن را می‌فرستم." },
+                { "language": "ar", "text": "حسنًا، إذن سأرسله." },
+                { "language": "tr", "text": "Tamam, o zaman gönderirim." },
+                { "language": "ru", "text": "Хорошо, тогда я это отправлю." },
+                { "language": "ckb", "text": "باشە، ئەوا دەنێرم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez wê dişînim." },
+                { "language": "pl", "text": "Dobrze, w takim razie to wyślę." },
+                { "language": "ro", "text": "Bine, atunci îl trimit." },
+                { "language": "sq", "text": "Në rregull, atëherë do ta dërgoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu ungenau: Original, Postweg und Rücksendung fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too imprecise: original, postal channel, and return are missing." },
+                { "language": "fa", "text": "محترمانه است، اما خیلی نامشخص است: اصل مدرک، راه پستی و برگرداندن مدرک کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير دقيق كفاية: الأصل وطريقة البريد والإرجاع ناقصة." },
+                { "language": "tr", "text": "Bu nazik, ama çok belirsiz: asıl belge, posta yolu ve geri gönderme eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком неточно: не хватает оригинала, почтового пути и возврата." },
+                { "language": "ckb", "text": "ئەمە بەڕێزە، بەڵام زۆر ناوردە: ڕەسەنەکە، ڕێگای پۆست و ناردنەوە کەمە." },
+                { "language": "kmr", "text": "Ev rêzdar e, lê pir nezelal e: orîjînal, rêya posteyê û vegerandin kêm in." },
+                { "language": "pl", "text": "To jest grzeczne, ale zbyt nieprecyzyjne: brakuje oryginału, drogi pocztowej i odesłania." },
+                { "language": "ro", "text": "Este politicos, dar prea neclar: lipsesc originalul, calea poștală și returnarea." },
+                { "language": "sq", "text": "Është e sjellshme, por shumë e pasaktë: mungojnë origjinali, dërgimi me postë dhe kthimi." }
+              ],
+              "explanationKey": "too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Bei einem amtlichen Missverständnis hilft eine ruhige Reparatur: Was hast du verstanden, was steht im Schreiben, und welche genaue Handlung ist jetzt richtig?",
+          "translations": [
+            { "language": "en", "text": "With an official misunderstanding, calm repair helps: what did you understand, what does the letter say, and which exact action is correct now?" },
+            { "language": "fa", "text": "در یک سوءتفاهم اداری، اصلاح آرام کمک می‌کند: چه چیزی فهمیده‌ای، در نامه چه نوشته شده و حالا کدام اقدام دقیق درست است؟" },
+            { "language": "ar", "text": "في سوء الفهم الإداري يساعد التصحيح الهادئ: ماذا فهمت، وماذا تقول الرسالة، وما الإجراء الدقيق الصحيح الآن؟" },
+            { "language": "tr", "text": "Resmi bir yanlış anlaşılmada sakin düzeltme yardımcı olur: ne anladın, yazıda ne yazıyor ve şimdi hangi kesin işlem doğru?" },
+            { "language": "ru", "text": "При административном недоразумении помогает спокойное исправление: что ты понял, что написано в письме и какое точное действие теперь правильное?" },
+            { "language": "ckb", "text": "لە تێگەیشتنێکی هەڵەی فەرمیدا، ڕاستکردنەوەی ئارام یارمەتیدەرە: چی تێگەیشتوویت، لە نامەکەدا چی نووسراوە و ئێستا کام کردار بە وردی دروستە؟" },
+            { "language": "kmr", "text": "Di têgihiştineke şaş a fermî de rastkirina aram alîkar e: te çi fêm kiriye, di nameyê de çi hatiye nivîsîn û niha kîjan kiryar bi rastî rast e?" },
+            { "language": "pl", "text": "Przy urzędowym nieporozumieniu pomaga spokojne sprostowanie: co zrozumiałeś, co jest w piśmie i jakie dokładne działanie jest teraz właściwe?" },
+            { "language": "ro", "text": "La o neînțelegere administrativă ajută o clarificare calmă: ce ai înțeles, ce scrie în scrisoare și ce acțiune exactă este corectă acum?" },
+            { "language": "sq", "text": "Në një keqkuptim zyrtar ndihmon sqarimi i qetë: çfarë ke kuptuar, çfarë thuhet në shkresë dhe cili veprim i saktë është tani i drejtë?" }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

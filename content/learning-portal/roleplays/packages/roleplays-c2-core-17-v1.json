@@ -1,0 +1,750 @@
+{
+  "packageId": "roleplays-c2-core-17-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 17 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 17",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-ueber-wissenschaftsskepsis-sachlich-sprechen",
+      "linkedDialogueSlug": null,
+      "title": "Über Wissenschaftsskepsis sachlich sprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Speaking objectively about skepticism toward science" },
+        { "language": "fa", "text": "صحبت عینی درباره بدبینی نسبت به علم" },
+        { "language": "ar", "text": "الحديث بموضوعية عن التشكيك في العلم" },
+        { "language": "tr", "text": "Bilim şüpheciliği hakkında nesnel konuşmak" },
+        { "language": "ru", "text": "Предметно говорить о скепсисе к науке" },
+        { "language": "ckb", "text": "قسەکردنی بابەتی لەسەر گومانی زانستی" },
+        { "language": "kmr", "text": "Bi awayekî rastîn li ser gumanbarîya zanistê axaftin" },
+        { "language": "pl", "text": "Rzeczowa rozmowa o sceptycyzmie wobec nauki" },
+        { "language": "ro", "text": "A vorbi obiectiv despre scepticismul față de știință" },
+        { "language": "sq", "text": "Të flasësh në mënyrë objektive për skepticizmin ndaj shkencës" }
+      ],
+      "description": "Nach einem öffentlichen Vortrag über Forschung und Alltag entsteht eine Diskussion: Einige Teilnehmende sagen, wissenschaftliche Aussagen änderten sich ständig und seien deshalb kaum vertrauenswürdig. Sie sollen skeptische Einwände ernst nehmen, ohne Wissenschaft pauschal zu verteidigen oder Menschen lächerlich zu machen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a public lecture about research and everyday life, a discussion begins: some participants say scientific statements change constantly and are therefore hardly trustworthy. You should take skeptical objections seriously without defending science across the board or making people look ridiculous." },
+        { "language": "fa", "text": "پس از یک سخنرانی عمومی درباره پژوهش و زندگی روزمره، بحثی شکل می‌گیرد: چند شرکت‌کننده می‌گویند گزاره‌های علمی مدام تغییر می‌کنند و بنابراین چندان قابل اعتماد نیستند. شما باید اعتراض‌های شکاکانه را جدی بگیرید، بدون آنکه علم را یکسره دفاع کنید یا افراد را مضحک نشان دهید." },
+        { "language": "ar", "text": "بعد محاضرة عامة عن البحث والحياة اليومية يبدأ نقاش: يقول بعض المشاركين إن التصريحات العلمية تتغير باستمرار ولذلك يصعب الوثوق بها. عليكم أخذ الاعتراضات المتشككة بجدية من دون الدفاع عن العلم بشكل شامل أو السخرية من الناس." },
+        { "language": "tr", "text": "Araştırma ve gündelik yaşam üzerine halka açık bir konuşmadan sonra bir tartışma başlar: bazı katılımcılar bilimsel ifadelerin sürekli değiştiğini ve bu yüzden pek güvenilir olmadığını söyler. Bilimi toptan savunmadan ya da insanları gülünç göstermeden şüpheci itirazları ciddiye almalısınız." },
+        { "language": "ru", "text": "После публичной лекции о науке и повседневной жизни начинается дискуссия: некоторые участники говорят, что научные утверждения постоянно меняются и поэтому им трудно доверять. Вам нужно серьезно отнестись к скептическим возражениям, не защищая науку огульно и не выставляя людей смешными." },
+        { "language": "ckb", "text": "دوای وانەیەکی گشتی دەربارەی توێژینەوە و ژیانی ڕۆژانە، گفتوگۆیەک دەست پێدەکات: هەندێک بەشداربوو دەڵێن وتە زانستییەکان بەردەوام دەگۆڕێن و بۆیە زۆر جێی متمانە نین. دەبێت ڕەخنە گومانییەکان بە جدی وەربگریت، بەبێ ئەوەی زانست بە گشتی بپارێزیت یان خەڵک بە گاڵتە پێشاندەیت." },
+        { "language": "kmr", "text": "Piştî axaftinekê ya giştî li ser lêkolîn û jiyana rojane, gotûbêjek dest pê dike: hin beşdar dibêjin gotinên zanistî her tim diguherin û ji ber vê yekê zêde ne bawerbar in. Divê hûn nerazîbûnên gumanbar bi ciddî bigirin, bêyî ku zanistê bi giştî biparêzin an mirovan pêkenok bikin." },
+        { "language": "pl", "text": "Po publicznym wykładzie o badaniach i codziennym życiu zaczyna się dyskusja: część uczestników mówi, że twierdzenia naukowe ciągle się zmieniają i dlatego trudno im ufać. Trzeba potraktować sceptyczne zastrzeżenia poważnie, nie broniąc nauki hurtem i nie ośmieszając ludzi." },
+        { "language": "ro", "text": "După o prelegere publică despre cercetare și viața de zi cu zi începe o discuție: unii participanți spun că afirmațiile științifice se schimbă mereu și de aceea sunt greu de crezut. Trebuie să luați în serios obiecțiile sceptice, fără să apărați știința în bloc sau să ridiculizați oamenii." },
+        { "language": "sq", "text": "Pas një ligjërate publike për kërkimin dhe jetën e përditshme nis një diskutim: disa pjesëmarrës thonë se pohimet shkencore ndryshojnë vazhdimisht dhe prandaj nuk janë shumë të besueshme. Duhet t'i merrni seriozisht kundërshtimet skeptike, pa e mbrojtur shkencën në mënyrë të përgjithshme dhe pa i bërë njerëzit qesharakë." }
+      ],
+      "learnerGoal": "Wissenschaftsskepsis differenziert besprechen: berechtigte Nachfragen anerkennen, Misstrauen nicht verstärken, Evidenzqualität erklären, Unsicherheit sauber formulieren und respektvoll korrigieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss skepticism toward science in a nuanced way: acknowledge legitimate questions, avoid reinforcing distrust, explain quality of evidence, phrase uncertainty clearly, and correct respectfully." },
+        { "language": "fa", "text": "بدبینی نسبت به علم را با ظرافت بررسی کنید: پرسش‌های موجه را به رسمیت بشناسید، بی‌اعتمادی را تقویت نکنید، کیفیت شواهد را توضیح دهید، عدم قطعیت را دقیق بیان کنید و محترمانه اصلاح کنید." },
+        { "language": "ar", "text": "ناقشوا التشكيك في العلم بصورة متمايزة: اعترفوا بالأسئلة المشروعة، لا تعززوا انعدام الثقة، اشرحوا جودة الأدلة، صيغوا عدم اليقين بدقة، وصححوا باحترام." },
+        { "language": "tr", "text": "Bilim şüpheciliğini nüanslı tartışın: haklı soruları kabul edin, güvensizliği güçlendirmeyin, kanıt kalitesini açıklayın, belirsizliği temiz ifade edin ve saygıyla düzeltin." },
+        { "language": "ru", "text": "Обсуждать скепсис к науке дифференцированно: признавать обоснованные вопросы, не усиливать недоверие, объяснять качество доказательств, точно формулировать неопределенность и корректировать уважительно." },
+        { "language": "ckb", "text": "گومانی زانستی بە وردی گفتوگۆ بکە: پرسیارە ڕەواکان بناسە، بێمتمانەیی بەهێز مەکە، کوالیتی بەڵگەکان ڕوون بکەوە، نادڵنیایی بە پاکی دەرببڕە و بە ڕێزەوە ڕاست بکەوە." },
+        { "language": "kmr", "text": "Gumanbarîya li hember zanistê bi hûrgilî gotûbêj bikin: pirsên rewa qebûl bikin, bêbaweriyê xurt nekin, kalîteya delîlan şirove bikin, nediyariyê zelal bibêjin û bi rêz rast bikin." },
+        { "language": "pl", "text": "Rozmawiać o sceptycyzmie wobec nauki w sposób zniuansowany: uznać uzasadnione pytania, nie wzmacniać nieufności, wyjaśnić jakość dowodów, jasno formułować niepewność i korygować z szacunkiem." },
+        { "language": "ro", "text": "Discutați nuanțat scepticismul față de știință: recunoașteți întrebările legitime, nu întăriți neîncrederea, explicați calitatea dovezilor, formulați clar incertitudinea și corectați cu respect." },
+        { "language": "sq", "text": "Diskutoni me nuanca skepticizmin ndaj shkencës: pranoni pyetjet e arsyeshme, mos e forconi mosbesimin, shpjegoni cilësinë e provave, formuloni qartë pasigurinë dhe korrigjoni me respekt." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-discussion",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "give-opinion",
+      "interactionMode": "group-work",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 17,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsteilnahme",
+          "translations": [
+            { "language": "en", "text": "Discussion participant" },
+            { "language": "fa", "text": "شرکت‌کننده در بحث" },
+            { "language": "ar", "text": "مشارك في النقاش" },
+            { "language": "tr", "text": "Tartışma katılımcısı" },
+            { "language": "ru", "text": "Участник дискуссии" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê" },
+            { "language": "pl", "text": "Uczestnik dyskusji" },
+            { "language": "ro", "text": "Participant la discuție" },
+            { "language": "sq", "text": "Pjesëmarrës në diskutim" }
+          ]
+        },
+        {
+          "roleKey": "moderation",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مجری" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderator" }
+          ]
+        },
+        {
+          "roleKey": "skeptical-participant",
+          "displayName": "Skeptischer Teilnehmer",
+          "translations": [
+            { "language": "en", "text": "Skeptical participant" },
+            { "language": "fa", "text": "شرکت‌کننده شکاک" },
+            { "language": "ar", "text": "مشارك متشكك" },
+            { "language": "tr", "text": "Şüpheci katılımcı" },
+            { "language": "ru", "text": "Скептически настроенный участник" },
+            { "language": "ckb", "text": "بەشداربووی گومانکار" },
+            { "language": "kmr", "text": "Beşdarê gumanbar" },
+            { "language": "pl", "text": "Sceptyczny uczestnik" },
+            { "language": "ro", "text": "Participant sceptic" },
+            { "language": "sq", "text": "Pjesëmarrës skeptik" }
+          ]
+        },
+        {
+          "roleKey": "science-educator",
+          "displayName": "Wissenschaftsvermittlerin",
+          "translations": [
+            { "language": "en", "text": "Science communicator" },
+            { "language": "fa", "text": "مروج علم" },
+            { "language": "ar", "text": "مبسطة علمية" },
+            { "language": "tr", "text": "Bilim iletişimcisi" },
+            { "language": "ru", "text": "Популяризатор науки" },
+            { "language": "ckb", "text": "گەیەنەری زانست" },
+            { "language": "kmr", "text": "Ragihandera zanistê" },
+            { "language": "pl", "text": "Popularyzatorka nauki" },
+            { "language": "ro", "text": "Comunicatoare științifică" },
+            { "language": "sq", "text": "Komunikuese e shkencës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderation",
+          "baseText": "Nach dem Vortrag kam die Frage auf, warum man wissenschaftlichen Empfehlungen vertrauen soll, wenn sie sich ändern. Bitte reagieren Sie sachlich und ohne Spott.",
+          "translations": [
+            { "language": "en", "text": "After the lecture, the question came up why people should trust scientific recommendations if they change. Please respond objectively and without ridicule." },
+            { "language": "fa", "text": "پس از سخنرانی این پرسش مطرح شد که چرا باید به توصیه‌های علمی اعتماد کرد وقتی تغییر می‌کنند. لطفاً عینی و بدون تمسخر پاسخ دهید." },
+            { "language": "ar", "text": "بعد المحاضرة طُرح سؤال: لماذا ينبغي الثقة بالتوصيات العلمية إذا كانت تتغير؟ يرجى الرد بموضوعية ومن دون سخرية." },
+            { "language": "tr", "text": "Konuşmadan sonra şu soru ortaya çıktı: Bilimsel öneriler değişiyorsa onlara neden güvenelim? Lütfen nesnel ve alay etmeden yanıt verin." },
+            { "language": "ru", "text": "После лекции возник вопрос: почему следует доверять научным рекомендациям, если они меняются? Пожалуйста, ответьте предметно и без насмешки." },
+            { "language": "ckb", "text": "دوای وانەکە ئەم پرسیارە هاتە ئاراوە: بۆچی دەبێت متمانە بە ڕاسپاردە زانستییەکان بکەین کاتێک دەگۆڕێن؟ تکایە بە بابەتی و بەبێ گاڵتە وەڵام بدەوە." },
+            { "language": "kmr", "text": "Piştî axaftinê ev pirs derket: çima mirov divê baweriyê bi pêşniyarên zanistî bike heke ew diguherin? Ji kerema xwe bi rastîn û bê pêkenok bersiv bidin." },
+            { "language": "pl", "text": "Po wykładzie pojawiło się pytanie, dlaczego ufać zaleceniom naukowym, skoro się zmieniają. Proszę odpowiedzieć rzeczowo i bez kpin." },
+            { "language": "ro", "text": "După prelegere a apărut întrebarea de ce ar trebui să avem încredere în recomandările științifice dacă ele se schimbă. Vă rog să răspundeți obiectiv și fără ironie." },
+            { "language": "sq", "text": "Pas ligjëratës u ngrit pyetja pse duhet t'u besojmë rekomandimeve shkencore nëse ato ndryshojnë. Ju lutem përgjigjuni në mënyrë objektive dhe pa tallje." }
+          ],
+          "function": "frame-issue",
+          "toneNote": "Neutral and respectful."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde zuerst zwischen Skepsis und pauschalem Misstrauen unterscheiden. Skepsis fragt nach Methode, Daten und Grenzen; pauschales Misstrauen erklärt schon vorher, dass alles unglaubwürdig ist.",
+          "translations": [
+            { "language": "en", "text": "I would first distinguish between skepticism and blanket distrust. Skepticism asks about methods, data, and limits; blanket distrust decides in advance that everything is not credible." },
+            { "language": "fa", "text": "من اول میان شکاکیت و بی‌اعتمادی کلی فرق می‌گذارم. شکاکیت درباره روش، داده‌ها و محدودیت‌ها سؤال می‌کند؛ بی‌اعتمادی کلی از قبل اعلام می‌کند که همه چیز نامعتبر است." },
+            { "language": "ar", "text": "سأميز أولاً بين الشك النقدي وانعدام الثقة الشامل. الشك يسأل عن المنهج والبيانات والحدود؛ أما انعدام الثقة الشامل فيقرر مسبقاً أن كل شيء غير موثوق." },
+            { "language": "tr", "text": "Önce şüphecilik ile genel güvensizlik arasında ayrım yapardım. Şüphecilik yöntem, veri ve sınırlar hakkında soru sorar; genel güvensizlik ise baştan her şeyin inandırıcı olmadığını ilan eder." },
+            { "language": "ru", "text": "Сначала я бы различил скепсис и общее недоверие. Скепсис спрашивает о методе, данных и границах; общее недоверие заранее объявляет, что все недостоверно." },
+            { "language": "ckb", "text": "سەرەتا جیاوازی دەکەم لە نێوان گومانکاری و بێمتمانەیی گشتی. گومانکاری پرسیار دەکات لەسەر ڕێگا، داتا و سنوورەکان؛ بێمتمانەیی گشتی پێشتر دەڵێت هەموو شتێک نامتمانەیە." },
+            { "language": "kmr", "text": "Ez ê pêşî cudahiyê di navbera gumanbarî û bêbaweriya giştî de bikim. Gumanbarî li ser rêbaz, dane û sînoran dipirse; bêbaweriya giştî ji berê ve dibêje ku her tişt ne bawerbar e." },
+            { "language": "pl", "text": "Najpierw odróżniłbym sceptycyzm od całkowitej nieufności. Sceptycyzm pyta o metodę, dane i granice; całkowita nieufność z góry uznaje, że wszystko jest niewiarygodne." },
+            { "language": "ro", "text": "Aș distinge mai întâi între scepticism și neîncredere generalizată. Scepticismul întreabă despre metodă, date și limite; neîncrederea generalizată decide dinainte că totul este necredibil." },
+            { "language": "sq", "text": "Së pari do të dalloja skepticizmin nga mosbesimi i përgjithshëm. Skepticizmi pyet për metodën, të dhënat dhe kufijtë; mosbesimi i përgjithshëm vendos që më parë se gjithçka është e pabesueshme." }
+          ],
+          "function": "make-distinction",
+          "toneNote": "Precise without sounding superior.",
+          "expectedLearnerAction": "Separate legitimate questioning from blanket rejection."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "skeptical-participant",
+          "baseText": "Aber genau das ist doch mein Punkt: Heute heißt es so, morgen anders. Für normale Leute wirkt das wie Unsicherheit oder Interessensteuerung.",
+          "translations": [
+            { "language": "en", "text": "But that is exactly my point: today it is one thing, tomorrow another. To ordinary people, that looks like uncertainty or outside interests steering the message." },
+            { "language": "fa", "text": "اما نکته من دقیقاً همین است: امروز یک چیز می‌گویند، فردا چیز دیگری. برای آدم‌های عادی این شبیه نااطمینانی یا جهت‌دهی منافع به نظر می‌رسد." },
+            { "language": "ar", "text": "لكن هذه بالضبط نقطتي: اليوم يقال شيء، وغداً شيء آخر. بالنسبة للناس العاديين يبدو ذلك كأنه عدم يقين أو توجيه من مصالح معينة." },
+            { "language": "tr", "text": "Ama tam da benim noktam bu: bugün böyle deniyor, yarın başka türlü. Normal insanlar için bu belirsizlik ya da çıkarların mesajı yönlendirmesi gibi görünüyor." },
+            { "language": "ru", "text": "Но именно в этом и мой аргумент: сегодня говорят одно, завтра другое. Обычным людям это кажется неопределенностью или влиянием интересов." },
+            { "language": "ckb", "text": "بەڵام خاڵەکەم هەر ئەوەیە: ئەمڕۆ شتێک دەڵێن، سبەی شتێکی تر. بۆ خەڵکی ئاسایی ئەمە وەک نادڵنیایی یان ئاراستەکردنی نامەکە لەلایەن بەرژەوەندییەکانەوە دەردەکەوێت." },
+            { "language": "kmr", "text": "Lê xalê min her ev e: îro wiha tê gotin, sibê cuda. Ji bo mirovên asayî ev wekî nediyarî an rêvebirina peyamê ji aliyê berjewendiyan ve xuya dike." },
+            { "language": "pl", "text": "Ale właśnie o to mi chodzi: dziś mówi się tak, jutro inaczej. Dla zwykłych ludzi wygląda to jak niepewność albo sterowanie przez interesy." },
+            { "language": "ro", "text": "Dar exact acesta este punctul meu: azi se spune într-un fel, mâine altfel. Pentru oamenii obișnuiți pare nesiguranță sau influențare de către interese." },
+            { "language": "sq", "text": "Por pikërisht ky është argumenti im: sot thuhet kështu, nesër ndryshe. Për njerëzit e zakonshëm kjo duket si pasiguri ose si drejtim nga interesa të caktuara." }
+          ],
+          "function": "raise-objection",
+          "toneNote": "Skeptical but not hostile."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dass Ergebnisse sich ändern, kann tatsächlich Vertrauen irritieren. Es bedeutet aber nicht automatisch Beliebigkeit. Oft werden Daten besser, Messmethoden genauer oder Bedingungen enger definiert. Die Frage ist: Was wurde wirklich korrigiert, und warum?",
+          "translations": [
+            { "language": "en", "text": "When findings change, that can genuinely unsettle trust. But it does not automatically mean arbitrariness. Often the data improve, measurement methods become more precise, or conditions are defined more narrowly. The question is: what was actually corrected, and why?" },
+            { "language": "fa", "text": "اینکه نتایج تغییر کنند واقعاً می‌تواند اعتماد را متزلزل کند. اما به‌طور خودکار به معنی دلبخواهی بودن نیست. اغلب داده‌ها بهتر می‌شوند، روش‌های اندازه‌گیری دقیق‌تر می‌شوند یا شرایط محدودتر تعریف می‌شوند. پرسش این است: دقیقاً چه چیزی اصلاح شده و چرا؟" },
+            { "language": "ar", "text": "تغيّر النتائج قد يربك الثقة فعلاً. لكنه لا يعني تلقائياً العشوائية. كثيراً ما تتحسن البيانات، أو تصبح طرق القياس أدق، أو تُعرّف الشروط بصورة أضيق. السؤال هو: ما الذي صُحح فعلاً، ولماذا؟" },
+            { "language": "tr", "text": "Sonuçların değişmesi güveni gerçekten sarsabilir. Ama bu otomatik olarak keyfilik anlamına gelmez. Çoğu zaman veriler iyileşir, ölçüm yöntemleri kesinleşir ya da koşullar daha dar tanımlanır. Soru şu: gerçekten ne düzeltildi ve neden?" },
+            { "language": "ru", "text": "То, что результаты меняются, действительно может тревожить доверие. Но это не означает автоматически произвольность. Часто данные становятся лучше, методы измерения точнее или условия определяются уже. Вопрос в том, что именно было исправлено и почему." },
+            { "language": "ckb", "text": "گۆڕانی ئەنجامەکان بەڕاستی دەتوانێت متمانە بشڵەژێنێت. بەڵام ئەمە خۆکارانە واتای خۆویستانەبوون نییە. زۆرجار داتا باشتر دەبێت، ڕێگای پێوانەکردن وردتر دەبێت یان مەرجەکان تەنگتر دیاری دەکرێن. پرسیارەکە ئەمەیە: بەڕاستی چی ڕاستکراوەتەوە و بۆچی؟" },
+            { "language": "kmr", "text": "Guhertina encaman dikare bi rastî baweriyê tevlihev bike. Lê ev ne tê wateya ku her tişt bêpîvan e. Gelek caran dane baştir dibin, rêbazên pîvandinê rasttir dibin an şert tengtir tên diyarkirin. Pirs ev e: bi rastî çi hate rastkirin, û çima?" },
+            { "language": "pl", "text": "To, że wyniki się zmieniają, może rzeczywiście naruszać zaufanie. Nie oznacza to jednak automatycznie dowolności. Często dane są lepsze, metody pomiaru dokładniejsze albo warunki wężej zdefiniowane. Pytanie brzmi: co naprawdę skorygowano i dlaczego?" },
+            { "language": "ro", "text": "Faptul că rezultatele se schimbă poate într-adevăr să zdruncine încrederea. Dar nu înseamnă automat arbitrar. Adesea datele devin mai bune, metodele de măsurare mai precise sau condițiile sunt definite mai strict. Întrebarea este: ce a fost corectat de fapt și de ce?" },
+            { "language": "sq", "text": "Fakti që rezultatet ndryshojnë mund ta lëkundë vërtet besimin. Por kjo nuk do të thotë automatikisht arbitraritet. Shpesh të dhënat bëhen më të mira, metodat e matjes më të sakta ose kushtet përcaktohen më ngushtë. Pyetja është: çfarë u korrigjua realisht dhe pse?" }
+          ],
+          "function": "explain-change",
+          "toneNote": "Acknowledge irritation before explaining.",
+          "expectedLearnerAction": "Explain why changing findings can be credible."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "science-educator",
+          "baseText": "Wie würden Sie verhindern, dass diese Erklärung herablassend klingt?",
+          "translations": [
+            { "language": "en", "text": "How would you prevent this explanation from sounding condescending?" },
+            { "language": "fa", "text": "چطور مانع می‌شوید این توضیح از بالا به پایین به نظر برسد؟" },
+            { "language": "ar", "text": "كيف تمنعون أن يبدو هذا الشرح متعالياً؟" },
+            { "language": "tr", "text": "Bu açıklamanın küçümseyici duyulmasını nasıl önlersiniz?" },
+            { "language": "ru", "text": "Как вы предотвратите, чтобы это объяснение звучало снисходительно?" },
+            { "language": "ckb", "text": "چۆن ڕێگری دەکەیت لەوەی ئەم ڕوونکردنەوەیە بە فەرمانڕەوایی لەسەرەوەوە ببیسترێت؟" },
+            { "language": "kmr", "text": "Hûn ê çawa rê li ber wê bigirin ku ev ravekirin wekî biçûkxistinê bê bihîstin?" },
+            { "language": "pl", "text": "Jak zapobiegłby Pan/Pani temu, żeby to wyjaśnienie brzmiało protekcjonalnie?" },
+            { "language": "ro", "text": "Cum ați evita ca această explicație să sune condescendent?" },
+            { "language": "sq", "text": "Si do ta pengonit që ky shpjegim të tingëllojë përçmues?" }
+          ],
+          "function": "ask-tone-control",
+          "toneNote": "Focus on social risk."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde nicht sagen: „Sie verstehen Wissenschaft nicht.“ Besser ist: „Ihr Eindruck ist nachvollziehbar, wenn nur die Ergebnisänderung sichtbar ist. Lassen Sie uns anschauen, ob sich die Datenlage, die Fragestellung oder die Bewertung geändert hat.“",
+          "translations": [
+            { "language": "en", "text": "I would not say, 'You do not understand science.' A better option is: 'Your impression is understandable if only the changed result is visible. Let us look at whether the data situation, the research question, or the assessment has changed.'" },
+            { "language": "fa", "text": "من نمی‌گویم: «شما علم را نمی‌فهمید.» بهتر است بگویم: «برداشت شما قابل فهم است اگر فقط تغییر نتیجه دیده شود. بیایید بررسی کنیم آیا وضعیت داده‌ها، پرسش پژوهشی یا ارزیابی تغییر کرده است.»" },
+            { "language": "ar", "text": "لن أقول: «أنتم لا تفهمون العلم.» الأفضل هو: «انطباعكم مفهوم إذا كان التغير في النتيجة وحده ظاهراً. دعونا ننظر هل تغيرت حالة البيانات أو سؤال البحث أو التقييم.»" },
+            { "language": "tr", "text": "Şunu söylemezdim: 'Siz bilimi anlamıyorsunuz.' Daha iyisi şudur: 'Yalnızca sonuç değişikliği görünüyorsa izleniminiz anlaşılır. Verilerin, araştırma sorusunun ya da değerlendirmenin değişip değişmediğine bakalım.'" },
+            { "language": "ru", "text": "Я бы не сказал: «Вы не понимаете науку». Лучше так: «Ваше впечатление понятно, если видна только перемена результата. Давайте посмотрим, изменилась ли ситуация с данными, исследовательский вопрос или оценка»." },
+            { "language": "ckb", "text": "من ناڵێم: «تۆ زانست تێناگەیت.» باشترە بڵێم: «تێڕوانینی تۆ تێگەیشتووە ئەگەر تەنها گۆڕانی ئەنجامەکە دیار بێت. با بزانین ئایا دۆخی داتا، پرسیاری توێژینەوە یان هەڵسەنگاندنەکە گۆڕاوە.»" },
+            { "language": "kmr", "text": "Ez ê nebêjim: 'Hûn zanistê fam nakin.' Baştr ev e: 'Dîtina we têgihiştî ye heke tenê guhertina encamê xuya be. Werin binêrin ka rewşa daneyan, pirsa lêkolînê an nirxandin guheriye an na.'" },
+            { "language": "pl", "text": "Nie powiedziałbym: „Nie rozumie Pan/Pani nauki”. Lepiej: „To wrażenie jest zrozumiałe, jeśli widać tylko zmianę wyniku. Sprawdźmy, czy zmieniły się dane, pytanie badawcze albo ocena”." },
+            { "language": "ro", "text": "Nu aș spune: „Nu înțelegeți știința.” Mai bine: „Impresia dumneavoastră este de înțeles dacă se vede doar schimbarea rezultatului. Să vedem dacă s-au schimbat datele, întrebarea de cercetare sau evaluarea.”" },
+            { "language": "sq", "text": "Nuk do të thosha: “Ju nuk e kuptoni shkencën.” Më mirë është: “Përshtypja juaj është e kuptueshme nëse shihet vetëm ndryshimi i rezultatit. Le të shohim nëse ka ndryshuar gjendja e të dhënave, pyetja kërkimore apo vlerësimi.”" }
+          ],
+          "function": "avoid-condescension",
+          "toneNote": "Respectful correction.",
+          "expectedLearnerAction": "Replace patronizing correction with shared examination."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "skeptical-participant",
+          "baseText": "Meine eigene Erfahrung passt aber manchmal nicht zu dem, was Studien sagen. Soll ich meiner Erfahrung dann gar nicht mehr trauen?",
+          "translations": [
+            { "language": "en", "text": "But my own experience sometimes does not match what studies say. Should I stop trusting my experience altogether?" },
+            { "language": "fa", "text": "اما تجربه شخصی من گاهی با آنچه مطالعات می‌گویند جور درنمی‌آید. پس آیا دیگر اصلاً نباید به تجربه خودم اعتماد کنم؟" },
+            { "language": "ar", "text": "لكن تجربتي الخاصة لا تتطابق أحياناً مع ما تقوله الدراسات. هل يعني ذلك ألا أثق بتجربتي إطلاقاً؟" },
+            { "language": "tr", "text": "Ama kendi deneyimim bazen çalışmaların söylediğiyle uyuşmuyor. O zaman deneyimime hiç güvenmemeli miyim?" },
+            { "language": "ru", "text": "Но мой собственный опыт иногда не совпадает с тем, что говорят исследования. Значит, я вообще не должен доверять своему опыту?" },
+            { "language": "ckb", "text": "بەڵام ئەزموونی خۆم هەندێ جار لەگەڵ ئەوەی توێژینەوەکان دەڵێن ناگونجێت. ئەی ئیتر هەرگیز متمانە بە ئەزموونی خۆم نەکەم؟" },
+            { "language": "kmr", "text": "Lê ezmûna min a xwe carinan bi tiştê ku lêkolîn dibêjin re nagunce. Ma divê ez êdî qet baweriyê bi ezmûna xwe nekim?" },
+            { "language": "pl", "text": "Ale moje własne doświadczenie czasem nie pasuje do tego, co mówią badania. Czy mam wtedy w ogóle nie ufać swojemu doświadczeniu?" },
+            { "language": "ro", "text": "Dar propria mea experiență uneori nu se potrivește cu ceea ce spun studiile. Ar trebui atunci să nu mai am deloc încredere în experiența mea?" },
+            { "language": "sq", "text": "Por përvoja ime personale ndonjëherë nuk përputhet me atë që thonë studimet. A duhet atëherë të mos i besoj fare përvojës sime?" }
+          ],
+          "function": "personal-experience-objection",
+          "toneNote": "Personal and vulnerable."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Doch, Erfahrung ist ein wichtiger Hinweis, aber sie ersetzt keine systematische Prüfung. Einzelne Erfahrungen zeigen, was passieren kann; Studien sollen zeigen, wie häufig, unter welchen Bedingungen und mit welcher Unsicherheit etwas passiert.",
+          "translations": [
+            { "language": "en", "text": "Yes, experience is an important signal, but it does not replace systematic examination. Individual experiences show what can happen; studies are meant to show how often something happens, under which conditions, and with what degree of uncertainty." },
+            { "language": "fa", "text": "چرا، تجربه نشانه مهمی است، اما جای بررسی منظم را نمی‌گیرد. تجربه‌های فردی نشان می‌دهند چه چیزی ممکن است رخ دهد؛ مطالعات باید نشان دهند چیزی چند بار، تحت چه شرایطی و با چه میزان عدم قطعیتی رخ می‌دهد." },
+            { "language": "ar", "text": "بلى، التجربة مؤشر مهم، لكنها لا تحل محل الفحص المنهجي. التجارب الفردية تبين ما يمكن أن يحدث؛ أما الدراسات فيفترض أن تبين مدى تكراره، وتحت أي شروط، وبأي درجة من عدم اليقين." },
+            { "language": "tr", "text": "Evet, deneyim önemli bir işarettir, ama sistematik incelemenin yerini tutmaz. Tekil deneyimler neyin olabileceğini gösterir; çalışmalar ise bir şeyin ne kadar sık, hangi koşullarda ve hangi belirsizlikle olduğunu göstermelidir." },
+            { "language": "ru", "text": "Да, опыт — важный сигнал, но он не заменяет систематическую проверку. Отдельные переживания показывают, что может произойти; исследования должны показывать, как часто это происходит, при каких условиях и с какой неопределенностью." },
+            { "language": "ckb", "text": "بەڵێ، ئەزموون نیشانەیەکی گرنگە، بەڵام جێی پشکنینی سیستەماتیک ناگرێتەوە. ئەزموونی تاکەکەسی دەردەخات چی دەتوانێت ڕووبدات؛ توێژینەوەکان دەبێت نیشان بدەن ئەو شتە چەندجار، لە ژێر چ مەرجێک و بە چ ئاستێکی نادڵنیایی ڕوودەدات." },
+            { "language": "kmr", "text": "Erê, ezmûn nîşanek girîng e, lê cihê lêkolîna rêkûpêk nagire. Ezmûnên kesane nîşan didin ka çi dikare biqewime; lêkolîn divê nîşan bidin ka tiştek çend caran, di bin kîjan şertan de û bi çi asteke nediyariyê diqewime." },
+            { "language": "pl", "text": "Tak, doświadczenie jest ważnym sygnałem, ale nie zastępuje systematycznego sprawdzenia. Pojedyncze doświadczenia pokazują, co może się zdarzyć; badania mają pokazać, jak często, w jakich warunkach i z jaką niepewnością coś się dzieje." },
+            { "language": "ro", "text": "Da, experiența este un indiciu important, dar nu înlocuiește verificarea sistematică. Experiențele individuale arată ce se poate întâmpla; studiile ar trebui să arate cât de des, în ce condiții și cu ce grad de incertitudine se întâmplă ceva." },
+            { "language": "sq", "text": "Po, përvoja është një sinjal i rëndësishëm, por nuk e zëvendëson shqyrtimin sistematik. Përvojat individuale tregojnë çfarë mund të ndodhë; studimet duhet të tregojnë sa shpesh, në çfarë kushtesh dhe me çfarë pasigurie ndodh diçka." }
+          ],
+          "function": "relate-experience-and-evidence",
+          "toneNote": "Respect experience without making it decisive.",
+          "expectedLearnerAction": "Explain the role and limit of personal experience."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderation",
+          "baseText": "Können Sie daraus ein kurzes Fazit für die Gruppe formulieren?",
+          "translations": [
+            { "language": "en", "text": "Can you formulate a short conclusion from that for the group?" },
+            { "language": "fa", "text": "می‌توانید از این نکات یک جمع‌بندی کوتاه برای گروه بیان کنید؟" },
+            { "language": "ar", "text": "هل يمكنكم صياغة خلاصة قصيرة من ذلك للمجموعة؟" },
+            { "language": "tr", "text": "Bundan grup için kısa bir sonuç çıkarabilir misiniz?" },
+            { "language": "ru", "text": "Можете сформулировать из этого краткий вывод для группы?" },
+            { "language": "ckb", "text": "دەتوانیت لەمەوە کۆتاییەکی کورت بۆ گرووپەکە دابڕێژیت؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji vê yekê ji bo komê encameke kurt formule bikin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani sformułować z tego krótkie podsumowanie dla grupy?" },
+            { "language": "ro", "text": "Puteți formula de aici o scurtă concluzie pentru grup?" },
+            { "language": "sq", "text": "A mund të formuloni prej kësaj një përfundim të shkurtër për grupin?" }
+          ],
+          "function": "ask-summary",
+          "toneNote": "Neutral."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Mein Fazit wäre: Wissenschaft verdient nicht blindes Vertrauen, sondern prüfbares Vertrauen. Man darf nach Daten, Finanzierung, Methode und Unsicherheit fragen. Problematisch wird es erst, wenn jede Korrektur als Täuschung gedeutet wird und gar keine gemeinsame Prüfbasis mehr bleibt.",
+          "translations": [
+            { "language": "en", "text": "My conclusion would be: science does not deserve blind trust, but verifiable trust. It is legitimate to ask about data, funding, methods, and uncertainty. It becomes problematic only when every correction is interpreted as deception and no shared basis for examination remains." },
+            { "language": "fa", "text": "جمع‌بندی من این است: علم سزاوار اعتماد کورکورانه نیست، بلکه سزاوار اعتمادی قابل بررسی است. می‌توان درباره داده‌ها، تأمین مالی، روش و عدم قطعیت پرسید. مشکل از جایی شروع می‌شود که هر اصلاحی فریب تعبیر شود و دیگر هیچ مبنای مشترکی برای بررسی باقی نماند." },
+            { "language": "ar", "text": "خلاصتي هي: العلم لا يستحق ثقة عمياء، بل ثقة قابلة للتحقق. يجوز السؤال عن البيانات والتمويل والمنهج وعدم اليقين. يصبح الأمر إشكالياً فقط عندما تُفسَّر كل مراجعة على أنها خداع ولا تبقى أي قاعدة مشتركة للفحص." },
+            { "language": "tr", "text": "Sonucum şu olurdu: Bilim kör güveni değil, denetlenebilir güveni hak eder. Veri, finansman, yöntem ve belirsizlik hakkında soru sormak meşrudur. Sorun, her düzeltme aldatma olarak yorumlandığında ve ortak bir inceleme zemini kalmadığında başlar." },
+            { "language": "ru", "text": "Мой вывод был бы таким: наука заслуживает не слепого доверия, а проверяемого доверия. Можно спрашивать о данных, финансировании, методе и неопределенности. Проблема начинается тогда, когда каждую корректировку считают обманом и не остается общей основы для проверки." },
+            { "language": "ckb", "text": "کۆتاییەکەم ئەمە دەبێت: زانست شایانی متمانەی کوێرانە نییە، بەڵکو شایانی متمانەی قابل پشکنینە. دەکرێت پرسیار لەسەر داتا، دابینکردنی دارایی، ڕێگا و نادڵنیایی بکرێت. کێشە تەنها ئەوکاتە دەست پێدەکات کە هەر ڕاستکردنەوەیەک بە فێڵ لێک بدرێتەوە و هیچ بنەمایەکی هاوبەش بۆ پشکنین نەمێنێت." },
+            { "language": "kmr", "text": "Encama min ev e: zanist ne baweriya kor, lê baweriya ku dikare bê kontrolkirin heq dike. Mirov dikare li ser dane, fînanse, rêbaz û nediyariyê bipirse. Pirsgirêk tenê wê demê dest pê dike ku her rastkirin wekî xapandin were şirovekirin û bingeheke hevpar a kontrolê nemîne." },
+            { "language": "pl", "text": "Mój wniosek byłby taki: nauka nie zasługuje na ślepe zaufanie, lecz na zaufanie sprawdzalne. Wolno pytać o dane, finansowanie, metodę i niepewność. Problem zaczyna się dopiero wtedy, gdy każdą korektę interpretuje się jako oszustwo i nie zostaje żadna wspólna podstawa sprawdzania." },
+            { "language": "ro", "text": "Concluzia mea ar fi: știința nu merită încredere oarbă, ci încredere verificabilă. Este legitim să întrebăm despre date, finanțare, metodă și incertitudine. Devine problematic doar când fiecare corectare este interpretată ca înșelare și nu mai rămâne nicio bază comună de verificare." },
+            { "language": "sq", "text": "Përfundimi im do të ishte: shkenca nuk meriton besim të verbër, por besim të verifikueshëm. Lejohet të pyesësh për të dhënat, financimin, metodën dhe pasigurinë. Problemi fillon vetëm kur çdo korrigjim interpretohet si mashtrim dhe nuk mbetet më asnjë bazë e përbashkët për verifikim." }
+          ],
+          "function": "synthesize",
+          "toneNote": "Balanced and firm.",
+          "expectedLearnerAction": "Close with criteria for verifiable trust."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde zuerst zwischen Skepsis und pauschalem Misstrauen unterscheiden. Skepsis fragt nach Methode, Daten und Grenzen; pauschales Misstrauen erklärt schon vorher, dass alles unglaubwürdig ist.",
+              "translations": [
+                { "language": "en", "text": "I would first distinguish between skepticism and blanket distrust. Skepticism asks about methods, data, and limits; blanket distrust decides in advance that everything is not credible." },
+                { "language": "fa", "text": "من اول میان شکاکیت و بی‌اعتمادی کلی فرق می‌گذارم. شکاکیت درباره روش، داده‌ها و محدودیت‌ها سؤال می‌کند؛ بی‌اعتمادی کلی از قبل اعلام می‌کند که همه چیز نامعتبر است." },
+                { "language": "ar", "text": "سأميز أولاً بين الشك النقدي وانعدام الثقة الشامل. الشك يسأل عن المنهج والبيانات والحدود؛ أما انعدام الثقة الشامل فيقرر مسبقاً أن كل شيء غير موثوق." },
+                { "language": "tr", "text": "Önce şüphecilik ile genel güvensizlik arasında ayrım yapardım. Şüphecilik yöntem, veri ve sınırlar hakkında soru sorar; genel güvensizlik ise baştan her şeyin inandırıcı olmadığını ilan eder." },
+                { "language": "ru", "text": "Сначала я бы различил скепсис и общее недоверие. Скепсис спрашивает о методе, данных и границах; общее недоверие заранее объявляет, что все недостоверно." },
+                { "language": "ckb", "text": "سەرەتا جیاوازی دەکەم لە نێوان گومانکاری و بێمتمانەیی گشتی. گومانکاری پرسیار دەکات لەسەر ڕێگا، داتا و سنوورەکان؛ بێمتمانەیی گشتی پێشتر دەڵێت هەموو شتێک نامتمانەیە." },
+                { "language": "kmr", "text": "Ez ê pêşî cudahiyê di navbera gumanbarî û bêbaweriya giştî de bikim. Gumanbarî li ser rêbaz, dane û sînoran dipirse; bêbaweriya giştî ji berê ve dibêje ku her tişt ne bawerbar e." },
+                { "language": "pl", "text": "Najpierw odróżniłbym sceptycyzm od całkowitej nieufności. Sceptycyzm pyta o metodę, dane i granice; całkowita nieufność z góry uznaje, że wszystko jest niewiarygodne." },
+                { "language": "ro", "text": "Aș distinge mai întâi între scepticism și neîncredere generalizată. Scepticismul întreabă despre metodă, date și limite; neîncrederea generalizată decide dinainte că totul este necredibil." },
+                { "language": "sq", "text": "Së pari do të dalloja skepticizmin nga mosbesimi i përgjithshëm. Skepticizmi pyet për metodën, të dhënat dhe kufijtë; mosbesimi i përgjithshëm vendos që më parë se gjithçka është e pabesueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt berechtigte Nachfrage von Totalablehnung und bleibt dadurch respektvoll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer separates legitimate questioning from total rejection and therefore remains respectful." },
+                { "language": "fa", "text": "قوی است: پاسخ پرسش موجه را از رد کامل جدا می‌کند و به همین دلیل محترمانه می‌ماند." },
+                { "language": "ar", "text": "قوي: يميز الجواب بين السؤال المشروع والرفض الكامل، ولذلك يبقى محترماً." },
+                { "language": "tr", "text": "Güçlü: cevap haklı soruyu bütünüyle reddetmeden ayırıyor ve bu yüzden saygılı kalıyor." },
+                { "language": "ru", "text": "Сильно: ответ отделяет обоснованный вопрос от полного отрицания и поэтому остается уважительным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پرسیاری ڕەوا لە ڕەتکردنەوەی تەواو جیا دەکاتەوە و بەمە ڕێزدارانە دەمێنێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv pirsa rewa ji redkirina tevahî cuda dike û ji ber vê yekê bi rêz dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela uzasadnione pytanie od całkowitego odrzucenia i dzięki temu pozostaje pełna szacunku." },
+                { "language": "ro", "text": "Puternic: răspunsul separă întrebarea legitimă de respingerea totală și astfel rămâne respectuos." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan pyetjen e arsyeshme nga refuzimi i plotë dhe kështu mbetet respektuese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte der Wissenschaft grundsätzlich mehr vertrauen, weil sie auf Fakten beruht.",
+              "translations": [
+                { "language": "en", "text": "People should generally trust science more because it is based on facts." },
+                { "language": "fa", "text": "به‌طور کلی باید بیشتر به علم اعتماد کرد، چون بر پایه واقعیت‌هاست." },
+                { "language": "ar", "text": "ينبغي عموماً أن نثق بالعلم أكثر لأنه قائم على الحقائق." },
+                { "language": "tr", "text": "Genel olarak bilime daha fazla güvenmek gerekir, çünkü bilime gerçekler temel olur." },
+                { "language": "ru", "text": "В целом науке следует больше доверять, потому что она основана на фактах." },
+                { "language": "ckb", "text": "بە گشتی دەبێت زیاتر متمانە بە زانست بکرێت، چونکە لەسەر ڕاستییەکان بنیات نراوە." },
+                { "language": "kmr", "text": "Bi giştî divê mirov zêdetir baweriyê bi zanistê bike, ji ber ku ew li ser rastiyan ava ye." },
+                { "language": "pl", "text": "Zasadniczo powinno się bardziej ufać nauce, bo opiera się na faktach." },
+                { "language": "ro", "text": "În general, ar trebui să avem mai multă încredere în știință, pentru că se bazează pe fapte." },
+                { "language": "sq", "text": "Në përgjithësi duhet t'i besojmë më shumë shkencës, sepse ajo bazohet në fakte." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal. Die Antwort klingt wie ein Autoritätsargument und erklärt nicht, wie Vertrauen geprüft werden kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping. The answer sounds like an appeal to authority and does not explain how trust can be checked." },
+                { "language": "fa", "text": "بیش از حد کلی است. پاسخ شبیه تکیه بر اقتدار به نظر می‌رسد و توضیح نمی‌دهد اعتماد چگونه بررسی می‌شود." },
+                { "language": "ar", "text": "عام جداً. يبدو الجواب كاحتكام إلى السلطة ولا يوضح كيف يمكن التحقق من الثقة." },
+                { "language": "tr", "text": "Fazla genel. Cevap otoriteye başvuru gibi duyuluyor ve güvenin nasıl denetlenebileceğini açıklamıyor." },
+                { "language": "ru", "text": "Слишком обобщенно. Ответ звучит как ссылка на авторитет и не объясняет, как можно проверить доверие." },
+                { "language": "ckb", "text": "زۆر گشتییە. وەڵامەکە وەک پشتبەستن بە دەسەڵات دەنگ دەدات و ڕوون ناکاتەوە متمانە چۆن دەتوانرێت پشکنین بکرێت." },
+                { "language": "kmr", "text": "Pir giştî ye. Bersiv wekî bang li otorîteyê tê bihîstin û rave nake ka bawerî çawa dikare bê kontrolkirin." },
+                { "language": "pl", "text": "Zbyt ogólne. Odpowiedź brzmi jak argument z autorytetu i nie wyjaśnia, jak można sprawdzać zaufanie." },
+                { "language": "ro", "text": "Prea general. Răspunsul sună ca un apel la autoritate și nu explică cum poate fi verificată încrederea." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Përgjigjja tingëllon si thirrje ndaj autoritetit dhe nuk shpjegon si mund të kontrollohet besimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dass Ergebnisse sich ändern, kann tatsächlich Vertrauen irritieren. Es bedeutet aber nicht automatisch Beliebigkeit. Oft werden Daten besser, Messmethoden genauer oder Bedingungen enger definiert. Die Frage ist: Was wurde wirklich korrigiert, und warum?",
+              "translations": [
+                { "language": "en", "text": "When findings change, that can genuinely unsettle trust. But it does not automatically mean arbitrariness. Often the data improve, measurement methods become more precise, or conditions are defined more narrowly. The question is: what was actually corrected, and why?" },
+                { "language": "fa", "text": "اینکه نتایج تغییر کنند واقعاً می‌تواند اعتماد را متزلزل کند. اما به‌طور خودکار به معنی دلبخواهی بودن نیست. اغلب داده‌ها بهتر می‌شوند، روش‌های اندازه‌گیری دقیق‌تر می‌شوند یا شرایط محدودتر تعریف می‌شوند. پرسش این است: دقیقاً چه چیزی اصلاح شده و چرا؟" },
+                { "language": "ar", "text": "تغيّر النتائج قد يربك الثقة فعلاً. لكنه لا يعني تلقائياً العشوائية. كثيراً ما تتحسن البيانات، أو تصبح طرق القياس أدق، أو تُعرّف الشروط بصورة أضيق. السؤال هو: ما الذي صُحح فعلاً، ولماذا؟" },
+                { "language": "tr", "text": "Sonuçların değişmesi güveni gerçekten sarsabilir. Ama bu otomatik olarak keyfilik anlamına gelmez. Çoğu zaman veriler iyileşir, ölçüm yöntemleri kesinleşir ya da koşullar daha dar tanımlanır. Soru şu: gerçekten ne düzeltildi ve neden?" },
+                { "language": "ru", "text": "То, что результаты меняются, действительно может тревожить доверие. Но это не означает автоматически произвольность. Часто данные становятся лучше, методы измерения точнее или условия определяются уже. Вопрос в том, что именно было исправлено и почему." },
+                { "language": "ckb", "text": "گۆڕانی ئەنجامەکان بەڕاستی دەتوانێت متمانە بشڵەژێنێت. بەڵام ئەمە خۆکارانە واتای خۆویستانەبوون نییە. زۆرجار داتا باشتر دەبێت، ڕێگای پێوانەکردن وردتر دەبێت یان مەرجەکان تەنگتر دیاری دەکرێن. پرسیارەکە ئەمەیە: بەڕاستی چی ڕاستکراوەتەوە و بۆچی؟" },
+                { "language": "kmr", "text": "Guhertina encaman dikare bi rastî baweriyê tevlihev bike. Lê ev ne tê wateya ku her tişt bêpîvan e. Gelek caran dane baştir dibin, rêbazên pîvandinê rasttir dibin an şert tengtir tên diyarkirin. Pirs ev e: bi rastî çi hate rastkirin, û çima?" },
+                { "language": "pl", "text": "To, że wyniki się zmieniają, może rzeczywiście naruszać zaufanie. Nie oznacza to jednak automatycznie dowolności. Często dane są lepsze, metody pomiaru dokładniejsze albo warunki wężej zdefiniowane. Pytanie brzmi: co naprawdę skorygowano i dlaczego?" },
+                { "language": "ro", "text": "Faptul că rezultatele se schimbă poate într-adevăr să zdruncine încrederea. Dar nu înseamnă automat arbitrar. Adesea datele devin mai bune, metodele de măsurare mai precise sau condițiile sunt definite mai strict. Întrebarea este: ce a fost corectat de fapt și de ce?" },
+                { "language": "sq", "text": "Fakti që rezultatet ndryshojnë mund ta lëkundë vërtet besimin. Por kjo nuk do të thotë automatikisht arbitraritet. Shpesh të dhënat bëhen më të mira, metodat e matjes më të sakta ose kushtet përcaktohen më ngushtë. Pyetja është: çfarë u korrigjua realisht dhe pse?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt Irritation ernst und nennt konkrete Prüffragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes irritation seriously and names concrete questions for checking." },
+                { "language": "fa", "text": "قوی است: پاسخ آشفتگی اعتماد را جدی می‌گیرد و پرسش‌های مشخص برای بررسی نام می‌برد." },
+                { "language": "ar", "text": "قوي: يأخذ الجواب الارتباك بجدية ويذكر أسئلة محددة للتحقق." },
+                { "language": "tr", "text": "Güçlü: cevap sarsıntıyı ciddiye alıyor ve somut denetim soruları veriyor." },
+                { "language": "ru", "text": "Сильно: ответ серьезно относится к тревоге и называет конкретные вопросы для проверки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە شڵەژانی متمانە بە جدی وەردەگرێت و پرسیاری دیاریکراو بۆ پشکنین دەناوێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv tevliheviya baweriyê bi ciddî digire û pirsên konkret ji bo kontrolê dibêje." },
+                { "language": "pl", "text": "Mocne: odpowiedź traktuje niepokój poważnie i podaje konkretne pytania sprawdzające." },
+                { "language": "ro", "text": "Puternic: răspunsul ia în serios neliniștea și numește întrebări concrete de verificare." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr seriozisht shqetësimin dhe përmend pyetje konkrete për verifikim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn sich etwas ändert, zeigt das nur, dass Wissenschaft dazulernt.",
+              "translations": [
+                { "language": "en", "text": "When something changes, it only shows that science is learning." },
+                { "language": "fa", "text": "وقتی چیزی تغییر می‌کند، فقط نشان می‌دهد که علم در حال یادگیری است." },
+                { "language": "ar", "text": "عندما يتغير شيء، فهذا يبين فقط أن العلم يتعلم." },
+                { "language": "tr", "text": "Bir şey değiştiğinde bu sadece bilimin öğrendiğini gösterir." },
+                { "language": "ru", "text": "Если что-то меняется, это лишь показывает, что наука учится." },
+                { "language": "ckb", "text": "کاتێک شتێک دەگۆڕێت، تەنها ئەوە نیشان دەدات کە زانست فێر دەبێت." },
+                { "language": "kmr", "text": "Dema tiştek diguhere, ev tenê nîşan dide ku zanist fêr dibe." },
+                { "language": "pl", "text": "Kiedy coś się zmienia, pokazuje to tylko, że nauka się uczy." },
+                { "language": "ro", "text": "Când ceva se schimbă, arată doar că știința învață." },
+                { "language": "sq", "text": "Kur diçka ndryshon, kjo tregon vetëm se shkenca po mëson." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise richtig, aber zu glatt. Die Antwort erklärt nicht, warum die Änderung Vertrauen irritieren kann und welche Kriterien wichtig sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly right, but too smooth. The answer does not explain why the change can unsettle trust or which criteria matter." },
+                { "language": "fa", "text": "تا حدی درست است، اما بیش از حد ساده‌سازی شده. پاسخ توضیح نمی‌دهد چرا تغییر می‌تواند اعتماد را متزلزل کند و چه معیارهایی مهم‌اند." },
+                { "language": "ar", "text": "صحيح جزئياً، لكنه ملس أكثر من اللازم. لا يشرح الجواب لماذا قد يربك التغير الثقة ولا أي معايير مهمة." },
+                { "language": "tr", "text": "Kısmen doğru, ama fazla pürüzsüz. Cevap değişimin güveni neden sarsabileceğini ve hangi kriterlerin önemli olduğunu açıklamıyor." },
+                { "language": "ru", "text": "Отчасти верно, но слишком гладко. Ответ не объясняет, почему изменение может тревожить доверие и какие критерии важны." },
+                { "language": "ckb", "text": "تا ڕادەیەک ڕاستە، بەڵام زۆر سادەکراوەتەوە. وەڵامەکە ڕوون ناکاتەوە بۆچی گۆڕان دەتوانێت متمانە بشڵەژێنێت و چ پێوەرێک گرنگە." },
+                { "language": "kmr", "text": "Hinî rast e, lê pir hêsan hatiye gotin. Bersiv rave nake çima guhertin dikare baweriyê tevlihev bike û kîjan pîvan girîng in." },
+                { "language": "pl", "text": "Częściowo słuszne, ale zbyt gładkie. Odpowiedź nie wyjaśnia, dlaczego zmiana może podważać zaufanie i jakie kryteria są ważne." },
+                { "language": "ro", "text": "Parțial corect, dar prea neted. Răspunsul nu explică de ce schimbarea poate zdruncina încrederea și ce criterii contează." },
+                { "language": "sq", "text": "Pjesërisht e drejtë, por tepër e lëmuar. Përgjigjja nuk shpjegon pse ndryshimi mund ta lëkundë besimin dhe cilat kritere kanë rëndësi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde nicht sagen: „Sie verstehen Wissenschaft nicht.“ Besser ist: „Ihr Eindruck ist nachvollziehbar, wenn nur die Ergebnisänderung sichtbar ist. Lassen Sie uns anschauen, ob sich die Datenlage, die Fragestellung oder die Bewertung geändert hat.“",
+              "translations": [
+                { "language": "en", "text": "I would not say, 'You do not understand science.' A better option is: 'Your impression is understandable if only the changed result is visible. Let us look at whether the data situation, the research question, or the assessment has changed.'" },
+                { "language": "fa", "text": "من نمی‌گویم: «شما علم را نمی‌فهمید.» بهتر است بگویم: «برداشت شما قابل فهم است اگر فقط تغییر نتیجه دیده شود. بیایید بررسی کنیم آیا وضعیت داده‌ها، پرسش پژوهشی یا ارزیابی تغییر کرده است.»" },
+                { "language": "ar", "text": "لن أقول: «أنتم لا تفهمون العلم.» الأفضل هو: «انطباعكم مفهوم إذا كان التغير في النتيجة وحده ظاهراً. دعونا ننظر هل تغيرت حالة البيانات أو سؤال البحث أو التقييم.»" },
+                { "language": "tr", "text": "Şunu söylemezdim: 'Siz bilimi anlamıyorsunuz.' Daha iyisi şudur: 'Yalnızca sonuç değişikliği görünüyorsa izleniminiz anlaşılır. Verilerin, araştırma sorusunun ya da değerlendirmenin değişip değişmediğine bakalım.'" },
+                { "language": "ru", "text": "Я бы не сказал: «Вы не понимаете науку». Лучше так: «Ваше впечатление понятно, если видна только перемена результата. Давайте посмотрим, изменилась ли ситуация с данными, исследовательский вопрос или оценка»." },
+                { "language": "ckb", "text": "من ناڵێم: «تۆ زانست تێناگەیت.» باشترە بڵێم: «تێڕوانینی تۆ تێگەیشتووە ئەگەر تەنها گۆڕانی ئەنجامەکە دیار بێت. با بزانین ئایا دۆخی داتا، پرسیاری توێژینەوە یان هەڵسەنگاندنەکە گۆڕاوە.»" },
+                { "language": "kmr", "text": "Ez ê nebêjim: 'Hûn zanistê fam nakin.' Baştr ev e: 'Dîtina we têgihiştî ye heke tenê guhertina encamê xuya be. Werin binêrin ka rewşa daneyan, pirsa lêkolînê an nirxandin guheriye an na.'" },
+                { "language": "pl", "text": "Nie powiedziałbym: „Nie rozumie Pan/Pani nauki”. Lepiej: „To wrażenie jest zrozumiałe, jeśli widać tylko zmianę wyniku. Sprawdźmy, czy zmieniły się dane, pytanie badawcze albo ocena”." },
+                { "language": "ro", "text": "Nu aș spune: „Nu înțelegeți știința.” Mai bine: „Impresia dumneavoastră este de înțeles dacă se vede doar schimbarea rezultatului. Să vedem dacă s-au schimbat datele, întrebarea de cercetare sau evaluarea.”" },
+                { "language": "sq", "text": "Nuk do të thosha: “Ju nuk e kuptoni shkencën.” Më mirë është: “Përshtypja juaj është e kuptueshme nëse shihet vetëm ndryshimi i rezultatit. Le të shohim nëse ka ndryshuar gjendja e të dhënave, pyetja kërkimore apo vlerësimi.”" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung korrigiert ohne Beschämung und lädt zur gemeinsamen Prüfung ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the wording corrects without shaming and invites shared examination." },
+                { "language": "fa", "text": "قوی است: بیان، بدون شرمسار کردن اصلاح می‌کند و به بررسی مشترک دعوت می‌کند." },
+                { "language": "ar", "text": "قوي: الصياغة تصحح من دون إحراج وتدعو إلى فحص مشترك." },
+                { "language": "tr", "text": "Güçlü: ifade utandırmadan düzeltiyor ve ortak incelemeye davet ediyor." },
+                { "language": "ru", "text": "Сильно: формулировка корректирует без стыда и приглашает к совместной проверке." },
+                { "language": "ckb", "text": "بەهێزە: دەربڕینەکە بەبێ شەرمەزارکردن ڕاست دەکاتەوە و بانگ بۆ پشکنینی هاوبەش دەکات." },
+                { "language": "kmr", "text": "Xurt e: gotin bê şermandina kesê rast dike û vexwendina kontrola hevpar dike." },
+                { "language": "pl", "text": "Mocne: sformułowanie koryguje bez zawstydzania i zaprasza do wspólnego sprawdzenia." },
+                { "language": "ro", "text": "Puternic: formularea corectează fără rușinare și invită la verificare comună." },
+                { "language": "sq", "text": "E fortë: formulimi korrigjon pa turpëruar dhe fton në shqyrtim të përbashkët." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde ruhig erklären, dass Wissenschaft eben komplizierter ist, als viele denken.",
+              "translations": [
+                { "language": "en", "text": "I would calmly explain that science is simply more complicated than many people think." },
+                { "language": "fa", "text": "من آرام توضیح می‌دهم که علم به‌هرحال پیچیده‌تر از چیزی است که خیلی‌ها فکر می‌کنند." },
+                { "language": "ar", "text": "سأشرح بهدوء أن العلم ببساطة أعقد مما يظنه كثيرون." },
+                { "language": "tr", "text": "Sakin biçimde bilimin birçok kişinin düşündüğünden daha karmaşık olduğunu açıklardım." },
+                { "language": "ru", "text": "Я бы спокойно объяснил, что наука просто сложнее, чем думают многие." },
+                { "language": "ckb", "text": "بە ئارامی ڕوون دەکەمەوە کە زانست لەوەی زۆر کەس بیر دەکاتەوە ئاڵۆزترە." },
+                { "language": "kmr", "text": "Ez ê bi aramî rave bikim ku zanist ji ya ku gelek kes difikirin tevlihevtir e." },
+                { "language": "pl", "text": "Spokojnie wyjaśniłbym, że nauka jest po prostu bardziej skomplikowana, niż wielu ludzi myśli." },
+                { "language": "ro", "text": "Aș explica liniștit că știința este pur și simplu mai complicată decât cred mulți." },
+                { "language": "sq", "text": "Do të shpjegoja qetësisht se shkenca është thjesht më e ndërlikuar sesa mendojnë shumë njerëz." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant. Die Antwort kann herablassend klingen, weil sie die Person indirekt als uninformiert markiert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but risky. The answer can sound condescending because it indirectly marks the person as uninformed." },
+                { "language": "fa", "text": "قابل تصور است، اما پرریسک. پاسخ می‌تواند از بالا به پایین به نظر برسد، چون فرد را غیرمستقیم ناآگاه نشان می‌دهد." },
+                { "language": "ar", "text": "محتمل لكنه خطر. قد يبدو الجواب متعالياً لأنه يلمح إلى أن الشخص غير مطلع." },
+                { "language": "tr", "text": "Makul ama riskli. Cevap küçümseyici duyulabilir, çünkü kişiyi dolaylı olarak bilgisiz gösteriyor." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно. Ответ может звучать снисходительно, потому что косвенно выставляет человека неосведомленным." },
+                { "language": "ckb", "text": "گونجاو دەردەکەوێت، بەڵام مەترسیدارە. وەڵامەکە دەتوانێت بە سووک سەیرکردن ببیسترێت، چونکە بە ناڕاستەوخۆ کەسەکە وەک بێئاگا نیشان دەدات." },
+                { "language": "kmr", "text": "Wekî maqûl xuya dike, lê xeter e. Bersiv dikare wekî biçûkxistinê bê bihîstin, ji ber ku kesê bi awayekî nerasterast wekî bêagah nîşan dide." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest ryzykowne. Odpowiedź może brzmieć protekcjonalnie, bo pośrednio przedstawia osobę jako niedoinformowaną." },
+                { "language": "ro", "text": "Plauzibil, dar riscant. Răspunsul poate suna condescendent, deoarece marchează indirect persoana ca neinformată." },
+                { "language": "sq", "text": "E besueshme, por e rrezikshme. Përgjigjja mund të tingëllojë përçmuese, sepse e paraqet indirekt personin si të painformuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Doch, Erfahrung ist ein wichtiger Hinweis, aber sie ersetzt keine systematische Prüfung. Einzelne Erfahrungen zeigen, was passieren kann; Studien sollen zeigen, wie häufig, unter welchen Bedingungen und mit welcher Unsicherheit etwas passiert.",
+              "translations": [
+                { "language": "en", "text": "Yes, experience is an important signal, but it does not replace systematic examination. Individual experiences show what can happen; studies are meant to show how often something happens, under which conditions, and with what degree of uncertainty." },
+                { "language": "fa", "text": "چرا، تجربه نشانه مهمی است، اما جای بررسی منظم را نمی‌گیرد. تجربه‌های فردی نشان می‌دهند چه چیزی ممکن است رخ دهد؛ مطالعات باید نشان دهند چیزی چند بار، تحت چه شرایطی و با چه میزان عدم قطعیتی رخ می‌دهد." },
+                { "language": "ar", "text": "بلى، التجربة مؤشر مهم، لكنها لا تحل محل الفحص المنهجي. التجارب الفردية تبين ما يمكن أن يحدث؛ أما الدراسات فيفترض أن تبين مدى تكراره، وتحت أي شروط، وبأي درجة من عدم اليقين." },
+                { "language": "tr", "text": "Evet, deneyim önemli bir işarettir, ama sistematik incelemenin yerini tutmaz. Tekil deneyimler neyin olabileceğini gösterir; çalışmalar ise bir şeyin ne kadar sık, hangi koşullarda ve hangi belirsizlikle olduğunu göstermelidir." },
+                { "language": "ru", "text": "Да, опыт — важный сигнал, но он не заменяет систематическую проверку. Отдельные переживания показывают, что может произойти; исследования должны показывать, как часто это происходит, при каких условиях и с какой неопределенностью." },
+                { "language": "ckb", "text": "بەڵێ، ئەزموون نیشانەیەکی گرنگە، بەڵام جێی پشکنینی سیستەماتیک ناگرێتەوە. ئەزموونی تاکەکەسی دەردەخات چی دەتوانێت ڕووبدات؛ توێژینەوەکان دەبێت نیشان بدەن ئەو شتە چەندجار، لە ژێر چ مەرجێک و بە چ ئاستێکی نادڵنیایی ڕوودەدات." },
+                { "language": "kmr", "text": "Erê, ezmûn nîşanek girîng e, lê cihê lêkolîna rêkûpêk nagire. Ezmûnên kesane nîşan didin ka çi dikare biqewime; lêkolîn divê nîşan bidin ka tiştek çend caran, di bin kîjan şertan de û bi çi asteke nediyariyê diqewime." },
+                { "language": "pl", "text": "Tak, doświadczenie jest ważnym sygnałem, ale nie zastępuje systematycznego sprawdzenia. Pojedyncze doświadczenia pokazują, co może się zdarzyć; badania mają pokazać, jak często, w jakich warunkach i z jaką niepewnością coś się dzieje." },
+                { "language": "ro", "text": "Da, experiența este un indiciu important, dar nu înlocuiește verificarea sistematică. Experiențele individuale arată ce se poate întâmpla; studiile ar trebui să arate cât de des, în ce condiții și cu ce grad de incertitudine se întâmplă ceva." },
+                { "language": "sq", "text": "Po, përvoja është një sinjal i rëndësishëm, por nuk e zëvendëson shqyrtimin sistematik. Përvojat individuale tregojnë çfarë mund të ndodhë; studimet duhet të tregojnë sa shpesh, në çfarë kushtesh dhe me çfarë pasigurie ndodh diçka." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort wertet Erfahrung nicht ab, ordnet sie aber sauber ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer does not devalue experience, but places it accurately." },
+                { "language": "fa", "text": "قوی است: پاسخ تجربه را بی‌ارزش نمی‌کند، اما جایگاه آن را دقیق مشخص می‌کند." },
+                { "language": "ar", "text": "قوي: لا يقلل الجواب من قيمة التجربة، لكنه يضعها في مكانها الصحيح." },
+                { "language": "tr", "text": "Güçlü: cevap deneyimi değersizleştirmiyor, ama doğru yere yerleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ не обесценивает опыт, но точно определяет его место." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئەزموون کەم‌بەها ناکات، بەڵام جێگای بە پاکی دیاری دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ezmûnê bênirx nake, lê cihê wê rast diyar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź nie dewaluuje doświadczenia, ale dokładnie je umiejscawia." },
+                { "language": "ro", "text": "Puternic: răspunsul nu devalorizează experiența, ci o plasează corect." },
+                { "language": "sq", "text": "E fortë: përgjigjja nuk e zhvlerëson përvojën, por e vendos saktë në vendin e saj." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Erfahrung ist subjektiv, Studien sind objektiver.",
+              "translations": [
+                { "language": "en", "text": "Experience is subjective; studies are more objective." },
+                { "language": "fa", "text": "تجربه ذهنی است؛ مطالعات عینی‌ترند." },
+                { "language": "ar", "text": "التجربة ذاتية؛ والدراسات أكثر موضوعية." },
+                { "language": "tr", "text": "Deneyim özneldir; çalışmalar daha nesneldir." },
+                { "language": "ru", "text": "Опыт субъективен, исследования более объективны." },
+                { "language": "ckb", "text": "ئەزموون تاکەکەسییە؛ توێژینەوەکان بابەتی‌ترن." },
+                { "language": "kmr", "text": "Ezmûn subjektîf e; lêkolîn objektîftir e." },
+                { "language": "pl", "text": "Doświadczenie jest subiektywne, badania są bardziej obiektywne." },
+                { "language": "ro", "text": "Experiența este subiectivă; studiile sunt mai obiective." },
+                { "language": "sq", "text": "Përvoja është subjektive; studimet janë më objektive." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kurz und zu hierarchisch. Die Antwort erklärt nicht, warum Erfahrung dennoch ein sinnvoller Hinweis sein kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too short and too hierarchical. The answer does not explain why experience can still be a meaningful signal." },
+                { "language": "fa", "text": "بیش از حد کوتاه و سلسله‌مراتبی است. پاسخ توضیح نمی‌دهد چرا تجربه همچنان می‌تواند نشانه‌ای معنادار باشد." },
+                { "language": "ar", "text": "قصير جداً وتراتبي جداً. لا يشرح الجواب لماذا يمكن للتجربة مع ذلك أن تكون مؤشراً ذا معنى." },
+                { "language": "tr", "text": "Fazla kısa ve fazla hiyerarşik. Cevap deneyimin yine de anlamlı bir işaret olabileceğini açıklamıyor." },
+                { "language": "ru", "text": "Слишком коротко и слишком иерархично. Ответ не объясняет, почему опыт все же может быть значимым сигналом." },
+                { "language": "ckb", "text": "زۆر کورت و زۆر پلەبەندییە. وەڵامەکە ڕوون ناکاتەوە بۆچی ئەزموون هێشتا دەتوانێت نیشانەیەکی مانادار بێت." },
+                { "language": "kmr", "text": "Pir kurt û pir hiyerarşîk e. Bersiv rave nake çima ezmûn hîn jî dikare nîşaneyeke watedar be." },
+                { "language": "pl", "text": "Zbyt krótkie i zbyt hierarchiczne. Odpowiedź nie wyjaśnia, dlaczego doświadczenie nadal może być sensownym sygnałem." },
+                { "language": "ro", "text": "Prea scurt și prea ierarhic. Răspunsul nu explică de ce experiența poate fi totuși un indiciu relevant." },
+                { "language": "sq", "text": "Tepër e shkurtër dhe tepër hierarkike. Përgjigjja nuk shpjegon pse përvoja mund të jetë ende sinjal domethënës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mein Fazit wäre: Wissenschaft verdient nicht blindes Vertrauen, sondern prüfbares Vertrauen. Man darf nach Daten, Finanzierung, Methode und Unsicherheit fragen. Problematisch wird es erst, wenn jede Korrektur als Täuschung gedeutet wird und gar keine gemeinsame Prüfbasis mehr bleibt.",
+              "translations": [
+                { "language": "en", "text": "My conclusion would be: science does not deserve blind trust, but verifiable trust. It is legitimate to ask about data, funding, methods, and uncertainty. It becomes problematic only when every correction is interpreted as deception and no shared basis for examination remains." },
+                { "language": "fa", "text": "جمع‌بندی من این است: علم سزاوار اعتماد کورکورانه نیست، بلکه سزاوار اعتمادی قابل بررسی است. می‌توان درباره داده‌ها، تأمین مالی، روش و عدم قطعیت پرسید. مشکل از جایی شروع می‌شود که هر اصلاحی فریب تعبیر شود و دیگر هیچ مبنای مشترکی برای بررسی باقی نماند." },
+                { "language": "ar", "text": "خلاصتي هي: العلم لا يستحق ثقة عمياء، بل ثقة قابلة للتحقق. يجوز السؤال عن البيانات والتمويل والمنهج وعدم اليقين. يصبح الأمر إشكالياً فقط عندما تُفسَّر كل مراجعة على أنها خداع ولا تبقى أي قاعدة مشتركة للفحص." },
+                { "language": "tr", "text": "Sonucum şu olurdu: Bilim kör güveni değil, denetlenebilir güveni hak eder. Veri, finansman, yöntem ve belirsizlik hakkında soru sormak meşrudur. Sorun, her düzeltme aldatma olarak yorumlandığında ve ortak bir inceleme zemini kalmadığında başlar." },
+                { "language": "ru", "text": "Мой вывод был бы таким: наука заслуживает не слепого доверия, а проверяемого доверия. Можно спрашивать о данных, финансировании, методе и неопределенности. Проблема начинается тогда, когда каждую корректировку считают обманом и не остается общей основы для проверки." },
+                { "language": "ckb", "text": "کۆتاییەکەم ئەمە دەبێت: زانست شایانی متمانەی کوێرانە نییە، بەڵکو شایانی متمانەی قابل پشکنینە. دەکرێت پرسیار لەسەر داتا، دابینکردنی دارایی، ڕێگا و نادڵنیایی بکرێت. کێشە تەنها ئەوکاتە دەست پێدەکات کە هەر ڕاستکردنەوەیەک بە فێڵ لێک بدرێتەوە و هیچ بنەمایەکی هاوبەش بۆ پشکنین نەمێنێت." },
+                { "language": "kmr", "text": "Encama min ev e: zanist ne baweriya kor, lê baweriya ku dikare bê kontrolkirin heq dike. Mirov dikare li ser dane, fînanse, rêbaz û nediyariyê bipirse. Pirsgirêk tenê wê demê dest pê dike ku her rastkirin wekî xapandin were şirovekirin û bingeheke hevpar a kontrolê nemîne." },
+                { "language": "pl", "text": "Mój wniosek byłby taki: nauka nie zasługuje na ślepe zaufanie, lecz na zaufanie sprawdzalne. Wolno pytać o dane, finansowanie, metodę i niepewność. Problem zaczyna się dopiero wtedy, gdy każdą korektę interpretuje się jako oszustwo i nie zostaje żadna wspólna podstawa sprawdzania." },
+                { "language": "ro", "text": "Concluzia mea ar fi: știința nu merită încredere oarbă, ci încredere verificabilă. Este legitim să întrebăm despre date, finanțare, metodă și incertitudine. Devine problematic doar când fiecare corectare este interpretată ca înșelare și nu mai rămâne nicio bază comună de verificare." },
+                { "language": "sq", "text": "Përfundimi im do të ishte: shkenca nuk meriton besim të verbër, por besim të verifikueshëm. Lejohet të pyesësh për të dhënat, financimin, metodën dhe pasigurinë. Problemi fillon vetëm kur çdo korrigjim interpretohet si mashtrim dhe nuk mbetet më asnjë bazë e përbashkët për verifikim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Fazit nennt Kriterien und vermeidet sowohl blindes Vertrauen als auch Totalmisstrauen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the conclusion names criteria and avoids both blind trust and total distrust." },
+                { "language": "fa", "text": "قوی است: جمع‌بندی معیارها را نام می‌برد و هم از اعتماد کور و هم از بی‌اعتمادی کامل پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: تذكر الخلاصة المعايير وتتجنب الثقة العمياء وانعدام الثقة الكامل." },
+                { "language": "tr", "text": "Güçlü: sonuç kriterleri adlandırıyor ve hem kör güveni hem de tam güvensizliği önlüyor." },
+                { "language": "ru", "text": "Сильно: вывод называет критерии и избегает как слепого доверия, так и полного недоверия." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە پێوەرەکان دەناوێت و هەم لە متمانەی کوێرانە و هەم لە بێمتمانەیی تەواو دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: encam pîvanan bi nav dike û hem ji baweriya kor hem ji bêbaweriya tevahî dûr dikeve." },
+                { "language": "pl", "text": "Mocne: wniosek nazywa kryteria i unika zarówno ślepego zaufania, jak i całkowitej nieufności." },
+                { "language": "ro", "text": "Puternic: concluzia numește criteriile și evită atât încrederea oarbă, cât și neîncrederea totală." },
+                { "language": "sq", "text": "E fortë: përfundimi përmend kriteret dhe shmang si besimin e verbër, ashtu edhe mosbesimin total." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte kritisch bleiben, aber Wissenschaft am Ende schon vertrauen.",
+              "translations": [
+                { "language": "en", "text": "People should remain critical, but in the end they should trust science." },
+                { "language": "fa", "text": "باید انتقادی ماند، اما در نهایت به علم اعتماد کرد." },
+                { "language": "ar", "text": "ينبغي أن نبقى نقديين، لكن في النهاية يجب أن نثق بالعلم." },
+                { "language": "tr", "text": "Eleştirel kalmak gerekir, ama sonuçta bilime güvenmek gerekir." },
+                { "language": "ru", "text": "Нужно оставаться критичными, но в итоге все же доверять науке." },
+                { "language": "ckb", "text": "دەبێت ڕەخنەگرانە بمێنین، بەڵام لە کۆتاییدا متمانە بە زانست بکەین." },
+                { "language": "kmr", "text": "Divê mirov rexnegir bimîne, lê di dawiyê de baweriyê bi zanistê bike." },
+                { "language": "pl", "text": "Należy pozostać krytycznym, ale ostatecznie ufać nauce." },
+                { "language": "ro", "text": "Trebuie să rămânem critici, dar până la urmă să avem încredere în știință." },
+                { "language": "sq", "text": "Duhet të mbetemi kritikë, por në fund t'i besojmë shkencës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage für C2. Die Antwort nennt keine Kriterien und löst den Konflikt nur mit einem allgemeinen Appell.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague for C2. The answer names no criteria and resolves the conflict only with a general appeal." },
+                { "language": "fa", "text": "برای C2 بیش از حد مبهم است. پاسخ هیچ معیاری نام نمی‌برد و تعارض را فقط با یک توصیه کلی حل می‌کند." },
+                { "language": "ar", "text": "غامض جداً لمستوى C2. لا يذكر الجواب أي معايير ويحل النزاع بنداء عام فقط." },
+                { "language": "tr", "text": "C2 için fazla belirsiz. Cevap kriter vermiyor ve çatışmayı yalnızca genel bir çağrıyla çözüyor." },
+                { "language": "ru", "text": "Слишком расплывчато для C2. Ответ не называет критериев и решает конфликт только общим призывом." },
+                { "language": "ckb", "text": "بۆ C2 زۆر ناڕوونە. وەڵامەکە هیچ پێوەرێک ناو نابات و ناکۆکییەکە تەنها بە بانگەوازێکی گشتی چارەسەر دەکات." },
+                { "language": "kmr", "text": "Ji bo C2 pir nezelal e. Bersiv tu pîvanekê nabêje û nakokiyê tenê bi bangeke giştî çareser dike." },
+                { "language": "pl", "text": "Zbyt mgliste jak na C2. Odpowiedź nie podaje kryteriów i rozwiązuje konflikt tylko ogólnym apelem." },
+                { "language": "ro", "text": "Prea vag pentru C2. Răspunsul nu numește criterii și rezolvă conflictul doar printr-un apel general." },
+                { "language": "sq", "text": "Tepër e paqartë për C2. Përgjigjja nuk përmend kritere dhe e zgjidh konfliktin vetëm me një thirrje të përgjithshme." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "distinction",
+          "text": "C2-Sprache trennt berechtigte Skepsis von pauschalem Misstrauen, statt beide Seiten zu karikieren.",
+          "translations": [
+            { "language": "en", "text": "C2 language separates legitimate skepticism from blanket distrust instead of caricaturing either side." },
+            { "language": "fa", "text": "زبان C2 شکاکیت موجه را از بی‌اعتمادی کلی جدا می‌کند، نه اینکه هیچ‌یک از دو طرف را کاریکاتوری نشان دهد." },
+            { "language": "ar", "text": "لغة C2 تفصل بين الشك المشروع وانعدام الثقة الشامل بدلاً من تصوير أي طرف بصورة كاريكاتورية." },
+            { "language": "tr", "text": "C2 dili, iki tarafı karikatürleştirmek yerine haklı şüpheciliği genel güvensizlikten ayırır." },
+            { "language": "ru", "text": "Язык C2 отделяет обоснованный скепсис от общего недоверия, вместо того чтобы карикатурно изображать любую сторону." },
+            { "language": "ckb", "text": "زمانی C2 گومانکاری ڕەوا لە بێمتمانەیی گشتی جیا دەکاتەوە، نەوەک هەر دوو لا کاریکاتێر بکات." },
+            { "language": "kmr", "text": "Zimanê C2 gumanbarîya rewa ji bêbaweriya giştî cuda dike, ne ku her alî karîkatur bike." },
+            { "language": "pl", "text": "Język C2 oddziela uzasadniony sceptycyzm od całkowitej nieufności, zamiast karykaturować którąkolwiek stronę." },
+            { "language": "ro", "text": "Limbajul C2 separă scepticismul legitim de neîncrederea generalizată, în loc să caricaturizeze oricare dintre părți." },
+            { "language": "sq", "text": "Gjuha C2 ndan skepticizmin e arsyeshëm nga mosbesimi i përgjithshëm, në vend që të karikaturizojë ndonjërën palë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Veränderung von Erkenntnis braucht Erklärung, nicht bloße Verteidigung.",
+          "translations": [
+            { "language": "en", "text": "Changing knowledge needs explanation, not mere defense." },
+            { "language": "fa", "text": "تغییر شناخت نیاز به توضیح دارد، نه صرفاً دفاع." },
+            { "language": "ar", "text": "تغير المعرفة يحتاج إلى تفسير، لا إلى دفاع فقط." },
+            { "language": "tr", "text": "Bilginin değişmesi sadece savunma değil, açıklama gerektirir." },
+            { "language": "ru", "text": "Изменение знания требует объяснения, а не простой защиты." },
+            { "language": "ckb", "text": "گۆڕانی زانین پێویستی بە ڕوونکردنەوە هەیە، نە تەنها پاراستن." },
+            { "language": "kmr", "text": "Guhertina zanînê ravekirin dixwaze, ne tenê parastin." },
+            { "language": "pl", "text": "Zmiana wiedzy wymaga wyjaśnienia, a nie samej obrony." },
+            { "language": "ro", "text": "Schimbarea cunoașterii are nevoie de explicație, nu doar de apărare." },
+            { "language": "sq", "text": "Ndryshimi i njohurive kërkon shpjegim, jo vetëm mbrojtje." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "personal-experience",
+          "text": "Erfahrung wird ernst genommen, wenn sie als Hinweis und nicht als Gegenbeweis behandelt wird.",
+          "translations": [
+            { "language": "en", "text": "Experience is taken seriously when it is treated as a signal, not as counterproof." },
+            { "language": "fa", "text": "تجربه زمانی جدی گرفته می‌شود که به‌عنوان نشانه دیده شود، نه ضدبرهان." },
+            { "language": "ar", "text": "تؤخذ التجربة بجدية عندما تُعامل كمؤشر لا كدليل مضاد." },
+            { "language": "tr", "text": "Deneyim karşı kanıt değil, işaret olarak ele alındığında ciddiye alınır." },
+            { "language": "ru", "text": "Опыт воспринимается всерьез, когда его рассматривают как сигнал, а не как опровержение." },
+            { "language": "ckb", "text": "ئەزموون کاتێک بە جدی وەردەگیرێت کە وەک نیشانە مامەڵەی لەگەڵ بکرێت، نە وەک بەڵگەی دژ." },
+            { "language": "kmr", "text": "Ezmûn wê demê bi ciddî tê girtin ku wekî nîşan were dîtin, ne wekî delîla dijber." },
+            { "language": "pl", "text": "Doświadczenie traktuje się poważnie, gdy jest sygnałem, a nie kontrdowodem." },
+            { "language": "ro", "text": "Experiența este luată în serios când este tratată ca indiciu, nu ca dovadă contrară." },
+            { "language": "sq", "text": "Përvoja merret seriozisht kur trajtohet si sinjal, jo si kundërprovë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "synthesis",
+          "text": "Prüfbares Vertrauen nennt Kriterien; blindes Vertrauen und Totalmisstrauen bleiben beide zu grob.",
+          "translations": [
+            { "language": "en", "text": "Verifiable trust names criteria; blind trust and total distrust are both too crude." },
+            { "language": "fa", "text": "اعتماد قابل بررسی معیار نام می‌برد؛ اعتماد کور و بی‌اعتمادی کامل هر دو بیش از حد خام‌اند." },
+            { "language": "ar", "text": "الثقة القابلة للتحقق تذكر المعايير؛ أما الثقة العمياء وانعدام الثقة الكامل فكلاهما فظان أكثر من اللازم." },
+            { "language": "tr", "text": "Denetlenebilir güven kriterleri adlandırır; kör güven ve tam güvensizlik ikisi de fazla kaba kalır." },
+            { "language": "ru", "text": "Проверяемое доверие называет критерии; слепое доверие и полное недоверие одинаково грубы." },
+            { "language": "ckb", "text": "متمانەی قابل پشکنین پێوەرەکان دەناوێت؛ متمانەی کوێرانە و بێمتمانەیی تەواو هەر دووکیان زۆر سادەن." },
+            { "language": "kmr", "text": "Baweriya ku dikare bê kontrolkirin pîvanan bi nav dike; baweriya kor û bêbaweriya tevahî her du jî pir qelew dimînin." },
+            { "language": "pl", "text": "Sprawdzalne zaufanie podaje kryteria; ślepe zaufanie i całkowita nieufność są zbyt toporne." },
+            { "language": "ro", "text": "Încrederea verificabilă numește criterii; încrederea oarbă și neîncrederea totală rămân ambele prea grosiere." },
+            { "language": "sq", "text": "Besimi i verifikueshëm përmend kritere; besimi i verbër dhe mosbesimi total mbeten të dyja shumë të trasha." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "science-discussion-group",
+          "placement": "detail-header",
+          "purpose": "Illustrate a respectful public discussion after a science lecture.",
+          "altText": "Eine ruhige Gesprächsrunde Erwachsener nach einem Wissenschaftsvortrag, mit einfachen Diagrammkarten und respektvoller Atmosphäre.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm adult discussion circle after a science lecture, with simple chart cards and a respectful atmosphere." },
+            { "language": "fa", "text": "یک حلقه گفت‌وگوی آرام میان بزرگسالان پس از سخنرانی علمی، با کارت‌های نموداری ساده و فضایی محترمانه." },
+            { "language": "ar", "text": "حلقة نقاش هادئة للبالغين بعد محاضرة علمية، مع بطاقات رسوم بسيطة وأجواء محترمة." },
+            { "language": "tr", "text": "Bilimsel bir konuşmadan sonra yetişkinlerden oluşan sakin bir tartışma halkası, basit grafik kartları ve saygılı bir atmosfer." },
+            { "language": "ru", "text": "Спокойный круг взрослых участников после научной лекции, с простыми карточками диаграмм и уважительной атмосферой." },
+            { "language": "ckb", "text": "بازنەیەکی ئارامی گفتوگۆی گەورەساڵان دوای وانەیەکی زانستی، لەگەڵ کارتی هێڵکاریی سادە و کەشێکی ڕێزدارانە." },
+            { "language": "kmr", "text": "Koma gotûbêja mezinan a aram piştî axaftineke zanistî, bi kartên grafîkê yên sade û atmosfereke bi rêz." },
+            { "language": "pl", "text": "Spokojny krąg rozmowy dorosłych po wykładzie naukowym, z prostymi kartami wykresów i atmosferą szacunku." },
+            { "language": "ro", "text": "Un cerc calm de discuție între adulți după o prelegere științifică, cu carduri simple de grafice și o atmosferă respectuoasă." },
+            { "language": "sq", "text": "Një rreth i qetë diskutimi mes të rriturve pas një ligjërate shkencore, me karta të thjeshta grafiku dhe atmosferë respektuese." }
+          ],
+          "imagePrompt": "Clean educational illustration, adult community discussion after a science lecture, diverse adults seated in a circle with simple chart cards, no readable text, no logos, no political symbols, no private data, accessible composition, calm thoughtful mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,828 @@
+{
+  "packageId": "roleplays-c1-core-74-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 74 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 74",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-testdaf-b2-c1-eine-stellungnahme-praezisieren",
+      "linkedDialogueSlug": null,
+      "title": "TestDaF B2-C1 eine Stellungnahme präzisieren",
+      "titleTranslations": [
+        { "language": "en", "text": "TestDaF B2-C1 refining a statement" },
+        { "language": "fa", "text": "دقیق‌تر کردن یک موضع در TestDaF B2-C1" },
+        { "language": "ar", "text": "تدقيق موقف في TestDaF B2-C1" },
+        { "language": "tr", "text": "TestDaF B2-C1 bir görüşü netleştirmek" },
+        { "language": "ru", "text": "Уточнение позиции в TestDaF B2-C1" },
+        { "language": "ckb", "text": "وردکردنەوەی هەڵوێستێک لە TestDaF B2-C1" },
+        { "language": "kmr", "text": "Hûrgilîkirina helwestekê di TestDaF B2-C1 de" },
+        { "language": "pl", "text": "Doprecyzowanie stanowiska w TestDaF B2-C1" },
+        { "language": "ro", "text": "Precizarea unei poziții în TestDaF B2-C1" },
+        { "language": "sq", "text": "Saktësimi i një qëndrimi në TestDaF B2-C1" }
+      ],
+      "description": "In einer TestDaF-ähnlichen Prüfung präzisieren Sie Ihre Stellungnahme zur Frage, ob Schulnoten durch mehr beschreibendes Feedback ergänzt werden sollten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a TestDaF-style exam, you refine your statement on whether school grades should be supplemented by more descriptive feedback." },
+        { "language": "fa", "text": "در آزمونی شبیه TestDaF، موضع خود را درباره این پرسش دقیق‌تر می‌کنید که آیا نمره‌های مدرسه باید با بازخورد توصیفی بیشتر تکمیل شوند یا نه." },
+        { "language": "ar", "text": "في امتحان شبيه بـ TestDaF تدقق موقفك من سؤال ما إذا كان ينبغي استكمال الدرجات المدرسية بمزيد من التغذية الراجعة الوصفية." },
+        { "language": "tr", "text": "TestDaF benzeri bir sınavda, okul notlarının daha fazla betimleyici geri bildirimle tamamlanıp tamamlanmaması gerektiğine dair görüşünüzü netleştirirsiniz." },
+        { "language": "ru", "text": "В экзамене в стиле TestDaF Вы уточняете свою позицию по вопросу, следует ли дополнять школьные оценки более подробной описательной обратной связью." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەیەکی هاوشێوەی TestDaF دا هەڵوێستەکەت وردتر دەکەیتەوە دەربارەی ئەوەی ئایا پێویستە نمرەی قوتابخانە بە فیدباکی وەسفی زیاتر تەواو بکرێت یان نا." },
+        { "language": "kmr", "text": "Di azmûneke wek TestDaF de hûn helwesta xwe li ser vê pirsê hûrgilî dikin ka divê notên dibistanê bi zêdetir paşxisteya raveker bên temamkirin an na." },
+        { "language": "pl", "text": "W egzaminie podobnym do TestDaF doprecyzowuje Pan/Pani stanowisko w kwestii, czy oceny szkolne powinny być uzupełniane większą ilością opisowej informacji zwrotnej." },
+        { "language": "ro", "text": "Într-un examen de tip TestDaF vă precizați poziția cu privire la întrebarea dacă notele școlare ar trebui completate prin mai mult feedback descriptiv." },
+        { "language": "sq", "text": "Në një provim të ngjashëm me TestDaF saktësoni qëndrimin tuaj për pyetjen nëse notat shkollore duhet të plotësohen me më shumë reagim përshkrues." }
+      ],
+      "learnerGoal": "Eine Stellungnahme auf Nachfrage präzisieren: den Geltungsbereich klären, ein passendes Beispiel geben, eine Grenze benennen und die eigene Position differenziert beibehalten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Refine a statement after a follow-up question: clarify the scope, give a suitable example, name a limit, and maintain your own position in a nuanced way." },
+        { "language": "fa", "text": "پس از سؤال پیگیری، یک موضع را دقیق‌تر کنید: محدوده اعتبار را روشن کنید، مثال مناسب بدهید، محدودیت را نام ببرید و موضع خود را با تفاوت‌گذاری حفظ کنید." },
+        { "language": "ar", "text": "دقق موقفاً بعد سؤال متابعة: وضح نطاقه، وقدم مثالاً مناسباً، واذكر حداً له، وحافظ على موقفك بطريقة متمايزة." },
+        { "language": "tr", "text": "Bir takip sorusundan sonra görüşünüzü netleştirin: kapsamı açıklayın, uygun örnek verin, bir sınır belirtin ve kendi görüşünüzü nüanslı biçimde koruyun." },
+        { "language": "ru", "text": "Уточнить позицию после дополнительного вопроса: прояснить область применения, привести подходящий пример, назвать ограничение и дифференцированно сохранить свою позицию." },
+        { "language": "ckb", "text": "دوای پرسیاری بەدواداچوون هەڵوێستێک ورد بکەوە: مەودای کاریگەری ڕوون بکە، نموونەی گونجاو بدە، سنوورێک ناو ببە و هەڵوێستی خۆت بە جیاوازکردنەوە بهێڵەوە." },
+        { "language": "kmr", "text": "Piştî pirseke şopandinê helwestekê hûrgilî bikin: qadê zelal bikin, mînakeke guncav bidin, sînorekê nav bikin û helwesta xwe bi nuans biparêzin." },
+        { "language": "pl", "text": "Doprecyzować stanowisko po pytaniu uzupełniającym: wyjaśnić zakres, podać odpowiedni przykład, nazwać granicę i zniuansowanie utrzymać własne stanowisko." },
+        { "language": "ro", "text": "Precizați o poziție după o întrebare de urmărire: clarificați domeniul de aplicare, dați un exemplu potrivit, numiți o limită și mențineți nuanțat propria poziție." },
+        { "language": "sq", "text": "Saktësoni një qëndrim pas një pyetjeje ndjekëse: qartësoni fushën e vlefshmërisë, jepni shembull të përshtatshëm, përmendni një kufi dhe ruani qëndrimin tuaj në mënyrë të nuancuar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "give-opinion",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 74,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Prüfungsteilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Exam candidate" },
+            { "language": "fa", "text": "شرکت‌کننده آزمون" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav adayı" },
+            { "language": "ru", "text": "Участник экзамена" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Beşdarê azmûnê" },
+            { "language": "pl", "text": "Osoba zdająca" },
+            { "language": "ro", "text": "Candidat la examen" },
+            { "language": "sq", "text": "Kandidat provimi" }
+          ]
+        },
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfer/in",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnger" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminues" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Sie haben gesagt, Schulnoten sollten weniger Gewicht haben. Präzisieren Sie bitte: Meinen Sie damit alle Schulformen und alle Fächer?",
+          "translations": [
+            { "language": "en", "text": "You said school grades should have less weight. Please clarify: do you mean all school types and all subjects?" },
+            { "language": "fa", "text": "گفتید نمره‌های مدرسه باید وزن کمتری داشته باشند. لطفاً دقیق‌تر کنید: منظورتان همه انواع مدرسه و همه درس‌هاست؟" },
+            { "language": "ar", "text": "قلت إن الدرجات المدرسية ينبغي أن يكون وزنها أقل. وضح من فضلك: هل تقصد كل أنواع المدارس وكل المواد؟" },
+            { "language": "tr", "text": "Okul notlarının daha az ağırlığa sahip olması gerektiğini söylediniz. Lütfen netleştirin: tüm okul türlerini ve tüm dersleri mi kastediyorsunuz?" },
+            { "language": "ru", "text": "Вы сказали, что школьные оценки должны иметь меньший вес. Уточните, пожалуйста: Вы имеете в виду все типы школ и все предметы?" },
+            { "language": "ckb", "text": "گوتت نمرەی قوتابخانە دەبێت گرنگی کەمتر هەبێت. تکایە وردتر بکەوە: مەبەستت هەموو جۆرەکانی قوتابخانە و هەموو بابەتەکانە؟" },
+            { "language": "kmr", "text": "We got ku divê girîngiya notên dibistanê kêmtir be. Ji kerema xwe zelal bikin: Ma hemû cureyên dibistanê û hemû dersan mebest dikin?" },
+            { "language": "pl", "text": "Powiedział(a) Pan/Pani, że oceny szkolne powinny mieć mniejsze znaczenie. Proszę doprecyzować: czy ma Pan/Pani na myśli wszystkie typy szkół i wszystkie przedmioty?" },
+            { "language": "ro", "text": "Ați spus că notele școlare ar trebui să aibă o pondere mai mică. Vă rog să precizați: vă referiți la toate tipurile de școli și la toate materiile?" },
+            { "language": "sq", "text": "Thatë se notat shkollore duhet të kenë më pak peshë. Ju lutem saktësoni: e keni fjalën për të gjitha llojet e shkollave dhe të gjitha lëndët?" }
+          ],
+          "function": "ask-scope",
+          "toneNote": "formal follow-up"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Nein, ich meine nicht, dass Noten abgeschafft werden sollten. Ich würde ihre Bedeutung vor allem dort relativieren, wo Lernentwicklung wichtiger ist als ein einmaliger Leistungsstand.",
+          "translations": [
+            { "language": "en", "text": "No, I do not mean that grades should be abolished. I would relativize their importance mainly where learning development is more important than a one-time performance level." },
+            { "language": "fa", "text": "نه، منظورم این نیست که نمره‌ها باید حذف شوند. من اهمیتشان را به‌ویژه جایی نسبی می‌کنم که رشد یادگیری مهم‌تر از یک وضعیت عملکردیِ یک‌باره است." },
+            { "language": "ar", "text": "لا، لا أقصد أن الدرجات يجب أن تُلغى. سأجعل أهميتها نسبية خصوصاً حيث يكون تطور التعلم أهم من مستوى أداء لحظي واحد." },
+            { "language": "tr", "text": "Hayır, notların kaldırılması gerektiğini kastetmiyorum. Önemlerini özellikle öğrenme gelişiminin tek seferlik performans düzeyinden daha önemli olduğu yerlerde göreceli hale getirirdim." },
+            { "language": "ru", "text": "Нет, я не имею в виду, что оценки следует отменить. Я бы относил(а) их значение прежде всего к тем ситуациям, где развитие обучения важнее одноразового уровня выполнения." },
+            { "language": "ckb", "text": "نەخێر، مەبەستم ئەوە نییە کە نمرەکان لاببرێن. من گرنگییان بە تایبەتی لەو شوێنانەدا ڕێژەیی دەکەم کە پەرەسەندنی فێربوون گرنگترە لە ئاستێکی تاکجارەی ئەنجامدان." },
+            { "language": "kmr", "text": "Na, ez naxwazim bêjim ku divê not bên rakirin. Ez ê girîngiya wan bi taybetî li wir nisbetî bikim ku pêşketina fêrbûnê ji asta performansa yek-carî girîngtir e." },
+            { "language": "pl", "text": "Nie, nie mam na myśli, że oceny powinny zostać zniesione. Relatywizował(a)bym ich znaczenie przede wszystkim tam, gdzie rozwój uczenia się jest ważniejszy niż jednorazowy poziom wykonania." },
+            { "language": "ro", "text": "Nu, nu vreau să spun că notele ar trebui eliminate. Aș relativiza importanța lor mai ales acolo unde dezvoltarea învățării este mai importantă decât un nivel de performanță de moment." },
+            { "language": "sq", "text": "Jo, nuk dua të them se notat duhet të hiqen. Do ta relativizoja rëndësinë e tyre sidomos aty ku zhvillimi i të nxënit është më i rëndësishëm se një nivel performance i vetëm." }
+          ],
+          "function": "clarify-scope",
+          "toneNote": "precise correction"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "examiner",
+          "baseText": "Können Sie dafür ein Beispiel nennen, ohne zu allgemein zu bleiben?",
+          "translations": [
+            { "language": "en", "text": "Can you give an example for that without staying too general?" },
+            { "language": "fa", "text": "می‌توانید برای آن مثالی بدهید، بدون اینکه بیش از حد کلی بمانید؟" },
+            { "language": "ar", "text": "هل يمكنك ذكر مثال لذلك من دون أن تبقى عاماً جداً؟" },
+            { "language": "tr", "text": "Buna fazla genel kalmadan bir örnek verebilir misiniz?" },
+            { "language": "ru", "text": "Можете привести пример, не оставаясь слишком общим?" },
+            { "language": "ckb", "text": "دەتوانیت بۆ ئەمە نموونەیەک بهێنیت بێ ئەوەی زۆر گشتی بمێنیتەوە؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji bo vê yekê mînakekê bidin bêyî ku pir giştî bimînin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani podać przykład, nie pozostając zbyt ogólnym?" },
+            { "language": "ro", "text": "Puteți da un exemplu fără să rămâneți prea general?" },
+            { "language": "sq", "text": "A mund të jepni një shembull për këtë pa mbetur shumë të përgjithshëm?" }
+          ],
+          "function": "ask-example",
+          "toneNote": "specificity prompt"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Im Fremdsprachenunterricht kann eine Note zeigen, wie gut ein Text aktuell ist. Beschreibendes Feedback zeigt aber genauer, ob das Problem bei Wortschatz, Textaufbau oder Argumentation liegt.",
+          "translations": [
+            { "language": "en", "text": "In foreign-language classes, a grade can show how good a text currently is. Descriptive feedback, however, shows more precisely whether the problem lies in vocabulary, text structure, or argumentation." },
+            { "language": "fa", "text": "در آموزش زبان خارجی، نمره می‌تواند نشان دهد یک متن در حال حاضر چقدر خوب است. اما بازخورد توصیفی دقیق‌تر نشان می‌دهد مشکل در واژگان، ساختار متن یا استدلال است." },
+            { "language": "ar", "text": "في تعليم اللغة الأجنبية يمكن للدرجة أن تبين مدى جودة نص في اللحظة الحالية. لكن التغذية الراجعة الوصفية تبين بدقة أكبر هل تكمن المشكلة في المفردات أم بناء النص أم الحجاج." },
+            { "language": "tr", "text": "Yabancı dil dersinde bir not, bir metnin o anda ne kadar iyi olduğunu gösterebilir. Ancak betimleyici geri bildirim, sorunun kelime bilgisi, metin yapısı veya argümantasyonda olup olmadığını daha kesin gösterir." },
+            { "language": "ru", "text": "На уроке иностранного языка оценка может показать, насколько хорош текст в данный момент. Но описательная обратная связь точнее показывает, в чем проблема: в словарном запасе, структуре текста или аргументации." },
+            { "language": "ckb", "text": "لە وانەی زمانی بیانی دا نمرە دەتوانێت نیشان بدات دەقێک لەو کاتەدا چەند باشە. بەڵام فیدباکی وەسفی بە وردتری نیشان دەدات ئایا کێشەکە لە وشە، پێکهاتەی دەق یان بەڵگەهێنانە." },
+            { "language": "kmr", "text": "Di dersa zimanê biyanî de not dikare nîşan bide ku nivîsek niha çiqas baş e. Lê paşxisteya raveker hûrgilîtir nîşan dide ka pirsgirêk di peyvan, avahiya nivîsê an argumankirinê de ye." },
+            { "language": "pl", "text": "Na lekcji języka obcego ocena może pokazać, jak dobry jest tekst w danym momencie. Informacja opisowa dokładniej pokazuje jednak, czy problem leży w słownictwie, strukturze tekstu czy argumentacji." },
+            { "language": "ro", "text": "La ora de limbă străină, o notă poate arăta cât de bun este un text în acel moment. Feedbackul descriptiv arată însă mai precis dacă problema ține de vocabular, structura textului sau argumentare." },
+            { "language": "sq", "text": "Në mësimin e gjuhës së huaj, nota mund të tregojë sa i mirë është aktualisht një tekst. Por reagimi përshkrues tregon më saktë nëse problemi qëndron te fjalori, struktura e tekstit apo argumentimi." }
+          ],
+          "function": "specific-example",
+          "toneNote": "concrete educational example"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Was wäre dann die Grenze Ihrer Forderung?",
+          "translations": [
+            { "language": "en", "text": "What would then be the limit of your demand?" },
+            { "language": "fa", "text": "پس محدودیت خواسته شما چه خواهد بود؟" },
+            { "language": "ar", "text": "ما حد مطلبك إذن؟" },
+            { "language": "tr", "text": "O halde talebinizin sınırı ne olurdu?" },
+            { "language": "ru", "text": "В чем тогда было бы ограничение Вашего требования?" },
+            { "language": "ckb", "text": "کەواتە سنووری داواکارییەکەت چی دەبێت؟" },
+            { "language": "kmr", "text": "Hingê sînora daxwaza we çi dibe?" },
+            { "language": "pl", "text": "Jaka byłaby zatem granica Pana/Pani postulatu?" },
+            { "language": "ro", "text": "Care ar fi atunci limita cerinței dumneavoastră?" },
+            { "language": "sq", "text": "Cili do të ishte atëherë kufiri i kërkesës suaj?" }
+          ],
+          "function": "ask-limitation",
+          "toneNote": "critical follow-up"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Die Grenze liegt dort, wo Entscheidungen vergleichbar und transparent sein müssen, etwa bei Abschlusszeugnissen oder Zulassungen. Dort braucht es weiterhin klare Kriterien und oft auch Noten.",
+          "translations": [
+            { "language": "en", "text": "The limit lies where decisions have to be comparable and transparent, for example in final certificates or admissions. There, clear criteria and often grades are still needed." },
+            { "language": "fa", "text": "محدودیت آنجاست که تصمیم‌ها باید قابل مقایسه و شفاف باشند، مثلاً در کارنامه نهایی یا پذیرش‌ها. آنجا همچنان معیارهای روشن و اغلب نمره لازم است." },
+            { "language": "ar", "text": "الحد يكون حيث يجب أن تكون القرارات قابلة للمقارنة وشفافة، مثل الشهادات النهائية أو القبول. هناك ما زالت المعايير الواضحة وغالباً الدرجات ضرورية." },
+            { "language": "tr", "text": "Sınır, kararların karşılaştırılabilir ve şeffaf olması gereken yerde bulunur; örneğin bitirme belgelerinde veya kabullerde. Orada hâlâ açık ölçütlere ve çoğu zaman notlara ihtiyaç vardır." },
+            { "language": "ru", "text": "Ограничение находится там, где решения должны быть сопоставимыми и прозрачными, например в итоговых аттестатах или при приеме. Там по-прежнему нужны ясные критерии и часто оценки." },
+            { "language": "ckb", "text": "سنوور لەو شوێنەدایە کە بڕیارەکان دەبێت بەراوردکراو و ڕوون بن، وەک لە بڕوانامەی کۆتایی یان وەرگرتن. لەوێ هێشتا پێوەری ڕوون و زۆرجار نمرە پێویستە." },
+            { "language": "kmr", "text": "Sînor li wir e ku biryar divê berhevbar û zelal bin, wek di belgeyên dawî an pejirandinan de. Li wir hê jî pîvanên zelal û gelek caran not pêwîst in." },
+            { "language": "pl", "text": "Granica leży tam, gdzie decyzje muszą być porównywalne i przejrzyste, na przykład przy świadectwach końcowych lub rekrutacji. Tam nadal potrzebne są jasne kryteria i często także oceny." },
+            { "language": "ro", "text": "Limita este acolo unde deciziile trebuie să fie comparabile și transparente, de exemplu la certificate finale sau admiteri. Acolo sunt în continuare necesare criterii clare și adesea note." },
+            { "language": "sq", "text": "Kufiri është aty ku vendimet duhet të jenë të krahasueshme dhe transparente, për shembull në dëftesa përfundimtare ose pranime. Aty ende duhen kritere të qarta dhe shpesh edhe nota." }
+          ],
+          "function": "name-limitation",
+          "toneNote": "balanced constraint"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "examiner",
+          "baseText": "Manche sagen, beschreibendes Feedback koste zu viel Zeit. Wie reagieren Sie darauf?",
+          "translations": [
+            { "language": "en", "text": "Some say descriptive feedback takes too much time. How do you respond to that?" },
+            { "language": "fa", "text": "برخی می‌گویند بازخورد توصیفی زمان زیادی می‌برد. به آن چگونه پاسخ می‌دهید؟" },
+            { "language": "ar", "text": "يقول البعض إن التغذية الراجعة الوصفية تستغرق وقتاً طويلاً جداً. كيف ترد على ذلك؟" },
+            { "language": "tr", "text": "Bazıları betimleyici geri bildirimin çok zaman aldığını söylüyor. Buna nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Некоторые говорят, что описательная обратная связь занимает слишком много времени. Как Вы на это ответите?" },
+            { "language": "ckb", "text": "هەندێک دەڵێن فیدباکی وەسفی کاتی زۆر دەبات. چۆن وەڵامی دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Hin kes dibêjin paşxisteya raveker pir dem digire. Hûn çawa bersiv didin?" },
+            { "language": "pl", "text": "Niektórzy mówią, że informacja opisowa zajmuje zbyt dużo czasu. Jak Pan/Pani na to odpowie?" },
+            { "language": "ro", "text": "Unii spun că feedbackul descriptiv consumă prea mult timp. Cum răspundeți la asta?" },
+            { "language": "sq", "text": "Disa thonë se reagimi përshkrues merr shumë kohë. Si i përgjigjeni kësaj?" }
+          ],
+          "function": "ask-counterargument",
+          "toneNote": "practical objection"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein berechtigter Einwand. Deshalb sollte Feedback nicht immer ausführlich sein, sondern gezielt: ein kurzer Hinweis auf den nächsten Lernschritt kann wirksamer sein als ein langer Kommentar zu jedem Fehler.",
+          "translations": [
+            { "language": "en", "text": "That is a legitimate objection. Therefore feedback should not always be extensive, but targeted: a short note on the next learning step can be more effective than a long comment on every mistake." },
+            { "language": "fa", "text": "این ایراد موجهی است. بنابراین بازخورد نباید همیشه طولانی باشد، بلکه باید هدفمند باشد: یک اشاره کوتاه به گام بعدی یادگیری می‌تواند مؤثرتر از توضیح طولانی درباره هر خطا باشد." },
+            { "language": "ar", "text": "هذا اعتراض مشروع. لذلك لا ينبغي أن تكون التغذية الراجعة دائماً مفصلة، بل موجهة: إشارة قصيرة إلى خطوة التعلم التالية قد تكون أكثر فاعلية من تعليق طويل على كل خطأ." },
+            { "language": "tr", "text": "Bu haklı bir itirazdır. Bu nedenle geri bildirim her zaman uzun olmamalı, hedefli olmalıdır: sonraki öğrenme adımına kısa bir işaret, her hataya uzun yorumdan daha etkili olabilir." },
+            { "language": "ru", "text": "Это обоснованное возражение. Поэтому обратная связь не всегда должна быть подробной, а должна быть целевой: короткое указание на следующий шаг обучения может быть эффективнее длинного комментария к каждой ошибке." },
+            { "language": "ckb", "text": "ئەمە ڕەخنەیەکی ڕەوایە. بۆیە فیدباک نابێت هەمیشە درێژ بێت، بەڵکو دەبێت ئامانجدار بێت: ئاماژەیەکی کورت بۆ هەنگاوی داهاتووی فێربوون دەتوانێت کاریگەرتر بێت لە لێدوانێکی درێژ دەربارەی هەر هەڵە." },
+            { "language": "kmr", "text": "Ev îtirazeke rewa ye. Ji ber vê yekê paşxiste divê her dem dirêj nebe, lê armancdar be: nîşanek kurt li ser gava din a fêrbûnê dikare ji şîroveya dirêj li ser her şaşiyê bandortir be." },
+            { "language": "pl", "text": "To uzasadnione zastrzeżenie. Dlatego feedback nie powinien być zawsze obszerny, lecz celowy: krótka wskazówka dotycząca następnego kroku w nauce może być skuteczniejsza niż długi komentarz do każdego błędu." },
+            { "language": "ro", "text": "Este o obiecție legitimă. De aceea feedbackul nu ar trebui să fie mereu amplu, ci țintit: o indicație scurtă despre următorul pas de învățare poate fi mai eficientă decât un comentariu lung la fiecare greșeală." },
+            { "language": "sq", "text": "Ky është një kundërshtim i arsyeshëm. Prandaj reagimi nuk duhet të jetë gjithmonë i gjatë, por i synuar: një shënim i shkurtër për hapin e ardhshëm të të nxënit mund të jetë më efektiv se një koment i gjatë për çdo gabim." }
+          ],
+          "function": "respond-to-counterargument",
+          "toneNote": "concede and refine"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Wie würden Sie Ihre ursprüngliche Aussage nach dieser Präzisierung formulieren?",
+          "translations": [
+            { "language": "en", "text": "How would you formulate your original statement after this refinement?" },
+            { "language": "fa", "text": "پس از این دقیق‌سازی، جمله اصلی خود را چگونه بیان می‌کنید؟" },
+            { "language": "ar", "text": "كيف ستصوغ تصريحك الأصلي بعد هذا التدقيق؟" },
+            { "language": "tr", "text": "Bu netleştirmeden sonra ilk ifadenizi nasıl formüle ederdiniz?" },
+            { "language": "ru", "text": "Как бы Вы сформулировали свое исходное высказывание после этого уточнения?" },
+            { "language": "ckb", "text": "دوای ئەم وردکردنەوەیە، وتە سەرەتاییەکەت چۆن دادەڕێژیت؟" },
+            { "language": "kmr", "text": "Piştî vê hûrgilîkirinê hûn ê gotina xwe ya destpêkê çawa formule bikin?" },
+            { "language": "pl", "text": "Jak sformułował(a)by Pan/Pani swoją pierwotną wypowiedź po tym doprecyzowaniu?" },
+            { "language": "ro", "text": "Cum ați formula afirmația inițială după această precizare?" },
+            { "language": "sq", "text": "Si do ta formulonit deklaratën tuaj fillestare pas këtij saktësimi?" }
+          ],
+          "function": "ask-reformulation",
+          "toneNote": "precision task"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Noten bleiben für Vergleichbarkeit wichtig, sollten aber im Lernprozess durch gezieltes Feedback ergänzt werden, damit Schülerinnen und Schüler wissen, woran sie konkret weiterarbeiten können.",
+          "translations": [
+            { "language": "en", "text": "I would say: grades remain important for comparability, but in the learning process they should be supplemented by targeted feedback so that pupils know what exactly they can continue working on." },
+            { "language": "fa", "text": "می‌گویم: نمره‌ها برای قابلیت مقایسه مهم می‌مانند، اما در فرایند یادگیری باید با بازخورد هدفمند تکمیل شوند تا دانش‌آموزان بدانند دقیقاً روی چه چیزی می‌توانند بیشتر کار کنند." },
+            { "language": "ar", "text": "سأقول: تبقى الدرجات مهمة للمقارنة، لكنها في عملية التعلم ينبغي أن تُستكمل بتغذية راجعة موجهة حتى يعرف التلاميذ ما الذي يمكنهم العمل عليه تحديداً." },
+            { "language": "tr", "text": "Şöyle derdim: Notlar karşılaştırılabilirlik için önemli kalır, ancak öğrenme sürecinde öğrencilerin somut olarak ne üzerinde çalışabileceklerini bilmeleri için hedefli geri bildirimle tamamlanmalıdır." },
+            { "language": "ru", "text": "Я бы сказал(а): оценки остаются важными для сопоставимости, но в процессе обучения их следует дополнять целевой обратной связью, чтобы учащиеся знали, над чем конкретно им дальше работать." },
+            { "language": "ckb", "text": "من دەڵێم: نمرەکان بۆ بەراوردکاری گرنگ دەمێننەوە، بەڵام لە پرۆسەی فێربووندا دەبێت بە فیدباکی ئامانجدار تەواو بکرێن بۆ ئەوەی قوتابیان بزانن بە وردی لەسەر چی دەتوانن زیاتر کار بکەن." },
+            { "language": "kmr", "text": "Ez ê bibêjim: Not ji bo berhevbarî girîng dimînin, lê di pêvajoya fêrbûnê de divê bi paşxisteya armancdar bên temamkirin da ku xwendekar bizanin bi taybetî li ser çi dikarin bêtir bixebitin." },
+            { "language": "pl", "text": "Powiedział(a)bym: oceny pozostają ważne dla porównywalności, ale w procesie uczenia się powinny być uzupełniane celową informacją zwrotną, aby uczniowie wiedzieli, nad czym konkretnie mogą dalej pracować." },
+            { "language": "ro", "text": "Aș spune: notele rămân importante pentru comparabilitate, dar în procesul de învățare ar trebui completate prin feedback țintit, astfel încât elevii să știe la ce pot lucra concret în continuare." },
+            { "language": "sq", "text": "Do të thosha: notat mbeten të rëndësishme për krahasueshmërinë, por në procesin e të nxënit duhet të plotësohen me reagim të synuar, që nxënësit të dinë konkretisht mbi çfarë mund të punojnë më tej." }
+          ],
+          "function": "refined-statement",
+          "toneNote": "balanced reformulation"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "examiner",
+          "baseText": "Welche Konsequenz hätte diese Position für Lehrkräfte?",
+          "translations": [
+            { "language": "en", "text": "What consequence would this position have for teachers?" },
+            { "language": "fa", "text": "این موضع برای معلمان چه پیامدی خواهد داشت؟" },
+            { "language": "ar", "text": "ما العاقبة التي سيترتب عليها هذا الموقف بالنسبة للمعلمين؟" },
+            { "language": "tr", "text": "Bu görüşün öğretmenler için ne sonucu olurdu?" },
+            { "language": "ru", "text": "Какое последствие имела бы эта позиция для учителей?" },
+            { "language": "ckb", "text": "ئەم هەڵوێستە بۆ مامۆستایان چ ئەنجامێکی دەبێت؟" },
+            { "language": "kmr", "text": "Ev helwest ji bo mamosteyan çi encamekê heye?" },
+            { "language": "pl", "text": "Jaką konsekwencję miałoby to stanowisko dla nauczycieli?" },
+            { "language": "ro", "text": "Ce consecință ar avea această poziție pentru profesori?" },
+            { "language": "sq", "text": "Çfarë pasoje do të kishte ky qëndrim për mësuesit?" }
+          ],
+          "function": "ask-consequence",
+          "toneNote": "practical transfer"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Die Konsequenz wäre nicht, mehr Text zu jeder Arbeit zu schreiben, sondern Feedback systematischer zu machen: wenige Schwerpunkte, klare nächste Schritte und Kriterien, die für die Lernenden nachvollziehbar sind.",
+          "translations": [
+            { "language": "en", "text": "The consequence would not be writing more text for every assignment, but making feedback more systematic: a few focal points, clear next steps, and criteria that learners can understand." },
+            { "language": "fa", "text": "پیامد این نیست که برای هر تکلیف متن بیشتری نوشته شود، بلکه این است که بازخورد نظام‌مندتر شود: چند محور محدود، گام‌های بعدی روشن و معیارهایی که برای یادگیرندگان قابل فهم باشند." },
+            { "language": "ar", "text": "لن تكون النتيجة كتابة نص أكثر لكل عمل، بل جعل التغذية الراجعة أكثر انتظاماً: نقاط تركيز قليلة، وخطوات تالية واضحة، ومعايير مفهومة للمتعلمين." },
+            { "language": "tr", "text": "Sonuç her ödev için daha fazla metin yazmak değil, geri bildirimi daha sistematik hale getirmek olurdu: birkaç odak noktası, açık sonraki adımlar ve öğrenenler için anlaşılır ölçütler." },
+            { "language": "ru", "text": "Последствие состояло бы не в том, чтобы писать больше текста к каждой работе, а в том, чтобы сделать обратную связь более систематичной: несколько акцентов, ясные следующие шаги и критерии, понятные учащимся." },
+            { "language": "ckb", "text": "ئەنجامەکە ئەوە نابێت کە بۆ هەر کارێک دەقی زیاتر بنووسرێت، بەڵکو ئەوەیە فیدباک ڕێکخراوتر بکرێت: چەند خاڵی سەرەکی، هەنگاوی داهاتووی ڕوون و پێوەرێک کە بۆ فێرخوازان تێگەیشتن ئاسان بێت." },
+            { "language": "kmr", "text": "Encam ne ew e ku ji bo her xebatekê zêdetir nivîs were nivîsandin, lê ew e ku paşxiste sistematîktir bibe: çend xalên sereke, gavên din ên zelal û pîvanên ku ji bo fêrkeran têgihiştinbar in." },
+            { "language": "pl", "text": "Konsekwencją nie byłoby pisanie większej ilości tekstu do każdej pracy, lecz bardziej systematyczne udzielanie informacji zwrotnej: kilka punktów ciężkości, jasne następne kroki i kryteria zrozumiałe dla uczących się." },
+            { "language": "ro", "text": "Consecința nu ar fi să se scrie mai mult text pentru fiecare lucrare, ci să se facă feedbackul mai sistematic: câteva puncte de focalizare, pași următori clari și criterii inteligibile pentru cei care învață." },
+            { "language": "sq", "text": "Pasoja nuk do të ishte të shkruhej më shumë tekst për çdo detyrë, por ta bësh reagimin më sistematik: pak pika fokusi, hapa të qartë të mëtejshëm dhe kritere të kuptueshme për nxënësit." }
+          ],
+          "function": "practical-consequence",
+          "toneNote": "practical and realistic"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "clarify-not-abolish",
+              "text": "Nein, ich meine nicht, dass Noten abgeschafft werden sollten. Ich würde ihre Bedeutung vor allem dort relativieren, wo Lernentwicklung wichtiger ist als ein einmaliger Leistungsstand.",
+              "translations": [
+                { "language": "en", "text": "No, I do not mean that grades should be abolished. I would relativize their importance mainly where learning development is more important than a one-time performance level." },
+                { "language": "fa", "text": "نه، منظورم این نیست که نمره‌ها باید حذف شوند. من اهمیتشان را به‌ویژه جایی نسبی می‌کنم که رشد یادگیری مهم‌تر از یک وضعیت عملکردیِ یک‌باره است." },
+                { "language": "ar", "text": "لا، لا أقصد أن الدرجات يجب أن تُلغى. سأجعل أهميتها نسبية خصوصاً حيث يكون تطور التعلم أهم من مستوى أداء لحظي واحد." },
+                { "language": "tr", "text": "Hayır, notların kaldırılması gerektiğini kastetmiyorum. Önemlerini özellikle öğrenme gelişiminin tek seferlik performans düzeyinden daha önemli olduğu yerlerde göreceli hale getirirdim." },
+                { "language": "ru", "text": "Нет, я не имею в виду, что оценки следует отменить. Я бы относил(а) их значение прежде всего к тем ситуациям, где развитие обучения важнее одноразового уровня выполнения." },
+                { "language": "ckb", "text": "نەخێر، مەبەستم ئەوە نییە کە نمرەکان لاببرێن. من گرنگییان بە تایبەتی لەو شوێنانەدا ڕێژەیی دەکەم کە پەرەسەندنی فێربوون گرنگترە لە ئاستێکی تاکجارەی ئەنجامدان." },
+                { "language": "kmr", "text": "Na, ez naxwazim bêjim ku divê not bên rakirin. Ez ê girîngiya wan bi taybetî li wir nisbetî bikim ku pêşketina fêrbûnê ji asta performansa yek-carî girîngtir e." },
+                { "language": "pl", "text": "Nie, nie mam na myśli, że oceny powinny zostać zniesione. Relatywizował(a)bym ich znaczenie przede wszystkim tam, gdzie rozwój uczenia się jest ważniejszy niż jednorazowy poziom wykonania." },
+                { "language": "ro", "text": "Nu, nu vreau să spun că notele ar trebui eliminate. Aș relativiza importanța lor mai ales acolo unde dezvoltarea învățării este mai importantă decât un nivel de performanță de moment." },
+                { "language": "sq", "text": "Jo, nuk dua të them se notat duhet të hiqen. Do ta relativizoja rëndësinë e tyre sidomos aty ku zhvillimi i të nxënit është më i rëndësishëm se një nivel performance i vetëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort korrigiert ein mögliches Missverständnis und grenzt den Geltungsbereich der Aussage ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer corrects a possible misunderstanding and limits the scope of the statement." },
+                { "language": "fa", "text": "خوب: پاسخ یک سوءتفاهم احتمالی را اصلاح می‌کند و محدوده اعتبار جمله را مشخص می‌کند." },
+                { "language": "ar", "text": "جيد: تصحح الإجابة سوء فهم محتملاً وتحدد نطاق العبارة." },
+                { "language": "tr", "text": "İyi: Yanıt olası bir yanlış anlamayı düzeltiyor ve ifadenin kapsamını sınırlıyor." },
+                { "language": "ru", "text": "Хорошо: ответ исправляет возможное недоразумение и ограничивает область действия высказывания." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە تێنەگەیشتنێکی ئەگەری ڕاست دەکاتەوە و مەودای وتەکە سنووردار دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv tênegihiştineke mumkin rast dike û qadê gotinê sînordar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź koryguje możliwe nieporozumienie i zawęża zakres wypowiedzi." },
+                { "language": "ro", "text": "Bine: răspunsul corectează o posibilă neînțelegere și delimitează domeniul afirmației." },
+                { "language": "sq", "text": "Mirë: përgjigjja korrigjon një keqkuptim të mundshëm dhe kufizon fushën e deklaratës." }
+              ],
+              "explanationKey": "scope-clarification"
+            },
+            {
+              "id": "unclear-scope",
+              "text": "Ich meine vor allem, dass Noten oft zu viel Druck machen und deshalb nicht so wichtig sein sollten.",
+              "translations": [
+                { "language": "en", "text": "I mainly mean that grades often create too much pressure and therefore should not be so important." },
+                { "language": "fa", "text": "من بیشتر منظورم این است که نمره‌ها اغلب فشار زیادی ایجاد می‌کنند و بنابراین نباید این‌قدر مهم باشند." },
+                { "language": "ar", "text": "أقصد أساساً أن الدرجات غالباً ما تسبب ضغطاً كبيراً ولذلك لا ينبغي أن تكون بهذه الأهمية." },
+                { "language": "tr", "text": "Asıl demek istediğim, notların çoğu zaman çok fazla baskı yarattığı ve bu yüzden bu kadar önemli olmaması gerektiğidir." },
+                { "language": "ru", "text": "Я главным образом имею в виду, что оценки часто создают слишком большое давление и поэтому не должны быть такими важными." },
+                { "language": "ckb", "text": "من زیاتر مەبەستم ئەوەیە کە نمرەکان زۆرجار فشاری زۆر دروست دەکەن و بۆیە نابێت هێندە گرنگ بن." },
+                { "language": "kmr", "text": "Mebesta min herî zêde ev e ku not gelek caran zexta pir çêdikin û ji ber vê yekê divê ewqas girîng nebin." },
+                { "language": "pl", "text": "Mam głównie na myśli to, że oceny często wywołują zbyt dużą presję i dlatego nie powinny być tak ważne." },
+                { "language": "ro", "text": "Mă refer mai ales la faptul că notele creează adesea prea multă presiune și de aceea nu ar trebui să fie atât de importante." },
+                { "language": "sq", "text": "Kryesisht dua të them se notat shpesh krijojnë shumë presion dhe prandaj nuk duhet të jenë kaq të rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort erklärt das Motiv, klärt aber nicht, für welche Situationen die Aussage gelten soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: The answer explains the motive, but does not clarify which situations the statement should apply to." },
+                { "language": "fa", "text": "بیش از حد نادقیق است: پاسخ انگیزه را توضیح می‌دهد، اما روشن نمی‌کند جمله برای کدام موقعیت‌ها معتبر است." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: تشرح الإجابة الدافع، لكنها لا توضح الحالات التي ينبغي أن تنطبق عليها العبارة." },
+                { "language": "tr", "text": "Çok belirsiz: Yanıt gerekçeyi açıklıyor, ama ifadenin hangi durumlar için geçerli olduğunu netleştirmiyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ объясняет мотив, но не уточняет, к каким ситуациям должно относиться высказывание." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە هۆکار ڕوون دەکاتەوە، بەڵام ڕوون ناکاتەوە وتەکە بۆ کام دۆخەکان کاریگەری هەبێت." },
+                { "language": "kmr", "text": "Pir nezelal e: Bersiv sedemê rave dike, lê zelal nake gotin ji bo kîjan rewşan derbas dibe." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: odpowiedź wyjaśnia motyw, ale nie wskazuje, do jakich sytuacji wypowiedź ma się odnosić." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul explică motivul, dar nu clarifică pentru ce situații ar trebui să fie valabilă afirmația." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja shpjegon motivin, por nuk qartëson për cilat situata duhet të vlejë deklarata." }
+              ],
+              "explanationKey": "scope-still-missing"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "specific-language-class-example",
+              "text": "Im Fremdsprachenunterricht kann eine Note zeigen, wie gut ein Text aktuell ist. Beschreibendes Feedback zeigt aber genauer, ob das Problem bei Wortschatz, Textaufbau oder Argumentation liegt.",
+              "translations": [
+                { "language": "en", "text": "In foreign-language classes, a grade can show how good a text currently is. Descriptive feedback, however, shows more precisely whether the problem lies in vocabulary, text structure, or argumentation." },
+                { "language": "fa", "text": "در آموزش زبان خارجی، نمره می‌تواند نشان دهد یک متن در حال حاضر چقدر خوب است. اما بازخورد توصیفی دقیق‌تر نشان می‌دهد مشکل در واژگان، ساختار متن یا استدلال است." },
+                { "language": "ar", "text": "في تعليم اللغة الأجنبية يمكن للدرجة أن تبين مدى جودة نص في اللحظة الحالية. لكن التغذية الراجعة الوصفية تبين بدقة أكبر هل تكمن المشكلة في المفردات أم بناء النص أم الحجاج." },
+                { "language": "tr", "text": "Yabancı dil dersinde bir not, bir metnin o anda ne kadar iyi olduğunu gösterebilir. Ancak betimleyici geri bildirim, sorunun kelime bilgisi, metin yapısı veya argümantasyonda olup olmadığını daha kesin gösterir." },
+                { "language": "ru", "text": "На уроке иностранного языка оценка может показать, насколько хорош текст в данный момент. Но описательная обратная связь точнее показывает, в чем проблема: в словарном запасе, структуре текста или аргументации." },
+                { "language": "ckb", "text": "لە وانەی زمانی بیانی دا نمرە دەتوانێت نیشان بدات دەقێک لەو کاتەدا چەند باشە. بەڵام فیدباکی وەسفی بە وردتری نیشان دەدات ئایا کێشەکە لە وشە، پێکهاتەی دەق یان بەڵگەهێنانە." },
+                { "language": "kmr", "text": "Di dersa zimanê biyanî de not dikare nîşan bide ku nivîsek niha çiqas baş e. Lê paşxisteya raveker hûrgilîtir nîşan dide ka pirsgirêk di peyvan, avahiya nivîsê an argumankirinê de ye." },
+                { "language": "pl", "text": "Na lekcji języka obcego ocena może pokazać, jak dobry jest tekst w danym momencie. Informacja opisowa dokładniej pokazuje jednak, czy problem leży w słownictwie, strukturze tekstu czy argumentacji." },
+                { "language": "ro", "text": "La ora de limbă străină, o notă poate arăta cât de bun este un text în acel moment. Feedbackul descriptiv arată însă mai precis dacă problema ține de vocabular, structura textului sau argumentare." },
+                { "language": "sq", "text": "Në mësimin e gjuhës së huaj, nota mund të tregojë sa i mirë është aktualisht një tekst. Por reagimi përshkrues tregon më saktë nëse problemi qëndron te fjalori, struktura e tekstit apo argumentimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Beispiel ist konkret und zeigt, welchen Zusatznutzen Feedback gegenüber einer Note hat.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The example is concrete and shows what added value feedback has compared with a grade." },
+                { "language": "fa", "text": "خوب: مثال مشخص است و نشان می‌دهد بازخورد نسبت به نمره چه ارزش افزوده‌ای دارد." },
+                { "language": "ar", "text": "جيد: المثال ملموس ويبين القيمة الإضافية للتغذية الراجعة مقارنة بالدرجة." },
+                { "language": "tr", "text": "İyi: Örnek somut ve geri bildirimin nota kıyasla hangi ek değeri sağladığını gösteriyor." },
+                { "language": "ru", "text": "Хорошо: пример конкретен и показывает, какую дополнительную пользу обратная связь имеет по сравнению с оценкой." },
+                { "language": "ckb", "text": "باشە: نموونەکە دیاریکراوە و نیشان دەدات فیدباک بە بەراورد بە نمرە چ بەهایەکی زیادە هەیە." },
+                { "language": "kmr", "text": "Baş e: Mînak konkret e û nîşan dide paşxiste li gorî notê çi nirxeke zêde heye." },
+                { "language": "pl", "text": "Dobrze: przykład jest konkretny i pokazuje, jaką wartość dodaną ma informacja zwrotna w porównaniu z oceną." },
+                { "language": "ro", "text": "Bine: exemplul este concret și arată ce valoare adăugată are feedbackul față de o notă." },
+                { "language": "sq", "text": "Mirë: shembulli është konkret dhe tregon çfarë vlere shtesë ka reagimi krahasuar me notën." }
+              ],
+              "explanationKey": "specific-added-value"
+            },
+            {
+              "id": "example-too-general",
+              "text": "Zum Beispiel kann Feedback Schülerinnen und Schülern helfen, sich zu verbessern.",
+              "translations": [
+                { "language": "en", "text": "For example, feedback can help pupils improve." },
+                { "language": "fa", "text": "برای مثال، بازخورد می‌تواند به دانش‌آموزان کمک کند بهتر شوند." },
+                { "language": "ar", "text": "على سبيل المثال، يمكن للتغذية الراجعة أن تساعد التلاميذ على التحسن." },
+                { "language": "tr", "text": "Örneğin geri bildirim öğrencilerin gelişmesine yardımcı olabilir." },
+                { "language": "ru", "text": "Например, обратная связь может помочь учащимся улучшиться." },
+                { "language": "ckb", "text": "بۆ نموونە، فیدباک دەتوانێت یارمەتی قوتابیان بدات باشتر ببن." },
+                { "language": "kmr", "text": "Wek mînak, paşxiste dikare alîkariya xwendekaran bike ku baştir bibin." },
+                { "language": "pl", "text": "Na przykład feedback może pomóc uczniom się poprawić." },
+                { "language": "ro", "text": "De exemplu, feedbackul îi poate ajuta pe elevi să se îmbunătățească." },
+                { "language": "sq", "text": "Për shembull, reagimi mund t'i ndihmojë nxënësit të përmirësohen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Das stimmt, bleibt aber unter C1-Niveau, weil Fach, Situation und Lernproblem fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: This is true, but below C1 level because subject, situation, and learning problem are missing." },
+                { "language": "fa", "text": "بیش از حد کلی است: درست است، اما زیر سطح C1 می‌ماند چون درس، موقعیت و مشکل یادگیری مشخص نیست." },
+                { "language": "ar", "text": "عام جداً: هذا صحيح، لكنه دون مستوى C1 لأن المادة والموقف ومشكلة التعلم غائبة." },
+                { "language": "tr", "text": "Çok genel: Bu doğru, ama ders, durum ve öğrenme problemi eksik olduğu için C1 düzeyinin altında kalıyor." },
+                { "language": "ru", "text": "Слишком общо: это верно, но ниже уровня C1, потому что отсутствуют предмет, ситуация и учебная проблема." },
+                { "language": "ckb", "text": "زۆر گشتییە: ئەمە ڕاستە، بەڵام لە خوار ئاستی C1 دەمێنێتەوە چونکە بابەت، دۆخ و کێشەی فێربوون دیار نییە." },
+                { "language": "kmr", "text": "Pir giştî ye: Ev rast e, lê ji asta C1 kêmtir dimîne ji ber ku ders, rewş û pirsgirêka fêrbûnê tune ne." },
+                { "language": "pl", "text": "Zbyt ogólne: to prawda, ale poniżej poziomu C1, ponieważ brakuje przedmiotu, sytuacji i problemu uczenia się." },
+                { "language": "ro", "text": "Prea general: este adevărat, dar rămâne sub nivelul C1, deoarece lipsesc materia, situația și problema de învățare." },
+                { "language": "sq", "text": "Shumë e përgjithshme: kjo është e vërtetë, por mbetet nën nivelin C1 sepse mungojnë lënda, situata dhe problemi i të nxënit." }
+              ],
+              "explanationKey": "missing-specificity"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "limit-comparability",
+              "text": "Die Grenze liegt dort, wo Entscheidungen vergleichbar und transparent sein müssen, etwa bei Abschlusszeugnissen oder Zulassungen. Dort braucht es weiterhin klare Kriterien und oft auch Noten.",
+              "translations": [
+                { "language": "en", "text": "The limit lies where decisions have to be comparable and transparent, for example in final certificates or admissions. There, clear criteria and often grades are still needed." },
+                { "language": "fa", "text": "محدودیت آنجاست که تصمیم‌ها باید قابل مقایسه و شفاف باشند، مثلاً در کارنامه نهایی یا پذیرش‌ها. آنجا همچنان معیارهای روشن و اغلب نمره لازم است." },
+                { "language": "ar", "text": "الحد يكون حيث يجب أن تكون القرارات قابلة للمقارنة وشفافة، مثل الشهادات النهائية أو القبول. هناك ما زالت المعايير الواضحة وغالباً الدرجات ضرورية." },
+                { "language": "tr", "text": "Sınır, kararların karşılaştırılabilir ve şeffaf olması gereken yerde bulunur; örneğin bitirme belgelerinde veya kabullerde. Orada hâlâ açık ölçütlere ve çoğu zaman notlara ihtiyaç vardır." },
+                { "language": "ru", "text": "Ограничение находится там, где решения должны быть сопоставимыми и прозрачными, например в итоговых аттестатах или при приеме. Там по-прежнему нужны ясные критерии и часто оценки." },
+                { "language": "ckb", "text": "سنوور لەو شوێنەدایە کە بڕیارەکان دەبێت بەراوردکراو و ڕوون بن، وەک لە بڕوانامەی کۆتایی یان وەرگرتن. لەوێ هێشتا پێوەری ڕوون و زۆرجار نمرە پێویستە." },
+                { "language": "kmr", "text": "Sînor li wir e ku biryar divê berhevbar û zelal bin, wek di belgeyên dawî an pejirandinan de. Li wir hê jî pîvanên zelal û gelek caran not pêwîst in." },
+                { "language": "pl", "text": "Granica leży tam, gdzie decyzje muszą być porównywalne i przejrzyste, na przykład przy świadectwach końcowych lub rekrutacji. Tam nadal potrzebne są jasne kryteria i często także oceny." },
+                { "language": "ro", "text": "Limita este acolo unde deciziile trebuie să fie comparabile și transparente, de exemplu la certificate finale sau admiteri. Acolo sunt în continuare necesare criterii clare și adesea note." },
+                { "language": "sq", "text": "Kufiri është aty ku vendimet duhet të jenë të krahasueshme dhe transparente, për shembull në dëftesa përfundimtare ose pranime. Aty ende duhen kritere të qarta dhe shpesh edhe nota." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort schwächt die Position nicht, sondern macht sie belastbarer, weil sie eine Grenze nennt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer does not weaken the position; it makes it more robust because it names a limit." },
+                { "language": "fa", "text": "خوب: پاسخ موضع را ضعیف نمی‌کند، بلکه چون محدودیت را نام می‌برد آن را قابل اتکاتر می‌کند." },
+                { "language": "ar", "text": "جيد: لا تضعف الإجابة الموقف، بل تجعله أكثر صلابة لأنها تذكر حداً." },
+                { "language": "tr", "text": "İyi: Yanıt görüşü zayıflatmıyor; bir sınır adlandırdığı için onu daha sağlam kılıyor." },
+                { "language": "ru", "text": "Хорошо: ответ не ослабляет позицию, а делает ее устойчивее, потому что называет ограничение." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەڵوێستەکە لاواز ناکات، بەڵکو بە ناوبردنی سنوور پشتپێبەستر دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv helwestê lawaz nake, lê ji ber ku sînorekê nav dike wê xurtir dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nie osłabia stanowiska, lecz czyni je bardziej solidnym, bo nazywa granicę." },
+                { "language": "ro", "text": "Bine: răspunsul nu slăbește poziția, ci o face mai robustă, deoarece numește o limită." },
+                { "language": "sq", "text": "Mirë: përgjigjja nuk e dobëson qëndrimin, por e bën më të qëndrueshëm sepse përmend një kufi." }
+              ],
+              "explanationKey": "limit-strengthens-position"
+            },
+            {
+              "id": "limit-too-vague",
+              "text": "Natürlich muss man auch sehen, dass Noten manchmal notwendig sind.",
+              "translations": [
+                { "language": "en", "text": "Of course, one must also see that grades are sometimes necessary." },
+                { "language": "fa", "text": "البته باید دید که نمره‌ها گاهی ضروری هستند." },
+                { "language": "ar", "text": "طبعاً يجب أن نرى أيضاً أن الدرجات ضرورية أحياناً." },
+                { "language": "tr", "text": "Elbette notların bazen gerekli olduğunu da görmek gerekir." },
+                { "language": "ru", "text": "Конечно, нужно также видеть, что оценки иногда необходимы." },
+                { "language": "ckb", "text": "بێگومان دەبێت ئەوەش ببینرێت کە نمرەکان هەندێک جار پێویستن." },
+                { "language": "kmr", "text": "Bê guman divê were dîtin ku not carinan pêwîst in." },
+                { "language": "pl", "text": "Oczywiście trzeba też zauważyć, że oceny czasem są konieczne." },
+                { "language": "ro", "text": "Desigur, trebuie văzut și că notele sunt uneori necesare." },
+                { "language": "sq", "text": "Sigurisht duhet parë edhe se notat ndonjëherë janë të nevojshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Aussage erkennt eine Grenze an, sagt aber nicht, wo und warum sie gilt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: The statement acknowledges a limit, but does not say where and why it applies." },
+                { "language": "fa", "text": "بیش از حد مبهم است: جمله محدودیتی را می‌پذیرد، اما نمی‌گوید کجا و چرا معتبر است." },
+                { "language": "ar", "text": "غامض جداً: تعترف العبارة بحد ما، لكنها لا تقول أين ولماذا ينطبق." },
+                { "language": "tr", "text": "Çok belirsiz: İfade bir sınırı kabul ediyor, ama bunun nerede ve neden geçerli olduğunu söylemiyor." },
+                { "language": "ru", "text": "Слишком расплывчато: высказывание признает ограничение, но не говорит, где и почему оно действует." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وتەکە سنوورێک قبوڵ دەکات، بەڵام ناڵێت لە کوێ و بۆچی کاریگەری هەیە." },
+                { "language": "kmr", "text": "Pir nezelal e: Gotin sînorekê qebûl dike, lê nabêje li ku û çima derbas dibe." },
+                { "language": "pl", "text": "Zbyt mgliste: wypowiedź uznaje granicę, ale nie mówi, gdzie i dlaczego ona obowiązuje." },
+                { "language": "ro", "text": "Prea vag: afirmația recunoaște o limită, dar nu spune unde și de ce se aplică." },
+                { "language": "sq", "text": "Shumë e paqartë: deklarata pranon një kufi, por nuk thotë ku dhe pse vlen ai." }
+              ],
+              "explanationKey": "limit-not-specified"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "targeted-feedback-answer",
+              "text": "Das ist ein berechtigter Einwand. Deshalb sollte Feedback nicht immer ausführlich sein, sondern gezielt: ein kurzer Hinweis auf den nächsten Lernschritt kann wirksamer sein als ein langer Kommentar zu jedem Fehler.",
+              "translations": [
+                { "language": "en", "text": "That is a legitimate objection. Therefore feedback should not always be extensive, but targeted: a short note on the next learning step can be more effective than a long comment on every mistake." },
+                { "language": "fa", "text": "این ایراد موجهی است. بنابراین بازخورد نباید همیشه طولانی باشد، بلکه باید هدفمند باشد: یک اشاره کوتاه به گام بعدی یادگیری می‌تواند مؤثرتر از توضیح طولانی درباره هر خطا باشد." },
+                { "language": "ar", "text": "هذا اعتراض مشروع. لذلك لا ينبغي أن تكون التغذية الراجعة دائماً مفصلة، بل موجهة: إشارة قصيرة إلى خطوة التعلم التالية قد تكون أكثر فاعلية من تعليق طويل على كل خطأ." },
+                { "language": "tr", "text": "Bu haklı bir itirazdır. Bu nedenle geri bildirim her zaman uzun olmamalı, hedefli olmalıdır: sonraki öğrenme adımına kısa bir işaret, her hataya uzun yorumdan daha etkili olabilir." },
+                { "language": "ru", "text": "Это обоснованное возражение. Поэтому обратная связь не всегда должна быть подробной, а должна быть целевой: короткое указание на следующий шаг обучения может быть эффективнее длинного комментария к каждой ошибке." },
+                { "language": "ckb", "text": "ئەمە ڕەخنەیەکی ڕەوایە. بۆیە فیدباک نابێت هەمیشە درێژ بێت، بەڵکو دەبێت ئامانجدار بێت: ئاماژەیەکی کورت بۆ هەنگاوی داهاتووی فێربوون دەتوانێت کاریگەرتر بێت لە لێدوانێکی درێژ دەربارەی هەر هەڵە." },
+                { "language": "kmr", "text": "Ev îtirazeke rewa ye. Ji ber vê yekê paşxiste divê her dem dirêj nebe, lê armancdar be: nîşanek kurt li ser gava din a fêrbûnê dikare ji şîroveya dirêj li ser her şaşiyê bandortir be." },
+                { "language": "pl", "text": "To uzasadnione zastrzeżenie. Dlatego feedback nie powinien być zawsze obszerny, lecz celowy: krótka wskazówka dotycząca następnego kroku w nauce może być skuteczniejsza niż długi komentarz do każdego błędu." },
+                { "language": "ro", "text": "Este o obiecție legitimă. De aceea feedbackul nu ar trebui să fie mereu amplu, ci țintit: o indicație scurtă despre următorul pas de învățare poate fi mai eficientă decât un comentariu lung la fiecare greșeală." },
+                { "language": "sq", "text": "Ky është një kundërshtim i arsyeshëm. Prandaj reagimi nuk duhet të jetë gjithmonë i gjatë, por i synuar: një shënim i shkurtër për hapin e ardhshëm të të nxënit mund të jetë më efektiv se një koment i gjatë për çdo gabim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt den Einwand auf und entwickelt daraus eine realistischere Form der eigenen Position.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer takes up the objection and develops a more realistic version of the original position from it." },
+                { "language": "fa", "text": "خوب: پاسخ ایراد را می‌پذیرد و از آن شکل واقع‌بینانه‌تری از موضع اولیه می‌سازد." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة الاعتراض وتطور منه صيغة أكثر واقعية للموقف الأصلي." },
+                { "language": "tr", "text": "İyi: Yanıt itirazı ele alıyor ve bundan ilk görüşün daha gerçekçi bir biçimini geliştiriyor." },
+                { "language": "ru", "text": "Хорошо: ответ учитывает возражение и на его основе развивает более реалистичную форму исходной позиции." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕەخنەکە وەردەگرێت و لێی شێوەیەکی واقیعیتر لە هەڵوێستی سەرەتایی پەرە پێدەدات." },
+                { "language": "kmr", "text": "Baş e: Bersiv îtirazê digire û ji wê formeke realîsttir a helwesta destpêkê pêş dixe." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podejmuje zastrzeżenie i rozwija z niego bardziej realistyczną wersję pierwotnego stanowiska." },
+                { "language": "ro", "text": "Bine: răspunsul preia obiecția și dezvoltă din ea o formă mai realistă a poziției inițiale." },
+                { "language": "sq", "text": "Mirë: përgjigjja e merr kundërshtimin dhe prej tij zhvillon një formë më realiste të qëndrimit fillestar." }
+              ],
+              "explanationKey": "concede-and-refine"
+            },
+            {
+              "id": "dismiss-time-objection",
+              "text": "Der Zeitaufwand ist zwar ein Problem, aber gute Bildung braucht eben mehr Zeit.",
+              "translations": [
+                { "language": "en", "text": "The time required is indeed a problem, but good education simply needs more time." },
+                { "language": "fa", "text": "زحمت زمانی واقعاً یک مشکل است، اما آموزش خوب به هر حال زمان بیشتری می‌خواهد." },
+                { "language": "ar", "text": "الوقت المطلوب مشكلة فعلاً، لكن التعليم الجيد يحتاج ببساطة إلى وقت أكثر." },
+                { "language": "tr", "text": "Zaman gereksinimi elbette bir sorun, ama iyi eğitim sonuçta daha fazla zaman ister." },
+                { "language": "ru", "text": "Затраты времени действительно являются проблемой, но хорошее образование просто требует больше времени." },
+                { "language": "ckb", "text": "هەوڵی کات بەڕاستی کێشەیە، بەڵام پەروەردەی باش بە هەر حال کاتی زیاتر دەوێت." },
+                { "language": "kmr", "text": "Demxercî bi rastî pirsgirêk e, lê perwerdeya baş her çawa be demeke zêdetir dixwaze." },
+                { "language": "pl", "text": "Nakład czasu jest wprawdzie problemem, ale dobra edukacja po prostu wymaga więcej czasu." },
+                { "language": "ro", "text": "Efortul de timp este într-adevăr o problemă, dar educația bună are pur și simplu nevoie de mai mult timp." },
+                { "language": "sq", "text": "Koha e nevojshme është vërtet problem, por arsimi i mirë thjesht kërkon më shumë kohë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einfach: Die Antwort erkennt das Problem, bietet aber keine praktikable Präzisierung an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple: The answer recognizes the problem, but offers no practical refinement." },
+                { "language": "fa", "text": "بیش از حد ساده است: پاسخ مشکل را می‌پذیرد، اما دقیق‌سازی عملی ارائه نمی‌کند." },
+                { "language": "ar", "text": "بسيط جداً: تعترف الإجابة بالمشكلة، لكنها لا تقدم تدقيقاً عملياً." },
+                { "language": "tr", "text": "Çok basit: Yanıt sorunu kabul ediyor, ama uygulanabilir bir netleştirme sunmuyor." },
+                { "language": "ru", "text": "Слишком просто: ответ признает проблему, но не предлагает практичного уточнения." },
+                { "language": "ckb", "text": "زۆر سادەیە: وەڵامەکە کێشەکە دەناسێت، بەڵام وردکردنەوەیەکی کرداری پێشکەش ناکات." },
+                { "language": "kmr", "text": "Pir sade ye: Bersiv pirsgirêkê nas dike, lê hûrgilîkirineke pratîk pêşkêş nake." },
+                { "language": "pl", "text": "Zbyt proste: odpowiedź rozpoznaje problem, ale nie oferuje praktycznego doprecyzowania." },
+                { "language": "ro", "text": "Prea simplu: răspunsul recunoaște problema, dar nu oferă o precizare practică." },
+                { "language": "sq", "text": "Shumë e thjeshtë: përgjigjja e pranon problemin, por nuk ofron saktësim praktik." }
+              ],
+              "explanationKey": "no-practical-refinement"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "refined-balanced-statement",
+              "text": "Ich würde sagen: Noten bleiben für Vergleichbarkeit wichtig, sollten aber im Lernprozess durch gezieltes Feedback ergänzt werden, damit Schülerinnen und Schüler wissen, woran sie konkret weiterarbeiten können.",
+              "translations": [
+                { "language": "en", "text": "I would say: grades remain important for comparability, but in the learning process they should be supplemented by targeted feedback so that pupils know what exactly they can continue working on." },
+                { "language": "fa", "text": "می‌گویم: نمره‌ها برای قابلیت مقایسه مهم می‌مانند، اما در فرایند یادگیری باید با بازخورد هدفمند تکمیل شوند تا دانش‌آموزان بدانند دقیقاً روی چه چیزی می‌توانند بیشتر کار کنند." },
+                { "language": "ar", "text": "سأقول: تبقى الدرجات مهمة للمقارنة، لكنها في عملية التعلم ينبغي أن تُستكمل بتغذية راجعة موجهة حتى يعرف التلاميذ ما الذي يمكنهم العمل عليه تحديداً." },
+                { "language": "tr", "text": "Şöyle derdim: Notlar karşılaştırılabilirlik için önemli kalır, ancak öğrenme sürecinde öğrencilerin somut olarak ne üzerinde çalışabileceklerini bilmeleri için hedefli geri bildirimle tamamlanmalıdır." },
+                { "language": "ru", "text": "Я бы сказал(а): оценки остаются важными для сопоставимости, но в процессе обучения их следует дополнять целевой обратной связью, чтобы учащиеся знали, над чем конкретно им дальше работать." },
+                { "language": "ckb", "text": "من دەڵێم: نمرەکان بۆ بەراوردکاری گرنگ دەمێننەوە، بەڵام لە پرۆسەی فێربووندا دەبێت بە فیدباکی ئامانجدار تەواو بکرێن بۆ ئەوەی قوتابیان بزانن بە وردی لەسەر چی دەتوانن زیاتر کار بکەن." },
+                { "language": "kmr", "text": "Ez ê bibêjim: Not ji bo berhevbarî girîng dimînin, lê di pêvajoya fêrbûnê de divê bi paşxisteya armancdar bên temamkirin da ku xwendekar bizanin bi taybetî li ser çi dikarin bêtir bixebitin." },
+                { "language": "pl", "text": "Powiedział(a)bym: oceny pozostają ważne dla porównywalności, ale w procesie uczenia się powinny być uzupełniane celową informacją zwrotną, aby uczniowie wiedzieli, nad czym konkretnie mogą dalej pracować." },
+                { "language": "ro", "text": "Aș spune: notele rămân importante pentru comparabilitate, dar în procesul de învățare ar trebui completate prin feedback țintit, astfel încât elevii să știe la ce pot lucra concret în continuare." },
+                { "language": "sq", "text": "Do të thosha: notat mbeten të rëndësishme për krahasueshmërinë, por në procesin e të nxënit duhet të plotësohen me reagim të synuar, që nxënësit të dinë konkretisht mbi çfarë mund të punojnë më tej." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die reformulierte Stellungnahme ist klarer, begrenzter und trotzdem argumentativ konsequent.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The reformulated statement is clearer, more limited, and still argumentatively consistent." },
+                { "language": "fa", "text": "خوب: موضع بازنویسی‌شده روشن‌تر و محدودتر است و با این حال از نظر استدلالی منسجم می‌ماند." },
+                { "language": "ar", "text": "جيد: الموقف المعاد صياغته أوضح وأكثر تحديداً ومع ذلك يبقى منسجماً حجاجياً." },
+                { "language": "tr", "text": "İyi: Yeniden formüle edilen görüş daha açık, daha sınırlı ve yine de argümantatif olarak tutarlı." },
+                { "language": "ru", "text": "Хорошо: переформулированная позиция яснее, ограниченнее и при этом аргументативно последовательна." },
+                { "language": "ckb", "text": "باشە: هەڵوێستی دووبارە داڕێژراو ڕوونتر و سنووردارترە و هێشتا لە ڕووی بەڵگەهێنانەوە یەکگرتووە." },
+                { "language": "kmr", "text": "Baş e: Helwesta ji nû ve formulekirî zelaltir, sînordartir e û dîsa jî ji aliyê argumanê ve yekgirtî ye." },
+                { "language": "pl", "text": "Dobrze: przeformułowane stanowisko jest jaśniejsze, bardziej ograniczone i nadal spójne argumentacyjnie." },
+                { "language": "ro", "text": "Bine: poziția reformulată este mai clară, mai delimitată și totuși coerentă argumentativ." },
+                { "language": "sq", "text": "Mirë: qëndrimi i riformuluar është më i qartë, më i kufizuar dhe megjithatë argumentativisht i qëndrueshëm." }
+              ],
+              "explanationKey": "refined-statement"
+            },
+            {
+              "id": "weaker-reformulation",
+              "text": "Ich würde sagen, dass Noten nicht alles sind und Feedback auch eine wichtige Rolle spielt.",
+              "translations": [
+                { "language": "en", "text": "I would say that grades are not everything and feedback also plays an important role." },
+                { "language": "fa", "text": "می‌گویم نمره‌ها همه چیز نیستند و بازخورد هم نقش مهمی دارد." },
+                { "language": "ar", "text": "سأقول إن الدرجات ليست كل شيء وأن التغذية الراجعة تلعب أيضاً دوراً مهماً." },
+                { "language": "tr", "text": "Notların her şey olmadığını ve geri bildirimin de önemli bir rol oynadığını söylerdim." },
+                { "language": "ru", "text": "Я бы сказал(а), что оценки — это не всё и обратная связь тоже играет важную роль." },
+                { "language": "ckb", "text": "دەڵێم نمرەکان هەموو شت نیین و فیدباکیش ڕۆڵێکی گرنگ دەگێڕێت." },
+                { "language": "kmr", "text": "Ez ê bibêjim ku not ne her tişt in û paşxiste jî roleke girîng dilîze." },
+                { "language": "pl", "text": "Powiedział(a)bym, że oceny to nie wszystko i feedback także odgrywa ważną rolę." },
+                { "language": "ro", "text": "Aș spune că notele nu sunt totul și că feedbackul joacă și el un rol important." },
+                { "language": "sq", "text": "Do të thosha se notat nuk janë gjithçka dhe se reagimi gjithashtu luan rol të rëndësishëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Antwort klingt ausgewogen, enthält aber keine präzise Grenze und keinen konkreten Zweck von Feedback.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: The answer sounds balanced, but contains no precise limit and no concrete purpose of feedback." },
+                { "language": "fa", "text": "بیش از حد ضعیف است: پاسخ متعادل به نظر می‌رسد، اما محدودیت دقیق و هدف مشخص بازخورد ندارد." },
+                { "language": "ar", "text": "ضعيف جداً: تبدو الإجابة متوازنة، لكنها لا تحتوي على حد دقيق ولا هدف ملموس للتغذية الراجعة." },
+                { "language": "tr", "text": "Çok zayıf: Yanıt dengeli duyuluyor, ama kesin bir sınır ve geri bildirimin somut amacı yok." },
+                { "language": "ru", "text": "Слишком слабо: ответ звучит сбалансированно, но не содержит точной границы и конкретной цели обратной связи." },
+                { "language": "ckb", "text": "زۆر لاوازە: وەڵامەکە هاوسەنگ دەردەکەوێت، بەڵام سنووری ورد و ئامانجی دیاریکراوی فیدباکی تێدا نییە." },
+                { "language": "kmr", "text": "Pir lawaz e: Bersiv hevseng xuya dike, lê sînora hûrgilî û armanca konkret a paşxisteyê tê de tune ye." },
+                { "language": "pl", "text": "Zbyt słabe: odpowiedź brzmi wyważenie, ale nie zawiera precyzyjnej granicy ani konkretnego celu feedbacku." },
+                { "language": "ro", "text": "Prea slab: răspunsul sună echilibrat, dar nu conține o limită precisă și nici un scop concret al feedbackului." },
+                { "language": "sq", "text": "Shumë e dobët: përgjigjja tingëllon e balancuar, por nuk ka kufi të saktë dhe as qëllim konkret të reagimit." }
+              ],
+              "explanationKey": "balanced-but-imprecise"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "systematic-feedback-consequence",
+              "text": "Die Konsequenz wäre nicht, mehr Text zu jeder Arbeit zu schreiben, sondern Feedback systematischer zu machen: wenige Schwerpunkte, klare nächste Schritte und Kriterien, die für die Lernenden nachvollziehbar sind.",
+              "translations": [
+                { "language": "en", "text": "The consequence would not be writing more text for every assignment, but making feedback more systematic: a few focal points, clear next steps, and criteria that learners can understand." },
+                { "language": "fa", "text": "پیامد این نیست که برای هر تکلیف متن بیشتری نوشته شود، بلکه این است که بازخورد نظام‌مندتر شود: چند محور محدود، گام‌های بعدی روشن و معیارهایی که برای یادگیرندگان قابل فهم باشند." },
+                { "language": "ar", "text": "لن تكون النتيجة كتابة نص أكثر لكل عمل، بل جعل التغذية الراجعة أكثر انتظاماً: نقاط تركيز قليلة، وخطوات تالية واضحة، ومعايير مفهومة للمتعلمين." },
+                { "language": "tr", "text": "Sonuç her ödev için daha fazla metin yazmak değil, geri bildirimi daha sistematik hale getirmek olurdu: birkaç odak noktası, açık sonraki adımlar ve öğrenenler için anlaşılır ölçütler." },
+                { "language": "ru", "text": "Последствие состояло бы не в том, чтобы писать больше текста к каждой работе, а в том, чтобы сделать обратную связь более систематичной: несколько акцентов, ясные следующие шаги и критерии, понятные учащимся." },
+                { "language": "ckb", "text": "ئەنجامەکە ئەوە نابێت کە بۆ هەر کارێک دەقی زیاتر بنووسرێت، بەڵکو ئەوەیە فیدباک ڕێکخراوتر بکرێت: چەند خاڵی سەرەکی، هەنگاوی داهاتووی ڕوون و پێوەرێک کە بۆ فێرخوازان تێگەیشتن ئاسان بێت." },
+                { "language": "kmr", "text": "Encam ne ew e ku ji bo her xebatekê zêdetir nivîs were nivîsandin, lê ew e ku paşxiste sistematîktir bibe: çend xalên sereke, gavên din ên zelal û pîvanên ku ji bo fêrkeran têgihiştinbar in." },
+                { "language": "pl", "text": "Konsekwencją nie byłoby pisanie większej ilości tekstu do każdej pracy, lecz bardziej systematyczne udzielanie informacji zwrotnej: kilka punktów ciężkości, jasne następne kroki i kryteria zrozumiałe dla uczących się." },
+                { "language": "ro", "text": "Consecința nu ar fi să se scrie mai mult text pentru fiecare lucrare, ci să se facă feedbackul mai sistematic: câteva puncte de focalizare, pași următori clari și criterii inteligibile pentru cei care învață." },
+                { "language": "sq", "text": "Pasoja nuk do të ishte të shkruhej më shumë tekst për çdo detyrë, por ta bësh reagimin më sistematik: pak pika fokusi, hapa të qartë të mëtejshëm dhe kritere të kuptueshme për nxënësit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort macht aus einer abstrakten Position eine realistische Handlungsperspektive.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer turns an abstract position into a realistic course of action." },
+                { "language": "fa", "text": "خوب: پاسخ یک موضع انتزاعی را به چشم‌انداز عملی واقع‌بینانه تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: تحول الإجابة موقفاً مجرداً إلى منظور عملي واقعي." },
+                { "language": "tr", "text": "İyi: Yanıt soyut bir görüşü gerçekçi bir eylem perspektifine dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: ответ превращает абстрактную позицию в реалистичную практическую перспективу." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەڵوێستێکی ئەبستراکت دەگۆڕێت بۆ ڕوانگەیەکی کرداری واقیعی." },
+                { "language": "kmr", "text": "Baş e: Bersiv helwesteke abstrakt vediguherîne dîtineke çalakiyê ya realîst." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zamienia abstrakcyjne stanowisko w realistyczną perspektywę działania." },
+                { "language": "ro", "text": "Bine: răspunsul transformă o poziție abstractă într-o perspectivă realistă de acțiune." },
+                { "language": "sq", "text": "Mirë: përgjigjja e kthen një qëndrim abstrakt në një perspektivë veprimi realiste." }
+              ],
+              "explanationKey": "practical-transfer"
+            },
+            {
+              "id": "consequence-more-work-only",
+              "text": "Lehrkräfte müssten dann mehr Feedback geben und sich stärker mit den einzelnen Lernenden beschäftigen.",
+              "translations": [
+                { "language": "en", "text": "Teachers would then have to give more feedback and engage more with individual learners." },
+                { "language": "fa", "text": "معلمان در آن صورت باید بازخورد بیشتری بدهند و بیشتر با تک‌تک یادگیرندگان درگیر شوند." },
+                { "language": "ar", "text": "سيكون على المعلمين عندئذ تقديم مزيد من التغذية الراجعة والانشغال أكثر بكل متعلم على حدة." },
+                { "language": "tr", "text": "Öğretmenler o zaman daha fazla geri bildirim vermek ve tek tek öğrenenlerle daha fazla ilgilenmek zorunda kalırdı." },
+                { "language": "ru", "text": "Учителям тогда пришлось бы давать больше обратной связи и больше заниматься отдельными учащимися." },
+                { "language": "ckb", "text": "مامۆستایان ئەوکات دەبێت فیدباکی زیاتر بدەن و زیاتر سەرقاڵی هەر فێرخوازێک بن." },
+                { "language": "kmr", "text": "Mamoste wê demê divê zêdetir paşxiste bidin û zêdetir bi her fêrkerekê re mijûl bibin." },
+                { "language": "pl", "text": "Nauczyciele musieliby wtedy dawać więcej feedbacku i bardziej zajmować się poszczególnymi uczącymi się." },
+                { "language": "ro", "text": "Profesorii ar trebui atunci să ofere mai mult feedback și să se ocupe mai mult de fiecare cursant." },
+                { "language": "sq", "text": "Mësuesit atëherë do të duhej të jepnin më shumë reagim dhe të merreshin më shumë me secilin nxënës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu belastend formuliert: Die Antwort nennt mehr Arbeit, aber keine systematische und realistische Umsetzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Framed too much as burden: The answer names more work, but no systematic and realistic implementation." },
+                { "language": "fa", "text": "بیش از حد به شکل بار کاری بیان شده است: پاسخ کار بیشتر را نام می‌برد، اما اجرای نظام‌مند و واقع‌بینانه ندارد." },
+                { "language": "ar", "text": "مصاغة كعبء أكثر من اللازم: تذكر الإجابة عملاً أكثر، لكنها لا تقدم تطبيقاً منظماً وواقعياً." },
+                { "language": "tr", "text": "Fazla yük olarak çerçevelenmiş: Yanıt daha fazla işi söylüyor, ama sistematik ve gerçekçi uygulama sunmuyor." },
+                { "language": "ru", "text": "Слишком как нагрузка: ответ называет больше работы, но не дает системной и реалистичной реализации." },
+                { "language": "ckb", "text": "زۆر وەک بارکاری داڕێژراوە: وەڵامەکە کاری زیاتر ناو دەبات، بەڵام جێبەجێکردنی ڕێکخراو و واقیعی پێشکەش ناکات." },
+                { "language": "kmr", "text": "Pir wek bar hatiye formulekirin: Bersiv karê zêdetir nav dike, lê bicihanîna sistematîk û realîst nîne." },
+                { "language": "pl", "text": "Zbyt mocno ujęte jako obciążenie: odpowiedź mówi o większej pracy, ale nie o systematycznej i realistycznej realizacji." },
+                { "language": "ro", "text": "Formulat prea mult ca povară: răspunsul numește mai multă muncă, dar nu o implementare sistematică și realistă." },
+                { "language": "sq", "text": "E formuluar shumë si barrë: përgjigjja përmend më shumë punë, por jo zbatim sistematik dhe realist." }
+              ],
+              "explanationKey": "implementation-missing"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "scope-note",
+          "text": "Eine Präzisierung ist stark, wenn sie eine mögliche Übertreibung korrigiert, ohne die eigene These aufzugeben.",
+          "translations": [
+            { "language": "en", "text": "A refinement is strong when it corrects a possible exaggeration without giving up the thesis." },
+            { "language": "fa", "text": "دقیق‌سازی زمانی قوی است که اغراق احتمالی را اصلاح کند، بدون اینکه تز خود را کنار بگذارد." },
+            { "language": "ar", "text": "يكون التدقيق قوياً عندما يصحح مبالغة محتملة من دون التخلي عن الأطروحة." },
+            { "language": "tr", "text": "Bir netleştirme, olası bir abartıyı düzeltip tezi terk etmediğinde güçlüdür." },
+            { "language": "ru", "text": "Уточнение сильно, когда оно исправляет возможное преувеличение, не отказываясь от собственного тезиса." },
+            { "language": "ckb", "text": "وردکردنەوە کاتێک بەهێزە کە زیادەڕۆییەکی ئەگەری ڕاست بکاتەوە بێ ئەوەی تێزی خۆی وازبهێنێت." },
+            { "language": "kmr", "text": "Hûrgilîkirin dema xurt e ku zêdegotineke mumkin rast bike bêyî ku ji teza xwe dest berde." },
+            { "language": "pl", "text": "Doprecyzowanie jest mocne, gdy koryguje możliwe przerysowanie, nie rezygnując z własnej tezy." },
+            { "language": "ro", "text": "O precizare este puternică atunci când corectează o posibilă exagerare fără a renunța la teză." },
+            { "language": "sq", "text": "Saktësimi është i fortë kur korrigjon një ekzagjerim të mundshëm pa hequr dorë nga teza." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "limitation-note",
+          "text": "Eine Grenze macht eine Stellungnahme prüfungstauglicher, weil sie zeigt, dass die Position nicht pauschal gemeint ist.",
+          "translations": [
+            { "language": "en", "text": "A limit makes a statement more suitable for an exam because it shows that the position is not meant as a blanket claim." },
+            { "language": "fa", "text": "محدودیت یک موضع را برای آزمون مناسب‌تر می‌کند، چون نشان می‌دهد موضع به صورت کلی و بدون قید مطرح نشده است." },
+            { "language": "ar", "text": "يجعل الحد الموقف أكثر ملاءمة للامتحان، لأنه يبين أن الموقف ليس ادعاء عاماً بلا قيد." },
+            { "language": "tr", "text": "Bir sınır, görüşü sınav için daha uygun kılar; çünkü görüşün genelleyici bir iddia olarak düşünülmediğini gösterir." },
+            { "language": "ru", "text": "Ограничение делает позицию более пригодной для экзамена, потому что показывает, что она не является безоговорочным обобщением." },
+            { "language": "ckb", "text": "سنوور هەڵوێستێک بۆ تاقیکردنەوە گونجاوتر دەکات، چونکە نیشان دەدات هەڵوێستەکە بە شێوەی گشتی و بێ مەرج مەبەست نییە." },
+            { "language": "kmr", "text": "Sînor helwestekê ji bo azmûnê guncavtir dike, ji ber ku nîşan dide helwest wek gotineke giştî bê merc nayê mebestkirin." },
+            { "language": "pl", "text": "Granica czyni stanowisko bardziej przydatnym egzaminacyjnie, bo pokazuje, że nie jest ono rozumiane jako ogólne twierdzenie bez zastrzeżeń." },
+            { "language": "ro", "text": "O limită face o poziție mai potrivită pentru examen, deoarece arată că poziția nu este gândită ca afirmație generală fără nuanțe." },
+            { "language": "sq", "text": "Një kufi e bën qëndrimin më të përshtatshëm për provim, sepse tregon se pozicioni nuk synohet si pohim i përgjithshëm pa kushte." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "counterargument-note",
+          "text": "Ein Einwand wird überzeugend beantwortet, wenn er aufgenommen und in eine praktikable Lösung übersetzt wird.",
+          "translations": [
+            { "language": "en", "text": "An objection is answered convincingly when it is taken up and translated into a workable solution." },
+            { "language": "fa", "text": "ایراد زمانی قانع‌کننده پاسخ داده می‌شود که پذیرفته و به راه‌حلی قابل اجرا تبدیل شود." },
+            { "language": "ar", "text": "تُجاب الاعتراضات بإقناع عندما تُؤخذ وتُترجم إلى حل قابل للتطبيق." },
+            { "language": "tr", "text": "Bir itiraz, ele alınıp uygulanabilir bir çözüme çevrildiğinde ikna edici biçimde yanıtlanır." },
+            { "language": "ru", "text": "Возражение убедительно отвечено, когда оно принято и переведено в практичное решение." },
+            { "language": "ckb", "text": "ڕەخنە کاتێک بە قەناعەت وەڵام دەدرێتەوە کە وەربگیرێت و بگۆڕدرێت بۆ چارەسەرێکی جێبەجێکراو." },
+            { "language": "kmr", "text": "Îtiraz dema bi qanihî tê bersivandin ku were girtin û bibe çareseriyeke xebitbar." },
+            { "language": "pl", "text": "Zastrzeżenie zostaje przekonująco odparte, gdy jest podjęte i przełożone na wykonalne rozwiązanie." },
+            { "language": "ro", "text": "O obiecție primește un răspuns convingător când este preluată și transpusă într-o soluție aplicabilă." },
+            { "language": "sq", "text": "Një kundërshtim merr përgjigje bindëse kur pranohet dhe përkthehet në një zgjidhje të zbatueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "practical-transfer-note",
+          "text": "Am Ende sollte klar sein, welche konkrete Handlung aus der präzisierten Position folgt.",
+          "translations": [
+            { "language": "en", "text": "At the end, it should be clear what concrete action follows from the refined position." },
+            { "language": "fa", "text": "در پایان باید روشن باشد از موضع دقیق‌شده چه اقدام مشخصی نتیجه می‌شود." },
+            { "language": "ar", "text": "في النهاية ينبغي أن يكون واضحاً ما الإجراء الملموس الذي ينتج عن الموقف المدقق." },
+            { "language": "tr", "text": "Sonunda netleştirilmiş görüşten hangi somut eylemin çıktığı açık olmalıdır." },
+            { "language": "ru", "text": "В конце должно быть ясно, какое конкретное действие следует из уточненной позиции." },
+            { "language": "ckb", "text": "لە کۆتاییدا دەبێت ڕوون بێت لە هەڵوێستی وردکراوەوە چ هەنگاوێکی دیاریکراو دەردەکەوێت." },
+            { "language": "kmr", "text": "Di dawiyê de divê zelal be ka ji helwesta hûrgilîkirî kîjan çalakiya konkret derdikeve." },
+            { "language": "pl", "text": "Na końcu powinno być jasne, jakie konkretne działanie wynika z doprecyzowanego stanowiska." },
+            { "language": "ro", "text": "La final ar trebui să fie clar ce acțiune concretă rezultă din poziția precizată." },
+            { "language": "sq", "text": "Në fund duhet të jetë e qartë se cili veprim konkret rrjedh nga qëndrimi i saktësuar." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "testdaf-statement-refinement-feedback",
+          "placement": "header",
+          "purpose": "Show a neutral exam discussion about grades and descriptive feedback.",
+          "altText": "Eine ruhige Illustration einer Prüfungssituation, in der eine Stellungnahme zu Noten und Feedback präzisiert wird.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm illustration of an exam situation where a statement about grades and feedback is refined." },
+            { "language": "fa", "text": "تصویری آرام از موقعیت آزمون که در آن موضعی درباره نمره و بازخورد دقیق‌تر می‌شود." },
+            { "language": "ar", "text": "رسم هادئ لموقف امتحان تُدقق فيه وجهة نظر حول الدرجات والتغذية الراجعة." },
+            { "language": "tr", "text": "Notlar ve geri bildirim hakkındaki bir görüşün netleştirildiği sınav durumunun sakin illüstrasyonu." },
+            { "language": "ru", "text": "Спокойная иллюстрация экзаменационной ситуации, где уточняется позиция об оценках и обратной связи." },
+            { "language": "ckb", "text": "وێنەیەکی ئارام لە دۆخی تاقیکردنەوە کە هەڵوێستێک دەربارەی نمرە و فیدباک ورد دەکرێتەوە." },
+            { "language": "kmr", "text": "Wêneyeke aram a rewşa azmûnê ku helwestek li ser not û paşxiste tê hûrgilîkirin." },
+            { "language": "pl", "text": "Spokojna ilustracja sytuacji egzaminacyjnej, w której doprecyzowuje się stanowisko o ocenach i feedbacku." },
+            { "language": "ro", "text": "O ilustrație calmă a unei situații de examen în care se precizează o poziție despre note și feedback." },
+            { "language": "sq", "text": "Një ilustrim i qetë i një situate provimi ku saktësohet një qëndrim për notat dhe reagimin." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, exam discussion table in a German educational setting, two adults discussing grades and descriptive feedback with neutral cards, no readable text, no logos, no private data, calm academic atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

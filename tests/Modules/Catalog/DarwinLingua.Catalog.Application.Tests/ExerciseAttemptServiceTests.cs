@@ -22,6 +22,7 @@ public sealed class ExerciseAttemptServiceTests
             "a1-article-choice",
             new ExerciseAttemptRequestModel("""{ "selectedOptionIds": ["der"] }"""),
             " user-123 ",
+            "en",
             CancellationToken.None);
 
         Assert.NotNull(result);
@@ -42,6 +43,7 @@ public sealed class ExerciseAttemptServiceTests
             "a1-article-choice",
             new ExerciseAttemptRequestModel("""{ "selectedOptionIds": ["der"] }"""),
             " ",
+            "en",
             CancellationToken.None));
 
         Assert.Empty(repository.Attempts);
@@ -57,6 +59,7 @@ public sealed class ExerciseAttemptServiceTests
         ExerciseAttemptResultModel? result = await service.EvaluateAttemptAsync(
             "a1-article-choice",
             new ExerciseAttemptRequestModel("""{ "selectedOptionIds": ["der"] }"""),
+            "en",
             CancellationToken.None);
 
         Assert.NotNull(result);
@@ -75,6 +78,7 @@ public sealed class ExerciseAttemptServiceTests
             "a1-article-choice",
             new ExerciseAttemptRequestModel("{ nope"),
             "user-123",
+            "en",
             CancellationToken.None));
 
         Assert.Empty(repository.Attempts);
@@ -91,6 +95,7 @@ public sealed class ExerciseAttemptServiceTests
             "a1-article-choice",
             new ExerciseAttemptRequestModel($$"""{ "answer": "{{new string('a', 4097)}}" }"""),
             "user-123",
+            "en",
             CancellationToken.None));
 
         Assert.Empty(repository.Attempts);
@@ -107,6 +112,7 @@ public sealed class ExerciseAttemptServiceTests
             "missing-exercise",
             new ExerciseAttemptRequestModel("""{ "selectedOptionIds": ["der"] }"""),
             "user-123",
+            "en",
             CancellationToken.None);
 
         Assert.Null(result);
@@ -124,6 +130,7 @@ public sealed class ExerciseAttemptServiceTests
             "a1-article-choice",
             new ExerciseAttemptRequestModel("""{ "selectedOptionIds": ["die"] }"""),
             "user-123",
+            "en",
             CancellationToken.None);
 
         Assert.NotNull(result);
@@ -164,16 +171,16 @@ public sealed class ExerciseAttemptServiceTests
     {
         public List<UserExerciseAttempt> Attempts { get; } = [];
 
-        public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, CancellationToken cancellationToken) =>
+        public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, CancellationToken cancellationToken) =>
+        public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, CancellationToken cancellationToken) =>
+        public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, CancellationToken cancellationToken) =>
+        public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
         public Task<Exercise?> GetPublishedExerciseEntityBySlugAsync(string slug, CancellationToken cancellationToken) =>

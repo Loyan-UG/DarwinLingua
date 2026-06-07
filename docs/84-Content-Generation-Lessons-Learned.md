@@ -169,6 +169,20 @@ When a content-quality problem is found, add a short note here with:
 - Why it happened: The Web/API production path is PostgreSQL, but some legacy/local tests used SQLite and created pressure to make production queries provider-neutral.
 - Prevention rule: Do not weaken Web/API production search semantics to satisfy SQLite-backed tests. For Web/API module search, keep PostgreSQL-native behavior and add PostgreSQL integration tests. SQLite-backed fixtures may remain only for mobile/local surfaces where SQLite is the actual runtime store and they do not define Web/API production behavior.
 
+### 2026-05-31: Exercise helper text is content, not UI chrome
+
+- What failed: The first Exercise package imported and rendered, but Exercise title, instruction, hint, and feedback explanation had no learner-language helper translations.
+- Where it appeared: Exercise list/detail/runner pages could only show German source and UI-localized chrome, not the learner's selected content language.
+- Why it happened: Exercise was treated as deterministic practice infrastructure first, while multilingual content projection was deferred.
+- Prevention rule: Exercise packages must stay German-first, but reviewed packages need translations for `titleTranslations`, `instructionTranslations`, `correctExplanationTranslations`, `incorrectExplanationTranslations`, `hintTranslations`, `commonMistakeNoteTranslations`, and ExerciseSet title/description translations before import. API/Web must project helper text by selected meaning language while never replacing German source.
+
+### 2026-05-31: Course lessons need translated helper text before content grows
+
+- What failed: The Course contract existed before the first real pilot, but its learner-facing title, description, narrative, learning-goal, review, and homework fields initially had no learner-helper translation fields.
+- Where it appeared: Course planning after Exercise Engine completion.
+- Why it happened: Course Lessons were modeled as orchestration links first, but those orchestration fields are still learner-facing content and must follow the same German-first plus learner-helper rule as Roleplay and Exercise.
+- Prevention rule: Course packages must keep source `title`, `description`, `shortDescription`, `narrative`, `learningGoals`, `reviewSummary`, and `homeworkTask` in German, and must include active learner-language helper translations before import. `learningGoalsTranslations` must contain one translated item per German learning goal.
+
 ### 2026-05-23: Expressions need a dedicated pre-import content quality gate
 
 - What failed: The Expression contract had structural validation, but no focused pilot content gate for English fallback leakage, repeated generic explanations, internal QA text, warning localization, or linked-word meaning leaks.

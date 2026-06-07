@@ -1,0 +1,796 @@
+{
+  "packageId": "roleplays-c1-core-05-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 05 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 05",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ressourcenknappheit-in-einem-projekt-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Ressourcenknappheit in einem Projekt verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating resource constraints in a project" },
+        { "language": "fa", "text": "مذاکره درباره کمبود منابع در یک پروژه" },
+        { "language": "ar", "text": "التفاوض حول نقص الموارد في مشروع" },
+        { "language": "tr", "text": "Bir projede kaynak yetersizliğini müzakere etmek" },
+        { "language": "ru", "text": "Переговоры о нехватке ресурсов в проекте" },
+        { "language": "ckb", "text": "دانوساندن لەسەر کەمیی سەرچاوە لە پڕۆژەیەکدا" },
+        { "language": "kmr", "text": "Danûstandina kêmbûna çavkaniyan di projeyekê de" },
+        { "language": "pl", "text": "Negocjowanie niedoboru zasobów w projekcie" },
+        { "language": "ro", "text": "Negocierea lipsei de resurse într-un proiect" },
+        { "language": "sq", "text": "Negocimi i mungesës së burimeve në një projekt" }
+      ],
+      "description": "In einem C1-Projektmeeting verhandeln Sie den Umfang eines Vorhabens, weil zwei erfahrene Teammitglieder kurzfristig ausfallen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 project meeting, you negotiate the scope of an initiative because two experienced team members are suddenly unavailable." },
+        { "language": "fa", "text": "در یک جلسه پروژه سطح C1، درباره دامنه یک کار مذاکره می‌کنید، چون دو عضو باتجربه تیم به‌طور ناگهانی در دسترس نیستند." },
+        { "language": "ar", "text": "في اجتماع مشروع بمستوى C1، تتفاوض حول نطاق مبادرة لأن عضوين متمرسين من الفريق أصبحا غير متاحين بشكل مفاجئ." },
+        { "language": "tr", "text": "C1 düzeyinde bir proje toplantısında, iki deneyimli ekip üyesi aniden müsait olmadığı için bir çalışmanın kapsamını müzakere edersiniz." },
+        { "language": "ru", "text": "На проектной встрече уровня C1 вы обсуждаете объем инициативы, потому что два опытных члена команды внезапно недоступны." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی پڕۆژەی ئاستی C1دا، سنووری کارێک دانوساندن دەکەیت، چونکە دوو ئەندامی شارەزای تیم بە ناگهانی بەردەست نین." },
+        { "language": "kmr", "text": "Di civîneke projeyê ya asta C1 de, hûn qada karêkê didin danûstandin, ji ber ku du endamên bi ezmûn ên tîmê ji nişkê ve ne berdest in." },
+        { "language": "pl", "text": "Na spotkaniu projektowym na poziomie C1 negocjujesz zakres przedsięwzięcia, ponieważ dwóch doświadczonych członków zespołu nagle jest niedostępnych." },
+        { "language": "ro", "text": "Într-o ședință de proiect de nivel C1, negociați amploarea unei inițiative deoarece doi membri experimentați ai echipei devin brusc indisponibili." },
+        { "language": "sq", "text": "Në një takim projekti të nivelit C1, negocioni shtrirjen e një nisme, sepse dy anëtarë me përvojë të ekipit papritur nuk janë të disponueshëm." }
+      ],
+      "learnerGoal": "Bei knappen Ressourcen Projektumfang verhandeln: Prioritäten klären, Termin- und Qualitätsrisiken benennen, Optionen abwägen und einen überprüfbaren Kompromiss vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate project scope under resource constraints: clarify priorities, name deadline and quality risks, weigh options, and agree on a verifiable compromise." },
+        { "language": "fa", "text": "در شرایط کمبود منابع، دامنه پروژه را مذاکره کنید: اولویت‌ها را روشن کنید، ریسک‌های زمان‌بندی و کیفیت را نام ببرید، گزینه‌ها را بسنجید و بر مصالحه‌ای قابل بررسی توافق کنید." },
+        { "language": "ar", "text": "تفاوض على نطاق المشروع عند ندرة الموارد: وضح الأولويات، واذكر مخاطر المواعيد والجودة، ووازن الخيارات، واتفق على حل وسط قابل للتحقق." },
+        { "language": "tr", "text": "Kaynak kısıtı altında proje kapsamını müzakere edin: öncelikleri netleştirin, teslim tarihi ve kalite risklerini belirtin, seçenekleri tartın ve doğrulanabilir bir uzlaşma üzerinde anlaşın." },
+        { "language": "ru", "text": "Договориться об объеме проекта при ограниченных ресурсах: прояснить приоритеты, назвать риски сроков и качества, взвесить варианты и согласовать проверяемый компромисс." },
+        { "language": "ckb", "text": "لە کەمیی سەرچاوەدا سنووری پڕۆژە دانوسێنە: پێشینەکان ڕوون بکە، مەترسیی کات و کوالێتی ناو ببە، هەڵبژاردەکان هەڵبسەنگێنە و لەسەر ڕێککەوتنێکی پشکنراو ڕێک بکە." },
+        { "language": "kmr", "text": "Di kêmbûna çavkaniyan de qada projeyê danûstandin bikin: pêşengiyan zelal bikin, xeterên dem û kalîteyê nav bikin, vebijarkan binirxînin û li ser lihevhatineke kontrolkirî lihev bikin." },
+        { "language": "pl", "text": "Negocjować zakres projektu przy ograniczonych zasobach: wyjaśnić priorytety, nazwać ryzyka terminu i jakości, rozważyć opcje i uzgodnić sprawdzalny kompromis." },
+        { "language": "ro", "text": "Negociați amploarea proiectului când resursele sunt limitate: clarificați prioritățile, numiți riscurile de termen și calitate, cântăriți opțiunile și conveniți asupra unui compromis verificabil." },
+        { "language": "sq", "text": "Negocioni shtrirjen e projektit kur burimet janë të kufizuara: qartësoni prioritetet, përmendni rreziqet e afatit dhe cilësisë, peshoni opsionet dhe bini dakord për një kompromis të verifikueshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 5,
+      "roles": [
+        {
+          "roleKey": "product-owner",
+          "displayName": "Product Owner",
+          "translations": [
+            { "language": "en", "text": "Product owner" },
+            { "language": "fa", "text": "مالک محصول" },
+            { "language": "ar", "text": "مالك المنتج" },
+            { "language": "tr", "text": "Ürün sahibi" },
+            { "language": "ru", "text": "Владелец продукта" },
+            { "language": "ckb", "text": "خاوەنی بەرهەم" },
+            { "language": "kmr", "text": "Xwediyê berhemê" },
+            { "language": "pl", "text": "Właściciel produktu" },
+            { "language": "ro", "text": "Responsabil de produs" },
+            { "language": "sq", "text": "Pronari i produktit" }
+          ]
+        },
+        {
+          "roleKey": "team-lead",
+          "displayName": "Teamleitung",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "قائد الفريق" },
+            { "language": "tr", "text": "Ekip lideri" },
+            { "language": "ru", "text": "Руководитель команды" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Lider zespołu" },
+            { "language": "ro", "text": "Coordonator de echipă" },
+            { "language": "sq", "text": "Drejtuesi i ekipit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Sie",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "شما" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Siz" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Hûn" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Dumneavoastră" },
+            { "language": "sq", "text": "Ju" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "product-owner",
+          "baseText": "Aus Kundensicht brauchen wir alle drei Module im nächsten Release. Wenn wir jetzt kürzen, verlieren wir den Zusammenhang der Lösung.",
+          "translations": [
+            { "language": "en", "text": "From the customer's perspective, we need all three modules in the next release. If we cut now, we lose the coherence of the solution." },
+            { "language": "fa", "text": "از نگاه مشتری، هر سه ماژول را در release بعدی نیاز داریم. اگر الان کم کنیم، انسجام راه‌حل را از دست می‌دهیم." },
+            { "language": "ar", "text": "من منظور العميل نحتاج إلى الوحدات الثلاث كلها في الإصدار القادم. إذا قلصنا الآن، نفقد ترابط الحل." },
+            { "language": "tr", "text": "Müşteri açısından sonraki sürümde üç modülün de olması gerekiyor. Şimdi kısarsak çözümün bütünlüğünü kaybederiz." },
+            { "language": "ru", "text": "С точки зрения клиента нам нужны все три модуля в следующем релизе. Если сейчас сократим, потеряем целостность решения." },
+            { "language": "ckb", "text": "لە ڕوانگەی کڕیارەوە، لە releaseی داهاتوودا هەر سێ مۆدیولەکەمان پێویستە. ئەگەر ئێستا کەم بکەین، پەیوەندیی چارەسەرەکە لەدەست دەدەین." },
+            { "language": "kmr", "text": "Ji perspektîfa xerîdar, di release-a din de em hewceyî her sê modulan in. Heke em niha kêm bikin, yekitiya çareseriyê winda dikin." },
+            { "language": "pl", "text": "Z perspektywy klienta potrzebujemy wszystkich trzech modułów w następnym wydaniu. Jeśli teraz ograniczymy zakres, stracimy spójność rozwiązania." },
+            { "language": "ro", "text": "Din perspectiva clientului avem nevoie de toate cele trei module în următoarea versiune. Dacă reducem acum, pierdem coerența soluției." },
+            { "language": "sq", "text": "Nga këndvështrimi i klientit na duhen të tre modulet në publikimin e ardhshëm. Nëse shkurtojmë tani, humbim koherencën e zgjidhjes." }
+          ],
+          "function": "scope-pressure",
+          "toneNote": "Der Product Owner vertritt ein legitimes Kundeninteresse.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich sehe den fachlichen Zusammenhang. Gleichzeitig haben wir durch die Ausfälle etwa ein Drittel weniger erfahrene Kapazität. Wenn wir den Umfang unverändert lassen, steigt nicht nur das Terminrisiko, sondern auch das Qualitätsrisiko.",
+          "translations": [
+            { "language": "en", "text": "I see the functional connection. At the same time, because of the absences, we have about one third less experienced capacity. If we leave the scope unchanged, not only the deadline risk increases, but also the quality risk." },
+            { "language": "fa", "text": "ارتباط محتوایی را می‌بینم. هم‌زمان به‌دلیل غیبت‌ها حدود یک‌سوم ظرفیت باتجربه کمتری داریم. اگر دامنه را بدون تغییر نگه داریم، فقط ریسک زمان‌بندی بالا نمی‌رود، بلکه ریسک کیفیت هم افزایش پیدا می‌کند." },
+            { "language": "ar", "text": "أرى الترابط الوظيفي. وفي الوقت نفسه، بسبب الغيابات لدينا حوالي ثلث أقل من القدرة ذات الخبرة. إذا أبقينا النطاق دون تغيير، فلن يزيد خطر الموعد فقط، بل خطر الجودة أيضاً." },
+            { "language": "tr", "text": "İşlevsel bağlantıyı görüyorum. Aynı zamanda devamsızlıklar nedeniyle deneyimli kapasitemiz yaklaşık üçte bir daha az. Kapsamı değiştirmezsek yalnızca teslim tarihi riski değil, kalite riski de artar." },
+            { "language": "ru", "text": "Я вижу функциональную связь. В то же время из-за отсутствий у нас примерно на треть меньше опытной мощности. Если оставить объем без изменений, вырастет не только риск сроков, но и риск качества." },
+            { "language": "ckb", "text": "پەیوەندیی پیشەیی دەبینم. هاوکات بەهۆی نەبوونەکانەوە نزیکەی یەک لەسەر سێی کەمتری توانای شارەزا هەیە. ئەگەر سنوورەکە بێ گۆڕان بهێڵینەوە، نە تەنها مەترسیی کات زیاد دەبێت، بەڵکو مەترسیی کوالێتیش زیاد دەبێت." },
+            { "language": "kmr", "text": "Ez girêdana fonksiyonî dibînim. Di heman demê de, ji ber nebûnan em qasî yek ji sê kêmtir kapasîteya bi ezmûn hene. Heke em qada karê bê guhertin bihêlin, ne tenê xetera demê, xetera kalîteyê jî zêde dibe." },
+            { "language": "pl", "text": "Widzę powiązanie merytoryczne. Jednocześnie przez nieobecności mamy około jednej trzeciej mniej doświadczonej dostępności. Jeśli zostawimy zakres bez zmian, wzrośnie nie tylko ryzyko terminu, lecz także ryzyko jakości." },
+            { "language": "ro", "text": "Văd legătura funcțională. În același timp, din cauza absențelor avem cu aproximativ o treime mai puțină capacitate experimentată. Dacă lăsăm amploarea neschimbată, crește nu doar riscul de termen, ci și riscul de calitate." },
+            { "language": "sq", "text": "E shoh lidhjen funksionale. Në të njëjtën kohë, për shkak të mungesave kemi rreth një të tretën më pak kapacitet me përvojë. Nëse e lëmë shtrirjen të pandryshuar, rritet jo vetëm rreziku i afatit, por edhe rreziku i cilësisë." }
+          ],
+          "function": "risk-frame",
+          "toneNote": "C1: Die Antwort anerkennt den Bedarf und stellt die Ressource als Risiko für Termin und Qualität dar.",
+          "expectedLearnerAction": "Acknowledge the business need while naming resource-based risks."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "team-lead",
+          "baseText": "Wir können kurzfristig Leute aus einem anderen Team dazunehmen, aber sie kennen die Architektur nicht. Das hilft bei einfachen Aufgaben, nicht bei den kritischen Schnittstellen.",
+          "translations": [
+            { "language": "en", "text": "We can bring in people from another team at short notice, but they do not know the architecture. That helps with simple tasks, not with the critical interfaces." },
+            { "language": "fa", "text": "می‌توانیم در کوتاه‌مدت افراد تیم دیگری را اضافه کنیم، اما آن‌ها معماری را نمی‌شناسند. این برای کارهای ساده کمک می‌کند، نه برای interfaceهای حساس." },
+            { "language": "ar", "text": "يمكننا ضم أشخاص من فريق آخر بسرعة، لكنهم لا يعرفون البنية. هذا يساعد في المهام البسيطة، لا في الواجهات الحرجة." },
+            { "language": "tr", "text": "Kısa vadede başka bir ekipten kişiler alabiliriz, ancak mimariyi bilmiyorlar. Bu basit işlerde yardımcı olur, kritik arayüzlerde değil." },
+            { "language": "ru", "text": "Мы можем быстро подключить людей из другой команды, но они не знают архитектуру. Это поможет с простыми задачами, но не с критическими интерфейсами." },
+            { "language": "ckb", "text": "دەتوانین بە کاتی کورت کەسانێک لە تیمێکی تر زیاد بکەین، بەڵام ئەوان ئارکیتێکتەکە ناناسن. ئەمە بۆ ئەرکی سادە یارمەتی دەدات، نە بۆ پەیوەندییە گرنگەکان." },
+            { "language": "kmr", "text": "Em dikarin di demeke kurt de kesên ji tîmeke din zêde bikin, lê ew avahiyê nas nakin. Ev ji bo erkên hêsan alîkar e, ne ji bo navberên krîtîk." },
+            { "language": "pl", "text": "Możemy krótkoterminowo dodać osoby z innego zespołu, ale nie znają architektury. To pomaga przy prostych zadaniach, nie przy krytycznych interfejsach." },
+            { "language": "ro", "text": "Putem aduce rapid oameni dintr-o altă echipă, dar nu cunosc arhitectura. Asta ajută la sarcini simple, nu la interfețele critice." },
+            { "language": "sq", "text": "Mund të marrim shpejt njerëz nga një ekip tjetër, por ata nuk e njohin arkitekturën. Kjo ndihmon për detyra të thjeshta, jo për ndërfaqet kritike." }
+          ],
+          "function": "capacity-constraint",
+          "toneNote": "Die Teamleitung differenziert zwischen nomineller und wirksamer Kapazität.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir Kapazität nicht nur in Personen zählen, sondern in belastbarer Expertise. Mein Vorschlag wäre, die drei Module nach Risiko und Kundennutzen zu sortieren: Modul A bleibt vollständig, Modul B bekommt einen reduzierten Umfang, und Modul C wird als klar angekündigter Nachlauf geplant.",
+          "translations": [
+            { "language": "en", "text": "Then we should not count capacity only in people, but in reliable expertise. My proposal would be to sort the three modules by risk and customer value: Module A remains complete, Module B gets a reduced scope, and Module C is planned as a clearly announced follow-up." },
+            { "language": "fa", "text": "پس نباید ظرفیت را فقط با تعداد افراد بسنجیم، بلکه با تخصص قابل اتکا. پیشنهاد من این است که سه ماژول را بر اساس ریسک و ارزش برای مشتری مرتب کنیم: ماژول A کامل می‌ماند، ماژول B با دامنه کاهش‌یافته می‌آید و ماژول C به‌عنوان مرحله بعدیِ شفاف اعلام‌شده برنامه‌ریزی می‌شود." },
+            { "language": "ar", "text": "إذن لا ينبغي أن نقيس القدرة بعدد الأشخاص فقط، بل بالخبرة الموثوقة. اقتراحي هو ترتيب الوحدات الثلاث حسب الخطر وقيمة العميل: تبقى الوحدة A كاملة، وتحصل الوحدة B على نطاق مخفض، وتُخطط الوحدة C كمتابعة معلنة بوضوح." },
+            { "language": "tr", "text": "O halde kapasiteyi yalnızca kişi sayısıyla değil, güvenilir uzmanlıkla ölçmeliyiz. Önerim üç modülü risk ve müşteri değeri açısından sıralamak: Modül A tam kalır, Modül B azaltılmış kapsam alır, Modül C ise açıkça duyurulan bir takip aşaması olarak planlanır." },
+            { "language": "ru", "text": "Тогда нам нужно считать мощность не только в людях, а в надежной экспертизе. Я бы предложил отсортировать три модуля по риску и ценности для клиента: модуль A остается полным, модуль B получает сокращенный объем, а модуль C планируется как ясно объявленный следующий этап." },
+            { "language": "ckb", "text": "ئەوا پێویستە تواناکە تەنها بە ژمارەی کەس نەژمێرین، بەڵکو بە شارەزاییی پشتپێبەستراو. پێشنیارم ئەوەیە سێ مۆدیولەکە بە پێی مەترسی و سوودی کڕیار ڕیز بکەین: مۆدیولی A تەواو دەمێنێت، مۆدیولی B سنووری کەمکراو وەردەگرێت، و مۆدیولی C وەک هەنگاوی دواتری بە ڕوونی ڕاگەیەندراو پلان دەکرێت." },
+            { "language": "kmr", "text": "Wê demê divê em kapasîteyê ne tenê bi hejmarê kesan, lê bi pisporiya pêbawer bipîvin. Pêşniyara min ew e ku em her sê modulan li gorî xeter û nirxa xerîdar rêz bikin: Modula A temam dimîne, Modula B qada kêmkirî digire, û Modula C wekî şopandineke bi zelalî ragihandî tê plan kirin." },
+            { "language": "pl", "text": "W takim razie nie powinniśmy liczyć dostępności tylko w osobach, lecz w wiarygodnej ekspertyzie. Proponowałbym uporządkować trzy moduły według ryzyka i wartości dla klienta: moduł A zostaje pełny, moduł B ma ograniczony zakres, a moduł C planujemy jako jasno zapowiedziany kolejny etap." },
+            { "language": "ro", "text": "Atunci nu ar trebui să numărăm capacitatea doar în persoane, ci în expertiză fiabilă. Propunerea mea ar fi să ordonăm cele trei module după risc și valoare pentru client: Modulul A rămâne complet, Modulul B primește un domeniu redus, iar Modulul C este planificat ca etapă ulterioară anunțată clar." },
+            { "language": "sq", "text": "Atëherë nuk duhet ta numërojmë kapacitetin vetëm në persona, por në ekspertizë të besueshme. Propozimi im do të ishte t'i rendisim tre modulet sipas rrezikut dhe vlerës për klientin: Moduli A mbetet i plotë, Moduli B merr shtrirje të reduktuar dhe Moduli C planifikohet si fazë pasuese e shpallur qartë." }
+          ],
+          "function": "prioritization-proposal",
+          "toneNote": "C1: Die Antwort ersetzt pauschales Kürzen durch priorisierte Umfangssteuerung.",
+          "expectedLearnerAction": "Turn a resource constraint into a prioritized scope proposal."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "product-owner",
+          "baseText": "Wenn Modul C später kommt, muss ich den Kunden erklären, warum die Lösung zunächst unvollständig wirkt. Was ist die positive Geschichte dahinter?",
+          "translations": [
+            { "language": "en", "text": "If Module C comes later, I have to explain to customers why the solution initially seems incomplete. What is the positive story behind it?" },
+            { "language": "fa", "text": "اگر ماژول C دیرتر بیاید، باید به مشتریان توضیح بدهم چرا راه‌حل در ابتدا ناقص به نظر می‌رسد. روایت مثبت پشت آن چیست؟" },
+            { "language": "ar", "text": "إذا جاءت الوحدة C لاحقاً، فعلي أن أشرح للعملاء لماذا تبدو الحلول في البداية غير مكتملة. ما القصة الإيجابية وراء ذلك؟" },
+            { "language": "tr", "text": "Modül C daha sonra gelirse, müşterilere çözümün başlangıçta neden eksik göründüğünü açıklamam gerekir. Bunun arkasındaki olumlu hikaye nedir?" },
+            { "language": "ru", "text": "Если модуль C выйдет позже, мне нужно объяснить клиентам, почему решение сначала кажется неполным. Какая позитивная история за этим стоит?" },
+            { "language": "ckb", "text": "ئەگەر مۆدیولی C دواتر بێت، دەبێت بۆ کڕیاران ڕوون بکەمەوە بۆچی چارەسەرەکە لە سەرەتادا ناقص دەردەکەوێت. چ چیرۆکێکی ئەرێنی لە پشتەوەیە؟" },
+            { "language": "kmr", "text": "Heke Modula C paşê were, divê ez ji xerîdaran re rave bikim çima çareserî di destpêkê de netemam xuya dike. Çîroka erênî ya li pişt wê çi ye?" },
+            { "language": "pl", "text": "Jeśli moduł C pojawi się później, muszę wyjaśnić klientom, dlaczego rozwiązanie początkowo wydaje się niepełne. Jaka jest pozytywna narracja za tym stojąca?" },
+            { "language": "ro", "text": "Dacă Modulul C vine mai târziu, trebuie să le explic clienților de ce soluția pare inițial incompletă. Care este povestea pozitivă din spate?" },
+            { "language": "sq", "text": "Nëse Moduli C vjen më vonë, duhet t'u shpjegoj klientëve pse zgjidhja fillimisht duket e paplotë. Cila është historia pozitive pas kësaj?" }
+          ],
+          "function": "customer-story-question",
+          "toneNote": "Der Product Owner fragt nach einer vertretbaren Außenkommunikation.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir könnten es als gestaffelte Einführung formulieren: Der erste Schritt liefert den Kernnutzen stabil, der zweite Schritt ergänzt die Automatisierung, sobald die kritischen Schnittstellen abgesichert sind. So verkaufen wir keine Kürzung, sondern eine kontrollierte Reihenfolge.",
+          "translations": [
+            { "language": "en", "text": "We could frame it as a staged rollout: the first step delivers the core value reliably, and the second step adds automation once the critical interfaces are secured. That way we are not selling a cut, but a controlled sequence." },
+            { "language": "fa", "text": "می‌توانیم آن را به‌عنوان معرفی مرحله‌ای بیان کنیم: مرحله اول ارزش اصلی را پایدار تحویل می‌دهد و مرحله دوم وقتی interfaceهای حساس امن شدند، اتوماسیون را اضافه می‌کند. این‌طور کاهش دامنه نمی‌فروشیم، بلکه توالی کنترل‌شده ارائه می‌کنیم." },
+            { "language": "ar", "text": "يمكننا صياغته كإطلاق تدريجي: الخطوة الأولى تقدم القيمة الأساسية بشكل مستقر، والخطوة الثانية تضيف الأتمتة عندما تصبح الواجهات الحرجة مؤمنة. هكذا لا نبيع تقليصاً، بل تسلسلاً مضبوطاً." },
+            { "language": "tr", "text": "Bunu aşamalı bir geçiş olarak çerçeveleyebiliriz: ilk adım temel değeri istikrarlı biçimde sunar, ikinci adım ise kritik arayüzler güvence altına alındığında otomasyonu ekler. Böylece bir kesinti değil, kontrollü bir sıra sunarız." },
+            { "language": "ru", "text": "Мы могли бы представить это как поэтапное внедрение: первый шаг надежно дает основную ценность, второй добавляет автоматизацию, когда критические интерфейсы будут защищены. Так мы продаем не сокращение, а контролируемую последовательность." },
+            { "language": "ckb", "text": "دەتوانین وەک ناساندنی قۆناغبەقۆناغ دەربڕین: هەنگاوی یەکەم سوودی سەرەکی بە سەقامگیری دەدات، هەنگاوی دووەم ئۆتۆماتیکردن زیاد دەکات کاتێک پەیوەندییە گرنگەکان دڵنیاکران. بەم شێوەیە کەمکردنەوە نافرۆشین، بەڵکو ڕیزێکی کۆنترۆڵکراو پێشکەش دەکەین." },
+            { "language": "kmr", "text": "Em dikarin wê wekî destpêkirineke qonax bi qonax binivîsin: gava yekem nirxa bingehîn bi aramî dide, gava duyem otomasyonê zêde dike dema ku navberên krîtîk ewle dibin. Wisa em ne qutkirinê, lê rêzeke kontrolkirî pêşkêş dikin." },
+            { "language": "pl", "text": "Możemy przedstawić to jako etapowe wdrożenie: pierwszy krok stabilnie dostarcza główną wartość, a drugi dodaje automatyzację, gdy krytyczne interfejsy będą zabezpieczone. W ten sposób nie sprzedajemy ograniczenia, lecz kontrolowaną kolejność." },
+            { "language": "ro", "text": "Am putea formula asta ca o introducere etapizată: primul pas livrează stabil valoarea principală, iar al doilea adaugă automatizarea când interfețele critice sunt securizate. Astfel nu vindem o reducere, ci o ordine controlată." },
+            { "language": "sq", "text": "Mund ta formulojmë si prezantim me faza: hapi i parë jep vlerën kryesore në mënyrë të qëndrueshme, hapi i dytë shton automatizimin kur ndërfaqet kritike janë siguruar. Kështu nuk shesim një shkurtim, por një rend të kontrolluar." }
+          ],
+          "function": "customer-framing",
+          "toneNote": "C1: Die Antwort übersetzt den Kompromiss in eine positive, aber ehrliche Kundenkommunikation.",
+          "expectedLearnerAction": "Reframe scope reduction as staged value delivery without hiding the trade-off."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "team-lead",
+          "baseText": "Für Modul B müssten wir trotzdem entscheiden, welche Teile bleiben. Sonst verschieben wir die Debatte nur in die Umsetzung.",
+          "translations": [
+            { "language": "en", "text": "For Module B, we would still have to decide which parts remain. Otherwise we simply move the debate into implementation." },
+            { "language": "fa", "text": "برای ماژول B همچنان باید تصمیم بگیریم کدام بخش‌ها باقی می‌مانند. وگرنه فقط بحث را به مرحله اجرا منتقل می‌کنیم." },
+            { "language": "ar", "text": "بالنسبة للوحدة B، ما زلنا بحاجة إلى تحديد الأجزاء التي ستبقى. وإلا فإننا ننقل النقاش فقط إلى مرحلة التنفيذ." },
+            { "language": "tr", "text": "Modül B için yine de hangi parçaların kalacağına karar vermemiz gerekir. Aksi halde tartışmayı sadece uygulamaya taşırız." },
+            { "language": "ru", "text": "Для модуля B нам все равно нужно решить, какие части остаются. Иначе мы просто переносим спор в реализацию." },
+            { "language": "ckb", "text": "بۆ مۆدیولی B هێشتا دەبێت بڕیار بدەین کام بەشەکان دەمێننەوە. ئەگەرنا تەنها گفتوگۆکە دەگوازینەوە بۆ جێبەجێکردن." },
+            { "language": "kmr", "text": "Ji bo Modula B, hîn jî divê em biryar bidin kîjan beş dimînin. Wekî din em tenê nîqaşê vediguhezînin pêkanînê." },
+            { "language": "pl", "text": "W przypadku modułu B i tak musimy zdecydować, które części zostają. Inaczej tylko przenosimy debatę do realizacji." },
+            { "language": "ro", "text": "Pentru Modulul B tot ar trebui să decidem ce părți rămân. Altfel doar mutăm dezbaterea în implementare." },
+            { "language": "sq", "text": "Për Modulin B ende duhet të vendosim cilat pjesë mbeten. Përndryshe thjesht e zhvendosim debatin në zbatim." }
+          ],
+          "function": "scope-detail-question",
+          "toneNote": "Die Teamleitung fordert konkrete Schnittlinien im reduzierten Umfang.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Für Modul B würde ich eine klare Schnittlinie ziehen: Alles, was manuell zuverlässig bearbeitet werden kann, bleibt zunächst außerhalb. Alles, was ohne Systemunterstützung zu Doppelarbeit oder Datenfehlern führt, bleibt im Release.",
+          "translations": [
+            { "language": "en", "text": "For Module B, I would draw a clear boundary: anything that can be handled manually and reliably stays out for now. Anything that would lead to duplicate work or data errors without system support stays in the release." },
+            { "language": "fa", "text": "برای ماژول B یک مرز روشن می‌گذارم: هر چیزی که بتوان آن را فعلاً دستی و قابل اتکا انجام داد، بیرون می‌ماند. هر چیزی که بدون پشتیبانی سیستم باعث دوباره‌کاری یا خطای داده شود، در release باقی می‌ماند." },
+            { "language": "ar", "text": "بالنسبة للوحدة B، سأرسم خطاً فاصلاً واضحاً: كل ما يمكن معالجته يدوياً وبموثوقية يبقى خارج النطاق مؤقتاً. وكل ما يؤدي دون دعم النظام إلى ازدواجية العمل أو أخطاء البيانات يبقى في الإصدار." },
+            { "language": "tr", "text": "Modül B için net bir sınır çizerdim: manuel ve güvenilir şekilde yapılabilen her şey şimdilik dışarıda kalır. Sistem desteği olmadan çift iş veya veri hatası yaratacak her şey sürümde kalır." },
+            { "language": "ru", "text": "Для модуля B я бы провел четкую границу: все, что можно надежно обработать вручную, пока остается вне объема. Все, что без системной поддержки приведет к двойной работе или ошибкам данных, остается в релизе." },
+            { "language": "ckb", "text": "بۆ مۆدیولی B سنوورێکی ڕوون دادەنێم: هەر شتێک بتوانرێت بە دەستی و بە پشتپێبەستن چارەسەر بکرێت، بۆ ئێستا دەرەوە دەمێنێت. هەر شتێک بەبێ پشتگیریی سیستەم دەبێتە هۆی دووبارەکاری یان هەڵەی داتا، لە releaseدا دەمێنێت." },
+            { "language": "kmr", "text": "Ji bo Modula B ez sînorekî zelal çêdikim: her tiştê ku bi destî û pêbawer were kirin, niha derve dimîne. Her tiştê ku bê piştgiriya pergalê dibe karê dubare an şaşiyên daneyan, di releaseê de dimîne." },
+            { "language": "pl", "text": "Dla modułu B wyznaczyłbym jasną granicę: wszystko, co można niezawodnie obsłużyć ręcznie, zostaje na razie poza zakresem. Wszystko, co bez wsparcia systemu prowadzi do podwójnej pracy lub błędów danych, zostaje w wydaniu." },
+            { "language": "ro", "text": "Pentru Modulul B aș trasa o linie clară: tot ce poate fi gestionat manual și fiabil rămâne deocamdată în afară. Tot ce fără suport de sistem duce la muncă dublă sau erori de date rămâne în versiune." },
+            { "language": "sq", "text": "Për Modulin B do të vendosja një kufi të qartë: çdo gjë që mund të trajtohet manualisht dhe me besueshmëri mbetet përkohësisht jashtë. Çdo gjë që pa mbështetje sistemi çon në punë të dyfishtë ose gabime të të dhënave mbetet në release." }
+          ],
+          "function": "scope-boundary",
+          "toneNote": "C1: Die Antwort definiert eine fachliche Schnittlinie statt einer beliebigen Kürzung.",
+          "expectedLearnerAction": "Define what stays in scope using operational consequences."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "product-owner",
+          "baseText": "Damit kann ich arbeiten. Mir fehlt aber noch ein Kriterium, wann wir Modul C nachziehen, damit es nicht offen bleibt.",
+          "translations": [
+            { "language": "en", "text": "I can work with that. But I still need a criterion for when we will follow up with Module C so that it does not remain open." },
+            { "language": "fa", "text": "با این می‌توانم کار کنم. اما هنوز معیاری لازم دارم که بدانیم چه زمانی ماژول C را اضافه می‌کنیم تا باز و مبهم نماند." },
+            { "language": "ar", "text": "يمكنني العمل بهذا. لكنني ما زلت أحتاج إلى معيار يحدد متى سنلحق الوحدة C، حتى لا تبقى المسألة مفتوحة." },
+            { "language": "tr", "text": "Bununla çalışabilirim. Ancak Modül C'yi ne zaman ekleyeceğimize dair bir ölçüte hâlâ ihtiyacım var, yoksa açık kalır." },
+            { "language": "ru", "text": "С этим я могу работать. Но мне еще нужен критерий, когда мы подтянем модуль C, чтобы вопрос не остался открытым." },
+            { "language": "ckb", "text": "بەوە دەتوانم کار بکەم. بەڵام هێشتا پێوەرێکم پێویستە کە بزانین کەی مۆدیولی C دەهێنینەوە، بۆ ئەوەی کراوە نەماوە." },
+            { "language": "kmr", "text": "Ez dikarim bi vê bixebitim. Lê hîn jî pîvanek hewce ye ku kengê em Modula C paşve bînin, da ku vekirî nemîne." },
+            { "language": "pl", "text": "Z tym mogę pracować. Brakuje mi jednak kryterium, kiedy dołożymy moduł C, żeby temat nie pozostał otwarty." },
+            { "language": "ro", "text": "Cu asta pot lucra. Dar îmi lipsește încă un criteriu pentru când aducem Modulul C, ca să nu rămână deschis." },
+            { "language": "sq", "text": "Me këtë mund të punoj. Por ende më mungon një kriter se kur do ta sjellim Modulin C, që të mos mbetet i hapur." }
+          ],
+          "function": "review-criterion-question",
+          "toneNote": "Der Product Owner fordert Verbindlichkeit für den Nachlauf.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde Modul C an zwei Bedingungen knüpfen: Erstens müssen die Schnittstellen aus Modul A und B im Betrieb eine Woche stabil laufen. Zweitens brauchen wir wieder mindestens eine erfahrene Person für die Architekturprüfung. Dann ist der Nachlauf planbar statt nur ein Wunsch.",
+          "translations": [
+            { "language": "en", "text": "I would link Module C to two conditions: first, the interfaces from Modules A and B must run stably in operation for one week. Second, we need at least one experienced person again for the architecture review. Then the follow-up is plannable rather than just a wish." },
+            { "language": "fa", "text": "ماژول C را به دو شرط وابسته می‌کنم: اول اینکه interfaceهای ماژول A و B در محیط عملیاتی یک هفته پایدار کار کنند. دوم اینکه دوباره دست‌کم یک فرد باتجربه برای بررسی معماری داشته باشیم. آن‌وقت مرحله بعدی برنامه‌پذیر است، نه فقط یک آرزو." },
+            { "language": "ar", "text": "سأربط الوحدة C بشرطين: أولاً، يجب أن تعمل واجهات الوحدتين A وB بثبات في التشغيل لمدة أسبوع. ثانياً، نحتاج مرة أخرى إلى شخص متمرس واحد على الأقل لفحص البنية. عندها تصبح المتابعة قابلة للتخطيط وليست مجرد رغبة." },
+            { "language": "tr", "text": "Modül C'yi iki koşula bağlardım: Birincisi, Modül A ve B'deki arayüzler operasyonda bir hafta stabil çalışmalı. İkincisi, mimari inceleme için tekrar en az bir deneyimli kişiye ihtiyacımız var. O zaman takip aşaması sadece bir istek değil, planlanabilir olur." },
+            { "language": "ru", "text": "Я бы привязал модуль C к двум условиям: во-первых, интерфейсы из модулей A и B должны стабильно работать в эксплуатации одну неделю. Во-вторых, нам снова нужен минимум один опытный человек для архитектурной проверки. Тогда следующий этап будет планируемым, а не просто желанием." },
+            { "language": "ckb", "text": "مۆدیولی C بە دوو مەرج دەبەستمەوە: یەکەم، پەیوەندییەکانی مۆدیولی A و B دەبێت لە بەکارهێناندا یەک هەفتە سەقامگیر کار بکەن. دووەم، دووبارە پێویستمان بە لانیکەم یەک کەسی شارەزا هەیە بۆ پشکنینی ئارکیتێکت. ئەوکات هەنگاوی دواتر پلانکراو دەبێت، نەک تەنها ئارەزوو." },
+            { "language": "kmr", "text": "Ez ê Modula C bi du mercan girê bidim: yekem, navberên ji Modula A û B divê di xebatê de hefteyekê bi aramî bixebitin. Duyem, em careke din hewceyî herî kêm kesekî bi ezmûn ji bo kontrola avahiyê ne. Wê demê şopandin planbar e, ne tenê daxwazek." },
+            { "language": "pl", "text": "Powiązałbym moduł C z dwoma warunkami: po pierwsze, interfejsy z modułów A i B muszą działać stabilnie w produkcji przez tydzień. Po drugie, znów potrzebujemy co najmniej jednej doświadczonej osoby do przeglądu architektury. Wtedy kolejny etap jest planowalny, a nie tylko życzeniem." },
+            { "language": "ro", "text": "Aș lega Modulul C de două condiții: mai întâi, interfețele din Modulele A și B trebuie să funcționeze stabil în operare timp de o săptămână. În al doilea rând, avem din nou nevoie de cel puțin o persoană experimentată pentru verificarea arhitecturii. Atunci etapa ulterioară devine planificabilă, nu doar o dorință." },
+            { "language": "sq", "text": "Do ta lidhja Modulin C me dy kushte: së pari, ndërfaqet nga Modulet A dhe B duhet të punojnë në mënyrë të qëndrueshme në përdorim për një javë. Së dyti, na duhet përsëri të paktën një person me përvojë për kontrollin e arkitekturës. Atëherë faza pasuese është e planifikueshme, jo vetëm dëshirë." }
+          ],
+          "function": "review-criteria",
+          "toneNote": "C1: Die Antwort macht den Nachlauf verbindlich und abhängig von überprüfbaren Bedingungen.",
+          "expectedLearnerAction": "Set criteria for when deferred scope returns."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "team-lead",
+          "baseText": "Bitte formulieren Sie den Kompromiss so, dass wir ihn im Projektboard übernehmen können.",
+          "translations": [
+            { "language": "en", "text": "Please formulate the compromise so that we can add it to the project board." },
+            { "language": "fa", "text": "لطفاً مصالحه را طوری فرموله کنید که بتوانیم آن را در project board وارد کنیم." },
+            { "language": "ar", "text": "يرجى صياغة الحل الوسط بحيث يمكننا إضافته إلى لوحة المشروع." },
+            { "language": "tr", "text": "Lütfen uzlaşmayı proje panosuna alabileceğimiz şekilde formüle edin." },
+            { "language": "ru", "text": "Пожалуйста, сформулируйте компромисс так, чтобы мы могли добавить его на проектную доску." },
+            { "language": "ckb", "text": "تکایە ڕێککەوتنەکە بە شێوەیەک دابڕێژە کە بتوانین لە project board دایبنێین." },
+            { "language": "kmr", "text": "Ji kerema xwe lihevhatinê wisa binivîsin ku em bikarin wê têxin tabloya projeyê." },
+            { "language": "pl", "text": "Proszę sformułować kompromis tak, abyśmy mogli dodać go do tablicy projektowej." },
+            { "language": "ro", "text": "Vă rog să formulați compromisul astfel încât să îl putem adăuga în board-ul proiectului." },
+            { "language": "sq", "text": "Ju lutem formulojeni kompromisin në mënyrë që ta shtojmë në bordin e projektit." }
+          ],
+          "function": "board-summary-request",
+          "toneNote": "Die Teamleitung erwartet eine knappe, operative Zusammenfassung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Wir liefern im nächsten Release Modul A vollständig und Modul B mit reduziertem Umfang. Modul C wird als angekündigter Nachlauf geplant. Die Priorisierung folgt Kundennutzen, Qualitätsrisiko und wirksamer Expertise. Nach einer Woche stabiler Schnittstellen und verfügbarer Architekturprüfung entscheiden wir über den Termin für Modul C.",
+          "translations": [
+            { "language": "en", "text": "In the next release, we will deliver Module A completely and Module B with reduced scope. Module C will be planned as an announced follow-up. Prioritization follows customer value, quality risk, and effective expertise. After one week of stable interfaces and available architecture review, we decide on the date for Module C." },
+            { "language": "fa", "text": "در release بعدی ماژول A را کامل و ماژول B را با دامنه کاهش‌یافته تحویل می‌دهیم. ماژول C به‌عنوان مرحله بعدی اعلام‌شده برنامه‌ریزی می‌شود. اولویت‌بندی بر اساس ارزش برای مشتری، ریسک کیفیت و تخصص مؤثر انجام می‌شود. پس از یک هفته interfaceهای پایدار و در دسترس بودن بررسی معماری، درباره تاریخ ماژول C تصمیم می‌گیریم." },
+            { "language": "ar", "text": "في الإصدار القادم سنسلم الوحدة A كاملة والوحدة B بنطاق مخفض. تُخطط الوحدة C كمتابعة معلنة. تتبع الأولوية قيمة العميل، وخطر الجودة، والخبرة الفعالة. بعد أسبوع من استقرار الواجهات وتوفر فحص البنية، نقرر موعد الوحدة C." },
+            { "language": "tr", "text": "Sonraki sürümde Modül A'yı tamamen, Modül B'yi azaltılmış kapsamla teslim edeceğiz. Modül C duyurulmuş bir takip aşaması olarak planlanacak. Önceliklendirme müşteri değeri, kalite riski ve etkili uzmanlığa göre yapılır. Bir hafta stabil arayüzler ve mevcut mimari incelemeden sonra Modül C'nin tarihine karar veririz." },
+            { "language": "ru", "text": "В следующем релизе мы полностью поставим модуль A и модуль B в сокращенном объеме. Модуль C будет запланирован как объявленный следующий этап. Приоритизация основывается на ценности для клиента, риске качества и эффективной экспертизе. После недели стабильной работы интерфейсов и доступной архитектурной проверки мы решим дату для модуля C." },
+            { "language": "ckb", "text": "لە releaseی داهاتوودا مۆدیولی A بە تەواوی و مۆدیولی B بە سنووری کەمکراو دەدات. مۆدیولی C وەک هەنگاوی دواتری ڕاگەیەندراو پلان دەکرێت. پێشینەدان بە پێی سوودی کڕیار، مەترسیی کوالێتی و شارەزاییی کاریگەر دەبێت. دوای یەک هەفتە پەیوەندیی سەقامگیر و بەردەستبوونی پشکنینی ئارکیتێکت، بڕیار لەسەر بەرواری مۆدیولی C دەدەین." },
+            { "language": "kmr", "text": "Di release-a din de em Modula A bi tevahî û Modula B bi qada kêmkirî radest dikin. Modula C wekî şopandineke ragihandî tê plan kirin. Pêşengî li gorî nirxa xerîdar, xetera kalîteyê û pisporiya bikêr tê dayîn. Piştî hefteyekê navberên aram û kontrola avahiyê ya berdest, em li ser tarîxa Modula C biryar didin." },
+            { "language": "pl", "text": "W następnym wydaniu dostarczymy moduł A w całości i moduł B w ograniczonym zakresie. Moduł C zostanie zaplanowany jako zapowiedziany kolejny etap. Priorytety wynikają z wartości dla klienta, ryzyka jakości i realnej ekspertyzy. Po tygodniu stabilnych interfejsów i dostępnej weryfikacji architektury zdecydujemy o terminie modułu C." },
+            { "language": "ro", "text": "În următoarea versiune livrăm Modulul A complet și Modulul B cu domeniu redus. Modulul C va fi planificat ca etapă ulterioară anunțată. Prioritizarea urmează valoarea pentru client, riscul de calitate și expertiza efectivă. După o săptămână de interfețe stabile și verificare arhitecturală disponibilă, decidem data pentru Modulul C." },
+            { "language": "sq", "text": "Në publikimin e ardhshëm dorëzojmë Modulin A plotësisht dhe Modulin B me shtrirje të reduktuar. Moduli C planifikohet si fazë pasuese e shpallur. Prioritizimi ndjek vlerën për klientin, rrezikun e cilësisë dhe ekspertizën efektive. Pas një jave ndërfaqesh të qëndrueshme dhe kontrolli arkitekturor të disponueshëm, vendosim datën për Modulin C." }
+          ],
+          "function": "project-board-summary",
+          "toneNote": "C1: Die Zusammenfassung verbindet Scope, Kriterien und Nachlaufbedingung.",
+          "expectedLearnerAction": "Summarize the negotiated compromise in board-ready language."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich sehe den fachlichen Zusammenhang. Gleichzeitig erhöht unveränderter Umfang bei weniger erfahrener Kapazität Termin- und Qualitätsrisiko.",
+              "translations": [
+                { "language": "en", "text": "I see the functional connection. At the same time, unchanged scope with less experienced capacity increases deadline and quality risk." },
+                { "language": "fa", "text": "ارتباط محتوایی را می‌بینم. هم‌زمان دامنه بدون تغییر با ظرفیت باتجربه کمتر، ریسک زمان‌بندی و کیفیت را بالا می‌برد." },
+                { "language": "ar", "text": "أرى الترابط الوظيفي. وفي الوقت نفسه، فإن النطاق غير المتغير مع قدرة أقل خبرة يزيد خطر الموعد والجودة." },
+                { "language": "tr", "text": "İşlevsel bağlantıyı görüyorum. Aynı zamanda daha az deneyimli kapasiteyle değişmeyen kapsam teslim tarihi ve kalite riskini artırır." },
+                { "language": "ru", "text": "Я вижу функциональную связь. В то же время неизменный объем при меньшей опытной мощности повышает риски сроков и качества." },
+                { "language": "ckb", "text": "پەیوەندیی پیشەیی دەبینم. هاوکات سنووری بێ گۆڕان لەگەڵ توانای شارەزای کەمتر، مەترسیی کات و کوالێتی زیاد دەکات." },
+                { "language": "kmr", "text": "Ez girêdana fonksiyonî dibînim. Di heman demê de qada bê guhertin bi kapasîteya bi ezmûn a kêmtir xetera dem û kalîteyê zêde dike." },
+                { "language": "pl", "text": "Widzę powiązanie merytoryczne. Jednocześnie niezmieniony zakres przy mniejszej doświadczonej dostępności zwiększa ryzyko terminu i jakości." },
+                { "language": "ro", "text": "Văd legătura funcțională. În același timp, domeniul neschimbat cu mai puțină capacitate experimentată crește riscul de termen și calitate." },
+                { "language": "sq", "text": "E shoh lidhjen funksionale. Në të njëjtën kohë, shtrirja e pandryshuar me më pak kapacitet me përvojë rrit rrezikun e afatit dhe cilësisë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Kundenbedarf mit Ressourcenrealität und benennt zwei Risiken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer connects customer need with resource reality and names two risks." },
+                { "language": "fa", "text": "قوی: پاسخ نیاز مشتری را با واقعیت منابع پیوند می‌دهد و دو ریسک را نام می‌برد." },
+                { "language": "ar", "text": "قوي: يربط الجواب حاجة العميل بواقع الموارد ويذكر خطرين." },
+                { "language": "tr", "text": "Güçlü: cevap müşteri ihtiyacını kaynak gerçeğiyle bağlar ve iki riski belirtir." },
+                { "language": "ru", "text": "Сильно: ответ связывает потребность клиента с реальностью ресурсов и называет два риска." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێویستیی کڕیار بە ڕاستیی سەرچاوەکان دەبەستێتەوە و دوو مەترسی ناو دەبات." },
+                { "language": "kmr", "text": "Bi hêz e: bersiv hewcedariya xerîdar bi rastiya çavkaniyan ve girê dide û du xeteran nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy potrzebę klienta z realiami zasobów i nazywa dwa ryzyka." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă nevoia clientului de realitatea resurselor și numește două riscuri." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh nevojën e klientit me realitetin e burimeve dhe përmend dy rreziqe." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir haben leider zu wenig Leute, deshalb müssen wir den Umfang reduzieren.",
+              "translations": [
+                { "language": "en", "text": "Unfortunately we have too few people, so we have to reduce the scope." },
+                { "language": "fa", "text": "متأسفانه افراد کافی نداریم، بنابراین باید دامنه را کاهش دهیم." },
+                { "language": "ar", "text": "للأسف ليس لدينا عدد كاف من الأشخاص، لذلك يجب أن نقلل النطاق." },
+                { "language": "tr", "text": "Maalesef yeterli insanımız yok, bu yüzden kapsamı azaltmalıyız." },
+                { "language": "ru", "text": "К сожалению, у нас слишком мало людей, поэтому нужно сократить объем." },
+                { "language": "ckb", "text": "بەداخەوە کەسی پێویستمان نییە، بۆیە دەبێت سنوورەکە کەم بکەینەوە." },
+                { "language": "kmr", "text": "Mixabin kesên têr tune ne, ji ber vê yekê divê em qada karê kêm bikin." },
+                { "language": "pl", "text": "Niestety mamy za mało ludzi, więc musimy ograniczyć zakres." },
+                { "language": "ro", "text": "Din păcate avem prea puțini oameni, deci trebuie să reducem domeniul." },
+                { "language": "sq", "text": "Fatkeqësisht kemi shumë pak njerëz, prandaj duhet ta reduktojmë shtrirjen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schlicht für C1: Die Antwort nennt den Mangel, erklärt aber weder Priorität noch Qualitätsrisiko.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple for C1: the answer names the shortage but explains neither priority nor quality risk." },
+                { "language": "fa", "text": "برای C1 بیش از حد ساده است: کمبود را نام می‌برد، اما نه اولویت را توضیح می‌دهد نه ریسک کیفیت را." },
+                { "language": "ar", "text": "بسيط جداً لمستوى C1: يذكر النقص، لكنه لا يشرح الأولوية ولا خطر الجودة." },
+                { "language": "tr", "text": "C1 için çok basit: eksikliği belirtir ama ne önceliği ne de kalite riskini açıklar." },
+                { "language": "ru", "text": "Слишком просто для C1: ответ называет нехватку, но не объясняет ни приоритет, ни риск качества." },
+                { "language": "ckb", "text": "بۆ C1 زۆر سادەیە: کەمییەکە ناو دەبات، بەڵام نە پێشینە و نە مەترسیی کوالێتی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Ji bo C1 pir hêsan e: kêmbûnê nav dike, lê ne pêşengî ne jî xetera kalîteyê rave dike." },
+                { "language": "pl", "text": "Za proste na C1: odpowiedź nazywa brak, ale nie wyjaśnia ani priorytetu, ani ryzyka jakości." },
+                { "language": "ro", "text": "Prea simplu pentru C1: răspunsul numește lipsa, dar nu explică nici prioritatea, nici riscul de calitate." },
+                { "language": "sq", "text": "Shumë e thjeshtë për C1: përgjigjja përmend mungesën, por nuk shpjegon as prioritetin, as rrezikun e cilësisë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Wir sollten nach Risiko und Kundennutzen priorisieren: A vollständig, B reduziert und C als angekündigten Nachlauf.",
+              "translations": [
+                { "language": "en", "text": "We should prioritize by risk and customer value: A complete, B reduced, and C as an announced follow-up." },
+                { "language": "fa", "text": "باید بر اساس ریسک و ارزش برای مشتری اولویت‌بندی کنیم: A کامل، B کاهش‌یافته، و C به‌عنوان مرحله بعدی اعلام‌شده." },
+                { "language": "ar", "text": "ينبغي أن نحدد الأولوية حسب الخطر وقيمة العميل: A كاملة، وB مخفضة، وC كمتابعة معلنة." },
+                { "language": "tr", "text": "Risk ve müşteri değerine göre önceliklendirmeliyiz: A tam, B azaltılmış, C duyurulan takip aşaması." },
+                { "language": "ru", "text": "Нам нужно приоритизировать по риску и ценности для клиента: A полностью, B сокращенно, C как объявленный следующий этап." },
+                { "language": "ckb", "text": "پێویستە بە پێی مەترسی و سوودی کڕیار پێشینە بدەین: A تەواو، B کەمکراو، و C وەک هەنگاوی دواتری ڕاگەیەندراو." },
+                { "language": "kmr", "text": "Divê em li gorî xeter û nirxa xerîdar pêşengî bidin: A temam, B kêmkirî û C wekî şopandina ragihandî." },
+                { "language": "pl", "text": "Powinniśmy priorytetyzować według ryzyka i wartości dla klienta: A w całości, B ograniczone, a C jako zapowiedziany kolejny etap." },
+                { "language": "ro", "text": "Ar trebui să prioritizăm după risc și valoare pentru client: A complet, B redus și C ca etapă ulterioară anunțată." },
+                { "language": "sq", "text": "Duhet të prioritizojmë sipas rrezikut dhe vlerës për klientin: A i plotë, B i reduktuar dhe C si fazë pasuese e shpallur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht aus Knappheit eine nachvollziehbare Priorisierungslogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer turns scarcity into a clear prioritization logic." },
+                { "language": "fa", "text": "قوی: پاسخ کمبود را به منطق روشن اولویت‌بندی تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: يحول الجواب الندرة إلى منطق واضح للأولويات." },
+                { "language": "tr", "text": "Güçlü: cevap kıtlığı anlaşılır bir önceliklendirme mantığına dönüştürür." },
+                { "language": "ru", "text": "Сильно: ответ превращает нехватку в понятную логику приоритизации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کەمی دەکاتە لۆژیکی ڕوونی پێشینەدان." },
+                { "language": "kmr", "text": "Bi hêz e: bersiv kêmbûnê dike lojîka pêşengiyê ya zelal." },
+                { "language": "pl", "text": "Mocne: odpowiedź przekształca niedobór w zrozumiałą logikę priorytetyzacji." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă lipsa într-o logică clară de prioritizare." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen mungesën në një logjikë të qartë prioritizimi." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir könnten vielleicht ein Modul später machen und die anderen beiden zuerst fertigstellen.",
+              "translations": [
+                { "language": "en", "text": "We could maybe do one module later and finish the other two first." },
+                { "language": "fa", "text": "شاید بتوانیم یک ماژول را بعداً انجام دهیم و دو ماژول دیگر را اول تمام کنیم." },
+                { "language": "ar", "text": "ربما يمكننا تنفيذ وحدة لاحقاً وإنهاء الوحدتين الأخريين أولاً." },
+                { "language": "tr", "text": "Belki bir modülü daha sonra yapıp diğer ikisini önce bitirebiliriz." },
+                { "language": "ru", "text": "Возможно, мы могли бы сделать один модуль позже, а два других сначала завершить." },
+                { "language": "ckb", "text": "لەوانەیە بتوانین یەک مۆدیول دواتر بکەین و دووەکەی تر پێشتر تەواو بکەین." },
+                { "language": "kmr", "text": "Dibe ku em modulakê paşê bikin û yên din du yekem xilas bikin." },
+                { "language": "pl", "text": "Może moglibyśmy zrobić jeden moduł później i najpierw dokończyć dwa pozostałe." },
+                { "language": "ro", "text": "Am putea poate face un modul mai târziu și finaliza mai întâi celelalte două." },
+                { "language": "sq", "text": "Ndoshta mund ta bëjmë një modul më vonë dhe t'i përfundojmë dy të tjerët fillimisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unbestimmt: Es fehlen Auswahlkriterien und eine kundenfähige Begründung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: selection criteria and a customer-ready reason are missing." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی نامشخص است: معیار انتخاب و دلیل قابل ارائه به مشتری وجود ندارد." },
+                { "language": "ar", "text": "مقبول لكنه غير محدد: تنقصه معايير الاختيار وسبب قابل للتقديم للعميل." },
+                { "language": "tr", "text": "Olası ama çok belirsiz: seçim ölçütleri ve müşteriye anlatılabilir gerekçe yok." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неопределенно: нет критериев выбора и объяснения для клиента." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر ناڕوونە: پێوەری هەڵبژاردن و هۆکاری شیاوی پێشکەشکردن بە کڕیار نییە." },
+                { "language": "kmr", "text": "Gengaz e, lê pir nezelal e: pîvanên hilbijartinê û sedemeke ji bo xerîdar tune ne." },
+                { "language": "pl", "text": "Plausybilne, ale zbyt nieokreślone: brakuje kryteriów wyboru i uzasadnienia gotowego dla klienta." },
+                { "language": "ro", "text": "Plauzibil, dar prea neclar: lipsesc criteriile de selecție și o justificare potrivită pentru client." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: mungojnë kriteret e zgjedhjes dhe një arsye e përshtatshme për klientin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Wir können es als gestaffelte Einführung kommunizieren: erst stabiler Kernnutzen, danach die Automatisierung der kritischen Abläufe.",
+              "translations": [
+                { "language": "en", "text": "We can communicate it as a staged rollout: first stable core value, then automation of the critical workflows." },
+                { "language": "fa", "text": "می‌توانیم آن را به‌عنوان معرفی مرحله‌ای اعلام کنیم: ابتدا ارزش اصلی پایدار، سپس اتوماسیون فرایندهای حساس." },
+                { "language": "ar", "text": "يمكننا التواصل بشأنه كإطلاق تدريجي: أولاً قيمة أساسية مستقرة، ثم أتمتة العمليات الحرجة." },
+                { "language": "tr", "text": "Bunu aşamalı giriş olarak iletebiliriz: önce istikrarlı temel değer, sonra kritik süreçlerin otomasyonu." },
+                { "language": "ru", "text": "Мы можем представить это как поэтапное внедрение: сначала стабильная основная ценность, затем автоматизация критических процессов." },
+                { "language": "ckb", "text": "دەتوانین وەک ناساندنی قۆناغبەقۆناغ ڕایبگەیەنین: سەرەتا سوودی سەرەکیی سەقامگیر، دواتر ئۆتۆماتیکردنی پرۆسە گرنگەکان." },
+                { "language": "kmr", "text": "Em dikarin wê wekî destpêkirina qonax bi qonax ragihînin: yekem nirxa bingehîn a aram, paşê otomasyona pêvajoyên krîtîk." },
+                { "language": "pl", "text": "Możemy komunikować to jako etapowe wdrożenie: najpierw stabilna wartość podstawowa, potem automatyzacja krytycznych procesów." },
+                { "language": "ro", "text": "Putem comunica asta ca introducere etapizată: mai întâi valoarea de bază stabilă, apoi automatizarea proceselor critice." },
+                { "language": "sq", "text": "Mund ta komunikojmë si prezantim me faza: së pari vlera kryesore e qëndrueshme, pastaj automatizimi i proceseve kritike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort gibt dem Kompromiss eine ehrliche positive Außenlogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer gives the compromise an honest positive external logic." },
+                { "language": "fa", "text": "قوی: پاسخ برای مصالحه یک منطق مثبت و صادقانه در ارتباط با بیرون می‌سازد." },
+                { "language": "ar", "text": "قوي: يمنح الجواب الحل الوسط منطقاً خارجياً إيجابياً وصادقاً." },
+                { "language": "tr", "text": "Güçlü: cevap uzlaşmaya dürüst ve olumlu bir dış iletişim mantığı verir." },
+                { "language": "ru", "text": "Сильно: ответ дает компромиссу честную позитивную внешнюю логику." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بۆ ڕێککەوتنەکە لۆژیکی دەرەکیی ئەرێنی و ڕاستگۆیانە دەدات." },
+                { "language": "kmr", "text": "Bi hêz e: bersiv ji bo lihevhatinê lojîkeke derveyî ya erênî û rast dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź nadaje kompromisowi uczciwą, pozytywną logikę komunikacji zewnętrznej." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă compromisului o logică externă pozitivă și onestă." },
+                { "language": "sq", "text": "E fortë: përgjigjja i jep kompromisit një logjikë të jashtme pozitive dhe të sinqertë." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir können den Kunden sagen, dass Modul C leider später kommt, weil wir gerade weniger Kapazität haben.",
+              "translations": [
+                { "language": "en", "text": "We can tell customers that Module C unfortunately comes later because we currently have less capacity." },
+                { "language": "fa", "text": "می‌توانیم به مشتریان بگوییم که ماژول C متأسفانه دیرتر می‌آید، چون فعلاً ظرفیت کمتری داریم." },
+                { "language": "ar", "text": "يمكننا أن نقول للعملاء إن الوحدة C ستأتي للأسف لاحقاً لأن لدينا حالياً قدرة أقل." },
+                { "language": "tr", "text": "Müşterilere Modül C'nin maalesef daha sonra geleceğini, çünkü şu anda daha az kapasitemiz olduğunu söyleyebiliriz." },
+                { "language": "ru", "text": "Мы можем сказать клиентам, что модуль C, к сожалению, выйдет позже, потому что сейчас у нас меньше мощности." },
+                { "language": "ckb", "text": "دەتوانین بە کڕیاران بڵێین کە مۆدیولی C بەداخەوە دواتر دێت، چونکە ئێستا توانای کەمترمان هەیە." },
+                { "language": "kmr", "text": "Em dikarin ji xerîdaran re bêjin ku Modula C mixabin paşê tê, ji ber ku niha kapasîteya me kêm e." },
+                { "language": "pl", "text": "Możemy powiedzieć klientom, że moduł C niestety pojawi się później, bo obecnie mamy mniej dostępności." },
+                { "language": "ro", "text": "Putem spune clienților că Modulul C vine, din păcate, mai târziu, deoarece avem momentan mai puțină capacitate." },
+                { "language": "sq", "text": "Mund t'u themi klientëve se Moduli C fatkeqësisht vjen më vonë, sepse aktualisht kemi më pak kapacitet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Die Antwort erklärt den Mangel, aber nicht den Nutzen der gestaffelten Lieferung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: the answer explains the shortage but not the value of staged delivery." },
+                { "language": "fa", "text": "بیش از حد دفاعی است: کمبود را توضیح می‌دهد، اما ارزش تحویل مرحله‌ای را نه." },
+                { "language": "ar", "text": "دفاعي جداً: يشرح الجواب النقص، لكنه لا يوضح قيمة التسليم المرحلي." },
+                { "language": "tr", "text": "Çok savunmacı: cevap eksikliği açıklar ama aşamalı teslimin değerini açıklamaz." },
+                { "language": "ru", "text": "Слишком оборонительно: ответ объясняет нехватку, но не ценность поэтапной поставки." },
+                { "language": "ckb", "text": "زۆر بەرگرییانەیە: وەڵامەکە کەمییەکە ڕوون دەکاتەوە، بەڵام سوودی پێشکەشکردنی قۆناغبەقۆناغ نا." },
+                { "language": "kmr", "text": "Pir parastî ye: bersiv kêmbûnê rave dike, lê nirxa radestkirina qonax bi qonax na." },
+                { "language": "pl", "text": "Zbyt defensywne: odpowiedź wyjaśnia brak, ale nie wartość etapowego dostarczenia." },
+                { "language": "ro", "text": "Prea defensiv: răspunsul explică lipsa, dar nu valoarea livrării etapizate." },
+                { "language": "sq", "text": "Shumë mbrojtëse: përgjigjja shpjegon mungesën, por jo vlerën e dorëzimit me faza." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Im reduzierten Modul B bleibt alles, was ohne Systemunterstützung zu Doppelarbeit oder Datenfehlern führt.",
+              "translations": [
+                { "language": "en", "text": "In the reduced Module B, everything stays that would lead to duplicate work or data errors without system support." },
+                { "language": "fa", "text": "در ماژول B کاهش‌یافته، هر چیزی باقی می‌ماند که بدون پشتیبانی سیستم باعث دوباره‌کاری یا خطای داده شود." },
+                { "language": "ar", "text": "في الوحدة B المخفضة يبقى كل ما يؤدي دون دعم النظام إلى ازدواجية العمل أو أخطاء البيانات." },
+                { "language": "tr", "text": "Azaltılmış Modül B'de, sistem desteği olmadan çift iş veya veri hatası yaratacak her şey kalır." },
+                { "language": "ru", "text": "В сокращенном модуле B остается все, что без системной поддержки приведет к двойной работе или ошибкам данных." },
+                { "language": "ckb", "text": "لە مۆدیولی Bی کەمکراودا هەر شتێک دەمێنێت کە بەبێ پشتگیریی سیستەم دەبێتە هۆی دووبارەکاری یان هەڵەی داتا." },
+                { "language": "kmr", "text": "Di Modula B ya kêmkirî de her tişt dimîne ku bê piştgiriya pergalê dibe karê dubare an şaşiya daneyan." },
+                { "language": "pl", "text": "W ograniczonym module B zostaje wszystko, co bez wsparcia systemu prowadziłoby do podwójnej pracy lub błędów danych." },
+                { "language": "ro", "text": "În Modulul B redus rămâne tot ce, fără suport de sistem, ar duce la muncă dublă sau erori de date." },
+                { "language": "sq", "text": "Në Modulin B të reduktuar mbetet çdo gjë që pa mbështetje sistemi do të çonte në punë të dyfishtë ose gabime të të dhënave." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort definiert den Umfang über operative Folgen statt über Bauchgefühl.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer defines scope through operational consequences rather than gut feeling." },
+                { "language": "fa", "text": "قوی: پاسخ دامنه را با پیامدهای عملیاتی تعریف می‌کند، نه با حس کلی." },
+                { "language": "ar", "text": "قوي: يحدد الجواب النطاق عبر النتائج التشغيلية لا عبر الانطباع." },
+                { "language": "tr", "text": "Güçlü: cevap kapsamı sezgiyle değil operasyonel sonuçlarla tanımlar." },
+                { "language": "ru", "text": "Сильно: ответ определяет объем через операционные последствия, а не по ощущениям." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنوور بە دەرئەنجامی کارپێکردن دیاری دەکات، نە بە هەستی گشتی." },
+                { "language": "kmr", "text": "Bi hêz e: bersiv qada karê bi encamên operasyonî, ne bi hestê zikê, diyar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź definiuje zakres przez konsekwencje operacyjne, a nie przeczucie." },
+                { "language": "ro", "text": "Puternic: răspunsul definește domeniul prin consecințe operaționale, nu prin intuiție." },
+                { "language": "sq", "text": "E fortë: përgjigjja e përcakton shtrirjen përmes pasojave operative, jo sipas ndjesisë." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir nehmen aus Modul B die weniger wichtigen Funktionen heraus.",
+              "translations": [
+                { "language": "en", "text": "We remove the less important functions from Module B." },
+                { "language": "fa", "text": "از ماژول B قابلیت‌های کم‌اهمیت‌تر را خارج می‌کنیم." },
+                { "language": "ar", "text": "نخرج الوظائف الأقل أهمية من الوحدة B." },
+                { "language": "tr", "text": "Modül B'den daha az önemli işlevleri çıkarırız." },
+                { "language": "ru", "text": "Мы уберем из модуля B менее важные функции." },
+                { "language": "ckb", "text": "لە مۆدیولی B کاراییە کەم گرنگترەکان لادەبەین." },
+                { "language": "kmr", "text": "Em ji Modula B fonksiyonên kêmtir girîng derdixin." },
+                { "language": "pl", "text": "Usuwamy z modułu B mniej ważne funkcje." },
+                { "language": "ro", "text": "Scoatem din Modulul B funcțiile mai puțin importante." },
+                { "language": "sq", "text": "Nga Moduli B heqim funksionet më pak të rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: 'weniger wichtig' ist nicht entscheidungsfähig und löst keine Grenzfälle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: 'less important' is not decision-ready and does not solve borderline cases." },
+                { "language": "fa", "text": "خیلی غیردقیق است: «کم‌اهمیت‌تر» قابل تصمیم‌گیری نیست و موارد مرزی را حل نمی‌کند." },
+                { "language": "ar", "text": "غير دقيق جداً: 'الأقل أهمية' لا يكفي لاتخاذ قرار ولا يحل الحالات الحدية." },
+                { "language": "tr", "text": "Çok belirsiz: 'daha az önemli' karar verilebilir değildir ve sınır durumları çözmez." },
+                { "language": "ru", "text": "Слишком неточно: 'менее важные' не является готовым критерием решения и не решает пограничные случаи." },
+                { "language": "ckb", "text": "زۆر ناوردە: 'کەم گرنگتر' شیاوی بڕیار نییە و کەیسە سنوورییەکان چارەسەر ناکات." },
+                { "language": "kmr", "text": "Pir nezelal e: 'kêmtir girîng' ne amade ji bo biryarê ye û rewşên sînorî çareser nake." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: 'mniej ważne' nie jest gotowe do decyzji i nie rozwiązuje przypadków granicznych." },
+                { "language": "ro", "text": "Prea imprecis: 'mai puțin important' nu este apt pentru decizie și nu rezolvă cazurile-limită." },
+                { "language": "sq", "text": "Shumë e pasaktë: 'më pak të rëndësishme' nuk është gati për vendim dhe nuk zgjidh rastet kufitare." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Modul C kommt zurück, wenn die Schnittstellen eine Woche stabil laufen und wieder erfahrene Architekturprüfung verfügbar ist.",
+              "translations": [
+                { "language": "en", "text": "Module C returns when the interfaces have run stably for one week and experienced architecture review is available again." },
+                { "language": "fa", "text": "ماژول C وقتی برمی‌گردد که interfaceها یک هفته پایدار کار کرده باشند و بررسی معماری باتجربه دوباره در دسترس باشد." },
+                { "language": "ar", "text": "تعود الوحدة C عندما تعمل الواجهات بثبات لمدة أسبوع وتتوفر مرة أخرى مراجعة معمارية ذات خبرة." },
+                { "language": "tr", "text": "Modül C, arayüzler bir hafta stabil çalıştığında ve deneyimli mimari inceleme tekrar mevcut olduğunda geri gelir." },
+                { "language": "ru", "text": "Модуль C вернется, когда интерфейсы стабильно проработают неделю и снова будет доступна опытная архитектурная проверка." },
+                { "language": "ckb", "text": "مۆدیولی C دەگەڕێتەوە کاتێک پەیوەندییەکان یەک هەفتە سەقامگیر کار بکەن و پشکنینی ئارکیتێکتی شارەزا دووبارە بەردەست بێت." },
+                { "language": "kmr", "text": "Modula C vedigere dema ku navber hefteyekê bi aramî bixebitin û kontrola avahiyê ya bi ezmûn careke din berdest be." },
+                { "language": "pl", "text": "Moduł C wraca, gdy interfejsy działają stabilnie przez tydzień i znów dostępny jest doświadczony przegląd architektury." },
+                { "language": "ro", "text": "Modulul C revine când interfețele funcționează stabil timp de o săptămână și este din nou disponibilă verificarea arhitecturală experimentată." },
+                { "language": "sq", "text": "Moduli C kthehet kur ndërfaqet punojnë qëndrueshëm për një javë dhe kontrolli arkitekturor me përvojë është përsëri i disponueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht den Nachlauf überprüfbar und verhindert ein offenes Versprechen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer makes the follow-up verifiable and prevents an open-ended promise." },
+                { "language": "fa", "text": "قوی: پاسخ مرحله بعدی را قابل بررسی می‌کند و مانع وعده باز و نامشخص می‌شود." },
+                { "language": "ar", "text": "قوي: يجعل الجواب المتابعة قابلة للتحقق ويمنع وعداً مفتوحاً." },
+                { "language": "tr", "text": "Güçlü: cevap takip aşamasını doğrulanabilir yapar ve açık uçlu bir sözü engeller." },
+                { "language": "ru", "text": "Сильно: ответ делает следующий этап проверяемым и предотвращает открытое обещание." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەنگاوی دواتر پشکنراو دەکات و ڕێگری لە بەڵێنی کراوە دەکات." },
+                { "language": "kmr", "text": "Bi hêz e: bersiv şopandinê kontrolkirî dike û rê li soza vekirî digire." },
+                { "language": "pl", "text": "Mocne: odpowiedź czyni kolejny etap sprawdzalnym i zapobiega otwartej obietnicy." },
+                { "language": "ro", "text": "Puternic: răspunsul face etapa ulterioară verificabilă și previne o promisiune deschisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën fazën pasuese të verifikueshme dhe parandalon një premtim të hapur." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Wir holen Modul C nach, sobald wieder mehr Kapazität frei ist.",
+              "translations": [
+                { "language": "en", "text": "We will follow up with Module C as soon as more capacity is available again." },
+                { "language": "fa", "text": "ماژول C را وقتی ظرفیت بیشتری دوباره آزاد شد اضافه می‌کنیم." },
+                { "language": "ar", "text": "سنلحق الوحدة C بمجرد توفر قدرة أكبر مرة أخرى." },
+                { "language": "tr", "text": "Daha fazla kapasite tekrar müsait olduğunda Modül C'yi ekleriz." },
+                { "language": "ru", "text": "Мы добавим модуль C, как только снова освободится больше мощности." },
+                { "language": "ckb", "text": "مۆدیولی C دەهێنینەوە کاتێک توانای زیاتر دووبارە بەردەست بوو." },
+                { "language": "kmr", "text": "Em ê Modula C paşve bînin dema ku kapasîteya zêdetir careke din berdest be." },
+                { "language": "pl", "text": "Dołożymy moduł C, gdy tylko znów będzie dostępna większa dostępność." },
+                { "language": "ro", "text": "Vom aduce Modulul C imediat ce va fi din nou disponibilă mai multă capacitate." },
+                { "language": "sq", "text": "Do ta sjellim Modulin C sapo të ketë përsëri më shumë kapacitet të lirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: 'mehr Kapazität' ist nicht messbar genug und lässt den Nachlauf unverbindlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open: 'more capacity' is not measurable enough and leaves the follow-up non-binding." },
+                { "language": "fa", "text": "بیش از حد باز است: «ظرفیت بیشتر» به اندازه کافی قابل سنجش نیست و مرحله بعدی را غیرالزام‌آور می‌گذارد." },
+                { "language": "ar", "text": "مفتوح جداً: 'قدرة أكبر' ليست قابلة للقياس بما يكفي وتترك المتابعة غير ملزمة." },
+                { "language": "tr", "text": "Çok açık: 'daha fazla kapasite' yeterince ölçülebilir değil ve takip aşamasını bağlayıcı bırakmıyor." },
+                { "language": "ru", "text": "Слишком открыто: 'больше мощности' недостаточно измеримо и оставляет следующий этап необязательным." },
+                { "language": "ckb", "text": "زۆر کراوەیە: 'توانای زیاتر' بە قەدری پێویست پێوانەکراو نییە و هەنگاوی دواتر نابەستێتەوە." },
+                { "language": "kmr", "text": "Pir vekirî ye: 'kapasîteya zêdetir' têr pîvandinbar nîne û şopandinê ne girêdayî dihêle." },
+                { "language": "pl", "text": "Zbyt otwarte: 'większa dostępność' nie jest wystarczająco mierzalna i pozostawia kolejny etap niezobowiązującym." },
+                { "language": "ro", "text": "Prea deschis: 'mai multă capacitate' nu este suficient de măsurabilă și lasă etapa ulterioară neobligatorie." },
+                { "language": "sq", "text": "Shumë e hapur: 'më shumë kapacitet' nuk është mjaft i matshëm dhe e lë fazën pasuese jo detyruese." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei Ressourcenknappheit reicht 'zu wenig Leute' nicht aus; C1-Kommunikation verbindet Kapazität mit Termin- und Qualitätsrisiken.",
+          "translations": [
+            { "language": "en", "text": "Under resource constraints, 'too few people' is not enough; C1 communication connects capacity with deadline and quality risks." },
+            { "language": "fa", "text": "در کمبود منابع، «افراد کم داریم» کافی نیست؛ ارتباط سطح C1 ظرفیت را با ریسک‌های زمان‌بندی و کیفیت پیوند می‌دهد." },
+            { "language": "ar", "text": "عند ندرة الموارد لا يكفي قول 'لدينا عدد قليل من الأشخاص'؛ تواصل C1 يربط القدرة بمخاطر الموعد والجودة." },
+            { "language": "tr", "text": "Kaynak kısıtında 'çok az insan var' yeterli değildir; C1 iletişim kapasiteyi teslim tarihi ve kalite riskleriyle bağlar." },
+            { "language": "ru", "text": "При нехватке ресурсов фразы 'слишком мало людей' недостаточно; коммуникация C1 связывает мощность с рисками сроков и качества." },
+            { "language": "ckb", "text": "لە کەمیی سەرچاوەدا 'کەسی کەممان هەیە' بەس نییە؛ پەیوەندیی C1 توانا بە مەترسیی کات و کوالێتی دەبەستێتەوە." },
+            { "language": "kmr", "text": "Di kêmbûna çavkaniyan de 'kesên kêm hene' têr nake; ragihandina C1 kapasîteyê bi xeterên dem û kalîteyê ve girê dide." },
+            { "language": "pl", "text": "Przy niedoborze zasobów 'za mało ludzi' nie wystarcza; komunikacja C1 łączy dostępność z ryzykami terminu i jakości." },
+            { "language": "ro", "text": "În lipsa resurselor, 'prea puțini oameni' nu este suficient; comunicarea C1 leagă capacitatea de riscurile de termen și calitate." },
+            { "language": "sq", "text": "Në mungesë burimesh, 'kemi pak njerëz' nuk mjafton; komunikimi C1 lidh kapacitetin me rreziqet e afatit dhe cilësisë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "structure",
+          "text": "Eine gute Priorisierung nennt nicht nur, was gestrichen wird, sondern warum dieser Schnitt fachlich vertretbar ist.",
+          "translations": [
+            { "language": "en", "text": "Good prioritization does not only name what is cut, but why that boundary is functionally defensible." },
+            { "language": "fa", "text": "اولویت‌بندی خوب فقط نمی‌گوید چه چیزی حذف می‌شود، بلکه توضیح می‌دهد چرا این مرزبندی از نظر کاری قابل دفاع است." },
+            { "language": "ar", "text": "الأولوية الجيدة لا تذكر فقط ما يُحذف، بل لماذا يكون هذا الحد قابلاً للدفاع عنه وظيفياً." },
+            { "language": "tr", "text": "İyi önceliklendirme yalnızca neyin çıkarıldığını söylemez; bu sınırın işlevsel olarak neden savunulabilir olduğunu da açıklar." },
+            { "language": "ru", "text": "Хорошая приоритизация не только называет, что исключается, но и объясняет, почему эта граница функционально оправдана." },
+            { "language": "ckb", "text": "پێشینەدانی باش تەنها ناڵێت چی لادەبرێت، بەڵکو ڕوون دەکاتەوە بۆچی ئەم سنوورە لە ڕووی کارەوە بەرگریلێکراوە." },
+            { "language": "kmr", "text": "Pêşengiya baş ne tenê dibêje çi tê derxistin, lê jî rave dike çima ew sînor ji aliyê fonksiyonî ve parastinbar e." },
+            { "language": "pl", "text": "Dobra priorytetyzacja nie tylko nazywa, co zostaje usunięte, lecz także wyjaśnia, dlaczego ta granica jest merytorycznie do obrony." },
+            { "language": "ro", "text": "O prioritizare bună nu spune doar ce se elimină, ci și de ce această delimitare este justificabilă funcțional." },
+            { "language": "sq", "text": "Prioritizimi i mirë nuk thotë vetëm çfarë hiqet, por pse ky kufi është i mbrojtshëm nga ana funksionale." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "Begriffe wie 'gestaffelte Einführung' und 'kontrollierte Reihenfolge' helfen, Kürzungen nicht defensiv wirken zu lassen.",
+          "translations": [
+            { "language": "en", "text": "Terms like 'staged rollout' and 'controlled sequence' help prevent cuts from sounding defensive." },
+            { "language": "fa", "text": "اصطلاح‌هایی مثل «معرفی مرحله‌ای» و «توالی کنترل‌شده» کمک می‌کنند کاهش دامنه دفاعی به نظر نرسد." },
+            { "language": "ar", "text": "تساعد عبارات مثل 'إطلاق تدريجي' و'تسلسل مضبوط' على ألا تبدو التخفيضات دفاعية." },
+            { "language": "tr", "text": "'Aşamalı geçiş' ve 'kontrollü sıra' gibi terimler, kesintilerin savunmacı duyulmasını önler." },
+            { "language": "ru", "text": "Термины вроде 'поэтапное внедрение' и 'контролируемая последовательность' помогают, чтобы сокращения не звучали оборонительно." },
+            { "language": "ckb", "text": "زاراوەکانی وەک 'ناساندنی قۆناغبەقۆناغ' و 'ڕیزی کۆنترۆڵکراو' یارمەتی دەدەن کەمکردنەوەکان بەرگرییانە نەردەکەون." },
+            { "language": "kmr", "text": "Têgehên wekî 'destpêkirina qonax bi qonax' û 'rêza kontrolkirî' alîkar in ku qutkirin ne wekî parastî xuya bike." },
+            { "language": "pl", "text": "Pojęcia takie jak 'etapowe wdrożenie' i 'kontrolowana kolejność' pomagają, by ograniczenia nie brzmiały defensywnie." },
+            { "language": "ro", "text": "Termeni precum 'introducere etapizată' și 'ordine controlată' ajută ca reducerile să nu pară defensive." },
+            { "language": "sq", "text": "Terma si 'prezantim me faza' dhe 'rend i kontrolluar' ndihmojnë që shkurtimet të mos tingëllojnë mbrojtëse." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "strategy",
+          "text": "Operative Schnittlinien sind stärker als Werturteile: Sie zeigen, welche Folgen ohne Systemunterstützung entstehen.",
+          "translations": [
+            { "language": "en", "text": "Operational boundaries are stronger than value judgments: they show what consequences arise without system support." },
+            { "language": "fa", "text": "مرزهای عملیاتی از قضاوت‌های ارزشی قوی‌ترند: نشان می‌دهند بدون پشتیبانی سیستم چه پیامدهایی ایجاد می‌شود." },
+            { "language": "ar", "text": "الحدود التشغيلية أقوى من الأحكام القيمية: فهي تظهر النتائج التي تنشأ دون دعم النظام." },
+            { "language": "tr", "text": "Operasyonel sınırlar değer yargılarından daha güçlüdür: sistem desteği olmadan hangi sonuçların doğduğunu gösterir." },
+            { "language": "ru", "text": "Операционные границы сильнее оценочных суждений: они показывают, какие последствия возникают без системной поддержки." },
+            { "language": "ckb", "text": "سنوورە کارپێکردنەکان لە حوکمی ارزشی بەهێزترن: پیشان دەدەن بەبێ پشتگیریی سیستەم چ دەرئەنجامێک دروست دەبێت." },
+            { "language": "kmr", "text": "Sînorên operasyonî ji dadbariyên nirxî bihêztir in: ew nîşan didin bê piştgiriya pergalê çi encam çêdibin." },
+            { "language": "pl", "text": "Granice operacyjne są silniejsze niż oceny wartościujące: pokazują, jakie skutki powstają bez wsparcia systemu." },
+            { "language": "ro", "text": "Delimitările operaționale sunt mai puternice decât judecățile de valoare: arată ce consecințe apar fără suport de sistem." },
+            { "language": "sq", "text": "Kufijtë operativë janë më të fortë se gjykimet me vlerë: tregojnë çfarë pasojash lindin pa mbështetje sistemi." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Ein Nachlauf bleibt nur glaubwürdig, wenn er an klare Bedingungen und nicht an vage Hoffnung auf mehr Kapazität gebunden ist.",
+          "translations": [
+            { "language": "en", "text": "A follow-up remains credible only if it is tied to clear conditions, not vague hope for more capacity." },
+            { "language": "fa", "text": "مرحله بعدی فقط وقتی معتبر می‌ماند که به شرایط روشن وابسته باشد، نه به امید مبهم به ظرفیت بیشتر." },
+            { "language": "ar", "text": "تبقى المتابعة موثوقة فقط إذا ارتبطت بشروط واضحة، لا بأمل غامض في قدرة أكبر." },
+            { "language": "tr", "text": "Takip aşaması ancak net koşullara bağlıysa inandırıcı kalır; belirsiz daha fazla kapasite umuduna değil." },
+            { "language": "ru", "text": "Следующий этап остается убедительным только если привязан к четким условиям, а не к расплывчатой надежде на больше ресурсов." },
+            { "language": "ckb", "text": "هەنگاوی دواتر تەنها کاتێک باوەڕپێکراو دەمێنێت کە بە مەرجی ڕوون ببەسترێتەوە، نەک بە هیوای ناڕوونی توانای زیاتر." },
+            { "language": "kmr", "text": "Şopandin tenê wê demê bawerbar dimîne ku bi mercên zelal ve girêdayî be, ne bi hêviya nezelal a kapasîteya zêdetir." },
+            { "language": "pl", "text": "Kolejny etap pozostaje wiarygodny tylko wtedy, gdy jest powiązany z jasnymi warunkami, a nie z mglistą nadzieją na większą dostępność." },
+            { "language": "ro", "text": "O etapă ulterioară rămâne credibilă doar dacă este legată de condiții clare, nu de o speranță vagă de mai multă capacitate." },
+            { "language": "sq", "text": "Një fazë pasuese mbetet e besueshme vetëm nëse lidhet me kushte të qarta, jo me shpresë të paqartë për më shumë kapacitet." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "project-resource-negotiation",
+          "placement": "detail-hero",
+          "purpose": "Show a neutral workplace project-scope negotiation without depicting a real person.",
+          "altText": "Drei Personen verhandeln in einem Büro den Projektumfang anhand von Prioritäten und Ressourcen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Three people in an office negotiate project scope using priorities and resources." },
+            { "language": "fa", "text": "سه نفر در یک دفتر دامنه پروژه را بر اساس اولویت‌ها و منابع مذاکره می‌کنند." },
+            { "language": "ar", "text": "ثلاثة أشخاص في مكتب يتفاوضون حول نطاق المشروع باستخدام الأولويات والموارد." },
+            { "language": "tr", "text": "Bir ofiste üç kişi öncelikler ve kaynaklar üzerinden proje kapsamını müzakere ediyor." },
+            { "language": "ru", "text": "Три человека в офисе обсуждают объем проекта на основе приоритетов и ресурсов." },
+            { "language": "ckb", "text": "سێ کەس لە ئۆفیسێکدا سنووری پڕۆژە بە پێی پێشینە و سەرچاوەکان دانوساندن دەکەن." },
+            { "language": "kmr", "text": "Sê kes di nivîsgehê de qada projeyê li gorî pêşengî û çavkaniyan danûstandin dikin." },
+            { "language": "pl", "text": "Trzy osoby w biurze negocjują zakres projektu na podstawie priorytetów i zasobów." },
+            { "language": "ro", "text": "Trei persoane într-un birou negociază amploarea proiectului pe baza priorităților și resurselor." },
+            { "language": "sq", "text": "Tre persona në një zyrë negociojnë shtrirjen e projektit sipas prioriteteve dhe burimeve." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult colleagues in a modern German office negotiating project scope, abstract cards for priorities, resources, deadline, quality risk, and follow-up criteria, neutral professional body language, no readable text, no logos, no private data, accessible balanced composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

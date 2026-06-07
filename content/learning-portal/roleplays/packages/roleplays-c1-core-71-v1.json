@@ -1,0 +1,828 @@
+{
+  "packageId": "roleplays-c1-core-71-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 71 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 71",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-berufssprache-c1-strategiegespraech-fuehren",
+      "linkedDialogueSlug": null,
+      "title": "Berufssprache C1 Strategiegespräch führen",
+      "titleTranslations": [
+        { "language": "en", "text": "Professional German C1 conducting a strategy conversation" },
+        { "language": "fa", "text": "گفت‌وگوی راهبردی در زبان کاری C1" },
+        { "language": "ar", "text": "إجراء حوار استراتيجي في لغة العمل C1" },
+        { "language": "tr", "text": "C1 mesleki Almancada strateji görüşmesi yürütmek" },
+        { "language": "ru", "text": "Проведение стратегической беседы на профессиональном немецком C1" },
+        { "language": "ckb", "text": "بەڕێوەبردنی گفتوگۆی ستراتیژی لە زمانی کاری C1" },
+        { "language": "kmr", "text": "Meşandina axaftina stratejîk di Almaniya karî ya C1 de" },
+        { "language": "pl", "text": "Prowadzenie rozmowy strategicznej w niemieckim zawodowym C1" },
+        { "language": "ro", "text": "Conducerea unei discuții strategice în germana profesională C1" },
+        { "language": "sq", "text": "Zhvillimi i një bisede strategjike në gjermanishten profesionale C1" }
+      ],
+      "description": "In einem beruflichen Prüfungsgespräch stellen Sie der Bereichsleitung eine Strategie vor, um lange Antwortzeiten im Kundenservice zu reduzieren, ohne das Team zusätzlich zu überlasten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a professional exam conversation, you present a strategy to management for reducing long customer-service response times without further overloading the team." },
+        { "language": "fa", "text": "در یک گفت‌وگوی آزمونیِ شغلی، راهبردی را به مدیریت بخش ارائه می‌کنید تا زمان‌های طولانی پاسخ‌گویی در خدمات مشتری کاهش یابد، بدون اینکه تیم بیشتر تحت فشار قرار گیرد." },
+        { "language": "ar", "text": "في حوار امتحاني مهني تعرض على إدارة القسم استراتيجية لتقليل أوقات الرد الطويلة في خدمة العملاء من دون زيادة الضغط على الفريق." },
+        { "language": "tr", "text": "Mesleki bir sınav görüşmesinde, müşteri hizmetlerindeki uzun yanıt sürelerini ekibi daha fazla zorlamadan azaltmak için yönetime bir strateji sunarsınız." },
+        { "language": "ru", "text": "В профессиональной экзаменационной беседе Вы представляете руководству стратегию сокращения долгого времени ответа в клиентской службе без дополнительной перегрузки команды." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی تاقیکردنەوەی پیشەییدا ستراتیژییەک بۆ بەڕێوەبەری بەش پێشکەش دەکەیت بۆ کەمکردنەوەی کاتی درێژی وەڵامدانەوە لە خزمەتی کڕیاردا، بێ ئەوەی تیمەکە زیاتر قورس بکرێت." },
+        { "language": "kmr", "text": "Di axaftineke azmûnê ya pîşeyî de hûn stratejiyekê ji rêveberiya beşê re pêşkêş dikin da ku demên bersivdanê yên dirêj di xizmeta xerîdaran de bêyî barê zêde li tîmê were kêmkirin." },
+        { "language": "pl", "text": "W zawodowej rozmowie egzaminacyjnej przedstawia Pan/Pani kierownictwu działu strategię skrócenia długich czasów odpowiedzi w obsłudze klienta bez dalszego przeciążania zespołu." },
+        { "language": "ro", "text": "Într-o discuție profesională de examen prezentați conducerii departamentului o strategie pentru reducerea timpilor lungi de răspuns în serviciul clienți, fără a suprasolicita suplimentar echipa." },
+        { "language": "sq", "text": "Në një bisedë profesionale provimi i paraqitni drejtimit të departamentit një strategji për të ulur kohët e gjata të përgjigjes në shërbimin ndaj klientit pa e mbingarkuar më tej ekipin." }
+      ],
+      "learnerGoal": "Ein Strategiegespräch strukturiert führen: Problem kurz einordnen, mehrere Optionen vergleichen, Risiken benennen, transparente Kriterien vorschlagen und eine begründete Empfehlung formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Conduct a strategy conversation in a structured way: briefly frame the problem, compare several options, name risks, propose transparent criteria, and formulate a justified recommendation." },
+        { "language": "fa", "text": "یک گفت‌وگوی راهبردی را ساختارمند پیش ببرید: مسئله را کوتاه جای‌گذاری کنید، چند گزینه را مقایسه کنید، ریسک‌ها را نام ببرید، معیارهای شفاف پیشنهاد دهید و توصیه‌ای مستدل بیان کنید." },
+        { "language": "ar", "text": "أدر حواراً استراتيجياً بشكل منظم: ضع المشكلة في إطار موجز، وقارن عدة خيارات، واذكر المخاطر، واقترح معايير شفافة، وصغ توصية مبررة." },
+        { "language": "tr", "text": "Strateji görüşmesini yapılandırılmış biçimde yürütün: sorunu kısaca çerçeveleyin, birkaç seçeneği karşılaştırın, riskleri belirtin, şeffaf ölçütler önerin ve gerekçeli bir tavsiye formüle edin." },
+        { "language": "ru", "text": "Структурированно провести стратегическую беседу: кратко обозначить проблему, сравнить несколько вариантов, назвать риски, предложить прозрачные критерии и сформулировать обоснованную рекомендацию." },
+        { "language": "ckb", "text": "گفتوگۆی ستراتیژی بە شێوەی ڕێکخراو بەڕێوەببە: کێشەکە بە کورتی لە چوارچێوە دابنێ، چەند هەڵبژاردە بەراورد بکە، مەترسییەکان ناو ببە، پێوەری ڕوون پێشنیار بکە و ڕاسپاردەیەکی بە هۆکار دابڕێژە." },
+        { "language": "kmr", "text": "Axaftina stratejîk bi rêkûpêkî meşînin: pirsgirêkê bi kurtî çarçove bikin, çend vebijarkan berhev bikin, xetereyan nav bikin, pîvanên zelal pêşniyar bikin û pêşniyareke bi sedem formule bikin." },
+        { "language": "pl", "text": "Poprowadzić rozmowę strategiczną w sposób uporządkowany: krótko osadzić problem, porównać kilka opcji, nazwać ryzyka, zaproponować przejrzyste kryteria i sformułować uzasadnioną rekomendację." },
+        { "language": "ro", "text": "Conduceți structurat o discuție strategică: încadrați pe scurt problema, comparați mai multe opțiuni, numiți riscurile, propuneți criterii transparente și formulați o recomandare justificată." },
+        { "language": "sq", "text": "Zhvilloni në mënyrë të strukturuar një bisedë strategjike: vendosni shkurt problemin në kontekst, krahasoni disa opsione, përmendni rreziqet, propozoni kritere transparente dhe formuloni një rekomandim të arsyetuar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "exam-roleplay",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 71,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Projektverantwortliche/r",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مسئول پروژه" },
+            { "language": "ar", "text": "مسؤول المشروع" },
+            { "language": "tr", "text": "Proje sorumlusu" },
+            { "language": "ru", "text": "Ответственный за проект" },
+            { "language": "ckb", "text": "بەرپرسی پڕۆژە" },
+            { "language": "kmr", "text": "Berpirsyarê projeyê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za projekt" },
+            { "language": "ro", "text": "Responsabil de proiect" },
+            { "language": "sq", "text": "Përgjegjës projekti" }
+          ]
+        },
+        {
+          "roleKey": "manager",
+          "displayName": "Bereichsleitung",
+          "translations": [
+            { "language": "en", "text": "Department manager" },
+            { "language": "fa", "text": "مدیر بخش" },
+            { "language": "ar", "text": "مدير القسم" },
+            { "language": "tr", "text": "Bölüm yöneticisi" },
+            { "language": "ru", "text": "Руководитель отдела" },
+            { "language": "ckb", "text": "بەڕێوەبەری بەش" },
+            { "language": "kmr", "text": "Rêveberê beşê" },
+            { "language": "pl", "text": "Kierownik działu" },
+            { "language": "ro", "text": "Manager de departament" },
+            { "language": "sq", "text": "Drejtues departamenti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "manager",
+          "baseText": "Unsere Antwortzeiten im Kundenservice sind zu lang, gleichzeitig ist das Team bereits stark belastet. Stellen Sie bitte eine realistische Strategie vor.",
+          "translations": [
+            { "language": "en", "text": "Our response times in customer service are too long, while the team is already under heavy strain. Please present a realistic strategy." },
+            { "language": "fa", "text": "زمان پاسخ‌گویی ما در خدمات مشتری بیش از حد طولانی است، در حالی که تیم از قبل زیر فشار زیادی است. لطفاً یک راهبرد واقع‌بینانه ارائه کنید." },
+            { "language": "ar", "text": "أوقات الرد لدينا في خدمة العملاء طويلة جداً، وفي الوقت نفسه الفريق مثقل بالفعل. قدم من فضلك استراتيجية واقعية." },
+            { "language": "tr", "text": "Müşteri hizmetlerinde yanıt sürelerimiz çok uzun, aynı zamanda ekip zaten ciddi biçimde zorlanıyor. Lütfen gerçekçi bir strateji sunun." },
+            { "language": "ru", "text": "Наше время ответа в клиентской службе слишком велико, при этом команда уже сильно перегружена. Пожалуйста, представьте реалистичную стратегию." },
+            { "language": "ckb", "text": "کاتی وەڵامدانەوەمان لە خزمەتی کڕیاردا زۆر درێژە، لە هەمان کاتدا تیمەکە پێشتر زۆر قورسکراوە. تکایە ستراتیژییەکی واقیعی پێشکەش بکە." },
+            { "language": "kmr", "text": "Demên bersivdanê yên me di xizmeta xerîdaran de pir dirêj in, di heman demê de tîm jixwe pir bar girtiye. Ji kerema xwe stratejiyeke realîst pêşkêş bikin." },
+            { "language": "pl", "text": "Nasze czasy odpowiedzi w obsłudze klienta są zbyt długie, a jednocześnie zespół jest już mocno obciążony. Proszę przedstawić realistyczną strategię." },
+            { "language": "ro", "text": "Timpii noștri de răspuns în serviciul clienți sunt prea lungi, iar echipa este deja foarte solicitată. Vă rog să prezentați o strategie realistă." },
+            { "language": "sq", "text": "Kohët tona të përgjigjes në shërbimin ndaj klientit janë shumë të gjata, ndërkohë që ekipi tashmë është shumë i ngarkuar. Ju lutem paraqitni një strategji realiste." }
+          ],
+          "function": "strategy-request",
+          "toneNote": "formal management prompt"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde das Problem nicht mit einer einzelnen Maßnahme lösen, sondern drei Bausteine kombinieren: kurzfristige Ticket-Triage, eine bessere Wissensdatenbank und ein transparentes Priorisierungsmodell.",
+          "translations": [
+            { "language": "en", "text": "I would not solve the problem with a single measure, but combine three building blocks: short-term ticket triage, a better knowledge base, and a transparent prioritization model." },
+            { "language": "fa", "text": "من این مشکل را با یک اقدام واحد حل نمی‌کنم، بلکه سه جزء را ترکیب می‌کنم: دسته‌بندی کوتاه‌مدت تیکت‌ها، پایگاه دانش بهتر و مدل اولویت‌بندی شفاف." },
+            { "language": "ar", "text": "لن أعالج المشكلة بإجراء واحد، بل سأجمع بين ثلاثة عناصر: فرز قصير الأجل للتذاكر، وقاعدة معرفة أفضل، ونموذج شفاف للأولويات." },
+            { "language": "tr", "text": "Sorunu tek bir önlemle çözmezdim; üç yapı taşını birleştirirdim: kısa vadeli bilet triyajı, daha iyi bir bilgi tabanı ve şeffaf bir önceliklendirme modeli." },
+            { "language": "ru", "text": "Я бы решал проблему не одной мерой, а сочетанием трех элементов: краткосрочной сортировки заявок, лучшей базы знаний и прозрачной модели приоритизации." },
+            { "language": "ckb", "text": "من ئەم کێشەیە بە تاکە هەنگاوێک چارەسەر ناکەم، بەڵکو سێ بەش تێکەڵ دەکەم: پۆلێنکردنی کورتمەودای تیکەتەکان، بنکەی زانیاری باشتر و مۆدێلی ڕوونی پێشەنگی." },
+            { "language": "kmr", "text": "Ez ê pirsgirêkê bi yek tedbîrê çareser nekim, lê sê parçeyan bi hev ve girê bidim: triageya kurt-dem a tîketan, bingeheke zanînê ya baştir û modelek pêşîlêdanê ya zelal." },
+            { "language": "pl", "text": "Nie rozwiązywał(a)bym problemu jednym działaniem, lecz połączył(a)bym trzy elementy: krótkoterminową triage zgłoszeń, lepszą bazę wiedzy i przejrzysty model priorytetów." },
+            { "language": "ro", "text": "Nu aș rezolva problema printr-o singură măsură, ci aș combina trei componente: triajul pe termen scurt al tichetelor, o bază de cunoștințe mai bună și un model transparent de prioritizare." },
+            { "language": "sq", "text": "Nuk do ta zgjidhja problemin me një masë të vetme, por do të kombinoja tre elemente: triazh afatshkurtër të kërkesave, një bazë më të mirë njohurish dhe një model transparent prioritetesh." }
+          ],
+          "function": "frame-strategy",
+          "toneNote": "structured and concise"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "manager",
+          "baseText": "Beginnen Sie mit der kurzfristigen Maßnahme. Was würde sie konkret ändern, und welches Risiko sehen Sie?",
+          "translations": [
+            { "language": "en", "text": "Start with the short-term measure. What exactly would it change, and what risk do you see?" },
+            { "language": "fa", "text": "با اقدام کوتاه‌مدت شروع کنید. دقیقاً چه چیزی را تغییر می‌دهد و چه ریسکی می‌بینید؟" },
+            { "language": "ar", "text": "ابدأ بالإجراء القصير الأجل. ما الذي سيغيره تحديداً، وما الخطر الذي تراه؟" },
+            { "language": "tr", "text": "Kısa vadeli önlemle başlayın. Somut olarak neyi değiştirir ve hangi riski görüyorsunuz?" },
+            { "language": "ru", "text": "Начните с краткосрочной меры. Что именно она изменит, и какой риск Вы видите?" },
+            { "language": "ckb", "text": "بە هەنگاوی کورتمەودا دەست پێ بکە. بە وردی چی دەگۆڕێت و چ مەترسییەک دەبینیت؟" },
+            { "language": "kmr", "text": "Bi tedbîra kurt-dem dest pê bikin. Ew bi taybetî çi diguherîne, û hûn kîjan xeterê dibînin?" },
+            { "language": "pl", "text": "Proszę zacząć od działania krótkoterminowego. Co konkretnie by ono zmieniło i jakie ryzyko Pan/Pani widzi?" },
+            { "language": "ro", "text": "Începeți cu măsura pe termen scurt. Ce ar schimba concret și ce risc vedeți?" },
+            { "language": "sq", "text": "Filloni me masën afatshkurtër. Çfarë do të ndryshonte konkretisht dhe çfarë rreziku shihni?" }
+          ],
+          "function": "ask-short-term",
+          "toneNote": "probing"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Für vier Wochen könnten zwei erfahrene Kolleginnen täglich feste Zeitfenster für die Triage übernehmen. Das senkt den Rückstand schnell, birgt aber das Risiko, dass andere Projektaufgaben liegen bleiben.",
+          "translations": [
+            { "language": "en", "text": "For four weeks, two experienced colleagues could take over fixed daily time slots for triage. That would reduce the backlog quickly, but it carries the risk that other project tasks are left unfinished." },
+            { "language": "fa", "text": "برای چهار هفته، دو همکار باتجربه می‌توانند هر روز بازه‌های زمانی ثابت برای دسته‌بندی تیکت‌ها بر عهده بگیرند. این کار عقب‌ماندگی را سریع کم می‌کند، اما ریسک دارد که وظایف پروژه‌های دیگر معطل بماند." },
+            { "language": "ar", "text": "لمدة أربعة أسابيع يمكن لزميلتين ذواتي خبرة تولي فترات يومية ثابتة للفرز. سيقلل ذلك التراكم بسرعة، لكنه يحمل خطر بقاء مهام مشاريع أخرى معلقة." },
+            { "language": "tr", "text": "Dört hafta boyunca iki deneyimli çalışan her gün triyaj için sabit zaman aralıkları üstlenebilir. Bu birikimi hızlı azaltır, ancak diğer proje görevlerinin beklemede kalması riskini taşır." },
+            { "language": "ru", "text": "На четыре недели две опытные сотрудницы могли бы ежедневно брать фиксированные временные окна для сортировки. Это быстро сократит накопившиеся заявки, но несет риск, что другие проектные задачи останутся без движения." },
+            { "language": "ckb", "text": "بۆ چوار هەفتە، دوو هاوکارەی شارەزا دەتوانن ڕۆژانە کاتی دیاریکراو بۆ پۆلێنکردن وەربگرن. ئەمە دواخستنەکان بە خێرایی کەم دەکاتەوە، بەڵام مەترسی ئەوەی هەیە کە ئەرکەکانی پڕۆژەی تر بمێننەوە." },
+            { "language": "kmr", "text": "Ji bo çar hefteyan, du hevkarên bi tecrube dikarin her roj demên diyarkirî ji bo triageyê bigirin. Ev paşketinê zû kêm dike, lê xetera wê heye ku erkên projeyên din bimînin." },
+            { "language": "pl", "text": "Przez cztery tygodnie dwie doświadczone koleżanki mogłyby codziennie przejmować stałe bloki czasu na triage. To szybko zmniejsza zaległości, ale niesie ryzyko, że inne zadania projektowe zostaną odłożone." },
+            { "language": "ro", "text": "Timp de patru săptămâni, două colege cu experiență ar putea prelua zilnic intervale fixe pentru triaj. Aceasta reduce rapid restanțele, dar implică riscul ca alte sarcini de proiect să rămână pe loc." },
+            { "language": "sq", "text": "Për katër javë, dy kolege me përvojë mund të marrin çdo ditë intervale të caktuara për triazh. Kjo e ul shpejt prapambetjen, por sjell rrezikun që detyra të tjera projekti të mbeten pezull." }
+          ],
+          "function": "short-term-option",
+          "toneNote": "specific with risk"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "manager",
+          "baseText": "Eine Wissensdatenbank klingt sinnvoll, wirkt aber nicht sofort. Wie begründen Sie diesen Baustein trotzdem?",
+          "translations": [
+            { "language": "en", "text": "A knowledge base sounds sensible, but it does not have an immediate effect. How do you justify this building block anyway?" },
+            { "language": "fa", "text": "پایگاه دانش منطقی به نظر می‌رسد، اما فوراً اثر نمی‌گذارد. با این حال این جزء را چطور توجیه می‌کنید؟" },
+            { "language": "ar", "text": "تبدو قاعدة المعرفة مفيدة، لكنها لا تؤثر فوراً. كيف تبرر هذا العنصر رغم ذلك؟" },
+            { "language": "tr", "text": "Bilgi tabanı mantıklı geliyor, ama hemen etkili olmaz. Buna rağmen bu yapı taşını nasıl gerekçelendirirsiniz?" },
+            { "language": "ru", "text": "База знаний звучит разумно, но не действует сразу. Как Вы все же обоснуете этот элемент?" },
+            { "language": "ckb", "text": "بنکەی زانیاری باش دەردەکەوێت، بەڵام دەستبەجێ کاریگەری ناکات. سەرەڕای ئەوە ئەم بەشە چۆن بە هۆکار دەهێنیتەوە؟" },
+            { "language": "kmr", "text": "Bingeha zanînê aqilmend xuya dike, lê yekser bandor nake. Hûn tevî vê yekê ev parçeyê çawa bi sedem dikin?" },
+            { "language": "pl", "text": "Baza wiedzy brzmi sensownie, ale nie działa od razu. Jak mimo to uzasadnia Pan/Pani ten element?" },
+            { "language": "ro", "text": "O bază de cunoștințe pare utilă, dar nu are efect imediat. Cum justificați totuși această componentă?" },
+            { "language": "sq", "text": "Një bazë njohurish duket e arsyeshme, por nuk jep efekt menjëherë. Si e arsyetoni megjithatë këtë element?" }
+          ],
+          "function": "ask-long-term",
+          "toneNote": "critical but constructive"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Sie wirkt nicht sofort, entlastet das Team aber mittelfristig bei Routinefragen. Entscheidend wäre, die zwanzig häufigsten Anliegen zuerst zu dokumentieren und die Einträge regelmäßig zu prüfen.",
+          "translations": [
+            { "language": "en", "text": "It does not work immediately, but it relieves the team in the medium term for routine questions. The key would be to document the twenty most frequent issues first and review the entries regularly." },
+            { "language": "fa", "text": "فوراً اثر نمی‌گذارد، اما در میان‌مدت تیم را در پرسش‌های روتین سبک می‌کند. نکته تعیین‌کننده این است که ابتدا بیست موضوع پرتکرار مستند شود و ورودی‌ها مرتب بررسی شوند." },
+            { "language": "ar", "text": "لا تؤثر فوراً، لكنها تخفف عن الفريق على المدى المتوسط في الأسئلة الروتينية. النقطة الحاسمة أن نوثق أولاً أكثر عشرين طلباً تكراراً وأن نراجع الإدخالات بانتظام." },
+            { "language": "tr", "text": "Hemen etkili olmaz, ama orta vadede rutin sorularda ekibin yükünü azaltır. Belirleyici olan, önce en sık gelen yirmi talebi belgelemek ve kayıtları düzenli kontrol etmektir." },
+            { "language": "ru", "text": "Она не действует сразу, но в среднесрочной перспективе разгружает команду при рутинных вопросах. Ключевым было бы сначала описать двадцать самых частых запросов и регулярно проверять записи." },
+            { "language": "ckb", "text": "دەستبەجێ کاریگەری ناکات، بەڵام لە ماوەی مامناوەنددا لە پرسیاری ڕۆتین بارەکەی تیم کەم دەکاتەوە. گرنگ ئەوەیە سەرەتا بیست داواکاریی هەرە دووبارەبووەوە تۆمار بکرێن و بابەتەکان بە ڕێکخراوی پشکنین بکرێن." },
+            { "language": "kmr", "text": "Ew yekser bandor nake, lê di nav-demê de di pirsên rutin de barê tîmê kêm dike. Ya girîng ew e ku pêşî bîst daxwazên herî zêde werin belgekirin û nivîs bi rêkûpêk werin venêrîn." },
+            { "language": "pl", "text": "Nie działa od razu, ale w średniej perspektywie odciąża zespół przy pytaniach rutynowych. Kluczowe byłoby najpierw udokumentowanie dwudziestu najczęstszych spraw i regularna kontrola wpisów." },
+            { "language": "ro", "text": "Nu are efect imediat, dar pe termen mediu degrevează echipa la întrebările de rutină. Esențial ar fi să documentăm mai întâi cele douăzeci de solicitări cele mai frecvente și să verificăm periodic articolele." },
+            { "language": "sq", "text": "Nuk vepron menjëherë, por në afat të mesëm e lehtëson ekipin për pyetjet rutinë. Vendimtare do të ishte të dokumentohen fillimisht njëzet çështjet më të shpeshta dhe të kontrollohen rregullisht hyrjet." }
+          ],
+          "function": "long-term-option",
+          "toneNote": "balanced justification"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "manager",
+          "baseText": "Priorisierung ist heikel, weil Kundinnen und Kunden sich zurückgesetzt fühlen können. Wie machen Sie das fair?",
+          "translations": [
+            { "language": "en", "text": "Prioritization is delicate because customers may feel pushed aside. How do you make it fair?" },
+            { "language": "fa", "text": "اولویت‌بندی حساس است، چون مشتریان ممکن است احساس کنند کنار گذاشته شده‌اند. چطور آن را منصفانه می‌کنید؟" },
+            { "language": "ar", "text": "تحديد الأولويات حساس، لأن العملاء قد يشعرون بأنهم تراجعوا في الأهمية. كيف تجعله عادلاً؟" },
+            { "language": "tr", "text": "Önceliklendirme hassastır, çünkü müşteriler geri plana atıldıklarını hissedebilir. Bunu nasıl adil hale getirirsiniz?" },
+            { "language": "ru", "text": "Приоритизация деликатна, потому что клиенты могут почувствовать, что их отодвинули. Как Вы сделаете ее справедливой?" },
+            { "language": "ckb", "text": "پێشەنگیکردن هەستیارە، چونکە کڕیاران دەتوانن هەست بکەن دواخراون. چۆن بە دادپەروەری دەیکەیت؟" },
+            { "language": "kmr", "text": "Pêşîlêdan hestiyar e, ji ber ku xerîdar dikarin xwe paşxistinî hîs bikin. Hûn wê çawa adil dikin?" },
+            { "language": "pl", "text": "Priorytetyzacja jest delikatna, bo klientki i klienci mogą poczuć się odsunięci. Jak uczyni Pan/Pani to sprawiedliwym?" },
+            { "language": "ro", "text": "Prioritizarea este delicată, deoarece clienții se pot simți lăsați pe plan secund. Cum o faceți echitabilă?" },
+            { "language": "sq", "text": "Prioritizimi është i ndjeshëm, sepse klientët mund të ndihen të lënë mënjanë. Si e bëni të drejtë?" }
+          ],
+          "function": "ask-prioritization",
+          "toneNote": "social-risk question"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Fair wird es nur mit klaren Kriterien: Dringlichkeit, wirtschaftliche Auswirkung und vertragliche Fristen. Zusätzlich braucht es eine Eskalationsmöglichkeit, damit Sonderfälle nicht im System hängen bleiben.",
+          "translations": [
+            { "language": "en", "text": "It only becomes fair with clear criteria: urgency, business impact, and contractual deadlines. In addition, there needs to be an escalation option so exceptional cases do not get stuck in the system." },
+            { "language": "fa", "text": "فقط با معیارهای روشن منصفانه می‌شود: فوریت، اثر اقتصادی و مهلت‌های قراردادی. علاوه بر این، باید امکان ارجاع/بالابردن موضوع وجود داشته باشد تا موارد خاص در سیستم گیر نکنند." },
+            { "language": "ar", "text": "يصبح الأمر عادلاً فقط بمعايير واضحة: الإلحاح، والأثر الاقتصادي، والمواعيد التعاقدية. إضافة إلى ذلك يلزم وجود إمكانية تصعيد حتى لا تبقى الحالات الخاصة عالقة في النظام." },
+            { "language": "tr", "text": "Bu ancak net ölçütlerle adil olur: aciliyet, ekonomik etki ve sözleşmesel süreler. Ayrıca özel durumların sistemde takılı kalmaması için bir eskalasyon imkânı gerekir." },
+            { "language": "ru", "text": "Справедливой она становится только при ясных критериях: срочность, экономическое влияние и договорные сроки. Дополнительно нужна возможность эскалации, чтобы особые случаи не застревали в системе." },
+            { "language": "ckb", "text": "تەنها بە پێوەری ڕوون دادپەروەرانە دەبێت: پەلە، کاریگەری ئابووری و کاتی گرێبەست. هەروەها پێویستە ڕێگەی بەرزکردنەوە هەبێت بۆ ئەوەی کەیسە تایبەتەکان لە سیستەمدا گیر نەبن." },
+            { "language": "kmr", "text": "Ew tenê bi pîvanên zelal adil dibe: lezgînî, bandora aborî û demên peymanî. Her wiha divê derfeteke eskalasyonê hebe da ku rewşên taybet di sistemê de nehêlin." },
+            { "language": "pl", "text": "Sprawiedliwe staje się to tylko dzięki jasnym kryteriom: pilności, wpływowi biznesowemu i terminom umownym. Dodatkowo potrzebna jest ścieżka eskalacji, aby przypadki szczególne nie utknęły w systemie." },
+            { "language": "ro", "text": "Devine echitabil doar cu criterii clare: urgență, impact economic și termene contractuale. În plus, este necesară o posibilitate de escaladare, ca situațiile speciale să nu rămână blocate în sistem." },
+            { "language": "sq", "text": "Bëhet i drejtë vetëm me kritere të qarta: urgjenca, ndikimi ekonomik dhe afatet kontraktuale. Përveç kësaj duhet një mundësi eskalimi, që rastet e veçanta të mos ngecin në sistem." }
+          ],
+          "function": "criteria-and-fairness",
+          "toneNote": "precise and risk-aware"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "manager",
+          "baseText": "Welche Empfehlung geben Sie, wenn wir in sechs Wochen erste messbare Ergebnisse brauchen?",
+          "translations": [
+            { "language": "en", "text": "What recommendation do you make if we need the first measurable results in six weeks?" },
+            { "language": "fa", "text": "اگر در شش هفته به اولین نتایج قابل اندازه‌گیری نیاز داشته باشیم، چه توصیه‌ای می‌کنید؟" },
+            { "language": "ar", "text": "ما التوصية التي تقدمها إذا كنا نحتاج إلى أول نتائج قابلة للقياس خلال ستة أسابيع؟" },
+            { "language": "tr", "text": "Altı hafta içinde ilk ölçülebilir sonuçlara ihtiyacımız varsa hangi tavsiyeyi verirsiniz?" },
+            { "language": "ru", "text": "Какую рекомендацию Вы дадите, если первые измеримые результаты нужны нам через шесть недель?" },
+            { "language": "ckb", "text": "ئەگەر لە شەش هەفتەدا یەکەم ئەنجامی پێوانەکراومان پێویست بێت، چ ڕاسپاردەیەک دەکەیت؟" },
+            { "language": "kmr", "text": "Ger em di şeş hefteyan de encamên pêşîn ên pîvanbar bixwazin, hûn çi pêşniyar dikin?" },
+            { "language": "pl", "text": "Jaką rekomendację Pan/Pani daje, jeśli w ciągu sześciu tygodni potrzebujemy pierwszych mierzalnych wyników?" },
+            { "language": "ro", "text": "Ce recomandare faceți dacă avem nevoie de primele rezultate măsurabile în șase săptămâni?" },
+            { "language": "sq", "text": "Çfarë rekomandimi jepni nëse na duhen rezultatet e para të matshme brenda gjashtë javësh?" }
+          ],
+          "function": "ask-recommendation",
+          "toneNote": "decision-oriented"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich empfehle einen Pilotansatz: sofort vier Wochen Triage, parallel die zwanzig häufigsten Anliegen dokumentieren und ab Woche drei ein Priorisierungsmodell testen. Gemessen werden Antwortzeit, Wiedereröffnungen und Kundenzufriedenheit.",
+          "translations": [
+            { "language": "en", "text": "I recommend a pilot approach: four weeks of triage immediately, documenting the twenty most frequent issues in parallel, and testing a prioritization model from week three. We measure response time, reopened tickets, and customer satisfaction." },
+            { "language": "fa", "text": "من رویکرد آزمایشی پیشنهاد می‌کنم: فوراً چهار هفته دسته‌بندی تیکت‌ها، هم‌زمان مستندسازی بیست موضوع پرتکرار و از هفته سوم آزمایش مدل اولویت‌بندی. زمان پاسخ، بازشدن دوباره تیکت‌ها و رضایت مشتری اندازه‌گیری می‌شود." },
+            { "language": "ar", "text": "أوصي بنهج تجريبي: أربعة أسابيع من الفرز فوراً، وبالتوازي توثيق أكثر عشرين طلباً تكراراً، ومن الأسبوع الثالث اختبار نموذج الأولويات. نقيس وقت الرد، وإعادة فتح التذاكر، ورضا العملاء." },
+            { "language": "tr", "text": "Bir pilot yaklaşım öneriyorum: hemen dört hafta triyaj, paralel olarak en sık gelen yirmi talebi belgelemek ve üçüncü haftadan itibaren bir önceliklendirme modelini test etmek. Yanıt süresi, yeniden açılan talepler ve müşteri memnuniyeti ölçülür." },
+            { "language": "ru", "text": "Я рекомендую пилотный подход: сразу четыре недели сортировки, параллельно описание двадцати самых частых запросов и с третьей недели тест модели приоритизации. Измеряются время ответа, повторно открытые заявки и удовлетворенность клиентов." },
+            { "language": "ckb", "text": "من ڕێبازی تاقیکردنەوە پێشنیار دەکەم: دەستبەجێ چوار هەفتە پۆلێنکردن، هاوکات تۆمارکردنی بیست داواکاریی هەرە دووبارەبووەوە و لە هەفتەی سێیەمەوە تاقیکردنەوەی مۆدێلی پێشەنگی. کاتی وەڵامدانەوە، دووبارەکردنەوەی تیکەت و ڕازیبوونی کڕیار پێوانە دەکرێن." },
+            { "language": "kmr", "text": "Ez nêzîkatiyeke pilot pêşniyar dikim: yekser çar hefte triage, di heman demê de belgekirina bîst daxwazên herî zêde û ji hefteya sêyem ve ceribandina modelek pêşîlêdanê. Demên bersivdanê, tîketên ji nû ve vekirî û razîbûna xerîdaran tên pîvandin." },
+            { "language": "pl", "text": "Rekomenduję podejście pilotażowe: od razu cztery tygodnie triage, równolegle dokumentowanie dwudziestu najczęstszych spraw i od trzeciego tygodnia test modelu priorytetyzacji. Mierzymy czas odpowiedzi, ponownie otwarte zgłoszenia i zadowolenie klientów." },
+            { "language": "ro", "text": "Recomand o abordare pilot: imediat patru săptămâni de triaj, în paralel documentarea celor douăzeci de solicitări cele mai frecvente și din săptămâna a treia testarea unui model de prioritizare. Măsurăm timpul de răspuns, tichetele redeschise și satisfacția clienților." },
+            { "language": "sq", "text": "Rekomandoj një qasje pilot: menjëherë katër javë triazh, paralelisht dokumentimi i njëzet çështjeve më të shpeshta dhe nga java e tretë testimi i një modeli prioritetesh. Maten koha e përgjigjes, kërkesat e rihapura dhe kënaqësia e klientëve." }
+          ],
+          "function": "recommendation",
+          "toneNote": "clear recommendation with metrics"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "manager",
+          "baseText": "Was sagen Sie dem Team, damit die Strategie nicht wie zusätzliche Kontrolle wirkt?",
+          "translations": [
+            { "language": "en", "text": "What do you tell the team so that the strategy does not feel like additional control?" },
+            { "language": "fa", "text": "به تیم چه می‌گویید تا راهبرد شبیه کنترل اضافه به نظر نرسد؟" },
+            { "language": "ar", "text": "ماذا تقول للفريق حتى لا تبدو الاستراتيجية كرقابة إضافية؟" },
+            { "language": "tr", "text": "Stratejinin ek kontrol gibi algılanmaması için ekibe ne söylersiniz?" },
+            { "language": "ru", "text": "Что Вы скажете команде, чтобы стратегия не воспринималась как дополнительный контроль?" },
+            { "language": "ckb", "text": "بە تیمەکە چی دەڵێیت بۆ ئەوەی ستراتیژییەکە وەک کۆنترۆڵی زیادە دەرنەکەوێت؟" },
+            { "language": "kmr", "text": "Hûn ê ji tîmê re çi bêjin da ku stratejî wek kontrola zêde neyê hîskirin?" },
+            { "language": "pl", "text": "Co powie Pan/Pani zespołowi, aby strategia nie wyglądała jak dodatkowa kontrola?" },
+            { "language": "ro", "text": "Ce le spuneți celor din echipă pentru ca strategia să nu pară un control suplimentar?" },
+            { "language": "sq", "text": "Çfarë i thoni ekipit që strategjia të mos duket si kontroll shtesë?" }
+          ],
+          "function": "ask-team-communication",
+          "toneNote": "organizational sensitivity"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde betonen, dass die Daten nicht zur individuellen Bewertung dienen, sondern Engpässe sichtbar machen sollen. Außerdem würde ich das Team an der Auswahl der Wissensdatenbank-Themen und an der Auswertung des Piloten beteiligen.",
+          "translations": [
+            { "language": "en", "text": "I would emphasize that the data is not for individual evaluation, but is meant to make bottlenecks visible. I would also involve the team in selecting knowledge-base topics and evaluating the pilot." },
+            { "language": "fa", "text": "تأکید می‌کنم که داده‌ها برای ارزیابی فردی نیستند، بلکه باید گلوگاه‌ها را قابل مشاهده کنند. همچنین تیم را در انتخاب موضوعات پایگاه دانش و ارزیابی طرح آزمایشی مشارکت می‌دهم." },
+            { "language": "ar", "text": "سأؤكد أن البيانات ليست للتقييم الفردي، بل لجعل الاختناقات مرئية. كما سأشرك الفريق في اختيار موضوعات قاعدة المعرفة وفي تقييم التجربة." },
+            { "language": "tr", "text": "Verilerin bireysel değerlendirme için değil, darboğazları görünür kılmak için kullanılacağını vurgulardım. Ayrıca ekibi bilgi tabanı konularının seçiminde ve pilotun değerlendirilmesinde sürece dahil ederdim." },
+            { "language": "ru", "text": "Я бы подчеркнул(а), что данные нужны не для индивидуальной оценки, а для выявления узких мест. Кроме того, я бы вовлек(ла) команду в выбор тем базы знаний и оценку пилота." },
+            { "language": "ckb", "text": "جەخت دەکەمەوە کە داتا بۆ هەڵسەنگاندنی تاکەکەسی نییە، بەڵکو بۆ ئەوەی شوێنە تەنگەکان دیار بکات. هەروەها تیمەکە لە هەڵبژاردنی بابەتەکانی بنکەی زانیاری و هەڵسەنگاندنی تاقیکردنەوەکەدا بەشدار دەکەم." },
+            { "language": "kmr", "text": "Ez ê tekez bikim ku dane ne ji bo nirxandina kesane ne, lê ji bo xuyakirina tengaviyan in. Her wiha ez ê tîmê di hilbijartina mijarên bingeha zanînê û nirxandina pilotê de beşdar bikim." },
+            { "language": "pl", "text": "Podkreślił(a)bym, że dane nie służą indywidualnej ocenie, lecz mają uwidocznić wąskie gardła. Ponadto włączył(a)bym zespół w wybór tematów bazy wiedzy i ocenę pilotażu." },
+            { "language": "ro", "text": "Aș sublinia că datele nu servesc evaluării individuale, ci trebuie să facă vizibile blocajele. De asemenea, aș implica echipa în alegerea temelor pentru baza de cunoștințe și în evaluarea pilotului." },
+            { "language": "sq", "text": "Do të theksoja se të dhënat nuk shërbejnë për vlerësim individual, por për të bërë të dukshme pengesat. Gjithashtu do ta përfshija ekipin në zgjedhjen e temave të bazës së njohurive dhe në vlerësimin e pilotit." }
+          ],
+          "function": "team-communication",
+          "toneNote": "trust-building"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "structured-three-part-strategy",
+              "text": "Ich würde das Problem nicht mit einer einzelnen Maßnahme lösen, sondern drei Bausteine kombinieren: kurzfristige Ticket-Triage, eine bessere Wissensdatenbank und ein transparentes Priorisierungsmodell.",
+              "translations": [
+                { "language": "en", "text": "I would not solve the problem with a single measure, but combine three building blocks: short-term ticket triage, a better knowledge base, and a transparent prioritization model." },
+                { "language": "fa", "text": "من این مشکل را با یک اقدام واحد حل نمی‌کنم، بلکه سه جزء را ترکیب می‌کنم: دسته‌بندی کوتاه‌مدت تیکت‌ها، پایگاه دانش بهتر و مدل اولویت‌بندی شفاف." },
+                { "language": "ar", "text": "لن أعالج المشكلة بإجراء واحد، بل سأجمع بين ثلاثة عناصر: فرز قصير الأجل للتذاكر، وقاعدة معرفة أفضل، ونموذج شفاف للأولويات." },
+                { "language": "tr", "text": "Sorunu tek bir önlemle çözmezdim; üç yapı taşını birleştirirdim: kısa vadeli bilet triyajı, daha iyi bir bilgi tabanı ve şeffaf bir önceliklendirme modeli." },
+                { "language": "ru", "text": "Я бы решал проблему не одной мерой, а сочетанием трех элементов: краткосрочной сортировки заявок, лучшей базы знаний и прозрачной модели приоритизации." },
+                { "language": "ckb", "text": "من ئەم کێشەیە بە تاکە هەنگاوێک چارەسەر ناکەم، بەڵکو سێ بەش تێکەڵ دەکەم: پۆلێنکردنی کورتمەودای تیکەتەکان، بنکەی زانیاری باشتر و مۆدێلی ڕوونی پێشەنگی." },
+                { "language": "kmr", "text": "Ez ê pirsgirêkê bi yek tedbîrê çareser nekim, lê sê parçeyan bi hev ve girê bidim: triageya kurt-dem a tîketan, bingeheke zanînê ya baştir û modelek pêşîlêdanê ya zelal." },
+                { "language": "pl", "text": "Nie rozwiązywał(a)bym problemu jednym działaniem, lecz połączył(a)bym trzy elementy: krótkoterminową triage zgłoszeń, lepszą bazę wiedzy i przejrzysty model priorytetów." },
+                { "language": "ro", "text": "Nu aș rezolva problema printr-o singură măsură, ci aș combina trei componente: triajul pe termen scurt al tichetelor, o bază de cunoștințe mai bună și un model transparent de prioritizare." },
+                { "language": "sq", "text": "Nuk do ta zgjidhja problemin me një masë të vetme, por do të kombinoja tre elemente: triazh afatshkurtër të kërkesave, një bazë më të mirë njohurish dhe një model transparent prioritetesh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort eröffnet das Gespräch mit Struktur, vermeidet Aktionismus und nennt mehrere strategische Bausteine.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer opens the conversation with structure, avoids rushed action, and names several strategic building blocks." },
+                { "language": "fa", "text": "خوب: پاسخ گفت‌وگو را با ساختار شروع می‌کند، از اقدام عجولانه پرهیز می‌کند و چند جزء راهبردی را نام می‌برد." },
+                { "language": "ar", "text": "جيد: تفتتح الإجابة الحوار ببنية واضحة، وتتجنب التسرع، وتذكر عدة عناصر استراتيجية." },
+                { "language": "tr", "text": "İyi: Yanıt görüşmeyi yapılandırarak açıyor, aceleci davranmaktan kaçınıyor ve birkaç stratejik yapı taşı adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ структурирует начало беседы, избегает поспешных действий и называет несколько стратегических элементов." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە گفتوگۆکە بە ڕێکخستن دەست پێ دەکات، لە هەنگاوی پەلە ناکات و چەند بەشی ستراتیژی ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: Bersiv axaftinê bi avahî vedike, ji çalakiyên bê amadekarî dûr dimîne û çend parçeyên stratejîk nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź otwiera rozmowę strukturą, unika działania na oślep i wskazuje kilka elementów strategicznych." },
+                { "language": "ro", "text": "Bine: răspunsul deschide discuția cu structură, evită acțiunea pripită și numește mai multe componente strategice." },
+                { "language": "sq", "text": "Mirë: përgjigjja e hap bisedën me strukturë, shmang veprimin e nxituar dhe përmend disa elemente strategjike." }
+              ],
+              "explanationKey": "structured-opening"
+            },
+            {
+              "id": "single-measure-only",
+              "text": "Ich würde zuerst mehr Personen in den Kundenservice setzen, damit die offenen Tickets schneller bearbeitet werden.",
+              "translations": [
+                { "language": "en", "text": "I would first put more people into customer service so that the open tickets are processed faster." },
+                { "language": "fa", "text": "اول افراد بیشتری را وارد خدمات مشتری می‌کنم تا تیکت‌های باز سریع‌تر رسیدگی شوند." },
+                { "language": "ar", "text": "سأضع أولاً عدداً أكبر من الأشخاص في خدمة العملاء كي تُعالج التذاكر المفتوحة بسرعة أكبر." },
+                { "language": "tr", "text": "Önce müşteri hizmetlerine daha fazla kişi koyardım, böylece açık talepler daha hızlı işlenir." },
+                { "language": "ru", "text": "Сначала я бы направил(а) больше людей в клиентскую службу, чтобы открытые заявки обрабатывались быстрее." },
+                { "language": "ckb", "text": "سەرەتا کەسانی زیاتر دەخەمە خزمەتی کڕیارەوە بۆ ئەوەی تیکەتە کراوەکان خێراتر چارەسەر بکرێن." },
+                { "language": "kmr", "text": "Ez ê pêşî kesên zêdetir bixin xizmeta xerîdaran da ku tîketên vekirî zûtir werin xebitandin." },
+                { "language": "pl", "text": "Najpierw skierował(a)bym więcej osób do obsługi klienta, aby otwarte zgłoszenia były szybciej opracowywane." },
+                { "language": "ro", "text": "Mai întâi aș pune mai multe persoane în serviciul clienți, pentru ca tichetele deschise să fie procesate mai repede." },
+                { "language": "sq", "text": "Fillimisht do të vendosja më shumë persona në shërbimin ndaj klientit, që kërkesat e hapura të përpunohen më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eindimensional: Die Antwort nennt eine naheliegende Maßnahme, berücksichtigt aber Überlastung, Risiken und nachhaltige Wirkung kaum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too one-dimensional: The answer names an obvious measure, but barely considers overload, risks, and sustainable impact." },
+                { "language": "fa", "text": "بیش از حد یک‌بعدی است: پاسخ یک اقدام بدیهی را نام می‌برد، اما فشار کاری، ریسک‌ها و اثر پایدار را تقریباً در نظر نمی‌گیرد." },
+                { "language": "ar", "text": "أحادي البعد جداً: تذكر الإجابة إجراءً بديهياً، لكنها لا تراعي تقريباً الضغط والمخاطر والأثر المستدام." },
+                { "language": "tr", "text": "Çok tek boyutlu: Yanıt açık bir önlem söylüyor, ama aşırı yükü, riskleri ve sürdürülebilir etkiyi neredeyse hiç dikkate almıyor." },
+                { "language": "ru", "text": "Слишком одномерно: ответ называет очевидную меру, но почти не учитывает перегрузку, риски и устойчивый эффект." },
+                { "language": "ckb", "text": "زۆر یەک-ڕەهەندە: وەڵامەکە هەنگاوێکی ئاشکرا ناو دەبات، بەڵام قورسکاری، مەترسی و کاریگەری بەردەوام زۆر کەم لەبەرچاو دەگرێت." },
+                { "language": "kmr", "text": "Pir yek-alî ye: Bersiv tedbîreke eşkere nav dike, lê barê zêde, xeter û bandora domdar pir kêm di ber çavan de digire." },
+                { "language": "pl", "text": "Zbyt jednowymiarowe: odpowiedź wskazuje oczywiste działanie, ale prawie nie uwzględnia przeciążenia, ryzyk i trwałego efektu." },
+                { "language": "ro", "text": "Prea unidimensional: răspunsul numește o măsură evidentă, dar ia prea puțin în calcul suprasolicitarea, riscurile și efectul durabil." },
+                { "language": "sq", "text": "Shumë njëdimensionale: përgjigjja përmend një masë të dukshme, por pothuajse nuk merr parasysh mbingarkesën, rreziqet dhe ndikimin e qëndrueshëm." }
+              ],
+              "explanationKey": "too-one-dimensional"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "specific-short-term-with-risk",
+              "text": "Für vier Wochen könnten zwei erfahrene Kolleginnen täglich feste Zeitfenster für die Triage übernehmen. Das senkt den Rückstand schnell, birgt aber das Risiko, dass andere Projektaufgaben liegen bleiben.",
+              "translations": [
+                { "language": "en", "text": "For four weeks, two experienced colleagues could take over fixed daily time slots for triage. That would reduce the backlog quickly, but it carries the risk that other project tasks are left unfinished." },
+                { "language": "fa", "text": "برای چهار هفته، دو همکار باتجربه می‌توانند هر روز بازه‌های زمانی ثابت برای دسته‌بندی تیکت‌ها بر عهده بگیرند. این کار عقب‌ماندگی را سریع کم می‌کند، اما ریسک دارد که وظایف پروژه‌های دیگر معطل بماند." },
+                { "language": "ar", "text": "لمدة أربعة أسابيع يمكن لزميلتين ذواتي خبرة تولي فترات يومية ثابتة للفرز. سيقلل ذلك التراكم بسرعة، لكنه يحمل خطر بقاء مهام مشاريع أخرى معلقة." },
+                { "language": "tr", "text": "Dört hafta boyunca iki deneyimli çalışan her gün triyaj için sabit zaman aralıkları üstlenebilir. Bu birikimi hızlı azaltır, ancak diğer proje görevlerinin beklemede kalması riskini taşır." },
+                { "language": "ru", "text": "На четыре недели две опытные сотрудницы могли бы ежедневно брать фиксированные временные окна для сортировки. Это быстро сократит накопившиеся заявки, но несет риск, что другие проектные задачи останутся без движения." },
+                { "language": "ckb", "text": "بۆ چوار هەفتە، دوو هاوکارەی شارەزا دەتوانن ڕۆژانە کاتی دیاریکراو بۆ پۆلێنکردن وەربگرن. ئەمە دواخستنەکان بە خێرایی کەم دەکاتەوە، بەڵام مەترسی ئەوەی هەیە کە ئەرکەکانی پڕۆژەی تر بمێننەوە." },
+                { "language": "kmr", "text": "Ji bo çar hefteyan, du hevkarên bi tecrube dikarin her roj demên diyarkirî ji bo triageyê bigirin. Ev paşketinê zû kêm dike, lê xetera wê heye ku erkên projeyên din bimînin." },
+                { "language": "pl", "text": "Przez cztery tygodnie dwie doświadczone koleżanki mogłyby codziennie przejmować stałe bloki czasu na triage. To szybko zmniejsza zaległości, ale niesie ryzyko, że inne zadania projektowe zostaną odłożone." },
+                { "language": "ro", "text": "Timp de patru săptămâni, două colege cu experiență ar putea prelua zilnic intervale fixe pentru triaj. Aceasta reduce rapid restanțele, dar implică riscul ca alte sarcini de proiect să rămână pe loc." },
+                { "language": "sq", "text": "Për katër javë, dy kolege me përvojë mund të marrin çdo ditë intervale të caktuara për triazh. Kjo e ul shpejt prapambetjen, por sjell rrezikun që detyra të tjera projekti të mbeten pezull." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort ist konkret, zeitlich begrenzt und nennt den Zielkonflikt offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer is concrete, time-limited, and openly names the trade-off." },
+                { "language": "fa", "text": "خوب: پاسخ مشخص و زمان‌دار است و تعارض هدف‌ها را آشکارا بیان می‌کند." },
+                { "language": "ar", "text": "جيد: الإجابة محددة ومحدودة زمنياً وتذكر تعارض الأهداف بصراحة." },
+                { "language": "tr", "text": "İyi: Yanıt somut, zamanla sınırlı ve hedef çatışmasını açıkça adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ конкретен, ограничен по времени и открыто называет конфликт целей." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە دیاریکراوە، کاتی سنووردارە و ناکۆکی ئامانجەکان بە ئاشکرا ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: Bersiv konkret e, bi demê sînordar e û pevçûna armancan eşkere nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź jest konkretna, ograniczona czasowo i otwarcie nazywa konflikt celów." },
+                { "language": "ro", "text": "Bine: răspunsul este concret, limitat în timp și numește deschis conflictul de obiective." },
+                { "language": "sq", "text": "Mirë: përgjigjja është konkrete, e kufizuar në kohë dhe e përmend hapur konfliktin e objektivave." }
+              ],
+              "explanationKey": "specific-risk-balanced"
+            },
+            {
+              "id": "short-term-without-risk",
+              "text": "Wir könnten einfach mehr Zeit für offene Tickets reservieren, dann wird der Rückstand wahrscheinlich schnell kleiner.",
+              "translations": [
+                { "language": "en", "text": "We could simply reserve more time for open tickets; then the backlog will probably shrink quickly." },
+                { "language": "fa", "text": "می‌توانیم فقط زمان بیشتری برای تیکت‌های باز کنار بگذاریم؛ احتمالاً عقب‌ماندگی سریع کم می‌شود." },
+                { "language": "ar", "text": "يمكننا ببساطة تخصيص وقت أكثر للتذاكر المفتوحة؛ عندها سيتقلص التراكم غالباً بسرعة." },
+                { "language": "tr", "text": "Açık talepler için basitçe daha fazla zaman ayırabiliriz; o zaman birikim muhtemelen hızla azalır." },
+                { "language": "ru", "text": "Мы могли бы просто зарезервировать больше времени для открытых заявок; тогда накопившиеся заявки, вероятно, быстро уменьшатся." },
+                { "language": "ckb", "text": "دەتوانین بە سادەیی کاتی زیاتر بۆ تیکەتە کراوەکان دابنێین؛ ئەوکات دواخستنەکە بە ئەگەری زۆر خێرا کەم دەبێتەوە." },
+                { "language": "kmr", "text": "Em dikarin bi sadebûnê demeke zêdetir ji bo tîketên vekirî veqetînin; hingê paşketin bi îhtimaleke mezin zû kêm dibe." },
+                { "language": "pl", "text": "Moglibyśmy po prostu zarezerwować więcej czasu na otwarte zgłoszenia; wtedy zaległości prawdopodobnie szybko się zmniejszą." },
+                { "language": "ro", "text": "Am putea pur și simplu să rezervăm mai mult timp pentru tichetele deschise; atunci restanțele probabil se vor reduce rapid." },
+                { "language": "sq", "text": "Mund të rezervojmë thjesht më shumë kohë për kërkesat e hapura; atëherë prapambetja ndoshta do të ulet shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau: Es fehlen Zeitraum, Zuständigkeit und Risiko für andere Aufgaben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: time frame, responsibility, and risk for other tasks are missing." },
+                { "language": "fa", "text": "قابل‌قبول به نظر می‌رسد، اما بیش از حد مبهم است: بازه زمانی، مسئولیت و ریسک برای وظایف دیگر وجود ندارد." },
+                { "language": "ar", "text": "مقبول ظاهرياً، لكنه غير دقيق بما يكفي: ينقصه الإطار الزمني، والمسؤولية، والخطر على المهام الأخرى." },
+                { "language": "tr", "text": "Makul, ama fazla belirsiz: zaman aralığı, sorumluluk ve diğer görevler için risk eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неопределенно: отсутствуют срок, ответственность и риск для других задач." },
+                { "language": "ckb", "text": "باوەڕپێکراو دەردەکەوێت، بەڵام زۆر ناڕوونە: کات، بەرپرسیاری و مەترسی بۆ ئەرکەکانی تر نییە." },
+                { "language": "kmr", "text": "Plausîbel e, lê pir nezelal e: dem, berpirsiyarî û xeter ji bo erkên din tune ne." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt nieprecyzyjne: brakuje ram czasowych, odpowiedzialności i ryzyka dla innych zadań." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: lipsesc intervalul de timp, responsabilitatea și riscul pentru alte sarcini." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: mungojnë afati, përgjegjësia dhe rreziku për detyrat e tjera." }
+              ],
+              "explanationKey": "too-vague-risk-missing"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "long-term-with-maintenance",
+              "text": "Sie wirkt nicht sofort, entlastet das Team aber mittelfristig bei Routinefragen. Entscheidend wäre, die zwanzig häufigsten Anliegen zuerst zu dokumentieren und die Einträge regelmäßig zu prüfen.",
+              "translations": [
+                { "language": "en", "text": "It does not work immediately, but it relieves the team in the medium term for routine questions. The key would be to document the twenty most frequent issues first and review the entries regularly." },
+                { "language": "fa", "text": "فوراً اثر نمی‌گذارد، اما در میان‌مدت تیم را در پرسش‌های روتین سبک می‌کند. نکته تعیین‌کننده این است که ابتدا بیست موضوع پرتکرار مستند شود و ورودی‌ها مرتب بررسی شوند." },
+                { "language": "ar", "text": "لا تؤثر فوراً، لكنها تخفف عن الفريق على المدى المتوسط في الأسئلة الروتينية. النقطة الحاسمة أن نوثق أولاً أكثر عشرين طلباً تكراراً وأن نراجع الإدخالات بانتظام." },
+                { "language": "tr", "text": "Hemen etkili olmaz, ama orta vadede rutin sorularda ekibin yükünü azaltır. Belirleyici olan, önce en sık gelen yirmi talebi belgelemek ve kayıtları düzenli kontrol etmektir." },
+                { "language": "ru", "text": "Она не действует сразу, но в среднесрочной перспективе разгружает команду при рутинных вопросах. Ключевым было бы сначала описать двадцать самых частых запросов и регулярно проверять записи." },
+                { "language": "ckb", "text": "دەستبەجێ کاریگەری ناکات، بەڵام لە ماوەی مامناوەنددا لە پرسیاری ڕۆتین بارەکەی تیم کەم دەکاتەوە. گرنگ ئەوەیە سەرەتا بیست داواکاریی هەرە دووبارەبووەوە تۆمار بکرێن و بابەتەکان بە ڕێکخراوی پشکنین بکرێن." },
+                { "language": "kmr", "text": "Ew yekser bandor nake, lê di nav-demê de di pirsên rutin de barê tîmê kêm dike. Ya girîng ew e ku pêşî bîst daxwazên herî zêde werin belgekirin û nivîs bi rêkûpêk werin venêrîn." },
+                { "language": "pl", "text": "Nie działa od razu, ale w średniej perspektywie odciąża zespół przy pytaniach rutynowych. Kluczowe byłoby najpierw udokumentowanie dwudziestu najczęstszych spraw i regularna kontrola wpisów." },
+                { "language": "ro", "text": "Nu are efect imediat, dar pe termen mediu degrevează echipa la întrebările de rutină. Esențial ar fi să documentăm mai întâi cele douăzeci de solicitări cele mai frecvente și să verificăm periodic articolele." },
+                { "language": "sq", "text": "Nuk vepron menjëherë, por në afat të mesëm e lehtëson ekipin për pyetjet rutinë. Vendimtare do të ishte të dokumentohen fillimisht njëzet çështjet më të shpeshta dhe të kontrollohen rregullisht hyrjet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort begründet eine langfristige Maßnahme, ohne den kurzfristigen Druck zu leugnen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer justifies a long-term measure without denying the short-term pressure." },
+                { "language": "fa", "text": "خوب: پاسخ یک اقدام بلندمدت را توجیه می‌کند، بدون اینکه فشار کوتاه‌مدت را انکار کند." },
+                { "language": "ar", "text": "جيد: تبرر الإجابة إجراءً طويل الأجل من دون إنكار الضغط القصير الأجل." },
+                { "language": "tr", "text": "İyi: Yanıt uzun vadeli bir önlemi gerekçelendiriyor, kısa vadeli baskıyı inkâr etmiyor." },
+                { "language": "ru", "text": "Хорошо: ответ обосновывает долгосрочную меру, не отрицая краткосрочного давления." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەنگاوێکی درێژمەودا بە هۆکار دەهێنێتەوە، بێ ئەوەی فشاری کورتمەودا ئینکار بکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv tedbîreke dirêj-dem bi sedem dike, bêyî ku zexta kurt-dem înkar bike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź uzasadnia działanie długoterminowe, nie negując presji krótkoterminowej." },
+                { "language": "ro", "text": "Bine: răspunsul justifică o măsură pe termen lung fără a nega presiunea pe termen scurt." },
+                { "language": "sq", "text": "Mirë: përgjigjja arsyeton një masë afatgjatë pa mohuar presionin afatshkurtër." }
+              ],
+              "explanationKey": "long-term-balanced"
+            },
+            {
+              "id": "knowledge-base-too-general",
+              "text": "Eine Wissensdatenbank ist wichtig, weil Kundinnen und Kunden dann vieles selbst nachlesen können.",
+              "translations": [
+                { "language": "en", "text": "A knowledge base is important because customers can then read up on many things themselves." },
+                { "language": "fa", "text": "پایگاه دانش مهم است، چون مشتریان می‌توانند خیلی چیزها را خودشان بخوانند." },
+                { "language": "ar", "text": "قاعدة المعرفة مهمة لأن العملاء يستطيعون عندئذ قراءة أشياء كثيرة بأنفسهم." },
+                { "language": "tr", "text": "Bilgi tabanı önemlidir, çünkü müşteriler o zaman birçok şeyi kendileri okuyabilir." },
+                { "language": "ru", "text": "База знаний важна, потому что клиенты тогда смогут многое прочитать сами." },
+                { "language": "ckb", "text": "بنکەی زانیاری گرنگە، چونکە ئەوکات کڕیاران دەتوانن زۆر شت خۆیان بخوێننەوە." },
+                { "language": "kmr", "text": "Bingeha zanînê girîng e, ji ber ku xerîdar wê demê dikarin gelek tiştan bixwînin." },
+                { "language": "pl", "text": "Baza wiedzy jest ważna, ponieważ klienci mogą wtedy wiele rzeczy samodzielnie przeczytać." },
+                { "language": "ro", "text": "O bază de cunoștințe este importantă pentru că atunci clienții pot citi singuri multe lucruri." },
+                { "language": "sq", "text": "Një bazë njohurish është e rëndësishme, sepse klientët mund të lexojnë vetë shumë gjëra." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Der Gedanke stimmt, aber C1 verlangt Priorisierung, Pflegeaufwand und Wirkung auf Routinefragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: The idea is valid, but C1 requires prioritization, maintenance effort, and impact on routine questions." },
+                { "language": "fa", "text": "بیش از حد کلی است: ایده درست است، اما C1 به اولویت‌بندی، زحمت نگهداری و اثر روی پرسش‌های روتین نیاز دارد." },
+                { "language": "ar", "text": "عام جداً: الفكرة صحيحة، لكن C1 يتطلب أولوية وجهد صيانة وتأثيراً على الأسئلة الروتينية." },
+                { "language": "tr", "text": "Çok genel: Fikir doğru, ama C1 önceliklendirme, bakım emeği ve rutin sorular üzerindeki etkiyi gerektirir." },
+                { "language": "ru", "text": "Слишком общо: мысль верна, но на C1 нужны приоритизация, трудозатраты на поддержку и эффект для рутинных вопросов." },
+                { "language": "ckb", "text": "زۆر گشتییە: بیرۆکەکە ڕاستە، بەڵام C1 پێویستی بە پێشەنگیکردن، هەوڵی چاکڕاگرتن و کاریگەری لەسەر پرسیارە ڕۆتینەکان هەیە." },
+                { "language": "kmr", "text": "Pir giştî ye: Raman rast e, lê C1 pêwîstî bi pêşîlêdan, hewldana parastinê û bandor li pirsên rutin heye." },
+                { "language": "pl", "text": "Zbyt ogólne: myśl jest słuszna, ale C1 wymaga priorytetyzacji, nakładu utrzymania i wpływu na pytania rutynowe." },
+                { "language": "ro", "text": "Prea general: ideea este corectă, dar C1 cere prioritizare, efort de întreținere și impact asupra întrebărilor de rutină." },
+                { "language": "sq", "text": "Shumë e përgjithshme: ideja është e saktë, por C1 kërkon prioritizim, përpjekje mirëmbajtjeje dhe ndikim mbi pyetjet rutinë." }
+              ],
+              "explanationKey": "valid-but-underdeveloped"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "fair-criteria-escalation",
+              "text": "Fair wird es nur mit klaren Kriterien: Dringlichkeit, wirtschaftliche Auswirkung und vertragliche Fristen. Zusätzlich braucht es eine Eskalationsmöglichkeit, damit Sonderfälle nicht im System hängen bleiben.",
+              "translations": [
+                { "language": "en", "text": "It only becomes fair with clear criteria: urgency, business impact, and contractual deadlines. In addition, there needs to be an escalation option so exceptional cases do not get stuck in the system." },
+                { "language": "fa", "text": "فقط با معیارهای روشن منصفانه می‌شود: فوریت، اثر اقتصادی و مهلت‌های قراردادی. علاوه بر این، باید امکان ارجاع/بالابردن موضوع وجود داشته باشد تا موارد خاص در سیستم گیر نکنند." },
+                { "language": "ar", "text": "يصبح الأمر عادلاً فقط بمعايير واضحة: الإلحاح، والأثر الاقتصادي، والمواعيد التعاقدية. إضافة إلى ذلك يلزم وجود إمكانية تصعيد حتى لا تبقى الحالات الخاصة عالقة في النظام." },
+                { "language": "tr", "text": "Bu ancak net ölçütlerle adil olur: aciliyet, ekonomik etki ve sözleşmesel süreler. Ayrıca özel durumların sistemde takılı kalmaması için bir eskalasyon imkânı gerekir." },
+                { "language": "ru", "text": "Справедливой она становится только при ясных критериях: срочность, экономическое влияние и договорные сроки. Дополнительно нужна возможность эскалации, чтобы особые случаи не застревали в системе." },
+                { "language": "ckb", "text": "تەنها بە پێوەری ڕوون دادپەروەرانە دەبێت: پەلە، کاریگەری ئابووری و کاتی گرێبەست. هەروەها پێویستە ڕێگەی بەرزکردنەوە هەبێت بۆ ئەوەی کەیسە تایبەتەکان لە سیستەمدا گیر نەبن." },
+                { "language": "kmr", "text": "Ew tenê bi pîvanên zelal adil dibe: lezgînî, bandora aborî û demên peymanî. Her wiha divê derfeteke eskalasyonê hebe da ku rewşên taybet di sistemê de nehêlin." },
+                { "language": "pl", "text": "Sprawiedliwe staje się to tylko dzięki jasnym kryteriom: pilności, wpływowi biznesowemu i terminom umownym. Dodatkowo potrzebna jest ścieżka eskalacji, aby przypadki szczególne nie utknęły w systemie." },
+                { "language": "ro", "text": "Devine echitabil doar cu criterii clare: urgență, impact economic și termene contractuale. În plus, este necesară o posibilitate de escaladare, ca situațiile speciale să nu rămână blocate în sistem." },
+                { "language": "sq", "text": "Bëhet i drejtë vetëm me kritere të qarta: urgjenca, ndikimi ekonomik dhe afatet kontraktuale. Përveç kësaj duhet një mundësi eskalimi, që rastet e veçanta të mos ngecin në sistem." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Kriterien und fängt den sozialen Risikopunkt durch eine Eskalationsmöglichkeit ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer names criteria and addresses the social risk through an escalation option." },
+                { "language": "fa", "text": "خوب: پاسخ معیارها را نام می‌برد و ریسک اجتماعی را با امکان ارجاع کنترل می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة المعايير وتتعامل مع الخطر الاجتماعي عبر إمكانية التصعيد." },
+                { "language": "tr", "text": "İyi: Yanıt ölçütleri adlandırıyor ve sosyal risk noktasını eskalasyon imkânıyla karşılıyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет критерии и снижает социальный риск через возможность эскалации." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پێوەرەکان ناو دەبات و مەترسی کۆمەڵایەتی بە ڕێگەی بەرزکردنەوە چارەسەر دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv pîvanan nav dike û xetera civakî bi derfeta eskalasyonê digire." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nazywa kryteria i zabezpiecza ryzyko społeczne przez możliwość eskalacji." },
+                { "language": "ro", "text": "Bine: răspunsul numește criteriile și gestionează riscul social printr-o opțiune de escaladare." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend kriteret dhe e mbulon rrezikun social përmes mundësisë së eskalimit." }
+              ],
+              "explanationKey": "criteria-and-escalation"
+            },
+            {
+              "id": "priority-by-important-customers",
+              "text": "Wir sollten zuerst die wichtigsten Kundinnen und Kunden bedienen, weil dort der größte Schaden entstehen kann.",
+              "translations": [
+                { "language": "en", "text": "We should serve the most important customers first because the greatest damage can occur there." },
+                { "language": "fa", "text": "باید ابتدا به مهم‌ترین مشتریان رسیدگی کنیم، چون بیشترین خسارت ممکن است آنجا ایجاد شود." },
+                { "language": "ar", "text": "ينبغي أن نخدم أهم العملاء أولاً، لأن أكبر ضرر قد يحدث هناك." },
+                { "language": "tr", "text": "Önce en önemli müşterilere hizmet vermeliyiz, çünkü en büyük zarar orada oluşabilir." },
+                { "language": "ru", "text": "Мы должны сначала обслуживать самых важных клиентов, потому что там может возникнуть наибольший ущерб." },
+                { "language": "ckb", "text": "پێویستە سەرەتا خزمەتی گرنگترین کڕیاران بکەین، چونکە گەورەترین زیان لەوێ دەتوانێت ڕووبدات." },
+                { "language": "kmr", "text": "Divê em pêşî xizmeta xerîdarên herî girîng bikin, ji ber ku zirara herî mezin dikare li wir çêbibe." },
+                { "language": "pl", "text": "Powinniśmy najpierw obsługiwać najważniejszych klientów, ponieważ tam może powstać największa szkoda." },
+                { "language": "ro", "text": "Ar trebui să îi deservim mai întâi pe cei mai importanți clienți, deoarece acolo poate apărea cel mai mare prejudiciu." },
+                { "language": "sq", "text": "Duhet t'u shërbejmë fillimisht klientëve më të rëndësishëm, sepse aty mund të lindë dëmi më i madh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise plausibel, aber riskant: Die Antwort braucht transparente Kriterien und eine Lösung für Sonderfälle, sonst klingt sie willkürlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly plausible, but risky: The answer needs transparent criteria and a solution for exceptional cases; otherwise it sounds arbitrary." },
+                { "language": "fa", "text": "تا حدی قابل‌قبول است، اما پرریسک: پاسخ به معیارهای شفاف و راه‌حل برای موارد خاص نیاز دارد، وگرنه دل‌بخواهی به نظر می‌رسد." },
+                { "language": "ar", "text": "مقبول جزئياً لكنه محفوف بالمخاطر: تحتاج الإجابة إلى معايير شفافة وحل للحالات الخاصة، وإلا بدت اعتباطية." },
+                { "language": "tr", "text": "Kısmen makul, ama riskli: Yanıt şeffaf ölçütlere ve özel durumlar için çözüme ihtiyaç duyar; aksi halde keyfi duyulur." },
+                { "language": "ru", "text": "Частично правдоподобно, но рискованно: нужны прозрачные критерии и решение для особых случаев, иначе это звучит произвольно." },
+                { "language": "ckb", "text": "بەشێک باوەڕپێکراوە، بەڵام مەترسیدارە: وەڵامەکە پێویستی بە پێوەری ڕوون و چارەسەر بۆ کەیسە تایبەتەکان هەیە، ئەگەرنا وەک بڕیاری دڵخواز دەردەکەوێت." },
+                { "language": "kmr", "text": "Hinekî plausîbel e, lê xeternak e: Bersiv pêwîstî bi pîvanên zelal û çareseriyek ji bo rewşên taybet heye, wekî din bi keyfî xuya dike." },
+                { "language": "pl", "text": "Częściowo wiarygodne, ale ryzykowne: odpowiedź potrzebuje przejrzystych kryteriów i rozwiązania dla przypadków szczególnych, inaczej brzmi arbitralnie." },
+                { "language": "ro", "text": "Parțial plauzibil, dar riscant: răspunsul are nevoie de criterii transparente și de o soluție pentru situațiile speciale, altfel sună arbitrar." },
+                { "language": "sq", "text": "Pjesërisht e besueshme, por e rrezikshme: përgjigjja ka nevojë për kritere transparente dhe zgjidhje për rastet e veçanta, përndryshe tingëllon arbitrare." }
+              ],
+              "explanationKey": "criteria-missing-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "pilot-with-metrics",
+              "text": "Ich empfehle einen Pilotansatz: sofort vier Wochen Triage, parallel die zwanzig häufigsten Anliegen dokumentieren und ab Woche drei ein Priorisierungsmodell testen. Gemessen werden Antwortzeit, Wiedereröffnungen und Kundenzufriedenheit.",
+              "translations": [
+                { "language": "en", "text": "I recommend a pilot approach: four weeks of triage immediately, documenting the twenty most frequent issues in parallel, and testing a prioritization model from week three. We measure response time, reopened tickets, and customer satisfaction." },
+                { "language": "fa", "text": "من رویکرد آزمایشی پیشنهاد می‌کنم: فوراً چهار هفته دسته‌بندی تیکت‌ها، هم‌زمان مستندسازی بیست موضوع پرتکرار و از هفته سوم آزمایش مدل اولویت‌بندی. زمان پاسخ، بازشدن دوباره تیکت‌ها و رضایت مشتری اندازه‌گیری می‌شود." },
+                { "language": "ar", "text": "أوصي بنهج تجريبي: أربعة أسابيع من الفرز فوراً، وبالتوازي توثيق أكثر عشرين طلباً تكراراً، ومن الأسبوع الثالث اختبار نموذج الأولويات. نقيس وقت الرد، وإعادة فتح التذاكر، ورضا العملاء." },
+                { "language": "tr", "text": "Bir pilot yaklaşım öneriyorum: hemen dört hafta triyaj, paralel olarak en sık gelen yirmi talebi belgelemek ve üçüncü haftadan itibaren bir önceliklendirme modelini test etmek. Yanıt süresi, yeniden açılan talepler ve müşteri memnuniyeti ölçülür." },
+                { "language": "ru", "text": "Я рекомендую пилотный подход: сразу четыре недели сортировки, параллельно описание двадцати самых частых запросов и с третьей недели тест модели приоритизации. Измеряются время ответа, повторно открытые заявки и удовлетворенность клиентов." },
+                { "language": "ckb", "text": "من ڕێبازی تاقیکردنەوە پێشنیار دەکەم: دەستبەجێ چوار هەفتە پۆلێنکردن، هاوکات تۆمارکردنی بیست داواکاریی هەرە دووبارەبووەوە و لە هەفتەی سێیەمەوە تاقیکردنەوەی مۆدێلی پێشەنگی. کاتی وەڵامدانەوە، دووبارەکردنەوەی تیکەت و ڕازیبوونی کڕیار پێوانە دەکرێن." },
+                { "language": "kmr", "text": "Ez nêzîkatiyeke pilot pêşniyar dikim: yekser çar hefte triage, di heman demê de belgekirina bîst daxwazên herî zêde û ji hefteya sêyem ve ceribandina modelek pêşîlêdanê. Demên bersivdanê, tîketên ji nû ve vekirî û razîbûna xerîdaran tên pîvandin." },
+                { "language": "pl", "text": "Rekomenduję podejście pilotażowe: od razu cztery tygodnie triage, równolegle dokumentowanie dwudziestu najczęstszych spraw i od trzeciego tygodnia test modelu priorytetyzacji. Mierzymy czas odpowiedzi, ponownie otwarte zgłoszenia i zadowolenie klientów." },
+                { "language": "ro", "text": "Recomand o abordare pilot: imediat patru săptămâni de triaj, în paralel documentarea celor douăzeci de solicitări cele mai frecvente și din săptămâna a treia testarea unui model de prioritizare. Măsurăm timpul de răspuns, tichetele redeschise și satisfacția clienților." },
+                { "language": "sq", "text": "Rekomandoj një qasje pilot: menjëherë katër javë triazh, paralelisht dokumentimi i njëzet çështjeve më të shpeshta dhe nga java e tretë testimi i një modeli prioritetesh. Maten koha e përgjigjes, kërkesat e rihapura dhe kënaqësia e klientëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Empfehlung verbindet Maßnahmen, Zeitplan und Messgrößen. Das macht sie entscheidungsfähig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The recommendation connects measures, timeline, and metrics. That makes it suitable for decision-making." },
+                { "language": "fa", "text": "خوب: توصیه اقدامات، زمان‌بندی و شاخص‌ها را به هم وصل می‌کند. این آن را برای تصمیم‌گیری قابل استفاده می‌کند." },
+                { "language": "ar", "text": "جيد: تربط التوصية بين الإجراءات والجدول الزمني ومؤشرات القياس. وهذا يجعلها قابلة لاتخاذ القرار." },
+                { "language": "tr", "text": "İyi: Tavsiye önlemleri, zaman planını ve ölçütleri birbirine bağlıyor. Bu onu karar vermeye uygun kılar." },
+                { "language": "ru", "text": "Хорошо: рекомендация связывает меры, график и показатели. Это делает ее пригодной для принятия решения." },
+                { "language": "ckb", "text": "باشە: ڕاسپاردەکە هەنگاو، کاتنامە و پێوانەکان بەیەکەوە دەبەستێت. ئەمە بۆ بڕیاردان گونجاوی دەکات." },
+                { "language": "kmr", "text": "Baş e: Pêşniyar tedbîr, plansaziya demê û pîvanan bi hev ve girê dide. Ev wê ji bo biryardanê guncav dike." },
+                { "language": "pl", "text": "Dobrze: rekomendacja łączy działania, harmonogram i wskaźniki. Dzięki temu nadaje się do podjęcia decyzji." },
+                { "language": "ro", "text": "Bine: recomandarea conectează măsurile, calendarul și indicatorii. Aceasta o face utilă pentru decizie." },
+                { "language": "sq", "text": "Mirë: rekomandimi lidh masat, afatin dhe treguesit. Kjo e bën të përshtatshëm për vendimmarrje." }
+              ],
+              "explanationKey": "decision-ready-recommendation"
+            },
+            {
+              "id": "recommendation-without-metrics",
+              "text": "Ich würde alle drei Maßnahmen ausprobieren und nach einigen Wochen schauen, welche davon am besten funktioniert.",
+              "translations": [
+                { "language": "en", "text": "I would try all three measures and after a few weeks see which one works best." },
+                { "language": "fa", "text": "هر سه اقدام را امتحان می‌کنم و بعد از چند هفته می‌بینم کدام بهتر کار می‌کند." },
+                { "language": "ar", "text": "سأجرب الإجراءات الثلاثة كلها، وبعد بضعة أسابيع أرى أيها يعمل بشكل أفضل." },
+                { "language": "tr", "text": "Üç önlemin hepsini dener ve birkaç hafta sonra hangisinin en iyi işlediğine bakardım." },
+                { "language": "ru", "text": "Я бы попробовал(а) все три меры и через несколько недель посмотрел(а), какая работает лучше всего." },
+                { "language": "ckb", "text": "هەرسێ هەنگاوەکە تاقی دەکەمەوە و دوای چەند هەفتە دەبینم کامیان باشتر کار دەکات." },
+                { "language": "kmr", "text": "Ez ê her sê tedbîran biceribînim û piştî çend hefteyan bibînim kîjan herî baş dixebite." },
+                { "language": "pl", "text": "Wypróbował(a)bym wszystkie trzy działania i po kilku tygodniach zobaczył(a), które działa najlepiej." },
+                { "language": "ro", "text": "Aș încerca toate cele trei măsuri și după câteva săptămâni aș vedea care funcționează cel mai bine." },
+                { "language": "sq", "text": "Do t'i provoja të tre masat dhe pas disa javësh do të shihja cila funksionon më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Es fehlt eine klare Empfehlung, ein Zeitplan und die Frage, woran Erfolg gemessen wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open-ended: A clear recommendation, a timeline, and success criteria are missing." },
+                { "language": "fa", "text": "بیش از حد باز است: توصیه روشن، زمان‌بندی و معیار سنجش موفقیت fehlen." },
+                { "language": "ar", "text": "مفتوح أكثر من اللازم: تنقصه توصية واضحة وجدول زمني ومعايير لقياس النجاح." },
+                { "language": "tr", "text": "Fazla açık uçlu: Net bir tavsiye, zaman planı ve başarı ölçütleri eksik." },
+                { "language": "ru", "text": "Слишком открыто: нет ясной рекомендации, графика и критериев оценки успеха." },
+                { "language": "ckb", "text": "زۆر کراوەیە: ڕاسپاردەی ڕوون، کاتنامە و پێوەری پێوانەکردنی سەرکەوتن نییە." },
+                { "language": "kmr", "text": "Pir vekirî ye: Pêşniyareke zelal, plansaziya demê û pîvanên serkeftinê tune ne." },
+                { "language": "pl", "text": "Zbyt otwarte: brakuje jasnej rekomendacji, harmonogramu i kryteriów mierzenia sukcesu." },
+                { "language": "ro", "text": "Prea deschis: lipsesc o recomandare clară, un calendar și criteriile de măsurare a succesului." },
+                { "language": "sq", "text": "Shumë e hapur: mungojnë rekomandimi i qartë, afati dhe kriteret për matjen e suksesit." }
+              ],
+              "explanationKey": "recommendation-too-open"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "trust-building-team-message",
+              "text": "Ich würde betonen, dass die Daten nicht zur individuellen Bewertung dienen, sondern Engpässe sichtbar machen sollen. Außerdem würde ich das Team an der Auswahl der Wissensdatenbank-Themen und an der Auswertung des Piloten beteiligen.",
+              "translations": [
+                { "language": "en", "text": "I would emphasize that the data is not for individual evaluation, but is meant to make bottlenecks visible. I would also involve the team in selecting knowledge-base topics and evaluating the pilot." },
+                { "language": "fa", "text": "تأکید می‌کنم که داده‌ها برای ارزیابی فردی نیستند، بلکه باید گلوگاه‌ها را قابل مشاهده کنند. همچنین تیم را در انتخاب موضوعات پایگاه دانش و ارزیابی طرح آزمایشی مشارکت می‌دهم." },
+                { "language": "ar", "text": "سأؤكد أن البيانات ليست للتقييم الفردي، بل لجعل الاختناقات مرئية. كما سأشرك الفريق في اختيار موضوعات قاعدة المعرفة وفي تقييم التجربة." },
+                { "language": "tr", "text": "Verilerin bireysel değerlendirme için değil, darboğazları görünür kılmak için kullanılacağını vurgulardım. Ayrıca ekibi bilgi tabanı konularının seçiminde ve pilotun değerlendirilmesinde sürece dahil ederdim." },
+                { "language": "ru", "text": "Я бы подчеркнул(а), что данные нужны не для индивидуальной оценки, а для выявления узких мест. Кроме того, я бы вовлек(ла) команду в выбор тем базы знаний и оценку пилота." },
+                { "language": "ckb", "text": "جەخت دەکەمەوە کە داتا بۆ هەڵسەنگاندنی تاکەکەسی نییە، بەڵکو بۆ ئەوەی شوێنە تەنگەکان دیار بکات. هەروەها تیمەکە لە هەڵبژاردنی بابەتەکانی بنکەی زانیاری و هەڵسەنگاندنی تاقیکردنەوەکەدا بەشدار دەکەم." },
+                { "language": "kmr", "text": "Ez ê tekez bikim ku dane ne ji bo nirxandina kesane ne, lê ji bo xuyakirina tengaviyan in. Her wiha ez ê tîmê di hilbijartina mijarên bingeha zanînê û nirxandina pilotê de beşdar bikim." },
+                { "language": "pl", "text": "Podkreślił(a)bym, że dane nie służą indywidualnej ocenie, lecz mają uwidocznić wąskie gardła. Ponadto włączył(a)bym zespół w wybór tematów bazy wiedzy i ocenę pilotażu." },
+                { "language": "ro", "text": "Aș sublinia că datele nu servesc evaluării individuale, ci trebuie să facă vizibile blocajele. De asemenea, aș implica echipa în alegerea temelor pentru baza de cunoștințe și în evaluarea pilotului." },
+                { "language": "sq", "text": "Do të theksoja se të dhënat nuk shërbejnë për vlerësim individual, por për të bërë të dukshme pengesat. Gjithashtu do ta përfshija ekipin në zgjedhjen e temave të bazës së njohurive dhe në vlerësimin e pilotit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort schützt Vertrauen, erklärt den Zweck der Daten und beteiligt das Team praktisch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer protects trust, explains the purpose of the data, and involves the team practically." },
+                { "language": "fa", "text": "خوب: پاسخ اعتماد را حفظ می‌کند، هدف داده‌ها را توضیح می‌دهد و تیم را به شکل عملی مشارکت می‌دهد." },
+                { "language": "ar", "text": "جيد: تحمي الإجابة الثقة، وتشرح هدف البيانات، وتشرك الفريق عملياً." },
+                { "language": "tr", "text": "İyi: Yanıt güveni koruyor, verilerin amacını açıklıyor ve ekibi pratik biçimde dahil ediyor." },
+                { "language": "ru", "text": "Хорошо: ответ сохраняет доверие, объясняет назначение данных и практически вовлекает команду." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە متمانە دەپارێزێت، ئامانجی داتا ڕوون دەکاتەوە و تیمەکە بە کردار بەشدار دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv baweriyê diparêze, armanca daneyan rave dike û tîmê bi awayekî pratîk beşdar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź chroni zaufanie, wyjaśnia cel danych i praktycznie włącza zespół." },
+                { "language": "ro", "text": "Bine: răspunsul protejează încrederea, explică scopul datelor și implică practic echipa." },
+                { "language": "sq", "text": "Mirë: përgjigjja mbron besimin, shpjegon qëllimin e të dhënave dhe e përfshin ekipin praktikisht." }
+              ],
+              "explanationKey": "trust-and-participation"
+            },
+            {
+              "id": "team-message-too-technical",
+              "text": "Ich würde dem Team erklären, dass wir Kennzahlen brauchen, um den Prozess effizienter zu steuern.",
+              "translations": [
+                { "language": "en", "text": "I would explain to the team that we need metrics in order to manage the process more efficiently." },
+                { "language": "fa", "text": "به تیم توضیح می‌دهم که برای مدیریت کارآمدتر فرایند به شاخص‌ها نیاز داریم." },
+                { "language": "ar", "text": "سأشرح للفريق أننا نحتاج إلى مؤشرات كي ندير العملية بكفاءة أكبر." },
+                { "language": "tr", "text": "Ekibe süreci daha verimli yönetmek için göstergelere ihtiyacımız olduğunu açıklardım." },
+                { "language": "ru", "text": "Я бы объяснил(а) команде, что нам нужны показатели, чтобы эффективнее управлять процессом." },
+                { "language": "ckb", "text": "بە تیمەکە ڕوون دەکەمەوە کە پێویستمان بە پێوانەکان هەیە بۆ ئەوەی پرۆسەکە بە کارایی زیاتر بەڕێوە ببەین." },
+                { "language": "kmr", "text": "Ez ê ji tîmê re rave bikim ku em pêwîstî bi pîvanan hene da ku pêvajoyê bi bandortir rêve bibin." },
+                { "language": "pl", "text": "Wyjaśnił(a)bym zespołowi, że potrzebujemy wskaźników, aby efektywniej sterować procesem." },
+                { "language": "ro", "text": "Aș explica echipei că avem nevoie de indicatori pentru a gestiona procesul mai eficient." },
+                { "language": "sq", "text": "Do t'i shpjegoja ekipit se na duhen tregues për ta drejtuar procesin më me efikasitet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu technisch: Die Aussage ist nicht falsch, nimmt aber die Sorge vor Kontrolle und individueller Bewertung nicht ernst genug.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too technical: The statement is not wrong, but it does not take the concern about control and individual evaluation seriously enough." },
+                { "language": "fa", "text": "بیش از حد فنی است: جمله غلط نیست، اما نگرانی از کنترل و ارزیابی فردی را به اندازه کافی جدی نمی‌گیرد." },
+                { "language": "ar", "text": "تقني جداً: العبارة ليست خاطئة، لكنها لا تأخذ القلق من الرقابة والتقييم الفردي بجدية كافية." },
+                { "language": "tr", "text": "Çok teknik: İfade yanlış değil, ama kontrol ve bireysel değerlendirme endişesini yeterince ciddiye almıyor." },
+                { "language": "ru", "text": "Слишком технически: утверждение не неверно, но недостаточно серьезно учитывает опасения по поводу контроля и индивидуальной оценки." },
+                { "language": "ckb", "text": "زۆر تەکنیکییە: وتەکە هەڵە نییە، بەڵام نیگەرانیی کۆنترۆڵ و هەڵسەنگاندنی تاکەکەسی بە پێویستی بە جددی وەرناگرێت." },
+                { "language": "kmr", "text": "Pir teknîkî ye: Gotin şaş nîne, lê fikara kontrolê û nirxandina kesane bi qasî pêwîst cidî nagire." },
+                { "language": "pl", "text": "Zbyt techniczne: wypowiedź nie jest błędna, ale nie traktuje wystarczająco poważnie obawy przed kontrolą i indywidualną oceną." },
+                { "language": "ro", "text": "Prea tehnic: afirmația nu este greșită, dar nu ia suficient de în serios teama de control și evaluare individuală." },
+                { "language": "sq", "text": "Shumë teknike: pohimi nuk është i gabuar, por nuk e merr mjaft seriozisht shqetësimin për kontroll dhe vlerësim individual." }
+              ],
+              "explanationKey": "social-concern-missing"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy-structure",
+          "text": "Ein C1-Strategiegespräch braucht eine erkennbare Struktur, nicht nur eine Liste spontaner Maßnahmen.",
+          "translations": [
+            { "language": "en", "text": "A C1 strategy conversation needs a recognizable structure, not just a list of spontaneous measures." },
+            { "language": "fa", "text": "گفت‌وگوی راهبردی C1 به ساختار قابل تشخیص نیاز دارد، نه فقط فهرستی از اقدامات فوری." },
+            { "language": "ar", "text": "حوار استراتيجي في C1 يحتاج إلى بنية واضحة، لا مجرد قائمة بإجراءات عفوية." },
+            { "language": "tr", "text": "C1 düzeyinde bir strateji görüşmesi tanınabilir bir yapı gerektirir; yalnızca spontane önlemler listesi değil." },
+            { "language": "ru", "text": "Стратегическая беседа на C1 требует узнаваемой структуры, а не только списка спонтанных мер." },
+            { "language": "ckb", "text": "گفتوگۆی ستراتیژی C1 پێویستی بە ڕێکخستنی دیار هەیە، نەک تەنها لیستی هەنگاوی دەستبەجێ." },
+            { "language": "kmr", "text": "Axaftina stratejîk a C1 pêwîstî bi avahiyeke xuya heye, ne tenê lîsteyeke tedbîrên spontan." },
+            { "language": "pl", "text": "Rozmowa strategiczna na C1 potrzebuje rozpoznawalnej struktury, a nie tylko listy spontanicznych działań." },
+            { "language": "ro", "text": "O discuție strategică C1 are nevoie de o structură recognoscibilă, nu doar de o listă de măsuri spontane." },
+            { "language": "sq", "text": "Një bisedë strategjike C1 ka nevojë për strukturë të dallueshme, jo vetëm për një listë masash spontane." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "fairness-risk",
+          "text": "Priorisierung muss transparent sein, weil sonst ein sachlicher Prozess sozial unfair wirken kann.",
+          "translations": [
+            { "language": "en", "text": "Prioritization must be transparent, because otherwise an objective process can appear socially unfair." },
+            { "language": "fa", "text": "اولویت‌بندی باید شفاف باشد، چون در غیر این صورت یک فرایند عینی می‌تواند از نظر اجتماعی ناعادلانه به نظر برسد." },
+            { "language": "ar", "text": "يجب أن تكون الأولويات شفافة، لأن العملية الموضوعية قد تبدو اجتماعياً غير عادلة بخلاف ذلك." },
+            { "language": "tr", "text": "Önceliklendirme şeffaf olmalıdır; aksi halde nesnel bir süreç sosyal açıdan adaletsiz görünebilir." },
+            { "language": "ru", "text": "Приоритизация должна быть прозрачной, иначе объективный процесс может казаться социально несправедливым." },
+            { "language": "ckb", "text": "پێشەنگیکردن پێویستە ڕوون بێت، چونکە ئەگەرنا پرۆسەیەکی بابەتی دەتوانێت لە ڕووی کۆمەڵایەتییەوە نادادپەروەرانە دەرکەوێت." },
+            { "language": "kmr", "text": "Pêşîlêdan divê zelal be, ji ber ku wekî din pêvajoyeke objektîf dikare ji aliyê civakî ve neadil xuya bike." },
+            { "language": "pl", "text": "Priorytetyzacja musi być przejrzysta, bo inaczej rzeczowy proces może społecznie wyglądać niesprawiedliwie." },
+            { "language": "ro", "text": "Prioritizarea trebuie să fie transparentă, deoarece altfel un proces obiectiv poate părea social inechitabil." },
+            { "language": "sq", "text": "Prioritizimi duhet të jetë transparent, sepse përndryshe një proces objektiv mund të duket shoqërisht i padrejtë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "metrics-note",
+          "text": "Eine Empfehlung wird beruflich überzeugender, wenn Erfolgskriterien genannt werden.",
+          "translations": [
+            { "language": "en", "text": "A recommendation becomes more convincing in a professional context when success criteria are named." },
+            { "language": "fa", "text": "یک توصیه در زمینه کاری زمانی قانع‌کننده‌تر می‌شود که معیارهای موفقیت نام برده شوند." },
+            { "language": "ar", "text": "تصبح التوصية أكثر إقناعاً في السياق المهني عندما تُذكر معايير النجاح." },
+            { "language": "tr", "text": "Başarı ölçütleri adlandırıldığında bir tavsiye mesleki bağlamda daha ikna edici olur." },
+            { "language": "ru", "text": "Рекомендация в профессиональном контексте становится убедительнее, когда называются критерии успеха." },
+            { "language": "ckb", "text": "ڕاسپاردەیەک لە پەیوەندی کاری دا کاتێک قەناعەتپێکەرتر دەبێت کە پێوەری سەرکەوتن ناو ببرێن." },
+            { "language": "kmr", "text": "Pêşniyarek di çarçoveya pîşeyî de dema pîvanên serkeftinê bên navkirin bêtir qanih dibe." },
+            { "language": "pl", "text": "Rekomendacja staje się zawodowo bardziej przekonująca, gdy zostają nazwane kryteria sukcesu." },
+            { "language": "ro", "text": "O recomandare devine mai convingătoare profesional atunci când sunt numite criteriile de succes." },
+            { "language": "sq", "text": "Një rekomandim bëhet më bindës në kontekst profesional kur përmenden kriteret e suksesit." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "change-communication",
+          "text": "Bei Veränderungen ist die soziale Botschaft oft genauso wichtig wie die technische Lösung.",
+          "translations": [
+            { "language": "en", "text": "In changes, the social message is often just as important as the technical solution." },
+            { "language": "fa", "text": "در تغییرات، پیام اجتماعی اغلب به اندازه راه‌حل فنی مهم است." },
+            { "language": "ar", "text": "في التغييرات تكون الرسالة الاجتماعية غالباً مهمة بقدر أهمية الحل التقني." },
+            { "language": "tr", "text": "Değişimlerde sosyal mesaj çoğu zaman teknik çözüm kadar önemlidir." },
+            { "language": "ru", "text": "При изменениях социальное сообщение часто так же важно, как техническое решение." },
+            { "language": "ckb", "text": "لە گۆڕانکارییەکاندا پەیامی کۆمەڵایەتی زۆرجار وەک چارەسەری تەکنیکی گرنگە." },
+            { "language": "kmr", "text": "Di guhertinan de peyama civakî gelek caran qasî çareseriya teknîkî girîng e." },
+            { "language": "pl", "text": "Przy zmianach komunikat społeczny jest często równie ważny jak rozwiązanie techniczne." },
+            { "language": "ro", "text": "În schimbări, mesajul social este adesea la fel de important ca soluția tehnică." },
+            { "language": "sq", "text": "Në ndryshime, mesazhi shoqëror shpesh është po aq i rëndësishëm sa zgjidhja teknike." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "strategy-conversation-customer-service",
+          "placement": "header",
+          "purpose": "Show a professional strategy conversation about customer-service response times without showing private data.",
+          "altText": "Eine ruhige Illustration eines Strategiegesprächs in einem Büro mit Diagrammen ohne lesbaren Text.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm illustration of a strategy conversation in an office with charts without readable text." },
+            { "language": "fa", "text": "تصویری آرام از یک گفت‌وگوی راهبردی در دفتر با نمودارهایی بدون متن خوانا." },
+            { "language": "ar", "text": "رسم هادئ لحوار استراتيجي في مكتب مع رسوم بيانية بلا نص مقروء." },
+            { "language": "tr", "text": "Okunabilir metin içermeyen grafiklerle bir ofiste strateji görüşmesinin sakin illüstrasyonu." },
+            { "language": "ru", "text": "Спокойная иллюстрация стратегической беседы в офисе с диаграммами без читаемого текста." },
+            { "language": "ckb", "text": "وێنەیەکی ئارام لە گفتوگۆی ستراتیژی لە ئۆفیسێکدا بە هێڵکاری بێ دەقی خوێندراوە." },
+            { "language": "kmr", "text": "Wêneyeke aram a axaftina stratejîk li nivîsgehê bi grafîkên bê nivîsa xwendinbar." },
+            { "language": "pl", "text": "Spokojna ilustracja rozmowy strategicznej w biurze z wykresami bez czytelnego tekstu." },
+            { "language": "ro", "text": "O ilustrație calmă a unei discuții strategice într-un birou, cu grafice fără text lizibil." },
+            { "language": "sq", "text": "Një ilustrim i qetë i një bisede strategjike në zyrë me grafikë pa tekst të lexueshëm." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, German office meeting room, diverse adults in a strategy conversation about customer service response times, abstract charts without readable text, no logos, no private data, calm professional atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

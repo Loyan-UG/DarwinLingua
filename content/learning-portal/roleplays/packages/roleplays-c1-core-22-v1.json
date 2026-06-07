@@ -1,0 +1,873 @@
+{
+  "packageId": "roleplays-c1-core-22-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 22 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 22",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-gruppenarbeit-in-der-hochschule-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Gruppenarbeit in der Hochschule moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating a university group task" },
+        { "language": "fa", "text": "مدیریت یک کار گروهی در دانشگاه" },
+        { "language": "ar", "text": "إدارة عمل جماعي في الجامعة" },
+        { "language": "tr", "text": "Üniversitede bir grup çalışmasını yönetmek" },
+        { "language": "ru", "text": "Модерация групповой работы в университете" },
+        { "language": "ckb", "text": "بەڕێوەبردنی کاری گرووپی لە زانکۆ" },
+        { "language": "kmr", "text": "Rêvebirina xebata komî li zanîngehê" },
+        { "language": "pl", "text": "Moderowanie pracy grupowej na uczelni" },
+        { "language": "ro", "text": "Moderarea unei activități de grup la universitate" },
+        { "language": "sq", "text": "Moderimi i një pune grupore në universitet" }
+      ],
+      "description": "In einer C1-Gruppenarbeit strukturieren Sie eine offene Aufgabe, verteilen Rollen, gleichen ungleiche Beteiligung aus und sichern ein realistisches gemeinsames Ergebnis.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an advanced group task, you structure an open assignment, distribute roles, balance unequal participation, and secure a realistic shared output." },
+        { "language": "fa", "text": "در یک کار گروهی پیشرفته، یک تکلیف باز را ساختار می‌دهید، نقش‌ها را تقسیم می‌کنید، مشارکت نابرابر را متعادل می‌کنید و یک خروجی مشترک واقع‌بینانه تثبیت می‌کنید." },
+        { "language": "ar", "text": "في عمل جماعي متقدم، تنظّم مهمة مفتوحة، وتوزع الأدوار، وتوازن المشاركة غير المتساوية، وتضمن نتيجة مشتركة واقعية." },
+        { "language": "tr", "text": "İleri düzey bir grup çalışmasında açık bir görevi yapılandırır, rolleri dağıtır, eşitsiz katılımı dengeler ve gerçekçi bir ortak çıktı güvenceye alırsınız." },
+        { "language": "ru", "text": "В продвинутой групповой работе вы структурируете открытую задачу, распределяете роли, выравниваете неравное участие и закрепляете реалистичный общий результат." },
+        { "language": "ckb", "text": "لە کاری گرووپی پێشکەوتوودا ئەرکێکی کراوە ڕێک دەخەیت، ڕۆڵەکان دابەش دەکەیت، بەشداریی نایەکسان هاوسەنگ دەکەیت و دەرەنجامی هاوبەشی واقیعی دڵنیا دەکەیت." },
+        { "language": "kmr", "text": "Di xebata komî ya asta pêşketî de hûn wezîfeyeke vekirî rêxistin dikin, rolan belav dikin, beşdariya nehevseng hevseng dikin û encameke hevpar a rastîn misoger dikin." },
+        { "language": "pl", "text": "W zaawansowanej pracy grupowej strukturyzujesz otwarte zadanie, dzielisz role, równoważysz nierówny udział i zabezpieczasz realistyczny wspólny wynik." },
+        { "language": "ro", "text": "Într-o activitate de grup avansată, structurați o sarcină deschisă, distribuiți roluri, echilibrați participarea inegală și asigurați un rezultat comun realist." },
+        { "language": "sq", "text": "Në një punë grupore të avancuar, strukturoni një detyrë të hapur, ndani rolet, balanconi pjesëmarrjen e pabarabartë dhe siguroni një rezultat të përbashkët realist." }
+      ],
+      "learnerGoal": "Eine anspruchsvolle Gruppenarbeit so moderieren, dass Rollen, Zeitplan, Beteiligung und Ergebnis klar werden, ohne autoritär zu wirken.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate a demanding group task so that roles, timeline, participation, and output become clear without sounding authoritarian." },
+        { "language": "fa", "text": "یک کار گروهی دشوار را طوری مدیریت کنید که نقش‌ها، زمان‌بندی، مشارکت و خروجی روشن شوند، بدون اینکه آمرانه به نظر برسید." },
+        { "language": "ar", "text": "أدر عملاً جماعياً صعباً بحيث تتضح الأدوار والجدول الزمني والمشاركة والنتيجة من دون أن تبدو سلطوياً." },
+        { "language": "tr", "text": "Zorlu bir grup çalışmasını, roller, zaman planı, katılım ve çıktı netleşecek ama otoriter görünmeyecek şekilde yönetin." },
+        { "language": "ru", "text": "Модерировать сложную групповую работу так, чтобы роли, сроки, участие и результат стали ясными без авторитарного звучания." },
+        { "language": "ckb", "text": "کاری گرووپییەکی قورس بە جۆرێک بەڕێوە ببە کە ڕۆڵ، کات‌بەندی، بەشداری و دەرەنجام ڕوون بن، بەبێ ئەوەی فەرماندەرانە دەربکەویت." },
+        { "language": "kmr", "text": "Xebateke komî ya dijwar wisa rêve bibin ku rol, demname, beşdarî û encam zelal bibin, bê ku wek desthilatdar xuya bibin." },
+        { "language": "pl", "text": "Moderować wymagającą pracę grupową tak, aby role, harmonogram, udział i wynik były jasne, bez brzmienia autorytarnie." },
+        { "language": "ro", "text": "Moderați o activitate de grup solicitantă astfel încât rolurile, calendarul, participarea și rezultatul să fie clare fără să păreți autoritar." },
+        { "language": "sq", "text": "Moderoni një punë grupore të vështirë në mënyrë që rolet, afati, pjesëmarrja dhe rezultati të bëhen të qarta pa tingëlluar autoritar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "discuss-plan",
+      "interactionMode": "group-work",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 22,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Moderator/in",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مدیر بحث" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەری گفتوگۆ" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderatorul" },
+            { "language": "sq", "text": "Moderatori" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Gruppenmitglied",
+          "translations": [
+            { "language": "en", "text": "Group member" },
+            { "language": "fa", "text": "عضو گروه" },
+            { "language": "ar", "text": "عضو المجموعة" },
+            { "language": "tr", "text": "Grup üyesi" },
+            { "language": "ru", "text": "Участник группы" },
+            { "language": "ckb", "text": "ئەندامی گرووپ" },
+            { "language": "kmr", "text": "Endamê komê" },
+            { "language": "pl", "text": "Członek grupy" },
+            { "language": "ro", "text": "Membrul grupului" },
+            { "language": "sq", "text": "Anëtari i grupit" }
+          ]
+        },
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Ihre Gruppe soll in 25 Minuten ein kurzes Konzept für eine Seminarpräsentation entwickeln. Die Aufgabe ist offen formuliert. Wie starten Sie die Moderation?",
+          "translations": [
+            { "language": "en", "text": "Your group is supposed to develop a brief concept for a seminar presentation in 25 minutes. The task is formulated openly. How do you start the moderation?" },
+            { "language": "fa", "text": "گروه شما باید در ۲۵ دقیقه یک طرح کوتاه برای ارائه سمیناری آماده کند. تکلیف باز نوشته شده است. مدیریت بحث را چگونه شروع می‌کنید؟" },
+            { "language": "ar", "text": "يجب على مجموعتك أن تطور خلال 25 دقيقة تصوراً قصيراً لعرض ندوة. المهمة مصاغة بشكل مفتوح. كيف تبدأ إدارة النقاش؟" },
+            { "language": "tr", "text": "Grubunuz 25 dakika içinde bir seminer sunumu için kısa bir taslak geliştirmeli. Görev açık biçimde verilmiş. Moderasyonu nasıl başlatırsınız?" },
+            { "language": "ru", "text": "Ваша группа должна за 25 минут разработать краткую концепцию семинарской презентации. Задание сформулировано открыто. Как вы начнёте модерацию?" },
+            { "language": "ckb", "text": "گرووپەکەت دەبێت لە ٢٥ خولەکدا پلانی کورتێک بۆ پێشکەشکردنی سیمینار ئامادە بکات. ئەرکەکە بە شێوەی کراوە داڕێژراوە. بەڕێوەبردنی گفتوگۆ چۆن دەست پێ دەکەیت؟" },
+            { "language": "kmr", "text": "Koma we divê di 25 deqeyan de konsepteke kurt ji bo pêşkêşiyeke semînerê amade bike. Wezîfe vekirî hatiye formulekirin. Hûn moderasyonê çawa dest pê dikin?" },
+            { "language": "pl", "text": "Pańska grupa ma w 25 minut opracować krótki koncept prezentacji seminaryjnej. Zadanie jest sformułowane otwarcie. Jak rozpocznie Pan moderację?" },
+            { "language": "ro", "text": "Grupul dumneavoastră trebuie să elaboreze în 25 de minute un concept scurt pentru o prezentare de seminar. Sarcina este formulată deschis. Cum începeți moderarea?" },
+            { "language": "sq", "text": "Grupi juaj duhet të zhvillojë brenda 25 minutash një koncept të shkurtër për një prezantim seminari. Detyra është formuluar hapur. Si e filloni moderimin?" }
+          ],
+          "function": "start-prompt",
+          "toneNote": "strukturierend",
+          "expectedLearnerAction": "Ziel, Zeit und Vorgehen klären"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde zuerst das Ziel begrenzen: Wir brauchen am Ende keine fertige Präsentation, sondern eine These, drei Argumentationspunkte und eine grobe Rollenverteilung. Danach legen wir fünf Minuten für Ideen, zehn Minuten für Auswahl und zehn Minuten für Struktur fest.",
+          "translations": [
+            { "language": "en", "text": "I would first limit the goal: by the end, we do not need a finished presentation, but a thesis, three argument points, and a rough distribution of roles. Then we set five minutes for ideas, ten minutes for selection, and ten minutes for structure." },
+            { "language": "fa", "text": "ابتدا هدف را محدود می‌کنم: در پایان لازم نیست ارائه کامل داشته باشیم، بلکه یک تز، سه محور استدلال و تقسیم نقش تقریبی کافی است. بعد پنج دقیقه برای ایده‌ها، ده دقیقه برای انتخاب و ده دقیقه برای ساختار تعیین می‌کنیم." },
+            { "language": "ar", "text": "سأحدد الهدف أولاً: في النهاية لا نحتاج إلى عرض مكتمل، بل إلى أطروحة وثلاث نقاط حجاجية وتوزيع أولي للأدوار. بعد ذلك نخصص خمس دقائق للأفكار، وعشر دقائق للاختيار، وعشر دقائق للبنية." },
+            { "language": "tr", "text": "Önce hedefi sınırlarım: sonunda bitmiş bir sunuma değil, bir teze, üç argüman noktasına ve kaba bir rol dağılımına ihtiyacımız var. Sonra fikirler için beş dakika, seçim için on dakika ve yapı için on dakika belirleriz." },
+            { "language": "ru", "text": "Сначала я бы ограничил цель: в конце нам нужна не готовая презентация, а тезис, три аргументационных пункта и примерное распределение ролей. Затем выделяем пять минут на идеи, десять на отбор и десять на структуру." },
+            { "language": "ckb", "text": "سەرەتا ئامانجەکە سنووردار دەکەم: لە کۆتاییدا پێویستمان بە پێشکەشکردنی تەواو نییە، بەڵکو بە تێزێک، سێ خاڵی بەڵگەهێنان و دابەشکردنی سادەی ڕۆڵەکان. پاشان پێنج خولەک بۆ بیرۆکە، دە خولەک بۆ هەڵبژاردن و دە خولەک بۆ پێکهاتە دانەین." },
+            { "language": "kmr", "text": "Pêşî ez armancê sînordar dikim: Di dawiyê de pêşkêşiyeke qediyayî naxwazin, lê tezek, sê xalên argumanê û dabeşkirineke giştî ya rolan. Paşê pênc deqe ji bo ramanan, deh deqe ji bo hilbijartinê û deh deqe ji bo avahiyê destnîşan dikin." },
+            { "language": "pl", "text": "Najpierw ograniczyłbym cel: na końcu nie potrzebujemy gotowej prezentacji, lecz tezę, trzy punkty argumentacji i wstępny podział ról. Następnie ustalamy pięć minut na pomysły, dziesięć na wybór i dziesięć na strukturę." },
+            { "language": "ro", "text": "Mai întâi aș limita scopul: la final nu avem nevoie de o prezentare terminată, ci de o teză, trei puncte de argumentare și o distribuire aproximativă a rolurilor. Apoi stabilim cinci minute pentru idei, zece pentru selecție și zece pentru structură." },
+            { "language": "sq", "text": "Së pari do ta kufizoja qëllimin: në fund nuk na duhet një prezantim i përfunduar, por një tezë, tre pika argumentimi dhe një ndarje e përafërt e roleve. Pastaj caktojmë pesë minuta për ide, dhjetë për përzgjedhje dhe dhjetë për strukturë." }
+          ],
+          "function": "goal-and-timebox",
+          "toneNote": "klar, kooperativ",
+          "expectedLearnerAction": "Ziel und Zeitplan operationalisieren"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Ich finde, wir sollten erst einmal alles sammeln. Wenn wir gleich so stark strukturieren, verlieren wir vielleicht gute Ideen.",
+          "translations": [
+            { "language": "en", "text": "I think we should first collect everything. If we structure it so strongly right away, we might lose good ideas." },
+            { "language": "fa", "text": "به نظر من اول باید همه چیز را جمع کنیم. اگر از همان ابتدا این‌قدر ساختار بدهیم، شاید ایده‌های خوب را از دست بدهیم." },
+            { "language": "ar", "text": "أرى أننا يجب أن نجمع كل شيء أولاً. إذا نظمنا الأمر بقوة منذ البداية، فقد نفقد أفكاراً جيدة." },
+            { "language": "tr", "text": "Bence önce her şeyi toplamalıyız. Hemen bu kadar güçlü yapılandırırsak iyi fikirleri kaçırabiliriz." },
+            { "language": "ru", "text": "Мне кажется, сначала нужно собрать всё. Если сразу так сильно структурировать, мы, возможно, потеряем хорошие идеи." },
+            { "language": "ckb", "text": "پێم وایە سەرەتا دەبێت هەموو شتێک کۆ بکەینەوە. ئەگەر لە دەستپێکدا بەو شێوەیە ڕێکی بخەین، لەوانەیە بیرۆکە باشەکان لەدەست بدەین." },
+            { "language": "kmr", "text": "Ez difikirim divê pêşî her tiştî kom bikin. Heke ji destpêkê ve wisa xurt rêxistin bikin, belkî ramanên baş winda bikin." },
+            { "language": "pl", "text": "Uważam, że najpierw powinniśmy zebrać wszystko. Jeśli od razu tak mocno ustrukturyzujemy pracę, możemy stracić dobre pomysły." },
+            { "language": "ro", "text": "Cred că ar trebui mai întâi să adunăm totul. Dacă structurăm atât de puternic de la început, poate pierdem idei bune." },
+            { "language": "sq", "text": "Mendoj se së pari duhet të mbledhim gjithçka. Nëse e strukturojmë kaq fort menjëherë, ndoshta humbasim ide të mira." }
+          ],
+          "function": "process-objection",
+          "toneNote": "skeptisch",
+          "expectedLearnerAction": "Struktur begründen, Offenheit bewahren"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das Risiko sehe ich. Deshalb würde ich die Ideensammlung offen halten, aber zeitlich begrenzen. Wir notieren erst ohne Bewertung und entscheiden danach nach zwei Kriterien: passt zur Fragestellung und ist in fünf Minuten präsentierbar.",
+          "translations": [
+            { "language": "en", "text": "I see that risk. That is why I would keep the idea collection open but time-limited. We first note ideas without judging them and then decide by two criteria: fit with the question and presentable in five minutes." },
+            { "language": "fa", "text": "این خطر را می‌بینم. برای همین ایده‌پردازی را باز نگه می‌دارم، اما از نظر زمان محدود می‌کنم. اول بدون ارزیابی یادداشت می‌کنیم و بعد با دو معیار تصمیم می‌گیریم: ارتباط با پرسش و قابل ارائه بودن در پنج دقیقه." },
+            { "language": "ar", "text": "أرى هذا الخطر. لذلك سأبقي جمع الأفكار مفتوحاً، لكن محدوداً زمنياً. نسجل أولاً من دون تقييم، ثم نقرر وفق معيارين: الملاءمة للسؤال وإمكانية العرض في خمس دقائق." },
+            { "language": "tr", "text": "Bu riski görüyorum. Bu yüzden fikir toplamayı açık ama zamanla sınırlı tutarım. Önce değerlendirmeden not alırız, sonra iki ölçüte göre karar veririz: soruya uygunluk ve beş dakikada sunulabilirlik." },
+            { "language": "ru", "text": "Я вижу этот риск. Поэтому я бы оставил сбор идей открытым, но ограничил его по времени. Сначала записываем без оценки, а затем решаем по двум критериям: соответствует ли вопросу и можно ли представить за пять минут." },
+            { "language": "ckb", "text": "ئەم مەترسییە دەبینم. بۆیە کۆکردنەوەی بیرۆکەکان کراوە دەهێڵمەوە، بەڵام کاتی بۆ دەستنیشان دەکەم. سەرەتا بەبێ هەڵسەنگاندن تێبینی دەکەین و پاشان بە دوو پێوەر بڕیار دەدەین: گونجان لەگەڵ پرسیارەکە و توانای پێشکەشکردن لە پێنج خولەکدا." },
+            { "language": "kmr", "text": "Ez vê xetereyê dibînim. Ji ber vê yekê ez komkirina ramanan vekirî dihêlim, lê bi demê sînordar dikim. Pêşî bê nirxandin dinivîsin û paşê li gorî du pîvanan biryar didin: lihevhatina bi pirsê û pêşkêşbarî di pênc deqeyan de." },
+            { "language": "pl", "text": "Widzę to ryzyko. Dlatego zostawiłbym zbieranie pomysłów otwarte, ale ograniczone czasowo. Najpierw notujemy bez oceny, a potem decydujemy według dwóch kryteriów: zgodność z pytaniem i możliwość przedstawienia w pięć minut." },
+            { "language": "ro", "text": "Văd acest risc. De aceea aș păstra colectarea ideilor deschisă, dar limitată în timp. Mai întâi notăm fără evaluare, apoi decidem după două criterii: potrivirea cu întrebarea și posibilitatea de a prezenta în cinci minute." },
+            { "language": "sq", "text": "E shoh këtë rrezik. Prandaj do ta mbaja mbledhjen e ideve të hapur, por të kufizuar në kohë. Së pari shënojmë pa vlerësim dhe pastaj vendosim sipas dy kritereve: përshtatja me pyetjen dhe mundësia për t'u prezantuar në pesë minuta." }
+          ],
+          "function": "balanced-process",
+          "toneNote": "vermittelnd",
+          "expectedLearnerAction": "Einwand integrieren und Kriterien nennen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Nach einigen Minuten redet eine Person sehr viel, zwei andere sagen kaum etwas. Wie greifen Sie ein, ohne jemanden bloßzustellen?",
+          "translations": [
+            { "language": "en", "text": "After a few minutes, one person is speaking a lot and two others are hardly saying anything. How do you intervene without embarrassing anyone?" },
+            { "language": "fa", "text": "بعد از چند دقیقه، یک نفر خیلی زیاد صحبت می‌کند و دو نفر دیگر تقریباً چیزی نمی‌گویند. چگونه وارد می‌شوید بدون اینکه کسی را معذب یا تحقیر کنید؟" },
+            { "language": "ar", "text": "بعد بضع دقائق يتحدث شخص واحد كثيراً، بينما لا يقول شخصان آخران شيئاً تقريباً. كيف تتدخل من دون إحراج أحد؟" },
+            { "language": "tr", "text": "Birkaç dakika sonra bir kişi çok konuşuyor, iki kişi ise neredeyse hiç konuşmuyor. Kimseyi utandırmadan nasıl müdahale edersiniz?" },
+            { "language": "ru", "text": "Через несколько минут один человек говорит очень много, а двое почти ничего не говорят. Как вы вмешаетесь, никого не ставя в неловкое положение?" },
+            { "language": "ckb", "text": "دوای چەند خولەک، کەسێک زۆر قسە دەکات و دوو کەسی تر نزیکەی هیچ ناڵێن. چۆن دەستتێوەردەدەیت بەبێ ئەوەی کەسێک شەرمەزار بکەیت؟" },
+            { "language": "kmr", "text": "Piştî çend deqeyan, kesek pir diaxive û du kesên din hema tiştekî nabêjin. Hûn çawa destwerdan dikin bê ku kesek şerm bikin?" },
+            { "language": "pl", "text": "Po kilku minutach jedna osoba mówi bardzo dużo, a dwie inne prawie nic. Jak Pan zareaguje, nie zawstydzając nikogo?" },
+            { "language": "ro", "text": "După câteva minute, o persoană vorbește foarte mult, iar alte două aproape nu spun nimic. Cum interveniți fără să puneți pe cineva într-o situație stânjenitoare?" },
+            { "language": "sq", "text": "Pas disa minutash, një person flet shumë dhe dy të tjerë pothuajse nuk thonë asgjë. Si ndërhyni pa vënë askënd në siklet?" }
+          ],
+          "function": "participation-imbalance",
+          "toneNote": "sensibel",
+          "expectedLearnerAction": "Beteiligung ausgleichen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde nicht die Person direkt bremsen, sondern die Gesprächsform ändern: Lasst uns kurz reihum je einen Punkt hören, den wir noch nicht berücksichtigt haben. Danach fassen wir zusammen, was wir übernehmen.",
+          "translations": [
+            { "language": "en", "text": "I would not directly stop the person, but change the discussion format: let's briefly hear one point from each person that we have not considered yet. Then we summarize what we will take over." },
+            { "language": "fa", "text": "مستقیماً آن فرد را متوقف نمی‌کنم، بلکه شکل گفت‌وگو را تغییر می‌دهم: بیایید کوتاه از هر نفر یک نکته بشنویم که هنوز در نظر نگرفته‌ایم. بعد جمع‌بندی می‌کنیم چه چیزی را وارد کار کنیم." },
+            { "language": "ar", "text": "لن أوقف الشخص مباشرة، بل أغير شكل النقاش: لنسمع باختصار من كل شخص نقطة لم نأخذها في الحسبان بعد. ثم نلخص ما سنعتمده." },
+            { "language": "tr", "text": "Kişiyi doğrudan durdurmam; tartışma biçimini değiştiririm: herkesden henüz dikkate almadığımız bir noktayı kısaca duyalım. Sonra neyi alacağımızı özetleriz." },
+            { "language": "ru", "text": "Я бы не останавливал человека напрямую, а изменил формат разговора: давайте коротко услышим от каждого по одному пункту, который мы ещё не учли. Затем подытожим, что берём в работу." },
+            { "language": "ckb", "text": "من ڕاستەوخۆ ئەو کەسە ناوەستم، بەڵکو شێوەی گفتوگۆ دەگۆڕم: با بە کورتی لە هەر کەسێک خاڵێک ببیسین کە هێشتا لەبەرچاومان نەگرتووە. پاشان کورت دەکەینەوە کە چی وەردەگرین." },
+            { "language": "kmr", "text": "Ez wê kesê rasterast ranawestînim, lê forma nîqaşê diguherînim: ka em bi kurtî ji her kesî xalekî bibihîzin ku me hêj negirtiye ber çavan. Paşê em kurt dikin ka çi werdigirin." },
+            { "language": "pl", "text": "Nie hamowałbym tej osoby bezpośrednio, lecz zmienił formę rozmowy: wysłuchajmy krótko po jednym punkcie od każdej osoby, którego jeszcze nie uwzględniliśmy. Potem podsumujemy, co przejmujemy." },
+            { "language": "ro", "text": "Nu aș opri direct persoana, ci aș schimba forma discuției: să auzim pe scurt de la fiecare câte un punct pe care nu l-am luat încă în considerare. Apoi rezumăm ce preluăm." },
+            { "language": "sq", "text": "Nuk do ta ndaloja drejtpërdrejt atë person, por do ta ndryshoja formën e diskutimit: le të dëgjojmë shkurt nga secili një pikë që ende nuk e kemi marrë parasysh. Pastaj përmbledhim çfarë do të marrim." }
+          ],
+          "function": "inclusive-intervention",
+          "toneNote": "taktvoll",
+          "expectedLearnerAction": "Gesprächsformat ändern"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Ich kann die Folien übernehmen, aber ich möchte nicht auch noch den theoretischen Teil schreiben. Sonst bleibt wieder alles an mir hängen.",
+          "translations": [
+            { "language": "en", "text": "I can take over the slides, but I don't also want to write the theoretical part. Otherwise everything will end up on me again." },
+            { "language": "fa", "text": "می‌توانم اسلایدها را بر عهده بگیرم، اما نمی‌خواهم بخش نظری را هم بنویسم. وگرنه دوباره همه چیز روی دوش من می‌افتد." },
+            { "language": "ar", "text": "أستطيع تولي الشرائح، لكنني لا أريد أيضاً كتابة الجزء النظري. وإلا فسينتهي كل شيء على عاتقي مرة أخرى." },
+            { "language": "tr", "text": "Slaytları üstlenebilirim, ama teorik kısmı da yazmak istemiyorum. Yoksa yine her şey benim üzerime kalır." },
+            { "language": "ru", "text": "Я могу взять на себя слайды, но не хочу ещё и писать теоретическую часть. Иначе всё опять останется на мне." },
+            { "language": "ckb", "text": "دەتوانم سلایدەکان وەربگرم، بەڵام نامەوێت بەشی تیۆرییش بنووسم. ئەگەرنا جارێکی تر هەموو شتێک دەکەوێتە سەر من." },
+            { "language": "kmr", "text": "Ez dikarim slaydan bigirim ser xwe, lê naxwazim beşa teorîk jî binivîsim. Wekî din dîsa her tişt li ser min dimîne." },
+            { "language": "pl", "text": "Mogę przejąć slajdy, ale nie chcę jeszcze pisać części teoretycznej. Inaczej znowu wszystko zostanie na mnie." },
+            { "language": "ro", "text": "Pot prelua diapozitivele, dar nu vreau să scriu și partea teoretică. Altfel totul va cădea din nou pe mine." },
+            { "language": "sq", "text": "Mund t'i marr përsipër slajdet, por nuk dua të shkruaj edhe pjesën teorike. Përndryshe gjithçka do të mbetet përsëri mbi mua." }
+          ],
+          "function": "workload-boundary",
+          "toneNote": "angespannt",
+          "expectedLearnerAction": "Belastung anerkennen und Rollen fair klären"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein wichtiger Hinweis. Wir trennen deshalb Inhalt und Darstellung: Du übernimmst nur die Folienstruktur, ich formuliere die These, und die beiden anderen prüfen je ein Argument. Am Ende gleichen wir ab, ob die Teile zusammenpassen.",
+          "translations": [
+            { "language": "en", "text": "That is an important point. So we separate content and presentation: you take only the slide structure, I formulate the thesis, and the other two each check one argument. At the end, we compare whether the parts fit together." },
+            { "language": "fa", "text": "این نکته مهمی است. بنابراین محتوا و ارائه را جدا می‌کنیم: تو فقط ساختار اسلایدها را بر عهده می‌گیری، من تز را می‌نویسم و دو نفر دیگر هر کدام یک استدلال را بررسی می‌کنند. در پایان چک می‌کنیم که بخش‌ها با هم جور باشند." },
+            { "language": "ar", "text": "هذه ملاحظة مهمة. لذلك نفصل بين المحتوى والعرض: أنت تتولى فقط بنية الشرائح، وأنا أصوغ الأطروحة، والآخران يراجع كل منهما حجة واحدة. في النهاية نتحقق من أن الأجزاء متناسقة." },
+            { "language": "tr", "text": "Bu önemli bir nokta. Bu yüzden içerik ile sunumu ayırıyoruz: sen yalnızca slayt yapısını üstleniyorsun, ben tezi formüle ediyorum, diğer ikisi de birer argümanı kontrol ediyor. Sonunda parçaların uyup uymadığını karşılaştırıyoruz." },
+            { "language": "ru", "text": "Это важное замечание. Поэтому разделим содержание и представление: ты берёшь только структуру слайдов, я формулирую тезис, а двое других проверяют по одному аргументу. В конце сверяем, подходят ли части друг к другу." },
+            { "language": "ckb", "text": "ئەمە تێبینییەکی گرنگە. بۆیە ناوەڕۆک و پێشکەشکردن جیا دەکەینەوە: تۆ تەنها پێکهاتەی سلایدەکان وەردەگریت، من تێزەکە دادەڕێژم، و دوو کەسی تر هەر یەکەیان بەڵگەیەک دەپشکنێت. لە کۆتاییدا دەیپشکنین کە بەشەکان لەگەڵ یەک دەگونجێن یان نا." },
+            { "language": "kmr", "text": "Ev têbînî girîng e. Ji ber vê yekê em naverok û pêşkêşiyê veqetînin: Tu tenê avahiya slaydan werdigire, ez tezê formule dikim, û du kesên din her yek argumanekê kontrol dikin. Di dawiyê de em li hev dinêrin ka parçeyên hev digirin an na." },
+            { "language": "pl", "text": "To ważna uwaga. Dlatego oddzielamy treść od prezentacji: Ty przejmujesz tylko strukturę slajdów, ja formułuję tezę, a dwie pozostałe osoby sprawdzają po jednym argumencie. Na końcu porównamy, czy części do siebie pasują." },
+            { "language": "ro", "text": "Este o observație importantă. De aceea separăm conținutul de prezentare: tu preiei doar structura diapozitivelor, eu formulez teza, iar ceilalți doi verifică fiecare câte un argument. La final comparăm dacă părțile se potrivesc." },
+            { "language": "sq", "text": "Kjo është një vërejtje e rëndësishme. Prandaj ndajmë përmbajtjen nga prezantimi: ti merr vetëm strukturën e slajdeve, unë formuloj tezën dhe dy të tjerët kontrollojnë nga një argument. Në fund krahasojmë nëse pjesët përshtaten." }
+          ],
+          "function": "role-rebalance",
+          "toneNote": "fair, lösungsorientiert",
+          "expectedLearnerAction": "Rollen konkret und fair verteilen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Die Zeit läuft. Wie verhindern Sie, dass die Gruppe am Ende nur viele Einzelteile hat, aber kein gemeinsames Ergebnis?",
+          "translations": [
+            { "language": "en", "text": "Time is running. How do you prevent the group from ending up with many individual pieces but no shared result?" },
+            { "language": "fa", "text": "زمان در حال تمام شدن است. چگونه مانع می‌شوید که گروه در پایان فقط چند بخش جداگانه داشته باشد، اما نتیجه مشترک نداشته باشد؟" },
+            { "language": "ar", "text": "الوقت يمضي. كيف تمنع أن تنتهي المجموعة بأجزاء فردية كثيرة لكن بلا نتيجة مشتركة؟" },
+            { "language": "tr", "text": "Zaman ilerliyor. Grubun sonunda birçok ayrı parçaya sahip olup ortak bir sonuç çıkaramamasını nasıl engellersiniz?" },
+            { "language": "ru", "text": "Время идёт. Как вы предотвратите ситуацию, когда у группы в конце много отдельных частей, но нет общего результата?" },
+            { "language": "ckb", "text": "کات دەڕوات. چۆن ڕێگری دەکەیت لەوەی گرووپەکە لە کۆتاییدا تەنها زۆر بەشی جیاواز هەبێت، بەڵام دەرەنجامی هاوبەش نەبێت؟" },
+            { "language": "kmr", "text": "Dem diçe. Hûn çawa asteng dikin ku di dawiyê de kom gelek parçeyên cuda hebin lê encameke hevpar tune be?" },
+            { "language": "pl", "text": "Czas ucieka. Jak zapobiegnie Pan temu, aby grupa na końcu miała tylko wiele części, ale żadnego wspólnego wyniku?" },
+            { "language": "ro", "text": "Timpul trece. Cum împiedicați ca grupul să aibă la final doar multe părți separate, dar niciun rezultat comun?" },
+            { "language": "sq", "text": "Koha po kalon. Si e parandaloni që grupi në fund të ketë vetëm shumë pjesë të veçanta, por asnjë rezultat të përbashkët?" }
+          ],
+          "function": "output-risk",
+          "toneNote": "zeitkritisch",
+          "expectedLearnerAction": "Gemeinsames Ergebnis sichern"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde fünf Minuten vor Schluss einen Integrationsstopp setzen: Jede Person nennt nur noch, was für die gemeinsame These unverzichtbar ist. Alles andere kommt in eine Reserve-Liste, damit wir ein geschlossenes Ergebnis statt einer Materialsammlung haben.",
+          "translations": [
+            { "language": "en", "text": "Five minutes before the end, I would set an integration stop: each person only names what is indispensable for the shared thesis. Everything else goes on a reserve list so we have a coherent result instead of a collection of material." },
+            { "language": "fa", "text": "پنج دقیقه مانده به پایان، توقف برای یکپارچه‌سازی اعلام می‌کنم: هر نفر فقط چیزی را می‌گوید که برای تز مشترک ضروری است. بقیه وارد فهرست ذخیره می‌شود تا به جای مجموعه مواد، نتیجه‌ای منسجم داشته باشیم." },
+            { "language": "ar", "text": "قبل النهاية بخمس دقائق سأعلن توقفاً للدمج: يذكر كل شخص فقط ما لا غنى عنه للأطروحة المشتركة. كل ما عدا ذلك يوضع في قائمة احتياطية كي نحصل على نتيجة متماسكة بدلاً من مجموعة مواد." },
+            { "language": "tr", "text": "Bitime beş dakika kala bir bütünleştirme duruşu koyarım: herkes yalnızca ortak tez için vazgeçilmez olanı söyler. Diğer her şey yedek listeye gider, böylece malzeme yığını yerine tutarlı bir sonuç elde ederiz." },
+            { "language": "ru", "text": "За пять минут до конца я бы ввёл остановку на интеграцию: каждый называет только то, что необходимо для общего тезиса. Всё остальное идёт в резервный список, чтобы у нас был связный результат, а не сбор материала." },
+            { "language": "ckb", "text": "پێنج خولەک پێش کۆتایی، وەستانێکی یەکخستن دادەنێم: هەر کەسێک تەنها ئەوە دەڵێت کە بۆ تێزی هاوبەش پێویستییەکی بنەڕەتییە. هەموو شتێکی تر دەچێتە لیستی پاشەکەوت، بۆ ئەوەی دەرەنجامێکی پێکەوەبەستراومان هەبێت نە کۆمەڵە ماددە." },
+            { "language": "kmr", "text": "Pênc deqe berî dawiyê ez rawestgeheke yekxistinê danîm: Her kes tenê tiştê ji bo teza hevpar neçar e nav dike. Her tiştê din di lîsteya rezervê de diçe, da ku em encameke girtî hebin ne komkirina materyalê." },
+            { "language": "pl", "text": "Pięć minut przed końcem wprowadziłbym stop integracyjny: każda osoba mówi już tylko, co jest niezbędne dla wspólnej tezy. Wszystko inne trafia na listę rezerwową, abyśmy mieli spójny wynik zamiast zbioru materiału." },
+            { "language": "ro", "text": "Cu cinci minute înainte de final aș stabili o oprire pentru integrare: fiecare persoană mai numește doar ce este indispensabil pentru teza comună. Restul intră pe o listă de rezervă, ca să avem un rezultat coerent, nu o colecție de materiale." },
+            { "language": "sq", "text": "Pesë minuta para fundit do të vendosja një ndalesë integrimi: secili përmend vetëm atë që është e domosdoshme për tezën e përbashkët. Çdo gjë tjetër hyn në një listë rezervë, që të kemi një rezultat të mbyllur dhe jo një grumbull materialesh." }
+          ],
+          "function": "integration-stop",
+          "toneNote": "entschieden, transparent",
+          "expectedLearnerAction": "Output sichern"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Können wir am Ende noch festhalten, wer nach der Sitzung was macht? Sonst ist unklar, ob unser Konzept wirklich weiterverwendet werden kann.",
+          "translations": [
+            { "language": "en", "text": "Can we record at the end who does what after the session? Otherwise it is unclear whether our concept can really be used further." },
+            { "language": "fa", "text": "آیا می‌توانیم در پایان ثبت کنیم که بعد از جلسه هر کس چه کاری انجام می‌دهد؟ وگرنه روشن نیست آیا طرح ما واقعاً قابل استفاده بعدی هست یا نه." },
+            { "language": "ar", "text": "هل يمكننا في النهاية أن نسجل من يفعل ماذا بعد الجلسة؟ وإلا فلن يكون واضحاً ما إذا كان يمكن استخدام تصورنا لاحقاً فعلاً." },
+            { "language": "tr", "text": "Sonunda oturumdan sonra kimin ne yapacağını kaydedebilir miyiz? Yoksa taslağımızın gerçekten kullanılabilir olup olmadığı belirsiz kalır." },
+            { "language": "ru", "text": "Можем в конце зафиксировать, кто что делает после встречи? Иначе непонятно, можно ли действительно дальше использовать нашу концепцию." },
+            { "language": "ckb", "text": "دەتوانین لە کۆتاییدا تۆمار بکەین دوای دانیشتنەکە هەر کەسێک چی دەکات؟ ئەگەرنا ڕوون نییە کە پلانەکەمان بەڕاستی دەتوانرێت دواتر بەکاربهێنرێت یان نا." },
+            { "language": "kmr", "text": "Em dikarin di dawiyê de qeyd bikin ka piştî rûniştinê kî çi dike? Wekî din nezelal e ka konsepta me bi rastî dikare paşê were bikaranîn an na." },
+            { "language": "pl", "text": "Czy możemy na końcu zapisać, kto co robi po spotkaniu? Inaczej nie będzie jasne, czy nasz koncept naprawdę można dalej wykorzystać." },
+            { "language": "ro", "text": "Putem nota la final cine ce face după ședință? Altfel nu este clar dacă conceptul nostru poate fi folosit mai departe." },
+            { "language": "sq", "text": "A mund të shënojmë në fund kush bën çfarë pas takimit? Përndryshe nuk është e qartë nëse koncepti ynë mund të përdoret vërtet më tej." }
+          ],
+          "function": "follow-up-request",
+          "toneNote": "praktisch",
+          "expectedLearnerAction": "Nächste Schritte verbindlich machen"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich halte als Ergebnis fest: These, drei Argumente, Rollen für die Ausarbeitung und eine offene Prüffrage. Jede Person bestätigt ihren nächsten Schritt kurz, damit aus der Gruppenarbeit ein weiterverwendbares Konzept wird.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will record the result as follows: thesis, three arguments, roles for elaboration, and one open review question. Each person briefly confirms their next step so that the group work becomes a concept that can be used further." },
+            { "language": "fa", "text": "بله، نتیجه را این‌طور ثبت می‌کنم: تز، سه استدلال، نقش‌ها برای تدوین بعدی و یک پرسش باز برای بررسی. هر نفر گام بعدی خود را کوتاه تأیید می‌کند تا کار گروهی به طرحی قابل استفاده بعدی تبدیل شود." },
+            { "language": "ar", "text": "نعم، سأثبت النتيجة هكذا: الأطروحة، ثلاث حجج، الأدوار للتطوير، وسؤال مراجعة مفتوح. يؤكد كل شخص خطوته التالية باختصار كي يتحول العمل الجماعي إلى تصور قابل للاستخدام لاحقاً." },
+            { "language": "tr", "text": "Evet, sonucu şöyle kaydederim: tez, üç argüman, ayrıntılandırma için roller ve açık bir kontrol sorusu. Grup çalışması daha sonra kullanılabilir bir taslağa dönüşsün diye herkes bir sonraki adımını kısaca onaylar." },
+            { "language": "ru", "text": "Да, я фиксирую результат так: тезис, три аргумента, роли для доработки и один открытый проверочный вопрос. Каждый коротко подтверждает свой следующий шаг, чтобы групповая работа стала концепцией, которую можно дальше использовать." },
+            { "language": "ckb", "text": "بەڵێ، دەرەنجامەکە وەک ئەمە تۆمار دەکەم: تێز، سێ بەڵگە، ڕۆڵەکان بۆ پەرەپێدان و پرسیارێکی کراوە بۆ پشکنین. هەر کەسێک بە کورتی هەنگاوی داهاتووی خۆی پشتڕاست دەکاتەوە، بۆ ئەوەی کاری گرووپی ببێتە پلانی بەکارهێنراوی دواتر." },
+            { "language": "kmr", "text": "Erê, ez encamê wisa qeyd dikim: tez, sê arguman, rol ji bo berfirehkirinê û pirseke vekirî ya kontrolê. Her kes gavê xwe yê din bi kurtî piştrast dike, da ku xebata komî bibe konsepteke ku paşê were bikaranîn." },
+            { "language": "pl", "text": "Tak, zapiszę wynik w ten sposób: teza, trzy argumenty, role do opracowania i jedno otwarte pytanie kontrolne. Każda osoba krótko potwierdza swój następny krok, aby praca grupowa stała się konceptem do dalszego wykorzystania." },
+            { "language": "ro", "text": "Da, consemnez rezultatul astfel: teza, trei argumente, roluri pentru elaborare și o întrebare deschisă de verificare. Fiecare persoană își confirmă pe scurt pasul următor, astfel încât activitatea de grup să devină un concept utilizabil mai departe." },
+            { "language": "sq", "text": "Po, e shënoj rezultatin kështu: teza, tre argumente, rolet për përpunim dhe një pyetje e hapur kontrolli. Secili e konfirmon shkurt hapin e vet të radhës, që puna grupore të bëhet një koncept i përdorshëm më tej." }
+          ],
+          "function": "final-output",
+          "toneNote": "verbindlich",
+          "expectedLearnerAction": "Ergebnis und nächste Schritte sichern"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Wir brauchen am Ende eine These, drei Argumentationspunkte und eine grobe Rollenverteilung. Dafür setzen wir kurze Zeitfenster für Ideen, Auswahl und Struktur.",
+              "translations": [
+                { "language": "en", "text": "By the end, we need a thesis, three argument points, and a rough distribution of roles. For that, we set short time windows for ideas, selection, and structure." },
+                { "language": "fa", "text": "در پایان به یک تز، سه محور استدلال و تقسیم نقش تقریبی نیاز داریم. برای این کار زمان‌های کوتاه برای ایده‌ها، انتخاب و ساختار تعیین می‌کنیم." },
+                { "language": "ar", "text": "في النهاية نحتاج إلى أطروحة وثلاث نقاط حجاجية وتوزيع أولي للأدوار. لذلك نحدد فترات قصيرة للأفكار والاختيار والبنية." },
+                { "language": "tr", "text": "Sonunda bir teze, üç argüman noktasına ve kaba bir rol dağılımına ihtiyacımız var. Bunun için fikirler, seçim ve yapı için kısa zaman aralıkları belirleriz." },
+                { "language": "ru", "text": "В конце нам нужен тезис, три аргументационных пункта и примерное распределение ролей. Для этого задаём короткие временные окна для идей, отбора и структуры." },
+                { "language": "ckb", "text": "لە کۆتاییدا پێویستمان بە تێزێک، سێ خاڵی بەڵگەهێنان و دابەشکردنی سادەی ڕۆڵەکان هەیە. بۆ ئەمە کاتی کورت بۆ بیرۆکە، هەڵبژاردن و پێکهاتە دادەنێین." },
+                { "language": "kmr", "text": "Di dawiyê de pêwîstiya me bi tezek, sê xalên argumanê û dabeşkirineke giştî ya rolan heye. Ji bo vê, em demên kurt ji bo ramanan, hilbijartinê û avahiyê danîn." },
+                { "language": "pl", "text": "Na końcu potrzebujemy tezy, trzech punktów argumentacji i wstępnego podziału ról. Dlatego ustalamy krótkie okna czasowe na pomysły, wybór i strukturę." },
+                { "language": "ro", "text": "La final avem nevoie de o teză, trei puncte de argumentare și o distribuire aproximativă a rolurilor. Pentru aceasta stabilim intervale scurte pentru idei, selecție și structură." },
+                { "language": "sq", "text": "Në fund na duhet një tezë, tre pika argumentimi dhe një ndarje e përafërt e roleve. Për këtë caktojmë afate të shkurtra për ide, përzgjedhje dhe strukturë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort übersetzt eine offene Aufgabe in ein erreichbares Ergebnis und einen konkreten Ablauf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer translates an open task into an achievable output and a concrete process." },
+                { "language": "fa", "text": "قوی: پاسخ یک تکلیف باز را به خروجی قابل دسترس و روند مشخص تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تحول الإجابة مهمة مفتوحة إلى نتيجة قابلة للتحقيق وإجراء ملموس." },
+                { "language": "tr", "text": "Güçlü: Yanıt açık bir görevi ulaşılabilir bir çıktıya ve somut bir sürece çevirir." },
+                { "language": "ru", "text": "Сильно: ответ превращает открытую задачу в достижимый результат и конкретный процесс." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئەرکی کراوە دەگۆڕێت بۆ دەرەنجامی دەستپێگەیشتوو و پرۆسەیەکی دیاریکراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiv wezîfeyeke vekirî vediguherîne encameke gihîştbar û pêvajoyeke şênber." },
+                { "language": "pl", "text": "Mocne: odpowiedź przekłada otwarte zadanie na osiągalny wynik i konkretny przebieg." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă o sarcină deschisă într-un rezultat realizabil și un proces concret." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen një detyrë të hapur në një rezultat të arritshëm dhe një proces konkret." }
+              ],
+              "explanationKey": "clear-output"
+            },
+            {
+              "id": "weak-open-discussion",
+              "text": "Wir sollten erst einmal frei diskutieren und dann schauen, welche Punkte am Ende übrig bleiben.",
+              "translations": [
+                { "language": "en", "text": "We should first discuss freely and then see which points are left at the end." },
+                { "language": "fa", "text": "اول باید آزادانه بحث کنیم و بعد ببینیم در پایان چه نکاتی باقی می‌مانند." },
+                { "language": "ar", "text": "ينبغي أن نناقش بحرية أولاً، ثم نرى في النهاية ما النقاط التي تبقى." },
+                { "language": "tr", "text": "Önce serbestçe tartışmalı, sonra sonunda hangi noktaların kaldığına bakmalıyız." },
+                { "language": "ru", "text": "Сначала стоит свободно обсудить, а потом посмотреть, какие пункты останутся в конце." },
+                { "language": "ckb", "text": "سەرەتا دەبێت بە ئازادی گفتوگۆ بکەین و پاشان ببینین لە کۆتاییدا کام خاڵەکان دەمێننەوە." },
+                { "language": "kmr", "text": "Pêşî divê azad nîqaş bikin û paşê bibînin ka di dawiyê de kîjan xal dimînin." },
+                { "language": "pl", "text": "Powinniśmy najpierw swobodnie podyskutować, a potem zobaczyć, które punkty zostaną na końcu." },
+                { "language": "ro", "text": "Ar trebui mai întâi să discutăm liber și apoi să vedem ce puncte rămân la final." },
+                { "language": "sq", "text": "Së pari duhet të diskutojmë lirshëm dhe pastaj të shohim cilat pika mbeten në fund." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Die Antwort bewahrt zwar Kreativität, sichert aber weder Zeit noch Ergebnis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open: The answer preserves creativity, but secures neither time nor output." },
+                { "language": "fa", "text": "بیش از حد باز است: پاسخ خلاقیت را حفظ می‌کند، اما نه زمان را تضمین می‌کند و نه خروجی را." },
+                { "language": "ar", "text": "مفتوح جداً: يحافظ الجواب على الإبداع، لكنه لا يضمن الوقت ولا النتيجة." },
+                { "language": "tr", "text": "Çok açık: Yanıt yaratıcılığı korur, ama ne zamanı ne de çıktıyı güvenceye alır." },
+                { "language": "ru", "text": "Слишком открыто: ответ сохраняет креативность, но не обеспечивает ни время, ни результат." },
+                { "language": "ckb", "text": "زۆر کراوەیە: وەڵامەکە داهێنان دەپارێزێت، بەڵام نە کات و نە دەرەنجام دڵنیا دەکات." },
+                { "language": "kmr", "text": "Pir vekirî ye: Bersiv afirîneriyê diparêze, lê ne demê ne jî encamê misoger dike." },
+                { "language": "pl", "text": "Zbyt otwarte: odpowiedź zachowuje kreatywność, ale nie zabezpiecza ani czasu, ani wyniku." },
+                { "language": "ro", "text": "Prea deschis: răspunsul păstrează creativitatea, dar nu asigură nici timpul, nici rezultatul." },
+                { "language": "sq", "text": "Tepër e hapur: përgjigjja ruan kreativitetin, por nuk siguron as kohën, as rezultatin." }
+              ],
+              "explanationKey": "too-open"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Wir sammeln offen, aber nur kurz, und wählen danach nach zwei Kriterien: passt zur Fragestellung und ist in fünf Minuten präsentierbar.",
+              "translations": [
+                { "language": "en", "text": "We collect openly, but only briefly, and then choose by two criteria: fit with the question and presentable in five minutes." },
+                { "language": "fa", "text": "باز جمع‌آوری می‌کنیم، اما فقط کوتاه، و بعد با دو معیار انتخاب می‌کنیم: ارتباط با پرسش و قابل ارائه بودن در پنج دقیقه." },
+                { "language": "ar", "text": "نجمع الأفكار بشكل مفتوح، لكن لفترة قصيرة فقط، ثم نختار وفق معيارين: الملاءمة للسؤال وإمكانية العرض في خمس دقائق." },
+                { "language": "tr", "text": "Açık biçimde, ama yalnızca kısa süre toplarız; sonra iki ölçüte göre seçeriz: soruya uygunluk ve beş dakikada sunulabilirlik." },
+                { "language": "ru", "text": "Мы собираем идеи открыто, но недолго, а затем выбираем по двум критериям: соответствие вопросу и возможность представить за пять минут." },
+                { "language": "ckb", "text": "بە کراوەیی کۆ دەکەینەوە، بەڵام تەنها بە کورتی، و پاشان بە دوو پێوەر هەڵدەبژێرین: گونجان لەگەڵ پرسیارەکە و توانای پێشکەشکردن لە پێنج خولەکدا." },
+                { "language": "kmr", "text": "Em vekirî kom dikin, lê tenê bi kurtî, û paşê li gorî du pîvanan hildibijêrin: lihevhatina bi pirsê û pêşkêşbarî di pênc deqeyan de." },
+                { "language": "pl", "text": "Zbieramy otwarcie, ale krótko, a potem wybieramy według dwóch kryteriów: zgodność z pytaniem i możliwość przedstawienia w pięć minut." },
+                { "language": "ro", "text": "Colectăm deschis, dar doar pe scurt, apoi alegem după două criterii: potrivirea cu întrebarea și posibilitatea de a prezenta în cinci minute." },
+                { "language": "sq", "text": "Mbledhim hapur, por vetëm shkurt, dhe pastaj zgjedhim sipas dy kritereve: përshtatja me pyetjen dhe mundësia për t'u prezantuar në pesë minuta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Offenheit mit Entscheidungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer combines openness with decision criteria." },
+                { "language": "fa", "text": "قوی: پاسخ باز بودن را با معیارهای تصمیم‌گیری ترکیب می‌کند." },
+                { "language": "ar", "text": "قوي: يجمع الجواب بين الانفتاح ومعايير القرار." },
+                { "language": "tr", "text": "Güçlü: Yanıt açıklığı karar ölçütleriyle birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ сочетает открытость с критериями решения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کراوەیی لەگەڵ پێوەرەکانی بڕیار تێکەڵ دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv vekirîbûnê bi pîvanên biryarê re têkildar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy otwartość z kryteriami decyzji." },
+                { "language": "ro", "text": "Puternic: răspunsul combină deschiderea cu criterii de decizie." },
+                { "language": "sq", "text": "E fortë: përgjigjja e lidh hapjen me kriteret e vendimmarrjes." }
+              ],
+              "explanationKey": "open-with-criteria"
+            },
+            {
+              "id": "weak-too-rigid",
+              "text": "Wir sollten die Ideensammlung überspringen und sofort entscheiden, damit wir nicht zu viel Zeit verlieren.",
+              "translations": [
+                { "language": "en", "text": "We should skip the idea collection and decide immediately so we do not lose too much time." },
+                { "language": "fa", "text": "باید ایده‌پردازی را حذف کنیم و فوراً تصمیم بگیریم تا زمان زیادی از دست ندهیم." },
+                { "language": "ar", "text": "ينبغي أن نتجاوز جمع الأفكار ونقرر فوراً حتى لا نضيع وقتاً كثيراً." },
+                { "language": "tr", "text": "Fikir toplamayı atlayıp hemen karar vermeliyiz, böylece çok zaman kaybetmeyiz." },
+                { "language": "ru", "text": "Нужно пропустить сбор идей и сразу решить, чтобы не потерять слишком много времени." },
+                { "language": "ckb", "text": "دەبێت کۆکردنەوەی بیرۆکەکان بپەڕێنین و دەستبەجێ بڕیار بدەین، بۆ ئەوەی کاتی زۆر لەدەست نەدەین." },
+                { "language": "kmr", "text": "Divê em komkirina ramanan derbas bikin û yekser biryar bidin da ku demekî zêde winda nekin." },
+                { "language": "pl", "text": "Powinniśmy pominąć zbieranie pomysłów i od razu zdecydować, aby nie stracić zbyt dużo czasu." },
+                { "language": "ro", "text": "Ar trebui să sărim peste colectarea ideilor și să decidem imediat, ca să nu pierdem prea mult timp." },
+                { "language": "sq", "text": "Duhet ta kapërcejmë mbledhjen e ideve dhe të vendosim menjëherë që të mos humbasim shumë kohë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu starr: Die Gruppe bekommt zwar Tempo, aber keine gemeinsame Ideengrundlage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too rigid: The group gains speed, but no shared basis of ideas." },
+                { "language": "fa", "text": "بیش از حد خشک است: گروه سرعت می‌گیرد، اما پایه مشترک ایده‌ای ندارد." },
+                { "language": "ar", "text": "صارم جداً: تكسب المجموعة السرعة، لكنها لا تحصل على قاعدة أفكار مشتركة." },
+                { "language": "tr", "text": "Çok katı: Grup hız kazanır, ama ortak bir fikir temeli oluşmaz." },
+                { "language": "ru", "text": "Слишком жёстко: группа получает скорость, но не общую базу идей." },
+                { "language": "ckb", "text": "زۆر وشکە: گرووپ خێرایی وەردەگرێت، بەڵام بنەمای هاوبەشی بیرۆکە نییە." },
+                { "language": "kmr", "text": "Pir hişk e: Kom lez distîne, lê bingeheke hevpar a ramanan tune ye." },
+                { "language": "pl", "text": "Zbyt sztywne: grupa zyskuje tempo, ale nie ma wspólnej bazy pomysłów." },
+                { "language": "ro", "text": "Prea rigid: grupul câștigă viteză, dar nu are o bază comună de idei." },
+                { "language": "sq", "text": "Tepër e ngurtë: grupi fiton shpejtësi, por nuk ka një bazë të përbashkët idesh." }
+              ],
+              "explanationKey": "too-rigid"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich ändere die Gesprächsform und bitte reihum jede Person um einen noch fehlenden Punkt.",
+              "translations": [
+                { "language": "en", "text": "I change the discussion format and ask each person in turn for one point that is still missing." },
+                { "language": "fa", "text": "شکل گفت‌وگو را تغییر می‌دهم و از هر نفر به نوبت یک نکته هنوز کم‌بودنی می‌خواهم." },
+                { "language": "ar", "text": "أغير شكل النقاش وأطلب من كل شخص بالتناوب نقطة واحدة ما زالت ناقصة." },
+                { "language": "tr", "text": "Tartışma biçimini değiştirir ve sırayla herkesten hâlâ eksik olan bir nokta isterim." },
+                { "language": "ru", "text": "Я меняю формат разговора и прошу каждого по очереди назвать один недостающий пункт." },
+                { "language": "ckb", "text": "شێوەی گفتوگۆ دەگۆڕم و بە نۆرە لە هەر کەسێک خاڵێکی کەمبوو دەخوازم." },
+                { "language": "kmr", "text": "Ez forma nîqaşê diguherînim û bi dorê ji her kesî xalekî kêmasî dixwazim." },
+                { "language": "pl", "text": "Zmieniam formę rozmowy i proszę kolejno każdą osobę o jeden brakujący punkt." },
+                { "language": "ro", "text": "Schimb forma discuției și cer pe rând fiecărei persoane un punct care încă lipsește." },
+                { "language": "sq", "text": "E ndryshoj formën e diskutimit dhe i kërkoj secilit me radhë një pikë që ende mungon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Intervention ist inklusiv, ohne eine Person direkt zu kritisieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The intervention is inclusive without directly criticizing one person." },
+                { "language": "fa", "text": "قوی: مداخله فراگیر است، بدون اینکه یک نفر مستقیم نقد شود." },
+                { "language": "ar", "text": "قوي: التدخل شامل من دون انتقاد شخص بعينه مباشرة." },
+                { "language": "tr", "text": "Güçlü: Müdahale kapsayıcıdır ve bir kişiyi doğrudan eleştirmez." },
+                { "language": "ru", "text": "Сильно: вмешательство инклюзивно и не критикует одного человека напрямую." },
+                { "language": "ckb", "text": "بەهێزە: دەستتێوەردانەکە فراوانە، بەبێ ئەوەی کەسێک ڕاستەوخۆ ڕەخنە بکرێت." },
+                { "language": "kmr", "text": "Xurt e: Destwerdan inklûsîv e, bê ku kesek rasterast were rexnekirin." },
+                { "language": "pl", "text": "Mocne: interwencja jest włączająca, bez bezpośredniej krytyki jednej osoby." },
+                { "language": "ro", "text": "Puternic: intervenția este incluzivă, fără a critica direct o persoană." },
+                { "language": "sq", "text": "E fortë: ndërhyrja është përfshirëse, pa kritikuar drejtpërdrejt një person." }
+              ],
+              "explanationKey": "inclusive-format"
+            },
+            {
+              "id": "weak-direct-blame",
+              "text": "Ich würde sagen, dass eine Person gerade zu viel redet und die anderen mehr Raum brauchen.",
+              "translations": [
+                { "language": "en", "text": "I would say that one person is currently talking too much and that the others need more space." },
+                { "language": "fa", "text": "می‌گویم که یک نفر الان بیش از حد صحبت می‌کند و دیگران به فضای بیشتری نیاز دارند." },
+                { "language": "ar", "text": "سأقول إن شخصاً ما يتحدث الآن كثيراً جداً وإن الآخرين يحتاجون إلى مساحة أكبر." },
+                { "language": "tr", "text": "Bir kişinin şu anda fazla konuştuğunu ve diğerlerinin daha fazla alana ihtiyacı olduğunu söylerim." },
+                { "language": "ru", "text": "Я бы сказал, что один человек сейчас слишком много говорит и другим нужно больше пространства." },
+                { "language": "ckb", "text": "دەڵێم کە کەسێک ئێستا زۆر قسە دەکات و ئەوانی تر پێویستیان بە شوێنی زیاتر هەیە." },
+                { "language": "kmr", "text": "Ez dibêjim ku kesek niha pir diaxive û yên din pêwîstiya wan bi cihê zêdetir heye." },
+                { "language": "pl", "text": "Powiedziałbym, że jedna osoba mówi teraz za dużo i inni potrzebują więcej przestrzeni." },
+                { "language": "ro", "text": "Aș spune că o persoană vorbește acum prea mult și că ceilalți au nevoie de mai mult spațiu." },
+                { "language": "sq", "text": "Do të thosha se një person po flet tani shumë dhe të tjerëve u duhet më shumë hapësirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu direkt: Inhaltlich verständlich, aber sozial riskanter als eine Änderung des Formats.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too direct: Understandable in content, but socially riskier than changing the format." },
+                { "language": "fa", "text": "بیش از حد مستقیم است: از نظر محتوا قابل فهم است، اما از تغییر قالب گفت‌وگو از نظر اجتماعی پرریسک‌تر است." },
+                { "language": "ar", "text": "مباشر جداً: مفهوم من حيث المحتوى، لكنه اجتماعياً أكثر مخاطرة من تغيير الشكل." },
+                { "language": "tr", "text": "Çok doğrudan: İçerik olarak anlaşılır, ama formatı değiştirmekten sosyal olarak daha riskli." },
+                { "language": "ru", "text": "Слишком прямо: по содержанию понятно, но социально рискованнее, чем изменить формат." },
+                { "language": "ckb", "text": "زۆر ڕاستەوخۆیە: لە ناوەڕۆکدا تێگەیشتووە، بەڵام لە ڕووی کۆمەڵایەتییەوە لە گۆڕینی فۆرمات مەترسیدارترە." },
+                { "language": "kmr", "text": "Pir rasterast e: Ji aliyê naverokê ve têgihiştbar e, lê ji guherandina formatê xetertir e." },
+                { "language": "pl", "text": "Zbyt bezpośrednie: treściowo zrozumiałe, ale społecznie bardziej ryzykowne niż zmiana formatu." },
+                { "language": "ro", "text": "Prea direct: de înțeles ca mesaj, dar social mai riscant decât schimbarea formatului." },
+                { "language": "sq", "text": "Tepër e drejtpërdrejtë: e kuptueshme në përmbajtje, por socialisht më e rrezikshme se ndryshimi i formatit." }
+              ],
+              "explanationKey": "social-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Wir trennen Inhalt und Darstellung: Folienstruktur, These und Argumentprüfung werden auf verschiedene Personen verteilt.",
+              "translations": [
+                { "language": "en", "text": "We separate content and presentation: slide structure, thesis, and argument review are distributed among different people." },
+                { "language": "fa", "text": "محتوا و ارائه را جدا می‌کنیم: ساختار اسلاید، تز و بررسی استدلال میان افراد مختلف تقسیم می‌شود." },
+                { "language": "ar", "text": "نفصل بين المحتوى والعرض: تُوزع بنية الشرائح والأطروحة ومراجعة الحجج على أشخاص مختلفين." },
+                { "language": "tr", "text": "İçerik ile sunumu ayırıyoruz: slayt yapısı, tez ve argüman kontrolü farklı kişilere dağıtılıyor." },
+                { "language": "ru", "text": "Мы разделяем содержание и представление: структура слайдов, тезис и проверка аргументов распределяются между разными людьми." },
+                { "language": "ckb", "text": "ناوەڕۆک و پێشکەشکردن جیا دەکەینەوە: پێکهاتەی سلاید، تێز و پشکنینی بەڵگە لەسەر کەسانی جیاواز دابەش دەکرێت." },
+                { "language": "kmr", "text": "Em naverok û pêşkêşiyê veqetînin: avahiya slaydan, tez û kontrola argumanan li ser kesên cuda têne dabeşkirin." },
+                { "language": "pl", "text": "Oddzielamy treść od prezentacji: strukturę slajdów, tezę i sprawdzenie argumentów rozdziela się między różne osoby." },
+                { "language": "ro", "text": "Separăm conținutul de prezentare: structura diapozitivelor, teza și verificarea argumentelor sunt distribuite unor persoane diferite." },
+                { "language": "sq", "text": "Ndajmë përmbajtjen nga prezantimi: struktura e slajdeve, teza dhe kontrolli i argumenteve shpërndahen te persona të ndryshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt die Belastungsgrenze ernst und verteilt Arbeit nachvollziehbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer takes the workload boundary seriously and distributes work transparently." },
+                { "language": "fa", "text": "قوی: پاسخ مرز فشار کاری را جدی می‌گیرد و کار را شفاف تقسیم می‌کند." },
+                { "language": "ar", "text": "قوي: يأخذ الجواب حدّ العبء بجدية ويوزع العمل بوضوح." },
+                { "language": "tr", "text": "Güçlü: Yanıt iş yükü sınırını ciddiye alır ve işi anlaşılır biçimde dağıtır." },
+                { "language": "ru", "text": "Сильно: ответ серьёзно учитывает границу нагрузки и прозрачно распределяет работу." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنووری بارکاری بە جدی وەردەگرێت و کار بە ڕوونی دابەش دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sînorê barê kar bi giranî digire û kar bi zelalî dabeş dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź poważnie traktuje granicę obciążenia i przejrzyście rozdziela pracę." },
+                { "language": "ro", "text": "Puternic: răspunsul ia în serios limita de încărcare și distribuie munca transparent." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr seriozisht kufirin e ngarkesës dhe e ndan punën qartë." }
+              ],
+              "explanationKey": "fair-role-split"
+            },
+            {
+              "id": "weak-vague-help",
+              "text": "Wir achten darauf, dass niemand zu viel macht, und helfen uns gegenseitig, wenn etwas zu viel wird.",
+              "translations": [
+                { "language": "en", "text": "We make sure no one does too much and help each other if something becomes too much." },
+                { "language": "fa", "text": "حواسمان هست که کسی بیش از حد کار نکند و اگر چیزی زیاد شد به هم کمک می‌کنیم." },
+                { "language": "ar", "text": "ننتبه إلى ألا يعمل أحد أكثر من اللازم، ونساعد بعضنا إذا أصبح شيء ما كثيراً." },
+                { "language": "tr", "text": "Kimsenin fazla iş yapmamasına dikkat ederiz ve bir şey fazla olursa birbirimize yardım ederiz." },
+                { "language": "ru", "text": "Мы следим, чтобы никто не делал слишком много, и помогаем друг другу, если чего-то становится слишком много." },
+                { "language": "ckb", "text": "ئاگادار دەبین کە کەسێک زۆر کار نەکات و ئەگەر شتێک زۆر بوو یارمەتی یەک دەدەین." },
+                { "language": "kmr", "text": "Em bal dikin ku kesek pir kar neke û heke tiştek pir bibe em alîkariya hev dikin." },
+                { "language": "pl", "text": "Pilnujemy, żeby nikt nie robił za dużo, i pomagamy sobie nawzajem, jeśli czegoś zrobi się za dużo." },
+                { "language": "ro", "text": "Avem grijă ca nimeni să nu facă prea mult și ne ajutăm reciproc dacă ceva devine prea mult." },
+                { "language": "sq", "text": "Kujdesemi që askush të mos bëjë shumë dhe ndihmojmë njëri-tjetrin nëse diçka bëhet e tepërt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Haltung ist gut, aber es fehlen konkrete Rollen und Verantwortlichkeiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: The attitude is good, but concrete roles and responsibilities are missing." },
+                { "language": "fa", "text": "بیش از حد مبهم است: نگرش خوب است، اما نقش‌ها و مسئولیت‌های مشخص ندارد." },
+                { "language": "ar", "text": "غامض جداً: الموقف جيد، لكن الأدوار والمسؤوليات الملموسة ناقصة." },
+                { "language": "tr", "text": "Çok belirsiz: Tutum iyi, ama somut roller ve sorumluluklar eksik." },
+                { "language": "ru", "text": "Слишком расплывчато: установка хорошая, но нет конкретных ролей и обязанностей." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: هەڵوێستەکە باشە، بەڵام ڕۆڵ و بەرپرسیارێتیی دیاریکراو نییە." },
+                { "language": "kmr", "text": "Pir nezelal e: Helwest baş e, lê rol û berpirsiyariyên şênber tune ne." },
+                { "language": "pl", "text": "Zbyt ogólne: postawa jest dobra, ale brakuje konkretnych ról i odpowiedzialności." },
+                { "language": "ro", "text": "Prea vag: atitudinea este bună, dar lipsesc rolurile și responsabilitățile concrete." },
+                { "language": "sq", "text": "Tepër e paqartë: qëndrimi është i mirë, por mungojnë rolet dhe përgjegjësitë konkrete." }
+              ],
+              "explanationKey": "vague-responsibility"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Fünf Minuten vor Schluss machen wir einen Integrationsstopp: Nur noch Unverzichtbares bleibt im Konzept, der Rest kommt auf eine Reserve-Liste.",
+              "translations": [
+                { "language": "en", "text": "Five minutes before the end, we make an integration stop: only what is indispensable remains in the concept; the rest goes on a reserve list." },
+                { "language": "fa", "text": "پنج دقیقه مانده به پایان، توقف برای یکپارچه‌سازی می‌گذاریم: فقط موارد ضروری در طرح می‌ماند و بقیه به فهرست ذخیره می‌رود." },
+                { "language": "ar", "text": "قبل النهاية بخمس دقائق نوقف العمل للدمج: يبقى في التصور فقط ما لا غنى عنه، والباقي يذهب إلى قائمة احتياطية." },
+                { "language": "tr", "text": "Bitime beş dakika kala bir bütünleştirme duruşu yaparız: yalnızca vazgeçilmez olan konsepte kalır, geri kalanı yedek listeye gider." },
+                { "language": "ru", "text": "За пять минут до конца делаем остановку на интеграцию: в концепции остаётся только необходимое, остальное идёт в резервный список." },
+                { "language": "ckb", "text": "پێنج خولەک پێش کۆتایی، وەستانی یەکخستن دەکەین: تەنها ئەوەی پێویستییەکی بنەڕەتییە لە پلانەکەدا دەمێنێتەوە، ئەوانی تر دەچنە لیستی پاشەکەوت." },
+                { "language": "kmr", "text": "Pênc deqe berî dawiyê em rawestgeha yekxistinê dikin: Tenê tiştên neçar di konseptê de dimînin, yên din di lîsteya rezervê de diçin." },
+                { "language": "pl", "text": "Pięć minut przed końcem robimy stop integracyjny: w koncepcie zostaje tylko to, co niezbędne, reszta trafia na listę rezerwową." },
+                { "language": "ro", "text": "Cu cinci minute înainte de final facem o oprire pentru integrare: în concept rămâne doar ce este indispensabil, restul intră pe o listă de rezervă." },
+                { "language": "sq", "text": "Pesë minuta para fundit bëjmë një ndalesë integrimi: vetëm e domosdoshmja mbetet në koncept, pjesa tjetër shkon në listën rezervë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt das gemeinsame Ergebnis vor einer bloßen Materialsammlung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer protects the shared output from becoming a mere collection of material." },
+                { "language": "fa", "text": "قوی: پاسخ خروجی مشترک را از تبدیل شدن به صرفاً مجموعه‌ای از مواد حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: يحمي الجواب النتيجة المشتركة من أن تتحول إلى مجرد مجموعة مواد." },
+                { "language": "tr", "text": "Güçlü: Yanıt ortak çıktıyı salt malzeme toplamına dönüşmekten korur." },
+                { "language": "ru", "text": "Сильно: ответ защищает общий результат от превращения в простую подборку материала." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دەرەنجامی هاوبەش دەپارێزێت لەوەی ببێتە تەنها کۆمەڵە ماددە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv encama hevpar diparêze ku nebe tenê komkirina materyalê." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni wspólny wynik przed zamianą w zwykły zbiór materiału." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează rezultatul comun de transformarea într-o simplă colecție de materiale." },
+                { "language": "sq", "text": "E fortë: përgjigjja e mbron rezultatin e përbashkët që të mos bëhet thjesht një grumbull materialesh." }
+              ],
+              "explanationKey": "integration-stop"
+            },
+            {
+              "id": "weak-more-time",
+              "text": "Wir sollten einfach noch einmal zehn Minuten länger arbeiten, damit alle Teile fertig werden.",
+              "translations": [
+                { "language": "en", "text": "We should simply work ten minutes longer so that all parts get finished." },
+                { "language": "fa", "text": "بهتر است فقط ده دقیقه بیشتر کار کنیم تا همه بخش‌ها تمام شوند." },
+                { "language": "ar", "text": "ينبغي ببساطة أن نعمل عشر دقائق إضافية كي تنتهي كل الأجزاء." },
+                { "language": "tr", "text": "Tüm parçalar bitsin diye sadece on dakika daha çalışmalıyız." },
+                { "language": "ru", "text": "Нужно просто поработать ещё десять минут, чтобы все части были закончены." },
+                { "language": "ckb", "text": "باشترە تەنها دە خولەک زیاتر کار بکەین، بۆ ئەوەی هەموو بەشەکان تەواو بن." },
+                { "language": "kmr", "text": "Divê tenê deh deqe zêdetir bixebitin da ku hemû beş qediya bin." },
+                { "language": "pl", "text": "Powinniśmy po prostu popracować jeszcze dziesięć minut, żeby wszystkie części były gotowe." },
+                { "language": "ro", "text": "Ar trebui pur și simplu să mai lucrăm zece minute, ca toate părțile să fie gata." },
+                { "language": "sq", "text": "Duhet thjesht të punojmë edhe dhjetë minuta që të përfundojnë të gjitha pjesët." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht ausreichend: Mehr Zeit löst nicht automatisch das Integrationsproblem.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not sufficient: More time does not automatically solve the integration problem." },
+                { "language": "fa", "text": "کافی نیست: زمان بیشتر خودبه‌خود مشکل یکپارچه‌سازی را حل نمی‌کند." },
+                { "language": "ar", "text": "غير كاف: الوقت الإضافي لا يحل تلقائياً مشكلة الدمج." },
+                { "language": "tr", "text": "Yeterli değil: Daha fazla zaman bütünleştirme sorununu otomatik olarak çözmez." },
+                { "language": "ru", "text": "Недостаточно: больше времени не решает автоматически проблему интеграции." },
+                { "language": "ckb", "text": "کافی نییە: کاتی زیاتر خۆکارانە کێشەی یەکخستن چارەسەر ناکات." },
+                { "language": "kmr", "text": "Têr nake: Dema zêdetir pirsgirêka yekxistinê xweber çareser nake." },
+                { "language": "pl", "text": "Niewystarczające: więcej czasu nie rozwiązuje automatycznie problemu integracji." },
+                { "language": "ro", "text": "Insuficient: mai mult timp nu rezolvă automat problema integrării." },
+                { "language": "sq", "text": "Jo e mjaftueshme: më shumë kohë nuk e zgjidh automatikisht problemin e integrimit." }
+              ],
+              "explanationKey": "time-not-integration"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Wir halten These, drei Argumente, Rollen für die Ausarbeitung und eine offene Prüffrage fest; jede Person bestätigt kurz ihren nächsten Schritt.",
+              "translations": [
+                { "language": "en", "text": "We record the thesis, three arguments, roles for elaboration, and one open review question; each person briefly confirms their next step." },
+                { "language": "fa", "text": "تز، سه استدلال، نقش‌ها برای تدوین بعدی و یک پرسش باز برای بررسی را ثبت می‌کنیم؛ هر نفر گام بعدی خود را کوتاه تأیید می‌کند." },
+                { "language": "ar", "text": "نثبت الأطروحة وثلاث حجج والأدوار للتطوير وسؤال مراجعة مفتوح؛ ويؤكد كل شخص خطوته التالية باختصار." },
+                { "language": "tr", "text": "Tezi, üç argümanı, ayrıntılandırma rollerini ve açık bir kontrol sorusunu kaydederiz; herkes bir sonraki adımını kısaca onaylar." },
+                { "language": "ru", "text": "Мы фиксируем тезис, три аргумента, роли для доработки и один открытый проверочный вопрос; каждый коротко подтверждает следующий шаг." },
+                { "language": "ckb", "text": "تێز، سێ بەڵگە، ڕۆڵەکان بۆ پەرەپێدان و پرسیارێکی کراوە بۆ پشکنین تۆمار دەکەین؛ هەر کەسێک بە کورتی هەنگاوی داهاتووی خۆی پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Em tez, sê arguman, rol ji bo berfirehkirinê û pirseke vekirî ya kontrolê qeyd dikin; her kes gavê xwe yê din bi kurtî piştrast dike." },
+                { "language": "pl", "text": "Zapisujemy tezę, trzy argumenty, role do opracowania i jedno otwarte pytanie kontrolne; każda osoba krótko potwierdza następny krok." },
+                { "language": "ro", "text": "Consemnăm teza, trei argumente, rolurile pentru elaborare și o întrebare deschisă de verificare; fiecare persoană își confirmă pe scurt pasul următor." },
+                { "language": "sq", "text": "Shënojmë tezën, tre argumente, rolet për përpunim dhe një pyetje të hapur kontrolli; secili konfirmon shkurt hapin e vet të radhës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht aus der Diskussion ein weiterverwendbares Arbeitsergebnis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer turns the discussion into a reusable work result." },
+                { "language": "fa", "text": "قوی: پاسخ بحث را به یک نتیجه کاری قابل استفاده بعدی تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: يحول الجواب النقاش إلى نتيجة عمل قابلة للاستخدام لاحقاً." },
+                { "language": "tr", "text": "Güçlü: Yanıt tartışmayı daha sonra kullanılabilir bir çalışma sonucuna dönüştürür." },
+                { "language": "ru", "text": "Сильно: ответ превращает обсуждение в рабочий результат, который можно использовать дальше." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گفتوگۆ دەگۆڕێت بۆ دەرەنجامی کارێک کە دواتر بەکاربهێنرێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nîqaşê vediguherîne encameke karê ku paşê were bikaranîn." },
+                { "language": "pl", "text": "Mocne: odpowiedź zamienia dyskusję w wynik pracy nadający się do dalszego użycia." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă discuția într-un rezultat de lucru reutilizabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen diskutimin në një rezultat pune të përdorshëm më tej." }
+              ],
+              "explanationKey": "usable-output"
+            },
+            {
+              "id": "weak-summary-only",
+              "text": "Wir fassen kurz zusammen, was wir besprochen haben, und schicken die Notizen später an alle.",
+              "translations": [
+                { "language": "en", "text": "We briefly summarize what we discussed and send the notes to everyone later." },
+                { "language": "fa", "text": "کوتاه جمع‌بندی می‌کنیم که درباره چه چیزهایی صحبت کردیم و یادداشت‌ها را بعداً برای همه می‌فرستیم." },
+                { "language": "ar", "text": "نلخص باختصار ما ناقشناه، ونرسل الملاحظات لاحقاً إلى الجميع." },
+                { "language": "tr", "text": "Neyi konuştuğumuzu kısaca özetler ve notları daha sonra herkese göndeririz." },
+                { "language": "ru", "text": "Мы коротко подытожим, что обсудили, и позже отправим заметки всем." },
+                { "language": "ckb", "text": "بە کورتی کورت دەکەینەوە کە دەربارەی چی قسەمان کردووە و دواتر تێبینییەکان بۆ هەمووان دەنێرین." },
+                { "language": "kmr", "text": "Em bi kurtî kurt dikin ka em li ser çi axivîn û paşê notan ji hemûyan re dişînin." },
+                { "language": "pl", "text": "Krótko podsumowujemy, o czym rozmawialiśmy, i później wysyłamy notatki wszystkim." },
+                { "language": "ro", "text": "Rezumatăm pe scurt ce am discutat și trimitem notițele tuturor mai târziu." },
+                { "language": "sq", "text": "Përmbledhim shkurt çfarë kemi diskutuar dhe më vonë ua dërgojmë shënimet të gjithëve." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unverbindlich: Eine Zusammenfassung ohne Rollen und nächste Schritte reicht für C1-Gruppenarbeit nicht aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too non-binding: A summary without roles and next steps is not enough for advanced group work." },
+                { "language": "fa", "text": "بیش از حد غیرالزام‌آور است: جمع‌بندی بدون نقش‌ها و گام‌های بعدی برای کار گروهی پیشرفته کافی نیست." },
+                { "language": "ar", "text": "غير ملزم بما يكفي: ملخص بلا أدوار وخطوات لاحقة لا يكفي لعمل جماعي متقدم." },
+                { "language": "tr", "text": "Fazla bağlayıcı olmayan: Roller ve sonraki adımlar olmadan bir özet, ileri düzey grup çalışması için yeterli değildir." },
+                { "language": "ru", "text": "Слишком необязательно: резюме без ролей и следующих шагов недостаточно для продвинутой групповой работы." },
+                { "language": "ckb", "text": "زۆر بێ پابەندییە: کورتکردنەوە بەبێ ڕۆڵ و هەنگاوی داهاتوو بۆ کاری گرووپی پێشکەوتوو کافی نییە." },
+                { "language": "kmr", "text": "Pir bêgirêdayî ye: Kurte bê rol û gavên din ji bo xebata komî ya pêşketî têr nake." },
+                { "language": "pl", "text": "Zbyt niewiążące: podsumowanie bez ról i następnych kroków nie wystarcza w zaawansowanej pracy grupowej." },
+                { "language": "ro", "text": "Prea neangajant: un rezumat fără roluri și pași următori nu este suficient pentru o activitate de grup avansată." },
+                { "language": "sq", "text": "Tepër jo detyruese: një përmbledhje pa role dhe hapa të ardhshëm nuk mjafton për punë grupore të avancuar." }
+              ],
+              "explanationKey": "summary-not-action"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "scope-and-time",
+          "text": "Eine offene Gruppenaufgabe braucht zuerst ein erreichbares Mindestprodukt, nicht sofort eine perfekte Lösung.",
+          "translations": [
+            { "language": "en", "text": "An open group task first needs an achievable minimum product, not a perfect solution right away." },
+            { "language": "fa", "text": "یک کار گروهی باز ابتدا به یک محصول حداقلی قابل دسترس نیاز دارد، نه فوراً به راه‌حل کامل." },
+            { "language": "ar", "text": "تحتاج المهمة الجماعية المفتوحة أولاً إلى منتج أدنى قابل للتحقيق، لا إلى حل كامل فوراً." },
+            { "language": "tr", "text": "Açık bir grup görevinin önce ulaşılabilir bir asgari ürüne ihtiyacı vardır, hemen mükemmel bir çözüme değil." },
+            { "language": "ru", "text": "Открытой групповой задаче сначала нужен достижимый минимальный продукт, а не сразу идеальное решение." },
+            { "language": "ckb", "text": "ئەرکی گرووپی کراوە سەرەتا پێویستی بە بەرهەمی کەمینەی دەستپێگەیشتوو هەیە، نە چارەسەری تەواو بە دەستپێک." },
+            { "language": "kmr", "text": "Wezîfeyeke komî ya vekirî pêşî pêwîstiya wê bi berhemeke kêmîn a gihîştbar heye, ne çareseriyeke bêkêmasî yekser." },
+            { "language": "pl", "text": "Otwarte zadanie grupowe potrzebuje najpierw osiągalnego produktu minimum, a nie od razu idealnego rozwiązania." },
+            { "language": "ro", "text": "O sarcină de grup deschisă are nevoie mai întâi de un produs minim realizabil, nu imediat de o soluție perfectă." },
+            { "language": "sq", "text": "Një detyrë grupore e hapur ka nevojë së pari për një produkt minimal të arritshëm, jo menjëherë për një zgjidhje të përsosur." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criteria-note",
+          "text": "Kriterien helfen, kreative Beiträge fair auszuwählen, ohne die Diskussion zu früh zu schließen.",
+          "translations": [
+            { "language": "en", "text": "Criteria help select creative contributions fairly without closing the discussion too early." },
+            { "language": "fa", "text": "معیارها کمک می‌کنند مشارکت‌های خلاقانه منصفانه انتخاب شوند، بدون اینکه بحث خیلی زود بسته شود." },
+            { "language": "ar", "text": "تساعد المعايير على اختيار المساهمات الإبداعية بعدل من دون إغلاق النقاش مبكراً." },
+            { "language": "tr", "text": "Ölçütler, tartışmayı çok erken kapatmadan yaratıcı katkıları adil biçimde seçmeye yardım eder." },
+            { "language": "ru", "text": "Критерии помогают справедливо отбирать творческие вклады, не закрывая обсуждение слишком рано." },
+            { "language": "ckb", "text": "پێوەرەکان یارمەتی دەدەن بەشداریی داهێنەرانە بە دادپەروەری هەڵبژێردرێن، بەبێ ئەوەی گفتوگۆ زۆر زوو دابخرێت." },
+            { "language": "kmr", "text": "Pîvan alîkar in ku beşdariyên afirîner bi dadwerî bên hilbijartin, bê ku nîqaş pir zû were girtin." },
+            { "language": "pl", "text": "Kryteria pomagają sprawiedliwie wybierać twórcze wkłady, nie zamykając dyskusji zbyt wcześnie." },
+            { "language": "ro", "text": "Criteriile ajută la selectarea echitabilă a contribuțiilor creative fără a închide discuția prea devreme." },
+            { "language": "sq", "text": "Kriteret ndihmojnë të zgjidhen drejt kontributet krijuese pa e mbyllur diskutimin shumë herët." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "participation-note",
+          "text": "Bei ungleicher Beteiligung ist eine neue Gesprächsform oft taktvoller als eine direkte Kritik an Einzelnen.",
+          "translations": [
+            { "language": "en", "text": "When participation is unequal, a new discussion format is often more tactful than direct criticism of individuals." },
+            { "language": "fa", "text": "در مشارکت نابرابر، تغییر قالب گفت‌وگو اغلب از نقد مستقیم افراد سنجیده‌تر است." },
+            { "language": "ar", "text": "عند عدم تساوي المشاركة، يكون تغيير شكل النقاش غالباً ألطف من نقد الأفراد مباشرة." },
+            { "language": "tr", "text": "Katılım eşit olmadığında yeni bir tartışma biçimi, bireyleri doğrudan eleştirmekten çoğu zaman daha taktiktir." },
+            { "language": "ru", "text": "При неравном участии новый формат разговора часто тактичнее прямой критики отдельных людей." },
+            { "language": "ckb", "text": "لە بەشداریی نایەکساندا، شێوەی نوێی گفتوگۆ زۆرجار لە ڕەخنەی ڕاستەوخۆی تاکەکەسان تاکتیکترە." },
+            { "language": "kmr", "text": "Di beşdariya nehevseng de, forma nû ya nîqaşê gelek caran ji rexneya rasterast a kesan taktîktir e." },
+            { "language": "pl", "text": "Przy nierównym udziale nowa forma rozmowy jest często bardziej taktowna niż bezpośrednia krytyka osób." },
+            { "language": "ro", "text": "În cazul participării inegale, o nouă formă de discuție este adesea mai tactică decât critica directă a persoanelor." },
+            { "language": "sq", "text": "Kur pjesëmarrja është e pabarabartë, një formë e re diskutimi është shpesh më taktike se kritika e drejtpërdrejtë ndaj individëve." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "integration-note",
+          "text": "C1-Moderation bedeutet nicht nur, Beiträge zu sammeln, sondern rechtzeitig zu entscheiden, was in das gemeinsame Ergebnis gehört.",
+          "translations": [
+            { "language": "en", "text": "Advanced moderation means not only collecting contributions, but deciding in time what belongs in the shared result." },
+            { "language": "fa", "text": "مدیریت بحث در سطح پیشرفته فقط جمع‌آوری مشارکت‌ها نیست، بلکه تصمیم به‌موقع درباره چیزهایی است که باید وارد نتیجه مشترک شوند." },
+            { "language": "ar", "text": "الإدارة المتقدمة لا تعني جمع المساهمات فقط، بل اتخاذ قرار في الوقت المناسب بشأن ما يدخل في النتيجة المشتركة." },
+            { "language": "tr", "text": "İleri düzey moderasyon yalnızca katkıları toplamak değil, ortak sonuca neyin gireceğine zamanında karar vermektir." },
+            { "language": "ru", "text": "Продвинутая модерация означает не только сбор вкладов, но и своевременное решение, что входит в общий результат." },
+            { "language": "ckb", "text": "بەڕێوەبردنی گفتوگۆ لە ئاستی پێشکەوتوودا تەنها کۆکردنەوەی بەشدارییەکان نییە، بەڵکو بڕیاری بەکاتی ئەوەیە کە چی دەچێتە ناو دەرەنجامی هاوبەش." },
+            { "language": "kmr", "text": "Moderasyona asta pêşketî ne tenê komkirina beşdariyan e, lê biryara di demê de ye ka çi di encama hevpar de cih digire." },
+            { "language": "pl", "text": "Zaawansowana moderacja oznacza nie tylko zbieranie wkładów, lecz także terminowe decydowanie, co należy do wspólnego wyniku." },
+            { "language": "ro", "text": "Moderarea avansată nu înseamnă doar colectarea contribuțiilor, ci decizia la timp a ceea ce aparține rezultatului comun." },
+            { "language": "sq", "text": "Moderimi i avancuar nuk do të thotë vetëm mbledhje kontributesh, por vendosje në kohë se çfarë hyn në rezultatin e përbashkët." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "follow-up-note",
+          "text": "Ein brauchbares Gruppenergebnis enthält neben Inhalt auch Zuständigkeiten und nächste Schritte.",
+          "translations": [
+            { "language": "en", "text": "A usable group result contains not only content, but also responsibilities and next steps." },
+            { "language": "fa", "text": "نتیجه گروهی قابل استفاده فقط محتوا ندارد، بلکه مسئولیت‌ها و گام‌های بعدی را هم مشخص می‌کند." },
+            { "language": "ar", "text": "النتيجة الجماعية القابلة للاستخدام لا تحتوي على المحتوى فقط، بل أيضاً على المسؤوليات والخطوات التالية." },
+            { "language": "tr", "text": "Kullanılabilir bir grup sonucu yalnızca içerik değil, sorumluluklar ve sonraki adımları da içerir." },
+            { "language": "ru", "text": "Пригодный групповой результат содержит не только содержание, но также обязанности и следующие шаги." },
+            { "language": "ckb", "text": "دەرەنجامی گرووپی بەکارهێنراو تەنها ناوەڕۆک نییە، بەڵکو بەرپرسیارێتی و هەنگاوە داهاتووەکانیش لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Encama komî ya bikaranînbar ne tenê naverok dihewîne, lê berpirsiyarî û gavên din jî." },
+            { "language": "pl", "text": "Użyteczny wynik grupowy zawiera nie tylko treść, lecz także odpowiedzialności i następne kroki." },
+            { "language": "ro", "text": "Un rezultat de grup utilizabil conține nu doar conținut, ci și responsabilități și pași următori." },
+            { "language": "sq", "text": "Një rezultat grupor i përdorshëm përmban jo vetëm përmbajtje, por edhe përgjegjësi dhe hapa të ardhshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "university-group-work-moderation",
+          "placement": "header",
+          "purpose": "Show a neutral university group-work setting where adult students organize roles and ideas without readable names or private data.",
+          "altText": "Adult students at a university table organize a group task with abstract notes, role cards, and no readable private data.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Adult students at a university table organize a group task with abstract notes, role cards, and no readable private data." },
+            { "language": "fa", "text": "دانشجویان بزرگسال دور یک میز دانشگاهی کار گروهی را با یادداشت‌های انتزاعی، کارت‌های نقش و بدون داده شخصی خوانا سازمان‌دهی می‌کنند." },
+            { "language": "ar", "text": "طلاب بالغون حول طاولة جامعية ينظمون عملاً جماعياً بملاحظات تجريدية وبطاقات أدوار ومن دون بيانات شخصية مقروءة." },
+            { "language": "tr", "text": "Yetişkin öğrenciler bir üniversite masasında soyut notlar, rol kartları ve okunabilir özel veri olmadan bir grup görevini düzenliyor." },
+            { "language": "ru", "text": "Взрослые студенты за университетским столом организуют групповую задачу с абстрактными заметками, карточками ролей и без читаемых личных данных." },
+            { "language": "ckb", "text": "خوێندکارانی گەورەساڵ لە دەوری مێزی زانکۆ ئەرکی گرووپی بە تێبینی ئەبستراکت، کارتی ڕۆڵ و بەبێ داتای کەسیی خوێندراو ڕێک دەخەن." },
+            { "language": "kmr", "text": "Xwendekarên mezin li ser maseya zanîngehê wezîfeyeke komî bi notên abstrakt, kartên rolê û bê daneyên kesane yên xwendinbar rêxistin dikin." },
+            { "language": "pl", "text": "Dorośli studenci przy stole uniwersyteckim organizują zadanie grupowe z abstrakcyjnymi notatkami, kartami ról i bez czytelnych danych prywatnych." },
+            { "language": "ro", "text": "Studenți adulți la o masă universitară organizează o sarcină de grup cu notițe abstracte, carduri de rol și fără date personale lizibile." },
+            { "language": "sq", "text": "Studentë të rritur rreth një tavoline universitare organizojnë një detyrë grupore me shënime abstrakte, karta rolesh dhe pa të dhëna personale të lexueshme." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult university group organizing a seminar task around a table, abstract sticky notes and simple role cards with no readable text, German higher-education setting, no logos, no private data, cooperative focused atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

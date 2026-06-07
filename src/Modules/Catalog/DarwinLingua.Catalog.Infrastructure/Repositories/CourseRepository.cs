@@ -11,7 +11,9 @@ namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 
 internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> dbContextFactory) : ICourseRepository
 {
-    public async Task<IReadOnlyList<CoursePathListItemModel>> GetPublishedCoursePathsAsync(CoursePathListFilterModel filter, CancellationToken cancellationToken)
+    private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
+
+    public async Task<IReadOnlyList<CoursePathListItemModel>> GetPublishedCoursePathsAsync(CoursePathListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         IQueryable<CoursePath> query = dbContext.CoursePaths
@@ -22,22 +24,27 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
 
         query = ApplyFilters(query, filter);
 
-        return await query
+        List<CoursePath> courses = await query
             .OrderBy(course => course.SortOrder)
             .ThenBy(course => course.Title)
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        return courses
             .Select(course => new CoursePathListItemModel(
                 course.Slug,
                 course.Title,
                 course.Description,
+                ResolveTranslation(course.TitleTranslationsJson, primaryMeaningLanguageCode),
+                ResolveTranslation(course.DescriptionTranslationsJson, primaryMeaningLanguageCode),
                 course.CefrLevel.HasValue ? course.CefrLevel.Value.ToString() : null,
                 course.CefrRange,
                 course.Modules.Count(module => module.PublicationStatus == PublicationStatus.Active),
                 course.Modules.SelectMany(module => module.Lessons).Count(lesson => lesson.PublicationStatus == PublicationStatus.Active)))
-            .ToListAsync(cancellationToken)
-            .ConfigureAwait(false);
+            .ToArray();
     }
 
-    public async Task<CoursePathDetailModel?> GetPublishedCoursePathBySlugAsync(string slug, CancellationToken cancellationToken)
+    public async Task<CoursePathDetailModel?> GetPublishedCoursePathBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = Normalize(slug) ?? string.Empty;
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
@@ -62,13 +69,15 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
                 module.Slug,
                 module.Title,
                 module.Description,
+                ResolveTranslation(module.TitleTranslationsJson, primaryMeaningLanguageCode),
+                ResolveTranslation(module.DescriptionTranslationsJson, primaryMeaningLanguageCode),
                 module.ModuleNumber,
                 module.CefrLevel.ToString(),
                 module.Lessons
                     .Where(lesson => lesson.PublicationStatus == PublicationStatus.Active)
                     .OrderBy(lesson => lesson.SortOrder)
                     .ThenBy(lesson => lesson.LessonNumber)
-                    .Select(MapListItem)
+                    .Select(lesson => MapListItem(lesson, primaryMeaningLanguageCode))
                     .ToArray()))
             .ToArray();
 
@@ -76,12 +85,14 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
             course.Slug,
             course.Title,
             course.Description,
+            ResolveTranslation(course.TitleTranslationsJson, primaryMeaningLanguageCode),
+            ResolveTranslation(course.DescriptionTranslationsJson, primaryMeaningLanguageCode),
             course.CefrLevel.HasValue ? course.CefrLevel.Value.ToString() : null,
             course.CefrRange,
             modules);
     }
 
-    public async Task<CourseLessonDetailModel?> GetPublishedCourseLessonBySlugAsync(string slug, CancellationToken cancellationToken)
+    public async Task<CourseLessonDetailModel?> GetPublishedCourseLessonBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = Normalize(slug) ?? string.Empty;
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
@@ -101,9 +112,13 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
                 lesson.Title,
                 lesson.ShortDescription,
                 lesson.Narrative,
+                ResolveTranslation(lesson.TitleTranslationsJson, primaryMeaningLanguageCode),
+                ResolveTranslation(lesson.ShortDescriptionTranslationsJson, primaryMeaningLanguageCode),
+                ResolveTranslation(lesson.NarrativeTranslationsJson, primaryMeaningLanguageCode),
                 lesson.CefrLevel.ToString(),
                 lesson.EstimatedMinutes,
                 DeserializeStringArray(lesson.LearningGoalsJson),
+                ResolveTextListTranslation(lesson.LearningGoalsTranslationsJson, primaryMeaningLanguageCode),
                 DeserializeStringArray(lesson.PrerequisiteLessonSlugsJson),
                 lesson.NextLessonSlug,
                 DeserializeStringArray(lesson.LinkedGrammarTopicSlugsJson),
@@ -114,11 +129,23 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
                 DeserializeStringArray(lesson.LinkedExerciseSetSlugsJson),
                 DeserializeStringArray(lesson.LinkedExamPrepSlugsJson),
                 lesson.ReviewSummary,
-                lesson.HomeworkTask);
+                ResolveTranslation(lesson.ReviewSummaryTranslationsJson, primaryMeaningLanguageCode),
+                lesson.HomeworkTask,
+                ResolveTranslation(lesson.HomeworkTaskTranslationsJson, primaryMeaningLanguageCode));
     }
 
-    private static CourseLessonListItemModel MapListItem(CourseLesson lesson) =>
-        new(lesson.Slug, lesson.CoursePathSlug, lesson.ModuleSlug, lesson.LessonNumber, lesson.Title, lesson.ShortDescription, lesson.CefrLevel.ToString(), lesson.EstimatedMinutes);
+    private static CourseLessonListItemModel MapListItem(CourseLesson lesson, string? primaryMeaningLanguageCode) =>
+        new(
+            lesson.Slug,
+            lesson.CoursePathSlug,
+            lesson.ModuleSlug,
+            lesson.LessonNumber,
+            lesson.Title,
+            lesson.ShortDescription,
+            ResolveTranslation(lesson.TitleTranslationsJson, primaryMeaningLanguageCode),
+            ResolveTranslation(lesson.ShortDescriptionTranslationsJson, primaryMeaningLanguageCode),
+            lesson.CefrLevel.ToString(),
+            lesson.EstimatedMinutes);
 
     private static IQueryable<CoursePath> ApplyFilters(IQueryable<CoursePath> query, CoursePathListFilterModel filter)
     {
@@ -139,7 +166,49 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
     private static string[] DeserializeStringArray(string json) =>
         JsonSerializer.Deserialize<string[]>(json) ?? [];
 
+    private static string? ResolveTranslation(string json, string? languageCode)
+    {
+        string? normalizedLanguage = Normalize(languageCode);
+        if (normalizedLanguage is null || string.IsNullOrWhiteSpace(json) || json == "[]")
+        {
+            return null;
+        }
+
+        try
+        {
+            TranslationRow[] rows = JsonSerializer.Deserialize<TranslationRow[]>(json, JsonOptions) ?? [];
+            return rows.FirstOrDefault(row => string.Equals(row.Language, normalizedLanguage, StringComparison.OrdinalIgnoreCase))?.Text;
+        }
+        catch (JsonException)
+        {
+            return null;
+        }
+    }
+
+    private static string[] ResolveTextListTranslation(string json, string? languageCode)
+    {
+        string? normalizedLanguage = Normalize(languageCode);
+        if (normalizedLanguage is null || string.IsNullOrWhiteSpace(json) || json == "[]")
+        {
+            return [];
+        }
+
+        try
+        {
+            TextListTranslationRow[] rows = JsonSerializer.Deserialize<TextListTranslationRow[]>(json, JsonOptions) ?? [];
+            return rows.FirstOrDefault(row => string.Equals(row.Language, normalizedLanguage, StringComparison.OrdinalIgnoreCase))?.Texts ?? [];
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
+
     private static string? Normalize(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim().ToLowerInvariant();
 
     private static string? NormalizeSearch(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private sealed record TranslationRow(string Language, string Text);
+
+    private sealed record TextListTranslationRow(string Language, string[] Texts);
 }

@@ -1,0 +1,806 @@
+{
+  "packageId": "roleplays-c1-core-06-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 06 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 06",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-change-prozess-erklaeren-und-einordnen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Change-Prozess erklären und einordnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining and contextualizing a change process" },
+        { "language": "fa", "text": "توضیح و جا انداختن یک فرایند تغییر" },
+        { "language": "ar", "text": "شرح عملية تغيير ووضعها في سياقها" },
+        { "language": "tr", "text": "Bir değişim sürecini açıklamak ve bağlama oturtmak" },
+        { "language": "ru", "text": "Объяснить процесс изменений и поместить его в контекст" },
+        { "language": "ckb", "text": "ڕوونکردنەوە و جێگیرکردنی پرۆسەیەکی گۆڕان" },
+        { "language": "kmr", "text": "Ravekirin û danîna pêvajoyeke guhertinê di çarçoveyê de" },
+        { "language": "pl", "text": "Wyjaśnienie i osadzenie procesu zmiany w kontekście" },
+        { "language": "ro", "text": "Explicarea și contextualizarea unui proces de schimbare" },
+        { "language": "sq", "text": "Shpjegimi dhe vendosja në kontekst e një procesi ndryshimi" }
+      ],
+      "description": "In einem C1-Teamgespräch erklären Sie eine organisatorische Veränderung, ordnen Bedenken ein und vereinbaren konkrete Unterstützung für die Übergangsphase.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 team conversation, you explain an organizational change, put concerns into context, and agree on concrete support for the transition phase." },
+        { "language": "fa", "text": "در یک گفت‌وگوی تیمی سطح C1، یک تغییر سازمانی را توضیح می‌دهید، نگرانی‌ها را در جای درست قرار می‌دهید و برای مرحله گذار حمایت مشخص توافق می‌کنید." },
+        { "language": "ar", "text": "في حوار فريق بمستوى C1، تشرح تغييراً تنظيمياً، وتضع المخاوف في سياقها، وتتفق على دعم ملموس لمرحلة الانتقال." },
+        { "language": "tr", "text": "C1 düzeyinde bir ekip görüşmesinde, kurumsal bir değişikliği açıklarsınız, endişeleri bağlama oturtursunuz ve geçiş aşaması için somut destek üzerinde anlaşırsınız." },
+        { "language": "ru", "text": "В командном разговоре уровня C1 вы объясняете организационное изменение, помещаете опасения в контекст и согласуете конкретную поддержку на переходный период." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی تیمی ئاستی C1دا، گۆڕانێکی ڕێکخراوەیی ڕوون دەکەیتەوە، نیگەرانییەکان لە چوارچێوەی دروستدا دادەنێیت و بۆ قۆناغی گواستنەوە پشتگیریی دیاریکراو ڕێک دەخەیت." },
+        { "language": "kmr", "text": "Di axaftineke tîmê ya asta C1 de, hûn guhertineke rêxistinî rave dikin, xeman di çarçoveyê de didin û ji bo qonaxa derbasbûnê piştgiriyeke zehf diyar li hev dikin." },
+        { "language": "pl", "text": "W rozmowie zespołowej na poziomie C1 wyjaśniasz zmianę organizacyjną, osadzasz obawy w kontekście i uzgadniasz konkretne wsparcie na okres przejściowy." },
+        { "language": "ro", "text": "Într-o discuție de echipă de nivel C1, explicați o schimbare organizațională, puneți îngrijorările în context și conveniți asupra unui sprijin concret pentru perioada de tranziție." },
+        { "language": "sq", "text": "Në një bisedë ekipi të nivelit C1, shpjegoni një ndryshim organizativ, i vendosni shqetësimet në kontekst dhe bini dakord për mbështetje konkrete gjatë fazës së kalimit." }
+      ],
+      "learnerGoal": "Einen Change-Prozess differenziert erklären: Hintergrund und Ziel benennen, Einwände ernst nehmen, Gerüchte vermeiden, Unterstützungsangebote konkretisieren und nächste Schritte transparent zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a change process in a nuanced way: name the background and goal, take objections seriously, avoid rumors, make support concrete, and summarize next steps transparently." },
+        { "language": "fa", "text": "یک فرایند تغییر را دقیق و چندلایه توضیح دهید: پیش‌زمینه و هدف را نام ببرید، اعتراض‌ها را جدی بگیرید، از شایعه جلوگیری کنید، حمایت‌ها را مشخص کنید و گام‌های بعدی را شفاف جمع‌بندی کنید." },
+        { "language": "ar", "text": "اشرح عملية تغيير بطريقة دقيقة: اذكر الخلفية والهدف، وخذ الاعتراضات بجدية، وتجنب الشائعات، واجعل الدعم ملموساً، ولخص الخطوات التالية بشفافية." },
+        { "language": "tr", "text": "Bir değişim sürecini ayrıntılı biçimde açıklayın: arka planı ve hedefi belirtin, itirazları ciddiye alın, söylentilerden kaçının, desteği somutlaştırın ve sonraki adımları şeffaf biçimde özetleyin." },
+        { "language": "ru", "text": "Тонко объяснить процесс изменений: назвать фон и цель, серьезно отнестись к возражениям, избегать слухов, конкретизировать поддержку и прозрачно подвести итог следующих шагов." },
+        { "language": "ckb", "text": "پرۆسەی گۆڕان بە وردی ڕوون بکەوە: پاشبنەما و ئامانج ناو ببە، ناڕەزاییەکان بە جدی وەربگرە، قسەی بێ بنەما ڕێگری بکە، پشتگیرییەکان دیاری بکە و هەنگاوە داهاتووەکان بە ڕوونی کورت بکەوە." },
+        { "language": "kmr", "text": "Pêvajoya guhertinê bi hûrgilî rave bikin: paşxane û armancê nav bikin, îtirazan cidî bigirin, gotegotan dûr bikin, piştgiriyê zehf diyar bikin û gavên din bi zelalî kurt bikin." },
+        { "language": "pl", "text": "Wyjaśnić proces zmiany w zniuansowany sposób: nazwać tło i cel, poważnie potraktować zastrzeżenia, unikać plotek, skonkretyzować wsparcie i przejrzyście podsumować kolejne kroki." },
+        { "language": "ro", "text": "Explicați nuanțat un proces de schimbare: numiți contextul și scopul, luați obiecțiile în serios, evitați zvonurile, concretizați sprijinul și rezumați transparent pașii următori." },
+        { "language": "sq", "text": "Shpjegoni me nuanca një proces ndryshimi: përmendni sfondin dhe qëllimin, merrni seriozisht kundërshtimet, shmangni thashethemet, konkretizoni mbështetjen dhe përmblidhni qartë hapat e ardhshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "describe-experience",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 6,
+      "roles": [
+        {
+          "roleKey": "operations-lead",
+          "displayName": "Bereichsleitung",
+          "translations": [
+            { "language": "en", "text": "Operations lead" },
+            { "language": "fa", "text": "مدیر بخش" },
+            { "language": "ar", "text": "مدير القسم" },
+            { "language": "tr", "text": "Birim yöneticisi" },
+            { "language": "ru", "text": "Руководитель направления" },
+            { "language": "ckb", "text": "بەڕێوەبەری بەش" },
+            { "language": "kmr", "text": "Rêvebirê beşê" },
+            { "language": "pl", "text": "Kierownik obszaru" },
+            { "language": "ro", "text": "Manager de departament" },
+            { "language": "sq", "text": "Drejtuesi i departamentit" }
+          ]
+        },
+        {
+          "roleKey": "team-member",
+          "displayName": "Teammitglied",
+          "translations": [
+            { "language": "en", "text": "Team member" },
+            { "language": "fa", "text": "عضو تیم" },
+            { "language": "ar", "text": "عضو الفريق" },
+            { "language": "tr", "text": "Ekip üyesi" },
+            { "language": "ru", "text": "Член команды" },
+            { "language": "ckb", "text": "ئەندامی تیم" },
+            { "language": "kmr", "text": "Endamê tîmê" },
+            { "language": "pl", "text": "Członek zespołu" },
+            { "language": "ro", "text": "Membru al echipei" },
+            { "language": "sq", "text": "Anëtar i ekipit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Sie",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "شما" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Siz" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Hûn" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Dumneavoastră" },
+            { "language": "sq", "text": "Ju" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "operations-lead",
+          "baseText": "Ab dem nächsten Quartal sollen Onboarding und laufender Support in einem gemeinsamen Prozess gesteuert werden. Sie sollen dem Team erklären, warum wir diesen Schritt gehen.",
+          "translations": [
+            { "language": "en", "text": "From next quarter, onboarding and ongoing support are to be managed in one shared process. You are supposed to explain to the team why we are taking this step." },
+            { "language": "fa", "text": "از فصل بعد، onboarding و پشتیبانی جاری باید در یک فرایند مشترک مدیریت شوند. شما باید برای تیم توضیح دهید چرا این قدم را برمی‌داریم." },
+            { "language": "ar", "text": "ابتداءً من الربع القادم سيتم إدارة التهيئة والدعم الجاري في عملية مشتركة واحدة. عليك أن تشرح للفريق لماذا نتخذ هذه الخطوة." },
+            { "language": "tr", "text": "Gelecek çeyrekten itibaren onboarding ve devam eden destek tek bir ortak süreçte yönetilecek. Ekibe bu adımı neden attığımızı açıklamanız gerekiyor." },
+            { "language": "ru", "text": "Со следующего квартала онбординг и текущая поддержка должны управляться в одном общем процессе. Вы должны объяснить команде, почему мы делаем этот шаг." },
+            { "language": "ckb", "text": "لە چارەکی داهاتووەوە، onboarding و پشتگیریی بەردەوام دەبێت لە پرۆسەیەکی هاوبەشدا بەڕێوە بچن. دەبێت بۆ تیمەکە ڕوون بکەیتەوە بۆچی ئەم هەنگاوە دەنێین." },
+            { "language": "kmr", "text": "Ji çaryeka din ve, onboarding û piştgiriya domdar dê di pêvajoyeke hevpar de werin birêvebirin. Divê hûn ji tîmê re rave bikin çima em vê gavê davêjin." },
+            { "language": "pl", "text": "Od następnego kwartału wdrożenie klientów i bieżące wsparcie mają być zarządzane w jednym wspólnym procesie. Masz wyjaśnić zespołowi, dlaczego robimy ten krok." },
+            { "language": "ro", "text": "Din trimestrul următor, onboarding-ul și suportul curent vor fi gestionate într-un proces comun. Trebuie să explicați echipei de ce facem acest pas." },
+            { "language": "sq", "text": "Nga tremujori i ardhshëm, onboarding-u dhe mbështetja e vazhdueshme do të menaxhohen në një proces të përbashkët. Ju duhet t'i shpjegoni ekipit pse po e bëjmë këtë hap." }
+          ],
+          "function": "change-announcement",
+          "toneNote": "Die Bereichsleitung gibt den Rahmen vor, ohne die Reaktion des Teams bereits zu kennen.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Hintergrund offen benennen: Kundinnen und Kunden erleben unsere Übergaben derzeit als Bruch. Ziel der Veränderung ist nicht mehr Kontrolle, sondern mehr Verlässlichkeit über den gesamten Prozess hinweg.",
+          "translations": [
+            { "language": "en", "text": "I would name the background openly: customers currently experience our handovers as a break. The goal of the change is not more control, but more reliability across the entire process." },
+            { "language": "fa", "text": "من پیش‌زمینه را شفاف می‌گویم: مشتریان در حال حاضر تحویل‌دادن کار بین تیم‌ها را مثل یک گسست تجربه می‌کنند. هدف تغییر، کنترل بیشتر نیست، بلکه اطمینان‌پذیری بیشتر در کل فرایند است." },
+            { "language": "ar", "text": "سأذكر الخلفية بصراحة: العملاء يشعرون حالياً بأن عمليات التسليم بين الفرق تمثل انقطاعاً. هدف التغيير ليس المزيد من الرقابة، بل مزيد من الاعتمادية على امتداد العملية كلها." },
+            { "language": "tr", "text": "Arka planı açıkça belirtirdim: Müşteriler şu anda devirleri bir kopukluk gibi yaşıyor. Değişikliğin amacı daha fazla kontrol değil, tüm süreç boyunca daha fazla güvenilirliktir." },
+            { "language": "ru", "text": "Я бы открыто назвал фон: клиенты сейчас воспринимают наши передачи между этапами как разрыв. Цель изменения — не больше контроля, а больше надежности на протяжении всего процесса." },
+            { "language": "ckb", "text": "پاشبنەماکە بە کراوەیی ناو دەبەم: کڕیاران ئێستا گواستنەوەی کار لە نێوان تیمەکان وەک پچڕانێک دەبینن. ئامانجی گۆڕانەکە کۆنترۆڵی زیاتر نییە، بەڵکو پشتپێبەستنی زیاترە لە هەموو پرۆسەکەدا." },
+            { "language": "kmr", "text": "Ez ê paşxaneyê vekirî nav bikim: xerîdar niha radestkirinên me wekî qutbûnekê hîs dikin. Armanca guhertinê ne kontrola zêdetir e, lê pêbaweriya zêdetir di tevahiya pêvajoyê de ye." },
+            { "language": "pl", "text": "Otwarcie nazwałbym tło: klienci odbierają obecnie nasze przekazania jako przerwanie ciągłości. Celem zmiany nie jest większa kontrola, lecz większa niezawodność w całym procesie." },
+            { "language": "ro", "text": "Aș numi deschis contextul: clienții percep în prezent predările noastre ca pe o ruptură. Scopul schimbării nu este mai mult control, ci mai multă fiabilitate pe parcursul întregului proces." },
+            { "language": "sq", "text": "Do ta përmendja hapur sfondin: klientët aktualisht i përjetojnë dorëzimet tona si një ndërprerje. Qëllimi i ndryshimit nuk është më shumë kontroll, por më shumë besueshmëri gjatë gjithë procesit." }
+          ],
+          "function": "change-rationale",
+          "toneNote": "C1: Die Antwort benennt das Problem, ohne dem Team Schuld zuzuweisen.",
+          "expectedLearnerAction": "Explain the reason for the change without framing it as blame or surveillance."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "team-member",
+          "baseText": "Für mich klingt das trotzdem nach mehr Arbeit. Wenn beide Bereiche zusammengelegt werden, ist am Ende niemand mehr eindeutig zuständig.",
+          "translations": [
+            { "language": "en", "text": "To me it still sounds like more work. If both areas are combined, in the end nobody is clearly responsible anymore." },
+            { "language": "fa", "text": "برای من هنوز شبیه کار بیشتر به نظر می‌رسد. اگر هر دو بخش یکی شوند، در نهایت دیگر هیچ‌کس مسئولیت مشخصی ندارد." },
+            { "language": "ar", "text": "بالنسبة لي ما زال الأمر يبدو كعمل إضافي. إذا تم دمج المجالين، فلن يكون أحد مسؤولاً بشكل واضح في النهاية." },
+            { "language": "tr", "text": "Bana yine de daha fazla iş gibi geliyor. İki alan birleştirilirse sonunda kimsenin sorumluluğu net olmayacak." },
+            { "language": "ru", "text": "Для меня это все равно звучит как больше работы. Если обе области объединят, в итоге никто уже не будет однозначно ответственным." },
+            { "language": "ckb", "text": "بۆ من هێشتا وەک کاری زیاتر دەنگ دەدات. ئەگەر هەردوو بوارەکە یەکبخرێن، لە کۆتاییدا هیچ کەسێک بە ڕوونی بەرپرسیار نابێت." },
+            { "language": "kmr", "text": "Ji bo min ev hê jî wekî karekî zêdetir xuya dike. Heke her du qad werin yek kirin, di dawiyê de kesek bi zelalî berpirsyar namîne." },
+            { "language": "pl", "text": "Dla mnie to mimo wszystko brzmi jak więcej pracy. Jeśli oba obszary zostaną połączone, ostatecznie nikt nie będzie już jednoznacznie odpowiedzialny." },
+            { "language": "ro", "text": "Pentru mine sună totuși a mai multă muncă. Dacă cele două zone sunt unite, la final nimeni nu mai este clar responsabil." },
+            { "language": "sq", "text": "Për mua kjo prapë tingëllon si më shumë punë. Nëse të dy fushat bashkohen, në fund askush nuk do të jetë më qartë përgjegjës." }
+          ],
+          "function": "team-concern",
+          "toneNote": "Das Teammitglied äußert eine sachliche Sorge, die nicht abgewertet werden sollte.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die Sorge ist berechtigt, wenn wir die Veränderung nur als neue Struktur ankündigen. Deshalb würde ich zwischen Übergangsaufwand und Zielbild unterscheiden: In den ersten vier Wochen brauchen wir klare Zuständigkeiten, eine Verantwortungstabelle und feste Eskalationswege.",
+          "translations": [
+            { "language": "en", "text": "The concern is justified if we announce the change only as a new structure. That is why I would distinguish between transition effort and target picture: in the first four weeks we need clear responsibilities, a responsibility matrix, and fixed escalation paths." },
+            { "language": "fa", "text": "این نگرانی موجه است، اگر تغییر را فقط به‌عنوان ساختار جدید اعلام کنیم. برای همین بین هزینه‌ی دوره گذار و تصویر هدف فرق می‌گذارم: در چهار هفته اول به مسئولیت‌های روشن، جدول مسئولیت و مسیرهای ثابت escalation نیاز داریم." },
+            { "language": "ar", "text": "هذا القلق مبرر إذا أعلنّا التغيير فقط كبنية جديدة. لذلك سأميز بين جهد الانتقال والصورة المستهدفة: في الأسابيع الأربعة الأولى نحتاج إلى مسؤوليات واضحة، وجدول مسؤوليات، ومسارات تصعيد ثابتة." },
+            { "language": "tr", "text": "Değişikliği yalnızca yeni bir yapı olarak duyurursak bu endişe haklıdır. Bu yüzden geçiş yükü ile hedef resmi ayırırdım: ilk dört haftada net sorumluluklara, bir sorumluluk tablosuna ve sabit eskalasyon yollarına ihtiyacımız var." },
+            { "language": "ru", "text": "Это опасение оправдано, если мы объявим изменение только как новую структуру. Поэтому я бы разделил переходные затраты и целевую картину: в первые четыре недели нам нужны четкие ответственности, матрица ответственности и фиксированные пути эскалации." },
+            { "language": "ckb", "text": "ئەو نیگەرانییە ڕەوایە، ئەگەر گۆڕانەکە تەنها وەک پێکهاتەیەکی نوێ ڕابگەیەنین. بۆیە جیاوازی دەکەم لە نێوان تێچوونی قۆناغی گواستنەوە و وێنەی ئامانج: لە چوار هەفتەی یەکەمدا پێویستمان بە بەرپرسیارێتیی ڕوون، خشتەی بەرپرسیارێتی و ڕێگای escalationی جێگیرە." },
+            { "language": "kmr", "text": "Ev xem rast e heke em guhertinê tenê wekî avahiyeke nû ragihînin. Ji ber vê yekê ez ê cihêbera navbera barê derbasbûnê û wêneya armancê bikim: di çar hefteyên yekem de em hewceyî berpirsiyariyên zelal, tabloya berpirsiyariyê û rêyên eskalasyonê yên sabit in." },
+            { "language": "pl", "text": "Ta obawa jest uzasadniona, jeśli ogłosimy zmianę wyłącznie jako nową strukturę. Dlatego rozróżniłbym nakład w okresie przejściowym i obraz docelowy: w pierwszych czterech tygodniach potrzebujemy jasnych odpowiedzialności, tabeli odpowiedzialności i stałych ścieżek eskalacji." },
+            { "language": "ro", "text": "Îngrijorarea este justificată dacă anunțăm schimbarea doar ca pe o structură nouă. De aceea aș distinge între efortul de tranziție și imaginea țintă: în primele patru săptămâni avem nevoie de responsabilități clare, o matrice de responsabilitate și căi fixe de escaladare." },
+            { "language": "sq", "text": "Shqetësimi është i justifikuar nëse e shpallim ndryshimin vetëm si strukturë të re. Prandaj do të dalloja mes përpjekjes së kalimit dhe pamjes së synuar: në katër javët e para na duhen përgjegjësi të qarta, një tabelë përgjegjësish dhe rrugë të qëndrueshme eskalimi." }
+          ],
+          "function": "concern-contextualization",
+          "toneNote": "C1: Die Antwort validiert die Sorge und macht daraus einen steuerbaren Übergangsbedarf.",
+          "expectedLearnerAction": "Take the objection seriously and convert it into concrete transition safeguards."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "operations-lead",
+          "baseText": "Ein weiterer Punkt: Manche Kolleginnen und Kollegen befürchten, dass ihre Spezialisierung entwertet wird. Wie können wir das auffangen?",
+          "translations": [
+            { "language": "en", "text": "Another point: some colleagues fear that their specialization will be devalued. How can we address that?" },
+            { "language": "fa", "text": "نکته دیگر: بعضی همکاران نگران‌اند که تخصصشان بی‌ارزش شود. چطور می‌توانیم این را مدیریت کنیم؟" },
+            { "language": "ar", "text": "نقطة أخرى: بعض الزملاء يخشون أن تفقد تخصصاتهم قيمتها. كيف يمكننا التعامل مع ذلك؟" },
+            { "language": "tr", "text": "Bir nokta daha: Bazı çalışma arkadaşları uzmanlıklarının değer kaybedeceğinden korkuyor. Bunu nasıl karşılayabiliriz?" },
+            { "language": "ru", "text": "Еще один момент: некоторые коллеги опасаются, что их специализация обесценится. Как мы можем это смягчить?" },
+            { "language": "ckb", "text": "خاڵێکی تر: هەندێک هاوکار دەترسن شارەزاییی تایبەتییان بێ نرخ بکرێت. چۆن دەتوانین ئەمە بگرینەوە؟" },
+            { "language": "kmr", "text": "Xalek din: Hin hevkar ditirsin ku pisporiya wan bê nirx bibe. Em çawa dikarin vê yekê rêve bibin?" },
+            { "language": "pl", "text": "Kolejna kwestia: część koleżanek i kolegów obawia się, że ich specjalizacja zostanie zdeprecjonowana. Jak możemy na to odpowiedzieć?" },
+            { "language": "ro", "text": "Un alt punct: unii colegi se tem că specializarea lor va fi devalorizată. Cum putem aborda asta?" },
+            { "language": "sq", "text": "Një pikë tjetër: disa kolegë kanë frikë se specializimi i tyre do të zhvlerësohet. Si mund ta adresojmë këtë?" }
+          ],
+          "function": "expertise-concern",
+          "toneNote": "Die Frage zielt auf Status- und Rollenunsicherheit.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir sollten deutlich machen, dass Spezialisierung nicht verschwindet, sondern sichtbarer eingesetzt wird. Expertinnen und Experten behalten ihre fachliche Rolle, aber sie werden früher eingebunden, damit Probleme nicht erst nach der Übergabe auffallen.",
+          "translations": [
+            { "language": "en", "text": "We should make clear that specialization is not disappearing, but being used more visibly. Experts keep their professional role, but they are involved earlier so that problems do not become visible only after the handover." },
+            { "language": "fa", "text": "باید روشن کنیم که تخصص از بین نمی‌رود، بلکه قابل‌دیدتر به کار گرفته می‌شود. متخصصان نقش فنی خود را حفظ می‌کنند، اما زودتر وارد کار می‌شوند تا مشکلات تازه بعد از تحویل آشکار نشوند." },
+            { "language": "ar", "text": "ينبغي أن نوضح أن التخصص لا يختفي، بل يُستخدم بشكل أكثر وضوحاً. يحتفظ الخبراء بدورهم المهني، لكن يتم إشراكهم في وقت أبكر حتى لا تظهر المشكلات بعد التسليم فقط." },
+            { "language": "tr", "text": "Uzmanlığın kaybolmadığını, daha görünür biçimde kullanıldığını netleştirmeliyiz. Uzmanlar mesleki rollerini korur, ancak sorunlar ancak devirden sonra ortaya çıkmasın diye daha erken dahil edilirler." },
+            { "language": "ru", "text": "Нужно ясно показать, что специализация не исчезает, а используется более заметно. Эксперты сохраняют свою профессиональную роль, но подключаются раньше, чтобы проблемы не становились видны только после передачи." },
+            { "language": "ckb", "text": "پێویستە ڕوون بکەینەوە کە شارەزایی نامێنێت، بەڵکو بە شێوەیەکی دیارتر بەکاردەهێنرێت. شارەزایان ڕۆڵی پیشەیی خۆیان دەپارێزن، بەڵام زووتر دەخرێنە ناو کارەوە، بۆ ئەوەی کێشەکان تەنها دوای گواستنەوە دەرنەکەون." },
+            { "language": "kmr", "text": "Divê em zelal bikin ku pisporî winda nabe, lê bi awayekî xuyaştir tê bikaranîn. Pispor rola xwe ya pîşeyî diparêzin, lê zûtir têne tevlîkirin da ku pirsgirêk tenê piştî radestkirinê xuya nebin." },
+            { "language": "pl", "text": "Powinniśmy jasno pokazać, że specjalizacja nie znika, lecz jest wykorzystywana w bardziej widoczny sposób. Eksperci zachowują swoją rolę merytoryczną, ale są włączani wcześniej, aby problemy nie wychodziły dopiero po przekazaniu." },
+            { "language": "ro", "text": "Ar trebui să arătăm clar că specializarea nu dispare, ci este folosită mai vizibil. Experții își păstrează rolul profesional, dar sunt implicați mai devreme, astfel încât problemele să nu apară abia după predare." },
+            { "language": "sq", "text": "Duhet ta bëjmë të qartë se specializimi nuk zhduket, por përdoret më dukshëm. Ekspertët e ruajnë rolin e tyre profesional, por përfshihen më herët që problemet të mos duken vetëm pas dorëzimit." }
+          ],
+          "function": "expertise-reframing",
+          "toneNote": "C1: Die Antwort nimmt Statusverlust ernst und beschreibt einen Mehrwert der Expertise.",
+          "expectedLearnerAction": "Reframe specialization as a stronger, earlier contribution rather than as a loss."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "team-member",
+          "baseText": "Wenn das ernst gemeint ist, brauchen wir aber Zeit für Einarbeitung. Sonst bleibt die neue Struktur auf dem Papier und im Alltag arbeiten wir weiter wie vorher.",
+          "translations": [
+            { "language": "en", "text": "If that is meant seriously, we need time for familiarization. Otherwise the new structure remains on paper, and in everyday work we continue as before." },
+            { "language": "fa", "text": "اگر این جدی است، برای آشنا شدن با کار جدید به زمان نیاز داریم. وگرنه ساختار جدید فقط روی کاغذ می‌ماند و در کار روزمره مثل قبل ادامه می‌دهیم." },
+            { "language": "ar", "text": "إذا كان ذلك جاداً، فنحن بحاجة إلى وقت للتأقلم. وإلا فستبقى البنية الجديدة على الورق، وسنواصل العمل اليومي كما كان من قبل." },
+            { "language": "tr", "text": "Bu gerçekten ciddiyse alışma için zamana ihtiyacımız var. Aksi halde yeni yapı kağıt üzerinde kalır ve günlük işte eskisi gibi çalışmaya devam ederiz." },
+            { "language": "ru", "text": "Если это всерьез, нам нужно время на освоение. Иначе новая структура останется на бумаге, а в повседневной работе мы продолжим как раньше." },
+            { "language": "ckb", "text": "ئەگەر ئەمە بە جدییە، پێویستمان بە کاتە بۆ ڕاهێنان. ئەگینا پێکهاتەی نوێ تەنها لەسەر کاغەز دەمێنێتەوە و لە کاری ڕۆژانەدا وەک پێشوو کار دەکەین." },
+            { "language": "kmr", "text": "Heke ev bi rastî cidî be, em hewceyî demê ji bo fêrbûnê ne. Wekî din avahiya nû li ser kaxezê dimîne û em di karê rojane de wekî berê didomînin." },
+            { "language": "pl", "text": "Jeśli to jest poważne, potrzebujemy czasu na wdrożenie. W przeciwnym razie nowa struktura zostanie na papierze, a w codziennej pracy będziemy działać jak wcześniej." },
+            { "language": "ro", "text": "Dacă acest lucru este luat în serios, avem nevoie de timp pentru acomodare. Altfel noua structură rămâne pe hârtie, iar în munca de zi cu zi continuăm ca înainte." },
+            { "language": "sq", "text": "Nëse kjo është serioze, na duhet kohë për t'u përshtatur. Përndryshe struktura e re mbetet në letër dhe në punën e përditshme vazhdojmë si më parë." }
+          ],
+          "function": "implementation-concern",
+          "toneNote": "Das Teammitglied fordert glaubwürdige Umsetzung, nicht nur Kommunikation.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb würde ich die Einführung nicht als Stichtag behandeln. Wir brauchen zwei Wochen Shadowing, feste Sprechstunden für Prozessfragen und geschützte Zeitfenster, in denen die Teams die neuen Übergaben üben können.",
+          "translations": [
+            { "language": "en", "text": "That is exactly why I would not treat the introduction as a single deadline. We need two weeks of shadowing, fixed office hours for process questions, and protected time slots in which the teams can practice the new handovers." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل من اجرا را مثل یک تاریخ یک‌باره نمی‌بینم. به دو هفته shadowing، ساعت‌های ثابت برای پرسش‌های فرایندی و زمان‌های محافظت‌شده نیاز داریم که تیم‌ها بتوانند تحویل‌های جدید را تمرین کنند." },
+            { "language": "ar", "text": "لهذا السبب بالضبط لن أتعامل مع التطبيق كموعد واحد فقط. نحتاج إلى أسبوعين من المرافقة، وساعات ثابتة لأسئلة العملية، وفترات زمنية محمية يمكن للفرق فيها تدريب عمليات التسليم الجديدة." },
+            { "language": "tr", "text": "Tam da bu yüzden uygulamayı tek bir tarih olarak ele almazdım. İki haftalık shadowing, süreç soruları için sabit danışma saatleri ve ekiplerin yeni devirleri çalışabileceği korunmuş zaman dilimleri gerekir." },
+            { "language": "ru", "text": "Именно поэтому я бы не рассматривал внедрение как одну дату. Нам нужны две недели шэдоуинга, фиксированные часы для вопросов по процессу и защищенные временные окна, в которых команды смогут отработать новые передачи." },
+            { "language": "ckb", "text": "هەر بۆیە من ناساندنەکە وەک ڕۆژێکی دیاریکراوی تاک مامەڵە ناکەم. پێویستمان بە دوو هەفتە shadowing، کاتی دیاریکراو بۆ پرسیارەکانی پرۆسە و کاتگەلی پارێزراوە کە تیمەکان بتوانن گواستنەوە نوێیەکان ڕاهێنان بکەن." },
+            { "language": "kmr", "text": "Bi rastî ji ber vê yekê ez destpêkirinê wekî tenê rojeke diyarkirî nabînim. Em hewceyî du hefte shadowing, demên sabit ji bo pirsên pêvajoyê û demên parastî ne ku tîm bikarin radestkirinên nû praktîze bikin." },
+            { "language": "pl", "text": "Właśnie dlatego nie traktowałbym wdrożenia jak jednej daty granicznej. Potrzebujemy dwóch tygodni shadowingu, stałych dyżurów na pytania procesowe i chronionych okien czasowych, w których zespoły mogą ćwiczyć nowe przekazania." },
+            { "language": "ro", "text": "Tocmai de aceea nu aș trata introducerea ca pe o singură dată-limită. Avem nevoie de două săptămâni de shadowing, ore fixe pentru întrebări de proces și intervale protejate în care echipele pot exersa noile predări." },
+            { "language": "sq", "text": "Pikërisht për këtë arsye nuk do ta trajtoja zbatimin si një datë të vetme. Na duhen dy javë shadowing, orare fikse për pyetje rreth procesit dhe intervale të mbrojtura ku ekipet mund të ushtrojnë dorëzimet e reja." }
+          ],
+          "function": "support-plan",
+          "toneNote": "C1: Die Antwort verbindet Veränderungskommunikation mit konkreten Lern- und Entlastungsmaßnahmen.",
+          "expectedLearnerAction": "Propose concrete transition support instead of relying on a formal announcement."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "operations-lead",
+          "baseText": "Wie gehen Sie mit Widerstand um, ohne einzelne Personen vorzuführen oder die Kritik als reine Blockade darzustellen?",
+          "translations": [
+            { "language": "en", "text": "How do you deal with resistance without exposing individual people or presenting the criticism as mere obstruction?" },
+            { "language": "fa", "text": "چطور با مقاومت برخورد می‌کنید، بدون اینکه افراد را جلوی دیگران قرار دهید یا انتقاد را صرفاً مانع‌تراشی نشان دهید؟" },
+            { "language": "ar", "text": "كيف تتعامل مع المقاومة دون إحراج أشخاص بعينهم أو تقديم النقد على أنه مجرد عرقلة؟" },
+            { "language": "tr", "text": "Tek tek kişileri hedef göstermeden veya eleştiriyi sadece engelleme gibi göstermeden dirençle nasıl başa çıkarsınız?" },
+            { "language": "ru", "text": "Как вы будете работать с сопротивлением, не выставляя отдельных людей и не представляя критику как простую блокировку?" },
+            { "language": "ckb", "text": "چۆن مامەڵە لەگەڵ بەربەرەکانێ دەکەیت، بەبێ ئەوەی کەسەکان بە تاکی بخەیتە پێش چاو یان ڕەخنەکە وەک تەنها بەربەست پیشان بدەیت؟" },
+            { "language": "kmr", "text": "Hûn çawa bi berxwedanê re dixebitin bêyî ku kesan yek bi yek eşkere bikin an rexneyê tenê wekî astengkirin nîşan bidin?" },
+            { "language": "pl", "text": "Jak poradzi Pan/Pani sobie z oporem, nie wystawiając pojedynczych osób i nie przedstawiając krytyki jako czystej blokady?" },
+            { "language": "ro", "text": "Cum gestionați rezistența fără să expuneți persoane individuale sau să prezentați critica drept simplă blocare?" },
+            { "language": "sq", "text": "Si do ta trajtoni rezistencën pa ekspozuar persona të veçantë dhe pa e paraqitur kritikën thjesht si bllokim?" }
+          ],
+          "function": "resistance-question",
+          "toneNote": "Die Bereichsleitung prüft, ob die Kommunikation sozial tragfähig ist.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde Widerstand zunächst als Informationsquelle behandeln. Wir sammeln konkrete Beispiele, trennen Fakten von Befürchtungen und klären offen, was bereits entschieden ist und wo das Team noch Einfluss hat.",
+          "translations": [
+            { "language": "en", "text": "I would initially treat resistance as a source of information. We collect concrete examples, separate facts from fears, and clarify openly what has already been decided and where the team still has influence." },
+            { "language": "fa", "text": "من مقاومت را در ابتدا به‌عنوان منبع اطلاعات می‌بینم. مثال‌های مشخص جمع می‌کنیم، واقعیت‌ها را از نگرانی‌ها جدا می‌کنیم و شفاف می‌گوییم چه چیزهایی تصمیم‌گیری شده و تیم هنوز کجا امکان اثرگذاری دارد." },
+            { "language": "ar", "text": "سأتعامل مع المقاومة أولاً كمصدر للمعلومات. نجمع أمثلة ملموسة، ونفصل الحقائق عن المخاوف، ونوضح بصراحة ما تم تقريره بالفعل وأين لا يزال للفريق تأثير." },
+            { "language": "tr", "text": "Direnci önce bir bilgi kaynağı olarak ele alırdım. Somut örnekler toplar, gerçekleri kaygılardan ayırır ve neyin zaten kararlaştırıldığını, ekibin nerede hâlâ etkisi olduğunu açıkça netleştiririz." },
+            { "language": "ru", "text": "Я бы сначала рассматривал сопротивление как источник информации. Мы собираем конкретные примеры, отделяем факты от опасений и открыто проясняем, что уже решено и где команда еще может влиять." },
+            { "language": "ckb", "text": "من لە سەرەتادا بەربەرەکانێ وەک سەرچاوەی زانیاری مامەڵە دەکەم. نموونەی دیاریکراو کۆدەکەینەوە، ڕاستییەکان لە ترسەکان جیا دەکەینەوە و بە کراوەیی ڕوون دەکەینەوە چی پێشتر بڕیار لەسەر دراوە و تیمەکە لە کوێ هێشتا کاریگەریی هەیە." },
+            { "language": "kmr", "text": "Ez ê di destpêkê de berxwedanê wekî çavkaniya agahiyê bibînim. Em mînakên zehf diyar kom dikin, rastiyan ji tirsan cuda dikin û vekirî zelal dikin ka çi jixwe hatiye biryardan û tîm li ku derê hê jî bandorê heye." },
+            { "language": "pl", "text": "Najpierw potraktowałbym opór jako źródło informacji. Zbieramy konkretne przykłady, oddzielamy fakty od obaw i otwarcie wyjaśniamy, co zostało już zdecydowane, a gdzie zespół nadal ma wpływ." },
+            { "language": "ro", "text": "Aș trata rezistența mai întâi ca pe o sursă de informații. Colectăm exemple concrete, separăm faptele de temeri și clarificăm deschis ce este deja decis și unde echipa mai are influență." },
+            { "language": "sq", "text": "Fillimisht do ta trajtoja rezistencën si burim informacioni. Mbledhim shembuj konkretë, ndajmë faktet nga frikat dhe sqarojmë hapur çfarë është vendosur tashmë dhe ku ekipi ka ende ndikim." }
+          ],
+          "function": "resistance-handling",
+          "toneNote": "C1: Die Antwort entdramatisiert Widerstand, ohne ihn zu ignorieren.",
+          "expectedLearnerAction": "Describe a respectful method for handling criticism and uncertainty."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "team-member",
+          "baseText": "Dann muss aber klar sein, was in der Pilotphase wirklich offen ist. Sonst fragen wir nach Feedback, obwohl die wichtigsten Punkte längst feststehen.",
+          "translations": [
+            { "language": "en", "text": "Then it has to be clear what is really open in the pilot phase. Otherwise we ask for feedback even though the most important points have long been fixed." },
+            { "language": "fa", "text": "پس باید روشن باشد در مرحله pilot واقعاً چه چیزهایی باز است. وگرنه از ما feedback می‌خواهند، در حالی که مهم‌ترین نکته‌ها مدت‌هاست قطعی شده‌اند." },
+            { "language": "ar", "text": "إذن يجب أن يكون واضحاً ما الذي لا يزال مفتوحاً فعلاً في مرحلة التجربة. وإلا سنطلب التغذية الراجعة رغم أن أهم النقاط قد حُسمت منذ وقت طويل." },
+            { "language": "tr", "text": "O zaman pilot aşamada gerçekten neyin açık olduğu net olmalı. Aksi halde en önemli noktalar çoktan belirlenmişken geri bildirim istiyoruz gibi olur." },
+            { "language": "ru", "text": "Тогда должно быть ясно, что действительно открыто на пилотном этапе. Иначе мы просим обратную связь, хотя самые важные пункты уже давно определены." },
+            { "language": "ckb", "text": "ئەوا دەبێت ڕوون بێت لە قۆناغی pilotدا بەڕاستی چی کراوەیە. ئەگینا داوای feedback دەکەین، لە کاتێکدا گرنگترین خاڵەکان زۆر پێشتر جێگیر بوون." },
+            { "language": "kmr", "text": "Wê demê divê zelal be di qonaxa pilot de bi rastî çi vekirî ye. Wekî din em feedback dixwazin, herçend xalên herî girîng ji mêj ve sabit bûne." },
+            { "language": "pl", "text": "W takim razie musi być jasne, co w fazie pilotażowej naprawdę pozostaje otwarte. Inaczej prosimy o feedback, choć najważniejsze punkty są już dawno ustalone." },
+            { "language": "ro", "text": "Atunci trebuie să fie clar ce este cu adevărat deschis în faza pilot. Altfel cerem feedback, deși cele mai importante puncte sunt de mult stabilite." },
+            { "language": "sq", "text": "Atëherë duhet të jetë e qartë çfarë është vërtet e hapur në fazën pilot. Përndryshe kërkojmë feedback, edhe pse pikat më të rëndësishme janë vendosur prej kohësh." }
+          ],
+          "function": "influence-boundary",
+          "toneNote": "Das Teammitglied fordert echte Beteiligung statt symbolischer Rückmeldung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Das nehme ich in die Kommunikation auf: Entschieden ist die gemeinsame Prozesslogik. Offen sind Rollenfeinheiten, Schulungsbedarf und Eskalationsregeln. Wir starten mit einem vierwöchigen Pilot, dokumentieren Reibungspunkte wöchentlich und entscheiden danach, welche Anpassungen verbindlich übernommen werden.",
+          "translations": [
+            { "language": "en", "text": "I will include that in the communication: the shared process logic is decided. Role details, training needs, and escalation rules remain open. We start with a four-week pilot, document friction points weekly, and then decide which adjustments will be adopted as binding." },
+            { "language": "fa", "text": "این را در ارتباطات وارد می‌کنم: منطق فرایند مشترک قطعی شده است. جزئیات نقش‌ها، نیازهای آموزشی و قواعد escalation هنوز باز هستند. با یک pilot چهار هفته‌ای شروع می‌کنیم، هر هفته نقاط اصطکاک را مستند می‌کنیم و بعد تصمیم می‌گیریم کدام اصلاحات الزام‌آور پذیرفته شوند." },
+            { "language": "ar", "text": "سأدرج ذلك في التواصل: منطق العملية المشتركة تقرر. أما تفاصيل الأدوار واحتياجات التدريب وقواعد التصعيد فما زالت مفتوحة. نبدأ بتجربة لمدة أربعة أسابيع، ونوثق نقاط الاحتكاك أسبوعياً، ثم نقرر أي التعديلات سيتم اعتمادها بشكل ملزم." },
+            { "language": "tr", "text": "Bunu iletişime dahil edeceğim: ortak süreç mantığı kararlaştırıldı. Rol ayrıntıları, eğitim ihtiyacı ve eskalasyon kuralları açık kalıyor. Dört haftalık bir pilotla başlıyoruz, sürtüşme noktalarını haftalık belgeliyoruz ve ardından hangi düzenlemelerin bağlayıcı olarak devralınacağına karar veriyoruz." },
+            { "language": "ru", "text": "Я включу это в коммуникацию: общая логика процесса уже решена. Детали ролей, потребность в обучении и правила эскалации остаются открытыми. Мы начинаем с четырехнедельного пилота, еженедельно документируем точки трения и затем решаем, какие корректировки будут обязательными." },
+            { "language": "ckb", "text": "ئەمە دەخەمە ناو پەیوەندیکردنەوە: لۆژیکی پرۆسەی هاوبەش بڕیاری لەسەر دراوە. وردەکاریی ڕۆڵەکان، پێویستیی ڕاهێنان و یاساکانی escalation کراوەن. بە pilotێکی چوار هەفتەیی دەست پێدەکەین، هەفتانە خاڵەکانی کێشە تۆمار دەکەین و پاشان بڕیار دەدەین کام گۆڕانکارییەکان بە شێوەی پابەند وەربگیرێن." },
+            { "language": "kmr", "text": "Ez ê vê yekê têxim nav ragihandinê: lojîka pêvajoya hevpar hatiye biryardan. Hûrgiliyên rolan, hewcedariya perwerdeyê û rêzikên eskalasyonê vekirî ne. Em bi piloteke çar-hefteyî dest pê dikin, xalên tevliheviyê hefte bi hefte belge dikin û paşê biryar didin ka kîjan guhertin bi awayekî girêdayî werin girtin." },
+            { "language": "pl", "text": "Uwzględnię to w komunikacji: wspólna logika procesu jest zdecydowana. Szczegóły ról, potrzeby szkoleniowe i zasady eskalacji pozostają otwarte. Zaczynamy od czterotygodniowego pilotażu, co tydzień dokumentujemy punkty tarcia, a potem decydujemy, które korekty zostaną obowiązująco przyjęte." },
+            { "language": "ro", "text": "Voi include asta în comunicare: logica procesului comun este decisă. Detaliile rolurilor, nevoile de instruire și regulile de escaladare rămân deschise. Începem cu un pilot de patru săptămâni, documentăm săptămânal punctele de fricțiune și apoi decidem ce ajustări vor fi preluate ca obligatorii." },
+            { "language": "sq", "text": "Do ta përfshij këtë në komunikim: logjika e procesit të përbashkët është vendosur. Detajet e roleve, nevojat për trajnim dhe rregullat e eskalimit mbeten të hapura. Fillojmë me një pilot katërjavor, dokumentojmë çdo javë pikat e fërkimit dhe pastaj vendosim cilat përshtatje do të miratohen si të detyrueshme." }
+          ],
+          "function": "transparent-summary",
+          "toneNote": "C1: Die Antwort trennt entschieden/offen und macht Beteiligung überprüfbar.",
+          "expectedLearnerAction": "Summarize decided items, open points, pilot rhythm, and decision criteria transparently."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich würde den Hintergrund offen benennen: Die Übergaben wirken für Kundinnen und Kunden wie ein Bruch. Ziel ist mehr Verlässlichkeit, nicht mehr Kontrolle.",
+              "translations": [
+                { "language": "en", "text": "I would name the background openly: the handovers feel like a break for customers. The goal is more reliability, not more control." },
+                { "language": "fa", "text": "من پیش‌زمینه را شفاف می‌گویم: تحویل‌ها برای مشتریان مثل گسست به نظر می‌رسد. هدف، اطمینان‌پذیری بیشتر است، نه کنترل بیشتر." },
+                { "language": "ar", "text": "سأذكر الخلفية بصراحة: تبدو عمليات التسليم للعملاء كأنها انقطاع. الهدف هو مزيد من الاعتمادية، لا مزيد من الرقابة." },
+                { "language": "tr", "text": "Arka planı açıkça belirtirdim: devirler müşterilere kopukluk gibi geliyor. Amaç daha fazla güvenilirlik, daha fazla kontrol değil." },
+                { "language": "ru", "text": "Я бы открыто назвал фон: передачи выглядят для клиентов как разрыв. Цель — больше надежности, а не больше контроля." },
+                { "language": "ckb", "text": "پاشبنەماکە بە کراوەیی دەڵێم: گواستنەوەکان بۆ کڕیاران وەک پچڕان دەردەکەون. ئامانج پشتپێبەستنی زیاترە، نە کۆنترۆڵی زیاتر." },
+                { "language": "kmr", "text": "Ez ê paşxaneyê vekirî nav bikim: radestkirin ji bo xerîdaran wekî qutbûnê xuya dikin. Armanc pêbaweriya zêdetir e, ne kontrola zêdetir." },
+                { "language": "pl", "text": "Otwarcie nazwałbym tło: przekazania wyglądają dla klientów jak przerwanie ciągłości. Celem jest większa niezawodność, nie większa kontrola." },
+                { "language": "ro", "text": "Aș numi deschis contextul: predările par pentru clienți ca o ruptură. Scopul este mai multă fiabilitate, nu mai mult control." },
+                { "language": "sq", "text": "Do ta përmendja hapur sfondin: dorëzimet për klientët duken si ndërprerje. Qëllimi është më shumë besueshmëri, jo më shumë kontroll." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt den Anlass und nimmt eine mögliche Kontrollangst vorweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer explains the reason and anticipates a possible fear of control." },
+                { "language": "fa", "text": "قوی: پاسخ دلیل را توضیح می‌دهد و از قبل به ترس احتمالی از کنترل پاسخ می‌دهد." },
+                { "language": "ar", "text": "قوي: يشرح الجواب السبب ويتوقع خوفاً محتملاً من الرقابة." },
+                { "language": "tr", "text": "Güçlü: cevap nedeni açıklıyor ve olası kontrol korkusunu önceden ele alıyor." },
+                { "language": "ru", "text": "Сильно: ответ объясняет причину и заранее учитывает возможный страх контроля." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هۆکارەکە ڕوون دەکاتەوە و پێشتر وەڵامی ترسی کۆنترۆڵ دەداتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv sedemê rave dike û tirsa kontrolê ya mumkin berê ve digire." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia powód i uprzedza możliwą obawę przed kontrolą." },
+                { "language": "ro", "text": "Puternic: răspunsul explică motivul și anticipează o posibilă teamă de control." },
+                { "language": "sq", "text": "E fortë: përgjigjja shpjegon arsyen dhe parashikon frikën e mundshme nga kontrolli." }
+              ],
+              "explanationKey": "change-rationale-with-reframing"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde sagen, dass die Geschäftsleitung das entschieden hat und wir den neuen Prozess deshalb umsetzen müssen.",
+              "translations": [
+                { "language": "en", "text": "I would say that management has decided this and that we therefore have to implement the new process." },
+                { "language": "fa", "text": "می‌گویم مدیریت این را تصمیم گرفته و بنابراین باید فرایند جدید را اجرا کنیم." },
+                { "language": "ar", "text": "سأقول إن الإدارة قررت ذلك ولذلك علينا تنفيذ العملية الجديدة." },
+                { "language": "tr", "text": "Yönetimin buna karar verdiğini ve bu yüzden yeni süreci uygulamamız gerektiğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал, что руководство так решило и поэтому мы должны внедрить новый процесс." },
+                { "language": "ckb", "text": "دەڵێم بەڕێوەبەرایەتی ئەمەی بڕیار داوە و بۆیە دەبێت پرۆسەی نوێ جێبەجێ بکەین." },
+                { "language": "kmr", "text": "Ez ê bibêjim rêveberiyê ev biryar daye û ji ber vê yekê divê em pêvajoya nû bicîh bikin." },
+                { "language": "pl", "text": "Powiedziałbym, że kierownictwo tak zdecydowało i dlatego musimy wdrożyć nowy proces." },
+                { "language": "ro", "text": "Aș spune că managementul a decis acest lucru și de aceea trebuie să implementăm noul proces." },
+                { "language": "sq", "text": "Do të thosha se drejtimi e ka vendosur këtë dhe prandaj duhet ta zbatojmë procesin e ri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu schwach: Die Antwort nennt die Entscheidung, erklärt aber weder Sinn noch Nutzen und erzeugt leicht Abwehr.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too weak: the answer names the decision but explains neither purpose nor benefit and can easily create resistance." },
+                { "language": "fa", "text": "قابل‌باور اما ضعیف: پاسخ فقط تصمیم را نام می‌برد، اما معنا و فایده را توضیح نمی‌دهد و به‌راحتی مقاومت ایجاد می‌کند." },
+                { "language": "ar", "text": "معقول لكنه ضعيف: يذكر الجواب القرار، لكنه لا يشرح المعنى ولا الفائدة ويمكن أن يثير مقاومة بسهولة." },
+                { "language": "tr", "text": "Makuldür ama zayıf: cevap kararı belirtir, ancak amacı veya faydayı açıklamaz ve kolayca direnç yaratabilir." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: ответ называет решение, но не объясняет ни смысл, ни пользу и легко вызывает сопротивление." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام لاوازە: وەڵامەکە بڕیارەکە ناو دەبات، بەڵام نە مانا و نە سوود ڕوون ناکاتەوە و بە ئاسانی بەربەرەکانێ دروست دەکات." },
+                { "language": "kmr", "text": "Bawerbar e lê lawaz e: bersiv biryarê nav dike, lê ne armanc û ne sûdê rave nake û bi hêsanî berxwedan çêdike." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt słabe: odpowiedź nazywa decyzję, lecz nie wyjaśnia sensu ani korzyści i łatwo budzi opór." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: răspunsul numește decizia, dar nu explică nici sensul, nici beneficiul și poate crea ușor rezistență." },
+                { "language": "sq", "text": "E besueshme, por e dobët: përgjigjja përmend vendimin, por nuk shpjegon as qëllimin, as përfitimin dhe mund të krijojë lehtë rezistencë." }
+              ],
+              "explanationKey": "authority-only-change-communication"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Die Sorge ist berechtigt. Ich würde Übergangsaufwand und Zielbild trennen und für die ersten Wochen Zuständigkeiten, Verantwortungstabelle und Eskalationswege festlegen.",
+              "translations": [
+                { "language": "en", "text": "The concern is justified. I would separate transition effort from the target picture and define responsibilities, a responsibility matrix, and escalation paths for the first weeks." },
+                { "language": "fa", "text": "نگرانی موجه است. من هزینه‌ی دوره گذار را از تصویر هدف جدا می‌کنم و برای هفته‌های اول مسئولیت‌ها، جدول مسئولیت و مسیرهای escalation را تعیین می‌کنم." },
+                { "language": "ar", "text": "القلق مبرر. سأفصل بين جهد الانتقال والصورة المستهدفة وأحدد للأسبوع الأولى المسؤوليات وجدول المسؤولية ومسارات التصعيد." },
+                { "language": "tr", "text": "Endişe haklı. Geçiş yükünü hedef resimden ayırır, ilk haftalar için sorumlulukları, sorumluluk tablosunu ve eskalasyon yollarını belirlerdim." },
+                { "language": "ru", "text": "Опасение оправдано. Я бы отделил переходные затраты от целевой картины и на первые недели определил ответственности, матрицу ответственности и пути эскалации." },
+                { "language": "ckb", "text": "نیگەرانییەکە ڕەوایە. من تێچوونی قۆناغی گواستنەوە لە وێنەی ئامانج جیا دەکەمەوە و بۆ هەفتەکانی یەکەم بەرپرسیارێتی، خشتەی بەرپرسیارێتی و ڕێگای escalation دیاری دەکەم." },
+                { "language": "kmr", "text": "Xem rast e. Ez ê barê derbasbûnê ji wêneya armancê cuda bikim û ji bo hefteyên yekem berpirsiyariyan, tabloya berpirsiyariyê û rêyên eskalasyonê diyar bikim." },
+                { "language": "pl", "text": "Obawa jest uzasadniona. Oddzieliłbym nakład przejściowy od obrazu docelowego i na pierwsze tygodnie ustalił odpowiedzialności, tabelę odpowiedzialności i ścieżki eskalacji." },
+                { "language": "ro", "text": "Îngrijorarea este justificată. Aș separa efortul de tranziție de imaginea țintă și aș stabili pentru primele săptămâni responsabilități, matrice de responsabilitate și căi de escaladare." },
+                { "language": "sq", "text": "Shqetësimi është i justifikuar. Do ta ndaja përpjekjen e kalimit nga pamja e synuar dhe për javët e para do të përcaktoja përgjegjësi, tabelë përgjegjësish dhe rrugë eskalimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort validiert die Sorge und macht die Umsetzung konkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer validates the concern and makes implementation concrete." },
+                { "language": "fa", "text": "قوی: پاسخ نگرانی را معتبر می‌داند و اجرای تغییر را مشخص می‌کند." },
+                { "language": "ar", "text": "قوي: يؤكد الجواب وجاهة القلق ويجعل التنفيذ ملموساً." },
+                { "language": "tr", "text": "Güçlü: cevap endişeyi doğrular ve uygulamayı somutlaştırır." },
+                { "language": "ru", "text": "Сильно: ответ признает опасение и делает внедрение конкретным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانییەکە بە ڕەوا دەزانێت و جێبەجێکردنەکە دیاریکراو دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv xemê rast dibîne û pêkanînê zehf diyar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje obawę i konkretyzuje wdrożenie." },
+                { "language": "ro", "text": "Puternic: răspunsul validează îngrijorarea și concretizează implementarea." },
+                { "language": "sq", "text": "E fortë: përgjigjja e vlerëson shqetësimin dhe e bën zbatimin konkret." }
+              ],
+              "explanationKey": "validate-and-structure-transition"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde sagen, dass die Zuständigkeiten im Laufe der Zeit schon klarer werden, wenn alle erst einmal mit dem neuen Prozess arbeiten.",
+              "translations": [
+                { "language": "en", "text": "I would say that responsibilities will become clearer over time once everyone starts working with the new process." },
+                { "language": "fa", "text": "می‌گویم مسئولیت‌ها با گذشت زمان روشن‌تر می‌شوند، وقتی همه ابتدا با فرایند جدید کار کنند." },
+                { "language": "ar", "text": "سأقول إن المسؤوليات ستتضح مع الوقت عندما يبدأ الجميع العمل بالعملية الجديدة." },
+                { "language": "tr", "text": "Herkes yeni süreçle çalışmaya başladıktan sonra sorumlulukların zamanla netleşeceğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал, что со временем ответственности станут яснее, когда все начнут работать с новым процессом." },
+                { "language": "ckb", "text": "دەڵێم بەرپرسیارێتییەکان بە تێپەڕبوونی کات ڕوونتر دەبن، کاتێک هەمووان یەکەم جار لەگەڵ پرۆسەی نوێ کار دەکەن." },
+                { "language": "kmr", "text": "Ez ê bibêjim berpirsiyarî bi demê zelaltir dibin, dema herkes dest bi karê pêvajoya nû bike." },
+                { "language": "pl", "text": "Powiedziałbym, że odpowiedzialności z czasem się wyjaśnią, gdy wszyscy zaczną pracować w nowym procesie." },
+                { "language": "ro", "text": "Aș spune că responsabilitățile se vor clarifica în timp, după ce toți vor începe să lucreze cu noul proces." },
+                { "language": "sq", "text": "Do të thosha se përgjegjësitë do të qartësohen me kalimin e kohës, pasi të gjithë të fillojnë të punojnë me procesin e ri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unzureichend: Die Antwort verschiebt das Problem und gibt dem Team keine Sicherheit für die Übergangsphase.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but insufficient: the answer postpones the problem and gives the team no security for the transition phase." },
+                { "language": "fa", "text": "قابل‌باور اما ناکافی: پاسخ مشکل را به آینده موکول می‌کند و برای مرحله گذار به تیم اطمینان نمی‌دهد." },
+                { "language": "ar", "text": "معقول لكنه غير كاف: يؤجل الجواب المشكلة ولا يمنح الفريق أماناً في مرحلة الانتقال." },
+                { "language": "tr", "text": "Makuldür ama yetersiz: cevap sorunu erteler ve geçiş aşaması için ekibe güven vermez." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно: ответ откладывает проблему и не дает команде уверенности на переходный период." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام نەبسە: وەڵامەکە کێشەکە دوا دەخات و بۆ قۆناغی گواستنەوە دڵنیایی بە تیم نادات." },
+                { "language": "kmr", "text": "Bawerbar e lê têr nake: bersiv pirsgirêkê paş dixîne û ji bo qonaxa derbasbûnê ewlehiyê nade tîmê." },
+                { "language": "pl", "text": "Prawdopodobne, ale niewystarczające: odpowiedź odkłada problem i nie daje zespołowi bezpieczeństwa w okresie przejściowym." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient: răspunsul amână problema și nu oferă echipei siguranță pentru perioada de tranziție." },
+                { "language": "sq", "text": "E besueshme, por e pamjaftueshme: përgjigjja e shtyn problemin dhe nuk i jep ekipit siguri për fazën e kalimit." }
+              ],
+              "explanationKey": "wait-and-see-is-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Wir sollten betonen, dass Spezialisierung erhalten bleibt und früher genutzt wird: Expertinnen und Experten werden nicht ersetzt, sondern an kritischen Übergängen sichtbarer eingebunden.",
+              "translations": [
+                { "language": "en", "text": "We should emphasize that specialization remains and is used earlier: experts are not replaced, but involved more visibly at critical transitions." },
+                { "language": "fa", "text": "باید تأکید کنیم که تخصص حفظ می‌شود و زودتر به کار می‌آید: متخصصان جایگزین نمی‌شوند، بلکه در گذارهای حساس قابل‌دیدتر درگیر می‌شوند." },
+                { "language": "ar", "text": "ينبغي أن نؤكد أن التخصص يبقى ويُستخدم في وقت أبكر: لا يتم استبدال الخبراء، بل يتم إشراكهم بشكل أوضح عند نقاط الانتقال الحرجة." },
+                { "language": "tr", "text": "Uzmanlığın korunduğunu ve daha erken kullanıldığını vurgulamalıyız: uzmanların yerine başkaları geçmiyor, kritik geçişlerde daha görünür biçimde dahil ediliyorlar." },
+                { "language": "ru", "text": "Нужно подчеркнуть, что специализация сохраняется и используется раньше: экспертов не заменяют, а заметнее вовлекают в критические переходы." },
+                { "language": "ckb", "text": "پێویستە جەخت بکەینەوە کە شارەزایی دەمێنێت و زووتر بەکاردەهێنرێت: شارەزایان ناگۆڕدرێن، بەڵکو لە گواستنەوە گرنگەکاندا دیارتر بەشدار دەکرێن." },
+                { "language": "kmr", "text": "Divê em tekez bikin ku pisporî dimîne û zûtir tê bikaranîn: pispor nayên guherandin, lê di derbasbûnên krîtîk de xuyaştir têne tevlîkirin." },
+                { "language": "pl", "text": "Powinniśmy podkreślić, że specjalizacja pozostaje i jest wykorzystywana wcześniej: eksperci nie są zastępowani, lecz bardziej widocznie włączani w krytycznych przejściach." },
+                { "language": "ro", "text": "Ar trebui să subliniem că specializarea rămâne și este folosită mai devreme: experții nu sunt înlocuiți, ci implicați mai vizibil la tranzițiile critice." },
+                { "language": "sq", "text": "Duhet të theksojmë se specializimi mbetet dhe përdoret më herët: ekspertët nuk zëvendësohen, por përfshihen më dukshëm në kalimet kritike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt Statussorgen auf und zeigt, wie Expertise im neuen Prozess wertvoll bleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer addresses status concerns and shows how expertise remains valuable in the new process." },
+                { "language": "fa", "text": "قوی: پاسخ نگرانی‌های مربوط به جایگاه را می‌گیرد و نشان می‌دهد تخصص در فرایند جدید ارزشمند می‌ماند." },
+                { "language": "ar", "text": "قوي: يعالج الجواب مخاوف المكانة ويبين كيف تبقى الخبرة ذات قيمة في العملية الجديدة." },
+                { "language": "tr", "text": "Güçlü: cevap statü kaygılarını ele alır ve uzmanlığın yeni süreçte nasıl değerli kaldığını gösterir." },
+                { "language": "ru", "text": "Сильно: ответ учитывает опасения по поводу статуса и показывает, как экспертиза остается ценной в новом процессе." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانیی پێگە دەگرێتەوە و پیشان دەدات شارەزایی چۆن لە پرۆسەی نوێدا بە نرخ دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv xemanên statûyê digire û nîşan dide pisporî çawa di pêvajoya nû de bi nirx dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź uwzględnia obawy o status i pokazuje, jak ekspertyza pozostaje wartościowa w nowym procesie." },
+                { "language": "ro", "text": "Puternic: răspunsul abordează temerile legate de statut și arată cum expertiza rămâne valoroasă în noul proces." },
+                { "language": "sq", "text": "E fortë: përgjigjja trajton shqetësimet për statusin dhe tregon si ekspertiza mbetet e vlefshme në procesin e ri." }
+              ],
+              "explanationKey": "expertise-kept-and-used-earlier"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde erklären, dass in modernen Organisationen alle etwas breiter arbeiten müssen und Spezialisierung deshalb weniger wichtig wird.",
+              "translations": [
+                { "language": "en", "text": "I would explain that in modern organizations everyone has to work somewhat more broadly and that specialization therefore becomes less important." },
+                { "language": "fa", "text": "توضیح می‌دهم که در سازمان‌های مدرن همه باید کمی گسترده‌تر کار کنند و بنابراین تخصص کمتر مهم می‌شود." },
+                { "language": "ar", "text": "سأشرح أنه في المؤسسات الحديثة يجب على الجميع العمل بشكل أوسع قليلاً، ولذلك يصبح التخصص أقل أهمية." },
+                { "language": "tr", "text": "Modern organizasyonlarda herkesin biraz daha geniş çalışması gerektiğini ve bu nedenle uzmanlığın daha az önemli olduğunu açıklardım." },
+                { "language": "ru", "text": "Я бы объяснил, что в современных организациях все должны работать несколько шире и поэтому специализация становится менее важной." },
+                { "language": "ckb", "text": "ڕوون دەکەمەوە کە لە ڕێکخراوە نوێکاندا هەمووان دەبێت کەمێک فراوانتر کار بکەن و بۆیە شارەزایی کەمتر گرنگ دەبێت." },
+                { "language": "kmr", "text": "Ez ê rave bikim ku di rêxistinên nûjen de divê herkes hinekî firehtir bixebite û ji ber vê yekê pisporî kêm girîng dibe." },
+                { "language": "pl", "text": "Wyjaśniłbym, że w nowoczesnych organizacjach wszyscy muszą pracować trochę szerzej, dlatego specjalizacja staje się mniej ważna." },
+                { "language": "ro", "text": "Aș explica faptul că în organizațiile moderne toți trebuie să lucreze puțin mai larg și că specializarea devine astfel mai puțin importantă." },
+                { "language": "sq", "text": "Do të shpjegoja se në organizatat moderne të gjithë duhet të punojnë pak më gjerë dhe prandaj specializimi bëhet më pak i rëndësishëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant: Die Antwort bestätigt genau die Angst vor Entwertung und macht den Change sozial schwerer vermittelbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but risky: the answer confirms exactly the fear of devaluation and makes the change socially harder to communicate." },
+                { "language": "fa", "text": "قابل‌باور اما پرریسک: پاسخ دقیقاً ترس از بی‌ارزش شدن را تأیید می‌کند و توضیح اجتماعی تغییر را دشوارتر می‌کند." },
+                { "language": "ar", "text": "معقول لكنه محفوف بالمخاطر: يؤكد الجواب بالضبط الخوف من فقدان القيمة ويجعل شرح التغيير اجتماعياً أصعب." },
+                { "language": "tr", "text": "Makuldür ama riskli: cevap tam da değersizleşme korkusunu doğrular ve değişimin sosyal olarak anlatılmasını zorlaştırır." },
+                { "language": "ru", "text": "Правдоподобно, но рискованно: ответ подтверждает именно страх обесценивания и делает изменение социально труднее объяснимым." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام مەترسیدارە: وەڵامەکە هەمان ترسی بێ نرخبوون پشتڕاست دەکاتەوە و گۆڕانەکە لە کۆمەڵایەتیدا قورس‌تر دەکات بۆ ڕوونکردنەوە." },
+                { "language": "kmr", "text": "Bawerbar e lê xeternak e: bersiv tirsê bê-nirxbûnê rast dike û guhertinê ji aliyê civakî ve dijwartir dike ku were ravekirin." },
+                { "language": "pl", "text": "Prawdopodobne, ale ryzykowne: odpowiedź potwierdza dokładnie lęk przed deprecjacją i utrudnia społeczne wyjaśnienie zmiany." },
+                { "language": "ro", "text": "Plauzibil, dar riscant: răspunsul confirmă exact teama de devalorizare și face schimbarea mai greu de comunicat social." },
+                { "language": "sq", "text": "E besueshme, por e rrezikshme: përgjigjja konfirmon pikërisht frikën e zhvlerësimit dhe e bën ndryshimin më të vështirë për t'u komunikuar socialisht." }
+              ],
+              "explanationKey": "devalues-expertise"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich würde keinen reinen Stichtag setzen, sondern Shadowing, Sprechstunden und geschützte Übungszeiten einplanen, damit die neue Übergabe im Alltag wirklich funktioniert.",
+              "translations": [
+                { "language": "en", "text": "I would not set only a launch date, but plan shadowing, office hours, and protected practice time so that the new handover really works in everyday work." },
+                { "language": "fa", "text": "فقط یک تاریخ شروع تعیین نمی‌کنم، بلکه shadowing، ساعت پرسش و زمان تمرین محافظت‌شده برنامه‌ریزی می‌کنم تا تحویل جدید در کار روزمره واقعاً کار کند." },
+                { "language": "ar", "text": "لن أحدد مجرد تاريخ بدء، بل سأخطط للمرافقة وساعات الأسئلة ووقت تدريب محمي حتى تعمل عملية التسليم الجديدة فعلاً في الحياة اليومية." },
+                { "language": "tr", "text": "Sadece bir başlangıç tarihi koymaz, yeni devir günlük işte gerçekten işlesin diye shadowing, danışma saatleri ve korunmuş çalışma zamanı planlardım." },
+                { "language": "ru", "text": "Я бы не ставил только дату запуска, а запланировал шэдоуинг, часы для вопросов и защищенное время для практики, чтобы новая передача действительно работала в повседневности." },
+                { "language": "ckb", "text": "تەنها ڕۆژی دەستپێک دانانام، بەڵکو shadowing، کاتی پرسیار و کاتی ڕاهێنانی پارێزراو پلان دەکەم، بۆ ئەوەی گواستنەوەی نوێ لە کاری ڕۆژانەدا بەڕاستی کار بکات." },
+                { "language": "kmr", "text": "Ez ê tenê rojeke destpêkê danênim, lê shadowing, demên pirsan û demên praktîka parastî plan bikim da ku radestkirina nû di karê rojane de bi rastî bixebite." },
+                { "language": "pl", "text": "Nie wyznaczyłbym tylko daty startu, lecz zaplanował shadowing, dyżury na pytania i chroniony czas ćwiczeń, aby nowe przekazanie naprawdę działało w codziennej pracy." },
+                { "language": "ro", "text": "Nu aș stabili doar o dată de lansare, ci aș planifica shadowing, ore pentru întrebări și timp protejat de exercițiu, astfel încât noua predare să funcționeze cu adevărat în munca zilnică." },
+                { "language": "sq", "text": "Nuk do të vendosja vetëm një datë nisjeje, por do të planifikoja shadowing, orare për pyetje dhe kohë të mbrojtur praktike, që dorëzimi i ri të funksionojë vërtet në punën e përditshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht den Change lernbar und schützt die Qualität der Übergangsphase.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer makes the change learnable and protects the quality of the transition phase." },
+                { "language": "fa", "text": "قوی: پاسخ تغییر را قابل‌یادگیری می‌کند و کیفیت مرحله گذار را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: يجعل الجواب التغيير قابلاً للتعلم ويحمي جودة مرحلة الانتقال." },
+                { "language": "tr", "text": "Güçlü: cevap değişimi öğrenilebilir kılar ve geçiş aşamasının kalitesini korur." },
+                { "language": "ru", "text": "Сильно: ответ делает изменение обучаемым и защищает качество переходного этапа." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گۆڕانەکە دەکاتە شتێکی فێربوون‌پێکراو و کوالێتیی قۆناغی گواستنەوە دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv guhertinê dike fêrbar û kalîteya qonaxa derbasbûnê diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź sprawia, że zmiana staje się możliwa do nauczenia, i chroni jakość okresu przejściowego." },
+                { "language": "ro", "text": "Puternic: răspunsul face schimbarea învățabilă și protejează calitatea fazei de tranziție." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën ndryshimin të mësueshëm dhe mbron cilësinë e fazës së kalimit." }
+              ],
+              "explanationKey": "transition-support"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde die wichtigsten Informationen in einem Dokument sammeln, damit alle selbst nachlesen können, wie der neue Prozess gemeint ist.",
+              "translations": [
+                { "language": "en", "text": "I would collect the most important information in a document so that everyone can read for themselves how the new process is intended." },
+                { "language": "fa", "text": "مهم‌ترین اطلاعات را در یک سند جمع می‌کنم تا همه خودشان بخوانند فرایند جدید چگونه منظور شده است." },
+                { "language": "ar", "text": "سأجمع أهم المعلومات في وثيقة حتى يستطيع الجميع أن يقرأوا بأنفسهم كيف يُقصد بالعملية الجديدة أن تعمل." },
+                { "language": "tr", "text": "En önemli bilgileri bir belgede toplardım, böylece herkes yeni sürecin nasıl tasarlandığını kendi okuyabilir." },
+                { "language": "ru", "text": "Я бы собрал самую важную информацию в документе, чтобы все сами могли прочитать, как задуман новый процесс." },
+                { "language": "ckb", "text": "گرنگترین زانیارییەکان لە بەڵگەنامەیەکدا کۆدەکەمەوە، بۆ ئەوەی هەمووان خۆیان بخوێننەوە پرۆسەی نوێ چۆن مەبەستە." },
+                { "language": "kmr", "text": "Ez ê agahiyên herî girîng di belgeyekê de kom bikim da ku herkes bixwe bixwîne pêvajoya nû çawa tê armanc kirin." },
+                { "language": "pl", "text": "Zebrałbym najważniejsze informacje w dokumencie, aby każdy mógł sam przeczytać, jak rozumiany jest nowy proces." },
+                { "language": "ro", "text": "Aș aduna cele mai importante informații într-un document, astfel încât fiecare să poată citi singur cum este gândit noul proces." },
+                { "language": "sq", "text": "Do t'i mblidhja informacionet më të rëndësishme në një dokument, që të gjithë të mund të lexojnë vetë si është menduar procesi i ri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht ausreichend: Ein Dokument hilft, ersetzt aber keine begleitete Einübung und keine geschützte Zeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but not sufficient: a document helps, but it does not replace guided practice or protected time." },
+                { "language": "fa", "text": "قابل‌باور اما کافی نیست: سند کمک می‌کند، اما جای تمرین همراه و زمان محافظت‌شده را نمی‌گیرد." },
+                { "language": "ar", "text": "معقول لكنه غير كاف: الوثيقة تساعد، لكنها لا تعوض التدريب المرافق ولا الوقت المحمي." },
+                { "language": "tr", "text": "Makuldür ama yeterli değildir: bir belge yardımcı olur, ancak eşlik edilen pratiğin ve korunmuş zamanın yerini tutmaz." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно: документ помогает, но не заменяет сопровождаемую практику и защищенное время." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام بەس نییە: بەڵگەنامە یارمەتی دەدات، بەڵام جێی ڕاهێنانی هاوڕێکراو و کاتی پارێزراو ناگرێتەوە." },
+                { "language": "kmr", "text": "Bawerbar e lê têr nake: belge alîkar e, lê şûna praktîka bi rêberî û demê parastî nagire." },
+                { "language": "pl", "text": "Prawdopodobne, ale niewystarczające: dokument pomaga, lecz nie zastępuje prowadzonego ćwiczenia ani chronionego czasu." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient: un document ajută, dar nu înlocuiește exersarea ghidată și timpul protejat." },
+                { "language": "sq", "text": "E besueshme, por jo e mjaftueshme: dokumenti ndihmon, por nuk zëvendëson praktikën e udhëzuar dhe kohën e mbrojtur." }
+              ],
+              "explanationKey": "documentation-alone-is-not-support"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "best",
+              "text": "Ich würde Widerstand als Informationsquelle nutzen, konkrete Beispiele sammeln und transparent trennen, was entschieden ist und wo das Team noch Einfluss hat.",
+              "translations": [
+                { "language": "en", "text": "I would use resistance as a source of information, collect concrete examples, and transparently separate what is decided from where the team still has influence." },
+                { "language": "fa", "text": "مقاومت را به‌عنوان منبع اطلاعات به کار می‌گیرم، مثال‌های مشخص جمع می‌کنم و شفاف جدا می‌کنم چه چیزهایی قطعی شده و تیم هنوز کجا اثرگذاری دارد." },
+                { "language": "ar", "text": "سأستخدم المقاومة كمصدر للمعلومات، وأجمع أمثلة ملموسة، وأفصل بشفافية بين ما تم تقريره وما لا يزال للفريق تأثير فيه." },
+                { "language": "tr", "text": "Direnci bir bilgi kaynağı olarak kullanır, somut örnekler toplar ve neyin kararlaştırıldığını, ekibin nerede hâlâ etkisi olduğunu şeffaf biçimde ayırırdım." },
+                { "language": "ru", "text": "Я бы использовал сопротивление как источник информации, собрал конкретные примеры и прозрачно разделил, что уже решено и где команда еще влияет." },
+                { "language": "ckb", "text": "بەربەرەکانێ وەک سەرچاوەی زانیاری بەکاردەهێنم، نموونەی دیاریکراو کۆدەکەمەوە و بە ڕوونی جیا دەکەمەوە چی بڕیاری لەسەر دراوە و تیم لە کوێ هێشتا کاریگەریی هەیە." },
+                { "language": "kmr", "text": "Ez ê berxwedanê wekî çavkaniya agahiyê bikar bînim, mînakên diyar kom bikim û bi zelalî cuda bikim çi biryardayî ye û tîm li ku derê hê jî bandorê heye." },
+                { "language": "pl", "text": "Wykorzystałbym opór jako źródło informacji, zebrał konkretne przykłady i przejrzyście oddzielił to, co zdecydowane, od tego, gdzie zespół nadal ma wpływ." },
+                { "language": "ro", "text": "Aș folosi rezistența ca sursă de informații, aș colecta exemple concrete și aș separa transparent ce este decis de zonele în care echipa mai are influență." },
+                { "language": "sq", "text": "Do ta përdorja rezistencën si burim informacioni, do të mblidhja shembuj konkretë dhe do të ndaja qartë çfarë është vendosur dhe ku ekipi ka ende ndikim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet Schuldzuweisungen und macht Beteiligung glaubwürdig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids blame and makes participation credible." },
+                { "language": "fa", "text": "قوی: پاسخ از مقصر دانستن دوری می‌کند و مشارکت را باورپذیر می‌کند." },
+                { "language": "ar", "text": "قوي: يتجنب الجواب إلقاء اللوم ويجعل المشاركة موثوقة." },
+                { "language": "tr", "text": "Güçlü: cevap suçlamadan kaçınır ve katılımı inandırıcı kılar." },
+                { "language": "ru", "text": "Сильно: ответ избегает обвинений и делает участие заслуживающим доверия." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە تۆمەتبارکردن دوور دەکەوێتەوە و بەشداریکردن باوەڕپێکراو دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji sûcdarkirinê dûr dimîne û beşdarbûnê bawerbar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika przypisywania winy i uwiarygadnia udział zespołu." },
+                { "language": "ro", "text": "Puternic: răspunsul evită învinuirea și face participarea credibilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang fajësimin dhe e bën pjesëmarrjen të besueshme." }
+              ],
+              "explanationKey": "resistance-as-information"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde kritische Stimmen bitten, ihre Bedenken direkt an die Bereichsleitung zu geben, damit die Teamsitzung nicht zu negativ wird.",
+              "translations": [
+                { "language": "en", "text": "I would ask critical voices to give their concerns directly to operations management so that the team meeting does not become too negative." },
+                { "language": "fa", "text": "از افراد منتقد می‌خواهم نگرانی‌هایشان را مستقیم به مدیریت بخش بدهند تا جلسه تیمی بیش از حد منفی نشود." },
+                { "language": "ar", "text": "سأطلب من الأصوات النقدية أن تقدم مخاوفها مباشرة إلى إدارة القسم حتى لا يصبح اجتماع الفريق سلبياً جداً." },
+                { "language": "tr", "text": "Eleştirel seslerden endişelerini doğrudan birim yönetimine iletmelerini isterdim, böylece ekip toplantısı çok olumsuz olmaz." },
+                { "language": "ru", "text": "Я бы попросил критически настроенных коллег передавать свои опасения напрямую руководству направления, чтобы командная встреча не стала слишком негативной." },
+                { "language": "ckb", "text": "لە دەنگە ڕەخنەگرانەکان داوا دەکەم نیگەرانییەکانیان ڕاستەوخۆ بدەنە بەڕێوەبەری بەش، بۆ ئەوەی کۆبوونەوەی تیم زۆر نەرێنی نەبێت." },
+                { "language": "kmr", "text": "Ez ê ji dengên rexneyî bixwazim xemanên xwe rasterast bidin rêveberiya beşê, da ku civîna tîmê pir neyînî nebe." },
+                { "language": "pl", "text": "Poprosiłbym krytyczne osoby, aby przekazywały swoje obawy bezpośrednio kierownictwu obszaru, żeby spotkanie zespołu nie stało się zbyt negatywne." },
+                { "language": "ro", "text": "Aș ruga vocile critice să transmită îngrijorările direct conducerii departamentului, astfel încât ședința echipei să nu devină prea negativă." },
+                { "language": "sq", "text": "Do t'u kërkoja zërave kritikë t'ia japin shqetësimet drejtpërdrejt drejtimit të departamentit, që takimi i ekipit të mos bëhet shumë negativ." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber problematisch: Die Antwort schützt zwar die Sitzung, kann aber echte Beteiligung aus dem Teamgespräch herausdrängen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but problematic: the answer protects the meeting, but can push genuine participation out of the team conversation." },
+                { "language": "fa", "text": "قابل‌باور اما مشکل‌دار: پاسخ جلسه را محافظت می‌کند، اما ممکن است مشارکت واقعی را از گفت‌وگوی تیمی بیرون براند." },
+                { "language": "ar", "text": "معقول لكنه إشكالي: يحمي الجواب الاجتماع، لكنه قد يدفع المشاركة الحقيقية خارج حوار الفريق." },
+                { "language": "tr", "text": "Makuldür ama sorunlu: cevap toplantıyı korur, ancak gerçek katılımı ekip konuşmasının dışına itebilir." },
+                { "language": "ru", "text": "Правдоподобно, но проблематично: ответ защищает встречу, но может вытеснить настоящее участие из командного разговора." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام کێشەدارە: وەڵامەکە کۆبوونەوەکە دەپارێزێت، بەڵام دەتوانێت بەشداربوونی ڕاستەقینە لە گفتوگۆی تیم دەرەوە بخات." },
+                { "language": "kmr", "text": "Bawerbar e lê pirsgirêkdar e: bersiv civînê diparêze, lê dikare beşdarbûna rastîn ji axaftina tîmê derxîne." },
+                { "language": "pl", "text": "Prawdopodobne, ale problematyczne: odpowiedź chroni spotkanie, ale może wypchnąć realne uczestnictwo poza rozmowę zespołową." },
+                { "language": "ro", "text": "Plauzibil, dar problematic: răspunsul protejează ședința, dar poate împinge participarea reală în afara discuției de echipă." },
+                { "language": "sq", "text": "E besueshme, por problematike: përgjigjja e mbron takimin, por mund ta shtyjë pjesëmarrjen reale jashtë bisedës së ekipit." }
+              ],
+              "explanationKey": "moves-criticism-out-of-room"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei Change-Kommunikation auf C1-Niveau reicht ein Beschluss nicht. Eine starke Antwort erklärt Anlass, Ziel und mögliche Sorge in einem Satz.",
+          "translations": [
+            { "language": "en", "text": "In C1-level change communication, a decision alone is not enough. A strong answer explains the reason, goal, and possible concern in one sentence." },
+            { "language": "fa", "text": "در ارتباطات تغییر در سطح C1، صرفاً گفتن تصمیم کافی نیست. پاسخ قوی دلیل، هدف و نگرانی احتمالی را در یک جمله توضیح می‌دهد." },
+            { "language": "ar", "text": "في تواصل التغيير بمستوى C1، لا يكفي ذكر القرار وحده. الجواب القوي يشرح السبب والهدف والقلق المحتمل في جملة واحدة." },
+            { "language": "tr", "text": "C1 düzeyinde değişim iletişiminde karar tek başına yeterli değildir. Güçlü bir cevap nedeni, hedefi ve olası endişeyi tek cümlede açıklar." },
+            { "language": "ru", "text": "В коммуникации изменений на уровне C1 одного решения недостаточно. Сильный ответ объясняет причину, цель и возможное опасение в одном предложении." },
+            { "language": "ckb", "text": "لە پەیوەندیکردنی گۆڕان لە ئاستی C1دا، بڕیار بە تەنها بەس نییە. وەڵامی بەهێز هۆکار، ئامانج و نیگەرانیی ممکن لە یەک ڕستەدا ڕوون دەکاتەوە." },
+            { "language": "kmr", "text": "Di ragihandina guhertinê ya asta C1 de, biryar bi tena xwe têr nake. Bersiveke xurt sedem, armanc û xema mumkin di yek hevokê de rave dike." },
+            { "language": "pl", "text": "W komunikacji zmiany na poziomie C1 sama decyzja nie wystarcza. Mocna odpowiedź wyjaśnia powód, cel i możliwą obawę w jednym zdaniu." },
+            { "language": "ro", "text": "În comunicarea schimbării la nivel C1, o decizie singură nu este suficientă. Un răspuns puternic explică motivul, scopul și posibila îngrijorare într-o singură propoziție." },
+            { "language": "sq", "text": "Në komunikimin e ndryshimit në nivel C1, vendimi i vetëm nuk mjafton. Një përgjigje e fortë shpjegon arsyen, qëllimin dhe shqetësimin e mundshëm në një fjali." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language-function",
+          "text": "Validieren Sie Einwände zuerst und verbinden Sie sie dann mit konkreten Steuerungsmaßnahmen. Das wirkt professioneller als Beschwichtigung.",
+          "translations": [
+            { "language": "en", "text": "Validate objections first and then connect them with concrete control measures. This sounds more professional than reassurance." },
+            { "language": "fa", "text": "اول اعتراض‌ها را معتبر بدانید و سپس آن‌ها را به اقدام‌های مشخص مدیریتی وصل کنید. این حرفه‌ای‌تر از صرفاً آرام کردن است." },
+            { "language": "ar", "text": "أكد وجاهة الاعتراضات أولاً ثم اربطها بإجراءات إدارة ملموسة. هذا يبدو أكثر مهنية من مجرد التطمين." },
+            { "language": "tr", "text": "Önce itirazları doğrulayın, sonra onları somut yönetim önlemleriyle bağlayın. Bu, yatıştırmadan daha profesyonel duyulur." },
+            { "language": "ru", "text": "Сначала признайте возражения, а затем свяжите их с конкретными управленческими мерами. Это звучит профессиональнее, чем успокоение." },
+            { "language": "ckb", "text": "سەرەتا ناڕەزاییەکان بە ڕەوا بزانە و پاشان بیانبەستەوە بە ڕێکارە دیاریکراوەکانی بەڕێوەبردن. ئەمە پیشەیی‌ترە لە ئارامکردنەوەی سادە." },
+            { "language": "kmr", "text": "Pêşî îtirazan rast bibînin û paşê wan bi tedbîrên rêvebirinê yên diyar ve girêdin. Ev ji aramkirinê pîşeyîtir xuya dike." },
+            { "language": "pl", "text": "Najpierw uznaj zastrzeżenia, a potem połącz je z konkretnymi działaniami sterującymi. To brzmi bardziej profesjonalnie niż uspokajanie." },
+            { "language": "ro", "text": "Validați mai întâi obiecțiile și apoi legați-le de măsuri concrete de control. Sună mai profesionist decât simpla liniștire." },
+            { "language": "sq", "text": "Së pari vlerësoni kundërshtimet dhe pastaj lidhini me masa konkrete menaxhimi. Kjo tingëllon më profesionale se thjesht qetësimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "tone",
+          "text": "Bei Statussorgen sollte die Formulierung nicht nach Abwertung klingen. Zeigen Sie, wie vorhandene Expertise im neuen Prozess gebraucht wird.",
+          "translations": [
+            { "language": "en", "text": "When status concerns are involved, the wording should not sound devaluing. Show how existing expertise is needed in the new process." },
+            { "language": "fa", "text": "وقتی نگرانی درباره جایگاه وجود دارد، بیان نباید شبیه بی‌ارزش کردن باشد. نشان دهید تخصص موجود در فرایند جدید لازم است." },
+            { "language": "ar", "text": "عندما توجد مخاوف بشأن المكانة، يجب ألا تبدو الصياغة وكأنها تقلل من القيمة. أظهر كيف تُحتاج الخبرة الموجودة في العملية الجديدة." },
+            { "language": "tr", "text": "Statü kaygıları olduğunda ifade değersizleştirici duyulmamalıdır. Mevcut uzmanlığın yeni süreçte nasıl gerektiğini gösterin." },
+            { "language": "ru", "text": "При опасениях за статус формулировка не должна звучать обесценивающе. Покажите, как существующая экспертиза нужна в новом процессе." },
+            { "language": "ckb", "text": "کاتێک نیگەرانیی پێگە هەیە، دەربڕینەکە نابێت وەک بێ نرخکردن دەنگ بدات. پیشان بدە کە شارەزاییی هەبوو لە پرۆسەی نوێدا چۆن پێویستە." },
+            { "language": "kmr", "text": "Dema xemanên statûyê hebin, vegotin divê wekî bê-nirxkirin xuya neke. Nîşan bidin pisporiya heyî di pêvajoya nû de çawa pêwîst e." },
+            { "language": "pl", "text": "Przy obawach o status sformułowanie nie powinno brzmieć jak deprecjacja. Pokaż, jak istniejąca ekspertyza jest potrzebna w nowym procesie." },
+            { "language": "ro", "text": "Când există temeri legate de statut, formularea nu trebuie să sune devalorizant. Arătați cum expertiza existentă este necesară în noul proces." },
+            { "language": "sq", "text": "Kur ka shqetësime për statusin, formulimi nuk duhet të tingëllojë zhvlerësues. Tregoni si nevojitet ekspertiza ekzistuese në procesin e ri." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "implementation",
+          "text": "Ein guter Change-Beitrag nennt nicht nur die Idee, sondern auch Lernzeit, Begleitung und sichere Übungsräume.",
+          "translations": [
+            { "language": "en", "text": "A good contribution to a change process names not only the idea, but also learning time, support, and safe practice spaces." },
+            { "language": "fa", "text": "مشارکت خوب در فرایند تغییر فقط ایده را نمی‌گوید، بلکه زمان یادگیری، همراهی و فضای امن برای تمرین را هم نام می‌برد." },
+            { "language": "ar", "text": "المساهمة الجيدة في عملية التغيير لا تذكر الفكرة فقط، بل أيضاً وقت التعلم والدعم ومساحات التدريب الآمنة." },
+            { "language": "tr", "text": "İyi bir değişim katkısı yalnızca fikri değil, öğrenme süresini, desteği ve güvenli pratik alanlarını da belirtir." },
+            { "language": "ru", "text": "Хороший вклад в процесс изменений называет не только идею, но и время на обучение, сопровождение и безопасные пространства для практики." },
+            { "language": "ckb", "text": "بەشداریی باش لە پرۆسەی گۆڕاندا تەنها بیرۆکە ناو نابات، بەڵکو کاتی فێربوون، هاوبەشی و شوێنی پارێزراوی ڕاهێنانیش ناو دەبات." },
+            { "language": "kmr", "text": "Beşdariya baş di pêvajoya guhertinê de tenê fikrê nav nake, lê demê fêrbûnê, piştgirî û cihên ewle yên praktîkê jî nav dike." },
+            { "language": "pl", "text": "Dobry wkład w proces zmiany nazywa nie tylko pomysł, lecz także czas na naukę, wsparcie i bezpieczne przestrzenie do ćwiczeń." },
+            { "language": "ro", "text": "O contribuție bună într-un proces de schimbare numește nu doar ideea, ci și timpul de învățare, sprijinul și spațiile sigure de exercițiu." },
+            { "language": "sq", "text": "Një kontribut i mirë në një proces ndryshimi përmend jo vetëm idenë, por edhe kohën e të mësuarit, mbështetjen dhe hapësirat e sigurta të praktikës." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "social-risk",
+          "text": "Kritik sollte nicht aus dem Raum gedrängt werden. C1-Kommunikation unterscheidet zwischen Fakten, Befürchtungen und echten Entscheidungsspielräumen.",
+          "translations": [
+            { "language": "en", "text": "Criticism should not be pushed out of the room. C1 communication distinguishes between facts, fears, and real decision space." },
+            { "language": "fa", "text": "انتقاد نباید از گفت‌وگو بیرون رانده شود. ارتباطات C1 بین واقعیت‌ها، نگرانی‌ها و فضای واقعی تصمیم‌گیری تفاوت می‌گذارد." },
+            { "language": "ar", "text": "لا ينبغي دفع النقد خارج الحوار. تميز تواصل C1 بين الحقائق والمخاوف ومساحات القرار الحقيقية." },
+            { "language": "tr", "text": "Eleştiri odadan dışarı itilmemelidir. C1 iletişimi gerçekler, kaygılar ve gerçek karar alanları arasında ayrım yapar." },
+            { "language": "ru", "text": "Критику не следует вытеснять из разговора. Коммуникация C1 различает факты, опасения и реальные пространства для решений." },
+            { "language": "ckb", "text": "ڕەخنە نابێت لە گفتوگۆکە دەرەوە بدرێت. پەیوەندیکردنی C1 جیاوازی دەکات لە نێوان ڕاستی، ترس و بوارە ڕاستەقینەکانی بڕیاردان." },
+            { "language": "kmr", "text": "Rexne divê ji axaftinê dernekeve. Ragihandina C1 di navbera rastî, tirs û qadên rastîn ên biryardanê de cihê dike." },
+            { "language": "pl", "text": "Krytyki nie należy wypychać poza rozmowę. Komunikacja C1 rozróżnia fakty, obawy i realne przestrzenie decyzyjne." },
+            { "language": "ro", "text": "Critica nu trebuie împinsă în afara discuției. Comunicarea C1 distinge între fapte, temeri și spații reale de decizie." },
+            { "language": "sq", "text": "Kritika nuk duhet të shtyhet jashtë bisedës. Komunikimi C1 dallon mes fakteve, frikave dhe hapësirave reale të vendimmarrjes." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "organizational-change-workshop",
+          "placement": "hero",
+          "purpose": "Show a neutral workplace change workshop with a small team reviewing process steps and support measures.",
+          "altText": "A clean educational illustration of a diverse workplace team discussing process changes around a meeting table.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A diverse workplace team discusses process changes around a meeting table." },
+            { "language": "fa", "text": "یک تیم کاری متنوع دور میز جلسه درباره تغییرات فرایند گفت‌وگو می‌کند." },
+            { "language": "ar", "text": "فريق عمل متنوع يناقش تغييرات العملية حول طاولة اجتماع." },
+            { "language": "tr", "text": "Çeşitli bir iş ekibi toplantı masası etrafında süreç değişikliklerini tartışıyor." },
+            { "language": "ru", "text": "Разнообразная рабочая команда обсуждает изменения процесса за столом совещаний." },
+            { "language": "ckb", "text": "تیمێکی کاری جۆراوجۆر لە دەوری مێزی کۆبوونەوەدا باس لە گۆڕانکاریی پرۆسە دەکات." },
+            { "language": "kmr", "text": "Tîmeke kar a cihêreng li dora maseya civînê guherînên pêvajoyê gotûbêj dike." },
+            { "language": "pl", "text": "Zróżnicowany zespół pracowniczy omawia zmiany procesu przy stole konferencyjnym." },
+            { "language": "ro", "text": "O echipă de lucru diversă discută schimbări de proces în jurul unei mese de ședință." },
+            { "language": "sq", "text": "Një ekip pune i larmishëm diskuton ndryshimet e procesit rreth një tavoline takimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adults in a German workplace meeting room, team discussing process-change cards on a table, visible but unreadable workflow notes, calm professional atmosphere, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

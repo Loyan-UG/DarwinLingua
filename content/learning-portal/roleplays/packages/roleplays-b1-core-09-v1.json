@@ -1,0 +1,985 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-09-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 09 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-fehlende-unterlagen-im-amt-erklaeren",
+      "title": "Fehlende Unterlagen im Amt erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explain missing documents at an office" },
+        { "language": "fa", "text": "توضیح دادن مدارک ناقص در اداره" },
+        { "language": "ar", "text": "شرح نقص المستندات في الدائرة" },
+        { "language": "tr", "text": "Resmi dairede eksik belgeleri açıklamak" },
+        { "language": "ru", "text": "Объяснить отсутствие документов в ведомстве" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی بەڵگەنامەی کەم لە فەرمانگە" },
+        { "language": "kmr", "text": "Li nivîsgehê belgeyên kêm rave kirin" },
+        { "language": "pl", "text": "Wyjaśnić brakujące dokumenty w urzędzie" },
+        { "language": "ro", "text": "Să explici documentele lipsă la instituție" },
+        { "language": "sq", "text": "Të shpjegosh dokumentet që mungojnë në zyrë" }
+      ],
+      "description": "Du bist im Amt und merkst, dass ein Dokument fehlt. Du erklärst den Grund, nennst ein Datum und fragst, wie du das Dokument nachreichen kannst.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at a public office and notice that one document is missing. You explain the reason, give a date, and ask how you can submit the document later." },
+        { "language": "fa", "text": "در اداره هستی و متوجه می‌شوی یک مدرک کم است. دلیل را توضیح می‌دهی، یک تاریخ می‌گویی و می‌پرسی چطور می‌توانی مدرک را بعداً تحویل بدهی." },
+        { "language": "ar", "text": "أنت في دائرة رسمية وتلاحظ أن مستندًا واحدًا ناقص. تشرح السبب، وتذكر تاريخًا، وتسأل كيف يمكنك تقديم المستند لاحقًا." },
+        { "language": "tr", "text": "Resmi dairedesin ve bir belgenin eksik olduğunu fark ediyorsun. Sebebini açıklıyor, bir tarih söylüyor ve belgeyi sonradan nasıl teslim edebileceğini soruyorsun." },
+        { "language": "ru", "text": "Ты находишься в ведомстве и замечаешь, что одного документа не хватает. Ты объясняешь причину, называешь дату и спрашиваешь, как можно донести документ позже." },
+        { "language": "ckb", "text": "لە فەرمانگەیت و تێدەگەیت کە بەڵگەنامەیەک کەمە. هۆکارەکە ڕوون دەکەیتەوە، بەروارێک دەڵێیت و دەپرسی چۆن دەتوانیت دواتر بەڵگەنامەکە پێشکەش بکەیت." },
+        { "language": "kmr", "text": "Tu li nivîsgehê yî û dibînî ku belgeyek kêm e. Tu sedemê rave dikî, dîrokek dibêjî û dipirsî çawa dikarî belgeyê paşê radest bikî." },
+        { "language": "pl", "text": "Jesteś w urzędzie i zauważasz, że brakuje jednego dokumentu. Wyjaśniasz powód, podajesz datę i pytasz, jak możesz dosłać dokument później." },
+        { "language": "ro", "text": "Ești la o instituție și observi că lipsește un document. Explici motivul, dai o dată și întrebi cum poți trimite documentul mai târziu." },
+        { "language": "sq", "text": "Je në një zyrë dhe vëren se mungon një dokument. Shpjegon arsyen, jep një datë dhe pyet si mund ta dorëzosh dokumentin më vonë." }
+      ],
+      "learnerGoal": "Du kannst fehlende Unterlagen sachlich erklären, einen konkreten Nachreichtermin nennen und den nächsten Schritt bestätigen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can explain missing documents factually, name a specific later submission date, and confirm the next step." },
+        { "language": "fa", "text": "می‌توانی مدارک ناقص را دقیق و بی‌حاشیه توضیح بدهی، زمان مشخصی برای تحویل بعدی بگویی و قدم بعدی را تأیید کنی." },
+        { "language": "ar", "text": "يمكنك شرح المستندات الناقصة بشكل موضوعي، وذكر موعد محدد للتقديم لاحقًا، وتأكيد الخطوة التالية." },
+        { "language": "tr", "text": "Eksik belgeleri sakin biçimde açıklayabilir, sonradan teslim için belirli bir tarih söyleyebilir ve sonraki adımı onaylayabilirsin." },
+        { "language": "ru", "text": "Ты можешь спокойно объяснить, каких документов не хватает, назвать конкретный срок подачи позже и подтвердить следующий шаг." },
+        { "language": "ckb", "text": "دەتوانیت بەڵگەنامە کەمەکان بە شێوەیەکی ڕوون ڕوون بکەیتەوە، کاتێکی دیاریکراو بۆ پێشکەشکردنی دواتر بڵێیت و هەنگاوی دواتر پشتڕاست بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî belgeyên kêm bi awayekî zelal rave bikî, demeke diyar ji bo radestkirina paşê bibêjî û gava din piştrast bikî." },
+        { "language": "pl", "text": "Potrafisz rzeczowo wyjaśnić brakujące dokumenty, podać konkretny termin dosłania i potwierdzić następny krok." },
+        { "language": "ro", "text": "Poți explica obiectiv documentele lipsă, poți numi o dată concretă pentru trimiterea ulterioară și poți confirma pasul următor." },
+        { "language": "sq", "text": "Mund të shpjegosh qartë dokumentet që mungojnë, të japësh një datë konkrete për dorëzim të mëvonshëm dhe të konfirmosh hapin tjetër." }
+      ],
+      "cefrLevel": "B1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "documents-and-administration"
+      ],
+      "interactionMode": "government-office",
+      "register": "formal",
+      "taskType": "explain-problem",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "dtz-a2-b1"
+      ],
+      "sortOrder": 2200,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin im Amt",
+          "translations": [
+            { "language": "en", "text": "Office employee" },
+            { "language": "fa", "text": "کارمند اداره" },
+            { "language": "ar", "text": "موظفة الدائرة" },
+            { "language": "tr", "text": "Daire görevlisi" },
+            { "language": "ru", "text": "Сотрудница ведомства" },
+            { "language": "ckb", "text": "کارمەندی فەرمانگە" },
+            { "language": "kmr", "text": "Karmenda nivîsgehê" },
+            { "language": "pl", "text": "Pracowniczka urzędu" },
+            { "language": "ro", "text": "Funcționară" },
+            { "language": "sq", "text": "Punonjëse e zyrës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Besucherin oder Besucher",
+          "translations": [
+            { "language": "en", "text": "Visitor" },
+            { "language": "fa", "text": "مراجعه‌کننده" },
+            { "language": "ar", "text": "مراجع" },
+            { "language": "tr", "text": "Başvuran kişi" },
+            { "language": "ru", "text": "Посетитель" },
+            { "language": "ckb", "text": "سەردانکەر" },
+            { "language": "kmr", "text": "Serdanvan" },
+            { "language": "pl", "text": "Petent" },
+            { "language": "ro", "text": "Persoană solicitantă" },
+            { "language": "sq", "text": "Vizitor" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Ich sehe Ihren Antrag. Hier fehlt noch die Kopie der Meldebescheinigung. Haben Sie die dabei?",
+          "translations": [
+            { "language": "en", "text": "I see your application. The copy of the registration certificate is still missing here. Do you have it with you?" },
+            { "language": "fa", "text": "درخواست شما را می‌بینم. اینجا هنوز کپی گواهی ثبت آدرس کم است. آیا همراهتان دارید؟" },
+            { "language": "ar", "text": "أرى طلبك. لا تزال نسخة شهادة تسجيل السكن ناقصة هنا. هل هي معك؟" },
+            { "language": "tr", "text": "Başvurunuzu görüyorum. Burada ikamet kayıt belgesinin kopyası hâlâ eksik. Yanınızda var mı?" },
+            { "language": "ru", "text": "Я вижу ваше заявление. Здесь еще не хватает копии справки о регистрации места жительства. Она у вас с собой?" },
+            { "language": "ckb", "text": "داواکارییەکەتان دەبینم. لێرە هێشتا کۆپی بڕوانامەی تۆمارکردنی ناونیشان کەمە. لەگەڵتانە؟" },
+            { "language": "kmr", "text": "Ez daxwaza we dibînim. Li vir hîn kopiya belgeya qeydkirina navnîşanê kêm e. Ew bi we re heye?" },
+            { "language": "pl", "text": "Widzę pański wniosek. Brakuje tu jeszcze kopii zaświadczenia o zameldowaniu. Czy ma ją pan przy sobie?" },
+            { "language": "ro", "text": "Văd cererea dumneavoastră. Aici lipsește încă copia certificatului de înregistrare a domiciliului. O aveți la dumneavoastră?" },
+            { "language": "sq", "text": "E shoh kërkesën tuaj. Këtu mungon ende kopja e vërtetimit të regjistrimit të adresës. A e keni me vete?" }
+          ],
+          "function": "identify-missing-document",
+          "toneNote": "Formal office clarification.",
+          "expectedLearnerAction": "Explain why the document is missing."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Leider nicht. Ich habe die Bescheinigung gestern erst bekommen und konnte heute keine Kopie mehr machen.",
+          "translations": [
+            { "language": "en", "text": "Unfortunately not. I only received the certificate yesterday and could not make a copy today anymore." },
+            { "language": "fa", "text": "متأسفانه نه. گواهی را تازه دیروز گرفتم و امروز دیگر نتوانستم کپی تهیه کنم." },
+            { "language": "ar", "text": "للأسف لا. حصلت على الشهادة أمس فقط، ولم أتمكن اليوم من عمل نسخة منها." },
+            { "language": "tr", "text": "Maalesef hayır. Belgeyi ancak dün aldım ve bugün artık kopya çıkaramadım." },
+            { "language": "ru", "text": "К сожалению, нет. Я получил справку только вчера и сегодня уже не смог сделать копию." },
+            { "language": "ckb", "text": "بەداخەوە نەخێر. بڕوانامەکەم تەنها دوێنێ وەرگرت و ئەمڕۆ نەمتوانی کۆپی بکەم." },
+            { "language": "kmr", "text": "Mixabin na. Min belge tenê duh wergirt û îro êdî min nikarî kopiyek jê çêkim." },
+            { "language": "pl", "text": "Niestety nie. Otrzymałem zaświadczenie dopiero wczoraj i dzisiaj nie zdążyłem już zrobić kopii." },
+            { "language": "ro", "text": "Din păcate, nu. Am primit certificatul abia ieri și astăzi nu am mai putut face o copie." },
+            { "language": "sq", "text": "Fatkeqësisht jo. Vërtetimin e mora vetëm dje dhe sot nuk arrita më të bëj kopje." }
+          ],
+          "function": "explain-missing-document",
+          "toneNote": "Factual and apologetic.",
+          "expectedLearnerAction": "Give a reason without overexplaining."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Ohne die Kopie kann ich den Antrag noch nicht abschließend bearbeiten.",
+          "translations": [
+            { "language": "en", "text": "Without the copy, I cannot finish processing the application yet." },
+            { "language": "fa", "text": "بدون این کپی، هنوز نمی‌توانم رسیدگی به درخواست را نهایی کنم." },
+            { "language": "ar", "text": "من دون النسخة لا أستطيع بعد إنهاء معالجة الطلب." },
+            { "language": "tr", "text": "Kopya olmadan başvuruyu henüz son olarak işleme alamam." },
+            { "language": "ru", "text": "Без копии я пока не могу окончательно обработать заявление." },
+            { "language": "ckb", "text": "بێ ئەو کۆپییە، هێشتا ناتوانم داواکارییەکە بە تەواوی چارەسەر بکەم." },
+            { "language": "kmr", "text": "Bê kopiyê ez hîn nikarim daxwazê bi dawî bi rê ve bibim." },
+            { "language": "pl", "text": "Bez tej kopii nie mogę jeszcze zakończyć opracowania wniosku." },
+            { "language": "ro", "text": "Fără copie nu pot finaliza încă procesarea cererii." },
+            { "language": "sq", "text": "Pa kopjen nuk mund ta përfundoj ende përpunimin e kërkesës." }
+          ],
+          "function": "explain-consequence",
+          "toneNote": "Formal consequence.",
+          "expectedLearnerAction": "Ask for a concrete submission path."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Kann ich die Kopie bis Freitag per E-Mail nachreichen, oder muss ich noch einmal persönlich vorbeikommen?",
+          "translations": [
+            { "language": "en", "text": "I understand. Can I submit the copy by email by Friday, or do I have to come by in person again?" },
+            { "language": "fa", "text": "متوجه هستم. آیا می‌توانم کپی را تا جمعه از طریق ایمیل ارسال کنم، یا باید دوباره حضوری مراجعه کنم؟" },
+            { "language": "ar", "text": "أفهم ذلك. هل يمكنني إرسال النسخة بالبريد الإلكتروني حتى يوم الجمعة، أم يجب أن أحضر شخصيًا مرة أخرى؟" },
+            { "language": "tr", "text": "Anlıyorum. Kopyayı cuma gününe kadar e-posta ile gönderebilir miyim, yoksa tekrar şahsen gelmem mi gerekiyor?" },
+            { "language": "ru", "text": "Я понимаю. Могу ли я дослать копию по электронной почте до пятницы или мне нужно еще раз прийти лично?" },
+            { "language": "ckb", "text": "تێدەگەم. دەتوانم کۆپییەکە تا هەینی بە ئیمەیڵ بنێرم، یان پێویستە جارێکی تر بەخۆم بێم؟" },
+            { "language": "kmr", "text": "Ez têdigihîjim. Ez dikarim kopiyê heta roja înê bi e-nameyê bişînim, an divê careke din bi xwe bêm?" },
+            { "language": "pl", "text": "Rozumiem. Czy mogę dosłać kopię do piątku e-mailem, czy muszę jeszcze raz przyjść osobiście?" },
+            { "language": "ro", "text": "Înțeleg. Pot trimite copia prin e-mail până vineri sau trebuie să vin încă o dată personal?" },
+            { "language": "sq", "text": "E kuptoj. A mund ta dërgoj kopjen me email deri të premten, apo duhet të vij edhe një herë personalisht?" }
+          ],
+          "function": "ask-submission-path",
+          "toneNote": "Specific deadline and channel question.",
+          "expectedLearnerAction": "Ask how and when to submit the missing document."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Per E-Mail ist möglich. Bitte schicken Sie die Kopie bis Freitag 12 Uhr an diese Adresse.",
+          "translations": [
+            { "language": "en", "text": "Email is possible. Please send the copy to this address by Friday at noon." },
+            { "language": "fa", "text": "از طریق ایمیل ممکن است. لطفاً کپی را تا جمعه ساعت ۱۲ به این آدرس بفرستید." },
+            { "language": "ar", "text": "الإرسال بالبريد الإلكتروني ممكن. يرجى إرسال النسخة إلى هذا العنوان حتى يوم الجمعة الساعة الثانية عشرة." },
+            { "language": "tr", "text": "E-posta ile mümkün. Lütfen kopyayı cuma günü saat 12'ye kadar bu adrese gönderin." },
+            { "language": "ru", "text": "По электронной почте можно. Пожалуйста, отправьте копию на этот адрес до пятницы, 12 часов." },
+            { "language": "ckb", "text": "بە ئیمەیڵ دەکرێت. تکایە کۆپییەکە تا هەینی کاتژمێر ۱۲ بۆ ئەم ناونیشانە بنێرن." },
+            { "language": "kmr", "text": "Bi e-nameyê gengaz e. Ji kerema xwe kopiyê heta roja înê saet 12 ji vê navnîşanê re bişînin." },
+            { "language": "pl", "text": "E-mailem jest możliwe. Proszę wysłać kopię na ten adres do piątku do godziny 12." },
+            { "language": "ro", "text": "Prin e-mail este posibil. Vă rog să trimiteți copia la această adresă până vineri la ora 12." },
+            { "language": "sq", "text": "Me email është e mundur. Ju lutem dërgojeni kopjen në këtë adresë deri të premten në orën 12." }
+          ],
+          "function": "give-deadline-channel",
+          "toneNote": "Clear instruction.",
+          "expectedLearnerAction": "Confirm what information to include."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Soll ich im Betreff meine Antragsnummer und meinen Namen angeben?",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Should I include my application number and my name in the subject line?" },
+            { "language": "fa", "text": "خیلی ممنون. آیا باید در موضوع ایمیل شماره درخواست و نامم را بنویسم؟" },
+            { "language": "ar", "text": "شكرًا جزيلًا. هل ينبغي أن أذكر رقم طلبي واسمي في خانة الموضوع؟" },
+            { "language": "tr", "text": "Çok teşekkür ederim. Konu kısmına başvuru numaramı ve adımı yazmalı mıyım?" },
+            { "language": "ru", "text": "Большое спасибо. Нужно ли указать в теме письма номер моего заявления и мое имя?" },
+            { "language": "ckb", "text": "زۆر سوپاس. ئایا پێویستە لە بابەتی ئیمەیڵەکەدا ژمارەی داواکاری و ناوم بنووسم؟" },
+            { "language": "kmr", "text": "Gelek spas. Divê ez di mijara e-nameyê de jimareya daxwazê û navê xwe binivîsim?" },
+            { "language": "pl", "text": "Bardzo dziękuję. Czy w temacie mam podać numer wniosku i swoje nazwisko?" },
+            { "language": "ro", "text": "Vă mulțumesc mult. Să trec în subiect numărul cererii și numele meu?" },
+            { "language": "sq", "text": "Shumë faleminderit. A duhet të shkruaj në subjekt numrin e kërkesës dhe emrin tim?" }
+          ],
+          "function": "ask-subject-line",
+          "toneNote": "Shows careful administrative follow-up.",
+          "expectedLearnerAction": "Ask how to make the submission identifiable."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Ja, genau. Dann können wir die Unterlage Ihrem Antrag direkt zuordnen.",
+          "translations": [
+            { "language": "en", "text": "Yes, exactly. Then we can assign the document directly to your application." },
+            { "language": "fa", "text": "بله، دقیقاً. در این صورت می‌توانیم مدرک را مستقیم به درخواست شما وصل کنیم." },
+            { "language": "ar", "text": "نعم، بالضبط. عندها يمكننا ربط المستند مباشرة بطلبك." },
+            { "language": "tr", "text": "Evet, aynen. Böylece belgeyi doğrudan başvurunuza bağlayabiliriz." },
+            { "language": "ru", "text": "Да, именно. Тогда мы сможем сразу отнести документ к вашему заявлению." },
+            { "language": "ckb", "text": "بەڵێ، ڕاستە. ئەوکات دەتوانین بەڵگەنامەکە ڕاستەوخۆ بە داواکارییەکەتانەوە ببەستین." },
+            { "language": "kmr", "text": "Erê, rast e. Wê demê em dikarin belgeyê rasterast bi daxwaza we ve girê bidin." },
+            { "language": "pl", "text": "Tak, dokładnie. Wtedy możemy od razu przypisać dokument do pańskiego wniosku." },
+            { "language": "ro", "text": "Da, exact. Atunci putem asocia documentul direct cu cererea dumneavoastră." },
+            { "language": "sq", "text": "Po, saktësisht. Atëherë mund ta lidhim dokumentin drejtpërdrejt me kërkesën tuaj." }
+          ],
+          "function": "confirm-identification",
+          "toneNote": "Confirms administrative detail.",
+          "expectedLearnerAction": "Summarize deadline, channel, and subject details."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Alles klar. Ich sende die Kopie der Meldebescheinigung bis Freitag 12 Uhr per E-Mail und schreibe Antragsnummer und Namen in den Betreff.",
+          "translations": [
+            { "language": "en", "text": "All clear. I will send the copy of the registration certificate by email by Friday at noon and write the application number and name in the subject line." },
+            { "language": "fa", "text": "روشن شد. کپی گواهی ثبت آدرس را تا جمعه ساعت ۱۲ از طریق ایمیل می‌فرستم و شماره درخواست و نام را در موضوع ایمیل می‌نویسم." },
+            { "language": "ar", "text": "واضح. سأرسل نسخة شهادة تسجيل السكن بالبريد الإلكتروني حتى يوم الجمعة الساعة الثانية عشرة، وسأكتب رقم الطلب والاسم في خانة الموضوع." },
+            { "language": "tr", "text": "Tamamdır. İkamet kayıt belgesinin kopyasını cuma saat 12'ye kadar e-posta ile göndereceğim ve konu kısmına başvuru numarasını ve adı yazacağım." },
+            { "language": "ru", "text": "Понятно. Я отправлю копию справки о регистрации по электронной почте до пятницы, 12 часов, и укажу номер заявления и имя в теме письма." },
+            { "language": "ckb", "text": "باشە، ڕوونە. کۆپی بڕوانامەی تۆمارکردنی ناونیشان تا هەینی کاتژمێر ۱۲ بە ئیمەیڵ دەنێرم و ژمارەی داواکاری و ناوەکە لە بابەتدا دەنووسم." },
+            { "language": "kmr", "text": "Temam, zelal e. Ez kopiya belgeya qeydkirina navnîşanê heta roja înê saet 12 bi e-nameyê dişînim û jimareya daxwazê û navê di mijarê de dinivîsim." },
+            { "language": "pl", "text": "W porządku. Wyślę kopię zaświadczenia o zameldowaniu e-mailem do piątku do godziny 12 i wpiszę numer wniosku oraz nazwisko w temacie." },
+            { "language": "ro", "text": "În regulă. Trimit copia certificatului de înregistrare a domiciliului prin e-mail până vineri la ora 12 și trec numărul cererii și numele în subiect." },
+            { "language": "sq", "text": "Në rregull. Do ta dërgoj kopjen e vërtetimit të regjistrimit të adresës me email deri të premten në orën 12 dhe do të shkruaj numrin e kërkesës dhe emrin në subjekt." }
+          ],
+          "function": "summarize-next-step",
+          "toneNote": "Exact final confirmation.",
+          "expectedLearnerAction": "Confirm deadline, channel, and identifying details."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Leider nicht. Ich habe die Bescheinigung gestern erst bekommen und konnte heute keine Kopie mehr machen.",
+              "translations": [
+                { "language": "en", "text": "Unfortunately not. I only received the certificate yesterday and could not make a copy today anymore." },
+                { "language": "fa", "text": "متأسفانه نه. گواهی را تازه دیروز گرفتم و امروز دیگر نتوانستم کپی تهیه کنم." },
+                { "language": "ar", "text": "للأسف لا. حصلت على الشهادة أمس فقط، ولم أتمكن اليوم من عمل نسخة منها." },
+                { "language": "tr", "text": "Maalesef hayır. Belgeyi ancak dün aldım ve bugün artık kopya çıkaramadım." },
+                { "language": "ru", "text": "К сожалению, нет. Я получил справку только вчера и сегодня уже не смог сделать копию." },
+                { "language": "ckb", "text": "بەداخەوە نەخێر. بڕوانامەکەم تەنها دوێنێ وەرگرت و ئەمڕۆ نەمتوانی کۆپی بکەم." },
+                { "language": "kmr", "text": "Mixabin na. Min belge tenê duh wergirt û îro êdî min nikarî kopiyek jê çêkim." },
+                { "language": "pl", "text": "Niestety nie. Otrzymałem zaświadczenie dopiero wczoraj i dzisiaj nie zdążyłem już zrobić kopii." },
+                { "language": "ro", "text": "Din păcate, nu. Am primit certificatul abia ieri și astăzi nu am mai putut face o copie." },
+                { "language": "sq", "text": "Fatkeqësisht jo. Vërtetimin e mora vetëm dje dhe sot nuk arrita më të bëj kopje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort erklärt höflich den Grund und bleibt sachlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer politely explains the reason and stays factual." },
+                { "language": "fa", "text": "خوب است: پاسخ دلیل را محترمانه توضیح می‌دهد و دقیق می‌ماند." },
+                { "language": "ar", "text": "جيد: الجواب يشرح السبب بأدب ويبقى موضوعيًا." },
+                { "language": "tr", "text": "İyi: Cevap sebebi nazikçe açıklıyor ve sakin kalıyor." },
+                { "language": "ru", "text": "Хорошо: ответ вежливо объясняет причину и остается по делу." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڕێزەوە هۆکارەکە ڕوون دەکاتەوە و بابەتی دەمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv bi rêzdarî sedemê rave dike û li ser mijarê dimîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź grzecznie wyjaśnia powód i pozostaje rzeczowa." },
+                { "language": "ro", "text": "Bine: răspunsul explică politicos motivul și rămâne obiectiv." },
+                { "language": "sq", "text": "Mirë: përgjigjja e shpjegon arsyen me mirësjellje dhe mbetet konkrete." }
+              ],
+              "explanationKey": "explain-reason"
+            },
+            {
+              "id": "too-short",
+              "text": "Die Kopie habe ich nicht dabei.",
+              "translations": [
+                { "language": "en", "text": "I do not have the copy with me." },
+                { "language": "fa", "text": "کپی را همراه ندارم." },
+                { "language": "ar", "text": "ليست النسخة معي." },
+                { "language": "tr", "text": "Kopya yanımda değil." },
+                { "language": "ru", "text": "Копии у меня с собой нет." },
+                { "language": "ckb", "text": "کۆپییەکە لەگەڵم نییە." },
+                { "language": "kmr", "text": "Kopî bi min re tune." },
+                { "language": "pl", "text": "Nie mam kopii przy sobie." },
+                { "language": "ro", "text": "Nu am copia la mine." },
+                { "language": "sq", "text": "Nuk e kam kopjen me vete." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber für B1 zu knapp: Der Grund fehlt und die Situation bleibt unklar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too brief for B1: the reason is missing and the situation remains unclear." },
+                { "language": "fa", "text": "قابل فهم است، اما برای B1 خیلی کوتاه است: دلیل کم است و موقعیت روشن نمی‌شود." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه قصير جدًا لمستوى B1: السبب ناقص والموقف يبقى غير واضح." },
+                { "language": "tr", "text": "Bu anlaşılır, ama B1 için çok kısa: sebep eksik ve durum belirsiz kalıyor." },
+                { "language": "ru", "text": "Это понятно, но для B1 слишком кратко: не хватает причины, и ситуация остается неясной." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتنە، بەڵام بۆ B1 زۆر کورته: هۆکارەکە کەمە و دۆخەکە ڕوون نابێتەوە." },
+                { "language": "kmr", "text": "Ev tê fêmkirin, lê ji bo B1 pir kurt e: sedem kêm e û rewş ne zelal dimîne." },
+                { "language": "pl", "text": "To jest zrozumiałe, ale za krótkie na B1: brakuje powodu i sytuacja pozostaje niejasna." },
+                { "language": "ro", "text": "Este de înțeles, dar prea scurt pentru B1: lipsește motivul și situația rămâne neclară." },
+                { "language": "sq", "text": "Është e kuptueshme, por shumë e shkurtër për B1: mungon arsyeja dhe situata mbetet e paqartë." }
+              ],
+              "explanationKey": "too-short"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Das verstehe ich. Kann ich die Kopie bis Freitag per E-Mail nachreichen, oder muss ich noch einmal persönlich vorbeikommen?",
+              "translations": [
+                { "language": "en", "text": "I understand. Can I submit the copy by email by Friday, or do I have to come by in person again?" },
+                { "language": "fa", "text": "متوجه هستم. آیا می‌توانم کپی را تا جمعه از طریق ایمیل ارسال کنم، یا باید دوباره حضوری مراجعه کنم؟" },
+                { "language": "ar", "text": "أفهم ذلك. هل يمكنني إرسال النسخة بالبريد الإلكتروني حتى يوم الجمعة، أم يجب أن أحضر شخصيًا مرة أخرى؟" },
+                { "language": "tr", "text": "Anlıyorum. Kopyayı cuma gününe kadar e-posta ile gönderebilir miyim, yoksa tekrar şahsen gelmem mi gerekiyor?" },
+                { "language": "ru", "text": "Я понимаю. Могу ли я дослать копию по электронной почте до пятницы или мне нужно еще раз прийти лично?" },
+                { "language": "ckb", "text": "تێدەگەم. دەتوانم کۆپییەکە تا هەینی بە ئیمەیڵ بنێرم، یان پێویستە جارێکی تر بەخۆم بێم؟" },
+                { "language": "kmr", "text": "Ez têdigihîjim. Ez dikarim kopiyê heta roja înê bi e-nameyê bişînim, an divê careke din bi xwe bêm?" },
+                { "language": "pl", "text": "Rozumiem. Czy mogę dosłać kopię do piątku e-mailem, czy muszę jeszcze raz przyjść osobiście?" },
+                { "language": "ro", "text": "Înțeleg. Pot trimite copia prin e-mail până vineri sau trebuie să vin încă o dată personal?" },
+                { "language": "sq", "text": "E kuptoj. A mund ta dërgoj kopjen me email deri të premten, apo duhet të vij edhe një herë personalisht?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage nennt einen konkreten Weg und eine Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The question names a specific channel and a deadline." },
+                { "language": "fa", "text": "خوب است: پرسش راه مشخص و مهلت مشخصی را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: السؤال يذكر طريقة محددة وموعدًا نهائيًا." },
+                { "language": "tr", "text": "İyi: Soru belirli bir yol ve son tarih belirtiyor." },
+                { "language": "ru", "text": "Хорошо: вопрос называет конкретный способ и срок." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە ڕێگایەکی دیاریکراو و مۆڵەتێک دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Pirs rêyekî diyar û demeke dawî dibêje." },
+                { "language": "pl", "text": "Dobrze: pytanie wskazuje konkretny sposób i termin." },
+                { "language": "ro", "text": "Bine: întrebarea numește o cale concretă și un termen." },
+                { "language": "sq", "text": "Mirë: pyetja përmend një mënyrë konkrete dhe një afat." }
+              ],
+              "explanationKey": "specific-next-step"
+            },
+            {
+              "id": "too-vague",
+              "text": "Kann ich das später schicken?",
+              "translations": [
+                { "language": "en", "text": "Can I send it later?" },
+                { "language": "fa", "text": "می‌توانم بعداً آن را بفرستم؟" },
+                { "language": "ar", "text": "هل يمكنني إرساله لاحقًا؟" },
+                { "language": "tr", "text": "Bunu daha sonra gönderebilir miyim?" },
+                { "language": "ru", "text": "Могу я отправить это позже?" },
+                { "language": "ckb", "text": "دەتوانم دواتر ئەمە بنێرم؟" },
+                { "language": "kmr", "text": "Ez dikarim vê paşê bişînim?" },
+                { "language": "pl", "text": "Czy mogę to wysłać później?" },
+                { "language": "ro", "text": "Pot să trimit asta mai târziu?" },
+                { "language": "sq", "text": "A mund ta dërgoj këtë më vonë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage passt, ist aber zu ungenau: Es fehlen Frist und Abgabeweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question fits, but it is too imprecise: the deadline and submission channel are missing." },
+                { "language": "fa", "text": "پرسش مناسب است، اما خیلی نامشخص است: مهلت و راه تحویل کم است." },
+                { "language": "ar", "text": "السؤال مناسب، لكنه غير دقيق كفاية: الموعد وطريقة التسليم ناقصان." },
+                { "language": "tr", "text": "Soru uygun, ama çok belirsiz: son tarih ve teslim yolu eksik." },
+                { "language": "ru", "text": "Вопрос подходит, но он слишком неточный: не хватает срока и способа подачи." },
+                { "language": "ckb", "text": "پرسیارەکە گونجاوە، بەڵام زۆر ناڕوونە: مۆڵەت و ڕێگای پێشکەشکردن کەمە." },
+                { "language": "kmr", "text": "Pirs guncaw e, lê pir nezelal e: dem û rêya radestkirinê kêm in." },
+                { "language": "pl", "text": "Pytanie pasuje, ale jest zbyt nieprecyzyjne: brakuje terminu i sposobu złożenia." },
+                { "language": "ro", "text": "Întrebarea se potrivește, dar este prea neclară: lipsesc termenul și calea de trimitere." },
+                { "language": "sq", "text": "Pyetja përshtatet, por është shumë e paqartë: mungojnë afati dhe mënyra e dorëzimit." }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Alles klar. Ich sende die Kopie der Meldebescheinigung bis Freitag 12 Uhr per E-Mail und schreibe Antragsnummer und Namen in den Betreff.",
+              "translations": [
+                { "language": "en", "text": "All clear. I will send the copy of the registration certificate by email by Friday at noon and write the application number and name in the subject line." },
+                { "language": "fa", "text": "روشن شد. کپی گواهی ثبت آدرس را تا جمعه ساعت ۱۲ از طریق ایمیل می‌فرستم و شماره درخواست و نام را در موضوع ایمیل می‌نویسم." },
+                { "language": "ar", "text": "واضح. سأرسل نسخة شهادة تسجيل السكن بالبريد الإلكتروني حتى يوم الجمعة الساعة الثانية عشرة، وسأكتب رقم الطلب والاسم في خانة الموضوع." },
+                { "language": "tr", "text": "Tamamdır. İkamet kayıt belgesinin kopyasını cuma saat 12'ye kadar e-posta ile göndereceğim ve konu kısmına başvuru numarasını ve adı yazacağım." },
+                { "language": "ru", "text": "Понятно. Я отправлю копию справки о регистрации по электронной почте до пятницы, 12 часов, и укажу номер заявления и имя в теме письма." },
+                { "language": "ckb", "text": "باشە، ڕوونە. کۆپی بڕوانامەی تۆمارکردنی ناونیشان تا هەینی کاتژمێر ۱۲ بە ئیمەیڵ دەنێرم و ژمارەی داواکاری و ناوەکە لە بابەتدا دەنووسم." },
+                { "language": "kmr", "text": "Temam, zelal e. Ez kopiya belgeya qeydkirina navnîşanê heta roja înê saet 12 bi e-nameyê dişînim û jimareya daxwazê û navê di mijarê de dinivîsim." },
+                { "language": "pl", "text": "W porządku. Wyślę kopię zaświadczenia o zameldowaniu e-mailem do piątku do godziny 12 i wpiszę numer wniosku oraz nazwisko w temacie." },
+                { "language": "ro", "text": "În regulă. Trimit copia certificatului de înregistrare a domiciliului prin e-mail până vineri la ora 12 și trec numărul cererii și numele în subiect." },
+                { "language": "sq", "text": "Në rregull. Do ta dërgoj kopjen e vërtetimit të regjistrimit të adresës me email deri të premten në orën 12 dhe do të shkruaj numrin e kërkesës dhe emrin në subjekt." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Zusammenfassung enthält Dokument, Frist, Weg und Betreff.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The summary includes document, deadline, channel, and subject line." },
+                { "language": "fa", "text": "خوب است: جمع‌بندی شامل مدرک، مهلت، راه ارسال و موضوع ایمیل است." },
+                { "language": "ar", "text": "جيد: الملخص يحتوي على المستند والموعد وطريقة الإرسال وخانة الموضوع." },
+                { "language": "tr", "text": "İyi: Özet belgeyi, son tarihi, gönderme yolunu ve konu bilgisini içeriyor." },
+                { "language": "ru", "text": "Хорошо: в резюме есть документ, срок, способ отправки и тема письма." },
+                { "language": "ckb", "text": "باشە: کورتکردنەوەکە بەڵگەنامە، مۆڵەت، ڕێگای ناردن و بابەتی ئیمەیڵ لەخۆدەگرێت." },
+                { "language": "kmr", "text": "Baş e: Kurte belge, dem, rêya şandinê û mijara e-nameyê dihewîne." },
+                { "language": "pl", "text": "Dobrze: podsumowanie zawiera dokument, termin, sposób wysłania i temat wiadomości." },
+                { "language": "ro", "text": "Bine: rezumatul conține documentul, termenul, calea de trimitere și subiectul." },
+                { "language": "sq", "text": "Mirë: përmbledhja përfshin dokumentin, afatin, mënyrën e dërgimit dhe subjektin." }
+              ],
+              "explanationKey": "complete-confirmation"
+            },
+            {
+              "id": "missing-details",
+              "text": "Alles klar, ich schicke die Kopie per E-Mail.",
+              "translations": [
+                { "language": "en", "text": "All clear, I will send the copy by email." },
+                { "language": "fa", "text": "روشن شد، کپی را از طریق ایمیل می‌فرستم." },
+                { "language": "ar", "text": "واضح، سأرسل النسخة بالبريد الإلكتروني." },
+                { "language": "tr", "text": "Tamamdır, kopyayı e-posta ile göndereceğim." },
+                { "language": "ru", "text": "Понятно, я отправлю копию по электронной почте." },
+                { "language": "ckb", "text": "باشە، کۆپییەکە بە ئیمەیڵ دەنێرم." },
+                { "language": "kmr", "text": "Temam, ez kopiyê bi e-nameyê dişînim." },
+                { "language": "pl", "text": "W porządku, wyślę kopię e-mailem." },
+                { "language": "ro", "text": "În regulă, trimit copia prin e-mail." },
+                { "language": "sq", "text": "Në rregull, do ta dërgoj kopjen me email." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber unvollständig: Die genaue Frist und der Betreff fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but incomplete: the exact deadline and subject line are missing." },
+                { "language": "fa", "text": "محترمانه است، اما کامل نیست: مهلت دقیق و موضوع ایمیل کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير كامل: الموعد الدقيق وخانة الموضوع ناقصان." },
+                { "language": "tr", "text": "Bu nazik, ama eksik: kesin son tarih ve konu bilgisi yok." },
+                { "language": "ru", "text": "Это вежливо, но неполно: не хватает точного срока и темы письма." },
+                { "language": "ckb", "text": "ئەمە بەڕێزە، بەڵام تەواو نییە: مۆڵەتی ورد و بابەتەکە کەمە." },
+                { "language": "kmr", "text": "Ev rêzdar e, lê ne temam e: dema rast û mijar kêm in." },
+                { "language": "pl", "text": "To jest grzeczne, ale niepełne: brakuje dokładnego terminu i tematu wiadomości." },
+                { "language": "ro", "text": "Este politicos, dar incomplet: lipsesc termenul exact și subiectul." },
+                { "language": "sq", "text": "Është e sjellshme, por jo e plotë: mungojnë afati i saktë dhe subjekti." }
+              ],
+              "explanationKey": "missing-details"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Wenn Unterlagen fehlen, ist eine sachliche Erklärung wichtig: Was fehlt, warum fehlt es, bis wann reichst du es nach, und auf welchem Weg?",
+          "translations": [
+            { "language": "en", "text": "When documents are missing, a factual explanation matters: what is missing, why is it missing, by when will you submit it, and through which channel?" },
+            { "language": "fa", "text": "وقتی مدارک کم است، توضیح دقیق مهم است: چه چیزی کم است، چرا کم است، تا چه زمانی آن را تحویل می‌دهی و از چه راهی؟" },
+            { "language": "ar", "text": "عندما تكون المستندات ناقصة، يكون الشرح الموضوعي مهمًا: ما الناقص، ولماذا، ومتى ستقدمه، وبأي طريقة؟" },
+            { "language": "tr", "text": "Belgeler eksik olduğunda sakin bir açıklama önemlidir: ne eksik, neden eksik, ne zamana kadar teslim edeceksin ve hangi yolla?" },
+            { "language": "ru", "text": "Когда документов не хватает, важно объяснить по делу: чего не хватает, почему, до какого срока ты это донесешь и каким способом?" },
+            { "language": "ckb", "text": "کاتێک بەڵگەنامە کەمە، ڕوونکردنەوەی بابەتی گرنگە: چی کەمە، بۆچی کەمە، تا کەی پێشکەشی دەکەیت و بە کام ڕێگا؟" },
+            { "language": "kmr", "text": "Dema belge kêm bin, ravekirineke zelal girîng e: çi kêm e, çima kêm e, heta kengî radest dikî û bi kîjan rêyê?" },
+            { "language": "pl", "text": "Gdy brakuje dokumentów, ważne jest rzeczowe wyjaśnienie: czego brakuje, dlaczego, do kiedy to dostarczysz i jaką drogą?" },
+            { "language": "ro", "text": "Când lipsesc documente, este importantă o explicație obiectivă: ce lipsește, de ce lipsește, până când trimiți și prin ce cale?" },
+            { "language": "sq", "text": "Kur mungojnë dokumente, është e rëndësishme një shpjegim konkret: çfarë mungon, pse mungon, deri kur e dorëzon dhe me çfarë mënyre?" }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-frist-im-amt-nachfragen",
+      "title": "Eine Frist im Amt nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask about a deadline at an office" },
+        { "language": "fa", "text": "پرسیدن درباره مهلت در اداره" },
+        { "language": "ar", "text": "السؤال عن مهلة في الدائرة" },
+        { "language": "tr", "text": "Resmi dairede son tarihi sormak" },
+        { "language": "ru", "text": "Спросить о сроке в ведомстве" },
+        { "language": "ckb", "text": "پرسیارکردن دەربارەی مۆڵەت لە فەرمانگە" },
+        { "language": "kmr", "text": "Li nivîsgehê li ser dema dawî pirsîn" },
+        { "language": "pl", "text": "Zapytać w urzędzie o termin" },
+        { "language": "ro", "text": "Să întrebi la instituție despre un termen-limită" },
+        { "language": "sq", "text": "Të pyesësh në zyrë për një afat" }
+      ],
+      "description": "Du erhältst im Amt eine Aufforderung und fragst nach der genauen Frist, den Folgen bei Verspätung und einer schriftlichen Bestätigung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You receive a request at a public office and ask about the exact deadline, the consequences of being late, and written confirmation." },
+        { "language": "fa", "text": "در اداره یک درخواست تکمیلی دریافت می‌کنی و درباره مهلت دقیق، پیامد تأخیر و تأیید کتبی سؤال می‌پرسی." },
+        { "language": "ar", "text": "تتلقى في الدائرة طلبًا إضافيًا وتسأل عن الموعد الدقيق، وعواقب التأخير، وتأكيد خطي." },
+        { "language": "tr", "text": "Resmi dairede ek bir talep alıyorsun ve kesin son tarihi, gecikmenin sonuçlarını ve yazılı onayı soruyorsun." },
+        { "language": "ru", "text": "В ведомстве ты получаешь дополнительное требование и спрашиваешь о точном сроке, последствиях опоздания и письменном подтверждении." },
+        { "language": "ckb", "text": "لە فەرمانگە داواکارییەکی زیادە وەردەگریت و دەربارەی مۆڵەتی ورد، دەرئەنجامی دواكەوتن و پشتڕاستکردنەوەی نووسراو دەپرسی." },
+        { "language": "kmr", "text": "Li nivîsgehê tu daxwazeke zêde werdigrî û li ser dema rast, encama derengmayînê û piştrastkirina nivîskî dipirsî." },
+        { "language": "pl", "text": "W urzędzie otrzymujesz dodatkowe wezwanie i pytasz o dokładny termin, skutki spóźnienia oraz pisemne potwierdzenie." },
+        { "language": "ro", "text": "La instituție primești o solicitare suplimentară și întrebi despre termenul exact, consecințele întârzierii și o confirmare scrisă." },
+        { "language": "sq", "text": "Në zyrë merr një kërkesë shtesë dhe pyet për afatin e saktë, pasojat e vonesës dhe një konfirmim me shkrim." }
+      ],
+      "learnerGoal": "Du kannst eine Frist genau nachfragen, mögliche Folgen klären und um eine schriftliche Bestätigung bitten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can ask precisely about a deadline, clarify possible consequences, and request written confirmation." },
+        { "language": "fa", "text": "می‌توانی درباره مهلت به‌طور دقیق سؤال کنی، پیامدهای احتمالی را روشن کنی و تأیید کتبی بخواهی." },
+        { "language": "ar", "text": "يمكنك السؤال بدقة عن المهلة، وتوضيح العواقب المحتملة، وطلب تأكيد خطي." },
+        { "language": "tr", "text": "Bir son tarihi tam olarak sorabilir, olası sonuçları netleştirebilir ve yazılı onay isteyebilirsin." },
+        { "language": "ru", "text": "Ты можешь точно спросить о сроке, уточнить возможные последствия и попросить письменное подтверждение." },
+        { "language": "ckb", "text": "دەتوانیت بە وردی دەربارەی مۆڵەت بپرسی، دەرئەنجامە ئەگەرییەکان ڕوون بکەیتەوە و داوای پشتڕاستکردنەوەی نووسراو بکەیت." },
+        { "language": "kmr", "text": "Tu dikarî bi rastî li ser demê dawî bipirsî, encamên gengaz zelal bikî û daxwaza piştrastkirina nivîskî bikî." },
+        { "language": "pl", "text": "Potrafisz dokładnie zapytać o termin, wyjaśnić możliwe konsekwencje i poprosić o pisemne potwierdzenie." },
+        { "language": "ro", "text": "Poți întreba exact despre termen, poți clarifica posibilele consecințe și poți cere o confirmare scrisă." },
+        { "language": "sq", "text": "Mund të pyesësh saktë për afatin, të sqarosh pasojat e mundshme dhe të kërkosh një konfirmim me shkrim." }
+      ],
+      "cefrLevel": "B1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "documents-and-administration"
+      ],
+      "interactionMode": "government-office",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "dtz-a2-b1"
+      ],
+      "sortOrder": 2210,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin im Amt",
+          "translations": [
+            { "language": "en", "text": "Office employee" },
+            { "language": "fa", "text": "کارمند اداره" },
+            { "language": "ar", "text": "موظفة الدائرة" },
+            { "language": "tr", "text": "Daire görevlisi" },
+            { "language": "ru", "text": "Сотрудница ведомства" },
+            { "language": "ckb", "text": "کارمەندی فەرمانگە" },
+            { "language": "kmr", "text": "Karmenda nivîsgehê" },
+            { "language": "pl", "text": "Pracowniczka urzędu" },
+            { "language": "ro", "text": "Funcționară" },
+            { "language": "sq", "text": "Punonjëse e zyrës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Besucherin oder Besucher",
+          "translations": [
+            { "language": "en", "text": "Visitor" },
+            { "language": "fa", "text": "مراجعه‌کننده" },
+            { "language": "ar", "text": "مراجع" },
+            { "language": "tr", "text": "Başvuran kişi" },
+            { "language": "ru", "text": "Посетитель" },
+            { "language": "ckb", "text": "سەردانکەر" },
+            { "language": "kmr", "text": "Serdanvan" },
+            { "language": "pl", "text": "Petent" },
+            { "language": "ro", "text": "Persoană solicitantă" },
+            { "language": "sq", "text": "Vizitor" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Für Ihren Antrag brauchen wir noch den Nachweis über die Krankenversicherung.",
+          "translations": [
+            { "language": "en", "text": "For your application, we still need proof of health insurance." },
+            { "language": "fa", "text": "برای درخواست شما هنوز مدرک بیمه درمانی را لازم داریم." },
+            { "language": "ar", "text": "نحتاج لطلبك أيضًا إلى إثبات التأمين الصحي." },
+            { "language": "tr", "text": "Başvurunuz için hâlâ sağlık sigortası belgesine ihtiyacımız var." },
+            { "language": "ru", "text": "Для вашего заявления нам еще нужно подтверждение медицинской страховки." },
+            { "language": "ckb", "text": "بۆ داواکارییەکەتان هێشتا پێویستمان بە بەڵگەی بیمەی تەندروستییە." },
+            { "language": "kmr", "text": "Ji bo daxwaza we hîn belgeya sîgorteya tenduristiyê pêwîst e." },
+            { "language": "pl", "text": "Do pańskiego wniosku potrzebujemy jeszcze potwierdzenia ubezpieczenia zdrowotnego." },
+            { "language": "ro", "text": "Pentru cererea dumneavoastră mai avem nevoie de dovada asigurării de sănătate." },
+            { "language": "sq", "text": "Për kërkesën tuaj na duhet ende dëshmia e sigurimit shëndetësor." }
+          ],
+          "function": "request-proof",
+          "toneNote": "Formal missing-proof request.",
+          "expectedLearnerAction": "Ask about the exact deadline."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Bis wann muss ich den Nachweis spätestens einreichen?",
+          "translations": [
+            { "language": "en", "text": "I understand. By when do I have to submit the proof at the latest?" },
+            { "language": "fa", "text": "متوجه شدم. حداکثر تا چه زمانی باید این مدرک را ارائه کنم؟" },
+            { "language": "ar", "text": "فهمت. حتى متى يجب أن أقدم الإثبات كحد أقصى؟" },
+            { "language": "tr", "text": "Anladım. Belgeyi en geç ne zamana kadar teslim etmem gerekiyor?" },
+            { "language": "ru", "text": "Понимаю. До какого срока мне нужно подать подтверждение самое позднее?" },
+            { "language": "ckb", "text": "تێگەیشتم. تا کەی بە زۆرترین دوا کات پێویستە بەڵگەکە پێشکەش بکەم؟" },
+            { "language": "kmr", "text": "Ez têgihîştim. Divê ez belgeyê herî dereng heta kengî radest bikim?" },
+            { "language": "pl", "text": "Rozumiem. Do kiedy najpóźniej muszę złożyć to potwierdzenie?" },
+            { "language": "ro", "text": "Înțeleg. Până când trebuie să depun dovada cel târziu?" },
+            { "language": "sq", "text": "E kuptoj. Deri kur duhet ta dorëzoj dëshminë më së voni?" }
+          ],
+          "function": "ask-exact-deadline",
+          "toneNote": "Precise and formal.",
+          "expectedLearnerAction": "Ask for latest possible deadline."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Die Frist endet am 15. Juni. Danach kann sich die Bearbeitung verzögern.",
+          "translations": [
+            { "language": "en", "text": "The deadline ends on June 15. After that, processing may be delayed." },
+            { "language": "fa", "text": "مهلت در ۱۵ ژوئن تمام می‌شود. بعد از آن ممکن است رسیدگی به درخواست به تأخیر بیفتد." },
+            { "language": "ar", "text": "تنتهي المهلة في 15 يونيو. بعد ذلك قد تتأخر معالجة الطلب." },
+            { "language": "tr", "text": "Son tarih 15 Haziran'da bitiyor. Ondan sonra işlemler gecikebilir." },
+            { "language": "ru", "text": "Срок истекает 15 июня. После этого обработка может задержаться." },
+            { "language": "ckb", "text": "مۆڵەتەکە لە ۱۵ی حوزەیران کۆتایی دێت. دوای ئەوە ڕەنگە چارەسەرکردن دوا بکەوێت." },
+            { "language": "kmr", "text": "Dema dawî di 15ê hezîranê de diqede. Piştî wê dibe ku xebata daxwazê dereng bikeve." },
+            { "language": "pl", "text": "Termin upływa 15 czerwca. Po tym czasie rozpatrywanie może się opóźnić." },
+            { "language": "ro", "text": "Termenul se încheie pe 15 iunie. După aceea, procesarea se poate întârzia." },
+            { "language": "sq", "text": "Afati përfundon më 15 qershor. Pas kësaj, përpunimi mund të vonohet." }
+          ],
+          "function": "give-deadline-consequence",
+          "toneNote": "Names date and general consequence.",
+          "expectedLearnerAction": "Clarify what delayed processing means."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Danke. Bedeutet das, dass der Antrag nicht abgelehnt wird, aber länger dauert, wenn ich den Nachweis später einreiche?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Does that mean the application will not be rejected, but will take longer if I submit the proof later?" },
+            { "language": "fa", "text": "ممنون. یعنی اگر مدرک را دیرتر ارائه کنم، درخواست رد نمی‌شود، اما رسیدگی به آن طولانی‌تر می‌شود؟" },
+            { "language": "ar", "text": "شكرًا. هل يعني ذلك أن الطلب لن يُرفض، لكنه سيستغرق وقتًا أطول إذا قدمت الإثبات لاحقًا؟" },
+            { "language": "tr", "text": "Teşekkür ederim. Bu, belgeyi daha sonra verirsem başvurunun reddedilmeyeceği ama daha uzun süreceği anlamına mı geliyor?" },
+            { "language": "ru", "text": "Спасибо. Это значит, что заявление не будет отклонено, но будет рассматриваться дольше, если я подам подтверждение позже?" },
+            { "language": "ckb", "text": "سوپاس. ئەمە واتە ئەگەر بەڵگەکە دواتر پێشکەش بکەم، داواکارییەکە ڕەت ناکرێتەوە، بەڵام زیاتر دەخایەنێت؟" },
+            { "language": "kmr", "text": "Spas. Ev tê wê wateyê ku ger ez belgeyê paşê radest bikim, daxwaz nayê redkirin, lê demek dirêjtir digire?" },
+            { "language": "pl", "text": "Dziękuję. Czy to znaczy, że wniosek nie zostanie odrzucony, ale potrwa dłużej, jeśli złożę potwierdzenie później?" },
+            { "language": "ro", "text": "Mulțumesc. Asta înseamnă că cererea nu va fi respinsă, dar va dura mai mult dacă depun dovada mai târziu?" },
+            { "language": "sq", "text": "Faleminderit. A do të thotë kjo se kërkesa nuk refuzohet, por zgjat më shumë nëse e dorëzoj dëshminë më vonë?" }
+          ],
+          "function": "clarify-consequence",
+          "toneNote": "Careful consequence question.",
+          "expectedLearnerAction": "Check whether delay differs from rejection."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Genau. Wenn etwas fehlt, müssen wir den Antrag zurückstellen, bis der Nachweis da ist.",
+          "translations": [
+            { "language": "en", "text": "Exactly. If something is missing, we have to put the application on hold until the proof is there." },
+            { "language": "fa", "text": "دقیقاً. اگر چیزی کم باشد، باید درخواست را تا زمانی که مدرک برسد موقتاً کنار بگذاریم." },
+            { "language": "ar", "text": "بالضبط. إذا كان شيء ناقصًا، فعلينا تأجيل الطلب حتى يصل الإثبات." },
+            { "language": "tr", "text": "Aynen. Bir şey eksikse, belge gelene kadar başvuruyu beklemeye almak zorundayız." },
+            { "language": "ru", "text": "Именно. Если чего-то не хватает, мы должны отложить заявление, пока подтверждение не будет подано." },
+            { "language": "ckb", "text": "ڕاستە. ئەگەر شتێک کەم بێت، پێویستە داواکارییەکە ڕابگرین تا بەڵگەکە بگات." },
+            { "language": "kmr", "text": "Rast e. Ger tiştek kêm be, divê em daxwazê rawestînin heta belge were." },
+            { "language": "pl", "text": "Dokładnie. Jeśli czegoś brakuje, musimy wstrzymać wniosek, dopóki potwierdzenie nie wpłynie." },
+            { "language": "ro", "text": "Exact. Dacă lipsește ceva, trebuie să punem cererea în așteptare până vine dovada." },
+            { "language": "sq", "text": "Saktësisht. Nëse mungon diçka, duhet ta lëmë kërkesën në pritje derisa të vijë dëshmia." }
+          ],
+          "function": "explain-hold",
+          "toneNote": "Administrative explanation.",
+          "expectedLearnerAction": "Ask for written confirmation."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Könnten Sie mir die Frist und die E-Mail-Adresse bitte kurz schriftlich bestätigen? Dann vermeide ich Fehler.",
+          "translations": [
+            { "language": "en", "text": "Could you please briefly confirm the deadline and the email address in writing? That way I can avoid mistakes." },
+            { "language": "fa", "text": "ممکن است لطفاً مهلت و آدرس ایمیل را کوتاه به‌صورت کتبی تأیید کنید؟ این‌طوری از اشتباه جلوگیری می‌کنم." },
+            { "language": "ar", "text": "هل يمكنكم من فضلكم تأكيد المهلة وعنوان البريد الإلكتروني كتابةً بشكل مختصر؟ هكذا أتجنب الأخطاء." },
+            { "language": "tr", "text": "Son tarihi ve e-posta adresini lütfen kısaca yazılı olarak onaylar mısınız? Böylece hata yapmam." },
+            { "language": "ru", "text": "Не могли бы вы кратко подтвердить срок и адрес электронной почты письменно? Так я избегу ошибок." },
+            { "language": "ckb", "text": "دەتوانن تکایە مۆڵەت و ناونیشانی ئیمەیڵەکە بە کورتی بە نووسراو پشتڕاست بکەنەوە؟ بەو شێوەیە هەڵە ناکەم." },
+            { "language": "kmr", "text": "Ma hûn dikarin ji kerema xwe dem û navnîşana e-nameyê bi kurtî bi nivîskî piştrast bikin? Wê demê ez ji şaşiyan dûr dimînim." },
+            { "language": "pl", "text": "Czy mogłaby pani krótko potwierdzić termin i adres e-mail na piśmie? Wtedy uniknę błędów." },
+            { "language": "ro", "text": "Ați putea, vă rog, să îmi confirmați pe scurt în scris termenul și adresa de e-mail? Așa evit greșelile." },
+            { "language": "sq", "text": "A mund të ma konfirmoni ju lutem shkurt me shkrim afatin dhe adresën e emailit? Kështu shmang gabimet." }
+          ],
+          "function": "request-written-confirmation",
+          "toneNote": "Polite written confirmation request.",
+          "expectedLearnerAction": "Ask for written confirmation."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Ja, ich drucke Ihnen gleich eine kurze Information mit Frist und Adresse aus.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will print out a short note for you right away with the deadline and address." },
+            { "language": "fa", "text": "بله، همین حالا یک اطلاعات کوتاه با مهلت و آدرس برایتان چاپ می‌کنم." },
+            { "language": "ar", "text": "نعم، سأطبع لك الآن معلومات مختصرة تتضمن المهلة والعنوان." },
+            { "language": "tr", "text": "Evet, size hemen son tarih ve adresi içeren kısa bir bilgi çıktısı vereceğim." },
+            { "language": "ru", "text": "Да, я сейчас распечатаю для вас краткую информацию со сроком и адресом." },
+            { "language": "ckb", "text": "بەڵێ، ئێستا زانیارییەکی کورت لەگەڵ مۆڵەت و ناونیشان بۆتان چاپ دەکەم." },
+            { "language": "kmr", "text": "Erê, ez niha agahiyeke kurt bi dem û navnîşanê ji we re çap dikim." },
+            { "language": "pl", "text": "Tak, zaraz wydrukuję panu krótką informację z terminem i adresem." },
+            { "language": "ro", "text": "Da, vă tipăresc imediat o scurtă informație cu termenul și adresa." },
+            { "language": "sq", "text": "Po, do t'ju printoj menjëherë një informacion të shkurtër me afatin dhe adresën." }
+          ],
+          "function": "confirm-written-note",
+          "toneNote": "Helpful administrative response.",
+          "expectedLearnerAction": "Summarize deadline and channel."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Ich reiche den Nachweis bis spätestens 15. Juni ein und nutze die Adresse auf der schriftlichen Information.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. I will submit the proof by June 15 at the latest and use the address on the written note." },
+            { "language": "fa", "text": "خیلی ممنون. مدرک را حداکثر تا ۱۵ ژوئن ارائه می‌کنم و از آدرسی که روی برگه نوشته شده استفاده می‌کنم." },
+            { "language": "ar", "text": "شكرًا جزيلًا. سأقدم الإثبات حتى 15 يونيو كحد أقصى، وسأستخدم العنوان الموجود في المعلومات المكتوبة." },
+            { "language": "tr", "text": "Çok teşekkür ederim. Belgeyi en geç 15 Haziran'a kadar teslim edeceğim ve yazılı bilgideki adresi kullanacağım." },
+            { "language": "ru", "text": "Большое спасибо. Я подам подтверждение не позднее 15 июня и использую адрес из письменной информации." },
+            { "language": "ckb", "text": "زۆر سوپاس. بەڵگەکە بە زۆرترین دوا کات تا ۱۵ی حوزەیران پێشکەش دەکەم و ناونیشانی سەر زانیارییە نووسراوەکە بەکاردەهێنم." },
+            { "language": "kmr", "text": "Gelek spas. Ez belgeyê herî dereng heta 15ê hezîranê radest dikim û navnîşana li ser agahiya nivîskî bikar tînim." },
+            { "language": "pl", "text": "Bardzo dziękuję. Złożę potwierdzenie najpóźniej do 15 czerwca i użyję adresu z pisemnej informacji." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Depun dovada cel târziu până pe 15 iunie și folosesc adresa de pe informația scrisă." },
+            { "language": "sq", "text": "Shumë faleminderit. Do ta dorëzoj dëshminë më së voni deri më 15 qershor dhe do të përdor adresën në informacionin me shkrim." }
+          ],
+          "function": "summarize-deadline",
+          "toneNote": "Exact final confirmation.",
+          "expectedLearnerAction": "Confirm date and written channel."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Verstehe. Bis wann muss ich den Nachweis spätestens einreichen?",
+              "translations": [
+                { "language": "en", "text": "I understand. By when do I have to submit the proof at the latest?" },
+                { "language": "fa", "text": "متوجه شدم. حداکثر تا چه زمانی باید این مدرک را ارائه کنم؟" },
+                { "language": "ar", "text": "فهمت. حتى متى يجب أن أقدم الإثبات كحد أقصى؟" },
+                { "language": "tr", "text": "Anladım. Belgeyi en geç ne zamana kadar teslim etmem gerekiyor?" },
+                { "language": "ru", "text": "Понимаю. До какого срока мне нужно подать подтверждение самое позднее?" },
+                { "language": "ckb", "text": "تێگەیشتم. تا کەی بە زۆرترین دوا کات پێویستە بەڵگەکە پێشکەش بکەم؟" },
+                { "language": "kmr", "text": "Ez têgihîştim. Divê ez belgeyê herî dereng heta kengî radest bikim?" },
+                { "language": "pl", "text": "Rozumiem. Do kiedy najpóźniej muszę złożyć to potwierdzenie?" },
+                { "language": "ro", "text": "Înțeleg. Până când trebuie să depun dovada cel târziu?" },
+                { "language": "sq", "text": "E kuptoj. Deri kur duhet ta dorëzoj dëshminë më së voni?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage ist höflich und fragt nach dem spätesten Termin.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The question is polite and asks for the latest possible date." },
+                { "language": "fa", "text": "خوب است: پرسش محترمانه است و درباره آخرین مهلت ممکن سؤال می‌کند." },
+                { "language": "ar", "text": "جيد: السؤال مهذب ويسأل عن آخر موعد ممكن." },
+                { "language": "tr", "text": "İyi: Soru nazik ve en geç mümkün tarihi soruyor." },
+                { "language": "ru", "text": "Хорошо: вопрос вежливый и уточняет самый поздний срок." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە بەڕێزە و دەربارەی دوا کاتی ئەگەری دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Pirs rêzdar e û li ser dema herî dereng dipirse." },
+                { "language": "pl", "text": "Dobrze: pytanie jest uprzejme i dotyczy najpóźniejszego terminu." },
+                { "language": "ro", "text": "Bine: întrebarea este politicoasă și cere termenul cel mai târziu." },
+                { "language": "sq", "text": "Mirë: pyetja është e sjellshme dhe kërkon afatin më të fundit të mundshëm." }
+              ],
+              "explanationKey": "ask-latest-deadline"
+            },
+            {
+              "id": "too-general",
+              "text": "Wann brauchen Sie das?",
+              "translations": [
+                { "language": "en", "text": "When do you need that?" },
+                { "language": "fa", "text": "چه زمانی به آن نیاز دارید؟" },
+                { "language": "ar", "text": "متى تحتاجون إلى ذلك؟" },
+                { "language": "tr", "text": "Buna ne zaman ihtiyacınız var?" },
+                { "language": "ru", "text": "Когда вам это нужно?" },
+                { "language": "ckb", "text": "کەی پێویستان بەوەیە؟" },
+                { "language": "kmr", "text": "Kengî pêwîstiya we bi wê heye?" },
+                { "language": "pl", "text": "Kiedy tego państwo potrzebują?" },
+                { "language": "ro", "text": "Când aveți nevoie de asta?" },
+                { "language": "sq", "text": "Kur ju duhet kjo?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage ist nicht falsch, aber im Amt zu allgemein. Besser ist die genaue Frist mit 'spätestens'.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question is not wrong, but too general for an office setting. The exact deadline with 'at the latest' is better." },
+                { "language": "fa", "text": "پرسش غلط نیست، اما برای اداره خیلی کلی است. بهتر است مهلت دقیق را با «حداکثر تا چه زمانی» بپرسی." },
+                { "language": "ar", "text": "السؤال ليس خطأ، لكنه عام جدًا في الدائرة. الأفضل السؤال عن الموعد الدقيق بصيغة الحد الأقصى." },
+                { "language": "tr", "text": "Soru yanlış değil, ama resmi daire için çok genel. 'En geç ne zamana kadar' ile kesin tarih daha iyidir." },
+                { "language": "ru", "text": "Вопрос не ошибочный, но для ведомства слишком общий. Лучше спросить точный срок: самое позднее до какого числа." },
+                { "language": "ckb", "text": "پرسیارەکە هەڵە نییە، بەڵام لە فەرمانگەدا زۆر گشتییە. باشترە مۆڵەتی ورد بە وشەی دوا کات بپرسی." },
+                { "language": "kmr", "text": "Pirs ne şaş e, lê ji bo nivîsgehê pir giştî ye. Baş e dema rast bi 'herî dereng' bipirsî." },
+                { "language": "pl", "text": "Pytanie nie jest błędne, ale w urzędzie zbyt ogólne. Lepiej zapytać o dokładny termin z określeniem najpóźniej." },
+                { "language": "ro", "text": "Întrebarea nu este greșită, dar este prea generală pentru instituție. Mai bine întrebi termenul exact cu 'cel târziu'." },
+                { "language": "sq", "text": "Pyetja nuk është gabim, por është shumë e përgjithshme për zyrë. Më mirë pyet për afatin e saktë me 'më së voni'." }
+              ],
+              "explanationKey": "too-general"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Bedeutet das, dass der Antrag nicht abgelehnt wird, aber länger dauert, wenn ich den Nachweis später einreiche?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Does that mean the application will not be rejected, but will take longer if I submit the proof later?" },
+                { "language": "fa", "text": "ممنون. یعنی اگر مدرک را دیرتر ارائه کنم، درخواست رد نمی‌شود، اما رسیدگی به آن طولانی‌تر می‌شود؟" },
+                { "language": "ar", "text": "شكرًا. هل يعني ذلك أن الطلب لن يُرفض، لكنه سيستغرق وقتًا أطول إذا قدمت الإثبات لاحقًا؟" },
+                { "language": "tr", "text": "Teşekkür ederim. Bu, belgeyi daha sonra verirsem başvurunun reddedilmeyeceği ama daha uzun süreceği anlamına mı geliyor?" },
+                { "language": "ru", "text": "Спасибо. Это значит, что заявление не будет отклонено, но будет рассматриваться дольше, если я подам подтверждение позже?" },
+                { "language": "ckb", "text": "سوپاس. ئەمە واتە ئەگەر بەڵگەکە دواتر پێشکەش بکەم، داواکارییەکە ڕەت ناکرێتەوە، بەڵام زیاتر دەخایەنێت؟" },
+                { "language": "kmr", "text": "Spas. Ev tê wê wateyê ku ger ez belgeyê paşê radest bikim, daxwaz nayê redkirin, lê demek dirêjtir digire?" },
+                { "language": "pl", "text": "Dziękuję. Czy to znaczy, że wniosek nie zostanie odrzucony, ale potrwa dłużej, jeśli złożę potwierdzenie później?" },
+                { "language": "ro", "text": "Mulțumesc. Asta înseamnă că cererea nu va fi respinsă, dar va dura mai mult dacă depun dovada mai târziu?" },
+                { "language": "sq", "text": "Faleminderit. A do të thotë kjo se kërkesa nuk refuzohet, por zgjat më shumë nëse e dorëzoj dëshminë më vonë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage klärt die konkrete Folge, ohne zu dramatisch zu klingen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The question clarifies the concrete consequence without sounding too dramatic." },
+                { "language": "fa", "text": "خوب است: پرسش پیامد مشخص را روشن می‌کند، بدون اینکه بیش از حد نگران‌کننده به نظر برسد." },
+                { "language": "ar", "text": "جيد: السؤال يوضح العاقبة المحددة من دون أن يبدو مبالغًا فيه." },
+                { "language": "tr", "text": "İyi: Soru somut sonucu netleştiriyor ve fazla dramatik duyulmuyor." },
+                { "language": "ru", "text": "Хорошо: вопрос уточняет конкретное последствие и не звучит слишком драматично." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە دەرئەنجامی دیاریکراو ڕوون دەکاتەوە، بێ ئەوەی زۆر دراماتیکی بێت." },
+                { "language": "kmr", "text": "Baş e: Pirs encama diyar zelal dike, bê ku pir dramatîk xuya bike." },
+                { "language": "pl", "text": "Dobrze: pytanie wyjaśnia konkretną konsekwencję, nie brzmiąc zbyt dramatycznie." },
+                { "language": "ro", "text": "Bine: întrebarea clarifică urmarea concretă fără să sune prea dramatic." },
+                { "language": "sq", "text": "Mirë: pyetja sqaron pasojën konkrete pa tingëlluar shumë dramatike." }
+              ],
+              "explanationKey": "clarify-consequence"
+            },
+            {
+              "id": "too-informal",
+              "text": "Ist das schlimm, wenn ich später bin?",
+              "translations": [
+                { "language": "en", "text": "Is it bad if I am late?" },
+                { "language": "fa", "text": "اگر دیرتر باشم، بد است؟" },
+                { "language": "ar", "text": "هل سيكون الأمر سيئًا إذا تأخرت؟" },
+                { "language": "tr", "text": "Geç kalırsam kötü olur mu?" },
+                { "language": "ru", "text": "Это плохо, если я опоздаю?" },
+                { "language": "ckb", "text": "ئەگەر درەنگ بم، خراپە؟" },
+                { "language": "kmr", "text": "Ger ez dereng bim, xerab e?" },
+                { "language": "pl", "text": "Czy to będzie źle, jeśli się spóźnię?" },
+                { "language": "ro", "text": "Este grav dacă întârzii?" },
+                { "language": "sq", "text": "A është keq nëse vonohem?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage ist verständlich, aber zu umgangssprachlich und fragt nicht genau nach der Folge.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question is understandable, but too colloquial and does not ask precisely about the consequence." },
+                { "language": "fa", "text": "پرسش قابل فهم است، اما بیش از حد محاوره‌ای است و پیامد را دقیق نمی‌پرسد." },
+                { "language": "ar", "text": "السؤال مفهوم، لكنه عامي جدًا ولا يسأل بدقة عن العاقبة." },
+                { "language": "tr", "text": "Soru anlaşılır, ama fazla günlük ve sonucu tam olarak sormuyor." },
+                { "language": "ru", "text": "Вопрос понятен, но слишком разговорный и не уточняет последствие точно." },
+                { "language": "ckb", "text": "پرسیارەکە تێگەیشتووە، بەڵام زۆر قسەی ڕۆژانەیە و بە وردی دەرئەنجامەکە ناپرسێت." },
+                { "language": "kmr", "text": "Pirs tê fêmkirin, lê pir rojane ye û bi rastî li ser encamê napirse." },
+                { "language": "pl", "text": "Pytanie jest zrozumiałe, ale zbyt potoczne i nie pyta dokładnie o konsekwencję." },
+                { "language": "ro", "text": "Întrebarea este de înțeles, dar prea colocvială și nu întreabă exact despre consecință." },
+                { "language": "sq", "text": "Pyetja është e kuptueshme, por shumë bisedore dhe nuk pyet saktë për pasojën." }
+              ],
+              "explanationKey": "too-informal"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Ich reiche den Nachweis bis spätestens 15. Juni ein und nutze die Adresse auf der schriftlichen Information.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. I will submit the proof by June 15 at the latest and use the address on the written note." },
+                { "language": "fa", "text": "خیلی ممنون. مدرک را حداکثر تا ۱۵ ژوئن ارائه می‌کنم و از آدرسی که روی برگه نوشته شده استفاده می‌کنم." },
+                { "language": "ar", "text": "شكرًا جزيلًا. سأقدم الإثبات حتى 15 يونيو كحد أقصى، وسأستخدم العنوان الموجود في المعلومات المكتوبة." },
+                { "language": "tr", "text": "Çok teşekkür ederim. Belgeyi en geç 15 Haziran'a kadar teslim edeceğim ve yazılı bilgideki adresi kullanacağım." },
+                { "language": "ru", "text": "Большое спасибо. Я подам подтверждение не позднее 15 июня и использую адрес из письменной информации." },
+                { "language": "ckb", "text": "زۆر سوپاس. بەڵگەکە بە زۆرترین دوا کات تا ۱۵ی حوزەیران پێشکەش دەکەم و ناونیشانی سەر زانیارییە نووسراوەکە بەکاردەهێنم." },
+                { "language": "kmr", "text": "Gelek spas. Ez belgeyê herî dereng heta 15ê hezîranê radest dikim û navnîşana li ser agahiya nivîskî bikar tînim." },
+                { "language": "pl", "text": "Bardzo dziękuję. Złożę potwierdzenie najpóźniej do 15 czerwca i użyję adresu z pisemnej informacji." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Depun dovada cel târziu până pe 15 iunie și folosesc adresa de pe informația scrisă." },
+                { "language": "sq", "text": "Shumë faleminderit. Do ta dorëzoj dëshminë më së voni deri më 15 qershor dhe do të përdor adresën në informacionin me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort wiederholt Datum und Abgabeweg genau.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer repeats the date and submission channel precisely." },
+                { "language": "fa", "text": "خوب است: پاسخ تاریخ و راه تحویل را دقیق تکرار می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يكرر التاريخ وطريقة التسليم بدقة." },
+                { "language": "tr", "text": "İyi: Cevap tarihi ve teslim yolunu tam olarak tekrar ediyor." },
+                { "language": "ru", "text": "Хорошо: ответ точно повторяет дату и способ подачи." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەروار و ڕێگای پێشکەشکردن بە وردی دووبارە دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv dîrok û rêya radestkirinê bi rastî dubare dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź dokładnie powtarza datę i sposób złożenia." },
+                { "language": "ro", "text": "Bine: răspunsul repetă exact data și calea de depunere." },
+                { "language": "sq", "text": "Mirë: përgjigjja përsërit saktë datën dhe mënyrën e dorëzimit." }
+              ],
+              "explanationKey": "complete-confirmation"
+            },
+            {
+              "id": "missing-date",
+              "text": "Danke, ich schicke es dann.",
+              "translations": [
+                { "language": "en", "text": "Thank you, I will send it then." },
+                { "language": "fa", "text": "ممنون، پس آن را می‌فرستم." },
+                { "language": "ar", "text": "شكرًا، سأرسله إذن." },
+                { "language": "tr", "text": "Teşekkürler, o zaman gönderirim." },
+                { "language": "ru", "text": "Спасибо, тогда я это отправлю." },
+                { "language": "ckb", "text": "سوپاس، ئەوا دەنێرم." },
+                { "language": "kmr", "text": "Spas, wê demê ez wê dişînim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie to wyślę." },
+                { "language": "ro", "text": "Mulțumesc, atunci îl trimit." },
+                { "language": "sq", "text": "Faleminderit, atëherë do ta dërgoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist höflich, aber zu unklar: Datum und konkrete Adresse fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is polite, but too unclear: the date and specific address are missing." },
+                { "language": "fa", "text": "پاسخ محترمانه است، اما خیلی نامشخص است: تاریخ و آدرس دقیق کم است." },
+                { "language": "ar", "text": "الجواب مهذب، لكنه غير واضح كفاية: التاريخ والعنوان المحدد ناقصان." },
+                { "language": "tr", "text": "Cevap nazik, ama çok belirsiz: tarih ve kesin adres eksik." },
+                { "language": "ru", "text": "Ответ вежливый, но слишком неясный: не хватает даты и конкретного адреса." },
+                { "language": "ckb", "text": "وەڵامەکە بەڕێزە، بەڵام زۆر ناڕوونە: بەروار و ناونیشانی دیاریکراو کەمە." },
+                { "language": "kmr", "text": "Bersiv rêzdar e, lê pir nezelal e: dîrok û navnîşana diyar kêm in." },
+                { "language": "pl", "text": "Odpowiedź jest grzeczna, ale zbyt niejasna: brakuje daty i konkretnego adresu." },
+                { "language": "ro", "text": "Răspunsul este politicos, dar prea neclar: lipsesc data și adresa concretă." },
+                { "language": "sq", "text": "Përgjigjja është e sjellshme, por shumë e paqartë: mungojnë data dhe adresa konkrete." }
+              ],
+              "explanationKey": "missing-date"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Bei Fristen im Amt solltest du das genaue Datum, die Folge bei Verspätung und den Abgabeweg bestätigen.",
+          "translations": [
+            { "language": "en", "text": "With office deadlines, you should confirm the exact date, the consequence of being late, and the submission channel." },
+            { "language": "fa", "text": "در مورد مهلت‌های اداری، باید تاریخ دقیق، پیامد تأخیر و راه تحویل را تأیید کنی." },
+            { "language": "ar", "text": "في المهل الإدارية، ينبغي أن تؤكد التاريخ الدقيق، وعاقبة التأخير، وطريقة التسليم." },
+            { "language": "tr", "text": "Resmi sürelerde kesin tarihi, gecikmenin sonucunu ve teslim yolunu onaylamalısın." },
+            { "language": "ru", "text": "При сроках в ведомстве нужно подтвердить точную дату, последствие опоздания и способ подачи." },
+            { "language": "ckb", "text": "لە مۆڵەتەکانی فەرمانگەدا، پێویستە بەرواری ورد، دەرئەنجامی دواكەوتن و ڕێگای پێشکەشکردن پشتڕاست بکەیتەوە." },
+            { "language": "kmr", "text": "Di demên nivîsgehê de divê tu dîroka rast, encama derengmayînê û rêya radestkirinê piştrast bikî." },
+            { "language": "pl", "text": "Przy terminach urzędowych trzeba potwierdzić dokładną datę, skutek spóźnienia i sposób złożenia." },
+            { "language": "ro", "text": "La termenele instituționale trebuie să confirmi data exactă, consecința întârzierii și calea de depunere." },
+            { "language": "sq", "text": "Për afatet në zyrë duhet të konfirmosh datën e saktë, pasojën e vonesës dhe mënyrën e dorëzimit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

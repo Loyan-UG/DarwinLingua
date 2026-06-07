@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-21-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 21 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 21",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-schriftliche-bestaetigung-einfordern",
+      "linkedDialogueSlug": null,
+      "title": "Eine schriftliche Bestätigung einfordern",
+      "titleTranslations": [
+        { "language": "en", "text": "Requesting written confirmation" },
+        { "language": "fa", "text": "درخواست تأیید کتبی" },
+        { "language": "ar", "text": "طلب تأكيد خطي" },
+        { "language": "tr", "text": "Yazılı onay istemek" },
+        { "language": "ru", "text": "Попросить письменное подтверждение" },
+        { "language": "ckb", "text": "داواکاری پشتڕاستکردنەوەی نووسراو" },
+        { "language": "kmr", "text": "Daxwaza piştrastkirina nivîskî" },
+        { "language": "pl", "text": "Poproszenie o pisemne potwierdzenie" },
+        { "language": "ro", "text": "Solicitarea unei confirmări scrise" },
+        { "language": "sq", "text": "Kërkimi i një konfirmimi me shkrim" }
+      ],
+      "description": "Du telefonierst mit einer Behörde, nachdem dir mündlich gesagt wurde, dass du ein Dokument später nachreichen darfst. Weil du eine Frist hast und nichts falsch verstehen möchtest, bittest du höflich, aber bestimmt um eine schriftliche Bestätigung mit Aktenzeichen, Frist, Einreichungsweg und Ansprechpartner.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are calling an authority after being told verbally that you may submit a document later. Because you have a deadline and do not want to misunderstand anything, you politely but firmly ask for written confirmation with the file number, deadline, submission method, and contact person." },
+        { "language": "fa", "text": "با یک اداره تلفنی صحبت می‌کنی، چون به تو شفاهی گفته شده که می‌توانی یک مدرک را بعداً ارائه کنی. چون مهلت داری و نمی‌خواهی چیزی را اشتباه بفهمی، مؤدبانه اما محکم درخواست تأیید کتبی با شماره پرونده، مهلت، راه تحویل و فرد مسئول می‌کنی." },
+        { "language": "ar", "text": "تتصل بجهة إدارية بعد أن قيل لك شفهياً إن بإمكانك تقديم مستند لاحقاً. لأن لديك مهلة ولا تريد أن تسيء فهم شيء، تطلب بأدب ولكن بوضوح تأكيداً خطياً يتضمن رقم الملف والمهلة وطريقة التقديم والشخص المسؤول." },
+        { "language": "tr", "text": "Bir kurumu arıyorsun, çünkü sana sözlü olarak bir belgeyi daha sonra sunabileceğin söylendi. Bir süren olduğu ve hiçbir şeyi yanlış anlamak istemediğin için, dosya numarası, süre, teslim yolu ve ilgili kişiyle birlikte yazılı onayı nazik ama kararlı biçimde istiyorsun." },
+        { "language": "ru", "text": "Вы звоните в ведомство после того, как вам устно сказали, что документ можно подать позже. Поскольку у вас есть срок и вы не хотите ничего неправильно понять, вы вежливо, но настойчиво просите письменное подтверждение с номером дела, сроком, способом подачи и контактным лицом." },
+        { "language": "ckb", "text": "تەلەفۆن بۆ فەرمانگەیەک دەکەیت، دوای ئەوەی بە زارەکی پێت وتراوە دەتوانیت بەڵگەنامەیەک دواتر پێشکەش بکەیت. چونکە مۆڵەتت هەیە و ناتەوێت شتێک بە هەڵە تێبگەیت، بە ڕێزەوە بەڵام بە ڕوونی داوای پشتڕاستکردنەوەی نووسراو دەکەیت بە ژمارەی کەیس، مۆڵەت، ڕێگای پێشکەشکردن و کەسی پەیوەندیدار." },
+        { "language": "kmr", "text": "Tu telefonî dezgehekê dikî, piştî ku bi devkî ji te re hatiye gotin ku dikarî belgeyekê paşê radest bikî. Ji ber ku demek te heye û naxwazî tiştekê şaş fam bikî, tu bi rêz lê bi biryar daxwaza piştrastkirina nivîskî dikî bi hejmarê dosyeyê, dem, rêya radestkirinê û kesê têkildar." },
+        { "language": "pl", "text": "Dzwonisz do urzędu po tym, jak ustnie powiedziano Ci, że możesz dosłać dokument później. Ponieważ masz termin i nie chcesz niczego źle zrozumieć, uprzejmie, ale stanowczo prosisz o pisemne potwierdzenie z numerem sprawy, terminem, sposobem złożenia i osobą kontaktową." },
+        { "language": "ro", "text": "Suni la o autoritate după ce ți s-a spus verbal că poți depune un act mai târziu. Pentru că ai un termen și nu vrei să înțelegi greșit ceva, ceri politicos, dar ferm, o confirmare scrisă cu numărul dosarului, termenul, modalitatea de depunere și persoana de contact." },
+        { "language": "sq", "text": "Telefonon një institucion pasi të është thënë me gojë se mund ta dorëzosh një dokument më vonë. Meqë ke një afat dhe nuk dëshiron të keqkuptosh diçka, kërkon me mirësjellje, por qartë, një konfirmim me shkrim me numrin e dosjes, afatin, mënyrën e dorëzimit dhe personin përgjegjës." }
+      ],
+      "learnerGoal": "Bitte um eine schriftliche Bestätigung: Nenne den mündlich besprochenen Punkt, erkläre den Grund für die Bestätigung, frage nach Versandweg und Inhalt, und fasse am Ende die vereinbarte Bestätigung präzise zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask for written confirmation: name the point discussed verbally, explain why you need confirmation, ask about delivery method and content, and summarize the agreed confirmation precisely at the end." },
+        { "language": "fa", "text": "درخواست تأیید کتبی کن: نکته‌ای را که شفاهی مطرح شده نام ببر، دلیل نیاز به تأیید را توضیح بده، درباره راه ارسال و محتوای تأیید بپرس، و در پایان تأیید توافق‌شده را دقیق جمع‌بندی کن." },
+        { "language": "ar", "text": "اطلب تأكيداً خطياً: اذكر النقطة التي نوقشت شفهياً، واشرح سبب حاجتك إلى التأكيد، واسأل عن طريقة الإرسال والمحتوى، ثم لخّص في النهاية التأكيد المتفق عليه بدقة." },
+        { "language": "tr", "text": "Yazılı onay iste: sözlü konuşulan noktayı belirt, onaya neden ihtiyaç duyduğunu açıkla, gönderim yolu ve içerik hakkında sor, sonunda üzerinde anlaşılan onayı kesin biçimde özetle." },
+        { "language": "ru", "text": "Попросите письменное подтверждение: назовите устно обсуждённый пункт, объясните, зачем нужно подтверждение, спросите о способе отправки и содержании и в конце точно подытожьте согласованное подтверждение." },
+        { "language": "ckb", "text": "داوای پشتڕاستکردنەوەی نووسراو بکە: خاڵی باسکراوی زارەکی ناو ببە، هۆکاری پێویستبوونی پشتڕاستکردنەوە ڕوون بکەوە، لەسەر ڕێگای ناردن و ناوەڕۆک بپرسە، و لە کۆتاییدا پشتڕاستکردنەوەی ڕێککەوتوو بە وردی کورت بکەوە." },
+        { "language": "kmr", "text": "Daxwaza piştrastkirina nivîskî bike: xala ku bi devkî hatiye gotin bi nav bike, sedema pêwîstiya piştrastkirinê rave bike, li ser rêya şandinê û naverokê bipirse û di dawiyê de piştrastkirina lihevkirî bi rastî kurt bike." },
+        { "language": "pl", "text": "Poproś o pisemne potwierdzenie: nazwij punkt omówiony ustnie, wyjaśnij powód potrzeby potwierdzenia, zapytaj o sposób wysłania i treść, a na końcu precyzyjnie podsumuj uzgodnione potwierdzenie." },
+        { "language": "ro", "text": "Cere o confirmare scrisă: numește punctul discutat verbal, explică de ce ai nevoie de confirmare, întreabă despre modalitatea de trimitere și conținut, iar la final rezumă precis confirmarea convenită." },
+        { "language": "sq", "text": "Kërko një konfirmim me shkrim: përmend pikën e diskutuar me gojë, shpjego pse të duhet konfirmimi, pyet për mënyrën e dërgimit dhe përmbajtjen, dhe në fund përmblidh saktë konfirmimin e rënë dakord." }
+      ],
+      "cefrLevel": "B2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "ask-for-information",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3210,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            { "language": "en", "text": "Staff member" },
+            { "language": "fa", "text": "کارمند اداره" },
+            { "language": "ar", "text": "الموظفة" },
+            { "language": "tr", "text": "Görevli" },
+            { "language": "ru", "text": "Сотрудница" },
+            { "language": "ckb", "text": "کارمەند" },
+            { "language": "kmr", "text": "Karmend" },
+            { "language": "pl", "text": "Pracowniczka urzędu" },
+            { "language": "ro", "text": "Funcționara" },
+            { "language": "sq", "text": "Punonjësja" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Anrufer",
+          "translations": [
+            { "language": "en", "text": "Caller" },
+            { "language": "fa", "text": "تماس‌گیرنده" },
+            { "language": "ar", "text": "المتصل" },
+            { "language": "tr", "text": "Arayan kişi" },
+            { "language": "ru", "text": "Звонящий" },
+            { "language": "ckb", "text": "پەیوەندیکەر" },
+            { "language": "kmr", "text": "Telefonker" },
+            { "language": "pl", "text": "Osoba dzwoniąca" },
+            { "language": "ro", "text": "Persoana care sună" },
+            { "language": "sq", "text": "Telefonuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag, Bürgerbüro Nord, Sie sprechen mit Frau Keller. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, North Citizens' Office, you are speaking with Ms. Keller. How can I help you?" },
+            { "language": "fa", "text": "روز بخیر، دفتر شهروندان شمال، با خانم کلر صحبت می‌کنید. چه کمکی از دستم برمی‌آید؟" },
+            { "language": "ar", "text": "نهارك سعيد، مكتب المواطنين الشمالي، معك السيدة كيلر. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler, Kuzey Vatandaş Bürosu, ben Keller. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день, Северное бюро граждан, с вами госпожа Келлер. Чем я могу помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، نووسینگەی هاووڵاتیانی باکوور، لەگەڵ خانمی کێلەر قسە دەکەیت. چۆن دەتوانم یارمەتیت بدەم؟" },
+            { "language": "kmr", "text": "Roj baş, Ofîsa Hemwelatiyan a Bakur, hûn bi Xatûn Keller re diaxivin. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Dzień dobry, Biuro Obywatelskie Północ, mówi pani Keller. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, Biroul pentru cetățeni Nord, vorbiți cu doamna Keller. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, Zyra e Qytetarëve Veri, po flisni me zonjën Keller. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "open-phone-call"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag, mein Name ist Amir Rahimi. Es geht um mein Aktenzeichen BN-4821. Mir wurde gestern telefonisch gesagt, dass ich die Meldebescheinigung bis nächste Woche nachreichen darf. Ich möchte dazu gern eine schriftliche Bestätigung bekommen.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, my name is Amir Rahimi. This concerns my file number BN-4821. Yesterday I was told by phone that I may submit the registration certificate by next week. I would like to receive written confirmation of that." },
+            { "language": "fa", "text": "روز بخیر، نام من امیر رحیمی است. موضوع مربوط به شماره پرونده BN-4821 است. دیروز تلفنی به من گفته شد که می‌توانم گواهی ثبت آدرس را تا هفته آینده ارائه کنم. می‌خواهم برای این موضوع تأیید کتبی دریافت کنم." },
+            { "language": "ar", "text": "نهارك سعيد، اسمي أمير رحيمي. الأمر يتعلق برقم ملفي BN-4821. قيل لي هاتفياً أمس إن بإمكاني تقديم شهادة التسجيل حتى الأسبوع القادم. أود أن أحصل على تأكيد خطي بذلك." },
+            { "language": "tr", "text": "İyi günler, adım Amir Rahimi. Konu BN-4821 numaralı dosyamla ilgili. Dün telefonda adres kayıt belgesini gelecek haftaya kadar sunabileceğim söylendi. Bunun için yazılı onay almak istiyorum." },
+            { "language": "ru", "text": "Добрый день, меня зовут Амир Рахими. Речь идёт о моём номере дела BN-4821. Вчера по телефону мне сказали, что я могу донести справку о регистрации до следующей недели. Я хотел бы получить письменное подтверждение этого." },
+            { "language": "ckb", "text": "ڕۆژ باش، ناوم ئەمیر ڕەحیمییە. بابەتەکە پەیوەندی بە ژمارەی کەیسی BN-4821 ـەوە هەیە. دوێنێ بە تەلەفۆن پێم وترا کە دەتوانم گواهیی تۆمارکردنی ناونیشان تا هەفتەی داهاتوو پێشکەش بکەم. دەمەوێت پشتڕاستکردنەوەیەکی نووسراو بۆ ئەمە وەربگرم." },
+            { "language": "kmr", "text": "Roj baş, navê min Amir Rahimi ye. Ev derbarê hejmarê dosyeya min BN-4821 e. Duh bi telefonê ji min re hate gotin ku ez dikarim belgeya qeydkirina navnîşanê heta hefteya bê radest bikim. Ez dixwazim ji bo vê yekê piştrastkirineke nivîskî wergirim." },
+            { "language": "pl", "text": "Dzień dobry, nazywam się Amir Rahimi. Chodzi o mój numer sprawy BN-4821. Wczoraj telefonicznie powiedziano mi, że mogę dosłać zaświadczenie o zameldowaniu do przyszłego tygodnia. Chciałbym otrzymać pisemne potwierdzenie tej informacji." },
+            { "language": "ro", "text": "Bună ziua, mă numesc Amir Rahimi. Este vorba despre numărul dosarului meu BN-4821. Ieri mi s-a spus telefonic că pot depune certificatul de înregistrare a domiciliului până săptămâna viitoare. Aș dori să primesc o confirmare scrisă pentru acest lucru." },
+            { "language": "sq", "text": "Mirëdita, quhem Amir Rahimi. Bëhet fjalë për numrin tim të dosjes BN-4821. Dje më thanë me telefon se mund ta dorëzoj vërtetimin e regjistrimit të adresës deri javën tjetër. Dua të marr një konfirmim me shkrim për këtë." }
+          ],
+          "function": "state-request",
+          "expectedLearnerAction": "Nenne Name, Aktenzeichen, die mündliche Aussage und die Bitte um schriftliche Bestätigung."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Ich sehe mir den Vorgang kurz an. Sie brauchen also keine neue Auskunft, sondern eine Bestätigung der telefonischen Absprache. Warum ist Ihnen das wichtig?",
+          "translations": [
+            { "language": "en", "text": "I will briefly check the case. So you do not need new information, but confirmation of the phone agreement. Why is that important to you?" },
+            { "language": "fa", "text": "پرونده را کوتاه بررسی می‌کنم. پس شما اطلاعات جدید نمی‌خواهید، بلکه تأیید همان توافق تلفنی را می‌خواهید. چرا این برایتان مهم است؟" },
+            { "language": "ar", "text": "سأراجع المعاملة سريعاً. إذن لا تحتاج إلى معلومة جديدة، بل إلى تأكيد الاتفاق الهاتفي. لماذا هذا مهم لك؟" },
+            { "language": "tr", "text": "İşlemi kısaca kontrol ediyorum. Yani yeni bilgiye değil, telefon görüşmesindeki anlaşmanın onayına ihtiyacınız var. Bu sizin için neden önemli?" },
+            { "language": "ru", "text": "Я коротко посмотрю дело. Значит, вам нужна не новая информация, а подтверждение телефонной договорённости. Почему это для вас важно?" },
+            { "language": "ckb", "text": "کەیسەکە بە کورتی دەبینمەوە. کەواتە زانیاری نوێت پێویست نییە، بەڵکو پشتڕاستکردنەوەی ڕێککەوتنی تەلەفۆنی دەتەوێت. بۆچی ئەمە بۆت گرنگە؟" },
+            { "language": "kmr", "text": "Ez dosyeyê bi kurtî kontrol dikim. Yanî agahiyeke nû ne pêwîst e, lê piştrastkirina lihevhatina telefonê. Çima ev ji bo we girîng e?" },
+            { "language": "pl", "text": "Krótko sprawdzę sprawę. Czyli nie potrzebuje Pan nowej informacji, lecz potwierdzenia ustalenia telefonicznego. Dlaczego jest to dla Pana ważne?" },
+            { "language": "ro", "text": "Verific pe scurt dosarul. Deci nu aveți nevoie de o informație nouă, ci de confirmarea înțelegerii telefonice. De ce este important pentru dumneavoastră?" },
+            { "language": "sq", "text": "Po e kontrolloj shkurt çështjen. Pra nuk ju duhet informacion i ri, por konfirmimi i marrëveshjes telefonike. Pse është kjo e rëndësishme për ju?" }
+          ],
+          "function": "clarify-need"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte vermeiden, dass es später ein Missverständnis über die Frist gibt. Wenn ich die Bescheinigung erst nächste Woche nachreiche, brauche ich einen Nachweis, dass diese Nachreichung akzeptiert wurde.",
+          "translations": [
+            { "language": "en", "text": "I want to avoid a misunderstanding about the deadline later. If I submit the certificate only next week, I need proof that this later submission was accepted." },
+            { "language": "fa", "text": "می‌خواهم از سوءتفاهم بعدی درباره مهلت جلوگیری کنم. اگر گواهی را تازه هفته آینده ارائه کنم، به مدرکی نیاز دارم که نشان دهد این ارائه دیرتر پذیرفته شده است." },
+            { "language": "ar", "text": "أريد أن أتجنب حدوث سوء فهم لاحقاً حول المهلة. إذا قدمت الشهادة في الأسبوع القادم فقط، فأحتاج إلى إثبات أن هذا التقديم اللاحق قُبل." },
+            { "language": "tr", "text": "Daha sonra süre konusunda yanlış anlaşılma olmasını önlemek istiyorum. Belgeyi ancak gelecek hafta sunarsam, bu geç sunumun kabul edildiğine dair bir kanıta ihtiyacım var." },
+            { "language": "ru", "text": "Я хочу избежать последующего недоразумения по поводу срока. Если я донесу справку только на следующей неделе, мне нужно доказательство, что такая последующая подача была принята." },
+            { "language": "ckb", "text": "دەمەوێت لە داهاتوودا لەسەر مۆڵەتەکە سووتێگەیشتن ڕوو نەدات. ئەگەر گواهییەکە تەنها هەفتەی داهاتوو پێشکەش بکەم، پێویستم بە بەڵگەیەکە کە ئەم پێشکەشکردنی دواترە پەسەند کراوە." },
+            { "language": "kmr", "text": "Ez dixwazim paşê şaşfêmkirinek li ser demê çênebe. Heke ez belgeyê tenê hefteya bê radest bikim, pêwîstiya min bi delîlekê heye ku ev radestkirina paşîn hatiye pejirandin." },
+            { "language": "pl", "text": "Chcę uniknąć późniejszego nieporozumienia dotyczącego terminu. Jeśli dosyłam zaświadczenie dopiero w przyszłym tygodniu, potrzebuję dowodu, że takie późniejsze złożenie zostało zaakceptowane." },
+            { "language": "ro", "text": "Vreau să evit o neînțelegere ulterioară privind termenul. Dacă depun certificatul abia săptămâna viitoare, am nevoie de o dovadă că această depunere ulterioară a fost acceptată." },
+            { "language": "sq", "text": "Dua të shmang një keqkuptim të mëvonshëm për afatin. Nëse e dorëzoj vërtetimin vetëm javën tjetër, më duhet një provë që kjo dorëzim i mëvonshëm është pranuar." }
+          ],
+          "function": "explain-reason",
+          "expectedLearnerAction": "Erkläre den Grund für die Bestätigung mit Frist, Nachreichung und Nachweis."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Das ist nachvollziehbar. Eine kurze Bestätigung können wir Ihnen per E-Mail schicken, wenn im System eine E-Mail-Adresse hinterlegt ist.",
+          "translations": [
+            { "language": "en", "text": "That is understandable. We can send you a short confirmation by email if an email address is stored in the system." },
+            { "language": "fa", "text": "این قابل درک است. اگر در سیستم نشانی ایمیل ثبت شده باشد، می‌توانیم یک تأیید کوتاه از طریق ایمیل برایتان بفرستیم." },
+            { "language": "ar", "text": "هذا مفهوم. يمكننا إرسال تأكيد قصير إليك عبر البريد الإلكتروني إذا كان هناك عنوان بريد إلكتروني مسجل في النظام." },
+            { "language": "tr", "text": "Bu anlaşılır. Sistemde bir e-posta adresi kayıtlıysa size kısa bir onay e-posta ile gönderebiliriz." },
+            { "language": "ru", "text": "Это понятно. Мы можем отправить вам короткое подтверждение по электронной почте, если в системе указан адрес электронной почты." },
+            { "language": "ckb", "text": "ئەمە تێگەیشتراوە. ئەگەر ناونیشانی ئیمەیڵ لە سیستەمدا تۆمار کرابێت، دەتوانین پشتڕاستکردنەوەیەکی کورت بە ئیمەیڵ بۆت بنێرین." },
+            { "language": "kmr", "text": "Ev tê famkirin. Heke navnîşana e-nameyê di pergalê de tomar bûbe, em dikarin piştrastkirineke kurt bi e-nameyê ji we re bişînin." },
+            { "language": "pl", "text": "To zrozumiałe. Możemy wysłać Panu krótkie potwierdzenie e-mailem, jeśli w systemie jest zapisany adres e-mail." },
+            { "language": "ro", "text": "Este de înțeles. Vă putem trimite o confirmare scurtă prin e-mail dacă în sistem este înregistrată o adresă de e-mail." },
+            { "language": "sq", "text": "Kjo është e kuptueshme. Mund t'ju dërgojmë një konfirmim të shkurtër me e-mail nëse në sistem është regjistruar një adresë e-maili." }
+          ],
+          "function": "offer-email-confirmation"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke. Können Sie bitte prüfen, ob meine E-Mail-Adresse rahimi@example.org hinterlegt ist? Wichtig wäre, dass in der Bestätigung das Aktenzeichen, die neue Frist und der Hinweis stehen, dass ich die Meldebescheinigung nachreichen darf.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Could you please check whether my email address rahimi@example.org is stored? It would be important for the confirmation to include the file number, the new deadline, and the note that I may submit the registration certificate later." },
+            { "language": "fa", "text": "ممنون. می‌توانید لطفاً بررسی کنید آیا ایمیل rahimi@example.org برای من ثبت شده است؟ مهم است که در تأیید، شماره پرونده، مهلت جدید و این نکته نوشته شود که می‌توانم گواهی ثبت آدرس را بعداً ارائه کنم." },
+            { "language": "ar", "text": "شكراً. هل يمكنك أن تتحققي من أن عنوان بريدي rahimi@example.org مسجل؟ من المهم أن يتضمن التأكيد رقم الملف والمهلة الجديدة والملاحظة بأنني أستطيع تقديم شهادة التسجيل لاحقاً." },
+            { "language": "tr", "text": "Teşekkür ederim. rahimi@example.org adresimin kayıtlı olup olmadığını kontrol edebilir misiniz? Onayda dosya numarasının, yeni sürenin ve adres kayıt belgesini daha sonra sunabileceğim bilgisinin yer alması önemli olur." },
+            { "language": "ru", "text": "Спасибо. Можете проверить, указана ли моя электронная почта rahimi@example.org? Важно, чтобы в подтверждении были номер дела, новый срок и указание, что я могу донести справку о регистрации позже." },
+            { "language": "ckb", "text": "سوپاس. دەتوانن تکایە بپشکنن ئایا ئیمەیڵی rahimi@example.org بۆ من تۆمار کراوە؟ گرنگە لە پشتڕاستکردنەوەکەدا ژمارەی کەیس، مۆڵەتی نوێ و ئەو ئاماژەیە هەبێت کە دەتوانم گواهیی تۆمارکردنی ناونیشان دواتر پێشکەش بکەم." },
+            { "language": "kmr", "text": "Spas. Hûn dikarin ji kerema xwe kontrol bikin gelo e-nameya min rahimi@example.org tomar bûye? Girîng e ku di piştrastkirinê de hejmarê dosyeyê, dema nû û nîşana ku ez dikarim belgeya qeydkirina navnîşanê paşê radest bikim hebe." },
+            { "language": "pl", "text": "Dziękuję. Czy może Pani sprawdzić, czy mój adres rahimi@example.org jest zapisany? Ważne byłoby, aby w potwierdzeniu znalazły się numer sprawy, nowy termin i informacja, że mogę dosłać zaświadczenie o zameldowaniu później." },
+            { "language": "ro", "text": "Mulțumesc. Puteți verifica, vă rog, dacă adresa mea rahimi@example.org este înregistrată? Ar fi important ca în confirmare să apară numărul dosarului, noul termen și mențiunea că pot depune certificatul de înregistrare a domiciliului mai târziu." },
+            { "language": "sq", "text": "Faleminderit. A mund të kontrolloni, ju lutem, nëse adresa ime rahimi@example.org është e regjistruar? Është e rëndësishme që konfirmimi të përmbajë numrin e dosjes, afatin e ri dhe shënimin se mund ta dorëzoj më vonë vërtetimin e regjistrimit të adresës." }
+          ],
+          "function": "specify-confirmation-content",
+          "expectedLearnerAction": "Prüfe den Versandweg und nenne konkret, welche Angaben in der Bestätigung stehen sollen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Die Adresse ist hinterlegt. Ich kann bestätigen: Aktenzeichen BN-4821, Nachreichung der Meldebescheinigung bis zum 18. Juli, Einreichung über das Online-Portal oder persönlich am Schalter.",
+          "translations": [
+            { "language": "en", "text": "The address is stored. I can confirm: file number BN-4821, later submission of the registration certificate by July 18, submission through the online portal or in person at the counter." },
+            { "language": "fa", "text": "نشانی ثبت شده است. می‌توانم تأیید کنم: شماره پرونده BN-4821، ارائه بعدی گواهی ثبت آدرس تا ۱۸ ژوئیه، تحویل از طریق درگاه آنلاین یا حضوری در باجه." },
+            { "language": "ar", "text": "العنوان مسجل. يمكنني التأكيد: رقم الملف BN-4821، تقديم شهادة التسجيل لاحقاً حتى 18 يوليو، والتقديم عبر البوابة الإلكترونية أو شخصياً عند الشباك." },
+            { "language": "tr", "text": "Adres kayıtlı. Şunu onaylayabilirim: dosya numarası BN-4821, adres kayıt belgesinin 18 Temmuz'a kadar sonradan sunulması, çevrim içi portal üzerinden veya gişede şahsen teslim." },
+            { "language": "ru", "text": "Адрес указан. Я могу подтвердить: номер дела BN-4821, последующая подача справки о регистрации до 18 июля, подача через онлайн-портал или лично у стойки." },
+            { "language": "ckb", "text": "ناونیشانەکە تۆمار کراوە. دەتوانم پشتڕاست بکەمەوە: ژمارەی کەیس BN-4821، پێشکەشکردنی دواتری گواهیی تۆمارکردنی ناونیشان تا ١٨ی تەممووز، پێشکەشکردن لە ڕێگەی پۆرتاڵی ئۆنلاین یان بە ئامادەبوون لە باجە." },
+            { "language": "kmr", "text": "Navnîşan tomar bûye. Ez dikarim piştrast bikim: hejmarê dosyeyê BN-4821, radestkirina paşîn a belgeya qeydkirina navnîşanê heta 18ê Tîrmehê, radestkirin bi rêya portala serhêl an bi xwe li pêşxaneyê." },
+            { "language": "pl", "text": "Adres jest zapisany. Mogę potwierdzić: numer sprawy BN-4821, dosłanie zaświadczenia o zameldowaniu do 18 lipca, złożenie przez portal internetowy albo osobiście przy okienku." },
+            { "language": "ro", "text": "Adresa este înregistrată. Pot confirma: numărul dosarului BN-4821, depunerea ulterioară a certificatului de înregistrare a domiciliului până la 18 iulie, depunere prin portalul online sau personal la ghișeu." },
+            { "language": "sq", "text": "Adresa është e regjistruar. Mund të konfirmoj: numri i dosjes BN-4821, dorëzimi i mëvonshëm i vërtetimit të regjistrimit të adresës deri më 18 korrik, dorëzimi përmes portalit online ose personalisht në sportel." }
+          ],
+          "function": "confirm-details"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist genau die Information, die ich brauche. Könnten Sie mir diese Bestätigung bitte heute per E-Mail senden? Falls das nicht möglich ist, würde mir auch ein kurzer schriftlicher Vermerk im Portal reichen.",
+          "translations": [
+            { "language": "en", "text": "That is exactly the information I need. Could you please send me this confirmation by email today? If that is not possible, a short written note in the portal would also be enough for me." },
+            { "language": "fa", "text": "این دقیقاً همان اطلاعاتی است که لازم دارم. می‌توانید لطفاً همین امروز این تأیید را از طریق ایمیل برایم بفرستید؟ اگر ممکن نیست، یک یادداشت کوتاه کتبی در درگاه هم برایم کافی است." },
+            { "language": "ar", "text": "هذه بالضبط هي المعلومة التي أحتاجها. هل يمكنك إرسال هذا التأكيد إليّ اليوم عبر البريد الإلكتروني؟ إذا لم يكن ذلك ممكناً، فتكفيني أيضاً ملاحظة خطية قصيرة في البوابة." },
+            { "language": "tr", "text": "Bu tam olarak ihtiyacım olan bilgi. Bu onayı bugün bana e-posta ile gönderebilir misiniz? Bu mümkün değilse, portaldaki kısa bir yazılı not da benim için yeterli olur." },
+            { "language": "ru", "text": "Это именно та информация, которая мне нужна. Можете отправить мне это подтверждение сегодня по электронной почте? Если это невозможно, мне также будет достаточно короткой письменной заметки в портале." },
+            { "language": "ckb", "text": "ئەمە بە وردی ئەو زانیارییەیە کە پێویستم پێیە. دەتوانن تکایە ئەمڕۆ ئەم پشتڕاستکردنەوەیە بە ئیمەیڵ بۆم بنێرن؟ ئەگەر ئەمە نەکرا، تێبینییەکی نووسراوی کورت لە پۆرتاڵەکەش بۆم بەسە." },
+            { "language": "kmr", "text": "Ev rast ew agahiyê ye ku pêwîstiya min pê heye. Hûn dikarin vê piştrastkirinê îro bi e-nameyê ji min re bişînin? Heke ev ne gengaz be, nîşeyeke nivîskî ya kurt di portalê de jî ji min re bes e." },
+            { "language": "pl", "text": "To dokładnie ta informacja, której potrzebuję. Czy mogłaby Pani wysłać mi dziś to potwierdzenie e-mailem? Jeśli to nie jest możliwe, wystarczy mi też krótka pisemna notatka w portalu." },
+            { "language": "ro", "text": "Aceasta este exact informația de care am nevoie. Îmi puteți trimite, vă rog, această confirmare astăzi prin e-mail? Dacă nu este posibil, mi-ar fi suficientă și o scurtă notă scrisă în portal." },
+            { "language": "sq", "text": "Ky është pikërisht informacioni që më duhet. A mund të ma dërgoni këtë konfirmim sot me e-mail? Nëse kjo nuk është e mundur, më mjafton edhe një shënim i shkurtër me shkrim në portal." }
+          ],
+          "function": "request-delivery-time",
+          "expectedLearnerAction": "Bitte konkret um Versand heute und nenne eine akzeptable Alternative."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "office-staff",
+          "baseText": "Ich sende Ihnen die Bestätigung heute an die hinterlegte E-Mail-Adresse. Sie sollte innerhalb der nächsten Stunde ankommen. Prüfen Sie bitte auch den Spam-Ordner.",
+          "translations": [
+            { "language": "en", "text": "I will send the confirmation today to the stored email address. It should arrive within the next hour. Please also check the spam folder." },
+            { "language": "fa", "text": "تأیید را امروز به نشانی ایمیل ثبت‌شده می‌فرستم. باید ظرف یک ساعت آینده برسد. لطفاً پوشه هرزنامه را هم بررسی کنید." },
+            { "language": "ar", "text": "سأرسل التأكيد اليوم إلى عنوان البريد الإلكتروني المسجل. ينبغي أن يصل خلال الساعة القادمة. يرجى أيضاً فحص مجلد الرسائل غير المرغوب فيها." },
+            { "language": "tr", "text": "Onayı bugün kayıtlı e-posta adresine göndereceğim. Önümüzdeki bir saat içinde ulaşması gerekir. Lütfen istenmeyen posta klasörünü de kontrol edin." },
+            { "language": "ru", "text": "Я отправлю подтверждение сегодня на указанный адрес электронной почты. Оно должно прийти в течение следующего часа. Пожалуйста, проверьте также папку спама." },
+            { "language": "ckb", "text": "پشتڕاستکردنەوەکە ئەمڕۆ بۆ ناونیشانی ئیمەیڵی تۆمارکراو دەنێرم. دەبێت لە ماوەی کاتژمێرێکی داهاتوودا بگات. تکایە فۆڵدەری سپامیش بپشکنە." },
+            { "language": "kmr", "text": "Ez piştrastkirinê îro ji navnîşana e-nameya tomarbûyî re dişînim. Divê di saeta bê de bigihîje. Ji kerema xwe peldanka spam jî kontrol bikin." },
+            { "language": "pl", "text": "Wyślę dziś potwierdzenie na zapisany adres e-mail. Powinno dotrzeć w ciągu najbliższej godziny. Proszę sprawdzić także folder spam." },
+            { "language": "ro", "text": "Vă trimit confirmarea astăzi la adresa de e-mail înregistrată. Ar trebui să ajungă în următoarea oră. Vă rog să verificați și dosarul de spam." },
+            { "language": "sq", "text": "Do ta dërgoj konfirmimin sot në adresën e-mail të regjistruar. Duhet të mbërrijë brenda orës së ardhshme. Ju lutem kontrolloni edhe dosjen e mesazheve të padëshiruara." }
+          ],
+          "function": "confirm-delivery"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann warte ich heute auf die E-Mail und prüfe auch den Spam-Ordner. Ich habe verstanden: Aktenzeichen BN-4821, Nachreichung der Meldebescheinigung bis 18. Juli, über das Portal oder persönlich am Schalter.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will wait for the email today and also check the spam folder. I understood: file number BN-4821, later submission of the registration certificate by July 18, through the portal or in person at the counter." },
+            { "language": "fa", "text": "خیلی ممنون. پس امروز منتظر ایمیل می‌مانم و پوشه هرزنامه را هم بررسی می‌کنم. فهمیدم: شماره پرونده BN-4821، ارائه بعدی گواهی ثبت آدرس تا ۱۸ ژوئیه، از طریق درگاه یا حضوری در باجه." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأنتظر البريد الإلكتروني اليوم وسأفحص أيضاً مجلد الرسائل غير المرغوب فيها. فهمت: رقم الملف BN-4821، تقديم شهادة التسجيل لاحقاً حتى 18 يوليو، عبر البوابة أو شخصياً عند الشباك." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman bugün e-postayı bekleyeceğim ve istenmeyen posta klasörünü de kontrol edeceğim. Anladığım şu: dosya numarası BN-4821, adres kayıt belgesinin 18 Temmuz'a kadar sonradan sunulması, portal üzerinden veya gişede şahsen." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я сегодня буду ждать электронное письмо и также проверю папку спама. Я понял: номер дела BN-4821, последующая подача справки о регистрации до 18 июля, через портал или лично у стойки." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ چاوەڕێی ئیمەیڵەکە دەکەم و فۆڵدەری سپامیش دەپشکنم. تێگەیشتم: ژمارەی کەیس BN-4821، پێشکەشکردنی دواتری گواهیی تۆمارکردنی ناونیشان تا ١٨ی تەممووز، لە ڕێگەی پۆرتاڵ یان بە ئامادەبوون لە باجە." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez îro li benda e-nameyê dimînim û peldanka spam jî kontrol dikim. Min fam kir: hejmarê dosyeyê BN-4821, radestkirina paşîn a belgeya qeydkirina navnîşanê heta 18ê Tîrmehê, bi rêya portalê an bi xwe li pêşxaneyê." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie dziś poczekam na e-mail i sprawdzę też folder spam. Zrozumiałem: numer sprawy BN-4821, dosłanie zaświadczenia o zameldowaniu do 18 lipca, przez portal albo osobiście przy okienku." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci voi aștepta astăzi e-mailul și voi verifica și dosarul de spam. Am înțeles: numărul dosarului BN-4821, depunerea ulterioară a certificatului de înregistrare a domiciliului până la 18 iulie, prin portal sau personal la ghișeu." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë sot do ta pres e-mailin dhe do të kontrolloj edhe dosjen e mesazheve të padëshiruara. E kuptova: numri i dosjes BN-4821, dorëzimi i mëvonshëm i vërtetimit të regjistrimit të adresës deri më 18 korrik, përmes portalit ose personalisht në sportel." }
+          ],
+          "function": "close-with-confirmed-summary",
+          "expectedLearnerAction": "Schließe mit einer vollständigen Zusammenfassung von Versand, Frist, Aktenzeichen und Einreichungsweg."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag, mein Name ist Amir Rahimi. Es geht um mein Aktenzeichen BN-4821. Mir wurde gestern telefonisch gesagt, dass ich die Meldebescheinigung bis nächste Woche nachreichen darf. Ich möchte dazu gern eine schriftliche Bestätigung bekommen.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon, my name is Amir Rahimi. This concerns my file number BN-4821. Yesterday I was told by phone that I may submit the registration certificate by next week. I would like to receive written confirmation of that." },
+                { "language": "fa", "text": "روز بخیر، نام من امیر رحیمی است. موضوع مربوط به شماره پرونده BN-4821 است. دیروز تلفنی به من گفته شد که می‌توانم گواهی ثبت آدرس را تا هفته آینده ارائه کنم. می‌خواهم برای این موضوع تأیید کتبی دریافت کنم." },
+                { "language": "ar", "text": "نهارك سعيد، اسمي أمير رحيمي. الأمر يتعلق برقم ملفي BN-4821. قيل لي هاتفياً أمس إن بإمكاني تقديم شهادة التسجيل حتى الأسبوع القادم. أود أن أحصل على تأكيد خطي بذلك." },
+                { "language": "tr", "text": "İyi günler, adım Amir Rahimi. Konu BN-4821 numaralı dosyamla ilgili. Dün telefonda adres kayıt belgesini gelecek haftaya kadar sunabileceğim söylendi. Bunun için yazılı onay almak istiyorum." },
+                { "language": "ru", "text": "Добрый день, меня зовут Амир Рахими. Речь идёт о моём номере дела BN-4821. Вчера по телефону мне сказали, что я могу донести справку о регистрации до следующей недели. Я хотел бы получить письменное подтверждение этого." },
+                { "language": "ckb", "text": "ڕۆژ باش، ناوم ئەمیر ڕەحیمییە. بابەتەکە پەیوەندی بە ژمارەی کەیسی BN-4821 ـەوە هەیە. دوێنێ بە تەلەفۆن پێم وترا کە دەتوانم گواهیی تۆمارکردنی ناونیشان تا هەفتەی داهاتوو پێشکەش بکەم. دەمەوێت پشتڕاستکردنەوەیەکی نووسراو بۆ ئەمە وەربگرم." },
+                { "language": "kmr", "text": "Roj baş, navê min Amir Rahimi ye. Ev derbarê hejmarê dosyeya min BN-4821 e. Duh bi telefonê ji min re hate gotin ku ez dikarim belgeya qeydkirina navnîşanê heta hefteya bê radest bikim. Ez dixwazim ji bo vê yekê piştrastkirineke nivîskî wergirim." },
+                { "language": "pl", "text": "Dzień dobry, nazywam się Amir Rahimi. Chodzi o mój numer sprawy BN-4821. Wczoraj telefonicznie powiedziano mi, że mogę dosłać zaświadczenie o zameldowaniu do przyszłego tygodnia. Chciałbym otrzymać pisemne potwierdzenie tej informacji." },
+                { "language": "ro", "text": "Bună ziua, mă numesc Amir Rahimi. Este vorba despre numărul dosarului meu BN-4821. Ieri mi s-a spus telefonic că pot depune certificatul de înregistrare a domiciliului până săptămâna viitoare. Aș dori să primesc o confirmare scrisă pentru acest lucru." },
+                { "language": "sq", "text": "Mirëdita, quhem Amir Rahimi. Bëhet fjalë për numrin tim të dosjes BN-4821. Dje më thanë me telefon se mund ta dorëzoj vërtetimin e regjistrimit të adresës deri javën tjetër. Dua të marr një konfirmim me shkrim për këtë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Aktenzeichen, mündliche Absprache und die konkrete Bitte um schriftliche Bestätigung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer names the file number, the verbal agreement, and the specific request for written confirmation." },
+                { "language": "fa", "text": "خوب است: پاسخ شماره پرونده، توافق شفاهی و درخواست مشخص برای تأیید کتبی را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة رقم الملف والاتفاق الشفهي والطلب المحدد للحصول على تأكيد خطي." },
+                { "language": "tr", "text": "İyi: Yanıt dosya numarasını, sözlü anlaşmayı ve yazılı onay için somut talebi belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ называет номер дела, устную договорённость и конкретную просьбу о письменном подтверждении." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ژمارەی کەیس، ڕێککەوتنی زارەکی و داواکاری دیاریکراو بۆ پشتڕاستکردنەوەی نووسراو دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv hejmarê dosyeyê, lihevhatina devkî û daxwaza konkret ji bo piştrastkirina nivîskî dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje numer sprawy, ustne ustalenie i konkretną prośbę o pisemne potwierdzenie." },
+                { "language": "ro", "text": "Bine: răspunsul menționează numărul dosarului, înțelegerea verbală și cererea concretă de confirmare scrisă." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend numrin e dosjes, marrëveshjen me gojë dhe kërkesën konkrete për konfirmim me shkrim." }
+              ]
+            },
+            {
+              "id": "weak-too-vague",
+              "text": "Guten Tag, ich brauche etwas Schriftliches, weil ich gestern mit jemandem gesprochen habe.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon, I need something in writing because I spoke with someone yesterday." },
+                { "language": "fa", "text": "روز بخیر، من به یک چیز کتبی نیاز دارم، چون دیروز با کسی صحبت کردم." },
+                { "language": "ar", "text": "نهارك سعيد، أحتاج إلى شيء مكتوب لأنني تحدثت مع شخص ما أمس." },
+                { "language": "tr", "text": "İyi günler, dün biriyle konuştuğum için yazılı bir şeye ihtiyacım var." },
+                { "language": "ru", "text": "Добрый день, мне нужно что-то письменное, потому что вчера я с кем-то разговаривал." },
+                { "language": "ckb", "text": "ڕۆژ باش، پێویستم بە شتێکی نووسراوە، چونکە دوێنێ لەگەڵ کەسێک قسەم کرد." },
+                { "language": "kmr", "text": "Roj baş, pêwîstiya min bi tiştekî nivîskî heye, ji ber ku duh min bi kesekî re axivî." },
+                { "language": "pl", "text": "Dzień dobry, potrzebuję czegoś na piśmie, bo wczoraj z kimś rozmawiałem." },
+                { "language": "ro", "text": "Bună ziua, am nevoie de ceva în scris pentru că ieri am vorbit cu cineva." },
+                { "language": "sq", "text": "Mirëdita, më duhet diçka me shkrim sepse dje fola me dikë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau: Es fehlen Aktenzeichen, Thema und die konkrete mündliche Aussage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: The file number, topic, and exact verbal statement are missing." },
+                { "language": "fa", "text": "قابل‌باور است، اما خیلی مبهم است: شماره پرونده، موضوع و جمله شفاهی دقیق کم است." },
+                { "language": "ar", "text": "معقول، لكنه غير دقيق: رقم الملف والموضوع والتصريح الشفهي المحدد ناقصة." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: Dosya numarası, konu ve tam sözlü ifade eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: отсутствуют номер дела, тема и точное устное заявление." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر ناڕوونە: ژمارەی کەیس، بابەت و قسەی زارەکی ورد کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e: hejmarê dosyeyê, mijar û gotina devkî ya rast kêm in." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt nieprecyzyjne: brakuje numeru sprawy, tematu i dokładnej ustnej informacji." },
+                { "language": "ro", "text": "Plauzibil, dar prea neclar: lipsesc numărul dosarului, tema și afirmația verbală exactă." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: mungojnë numri i dosjes, tema dhe deklarata e saktë me gojë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich möchte vermeiden, dass es später ein Missverständnis über die Frist gibt. Wenn ich die Bescheinigung erst nächste Woche nachreiche, brauche ich einen Nachweis, dass diese Nachreichung akzeptiert wurde.",
+              "translations": [
+                { "language": "en", "text": "I want to avoid a misunderstanding about the deadline later. If I submit the certificate only next week, I need proof that this later submission was accepted." },
+                { "language": "fa", "text": "می‌خواهم از سوءتفاهم بعدی درباره مهلت جلوگیری کنم. اگر گواهی را تازه هفته آینده ارائه کنم، به مدرکی نیاز دارم که نشان دهد این ارائه دیرتر پذیرفته شده است." },
+                { "language": "ar", "text": "أريد أن أتجنب حدوث سوء فهم لاحقاً حول المهلة. إذا قدمت الشهادة في الأسبوع القادم فقط، فأحتاج إلى إثبات أن هذا التقديم اللاحق قُبل." },
+                { "language": "tr", "text": "Daha sonra süre konusunda yanlış anlaşılma olmasını önlemek istiyorum. Belgeyi ancak gelecek hafta sunarsam, bu geç sunumun kabul edildiğine dair bir kanıta ihtiyacım var." },
+                { "language": "ru", "text": "Я хочу избежать последующего недоразумения по поводу срока. Если я донесу справку только на следующей неделе, мне нужно доказательство, что такая последующая подача была принята." },
+                { "language": "ckb", "text": "دەمەوێت لە داهاتوودا لەسەر مۆڵەتەکە سووتێگەیشتن ڕوو نەدات. ئەگەر گواهییەکە تەنها هەفتەی داهاتوو پێشکەش بکەم، پێویستم بە بەڵگەیەکە کە ئەم پێشکەشکردنی دواترە پەسەند کراوە." },
+                { "language": "kmr", "text": "Ez dixwazim paşê şaşfêmkirinek li ser demê çênebe. Heke ez belgeyê tenê hefteya bê radest bikim, pêwîstiya min bi delîlekê heye ku ev radestkirina paşîn hatiye pejirandin." },
+                { "language": "pl", "text": "Chcę uniknąć późniejszego nieporozumienia dotyczącego terminu. Jeśli dosyłam zaświadczenie dopiero w przyszłym tygodniu, potrzebuję dowodu, że takie późniejsze złożenie zostało zaakceptowane." },
+                { "language": "ro", "text": "Vreau să evit o neînțelegere ulterioară privind termenul. Dacă depun certificatul abia săptămâna viitoare, am nevoie de o dovadă că această depunere ulterioară a fost acceptată." },
+                { "language": "sq", "text": "Dua të shmang një keqkuptim të mëvonshëm për afatin. Nëse e dorëzoj vërtetimin vetëm javën tjetër, më duhet një provë që kjo dorëzim i mëvonshëm është pranuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort erklärt den Zweck der Bestätigung und bleibt sachlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer explains the purpose of the confirmation and stays factual." },
+                { "language": "fa", "text": "خوب است: پاسخ هدف تأیید را توضیح می‌دهد و واقع‌محور می‌ماند." },
+                { "language": "ar", "text": "جيد: تشرح الإجابة الغرض من التأكيد وتبقى موضوعية." },
+                { "language": "tr", "text": "İyi: Yanıt onayın amacını açıklar ve somut kalır." },
+                { "language": "ru", "text": "Хорошо: ответ объясняет цель подтверждения и остаётся фактическим." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ئامانجی پشتڕاستکردنەوە ڕوون دەکاتەوە و بابەتی دەمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv armanca piştrastkirinê rave dike û rastîn dimîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wyjaśnia cel potwierdzenia i pozostaje rzeczowa." },
+                { "language": "ro", "text": "Bine: răspunsul explică scopul confirmării și rămâne obiectiv." },
+                { "language": "sq", "text": "Mirë: përgjigjja shpjegon qëllimin e konfirmimit dhe mbetet faktike." }
+              ]
+            },
+            {
+              "id": "weak-too-demanding",
+              "text": "Ich brauche das schriftlich, sonst kann ich mich später nicht auf Sie verlassen.",
+              "translations": [
+                { "language": "en", "text": "I need that in writing, otherwise I cannot rely on you later." },
+                { "language": "fa", "text": "من این را کتبی لازم دارم، وگرنه بعداً نمی‌توانم به شما اعتماد کنم." },
+                { "language": "ar", "text": "أحتاج إلى ذلك خطياً، وإلا فلن أستطيع الاعتماد عليك لاحقاً." },
+                { "language": "tr", "text": "Bunu yazılı olarak almam lazım, yoksa daha sonra size güvenemem." },
+                { "language": "ru", "text": "Мне нужно это письменно, иначе позже я не смогу на вас положиться." },
+                { "language": "ckb", "text": "پێویستم بەوەیە بە نووسراوی بێت، ئەگینا دواتر ناتوانم پشتت پێ ببەستم." },
+                { "language": "kmr", "text": "Pêwîst e ev bi nivîskî be, wekî din ez paşê nikarim xwe bispêrim we." },
+                { "language": "pl", "text": "Potrzebuję tego na piśmie, bo inaczej później nie będę mógł na Pani polegać." },
+                { "language": "ro", "text": "Am nevoie de asta în scris, altfel nu mă pot baza pe dumneavoastră mai târziu." },
+                { "language": "sq", "text": "Më duhet kjo me shkrim, përndryshe më vonë nuk mund të mbështetem tek ju." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu konfrontativ: Der Grund ist verständlich, aber die Formulierung klingt wie ein Vorwurf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too confrontational: The reason is understandable, but the wording sounds like blame." },
+                { "language": "fa", "text": "بیش از حد تقابلی است: دلیل قابل فهم است، اما جمله شبیه سرزنش به نظر می‌رسد." },
+                { "language": "ar", "text": "تصادمية جداً: السبب مفهوم، لكن الصياغة تبدو كاتهام." },
+                { "language": "tr", "text": "Fazla karşı karşıya getiren bir ifade: Gerekçe anlaşılır, ama ifade suçlama gibi duyulur." },
+                { "language": "ru", "text": "Слишком конфронтационно: причина понятна, но формулировка звучит как обвинение." },
+                { "language": "ckb", "text": "زۆر ڕووبەڕووکەرە: هۆکارەکە تێگەیشتراوە، بەڵام دەستەواژەکە وەک تاوانبارکردن دەنگ دەدات." },
+                { "language": "kmr", "text": "Pir rûbirûker e: Sedem tê famkirin, lê gotin wekî sûcdarkirinê tê bihîstin." },
+                { "language": "pl", "text": "Zbyt konfrontacyjnie: powód jest zrozumiały, ale sformułowanie brzmi jak zarzut." },
+                { "language": "ro", "text": "Prea conflictual: motivul este de înțeles, dar formularea sună ca o acuzație." },
+                { "language": "sq", "text": "Shumë konfrontuese: arsyeja kuptohet, por formulimi tingëllon si akuzë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Können Sie bitte prüfen, ob meine E-Mail-Adresse rahimi@example.org hinterlegt ist? Wichtig wäre, dass in der Bestätigung das Aktenzeichen, die neue Frist und der Hinweis stehen, dass ich die Meldebescheinigung nachreichen darf.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Could you please check whether my email address rahimi@example.org is stored? It would be important for the confirmation to include the file number, the new deadline, and the note that I may submit the registration certificate later." },
+                { "language": "fa", "text": "ممنون. می‌توانید لطفاً بررسی کنید آیا ایمیل rahimi@example.org برای من ثبت شده است؟ مهم است که در تأیید، شماره پرونده، مهلت جدید و این نکته نوشته شود که می‌توانم گواهی ثبت آدرس را بعداً ارائه کنم." },
+                { "language": "ar", "text": "شكراً. هل يمكنك أن تتحققي من أن عنوان بريدي rahimi@example.org مسجل؟ من المهم أن يتضمن التأكيد رقم الملف والمهلة الجديدة والملاحظة بأنني أستطيع تقديم شهادة التسجيل لاحقاً." },
+                { "language": "tr", "text": "Teşekkür ederim. rahimi@example.org adresimin kayıtlı olup olmadığını kontrol edebilir misiniz? Onayda dosya numarasının, yeni sürenin ve adres kayıt belgesini daha sonra sunabileceğim bilgisinin yer alması önemli olur." },
+                { "language": "ru", "text": "Спасибо. Можете проверить, указана ли моя электронная почта rahimi@example.org? Важно, чтобы в подтверждении были номер дела, новый срок и указание, что я могу донести справку о регистрации позже." },
+                { "language": "ckb", "text": "سوپاس. دەتوانن تکایە بپشکنن ئایا ئیمەیڵی rahimi@example.org بۆ من تۆمار کراوە؟ گرنگە لە پشتڕاستکردنەوەکەدا ژمارەی کەیس، مۆڵەتی نوێ و ئەو ئاماژەیە هەبێت کە دەتوانم گواهیی تۆمارکردنی ناونیشان دواتر پێشکەش بکەم." },
+                { "language": "kmr", "text": "Spas. Hûn dikarin ji kerema xwe kontrol bikin gelo e-nameya min rahimi@example.org tomar bûye? Girîng e ku di piştrastkirinê de hejmarê dosyeyê, dema nû û nîşana ku ez dikarim belgeya qeydkirina navnîşanê paşê radest bikim hebe." },
+                { "language": "pl", "text": "Dziękuję. Czy może Pani sprawdzić, czy mój adres rahimi@example.org jest zapisany? Ważne byłoby, aby w potwierdzeniu znalazły się numer sprawy, nowy termin i informacja, że mogę dosłać zaświadczenie o zameldowaniu później." },
+                { "language": "ro", "text": "Mulțumesc. Puteți verifica, vă rog, dacă adresa mea rahimi@example.org este înregistrată? Ar fi important ca în confirmare să apară numărul dosarului, noul termen și mențiunea că pot depune certificatul de înregistrare a domiciliului mai târziu." },
+                { "language": "sq", "text": "Faleminderit. A mund të kontrolloni, ju lutem, nëse adresa ime rahimi@example.org është e regjistruar? Është e rëndësishme që konfirmimi të përmbajë numrin e dosjes, afatin e ri dhe shënimin se mund ta dorëzoj më vonë vërtetimin e regjistrimit të adresës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort klärt Versandweg und Inhalt der Bestätigung konkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer clarifies both delivery method and confirmation content concretely." },
+                { "language": "fa", "text": "خوب است: پاسخ هم راه ارسال و هم محتوای تأیید را مشخص و دقیق روشن می‌کند." },
+                { "language": "ar", "text": "جيد: توضح الإجابة طريقة الإرسال ومحتوى التأكيد بشكل محدد." },
+                { "language": "tr", "text": "İyi: Yanıt gönderim yolunu ve onayın içeriğini somut biçimde netleştirir." },
+                { "language": "ru", "text": "Хорошо: ответ конкретно уточняет способ отправки и содержание подтверждения." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕێگای ناردن و ناوەڕۆکی پشتڕاستکردنەوە بە دیاریکراوی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv rêya şandinê û naveroka piştrastkirinê bi awayekî konkret zelal dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź konkretnie wyjaśnia sposób wysłania i treść potwierdzenia." },
+                { "language": "ro", "text": "Bine: răspunsul clarifică exact modalitatea de trimitere și conținutul confirmării." },
+                { "language": "sq", "text": "Mirë: përgjigjja sqaron konkretisht mënyrën e dërgimit dhe përmbajtjen e konfirmimit." }
+              ]
+            },
+            {
+              "id": "weak-missing-content",
+              "text": "Ja, schicken Sie mir bitte einfach eine E-Mail dazu.",
+              "translations": [
+                { "language": "en", "text": "Yes, please just send me an email about it." },
+                { "language": "fa", "text": "بله، لطفاً فقط یک ایمیل درباره آن برایم بفرستید." },
+                { "language": "ar", "text": "نعم، أرسلي لي من فضلك بريداً إلكترونياً بخصوص ذلك فقط." },
+                { "language": "tr", "text": "Evet, lütfen bununla ilgili bana sadece bir e-posta gönderin." },
+                { "language": "ru", "text": "Да, просто отправьте мне, пожалуйста, электронное письмо об этом." },
+                { "language": "ckb", "text": "بەڵێ، تکایە تەنها ئیمەیڵێک سەبارەت بەوە بۆم بنێرن." },
+                { "language": "kmr", "text": "Erê, ji kerema xwe tenê e-nameyekê li ser vê yekê ji min re bişînin." },
+                { "language": "pl", "text": "Tak, proszę po prostu wysłać mi e-mail w tej sprawie." },
+                { "language": "ro", "text": "Da, vă rog să îmi trimiteți pur și simplu un e-mail despre asta." },
+                { "language": "sq", "text": "Po, ju lutem më dërgoni thjesht një e-mail për këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Bitte ist höflich, aber ohne Aktenzeichen, Frist und konkreten Inhalt kann die Bestätigung unbrauchbar bleiben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: The request is polite, but without file number, deadline, and concrete content, the confirmation may remain unusable." },
+                { "language": "fa", "text": "خیلی ضعیف است: درخواست مؤدبانه است، اما بدون شماره پرونده، مهلت و محتوای مشخص، تأیید ممکن است بی‌فایده بماند." },
+                { "language": "ar", "text": "ضعيفة جداً: الطلب مهذب، لكن من دون رقم الملف والمهلة والمحتوى المحدد قد يبقى التأكيد غير مفيد." },
+                { "language": "tr", "text": "Çok zayıf: Talep nazik, ancak dosya numarası, süre ve somut içerik olmadan onay işe yaramayabilir." },
+                { "language": "ru", "text": "Слишком слабо: просьба вежливая, но без номера дела, срока и конкретного содержания подтверждение может оказаться бесполезным." },
+                { "language": "ckb", "text": "زۆر لاوازە: داواکارییەکە بەڕێزە، بەڵام بەبێ ژمارەی کەیس، مۆڵەت و ناوەڕۆکی دیاریکراو، پشتڕاستکردنەوەکە لەوانەیە بێسوود بێت." },
+                { "language": "kmr", "text": "Pir qels e: Daxwaz bi rêz e, lê bê hejmarê dosyeyê, dem û naveroka konkret, piştrastkirin dikare bêkêr bimîne." },
+                { "language": "pl", "text": "Za słabe: prośba jest uprzejma, ale bez numeru sprawy, terminu i konkretnej treści potwierdzenie może być bezużyteczne." },
+                { "language": "ro", "text": "Prea slab: cererea este politicoasă, dar fără numărul dosarului, termen și conținut concret, confirmarea poate rămâne inutilă." },
+                { "language": "sq", "text": "Shumë e dobët: kërkesa është e sjellshme, por pa numrin e dosjes, afatin dhe përmbajtjen konkrete, konfirmimi mund të mbetet i padobishëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Das ist genau die Information, die ich brauche. Könnten Sie mir diese Bestätigung bitte heute per E-Mail senden? Falls das nicht möglich ist, würde mir auch ein kurzer schriftlicher Vermerk im Portal reichen.",
+              "translations": [
+                { "language": "en", "text": "That is exactly the information I need. Could you please send me this confirmation by email today? If that is not possible, a short written note in the portal would also be enough for me." },
+                { "language": "fa", "text": "این دقیقاً همان اطلاعاتی است که لازم دارم. می‌توانید لطفاً همین امروز این تأیید را از طریق ایمیل برایم بفرستید؟ اگر ممکن نیست، یک یادداشت کوتاه کتبی در درگاه هم برایم کافی است." },
+                { "language": "ar", "text": "هذه بالضبط هي المعلومة التي أحتاجها. هل يمكنك إرسال هذا التأكيد إليّ اليوم عبر البريد الإلكتروني؟ إذا لم يكن ذلك ممكناً، فتكفيني أيضاً ملاحظة خطية قصيرة في البوابة." },
+                { "language": "tr", "text": "Bu tam olarak ihtiyacım olan bilgi. Bu onayı bugün bana e-posta ile gönderebilir misiniz? Bu mümkün değilse, portaldaki kısa bir yazılı not da benim için yeterli olur." },
+                { "language": "ru", "text": "Это именно та информация, которая мне нужна. Можете отправить мне это подтверждение сегодня по электронной почте? Если это невозможно, мне также будет достаточно короткой письменной заметки в портале." },
+                { "language": "ckb", "text": "ئەمە بە وردی ئەو زانیارییەیە کە پێویستم پێیە. دەتوانن تکایە ئەمڕۆ ئەم پشتڕاستکردنەوەیە بە ئیمەیڵ بۆم بنێرن؟ ئەگەر ئەمە نەکرا، تێبینییەکی نووسراوی کورت لە پۆرتاڵەکەش بۆم بەسە." },
+                { "language": "kmr", "text": "Ev rast ew agahiyê ye ku pêwîstiya min pê heye. Hûn dikarin vê piştrastkirinê îro bi e-nameyê ji min re bişînin? Heke ev ne gengaz be, nîşeyeke nivîskî ya kurt di portalê de jî ji min re bes e." },
+                { "language": "pl", "text": "To dokładnie ta informacja, której potrzebuję. Czy mogłaby Pani wysłać mi dziś to potwierdzenie e-mailem? Jeśli to nie jest możliwe, wystarczy mi też krótka pisemna notatka w portalu." },
+                { "language": "ro", "text": "Aceasta este exact informația de care am nevoie. Îmi puteți trimite, vă rog, această confirmare astăzi prin e-mail? Dacă nu este posibil, mi-ar fi suficientă și o scurtă notă scrisă în portal." },
+                { "language": "sq", "text": "Ky është pikërisht informacioni që më duhet. A mund të ma dërgoni këtë konfirmim sot me e-mail? Nëse kjo nuk është e mundur, më mjafton edhe një shënim i shkurtër me shkrim në portal." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bestätigt den Inhalt, fragt nach Zeitpunkt und bietet eine akzeptable Alternative.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer confirms the content, asks about timing, and offers an acceptable alternative." },
+                { "language": "fa", "text": "خوب است: پاسخ محتوا را تأیید می‌کند، درباره زمان می‌پرسد و جایگزین قابل قبول پیشنهاد می‌دهد." },
+                { "language": "ar", "text": "جيد: تؤكد الإجابة المحتوى، وتسأل عن الوقت، وتقدم بديلاً مقبولاً." },
+                { "language": "tr", "text": "İyi: Yanıt içeriği onaylar, zamanlamayı sorar ve kabul edilebilir bir alternatif sunar." },
+                { "language": "ru", "text": "Хорошо: ответ подтверждает содержание, спрашивает о времени и предлагает приемлемую альтернативу." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ناوەڕۆک پشتڕاست دەکاتەوە، لە کات دەپرسێت و جێگرەوەیەکی پەسەندکراو پێشنیار دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv naverokê piştrast dike, li ser demê dipirse û alternatîfeke pejirandî pêşkêş dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź potwierdza treść, pyta o termin wysłania i proponuje akceptowalną alternatywę." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă conținutul, întreabă despre moment și oferă o alternativă acceptabilă." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon përmbajtjen, pyet për kohën dhe ofron një alternativë të pranueshme." }
+              ]
+            },
+            {
+              "id": "weak-no-timing",
+              "text": "Okay, dann schicken Sie es mir irgendwann schriftlich.",
+              "translations": [
+                { "language": "en", "text": "Okay, then send it to me in writing sometime." },
+                { "language": "fa", "text": "باشه، پس هر وقت شد آن را کتبی برایم بفرستید." },
+                { "language": "ar", "text": "حسناً، إذن أرسليه لي خطياً في وقت ما." },
+                { "language": "tr", "text": "Tamam, o zaman bunu bana bir ara yazılı olarak gönderin." },
+                { "language": "ru", "text": "Хорошо, тогда отправьте мне это письменно когда-нибудь." },
+                { "language": "ckb", "text": "باشە، کەواتە هەر کاتێک بوو بە نووسراوی بۆم بنێرن." },
+                { "language": "kmr", "text": "Baş e, wê demê demekê wê bi nivîskî ji min re bişînin." },
+                { "language": "pl", "text": "Dobrze, proszę mi to kiedyś wysłać na piśmie." },
+                { "language": "ro", "text": "Bine, atunci trimiteți-mi-o cândva în scris." },
+                { "language": "sq", "text": "Mirë, atëherë ma dërgoni dikur me shkrim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unpräzise: Für eine Fristsache braucht die Antwort einen Zeitpunkt oder eine klare Alternative.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: For a deadline matter, the answer needs a timing point or a clear alternative." },
+                { "language": "fa", "text": "خیلی نامشخص است: برای موضوع دارای مهلت، پاسخ باید زمان یا جایگزین روشن داشته باشد." },
+                { "language": "ar", "text": "غير دقيقة بما يكفي: في مسألة مرتبطة بمهلة تحتاج الإجابة إلى وقت محدد أو بديل واضح." },
+                { "language": "tr", "text": "Çok belirsiz: Süreyle ilgili bir konuda yanıtta zaman veya net bir alternatif olmalı." },
+                { "language": "ru", "text": "Слишком неточно: в вопросе со сроком ответу нужен конкретный момент времени или ясная альтернатива." },
+                { "language": "ckb", "text": "زۆر ناوردە: بۆ بابەتی مۆڵەتدار، وەڵامەکە پێویستی بە کاتێک یان جێگرەوەیەکی ڕوون هەیە." },
+                { "language": "kmr", "text": "Pir ne rast e: Ji bo mijareke demdar, bersiv pêwîstiya wê bi demekê an alternatîfeke zelal heye." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: przy sprawie z terminem odpowiedź potrzebuje terminu wysłania albo jasnej alternatywy." },
+                { "language": "ro", "text": "Prea imprecis: pentru o chestiune cu termen, răspunsul are nevoie de un moment clar sau de o alternativă clară." },
+                { "language": "sq", "text": "Shumë e pasaktë: për një çështje me afat, përgjigjja ka nevojë për një kohë të qartë ose një alternativë të qartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Dann warte ich heute auf die E-Mail und prüfe auch den Spam-Ordner. Ich habe verstanden: Aktenzeichen BN-4821, Nachreichung der Meldebescheinigung bis 18. Juli, über das Portal oder persönlich am Schalter.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will wait for the email today and also check the spam folder. I understood: file number BN-4821, later submission of the registration certificate by July 18, through the portal or in person at the counter." },
+                { "language": "fa", "text": "خیلی ممنون. پس امروز منتظر ایمیل می‌مانم و پوشه هرزنامه را هم بررسی می‌کنم. فهمیدم: شماره پرونده BN-4821، ارائه بعدی گواهی ثبت آدرس تا ۱۸ ژوئیه، از طریق درگاه یا حضوری در باجه." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأنتظر البريد الإلكتروني اليوم وسأفحص أيضاً مجلد الرسائل غير المرغوب فيها. فهمت: رقم الملف BN-4821، تقديم شهادة التسجيل لاحقاً حتى 18 يوليو، عبر البوابة أو شخصياً عند الشباك." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman bugün e-postayı bekleyeceğim ve istenmeyen posta klasörünü de kontrol edeceğim. Anladığım şu: dosya numarası BN-4821, adres kayıt belgesinin 18 Temmuz'a kadar sonradan sunulması, portal üzerinden veya gişede şahsen." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я сегодня буду ждать электронное письмо и также проверю папку спама. Я понял: номер дела BN-4821, последующая подача справки о регистрации до 18 июля, через портал или лично у стойки." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ چاوەڕێی ئیمەیڵەکە دەکەم و فۆڵدەری سپامیش دەپشکنم. تێگەیشتم: ژمارەی کەیس BN-4821، پێشکەشکردنی دواتری گواهیی تۆمارکردنی ناونیشان تا ١٨ی تەممووز، لە ڕێگەی پۆرتاڵ یان بە ئامادەبوون لە باجە." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez îro li benda e-nameyê dimînim û peldanka spam jî kontrol dikim. Min fam kir: hejmarê dosyeyê BN-4821, radestkirina paşîn a belgeya qeydkirina navnîşanê heta 18ê Tîrmehê, bi rêya portalê an bi xwe li pêşxaneyê." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie dziś poczekam na e-mail i sprawdzę też folder spam. Zrozumiałem: numer sprawy BN-4821, dosłanie zaświadczenia o zameldowaniu do 18 lipca, przez portal albo osobiście przy okienku." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci voi aștepta astăzi e-mailul și voi verifica și dosarul de spam. Am înțeles: numărul dosarului BN-4821, depunerea ulterioară a certificatului de înregistrare a domiciliului până la 18 iulie, prin portal sau personal la ghișeu." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë sot do ta pres e-mailin dhe do të kontrolloj edhe dosjen e mesazheve të padëshiruara. E kuptova: numri i dosjes BN-4821, dorëzimi i mëvonshëm i vërtetimit të regjistrimit të adresës deri më 18 korrik, përmes portalit ose personalisht në sportel." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort wiederholt die bestätigten Kerndaten und zeigt, dass die Vereinbarung korrekt verstanden wurde.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer repeats the confirmed key details and shows that the agreement was understood correctly." },
+                { "language": "fa", "text": "خوب است: پاسخ داده‌های اصلی تأییدشده را تکرار می‌کند و نشان می‌دهد توافق درست فهمیده شده است." },
+                { "language": "ar", "text": "جيد: تكرر الإجابة البيانات الأساسية المؤكدة وتُظهر أن الاتفاق فُهم بشكل صحيح." },
+                { "language": "tr", "text": "İyi: Yanıt onaylanan temel bilgileri tekrarlar ve anlaşmanın doğru anlaşıldığını gösterir." },
+                { "language": "ru", "text": "Хорошо: ответ повторяет подтверждённые ключевые данные и показывает, что договорённость понята правильно." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە داتاکانی سەرەکی پشتڕاستکراو دووبارە دەکاتەوە و نیشان دەدات ڕێککەوتنەکە بە دروستی تێگەیشتراوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv agahiyên bingehîn ên piştrastkirî dubare dike û nîşan dide ku lihevhatin rast hatiye famkirin." },
+                { "language": "pl", "text": "Dobrze: odpowiedź powtarza potwierdzone kluczowe dane i pokazuje, że ustalenie zostało poprawnie zrozumiane." },
+                { "language": "ro", "text": "Bine: răspunsul repetă datele-cheie confirmate și arată că înțelegerea a fost corectă." },
+                { "language": "sq", "text": "Mirë: përgjigjja përsërit të dhënat kryesore të konfirmuara dhe tregon se marrëveshja u kuptua saktë." }
+              ]
+            },
+            {
+              "id": "weak-no-summary",
+              "text": "Alles klar, danke. Dann warte ich einfach auf die Nachricht.",
+              "translations": [
+                { "language": "en", "text": "All right, thank you. Then I will simply wait for the message." },
+                { "language": "fa", "text": "بسیار خوب، ممنون. پس فقط منتظر پیام می‌مانم." },
+                { "language": "ar", "text": "حسناً، شكراً. إذن سأنتظر الرسالة فقط." },
+                { "language": "tr", "text": "Tamam, teşekkürler. O zaman sadece mesajı beklerim." },
+                { "language": "ru", "text": "Хорошо, спасибо. Тогда я просто подожду сообщение." },
+                { "language": "ckb", "text": "باشە، سوپاس. کەواتە تەنها چاوەڕێی نامەکە دەکەم." },
+                { "language": "kmr", "text": "Baş e, spas. Wê demê ez tenê li benda peyamê dimînim." },
+                { "language": "pl", "text": "W porządku, dziękuję. W takim razie po prostu poczekam na wiadomość." },
+                { "language": "ro", "text": "În regulă, mulțumesc. Atunci voi aștepta pur și simplu mesajul." },
+                { "language": "sq", "text": "Në rregull, faleminderit. Atëherë thjesht do të pres mesazhin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp für B2: Die Antwort bestätigt nicht noch einmal Frist, Aktenzeichen und Einreichungsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief for B2: The answer does not confirm the deadline, file number, and submission method again." },
+                { "language": "fa", "text": "برای B2 خیلی کوتاه است: پاسخ مهلت، شماره پرونده و راه تحویل را دوباره تأیید نمی‌کند." },
+                { "language": "ar", "text": "قصيرة جداً لمستوى B2: لا تؤكد الإجابة مرة أخرى المهلة ورقم الملف وطريقة التقديم." },
+                { "language": "tr", "text": "B2 için çok kısa: Yanıt süreyi, dosya numarasını ve teslim yolunu tekrar onaylamıyor." },
+                { "language": "ru", "text": "Слишком кратко для B2: ответ не подтверждает ещё раз срок, номер дела и способ подачи." },
+                { "language": "ckb", "text": "بۆ B2 زۆر کورتە: وەڵامەکە مۆڵەت، ژمارەی کەیس و ڕێگای پێشکەشکردن دووبارە پشتڕاست ناکاتەوە." },
+                { "language": "kmr", "text": "Ji bo B2 pir kurt e: Bersiv dem, hejmarê dosyeyê û rêya radestkirinê careke din piştrast nake." },
+                { "language": "pl", "text": "Za krótko na B2: odpowiedź nie potwierdza ponownie terminu, numeru sprawy i sposobu złożenia." },
+                { "language": "ro", "text": "Prea scurt pentru B2: răspunsul nu confirmă din nou termenul, numărul dosarului și modalitatea de depunere." },
+                { "language": "sq", "text": "Shumë shkurt për B2: përgjigjja nuk konfirmon përsëri afatin, numrin e dosjes dhe mënyrën e dorëzimit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Eine gute Bitte um Bestätigung beginnt mit Aktenzeichen und der genauen mündlichen Absprache.",
+          "translations": [
+            { "language": "en", "text": "A good request for confirmation begins with the file number and the exact verbal agreement." },
+            { "language": "fa", "text": "درخواست خوب برای تأیید با شماره پرونده و توافق شفاهی دقیق شروع می‌شود." },
+            { "language": "ar", "text": "طلب التأكيد الجيد يبدأ برقم الملف والاتفاق الشفهي المحدد." },
+            { "language": "tr", "text": "İyi bir onay talebi dosya numarası ve tam sözlü anlaşmayla başlar." },
+            { "language": "ru", "text": "Хорошая просьба о подтверждении начинается с номера дела и точной устной договорённости." },
+            { "language": "ckb", "text": "داواکاری باش بۆ پشتڕاستکردنەوە بە ژمارەی کەیس و ڕێککەوتنی زارەکی ورد دەست پێدەکات." },
+            { "language": "kmr", "text": "Daxwazeke baş ji bo piştrastkirinê bi hejmarê dosyeyê û lihevhatina devkî ya rast dest pê dike." },
+            { "language": "pl", "text": "Dobra prośba o potwierdzenie zaczyna się od numeru sprawy i dokładnego ustnego ustalenia." },
+            { "language": "ro", "text": "O cerere bună de confirmare începe cu numărul dosarului și cu înțelegerea verbală exactă." },
+            { "language": "sq", "text": "Një kërkesë e mirë për konfirmim fillon me numrin e dosjes dhe marrëveshjen e saktë me gojë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "tone",
+          "text": "Bleib bei der Begründung sachlich: `Ich möchte ein Missverständnis vermeiden` klingt besser als Misstrauen.",
+          "translations": [
+            { "language": "en", "text": "Keep the reasoning factual: 'I want to avoid a misunderstanding' sounds better than mistrust." },
+            { "language": "fa", "text": "در دلیل‌آوردن واقع‌محور بمان: «می‌خواهم از سوءتفاهم جلوگیری کنم» بهتر از بی‌اعتمادی شنیده می‌شود." },
+            { "language": "ar", "text": "ابقَ موضوعياً في التعليل: «أريد أن أتجنب سوء فهم» أفضل من التعبير عن عدم الثقة." },
+            { "language": "tr", "text": "Gerekçede somut kal: 'Yanlış anlaşılmayı önlemek istiyorum' güvensizlikten daha iyi duyulur." },
+            { "language": "ru", "text": "Оставайтесь фактичным в обосновании: «Я хочу избежать недоразумения» звучит лучше, чем недоверие." },
+            { "language": "ckb", "text": "لە پاساوهێنانەوەدا بابەتی بمێنە: `دەمەوێت لە سووتێگەیشتن ڕێگری بکەم` باشتر لە بێمتمانەیی دەنگ دەدات." },
+            { "language": "kmr", "text": "Di sedemê de rastîn bimîne: `Ez dixwazim şaşfêmkirinê asteng bikim` ji bêbaweriyê baştir tê bihîstin." },
+            { "language": "pl", "text": "W uzasadnieniu pozostań rzeczowy: „Chcę uniknąć nieporozumienia” brzmi lepiej niż brak zaufania." },
+            { "language": "ro", "text": "Rămâi obiectiv în justificare: „Vreau să evit o neînțelegere” sună mai bine decât neîncrederea." },
+            { "language": "sq", "text": "Qëndro faktik në arsyetim: “Dua të shmang një keqkuptim” tingëllon më mirë se mosbesimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "content",
+          "text": "Eine schriftliche Bestätigung ist nur nützlich, wenn sie Aktenzeichen, Frist und konkreten Inhalt enthält.",
+          "translations": [
+            { "language": "en", "text": "Written confirmation is only useful if it contains the file number, deadline, and concrete content." },
+            { "language": "fa", "text": "تأیید کتبی فقط وقتی مفید است که شماره پرونده، مهلت و محتوای مشخص داشته باشد." },
+            { "language": "ar", "text": "التأكيد الخطي مفيد فقط إذا تضمن رقم الملف والمهلة والمحتوى المحدد." },
+            { "language": "tr", "text": "Yazılı onay ancak dosya numarası, süre ve somut içerik içerirse yararlıdır." },
+            { "language": "ru", "text": "Письменное подтверждение полезно только тогда, когда содержит номер дела, срок и конкретное содержание." },
+            { "language": "ckb", "text": "پشتڕاستکردنەوەی نووسراو تەنها کاتێک بەسوودە کە ژمارەی کەیس، مۆڵەت و ناوەڕۆکی دیاریکراوی تێدا بێت." },
+            { "language": "kmr", "text": "Piştrastkirina nivîskî tenê dema bikêr e ku hejmarê dosyeyê, dem û naveroka konkret tê de hebe." },
+            { "language": "pl", "text": "Pisemne potwierdzenie jest użyteczne tylko wtedy, gdy zawiera numer sprawy, termin i konkretną treść." },
+            { "language": "ro", "text": "O confirmare scrisă este utilă doar dacă include numărul dosarului, termenul și conținutul concret." },
+            { "language": "sq", "text": "Një konfirmim me shkrim është i dobishëm vetëm nëse përmban numrin e dosjes, afatin dhe përmbajtjen konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Die Schlussantwort ist stark, weil sie nicht nur wartet, sondern die vereinbarten Daten kontrolliert.",
+          "translations": [
+            { "language": "en", "text": "The closing answer is strong because it does not only wait, but checks the agreed data." },
+            { "language": "fa", "text": "پاسخ پایانی قوی است، چون فقط منتظر نمی‌ماند، بلکه داده‌های توافق‌شده را کنترل می‌کند." },
+            { "language": "ar", "text": "الإجابة الختامية قوية لأنها لا تنتظر فقط، بل تتحقق من البيانات المتفق عليها." },
+            { "language": "tr", "text": "Kapanış yanıtı güçlü, çünkü sadece beklemiyor; üzerinde anlaşılan bilgileri kontrol ediyor." },
+            { "language": "ru", "text": "Заключительный ответ сильный, потому что он не только ждёт, но и проверяет согласованные данные." },
+            { "language": "ckb", "text": "وەڵامی کۆتایی بەهێزە، چونکە تەنها چاوەڕێ ناکات، بەڵکو داتاکانی ڕێککەوتوو دەپشکنێت." },
+            { "language": "kmr", "text": "Bersiva dawî xurt e, ji ber ku tenê li bendê namîne, lê agahiyên lihevkirî kontrol dike." },
+            { "language": "pl", "text": "Odpowiedź końcowa jest mocna, bo nie tylko czeka, lecz sprawdza uzgodnione dane." },
+            { "language": "ro", "text": "Răspunsul final este puternic pentru că nu doar așteaptă, ci verifică datele convenite." },
+            { "language": "sq", "text": "Përgjigjja përmbyllëse është e fortë sepse nuk pret vetëm, por kontrollon të dhënat e dakorduara." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

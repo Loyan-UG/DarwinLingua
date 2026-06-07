@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-44-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 44 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 44",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-zwischen-persoenlichem-bedarf-und-hausregel-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Zwischen persönlichem Bedarf und Hausregel abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weighing personal need against a house rule" },
+        { "language": "fa", "text": "سنجیدن نیاز شخصی در برابر قانون ساختمان" },
+        { "language": "ar", "text": "الموازنة بين الحاجة الشخصية وقاعدة السكن" },
+        { "language": "tr", "text": "Kişisel ihtiyacı bina kuralıyla dengelemek" },
+        { "language": "ru", "text": "Взвесить личную потребность и правило дома" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی پێویستیی کەسی لە بەرامبەر یاسای خانووبەرە" },
+        { "language": "kmr", "text": "Pêdiviya kesane li hember rêgeza avahiyê pîvan kirin" },
+        { "language": "pl", "text": "Wyważenie osobistej potrzeby i regulaminu domu" },
+        { "language": "ro", "text": "Cântărirea unei nevoi personale față de regula clădirii" },
+        { "language": "sq", "text": "Peshimi i nevojës personale kundrejt rregullit të ndërtesës" }
+      ],
+      "description": "Sie sprechen mit einem Mitglied des Hausbeirats, weil Ihre Mutter vier Wochen bei Ihnen bleibt und wegen einer vorübergehenden Mobilitätseinschränkung einen faltbaren Rollator braucht. Die Hausordnung verbietet Gegenstände im Flur. Sie bitten nicht um eine allgemeine Sonderregel, sondern um eine eng begrenzte, sichere und schriftlich klare Auslegung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with a member of the building committee because your mother will stay with you for four weeks and needs a foldable walker due to a temporary mobility limitation. The house rules forbid objects in the hallway. You are not asking for a general special rule, but for a narrowly limited, safe, and clearly written interpretation." },
+        { "language": "fa", "text": "شما با یکی از اعضای شورای ساختمان صحبت می‌کنید، چون مادرتان چهار هفته پیش شما می‌ماند و به دلیل محدودیت موقت حرکتی به یک واکر تاشو نیاز دارد. آیین‌نامه ساختمان گذاشتن وسایل در راهرو را ممنوع می‌کند. شما دنبال استثنای کلی نیستید، بلکه یک تفسیر محدود، ایمن و روشنِ کتبی می‌خواهید." },
+        { "language": "ar", "text": "تتحدث مع عضو في مجلس السكن لأن والدتك ستقيم لديك أربعة أسابيع وتحتاج إلى مشاية قابلة للطي بسبب محدودية حركة مؤقتة. يمنع نظام السكن وضع الأشياء في الممر. لا تطلب قاعدة استثنائية عامة، بل تفسيراً محدوداً وآمناً وواضحاً كتابياً." },
+        { "language": "tr", "text": "Anneniz dört hafta sizde kalacağı ve geçici hareket kısıtlılığı nedeniyle katlanır bir yürütece ihtiyaç duyacağı için bina kurulundan biriyle konuşuyorsunuz. Apartman kuralları koridorda eşya bulundurmayı yasaklıyor. Genel bir özel kural değil, dar kapsamlı, güvenli ve yazılı olarak açık bir yorum istiyorsunuz." },
+        { "language": "ru", "text": "Вы говорите с членом домового совета, потому что ваша мать будет жить у вас четыре недели и из-за временного ограничения подвижности ей нужен складной роллатор. Правила дома запрещают предметы в коридоре. Вы просите не об общем исключении, а об узкой, безопасной и письменно ясной трактовке." },
+        { "language": "ckb", "text": "تۆ لەگەڵ ئەندامێکی ئەنجومەنی خانووبەرە قسە دەکەیت، چونکە دایکەت چوار هەفتە لەلات دەمێنێتەوە و بەهۆی سنوورداربوونی کاتی جوڵانەوە پێویستی بە ڕۆلاتۆرێکی قاتکراوە هەیە. ڕێنمایی خانووبەرە دانانی شت لە ڕاڕەودا قەدەغە دەکات. تۆ داوای یاسایەکی گشتیی تایبەت ناکەیت، بەڵکوو ڕوونکردنەوەیەکی سنووردار، سەلامەت و نووسراوی ڕوون دەخوازیت." },
+        { "language": "kmr", "text": "Hûn bi endamekî şûraya avahiyê re diaxivin, ji ber ku diya we çar hefte li ba we dimîne û ji ber tixûbdariya demkî ya tevgerê pêdiviya wê bi alîkariyeke meşê ya qatlêkirî heye. Rêgezên malê tiştan di korîdorê de qedexe dikin. Hûn ne rêgezeke giştî ya taybet dixwazin, lê şiroveyeke teng, ewledar û bi nivîsê zelal dixwazin." },
+        { "language": "pl", "text": "Rozmawia Pan z członkiem rady domu, ponieważ Pana matka zostaje u Pana na cztery tygodnie i z powodu tymczasowego ograniczenia ruchu potrzebuje składanego balkonika. Regulamin domu zabrania przedmiotów na korytarzu. Nie prosi Pan o ogólny wyjątek, lecz o wąską, bezpieczną i jasno opisaną interpretację." },
+        { "language": "ro", "text": "Vorbiți cu un membru al comitetului imobilului deoarece mama dumneavoastră va sta la dumneavoastră patru săptămâni și are nevoie de un cadru pliabil din cauza unei limitări temporare de mobilitate. Regulamentul casei interzice obiectele pe hol. Nu cereți o regulă specială generală, ci o interpretare limitată, sigură și clară în scris." },
+        { "language": "sq", "text": "Flisni me një anëtar të këshillit të ndërtesës sepse nëna juaj do të qëndrojë katër javë te ju dhe ka nevojë për një ndihmës ecjeje të palosshëm për shkak të një kufizimi të përkohshëm të lëvizjes. Rregullorja e ndërtesës ndalon sendet në korridor. Ju nuk kërkoni një përjashtim të përgjithshëm, por një interpretim të kufizuar, të sigurt dhe të qartë me shkrim." }
+      ],
+      "learnerGoal": "Einen persönlichen Bedarf gegen eine Hausregel abwägen: die Regel anerkennen, den Einzelfall knapp begründen, Sicherheits- und Reinigungsinteressen einbeziehen, eine zeitlich begrenzte Ausnahme vorschlagen und eine schriftlich klare Lösung ohne private Details vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Weigh a personal need against a house rule: acknowledge the rule, briefly justify the individual case, include safety and cleaning concerns, propose a time-limited exception, and agree on a clear written solution without private details." },
+        { "language": "fa", "text": "یک نیاز شخصی را با قانون ساختمان بسنجید: قانون را بپذیرید، مورد فردی را کوتاه توضیح دهید، ملاحظات ایمنی و نظافت را در نظر بگیرید، استثنای زمان‌دار پیشنهاد کنید و راه‌حلی کتبی و روشن بدون جزئیات خصوصی توافق کنید." },
+        { "language": "ar", "text": "وازن بين حاجة شخصية وقاعدة السكن: اعترف بالقاعدة، وعلل الحالة الفردية بإيجاز، وأدخل اعتبارات السلامة والتنظيف، واقترح استثناءً محدود المدة، واتفق على حل مكتوب واضح من دون تفاصيل خاصة." },
+        { "language": "tr", "text": "Kişisel bir ihtiyacı bina kuralıyla dengeleyin: kuralı kabul edin, bireysel durumu kısaca gerekçelendirin, güvenlik ve temizlik çıkarlarını dahil edin, süre sınırlı bir istisna önerin ve özel ayrıntılar olmadan yazılı, net bir çözüm kararlaştırın." },
+        { "language": "ru", "text": "Взвесить личную потребность и правило дома: признать правило, кратко обосновать отдельный случай, учесть безопасность и уборку, предложить ограниченное по времени исключение и согласовать письменное ясное решение без личных деталей." },
+        { "language": "ckb", "text": "پێویستییەکی کەسی لەگەڵ یاسای خانووبەرە هەڵبسەنگێنە: یاساکە بپذێرە، دۆخی تاکەکەسی بە کورتی ڕوون بکەرەوە، بەرژەوەندییەکانی سەلامەتی و پاککردنەوە لەبەرچاو بگرە، جیاوازییەکی کاتدار پێشنیار بکە و چارەسەرێکی نووسراوی ڕوون بەبێ وردەکاری تایبەتی ڕێک بخە." },
+        { "language": "kmr", "text": "Pêdiviyeke kesane bi rêgeza avahiyê re bipîvin: rêgezê qebûl bikin, rewşa takekesî bi kurtî rave bikin, ewlehî û paqijkirinê li ber çavan bigirin, îstîsnayeke bi demê tixûbdar pêşniyar bikin û çareseriyeke nivîskî ya zelal bê hûrguliyên taybet li hev bikin." },
+        { "language": "pl", "text": "Wyważyć osobistą potrzebę i regulamin domu: uznać zasadę, krótko uzasadnić indywidualny przypadek, uwzględnić bezpieczeństwo i sprzątanie, zaproponować czasowo ograniczony wyjątek i uzgodnić jasne pisemne rozwiązanie bez prywatnych szczegółów." },
+        { "language": "ro", "text": "Cântăriți o nevoie personală față de regula clădirii: recunoașteți regula, justificați pe scurt cazul individual, includeți interesele de siguranță și curățenie, propuneți o excepție limitată în timp și conveniți o soluție scrisă clară fără detalii private." },
+        { "language": "sq", "text": "Peshoni një nevojë personale kundrejt rregullit të ndërtesës: pranoni rregullin, arsyetoni shkurt rastin individual, përfshini sigurinë dhe pastrimin, propozoni një përjashtim të kufizuar në kohë dhe bini dakord për një zgjidhje të qartë me shkrim pa detaje private." }
+      ],
+      "cefrLevel": "C1",
+      "category": "housing",
+      "topics": ["housing", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "compare-options",
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 44,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Mieter/in",
+          "translations": [
+            { "language": "en", "text": "Tenant asking for a limited exception" },
+            { "language": "fa", "text": "مستأجری که درخواست استثنای محدود دارد" },
+            { "language": "ar", "text": "المستأجر الذي يطلب استثناءً محدوداً" },
+            { "language": "tr", "text": "Sınırlı istisna isteyen kiracı" },
+            { "language": "ru", "text": "Арендатор, который просит ограниченное исключение" },
+            { "language": "ckb", "text": "کرێچییەک کە داوای جیاوازییەکی سنووردار دەکات" },
+            { "language": "kmr", "text": "Kirêdarê ku îstîsnayeke tixûbdar dixwaze" },
+            { "language": "pl", "text": "Najemca proszący o ograniczony wyjątek" },
+            { "language": "ro", "text": "Chiriașul care cere o excepție limitată" },
+            { "language": "sq", "text": "Qiramarrësi që kërkon një përjashtim të kufizuar" }
+          ]
+        },
+        {
+          "roleKey": "neighbor",
+          "displayName": "Mitglied des Hausbeirats",
+          "translations": [
+            { "language": "en", "text": "Member of the building committee" },
+            { "language": "fa", "text": "عضو شورای ساختمان" },
+            { "language": "ar", "text": "عضو مجلس السكن" },
+            { "language": "tr", "text": "Bina kurulunun üyesi" },
+            { "language": "ru", "text": "Член домового совета" },
+            { "language": "ckb", "text": "ئەندامی ئەنجومەنی خانووبەرە" },
+            { "language": "kmr", "text": "Endamê şûraya avahiyê" },
+            { "language": "pl", "text": "Członek rady domu" },
+            { "language": "ro", "text": "Membru al comitetului imobilului" },
+            { "language": "sq", "text": "Anëtar i këshillit të ndërtesës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "neighbor",
+          "baseText": "Guten Abend. Ich habe Ihre Nachricht wegen des Rollators im Flur gelesen. Sie wissen wahrscheinlich, dass die Hausordnung dort grundsätzlich keine Gegenstände erlaubt.",
+          "translations": [
+            { "language": "en", "text": "Good evening. I read your message about the walker in the hallway. You probably know that the house rules generally do not allow objects there." },
+            { "language": "fa", "text": "عصر بخیر. پیام شما درباره واکر در راهرو را خواندم. احتمالاً می‌دانید که آیین‌نامه ساختمان اصولاً اجازه گذاشتن وسایل در آنجا را نمی‌دهد." },
+            { "language": "ar", "text": "مساء الخير. قرأت رسالتك بشأن المشاية في الممر. ربما تعرف أن نظام السكن لا يسمح عموماً بوضع أشياء هناك." },
+            { "language": "tr", "text": "İyi akşamlar. Koridordaki yürüteçle ilgili mesajınızı okudum. Apartman kurallarının orada genel olarak eşya bulundurulmasına izin vermediğini muhtemelen biliyorsunuz." },
+            { "language": "ru", "text": "Добрый вечер. Я прочитал ваше сообщение о роллаторе в коридоре. Вы, вероятно, знаете, что правила дома в принципе не разрешают там предметы." },
+            { "language": "ckb", "text": "ئێوارەباش. پەیامەکەت لەسەر ڕۆلاتۆرەکە لە ڕاڕەودا خوێندەوە. بە گومان دەزانیت کە ڕێنمایی خانووبەرە بە گشتی ڕێگە بە دانانی شت لەوێ نادات." },
+            { "language": "kmr", "text": "Êvar baş. Min peyama we ya li ser alîkariya meşê di korîdorê de xwend. Dibe ku hûn dizanin ku rêgezên malê bi giştî li wir tiştan destûr nadin." },
+            { "language": "pl", "text": "Dobry wieczór. Przeczytałem Pana wiadomość o balkoniku na korytarzu. Pewnie wie Pan, że regulamin domu zasadniczo nie pozwala tam na przedmioty." },
+            { "language": "ro", "text": "Bună seara. Am citit mesajul dumneavoastră despre cadrul de mers pe hol. Probabil știți că regulamentul casei nu permite, în principiu, obiecte acolo." },
+            { "language": "sq", "text": "Mirëmbrëma. E lexova mesazhin tuaj për ndihmësin e ecjes në korridor. Me siguri e dini se rregullorja e ndërtesës në parim nuk lejon sende atje." }
+          ],
+          "function": "rule-reminder",
+          "toneNote": "The house committee member opens with the rule, not with a personal accusation.",
+          "expectedLearnerAction": "Acknowledge the rule before explaining the personal need."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, genau deshalb wollte ich vorher mit Ihnen sprechen. Ich möchte die Hausordnung nicht aushebeln, sondern klären, ob für vier Wochen eine eng begrenzte Lösung möglich ist, weil meine Mutter vorübergehend auf den Rollator angewiesen ist.",
+          "translations": [
+            { "language": "en", "text": "Yes, that is exactly why I wanted to speak with you beforehand. I do not want to undermine the house rules, but to clarify whether a narrowly limited solution is possible for four weeks because my mother temporarily depends on the walker." },
+            { "language": "fa", "text": "بله، دقیقاً به همین دلیل می‌خواستم قبلش با شما صحبت کنم. نمی‌خواهم آیین‌نامه ساختمان را دور بزنم، بلکه می‌خواهم روشن کنم آیا برای چهار هفته راه‌حلی کاملاً محدود ممکن است، چون مادرم موقتاً به واکر وابسته است." },
+            { "language": "ar", "text": "نعم، لهذا السبب بالضبط أردت أن أتحدث معك مسبقاً. لا أريد تعطيل نظام السكن، بل توضيح ما إذا كان حل محدود جداً ممكناً لمدة أربعة أسابيع لأن والدتي تعتمد مؤقتاً على المشاية." },
+            { "language": "tr", "text": "Evet, tam da bu yüzden önceden sizinle konuşmak istedim. Apartman kurallarını devre dışı bırakmak istemiyorum; annem geçici olarak yürütece bağlı olduğu için dört haftalık dar kapsamlı bir çözüm mümkün mü, bunu netleştirmek istiyorum." },
+            { "language": "ru", "text": "Да, именно поэтому я хотел заранее поговорить с вами. Я не хочу обходить правила дома, а хочу уточнить, возможно ли на четыре недели очень ограниченное решение, потому что моя мать временно зависит от роллатора." },
+            { "language": "ckb", "text": "بەڵێ، هەر بۆیە دەمویست پێشوەختە لەگەڵت قسە بکەم. نامەوێت ڕێنمایی خانووبەرە لاببەم، بەڵکوو دەمهەوێت ڕوون بکەمەوە ئایا بۆ چوار هەفتە چارەسەرێکی زۆر سنووردار دەکرێت، چونکە دایکەم بە شێوەی کاتی پشتی بە ڕۆلاتۆرەکە بەستووە." },
+            { "language": "kmr", "text": "Erê, tam ji ber vê yekê min dixwest berê bi we re biaxivim. Ez naxwazim rêgezên malê bêbandor bikim, lê dixwazim zelal bikim ka ji bo çar hefte çareseriyeke pir tixûbdar gengaz e, ji ber ku diya min demkî bi alîkariya meşê ve girêdayî ye." },
+            { "language": "pl", "text": "Tak, właśnie dlatego chciałem wcześniej z Panem porozmawiać. Nie chcę obchodzić regulaminu domu, lecz wyjaśnić, czy na cztery tygodnie możliwe jest bardzo ograniczone rozwiązanie, ponieważ moja matka tymczasowo jest zależna od balkonika." },
+            { "language": "ro", "text": "Da, tocmai de aceea am vrut să vorbesc înainte cu dumneavoastră. Nu vreau să ocolesc regulamentul casei, ci să clarific dacă pentru patru săptămâni este posibilă o soluție foarte limitată, deoarece mama mea depinde temporar de cadrul de mers." },
+            { "language": "sq", "text": "Po, pikërisht për këtë doja të flisja më parë me ju. Nuk dua ta anashkaloj rregulloren e ndërtesës, por të sqaroj nëse për katër javë është e mundur një zgjidhje shumë e kufizuar, sepse nëna ime përkohësisht varet nga ndihmësi i ecjes." }
+          ],
+          "function": "limited-exception-request",
+          "toneNote": "The learner frames the request as narrow and rule-aware.",
+          "expectedLearnerAction": "Show that you respect the rule and only ask for a temporary interpretation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "neighbor",
+          "baseText": "Ich verstehe den Grund. Das Problem ist nur: Sobald im Flur etwas steht, kommen sofort Fragen zu Fluchtweg, Reinigung und Gleichbehandlung.",
+          "translations": [
+            { "language": "en", "text": "I understand the reason. The problem is simply that as soon as something stands in the hallway, questions immediately arise about escape routes, cleaning, and equal treatment." },
+            { "language": "fa", "text": "دلیل را درک می‌کنم. مشکل فقط این است که به محض اینکه چیزی در راهرو قرار بگیرد، بلافاصله پرسش‌هایی درباره مسیر فرار، نظافت و رفتار برابر مطرح می‌شود." },
+            { "language": "ar", "text": "أفهم السبب. المشكلة فقط أنه بمجرد وضع شيء في الممر تظهر فوراً أسئلة حول طريق الهروب والتنظيف والمساواة في المعاملة." },
+            { "language": "tr", "text": "Sebebi anlıyorum. Sorun şu ki koridorda bir şey durur durmaz kaçış yolu, temizlik ve eşit muameleyle ilgili sorular hemen ortaya çıkıyor." },
+            { "language": "ru", "text": "Я понимаю причину. Проблема лишь в том, что как только что-то стоит в коридоре, сразу возникают вопросы о путях эвакуации, уборке и равном отношении." },
+            { "language": "ckb", "text": "هۆکارەکە تێدەگەم. کێشەکە تەنها ئەوەیە کە هەر کات شتێک لە ڕاڕەودا دابنرێت، دەستبەجێ پرسیار لەسەر ڕێگای هەڵاتن، پاککردنەوە و هەڵسوکەوتی یەکسان دێتە ئاراوە." },
+            { "language": "kmr", "text": "Ez sedemê fam dikim. Pirsgirêk tenê ew e ku gava tiştek di korîdorê de bisekine, pirsa rêya revê, paqijkirinê û dermankirina wekhev yekser derdikeve." },
+            { "language": "pl", "text": "Rozumiem powód. Problem polega tylko na tym, że gdy tylko coś stoi na korytarzu, natychmiast pojawiają się pytania o drogę ewakuacyjną, sprzątanie i równe traktowanie." },
+            { "language": "ro", "text": "Înțeleg motivul. Problema este doar că, imediat ce ceva stă pe hol, apar întrebări despre ruta de evacuare, curățenie și tratament egal." },
+            { "language": "sq", "text": "E kuptoj arsyen. Problemi është vetëm se sapo diçka qëndron në korridor, menjëherë dalin pyetje për rrugën e evakuimit, pastrimin dhe trajtimin e barabartë." }
+          ],
+          "function": "raise-constraints",
+          "toneNote": "The concern is practical and rule-based.",
+          "expectedLearnerAction": "Address safety and equality directly instead of repeating the personal need."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das sind genau die Punkte, die ich mitdenken möchte. Der Rollator wäre zusammengeklappt in der Nische direkt neben unserer Wohnungstür, nicht vor dem Treppenhaus; die Durchgangsbreite bliebe frei, und ich würde das gerne mit einem festen Enddatum verbinden.",
+          "translations": [
+            { "language": "en", "text": "Those are exactly the points I want to take into account. The walker would be folded in the niche right next to our apartment door, not in front of the stairwell; the passage width would remain clear, and I would like to connect this with a fixed end date." },
+            { "language": "fa", "text": "اینها دقیقاً همان نکاتی است که می‌خواهم در نظر بگیرم. واکر به صورت تا شده در فرورفتگی کنار درِ آپارتمان ما خواهد بود، نه جلوی راه‌پله؛ عرض عبور آزاد می‌ماند و می‌خواهم این را با تاریخ پایان مشخص همراه کنم." },
+            { "language": "ar", "text": "هذه بالضبط هي النقاط التي أريد أخذها في الحسبان. ستكون المشاية مطوية في التجويف مباشرة بجانب باب شقتنا، لا أمام السلم؛ وسيبقى عرض الممر خالياً، وأود ربط ذلك بتاريخ انتهاء محدد." },
+            { "language": "tr", "text": "Dikkate almak istediğim noktalar tam da bunlar. Yürüteç katlanmış halde daire kapımızın hemen yanındaki girintide duracak, merdiven boşluğunun önünde değil; geçiş genişliği açık kalacak ve bunu sabit bir bitiş tarihiyle bağlamak isterim." },
+            { "language": "ru", "text": "Это именно те пункты, которые я хочу учесть. Роллатор был бы сложен в нише прямо рядом с нашей дверью, не перед лестницей; ширина прохода оставалась бы свободной, и я хотел бы связать это с фиксированной датой окончания." },
+            { "language": "ckb", "text": "ئەمانە هەر ئەو خاڵانەن کە دەمەوێت لەبەرچاویان بگرم. ڕۆلاتۆرەکە بە قاتکراوی لە نیشەکەی ڕاست لە تەنیشت دەرگای ماڵەکەمان دەبێت، نە لەبەردەم پەلەکان؛ پانیی ڕێڕەوەکە ئازاد دەمێنێتەوە، و دەمەوێت بە بەرواری کۆتایی دیاریکراوەوە ببەستمەوە." },
+            { "language": "kmr", "text": "Ev tam ew xal in ku ez dixwazim li ber çavan bigirim. Alîkariya meşê wê qatlêkirî di cihê kûr ê rast li kêleka deriyê mala me de be, ne li ber derenceyan; firehiya derbasbûnê wê vala bimîne, û ez dixwazim vê bi tarîxeke dawî ya sabît ve girê bidim." },
+            { "language": "pl", "text": "To są dokładnie te punkty, które chcę uwzględnić. Balkonik stałby złożony we wnęce bezpośrednio obok drzwi naszego mieszkania, nie przed klatką schodową; szerokość przejścia pozostałaby wolna, a ja chciałbym połączyć to ze stałą datą końcową." },
+            { "language": "ro", "text": "Acestea sunt exact punctele pe care vreau să le iau în considerare. Cadrul ar sta pliat în nișa chiar lângă ușa apartamentului nostru, nu în fața scării; lățimea de trecere ar rămâne liberă și aș vrea să leg asta de o dată finală fixă." },
+            { "language": "sq", "text": "Këto janë pikërisht pikat që dua t'i marr parasysh. Ndihmësi i ecjes do të qëndronte i palosur në qoshen menjëherë pranë derës sonë, jo para shkallëve; gjerësia e kalimit do të mbetej e lirë dhe do të doja ta lidhja këtë me një datë përfundimi të caktuar." }
+          ],
+          "function": "concrete-safety-proposal",
+          "toneNote": "The learner converts a personal need into a testable placement and time limit.",
+          "expectedLearnerAction": "Name location, safety condition, and end date."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "neighbor",
+          "baseText": "Wenn wir das zulassen, könnten andere sagen: Dann stelle ich auch meinen Kinderwagen oder mein Fahrrad kurz ab.",
+          "translations": [
+            { "language": "en", "text": "If we allow this, others could say: then I will also leave my stroller or bicycle there briefly." },
+            { "language": "fa", "text": "اگر این را اجازه بدهیم، دیگران ممکن است بگویند: پس من هم کالسکه یا دوچرخه‌ام را کوتاه آنجا می‌گذارم." },
+            { "language": "ar", "text": "إذا سمحنا بذلك، فقد يقول آخرون: إذن سأضع عربة الأطفال أو الدراجة هناك لفترة قصيرة أيضاً." },
+            { "language": "tr", "text": "Buna izin verirsek, başkaları şöyle diyebilir: O zaman ben de çocuk arabamı veya bisikletimi kısa süreliğine oraya bırakırım." },
+            { "language": "ru", "text": "Если мы это разрешим, другие могут сказать: тогда я тоже ненадолго поставлю там детскую коляску или велосипед." },
+            { "language": "ckb", "text": "ئەگەر ڕێگە بەوە بدەین، ئەوانی تر دەکرێت بڵێن: کەواتە منیش عەرەبانەی منداڵ یان پاسکیلەکەم بۆ کاتێکی کورت لەوێ دادەنێم." },
+            { "language": "kmr", "text": "Heke em vê destûr bidin, kesên din dikarin bibêjin: wê demê ez jî erebeya zarokan an bisîkleta xwe demekî kurt li wir datînim." },
+            { "language": "pl", "text": "Jeśli na to pozwolimy, inni mogliby powiedzieć: to ja też na chwilę postawię tam wózek dziecięcy albo rower." },
+            { "language": "ro", "text": "Dacă permitem asta, alții ar putea spune: atunci îmi las și eu căruciorul sau bicicleta acolo pentru puțin timp." },
+            { "language": "sq", "text": "Nëse e lejojmë këtë, të tjerët mund të thonë: atëherë edhe unë e lë shkurt karrocën e fëmijës ose biçikletën atje." }
+          ],
+          "function": "precedent-concern",
+          "toneNote": "The committee member worries about a broader precedent.",
+          "expectedLearnerAction": "Draw a careful distinction without sounding entitled."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das Risiko sehe ich. Deshalb würde ich die Ausnahme ausdrücklich nicht als allgemeine Abstellmöglichkeit formulieren, sondern als befristete Mobilitätshilfe mit Start- und Enddatum, solange der Fluchtweg frei bleibt und keine weiteren Gegenstände dazukommen.",
+          "translations": [
+            { "language": "en", "text": "I see that risk. That is why I would explicitly not phrase the exception as a general storage option, but as a temporary mobility aid with a start and end date, as long as the escape route remains clear and no additional objects are added." },
+            { "language": "fa", "text": "این خطر را می‌بینم. به همین دلیل استثنا را صریحاً به عنوان امکان عمومی برای گذاشتن وسایل بیان نمی‌کنم، بلکه به عنوان کمک حرکتی موقت با تاریخ شروع و پایان، تا زمانی که مسیر فرار آزاد بماند و وسیله دیگری اضافه نشود." },
+            { "language": "ar", "text": "أرى هذا الخطر. لذلك لن أصوغ الاستثناء صراحة كإمكانية عامة للتخزين، بل كمساعدة حركة مؤقتة بتاريخ بداية ونهاية، ما دام طريق الهروب يبقى خالياً ولا تضاف أشياء أخرى." },
+            { "language": "tr", "text": "Bu riski görüyorum. Bu yüzden istisnayı açıkça genel bir eşya bırakma imkanı olarak değil, başlangıç ve bitiş tarihi olan geçici bir hareket desteği olarak formüle ederdim; kaçış yolu açık kaldığı ve başka eşya eklenmediği sürece." },
+            { "language": "ru", "text": "Я вижу этот риск. Поэтому я бы прямо сформулировал исключение не как общую возможность хранения, а как временную помощь при передвижении с датой начала и окончания, пока путь эвакуации свободен и не добавляются другие предметы." },
+            { "language": "ckb", "text": "ئەو مەترسییە دەبینم. بۆیە جیاوازییەکە بە ڕوونی وەک ئەنجامێکی گشتی بۆ دانانی شت ناڕێژم، بەڵکوو وەک یارمەتیی جوڵانەوەی کاتی بە بەرواری دەستپێک و کۆتایی، مادام ڕێگای هەڵاتن ئازاد بمێنێتەوە و شتی تریش زیاد نەکرێت." },
+            { "language": "kmr", "text": "Ez vê metirsiyê dibînim. Ji ber vê yekê ez ê îstîsnayê bi eşkere ne wekî derfeta giştî ya danîna tiştan formul bikim, lê wekî alîkariyeke tevgerê ya demkî bi tarîxa destpêk û dawî, heta ku rêya revê vala bimîne û tiştên din lê neyên zêdekirin." },
+            { "language": "pl", "text": "Widzę to ryzyko. Dlatego wyjątek sformułowałbym wyraźnie nie jako ogólną możliwość przechowywania, lecz jako czasowo ograniczoną pomoc w poruszaniu się z datą początku i końca, o ile droga ewakuacyjna pozostaje wolna i nie dochodzą żadne inne przedmioty." },
+            { "language": "ro", "text": "Văd acest risc. De aceea aș formula excepția în mod expres nu ca posibilitate generală de depozitare, ci ca ajutor temporar de mobilitate cu dată de început și de sfârșit, atât timp cât ruta de evacuare rămâne liberă și nu se adaugă alte obiecte." },
+            { "language": "sq", "text": "E shoh këtë rrezik. Prandaj do ta formuloja përjashtimin shprehimisht jo si mundësi të përgjithshme për vendosjen e sendeve, por si ndihmë të përkohshme për lëvizje me datë fillimi dhe mbarimi, për sa kohë rruga e evakuimit mbetet e lirë dhe nuk shtohen sende të tjera." }
+          ],
+          "function": "precedent-limitation",
+          "toneNote": "The learner names the equality concern and limits the exception by purpose and time.",
+          "expectedLearnerAction": "Separate the individual mobility case from general hallway storage."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "neighbor",
+          "baseText": "Die Reinigungsfirma kommt mittwochs sehr früh. Wenn dort etwas steht, gibt es schnell Beschwerden, dass nicht sauber gemacht werden konnte.",
+          "translations": [
+            { "language": "en", "text": "The cleaning company comes very early on Wednesdays. If something is standing there, complaints quickly arise that cleaning could not be done properly." },
+            { "language": "fa", "text": "شرکت نظافت چهارشنبه‌ها خیلی زود می‌آید. اگر چیزی آنجا باشد، سریع شکایت می‌شود که نتوانسته‌اند درست نظافت کنند." },
+            { "language": "ar", "text": "تأتي شركة التنظيف مبكراً جداً يوم الأربعاء. إذا كان هناك شيء في المكان، تظهر سريعاً شكاوى بأن التنظيف لم يتم كما ينبغي." },
+            { "language": "tr", "text": "Temizlik şirketi çarşambaları çok erken geliyor. Orada bir şey durursa, temizliğin yapılamadığına dair şikayetler hızla ortaya çıkar." },
+            { "language": "ru", "text": "Клининговая фирма приходит по средам очень рано. Если там что-то стоит, быстро появляются жалобы, что уборку нельзя было выполнить." },
+            { "language": "ckb", "text": "کۆمپانیای پاککردنەوە چوارشەممەکان زۆر زوو دێت. ئەگەر شتێک لەوێ هەبێت، زوو سکاڵا دێت کە نەکراوە بە باشی پاک بکرێتەوە." },
+            { "language": "kmr", "text": "Şîrketa paqijkirinê rojên çarşemê pir zû tê. Heke tiştek li wir be, gazinde zû derdikevin ku paqijkirin nikarîbû were kirin." },
+            { "language": "pl", "text": "Firma sprzątająca przychodzi w środy bardzo wcześnie. Jeśli coś tam stoi, szybko pojawiają się skargi, że nie można było posprzątać." },
+            { "language": "ro", "text": "Firma de curățenie vine miercurea foarte devreme. Dacă stă ceva acolo, apar repede plângeri că nu s-a putut face curățenie." },
+            { "language": "sq", "text": "Firma e pastrimit vjen shumë herët të mërkurave. Nëse diçka qëndron atje, shpejt ka ankesa se nuk është bërë dot pastrimi." }
+          ],
+          "function": "cleaning-constraint",
+          "toneNote": "This adds an operational condition.",
+          "expectedLearnerAction": "Offer a concrete cleaning-day procedure and responsibility."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann nehme ich den Rollator dienstagabends in die Wohnung und stelle ihn mittwochs erst nach der Reinigung wieder in die Nische. Außerdem kann ich einen kleinen Kontaktzettel ohne private Gesundheitsdetails anbringen, falls kurzfristig etwas stört.",
+          "translations": [
+            { "language": "en", "text": "Then I will take the walker into the apartment on Tuesday evenings and only put it back in the niche on Wednesdays after cleaning. I can also attach a small contact note without private health details in case something causes a short-term problem." },
+            { "language": "fa", "text": "پس سه‌شنبه شب‌ها واکر را داخل آپارتمان می‌برم و چهارشنبه‌ها فقط بعد از نظافت دوباره در فرورفتگی می‌گذارم. همچنین می‌توانم یک برگه تماس کوچک بدون جزئیات خصوصی سلامت بگذارم، اگر چیزی کوتاه‌مدت مزاحمت ایجاد کرد." },
+            { "language": "ar", "text": "إذن سأدخل المشاية إلى الشقة مساء الثلاثاء ولا أعيدها إلى التجويف يوم الأربعاء إلا بعد التنظيف. ويمكنني أيضاً وضع ورقة اتصال صغيرة من دون تفاصيل صحية خاصة إذا أزعج شيء ما بشكل مؤقت." },
+            { "language": "tr", "text": "O zaman yürüteci salı akşamları daireye alırım ve çarşambaları ancak temizlikten sonra tekrar girintiye koyarım. Ayrıca kısa süreli bir sorun olursa diye özel sağlık ayrıntıları içermeyen küçük bir iletişim notu da ekleyebilirim." },
+            { "language": "ru", "text": "Тогда по вторникам вечером я буду заносить роллатор в квартиру и по средам ставить его обратно в нишу только после уборки. Кроме того, я могу прикрепить небольшую записку с контактом без личных медицинских деталей, если что-то срочно помешает." },
+            { "language": "ckb", "text": "کەواتە سێشەممانە ئێوارە ڕۆلاتۆرەکە دەبەمە ناو ماڵ و چوارشەممەکان تەنها دوای پاککردنەوە دەیگەڕێنمەوە بۆ نیشەکە. هەروەها دەتوانم کاغەزێکی بچووکی پەیوەندی بەبێ وردەکاری تایبەتی تەندروستی دابنێم، ئەگەر شتێک بە کاتی کورت کێشەی دروست کرد." },
+            { "language": "kmr", "text": "Wê demê ez ê êvarên sêşemê alîkariya meşê bibim hundirê malê û rojên çarşemê piştî paqijkirinê careke din bixim cihê kûr. Her wiha ez dikarim kaxezeke biçûk a têkiliyê bê hûrguliyên tenduristiyê yên taybet lê bikim, heke tiştek demkî astengî çêbike." },
+            { "language": "pl", "text": "W takim razie we wtorkowe wieczory zabiorę balkonik do mieszkania i w środy postawię go we wnęce dopiero po sprzątaniu. Mogę też umieścić małą kartkę kontaktową bez prywatnych szczegółów zdrowotnych, jeśli coś krótkoterminowo będzie przeszkadzać." },
+            { "language": "ro", "text": "Atunci marți seara voi lua cadrul în apartament și miercuri îl voi pune din nou în nișă abia după curățenie. Pot pune și o mică notă de contact fără detalii medicale private, în cazul în care ceva deranjează pe termen scurt." },
+            { "language": "sq", "text": "Atëherë të martën në mbrëmje do ta marr ndihmësin e ecjes brenda apartamentit dhe të mërkurën do ta vendos përsëri në qoshe vetëm pas pastrimit. Mund të vendos edhe një shënim të vogël kontakti pa detaje private shëndetësore, nëse diçka pengon përkohësisht." }
+          ],
+          "function": "operational-commitment",
+          "toneNote": "The answer offers a concrete cleaning procedure and privacy-conscious contact option.",
+          "expectedLearnerAction": "Show responsibility in a way others can rely on."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "neighbor",
+          "baseText": "Mir ist auch wichtig, dass im Hauschat keine medizinischen Einzelheiten auftauchen. Das wäre für alle unangenehm.",
+          "translations": [
+            { "language": "en", "text": "It is also important to me that no medical details appear in the building chat. That would be uncomfortable for everyone." },
+            { "language": "fa", "text": "برای من هم مهم است که در گروه ساختمان هیچ جزئیات پزشکی مطرح نشود. این برای همه ناخوشایند خواهد بود." },
+            { "language": "ar", "text": "من المهم لي أيضاً ألا تظهر أي تفاصيل طبية في دردشة السكن. سيكون ذلك محرجاً للجميع." },
+            { "language": "tr", "text": "Bina sohbetinde tıbbi ayrıntıların yer almaması da benim için önemli. Bu herkes için rahatsız edici olurdu." },
+            { "language": "ru", "text": "Для меня также важно, чтобы в домовом чате не появлялись медицинские детали. Это было бы неприятно для всех." },
+            { "language": "ckb", "text": "بۆ منیش گرنگە کە لە گروپی خانووبەرەدا هیچ وردەکارییەکی پزیشکی دەرنەکەوێت. ئەوە بۆ هەمووان ناخۆش دەبێت." },
+            { "language": "kmr", "text": "Ji bo min jî girîng e ku di çata avahiyê de hûrguliyên bijîjkî dernekevin. Ew ji bo hemûyan nerehet dibe." },
+            { "language": "pl", "text": "Ważne jest dla mnie również, aby na czacie domu nie pojawiały się szczegóły medyczne. Byłoby to dla wszystkich niezręczne." },
+            { "language": "ro", "text": "Pentru mine este important și să nu apară detalii medicale în chatul imobilului. Ar fi neplăcut pentru toți." },
+            { "language": "sq", "text": "Për mua është gjithashtu e rëndësishme që në bisedën e ndërtesës të mos shfaqen detaje mjekësore. Kjo do të ishte e pakëndshme për të gjithë." }
+          ],
+          "function": "privacy-boundary",
+          "toneNote": "The committee member protects privacy and social comfort.",
+          "expectedLearnerAction": "Accept this boundary and propose neutral wording."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Da stimme ich zu. In einer kurzen Notiz müsste nur stehen: befristete Mobilitätshilfe in der Nische bis zum 30. Juni, Fluchtweg bleibt frei, bei Rückfragen bitte direkt an mich. Mehr private Begründung braucht es nicht.",
+          "translations": [
+            { "language": "en", "text": "I agree. A short note would only need to say: temporary mobility aid in the niche until June 30, escape route remains clear, please contact me directly with questions. No further private justification is needed." },
+            { "language": "fa", "text": "موافقم. در یک یادداشت کوتاه فقط کافی است نوشته شود: کمک حرکتی موقت در فرورفتگی تا ۳۰ ژوئن، مسیر فرار آزاد می‌ماند، برای پرسش‌ها لطفاً مستقیم با من تماس بگیرید. توضیح خصوصی بیشتری لازم نیست." },
+            { "language": "ar", "text": "أتفق مع ذلك. يكفي أن تذكر ملاحظة قصيرة: مساعدة حركة مؤقتة في التجويف حتى 30 يونيو، طريق الهروب يبقى خالياً، وللاستفسارات يرجى التواصل معي مباشرة. لا حاجة إلى مبرر خاص إضافي." },
+            { "language": "tr", "text": "Katılıyorum. Kısa bir notta sadece şu yazmalı: 30 Haziran'a kadar girintide geçici hareket yardımı, kaçış yolu açık kalır, sorular için lütfen doğrudan bana başvurun. Daha fazla özel gerekçe gerekmez." },
+            { "language": "ru", "text": "Я согласен. В короткой записке достаточно указать: временная помощь при передвижении в нише до 30 июня, путь эвакуации остается свободным, по вопросам обращаться прямо ко мне. Больше личного обоснования не нужно." },
+            { "language": "ckb", "text": "لەگەڵ ئەوەدا هاوڕام. لە یادداشتێکی کورتدا پێویستە تەنها ئەمە هەبێت: یارمەتیی جوڵانەوەی کاتی لە نیشەکە تا ٣٠ی حوزەیران، ڕێگای هەڵاتن ئازاد دەمێنێتەوە، بۆ پرسیار تکایە ڕاستەوخۆ پەیوەندیم پێوە بکەن. ڕوونکردنەوەی تایبەتی زیاتر پێویست نییە." },
+            { "language": "kmr", "text": "Ez razî me. Di noteke kurt de divê tenê ev hebe: alîkariya tevgerê ya demkî di cihê kûr de heta 30ê Hezîranê, rêya revê vala dimîne, ji bo pirsan ji kerema xwe rasterast bi min re têkilî daynin. Hinceta taybet a zêdetir pêwîst nîne." },
+            { "language": "pl", "text": "Zgadzam się. W krótkiej informacji wystarczyłoby napisać: czasowa pomoc w poruszaniu się we wnęce do 30 czerwca, droga ewakuacyjna pozostaje wolna, w razie pytań proszę kontaktować się bezpośrednio ze mną. Więcej prywatnego uzasadnienia nie potrzeba." },
+            { "language": "ro", "text": "Sunt de acord. Într-o notă scurtă ar trebui să scrie doar: ajutor temporar de mobilitate în nișă până la 30 iunie, ruta de evacuare rămâne liberă, pentru întrebări vă rog să mă contactați direct. Nu este nevoie de o justificare privată suplimentară." },
+            { "language": "sq", "text": "Jam dakord. Në një shënim të shkurtër do të mjaftonte të shkruhej: ndihmë e përkohshme për lëvizje në qoshe deri më 30 qershor, rruga e evakuimit mbetet e lirë, për pyetje ju lutem më kontaktoni drejtpërdrejt. Nuk nevojitet arsyetim tjetër privat." }
+          ],
+          "function": "privacy-safe-wording",
+          "toneNote": "The learner keeps the message neutral and operational.",
+          "expectedLearnerAction": "Avoid medical details and write only what the house community needs to know."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "neighbor",
+          "baseText": "Unter diesen Bedingungen könnte ich das im Hausbeirat vertreten. Ich würde aber gern festhalten, dass es keine dauerhafte Änderung der Hausordnung ist.",
+          "translations": [
+            { "language": "en", "text": "Under these conditions I could support this in the building committee. But I would like to record that it is not a permanent change to the house rules." },
+            { "language": "fa", "text": "با این شرایط می‌توانم این را در شورای ساختمان مطرح و حمایت کنم. اما می‌خواهم ثبت شود که این تغییر دائمی در آیین‌نامه ساختمان نیست." },
+            { "language": "ar", "text": "بهذه الشروط يمكنني دعم ذلك في مجلس السكن. لكنني أود أن يتم تسجيل أنه ليس تغييراً دائماً في نظام السكن." },
+            { "language": "tr", "text": "Bu koşullar altında bunu bina kurulunda savunabilirim. Ancak bunun apartman kurallarında kalıcı bir değişiklik olmadığını kaydetmek isterim." },
+            { "language": "ru", "text": "При этих условиях я мог бы поддержать это в домовом совете. Но я хотел бы зафиксировать, что это не постоянное изменение правил дома." },
+            { "language": "ckb", "text": "لە ژێر ئەم مەرجانەدا دەتوانم لە ئەنجومەنی خانووبەرەدا پشتگیریی بکەم. بەڵام دەمەوێت تۆمار بکرێت کە ئەمە گۆڕانکارییەکی هەمیشەیی لە ڕێنمایی خانووبەرە نییە." },
+            { "language": "kmr", "text": "Di bin van şertan de ez dikarim vê di şûraya avahiyê de biparêzim. Lê ez dixwazim were tomar kirin ku ev ne guherîneke mayînde ya rêgezên malê ye." },
+            { "language": "pl", "text": "Na tych warunkach mógłbym poprzeć to w radzie domu. Chciałbym jednak zapisać, że nie jest to trwała zmiana regulaminu domu." },
+            { "language": "ro", "text": "În aceste condiții aș putea susține acest lucru în comitetul imobilului. Dar aș dori să consemnăm că nu este o schimbare permanentă a regulamentului casei." },
+            { "language": "sq", "text": "Në këto kushte mund ta mbështes këtë në këshillin e ndërtesës. Por do të doja të shënohej se nuk është ndryshim i përhershëm i rregullores së ndërtesës." }
+          ],
+          "function": "conditional-acceptance",
+          "toneNote": "The neighbor accepts if the exception is documented as temporary.",
+          "expectedLearnerAction": "Close by summarizing conditions precisely."
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann halte ich fest: ab Montag bis 30. Juni, zusammengeklappt in der Nische neben unserer Tür, keine weiteren Gegenstände, mittwochs vor der Reinigung in der Wohnung, Fluchtweg frei, Kontakt direkt über mich und Ende Juni kurze Prüfung, ob die Regel wieder vollständig greift.",
+          "translations": [
+            { "language": "en", "text": "Then I will record this: from Monday until June 30, folded in the niche next to our door, no additional objects, in the apartment on Wednesdays before cleaning, escape route clear, contact directly through me, and a short review at the end of June to check whether the rule fully applies again." },
+            { "language": "fa", "text": "پس این را ثبت می‌کنم: از دوشنبه تا ۳۰ ژوئن، به صورت تا شده در فرورفتگی کنار درِ ما، بدون وسیله اضافی، چهارشنبه‌ها قبل از نظافت داخل آپارتمان، مسیر فرار آزاد، تماس مستقیم از طریق من و پایان ژوئن بررسی کوتاه که آیا قانون دوباره کاملاً اجرا می‌شود." },
+            { "language": "ar", "text": "إذن سأثبت ذلك: من يوم الاثنين حتى 30 يونيو، مطوية في التجويف بجانب بابنا، من دون أشياء إضافية، داخل الشقة أيام الأربعاء قبل التنظيف، طريق الهروب خالٍ، التواصل مباشرة عبرّي، وفي نهاية يونيو مراجعة قصيرة لمعرفة ما إذا كانت القاعدة ستطبق بالكامل مرة أخرى." },
+            { "language": "tr", "text": "O halde şunu kaydediyorum: pazartesiden 30 Haziran'a kadar, kapımızın yanındaki girintide katlanmış halde, ek eşya yok, çarşambaları temizlikten önce dairede, kaçış yolu açık, iletişim doğrudan benim üzerimden ve haziran sonunda kuralın tekrar tamamen geçerli olup olmadığını kısa bir kontrol." },
+            { "language": "ru", "text": "Тогда я зафиксирую: с понедельника до 30 июня, сложенным в нише рядом с нашей дверью, без дополнительных предметов, по средам до уборки в квартире, путь эвакуации свободен, контакт напрямую через меня и в конце июня короткая проверка, действует ли правило снова полностью." },
+            { "language": "ckb", "text": "کەواتە تۆمار دەکەم: لە دووشەممەوە تا ٣٠ی حوزەیران، بە قاتکراوی لە نیشەکەی تەنیشت دەرگاکەمان، بێ هیچ شتی زیادە، چوارشەممەکان پێش پاککردنەوە لە ناو ماڵ، ڕێگای هەڵاتن ئازاد، پەیوەندی ڕاستەوخۆ لە ڕێگەی منەوە و لە کۆتایی حوزەیراندا پشکنینێکی کورت کە ئایا یاساکە دووبارە بە تەواوی جێبەجێ دەبێت." },
+            { "language": "kmr", "text": "Wê demê ez tomar dikim: ji duşemê heta 30ê Hezîranê, qatlêkirî di cihê kûr ê kêleka deriyê me de, bê tiştên zêde, rojên çarşemê berî paqijkirinê di malê de, rêya revê vala, têkilî rasterast bi min re û dawiya Hezîranê kontrola kurt ka rêgez dîsa bi tevahî derbas dibe an na." },
+            { "language": "pl", "text": "W takim razie zapiszę: od poniedziałku do 30 czerwca, złożony we wnęce obok naszych drzwi, bez dodatkowych przedmiotów, w środy przed sprzątaniem w mieszkaniu, droga ewakuacyjna wolna, kontakt bezpośrednio przeze mnie i pod koniec czerwca krótka kontrola, czy zasada znów w pełni obowiązuje." },
+            { "language": "ro", "text": "Atunci consemnez: de luni până la 30 iunie, pliat în nișa de lângă ușa noastră, fără obiecte suplimentare, miercurea înainte de curățenie în apartament, ruta de evacuare liberă, contact direct prin mine și la sfârșitul lunii iunie o scurtă verificare dacă regula se aplică din nou complet." },
+            { "language": "sq", "text": "Atëherë po e shënoj: nga e hëna deri më 30 qershor, i palosur në qoshen pranë derës sonë, pa sende shtesë, të mërkurave para pastrimit brenda apartamentit, rruga e evakuimit e lirë, kontakt drejtpërdrejt përmes meje dhe në fund të qershorit një kontroll i shkurtër nëse rregulli zbatohet përsëri plotësisht." }
+          ],
+          "function": "precise-summary",
+          "toneNote": "The learner closes with operational detail and a review point.",
+          "expectedLearnerAction": "Summarize all conditions so the exception remains limited and verifiable."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "limited-rule-aware-request",
+              "text": "Ich möchte die Hausordnung nicht aushebeln, sondern klären, ob für vier Wochen eine eng begrenzte Lösung möglich ist.",
+              "translations": [
+                { "language": "en", "text": "I do not want to undermine the house rules, but to clarify whether a narrowly limited solution is possible for four weeks." },
+                { "language": "fa", "text": "نمی‌خواهم آیین‌نامه ساختمان را دور بزنم، بلکه می‌خواهم روشن کنم آیا برای چهار هفته راه‌حلی کاملاً محدود ممکن است." },
+                { "language": "ar", "text": "لا أريد تعطيل نظام السكن، بل توضيح ما إذا كان حل محدود جداً ممكناً لمدة أربعة أسابيع." },
+                { "language": "tr", "text": "Apartman kurallarını devre dışı bırakmak istemiyorum; dört haftalık dar kapsamlı bir çözüm mümkün mü, bunu netleştirmek istiyorum." },
+                { "language": "ru", "text": "Я не хочу обходить правила дома, а хочу уточнить, возможно ли на четыре недели очень ограниченное решение." },
+                { "language": "ckb", "text": "نامەوێت ڕێنمایی خانووبەرە لاببەم، بەڵکوو دەمهەوێت ڕوون بکەمەوە ئایا بۆ چوار هەفتە چارەسەرێکی زۆر سنووردار دەکرێت." },
+                { "language": "kmr", "text": "Ez naxwazim rêgezên malê bêbandor bikim, lê dixwazim zelal bikim ka ji bo çar hefte çareseriyeke pir tixûbdar gengaz e." },
+                { "language": "pl", "text": "Nie chcę obchodzić regulaminu domu, lecz wyjaśnić, czy na cztery tygodnie możliwe jest bardzo ograniczone rozwiązanie." },
+                { "language": "ro", "text": "Nu vreau să ocolesc regulamentul casei, ci să clarific dacă pentru patru săptămâni este posibilă o soluție foarte limitată." },
+                { "language": "sq", "text": "Nuk dua ta anashkaloj rregulloren e ndërtesës, por të sqaroj nëse për katër javë është e mundur një zgjidhje shumë e kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort respektiert die Regel und begrenzt die Bitte zeitlich und sachlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer respects the rule and limits the request by time and scope." },
+                { "language": "fa", "text": "خوب است: پاسخ به قانون احترام می‌گذارد و درخواست را از نظر زمان و موضوع محدود می‌کند." },
+                { "language": "ar", "text": "جيد: تحترم الإجابة القاعدة وتحد الطلب زمنياً وموضوعياً." },
+                { "language": "tr", "text": "İyi: Yanıt kurala saygı gösterir ve talebi zaman ve kapsam açısından sınırlar." },
+                { "language": "ru", "text": "Хорошо: ответ уважает правило и ограничивает просьбу по времени и содержанию." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕێز لە یاساکە دەگرێت و داواکە بە کات و بابەت سنووردار دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv rêz li rêgezê digire û daxwazê bi dem û mijarê tixûbdar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź respektuje zasadę i ogranicza prośbę czasowo oraz rzeczowo." },
+                { "language": "ro", "text": "Bine: răspunsul respectă regula și limitează cererea în timp și ca obiect." },
+                { "language": "sq", "text": "Mirë: përgjigjja respekton rregullin dhe e kufizon kërkesën në kohë dhe në përmbajtje." }
+              ],
+              "explanationKey": "rule-aware-opening"
+            },
+            {
+              "id": "entitlement-framing",
+              "text": "In dieser Situation kann die Hausordnung doch nicht so streng gelten.",
+              "translations": [
+                { "language": "en", "text": "In this situation the house rules surely cannot apply so strictly." },
+                { "language": "fa", "text": "در این وضعیت آیین‌نامه ساختمان دیگر نباید این‌قدر سخت‌گیرانه اعمال شود." },
+                { "language": "ar", "text": "في هذه الحالة لا يمكن أن يطبق نظام السكن بهذه الصرامة." },
+                { "language": "tr", "text": "Bu durumda apartman kuralları herhalde bu kadar katı uygulanamaz." },
+                { "language": "ru", "text": "В этой ситуации правила дома ведь не могут применяться так строго." },
+                { "language": "ckb", "text": "لەو دۆخەدا ڕێنمایی خانووبەرە نابێت ئەوەندە توند جێبەجێ بکرێت." },
+                { "language": "kmr", "text": "Di vê rewşê de rêgezên malê divê ewqas tund neyên sepandin." },
+                { "language": "pl", "text": "W tej sytuacji regulamin domu chyba nie może obowiązywać tak surowo." },
+                { "language": "ro", "text": "În această situație regulamentul casei nu poate fi aplicat chiar atât de strict." },
+                { "language": "sq", "text": "Në këtë situatë rregullorja e ndërtesës nuk mund të vlejë kaq rreptësisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu anspruchsvoll formuliert: Die persönliche Lage wird deutlich, aber die Regel wird nicht ernst genug genommen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too entitlement-oriented: the personal situation is clear, but the rule is not taken seriously enough." },
+                { "language": "fa", "text": "زیادی طلبکارانه است: وضعیت شخصی روشن می‌شود، اما قانون به اندازه کافی جدی گرفته نمی‌شود." },
+                { "language": "ar", "text": "صياغة فيها مطالبة زائدة: يتضح الوضع الشخصي، لكن القاعدة لا تؤخذ بجدية كافية." },
+                { "language": "tr", "text": "Fazla hak talep eden bir ifade: kişisel durum netleşiyor, ama kural yeterince ciddiye alınmıyor." },
+                { "language": "ru", "text": "Слишком требовательно: личная ситуация ясна, но правило воспринимается недостаточно серьезно." },
+                { "language": "ckb", "text": "زۆر بە شێوەی داواکارییە: دۆخی کەسی ڕوونە، بەڵام یاساکە بە تەواوی جدی وەرناگیرێت." },
+                { "language": "kmr", "text": "Pir daxwazkar e: rewşa kesane zelal e, lê rêgez têr cidî nayê girtin." },
+                { "language": "pl", "text": "Zbyt roszczeniowo: sytuacja osobista jest jasna, ale zasada nie zostaje potraktowana wystarczająco poważnie." },
+                { "language": "ro", "text": "Prea revendicativ: situația personală este clară, dar regula nu este luată suficient de serios." },
+                { "language": "sq", "text": "Shumë pretenduese: situata personale është e qartë, por rregulli nuk merret mjaft seriozisht." }
+              ],
+              "explanationKey": "avoid-entitlement-framing"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "specific-placement-and-end-date",
+              "text": "Der Rollator wäre zusammengeklappt in der Nische neben unserer Tür; die Durchgangsbreite bliebe frei und es gäbe ein festes Enddatum.",
+              "translations": [
+                { "language": "en", "text": "The walker would be folded in the niche next to our door; the passage width would remain clear and there would be a fixed end date." },
+                { "language": "fa", "text": "واکر به صورت تا شده در فرورفتگی کنار درِ ما خواهد بود؛ عرض عبور آزاد می‌ماند و تاریخ پایان مشخص وجود خواهد داشت." },
+                { "language": "ar", "text": "ستكون المشاية مطوية في التجويف بجانب بابنا؛ وسيبقى عرض الممر خالياً وسيكون هناك تاريخ انتهاء محدد." },
+                { "language": "tr", "text": "Yürüteç kapımızın yanındaki girintide katlanmış halde duracak; geçiş genişliği açık kalacak ve sabit bir bitiş tarihi olacak." },
+                { "language": "ru", "text": "Роллатор будет сложен в нише рядом с нашей дверью; ширина прохода останется свободной и будет фиксированная дата окончания." },
+                { "language": "ckb", "text": "ڕۆلاتۆرەکە بە قاتکراوی لە نیشەکەی تەنیشت دەرگاکەمان دەبێت؛ پانیی ڕێڕەوەکە ئازاد دەمێنێتەوە و بەرواری کۆتایی دیاریکراو دەبێت." },
+                { "language": "kmr", "text": "Alîkariya meşê wê qatlêkirî di cihê kûr ê kêleka deriyê me de be; firehiya derbasbûnê vala dimîne û tarîxeke dawî ya sabît heye." },
+                { "language": "pl", "text": "Balkonik stałby złożony we wnęce obok naszych drzwi; szerokość przejścia pozostałaby wolna i byłaby stała data końcowa." },
+                { "language": "ro", "text": "Cadrul ar sta pliat în nișa de lângă ușa noastră; lățimea de trecere ar rămâne liberă și ar exista o dată finală fixă." },
+                { "language": "sq", "text": "Ndihmësi i ecjes do të qëndronte i palosur në qoshen pranë derës sonë; gjerësia e kalimit do të mbetej e lirë dhe do të kishte një datë përfundimi të caktuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Lösung ist überprüfbar, sicherheitsbezogen und zeitlich begrenzt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The solution is verifiable, safety-related, and time-limited." },
+                { "language": "fa", "text": "خوب است: راه‌حل قابل بررسی، مرتبط با ایمنی و زمان‌دار است." },
+                { "language": "ar", "text": "جيد: الحل قابل للتحقق ومرتبط بالسلامة ومحدود زمنياً." },
+                { "language": "tr", "text": "İyi: Çözüm denetlenebilir, güvenlikle bağlantılı ve süre sınırlıdır." },
+                { "language": "ru", "text": "Хорошо: решение проверяемо, связано с безопасностью и ограничено по времени." },
+                { "language": "ckb", "text": "باشە: چارەسەرەکە دەتوانرێت بپشکنرێت، پەیوەندی بە سەلامەتییەوە هەیە و کاتدارە." },
+                { "language": "kmr", "text": "Baş e: Çareserî tê kontrolkirin, bi ewlehiyê ve girêdayî ye û bi demê tixûbdar e." },
+                { "language": "pl", "text": "Dobrze: rozwiązanie jest sprawdzalne, związane z bezpieczeństwem i ograniczone czasowo." },
+                { "language": "ro", "text": "Bine: soluția este verificabilă, legată de siguranță și limitată în timp." },
+                { "language": "sq", "text": "Mirë: zgjidhja është e verifikueshme, lidhet me sigurinë dhe është e kufizuar në kohë." }
+              ],
+              "explanationKey": "specific-safety-condition"
+            },
+            {
+              "id": "vague-placement",
+              "text": "Ich würde ihn einfach so hinstellen, dass er niemanden stört.",
+              "translations": [
+                { "language": "en", "text": "I would simply put it somewhere so that it does not bother anyone." },
+                { "language": "fa", "text": "فقط آن را جایی می‌گذارم که مزاحم کسی نباشد." },
+                { "language": "ar", "text": "سأضعها ببساطة في مكان لا تزعج فيه أحداً." },
+                { "language": "tr", "text": "Onu kimseyi rahatsız etmeyecek şekilde bir yere koyarım." },
+                { "language": "ru", "text": "Я просто поставлю его так, чтобы он никому не мешал." },
+                { "language": "ckb", "text": "تەنها بە شێوەیەک دایدەنێم کە مزاحەمی کەس نەبێت." },
+                { "language": "kmr", "text": "Ez ê wî tenê wisa daynim ku kesek aciz neke." },
+                { "language": "pl", "text": "Po prostu postawiłbym go tak, żeby nikomu nie przeszkadzał." },
+                { "language": "ro", "text": "L-aș pune pur și simplu astfel încât să nu deranjeze pe nimeni." },
+                { "language": "sq", "text": "Thjesht do ta vendosja diku që të mos pengojë askënd." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Bei einer Hausregel braucht die andere Seite konkrete Lage, Sicherheitsbedingung und Dauer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: With a house rule, the other side needs a concrete location, safety condition, and duration." },
+                { "language": "fa", "text": "زیادی مبهم است: در مورد قانون ساختمان، طرف مقابل به محل مشخص، شرط ایمنی و مدت نیاز دارد." },
+                { "language": "ar", "text": "غامض جداً: في قاعدة السكن يحتاج الطرف الآخر إلى مكان محدد وشرط سلامة ومدة." },
+                { "language": "tr", "text": "Çok belirsiz: Bir bina kuralında karşı taraf somut yer, güvenlik koşulu ve süreye ihtiyaç duyar." },
+                { "language": "ru", "text": "Слишком расплывчато: при правиле дома другой стороне нужны конкретное место, условие безопасности и срок." },
+                { "language": "ckb", "text": "زۆر نادیارە: لە یاسای خانووبەرەدا لای بەرامبەر پێویستی بە شوێنی دیاریکراو، مەرجی سەلامەتی و ماوە هەیە." },
+                { "language": "kmr", "text": "Pir nezelal e: Di rêgeza malê de aliyê din pêdiviya wî bi cihê konkret, şertê ewlehiyê û demê heye." },
+                { "language": "pl", "text": "Zbyt niejasno: przy regulaminie domu druga strona potrzebuje konkretnego miejsca, warunku bezpieczeństwa i czasu trwania." },
+                { "language": "ro", "text": "Prea vag: la o regulă a clădirii, cealaltă parte are nevoie de loc concret, condiție de siguranță și durată." },
+                { "language": "sq", "text": "Shumë e paqartë: për një rregull ndërtese pala tjetër ka nevojë për vend konkret, kusht sigurie dhe kohëzgjatje." }
+              ],
+              "explanationKey": "avoid-vague-placement"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "no-general-precedent",
+              "text": "Ich würde es als befristete Mobilitätshilfe mit Start- und Enddatum formulieren, nicht als allgemeine Abstellmöglichkeit.",
+              "translations": [
+                { "language": "en", "text": "I would phrase it as a temporary mobility aid with a start and end date, not as a general storage option." },
+                { "language": "fa", "text": "آن را به عنوان کمک حرکتی موقت با تاریخ شروع و پایان بیان می‌کنم، نه امکان عمومی برای گذاشتن وسایل." },
+                { "language": "ar", "text": "سأصوغه كمساعدة حركة مؤقتة بتاريخ بداية ونهاية، لا كإمكانية عامة للتخزين." },
+                { "language": "tr", "text": "Bunu başlangıç ve bitiş tarihi olan geçici bir hareket desteği olarak formüle ederim, genel bir eşya bırakma imkanı olarak değil." },
+                { "language": "ru", "text": "Я сформулировал бы это как временную помощь при передвижении с датой начала и окончания, а не как общую возможность хранения." },
+                { "language": "ckb", "text": "وەک یارمەتیی جوڵانەوەی کاتی بە بەرواری دەستپێک و کۆتایی دایدەڕێژم، نە وەک ئەنجامێکی گشتی بۆ دانانی شت." },
+                { "language": "kmr", "text": "Ez ê vê wekî alîkariya tevgerê ya demkî bi tarîxa destpêk û dawî formul bikim, ne wekî derfeta giştî ya danîna tiştan." },
+                { "language": "pl", "text": "Sformułowałbym to jako czasową pomoc w poruszaniu się z datą początku i końca, a nie jako ogólną możliwość przechowywania." },
+                { "language": "ro", "text": "Aș formula-o ca ajutor temporar de mobilitate cu dată de început și sfârșit, nu ca posibilitate generală de depozitare." },
+                { "language": "sq", "text": "Do ta formuloja si ndihmë të përkohshme për lëvizje me datë fillimi dhe mbarimi, jo si mundësi të përgjithshme për vendosje sendesh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt Gleichbehandlung ernst und schützt die Hausregel vor einer unbeabsichtigten Ausweitung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer takes equal treatment seriously and protects the house rule from unintended expansion." },
+                { "language": "fa", "text": "خوب است: پاسخ رفتار برابر را جدی می‌گیرد و قانون ساختمان را از گسترش ناخواسته محافظت می‌کند." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة المساواة في المعاملة بجدية وتحمي قاعدة السكن من توسع غير مقصود." },
+                { "language": "tr", "text": "İyi: Yanıt eşit muameleyi ciddiye alır ve bina kuralını istenmeyen genişlemeden korur." },
+                { "language": "ru", "text": "Хорошо: ответ серьезно относится к равному обращению и защищает правило дома от непреднамеренного расширения." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەڵسوکەوتی یەکسان بە جدی وەردەگرێت و یاسای خانووبەرە لە فراوانبوونی نەخوازراو دەپارێزێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv dermankirina wekhev cidî digire û rêgeza malê ji berfirehbûna nexwestî diparêze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź poważnie traktuje równe traktowanie i chroni regulamin przed niezamierzonym rozszerzeniem." },
+                { "language": "ro", "text": "Bine: răspunsul ia în serios tratamentul egal și protejează regula clădirii de extindere neintenționată." },
+                { "language": "sq", "text": "Mirë: përgjigjja e merr seriozisht trajtimin e barabartë dhe mbron rregullin e ndërtesës nga zgjerimi i paqëllimshëm." }
+              ],
+              "explanationKey": "limit-precedent"
+            },
+            {
+              "id": "too-broad-comparison",
+              "text": "Andere könnten ja ebenfalls nachfragen, wenn sie etwas im Flur abstellen möchten.",
+              "translations": [
+                { "language": "en", "text": "Others could also ask if they want to leave something in the hallway." },
+                { "language": "fa", "text": "دیگران هم می‌توانند بپرسند اگر بخواهند چیزی در راهرو بگذارند." },
+                { "language": "ar", "text": "يمكن للآخرين أيضاً أن يسألوا إذا أرادوا وضع شيء في الممر." },
+                { "language": "tr", "text": "Başkaları da koridorda bir şey bırakmak isterlerse sorabilirler." },
+                { "language": "ru", "text": "Другие тоже могли бы спросить, если захотят оставить что-то в коридоре." },
+                { "language": "ckb", "text": "ئەوانی تریش دەتوانن بپرسن ئەگەر بیانەوێت شتێک لە ڕاڕەودا دابنێن." },
+                { "language": "kmr", "text": "Kesên din jî dikarin bipirsin heke bixwazin tiştek di korîdorê de daynin." },
+                { "language": "pl", "text": "Inni też mogliby zapytać, jeśli chcieliby coś postawić na korytarzu." },
+                { "language": "ro", "text": "Și alții ar putea întreba dacă vor să lase ceva pe hol." },
+                { "language": "sq", "text": "Edhe të tjerët mund të pyesin nëse duan të lënë diçka në korridor." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Das öffnet die Tür für eine allgemeine Ausnahme, statt den Einzelfall sauber abzugrenzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: This opens the door to a general exception instead of clearly separating the individual case." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: این در را برای استثنای عمومی باز می‌کند، به جای اینکه مورد فردی را روشن جدا کند." },
+                { "language": "ar", "text": "ضعيف استراتيجياً: يفتح الباب لاستثناء عام بدلاً من فصل الحالة الفردية بوضوح." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: Bu, bireysel durumu net ayırmak yerine genel bir istisnaya kapı açar." },
+                { "language": "ru", "text": "Стратегически слабо: это открывает дверь для общего исключения вместо четкого разграничения отдельного случая." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: ئەمە دەرگا بۆ جیاوازییەکی گشتی دەکاتەوە، لە جیاتی ئەوەی دۆخی تاکەکەسی بە ڕوونی جیا بکاتەوە." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: Ev derî ji bo îstîsnayeke giştî vedike, li şûna ku rewşa takekesî bi zelalî veqetîne." },
+                { "language": "pl", "text": "Strategicznie słabe: otwiera to drzwi do ogólnego wyjątku zamiast jasno oddzielić indywidualny przypadek." },
+                { "language": "ro", "text": "Slab strategic: deschide ușa pentru o excepție generală în loc să delimiteze clar cazul individual." },
+                { "language": "sq", "text": "E dobët strategjikisht: kjo hap derën për një përjashtim të përgjithshëm, në vend që të ndajë qartë rastin individual." }
+              ],
+              "explanationKey": "avoid-broad-precedent"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "cleaning-and-contact-plan",
+              "text": "Ich nehme ihn dienstagabends in die Wohnung, stelle ihn erst nach der Reinigung zurück und hinterlasse einen neutralen Kontaktzettel.",
+              "translations": [
+                { "language": "en", "text": "I will take it into the apartment on Tuesday evenings, put it back only after cleaning, and leave a neutral contact note." },
+                { "language": "fa", "text": "سه‌شنبه شب‌ها آن را داخل آپارتمان می‌برم، فقط بعد از نظافت برمی‌گردانم و یک برگه تماس بی‌طرف می‌گذارم." },
+                { "language": "ar", "text": "سأدخله إلى الشقة مساء الثلاثاء، ولا أعيده إلا بعد التنظيف، وأترك ورقة اتصال محايدة." },
+                { "language": "tr", "text": "Salı akşamları onu daireye alırım, ancak temizlikten sonra geri koyarım ve tarafsız bir iletişim notu bırakırım." },
+                { "language": "ru", "text": "По вторникам вечером я буду заносить его в квартиру, возвращать только после уборки и оставлять нейтральную контактную записку." },
+                { "language": "ckb", "text": "سێشەممانە ئێوارە دەیبەمە ناو ماڵ، تەنها دوای پاککردنەوە دەیگەڕێنمەوە و کاغەزێکی بێلایەنی پەیوەندی دەهێڵمەوە." },
+                { "language": "kmr", "text": "Êvarên sêşemê ez ê wî bibim hundirê malê, tenê piştî paqijkirinê vegerînim û noteke têkiliyê ya bêalî bihêlim." },
+                { "language": "pl", "text": "We wtorkowe wieczory zabiorę go do mieszkania, odstawiam dopiero po sprzątaniu i zostawiam neutralną kartkę kontaktową." },
+                { "language": "ro", "text": "Marți seara îl iau în apartament, îl pun la loc numai după curățenie și las o notă de contact neutră." },
+                { "language": "sq", "text": "Të martën në mbrëmje e marr brenda apartamentit, e vendos përsëri vetëm pas pastrimit dhe lë një shënim neutral kontakti." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Verantwortung, Reinigungspraxis und erreichbare Kontaktaufnahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer combines responsibility, cleaning practice, and reachable contact." },
+                { "language": "fa", "text": "خوب است: پاسخ مسئولیت، روال نظافت و امکان تماس را با هم ترکیب می‌کند." },
+                { "language": "ar", "text": "جيد: تجمع الإجابة بين المسؤولية وممارسة التنظيف وإمكانية التواصل." },
+                { "language": "tr", "text": "İyi: Yanıt sorumluluğu, temizlik uygulamasını ve ulaşılabilir iletişimi birleştirir." },
+                { "language": "ru", "text": "Хорошо: ответ объединяет ответственность, практику уборки и доступный контакт." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەرپرسیاریەتی، شێوازی پاککردنەوە و پەیوەندیی دەستپێگەیشتوو کۆدەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv berpirsiyarî, pratîka paqijkirinê û têkiliya gihîştbar têk dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy odpowiedzialność, praktykę sprzątania i dostępny kontakt." },
+                { "language": "ro", "text": "Bine: răspunsul combină responsabilitatea, practica de curățenie și contactul accesibil." },
+                { "language": "sq", "text": "Mirë: përgjigjja kombinon përgjegjësinë, praktikën e pastrimit dhe kontaktin e arritshëm." }
+              ],
+              "explanationKey": "operational-responsibility"
+            },
+            {
+              "id": "reactive-only-plan",
+              "text": "Wenn die Reinigung ein Problem hat, kann man mich einfach danach anrufen.",
+              "translations": [
+                { "language": "en", "text": "If the cleaning service has a problem, they can simply call me afterward." },
+                { "language": "fa", "text": "اگر نظافت مشکلی داشت، می‌توانند بعدش به من زنگ بزنند." },
+                { "language": "ar", "text": "إذا واجهت خدمة التنظيف مشكلة، يمكنهم ببساطة الاتصال بي بعد ذلك." },
+                { "language": "tr", "text": "Temizlik hizmeti sorun yaşarsa, sonrasında beni arayabilirler." },
+                { "language": "ru", "text": "Если у уборки возникнет проблема, мне могут просто потом позвонить." },
+                { "language": "ckb", "text": "ئەگەر پاککردنەوە کێشەی هەبوو، دەتوانن دواتر بە من تەلەفۆن بکەن." },
+                { "language": "kmr", "text": "Heke paqijkirin pirsgirêkek hebe, ew dikarin pişt re bi min re telefon bikin." },
+                { "language": "pl", "text": "Jeśli sprzątanie będzie miało problem, mogą po prostu potem do mnie zadzwonić." },
+                { "language": "ro", "text": "Dacă serviciul de curățenie are o problemă, pot pur și simplu să mă sune după aceea." },
+                { "language": "sq", "text": "Nëse pastrimi ka problem, thjesht mund të më telefonojnë më pas." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu reaktiv: Das Problem wäre dann bereits entstanden. Besser ist eine vorher klare Routine.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too reactive: The problem would already have occurred. A clear routine beforehand is better." },
+                { "language": "fa", "text": "زیادی واکنشی است: آن وقت مشکل قبلاً ایجاد شده است. بهتر است از قبل روال روشنی وجود داشته باشد." },
+                { "language": "ar", "text": "رد فعلي أكثر من اللازم: ستكون المشكلة قد حدثت بالفعل. الأفضل وجود روتين واضح مسبقاً." },
+                { "language": "tr", "text": "Fazla tepkisel: O zaman sorun zaten oluşmuş olur. Önceden net bir rutin daha iyidir." },
+                { "language": "ru", "text": "Слишком реактивно: проблема уже возникла бы. Лучше заранее иметь четкий порядок." },
+                { "language": "ckb", "text": "زۆر وەڵامدانەوەییە: کێشەکە ئەوکات پێشتر ڕوویداوە. باشترە پێشوەختە ڕووتینێکی ڕوون هەبێت." },
+                { "language": "kmr", "text": "Pir reaksiyonî ye: wê pirsgirêk jixwe çêbûbe. Rûtîneke zelal a berê çêtir e." },
+                { "language": "pl", "text": "Zbyt reaktywnie: problem wtedy już by powstał. Lepsza jest wcześniej jasna rutyna." },
+                { "language": "ro", "text": "Prea reactiv: problema ar fi apărut deja. Este mai bine să existe dinainte o rutină clară." },
+                { "language": "sq", "text": "Shumë reaktive: problemi do të kishte ndodhur tashmë. Më mirë është një rutinë e qartë paraprakisht." }
+              ],
+              "explanationKey": "avoid-reactive-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "neutral-privacy-note",
+              "text": "In der Notiz stehen nur Zeitraum, Ort, freier Fluchtweg und direkte Kontaktmöglichkeit; private Gründe bleiben privat.",
+              "translations": [
+                { "language": "en", "text": "The note contains only the period, location, clear escape route, and direct contact option; private reasons remain private." },
+                { "language": "fa", "text": "در یادداشت فقط بازه زمانی، محل، آزاد بودن مسیر فرار و امکان تماس مستقیم می‌آید؛ دلایل خصوصی خصوصی می‌ماند." },
+                { "language": "ar", "text": "تتضمن الملاحظة فقط المدة والمكان وخلو طريق الهروب وإمكانية التواصل المباشر؛ أما الأسباب الخاصة فتبقى خاصة." },
+                { "language": "tr", "text": "Notta sadece süre, yer, açık kaçış yolu ve doğrudan iletişim imkanı yer alır; özel nedenler özel kalır." },
+                { "language": "ru", "text": "В записке указаны только срок, место, свободный путь эвакуации и возможность прямого контакта; личные причины остаются личными." },
+                { "language": "ckb", "text": "لە یادداشتەکەدا تەنها ماوە، شوێن، ئازادبوونی ڕێگای هەڵاتن و ڕێگای پەیوەندی ڕاستەوخۆ دەبێت؛ هۆکارە تایبەتییەکان تایبەتی دەمێننەوە." },
+                { "language": "kmr", "text": "Di notê de tenê dem, cih, rêya revê ya vala û derfeta têkiliya rasterast hene; sedemên taybet taybet dimînin." },
+                { "language": "pl", "text": "W informacji są tylko okres, miejsce, wolna droga ewakuacyjna i bezpośredni kontakt; prywatne powody pozostają prywatne." },
+                { "language": "ro", "text": "În notă apar doar perioada, locul, ruta de evacuare liberă și posibilitatea de contact direct; motivele private rămân private." },
+                { "language": "sq", "text": "Në shënim janë vetëm periudha, vendi, rruga e lirë e evakuimit dhe mundësia e kontaktit të drejtpërdrejtë; arsyet private mbeten private." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Formulierung gibt der Hausgemeinschaft genug Information, ohne persönliche Daten auszubreiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The wording gives the building community enough information without spreading personal data." },
+                { "language": "fa", "text": "خوب است: این عبارت به ساکنان ساختمان اطلاعات کافی می‌دهد، بدون اینکه داده‌های شخصی پخش شود." },
+                { "language": "ar", "text": "جيد: تعطي الصياغة جماعة السكن معلومات كافية من دون نشر بيانات شخصية." },
+                { "language": "tr", "text": "İyi: İfade bina topluluğuna yeterli bilgi verir, kişisel verileri yaymaz." },
+                { "language": "ru", "text": "Хорошо: формулировка дает жильцам достаточно информации, не распространяя личные данные." },
+                { "language": "ckb", "text": "باشە: داڕشتنەکە زانیاریی تەواو بە کۆمەڵگەی خانووبەرە دەدات، بەبێ ئەوەی داتای کەسی بڵاو بکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Formulasyon agahdariya têr dide civaka avahiyê bê ku daneyên kesane belav bike." },
+                { "language": "pl", "text": "Dobrze: sformułowanie daje wspólnocie domu wystarczającą informację bez rozpowszechniania danych osobowych." },
+                { "language": "ro", "text": "Bine: formularea oferă comunității imobilului suficiente informații fără a răspândi date personale." },
+                { "language": "sq", "text": "Mirë: formulimi i jep komunitetit të ndërtesës mjaft informacion pa shpërndarë të dhëna personale." }
+              ],
+              "explanationKey": "privacy-minimization"
+            },
+            {
+              "id": "over-sharing-medical-details",
+              "text": "Ich kann kurz erklären, welche gesundheitlichen Einschränkungen meine Mutter genau hat.",
+              "translations": [
+                { "language": "en", "text": "I can briefly explain exactly which health limitations my mother has." },
+                { "language": "fa", "text": "می‌توانم کوتاه توضیح بدهم مادرم دقیقاً چه محدودیت‌های سلامتی دارد." },
+                { "language": "ar", "text": "يمكنني أن أشرح بإيجاز ما هي القيود الصحية التي لدى والدتي بالضبط." },
+                { "language": "tr", "text": "Annemin tam olarak hangi sağlık kısıtlamaları olduğunu kısaca açıklayabilirim." },
+                { "language": "ru", "text": "Я могу коротко объяснить, какие именно ограничения здоровья есть у моей матери." },
+                { "language": "ckb", "text": "دەتوانم بە کورتی ڕوون بکەمەوە کە دایکەم بە وردی چ سنوورداربوونێکی تەندروستی هەیە." },
+                { "language": "kmr", "text": "Ez dikarim bi kurtî rave bikim ku diya min bi rastî çi tixûbdariyên tenduristiyê hene." },
+                { "language": "pl", "text": "Mogę krótko wyjaśnić, jakie dokładnie ograniczenia zdrowotne ma moja matka." },
+                { "language": "ro", "text": "Pot explica pe scurt ce limitări de sănătate are exact mama mea." },
+                { "language": "sq", "text": "Mund të shpjegoj shkurt cilat kufizime shëndetësore ka saktësisht nëna ime." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu privat: Für die Hausgemeinschaft reichen Zweck, Dauer und Sicherheitsbedingungen. Medizinische Details gehören nicht in die Hauskommunikation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too private: purpose, duration, and safety conditions are enough for the building community. Medical details do not belong in building communication." },
+                { "language": "fa", "text": "زیادی خصوصی است: برای ساکنان ساختمان هدف، مدت و شرایط ایمنی کافی است. جزئیات پزشکی جایگاهی در ارتباطات ساختمان ندارد." },
+                { "language": "ar", "text": "خاص جداً: يكفي لجماعة السكن الغرض والمدة وشروط السلامة. التفاصيل الطبية لا تنتمي إلى تواصل السكن." },
+                { "language": "tr", "text": "Çok özel: bina topluluğu için amaç, süre ve güvenlik koşulları yeterlidir. Tıbbi ayrıntılar bina iletişimine ait değildir." },
+                { "language": "ru", "text": "Слишком лично: жильцам достаточно цели, срока и условий безопасности. Медицинские детали не должны быть частью домовой коммуникации." },
+                { "language": "ckb", "text": "زۆر تایبەتییە: بۆ کۆمەڵگەی خانووبەرە مەبەست، ماوە و مەرجەکانی سەلامەتی بەسە. وردەکاری پزیشکی بۆ پەیوەندیی خانووبەرە نییە." },
+                { "language": "kmr", "text": "Pir taybet e: ji bo civaka avahiyê armanc, dem û şertên ewlehiyê têr in. Hûrguliyên bijîjkî ne cihê têkiliya avahiyê ne." },
+                { "language": "pl", "text": "Zbyt prywatnie: wspólnocie domu wystarczą cel, czas trwania i warunki bezpieczeństwa. Szczegóły medyczne nie należą do komunikacji domowej." },
+                { "language": "ro", "text": "Prea privat: pentru comunitatea imobilului sunt suficiente scopul, durata și condițiile de siguranță. Detaliile medicale nu aparțin comunicării din imobil." },
+                { "language": "sq", "text": "Shumë private: për komunitetin e ndërtesës mjaftojnë qëllimi, kohëzgjatja dhe kushtet e sigurisë. Detajet mjekësore nuk i përkasin komunikimit të ndërtesës." }
+              ],
+              "explanationKey": "avoid-medical-over-sharing"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "complete-limited-summary",
+              "text": "Ich fasse Start- und Enddatum, Standort, freien Fluchtweg, Reinigungstag, Kontakt und die kurze Prüfung Ende Juni schriftlich zusammen.",
+              "translations": [
+                { "language": "en", "text": "I will summarize the start and end date, location, clear escape route, cleaning day, contact, and the short review at the end of June in writing." },
+                { "language": "fa", "text": "تاریخ شروع و پایان، محل، آزاد بودن مسیر فرار، روز نظافت، تماس و بررسی کوتاه پایان ژوئن را کتبی جمع‌بندی می‌کنم." },
+                { "language": "ar", "text": "سألخص كتابياً تاريخ البداية والنهاية والمكان وخلو طريق الهروب ويوم التنظيف والتواصل والمراجعة القصيرة في نهاية يونيو." },
+                { "language": "tr", "text": "Başlangıç ve bitiş tarihini, yeri, açık kaçış yolunu, temizlik gününü, iletişimi ve haziran sonundaki kısa kontrolü yazılı olarak özetlerim." },
+                { "language": "ru", "text": "Я письменно суммирую дату начала и окончания, место, свободный путь эвакуации, день уборки, контакт и короткую проверку в конце июня." },
+                { "language": "ckb", "text": "بەرواری دەستپێک و کۆتایی، شوێن، ئازادبوونی ڕێگای هەڵاتن، ڕۆژی پاککردنەوە، پەیوەندی و پشکنینی کورتی کۆتایی حوزەیران بە نووسراوی کورت دەکەمەوە." },
+                { "language": "kmr", "text": "Ez ê tarîxa destpêk û dawî, cih, rêya revê ya vala, roja paqijkirinê, têkilî û kontrola kurt a dawiya Hezîranê bi nivîsê kurt bikim." },
+                { "language": "pl", "text": "Podsumuję pisemnie datę początku i końca, miejsce, wolną drogę ewakuacyjną, dzień sprzątania, kontakt i krótką kontrolę pod koniec czerwca." },
+                { "language": "ro", "text": "Voi rezuma în scris data de început și sfârșit, locul, ruta de evacuare liberă, ziua de curățenie, contactul și scurta verificare de la sfârșitul lunii iunie." },
+                { "language": "sq", "text": "Do të përmbledh me shkrim datën e fillimit dhe të mbarimit, vendin, rrugën e lirë të evakuimit, ditën e pastrimit, kontaktin dhe kontrollin e shkurtër në fund të qershorit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Der Abschluss macht die Ausnahme nachvollziehbar und verhindert, dass sie später wie eine neue allgemeine Regel wirkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The closing makes the exception understandable and prevents it from later seeming like a new general rule." },
+                { "language": "fa", "text": "خوب است: پایان، استثنا را قابل فهم می‌کند و مانع می‌شود بعداً مثل یک قانون عمومی جدید به نظر برسد." },
+                { "language": "ar", "text": "جيد: تجعل الخاتمة الاستثناء مفهوماً وتمنع أن يبدو لاحقاً كقاعدة عامة جديدة." },
+                { "language": "tr", "text": "İyi: Kapanış istisnayı anlaşılır kılar ve daha sonra yeni bir genel kural gibi görünmesini engeller." },
+                { "language": "ru", "text": "Хорошо: завершение делает исключение понятным и не дает ему позже выглядеть как новое общее правило." },
+                { "language": "ckb", "text": "باشە: کۆتاییەکە جیاوازییەکە تێگەیشتوو دەکات و ڕێگری دەکات دواتر وەک یاسایەکی گشتیی نوێ دەربکەوێت." },
+                { "language": "kmr", "text": "Baş e: Girtin îstîsnayê têgihîştî dike û nahêle ku paşê wekî rêgezeke giştî ya nû xuya bike." },
+                { "language": "pl", "text": "Dobrze: zakończenie czyni wyjątek zrozumiałym i zapobiega temu, by później wyglądał jak nowa ogólna zasada." },
+                { "language": "ro", "text": "Bine: încheierea face excepția ușor de înțeles și împiedică să pară ulterior o nouă regulă generală." },
+                { "language": "sq", "text": "Mirë: mbyllja e bën përjashtimin të kuptueshëm dhe parandalon që më vonë të duket si një rregull i ri i përgjithshëm." }
+              ],
+              "explanationKey": "complete-summary"
+            },
+            {
+              "id": "trial-without-criteria",
+              "text": "Dann probieren wir es einfach und sehen später, ob es Probleme gibt.",
+              "translations": [
+                { "language": "en", "text": "Then we will simply try it and see later whether there are problems." },
+                { "language": "fa", "text": "پس فقط امتحانش می‌کنیم و بعداً می‌بینیم آیا مشکلی هست یا نه." },
+                { "language": "ar", "text": "إذن نجرب الأمر ببساطة ونرى لاحقاً ما إذا كانت هناك مشكلات." },
+                { "language": "tr", "text": "O zaman bunu basitçe deneriz ve daha sonra sorun olup olmadığına bakarız." },
+                { "language": "ru", "text": "Тогда мы просто попробуем и позже посмотрим, будут ли проблемы." },
+                { "language": "ckb", "text": "کەواتە تەنها تاقی دەکەینەوە و دواتر دەبینین ئایا کێشە هەیە یان نا." },
+                { "language": "kmr", "text": "Wê demê em tenê wê ceribînin û paşê bibînin ka pirsgirêk hene an na." },
+                { "language": "pl", "text": "W takim razie po prostu spróbujemy i później zobaczymy, czy są problemy." },
+                { "language": "ro", "text": "Atunci încercăm pur și simplu și vedem mai târziu dacă apar probleme." },
+                { "language": "sq", "text": "Atëherë thjesht e provojmë dhe shohim më vonë nëse ka probleme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Ohne Kriterien, Frist und Zuständigkeit bleibt die Ausnahme schwer kontrollierbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open-ended: without criteria, deadline, and responsibility, the exception remains difficult to control." },
+                { "language": "fa", "text": "زیادی باز است: بدون معیار، مهلت و مسئولیت، کنترل استثنا دشوار می‌ماند." },
+                { "language": "ar", "text": "مفتوح أكثر من اللازم: من دون معايير وموعد ومسؤولية يبقى الاستثناء صعب التحكم." },
+                { "language": "tr", "text": "Fazla açık uçlu: ölçüt, süre ve sorumluluk olmadan istisnayı kontrol etmek zor kalır." },
+                { "language": "ru", "text": "Слишком неопределенно: без критериев, срока и ответственности исключение трудно контролировать." },
+                { "language": "ckb", "text": "زۆر کراوەیە: بەبێ پێوەر، کات و بەرپرسیاریەتی، کۆنترۆڵکردنی جیاوازییەکە قورس دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir vekirî ye: bê kriter, dema dawî û berpirsiyarî, kontrolkirina îstîsnayê dijwar dimîne." },
+                { "language": "pl", "text": "Zbyt otwarte: bez kryteriów, terminu i odpowiedzialności wyjątek pozostaje trudny do kontrolowania." },
+                { "language": "ro", "text": "Prea deschis: fără criterii, termen și responsabilitate, excepția rămâne greu de controlat." },
+                { "language": "sq", "text": "Shumë e hapur: pa kritere, afat dhe përgjegjësi, përjashtimi mbetet i vështirë për t'u kontrolluar." }
+              ],
+              "explanationKey": "avoid-open-ended-trial"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "scope-note",
+          "text": "Bei Ausnahmen von Hausregeln wirkt es stärker, zuerst die Regel anzuerkennen und dann den Einzelfall eng zu begrenzen.",
+          "translations": [
+            { "language": "en", "text": "When asking for exceptions to house rules, it is more effective to acknowledge the rule first and then narrowly limit the individual case." },
+            { "language": "fa", "text": "در درخواست استثنا از قوانین ساختمان، مؤثرتر است اول قانون را بپذیرید و سپس مورد فردی را دقیق محدود کنید." },
+            { "language": "ar", "text": "عند طلب استثناءات من قواعد السكن يكون من الأقوى الاعتراف بالقاعدة أولاً ثم تحديد الحالة الفردية بدقة." },
+            { "language": "tr", "text": "Apartman kurallarından istisna isterken önce kuralı kabul etmek ve sonra bireysel durumu daraltmak daha etkilidir." },
+            { "language": "ru", "text": "При просьбе об исключении из правил дома сильнее сначала признать правило, а затем узко ограничить отдельный случай." },
+            { "language": "ckb", "text": "لە داواکردنی جیاوازی لە یاساکانی خانووبەرەدا کاریگەرترە سەرەتا یاساکە بپذێریت و پاشان دۆخی تاکەکەسی بە تەنگی سنووردار بکەیت." },
+            { "language": "kmr", "text": "Dema îstîsna ji rêgezên malê tê xwestin, xurtir e ku pêşî rêgez were qebûlkirin û paşê rewşa takekesî teng were tixûbdarkirin." },
+            { "language": "pl", "text": "Przy prośbach o wyjątki od regulaminu domu skuteczniej jest najpierw uznać zasadę, a potem wąsko ograniczyć indywidualny przypadek." },
+            { "language": "ro", "text": "Când cereți excepții de la regulile casei, este mai eficient să recunoașteți mai întâi regula și apoi să limitați strict cazul individual." },
+            { "language": "sq", "text": "Kur kërkoni përjashtime nga rregullat e ndërtesës, është më e fortë të pranoni fillimisht rregullin dhe pastaj ta kufizoni ngushtë rastin individual." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "specificity-note",
+          "text": "Eine gute C1-Antwort macht aus einer Bitte eine prüfbare Lösung: Ort, Dauer, Sicherheitsbedingung.",
+          "translations": [
+            { "language": "en", "text": "A good C1 answer turns a request into a verifiable solution: location, duration, safety condition." },
+            { "language": "fa", "text": "یک پاسخ خوب C1 درخواست را به راه‌حلی قابل بررسی تبدیل می‌کند: محل، مدت، شرط ایمنی." },
+            { "language": "ar", "text": "إجابة C1 الجيدة تحول الطلب إلى حل قابل للتحقق: المكان والمدة وشرط السلامة." },
+            { "language": "tr", "text": "İyi bir C1 yanıtı bir ricayı denetlenebilir çözüme çevirir: yer, süre, güvenlik koşulu." },
+            { "language": "ru", "text": "Хороший ответ C1 превращает просьбу в проверяемое решение: место, срок, условие безопасности." },
+            { "language": "ckb", "text": "وەڵامێکی باشی C1 داواکە دەکاتە چارەسەرێکی پشکنراو: شوێن، ماوە، مەرجی سەلامەتی." },
+            { "language": "kmr", "text": "Bersiveke baş a C1 daxwazê dike çareseriyeke kontrolbar: cih, dem, şertê ewlehiyê." },
+            { "language": "pl", "text": "Dobra odpowiedź C1 zmienia prośbę w sprawdzalne rozwiązanie: miejsce, czas trwania, warunek bezpieczeństwa." },
+            { "language": "ro", "text": "Un răspuns C1 bun transformă o cerere într-o soluție verificabilă: loc, durată, condiție de siguranță." },
+            { "language": "sq", "text": "Një përgjigje e mirë C1 e kthen kërkesën në zgjidhje të verifikueshme: vend, kohëzgjatje, kusht sigurie." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "precedent-note",
+          "text": "Wer Gleichbehandlung ernst nimmt, erklärt nicht nur den eigenen Bedarf, sondern auch, warum daraus keine allgemeine neue Praxis entsteht.",
+          "translations": [
+            { "language": "en", "text": "Someone who takes equal treatment seriously explains not only their own need, but also why this does not create a new general practice." },
+            { "language": "fa", "text": "کسی که رفتار برابر را جدی می‌گیرد، فقط نیاز خودش را توضیح نمی‌دهد، بلکه می‌گوید چرا از آن یک رویه عمومی جدید ایجاد نمی‌شود." },
+            { "language": "ar", "text": "من يأخذ المساواة في المعاملة بجدية لا يشرح حاجته فقط، بل يوضح أيضاً لماذا لا تنشأ منها ممارسة عامة جديدة." },
+            { "language": "tr", "text": "Eşit muameleyi ciddiye alan kişi yalnızca kendi ihtiyacını değil, bunun neden yeni bir genel uygulama oluşturmadığını da açıklar." },
+            { "language": "ru", "text": "Тот, кто серьезно относится к равному обращению, объясняет не только свою потребность, но и почему из этого не возникает новая общая практика." },
+            { "language": "ckb", "text": "ئەو کەسەی هەڵسوکەوتی یەکسان بە جدی وەردەگرێت، تەنها پێویستی خۆی ڕوون ناکاتەوە، بەڵکوو ئەوەش دەڵێت بۆچی ئەمە نابێتە شێوازی گشتیی نوێ." },
+            { "language": "kmr", "text": "Kesê ku dermankirina wekhev cidî digire, ne tenê pêdiviya xwe rave dike, lê her wiha dibêje çima ji vê pratîkeke giştî ya nû çênabe." },
+            { "language": "pl", "text": "Kto poważnie traktuje równe traktowanie, wyjaśnia nie tylko własną potrzebę, lecz także dlaczego nie tworzy to nowej ogólnej praktyki." },
+            { "language": "ro", "text": "Cine ia în serios tratamentul egal explică nu doar propria nevoie, ci și de ce din aceasta nu apare o nouă practică generală." },
+            { "language": "sq", "text": "Ai që e merr seriozisht trajtimin e barabartë nuk shpjegon vetëm nevojën e vet, por edhe pse kjo nuk krijon një praktikë të re të përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "responsibility-note",
+          "text": "Konkrete Verantwortungsangebote wie Reinigungstag, Kontakt und tägliche Kontrolle machen eine Ausnahme für andere tragbarer.",
+          "translations": [
+            { "language": "en", "text": "Concrete responsibility offers such as cleaning day, contact, and daily checking make an exception more acceptable for others." },
+            { "language": "fa", "text": "پیشنهادهای مشخص مسئولیت مثل روز نظافت، تماس و کنترل روزانه، استثنا را برای دیگران قابل‌پذیرش‌تر می‌کند." },
+            { "language": "ar", "text": "عروض المسؤولية المحددة مثل يوم التنظيف والتواصل والفحص اليومي تجعل الاستثناء أكثر قبولاً للآخرين." },
+            { "language": "tr", "text": "Temizlik günü, iletişim ve günlük kontrol gibi somut sorumluluk teklifleri bir istisnayı başkaları için daha kabul edilebilir kılar." },
+            { "language": "ru", "text": "Конкретные предложения ответственности, такие как день уборки, контакт и ежедневная проверка, делают исключение более приемлемым для других." },
+            { "language": "ckb", "text": "پێشنیاری دیاریکراوی بەرپرسیاریەتی وەک ڕۆژی پاککردنەوە، پەیوەندی و کۆنترۆڵی ڕۆژانە جیاوازییەکە بۆ ئەوانی تر ئاسانتر قبوڵکراو دەکات." },
+            { "language": "kmr", "text": "Pêşniyarên berpirsiyariyê yên konkret wek roja paqijkirinê, têkilî û kontrola rojane îstîsnayê ji bo yên din qebûltir dikin." },
+            { "language": "pl", "text": "Konkretne propozycje odpowiedzialności, takie jak dzień sprzątania, kontakt i codzienna kontrola, czynią wyjątek bardziej akceptowalnym dla innych." },
+            { "language": "ro", "text": "Ofertele concrete de responsabilitate, precum ziua de curățenie, contactul și verificarea zilnică, fac o excepție mai acceptabilă pentru ceilalți." },
+            { "language": "sq", "text": "Oferta konkrete përgjegjësie si dita e pastrimit, kontakti dhe kontrolli i përditshëm e bëjnë një përjashtim më të pranueshëm për të tjerët." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing-note",
+          "text": "Ein präziser Abschluss schützt beide Seiten: Die Hilfe ist möglich, aber die Hausregel bleibt erkennbar in Kraft.",
+          "translations": [
+            { "language": "en", "text": "A precise closing protects both sides: the help is possible, but the house rule remains visibly in force." },
+            { "language": "fa", "text": "پایان دقیق از هر دو طرف محافظت می‌کند: کمک ممکن می‌شود، اما قانون ساختمان آشکارا معتبر می‌ماند." },
+            { "language": "ar", "text": "الخاتمة الدقيقة تحمي الطرفين: المساعدة ممكنة، لكن قاعدة السكن تبقى نافذة بوضوح." },
+            { "language": "tr", "text": "Kesin bir kapanış iki tarafı da korur: yardım mümkün olur, ama bina kuralının yürürlükte olduğu açıkça kalır." },
+            { "language": "ru", "text": "Точное завершение защищает обе стороны: помощь возможна, но правило дома явно остается в силе." },
+            { "language": "ckb", "text": "کۆتاییەکی ورد هەردوو لا دەپارێزێت: یارمەتییەکە دەکرێت، بەڵام یاسای خانووبەرە بە ڕوونی کاریگەر دەمێنێتەوە." },
+            { "language": "kmr", "text": "Girtineke rast her du aliyan diparêze: alîkarî gengaz e, lê rêgeza malê bi zelalî di hêzê de dimîne." },
+            { "language": "pl", "text": "Precyzyjne zakończenie chroni obie strony: pomoc jest możliwa, ale regulamin domu pozostaje wyraźnie w mocy." },
+            { "language": "ro", "text": "O încheiere precisă protejează ambele părți: ajutorul este posibil, dar regula clădirii rămâne clar în vigoare." },
+            { "language": "sq", "text": "Një mbyllje e saktë mbron të dyja palët: ndihma është e mundur, por rregulli i ndërtesës mbetet qartë në fuqi." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "house-rule-personal-need-mobility-aid",
+          "placement": "header",
+          "purpose": "Show a calm discussion about a temporary mobility aid in an apartment hallway while preserving the escape route.",
+          "altText": "Eine neutrale Illustration eines deutschen Hausflurs mit zusammengeklapptem Rollator in einer Nische und freiem Fluchtweg.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a German apartment hallway with a folded walker in a niche and a clear escape route." },
+            { "language": "fa", "text": "تصویری بی‌طرف از راهروی یک ساختمان آلمانی با واکر تا شده در یک فرورفتگی و مسیر فرار آزاد." },
+            { "language": "ar", "text": "رسم محايد لممر في مبنى ألماني مع مشاية مطوية في تجويف وطريق هروب خالٍ." },
+            { "language": "tr", "text": "Bir girintide katlanmış yürüteç ve açık kaçış yolu olan Alman apartman koridorunun tarafsız bir illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация коридора немецкого дома со сложенным роллатором в нише и свободным путем эвакуации." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە ڕاڕەوی خانووبەرەیەکی ئەڵمانی بە ڕۆلاتۆری قاتکراو لە نیشە و ڕێگای هەڵاتنی ئازاد." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya korîdora avahiyeke Almanî bi alîkariya meşê ya qatlêkirî di cihê kûr de û rêya revê ya vala." },
+            { "language": "pl", "text": "Neutralna ilustracja korytarza w niemieckim budynku ze złożonym balkonikiem we wnęce i wolną drogą ewakuacyjną." },
+            { "language": "ro", "text": "O ilustrație neutră a unui hol de imobil german cu un cadru pliat într-o nișă și o rută de evacuare liberă." },
+            { "language": "sq", "text": "Një ilustrim neutral i korridorit të një ndërtese gjermane me ndihmës ecjeje të palosur në një qoshe dhe rrugë të lirë evakuimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, German apartment hallway, folded mobility aid in a marked recess near an apartment door, clear escape route, two adults discussing calmly, no readable private data, no logos, accessible composition, neutral realistic setting.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

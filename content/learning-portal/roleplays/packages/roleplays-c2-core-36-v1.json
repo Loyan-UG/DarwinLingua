@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-36-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 36 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 36",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-zwischen-formaler-regel-und-einzelfall-vermitteln",
+      "linkedDialogueSlug": null,
+      "title": "Zwischen formaler Regel und Einzelfall vermitteln",
+      "titleTranslations": [
+        { "language": "en", "text": "Mediating between a formal rule and an individual case" },
+        { "language": "fa", "text": "میان قاعده رسمی و مورد فردی میانجی‌گری کردن" },
+        { "language": "ar", "text": "التوفيق بين قاعدة رسمية وحالة فردية" },
+        { "language": "tr", "text": "Resmi kural ile bireysel durum arasında aracılık etmek" },
+        { "language": "ru", "text": "Поиск баланса между формальным правилом и индивидуальным случаем" },
+        { "language": "ckb", "text": "ناوبژیکردن لەنێوان یاسای فەرمی و کەیسی تاکەکەسی" },
+        { "language": "kmr", "text": "Navbeyna rêgezeke fermî û rewşeke takekesî de navbeyn kirin" },
+        { "language": "pl", "text": "Pośredniczenie między formalną regułą a indywidualnym przypadkiem" },
+        { "language": "ro", "text": "Medierea între o regulă formală și un caz individual" },
+        { "language": "sq", "text": "Ndërmjetësimi mes një rregulli formal dhe një rasti individual" }
+      ],
+      "description": "Bei einer Behörde gilt für einen Zuschuss: Einkommensnachweise dürfen höchstens drei Monate alt sein. Ihr Nachweis ist wegen eines verschobenen Termins vier Tage älter, zeigt aber denselben Beschäftigungs- und Einkommensstand. Sie haben bereits einen neuen Nachweis angefordert. Sie sollen nicht Sonderbehandlung verlangen, sondern erklären, warum eine vorläufige Berücksichtigung oder kurze Nachreichfrist verhältnismäßig wäre.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "At a public office, income documents for a grant may be no more than three months old. Because an appointment was postponed, your document is four days older, but it shows the same employment and income status. You have already requested a new document. You should not demand special treatment, but explain why temporary consideration or a short later-submission deadline would be proportionate." },
+        { "language": "fa", "text": "در یک اداره برای کمک‌هزینه، مدارک درآمد نباید بیش از سه ماه قدیمی باشند. مدرک شما به‌خاطر جابه‌جایی وقت ملاقات چهار روز قدیمی‌تر است، اما همان وضعیت اشتغال و درآمد را نشان می‌دهد. شما مدرک جدید را هم درخواست کرده‌اید. نباید امتیاز ویژه بخواهید، بلکه باید توضیح دهید چرا بررسی موقت یا مهلت کوتاه برای تکمیل مدرک متناسب است." },
+        { "language": "ar", "text": "في دائرة حكومية، يجب ألا يزيد عمر إثباتات الدخل لمنحة عن ثلاثة أشهر. بسبب تأجيل الموعد أصبح إثباتكم أقدم بأربعة أيام، لكنه يعرض نفس وضع العمل والدخل. وقد طلبتم بالفعل إثباتًا جديدًا. لا ينبغي طلب معاملة خاصة، بل شرح لماذا يكون الأخذ المؤقت أو مهلة قصيرة للتقديم اللاحق متناسبًا." },
+        { "language": "tr", "text": "Bir resmi dairede bir destek için gelir belgeleri en fazla üç aylık olabilir. Randevu ertelendiği için belgeniz dört gün daha eski, ancak aynı çalışma ve gelir durumunu gösteriyor. Yeni belgeyi zaten talep ettiniz. Özel muamele istememeli, geçici dikkate alma ya da kısa bir sonradan sunma süresinin neden orantılı olacağını açıklamalısınız." },
+        { "language": "ru", "text": "В учреждении для субсидии справки о доходах должны быть не старше трех месяцев. Из-за перенесенной встречи ваш документ старше на четыре дня, но показывает тот же статус занятости и дохода. Вы уже запросили новый документ. Не следует требовать особого отношения; нужно объяснить, почему временный учет или короткий срок для последующей подачи были бы соразмерны." },
+        { "language": "ckb", "text": "لە فەرمانگەیەکدا بۆ یارمەتییەک، بەڵگەی داهات نابێت زیاتر لە سێ مانگ کۆن بێت. بە هۆی گواستنەوەی کاتی چاوپێکەوتن، بەڵگەکەت چوار ڕۆژ کۆنترە، بەڵام هەمان دۆخی کار و داهات نیشان دەدات. تۆ پێشتر داوای بەڵگەی نوێت کردووە. نابێت مامەڵەی تایبەت داوا بکەیت، بەڵکو ڕوون بکەیتەوە بۆچی ڕەچاوکردنی کاتی یان ماوەیەکی کورتی پاشکەشکردن گونجاو دەبێت." },
+        { "language": "kmr", "text": "Li dezgehekê ji bo alîkariyekê, belgeyên dahatê nikarin ji sê mehan kevntir bin. Ji ber guhartina randevûyê, belgeya we çar roj kevntir e, lê heman rewşa kar û dahatê nîşan dide. We belgeyeke nû jî xwestiye. Divê hûn muameleya taybet nexwazin, lê rave bikin çima hesibandina demkî an demeke kurt a paşê şandinê bi rêje be." },
+        { "language": "pl", "text": "W urzędzie przy dotacji zaświadczenia o dochodach nie mogą być starsze niż trzy miesiące. Z powodu przesuniętego terminu Pana/Pani dokument jest o cztery dni starszy, ale pokazuje ten sam stan zatrudnienia i dochodów. Nowe zaświadczenie zostało już zamówione. Nie należy żądać specjalnego traktowania, lecz wyjaśnić, dlaczego tymczasowe uwzględnienie lub krótki termin uzupełnienia byłby proporcjonalny." },
+        { "language": "ro", "text": "La o instituție publică, pentru o subvenție, dovezile de venit nu pot fi mai vechi de trei luni. Din cauza unei programări amânate, documentul dumneavoastră este cu patru zile mai vechi, dar arată același statut de angajare și venit. Ați solicitat deja un document nou. Nu trebuie să cereți tratament special, ci să explicați de ce luarea în considerare provizorie sau un termen scurt de completare ar fi proporțională." },
+        { "language": "sq", "text": "Në një zyrë publike, për një subvencion, provat e të ardhurave nuk duhet të jenë më të vjetra se tre muaj. Për shkak të një takimi të shtyrë, dokumenti juaj është katër ditë më i vjetër, por tregon të njëjtin status pune dhe të ardhurash. Ju tashmë keni kërkuar një dokument të ri. Nuk duhet të kërkoni trajtim të veçantë, por të shpjegoni pse marrja parasysh përkohësisht ose një afat i shkurtër për plotësim do të ishte proporcional." }
+      ],
+      "learnerGoal": "Einen Einzelfall verhältnismäßig erklären: die formale Regel anerkennen, die geringe Abweichung einordnen, den Zweck der Regel respektieren, Ersatzsicherung anbieten und eine begrenzte Lösung erbitten, ohne Sonderbehandlung zu verlangen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain an individual case proportionately: acknowledge the formal rule, classify the minor deviation, respect the purpose of the rule, offer a safeguard, and request a limited solution without demanding special treatment." },
+        { "language": "fa", "text": "یک مورد فردی را متناسب توضیح دهید: قاعده رسمی را بپذیرید، انحراف کوچک را جای‌گذاری کنید، هدف قاعده را محترم بشمارید، تضمین جایگزین پیشنهاد دهید و بدون مطالبه امتیاز ویژه، راه‌حل محدود بخواهید." },
+        { "language": "ar", "text": "اشرحوا حالة فردية بتناسب: اعترفوا بالقاعدة الرسمية، وصنفوا الانحراف البسيط، واحترموا هدف القاعدة، وقدموا ضمانًا بديلًا، واطلبوا حلًا محدودًا من دون طلب معاملة خاصة." },
+        { "language": "tr", "text": "Bireysel bir durumu orantılı biçimde açıklayın: resmi kuralı kabul edin, küçük sapmayı sınıflandırın, kuralın amacına saygı gösterin, alternatif güvence sunun ve özel muamele talep etmeden sınırlı bir çözüm isteyin." },
+        { "language": "ru", "text": "Объясните индивидуальный случай соразмерно: признайте формальное правило, оцените небольшое отклонение, уважайте цель правила, предложите заменяющую гарантию и попросите ограниченное решение без требования особого отношения." },
+        { "language": "ckb", "text": "کەیسێکی تاکەکەسی بە گونجاوی ڕوون بکەرەوە: یاسای فەرمی بپەسەندە، جیاوازیی بچووک جێبەجێ بکە، ئامانجی یاساکە ڕێز لێبنێ، دڵنیایی جێگرەوە پێشنیار بکە و بەبێ داوای مامەڵەی تایبەت، چارەسەرێکی سنووردار داوا بکە." },
+        { "language": "kmr", "text": "Rewşeke takekesî bi rêje rave bikin: rêgeza fermî qebûl bikin, cudahiya piçûk cih bikin, armanca rêgezê rêz bikin, ewlekariya cîgir pêşkêş bikin û bê daxwaza muameleya taybet çareseriyeke sînorkirî bixwazin." },
+        { "language": "pl", "text": "Wyjaśnić indywidualny przypadek proporcjonalnie: uznać formalną regułę, umiejscowić niewielkie odstępstwo, uszanować cel reguły, zaproponować zabezpieczenie zastępcze i poprosić o ograniczone rozwiązanie bez żądania specjalnego traktowania." },
+        { "language": "ro", "text": "Explicați proporțional un caz individual: recunoașteți regula formală, încadrați abaterea minoră, respectați scopul regulii, oferiți o garanție alternativă și cereți o soluție limitată fără a solicita tratament special." },
+        { "language": "sq", "text": "Shpjegoni proporcionalisht një rast individual: pranoni rregullin formal, vendosni devijimin e vogël në kontekst, respektoni qëllimin e rregullit, ofroni një garanci zëvendësuese dhe kërkoni një zgjidhje të kufizuar pa kërkuar trajtim të veçantë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-services",
+      "topics": ["public-services", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "compare-options",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 36,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌دهنده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeiterin",
+          "translations": [
+            { "language": "en", "text": "Case worker" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "الموظفة المختصة" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудница по делу" },
+            { "language": "ckb", "text": "کارمەندی دۆسیە" },
+            { "language": "kmr", "text": "Karmenda dosyayê" },
+            { "language": "pl", "text": "Urzędniczka prowadząca sprawę" },
+            { "language": "ro", "text": "Funcționara responsabilă de dosar" },
+            { "language": "sq", "text": "Punonjësja e dosjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Ihr Einkommensnachweis ist älter als drei Monate. Nach unserer Regel können wir ihn so nicht berücksichtigen.",
+          "translations": [
+            { "language": "en", "text": "Your income document is older than three months. Under our rule, we cannot consider it in this form." },
+            { "language": "fa", "text": "مدرک درآمد شما بیش از سه ماه قدیمی است. طبق قاعده ما، نمی‌توانیم آن را به این شکل در نظر بگیریم." },
+            { "language": "ar", "text": "إثبات الدخل لديكم أقدم من ثلاثة أشهر. وفق قاعدتنا لا يمكننا أخذه في الاعتبار بهذا الشكل." },
+            { "language": "tr", "text": "Gelir belgeniz üç aydan eski. Kuralımıza göre bunu bu haliyle dikkate alamayız." },
+            { "language": "ru", "text": "Ваша справка о доходах старше трех месяцев. По нашему правилу мы не можем учесть ее в таком виде." },
+            { "language": "ckb", "text": "بەڵگەی داهاتەکەت زیاتر لە سێ مانگ کۆنە. بەپێی یاساکەمان ناتوانین بەو شێوەیە ڕەچاوێ بکەین." },
+            { "language": "kmr", "text": "Belgeya dahata we ji sê mehan kevntir e. Li gor rêgeza me, em nikarin wê bi vî awayî hesab bikin." },
+            { "language": "pl", "text": "Pana/Pani zaświadczenie o dochodach jest starsze niż trzy miesiące. Zgodnie z naszą regułą nie możemy go w tej formie uwzględnić." },
+            { "language": "ro", "text": "Dovada dumneavoastră de venit este mai veche de trei luni. Conform regulii noastre, nu o putem lua în considerare în această formă." },
+            { "language": "sq", "text": "Dokumenti juaj i të ardhurave është më i vjetër se tre muaj. Sipas rregullit tonë, nuk mund ta marrim parasysh në këtë formë." }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe den Zweck der Regel: Die Einkommenslage soll aktuell und überprüfbar sein. In meinem Fall liegt die Abweichung bei vier Tagen, und der Nachweis betrifft denselben Arbeitgeber und dasselbe Monatsgehalt.",
+          "translations": [
+            { "language": "en", "text": "I understand the purpose of the rule: the income situation should be current and verifiable. In my case, the deviation is four days, and the document concerns the same employer and the same monthly salary." },
+            { "language": "fa", "text": "هدف قاعده را می‌فهمم: وضعیت درآمد باید به‌روز و قابل بررسی باشد. در مورد من، اختلاف چهار روز است و مدرک مربوط به همان کارفرما و همان حقوق ماهانه است." },
+            { "language": "ar", "text": "أفهم هدف القاعدة: ينبغي أن يكون وضع الدخل حديثًا وقابلًا للتحقق. في حالتي، الانحراف أربعة أيام، والإثبات يتعلق بنفس صاحب العمل ونفس الراتب الشهري." },
+            { "language": "tr", "text": "Kuralın amacını anlıyorum: gelir durumu güncel ve doğrulanabilir olmalı. Benim durumumda sapma dört gün ve belge aynı işveren ile aynı aylık maaşı gösteriyor." },
+            { "language": "ru", "text": "Я понимаю цель правила: ситуация с доходом должна быть актуальной и проверяемой. В моем случае отклонение составляет четыре дня, и документ касается того же работодателя и той же месячной зарплаты." },
+            { "language": "ckb", "text": "ئامانجی یاساکە تێدەگەم: دۆخی داهات پێویستە نوێ و پشکنراو بێت. لە کەیسی مندا جیاوازییەکە چوار ڕۆژە، و بەڵگەکە هەمان خاوەنکار و هەمان مووچەی مانگانە دەگرێتەوە." },
+            { "language": "kmr", "text": "Ez armanca rêgezê fêm dikim: rewşa dahatê divê nû û kontrolbar be. Di rewşa min de cudahî çar roj e, û belge li ser heman kardêr û heman meaşa mehane ye." },
+            { "language": "pl", "text": "Rozumiem cel reguły: sytuacja dochodowa ma być aktualna i sprawdzalna. W moim przypadku odstępstwo wynosi cztery dni, a zaświadczenie dotyczy tego samego pracodawcy i tej samej miesięcznej pensji." },
+            { "language": "ro", "text": "Înțeleg scopul regulii: situația veniturilor trebuie să fie actuală și verificabilă. În cazul meu, abaterea este de patru zile, iar documentul se referă la același angajator și același salariu lunar." },
+            { "language": "sq", "text": "E kuptoj qëllimin e rregullit: gjendja e të ardhurave duhet të jetë aktuale dhe e verifikueshme. Në rastin tim, devijimi është katër ditë dhe dokumenti lidhet me të njëjtin punëdhënës dhe të njëjtën pagë mujore." }
+          ],
+          "function": "rule-purpose",
+          "toneNote": "Regel anerkennen, bevor der Einzelfall erklärt wird.",
+          "expectedLearnerAction": "Acknowledge the rule's purpose and classify the small deviation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Die Regel ist bewusst klar formuliert, damit alle Anträge gleich behandelt werden.",
+          "translations": [
+            { "language": "en", "text": "The rule is deliberately formulated clearly so that all applications are treated equally." },
+            { "language": "fa", "text": "قاعده عمداً روشن تنظیم شده تا با همه درخواست‌ها یکسان رفتار شود." },
+            { "language": "ar", "text": "صيغت القاعدة بوضوح عن قصد حتى تُعامل جميع الطلبات بالتساوي." },
+            { "language": "tr", "text": "Kural, tüm başvuruların eşit işlem görmesi için bilinçli olarak açık formüle edilmiştir." },
+            { "language": "ru", "text": "Правило намеренно сформулировано четко, чтобы все заявления рассматривались одинаково." },
+            { "language": "ckb", "text": "یاساکە بە مەبەست بە ڕوونی داڕێژراوە تا هەموو داواکارییەکان بە یەکسانی مامەڵەیان لەگەڵ بکرێت." },
+            { "language": "kmr", "text": "Rêgez bi zanebûn zelal hatiye nivîsîn da ku hemû daxwaz wekhev werin meşandin." },
+            { "language": "pl", "text": "Reguła jest celowo sformułowana jasno, aby wszystkie wnioski były traktowane jednakowo." },
+            { "language": "ro", "text": "Regula este formulată deliberat clar, pentru ca toate cererile să fie tratate egal." },
+            { "language": "sq", "text": "Rregulli është formuluar qëllimisht qartë, që të gjitha kërkesat të trajtohen njësoj." }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Gerade deshalb möchte ich keine Ausnahme als Anspruch darstellen. Ich frage, ob der Zweck der Gleichbehandlung auch gewahrt wäre, wenn der Nachweis vorläufig berücksichtigt und der aktualisierte Nachweis innerhalb einer kurzen Frist nachgereicht wird.",
+          "translations": [
+            { "language": "en", "text": "That is exactly why I do not want to present an exception as a right. I am asking whether the purpose of equal treatment would also be preserved if the document were considered temporarily and the updated document were submitted within a short deadline." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل نمی‌خواهم استثنا را به‌عنوان حق خودم مطرح کنم. می‌پرسم آیا هدف رفتار برابر همچنان حفظ می‌شود اگر مدرک به‌طور موقت در نظر گرفته شود و مدرک به‌روز در مهلت کوتاهی تکمیل شود." },
+            { "language": "ar", "text": "لهذا بالضبط لا أريد عرض الاستثناء كحق. أسأل هل يبقى هدف المعاملة المتساوية محفوظًا إذا أُخذ الإثبات مؤقتًا في الاعتبار وقُدم الإثبات المحدّث خلال مهلة قصيرة." },
+            { "language": "tr", "text": "Tam da bu yüzden istisnayı bir hak gibi sunmak istemiyorum. Belgenin geçici olarak dikkate alınması ve güncel belgenin kısa bir süre içinde sonradan sunulması halinde eşit muamele amacının yine korunup korunmayacağını soruyorum." },
+            { "language": "ru", "text": "Именно поэтому я не хочу представлять исключение как право. Я спрашиваю, была бы цель равного обращения также сохранена, если документ временно учесть, а обновленный документ представить в короткий срок." },
+            { "language": "ckb", "text": "هەر بۆیە نامەوێت ئیستیسنا وەک مافێک پیشان بدەم. دەپرسیم ئایا ئامانجی مامەڵەی یەکسان هێشتا دەپارێزرێت ئەگەر بەڵگەکە بە کاتی ڕەچاو بکرێت و بەڵگەی نوێکراوە لە ماوەیەکی کورتدا پاشکەش بکرێت." },
+            { "language": "kmr", "text": "Bi rastî ji ber vê ez naxwazim îstîsnayê wek mafekî nîşan bidim. Ez dipirsim ka armanca muameleya wekhev jî diparêze heke belge demkî were hesibandin û belgeya nûkirî di demeke kurt de were şandin." },
+            { "language": "pl", "text": "Właśnie dlatego nie chcę przedstawiać wyjątku jako roszczenia. Pytam, czy cel równego traktowania byłby zachowany także wtedy, gdyby dokument uwzględniono tymczasowo, a aktualny dokument dostarczono w krótkim terminie." },
+            { "language": "ro", "text": "Tocmai de aceea nu vreau să prezint excepția ca pe un drept. Întreb dacă scopul tratamentului egal ar fi păstrat și dacă documentul ar fi luat în considerare provizoriu, iar documentul actualizat ar fi depus într-un termen scurt." },
+            { "language": "sq", "text": "Pikërisht për këtë arsye nuk dua ta paraqes përjashtimin si të drejtë. Pyes nëse qëllimi i trajtimit të barabartë do të ruhej edhe nëse dokumenti merret parasysh përkohësisht dhe dokumenti i përditësuar dorëzohet brenda një afati të shkurtër." }
+          ],
+          "function": "proportionality-question",
+          "toneNote": "Sonderbehandlung vermeiden; Zweck und Lösung vergleichen.",
+          "expectedLearnerAction": "Ask whether a limited solution still preserves the rule's purpose."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Wir müssen verhindern, dass veraltete Nachweise zu falschen Entscheidungen führen.",
+          "translations": [
+            { "language": "en", "text": "We have to prevent outdated documents from leading to incorrect decisions." },
+            { "language": "fa", "text": "ما باید جلوگیری کنیم که مدارک قدیمی به تصمیم‌های نادرست منجر شوند." },
+            { "language": "ar", "text": "علينا منع أن تؤدي الإثباتات القديمة إلى قرارات خاطئة." },
+            { "language": "tr", "text": "Eski belgelerin yanlış kararlara yol açmasını önlememiz gerekir." },
+            { "language": "ru", "text": "Мы должны предотвратить, чтобы устаревшие документы приводили к неверным решениям." },
+            { "language": "ckb", "text": "پێویستە ڕێگری بکەین لەوەی بەڵگەی کۆن ببێتە هۆی بڕیاری هەڵە." },
+            { "language": "kmr", "text": "Divê em rê li ber vê bigirin ku belgeyên kevn bibin sedema biryarên şaş." },
+            { "language": "pl", "text": "Musimy zapobiec temu, aby nieaktualne zaświadczenia prowadziły do błędnych decyzji." },
+            { "language": "ro", "text": "Trebuie să prevenim ca documentele depășite să ducă la decizii greșite." },
+            { "language": "sq", "text": "Duhet të parandalojmë që dokumentet e vjetruara të çojnë në vendime të gabuara." }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das Risiko sehe ich. Deshalb biete ich zwei Sicherungen an: Ich reiche die aktualisierte Bescheinigung bis Freitag nach, und falls sich das Einkommen geändert hat, wird die Berechnung entsprechend korrigiert.",
+          "translations": [
+            { "language": "en", "text": "I see that risk. That is why I offer two safeguards: I will submit the updated certificate by Friday, and if the income has changed, the calculation will be corrected accordingly." },
+            { "language": "fa", "text": "این ریسک را می‌بینم. برای همین دو تضمین پیشنهاد می‌کنم: گواهی به‌روز را تا جمعه تکمیل می‌کنم، و اگر درآمد تغییر کرده باشد، محاسبه مطابق آن اصلاح شود." },
+            { "language": "ar", "text": "أرى هذا الخطر. لذلك أقدم ضمانين: سأقدم الشهادة المحدّثة حتى الجمعة، وإذا تغير الدخل تُصحح الحسبة تبعًا لذلك." },
+            { "language": "tr", "text": "Bu riski görüyorum. Bu nedenle iki güvence sunuyorum: Güncel belgeyi cumaya kadar sunacağım ve gelir değişmişse hesaplama buna göre düzeltilecek." },
+            { "language": "ru", "text": "Я вижу этот риск. Поэтому я предлагаю две гарантии: я представлю обновленную справку до пятницы, а если доход изменился, расчет будет соответственно исправлен." },
+            { "language": "ckb", "text": "ئەو مەترسییە دەبینم. بۆیە دوو دڵنیایی پێشنیار دەکەم: بەڵگەی نوێکراوە تا هەینی پاشکەش دەکەم، و ئەگەر داهات گۆڕابێت، هەژمارکردنەکە بەپێی ئەوە ڕاست دەکرێتەوە." },
+            { "language": "kmr", "text": "Ez wê xeterê dibînim. Ji ber vê ez du ewlekariyan pêşkêş dikim: Ez ê belgeya nûkirî heta înê bişînim, û heke dahat guhertibe, hesabkirin li gor wê were rastkirin." },
+            { "language": "pl", "text": "Widzę to ryzyko. Dlatego proponuję dwa zabezpieczenia: dostarczę aktualne zaświadczenie do piątku, a jeśli dochód się zmienił, wyliczenie zostanie odpowiednio skorygowane." },
+            { "language": "ro", "text": "Văd acest risc. De aceea ofer două garanții: voi depune adeverința actualizată până vineri, iar dacă venitul s-a schimbat, calculul va fi corectat corespunzător." },
+            { "language": "sq", "text": "E shoh këtë rrezik. Prandaj ofroj dy garanci: do ta dorëzoj vërtetimin e përditësuar deri të premten, dhe nëse të ardhurat kanë ndryshuar, llogaritja do të korrigjohet përkatësisht." }
+          ],
+          "function": "safeguards",
+          "toneNote": "Risiko ernst nehmen und Absicherung anbieten.",
+          "expectedLearnerAction": "Offer safeguards that protect the rule's purpose."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Was wäre aus Ihrer Sicht die verhältnismäßige Lösung?",
+          "translations": [
+            { "language": "en", "text": "What would be the proportionate solution from your perspective?" },
+            { "language": "fa", "text": "از نظر شما راه‌حل متناسب چیست؟" },
+            { "language": "ar", "text": "ما الحل المتناسب من وجهة نظركم؟" },
+            { "language": "tr", "text": "Size göre orantılı çözüm ne olurdu?" },
+            { "language": "ru", "text": "Какое решение, с вашей точки зрения, было бы соразмерным?" },
+            { "language": "ckb", "text": "لە ڕوانگەی تۆوە چارەسەری گونجاو چی دەبێت؟" },
+            { "language": "kmr", "text": "Li gor we çareseriya bi rêje çi bûya?" },
+            { "language": "pl", "text": "Jakie rozwiązanie byłoby z Pana/Pani punktu widzenia proporcjonalne?" },
+            { "language": "ro", "text": "Care ar fi soluția proporțională din perspectiva dumneavoastră?" },
+            { "language": "sq", "text": "Cila do të ishte zgjidhja proporcionale sipas jush?" }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Verhältnismäßig wäre aus meiner Sicht, den Antrag nicht allein wegen der vier Tage zurückzustellen, sondern die Prüfung unter dem Vorbehalt des aktualisierten Nachweises fortzuführen.",
+          "translations": [
+            { "language": "en", "text": "From my perspective, it would be proportionate not to set the application aside solely because of the four days, but to continue the review subject to the updated document." },
+            { "language": "fa", "text": "از نظر من متناسب این است که درخواست فقط به‌خاطر آن چهار روز کنار گذاشته نشود، بلکه بررسی با شرط ارائه مدرک به‌روز ادامه پیدا کند." },
+            { "language": "ar", "text": "من وجهة نظري سيكون من المتناسب ألا يُؤجل الطلب فقط بسبب الأيام الأربعة، بل أن تستمر المراجعة بشرط تقديم الإثبات المحدّث." },
+            { "language": "tr", "text": "Bana göre orantılı olan, başvurunun yalnızca bu dört gün nedeniyle geri bırakılmaması, ancak incelemenin güncel belge şartıyla sürdürülmesidir." },
+            { "language": "ru", "text": "С моей точки зрения, соразмерно было бы не откладывать заявление только из-за этих четырех дней, а продолжить проверку при условии представления обновленного документа." },
+            { "language": "ckb", "text": "لە ڕوانگەی منەوە گونجاو ئەوەیە داواکارییەکە تەنها بە هۆی ئەو چوار ڕۆژە نەخرێتە دواوە، بەڵکو پشکنینەکە بە مەرجی بەڵگەی نوێکراوە بەردەوام بێت." },
+            { "language": "kmr", "text": "Li gor min, bi rêje ev e ku daxwaz tenê ji ber wan çar rojan paş nekeve, lê vekolîn bi şerta belgeya nûkirî berdewam bike." },
+            { "language": "pl", "text": "Z mojego punktu widzenia proporcjonalne byłoby nie odkładać wniosku wyłącznie z powodu tych czterech dni, lecz kontynuować sprawdzanie pod warunkiem dostarczenia aktualnego zaświadczenia." },
+            { "language": "ro", "text": "Din perspectiva mea, proporțional ar fi ca cererea să nu fie amânată doar din cauza celor patru zile, ci verificarea să continue sub rezerva documentului actualizat." },
+            { "language": "sq", "text": "Sipas meje, proporcionale do të ishte që kërkesa të mos lihet mënjanë vetëm për shkak të atyre katër ditëve, por shqyrtimi të vazhdojë me kushtin e dokumentit të përditësuar." }
+          ],
+          "function": "proportionate-solution",
+          "toneNote": "Begrenzte Lösung statt Vorrang oder Sonderrecht.",
+          "expectedLearnerAction": "State a limited proportionate solution."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Wenn wir das so aufnehmen, brauchen wir eine klare Frist und eine Formulierung, dass die endgültige Berechnung offen bleibt.",
+          "translations": [
+            { "language": "en", "text": "If we record it this way, we need a clear deadline and wording that the final calculation remains open." },
+            { "language": "fa", "text": "اگر این‌طور ثبت کنیم، به یک مهلت روشن و عبارتی نیاز داریم که نشان دهد محاسبه نهایی هنوز باز می‌ماند." },
+            { "language": "ar", "text": "إذا سجلنا الأمر بهذه الطريقة، نحتاج إلى مهلة واضحة وصياغة تفيد بأن الحساب النهائي يبقى مفتوحًا." },
+            { "language": "tr", "text": "Bunu böyle kaydedersek, net bir süreye ve nihai hesaplamanın açık kaldığını belirten bir ifadeye ihtiyacımız var." },
+            { "language": "ru", "text": "Если мы зафиксируем это так, нам нужен четкий срок и формулировка, что окончательный расчет остается открытым." },
+            { "language": "ckb", "text": "ئەگەر بەم شێوەیە تۆماری بکەین، پێویستمان بە ماوەیەکی ڕوون و دەربڕینێکە کە هەژمارکردنی کۆتایی هێشتا کراوە دەمێنێت." },
+            { "language": "kmr", "text": "Heke em vê bi vî awayî tomar bikin, demeke zelal û gotinek pêwîst e ku hesabkirina dawî hê vekirî dimîne." },
+            { "language": "pl", "text": "Jeśli zapiszemy to w ten sposób, potrzebujemy jasnego terminu i sformułowania, że końcowe wyliczenie pozostaje otwarte." },
+            { "language": "ro", "text": "Dacă înregistrăm astfel, avem nevoie de un termen clar și de o formulare că calculul final rămâne deschis." },
+            { "language": "sq", "text": "Nëse e regjistrojmë kështu, na duhet një afat i qartë dhe një formulim që llogaritja përfundimtare mbetet e hapur." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das kann ich so mittragen. Bitte vermerken Sie: Der aktualisierte Nachweis wird bis Freitag nachgereicht, und die vorläufige Berücksichtigung erfolgt nur unter dem Vorbehalt einer abweichenden endgültigen Berechnung.",
+          "translations": [
+            { "language": "en", "text": "I can support that wording. Please note: the updated document will be submitted by Friday, and temporary consideration is only made subject to a different final calculation." },
+            { "language": "fa", "text": "می‌توانم با این فرمول‌بندی موافقت کنم. لطفاً ثبت کنید: مدرک به‌روز تا جمعه تکمیل می‌شود، و بررسی موقت فقط با این شرط انجام می‌شود که محاسبه نهایی ممکن است متفاوت باشد." },
+            { "language": "ar", "text": "يمكنني قبول هذه الصياغة. يرجى تدوين ما يلي: سيُقدم الإثبات المحدّث حتى الجمعة، والأخذ المؤقت يتم فقط مع التحفظ على احتمال حساب نهائي مختلف." },
+            { "language": "tr", "text": "Bu ifadeyi kabul edebilirim. Lütfen not edin: Güncel belge cumaya kadar sunulacak ve geçici dikkate alma yalnızca farklı bir nihai hesaplama kaydıyla yapılacaktır." },
+            { "language": "ru", "text": "Я могу согласиться с такой формулировкой. Пожалуйста, отметьте: обновленный документ будет представлен до пятницы, а временный учет осуществляется только с оговоркой о возможном отличающемся окончательном расчете." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ ئەم داڕشتنە بڕۆم. تکایە تۆمار بکەن: بەڵگەی نوێکراوە تا هەینی پاشکەش دەکرێت، و ڕەچاوکردنی کاتی تەنها بە مەرجی ئەوە دەبێت کە هەژمارکردنی کۆتایی ڕەنگە جیاواز بێت." },
+            { "language": "kmr", "text": "Ez dikarim vê gotinê qebûl bikim. Ji kerema xwe qeyd bikin: belgeya nûkirî heta înê tê şandin, û hesibandina demkî tenê bi şerta hesabkirina dawî ya gengaz cuda tê kirin." },
+            { "language": "pl", "text": "Mogę poprzeć takie sformułowanie. Proszę odnotować: aktualne zaświadczenie zostanie dostarczone do piątku, a tymczasowe uwzględnienie następuje tylko z zastrzeżeniem odmiennego końcowego wyliczenia." },
+            { "language": "ro", "text": "Pot susține această formulare. Vă rog să notați: documentul actualizat va fi depus până vineri, iar luarea în considerare provizorie are loc doar sub rezerva unui calcul final diferit." },
+            { "language": "sq", "text": "Mund ta pranoj këtë formulim. Ju lutem shënoni: dokumenti i përditësuar do të dorëzohet deri të premten, dhe marrja parasysh përkohësisht bëhet vetëm me rezervën e një llogaritjeje përfundimtare të ndryshme." }
+          ],
+          "function": "conditional-agreement",
+          "toneNote": "Die Lösung schriftlich begrenzen und absichern.",
+          "expectedLearnerAction": "Accept a conditional and documented solution."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich verstehe den Zweck der Regel: Die Einkommenslage soll aktuell und überprüfbar sein. In meinem Fall liegt die Abweichung bei vier Tagen, und der Nachweis betrifft denselben Arbeitgeber und dasselbe Monatsgehalt.",
+              "translations": [
+                { "language": "en", "text": "I understand the purpose of the rule: the income situation should be current and verifiable. In my case, the deviation is four days, and the document concerns the same employer and the same monthly salary." },
+                { "language": "fa", "text": "هدف قاعده را می‌فهمم: وضعیت درآمد باید به‌روز و قابل بررسی باشد. در مورد من، اختلاف چهار روز است و مدرک مربوط به همان کارفرما و همان حقوق ماهانه است." },
+                { "language": "ar", "text": "أفهم هدف القاعدة: ينبغي أن يكون وضع الدخل حديثًا وقابلًا للتحقق. في حالتي، الانحراف أربعة أيام، والإثبات يتعلق بنفس صاحب العمل ونفس الراتب الشهري." },
+                { "language": "tr", "text": "Kuralın amacını anlıyorum: gelir durumu güncel ve doğrulanabilir olmalı. Benim durumumda sapma dört gün ve belge aynı işveren ile aynı aylık maaşı gösteriyor." },
+                { "language": "ru", "text": "Я понимаю цель правила: ситуация с доходом должна быть актуальной и проверяемой. В моем случае отклонение составляет четыре дня, и документ касается того же работодателя и той же месячной зарплаты." },
+                { "language": "ckb", "text": "ئامانجی یاساکە تێدەگەم: دۆخی داهات پێویستە نوێ و پشکنراو بێت. لە کەیسی مندا جیاوازییەکە چوار ڕۆژە، و بەڵگەکە هەمان خاوەنکار و هەمان مووچەی مانگانە دەگرێتەوە." },
+                { "language": "kmr", "text": "Ez armanca rêgezê fêm dikim: rewşa dahatê divê nû û kontrolbar be. Di rewşa min de cudahî çar roj e, û belge li ser heman kardêr û heman meaşa mehane ye." },
+                { "language": "pl", "text": "Rozumiem cel reguły: sytuacja dochodowa ma być aktualna i sprawdzalna. W moim przypadku odstępstwo wynosi cztery dni, a zaświadczenie dotyczy tego samego pracodawcy i tej samej miesięcznej pensji." },
+                { "language": "ro", "text": "Înțeleg scopul regulii: situația veniturilor trebuie să fie actuală și verificabilă. În cazul meu, abaterea este de patru zile, iar documentul se referă la același angajator și același salariu lunar." },
+                { "language": "sq", "text": "E kuptoj qëllimin e rregullit: gjendja e të ardhurave duhet të jetë aktuale dhe e verifikueshme. Në rastin tim, devijimi është katër ditë dhe dokumenti lidhet me të njëjtin punëdhënës dhe të njëjtën pagë mujore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort respektiert die Regel und erklärt erst dann den Einzelfall.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer respects the rule and only then explains the individual case." },
+                { "language": "fa", "text": "قوی: پاسخ به قاعده احترام می‌گذارد و بعد مورد فردی را توضیح می‌دهد." },
+                { "language": "ar", "text": "قوي: الجواب يحترم القاعدة ثم يشرح الحالة الفردية." },
+                { "language": "tr", "text": "Güçlü: Yanıt kurala saygı gösterir ve ancak sonra bireysel durumu açıklar." },
+                { "language": "ru", "text": "Сильно: ответ уважает правило и только затем объясняет индивидуальный случай." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێز لە یاساکە دەگرێت و پاشان کەیسی تاکەکەسی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rêzê ji rêgezê re digire û paşê rewşa takekesî rave dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź szanuje regułę i dopiero potem wyjaśnia indywidualny przypadek." },
+                { "language": "ro", "text": "Puternic: răspunsul respectă regula și abia apoi explică cazul individual." },
+                { "language": "sq", "text": "E fortë: përgjigjja respekton rregullin dhe vetëm pastaj shpjegon rastin individual." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Es geht doch nur um vier Tage, das sollte wirklich kein Problem sein.",
+              "translations": [
+                { "language": "en", "text": "It is only about four days, so this really should not be a problem." },
+                { "language": "fa", "text": "موضوع فقط چهار روز است، واقعاً نباید مشکلی باشد." },
+                { "language": "ar", "text": "الأمر يتعلق بأربعة أيام فقط، فلا ينبغي أن يكون ذلك مشكلة حقًا." },
+                { "language": "tr", "text": "Sadece dört gün söz konusu, bu gerçekten sorun olmamalı." },
+                { "language": "ru", "text": "Речь всего о четырех днях, это действительно не должно быть проблемой." },
+                { "language": "ckb", "text": "بابەتەکە تەنها چوار ڕۆژە، بەڕاستی نابێت کێشە بێت." },
+                { "language": "kmr", "text": "Mijar tenê çar roj e, ev bi rastî divê pirsgirêk nebe." },
+                { "language": "pl", "text": "Chodzi przecież tylko o cztery dni, to naprawdę nie powinien być problem." },
+                { "language": "ro", "text": "Este vorba doar de patru zile, chiar nu ar trebui să fie o problemă." },
+                { "language": "sq", "text": "Bëhet fjalë vetëm për katër ditë, kjo vërtet nuk duhet të jetë problem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu verkürzend. Die Antwort nennt die Abweichung, respektiert aber den Zweck der Regel nicht ausdrücklich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too abbreviated. The answer names the deviation but does not explicitly respect the purpose of the rule." },
+                { "language": "fa", "text": "بیش از حد کوتاه و ساده است. پاسخ اختلاف را می‌گوید، اما هدف قاعده را صریحاً محترم نمی‌شمارد." },
+                { "language": "ar", "text": "مختصر أكثر من اللازم. الجواب يذكر الانحراف لكنه لا يحترم هدف القاعدة صراحة." },
+                { "language": "tr", "text": "Çok kısaltılmış. Yanıt sapmayı belirtiyor, ancak kuralın amacına açıkça saygı göstermiyor." },
+                { "language": "ru", "text": "Слишком сокращенно. Ответ называет отклонение, но явно не уважает цель правила." },
+                { "language": "ckb", "text": "زۆر کورتکراوە. وەڵامەکە جیاوازییەکە ناودەبات، بەڵام ئامانجی یاساکە بە ڕوونی ڕێز لێناگرێت." },
+                { "language": "kmr", "text": "Pir kurt e. Bersiv cudahiyê nav dike, lê armanca rêgezê bi eşkere rêz nake." },
+                { "language": "pl", "text": "Zbyt skrótowe. Odpowiedź wskazuje odstępstwo, ale nie respektuje wyraźnie celu reguły." },
+                { "language": "ro", "text": "Prea prescurtat. Răspunsul numește abaterea, dar nu respectă explicit scopul regulii." },
+                { "language": "sq", "text": "Shumë e shkurtuar. Përgjigjja përmend devijimin, por nuk respekton qartë qëllimin e rregullit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gerade deshalb möchte ich keine Ausnahme als Anspruch darstellen. Ich frage, ob der Zweck der Gleichbehandlung auch gewahrt wäre, wenn der Nachweis vorläufig berücksichtigt und der aktualisierte Nachweis innerhalb einer kurzen Frist nachgereicht wird.",
+              "translations": [
+                { "language": "en", "text": "That is exactly why I do not want to present an exception as a right. I am asking whether the purpose of equal treatment would also be preserved if the document were considered temporarily and the updated document were submitted within a short deadline." },
+                { "language": "fa", "text": "دقیقاً به همین دلیل نمی‌خواهم استثنا را به‌عنوان حق خودم مطرح کنم. می‌پرسم آیا هدف رفتار برابر همچنان حفظ می‌شود اگر مدرک به‌طور موقت در نظر گرفته شود و مدرک به‌روز در مهلت کوتاهی تکمیل شود." },
+                { "language": "ar", "text": "لهذا بالضبط لا أريد عرض الاستثناء كحق. أسأل هل يبقى هدف المعاملة المتساوية محفوظًا إذا أُخذ الإثبات مؤقتًا في الاعتبار وقُدم الإثبات المحدّث خلال مهلة قصيرة." },
+                { "language": "tr", "text": "Tam da bu yüzden istisnayı bir hak gibi sunmak istemiyorum. Belgenin geçici olarak dikkate alınması ve güncel belgenin kısa bir süre içinde sonradan sunulması halinde eşit muamele amacının yine korunup korunmayacağını soruyorum." },
+                { "language": "ru", "text": "Именно поэтому я не хочу представлять исключение как право. Я спрашиваю, была бы цель равного обращения также сохранена, если документ временно учесть, а обновленный документ представить в короткий срок." },
+                { "language": "ckb", "text": "هەر بۆیە نامەوێت ئیستیسنا وەک مافێک پیشان بدەم. دەپرسیم ئایا ئامانجی مامەڵەی یەکسان هێشتا دەپارێزرێت ئەگەر بەڵگەکە بە کاتی ڕەچاو بکرێت و بەڵگەی نوێکراوە لە ماوەیەکی کورتدا پاشکەش بکرێت." },
+                { "language": "kmr", "text": "Bi rastî ji ber vê ez naxwazim îstîsnayê wek mafekî nîşan bidim. Ez dipirsim ka armanca muameleya wekhev jî diparêze heke belge demkî were hesibandin û belgeya nûkirî di demeke kurt de were şandin." },
+                { "language": "pl", "text": "Właśnie dlatego nie chcę przedstawiać wyjątku jako roszczenia. Pytam, czy cel równego traktowania byłby zachowany także wtedy, gdyby dokument uwzględniono tymczasowo, a aktualny dokument dostarczono w krótkim terminie." },
+                { "language": "ro", "text": "Tocmai de aceea nu vreau să prezint excepția ca pe un drept. Întreb dacă scopul tratamentului egal ar fi păstrat și dacă documentul ar fi luat în considerare provizoriu, iar documentul actualizat ar fi depus într-un termen scurt." },
+                { "language": "sq", "text": "Pikërisht për këtë arsye nuk dua ta paraqes përjashtimin si të drejtë. Pyes nëse qëllimi i trajtimit të barabartë do të ruhej edhe nëse dokumenti merret parasysh përkohësisht dhe dokumenti i përditësuar dorëzohet brenda një afati të shkurtër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet Sonderanspruch und prüft, ob der Regelzweck trotzdem erfüllt bleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer avoids claiming special entitlement and checks whether the purpose of the rule still remains fulfilled." },
+                { "language": "fa", "text": "قوی: پاسخ از ادعای حق ویژه پرهیز می‌کند و بررسی می‌کند آیا هدف قاعده همچنان محقق می‌ماند یا نه." },
+                { "language": "ar", "text": "قوي: الجواب يتجنب ادعاء استحقاق خاص ويتحقق مما إذا كان هدف القاعدة يبقى محققًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt özel hak iddiasından kaçınır ve kuralın amacının yine karşılanıp karşılanmadığını yoklar." },
+                { "language": "ru", "text": "Сильно: ответ избегает заявления об особом праве и проверяет, остается ли цель правила выполненной." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە بانگەشەی مافی تایبەت دوور دەکەوێتەوە و دەبینێت ئایا ئامانجی یاساکە هێشتا جێبەجێ دەبێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ji îdiaya mafê taybet dûr dimîne û kontrol dike ka armanca rêgezê hê tê bicihanîn an na." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika roszczenia do szczególnego uprawnienia i sprawdza, czy cel reguły nadal zostaje spełniony." },
+                { "language": "ro", "text": "Puternic: răspunsul evită pretenția unui drept special și verifică dacă scopul regulii rămâne totuși îndeplinit." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang pretendimin për të drejtë të veçantë dhe kontrollon nëse qëllimi i rregullit mbetet i përmbushur." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich möchte nur, dass Sie in meinem Fall etwas kulanter sind.",
+              "translations": [
+                { "language": "en", "text": "I only want you to be a bit more accommodating in my case." },
+                { "language": "fa", "text": "فقط می‌خواهم در مورد من کمی با ارفاق بیشتری برخورد کنید." },
+                { "language": "ar", "text": "أريد فقط أن تكونوا أكثر تساهلًا قليلًا في حالتي." },
+                { "language": "tr", "text": "Sadece benim durumumda biraz daha anlayışlı olmanızı istiyorum." },
+                { "language": "ru", "text": "Я просто хочу, чтобы в моем случае вы были немного более снисходительны." },
+                { "language": "ckb", "text": "تەنها دەمەوێت لە کەیسی مندا کەمێک زیاتر نەرم بن." },
+                { "language": "kmr", "text": "Ez tenê dixwazim hûn di rewşa min de hinekî zêdetir nerm bin." },
+                { "language": "pl", "text": "Chcę tylko, żeby w moim przypadku byli Państwo trochę bardziej wyrozumiali." },
+                { "language": "ro", "text": "Vreau doar să fiți puțin mai îngăduitori în cazul meu." },
+                { "language": "sq", "text": "Dua vetëm të jeni pak më tolerantë në rastin tim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach begründet. Kulanz allein erklärt nicht, wie Gleichbehandlung und Regelzweck geschützt bleiben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weakly justified. Goodwill alone does not explain how equal treatment and the purpose of the rule remain protected." },
+                { "language": "fa", "text": "استدلالش ضعیف است. ارفاق به‌تنهایی توضیح نمی‌دهد که رفتار برابر و هدف قاعده چگونه حفظ می‌شود." },
+                { "language": "ar", "text": "تعليل ضعيف. التساهل وحده لا يوضح كيف تبقى المعاملة المتساوية وهدف القاعدة محميين." },
+                { "language": "tr", "text": "Gerekçesi zayıf. Tek başına anlayış, eşit muamele ve kuralın amacının nasıl korunduğunu açıklamaz." },
+                { "language": "ru", "text": "Слабо обосновано. Одно лишь снисхождение не объясняет, как сохраняются равное обращение и цель правила." },
+                { "language": "ckb", "text": "هۆکاری لاوازە. نەرمبوون بە تەنیا ڕوون ناکاتەوە چۆن مامەڵەی یەکسان و ئامانجی یاساکە دەپارێزرێن." },
+                { "language": "kmr", "text": "Sedem lawaz e. Nermbûn bi tena serê xwe rave nake ka muameleya wekhev û armanca rêgezê çawa diparêzin." },
+                { "language": "pl", "text": "Zbyt słabo uzasadnione. Sama wyrozumiałość nie wyjaśnia, jak chronione pozostają równe traktowanie i cel reguły." },
+                { "language": "ro", "text": "Prea slab justificat. Bunăvoința singură nu explică modul în care tratamentul egal și scopul regulii rămân protejate." },
+                { "language": "sq", "text": "Arsyetim shumë i dobët. Mirëkuptimi i vetëm nuk shpjegon si mbrohen trajtimi i barabartë dhe qëllimi i rregullit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das Risiko sehe ich. Deshalb biete ich zwei Sicherungen an: Ich reiche die aktualisierte Bescheinigung bis Freitag nach, und falls sich das Einkommen geändert hat, wird die Berechnung entsprechend korrigiert.",
+              "translations": [
+                { "language": "en", "text": "I see that risk. That is why I offer two safeguards: I will submit the updated certificate by Friday, and if the income has changed, the calculation will be corrected accordingly." },
+                { "language": "fa", "text": "این ریسک را می‌بینم. برای همین دو تضمین پیشنهاد می‌کنم: گواهی به‌روز را تا جمعه تکمیل می‌کنم، و اگر درآمد تغییر کرده باشد، محاسبه مطابق آن اصلاح شود." },
+                { "language": "ar", "text": "أرى هذا الخطر. لذلك أقدم ضمانين: سأقدم الشهادة المحدّثة حتى الجمعة، وإذا تغير الدخل تُصحح الحسبة تبعًا لذلك." },
+                { "language": "tr", "text": "Bu riski görüyorum. Bu nedenle iki güvence sunuyorum: Güncel belgeyi cumaya kadar sunacağım ve gelir değişmişse hesaplama buna göre düzeltilecek." },
+                { "language": "ru", "text": "Я вижу этот риск. Поэтому я предлагаю две гарантии: я представлю обновленную справку до пятницы, а если доход изменился, расчет будет соответственно исправлен." },
+                { "language": "ckb", "text": "ئەو مەترسییە دەبینم. بۆیە دوو دڵنیایی پێشنیار دەکەم: بەڵگەی نوێکراوە تا هەینی پاشکەش دەکەم، و ئەگەر داهات گۆڕابێت، هەژمارکردنەکە بەپێی ئەوە ڕاست دەکرێتەوە." },
+                { "language": "kmr", "text": "Ez wê xeterê dibînim. Ji ber vê ez du ewlekariyan pêşkêş dikim: Ez ê belgeya nûkirî heta înê bişînim, û heke dahat guhertibe, hesabkirin li gor wê were rastkirin." },
+                { "language": "pl", "text": "Widzę to ryzyko. Dlatego proponuję dwa zabezpieczenia: dostarczę aktualne zaświadczenie do piątku, a jeśli dochód się zmienił, wyliczenie zostanie odpowiednio skorygowane." },
+                { "language": "ro", "text": "Văd acest risc. De aceea ofer două garanții: voi depune adeverința actualizată până vineri, iar dacă venitul s-a schimbat, calculul va fi corectat corespunzător." },
+                { "language": "sq", "text": "E shoh këtë rrezik. Prandaj ofroj dy garanci: do ta dorëzoj vërtetimin e përditësuar deri të premten, dhe nëse të ardhurat kanë ndryshuar, llogaritja do të korrigjohet përkatësisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt das Risiko ernst und bietet eine überprüfbare Absicherung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer takes the risk seriously and offers a verifiable safeguard." },
+                { "language": "fa", "text": "قوی: پاسخ ریسک را جدی می‌گیرد و تضمین قابل بررسی پیشنهاد می‌دهد." },
+                { "language": "ar", "text": "قوي: الجواب يأخذ الخطر بجدية ويقدم ضمانًا قابلًا للتحقق." },
+                { "language": "tr", "text": "Güçlü: Yanıt riski ciddiye alır ve doğrulanabilir bir güvence sunar." },
+                { "language": "ru", "text": "Сильно: ответ серьезно относится к риску и предлагает проверяемую гарантию." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە مەترسییەکە بە جدی وەردەگرێت و دڵنیایییەکی پشکنراو پێشنیار دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv xeterê cidî digire û ewlekariyeke kontrolbar pêşkêş dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź poważnie traktuje ryzyko i oferuje sprawdzalne zabezpieczenie." },
+                { "language": "ro", "text": "Puternic: răspunsul ia riscul în serios și oferă o garanție verificabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr seriozisht rrezikun dhe ofron një garanci të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verspreche Ihnen, dass sich nichts geändert hat.",
+              "translations": [
+                { "language": "en", "text": "I promise you that nothing has changed." },
+                { "language": "fa", "text": "به شما قول می‌دهم که هیچ چیزی تغییر نکرده است." },
+                { "language": "ar", "text": "أعدكم بأن شيئًا لم يتغير." },
+                { "language": "tr", "text": "Size hiçbir şeyin değişmediğine söz veriyorum." },
+                { "language": "ru", "text": "Я обещаю вам, что ничего не изменилось." },
+                { "language": "ckb", "text": "بەڵێنتان پێدەدەم کە هیچ شتێک نەگۆڕاوە." },
+                { "language": "kmr", "text": "Ez soz didim we ku tiştek neguheriye." },
+                { "language": "pl", "text": "Obiecuję Państwu, że nic się nie zmieniło." },
+                { "language": "ro", "text": "Vă promit că nu s-a schimbat nimic." },
+                { "language": "sq", "text": "Ju premtoj se asgjë nuk ka ndryshuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht ausreichend. Ein Versprechen ersetzt keine überprüfbare Absicherung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not sufficient. A promise does not replace a verifiable safeguard." },
+                { "language": "fa", "text": "قابل تصور است، اما کافی نیست. قول دادن جای تضمین قابل بررسی را نمی‌گیرد." },
+                { "language": "ar", "text": "معقول لكنه غير كافٍ. الوعد لا يعوض ضمانًا قابلًا للتحقق." },
+                { "language": "tr", "text": "Makul ama yeterli değil. Söz vermek doğrulanabilir güvence yerine geçmez." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно. Обещание не заменяет проверяемую гарантию." },
+                { "language": "ckb", "text": "ئەگەرییە، بەڵام بەس نییە. بەڵێن جێگەی دڵنیایی پشکنراو ناگرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê têr nake. Soz şûna ewlekariya kontrolbar nagire." },
+                { "language": "pl", "text": "Wiarygodne, ale niewystarczające. Obietnica nie zastępuje sprawdzalnego zabezpieczenia." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient. O promisiune nu înlocuiește o garanție verificabilă." },
+                { "language": "sq", "text": "E besueshme, por jo e mjaftueshme. Premtimi nuk zëvendëson një garanci të verifikueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Verhältnismäßig wäre aus meiner Sicht, den Antrag nicht allein wegen der vier Tage zurückzustellen, sondern die Prüfung unter dem Vorbehalt des aktualisierten Nachweises fortzuführen.",
+              "translations": [
+                { "language": "en", "text": "From my perspective, it would be proportionate not to set the application aside solely because of the four days, but to continue the review subject to the updated document." },
+                { "language": "fa", "text": "از نظر من متناسب این است که درخواست فقط به‌خاطر آن چهار روز کنار گذاشته نشود، بلکه بررسی با شرط ارائه مدرک به‌روز ادامه پیدا کند." },
+                { "language": "ar", "text": "من وجهة نظري سيكون من المتناسب ألا يُؤجل الطلب فقط بسبب الأيام الأربعة، بل أن تستمر المراجعة بشرط تقديم الإثبات المحدّث." },
+                { "language": "tr", "text": "Bana göre orantılı olan, başvurunun yalnızca bu dört gün nedeniyle geri bırakılmaması, ancak incelemenin güncel belge şartıyla sürdürülmesidir." },
+                { "language": "ru", "text": "С моей точки зрения, соразмерно было бы не откладывать заявление только из-за этих четырех дней, а продолжить проверку при условии представления обновленного документа." },
+                { "language": "ckb", "text": "لە ڕوانگەی منەوە گونجاو ئەوەیە داواکارییەکە تەنها بە هۆی ئەو چوار ڕۆژە نەخرێتە دواوە، بەڵکو پشکنینەکە بە مەرجی بەڵگەی نوێکراوە بەردەوام بێت." },
+                { "language": "kmr", "text": "Li gor min, bi rêje ev e ku daxwaz tenê ji ber wan çar rojan paş nekeve, lê vekolîn bi şerta belgeya nûkirî berdewam bike." },
+                { "language": "pl", "text": "Z mojego punktu widzenia proporcjonalne byłoby nie odkładać wniosku wyłącznie z powodu tych czterech dni, lecz kontynuować sprawdzanie pod warunkiem dostarczenia aktualnego zaświadczenia." },
+                { "language": "ro", "text": "Din perspectiva mea, proporțional ar fi ca cererea să nu fie amânată doar din cauza celor patru zile, ci verificarea să continue sub rezerva documentului actualizat." },
+                { "language": "sq", "text": "Sipas meje, proporcionale do të ishte që kërkesa të mos lihet mënjanë vetëm për shkak të atyre katër ditëve, por shqyrtimi të vazhdojë me kushtin e dokumentit të përditësuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Lösung ist begrenzt, prüfbar und an eine Bedingung geknüpft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The solution is limited, verifiable, and tied to a condition." },
+                { "language": "fa", "text": "قوی: راه‌حل محدود، قابل بررسی و وابسته به یک شرط است." },
+                { "language": "ar", "text": "قوي: الحل محدود وقابل للتحقق ومربوط بشرط." },
+                { "language": "tr", "text": "Güçlü: Çözüm sınırlı, doğrulanabilir ve bir koşula bağlı." },
+                { "language": "ru", "text": "Сильно: решение ограничено, проверяемо и связано с условием." },
+                { "language": "ckb", "text": "بەهێزە: چارەسەرەکە سنووردار، پشکنراو و بە مەرجێکەوە بەستراوە." },
+                { "language": "kmr", "text": "Xurt e: Çareserî sînorkirî, kontrolbar û bi şertê ve girêdayî ye." },
+                { "language": "pl", "text": "Mocne: rozwiązanie jest ograniczone, sprawdzalne i powiązane z warunkiem." },
+                { "language": "ro", "text": "Puternic: soluția este limitată, verificabilă și legată de o condiție." },
+                { "language": "sq", "text": "E fortë: zgjidhja është e kufizuar, e verifikueshme dhe e lidhur me një kusht." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Am besten wäre, wenn Sie den Antrag trotzdem normal weiterlaufen lassen.",
+              "translations": [
+                { "language": "en", "text": "It would be best if you simply let the application continue normally anyway." },
+                { "language": "fa", "text": "بهتر است درخواست را با وجود این به‌طور عادی ادامه دهید." },
+                { "language": "ar", "text": "الأفضل أن تتركوا الطلب يستمر بشكل عادي رغم ذلك." },
+                { "language": "tr", "text": "En iyisi, başvurunun buna rağmen normal şekilde devam etmesine izin vermeniz olur." },
+                { "language": "ru", "text": "Лучше всего было бы, если бы вы все же дали заявлению идти дальше обычным образом." },
+                { "language": "ckb", "text": "باشتر ئەوەیە بە هەر حال داواکارییەکە بە شێوەی ئاسایی بەردەوام بێت." },
+                { "language": "kmr", "text": "Ya herî baş ev e ku hûn her çawa be bihêlin daxwaz bi awayê normal berdewam bike." },
+                { "language": "pl", "text": "Najlepiej byłoby, gdyby mimo wszystko pozwolili Państwo wnioskowi normalnie biec dalej." },
+                { "language": "ro", "text": "Cel mai bine ar fi să lăsați totuși cererea să continue normal." },
+                { "language": "sq", "text": "Më mirë do të ishte ta lini kërkesën të vazhdojë normalisht gjithsesi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau. Es fehlt die Bedingung, unter der eine Fortführung vertretbar wäre.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise. It lacks the condition under which continuing would be justifiable." },
+                { "language": "fa", "text": "بیش از حد نامشخص است. شرطی که ادامه بررسی را قابل دفاع می‌کند در آن نیست." },
+                { "language": "ar", "text": "غير دقيق بما يكفي. ينقصه الشرط الذي يجعل الاستمرار مبررًا." },
+                { "language": "tr", "text": "Çok belirsiz. Devam etmenin hangi koşulda savunulabilir olacağı eksik." },
+                { "language": "ru", "text": "Слишком неточно. Не хватает условия, при котором продолжение было бы оправданным." },
+                { "language": "ckb", "text": "زۆر نادیارە. ئەو مەرجەی کە بەردەوامبوونەکە بەرگریپێکراو دەکات کەمە." },
+                { "language": "kmr", "text": "Pir nezelal e. Şertê ku berdewamkirinê maqûl dike kêm e." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne. Brakuje warunku, pod którym kontynuacja byłaby uzasadniona." },
+                { "language": "ro", "text": "Prea imprecis. Lipsește condiția în care continuarea ar fi justificabilă." },
+                { "language": "sq", "text": "Shumë e pasaktë. Mungon kushti nën të cilin vazhdimi do të ishte i arsyeshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das kann ich so mittragen. Bitte vermerken Sie: Der aktualisierte Nachweis wird bis Freitag nachgereicht, und die vorläufige Berücksichtigung erfolgt nur unter dem Vorbehalt einer abweichenden endgültigen Berechnung.",
+              "translations": [
+                { "language": "en", "text": "I can support that wording. Please note: the updated document will be submitted by Friday, and temporary consideration is only made subject to a different final calculation." },
+                { "language": "fa", "text": "می‌توانم با این فرمول‌بندی موافقت کنم. لطفاً ثبت کنید: مدرک به‌روز تا جمعه تکمیل می‌شود، و بررسی موقت فقط با این شرط انجام می‌شود که محاسبه نهایی ممکن است متفاوت باشد." },
+                { "language": "ar", "text": "يمكنني قبول هذه الصياغة. يرجى تدوين ما يلي: سيُقدم الإثبات المحدّث حتى الجمعة، والأخذ المؤقت يتم فقط مع التحفظ على احتمال حساب نهائي مختلف." },
+                { "language": "tr", "text": "Bu ifadeyi kabul edebilirim. Lütfen not edin: Güncel belge cumaya kadar sunulacak ve geçici dikkate alma yalnızca farklı bir nihai hesaplama kaydıyla yapılacaktır." },
+                { "language": "ru", "text": "Я могу согласиться с такой формулировкой. Пожалуйста, отметьте: обновленный документ будет представлен до пятницы, а временный учет осуществляется только с оговоркой о возможном отличающемся окончательном расчете." },
+                { "language": "ckb", "text": "دەتوانم لەگەڵ ئەم داڕشتنە بڕۆم. تکایە تۆمار بکەن: بەڵگەی نوێکراوە تا هەینی پاشکەش دەکرێت، و ڕەچاوکردنی کاتی تەنها بە مەرجی ئەوە دەبێت کە هەژمارکردنی کۆتایی ڕەنگە جیاواز بێت." },
+                { "language": "kmr", "text": "Ez dikarim vê gotinê qebûl bikim. Ji kerema xwe qeyd bikin: belgeya nûkirî heta înê tê şandin, û hesibandina demkî tenê bi şerta hesabkirina dawî ya gengaz cuda tê kirin." },
+                { "language": "pl", "text": "Mogę poprzeć takie sformułowanie. Proszę odnotować: aktualne zaświadczenie zostanie dostarczone do piątku, a tymczasowe uwzględnienie następuje tylko z zastrzeżeniem odmiennego końcowego wyliczenia." },
+                { "language": "ro", "text": "Pot susține această formulare. Vă rog să notați: documentul actualizat va fi depus până vineri, iar luarea în considerare provizorie are loc doar sub rezerva unui calcul final diferit." },
+                { "language": "sq", "text": "Mund ta pranoj këtë formulim. Ju lutem shënoni: dokumenti i përditësuar do të dorëzohet deri të premten, dhe marrja parasysh përkohësisht bëhet vetëm me rezervën e një llogaritjeje përfundimtare të ndryshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussantwort fixiert Frist, Vorbehalt und mögliche Korrektur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final answer fixes the deadline, reservation, and possible correction." },
+                { "language": "fa", "text": "قوی: پاسخ پایانی مهلت، شرط و اصلاح احتمالی را مشخص می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب الختامي يحدد المهلة والتحفظ والتصحيح المحتمل." },
+                { "language": "tr", "text": "Güçlü: Son yanıt süreyi, kaydı ve olası düzeltmeyi sabitliyor." },
+                { "language": "ru", "text": "Сильно: финальный ответ фиксирует срок, оговорку и возможную корректировку." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامی کۆتایی ماوە، مەرج و ڕاستکردنەوەی ئەگەری دیاری دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiva dawî dem, şert û rastkirina gengaz sabît dike." },
+                { "language": "pl", "text": "Mocne: końcowa odpowiedź ustala termin, zastrzeżenie i możliwą korektę." },
+                { "language": "ro", "text": "Puternic: răspunsul final fixează termenul, rezerva și posibila corectare." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfundimtare përcakton afatin, rezervën dhe korrigjimin e mundshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann machen wir das so, und ich bringe den neuen Nachweis später.",
+              "translations": [
+                { "language": "en", "text": "Good, then we will do it that way, and I will bring the new document later." },
+                { "language": "fa", "text": "خوب، پس همین کار را می‌کنیم و من مدرک جدید را بعداً می‌آورم." },
+                { "language": "ar", "text": "حسنًا، إذن نفعل ذلك هكذا، وسأحضر الإثبات الجديد لاحقًا." },
+                { "language": "tr", "text": "Tamam, o zaman böyle yapalım, yeni belgeyi sonra getiririm." },
+                { "language": "ru", "text": "Хорошо, тогда сделаем так, а новый документ я принесу позже." },
+                { "language": "ckb", "text": "باشە، ئەوا بەو شێوەیە دەیکەین و بەڵگەی نوێ دواتر دەهێنم." },
+                { "language": "kmr", "text": "Baş e, wê demê em wisa bikin, û ez belgeya nû paşê tînim." },
+                { "language": "pl", "text": "Dobrze, zrobimy tak, a nowy dokument doniosę później." },
+                { "language": "ro", "text": "Bine, atunci facem așa, iar documentul nou îl aduc mai târziu." },
+                { "language": "sq", "text": "Mirë, atëherë e bëjmë kështu dhe dokumentin e ri e sjell më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu locker. Ohne klare Frist und Vorbehalt bleibt die Lösung verwaltungsseitig unscharf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too casual. Without a clear deadline and reservation, the solution remains administratively vague." },
+                { "language": "fa", "text": "بیش از حد غیررسمی است. بدون مهلت روشن و شرط، راه‌حل از نظر اداری مبهم می‌ماند." },
+                { "language": "ar", "text": "غير دقيق بما يكفي. من دون مهلة واضحة وتحفظ يبقى الحل إداريًا غير محدد." },
+                { "language": "tr", "text": "Çok gevşek. Net süre ve kayıt olmadan çözüm idari açıdan belirsiz kalır." },
+                { "language": "ru", "text": "Слишком непринужденно. Без четкого срока и оговорки решение остается административно неясным." },
+                { "language": "ckb", "text": "زۆر ئازادە. بەبێ ماوەی ڕوون و مەرج، چارەسەرەکە لە ڕووی ئیدارییەوە نادیار دەمێنێت." },
+                { "language": "kmr", "text": "Pir bêqeyd e. Bê demeke zelal û şert, çareserî ji aliyê îdarî ve nezelal dimîne." },
+                { "language": "pl", "text": "Zbyt swobodne. Bez jasnego terminu i zastrzeżenia rozwiązanie pozostaje administracyjnie nieostre." },
+                { "language": "ro", "text": "Prea lejer. Fără un termen clar și o rezervă, soluția rămâne administrativ neclară." },
+                { "language": "sq", "text": "Shumë e lirshme. Pa një afat të qartë dhe rezervë, zgjidhja mbetet administrativisht e paqartë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "rule-purpose",
+          "text": "Wer den Zweck der Regel anerkennt, kann den Einzelfall überzeugender erklären.",
+          "translations": [
+            { "language": "en", "text": "Someone who acknowledges the purpose of the rule can explain the individual case more convincingly." },
+            { "language": "fa", "text": "کسی که هدف قاعده را می‌پذیرد، می‌تواند مورد فردی را قانع‌کننده‌تر توضیح دهد." },
+            { "language": "ar", "text": "من يعترف بهدف القاعدة يستطيع شرح الحالة الفردية بشكل أكثر إقناعًا." },
+            { "language": "tr", "text": "Kuralın amacını kabul eden kişi bireysel durumu daha ikna edici açıklayabilir." },
+            { "language": "ru", "text": "Тот, кто признает цель правила, может убедительнее объяснить индивидуальный случай." },
+            { "language": "ckb", "text": "ئەو کەسەی ئامانجی یاساکە دەقبوڵێت، دەتوانێت کەیسی تاکەکەسی قایلکەرتری ڕوون بکاتەوە." },
+            { "language": "kmr", "text": "Kesê ku armanca rêgezê qebûl dike, dikare rewşa takekesî bi awayekî bawerkertir rave bike." },
+            { "language": "pl", "text": "Kto uznaje cel reguły, może bardziej przekonująco wyjaśnić indywidualny przypadek." },
+            { "language": "ro", "text": "Cine recunoaște scopul regulii poate explica mai convingător cazul individual." },
+            { "language": "sq", "text": "Ai që pranon qëllimin e rregullit mund ta shpjegojë rastin individual më bindshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "equal-treatment",
+          "text": "Verhältnismäßigkeit heißt nicht Sonderbehandlung, sondern Zweck, Mittel und Abweichung zu vergleichen.",
+          "translations": [
+            { "language": "en", "text": "Proportionality does not mean special treatment, but comparing purpose, means, and deviation." },
+            { "language": "fa", "text": "تناسب به معنی امتیاز ویژه نیست، بلکه یعنی مقایسه هدف، ابزار و میزان انحراف." },
+            { "language": "ar", "text": "التناسب لا يعني معاملة خاصة، بل مقارنة الهدف والوسيلة والانحراف." },
+            { "language": "tr", "text": "Orantılılık özel muamele demek değildir; amaç, araç ve sapmayı karşılaştırmak demektir." },
+            { "language": "ru", "text": "Соразмерность не означает особое отношение, а сравнение цели, средства и отклонения." },
+            { "language": "ckb", "text": "گونجاوی واتای مامەڵەی تایبەت نییە، بەڵکو بەراوردکردنی ئامانج، ئامراز و جیاوازییە." },
+            { "language": "kmr", "text": "Bi rêjebûn wateya muameleya taybet nîne, lê berhevkirina armanc, amraz û cudahiyê ye." },
+            { "language": "pl", "text": "Proporcjonalność nie oznacza specjalnego traktowania, lecz porównanie celu, środka i odstępstwa." },
+            { "language": "ro", "text": "Proporționalitatea nu înseamnă tratament special, ci compararea scopului, mijlocului și abaterii." },
+            { "language": "sq", "text": "Proporcionaliteti nuk do të thotë trajtim i veçantë, por krahasim i qëllimit, mjetit dhe devijimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "safeguard",
+          "text": "Eine begrenzte Lösung braucht eine Absicherung, damit die Regel nicht leerläuft.",
+          "translations": [
+            { "language": "en", "text": "A limited solution needs a safeguard so the rule does not lose its effect." },
+            { "language": "fa", "text": "راه‌حل محدود به تضمین نیاز دارد تا قاعده بی‌اثر نشود." },
+            { "language": "ar", "text": "الحل المحدود يحتاج إلى ضمان حتى لا تفقد القاعدة أثرها." },
+            { "language": "tr", "text": "Sınırlı bir çözüm, kuralın etkisini kaybetmemesi için güvence gerektirir." },
+            { "language": "ru", "text": "Ограниченное решение требует гарантии, чтобы правило не потеряло силу." },
+            { "language": "ckb", "text": "چارەسەری سنووردار پێویستی بە دڵنیایی هەیە تا یاساکە بێکاریگەر نەبێت." },
+            { "language": "kmr", "text": "Çareseriyeke sînorkirî ewlekariyê pêwîst dike da ku rêgez vala nemîne." },
+            { "language": "pl", "text": "Ograniczone rozwiązanie potrzebuje zabezpieczenia, aby reguła nie straciła działania." },
+            { "language": "ro", "text": "O soluție limitată are nevoie de o garanție, ca regula să nu își piardă efectul." },
+            { "language": "sq", "text": "Një zgjidhje e kufizuar ka nevojë për garanci që rregulli të mos humbasë efektin." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "conditional-documentation",
+          "text": "C2-tauglich ist eine Lösung, wenn Frist, Vorbehalt und mögliche Korrektur klar dokumentiert sind.",
+          "translations": [
+            { "language": "en", "text": "A solution is C2-appropriate when deadline, reservation, and possible correction are clearly documented." },
+            { "language": "fa", "text": "راه‌حل زمانی مناسب C2 است که مهلت، شرط و اصلاح احتمالی روشن ثبت شده باشند." },
+            { "language": "ar", "text": "يكون الحل مناسبًا لـ C2 عندما تكون المهلة والتحفظ والتصحيح المحتمل موثقة بوضوح." },
+            { "language": "tr", "text": "Süre, kayıt ve olası düzeltme açıkça belgelendiğinde çözüm C2 düzeyine uygundur." },
+            { "language": "ru", "text": "Решение соответствует C2, когда срок, оговорка и возможная корректировка четко задокументированы." },
+            { "language": "ckb", "text": "چارەسەرێک کاتێک گونجاوی C2 ـە کە ماوە، مەرج و ڕاستکردنەوەی ئەگەری بە ڕوونی تۆمار کرابن." },
+            { "language": "kmr", "text": "Çareserî dema ji bo C2 guncav e ku dem, şert û rastkirina gengaz bi zelalî hatibin belgekirin." },
+            { "language": "pl", "text": "Rozwiązanie jest odpowiednie dla C2, gdy termin, zastrzeżenie i możliwa korekta są jasno udokumentowane." },
+            { "language": "ro", "text": "O soluție este potrivită pentru C2 când termenul, rezerva și posibila corectare sunt documentate clar." },
+            { "language": "sq", "text": "Një zgjidhje është e përshtatshme për C2 kur afati, rezerva dhe korrigjimi i mundshëm janë dokumentuar qartë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "rule-and-individual-case-counter",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal public-office conversation where an applicant explains a small deviation from a document rule and offers a safeguard.",
+          "altText": "Ein Antragsteller spricht an einem deutschen Amtsschalter sachlich über eine formale Regel, einen Einkommensnachweis und eine kurze Nachreichfrist.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An applicant speaks factually at a German public-office counter about a formal rule, an income document, and a short later-submission deadline." },
+            { "language": "fa", "text": "یک درخواست‌دهنده در پیشخوان اداره آلمان به‌صورت واقع‌محور درباره قاعده رسمی، مدرک درآمد و مهلت کوتاه تکمیل مدرک صحبت می‌کند." },
+            { "language": "ar", "text": "يتحدث مقدم طلب بموضوعية عند شباك دائرة ألمانية عن قاعدة رسمية وإثبات دخل ومهلة قصيرة للتقديم اللاحق." },
+            { "language": "tr", "text": "Bir başvuru sahibi Alman resmi daire gişesinde resmi bir kural, gelir belgesi ve kısa sonradan sunma süresi hakkında nesnel biçimde konuşuyor." },
+            { "language": "ru", "text": "Заявитель у стойки немецкого учреждения фактически говорит о формальном правиле, справке о доходах и коротком сроке последующей подачи." },
+            { "language": "ckb", "text": "داواکەرێک لە کەونتەری فەرمانگەیەکی ئەڵمانیدا بە بابەتی دەربارەی یاسای فەرمی، بەڵگەی داهات و ماوەی کورتی پاشکەشکردن قسە دەکات." },
+            { "language": "kmr", "text": "Daxwazkarek li ber maseya dezgeheke Alman bi awayekî rastiyan li ser rêgezeke fermî, belgeya dahatê û demeke kurt a paşê şandinê diaxive." },
+            { "language": "pl", "text": "Wnioskodawca rzeczowo rozmawia przy niemieckim stanowisku urzędowym o formalnej regule, zaświadczeniu o dochodach i krótkim terminie uzupełnienia." },
+            { "language": "ro", "text": "Un solicitant discută factual la un ghișeu german despre o regulă formală, o dovadă de venit și un termen scurt de completare." },
+            { "language": "sq", "text": "Një aplikues flet në mënyrë faktike në një sportel gjerman për një rregull formal, një dokument të ardhurash dhe një afat të shkurtër plotësimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult applicant at a German public-office counter, folder with generic income document, case worker listening while applicant explains a small date deviation and short later-submission deadline, no readable text, no logos, no private data, accessible composition, formal cooperative mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

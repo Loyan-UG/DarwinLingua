@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-38-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 38 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 38",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-diagnoseunsicherheit-ansprechen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Diagnoseunsicherheit ansprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Addressing diagnostic uncertainty" },
+        { "language": "fa", "text": "مطرح کردن عدم قطعیت در تشخیص" },
+        { "language": "ar", "text": "طرح عدم اليقين في التشخيص" },
+        { "language": "tr", "text": "Tanı belirsizliğini dile getirmek" },
+        { "language": "ru", "text": "Обсуждение диагностической неопределенности" },
+        { "language": "ckb", "text": "باسکردنی نادڵنیایی لە دەستنیشانکردن" },
+        { "language": "kmr", "text": "Anîna ziman a nediyariya teşhîsê" },
+        { "language": "pl", "text": "Poruszenie niepewności diagnostycznej" },
+        { "language": "ro", "text": "Abordarea incertitudinii diagnostice" },
+        { "language": "sq", "text": "Trajtimi i pasigurisë diagnostike" }
+      ],
+      "description": "Sie sprechen in der Arztpraxis über wiederkehrende Schwindel- und Erschöpfungsphasen. Die erste Untersuchung zeigt keine akute Warnlage, aber die Erklärung ist noch nicht ganz eindeutig: Schlafmangel, Kreislaufbelastung und ein leicht niedriger Eisenwert könnten zusammenwirken. Sie sollen Ihre Sorge präzise formulieren, nach Unsicherheit fragen, Beobachtungskriterien klären und den nächsten Schritt zusammenfassen, ohne misstrauisch oder fordernd zu klingen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are speaking at a doctor's office about recurring episodes of dizziness and exhaustion. The initial examination shows no acute warning pattern, but the explanation is not fully clear yet: lack of sleep, circulatory strain, and a slightly low iron value could be acting together. You should phrase your concern precisely, ask about uncertainty, clarify observation criteria, and summarize the next step without sounding distrustful or demanding." },
+        { "language": "fa", "text": "در مطب پزشک درباره دوره‌های تکرارشونده سرگیجه و خستگی صحبت می‌کنید. بررسی اولیه وضعیت هشداردهنده حاد نشان نمی‌دهد، اما توضیح هنوز کاملاً روشن نیست: کم‌خوابی، فشار بر گردش خون و مقدار کمی پایین آهن ممکن است با هم اثر داشته باشند. باید نگرانی خود را دقیق بیان کنید، درباره عدم قطعیت سؤال کنید، معیارهای مشاهده را روشن کنید و مرحله بعد را جمع‌بندی کنید، بدون اینکه بی‌اعتماد یا طلبکارانه به نظر برسید." },
+        { "language": "ar", "text": "تتحدثون في عيادة الطبيب عن نوبات متكررة من الدوخة والإرهاق. الفحص الأول لا يظهر حالة تحذيرية حادة، لكن التفسير ليس واضحًا تمامًا بعد: قلة النوم، وإجهاد الدورة الدموية، وقيمة حديد منخفضة قليلًا قد تعمل معًا. ينبغي صياغة القلق بدقة، والسؤال عن عدم اليقين، وتوضيح معايير الملاحظة، وتلخيص الخطوة التالية من دون أن يبدو الكلام قائمًا على عدم الثقة أو المطالبة." },
+        { "language": "tr", "text": "Doktor muayenehanesinde tekrarlayan baş dönmesi ve bitkinlik dönemleri hakkında konuşuyorsunuz. İlk muayene akut bir uyarı durumu göstermiyor, ancak açıklama henüz tamamen net değil: uykusuzluk, dolaşım yüklenmesi ve hafif düşük demir değeri birlikte etkili olabilir. Kaygınızı kesin ifade etmeli, belirsizliği sormalı, gözlem ölçütlerini netleştirmeli ve sonraki adımı güvensiz ya da talepkâr görünmeden özetlemelisiniz." },
+        { "language": "ru", "text": "Вы говорите в кабинете врача о повторяющихся эпизодах головокружения и усталости. Первичное обследование не показывает острой тревожной картины, но объяснение еще не полностью ясно: недостаток сна, нагрузка на кровообращение и немного сниженный уровень железа могут действовать вместе. Нужно точно сформулировать беспокойство, спросить о неопределенности, уточнить критерии наблюдения и подытожить следующий шаг, не звуча недоверчиво или требовательно." },
+        { "language": "ckb", "text": "لە مطبی پزیشکدا دەربارەی قۆناغە دووبارەبووەکانی سەرگێژە و ماندوویی قسە دەکەیت. پشکنینی سەرەتایی دۆخی ئاگاداریی توند نیشان نادات، بەڵام ڕوونکردنەوەکە هێشتا تەواو ڕوون نییە: کەمخەوی، بار لەسەر خوێنگەڕان و نرخی ئاسنی کەمێک نزم دەتوانن پێکەوە کاریگەر بن. پێویستە نیگەرانییەکەت بە وردی بڵێیت، دەربارەی نادڵنیایی بپرسیت، پێوەری چاودێری ڕوون بکەیت و هەنگاوی داهاتوو پوختە بکەیت، بەبێ ئەوەی بێمتمانە یان داواکارانە دەربکەویت." },
+        { "language": "kmr", "text": "Hûn li polîklînîka bijîşkî li ser qonaxên dubare yên sergêjî û westiyayî diaxivin. Kontrola pêşîn rewşeke hişyariyê ya tûj nîşan nade, lê ravekirin hê bi tevahî zelal nîne: kêmxewî, bara li ser gerandina xwînê û nirxa hesinê hinekî nizim dikarin bi hev re bandor bikin. Divê hûn xemgîniya xwe bi hûrgilî bibêjin, li ser nediyariyê bipirsin, pîvanên şopandinê zelal bikin û gava din kurt bikin, bêyî ku bêbawer an daxwazkar xuya bibin." },
+        { "language": "pl", "text": "Rozmawia Pan/Pani w gabinecie lekarskim o nawracających epizodach zawrotów głowy i wyczerpania. Pierwsze badanie nie pokazuje ostrej sytuacji alarmowej, ale wyjaśnienie nie jest jeszcze całkiem jednoznaczne: brak snu, obciążenie krążenia i lekko obniżony poziom żelaza mogą działać łącznie. Należy precyzyjnie sformułować obawę, zapytać o niepewność, wyjaśnić kryteria obserwacji i podsumować następny krok, nie brzmiąc nieufnie ani roszczeniowo." },
+        { "language": "ro", "text": "Discutați la cabinetul medical despre episoade recurente de amețeală și epuizare. Prima examinare nu arată o situație acută de alarmă, dar explicația nu este încă pe deplin clară: lipsa somnului, solicitarea circulatorie și o valoare ușor scăzută a fierului ar putea acționa împreună. Trebuie să formulați precis îngrijorarea, să întrebați despre incertitudine, să clarificați criteriile de observare și să rezumați pasul următor fără să sunați neîncrezător sau revendicativ." },
+        { "language": "sq", "text": "Flisni në ordinancën e mjekut për episode të përsëritura marramendjeje dhe lodhjeje. Kontrolli i parë nuk tregon gjendje akute paralajmëruese, por shpjegimi ende nuk është plotësisht i qartë: mungesa e gjumit, ngarkesa e qarkullimit dhe një vlerë pak e ulët e hekurit mund të veprojnë së bashku. Duhet ta formuloni shqetësimin saktë, të pyesni për pasigurinë, të sqaroni kriteret e vëzhgimit dhe të përmblidhni hapin tjetër pa tingëlluar mosbesues ose kërkues." }
+      ],
+      "learnerGoal": "Diagnoseunsicherheit respektvoll klären: die ärztliche Einschätzung anerkennen, nach tragenden und offenen Befunden fragen, Alternativen nicht dramatisieren, Warnzeichen benennen lassen, Beobachtung und Kontrolle vereinbaren und den nächsten Schritt präzise zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify diagnostic uncertainty respectfully: acknowledge the doctor's assessment, ask about supporting and open findings, avoid dramatizing alternatives, have warning signs named, agree on observation and review, and summarize the next step precisely." },
+        { "language": "fa", "text": "عدم قطعیت تشخیصی را محترمانه روشن کنید: ارزیابی پزشک را بپذیرید، درباره یافته‌های پشتیبان و نکات باز سؤال کنید، گزینه‌های دیگر را دراماتیک نکنید، بخواهید نشانه‌های هشدار نام برده شوند، مشاهده و کنترل را هماهنگ کنید و مرحله بعد را دقیق جمع‌بندی کنید." },
+        { "language": "ar", "text": "وضحوا عدم اليقين في التشخيص باحترام: اعترفوا بتقييم الطبيبة، واسألوا عن النتائج الداعمة والمفتوحة، وتجنبوا تضخيم البدائل، واطلبوا تسمية علامات التحذير، واتفقوا على الملاحظة والمراجعة، ولخصوا الخطوة التالية بدقة." },
+        { "language": "tr", "text": "Tanı belirsizliğini saygıyla netleştirin: doktorun değerlendirmesini kabul edin, destekleyici ve açık kalan bulguları sorun, alternatifleri dramatize etmeyin, uyarı işaretlerinin adlandırılmasını isteyin, gözlem ve kontrol üzerinde anlaşın ve sonraki adımı kesin biçimde özetleyin." },
+        { "language": "ru", "text": "Уважительно проясните диагностическую неопределенность: признайте оценку врача, спросите о подтверждающих и открытых данных, не драматизируйте альтернативы, попросите назвать тревожные признаки, согласуйте наблюдение и контроль и точно подытожьте следующий шаг." },
+        { "language": "ckb", "text": "نادڵنیایی دەستنیشانکردن بە ڕێزەوە ڕوون بکە: هەڵسەنگاندنی پزیشک بپەسەندە، دەربارەی دۆزینەوە پشتگیریکەر و کراوەکان بپرسە، هەڵبژاردەکانی تر زیادەڕۆ مەکە، داوا بکە نیشانەکانی ئاگاداری ناوببرێن، چاودێری و کۆنترۆڵ ڕێکبخە و هەنگاوی داهاتوو بە وردی پوختە بکە." },
+        { "language": "kmr", "text": "Nediyariya teşhîsê bi rêzdarî zelal bikin: nirxandina bijîşkê qebûl bikin, li ser dîtinên piştgir û yên vekirî bipirsin, vebijarkên din dramatîze nekin, bixwazin nîşanên hişyariyê werin navkirin, şopandin û kontrolê li hev bikin û gava din bi hûrgilî kurt bikin." },
+        { "language": "pl", "text": "Wyjaśnić niepewność diagnostyczną z szacunkiem: uznać ocenę lekarki, zapytać o ustalenia wspierające i otwarte, nie dramatyzować alternatyw, poprosić o nazwanie objawów alarmowych, uzgodnić obserwację i kontrolę oraz precyzyjnie podsumować następny krok." },
+        { "language": "ro", "text": "Clarificați respectuos incertitudinea diagnostică: recunoașteți evaluarea medicului, întrebați despre constatările care susțin și cele rămase deschise, evitați dramatizarea alternativelor, cereți numirea semnelor de alarmă, stabiliți observarea și controlul și rezumați precis pasul următor." },
+        { "language": "sq", "text": "Sqaroni me respekt pasigurinë diagnostike: pranoni vlerësimin e mjekes, pyesni për gjetjet mbështetëse dhe të hapura, mos i dramatizoni alternativat, kërkoni të përmenden shenjat paralajmëruese, bini dakord për vëzhgim dhe kontroll dhe përmblidhni saktë hapin tjetër." }
+      ],
+      "cefrLevel": "C2",
+      "category": "health",
+      "topics": ["appointments-and-health", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 38,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacienti" }
+          ]
+        },
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Bijîşk" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medicul" },
+            { "language": "sq", "text": "Mjekja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Die Untersuchung heute zeigt keine akute Warnlage. Am wahrscheinlichsten ist eine Kombination aus Schlafmangel, Kreislaufbelastung und dem leicht niedrigen Eisenwert. Ganz eindeutig ist die Erklärung aber noch nicht.",
+          "translations": [
+            { "language": "en", "text": "Today's examination shows no acute warning pattern. The most likely explanation is a combination of lack of sleep, circulatory strain, and the slightly low iron value. But the explanation is not completely clear yet." },
+            { "language": "fa", "text": "معاینه امروز وضعیت هشداردهنده حاد نشان نمی‌دهد. محتمل‌ترین توضیح ترکیبی از کم‌خوابی، فشار بر گردش خون و مقدار کمی پایین آهن است. اما توضیح هنوز کاملاً قطعی نیست." },
+            { "language": "ar", "text": "الفحص اليوم لا يظهر حالة تحذيرية حادة. التفسير الأكثر احتمالًا هو مزيج من قلة النوم، وإجهاد الدورة الدموية، وقيمة الحديد المنخفضة قليلًا. لكن التفسير ليس واضحًا تمامًا بعد." },
+            { "language": "tr", "text": "Bugünkü muayene akut bir uyarı durumu göstermiyor. En olası açıklama uykusuzluk, dolaşım yüklenmesi ve hafif düşük demir değerinin birleşimi. Ancak açıklama henüz tamamen net değil." },
+            { "language": "ru", "text": "Сегодняшнее обследование не показывает острой тревожной картины. Наиболее вероятное объяснение — сочетание недостатка сна, нагрузки на кровообращение и немного сниженного уровня железа. Но объяснение еще не полностью ясно." },
+            { "language": "ckb", "text": "پشکنینی ئەمڕۆ دۆخی ئاگاداریی توند نیشان نادات. ئەگەری زۆرتر بریتییە لە تێکەڵەی کەمخەوی، بار لەسەر خوێنگەڕان و نرخی ئاسنی کەمێک نزم. بەڵام ڕوونکردنەوەکە هێشتا تەواو ڕوون نییە." },
+            { "language": "kmr", "text": "Kontrola îro rewşeke hişyariyê ya tûj nîşan nade. Ravekirina herî gengaz têkeliyek ji kêmxewî, bara li ser gerandina xwînê û nirxa hesinê hinekî nizim e. Lê ravekirin hê bi tevahî zelal nîne." },
+            { "language": "pl", "text": "Dzisiejsze badanie nie pokazuje ostrej sytuacji alarmowej. Najbardziej prawdopodobne wyjaśnienie to połączenie braku snu, obciążenia krążenia i lekko obniżonego poziomu żelaza. Ale wyjaśnienie nie jest jeszcze całkiem jednoznaczne." },
+            { "language": "ro", "text": "Examinarea de astăzi nu arată o situație acută de alarmă. Cea mai probabilă explicație este o combinație între lipsa somnului, solicitarea circulatorie și valoarea ușor scăzută a fierului. Dar explicația nu este încă pe deplin clară." },
+            { "language": "sq", "text": "Kontrolli i sotëm nuk tregon gjendje akute paralajmëruese. Shpjegimi më i mundshëm është një kombinim i mungesës së gjumit, ngarkesës së qarkullimit dhe vlerës pak të ulët të hekurit. Por shpjegimi ende nuk është plotësisht i qartë." }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte Ihre Einschätzung nicht infrage stellen, sondern besser verstehen, wie sicher sie ist. Welche Befunde stützen diese Erklärung, und welche Punkte bleiben aus Ihrer Sicht noch offen?",
+          "translations": [
+            { "language": "en", "text": "I do not want to question your assessment, but to understand better how certain it is. Which findings support this explanation, and which points remain open from your perspective?" },
+            { "language": "fa", "text": "نمی‌خواهم ارزیابی شما را زیر سؤال ببرم، بلکه می‌خواهم بهتر بفهمم چقدر مطمئن است. کدام یافته‌ها از این توضیح حمایت می‌کنند و از نظر شما کدام نکات هنوز باز مانده‌اند؟" },
+            { "language": "ar", "text": "لا أريد التشكيك في تقييمكم، بل فهم مدى يقينه بشكل أفضل. أي نتائج تدعم هذا التفسير، وأي نقاط لا تزال مفتوحة من وجهة نظركم؟" },
+            { "language": "tr", "text": "Değerlendirmenizi sorgulamak istemiyorum; ne kadar kesin olduğunu daha iyi anlamak istiyorum. Hangi bulgular bu açıklamayı destekliyor ve sizin açınızdan hangi noktalar hâlâ açık?" },
+            { "language": "ru", "text": "Я не хочу ставить под сомнение вашу оценку, а хочу лучше понять, насколько она надежна. Какие данные поддерживают это объяснение и какие пункты, с вашей точки зрения, еще остаются открытыми?" },
+            { "language": "ckb", "text": "ناتەوێت هەڵسەنگاندنەکەتان بخەمە ژێر پرسیار، بەڵکو دەمەوێت باشتر تێبگەم چەند دڵنیایە. کام دۆزینەوە ئەم ڕوونکردنەوەیە پشتگیری دەکات، و لە ڕوانگەی ئێوەوە کام خاڵەکان هێشتا کراوەن؟" },
+            { "language": "kmr", "text": "Ez naxwazim nirxandina we bikim bin pirsê, lê dixwazim baştir fêm bikim ew çiqas piştrast e. Kîjan dîtin ev ravekirinê piştgirî dikin, û ji nêrîna we kîjan xal hîn vekirî dimînin?" },
+            { "language": "pl", "text": "Nie chcę podważać Pani oceny, tylko lepiej zrozumieć, na ile jest pewna. Jakie ustalenia wspierają to wyjaśnienie, a które punkty z Pani perspektywy pozostają jeszcze otwarte?" },
+            { "language": "ro", "text": "Nu vreau să pun la îndoială evaluarea dumneavoastră, ci să înțeleg mai bine cât de sigură este. Ce constatări susțin această explicație și ce puncte rămân încă deschise din perspectiva dumneavoastră?" },
+            { "language": "sq", "text": "Nuk dua ta vë në dyshim vlerësimin tuaj, por të kuptoj më mirë sa i sigurt është. Cilat gjetje e mbështesin këtë shpjegim dhe cilat pika mbeten ende të hapura nga këndvështrimi juaj?" }
+          ],
+          "function": "respectful-uncertainty",
+          "toneNote": "Unsicherheit klären, ohne Misstrauen zu signalisieren.",
+          "expectedLearnerAction": "Ask what supports the assessment and what remains open."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Dafür sprechen der zeitliche Zusammenhang mit wenig Schlaf, der niedrige Blutdruck beim Aufstehen und der Eisenwert. Offen bleibt, ob die Schwindelphasen wirklich dadurch ausgelöst werden oder ob ein zweiter Faktor beteiligt ist.",
+          "translations": [
+            { "language": "en", "text": "Supporting points are the timing with little sleep, the low blood pressure when standing up, and the iron value. What remains open is whether the dizziness episodes are really triggered by this or whether a second factor is involved." },
+            { "language": "fa", "text": "نکات پشتیبان، ارتباط زمانی با کم‌خوابی، فشار خون پایین هنگام بلند شدن و مقدار آهن هستند. نکته باز این است که آیا دوره‌های سرگیجه واقعاً با این موارد تحریک می‌شوند یا عامل دومی هم دخیل است." },
+            { "language": "ar", "text": "ما يدعم ذلك هو الارتباط الزمني مع قلة النوم، وانخفاض ضغط الدم عند الوقوف، وقيمة الحديد. ما يبقى مفتوحًا هو ما إذا كانت نوبات الدوخة تُثار فعلًا بذلك أو ما إذا كان عامل ثانٍ مشاركًا." },
+            { "language": "tr", "text": "Bunu destekleyenler az uykuyla zaman ilişkisi, ayağa kalkarken düşük tansiyon ve demir değeridir. Açık kalan nokta, baş dönmesi dönemlerinin gerçekten bunlarla mı tetiklendiği yoksa ikinci bir etkenin de mi rol oynadığıdır." },
+            { "language": "ru", "text": "В пользу этого говорят временная связь с недосыпом, низкое давление при вставании и уровень железа. Остается открытым, действительно ли приступы головокружения вызываются этим или участвует второй фактор." },
+            { "language": "ckb", "text": "پشتگیری ئەوە دەکات پەیوەندیی کاتی لەگەڵ کەمخەوی، فشاری خوێنی نزم لە کاتی هەستان و نرخی ئاسن. ئەوەی کراوە دەمێنێت ئەوەیە ئایا قۆناغەکانی سەرگێژە بەڕاستی بەوە دەستپێدەکەن یان هۆکارێکی دووەم بەشداری دەکات." },
+            { "language": "kmr", "text": "Piştgir ev in: têkiliya demê bi kêmxewiyê, tansiyona nizim dema rabûnê û nirxa hesinê. Ya vekirî dimîne ew e ka qonaxên sergêjiyê bi rastî ji van têne destpêkirin an faktorekî duyem jî beşdar e." },
+            { "language": "pl", "text": "Przemawiają za tym związek czasowy z małą ilością snu, niskie ciśnienie przy wstawaniu i poziom żelaza. Otwarte pozostaje, czy epizody zawrotów głowy rzeczywiście są przez to wywoływane, czy uczestniczy drugi czynnik." },
+            { "language": "ro", "text": "În favoarea acestei explicații vorbesc legătura temporală cu puțin somn, tensiunea scăzută la ridicare și valoarea fierului. Rămâne deschis dacă episoadele de amețeală sunt într-adevăr declanșate de acestea sau dacă este implicat un al doilea factor." },
+            { "language": "sq", "text": "Këtë e mbështesin lidhja kohore me pak gjumë, tensioni i ulët kur ngriheni dhe vlera e hekurit. Mbetet e hapur nëse episodet e marramendjes shkaktohen vërtet nga këto ose nëse përfshihet edhe një faktor i dytë." }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Können wir die wahrscheinlichste Erklärung und die Alternativen sauber trennen? Ich möchte wissen, was wir zunächst beobachten, welche Werte wir wiederholen und ab welchem Punkt Ihre Einschätzung sich ändern würde.",
+          "translations": [
+            { "language": "en", "text": "Can we clearly separate the most likely explanation from the alternatives? I would like to know what we will observe first, which values we will repeat, and at what point your assessment would change." },
+            { "language": "fa", "text": "می‌توانیم محتمل‌ترین توضیح و گزینه‌های دیگر را روشن از هم جدا کنیم؟ می‌خواهم بدانم ابتدا چه چیزهایی را مشاهده می‌کنیم، کدام مقادیر را دوباره بررسی می‌کنیم و از چه نقطه‌ای ارزیابی شما تغییر می‌کند." },
+            { "language": "ar", "text": "هل يمكن أن نفصل بوضوح بين التفسير الأكثر احتمالًا والبدائل؟ أود معرفة ما الذي سنراقبه أولًا، وأي قيم سنعيد فحصها، وعند أي نقطة قد يتغير تقييمكم." },
+            { "language": "tr", "text": "En olası açıklamayı ve alternatifleri temiz biçimde ayırabilir miyiz? Önce neyi gözlemleyeceğimizi, hangi değerleri tekrar edeceğimizi ve hangi noktada değerlendirmenizin değişeceğini bilmek istiyorum." },
+            { "language": "ru", "text": "Можем ли мы четко отделить наиболее вероятное объяснение от альтернатив? Я хотел бы знать, что мы сначала будем наблюдать, какие показатели повторим и в какой момент ваша оценка изменилась бы." },
+            { "language": "ckb", "text": "دەتوانین ڕوونکردنەوەی ئەگەری زۆرتر و هەڵبژاردەکانی تر بە پاکی جیا بکەینەوە؟ دەمەوێت بزانم سەرەتا چی چاودێری دەکەین، کام نرخەکان دووبارە دەکەینەوە و لە کام خاڵدا هەڵسەنگاندنەکەتان دەگۆڕێت." },
+            { "language": "kmr", "text": "Ma em dikarin ravekirina herî gengaz û vebijarkên din bi zelalî ji hev veqetînin? Ez dixwazim bizanim em pêşî çi dişopînin, kîjan nirxan dubare dikin û li kîjan xaldê nirxandina we diguhere." },
+            { "language": "pl", "text": "Czy możemy jasno oddzielić najbardziej prawdopodobne wyjaśnienie od alternatyw? Chciałbym/chciałabym wiedzieć, co najpierw obserwujemy, które wartości powtórzymy i od którego punktu Pani ocena mogłaby się zmienić." },
+            { "language": "ro", "text": "Putem separa clar explicația cea mai probabilă de alternative? Aș dori să știu ce observăm mai întâi, ce valori repetăm și din ce punct s-ar schimba evaluarea dumneavoastră." },
+            { "language": "sq", "text": "A mund ta ndajmë qartë shpjegimin më të mundshëm nga alternativat? Dua të di çfarë do të vëzhgojmë fillimisht, cilat vlera do të përsërisim dhe në cilën pikë do të ndryshonte vlerësimi juaj." }
+          ],
+          "function": "separate-hypotheses",
+          "toneNote": "Nicht alle Möglichkeiten dramatisieren, sondern geordnet trennen.",
+          "expectedLearnerAction": "Ask to distinguish likely explanation, alternatives, and change criteria."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Wir können zwei Wochen ein Symptomprotokoll führen, Blutdruck beim Aufstehen messen und den Eisenwert kontrollieren. Ändern würde sich meine Einschätzung bei neuem Herzrasen, Ohnmacht, neurologischen Ausfällen oder deutlich zunehmender Häufigkeit.",
+          "translations": [
+            { "language": "en", "text": "We can keep a symptom diary for two weeks, measure blood pressure when standing up, and check the iron value. My assessment would change with new palpitations, fainting, neurological deficits, or a clearly increasing frequency." },
+            { "language": "fa", "text": "می‌توانیم دو هفته دفترچه علائم داشته باشیم، فشار خون هنگام بلند شدن را اندازه بگیریم و مقدار آهن را کنترل کنیم. ارزیابی من در صورت تپش قلب جدید، غش، نقص‌های عصبی یا افزایش واضح دفعات تغییر می‌کند." },
+            { "language": "ar", "text": "يمكننا الاحتفاظ بسجل للأعراض لمدة أسبوعين، وقياس ضغط الدم عند الوقوف، ومراقبة قيمة الحديد. سيتغير تقييمي عند ظهور خفقان جديد، أو إغماء، أو عجز عصبي، أو زيادة واضحة في التكرار." },
+            { "language": "tr", "text": "İki hafta boyunca belirti günlüğü tutabilir, ayağa kalkarken tansiyonu ölçebilir ve demir değerini kontrol edebiliriz. Yeni çarpıntı, bayılma, nörolojik kayıplar veya sıklıkta belirgin artış olursa değerlendirmem değişir." },
+            { "language": "ru", "text": "Мы можем две недели вести дневник симптомов, измерять давление при вставании и проверить уровень железа. Моя оценка изменилась бы при новых сердцебиениях, обмороке, неврологических нарушениях или явно возрастающей частоте." },
+            { "language": "ckb", "text": "دەتوانین بۆ دوو هەفتە تۆماری نیشانەکان بنووسین، فشاری خوێن لە کاتی هەستان بپێوین و نرخی ئاسن کۆنترۆڵ بکەین. هەڵسەنگاندنم دەگۆڕێت ئەگەر لێدانی نوێی دڵ، بێهۆشی، کەموکوڕیی عەصەبی یان زیادبوونی ڕوونی دووبارەبوون هەبێت." },
+            { "language": "kmr", "text": "Em dikarin du hefte rojnameya nîşanan bigirin, tansiyonê dema rabûnê bipîvin û nirxa hesinê kontrol bikin. Nirxandina min diguhere heke lêdana dil a nû, bêhişbûn, kêmasiyên nervî an zêdebûna zelal a pirbûnê hebe." },
+            { "language": "pl", "text": "Możemy przez dwa tygodnie prowadzić dziennik objawów, mierzyć ciśnienie przy wstawaniu i skontrolować poziom żelaza. Moja ocena zmieniłaby się przy nowych kołataniach serca, omdleniu, objawach neurologicznych albo wyraźnie rosnącej częstości." },
+            { "language": "ro", "text": "Putem ține timp de două săptămâni un jurnal al simptomelor, măsura tensiunea la ridicare și controla valoarea fierului. Evaluarea mea s-ar schimba la palpitații noi, leșin, deficite neurologice sau o creștere clară a frecvenței." },
+            { "language": "sq", "text": "Mund të mbajmë për dy javë një ditar simptomash, të masim tensionin kur ngriheni dhe të kontrollojmë vlerën e hekurit. Vlerësimi im do të ndryshonte nëse ka rrahje të reja zemre, të fikët, mungesa neurologjike ose rritje të qartë të shpeshtësisë." }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das hilft mir. Damit ich nicht zu spät reagiere: Welche Warnzeichen sollten dazu führen, dass ich nicht bis zur normalen Kontrolle warte?",
+          "translations": [
+            { "language": "en", "text": "That helps me. So that I do not react too late: which warning signs should make me avoid waiting until the regular review?" },
+            { "language": "fa", "text": "این به من کمک می‌کند. برای اینکه دیر واکنش نشان ندهم: کدام نشانه‌های هشدار باید باعث شوند تا کنترل معمول صبر نکنم؟" },
+            { "language": "ar", "text": "هذا يساعدني. حتى لا أتأخر في التصرف: أي علامات تحذير ينبغي أن تجعلني لا أنتظر حتى المراجعة العادية؟" },
+            { "language": "tr", "text": "Bu bana yardımcı oluyor. Geç tepki vermemek için: hangi uyarı işaretleri normal kontrole kadar beklememem gerektiği anlamına gelir?" },
+            { "language": "ru", "text": "Это мне помогает. Чтобы я не отреагировал слишком поздно: какие тревожные признаки должны означать, что мне не следует ждать обычного контроля?" },
+            { "language": "ckb", "text": "ئەمە یارمەتیم دەدات. بۆ ئەوەی درەنگ وەڵام نەدەمەوە: کام نیشانەی ئاگاداری پێویستە ببێتە هۆی ئەوەی چاوەڕێی کۆنترۆڵی ئاسایی نەکەم؟" },
+            { "language": "kmr", "text": "Ev ji min re alîkar e. Da ku ez dereng bersiv nedim: kîjan nîşanên hişyariyê divê bibin sedem ku ez heta kontrola asayî nebinim?" },
+            { "language": "pl", "text": "To mi pomaga. Żebym nie zareagował/zareagowała zbyt późno: jakie objawy alarmowe powinny sprawić, że nie będę czekać do zwykłej kontroli?" },
+            { "language": "ro", "text": "Asta mă ajută. Ca să nu reacționez prea târziu: ce semne de alarmă ar trebui să mă facă să nu aștept până la controlul obișnuit?" },
+            { "language": "sq", "text": "Kjo më ndihmon. Që të mos reagoj shumë vonë: cilat shenja paralajmëruese duhet të bëjnë që të mos pres deri te kontrolli i zakonshëm?" }
+          ],
+          "function": "warning-signs",
+          "toneNote": "Sicherheitsfrage stellen, ohne Panik zu erzeugen.",
+          "expectedLearnerAction": "Ask which warning signs require earlier medical contact."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Bei Ohnmacht, anhaltendem Brustdruck, Lähmungsgefühl, Sprachstörung, starker neuer Kopfschmerzqualität oder Schwindel mit Sturz sollten Sie sofort medizinische Hilfe suchen. Bei leichteren, aber zunehmenden Beschwerden melden Sie sich zeitnah in der Praxis.",
+          "translations": [
+            { "language": "en", "text": "With fainting, persistent chest pressure, a feeling of paralysis, speech disturbance, a strong new type of headache, or dizziness with a fall, you should seek medical help immediately. With milder but increasing symptoms, contact the practice promptly." },
+            { "language": "fa", "text": "در صورت غش، فشار ماندگار در قفسه سینه، حس فلج، اختلال گفتار، نوع جدید و شدید سردرد یا سرگیجه همراه با زمین خوردن، باید فوراً کمک پزشکی بگیرید. در علائم خفیف‌تر اما رو به افزایش، به‌موقع با مطب تماس بگیرید." },
+            { "language": "ar", "text": "عند الإغماء، أو ضغط مستمر في الصدر، أو إحساس بالشلل، أو اضطراب في الكلام، أو نوع جديد وشديد من الصداع، أو دوخة مع سقوط، ينبغي طلب مساعدة طبية فورًا. عند أعراض أخف لكنها تزداد، تواصلوا مع العيادة في وقت قريب." },
+            { "language": "tr", "text": "Bayılma, kalıcı göğüs baskısı, felç hissi, konuşma bozukluğu, güçlü ve yeni bir baş ağrısı türü veya düşmeyle birlikte baş dönmesi olursa hemen tıbbi yardım almalısınız. Daha hafif ama artan şikâyetlerde kısa sürede muayenehaneye başvurun." },
+            { "language": "ru", "text": "При обмороке, стойком давлении в груди, ощущении паралича, нарушении речи, сильном новом типе головной боли или головокружении с падением следует немедленно обратиться за медицинской помощью. При более легких, но усиливающихся жалобах своевременно свяжитесь с практикой." },
+            { "language": "ckb", "text": "لە کاتی بێهۆشی، فشاری بەردەوامی سنگ، هەستی فەلج، تێکچوونی قسەکردن، جۆری نوێ و توندی سەرئێشە یان سەرگێژە لەگەڵ کەوتن، پێویستە دەستبەجێ یارمەتی پزیشکی بگەڕێیت. بۆ نیشانەی سووکتر بەڵام زیادبوو، بە کاتی گونجاو پەیوەندی بە مطبەوە بکە." },
+            { "language": "kmr", "text": "Di bêhişbûnê, zexta domdar a sîngê, hesta felcê, astengiya axaftinê, cureyekî nû û xurt ê serêşê an sergêjî bi ketinê de, divê hûn tavilê alîkariya bijîşkî bixwazin. Li ser gilîyên siviktir lê zêde dibin, di demeke nêz de bi polîklînîkê re têkilî daynin." },
+            { "language": "pl", "text": "Przy omdleniu, utrzymującym się ucisku w klatce piersiowej, uczuciu porażenia, zaburzeniu mowy, silnym nowym rodzaju bólu głowy albo zawrotach głowy z upadkiem należy natychmiast szukać pomocy medycznej. Przy lżejszych, ale narastających dolegliwościach proszę szybko skontaktować się z gabinetem." },
+            { "language": "ro", "text": "În caz de leșin, presiune persistentă în piept, senzație de paralizie, tulburare de vorbire, un tip nou și puternic de durere de cap sau amețeală cu cădere, trebuie să căutați imediat ajutor medical. Pentru simptome mai ușoare, dar în creștere, contactați cabinetul în timp util." },
+            { "language": "sq", "text": "Në rast të fikëti, presioni të vazhdueshëm në gjoks, ndjesie paralize, çrregullimi të të folurit, një lloji të ri dhe të fortë dhimbjeje koke ose marramendjeje me rrëzim, duhet të kërkoni menjëherë ndihmë mjekësore. Për shqetësime më të lehta por në rritje, kontaktoni ordinancën në kohë." }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich gern ein kurzes Protokoll führen: Schlafdauer, Zeitpunkt des Schwindels, Blutdruck beim Aufstehen und besondere Belastungen. Reicht das, um beim nächsten Termin die Richtung besser beurteilen zu können?",
+          "translations": [
+            { "language": "en", "text": "Then I would like to keep a short diary: sleep duration, time of dizziness, blood pressure when standing up, and particular strain. Is that enough to assess the direction better at the next appointment?" },
+            { "language": "fa", "text": "پس می‌خواهم یک گزارش کوتاه نگه دارم: مدت خواب، زمان سرگیجه، فشار خون هنگام بلند شدن و فشارهای خاص. آیا این کافی است تا در وقت بعدی مسیر را بهتر ارزیابی کنیم؟" },
+            { "language": "ar", "text": "إذن أود الاحتفاظ بسجل قصير: مدة النوم، ووقت الدوخة، وضغط الدم عند الوقوف، والجهود الخاصة. هل يكفي ذلك لتقييم الاتجاه بشكل أفضل في الموعد القادم؟" },
+            { "language": "tr", "text": "O zaman kısa bir kayıt tutmak isterim: uyku süresi, baş dönmesinin zamanı, ayağa kalkarken tansiyon ve özel yüklenmeler. Bir sonraki randevuda yönü daha iyi değerlendirmek için bu yeterli olur mu?" },
+            { "language": "ru", "text": "Тогда я хотел бы вести короткую запись: продолжительность сна, время головокружения, давление при вставании и особые нагрузки. Этого достаточно, чтобы на следующем приеме лучше оценить направление?" },
+            { "language": "ckb", "text": "ئەوا دەمەوێت تۆمارێکی کورت بنووسم: ماوەی خەو، کاتی سەرگێژە، فشاری خوێن لە کاتی هەستان و بارە تایبەتەکان. ئایا ئەمە بەسە بۆ ئەوەی لە کاتی داهاتوو ئاراستەکە باشتر هەڵبسەنگێنین؟" },
+            { "language": "kmr", "text": "Wê demê ez dixwazim tomarek kurt bigirim: dirêjahiya xewê, dema sergêjiyê, tansiyon dema rabûnê û barên taybet. Ma ev bes e da ku di randevûya din de rê baştir bê nirxandin?" },
+            { "language": "pl", "text": "W takim razie chciałbym/chciałabym prowadzić krótki zapis: długość snu, czas zawrotów głowy, ciśnienie przy wstawaniu i szczególne obciążenia. Czy to wystarczy, aby na następnym terminie lepiej ocenić kierunek?" },
+            { "language": "ro", "text": "Atunci aș dori să țin un jurnal scurt: durata somnului, momentul amețelii, tensiunea la ridicare și solicitările speciale. Este suficient pentru a evalua mai bine direcția la următoarea programare?" },
+            { "language": "sq", "text": "Atëherë dua të mbaj një shënim të shkurtër: kohëzgjatjen e gjumit, kohën e marramendjes, tensionin kur ngrihem dhe ngarkesat e veçanta. A mjafton kjo për ta vlerësuar më mirë drejtimin në takimin e ardhshëm?" }
+          ],
+          "function": "observation-plan",
+          "toneNote": "Konkrete Daten anbieten, ohne sich selbst zu diagnostizieren.",
+          "expectedLearnerAction": "Propose a practical observation diary for the next review."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Ja, das wäre hilfreich. Bringen Sie das Protokoll in zwei Wochen mit. Zusätzlich wiederholen wir den Eisenwert. Wenn die Beschwerden trotz besserem Schlaf und stabiler Werte bleiben, prüfen wir weitere Ursachen gezielter.",
+          "translations": [
+            { "language": "en", "text": "Yes, that would be helpful. Bring the diary in two weeks. In addition, we will repeat the iron value. If the symptoms remain despite better sleep and stable values, we will check further causes more specifically." },
+            { "language": "fa", "text": "بله، مفید خواهد بود. گزارش را دو هفته دیگر بیاورید. علاوه بر آن، مقدار آهن را دوباره بررسی می‌کنیم. اگر علائم با وجود خواب بهتر و مقادیر پایدار باقی بمانند، علت‌های دیگر را هدفمندتر بررسی می‌کنیم." },
+            { "language": "ar", "text": "نعم، سيكون ذلك مفيدًا. أحضروا السجل بعد أسبوعين. بالإضافة إلى ذلك سنعيد فحص قيمة الحديد. إذا بقيت الأعراض رغم نوم أفضل وقيم مستقرة، سنفحص أسبابًا أخرى بشكل أكثر تحديدًا." },
+            { "language": "tr", "text": "Evet, bu yardımcı olur. Kaydı iki hafta sonra getirin. Ayrıca demir değerini tekrar edeceğiz. Daha iyi uyku ve stabil değerlere rağmen şikâyetler kalırsa, başka nedenleri daha hedefli kontrol ederiz." },
+            { "language": "ru", "text": "Да, это было бы полезно. Принесите запись через две недели. Кроме того, мы повторим уровень железа. Если жалобы сохранятся несмотря на лучший сон и стабильные показатели, мы более целенаправленно проверим другие причины." },
+            { "language": "ckb", "text": "بەڵێ، ئەمە یارمەتیدەر دەبێت. تۆمارەکە دوو هەفتەی داهاتوو بهێنە. جگە لەوە، نرخی ئاسن دووبارە دەکەینەوە. ئەگەر نیشانەکان بە وجودی خەوی باشتر و نرخە جێگیرەکان بمێننەوە، هۆکاری تر بە ئامانجدارتر دەپشکنین." },
+            { "language": "kmr", "text": "Erê, ew ê alîkar be. Tomarê piştî du hefteyan bînin. Her wiha em nirxa hesinê dubare dikin. Heke gilî bi xewa baştir û nirxên stabîl jî bimînin, em sedemên din bi armancdartir kontrol dikin." },
+            { "language": "pl", "text": "Tak, to byłoby pomocne. Proszę przynieść zapis za dwa tygodnie. Dodatkowo powtórzymy poziom żelaza. Jeśli dolegliwości pozostaną mimo lepszego snu i stabilnych wartości, sprawdzimy inne przyczyny bardziej celowo." },
+            { "language": "ro", "text": "Da, ar fi util. Aduceți jurnalul peste două săptămâni. În plus, repetăm valoarea fierului. Dacă simptomele rămân în ciuda somnului mai bun și a valorilor stabile, verificăm mai țintit alte cauze." },
+            { "language": "sq", "text": "Po, kjo do të ishte e dobishme. Silleni shënimin pas dy javësh. Përveç kësaj, do ta përsërisim vlerën e hekurit. Nëse shqetësimet mbeten pavarësisht gjumit më të mirë dhe vlerave të qëndrueshme, do të kontrollojmë më me synim shkaqe të tjera." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann halte ich fest: Die derzeitige Erklärung ist plausibel, aber nicht endgültig. Ich führe zwei Wochen ein Protokoll, achte auf die genannten Warnzeichen, lasse den Eisenwert kontrollieren und bespreche mit Ihnen danach, ob die Einschätzung bestätigt wird oder erweitert werden muss.",
+          "translations": [
+            { "language": "en", "text": "Then I will note this: the current explanation is plausible, but not final. I will keep a diary for two weeks, watch for the warning signs named, have the iron value checked, and then discuss with you whether the assessment is confirmed or needs to be expanded." },
+            { "language": "fa", "text": "پس ثبت می‌کنم: توضیح فعلی قابل قبول است، اما نهایی نیست. دو هفته گزارش نگه می‌دارم، به نشانه‌های هشدار گفته‌شده توجه می‌کنم، مقدار آهن را کنترل می‌کنم و بعد با شما بررسی می‌کنم که آیا ارزیابی تأیید می‌شود یا باید گسترش پیدا کند." },
+            { "language": "ar", "text": "إذن أسجل ما يلي: التفسير الحالي معقول، لكنه ليس نهائيًا. سأحتفظ بسجل لمدة أسبوعين، وأنتبه إلى علامات التحذير المذكورة، وأفحص قيمة الحديد، ثم أناقش معكم ما إذا كان التقييم سيتأكد أو يحتاج إلى توسيع." },
+            { "language": "tr", "text": "O zaman şunu not ediyorum: Mevcut açıklama makul, ama kesin değil. İki hafta kayıt tutacağım, belirtilen uyarı işaretlerine dikkat edeceğim, demir değerini kontrol ettireceğim ve ardından değerlendirmenin doğrulanıp doğrulanmadığını veya genişletilmesi gerekip gerekmediğini sizinle konuşacağım." },
+            { "language": "ru", "text": "Тогда я фиксирую: текущее объяснение правдоподобно, но не окончательно. Я две недели веду запись, обращаю внимание на названные тревожные признаки, проверяю уровень железа и затем обсуждаю с вами, подтверждается ли оценка или ее нужно расширить." },
+            { "language": "ckb", "text": "ئەوا تۆمار دەکەم: ڕوونکردنەوەی ئێستا باوەڕپێکراوە، بەڵام کۆتایی نییە. دوو هەفتە تۆمار دەنووسم، ئاگاداری نیشانەکانی ئاگاداریی ناوبراو دەبم، نرخی ئاسن کۆنترۆڵ دەکەم و پاشان لەگەڵ ئێوە باس دەکەم ئایا هەڵسەنگاندنەکە پشتڕاست دەبێتەوە یان پێویستە فراوان بکرێت." },
+            { "language": "kmr", "text": "Wê demê ez diyar dikim: ravekirina niha maqûl e, lê ne dawî ye. Ez du hefte tomar digirim, li nîşanên hişyariyê yên navkirî bal dikim, nirxa hesinê kontrol dikim û paşê bi we re nîqaş dikim ka nirxandin tê piştrastkirin an divê were berfirehkirin." },
+            { "language": "pl", "text": "W takim razie zapisuję: obecne wyjaśnienie jest prawdopodobne, ale nie ostateczne. Przez dwa tygodnie prowadzę zapis, zwracam uwagę na wymienione objawy alarmowe, kontroluję poziom żelaza i potem omawiam z Panią, czy ocena się potwierdza, czy trzeba ją rozszerzyć." },
+            { "language": "ro", "text": "Atunci notez: explicația actuală este plauzibilă, dar nu definitivă. Țin un jurnal două săptămâni, urmăresc semnele de alarmă numite, verific valoarea fierului și discut apoi cu dumneavoastră dacă evaluarea se confirmă sau trebuie extinsă." },
+            { "language": "sq", "text": "Atëherë po e shënoj: shpjegimi aktual është i besueshëm, por jo përfundimtar. Mbaj shënime për dy javë, i kushtoj vëmendje shenjave paralajmëruese të përmendura, kontrolloj vlerën e hekurit dhe pastaj diskutoj me ju nëse vlerësimi konfirmohet apo duhet zgjeruar." }
+          ],
+          "function": "uncertainty-summary",
+          "toneNote": "Plausibilität und Offenheit gemeinsam zusammenfassen.",
+          "expectedLearnerAction": "Summarize current explanation, uncertainty, monitoring, and next review."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte Ihre Einschätzung nicht infrage stellen, sondern besser verstehen, wie sicher sie ist. Welche Befunde stützen diese Erklärung, und welche Punkte bleiben aus Ihrer Sicht noch offen?",
+              "translations": [
+                { "language": "en", "text": "I do not want to question your assessment, but to understand better how certain it is. Which findings support this explanation, and which points remain open from your perspective?" },
+                { "language": "fa", "text": "نمی‌خواهم ارزیابی شما را زیر سؤال ببرم، بلکه می‌خواهم بهتر بفهمم چقدر مطمئن است. کدام یافته‌ها از این توضیح حمایت می‌کنند و از نظر شما کدام نکات هنوز باز مانده‌اند؟" },
+                { "language": "ar", "text": "لا أريد التشكيك في تقييمكم، بل فهم مدى يقينه بشكل أفضل. أي نتائج تدعم هذا التفسير، وأي نقاط لا تزال مفتوحة من وجهة نظركم؟" },
+                { "language": "tr", "text": "Değerlendirmenizi sorgulamak istemiyorum; ne kadar kesin olduğunu daha iyi anlamak istiyorum. Hangi bulgular bu açıklamayı destekliyor ve sizin açınızdan hangi noktalar hâlâ açık?" },
+                { "language": "ru", "text": "Я не хочу ставить под сомнение вашу оценку, а хочу лучше понять, насколько она надежна. Какие данные поддерживают это объяснение и какие пункты, с вашей точки зрения, еще остаются открытыми?" },
+                { "language": "ckb", "text": "ناتەوێت هەڵسەنگاندنەکەتان بخەمە ژێر پرسیار، بەڵکو دەمەوێت باشتر تێبگەم چەند دڵنیایە. کام دۆزینەوە ئەم ڕوونکردنەوەیە پشتگیری دەکات، و لە ڕوانگەی ئێوەوە کام خاڵەکان هێشتا کراوەن؟" },
+                { "language": "kmr", "text": "Ez naxwazim nirxandina we bikim bin pirsê, lê dixwazim baştir fêm bikim ew çiqas piştrast e. Kîjan dîtin ev ravekirinê piştgirî dikin, û ji nêrîna we kîjan xal hîn vekirî dimînin?" },
+                { "language": "pl", "text": "Nie chcę podważać Pani oceny, tylko lepiej zrozumieć, na ile jest pewna. Jakie ustalenia wspierają to wyjaśnienie, a które punkty z Pani perspektywy pozostają jeszcze otwarte?" },
+                { "language": "ro", "text": "Nu vreau să pun la îndoială evaluarea dumneavoastră, ci să înțeleg mai bine cât de sigură este. Ce constatări susțin această explicație și ce puncte rămân încă deschise din perspectiva dumneavoastră?" },
+                { "language": "sq", "text": "Nuk dua ta vë në dyshim vlerësimin tuaj, por të kuptoj më mirë sa i sigurt është. Cilat gjetje e mbështesin këtë shpjegim dhe cilat pika mbeten ende të hapura nga këndvështrimi juaj?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fragt nach Sicherheit und offenen Punkten, ohne die Ärztin anzugreifen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer asks about certainty and open points without attacking the doctor." },
+                { "language": "fa", "text": "قوی: پاسخ درباره میزان اطمینان و نکات باز سؤال می‌کند، بدون اینکه به پزشک حمله کند." },
+                { "language": "ar", "text": "قوي: الجواب يسأل عن درجة اليقين والنقاط المفتوحة من دون مهاجمة الطبيبة." },
+                { "language": "tr", "text": "Güçlü: Yanıt doktora saldırmadan kesinlik ve açık kalan noktaları soruyor." },
+                { "language": "ru", "text": "Сильно: ответ спрашивает о надежности и открытых пунктах, не нападая на врача." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دەربارەی دڵنیایی و خاڵە کراوەکان دەپرسێت، بەبێ ئەوەی هێرش بکاتە سەر پزیشک." },
+                { "language": "kmr", "text": "Xurt e: Bersiv li ser piştrastî û xalên vekirî dipirse, bêyî ku êrîşî bijîşkê bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź pyta o pewność i otwarte punkty, nie atakując lekarki." },
+                { "language": "ro", "text": "Puternic: răspunsul întreabă despre siguranță și puncte deschise fără a ataca medicul." },
+                { "language": "sq", "text": "E fortë: përgjigjja pyet për sigurinë dhe pikat e hapura pa sulmuar mjeken." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sind Sie wirklich sicher, dass nichts Ernstes dahintersteckt?",
+              "translations": [
+                { "language": "en", "text": "Are you really sure that there is nothing serious behind it?" },
+                { "language": "fa", "text": "آیا واقعاً مطمئن هستید که چیز جدی پشت آن نیست؟" },
+                { "language": "ar", "text": "هل أنتم متأكدون حقًا من أنه لا يوجد شيء خطير وراء ذلك؟" },
+                { "language": "tr", "text": "Bunun arkasında ciddi bir şey olmadığından gerçekten emin misiniz?" },
+                { "language": "ru", "text": "Вы действительно уверены, что за этим не стоит ничего серьезного?" },
+                { "language": "ckb", "text": "ئایا بەڕاستی دڵنیان کە شتێکی جدی لەپشتی نییە؟" },
+                { "language": "kmr", "text": "Ma hûn bi rastî piştrast in ku li pişt vê tiştekî giran tune ye?" },
+                { "language": "pl", "text": "Czy jest Pani naprawdę pewna, że nie stoi za tym nic poważnego?" },
+                { "language": "ro", "text": "Sunteți chiar sigură că nu este ceva grav în spate?" },
+                { "language": "sq", "text": "A jeni vërtet e sigurt se nuk ka diçka serioze pas kësaj?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu defensiv. Die Frage benennt keine Befunde, keine offenen Punkte und keine Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too defensive. The question names no findings, no open points, and no criteria." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد دفاعی است. سؤال هیچ یافته، نکته باز یا معیاری را نام نمی‌برد." },
+                { "language": "ar", "text": "مفهوم، لكنه دفاعي جدًا. السؤال لا يذكر أي نتائج أو نقاط مفتوحة أو معايير." },
+                { "language": "tr", "text": "Akla yatkın, ama çok savunmacı. Soru bulgu, açık nokta veya ölçüt belirtmiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком защитно. Вопрос не называет ни данных, ни открытых пунктов, ни критериев." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر بەرگریکارانەیە. پرسیارەکە هیچ دۆزینەوە، خاڵی کراوە یان پێوەر ناودەبات." },
+                { "language": "kmr", "text": "Maqûl e, lê pir berevanî ye. Pirs ne dîtinan, ne xalên vekirî û ne pîvanan nav dike." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt defensywne. Pytanie nie nazywa ustaleń, otwartych punktów ani kryteriów." },
+                { "language": "ro", "text": "Plauzibil, dar prea defensiv. Întrebarea nu numește constatări, puncte deschise sau criterii." },
+                { "language": "sq", "text": "E besueshme, por shumë mbrojtëse. Pyetja nuk përmend gjetje, pika të hapura ose kritere." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Können wir die wahrscheinlichste Erklärung und die Alternativen sauber trennen? Ich möchte wissen, was wir zunächst beobachten, welche Werte wir wiederholen und ab welchem Punkt Ihre Einschätzung sich ändern würde.",
+              "translations": [
+                { "language": "en", "text": "Can we clearly separate the most likely explanation from the alternatives? I would like to know what we will observe first, which values we will repeat, and at what point your assessment would change." },
+                { "language": "fa", "text": "می‌توانیم محتمل‌ترین توضیح و گزینه‌های دیگر را روشن از هم جدا کنیم؟ می‌خواهم بدانم ابتدا چه چیزهایی را مشاهده می‌کنیم، کدام مقادیر را دوباره بررسی می‌کنیم و از چه نقطه‌ای ارزیابی شما تغییر می‌کند." },
+                { "language": "ar", "text": "هل يمكن أن نفصل بوضوح بين التفسير الأكثر احتمالًا والبدائل؟ أود معرفة ما الذي سنراقبه أولًا، وأي قيم سنعيد فحصها، وعند أي نقطة قد يتغير تقييمكم." },
+                { "language": "tr", "text": "En olası açıklamayı ve alternatifleri temiz biçimde ayırabilir miyiz? Önce neyi gözlemleyeceğimizi, hangi değerleri tekrar edeceğimizi ve hangi noktada değerlendirmenizin değişeceğini bilmek istiyorum." },
+                { "language": "ru", "text": "Можем ли мы четко отделить наиболее вероятное объяснение от альтернатив? Я хотел бы знать, что мы сначала будем наблюдать, какие показатели повторим и в какой момент ваша оценка изменилась бы." },
+                { "language": "ckb", "text": "دەتوانین ڕوونکردنەوەی ئەگەری زۆرتر و هەڵبژاردەکانی تر بە پاکی جیا بکەینەوە؟ دەمەوێت بزانم سەرەتا چی چاودێری دەکەین، کام نرخەکان دووبارە دەکەینەوە و لە کام خاڵدا هەڵسەنگاندنەکەتان دەگۆڕێت." },
+                { "language": "kmr", "text": "Ma em dikarin ravekirina herî gengaz û vebijarkên din bi zelalî ji hev veqetînin? Ez dixwazim bizanim em pêşî çi dişopînin, kîjan nirxan dubare dikin û li kîjan xaldê nirxandina we diguhere." },
+                { "language": "pl", "text": "Czy możemy jasno oddzielić najbardziej prawdopodobne wyjaśnienie od alternatyw? Chciałbym/chciałabym wiedzieć, co najpierw obserwujemy, które wartości powtórzymy i od którego punktu Pani ocena mogłaby się zmienić." },
+                { "language": "ro", "text": "Putem separa clar explicația cea mai probabilă de alternative? Aș dori să știu ce observăm mai întâi, ce valori repetăm și din ce punct s-ar schimba evaluarea dumneavoastră." },
+                { "language": "sq", "text": "A mund ta ndajmë qartë shpjegimin më të mundshëm nga alternativat? Dua të di çfarë do të vëzhgojmë fillimisht, cilat vlera do të përsërisim dhe në cilën pikë do të ndryshonte vlerësimi juaj." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Hypothesen, Beobachtung und Änderungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates hypotheses, observation, and change criteria." },
+                { "language": "fa", "text": "قوی: پاسخ فرضیه‌ها، مشاهده و معیارهای تغییر را از هم جدا می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يفصل بين الفرضيات والملاحظة ومعايير التغيير." },
+                { "language": "tr", "text": "Güçlü: Yanıt varsayımları, gözlemi ve değişim ölçütlerini ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ разделяет гипотезы, наблюдение и критерии изменения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گریمانە، چاودێری و پێوەری گۆڕان جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv hîpotez, şopandin û pîvanên guhertinê ji hev veqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela hipotezy, obserwację i kryteria zmiany." },
+                { "language": "ro", "text": "Puternic: răspunsul separă ipotezele, observarea și criteriile de schimbare." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan hipotezat, vëzhgimin dhe kriteret e ndryshimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sollten wir nicht lieber gleich alles Mögliche testen, damit wir nichts übersehen?",
+              "translations": [
+                { "language": "en", "text": "Shouldn't we test everything possible right away so that we do not miss anything?" },
+                { "language": "fa", "text": "بهتر نیست همان اول هر چیزی را که ممکن است آزمایش کنیم تا چیزی را از دست ندهیم؟" },
+                { "language": "ar", "text": "أليس من الأفضل أن نفحص كل شيء ممكن فورًا حتى لا يفوتنا شيء؟" },
+                { "language": "tr", "text": "Hiçbir şeyi kaçırmamak için hemen mümkün olan her şeyi test etmemiz daha iyi olmaz mı?" },
+                { "language": "ru", "text": "Не лучше ли сразу проверить все возможное, чтобы ничего не пропустить?" },
+                { "language": "ckb", "text": "باشتر نییە دەستبەجێ هەموو شتێکی گونجاو تاقی بکەینەوە تا هیچ شتێک لەدەست نەدەین؟" },
+                { "language": "kmr", "text": "Ma çêtir nîne ku em tavilê her tiştê gengaz test bikin da ku tiştek ji dest nedin?" },
+                { "language": "pl", "text": "Czy nie lepiej od razu zbadać wszystkiego, co możliwe, żeby niczego nie przeoczyć?" },
+                { "language": "ro", "text": "Nu ar fi mai bine să testăm imediat tot ce este posibil ca să nu ratăm nimic?" },
+                { "language": "sq", "text": "A nuk do të ishte më mirë të testojmë menjëherë gjithçka të mundshme që të mos humbasim asgjë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu breit. C2-stark wäre eine gezielte Frage danach, wann zusätzliche Tests sinnvoll werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too broad. A C2-level response would ask specifically when additional tests become useful." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی گسترده است. پاسخ در سطح C2 باید مشخص بپرسد چه زمانی آزمایش‌های بیشتر مفید می‌شوند." },
+                { "language": "ar", "text": "مفهوم، لكنه واسع جدًا. الجواب في مستوى C2 يسأل تحديدًا متى تصبح الفحوص الإضافية مفيدة." },
+                { "language": "tr", "text": "Anlaşılır, ama çok geniş. C2 düzeyinde güçlü yanıt, ek testlerin ne zaman anlamlı olacağını özellikle sorar." },
+                { "language": "ru", "text": "Понятно, но слишком широко. Сильный ответ уровня C2 конкретно спрашивал бы, когда дополнительные тесты становятся полезными." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام زۆر فراوانە. وەڵامی بەهێزی C2 بە دیاری دەپرسێت کەی تاقیکردنەوەی زیاتر سوودمەند دەبێت." },
+                { "language": "kmr", "text": "Fêmbar e, lê pir fireh e. Bersiveke xurt a C2 bi taybetî dipirse kengê testên din sûdmend dibin." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt szerokie. Mocna odpowiedź C2 zapytałaby konkretnie, kiedy dodatkowe badania stają się sensowne." },
+                { "language": "ro", "text": "De înțeles, dar prea larg. Un răspuns puternic de C2 ar întreba specific când devin utile testele suplimentare." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e gjerë. Një përgjigje e fortë C2 do të pyeste konkretisht kur bëhen të dobishme testet shtesë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das hilft mir. Damit ich nicht zu spät reagiere: Welche Warnzeichen sollten dazu führen, dass ich nicht bis zur normalen Kontrolle warte?",
+              "translations": [
+                { "language": "en", "text": "That helps me. So that I do not react too late: which warning signs should make me avoid waiting until the regular review?" },
+                { "language": "fa", "text": "این به من کمک می‌کند. برای اینکه دیر واکنش نشان ندهم: کدام نشانه‌های هشدار باید باعث شوند تا کنترل معمول صبر نکنم؟" },
+                { "language": "ar", "text": "هذا يساعدني. حتى لا أتأخر في التصرف: أي علامات تحذير ينبغي أن تجعلني لا أنتظر حتى المراجعة العادية؟" },
+                { "language": "tr", "text": "Bu bana yardımcı oluyor. Geç tepki vermemek için: hangi uyarı işaretleri normal kontrole kadar beklememem gerektiği anlamına gelir?" },
+                { "language": "ru", "text": "Это мне помогает. Чтобы я не отреагировал слишком поздно: какие тревожные признаки должны означать, что мне не следует ждать обычного контроля?" },
+                { "language": "ckb", "text": "ئەمە یارمەتیم دەدات. بۆ ئەوەی درەنگ وەڵام نەدەمەوە: کام نیشانەی ئاگاداری پێویستە ببێتە هۆی ئەوەی چاوەڕێی کۆنترۆڵی ئاسایی نەکەم؟" },
+                { "language": "kmr", "text": "Ev ji min re alîkar e. Da ku ez dereng bersiv nedim: kîjan nîşanên hişyariyê divê bibin sedem ku ez heta kontrola asayî nebinim?" },
+                { "language": "pl", "text": "To mi pomaga. Żebym nie zareagował/zareagowała zbyt późno: jakie objawy alarmowe powinny sprawić, że nie będę czekać do zwykłej kontroli?" },
+                { "language": "ro", "text": "Asta mă ajută. Ca să nu reacționez prea târziu: ce semne de alarmă ar trebui să mă facă să nu aștept până la controlul obișnuit?" },
+                { "language": "sq", "text": "Kjo më ndihmon. Që të mos reagoj shumë vonë: cilat shenja paralajmëruese duhet të bëjnë që të mos pres deri te kontrolli i zakonshëm?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort übersetzt Unsicherheit in klare Sicherheitsgrenzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer translates uncertainty into clear safety boundaries." },
+                { "language": "fa", "text": "قوی: پاسخ عدم قطعیت را به مرزهای روشن ایمنی تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يحول عدم اليقين إلى حدود أمان واضحة." },
+                { "language": "tr", "text": "Güçlü: Yanıt belirsizliği açık güvenlik sınırlarına dönüştürüyor." },
+                { "language": "ru", "text": "Сильно: ответ переводит неопределенность в четкие границы безопасности." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نادڵنیایی دەگۆڕێت بۆ سنووری ڕوونی سەلامەتی." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nediyariyê vediguhezîne sînorên ewlehiyê yên zelal." },
+                { "language": "pl", "text": "Mocne: odpowiedź przekłada niepewność na jasne granice bezpieczeństwa." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă incertitudinea în limite clare de siguranță." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen pasigurinë në kufij të qartë sigurie." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Soll ich mich einfach melden, wenn es schlimmer wird?",
+              "translations": [
+                { "language": "en", "text": "Should I simply contact you if it gets worse?" },
+                { "language": "fa", "text": "آیا فقط اگر بدتر شد تماس بگیرم؟" },
+                { "language": "ar", "text": "هل أتواصل ببساطة إذا أصبح الأمر أسوأ؟" },
+                { "language": "tr", "text": "Sadece kötüleşirse size başvurayım mı?" },
+                { "language": "ru", "text": "Мне просто связаться с вами, если станет хуже?" },
+                { "language": "ckb", "text": "ئایا تەنها ئەگەر خراپتر بوو پەیوەندی بکەم؟" },
+                { "language": "kmr", "text": "Ma ez tenê heke xirabtir bibe têkilî daynim?" },
+                { "language": "pl", "text": "Czy mam po prostu się zgłosić, jeśli będzie gorzej?" },
+                { "language": "ro", "text": "Să vă contactez pur și simplu dacă se agravează?" },
+                { "language": "sq", "text": "A t'ju kontaktoj thjesht nëse përkeqësohet?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau. Die Frage braucht konkrete Warnzeichen, damit Patient und Praxis gleich verstehen, wann früheres Handeln nötig ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise. The question needs concrete warning signs so the patient and practice understand equally when earlier action is needed." },
+                { "language": "fa", "text": "بیش از حد مبهم است. سؤال به نشانه‌های هشدار مشخص نیاز دارد تا بیمار و مطب یکسان بفهمند چه زمانی اقدام زودتر لازم است." },
+                { "language": "ar", "text": "غير دقيق بما يكفي. يحتاج السؤال إلى علامات تحذير محددة حتى يفهم المريض والعيادة متى يلزم التصرف مبكرًا." },
+                { "language": "tr", "text": "Çok belirsiz. Soru somut uyarı işaretleri gerektirir; böylece hasta ve muayenehane ne zaman daha erken hareket gerektiğini aynı şekilde anlar." },
+                { "language": "ru", "text": "Слишком неточно. Вопросу нужны конкретные тревожные признаки, чтобы пациент и практика одинаково понимали, когда нужно действовать раньше." },
+                { "language": "ckb", "text": "زۆر نادیارە. پرسیارەکە پێویستی بە نیشانەی ئاگاداریی دیاریکراو هەیە تا نەخۆش و مطب بە یەک شێوە تێبگەن کەی کردارێکی زووتر پێویستە." },
+                { "language": "kmr", "text": "Pir nezelal e. Pirs pêwîstî bi nîşanên hişyariyê yên konkret heye da ku nexweş û polîklînîk wekhev fêm bikin kengê çalakiyeke zûtir pêwîst e." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne. Pytanie potrzebuje konkretnych objawów alarmowych, aby pacjent i gabinet tak samo rozumieli, kiedy potrzebne jest wcześniejsze działanie." },
+                { "language": "ro", "text": "Prea imprecis. Întrebarea are nevoie de semne concrete de alarmă, astfel încât pacientul și cabinetul să înțeleagă la fel când este necesară o acțiune mai devreme." },
+                { "language": "sq", "text": "Shumë e pasaktë. Pyetja ka nevojë për shenja konkrete paralajmëruese që pacienti dhe ordinanca të kuptojnë njësoj kur nevojitet veprim më i hershëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann würde ich gern ein kurzes Protokoll führen: Schlafdauer, Zeitpunkt des Schwindels, Blutdruck beim Aufstehen und besondere Belastungen. Reicht das, um beim nächsten Termin die Richtung besser beurteilen zu können?",
+              "translations": [
+                { "language": "en", "text": "Then I would like to keep a short diary: sleep duration, time of dizziness, blood pressure when standing up, and particular strain. Is that enough to assess the direction better at the next appointment?" },
+                { "language": "fa", "text": "پس می‌خواهم یک گزارش کوتاه نگه دارم: مدت خواب، زمان سرگیجه، فشار خون هنگام بلند شدن و فشارهای خاص. آیا این کافی است تا در وقت بعدی مسیر را بهتر ارزیابی کنیم؟" },
+                { "language": "ar", "text": "إذن أود الاحتفاظ بسجل قصير: مدة النوم، ووقت الدوخة، وضغط الدم عند الوقوف، والجهود الخاصة. هل يكفي ذلك لتقييم الاتجاه بشكل أفضل في الموعد القادم؟" },
+                { "language": "tr", "text": "O zaman kısa bir kayıt tutmak isterim: uyku süresi, baş dönmesinin zamanı, ayağa kalkarken tansiyon ve özel yüklenmeler. Bir sonraki randevuda yönü daha iyi değerlendirmek için bu yeterli olur mu?" },
+                { "language": "ru", "text": "Тогда я хотел бы вести короткую запись: продолжительность сна, время головокружения, давление при вставании и особые нагрузки. Этого достаточно, чтобы на следующем приеме лучше оценить направление?" },
+                { "language": "ckb", "text": "ئەوا دەمەوێت تۆمارێکی کورت بنووسم: ماوەی خەو، کاتی سەرگێژە، فشاری خوێن لە کاتی هەستان و بارە تایبەتەکان. ئایا ئەمە بەسە بۆ ئەوەی لە کاتی داهاتوو ئاراستەکە باشتر هەڵبسەنگێنین؟" },
+                { "language": "kmr", "text": "Wê demê ez dixwazim tomarek kurt bigirim: dirêjahiya xewê, dema sergêjiyê, tansiyon dema rabûnê û barên taybet. Ma ev bes e da ku di randevûya din de rê baştir bê nirxandin?" },
+                { "language": "pl", "text": "W takim razie chciałbym/chciałabym prowadzić krótki zapis: długość snu, czas zawrotów głowy, ciśnienie przy wstawaniu i szczególne obciążenia. Czy to wystarczy, aby na następnym terminie lepiej ocenić kierunek?" },
+                { "language": "ro", "text": "Atunci aș dori să țin un jurnal scurt: durata somnului, momentul amețelii, tensiunea la ridicare și solicitările speciale. Este suficient pentru a evalua mai bine direcția la următoarea programare?" },
+                { "language": "sq", "text": "Atëherë dua të mbaj një shënim të shkurtër: kohëzgjatjen e gjumit, kohën e marramendjes, tensionin kur ngrihem dhe ngarkesat e veçanta. A mjafton kjo për ta vlerësuar më mirë drejtimin në takimin e ardhshëm?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort liefert verwertbare Beobachtungen, ohne eine Eigendiagnose zu formulieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer provides usable observations without formulating a self-diagnosis." },
+                { "language": "fa", "text": "قوی: پاسخ مشاهده‌های قابل استفاده می‌دهد، بدون اینکه خودتشخیصی مطرح کند." },
+                { "language": "ar", "text": "قوي: الجواب يقدم ملاحظات قابلة للاستخدام من دون صياغة تشخيص ذاتي." },
+                { "language": "tr", "text": "Güçlü: Yanıt, kendi kendine tanı koymadan kullanılabilir gözlemler sunuyor." },
+                { "language": "ru", "text": "Сильно: ответ дает пригодные наблюдения, не формулируя самодиагноз." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە چاودێریی بەکارهاتوو پێشکەش دەکات، بەبێ ئەوەی خۆدەستنیشانکردن داڕێژێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv şopandinên bikêr dide, bêyî ku teşhîsa xwe bi xwe formule bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź dostarcza użytecznych obserwacji, nie formułując samodiagnozy." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă observații utilizabile fără a formula un autodiagnostic." },
+                { "language": "sq", "text": "E fortë: përgjigjja jep vëzhgime të përdorshme pa formuluar vetëdiagnostikim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich werde einfach darauf achten, ob ich mich insgesamt besser fühle.",
+              "translations": [
+                { "language": "en", "text": "I will simply pay attention to whether I feel better overall." },
+                { "language": "fa", "text": "فقط توجه می‌کنم که در مجموع حالم بهتر می‌شود یا نه." },
+                { "language": "ar", "text": "سأنتبه ببساطة إلى ما إذا كنت أشعر بتحسن عام." },
+                { "language": "tr", "text": "Sadece genel olarak daha iyi hissedip hissetmediğime dikkat ederim." },
+                { "language": "ru", "text": "Я просто буду обращать внимание, чувствую ли себя в целом лучше." },
+                { "language": "ckb", "text": "تەنها ئاگادار دەبم ئایا بە گشتی باشتر هەست دەکەم یان نا." },
+                { "language": "kmr", "text": "Ez tenê bala xwe didim ka ez bi giştî baştir hîs dikim an na." },
+                { "language": "pl", "text": "Będę po prostu zwracać uwagę, czy ogólnie czuję się lepiej." },
+                { "language": "ro", "text": "Voi fi atent doar dacă mă simt în general mai bine." },
+                { "language": "sq", "text": "Thjesht do të vërej nëse ndihem më mirë në përgjithësi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Für die nächste Beurteilung fehlen konkrete Beobachtungsgrößen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. Concrete observation measures are missing for the next assessment." },
+                { "language": "fa", "text": "بیش از حد کلی است. برای ارزیابی بعدی، شاخص‌های مشاهده مشخص کم است." },
+                { "language": "ar", "text": "عام جدًا. تنقص مقاييس ملاحظة محددة للتقييم التالي." },
+                { "language": "tr", "text": "Çok genel. Sonraki değerlendirme için somut gözlem ölçüleri eksik." },
+                { "language": "ru", "text": "Слишком общее. Для следующей оценки не хватает конкретных показателей наблюдения." },
+                { "language": "ckb", "text": "زۆر گشتییە. بۆ هەڵسەنگاندنی داهاتوو پێوانەی دیاریکراوی چاودێری کەمە." },
+                { "language": "kmr", "text": "Pir giştî ye. Ji bo nirxandina din pîvanên konkret ên şopandinê kêm in." },
+                { "language": "pl", "text": "Zbyt ogólne. Do następnej oceny brakuje konkretnych wielkości obserwacji." },
+                { "language": "ro", "text": "Prea general. Lipsesc măsuri concrete de observare pentru evaluarea următoare." },
+                { "language": "sq", "text": "Shumë e përgjithshme. Për vlerësimin e radhës mungojnë masa konkrete vëzhgimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann halte ich fest: Die derzeitige Erklärung ist plausibel, aber nicht endgültig. Ich führe zwei Wochen ein Protokoll, achte auf die genannten Warnzeichen, lasse den Eisenwert kontrollieren und bespreche mit Ihnen danach, ob die Einschätzung bestätigt wird oder erweitert werden muss.",
+              "translations": [
+                { "language": "en", "text": "Then I will note this: the current explanation is plausible, but not final. I will keep a diary for two weeks, watch for the warning signs named, have the iron value checked, and then discuss with you whether the assessment is confirmed or needs to be expanded." },
+                { "language": "fa", "text": "پس ثبت می‌کنم: توضیح فعلی قابل قبول است، اما نهایی نیست. دو هفته گزارش نگه می‌دارم، به نشانه‌های هشدار گفته‌شده توجه می‌کنم، مقدار آهن را کنترل می‌کنم و بعد با شما بررسی می‌کنم که آیا ارزیابی تأیید می‌شود یا باید گسترش پیدا کند." },
+                { "language": "ar", "text": "إذن أسجل ما يلي: التفسير الحالي معقول، لكنه ليس نهائيًا. سأحتفظ بسجل لمدة أسبوعين، وأنتبه إلى علامات التحذير المذكورة، وأفحص قيمة الحديد، ثم أناقش معكم ما إذا كان التقييم سيتأكد أو يحتاج إلى توسيع." },
+                { "language": "tr", "text": "O zaman şunu not ediyorum: Mevcut açıklama makul, ama kesin değil. İki hafta kayıt tutacağım, belirtilen uyarı işaretlerine dikkat edeceğim, demir değerini kontrol ettireceğim ve ardından değerlendirmenin doğrulanıp doğrulanmadığını veya genişletilmesi gerekip gerekmediğini sizinle konuşacağım." },
+                { "language": "ru", "text": "Тогда я фиксирую: текущее объяснение правдоподобно, но не окончательно. Я две недели веду запись, обращаю внимание на названные тревожные признаки, проверяю уровень железа и затем обсуждаю с вами, подтверждается ли оценка или ее нужно расширить." },
+                { "language": "ckb", "text": "ئەوا تۆمار دەکەم: ڕوونکردنەوەی ئێستا باوەڕپێکراوە، بەڵام کۆتایی نییە. دوو هەفتە تۆمار دەنووسم، ئاگاداری نیشانەکانی ئاگاداریی ناوبراو دەبم، نرخی ئاسن کۆنترۆڵ دەکەم و پاشان لەگەڵ ئێوە باس دەکەم ئایا هەڵسەنگاندنەکە پشتڕاست دەبێتەوە یان پێویستە فراوان بکرێت." },
+                { "language": "kmr", "text": "Wê demê ez diyar dikim: ravekirina niha maqûl e, lê ne dawî ye. Ez du hefte tomar digirim, li nîşanên hişyariyê yên navkirî bal dikim, nirxa hesinê kontrol dikim û paşê bi we re nîqaş dikim ka nirxandin tê piştrastkirin an divê were berfirehkirin." },
+                { "language": "pl", "text": "W takim razie zapisuję: obecne wyjaśnienie jest prawdopodobne, ale nie ostateczne. Przez dwa tygodnie prowadzę zapis, zwracam uwagę na wymienione objawy alarmowe, kontroluję poziom żelaza i potem omawiam z Panią, czy ocena się potwierdza, czy trzeba ją rozszerzyć." },
+                { "language": "ro", "text": "Atunci notez: explicația actuală este plauzibilă, dar nu definitivă. Țin un jurnal două săptămâni, urmăresc semnele de alarmă numite, verific valoarea fierului și discut apoi cu dumneavoastră dacă evaluarea se confirmă sau trebuie extinsă." },
+                { "language": "sq", "text": "Atëherë po e shënoj: shpjegimi aktual është i besueshëm, por jo përfundimtar. Mbaj shënime për dy javë, i kushtoj vëmendje shenjave paralajmëruese të përmendura, kontrolloj vlerën e hekurit dhe pastaj diskutoj me ju nëse vlerësimi konfirmohet apo duhet zgjeruar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fasst Plausibilität, Offenheit, Beobachtung, Warnzeichen und Kontrolle zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer summarizes plausibility, openness, observation, warning signs, and review." },
+                { "language": "fa", "text": "قوی: پاسخ قابل قبول بودن، باز بودن موضوع، مشاهده، نشانه‌های هشدار و کنترل را جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يلخص المعقولية والانفتاح والملاحظة وعلامات التحذير والمراجعة." },
+                { "language": "tr", "text": "Güçlü: Yanıt makullüğü, açık kalan noktaları, gözlemi, uyarı işaretlerini ve kontrolü özetliyor." },
+                { "language": "ru", "text": "Сильно: ответ суммирует правдоподобие, открытость, наблюдение, тревожные признаки и контроль." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە باوەڕپێکراوی، کراوەبوون، چاودێری، نیشانەکانی ئاگاداری و کۆنترۆڵ پوختە دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv maqûlbûn, vekirîbûn, şopandin, nîşanên hişyariyê û kontrolê kurt dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź podsumowuje prawdopodobieństwo, otwartość, obserwację, objawy alarmowe i kontrolę." },
+                { "language": "ro", "text": "Puternic: răspunsul rezumă plauzibilitatea, deschiderea, observarea, semnele de alarmă și controlul." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmbledh besueshmërinë, hapjen, vëzhgimin, shenjat paralajmëruese dhe kontrollin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann warte ich zwei Wochen und hoffe, dass es besser wird.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will wait two weeks and hope that it gets better." },
+                { "language": "fa", "text": "خوب، پس دو هفته صبر می‌کنم و امیدوارم بهتر شود." },
+                { "language": "ar", "text": "حسنًا، إذن سأنتظر أسبوعين وآمل أن يتحسن الأمر." },
+                { "language": "tr", "text": "Tamam, o zaman iki hafta beklerim ve daha iyi olmasını umarım." },
+                { "language": "ru", "text": "Хорошо, тогда я подожду две недели и надеюсь, что станет лучше." },
+                { "language": "ckb", "text": "باشە، ئەوا دوو هەفتە چاوەڕێ دەکەم و هیوادارم باشتر بێت." },
+                { "language": "kmr", "text": "Baş e, wê demê ez du hefteyan disekinim û hêvî dikim baştir bibe." },
+                { "language": "pl", "text": "Dobrze, w takim razie poczekam dwa tygodnie i mam nadzieję, że będzie lepiej." },
+                { "language": "ro", "text": "Bine, atunci aștept două săptămâni și sper că se va îmbunătăți." },
+                { "language": "sq", "text": "Mirë, atëherë pres dy javë dhe shpresoj që të përmirësohet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu passiv. Es fehlen Protokoll, Warnzeichen, Kontrollwert und die Frage, wann die Einschätzung erweitert wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive. The diary, warning signs, control value, and the question of when the assessment is expanded are missing." },
+                { "language": "fa", "text": "بیش از حد منفعل است. گزارش، نشانه‌های هشدار، مقدار کنترلی و سؤال درباره زمان گسترش ارزیابی کم است." },
+                { "language": "ar", "text": "سلبي جدًا. ينقص السجل وعلامات التحذير والقيمة التي ستُراقب والسؤال عن موعد توسيع التقييم." },
+                { "language": "tr", "text": "Çok pasif. Kayıt, uyarı işaretleri, kontrol değeri ve değerlendirmenin ne zaman genişletileceği sorusu eksik." },
+                { "language": "ru", "text": "Слишком пассивно. Не хватает записи, тревожных признаков, контрольного показателя и вопроса, когда оценку расширят." },
+                { "language": "ckb", "text": "زۆر پاسیڤە. تۆمار، نیشانەکانی ئاگاداری، نرخی کۆنترۆڵ و پرسیاری کەی هەڵسەنگاندنەکە فراوان دەکرێت کەمە." },
+                { "language": "kmr", "text": "Pir pasîf e. Tomar, nîşanên hişyariyê, nirxa kontrolê û pirsa kengê nirxandin tê berfirehkirin kêm in." },
+                { "language": "pl", "text": "Zbyt pasywne. Brakuje zapisu, objawów alarmowych, wartości kontrolnej i pytania, kiedy ocena zostanie rozszerzona." },
+                { "language": "ro", "text": "Prea pasiv. Lipsesc jurnalul, semnele de alarmă, valoarea de control și întrebarea când se extinde evaluarea." },
+                { "language": "sq", "text": "Shumë pasive. Mungojnë shënimi, shenjat paralajmëruese, vlera e kontrollit dhe pyetja se kur zgjerohet vlerësimi." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "respectful-uncertainty",
+          "text": "Unsicherheit lässt sich höflich klären, wenn Anerkennung und präzise Nachfrage zusammenkommen.",
+          "translations": [
+            { "language": "en", "text": "Uncertainty can be clarified politely when acknowledgement and precise questioning come together." },
+            { "language": "fa", "text": "عدم قطعیت زمانی مؤدبانه روشن می‌شود که پذیرش ارزیابی و سؤال دقیق با هم بیایند." },
+            { "language": "ar", "text": "يمكن توضيح عدم اليقين بتهذيب عندما يجتمع الاعتراف والتساؤل الدقيق." },
+            { "language": "tr", "text": "Belirsizlik, kabul ve kesin soru birlikte geldiğinde nazikçe netleştirilebilir." },
+            { "language": "ru", "text": "Неопределенность можно вежливо прояснить, когда признание оценки сочетается с точным вопросом." },
+            { "language": "ckb", "text": "نادڵنیایی دەتوانرێت بە ڕێزەوە ڕوون بکرێت کاتێک پەسەندکردن و پرسیاری ورد پێکەوە دێن." },
+            { "language": "kmr", "text": "Nediyarî dikare bi nezaket were zelalkirin dema qebûlkirin û pirsên hûr bi hev re tên." },
+            { "language": "pl", "text": "Niepewność można uprzejmie wyjaśnić, gdy uznanie oceny łączy się z precyzyjnym pytaniem." },
+            { "language": "ro", "text": "Incertitudinea poate fi clarificată politicos când recunoașterea și întrebarea precisă vin împreună." },
+            { "language": "sq", "text": "Pasiguria mund të sqarohet me mirësjellje kur pranimi dhe pyetja e saktë vijnë së bashku." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "structured-clarification",
+          "text": "Eine gute Nachfrage trennt wahrscheinliche Erklärung, Alternativen und Änderungskriterien.",
+          "translations": [
+            { "language": "en", "text": "A good question separates likely explanation, alternatives, and change criteria." },
+            { "language": "fa", "text": "سؤال خوب توضیح محتمل، گزینه‌های دیگر و معیارهای تغییر را جدا می‌کند." },
+            { "language": "ar", "text": "السؤال الجيد يفصل بين التفسير المحتمل والبدائل ومعايير التغيير." },
+            { "language": "tr", "text": "İyi bir soru olası açıklamayı, alternatifleri ve değişim ölçütlerini ayırır." },
+            { "language": "ru", "text": "Хороший вопрос отделяет вероятное объяснение, альтернативы и критерии изменения." },
+            { "language": "ckb", "text": "پرسیاری باش ڕوونکردنەوەی ئەگەری، هەڵبژاردەکانی تر و پێوەری گۆڕان جیا دەکاتەوە." },
+            { "language": "kmr", "text": "Pirsek baş ravekirina gengaz, vebijarkên din û pîvanên guhertinê ji hev veqetîne." },
+            { "language": "pl", "text": "Dobre pytanie oddziela prawdopodobne wyjaśnienie, alternatywy i kryteria zmiany." },
+            { "language": "ro", "text": "O întrebare bună separă explicația probabilă, alternativele și criteriile de schimbare." },
+            { "language": "sq", "text": "Një pyetje e mirë ndan shpjegimin e mundshëm, alternativat dhe kriteret e ndryshimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "safety-boundaries",
+          "text": "Warnzeichen machen den Umgang mit medizinischer Unsicherheit sicherer.",
+          "translations": [
+            { "language": "en", "text": "Warning signs make handling medical uncertainty safer." },
+            { "language": "fa", "text": "نشانه‌های هشدار برخورد با عدم قطعیت پزشکی را ایمن‌تر می‌کنند." },
+            { "language": "ar", "text": "علامات التحذير تجعل التعامل مع عدم اليقين الطبي أكثر أمانًا." },
+            { "language": "tr", "text": "Uyarı işaretleri tıbbi belirsizlikle baş etmeyi daha güvenli kılar." },
+            { "language": "ru", "text": "Тревожные признаки делают обращение с медицинской неопределенностью безопаснее." },
+            { "language": "ckb", "text": "نیشانەکانی ئاگاداری مامەڵەکردن لەگەڵ نادڵنیایی پزیشکی سەلامەتتر دەکەن." },
+            { "language": "kmr", "text": "Nîşanên hişyariyê têkiliyê bi nediyariya bijîşkî ewletir dikin." },
+            { "language": "pl", "text": "Objawy alarmowe czynią radzenie sobie z niepewnością medyczną bezpieczniejszym." },
+            { "language": "ro", "text": "Semnele de alarmă fac gestionarea incertitudinii medicale mai sigură." },
+            { "language": "sq", "text": "Shenjat paralajmëruese e bëjnë trajtimin e pasigurisë mjekësore më të sigurt." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "balanced-summary",
+          "text": "C2-tauglich ist die Zusammenfassung, wenn sie Plausibilität und Offenheit gleichzeitig hält.",
+          "translations": [
+            { "language": "en", "text": "The summary is C2-appropriate when it holds plausibility and openness at the same time." },
+            { "language": "fa", "text": "جمع‌بندی زمانی مناسب C2 است که قابل قبول بودن و باز بودن موضوع را هم‌زمان نگه دارد." },
+            { "language": "ar", "text": "يكون الملخص مناسبًا لـ C2 عندما يحافظ على المعقولية والانفتاح في الوقت نفسه." },
+            { "language": "tr", "text": "Özet, makullüğü ve açıklığı aynı anda taşıdığında C2 düzeyine uygundur." },
+            { "language": "ru", "text": "Резюме соответствует C2, когда одновременно удерживает правдоподобие и открытость." },
+            { "language": "ckb", "text": "پوختەکە کاتێک گونجاوی C2 ـە کە باوەڕپێکراوی و کراوەبوون بەیەکەوە بپارێزێت." },
+            { "language": "kmr", "text": "Kurte dema ji bo C2 guncav e ku maqûlbûn û vekirîbûn di heman demê de bigire." },
+            { "language": "pl", "text": "Podsumowanie jest odpowiednie dla C2, gdy jednocześnie utrzymuje prawdopodobieństwo i otwartość." },
+            { "language": "ro", "text": "Rezumatul este potrivit pentru C2 când menține simultan plauzibilitatea și deschiderea." },
+            { "language": "sq", "text": "Përmbledhja është e përshtatshme për C2 kur mban njëkohësisht besueshmërinë dhe hapjen." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-diagnostic-uncertainty",
+          "placement": "detail-header",
+          "purpose": "Illustrate a calm doctor-office conversation where a patient asks respectfully about diagnostic uncertainty and warning signs.",
+          "altText": "Ein Patient und eine Ärztin sprechen in einer deutschen Praxis ruhig über Untersuchungsergebnisse, Unsicherheit und nächste Beobachtungsschritte.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A patient and a doctor calmly discuss examination results, uncertainty, and next observation steps in a German medical office." },
+            { "language": "fa", "text": "یک بیمار و پزشک در مطب آلمان با آرامش درباره نتایج معاینه، عدم قطعیت و گام‌های بعدی مشاهده صحبت می‌کنند." },
+            { "language": "ar", "text": "مريض وطبيبة يناقشان بهدوء في عيادة ألمانية نتائج الفحص وعدم اليقين وخطوات الملاحظة التالية." },
+            { "language": "tr", "text": "Bir hasta ve doktor, Alman bir muayenehanede muayene sonuçları, belirsizlik ve sonraki gözlem adımları hakkında sakin biçimde konuşuyor." },
+            { "language": "ru", "text": "Пациент и врач спокойно обсуждают в немецком кабинете результаты обследования, неопределенность и следующие шаги наблюдения." },
+            { "language": "ckb", "text": "نەخۆشێک و پزیشکێک لە مطبێکی ئەڵمانیدا بە ئارامی دەربارەی ئەنجامی پشکنین، نادڵنیایی و هەنگاوەکانی داهاتووی چاودێری قسە دەکەن." },
+            { "language": "kmr", "text": "Nexweşek û bijîşkek li polîklînîkeke Alman bi aramî li ser encamên kontrolê, nediyarî û gavên din ên şopandinê diaxivin." },
+            { "language": "pl", "text": "Pacjent i lekarka spokojnie omawiają w niemieckim gabinecie wyniki badania, niepewność i następne kroki obserwacji." },
+            { "language": "ro", "text": "Un pacient și o doctoriță discută calm într-un cabinet german rezultatele examinării, incertitudinea și următorii pași de observare." },
+            { "language": "sq", "text": "Një pacient dhe një mjeke diskutojnë qetësisht në një ordinancë gjermane rezultatet e kontrollit, pasigurinë dhe hapat e ardhshëm të vëzhgimit." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult patient and doctor seated in a German medical office, simple checklist with non-readable marks, calm respectful discussion about uncertainty and warning signs, no logos, no private data, no dramatic emergency scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

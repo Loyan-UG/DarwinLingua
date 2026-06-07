@@ -1,0 +1,970 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-19-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 19 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-in-der-apotheke-nebenwirkungen-nachfragen",
+      "title": "In der Apotheke Nebenwirkungen nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask about side effects at the pharmacy" },
+        { "language": "fa", "text": "پرسیدن درباره عوارض دارو در داروخانه" },
+        { "language": "ar", "text": "السؤال عن الآثار الجانبية في الصيدلية" },
+        { "language": "tr", "text": "Eczanede yan etkileri sormak" },
+        { "language": "ru", "text": "Спросить в аптеке о побочных эффектах" },
+        { "language": "ckb", "text": "پرسیارکردن لە دەرمانخانە دەربارەی کاریگەرییە لاوەکییەکان" },
+        { "language": "kmr", "text": "Li dermanxaneyê li ser bandorên alî pirsîn" },
+        { "language": "pl", "text": "Zapytać w aptece o skutki uboczne" },
+        { "language": "ro", "text": "Să întrebi la farmacie despre reacții adverse" },
+        { "language": "sq", "text": "Të pyesësh në farmaci për efektet anësore" }
+      ],
+      "description": "Du holst ein neues Medikament in der Apotheke ab. Du fragst nach Einnahme, möglichen Nebenwirkungen, Alltagseinschränkungen und Warnzeichen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You pick up a new medicine at the pharmacy. You ask about how to take it, possible side effects, daily-life restrictions, and warning signs." },
+        { "language": "fa", "text": "در داروخانه یک داروی جدید می‌گیری. درباره نحوه مصرف، عوارض احتمالی، محدودیت‌های روزمره و علائم هشدار سؤال می‌کنی." },
+        { "language": "ar", "text": "تستلم دواءً جديدًا في الصيدلية. تسأل عن طريقة تناوله والآثار الجانبية المحتملة والقيود اليومية وعلامات التحذير." },
+        { "language": "tr", "text": "Eczaneden yeni bir ilaç alıyorsun. Kullanım, olası yan etkiler, günlük kısıtlamalar ve uyarı işaretleri hakkında soruyorsun." },
+        { "language": "ru", "text": "Ты забираешь новое лекарство в аптеке. Ты спрашиваешь о приеме, возможных побочных эффектах, ограничениях в быту и тревожных признаках." },
+        { "language": "ckb", "text": "لە دەرمانخانە دەرمانێکی نوێ وەردەگریت. دەربارەی چۆنیەتی خواردن، کاریگەریی لاوەکیی گونجاو، سنوورداریی ڕۆژانە و نیشانەکانی ئاگاداری دەپرسی." },
+        { "language": "kmr", "text": "Tu li dermanxaneyê dermanekî nû werdigîrî. Tu li ser awayê xwarinê, bandorên alî yên gengaz, sînordariyên rojane û nîşanên hişyariyê dipirsî." },
+        { "language": "pl", "text": "Odbierasz w aptece nowy lek. Pytasz o sposób przyjmowania, możliwe skutki uboczne, ograniczenia w codzienności i sygnały ostrzegawcze." },
+        { "language": "ro", "text": "Ridici un medicament nou de la farmacie. Întrebi despre administrare, posibile reacții adverse, limitări zilnice și semne de avertizare." },
+        { "language": "sq", "text": "Merr një ilaç të ri në farmaci. Pyet për mënyrën e përdorimit, efektet anësore të mundshme, kufizimet e përditshme dhe shenjat paralajmëruese." }
+      ],
+      "learnerGoal": "Du kannst in der Apotheke Dosierung, Nebenwirkungen, Alltagseinschränkungen und den richtigen nächsten Schritt sicher klären.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can safely clarify dosage, side effects, daily-life restrictions, and the right next step at the pharmacy." },
+        { "language": "fa", "text": "می‌توانی در داروخانه مقدار مصرف، عوارض، محدودیت‌های روزمره و قدم بعدی درست را با اطمینان روشن کنی." },
+        { "language": "ar", "text": "يمكنك في الصيدلية توضيح الجرعة والآثار الجانبية والقيود اليومية والخطوة التالية الصحيحة بثقة." },
+        { "language": "tr", "text": "Eczanede dozajı, yan etkileri, günlük kısıtlamaları ve doğru sonraki adımı güvenli şekilde netleştirebilirsin." },
+        { "language": "ru", "text": "Ты можешь уверенно уточнить в аптеке дозировку, побочные эффекты, ограничения в быту и правильный следующий шаг." },
+        { "language": "ckb", "text": "دەتوانیت لە دەرمانخانە بڕی خواردن، کاریگەرییە لاوەکییەکان، سنووردارییە ڕۆژانەکان و هەنگاوی دواتری دروست بە دڵنیایی ڕوون بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî li dermanxaneyê doz, bandorên alî, sînordariyên rojane û gava rast a din bi ewlehî zelal bikî." },
+        { "language": "pl", "text": "Potrafisz w aptece pewnie wyjaśnić dawkowanie, skutki uboczne, ograniczenia w codzienności i właściwy następny krok." },
+        { "language": "ro", "text": "Poți clarifica sigur la farmacie doza, reacțiile adverse, limitările zilnice și pasul următor corect." },
+        { "language": "sq", "text": "Mund të sqarosh me siguri në farmaci dozën, efektet anësore, kufizimet e përditshme dhe hapin e duhur pasues." }
+      ],
+      "cefrLevel": "B1",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "shopping-and-services"
+      ],
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2400,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "pharmacist",
+          "displayName": "Apothekerin",
+          "translations": [
+            { "language": "en", "text": "Pharmacist" },
+            { "language": "fa", "text": "داروساز" },
+            { "language": "ar", "text": "الصيدلانية" },
+            { "language": "tr", "text": "Eczacı" },
+            { "language": "ru", "text": "Фармацевт" },
+            { "language": "ckb", "text": "دەرمانساز" },
+            { "language": "kmr", "text": "Dermanvan" },
+            { "language": "pl", "text": "Farmaceutka" },
+            { "language": "ro", "text": "Farmacistă" },
+            { "language": "sq", "text": "Farmaciste" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kunde",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "الزبون" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиент" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Kiryar" },
+            { "language": "pl", "text": "Klient" },
+            { "language": "ro", "text": "Client" },
+            { "language": "sq", "text": "Klient" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "pharmacist",
+          "baseText": "Hier ist Ihr Medikament. Nehmen Sie morgens und abends jeweils eine Tablette nach dem Essen mit ausreichend Wasser.",
+          "translations": [
+            { "language": "en", "text": "Here is your medicine. Take one tablet in the morning and one in the evening after food with enough water." },
+            { "language": "fa", "text": "این داروی شماست. صبح و شب هر بار یک قرص بعد از غذا با آب کافی مصرف کنید." },
+            { "language": "ar", "text": "هذا هو دواؤك. تناول قرصًا واحدًا صباحًا ومساءً بعد الطعام مع كمية كافية من الماء." },
+            { "language": "tr", "text": "İlacınız burada. Sabah ve akşam yemekten sonra yeterli suyla birer tablet alın." },
+            { "language": "ru", "text": "Вот ваше лекарство. Принимайте по одной таблетке утром и вечером после еды, запивая достаточным количеством воды." },
+            { "language": "ckb", "text": "ئەمە دەرمانەکەتانە. بەیانی و ئێوارە هەر جارە تابلێتێک دوای خواردن لەگەڵ ئاوی پێویست بخۆن." },
+            { "language": "kmr", "text": "Ev dermanê we ye. Sibê û êvarê piştî xwarinê bi avê têra xwe yek tabletê bixwin." },
+            { "language": "pl", "text": "Oto pana lek. Proszę brać jedną tabletkę rano i wieczorem po jedzeniu, popijając wystarczającą ilością wody." },
+            { "language": "ro", "text": "Acesta este medicamentul dumneavoastră. Luați câte un comprimat dimineața și seara după masă, cu suficientă apă." },
+            { "language": "sq", "text": "Ky është ilaçi juaj. Merrni nga një tabletë në mëngjes dhe në mbrëmje pas ushqimit, me mjaft ujë." }
+          ],
+          "function": "give-usage-instructions",
+          "toneNote": "Clear pharmacy instruction.",
+          "expectedLearnerAction": "Ask for dosage confirmation and side effects."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Nur damit ich es richtig verstehe: eine Tablette morgens und eine abends nach dem Essen. Welche Nebenwirkungen können dabei auftreten?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Just so I understand correctly: one tablet in the morning and one in the evening after food. What side effects can occur?" },
+            { "language": "fa", "text": "ممنون. فقط برای اینکه درست فهمیده باشم: یک قرص صبح و یک قرص شب بعد از غذا. چه عوارضی ممکن است پیش بیاید؟" },
+            { "language": "ar", "text": "شكرًا. فقط لكي أفهم بشكل صحيح: قرص صباحًا وقرص مساءً بعد الطعام. ما الآثار الجانبية التي قد تحدث؟" },
+            { "language": "tr", "text": "Teşekkürler. Doğru anladığımdan emin olmak için: yemekten sonra sabah bir tablet ve akşam bir tablet. Hangi yan etkiler olabilir?" },
+            { "language": "ru", "text": "Спасибо. Чтобы я правильно понял: одна таблетка утром и одна вечером после еды. Какие побочные эффекты могут возникнуть?" },
+            { "language": "ckb", "text": "سوپاس. تەنها بۆ ئەوەی بە دروستی تێبگەم: تابلێتێک بەیانی و تابلێتێک ئێوارە دوای خواردن. چ کاریگەرییەکی لاوەکی دەتوانێت ڕووبدات؟" },
+            { "language": "kmr", "text": "Spas. Tenê ji bo ku ez rast fêm bikim: yek tablet sibê û yek êvarê piştî xwarinê. Kîjan bandorên alî dikarin derkevin?" },
+            { "language": "pl", "text": "Dziękuję. Żebym dobrze zrozumiał: jedna tabletka rano i jedna wieczorem po jedzeniu. Jakie skutki uboczne mogą wystąpić?" },
+            { "language": "ro", "text": "Mulțumesc. Ca să înțeleg corect: un comprimat dimineața și unul seara după masă. Ce reacții adverse pot apărea?" },
+            { "language": "sq", "text": "Faleminderit. Vetëm që ta kuptoj saktë: një tabletë në mëngjes dhe një në mbrëmje pas ushqimit. Çfarë efektesh anësore mund të shfaqen?" }
+          ],
+          "function": "confirm-dosage-and-ask-risk",
+          "toneNote": "Checks dosage and asks a concrete safety question.",
+          "expectedLearnerAction": "Confirm dosage and ask about side effects."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "pharmacist",
+          "baseText": "Manche bekommen leichte Magenbeschwerden oder werden etwas müde. Wenn Sie starken Ausschlag, Atemprobleme oder hohes Fieber bekommen, rufen Sie bitte sofort in der Praxis an.",
+          "translations": [
+            { "language": "en", "text": "Some people get mild stomach problems or become a little tired. If you get a strong rash, breathing problems, or a high fever, please call the doctor's office immediately." },
+            { "language": "fa", "text": "بعضی‌ها کمی ناراحتی معده می‌گیرند یا کمی خسته می‌شوند. اگر دانه‌های شدید پوستی، مشکل تنفسی یا تب بالا داشتید، لطفاً فوراً با مطب تماس بگیرید." },
+            { "language": "ar", "text": "قد يحدث لدى بعض الناس اضطراب خفيف في المعدة أو بعض التعب. إذا ظهر طفح شديد أو مشاكل في التنفس أو حمى عالية، فاتصل بالعيادة فورًا من فضلك." },
+            { "language": "tr", "text": "Bazılarında hafif mide rahatsızlığı olur veya biraz yorgunluk görülür. Şiddetli döküntü, nefes alma sorunu ya da yüksek ateş olursa lütfen hemen muayenehaneyi arayın." },
+            { "language": "ru", "text": "У некоторых бывают легкие проблемы с желудком или небольшая усталость. Если появится сильная сыпь, проблемы с дыханием или высокая температура, пожалуйста, сразу позвоните в практику." },
+            { "language": "ckb", "text": "هەندێک کەس کەمێک کێشەی گەدەیان دەبێت یان کەمێک ماندوو دەبن. ئەگەر پەڵەی توندی پێست، کێشەی هەناسەدان یان تای بەرزتان هەبوو، تکایە دەستبەجێ پەیوەندی بە مطبەوە بکەن." },
+            { "language": "kmr", "text": "Hin kesan tengasiyên sivik ên zikê dibin an hinek westiyayî dibin. Heke şînek xurt, pirsgirêka nefesê an tayê bilind çêbibe, ji kerema xwe demildest telefonî muayenehaneyê bikin." },
+            { "language": "pl", "text": "U niektórych pojawiają się lekkie dolegliwości żołądkowe albo trochę zmęczenia. Jeśli wystąpi silna wysypka, problemy z oddychaniem albo wysoka gorączka, proszę natychmiast zadzwonić do przychodni." },
+            { "language": "ro", "text": "Unele persoane au ușoare probleme la stomac sau devin puțin obosite. Dacă apare o erupție puternică, probleme de respirație sau febră mare, vă rog să sunați imediat la cabinet." },
+            { "language": "sq", "text": "Disa njerëz kanë shqetësime të lehta në stomak ose lodhen pak. Nëse keni skuqje të fortë, probleme me frymëmarrjen ose temperaturë të lartë, ju lutem telefononi menjëherë në ordinancë." }
+          ],
+          "function": "explain-side-effects",
+          "toneNote": "Differentiates common side effects from warning signs.",
+          "expectedLearnerAction": "Ask about daily activities and missed dose."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Sollte ich damit Auto fahren oder bei der Arbeit besonders vorsichtig sein? Und was mache ich, wenn ich eine Tablette vergesse?",
+          "translations": [
+            { "language": "en", "text": "Should I drive with this or be especially careful at work? And what should I do if I forget one tablet?" },
+            { "language": "fa", "text": "آیا با این دارو باید رانندگی کنم یا در محل کار خیلی مراقب باشم؟ و اگر یک قرص را فراموش کردم چه کار کنم؟" },
+            { "language": "ar", "text": "هل ينبغي أن أقود السيارة مع هذا الدواء أو أكون حذرًا بشكل خاص في العمل؟ وماذا أفعل إذا نسيت قرصًا؟" },
+            { "language": "tr", "text": "Bu ilaçla araba kullanmalı mıyım ya da işte özellikle dikkatli olmalı mıyım? Bir tableti unutursam ne yapmalıyım?" },
+            { "language": "ru", "text": "Можно ли с этим лекарством водить машину или нужно быть особенно осторожным на работе? И что делать, если я забуду одну таблетку?" },
+            { "language": "ckb", "text": "ئایا لەگەڵ ئەم دەرمانەدا دەتوانم ئۆتۆمبێل لێبخوڕم یان لە کاردا تایبەت ئاگادار بم؟ ئەگەر تابلێتێکم لەبیرچوو چی بکەم؟" },
+            { "language": "kmr", "text": "Ez dikarim bi vî dermanî ajotinê bikim an divê li kar bi taybetî baldar bim? Heke tabletêk ji bîr bikim çi bikim?" },
+            { "language": "pl", "text": "Czy mogę z tym lekiem prowadzić samochód albo muszę być szczególnie ostrożny w pracy? I co zrobić, jeśli zapomnę jednej tabletki?" },
+            { "language": "ro", "text": "Ar trebui să conduc cu acest medicament sau să fiu deosebit de atent la muncă? Și ce fac dacă uit un comprimat?" },
+            { "language": "sq", "text": "A duhet të ngas makinë me këtë ilaç apo të jem veçanërisht i kujdesshëm në punë? Dhe çfarë bëj nëse harroj një tabletë?" }
+          ],
+          "function": "ask-daily-life-and-missed-dose",
+          "toneNote": "Links side effects to practical daily-life behavior.",
+          "expectedLearnerAction": "Ask about work, driving, and missed dose."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "pharmacist",
+          "baseText": "Wenn Ihnen schwindlig wird, fahren Sie bitte nicht Auto. Eine vergessene Tablette holen Sie nicht doppelt nach. Nehmen Sie die nächste Dosis einfach zur normalen Zeit.",
+          "translations": [
+            { "language": "en", "text": "If you feel dizzy, please do not drive. Do not make up for a forgotten tablet by taking a double dose. Just take the next dose at the normal time." },
+            { "language": "fa", "text": "اگر سرگیجه داشتید، لطفاً رانندگی نکنید. قرص فراموش‌شده را با دوز دوبرابر جبران نکنید. دوز بعدی را فقط در زمان معمول مصرف کنید." },
+            { "language": "ar", "text": "إذا شعرت بالدوار، فلا تقُد السيارة من فضلك. لا تعوض القرص المنسي بجرعة مضاعفة. تناول الجرعة التالية ببساطة في الوقت المعتاد." },
+            { "language": "tr", "text": "Başınız dönerse lütfen araba kullanmayın. Unutulan tableti çift dozla telafi etmeyin. Sonraki dozu normal zamanda alın." },
+            { "language": "ru", "text": "Если у вас закружится голова, пожалуйста, не водите машину. Не компенсируйте пропущенную таблетку двойной дозой. Просто примите следующую дозу в обычное время." },
+            { "language": "ckb", "text": "ئەگەر سەرگیژتان هەبوو، تکایە ئۆتۆمبێل مەلێخوڕن. تابلێتی لەبیرچوو بە دوو ئەوەندە قەرەبوو مەکەنەوە. دۆزی دواتر لە کاتی ئاساییدا بخۆن." },
+            { "language": "kmr", "text": "Heke serê we dizivire, ji kerema xwe ajotinê nekin. Tabletê ji bîrkirî bi dozeke ducarî qerebû nekin. Tenê doza din di dema asayî de bixwin." },
+            { "language": "pl", "text": "Jeśli będzie się panu kręcić w głowie, proszę nie prowadzić samochodu. Nie należy nadrabiać zapomnianej tabletki podwójną dawką. Proszę po prostu wziąć następną dawkę o normalnej porze." },
+            { "language": "ro", "text": "Dacă amețiți, vă rog să nu conduceți. Nu compensați un comprimat uitat cu doză dublă. Luați pur și simplu doza următoare la ora obișnuită." },
+            { "language": "sq", "text": "Nëse ju merret mendja, ju lutem mos ngisni makinë. Mos e kompensoni tabletën e harruar me dozë të dyfishtë. Merrni dozën tjetër në kohën normale." }
+          ],
+          "function": "answer-daily-life-and-dose",
+          "toneNote": "Gives practical safety instructions.",
+          "expectedLearnerAction": "Ask about other medicines."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich nehme außerdem ein Blutdruckmittel. Können Sie bitte prüfen, ob das zusammenpasst, oder sollte ich vorher noch einmal in der Praxis nachfragen?",
+          "translations": [
+            { "language": "en", "text": "I also take blood pressure medicine. Could you please check whether that is compatible, or should I ask the doctor's office again first?" },
+            { "language": "fa", "text": "من علاوه بر این داروی فشار خون هم مصرف می‌کنم. ممکن است لطفاً بررسی کنید آیا با هم سازگار هستند، یا باید قبلش دوباره از مطب سؤال کنم؟" },
+            { "language": "ar", "text": "أنا أتناول أيضًا دواءً لضغط الدم. هل يمكنك من فضلك التحقق مما إذا كانا مناسبين معًا، أم ينبغي أن أسأل العيادة مرة أخرى أولًا؟" },
+            { "language": "tr", "text": "Ayrıca tansiyon ilacı kullanıyorum. Lütfen bunların birlikte uygun olup olmadığını kontrol edebilir misiniz, yoksa önce muayenehaneye tekrar sormalı mıyım?" },
+            { "language": "ru", "text": "Я также принимаю лекарство от давления. Не могли бы вы проверить, совместимы ли они, или мне сначала еще раз спросить в практике?" },
+            { "language": "ckb", "text": "هەروەها دەرمانی پەستانی خوێن دەخۆم. دەتوانن تکایە بپشکنن ئایا پێکەوە گونجاون، یان پێشتر جارێکی تر لە مطب بپرسم؟" },
+            { "language": "kmr", "text": "Ez her weha dermanê tansiyonê dixwim. Hûn dikarin ji kerema xwe kontrol bikin ka ev bi hev re guncaw in, an divê ez pêşî careke din ji muayenehaneyê bipirsim?" },
+            { "language": "pl", "text": "Biorę też lek na ciśnienie. Czy może pani sprawdzić, czy to do siebie pasuje, czy powinienem najpierw jeszcze raz zapytać w przychodni?" },
+            { "language": "ro", "text": "Mai iau și un medicament pentru tensiune. Puteți verifica, vă rog, dacă se potrivesc împreună, sau ar trebui să întreb încă o dată la cabinet înainte?" },
+            { "language": "sq", "text": "Marr gjithashtu një ilaç për tensionin. A mund të kontrolloni ju lutem nëse përshtaten bashkë, apo duhet të pyes edhe një herë në ordinancë më parë?" }
+          ],
+          "function": "ask-interaction-check",
+          "toneNote": "Mentions another medicine and asks for a safe next step.",
+          "expectedLearnerAction": "Ask about medicine interaction."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "pharmacist",
+          "baseText": "Das prüfe ich gern. Nach unserer Liste gibt es keinen direkten Hinweis auf ein Problem, aber wenn Sie unsicher sind oder neue Beschwerden bekommen, fragen Sie bitte die Ärztin.",
+          "translations": [
+            { "language": "en", "text": "I will gladly check that. According to our list, there is no direct indication of a problem, but if you are unsure or get new symptoms, please ask the doctor." },
+            { "language": "fa", "text": "با کمال میل بررسی می‌کنم. طبق فهرست ما نشانه مستقیمی از مشکل وجود ندارد، اما اگر مطمئن نیستید یا علائم جدید گرفتید، لطفاً از پزشک سؤال کنید." },
+            { "language": "ar", "text": "سأتحقق من ذلك بكل سرور. حسب قائمتنا لا توجد إشارة مباشرة إلى مشكلة، لكن إذا كنت غير متأكد أو ظهرت أعراض جديدة، فاسأل الطبيبة من فضلك." },
+            { "language": "tr", "text": "Bunu memnuniyetle kontrol ederim. Listemize göre doğrudan bir sorun belirtisi yok, ama emin değilseniz veya yeni şikayetler olursa lütfen doktora sorun." },
+            { "language": "ru", "text": "Я с удовольствием проверю. По нашему списку нет прямого указания на проблему, но если вы не уверены или появятся новые жалобы, пожалуйста, спросите врача." },
+            { "language": "ckb", "text": "بە خۆشییەوە ئەوە دەپشکنم. بە پێی لیستەکەمان نیشانەی ڕاستەوخۆی کێشە نییە، بەڵام ئەگەر دڵنیا نین یان ئازاری نوێتان هەبوو، تکایە لە پزیشک بپرسن." },
+            { "language": "kmr", "text": "Ez bi kêfxweşî kontrol dikim. Li gorî lîsteya me nîşaneke rasterast a pirsgirêkê tune, lê heke hûn ne ewle bin an gazinên nû derkevin, ji kerema xwe ji doktorê bipirsin." },
+            { "language": "pl", "text": "Chętnie to sprawdzę. Według naszej listy nie ma bezpośredniej wskazówki na problem, ale jeśli nie jest pan pewien albo pojawią się nowe dolegliwości, proszę zapytać lekarkę." },
+            { "language": "ro", "text": "Verific cu plăcere. Conform listei noastre nu există o indicație directă de problemă, dar dacă nu sunteți sigur sau apar simptome noi, vă rog să întrebați medicul." },
+            { "language": "sq", "text": "E kontrolloj me kënaqësi. Sipas listës sonë nuk ka shenjë të drejtpërdrejtë për problem, por nëse nuk jeni i sigurt ose keni shqetësime të reja, ju lutem pyesni mjekun." }
+          ],
+          "function": "interaction-check-answer",
+          "toneNote": "Reassuring but still points to the doctor for uncertainty.",
+          "expectedLearnerAction": "Summarize dosage and warning signs."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Gut, dann nehme ich morgens und abends eine Tablette nach dem Essen, fahre bei Schwindel nicht Auto und rufe bei starken Beschwerden oder Unsicherheit die Praxis an.",
+          "translations": [
+            { "language": "en", "text": "Good, then I will take one tablet in the morning and evening after food, not drive if I feel dizzy, and call the doctor's office if I have strong symptoms or uncertainty." },
+            { "language": "fa", "text": "خوب، پس صبح و شب بعد از غذا یک قرص مصرف می‌کنم، اگر سرگیجه داشتم رانندگی نمی‌کنم و در صورت علائم شدید یا ابهام با مطب تماس می‌گیرم." },
+            { "language": "ar", "text": "حسنًا، إذن أتناول قرصًا صباحًا ومساءً بعد الطعام، ولا أقود إذا شعرت بالدوار، وأتصل بالعيادة عند أعراض قوية أو عدم تأكد." },
+            { "language": "tr", "text": "Tamam, o zaman sabah ve akşam yemekten sonra bir tablet alırım, başım dönerse araba kullanmam ve güçlü şikayetlerde ya da emin olmadığımda muayenehaneyi ararım." },
+            { "language": "ru", "text": "Хорошо, тогда я буду принимать по одной таблетке утром и вечером после еды, не буду водить при головокружении и позвоню в практику при сильных жалобах или неуверенности." },
+            { "language": "ckb", "text": "باشە، ئەوا بەیانی و ئێوارە دوای خواردن تابلێتێک دەخۆم، ئەگەر سەرگیژم هەبوو ئۆتۆمبێل نالێخوڕم و لە کاتی ئازاری توند یان دڵنیا نەبووندا پەیوەندی بە مطب دەکەم." },
+            { "language": "kmr", "text": "Baş e, wê demê sibê û êvarê piştî xwarinê yek tabletê dixwim, heke serê min bizivire ajotinê nakim û di gazinên xurt an ne-ewlehiyê de telefonî muayenehaneyê dikim." },
+            { "language": "pl", "text": "Dobrze, w takim razie biorę jedną tabletkę rano i wieczorem po jedzeniu, nie prowadzę przy zawrotach głowy i dzwonię do przychodni przy silnych dolegliwościach albo niepewności." },
+            { "language": "ro", "text": "Bine, atunci iau câte un comprimat dimineața și seara după masă, nu conduc dacă amețesc și sun la cabinet dacă am simptome puternice sau nesiguranță." },
+            { "language": "sq", "text": "Mirë, atëherë marr nga një tabletë në mëngjes dhe në mbrëmje pas ushqimit, nuk ngas nëse më merret mendja dhe telefonoj në ordinancë nëse kam shqetësime të forta ose pasiguri." }
+          ],
+          "function": "summarize-safe-use",
+          "toneNote": "Clear summary of medicine use and warning signs.",
+          "expectedLearnerAction": "Summarize dosage, restriction, and next step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "dosage-and-side-effects",
+              "text": "Danke. Nur damit ich es richtig verstehe: eine Tablette morgens und eine abends nach dem Essen. Welche Nebenwirkungen können dabei auftreten?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Just so I understand correctly: one tablet in the morning and one in the evening after food. What side effects can occur?" },
+                { "language": "fa", "text": "ممنون. فقط برای اینکه درست فهمیده باشم: یک قرص صبح و یک قرص شب بعد از غذا. چه عوارضی ممکن است پیش بیاید؟" },
+                { "language": "ar", "text": "شكرًا. فقط لكي أفهم بشكل صحيح: قرص صباحًا وقرص مساءً بعد الطعام. ما الآثار الجانبية التي قد تحدث؟" },
+                { "language": "tr", "text": "Teşekkürler. Doğru anladığımdan emin olmak için: yemekten sonra sabah bir tablet ve akşam bir tablet. Hangi yan etkiler olabilir?" },
+                { "language": "ru", "text": "Спасибо. Чтобы я правильно понял: одна таблетка утром и одна вечером после еды. Какие побочные эффекты могут возникнуть?" },
+                { "language": "ckb", "text": "سوپاس. تەنها بۆ ئەوەی بە دروستی تێبگەم: تابلێتێک بەیانی و تابلێتێک ئێوارە دوای خواردن. چ کاریگەرییەکی لاوەکی دەتوانێت ڕووبدات؟" },
+                { "language": "kmr", "text": "Spas. Tenê ji bo ku ez rast fêm bikim: yek tablet sibê û yek êvarê piştî xwarinê. Kîjan bandorên alî dikarin derkevin?" },
+                { "language": "pl", "text": "Dziękuję. Żebym dobrze zrozumiał: jedna tabletka rano i jedna wieczorem po jedzeniu. Jakie skutki uboczne mogą wystąpić?" },
+                { "language": "ro", "text": "Mulțumesc. Ca să înțeleg corect: un comprimat dimineața și unul seara după masă. Ce reacții adverse pot apărea?" },
+                { "language": "sq", "text": "Faleminderit. Vetëm që ta kuptoj saktë: një tabletë në mëngjes dhe një në mbrëmje pas ushqimit. Çfarë efektesh anësore mund të shfaqen?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du bestätigst die Dosierung und fragst konkret nach Risiken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You confirm the dosage and ask specifically about risks." },
+                { "language": "fa", "text": "خوب است: مقدار مصرف را تأیید می‌کنی و مشخص درباره خطرها می‌پرسی." },
+                { "language": "ar", "text": "جيد: تؤكد الجرعة وتسأل بشكل محدد عن المخاطر." },
+                { "language": "tr", "text": "İyi: Dozajı onaylıyor ve riskleri somut şekilde soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты подтверждаешь дозировку и конкретно спрашиваешь о рисках." },
+                { "language": "ckb", "text": "باشە: بڕی خواردن پشتڕاست دەکەیتەوە و بە دیاری دەربارەی مەترسییەکان دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Tu dozê piştrast dikî û bi taybetî li ser metirsiyan dipirsî." },
+                { "language": "pl", "text": "Dobrze: potwierdzasz dawkowanie i konkretnie pytasz o ryzyka." },
+                { "language": "ro", "text": "Bine: confirmi doza și întrebi concret despre riscuri." },
+                { "language": "sq", "text": "Mirë: konfirmon dozën dhe pyet konkretisht për rreziqet." }
+              ]
+            },
+            {
+              "id": "only-repeat-dosage",
+              "text": "Okay, morgens und abends. Dann nehme ich das so.",
+              "translations": [
+                { "language": "en", "text": "Okay, morning and evening. Then I will take it like that." },
+                { "language": "fa", "text": "باشه، صبح و شب. پس همین‌طور مصرف می‌کنم." },
+                { "language": "ar", "text": "حسنًا، صباحًا ومساءً. إذن سأتناوله هكذا." },
+                { "language": "tr", "text": "Tamam, sabah ve akşam. O zaman böyle alırım." },
+                { "language": "ru", "text": "Хорошо, утром и вечером. Тогда я буду принимать так." },
+                { "language": "ckb", "text": "باشە، بەیانی و ئێوارە. ئەوا بەو شێوەیە دەیخۆم." },
+                { "language": "kmr", "text": "Baş e, sibê û êvarê. Wê demê ez wisa dixwim." },
+                { "language": "pl", "text": "Dobrze, rano i wieczorem. W takim razie będę tak brać." },
+                { "language": "ro", "text": "Bine, dimineața și seara. Atunci îl iau așa." },
+                { "language": "sq", "text": "Mirë, në mëngjes dhe në mbrëmje. Atëherë e marr kështu." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Du wiederholst die Dosierung, fragst aber nicht nach Nebenwirkungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: You repeat the dosage but do not ask about side effects." },
+                { "language": "fa", "text": "خیلی کوتاه است: مقدار مصرف را تکرار می‌کنی، اما درباره عوارض نمی‌پرسی." },
+                { "language": "ar", "text": "قصير جدًا: تكرر الجرعة، لكنك لا تسأل عن الآثار الجانبية." },
+                { "language": "tr", "text": "Çok kısa: Dozajı tekrarlıyorsun ama yan etkileri sormuyorsun." },
+                { "language": "ru", "text": "Слишком кратко: ты повторяешь дозировку, но не спрашиваешь о побочных эффектах." },
+                { "language": "ckb", "text": "زۆر کورتە: بڕی خواردن دووبارە دەکەیتەوە، بەڵام دەربارەی کاریگەرییە لاوەکییەکان ناپرسی." },
+                { "language": "kmr", "text": "Pir kurt e: Tu dozê dubare dikî, lê li ser bandorên alî napirsî." },
+                { "language": "pl", "text": "Zbyt krótko: powtarzasz dawkowanie, ale nie pytasz o skutki uboczne." },
+                { "language": "ro", "text": "Prea scurt: repeți doza, dar nu întrebi despre reacții adverse." },
+                { "language": "sq", "text": "Shumë e shkurtër: përsërit dozën, por nuk pyet për efektet anësore." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "daily-life-and-missed-dose",
+              "text": "Sollte ich damit Auto fahren oder bei der Arbeit besonders vorsichtig sein? Und was mache ich, wenn ich eine Tablette vergesse?",
+              "translations": [
+                { "language": "en", "text": "Should I drive with this or be especially careful at work? And what should I do if I forget one tablet?" },
+                { "language": "fa", "text": "آیا با این دارو باید رانندگی کنم یا در محل کار خیلی مراقب باشم؟ و اگر یک قرص را فراموش کردم چه کار کنم؟" },
+                { "language": "ar", "text": "هل ينبغي أن أقود السيارة مع هذا الدواء أو أكون حذرًا بشكل خاص في العمل؟ وماذا أفعل إذا نسيت قرصًا؟" },
+                { "language": "tr", "text": "Bu ilaçla araba kullanmalı mıyım ya da işte özellikle dikkatli olmalı mıyım? Bir tableti unutursam ne yapmalıyım?" },
+                { "language": "ru", "text": "Можно ли с этим лекарством водить машину или нужно быть особенно осторожным на работе? И что делать, если я забуду одну таблетку?" },
+                { "language": "ckb", "text": "ئایا لەگەڵ ئەم دەرمانەدا دەتوانم ئۆتۆمبێل لێبخوڕم یان لە کاردا تایبەت ئاگادار بم؟ ئەگەر تابلێتێکم لەبیرچوو چی بکەم؟" },
+                { "language": "kmr", "text": "Ez dikarim bi vî dermanî ajotinê bikim an divê li kar bi taybetî baldar bim? Heke tabletêk ji bîr bikim çi bikim?" },
+                { "language": "pl", "text": "Czy mogę z tym lekiem prowadzić samochód albo muszę być szczególnie ostrożny w pracy? I co zrobić, jeśli zapomnę jednej tabletki?" },
+                { "language": "ro", "text": "Ar trebui să conduc cu acest medicament sau să fiu deosebit de atent la muncă? Și ce fac dacă uit un comprimat?" },
+                { "language": "sq", "text": "A duhet të ngas makinë me këtë ilaç apo të jem veçanërisht i kujdesshëm në punë? Dhe çfarë bëj nëse harroj një tabletë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du verbindest Nebenwirkungen mit Alltag, Arbeit und einer vergessenen Dosis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You connect side effects with daily life, work, and a missed dose." },
+                { "language": "fa", "text": "خوب است: عوارض را به زندگی روزمره، کار و دوز فراموش‌شده ربط می‌دهی." },
+                { "language": "ar", "text": "جيد: تربط الآثار الجانبية بالحياة اليومية والعمل والجرعة المنسية." },
+                { "language": "tr", "text": "İyi: Yan etkileri günlük yaşam, iş ve unutulan dozla ilişkilendiriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты связываешь побочные эффекты с бытом, работой и пропущенной дозой." },
+                { "language": "ckb", "text": "باشە: کاریگەرییە لاوەکییەکان بە ژیانی ڕۆژانە، کار و دۆزی لەبیرچووەوە دەبەستیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu bandorên alî bi jiyana rojane, kar û doza ji bîrkirî ve girê didî." },
+                { "language": "pl", "text": "Dobrze: łączysz skutki uboczne z codziennością, pracą i pominiętą dawką." },
+                { "language": "ro", "text": "Bine: legi reacțiile adverse de viața de zi cu zi, muncă și o doză uitată." },
+                { "language": "sq", "text": "Mirë: i lidh efektet anësore me jetën e përditshme, punën dhe dozën e harruar." }
+              ]
+            },
+            {
+              "id": "too-general-careful",
+              "text": "Dann bin ich einfach ein bisschen vorsichtig.",
+              "translations": [
+                { "language": "en", "text": "Then I will just be a little careful." },
+                { "language": "fa", "text": "پس فقط کمی مراقب می‌شوم." },
+                { "language": "ar", "text": "إذن سأكون حذرًا قليلًا فقط." },
+                { "language": "tr", "text": "O zaman sadece biraz dikkatli olurum." },
+                { "language": "ru", "text": "Тогда я просто буду немного осторожен." },
+                { "language": "ckb", "text": "ئەوا تەنها کەمێک ئاگادار دەبم." },
+                { "language": "kmr", "text": "Wê demê ez tenê hinek baldar dibim." },
+                { "language": "pl", "text": "W takim razie będę po prostu trochę ostrożny." },
+                { "language": "ro", "text": "Atunci voi fi pur și simplu puțin atent." },
+                { "language": "sq", "text": "Atëherë thjesht do të jem pak i kujdesshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Du klärst weder Autofahren noch Arbeit noch eine vergessene Tablette.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: You clarify neither driving nor work nor a forgotten tablet." },
+                { "language": "fa", "text": "خیلی مبهم است: نه رانندگی را روشن می‌کنی، نه کار را و نه قرص فراموش‌شده را." },
+                { "language": "ar", "text": "غامض جدًا: لا توضح القيادة ولا العمل ولا القرص المنسي." },
+                { "language": "tr", "text": "Çok belirsiz: Ne araba kullanmayı ne işi ne de unutulan tableti netleştiriyorsun." },
+                { "language": "ru", "text": "Слишком неопределенно: ты не уточняешь ни вождение, ни работу, ни пропущенную таблетку." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: نە ئۆتۆمبێللێخوڕین ڕوون دەکەیتەوە، نە کار و نە تابلێتی لەبیرچوو." },
+                { "language": "kmr", "text": "Pir nezelal e: Tu ne ajotinê, ne kar û ne tabletê ji bîrkirî zelal dikî." },
+                { "language": "pl", "text": "Zbyt niejasno: nie wyjaśniasz ani prowadzenia, ani pracy, ani zapomnianej tabletki." },
+                { "language": "ro", "text": "Prea neclar: nu clarifici nici condusul, nici munca, nici comprimatul uitat." },
+                { "language": "sq", "text": "Shumë e paqartë: nuk sqaron as ngasjen, as punën, as tabletën e harruar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-safe-use-summary",
+              "text": "Gut, dann nehme ich morgens und abends eine Tablette nach dem Essen, fahre bei Schwindel nicht Auto und rufe bei starken Beschwerden oder Unsicherheit die Praxis an.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will take one tablet in the morning and evening after food, not drive if I feel dizzy, and call the doctor's office if I have strong symptoms or uncertainty." },
+                { "language": "fa", "text": "خوب، پس صبح و شب بعد از غذا یک قرص مصرف می‌کنم، اگر سرگیجه داشتم رانندگی نمی‌کنم و در صورت علائم شدید یا ابهام با مطب تماس می‌گیرم." },
+                { "language": "ar", "text": "حسنًا، إذن أتناول قرصًا صباحًا ومساءً بعد الطعام، ولا أقود إذا شعرت بالدوار، وأتصل بالعيادة عند أعراض قوية أو عدم تأكد." },
+                { "language": "tr", "text": "Tamam, o zaman sabah ve akşam yemekten sonra bir tablet alırım, başım dönerse araba kullanmam ve güçlü şikayetlerde ya da emin olmadığımda muayenehaneyi ararım." },
+                { "language": "ru", "text": "Хорошо, тогда я буду принимать по одной таблетке утром и вечером после еды, не буду водить при головокружении и позвоню в практику при сильных жалобах или неуверенности." },
+                { "language": "ckb", "text": "باشە، ئەوا بەیانی و ئێوارە دوای خواردن تابلێتێک دەخۆم، ئەگەر سەرگیژم هەبوو ئۆتۆمبێل نالێخوڕم و لە کاتی ئازاری توند یان دڵنیا نەبووندا پەیوەندی بە مطب دەکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê sibê û êvarê piştî xwarinê yek tabletê dixwim, heke serê min bizivire ajotinê nakim û di gazinên xurt an ne-ewlehiyê de telefonî muayenehaneyê dikim." },
+                { "language": "pl", "text": "Dobrze, w takim razie biorę jedną tabletkę rano i wieczorem po jedzeniu, nie prowadzę przy zawrotach głowy i dzwonię do przychodni przy silnych dolegliwościach albo niepewności." },
+                { "language": "ro", "text": "Bine, atunci iau câte un comprimat dimineața și seara după masă, nu conduc dacă amețesc și sun la cabinet dacă am simptome puternice sau nesiguranță." },
+                { "language": "sq", "text": "Mirë, atëherë marr nga një tabletë në mëngjes dhe në mbrëmje pas ushqimit, nuk ngas nëse më merret mendja dhe telefonoj në ordinancë nëse kam shqetësime të forta ose pasiguri." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fasst Dosierung, Vorsicht im Alltag und den medizinischen nächsten Schritt zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You summarize dosage, daily-life caution, and the medical next step." },
+                { "language": "fa", "text": "خوب است: مقدار مصرف، احتیاط در روزمره و قدم بعدی پزشکی را جمع‌بندی می‌کنی." },
+                { "language": "ar", "text": "جيد: تلخص الجرعة والحذر اليومي والخطوة الطبية التالية." },
+                { "language": "tr", "text": "İyi: Dozajı, günlük yaşamdaki dikkati ve tıbbi sonraki adımı özetliyorsun." },
+                { "language": "ru", "text": "Хорошо: ты подытоживаешь дозировку, осторожность в быту и следующий медицинский шаг." },
+                { "language": "ckb", "text": "باشە: بڕی خواردن، ئاگاداریی ڕۆژانە و هەنگاوی پزیشکی دواتر کورت دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu doz, baldariya rojane û gava tibî ya din kurt dikî." },
+                { "language": "pl", "text": "Dobrze: podsumowujesz dawkowanie, ostrożność w codzienności i następny krok medyczny." },
+                { "language": "ro", "text": "Bine: rezumi doza, atenția în viața de zi cu zi și pasul medical următor." },
+                { "language": "sq", "text": "Mirë: përmbledh dozën, kujdesin në përditshmëri dhe hapin mjekësor pasues." }
+              ]
+            },
+            {
+              "id": "summary-missing-warning-signs",
+              "text": "Alles klar, ich nehme die Tabletten nach dem Essen.",
+              "translations": [
+                { "language": "en", "text": "All right, I will take the tablets after food." },
+                { "language": "fa", "text": "باشه، قرص‌ها را بعد از غذا مصرف می‌کنم." },
+                { "language": "ar", "text": "حسنًا، سأتناول الأقراص بعد الطعام." },
+                { "language": "tr", "text": "Tamam, tabletleri yemekten sonra alırım." },
+                { "language": "ru", "text": "Хорошо, я буду принимать таблетки после еды." },
+                { "language": "ckb", "text": "باشە، تابلێتەکان دوای خواردن دەخۆم." },
+                { "language": "kmr", "text": "Baş e, ez tabletan piştî xwarinê dixwim." },
+                { "language": "pl", "text": "W porządku, będę brać tabletki po jedzeniu." },
+                { "language": "ro", "text": "În regulă, iau comprimatele după masă." },
+                { "language": "sq", "text": "Në rregull, tabletat i marr pas ushqimit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Es fehlen Schwindel/Autofahren, starke Beschwerden und Rückfrage bei Unsicherheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: Dizziness/driving, strong symptoms, and asking again when unsure are missing." },
+                { "language": "fa", "text": "ناقص است: سرگیجه/رانندگی، علائم شدید و سؤال دوباره در صورت ابهام کم است." },
+                { "language": "ar", "text": "غير كامل: ينقص الدوار/القيادة والأعراض القوية والسؤال مرة أخرى عند عدم التأكد." },
+                { "language": "tr", "text": "Eksik: Baş dönmesi/araba kullanma, güçlü şikayetler ve emin olmayınca tekrar sorma eksik." },
+                { "language": "ru", "text": "Неполно: не хватает головокружения/вождения, сильных симптомов и повторного вопроса при неуверенности." },
+                { "language": "ckb", "text": "ناتەواوە: سەرگیژ/ئۆتۆمبێللێخوڕین، ئازاری توند و پرسیاری دووبارە لە کاتی دڵنیا نەبووندا کەمە." },
+                { "language": "kmr", "text": "Netemam e: Serzivirandin/ajotin, gazinên xurt û careke din pirsîn dema ne-ewlehiyê kêm in." },
+                { "language": "pl", "text": "Niepełne: brakuje zawrotów głowy/prowadzenia, silnych dolegliwości i ponownego pytania przy niepewności." },
+                { "language": "ro", "text": "Incomplet: lipsesc amețeala/condusul, simptomele puternice și întrebarea din nou la nesiguranță." },
+                { "language": "sq", "text": "E paplotë: mungojnë marramendja/ngasja, shqetësimet e forta dhe pyetja përsëri kur ka pasiguri." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "safety-summary",
+          "text": "In der Apotheke ist eine gute Zusammenfassung besonders wichtig: Dosierung, Warnzeichen und der richtige Kontakt bei Unsicherheit.",
+          "translations": [
+            { "language": "en", "text": "At the pharmacy, a good summary is especially important: dosage, warning signs, and the right contact when unsure." },
+            { "language": "fa", "text": "در داروخانه جمع‌بندی خوب خیلی مهم است: مقدار مصرف، علائم هشدار و تماس درست در صورت ابهام." },
+            { "language": "ar", "text": "في الصيدلية، يكون التلخيص الجيد مهمًا جدًا: الجرعة وعلامات التحذير وجهة الاتصال الصحيحة عند عدم التأكد." },
+            { "language": "tr", "text": "Eczanede iyi bir özet özellikle önemlidir: dozaj, uyarı işaretleri ve emin olmadığında doğru iletişim yeri." },
+            { "language": "ru", "text": "В аптеке хорошее резюме особенно важно: дозировка, тревожные признаки и правильный контакт при неуверенности." },
+            { "language": "ckb", "text": "لە دەرمانخانە کورتکردنەوەی باش زۆر گرنگە: بڕی خواردن، نیشانەکانی ئاگاداری و پەیوەندی دروست لە کاتی دڵنیا نەبووندا." },
+            { "language": "kmr", "text": "Li dermanxaneyê kurtekirineke baş bi taybetî girîng e: doz, nîşanên hişyariyê û têkiliya rast dema ne-ewlehiyê." },
+            { "language": "pl", "text": "W aptece dobre podsumowanie jest szczególnie ważne: dawkowanie, sygnały ostrzegawcze i właściwy kontakt przy niepewności." },
+            { "language": "ro", "text": "La farmacie, un rezumat bun este deosebit de important: doza, semnele de avertizare și contactul corect la nesiguranță." },
+            { "language": "sq", "text": "Në farmaci, një përmbledhje e mirë është veçanërisht e rëndësishme: doza, shenjat paralajmëruese dhe kontakti i duhur kur ka pasiguri." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-einen-arzttermin-dringlich-begruenden",
+      "title": "Einen Arzttermin dringlich begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Explain why a doctor's appointment is urgent" },
+        { "language": "fa", "text": "توضیح دادن فوریت وقت پزشک" },
+        { "language": "ar", "text": "توضيح سبب استعجال موعد الطبيب" },
+        { "language": "tr", "text": "Doktor randevusunun neden acil olduğunu açıklamak" },
+        { "language": "ru", "text": "Объяснить срочность приема у врача" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی پێویستیی خێرای وەعدەی پزیشک" },
+        { "language": "kmr", "text": "Şirovekirina lezgîniya randevûya doktor" },
+        { "language": "pl", "text": "Uzasadnić pilność wizyty u lekarza" },
+        { "language": "ro", "text": "Să explici de ce programarea la medic este urgentă" },
+        { "language": "sq", "text": "Të shpjegosh pse takimi te mjeku është urgjent" }
+      ],
+      "description": "Du rufst in der Arztpraxis an, weil der nächste freie Termin zu spät ist. Du beschreibst deine Beschwerden sachlich und fragst nach einem früheren Termin.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the doctor's office because the next available appointment is too late. You describe your symptoms factually and ask for an earlier appointment." },
+        { "language": "fa", "text": "با مطب پزشک تماس می‌گیری، چون وقت آزاد بعدی خیلی دیر است. علائمت را واقعی و آرام توضیح می‌دهی و وقت زودتر می‌خواهی." },
+        { "language": "ar", "text": "تتصل بعيادة الطبيب لأن الموعد المتاح التالي متأخر جدًا. تصف أعراضك بشكل موضوعي وتطلب موعدًا أبكر." },
+        { "language": "tr", "text": "Sonraki boş randevu çok geç olduğu için doktor muayenehanesini arıyorsun. Şikayetlerini nesnel anlatıyor ve daha erken randevu istiyorsun." },
+        { "language": "ru", "text": "Ты звонишь в врачебную практику, потому что следующий свободный прием слишком поздно. Ты спокойно описываешь симптомы и просишь более ранний прием." },
+        { "language": "ckb", "text": "پەیوەندی بە مطبی پزیشک دەکەیت، چونکە وەعدەی بەردەستی دواتر زۆر درەنگە. نیشانەکانت بە شێوەی ڕاست و ئارام ڕوون دەکەیتەوە و داوای وەعدەی زووتر دەکەیت." },
+        { "language": "kmr", "text": "Tu telefonî muayenehaneya doktor dikî, ji ber ku randevûya vala ya din pir dereng e. Tu gazinên xwe bi rastî şirove dikî û randevûyek zûtir dixwazî." },
+        { "language": "pl", "text": "Dzwonisz do przychodni, ponieważ następny wolny termin jest zbyt późno. Opisujesz objawy rzeczowo i prosisz o wcześniejszy termin." },
+        { "language": "ro", "text": "Suni la cabinet pentru că următoarea programare liberă este prea târziu. Îți descrii simptomele obiectiv și ceri o programare mai devreme." },
+        { "language": "sq", "text": "Telefonon në ordinancë sepse takimi i ardhshëm i lirë është shumë vonë. I përshkruan shqetësimet në mënyrë faktike dhe kërkon një takim më të hershëm." }
+      ],
+      "learnerGoal": "Du kannst am Telefon einen früheren Arzttermin begründen, Symptome zeitlich einordnen und flexibel auf Terminvorschläge reagieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can justify an earlier doctor's appointment by phone, place symptoms in time, and react flexibly to appointment suggestions." },
+        { "language": "fa", "text": "می‌توانی تلفنی دلیل نیاز به وقت زودتر پزشک را توضیح بدهی، زمان علائم را مشخص کنی و به پیشنهادهای وقت انعطاف‌پذیر پاسخ بدهی." },
+        { "language": "ar", "text": "يمكنك عبر الهاتف تبرير موعد طبي أبكر، وتحديد توقيت الأعراض، والرد بمرونة على اقتراحات المواعيد." },
+        { "language": "tr", "text": "Telefonda daha erken doktor randevusunu gerekçelendirebilir, belirtilerin zamanını açıklayabilir ve randevu önerilerine esnek tepki verebilirsin." },
+        { "language": "ru", "text": "Ты можешь по телефону обосновать более ранний прием у врача, указать время появления симптомов и гибко реагировать на предложения по времени." },
+        { "language": "ckb", "text": "دەتوانیت بە تەلەفۆن هۆکاری وەعدەی زووتری پزیشک ڕوون بکەیتەوە، کاتی نیشانەکان دیاری بکەیت و بە نەرمی وەڵامی پێشنیاری وەعدە بدەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî bi telefonê sedema randevûyek doktor a zûtir şirove bikî, dema nîşanan diyar bikî û bi nermî bersiva pêşniyarên randevûyê bidî." },
+        { "language": "pl", "text": "Potrafisz telefonicznie uzasadnić wcześniejszą wizytę u lekarza, określić czas objawów i elastycznie reagować na propozycje terminów." },
+        { "language": "ro", "text": "Poți justifica telefonic o programare mai devreme la medic, poți încadra simptomele în timp și poți reacționa flexibil la propuneri de programare." },
+        { "language": "sq", "text": "Mund të arsyetosh me telefon një takim më të hershëm te mjeku, të vendosësh simptomat në kohë dhe të reagosh me fleksibilitet ndaj propozimeve të takimit." }
+      ],
+      "cefrLevel": "B1",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "everyday-life"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "make-appointment",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call",
+        "appointment-management"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2410,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "receptionist",
+          "displayName": "Mitarbeiterin der Praxis",
+          "translations": [
+            { "language": "en", "text": "Doctor's office staff member" },
+            { "language": "fa", "text": "کارمند مطب" },
+            { "language": "ar", "text": "موظفة العيادة" },
+            { "language": "tr", "text": "Muayenehane çalışanı" },
+            { "language": "ru", "text": "Сотрудница практики" },
+            { "language": "ckb", "text": "کارمەندی مطب" },
+            { "language": "kmr", "text": "Karmenda muayenehaneyê" },
+            { "language": "pl", "text": "Pracowniczka przychodni" },
+            { "language": "ro", "text": "Angajată a cabinetului" },
+            { "language": "sq", "text": "Punonjëse e ordinancës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "receptionist",
+          "baseText": "Praxis Dr. Keller, guten Tag. Der nächste freie Termin ist leider erst in zwei Wochen. Worum geht es denn bei Ihnen?",
+          "translations": [
+            { "language": "en", "text": "Dr. Keller's office, good day. Unfortunately, the next available appointment is not until two weeks from now. What is it about for you?" },
+            { "language": "fa", "text": "مطب دکتر کلر، روز بخیر. متأسفانه وقت آزاد بعدی تازه دو هفته دیگر است. موضوع شما چیست؟" },
+            { "language": "ar", "text": "عيادة الدكتور كيلر، يومك سعيد. للأسف الموعد المتاح التالي بعد أسبوعين فقط. ما موضوع حالتك؟" },
+            { "language": "tr", "text": "Dr. Keller muayenehanesi, iyi günler. Ne yazık ki sonraki boş randevu ancak iki hafta sonra. Konu nedir?" },
+            { "language": "ru", "text": "Практика доктора Келлера, добрый день. К сожалению, следующий свободный прием только через две недели. Что у вас случилось?" },
+            { "language": "ckb", "text": "مطبی دکتۆر کێلەر، ڕۆژ باش. بەداخەوە وەعدەی بەردەستی دواتر تەنها دوو هەفتەی ترە. بابەتەکەتان چییە؟" },
+            { "language": "kmr", "text": "Muayenehaneya Dr. Keller, roj baş. Mixabin randevûya vala ya din tenê piştî du hefteyan e. Mijara we çi ye?" },
+            { "language": "pl", "text": "Przychodnia doktora Kellera, dzień dobry. Niestety następny wolny termin jest dopiero za dwa tygodnie. O co u pana chodzi?" },
+            { "language": "ro", "text": "Cabinetul Dr. Keller, bună ziua. Din păcate, următoarea programare liberă este abia peste două săptămâni. Despre ce este vorba la dumneavoastră?" },
+            { "language": "sq", "text": "Ordinanca e Dr. Keller, mirëdita. Fatkeqësisht takimi i ardhshëm i lirë është vetëm pas dy javësh. Për çfarë bëhet fjalë te ju?" }
+          ],
+          "function": "offer-late-appointment",
+          "toneNote": "Routine reception opening with limited appointments.",
+          "expectedLearnerAction": "Explain why earlier appointment is needed."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe. Ich hätte gern einen früheren Termin, weil die Schmerzen seit gestern stärker geworden sind und ich heute kaum arbeiten konnte. Ich bin zeitlich sehr flexibel.",
+          "translations": [
+            { "language": "en", "text": "I understand. I would like an earlier appointment because the pain has become stronger since yesterday and I could hardly work today. I am very flexible with time." },
+            { "language": "fa", "text": "متوجه‌ام. دوست دارم وقت زودتری داشته باشم، چون درد از دیروز شدیدتر شده و امروز به‌سختی توانستم کار کنم. از نظر زمان خیلی انعطاف‌پذیرم." },
+            { "language": "ar", "text": "أفهم. أود موعدًا أبكر لأن الألم أصبح أقوى منذ أمس ولم أستطع العمل تقريبًا اليوم. أنا مرن جدًا من ناحية الوقت." },
+            { "language": "tr", "text": "Anlıyorum. Daha erken bir randevu istiyorum, çünkü ağrı dünden beri arttı ve bugün neredeyse çalışamadım. Zaman açısından çok esneğim." },
+            { "language": "ru", "text": "Понимаю. Я хотел бы более ранний прием, потому что боль со вчерашнего дня усилилась, и сегодня я почти не мог работать. По времени я очень гибок." },
+            { "language": "ckb", "text": "تێدەگەم. حەز دەکەم وەعدەی زووترم هەبێت، چونکە ئازارەکە لە دوێنێوە توندتر بووە و ئەمڕۆ بە زەحمەت توانیم کار بکەم. لە ڕووی کاتەوە زۆر نەرمن." },
+            { "language": "kmr", "text": "Ez fêm dikim. Ez randevûyek zûtir dixwazim, ji ber ku êş ji doh ve xurtir bûye û îro min bi zorî kar kir. Ez ji aliyê demê ve pir nerm im." },
+            { "language": "pl", "text": "Rozumiem. Chciałbym wcześniejszy termin, ponieważ ból od wczoraj się nasilił i dziś prawie nie mogłem pracować. Jestem bardzo elastyczny czasowo." },
+            { "language": "ro", "text": "Înțeleg. Aș dori o programare mai devreme, pentru că durerile s-au intensificat de ieri și astăzi abia am putut lucra. Sunt foarte flexibil ca program." },
+            { "language": "sq", "text": "E kuptoj. Do të doja një takim më të hershëm, sepse dhimbjet janë forcuar që nga dje dhe sot mezi munda të punoj. Jam shumë fleksibël me orarin." }
+          ],
+          "function": "justify-urgent-appointment",
+          "toneNote": "Clear reason without exaggeration.",
+          "expectedLearnerAction": "Give symptoms, timing, impact, and flexibility."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "receptionist",
+          "baseText": "Haben Sie Fieber, Atemnot oder sehr starke Schmerzen? Dann müsste ich anders reagieren. Sonst schaue ich nach einem kurzfristigen Termin.",
+          "translations": [
+            { "language": "en", "text": "Do you have a fever, shortness of breath, or very severe pain? Then I would need to react differently. Otherwise, I will look for a short-notice appointment." },
+            { "language": "fa", "text": "تب، تنگی نفس یا درد خیلی شدید دارید؟ در آن صورت باید جور دیگری واکنش نشان بدهم. در غیر این صورت دنبال وقت کوتاه‌مدت می‌گردم." },
+            { "language": "ar", "text": "هل لديك حمى أو ضيق تنفس أو ألم شديد جدًا؟ عندها يجب أن أتصرف بطريقة مختلفة. وإلا فسأبحث عن موعد قريب." },
+            { "language": "tr", "text": "Ateşiniz, nefes darlığınız veya çok şiddetli ağrınız var mı? O zaman farklı tepki vermem gerekir. Aksi halde kısa süreli bir randevu bakarım." },
+            { "language": "ru", "text": "У вас есть температура, одышка или очень сильная боль? Тогда мне нужно реагировать иначе. Иначе я посмотрю ближайший прием." },
+            { "language": "ckb", "text": "تایان، کورتەهەناسەیی یان ئازاری زۆر توندتان هەیە؟ ئەگەر وایە دەبێت بە شێوەیەکی تر وەڵام بدەمەوە. ئەگەر نا، دەگەڕێم بۆ وەعدەیەکی نزیک." },
+            { "language": "kmr", "text": "Taya we, tengnefesî an êşeke pir xurt heye? Wê demê divê ez cuda bersiv bidim. Nexwe ez li randevûyek nêzîk digerim." },
+            { "language": "pl", "text": "Czy ma pan gorączkę, duszność albo bardzo silny ból? Wtedy musiałabym zareagować inaczej. W przeciwnym razie poszukam terminu w krótkim czasie." },
+            { "language": "ro", "text": "Aveți febră, dificultăți de respirație sau dureri foarte puternice? Atunci ar trebui să reacționez altfel. Altfel caut o programare pe termen scurt." },
+            { "language": "sq", "text": "A keni temperaturë, vështirësi në frymëmarrje ose dhimbje shumë të forta? Atëherë duhet të reagoj ndryshe. Përndryshe kërkoj një takim të afërt." }
+          ],
+          "function": "triage-question",
+          "toneNote": "Reception triage question.",
+          "expectedLearnerAction": "Answer warning-sign question and remain flexible."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Fieber und Atemnot habe ich nicht, aber die Schmerzen sind deutlich stärker als gestern. Wenn heute oder morgen etwas frei wird, kann ich jederzeit kommen.",
+          "translations": [
+            { "language": "en", "text": "I do not have a fever or shortness of breath, but the pain is clearly stronger than yesterday. If something becomes available today or tomorrow, I can come at any time." },
+            { "language": "fa", "text": "تب و تنگی نفس ندارم، اما درد به‌وضوح از دیروز شدیدتر است. اگر امروز یا فردا وقتی خالی شود، هر زمانی می‌توانم بیایم." },
+            { "language": "ar", "text": "ليست لدي حمى ولا ضيق تنفس، لكن الألم أقوى بوضوح من أمس. إذا توفر شيء اليوم أو غدًا، يمكنني الحضور في أي وقت." },
+            { "language": "tr", "text": "Ateşim ve nefes darlığım yok, ama ağrı dünden belirgin şekilde daha güçlü. Bugün veya yarın bir boşluk olursa her zaman gelebilirim." },
+            { "language": "ru", "text": "Температуры и одышки у меня нет, но боль заметно сильнее, чем вчера. Если сегодня или завтра что-то освободится, я могу прийти в любое время." },
+            { "language": "ckb", "text": "تام و کورتەهەناسەییم نییە، بەڵام ئازارەکە بە ڕوونی لە دوێنێ توندترە. ئەگەر ئەمڕۆ یان سبەی کاتێک بەردەست بوو، هەر کاتێک بێت دەتوانم بێم." },
+            { "language": "kmr", "text": "Taya min û tengnefesî tune, lê êş ji doh bi zelalî xurtir e. Heke îro an sibê tiştek vala bibe, ez dikarim her dem werim." },
+            { "language": "pl", "text": "Nie mam gorączki ani duszności, ale ból jest wyraźnie silniejszy niż wczoraj. Jeśli dziś albo jutro coś się zwolni, mogę przyjść o każdej porze." },
+            { "language": "ro", "text": "Nu am febră și nici dificultăți de respirație, dar durerile sunt clar mai puternice decât ieri. Dacă se eliberează ceva astăzi sau mâine, pot veni oricând." },
+            { "language": "sq", "text": "Nuk kam temperaturë dhe as vështirësi në frymëmarrje, por dhimbjet janë dukshëm më të forta se dje. Nëse lirohet diçka sot ose nesër, mund të vij në çdo kohë." }
+          ],
+          "function": "answer-triage-and-flexibility",
+          "toneNote": "Answers safety questions and keeps appointment request realistic.",
+          "expectedLearnerAction": "State no warning signs, increased pain, and availability."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "receptionist",
+          "baseText": "Ich sehe gerade: Heute um 15:40 Uhr ist ein kurzer Termin frei geworden. Alternativ hätten wir morgen früh um 8:20 Uhr einen normalen Termin.",
+          "translations": [
+            { "language": "en", "text": "I see now: a short appointment has become available today at 3:40 p.m. Alternatively, we have a regular appointment tomorrow morning at 8:20." },
+            { "language": "fa", "text": "الان می‌بینم: امروز ساعت ۱۵:۴۰ یک وقت کوتاه آزاد شده است. به‌عنوان جایگزین، فردا صبح ساعت ۸:۲۰ یک وقت عادی داریم." },
+            { "language": "ar", "text": "أرى الآن: أصبح هناك موعد قصير اليوم الساعة 15:40. كبديل لدينا موعد عادي غدًا صباحًا الساعة 8:20." },
+            { "language": "tr", "text": "Şu anda görüyorum: Bugün saat 15:40'ta kısa bir randevu boşalmış. Alternatif olarak yarın sabah 8:20'de normal bir randevumuz var." },
+            { "language": "ru", "text": "Я вижу: сегодня в 15:40 освободился короткий прием. В качестве альтернативы у нас есть обычный прием завтра утром в 8:20." },
+            { "language": "ckb", "text": "ئێستا دەبینم: ئەمڕۆ کاتژمێر ١٥:٤٠ وەعدەیەکی کورت بەردەست بووە. وەک جێگرەوە، سبەی بەیانی کاتژمێر ٨:٢٠ وەعدەیەکی ئاساییمان هەیە." },
+            { "language": "kmr", "text": "Ez niha dibînim: Îro saet 15:40 randevûyek kurt vala bûye. Wekî alternatîf, sibê sibê saet 8:20 randevûyek asayî heye." },
+            { "language": "pl", "text": "Widzę teraz: dziś o 15:40 zwolnił się krótki termin. Alternatywnie mamy jutro rano o 8:20 normalny termin." },
+            { "language": "ro", "text": "Văd acum: astăzi la 15:40 s-a eliberat o programare scurtă. Alternativ, mâine dimineață la 8:20 avem o programare normală." },
+            { "language": "sq", "text": "Po shoh tani: sot në orën 15:40 është liruar një takim i shkurtër. Si alternativë kemi nesër në mëngjes në 8:20 një takim normal." }
+          ],
+          "function": "offer-options",
+          "toneNote": "Offers two time options with different constraints.",
+          "expectedLearnerAction": "Choose and clarify what to bring."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann nehme ich den Termin heute um 15:40 Uhr. Soll ich etwas mitbringen, zum Beispiel meine Gesundheitskarte oder eine Liste meiner Medikamente?",
+          "translations": [
+            { "language": "en", "text": "Then I will take the appointment today at 3:40 p.m. Should I bring anything, for example my health insurance card or a list of my medicines?" },
+            { "language": "fa", "text": "پس وقت امروز ساعت ۱۵:۴۰ را می‌گیرم. آیا باید چیزی همراه بیاورم، مثلاً کارت بیمه سلامت یا فهرست داروهایم؟" },
+            { "language": "ar", "text": "إذن آخذ موعد اليوم الساعة 15:40. هل يجب أن أحضر شيئًا، مثل بطاقة التأمين الصحي أو قائمة أدويتي؟" },
+            { "language": "tr", "text": "O zaman bugün saat 15:40 randevusunu alıyorum. Bir şey getirmeli miyim, örneğin sağlık kartımı veya ilaç listemi?" },
+            { "language": "ru", "text": "Тогда я возьму прием сегодня в 15:40. Нужно ли мне что-то принести, например медицинскую карту или список лекарств?" },
+            { "language": "ckb", "text": "ئەوا وەعدەی ئەمڕۆ کاتژمێر ١٥:٤٠ وەردەگرم. ئایا پێویستە شتێک بهێنم، بۆ نموونە کارتی تەندروستی یان لیستی دەرمانەکانم؟" },
+            { "language": "kmr", "text": "Wê demê ez randevûya îro saet 15:40 digirim. Divê tiştek bînim, mînak karta tenduristiyê an lîsteya dermanên xwe?" },
+            { "language": "pl", "text": "W takim razie biorę termin dziś o 15:40. Czy mam coś przynieść, na przykład kartę ubezpieczenia zdrowotnego albo listę leków?" },
+            { "language": "ro", "text": "Atunci iau programarea de astăzi la 15:40. Trebuie să aduc ceva, de exemplu cardul de sănătate sau o listă cu medicamentele mele?" },
+            { "language": "sq", "text": "Atëherë e marr takimin sot në orën 15:40. A duhet të sjell diçka, për shembull kartën e sigurimit shëndetësor ose listën e ilaçeve të mia?" }
+          ],
+          "function": "accept-and-ask-preparation",
+          "toneNote": "Chooses an option and asks for preparation.",
+          "expectedLearnerAction": "Accept appointment and ask what to bring."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "receptionist",
+          "baseText": "Bitte bringen Sie die Gesundheitskarte und, wenn möglich, eine Medikamentenliste mit. Wenn die Schmerzen plötzlich sehr stark werden oder Atemnot dazukommt, rufen Sie bitte den Notdienst.",
+          "translations": [
+            { "language": "en", "text": "Please bring your health insurance card and, if possible, a medication list. If the pain suddenly becomes very severe or shortness of breath occurs, please call the emergency service." },
+            { "language": "fa", "text": "لطفاً کارت بیمه سلامت و در صورت امکان فهرست داروها را همراه بیاورید. اگر درد ناگهان خیلی شدید شد یا تنگی نفس اضافه شد، لطفاً با اورژانس تماس بگیرید." },
+            { "language": "ar", "text": "يرجى إحضار بطاقة التأمين الصحي، وإذا أمكن قائمة الأدوية. إذا أصبح الألم فجأة شديدًا جدًا أو ظهرت صعوبة في التنفس، فاتصل بخدمة الطوارئ من فضلك." },
+            { "language": "tr", "text": "Lütfen sağlık kartınızı ve mümkünse ilaç listenizi getirin. Ağrı aniden çok şiddetlenirse veya nefes darlığı eklenirse lütfen acil servisi arayın." },
+            { "language": "ru", "text": "Пожалуйста, принесите медицинскую карту и, если возможно, список лекарств. Если боль внезапно станет очень сильной или появится одышка, пожалуйста, звоните в неотложную службу." },
+            { "language": "ckb", "text": "تکایە کارتی تەندروستی و ئەگەر دەکرێت لیستی دەرمانەکان بهێنن. ئەگەر ئازارەکە لەناکاو زۆر توند بوو یان کورتەهەناسەیی زیاد بوو، تکایە پەیوەندی بە خزمەتی فریاکەوتن بکەن." },
+            { "language": "kmr", "text": "Ji kerema xwe karta tenduristiyê û heke gengaz be lîsteya dermanan bînin. Heke êş ji nişkê ve pir xurt bibe an tengnefesî lê zêde bibe, ji kerema xwe telefonî xizmeta lezgîn bikin." },
+            { "language": "pl", "text": "Proszę przynieść kartę ubezpieczenia zdrowotnego i, jeśli to możliwe, listę leków. Jeśli ból nagle stanie się bardzo silny albo pojawi się duszność, proszę zadzwonić po pomoc doraźną." },
+            { "language": "ro", "text": "Vă rog să aduceți cardul de sănătate și, dacă se poate, o listă cu medicamentele. Dacă durerea devine brusc foarte puternică sau apare dificultate de respirație, vă rog să sunați la serviciul de urgență." },
+            { "language": "sq", "text": "Ju lutem sillni kartën e sigurimit shëndetësor dhe, nëse është e mundur, një listë të ilaçeve. Nëse dhimbja bëhet papritur shumë e fortë ose shfaqet vështirësi në frymëmarrje, ju lutem telefononi shërbimin e urgjencës." }
+          ],
+          "function": "confirm-preparation-and-warning",
+          "toneNote": "Gives preparation and warning signs.",
+          "expectedLearnerAction": "Summarize appointment, preparation, and emergency instruction."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Ich komme heute um 15:40 Uhr, bringe die Gesundheitskarte und meine Medikamentenliste mit und rufe den Notdienst, falls es plötzlich deutlich schlimmer wird.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. I will come today at 3:40 p.m., bring my health insurance card and medication list, and call the emergency service if it suddenly gets clearly worse." },
+            { "language": "fa", "text": "خیلی ممنون. امروز ساعت ۱۵:۴۰ می‌آیم، کارت بیمه سلامت و فهرست داروهایم را می‌آورم و اگر ناگهان به‌طور واضح بدتر شد با اورژانس تماس می‌گیرم." },
+            { "language": "ar", "text": "شكرًا جزيلًا. سأحضر اليوم الساعة 15:40، وأجلب بطاقة التأمين الصحي وقائمة أدويتي، وأتصل بخدمة الطوارئ إذا ساء الوضع فجأة بشكل واضح." },
+            { "language": "tr", "text": "Çok teşekkürler. Bugün saat 15:40'ta geliyorum, sağlık kartımı ve ilaç listemi getiriyorum ve durum aniden belirgin şekilde kötüleşirse acil servisi arıyorum." },
+            { "language": "ru", "text": "Большое спасибо. Я приду сегодня в 15:40, принесу медицинскую карту и список лекарств и позвоню в неотложную службу, если внезапно станет заметно хуже." },
+            { "language": "ckb", "text": "زۆر سوپاس. ئەمڕۆ کاتژمێر ١٥:٤٠ دێم، کارتی تەندروستی و لیستی دەرمانەکانم دەهێنم و ئەگەر لەناکاو بە ڕوونی خراپتر بوو پەیوەندی بە خزمەتی فریاکەوتن دەکەم." },
+            { "language": "kmr", "text": "Gelek spas. Ez îro saet 15:40 têm, karta tenduristiyê û lîsteya dermanên xwe tînim û heke ji nişkê ve bi zelalî xirabtir bibe telefonî xizmeta lezgîn dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. Przyjdę dziś o 15:40, przyniosę kartę ubezpieczenia zdrowotnego i listę leków oraz zadzwonię po pomoc doraźną, jeśli nagle wyraźnie się pogorszy." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Vin astăzi la 15:40, aduc cardul de sănătate și lista medicamentelor și sun la serviciul de urgență dacă se înrăutățește brusc în mod clar." },
+            { "language": "sq", "text": "Faleminderit shumë. Vij sot në orën 15:40, sjell kartën e sigurimit shëndetësor dhe listën e ilaçeve, dhe telefonoj shërbimin e urgjencës nëse papritur përkeqësohet dukshëm." }
+          ],
+          "function": "summarize-appointment",
+          "toneNote": "Confirms appointment and safety instruction.",
+          "expectedLearnerAction": "Summarize time, documents, and emergency condition."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "urgent-reason-and-flexibility",
+              "text": "Ich verstehe. Ich hätte gern einen früheren Termin, weil die Schmerzen seit gestern stärker geworden sind und ich heute kaum arbeiten konnte. Ich bin zeitlich sehr flexibel.",
+              "translations": [
+                { "language": "en", "text": "I understand. I would like an earlier appointment because the pain has become stronger since yesterday and I could hardly work today. I am very flexible with time." },
+                { "language": "fa", "text": "متوجه‌ام. دوست دارم وقت زودتری داشته باشم، چون درد از دیروز شدیدتر شده و امروز به‌سختی توانستم کار کنم. از نظر زمان خیلی انعطاف‌پذیرم." },
+                { "language": "ar", "text": "أفهم. أود موعدًا أبكر لأن الألم أصبح أقوى منذ أمس ولم أستطع العمل تقريبًا اليوم. أنا مرن جدًا من ناحية الوقت." },
+                { "language": "tr", "text": "Anlıyorum. Daha erken bir randevu istiyorum, çünkü ağrı dünden beri arttı ve bugün neredeyse çalışamadım. Zaman açısından çok esneğim." },
+                { "language": "ru", "text": "Понимаю. Я хотел бы более ранний прием, потому что боль со вчерашнего дня усилилась, и сегодня я почти не мог работать. По времени я очень гибок." },
+                { "language": "ckb", "text": "تێدەگەم. حەز دەکەم وەعدەی زووترم هەبێت، چونکە ئازارەکە لە دوێنێوە توندتر بووە و ئەمڕۆ بە زەحمەت توانیم کار بکەم. لە ڕووی کاتەوە زۆر نەرمن." },
+                { "language": "kmr", "text": "Ez fêm dikim. Ez randevûyek zûtir dixwazim, ji ber ku êş ji doh ve xurtir bûye û îro min bi zorî kar kir. Ez ji aliyê demê ve pir nerm im." },
+                { "language": "pl", "text": "Rozumiem. Chciałbym wcześniejszy termin, ponieważ ból od wczoraj się nasilił i dziś prawie nie mogłem pracować. Jestem bardzo elastyczny czasowo." },
+                { "language": "ro", "text": "Înțeleg. Aș dori o programare mai devreme, pentru că durerile s-au intensificat de ieri și astăzi abia am putut lucra. Sunt foarte flexibil ca program." },
+                { "language": "sq", "text": "E kuptoj. Do të doja një takim më të hershëm, sepse dhimbjet janë forcuar që nga dje dhe sot mezi munda të punoj. Jam shumë fleksibël me orarin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du nennst Grund, Verlauf, Auswirkung und zeitliche Flexibilität.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You name the reason, development, impact, and time flexibility." },
+                { "language": "fa", "text": "خوب است: دلیل، روند، تأثیر و انعطاف زمانی را می‌گویی." },
+                { "language": "ar", "text": "جيد: تذكر السبب والتطور والتأثير والمرونة الزمنية." },
+                { "language": "tr", "text": "İyi: Nedeni, gelişimi, etkisini ve zaman esnekliğini söylüyorsun." },
+                { "language": "ru", "text": "Хорошо: ты называешь причину, развитие, влияние и гибкость по времени." },
+                { "language": "ckb", "text": "باشە: هۆکار، پەرەسەندن، کاریگەری و نەرمیی کات دەڵێیت." },
+                { "language": "kmr", "text": "Baş e: Tu sedem, pêşveçûn, bandor û nermiya demê dibêjî." },
+                { "language": "pl", "text": "Dobrze: podajesz powód, przebieg, wpływ i elastyczność czasową." },
+                { "language": "ro", "text": "Bine: numești motivul, evoluția, impactul și flexibilitatea de program." },
+                { "language": "sq", "text": "Mirë: përmend arsyen, zhvillimin, ndikimin dhe fleksibilitetin e orarit." }
+              ]
+            },
+            {
+              "id": "too-vague-urgent",
+              "text": "Es ist dringend. Haben Sie vielleicht früher etwas frei?",
+              "translations": [
+                { "language": "en", "text": "It is urgent. Do you maybe have something earlier available?" },
+                { "language": "fa", "text": "فوری است. شاید وقت زودتری دارید؟" },
+                { "language": "ar", "text": "الأمر عاجل. هل لديكم ربما موعد أبكر؟" },
+                { "language": "tr", "text": "Acil. Belki daha erken bir boşluğunuz var mı?" },
+                { "language": "ru", "text": "Это срочно. Может быть, у вас есть что-то раньше?" },
+                { "language": "ckb", "text": "فریایە. ئایا لەوانەیە وەعدەیەکی زووترتان هەبێت؟" },
+                { "language": "kmr", "text": "Ew lezgîn e. Gelo we tiştek zûtir vala heye?" },
+                { "language": "pl", "text": "To pilne. Czy może mają państwo coś wcześniej wolnego?" },
+                { "language": "ro", "text": "Este urgent. Aveți poate ceva mai devreme liber?" },
+                { "language": "sq", "text": "Është urgjente. A keni ndoshta diçka më herët të lirë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Du sagst nicht, warum es dringend ist und wann die Beschwerden begonnen haben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: You do not say why it is urgent or when the symptoms began." },
+                { "language": "fa", "text": "خیلی مبهم است: نمی‌گویی چرا فوری است و علائم از چه زمانی شروع شده‌اند." },
+                { "language": "ar", "text": "غامض جدًا: لا تقول لماذا هو عاجل ولا متى بدأت الأعراض." },
+                { "language": "tr", "text": "Çok belirsiz: Neden acil olduğunu ve şikayetlerin ne zaman başladığını söylemiyorsun." },
+                { "language": "ru", "text": "Слишком неопределенно: ты не говоришь, почему это срочно и когда начались жалобы." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: ناڵێیت بۆچی فریایە و نیشانەکان لە کەیەوە دەستیان پێکردووە." },
+                { "language": "kmr", "text": "Pir nezelal e: Tu nabêjî çima lezgîn e û gazin kengê dest pê kirine." },
+                { "language": "pl", "text": "Zbyt niejasno: nie mówisz, dlaczego to pilne i kiedy zaczęły się objawy." },
+                { "language": "ro", "text": "Prea vag: nu spui de ce este urgent și când au început simptomele." },
+                { "language": "sq", "text": "Shumë e paqartë: nuk thua pse është urgjente dhe kur kanë filluar shqetësimet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "triage-answer-and-flexible",
+              "text": "Fieber und Atemnot habe ich nicht, aber die Schmerzen sind deutlich stärker als gestern. Wenn heute oder morgen etwas frei wird, kann ich jederzeit kommen.",
+              "translations": [
+                { "language": "en", "text": "I do not have a fever or shortness of breath, but the pain is clearly stronger than yesterday. If something becomes available today or tomorrow, I can come at any time." },
+                { "language": "fa", "text": "تب و تنگی نفس ندارم، اما درد به‌وضوح از دیروز شدیدتر است. اگر امروز یا فردا وقتی خالی شود، هر زمانی می‌توانم بیایم." },
+                { "language": "ar", "text": "ليست لدي حمى ولا ضيق تنفس، لكن الألم أقوى بوضوح من أمس. إذا توفر شيء اليوم أو غدًا، يمكنني الحضور في أي وقت." },
+                { "language": "tr", "text": "Ateşim ve nefes darlığım yok, ama ağrı dünden belirgin şekilde daha güçlü. Bugün veya yarın bir boşluk olursa her zaman gelebilirim." },
+                { "language": "ru", "text": "Температуры и одышки у меня нет, но боль заметно сильнее, чем вчера. Если сегодня или завтра что-то освободится, я могу прийти в любое время." },
+                { "language": "ckb", "text": "تام و کورتەهەناسەییم نییە، بەڵام ئازارەکە بە ڕوونی لە دوێنێ توندترە. ئەگەر ئەمڕۆ یان سبەی کاتێک بەردەست بوو، هەر کاتێک بێت دەتوانم بێم." },
+                { "language": "kmr", "text": "Taya min û tengnefesî tune, lê êş ji doh bi zelalî xurtir e. Heke îro an sibê tiştek vala bibe, ez dikarim her dem werim." },
+                { "language": "pl", "text": "Nie mam gorączki ani duszności, ale ból jest wyraźnie silniejszy niż wczoraj. Jeśli dziś albo jutro coś się zwolni, mogę przyjść o każdej porze." },
+                { "language": "ro", "text": "Nu am febră și nici dificultăți de respirație, dar durerile sunt clar mai puternice decât ieri. Dacă se eliberează ceva astăzi sau mâine, pot veni oricând." },
+                { "language": "sq", "text": "Nuk kam temperaturë dhe as vështirësi në frymëmarrje, por dhimbjet janë dukshëm më të forta se dje. Nëse lirohet diçka sot ose nesër, mund të vij në çdo kohë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du beantwortest die Warnzeichen und erklärst, warum ein früher Termin sinnvoll ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You answer the warning signs and explain why an earlier appointment makes sense." },
+                { "language": "fa", "text": "خوب است: به علائم هشدار پاسخ می‌دهی و توضیح می‌دهی چرا وقت زودتر منطقی است." },
+                { "language": "ar", "text": "جيد: تجيب عن علامات التحذير وتشرح لماذا يكون الموعد الأبكر منطقيًا." },
+                { "language": "tr", "text": "İyi: Uyarı işaretlerini yanıtlıyor ve daha erken randevunun neden mantıklı olduğunu açıklıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты отвечаешь на вопросы о тревожных признаках и объясняешь, почему более ранний прием имеет смысл." },
+                { "language": "ckb", "text": "باشە: وەڵامی نیشانەکانی ئاگاداری دەدەیتەوە و ڕوون دەکەیتەوە بۆچی وەعدەی زووتر گونجاوە." },
+                { "language": "kmr", "text": "Baş e: Tu bersiva nîşanên hişyariyê didî û şirove dikî çima randevûyek zûtir wateyê heye." },
+                { "language": "pl", "text": "Dobrze: odpowiadasz na pytania o sygnały ostrzegawcze i wyjaśniasz, dlaczego wcześniejszy termin ma sens." },
+                { "language": "ro", "text": "Bine: răspunzi la semnele de avertizare și explici de ce are sens o programare mai devreme." },
+                { "language": "sq", "text": "Mirë: u përgjigjesh shenjave paralajmëruese dhe shpjegon pse ka kuptim një takim më i hershëm." }
+              ]
+            },
+            {
+              "id": "only-no-fever",
+              "text": "Fieber habe ich nicht. Ich kann auch morgen kommen.",
+              "translations": [
+                { "language": "en", "text": "I do not have a fever. I can also come tomorrow." },
+                { "language": "fa", "text": "تب ندارم. فردا هم می‌توانم بیایم." },
+                { "language": "ar", "text": "ليست لدي حمى. يمكنني أن آتي غدًا أيضًا." },
+                { "language": "tr", "text": "Ateşim yok. Yarın da gelebilirim." },
+                { "language": "ru", "text": "Температуры у меня нет. Я могу прийти и завтра." },
+                { "language": "ckb", "text": "تام نییە. سبەیش دەتوانم بێم." },
+                { "language": "kmr", "text": "Taya min tune. Ez dikarim sibê jî werim." },
+                { "language": "pl", "text": "Nie mam gorączki. Mogę też przyjść jutro." },
+                { "language": "ro", "text": "Nu am febră. Pot veni și mâine." },
+                { "language": "sq", "text": "Nuk kam temperaturë. Mund të vij edhe nesër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Atemnot, stärkere Schmerzen und die heutige Flexibilität fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: Shortness of breath, stronger pain, and today's flexibility are missing." },
+                { "language": "fa", "text": "ناقص است: تنگی نفس، شدیدتر شدن درد و انعطاف امروز کم است." },
+                { "language": "ar", "text": "غير كامل: ينقص ضيق التنفس والألم الأقوى والمرونة اليوم." },
+                { "language": "tr", "text": "Eksik: Nefes darlığı, daha güçlü ağrı ve bugünkü esneklik eksik." },
+                { "language": "ru", "text": "Неполно: не хватает одышки, усиления боли и гибкости сегодня." },
+                { "language": "ckb", "text": "ناتەواوە: کورتەهەناسەیی، توندتر بوونی ئازار و نەرمیی ئەمڕۆ کەمە." },
+                { "language": "kmr", "text": "Netemam e: Tengnefesî, êşa xurtir û nermiya îro kêm in." },
+                { "language": "pl", "text": "Niepełne: brakuje duszności, silniejszego bólu i dzisiejszej elastyczności." },
+                { "language": "ro", "text": "Incomplet: lipsesc dificultățile de respirație, durerile mai puternice și flexibilitatea de astăzi." },
+                { "language": "sq", "text": "E paplotë: mungojnë vështirësia në frymëmarrje, dhimbja më e fortë dhe fleksibiliteti për sot." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-appointment-summary",
+              "text": "Vielen Dank. Ich komme heute um 15:40 Uhr, bringe die Gesundheitskarte und meine Medikamentenliste mit und rufe den Notdienst, falls es plötzlich deutlich schlimmer wird.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. I will come today at 3:40 p.m., bring my health insurance card and medication list, and call the emergency service if it suddenly gets clearly worse." },
+                { "language": "fa", "text": "خیلی ممنون. امروز ساعت ۱۵:۴۰ می‌آیم، کارت بیمه سلامت و فهرست داروهایم را می‌آورم و اگر ناگهان به‌طور واضح بدتر شد با اورژانس تماس می‌گیرم." },
+                { "language": "ar", "text": "شكرًا جزيلًا. سأحضر اليوم الساعة 15:40، وأجلب بطاقة التأمين الصحي وقائمة أدويتي، وأتصل بخدمة الطوارئ إذا ساء الوضع فجأة بشكل واضح." },
+                { "language": "tr", "text": "Çok teşekkürler. Bugün saat 15:40'ta geliyorum, sağlık kartımı ve ilaç listemi getiriyorum ve durum aniden belirgin şekilde kötüleşirse acil servisi arıyorum." },
+                { "language": "ru", "text": "Большое спасибо. Я приду сегодня в 15:40, принесу медицинскую карту и список лекарств и позвоню в неотложную службу, если внезапно станет заметно хуже." },
+                { "language": "ckb", "text": "زۆر سوپاس. ئەمڕۆ کاتژمێر ١٥:٤٠ دێم، کارتی تەندروستی و لیستی دەرمانەکانم دەهێنم و ئەگەر لەناکاو بە ڕوونی خراپتر بوو پەیوەندی بە خزمەتی فریاکەوتن دەکەم." },
+                { "language": "kmr", "text": "Gelek spas. Ez îro saet 15:40 têm, karta tenduristiyê û lîsteya dermanên xwe tînim û heke ji nişkê ve bi zelalî xirabtir bibe telefonî xizmeta lezgîn dikim." },
+                { "language": "pl", "text": "Bardzo dziękuję. Przyjdę dziś o 15:40, przyniosę kartę ubezpieczenia zdrowotnego i listę leków oraz zadzwonię po pomoc doraźną, jeśli nagle wyraźnie się pogorszy." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Vin astăzi la 15:40, aduc cardul de sănătate și lista medicamentelor și sun la serviciul de urgență dacă se înrăutățește brusc în mod clar." },
+                { "language": "sq", "text": "Faleminderit shumë. Vij sot në orën 15:40, sjell kartën e sigurimit shëndetësor dhe listën e ilaçeve, dhe telefonoj shërbimin e urgjencës nëse papritur përkeqësohet dukshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du bestätigst Termin, Unterlagen und den Sicherheitsfall.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You confirm the appointment, documents, and the safety situation." },
+                { "language": "fa", "text": "خوب است: وقت، مدارک و وضعیت ایمنی را تأیید می‌کنی." },
+                { "language": "ar", "text": "جيد: تؤكد الموعد والوثائق وحالة السلامة." },
+                { "language": "tr", "text": "İyi: Randevuyu, belgeleri ve güvenlik durumunu onaylıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты подтверждаешь прием, документы и ситуацию безопасности." },
+                { "language": "ckb", "text": "باشە: وەعدە، بەڵگەکان و حاڵەتی سەلامەتی پشتڕاست دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu randevû, belge û rewşa ewlehiyê piştrast dikî." },
+                { "language": "pl", "text": "Dobrze: potwierdzasz termin, dokumenty i sytuację bezpieczeństwa." },
+                { "language": "ro", "text": "Bine: confirmi programarea, documentele și situația de siguranță." },
+                { "language": "sq", "text": "Mirë: konfirmon takimin, dokumentet dhe situatën e sigurisë." }
+              ]
+            },
+            {
+              "id": "summary-missing-emergency",
+              "text": "Danke, dann komme ich heute Nachmittag und bringe die Karte mit.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will come this afternoon and bring the card." },
+                { "language": "fa", "text": "ممنون، پس امروز بعدازظهر می‌آیم و کارت را می‌آورم." },
+                { "language": "ar", "text": "شكرًا، إذن سأحضر بعد ظهر اليوم وأجلب البطاقة." },
+                { "language": "tr", "text": "Teşekkürler, o zaman bugün öğleden sonra gelirim ve kartı getiririm." },
+                { "language": "ru", "text": "Спасибо, тогда я приду сегодня днем и принесу карту." },
+                { "language": "ckb", "text": "سوپاس، ئەوا ئەمڕۆ دوای نیوەڕۆ دێم و کارت دەهێنم." },
+                { "language": "kmr", "text": "Spas, wê demê ez îro piştî nîvro têm û kartê tînim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie przyjdę dziś po południu i przyniosę kartę." },
+                { "language": "ro", "text": "Mulțumesc, atunci vin astăzi după-amiază și aduc cardul." },
+                { "language": "sq", "text": "Faleminderit, atëherë vij sot pasdite dhe sjell kartën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Uhrzeit, Medikamentenliste und Notdienst-Hinweis fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: The exact time, medication list, and emergency-service instruction are missing." },
+                { "language": "fa", "text": "خیلی مبهم است: ساعت دقیق، فهرست داروها و اشاره به اورژانس کم است." },
+                { "language": "ar", "text": "غامض جدًا: تنقص الساعة الدقيقة وقائمة الأدوية وإشارة خدمة الطوارئ." },
+                { "language": "tr", "text": "Çok belirsiz: Kesin saat, ilaç listesi ve acil servis uyarısı eksik." },
+                { "language": "ru", "text": "Слишком неопределенно: не хватает точного времени, списка лекарств и указания про неотложную службу." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: کاتی ورد، لیستی دەرمانەکان و ئاماژەی خزمەتی فریاکەوتن کەمە." },
+                { "language": "kmr", "text": "Pir nezelal e: Saeta rast, lîsteya dermanan û hişyariya xizmeta lezgîn kêm in." },
+                { "language": "pl", "text": "Zbyt niejasno: brakuje dokładnej godziny, listy leków i wskazówki o pomocy doraźnej." },
+                { "language": "ro", "text": "Prea vag: lipsesc ora exactă, lista medicamentelor și indicația despre serviciul de urgență." },
+                { "language": "sq", "text": "Shumë e paqartë: mungojnë ora e saktë, lista e ilaçeve dhe udhëzimi për shërbimin e urgjencës." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "appointment-summary",
+          "text": "Bei einem dringenden Termin helfen konkrete Angaben: seit wann, wie stark, welche Warnzeichen fehlen oder vorhanden sind und wann du kommen kannst.",
+          "translations": [
+            { "language": "en", "text": "For an urgent appointment, concrete details help: since when, how severe, which warning signs are absent or present, and when you can come." },
+            { "language": "fa", "text": "برای وقت فوری، اطلاعات مشخص کمک می‌کند: از چه زمانی، چقدر شدید، کدام علائم هشدار وجود دارد یا ندارد و چه زمانی می‌توانی بیایی." },
+            { "language": "ar", "text": "في الموعد العاجل تساعد التفاصيل المحددة: منذ متى، ما مدى الشدة، أي علامات تحذير غير موجودة أو موجودة، ومتى يمكنك الحضور." },
+            { "language": "tr", "text": "Acil bir randevuda somut bilgiler yardımcı olur: ne zamandan beri, ne kadar şiddetli, hangi uyarı işaretleri yok veya var ve ne zaman gelebileceğin." },
+            { "language": "ru", "text": "Для срочного приема помогают конкретные данные: с какого времени, насколько сильно, какие тревожные признаки отсутствуют или есть, и когда ты можешь прийти." },
+            { "language": "ckb", "text": "بۆ وەعدەی فریا، زانیاریی دیاریکراو یارمەتی دەدات: لە کەیەوە، چەند توندە، کام نیشانەی ئاگاداری نییە یان هەیە و کەی دەتوانیت بێیت." },
+            { "language": "kmr", "text": "Ji bo randevûyek lezgîn agahiyên konkret alîkar in: ji kengê ve, çiqas xurt, kîjan nîşanên hişyariyê tune an hene û kengê dikarî werî." },
+            { "language": "pl", "text": "Przy pilnym terminie pomagają konkretne informacje: od kiedy, jak silnie, których sygnałów ostrzegawczych nie ma albo są i kiedy możesz przyjść." },
+            { "language": "ro", "text": "Pentru o programare urgentă ajută informațiile concrete: de când, cât de puternic, ce semne de avertizare lipsesc sau există și când poți veni." },
+            { "language": "sq", "text": "Për një takim urgjent ndihmojnë të dhënat konkrete: që kur, sa e fortë, cilat shenja paralajmëruese mungojnë ose janë të pranishme dhe kur mund të vish." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

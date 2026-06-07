@@ -1,0 +1,816 @@
+{
+  "packageId": "roleplays-c1-core-76-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 76 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 76",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-kompromiss-in-einer-formalen-pruefung-aushandeln",
+      "linkedDialogueSlug": null,
+      "title": "Einen Kompromiss in einer formalen Prüfung aushandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating a compromise in a formal exam" },
+        { "language": "fa", "text": "مذاکره برای رسیدن به مصالحه در یک آزمون رسمی" },
+        { "language": "ar", "text": "التفاوض على حل وسط في امتحان رسمي" },
+        { "language": "tr", "text": "Resmi bir sınavda uzlaşma müzakere etmek" },
+        { "language": "ru", "text": "Согласование компромисса на официальном экзамене" },
+        { "language": "ckb", "text": "دانوساندن بۆ ڕێککەوتنێک لە تاقیکردنەوەیەکی فەرمی" },
+        { "language": "kmr", "text": "Axaftina li ser lihevhatinekê di azmûneke fermî de" },
+        { "language": "pl", "text": "Wynegocjowanie kompromisu w formalnym egzaminie" },
+        { "language": "ro", "text": "Negocierea unui compromis într-un examen formal" },
+        { "language": "sq", "text": "Negocimi i një kompromisi në një provim formal" }
+      ],
+      "description": "In einer mündlichen Prüfung sollen Sie mit Ihrer Partnerin eine gemeinsame Präsentation planen. Sie handeln einen Kompromiss zwischen einem praktischen Beispiel und einer breiteren Argumentation aus.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral exam, you and your partner have to plan a joint presentation. You negotiate a compromise between a practical example and a broader argument." },
+        { "language": "fa", "text": "در یک آزمون شفاهی باید با هم‌گروهی خود یک ارائه مشترک برنامه‌ریزی کنید. بین یک مثال عملی و یک استدلال گسترده‌تر مصالحه می‌کنید." },
+        { "language": "ar", "text": "في امتحان شفهي يجب أن تخطط مع شريكتك لعرض مشترك. تتفاوضان على حل وسط بين مثال عملي وحجة أوسع." },
+        { "language": "tr", "text": "Sözlü bir sınavda partnerinizle ortak bir sunum planlamanız gerekir. Pratik bir örnek ile daha geniş bir argüman arasında uzlaşma müzakere edersiniz." },
+        { "language": "ru", "text": "На устном экзамене Вы должны вместе с партнером спланировать общую презентацию. Вы согласуете компромисс между практическим примером и более широкой аргументацией." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەیەکی زارەکیدا دەبێت لەگەڵ هاوبەشەکەت پێشکەشکردنێکی هاوبەش پلان بکەیت. لە نێوان نموونەیەکی کرداری و بەڵگەهێنانێکی فراوانتر ڕێککەوتنێک دانوسێنیت." },
+        { "language": "kmr", "text": "Di azmûneke devkî de divê hûn bi hevkarê xwe re pêşkêşiyeke hevpar plan bikin. Hûn di navbera mînakeke pratîk û argumankirineke firehtir de lihevhatinekê danûstandin dikin." },
+        { "language": "pl", "text": "Na egzaminie ustnym ma Pan/Pani wraz z partnerką zaplanować wspólną prezentację. Negocjujecie kompromis między praktycznym przykładem a szerszą argumentacją." },
+        { "language": "ro", "text": "Într-un examen oral trebuie să planificați împreună cu partenera o prezentare comună. Negociați un compromis între un exemplu practic și o argumentare mai largă." },
+        { "language": "sq", "text": "Në një provim me gojë duhet të planifikoni me partneren një prezantim të përbashkët. Negocioni një kompromis midis një shembulli praktik dhe një argumentimi më të gjerë." }
+      ],
+      "learnerGoal": "Einen formalen Kompromiss aushandeln: einen Einwand aufnehmen, ein Zugeständnis machen, eine Bedingung formulieren, Zuständigkeiten verteilen und das Ergebnis präzise zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate a formal compromise: take up an objection, make a concession, formulate a condition, divide responsibilities, and summarize the result precisely." },
+        { "language": "fa", "text": "یک مصالحه رسمی را مذاکره کنید: ایراد را بگیرید، امتیاز بدهید، شرطی مطرح کنید، مسئولیت‌ها را تقسیم کنید و نتیجه را دقیق جمع‌بندی کنید." },
+        { "language": "ar", "text": "تفاوض على حل وسط رسمي: تناول الاعتراض، وقدم تنازلاً، وصغ شرطاً، ووزع المسؤوليات، ولخص النتيجة بدقة." },
+        { "language": "tr", "text": "Resmi bir uzlaşma müzakere edin: itirazı ele alın, taviz verin, bir koşul formüle edin, sorumlulukları paylaşın ve sonucu kesin biçimde özetleyin." },
+        { "language": "ru", "text": "Согласовать формальный компромисс: принять возражение, сделать уступку, сформулировать условие, распределить обязанности и точно подвести итог." },
+        { "language": "ckb", "text": "ڕێککەوتنێکی فەرمی دانوسێنە: تێبینییەکە وەربگرە، سازشێک بکە، مەرجێک داڕێژە، بەرپرسیارییەکان دابەش بکە و ئەنجامەکە بە وردی کۆبکەوە." },
+        { "language": "kmr", "text": "Lihevhatineke fermî danûstandin bikin: nerînê bigirin, destdanekê bikin, mercêkê formule bikin, berpirsiyariyan parve bikin û encamê hûrgilî kom bikin." },
+        { "language": "pl", "text": "Wynegocjować formalny kompromis: podjąć zastrzeżenie, ustąpić w jednym punkcie, sformułować warunek, podzielić odpowiedzialności i precyzyjnie podsumować wynik." },
+        { "language": "ro", "text": "Negociați un compromis formal: preluați o obiecție, faceți o concesie, formulați o condiție, împărțiți responsabilitățile și rezumați precis rezultatul." },
+        { "language": "sq", "text": "Negocioni një kompromis formal: merrni parasysh kundërshtimin, bëni një lëshim, formuloni një kusht, ndani përgjegjësitë dhe përmblidhni saktë rezultatin." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 76,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Prüfungsteilnehmer/in A",
+          "translations": [
+            { "language": "en", "text": "Exam candidate A" },
+            { "language": "fa", "text": "شرکت‌کننده آزمون A" },
+            { "language": "ar", "text": "الممتحن A" },
+            { "language": "tr", "text": "Sınav adayı A" },
+            { "language": "ru", "text": "Участник экзамена A" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە A" },
+            { "language": "kmr", "text": "Beşdarê azmûnê A" },
+            { "language": "pl", "text": "Osoba zdająca A" },
+            { "language": "ro", "text": "Candidat la examen A" },
+            { "language": "sq", "text": "Kandidat provimi A" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Prüfungsteilnehmer/in B",
+          "translations": [
+            { "language": "en", "text": "Exam candidate B" },
+            { "language": "fa", "text": "شرکت‌کننده آزمون B" },
+            { "language": "ar", "text": "الممتحن B" },
+            { "language": "tr", "text": "Sınav adayı B" },
+            { "language": "ru", "text": "Участник экзамена B" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە B" },
+            { "language": "kmr", "text": "Beşdarê azmûnê B" },
+            { "language": "pl", "text": "Osoba zdająca B" },
+            { "language": "ro", "text": "Candidat la examen B" },
+            { "language": "sq", "text": "Kandidat provimi B" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Wir haben nur zehn Minuten. Ich würde die Präsentation auf ein konkretes Beispiel aus der Stadtbibliothek beschränken. Ihr Vergleich verschiedener Modelle wirkt mir zu breit.",
+          "translations": [
+            { "language": "en", "text": "We only have ten minutes. I would limit the presentation to one concrete example from the city library. Your comparison of different models seems too broad to me." },
+            { "language": "fa", "text": "ما فقط ده دقیقه وقت داریم. من ارائه را به یک مثال مشخص از کتابخانه شهر محدود می‌کردم. مقایسه شما بین مدل‌های مختلف برایم بیش از حد گسترده به نظر می‌رسد." },
+            { "language": "ar", "text": "لدينا عشر دقائق فقط. سأقصر العرض على مثال ملموس من مكتبة المدينة. تبدو لي مقارنتك بين نماذج مختلفة واسعة جداً." },
+            { "language": "tr", "text": "Sadece on dakikamız var. Sunumu şehir kütüphanesinden somut bir örnekle sınırlandırırdım. Farklı modelleri karşılaştırmanız bana fazla geniş geliyor." },
+            { "language": "ru", "text": "У нас всего десять минут. Я бы ограничил(а) презентацию одним конкретным примером из городской библиотеки. Ваше сравнение разных моделей кажется мне слишком широким." },
+            { "language": "ckb", "text": "تەنها دە خولەکمان هەیە. من پێشکەشکردنەکە بە نموونەیەکی دیاریکراو لە کتێبخانەی شار سنووردار دەکەم. بەراوردکردنی تۆ بۆ مۆدێلە جیاوازەکان زۆر فراوان دەردەکەوێت." },
+            { "language": "kmr", "text": "Me tenê deh deqîqe hene. Ez ê pêşkêşiyê bi mînakeke konkret ji pirtûkxaneya bajêr sînordar bikim. Berhevkirina we ya modelên cuda ji min re pir fireh xuya dike." },
+            { "language": "pl", "text": "Mamy tylko dziesięć minut. Ograniczył(a)bym prezentację do konkretnego przykładu z biblioteki miejskiej. Pana/Pani porównanie różnych modeli wydaje mi się zbyt szerokie." },
+            { "language": "ro", "text": "Avem doar zece minute. Aș limita prezentarea la un exemplu concret din biblioteca municipală. Comparația dumneavoastră între diferite modele mi se pare prea largă." },
+            { "language": "sq", "text": "Kemi vetëm dhjetë minuta. Do ta kufizoja prezantimin te një shembull konkret nga biblioteka e qytetit. Krahasimi juaj i modeleve të ndryshme më duket shumë i gjerë." }
+          ],
+          "function": "state-conflicting-preference",
+          "toneNote": "formal disagreement"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe den Zeitpunkt. Wenn wir aber nur ein Beispiel nennen, fehlt die übertragbare Aussage. Mein Vorschlag wäre: Ihr Beispiel als Einstieg, danach drei kurze Kriterien für die Einordnung.",
+          "translations": [
+            { "language": "en", "text": "I understand the time issue. But if we mention only one example, the transferable statement is missing. My proposal would be: your example as the opening, then three short criteria for classification." },
+            { "language": "fa", "text": "مسئله زمان را می‌فهمم. اما اگر فقط یک مثال بزنیم، پیام قابل تعمیم کم می‌شود. پیشنهاد من این است: مثال شما به‌عنوان شروع، بعد سه معیار کوتاه برای طبقه‌بندی." },
+            { "language": "ar", "text": "أفهم مسألة الوقت. لكن إذا ذكرنا مثالاً واحداً فقط، تغيب الرسالة القابلة للتعميم. اقتراحي هو: مثالكم كبداية، ثم ثلاثة معايير قصيرة للتصنيف." },
+            { "language": "tr", "text": "Zaman meselesini anlıyorum. Ama yalnızca bir örnek verirsek, aktarılabilir sonuç eksik kalır. Önerim şu olurdu: sizin örneğiniz giriş olarak, ardından sınıflandırma için üç kısa ölçüt." },
+            { "language": "ru", "text": "Я понимаю вопрос времени. Но если мы назовем только один пример, не будет переносимого вывода. Мое предложение: Ваш пример как вступление, затем три коротких критерия для оценки." },
+            { "language": "ckb", "text": "کێشەی کات تێدەگەم. بەڵام ئەگەر تەنها یەک نموونە بڵێین، ئەو پەیامەی دەتوانرێت بگوازرێتەوە کەم دەبێت. پێشنیارم ئەوەیە: نموونەکەت وەک دەستپێک، پاشان سێ پێوەری کورت بۆ پۆلێنکردن." },
+            { "language": "kmr", "text": "Ez pirsgirêka demê fêm dikim. Lê heke em tenê mînakekê bibêjin, gotina ku dikare were veguhestin kêm dimîne. Pêşniyara min ev e: mînaka we wek destpêk, paşê sê pîvanên kurt ji bo rêzkirinê." },
+            { "language": "pl", "text": "Rozumiem kwestię czasu. Jeśli jednak podamy tylko jeden przykład, zabraknie wniosku możliwego do przeniesienia. Moja propozycja: Pana/Pani przykład jako wstęp, potem trzy krótkie kryteria do uporządkowania." },
+            { "language": "ro", "text": "Înțeleg problema timpului. Dar dacă menționăm doar un exemplu, lipsește concluzia transferabilă. Propunerea mea ar fi: exemplul dumneavoastră ca introducere, apoi trei criterii scurte pentru încadrare." },
+            { "language": "sq", "text": "E kuptoj çështjen e kohës. Por nëse përmendim vetëm një shembull, mungon mesazhi i transferueshëm. Propozimi im do të ishte: shembulli juaj si hyrje, pastaj tre kritere të shkurtra për klasifikim." }
+          ],
+          "function": "concede-and-propose",
+          "toneNote": "concession plus counterproposal"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Welche Kriterien meinen Sie? Wenn wir zu abstrakt werden, verlieren wir im Prüfungsgespräch die Verständlichkeit.",
+          "translations": [
+            { "language": "en", "text": "Which criteria do you mean? If we become too abstract, we lose clarity in the exam discussion." },
+            { "language": "fa", "text": "منظورتان کدام معیارهاست؟ اگر بیش از حد انتزاعی شویم، در گفت‌وگوی امتحانی شفافیت را از دست می‌دهیم." },
+            { "language": "ar", "text": "أي معايير تقصد؟ إذا أصبحنا مجردين جداً، نفقد الوضوح في حوار الامتحان." },
+            { "language": "tr", "text": "Hangi ölçütleri kastediyorsunuz? Çok soyutlaşırsak sınav görüşmesinde anlaşılırlığı kaybederiz." },
+            { "language": "ru", "text": "Какие критерии Вы имеете в виду? Если мы станем слишком абстрактными, мы потеряем понятность в экзаменационном разговоре." },
+            { "language": "ckb", "text": "مەبەستت کام پێوەرە؟ ئەگەر زۆر ئەبستراکت بین، لە گفتوگۆی تاقیکردنەوەدا ڕوونی لەدەست دەدەین." },
+            { "language": "kmr", "text": "Hûn kîjan pîvanan dibêjin? Heke em pir abstrakt bibin, di axaftina azmûnê de zelalbûnê winda dikin." },
+            { "language": "pl", "text": "Jakie kryteria ma Pan/Pani na myśli? Jeśli będziemy zbyt abstrakcyjni, stracimy zrozumiałość w rozmowie egzaminacyjnej." },
+            { "language": "ro", "text": "La ce criterii vă referiți? Dacă devenim prea abstracți, pierdem claritatea în discuția de examen." },
+            { "language": "sq", "text": "Cilat kritere keni parasysh? Nëse bëhemi shumë abstraktë, humbim qartësinë në bisedën e provimit." }
+          ],
+          "function": "request-precision",
+          "toneNote": "clarification"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde drei leicht verständliche Kriterien nehmen: Zugang für verschiedene Gruppen, Kosten für die Einrichtung und persönliche Beratung vor Ort. Damit bleibt der Vergleich greifbar.",
+          "translations": [
+            { "language": "en", "text": "I would use three easy-to-understand criteria: access for different groups, costs for the institution, and personal advice on site. That keeps the comparison tangible." },
+            { "language": "fa", "text": "من سه معیار قابل فهم انتخاب می‌کردم: دسترسی برای گروه‌های مختلف، هزینه برای مؤسسه و مشاوره حضوری در محل. با این کار مقایسه ملموس می‌ماند." },
+            { "language": "ar", "text": "سأختار ثلاثة معايير سهلة الفهم: الوصول لمجموعات مختلفة، والتكاليف على المؤسسة، والاستشارة الشخصية في المكان. بذلك يبقى المقارنة ملموسة." },
+            { "language": "tr", "text": "Üç kolay anlaşılır ölçüt alırdım: farklı gruplar için erişim, kurum için maliyetler ve yerinde kişisel danışmanlık. Böylece karşılaştırma somut kalır." },
+            { "language": "ru", "text": "Я бы взял(а) три легко понятных критерия: доступ для разных групп, расходы для учреждения и личная консультация на месте. Так сравнение остается наглядным." },
+            { "language": "ckb", "text": "من سێ پێوەری ئاسان بۆ تێگەیشتن هەڵدەبژێرم: دەستگەیشتن بۆ گرووپە جیاوازەکان، تێچوون بۆ دامەزراوەکە و ڕاوێژی کەسی لە شوێن. بەمە بەراوردەکە دەستپێگەیشتوو دەمێنێت." },
+            { "language": "kmr", "text": "Ez ê sê pîvanên hêsan ji bo fêmkirinê hilbijêrim: gihîştin ji bo komên cuda, lêçûn ji bo saziyê û şêwirmendiya kesane li cihê. Bi vî awayî berhevkirin destgirtî dimîne." },
+            { "language": "pl", "text": "Wybrał(a)bym trzy łatwo zrozumiałe kryteria: dostęp dla różnych grup, koszty dla instytucji i osobiste doradztwo na miejscu. Dzięki temu porównanie pozostaje uchwytne." },
+            { "language": "ro", "text": "Aș alege trei criterii ușor de înțeles: accesul pentru grupuri diferite, costurile pentru instituție și consilierea personală la fața locului. Astfel comparația rămâne concretă." },
+            { "language": "sq", "text": "Do të merrja tre kritere të lehta për t'u kuptuar: qasja për grupe të ndryshme, kostot për institucionin dhe këshillimi personal në vend. Kështu krahasimi mbetet i prekshëm." }
+          ],
+          "function": "define-criteria",
+          "toneNote": "concrete criteria"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Das klingt akzeptabel, aber ich möchte sicherstellen, dass das Bibliotheksbeispiel nicht nur eine Randnotiz wird.",
+          "translations": [
+            { "language": "en", "text": "That sounds acceptable, but I want to make sure the library example does not become just a side note." },
+            { "language": "fa", "text": "این قابل قبول به نظر می‌رسد، اما می‌خواهم مطمئن شوم مثال کتابخانه فقط یک نکته حاشیه‌ای نمی‌شود." },
+            { "language": "ar", "text": "يبدو ذلك مقبولاً، لكنني أريد التأكد من أن مثال المكتبة لن يصبح مجرد ملاحظة جانبية." },
+            { "language": "tr", "text": "Bu kabul edilebilir görünüyor, ama kütüphane örneğinin yalnızca bir yan not haline gelmediğinden emin olmak istiyorum." },
+            { "language": "ru", "text": "Это звучит приемлемо, но я хочу убедиться, что пример библиотеки не станет лишь второстепенной заметкой." },
+            { "language": "ckb", "text": "ئەمە قبوڵکراو دەردەکەوێت، بەڵام دەمەوێت دڵنیا بم کە نموونەی کتێبخانە تەنها تێبینییەکی لاوەکی نابێت." },
+            { "language": "kmr", "text": "Ev qebûlkirî xuya dike, lê ez dixwazim piştrast bim ku mînaka pirtûkxaneyê tenê noteke kêlekî nabe." },
+            { "language": "pl", "text": "To brzmi akceptowalnie, ale chcę mieć pewność, że przykład biblioteki nie stanie się tylko uwagą na marginesie." },
+            { "language": "ro", "text": "Sună acceptabil, dar vreau să mă asigur că exemplul bibliotecii nu devine doar o notă marginală." },
+            { "language": "sq", "text": "Kjo tingëllon e pranueshme, por dua të sigurohem që shembulli i bibliotekës të mos bëhet vetëm një shënim anësor." }
+          ],
+          "function": "set-condition",
+          "toneNote": "condition from partner"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Einverstanden, unter einer Bedingung: Das Beispiel bekommt zwei Minuten und wird danach ausdrücklich mit den drei Kriterien verbunden. So bleibt es zentral, ohne die ganze Präsentation zu dominieren.",
+          "translations": [
+            { "language": "en", "text": "Agreed, under one condition: the example gets two minutes and is then explicitly connected to the three criteria. That keeps it central without letting it dominate the whole presentation." },
+            { "language": "fa", "text": "موافقم، با یک شرط: مثال دو دقیقه زمان بگیرد و بعد صریحاً به سه معیار وصل شود. این‌گونه مرکزی می‌ماند، بدون اینکه کل ارائه را تحت سلطه بگیرد." },
+            { "language": "ar", "text": "موافق، بشرط واحد: يحصل المثال على دقيقتين ثم يُربط صراحة بالمعايير الثلاثة. هكذا يبقى مركزياً من دون أن يهيمن على العرض كله." },
+            { "language": "tr", "text": "Kabul, bir koşulla: örneğe iki dakika ayrılır ve sonra açıkça üç ölçütle bağlanır. Böylece merkezi kalır ama tüm sunuma hâkim olmaz." },
+            { "language": "ru", "text": "Согласен/согласна, при одном условии: пример получает две минуты, а затем явно связывается с тремя критериями. Так он остается центральным, не доминируя над всей презентацией." },
+            { "language": "ckb", "text": "ڕازیم، بە مەرجێک: نموونەکە دوو خولەک وەردەگرێت و پاشان بە ڕوونی بە سێ پێوەرەکەوە دەبەسترێتەوە. بەم شێوەیە ناوەندی دەمێنێت بێ ئەوەی هەموو پێشکەشکردنەکە زاڵ بکات." },
+            { "language": "kmr", "text": "Ez razî me, bi mercêkê: mînak du deqîqe digire û paşê bi eşkere bi sê pîvanan ve tê girêdan. Bi vî awayî ew navendî dimîne bêyî ku tevahiya pêşkêşiyê serdest bike." },
+            { "language": "pl", "text": "Zgoda, pod jednym warunkiem: przykład dostaje dwie minuty, a potem zostaje wyraźnie połączony z trzema kryteriami. Dzięki temu pozostaje centralny, nie dominując całej prezentacji." },
+            { "language": "ro", "text": "De acord, cu o condiție: exemplul primește două minute și apoi este legat explicit de cele trei criterii. Astfel rămâne central fără să domine întreaga prezentare." },
+            { "language": "sq", "text": "Dakord, me një kusht: shembullit i jepen dy minuta dhe pastaj lidhet qartë me tre kriteret. Kështu mbetet qendror pa dominuar gjithë prezantimin." }
+          ],
+          "function": "accept-with-condition",
+          "toneNote": "conditioned concession"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Wie teilen wir dann die Rollen auf, damit es nicht wie zwei getrennte Kurzvorträge klingt?",
+          "translations": [
+            { "language": "en", "text": "How do we then divide the roles so that it does not sound like two separate short presentations?" },
+            { "language": "fa", "text": "پس نقش‌ها را چگونه تقسیم کنیم که شبیه دو ارائه کوتاه جداگانه به نظر نرسد؟" },
+            { "language": "ar", "text": "كيف نقسم الأدوار إذن حتى لا يبدو الأمر كعرضين قصيرين منفصلين؟" },
+            { "language": "tr", "text": "O zaman rolleri nasıl bölelim ki iki ayrı kısa sunum gibi duyulmasın?" },
+            { "language": "ru", "text": "Как тогда распределить роли, чтобы это не звучало как две отдельные короткие презентации?" },
+            { "language": "ckb", "text": "کەواتە چۆن ڕۆڵەکان دابەش بکەین تاکو وەک دوو پێشکەشکردنی کورتی جیاواز نەدەنگ بدات؟" },
+            { "language": "kmr", "text": "Hingê em çawa rolan parve bikin da ku wek du pêşkêşiyên kurt ên cuda neyê bihîstin?" },
+            { "language": "pl", "text": "Jak więc podzielimy role, żeby nie brzmiało to jak dwa oddzielne krótkie wystąpienia?" },
+            { "language": "ro", "text": "Cum împărțim atunci rolurile, ca să nu sune ca două prezentări scurte separate?" },
+            { "language": "sq", "text": "Si t'i ndajmë atëherë rolet që të mos tingëllojë si dy prezantime të shkurtra të ndara?" }
+          ],
+          "function": "ask-role-division",
+          "toneNote": "coordination"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Sie könnten das Bibliotheksbeispiel darstellen und ich greife danach Ihre Punkte auf, um sie anhand der Kriterien zu ordnen. Am Ende formulieren wir gemeinsam eine Bewertung.",
+          "translations": [
+            { "language": "en", "text": "You could present the library example, and I then take up your points to organize them according to the criteria. At the end, we formulate an evaluation together." },
+            { "language": "fa", "text": "شما می‌توانید مثال کتابخانه را توضیح دهید و من بعد نکات شما را می‌گیرم تا آن‌ها را بر اساس معیارها مرتب کنم. در پایان، ارزیابی را با هم فرمول‌بندی می‌کنیم." },
+            { "language": "ar", "text": "يمكنك عرض مثال المكتبة، ثم أتناول نقاطك لأرتبها بحسب المعايير. وفي النهاية نصوغ تقييماً مشتركاً." },
+            { "language": "tr", "text": "Siz kütüphane örneğini sunabilirsiniz, ben de ardından noktalarınızı alıp ölçütlere göre düzenlerim. Sonunda birlikte bir değerlendirme formüle ederiz." },
+            { "language": "ru", "text": "Вы могли бы представить пример библиотеки, а я затем подхвачу Ваши пункты и упорядочу их по критериям. В конце мы вместе сформулируем оценку." },
+            { "language": "ckb", "text": "تۆ دەتوانیت نموونەی کتێبخانە پیشان بدەیت و من پاشان خاڵەکانت وەربگرم بۆ ئەوەی بە پێی پێوەرەکان ڕێکیان بخەم. لە کۆتاییدا پێکەوە هەڵسەنگاندنێک داڕێژین." },
+            { "language": "kmr", "text": "Hûn dikarin mînaka pirtûkxaneyê pêşkêş bikin û ez paşê xalên we bigirim da ku li gorî pîvanan rêz bikim. Di dawiyê de em bi hev re nirxandinê formule dikin." },
+            { "language": "pl", "text": "Pan/Pani mógłby/mogłaby przedstawić przykład biblioteki, a ja potem podjąłbym/podjęłabym te punkty i uporządkował(a) je według kryteriów. Na końcu wspólnie sformułujemy ocenę." },
+            { "language": "ro", "text": "Ați putea prezenta exemplul bibliotecii, iar eu preiau apoi punctele dumneavoastră pentru a le ordona după criterii. La final formulăm împreună o evaluare." },
+            { "language": "sq", "text": "Ju mund të paraqisni shembullin e bibliotekës dhe unë pastaj marr pikat tuaja për t'i renditur sipas kritereve. Në fund formulojmë së bashku një vlerësim." }
+          ],
+          "function": "divide-roles",
+          "toneNote": "collaborative structure"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Ich befürchte, dass unser Schluss dann zu unentschieden klingt. Welche gemeinsame Position vertreten wir?",
+          "translations": [
+            { "language": "en", "text": "I am afraid our conclusion will then sound too undecided. What common position do we represent?" },
+            { "language": "fa", "text": "نگرانم که نتیجه‌گیری ما بیش از حد مردد به نظر برسد. چه موضع مشترکی را نمایندگی می‌کنیم؟" },
+            { "language": "ar", "text": "أخشى أن تبدو خاتمتنا مترددة جداً. ما الموقف المشترك الذي نمثله؟" },
+            { "language": "tr", "text": "Sonucumuzun fazla kararsız duyulmasından endişeleniyorum. Hangi ortak görüşü savunuyoruz?" },
+            { "language": "ru", "text": "Я опасаюсь, что наш вывод тогда прозвучит слишком нерешительно. Какую общую позицию мы представляем?" },
+            { "language": "ckb", "text": "دەترسم ئەنجامگیرییەکەمان زۆر دوودڵ دەنگ بدات. کام هەڵوێستی هاوبەش دەنوێنین؟" },
+            { "language": "kmr", "text": "Ez ditirsim ku encama me wê pir dudilî xuya bike. Em kîjan helwesta hevpar temsîl dikin?" },
+            { "language": "pl", "text": "Obawiam się, że nasze zakończenie zabrzmi wtedy zbyt niezdecydowanie. Jakie wspólne stanowisko reprezentujemy?" },
+            { "language": "ro", "text": "Mă tem că finalul nostru va suna prea indecis. Ce poziție comună reprezentăm?" },
+            { "language": "sq", "text": "Kam frikë se përfundimi ynë do të tingëllojë shumë i pavendosur. Cilin qëndrim të përbashkët përfaqësojmë?" }
+          ],
+          "function": "ask-common-position",
+          "toneNote": "final thesis concern"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Unsere gemeinsame Position könnte lauten: Digitale Angebote erweitern den Zugang, ersetzen aber nicht automatisch persönliche Beratung. Entscheidend ist, welche Kombination für die Zielgruppe passt.",
+          "translations": [
+            { "language": "en", "text": "Our common position could be: digital services expand access, but they do not automatically replace personal advice. What matters is which combination fits the target group." },
+            { "language": "fa", "text": "موضع مشترک ما می‌تواند این باشد: خدمات دیجیتال دسترسی را گسترش می‌دهند، اما به‌طور خودکار جایگزین مشاوره حضوری نمی‌شوند. مهم این است که کدام ترکیب برای گروه هدف مناسب است." },
+            { "language": "ar", "text": "يمكن أن يكون موقفنا المشترك: العروض الرقمية توسع الوصول، لكنها لا تستبدل تلقائياً الاستشارة الشخصية. المهم هو أي مزيج يناسب الفئة المستهدفة." },
+            { "language": "tr", "text": "Ortak görüşümüz şöyle olabilir: dijital hizmetler erişimi genişletir, ancak kişisel danışmanlığın yerini otomatik olarak almaz. Önemli olan hedef grup için hangi kombinasyonun uygun olduğudur." },
+            { "language": "ru", "text": "Наша общая позиция могла бы звучать так: цифровые предложения расширяют доступ, но не автоматически заменяют личную консультацию. Важно, какая комбинация подходит целевой группе." },
+            { "language": "ckb", "text": "هەڵوێستی هاوبەشمان دەتوانێت ئەمە بێت: پێشکەشکارییە دیجیتاڵەکان دەستگەیشتن فراوان دەکەن، بەڵام بە شێوەیەکی ئۆتۆماتیکی جێگەی ڕاوێژی کەسی ناگرنەوە. گرنگ ئەوەیە کام تێکەڵە بۆ گرووپی ئامانج گونجاوە." },
+            { "language": "kmr", "text": "Helwesta me ya hevpar dikare ev be: pêşkêşiyên dîjîtal gihîştinê fireh dikin, lê şêwirmendiya kesane bi awayekî otomatîk nagirin. Ya girîng ew e ku kîjan tevlihevî ji bo koma armanc guncav e." },
+            { "language": "pl", "text": "Nasze wspólne stanowisko mogłoby brzmieć: oferty cyfrowe poszerzają dostęp, ale nie zastępują automatycznie osobistego doradztwa. Kluczowe jest to, jaka kombinacja pasuje do grupy docelowej." },
+            { "language": "ro", "text": "Poziția noastră comună ar putea suna astfel: ofertele digitale extind accesul, dar nu înlocuiesc automat consilierea personală. Important este ce combinație se potrivește grupului țintă." },
+            { "language": "sq", "text": "Qëndrimi ynë i përbashkët mund të jetë: ofertat digjitale e zgjerojnë qasjen, por nuk e zëvendësojnë automatikisht këshillimin personal. Vendimtare është cila kombinim i përshtatet grupit të synuar." }
+          ],
+          "function": "formulate-joint-thesis",
+          "toneNote": "balanced thesis"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Dann fassen wir es bitte so zusammen, dass die Prüferinnen den Kompromiss klar hören.",
+          "translations": [
+            { "language": "en", "text": "Then please summarize it so that the examiners clearly hear the compromise." },
+            { "language": "fa", "text": "پس لطفاً آن را طوری جمع‌بندی کنیم که ممتحن‌ها مصالحه را واضح بشنوند." },
+            { "language": "ar", "text": "إذن فلنلخص ذلك بحيث يسمع الممتحنون الحل الوسط بوضوح." },
+            { "language": "tr", "text": "O halde bunu sınav görevlilerinin uzlaşmayı açıkça duyacağı şekilde özetleyelim." },
+            { "language": "ru", "text": "Тогда давайте подведем итог так, чтобы экзаменаторы ясно услышали компромисс." },
+            { "language": "ckb", "text": "کەواتە تکایە بە شێوەیەک کۆی بکەینەوە کە تاقیکەرەوەکان ڕێککەوتنەکە بە ڕوونی ببیستن." },
+            { "language": "kmr", "text": "Hingê bila em wisa kom bikin ku ezmûnger lihevhatinê bi zelalî bibihîzin." },
+            { "language": "pl", "text": "W takim razie podsumujmy to tak, aby egzaminatorki wyraźnie usłyszały kompromis." },
+            { "language": "ro", "text": "Atunci să rezumăm astfel încât examinatoarele să audă clar compromisul." },
+            { "language": "sq", "text": "Atëherë ta përmbledhim në mënyrë që ekzaminueset ta dëgjojnë qartë kompromisin." }
+          ],
+          "function": "request-final-summary",
+          "toneNote": "summary request"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Wir einigen uns also darauf, mit dem Bibliotheksbeispiel zu beginnen, es anhand von Zugang, Kosten und Beratung einzuordnen und am Ende eine ausgewogene Erweiterung statt eines Ersatzes zu empfehlen.",
+          "translations": [
+            { "language": "en", "text": "So we agree to begin with the library example, classify it using access, costs, and advice, and in the end recommend a balanced expansion rather than a replacement." },
+            { "language": "fa", "text": "پس توافق می‌کنیم با مثال کتابخانه شروع کنیم، آن را بر اساس دسترسی، هزینه و مشاوره طبقه‌بندی کنیم و در پایان گسترش متعادل را به‌جای جایگزینی توصیه کنیم." },
+            { "language": "ar", "text": "إذن نتفق على أن نبدأ بمثال المكتبة، ونصنفه وفق الوصول والتكاليف والاستشارة، وفي النهاية نوصي بتوسيع متوازن بدلاً من الاستبدال." },
+            { "language": "tr", "text": "O halde kütüphane örneğiyle başlamaya, onu erişim, maliyetler ve danışmanlık açısından sınıflandırmaya ve sonunda bir yerine geçirme değil, dengeli bir genişletme önermeye karar veriyoruz." },
+            { "language": "ru", "text": "Итак, мы договариваемся начать с примера библиотеки, оценить его по доступу, расходам и консультации и в конце рекомендовать сбалансированное расширение, а не замену." },
+            { "language": "ckb", "text": "کەواتە ڕێکدەکەوین بە نموونەی کتێبخانە دەست پێ بکەین، بە پێی دەستگەیشتن، تێچوون و ڕاوێژ پۆلێنی بکەین و لە کۆتاییدا فراوانکردنێکی هاوسەنگ پێشنیار بکەین نەک جێگرەوە." },
+            { "language": "kmr", "text": "Ji ber vê yekê em li hev dikin ku bi mînaka pirtûkxaneyê dest pê bikin, wê li gorî gihîştin, lêçûn û şêwirmendiyê rêz bikin û di dawiyê de firehkirineke hevseng pêşniyar bikin, ne şûngirtin." },
+            { "language": "pl", "text": "Uzgadniamy więc, że zaczniemy od przykładu biblioteki, uporządkujemy go według dostępu, kosztów i doradztwa, a na końcu polecimy zrównoważone rozszerzenie zamiast zastąpienia." },
+            { "language": "ro", "text": "Așadar, convenim să începem cu exemplul bibliotecii, să îl încadrăm după acces, costuri și consiliere și la final să recomandăm o extindere echilibrată, nu o înlocuire." },
+            { "language": "sq", "text": "Pra biem dakord të fillojmë me shembullin e bibliotekës, ta klasifikojmë sipas qasjes, kostove dhe këshillimit dhe në fund të rekomandojmë një zgjerim të balancuar, jo zëvendësim." }
+          ],
+          "function": "final-compromise-summary",
+          "toneNote": "precise agreement"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich verstehe den Zeitpunkt. Wenn wir aber nur ein Beispiel nennen, fehlt die übertragbare Aussage. Mein Vorschlag wäre: Ihr Beispiel als Einstieg, danach drei kurze Kriterien für die Einordnung.",
+              "translations": [
+                { "language": "en", "text": "I understand the time issue. But if we mention only one example, the transferable statement is missing. My proposal would be: your example as the opening, then three short criteria for classification." },
+                { "language": "fa", "text": "مسئله زمان را می‌فهمم. اما اگر فقط یک مثال بزنیم، پیام قابل تعمیم کم می‌شود. پیشنهاد من این است: مثال شما به‌عنوان شروع، بعد سه معیار کوتاه برای طبقه‌بندی." },
+                { "language": "ar", "text": "أفهم مسألة الوقت. لكن إذا ذكرنا مثالاً واحداً فقط، تغيب الرسالة القابلة للتعميم. اقتراحي هو: مثالكم كبداية، ثم ثلاثة معايير قصيرة للتصنيف." },
+                { "language": "tr", "text": "Zaman meselesini anlıyorum. Ama yalnızca bir örnek verirsek, aktarılabilir sonuç eksik kalır. Önerim şu olurdu: sizin örneğiniz giriş olarak, ardından sınıflandırma için üç kısa ölçüt." },
+                { "language": "ru", "text": "Я понимаю вопрос времени. Но если мы назовем только один пример, не будет переносимого вывода. Мое предложение: Ваш пример как вступление, затем три коротких критерия для оценки." },
+                { "language": "ckb", "text": "کێشەی کات تێدەگەم. بەڵام ئەگەر تەنها یەک نموونە بڵێین، ئەو پەیامەی دەتوانرێت بگوازرێتەوە کەم دەبێت. پێشنیارم ئەوەیە: نموونەکەت وەک دەستپێک، پاشان سێ پێوەری کورت بۆ پۆلێنکردن." },
+                { "language": "kmr", "text": "Ez pirsgirêka demê fêm dikim. Lê heke em tenê mînakekê bibêjin, gotina ku dikare were veguhestin kêm dimîne. Pêşniyara min ev e: mînaka we wek destpêk, paşê sê pîvanên kurt ji bo rêzkirinê." },
+                { "language": "pl", "text": "Rozumiem kwestię czasu. Jeśli jednak podamy tylko jeden przykład, zabraknie wniosku możliwego do przeniesienia. Moja propozycja: Pana/Pani przykład jako wstęp, potem trzy krótkie kryteria do uporządkowania." },
+                { "language": "ro", "text": "Înțeleg problema timpului. Dar dacă menționăm doar un exemplu, lipsește concluzia transferabilă. Propunerea mea ar fi: exemplul dumneavoastră ca introducere, apoi trei criterii scurte pentru încadrare." },
+                { "language": "sq", "text": "E kuptoj çështjen e kohës. Por nëse përmendim vetëm një shembull, mungon mesazhi i transferueshëm. Propozimi im do të ishte: shembulli juaj si hyrje, pastaj tre kritere të shkurtra për klasifikim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Sie akzeptieren das Zeitproblem, geben aber nicht die analytische Ebene auf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: you accept the time problem but do not give up the analytical level." },
+                { "language": "fa", "text": "قوی: مشکل زمان را می‌پذیرید، اما سطح تحلیلی را کنار نمی‌گذارید." },
+                { "language": "ar", "text": "قوي: تقبل مشكلة الوقت لكنك لا تتخلى عن المستوى التحليلي." },
+                { "language": "tr", "text": "Güçlü: zaman sorununu kabul ediyor ama analitik düzeyden vazgeçmiyorsunuz." },
+                { "language": "ru", "text": "Сильно: Вы принимаете проблему времени, но не отказываетесь от аналитического уровня." },
+                { "language": "ckb", "text": "بەهێزە: کێشەی کات قبوڵ دەکەیت، بەڵام ئاستی شیکاری لادەنەیت." },
+                { "language": "kmr", "text": "Xurt e: hûn pirsgirêka demê dipejirînin, lê asta analîtîk bernadin." },
+                { "language": "pl", "text": "Mocne: akceptuje Pan/Pani problem czasu, ale nie rezygnuje z poziomu analitycznego." },
+                { "language": "ro", "text": "Puternic: acceptați problema timpului, dar nu renunțați la nivelul analitic." },
+                { "language": "sq", "text": "E fortë: e pranoni problemin e kohës, por nuk hiqni dorë nga niveli analitik." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann nehmen wir Ihr Beispiel und sagen am Ende noch kurz, dass es auch andere Modelle gibt.",
+              "translations": [
+                { "language": "en", "text": "Fine, then we use your example and briefly say at the end that there are other models too." },
+                { "language": "fa", "text": "خوب، پس مثال شما را می‌گیریم و در پایان کوتاه می‌گوییم که مدل‌های دیگری هم وجود دارد." },
+                { "language": "ar", "text": "حسناً، إذن نأخذ مثالك ونقول في النهاية باختصار إن هناك نماذج أخرى أيضاً." },
+                { "language": "tr", "text": "Tamam, o zaman sizin örneğinizi alırız ve sonunda kısaca başka modellerin de olduğunu söyleriz." },
+                { "language": "ru", "text": "Хорошо, тогда возьмем Ваш пример и в конце коротко скажем, что есть и другие модели." },
+                { "language": "ckb", "text": "باشە، کەواتە نموونەکەت وەردەگرین و لە کۆتاییدا بە کورتی دەڵێین مۆدێلی دیکەش هەیە." },
+                { "language": "kmr", "text": "Baş e, hingê em mînaka we digirin û di dawiyê de bi kurtî dibêjin ku modelên din jî hene." },
+                { "language": "pl", "text": "Dobrze, więc weźmiemy Pana/Pani przykład i na końcu krótko powiemy, że są też inne modele." },
+                { "language": "ro", "text": "Bine, atunci luăm exemplul dumneavoastră și spunem pe scurt la final că există și alte modele." },
+                { "language": "sq", "text": "Mirë, atëherë marrim shembullin tuaj dhe në fund themi shkurt se ka edhe modele të tjera." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu nachgiebig: Der Kompromiss verliert die klare Vergleichsstruktur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too yielding: the compromise loses the clear comparison structure." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما بیش از حد کوتاه می‌آیید: مصالحه ساختار مقایسه‌ای روشن را از دست می‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه متساهل جداً: يفقد الحل الوسط بنية المقارنة الواضحة." },
+                { "language": "tr", "text": "Makul ama fazla tavizkâr: uzlaşma açık karşılaştırma yapısını kaybediyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком уступчиво: компромисс теряет ясную структуру сравнения." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر سازشکارانەیە: ڕێککەوتنەکە پێکهاتەی ڕوونی بەراوردکردن لەدەست دەدات." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir destdanî ye: lihevhatin avahiya zelal a berhevkirinê winda dike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ustępliwe: kompromis traci jasną strukturę porównania." },
+                { "language": "ro", "text": "Plauzibil, dar prea concesiv: compromisul pierde structura clară de comparație." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë lëshuese: kompromisi humb strukturën e qartë të krahasimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde drei leicht verständliche Kriterien nehmen: Zugang für verschiedene Gruppen, Kosten für die Einrichtung und persönliche Beratung vor Ort. Damit bleibt der Vergleich greifbar.",
+              "translations": [
+                { "language": "en", "text": "I would use three easy-to-understand criteria: access for different groups, costs for the institution, and personal advice on site. That keeps the comparison tangible." },
+                { "language": "fa", "text": "من سه معیار قابل فهم انتخاب می‌کردم: دسترسی برای گروه‌های مختلف، هزینه برای مؤسسه و مشاوره حضوری در محل. با این کار مقایسه ملموس می‌ماند." },
+                { "language": "ar", "text": "سأختار ثلاثة معايير سهلة الفهم: الوصول لمجموعات مختلفة، والتكاليف على المؤسسة، والاستشارة الشخصية في المكان. بذلك يبقى المقارنة ملموسة." },
+                { "language": "tr", "text": "Üç kolay anlaşılır ölçüt alırdım: farklı gruplar için erişim, kurum için maliyetler ve yerinde kişisel danışmanlık. Böylece karşılaştırma somut kalır." },
+                { "language": "ru", "text": "Я бы взял(а) три легко понятных критерия: доступ для разных групп, расходы для учреждения и личная консультация на месте. Так сравнение остается наглядным." },
+                { "language": "ckb", "text": "من سێ پێوەری ئاسان بۆ تێگەیشتن هەڵدەبژێرم: دەستگەیشتن بۆ گرووپە جیاوازەکان، تێچوون بۆ دامەزراوەکە و ڕاوێژی کەسی لە شوێن. بەمە بەراوردەکە دەستپێگەیشتوو دەمێنێت." },
+                { "language": "kmr", "text": "Ez ê sê pîvanên hêsan ji bo fêmkirinê hilbijêrim: gihîştin ji bo komên cuda, lêçûn ji bo saziyê û şêwirmendiya kesane li cihê. Bi vî awayî berhevkirin destgirtî dimîne." },
+                { "language": "pl", "text": "Wybrał(a)bym trzy łatwo zrozumiałe kryteria: dostęp dla różnych grup, koszty dla instytucji i osobiste doradztwo na miejscu. Dzięki temu porównanie pozostaje uchwytne." },
+                { "language": "ro", "text": "Aș alege trei criterii ușor de înțeles: accesul pentru grupuri diferite, costurile pentru instituție și consilierea personală la fața locului. Astfel comparația rămâne concretă." },
+                { "language": "sq", "text": "Do të merrja tre kritere të lehta për t'u kuptuar: qasja për grupe të ndryshme, kostot për institucionin dhe këshillimi personal në vend. Kështu krahasimi mbetet i prekshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Kriterien sind abstrakt genug für C1, aber noch verständlich und prüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the criteria are abstract enough for C1, but still understandable and testable." },
+                { "language": "fa", "text": "قوی: معیارها برای C1 به‌اندازه کافی انتزاعی هستند، اما همچنان قابل فهم و قابل بررسی‌اند." },
+                { "language": "ar", "text": "قوي: المعايير مجردة بما يكفي لمستوى C1 لكنها ما زالت مفهومة وقابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: ölçütler C1 için yeterince soyut, ama hâlâ anlaşılır ve değerlendirilebilir." },
+                { "language": "ru", "text": "Сильно: критерии достаточно абстрактны для C1, но все еще понятны и проверяемы." },
+                { "language": "ckb", "text": "بەهێزە: پێوەرەکان بۆ C1 بەشی پێویست ئەبستراکتن، بەڵام هێشتا تێگەیشتوو و پشکنراون." },
+                { "language": "kmr", "text": "Xurt e: pîvan ji bo C1 bi qasî pêwîst abstrakt in, lê hê jî têgihiştî û kontrolbar in." },
+                { "language": "pl", "text": "Mocne: kryteria są wystarczająco abstrakcyjne dla C1, ale nadal zrozumiałe i sprawdzalne." },
+                { "language": "ro", "text": "Puternic: criteriile sunt suficient de abstracte pentru C1, dar încă inteligibile și verificabile." },
+                { "language": "sq", "text": "E fortë: kriteret janë mjaft abstrakte për C1, por ende të kuptueshme dhe të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können einfach sagen, ob digitale Angebote gut oder schlecht funktionieren, und danach unser Beispiel erklären.",
+              "translations": [
+                { "language": "en", "text": "We can simply say whether digital services work well or badly, and then explain our example." },
+                { "language": "fa", "text": "می‌توانیم ساده بگوییم خدمات دیجیتال خوب یا بد کار می‌کنند و بعد مثالمان را توضیح دهیم." },
+                { "language": "ar", "text": "يمكننا ببساطة أن نقول هل العروض الرقمية تعمل جيداً أم سيئاً، ثم نشرح مثالنا." },
+                { "language": "tr", "text": "Dijital hizmetlerin iyi mi kötü mü işlediğini basitçe söyleyebilir ve sonra örneğimizi açıklayabiliriz." },
+                { "language": "ru", "text": "Мы можем просто сказать, хорошо или плохо работают цифровые предложения, а затем объяснить наш пример." },
+                { "language": "ckb", "text": "دەتوانین بە سادگی بڵێین پێشکەشکارییە دیجیتاڵەکان باش یان خراپ کار دەکەن، پاشان نموونەکەمان ڕوون بکەینەوە." },
+                { "language": "kmr", "text": "Em dikarin bi hêsanî bibêjin ka pêşkêşiyên dîjîtal baş dixebitin an xirab, û paşê mînaka xwe rave bikin." },
+                { "language": "pl", "text": "Możemy po prostu powiedzieć, czy oferty cyfrowe działają dobrze czy źle, a potem wyjaśnić nasz przykład." },
+                { "language": "ro", "text": "Putem spune pur și simplu dacă ofertele digitale funcționează bine sau rău, apoi să explicăm exemplul nostru." },
+                { "language": "sq", "text": "Mund të themi thjesht nëse ofertat digjitale funksionojnë mirë apo keq dhe pastaj të shpjegojmë shembullin tonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu einfach: `gut oder schlecht` ersetzt keine Kriterien und klingt nicht wie C1.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too simple: `good or bad` does not replace criteria and does not sound like C1." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی ساده است: «خوب یا بد» جای معیار را نمی‌گیرد و C1 به نظر نمی‌رسد." },
+                { "language": "ar", "text": "مقبول لكنه بسيط جداً: «جيد أو سيئ» لا يعوض المعايير ولا يبدو كمستوى C1." },
+                { "language": "tr", "text": "Makul ama fazla basit: `iyi veya kötü` ölçütlerin yerini tutmaz ve C1 gibi duyulmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком просто: «хорошо или плохо» не заменяет критерии и не звучит как C1." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر سادەیە: «باش یان خراپ» جێگەی پێوەر ناگرێتەوە و وەک C1 دەنگ نادات." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir hêsan e: `baş an xirab` şûna pîvanan nagire û wek C1 nayê bihîstin." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt proste: „dobrze czy źle” nie zastępuje kryteriów i nie brzmi jak C1." },
+                { "language": "ro", "text": "Plauzibil, dar prea simplu: `bine sau rău` nu înlocuiește criteriile și nu sună a C1." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e thjeshtë: “mirë apo keq” nuk zëvendëson kriteret dhe nuk tingëllon si C1." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Einverstanden, unter einer Bedingung: Das Beispiel bekommt zwei Minuten und wird danach ausdrücklich mit den drei Kriterien verbunden. So bleibt es zentral, ohne die ganze Präsentation zu dominieren.",
+              "translations": [
+                { "language": "en", "text": "Agreed, under one condition: the example gets two minutes and is then explicitly connected to the three criteria. That keeps it central without letting it dominate the whole presentation." },
+                { "language": "fa", "text": "موافقم، با یک شرط: مثال دو دقیقه زمان بگیرد و بعد صریحاً به سه معیار وصل شود. این‌گونه مرکزی می‌ماند، بدون اینکه کل ارائه را تحت سلطه بگیرد." },
+                { "language": "ar", "text": "موافق، بشرط واحد: يحصل المثال على دقيقتين ثم يُربط صراحة بالمعايير الثلاثة. هكذا يبقى مركزياً من دون أن يهيمن على العرض كله." },
+                { "language": "tr", "text": "Kabul, bir koşulla: örneğe iki dakika ayrılır ve sonra açıkça üç ölçütle bağlanır. Böylece merkezi kalır ama tüm sunuma hâkim olmaz." },
+                { "language": "ru", "text": "Согласен/согласна, при одном условии: пример получает две минуты, а затем явно связывается с тремя критериями. Так он остается центральным, не доминируя над всей презентацией." },
+                { "language": "ckb", "text": "ڕازیم، بە مەرجێک: نموونەکە دوو خولەک وەردەگرێت و پاشان بە ڕوونی بە سێ پێوەرەکەوە دەبەسترێتەوە. بەم شێوەیە ناوەندی دەمێنێت بێ ئەوەی هەموو پێشکەشکردنەکە زاڵ بکات." },
+                { "language": "kmr", "text": "Ez razî me, bi mercêkê: mînak du deqîqe digire û paşê bi eşkere bi sê pîvanan ve tê girêdan. Bi vî awayî ew navendî dimîne bêyî ku tevahiya pêşkêşiyê serdest bike." },
+                { "language": "pl", "text": "Zgoda, pod jednym warunkiem: przykład dostaje dwie minuty, a potem zostaje wyraźnie połączony z trzema kryteriami. Dzięki temu pozostaje centralny, nie dominując całej prezentacji." },
+                { "language": "ro", "text": "De acord, cu o condiție: exemplul primește două minute și apoi este legat explicit de cele trei criterii. Astfel rămâne central fără să domine întreaga prezentare." },
+                { "language": "sq", "text": "Dakord, me një kusht: shembullit i jepen dy minuta dhe pastaj lidhet qartë me tre kriteret. Kështu mbetet qendror pa dominuar gjithë prezantimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Zugeständnis ist klar, aber an eine sinnvolle Bedingung gebunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the concession is clear, but tied to a meaningful condition." },
+                { "language": "fa", "text": "قوی: امتیاز دادن روشن است، اما به شرطی معنادار بسته شده است." },
+                { "language": "ar", "text": "قوي: التنازل واضح لكنه مرتبط بشرط مفيد." },
+                { "language": "tr", "text": "Güçlü: taviz açık, ama anlamlı bir koşula bağlı." },
+                { "language": "ru", "text": "Сильно: уступка ясна, но связана с осмысленным условием." },
+                { "language": "ckb", "text": "بەهێزە: سازشەکە ڕوونە، بەڵام بە مەرجێکی مانادارەوە بەستراوە." },
+                { "language": "kmr", "text": "Xurt e: destdan zelal e, lê bi mercêke watedar ve girêdayî ye." },
+                { "language": "pl", "text": "Mocne: ustępstwo jest jasne, ale powiązane z sensownym warunkiem." },
+                { "language": "ro", "text": "Puternic: concesia este clară, dar legată de o condiție semnificativă." },
+                { "language": "sq", "text": "E fortë: lëshimi është i qartë, por i lidhur me një kusht kuptimplotë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Einverstanden, dann machen wir das Beispiel ausführlich und die Kriterien nur ganz kurz am Schluss.",
+              "translations": [
+                { "language": "en", "text": "Agreed, then we present the example in detail and mention the criteria only very briefly at the end." },
+                { "language": "fa", "text": "موافقم، پس مثال را مفصل انجام می‌دهیم و معیارها را فقط خیلی کوتاه در پایان می‌آوریم." },
+                { "language": "ar", "text": "موافق، إذن نعرض المثال بالتفصيل ونذكر المعايير باختصار شديد في النهاية فقط." },
+                { "language": "tr", "text": "Kabul, o zaman örneği ayrıntılı yaparız ve ölçütleri yalnızca sonunda çok kısa belirtiriz." },
+                { "language": "ru", "text": "Согласен/согласна, тогда мы подробно представим пример, а критерии лишь очень кратко упомянем в конце." },
+                { "language": "ckb", "text": "ڕازیم، کەواتە نموونەکە بە وردی دەکەین و پێوەرەکان تەنها زۆر بە کورتی لە کۆتاییدا دەهێنین." },
+                { "language": "kmr", "text": "Ez razî me, hingê em mînakê bi hûrgilî dikin û pîvanan tenê di dawiyê de pir bi kurtî dibêjin." },
+                { "language": "pl", "text": "Zgoda, wtedy przykład omówimy szczegółowo, a kryteria tylko bardzo krótko na końcu." },
+                { "language": "ro", "text": "De acord, atunci prezentăm exemplul pe larg și criteriile doar foarte pe scurt la final." },
+                { "language": "sq", "text": "Dakord, atëherë e paraqesim shembullin hollësisht dhe kriteret vetëm shumë shkurt në fund." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unausgewogen: Die Bedingung fehlt, dass Beispiel und Kriterien wirklich verbunden werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but unbalanced: the condition is missing that the example and criteria are genuinely connected." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما نامتوازن است: شرطی که مثال و معیارها واقعاً به هم وصل شوند کم است." },
+                { "language": "ar", "text": "مقبول لكنه غير متوازن: ينقص الشرط الذي يربط المثال والمعايير فعلاً." },
+                { "language": "tr", "text": "Makul ama dengesiz: örnek ve ölçütlerin gerçekten bağlanması koşulu eksik." },
+                { "language": "ru", "text": "Правдоподобно, но несбалансированно: отсутствует условие, что пример и критерии действительно связываются." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام ناهاوسەنگە: مەرجی ئەوەی نموونە و پێوەرەکان بەڕاستی ببەسترێنەوە کەمە." },
+                { "language": "kmr", "text": "Wek guncav e, lê bêhevseng e: merca ku mînak û pîvan bi rastî bên girêdan kêm e." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest niezrównoważone: brakuje warunku, że przykład i kryteria zostaną naprawdę połączone." },
+                { "language": "ro", "text": "Plauzibil, dar dezechilibrat: lipsește condiția ca exemplul și criteriile să fie cu adevărat legate." },
+                { "language": "sq", "text": "Duket e besueshme, por e pabalancuar: mungon kushti që shembulli dhe kriteret të lidhen vërtet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sie könnten das Bibliotheksbeispiel darstellen und ich greife danach Ihre Punkte auf, um sie anhand der Kriterien zu ordnen. Am Ende formulieren wir gemeinsam eine Bewertung.",
+              "translations": [
+                { "language": "en", "text": "You could present the library example, and I then take up your points to organize them according to the criteria. At the end, we formulate an evaluation together." },
+                { "language": "fa", "text": "شما می‌توانید مثال کتابخانه را توضیح دهید و من بعد نکات شما را می‌گیرم تا آن‌ها را بر اساس معیارها مرتب کنم. در پایان، ارزیابی را با هم فرمول‌بندی می‌کنیم." },
+                { "language": "ar", "text": "يمكنك عرض مثال المكتبة، ثم أتناول نقاطك لأرتبها بحسب المعايير. وفي النهاية نصوغ تقييماً مشتركاً." },
+                { "language": "tr", "text": "Siz kütüphane örneğini sunabilirsiniz, ben de ardından noktalarınızı alıp ölçütlere göre düzenlerim. Sonunda birlikte bir değerlendirme formüle ederiz." },
+                { "language": "ru", "text": "Вы могли бы представить пример библиотеки, а я затем подхвачу Ваши пункты и упорядочу их по критериям. В конце мы вместе сформулируем оценку." },
+                { "language": "ckb", "text": "تۆ دەتوانیت نموونەی کتێبخانە پیشان بدەیت و من پاشان خاڵەکانت وەربگرم بۆ ئەوەی بە پێی پێوەرەکان ڕێکیان بخەم. لە کۆتاییدا پێکەوە هەڵسەنگاندنێک داڕێژین." },
+                { "language": "kmr", "text": "Hûn dikarin mînaka pirtûkxaneyê pêşkêş bikin û ez paşê xalên we bigirim da ku li gorî pîvanan rêz bikim. Di dawiyê de em bi hev re nirxandinê formule dikin." },
+                { "language": "pl", "text": "Pan/Pani mógłby/mogłaby przedstawić przykład biblioteki, a ja potem podjąłbym/podjęłabym te punkty i uporządkował(a) je według kryteriów. Na końcu wspólnie sformułujemy ocenę." },
+                { "language": "ro", "text": "Ați putea prezenta exemplul bibliotecii, iar eu preiau apoi punctele dumneavoastră pentru a le ordona după criterii. La final formulăm împreună o evaluare." },
+                { "language": "sq", "text": "Ju mund të paraqisni shembullin e bibliotekës dhe unë pastaj marr pikat tuaja për t'i renditur sipas kritereve. Në fund formulojmë së bashku një vlerësim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Rollen sind verbunden, nicht nur nebeneinander gestellt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the roles are connected, not merely placed next to each other." },
+                { "language": "fa", "text": "قوی: نقش‌ها به هم وصل شده‌اند، نه اینکه فقط کنار هم گذاشته شده باشند." },
+                { "language": "ar", "text": "قوي: الأدوار مرتبطة وليست موضوعة فقط جنباً إلى جنب." },
+                { "language": "tr", "text": "Güçlü: roller birbirine bağlı, sadece yan yana konmuş değil." },
+                { "language": "ru", "text": "Сильно: роли связаны, а не просто поставлены рядом." },
+                { "language": "ckb", "text": "بەهێزە: ڕۆڵەکان پێکەوە بەستراون، تەنها لە کنار یەک دانەنراون." },
+                { "language": "kmr", "text": "Xurt e: rol bi hev ve girêdayî ne, ne tenê li kêleka hev hatine danîn." },
+                { "language": "pl", "text": "Mocne: role są połączone, a nie tylko ustawione obok siebie." },
+                { "language": "ro", "text": "Puternic: rolurile sunt conectate, nu doar puse una lângă alta." },
+                { "language": "sq", "text": "E fortë: rolet janë të lidhura, jo thjesht të vendosura pranë njëra-tjetrës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sie machen den ersten Teil und ich mache den zweiten Teil. Dann haben wir beide gleich viel gesprochen.",
+              "translations": [
+                { "language": "en", "text": "You do the first part and I do the second part. Then we both have spoken the same amount." },
+                { "language": "fa", "text": "شما بخش اول را انجام می‌دهید و من بخش دوم را. آن وقت هر دو به یک اندازه صحبت کرده‌ایم." },
+                { "language": "ar", "text": "أنت تقومين بالجزء الأول وأنا أقوم بالجزء الثاني. عندئذ نكون قد تحدثنا بالقدر نفسه." },
+                { "language": "tr", "text": "Siz ilk bölümü yaparsınız, ben ikinci bölümü yaparım. Böylece ikimiz de eşit konuşmuş oluruz." },
+                { "language": "ru", "text": "Вы делаете первую часть, а я вторую. Тогда мы оба поговорим одинаково долго." },
+                { "language": "ckb", "text": "تۆ بەشی یەکەم دەکەیت و من بەشی دووەم دەکەم. ئەو کاتە هەردووکمان بە یەکسانی قسەمان کردووە." },
+                { "language": "kmr", "text": "Hûn beşa yekem dikin û ez beşa duyem dikim. Hingê em her du jî bi qasî hev axivîne." },
+                { "language": "pl", "text": "Pan/Pani zrobi pierwszą część, a ja drugą. Wtedy oboje będziemy mówić tyle samo." },
+                { "language": "ro", "text": "Dumneavoastră faceți prima parte, iar eu pe a doua. Atunci am vorbit amândoi la fel de mult." },
+                { "language": "sq", "text": "Ju bëni pjesën e parë dhe unë bëj pjesën e dytë. Atëherë të dy kemi folur po aq." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber mechanisch: Gleich viel Redezeit ersetzt keine inhaltliche Verbindung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but mechanical: equal speaking time does not replace content connection." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما مکانیکی است: زمان صحبت برابر جای ارتباط محتوایی را نمی‌گیرد." },
+                { "language": "ar", "text": "مقبول لكنه آلي: تساوي وقت الكلام لا يعوض الربط المضموني." },
+                { "language": "tr", "text": "Makul ama mekanik: eşit konuşma süresi içerik bağlantısının yerini tutmaz." },
+                { "language": "ru", "text": "Правдоподобно, но механически: равное время речи не заменяет содержательную связь." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام میکانیکییە: کاتی قسەکردنی یەکسان جێگەی پەیوەندی ناوەڕۆک ناگرێتەوە." },
+                { "language": "kmr", "text": "Wek guncav e, lê mekanîk e: dema axaftinê ya wekhev şûna girêdana naverokê nagire." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale mechanicznie: równa ilość czasu mówienia nie zastępuje powiązania treści." },
+                { "language": "ro", "text": "Plauzibil, dar mecanic: timpul egal de vorbire nu înlocuiește legătura de conținut." },
+                { "language": "sq", "text": "Duket e besueshme, por mekanike: koha e barabartë e të folurit nuk zëvendëson lidhjen e përmbajtjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Unsere gemeinsame Position könnte lauten: Digitale Angebote erweitern den Zugang, ersetzen aber nicht automatisch persönliche Beratung. Entscheidend ist, welche Kombination für die Zielgruppe passt.",
+              "translations": [
+                { "language": "en", "text": "Our common position could be: digital services expand access, but they do not automatically replace personal advice. What matters is which combination fits the target group." },
+                { "language": "fa", "text": "موضع مشترک ما می‌تواند این باشد: خدمات دیجیتال دسترسی را گسترش می‌دهند، اما به‌طور خودکار جایگزین مشاوره حضوری نمی‌شوند. مهم این است که کدام ترکیب برای گروه هدف مناسب است." },
+                { "language": "ar", "text": "يمكن أن يكون موقفنا المشترك: العروض الرقمية توسع الوصول، لكنها لا تستبدل تلقائياً الاستشارة الشخصية. المهم هو أي مزيج يناسب الفئة المستهدفة." },
+                { "language": "tr", "text": "Ortak görüşümüz şöyle olabilir: dijital hizmetler erişimi genişletir, ancak kişisel danışmanlığın yerini otomatik olarak almaz. Önemli olan hedef grup için hangi kombinasyonun uygun olduğudur." },
+                { "language": "ru", "text": "Наша общая позиция могла бы звучать так: цифровые предложения расширяют доступ, но не автоматически заменяют личную консультацию. Важно, какая комбинация подходит целевой группе." },
+                { "language": "ckb", "text": "هەڵوێستی هاوبەشمان دەتوانێت ئەمە بێت: پێشکەشکارییە دیجیتاڵەکان دەستگەیشتن فراوان دەکەن، بەڵام بە شێوەیەکی ئۆتۆماتیکی جێگەی ڕاوێژی کەسی ناگرنەوە. گرنگ ئەوەیە کام تێکەڵە بۆ گرووپی ئامانج گونجاوە." },
+                { "language": "kmr", "text": "Helwesta me ya hevpar dikare ev be: pêşkêşiyên dîjîtal gihîştinê fireh dikin, lê şêwirmendiya kesane bi awayekî otomatîk nagirin. Ya girîng ew e ku kîjan tevlihevî ji bo koma armanc guncav e." },
+                { "language": "pl", "text": "Nasze wspólne stanowisko mogłoby brzmieć: oferty cyfrowe poszerzają dostęp, ale nie zastępują automatycznie osobistego doradztwa. Kluczowe jest to, jaka kombinacja pasuje do grupy docelowej." },
+                { "language": "ro", "text": "Poziția noastră comună ar putea suna astfel: ofertele digitale extind accesul, dar nu înlocuiesc automat consilierea personală. Important este ce combinație se potrivește grupului țintă." },
+                { "language": "sq", "text": "Qëndrimi ynë i përbashkët mund të jetë: ofertat digjitale e zgjerojnë qasjen, por nuk e zëvendësojnë automatikisht këshillimin personal. Vendimtare është cila kombinim i përshtatet grupit të synuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Position ist eindeutig, aber nicht einseitig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the position is clear, but not one-sided." },
+                { "language": "fa", "text": "قوی: موضع روشن است، اما یک‌طرفه نیست." },
+                { "language": "ar", "text": "قوي: الموقف واضح لكنه ليس أحادي الجانب." },
+                { "language": "tr", "text": "Güçlü: görüş açık, ama tek taraflı değil." },
+                { "language": "ru", "text": "Сильно: позиция ясная, но не односторонняя." },
+                { "language": "ckb", "text": "بەهێزە: هەڵوێستەکە ڕوونە، بەڵام یەک لایەنە نییە." },
+                { "language": "kmr", "text": "Xurt e: helwest zelal e, lê yekalî nîne." },
+                { "language": "pl", "text": "Mocne: stanowisko jest jasne, ale nie jednostronne." },
+                { "language": "ro", "text": "Puternic: poziția este clară, dar nu unilaterală." },
+                { "language": "sq", "text": "E fortë: qëndrimi është i qartë, por jo i njëanshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Unsere Position ist, dass beide Seiten recht haben und man am besten beides ein bisschen macht.",
+              "translations": [
+                { "language": "en", "text": "Our position is that both sides are right and that it is best to do a bit of both." },
+                { "language": "fa", "text": "موضع ما این است که هر دو طرف حق دارند و بهتر است کمی از هر دو را انجام دهیم." },
+                { "language": "ar", "text": "موقفنا هو أن كلا الجانبين على حق وأن الأفضل فعل شيء من الاثنين." },
+                { "language": "tr", "text": "Görüşümüz, iki tarafın da haklı olduğu ve en iyisinin ikisinden de biraz yapmak olduğudur." },
+                { "language": "ru", "text": "Наша позиция в том, что обе стороны правы и лучше всего сделать понемногу и того и другого." },
+                { "language": "ckb", "text": "هەڵوێستمان ئەوەیە هەردوو لا ڕاستن و باشترین شت ئەوەیە هەردووکیان کەمێک بکەین." },
+                { "language": "kmr", "text": "Helwesta me ew e ku her du alî rast in û ya herî baş ew e ku ji her duyan hinekî bikin." },
+                { "language": "pl", "text": "Nasze stanowisko jest takie, że obie strony mają rację i najlepiej zrobić po trochu jedno i drugie." },
+                { "language": "ro", "text": "Poziția noastră este că ambele părți au dreptate și că cel mai bine este să facem câte puțin din ambele." },
+                { "language": "sq", "text": "Qëndrimi ynë është se të dyja palët kanë të drejtë dhe më së miri është të bëjmë nga pak prej të dyjave." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Ein Kompromiss braucht eine klare gemeinsame These, nicht nur `beides ein bisschen`.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: a compromise needs a clear common thesis, not just `a bit of both`." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی مبهم است: مصالحه به تز مشترک روشن نیاز دارد، نه فقط «کمی از هر دو»." },
+                { "language": "ar", "text": "مقبول لكنه غامض جداً: يحتاج الحل الوسط إلى أطروحة مشتركة واضحة، لا مجرد «قليل من الاثنين»." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: uzlaşma açık bir ortak tez ister, sadece `ikisinden de biraz` değil." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: компромиссу нужна ясная общая теза, а не просто «понемногу всего»." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر ناڕوونە: ڕێککەوتن پێویستی بە تێزی هاوبەشی ڕوونە، نەک تەنها «کەمێک لە هەردوو»." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir nezelal e: lihevhatin tezeke hevpar a zelal dixwaze, ne tenê `ji her duyan hinekî`." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt mgliste: kompromis potrzebuje jasnej wspólnej tezy, a nie tylko „po trochu z obu”." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: un compromis are nevoie de o teză comună clară, nu doar de `câte puțin din ambele`." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e paqartë: kompromisi ka nevojë për një tezë të përbashkët të qartë, jo vetëm “nga pak prej të dyjave”." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir einigen uns also darauf, mit dem Bibliotheksbeispiel zu beginnen, es anhand von Zugang, Kosten und Beratung einzuordnen und am Ende eine ausgewogene Erweiterung statt eines Ersatzes zu empfehlen.",
+              "translations": [
+                { "language": "en", "text": "So we agree to begin with the library example, classify it using access, costs, and advice, and in the end recommend a balanced expansion rather than a replacement." },
+                { "language": "fa", "text": "پس توافق می‌کنیم با مثال کتابخانه شروع کنیم، آن را بر اساس دسترسی، هزینه و مشاوره طبقه‌بندی کنیم و در پایان گسترش متعادل را به‌جای جایگزینی توصیه کنیم." },
+                { "language": "ar", "text": "إذن نتفق على أن نبدأ بمثال المكتبة، ونصنفه وفق الوصول والتكاليف والاستشارة، وفي النهاية نوصي بتوسيع متوازن بدلاً من الاستبدال." },
+                { "language": "tr", "text": "O halde kütüphane örneğiyle başlamaya, onu erişim, maliyetler ve danışmanlık açısından sınıflandırmaya ve sonunda bir yerine geçirme değil, dengeli bir genişletme önermeye karar veriyoruz." },
+                { "language": "ru", "text": "Итак, мы договариваемся начать с примера библиотеки, оценить его по доступу, расходам и консультации и в конце рекомендовать сбалансированное расширение, а не замену." },
+                { "language": "ckb", "text": "کەواتە ڕێکدەکەوین بە نموونەی کتێبخانە دەست پێ بکەین، بە پێی دەستگەیشتن، تێچوون و ڕاوێژ پۆلێنی بکەین و لە کۆتاییدا فراوانکردنێکی هاوسەنگ پێشنیار بکەین نەک جێگرەوە." },
+                { "language": "kmr", "text": "Ji ber vê yekê em li hev dikin ku bi mînaka pirtûkxaneyê dest pê bikin, wê li gorî gihîştin, lêçûn û şêwirmendiyê rêz bikin û di dawiyê de firehkirineke hevseng pêşniyar bikin, ne şûngirtin." },
+                { "language": "pl", "text": "Uzgadniamy więc, że zaczniemy od przykładu biblioteki, uporządkujemy go według dostępu, kosztów i doradztwa, a na końcu polecimy zrównoważone rozszerzenie zamiast zastąpienia." },
+                { "language": "ro", "text": "Așadar, convenim să începem cu exemplul bibliotecii, să îl încadrăm după acces, costuri și consiliere și la final să recomandăm o extindere echilibrată, nu o înlocuire." },
+                { "language": "sq", "text": "Pra biem dakord të fillojmë me shembullin e bibliotekës, ta klasifikojmë sipas qasjes, kostove dhe këshillimit dhe në fund të rekomandojmë një zgjerim të balancuar, jo zëvendësim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung nennt Reihenfolge, Kriterien und gemeinsames Ergebnis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the summary names the sequence, criteria, and common result." },
+                { "language": "fa", "text": "قوی: جمع‌بندی ترتیب، معیارها و نتیجه مشترک را نام می‌برد." },
+                { "language": "ar", "text": "قوي: يذكر الملخص الترتيب والمعايير والنتيجة المشتركة." },
+                { "language": "tr", "text": "Güçlü: özet sıralamayı, ölçütleri ve ortak sonucu adlandırıyor." },
+                { "language": "ru", "text": "Сильно: резюме называет порядок, критерии и общий результат." },
+                { "language": "ckb", "text": "بەهێزە: کۆکردنەوەکە ڕیزبەندی، پێوەرەکان و ئەنجامی هاوبەش ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: kurtkirin rêz, pîvan û encama hevpar nav dike." },
+                { "language": "pl", "text": "Mocne: podsumowanie nazywa kolejność, kryteria i wspólny wynik." },
+                { "language": "ro", "text": "Puternic: rezumatul numește ordinea, criteriile și rezultatul comun." },
+                { "language": "sq", "text": "E fortë: përmbledhja përmend rendin, kriteret dhe rezultatin e përbashkët." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir einigen uns also darauf, beide Ideen zu nutzen und am Ende zu sagen, dass digitale Angebote nützlich sein können.",
+              "translations": [
+                { "language": "en", "text": "So we agree to use both ideas and say at the end that digital services can be useful." },
+                { "language": "fa", "text": "پس توافق می‌کنیم هر دو ایده را استفاده کنیم و در پایان بگوییم خدمات دیجیتال می‌توانند مفید باشند." },
+                { "language": "ar", "text": "إذن نتفق على استخدام الفكرتين وفي النهاية نقول إن العروض الرقمية يمكن أن تكون مفيدة." },
+                { "language": "tr", "text": "O halde iki fikri de kullanmaya ve sonunda dijital hizmetlerin faydalı olabileceğini söylemeye karar veriyoruz." },
+                { "language": "ru", "text": "Итак, мы договариваемся использовать обе идеи и в конце сказать, что цифровые предложения могут быть полезны." },
+                { "language": "ckb", "text": "کەواتە ڕێکدەکەوین هەردوو بیرۆکەکە بەکاربهێنین و لە کۆتاییدا بڵێین پێشکەشکارییە دیجیتاڵەکان دەتوانن سوودبەخش بن." },
+                { "language": "kmr", "text": "Ji ber vê yekê em li hev dikin ku her du ramanên bikar bînin û di dawiyê de bibêjin ku pêşkêşiyên dîjîtal dikarin bikêr bin." },
+                { "language": "pl", "text": "Uzgadniamy więc, że wykorzystamy oba pomysły i na końcu powiemy, że oferty cyfrowe mogą być użyteczne." },
+                { "language": "ro", "text": "Așadar, convenim să folosim ambele idei și să spunem la final că ofertele digitale pot fi utile." },
+                { "language": "sq", "text": "Pra biem dakord të përdorim të dyja idetë dhe në fund të themi se ofertat digjitale mund të jenë të dobishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu dünn: Die Zusammenfassung sagt nicht, wie der Kompromiss konkret aussieht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too thin: the summary does not say what the compromise concretely looks like." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی کم‌عمق است: جمع‌بندی نمی‌گوید مصالحه دقیقاً چه شکلی دارد." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف: لا يقول الملخص كيف يبدو الحل الوسط بشكل ملموس." },
+                { "language": "tr", "text": "Makul ama fazla zayıf: özet, uzlaşmanın somut olarak nasıl göründüğünü söylemiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком поверхностно: резюме не говорит, как конкретно выглядит компромисс." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر لاوازە: کۆکردنەوەکە ناڵێت ڕێککەوتنەکە بە دیاریکراوی چۆنە." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir qels e: kurtkirin nabêje lihevhatin bi awayekî konkret çawa ye." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt cienkie: podsumowanie nie mówi, jak konkretnie wygląda kompromis." },
+                { "language": "ro", "text": "Plauzibil, dar prea subțire: rezumatul nu spune cum arată concret compromisul." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e hollë: përmbledhja nuk thotë si duket konkretisht kompromisi." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Ein Kompromiss beginnt nicht mit sofortiger Zustimmung, sondern mit Anerkennung plus eigenem Gegenpunkt.",
+          "translations": [
+            { "language": "en", "text": "A compromise does not begin with immediate agreement, but with acknowledgment plus your own counterpoint." },
+            { "language": "fa", "text": "مصالحه با موافقت فوری شروع نمی‌شود، بلکه با پذیرش نکته طرف مقابل و یک نکته مخالف خودتان شروع می‌شود." },
+            { "language": "ar", "text": "لا يبدأ الحل الوسط بالموافقة الفورية، بل بالاعتراف ثم طرح نقطة مقابلة خاصة بك." },
+            { "language": "tr", "text": "Uzlaşma hemen onaylamakla değil, kabul etme artı kendi karşı noktanızla başlar." },
+            { "language": "ru", "text": "Компромисс начинается не с немедленного согласия, а с признания плюс собственного встречного пункта." },
+            { "language": "ckb", "text": "ڕێککەوتن بە ڕازیبوونی دەستبەجێ دەست پێ ناکات، بەڵکو بە پەژراندن و خاڵی بەرامبەری خۆت دەست پێ دەکات." },
+            { "language": "kmr", "text": "Lihevhatin bi razîbûna tavilê dest pê nake, lê bi pejirandinê û xala dijber a xwe dest pê dike." },
+            { "language": "pl", "text": "Kompromis nie zaczyna się od natychmiastowej zgody, lecz od uznania plus własnego kontrapunktu." },
+            { "language": "ro", "text": "Un compromis nu începe cu acord imediat, ci cu recunoaștere plus propriul contrapunct." },
+            { "language": "sq", "text": "Kompromisi nuk fillon me miratim të menjëhershëm, por me pranim plus kundërpikën tuaj." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "Formulierungen wie `unter einer Bedingung` helfen, Zugeständnisse kontrolliert wirken zu lassen.",
+          "translations": [
+            { "language": "en", "text": "Phrases like `under one condition` help make concessions sound controlled." },
+            { "language": "fa", "text": "عبارت‌هایی مثل «با یک شرط» کمک می‌کنند امتیاز دادن کنترل‌شده به نظر برسد." },
+            { "language": "ar", "text": "تساعد عبارات مثل «بشرط واحد» على جعل التنازلات تبدو مضبوطة." },
+            { "language": "tr", "text": "`Bir koşulla` gibi ifadeler tavizlerin kontrollü duyulmasına yardımcı olur." },
+            { "language": "ru", "text": "Формулировки вроде «при одном условии» помогают сделать уступки контролируемыми." },
+            { "language": "ckb", "text": "دەربڕینەکانی وەک «بە مەرجێک» یارمەتی دەدەن سازشکردن بە کۆنترۆڵکراوی دەنگ بدات." },
+            { "language": "kmr", "text": "Gotinên wek `bi mercêkê` alîkar in ku destdan bi kontrolkirî were bihîstin." },
+            { "language": "pl", "text": "Sformułowania takie jak „pod jednym warunkiem” pomagają sprawić, że ustępstwa brzmią kontrolowanie." },
+            { "language": "ro", "text": "Formulări precum `cu o condiție` ajută ca concesiile să sune controlat." },
+            { "language": "sq", "text": "Formulime si “me një kusht” ndihmojnë që lëshimet të tingëllojnë të kontrolluara." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "content",
+          "text": "Bei gemeinsamen Prüfungsaufgaben sollten Rollen inhaltlich verbunden sein, nicht nur zeitlich gleich verteilt.",
+          "translations": [
+            { "language": "en", "text": "In joint exam tasks, roles should be connected by content, not just divided equally by time." },
+            { "language": "fa", "text": "در وظایف مشترک امتحانی، نقش‌ها باید از نظر محتوا به هم وصل باشند، نه فقط از نظر زمان برابر تقسیم شوند." },
+            { "language": "ar", "text": "في مهام الامتحان المشتركة يجب أن تكون الأدوار مترابطة مضمونياً، لا موزعة زمنياً بالتساوي فقط." },
+            { "language": "tr", "text": "Ortak sınav görevlerinde roller içerik olarak bağlantılı olmalıdır, yalnızca zaman açısından eşit bölünmemelidir." },
+            { "language": "ru", "text": "В совместных экзаменационных заданиях роли должны быть связаны содержательно, а не только равномерно распределены по времени." },
+            { "language": "ckb", "text": "لە ئەرکە هاوبەشەکانی تاقیکردنەوەدا دەبێت ڕۆڵەکان لە ناوەڕۆکدا پێکەوە ببەسترێن، نەک تەنها لە کاتدا یەکسان دابەش بکرێن." },
+            { "language": "kmr", "text": "Di peywirên hevpar ên azmûnê de divê rol bi naverokê ve girêdayî bin, ne tenê bi demê wekhev werin parvekirin." },
+            { "language": "pl", "text": "W zadaniach wspólnych na egzaminie role powinny być powiązane treściowo, a nie tylko równo rozdzielone czasowo." },
+            { "language": "ro", "text": "În sarcinile comune de examen, rolurile ar trebui să fie conectate prin conținut, nu doar împărțite egal ca timp." },
+            { "language": "sq", "text": "Në detyrat e përbashkëta të provimit, rolet duhet të lidhen për nga përmbajtja, jo vetëm të ndahen në mënyrë të barabartë në kohë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "exam-technique",
+          "text": "Eine starke Schlussformel nennt nicht nur `wir einigen uns`, sondern auch Gegenstand, Kriterien und Ergebnis.",
+          "translations": [
+            { "language": "en", "text": "A strong closing formula does not only say `we agree`, but also names the object, criteria, and result." },
+            { "language": "fa", "text": "یک فرمول پایانی قوی فقط نمی‌گوید «توافق می‌کنیم»، بلکه موضوع، معیارها و نتیجه را هم نام می‌برد." },
+            { "language": "ar", "text": "الصيغة الختامية القوية لا تقول فقط «نتفق»، بل تذكر أيضاً الموضوع والمعايير والنتيجة." },
+            { "language": "tr", "text": "Güçlü bir kapanış formülü yalnızca `anlaşıyoruz` demez, konu, ölçütler ve sonucu da adlandırır." },
+            { "language": "ru", "text": "Сильная заключительная формула не только говорит «мы согласны», но и называет предмет, критерии и результат." },
+            { "language": "ckb", "text": "فۆرمولی کۆتایی بەهێز تەنها ناڵێت «ڕێکدەکەوین»، بەڵکو بابەت، پێوەرەکان و ئەنجامیش ناو دەبات." },
+            { "language": "kmr", "text": "Formuleka dawî ya xurt tenê nabêje `em li hev dikin`, lê babet, pîvan û encam jî nav dike." },
+            { "language": "pl", "text": "Mocna formuła końcowa nie mówi tylko „uzgadniamy”, lecz nazywa także przedmiot, kryteria i wynik." },
+            { "language": "ro", "text": "O formulă finală puternică nu spune doar `convenim`, ci numește și obiectul, criteriile și rezultatul." },
+            { "language": "sq", "text": "Një formulë e fortë përmbyllëse nuk thotë vetëm “biem dakord”, por përmend edhe objektin, kriteret dhe rezultatin." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "formal-exam-compromise",
+          "placement": "detail-hero",
+          "purpose": "Show a formal oral exam setting where two adult candidates negotiate the structure of a joint presentation.",
+          "altText": "Zwei Prüfungsteilnehmende sitzen in einem Prüfungsraum und planen gemeinsam eine Präsentation.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two exam candidates sit in an exam room and plan a presentation together." },
+            { "language": "fa", "text": "دو شرکت‌کننده آزمون در اتاق امتحان نشسته‌اند و با هم یک ارائه را برنامه‌ریزی می‌کنند." },
+            { "language": "ar", "text": "يجلس ممتحنان في غرفة امتحان ويخططان معاً لعرض." },
+            { "language": "tr", "text": "İki sınav adayı bir sınav odasında oturur ve birlikte bir sunum planlar." },
+            { "language": "ru", "text": "Два участника экзамена сидят в экзаменационной комнате и вместе планируют презентацию." },
+            { "language": "ckb", "text": "دوو بەشداربووی تاقیکردنەوە لە ژووری تاقیکردنەوەدا دانیشتوون و پێکەوە پێشکەشکردنێک پلان دەکەن." },
+            { "language": "kmr", "text": "Du beşdarên azmûnê di odeya azmûnê de rûniştine û bi hev re pêşkêşiyekê plan dikin." },
+            { "language": "pl", "text": "Dwie osoby zdające siedzą w sali egzaminacyjnej i wspólnie planują prezentację." },
+            { "language": "ro", "text": "Doi candidați la examen stau într-o sală de examen și planifică împreună o prezentare." },
+            { "language": "sq", "text": "Dy kandidatë provimi ulen në një sallë provimi dhe planifikojnë së bashku një prezantim." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal oral exam setting in Germany: two diverse adult candidates seated at a table with notes, discussing a joint presentation plan, calm professional atmosphere, no logos, no private data, no readable text inside the image, accessible composition, soft neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

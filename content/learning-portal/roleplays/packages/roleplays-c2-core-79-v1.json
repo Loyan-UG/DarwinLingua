@@ -1,0 +1,718 @@
+{
+  "packageId": "roleplays-c2-core-79-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 79 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 79",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-entscheidung-unter-unsicherheit-kommunizieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Entscheidung unter Unsicherheit kommunizieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Communicating a decision under uncertainty" },
+        { "language": "fa", "text": "اطلاع‌رسانی یک تصمیم در شرایط عدم قطعیت" },
+        { "language": "ar", "text": "التواصل بشأن قرار في ظل عدم اليقين" },
+        { "language": "tr", "text": "Belirsizlik altında bir kararı iletmek" },
+        { "language": "ru", "text": "Сообщить о решении в условиях неопределенности" },
+        { "language": "ckb", "text": "ڕاگەیاندنی بڕیارێک لە دۆخی نادڵنیاییدا" },
+        { "language": "kmr", "text": "Ragihandina biryarekê di rewşa nezelaliyê de" },
+        { "language": "pl", "text": "Komunikowanie decyzji w warunkach niepewności" },
+        { "language": "ro", "text": "Comunicarea unei decizii în condiții de incertitudine" },
+        { "language": "sq", "text": "Komunikimi i një vendimi në kushtet e pasigurisë" }
+      ],
+      "description": "In einem Teammeeting müssen Sie eine Entscheidung erklären, obwohl noch nicht alle Daten vollständig sind. Sie sollen transparent benennen, was bekannt ist, was offen bleibt, warum trotzdem gehandelt wird und wie eine spätere Korrektur möglich bleibt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a team meeting, you must explain a decision although not all data is complete yet. You should transparently name what is known, what remains open, why action is still being taken, and how later correction remains possible." },
+        { "language": "fa", "text": "در یک جلسه تیمی باید تصمیمی را توضیح دهید، با اینکه هنوز همه داده‌ها کامل نیستند. باید شفاف بگویید چه چیزی معلوم است، چه چیزی باز می‌ماند، چرا با این حال اقدام می‌شود و اصلاح بعدی چگونه ممکن می‌ماند." },
+        { "language": "ar", "text": "في اجتماع فريق يجب أن تشرحوا قرارًا رغم أن كل البيانات ليست مكتملة بعد. ينبغي أن تذكروا بشفافية ما هو معروف، وما يبقى مفتوحًا، ولماذا يتم التحرك رغم ذلك، وكيف تبقى المراجعة اللاحقة ممكنة." },
+        { "language": "tr", "text": "Bir ekip toplantısında, tüm veriler henüz tamamlanmamış olsa da bir kararı açıklamanız gerekir. Ne bilindiğini, neyin açık kaldığını, buna rağmen neden hareket edildiğini ve daha sonra düzeltmenin nasıl mümkün kaldığını şeffaf biçimde belirtmelisiniz." },
+        { "language": "ru", "text": "На командной встрече нужно объяснить решение, хотя данные еще не полностью собраны. Нужно прозрачно назвать, что известно, что остается открытым, почему действие все же необходимо и как сохраняется возможность последующей корректировки." },
+        { "language": "ckb", "text": "لە کۆبوونەوەی تیمدا دەبێت بڕیارێک ڕوون بکەیتەوە، هەرچەندە هێشتا هەموو داتا تەواو نییە. دەبێت بە شەفافی بڵێیت چی زانراوە، چی کراوە دەمێنێتەوە، بۆچی هەر لەو کاتەدا هەنگاو دەگیرێت و چۆن ڕاستکردنەوەی دواتر هێشتا ممکنە." },
+        { "language": "kmr", "text": "Di civîna tîmê de divê hûn biryarekê rave bikin, her çend hemû daneyên hîn temam nebin. Divê hûn bi zelalî nav bikin çi tê zanîn, çi vekirî dimîne, çima dîsa tê tevgerîn û çawa rastkirina paşê hîn gengaz dimîne." },
+        { "language": "pl", "text": "Na spotkaniu zespołu trzeba wyjaśnić decyzję, mimo że nie wszystkie dane są jeszcze kompletne. Należy przejrzyście nazwać, co wiadomo, co pozostaje otwarte, dlaczego mimo to działamy i jak możliwa pozostaje późniejsza korekta." },
+        { "language": "ro", "text": "Într-o ședință de echipă trebuie să explicați o decizie, deși datele nu sunt încă complete. Trebuie să numiți transparent ce se știe, ce rămâne deschis, de ce se acționează totuși și cum rămâne posibilă o corectare ulterioară." },
+        { "language": "sq", "text": "Në një takim ekipi duhet të shpjegoni një vendim, megjithëse të dhënat nuk janë ende të plota. Duhet të përmendni qartë çfarë dihet, çfarë mbetet e hapur, pse veprohet megjithatë dhe si mbetet e mundur një korrigjim i mëvonshëm." }
+      ],
+      "learnerGoal": "Auf C2-Niveau eine Entscheidung unter Unsicherheit erklären: bestätigte Grundlage, offene Annahmen, Handlungsdruck, Korrekturmechanismus und Verantwortung präzise voneinander trennen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a decision under uncertainty at C2 level: precisely separate confirmed basis, open assumptions, pressure to act, correction mechanism, and responsibility." },
+        { "language": "fa", "text": "در سطح C2 تصمیمی را در شرایط عدم قطعیت توضیح دهید: مبنای تأییدشده، فرض‌های باز، فشار اقدام، سازوکار اصلاح و مسئولیت را دقیق از هم جدا کنید." },
+        { "language": "ar", "text": "اشرحوا قرارًا في ظل عدم اليقين بمستوى C2: افصلوا بدقة بين الأساس المؤكد والافتراضات المفتوحة وضغط التحرك وآلية التصحيح والمسؤولية." },
+        { "language": "tr", "text": "C2 düzeyinde belirsizlik altında bir kararı açıklayın: doğrulanmış temel, açık varsayımlar, hareket baskısı, düzeltme mekanizması ve sorumluluğu kesin biçimde ayırın." },
+        { "language": "ru", "text": "Объяснить решение в условиях неопределенности на уровне C2: точно разделить подтвержденную основу, открытые предположения, необходимость действия, механизм корректировки и ответственность." },
+        { "language": "ckb", "text": "لە ئاستی C2 بڕیارێک لە دۆخی نادڵنیاییدا ڕوون بکەوە: بنەمای پشتڕاستکراو، گریمانە کراوەکان، فشاری هەنگاو، میکانیزمی ڕاستکردنەوە و بەرپرسیاریەتی بە وردی جیا بکەوە." },
+        { "language": "kmr", "text": "Di asta C2 de biryarekê di nezelaliyê de rave bikin: bingeha piştrastkirî, texmînên vekirî, zexta tevgerê, mekanîzmaya rastkirinê û berpirsiyarî bi hûrgilî veqetînin." },
+        { "language": "pl", "text": "Wyjaśnić decyzję w warunkach niepewności na poziomie C2: precyzyjnie oddzielić potwierdzoną podstawę, otwarte założenia, presję działania, mechanizm korekty i odpowiedzialność." },
+        { "language": "ro", "text": "Explicați o decizie în condiții de incertitudine la nivel C2: separați precis baza confirmată, ipotezele deschise, presiunea de acțiune, mecanismul de corectare și răspunderea." },
+        { "language": "sq", "text": "Shpjegoni një vendim në pasiguri në nivel C2: ndani saktë bazën e konfirmuar, supozimet e hapura, presionin për veprim, mekanizmin e korrigjimit dhe përgjegjësinë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "discuss-plan",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 79,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Projektleitung",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مدیر پروژه" },
+            { "language": "ar", "text": "قائد المشروع" },
+            { "language": "tr", "text": "Proje yöneticisi" },
+            { "language": "ru", "text": "Руководитель проекта" },
+            { "language": "ckb", "text": "سەرپەرشتیاری پڕۆژە" },
+            { "language": "kmr", "text": "Rêberê projeyê" },
+            { "language": "pl", "text": "Kierownik projektu" },
+            { "language": "ro", "text": "Coordonatorul proiectului" },
+            { "language": "sq", "text": "Drejtuesi i projektit" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Team",
+          "translations": [
+            { "language": "en", "text": "Team" },
+            { "language": "fa", "text": "تیم" },
+            { "language": "ar", "text": "الفريق" },
+            { "language": "tr", "text": "Ekip" },
+            { "language": "ru", "text": "Команда" },
+            { "language": "ckb", "text": "تیم" },
+            { "language": "kmr", "text": "Tîm" },
+            { "language": "pl", "text": "Zespół" },
+            { "language": "ro", "text": "Echipa" },
+            { "language": "sq", "text": "Ekipi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Das Team fragt, warum wir den Pilotstart verschieben, obwohl die Nutzungsdaten noch nicht vollständig ausgewertet sind. Wie erklären Sie die Entscheidung?",
+          "translations": [
+            { "language": "en", "text": "The team asks why we are postponing the pilot launch although the usage data has not yet been fully evaluated. How do you explain the decision?" },
+            { "language": "fa", "text": "تیم می‌پرسد چرا شروع پایلوت را به تعویق می‌اندازیم، با اینکه داده‌های استفاده هنوز کامل ارزیابی نشده‌اند. تصمیم را چگونه توضیح می‌دهید؟" },
+            { "language": "ar", "text": "يسأل الفريق لماذا نؤجل بدء التجربة رغم أن بيانات الاستخدام لم تُحلل بالكامل بعد. كيف تشرحون القرار؟" },
+            { "language": "tr", "text": "Ekip, kullanım verileri henüz tamamen değerlendirilmemişken pilot başlangıcı neden ertelediğimizi soruyor. Kararı nasıl açıklarsınız?" },
+            { "language": "ru", "text": "Команда спрашивает, почему мы откладываем запуск пилота, хотя данные об использовании еще не полностью оценены. Как вы объясните решение?" },
+            { "language": "ckb", "text": "تیمەکە دەپرسێت بۆچی دەستپێکردنی پایلۆت دوا دەخەین، هەرچەندە داتاکانی بەکارهێنان هێشتا بە تەواوی هەڵسەنگێنراو نییە. چۆن بڕیارەکە ڕوون دەکەیتەوە؟" },
+            { "language": "kmr", "text": "Tîm dipirse çima em destpêka pîlotê paş dixin, her çend daneyên bikaranînê hîn bi temamî nehatibin nirxandin. Hûn biryarê çawa rave dikin?" },
+            { "language": "pl", "text": "Zespół pyta, dlaczego przesuwamy start pilotażu, mimo że dane o użyciu nie zostały jeszcze w pełni ocenione. Jak wyjaśni Pan/Pani decyzję?" },
+            { "language": "ro", "text": "Echipa întreabă de ce amânăm lansarea pilotului, deși datele de utilizare nu au fost încă evaluate complet. Cum explicați decizia?" },
+            { "language": "sq", "text": "Ekipi pyet pse po e shtyjmë nisjen pilot, megjithëse të dhënat e përdorimit ende nuk janë vlerësuar plotësisht. Si e shpjegoni vendimin?" }
+          ],
+          "function": "opening prompt",
+          "toneNote": "skeptical, practical"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde offen sagen: Die Datenlage ist nicht vollständig, aber sie reicht für eine vorläufige Risikoeinschätzung. Drei stabile Signale sprechen dafür, den Start zu verschieben; zwei Annahmen prüfen wir weiter.",
+          "translations": [
+            { "language": "en", "text": "I would say openly: the data situation is not complete, but it is sufficient for a preliminary risk assessment. Three stable signals support postponing the launch; we are still checking two assumptions." },
+            { "language": "fa", "text": "صریح می‌گویم: وضعیت داده‌ها کامل نیست، اما برای یک ارزیابی اولیه ریسک کافی است. سه نشانه پایدار از تعویق شروع حمایت می‌کند؛ دو فرض را همچنان بررسی می‌کنیم." },
+            { "language": "ar", "text": "سأقول بصراحة: حالة البيانات ليست مكتملة، لكنها تكفي لتقييم أولي للمخاطر. ثلاث إشارات ثابتة تؤيد تأجيل البدء؛ وما زلنا نفحص افتراضين." },
+            { "language": "tr", "text": "Açıkça söylerdim: veri durumu tam değil, ancak ön risk değerlendirmesi için yeterli. Üç istikrarlı sinyal başlangıcı ertelemeyi destekliyor; iki varsayımı hâlâ kontrol ediyoruz." },
+            { "language": "ru", "text": "Я бы сказал открыто: картина данных неполная, но ее достаточно для предварительной оценки риска. Три устойчивых сигнала говорят в пользу переноса запуска; две предпосылки мы еще проверяем." },
+            { "language": "ckb", "text": "بە کراوەیی دەڵێم: دۆخی داتا تەواو نییە، بەڵام بۆ هەڵسەنگاندنی سەرەتایی مەترسی بەسە. سێ نیشانەی جێگیر پشتگیری لە دواخستنی دەستپێکردن دەکەن؛ دوو گریمانە هێشتا دەپشکنین." },
+            { "language": "kmr", "text": "Ez bi vekirî dibêjim: rewşa daneyan temam nîne, lê ji bo nirxandina destpêkî ya rîskê bes e. Sê nîşanên domdar piştgirî didin paşxistina destpêkê; em hîn du texmînan kontrol dikin." },
+            { "language": "pl", "text": "Powiedziałbym otwarcie: obraz danych nie jest pełny, ale wystarcza do wstępnej oceny ryzyka. Trzy stabilne sygnały przemawiają za przesunięciem startu; dwa założenia dalej sprawdzamy." },
+            { "language": "ro", "text": "Aș spune deschis: situația datelor nu este completă, dar este suficientă pentru o evaluare preliminară a riscului. Trei semnale stabile susțin amânarea lansării; două ipoteze le verificăm în continuare." },
+            { "language": "sq", "text": "Do të thosha hapur: gjendja e të dhënave nuk është e plotë, por mjafton për një vlerësim paraprak të rrezikut. Tri sinjale të qëndrueshme flasin për shtyrjen e nisjes; dy supozime po i kontrollojmë ende." }
+          ],
+          "function": "decision basis",
+          "toneNote": "transparent, bounded",
+          "expectedLearnerAction": "Separate incomplete data from sufficient provisional basis."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Ein Teammitglied fragt: „Ist das nicht ein Bauchgefühl mit Zahlenmantel?“ Wie reagieren Sie?",
+          "translations": [
+            { "language": "en", "text": "A team member asks: \"Isn't that just a gut feeling wearing a cloak of numbers?\" How do you respond?" },
+            { "language": "fa", "text": "یکی از اعضای تیم می‌پرسد: «این فقط یک حس درونی با پوشش عدد نیست؟» چگونه واکنش نشان می‌دهید؟" },
+            { "language": "ar", "text": "يسأل أحد أعضاء الفريق: «أليس هذا مجرد إحساس داخلي يرتدي عباءة الأرقام؟» كيف تردون؟" },
+            { "language": "tr", "text": "Bir ekip üyesi sorar: \"Bu sadece sayı kılığına girmiş bir içgüdü değil mi?\" Nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Один участник команды спрашивает: «Разве это не просто интуиция в числовой оболочке?» Как вы ответите?" },
+            { "language": "ckb", "text": "ئەندامێکی تیم دەپرسێت: «ئەمە تەنها هەستێکی ناوخۆ نییە کە جلێکی ژمارەیی لەبەر کردووە؟» چۆن وەڵام دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Endamekî tîmê dipirse: \"Ma ev tenê hesteke hundirîn nîne ku cilê hejmaran li xwe kiriye?\" Hûn çawa bersiv didin?" },
+            { "language": "pl", "text": "Członek zespołu pyta: „Czy to nie jest tylko przeczucie w płaszczu liczb?” Jak Pan/Pani odpowie?" },
+            { "language": "ro", "text": "Un membru al echipei întreabă: „Nu este asta doar o intuiție îmbrăcată în cifre?” Cum răspundeți?" },
+            { "language": "sq", "text": "Një anëtar i ekipit pyet: \"A nuk është kjo thjesht një ndjenjë e brendshme e veshur me numra?\" Si përgjigjeni?" }
+          ],
+          "function": "evidence challenge",
+          "toneNote": "critical"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die Kritik ist berechtigt, wenn wir Zahlen nur dekorativ nutzen würden. Hier ist der Unterschied: Wir nennen die Signale, ihre Schwelle und die Gegenprüfung. Was wir nicht belegen können, markieren wir ausdrücklich als Annahme.",
+          "translations": [
+            { "language": "en", "text": "The criticism would be justified if we used numbers only decoratively. Here is the difference: we name the signals, their threshold, and the cross-check. What we cannot prove, we explicitly mark as an assumption." },
+            { "language": "fa", "text": "اگر عددها را فقط تزئینی استفاده می‌کردیم، انتقاد وارد بود. تفاوت اینجاست: نشانه‌ها، آستانه آن‌ها و بررسی متقابل را نام می‌بریم. آنچه را نمی‌توانیم اثبات کنیم، صریحاً به‌عنوان فرض علامت‌گذاری می‌کنیم." },
+            { "language": "ar", "text": "يكون النقد مبررًا لو استخدمنا الأرقام للزينة فقط. الفرق هنا هو أننا نذكر الإشارات وعتبتها والفحص المقابل. وما لا نستطيع إثباته نعلّمه صراحة كافتراض." },
+            { "language": "tr", "text": "Sayıları yalnızca süs olarak kullansaydık eleştiri haklı olurdu. Buradaki fark şu: sinyalleri, eşiklerini ve karşı kontrolü adlandırıyoruz. Kanıtlayamadığımız şeyi açıkça varsayım olarak işaretliyoruz." },
+            { "language": "ru", "text": "Критика была бы справедливой, если бы мы использовали числа только как украшение. Разница здесь в том, что мы называем сигналы, их порог и встречную проверку. То, что не можем доказать, прямо помечаем как предположение." },
+            { "language": "ckb", "text": "ڕەخنەکە ڕەوا دەبوو ئەگەر ژمارەکانمان تەنها بۆ جوانکاری بەکارهێنابایە. جیاوازی لێرەدایە: نیشانەکان، ئاستەکانیان و پشکنینی بەرامبەر ناودەبەین. ئەوەی ناتوانین بیسەلمێنین، بە ڕوونی وەک گریمانە دیاری دەکەین." },
+            { "language": "kmr", "text": "Rexne rewa dibû heke me hejmar tenê wek xemilandin bikaranîba. Cudahî li vir ev e: em nîşan, asta wan û kontrola dijber nav dikin. Tişta ku em nikarin îspat bikin, em bi eşkere wek texmîn nîşan dikin." },
+            { "language": "pl", "text": "Krytyka byłaby zasadna, gdybyśmy używali liczb tylko dekoracyjnie. Różnica polega na tym, że nazywamy sygnały, ich próg i kontrolę krzyżową. To, czego nie możemy udowodnić, wyraźnie oznaczamy jako założenie." },
+            { "language": "ro", "text": "Critica ar fi justificată dacă am folosi cifrele doar decorativ. Diferența este aceasta: numim semnalele, pragul lor și verificarea încrucișată. Ceea ce nu putem dovedi marcăm explicit ca ipoteză." },
+            { "language": "sq", "text": "Kritika do të ishte e drejtë po t'i përdornim numrat vetëm si zbukurim. Dallimi këtu është ky: përmendim sinjalet, pragun e tyre dhe kontrollin kryq. Çfarë nuk mund ta provojmë, e shënojmë qartë si supozim." }
+          ],
+          "function": "evidence boundary",
+          "toneNote": "precise, non-defensive",
+          "expectedLearnerAction": "Answer skepticism by naming signal, threshold, and assumption status."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Wie erklären Sie den Handlungsdruck, ohne so zu tun, als sei alles sicher?",
+          "translations": [
+            { "language": "en", "text": "How do you explain the pressure to act without pretending that everything is certain?" },
+            { "language": "fa", "text": "چگونه فشار اقدام را توضیح می‌دهید، بدون اینکه وانمود کنید همه چیز قطعی است؟" },
+            { "language": "ar", "text": "كيف تشرحون ضغط التحرك من دون أن تتظاهروا بأن كل شيء مؤكد؟" },
+            { "language": "tr", "text": "Her şey kesinmiş gibi yapmadan hareket baskısını nasıl açıklarsınız?" },
+            { "language": "ru", "text": "Как объяснить необходимость действия, не делая вид, будто все точно известно?" },
+            { "language": "ckb", "text": "چۆن فشاری هەنگاو دەگێڕیتەوە، بەبێ ئەوەی وا پیشان بدەیت هەموو شتێک دڵنیایە؟" },
+            { "language": "kmr", "text": "Hûn çawa zexta tevgerê rave dikin bêyî ku wisa nîşan bidin her tişt piştrast e?" },
+            { "language": "pl", "text": "Jak wyjaśni Pan/Pani presję działania, nie udając, że wszystko jest pewne?" },
+            { "language": "ro", "text": "Cum explicați presiunea de a acționa fără să pretindeți că totul este sigur?" },
+            { "language": "sq", "text": "Si e shpjegoni presionin për të vepruar pa u shtirur sikur gjithçka është e sigurt?" }
+          ],
+          "function": "urgency prompt",
+          "toneNote": "practical"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir handeln nicht, weil alles sicher ist, sondern weil die Kosten des Wartens inzwischen höher sind als die Kosten einer begrenzten Verschiebung. Das ist keine endgültige Wahrheit, sondern eine verantwortbare Entscheidung mit Korrekturfenster.",
+          "translations": [
+            { "language": "en", "text": "We are not acting because everything is certain, but because the cost of waiting has now become higher than the cost of a limited postponement. This is not a final truth, but a responsible decision with a correction window." },
+            { "language": "fa", "text": "ما اقدام نمی‌کنیم چون همه چیز قطعی است، بلکه چون هزینه صبر کردن اکنون از هزینه یک تعویق محدود بیشتر شده است. این حقیقت نهایی نیست، بلکه تصمیمی مسئولانه با پنجره اصلاح است." },
+            { "language": "ar", "text": "نحن لا نتحرك لأن كل شيء مؤكد، بل لأن تكلفة الانتظار أصبحت الآن أعلى من تكلفة تأجيل محدود. هذه ليست حقيقة نهائية، بل قرار مسؤول مع نافذة تصحيح." },
+            { "language": "tr", "text": "Her şey kesin olduğu için hareket etmiyoruz; beklemenin maliyeti artık sınırlı bir ertelemenin maliyetinden yüksek olduğu için hareket ediyoruz. Bu nihai bir gerçek değil, düzeltme penceresi olan sorumlu bir karardır." },
+            { "language": "ru", "text": "Мы действуем не потому, что все точно известно, а потому что цена ожидания теперь выше цены ограниченного переноса. Это не окончательная истина, а ответственное решение с окном корректировки." },
+            { "language": "ckb", "text": "ئێمە هەنگاو ناگرین چونکە هەموو شتێک دڵنیایە، بەڵکو چونکە تێچووی چاوەڕوانی ئێستا لە تێچووی دواخستنی سنووردار زیاترە. ئەمە ڕاستیی کۆتایی نییە، بەڵکو بڕیارێکی بەرپرسانەیە بە پەنجەرەی ڕاستکردنەوە." },
+            { "language": "kmr", "text": "Em tev nagirin ji ber ku her tişt piştrast e, lê ji ber ku lêçûna bendemayînê niha ji lêçûna paşxistineke sînordar bilindtir e. Ev rastiyeke dawî nîne, lê biryareke berpirsiyar e bi pencereya rastkirinê." },
+            { "language": "pl", "text": "Nie działamy dlatego, że wszystko jest pewne, lecz dlatego, że koszt czekania jest już wyższy niż koszt ograniczonego przesunięcia. To nie jest ostateczna prawda, lecz odpowiedzialna decyzja z oknem korekty." },
+            { "language": "ro", "text": "Nu acționăm pentru că totul este sigur, ci pentru că prețul așteptării este acum mai mare decât prețul unei amânări limitate. Nu este un adevăr final, ci o decizie responsabilă cu o fereastră de corectare." },
+            { "language": "sq", "text": "Nuk veprojmë sepse gjithçka është e sigurt, por sepse kostoja e pritjes tani është më e lartë se kostoja e një shtyrjeje të kufizuar. Kjo nuk është e vërtetë përfundimtare, por një vendim i përgjegjshëm me hapësirë korrigjimi." }
+          ],
+          "function": "pressure and correction",
+          "toneNote": "accountable, exact",
+          "expectedLearnerAction": "Justify action through comparative risk and correction path."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Was sagen Sie zu der Sorge, dass eine spätere Korrektur wie Führungsschwäche wirkt?",
+          "translations": [
+            { "language": "en", "text": "What do you say to the concern that a later correction looks like leadership weakness?" },
+            { "language": "fa", "text": "درباره این نگرانی چه می‌گویید که اصلاح بعدی شبیه ضعف رهبری به نظر برسد؟" },
+            { "language": "ar", "text": "ماذا تقولون للقلق من أن التصحيح اللاحق يبدو كضعف قيادي؟" },
+            { "language": "tr", "text": "Daha sonraki bir düzeltmenin liderlik zayıflığı gibi görünmesi kaygısına ne dersiniz?" },
+            { "language": "ru", "text": "Что вы скажете на опасение, что последующая корректировка будет выглядеть как слабость руководства?" },
+            { "language": "ckb", "text": "دەربارەی ئەو نیگەرانییە چی دەڵێیت کە ڕاستکردنەوەی دواتر وەک لاوازیی ڕابەرایەتی دەربکەوێت؟" },
+            { "language": "kmr", "text": "Hûn li ser vê xemgîniyê çi dibêjin ku rastkirina paşê wek lawaziya rêveberiyê xuya bike?" },
+            { "language": "pl", "text": "Co powie Pan/Pani na obawę, że późniejsza korekta będzie wyglądała jak słabość kierownictwa?" },
+            { "language": "ro", "text": "Ce spuneți despre îngrijorarea că o corectare ulterioară va părea slăbiciune de conducere?" },
+            { "language": "sq", "text": "Çfarë thoni për shqetësimin se një korrigjim i mëvonshëm do të duket si dobësi drejtimi?" }
+          ],
+          "function": "leadership challenge",
+          "toneNote": "concerned"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Korrektur wirkt schwach, wenn sie überraschend und unbegründet kommt. Sie wirkt professionell, wenn wir jetzt festlegen: Welche Messpunkte beobachten wir, ab welchem Wert ändern wir den Plan, und wer entscheidet darüber?",
+          "translations": [
+            { "language": "en", "text": "Correction looks weak when it comes unexpectedly and without reasons. It looks professional when we define now: which measurement points we observe, from which value we change the plan, and who decides on that." },
+            { "language": "fa", "text": "اصلاح زمانی ضعیف به نظر می‌رسد که ناگهانی و بی‌دلیل بیاید. وقتی حرفه‌ای به نظر می‌رسد که همین حالا مشخص کنیم: کدام نقاط سنجش را مشاهده می‌کنیم، از چه مقداری برنامه را تغییر می‌دهیم و چه کسی درباره آن تصمیم می‌گیرد." },
+            { "language": "ar", "text": "يبدو التصحيح ضعيفًا عندما يأتي مفاجئًا وبلا سبب. ويبدو مهنيًا عندما نحدد الآن: أي نقاط قياس نراقب، ومن أي قيمة نغيّر الخطة، ومن يقرر ذلك." },
+            { "language": "tr", "text": "Düzeltme beklenmedik ve gerekçesiz geldiğinde zayıf görünür. Şimdiden şunları belirlersek profesyonel görünür: hangi ölçüm noktalarını izliyoruz, hangi değerden itibaren planı değiştiriyoruz ve buna kim karar veriyor?" },
+            { "language": "ru", "text": "Корректировка выглядит слабой, если появляется внезапно и без обоснования. Она выглядит профессионально, если мы сейчас определим: какие точки измерения наблюдаем, с какого значения меняем план и кто об этом решает." },
+            { "language": "ckb", "text": "ڕاستکردنەوە کاتێک لاواز دەردەکەوێت کە لەناکاو و بێ هۆکار بێت. بە شێوەی پیشەیی دەردەکەوێت ئەگەر ئێستا دیاری بکەین: کام خاڵەکانی پێوانەکردن چاودێری دەکەین، لە کام بەهاوە پلان دەگۆڕین، و کێ بڕیار لەسەر ئەوە دەدات؟" },
+            { "language": "kmr", "text": "Rastkirin dema ku ji nişka ve û bê sedem were, lawaz xuya dike. Ew profesyonel xuya dike heke em niha diyar bikin: kîjan xalên pîvanê dişopînin, ji kîjan nirxê planê diguherînin, û kî li ser wê biryar dide?" },
+            { "language": "pl", "text": "Korekta wygląda słabo, gdy pojawia się nagle i bez uzasadnienia. Wygląda profesjonalnie, gdy teraz ustalimy: które punkty pomiaru obserwujemy, od jakiej wartości zmieniamy plan i kto o tym decyduje." },
+            { "language": "ro", "text": "Corectarea pare slabă când vine neașteptat și fără motivare. Pare profesională când stabilim acum: ce puncte de măsurare observăm, de la ce valoare schimbăm planul și cine decide asta." },
+            { "language": "sq", "text": "Korrigjimi duket i dobët kur vjen papritur dhe pa arsye. Duket profesional kur përcaktojmë tani: cilat pika matjeje vëzhgojmë, nga cila vlerë e ndryshojmë planin dhe kush vendos për këtë." }
+          ],
+          "function": "correction mechanism",
+          "toneNote": "confident, transparent",
+          "expectedLearnerAction": "Turn possible correction into pre-defined governance."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Formulieren Sie zum Schluss eine kurze Teamansage, die Sicherheit gibt, ohne falsche Gewissheit zu behaupten.",
+          "translations": [
+            { "language": "en", "text": "Finally, formulate a brief team statement that gives security without claiming false certainty." },
+            { "language": "fa", "text": "در پایان یک اعلام کوتاه برای تیم بیان کنید که امنیت خاطر بدهد، بدون اینکه قطعیت نادرست ادعا کند." },
+            { "language": "ar", "text": "في الختام، صوغوا رسالة قصيرة للفريق تمنح اطمئنانًا من دون ادعاء يقين خاطئ." },
+            { "language": "tr", "text": "Son olarak, yanlış kesinlik iddia etmeden güven veren kısa bir ekip açıklaması kurun." },
+            { "language": "ru", "text": "В завершение сформулируйте короткое сообщение для команды, которое дает опору, не заявляя ложной уверенности." },
+            { "language": "ckb", "text": "لە کۆتاییدا ڕاگەیاندنێکی کورتی تیم دابڕێژە کە دڵنیایی بدات، بەبێ ئەوەی دڵنیایی هەڵە بانگەشە بکات." },
+            { "language": "kmr", "text": "Di dawiyê de daxuyaniyeke kurt a tîmê ava bikin ku ewlehiyê bide, bêyî ku piştrastiyeke şaş îdia bike." },
+            { "language": "pl", "text": "Na koniec proszę sformułować krótką informację dla zespołu, która daje poczucie bezpieczeństwa, nie udając fałszywej pewności." },
+            { "language": "ro", "text": "La final, formulați un scurt mesaj pentru echipă care oferă siguranță fără a pretinde o certitudine falsă." },
+            { "language": "sq", "text": "Në fund formuloni një njoftim të shkurtër për ekipin që jep siguri pa pretenduar siguri të rreme." }
+          ],
+          "function": "closing prompt",
+          "toneNote": "leaderly"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Wir verschieben den Pilotstart begrenzt, weil die stabilen Risikosignale schwerer wiegen als der Vorteil eines sofortigen Starts. Die offenen Annahmen prüfen wir bis Dienstag; danach bestätigen wir den Plan oder korrigieren ihn anhand der vereinbarten Messpunkte.",
+          "translations": [
+            { "language": "en", "text": "We are postponing the pilot launch in a limited way because the stable risk signals weigh more heavily than the advantage of an immediate launch. We will check the open assumptions by Tuesday; after that we will confirm the plan or correct it based on the agreed measurement points." },
+            { "language": "fa", "text": "ما شروع پایلوت را به‌طور محدود به تعویق می‌اندازیم، چون نشانه‌های پایدار ریسک از مزیت شروع فوری سنگین‌ترند. فرض‌های باز را تا سه‌شنبه بررسی می‌کنیم؛ پس از آن برنامه را تأیید می‌کنیم یا بر اساس نقاط سنجش توافق‌شده اصلاح می‌کنیم." },
+            { "language": "ar", "text": "نؤجل بدء التجربة بشكل محدود لأن إشارات الخطر الثابتة أرجح من فائدة البدء الفوري. سنفحص الافتراضات المفتوحة حتى يوم الثلاثاء؛ بعد ذلك نؤكد الخطة أو نصححها بناءً على نقاط القياس المتفق عليها." },
+            { "language": "tr", "text": "Pilot başlangıcı sınırlı biçimde erteliyoruz, çünkü istikrarlı risk sinyalleri hemen başlamanın avantajından daha ağır basıyor. Açık varsayımları salıya kadar kontrol edeceğiz; ardından planı onaylayacak ya da kararlaştırılan ölçüm noktalarına göre düzelteceğiz." },
+            { "language": "ru", "text": "Мы ограниченно переносим запуск пилота, потому что устойчивые сигналы риска весят больше, чем преимущество немедленного запуска. Открытые предположения проверим до вторника; затем подтвердим план или скорректируем его на основе согласованных точек измерения." },
+            { "language": "ckb", "text": "ئێمە دەستپێکردنی پایلۆت بە شێوەی سنووردار دوا دەخەین، چونکە نیشانە جێگیرەکانی مەترسی لە سوودی دەستپێکردنی دەستبەجێ قورسترن. گریمانە کراوەکان تا سێشەممە دەپشکنین؛ پاشان پلانەکە پشتڕاست دەکەینەوە یان بە پێی خاڵە پێوانەکراوە ڕێککەوتووەکان ڕاستی دەکەینەوە." },
+            { "language": "kmr", "text": "Em destpêka pîlotê bi awayekî sînordar paş dixin, ji ber ku nîşanên rîskê yên domdar ji sûda destpêka tavilê girantir in. Em texmînên vekirî heta sêşemê kontrol dikin; piştre em planê piştrast dikin an li gorî xalên pîvanê yên lihevkirî rast dikin." },
+            { "language": "pl", "text": "Przesuwamy start pilotażu w ograniczonym zakresie, ponieważ stabilne sygnały ryzyka ważą więcej niż korzyść natychmiastowego startu. Otwarte założenia sprawdzimy do wtorku; potem potwierdzimy plan albo skorygujemy go według uzgodnionych punktów pomiaru." },
+            { "language": "ro", "text": "Amânăm limitat lansarea pilotului, deoarece semnalele stabile de risc cântăresc mai mult decât avantajul unei lansări imediate. Verificăm ipotezele deschise până marți; apoi confirmăm planul sau îl corectăm pe baza punctelor de măsurare convenite." },
+            { "language": "sq", "text": "Po e shtyjmë nisjen pilot në mënyrë të kufizuar, sepse sinjalet e qëndrueshme të rrezikut peshojnë më shumë se përparësia e një nisjeje të menjëhershme. Supozimet e hapura i kontrollojmë deri të martën; pastaj e konfirmojmë planin ose e korrigjojmë sipas pikave të matjes të dakorduara." }
+          ],
+          "function": "closing decision statement",
+          "toneNote": "clear, accountable",
+          "expectedLearnerAction": "Close with limited decision, evidence weight, review date, and correction rule."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Daten sind nicht vollständig, aber drei stabile Risikosignale reichen für eine vorläufige Entscheidung mit Korrekturpunkt.",
+              "translations": [
+                { "language": "en", "text": "The data is not complete, but three stable risk signals are sufficient for a preliminary decision with a correction point." },
+                { "language": "fa", "text": "داده‌ها کامل نیستند، اما سه نشانه پایدار ریسک برای یک تصمیم موقت با نقطه اصلاح کافی‌اند." },
+                { "language": "ar", "text": "البيانات ليست مكتملة، لكن ثلاث إشارات خطر ثابتة تكفي لقرار مؤقت مع نقطة تصحيح." },
+                { "language": "tr", "text": "Veriler tam değil, ancak üç istikrarlı risk sinyali düzeltme noktası olan geçici bir karar için yeterli." },
+                { "language": "ru", "text": "Данные неполные, но трех устойчивых сигналов риска достаточно для предварительного решения с точкой корректировки." },
+                { "language": "ckb", "text": "داتا تەواو نییە، بەڵام سێ نیشانەی جێگیری مەترسی بۆ بڕیارێکی کاتی بە خاڵی ڕاستکردنەوە بەسە." },
+                { "language": "kmr", "text": "Daneyên temam nînin, lê sê nîşanên domdar ên rîskê ji bo biryareke demkî bi xala rastkirinê bes in." },
+                { "language": "pl", "text": "Dane nie są kompletne, ale trzy stabilne sygnały ryzyka wystarczają do wstępnej decyzji z punktem korekty." },
+                { "language": "ro", "text": "Datele nu sunt complete, dar trei semnale stabile de risc sunt suficiente pentru o decizie preliminară cu punct de corectare." },
+                { "language": "sq", "text": "Të dhënat nuk janë të plota, por tri sinjale të qëndrueshme rreziku mjaftojnë për një vendim paraprak me pikë korrigjimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort benennt Unsicherheit und Entscheidungskriterium zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer names uncertainty and decision criterion together." },
+                { "language": "fa", "text": "قوی: پاسخ عدم قطعیت و معیار تصمیم را با هم نام می‌برد." },
+                { "language": "ar", "text": "قوي: تسمي الإجابة عدم اليقين ومعيار القرار معًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt belirsizliği ve karar ölçütünü birlikte adlandırır." },
+                { "language": "ru", "text": "Сильно: ответ вместе называет неопределенность и критерий решения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نادڵنیایی و پێوەری بڕیار پێکەوە ناودەبات." },
+                { "language": "kmr", "text": "Xurt e: bersiv nezelalî û pîvana biryarê bi hev re nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź jednocześnie nazywa niepewność i kryterium decyzji." },
+                { "language": "ro", "text": "Puternic: răspunsul numește împreună incertitudinea și criteriul deciziei." },
+                { "language": "sq", "text": "E fortë: përgjigjja emërton së bashku pasigurinë dhe kriterin e vendimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir müssen irgendwann entscheiden und können nicht warten, bis jede Zahl perfekt ist.",
+              "translations": [
+                { "language": "en", "text": "At some point we have to decide and cannot wait until every number is perfect." },
+                { "language": "fa", "text": "بالاخره باید زمانی تصمیم بگیریم و نمی‌توانیم صبر کنیم تا هر عدد کامل باشد." },
+                { "language": "ar", "text": "علينا أن نقرر في وقت ما ولا يمكننا الانتظار حتى يكون كل رقم مثاليًا." },
+                { "language": "tr", "text": "Bir noktada karar vermek zorundayız ve her sayı mükemmel olana kadar bekleyemeyiz." },
+                { "language": "ru", "text": "В какой-то момент нам нужно принять решение, и мы не можем ждать, пока каждое число станет идеальным." },
+                { "language": "ckb", "text": "لە کاتێکدا دەبێت بڕیار بدەین و ناتوانین چاوەڕێ بکەین تا هەر ژمارەیەک تەواو بێت." },
+                { "language": "kmr", "text": "Di xalekê de divê em biryar bidin û nikarin bisekinin heta her hejmar bêkêmasî be." },
+                { "language": "pl", "text": "W pewnym momencie musimy zdecydować i nie możemy czekać, aż każda liczba będzie idealna." },
+                { "language": "ro", "text": "La un moment dat trebuie să decidem și nu putem aștepta până când fiecare cifră este perfectă." },
+                { "language": "sq", "text": "Në një moment duhet të vendosim dhe nuk mund të presim derisa çdo numër të jetë i përsosur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu grob: Es fehlt, welche Signale die Entscheidung tragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too rough: it is missing which signals support the decision." },
+                { "language": "fa", "text": "قابل‌باور است، اما خیلی کلی: کم است که کدام نشانه‌ها تصمیم را پشتیبانی می‌کنند." },
+                { "language": "ar", "text": "مقبول لكنه عام جدًا: ينقصه تحديد الإشارات التي تحمل القرار." },
+                { "language": "tr", "text": "Makul ama fazla kaba: Hangi sinyallerin kararı taşıdığı eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком грубо: не указано, какие сигналы поддерживают решение." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر گشتییە: کەمە کە کام نیشانەکان بڕیارەکە پشتگیری دەکەن." },
+                { "language": "kmr", "text": "Gengaz e, lê pir xav e: kîjan nîşan biryarê piştgirî dikin kêm e." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne: brakuje informacji, które sygnały podpierają decyzję." },
+                { "language": "ro", "text": "Plauzibil, dar prea brut: lipsește ce semnale susțin decizia." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: mungon cilat sinjale e mbështesin vendimin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir nennen Signal, Schwelle und Gegenprüfung; unbelegte Punkte markieren wir als Annahme.",
+              "translations": [
+                { "language": "en", "text": "We name signal, threshold, and cross-check; unsupported points are marked as assumptions." },
+                { "language": "fa", "text": "ما نشانه، آستانه و بررسی متقابل را نام می‌بریم؛ نکات اثبات‌نشده را به‌عنوان فرض علامت‌گذاری می‌کنیم." },
+                { "language": "ar", "text": "نذكر الإشارة والعتبة والفحص المقابل؛ ونعلّم النقاط غير المثبتة كافتراضات." },
+                { "language": "tr", "text": "Sinyali, eşiği ve karşı kontrolü adlandırıyoruz; kanıtlanmamış noktaları varsayım olarak işaretliyoruz." },
+                { "language": "ru", "text": "Мы называем сигнал, порог и встречную проверку; неподтвержденные пункты помечаем как предположения." },
+                { "language": "ckb", "text": "ئێمە نیشانە، ئاست و پشکنینی بەرامبەر ناودەبەین؛ خاڵە نەسەلمێنراوەکان وەک گریمانە دیاری دەکەین." },
+                { "language": "kmr", "text": "Em nîşan, ast û kontrola dijber nav dikin; xalên nehatine piştrastkirin wek texmîn nîşan dikin." },
+                { "language": "pl", "text": "Nazywamy sygnał, próg i kontrolę krzyżową; punkty nieudowodnione oznaczamy jako założenia." },
+                { "language": "ro", "text": "Numim semnalul, pragul și verificarea încrucișată; punctele nedovedite le marcăm ca ipoteze." },
+                { "language": "sq", "text": "Përmendim sinjalin, pragun dhe kontrollin kryq; pikat e paprovuara i shënojmë si supozime." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt, wie Zahlen kontrolliert verwendet werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer shows how numbers are used in a controlled way." },
+                { "language": "fa", "text": "قوی: پاسخ نشان می‌دهد عددها چگونه کنترل‌شده استفاده می‌شوند." },
+                { "language": "ar", "text": "قوي: تُظهر الإجابة كيف تُستخدم الأرقام بشكل مضبوط." },
+                { "language": "tr", "text": "Güçlü: Yanıt sayıların nasıl kontrollü kullanıldığını gösterir." },
+                { "language": "ru", "text": "Сильно: ответ показывает, как числа используются контролируемо." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پیشان دەدات ژمارەکان چۆن بە شێوەی کۆنترۆڵکراو بەکاردەهێنرێن." },
+                { "language": "kmr", "text": "Xurt e: bersiv nîşan dide ku hejmar çawa bi awayekî kontrolkirî têne bikaranîn." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje, jak kontrolowanie używać liczb." },
+                { "language": "ro", "text": "Puternic: răspunsul arată cum sunt folosite cifrele în mod controlat." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon si përdoren numrat në mënyrë të kontrolluar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Es ist mehr als ein Gefühl, weil mehrere Kennzahlen in dieselbe Richtung zeigen.",
+              "translations": [
+                { "language": "en", "text": "It is more than a feeling because several indicators point in the same direction." },
+                { "language": "fa", "text": "این بیش از یک حس است، چون چند شاخص در یک جهت نشان می‌دهند." },
+                { "language": "ar", "text": "إنه أكثر من إحساس لأن عدة مؤشرات تشير في الاتجاه نفسه." },
+                { "language": "tr", "text": "Bu bir histen fazlası, çünkü birkaç gösterge aynı yöne işaret ediyor." },
+                { "language": "ru", "text": "Это больше, чем ощущение, потому что несколько показателей указывают в одном направлении." },
+                { "language": "ckb", "text": "ئەمە زیاترە لە هەست، چونکە چەند پێوەرێک بەرەو هەمان ئاراستە نیشان دەدەن." },
+                { "language": "kmr", "text": "Ev ji hestê zêdetir e, ji ber ku çend nîşander di heman alî de nîşan didin." },
+                { "language": "pl", "text": "To więcej niż przeczucie, bo kilka wskaźników pokazuje ten sam kierunek." },
+                { "language": "ro", "text": "Este mai mult decât o intuiție, deoarece mai mulți indicatori arată în aceeași direcție." },
+                { "language": "sq", "text": "Është më shumë se një ndjenjë, sepse disa tregues shkojnë në të njëjtin drejtim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Antwort verteidigt die Daten, aber nennt keine Schwelle und keine Gegenprüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the answer defends the data, but names no threshold and no cross-check." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ از داده‌ها دفاع می‌کند، اما آستانه و بررسی متقابل نام نمی‌برد." },
+                { "language": "ar", "text": "عام جدًا: تدافع الإجابة عن البيانات، لكنها لا تذكر عتبة ولا فحصًا مقابلًا." },
+                { "language": "tr", "text": "Fazla genel: Yanıt veriyi savunuyor, ama eşik ve karşı kontrol belirtmiyor." },
+                { "language": "ru", "text": "Слишком общо: ответ защищает данные, но не называет порог и встречную проверку." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە بەرگری لە داتا دەکات، بەڵام ئاست و پشکنینی بەرامبەر ناوبنادات." },
+                { "language": "kmr", "text": "Pir giştî ye: bersiv daneyan diparêze, lê ast û kontrola dijber nav nake." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź broni danych, ale nie podaje progu ani kontroli krzyżowej." },
+                { "language": "ro", "text": "Prea general: răspunsul apără datele, dar nu numește pragul și verificarea încrucișată." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja mbron të dhënat, por nuk përmend prag dhe kontroll kryq." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir handeln nicht wegen Gewissheit, sondern weil das Warten riskanter geworden ist als eine begrenzte Verschiebung.",
+              "translations": [
+                { "language": "en", "text": "We are not acting because of certainty, but because waiting has become riskier than a limited postponement." },
+                { "language": "fa", "text": "ما به دلیل قطعیت اقدام نمی‌کنیم، بلکه چون صبر کردن از یک تعویق محدود پرریسک‌تر شده است." },
+                { "language": "ar", "text": "نحن لا نتحرك بسبب اليقين، بل لأن الانتظار أصبح أخطر من تأجيل محدود." },
+                { "language": "tr", "text": "Kesinlik nedeniyle hareket etmiyoruz; beklemek sınırlı bir ertelemeden daha riskli hale geldiği için hareket ediyoruz." },
+                { "language": "ru", "text": "Мы действуем не из-за уверенности, а потому что ожидание стало рискованнее ограниченного переноса." },
+                { "language": "ckb", "text": "ئێمە بەهۆی دڵنیاییەوە هەنگاو ناگرین، بەڵکو چونکە چاوەڕوانی لە دواخستنی سنووردار مەترسیدارتر بووە." },
+                { "language": "kmr", "text": "Em ne ji ber piştrastiyê tev digerin, lê ji ber ku bendemayîn ji paşxistineke sînordar rîskdartir bûye." },
+                { "language": "pl", "text": "Nie działamy z powodu pewności, lecz dlatego, że czekanie stało się bardziej ryzykowne niż ograniczone przesunięcie." },
+                { "language": "ro", "text": "Nu acționăm din cauza certitudinii, ci pentru că așteptarea a devenit mai riscantă decât o amânare limitată." },
+                { "language": "sq", "text": "Nuk veprojmë për shkak të sigurisë, por sepse pritja është bërë më e rrezikshme se një shtyrje e kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort begründet Handlung durch Risikoabwägung statt durch Schein-Sicherheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer justifies action through risk weighing rather than false certainty." },
+                { "language": "fa", "text": "قوی: پاسخ اقدام را با سنجش ریسک توجیه می‌کند، نه با قطعیت ظاهری." },
+                { "language": "ar", "text": "قوي: تبرر الإجابة التحرك بوزن المخاطر لا بيقين ظاهري." },
+                { "language": "tr", "text": "Güçlü: Yanıt eylemi sahte kesinlikle değil, risk tartımıyla gerekçelendirir." },
+                { "language": "ru", "text": "Сильно: ответ обосновывает действие взвешиванием риска, а не видимой уверенностью." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەنگاو بە هەڵسەنگاندنی مەترسی پاساو دەدات، نە بە دڵنیایی ڕووکەش." },
+                { "language": "kmr", "text": "Xurt e: bersiv tevgerê bi pîvana rîskê dadimîne, ne bi piştrastiya rûkenî." },
+                { "language": "pl", "text": "Mocne: odpowiedź uzasadnia działanie ważeniem ryzyka, a nie pozorną pewnością." },
+                { "language": "ro", "text": "Puternic: răspunsul justifică acțiunea prin cântărirea riscului, nu prin certitudine aparentă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e arsyeton veprimin përmes peshimit të rrezikut, jo përmes sigurisë së rreme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir müssen jetzt handeln, sonst verlieren wir zu viel Zeit und das Team wird unsicher.",
+              "translations": [
+                { "language": "en", "text": "We have to act now, otherwise we lose too much time and the team becomes uncertain." },
+                { "language": "fa", "text": "باید اکنون اقدام کنیم، وگرنه زمان زیادی از دست می‌دهیم و تیم نامطمئن می‌شود." },
+                { "language": "ar", "text": "علينا أن نتحرك الآن، وإلا فسنفقد وقتًا كثيرًا وسيصبح الفريق غير مطمئن." },
+                { "language": "tr", "text": "Şimdi hareket etmeliyiz, yoksa çok zaman kaybederiz ve ekip kararsızlaşır." },
+                { "language": "ru", "text": "Нам нужно действовать сейчас, иначе мы потеряем слишком много времени, и команда станет неуверенной." },
+                { "language": "ckb", "text": "دەبێت ئێستا هەنگاو بگرین، ئەگەر نا کاتی زۆر لەدەست دەدەین و تیمەکە نادڵنیا دەبێت." },
+                { "language": "kmr", "text": "Divê em niha tev bigerin, na em ê demeke zêde winda bikin û tîm nezelal dibe." },
+                { "language": "pl", "text": "Musimy działać teraz, inaczej stracimy zbyt dużo czasu i zespół stanie się niepewny." },
+                { "language": "ro", "text": "Trebuie să acționăm acum, altfel pierdem prea mult timp și echipa devine nesigură." },
+                { "language": "sq", "text": "Duhet të veprojmë tani, përndryshe humbim shumë kohë dhe ekipi bëhet i pasigurt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu drängend: Es erklärt Tempo, aber nicht die vergleichende Risikologik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too pressuring: it explains speed, but not the comparative risk logic." },
+                { "language": "fa", "text": "بیش از حد فشارآور است: سرعت را توضیح می‌دهد، اما منطق مقایسه‌ای ریسک را نه." },
+                { "language": "ar", "text": "ضاغط جدًا: يشرح السرعة، لكنه لا يشرح منطق المخاطر المقارن." },
+                { "language": "tr", "text": "Fazla baskılı: Hızı açıklıyor, ama karşılaştırmalı risk mantığını açıklamıyor." },
+                { "language": "ru", "text": "Слишком давит: объясняет скорость, но не сравнительную логику риска." },
+                { "language": "ckb", "text": "زۆر فشاردارە: خێرایی ڕوون دەکاتەوە، بەڵام لۆژیکی بەراوردی مەترسی نا." },
+                { "language": "kmr", "text": "Pir zextdar e: lezê rave dike, lê mentiqa berhevkirina rîskê na." },
+                { "language": "pl", "text": "Zbyt naciskające: wyjaśnia tempo, ale nie porównawczą logikę ryzyka." },
+                { "language": "ro", "text": "Prea presant: explică viteza, dar nu logica riscului comparativ." },
+                { "language": "sq", "text": "Shumë presionuese: shpjegon shpejtësinë, por jo logjikën krahasuese të rrezikut." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Korrektur wird professionell, wenn Messpunkte, Änderungswert und Entscheidungsrolle vorher festgelegt sind.",
+              "translations": [
+                { "language": "en", "text": "Correction becomes professional when measurement points, change value, and decision role are defined beforehand." },
+                { "language": "fa", "text": "اصلاح زمانی حرفه‌ای می‌شود که نقاط سنجش، مقدار تغییر و نقش تصمیم‌گیری از قبل مشخص باشند." },
+                { "language": "ar", "text": "يصبح التصحيح مهنيًا عندما تُحدد مسبقًا نقاط القياس وقيمة التغيير ودور القرار." },
+                { "language": "tr", "text": "Düzeltme, ölçüm noktaları, değişim değeri ve karar rolü önceden belirlendiğinde profesyonel olur." },
+                { "language": "ru", "text": "Корректировка становится профессиональной, когда точки измерения, значение изменения и роль решения определены заранее." },
+                { "language": "ckb", "text": "ڕاستکردنەوە کاتێک پیشەیی دەبێت کە خاڵەکانی پێوانەکردن، بەهای گۆڕان و ڕۆڵی بڕیاردان لە پێشدا دیاری کرابن." },
+                { "language": "kmr", "text": "Rastkirin dema profesyonel dibe ku xalên pîvanê, nirxa guhertinê û rola biryardanê ji berê ve hatibin diyarkirin." },
+                { "language": "pl", "text": "Korekta staje się profesjonalna, gdy punkty pomiaru, wartość zmiany i rola decyzyjna są ustalone wcześniej." },
+                { "language": "ro", "text": "Corectarea devine profesională când punctele de măsurare, valoarea schimbării și rolul decizional sunt stabilite dinainte." },
+                { "language": "sq", "text": "Korrigjimi bëhet profesional kur pikat e matjes, vlera e ndryshimit dhe roli vendimmarrës përcaktohen paraprakisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Korrektur wird als Steuerung geplant, nicht als spätere Ausrede.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: correction is planned as steering, not as a later excuse." },
+                { "language": "fa", "text": "قوی: اصلاح به‌عنوان هدایت برنامه‌ریزی می‌شود، نه به‌عنوان بهانه بعدی." },
+                { "language": "ar", "text": "قوي: يُخطط التصحيح كآلية توجيه، لا كعذر لاحق." },
+                { "language": "tr", "text": "Güçlü: Düzeltme sonradan bahane değil, yönlendirme olarak planlanır." },
+                { "language": "ru", "text": "Сильно: корректировка планируется как управление, а не как последующее оправдание." },
+                { "language": "ckb", "text": "بەهێزە: ڕاستکردنەوە وەک ڕێنماییکردن پلان دەکرێت، نە وەک بیانووی دواتر." },
+                { "language": "kmr", "text": "Xurt e: rastkirin wek rêvebirin tê plankirin, ne wek hinceta paşê." },
+                { "language": "pl", "text": "Mocne: korekta jest planowana jako sterowanie, a nie późniejsza wymówka." },
+                { "language": "ro", "text": "Puternic: corectarea este planificată ca dirijare, nu ca scuză ulterioară." },
+                { "language": "sq", "text": "E fortë: korrigjimi planifikohet si drejtim, jo si justifikim i mëvonshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn neue Daten kommen, reagieren wir flexibel und erklären dann, warum wir den Plan ändern.",
+              "translations": [
+                { "language": "en", "text": "When new data arrives, we will react flexibly and then explain why we are changing the plan." },
+                { "language": "fa", "text": "وقتی داده‌های جدید بیاید، انعطاف‌پذیر واکنش نشان می‌دهیم و بعد توضیح می‌دهیم چرا برنامه را تغییر می‌دهیم." },
+                { "language": "ar", "text": "عندما تأتي بيانات جديدة سنتفاعل بمرونة ثم نشرح لماذا نغير الخطة." },
+                { "language": "tr", "text": "Yeni veriler geldiğinde esnek tepki verecek ve sonra planı neden değiştirdiğimizi açıklayacağız." },
+                { "language": "ru", "text": "Когда появятся новые данные, мы гибко отреагируем и затем объясним, почему меняем план." },
+                { "language": "ckb", "text": "کاتێک داتای نوێ دێت، بە نەرمونیانی وەڵام دەدەینەوە و پاشان ڕوون دەکەینەوە بۆچی پلان دەگۆڕین." },
+                { "language": "kmr", "text": "Dema daneyên nû bên, em bi nermî bersiv didin û paşê rave dikin çima em planê diguherînin." },
+                { "language": "pl", "text": "Gdy pojawią się nowe dane, zareagujemy elastycznie i wyjaśnimy wtedy, dlaczego zmieniamy plan." },
+                { "language": "ro", "text": "Când apar date noi, vom reacționa flexibil și vom explica apoi de ce schimbăm planul." },
+                { "language": "sq", "text": "Kur të vijnë të dhëna të reja, do të reagojmë me fleksibilitet dhe pastaj do të shpjegojmë pse e ndryshojmë planin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu offen: Es fehlen vorher vereinbarte Messpunkte und Zuständigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too open: predefined measurement points and responsibility are missing." },
+                { "language": "fa", "text": "قابل‌باور است، اما بیش از حد باز: نقاط سنجش و مسئولیت از پیش توافق‌شده کم است." },
+                { "language": "ar", "text": "مقبول لكنه مفتوح جدًا: تنقص نقاط القياس والمسؤولية المتفق عليها مسبقًا." },
+                { "language": "tr", "text": "Makul ama fazla açık: Önceden kararlaştırılmış ölçüm noktaları ve sorumluluk eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком открыто: не хватает заранее согласованных точек измерения и ответственности." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر کراوەیە: خاڵە پێوانەکراوە پێشڕێککەوتووەکان و بەرپرسیاریەتی کەمە." },
+                { "language": "kmr", "text": "Gengaz e, lê pir vekirî ye: xalên pîvanê û berpirsiyariya ji berê ve lihevkirî kêm in." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt otwarte: brakuje wcześniej uzgodnionych punktów pomiaru i odpowiedzialności." },
+                { "language": "ro", "text": "Plauzibil, dar prea deschis: lipsesc punctele de măsurare și responsabilitatea convenite dinainte." },
+                { "language": "sq", "text": "E besueshme, por shumë e hapur: mungojnë pikat e matjes dhe përgjegjësia e dakorduar paraprakisht." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir verschieben begrenzt, prüfen die offenen Annahmen bis Dienstag und bestätigen oder korrigieren dann nach Messpunkten.",
+              "translations": [
+                { "language": "en", "text": "We are postponing in a limited way, checking the open assumptions by Tuesday, and then confirming or correcting based on measurement points." },
+                { "language": "fa", "text": "ما به‌طور محدود به تعویق می‌اندازیم، فرض‌های باز را تا سه‌شنبه بررسی می‌کنیم و سپس بر اساس نقاط سنجش تأیید یا اصلاح می‌کنیم." },
+                { "language": "ar", "text": "نؤجل بشكل محدود، ونفحص الافتراضات المفتوحة حتى الثلاثاء، ثم نؤكد أو نصحح بناءً على نقاط القياس." },
+                { "language": "tr", "text": "Sınırlı biçimde erteliyoruz, açık varsayımları salıya kadar kontrol ediyoruz ve sonra ölçüm noktalarına göre onaylıyor ya da düzeltiyoruz." },
+                { "language": "ru", "text": "Мы ограниченно переносим, проверяем открытые предположения до вторника и затем подтверждаем или корректируем по точкам измерения." },
+                { "language": "ckb", "text": "ئێمە بە شێوەی سنووردار دوا دەخەین، گریمانە کراوەکان تا سێشەممە دەپشکنین و پاشان بە پێی خاڵەکانی پێوانەکردن پشتڕاست یان ڕاست دەکەینەوە." },
+                { "language": "kmr", "text": "Em bi awayekî sînordar paş dixin, texmînên vekirî heta sêşemê kontrol dikin û paşê li gorî xalên pîvanê piştrast an rast dikin." },
+                { "language": "pl", "text": "Przesuwamy w ograniczonym zakresie, sprawdzamy otwarte założenia do wtorku, a potem potwierdzamy lub korygujemy według punktów pomiaru." },
+                { "language": "ro", "text": "Amânăm limitat, verificăm ipotezele deschise până marți și apoi confirmăm sau corectăm pe baza punctelor de măsurare." },
+                { "language": "sq", "text": "E shtyjmë në mënyrë të kufizuar, kontrollojmë supozimet e hapura deri të martën dhe pastaj konfirmojmë ose korrigjojmë sipas pikave të matjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Teamansage enthält Begrenzung, Prüffrist und Korrekturregel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the team statement contains limit, review deadline, and correction rule." },
+                { "language": "fa", "text": "قوی: اعلام تیمی شامل محدودیت، مهلت بررسی و قانون اصلاح است." },
+                { "language": "ar", "text": "قوي: تحتوي رسالة الفريق على حد وموعد فحص وقاعدة تصحيح." },
+                { "language": "tr", "text": "Güçlü: Ekip açıklaması sınır, inceleme süresi ve düzeltme kuralı içerir." },
+                { "language": "ru", "text": "Сильно: сообщение команде содержит ограничение, срок проверки и правило корректировки." },
+                { "language": "ckb", "text": "بەهێزە: ڕاگەیاندنی تیم سنوور، وادەی پشکنین و یاسای ڕاستکردنەوە لەخۆدەگرێت." },
+                { "language": "kmr", "text": "Xurt e: daxuyaniya tîmê sînor, dema kontrolê û qaîdeya rastkirinê dihewîne." },
+                { "language": "pl", "text": "Mocne: komunikat dla zespołu zawiera ograniczenie, termin sprawdzenia i regułę korekty." },
+                { "language": "ro", "text": "Puternic: mesajul pentru echipă conține limită, termen de verificare și regulă de corectare." },
+                { "language": "sq", "text": "E fortë: njoftimi për ekipin përmban kufi, afat kontrolli dhe rregull korrigjimi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir bleiben vorsichtig, sammeln bis Dienstag weitere Daten und informieren dann über den nächsten Schritt.",
+              "translations": [
+                { "language": "en", "text": "We remain cautious, collect further data by Tuesday, and then inform about the next step." },
+                { "language": "fa", "text": "ما محتاط می‌مانیم، تا سه‌شنبه داده‌های بیشتری جمع می‌کنیم و سپس درباره گام بعدی اطلاع می‌دهیم." },
+                { "language": "ar", "text": "نبقى حذرين، ونجمع بيانات إضافية حتى الثلاثاء، ثم نبلغ عن الخطوة التالية." },
+                { "language": "tr", "text": "Temkinli kalıyoruz, salıya kadar daha fazla veri topluyoruz ve sonra bir sonraki adım hakkında bilgilendiriyoruz." },
+                { "language": "ru", "text": "Мы остаемся осторожными, до вторника собираем дополнительные данные и затем сообщаем о следующем шаге." },
+                { "language": "ckb", "text": "ئێمە وریا دەمێنینەوە، تا سێشەممە داتای زیاتر کۆدەکەینەوە و پاشان لەبارەی هەنگاوی داهاتوو زانیاری دەدەین." },
+                { "language": "kmr", "text": "Em hişyar dimînin, heta sêşemê daneyên zêdetir kom dikin û paşê li ser gava din agahdar dikin." },
+                { "language": "pl", "text": "Pozostajemy ostrożni, zbieramy dalsze dane do wtorku i potem informujemy o następnym kroku." },
+                { "language": "ro", "text": "Rămânem prudenți, colectăm date suplimentare până marți și apoi informăm despre pasul următor." },
+                { "language": "sq", "text": "Mbetemi të kujdesshëm, mbledhim të dhëna të tjera deri të martën dhe pastaj informojmë për hapin tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unentschieden: Die Aussage nennt Prüfung, aber nicht die aktuelle Entscheidung und Korrekturregel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too undecided: the statement names review, but not the current decision and correction rule." },
+                { "language": "fa", "text": "بیش از حد مردد است: جمله بررسی را نام می‌برد، اما تصمیم فعلی و قانون اصلاح را نه." },
+                { "language": "ar", "text": "متردد جدًا: تذكر العبارة الفحص، لكنها لا تذكر القرار الحالي وقاعدة التصحيح." },
+                { "language": "tr", "text": "Fazla kararsız: İfade incelemeyi belirtir, ama mevcut kararı ve düzeltme kuralını belirtmez." },
+                { "language": "ru", "text": "Слишком неопределенно: фраза называет проверку, но не текущее решение и правило корректировки." },
+                { "language": "ckb", "text": "زۆر دوودڵانەیە: وتەکە پشکنین ناودەبات، بەڵام بڕیاری ئێستا و یاسای ڕاستکردنەوە نا." },
+                { "language": "kmr", "text": "Pir dudil e: gotin kontrolê nav dike, lê biryara niha û qaîdeya rastkirinê na." },
+                { "language": "pl", "text": "Zbyt niezdecydowane: wypowiedź mówi o sprawdzeniu, ale nie o bieżącej decyzji i regule korekty." },
+                { "language": "ro", "text": "Prea indecis: afirmația numește verificarea, dar nu decizia actuală și regula de corectare." },
+                { "language": "sq", "text": "Shumë e pavendosur: deklarata përmend kontrollin, por jo vendimin aktual dhe rregullin e korrigjimit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "transparency",
+          "text": "Transparenz heißt nicht, keine Entscheidung zu treffen; sie heißt, Entscheidungsgrund und offene Annahmen sichtbar zu trennen.",
+          "translations": [
+            { "language": "en", "text": "Transparency does not mean making no decision; it means visibly separating decision basis and open assumptions." },
+            { "language": "fa", "text": "شفافیت به معنای تصمیم نگرفتن نیست؛ یعنی مبنای تصمیم و فرض‌های باز را به‌طور قابل مشاهده جدا کنیم." },
+            { "language": "ar", "text": "الشفافية لا تعني عدم اتخاذ قرار؛ بل تعني فصل أساس القرار والافتراضات المفتوحة بوضوح." },
+            { "language": "tr", "text": "Şeffaflık karar vermemek demek değildir; karar temelini ve açık varsayımları görünür biçimde ayırmak demektir." },
+            { "language": "ru", "text": "Прозрачность не означает отказ от решения; она означает явное разделение основы решения и открытых предположений." },
+            { "language": "ckb", "text": "شەفافی مانای بڕیارنەدان نییە؛ مانای ئەوەیە بنەمای بڕیار و گریمانە کراوەکان بە دیاری جیا بکرێنەوە." },
+            { "language": "kmr", "text": "Zelalî nayê wateya biryar nedanê; tê wateya veqetandina xuya ya bingeha biryarê û texmînên vekirî." },
+            { "language": "pl", "text": "Przejrzystość nie oznacza braku decyzji; oznacza widoczne oddzielenie podstawy decyzji od otwartych założeń." },
+            { "language": "ro", "text": "Transparența nu înseamnă să nu luați decizii; înseamnă să separați vizibil baza deciziei de ipotezele deschise." },
+            { "language": "sq", "text": "Transparenca nuk do të thotë të mos marrësh vendim; do të thotë të ndash qartë bazën e vendimit nga supozimet e hapura." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Glaubwürdig wird eine unsichere Entscheidung erst, wenn Signale, Schwellen und Gegenprüfung genannt werden.",
+          "translations": [
+            { "language": "en", "text": "An uncertain decision becomes credible only when signals, thresholds, and cross-checks are named." },
+            { "language": "fa", "text": "تصمیم نامطمئن فقط وقتی باورپذیر می‌شود که نشانه‌ها، آستانه‌ها و بررسی متقابل نام برده شوند." },
+            { "language": "ar", "text": "لا يصبح القرار غير اليقيني موثوقًا إلا عندما تُذكر الإشارات والعتبات والفحوص المقابلة." },
+            { "language": "tr", "text": "Belirsiz bir karar ancak sinyaller, eşikler ve karşı kontroller belirtildiğinde inandırıcı olur." },
+            { "language": "ru", "text": "Решение в условиях неопределенности становится убедительным только тогда, когда названы сигналы, пороги и встречные проверки." },
+            { "language": "ckb", "text": "بڕیاری نادڵنیا تەنها کاتێک باوەڕپێکراو دەبێت کە نیشانە، ئاست و پشکنینی بەرامبەر ناوببرێن." },
+            { "language": "kmr", "text": "Biryareke nezelal tenê dema bawerîdar dibe ku nîşan, ast û kontrolên dijber bên navkirin." },
+            { "language": "pl", "text": "Decyzja w niepewności staje się wiarygodna dopiero wtedy, gdy nazwane są sygnały, progi i kontrole krzyżowe." },
+            { "language": "ro", "text": "O decizie incertă devine credibilă doar când sunt numite semnalele, pragurile și verificările încrucișate." },
+            { "language": "sq", "text": "Një vendim i pasigurt bëhet i besueshëm vetëm kur përmenden sinjalet, pragjet dhe kontrollet kryq." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "risk",
+          "text": "Handlungsdruck sollte als Risikoabwägung erklärt werden, nicht als künstliche Gewissheit.",
+          "translations": [
+            { "language": "en", "text": "Pressure to act should be explained as risk weighing, not as artificial certainty." },
+            { "language": "fa", "text": "فشار اقدام باید به‌عنوان سنجش ریسک توضیح داده شود، نه به‌عنوان قطعیت مصنوعی." },
+            { "language": "ar", "text": "ينبغي شرح ضغط التحرك كوزن للمخاطر، لا كيقين مصطنع." },
+            { "language": "tr", "text": "Hareket baskısı yapay kesinlik olarak değil, risk tartımı olarak açıklanmalıdır." },
+            { "language": "ru", "text": "Необходимость действия следует объяснять как взвешивание риска, а не как искусственную уверенность." },
+            { "language": "ckb", "text": "فشاری هەنگاو دەبێت وەک هەڵسەنگاندنی مەترسی ڕوون بکرێتەوە، نە وەک دڵنیایی دەستکرد." },
+            { "language": "kmr", "text": "Zexta tevgerê divê wek pîvana rîskê were ravekirin, ne wek piştrastiya çêkirî." },
+            { "language": "pl", "text": "Presję działania należy wyjaśniać jako ważenie ryzyka, a nie jako sztuczną pewność." },
+            { "language": "ro", "text": "Presiunea de acțiune trebuie explicată ca o cântărire a riscului, nu ca o certitudine artificială." },
+            { "language": "sq", "text": "Presioni për veprim duhet shpjeguar si peshim i rrezikut, jo si siguri artificiale." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "closure",
+          "text": "Eine starke Ansage unter Unsicherheit enthält Entscheidung, Grenze, Prüftermin und Korrekturregel.",
+          "translations": [
+            { "language": "en", "text": "A strong statement under uncertainty contains decision, limit, review date, and correction rule." },
+            { "language": "fa", "text": "اعلام قوی در عدم قطعیت شامل تصمیم، مرز، زمان بررسی و قانون اصلاح است." },
+            { "language": "ar", "text": "تحتوي الرسالة القوية في عدم اليقين على قرار وحد وموعد فحص وقاعدة تصحيح." },
+            { "language": "tr", "text": "Belirsizlik altındaki güçlü bir açıklama karar, sınır, inceleme tarihi ve düzeltme kuralı içerir." },
+            { "language": "ru", "text": "Сильное сообщение в условиях неопределенности содержит решение, границу, дату проверки и правило корректировки." },
+            { "language": "ckb", "text": "ڕاگەیاندنی بەهێز لە نادڵنیاییدا بڕیار، سنوور، کاتی پشکنین و یاسای ڕاستکردنەوە لەخۆدەگرێت." },
+            { "language": "kmr", "text": "Daxuyaniyeke xurt di nezelaliyê de biryar, sînor, dema kontrolê û qaîdeya rastkirinê dihewîne." },
+            { "language": "pl", "text": "Mocny komunikat w niepewności zawiera decyzję, granicę, termin sprawdzenia i regułę korekty." },
+            { "language": "ro", "text": "Un mesaj puternic în incertitudine conține decizia, limita, termenul de verificare și regula de corectare." },
+            { "language": "sq", "text": "Një njoftim i fortë në pasiguri përmban vendimin, kufirin, afatin e kontrollit dhe rregullin e korrigjimit." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "decision-under-uncertainty-team-meeting",
+          "placement": "detail-header",
+          "purpose": "Show a team meeting where a decision under uncertainty is explained with known facts, open assumptions, risk, and correction path.",
+          "altText": "Ein Teammeeting, in dem eine Entscheidung unter Unsicherheit strukturiert erklärt wird.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A team meeting in which a decision under uncertainty is explained in a structured way." },
+            { "language": "fa", "text": "یک جلسه تیمی که در آن تصمیمی در شرایط عدم قطعیت به‌صورت ساختارمند توضیح داده می‌شود." },
+            { "language": "ar", "text": "اجتماع فريق يُشرح فيه قرار في ظل عدم اليقين بطريقة منظمة." },
+            { "language": "tr", "text": "Belirsizlik altındaki bir kararın yapılandırılmış biçimde açıklandığı bir ekip toplantısı." },
+            { "language": "ru", "text": "Командная встреча, на которой структурировано объясняется решение в условиях неопределенности." },
+            { "language": "ckb", "text": "کۆبوونەوەی تیم کە تێیدا بڕیارێک لە دۆخی نادڵنیاییدا بە شێوەی ڕێکخراو ڕوون دەکرێتەوە." },
+            { "language": "kmr", "text": "Civîna tîmê ku tê de biryarek di nezelaliyê de bi awayekî rêkûpêk tê ravekirin." },
+            { "language": "pl", "text": "Spotkanie zespołu, na którym decyzja w warunkach niepewności jest wyjaśniana w uporządkowany sposób." },
+            { "language": "ro", "text": "O ședință de echipă în care o decizie în condiții de incertitudine este explicată structurat." },
+            { "language": "sq", "text": "Një takim ekipi ku një vendim në pasiguri shpjegohet në mënyrë të strukturuar." }
+          ],
+          "imagePrompt": "Clean educational illustration of a professional team meeting where a project lead explains a decision under uncertainty using abstract icons for known facts, open assumptions, risk comparison, review date, and correction path, no readable text, no logos, no private data, diverse people, accessible composition, calm workplace colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

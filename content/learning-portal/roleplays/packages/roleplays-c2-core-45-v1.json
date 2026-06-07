@@ -1,0 +1,740 @@
+{
+  "packageId": "roleplays-c2-core-45-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 45 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 45",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-nachbarschaftskonflikt-mit-mehreren-parteien-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Nachbarschaftskonflikt mit mehreren Parteien klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying a multi-party neighbor conflict" },
+        { "language": "fa", "text": "روشن کردن یک اختلاف همسایگی با چند طرف" },
+        { "language": "ar", "text": "توضيح نزاع بين الجيران مع عدة أطراف" },
+        { "language": "tr", "text": "Birden fazla taraflı komşuluk anlaşmazlığını açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Прояснение многостороннего соседского конфликта" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی ناکۆکیی هاوسێیەتی بە چەند لایەن" },
+        { "language": "kmr", "text": "Zelalkirina nakokiyeke cîrantiyê bi çend aliyan" },
+        { "language": "pl", "text": "Wyjaśnianie wielostronnego konfliktu sąsiedzkiego" },
+        { "language": "ro", "text": "Clarificarea unui conflict de vecinătate cu mai multe părți" },
+        { "language": "sq", "text": "Sqarimi i një konflikti fqinjësor me disa palë" }
+      ],
+      "description": "Sie moderieren ein Treffen im Hausflur, nachdem mehrere Nachbarn über Lärm, abgestellte Gegenstände und die Nutzung der Waschküche streiten. Die Stimmung ist gereizt. Sie sollen alle Seiten begrenzt zu Wort kommen lassen, Beobachtungen von Bewertungen trennen und ein kurzes gemeinsames Protokoll für die nächsten zwei Wochen formulieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You moderate a meeting in the building hallway after several neighbors argue about noise, stored items, and use of the laundry room. The mood is tense. You should give each side a bounded speaking role, separate observations from judgments, and formulate a short shared protocol for the next two weeks." },
+        { "language": "fa", "text": "شما جلسه‌ای در راهروی ساختمان را مدیریت می‌کنید، بعد از آنکه چند همسایه درباره سر و صدا، وسایل گذاشته‌شده و استفاده از رخت‌شوی‌خانه اختلاف پیدا کرده‌اند. فضا متشنج است. باید به هر طرف فرصت محدود برای صحبت بدهید، مشاهده را از قضاوت جدا کنید و یک صورت‌جلسه مشترک کوتاه برای دو هفته آینده تنظیم کنید." },
+        { "language": "ar", "text": "تديرون لقاءً في ممر المبنى بعد أن اختلف عدة جيران حول الضجيج والأغراض الموضوعة واستخدام غرفة الغسيل. الأجواء متوترة. ينبغي إعطاء كل طرف دورًا محدودًا في الكلام، وفصل الملاحظات عن الأحكام، وصياغة محضر مشترك قصير للأسبوعين القادمين." },
+        { "language": "tr", "text": "Birkaç komşu gürültü, bırakılan eşyalar ve çamaşır odasının kullanımı konusunda tartıştıktan sonra bina koridorunda bir toplantıyı yönetiyorsunuz. Ortam gergin. Her tarafa sınırlı söz hakkı vermeli, gözlemleri değerlendirmelerden ayırmalı ve gelecek iki hafta için kısa ortak bir tutanak oluşturmalısınız." },
+        { "language": "ru", "text": "Вы модерируете встречу в подъезде после того, как несколько соседей спорят о шуме, оставленных вещах и пользовании прачечной. Обстановка напряженная. Вам нужно дать каждой стороне ограниченную возможность высказаться, отделить наблюдения от оценок и сформулировать короткий общий протокол на следующие две недели." },
+        { "language": "ckb", "text": "تۆ کۆبوونەوەیەک لە ڕێڕەوی بیناکە ڕێکدەخەیت، دوای ئەوەی چەند هاوسێ دەربارەی دەنگ، شتە دانراوەکان و بەکارهێنانی ژووری شۆردن ناکۆک بوون. کەشەکە توندە. پێویستە بە هەر لایەنێک دەوری قسەکردنی سنووردار بدەیت، تێبینی لە هەڵسەنگاندن جیا بکەیتەوە و پڕۆتۆکۆڵێکی هاوبەشی کورت بۆ دوو هەفتەی داهاتوو دابڕێژیت." },
+        { "language": "kmr", "text": "Hûn civîneke di korîdora avahiyê de rêve dibin, piştî ku çend cîran li ser deng, tiştên danînî û bikaranîna odeya cilşûştinê nakok bûne. Hewa germ e. Divê her aliyek bi sînorek biaxive, çavdêrî ji nirxandinan veqetînin û protokoleke hevpar a kurt ji bo du hefteyên paşê çêkin." },
+        { "language": "pl", "text": "Moderuje Pan/Pani spotkanie na klatce schodowej po tym, jak kilku sąsiadów spiera się o hałas, pozostawione rzeczy i korzystanie z pralni. Atmosfera jest napięta. Trzeba dać każdej stronie ograniczony czas wypowiedzi, oddzielić obserwacje od ocen i sformułować krótki wspólny protokół na następne dwa tygodnie." },
+        { "language": "ro", "text": "Moderați o întâlnire pe holul imobilului după ce mai mulți vecini se ceartă despre zgomot, obiecte lăsate pe spațiul comun și folosirea spălătoriei. Atmosfera este tensionată. Trebuie să dați fiecărei părți un rol de vorbire limitat, să separați observațiile de evaluări și să formulați un scurt proces-verbal comun pentru următoarele două săptămâni." },
+        { "language": "sq", "text": "Moderoni një takim në korridorin e ndërtesës pasi disa fqinjë janë grindur për zhurmën, sendet e lëna dhe përdorimin e lavanderisë. Atmosfera është e tensionuar. Duhet t'i jepni secilës palë rol të kufizuar fjale, të ndani vëzhgimet nga vlerësimet dhe të formuloni një procesverbal të shkurtër të përbashkët për dy javët e ardhshme." }
+      ],
+      "learnerGoal": "Einen mehrseitigen Nachbarschaftskonflikt neutral strukturieren: Redezeiten begrenzen, Vorwürfe in beobachtbare Situationen übersetzen, konkurrierende Interessen sichtbar machen und ein knappes Protokoll mit Testregel, Kontaktweg und Überprüfungstermin vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure a multi-sided neighbor conflict neutrally: limit speaking time, translate accusations into observable situations, make competing interests visible, and agree on a concise protocol with a trial rule, contact path, and review date." },
+        { "language": "fa", "text": "یک اختلاف چندطرفه همسایگی را بی‌طرفانه ساختار دهید: زمان صحبت را محدود کنید، سرزنش‌ها را به موقعیت‌های قابل مشاهده تبدیل کنید، منافع متعارض را آشکار کنید و یک صورت‌جلسه کوتاه با قاعده آزمایشی، مسیر تماس و تاریخ بازبینی توافق کنید." },
+        { "language": "ar", "text": "نظموا نزاعًا بين الجيران بعدة أطراف بصورة محايدة: حدوا وقت الكلام، وحولوا الاتهامات إلى مواقف قابلة للملاحظة، واجعلوا المصالح المتنافسة مرئية، واتفقوا على محضر موجز مع قاعدة تجريبية وطريق تواصل وموعد مراجعة." },
+        { "language": "tr", "text": "Çok taraflı bir komşuluk çatışmasını tarafsız biçimde yapılandırın: konuşma sürelerini sınırlayın, suçlamaları gözlemlenebilir durumlara çevirin, çatışan çıkarları görünür kılın ve deneme kuralı, iletişim yolu ve gözden geçirme tarihi olan kısa bir tutanakta anlaşın." },
+        { "language": "ru", "text": "Нейтрально структурируйте многосторонний соседский конфликт: ограничьте время выступлений, переведите обвинения в наблюдаемые ситуации, сделайте видимыми конкурирующие интересы и согласуйте краткий протокол с пробным правилом, каналом связи и датой проверки." },
+        { "language": "ckb", "text": "ناکۆکییەکی هاوسێیەتی چەندلایەنە بە بێلایەنی ڕێکبخە: کاتی قسەکردن سنووردار بکە، تاوانبارکردنەکان بگۆڕە بۆ دۆخی بینراو، بەرژەوەندییە ناکۆکەکان ڕوون بکە و پڕۆتۆکۆڵێکی کورت بە ڕێسای تاقیکردنەوە، ڕێگای پەیوەندی و کاتی پشکنین ڕێکبخە." },
+        { "language": "kmr", "text": "Nakokiyeke cîrantiyê ya çendalî bi bêalî saz bikin: demên axaftinê sînordar bikin, tawanbar kirinan veguherînin rewşên çavdêrîbar, berjewendiyên dijber xuya bikin û protokoleke kurt bi rêzika ceribandinê, rêya têkiliyê û roja nirxandinê li hev bikin." },
+        { "language": "pl", "text": "Neutralnie uporządkować wielostronny konflikt sąsiedzki: ograniczyć czas wypowiedzi, przełożyć zarzuty na obserwowalne sytuacje, pokazać konkurujące interesy i uzgodnić krótki protokół z zasadą próbną, kanałem kontaktu i terminem sprawdzenia." },
+        { "language": "ro", "text": "Structurați neutru un conflict de vecinătate cu mai multe părți: limitați timpul de vorbire, transformați acuzațiile în situații observabile, faceți vizibile interesele concurente și conveniți un proces-verbal scurt cu regulă de probă, cale de contact și dată de verificare." },
+        { "language": "sq", "text": "Strukturoni në mënyrë neutrale një konflikt fqinjësor me disa palë: kufizoni kohën e fjalës, ktheni akuzat në situata të vëzhgueshme, bëni të dukshme interesat konkurruese dhe bini dakord për një procesverbal të shkurtër me rregull prove, rrugë kontakti dhe datë rishikimi." }
+      ],
+      "cefrLevel": "C2",
+      "category": "housing",
+      "topics": ["housing", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "group-work",
+      "register": "mixed",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 45,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Moderatorin",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "میانجی" },
+            { "language": "ar", "text": "الوسيطة" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "ناوبژیوان" },
+            { "language": "kmr", "text": "Navbeynkar" },
+            { "language": "pl", "text": "Moderatorka" },
+            { "language": "ro", "text": "Moderatoare" },
+            { "language": "sq", "text": "Moderatorja" }
+          ]
+        },
+        {
+          "roleKey": "neighbor-a",
+          "displayName": "Nachbarin A",
+          "translations": [
+            { "language": "en", "text": "Neighbor A" },
+            { "language": "fa", "text": "همسایه الف" },
+            { "language": "ar", "text": "الجارة أ" },
+            { "language": "tr", "text": "Komşu A" },
+            { "language": "ru", "text": "Соседка A" },
+            { "language": "ckb", "text": "هاوسێی أ" },
+            { "language": "kmr", "text": "Cîran A" },
+            { "language": "pl", "text": "Sąsiadka A" },
+            { "language": "ro", "text": "Vecina A" },
+            { "language": "sq", "text": "Fqinja A" }
+          ]
+        },
+        {
+          "roleKey": "neighbor-b",
+          "displayName": "Nachbar B",
+          "translations": [
+            { "language": "en", "text": "Neighbor B" },
+            { "language": "fa", "text": "همسایه ب" },
+            { "language": "ar", "text": "الجار ب" },
+            { "language": "tr", "text": "Komşu B" },
+            { "language": "ru", "text": "Сосед B" },
+            { "language": "ckb", "text": "هاوسێی ب" },
+            { "language": "kmr", "text": "Cîran B" },
+            { "language": "pl", "text": "Sąsiad B" },
+            { "language": "ro", "text": "Vecinul B" },
+            { "language": "sq", "text": "Fqinji B" }
+          ]
+        },
+        {
+          "roleKey": "neighbor-c",
+          "displayName": "Nachbar C",
+          "translations": [
+            { "language": "en", "text": "Neighbor C" },
+            { "language": "fa", "text": "همسایه پ" },
+            { "language": "ar", "text": "الجار ج" },
+            { "language": "tr", "text": "Komşu C" },
+            { "language": "ru", "text": "Сосед C" },
+            { "language": "ckb", "text": "هاوسێی ج" },
+            { "language": "kmr", "text": "Cîran C" },
+            { "language": "pl", "text": "Sąsiad C" },
+            { "language": "ro", "text": "Vecinul C" },
+            { "language": "sq", "text": "Fqinji C" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "neighbor-a",
+          "baseText": "Ich sage es direkt: Seit Wochen stehen Fahrräder und Kisten im Flur, und abends ist es oft so laut, dass an Schlaf kaum zu denken ist.",
+          "translations": [
+            { "language": "en", "text": "I will say it directly: for weeks, bicycles and boxes have been standing in the hallway, and in the evenings it is often so loud that sleep is hardly possible." },
+            { "language": "fa", "text": "مستقیم می‌گویم: چند هفته است دوچرخه‌ها و جعبه‌ها در راهرو مانده‌اند و شب‌ها اغلب آن‌قدر سر و صدا هست که تقریباً نمی‌شود خوابید." },
+            { "language": "ar", "text": "سأقولها مباشرة: منذ أسابيع تقف دراجات وصناديق في الممر، وفي المساء يكون الضجيج غالبًا كبيرًا لدرجة أن النوم يكاد يكون غير ممكن." },
+            { "language": "tr", "text": "Doğrudan söyleyeceğim: Haftalardır koridorda bisikletler ve kutular duruyor, akşamları da çoğu zaman o kadar gürültülü oluyor ki uyumak neredeyse mümkün olmuyor." },
+            { "language": "ru", "text": "Скажу прямо: уже несколько недель в коридоре стоят велосипеды и коробки, а по вечерам часто так шумно, что о сне почти нельзя думать." },
+            { "language": "ckb", "text": "ڕاستەوخۆ دەڵێم: چەند هەفتەیە پاسکیل و سندووق لە ڕێڕەودا دانراون، و ئێواران زۆرجار ئەوەندە دەنگە کە خەوتن زۆر قورس دەبێت." },
+            { "language": "kmr", "text": "Ez rasterast dibêjim: çend hefte ye bisîklet û qutî li korîdorê ne, û êvaran gelek caran ewqas deng heye ku xew nêzîkî ne gengaz e." },
+            { "language": "pl", "text": "Powiem wprost: od tygodni na korytarzu stoją rowery i kartony, a wieczorami często jest tak głośno, że trudno myśleć o śnie." },
+            { "language": "ro", "text": "O spun direct: de săptămâni stau biciclete și cutii pe hol, iar seara este adesea atât de mult zgomot încât somnul devine aproape imposibil." },
+            { "language": "sq", "text": "Po e them drejtpërdrejt: prej javësh në korridor qëndrojnë biçikleta dhe kuti, dhe në mbrëmje shpesh ka aq shumë zhurmë sa gjumi bëhet pothuajse i pamundur." }
+          ],
+          "function": "state-complaint"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich halte zunächst fest: Es geht um drei Themen, nämlich Gegenstände im Flur, Lautstärke am Abend und Waschküchenzeiten. Bevor wir Bewertungen austauschen, bitte ich jede Seite um ein konkretes Beispiel mit Datum oder Zeitraum.",
+          "translations": [
+            { "language": "en", "text": "I will first record this: there are three topics, namely items in the hallway, noise level in the evening, and laundry-room times. Before we exchange judgments, I ask each side for one concrete example with a date or time period." },
+            { "language": "fa", "text": "ابتدا ثبت می‌کنم: سه موضوع داریم، یعنی وسایل در راهرو، میزان صدا در شب و زمان‌های رخت‌شوی‌خانه. پیش از اینکه قضاوت رد و بدل کنیم، از هر طرف یک مثال مشخص با تاریخ یا بازه زمانی می‌خواهم." },
+            { "language": "ar", "text": "أسجل أولًا: لدينا ثلاثة مواضيع، وهي الأغراض في الممر، ومستوى الضجيج مساءً، وأوقات غرفة الغسيل. قبل تبادل الأحكام، أطلب من كل طرف مثالًا محددًا مع تاريخ أو فترة زمنية." },
+            { "language": "tr", "text": "Önce şunu kaydediyorum: üç konu var; koridordaki eşyalar, akşam gürültü seviyesi ve çamaşır odası saatleri. Değerlendirme yapmadan önce her taraftan tarih veya zaman aralığı olan somut bir örnek istiyorum." },
+            { "language": "ru", "text": "Сначала я фиксирую: есть три темы, а именно вещи в коридоре, громкость вечером и время пользования прачечной. Прежде чем обмениваться оценками, прошу каждую сторону привести конкретный пример с датой или периодом." },
+            { "language": "ckb", "text": "سەرەتا تۆمار دەکەم: سێ بابەت هەیە، واتە شتەکان لە ڕێڕەو، بەرزی دەنگ لە ئێوارە و کاتەکانی ژووری شۆردن. پێش ئەوەی هەڵسەنگاندن بگۆڕینەوە، لە هەر لایەنێک نموونەیەکی دیاریکراو بە ڕێکەوت یان ماوەی کات داوا دەکەم." },
+            { "language": "kmr", "text": "Pêşî ez tomar dikim: sê mijar hene, tiştên li korîdorê, asta dengê êvarê û demên odeya cilşûştinê. Berî ku em nirxandin biguherînin, ez ji her aliyek mînaka konkret bi dîrok an demekê dixwazim." },
+            { "language": "pl", "text": "Najpierw zapisuję: są trzy tematy, czyli rzeczy na korytarzu, głośność wieczorem i terminy pralni. Zanim wymienimy oceny, proszę każdą stronę o konkretny przykład z datą lub okresem." },
+            { "language": "ro", "text": "Mai întâi consemnez: sunt trei teme, obiectele de pe hol, nivelul de zgomot seara și orele spălătoriei. Înainte să schimbăm evaluări, rog fiecare parte să dea un exemplu concret cu dată sau interval." },
+            { "language": "sq", "text": "Fillimisht shënoj: kemi tre tema, sendet në korridor, niveli i zhurmës në mbrëmje dhe oraret e lavanderisë. Para se të shkëmbejmë vlerësime, kërkoj nga secila palë një shembull konkret me datë ose periudhë." }
+          ],
+          "function": "structure-conflict",
+          "expectedLearnerAction": "Themen bündeln und Bewertungen in konkrete Beispiele überführen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "neighbor-b",
+          "baseText": "Die Kisten sind nur vorübergehend dort, weil der Keller feucht ist. Und was den Lärm betrifft: Ich höre selbst ständig Türenknallen aus dem oberen Stockwerk.",
+          "translations": [
+            { "language": "en", "text": "The boxes are only there temporarily because the basement is damp. And as for the noise: I constantly hear doors slamming from the upper floor myself." },
+            { "language": "fa", "text": "جعبه‌ها فقط موقتاً آنجا هستند، چون زیرزمین نمناک است. و درباره سر و صدا: خودم هم مدام صدای کوبیده شدن درها از طبقه بالا را می‌شنوم." },
+            { "language": "ar", "text": "الصناديق هناك مؤقتًا فقط لأن القبو رطب. وبالنسبة للضجيج: أنا نفسي أسمع باستمرار إغلاق الأبواب بقوة من الطابق العلوي." },
+            { "language": "tr", "text": "Kutular yalnızca geçici olarak orada, çünkü bodrum nemli. Gürültü konusuna gelince: Ben de üst kattan sürekli kapı çarpma sesi duyuyorum." },
+            { "language": "ru", "text": "Коробки там только временно, потому что подвал сырой. А что касается шума: я сам постоянно слышу хлопанье дверей с верхнего этажа." },
+            { "language": "ckb", "text": "سندووقەکان تەنها کاتی لەوێن، چونکە ژێرزەمینەکە شێدارە. دەربارەی دەنگیش: من خۆشم بەردەوام دەنگی بەهێزداخستنی دەرگا لە نهۆمی سەرەوە دەبیستم." },
+            { "language": "kmr", "text": "Qutî tenê demkî li wir in, ji ber ku jêrzemîn şil e. Ji bo deng jî: ez bi xwe her tim dengê lêdana deriyan ji qata jor dibihîzim." },
+            { "language": "pl", "text": "Kartony są tam tylko tymczasowo, bo piwnica jest wilgotna. A jeśli chodzi o hałas: sam ciągle słyszę trzaskanie drzwiami z piętra wyżej." },
+            { "language": "ro", "text": "Cutiile sunt acolo doar temporar, pentru că subsolul este umed. Iar în privința zgomotului: și eu aud constant uși trântite de la etajul de sus." },
+            { "language": "sq", "text": "Kutitë janë aty vetëm përkohësisht, sepse bodrumi është i lagësht. Sa për zhurmën: edhe unë dëgjoj vazhdimisht përplasje dyersh nga kati sipër." }
+          ],
+          "function": "counter-claim"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das sind zwei wichtige Hinweise. Ich möchte sie trennen: Für die Kisten brauchen wir eine befristete Lösung mit freiem Fluchtweg. Für die Geräusche sammeln wir keine Gegenvorwürfe, sondern zwei konkrete Zeiten, damit wir Muster erkennen können.",
+          "translations": [
+            { "language": "en", "text": "Those are two important points. I would like to separate them: for the boxes, we need a temporary solution with a clear escape route. For the noises, we will not collect counter-accusations, but two concrete times so we can recognize patterns." },
+            { "language": "fa", "text": "این‌ها دو نکته مهم‌اند. می‌خواهم جداشان کنم: برای جعبه‌ها راه‌حل موقت با مسیر خروج آزاد لازم داریم. برای صداها، سرزنش متقابل جمع نمی‌کنیم، بلکه دو زمان مشخص می‌خواهیم تا الگو را ببینیم." },
+            { "language": "ar", "text": "هاتان ملاحظتان مهمتان. أريد فصلهما: بالنسبة للصناديق نحتاج إلى حل مؤقت مع إبقاء طريق الخروج مفتوحًا. وبالنسبة للأصوات لا نجمع اتهامات مقابلة، بل وقتين محددين كي نتعرف على النمط." },
+            { "language": "tr", "text": "Bunlar iki önemli nokta. Bunları ayırmak istiyorum: Kutular için kaçış yolu açık kalacak geçici bir çözüm gerekiyor. Sesler için karşı suçlama toplamayacağız, örüntüyü görebilmek için iki somut zaman isteyeceğiz." },
+            { "language": "ru", "text": "Это два важных указания. Я хочу их разделить: для коробок нужно временное решение со свободным путем эвакуации. По шумам мы не собираем встречные обвинения, а фиксируем два конкретных времени, чтобы увидеть закономерность." },
+            { "language": "ckb", "text": "ئەمانە دوو تێبینی گرنگن. دەمەوێت جیا بکەمەوە: بۆ سندووقەکان پێویستمان بە چارەسەری کاتی هەیە بە ڕێگای دەرچوونی ئازاد. بۆ دەنگەکان تاوانبارکردنی بەرامبەر کۆناکەینەوە، بەڵکو دوو کاتی دیاریکراو تۆمار دەکەین بۆ ناسینی شێوە." },
+            { "language": "kmr", "text": "Ev du xalên girîng in. Ez dixwazim wan veqetînim: Ji bo qutiyan pêdivî bi çareseriyeke demkî heye ku rêya derketinê vekirî bimîne. Ji bo dengan em tawanbar kirinên dijber kom nakin, lê du demên konkret tomar dikin da ku şêwaz bibînin." },
+            { "language": "pl", "text": "To są dwie ważne wskazówki. Chcę je oddzielić: dla kartonów potrzebujemy rozwiązania tymczasowego z wolną drogą ewakuacyjną. Przy hałasach nie zbieramy kontrzarzutów, lecz dwa konkretne terminy, aby rozpoznać wzorzec." },
+            { "language": "ro", "text": "Sunt două observații importante. Vreau să le separ: pentru cutii avem nevoie de o soluție temporară cu cale de evacuare liberă. Pentru zgomote nu colectăm contraacuzații, ci două momente concrete ca să recunoaștem tiparul." },
+            { "language": "sq", "text": "Këto janë dy pika të rëndësishme. Dua t'i ndaj: për kutitë na duhet një zgjidhje e përkohshme me rrugë daljeje të lirë. Për zhurmat nuk mbledhim kundërakuza, por dy kohë konkrete që të shohim modelin." }
+          ],
+          "function": "separate-issues",
+          "expectedLearnerAction": "Gegenargument aufnehmen, aber Themen und Belege sauber trennen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "neighbor-c",
+          "baseText": "Mich stört vor allem die Waschküche. Manche tragen sich ein und nutzen die Maschine dann zwei Stunden später. Dann ist der ganze Plan hinfällig.",
+          "translations": [
+            { "language": "en", "text": "What bothers me most is the laundry room. Some people sign up and then use the machine two hours later. Then the whole schedule becomes useless." },
+            { "language": "fa", "text": "من بیشتر از همه از رخت‌شوی‌خانه ناراحتم. بعضی‌ها اسم می‌نویسند و بعد دو ساعت دیرتر از ماشین استفاده می‌کنند. آن وقت کل برنامه بی‌اثر می‌شود." },
+            { "language": "ar", "text": "أكثر ما يزعجني هو غرفة الغسيل. بعضهم يسجل اسمه ثم يستخدم الآلة بعد ساعتين. عندها يصبح الجدول كله بلا فائدة." },
+            { "language": "tr", "text": "Beni en çok çamaşır odası rahatsız ediyor. Bazıları adını yazıyor, sonra makineyi iki saat geç kullanıyor. O zaman bütün plan boşa gidiyor." },
+            { "language": "ru", "text": "Меня больше всего беспокоит прачечная. Некоторые записываются, а потом пользуются машиной на два часа позже. Тогда весь график теряет смысл." },
+            { "language": "ckb", "text": "من زۆرتر لە ژووری شۆردن بێزارم. هەندێک ناویان دەنوسن و دوای دوو کاتژمێر ماشینەکە بەکاردەهێنن. ئەوکات هەموو پلانەکە بێسوود دەبێت." },
+            { "language": "kmr", "text": "Tişta ku herî zêde min aciz dike odeya cilşûştinê ye. Hin kes navê xwe dinivîsin û dûv re makîneyê du saetan dereng bikar tînin. Hingê hemû plan bêwate dibe." },
+            { "language": "pl", "text": "Najbardziej przeszkadza mi pralnia. Niektórzy wpisują się, a potem korzystają z maszyny dwie godziny później. Wtedy cały plan traci sens." },
+            { "language": "ro", "text": "Pe mine mă deranjează mai ales spălătoria. Unii se trec pe listă și apoi folosesc mașina cu două ore mai târziu. Atunci tot programul devine inutil." },
+            { "language": "sq", "text": "Mua më shqetëson më shumë lavanderia. Disa shënohen dhe pastaj e përdorin makinën dy orë më vonë. Atëherë i gjithë plani bëhet i pavlefshëm." }
+          ],
+          "function": "third-party-issue"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann nehmen wir die Waschküche als eigenes Thema auf. Ich schlage keine Schuldigenliste vor, sondern eine Testregel: Wenn jemand den eingetragenen Beginn um mehr als 20 Minuten verpasst, wird der Slot für andere frei. Nach zwei Wochen prüfen wir, ob das funktioniert.",
+          "translations": [
+            { "language": "en", "text": "Then we will include the laundry room as a separate topic. I am not proposing a list of culprits, but a trial rule: if someone misses the registered start by more than 20 minutes, the slot becomes free for others. After two weeks, we check whether it works." },
+            { "language": "fa", "text": "پس رخت‌شوی‌خانه را به‌عنوان موضوع جدا می‌آوریم. من فهرست مقصران پیشنهاد نمی‌کنم، بلکه یک قاعده آزمایشی: اگر کسی شروع ثبت‌شده را بیش از ۲۰ دقیقه از دست بدهد، نوبت برای دیگران آزاد می‌شود. بعد از دو هفته بررسی می‌کنیم که آیا کار می‌کند." },
+            { "language": "ar", "text": "إذن ندرج غرفة الغسيل كموضوع مستقل. لا أقترح قائمة بالمذنبين، بل قاعدة تجريبية: إذا تأخر شخص عن بداية موعده المسجل أكثر من 20 دقيقة، يصبح الموعد متاحًا للآخرين. بعد أسبوعين نتحقق هل ينجح ذلك." },
+            { "language": "tr", "text": "O zaman çamaşır odasını ayrı bir konu olarak alıyoruz. Suçlu listesi önermiyorum, bir deneme kuralı öneriyorum: Bir kişi yazılan başlangıcı 20 dakikadan fazla kaçırırsa, zaman başkalarına açılır. İki hafta sonra bunun işleyip işlemediğini kontrol ederiz." },
+            { "language": "ru", "text": "Тогда мы берем прачечную как отдельную тему. Я предлагаю не список виновных, а пробное правило: если кто-то пропускает записанное начало более чем на 20 минут, слот становится свободным для других. Через две недели проверяем, работает ли это." },
+            { "language": "ckb", "text": "ئەوا ژووری شۆردن وەک بابەتێکی جیا وەردەگرین. من لیستی تاوانباران پێشنیار ناکەم، بەڵکو ڕێسایەکی تاقیکردنەوە: ئەگەر کەسێک دەستپێکی تۆمارکراو زیاتر لە ٢٠ خولەک لەدەست بدات، نۆرەکە بۆ ئەوانی تر ئازاد دەبێت. دوای دوو هەفتە دەپشکنین ئایا کار دەکات." },
+            { "language": "kmr", "text": "Wê gavê em odeya cilşûştinê wek mijareke cuda digirin. Ez lîsteya sûcdaran pêşniyar nakim, lê rêzikeke ceribandinê: heke kesek destpêka tomarbûyî zêdetirî 20 deqeyan dereng bike, slot ji bo yên din azad dibe. Piştî du hefteyan em kontrol dikin ka dixebite." },
+            { "language": "pl", "text": "W takim razie ujmujemy pralnię jako osobny temat. Nie proponuję listy winnych, lecz zasadę próbną: jeśli ktoś spóźni się na wpisany początek o ponad 20 minut, termin staje się wolny dla innych. Po dwóch tygodniach sprawdzamy, czy to działa." },
+            { "language": "ro", "text": "Atunci includem spălătoria ca temă separată. Nu propun o listă de vinovați, ci o regulă de probă: dacă cineva ratează ora înscrisă cu mai mult de 20 de minute, intervalul devine liber pentru alții. După două săptămâni verificăm dacă funcționează." },
+            { "language": "sq", "text": "Atëherë e marrim lavanderinë si temë të veçantë. Nuk propozoj listë fajtorësh, por një rregull prove: nëse dikush e humb fillimin e shënuar me më shumë se 20 minuta, orari lirohet për të tjerët. Pas dy javësh kontrollojmë nëse funksionon." }
+          ],
+          "function": "propose-trial-rule",
+          "expectedLearnerAction": "Aus einer Beschwerde eine testbare, nicht-personalisierende Regel machen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "neighbor-a",
+          "baseText": "Ich kann damit leben, aber ich möchte nicht jedes Mal selbst jemanden ansprechen müssen. Das endet sonst wieder in persönlichen Diskussionen.",
+          "translations": [
+            { "language": "en", "text": "I can live with that, but I do not want to have to approach someone myself every time. Otherwise it will end in personal discussions again." },
+            { "language": "fa", "text": "می‌توانم با این کنار بیایم، اما نمی‌خواهم هر بار خودم مجبور شوم به کسی تذکر بدهم. وگرنه دوباره به بحث‌های شخصی ختم می‌شود." },
+            { "language": "ar", "text": "يمكنني قبول ذلك، لكنني لا أريد أن أضطر في كل مرة إلى مخاطبة شخص بنفسي. وإلا فسينتهي الأمر مرة أخرى بنقاشات شخصية." },
+            { "language": "tr", "text": "Bununla yaşayabilirim, ama her seferinde birine kendim söylemek zorunda kalmak istemiyorum. Yoksa yine kişisel tartışmalara dönüşür." },
+            { "language": "ru", "text": "Я могу с этим жить, но не хочу каждый раз сама обращаться к кому-то. Иначе это снова закончится личными обсуждениями." },
+            { "language": "ckb", "text": "دەتوانم لەگەڵ ئەوە بژیم، بەڵام نامەوێت هەر جار خۆم ناچار بم بە کەسێک بڵێم. ئەگەرنا جارێکی تر دەبێتە گفتوگۆی کەسی." },
+            { "language": "kmr", "text": "Ez dikarim bi vê re bijîm, lê naxwazim her car bi xwe kesek agahdar bikim. Wisa nebe dîsa dibe gotûbêja kesane." },
+            { "language": "pl", "text": "Mogę to zaakceptować, ale nie chcę za każdym razem sama zwracać komuś uwagi. Inaczej znowu skończy się to osobistymi dyskusjami." },
+            { "language": "ro", "text": "Pot accepta asta, dar nu vreau să fiu nevoită să abordez eu pe cineva de fiecare dată. Altfel se ajunge iar la discuții personale." },
+            { "language": "sq", "text": "Mund ta pranoj këtë, por nuk dua të jem e detyruar t'i flas vetë dikujt çdo herë. Përndryshe përfundon sërish në diskutime personale." }
+          ],
+          "function": "request-neutral-channel"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann braucht das Protokoll auch einen Kontaktweg. Für die Testphase melden alle nur konkrete Abweichungen per kurzer Nachricht an die Hausverwaltung oder an die benannte Kontaktperson, ohne Namen im Hausflur zu diskutieren.",
+          "translations": [
+            { "language": "en", "text": "Then the protocol also needs a contact path. During the trial phase, everyone reports only concrete deviations by short message to property management or to the named contact person, without discussing names in the hallway." },
+            { "language": "fa", "text": "پس صورت‌جلسه باید مسیر تماس هم داشته باشد. در دوره آزمایشی، همه فقط موارد انحراف مشخص را با پیام کوتاه به مدیریت ساختمان یا فرد تماس تعیین‌شده گزارش می‌کنند، بدون اینکه نام‌ها در راهرو بحث شود." },
+            { "language": "ar", "text": "إذن يحتاج المحضر أيضًا إلى طريق تواصل. في مرحلة التجربة يبلّغ الجميع فقط عن الانحرافات المحددة برسالة قصيرة إلى إدارة العقار أو إلى الشخص المحدد للتواصل، من دون مناقشة الأسماء في الممر." },
+            { "language": "tr", "text": "O zaman tutanakta bir iletişim yolu da olmalı. Deneme aşamasında herkes yalnızca somut sapmaları kısa mesajla bina yönetimine veya belirlenen kişiye bildirir; koridorda isimler tartışılmaz." },
+            { "language": "ru", "text": "Тогда протоколу нужен и канал связи. В пробный период все сообщают только конкретные отклонения коротким сообщением управляющей компании или назначенному контактному лицу, не обсуждая имена в коридоре." },
+            { "language": "ckb", "text": "ئەوا پڕۆتۆکۆڵەکە پێویستی بە ڕێگای پەیوەندییش هەیە. لە ماوەی تاقیکردنەوەدا هەمووان تەنها لادانە دیاریکراوەکان بە نامەیەکی کورت بۆ بەڕێوەبەرایەتی خانوو یان کەسی پەیوەندی دیاریکراو ڕادەگەیەنن، بەبێ ئەوەی ناوەکان لە ڕێڕەودا باس بکرێن." },
+            { "language": "kmr", "text": "Wê gavê protokolê pêdivî bi rêya têkiliyê jî heye. Di qonaxa ceribandinê de hemû kes tenê cudahiyên konkret bi peyameke kurt ji rêveberiya avahiyê an kesê têkiliyê yê navkirî re radigihînin, bêyî ku nav li korîdorê werin gotûbêj kirin." },
+            { "language": "pl", "text": "W takim razie protokół potrzebuje także kanału kontaktu. W fazie próbnej wszyscy zgłaszają tylko konkretne odstępstwa krótką wiadomością do administracji lub wskazanej osoby kontaktowej, bez omawiania nazwisk na korytarzu." },
+            { "language": "ro", "text": "Atunci procesul-verbal are nevoie și de o cale de contact. În faza de probă, toți raportează doar abateri concrete printr-un mesaj scurt către administrare sau persoana de contact desemnată, fără a discuta nume pe hol." },
+            { "language": "sq", "text": "Atëherë procesverbali ka nevojë edhe për një rrugë kontakti. Gjatë fazës së provës, të gjithë raportojnë vetëm devijime konkrete me mesazh të shkurtër te administrimi ose te personi i caktuar, pa diskutuar emra në korridor." }
+          ],
+          "function": "define-contact-path",
+          "expectedLearnerAction": "Einen neutralen Meldeweg festlegen, der persönliche Konfrontation vermeidet."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "neighbor-b",
+          "baseText": "Einverstanden, wenn im Protokoll auch steht, dass die Kisten bis Samstag in den Keller oder in die Wohnung kommen und dass wir für den Keller eine Feuchtigkeitsmeldung an die Verwaltung schicken.",
+          "translations": [
+            { "language": "en", "text": "Agreed, if the protocol also states that the boxes will go into the basement or apartment by Saturday and that we will send a dampness report for the basement to property management." },
+            { "language": "fa", "text": "موافقم، اگر در صورت‌جلسه هم بیاید که جعبه‌ها تا شنبه به زیرزمین یا داخل خانه منتقل می‌شوند و برای رطوبت زیرزمین گزارش به مدیریت ساختمان می‌فرستیم." },
+            { "language": "ar", "text": "موافق، إذا ذكر المحضر أيضًا أن الصناديق ستنقل إلى القبو أو الشقة حتى السبت وأننا سنرسل لإدارة العقار بلاغًا عن رطوبة القبو." },
+            { "language": "tr", "text": "Kabul, eğer tutanakta kutuların cumartesiye kadar bodruma veya eve taşınacağı ve bodrumdaki nem için bina yönetimine bildirim göndereceğimiz de yazarsa." },
+            { "language": "ru", "text": "Согласен, если в протоколе также будет указано, что коробки до субботы перенесут в подвал или квартиру и что мы отправим управляющей компании сообщение о сырости в подвале." },
+            { "language": "ckb", "text": "ڕازیم، ئەگەر لە پڕۆتۆکۆڵەکەدا هەروەها بنووسرێت کە سندووقەکان تا شەممە دەچنە ژێرزەمین یان ناو خانوو و ئێمە دەربارەی شێی ژێرزەمین ڕاپۆرتێک بۆ بەڕێوەبەرایەتی خانوو دەنێرین." },
+            { "language": "kmr", "text": "Ez razî me, heke di protokolê de jî bê nivîsandin ku qutî heta Şemiyê diçin jêrzemîn an nav malê û em derbarê şilbûna jêrzemînê ji rêveberiya avahiyê re agahdarî dişînin." },
+            { "language": "pl", "text": "Zgoda, jeśli w protokole będzie też zapisane, że kartony trafią do piwnicy albo mieszkania do soboty i że wyślemy administracji zgłoszenie o wilgoci w piwnicy." },
+            { "language": "ro", "text": "De acord, dacă în procesul-verbal scrie și că până sâmbătă cutiile ajung în subsol sau în locuință și că trimitem administrării o sesizare despre umezeala din subsol." },
+            { "language": "sq", "text": "Dakord, nëse në procesverbal shkruhet edhe se kutitë do të zhvendosen në bodrum ose në banesë deri të shtunën dhe se do t'i dërgojmë administrimit një njoftim për lagështinë në bodrum." }
+          ],
+          "function": "condition-for-agreement"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann fasse ich das Protokoll so zusammen: Kisten bis Samstag weg vom Fluchtweg, Feuchtigkeitsmeldung zum Keller bis Montag, Waschküchenregel mit 20-Minuten-Grenze für zwei Wochen, Meldungen nur über den vereinbarten Kontaktweg und ein kurzer Auswertungstermin am übernächsten Dienstag.",
+          "translations": [
+            { "language": "en", "text": "Then I will summarize the protocol as follows: boxes away from the escape route by Saturday, dampness report about the basement by Monday, laundry-room rule with a 20-minute limit for two weeks, reports only through the agreed contact path, and a short review meeting on the Tuesday after next." },
+            { "language": "fa", "text": "پس صورت‌جلسه را این‌طور خلاصه می‌کنم: جعبه‌ها تا شنبه از مسیر خروج برداشته شوند، گزارش رطوبت زیرزمین تا دوشنبه ارسال شود، قاعده رخت‌شوی‌خانه با مرز ۲۰ دقیقه برای دو هفته اجرا شود، گزارش‌ها فقط از مسیر تماس توافق‌شده باشد و سه‌شنبه دو هفته بعد یک جلسه کوتاه بازبینی داشته باشیم." },
+            { "language": "ar", "text": "إذن ألخص المحضر هكذا: إزالة الصناديق من طريق الخروج حتى السبت، إرسال بلاغ رطوبة القبو حتى الاثنين، قاعدة غرفة الغسيل بحد 20 دقيقة لمدة أسبوعين، البلاغات فقط عبر طريق التواصل المتفق عليه، وموعد تقييم قصير يوم الثلاثاء بعد القادم." },
+            { "language": "tr", "text": "O zaman tutanağı şöyle özetliyorum: Kutular cumartesiye kadar kaçış yolundan kaldırılacak, bodrum nem bildirimi pazartesiye kadar gönderilecek, çamaşır odası kuralı iki hafta boyunca 20 dakika sınırıyla uygulanacak, bildirimler yalnızca kararlaştırılan iletişim yolundan yapılacak ve iki hafta sonraki salı kısa bir değerlendirme toplantısı olacak." },
+            { "language": "ru", "text": "Тогда я резюмирую протокол так: коробки убрать с пути эвакуации до субботы, сообщение о сырости в подвале отправить до понедельника, правило прачечной с лимитом 20 минут действует две недели, сообщения только через согласованный канал связи и короткая встреча для оценки во вторник через неделю." },
+            { "language": "ckb", "text": "ئەوا پڕۆتۆکۆڵەکە ئاوا پوخت دەکەمەوە: سندووقەکان تا شەممە لە ڕێگای دەرچوون دوور دەخرێنەوە، ڕاپۆرتی شێی ژێرزەمین تا دووشەممە دەنێردرێت، ڕێسای ژووری شۆردن بە سنووری ٢٠ خولەک بۆ دوو هەفتە جێبەجێ دەبێت، ڕاپۆرتەکان تەنها لە ڕێگای پەیوەندی ڕێککەوتوو دەبن و سێشەممەی دوو هەفتەی داهاتوو کۆبوونەوەیەکی کورتی هەڵسەنگاندن دەبێت." },
+            { "language": "kmr", "text": "Wê gavê ez protokolê wisa kurt dikim: qutî heta Şemiyê ji rêya derketinê dûr dibin, agahdariya şilbûna jêrzemînê heta Duşemê tê şandin, rêzika odeya cilşûştinê bi sînora 20 deqeyan du hefte tê ceribandin, ragihandin tenê bi rêya têkiliya lihevkirî dibe û sêşema piştî hefteya din civîneke kurt a nirxandinê heye." },
+            { "language": "pl", "text": "W takim razie podsumowuję protokół tak: kartony do soboty znikają z drogi ewakuacyjnej, zgłoszenie wilgoci w piwnicy do poniedziałku, zasada pralni z limitem 20 minut przez dwa tygodnie, zgłoszenia tylko przez ustalony kanał kontaktu i krótkie spotkanie oceniające we wtorek za dwa tygodnie." },
+            { "language": "ro", "text": "Atunci rezum procesul-verbal astfel: cutiile sunt îndepărtate de pe calea de evacuare până sâmbătă, sesizarea despre umezeala din subsol se trimite până luni, regula spălătoriei cu limita de 20 de minute se aplică timp de două săptămâni, raportările se fac doar prin calea de contact convenită și avem o scurtă întâlnire de evaluare marțea de peste două săptămâni." },
+            { "language": "sq", "text": "Atëherë e përmbledh procesverbalin kështu: kutitë largohen nga rruga e daljes deri të shtunën, njoftimi për lagështinë në bodrum dërgohet deri të hënën, rregulli i lavanderisë me kufirin 20-minutësh zbatohet për dy javë, raportimet bëhen vetëm përmes rrugës së dakorduar të kontaktit dhe të martën pas dy javësh mbahet një takim i shkurtër vlerësimi." }
+          ],
+          "function": "close-with-protocol",
+          "expectedLearnerAction": "Konfliktpunkte in ein knappes, überprüfbares Mehrparteien-Protokoll bringen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich halte zunächst fest: Es geht um drei Themen, nämlich Gegenstände im Flur, Lautstärke am Abend und Waschküchenzeiten. Bevor wir Bewertungen austauschen, bitte ich jede Seite um ein konkretes Beispiel mit Datum oder Zeitraum.",
+              "translations": [
+                { "language": "en", "text": "I will first record three topics: items in the hallway, evening noise, and laundry-room times. Before judgments, I ask each side for one concrete example with a date or time period." },
+                { "language": "fa", "text": "اول سه موضوع را ثبت می‌کنم: وسایل راهرو، صدای شب و زمان‌های رخت‌شوی‌خانه. پیش از قضاوت، از هر طرف یک مثال مشخص با تاریخ یا بازه زمانی می‌خواهم." },
+                { "language": "ar", "text": "أسجل أولًا ثلاثة مواضيع: الأغراض في الممر، وضجيج المساء، وأوقات غرفة الغسيل. قبل الأحكام أطلب من كل طرف مثالًا محددًا مع تاريخ أو فترة." },
+                { "language": "tr", "text": "Önce üç konuyu kaydediyorum: koridordaki eşyalar, akşam gürültüsü ve çamaşır odası saatleri. Yargılardan önce her taraftan tarih veya zaman aralığı olan somut bir örnek istiyorum." },
+                { "language": "ru", "text": "Сначала фиксирую три темы: вещи в коридоре, вечерний шум и время прачечной. До оценок прошу каждую сторону привести конкретный пример с датой или периодом." },
+                { "language": "ckb", "text": "سەرەتا سێ بابەت تۆمار دەکەم: شتەکانی ڕێڕەو، دەنگی ئێوارە و کاتەکانی ژووری شۆردن. پێش هەڵسەنگاندن، لە هەر لایەنێک نموونەیەکی دیاریکراو بە ڕێکەوت یان ماوە داوا دەکەم." },
+                { "language": "kmr", "text": "Pêşî sê mijar tomar dikim: tiştên korîdorê, dengê êvarê û demên odeya cilşûştinê. Berî nirxandinan ji her aliyek mînaka konkret bi dîrok an demê dixwazim." },
+                { "language": "pl", "text": "Najpierw zapisuję trzy tematy: rzeczy na korytarzu, wieczorny hałas i terminy pralni. Przed ocenami proszę każdą stronę o konkretny przykład z datą lub okresem." },
+                { "language": "ro", "text": "Mai întâi notez trei teme: obiecte pe hol, zgomot seara și orele spălătoriei. Înainte de evaluări, cer fiecărei părți un exemplu concret cu dată sau interval." },
+                { "language": "sq", "text": "Së pari shënoj tri tema: sendet në korridor, zhurma në mbrëmje dhe oraret e lavanderisë. Para vlerësimeve, kërkoj nga secila palë një shembull konkret me datë ose periudhë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Diese Antwort schafft eine neutrale Struktur und verhindert, dass der Einstieg sofort persönlich wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This answer creates a neutral structure and prevents the opening from immediately becoming personal." },
+                { "language": "fa", "text": "این پاسخ ساختار بی‌طرف می‌سازد و مانع می‌شود شروع بحث فوراً شخصی شود." },
+                { "language": "ar", "text": "هذه الإجابة تنشئ بنية محايدة وتمنع البداية من أن تصبح شخصية فورًا." },
+                { "language": "tr", "text": "Bu cevap tarafsız bir yapı kurar ve başlangıcın hemen kişiselleşmesini önler." },
+                { "language": "ru", "text": "Этот ответ создает нейтральную структуру и не дает началу сразу стать личным." },
+                { "language": "ckb", "text": "ئەم وەڵامە ڕێکخستنێکی بێلایەن دروست دەکات و ڕێ دەگرێت دەستپێکەکە دەستبەجێ ببێتە کەسی." },
+                { "language": "kmr", "text": "Ev bersiv avahiyeke bêalî çêdike û nahêle destpêk yekser bibe kesane." },
+                { "language": "pl", "text": "Ta odpowiedź tworzy neutralną strukturę i zapobiega temu, by początek od razu stał się osobisty." },
+                { "language": "ro", "text": "Acest răspuns creează o structură neutră și împiedică începutul să devină imediat personal." },
+                { "language": "sq", "text": "Kjo përgjigje krijon strukturë neutrale dhe pengon që fillimi të bëhet menjëherë personal." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verstehe, dass Sie sich ärgern. Lassen Sie uns bitte nacheinander sagen, was uns stört.",
+              "translations": [
+                { "language": "en", "text": "I understand that you are annoyed. Let us please say one after another what bothers us." },
+                { "language": "fa", "text": "می‌فهمم ناراحت هستید. لطفاً یکی‌یکی بگوییم چه چیزی اذیتمان می‌کند." },
+                { "language": "ar", "text": "أفهم أنكم منزعجون. فلنقل من فضلكم واحدًا بعد الآخر ما يزعجنا." },
+                { "language": "tr", "text": "Rahatsız olduğunuzu anlıyorum. Lütfen sırayla bizi neyin rahatsız ettiğini söyleyelim." },
+                { "language": "ru", "text": "Я понимаю, что вы раздражены. Давайте, пожалуйста, по очереди скажем, что нас беспокоит." },
+                { "language": "ckb", "text": "تێدەگەم کە بێزارن. تکایە یەک بە یەک بڵێین چی ئازارمان دەدات." },
+                { "language": "kmr", "text": "Ez têdigihîjim ku hûn aciz in. Ji kerema xwe em bi dorê bibêjin çi me aciz dike." },
+                { "language": "pl", "text": "Rozumiem, że są Państwo zdenerwowani. Powiedzmy proszę po kolei, co nam przeszkadza." },
+                { "language": "ro", "text": "Înțeleg că sunteți supărați. Haideți să spunem pe rând ce ne deranjează." },
+                { "language": "sq", "text": "E kuptoj që jeni të mërzitur. Le të themi me radhë çfarë na shqetëson." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort ist freundlich, aber zu offen; ohne Themenrahmen und Belegfrage wird die Runde schnell unübersichtlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is friendly but too open; without a topic frame and evidence question, the round quickly becomes unclear." },
+                { "language": "fa", "text": "پاسخ دوستانه است، اما خیلی باز است؛ بدون چارچوب موضوع و پرسش درباره شاهد، بحث سریعاً نامنظم می‌شود." },
+                { "language": "ar", "text": "الإجابة ودودة لكنها مفتوحة جدًا؛ من دون إطار موضوعي وسؤال عن الدليل تصبح الجولة غير واضحة بسرعة." },
+                { "language": "tr", "text": "Cevap dostça, ama çok açık; konu çerçevesi ve kanıt sorusu olmadan tur hızla karışır." },
+                { "language": "ru", "text": "Ответ доброжелательный, но слишком открытый; без рамки тем и вопроса о фактах круг быстро станет неясным." },
+                { "language": "ckb", "text": "وەڵامەکە دۆستانەیە، بەڵام زۆر کراوەیە؛ بەبێ چوارچێوەی بابەت و پرسیاری بەڵگە، بازنەکە زوو نادیار دەبێت." },
+                { "language": "kmr", "text": "Bersiv dostane ye, lê pir vekirî ye; bê çarçoveya mijarê û pirsa belgeyê, dor zû tevlihev dibe." },
+                { "language": "pl", "text": "Odpowiedź jest życzliwa, ale zbyt otwarta; bez ramy tematów i pytania o dowody runda szybko stanie się niejasna." },
+                { "language": "ro", "text": "Răspunsul este prietenos, dar prea deschis; fără cadru tematic și întrebare despre dovezi, runda devine repede neclară." },
+                { "language": "sq", "text": "Përgjigjja është miqësore, por shumë e hapur; pa kornizë teme dhe pyetje për prova, raundi bëhet shpejt i paqartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das sind zwei wichtige Hinweise. Ich möchte sie trennen: Für die Kisten brauchen wir eine befristete Lösung mit freiem Fluchtweg. Für die Geräusche sammeln wir keine Gegenvorwürfe, sondern zwei konkrete Zeiten, damit wir Muster erkennen können.",
+              "translations": [
+                { "language": "en", "text": "Those are two important points. I would like to separate them: for the boxes, we need a temporary solution with a clear escape route. For the noises, we collect no counter-accusations, but two concrete times." },
+                { "language": "fa", "text": "این‌ها دو نکته مهم‌اند. باید جداشان کنیم: برای جعبه‌ها راه‌حل موقت با مسیر خروج آزاد می‌خواهیم. برای صداها سرزنش متقابل جمع نمی‌کنیم، بلکه دو زمان مشخص می‌خواهیم." },
+                { "language": "ar", "text": "هاتان نقطتان مهمتان. أريد فصلهما: للصناديق نحتاج إلى حل مؤقت مع طريق خروج مفتوح. وللأصوات لا نجمع اتهامات مقابلة، بل وقتين محددين." },
+                { "language": "tr", "text": "Bunlar iki önemli nokta. Ayırmak istiyorum: Kutular için açık kaçış yolu olan geçici çözüm gerekir. Sesler için karşı suçlama değil, iki somut zaman topluyoruz." },
+                { "language": "ru", "text": "Это два важных пункта. Я хочу их разделить: для коробок нужно временное решение со свободным путем эвакуации. Для шумов собираем не встречные обвинения, а два конкретных времени." },
+                { "language": "ckb", "text": "ئەمانە دوو خاڵی گرنگن. دەمەوێت جیا بکەمەوە: بۆ سندووقەکان چارەسەری کاتی بە ڕێگای دەرچوونی ئازاد دەوێت. بۆ دەنگەکان تاوانبارکردنی بەرامبەر نا، بەڵکو دوو کاتی دیاریکراو کۆدەکەینەوە." },
+                { "language": "kmr", "text": "Ev du xalên girîng in. Ez dixwazim wan veqetînim: ji bo qutiyan çareseriyeke demkî bi rêya derketinê ya vekirî pêdivî ye. Ji bo dengan ne tawanbar kirinên dijber, lê du demên konkret kom dikin." },
+                { "language": "pl", "text": "To dwa ważne punkty. Chcę je oddzielić: dla kartonów potrzebne jest rozwiązanie tymczasowe z wolną drogą ewakuacyjną. Przy hałasach zbieramy nie kontrzarzuty, lecz dwa konkretne terminy." },
+                { "language": "ro", "text": "Sunt două puncte importante. Vreau să le separ: pentru cutii avem nevoie de o soluție temporară cu cale de evacuare liberă. Pentru zgomote nu adunăm contraacuzații, ci două momente concrete." },
+                { "language": "sq", "text": "Këto janë dy pika të rëndësishme. Dua t'i ndaj: për kutitë duhet zgjidhje e përkohshme me rrugë daljeje të lirë. Për zhurmat nuk mbledhim kundërakuza, por dy kohë konkrete." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nimmt den Einwand auf, ohne die Struktur zu verlieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer takes up the objection without losing the structure." },
+                { "language": "fa", "text": "این پاسخ اعتراض را می‌پذیرد، بدون اینکه ساختار را از دست بدهد." },
+                { "language": "ar", "text": "تأخذ الإجابة الاعتراض من دون فقدان البنية." },
+                { "language": "tr", "text": "Bu cevap itirazı alır, ama yapıyı kaybetmez." },
+                { "language": "ru", "text": "Ответ принимает возражение, не теряя структуры." },
+                { "language": "ckb", "text": "ئەم وەڵامە ناڕەزایییەکە وەردەگرێت، بەبێ ئەوەی ڕێکخستن لەدەست بدات." },
+                { "language": "kmr", "text": "Ev bersiv nerazîbûnê digire, bêyî ku avahî winda bike." },
+                { "language": "pl", "text": "Ta odpowiedź podejmuje zastrzeżenie bez utraty struktury." },
+                { "language": "ro", "text": "Răspunsul preia obiecția fără să piardă structura." },
+                { "language": "sq", "text": "Përgjigjja e merr kundërshtimin pa humbur strukturën." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann haben offenbar alle Seiten etwas falsch gemacht, und wir sollten uns gegenseitig mehr Rücksicht versprechen.",
+              "translations": [
+                { "language": "en", "text": "Then apparently all sides have done something wrong, and we should promise each other more consideration." },
+                { "language": "fa", "text": "پس ظاهراً همه طرف‌ها کاری اشتباه کرده‌اند و باید به هم قول بدهیم بیشتر مراعات کنیم." },
+                { "language": "ar", "text": "إذن يبدو أن كل الأطراف فعلت شيئًا خطأ، وينبغي أن نعد بعضنا بمراعاة أكبر." },
+                { "language": "tr", "text": "O zaman görünüşe göre tüm taraflar bir şeyleri yanlış yapmış ve birbirimize daha çok dikkat sözü vermeliyiz." },
+                { "language": "ru", "text": "Тогда, видимо, все стороны что-то сделали неправильно, и нам нужно пообещать друг другу больше учитывать интересы." },
+                { "language": "ckb", "text": "ئەوا وادیارە هەموو لایەنەکان شتێکی هەڵەیان کردووە و پێویستە بە یەکتر بەڵێن بدەین زیاتر ڕەچاو بکەین." },
+                { "language": "kmr", "text": "Wê gavê xuya ye hemû aliyan tiştek şaş kirine û divê em hevdu re soz bidin ku zêdetir li hev bifikirin." },
+                { "language": "pl", "text": "Wtedy najwyraźniej wszystkie strony zrobiły coś źle i powinniśmy obiecać sobie więcej wzajemnego uwzględniania." },
+                { "language": "ro", "text": "Atunci se pare că toate părțile au greșit ceva și ar trebui să ne promitem mai multă considerație reciprocă." },
+                { "language": "sq", "text": "Atëherë duket se të gjitha palët kanë bërë diçka gabim dhe duhet t'i premtojmë njëri-tjetrit më shumë kujdes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort klingt ausgleichend, bleibt aber moralisch und unkonkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer sounds balancing, but remains moral and unspecific." },
+                { "language": "fa", "text": "پاسخ متعادل به نظر می‌رسد، اما اخلاقی و نامشخص می‌ماند." },
+                { "language": "ar", "text": "تبدو الإجابة متوازنة، لكنها تبقى أخلاقية وغير محددة." },
+                { "language": "tr", "text": "Cevap dengeleyici duyulur, ama ahlaki ve belirsiz kalır." },
+                { "language": "ru", "text": "Ответ звучит уравновешенно, но остается морализирующим и неконкретным." },
+                { "language": "ckb", "text": "وەڵامەکە هاوسەنگ دەردەکەوێت، بەڵام ئەخلاقی و نادیار دەمێنێتەوە." },
+                { "language": "kmr", "text": "Bersiv wek hevseng xuya dike, lê exlaqî û nezelal dimîne." },
+                { "language": "pl", "text": "Odpowiedź brzmi pojednawczo, ale pozostaje moralizująca i niekonkretna." },
+                { "language": "ro", "text": "Răspunsul sună echilibrat, dar rămâne moralizator și neconcret." },
+                { "language": "sq", "text": "Përgjigjja tingëllon pajtuese, por mbetet moralizuese dhe e paqartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann nehmen wir die Waschküche als eigenes Thema auf. Ich schlage keine Schuldigenliste vor, sondern eine Testregel: Wenn jemand den eingetragenen Beginn um mehr als 20 Minuten verpasst, wird der Slot für andere frei. Nach zwei Wochen prüfen wir, ob das funktioniert.",
+              "translations": [
+                { "language": "en", "text": "Then we will include the laundry room as a separate topic. I do not propose a list of culprits, but a trial rule: if someone misses the registered start by more than 20 minutes, the slot becomes free for others. After two weeks, we check whether it works." },
+                { "language": "fa", "text": "پس رخت‌شوی‌خانه را جدا می‌آوریم. فهرست مقصران نمی‌خواهم، بلکه قاعده آزمایشی: اگر کسی بیش از ۲۰ دقیقه از شروع ثبت‌شده عقب بیفتد، نوبت برای دیگران آزاد می‌شود. بعد از دو هفته بررسی می‌کنیم." },
+                { "language": "ar", "text": "إذن نأخذ غرفة الغسيل كموضوع مستقل. لا أقترح قائمة مذنبين، بل قاعدة تجريبية: إذا تأخر شخص أكثر من 20 دقيقة عن البداية المسجلة، يصبح الموعد متاحًا للآخرين. بعد أسبوعين نتحقق." },
+                { "language": "tr", "text": "O zaman çamaşır odasını ayrı konu alıyoruz. Suçlu listesi değil, deneme kuralı öneriyorum: Bir kişi kayıtlı başlangıcı 20 dakikadan fazla kaçırırsa, zaman başkalarına açılır. İki hafta sonra kontrol ederiz." },
+                { "language": "ru", "text": "Тогда берем прачечную как отдельную тему. Предлагаю не список виновных, а пробное правило: если кто-то пропускает начало более чем на 20 минут, слот свободен для других. Через две недели проверяем." },
+                { "language": "ckb", "text": "ئەوا ژووری شۆردن وەک بابەتی جیا دەهێنین. لیستی تاوانباران نا، بەڵکو ڕێسای تاقیکردنەوە: ئەگەر کەسێک زیاتر لە ٢٠ خولەک دەستپێکی تۆمارکراو لەدەست بدات، نۆرەکە بۆ ئەوانی تر ئازاد دەبێت. دوای دوو هەفتە دەپشکنین." },
+                { "language": "kmr", "text": "Wê gavê em odeya cilşûştinê wek mijareke cuda digirin. Ne lîsteya sûcdaran, lê rêzikeke ceribandinê pêşniyar dikim: heke kesek destpêka tomarbûyî zêdetirî 20 deqeyan dereng bike, slot ji bo yên din azad dibe. Piştî du hefteyan kontrol dikin." },
+                { "language": "pl", "text": "W takim razie ujmujemy pralnię jako osobny temat. Nie proponuję listy winnych, lecz zasadę próbną: jeśli ktoś spóźni się ponad 20 minut, termin jest wolny dla innych. Po dwóch tygodniach sprawdzamy." },
+                { "language": "ro", "text": "Atunci luăm spălătoria ca temă separată. Nu propun o listă de vinovați, ci o regulă de probă: dacă cineva ratează ora înscrisă cu peste 20 de minute, intervalul devine liber pentru alții. După două săptămâni verificăm." },
+                { "language": "sq", "text": "Atëherë e marrim lavanderinë si temë më vete. Nuk propozoj listë fajtorësh, por rregull prove: nëse dikush vonohet më shumë se 20 minuta nga fillimi i shënuar, orari lirohet për të tjerët. Pas dy javësh kontrollojmë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort macht aus einer Beschwerde eine testbare Regel ohne öffentliche Beschämung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer turns a complaint into a testable rule without public shaming." },
+                { "language": "fa", "text": "این پاسخ شکایت را به قاعده قابل آزمون تبدیل می‌کند، بدون شرمنده‌سازی عمومی." },
+                { "language": "ar", "text": "تحول الإجابة الشكوى إلى قاعدة قابلة للاختبار من دون إحراج علني." },
+                { "language": "tr", "text": "Bu cevap şikayeti kamu önünde utandırmadan test edilebilir kurala çevirir." },
+                { "language": "ru", "text": "Ответ превращает жалобу в проверяемое правило без публичного стыда." },
+                { "language": "ckb", "text": "ئەم وەڵامە سکاڵا دەگۆڕێت بۆ ڕێسای تاقیکردنەوە بەبێ شەرمەزارکردنی گشتی." },
+                { "language": "kmr", "text": "Ev bersiv gilî vediguherîne rêzikeke ceribandinê bê şermkirina giştî." },
+                { "language": "pl", "text": "Ta odpowiedź zamienia skargę w sprawdzalną zasadę bez publicznego zawstydzania." },
+                { "language": "ro", "text": "Răspunsul transformă o reclamație într-o regulă testabilă fără rușinare publică." },
+                { "language": "sq", "text": "Përgjigjja e kthen ankesën në rregull të testueshëm pa turpërim publik." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollten alle einfach pünktlicher sein, sonst funktioniert ein gemeinsamer Waschplan natürlich nicht.",
+              "translations": [
+                { "language": "en", "text": "Then everyone should simply be more punctual; otherwise a shared laundry schedule naturally does not work." },
+                { "language": "fa", "text": "پس همه باید فقط وقت‌شناس‌تر باشند؛ وگرنه برنامه مشترک رخت‌شویی طبیعتاً کار نمی‌کند." },
+                { "language": "ar", "text": "إذن يجب على الجميع ببساطة أن يكونوا أكثر دقة في الوقت، وإلا فلن يعمل جدول الغسيل المشترك طبعًا." },
+                { "language": "tr", "text": "O zaman herkes sadece daha dakik olmalı; yoksa ortak çamaşır planı elbette işlemez." },
+                { "language": "ru", "text": "Тогда всем просто нужно быть пунктуальнее, иначе общий график стирки, конечно, не работает." },
+                { "language": "ckb", "text": "ئەوا هەمووان پێویستە تەنها کاتناس‌تر بن؛ ئەگەرنا پلانی هاوبەشی شۆردن بە دڵنیایی کار ناکات." },
+                { "language": "kmr", "text": "Wê gavê divê hemû kes tenê demnas bin; wisa nebe plana hevpar a cilşûştinê nexebite." },
+                { "language": "pl", "text": "Wtedy wszyscy powinni po prostu być punktualniejsi, inaczej wspólny plan prania oczywiście nie działa." },
+                { "language": "ro", "text": "Atunci toți ar trebui pur și simplu să fie mai punctuali, altfel un program comun de spălat nu funcționează." },
+                { "language": "sq", "text": "Atëherë të gjithë duhet thjesht të jenë më të përpiktë; përndryshe plani i përbashkët i lavanderisë nuk funksionon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort benennt das Problem, bietet aber keine faire Regel für Verspätungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer names the problem but offers no fair rule for delays." },
+                { "language": "fa", "text": "پاسخ مشکل را نام می‌برد، اما قاعده منصفانه‌ای برای تأخیر نمی‌دهد." },
+                { "language": "ar", "text": "تسمي الإجابة المشكلة، لكنها لا تقدم قاعدة عادلة للتأخير." },
+                { "language": "tr", "text": "Cevap sorunu adlandırır, ama gecikmeler için adil kural sunmaz." },
+                { "language": "ru", "text": "Ответ называет проблему, но не предлагает справедливого правила для опозданий." },
+                { "language": "ckb", "text": "وەڵامەکە کێشەکە ناودەبات، بەڵام ڕێسایەکی دادپەروەرانە بۆ دواکەوتن پێشنیار ناکات." },
+                { "language": "kmr", "text": "Bersiv pirsgirêkê nav dike, lê ji bo derengmayînê rêzikeke adil nade." },
+                { "language": "pl", "text": "Odpowiedź nazywa problem, ale nie daje sprawiedliwej zasady dla spóźnień." },
+                { "language": "ro", "text": "Răspunsul numește problema, dar nu oferă o regulă corectă pentru întârzieri." },
+                { "language": "sq", "text": "Përgjigjja e emërton problemin, por nuk jep rregull të drejtë për vonesat." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann braucht das Protokoll auch einen Kontaktweg. Für die Testphase melden alle nur konkrete Abweichungen per kurzer Nachricht an die Hausverwaltung oder an die benannte Kontaktperson, ohne Namen im Hausflur zu diskutieren.",
+              "translations": [
+                { "language": "en", "text": "Then the protocol also needs a contact path. During the trial phase, everyone reports only concrete deviations by short message to property management or to the named contact person, without discussing names in the hallway." },
+                { "language": "fa", "text": "پس صورت‌جلسه به مسیر تماس هم نیاز دارد. در دوره آزمایشی، همه فقط موارد مشخص را با پیام کوتاه به مدیریت ساختمان یا فرد تعیین‌شده گزارش می‌کنند، بدون بحث درباره نام‌ها در راهرو." },
+                { "language": "ar", "text": "إذن يحتاج المحضر أيضًا إلى طريق تواصل. في مرحلة التجربة يبلّغ الجميع فقط عن الانحرافات المحددة برسالة قصيرة إلى الإدارة أو الشخص المحدد، من دون مناقشة الأسماء في الممر." },
+                { "language": "tr", "text": "O zaman tutanakta iletişim yolu da olmalı. Deneme aşamasında herkes yalnızca somut sapmaları kısa mesajla yönetime veya belirlenen kişiye bildirir; koridorda isim tartışılmaz." },
+                { "language": "ru", "text": "Тогда протоколу нужен канал связи. В пробный период все сообщают только конкретные отклонения коротким сообщением управляющей компании или назначенному лицу, без обсуждения имен в коридоре." },
+                { "language": "ckb", "text": "ئەوا پڕۆتۆکۆڵەکە ڕێگای پەیوەندییش دەوێت. لە ماوەی تاقیکردنەوەدا هەمووان تەنها لادانی دیاریکراو بە نامەی کورت بۆ بەڕێوەبەرایەتی یان کەسی دیاریکراو ڕادەگەیەنن، بەبێ گفتوگۆی ناوەکان لە ڕێڕەو." },
+                { "language": "kmr", "text": "Wê gavê protokolê rêya têkiliyê jî divê. Di qonaxa ceribandinê de hemû kes tenê cudahiyên konkret bi peyameke kurt ji rêveberiyê an kesê navkirî re radigihînin, bêyî gotûbêja navan li korîdorê." },
+                { "language": "pl", "text": "Wtedy protokół potrzebuje też kanału kontaktu. W fazie próbnej wszyscy zgłaszają tylko konkretne odstępstwa krótką wiadomością do administracji albo wskazanej osoby, bez omawiania nazwisk na korytarzu." },
+                { "language": "ro", "text": "Atunci procesul-verbal are nevoie și de o cale de contact. În faza de probă, toți raportează doar abateri concrete prin mesaj scurt către administrare sau persoana desemnată, fără discutarea numelor pe hol." },
+                { "language": "sq", "text": "Atëherë procesverbali ka nevojë edhe për rrugë kontakti. Gjatë fazës së provës, të gjithë raportojnë vetëm devijime konkrete me mesazh të shkurtër te administrimi ose personi i caktuar, pa diskutuar emra në korridor." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort schafft einen neutralen Meldeweg und schützt die Beteiligten vor persönlicher Eskalation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer creates a neutral reporting path and protects participants from personal escalation." },
+                { "language": "fa", "text": "این پاسخ مسیر گزارش‌دهی بی‌طرف می‌سازد و افراد را از تشدید شخصی محافظت می‌کند." },
+                { "language": "ar", "text": "تنشئ الإجابة طريق إبلاغ محايدًا وتحمي المشاركين من التصعيد الشخصي." },
+                { "language": "tr", "text": "Bu cevap tarafsız bir bildirim yolu oluşturur ve katılanları kişisel tırmanmadan korur." },
+                { "language": "ru", "text": "Ответ создает нейтральный канал сообщения и защищает участников от личной эскалации." },
+                { "language": "ckb", "text": "ئەم وەڵامە ڕێگایەکی بێلایەنی ڕاگەیاندن دروست دەکات و بەشداربووان لە توندبوونی کەسی دەپارێزێت." },
+                { "language": "kmr", "text": "Ev bersiv rêyeke bêalî ya ragihandinê çêdike û beşdaran ji bilindbûna kesane diparêze." },
+                { "language": "pl", "text": "Ta odpowiedź tworzy neutralny kanał zgłaszania i chroni uczestników przed osobistą eskalacją." },
+                { "language": "ro", "text": "Răspunsul creează o cale neutră de raportare și protejează participanții de escaladare personală." },
+                { "language": "sq", "text": "Përgjigjja krijon rrugë neutrale raportimi dhe i mbron pjesëmarrësit nga përshkallëzimi personal." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollte man solche Dinge am besten der Hausverwaltung melden, wenn wieder etwas passiert.",
+              "translations": [
+                { "language": "en", "text": "Then it is best to report such things to property management if something happens again." },
+                { "language": "fa", "text": "پس بهتر است اگر دوباره چیزی پیش آمد، این موارد را به مدیریت ساختمان گزارش کنیم." },
+                { "language": "ar", "text": "إذن من الأفضل إبلاغ إدارة العقار بهذه الأمور إذا حدث شيء مرة أخرى." },
+                { "language": "tr", "text": "O zaman böyle şeyleri tekrar bir şey olursa bina yönetimine bildirmek en iyisi." },
+                { "language": "ru", "text": "Тогда лучше сообщать такие вещи управляющей компании, если что-то снова произойдет." },
+                { "language": "ckb", "text": "ئەوا باشترە ئەگەر جارێکی تر شتێک ڕوویدا، ئەم شتانە بە بەڕێوەبەرایەتی خانوو ڕابگەیەنرێت." },
+                { "language": "kmr", "text": "Wê gavê çêtir e heke dîsa tiştek bibe, ev tişt ji rêveberiya avahiyê re werin ragihandin." },
+                { "language": "pl", "text": "Wtedy najlepiej zgłaszać takie rzeczy administracji, jeśli coś znowu się wydarzy." },
+                { "language": "ro", "text": "Atunci cel mai bine este să se raporteze astfel de lucruri administrării, dacă se mai întâmplă ceva." },
+                { "language": "sq", "text": "Atëherë më mirë t'i raportohen këto gjëra administrimit nëse ndodh përsëri diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort geht in die richtige Richtung, bleibt aber ohne Kanal, Kriterien und Schutz vor Namensdiskussionen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer moves in the right direction but lacks a channel, criteria, and protection from name discussions." },
+                { "language": "fa", "text": "پاسخ در مسیر درست است، اما کانال، معیار و محافظت از بحث درباره نام‌ها ندارد." },
+                { "language": "ar", "text": "تسير الإجابة في الاتجاه الصحيح، لكنها تفتقر إلى قناة ومعايير وحماية من نقاش الأسماء." },
+                { "language": "tr", "text": "Cevap doğru yöne gider, ama kanal, kriterler ve isim tartışmalarına karşı koruma yoktur." },
+                { "language": "ru", "text": "Ответ идет в правильном направлении, но в нем нет канала, критериев и защиты от обсуждения имен." },
+                { "language": "ckb", "text": "وەڵامەکە بەرەو ئاراستەی ڕاست دەچێت، بەڵام کەناڵ، پێوەر و پاراستن لە گفتوگۆی ناوەکان نییە." },
+                { "language": "kmr", "text": "Bersiv ber bi aliyê rast ve diçe, lê kanal, pîvan û parastin ji gotûbêja navan tune ye." },
+                { "language": "pl", "text": "Odpowiedź idzie w dobrą stronę, ale brakuje kanału, kryteriów i ochrony przed dyskusjami o nazwiskach." },
+                { "language": "ro", "text": "Răspunsul merge în direcția bună, dar nu are canal, criterii și protecție față de discuții despre nume." },
+                { "language": "sq", "text": "Përgjigjja shkon në drejtimin e duhur, por i mungojnë kanali, kriteret dhe mbrojtja nga diskutimi i emrave." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann fasse ich das Protokoll so zusammen: Kisten bis Samstag weg vom Fluchtweg, Feuchtigkeitsmeldung zum Keller bis Montag, Waschküchenregel mit 20-Minuten-Grenze für zwei Wochen, Meldungen nur über den vereinbarten Kontaktweg und ein kurzer Auswertungstermin am übernächsten Dienstag.",
+              "translations": [
+                { "language": "en", "text": "Then I will summarize the protocol as follows: boxes away from the escape route by Saturday, basement dampness report by Monday, laundry-room rule with a 20-minute limit for two weeks, reports only through the agreed contact path, and a short review meeting on the Tuesday after next." },
+                { "language": "fa", "text": "پس صورت‌جلسه را این‌طور خلاصه می‌کنم: جعبه‌ها تا شنبه از مسیر خروج برداشته شوند، گزارش رطوبت زیرزمین تا دوشنبه ارسال شود، قاعده رخت‌شوی‌خانه با مرز ۲۰ دقیقه برای دو هفته اجرا شود، گزارش‌ها فقط از مسیر توافق‌شده باشد و سه‌شنبه دو هفته بعد جلسه کوتاه بازبینی داشته باشیم." },
+                { "language": "ar", "text": "إذن ألخص المحضر هكذا: إزالة الصناديق من طريق الخروج حتى السبت، بلاغ رطوبة القبو حتى الاثنين، قاعدة غرفة الغسيل بحد 20 دقيقة لمدة أسبوعين، البلاغات فقط عبر الطريق المتفق عليه، وموعد تقييم قصير الثلاثاء بعد القادم." },
+                { "language": "tr", "text": "O zaman tutanağı şöyle özetliyorum: Kutular cumartesiye kadar kaçış yolundan kaldırılacak, bodrum nem bildirimi pazartesiye kadar gönderilecek, çamaşır odası kuralı iki hafta 20 dakika sınırıyla uygulanacak, bildirimler yalnızca kararlaştırılan yoldan yapılacak ve iki hafta sonraki salı kısa değerlendirme olacak." },
+                { "language": "ru", "text": "Тогда резюмирую протокол так: коробки убрать с пути эвакуации до субботы, сообщение о сырости в подвале до понедельника, правило прачечной с лимитом 20 минут на две недели, сообщения только через согласованный канал и короткая проверка во вторник через неделю." },
+                { "language": "ckb", "text": "ئەوا پڕۆتۆکۆڵەکە ئاوا پوخت دەکەمەوە: سندووقەکان تا شەممە لە ڕێگای دەرچوون دوور بخرێنەوە، ڕاپۆرتی شێی ژێرزەمین تا دووشەممە، ڕێسای ژووری شۆردن بە سنووری ٢٠ خولەک بۆ دوو هەفتە، ڕاپۆرتەکان تەنها لە ڕێگای ڕێککەوتوو، و کۆبوونەوەیەکی کورتی هەڵسەنگاندن لە سێشەممەی دوو هەفتەی داهاتوو." },
+                { "language": "kmr", "text": "Wê gavê ez protokolê wisa kurt dikim: qutî heta Şemiyê ji rêya derketinê dûr dibin, agahdariya şilbûna jêrzemînê heta Duşemê, rêzika odeya cilşûştinê bi sînora 20 deqeyan du hefte, ragihandin tenê bi rêya lihevkirî, û sêşema piştî hefteya din nirxandineke kurt." },
+                { "language": "pl", "text": "W takim razie podsumowuję protokół tak: kartony do soboty znikają z drogi ewakuacyjnej, zgłoszenie wilgoci w piwnicy do poniedziałku, zasada pralni z limitem 20 minut przez dwa tygodnie, zgłoszenia tylko ustalonym kanałem i krótka ocena we wtorek za dwa tygodnie." },
+                { "language": "ro", "text": "Atunci rezum procesul-verbal astfel: cutiile pleacă de pe calea de evacuare până sâmbătă, sesizarea despre umezeala din subsol până luni, regula spălătoriei cu limita de 20 de minute pentru două săptămâni, raportări doar prin calea convenită și o scurtă evaluare marțea de peste două săptămâni." },
+                { "language": "sq", "text": "Atëherë e përmbledh procesverbalin kështu: kutitë largohen nga rruga e daljes deri të shtunën, njoftimi për lagështinë në bodrum deri të hënën, rregulli i lavanderisë me kufi 20 minuta për dy javë, raportimet vetëm përmes rrugës së dakorduar dhe një vlerësim i shkurtër të martën pas dy javësh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort endet mit einem überprüfbaren Protokoll statt mit allgemeinen Friedensappellen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer ends with a verifiable protocol instead of general appeals for peace." },
+                { "language": "fa", "text": "این پاسخ به‌جای دعوت کلی به آرامش، با صورت‌جلسه قابل بررسی پایان می‌یابد." },
+                { "language": "ar", "text": "تنتهي الإجابة بمحضر قابل للتحقق بدل نداءات عامة للهدوء." },
+                { "language": "tr", "text": "Bu cevap genel sakinlik çağrıları yerine kontrol edilebilir bir tutanakla biter." },
+                { "language": "ru", "text": "Ответ заканчивается проверяемым протоколом, а не общими призывами к миру." },
+                { "language": "ckb", "text": "ئەم وەڵامە بە پڕۆتۆکۆڵێکی پشکنراو کۆتایی دێت، نەک بە بانگەوازی گشتی بۆ ئارامی." },
+                { "language": "kmr", "text": "Ev bersiv bi protokoleke kontrolbar diqede, ne bi bangên giştî ji bo aştiyê." },
+                { "language": "pl", "text": "Ta odpowiedź kończy się sprawdzalnym protokołem, a nie ogólnymi apelami o spokój." },
+                { "language": "ro", "text": "Răspunsul se încheie cu un proces-verbal verificabil, nu cu apeluri generale la calm." },
+                { "language": "sq", "text": "Përgjigjja përfundon me procesverbal të verifikueshëm, jo me thirrje të përgjithshme për qetësi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sind wir uns im Wesentlichen einig: Alle bemühen sich, der Flur bleibt frei, und die Waschküche wird fairer genutzt.",
+              "translations": [
+                { "language": "en", "text": "Then we essentially agree: everyone makes an effort, the hallway stays clear, and the laundry room is used more fairly." },
+                { "language": "fa", "text": "پس در اصل توافق داریم: همه تلاش می‌کنند، راهرو آزاد می‌ماند و از رخت‌شوی‌خانه منصفانه‌تر استفاده می‌شود." },
+                { "language": "ar", "text": "إذن نحن متفقون في الجوهر: الجميع يبذل جهدًا، ويبقى الممر خاليًا، وتُستخدم غرفة الغسيل بعدل أكبر." },
+                { "language": "tr", "text": "O zaman esasen anlaşıyoruz: herkes çaba gösterir, koridor boş kalır ve çamaşır odası daha adil kullanılır." },
+                { "language": "ru", "text": "Тогда мы в целом согласны: все стараются, коридор остается свободным, а прачечная используется справедливее." },
+                { "language": "ckb", "text": "ئەوا بە گشتی ڕێککەوتووین: هەمووان هەوڵ دەدەن، ڕێڕەو ئازاد دەمێنێت و ژووری شۆردن دادپەروەرانەتر بەکاردەهێنرێت." },
+                { "language": "kmr", "text": "Wê gavê em bi giştî li hev in: hemû kes hewl didin, korîdor vala dimîne û odeya cilşûştinê adiltir tê bikaranîn." },
+                { "language": "pl", "text": "W takim razie zasadniczo się zgadzamy: wszyscy się starają, korytarz pozostaje wolny, a pralnia jest używana sprawiedliwiej." },
+                { "language": "ro", "text": "Atunci suntem în esență de acord: toți se străduiesc, holul rămâne liber, iar spălătoria este folosită mai corect." },
+                { "language": "sq", "text": "Atëherë në thelb jemi dakord: të gjithë përpiqen, korridori mbetet i lirë dhe lavanderia përdoret më drejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Antwort klingt harmonisch, aber sie ist zu unpräzise für einen eskalierten Mehrparteienkonflikt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer sounds harmonious, but it is too imprecise for an escalated multi-party conflict." },
+                { "language": "fa", "text": "پاسخ هماهنگ به نظر می‌رسد، اما برای اختلاف چندطرفه تشدیدشده خیلی مبهم است." },
+                { "language": "ar", "text": "تبدو الإجابة منسجمة، لكنها غير دقيقة كفاية لنزاع متعدد الأطراف متصاعد." },
+                { "language": "tr", "text": "Cevap uyumlu duyulur, ama tırmanmış çok taraflı çatışma için fazla belirsizdir." },
+                { "language": "ru", "text": "Ответ звучит гармонично, но слишком неточен для обострившегося многостороннего конфликта." },
+                { "language": "ckb", "text": "وەڵامەکە هاوسەنگ دەردەکەوێت، بەڵام بۆ ناکۆکییەکی چەندلایەنەی توندبوو زۆر نادیارە." },
+                { "language": "kmr", "text": "Bersiv wek lihevhatî xuya dike, lê ji bo nakokiyeke çendalî ya bilindbûyî pir nezelal e." },
+                { "language": "pl", "text": "Odpowiedź brzmi harmonijnie, ale jest zbyt nieprecyzyjna dla zaostrzonego konfliktu wielostronnego." },
+                { "language": "ro", "text": "Răspunsul sună armonios, dar este prea imprecis pentru un conflict escaladat cu mai multe părți." },
+                { "language": "sq", "text": "Përgjigjja tingëllon harmonike, por është shumë e pasaktë për një konflikt të përshkallëzuar me disa palë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "neutral-frame",
+          "text": "Mehrparteienkonflikte brauchen zuerst Themenrahmen und Beispiele, nicht sofortige Bewertung.",
+          "translations": [
+            { "language": "en", "text": "Multi-party conflicts first need a topic frame and examples, not immediate judgment." },
+            { "language": "fa", "text": "اختلاف‌های چندطرفه ابتدا به چارچوب موضوع و مثال نیاز دارند، نه قضاوت فوری." },
+            { "language": "ar", "text": "النزاعات متعددة الأطراف تحتاج أولًا إلى إطار موضوعي وأمثلة، لا إلى حكم فوري." },
+            { "language": "tr", "text": "Çok taraflı çatışmalar önce konu çerçevesi ve örnek ister, hemen değerlendirme değil." },
+            { "language": "ru", "text": "Многосторонним конфликтам сначала нужны рамка тем и примеры, а не немедленная оценка." },
+            { "language": "ckb", "text": "ناکۆکیی چەندلایەنە سەرەتا چوارچێوەی بابەت و نموونە دەوێت، نەک هەڵسەنگاندنی دەستبەجێ." },
+            { "language": "kmr", "text": "Nakokiyên çendalî pêşî çarçoveya mijarê û mînak dixwazin, ne nirxandina yekser." },
+            { "language": "pl", "text": "Konflikty wielostronne najpierw potrzebują ramy tematów i przykładów, a nie natychmiastowej oceny." },
+            { "language": "ro", "text": "Conflictele cu mai multe părți au nevoie mai întâi de cadru tematic și exemple, nu de evaluare imediată." },
+            { "language": "sq", "text": "Konfliktet me disa palë kanë nevojë fillimisht për kornizë teme dhe shembuj, jo për vlerësim të menjëhershëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "separate-claims",
+          "text": "Ein guter Moderator nimmt Gegenargumente auf, ohne daraus neue Gegenvorwürfe zu machen.",
+          "translations": [
+            { "language": "en", "text": "A good moderator takes up counterarguments without turning them into new counter-accusations." },
+            { "language": "fa", "text": "میانجی خوب استدلال‌های مقابل را می‌پذیرد، بدون اینکه آن‌ها را به سرزنش متقابل تازه تبدیل کند." },
+            { "language": "ar", "text": "الوسيط الجيد يأخذ الحجج المقابلة من دون تحويلها إلى اتهامات مقابلة جديدة." },
+            { "language": "tr", "text": "İyi bir moderatör karşı argümanları alır, ama onları yeni karşı suçlamalara çevirmez." },
+            { "language": "ru", "text": "Хороший модератор принимает встречные аргументы, не превращая их в новые встречные обвинения." },
+            { "language": "ckb", "text": "ناوبژیوانی باش بەڵگەی بەرامبەر وەردەگرێت، بەبێ ئەوەی بیکاتە تاوانبارکردنی بەرامبەری نوێ." },
+            { "language": "kmr", "text": "Navbeynkarê baş argumanên dijber digire, bêyî ku wan bike tawanbar kirinên dijber ên nû." },
+            { "language": "pl", "text": "Dobry moderator przyjmuje kontrargumenty, nie zmieniając ich w nowe kontrzarzuty." },
+            { "language": "ro", "text": "Un moderator bun preia contraargumentele fără să le transforme în contraacuzații noi." },
+            { "language": "sq", "text": "Një moderator i mirë i merr kundërargumentet pa i kthyer në kundërakuza të reja." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "trial-rule",
+          "text": "Eine Testregel ist oft wirksamer als ein Appell, weil sie Verhalten, Frist und Auswertung verbindet.",
+          "translations": [
+            { "language": "en", "text": "A trial rule is often more effective than an appeal because it links behavior, deadline, and review." },
+            { "language": "fa", "text": "قاعده آزمایشی اغلب از توصیه کلی مؤثرتر است، چون رفتار، مهلت و بازبینی را به هم وصل می‌کند." },
+            { "language": "ar", "text": "غالبًا ما تكون القاعدة التجريبية أكثر فاعلية من النداء لأنها تربط السلوك والمهلة والتقييم." },
+            { "language": "tr", "text": "Deneme kuralı çoğu zaman çağrıdan daha etkilidir, çünkü davranış, süre ve değerlendirmeyi bağlar." },
+            { "language": "ru", "text": "Пробное правило часто эффективнее призыва, потому что связывает поведение, срок и оценку." },
+            { "language": "ckb", "text": "ڕێسای تاقیکردنەوە زۆرجار کاریگەرترە لە بانگەواز، چونکە ڕەفتار، مۆڵەت و هەڵسەنگاندن پەیوەست دەکات." },
+            { "language": "kmr", "text": "Rêzika ceribandinê gelek caran ji bangê bandortir e, ji ber ku tevger, dem û nirxandinê girê dide." },
+            { "language": "pl", "text": "Zasada próbna często działa lepiej niż apel, bo łączy zachowanie, termin i ocenę." },
+            { "language": "ro", "text": "O regulă de probă este adesea mai eficientă decât un apel, deoarece leagă comportamentul, termenul și evaluarea." },
+            { "language": "sq", "text": "Një rregull prove shpesh është më efektiv se një thirrje, sepse lidh sjelljen, afatin dhe vlerësimin." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "protocol-close",
+          "text": "Der Abschluss sollte so konkret sein, dass alle Beteiligten später prüfen können, ob die Vereinbarung eingehalten wurde.",
+          "translations": [
+            { "language": "en", "text": "The closing should be concrete enough that all participants can later check whether the agreement was kept." },
+            { "language": "fa", "text": "پایان باید آن‌قدر مشخص باشد که همه طرف‌ها بعداً بتوانند بررسی کنند آیا توافق اجرا شده است یا نه." },
+            { "language": "ar", "text": "ينبغي أن تكون الخاتمة محددة بما يكفي كي يستطيع جميع المشاركين لاحقًا التحقق مما إذا كان الاتفاق قد نُفذ." },
+            { "language": "tr", "text": "Kapanış, tüm katılanların daha sonra anlaşmanın uygulanıp uygulanmadığını kontrol edebileceği kadar somut olmalıdır." },
+            { "language": "ru", "text": "Завершение должно быть достаточно конкретным, чтобы все участники позже могли проверить, соблюдено ли соглашение." },
+            { "language": "ckb", "text": "کۆتایی پێویستە ئەوەندە دیاریکراو بێت کە هەموو بەشداربووان دواتر بتوانن بپشکنن ئایا ڕێککەوتنەکە جێبەجێ کراوە." },
+            { "language": "kmr", "text": "Dawî divê ewqas konkret be ku hemû beşdar paşê bikarin kontrol bikin ka lihevhatin pêk hatiye." },
+            { "language": "pl", "text": "Zakończenie powinno być na tyle konkretne, aby wszyscy uczestnicy mogli później sprawdzić, czy ustalenie zostało dotrzymane." },
+            { "language": "ro", "text": "Încheierea trebuie să fie suficient de concretă încât toți participanții să poată verifica ulterior dacă acordul a fost respectat." },
+            { "language": "sq", "text": "Përmbyllja duhet të jetë aq konkrete sa të gjithë pjesëmarrësit të mund të kontrollojnë më vonë nëse marrëveshja u respektua." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "multi-party-neighbor-conflict-meeting",
+          "placement": "detail-header",
+          "purpose": "Illustrate a neutral hallway meeting where several neighbors clarify shared-house issues with a moderator.",
+          "altText": "Mehrere Nachbarn besprechen mit einer Moderatorin im Hausflur ein kurzes Protokoll zu Flur, Waschküche und Ruhezeiten.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Several neighbors discuss a short protocol about the hallway, laundry room, and quiet hours with a moderator in the building hallway." },
+            { "language": "fa", "text": "چند همسایه با یک میانجی در راهروی ساختمان درباره صورت‌جلسه کوتاه مربوط به راهرو، رخت‌شوی‌خانه و زمان سکوت صحبت می‌کنند." },
+            { "language": "ar", "text": "عدة جيران يناقشون مع وسيطة في ممر المبنى محضرًا قصيرًا حول الممر وغرفة الغسيل وأوقات الهدوء." },
+            { "language": "tr", "text": "Birkaç komşu, bina koridorunda bir moderatörle koridor, çamaşır odası ve sessiz saatler hakkında kısa bir tutanağı görüşüyor." },
+            { "language": "ru", "text": "Несколько соседей обсуждают с модератором в подъезде короткий протокол о коридоре, прачечной и тихих часах." },
+            { "language": "ckb", "text": "چەند هاوسێ لەگەڵ ناوبژیوانێک لە ڕێڕەوی بینادا پڕۆتۆکۆڵێکی کورت دەربارەی ڕێڕەو، ژووری شۆردن و کاتەکانی ئارامی گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Çend cîran bi navbeynkarê re li korîdora avahiyê protokoleke kurt li ser korîdor, odeya cilşûştinê û demên bêdengiyê gotûbêj dikin." },
+            { "language": "pl", "text": "Kilku sąsiadów omawia z moderatorką na klatce schodowej krótki protokół dotyczący korytarza, pralni i ciszy nocnej." },
+            { "language": "ro", "text": "Mai mulți vecini discută cu o moderatoare pe holul imobilului un scurt proces-verbal despre hol, spălătorie și orele de liniște." },
+            { "language": "sq", "text": "Disa fqinjë diskutojnë me një moderatore në korridorin e ndërtesës një procesverbal të shkurtër për korridorin, lavanderinë dhe oraret e qetësisë." }
+          ],
+          "imagePrompt": "Clean educational illustration, several neighbors and a neutral moderator in a building hallway, simple non-readable protocol sheet, calm multi-party housing discussion, no logos, no private data, no dramatic scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

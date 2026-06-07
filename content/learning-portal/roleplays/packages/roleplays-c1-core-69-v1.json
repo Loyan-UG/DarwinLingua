@@ -1,0 +1,845 @@
+{
+  "packageId": "roleplays-c1-core-69-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 69 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 69",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-c1-hochschule-seminardebatte-fuehren",
+      "linkedDialogueSlug": null,
+      "title": "C1 Hochschule Seminardebatte führen",
+      "titleTranslations": [
+        { "language": "en", "text": "C1 leading a university seminar debate" },
+        { "language": "fa", "text": "هدایت بحث سمیناری دانشگاهی در C1" },
+        { "language": "ar", "text": "إدارة نقاش حلقة دراسية جامعية في C1" },
+        { "language": "tr", "text": "C1 düzeyinde üniversite semineri tartışması yürütmek" },
+        { "language": "ru", "text": "Ведение университетской семинарской дискуссии на C1" },
+        { "language": "ckb", "text": "بەڕێوەبردنی گفتوگۆی سیمیناری زانکۆیی لە C1" },
+        { "language": "kmr", "text": "Rêvebirina nîqaşa semînera zanîngehê di C1 de" },
+        { "language": "pl", "text": "Prowadzenie debaty seminaryjnej na uczelni na C1" },
+        { "language": "ro", "text": "Conducerea unei dezbateri de seminar universitar la C1" },
+        { "language": "sq", "text": "Drejtimi i një debati seminarik universitar në C1" }
+      ],
+      "description": "In einer Hochschuldebatte diskutieren Sie, ob KI-Werkzeuge in Seminararbeiten erlaubt werden sollten. Sie müssen eine These formulieren, Beobachtungen als begrenzte Evidenz nutzen, wissenschaftliche Vorsicht zeigen und Einwände respektvoll aufnehmen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a university debate, you discuss whether AI tools should be allowed in seminar papers. You must formulate a thesis, use observations as limited evidence, show scholarly caution, and respond respectfully to objections." },
+        { "language": "fa", "text": "در یک بحث دانشگاهی درباره این گفت‌وگو می‌کنید که آیا ابزارهای هوش مصنوعی در کارهای سمیناری مجاز باشند یا نه. باید تز بیان کنید، مشاهده‌ها را به‌عنوان شواهد محدود به‌کار ببرید، احتیاط علمی نشان دهید و به ایرادها محترمانه پاسخ دهید." },
+        { "language": "ar", "text": "في نقاش جامعي تناقش ما إذا كان ينبغي السماح بأدوات الذكاء الاصطناعي في الأعمال السمينارية. عليك صياغة أطروحة، واستخدام الملاحظات كدليل محدود، وإظهار حذر علمي، والتعامل باحترام مع الاعتراضات." },
+        { "language": "tr", "text": "Bir üniversite tartışmasında yapay zekâ araçlarının seminer ödevlerinde izinli olup olmamasını tartışırsınız. Bir tez formüle etmeli, gözlemleri sınırlı kanıt olarak kullanmalı, akademik ihtiyat göstermeli ve itirazlara saygılı yanıt vermelisiniz." },
+        { "language": "ru", "text": "В университетской дискуссии Вы обсуждаете, следует ли разрешать инструменты ИИ в семинарских работах. Нужно сформулировать тезис, использовать наблюдения как ограниченное доказательство, проявить научную осторожность и уважительно ответить на возражения." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی زانکۆییدا باس دەکەیت ئایا ئامرازەکانی زیرەکی دەستکرد لە کارە سیمینارییەکاندا ڕێگەپێدراو بن یان نا. پێویستە تێزێک دابڕێژیت، تێبینییەکان وەک بەڵگەی سنووردار بەکاربهێنیت، ئاگاداری زانستی نیشان بدەیت و بە ڕێزەوە وەڵامی ناڕەزاییەکان بدەیتەوە." },
+        { "language": "kmr", "text": "Di nîqaşeke zanîngehê de hûn nîqaş dikin ka divê amûrên hişê çêkirî di karên semînerê de destûr bê dayîn an na. Divê hûn tezek formule bikin, çavdêriyan wekî delîla sînordar bikar bînin, baldarîya zanistî nîşan bidin û bi rêz bersiva nerazîbûnan bidin." },
+        { "language": "pl", "text": "W debacie akademickiej omawia Pan, czy narzędzia AI powinny być dozwolone w pracach seminaryjnych. Trzeba sformułować tezę, wykorzystać obserwacje jako ograniczone dowody, okazać ostrożność naukową i z szacunkiem podjąć zastrzeżenia." },
+        { "language": "ro", "text": "Într-o dezbatere universitară discutați dacă instrumentele de inteligență artificială ar trebui permise în lucrările de seminar. Trebuie să formulați o teză, să folosiți observații ca dovezi limitate, să arătați prudență academică și să răspundeți respectuos la obiecții." },
+        { "language": "sq", "text": "Në një debat universitar diskutoni nëse mjetet e inteligjencës artificiale duhet të lejohen në punimet seminarike. Duhet të formuloni tezë, të përdorni vëzhgime si dëshmi të kufizuara, të tregoni kujdes shkencor dhe t'u përgjigjeni me respekt kundërshtimeve." }
+      ],
+      "learnerGoal": "An einer Seminardebatte teilnehmen: eine klare These nennen, Beobachtungen vorsichtig als Evidenz einordnen, berechtigte Einwände aufnehmen, akademische Grenzen formulieren und eine tragfähige Seminarregel vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Participate in a seminar debate: state a clear thesis, classify observations cautiously as evidence, take up justified objections, formulate academic limits, and propose a viable seminar rule." },
+        { "language": "fa", "text": "در یک بحث سمیناری شرکت کنید: تز روشن بیان کنید، مشاهده‌ها را با احتیاط به‌عنوان شاهد طبقه‌بندی کنید، ایرادهای موجه را بپذیرید، مرزهای دانشگاهی را بیان کنید و یک قاعده عملی برای سمینار پیشنهاد دهید." },
+        { "language": "ar", "text": "شارك في نقاش سميناري: اذكر أطروحة واضحة، وصنف الملاحظات بحذر كدليل، وتناول الاعتراضات المبررة، وصغ حدوداً أكاديمية، واقترح قاعدة سمينار قابلة للتطبيق." },
+        { "language": "tr", "text": "Bir seminer tartışmasına katılın: net bir tez belirtin, gözlemleri dikkatli biçimde kanıt olarak sınıflandırın, haklı itirazları ele alın, akademik sınırları formüle edin ve uygulanabilir bir seminer kuralı önerin." },
+        { "language": "ru", "text": "Участвовать в семинарской дискуссии: назвать ясный тезис, осторожно классифицировать наблюдения как доказательства, учесть обоснованные возражения, сформулировать академические границы и предложить жизнеспособное правило семинара." },
+        { "language": "ckb", "text": "لە گفتوگۆی سیمیناریدا بەشداری بکە: تێزێکی ڕوون ناو ببە، تێبینییەکان بە ئاگاداری وەک بەڵگە پۆلێن بکە، ناڕەزاییە ڕەواکانی وەربگرە، سنووری ئەکادیمی دابڕێژە و ڕێسایەکی کارایی سیمینار پێشنیار بکە." },
+        { "language": "kmr", "text": "Di nîqaşa semînerê de beşdar bibin: tezeke zelal bibêjin, çavdêriyan bi baldarî wekî delîl binirxînin, nerazîbûnên maqûl bigirin, sînorên akademîk formule bikin û rêzikeke semînerê ya pêkanbar pêşniyar bikin." },
+        { "language": "pl", "text": "Wziąć udział w debacie seminaryjnej: nazwać jasną tezę, ostrożnie zaklasyfikować obserwacje jako dowody, podjąć uzasadnione zastrzeżenia, sformułować granice akademickie i zaproponować wykonalną zasadę seminarium." },
+        { "language": "ro", "text": "Participați la o dezbatere de seminar: formulați o teză clară, încadrați prudent observațiile ca dovezi, preluați obiecții justificate, formulați limite academice și propuneți o regulă de seminar viabilă." },
+        { "language": "sq", "text": "Merrni pjesë në një debat seminarik: përmendni një tezë të qartë, klasifikoni vëzhgimet me kujdes si dëshmi, trajtoni kundërshtimet e arsyeshme, formuloni kufij akademikë dhe propozoni një rregull seminarik të zbatueshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 69,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Seminarteilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Seminar participant" },
+            { "language": "fa", "text": "شرکت‌کننده سمینار" },
+            { "language": "ar", "text": "مشارك في السمينار" },
+            { "language": "tr", "text": "Seminer katılımcısı" },
+            { "language": "ru", "text": "Участник семинара" },
+            { "language": "ckb", "text": "بەشداربووی سیمینار" },
+            { "language": "kmr", "text": "Beşdarê semînerê" },
+            { "language": "pl", "text": "Uczestnik seminarium" },
+            { "language": "ro", "text": "Participant la seminar" },
+            { "language": "sq", "text": "Pjesëmarrës seminari" }
+          ]
+        },
+        {
+          "roleKey": "teacher",
+          "displayName": "Dozent/in",
+          "translations": [
+            { "language": "en", "text": "Lecturer" },
+            { "language": "fa", "text": "استاد/مدرس" },
+            { "language": "ar", "text": "المحاضر" },
+            { "language": "tr", "text": "Öğretim görevlisi" },
+            { "language": "ru", "text": "Преподаватель" },
+            { "language": "ckb", "text": "مامۆستای زانکۆ" },
+            { "language": "kmr", "text": "Mamosteyê zanîngehê" },
+            { "language": "pl", "text": "Prowadzący" },
+            { "language": "ro", "text": "Cadru didactic" },
+            { "language": "sq", "text": "Pedagog" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Diskutieren wir die Frage: Sollten KI-Werkzeuge in Seminararbeiten erlaubt werden? Bitte verbinden Sie eine klare These mit Belegen und wissenschaftlicher Vorsicht.",
+          "translations": [
+            { "language": "en", "text": "Let us discuss the question: Should AI tools be allowed in seminar papers? Please connect a clear thesis with evidence and scholarly caution." },
+            { "language": "fa", "text": "بیایید این سؤال را بحث کنیم: آیا ابزارهای هوش مصنوعی باید در کارهای سمیناری مجاز باشند؟ لطفاً یک تز روشن را با شواهد و احتیاط علمی پیوند دهید." },
+            { "language": "ar", "text": "لنناقش السؤال: هل ينبغي السماح بأدوات الذكاء الاصطناعي في الأعمال السمينارية؟ من فضلك اربط أطروحة واضحة بالأدلة والحذر العلمي." },
+            { "language": "tr", "text": "Şu soruyu tartışalım: Yapay zekâ araçları seminer ödevlerinde izinli olmalı mı? Lütfen net bir tezi kanıtlar ve akademik ihtiyatla bağlayın." },
+            { "language": "ru", "text": "Обсудим вопрос: следует ли разрешать инструменты ИИ в семинарских работах? Пожалуйста, свяжите ясный тезис с доказательствами и научной осторожностью." },
+            { "language": "ckb", "text": "با ئەم پرسیارە باس بکەین: ئایا ئامرازەکانی زیرەکی دەستکرد پێویستە لە کارە سیمینارییەکاندا ڕێگەپێدراو بن؟ تکایە تێزێکی ڕوون بە بەڵگە و ئاگاداری زانستی ببەستەوە." },
+            { "language": "kmr", "text": "Werin vê pirsê nîqaş bikin: Ma divê amûrên hişê çêkirî di karên semînerê de destûr bê dayîn? Ji kerema xwe tezeke zelal bi delîl û baldarîya zanistî ve girêdin." },
+            { "language": "pl", "text": "Omówmy pytanie: czy narzędzia AI powinny być dozwolone w pracach seminaryjnych? Proszę połączyć jasną tezę z dowodami i ostrożnością naukową." },
+            { "language": "ro", "text": "Să discutăm întrebarea: ar trebui permise instrumentele de inteligență artificială în lucrările de seminar? Vă rog să legați o teză clară de dovezi și prudență academică." },
+            { "language": "sq", "text": "Le të diskutojmë pyetjen: A duhet të lejohen mjetet e inteligjencës artificiale në punimet seminarike? Ju lutem lidhni një tezë të qartë me dëshmi dhe kujdes shkencor." }
+          ],
+          "function": "seminar-debate-prompt",
+          "toneNote": "formal academic prompt"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Meine These wäre: KI-Werkzeuge sollten nicht pauschal verboten, sondern unter Transparenzpflicht erlaubt werden. Entscheidend ist, ob die eigenständige Argumentation der Studierenden sichtbar bleibt.",
+          "translations": [
+            { "language": "en", "text": "My thesis would be: AI tools should not be banned across the board, but allowed with a transparency obligation. The decisive question is whether students' independent argumentation remains visible." },
+            { "language": "fa", "text": "تز من این است: ابزارهای هوش مصنوعی نباید به‌طور کلی ممنوع شوند، بلکه باید با الزام شفافیت مجاز باشند. نکته تعیین‌کننده این است که آیا استدلال مستقل دانشجویان قابل مشاهده می‌ماند یا نه." },
+            { "language": "ar", "text": "أطروحتي هي: لا ينبغي حظر أدوات الذكاء الاصطناعي بشكل عام، بل السماح بها مع واجب الشفافية. الأمر الحاسم هو ما إذا بقيت حجة الطلاب المستقلة مرئية." },
+            { "language": "tr", "text": "Tezim şu olurdu: Yapay zekâ araçları genel olarak yasaklanmamalı, şeffaflık yükümlülüğüyle izin verilmelidir. Belirleyici olan, öğrencilerin bağımsız argümantasyonunun görünür kalıp kalmadığıdır." },
+            { "language": "ru", "text": "Мой тезис таков: инструменты ИИ не следует запрещать полностью, а разрешать при обязательной прозрачности. Решающим является то, остается ли видимой самостоятельная аргументация студентов." },
+            { "language": "ckb", "text": "تێزی من ئەمەیە: ئامرازەکانی زیرەکی دەستکرد نابێت بە گشتی قەدەغە بکرێن، بەڵکو لەگەڵ ئەرکی شەفافیەت ڕێگەیان پێ بدرێت. گرنگ ئەوەیە ئایا بەڵگەسازیی سەربەخۆی خوێندکاران دیار دەمێنێتەوە یان نا." },
+            { "language": "kmr", "text": "Teza min ev e: Amûrên hişê çêkirî divê bi tevahî neyên qedexekirin, lê bi erkê zelalbûnê destûr bê dayîn. Ya girîng ev e ka argûmanên serbixwe yên xwendekaran xuya dimînin an na." },
+            { "language": "pl", "text": "Moja teza brzmiałaby: narzędzi AI nie należy zakazywać ogólnie, lecz dopuścić je przy obowiązku przejrzystości. Decydujące jest to, czy samodzielna argumentacja studentów pozostaje widoczna." },
+            { "language": "ro", "text": "Teza mea ar fi: instrumentele de inteligență artificială nu ar trebui interzise în bloc, ci permise cu obligație de transparență. Decisiv este dacă argumentarea independentă a studenților rămâne vizibilă." },
+            { "language": "sq", "text": "Teza ime do të ishte: mjetet e inteligjencës artificiale nuk duhet të ndalohen në mënyrë të përgjithshme, por të lejohen me detyrim transparence. Vendimtare është nëse argumentimi i pavarur i studentëve mbetet i dukshëm." }
+          ],
+          "function": "state-thesis",
+          "toneNote": "clear and academic"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "teacher",
+          "baseText": "Welche Belege oder Beobachtungen stützen diese These?",
+          "translations": [
+            { "language": "en", "text": "Which evidence or observations support this thesis?" },
+            { "language": "fa", "text": "کدام شواهد یا مشاهده‌ها از این تز پشتیبانی می‌کنند؟" },
+            { "language": "ar", "text": "ما الأدلة أو الملاحظات التي تدعم هذه الأطروحة؟" },
+            { "language": "tr", "text": "Hangi kanıtlar veya gözlemler bu tezi destekliyor?" },
+            { "language": "ru", "text": "Какие доказательства или наблюдения поддерживают этот тезис?" },
+            { "language": "ckb", "text": "کام بەڵگە یان تێبینی پشتگیریی ئەم تێزە دەکات؟" },
+            { "language": "kmr", "text": "Kîjan delîl an çavdêrî vê tezê piştgirî dikin?" },
+            { "language": "pl", "text": "Jakie dowody albo obserwacje wspierają tę tezę?" },
+            { "language": "ro", "text": "Ce dovezi sau observații susțin această teză?" },
+            { "language": "sq", "text": "Cilat dëshmi ose vëzhgime e mbështesin këtë tezë?" }
+          ],
+          "function": "ask-evidence",
+          "toneNote": "academic"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Als Beleg würde ich vorsichtig auf die Praxis verweisen: Viele Studierende nutzen bereits digitale Hilfen für Recherche, Strukturierung oder sprachliche Überarbeitung. Ein Verbot würde diese Nutzung eher verdecken als kontrollierbar machen.",
+          "translations": [
+            { "language": "en", "text": "As evidence, I would cautiously refer to current practice: many students already use digital aids for research, structuring, or language revision. A ban would tend to hide this use rather than make it controllable." },
+            { "language": "fa", "text": "به‌عنوان شاهد، با احتیاط به عمل موجود اشاره می‌کنم: بسیاری از دانشجویان همین حالا از ابزارهای دیجیتال برای جست‌وجو، ساختاربندی یا ویرایش زبانی استفاده می‌کنند. ممنوعیت احتمالاً این استفاده را پنهان می‌کند، نه قابل کنترل." },
+            { "language": "ar", "text": "كدليل، سأشير بحذر إلى الممارسة الحالية: كثير من الطلاب يستخدمون بالفعل أدوات رقمية للبحث أو التنظيم أو المراجعة اللغوية. الحظر سيخفي هذا الاستخدام أكثر مما يجعله قابلاً للرقابة." },
+            { "language": "tr", "text": "Kanıt olarak dikkatli biçimde mevcut uygulamaya atıf yapardım: birçok öğrenci araştırma, yapılandırma veya dilsel düzeltme için zaten dijital yardımcılar kullanıyor. Bir yasak bu kullanımı kontrol edilebilir kılmaktan çok gizler." },
+            { "language": "ru", "text": "В качестве доказательства я осторожно сослался бы на практику: многие студенты уже используют цифровые средства для исследования, структурирования или языковой правки. Запрет скорее скрыл бы это использование, чем сделал бы его контролируемым." },
+            { "language": "ckb", "text": "وەک بەڵگە، بە ئاگاداری ئاماژە بە پراکتیزەی ئێستا دەکەم: زۆر خوێندکار پێشتر یارمەتی دیجیتاڵی بۆ گەڕان، ڕێکخستن یان چاککردنەوەی زمانی بەکار دەهێنن. قەدەغەکردن ئەم بەکارهێنانە زیاتر دەشارێتەوە نەک قابل کۆنترۆڵی بکات." },
+            { "language": "kmr", "text": "Wekî delîl ez bi baldarî li pratîka heyî vedigerim: gelek xwendekar jixwe amûrên dijîtal ji bo lêkolîn, avahîkirin an serrastkirina zimanî bikar tînin. Qedexe kirin dê vê bikaranînê zêdetir veşêre, ne ku kontrolbar bike." },
+            { "language": "pl", "text": "Jako dowód ostrożnie odwołałbym się do praktyki: wielu studentów już korzysta z narzędzi cyfrowych do wyszukiwania, strukturyzowania albo korekty językowej. Zakaz raczej ukryłby to użycie, niż uczynił je kontrolowalnym." },
+            { "language": "ro", "text": "Ca dovadă, m-aș referi prudent la practica actuală: mulți studenți folosesc deja ajutoare digitale pentru cercetare, structurare sau revizuire lingvistică. O interdicție ar ascunde mai degrabă această utilizare decât ar face-o controlabilă." },
+            { "language": "sq", "text": "Si dëshmi, do t'i referohesha me kujdes praktikës aktuale: shumë studentë tashmë përdorin mjete digjitale për kërkim, strukturim ose rishikim gjuhësor. Ndalimi do ta fshihte më shumë këtë përdorim sesa ta bënte të kontrollueshëm." }
+          ],
+          "function": "limited-evidence",
+          "toneNote": "cautious evidence"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Ein Einwand lautet: Wenn KI erlaubt ist, wird eigenständiges Denken geschwächt. Wie reagieren Sie darauf?",
+          "translations": [
+            { "language": "en", "text": "One objection is: if AI is allowed, independent thinking will be weakened. How do you respond to that?" },
+            { "language": "fa", "text": "یک ایراد این است: اگر هوش مصنوعی مجاز باشد، تفکر مستقل ضعیف می‌شود. شما چگونه پاسخ می‌دهید؟" },
+            { "language": "ar", "text": "أحد الاعتراضات هو: إذا سُمح بالذكاء الاصطناعي، فسيضعف التفكير المستقل. كيف ترد على ذلك؟" },
+            { "language": "tr", "text": "Bir itiraz şu: Yapay zekâya izin verilirse bağımsız düşünme zayıflar. Buna nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Одно возражение таково: если ИИ разрешен, самостоятельное мышление ослабнет. Как Вы на это ответите?" },
+            { "language": "ckb", "text": "ناڕەزاییەک ئەمەیە: ئەگەر زیرەکی دەستکرد ڕێگەپێدراو بێت، بیرکردنەوەی سەربەخۆ لاواز دەبێت. چۆن وەڵام دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Nerazîbûnek ev e: heke hişê çêkirî destûr be, ramanê serbixwe lawaz dibe. Hûn çawa bersiv didin?" },
+            { "language": "pl", "text": "Jedno zastrzeżenie brzmi: jeśli AI będzie dozwolona, samodzielne myślenie osłabnie. Jak Pan na to odpowie?" },
+            { "language": "ro", "text": "O obiecție este: dacă inteligența artificială este permisă, gândirea independentă va fi slăbită. Cum răspundeți?" },
+            { "language": "sq", "text": "Një kundërshtim është: nëse inteligjenca artificiale lejohet, mendimi i pavarur dobësohet. Si përgjigjeni?" }
+          ],
+          "function": "ask-objection",
+          "toneNote": "critical"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Der Einwand ist berechtigt, wenn KI unreflektiert genutzt wird. Deshalb sollte nicht das Werkzeug selbst entscheidend sein, sondern die Dokumentation: Was wurde genutzt, wofür, und welche Entscheidungen hat die Person selbst getroffen?",
+          "translations": [
+            { "language": "en", "text": "The objection is justified if AI is used without reflection. Therefore the tool itself should not be decisive, but the documentation: what was used, for what purpose, and which decisions did the person make independently?" },
+            { "language": "fa", "text": "این ایراد زمانی موجه است که هوش مصنوعی بدون تأمل استفاده شود. بنابراین خود ابزار نباید تعیین‌کننده باشد، بلکه مستندسازی: چه چیزی استفاده شد، برای چه منظوری، و فرد کدام تصمیم‌ها را خودش گرفته است؟" },
+            { "language": "ar", "text": "الاعتراض مبرر إذا استُخدم الذكاء الاصطناعي بلا تأمل. لذلك لا ينبغي أن تكون الأداة نفسها هي الحاسمة، بل التوثيق: ما الذي استُخدم، ولأي غرض، وما القرارات التي اتخذها الشخص بنفسه؟" },
+            { "language": "tr", "text": "İtiraz, yapay zekâ düşünmeden kullanıldığında haklıdır. Bu yüzden belirleyici olan aracın kendisi değil, belgelemedir: ne kullanıldı, ne için kullanıldı ve kişi hangi kararları kendisi verdi?" },
+            { "language": "ru", "text": "Возражение обосновано, если ИИ используется без рефлексии. Поэтому решающим должен быть не сам инструмент, а документация: что использовалось, для чего и какие решения человек принял сам?" },
+            { "language": "ckb", "text": "ناڕەزاییەکە ڕەوایە ئەگەر زیرەکی دەستکرد بێ بیرکردنەوە بەکاربهێنرێت. بۆیە نابێت خودی ئامرازەکە گرنگترین بێت، بەڵکو بەڵگەنامەکردن: چی بەکار هات، بۆ چی، و کەسەکە کام بڕیارەکانی خۆی داوە؟" },
+            { "language": "kmr", "text": "Nerazîbûn maqûl e heke hişê çêkirî bê raman were bikaranîn. Ji ber vê yekê divê ne amûr bixwe, lê belgekirin girîng be: çi hate bikaranîn, ji bo çi, û kesê xwe kîjan biryar girtin?" },
+            { "language": "pl", "text": "Zastrzeżenie jest uzasadnione, jeśli AI jest używana bez refleksji. Dlatego decydujące nie powinno być samo narzędzie, lecz dokumentacja: czego użyto, po co i jakie decyzje osoba podjęła samodzielnie?" },
+            { "language": "ro", "text": "Obiecția este justificată dacă inteligența artificială este folosită fără reflecție. De aceea decisiv nu ar trebui să fie instrumentul în sine, ci documentarea: ce s-a folosit, pentru ce și ce decizii a luat persoana singură?" },
+            { "language": "sq", "text": "Kundërshtimi është i arsyeshëm nëse inteligjenca artificiale përdoret pa reflektim. Prandaj vendimtare nuk duhet të jetë vetë mjeti, por dokumentimi: çfarë u përdor, për çfarë dhe cilat vendime i mori vetë personi?" }
+          ],
+          "function": "respond-to-objection",
+          "toneNote": "acknowledging and precise"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "teacher",
+          "baseText": "Wie gehen Sie mit der Frage der Chancengleichheit um?",
+          "translations": [
+            { "language": "en", "text": "How do you deal with the issue of equal opportunity?" },
+            { "language": "fa", "text": "با مسئله برابری فرصت‌ها چگونه برخورد می‌کنید؟" },
+            { "language": "ar", "text": "كيف تتعامل مع مسألة تكافؤ الفرص؟" },
+            { "language": "tr", "text": "Fırsat eşitliği meselesini nasıl ele alırsınız?" },
+            { "language": "ru", "text": "Как Вы относитесь к вопросу равенства возможностей?" },
+            { "language": "ckb", "text": "چۆن مامەڵە لەگەڵ بابەتی یەکسانی هەلی دەکەیت؟" },
+            { "language": "kmr", "text": "Hûn çawa bi mijara derfetên wekhev re didin?" },
+            { "language": "pl", "text": "Jak odnosi się Pan do kwestii równych szans?" },
+            { "language": "ro", "text": "Cum abordați problema egalității de șanse?" },
+            { "language": "sq", "text": "Si e trajtoni çështjen e mundësive të barabarta?" }
+          ],
+          "function": "ask-equity",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Gerade Chancengleichheit spricht für klare Regeln. Wenn jede Person andere Werkzeuge nutzt, entstehen Unterschiede. Wenn die Hochschule aber erlaubte Werkzeuge, Schulungen und Alternativen bereitstellt, wird der Zugang eher vergleichbar.",
+          "translations": [
+            { "language": "en", "text": "Equal opportunity in particular argues for clear rules. If everyone uses different tools, differences arise. But if the university provides approved tools, training, and alternatives, access becomes more comparable." },
+            { "language": "fa", "text": "دقیقاً برابری فرصت‌ها به نفع قواعد روشن است. اگر هر فرد از ابزارهای متفاوتی استفاده کند، تفاوت ایجاد می‌شود. اما اگر دانشگاه ابزارهای مجاز، آموزش و جایگزین‌ها را فراهم کند، دسترسی قابل‌مقایسه‌تر می‌شود." },
+            { "language": "ar", "text": "تكافؤ الفرص تحديداً يؤيد وجود قواعد واضحة. إذا استخدم كل شخص أدوات مختلفة تنشأ فروق. أما إذا وفرت الجامعة أدوات مسموحة وتدريباً وبدائل، يصبح الوصول أكثر قابلية للمقارنة." },
+            { "language": "tr", "text": "Özellikle fırsat eşitliği net kuralları destekler. Her kişi farklı araçlar kullanırsa farklılıklar oluşur. Ancak üniversite izinli araçlar, eğitimler ve alternatifler sağlarsa erişim daha karşılaştırılabilir olur." },
+            { "language": "ru", "text": "Именно равенство возможностей говорит в пользу ясных правил. Если каждый использует разные инструменты, возникают различия. Но если университет предоставляет разрешенные инструменты, обучение и альтернативы, доступ становится более сопоставимым." },
+            { "language": "ckb", "text": "بە تایبەتی یەکسانی هەل پاڵپشتی ڕێسای ڕوون دەکات. ئەگەر هەر کەس ئامرازی جیاواز بەکاربهێنێت، جیاوازی دروست دەبێت. بەڵام ئەگەر زانکۆ ئامرازە ڕێگەپێدراوەکان، فێرکاری و جێگرەوەکان دابین بکات، دەستگەیشتن زیاتر قابل بەراورد دەبێت." },
+            { "language": "kmr", "text": "Bi taybetî derfetên wekhev ji bo rêzikên zelal diaxivin. Heke her kes amûrên cuda bikar bîne, cudahî çêdibin. Lê heke zanîngeh amûrên destûrdar, perwerdehî û alternatîvan peyda bike, gihîştin berawirdbar dibe." },
+            { "language": "pl", "text": "Właśnie równość szans przemawia za jasnymi zasadami. Jeśli każda osoba używa innych narzędzi, powstają różnice. Jeśli jednak uczelnia zapewnia dozwolone narzędzia, szkolenia i alternatywy, dostęp staje się bardziej porównywalny." },
+            { "language": "ro", "text": "Tocmai egalitatea de șanse vorbește pentru reguli clare. Dacă fiecare folosește instrumente diferite, apar diferențe. Dar dacă universitatea oferă instrumente permise, instruire și alternative, accesul devine mai comparabil." },
+            { "language": "sq", "text": "Pikërisht mundësitë e barabarta flasin për rregulla të qarta. Nëse çdo person përdor mjete të ndryshme, krijohen dallime. Por nëse universiteti ofron mjete të lejuara, trajnime dhe alternativa, qasja bëhet më e krahasueshme." }
+          ],
+          "function": "equity-response",
+          "toneNote": "policy-oriented"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Ist das nicht letztlich eine Normalisierung von Täuschung?",
+          "translations": [
+            { "language": "en", "text": "Is that not ultimately a normalization of deception?" },
+            { "language": "fa", "text": "آیا این در نهایت عادی‌سازی تقلب نیست؟" },
+            { "language": "ar", "text": "أليس هذا في النهاية تطبيعاً للخداع؟" },
+            { "language": "tr", "text": "Bu sonuçta aldatmanın normalleştirilmesi değil mi?" },
+            { "language": "ru", "text": "Разве это в конечном счете не нормализация обмана?" },
+            { "language": "ckb", "text": "ئایا ئەمە لە کۆتاییدا ئاساییکردنەوەی فێڵ نییە؟" },
+            { "language": "kmr", "text": "Ma ev di dawiyê de normal kirina xapandinê nîne?" },
+            { "language": "pl", "text": "Czy to ostatecznie nie jest normalizacja oszustwa?" },
+            { "language": "ro", "text": "Nu este aceasta, în cele din urmă, o normalizare a înșelăciunii?" },
+            { "language": "sq", "text": "A nuk është kjo në fund normalizim i mashtrimit?" }
+          ],
+          "function": "strong-objection",
+          "toneNote": "direct challenge"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Täuschung beginnt dort, wo fremde Leistung als eigene ausgegeben wird. Eine dokumentierte Nutzung zur Ideensammlung, Strukturprüfung oder sprachlichen Korrektur ist etwas anderes, solange die Argumentation und Verantwortung bei der Person bleiben.",
+          "translations": [
+            { "language": "en", "text": "Deception begins where someone else's work is presented as one's own. Documented use for collecting ideas, checking structure, or language correction is different, as long as argumentation and responsibility remain with the person." },
+            { "language": "fa", "text": "تقلب از جایی شروع می‌شود که کار دیگری به‌عنوان کار خود ارائه شود. استفاده مستند برای جمع‌آوری ایده، بررسی ساختار یا اصلاح زبانی چیز دیگری است، تا زمانی که استدلال و مسئولیت نزد خود فرد بماند." },
+            { "language": "ar", "text": "يبدأ الخداع عندما يُقدَّم عمل شخص آخر كعمل شخصي. أما الاستخدام الموثق لجمع الأفكار أو فحص البنية أو التصحيح اللغوي فهو أمر آخر، ما دامت الحجة والمسؤولية لدى الشخص نفسه." },
+            { "language": "tr", "text": "Aldatma, başkasının emeği kendi emeği gibi sunulduğu yerde başlar. Fikir toplama, yapı kontrolü veya dil düzeltmesi için belgelenmiş kullanım farklıdır; argümantasyon ve sorumluluk kişide kaldığı sürece." },
+            { "language": "ru", "text": "Обман начинается там, где чужая работа выдается за собственную. Документированное использование для сбора идей, проверки структуры или языковой правки — другое дело, пока аргументация и ответственность остаются у человека." },
+            { "language": "ckb", "text": "فێڵ لەوێ دەست پێدەکات کە کاری کەسی تر وەک کاری خۆت پێشکەش بکرێت. بەکارهێنانی بەڵگەنامەکراو بۆ کۆکردنەوەی بیرۆکە، پشکنینی پێکهاتە یان چاککردنەوەی زمانی شتێکی ترە، مادام بەڵگەسازی و بەرپرسیارێتی لە لای کەسەکە بمێنێتەوە." },
+            { "language": "kmr", "text": "Xapandin li wir dest pê dike ku karê kesekî din wekî karê xwe were pêşkêşkirin. Bikaranîna belgekirî ji bo komkirina ramanan, kontrola avahiyê an serrastkirina zimanî tiştekî din e, heta ku argûman û berpirsiyarî li cem kesê bimînin." },
+            { "language": "pl", "text": "Oszustwo zaczyna się tam, gdzie cudza praca jest przedstawiana jako własna. Udokumentowane użycie do zbierania pomysłów, sprawdzania struktury albo korekty językowej to coś innego, o ile argumentacja i odpowiedzialność pozostają przy osobie." },
+            { "language": "ro", "text": "Înșelăciunea începe acolo unde munca altcuiva este prezentată ca proprie. Utilizarea documentată pentru colectarea ideilor, verificarea structurii sau corectură lingvistică este altceva, atâta timp cât argumentarea și responsabilitatea rămân la persoană." },
+            { "language": "sq", "text": "Mashtrimi fillon aty ku puna e dikujt tjetër paraqitet si e vetja. Përdorimi i dokumentuar për mbledhje idesh, kontroll strukture ose korrigjim gjuhësor është diçka tjetër, për sa kohë argumentimi dhe përgjegjësia mbeten te personi." }
+          ],
+          "function": "define-distinction",
+          "toneNote": "firm and academic"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "teacher",
+          "baseText": "Welche Regel würden Sie für unser Seminar vorschlagen?",
+          "translations": [
+            { "language": "en", "text": "What rule would you propose for our seminar?" },
+            { "language": "fa", "text": "چه قاعده‌ای را برای سمینار ما پیشنهاد می‌کنید؟" },
+            { "language": "ar", "text": "ما القاعدة التي تقترحها لسمينارنا؟" },
+            { "language": "tr", "text": "Seminerimiz için hangi kuralı önerirsiniz?" },
+            { "language": "ru", "text": "Какое правило Вы предложили бы для нашего семинара?" },
+            { "language": "ckb", "text": "چ ڕێسایەک بۆ سیمینارەکەمان پێشنیار دەکەیت؟" },
+            { "language": "kmr", "text": "Hûn ji bo semînera me kîjan rêzikê pêşniyar dikin?" },
+            { "language": "pl", "text": "Jaką zasadę zaproponowałby Pan dla naszego seminarium?" },
+            { "language": "ro", "text": "Ce regulă ați propune pentru seminarul nostru?" },
+            { "language": "sq", "text": "Çfarë rregulli do të propozonit për seminarin tonë?" }
+          ],
+          "function": "ask-rule",
+          "toneNote": "practical conclusion"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde eine Offenlegungspflicht vorschlagen: Erlaubt sind Recherchehilfe, Strukturfeedback und sprachliche Korrektur; nicht erlaubt ist die Übernahme fertiger Argumentation ohne eigene Prüfung. Zusätzlich sollte eine kurze Reflexion erklären, wie das Werkzeug genutzt wurde.",
+          "translations": [
+            { "language": "en", "text": "I would propose a disclosure obligation: research assistance, structural feedback, and language correction are allowed; adopting finished argumentation without one's own review is not allowed. In addition, a short reflection should explain how the tool was used." },
+            { "language": "fa", "text": "من الزام به افشا را پیشنهاد می‌کنم: کمک در جست‌وجو، بازخورد ساختاری و اصلاح زبانی مجاز باشد؛ اما گرفتن استدلال آماده بدون بررسی خود فرد مجاز نباشد. علاوه بر آن، یک تأمل کوتاه باید توضیح دهد ابزار چگونه استفاده شده است." },
+            { "language": "ar", "text": "سأقترح واجب الإفصاح: يُسمح بالمساعدة في البحث، والتغذية الراجعة حول البنية، والتصحيح اللغوي؛ ولا يُسمح بتبني حجة جاهزة دون مراجعة شخصية. بالإضافة إلى ذلك، ينبغي أن يوضح تأمل قصير كيف استُخدمت الأداة." },
+            { "language": "tr", "text": "Bir açıklama yükümlülüğü önerirdim: araştırma yardımı, yapı geri bildirimi ve dil düzeltmesi serbest; kişinin kendi incelemesi olmadan hazır argümantasyonun alınması serbest değil. Ayrıca kısa bir refleksiyon, aracın nasıl kullanıldığını açıklamalı." },
+            { "language": "ru", "text": "Я предложил бы обязанность раскрытия: разрешены помощь в исследовании, структурная обратная связь и языковая правка; не разрешено перенимать готовую аргументацию без собственной проверки. Кроме того, короткая рефлексия должна объяснять, как использовался инструмент." },
+            { "language": "ckb", "text": "من ئەرکی ئاشکراکردن پێشنیار دەکەم: یارمەتی لە گەڕان، پاشخانی پێکهاتە و چاککردنەوەی زمانی ڕێگەپێدراون؛ بەڵام وەرگرتنی بەڵگەسازیی تەواو بێ پشکنینی خۆی ڕێگەپێدراو نییە. هەروەها پێویستە بیرکردنەوەیەکی کورت ڕوون بکاتەوە ئامرازەکە چۆن بەکار هاتووە." },
+            { "language": "kmr", "text": "Ez erka eşkerekirinê pêşniyar dikim: alîkariya lêkolînê, vegera avahiyê û serrastkirina zimanî destûrdar in; lê wergirtina argûmanên amade bê kontrola xwe destûrdar nîne. Her wiha divê refleksiyoneke kurt rave bike ka amûr çawa hate bikaranîn." },
+            { "language": "pl", "text": "Zaproponowałbym obowiązek ujawnienia: dozwolona jest pomoc w researchu, informacja zwrotna o strukturze i korekta językowa; niedozwolone jest przejęcie gotowej argumentacji bez własnego sprawdzenia. Dodatkowo krótka refleksja powinna wyjaśnić, jak użyto narzędzia." },
+            { "language": "ro", "text": "Aș propune o obligație de transparență: sunt permise ajutorul la cercetare, feedbackul de structură și corectura lingvistică; nu este permisă preluarea unei argumentări gata făcute fără verificare proprie. În plus, o scurtă reflecție ar trebui să explice cum a fost folosit instrumentul." },
+            { "language": "sq", "text": "Do të propozoja detyrim për deklarim: lejohet ndihma në kërkim, feedbacku për strukturën dhe korrigjimi gjuhësor; nuk lejohet marrja e argumentimit të gatshëm pa kontroll personal. Përveç kësaj, një reflektim i shkurtër duhet të shpjegojë si u përdor mjeti." }
+          ],
+          "function": "seminar-rule-proposal",
+          "toneNote": "clear practical rule"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "transparent-thesis",
+              "text": "Meine These wäre: KI-Werkzeuge sollten nicht pauschal verboten, sondern unter Transparenzpflicht erlaubt werden. Entscheidend ist, ob die eigenständige Argumentation der Studierenden sichtbar bleibt.",
+              "translations": [
+                { "language": "en", "text": "My thesis would be: AI tools should not be banned across the board, but allowed with a transparency obligation. The decisive question is whether students' independent argumentation remains visible." },
+                { "language": "fa", "text": "تز من این است: ابزارهای هوش مصنوعی نباید به‌طور کلی ممنوع شوند، بلکه باید با الزام شفافیت مجاز باشند. نکته تعیین‌کننده این است که آیا استدلال مستقل دانشجویان قابل مشاهده می‌ماند یا نه." },
+                { "language": "ar", "text": "أطروحتي هي: لا ينبغي حظر أدوات الذكاء الاصطناعي بشكل عام، بل السماح بها مع واجب الشفافية. الأمر الحاسم هو ما إذا بقيت حجة الطلاب المستقلة مرئية." },
+                { "language": "tr", "text": "Tezim şu olurdu: Yapay zekâ araçları genel olarak yasaklanmamalı, şeffaflık yükümlülüğüyle izin verilmelidir. Belirleyici olan, öğrencilerin bağımsız argümantasyonunun görünür kalıp kalmadığıdır." },
+                { "language": "ru", "text": "Мой тезис таков: инструменты ИИ не следует запрещать полностью, а разрешать при обязательной прозрачности. Решающим является то, остается ли видимой самостоятельная аргументация студентов." },
+                { "language": "ckb", "text": "تێزی من ئەمەیە: ئامرازەکانی زیرەکی دەستکرد نابێت بە گشتی قەدەغە بکرێن، بەڵکو لەگەڵ ئەرکی شەفافیەت ڕێگەیان پێ بدرێت. گرنگ ئەوەیە ئایا بەڵگەسازیی سەربەخۆی خوێندکاران دیار دەمێنێتەوە یان نا." },
+                { "language": "kmr", "text": "Teza min ev e: Amûrên hişê çêkirî divê bi tevahî neyên qedexekirin, lê bi erkê zelalbûnê destûr bê dayîn. Ya girîng ev e ka argûmanên serbixwe yên xwendekaran xuya dimînin an na." },
+                { "language": "pl", "text": "Moja teza brzmiałaby: narzędzi AI nie należy zakazywać ogólnie, lecz dopuścić je przy obowiązku przejrzystości. Decydujące jest to, czy samodzielna argumentacja studentów pozostaje widoczna." },
+                { "language": "ro", "text": "Teza mea ar fi: instrumentele de inteligență artificială nu ar trebui interzise în bloc, ci permise cu obligație de transparență. Decisiv este dacă argumentarea independentă a studenților rămâne vizibilă." },
+                { "language": "sq", "text": "Teza ime do të ishte: mjetet e inteligjencës artificiale nuk duhet të ndalohen në mënyrë të përgjithshme, por të lejohen me detyrim transparence. Vendimtare është nëse argumentimi i pavarur i studentëve mbetet i dukshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die These ist klar, aber nicht absolut; sie nennt das akademische Kriterium der eigenständigen Argumentation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The thesis is clear but not absolute; it names the academic criterion of independent argumentation." },
+                { "language": "fa", "text": "خوب: تز روشن است اما مطلق نیست؛ معیار دانشگاهیِ استدلال مستقل را نام می‌برد." },
+                { "language": "ar", "text": "جيد: الأطروحة واضحة لكنها ليست مطلقة؛ فهي تسمي معيار الحجة الأكاديمية المستقلة." },
+                { "language": "tr", "text": "İyi: Tez net ama mutlak değil; bağımsız argümantasyonun akademik ölçütünü adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: тезис ясен, но не абсолютен; он называет академический критерий самостоятельной аргументации." },
+                { "language": "ckb", "text": "باشە: تێزەکە ڕوونە بەڵام ڕەها نییە؛ پێوەری ئەکادیمیی بەڵگەسازیی سەربەخۆ ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: Tez zelal e lê mutleq nîne; pîvana akademîk a argûmana serbixwe nav dike." },
+                { "language": "pl", "text": "Dobrze: teza jest jasna, ale nie absolutna; wskazuje akademickie kryterium samodzielnej argumentacji." },
+                { "language": "ro", "text": "Bine: teza este clară, dar nu absolută; numește criteriul academic al argumentării independente." },
+                { "language": "sq", "text": "Mirë: teza është e qartë, por jo absolute; përmend kriterin akademik të argumentimit të pavarur." }
+              ],
+              "explanationKey": "clear-nonabsolute-thesis"
+            },
+            {
+              "id": "too-broad-approval",
+              "text": "KI gehört zur Zukunft, deshalb sollte man sie in Seminararbeiten erlauben.",
+              "translations": [
+                { "language": "en", "text": "AI belongs to the future, so it should be allowed in seminar papers." },
+                { "language": "fa", "text": "هوش مصنوعی متعلق به آینده است، پس باید در کارهای سمیناری مجاز باشد." },
+                { "language": "ar", "text": "الذكاء الاصطناعي ينتمي إلى المستقبل، لذلك ينبغي السماح به في الأعمال السمينارية." },
+                { "language": "tr", "text": "Yapay zekâ geleceğe aittir, bu yüzden seminer ödevlerinde izin verilmelidir." },
+                { "language": "ru", "text": "ИИ относится к будущему, поэтому его следует разрешить в семинарских работах." },
+                { "language": "ckb", "text": "زیرەکی دەستکرد هی داهاتووە، بۆیە پێویستە لە کارە سیمینارییەکاندا ڕێگەپێدراو بێت." },
+                { "language": "kmr", "text": "Hişê çêkirî yê pêşerojê ye, ji ber vê yekê divê di karên semînerê de destûr bê dayîn." },
+                { "language": "pl", "text": "AI należy do przyszłości, dlatego powinno się ją dopuścić w pracach seminaryjnych." },
+                { "language": "ro", "text": "Inteligența artificială aparține viitorului, de aceea ar trebui permisă în lucrările de seminar." },
+                { "language": "sq", "text": "Inteligjenca artificiale i përket së ardhmes, prandaj duhet lejuar në punimet seminarike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Antwort nennt keine akademische Grenze und kein Kriterium für Eigenleistung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping: The answer names no academic boundary and no criterion for independent work." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ هیچ مرز دانشگاهی و هیچ معیاری برای کار مستقل نام نمی‌برد." },
+                { "language": "ar", "text": "عام جداً: لا تسمي الإجابة أي حد أكاديمي ولا معياراً للعمل المستقل." },
+                { "language": "tr", "text": "Çok genelleyici: Yanıt hiçbir akademik sınır ve bağımsız çalışma ölçütü adlandırmıyor." },
+                { "language": "ru", "text": "Слишком обобщенно: ответ не называет академической границы и критерия самостоятельной работы." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە هیچ سنووری ئەکادیمی و هیچ پێوەرێک بۆ کاری سەربەخۆ ناو نابە." },
+                { "language": "kmr", "text": "Pir giştî ye: Bersiv tu sînoreke akademîk û tu pîvaneke karê serbixwe nav nake." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź nie wskazuje granicy akademickiej ani kryterium samodzielnej pracy." },
+                { "language": "ro", "text": "Prea general: răspunsul nu numește nicio limită academică și niciun criteriu pentru munca independentă." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja nuk përmend asnjë kufi akademik dhe asnjë kriter për punën e pavarur." }
+              ],
+              "explanationKey": "future-argument-too-broad"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "cautious-practice-evidence",
+              "text": "Als Beleg würde ich vorsichtig auf die Praxis verweisen: Viele Studierende nutzen bereits digitale Hilfen für Recherche, Strukturierung oder sprachliche Überarbeitung. Ein Verbot würde diese Nutzung eher verdecken als kontrollierbar machen.",
+              "translations": [
+                { "language": "en", "text": "As evidence, I would cautiously refer to current practice: many students already use digital aids for research, structuring, or language revision. A ban would tend to hide this use rather than make it controllable." },
+                { "language": "fa", "text": "به‌عنوان شاهد، با احتیاط به عمل موجود اشاره می‌کنم: بسیاری از دانشجویان همین حالا از ابزارهای دیجیتال برای جست‌وجو، ساختاربندی یا ویرایش زبانی استفاده می‌کنند. ممنوعیت احتمالاً این استفاده را پنهان می‌کند، نه قابل کنترل." },
+                { "language": "ar", "text": "كدليل، سأشير بحذر إلى الممارسة الحالية: كثير من الطلاب يستخدمون بالفعل أدوات رقمية للبحث أو التنظيم أو المراجعة اللغوية. الحظر سيخفي هذا الاستخدام أكثر مما يجعله قابلاً للرقابة." },
+                { "language": "tr", "text": "Kanıt olarak dikkatli biçimde mevcut uygulamaya atıf yapardım: birçok öğrenci araştırma, yapılandırma veya dilsel düzeltme için zaten dijital yardımcılar kullanıyor. Bir yasak bu kullanımı kontrol edilebilir kılmaktan çok gizler." },
+                { "language": "ru", "text": "В качестве доказательства я осторожно сослался бы на практику: многие студенты уже используют цифровые средства для исследования, структурирования или языковой правки. Запрет скорее скрыл бы это использование, чем сделал бы его контролируемым." },
+                { "language": "ckb", "text": "وەک بەڵگە، بە ئاگاداری ئاماژە بە پراکتیزەی ئێستا دەکەم: زۆر خوێندکار پێشتر یارمەتی دیجیتاڵی بۆ گەڕان، ڕێکخستن یان چاککردنەوەی زمانی بەکار دەهێنن. قەدەغەکردن ئەم بەکارهێنانە زیاتر دەشارێتەوە نەک قابل کۆنترۆڵی بکات." },
+                { "language": "kmr", "text": "Wekî delîl ez bi baldarî li pratîka heyî vedigerim: gelek xwendekar jixwe amûrên dijîtal ji bo lêkolîn, avahîkirin an serrastkirina zimanî bikar tînin. Qedexe kirin dê vê bikaranînê zêdetir veşêre, ne ku kontrolbar bike." },
+                { "language": "pl", "text": "Jako dowód ostrożnie odwołałbym się do praktyki: wielu studentów już korzysta z narzędzi cyfrowych do wyszukiwania, strukturyzowania albo korekty językowej. Zakaz raczej ukryłby to użycie, niż uczynił je kontrolowalnym." },
+                { "language": "ro", "text": "Ca dovadă, m-aș referi prudent la practica actuală: mulți studenți folosesc deja ajutoare digitale pentru cercetare, structurare sau revizuire lingvistică. O interdicție ar ascunde mai degrabă această utilizare decât ar face-o controlabilă." },
+                { "language": "sq", "text": "Si dëshmi, do t'i referohesha me kujdes praktikës aktuale: shumë studentë tashmë përdorin mjete digjitale për kërkim, strukturim ose rishikim gjuhësor. Ndalimi do ta fshihte më shumë këtë përdorim sesa ta bënte të kontrollueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nutzt Beobachtung als begrenzte Evidenz und übertreibt sie nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer uses observation as limited evidence and does not overstate it." },
+                { "language": "fa", "text": "خوب: پاسخ از مشاهده به‌عنوان شاهد محدود استفاده می‌کند و آن را بیش از حد بزرگ نمی‌کند." },
+                { "language": "ar", "text": "جيد: تستخدم الإجابة الملاحظة كدليل محدود ولا تبالغ فيها." },
+                { "language": "tr", "text": "İyi: Yanıt gözlemi sınırlı kanıt olarak kullanıyor ve abartmıyor." },
+                { "language": "ru", "text": "Хорошо: ответ использует наблюдение как ограниченное доказательство и не преувеличивает его." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە تێبینی وەک بەڵگەی سنووردار بەکار دەهێنێت و زیادەڕۆیی ناکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv çavdêriyê wekî delîla sînordar bikar tîne û wê zêde nake." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wykorzystuje obserwację jako ograniczony dowód i jej nie przecenia." },
+                { "language": "ro", "text": "Bine: răspunsul folosește observația ca dovadă limitată și nu o exagerează." },
+                { "language": "sq", "text": "Mirë: përgjigjja përdor vëzhgimin si dëshmi të kufizuar dhe nuk e tepron." }
+              ],
+              "explanationKey": "limited-evidence"
+            },
+            {
+              "id": "unsupported-commonness",
+              "text": "Alle nutzen solche Werkzeuge sowieso, also bringt ein Verbot nichts.",
+              "translations": [
+                { "language": "en", "text": "Everyone uses such tools anyway, so a ban achieves nothing." },
+                { "language": "fa", "text": "همه در هر حال از چنین ابزارهایی استفاده می‌کنند، پس ممنوعیت هیچ فایده‌ای ندارد." },
+                { "language": "ar", "text": "الجميع يستخدمون هذه الأدوات على أي حال، لذلك لا يفيد الحظر شيئاً." },
+                { "language": "tr", "text": "Zaten herkes bu tür araçları kullanıyor, bu yüzden yasak hiçbir işe yaramaz." },
+                { "language": "ru", "text": "Все и так используют такие инструменты, поэтому запрет ничего не дает." },
+                { "language": "ckb", "text": "هەموو کەس هەر بە هەرحاڵ ئەم جۆرە ئامرازانە بەکار دەهێنێت، بۆیە قەدەغەکردن هیچ سوودێکی نییە." },
+                { "language": "kmr", "text": "Her kes jixwe van amûran bikar tîne, ji ber vê yekê qedexe tu sûd nade." },
+                { "language": "pl", "text": "Wszyscy i tak używają takich narzędzi, więc zakaz nic nie daje." },
+                { "language": "ro", "text": "Toți folosesc oricum astfel de instrumente, deci o interdicție nu ajută la nimic." },
+                { "language": "sq", "text": "Të gjithë i përdorin gjithsesi këto mjete, prandaj ndalimi nuk sjell asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu stark: Die Antwort behauptet Allgemeinheit und verliert die wissenschaftliche Vorsicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too strong: The answer claims universality and loses scholarly caution." },
+                { "language": "fa", "text": "زیادی قوی ادعا می‌کند: پاسخ عمومیت را ادعا می‌کند و احتیاط علمی را از دست می‌دهد." },
+                { "language": "ar", "text": "قوي جداً في الادعاء: تدعي الإجابة العمومية وتفقد الحذر العلمي." },
+                { "language": "tr", "text": "Çok güçlü iddia: Yanıt genellik iddia ediyor ve akademik ihtiyatı kaybediyor." },
+                { "language": "ru", "text": "Слишком сильное утверждение: ответ заявляет всеобщность и теряет научную осторожность." },
+                { "language": "ckb", "text": "بانگەشەکە زۆر بەهێزە: وەڵامەکە گشتیبوون بانگەشە دەکات و ئاگاداری زانستی لەدەست دەدات." },
+                { "language": "kmr", "text": "Îdia pir bihêz e: Bersiv giştîbûnê îdia dike û baldarîya zanistî ji dest dide." },
+                { "language": "pl", "text": "Zbyt mocne: odpowiedź twierdzi powszechność i traci ostrożność naukową." },
+                { "language": "ro", "text": "Prea tare: răspunsul pretinde universalitate și pierde prudența academică." },
+                { "language": "sq", "text": "Shumë e fortë si pretendim: përgjigjja pretendon përgjithësi dhe humb kujdesin shkencor." }
+              ],
+              "explanationKey": "overstated-evidence"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "documentation-distinction",
+              "text": "Der Einwand ist berechtigt, wenn KI unreflektiert genutzt wird. Deshalb sollte nicht das Werkzeug selbst entscheidend sein, sondern die Dokumentation: Was wurde genutzt, wofür, und welche Entscheidungen hat die Person selbst getroffen?",
+              "translations": [
+                { "language": "en", "text": "The objection is justified if AI is used without reflection. Therefore the tool itself should not be decisive, but the documentation: what was used, for what purpose, and which decisions did the person make independently?" },
+                { "language": "fa", "text": "این ایراد زمانی موجه است که هوش مصنوعی بدون تأمل استفاده شود. بنابراین خود ابزار نباید تعیین‌کننده باشد، بلکه مستندسازی: چه چیزی استفاده شد، برای چه منظوری، و فرد کدام تصمیم‌ها را خودش گرفته است؟" },
+                { "language": "ar", "text": "الاعتراض مبرر إذا استُخدم الذكاء الاصطناعي بلا تأمل. لذلك لا ينبغي أن تكون الأداة نفسها هي الحاسمة، بل التوثيق: ما الذي استُخدم، ولأي غرض، وما القرارات التي اتخذها الشخص بنفسه؟" },
+                { "language": "tr", "text": "İtiraz, yapay zekâ düşünmeden kullanıldığında haklıdır. Bu yüzden belirleyici olan aracın kendisi değil, belgelemedir: ne kullanıldı, ne için kullanıldı ve kişi hangi kararları kendisi verdi?" },
+                { "language": "ru", "text": "Возражение обосновано, если ИИ используется без рефлексии. Поэтому решающим должен быть не сам инструмент, а документация: что использовалось, для чего и какие решения человек принял сам?" },
+                { "language": "ckb", "text": "ناڕەزاییەکە ڕەوایە ئەگەر زیرەکی دەستکرد بێ بیرکردنەوە بەکاربهێنرێت. بۆیە نابێت خودی ئامرازەکە گرنگترین بێت، بەڵکو بەڵگەنامەکردن: چی بەکار هات، بۆ چی، و کەسەکە کام بڕیارەکانی خۆی داوە؟" },
+                { "language": "kmr", "text": "Nerazîbûn maqûl e heke hişê çêkirî bê raman were bikaranîn. Ji ber vê yekê divê ne amûr bixwe, lê belgekirin girîng be: çi hate bikaranîn, ji bo çi, û kesê xwe kîjan biryar girtin?" },
+                { "language": "pl", "text": "Zastrzeżenie jest uzasadnione, jeśli AI jest używana bez refleksji. Dlatego decydujące nie powinno być samo narzędzie, lecz dokumentacja: czego użyto, po co i jakie decyzje osoba podjęła samodzielnie?" },
+                { "language": "ro", "text": "Obiecția este justificată dacă inteligența artificială este folosită fără reflecție. De aceea decisiv nu ar trebui să fie instrumentul în sine, ci documentarea: ce s-a folosit, pentru ce și ce decizii a luat persoana singură?" },
+                { "language": "sq", "text": "Kundërshtimi është i arsyeshëm nëse inteligjenca artificiale përdoret pa reflektim. Prandaj vendimtare nuk duhet të jetë vetë mjeti, por dokumentimi: çfarë u përdor, për çfarë dhe cilat vendime i mori vetë personi?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort erkennt den Einwand an und verschiebt die Debatte auf prüfbare Dokumentation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer acknowledges the objection and shifts the debate to verifiable documentation." },
+                { "language": "fa", "text": "خوب: پاسخ ایراد را می‌پذیرد و بحث را به سمت مستندسازی قابل بررسی می‌برد." },
+                { "language": "ar", "text": "جيد: تعترف الإجابة بالاعتراض وتنقل النقاش إلى توثيق قابل للتحقق." },
+                { "language": "tr", "text": "İyi: Yanıt itirazı kabul ediyor ve tartışmayı denetlenebilir belgeleme alanına taşıyor." },
+                { "language": "ru", "text": "Хорошо: ответ признает возражение и переносит дискуссию к проверяемой документации." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ناڕەزاییەکە وەردەگرێت و گفتوگۆکە دەگوازێتەوە بۆ بەڵگەنامەکردنی قابل پشکنین." },
+                { "language": "kmr", "text": "Baş e: Bersiv nerazîbûnê dipejirîne û nîqaşê dibe ser belgekirina kontrolbar." },
+                { "language": "pl", "text": "Dobrze: odpowiedź uznaje zastrzeżenie i przenosi debatę na sprawdzalną dokumentację." },
+                { "language": "ro", "text": "Bine: răspunsul recunoaște obiecția și mută dezbaterea spre documentare verificabilă." },
+                { "language": "sq", "text": "Mirë: përgjigjja e pranon kundërshtimin dhe e zhvendos debatin te dokumentimi i verifikueshëm." }
+              ],
+              "explanationKey": "acknowledge-and-document"
+            },
+            {
+              "id": "denies-risk",
+              "text": "Wenn Studierende verantwortungsvoll damit umgehen, muss KI das Denken nicht schwächen.",
+              "translations": [
+                { "language": "en", "text": "If students use it responsibly, AI does not have to weaken thinking." },
+                { "language": "fa", "text": "اگر دانشجویان مسئولانه با آن کار کنند، هوش مصنوعی لزوماً تفکر را ضعیف نمی‌کند." },
+                { "language": "ar", "text": "إذا تعامل الطلاب معها بمسؤولية، فليس من الضروري أن يضعف الذكاء الاصطناعي التفكير." },
+                { "language": "tr", "text": "Öğrenciler onu sorumlu biçimde kullanırsa yapay zekânın düşünmeyi zayıflatması gerekmez." },
+                { "language": "ru", "text": "Если студенты используют его ответственно, ИИ не обязательно ослабляет мышление." },
+                { "language": "ckb", "text": "ئەگەر خوێندکاران بە بەرپرسیارێتی بەکاری بهێنن، زیرەکی دەستکرد ناچار نییە بیرکردنەوە لاواز بکات." },
+                { "language": "kmr", "text": "Heke xwendekar bi berpirsiyarî wê bikar bînin, hişê çêkirî ne hewce ye ramanê lawaz bike." },
+                { "language": "pl", "text": "Jeśli studenci używają jej odpowiedzialnie, AI nie musi osłabiać myślenia." },
+                { "language": "ro", "text": "Dacă studenții o folosesc responsabil, inteligența artificială nu trebuie neapărat să slăbească gândirea." },
+                { "language": "sq", "text": "Nëse studentët e përdorin me përgjegjësi, inteligjenca artificiale nuk ka pse ta dobësojë të menduarit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Die Antwort nennt Verantwortung, aber kein prüfbares akademisches Kontrollkriterium.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete: The answer names responsibility, but no verifiable academic control criterion." },
+                { "language": "fa", "text": "قابل‌قبول، اما ناقص است: پاسخ مسئولیت را نام می‌برد، اما معیار کنترل دانشگاهیِ قابل بررسی ندارد." },
+                { "language": "ar", "text": "مقبول لكنه غير مكتمل: تسمي الإجابة المسؤولية، لكنها لا تقدم معيار رقابة أكاديمياً قابلاً للتحقق." },
+                { "language": "tr", "text": "Makul ama eksik: Yanıt sorumluluğu adlandırıyor, fakat denetlenebilir akademik kontrol ölçütü sunmuyor." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: ответ называет ответственность, но не дает проверяемого академического контрольного критерия." },
+                { "language": "ckb", "text": "قابلی قبوڵە، بەڵام ناتەواوە: وەڵامەکە بەرپرسیارێتی ناو دەبات، بەڵام پێوەری کۆنترۆڵی ئەکادیمیی قابل پشکنین نییە." },
+                { "language": "kmr", "text": "Maqûl e, lê netemam e: Bersiv berpirsiyarî nav dike, lê tu pîvana kontrola akademîk a kontrolbar nade." },
+                { "language": "pl", "text": "Plausybilne, ale niepełne: odpowiedź wskazuje odpowiedzialność, lecz nie podaje sprawdzalnego akademickiego kryterium kontroli." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: răspunsul numește responsabilitatea, dar nu oferă un criteriu academic verificabil de control." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: përgjigjja përmend përgjegjësinë, por nuk jep kriter akademik kontrolli të verifikueshëm." }
+              ],
+              "explanationKey": "risk-denied"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "institutional-equity",
+              "text": "Gerade Chancengleichheit spricht für klare Regeln. Wenn jede Person andere Werkzeuge nutzt, entstehen Unterschiede. Wenn die Hochschule aber erlaubte Werkzeuge, Schulungen und Alternativen bereitstellt, wird der Zugang eher vergleichbar.",
+              "translations": [
+                { "language": "en", "text": "Equal opportunity in particular argues for clear rules. If everyone uses different tools, differences arise. But if the university provides approved tools, training, and alternatives, access becomes more comparable." },
+                { "language": "fa", "text": "دقیقاً برابری فرصت‌ها به نفع قواعد روشن است. اگر هر فرد از ابزارهای متفاوتی استفاده کند، تفاوت ایجاد می‌شود. اما اگر دانشگاه ابزارهای مجاز، آموزش و جایگزین‌ها را فراهم کند، دسترسی قابل‌مقایسه‌تر می‌شود." },
+                { "language": "ar", "text": "تكافؤ الفرص تحديداً يؤيد وجود قواعد واضحة. إذا استخدم كل شخص أدوات مختلفة تنشأ فروق. أما إذا وفرت الجامعة أدوات مسموحة وتدريباً وبدائل، يصبح الوصول أكثر قابلية للمقارنة." },
+                { "language": "tr", "text": "Özellikle fırsat eşitliği net kuralları destekler. Her kişi farklı araçlar kullanırsa farklılıklar oluşur. Ancak üniversite izinli araçlar, eğitimler ve alternatifler sağlarsa erişim daha karşılaştırılabilir olur." },
+                { "language": "ru", "text": "Именно равенство возможностей говорит в пользу ясных правил. Если каждый использует разные инструменты, возникают различия. Но если университет предоставляет разрешенные инструменты, обучение и альтернативы, доступ становится более сопоставимым." },
+                { "language": "ckb", "text": "بە تایبەتی یەکسانی هەل پاڵپشتی ڕێسای ڕوون دەکات. ئەگەر هەر کەس ئامرازی جیاواز بەکاربهێنێت، جیاوازی دروست دەبێت. بەڵام ئەگەر زانکۆ ئامرازە ڕێگەپێدراوەکان، فێرکاری و جێگرەوەکان دابین بکات، دەستگەیشتن زیاتر قابل بەراورد دەبێت." },
+                { "language": "kmr", "text": "Bi taybetî derfetên wekhev ji bo rêzikên zelal diaxivin. Heke her kes amûrên cuda bikar bîne, cudahî çêdibin. Lê heke zanîngeh amûrên destûrdar, perwerdehî û alternatîvan peyda bike, gihîştin berawirdbar dibe." },
+                { "language": "pl", "text": "Właśnie równość szans przemawia za jasnymi zasadami. Jeśli każda osoba używa innych narzędzi, powstają różnice. Jeśli jednak uczelnia zapewnia dozwolone narzędzia, szkolenia i alternatywy, dostęp staje się bardziej porównywalny." },
+                { "language": "ro", "text": "Tocmai egalitatea de șanse vorbește pentru reguli clare. Dacă fiecare folosește instrumente diferite, apar diferențe. Dar dacă universitatea oferă instrumente permise, instruire și alternative, accesul devine mai comparabil." },
+                { "language": "sq", "text": "Pikërisht mundësitë e barabarta flasin për rregulla të qarta. Nëse çdo person përdor mjete të ndryshme, krijohen dallime. Por nëse universiteti ofron mjete të lejuara, trajnime dhe alternativa, qasja bëhet më e krahasueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort macht Chancengleichheit zu einer institutionellen Aufgabe, nicht zu einer privaten Glückssache.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer makes equal opportunity an institutional task, not a matter of private luck." },
+                { "language": "fa", "text": "خوب: پاسخ برابری فرصت را وظیفه نهادی می‌کند، نه موضوع شانس خصوصی." },
+                { "language": "ar", "text": "جيد: تجعل الإجابة تكافؤ الفرص مهمة مؤسسية، لا مسألة حظ شخصي." },
+                { "language": "tr", "text": "İyi: Yanıt fırsat eşitliğini özel şans meselesi değil, kurumsal görev haline getiriyor." },
+                { "language": "ru", "text": "Хорошо: ответ делает равенство возможностей институциональной задачей, а не вопросом частного везения." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە یەکسانی هەل دەکاتە ئەرکی دامەزراوەیی، نە بابەتی شانسی تایبەتی." },
+                { "language": "kmr", "text": "Baş e: Bersiv derfetên wekhev dike erka sazgehî, ne meseleya bextewariya taybet." },
+                { "language": "pl", "text": "Dobrze: odpowiedź czyni równość szans zadaniem instytucji, a nie kwestią prywatnego szczęścia." },
+                { "language": "ro", "text": "Bine: răspunsul face din egalitatea de șanse o sarcină instituțională, nu o chestiune de noroc privat." },
+                { "language": "sq", "text": "Mirë: përgjigjja e bën barazinë e mundësive detyrë institucionale, jo çështje fati privat." }
+              ],
+              "explanationKey": "institutional-equity"
+            },
+            {
+              "id": "private-responsibility-only",
+              "text": "Wer solche Werkzeuge nutzen will, muss sich eben selbst darum kümmern.",
+              "translations": [
+                { "language": "en", "text": "Anyone who wants to use such tools simply has to take care of it themselves." },
+                { "language": "fa", "text": "هر کس بخواهد از چنین ابزارهایی استفاده کند، باید خودش پیگیرش باشد." },
+                { "language": "ar", "text": "من يريد استخدام هذه الأدوات عليه ببساطة أن يهتم بذلك بنفسه." },
+                { "language": "tr", "text": "Bu tür araçları kullanmak isteyen kişi bununla kendisi ilgilenmelidir." },
+                { "language": "ru", "text": "Кто хочет использовать такие инструменты, должен сам об этом позаботиться." },
+                { "language": "ckb", "text": "هەر کەسێک بیەوێت ئەم جۆرە ئامرازانە بەکاربهێنێت، دەبێت خۆی خەمی لێ بخوات." },
+                { "language": "kmr", "text": "Kesê ku dixwaze van amûran bikar bîne, divê bixwe lê binihêre." },
+                { "language": "pl", "text": "Kto chce używać takich narzędzi, musi po prostu sam się o to zatroszczyć." },
+                { "language": "ro", "text": "Cine vrea să folosească astfel de instrumente trebuie pur și simplu să se ocupe singur." },
+                { "language": "sq", "text": "Kush dëshiron t'i përdorë këto mjete, duhet thjesht të kujdeset vetë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kurzsichtig: Die Antwort ignoriert, dass Hochschulen vergleichbare Bedingungen schaffen müssen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too short-sighted: The answer ignores that universities must create comparable conditions." },
+                { "language": "fa", "text": "کوتاه‌بینانه است: پاسخ نادیده می‌گیرد که دانشگاه‌ها باید شرایط قابل‌مقایسه ایجاد کنند." },
+                { "language": "ar", "text": "قصير النظر: تتجاهل الإجابة أن الجامعات يجب أن تخلق شروطاً قابلة للمقارنة." },
+                { "language": "tr", "text": "Kısa görüşlü: Yanıt üniversitelerin karşılaştırılabilir koşullar yaratması gerektiğini görmezden geliyor." },
+                { "language": "ru", "text": "Близоруко: ответ игнорирует, что университеты должны создавать сопоставимые условия." },
+                { "language": "ckb", "text": "کوربینانەیە: وەڵامەکە پشتگوێ دەخات کە زانکۆکان دەبێت مەرجی قابل بەراورد دروست بکەن." },
+                { "language": "kmr", "text": "Kurtbîn e: Bersiv ji bîr dike ku zanîngeh divê şertên berawirdbar çêbikin." },
+                { "language": "pl", "text": "Krótkowzroczne: odpowiedź ignoruje, że uczelnie muszą tworzyć porównywalne warunki." },
+                { "language": "ro", "text": "Mioapă: răspunsul ignoră că universitățile trebuie să creeze condiții comparabile." },
+                { "language": "sq", "text": "Shumë shkurtpamëse: përgjigjja injoron se universitetet duhet të krijojnë kushte të krahasueshme." }
+              ],
+              "explanationKey": "equity-ignored"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "distinguish-deception",
+              "text": "Täuschung beginnt dort, wo fremde Leistung als eigene ausgegeben wird. Eine dokumentierte Nutzung zur Ideensammlung, Strukturprüfung oder sprachlichen Korrektur ist etwas anderes, solange die Argumentation und Verantwortung bei der Person bleiben.",
+              "translations": [
+                { "language": "en", "text": "Deception begins where someone else's work is presented as one's own. Documented use for collecting ideas, checking structure, or language correction is different, as long as argumentation and responsibility remain with the person." },
+                { "language": "fa", "text": "تقلب از جایی شروع می‌شود که کار دیگری به‌عنوان کار خود ارائه شود. استفاده مستند برای جمع‌آوری ایده، بررسی ساختار یا اصلاح زبانی چیز دیگری است، تا زمانی که استدلال و مسئولیت نزد خود فرد بماند." },
+                { "language": "ar", "text": "يبدأ الخداع عندما يُقدَّم عمل شخص آخر كعمل شخصي. أما الاستخدام الموثق لجمع الأفكار أو فحص البنية أو التصحيح اللغوي فهو أمر آخر، ما دامت الحجة والمسؤولية لدى الشخص نفسه." },
+                { "language": "tr", "text": "Aldatma, başkasının emeği kendi emeği gibi sunulduğu yerde başlar. Fikir toplama, yapı kontrolü veya dil düzeltmesi için belgelenmiş kullanım farklıdır; argümantasyon ve sorumluluk kişide kaldığı sürece." },
+                { "language": "ru", "text": "Обман начинается там, где чужая работа выдается за собственную. Документированное использование для сбора идей, проверки структуры или языковой правки — другое дело, пока аргументация и ответственность остаются у человека." },
+                { "language": "ckb", "text": "فێڵ لەوێ دەست پێدەکات کە کاری کەسی تر وەک کاری خۆت پێشکەش بکرێت. بەکارهێنانی بەڵگەنامەکراو بۆ کۆکردنەوەی بیرۆکە، پشکنینی پێکهاتە یان چاککردنەوەی زمانی شتێکی ترە، مادام بەڵگەسازی و بەرپرسیارێتی لە لای کەسەکە بمێنێتەوە." },
+                { "language": "kmr", "text": "Xapandin li wir dest pê dike ku karê kesekî din wekî karê xwe were pêşkêşkirin. Bikaranîna belgekirî ji bo komkirina ramanan, kontrola avahiyê an serrastkirina zimanî tiştekî din e, heta ku argûman û berpirsiyarî li cem kesê bimînin." },
+                { "language": "pl", "text": "Oszustwo zaczyna się tam, gdzie cudza praca jest przedstawiana jako własna. Udokumentowane użycie do zbierania pomysłów, sprawdzania struktury albo korekty językowej to coś innego, o ile argumentacja i odpowiedzialność pozostają przy osobie." },
+                { "language": "ro", "text": "Înșelăciunea începe acolo unde munca altcuiva este prezentată ca proprie. Utilizarea documentată pentru colectarea ideilor, verificarea structurii sau corectură lingvistică este altceva, atâta timp cât argumentarea și responsabilitatea rămân la persoană." },
+                { "language": "sq", "text": "Mashtrimi fillon aty ku puna e dikujt tjetër paraqitet si e vetja. Përdorimi i dokumentuar për mbledhje idesh, kontroll strukture ose korrigjim gjuhësor është diçka tjetër, për sa kohë argumentimi dhe përgjegjësia mbeten te personi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort trennt Täuschung von erlaubter Unterstützung und nennt die Bedingung der eigenen Verantwortung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer separates deception from permitted support and names the condition of personal responsibility." },
+                { "language": "fa", "text": "خوب: پاسخ تقلب را از پشتیبانی مجاز جدا می‌کند و شرط مسئولیت فردی را نام می‌برد." },
+                { "language": "ar", "text": "جيد: تفصل الإجابة بين الخداع والدعم المسموح، وتسمي شرط المسؤولية الشخصية." },
+                { "language": "tr", "text": "İyi: Yanıt aldatmayı izinli destekten ayırıyor ve kişisel sorumluluk koşulunu adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ отделяет обман от разрешенной поддержки и называет условие личной ответственности." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە فێڵ لە پشتگیریی ڕێگەپێدراو جیا دەکاتەوە و مەرجی بەرپرسیارێتی کەسی ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: Bersiv xapandinê ji piştgiriya destûrdar cuda dike û şerta berpirsiyariya kesane nav dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź oddziela oszustwo od dozwolonego wsparcia i wskazuje warunek osobistej odpowiedzialności." },
+                { "language": "ro", "text": "Bine: răspunsul separă înșelăciunea de sprijinul permis și numește condiția responsabilității personale." },
+                { "language": "sq", "text": "Mirë: përgjigjja ndan mashtrimin nga mbështetja e lejuar dhe përmend kushtin e përgjegjësisë personale." }
+              ],
+              "explanationKey": "deception-distinction"
+            },
+            {
+              "id": "too-defensive",
+              "text": "Das ist keine Täuschung, weil alle modernen Studierenden damit arbeiten.",
+              "translations": [
+                { "language": "en", "text": "That is not deception because all modern students work with it." },
+                { "language": "fa", "text": "این تقلب نیست، چون همه دانشجویان مدرن با آن کار می‌کنند." },
+                { "language": "ar", "text": "هذا ليس خداعاً لأن كل الطلاب العصريين يعملون به." },
+                { "language": "tr", "text": "Bu aldatma değildir, çünkü tüm modern öğrenciler bununla çalışır." },
+                { "language": "ru", "text": "Это не обман, потому что все современные студенты с этим работают." },
+                { "language": "ckb", "text": "ئەمە فێڵ نییە، چونکە هەموو خوێندکارە نوێکان پێی کار دەکەن." },
+                { "language": "kmr", "text": "Ev xapandin nîne, ji ber ku hemû xwendekarên nûjen pê dixebitin." },
+                { "language": "pl", "text": "To nie jest oszustwo, bo wszyscy nowocześni studenci z tym pracują." },
+                { "language": "ro", "text": "Aceasta nu este înșelăciune, deoarece toți studenții moderni lucrează cu asta." },
+                { "language": "sq", "text": "Kjo nuk është mashtrim, sepse të gjithë studentët modernë punojnë me të." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Die Antwort ersetzt eine Definition von Täuschung durch eine Behauptung über Modernität.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: The answer replaces a definition of deception with a claim about modernity." },
+                { "language": "fa", "text": "بیش از حد دفاعی است: پاسخ تعریف تقلب را با ادعایی درباره مدرن بودن جایگزین می‌کند." },
+                { "language": "ar", "text": "دفاعي جداً: تستبدل الإجابة تعريف الخداع بادعاء عن الحداثة." },
+                { "language": "tr", "text": "Çok savunmacı: Yanıt aldatma tanımının yerine modernlik iddiası koyuyor." },
+                { "language": "ru", "text": "Слишком оборонительно: ответ заменяет определение обмана утверждением о современности." },
+                { "language": "ckb", "text": "زۆر بەرگرییە: وەڵامەکە پێناسەی فێڵ بە بانگەشەی نوێبوون دەگۆڕێت." },
+                { "language": "kmr", "text": "Pir parastinkar e: Bersiv pênaseya xapandinê bi îdîaya nûjenbûnê diguherîne." },
+                { "language": "pl", "text": "Zbyt defensywne: odpowiedź zastępuje definicję oszustwa twierdzeniem o nowoczesności." },
+                { "language": "ro", "text": "Prea defensiv: răspunsul înlocuiește o definiție a înșelăciunii cu o afirmație despre modernitate." },
+                { "language": "sq", "text": "Shumë mbrojtëse: përgjigjja zëvendëson përkufizimin e mashtrimit me një pretendim për modernitet." }
+              ],
+              "explanationKey": "modernity-not-definition"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "disclosure-rule",
+              "text": "Ich würde eine Offenlegungspflicht vorschlagen: Erlaubt sind Recherchehilfe, Strukturfeedback und sprachliche Korrektur; nicht erlaubt ist die Übernahme fertiger Argumentation ohne eigene Prüfung. Zusätzlich sollte eine kurze Reflexion erklären, wie das Werkzeug genutzt wurde.",
+              "translations": [
+                { "language": "en", "text": "I would propose a disclosure obligation: research assistance, structural feedback, and language correction are allowed; adopting finished argumentation without one's own review is not allowed. In addition, a short reflection should explain how the tool was used." },
+                { "language": "fa", "text": "من الزام به افشا را پیشنهاد می‌کنم: کمک در جست‌وجو، بازخورد ساختاری و اصلاح زبانی مجاز باشد؛ اما گرفتن استدلال آماده بدون بررسی خود فرد مجاز نباشد. علاوه بر آن، یک تأمل کوتاه باید توضیح دهد ابزار چگونه استفاده شده است." },
+                { "language": "ar", "text": "سأقترح واجب الإفصاح: يُسمح بالمساعدة في البحث، والتغذية الراجعة حول البنية، والتصحيح اللغوي؛ ولا يُسمح بتبني حجة جاهزة دون مراجعة شخصية. بالإضافة إلى ذلك، ينبغي أن يوضح تأمل قصير كيف استُخدمت الأداة." },
+                { "language": "tr", "text": "Bir açıklama yükümlülüğü önerirdim: araştırma yardımı, yapı geri bildirimi ve dil düzeltmesi serbest; kişinin kendi incelemesi olmadan hazır argümantasyonun alınması serbest değil. Ayrıca kısa bir refleksiyon, aracın nasıl kullanıldığını açıklamalı." },
+                { "language": "ru", "text": "Я предложил бы обязанность раскрытия: разрешены помощь в исследовании, структурная обратная связь и языковая правка; не разрешено перенимать готовую аргументацию без собственной проверки. Кроме того, короткая рефлексия должна объяснять, как использовался инструмент." },
+                { "language": "ckb", "text": "من ئەرکی ئاشکراکردن پێشنیار دەکەم: یارمەتی لە گەڕان، پاشخانی پێکهاتە و چاککردنەوەی زمانی ڕێگەپێدراون؛ بەڵام وەرگرتنی بەڵگەسازیی تەواو بێ پشکنینی خۆی ڕێگەپێدراو نییە. هەروەها پێویستە بیرکردنەوەیەکی کورت ڕوون بکاتەوە ئامرازەکە چۆن بەکار هاتووە." },
+                { "language": "kmr", "text": "Ez erka eşkerekirinê pêşniyar dikim: alîkariya lêkolînê, vegera avahiyê û serrastkirina zimanî destûrdar in; lê wergirtina argûmanên amade bê kontrola xwe destûrdar nîne. Her wiha divê refleksiyoneke kurt rave bike ka amûr çawa hate bikaranîn." },
+                { "language": "pl", "text": "Zaproponowałbym obowiązek ujawnienia: dozwolona jest pomoc w researchu, informacja zwrotna o strukturze i korekta językowa; niedozwolone jest przejęcie gotowej argumentacji bez własnego sprawdzenia. Dodatkowo krótka refleksja powinna wyjaśnić, jak użyto narzędzia." },
+                { "language": "ro", "text": "Aș propune o obligație de transparență: sunt permise ajutorul la cercetare, feedbackul de structură și corectura lingvistică; nu este permisă preluarea unei argumentări gata făcute fără verificare proprie. În plus, o scurtă reflecție ar trebui să explice cum a fost folosit instrumentul." },
+                { "language": "sq", "text": "Do të propozoja detyrim për deklarim: lejohet ndihma në kërkim, feedbacku për strukturën dhe korrigjimi gjuhësor; nuk lejohet marrja e argumentimit të gatshëm pa kontroll personal. Përveç kësaj, një reflektim i shkurtër duhet të shpjegojë si u përdor mjeti." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Regel ist konkret, prüfbar und trennt erlaubte Unterstützung von nicht erlaubter Übernahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The rule is concrete, verifiable, and separates permitted support from impermissible adoption." },
+                { "language": "fa", "text": "خوب: قاعده مشخص، قابل بررسی و جداکننده پشتیبانی مجاز از گرفتن غیرمجاز است." },
+                { "language": "ar", "text": "جيد: القاعدة محددة وقابلة للتحقق وتفصل الدعم المسموح عن التبني غير المسموح." },
+                { "language": "tr", "text": "İyi: Kural somut, denetlenebilir ve izinli desteği izinli olmayan devralmadan ayırıyor." },
+                { "language": "ru", "text": "Хорошо: правило конкретно, проверяемо и отделяет разрешенную поддержку от недопустимого перенятия." },
+                { "language": "ckb", "text": "باشە: ڕێساکە دیاریکراوە، قابل پشکنینە و پشتگیریی ڕێگەپێدراو لە وەرگرتنی نەڕێگەپێدراو جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Rêzik konkret, kontrolbar e û piştgiriya destûrdar ji wergirtina nedestûrdar cuda dike." },
+                { "language": "pl", "text": "Dobrze: zasada jest konkretna, sprawdzalna i oddziela dozwolone wsparcie od niedozwolonego przejęcia." },
+                { "language": "ro", "text": "Bine: regula este concretă, verificabilă și separă sprijinul permis de preluarea nepermisă." },
+                { "language": "sq", "text": "Mirë: rregulli është konkret, i verifikueshëm dhe ndan mbështetjen e lejuar nga marrja e palejuar." }
+              ],
+              "explanationKey": "concrete-seminar-rule"
+            },
+            {
+              "id": "rule-too-soft",
+              "text": "Man sollte KI erlauben, aber alle sollen ehrlich damit umgehen.",
+              "translations": [
+                { "language": "en", "text": "AI should be allowed, but everyone should handle it honestly." },
+                { "language": "fa", "text": "باید هوش مصنوعی مجاز باشد، اما همه باید صادقانه با آن برخورد کنند." },
+                { "language": "ar", "text": "ينبغي السماح بالذكاء الاصطناعي، لكن على الجميع التعامل معه بصدق." },
+                { "language": "tr", "text": "Yapay zekâya izin verilmeli, ama herkes onunla dürüstçe ilgilenmeli." },
+                { "language": "ru", "text": "ИИ следует разрешить, но все должны честно с ним обращаться." },
+                { "language": "ckb", "text": "پێویستە زیرەکی دەستکرد ڕێگەپێدراو بێت، بەڵام هەمووان دەبێت بە ڕاستگۆیی مامەڵەی لەگەڵ بکەن." },
+                { "language": "kmr", "text": "Divê hişê çêkirî destûrdar be, lê divê her kes bi rastî pê re tevbigere." },
+                { "language": "pl", "text": "AI powinno być dozwolone, ale wszyscy powinni obchodzić się z tym uczciwie." },
+                { "language": "ro", "text": "Inteligența artificială ar trebui permisă, dar toți ar trebui să o folosească cinstit." },
+                { "language": "sq", "text": "Inteligjenca artificiale duhet lejuar, por të gjithë duhet ta përdorin me ndershmëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu weich: Die Antwort bleibt bei einem moralischen Appell und nennt keine überprüfbaren Regeln.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too soft: The answer remains a moral appeal and names no verifiable rules." },
+                { "language": "fa", "text": "خیلی نرم است: پاسخ در حد توصیه اخلاقی می‌ماند و هیچ قاعده قابل بررسی نمی‌آورد." },
+                { "language": "ar", "text": "لين جداً: تبقى الإجابة نداءً أخلاقياً ولا تسمي قواعد قابلة للتحقق." },
+                { "language": "tr", "text": "Çok yumuşak: Yanıt ahlaki çağrı düzeyinde kalıyor ve denetlenebilir kurallar adlandırmıyor." },
+                { "language": "ru", "text": "Слишком мягко: ответ остается моральным призывом и не называет проверяемых правил." },
+                { "language": "ckb", "text": "زۆر نەرمە: وەڵامەکە لە ئاستی بانگەشەی ئەخلاقی دەمێنێت و هیچ ڕێسایەکی قابل پشکنین ناو نابە." },
+                { "language": "kmr", "text": "Pir nerm e: Bersiv li asta bangewazeke exlaqî dimîne û tu rêzikên kontrolbar nav nake." },
+                { "language": "pl", "text": "Zbyt miękkie: odpowiedź pozostaje moralnym apelem i nie podaje sprawdzalnych zasad." },
+                { "language": "ro", "text": "Prea slab: răspunsul rămâne la un apel moral și nu numește reguli verificabile." },
+                { "language": "sq", "text": "Shumë e butë: përgjigjja mbetet apel moral dhe nuk përmend rregulla të verifikueshme." }
+              ],
+              "explanationKey": "moral-appeal-only"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "thesis-note",
+          "text": "Eine gute Seminardebatte braucht eine These, die klar genug ist, aber nicht mehr behauptet, als sie begründen kann.",
+          "translations": [
+            { "language": "en", "text": "A good seminar debate needs a thesis that is clear enough, but does not claim more than it can justify." },
+            { "language": "fa", "text": "بحث سمیناری خوب به تزی نیاز دارد که به‌اندازه کافی روشن باشد، اما بیش از چیزی که می‌تواند توجیه کند ادعا نکند." },
+            { "language": "ar", "text": "النقاش السميناري الجيد يحتاج إلى أطروحة واضحة بما يكفي، لكنها لا تدعي أكثر مما تستطيع تبريره." },
+            { "language": "tr", "text": "İyi bir seminer tartışması, yeterince net ama gerekçelendirebileceğinden fazlasını iddia etmeyen bir teze ihtiyaç duyar." },
+            { "language": "ru", "text": "Хорошей семинарской дискуссии нужен тезис, достаточно ясный, но не утверждающий больше, чем он может обосновать." },
+            { "language": "ckb", "text": "گفتوگۆی سیمیناری باش پێویستی بە تێزێکە کە بە قەدەر پێویست ڕوون بێت، بەڵام زیاتر لەوەی بتوانێت بسەلمێنێت بانگەشە نەکات." },
+            { "language": "kmr", "text": "Nîqaşa semînerê ya baş hewceyê tezekê ye ku têr zelal be, lê zêdetir ji ya ku dikare rast bike îdia neke." },
+            { "language": "pl", "text": "Dobra debata seminaryjna potrzebuje tezy wystarczająco jasnej, ale nie twierdzącej więcej, niż może uzasadnić." },
+            { "language": "ro", "text": "O dezbatere de seminar bună are nevoie de o teză suficient de clară, dar care nu pretinde mai mult decât poate justifica." },
+            { "language": "sq", "text": "Një debat seminarik i mirë ka nevojë për një tezë mjaft të qartë, por që nuk pretendon më shumë sesa mund të arsyetojë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence-note",
+          "text": "Beobachtungen sind in C1 nützlich, wenn sie ausdrücklich als begrenzte Evidenz markiert werden.",
+          "translations": [
+            { "language": "en", "text": "Observations are useful at C1 when they are explicitly marked as limited evidence." },
+            { "language": "fa", "text": "مشاهده‌ها در C1 زمانی مفیدند که صریحاً به‌عنوان شواهد محدود مشخص شوند." },
+            { "language": "ar", "text": "تكون الملاحظات مفيدة في C1 عندما تُحدد صراحة كدليل محدود." },
+            { "language": "tr", "text": "Gözlemler C1 düzeyinde, açıkça sınırlı kanıt olarak işaretlendiğinde yararlıdır." },
+            { "language": "ru", "text": "Наблюдения полезны на C1, если они явно обозначены как ограниченные доказательства." },
+            { "language": "ckb", "text": "تێبینییەکان لە C1 دا کاتێک بەسوودن کە بە ڕوونی وەک بەڵگەی سنووردار نیشان بدرێن." },
+            { "language": "kmr", "text": "Çavdêrî di C1 de bikêr in dema ku bi eşkere wekî delîla sînordar bên nîşankirin." },
+            { "language": "pl", "text": "Obserwacje są na C1 użyteczne, gdy wyraźnie oznacza się je jako ograniczone dowody." },
+            { "language": "ro", "text": "Observațiile sunt utile la C1 când sunt marcate explicit ca dovezi limitate." },
+            { "language": "sq", "text": "Vëzhgimet janë të dobishme në C1 kur shënohen qartë si dëshmi të kufizuara." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "objection-note",
+          "text": "Ein Einwand wird stärker beantwortet, wenn Sie ihn nicht wegschieben, sondern in eine prüfbare Bedingung übersetzen.",
+          "translations": [
+            { "language": "en", "text": "An objection is answered more strongly when you do not push it aside, but translate it into a verifiable condition." },
+            { "language": "fa", "text": "ایراد زمانی قوی‌تر پاسخ داده می‌شود که آن را کنار نزنید، بلکه به یک شرط قابل بررسی تبدیل کنید." },
+            { "language": "ar", "text": "يُجاب عن الاعتراض بقوة أكبر عندما لا تدفعه جانباً، بل تترجمه إلى شرط قابل للتحقق." },
+            { "language": "tr", "text": "Bir itirazı kenara itmeyip denetlenebilir bir koşula çevirdiğinizde daha güçlü yanıtlamış olursunuz." },
+            { "language": "ru", "text": "На возражение отвечают сильнее, когда его не отодвигают, а переводят в проверяемое условие." },
+            { "language": "ckb", "text": "ناڕەزاییەک بەهێزتر وەڵام دەدرێتەوە کاتێک دوور نەخرێتەوە، بەڵکو بگۆڕدرێت بۆ مەرجێکی قابل پشکنین." },
+            { "language": "kmr", "text": "Bersiva nerazîbûnekê bihêztir dibe dema ku hûn wê nedin aliyekî, lê veguherînin şertê kontrolbar." },
+            { "language": "pl", "text": "Na zastrzeżenie odpowiada się mocniej, gdy nie odsuwa się go, lecz przekłada na sprawdzalny warunek." },
+            { "language": "ro", "text": "Un răspuns la o obiecție este mai puternic când nu o dați la o parte, ci o traduceți într-o condiție verificabilă." },
+            { "language": "sq", "text": "Një kundërshtim merr përgjigje më të fortë kur nuk e shtyni anash, por e ktheni në kusht të verifikueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "definition-note",
+          "text": "Bei moralisch aufgeladenen Begriffen wie Täuschung hilft eine klare Definition mehr als ein reflexhaftes Verteidigen.",
+          "translations": [
+            { "language": "en", "text": "With morally charged terms such as deception, a clear definition helps more than reflexive defense." },
+            { "language": "fa", "text": "در اصطلاحات اخلاقاً حساس مثل تقلب، تعریف روشن بیشتر از دفاع واکنشی کمک می‌کند." },
+            { "language": "ar", "text": "في المصطلحات المشحونة أخلاقياً مثل الخداع، يفيد التعريف الواضح أكثر من الدفاع الانعكاسي." },
+            { "language": "tr", "text": "Aldatma gibi ahlaki yüklü kavramlarda açık bir tanım, refleksif savunmadan daha çok yardımcı olur." },
+            { "language": "ru", "text": "При морально нагруженных терминах, таких как обман, ясное определение помогает больше, чем рефлекторная защита." },
+            { "language": "ckb", "text": "لە دەستەواژە ئەخلاقییە بارکراوەکان وەک فێڵ، پێناسەی ڕوون زیاتر یارمەتی دەدات لە بەرگریی خۆکاری." },
+            { "language": "kmr", "text": "Di gotinên bi barê exlaqî wekî xapandin de, pênaseyeke zelal ji parastina refleksî zêdetir alîkar e." },
+            { "language": "pl", "text": "Przy moralnie obciążonych pojęciach, takich jak oszustwo, jasna definicja pomaga bardziej niż odruchowa obrona." },
+            { "language": "ro", "text": "La termeni încărcați moral, precum înșelăciunea, o definiție clară ajută mai mult decât o apărare reflexă." },
+            { "language": "sq", "text": "Te termat e ngarkuar moralisht si mashtrimi, një përkufizim i qartë ndihmon më shumë se mbrojtja refleksive." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "rule-note",
+          "text": "Eine akademische Regel ist stark, wenn sie erlaubt, begrenzt und überprüfbar macht, statt nur an Ehrlichkeit zu appellieren.",
+          "translations": [
+            { "language": "en", "text": "An academic rule is strong when it permits, limits, and makes things verifiable, instead of merely appealing to honesty." },
+            { "language": "fa", "text": "قاعده دانشگاهی زمانی قوی است که اجازه بدهد، محدود کند و قابل بررسی کند، نه اینکه فقط به صداقت توصیه کند." },
+            { "language": "ar", "text": "تكون القاعدة الأكاديمية قوية عندما تسمح وتحد وتجعل الأمور قابلة للتحقق، بدلاً من الاكتفاء بالنداء إلى الصدق." },
+            { "language": "tr", "text": "Akademik bir kural, yalnızca dürüstlüğe çağrı yapmak yerine izin verdiğinde, sınırlandırdığında ve denetlenebilir kıldığında güçlüdür." },
+            { "language": "ru", "text": "Академическое правило сильно, когда оно разрешает, ограничивает и делает проверяемым, а не просто апеллирует к честности." },
+            { "language": "ckb", "text": "ڕێسای ئەکادیمی کاتێک بەهێزە کە ڕێگە بدات، سنووردار بکات و قابل پشکنین بکات، نەک تەنها بانگەشەی ڕاستگۆیی بکات." },
+            { "language": "kmr", "text": "Rêzikeke akademîk dema bihêz e ku destûr bide, sînordar bike û kontrolbar bike, ne tenê bang li rastgoyiyê bike." },
+            { "language": "pl", "text": "Zasada akademicka jest mocna, gdy pozwala, ogranicza i czyni coś sprawdzalnym, zamiast tylko apelować do uczciwości." },
+            { "language": "ro", "text": "O regulă academică este puternică atunci când permite, limitează și face verificabil, în loc să apeleze doar la onestitate." },
+            { "language": "sq", "text": "Një rregull akademik është i fortë kur lejon, kufizon dhe e bën të verifikueshëm, në vend që vetëm të bëjë thirrje për ndershmëri." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "university-seminar-debate-ai-tools",
+          "placement": "header",
+          "purpose": "Show a neutral university seminar debate about academic tool use and transparent rules.",
+          "altText": "Eine ruhige Illustration eines Hochschulseminars, in dem Erwachsene sachlich über Regeln für digitale Werkzeuge diskutieren.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm illustration of a university seminar where adults discuss rules for digital tools factually." },
+            { "language": "fa", "text": "تصویری آرام از سمینار دانشگاهی که در آن بزرگسالان درباره قواعد ابزارهای دیجیتال به‌صورت منطقی گفت‌وگو می‌کنند." },
+            { "language": "ar", "text": "رسم هادئ لسمينار جامعي يناقش فيه بالغون قواعد الأدوات الرقمية بشكل موضوعي." },
+            { "language": "tr", "text": "Yetişkinlerin dijital araç kurallarını nesnel biçimde tartıştığı sakin bir üniversite semineri illüstrasyonu." },
+            { "language": "ru", "text": "Спокойная иллюстрация университетского семинара, где взрослые предметно обсуждают правила цифровых инструментов." },
+            { "language": "ckb", "text": "وێنەیەکی ئارام لە سیمیناری زانکۆیی کە گەورەسالان بە شێوەی بابەتی دەربارەی ڕێساکانی ئامرازە دیجیتاڵییەکان گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Wêneyeke aram a semînera zanîngehê ku mezin bi awayekî babetî li ser rêzikên amûrên dijîtal nîqaş dikin." },
+            { "language": "pl", "text": "Spokojna ilustracja seminarium akademickiego, w którym dorośli rzeczowo omawiają zasady dotyczące narzędzi cyfrowych." },
+            { "language": "ro", "text": "O ilustrație calmă a unui seminar universitar în care adulții discută obiectiv reguli pentru instrumente digitale." },
+            { "language": "sq", "text": "Një ilustrim i qetë i një seminari universitar ku të rriturit diskutojnë në mënyrë faktike rregullat për mjetet digjitale." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, university seminar room in Germany, diverse adults around a table discussing academic rules for digital tools, abstract icons only, no readable text, no logos, no private data, calm respectful atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

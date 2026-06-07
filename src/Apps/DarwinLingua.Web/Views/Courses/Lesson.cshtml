@@ -1,12 +1,21 @@
 @model DarwinLingua.Web.Models.CourseLessonPageViewModel
 @{
     ViewData["Title"] = Model.Lesson.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
     <span class="eyebrow">@Model.Lesson.CefrLevel · @T["Lesson"] @Model.Lesson.LessonNumber · @T["{0} minutes", Model.Lesson.EstimatedMinutes]</span>
     <h1 class="headline-md">@Model.Lesson.Title</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.Lesson.LearnerLanguageTitle))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageTitle</p>
+    }
     <p class="body-lg">@Model.Lesson.ShortDescription</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Lesson.LearnerLanguageShortDescription))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageShortDescription</p>
+    }
     @if (Model.Progress is not null)
     {
         <div class="chip-grid" aria-label="@T["Learning progress"]">
@@ -14,25 +23,43 @@
         </div>
     }
     <p>@Model.Lesson.Narrative</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Lesson.LearnerLanguageNarrative))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageNarrative</p>
+    }
 </section>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Learning goals"]</h2>
         <ul>
-            @foreach (string goal in Model.Lesson.LearningGoals)
+            @for (int index = 0; index < Model.Lesson.LearningGoals.Count; index++)
             {
-                <li>@goal</li>
+                <li>
+                    @Model.Lesson.LearningGoals[index]
+                    @if (Model.Lesson.LearnerLanguageLearningGoals.Count > index)
+                    {
+                        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageLearningGoals[index]</p>
+                    }
+                </li>
             }
         </ul>
     </article>
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Review"]</h2>
         <p>@(Model.Lesson.ReviewSummary ?? T["Review is not available for this lesson yet."].Value)</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Lesson.LearnerLanguageReviewSummary))
+        {
+            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageReviewSummary</p>
+        }
         @if (!string.IsNullOrWhiteSpace(Model.Lesson.HomeworkTask))
         {
             <h3>@T["Practice task"]</h3>
             <p>@Model.Lesson.HomeworkTask</p>
+            @if (!string.IsNullOrWhiteSpace(Model.Lesson.LearnerLanguageHomeworkTask))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageHomeworkTask</p>
+            }
         }
     </article>
 </section>

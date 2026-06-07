@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-31-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 31 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 31",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-integrationsfall-mit-mehreren-stellen-koordinieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Integrationsfall mit mehreren Stellen koordinieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Coordinating an integration case with several offices" },
+        { "language": "fa", "text": "هماهنگ کردن یک پرونده ادغام با چند نهاد" },
+        { "language": "ar", "text": "تنسيق حالة اندماج مع عدة جهات" },
+        { "language": "tr", "text": "Bir entegrasyon dosyasını birkaç kurumla koordine etmek" },
+        { "language": "ru", "text": "Координация интеграционного случая с несколькими службами" },
+        { "language": "ckb", "text": "هەماهەنگکردنی کەیسێکی یەکگرتن لەگەڵ چەند دامەزراوە" },
+        { "language": "kmr", "text": "Koordînekirina dozeke entegrasyonê bi çend saziyan re" },
+        { "language": "pl", "text": "Koordynowanie sprawy integracyjnej z kilkoma instytucjami" },
+        { "language": "ro", "text": "Coordonarea unui caz de integrare cu mai multe instituții" },
+        { "language": "sq", "text": "Koordinimi i një rasti integrimi me disa institucione" }
+      ],
+      "description": "Sie telefonieren mit einer Beratungsstelle, weil Sprachkurs, Kinderbetreuung und Jobcenter-Frist voneinander abhängen. Sie klären Zuständigkeiten, Unterlagen, Datenschutz und den nächsten Kommunikationsweg, ohne das Gespräch zu überladen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call an advisory office because a language course, childcare, and a Jobcenter deadline depend on each other. You clarify responsibilities, documents, data protection, and the next communication path without overloading the call." },
+        { "language": "fa", "text": "شما با یک مرکز مشاوره تماس می‌گیرید، چون دوره زبان، مراقبت کودک و مهلت جاب‌سنتر به هم وابسته‌اند. مسئولیت‌ها، مدارک، حفاظت از داده‌ها و مسیر ارتباطی بعدی را روشن می‌کنید، بدون اینکه تماس را بیش از حد سنگین کنید." },
+        { "language": "ar", "text": "تتصل بمركز استشاري لأن دورة اللغة ورعاية الطفل وموعد الجوب سنتر تعتمد بعضها على بعض. توضّح المسؤوليات والوثائق وحماية البيانات ومسار التواصل التالي من دون تحميل المكالمة أكثر من اللازم." },
+        { "language": "tr", "text": "Bir danışma merkezini arıyorsunuz, çünkü dil kursu, çocuk bakımı ve Jobcenter süresi birbirine bağlı. Görüşmeyi aşırı yüklemeden sorumlulukları, belgeleri, veri korumayı ve sonraki iletişim yolunu netleştiriyorsunuz." },
+        { "language": "ru", "text": "Вы звоните в консультационный центр, потому что языковой курс, уход за ребёнком и срок Jobcenter зависят друг от друга. Вы уточняете ответственность, документы, защиту данных и следующий путь коммуникации, не перегружая звонок." },
+        { "language": "ckb", "text": "تۆ پەیوەندی بە ناوەندی ڕاوێژکارییەکەوە دەکەیت، چونکە کۆرسی زمان، چاودێری منداڵ و ماوەی جۆب‌سەنتەر پەیوەندیدارن بە یەکەوە. بەرپرسیارییەکان، بەڵگەکان، پاراستنی داتا و ڕێگای پەیوەندی داهاتوو ڕوون دەکەیتەوە، بەبێ ئەوەی تەلەفۆنەکە زۆر قورس بکەیت." },
+        { "language": "kmr", "text": "Hûn bi navendeke şêwirmendiyê re telefon dikin, ji ber ku kursa ziman, lênêrîna zarokan û muhleta Jobcenter bi hev ve girêdayî ne. Hûn berpirsiyarî, belge, parastina daneyan û rêya peywendiya paşîn zelal dikin bêyî ku axaftinê pir bar bikin." },
+        { "language": "pl", "text": "Dzwoni Pan do poradni, ponieważ kurs językowy, opieka nad dzieckiem i termin Jobcenter są od siebie zależne. Wyjaśnia Pan odpowiedzialności, dokumenty, ochronę danych i kolejny kanał komunikacji, nie przeciążając rozmowy." },
+        { "language": "ro", "text": "Sunați la un centru de consiliere deoarece cursul de limbă, îngrijirea copilului și termenul de la Jobcenter depind unele de altele. Clarificați responsabilitățile, documentele, protecția datelor și următoarea cale de comunicare fără a încărca prea mult apelul." },
+        { "language": "sq", "text": "Telefononi një qendër këshillimi sepse kursi i gjuhës, kujdesi për fëmijën dhe afati i Jobcenter-it varen nga njëra-tjetra. Sqaroni përgjegjësitë, dokumentet, mbrojtjen e të dhënave dhe rrugën e ardhshme të komunikimit pa e ngarkuar tepër telefonatën." }
+      ],
+      "learnerGoal": "Einen mehrteiligen Integrationsfall am Telefon strukturieren: Abhängigkeiten nennen, Zuständigkeiten trennen, Datenschutz beachten, Prioritäten setzen und einen realistischen nächsten Schritt vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure a multi-part integration case by phone: name dependencies, separate responsibilities, respect data protection, set priorities, and agree on a realistic next step." },
+        { "language": "fa", "text": "یک پرونده چندبخشی ادغام را تلفنی ساختار دهید: وابستگی‌ها را بگویید، مسئولیت‌ها را جدا کنید، حفاظت از داده‌ها را رعایت کنید، اولویت بگذارید و قدم بعدی واقع‌بینانه را توافق کنید." },
+        { "language": "ar", "text": "نظّم حالة اندماج متعددة الأجزاء عبر الهاتف: اذكر الترابطات، وافصل المسؤوليات، وراعِ حماية البيانات، وحدد الأولويات، واتفق على خطوة تالية واقعية." },
+        { "language": "tr", "text": "Çok parçalı bir entegrasyon dosyasını telefonda yapılandırın: bağımlılıkları adlandırın, sorumlulukları ayırın, veri korumayı dikkate alın, öncelikleri belirleyin ve gerçekçi bir sonraki adım üzerinde anlaşın." },
+        { "language": "ru", "text": "Структурировать многочастный интеграционный случай по телефону: назвать зависимости, разделить ответственность, учесть защиту данных, расставить приоритеты и согласовать реалистичный следующий шаг." },
+        { "language": "ckb", "text": "کەیسێکی چەند بەشی یەکگرتن بە تەلەفۆن ڕێکبخە: پەیوەندییەکان ناو ببە، بەرپرسیارییەکان جیا بکەوە، پاراستنی داتا لەبەرچاو بگرە، پێشینەکان دیاری بکە و هەنگاوێکی داهاتووی واقیعی ڕێکبخە." },
+        { "language": "kmr", "text": "Dozeke entegrasyonê ya pir-beşî bi telefonê rêxistin bikin: girêdanan nav bikin, berpirsiyariyan cuda bikin, parastina daneyan hesab bikin, pêşînan danîn û gaveke paşîn a rast li hev bikin." },
+        { "language": "pl", "text": "Uporządkować telefonicznie wieloczęściową sprawę integracyjną: nazwać zależności, rozdzielić odpowiedzialności, uwzględnić ochronę danych, ustalić priorytety i uzgodnić realistyczny następny krok." },
+        { "language": "ro", "text": "Structurați telefonic un caz de integrare cu mai multe părți: numiți dependențele, separați responsabilitățile, respectați protecția datelor, stabiliți priorități și conveniți un pas următor realist." },
+        { "language": "sq", "text": "Strukturoni me telefon një rast integrimi me disa pjesë: përmendni varësitë, ndani përgjegjësitë, respektoni mbrojtjen e të dhënave, vendosni përparësi dhe bini dakord për një hap tjetër realist." }
+      ],
+      "cefrLevel": "C1",
+      "category": "public-services",
+      "topics": ["public-services", "social-and-relationships"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "discuss-plan",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 17,
+      "isPublished": true,
+      "sortOrder": 31,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Anrufer/in",
+          "translations": [
+            { "language": "en", "text": "Caller" },
+            { "language": "fa", "text": "تماس‌گیرنده" },
+            { "language": "ar", "text": "المتصل" },
+            { "language": "tr", "text": "Arayan kişi" },
+            { "language": "ru", "text": "Звонящий" },
+            { "language": "ckb", "text": "پەیوەندیکەر" },
+            { "language": "kmr", "text": "Telefonker" },
+            { "language": "pl", "text": "Osoba dzwoniąca" },
+            { "language": "ro", "text": "Apelant" },
+            { "language": "sq", "text": "Telefonuesi" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Beratungsstelle",
+          "translations": [
+            { "language": "en", "text": "Advisory office" },
+            { "language": "fa", "text": "مرکز مشاوره" },
+            { "language": "ar", "text": "مركز الاستشارة" },
+            { "language": "tr", "text": "Danışma merkezi" },
+            { "language": "ru", "text": "Консультационный центр" },
+            { "language": "ckb", "text": "ناوەندی ڕاوێژکاری" },
+            { "language": "kmr", "text": "Navenda şêwirmendiyê" },
+            { "language": "pl", "text": "Poradnia" },
+            { "language": "ro", "text": "Centru de consiliere" },
+            { "language": "sq", "text": "Qendra e këshillimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Guten Tag, Beratungsstelle Integration. Wobei brauchen Sie Unterstützung?",
+          "translations": [
+            { "language": "en", "text": "Good day, Integration Advisory Office. What do you need support with?" },
+            { "language": "fa", "text": "روز بخیر، مرکز مشاوره ادغام. در چه موردی به پشتیبانی نیاز دارید؟" },
+            { "language": "ar", "text": "نهارك سعيد، مركز استشارة الاندماج. في ماذا تحتاج إلى دعم؟" },
+            { "language": "tr", "text": "İyi günler, Entegrasyon Danışma Merkezi. Hangi konuda desteğe ihtiyacınız var?" },
+            { "language": "ru", "text": "Добрый день, консультационный центр по интеграции. В чём вам нужна поддержка?" },
+            { "language": "ckb", "text": "ڕۆژ باش، ناوەندی ڕاوێژکاری یەکگرتن. لە چیدا پێویستت بە پشتگیرییە؟" },
+            { "language": "kmr", "text": "Roj baş, Navenda Şêwirmendiya Entegrasyonê. Hûn di çi de piştgirî dixwazin?" },
+            { "language": "pl", "text": "Dzień dobry, poradnia integracyjna. W czym potrzebuje Pan wsparcia?" },
+            { "language": "ro", "text": "Bună ziua, Centrul de consiliere pentru integrare. Cu ce aveți nevoie de sprijin?" },
+            { "language": "sq", "text": "Mirëdita, qendra e këshillimit për integrim. Për çfarë keni nevojë për mbështetje?" }
+          ],
+          "function": "phone-opening",
+          "toneNote": "formal, serviceorientiert",
+          "expectedLearnerAction": "Anliegen kurz strukturieren"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich möchte einen Fall mit drei beteiligten Stellen strukturieren: Sprachkursträger, Kinderbetreuung und Jobcenter. Mir geht es nicht darum, dass Sie alles für mich lösen, sondern um eine klare Reihenfolge und darum, wer welche Bestätigung liefern kann.",
+          "translations": [
+            { "language": "en", "text": "Good day. I would like to structure a case involving three offices: the language course provider, childcare, and the Jobcenter. I am not asking you to solve everything for me, but for a clear sequence and for who can provide which confirmation." },
+            { "language": "fa", "text": "روز بخیر. می‌خواهم پرونده‌ای را که سه نهاد در آن دخیل‌اند ساختار بدهم: برگزارکننده دوره زبان، مراقبت کودک و جاب‌سنتر. منظورم این نیست که شما همه چیز را برایم حل کنید، بلکه یک ترتیب روشن و اینکه چه کسی کدام تأییدیه را می‌تواند بدهد می‌خواهم." },
+            { "language": "ar", "text": "نهارك سعيد. أريد تنظيم حالة تشارك فيها ثلاث جهات: مقدم دورة اللغة، ورعاية الطفل، والجوب سنتر. لا أطلب أن تحلوا كل شيء عني، بل أحتاج إلى ترتيب واضح ومعرفة من يستطيع تقديم أي تأكيد." },
+            { "language": "tr", "text": "İyi günler. Üç kurumun dahil olduğu bir dosyayı yapılandırmak istiyorum: dil kursu sağlayıcısı, çocuk bakımı ve Jobcenter. Sizden her şeyi benim için çözmenizi istemiyorum; net bir sıra ve hangi onayı kimin verebileceğini öğrenmek istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я хотел бы структурировать случай с участием трёх служб: поставщика языкового курса, ухода за ребёнком и Jobcenter. Я не прошу вас решить всё за меня, а хочу понять чёткую последовательность и кто какое подтверждение может предоставить." },
+            { "language": "ckb", "text": "ڕۆژ باش. دەمەوێت کەیسێک ڕێکبخەم کە سێ لایەن تێیدا بەشدارن: پێشکەشکاری کۆرسی زمان، چاودێری منداڵ و جۆب‌سەنتەر. مەبەستم ئەوە نییە کە ئێوە هەموو شتێک بۆم چارەسەر بکەن، بەڵکو ڕیزبەندییەکی ڕوون و ئەوە دەوێت کە کێ کام پشتڕاستکردنەوە دەتوانێت بدات." },
+            { "language": "kmr", "text": "Roj baş. Ez dixwazim dozekê ku sê aliyên tê de hene rêxistin bikim: pêşkêşkarê kursa ziman, lênêrîna zarokan û Jobcenter. Ez naxwazim hûn her tiştî ji bo min çareser bikin, lê rêzeke zelal û ka kî kîjan piştrastkirinê dikare bide dixwazim." },
+            { "language": "pl", "text": "Dzień dobry. Chciałbym uporządkować sprawę z udziałem trzech instytucji: organizatora kursu językowego, opieki nad dzieckiem i Jobcenter. Nie chodzi mi o to, żeby Państwo wszystko za mnie rozwiązali, lecz o jasną kolejność i o to, kto może wydać jakie potwierdzenie." },
+            { "language": "ro", "text": "Bună ziua. Aș dori să structurez un caz cu trei instituții implicate: furnizorul cursului de limbă, îngrijirea copilului și Jobcenter. Nu cer să rezolvați totul pentru mine, ci să clarificăm ordinea și cine poate furniza ce confirmare." },
+            { "language": "sq", "text": "Mirëdita. Dua të strukturoj një rast me tre institucione të përfshira: ofruesin e kursit të gjuhës, kujdesin për fëmijën dhe Jobcenter-in. Nuk kërkoj që ju të zgjidhni gjithçka për mua, por një rend të qartë dhe kush mund të japë cilin konfirmim." }
+          ],
+          "function": "structured-case-opening",
+          "toneNote": "präzise, nicht überfordernd",
+          "expectedLearnerAction": "Beteiligte Stellen und Gesprächsziel nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Welche Frist ist im Moment am dringendsten?",
+          "translations": [
+            { "language": "en", "text": "Which deadline is currently the most urgent?" },
+            { "language": "fa", "text": "در حال حاضر کدام مهلت فوری‌تر است؟" },
+            { "language": "ar", "text": "ما المهلة الأكثر إلحاحاً حالياً؟" },
+            { "language": "tr", "text": "Şu anda en acil süre hangisi?" },
+            { "language": "ru", "text": "Какой срок сейчас самый срочный?" },
+            { "language": "ckb", "text": "لە ئێستادا کام ماوە پەلەترینە؟" },
+            { "language": "kmr", "text": "Niha kîjan muhlet herî lezgîn e?" },
+            { "language": "pl", "text": "Który termin jest obecnie najpilniejszy?" },
+            { "language": "ro", "text": "Care termen este cel mai urgent în acest moment?" },
+            { "language": "sq", "text": "Cili afat është më urgjent për momentin?" }
+          ],
+          "function": "priority-question",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Dringlichkeit priorisieren"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die Frist des Jobcenters ist der Engpass: Bis zum 15. August soll ich einen Teilnahmeplan einreichen. Der Sprachkursträger reserviert mir ab 1. September einen Platz, braucht aber vorher eine Kinderbetreuungsbestätigung. Die Kita-Stelle kann diese Bestätigung erst ausstellen, wenn die Kurszeiten schriftlich vorliegen.",
+          "translations": [
+            { "language": "en", "text": "The Jobcenter deadline is the bottleneck: by August 15 I am supposed to submit a participation plan. The language course provider is reserving a place for me from September 1, but needs a childcare confirmation beforehand. The childcare office can issue that confirmation only once the course times are available in writing." },
+            { "language": "fa", "text": "مهلت جاب‌سنتر گلوگاه اصلی است: تا ۱۵ اوت باید برنامه مشارکت را ارائه کنم. برگزارکننده دوره زبان از اول سپتامبر برای من جا رزرو می‌کند، اما قبل از آن تأییدیه مراقبت کودک می‌خواهد. بخش کیتا فقط وقتی می‌تواند این تأییدیه را صادر کند که زمان‌های دوره به‌صورت کتبی موجود باشد." },
+            { "language": "ar", "text": "مهلة الجوب سنتر هي نقطة الاختناق: حتى 15 أغسطس يجب أن أقدم خطة مشاركة. مقدم دورة اللغة يحجز لي مكاناً من 1 سبتمبر، لكنه يحتاج قبل ذلك إلى تأكيد رعاية الطفل. جهة الروضة لا تستطيع إصدار هذا التأكيد إلا عندما تكون أوقات الدورة مكتوبة." },
+            { "language": "tr", "text": "Jobcenter süresi darboğaz: 15 Ağustos'a kadar katılım planı sunmam gerekiyor. Dil kursu sağlayıcısı 1 Eylül'den itibaren bana yer ayırıyor, ancak önceden çocuk bakımı onayı istiyor. Kita birimi bu onayı ancak kurs saatleri yazılı olduğunda verebiliyor." },
+            { "language": "ru", "text": "Срок Jobcenter является узким местом: до 15 августа я должен подать план участия. Поставщик языкового курса резервирует мне место с 1 сентября, но заранее требует подтверждение ухода за ребёнком. Отдел детского сада может выдать это подтверждение только после того, как расписание курса будет в письменном виде." },
+            { "language": "ckb", "text": "ماوەی جۆب‌سەنتەر خاڵی قەیرانە: تا ١٥ی ئاب پێویستە پلانی بەشداری پێشکەش بکەم. پێشکەشکاری کۆرسی زمان لە ١ی ئەیلوولەوە شوێنێکم بۆ دەگرێت، بەڵام پێشتر پێویستی بە پشتڕاستکردنەوەی چاودێری منداڵ هەیە. بەشی کیتا تەنها کاتێک دەتوانێت ئەم پشتڕاستکردنەوەیە دەربکات کە کاتەکانی کۆرس بە نووسراوی هەبن." },
+            { "language": "kmr", "text": "Muhleta Jobcenter astengiya sereke ye: Heta 15ê Tebaxê divê ez plana beşdariyê pêşkêş bikim. Pêşkêşkarê kursa ziman ji 1ê Îlonê ve cih ji bo min digire, lê berî wê piştrastkirina lênêrîna zarokan divê. Dezgeha kita dikare vê piştrastkirinê tenê dema demên kursê bi nivîskî hebin derxe." },
+            { "language": "pl", "text": "Termin Jobcenter jest wąskim gardłem: do 15 sierpnia mam złożyć plan uczestnictwa. Organizator kursu językowego rezerwuje mi miejsce od 1 września, ale wcześniej potrzebuje potwierdzenia opieki nad dzieckiem. Punkt opieki może wydać to potwierdzenie dopiero wtedy, gdy godziny kursu będą dostępne pisemnie." },
+            { "language": "ro", "text": "Termenul Jobcenter este blocajul: până la 15 august trebuie să depun un plan de participare. Furnizorul cursului de limbă îmi rezervă un loc de la 1 septembrie, dar are nevoie înainte de confirmarea îngrijirii copilului. Biroul pentru grădiniță poate emite această confirmare doar când orele cursului sunt disponibile în scris." },
+            { "language": "sq", "text": "Afati i Jobcenter-it është pika bllokuese: deri më 15 gusht duhet të dorëzoj një plan pjesëmarrjeje. Ofruesi i kursit të gjuhës më rezervon një vend nga 1 shtatori, por më parë kërkon konfirmim për kujdesin e fëmijës. Zyra e kopshtit mund ta lëshojë këtë konfirmim vetëm kur oraret e kursit të jenë me shkrim." }
+          ],
+          "function": "dependency-map",
+          "toneNote": "strukturiert, zeitlich geordnet",
+          "expectedLearnerAction": "Abhängigkeiten und Fristen sortieren"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Wir können nicht für das Jobcenter oder die Kita entscheiden. Wir können aber helfen, die nächsten Schritte zu ordnen.",
+          "translations": [
+            { "language": "en", "text": "We cannot make decisions for the Jobcenter or the childcare office. But we can help organize the next steps." },
+            { "language": "fa", "text": "ما نمی‌توانیم به جای جاب‌سنتر یا کیتا تصمیم بگیریم. اما می‌توانیم کمک کنیم قدم‌های بعدی مرتب شوند." },
+            { "language": "ar", "text": "لا نستطيع أن نقرر نيابة عن الجوب سنتر أو جهة الروضة. لكن يمكننا المساعدة في ترتيب الخطوات التالية." },
+            { "language": "tr", "text": "Jobcenter veya Kita adına karar veremeyiz. Ancak sonraki adımları düzenlemeye yardımcı olabiliriz." },
+            { "language": "ru", "text": "Мы не можем принимать решения за Jobcenter или отдел детского сада. Но мы можем помочь упорядочить следующие шаги." },
+            { "language": "ckb", "text": "ئێمە ناتوانین لە جیاتی جۆب‌سەنتەر یان کیتا بڕیار بدەین. بەڵام دەتوانین یارمەتی بدەین هەنگاوەکانی داهاتوو ڕێکبخرێن." },
+            { "language": "kmr", "text": "Em nikarin li şûna Jobcenter an kita biryar bidin. Lê em dikarin alîkar bin gavên paşîn werin rêxistin." },
+            { "language": "pl", "text": "Nie możemy decydować za Jobcenter ani za punkt opieki. Możemy jednak pomóc uporządkować kolejne kroki." },
+            { "language": "ro", "text": "Nu putem decide în locul Jobcenter sau al biroului pentru grădiniță. Dar putem ajuta la ordonarea pașilor următori." },
+            { "language": "sq", "text": "Ne nuk mund të vendosim në vend të Jobcenter-it ose zyrës së kopshtit. Por mund të ndihmojmë të renditen hapat e ardhshëm." }
+          ],
+          "function": "responsibility-boundary",
+          "toneNote": "abgrenzend, hilfreich",
+          "expectedLearnerAction": "Grenze akzeptieren und Koordinationsbitte konkretisieren"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das ist genau mein Anliegen. Ich möchte die Zuständigkeiten nicht vermischen. Mir würde helfen, wenn wir trennen: Was muss ich beim Kursträger anfordern, was bei der Kita-Stelle, und was kann ich dem Jobcenter als Zwischenstand fristgerecht schicken?",
+          "translations": [
+            { "language": "en", "text": "That is exactly my concern. I do not want to mix the responsibilities. It would help me if we separated: what I need to request from the course provider, what from the childcare office, and what I can send the Jobcenter on time as an interim status." },
+            { "language": "fa", "text": "دقیقاً همین مسئله من است. نمی‌خواهم مسئولیت‌ها را با هم قاطی کنم. اگر جدا کنیم که چه چیزی را باید از برگزارکننده دوره بگیرم، چه چیزی را از بخش کیتا، و چه چیزی را می‌توانم به‌عنوان وضعیت موقت به‌موقع برای جاب‌سنتر بفرستم، به من کمک می‌کند." },
+            { "language": "ar", "text": "هذا هو طلبي بالضبط. لا أريد خلط المسؤوليات. سيساعدني أن نفصل: ما الذي يجب أن أطلبه من مقدم الدورة، وما الذي أطلبه من جهة الروضة، وما الذي يمكنني إرساله إلى الجوب سنتر في الوقت المحدد كحالة مؤقتة." },
+            { "language": "tr", "text": "Tam olarak derdim bu. Sorumlulukları karıştırmak istemiyorum. Şunları ayırabilirsek bana yardımcı olur: kurs sağlayıcısından ne istemeliyim, Kita biriminden ne istemeliyim ve Jobcenter'e süre içinde ara durum olarak ne gönderebilirim?" },
+            { "language": "ru", "text": "Именно это меня и волнует. Я не хочу смешивать ответственности. Мне помогло бы, если бы мы разделили: что мне запросить у поставщика курса, что у отдела детского сада и что я могу вовремя отправить в Jobcenter как промежуточный статус." },
+            { "language": "ckb", "text": "ئەمە بە تەواوی مەبەستی منە. نامەوێت بەرپرسیارییەکان تێکەڵ بکەم. یارمەتیم دەدات ئەگەر جیا بکەینەوە: چی پێویستە لە پێشکەشکاری کۆرس داوا بکەم، چی لە بەشی کیتا، و چی دەتوانم وەک دۆخی کاتی لە کاتی خۆیدا بۆ جۆب‌سەنتەر بنێرم." },
+            { "language": "kmr", "text": "Ev rast mijara min e. Ez naxwazim berpirsiyariyan tevlihev bikim. Alîkariya min dike heke em cuda bikin: divê ez ji pêşkêşkarê kursê çi bixwazim, ji dezgeha kita çi, û ez dikarim wek rewşa navber di demê xwe de çi ji Jobcenter re bişînim." },
+            { "language": "pl", "text": "Dokładnie o to mi chodzi. Nie chcę mieszać odpowiedzialności. Pomogłoby mi, gdybyśmy rozdzielili: o co mam poprosić organizatora kursu, o co punkt opieki i co mogę wysłać do Jobcenter w terminie jako stan pośredni." },
+            { "language": "ro", "text": "Exact acesta este scopul meu. Nu vreau să amestec responsabilitățile. M-ar ajuta să separăm: ce trebuie să solicit de la furnizorul cursului, ce de la biroul pentru grădiniță și ce pot trimite Jobcenter la timp ca situație intermediară." },
+            { "language": "sq", "text": "Pikërisht ky është qëllimi im. Nuk dua t'i përziej përgjegjësitë. Do të më ndihmonte nëse i ndajmë: çfarë duhet të kërkoj nga ofruesi i kursit, çfarë nga zyra e kopshtit dhe çfarë mund t'i dërgoj Jobcenter-it në afat si gjendje të ndërmjetme." }
+          ],
+          "function": "responsibility-separation",
+          "toneNote": "kooperativ, fokussiert",
+          "expectedLearnerAction": "Zuständigkeiten trennen und nächsten Schritt vorbereiten"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Welche Unterlagen und Kontaktdaten liegen Ihnen schon vor?",
+          "translations": [
+            { "language": "en", "text": "Which documents and contact details do you already have?" },
+            { "language": "fa", "text": "چه مدارک و اطلاعات تماس را از قبل دارید؟" },
+            { "language": "ar", "text": "ما الوثائق وبيانات الاتصال الموجودة لديك بالفعل؟" },
+            { "language": "tr", "text": "Hangi belgeler ve iletişim bilgileri şu anda elinizde?" },
+            { "language": "ru", "text": "Какие документы и контактные данные у вас уже есть?" },
+            { "language": "ckb", "text": "چ بەڵگە و زانیاری پەیوەندیت پێشتر هەیە؟" },
+            { "language": "kmr", "text": "Kîjan belge û agahiyên peywendiyê jixwe li we hene?" },
+            { "language": "pl", "text": "Jakie dokumenty i dane kontaktowe ma Pan już do dyspozycji?" },
+            { "language": "ro", "text": "Ce documente și date de contact aveți deja?" },
+            { "language": "sq", "text": "Cilat dokumente dhe të dhëna kontakti i keni tashmë?" }
+          ],
+          "function": "documents-question",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Vorhandene Unterlagen geordnet nennen"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich habe die Kursreservierung mit vorläufigen Zeiten, das Schreiben des Jobcenters mit Frist, die Kita-Vormerkung und die E-Mail-Adressen der drei Stellen. Mir ist aber unklar, ob ich eine Einwilligung brauche, bevor Unterlagen direkt zwischen den Stellen weitergeleitet werden.",
+          "translations": [
+            { "language": "en", "text": "I have the course reservation with provisional times, the Jobcenter letter with the deadline, the childcare pre-registration, and the email addresses of the three offices. What is unclear to me is whether I need consent before documents are forwarded directly between the offices." },
+            { "language": "fa", "text": "رزرو دوره با زمان‌های موقت، نامه جاب‌سنتر با مهلت، پیش‌ثبت‌نام کیتا و ایمیل‌های سه نهاد را دارم. اما برایم روشن نیست آیا قبل از اینکه مدارک مستقیماً بین نهادها منتقل شوند، به رضایت‌نامه نیاز دارم یا نه." },
+            { "language": "ar", "text": "لدي حجز الدورة مع أوقات مؤقتة، وخطاب الجوب سنتر مع المهلة، والتسجيل المبدئي في الروضة، وعناوين البريد الإلكتروني للجهات الثلاث. لكنني لا أعرف هل أحتاج إلى موافقة قبل أن تُحال الوثائق مباشرة بين الجهات." },
+            { "language": "tr", "text": "Geçici saatleri olan kurs rezervasyonu, süreyi belirten Jobcenter yazısı, Kita ön kaydı ve üç kurumun e-posta adresleri bende var. Ancak belgeler doğrudan kurumlar arasında iletilmeden önce onay gerekip gerekmediği benim için belirsiz." },
+            { "language": "ru", "text": "У меня есть резервирование курса с предварительным расписанием, письмо Jobcenter со сроком, предварительная запись в детский сад и адреса электронной почты трёх служб. Но мне неясно, нужно ли согласие, прежде чем документы будут напрямую передаваться между службами." },
+            { "language": "ckb", "text": "رزەرفکردنی کۆرس بە کاتە کاتییەکان، نامەی جۆب‌سەنتەر بە ماوەکە، پێشتۆمارکردنی کیتا و ناونیشانی ئیمەیلی سێ لایەنەکەم هەیە. بەڵام بۆم ناڕوونە ئایا پێش ئەوەی بەڵگەکان ڕاستەوخۆ لە نێوان لایەنەکاندا بنێردرێن، پێویستم بە ڕەزامەندییە یان نا." },
+            { "language": "kmr", "text": "Rezervasyona kursê bi demên demkî, nivîsa Jobcenter bi muhletê, pêş-tomara kita û navnîşanên e-nameyê yên sê saziyan hene. Lê ji min re nezelal e ka berî ku belge rasterast di navbera saziyan de werin şandin, razîbûn pêwîst e yan na." },
+            { "language": "pl", "text": "Mam rezerwację kursu z orientacyjnymi godzinami, pismo Jobcenter z terminem, wstępną rezerwację miejsca w opiece oraz adresy e-mail trzech instytucji. Nie jest jednak dla mnie jasne, czy potrzebuję zgody, zanim dokumenty będą bezpośrednio przekazywane między instytucjami." },
+            { "language": "ro", "text": "Am rezervarea cursului cu ore provizorii, scrisoarea Jobcenter cu termenul, preregistrarea la grădiniță și adresele de e-mail ale celor trei instituții. Îmi este însă neclar dacă am nevoie de consimțământ înainte ca documentele să fie transmise direct între instituții." },
+            { "language": "sq", "text": "Kam rezervimin e kursit me orare të përkohshme, letrën e Jobcenter-it me afatin, pararegjistrimin në kopsht dhe adresat e emailit të tre institucioneve. Por nuk e kam të qartë nëse më duhet pëlqim para se dokumentet të përcillen drejtpërdrejt mes institucioneve." }
+          ],
+          "function": "documents-and-data-protection",
+          "toneNote": "geordnet, datenschutzbewusst",
+          "expectedLearnerAction": "Unterlagen und Datenschutzfrage verbinden"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Ohne Einwilligung sollten Sie nicht davon ausgehen, dass die Stellen direkt Informationen austauschen. Wir können Ihnen aber eine Formulierung für Ihre eigenen E-Mails geben.",
+          "translations": [
+            { "language": "en", "text": "Without consent, you should not assume that the offices will exchange information directly. But we can give you wording for your own emails." },
+            { "language": "fa", "text": "بدون رضایت‌نامه نباید فرض کنید که نهادها مستقیم با هم اطلاعات تبادل می‌کنند. اما می‌توانیم متن پیشنهادی برای ایمیل‌های خودتان بدهیم." },
+            { "language": "ar", "text": "من دون موافقة لا ينبغي أن تفترض أن الجهات ستتبادل المعلومات مباشرة. لكن يمكننا أن نعطيك صياغة لرسائلك الإلكترونية." },
+            { "language": "tr", "text": "Onay olmadan kurumların doğrudan bilgi alışverişi yapacağını varsaymamalısınız. Ancak kendi e-postalarınız için size bir ifade verebiliriz." },
+            { "language": "ru", "text": "Без согласия вам не следует исходить из того, что службы будут напрямую обмениваться информацией. Но мы можем дать вам формулировку для ваших собственных писем." },
+            { "language": "ckb", "text": "بەبێ ڕەزامەندی، نابێت وای دابنێیت کە لایەنەکان ڕاستەوخۆ زانیاری ئاڵوگۆڕ دەکەن. بەڵام دەتوانین دەربڕینێک بۆ ئیمەیلەکانی خۆت بدەین." },
+            { "language": "kmr", "text": "Bê razîbûnê divê hûn texmîn nekin ku sazî rasterast agahiyan diguherînin. Lê em dikarin ji bo e-nameyên we yên xwe gotinek bidin." },
+            { "language": "pl", "text": "Bez zgody nie powinien Pan zakładać, że instytucje będą bezpośrednio wymieniać informacje. Możemy jednak podać Panu sformułowanie do własnych e-maili." },
+            { "language": "ro", "text": "Fără consimțământ, nu ar trebui să presupuneți că instituțiile vor face schimb direct de informații. Dar vă putem oferi o formulare pentru propriile e-mailuri." },
+            { "language": "sq", "text": "Pa pëlqim nuk duhet të supozoni se institucionet do të shkëmbejnë drejtpërdrejt informacione. Por mund t'ju japim një formulim për email-et tuaja." }
+          ],
+          "function": "data-protection-boundary",
+          "toneNote": "vorsichtig, hilfreich",
+          "expectedLearnerAction": "Kommunikationsweg datenschutzkonform eingrenzen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann wäre mein Vorschlag: Ich schreibe jede Stelle selbst an, verwende dieselbe Aktennummer und fasse die Abhängigkeit in zwei Sätzen zusammen. Können Sie mir helfen, die Reihenfolge festzulegen, damit ich nicht gleichzeitig widersprüchliche Anfragen verschicke?",
+          "translations": [
+            { "language": "en", "text": "Then my proposal would be: I write to each office myself, use the same file number, and summarize the dependency in two sentences. Can you help me set the sequence so that I do not send contradictory requests at the same time?" },
+            { "language": "fa", "text": "پس پیشنهاد من این است: خودم به هر نهاد جداگانه ایمیل بزنم، از همان شماره پرونده استفاده کنم و وابستگی‌ها را در دو جمله خلاصه کنم. می‌توانید کمک کنید ترتیب را مشخص کنم تا هم‌زمان درخواست‌های متناقض نفرستم؟" },
+            { "language": "ar", "text": "إذن اقتراحي هو: أكتب إلى كل جهة بنفسي، وأستخدم رقم الملف نفسه، وألخص الترابط في جملتين. هل يمكنكم مساعدتي في تحديد الترتيب حتى لا أرسل طلبات متناقضة في الوقت نفسه؟" },
+            { "language": "tr", "text": "O halde önerim şu olur: Her kuruma kendim yazarım, aynı dosya numarasını kullanırım ve bağımlılığı iki cümlede özetlerim. Aynı anda çelişkili talepler göndermemem için sırayı belirlememe yardımcı olabilir misiniz?" },
+            { "language": "ru", "text": "Тогда моё предложение такое: я сам пишу каждой службе, использую один и тот же номер дела и кратко описываю зависимость в двух предложениях. Можете помочь определить последовательность, чтобы я не отправлял одновременно противоречивые запросы?" },
+            { "language": "ckb", "text": "ئەوکات پێشنیارم ئەوەیە: خۆم بۆ هەر لایەنێک بنووسم، هەمان ژمارەی کەیس بەکاربهێنم و پەیوەندییەکە لە دوو ڕستەدا پوختە بکەم. دەتوانن یارمەتیم بدەن ڕیزبەندییەکە دیاری بکەم، بۆ ئەوەی هاوکات داواکارییە دژبەیەکەکان نەنێرم؟" },
+            { "language": "kmr", "text": "Wê demê pêşniyara min ev e: Ez bi xwe ji her saziyê re dinivîsim, heman jimareya dosyeyê bikar tînim û girêdanê di du hevokan de kurt dikim. Hûn dikarin alîkariya min bikin rêzê diyar bikim, da ku ez di heman demê de daxwazên dijber neşînim?" },
+            { "language": "pl", "text": "W takim razie moja propozycja jest taka: napiszę sam do każdej instytucji, użyję tego samego numeru sprawy i podsumuję zależność w dwóch zdaniach. Czy mogą Państwo pomóc mi ustalić kolejność, żebym nie wysłał jednocześnie sprzecznych zapytań?" },
+            { "language": "ro", "text": "Atunci propunerea mea ar fi: scriu eu fiecărei instituții, folosesc același număr de dosar și rezum dependența în două propoziții. Mă puteți ajuta să stabilim ordinea, ca să nu trimit cereri contradictorii în același timp?" },
+            { "language": "sq", "text": "Atëherë propozimi im do të ishte: i shkruaj vetë secilit institucion, përdor të njëjtin numër dosjeje dhe e përmbledh varësinë në dy fjali. A mund të më ndihmoni të përcaktoj rendin, që të mos dërgoj kërkesa kontradiktore njëkohësisht?" }
+          ],
+          "function": "communication-path",
+          "toneNote": "datenschutzbewusst, handlungsorientiert",
+          "expectedLearnerAction": "Kommunikationsweg und Reihenfolge klären"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "clerk",
+          "baseText": "Ja. Fassen Sie bitte noch einmal zusammen, welchen konkreten nächsten Schritt Sie heute vereinbaren möchten.",
+          "translations": [
+            { "language": "en", "text": "Yes. Please summarize once more which concrete next step you would like to agree on today." },
+            { "language": "fa", "text": "بله. لطفاً یک‌بار دیگر خلاصه کنید امروز می‌خواهید روی کدام قدم بعدی مشخص توافق کنید." },
+            { "language": "ar", "text": "نعم. يرجى أن تلخص مرة أخرى الخطوة التالية المحددة التي تريد الاتفاق عليها اليوم." },
+            { "language": "tr", "text": "Evet. Lütfen bugün üzerinde anlaşmak istediğiniz somut sonraki adımı tekrar özetleyin." },
+            { "language": "ru", "text": "Да. Пожалуйста, ещё раз кратко сформулируйте, какой конкретный следующий шаг вы хотели бы согласовать сегодня." },
+            { "language": "ckb", "text": "بەڵێ. تکایە جارێکی تر پوختە بکە کە ئەمڕۆ دەتەوێت لەسەر کام هەنگاوی داهاتووی دیاریکراو ڕێکبکەویت." },
+            { "language": "kmr", "text": "Erê. Kerema xwe careke din kurte bikin ka hûn îro dixwazin li ser kîjan gaveke paşîn a şênber li hev bikin." },
+            { "language": "pl", "text": "Tak. Proszę jeszcze raz podsumować, jaki konkretny następny krok chce Pan dziś uzgodnić." },
+            { "language": "ro", "text": "Da. Vă rog să rezumați încă o dată ce pas următor concret doriți să convenim astăzi." },
+            { "language": "sq", "text": "Po. Ju lutem përmblidhni edhe një herë cilin hap konkret të ardhshëm dëshironi të dakordoni sot." }
+          ],
+          "function": "summary-prompt",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Nächsten Schritt präzise zusammenfassen"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde heute gern vereinbaren, dass ich zuerst vom Kursträger die vorläufigen Kurszeiten schriftlich anfordere, danach bei der Kita-Stelle eine vorläufige Betreuungsbestätigung erbitte und dem Jobcenter fristgerecht einen Zwischenstand mit beiden Anfragen schicke. Zusätzlich bitte ich um Ihre kurze E-Mail-Vorlage, damit die Zuständigkeiten sauber getrennt bleiben.",
+          "translations": [
+            { "language": "en", "text": "Today I would like to agree that I first request the provisional course times in writing from the course provider, then ask the childcare office for a provisional childcare confirmation, and send the Jobcenter an interim status with both requests on time. In addition, I would like your short email template so that the responsibilities remain cleanly separated." },
+            { "language": "fa", "text": "امروز می‌خواهم توافق کنیم که ابتدا از برگزارکننده دوره زمان‌های موقت دوره را کتبی بگیرم، سپس از بخش کیتا یک تأییدیه موقت مراقبت کودک درخواست کنم و به‌موقع برای جاب‌سنتر یک وضعیت موقت همراه با هر دو درخواست بفرستم. علاوه بر آن، متن کوتاه ایمیلی شما را می‌خواهم تا مسئولیت‌ها تمیز از هم جدا بمانند." },
+            { "language": "ar", "text": "أود أن نتفق اليوم على أن أطلب أولاً من مقدم الدورة أوقات الدورة المؤقتة كتابة، ثم أطلب من جهة الروضة تأكيداً مؤقتاً لرعاية الطفل، وأرسل إلى الجوب سنتر في الوقت المحدد حالة مؤقتة مع الطلبين. إضافة إلى ذلك أطلب نموذج البريد الإلكتروني القصير منكم حتى تبقى المسؤوليات منفصلة بوضوح." },
+            { "language": "tr", "text": "Bugün şunu kararlaştırmak isterim: önce kurs sağlayıcısından geçici kurs saatlerini yazılı isterim, ardından Kita biriminden geçici çocuk bakımı onayı talep ederim ve Jobcenter'e süre içinde her iki taleple birlikte ara durum gönderirim. Ayrıca sorumlulukların temiz biçimde ayrı kalması için kısa e-posta şablonunuzu rica ederim." },
+            { "language": "ru", "text": "Сегодня я хотел бы договориться о следующем: сначала я письменно запрашиваю у поставщика курса предварительное расписание, затем прошу у отдела детского сада предварительное подтверждение ухода за ребёнком и вовремя отправляю в Jobcenter промежуточный статус с обоими запросами. Дополнительно прошу ваш короткий шаблон письма, чтобы ответственность оставалась чётко разделённой." },
+            { "language": "ckb", "text": "ئەمڕۆ دەمەوێت ڕێکبکەوین کە سەرەتا لە پێشکەشکاری کۆرس کاتە کاتییەکانی کۆرس بە نووسراوی داوا بکەم، پاشان لە بەشی کیتا پشتڕاستکردنەوەی کاتی چاودێری منداڵ داوا بکەم و لە کاتی خۆیدا دۆخی کاتی لەگەڵ هەردوو داواکارییەکە بۆ جۆب‌سەنتەر بنێرم. جگە لەوەش، داوای نموونەی ئیمەیلی کورتی ئێوە دەکەم بۆ ئەوەی بەرپرسیارییەکان پاکانە جیا بمێننەوە." },
+            { "language": "kmr", "text": "Îro ez dixwazim li hev bikin ku ez pêşî ji pêşkêşkarê kursê demên demkî yên kursê bi nivîskî bixwazim, paşê ji dezgeha kita piştrastkirina demkî ya lênêrîna zarokan bixwazim û di demê xwe de rewşa navber bi her du daxwazan ji Jobcenter re bişînim. Her wiha ez daxwaza şablona e-nameya kurt a we dikim, da ku berpirsiyarî bi paqijî cuda bimînin." },
+            { "language": "pl", "text": "Chciałbym dziś uzgodnić, że najpierw poproszę organizatora kursu o pisemne podanie wstępnych godzin kursu, potem zwrócę się do punktu opieki o wstępne potwierdzenie opieki nad dzieckiem i terminowo wyślę do Jobcenter stan pośredni z obiema prośbami. Dodatkowo proszę o Państwa krótki wzór e-maila, aby odpowiedzialności pozostały jasno rozdzielone." },
+            { "language": "ro", "text": "Aș dori să convenim astăzi că solicit mai întâi de la furnizorul cursului orele provizorii în scris, apoi cer biroului pentru grădiniță o confirmare provizorie a îngrijirii copilului și trimit Jobcenter la timp o situație intermediară cu ambele solicitări. În plus, vă rog să-mi trimiteți modelul scurt de e-mail, astfel încât responsabilitățile să rămână clar separate." },
+            { "language": "sq", "text": "Sot do të doja të biem dakord që së pari t'i kërkoj me shkrim ofruesit të kursit oraret e përkohshme, pastaj t'i kërkoj zyrës së kopshtit një konfirmim të përkohshëm për kujdesin e fëmijës dhe t'i dërgoj Jobcenter-it në afat një gjendje të ndërmjetme me të dyja kërkesat. Përveç kësaj, kërkoj modelin tuaj të shkurtër të emailit që përgjegjësitë të mbeten të ndara qartë." }
+          ],
+          "function": "actionable-summary",
+          "toneNote": "präzise, abschließend",
+          "expectedLearnerAction": "Nächste Schritte in Reihenfolge festlegen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct-structured-opening",
+              "text": "Ich möchte die drei beteiligten Stellen und die Reihenfolge der nächsten Schritte klären.",
+              "translations": [
+                { "language": "en", "text": "I would like to clarify the three involved offices and the sequence of the next steps." },
+                { "language": "fa", "text": "می‌خواهم سه نهاد درگیر و ترتیب قدم‌های بعدی را روشن کنم." },
+                { "language": "ar", "text": "أريد أن أوضح الجهات الثلاث المعنية وترتيب الخطوات التالية." },
+                { "language": "tr", "text": "Üç ilgili kurumu ve sonraki adımların sırasını netleştirmek istiyorum." },
+                { "language": "ru", "text": "Я хотел бы уточнить три вовлечённые службы и последовательность следующих шагов." },
+                { "language": "ckb", "text": "دەمەوێت سێ لایەنی بەشدار و ڕیزبەندی هەنگاوەکانی داهاتوو ڕوون بکەمەوە." },
+                { "language": "kmr", "text": "Ez dixwazim sê saziyên têkildar û rêza gavên paşîn zelal bikim." },
+                { "language": "pl", "text": "Chciałbym wyjaśnić trzy zaangażowane instytucje i kolejność następnych kroków." },
+                { "language": "ro", "text": "Aș dori să clarific cele trei instituții implicate și ordinea pașilor următori." },
+                { "language": "sq", "text": "Dua të sqaroj tre institucionet e përfshira dhe rendin e hapave të ardhshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Einstieg begrenzt das Telefonat und macht die Koordinationsaufgabe bearbeitbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The opening limits the phone call and makes the coordination task manageable." },
+                { "language": "fa", "text": "قوی: شروع مکالمه تماس را محدود می‌کند و کار هماهنگی را قابل رسیدگی می‌سازد." },
+                { "language": "ar", "text": "قوي: يحد المدخل المكالمة ويجعل مهمة التنسيق قابلة للمعالجة." },
+                { "language": "tr", "text": "Güçlü: Açılış telefon görüşmesini sınırlar ve koordinasyon görevini yönetilebilir hale getirir." },
+                { "language": "ru", "text": "Сильно: вступление ограничивает звонок и делает задачу координации управляемой." },
+                { "language": "ckb", "text": "بەهێزە: دەستپێکەکە تەلەفۆنەکە سنووردار دەکات و کاری هەماهەنگی دەکاتە شتێکی چارەسەرکراو." },
+                { "language": "kmr", "text": "Xurt e: Destpêk telefonê sînorkirî dike û karê koordîneyê dike rêvebirbar." },
+                { "language": "pl", "text": "Mocne: początek ogranicza rozmowę telefoniczną i czyni koordynację możliwą do przeprowadzenia." },
+                { "language": "ro", "text": "Puternic: introducerea limitează apelul și face sarcina de coordonare gestionabilă." },
+                { "language": "sq", "text": "E fortë: hyrja e kufizon telefonatën dhe e bën detyrën e koordinimit të menaxhueshme." }
+              ],
+              "explanationKey": "structured-phone-opening"
+            },
+            {
+              "id": "weak-solve-everything",
+              "text": "Ich brauche jemanden, der das komplett zwischen allen Stellen für mich regelt.",
+              "translations": [
+                { "language": "en", "text": "I need someone to handle this completely between all offices for me." },
+                { "language": "fa", "text": "به کسی نیاز دارم که این موضوع را کامل بین همه نهادها برای من حل کند." },
+                { "language": "ar", "text": "أحتاج إلى شخص ينظم هذا الأمر بالكامل بين كل الجهات نيابة عني." },
+                { "language": "tr", "text": "Bunu tüm kurumlar arasında benim için tamamen halledecek birine ihtiyacım var." },
+                { "language": "ru", "text": "Мне нужен кто-то, кто полностью урегулирует это между всеми службами за меня." },
+                { "language": "ckb", "text": "پێویستم بە کەسێکە کە ئەم بابەتە بە تەواوی لە نێوان هەموو لایەنەکاندا بۆم ڕێکبخات." },
+                { "language": "kmr", "text": "Pêdiviya min bi kesekî heye ku vê yekê bi temamî di navbera hemû saziyan de ji bo min rêk bixe." },
+                { "language": "pl", "text": "Potrzebuję kogoś, kto całkowicie załatwi to za mnie między wszystkimi instytucjami." },
+                { "language": "ro", "text": "Am nevoie de cineva care să rezolve complet acest lucru pentru mine între toate instituțiile." },
+                { "language": "sq", "text": "Kam nevojë për dikë që ta rregullojë plotësisht këtë mes të gjitha institucioneve për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu breit: Die Beratungsstelle kann koordinieren helfen, aber nicht die Zuständigkeiten anderer Stellen übernehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad: The advisory office can help coordinate, but it cannot take over the responsibilities of other offices." },
+                { "language": "fa", "text": "بیش از حد گسترده است: مرکز مشاوره می‌تواند در هماهنگی کمک کند، اما نمی‌تواند مسئولیت نهادهای دیگر را بر عهده بگیرد." },
+                { "language": "ar", "text": "واسع أكثر من اللازم: يمكن لمركز الاستشارة المساعدة في التنسيق، لكنه لا يستطيع تولي مسؤوليات الجهات الأخرى." },
+                { "language": "tr", "text": "Çok geniş: Danışma merkezi koordinasyona yardımcı olabilir, ancak diğer kurumların sorumluluklarını üstlenemez." },
+                { "language": "ru", "text": "Слишком широко: консультационный центр может помочь с координацией, но не может взять на себя обязанности других служб." },
+                { "language": "ckb", "text": "زۆر فراوانە: ناوەندی ڕاوێژکاری دەتوانێت لە هەماهەنگیدا یارمەتی بدات، بەڵام ناتوانێت بەرپرسیاری لایەنەکانی تر وەربگرێت." },
+                { "language": "kmr", "text": "Pir fireh e: Navenda şêwirmendiyê dikare di koordîneyê de alîkar be, lê nikare berpirsiyariyên saziyên din bigire." },
+                { "language": "pl", "text": "Zbyt szerokie: poradnia może pomóc w koordynacji, ale nie może przejąć odpowiedzialności innych instytucji." },
+                { "language": "ro", "text": "Prea larg: centrul de consiliere poate ajuta la coordonare, dar nu poate prelua responsabilitățile altor instituții." },
+                { "language": "sq", "text": "Shumë e gjerë: qendra e këshillimit mund të ndihmojë në koordinim, por nuk mund të marrë përgjegjësitë e institucioneve të tjera." }
+              ],
+              "explanationKey": "overloads-advisory-office"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct-bottleneck-priority",
+              "text": "Die Jobcenter-Frist ist der Engpass; davon hängen Kursplatz und Kinderbetreuung ab.",
+              "translations": [
+                { "language": "en", "text": "The Jobcenter deadline is the bottleneck; the course place and childcare depend on it." },
+                { "language": "fa", "text": "مهلت جاب‌سنتر گلوگاه اصلی است؛ جای دوره و مراقبت کودک به آن وابسته‌اند." },
+                { "language": "ar", "text": "مهلة الجوب سنتر هي نقطة الاختناق؛ يعتمد عليها مكان الدورة ورعاية الطفل." },
+                { "language": "tr", "text": "Jobcenter süresi darboğaz; kurs yeri ve çocuk bakımı buna bağlı." },
+                { "language": "ru", "text": "Срок Jobcenter является узким местом; от него зависят место на курсе и уход за ребёнком." },
+                { "language": "ckb", "text": "ماوەی جۆب‌سەنتەر خاڵی قەیرانە؛ شوێنی کۆرس و چاودێری منداڵ پەیوەستن بەوەوە." },
+                { "language": "kmr", "text": "Muhleta Jobcenter astengiya sereke ye; cihê kursê û lênêrîna zarokan bi wê ve girêdayî ne." },
+                { "language": "pl", "text": "Termin Jobcenter jest wąskim gardłem; zależą od niego miejsce na kursie i opieka nad dzieckiem." },
+                { "language": "ro", "text": "Termenul Jobcenter este blocajul; de el depind locul la curs și îngrijirea copilului." },
+                { "language": "sq", "text": "Afati i Jobcenter-it është pika bllokuese; nga ai varen vendi në kurs dhe kujdesi për fëmijën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort priorisiert und zeigt die Abhängigkeiten in einem Satz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer prioritizes and shows the dependencies in one sentence." },
+                { "language": "fa", "text": "قوی: پاسخ اولویت را مشخص می‌کند و وابستگی‌ها را در یک جمله نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: تحدد الإجابة الأولوية وتظهر الترابطات في جملة واحدة." },
+                { "language": "tr", "text": "Güçlü: Yanıt önceliği belirliyor ve bağımlılıkları tek cümlede gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ расставляет приоритет и показывает зависимости в одном предложении." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێشینە دیاری دەکات و پەیوەندییەکان لە یەک ڕستەدا نیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pêşîniyê diyar dike û girêdanan di yek hevokê de nîşan dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź ustala priorytet i pokazuje zależności w jednym zdaniu." },
+                { "language": "ro", "text": "Puternic: răspunsul prioritizează și arată dependențele într-o singură propoziție." },
+                { "language": "sq", "text": "E fortë: përgjigjja vendos përparësinë dhe tregon varësitë në një fjali." }
+              ],
+              "explanationKey": "deadline-bottleneck"
+            },
+            {
+              "id": "weak-everything-urgent",
+              "text": "Eigentlich ist alles gleich dringend, weil jede Stelle etwas anderes verlangt.",
+              "translations": [
+                { "language": "en", "text": "Actually everything is equally urgent because every office asks for something different." },
+                { "language": "fa", "text": "در واقع همه چیز به یک اندازه فوری است، چون هر نهاد چیز متفاوتی می‌خواهد." },
+                { "language": "ar", "text": "في الحقيقة كل شيء عاجل بالقدر نفسه لأن كل جهة تطلب شيئاً مختلفاً." },
+                { "language": "tr", "text": "Aslında her şey aynı derecede acil, çünkü her kurum farklı bir şey istiyor." },
+                { "language": "ru", "text": "Вообще всё одинаково срочно, потому что каждая служба требует что-то другое." },
+                { "language": "ckb", "text": "لە ڕاستیدا هەموو شتێک بە هەمان ئاست پەلەیە، چونکە هەر لایەنێک شتێکی جیاواز دەوێت." },
+                { "language": "kmr", "text": "Bi rastî her tişt bi heman astê lezgîn e, ji ber ku her sazî tiştekî cuda dixwaze." },
+                { "language": "pl", "text": "Właściwie wszystko jest równie pilne, bo każda instytucja wymaga czegoś innego." },
+                { "language": "ro", "text": "De fapt, totul este la fel de urgent, pentru că fiecare instituție cere altceva." },
+                { "language": "sq", "text": "Në fakt gjithçka është po aq urgjente, sepse çdo institucion kërkon diçka tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unstrukturiert: Für C1 muss die dringendste Frist herausgearbeitet werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too unstructured: At C1 level, the most urgent deadline must be identified." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد بی‌ساختار: در سطح C1 باید فوری‌ترین مهلت مشخص شود." },
+                { "language": "ar", "text": "معقول لكنه غير منظم بما يكفي: في مستوى C1 يجب تحديد المهلة الأكثر إلحاحاً." },
+                { "language": "tr", "text": "Makul ama çok düzensiz: C1 düzeyinde en acil sürenin çıkarılması gerekir." },
+                { "language": "ru", "text": "Похоже на возможный ответ, но слишком неструктурировано: на уровне C1 нужно выделить самый срочный срок." },
+                { "language": "ckb", "text": "قایلە، بەڵام زۆر بێ‌ڕێکخستنە: لە ئاستی C1دا پێویستە پەلەترین ماوە دیاری بکرێت." },
+                { "language": "kmr", "text": "Gengaz e, lê pir bê rêxistin e: Di asta C1 de divê muhleta herî lezgîn were derxistin." },
+                { "language": "pl", "text": "Plausible, ale zbyt nieuporządkowane: na poziomie C1 trzeba wyodrębnić najpilniejszy termin." },
+                { "language": "ro", "text": "Plauzibil, dar prea nestructurat: la nivel C1 trebuie identificat termenul cel mai urgent." },
+                { "language": "sq", "text": "E besueshme, por shumë e pastrukturuar: në nivelin C1 duhet të identifikohet afati më urgjent." }
+              ],
+              "explanationKey": "no-priority"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct-separate-responsibilities",
+              "text": "Ich möchte trennen, was ich beim Kursträger, bei der Kita-Stelle und beim Jobcenter klären muss.",
+              "translations": [
+                { "language": "en", "text": "I would like to separate what I need to clarify with the course provider, the childcare office, and the Jobcenter." },
+                { "language": "fa", "text": "می‌خواهم جدا کنم چه چیزی را باید با برگزارکننده دوره، بخش کیتا و جاب‌سنتر روشن کنم." },
+                { "language": "ar", "text": "أريد أن أفصل ما يجب أن أوضحه مع مقدم الدورة وجهة الروضة والجوب سنتر." },
+                { "language": "tr", "text": "Kurs sağlayıcısı, Kita birimi ve Jobcenter ile neyi netleştirmem gerektiğini ayırmak istiyorum." },
+                { "language": "ru", "text": "Я хотел бы разделить, что мне нужно уточнить у поставщика курса, в отделе детского сада и в Jobcenter." },
+                { "language": "ckb", "text": "دەمەوێت جیا بکەمەوە چی پێویستە لەگەڵ پێشکەشکاری کۆرس، بەشی کیتا و جۆب‌سەنتەر ڕوون بکەم." },
+                { "language": "kmr", "text": "Ez dixwazim cuda bikim ka divê ez bi pêşkêşkarê kursê, dezgeha kita û Jobcenter re çi zelal bikim." },
+                { "language": "pl", "text": "Chciałbym rozdzielić, co muszę wyjaśnić u organizatora kursu, w punkcie opieki i w Jobcenter." },
+                { "language": "ro", "text": "Aș dori să separ ce trebuie să clarific cu furnizorul cursului, cu biroul pentru grădiniță și cu Jobcenter." },
+                { "language": "sq", "text": "Dua të ndaj çfarë duhet të sqaroj me ofruesin e kursit, me zyrën e kopshtit dhe me Jobcenter-in." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert die Grenze und macht daraus eine konkrete Koordinationsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts the boundary and turns it into a concrete coordination question." },
+                { "language": "fa", "text": "قوی: پاسخ مرز را می‌پذیرد و آن را به یک پرسش هماهنگی مشخص تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تقبل الإجابة الحد وتحوله إلى سؤال تنسيق محدد." },
+                { "language": "tr", "text": "Güçlü: Yanıt sınırı kabul ediyor ve bunu somut bir koordinasyon sorusuna çeviriyor." },
+                { "language": "ru", "text": "Сильно: ответ принимает границу и превращает её в конкретный вопрос координации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنوورەکە وەردەگرێت و دەیکاتە پرسیاری هەماهەنگی دیاریکراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sînorê qebûl dike û wê dike pirseke koordîneyê ya şênber." },
+                { "language": "pl", "text": "Mocne: odpowiedź akceptuje granicę i zamienia ją w konkretne pytanie koordynacyjne." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă limita și o transformă într-o întrebare concretă de coordonare." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon kufirin dhe e kthen në një pyetje konkrete koordinimi." }
+              ],
+              "explanationKey": "separate-responsibilities"
+            },
+            {
+              "id": "weak-ask-decision",
+              "text": "Können Sie mir sagen, welche Stelle am Ende entscheiden soll?",
+              "translations": [
+                { "language": "en", "text": "Can you tell me which office should decide in the end?" },
+                { "language": "fa", "text": "می‌توانید بگویید در نهایت کدام نهاد باید تصمیم بگیرد؟" },
+                { "language": "ar", "text": "هل يمكنكم أن تخبروني أي جهة ينبغي أن تقرر في النهاية؟" },
+                { "language": "tr", "text": "Sonunda hangi kurumun karar vermesi gerektiğini söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Можете сказать, какая служба в конце должна принимать решение?" },
+                { "language": "ckb", "text": "دەتوانن بڵێن لە کۆتاییدا کام لایەن پێویستە بڕیار بدات؟" },
+                { "language": "kmr", "text": "Hûn dikarin bibêjin di dawiyê de kîjan sazî divê biryar bide?" },
+                { "language": "pl", "text": "Czy mogą Państwo powiedzieć, która instytucja ma ostatecznie zdecydować?" },
+                { "language": "ro", "text": "Îmi puteți spune ce instituție ar trebui să decidă în final?" },
+                { "language": "sq", "text": "A mund të më thoni cili institucion duhet të vendosë në fund?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unklar: Die Frage springt direkt zum Endentscheid, statt die nächsten prüfbaren Schritte zu sortieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unclear: The question jumps straight to the final decision instead of sorting the next reviewable steps." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: پرسش مستقیم به تصمیم نهایی می‌پرد، به جای اینکه قدم‌های بعدی قابل بررسی را مرتب کند." },
+                { "language": "ar", "text": "غير واضح بما يكفي: يقفز السؤال مباشرة إلى القرار النهائي بدلاً من ترتيب الخطوات التالية القابلة للفحص." },
+                { "language": "tr", "text": "Çok belirsiz: Soru, sonraki kontrol edilebilir adımları düzenlemek yerine doğrudan nihai karara atlıyor." },
+                { "language": "ru", "text": "Слишком неясно: вопрос сразу перескакивает к итоговому решению, вместо того чтобы упорядочить следующие проверяемые шаги." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: پرسیارەکە ڕاستەوخۆ دەچێتە بڕیاری کۆتایی، نەک هەنگاوە پشکنین‌پێکراوەکانی داهاتوو ڕێکبخات." },
+                { "language": "kmr", "text": "Pir nezelal e: Pirs rasterast diçe biryara dawî, ne ku gavên paşîn ên kontrolbar rêz bike." },
+                { "language": "pl", "text": "Zbyt niejasne: pytanie przeskakuje od razu do decyzji końcowej zamiast uporządkować następne sprawdzalne kroki." },
+                { "language": "ro", "text": "Prea neclar: întrebarea sare direct la decizia finală, în loc să ordoneze pașii următori verificabili." },
+                { "language": "sq", "text": "Shumë e paqartë: pyetja kalon direkt te vendimi përfundimtar në vend që të rendisë hapat e ardhshëm të kontrollueshëm." }
+              ],
+              "explanationKey": "premature-final-decision"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct-documents-and-consent",
+              "text": "Ich habe die wichtigsten Unterlagen und möchte klären, ob für direkte Weiterleitung eine Einwilligung nötig ist.",
+              "translations": [
+                { "language": "en", "text": "I have the most important documents and want to clarify whether consent is needed for direct forwarding." },
+                { "language": "fa", "text": "مهم‌ترین مدارک را دارم و می‌خواهم روشن کنم آیا برای انتقال مستقیم رضایت‌نامه لازم است یا نه." },
+                { "language": "ar", "text": "لدي أهم الوثائق وأريد توضيح ما إذا كانت الموافقة ضرورية للإحالة المباشرة." },
+                { "language": "tr", "text": "En önemli belgeler bende ve doğrudan iletim için onay gerekip gerekmediğini netleştirmek istiyorum." },
+                { "language": "ru", "text": "У меня есть самые важные документы, и я хочу уточнить, нужно ли согласие для прямой передачи." },
+                { "language": "ckb", "text": "گرنگترین بەڵگەکانم هەیە و دەمەوێت ڕوون بکەم ئایا بۆ ناردنی ڕاستەوخۆ ڕەزامەندی پێویستە یان نا." },
+                { "language": "kmr", "text": "Belgeyên herî girîng li min hene û ez dixwazim zelal bikim ka ji bo şandina rasterast razîbûn pêwîst e yan na." },
+                { "language": "pl", "text": "Mam najważniejsze dokumenty i chcę wyjaśnić, czy do bezpośredniego przekazania potrzebna jest zgoda." },
+                { "language": "ro", "text": "Am cele mai importante documente și vreau să clarific dacă este necesar consimțământ pentru transmiterea directă." },
+                { "language": "sq", "text": "I kam dokumentet më të rëndësishme dhe dua të sqaroj nëse për përcjellje të drejtpërdrejtë nevojitet pëlqim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Dokumentenstand und Datenschutz, ohne direkte Datenweitergabe vorauszusetzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects document status and data protection without assuming direct data sharing." },
+                { "language": "fa", "text": "قوی: پاسخ وضعیت مدارک و حفاظت از داده‌ها را وصل می‌کند، بدون اینکه تبادل مستقیم داده را فرض بگیرد." },
+                { "language": "ar", "text": "قوي: تربط الإجابة حالة الوثائق بحماية البيانات من دون افتراض تبادل مباشر للبيانات." },
+                { "language": "tr", "text": "Güçlü: Yanıt belge durumunu ve veri korumayı doğrudan veri paylaşımı varsaymadan bağlıyor." },
+                { "language": "ru", "text": "Сильно: ответ связывает состояние документов и защиту данных, не предполагая прямой обмен данными." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دۆخی بەڵگەکان و پاراستنی داتا پەیوەست دەکات، بەبێ ئەوەی ئاڵوگۆڕی ڕاستەوخۆی داتا وەک بنەما دابنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rewşa belgeyan û parastina daneyan girê dide bêyî ku parvekirina rasterast a daneyan were texmîn kirin." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy stan dokumentów i ochronę danych, nie zakładając bezpośredniego przekazywania danych." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă stadiul documentelor de protecția datelor fără a presupune schimb direct de date." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh gjendjen e dokumenteve me mbrojtjen e të dhënave pa supozuar shkëmbim të drejtpërdrejtë të të dhënave." }
+              ],
+              "explanationKey": "documents-consent"
+            },
+            {
+              "id": "weak-forward-everything",
+              "text": "Ich kann einfach alle E-Mail-Adressen in Kopie setzen, damit alle alles sehen.",
+              "translations": [
+                { "language": "en", "text": "I can simply put all email addresses in copy so that everyone sees everything." },
+                { "language": "fa", "text": "می‌توانم همه آدرس‌های ایمیل را در کپی بگذارم تا همه همه چیز را ببینند." },
+                { "language": "ar", "text": "يمكنني ببساطة وضع كل عناوين البريد الإلكتروني في النسخة حتى يرى الجميع كل شيء." },
+                { "language": "tr", "text": "Herkes her şeyi görsün diye tüm e-posta adreslerini kopyaya koyabilirim." },
+                { "language": "ru", "text": "Я могу просто поставить все адреса электронной почты в копию, чтобы все всё видели." },
+                { "language": "ckb", "text": "دەتوانم بە سادەیی هەموو ناونیشانی ئیمەیلەکان لە کۆپی دابنێم بۆ ئەوەی هەمووان هەموو شتێک ببینن." },
+                { "language": "kmr", "text": "Ez dikarim bi hêsanî hemû navnîşanên e-nameyê têxim kopiyê da ku hemû kes her tiştî bibînin." },
+                { "language": "pl", "text": "Mogę po prostu dodać wszystkie adresy e-mail do kopii, żeby wszyscy wszystko widzieli." },
+                { "language": "ro", "text": "Pot pur și simplu să pun toate adresele de e-mail în copie, ca toți să vadă totul." },
+                { "language": "sq", "text": "Mund t'i vendos thjesht të gjitha adresat e emailit në kopje që të gjithë të shohin gjithçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Datenschutzschwach: Bei mehreren Stellen sollten Einwilligung, Zweck und notwendige Informationen sauber getrennt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Weak on data protection: With several offices, consent, purpose, and necessary information should be cleanly separated." },
+                { "language": "fa", "text": "از نظر حفاظت داده ضعیف است: در چند نهاد، رضایت، هدف و اطلاعات لازم باید تمیز از هم جدا شوند." },
+                { "language": "ar", "text": "ضعيف من ناحية حماية البيانات: عند وجود عدة جهات يجب فصل الموافقة والغرض والمعلومات الضرورية بوضوح." },
+                { "language": "tr", "text": "Veri koruma açısından zayıf: Birden fazla kurumda onay, amaç ve gerekli bilgiler temiz biçimde ayrılmalıdır." },
+                { "language": "ru", "text": "Слабо с точки зрения защиты данных: при нескольких службах согласие, цель и необходимые сведения следует чётко разделять." },
+                { "language": "ckb", "text": "لە ڕووی پاراستنی داتا لاوازە: لەگەڵ چەند لایەندا پێویستە ڕەزامەندی، ئامانج و زانیاریی پێویست پاکانە جیا بکرێنەوە." },
+                { "language": "kmr", "text": "Ji aliyê parastina daneyan ve lawaz e: Bi çend saziyan re divê razîbûn, armanc û agahiyên pêwîst bi paqijî cuda bibin." },
+                { "language": "pl", "text": "Słabe pod kątem ochrony danych: przy kilku instytucjach zgoda, cel i niezbędne informacje powinny być jasno rozdzielone." },
+                { "language": "ro", "text": "Slab din perspectiva protecției datelor: la mai multe instituții, consimțământul, scopul și informațiile necesare trebuie separate clar." },
+                { "language": "sq", "text": "E dobët për mbrojtjen e të dhënave: me disa institucione, pëlqimi, qëllimi dhe informacionet e nevojshme duhet të ndahen qartë." }
+              ],
+              "explanationKey": "unsafe-cc-all"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct-sequence-emails",
+              "text": "Ich schreibe jede Stelle selbst an und nutze dieselbe Aktennummer, aber mit klar getrennten Anliegen.",
+              "translations": [
+                { "language": "en", "text": "I will write to each office myself and use the same file number, but with clearly separated requests." },
+                { "language": "fa", "text": "خودم به هر نهاد جداگانه می‌نویسم و از همان شماره پرونده استفاده می‌کنم، اما با درخواست‌های کاملاً جدا." },
+                { "language": "ar", "text": "سأكتب إلى كل جهة بنفسي وأستخدم رقم الملف نفسه، لكن مع طلبات مفصولة بوضوح." },
+                { "language": "tr", "text": "Her kuruma kendim yazacağım ve aynı dosya numarasını kullanacağım, ancak talepleri net biçimde ayıracağım." },
+                { "language": "ru", "text": "Я сам напишу каждой службе и буду использовать один номер дела, но с чётко разделёнными запросами." },
+                { "language": "ckb", "text": "خۆم بۆ هەر لایەنێک دەنووسم و هەمان ژمارەی کەیس بەکار دەهێنم، بەڵام بە داواکارییەکانی ڕوون و جیاکراو." },
+                { "language": "kmr", "text": "Ez bi xwe ji her saziyê re dinivîsim û heman jimareya dosyeyê bikar tînim, lê bi daxwazên zelal cuda." },
+                { "language": "pl", "text": "Napiszę sam do każdej instytucji i użyję tego samego numeru sprawy, ale z jasno oddzielonymi prośbami." },
+                { "language": "ro", "text": "Voi scrie eu fiecărei instituții și voi folosi același număr de dosar, dar cu solicitări clar separate." },
+                { "language": "sq", "text": "Do t'i shkruaj vetë secilit institucion dhe do të përdor të njëjtin numër dosjeje, por me kërkesa të ndara qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort hält Datenschutz, Zuständigkeiten und Übersichtlichkeit zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer keeps data protection, responsibilities, and clarity together." },
+                { "language": "fa", "text": "قوی: پاسخ حفاظت داده، مسئولیت‌ها و وضوح را با هم نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: تجمع الإجابة بين حماية البيانات والمسؤوليات والوضوح." },
+                { "language": "tr", "text": "Güçlü: Yanıt veri korumayı, sorumlulukları ve açıklığı birlikte tutuyor." },
+                { "language": "ru", "text": "Сильно: ответ соединяет защиту данных, ответственность и ясность." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پاراستنی داتا، بەرپرسیارییەکان و ڕوونی پێکەوە ڕادەگرێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv parastina daneyan, berpirsiyarî û zelaliyê bi hev re digire." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy ochronę danych, odpowiedzialności i przejrzystość." },
+                { "language": "ro", "text": "Puternic: răspunsul ține împreună protecția datelor, responsabilitățile și claritatea." },
+                { "language": "sq", "text": "E fortë: përgjigjja mban së bashku mbrojtjen e të dhënave, përgjegjësitë dhe qartësinë." }
+              ],
+              "explanationKey": "separate-email-sequence"
+            },
+            {
+              "id": "weak-same-message-all",
+              "text": "Ich schicke einfach dieselbe lange Nachricht an alle drei Stellen.",
+              "translations": [
+                { "language": "en", "text": "I will simply send the same long message to all three offices." },
+                { "language": "fa", "text": "من فقط همان پیام طولانی را برای هر سه نهاد می‌فرستم." },
+                { "language": "ar", "text": "سأرسل ببساطة الرسالة الطويلة نفسها إلى الجهات الثلاث." },
+                { "language": "tr", "text": "Aynı uzun mesajı üç kuruma da göndereceğim." },
+                { "language": "ru", "text": "Я просто отправлю одно и то же длинное сообщение всем трём службам." },
+                { "language": "ckb", "text": "من تەنها هەمان نامەی درێژ بۆ هەرسێ لایەنەکە دەنێرم." },
+                { "language": "kmr", "text": "Ez tenê heman peyama dirêj ji her sê saziyan re dişînim." },
+                { "language": "pl", "text": "Po prostu wyślę tę samą długą wiadomość do wszystkich trzech instytucji." },
+                { "language": "ro", "text": "Voi trimite pur și simplu același mesaj lung către toate cele trei instituții." },
+                { "language": "sq", "text": "Thjesht do ta dërgoj të njëjtin mesazh të gjatë te të tre institucionet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu grob: Gleiche lange Nachrichten führen oft zu unklaren Zuständigkeiten und unnötiger Datenweitergabe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too rough: Identical long messages often lead to unclear responsibilities and unnecessary data sharing." },
+                { "language": "fa", "text": "بیش از حد کلی است: پیام‌های طولانی یکسان اغلب به مسئولیت‌های نامشخص و انتقال غیرضروری داده منجر می‌شوند." },
+                { "language": "ar", "text": "عام أكثر من اللازم: الرسائل الطويلة المتطابقة تؤدي غالباً إلى مسؤوليات غير واضحة وتبادل بيانات غير ضروري." },
+                { "language": "tr", "text": "Çok kaba: Aynı uzun mesajlar çoğu zaman belirsiz sorumluluklara ve gereksiz veri paylaşımına yol açar." },
+                { "language": "ru", "text": "Слишком грубо: одинаковые длинные сообщения часто приводят к неясной ответственности и ненужной передаче данных." },
+                { "language": "ckb", "text": "زۆر گشتییە: نامە درێژە هاوشێوەکان زۆرجار دەبنە هۆی بەرپرسیاری ناڕوون و ناردنی داتای ناپێویست." },
+                { "language": "kmr", "text": "Pir giştî ye: Peyamên dirêj ên wekhev gelek caran dibin sedema berpirsiyariyên nezelal û parvekirina daneyên nepêwîst." },
+                { "language": "pl", "text": "Zbyt ogólne: identyczne długie wiadomości często prowadzą do niejasnych odpowiedzialności i niepotrzebnego przekazywania danych." },
+                { "language": "ro", "text": "Prea grosier: mesajele lungi identice duc adesea la responsabilități neclare și transmitere inutilă de date." },
+                { "language": "sq", "text": "Shumë e përgjithshme: mesazhet e gjata identike shpesh çojnë në përgjegjësi të paqarta dhe ndarje të panevojshme të të dhënave." }
+              ],
+              "explanationKey": "same-message-to-all"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct-action-summary",
+              "text": "Ich fordere zuerst Kurszeiten an, danach die Betreuungsbestätigung und sende dem Jobcenter einen fristgerechten Zwischenstand.",
+              "translations": [
+                { "language": "en", "text": "I first request the course times, then the childcare confirmation, and send the Jobcenter an interim status on time." },
+                { "language": "fa", "text": "ابتدا زمان‌های دوره را درخواست می‌کنم، بعد تأییدیه مراقبت کودک را می‌گیرم و برای جاب‌سنتر به‌موقع وضعیت موقت می‌فرستم." },
+                { "language": "ar", "text": "أطلب أولاً أوقات الدورة، ثم تأكيد رعاية الطفل، وأرسل إلى الجوب سنتر حالة مؤقتة في الوقت المحدد." },
+                { "language": "tr", "text": "Önce kurs saatlerini isterim, ardından çocuk bakımı onayını alırım ve Jobcenter'e zamanında ara durum gönderirim." },
+                { "language": "ru", "text": "Я сначала запрашиваю расписание курса, затем подтверждение ухода за ребёнком и вовремя отправляю в Jobcenter промежуточный статус." },
+                { "language": "ckb", "text": "سەرەتا کاتەکانی کۆرس داوا دەکەم، پاشان پشتڕاستکردنەوەی چاودێری منداڵ وەردەگرم و لە کاتی خۆیدا دۆخی کاتی بۆ جۆب‌سەنتەر دەنێرم." },
+                { "language": "kmr", "text": "Ez pêşî demên kursê dixwazim, paşê piştrastkirina lênêrîna zarokan û di demê xwe de rewşa navber ji Jobcenter re dişînim." },
+                { "language": "pl", "text": "Najpierw poproszę o godziny kursu, potem o potwierdzenie opieki nad dzieckiem i wyślę do Jobcenter stan pośredni w terminie." },
+                { "language": "ro", "text": "Solicit mai întâi orele cursului, apoi confirmarea îngrijirii copilului și trimit Jobcenter o situație intermediară la timp." },
+                { "language": "sq", "text": "Së pari kërkoj oraret e kursit, pastaj konfirmimin e kujdesit për fëmijën dhe i dërgoj Jobcenter-it një gjendje të ndërmjetme në afat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung enthält Reihenfolge, Zuständigkeiten und fristgerechte Zwischenkommunikation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary contains sequence, responsibilities, and timely interim communication." },
+                { "language": "fa", "text": "قوی: خلاصه شامل ترتیب، مسئولیت‌ها و ارتباط موقت به‌موقع است." },
+                { "language": "ar", "text": "قوي: يتضمن الملخص الترتيب والمسؤوليات والتواصل المؤقت في الوقت المحدد." },
+                { "language": "tr", "text": "Güçlü: Özet sırayı, sorumlulukları ve zamanında ara iletişimi içeriyor." },
+                { "language": "ru", "text": "Сильно: резюме содержит последовательность, ответственность и своевременную промежуточную коммуникацию." },
+                { "language": "ckb", "text": "بەهێزە: پوختەکە ڕیزبەندی، بەرپرسیارییەکان و پەیوەندی کاتی لە کاتی خۆیدا لەخۆ دەگرێت." },
+                { "language": "kmr", "text": "Xurt e: Kurte rêz, berpirsiyarî û peywendiya navber a di demê xwe de dihewîne." },
+                { "language": "pl", "text": "Mocne: podsumowanie zawiera kolejność, odpowiedzialności i terminową komunikację pośrednią." },
+                { "language": "ro", "text": "Puternic: rezumatul conține ordinea, responsabilitățile și comunicarea intermediară la timp." },
+                { "language": "sq", "text": "E fortë: përmbledhja përmban rendin, përgjegjësitë dhe komunikimin e ndërmjetëm në afat." }
+              ],
+              "explanationKey": "actionable-phone-summary"
+            },
+            {
+              "id": "weak-too-many-goals",
+              "text": "Ich möchte heute klären, dass alle drei Stellen meinen Plan akzeptieren und alles rechtzeitig bestätigen.",
+              "translations": [
+                { "language": "en", "text": "Today I want to clarify that all three offices accept my plan and confirm everything on time." },
+                { "language": "fa", "text": "امروز می‌خواهم روشن کنم که هر سه نهاد برنامه من را می‌پذیرند و همه چیز را به‌موقع تأیید می‌کنند." },
+                { "language": "ar", "text": "أريد اليوم أن أوضح أن الجهات الثلاث تقبل خطتي وتؤكد كل شيء في الوقت المحدد." },
+                { "language": "tr", "text": "Bugün üç kurumun da planımı kabul ettiğini ve her şeyi zamanında onayladığını netleştirmek istiyorum." },
+                { "language": "ru", "text": "Сегодня я хочу уточнить, что все три службы принимают мой план и всё вовремя подтверждают." },
+                { "language": "ckb", "text": "ئەمڕۆ دەمەوێت ڕوون بکەم کە هەرسێ لایەنەکە پلانی من قبووڵ دەکەن و هەموو شتێک لە کاتی خۆیدا پشتڕاست دەکەنەوە." },
+                { "language": "kmr", "text": "Îro ez dixwazim zelal bikim ku her sê sazî plana min qebûl dikin û her tiştî di demê xwe de piştrast dikin." },
+                { "language": "pl", "text": "Dziś chcę wyjaśnić, że wszystkie trzy instytucje akceptują mój plan i wszystko potwierdzą na czas." },
+                { "language": "ro", "text": "Astăzi vreau să clarific că toate cele trei instituții acceptă planul meu și confirmă totul la timp." },
+                { "language": "sq", "text": "Sot dua të sqaroj që të tre institucionet e pranojnë planin tim dhe konfirmojnë gjithçka në kohë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu groß für ein Telefonat: Sie können heute eine Reihenfolge und Vorlagen klären, nicht alle externen Entscheidungen garantieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too large for one phone call: Today you can clarify a sequence and templates, not guarantee all external decisions." },
+                { "language": "fa", "text": "برای یک تماس تلفنی بیش از حد بزرگ است: امروز می‌توانید ترتیب و قالب‌ها را روشن کنید، نه اینکه همه تصمیم‌های بیرونی را تضمین کنید." },
+                { "language": "ar", "text": "كبير جداً لمكالمة واحدة: يمكنك اليوم توضيح الترتيب والنماذج، لا ضمان كل القرارات الخارجية." },
+                { "language": "tr", "text": "Bir telefon görüşmesi için çok büyük: Bugün sırayı ve şablonları netleştirebilirsiniz, tüm dış kararları garanti edemezsiniz." },
+                { "language": "ru", "text": "Слишком много для одного звонка: сегодня можно уточнить последовательность и шаблоны, но не гарантировать все внешние решения." },
+                { "language": "ckb", "text": "بۆ یەک تەلەفۆن زۆر گەورەیە: ئەمڕۆ دەتوانیت ڕیزبەندی و نموونەکان ڕوون بکەیتەوە، نەک هەموو بڕیارە دەرەکییەکان گەرەنتی بکەیت." },
+                { "language": "kmr", "text": "Ji bo telefonê yekê pir mezin e: Îro hûn dikarin rêz û şablonan zelal bikin, ne ku hemû biryarên derveyî garantî bikin." },
+                { "language": "pl", "text": "Zbyt dużo na jedną rozmowę telefoniczną: dziś można wyjaśnić kolejność i wzory, ale nie zagwarantować wszystkich zewnętrznych decyzji." },
+                { "language": "ro", "text": "Prea mult pentru un singur apel: astăzi puteți clarifica ordinea și modelele, nu garanta toate deciziile externe." },
+                { "language": "sq", "text": "Shumë e madhe për një telefonatë: sot mund të sqaroni rendin dhe modelet, jo të garantoni të gjitha vendimet e jashtme." }
+              ],
+              "explanationKey": "too-large-phone-goal"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "scope-control",
+          "text": "Bei mehreren Stellen muss der Einstieg das Telefonat begrenzen: Wer ist beteiligt, was ist das Ziel, und was soll heute nicht gelöst werden?",
+          "translations": [
+            { "language": "en", "text": "With several offices, the opening must limit the call: who is involved, what is the goal, and what should not be solved today?" },
+            { "language": "fa", "text": "وقتی چند نهاد درگیرند، شروع مکالمه باید تماس را محدود کند: چه کسانی درگیرند، هدف چیست و امروز چه چیزی قرار نیست حل شود؟" },
+            { "language": "ar", "text": "عند وجود عدة جهات يجب أن يحدد المدخل المكالمة: من المعني، ما الهدف، وما الذي لا ينبغي حله اليوم؟" },
+            { "language": "tr", "text": "Birden fazla kurum olduğunda giriş konuşmayı sınırlandırmalıdır: kim dahil, hedef ne ve bugün ne çözülmeyecek?" },
+            { "language": "ru", "text": "При нескольких службах вступление должно ограничить звонок: кто участвует, какова цель и что сегодня не должно решаться?" },
+            { "language": "ckb", "text": "لەگەڵ چەند لایەندا دەستپێک پێویستە تەلەفۆنەکە سنووردار بکات: کێ بەشدارە، ئامانج چییە، و ئەمڕۆ چی نابێت چارەسەر بکرێت؟" },
+            { "language": "kmr", "text": "Bi çend saziyan re destpêk divê telefonê sînorkirî bike: kî tê de ye, armanc çi ye, û îro divê çi neyê çareserkirin?" },
+            { "language": "pl", "text": "Przy kilku instytucjach początek musi ograniczyć rozmowę: kto jest zaangażowany, jaki jest cel i czego dziś nie rozwiązuje się?" },
+            { "language": "ro", "text": "Cu mai multe instituții, introducerea trebuie să limiteze apelul: cine este implicat, care este scopul și ce nu trebuie rezolvat astăzi?" },
+            { "language": "sq", "text": "Me disa institucione, hyrja duhet ta kufizojë telefonatën: kush është i përfshirë, cili është qëllimi dhe çfarë nuk duhet zgjidhur sot?" }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "priority",
+          "text": "C1-Koordination heißt: nicht alles als gleich dringend darstellen, sondern den Engpass mit Datum benennen.",
+          "translations": [
+            { "language": "en", "text": "C1 coordination means: do not present everything as equally urgent, but name the bottleneck with a date." },
+            { "language": "fa", "text": "هماهنگی C1 یعنی همه چیز را به یک اندازه فوری نشان ندهید، بلکه گلوگاه را با تاریخ مشخص نام ببرید." },
+            { "language": "ar", "text": "تنسيق C1 يعني: لا تعرض كل شيء على أنه عاجل بالقدر نفسه، بل سم نقطة الاختناق مع التاريخ." },
+            { "language": "tr", "text": "C1 koordinasyonu şu demektir: her şeyi aynı derecede acil göstermeyin, darboğazı tarihiyle adlandırın." },
+            { "language": "ru", "text": "Координация C1 означает: не представлять всё одинаково срочным, а назвать узкое место с датой." },
+            { "language": "ckb", "text": "هەماهەنگی C1 واتە: هەموو شتێک وەک یەکسان پەلە پیشان مەدە، بەڵکو خاڵی قەیران بە بەروار ناو ببە." },
+            { "language": "kmr", "text": "Koordîneya C1 tê wateya: her tiştî wek heman astê lezgîn nîşan nedin, lê astengiyê bi dîrokê nav bikin." },
+            { "language": "pl", "text": "Koordynacja C1 oznacza: nie przedstawiać wszystkiego jako równie pilnego, lecz nazwać wąskie gardło z datą." },
+            { "language": "ro", "text": "Coordonarea C1 înseamnă: nu prezentați totul ca fiind la fel de urgent, ci numiți blocajul cu dată." },
+            { "language": "sq", "text": "Koordinimi C1 do të thotë: mos e paraqitni gjithçka si njësoj urgjente, por emërtoni pikën bllokuese me datë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "responsibility",
+          "text": "Wenn eine Stelle Grenzen setzt, formulieren Sie nicht größer, sondern präziser: Welche Stelle, welcher Nachweis, welcher Zwischenstand?",
+          "translations": [
+            { "language": "en", "text": "When an office sets boundaries, do not formulate more broadly, but more precisely: which office, which document, which interim status?" },
+            { "language": "fa", "text": "وقتی یک نهاد مرز تعیین می‌کند، درخواست را بزرگ‌تر نکنید، بلکه دقیق‌تر کنید: کدام نهاد، کدام مدرک، کدام وضعیت موقت؟" },
+            { "language": "ar", "text": "عندما تضع جهة حدوداً، لا تصغ الطلب بشكل أوسع بل بدقة أكبر: أي جهة، أي وثيقة، أي حالة مؤقتة؟" },
+            { "language": "tr", "text": "Bir kurum sınır koyduğunda daha geniş değil, daha kesin formüle edin: hangi kurum, hangi belge, hangi ara durum?" },
+            { "language": "ru", "text": "Когда служба обозначает границы, формулируйте не шире, а точнее: какая служба, какой документ, какой промежуточный статус?" },
+            { "language": "ckb", "text": "کاتێک لایەنێک سنوور دادەنێت، داواکە گەورەتر مەکە، بەڵکو وردتر بکە: کام لایەن، کام بەڵگە، کام دۆخی کاتی؟" },
+            { "language": "kmr", "text": "Dema sazî sînoran datîne, ne firehtir lê rasttir formul bikin: kîjan sazî, kîjan belge, kîjan rewşa navber?" },
+            { "language": "pl", "text": "Gdy instytucja wyznacza granice, nie formułuj szerzej, lecz precyzyjniej: która instytucja, który dokument, jaki stan pośredni?" },
+            { "language": "ro", "text": "Când o instituție stabilește limite, nu formulați mai larg, ci mai precis: ce instituție, ce document, ce situație intermediară?" },
+            { "language": "sq", "text": "Kur një institucion vendos kufij, mos formuloni më gjerë, por më saktë: cili institucion, cili dokument, cila gjendje e ndërmjetme?" }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "data-protection",
+          "text": "Bei mehreren Stellen ist Datenschutz Teil der Sprachkompetenz: nicht einfach alle in Kopie setzen, sondern Zweck und Einwilligung klären.",
+          "translations": [
+            { "language": "en", "text": "With several offices, data protection is part of language competence: do not simply copy everyone, but clarify purpose and consent." },
+            { "language": "fa", "text": "وقتی چند نهاد درگیرند، حفاظت از داده‌ها بخشی از توانش زبانی است: همه را ساده در کپی نگذارید، بلکه هدف و رضایت را روشن کنید." },
+            { "language": "ar", "text": "عند وجود عدة جهات تكون حماية البيانات جزءاً من الكفاءة اللغوية: لا تضع الجميع ببساطة في النسخة، بل وضح الغرض والموافقة." },
+            { "language": "tr", "text": "Birden fazla kurumda veri koruma dil yetkinliğinin parçasıdır: herkesi basitçe kopyaya koymayın, amaç ve onayı netleştirin." },
+            { "language": "ru", "text": "При нескольких службах защита данных является частью языковой компетенции: не ставьте всех просто в копию, а уточняйте цель и согласие." },
+            { "language": "ckb", "text": "لەگەڵ چەند لایەندا پاراستنی داتا بەشێکە لە توانای زمان: هەمووان بە سادەیی مەخە کۆپی، بەڵکو ئامانج و ڕەزامەندی ڕوون بکەوە." },
+            { "language": "kmr", "text": "Bi çend saziyan re parastina daneyan beşek ji jêhatîbûna ziman e: hemû kesan bi hêsanî nekevin kopiyê, lê armanc û razîbûnê zelal bikin." },
+            { "language": "pl", "text": "Przy kilku instytucjach ochrona danych jest częścią kompetencji językowej: nie dodawać po prostu wszystkich do kopii, lecz wyjaśnić cel i zgodę." },
+            { "language": "ro", "text": "Cu mai multe instituții, protecția datelor face parte din competența lingvistică: nu puneți pur și simplu pe toți în copie, ci clarificați scopul și consimțământul." },
+            { "language": "sq", "text": "Me disa institucione, mbrojtja e të dhënave është pjesë e kompetencës gjuhësore: mos i vendosni thjesht të gjithë në kopje, por sqaroni qëllimin dhe pëlqimin." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Eine gute telefonische Schlussformel enthält Reihenfolge, Zuständigkeiten und einen fristgerechten Zwischenstand.",
+          "translations": [
+            { "language": "en", "text": "A good closing formula on the phone contains sequence, responsibilities, and an interim status on time." },
+            { "language": "fa", "text": "جمع‌بندی تلفنی خوب شامل ترتیب، مسئولیت‌ها و وضعیت موقت به‌موقع است." },
+            { "language": "ar", "text": "تتضمن الصيغة الختامية الجيدة في الهاتف الترتيب والمسؤوليات وحالة مؤقتة في الوقت المحدد." },
+            { "language": "tr", "text": "Telefonda iyi bir kapanış ifadesi sıra, sorumluluklar ve zamanında ara durum içerir." },
+            { "language": "ru", "text": "Хорошая завершающая формула по телефону содержит последовательность, ответственность и своевременный промежуточный статус." },
+            { "language": "ckb", "text": "فۆرمولەی کۆتایی باش لە تەلەفۆندا ڕیزبەندی، بەرپرسیارییەکان و دۆخی کاتی لە کاتی خۆیدا لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Formula dawî ya baş di telefonê de rêz, berpirsiyarî û rewşa navber a di demê xwe de dihewîne." },
+            { "language": "pl", "text": "Dobra formuła końcowa w rozmowie telefonicznej zawiera kolejność, odpowiedzialności i terminowy stan pośredni." },
+            { "language": "ro", "text": "O formulă bună de încheiere la telefon conține ordinea, responsabilitățile și o situație intermediară la timp." },
+            { "language": "sq", "text": "Një formulë e mirë përmbyllëse në telefon përmban rendin, përgjegjësitë dhe një gjendje të ndërmjetme në afat." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "phone-integration-case-coordination",
+          "placement": "hero",
+          "purpose": "Show a calm adult coordinating a multi-office integration case by phone with a simple paper timeline and document checklist.",
+          "altText": "Eine Person koordiniert am Telefon Sprachkurs, Kinderbetreuung und Jobcenter-Frist mit einer geordneten Checkliste.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A person coordinates a language course, childcare, and Jobcenter deadline by phone with an organized checklist." },
+            { "language": "fa", "text": "فردی با یک چک‌لیست مرتب، دوره زبان، مراقبت کودک و مهلت جاب‌سنتر را تلفنی هماهنگ می‌کند." },
+            { "language": "ar", "text": "شخص ينسق عبر الهاتف دورة لغة ورعاية طفل وموعد الجوب سنتر باستخدام قائمة مرتبة." },
+            { "language": "tr", "text": "Bir kişi düzenli bir kontrol listesiyle dil kursu, çocuk bakımı ve Jobcenter süresini telefonda koordine ediyor." },
+            { "language": "ru", "text": "Человек по телефону координирует языковой курс, уход за ребёнком и срок Jobcenter с упорядоченным списком." },
+            { "language": "ckb", "text": "کەسێک بە لیستی ڕێکخراو کۆرسی زمان، چاودێری منداڵ و ماوەی جۆب‌سەنتەر بە تەلەفۆن هەماهەنگ دەکات." },
+            { "language": "kmr", "text": "Kesek bi lîsteyeke rêxistî kursa ziman, lênêrîna zarokan û muhleta Jobcenter bi telefonê koordîne dike." },
+            { "language": "pl", "text": "Osoba koordynuje telefonicznie kurs językowy, opiekę nad dzieckiem i termin Jobcenter z uporządkowaną checklistą." },
+            { "language": "ro", "text": "O persoană coordonează telefonic cursul de limbă, îngrijirea copilului și termenul Jobcenter cu o listă ordonată." },
+            { "language": "sq", "text": "Një person koordinon me telefon kursin e gjuhës, kujdesin për fëmijën dhe afatin e Jobcenter-it me një listë të rregulluar." }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult on a phone call at a desk, with a simple timeline, checklist, and three neutral office icons for language course, childcare, and Jobcenter; no readable personal data, no logos, diverse adult, accessible composition, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

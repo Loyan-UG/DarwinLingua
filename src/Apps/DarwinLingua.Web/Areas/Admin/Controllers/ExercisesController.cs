@@ -14,7 +14,7 @@ public sealed class ExercisesController(IWebCatalogApiClient catalogApiClient) :
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<ExerciseSetListItemModel> exerciseSets = await catalogApiClient
-            .GetExerciseSetsAsync(new ExerciseSetListFilterModel(null, null, null, null), cancellationToken)
+            .GetExerciseSetsAsync(new ExerciseSetListFilterModel(null, null, null, null), "en", cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminExerciseSetsPageViewModel(exerciseSets));

@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-47-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 47 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 47",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-ablehnung-des-serviceanbieters-hinterfragen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Ablehnung des Serviceanbieters hinterfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Questioning a service provider's refusal" },
+        { "language": "fa", "text": "زیر سؤال بردن رد درخواست توسط سرویس‌دهنده" },
+        { "language": "ar", "text": "مراجعة رفض مقدم الخدمة" },
+        { "language": "tr", "text": "Hizmet sağlayıcının ret kararını sorgulamak" },
+        { "language": "ru", "text": "Уточнить отказ поставщика услуги" },
+        { "language": "ckb", "text": "پرسیارکردن لەسەر ڕەتکردنەوەی دابینکەری خزمەتگوزاری" },
+        { "language": "kmr", "text": "Redkirina peydakirê xizmetê pirsîn" },
+        { "language": "pl", "text": "Zakwestonowanie odmowy usługodawcy" },
+        { "language": "ro", "text": "Contestarea refuzului furnizorului de servicii" },
+        { "language": "sq", "text": "Vënia në pikëpyetje e refuzimit të ofruesit të shërbimit" }
+      ],
+      "description": "Der Serviceanbieter hat Ihre Reklamation mit einer knappen Standardbegründung abgelehnt. Sie rufen an, um nicht nur zu widersprechen, sondern die Entscheidungsgrundlage, den angewendeten Vertragsabschnitt und eine faire erneute Prüfung zu klären.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "The service provider has rejected your complaint with a brief standard explanation. You call not merely to disagree, but to clarify the basis of the decision, the contract section applied, and a fair reconsideration." },
+        { "language": "fa", "text": "سرویس‌دهنده شکایت شما را با یک توضیح کوتاه و استاندارد رد کرده است. تماس می‌گیرید نه فقط برای مخالفت، بلکه برای روشن کردن مبنای تصمیم، بند قراردادی اعمال‌شده و یک بررسی دوباره منصفانه." },
+        { "language": "ar", "text": "رفض مقدم الخدمة شكواك بتبرير قياسي قصير. تتصل لا لمجرد الاعتراض، بل لتوضيح أساس القرار والبند التعاقدي المطبق وإعادة فحص عادلة." },
+        { "language": "tr", "text": "Hizmet sağlayıcı şikayetinizi kısa standart bir gerekçeyle reddetti. Sadece itiraz etmek için değil, kararın dayanağını, uygulanan sözleşme bölümünü ve adil bir yeniden incelemeyi netleştirmek için arıyorsunuz." },
+        { "language": "ru", "text": "Поставщик услуги отклонил вашу рекламацию кратким стандартным обоснованием. Вы звоните не просто возразить, а уточнить основание решения, примененный раздел договора и справедливую повторную проверку." },
+        { "language": "ckb", "text": "دابینکەری خزمەتگوزاری سکاڵاکەت بە پاساوێکی ستاندارد و کورت ڕەتکردووەتەوە. پەیوەندی دەکەیت نە تەنها بۆ ناڕەزایی، بەڵکوو بۆ ڕوونکردنەوەی بنەمای بڕیار، بەشی گرێبەستی بەکارهاتوو و پشکنینێکی دادپەروەرانەی دووبارە." },
+        { "language": "kmr", "text": "Peydakirê xizmetê reklamasyona we bi sedemeke standard a kurt red kiriye. Hûn telefon dikin ne tenê ji bo nakokiyê, lê ji bo zelalkirina bingeha biryarê, beşa peymanê ya hatî bikaranîn û kontrola dubare ya adil." },
+        { "language": "pl", "text": "Usługodawca odrzucił Pana reklamację krótkim standardowym uzasadnieniem. Dzwoni Pan nie tylko po to, by się sprzeciwić, lecz aby wyjaśnić podstawę decyzji, zastosowany punkt umowy i uczciwą ponowną ocenę." },
+        { "language": "ro", "text": "Furnizorul de servicii a respins reclamația dumneavoastră cu o justificare standard scurtă. Sunați nu doar ca să vă opuneți, ci să clarificați baza deciziei, secțiunea contractuală aplicată și o reexaminare corectă." },
+        { "language": "sq", "text": "Ofruesi i shërbimit e ka refuzuar ankesën tuaj me një arsyetim të shkurtër standard. Telefononi jo vetëm për të kundërshtuar, por për të sqaruar bazën e vendimit, pjesën e kontratës të zbatuar dhe një rishqyrtim të drejtë." }
+      ],
+      "learnerGoal": "Eine Ablehnung sachlich hinterfragen: die Begründung präzisieren lassen, Vertragskriterium und Einzelfall trennen, neue Informationen einordnen, eine angemessene erneute Prüfung vorschlagen und eine schriftliche Antwort sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Question a refusal factually: ask for a precise explanation, separate contract criterion and individual case, classify new information, suggest an appropriate reconsideration, and secure a written response." },
+        { "language": "fa", "text": "رد درخواست را factual بررسی کنید: توضیح دقیق بخواهید، معیار قراردادی و مورد فردی را جدا کنید، اطلاعات جدید را جای‌گذاری کنید، بررسی دوباره مناسب پیشنهاد دهید و پاسخ کتبی بگیرید." },
+        { "language": "ar", "text": "راجع الرفض بشكل موضوعي: اطلب توضيحاً دقيقاً، وافصل بين معيار العقد والحالة الفردية، وصنف المعلومات الجديدة، واقترح إعادة فحص مناسبة، واحصل على رد مكتوب." },
+        { "language": "tr", "text": "Bir ret kararını nesnel biçimde sorgulayın: gerekçeyi netleştirin, sözleşme ölçütünü ve bireysel durumu ayırın, yeni bilgiyi sınıflandırın, uygun bir yeniden inceleme önerin ve yazılı yanıt güvenceye alın." },
+        { "language": "ru", "text": "Предметно уточнить отказ: попросить точное обоснование, отделить договорный критерий от индивидуального случая, классифицировать новую информацию, предложить уместную повторную проверку и получить письменный ответ." },
+        { "language": "ckb", "text": "ڕەتکردنەوەکە بە شێوەی بابەتی بپرسە: داوای ڕوونکردنەوەی ورد بکە، پێوەری گرێبەست و دۆخی تاکەکەسی جیا بکەوە، زانیاریی نوێ ڕێک بخە، پشکنینی دووبارەی گونجاو پێشنیار بکە و وەڵامی نووسراو وەربگرە." },
+        { "language": "kmr", "text": "Redkirinê bi awayekî rast bipirsin: hincetê bi hûrgulî bixwazin, kriterê peymanê û rewşa takekesî cuda bikin, agahdariya nû binirxînin, kontrola dubare ya guncaw pêşniyar bikin û bersiva nivîskî ewle bikin." },
+        { "language": "pl", "text": "Rzeczowo zakwestionować odmowę: poprosić o precyzyjne uzasadnienie, oddzielić kryterium umowne od indywidualnego przypadku, uporządkować nowe informacje, zaproponować właściwą ponowną ocenę i uzyskać odpowiedź pisemną." },
+        { "language": "ro", "text": "Contestați factual un refuz: cereți o justificare precisă, separați criteriul contractual de cazul individual, încadrați informațiile noi, propuneți o reexaminare adecvată și obțineți un răspuns scris." },
+        { "language": "sq", "text": "Vini në pikëpyetje faktikisht një refuzim: kërkoni arsyetim të saktë, ndani kriterin kontraktual nga rasti individual, vendosni informacionin e ri, propozoni rishqyrtim të përshtatshëm dhe siguroni përgjigje me shkrim." }
+      ],
+      "cefrLevel": "C1",
+      "category": "customer-service",
+      "topics": ["customer-service", "business-communication"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "agree-disagree",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 47,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kund/in",
+          "translations": [
+            { "language": "en", "text": "Customer questioning a refusal" },
+            { "language": "fa", "text": "مشتری که رد درخواست را بررسی می‌کند" },
+            { "language": "ar", "text": "العميل الذي يراجع الرفض" },
+            { "language": "tr", "text": "Ret kararını sorgulayan müşteri" },
+            { "language": "ru", "text": "Клиент, уточняющий отказ" },
+            { "language": "ckb", "text": "کڕیارێک کە ڕەتکردنەوەکە دەپرسێت" },
+            { "language": "kmr", "text": "Mişteriyê ku redkirinê dipirse" },
+            { "language": "pl", "text": "Klient kwestionujący odmowę" },
+            { "language": "ro", "text": "Clientul care contestă refuzul" },
+            { "language": "sq", "text": "Klienti që vë në pikëpyetje refuzimin" }
+          ]
+        },
+        {
+          "roleKey": "agent",
+          "displayName": "Serviceanbieter",
+          "translations": [
+            { "language": "en", "text": "Service provider representative" },
+            { "language": "fa", "text": "نماینده سرویس‌دهنده" },
+            { "language": "ar", "text": "ممثل مقدم الخدمة" },
+            { "language": "tr", "text": "Hizmet sağlayıcı temsilcisi" },
+            { "language": "ru", "text": "Представитель поставщика услуги" },
+            { "language": "ckb", "text": "نوێنەری دابینکەری خزمەتگوزاری" },
+            { "language": "kmr", "text": "Nûnerê peydakirê xizmetê" },
+            { "language": "pl", "text": "Przedstawiciel usługodawcy" },
+            { "language": "ro", "text": "Reprezentantul furnizorului de servicii" },
+            { "language": "sq", "text": "Përfaqësuesi i ofruesit të shërbimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "agent",
+          "baseText": "Guten Tag. Ich sehe, dass Ihre Reklamation gestern abgelehnt wurde. In der Antwort steht, dass die Voraussetzungen nicht erfüllt seien.",
+          "translations": [
+            { "language": "en", "text": "Good day. I see that your complaint was rejected yesterday. The response says that the requirements were not met." },
+            { "language": "fa", "text": "روز بخیر. می‌بینم که شکایت شما دیروز رد شده است. در پاسخ نوشته شده که شرایط لازم برآورده نشده است." },
+            { "language": "ar", "text": "مرحباً. أرى أن شكواك رُفضت أمس. في الرد مكتوب أن الشروط لم تُستوفَ." },
+            { "language": "tr", "text": "İyi günler. Şikayetinizin dün reddedildiğini görüyorum. Yanıtta koşulların yerine getirilmediği yazıyor." },
+            { "language": "ru", "text": "Добрый день. Я вижу, что ваша рекламация вчера была отклонена. В ответе указано, что условия не выполнены." },
+            { "language": "ckb", "text": "ڕۆژباش. دەبینم سکاڵاکەت دوێنێ ڕەتکراوەتەوە. لە وەڵامەکەدا نووسراوە کە مەرجەکان جێبەجێ نەبوون." },
+            { "language": "kmr", "text": "Roj baş. Ez dibînim ku reklamasyona we duh hat redkirin. Di bersivê de hatiye nivîsîn ku şert nehatine bicihanîn." },
+            { "language": "pl", "text": "Dzień dobry. Widzę, że Pana reklamacja została wczoraj odrzucona. W odpowiedzi napisano, że warunki nie zostały spełnione." },
+            { "language": "ro", "text": "Bună ziua. Văd că reclamația dumneavoastră a fost respinsă ieri. În răspuns scrie că cerințele nu au fost îndeplinite." },
+            { "language": "sq", "text": "Mirëdita. Shoh që ankesa juaj u refuzua dje. Në përgjigje shkruhet se kushtet nuk janë përmbushur." }
+          ],
+          "function": "state-refusal",
+          "toneNote": "The agent refers to a generic refusal.",
+          "expectedLearnerAction": "Ask for precision without sounding accusatory."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Genau deshalb rufe ich an: Ich möchte nicht pauschal widersprechen, sondern verstehen, welche Voraussetzung konkret fehlt und auf welchen Abschnitt Ihrer Bedingungen sich die Ablehnung stützt.",
+          "translations": [
+            { "language": "en", "text": "Thank you. That is exactly why I am calling: I do not want to object in a blanket way, but to understand which specific requirement is missing and which section of your terms the refusal is based on." },
+            { "language": "fa", "text": "ممنون. دقیقاً به همین دلیل تماس گرفته‌ام: نمی‌خواهم کلی مخالفت کنم، بلکه می‌خواهم بفهمم دقیقاً کدام شرط کم است و رد درخواست بر کدام بخش از شرایط شما تکیه دارد." },
+            { "language": "ar", "text": "شكراً. لهذا السبب بالضبط أتصل: لا أريد الاعتراض بشكل عام، بل فهم الشرط المحدد الناقص وعلى أي بند من شروطكم يستند الرفض." },
+            { "language": "tr", "text": "Teşekkür ederim. Tam da bu yüzden arıyorum: Genel olarak itiraz etmek istemiyorum; hangi somut koşulun eksik olduğunu ve reddin şartlarınızın hangi bölümüne dayandığını anlamak istiyorum." },
+            { "language": "ru", "text": "Спасибо. Именно поэтому я звоню: я не хочу возражать в общем виде, а хочу понять, какого конкретного условия не хватает и на какой раздел ваших условий опирается отказ." },
+            { "language": "ckb", "text": "سوپاس. هەر بۆیە پەیوەندیم کردووە: نامەوێت بە شێوەی گشتی ناڕەزایی دەرببڕم، بەڵکوو دەمەوێت بفهمم کام مەرج بە وردی کەمە و ڕەتکردنەوەکە پشت بە کام بەشی مەرجەکانتان دەبەستێت." },
+            { "language": "kmr", "text": "Spas. Tam ji ber vê yekê ez telefon dikim: Ez naxwazim bi giştî nakokî bikim, lê dixwazim fam bikim kîjan şert bi rastî kêm e û redkirin li ser kîjan beşa şertên we hatiye avakirin." },
+            { "language": "pl", "text": "Dziękuję. Właśnie dlatego dzwonię: nie chcę sprzeciwiać się ogólnie, lecz zrozumieć, którego konkretnego warunku brakuje i na jakim punkcie Państwa warunków opiera się odmowa." },
+            { "language": "ro", "text": "Mulțumesc. Tocmai de aceea sun: nu vreau să contest în mod general, ci să înțeleg ce cerință concretă lipsește și pe ce secțiune din condițiile dumneavoastră se bazează refuzul." },
+            { "language": "sq", "text": "Faleminderit. Pikërisht për këtë telefonoj: nuk dua të kundërshtoj në mënyrë të përgjithshme, por të kuptoj cili kusht konkret mungon dhe në cilën pjesë të kushteve tuaja mbështetet refuzimi." }
+          ],
+          "function": "ask-for-rationale",
+          "toneNote": "The learner asks for reasoning, not victory.",
+          "expectedLearnerAction": "Request the exact missing requirement and contract basis."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "agent",
+          "baseText": "Laut Vermerk wurde abgelehnt, weil der Schaden als Nutzungsschaden eingestuft wurde und nicht als technischer Mangel.",
+          "translations": [
+            { "language": "en", "text": "According to the note, it was rejected because the damage was classified as damage from use and not as a technical defect." },
+            { "language": "fa", "text": "طبق یادداشت، رد شده چون آسیب به عنوان آسیب ناشی از استفاده طبقه‌بندی شده، نه نقص فنی." },
+            { "language": "ar", "text": "وفقاً للملاحظة، تم الرفض لأن الضرر صُنّف كضرر ناتج عن الاستخدام وليس كعيب تقني." },
+            { "language": "tr", "text": "Nota göre reddedildi, çünkü hasar kullanım hasarı olarak sınıflandırılmış, teknik kusur olarak değil." },
+            { "language": "ru", "text": "Согласно отметке, отказ был потому, что повреждение классифицировано как ущерб от использования, а не как технический дефект." },
+            { "language": "ckb", "text": "بەپێی تێبینییەکە، ڕەتکراوەتەوە چونکە زیانەکە وەک زیانی بەکارهێنان پۆلێن کراوە، نە وەک کەموکوڕیی تەکنیکی." },
+            { "language": "kmr", "text": "Li gorî notê, ew hat redkirin ji ber ku zirar wek zirara bikaranînê hat polînkirin û ne wek kêmasiya teknîkî." },
+            { "language": "pl", "text": "Zgodnie z adnotacją odmówiono, ponieważ uszkodzenie sklasyfikowano jako szkodę wynikającą z użytkowania, a nie jako wadę techniczną." },
+            { "language": "ro", "text": "Conform notei, a fost respins deoarece deteriorarea a fost clasificată ca deteriorare din utilizare, nu ca defect tehnic." },
+            { "language": "sq", "text": "Sipas shënimit, u refuzua sepse dëmtimi u klasifikua si dëmtim nga përdorimi dhe jo si defekt teknik." }
+          ],
+          "function": "give-classification",
+          "toneNote": "The agent provides the first concrete reason.",
+          "expectedLearnerAction": "Ask how that classification was reached and bring relevant facts."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist der Punkt, den ich gern nachvollziehen würde. Im Prüfbericht steht nur die Einstufung, aber nicht, woran sie festgemacht wurde. Können Sie mir sagen, welche Beobachtung gegen einen technischen Mangel spricht?",
+          "translations": [
+            { "language": "en", "text": "That is the point I would like to understand. The inspection report only contains the classification, but not what it was based on. Can you tell me which observation argues against a technical defect?" },
+            { "language": "fa", "text": "این همان نکته‌ای است که می‌خواهم بفهمم. در گزارش بررسی فقط طبقه‌بندی آمده، اما نه اینکه بر چه چیزی مبتنی بوده است. می‌توانید بگویید کدام مشاهده علیه نقص فنی است؟" },
+            { "language": "ar", "text": "هذه هي النقطة التي أود فهمها. تقرير الفحص يحتوي فقط على التصنيف، لا على ما استند إليه. هل يمكنك أن تخبرني أي ملاحظة تتحدث ضد وجود عيب تقني؟" },
+            { "language": "tr", "text": "Anlamak istediğim nokta tam bu. İnceleme raporunda sadece sınıflandırma var, fakat bunun neye dayandığı yok. Hangi gözlemin teknik kusura karşı konuştuğunu söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Именно этот пункт я хотел бы понять. В отчете проверки указана только классификация, но не то, на чем она основана. Можете сказать, какое наблюдение говорит против технического дефекта?" },
+            { "language": "ckb", "text": "ئەوە ئەو خاڵەیە کە دەمەوێت تێیبگەم. لە ڕاپۆرتی پشکنینەکەدا تەنها پۆلێنکردنەکە هەیە، بەڵام نە ئەوەی لەسەر چی بنیات نراوە. دەتوانن بڵێن کام بینین دژ بە کەموکوڕیی تەکنیکی دەوەستێت؟" },
+            { "language": "kmr", "text": "Ev ew xal e ku ez dixwazim fam bikim. Di rapora kontrolê de tenê polînkirin heye, lê ne ew ku li ser çi hatiye avakirin. Hûn dikarin bibêjin kîjan dîtin li dijî kêmasiya teknîkî ye?" },
+            { "language": "pl", "text": "To jest punkt, który chciałbym zrozumieć. W raporcie z kontroli jest tylko klasyfikacja, ale nie ma informacji, na czym ją oparto. Czy może Pan powiedzieć, jaka obserwacja przemawia przeciwko wadzie technicznej?" },
+            { "language": "ro", "text": "Acesta este punctul pe care aș dori să îl înțeleg. În raportul de verificare apare doar clasificarea, dar nu și pe ce s-a bazat. Îmi puteți spune ce observație vorbește împotriva unui defect tehnic?" },
+            { "language": "sq", "text": "Kjo është pika që do të doja ta kuptoja. Në raportin e kontrollit është vetëm klasifikimi, por jo se mbi çfarë është bazuar. Mund të më thoni cili vëzhgim flet kundër një defekti teknik?" }
+          ],
+          "function": "ask-for-evidence",
+          "toneNote": "The learner challenges the reasoning, not the person.",
+          "expectedLearnerAction": "Ask for the observable basis of the refusal."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "agent",
+          "baseText": "Hier steht: äußerer Kratzer am Gehäuse und Feuchtigkeitsspuren. Daraus wurde geschlossen, dass die Ursache außerhalb der Garantie liegt.",
+          "translations": [
+            { "language": "en", "text": "It says here: external scratch on the casing and traces of moisture. From this it was concluded that the cause lies outside the warranty." },
+            { "language": "fa", "text": "اینجا نوشته شده: خراش بیرونی روی بدنه و آثار رطوبت. از این نتیجه گرفته شده که علت خارج از گارانتی است." },
+            { "language": "ar", "text": "هنا مكتوب: خدش خارجي على الغلاف وآثار رطوبة. ومن ذلك استُنتج أن السبب خارج الضمان." },
+            { "language": "tr", "text": "Burada şöyle yazıyor: kasada dış çizik ve nem izleri. Bundan, nedenin garanti dışında olduğu sonucuna varılmış." },
+            { "language": "ru", "text": "Здесь написано: внешняя царапина на корпусе и следы влаги. На основании этого сделан вывод, что причина вне гарантии." },
+            { "language": "ckb", "text": "لێرە نووسراوە: هەڵکەندنی دەرەکی لەسەر قاپ و شوێنی تەڕبوون. لەوەوە دەرئەنجام گیراوە کە هۆکارەکە لە دەرەوەی گەرەنتیدایە." },
+            { "language": "kmr", "text": "Li vir hatiye nivîsîn: xişa derveyî li ser qalikê û şopên şiliyê. Ji vê hat derxistin ku sedem li derveyî garantiyê ye." },
+            { "language": "pl", "text": "Tutaj jest zapis: zewnętrzna rysa na obudowie i ślady wilgoci. Na tej podstawie uznano, że przyczyna leży poza gwarancją." },
+            { "language": "ro", "text": "Aici scrie: zgârietură exterioară pe carcasă și urme de umiditate. Din aceasta s-a concluzionat că cauza este în afara garanției." },
+            { "language": "sq", "text": "Këtu shkruhet: gërvishtje e jashtme në kasë dhe gjurmë lagështie. Nga kjo është nxjerrë përfundimi se shkaku është jashtë garancisë." }
+          ],
+          "function": "provide-evidence",
+          "toneNote": "The agent names concrete evidence.",
+          "expectedLearnerAction": "Separate visible condition from causal conclusion."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Danke, das ist konkreter. Den Kratzer bestreite ich nicht; er war aber bereits auf dem Foto vom Liefertag sichtbar. Die Feuchtigkeitsspuren kann ich nicht einordnen, weil das Gerät nur in Innenräumen genutzt wurde. Genau deshalb bitte ich um eine zweite Prüfung der Kausalität.",
+          "translations": [
+            { "language": "en", "text": "Thank you, that is more specific. I do not dispute the scratch; however, it was already visible in the photo from the delivery day. I cannot classify the traces of moisture because the device was only used indoors. That is exactly why I ask for a second review of causality." },
+            { "language": "fa", "text": "ممنون، این مشخص‌تر است. خراش را انکار نمی‌کنم؛ اما در عکس روز تحویل هم دیده می‌شد. آثار رطوبت را نمی‌توانم توضیح بدهم، چون دستگاه فقط در فضای داخلی استفاده شده است. دقیقاً به همین دلیل درخواست بررسی دوباره رابطه علت و معلول را دارم." },
+            { "language": "ar", "text": "شكراً، هذا أكثر تحديداً. لا أنكر الخدش؛ لكنه كان ظاهراً بالفعل في صورة يوم التسليم. لا أستطيع تفسير آثار الرطوبة لأن الجهاز استُخدم فقط داخل المنزل. لذلك بالضبط أطلب فحصاً ثانياً للسببية." },
+            { "language": "tr", "text": "Teşekkür ederim, bu daha somut. Çiziği inkar etmiyorum; ancak teslimat günündeki fotoğrafta zaten görünüyordu. Nem izlerini açıklayamıyorum, çünkü cihaz yalnızca iç mekanda kullanıldı. Tam da bu yüzden nedenselliğin ikinci kez incelenmesini rica ediyorum." },
+            { "language": "ru", "text": "Спасибо, это конкретнее. Царапину я не оспариваю; однако она уже была видна на фотографии в день доставки. Следы влаги я не могу объяснить, потому что устройство использовалось только внутри помещения. Именно поэтому я прошу о повторной проверке причинной связи." },
+            { "language": "ckb", "text": "سوپاس، ئەمە دیاریکراوترە. هەڵکەندنەکە ڕەت ناکەم؛ بەڵام لە وێنەی ڕۆژی گەیاندندا پێشتر دیار بوو. شوێنی تەڕبوون ناتوانم پۆلێن بکەم، چونکە ئامێرەکە تەنها لە ناوەوە بەکارهاتووە. هەر بۆیە داوای پشکنینی دووبارەی هۆکاری دەکەم." },
+            { "language": "kmr", "text": "Spas, ev konkretir e. Ez xişê nakim nakokî; lê ew jixwe di wêneyê roja gihandinê de xuya bû. Şopên şiliyê ez nikarim binirxînim, ji ber ku amûr tenê li hundir hatiye bikaranîn. Tam ji ber vê yekê ez daxwaza kontrola duyemîn a sedemîtiyê dikim." },
+            { "language": "pl", "text": "Dziękuję, to jest konkretniejsze. Nie kwestionuję rysy; była jednak widoczna już na zdjęciu z dnia dostawy. Śladów wilgoci nie potrafię zaklasyfikować, ponieważ urządzenie było używane tylko w pomieszczeniach. Właśnie dlatego proszę o drugą ocenę związku przyczynowego." },
+            { "language": "ro", "text": "Mulțumesc, asta este mai concret. Nu contest zgârietura; era însă deja vizibilă în fotografia din ziua livrării. Urmele de umiditate nu le pot încadra, deoarece dispozitivul a fost folosit doar în interior. Tocmai de aceea solicit o a doua verificare a cauzalității." },
+            { "language": "sq", "text": "Faleminderit, kjo është më konkrete. Nuk e kundërshtoj gërvishtjen; por ajo ishte e dukshme që në fotografinë e ditës së dorëzimit. Gjurmët e lagështisë nuk mund t'i klasifikoj, sepse pajisja është përdorur vetëm brenda. Pikërisht për këtë kërkoj një shqyrtim të dytë të shkakësisë." }
+          ],
+          "function": "separate-fact-and-causality",
+          "toneNote": "The learner accepts one fact and challenges the causal conclusion.",
+          "expectedLearnerAction": "Separate observed evidence from the interpretation and add relevant counter-evidence."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "agent",
+          "baseText": "Eine zweite Prüfung ist möglich, aber nur wenn neue Unterlagen vorliegen. Was könnten Sie zusätzlich einreichen?",
+          "translations": [
+            { "language": "en", "text": "A second review is possible, but only if new documents are available. What could you submit additionally?" },
+            { "language": "fa", "text": "بررسی دوم ممکن است، اما فقط اگر مدارک جدید وجود داشته باشد. چه چیزی می‌توانید علاوه بر این ارسال کنید؟" },
+            { "language": "ar", "text": "الفحص الثاني ممكن، لكن فقط إذا توفرت مستندات جديدة. ماذا يمكنك أن تقدم بالإضافة إلى ذلك؟" },
+            { "language": "tr", "text": "İkinci inceleme mümkün, ancak yalnızca yeni belgeler varsa. Ek olarak ne sunabilirsiniz?" },
+            { "language": "ru", "text": "Повторная проверка возможна, но только при наличии новых документов. Что вы могли бы дополнительно подать?" },
+            { "language": "ckb", "text": "پشکنینی دووبارە دەکرێت، بەڵام تەنها ئەگەر بەڵگەی نوێ هەبێت. دەتوانن چی زیاتر پێشکەش بکەن؟" },
+            { "language": "kmr", "text": "Kontrola duyemîn gengaz e, lê tenê heke belgeyên nû hebin. Hûn dikarin çi zêdetir pêşkêş bikin?" },
+            { "language": "pl", "text": "Druga ocena jest możliwa, ale tylko jeśli są nowe dokumenty. Co może Pan dodatkowo przedłożyć?" },
+            { "language": "ro", "text": "O a doua verificare este posibilă, dar numai dacă există documente noi. Ce ați putea depune suplimentar?" },
+            { "language": "sq", "text": "Një shqyrtim i dytë është i mundur, por vetëm nëse ka dokumente të reja. Çfarë mund të dorëzoni shtesë?" }
+          ],
+          "function": "request-new-documents",
+          "toneNote": "The agent opens a process condition.",
+          "expectedLearnerAction": "Offer relevant documents and ask that the review question be framed correctly."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich kann das Foto vom Liefertag, die Rechnung, den Chat mit der Erstmeldung und eine kurze Nutzungsbeschreibung einreichen. Wichtig wäre mir, dass nicht nur der Kratzer bewertet wird, sondern ob er tatsächlich die gemeldete Fehlfunktion erklären kann.",
+          "translations": [
+            { "language": "en", "text": "I can submit the photo from the delivery day, the invoice, the chat with the initial report, and a brief description of use. What matters to me is that not only the scratch is evaluated, but whether it can actually explain the reported malfunction." },
+            { "language": "fa", "text": "می‌توانم عکس روز تحویل، فاکتور، چت گزارش اولیه و یک توضیح کوتاه درباره نحوه استفاده را ارسال کنم. برای من مهم است که فقط خراش ارزیابی نشود، بلکه بررسی شود آیا واقعاً می‌تواند نقص گزارش‌شده را توضیح دهد یا نه." },
+            { "language": "ar", "text": "يمكنني تقديم صورة يوم التسليم والفاتورة والدردشة مع البلاغ الأول ووصفاً قصيراً للاستخدام. المهم بالنسبة لي ألا يتم تقييم الخدش فقط، بل ما إذا كان يمكنه فعلاً تفسير الخلل المبلغ عنه." },
+            { "language": "tr", "text": "Teslimat günündeki fotoğrafı, faturayı, ilk bildirimle ilgili sohbeti ve kısa bir kullanım açıklamasını sunabilirim. Benim için önemli olan yalnızca çizik değil, bunun bildirilen arızayı gerçekten açıklayıp açıklayamayacağının değerlendirilmesidir." },
+            { "language": "ru", "text": "Я могу подать фотографию с дня доставки, счет, чат с первичным сообщением и краткое описание использования. Для меня важно, чтобы оценивали не только царапину, но и то, может ли она действительно объяснить заявленную неисправность." },
+            { "language": "ckb", "text": "دەتوانم وێنەی ڕۆژی گەیاندن، پسووڵە، چاتی ڕاپۆرتی یەکەم و ڕوونکردنەوەیەکی کورتی بەکارهێنان پێشکەش بکەم. بۆ من گرنگە تەنها هەڵکەندنەکە هەڵنەسەنگێنرێت، بەڵکوو ئەوەش کە ئایا بەڕاستی دەتوانێت کەموکوڕیی ڕاپۆرتکراو ڕوون بکاتەوە." },
+            { "language": "kmr", "text": "Ez dikarim wêneya roja gihandinê, fature, çata ragihandina yekem û ravekirineke kurt a bikaranînê pêşkêş bikim. Ji bo min girîng e ku ne tenê xiş were nirxandin, lê ka ew dikare kêmasiya ragihandî bi rastî rave bike an na." },
+            { "language": "pl", "text": "Mogę przedłożyć zdjęcie z dnia dostawy, fakturę, czat z pierwszym zgłoszeniem i krótki opis użytkowania. Ważne jest dla mnie, aby oceniono nie tylko rysę, lecz także to, czy rzeczywiście może wyjaśniać zgłoszoną awarię." },
+            { "language": "ro", "text": "Pot depune fotografia din ziua livrării, factura, chatul cu prima sesizare și o scurtă descriere a utilizării. Pentru mine este important să nu fie evaluată doar zgârietura, ci dacă ea poate explica într-adevăr defecțiunea raportată." },
+            { "language": "sq", "text": "Mund të dorëzoj fotografinë e ditës së dorëzimit, faturën, bisedën me raportimin fillestar dhe një përshkrim të shkurtër të përdorimit. Për mua është e rëndësishme të mos vlerësohet vetëm gërvishtja, por nëse ajo mund ta shpjegojë vërtet defektin e raportuar." }
+          ],
+          "function": "offer-documents-and-review-question",
+          "toneNote": "The learner gives documents and defines the review question.",
+          "expectedLearnerAction": "Submit useful evidence and focus the reconsideration."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "agent",
+          "baseText": "Ich kann das an die Fachabteilung weitergeben. Es kann aber sein, dass die ursprüngliche Entscheidung bestehen bleibt.",
+          "translations": [
+            { "language": "en", "text": "I can forward that to the specialist department. However, it is possible that the original decision will remain in place." },
+            { "language": "fa", "text": "می‌توانم آن را به بخش تخصصی ارجاع بدهم. اما ممکن است تصمیم اولیه باقی بماند." },
+            { "language": "ar", "text": "يمكنني تحويل ذلك إلى القسم المختص. لكن من الممكن أن يبقى القرار الأصلي قائماً." },
+            { "language": "tr", "text": "Bunu uzman birime iletebilirim. Ancak ilk kararın değişmemesi de mümkün." },
+            { "language": "ru", "text": "Я могу передать это в профильный отдел. Однако возможно, что первоначальное решение останется в силе." },
+            { "language": "ckb", "text": "دەتوانم ئەوە بۆ بەشی پسپۆڕ بنێرم. بەڵام دەکرێت بڕیاری سەرەتایی بەردەوام بمێنێتەوە." },
+            { "language": "kmr", "text": "Ez dikarim vê ji beşa pispor re bişînim. Lê gengaz e ku biryara destpêkê bimîne." },
+            { "language": "pl", "text": "Mogę przekazać to do działu specjalistycznego. Może się jednak zdarzyć, że pierwotna decyzja pozostanie w mocy." },
+            { "language": "ro", "text": "Pot transmite acest lucru departamentului de specialitate. Totuși, este posibil ca decizia inițială să rămână valabilă." },
+            { "language": "sq", "text": "Mund ta përcjell këtë te departamenti specialist. Megjithatë është e mundur që vendimi fillestar të mbetet në fuqi." }
+          ],
+          "function": "forward-with-caveat",
+          "toneNote": "The agent offers a review but no outcome guarantee.",
+          "expectedLearnerAction": "Accept uncertainty and secure criteria, timeline, and written reasoning."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das ist in Ordnung. Mir geht es nicht um eine Zusage am Telefon, sondern um eine nachvollziehbare zweite Prüfung. Können Sie bitte festhalten, dass die Kausalität zwischen äußerem Kratzer, Feuchtigkeitsspuren und gemeldeter Fehlfunktion geprüft werden soll?",
+          "translations": [
+            { "language": "en", "text": "That is fine. I am not asking for a promise on the phone, but for a comprehensible second review. Could you please record that the causality between external scratch, traces of moisture, and reported malfunction should be reviewed?" },
+            { "language": "fa", "text": "اشکالی ندارد. هدفم گرفتن وعده تلفنی نیست، بلکه یک بررسی دوم قابل فهم است. لطفاً ثبت می‌کنید که رابطه علت و معلول بین خراش بیرونی، آثار رطوبت و نقص گزارش‌شده بررسی شود؟" },
+            { "language": "ar", "text": "هذا مقبول. لا أطلب وعداً هاتفياً، بل فحصاً ثانياً قابلاً للفهم. هل يمكنك أن تسجل من فضلك أن السببية بين الخدش الخارجي وآثار الرطوبة والخلل المبلغ عنه يجب فحصها؟" },
+            { "language": "tr", "text": "Bu tamam. Telefonda bir söz istemiyorum, anlaşılır bir ikinci inceleme istiyorum. Lütfen dış çizik, nem izleri ve bildirilen arıza arasındaki nedenselliğin incelenmesi gerektiğini kaydedebilir misiniz?" },
+            { "language": "ru", "text": "Это нормально. Мне нужна не устная гарантия, а понятная повторная проверка. Пожалуйста, зафиксируйте, что нужно проверить причинную связь между внешней царапиной, следами влаги и заявленной неисправностью." },
+            { "language": "ckb", "text": "باشە. مەبەستم بەڵێنی تەلەفۆنی نییە، بەڵکوو پشکنینی دووبارەی تێگەیشتووە. تکایە تۆمار دەکەن کە هۆکاری نێوان هەڵکەندنی دەرەکی، شوێنی تەڕبوون و کەموکوڕیی ڕاپۆرتکراو بپشکنرێت؟" },
+            { "language": "kmr", "text": "Ev baş e. Armanca min ne soza telefonê ye, lê kontrola duyemîn a têgihîştî ye. Ji kerema xwe hûn dikarin tomar bikin ku sedemîtiya di navbera xişa derveyî, şopên şiliyê û kêmasiya ragihandî de were kontrolkirin?" },
+            { "language": "pl", "text": "W porządku. Nie chodzi mi o obietnicę przez telefon, lecz o zrozumiałą drugą ocenę. Czy może Pan proszę zapisać, że należy sprawdzić związek przyczynowy między zewnętrzną rysą, śladami wilgoci i zgłoszoną awarią?" },
+            { "language": "ro", "text": "Este în regulă. Nu doresc o promisiune la telefon, ci o a doua verificare inteligibilă. Puteți nota, vă rog, că trebuie verificată cauzalitatea dintre zgârietura exterioară, urmele de umiditate și defecțiunea raportată?" },
+            { "language": "sq", "text": "Në rregull. Nuk kërkoj premtim në telefon, por një shqyrtim të dytë të kuptueshëm. Ju lutem, mund të shënoni që të kontrollohet shkakësia midis gërvishtjes së jashtme, gjurmëve të lagështisë dhe defektit të raportuar?" }
+          ],
+          "function": "secure-review-question",
+          "toneNote": "The learner accepts uncertainty and defines the decision question.",
+          "expectedLearnerAction": "Request a precise review note instead of demanding a guaranteed result."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "agent",
+          "baseText": "Ja, das kann ich so notieren. Bitte laden Sie die Unterlagen bis morgen Abend hoch. Die Rückmeldung der Fachabteilung dauert voraussichtlich fünf bis sieben Werktage.",
+          "translations": [
+            { "language": "en", "text": "Yes, I can note it that way. Please upload the documents by tomorrow evening. The specialist department's response is expected to take five to seven business days." },
+            { "language": "fa", "text": "بله، می‌توانم همین‌طور ثبت کنم. لطفاً مدارک را تا فردا شب آپلود کنید. پاسخ بخش تخصصی احتمالاً پنج تا هفت روز کاری طول می‌کشد." },
+            { "language": "ar", "text": "نعم، يمكنني تسجيل ذلك بهذه الطريقة. يرجى رفع المستندات حتى مساء الغد. من المتوقع أن يستغرق رد القسم المختص خمسة إلى سبعة أيام عمل." },
+            { "language": "tr", "text": "Evet, bunu böyle not edebilirim. Lütfen belgeleri yarın akşama kadar yükleyin. Uzman birimin geri dönüşü tahminen beş ila yedi iş günü sürer." },
+            { "language": "ru", "text": "Да, я могу так записать. Пожалуйста, загрузите документы до завтрашнего вечера. Ответ профильного отдела ожидается через пять-семь рабочих дней." },
+            { "language": "ckb", "text": "بەڵێ، دەتوانم بەو شێوەیە تۆماری بکەم. تکایە بەڵگەکان تا سبەی ئێوارە بار بکەن. وەڵامی بەشی پسپۆڕ بە پێشبینی پێنج تا حەوت ڕۆژی کاری دەخایەنێت." },
+            { "language": "kmr", "text": "Erê, ez dikarim wisa tomar bikim. Ji kerema xwe belgeyan heta êvara sibê bar bikin. Bersiva beşa pispor tê pêşbînîkirin ku pênc heta heft rojên kar bikişîne." },
+            { "language": "pl", "text": "Tak, mogę to tak zanotować. Proszę przesłać dokumenty do jutra wieczorem. Odpowiedź działu specjalistycznego potrwa prawdopodobnie od pięciu do siedmiu dni roboczych." },
+            { "language": "ro", "text": "Da, pot nota așa. Vă rog să încărcați documentele până mâine seară. Răspunsul departamentului de specialitate va dura probabil cinci până la șapte zile lucrătoare." },
+            { "language": "sq", "text": "Po, mund ta shënoj kështu. Ju lutem ngarkoni dokumentet deri nesër në mbrëmje. Përgjigjja e departamentit specialist pritet të zgjasë pesë deri në shtatë ditë pune." }
+          ],
+          "function": "confirm-next-steps",
+          "toneNote": "The agent gives deadline and processing time.",
+          "expectedLearnerAction": "Close with written confirmation and response criteria."
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Bitte senden Sie mir eine kurze Bestätigung mit Vorgangsnummer, hochzuladenden Unterlagen, der Prüffrage zur Kausalität und der Frist von fünf bis sieben Werktagen. Falls die Ablehnung bestehen bleibt, bitte ich um eine nachvollziehbare schriftliche Begründung.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Please send me a brief confirmation with the case number, documents to be uploaded, the review question on causality, and the deadline of five to seven business days. If the refusal remains in place, I ask for a comprehensible written explanation." },
+            { "language": "fa", "text": "خیلی ممنون. لطفاً یک تأیید کوتاه با شماره پرونده، مدارک قابل آپلود، سؤال بررسی درباره رابطه علت و معلول و مهلت پنج تا هفت روز کاری برایم بفرستید. اگر رد درخواست باقی بماند، توضیح کتبی قابل فهم می‌خواهم." },
+            { "language": "ar", "text": "شكراً جزيلاً. يرجى إرسال تأكيد قصير يتضمن رقم المعاملة والمستندات المطلوب رفعها وسؤال الفحص حول السببية والمهلة من خمسة إلى سبعة أيام عمل. إذا بقي الرفض قائماً، أطلب تبريراً مكتوباً مفهوماً." },
+            { "language": "tr", "text": "Çok teşekkür ederim. Lütfen işlem numarası, yüklenecek belgeler, nedensellik hakkındaki inceleme sorusu ve beş ila yedi iş günü süresiyle kısa bir onay gönderin. Ret kararı devam ederse, anlaşılır bir yazılı gerekçe rica ediyorum." },
+            { "language": "ru", "text": "Большое спасибо. Пожалуйста, отправьте мне короткое подтверждение с номером дела, загружаемыми документами, вопросом проверки причинной связи и сроком пять-семь рабочих дней. Если отказ останется в силе, я прошу понятное письменное обоснование." },
+            { "language": "ckb", "text": "زۆر سوپاس. تکایە پشتڕاستکردنەوەیەکی کورت بە ژمارەی مامەڵە، بەڵگەکانی بارکردن، پرسی پشکنینی هۆکاری و مۆڵەتی پێنج تا حەوت ڕۆژی کاری بۆم بنێرن. ئەگەر ڕەتکردنەوەکە بەردەوام بوو، داوای پاساوێکی نووسراوی تێگەیشتوو دەکەم." },
+            { "language": "kmr", "text": "Gelek spas. Ji kerema xwe piştrastkirineke kurt bi jimareya pêvajoyê, belgeyên ku divê werin barkirin, pirsa kontrolê ya sedemîtiyê û dema pênc heta heft rojên kar ji min re bişînin. Heke redkirin bimîne, ez daxwaza hinceteke nivîskî ya têgihîştî dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. Proszę przesłać mi krótkie potwierdzenie z numerem sprawy, dokumentami do przesłania, pytaniem kontrolnym dotyczącym związku przyczynowego i terminem pięciu do siedmiu dni roboczych. Jeśli odmowa zostanie utrzymana, proszę o zrozumiałe pisemne uzasadnienie." },
+            { "language": "ro", "text": "Vă mulțumesc. Vă rog să îmi trimiteți o scurtă confirmare cu numărul dosarului, documentele de încărcat, întrebarea de verificare privind cauzalitatea și termenul de cinci până la șapte zile lucrătoare. Dacă refuzul rămâne valabil, solicit o justificare scrisă inteligibilă." },
+            { "language": "sq", "text": "Faleminderit shumë. Ju lutem më dërgoni një konfirmim të shkurtër me numrin e rastit, dokumentet që duhen ngarkuar, pyetjen e shqyrtimit për shkakësinë dhe afatin prej pesë deri në shtatë ditësh pune. Nëse refuzimi mbetet, kërkoj një arsyetim të kuptueshëm me shkrim." }
+          ],
+          "function": "written-confirmation-close",
+          "toneNote": "The learner closes with process, criteria, and written reasoning.",
+          "expectedLearnerAction": "Secure traceability and a reasoned written outcome."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "ask-specific-rationale",
+              "text": "Ich möchte verstehen, welche Voraussetzung konkret fehlt und auf welchen Abschnitt Ihrer Bedingungen sich die Ablehnung stützt.",
+              "translations": [
+                { "language": "en", "text": "I would like to understand which specific requirement is missing and which section of your terms the refusal is based on." },
+                { "language": "fa", "text": "می‌خواهم بفهمم دقیقاً کدام شرط کم است و رد درخواست بر کدام بخش از شرایط شما تکیه دارد." },
+                { "language": "ar", "text": "أود فهم الشرط المحدد الناقص وعلى أي بند من شروطكم يستند الرفض." },
+                { "language": "tr", "text": "Hangi somut koşulun eksik olduğunu ve reddin şartlarınızın hangi bölümüne dayandığını anlamak istiyorum." },
+                { "language": "ru", "text": "Я хотел бы понять, какого конкретного условия не хватает и на какой раздел ваших условий опирается отказ." },
+                { "language": "ckb", "text": "دەمەوێت بفهمم کام مەرج بە وردی کەمە و ڕەتکردنەوەکە پشت بە کام بەشی مەرجەکانتان دەبەستێت." },
+                { "language": "kmr", "text": "Ez dixwazim fam bikim kîjan şert bi rastî kêm e û redkirin li ser kîjan beşa şertên we hatiye avakirin." },
+                { "language": "pl", "text": "Chciałbym zrozumieć, którego konkretnego warunku brakuje i na jakim punkcie Państwa warunków opiera się odmowa." },
+                { "language": "ro", "text": "Aș dori să înțeleg ce cerință concretă lipsește și pe ce secțiune din condițiile dumneavoastră se bazează refuzul." },
+                { "language": "sq", "text": "Dua të kuptoj cili kusht konkret mungon dhe në cilën pjesë të kushteve tuaja mbështetet refuzimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verschiebt das Gespräch von bloßem Widerspruch zu überprüfbarer Begründung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer shifts the conversation from mere disagreement to verifiable reasoning." },
+                { "language": "fa", "text": "خوب است: پاسخ گفتگو را از مخالفت صرف به سمت دلیل قابل بررسی می‌برد." },
+                { "language": "ar", "text": "جيد: تنقل الإجابة الحديث من مجرد اعتراض إلى تبرير قابل للتحقق." },
+                { "language": "tr", "text": "İyi: Yanıt konuşmayı basit itirazdan denetlenebilir gerekçeye taşır." },
+                { "language": "ru", "text": "Хорошо: ответ переводит разговор от простого возражения к проверяемому обоснованию." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە گفتوگۆکە لە ناڕەزاییی تەنهاوە دەباتەسەر پاساوی پشکنراو." },
+                { "language": "kmr", "text": "Baş e: Bersiv axaftinê ji nakokiya tenê vediguhezîne ser hinceta kontrolbar." },
+                { "language": "pl", "text": "Dobrze: odpowiedź przenosi rozmowę z samego sprzeciwu na sprawdzalne uzasadnienie." },
+                { "language": "ro", "text": "Bine: răspunsul mută discuția de la simpla opoziție la justificare verificabilă." },
+                { "language": "sq", "text": "Mirë: përgjigjja e zhvendos bisedën nga kundërshtimi i thjeshtë te arsyetimi i verifikueshëm." }
+              ],
+              "explanationKey": "rationale-first"
+            },
+            {
+              "id": "general-objection",
+              "text": "Ich finde die Ablehnung nicht gerecht und möchte, dass der Fall noch einmal angesehen wird.",
+              "translations": [
+                { "language": "en", "text": "I do not think the refusal is fair and I want the case to be looked at again." },
+                { "language": "fa", "text": "به نظر من رد درخواست منصفانه نیست و می‌خواهم پرونده دوباره بررسی شود." },
+                { "language": "ar", "text": "لا أرى الرفض عادلاً وأريد أن تتم مراجعة الحالة مرة أخرى." },
+                { "language": "tr", "text": "Reddin adil olmadığını düşünüyorum ve dosyanın tekrar incelenmesini istiyorum." },
+                { "language": "ru", "text": "Я считаю отказ несправедливым и хочу, чтобы случай рассмотрели еще раз." },
+                { "language": "ckb", "text": "پێم وایە ڕەتکردنەوەکە دادپەروەرانە نییە و دەمەوێت دۆسیەکە جارێکی تر ببینرێتەوە." },
+                { "language": "kmr", "text": "Ez difikirim redkirin adil nîne û dixwazim doz careke din were dîtin." },
+                { "language": "pl", "text": "Uważam, że odmowa nie jest sprawiedliwa i chcę, aby sprawa została ponownie rozpatrzona." },
+                { "language": "ro", "text": "Consider că refuzul nu este corect și vreau ca dosarul să fie analizat din nou." },
+                { "language": "sq", "text": "Mendoj se refuzimi nuk është i drejtë dhe dua që rasti të shihet përsëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Die Bitte um erneute Prüfung ist verständlich, aber ohne konkreten Prüfpunkt bleibt sie schwach.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the request for a new review is understandable, but without a specific review point it remains weak." },
+                { "language": "fa", "text": "زیادی کلی است: درخواست بررسی دوباره قابل فهم است، اما بدون نقطه بررسی مشخص ضعیف می‌ماند." },
+                { "language": "ar", "text": "عام جداً: طلب إعادة الفحص مفهوم، لكنه يبقى ضعيفاً من دون نقطة فحص محددة." },
+                { "language": "tr", "text": "Çok genel: yeniden inceleme isteği anlaşılır, ama somut inceleme noktası olmadan zayıf kalır." },
+                { "language": "ru", "text": "Слишком общо: просьба о повторной проверке понятна, но без конкретного пункта проверки остается слабой." },
+                { "language": "ckb", "text": "زۆر گشتییە: داوای پشکنینی دووبارە تێگەیشتووە، بەڵام بەبێ خاڵی پشکنینی دیاریکراو لاواز دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: daxwaza kontrola nû têgihîştî ye, lê bê xala kontrolê ya konkret lawaz dimîne." },
+                { "language": "pl", "text": "Zbyt ogólnie: prośba o ponowną ocenę jest zrozumiała, ale bez konkretnego punktu kontroli pozostaje słaba." },
+                { "language": "ro", "text": "Prea general: cererea de reanalizare este de înțeles, dar fără un punct concret de verificare rămâne slabă." },
+                { "language": "sq", "text": "Shumë e përgjithshme: kërkesa për rishqyrtim kuptohet, por pa pikë konkrete shqyrtimi mbetet e dobët." }
+              ],
+              "explanationKey": "avoid-general-objection"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "ask-observable-basis",
+              "text": "Können Sie mir sagen, welche Beobachtung gegen einen technischen Mangel spricht?",
+              "translations": [
+                { "language": "en", "text": "Can you tell me which observation argues against a technical defect?" },
+                { "language": "fa", "text": "می‌توانید بگویید کدام مشاهده علیه نقص فنی است؟" },
+                { "language": "ar", "text": "هل يمكنك أن تخبرني أي ملاحظة تتحدث ضد وجود عيب تقني؟" },
+                { "language": "tr", "text": "Hangi gözlemin teknik kusura karşı konuştuğunu söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Можете сказать, какое наблюдение говорит против технического дефекта?" },
+                { "language": "ckb", "text": "دەتوانن بڵێن کام بینین دژ بە کەموکوڕیی تەکنیکی دەوەستێت؟" },
+                { "language": "kmr", "text": "Hûn dikarin bibêjin kîjan dîtin li dijî kêmasiya teknîkî ye?" },
+                { "language": "pl", "text": "Czy może Pan powiedzieć, jaka obserwacja przemawia przeciwko wadzie technicznej?" },
+                { "language": "ro", "text": "Îmi puteți spune ce observație vorbește împotriva unui defect tehnic?" },
+                { "language": "sq", "text": "Mund të më thoni cili vëzhgim flet kundër një defekti teknik?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage zwingt niemanden in die Defensive und macht die Ablehnung trotzdem überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The question does not put anyone on the defensive and still makes the refusal verifiable." },
+                { "language": "fa", "text": "خوب است: سؤال کسی را دفاعی نمی‌کند و با این حال رد درخواست را قابل بررسی می‌کند." },
+                { "language": "ar", "text": "جيد: السؤال لا يضع أحداً في موقف دفاعي ومع ذلك يجعل الرفض قابلاً للتحقق." },
+                { "language": "tr", "text": "İyi: Soru kimseyi savunmaya itmez ve yine de reddi denetlenebilir kılar." },
+                { "language": "ru", "text": "Хорошо: вопрос не ставит никого в оборону и все же делает отказ проверяемым." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە هیچ کەسێک ناچار بە بەرگری ناکات و هێشتا ڕەتکردنەوەکە پشکنراو دەکات." },
+                { "language": "kmr", "text": "Baş e: Pirs kesekê neçarî parastinê nake û dîsa redkirinê kontrolbar dike." },
+                { "language": "pl", "text": "Dobrze: pytanie nie stawia nikogo w defensywie, a mimo to czyni odmowę sprawdzalną." },
+                { "language": "ro", "text": "Bine: întrebarea nu pune pe nimeni în defensivă și totuși face refuzul verificabil." },
+                { "language": "sq", "text": "Mirë: pyetja nuk e vendos askënd në mbrojtje dhe megjithatë e bën refuzimin të verifikueshëm." }
+              ],
+              "explanationKey": "ask-evidence-not-blame"
+            },
+            {
+              "id": "accuse-report",
+              "text": "Der Prüfbericht ist aus meiner Sicht nicht überzeugend und wirkt sehr oberflächlich.",
+              "translations": [
+                { "language": "en", "text": "In my view the inspection report is not convincing and seems very superficial." },
+                { "language": "fa", "text": "از نظر من گزارش بررسی قانع‌کننده نیست و خیلی سطحی به نظر می‌رسد." },
+                { "language": "ar", "text": "من وجهة نظري تقرير الفحص غير مقنع ويبدو سطحياً جداً." },
+                { "language": "tr", "text": "Bence inceleme raporu ikna edici değil ve çok yüzeysel görünüyor." },
+                { "language": "ru", "text": "С моей точки зрения отчет проверки неубедителен и выглядит очень поверхностным." },
+                { "language": "ckb", "text": "لە دیدی منەوە ڕاپۆرتی پشکنینەکە قایلکەر نییە و زۆر سەرەڕووکەش دەردەکەوێت." },
+                { "language": "kmr", "text": "Li gorî min rapora kontrolê qanîker nîne û pir seranserî xuya dike." },
+                { "language": "pl", "text": "Moim zdaniem raport kontrolny nie jest przekonujący i wydaje się bardzo powierzchowny." },
+                { "language": "ro", "text": "Din punctul meu de vedere raportul de verificare nu este convingător și pare foarte superficial." },
+                { "language": "sq", "text": "Sipas meje raporti i kontrollit nuk është bindës dhe duket shumë sipërfaqësor." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wertend: Die Kritik kann berechtigt sein, aber ohne konkrete Nachfrage öffnet sie keine neue Prüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evaluative: the criticism may be justified, but without a specific question it does not open a new review." },
+                { "language": "fa", "text": "زیادی ارزیابانه است: شاید انتقاد درست باشد، اما بدون سؤال مشخص بررسی جدیدی باز نمی‌کند." },
+                { "language": "ar", "text": "تقييمي جداً: قد يكون النقد مبرراً، لكنه من دون سؤال محدد لا يفتح فحصاً جديداً." },
+                { "language": "tr", "text": "Çok değerlendirici: eleştiri haklı olabilir, ama somut soru olmadan yeni inceleme açmaz." },
+                { "language": "ru", "text": "Слишком оценочно: критика может быть оправданной, но без конкретного вопроса она не открывает новую проверку." },
+                { "language": "ckb", "text": "زۆر هەڵسەنگاندنە: ڕەخنەکە ڕەنگە پاساودار بێت، بەڵام بەبێ پرسیاری دیاریکراو پشکنینی نوێ ناکاتەوە." },
+                { "language": "kmr", "text": "Pir nirxandinî ye: rexne dikare bi sedem be, lê bê pirseke konkret kontrola nû venake." },
+                { "language": "pl", "text": "Zbyt oceniająco: krytyka może być uzasadniona, ale bez konkretnego pytania nie otwiera nowej oceny." },
+                { "language": "ro", "text": "Prea evaluativ: critica poate fi justificată, dar fără o întrebare concretă nu deschide o nouă verificare." },
+                { "language": "sq", "text": "Shumë vlerësuese: kritika mund të jetë e arsyetuar, por pa pyetje konkrete nuk hap shqyrtim të ri." }
+              ],
+              "explanationKey": "avoid-report-judgment"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "separate-causality",
+              "text": "Den Kratzer bestreite ich nicht; ich bitte aber um Prüfung, ob er tatsächlich die gemeldete Fehlfunktion erklären kann.",
+              "translations": [
+                { "language": "en", "text": "I do not dispute the scratch; however, I ask for a review of whether it can actually explain the reported malfunction." },
+                { "language": "fa", "text": "خراش را انکار نمی‌کنم؛ اما درخواست بررسی دارم که آیا واقعاً می‌تواند نقص گزارش‌شده را توضیح دهد." },
+                { "language": "ar", "text": "لا أنكر الخدش؛ لكنني أطلب فحص ما إذا كان يمكنه فعلاً تفسير الخلل المبلغ عنه." },
+                { "language": "tr", "text": "Çiziği inkar etmiyorum; ancak bunun bildirilen arızayı gerçekten açıklayıp açıklayamayacağının incelenmesini rica ediyorum." },
+                { "language": "ru", "text": "Царапину я не оспариваю; однако прошу проверить, может ли она действительно объяснить заявленную неисправность." },
+                { "language": "ckb", "text": "هەڵکەندنەکە ڕەت ناکەم؛ بەڵام داوای پشکنین دەکەم کە ئایا بەڕاستی دەتوانێت کەموکوڕیی ڕاپۆرتکراو ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Ez xişê nakim nakokî; lê daxwaza kontrolê dikim ka ew dikare kêmasiya ragihandî bi rastî rave bike an na." },
+                { "language": "pl", "text": "Nie kwestionuję rysy; proszę jednak o ocenę, czy rzeczywiście może wyjaśniać zgłoszoną awarię." },
+                { "language": "ro", "text": "Nu contest zgârietura; solicit însă verificarea dacă ea poate explica într-adevăr defecțiunea raportată." },
+                { "language": "sq", "text": "Nuk e kundërshtoj gërvishtjen; por kërkoj shqyrtim nëse ajo mund ta shpjegojë vërtet defektin e raportuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort akzeptiert einen Teil der Fakten und greift den entscheidenden Kausalitätsschluss an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer accepts part of the facts and challenges the decisive causal conclusion." },
+                { "language": "fa", "text": "خوب است: پاسخ بخشی از واقعیت‌ها را می‌پذیرد و نتیجه‌گیری علیتِ تعیین‌کننده را بررسی می‌کند." },
+                { "language": "ar", "text": "جيد: تقبل الإجابة جزءاً من الوقائع وتراجع الاستنتاج السببي الحاسم." },
+                { "language": "tr", "text": "İyi: Yanıt olguların bir kısmını kabul eder ve belirleyici nedensellik sonucunu sorgular." },
+                { "language": "ru", "text": "Хорошо: ответ принимает часть фактов и оспаривает решающий причинный вывод." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەشێک لە ڕاستییەکان دەقبوڵێت و دەرئەنجامی هۆکاری گرنگ دەخاتە ژێر پرسیار." },
+                { "language": "kmr", "text": "Baş e: Bersiv beşek ji rastiyan qebûl dike û encama sedemî ya girîng dipirse." },
+                { "language": "pl", "text": "Dobrze: odpowiedź akceptuje część faktów i kwestionuje decydujący wniosek przyczynowy." },
+                { "language": "ro", "text": "Bine: răspunsul acceptă o parte din fapte și contestă concluzia cauzală decisivă." },
+                { "language": "sq", "text": "Mirë: përgjigjja pranon një pjesë të fakteve dhe sfidon përfundimin vendimtar të shkakësisë." }
+              ],
+              "explanationKey": "challenge-causality"
+            },
+            {
+              "id": "deny-all-evidence",
+              "text": "Ich kann mir nicht vorstellen, dass diese Spuren wirklich von mir stammen.",
+              "translations": [
+                { "language": "en", "text": "I cannot imagine that these traces really come from me." },
+                { "language": "fa", "text": "نمی‌توانم تصور کنم که این آثار واقعاً از طرف من باشد." },
+                { "language": "ar", "text": "لا أستطيع أن أتخيل أن هذه الآثار صادرة عني فعلاً." },
+                { "language": "tr", "text": "Bu izlerin gerçekten benden kaynaklandığını hayal edemiyorum." },
+                { "language": "ru", "text": "Я не могу представить, что эти следы действительно от меня." },
+                { "language": "ckb", "text": "ناتوانم بیر بکەمەوە کە ئەم شوێنانە بەڕاستی لە منەوە بن." },
+                { "language": "kmr", "text": "Ez nikarim bifikirim ku ev şop bi rastî ji min hatine." },
+                { "language": "pl", "text": "Nie wyobrażam sobie, żeby te ślady naprawdę pochodziły ode mnie." },
+                { "language": "ro", "text": "Nu îmi pot imagina că aceste urme provin cu adevărat de la mine." },
+                { "language": "sq", "text": "Nuk mund ta imagjinoj që këto gjurmë të vijnë vërtet nga unë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu subjektiv: Ein Gefühl reicht nicht. Besser ist ein konkreter Gegenpunkt wie Foto, Nutzungsort oder Kausalitätsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too subjective: a feeling is insufficient. A concrete counterpoint such as photo, place of use, or causality question is better." },
+                { "language": "fa", "text": "زیادی ذهنی است: احساس کافی نیست. نقطه مقابل مشخص مثل عکس، محل استفاده یا پرسش علیت بهتر است." },
+                { "language": "ar", "text": "ذاتي جداً: الشعور لا يكفي. الأفضل نقطة مقابلة محددة مثل صورة أو مكان الاستخدام أو سؤال السببية." },
+                { "language": "tr", "text": "Çok öznel: bir his yeterli değildir. Fotoğraf, kullanım yeri veya nedensellik sorusu gibi somut karşı nokta daha iyidir." },
+                { "language": "ru", "text": "Слишком субъективно: ощущения недостаточно. Лучше конкретный контраргумент, например фото, место использования или вопрос причинности." },
+                { "language": "ckb", "text": "زۆر بابەتییە: هەست بەس نییە. خاڵی بەرامبەری دیاریکراو وەک وێنە، شوێنی بەکارهێنان یان پرسی هۆکاری باشترە." },
+                { "language": "kmr", "text": "Pir subjektîf e: hest têr nake. Xalekî dijber ê konkret wek wêne, cihê bikaranînê an pirsa sedemîtiyê çêtir e." },
+                { "language": "pl", "text": "Zbyt subiektywnie: samo odczucie nie wystarczy. Lepszy jest konkretny kontrargument, jak zdjęcie, miejsce użycia albo pytanie o związek przyczynowy." },
+                { "language": "ro", "text": "Prea subiectiv: un sentiment nu este suficient. Este mai bine un contraargument concret, precum fotografia, locul utilizării sau întrebarea cauzalității." },
+                { "language": "sq", "text": "Shumë subjektive: ndjenja nuk mjafton. Më mirë është një kundërpikë konkrete si fotografia, vendi i përdorimit ose pyetja e shkakësisë." }
+              ],
+              "explanationKey": "avoid-subjective-denial"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "documents-plus-review-question",
+              "text": "Ich reiche Foto, Rechnung, Erstmeldung und Nutzungsbeschreibung ein; geprüft werden sollte, ob der Kratzer die Fehlfunktion erklären kann.",
+              "translations": [
+                { "language": "en", "text": "I will submit the photo, invoice, initial report, and usage description; the review should examine whether the scratch can explain the malfunction." },
+                { "language": "fa", "text": "عکس، فاکتور، گزارش اولیه و توضیح استفاده را ارسال می‌کنم؛ باید بررسی شود آیا خراش می‌تواند نقص را توضیح دهد." },
+                { "language": "ar", "text": "سأقدم الصورة والفاتورة والبلاغ الأول ووصف الاستخدام؛ وينبغي فحص ما إذا كان الخدش يمكن أن يفسر الخلل." },
+                { "language": "tr", "text": "Fotoğrafı, faturayı, ilk bildirimi ve kullanım açıklamasını sunacağım; çiziğin arızayı açıklayıp açıklayamayacağı incelenmeli." },
+                { "language": "ru", "text": "Я подам фото, счет, первичное сообщение и описание использования; нужно проверить, может ли царапина объяснить неисправность." },
+                { "language": "ckb", "text": "وێنە، پسووڵە، ڕاپۆرتی یەکەم و ڕوونکردنەوەی بەکارهێنان پێشکەش دەکەم؛ دەبێت بپشکنرێت ئایا هەڵکەندنەکە دەتوانێت کەموکوڕییەکە ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Ez wêne, fature, ragihandina yekem û ravekirina bikaranînê pêşkêş dikim; divê were kontrolkirin ka xiş dikare kêmasiyê rave bike an na." },
+                { "language": "pl", "text": "Przedłożę zdjęcie, fakturę, pierwsze zgłoszenie i opis użytkowania; należy sprawdzić, czy rysa może wyjaśniać awarię." },
+                { "language": "ro", "text": "Voi depune fotografia, factura, prima sesizare și descrierea utilizării; ar trebui verificat dacă zgârietura poate explica defecțiunea." },
+                { "language": "sq", "text": "Do të dorëzoj fotografinë, faturën, raportimin fillestar dhe përshkrimin e përdorimit; duhet shqyrtuar nëse gërvishtja mund ta shpjegojë defektin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort liefert neue Unterlagen und definiert zugleich, was fachlich geprüft werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer provides new documents and also defines what should be technically reviewed." },
+                { "language": "fa", "text": "خوب است: پاسخ مدارک جدید می‌دهد و همزمان تعریف می‌کند چه چیزی باید تخصصی بررسی شود." },
+                { "language": "ar", "text": "جيد: تقدم الإجابة مستندات جديدة وتحدد في الوقت نفسه ما يجب فحصه فنياً." },
+                { "language": "tr", "text": "İyi: Yanıt yeni belgeler sunar ve aynı zamanda teknik olarak neyin incelenmesi gerektiğini tanımlar." },
+                { "language": "ru", "text": "Хорошо: ответ предоставляет новые документы и одновременно определяет, что нужно проверить технически." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەی نوێ دەدات و هاوکات دیاری دەکات چی دەبێت بە پسپۆڕی بپشکنرێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv belgeyên nû dide û her wiha diyar dike divê çi bi teknîkî were kontrolkirin." },
+                { "language": "pl", "text": "Dobrze: odpowiedź dostarcza nowe dokumenty i jednocześnie definiuje, co należy fachowo sprawdzić." },
+                { "language": "ro", "text": "Bine: răspunsul oferă documente noi și definește totodată ce trebuie verificat tehnic." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep dokumente të reja dhe njëkohësisht përcakton çfarë duhet shqyrtuar teknikisht." }
+              ],
+              "explanationKey": "evidence-with-review-question"
+            },
+            {
+              "id": "documents-without-focus",
+              "text": "Ich lade einfach alles hoch, was ich habe, und hoffe, dass das dann reicht.",
+              "translations": [
+                { "language": "en", "text": "I will simply upload everything I have and hope that this will be enough." },
+                { "language": "fa", "text": "فقط هرچه دارم آپلود می‌کنم و امیدوارم کافی باشد." },
+                { "language": "ar", "text": "سأرفع ببساطة كل ما لدي وآمل أن يكون ذلك كافياً." },
+                { "language": "tr", "text": "Sahip olduğum her şeyi yüklerim ve bunun yeterli olmasını umarım." },
+                { "language": "ru", "text": "Я просто загружу все, что у меня есть, и надеюсь, что этого будет достаточно." },
+                { "language": "ckb", "text": "تەنها هەموو ئەوەی هەمە بار دەکەم و هیوادارم بەس بێت." },
+                { "language": "kmr", "text": "Ez ê tenê her tiştê li cem min heye bar bikim û hêvî bikim ku ev têr be." },
+                { "language": "pl", "text": "Po prostu prześlę wszystko, co mam, i mam nadzieję, że to wystarczy." },
+                { "language": "ro", "text": "Voi încărca pur și simplu tot ce am și sper că va fi suficient." },
+                { "language": "sq", "text": "Thjesht do të ngarkoj gjithçka që kam dhe shpresoj që kjo të mjaftojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungezielt: Viele Unterlagen helfen weniger als wenige passende Belege mit klarer Prüffrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unfocused: many documents help less than a few suitable pieces of evidence with a clear review question." },
+                { "language": "fa", "text": "زیادی بی‌هدف است: مدارک زیاد کمتر از چند سند مناسب با سؤال بررسی روشن کمک می‌کند." },
+                { "language": "ar", "text": "غير مركز بما يكفي: مستندات كثيرة تساعد أقل من أدلة قليلة مناسبة مع سؤال فحص واضح." },
+                { "language": "tr", "text": "Çok odaksız: çok belge, net inceleme sorusu olan az sayıda uygun kanıttan daha az yardımcı olur." },
+                { "language": "ru", "text": "Слишком нецеленаправленно: много документов помогает меньше, чем несколько подходящих доказательств с четким вопросом проверки." },
+                { "language": "ckb", "text": "زۆر بێ ئاراستەیە: بەڵگەی زۆر کەمتر یارمەتی دەدات وەک چەند بەڵگەی گونجاو بە پرسی پشکنینی ڕوون." },
+                { "language": "kmr", "text": "Pir bê fokus e: belgeyên zêde ji çend delîlên guncaw bi pirsa kontrolê ya zelal kêmtir alîkar in." },
+                { "language": "pl", "text": "Zbyt niecelnie: wiele dokumentów pomaga mniej niż kilka właściwych dowodów z jasnym pytaniem kontrolnym." },
+                { "language": "ro", "text": "Prea nețintit: multe documente ajută mai puțin decât câteva dovezi potrivite cu o întrebare clară de verificare." },
+                { "language": "sq", "text": "Shumë e pa fokusuar: shumë dokumente ndihmojnë më pak se disa dëshmi të përshtatshme me pyetje të qartë shqyrtimi." }
+              ],
+              "explanationKey": "avoid-document-dump"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "secure-review-question",
+              "text": "Bitte halten Sie fest, dass die Kausalität zwischen Kratzer, Feuchtigkeitsspuren und gemeldeter Fehlfunktion geprüft werden soll.",
+              "translations": [
+                { "language": "en", "text": "Please record that the causality between the scratch, traces of moisture, and reported malfunction should be reviewed." },
+                { "language": "fa", "text": "لطفاً ثبت کنید که رابطه علت و معلول بین خراش، آثار رطوبت و نقص گزارش‌شده بررسی شود." },
+                { "language": "ar", "text": "يرجى تسجيل أن السببية بين الخدش وآثار الرطوبة والخلل المبلغ عنه يجب فحصها." },
+                { "language": "tr", "text": "Lütfen çizik, nem izleri ve bildirilen arıza arasındaki nedenselliğin incelenmesi gerektiğini kaydedin." },
+                { "language": "ru", "text": "Пожалуйста, зафиксируйте, что нужно проверить причинную связь между царапиной, следами влаги и заявленной неисправностью." },
+                { "language": "ckb", "text": "تکایە تۆمار بکەن کە هۆکاری نێوان هەڵکەندن، شوێنی تەڕبوون و کەموکوڕیی ڕاپۆرتکراو بپشکنرێت." },
+                { "language": "kmr", "text": "Ji kerema xwe tomar bikin ku sedemîtiya di navbera xiş, şopên şiliyê û kêmasiya ragihandî de were kontrolkirin." },
+                { "language": "pl", "text": "Proszę zapisać, że należy sprawdzić związek przyczynowy między rysą, śladami wilgoci i zgłoszoną awarią." },
+                { "language": "ro", "text": "Vă rog să notați că trebuie verificată cauzalitatea dintre zgârietură, urmele de umiditate și defecțiunea raportată." },
+                { "language": "sq", "text": "Ju lutem shënoni që të shqyrtohet shkakësia midis gërvishtjes, gjurmëve të lagështisë dhe defektit të raportuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verlangt kein Ergebnis, sondern eine präzise und faire Prüffrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer does not demand an outcome, but a precise and fair review question." },
+                { "language": "fa", "text": "خوب است: پاسخ نتیجه را مطالبه نمی‌کند، بلکه سؤال بررسی دقیق و منصفانه می‌خواهد." },
+                { "language": "ar", "text": "جيد: لا تطالب الإجابة بنتيجة، بل بسؤال فحص دقيق وعادل." },
+                { "language": "tr", "text": "İyi: Yanıt sonuç talep etmez, kesin ve adil bir inceleme sorusu ister." },
+                { "language": "ru", "text": "Хорошо: ответ не требует результата, а просит точный и справедливый вопрос проверки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ئەنجام داوا ناکات، بەڵکوو پرسی پشکنینی ورد و دادپەروەرانە دەخوازێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv encamê naxwaze, lê pirseke kontrolê ya rast û adil dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nie żąda wyniku, lecz precyzyjnego i uczciwego pytania kontrolnego." },
+                { "language": "ro", "text": "Bine: răspunsul nu cere un rezultat, ci o întrebare de verificare precisă și corectă." },
+                { "language": "sq", "text": "Mirë: përgjigjja nuk kërkon rezultat, por një pyetje shqyrtimi të saktë dhe të drejtë." }
+              ],
+              "explanationKey": "criteria-review"
+            },
+            {
+              "id": "demand-positive-result",
+              "text": "Dann erwarte ich aber, dass die Ablehnung nach der zweiten Prüfung zurückgenommen wird.",
+              "translations": [
+                { "language": "en", "text": "Then I do expect the refusal to be withdrawn after the second review." },
+                { "language": "fa", "text": "پس انتظار دارم بعد از بررسی دوم، رد درخواست پس گرفته شود." },
+                { "language": "ar", "text": "إذن أتوقع أن يتم سحب الرفض بعد الفحص الثاني." },
+                { "language": "tr", "text": "O zaman ikinci incelemeden sonra reddin geri çekilmesini bekliyorum." },
+                { "language": "ru", "text": "Тогда я ожидаю, что после повторной проверки отказ будет отозван." },
+                { "language": "ckb", "text": "کەواتە چاوەڕێ دەکەم دوای پشکنینی دووبارە ڕەتکردنەوەکە پاشگەز بکرێتەوە." },
+                { "language": "kmr", "text": "Wê demê ez hêvî dikim ku piştî kontrola duyemîn redkirin were vegerandin." },
+                { "language": "pl", "text": "W takim razie oczekuję, że po drugiej ocenie odmowa zostanie cofnięta." },
+                { "language": "ro", "text": "Atunci mă aștept ca refuzul să fie retras după a doua verificare." },
+                { "language": "sq", "text": "Atëherë pres që pas shqyrtimit të dytë refuzimi të tërhiqet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu früh: Der Anbieter hat nur eine Prüfung zugesagt. Ein Ergebnis zu verlangen schwächt die kooperative Linie.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too early: the provider has only agreed to a review. Demanding an outcome weakens the cooperative line." },
+                { "language": "fa", "text": "زود است: سرویس‌دهنده فقط بررسی را پذیرفته است. مطالبه نتیجه، خط همکاری را ضعیف می‌کند." },
+                { "language": "ar", "text": "مبكر جداً: مقدم الخدمة وافق فقط على الفحص. المطالبة بنتيجة تضعف المسار التعاوني." },
+                { "language": "tr", "text": "Çok erken: sağlayıcı yalnızca incelemeyi kabul etti. Sonuç talep etmek işbirlikçi çizgiyi zayıflatır." },
+                { "language": "ru", "text": "Слишком рано: поставщик согласился только на проверку. Требование результата ослабляет кооперативную линию." },
+                { "language": "ckb", "text": "زۆر زووە: دابینکەر تەنها پشکنینی قبوڵ کردووە. داواکردنی ئەنجام هێڵی هاوکاری لاواز دەکات." },
+                { "language": "kmr", "text": "Pir zû ye: peydaker tenê kontrol qebûl kiriye. Xwestina encamê rêza hevkariyê lawaz dike." },
+                { "language": "pl", "text": "Za wcześnie: usługodawca zgodził się tylko na ocenę. Żądanie wyniku osłabia linię współpracy." },
+                { "language": "ro", "text": "Prea devreme: furnizorul a acceptat doar o verificare. Cererea unui rezultat slăbește linia cooperantă." },
+                { "language": "sq", "text": "Shumë herët: ofruesi ka pranuar vetëm shqyrtimin. Kërkimi i rezultatit e dobëson linjën bashkëpunuese." }
+              ],
+              "explanationKey": "avoid-result-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "written-reasoned-close",
+              "text": "Bitte bestätigen Sie Vorgangsnummer, Unterlagen, Prüffrage und Frist; falls die Ablehnung bleibt, bitte ich um eine nachvollziehbare schriftliche Begründung.",
+              "translations": [
+                { "language": "en", "text": "Please confirm the case number, documents, review question, and deadline; if the refusal remains, I ask for a comprehensible written explanation." },
+                { "language": "fa", "text": "لطفاً شماره پرونده، مدارک، سؤال بررسی و مهلت را تأیید کنید؛ اگر رد درخواست باقی بماند، توضیح کتبی قابل فهم می‌خواهم." },
+                { "language": "ar", "text": "يرجى تأكيد رقم المعاملة والمستندات وسؤال الفحص والمهلة؛ إذا بقي الرفض، أطلب تبريراً مكتوباً مفهوماً." },
+                { "language": "tr", "text": "Lütfen işlem numarası, belgeler, inceleme sorusu ve süreyi onaylayın; ret devam ederse anlaşılır yazılı gerekçe rica ediyorum." },
+                { "language": "ru", "text": "Пожалуйста, подтвердите номер дела, документы, вопрос проверки и срок; если отказ останется, я прошу понятное письменное обоснование." },
+                { "language": "ckb", "text": "تکایە ژمارەی مامەڵە، بەڵگەکان، پرسی پشکنین و مۆڵەت پشتڕاست بکەنەوە؛ ئەگەر ڕەتکردنەوەکە ماوە، داوای پاساوێکی نووسراوی تێگەیشتوو دەکەم." },
+                { "language": "kmr", "text": "Ji kerema xwe jimareya pêvajoyê, belge, pirsa kontrolê û demê piştrast bikin; heke redkirin bimîne, ez daxwaza hinceteke nivîskî ya têgihîştî dikim." },
+                { "language": "pl", "text": "Proszę potwierdzić numer sprawy, dokumenty, pytanie kontrolne i termin; jeśli odmowa zostanie utrzymana, proszę o zrozumiałe pisemne uzasadnienie." },
+                { "language": "ro", "text": "Vă rog să confirmați numărul dosarului, documentele, întrebarea de verificare și termenul; dacă refuzul rămâne, solicit o justificare scrisă inteligibilă." },
+                { "language": "sq", "text": "Ju lutem konfirmoni numrin e rastit, dokumentet, pyetjen e shqyrtimit dhe afatin; nëse refuzimi mbetet, kërkoj arsyetim të kuptueshëm me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Der Abschluss sichert Prozess und Begründung, ohne die Entscheidung vorwegzunehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The closing secures process and reasoning without anticipating the decision." },
+                { "language": "fa", "text": "خوب است: پایان، فرایند و دلیل را تثبیت می‌کند، بدون اینکه تصمیم را پیشاپیش قطعی کند." },
+                { "language": "ar", "text": "جيد: تؤمن الخاتمة العملية والتبرير من دون استباق القرار." },
+                { "language": "tr", "text": "İyi: Kapanış süreci ve gerekçeyi güvenceye alır, kararı önceden belirlemez." },
+                { "language": "ru", "text": "Хорошо: завершение фиксирует процесс и обоснование, не предвосхищая решение." },
+                { "language": "ckb", "text": "باشە: کۆتاییەکە پرۆسە و پاساو دڵنیا دەکات، بەبێ ئەوەی بڕیارەکە پێشوەختە دیاری بکات." },
+                { "language": "kmr", "text": "Baş e: Girtin pêvajo û hincetê ewle dike bê ku biryarê berê ve diyar bike." },
+                { "language": "pl", "text": "Dobrze: zakończenie zabezpiecza proces i uzasadnienie, nie przesądzając decyzji." },
+                { "language": "ro", "text": "Bine: încheierea securizează procesul și justificarea fără a anticipa decizia." },
+                { "language": "sq", "text": "Mirë: mbyllja siguron procesin dhe arsyetimin pa paracaktuar vendimin." }
+              ],
+              "explanationKey": "written-reasoning-close"
+            },
+            {
+              "id": "vague-thanks-close",
+              "text": "Danke, dann warte ich auf die Rückmeldung und hoffe, dass die Entscheidung geändert wird.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will wait for the response and hope that the decision is changed." },
+                { "language": "fa", "text": "ممنون، پس منتظر پاسخ می‌مانم و امیدوارم تصمیم تغییر کند." },
+                { "language": "ar", "text": "شكراً، إذن سأنتظر الرد وآمل أن يتغير القرار." },
+                { "language": "tr", "text": "Teşekkürler, o zaman geri bildirimi bekleyeceğim ve kararın değişmesini umacağım." },
+                { "language": "ru", "text": "Спасибо, тогда я буду ждать ответа и надеюсь, что решение изменят." },
+                { "language": "ckb", "text": "سوپاس، کەواتە چاوەڕێی وەڵام دەکەم و هیوادارم بڕیارەکە بگۆڕدرێت." },
+                { "language": "kmr", "text": "Spas, wê demê ez li benda bersivê bim û hêvî dikim biryar were guherandin." },
+                { "language": "pl", "text": "Dziękuję, w takim razie poczekam na odpowiedź i mam nadzieję, że decyzja zostanie zmieniona." },
+                { "language": "ro", "text": "Mulțumesc, atunci voi aștepta răspunsul și sper că decizia va fi schimbată." },
+                { "language": "sq", "text": "Faleminderit, atëherë do të pres përgjigjen dhe shpresoj që vendimi të ndryshohet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu weich: Freundlichkeit bleibt erhalten, aber Prüffrage, Frist und schriftliche Begründung sind nicht gesichert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too soft: friendliness remains, but the review question, deadline, and written reasoning are not secured." },
+                { "language": "fa", "text": "زیادی نرم است: ادب حفظ می‌شود، اما سؤال بررسی، مهلت و دلیل کتبی تضمین نمی‌شود." },
+                { "language": "ar", "text": "لين جداً: تبقى الودّية، لكن سؤال الفحص والمهلة والتبرير المكتوب غير مضمونة." },
+                { "language": "tr", "text": "Çok yumuşak: nezaket korunur, ama inceleme sorusu, süre ve yazılı gerekçe güvenceye alınmaz." },
+                { "language": "ru", "text": "Слишком мягко: дружелюбие сохраняется, но вопрос проверки, срок и письменное обоснование не зафиксированы." },
+                { "language": "ckb", "text": "زۆر نەرمە: دۆستانەیی دەمێنێتەوە، بەڵام پرسی پشکنین، مۆڵەت و پاساوی نووسراو دڵنیا ناکرێت." },
+                { "language": "kmr", "text": "Pir nerm e: dostanî dimîne, lê pirsa kontrolê, dem û hinceta nivîskî ewle nabin." },
+                { "language": "pl", "text": "Zbyt miękko: uprzejmość zostaje, ale pytanie kontrolne, termin i pisemne uzasadnienie nie są zabezpieczone." },
+                { "language": "ro", "text": "Prea moale: politețea rămâne, dar întrebarea de verificare, termenul și justificarea scrisă nu sunt securizate." },
+                { "language": "sq", "text": "Shumë e butë: mirësjellja mbetet, por pyetja e shqyrtimit, afati dhe arsyetimi me shkrim nuk sigurohen." }
+              ],
+              "explanationKey": "avoid-vague-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "rationale-note",
+          "text": "Eine starke Nachfrage fragt nicht nur nach einer zweiten Chance, sondern nach der konkreten Entscheidungsgrundlage.",
+          "translations": [
+            { "language": "en", "text": "A strong follow-up does not only ask for a second chance, but for the concrete basis of the decision." },
+            { "language": "fa", "text": "پیگیری قوی فقط درخواست فرصت دوباره نیست، بلکه مبنای مشخص تصمیم را می‌خواهد." },
+            { "language": "ar", "text": "المتابعة القوية لا تطلب فرصة ثانية فقط، بل تطلب أساس القرار المحدد." },
+            { "language": "tr", "text": "Güçlü bir takip yalnızca ikinci şans istemez, kararın somut dayanağını sorar." },
+            { "language": "ru", "text": "Сильное уточнение просит не только второй шанс, но и конкретное основание решения." },
+            { "language": "ckb", "text": "دواداچوونی بەهێز تەنها داوای دەرفەتی دووبارە ناکات، بەڵکوو بنەمای دیاریکراوی بڕیار دەخوازێت." },
+            { "language": "kmr", "text": "Şopandineke xurt ne tenê şansek duyemîn dixwaze, lê bingeha konkret a biryarê dipirse." },
+            { "language": "pl", "text": "Mocne dopytanie nie prosi tylko o drugą szansę, lecz o konkretną podstawę decyzji." },
+            { "language": "ro", "text": "O întrebare de urmărire puternică nu cere doar o a doua șansă, ci baza concretă a deciziei." },
+            { "language": "sq", "text": "Një pyetje e fortë pasuese nuk kërkon vetëm një shans të dytë, por bazën konkrete të vendimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence-note",
+          "text": "Wer die Beobachtung hinter einer Ablehnung erfragt, öffnet die Tür für eine sachliche Neubewertung.",
+          "translations": [
+            { "language": "en", "text": "Someone who asks for the observation behind a refusal opens the door to a factual reassessment." },
+            { "language": "fa", "text": "کسی که مشاهده پشت رد درخواست را می‌پرسد، راه را برای ارزیابی دوباره factual باز می‌کند." },
+            { "language": "ar", "text": "من يسأل عن الملاحظة وراء الرفض يفتح الباب لإعادة تقييم موضوعية." },
+            { "language": "tr", "text": "Bir reddin arkasındaki gözlemi soran kişi, nesnel yeniden değerlendirme kapısını açar." },
+            { "language": "ru", "text": "Тот, кто спрашивает о наблюдении за отказом, открывает дверь к предметной переоценке." },
+            { "language": "ckb", "text": "ئەو کەسەی بینینی پشت ڕەتکردنەوە دەپرسی، دەرگا بۆ هەڵسەنگاندنەوەی بابەتی دەکاتەوە." },
+            { "language": "kmr", "text": "Kesê ku dîtina li pişt redkirinê dipirse, derî ji bo nirxandina nû ya rast vedike." },
+            { "language": "pl", "text": "Kto pyta o obserwację stojącą za odmową, otwiera drogę do rzeczowej ponownej oceny." },
+            { "language": "ro", "text": "Cine întreabă despre observația din spatele unui refuz deschide ușa unei reevaluări factuale." },
+            { "language": "sq", "text": "Ai që pyet për vëzhgimin pas refuzimit hap derën për një rivlerësim faktik." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "causality-note",
+          "text": "Auf C1-Niveau ist der Unterschied zwischen sichtbarem Befund und kausaler Schlussfolgerung entscheidend.",
+          "translations": [
+            { "language": "en", "text": "At C1 level, the difference between a visible finding and a causal conclusion is decisive." },
+            { "language": "fa", "text": "در سطح C1، تفاوت بین یافته قابل مشاهده و نتیجه‌گیری علی تعیین‌کننده است." },
+            { "language": "ar", "text": "في مستوى C1 يكون الفرق بين النتيجة المرئية والاستنتاج السببي حاسماً." },
+            { "language": "tr", "text": "C1 düzeyinde görünür bulgu ile nedensel sonuç arasındaki fark belirleyicidir." },
+            { "language": "ru", "text": "На уровне C1 различие между видимым фактом и причинным выводом решающе." },
+            { "language": "ckb", "text": "لە ئاستی C1دا جیاوازی نێوان دۆزینەوەی بینراو و دەرئەنجامی هۆکاری یەکلاکەرەوەیە." },
+            { "language": "kmr", "text": "Di asta C1 de cudahiya di navbera dîtina xuya û encama sedemî de girîng e." },
+            { "language": "pl", "text": "Na poziomie C1 różnica między widocznym ustaleniem a wnioskiem przyczynowym jest kluczowa." },
+            { "language": "ro", "text": "La nivel C1, diferența dintre constatarea vizibilă și concluzia cauzală este decisivă." },
+            { "language": "sq", "text": "Në nivelin C1, dallimi midis gjetjes së dukshme dhe përfundimit shkakësor është vendimtar." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "process-note",
+          "text": "Eine zweite Prüfung wird stärker, wenn genau festgehalten wird, was geprüft werden soll.",
+          "translations": [
+            { "language": "en", "text": "A second review becomes stronger when it is recorded exactly what should be reviewed." },
+            { "language": "fa", "text": "بررسی دوم وقتی قوی‌تر می‌شود که دقیقاً ثبت شود چه چیزی باید بررسی شود." },
+            { "language": "ar", "text": "يصبح الفحص الثاني أقوى عندما يتم تسجيل ما يجب فحصه بالضبط." },
+            { "language": "tr", "text": "İkinci inceleme, neyin inceleneceği tam olarak kaydedildiğinde güçlenir." },
+            { "language": "ru", "text": "Повторная проверка становится сильнее, когда точно зафиксировано, что должно проверяться." },
+            { "language": "ckb", "text": "پشکنینی دووبارە کاتێک بەهێزتر دەبێت کە بە وردی تۆمار بکرێت چی دەبێت بپشکنرێت." },
+            { "language": "kmr", "text": "Kontrola duyemîn wê demê xurtir dibe ku bi rastî were tomar kirin divê çi were kontrolkirin." },
+            { "language": "pl", "text": "Druga ocena staje się silniejsza, gdy dokładnie zapisze się, co ma zostać sprawdzone." },
+            { "language": "ro", "text": "O a doua verificare devine mai puternică atunci când se notează exact ce trebuie verificat." },
+            { "language": "sq", "text": "Një shqyrtim i dytë bëhet më i fortë kur shënohet saktësisht çfarë duhet shqyrtuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing-note",
+          "text": "Ein professioneller Abschluss sichert nicht nur eine Antwort, sondern auch die Kriterien, nach denen geantwortet wird.",
+          "translations": [
+            { "language": "en", "text": "A professional closing secures not only an answer, but also the criteria according to which the answer will be given." },
+            { "language": "fa", "text": "پایان حرفه‌ای فقط پاسخ را تضمین نمی‌کند، بلکه معیارهایی را هم تثبیت می‌کند که پاسخ بر اساس آنها داده می‌شود." },
+            { "language": "ar", "text": "الخاتمة المهنية لا تؤمن الرد فقط، بل أيضاً المعايير التي سيتم الرد وفقاً لها." },
+            { "language": "tr", "text": "Profesyonel bir kapanış yalnızca yanıtı değil, yanıtın hangi ölçütlere göre verileceğini de güvenceye alır." },
+            { "language": "ru", "text": "Профессиональное завершение фиксирует не только ответ, но и критерии, по которым он будет дан." },
+            { "language": "ckb", "text": "کۆتاییەکی پیشەیی تەنها وەڵام دڵنیا ناکات، بەڵکوو ئەو پێوەرانەش دڵنیا دەکات کە وەڵامەکە لەسەریان دەدرێت." },
+            { "language": "kmr", "text": "Girtineke profesyonel ne tenê bersivê ewle dike, lê her wiha kriterên ku bersiv li gorî wan tê dayîn." },
+            { "language": "pl", "text": "Profesjonalne zakończenie zabezpiecza nie tylko odpowiedź, ale też kryteria, według których odpowiedź zostanie udzielona." },
+            { "language": "ro", "text": "O încheiere profesională securizează nu doar un răspuns, ci și criteriile după care se va răspunde." },
+            { "language": "sq", "text": "Një mbyllje profesionale siguron jo vetëm një përgjigje, por edhe kriteret sipas të cilave do të jepet përgjigjja." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "question-service-refusal-review",
+          "placement": "header",
+          "purpose": "Show a calm service call where a customer asks for the reasoning behind a refusal and prepares documents for reconsideration.",
+          "altText": "Eine neutrale Illustration eines ruhigen Service-Telefonats mit Prüfbericht, Vertragsbedingungen und Unterlagen für eine zweite Prüfung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a calm service phone call with an inspection report, contract terms, and documents for a second review." },
+            { "language": "fa", "text": "تصویری بی‌طرف از تماس تلفنی آرام با سرویس، همراه با گزارش بررسی، شرایط قرارداد و مدارک برای بررسی دوم." },
+            { "language": "ar", "text": "رسم محايد لمكالمة خدمة هادئة مع تقرير فحص وشروط عقد ومستندات لفحص ثانٍ." },
+            { "language": "tr", "text": "İnceleme raporu, sözleşme şartları ve ikinci inceleme belgeleriyle sakin bir hizmet telefon görüşmesinin tarafsız illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация спокойного телефонного разговора с сервисом, отчетом проверки, условиями договора и документами для повторной проверки." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە پەیوەندی تەلەفۆنی ئارامی خزمەتگوزاری بە ڕاپۆرتی پشکنین، مەرجەکانی گرێبەست و بەڵگەکان بۆ پشکنینی دووبارە." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya telefonê aram a xizmetê bi rapora kontrolê, şertên peymanê û belgeyan ji bo kontrola duyemîn." },
+            { "language": "pl", "text": "Neutralna ilustracja spokojnej rozmowy telefonicznej z serwisem, raportem kontrolnym, warunkami umowy i dokumentami do drugiej oceny." },
+            { "language": "ro", "text": "O ilustrație neutră a unui apel calm cu serviciul, cu raport de verificare, condiții contractuale și documente pentru o a doua verificare." },
+            { "language": "sq", "text": "Një ilustrim neutral i një telefonate të qetë shërbimi me raport kontrolli, kushte kontrate dhe dokumente për shqyrtim të dytë." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, adult customer on a phone call with organized documents, generic inspection report and contract terms visible as abstract blocks, calm professional mood, no readable private data, no logos, accessible composition, neutral German customer-service context.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

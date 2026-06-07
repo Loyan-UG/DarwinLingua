@@ -1,0 +1,4658 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-a1-core-05-v1",
+  "packageName": "Roleplay-Szenarien A1 Core 05 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "a1-im-buergeramt-ankommen",
+      "title": "Im Bürgeramt ankommen",
+      "cefrLevel": "A1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "documents-and-administration"
+      ],
+      "interactionMode": "government-office",
+      "register": "formal",
+      "taskType": "make-appointment",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 210,
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Staff member"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند"
+            },
+            {
+              "language": "ar",
+              "text": "الموظفة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудница"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەند"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmend"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownica"
+            },
+            {
+              "language": "ro",
+              "text": "Angajată"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjëse"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Arrive at the Bürgeramt"
+        },
+        {
+          "language": "fa",
+          "text": "رسیدن به اداره شهروندی"
+        },
+        {
+          "language": "ar",
+          "text": "الوصول إلى مكتب المواطنين"
+        },
+        {
+          "language": "tr",
+          "text": "Bürgeramt’a varmak"
+        },
+        {
+          "language": "ru",
+          "text": "Прийти в Bürgeramt"
+        },
+        {
+          "language": "ckb",
+          "text": "گەیشتن بە Bürgeramt"
+        },
+        {
+          "language": "kmr",
+          "text": "Gihîştin li Bürgeramt"
+        },
+        {
+          "language": "pl",
+          "text": "Przyjście do Bürgeramt"
+        },
+        {
+          "language": "ro",
+          "text": "Sosirea la Bürgeramt"
+        },
+        {
+          "language": "sq",
+          "text": "Mbërritja në Bürgeramt"
+        }
+      ],
+      "description": "Du übst, am Schalter deinen Namen und deine Terminzeit zu nennen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice saying your name and appointment time at the counter."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی پشت باجه نام و ساعت وقت خودت را بگویی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على قول اسمك ووقت موعدك عند الشباك."
+        },
+        {
+          "language": "tr",
+          "text": "Gişede adını ve randevu saatini söylemeyi çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься назвать имя и время записи у стойки."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت لە باجەدا ناو و کاتی وادەکەت بڵێیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu li pêşgotinê nav û demê randevuyê dibêjî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz podanie imienia i godziny terminu przy okienku."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să spui numele și ora programării la ghișeu."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të thuash emrin dhe orën e takimit te sporteli."
+        }
+      ],
+      "learnerGoal": "Du kannst im Bürgeramt ankommen, dich anmelden und die Wartenummer verstehen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can arrive at the Bürgeramt, check in, and understand the waiting number."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی در اداره شهروندی وارد شوی، اعلام حضور کنی و شماره انتظار را بفهمی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك الوصول إلى مكتب المواطنين وتسجيل حضورك وفهم رقم الانتظار."
+        },
+        {
+          "language": "tr",
+          "text": "Bürgeramt’a gelip kayıt yaptırabilir ve sıra numarasını anlayabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь прийти в Bürgeramt, отметиться и понять номер ожидания."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت بگەیتە Bürgeramt، خۆت تۆمار بکەیت و ژمارەی چاوەڕوانی تێبگەیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî bigihîjî Bürgeramt, xwe tomar bikî û jimara bendê fêm bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz przyjść do Bürgeramt, zgłosić się i zrozumieć numer kolejki."
+        },
+        {
+          "language": "ro",
+          "text": "Poți ajunge la Bürgeramt, te poți anunța și poți înțelege numărul de așteptare."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të mbërrish në Bürgeramt, të regjistrohesh dhe të kuptosh numrin e pritjes."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag. Haben Sie einen Termin?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good afternoon. Do you have an appointment?"
+            },
+            {
+              "language": "fa",
+              "text": "روز بخیر. وقت دارید؟"
+            },
+            {
+              "language": "ar",
+              "text": "طاب يومكم. هل لديك موعد؟"
+            },
+            {
+              "language": "tr",
+              "text": "İyi günler. Randevunuz var mı?"
+            },
+            {
+              "language": "ru",
+              "text": "Добрый день. У вас есть запись?"
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژ باش. وادەتان هەیە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Roj baş. Randevuya we heye?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Czy ma Pan/Pani termin?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua. Aveți programare?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëdita. A keni takim?"
+            }
+          ],
+          "function": "ask-appointment",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ja, ich habe um zehn Uhr einen Termin.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good afternoon. Yes, I have an appointment at ten o’clock."
+            },
+            {
+              "language": "fa",
+              "text": "روز بخیر. بله، ساعت ده وقت دارم."
+            },
+            {
+              "language": "ar",
+              "text": "طاب يومكم. نعم، لدي موعد في الساعة العاشرة."
+            },
+            {
+              "language": "tr",
+              "text": "İyi günler. Evet, saat onda randevum var."
+            },
+            {
+              "language": "ru",
+              "text": "Добрый день. Да, у меня запись на десять часов."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژ باش. بەڵێ، کاتژمێر دە وادەم هەیە."
+            },
+            {
+              "language": "kmr",
+              "text": "Roj baş. Erê, demjimêr deh randevuya min heye."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Tak, mam termin o dziesiątej."
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua. Da, am programare la ora zece."
+            },
+            {
+              "language": "sq",
+              "text": "Mirëdita. Po, kam takim në orën dhjetë."
+            }
+          ],
+          "function": "state-appointment",
+          "toneNote": null,
+          "expectedLearnerAction": "state-appointment-time"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Wie ist Ihr Name?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "What is your name?"
+            },
+            {
+              "language": "fa",
+              "text": "نام شما چیست؟"
+            },
+            {
+              "language": "ar",
+              "text": "ما اسمك؟"
+            },
+            {
+              "language": "tr",
+              "text": "Adınız nedir?"
+            },
+            {
+              "language": "ru",
+              "text": "Как вас зовут?"
+            },
+            {
+              "language": "ckb",
+              "text": "ناوتان چییە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Navê we çi ye?"
+            },
+            {
+              "language": "pl",
+              "text": "Jak się Pan/Pani nazywa?"
+            },
+            {
+              "language": "ro",
+              "text": "Cum vă numiți?"
+            },
+            {
+              "language": "sq",
+              "text": "Si quheni?"
+            }
+          ],
+          "function": "ask-name",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mein Name ist Sara Karimi.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "My name is Sara Karimi."
+            },
+            {
+              "language": "fa",
+              "text": "نام من سارا کریمی است."
+            },
+            {
+              "language": "ar",
+              "text": "اسمي سارة كريمي."
+            },
+            {
+              "language": "tr",
+              "text": "Benim adım Sara Karimi."
+            },
+            {
+              "language": "ru",
+              "text": "Меня зовут Сара Карими."
+            },
+            {
+              "language": "ckb",
+              "text": "ناوی من سارا کەریمییە."
+            },
+            {
+              "language": "kmr",
+              "text": "Navê min Sara Karimi ye."
+            },
+            {
+              "language": "pl",
+              "text": "Nazywam się Sara Karimi."
+            },
+            {
+              "language": "ro",
+              "text": "Numele meu este Sara Karimi."
+            },
+            {
+              "language": "sq",
+              "text": "Emri im është Sara Karimi."
+            }
+          ],
+          "function": "give-name",
+          "toneNote": null,
+          "expectedLearnerAction": "give-name"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Ja, ich habe um zehn Uhr einen Termin.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good afternoon. Yes, I have an appointment at ten o’clock."
+                },
+                {
+                  "language": "fa",
+                  "text": "روز بخیر. بله، ساعت ده وقت دارم."
+                },
+                {
+                  "language": "ar",
+                  "text": "طاب يومكم. نعم، لدي موعد في الساعة العاشرة."
+                },
+                {
+                  "language": "tr",
+                  "text": "İyi günler. Evet, saat onda randevum var."
+                },
+                {
+                  "language": "ru",
+                  "text": "Добрый день. Да, у меня запись на десять часов."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ڕۆژ باش. بەڵێ، کاتژمێر دە وادەم هەیە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Roj baş. Erê, demjimêr deh randevuya min heye."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Tak, mam termin o dziesiątej."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună ziua. Da, am programare la ora zece."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëdita. Po, kam takim në orën dhjetë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This answers yes and gives the appointment time.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-time",
+              "text": "Ja, ich habe einen Termin.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, I have an appointment."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، وقت دارم."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، لدي موعد."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, randevum var."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, у меня есть запись."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، وادەم هەیە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, randevuya min heye."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, mam termin."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, am programare."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, kam takim."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is relevant, but the time is missing.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "missing-time"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Mein Name ist Sara Karimi.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "My name is Sara Karimi."
+                },
+                {
+                  "language": "fa",
+                  "text": "نام من سارا کریمی است."
+                },
+                {
+                  "language": "ar",
+                  "text": "اسمي سارة كريمي."
+                },
+                {
+                  "language": "tr",
+                  "text": "Benim adım Sara Karimi."
+                },
+                {
+                  "language": "ru",
+                  "text": "Меня зовут Сара Карими."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ناوی من سارا کەریمییە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Navê min Sara Karimi ye."
+                },
+                {
+                  "language": "pl",
+                  "text": "Nazywam się Sara Karimi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Numele meu este Sara Karimi."
+                },
+                {
+                  "language": "sq",
+                  "text": "Emri im është Sara Karimi."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This gives the full name clearly.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "first-name-only",
+              "text": "Sara.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Sara."
+                },
+                {
+                  "language": "fa",
+                  "text": "سارا."
+                },
+                {
+                  "language": "ar",
+                  "text": "سارة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Sara."
+                },
+                {
+                  "language": "ru",
+                  "text": "Сара."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سارا."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Sara."
+                },
+                {
+                  "language": "pl",
+                  "text": "Sara."
+                },
+                {
+                  "language": "ro",
+                  "text": "Sara."
+                },
+                {
+                  "language": "sq",
+                  "text": "Sara."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This may be understood, but the full name is better at an office.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "first-name-only"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "a1-practice-note",
+          "text": "In Behörden helfen Name, Terminzeit und klare kurze Sätze.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In public offices, name, appointment time, and clear short sentences help."
+            },
+            {
+              "language": "fa",
+              "text": "در اداره‌ها، نام، ساعت وقت و جمله‌های کوتاه روشن کمک می‌کنند."
+            },
+            {
+              "language": "ar",
+              "text": "في الدوائر، الاسم ووقت الموعد والجمل القصيرة الواضحة تساعد."
+            },
+            {
+              "language": "tr",
+              "text": "Resmi dairelerde isim, randevu saati ve açık kısa cümleler yardımcı olur."
+            },
+            {
+              "language": "ru",
+              "text": "В учреждениях помогают имя, время записи и ясные короткие предложения."
+            },
+            {
+              "language": "ckb",
+              "text": "لە فەرمانگەکاندا ناو، کاتی وادە و ڕستەی کورت و ڕوون یارمەتیدەرن."
+            },
+            {
+              "language": "kmr",
+              "text": "Li dezgehên fermî nav, demê randevuyê û hevokên kurt û zelal alîkar in."
+            },
+            {
+              "language": "pl",
+              "text": "W urzędach pomagają imię i nazwisko, godzina terminu oraz jasne krótkie zdania."
+            },
+            {
+              "language": "ro",
+              "text": "La instituții ajută numele, ora programării și propozițiile scurte clare."
+            },
+            {
+              "language": "sq",
+              "text": "Në zyra publike ndihmojnë emri, ora e takimit dhe fjalitë e shkurtra të qarta."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "buergeramt-counter",
+          "placement": "header",
+          "purpose": "Set a clear A1 practice context without showing authoring metadata to learners.",
+          "altText": "Eine Person meldet sich am Schalter im Bürgeramt an.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person checks in at a Bürgeramt counter."
+            },
+            {
+              "language": "fa",
+              "text": "فردی پشت باجه اداره شهروندی اعلام حضور می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يسجل حضوره عند شباك مكتب المواطنين."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi Bürgeramt gişesinde kayıt yaptırıyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек отмечается у стойки Bürgeramt."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک لە باجەی Bürgeramt خۆی تۆمار دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek li pêşgotina Bürgeramt xwe tomar dike."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba zgłasza się przy okienku Bürgeramt."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană se anunță la ghișeul Bürgeramt."
+            },
+            {
+              "language": "sq",
+              "text": "Një person regjistrohet te sporteli i Bürgeramt."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult checking in at a German public office counter, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-am-empfang-nachfragen",
+      "title": "Am Empfang nachfragen",
+      "cefrLevel": "A1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "documents-and-administration"
+      ],
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 220,
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Staff member"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند"
+            },
+            {
+              "language": "ar",
+              "text": "الموظفة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудница"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەند"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmend"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownica"
+            },
+            {
+              "language": "ro",
+              "text": "Angajată"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjëse"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Ask at reception"
+        },
+        {
+          "language": "fa",
+          "text": "پرسیدن در پذیرش"
+        },
+        {
+          "language": "ar",
+          "text": "اسأل في الاستقبال"
+        },
+        {
+          "language": "tr",
+          "text": "Danışmada sormak"
+        },
+        {
+          "language": "ru",
+          "text": "Спросить на ресепшене"
+        },
+        {
+          "language": "ckb",
+          "text": "لە پێشوازیدا بپرسە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li pêşwaziyê bipirse"
+        },
+        {
+          "language": "pl",
+          "text": "Zapytaj w recepcji"
+        },
+        {
+          "language": "ro",
+          "text": "Întreabă la recepție"
+        },
+        {
+          "language": "sq",
+          "text": "Pyet në recepsion"
+        }
+      ],
+      "description": "Du übst, am Empfang zu fragen, wohin du gehen sollst.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice asking at reception where you should go."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی در پذیرش بپرسی باید کجا بروی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على السؤال في الاستقبال إلى أين يجب أن تذهب."
+        },
+        {
+          "language": "tr",
+          "text": "Danışmada nereye gitmen gerektiğini sormayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься спросить на ресепшене, куда идти."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت لە پێشوازی بپرسی دەبێت بۆ کوێ بچیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu li pêşwaziyê dipirsî divê tu biçî ku."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz pytanie w recepcji, dokąd masz iść."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să întrebi la recepție unde trebuie să mergi."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të pyesësh në recepsion ku duhet të shkosh."
+        }
+      ],
+      "learnerGoal": "Du kannst kurz sagen, warum du da bist, und den Raum bestätigen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can briefly say why you are there and confirm the room."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی کوتاه بگویی چرا آنجا هستی و اتاق را تأیید کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تقول باختصار لماذا أنت هناك وتؤكد الغرفة."
+        },
+        {
+          "language": "tr",
+          "text": "Neden orada olduğunu kısaca söyleyebilir ve odayı onaylayabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь коротко сказать, зачем ты пришёл, и подтвердить кабинет."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت بە کورتی بڵێیت بۆچی لێرەیت و ژوورەکە پشتڕاست بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî bi kurtî bêjî çima li wir î û odeyê piştrast bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz krótko powiedzieć, dlaczego tu jesteś, i potwierdzić pokój."
+        },
+        {
+          "language": "ro",
+          "text": "Poți spune pe scurt de ce ești acolo și confirma camera."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të thuash shkurt pse je aty dhe të konfirmosh dhomën."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe einen Termin. Wo muss ich hin?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good afternoon. I have an appointment. Where do I need to go?"
+            },
+            {
+              "language": "fa",
+              "text": "روز بخیر. من وقت دارم. باید کجا بروم؟"
+            },
+            {
+              "language": "ar",
+              "text": "طاب يومكم. لدي موعد. إلى أين يجب أن أذهب؟"
+            },
+            {
+              "language": "tr",
+              "text": "İyi günler. Randevum var. Nereye gitmem gerekiyor?"
+            },
+            {
+              "language": "ru",
+              "text": "Добрый день. У меня запись. Куда мне идти?"
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژ باش. وادەم هەیە. دەبێت بۆ کوێ بچم؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Roj baş. Randevuya min heye. Divê ez biçim ku?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Mam termin. Dokąd mam iść?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua. Am programare. Unde trebuie să merg?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëdita. Kam takim. Ku duhet të shkoj?"
+            }
+          ],
+          "function": "ask-where",
+          "toneNote": null,
+          "expectedLearnerAction": "ask-where-to-go"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "office-staff",
+          "baseText": "Bitte gehen Sie in Raum zwei.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Please go to room two."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً به اتاق دو بروید."
+            },
+            {
+              "language": "ar",
+              "text": "من فضلك اذهب إلى الغرفة الثانية."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen ikinci odaya gidin."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, пройдите в кабинет два."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە بچنە ژووری دوو."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe biçin odeya du."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę iść do pokoju drugiego."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rog să mergeți în camera doi."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutem shkoni në dhomën dy."
+            }
+          ],
+          "function": "give-room",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "learner",
+          "baseText": "Raum zwei. Danke schön.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Room two. Thank you."
+            },
+            {
+              "language": "fa",
+              "text": "اتاق دو. خیلی ممنون."
+            },
+            {
+              "language": "ar",
+              "text": "الغرفة الثانية. شكراً جزيلاً."
+            },
+            {
+              "language": "tr",
+              "text": "İkinci oda. Çok teşekkürler."
+            },
+            {
+              "language": "ru",
+              "text": "Кабинет два. Большое спасибо."
+            },
+            {
+              "language": "ckb",
+              "text": "ژووری دوو. زۆر سوپاس."
+            },
+            {
+              "language": "kmr",
+              "text": "Odeya du. Gelek spas."
+            },
+            {
+              "language": "pl",
+              "text": "Pokój drugi. Dziękuję bardzo."
+            },
+            {
+              "language": "ro",
+              "text": "Camera doi. Mulțumesc frumos."
+            },
+            {
+              "language": "sq",
+              "text": "Dhoma dy. Shumë faleminderit."
+            }
+          ],
+          "function": "repeat-room",
+          "toneNote": null,
+          "expectedLearnerAction": "repeat-room"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "office-staff",
+          "baseText": "Gerne. Der Raum ist links.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "You are welcome. The room is on the left."
+            },
+            {
+              "language": "fa",
+              "text": "خواهش می‌کنم. اتاق سمت چپ است."
+            },
+            {
+              "language": "ar",
+              "text": "على الرحب. الغرفة إلى اليسار."
+            },
+            {
+              "language": "tr",
+              "text": "Rica ederim. Oda solda."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста. Кабинет слева."
+            },
+            {
+              "language": "ckb",
+              "text": "بە خۆشی. ژوورەکە لای چەپە."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas nîne. Ode li çepê ye."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę. Pokój jest po lewej."
+            },
+            {
+              "language": "ro",
+              "text": "Cu plăcere. Camera este pe stânga."
+            },
+            {
+              "language": "sq",
+              "text": "Me kënaqësi. Dhoma është majtas."
+            }
+          ],
+          "function": "close",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 1,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Ich habe einen Termin. Wo muss ich hin?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good afternoon. I have an appointment. Where do I need to go?"
+                },
+                {
+                  "language": "fa",
+                  "text": "روز بخیر. من وقت دارم. باید کجا بروم؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "طاب يومكم. لدي موعد. إلى أين يجب أن أذهب؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "İyi günler. Randevum var. Nereye gitmem gerekiyor?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Добрый день. У меня запись. Куда мне идти?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "ڕۆژ باش. وادەم هەیە. دەبێت بۆ کوێ بچم؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Roj baş. Randevuya min heye. Divê ez biçim ku?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Mam termin. Dokąd mam iść?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună ziua. Am programare. Unde trebuie să merg?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëdita. Kam takim. Ku duhet të shkoj?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This gives the reason and asks a clear question.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-reason",
+              "text": "Wo muss ich hin?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Where do I need to go?"
+                },
+                {
+                  "language": "fa",
+                  "text": "باید کجا بروم؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "إلى أين يجب أن أذهب؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Nereye gitmem gerekiyor?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Куда мне идти?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "دەبێت بۆ کوێ بچم؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Divê ez biçim ku?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Dokąd mam iść?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Unde trebuie să merg?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Ku duhet të shkoj?"
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is a clear question, but the reason for your visit is missing.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "missing-reason"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Raum zwei. Danke schön.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Room two. Thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "اتاق دو. خیلی ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "الغرفة الثانية. شكراً جزيلاً."
+                },
+                {
+                  "language": "tr",
+                  "text": "İkinci oda. Çok teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Кабинет два. Большое спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ژووری دوو. زۆر سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Odeya du. Gelek spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Pokój drugi. Dziękuję bardzo."
+                },
+                {
+                  "language": "ro",
+                  "text": "Camera doi. Mulțumesc frumos."
+                },
+                {
+                  "language": "sq",
+                  "text": "Dhoma dy. Shumë faleminderit."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This repeats the room and thanks the staff member.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "no-repeat",
+              "text": "Danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكراً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is polite, but repeating the room avoids misunderstanding.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "no-repeat"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 3,
+          "feedbackType": "a1-practice-note",
+          "text": "Am Empfang ist es gut, den Raum oder die Richtung kurz zu wiederholen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "At reception, it is good to briefly repeat the room or direction."
+            },
+            {
+              "language": "fa",
+              "text": "در پذیرش خوب است اتاق یا مسیر را کوتاه تکرار کنی."
+            },
+            {
+              "language": "ar",
+              "text": "في الاستقبال من الجيد تكرار الغرفة أو الاتجاه باختصار."
+            },
+            {
+              "language": "tr",
+              "text": "Danışmada odayı veya yönü kısaca tekrarlamak iyidir."
+            },
+            {
+              "language": "ru",
+              "text": "На ресепшене полезно коротко повторить кабинет или направление."
+            },
+            {
+              "language": "ckb",
+              "text": "لە پێشوازیدا باشە ژوور یان ئاراستەکە بە کورتی دووبارە بکەیتەوە."
+            },
+            {
+              "language": "kmr",
+              "text": "Li pêşwaziyê baş e ode an alî bi kurtî dubare bikî."
+            },
+            {
+              "language": "pl",
+              "text": "W recepcji dobrze jest krótko powtórzyć pokój lub kierunek."
+            },
+            {
+              "language": "ro",
+              "text": "La recepție este bine să repeți scurt camera sau direcția."
+            },
+            {
+              "language": "sq",
+              "text": "Në recepsion është mirë të përsërisësh shkurt dhomën ose drejtimin."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "reception-question",
+          "placement": "header",
+          "purpose": "Set a clear A1 practice context without showing authoring metadata to learners.",
+          "altText": "Eine Person fragt am Empfang nach dem richtigen Raum.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person asks at reception for the correct room."
+            },
+            {
+              "language": "fa",
+              "text": "فردی در پذیرش درباره اتاق درست می‌پرسد."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يسأل في الاستقبال عن الغرفة الصحيحة."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi danışmada doğru odayı soruyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек спрашивает на ресепшене нужный кабинет."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک لە پێشوازی پرسیار لە ژووری ڕاست دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek li pêşwaziyê odeya rast dipirse."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba pyta w recepcji o właściwy pokój."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană întreabă la recepție de camera corectă."
+            },
+            {
+              "language": "sq",
+              "text": "Një person pyet në recepsion për dhomën e duhur."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult asking at a reception desk in Germany, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-telefonisch-nach-einem-termin-fragen",
+      "title": "Telefonisch nach einem Termin fragen",
+      "cefrLevel": "A1",
+      "category": "appointments",
+      "topics": [
+        "appointments-and-health",
+        "everyday-life"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "make-appointment",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call",
+        "appointment-management"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 230,
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Staff member"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند"
+            },
+            {
+              "language": "ar",
+              "text": "الموظفة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудница"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەند"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmend"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownica"
+            },
+            {
+              "language": "ro",
+              "text": "Angajată"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjëse"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Ask for an appointment by phone"
+        },
+        {
+          "language": "fa",
+          "text": "تلفنی وقت گرفتن"
+        },
+        {
+          "language": "ar",
+          "text": "طلب موعد هاتفياً"
+        },
+        {
+          "language": "tr",
+          "text": "Telefonda randevu istemek"
+        },
+        {
+          "language": "ru",
+          "text": "Попросить запись по телефону"
+        },
+        {
+          "language": "ckb",
+          "text": "بە تەلەفۆن داوای وادە بکە"
+        },
+        {
+          "language": "kmr",
+          "text": "Bi telefonê randevu bixwaze"
+        },
+        {
+          "language": "pl",
+          "text": "Poproś o termin telefonicznie"
+        },
+        {
+          "language": "ro",
+          "text": "Cere o programare la telefon"
+        },
+        {
+          "language": "sq",
+          "text": "Kërko takim me telefon"
+        }
+      ],
+      "description": "Du übst, am Telefon kurz und höflich nach einem Termin zu fragen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice briefly and politely asking for an appointment by phone."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی تلفنی کوتاه و مؤدبانه درخواست وقت کنی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على طلب موعد عبر الهاتف باختصار وبلطف."
+        },
+        {
+          "language": "tr",
+          "text": "Telefonda kısa ve nazikçe randevu istemeyi çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься коротко и вежливо попросить запись по телефону."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت بە تەلەفۆن بە کورتی و ڕێزەوە داوای وادە بکەیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu bi telefonê bi kurtî û bi rêz randevu dixwazî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz krótką i uprzejmą prośbę o termin przez telefon."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să ceri scurt și politicos o programare la telefon."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të kërkosh shkurt dhe me mirësjellje një takim me telefon."
+        }
+      ],
+      "learnerGoal": "Du kannst am Telefon sagen, dass du einen Termin möchtest, und einen Tag nennen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can say by phone that you want an appointment and name a day."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی تلفنی بگویی وقت می‌خواهی و یک روز را نام ببری."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تقول هاتفياً إنك تريد موعداً وتذكر يوماً."
+        },
+        {
+          "language": "tr",
+          "text": "Telefonda randevu istediğini söyleyebilir ve bir gün belirtebilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь по телефону сказать, что хочешь запись, и назвать день."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت بە تەلەفۆن بڵێیت وادەت دەوێت و ڕۆژێک بڵێیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî bi telefonê bêjî randevu dixwazî û rojekê bêjî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz przez telefon powiedzieć, że chcesz termin, i podać dzień."
+        },
+        {
+          "language": "ro",
+          "text": "Poți spune la telefon că dorești o programare și poți numi o zi."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të thuash në telefon se do një takim dhe të përmendësh një ditë."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Praxis Müller, guten Tag.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Müller practice, good afternoon."
+            },
+            {
+              "language": "fa",
+              "text": "مطب مولر، روز بخیر."
+            },
+            {
+              "language": "ar",
+              "text": "عيادة مولر، طاب يومكم."
+            },
+            {
+              "language": "tr",
+              "text": "Müller muayenehanesi, iyi günler."
+            },
+            {
+              "language": "ru",
+              "text": "Практика Мюллер, добрый день."
+            },
+            {
+              "language": "ckb",
+              "text": "کلینیکی Müller، ڕۆژ باش."
+            },
+            {
+              "language": "kmr",
+              "text": "Praktîka Müller, roj baş."
+            },
+            {
+              "language": "pl",
+              "text": "Przychodnia Müller, dzień dobry."
+            },
+            {
+              "language": "ro",
+              "text": "Cabinetul Müller, bună ziua."
+            },
+            {
+              "language": "sq",
+              "text": "Ordinanca Müller, mirëdita."
+            }
+          ],
+          "function": "phone-greeting",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich möchte bitte einen Termin.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good afternoon. I would like an appointment, please."
+            },
+            {
+              "language": "fa",
+              "text": "روز بخیر. لطفاً یک وقت می‌خواهم."
+            },
+            {
+              "language": "ar",
+              "text": "طاب يومكم. أود موعداً من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "İyi günler. Randevu almak istiyorum lütfen."
+            },
+            {
+              "language": "ru",
+              "text": "Добрый день. Я хотел(а) бы запись, пожалуйста."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژ باش. تکایە وادەیەکم دەوێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Roj baş. Ez randevuyekê dixwazim ji kerema xwe."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Chciał(a)bym termin."
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua. Aș dori o programare, vă rog."
+            },
+            {
+              "language": "sq",
+              "text": "Mirëdita. Do të doja një takim, ju lutem."
+            }
+          ],
+          "function": "ask-appointment",
+          "toneNote": null,
+          "expectedLearnerAction": "ask-appointment"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Passt Ihnen Montag?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Does Monday work for you?"
+            },
+            {
+              "language": "fa",
+              "text": "دوشنبه برای شما مناسب است؟"
+            },
+            {
+              "language": "ar",
+              "text": "هل يناسبك يوم الاثنين؟"
+            },
+            {
+              "language": "tr",
+              "text": "Pazartesi size uyar mı?"
+            },
+            {
+              "language": "ru",
+              "text": "Вам подходит понедельник?"
+            },
+            {
+              "language": "ckb",
+              "text": "دووشەممە بۆتان گونجاوە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Duşem ji we re baş e?"
+            },
+            {
+              "language": "pl",
+              "text": "Czy poniedziałek Panu/Pani pasuje?"
+            },
+            {
+              "language": "ro",
+              "text": "Vă convine luni?"
+            },
+            {
+              "language": "sq",
+              "text": "A ju përshtatet e hëna?"
+            }
+          ],
+          "function": "suggest-day",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, Montag passt. Danke.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, Monday works. Thank you."
+            },
+            {
+              "language": "fa",
+              "text": "بله، دوشنبه مناسب است. ممنون."
+            },
+            {
+              "language": "ar",
+              "text": "نعم، الاثنين مناسب. شكراً."
+            },
+            {
+              "language": "tr",
+              "text": "Evet, pazartesi uygun. Teşekkürler."
+            },
+            {
+              "language": "ru",
+              "text": "Да, понедельник подходит. Спасибо."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڵێ، دووشەممە گونجاوە. سوپاس."
+            },
+            {
+              "language": "kmr",
+              "text": "Erê, duşem baş e. Spas."
+            },
+            {
+              "language": "pl",
+              "text": "Tak, poniedziałek pasuje. Dziękuję."
+            },
+            {
+              "language": "ro",
+              "text": "Da, luni convine. Mulțumesc."
+            },
+            {
+              "language": "sq",
+              "text": "Po, e hëna përshtatet. Faleminderit."
+            }
+          ],
+          "function": "accept-day",
+          "toneNote": null,
+          "expectedLearnerAction": "accept-day"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Ich möchte bitte einen Termin.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good afternoon. I would like an appointment, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "روز بخیر. لطفاً یک وقت می‌خواهم."
+                },
+                {
+                  "language": "ar",
+                  "text": "طاب يومكم. أود موعداً من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "İyi günler. Randevu almak istiyorum lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Добрый день. Я хотел(а) бы запись, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ڕۆژ باش. تکایە وادەیەکم دەوێت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Roj baş. Ez randevuyekê dixwazim ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Chciał(a)bym termin."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună ziua. Aș dori o programare, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëdita. Do të doja një takim, ju lutem."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This is a polite phone request.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "too-short",
+              "text": "Termin bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Appointment, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "وقت لطفاً."
+                },
+                {
+                  "language": "ar",
+                  "text": "موعد من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Randevu lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Запись, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "وادە تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Randevu ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Termin, proszę."
+                },
+                {
+                  "language": "ro",
+                  "text": "Programare, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Takim, ju lutem."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This may be understood, but it is too short for a phone call.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "too-short"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, Montag passt. Danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, Monday works. Thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، دوشنبه مناسب است. ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، الاثنين مناسب. شكراً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, pazartesi uygun. Teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, понедельник подходит. Спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، دووشەممە گونجاوە. سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, duşem baş e. Spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, poniedziałek pasuje. Dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, luni convine. Mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, e hëna përshtatet. Faleminderit."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This confirms the suggested day clearly.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "unclear",
+              "text": "Ja, danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، شكراً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, faleminderit."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is polite, but it does not repeat the day.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "unclear"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "a1-practice-note",
+          "text": "Am Telefon ist es hilfreich, den vorgeschlagenen Tag kurz zu bestätigen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "On the phone, it helps to briefly confirm the suggested day."
+            },
+            {
+              "language": "fa",
+              "text": "در تلفن، تأیید کوتاه روز پیشنهادی کمک می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "على الهاتف، يساعد تأكيد اليوم المقترح باختصار."
+            },
+            {
+              "language": "tr",
+              "text": "Telefonda önerilen günü kısaca onaylamak yardımcı olur."
+            },
+            {
+              "language": "ru",
+              "text": "По телефону полезно коротко подтвердить предложенный день."
+            },
+            {
+              "language": "ckb",
+              "text": "لە تەلەفۆندا پشتڕاستکردنەوەی کورتی ڕۆژی پێشنیارکراو یارمەتیدەرە."
+            },
+            {
+              "language": "kmr",
+              "text": "Di telefonê de piştrastkirina kurt a roja pêşniyarkirî alîkar e."
+            },
+            {
+              "language": "pl",
+              "text": "Przez telefon pomaga krótkie potwierdzenie zaproponowanego dnia."
+            },
+            {
+              "language": "ro",
+              "text": "La telefon ajută să confirmi scurt ziua propusă."
+            },
+            {
+              "language": "sq",
+              "text": "Në telefon ndihmon të konfirmosh shkurt ditën e propozuar."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "phone-appointment-a1",
+          "placement": "header",
+          "purpose": "Set a clear A1 practice context without showing authoring metadata to learners.",
+          "altText": "Eine Person telefoniert ruhig und macht einen Termin.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person calmly makes an appointment by phone."
+            },
+            {
+              "language": "fa",
+              "text": "فردی آرام تلفنی وقت می‌گیرد."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يحدد موعداً بهدوء عبر الهاتف."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi sakin şekilde telefonda randevu alıyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек спокойно записывается по телефону."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک بە ئارامی بە تەلەفۆن وادە دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek bi aramî bi telefonê randevu dike."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba spokojnie umawia termin przez telefon."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană face calm o programare la telefon."
+            },
+            {
+              "language": "sq",
+              "text": "Një person bën qetësisht një takim me telefon."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult making an appointment phone call in Germany, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-einen-termin-bestaetigen",
+      "title": "Einen Termin bestätigen",
+      "cefrLevel": "A1",
+      "category": "appointments",
+      "topics": [
+        "appointments-and-health",
+        "documents-and-administration"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "make-appointment",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call",
+        "appointment-management"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 240,
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Mitarbeiterin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Staff member"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند"
+            },
+            {
+              "language": "ar",
+              "text": "الموظفة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудница"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەند"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmend"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownica"
+            },
+            {
+              "language": "ro",
+              "text": "Angajată"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjëse"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Confirm an appointment"
+        },
+        {
+          "language": "fa",
+          "text": "تأیید کردن یک وقت"
+        },
+        {
+          "language": "ar",
+          "text": "تأكيد موعد"
+        },
+        {
+          "language": "tr",
+          "text": "Randevuyu onaylamak"
+        },
+        {
+          "language": "ru",
+          "text": "Подтвердить запись"
+        },
+        {
+          "language": "ckb",
+          "text": "وادەیەک پشتڕاست بکەرەوە"
+        },
+        {
+          "language": "kmr",
+          "text": "Randevuyekê piştrast bike"
+        },
+        {
+          "language": "pl",
+          "text": "Potwierdź termin"
+        },
+        {
+          "language": "ro",
+          "text": "Confirmă o programare"
+        },
+        {
+          "language": "sq",
+          "text": "Konfirmo një takim"
+        }
+      ],
+      "description": "Du übst, einen Tag und eine Uhrzeit am Telefon zu bestätigen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice confirming a day and time by phone."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی تلفنی یک روز و ساعت را تأیید کنی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على تأكيد يوم وساعة عبر الهاتف."
+        },
+        {
+          "language": "tr",
+          "text": "Telefonda gün ve saati onaylamayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься подтвердить день и время по телефону."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت بە تەلەفۆن ڕۆژ و کاتێک پشتڕاست بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu bi telefonê roj û demekê piştrast dikî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz potwierdzenie dnia i godziny przez telefon."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să confirmi o zi și o oră la telefon."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të konfirmosh një ditë dhe orë me telefon."
+        }
+      ],
+      "learnerGoal": "Du kannst Datum und Uhrzeit wiederholen und höflich bestätigen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can repeat the date and time and confirm politely."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی تاریخ و ساعت را تکرار کنی و مؤدبانه تأیید کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تكرر التاريخ والوقت وتؤكد بلطف."
+        },
+        {
+          "language": "tr",
+          "text": "Tarih ve saati tekrar edip nazikçe onaylayabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь повторить дату и время и вежливо подтвердить."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت بەروار و کات دووبارە بکەیتەوە و بە ڕێزەوە پشتڕاستی بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî dîrok û demê dubare bikî û bi rêz piştrast bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz powtórzyć datę i godzinę oraz uprzejmie potwierdzić."
+        },
+        {
+          "language": "ro",
+          "text": "Poți repeta data și ora și confirma politicos."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të përsërisësh datën dhe orën dhe të konfirmosh me mirësjellje."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Ihr Termin ist am Dienstag um acht Uhr.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Your appointment is on Tuesday at eight o’clock."
+            },
+            {
+              "language": "fa",
+              "text": "وقت شما سه‌شنبه ساعت هشت است."
+            },
+            {
+              "language": "ar",
+              "text": "موعدك يوم الثلاثاء الساعة الثامنة."
+            },
+            {
+              "language": "tr",
+              "text": "Randevunuz salı günü saat sekizde."
+            },
+            {
+              "language": "ru",
+              "text": "Ваша запись во вторник в восемь часов."
+            },
+            {
+              "language": "ckb",
+              "text": "وادەکەتان سێشەممە کاتژمێر هەشتە."
+            },
+            {
+              "language": "kmr",
+              "text": "Randevuya we sêşem demjimêr heşt e."
+            },
+            {
+              "language": "pl",
+              "text": "Pana/Pani termin jest we wtorek o ósmej."
+            },
+            {
+              "language": "ro",
+              "text": "Programarea dumneavoastră este marți la ora opt."
+            },
+            {
+              "language": "sq",
+              "text": "Takimi juaj është të martën në orën tetë."
+            }
+          ],
+          "function": "state-appointment",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Dienstag um acht Uhr. Das passt, danke.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Tuesday at eight o’clock. That works, thank you."
+            },
+            {
+              "language": "fa",
+              "text": "سه‌شنبه ساعت هشت. مناسب است، ممنون."
+            },
+            {
+              "language": "ar",
+              "text": "الثلاثاء الساعة الثامنة. هذا مناسب، شكراً."
+            },
+            {
+              "language": "tr",
+              "text": "Salı saat sekiz. Bu uygun, teşekkürler."
+            },
+            {
+              "language": "ru",
+              "text": "Во вторник в восемь. Это подходит, спасибо."
+            },
+            {
+              "language": "ckb",
+              "text": "سێشەممە کاتژمێر هەشت. گونجاوە، سوپاس."
+            },
+            {
+              "language": "kmr",
+              "text": "Sêşem demjimêr heşt. Ev baş e, spas."
+            },
+            {
+              "language": "pl",
+              "text": "Wtorek o ósmej. Pasuje, dziękuję."
+            },
+            {
+              "language": "ro",
+              "text": "Marți la ora opt. Convine, mulțumesc."
+            },
+            {
+              "language": "sq",
+              "text": "Të martën në orën tetë. Më përshtatet, faleminderit."
+            }
+          ],
+          "function": "confirm",
+          "toneNote": null,
+          "expectedLearnerAction": "confirm-date-time"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Bitte bringen Sie Ihre Karte mit.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Please bring your card with you."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً کارت خود را همراه بیاورید."
+            },
+            {
+              "language": "ar",
+              "text": "من فضلك أحضر بطاقتك معك."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen kartınızı yanınızda getirin."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, принесите карту с собой."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە کارتەکەتان لەگەڵ خۆتان بهێنن."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe karta xwe bi xwe re bînin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę przynieść kartę."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rog să aduceți cardul."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutem sillni kartën tuaj."
+            }
+          ],
+          "function": "instruction",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich bringe die Karte mit. Auf Wiederhören.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, I will bring the card. Goodbye."
+            },
+            {
+              "language": "fa",
+              "text": "بله، کارت را همراه می‌آورم. خداحافظ."
+            },
+            {
+              "language": "ar",
+              "text": "نعم، سأحضر البطاقة معي. إلى اللقاء."
+            },
+            {
+              "language": "tr",
+              "text": "Evet, kartı getireceğim. Hoşça kalın."
+            },
+            {
+              "language": "ru",
+              "text": "Да, я принесу карту. До свидания."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڵێ، کارتەکە لەگەڵ خۆم دەهێنم. ماڵئاوایی."
+            },
+            {
+              "language": "kmr",
+              "text": "Erê, ez kartê bi xwe re tînim. Bi xatirê we."
+            },
+            {
+              "language": "pl",
+              "text": "Tak, przyniosę kartę. Do usłyszenia."
+            },
+            {
+              "language": "ro",
+              "text": "Da, aduc cardul. La revedere."
+            },
+            {
+              "language": "sq",
+              "text": "Po, do ta sjell kartën. Mirupafshim."
+            }
+          ],
+          "function": "confirm-instruction",
+          "toneNote": null,
+          "expectedLearnerAction": "confirm-instruction"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Dienstag um acht Uhr. Das passt, danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Tuesday at eight o’clock. That works, thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "سه‌شنبه ساعت هشت. مناسب است، ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "الثلاثاء الساعة الثامنة. هذا مناسب، شكراً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Salı saat sekiz. Bu uygun, teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Во вторник в восемь. Это подходит, спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سێشەممە کاتژمێر هەشت. گونجاوە، سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Sêşem demjimêr heşt. Ev baş e, spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Wtorek o ósmej. Pasuje, dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Marți la ora opt. Convine, mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Të martën në orën tetë. Më përshtatet, faleminderit."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This repeats the day and time clearly.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "too-vague",
+              "text": "Ja, passt.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, that works."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، مناسب است."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، مناسب."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, uygun."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, подходит."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، گونجاوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, baş e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, pasuje."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, convine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, përshtatet."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This confirms, but it does not repeat the day and time.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, ich bringe die Karte mit. Auf Wiederhören.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, I will bring the card. Goodbye."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، کارت را همراه می‌آورم. خداحافظ."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، سأحضر البطاقة معي. إلى اللقاء."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, kartı getireceğim. Hoşça kalın."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, я принесу карту. До свидания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، کارتەکە لەگەڵ خۆم دەهێنم. ماڵئاوایی."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, ez kartê bi xwe re tînim. Bi xatirê we."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, przyniosę kartę. Do usłyszenia."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, aduc cardul. La revedere."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, do ta sjell kartën. Mirupafshim."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This confirms the instruction and closes the phone call.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-close",
+              "text": "Ja, die Karte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, the card."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، کارت."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، البطاقة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, kart."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, карта."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، کارتەکە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, kart."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, karta."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, cardul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, karta."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This may be understood, but it is too short and does not close the call.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "missing-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "a1-practice-note",
+          "text": "Beim Bestätigen eines Termins sollten Tag und Uhrzeit wiederholt werden.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "When confirming an appointment, the day and time should be repeated."
+            },
+            {
+              "language": "fa",
+              "text": "هنگام تأیید وقت، بهتر است روز و ساعت تکرار شوند."
+            },
+            {
+              "language": "ar",
+              "text": "عند تأكيد موعد، ينبغي تكرار اليوم والوقت."
+            },
+            {
+              "language": "tr",
+              "text": "Randevu onaylarken gün ve saat tekrar edilmelidir."
+            },
+            {
+              "language": "ru",
+              "text": "При подтверждении записи нужно повторить день и время."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کاتی پشتڕاستکردنەوەی وادەدا پێویستە ڕۆژ و کات دووبارە بکرێنەوە."
+            },
+            {
+              "language": "kmr",
+              "text": "Dema randevu tê piştrastkirin divê roj û dem dubare bibin."
+            },
+            {
+              "language": "pl",
+              "text": "Przy potwierdzaniu terminu należy powtórzyć dzień i godzinę."
+            },
+            {
+              "language": "ro",
+              "text": "La confirmarea unei programări, ziua și ora trebuie repetate."
+            },
+            {
+              "language": "sq",
+              "text": "Kur konfirmon një takim, dita dhe ora duhet të përsëriten."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "confirm-phone-appointment",
+          "placement": "header",
+          "purpose": "Set a clear A1 practice context without showing authoring metadata to learners.",
+          "altText": "Eine Person bestätigt am Telefon einen Termin.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person confirms an appointment by phone."
+            },
+            {
+              "language": "fa",
+              "text": "فردی تلفنی یک وقت را تأیید می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يؤكد موعداً عبر الهاتف."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi telefonda randevuyu onaylıyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек подтверждает запись по телефону."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک بە تەلەفۆن وادەیەک پشتڕاست دەکاتەوە."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek bi telefonê randevuyekê piştrast dike."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba potwierdza termin przez telefon."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană confirmă o programare la telefon."
+            },
+            {
+              "language": "sq",
+              "text": "Një person konfirmon një takim me telefon."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult confirming an appointment by phone, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-im-buero-eine-kollegin-gruessen",
+      "title": "Eine Kollegin im Büro grüßen",
+      "cefrLevel": "A1",
+      "category": "workplace",
+      "topics": [
+        "work-and-jobs",
+        "social-and-relationships"
+      ],
+      "interactionMode": "workplace",
+      "register": "neutral",
+      "taskType": "introduce-yourself",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "workplace-communication"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 250,
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Colleague"
+            },
+            {
+              "language": "fa",
+              "text": "همکار"
+            },
+            {
+              "language": "ar",
+              "text": "الزميلة"
+            },
+            {
+              "language": "tr",
+              "text": "İş arkadaşı"
+            },
+            {
+              "language": "ru",
+              "text": "Коллега"
+            },
+            {
+              "language": "ckb",
+              "text": "هاوکار"
+            },
+            {
+              "language": "kmr",
+              "text": "Hevkar"
+            },
+            {
+              "language": "pl",
+              "text": "Koleżanka"
+            },
+            {
+              "language": "ro",
+              "text": "Colega"
+            },
+            {
+              "language": "sq",
+              "text": "Kolege"
+            }
+          ]
+        }
+      ],
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Greet a colleague in the office"
+        },
+        {
+          "language": "fa",
+          "text": "سلام کردن به همکار در دفتر"
+        },
+        {
+          "language": "ar",
+          "text": "حيّ زميلة في المكتب"
+        },
+        {
+          "language": "tr",
+          "text": "Ofiste bir iş arkadaşını selamla"
+        },
+        {
+          "language": "ru",
+          "text": "Поздороваться с коллегой в офисе"
+        },
+        {
+          "language": "ckb",
+          "text": "لە ئۆفیس سڵاو لە هاوکار بکە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li ofîsê silav li hevkarê bike"
+        },
+        {
+          "language": "pl",
+          "text": "Przywitaj koleżankę w biurze"
+        },
+        {
+          "language": "ro",
+          "text": "Salută o colegă la birou"
+        },
+        {
+          "language": "sq",
+          "text": "Përshëndet një kolege në zyrë"
+        }
+      ],
+      "description": "Du übst einen sehr kurzen freundlichen Kontakt am Arbeitsplatz.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice a very short friendly contact at work."
+        },
+        {
+          "language": "fa",
+          "text": "یک ارتباط خیلی کوتاه و دوستانه در محیط کار را تمرین می‌کنی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على تواصل قصير جداً وودّي في العمل."
+        },
+        {
+          "language": "tr",
+          "text": "İş yerinde çok kısa ve dostça bir iletişim çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешь очень короткий дружелюбный контакт на работе."
+        },
+        {
+          "language": "ckb",
+          "text": "پەیوەندییەکی زۆر کورتی دۆستانە لە شوێنی کار تمرین دەکەیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu li cihê kar têkiliyeke pir kurt û hevalane تمرین dikî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz bardzo krótki przyjazny kontakt w pracy."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi un contact foarte scurt și prietenos la serviciu."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron një kontakt shumë të shkurtër miqësor në punë."
+        }
+      ],
+      "learnerGoal": "Du kannst grüßen, kurz antworten und eine einfache Frage zurückstellen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can greet, answer briefly, and ask one simple question back."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی سلام کنی، کوتاه جواب بدهی و یک سؤال ساده برگردانی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تحيي وتجيب باختصار وتطرح سؤالاً بسيطاً بالمقابل."
+        },
+        {
+          "language": "tr",
+          "text": "Selam verebilir, kısaca cevaplayabilir ve basit bir karşı soru sorabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь поздороваться, коротко ответить и задать простой встречный вопрос."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت سڵاو بکەیت، بە کورتی وەڵام بدەیتەوە و پرسیارێکی سادە بگەڕێنیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî silav bikî, bi kurtî bersiv bidî û pirsiyareke hêsan vegerînî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz przywitać się, krótko odpowiedzieć i zadać proste pytanie zwrotne."
+        },
+        {
+          "language": "ro",
+          "text": "Poți saluta, răspunde scurt și pune o întrebare simplă înapoi."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të përshëndesësh, të përgjigjesh shkurt dhe të bësh një pyetje të thjeshtë."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Guten Morgen. Wie geht es Ihnen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. How are you?"
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر. حال شما چطور است؟"
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير. كيف حالك؟"
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın. Nasılsınız?"
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро. Как у вас дела?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش. چۆنن؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Beyanî baş. Hûn çawa ne?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Jak się Pan/Pani ma?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața. Ce mai faceți?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes. Si jeni?"
+            }
+          ],
+          "function": "greet",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Morgen. Gut, danke. Und Ihnen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. Good, thank you. And you?"
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر. خوبم، ممنون. شما چطور؟"
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير. بخير، شكراً. وأنت؟"
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın. İyiyim, teşekkürler. Ya siz?"
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро. Хорошо, спасибо. А у вас?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش. باشم، سوپاس. ئێوە چۆنن؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Beyanî baş. Baş im, spas. Hûn?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Dobrze, dziękuję. A Pan/Pani?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața. Bine, mulțumesc. Dumneavoastră?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes. Mirë, faleminderit. Po ju?"
+            }
+          ],
+          "function": "answer-and-ask",
+          "toneNote": null,
+          "expectedLearnerAction": "answer-and-ask-back"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Auch gut, danke. Haben Sie heute viel Arbeit?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Also good, thank you. Do you have much work today?"
+            },
+            {
+              "language": "fa",
+              "text": "من هم خوبم، ممنون. امروز کار زیادی دارید؟"
+            },
+            {
+              "language": "ar",
+              "text": "أنا أيضاً بخير، شكراً. هل لديك عمل كثير اليوم؟"
+            },
+            {
+              "language": "tr",
+              "text": "Ben de iyiyim, teşekkürler. Bugün çok işiniz var mı?"
+            },
+            {
+              "language": "ru",
+              "text": "Тоже хорошо, спасибо. У вас сегодня много работы?"
+            },
+            {
+              "language": "ckb",
+              "text": "منیش باشم، سوپاس. ئەمڕۆ کاری زۆرتان هەیە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ez jî baş im, spas. Îro karê we pir e?"
+            },
+            {
+              "language": "pl",
+              "text": "Też dobrze, dziękuję. Czy ma Pan/Pani dziś dużo pracy?"
+            },
+            {
+              "language": "ro",
+              "text": "Și eu bine, mulțumesc. Aveți mult de lucru astăzi?"
+            },
+            {
+              "language": "sq",
+              "text": "Edhe unë mirë, faleminderit. A keni shumë punë sot?"
+            }
+          ],
+          "function": "small-talk",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, ein bisschen. Ich habe heute zwei Termine.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, a little. I have two appointments today."
+            },
+            {
+              "language": "fa",
+              "text": "بله، کمی. امروز دو قرار دارم."
+            },
+            {
+              "language": "ar",
+              "text": "نعم، قليلاً. لدي اليوم موعدان."
+            },
+            {
+              "language": "tr",
+              "text": "Evet, biraz. Bugün iki randevum var."
+            },
+            {
+              "language": "ru",
+              "text": "Да, немного. У меня сегодня две встречи."
+            },
+            {
+              "language": "ckb",
+              "text": "بەڵێ، کەمێک. ئەمڕۆ دوو وادەم هەیە."
+            },
+            {
+              "language": "kmr",
+              "text": "Erê, hinekî. Îro du randevuyên min hene."
+            },
+            {
+              "language": "pl",
+              "text": "Tak, trochę. Mam dziś dwa terminy."
+            },
+            {
+              "language": "ro",
+              "text": "Da, puțin. Am astăzi două întâlniri."
+            },
+            {
+              "language": "sq",
+              "text": "Po, pak. Sot kam dy takime."
+            }
+          ],
+          "function": "answer-small-talk",
+          "toneNote": null,
+          "expectedLearnerAction": "answer-workday"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Morgen. Gut, danke. Und Ihnen?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good morning. Good, thank you. And you?"
+                },
+                {
+                  "language": "fa",
+                  "text": "صبح بخیر. خوبم، ممنون. شما چطور؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "صباح الخير. بخير، شكراً. وأنت؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Günaydın. İyiyim, teşekkürler. Ya siz?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Доброе утро. Хорошо, спасибо. А у вас?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەیانی باش. باشم، سوپاس. ئێوە چۆنن؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Beyanî baş. Baş im, spas. Hûn?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Dobrze, dziękuję. A Pan/Pani?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună dimineața. Bine, mulțumesc. Dumneavoastră?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëmëngjes. Mirë, faleminderit. Po ju?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This answers politely and asks back.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-return",
+              "text": "Gut.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good."
+                },
+                {
+                  "language": "fa",
+                  "text": "خوب."
+                },
+                {
+                  "language": "ar",
+                  "text": "بخير."
+                },
+                {
+                  "language": "tr",
+                  "text": "İyi."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باش."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Baş."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dobrze."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is understandable, but it is too short and does not ask back.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "missing-return"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, ein bisschen. Ich habe heute zwei Termine.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, a little. I have two appointments today."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، کمی. امروز دو قرار دارم."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، قليلاً. لدي اليوم موعدان."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, biraz. Bugün iki randevum var."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, немного. У меня сегодня две встречи."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، کەمێک. ئەمڕۆ دوو وادەم هەیە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, hinekî. Îro du randevuyên min hene."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, trochę. Mam dziś dwa terminy."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, puțin. Am astăzi două întâlniri."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, pak. Sot kam dy takime."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This gives a simple answer plus one detail.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This answer is clear, polite, and complete enough for A1."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای A1 روشن، مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة واضحة ومهذبة وكاملة بما يكفي لمستوى A1."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap A1 için açık, nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ для A1 ясный, вежливый и достаточно полный."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ A1 ڕوون، ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo A1 zelal, bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest jasna, uprzejma i wystarczająco pełna na A1."
+                },
+                {
+                  "language": "ro",
+                  "text": "Acest răspuns este clar, politicos și suficient de complet pentru A1."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e qartë, e sjellshme dhe mjaft e plotë për A1."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "too-vague",
+              "text": "Ja, viel.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, a lot."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله، زیاد."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم، كثير."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet, çok."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, много."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ، زۆر."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê, pir."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, dużo."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, mult."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, shumë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This answers, but one small detail makes workplace small talk stronger.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short or misses important context."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است یا زمینه مهمی کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً أو ينقصها سياق مهم."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa veya önemli bağlam eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко или не хватает важного контекста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە یان پێوەندییەکی گرنگی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e an çarçoveyeke girîng kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie albo brakuje ważnego kontekstu."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt sau îi lipsește context important."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër ose i mungon konteksti i rëndësishëm."
+                }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "a1-practice-note",
+          "text": "Im Büro wirkt eine kurze Rückfrage freundlich und natürlich.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In the office, a short question back sounds friendly and natural."
+            },
+            {
+              "language": "fa",
+              "text": "در دفتر، یک سؤال کوتاه برگشتی دوستانه و طبیعی به نظر می‌رسد."
+            },
+            {
+              "language": "ar",
+              "text": "في المكتب، يبدو السؤال القصير بالمقابل ودياً وطبيعياً."
+            },
+            {
+              "language": "tr",
+              "text": "Ofiste kısa bir karşı soru dostça ve doğal duyulur."
+            },
+            {
+              "language": "ru",
+              "text": "В офисе короткий встречный вопрос звучит дружелюбно и естественно."
+            },
+            {
+              "language": "ckb",
+              "text": "لە ئۆفیسدا پرسیارێکی کورتی بەرامبەر دۆستانە و سروشتی دەردەکەوێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Li ofîsê pirsiyareke kurt a veger hevalane û xwezayî xuya dike."
+            },
+            {
+              "language": "pl",
+              "text": "W biurze krótkie pytanie zwrotne brzmi przyjaźnie i naturalnie."
+            },
+            {
+              "language": "ro",
+              "text": "La birou, o întrebare scurtă înapoi sună prietenos și natural."
+            },
+            {
+              "language": "sq",
+              "text": "Në zyrë, një pyetje e shkurtër mbrapsht tingëllon miqësore dhe natyrale."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "office-greeting",
+          "placement": "header",
+          "purpose": "Set a clear A1 practice context without showing authoring metadata to learners.",
+          "altText": "Zwei Kolleginnen grüßen sich freundlich in einem Büro.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "Two colleagues greet each other politely in an office."
+            },
+            {
+              "language": "fa",
+              "text": "دو همکار در دفتر دوستانه به هم سلام می‌کنند."
+            },
+            {
+              "language": "ar",
+              "text": "زميلتان تحييان بعضهما بلطف في مكتب."
+            },
+            {
+              "language": "tr",
+              "text": "İki iş arkadaşı ofiste nazikçe selamlaşıyor."
+            },
+            {
+              "language": "ru",
+              "text": "Две коллеги дружелюбно здороваются в офисе."
+            },
+            {
+              "language": "ckb",
+              "text": "دوو هاوکار لە ئۆفیسدا بە دۆستانە سڵاو لە یەک دەکەن."
+            },
+            {
+              "language": "kmr",
+              "text": "Du hevkar li ofîsê bi rêz silav didin hev."
+            },
+            {
+              "language": "pl",
+              "text": "Dwie koleżanki uprzejmie witają się w biurze."
+            },
+            {
+              "language": "ro",
+              "text": "Două colege se salută politicos într-un birou."
+            },
+            {
+              "language": "sq",
+              "text": "Dy kolege përshëndeten me mirësjellje në zyrë."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of two adult colleagues greeting each other in a German office, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

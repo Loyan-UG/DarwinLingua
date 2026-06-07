@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-24-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 24 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 24",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-pruefungsleistung-nachbesprechen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Prüfungsleistung nachbesprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing feedback on an exam or assignment" },
+        { "language": "fa", "text": "گفت‌وگو درباره بازخورد یک عملکرد امتحانی" },
+        { "language": "ar", "text": "مناقشة تقييم أداء امتحاني" },
+        { "language": "tr", "text": "Bir sınav ya da ödev performansını değerlendirmek" },
+        { "language": "ru", "text": "Обсуждение результата экзамена или письменной работы" },
+        { "language": "ckb", "text": "گفتوگۆ لەسەر هەڵسەنگاندنی ئەنجامی تاقیکردنەوە" },
+        { "language": "kmr", "text": "Nirxandina encama azmûn an wezîfeyê gotûbêj kirin" },
+        { "language": "pl", "text": "Omówienie wyniku egzaminu lub pracy" },
+        { "language": "ro", "text": "Discutarea rezultatului la un examen sau o lucrare" },
+        { "language": "sq", "text": "Diskutimi i vlerësimit të një provimi ose detyre" }
+      ],
+      "description": "Sie besprechen eine anspruchsvolle Prüfungsleistung mit der Seminarleitung. Ziel ist nicht, über die Note zu streiten, sondern Kriterien, Beispiele und konkrete nächste Schritte zu verstehen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You discuss a demanding exam or assignment with the seminar instructor. The goal is not to argue about the grade, but to understand criteria, examples, and concrete next steps." },
+        { "language": "fa", "text": "شما درباره یک عملکرد امتحانی دشوار با مدرس سمینار گفت‌وگو می‌کنید. هدف بحث درباره نمره نیست، بلکه فهم معیارها، مثال‌ها و گام‌های بعدی مشخص است." },
+        { "language": "ar", "text": "تناقش أداءً امتحانياً متقدماً مع مدرس الندوة. الهدف ليس الجدال حول الدرجة، بل فهم المعايير والأمثلة والخطوات التالية الملموسة." },
+        { "language": "tr", "text": "Zorlu bir sınav ya da ödev performansını seminer yürütücüsüyle görüşürsünüz. Amaç not hakkında tartışmak değil, ölçütleri, örnekleri ve somut sonraki adımları anlamaktır." },
+        { "language": "ru", "text": "Вы обсуждаете сложный экзаменационный результат или письменную работу с ведущим семинара. Цель не спорить об оценке, а понять критерии, примеры и конкретные следующие шаги." },
+        { "language": "ckb", "text": "تۆ لەگەڵ مامۆستای سیمیناردا لەسەر ئەنجامی قورسی تاقیکردنەوە یان ئەرکێک گفتوگۆ دەکەیت. ئامانج ناکۆکی لەسەر نمرە نییە، بەڵکو تێگەیشتنە لە پێوەرەکان، نموونەکان و هەنگاوە ڕوونەکانی داهاتوو." },
+        { "language": "kmr", "text": "Hûn bi mamosteyê semînerê re li ser encameke dijwar a azmûnê an wezîfeyê diaxivin. Armanc ne nîqaş li ser notê ye, lê têgihiştina pîvanan, mînakan û gavên din ên şênber e." },
+        { "language": "pl", "text": "Omawia Pan wymagający wynik egzaminu lub pracy z prowadzącym seminarium. Celem nie jest spór o ocenę, lecz zrozumienie kryteriów, przykładów i konkretnych następnych kroków." },
+        { "language": "ro", "text": "Discutați o lucrare sau un rezultat de examen solicitant cu coordonatorul seminarului. Scopul nu este să contestați nota, ci să înțelegeți criteriile, exemplele și pașii concreți următori." },
+        { "language": "sq", "text": "Diskutoni një rezultat të vështirë provimi ose detyre me drejtuesin e seminarit. Qëllimi nuk është të debatoni notën, por të kuptoni kriteret, shembujt dhe hapat konkretë të radhës." }
+      ],
+      "learnerGoal": "Feedback zu einer Prüfungsleistung so erfragen, dass Kriterien, konkrete Beispiele und eine realistische Verbesserungsstrategie sichtbar werden.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask about feedback on an exam or assignment so that criteria, concrete examples, and a realistic improvement strategy become clear." },
+        { "language": "fa", "text": "بازخورد یک عملکرد امتحانی را طوری بپرسید که معیارها، مثال‌های مشخص و یک راهبرد بهبود واقع‌بینانه روشن شوند." },
+        { "language": "ar", "text": "اطلب تقييماً لأداء امتحاني بحيث تتضح المعايير والأمثلة المحددة واستراتيجية تحسين واقعية." },
+        { "language": "tr", "text": "Bir sınav ya da ödev performansı hakkında, ölçütler, somut örnekler ve gerçekçi bir gelişim stratejisi netleşecek şekilde geri bildirim isteyin." },
+        { "language": "ru", "text": "Запросить обратную связь по экзамену или работе так, чтобы стали ясны критерии, конкретные примеры и реалистичная стратегия улучшения." },
+        { "language": "ckb", "text": "فیدباکی ئەنجامی تاقیکردنەوە بە جۆرێک بپرسە کە پێوەرەکان، نموونە دیاریکراوەکان و ستراتیژییەکی واقیعی بۆ باشترکردن ڕوون بن." },
+        { "language": "kmr", "text": "Li ser encama azmûn an wezîfeyê wisa paşfeedbackê bipirsin ku pîvan, mînakên şênber û stratejiyeke rastîn a baştirkirinê zelal bibin." },
+        { "language": "pl", "text": "Poprosić o informację zwrotną do egzaminu lub pracy tak, aby jasne stały się kryteria, konkretne przykłady i realistyczna strategia poprawy." },
+        { "language": "ro", "text": "Cereți feedback pentru un examen sau o lucrare astfel încât criteriile, exemplele concrete și o strategie realistă de îmbunătățire să devină clare." },
+        { "language": "sq", "text": "Kërkoni feedback për një provim ose detyrë në mënyrë që kriteret, shembujt konkretë dhe një strategji realiste përmirësimi të bëhen të qarta." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "documents-and-administration"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 24,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Student/in",
+          "translations": [
+            { "language": "en", "text": "Student" },
+            { "language": "fa", "text": "دانشجو" },
+            { "language": "ar", "text": "طالب" },
+            { "language": "tr", "text": "Öğrenci" },
+            { "language": "ru", "text": "Студент" },
+            { "language": "ckb", "text": "خوێندکار" },
+            { "language": "kmr", "text": "Xwendekar" },
+            { "language": "pl", "text": "Student" },
+            { "language": "ro", "text": "Student" },
+            { "language": "sq", "text": "Student" }
+          ]
+        },
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Sie haben Ihre Hausarbeit zurückbekommen. Die Note ist in Ordnung, aber das schriftliche Feedback ist knapp. Wie beginnen Sie die Nachbesprechung?",
+          "translations": [
+            { "language": "en", "text": "You have received your paper back. The grade is acceptable, but the written feedback is brief. How do you begin the feedback discussion?" },
+            { "language": "fa", "text": "شما مقاله درسی خود را پس گرفته‌اید. نمره قابل قبول است، اما بازخورد کتبی کوتاه است. گفت‌وگوی بازخورد را چگونه شروع می‌کنید؟" },
+            { "language": "ar", "text": "استلمت بحثك الدراسي. الدرجة مقبولة، لكن التقييم المكتوب موجز. كيف تبدأ جلسة مناقشة التقييم؟" },
+            { "language": "tr", "text": "Dönem ödevinizi geri aldınız. Not kabul edilebilir, ancak yazılı geri bildirim kısa. Görüşmeye nasıl başlarsınız?" },
+            { "language": "ru", "text": "Вы получили письменную работу обратно. Оценка приемлемая, но письменный отзыв краткий. Как вы начнёте обсуждение?" },
+            { "language": "ckb", "text": "تۆ ئەرکی نووسراوی خۆت وەرگرتووەتەوە. نمرەکە باشە، بەڵام فیدباکی نووسراو کورتە. چۆن گفتوگۆی پاش‌باس دەست پێ دەکەیت؟" },
+            { "language": "kmr", "text": "We nivîsa xwe ya dersê vegirt. Not baş e, lê feedbacka nivîskî kurt e. Hûn gotûbêja paşnêrînê çawa dest pê dikin?" },
+            { "language": "pl", "text": "Otrzymał Pan swoją pracę pisemną. Ocena jest w porządku, ale pisemna informacja zwrotna jest krótka. Jak rozpoczyna Pan omówienie?" },
+            { "language": "ro", "text": "Ați primit lucrarea înapoi. Nota este în regulă, dar feedbackul scris este scurt. Cum începeți discuția de feedback?" },
+            { "language": "sq", "text": "E keni marrë mbrapsht punimin. Nota është në rregull, por feedbacku me shkrim është i shkurtër. Si e filloni diskutimin?" }
+          ],
+          "function": "feedback-discussion-start",
+          "toneNote": "höflich, zielorientiert",
+          "expectedLearnerAction": "Ziel der Nachbesprechung klären"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank, dass Sie sich Zeit nehmen. Mir geht es nicht darum, die Note grundsätzlich infrage zu stellen, sondern zu verstehen, an welchen Kriterien ich konkret arbeiten sollte und welche Stellen der Arbeit dafür besonders aussagekräftig sind.",
+          "translations": [
+            { "language": "en", "text": "Thank you for taking the time. I am not trying to fundamentally question the grade, but to understand which criteria I should work on specifically and which parts of the paper show that most clearly." },
+            { "language": "fa", "text": "ممنون که وقت می‌گذارید. قصد من زیر سؤال بردن کلی نمره نیست، بلکه می‌خواهم بفهمم دقیقاً روی کدام معیارها باید کار کنم و کدام بخش‌های مقاله این موضوع را بهتر نشان می‌دهند." },
+            { "language": "ar", "text": "شكراً لأنك تخصص وقتاً لذلك. لا أريد الاعتراض جذرياً على الدرجة، بل أن أفهم على أي معايير ينبغي أن أعمل تحديداً وأي مواضع في البحث توضح ذلك أكثر." },
+            { "language": "tr", "text": "Zaman ayırdığınız için teşekkür ederim. Notu temelden sorgulamak istemiyorum; özellikle hangi ölçütler üzerinde çalışmam gerektiğini ve çalışmanın hangi bölümlerinin bunu en iyi gösterdiğini anlamak istiyorum." },
+            { "language": "ru", "text": "Спасибо, что нашли время. Я не хочу принципиально оспаривать оценку, а хочу понять, над какими критериями мне конкретно нужно работать и какие места работы это особенно ясно показывают." },
+            { "language": "ckb", "text": "سوپاس کە کات دەنێیت. مەبەستم ئەوە نییە نمرەکە بە بنەڕەت بپرسمەوە، بەڵکو دەمەوێت تێبگەم بە وردی لەسەر کام پێوەرەکان کار بکەم و کام بەشەکانی نووسینەکە ئەمە باشتر نیشان دەدەن." },
+            { "language": "kmr", "text": "Spas ku hûn dem didin. Armanca min ne ew e ku notê bi bingehî bipirsim, lê ez dixwazim fêm bikim li ser kîjan pîvanan divê bi taybetî bixebitim û kîjan beşên nivîsê vê baştir nîşan didin." },
+            { "language": "pl", "text": "Dziękuję, że znajduje Pan czas. Nie chodzi mi o zasadnicze kwestionowanie oceny, lecz o zrozumienie, nad którymi kryteriami powinienem konkretnie pracować i które miejsca pracy najlepiej to pokazują." },
+            { "language": "ro", "text": "Vă mulțumesc că vă faceți timp. Nu vreau să contest fundamental nota, ci să înțeleg asupra căror criterii ar trebui să lucrez concret și ce pasaje ale lucrării arată cel mai clar acest lucru." },
+            { "language": "sq", "text": "Faleminderit që po merrni kohë. Nuk synoj ta vë në dyshim notën në tërësi, por të kuptoj mbi cilat kritere duhet të punoj konkretisht dhe cilat pjesë të punimit e tregojnë më qartë këtë." }
+          ],
+          "function": "purpose-framing",
+          "toneNote": "respektvoll, nicht defensiv",
+          "expectedLearnerAction": "Gesprächsziel konstruktiv formulieren"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "teacher",
+          "baseText": "Im Feedback steht vor allem, dass die Argumentation stellenweise nicht stringent genug sei. Welche Art von Rückmeldung brauchen Sie dazu?",
+          "translations": [
+            { "language": "en", "text": "The feedback mainly says that the argumentation is not sufficiently stringent in places. What kind of feedback do you need on that?" },
+            { "language": "fa", "text": "در بازخورد عمدتاً نوشته شده که استدلال در بعضی جاها به اندازه کافی منسجم نیست. درباره این نکته چه نوع بازخوردی نیاز دارید؟" },
+            { "language": "ar", "text": "يذكر التقييم أساساً أن الحجاج في بعض المواضع ليس محكماً بما يكفي. ما نوع التغذية الراجعة التي تحتاجها بشأن ذلك؟" },
+            { "language": "tr", "text": "Geri bildirimde esas olarak argümantasyonun bazı yerlerde yeterince tutarlı olmadığı yazıyor. Bu konuda ne tür bir geri bildirime ihtiyacınız var?" },
+            { "language": "ru", "text": "В отзыве прежде всего сказано, что аргументация местами недостаточно строгая. Какая обратная связь вам нужна по этому пункту?" },
+            { "language": "ckb", "text": "لە فیدباکەکەدا بە تایبەتی نووسراوە کە بەڵگەهێنانەکە لە هەندێ شوێندا بەس پەیوەست نییە. لەسەر ئەمە چ جۆرە فیدباکێکت پێویستە؟" },
+            { "language": "kmr", "text": "Di feedbackê de bi taybetî hatiye gotin ku argumantasyon li hin cihan têr hişk û girêdayî nîne. Li ser vê yekê kîjan cure feedbackê divê?" },
+            { "language": "pl", "text": "W informacji zwrotnej napisano przede wszystkim, że argumentacja miejscami nie jest wystarczająco spójna. Jakiego rodzaju informacji zwrotnej Pan tu potrzebuje?" },
+            { "language": "ro", "text": "În feedback se spune mai ales că argumentarea nu este suficient de stringentă în unele locuri. Ce tip de feedback vă trebuie pentru acest aspect?" },
+            { "language": "sq", "text": "Në feedback thuhet kryesisht se argumentimi në disa vende nuk është mjaft i lidhur. Çfarë lloj feedbacku ju duhet për këtë?" }
+          ],
+          "function": "criteria-probe",
+          "toneNote": "klärend",
+          "expectedLearnerAction": "Kriterium operationalisieren"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Könnten Sie mir an ein oder zwei Stellen zeigen, woran die fehlende Stringenz konkret erkennbar ist? Mir würde helfen zu unterscheiden, ob das Problem eher in der Gliederung, in den Übergängen oder in der Belegführung liegt.",
+          "translations": [
+            { "language": "en", "text": "Could you show me one or two places where the lack of stringency is specifically visible? It would help me distinguish whether the problem is more in the structure, in the transitions, or in the evidence." },
+            { "language": "fa", "text": "ممکن است در یک یا دو بخش نشان دهید نبود انسجام دقیقاً از کجا قابل تشخیص است؟ برایم مفید است بفهمم مشکل بیشتر در ساختار، در گذار بین بخش‌ها، یا در ارائه شواهد است." },
+            { "language": "ar", "text": "هل يمكنك أن تريني موضعاً أو موضعين يتضح فيهما نقص الإحكام تحديداً؟ سيساعدني ذلك على التمييز هل المشكلة في البنية أم في الانتقالات أم في الاستدلال بالأدلة." },
+            { "language": "tr", "text": "Eksik tutarlılığın somut olarak nerede görüldüğünü bir iki yerde gösterebilir misiniz? Sorunun daha çok yapıda mı, geçişlerde mi yoksa kanıtlamada mı olduğunu ayırt etmemi sağlar." },
+            { "language": "ru", "text": "Не могли бы вы показать одно-два места, где конкретно видна недостаточная строгая связь? Мне помогло бы понять, проблема скорее в структуре, переходах или доказательной базе." },
+            { "language": "ckb", "text": "دەتوانیت لە یەک یان دوو شوێندا نیشانم بدەیت کە نەبوونی پەیوەستبوون بە وردی لە کوێ دەردەکەوێت؟ یارمەتیم دەدات جیا بکەمەوە کێشەکە زیاتر لە پێکهاتەدایە، لە گواستنەوەکاندا یان لە بەڵگەهێناندا." },
+            { "language": "kmr", "text": "Hûn dikarin li yek an du cihan nîşan bidin ku kêmbûna girêdanê bi taybetî li ku derê xuya dibe? Ev alîkarî min dike ku fêm bikim pirsgirêk zêdetir di avahiyê, veguhastinan an delîldanê de ye." },
+            { "language": "pl", "text": "Czy mógłby Pan pokazać w jednym lub dwóch miejscach, po czym konkretnie widać brak spójności? Pomogłoby mi to odróżnić, czy problem leży raczej w strukturze, przejściach czy w argumentowaniu dowodami." },
+            { "language": "ro", "text": "Ați putea să-mi arătați în unul sau două locuri unde se vede concret lipsa de stringență? M-ar ajuta să disting dacă problema ține mai degrabă de structură, de tranziții sau de susținerea cu dovezi." },
+            { "language": "sq", "text": "A mund të më tregoni në një ose dy vende ku duket konkretisht mungesa e lidhjes argumentuese? Do të më ndihmonte të dalloj nëse problemi është më shumë te struktura, te kalimet apo te mbështetja me prova." }
+          ],
+          "function": "ask-for-examples",
+          "toneNote": "präzise, lernorientiert",
+          "expectedLearnerAction": "Konkrete Beispiele erbitten"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Nehmen wir den Abschnitt zur Theorie. Sie nennen drei Konzepte, aber es wird nicht klar, welches Konzept Ihre eigene Analyse eigentlich trägt.",
+          "translations": [
+            { "language": "en", "text": "Take the theory section. You name three concepts, but it is not clear which concept actually supports your own analysis." },
+            { "language": "fa", "text": "بخش نظریه را در نظر بگیریم. شما سه مفهوم را نام می‌برید، اما روشن نیست کدام مفهوم واقعاً تحلیل خودتان را حمل می‌کند." },
+            { "language": "ar", "text": "لنأخذ قسم النظرية. تذكر ثلاثة مفاهيم، لكن لا يتضح أي مفهوم يحمل تحليلك فعلاً." },
+            { "language": "tr", "text": "Kuram bölümünü ele alalım. Üç kavramdan söz ediyorsunuz, ama kendi analizinizi gerçekten hangi kavramın taşıdığı net değil." },
+            { "language": "ru", "text": "Возьмём теоретический раздел. Вы называете три понятия, но неясно, какое из них фактически несёт ваш анализ." },
+            { "language": "ckb", "text": "بەشی تیۆری وەربگرین. تۆ سێ چەمک ناو دەبەیت، بەڵام ڕوون نییە کام چەمک بەڕاستی شیکارییەکەت پشتگیری دەکات." },
+            { "language": "kmr", "text": "Beşa teoriyê bigirin. Hûn sê têgehan bi nav dikin, lê ne zelal e ka kîjan têgeh bi rastî analîza we digire." },
+            { "language": "pl", "text": "Weźmy część teoretyczną. Wymienia Pan trzy pojęcia, ale nie jest jasne, które pojęcie faktycznie niesie Pańską analizę." },
+            { "language": "ro", "text": "Să luăm secțiunea teoretică. Numiți trei concepte, dar nu este clar care concept susține de fapt propria analiză." },
+            { "language": "sq", "text": "Le të marrim pjesën teorike. Ju përmendni tre koncepte, por nuk bëhet e qartë cili koncept e mban realisht analizën tuaj." }
+          ],
+          "function": "example-feedback",
+          "toneNote": "konkret",
+          "expectedLearnerAction": "Feedback in Handlungsoption übersetzen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wenn ich Sie richtig verstehe, sollte ich nicht einfach mehr Theorie ergänzen, sondern die Leitfunktion eines Konzepts stärker markieren. Wäre ein kurzer Satz am Ende des Theorieabschnitts sinnvoll, der erklärt, welches Konzept die Analyse steuert?",
+          "translations": [
+            { "language": "en", "text": "If I understand you correctly, I should not simply add more theory, but mark the guiding function of one concept more clearly. Would a short sentence at the end of the theory section make sense, explaining which concept guides the analysis?" },
+            { "language": "fa", "text": "اگر درست فهمیده باشم، نباید فقط نظریه بیشتری اضافه کنم، بلکه باید نقش راهنمای یک مفهوم را روشن‌تر مشخص کنم. آیا یک جمله کوتاه در پایان بخش نظریه مناسب است که توضیح دهد کدام مفهوم تحلیل را هدایت می‌کند؟" },
+            { "language": "ar", "text": "إذا فهمتك بشكل صحيح، فلا ينبغي أن أضيف مزيداً من النظرية فقط، بل أن أوضح وظيفة مفهوم واحد بوصفه موجهاً. هل ستكون جملة قصيرة في نهاية قسم النظرية مفيدة لتوضح أي مفهوم يوجه التحليل؟" },
+            { "language": "tr", "text": "Sizi doğru anladıysam, yalnızca daha fazla teori eklemem değil, bir kavramın yönlendirici işlevini daha belirgin kılmam gerekiyor. Kuram bölümünün sonunda analizi hangi kavramın yönettiğini açıklayan kısa bir cümle anlamlı olur mu?" },
+            { "language": "ru", "text": "Если я правильно вас понимаю, мне нужно не просто добавить больше теории, а яснее обозначить направляющую функцию одного понятия. Было бы уместно краткое предложение в конце теоретического раздела, объясняющее, какое понятие направляет анализ?" },
+            { "language": "ckb", "text": "ئەگەر بە دروستی تێگەیشتبم، نابێت تەنها تیۆری زیاتر زیاد بکەم، بەڵکو دەبێت ڕۆڵی ڕێنماییکەری یەک چەمک ڕوونتر نیشان بدەم. ئایا ڕستەیەکی کورت لە کۆتایی بەشی تیۆریدا گونجاوە کە ڕوون بکاتەوە کام چەمک شیکارییەکە ڕێنمایی دەکات؟" },
+            { "language": "kmr", "text": "Heke min we rast fêm kiribe, divê ez ne tenê zêdetir teorî zêde bikim, lê fonksiyona rêber a têgehekê zelaltir nîşan bidim. Gelo hevokeke kurt li dawiya beşa teoriyê ku rave bike kîjan têgeh analîzê rê dide, watedar e?" },
+            { "language": "pl", "text": "Jeśli dobrze Pana rozumiem, nie powinienem po prostu dodawać więcej teorii, lecz mocniej zaznaczyć funkcję przewodnią jednego pojęcia. Czy sensowne byłoby krótkie zdanie na końcu części teoretycznej, wyjaśniające, które pojęcie prowadzi analizę?" },
+            { "language": "ro", "text": "Dacă vă înțeleg corect, nu ar trebui doar să adaug mai multă teorie, ci să marchez mai clar funcția de ghidare a unui concept. Ar avea sens o propoziție scurtă la finalul secțiunii teoretice care explică ce concept ghidează analiza?" },
+            { "language": "sq", "text": "Nëse ju kuptoj drejt, nuk duhet thjesht të shtoj më shumë teori, por të theksoj më qartë funksionin udhëzues të një koncepti. A do të kishte kuptim një fjali e shkurtër në fund të pjesës teorike që shpjegon cili koncept e drejton analizën?" }
+          ],
+          "function": "translate-feedback-to-action",
+          "toneNote": "analytisch, handlungsorientiert",
+          "expectedLearnerAction": "Feedback als konkrete Revision formulieren"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "teacher",
+          "baseText": "Ja, und Sie sollten im Hauptteil konsequenter auf dieses Konzept zurückverweisen. Sonst wirkt der Theorieabschnitt vom Analysekapitel getrennt.",
+          "translations": [
+            { "language": "en", "text": "Yes, and in the main section you should refer back to that concept more consistently. Otherwise the theory section appears separate from the analysis chapter." },
+            { "language": "fa", "text": "بله، و در بخش اصلی باید منسجم‌تر به همان مفهوم برگردید. وگرنه بخش نظریه از فصل تحلیل جدا به نظر می‌رسد." },
+            { "language": "ar", "text": "نعم، وينبغي في القسم الرئيسي أن تعود إلى هذا المفهوم بشكل أكثر اتساقاً. وإلا بدا قسم النظرية منفصلاً عن فصل التحليل." },
+            { "language": "tr", "text": "Evet, ayrıca ana bölümde bu kavrama daha tutarlı biçimde geri dönmelisiniz. Aksi halde kuram bölümü analiz bölümünden kopuk görünür." },
+            { "language": "ru", "text": "Да, и в основной части вам следует последовательнее возвращаться к этому понятию. Иначе теоретический раздел выглядит отделённым от аналитической главы." },
+            { "language": "ckb", "text": "بەڵێ، و لە بەشی سەرەکیدا دەبێت بە پەیوەستبوونی زیاتر بگەڕێیتەوە بۆ ئەو چەمکە. بە پێچەوانەوە بەشی تیۆری لە بەشی شیکاری جیا دەردەکەوێت." },
+            { "language": "kmr", "text": "Erê, û di beşa sereke de divê hûn bi domdarîtir vegerin ser wê têgehê. Wekî din beşa teoriyê ji beşa analîzê cuda xuya dibe." },
+            { "language": "pl", "text": "Tak, a w części głównej powinien Pan konsekwentniej odwoływać się do tego pojęcia. Inaczej część teoretyczna wygląda na oddzieloną od rozdziału analitycznego." },
+            { "language": "ro", "text": "Da, iar în partea principală ar trebui să reveniți mai consecvent la acest concept. Altfel secțiunea teoretică pare separată de capitolul de analiză." },
+            { "language": "sq", "text": "Po, dhe në pjesën kryesore duhet t'i referoheni më vazhdimisht këtij koncepti. Përndryshe pjesa teorike duket e shkëputur nga kapitulli i analizës." }
+          ],
+          "function": "follow-up-feedback",
+          "toneNote": "fachlich",
+          "expectedLearnerAction": "Priorität und Umsetzung erfragen"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann wäre meine Priorität also, weniger neue Literatur einzubauen und stattdessen die vorhandenen Begriffe konsequenter mit der Analyse zu verknüpfen. Gibt es einen Abschnitt, bei dem dieser Bruch besonders deutlich wird?",
+          "translations": [
+            { "language": "en", "text": "So my priority would be to add less new literature and instead link the existing terms more consistently to the analysis. Is there a section where this break becomes especially clear?" },
+            { "language": "fa", "text": "پس اولویت من این است که ادبیات جدید کمتری اضافه کنم و در عوض مفاهیم موجود را منسجم‌تر با تحلیل پیوند بدهم. آیا بخشی هست که این گسست در آن به‌ویژه روشن باشد؟" },
+            { "language": "ar", "text": "إذن ستكون أولويتي أن أضيف أدبيات جديدة أقل، وأن أربط بدلاً من ذلك المصطلحات الموجودة بالتحليل بشكل أكثر اتساقاً. هل يوجد قسم يظهر فيه هذا الانقطاع بوضوح خاص؟" },
+            { "language": "tr", "text": "O halde önceliğim daha az yeni literatür eklemek ve bunun yerine mevcut kavramları analizle daha tutarlı bağlamak olur. Bu kopukluğun özellikle belirgin olduğu bir bölüm var mı?" },
+            { "language": "ru", "text": "Значит, мой приоритет — добавить меньше новой литературы и вместо этого последовательнее связать имеющиеся понятия с анализом. Есть ли раздел, где этот разрыв особенно заметен?" },
+            { "language": "ckb", "text": "کەواتە ئەولەویەتم ئەوەیە کە کەمتر سەرچاوەی نوێ زیاد بکەم و لە جیاتی ئەوە چەمکە هەنووکەییەکان بە پەیوەستبوونی زیاتر بە شیکارییەکە ببەستم. ئایا بەشێک هەیە کە ئەم دابڕانە تێیدا بە تایبەتی ڕوون بێت؟" },
+            { "language": "kmr", "text": "Wê demê pêşengiya min ew e ku kêmtir literatûra nû zêde bikim û li şûna wê têgehên heyî bi analîzê re domdartir girê bidim. Gelo beşek heye ku ev qutbûn tê de bi taybetî zelal dibe?" },
+            { "language": "pl", "text": "Czyli moim priorytetem byłoby dodanie mniej nowej literatury, a zamiast tego konsekwentniejsze powiązanie istniejących pojęć z analizą. Czy jest fragment, w którym to pęknięcie szczególnie wyraźnie widać?" },
+            { "language": "ro", "text": "Atunci prioritatea mea ar fi să introduc mai puțină literatură nouă și, în schimb, să leg mai consecvent conceptele existente de analiză. Există o secțiune în care această ruptură devine deosebit de clară?" },
+            { "language": "sq", "text": "Atëherë prioriteti im do të ishte të shtoj më pak literaturë të re dhe në vend të kësaj t'i lidh më vazhdimisht konceptet ekzistuese me analizën. A ka ndonjë pjesë ku kjo shkëputje duket veçanërisht qartë?" }
+          ],
+          "function": "prioritize-next-step",
+          "toneNote": "präzisierend",
+          "expectedLearnerAction": "Priorität zusammenfassen und Beispiel erfragen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Im dritten Analyseabschnitt beschreiben Sie ein Beispiel sehr ausführlich, aber die Verbindung zur Forschungsfrage bleibt indirekt. Dort könnten Sie am meisten gewinnen.",
+          "translations": [
+            { "language": "en", "text": "In the third analysis section, you describe an example in great detail, but the connection to the research question remains indirect. That is where you could gain the most." },
+            { "language": "fa", "text": "در بخش سوم تحلیل، یک مثال را بسیار مفصل توصیف می‌کنید، اما ارتباط آن با پرسش پژوهش غیرمستقیم می‌ماند. همان‌جا بیشترین امکان بهبود را دارید." },
+            { "language": "ar", "text": "في القسم التحليلي الثالث تصف مثالاً بتفصيل كبير، لكن الصلة بسؤال البحث تبقى غير مباشرة. هناك يمكنك أن تحقق أكبر تحسن." },
+            { "language": "tr", "text": "Üçüncü analiz bölümünde bir örneği çok ayrıntılı anlatıyorsunuz, ancak araştırma sorusuyla bağlantı dolaylı kalıyor. En çok orada ilerleme sağlayabilirsiniz." },
+            { "language": "ru", "text": "В третьем аналитическом разделе вы очень подробно описываете пример, но связь с исследовательским вопросом остаётся косвенной. Там вы могли бы выиграть больше всего." },
+            { "language": "ckb", "text": "لە بەشی سێیەمی شیکارییدا نموونەیەک زۆر بە وردی وەسف دەکەیت، بەڵام پەیوەندییەکە بە پرسیاری توێژینەوەوە ناڕاستەوخۆ دەمێنێت. لەوێ دەتوانیت زۆرترین باشترکردن بکەیت." },
+            { "language": "kmr", "text": "Di beşa sêyem a analîzê de hûn mînakek pir bi hûrgilî vedibêjin, lê girêdana bi pirsa lêkolînê re ne rasterast dimîne. Hûn dikarin herî zêde li wir bi dest bixin." },
+            { "language": "pl", "text": "W trzeciej części analitycznej opisuje Pan przykład bardzo szczegółowo, ale związek z pytaniem badawczym pozostaje pośredni. Tam można najwięcej poprawić." },
+            { "language": "ro", "text": "În a treia secțiune de analiză descrieți un exemplu foarte detaliat, dar legătura cu întrebarea de cercetare rămâne indirectă. Acolo ați putea câștiga cel mai mult." },
+            { "language": "sq", "text": "Në pjesën e tretë të analizës përshkruani një shembull me shumë hollësi, por lidhja me pyetjen kërkimore mbetet indirekte. Aty mund të përfitoni më shumë." }
+          ],
+          "function": "high-impact-section",
+          "toneNote": "konkret",
+          "expectedLearnerAction": "Verbesserungsschritt formulieren"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich dort zuerst die Beschreibung kürzen, anschließend die Forschungsfrage ausdrücklich wieder aufnehmen und erklären, welchen Beitrag das Beispiel zur Beantwortung leistet. Wäre das als Überarbeitungsschritt konkret genug?",
+          "translations": [
+            { "language": "en", "text": "Then I would first shorten the description there, then explicitly take up the research question again and explain what contribution the example makes to answering it. Would that be concrete enough as a revision step?" },
+            { "language": "fa", "text": "پس آنجا ابتدا توصیف را کوتاه می‌کنم، سپس پرسش پژوهش را صریحاً دوباره مطرح می‌کنم و توضیح می‌دهم این مثال چه کمکی به پاسخ دادن می‌کند. آیا این به عنوان گام بازنویسی به اندازه کافی مشخص است؟" },
+            { "language": "ar", "text": "إذن سأقصر الوصف هناك أولاً، ثم أعود صراحة إلى سؤال البحث وأوضح إسهام المثال في الإجابة عنه. هل يعد ذلك خطوة مراجعة محددة بما يكفي؟" },
+            { "language": "tr", "text": "O zaman orada önce betimlemeyi kısaltır, sonra araştırma sorusunu açıkça yeniden ele alır ve örneğin yanıta nasıl katkı sunduğunu açıklarım. Bu bir revizyon adımı olarak yeterince somut olur mu?" },
+            { "language": "ru", "text": "Тогда я сначала сокращу описание, затем явно вернусь к исследовательскому вопросу и объясню, какой вклад пример вносит в ответ. Достаточно ли это конкретный шаг переработки?" },
+            { "language": "ckb", "text": "کەواتە لەوێ سەرەتا وەسفەکە کورت دەکەم، پاشان پرسیاری توێژینەوە بە ڕوونی دووبارە دەهێنمەوە و ڕوون دەکەمەوە ئەو نموونەیە چ بەشدارییەک لە وەڵامدانەوەدا هەیە. ئایا ئەمە وەک هەنگاوی دەستکاریکردن بەس ڕوونە؟" },
+            { "language": "kmr", "text": "Wê demê ez li wir pêşî ravekirinê kurt dikim, paşê pirsa lêkolînê bi eşkere dîsa digirim û rave dikim mînak çi beşdarî li bersivê dike. Gelo ev wek gava sererastkirinê têr şênber e?" },
+            { "language": "pl", "text": "Wtedy najpierw skróciłbym tam opis, potem wyraźnie wrócił do pytania badawczego i wyjaśnił, jaki wkład wnosi przykład w odpowiedź. Czy to jest wystarczająco konkretny krok poprawy?" },
+            { "language": "ro", "text": "Atunci aș scurta mai întâi descrierea acolo, apoi aș relua explicit întrebarea de cercetare și aș explica ce contribuție aduce exemplul la răspuns. Ar fi suficient de concret ca pas de revizuire?" },
+            { "language": "sq", "text": "Atëherë aty do ta shkurtoja fillimisht përshkrimin, pastaj do ta riktheja shprehimisht pyetjen kërkimore dhe do të shpjegoja se çfarë kontributi jep shembulli në përgjigje. A është ky hap rishikimi mjaft konkret?" }
+          ],
+          "function": "revision-step-check",
+          "toneNote": "handlungsorientiert",
+          "expectedLearnerAction": "Konkrete Überarbeitung prüfen"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "teacher",
+          "baseText": "Zum Abschluss sollen Sie zusammenfassen, was Sie aus der Rückmeldung mitnehmen und wie Sie in den nächsten zwei Wochen daran arbeiten.",
+          "translations": [
+            { "language": "en", "text": "To close, summarize what you take away from the feedback and how you will work on it over the next two weeks." },
+            { "language": "fa", "text": "در پایان خلاصه کنید از این بازخورد چه چیزی با خود می‌برید و در دو هفته آینده چگونه روی آن کار می‌کنید." },
+            { "language": "ar", "text": "في الختام لخّص ما تستخلصه من التقييم وكيف ستعمل عليه خلال الأسبوعين القادمين." },
+            { "language": "tr", "text": "Son olarak geri bildirimden ne çıkardığınızı ve önümüzdeki iki hafta içinde bunun üzerinde nasıl çalışacağınızı özetleyin." },
+            { "language": "ru", "text": "В завершение подытожьте, что вы берёте из обратной связи и как будете над этим работать в ближайшие две недели." },
+            { "language": "ckb", "text": "لە کۆتاییدا پوختە بکە کە لەم فیدباکە چی وەردەگریت و لە دوو هەفتەی داهاتوودا چۆن کاری لەسەر دەکەیت." },
+            { "language": "kmr", "text": "Di dawiyê de kurt bikin ka hûn ji feedbackê çi digirin û di du heftiyên pêş de çawa li ser dixebitin." },
+            { "language": "pl", "text": "Na zakończenie proszę podsumować, co wynosi Pan z tej informacji zwrotnej i jak będzie Pan nad tym pracować w najbliższych dwóch tygodniach." },
+            { "language": "ro", "text": "La final, rezumați ce rețineți din feedback și cum veți lucra la acest lucru în următoarele două săptămâni." },
+            { "language": "sq", "text": "Në fund përmblidhni çfarë merrni nga ky feedback dhe si do të punoni mbi të gjatë dy javëve të ardhshme." }
+          ],
+          "function": "closing-summary-request",
+          "toneNote": "prüfungsnah",
+          "expectedLearnerAction": "Lernplan zusammenfassen"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich nehme mit, dass ich weniger an der Menge der Literatur arbeiten muss als an der sichtbaren Funktion der Begriffe. In den nächsten zwei Wochen überarbeite ich den Theorieabschluss, markiere im dritten Analyseabschnitt die Rückbindung an die Forschungsfrage und prüfe dann, ob jeder Absatz eine klare argumentative Aufgabe erfüllt.",
+          "translations": [
+            { "language": "en", "text": "I take away that I need to work less on the amount of literature than on the visible function of the terms. Over the next two weeks, I will revise the end of the theory section, mark the link back to the research question in the third analysis section, and then check whether each paragraph has a clear argumentative function." },
+            { "language": "fa", "text": "برداشت من این است که باید کمتر روی حجم ادبیات و بیشتر روی نقش قابل مشاهده مفاهیم کار کنم. در دو هفته آینده پایان بخش نظریه را بازنویسی می‌کنم، در بخش سوم تحلیل پیوند با پرسش پژوهش را مشخص می‌کنم و بعد بررسی می‌کنم آیا هر پاراگراف وظیفه استدلالی روشنی دارد یا نه." },
+            { "language": "ar", "text": "أستخلص أنني لا أحتاج إلى العمل على كمية الأدبيات بقدر ما أحتاج إلى وظيفة المفاهيم الظاهرة. خلال الأسبوعين القادمين سأراجع خاتمة قسم النظرية، وأوضح الربط بسؤال البحث في القسم التحليلي الثالث، ثم أتحقق مما إذا كانت لكل فقرة وظيفة حجاجية واضحة." },
+            { "language": "tr", "text": "Çıkardığım sonuç, literatür miktarından çok kavramların görünür işlevi üzerinde çalışmam gerektiği. Önümüzdeki iki hafta içinde kuram bölümünün sonunu gözden geçireceğim, üçüncü analiz bölümünde araştırma sorusuyla bağlantıyı belirginleştireceğim ve sonra her paragrafın açık bir argümantatif görevi olup olmadığını kontrol edeceğim." },
+            { "language": "ru", "text": "Я понял, что мне нужно работать не столько над количеством литературы, сколько над видимой функцией понятий. В ближайшие две недели я переработаю завершение теоретического раздела, обозначу в третьем аналитическом разделе связь с исследовательским вопросом и затем проверю, выполняет ли каждый абзац ясную аргументативную задачу." },
+            { "language": "ckb", "text": "لە فیدباکەکەوە ئەوە وەردەگرم کە کەمتر دەبێت لەسەر بڕی سەرچاوەکان کار بکەم و زیاتر لەسەر ڕۆڵی دیاری چەمکەکان. لە دوو هەفتەی داهاتوودا کۆتایی بەشی تیۆری دەستکاری دەکەم، لە بەشی سێیەمی شیکاری پەیوەندی بە پرسیاری توێژینەوە دیاری دەکەم و پاشان دەپشکنم ئایا هەر پەڕەگرافێک ئەرکێکی بەڵگەهێنانی ڕوونی هەیە یان نا." },
+            { "language": "kmr", "text": "Ez fêm dikim ku divê ez kêmtir li ser qaseya literatûrê û zêdetir li ser fonksiyona xuya ya têgehan bixebitim. Di du heftiyên pêş de ez dawiya beşa teoriyê sererast dikim, di beşa sêyem a analîzê de girêdana bi pirsa lêkolînê nîşan didim û paşê dipirsim gelo her paragrafê erka argumanî ya zelal heye yan na." },
+            { "language": "pl", "text": "Wynoszę z tego, że muszę mniej pracować nad ilością literatury, a bardziej nad widoczną funkcją pojęć. W najbliższych dwóch tygodniach poprawię zakończenie części teoretycznej, zaznaczę w trzeciej części analitycznej powiązanie z pytaniem badawczym, a potem sprawdzę, czy każdy akapit spełnia jasną funkcję argumentacyjną." },
+            { "language": "ro", "text": "Rețin că trebuie să lucrez mai puțin la cantitatea de literatură și mai mult la funcția vizibilă a conceptelor. În următoarele două săptămâni voi revizui finalul secțiunii teoretice, voi marca în a treia secțiune de analiză legătura cu întrebarea de cercetare și apoi voi verifica dacă fiecare paragraf are o funcție argumentativă clară." },
+            { "language": "sq", "text": "Nga kjo kuptoj se duhet të punoj më pak mbi sasinë e literaturës dhe më shumë mbi funksionin e dukshëm të koncepteve. Në dy javët e ardhshme do të rishikoj fundin e pjesës teorike, do të shënoj në pjesën e tretë të analizës lidhjen me pyetjen kërkimore dhe pastaj do të kontrolloj nëse çdo paragraf ka një funksion të qartë argumentues." }
+          ],
+          "function": "actionable-closing",
+          "toneNote": "präzise, verbindlich",
+          "expectedLearnerAction": "Konkreten Arbeitsplan formulieren"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich möchte die Note nicht grundsätzlich infrage stellen, sondern verstehen, an welchen Kriterien ich konkret arbeiten sollte.",
+              "translations": [
+                { "language": "en", "text": "I do not want to fundamentally question the grade, but to understand which criteria I should work on specifically." },
+                { "language": "fa", "text": "نمی‌خواهم نمره را کلی زیر سؤال ببرم، بلکه می‌خواهم بفهمم دقیقاً روی کدام معیارها باید کار کنم." },
+                { "language": "ar", "text": "لا أريد الاعتراض جذرياً على الدرجة، بل فهم المعايير التي ينبغي أن أعمل عليها تحديداً." },
+                { "language": "tr", "text": "Notu temelden sorgulamak istemiyorum; özellikle hangi ölçütler üzerinde çalışmam gerektiğini anlamak istiyorum." },
+                { "language": "ru", "text": "Я не хочу принципиально оспаривать оценку, а хочу понять, над какими критериями мне конкретно работать." },
+                { "language": "ckb", "text": "نامەوێت نمرەکە بە بنەڕەت بپرسمەوە، بەڵکو دەمەوێت تێبگەم بە وردی لەسەر کام پێوەرەکان کار بکەم." },
+                { "language": "kmr", "text": "Ez naxwazim notê bi bingehî bipirsim, lê dixwazim fêm bikim li ser kîjan pîvanan bi taybetî bixebitim." },
+                { "language": "pl", "text": "Nie chcę zasadniczo kwestionować oceny, lecz zrozumieć, nad którymi kryteriami powinienem konkretnie pracować." },
+                { "language": "ro", "text": "Nu vreau să contest fundamental nota, ci să înțeleg asupra căror criterii ar trebui să lucrez concret." },
+                { "language": "sq", "text": "Nuk dua ta vë në dyshim notën në tërësi, por të kuptoj mbi cilat kritere duhet të punoj konkretisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort setzt einen konstruktiven Rahmen und vermeidet eine Notendebatte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer sets a constructive frame and avoids a debate about the grade." },
+                { "language": "fa", "text": "قوی: پاسخ چارچوبی سازنده می‌سازد و از بحث درباره نمره دوری می‌کند." },
+                { "language": "ar", "text": "قوي: تضع الإجابة إطاراً بنّاءً وتتجنب الجدل حول الدرجة." },
+                { "language": "tr", "text": "Güçlü: Yanıt yapıcı bir çerçeve kuruyor ve not tartışmasından kaçınıyor." },
+                { "language": "ru", "text": "Сильно: ответ задаёт конструктивную рамку и избегает спора об оценке." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە چوارچێوەیەکی سازندە دادەنێت و لە ناکۆکی لەسەر نمرە دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv çarçoveyeke avaker çêdike û ji nîqaşa notê dûr dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź tworzy konstruktywne ramy i unika sporu o ocenę." },
+                { "language": "ro", "text": "Puternic: răspunsul creează un cadru constructiv și evită o dezbatere despre notă." },
+                { "language": "sq", "text": "E fortë: përgjigjja krijon një kornizë konstruktive dhe shmang debatin për notën." }
+              ],
+              "explanationKey": "constructive-frame"
+            },
+            {
+              "id": "weak-grade-focus",
+              "text": "Ich verstehe die Note nicht ganz und hätte gern eine genauere Begründung.",
+              "translations": [
+                { "language": "en", "text": "I do not quite understand the grade and would like a more precise justification." },
+                { "language": "fa", "text": "نمره را کاملاً نمی‌فهمم و توضیح دقیق‌تری می‌خواهم." },
+                { "language": "ar", "text": "لا أفهم الدرجة تماماً وأود تبريراً أدق." },
+                { "language": "tr", "text": "Notu tam anlamıyorum ve daha ayrıntılı bir gerekçe isterim." },
+                { "language": "ru", "text": "Я не совсем понимаю оценку и хотел бы более точное обоснование." },
+                { "language": "ckb", "text": "نمرەکە بە تەواوی تێناگەم و ڕوونکردنەوەی وردترم دەوێت." },
+                { "language": "kmr", "text": "Ez notê bi tevahî fêm nakim û sedemek rasttir dixwazim." },
+                { "language": "pl", "text": "Nie do końca rozumiem ocenę i chciałbym dokładniejsze uzasadnienie." },
+                { "language": "ro", "text": "Nu înțeleg pe deplin nota și aș dori o justificare mai precisă." },
+                { "language": "sq", "text": "Nuk e kuptoj plotësisht notën dhe do të doja një arsyetim më të saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu eng: Die Antwort lenkt sofort auf die Note und nicht auf lernbare Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too narrow: The answer immediately focuses on the grade rather than learnable criteria." },
+                { "language": "fa", "text": "قابل تصور اما بیش از حد محدود است: پاسخ فوراً روی نمره تمرکز می‌کند، نه روی معیارهای قابل یادگیری." },
+                { "language": "ar", "text": "معقول لكنه ضيق جداً: تركز الإجابة فوراً على الدرجة لا على المعايير القابلة للتعلم." },
+                { "language": "tr", "text": "Makul ama fazla dar: Yanıt hemen nota odaklanıyor, öğrenilebilir ölçütlere değil." },
+                { "language": "ru", "text": "Правдоподобно, но слишком узко: ответ сразу фокусируется на оценке, а не на критериях для обучения." },
+                { "language": "ckb", "text": "پێش‌بینی‌کراوە بەڵام زۆر تەسکە: وەڵامەکە دەستبەجێ سەرنج دەخاتە سەر نمرە، نەک پێوەرە فێربوونییەکان." },
+                { "language": "kmr", "text": "Pêkan e lê pir teng e: Bersiv tavilê li ser notê disekine, ne li ser pîvanên fêrbûnbar." },
+                { "language": "pl", "text": "Plausible, ale zbyt wąskie: odpowiedź od razu kieruje rozmowę na ocenę, a nie na kryteria, nad którymi można pracować." },
+                { "language": "ro", "text": "Plauzibil, dar prea îngust: răspunsul se concentrează imediat pe notă, nu pe criterii care pot fi învățate." },
+                { "language": "sq", "text": "E besueshme, por shumë e ngushtë: përgjigjja fokusohet menjëherë te nota, jo te kriteret që mund të mësohen." }
+              ],
+              "explanationKey": "grade-focus"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Könnten Sie mir an konkreten Stellen zeigen, ob das Problem eher in Struktur, Übergängen oder Belegen liegt?",
+              "translations": [
+                { "language": "en", "text": "Could you show me in concrete places whether the problem lies more in structure, transitions, or evidence?" },
+                { "language": "fa", "text": "ممکن است در بخش‌های مشخص نشان دهید مشکل بیشتر در ساختار، گذارها یا شواهد است؟" },
+                { "language": "ar", "text": "هل يمكنك أن تريني في مواضع محددة هل تكمن المشكلة أكثر في البنية أم في الانتقالات أم في الأدلة؟" },
+                { "language": "tr", "text": "Somut yerlerde sorunun daha çok yapıda mı, geçişlerde mi yoksa kanıtlarda mı olduğunu gösterebilir misiniz?" },
+                { "language": "ru", "text": "Не могли бы вы показать на конкретных местах, проблема скорее в структуре, переходах или доказательствах?" },
+                { "language": "ckb", "text": "دەتوانیت لە شوێنە دیاریکراوەکاندا نیشان بدەیت کێشەکە زیاتر لە پێکهاتەدایە، لە گواستنەوەکاندا یان لە بەڵگەکاندا؟" },
+                { "language": "kmr", "text": "Hûn dikarin li cihên şênber nîşan bidin ka pirsgirêk zêdetir di avahî, veguhastin an delîlan de ye?" },
+                { "language": "pl", "text": "Czy mógłby Pan pokazać na konkretnych miejscach, czy problem leży raczej w strukturze, przejściach czy dowodach?" },
+                { "language": "ro", "text": "Ați putea să-mi arătați în locuri concrete dacă problema ține mai mult de structură, tranziții sau dovezi?" },
+                { "language": "sq", "text": "A mund të më tregoni në vende konkrete nëse problemi qëndron më shumë te struktura, kalimet apo provat?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Frage macht das abstrakte Kriterium überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The question makes the abstract criterion verifiable." },
+                { "language": "fa", "text": "قوی: سؤال، معیار انتزاعی را قابل بررسی می‌کند." },
+                { "language": "ar", "text": "قوي: يجعل السؤال المعيار المجرد قابلاً للفحص." },
+                { "language": "tr", "text": "Güçlü: Soru soyut ölçütü denetlenebilir hâle getiriyor." },
+                { "language": "ru", "text": "Сильно: вопрос делает абстрактный критерий проверяемым." },
+                { "language": "ckb", "text": "بەهێزە: پرسیارەکە پێوەری ئەبستراکت دەکات بە شتێکی پشکنراو." },
+                { "language": "kmr", "text": "Xurt e: Pirs pîvana abstrakt dike tiştekî kontrolbar." },
+                { "language": "pl", "text": "Mocne: pytanie czyni abstrakcyjne kryterium sprawdzalnym." },
+                { "language": "ro", "text": "Puternic: întrebarea face criteriul abstract verificabil." },
+                { "language": "sq", "text": "E fortë: pyetja e bën kriterin abstrakt të verifikueshëm." }
+              ],
+              "explanationKey": "criterion-to-example"
+            },
+            {
+              "id": "weak-more-detail",
+              "text": "Könnten Sie das Feedback bitte noch etwas ausführlicher erklären?",
+              "translations": [
+                { "language": "en", "text": "Could you please explain the feedback in a little more detail?" },
+                { "language": "fa", "text": "ممکن است لطفاً بازخورد را کمی مفصل‌تر توضیح دهید؟" },
+                { "language": "ar", "text": "هل يمكنك من فضلك شرح التقييم بتفصيل أكثر قليلاً؟" },
+                { "language": "tr", "text": "Geri bildirimi lütfen biraz daha ayrıntılı açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Не могли бы вы объяснить отзыв немного подробнее?" },
+                { "language": "ckb", "text": "دەتوانیت تکایە فیدباکەکە کەمێک وردتر ڕوون بکەیتەوە؟" },
+                { "language": "kmr", "text": "Hûn dikarin kerema xwe feedbackê hinekî berfirehtir rave bikin?" },
+                { "language": "pl", "text": "Czy mógłby Pan trochę dokładniej wyjaśnić tę informację zwrotną?" },
+                { "language": "ro", "text": "Ați putea, vă rog, să explicați feedbackul puțin mai detaliat?" },
+                { "language": "sq", "text": "A mund ta shpjegoni pak më hollësisht feedbackun, ju lutem?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber zu allgemein: Die Lehrperson weiß noch nicht, welche Art von Beispiel Sie brauchen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite but too general: The instructor still does not know what kind of example you need." },
+                { "language": "fa", "text": "مؤدبانه اما بیش از حد کلی است: مدرس هنوز نمی‌داند چه نوع مثالی نیاز دارید." },
+                { "language": "ar", "text": "مهذب لكنه عام جداً: لا يعرف المدرس بعد أي نوع من الأمثلة تحتاجه." },
+                { "language": "tr", "text": "Kibar ama fazla genel: Öğretici hâlâ ne tür örnek istediğinizi bilmiyor." },
+                { "language": "ru", "text": "Вежливо, но слишком общее: преподаватель всё ещё не знает, какой пример вам нужен." },
+                { "language": "ckb", "text": "ڕێزدارانەیە بەڵام زۆر گشتییە: مامۆستا هێشتا نازانێت چ جۆرە نموونەیەکت پێویستە." },
+                { "language": "kmr", "text": "Bi rêz e lê pir giştî ye: Mamoste hîn nizane hûn kîjan cure mînakê dixwazin." },
+                { "language": "pl", "text": "Uprzejme, ale zbyt ogólne: prowadzący nadal nie wie, jakiego przykładu Pan potrzebuje." },
+                { "language": "ro", "text": "Politicos, dar prea general: coordonatorul încă nu știe ce fel de exemplu vă trebuie." },
+                { "language": "sq", "text": "E sjellshme, por shumë e përgjithshme: pedagogu ende nuk e di çfarë lloj shembulli ju duhet." }
+              ],
+              "explanationKey": "too-general-feedback-request"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Es geht also nicht um mehr Theorie, sondern darum, ein Leitkonzept sichtbar mit der Analyse zu verbinden.",
+              "translations": [
+                { "language": "en", "text": "So it is not about more theory, but about visibly connecting a guiding concept to the analysis." },
+                { "language": "fa", "text": "پس مسئله نظریه بیشتر نیست، بلکه پیوند قابل مشاهده یک مفهوم راهنما با تحلیل است." },
+                { "language": "ar", "text": "إذن ليست المسألة في مزيد من النظرية، بل في ربط مفهوم موجه بالتحليل بشكل ظاهر." },
+                { "language": "tr", "text": "Yani mesele daha fazla teori değil, bir yönlendirici kavramı analizle görünür biçimde bağlamak." },
+                { "language": "ru", "text": "Значит, дело не в большем количестве теории, а в видимой связи направляющего понятия с анализом." },
+                { "language": "ckb", "text": "کەواتە بابەتەکە تیۆری زیاتر نییە، بەڵکو پەیوەستکردنی دیاری چەمکێکی ڕێنما بە شیکارییەکەیە." },
+                { "language": "kmr", "text": "Wê demê mijar ne zêdetir teorî ye, lê girêdana xuya ya têgeheke rêber bi analîzê re ye." },
+                { "language": "pl", "text": "Czyli nie chodzi o więcej teorii, lecz o widoczne powiązanie pojęcia przewodniego z analizą." },
+                { "language": "ro", "text": "Deci nu este vorba despre mai multă teorie, ci despre conectarea vizibilă a unui concept-ghid cu analiza." },
+                { "language": "sq", "text": "Pra nuk bëhet fjalë për më shumë teori, por për lidhjen e dukshme të një koncepti udhëzues me analizën." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort übersetzt Feedback in eine konkrete Revisionslogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer translates feedback into a concrete revision logic." },
+                { "language": "fa", "text": "قوی: پاسخ بازخورد را به منطق بازنویسی مشخص تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تحول الإجابة التقييم إلى منطق مراجعة ملموس." },
+                { "language": "tr", "text": "Güçlü: Yanıt geri bildirimi somut bir revizyon mantığına çeviriyor." },
+                { "language": "ru", "text": "Сильно: ответ переводит обратную связь в конкретную логику переработки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە فیدباک دەگۆڕێت بۆ لۆژیکی دەستکاریکردنی دیاریکراو." },
+                { "language": "kmr", "text": "Xurt e: Bersiv feedbackê vediguherîne mantiqa sererastkirina şênber." },
+                { "language": "pl", "text": "Mocne: odpowiedź przekłada informację zwrotną na konkretną logikę poprawy." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă feedbackul într-o logică de revizuire concretă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen feedbackun në një logjikë konkrete rishikimi." }
+              ],
+              "explanationKey": "feedback-to-revision"
+            },
+            {
+              "id": "weak-add-literature",
+              "text": "Dann sollte ich wahrscheinlich noch zwei oder drei zusätzliche Quellen einbauen.",
+              "translations": [
+                { "language": "en", "text": "Then I should probably add two or three additional sources." },
+                { "language": "fa", "text": "پس احتمالاً باید دو یا سه منبع دیگر اضافه کنم." },
+                { "language": "ar", "text": "إذن ربما ينبغي أن أضيف مصدرين أو ثلاثة مصادر إضافية." },
+                { "language": "tr", "text": "O zaman muhtemelen iki ya da üç ek kaynak eklemeliyim." },
+                { "language": "ru", "text": "Тогда, наверное, мне нужно добавить ещё два-три источника." },
+                { "language": "ckb", "text": "ئەوا لەوانەیە دەبێت دوو یان سێ سەرچاوەی تر زیاد بکەم." },
+                { "language": "kmr", "text": "Wê demê belkî divê ez du an sê çavkaniyên din zêde bikim." },
+                { "language": "pl", "text": "W takim razie prawdopodobnie powinienem dodać jeszcze dwa albo trzy źródła." },
+                { "language": "ro", "text": "Atunci probabil ar trebui să adaug încă două sau trei surse." },
+                { "language": "sq", "text": "Atëherë ndoshta duhet të shtoj edhe dy ose tre burime shtesë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Naheliegend, aber falsch priorisiert: Das Problem betrifft die Funktion der Theorie, nicht ihre Menge.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but wrongly prioritized: The problem concerns the function of theory, not its quantity." },
+                { "language": "fa", "text": "قابل تصور اما اولویت‌بندی نادرست است: مشکل به نقش نظریه مربوط است، نه به مقدار آن." },
+                { "language": "ar", "text": "مفهوم لكنه يضع الأولوية خطأ: المشكلة تتعلق بوظيفة النظرية لا بكميتها." },
+                { "language": "tr", "text": "Anlaşılır ama yanlış önceliklendirilmiş: Sorun teorinin işleviyle ilgilidir, miktarıyla değil." },
+                { "language": "ru", "text": "Понятно, но приоритет неверный: проблема в функции теории, а не в её количестве." },
+                { "language": "ckb", "text": "تێگەیشتراوە بەڵام ئەولەویەت هەڵەیە: کێشەکە پەیوەندیدارە بە ڕۆڵی تیۆری، نەک بە بڕەکەی." },
+                { "language": "kmr", "text": "Têgihiştbar e lê pêşengî şaş e: Pirsgirêk bi fonksiyona teoriyê ve girêdayî ye, ne bi qaseya wê." },
+                { "language": "pl", "text": "Zrozumiałe, ale źle ustawione priorytetowo: problem dotyczy funkcji teorii, a nie jej ilości." },
+                { "language": "ro", "text": "De înțeles, dar prioritizat greșit: problema privește funcția teoriei, nu cantitatea ei." },
+                { "language": "sq", "text": "E kuptueshme, por me prioritet të gabuar: problemi lidhet me funksionin e teorisë, jo me sasinë e saj." }
+              ],
+              "explanationKey": "quantity-vs-function"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Meine Priorität ist, die vorhandenen Begriffe konsequenter mit der Analyse zu verknüpfen. Wo wird der Bruch am deutlichsten?",
+              "translations": [
+                { "language": "en", "text": "My priority is to link the existing terms more consistently with the analysis. Where is the break most visible?" },
+                { "language": "fa", "text": "اولویت من این است که مفاهیم موجود را منسجم‌تر با تحلیل پیوند بدهم. این گسست کجا از همه روشن‌تر است؟" },
+                { "language": "ar", "text": "أولويتي هي ربط المصطلحات الموجودة بالتحليل بشكل أكثر اتساقاً. أين يظهر الانقطاع بأوضح صورة؟" },
+                { "language": "tr", "text": "Önceliğim mevcut kavramları analizle daha tutarlı bağlamak. Kopukluk en çok nerede görünür?" },
+                { "language": "ru", "text": "Мой приоритет — последовательнее связать имеющиеся понятия с анализом. Где разрыв виден сильнее всего?" },
+                { "language": "ckb", "text": "ئەولەویەتم ئەوەیە چەمکە هەنووکەییەکان بە پەیوەستبوونی زیاتر بە شیکاری ببەستم. دابڕانەکە لە کوێ زۆرترین ڕوونی هەیە؟" },
+                { "language": "kmr", "text": "Pêşengiya min ew e ku têgehên heyî bi analîzê re domdartir girê bidim. Qutbûn li ku derê herî zêde xuya ye?" },
+                { "language": "pl", "text": "Moim priorytetem jest konsekwentniejsze powiązanie istniejących pojęć z analizą. Gdzie pęknięcie jest najbardziej widoczne?" },
+                { "language": "ro", "text": "Prioritatea mea este să leg mai consecvent conceptele existente de analiză. Unde este ruptura cea mai vizibilă?" },
+                { "language": "sq", "text": "Prioriteti im është t'i lidh më vazhdimisht konceptet ekzistuese me analizën. Ku duket më qartë shkëputja?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort fasst die Priorität zusammen und bittet um den wirkungsvollsten Ansatzpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer summarizes the priority and asks for the most effective point to work on." },
+                { "language": "fa", "text": "قوی: پاسخ اولویت را خلاصه می‌کند و درباره مؤثرترین نقطه کار می‌پرسد." },
+                { "language": "ar", "text": "قوي: تلخص الإجابة الأولوية وتسأل عن أكثر نقطة فعالة للعمل عليها." },
+                { "language": "tr", "text": "Güçlü: Yanıt önceliği özetliyor ve en etkili çalışma noktasını soruyor." },
+                { "language": "ru", "text": "Сильно: ответ резюмирует приоритет и спрашивает о наиболее эффективной точке работы." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئەولەویەت پوختە دەکات و لە کاریگەرترین خاڵی کارکردن دەپرسێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pêşengiyê kurt dike û li ser xala herî bibandor dipirse." },
+                { "language": "pl", "text": "Mocne: odpowiedź podsumowuje priorytet i pyta o najskuteczniejszy punkt pracy." },
+                { "language": "ro", "text": "Puternic: răspunsul rezumă prioritatea și întreabă despre cel mai eficient punct de lucru." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmbledh prioritetin dhe pyet për pikën më efektive të punës." }
+              ],
+              "explanationKey": "priority-and-target"
+            },
+            {
+              "id": "weak-general-plan",
+              "text": "Ich werde die Arbeit insgesamt noch einmal gründlich überarbeiten.",
+              "translations": [
+                { "language": "en", "text": "I will revise the whole paper thoroughly again." },
+                { "language": "fa", "text": "کل مقاله را دوباره به طور کامل بازنویسی می‌کنم." },
+                { "language": "ar", "text": "سأراجع البحث كله مرة أخرى بشكل شامل." },
+                { "language": "tr", "text": "Çalışmanın tamamını tekrar kapsamlı biçimde gözden geçireceğim." },
+                { "language": "ru", "text": "Я ещё раз основательно переработаю всю работу." },
+                { "language": "ckb", "text": "هەموو نووسینەکە دووبارە بە تەواوی دەستکاری دەکەم." },
+                { "language": "kmr", "text": "Ez tevahiya nivîsê careke din bi hûrgilî sererast dikim." },
+                { "language": "pl", "text": "Jeszcze raz gruntownie poprawię całą pracę." },
+                { "language": "ro", "text": "Voi revizui din nou întreaga lucrare în mod temeinic." },
+                { "language": "sq", "text": "Do ta rishikoj përsëri të gjithë punimin në mënyrë të plotë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu breit: Die Antwort klingt fleißig, benennt aber keine Priorität und keinen überprüfbaren Abschnitt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad: The answer sounds diligent but names neither a priority nor a verifiable section." },
+                { "language": "fa", "text": "بیش از حد گسترده است: پاسخ کوشا به نظر می‌رسد، اما نه اولویت و نه بخش قابل بررسی را نام می‌برد." },
+                { "language": "ar", "text": "واسع جداً: تبدو الإجابة مجتهدة لكنها لا تسمي أولوية ولا قسماً قابلاً للفحص." },
+                { "language": "tr", "text": "Fazla geniş: Yanıt çalışkan görünür, ama ne öncelik ne de denetlenebilir bölüm belirtir." },
+                { "language": "ru", "text": "Слишком широко: ответ звучит старательно, но не называет ни приоритет, ни проверяемый раздел." },
+                { "language": "ckb", "text": "زۆر فراوانە: وەڵامەکە کوشەرانە دەنگ دەدات، بەڵام نە ئەولەویەت و نە بەشی پشکنراو ناو دەبات." },
+                { "language": "kmr", "text": "Pir berfireh e: Bersiv xebatkar dixuye, lê ne pêşengî û ne beşa kontrolbar bi nav dike." },
+                { "language": "pl", "text": "Zbyt szeroko: odpowiedź brzmi pracowicie, ale nie nazywa ani priorytetu, ani sprawdzalnego fragmentu." },
+                { "language": "ro", "text": "Prea larg: răspunsul pare conștiincios, dar nu numește nici o prioritate, nici o secțiune verificabilă." },
+                { "language": "sq", "text": "Shumë e gjerë: përgjigjja tingëllon e zellshme, por nuk përmend as prioritet, as pjesë të verifikueshme." }
+              ],
+              "explanationKey": "too-broad-plan"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich kürze die Beschreibung, nehme die Forschungsfrage wieder auf und erkläre den Beitrag des Beispiels zur Antwort.",
+              "translations": [
+                { "language": "en", "text": "I shorten the description, take up the research question again, and explain the example's contribution to the answer." },
+                { "language": "fa", "text": "توصیف را کوتاه می‌کنم، پرسش پژوهش را دوباره مطرح می‌کنم و سهم مثال در پاسخ را توضیح می‌دهم." },
+                { "language": "ar", "text": "أقصر الوصف، وأعود إلى سؤال البحث، وأوضح إسهام المثال في الإجابة." },
+                { "language": "tr", "text": "Betimlemeyi kısaltır, araştırma sorusunu yeniden ele alır ve örneğin yanıta katkısını açıklarım." },
+                { "language": "ru", "text": "Я сокращаю описание, снова обращаюсь к исследовательскому вопросу и объясняю вклад примера в ответ." },
+                { "language": "ckb", "text": "وەسفەکە کورت دەکەم، پرسیاری توێژینەوە دووبارە دەهێنمەوە و بەشداری نموونەکە لە وەڵامدا ڕوون دەکەمەوە." },
+                { "language": "kmr", "text": "Ez ravekirinê kurt dikim, pirsa lêkolînê dîsa digirim û beşdariya mînakê ji bo bersivê rave dikim." },
+                { "language": "pl", "text": "Skracam opis, wracam do pytania badawczego i wyjaśniam wkład przykładu w odpowiedź." },
+                { "language": "ro", "text": "Scurtez descrierea, reiau întrebarea de cercetare și explic contribuția exemplului la răspuns." },
+                { "language": "sq", "text": "E shkurtoj përshkrimin, rikthej pyetjen kërkimore dhe shpjegoj kontributin e shembullit në përgjigje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort enthält einen konkreten, prüfbaren Revisionsschritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer contains a concrete, verifiable revision step." },
+                { "language": "fa", "text": "قوی: پاسخ یک گام بازنویسی مشخص و قابل بررسی دارد." },
+                { "language": "ar", "text": "قوي: تحتوي الإجابة على خطوة مراجعة ملموسة وقابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: Yanıt somut ve denetlenebilir bir revizyon adımı içeriyor." },
+                { "language": "ru", "text": "Сильно: ответ содержит конкретный и проверяемый шаг переработки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەنگاوێکی دەستکاریکردنی دیاریکراو و پشکنراو لەخۆ دەگرێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv gaveke sererastkirina şênber û kontrolbar dihewîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź zawiera konkretny, sprawdzalny krok poprawy." },
+                { "language": "ro", "text": "Puternic: răspunsul conține un pas de revizuire concret și verificabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmban një hap konkret dhe të verifikueshëm rishikimi." }
+              ],
+              "explanationKey": "concrete-revision"
+            },
+            {
+              "id": "weak-style-only",
+              "text": "Ich werde den Abschnitt sprachlich glätten und ein paar Sätze umstellen.",
+              "translations": [
+                { "language": "en", "text": "I will smooth the language of the section and rearrange a few sentences." },
+                { "language": "fa", "text": "زبان این بخش را روان‌تر می‌کنم و چند جمله را جابه‌جا می‌کنم." },
+                { "language": "ar", "text": "سأحسن لغة القسم وأعيد ترتيب بعض الجمل." },
+                { "language": "tr", "text": "Bölümün dilini akıcılaştırır ve birkaç cümlenin yerini değiştiririm." },
+                { "language": "ru", "text": "Я сглажу язык раздела и переставлю несколько предложений." },
+                { "language": "ckb", "text": "زمانی بەشەکە ڕەوانتر دەکەم و چەند ڕستەیەک دەگۆڕمەوە." },
+                { "language": "kmr", "text": "Ez zimanê beşê xweştir dikim û çend hevokan diguherînim." },
+                { "language": "pl", "text": "Wygładzę język tego fragmentu i przestawię kilka zdań." },
+                { "language": "ro", "text": "Voi netezi limbajul secțiunii și voi rearanja câteva propoziții." },
+                { "language": "sq", "text": "Do ta lëmoj gjuhën e pjesës dhe do të riorganizoj disa fjali." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu oberflächlich: Stil kann helfen, löst aber nicht die fehlende Rückbindung an die Forschungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too superficial: Style may help, but it does not solve the missing link back to the research question." },
+                { "language": "fa", "text": "بیش از حد سطحی است: سبک می‌تواند کمک کند، اما نبود پیوند با پرسش پژوهش را حل نمی‌کند." },
+                { "language": "ar", "text": "سطحي جداً: قد يساعد الأسلوب، لكنه لا يحل غياب الربط بسؤال البحث." },
+                { "language": "tr", "text": "Fazla yüzeysel: Üslup yardımcı olabilir, ama araştırma sorusuna eksik bağlantıyı çözmez." },
+                { "language": "ru", "text": "Слишком поверхностно: стиль может помочь, но не решает отсутствующую связь с исследовательским вопросом." },
+                { "language": "ckb", "text": "زۆر سەرەکییە: ستایل دەتوانێت یارمەتی بدات، بەڵام نەبوونی پەیوەندی بە پرسیاری توێژینەوە چارەسەر ناکات." },
+                { "language": "kmr", "text": "Pir rûxwar e: Stil dikare alîkar be, lê girêdana kêm bi pirsa lêkolînê çareser nake." },
+                { "language": "pl", "text": "Zbyt powierzchowne: styl może pomóc, ale nie rozwiązuje braku powiązania z pytaniem badawczym." },
+                { "language": "ro", "text": "Prea superficial: stilul poate ajuta, dar nu rezolvă lipsa legăturii cu întrebarea de cercetare." },
+                { "language": "sq", "text": "Shumë sipërfaqësore: stili mund të ndihmojë, por nuk zgjidh mungesën e lidhjes me pyetjen kërkimore." }
+              ],
+              "explanationKey": "style-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich überarbeite den Theorieabschluss, die Rückbindung im dritten Analyseabschnitt und prüfe danach die argumentative Aufgabe jedes Absatzes.",
+              "translations": [
+                { "language": "en", "text": "I will revise the end of the theory section, the link back in the third analysis section, and then check each paragraph's argumentative function." },
+                { "language": "fa", "text": "پایان بخش نظریه، پیوند در بخش سوم تحلیل را بازنویسی می‌کنم و سپس وظیفه استدلالی هر پاراگراف را بررسی می‌کنم." },
+                { "language": "ar", "text": "سأراجع خاتمة قسم النظرية والربط في القسم التحليلي الثالث، ثم أتحقق من الوظيفة الحجاجية لكل فقرة." },
+                { "language": "tr", "text": "Kuram bölümünün sonunu, üçüncü analiz bölümündeki geri bağlantıyı gözden geçirir ve ardından her paragrafın argümantatif işlevini kontrol ederim." },
+                { "language": "ru", "text": "Я переработаю завершение теоретического раздела, связь в третьем аналитическом разделе и затем проверю аргументативную функцию каждого абзаца." },
+                { "language": "ckb", "text": "کۆتایی بەشی تیۆری و پەیوەندی لە بەشی سێیەمی شیکاری دەستکاری دەکەم و پاشان ئەرکی بەڵگەهێنانی هەر پەڕەگرافێک دەپشکنم." },
+                { "language": "kmr", "text": "Ez dawiya beşa teoriyê, girêdana di beşa sêyem a analîzê de sererast dikim û paşê fonksiyona argumanî ya her paragrafê kontrol dikim." },
+                { "language": "pl", "text": "Poprawię zakończenie części teoretycznej, powiązanie w trzeciej części analitycznej, a potem sprawdzę funkcję argumentacyjną każdego akapitu." },
+                { "language": "ro", "text": "Voi revizui finalul secțiunii teoretice, legătura din a treia secțiune de analiză și apoi voi verifica funcția argumentativă a fiecărui paragraf." },
+                { "language": "sq", "text": "Do të rishikoj fundin e pjesës teorike, lidhjen në pjesën e tretë të analizës dhe më pas do të kontrolloj funksionin argumentues të çdo paragrafi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung ist konkret, priorisiert und zeitlich umsetzbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary is concrete, prioritized, and feasible within a timeframe." },
+                { "language": "fa", "text": "قوی: خلاصه مشخص، اولویت‌بندی‌شده و از نظر زمانی قابل اجراست." },
+                { "language": "ar", "text": "قوي: الملخص محدد ومرتب حسب الأولوية وقابل للتنفيذ زمنياً." },
+                { "language": "tr", "text": "Güçlü: Özet somut, önceliklendirilmiş ve zaman içinde uygulanabilir." },
+                { "language": "ru", "text": "Сильно: резюме конкретное, приоритизированное и реализуемое во времени." },
+                { "language": "ckb", "text": "بەهێزە: پوختەکە دیاریکراوە، ئەولەویەت‌بەندی کراوە و لە ڕووی کاتەوە جێبەجێکراوە." },
+                { "language": "kmr", "text": "Xurt e: Kurte şênber, bi pêşengî û di demê de pêkan e." },
+                { "language": "pl", "text": "Mocne: podsumowanie jest konkretne, uporządkowane priorytetowo i wykonalne w czasie." },
+                { "language": "ro", "text": "Puternic: rezumatul este concret, prioritizat și realizabil în timp." },
+                { "language": "sq", "text": "E fortë: përmbledhja është konkrete, e prioritizuar dhe e zbatueshme në kohë." }
+              ],
+              "explanationKey": "action-plan-summary"
+            },
+            {
+              "id": "weak-intention-only",
+              "text": "Ich werde versuchen, die Argumentation insgesamt stringenter zu machen.",
+              "translations": [
+                { "language": "en", "text": "I will try to make the argumentation more stringent overall." },
+                { "language": "fa", "text": "سعی می‌کنم استدلال را به طور کلی منسجم‌تر کنم." },
+                { "language": "ar", "text": "سأحاول أن أجعل الحجاج عموماً أكثر إحكاماً." },
+                { "language": "tr", "text": "Argümantasyonu genel olarak daha tutarlı hâle getirmeye çalışacağım." },
+                { "language": "ru", "text": "Я постараюсь сделать аргументацию в целом более строгой." },
+                { "language": "ckb", "text": "هەوڵ دەدەم بەڵگەهێنانەکە بە گشتی پەیوەستتر بکەم." },
+                { "language": "kmr", "text": "Ez ê hewl bidim argumantasyonê bi giştî domdartir bikim." },
+                { "language": "pl", "text": "Postaram się ogólnie uczynić argumentację bardziej spójną." },
+                { "language": "ro", "text": "Voi încerca să fac argumentarea mai stringentă în ansamblu." },
+                { "language": "sq", "text": "Do të përpiqem ta bëj argumentimin në përgjithësi më të lidhur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unkonkret: Die Absicht ist richtig, aber ohne Abschnitt, Handlung und Prüfkriterium schwer umsetzbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unspecific: The intention is right, but without a section, action, and check criterion it is hard to implement." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: نیت درست است، اما بدون بخش، اقدام و معیار بررسی، اجرای آن سخت است." },
+                { "language": "ar", "text": "غير محدد كفاية: النية صحيحة، لكنها صعبة التنفيذ من دون قسم وإجراء ومعيار فحص." },
+                { "language": "tr", "text": "Fazla belirsiz: Niyet doğru, ama bölüm, eylem ve kontrol ölçütü olmadan uygulaması zor." },
+                { "language": "ru", "text": "Слишком неконкретно: намерение верное, но без раздела, действия и критерия проверки его трудно реализовать." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: مەبەستەکە دروستە، بەڵام بەبێ بەش، کردار و پێوەری پشکنین جێبەجێکردنی قورسە." },
+                { "language": "kmr", "text": "Pir nezelal e: Armanc rast e, lê bê beş, kiryar û pîvana kontrolê pêkanîna wê dijwar e." },
+                { "language": "pl", "text": "Zbyt mało konkretne: intencja jest dobra, ale bez fragmentu, działania i kryterium sprawdzenia trudno ją wdrożyć." },
+                { "language": "ro", "text": "Prea nespecific: intenția este corectă, dar fără secțiune, acțiune și criteriu de verificare este greu de aplicat." },
+                { "language": "sq", "text": "Shumë e pasaktë: qëllimi është i drejtë, por pa pjesë, veprim dhe kriter kontrolli është e vështirë të zbatohet." }
+              ],
+              "explanationKey": "intention-only"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy-note",
+          "text": "Eine gute Nachbesprechung beginnt mit Lerninteresse, nicht mit Verteidigung oder Notenverhandlung.",
+          "translations": [
+            { "language": "en", "text": "A good feedback discussion starts with learning interest, not with defense or grade negotiation." },
+            { "language": "fa", "text": "گفت‌وگوی بازخورد خوب با علاقه به یادگیری شروع می‌شود، نه با دفاع یا چانه‌زنی درباره نمره." },
+            { "language": "ar", "text": "تبدأ مناقشة التقييم الجيدة باهتمام بالتعلم، لا بالدفاع أو التفاوض حول الدرجة." },
+            { "language": "tr", "text": "İyi bir geri bildirim görüşmesi savunmayla ya da not pazarlığıyla değil, öğrenme ilgisiyle başlar." },
+            { "language": "ru", "text": "Хорошее обсуждение обратной связи начинается с интереса к обучению, а не с защиты или переговоров об оценке." },
+            { "language": "ckb", "text": "گفتوگۆی فیدباکی باش بە حەزی فێربوون دەست پێ دەکات، نەک بە بەرگری یان گفتوگۆی نمرە." },
+            { "language": "kmr", "text": "Gotûbêja feedbackê ya baş bi eleqeya fêrbûnê dest pê dike, ne bi parastin an bazirganiya notê." },
+            { "language": "pl", "text": "Dobre omówienie feedbacku zaczyna się od zainteresowania nauką, a nie od obrony lub negocjowania oceny." },
+            { "language": "ro", "text": "O discuție bună de feedback începe cu interes pentru învățare, nu cu apărare sau negocierea notei." },
+            { "language": "sq", "text": "Një diskutim i mirë feedbacku fillon me interes për të mësuar, jo me mbrojtje ose negocim note." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criteria-note",
+          "text": "Abstrakte Bewertungskriterien werden erst lernbar, wenn sie an konkreten Textstellen sichtbar gemacht werden.",
+          "translations": [
+            { "language": "en", "text": "Abstract assessment criteria become learnable only when they are made visible in concrete passages." },
+            { "language": "fa", "text": "معیارهای ارزیابی انتزاعی فقط وقتی قابل یادگیری می‌شوند که در بخش‌های مشخص متن قابل مشاهده شوند." },
+            { "language": "ar", "text": "لا تصبح معايير التقييم المجردة قابلة للتعلم إلا عندما تُظهر في مواضع نصية محددة." },
+            { "language": "tr", "text": "Soyut değerlendirme ölçütleri ancak somut metin yerlerinde görünür kılındığında öğrenilebilir olur." },
+            { "language": "ru", "text": "Абстрактные критерии оценки становятся обучающими только тогда, когда видны в конкретных местах текста." },
+            { "language": "ckb", "text": "پێوەرە ئەبستراکتەکانی هەڵسەنگاندن تەنها کاتێک فێربوونین کە لە شوێنە دیاریکراوەکانی دەقەکەدا دیار بکرێن." },
+            { "language": "kmr", "text": "Pîvanên nirxandinê yên abstrakt tenê dema dibin fêrbûnbar ku li cihên şênber ên nivîsê xuya bibin." },
+            { "language": "pl", "text": "Abstrakcyjne kryteria oceny stają się możliwe do nauczenia dopiero wtedy, gdy są widoczne w konkretnych miejscach tekstu." },
+            { "language": "ro", "text": "Criteriile abstracte de evaluare devin învățabile doar când sunt făcute vizibile în pasaje concrete." },
+            { "language": "sq", "text": "Kriteret abstrakte të vlerësimit bëhen të mësueshme vetëm kur bëhen të dukshme në pjesë konkrete të tekstit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "revision-note",
+          "text": "C1-Feedback verlangt oft keine größere Stoffmenge, sondern eine klarere Funktion der vorhandenen Begriffe.",
+          "translations": [
+            { "language": "en", "text": "C1 feedback often does not require more material, but a clearer function for the terms already present." },
+            { "language": "fa", "text": "بازخورد سطح C1 اغلب مقدار بیشتری از محتوا نمی‌خواهد، بلکه نقش روشن‌تر مفاهیم موجود را می‌خواهد." },
+            { "language": "ar", "text": "لا يتطلب تقييم C1 غالباً مادة أكثر، بل وظيفة أوضح للمفاهيم الموجودة." },
+            { "language": "tr", "text": "C1 geri bildirimi çoğu zaman daha fazla malzeme değil, mevcut kavramların daha açık bir işlevini gerektirir." },
+            { "language": "ru", "text": "Обратная связь уровня C1 часто требует не большего объёма материала, а более ясной функции уже имеющихся понятий." },
+            { "language": "ckb", "text": "فیدباکی C1 زۆرجار بڕی زیاتر ناوەڕۆک ناوێت، بەڵکو ڕۆڵی ڕوونتری چەمکە هەنووکەییەکان دەوێت." },
+            { "language": "kmr", "text": "Feedbacka C1 gelek car ne materyala zêdetir dixwaze, lê fonksiyona zelaltir a têgehên heyî." },
+            { "language": "pl", "text": "Feedback na poziomie C1 często nie wymaga większej ilości materiału, lecz jaśniejszej funkcji istniejących pojęć." },
+            { "language": "ro", "text": "Feedbackul C1 nu cere adesea mai mult material, ci o funcție mai clară a conceptelor existente." },
+            { "language": "sq", "text": "Feedbacku i nivelit C1 shpesh nuk kërkon më shumë material, por një funksion më të qartë të koncepteve ekzistuese." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "action-note",
+          "text": "Ein brauchbarer Verbesserungsplan benennt Abschnitt, Handlung und Prüffrage.",
+          "translations": [
+            { "language": "en", "text": "A useful improvement plan names the section, the action, and the checking question." },
+            { "language": "fa", "text": "برنامه بهبود قابل استفاده، بخش، اقدام و سؤال بررسی را نام می‌برد." },
+            { "language": "ar", "text": "تسمي خطة التحسين المفيدة القسم والإجراء وسؤال الفحص." },
+            { "language": "tr", "text": "Kullanışlı bir gelişim planı bölümü, eylemi ve kontrol sorusunu adlandırır." },
+            { "language": "ru", "text": "Полезный план улучшения называет раздел, действие и проверочный вопрос." },
+            { "language": "ckb", "text": "پلانی باشترکردنی بەکارهێنراو بەش، کردار و پرسیاری پشکنین ناو دەبات." },
+            { "language": "kmr", "text": "Plana baştirkirinê ya bikaranînbar beş, kiryar û pirsa kontrolê bi nav dike." },
+            { "language": "pl", "text": "Użyteczny plan poprawy nazywa fragment, działanie i pytanie kontrolne." },
+            { "language": "ro", "text": "Un plan util de îmbunătățire numește secțiunea, acțiunea și întrebarea de verificare." },
+            { "language": "sq", "text": "Një plan i dobishëm përmirësimi emërton pjesën, veprimin dhe pyetjen e kontrollit." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing-note",
+          "text": "Eine starke Schlussformulierung macht aus Feedback einen überprüfbaren Arbeitsplan.",
+          "translations": [
+            { "language": "en", "text": "A strong closing formulation turns feedback into a verifiable work plan." },
+            { "language": "fa", "text": "فرمول‌بندی پایانی قوی، بازخورد را به برنامه کاری قابل بررسی تبدیل می‌کند." },
+            { "language": "ar", "text": "تحول الصياغة الختامية القوية التقييم إلى خطة عمل قابلة للفحص." },
+            { "language": "tr", "text": "Güçlü bir kapanış formülasyonu geri bildirimi denetlenebilir bir çalışma planına dönüştürür." },
+            { "language": "ru", "text": "Сильная заключительная формулировка превращает обратную связь в проверяемый рабочий план." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی بەهێز فیدباک دەگۆڕێت بۆ پلانی کاری پشکنراو." },
+            { "language": "kmr", "text": "Formulekirina dawî ya xurt feedbackê vediguherîne plana xebatê ya kontrolbar." },
+            { "language": "pl", "text": "Mocne zakończenie przekształca feedback w sprawdzalny plan pracy." },
+            { "language": "ro", "text": "O formulare finală puternică transformă feedbackul într-un plan de lucru verificabil." },
+            { "language": "sq", "text": "Një formulim i fortë përmbyllës e kthen feedbackun në një plan pune të verifikueshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "exam-feedback-discussion",
+          "placement": "header",
+          "purpose": "Show a neutral university feedback discussion with adult student and instructor reviewing an abstract marked paper without readable personal data.",
+          "altText": "An adult student and a seminar instructor discuss feedback on an abstract marked paper at a university table, with no readable names or grades.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An adult student and a seminar instructor discuss feedback on an abstract marked paper at a university table, with no readable names or grades." },
+            { "language": "fa", "text": "یک دانشجوی بزرگسال و مدرس سمینار دور میز دانشگاهی درباره بازخورد یک برگه علامت‌گذاری‌شده انتزاعی گفت‌وگو می‌کنند، بدون نام یا نمره خوانا." },
+            { "language": "ar", "text": "طالب بالغ ومدرس ندوة يناقشان تقييماً على ورقة مصححة بشكل تجريدي حول طاولة جامعية، من دون أسماء أو درجات مقروءة." },
+            { "language": "tr", "text": "Yetişkin bir öğrenci ve seminer yürütücüsü, okunabilir ad veya not olmadan, üniversite masasında soyut biçimde işaretlenmiş bir çalışma hakkında geri bildirim konuşuyor." },
+            { "language": "ru", "text": "Взрослый студент и ведущий семинара обсуждают обратную связь по абстрактно размеченной работе за университетским столом, без читаемых имён или оценок." },
+            { "language": "ckb", "text": "خوێندکارێکی گەورەساڵ و مامۆستای سیمینار لە دەوری مێزی زانکۆدا لەسەر فیدباکی پەڕەیەکی نیشان‌کراوی ئەبستراکت گفتوگۆ دەکەن، بەبێ ناو یان نمرەی خوێندراو." },
+            { "language": "kmr", "text": "Xwendekarekî mezin û mamosteyê semînerê li ser maseya zanîngehê li ser feedbacka kaxezeke abstrakt nîşankirî diaxivin, bê nav an notên xwendinbar." },
+            { "language": "pl", "text": "Dorosły student i prowadzący seminarium omawiają feedback do abstrakcyjnie oznaczonej pracy przy stole uniwersyteckim, bez czytelnych nazwisk ani ocen." },
+            { "language": "ro", "text": "Un student adult și coordonatorul seminarului discută feedbackul pe o lucrare marcată abstract la o masă universitară, fără nume sau note lizibile." },
+            { "language": "sq", "text": "Një student i rritur dhe drejtuesi i seminarit diskutojnë feedbackun mbi një punim të shënuar në mënyrë abstrakte në një tavolinë universitare, pa emra ose nota të lexueshme." }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult student and a seminar instructor discussing feedback at a university table, abstract marked paper with no readable text or grades, calm constructive atmosphere, German higher-education setting, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

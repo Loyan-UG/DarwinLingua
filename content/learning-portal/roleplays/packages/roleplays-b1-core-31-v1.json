@@ -1,0 +1,932 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-31-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 31 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 31",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-eine-kulturelle-irritation-ansprechen",
+      "linkedDialogueSlug": null,
+      "title": "Eine kulturelle Irritation ansprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Addressing a cultural irritation" },
+        { "language": "fa", "text": "مطرح کردن یک ابهام فرهنگی" },
+        { "language": "ar", "text": "طرح أمر ثقافي مُربك" },
+        { "language": "tr", "text": "Kültürel bir şaşkınlığı dile getirmek" },
+        { "language": "ru", "text": "Обсудить культурное недоумение" },
+        { "language": "ckb", "text": "باسکردنی شتێکی کولتووریی سەرسوڕهێنەر" },
+        { "language": "kmr", "text": "Tiştekî çandî yê şaşker gotin" },
+        { "language": "pl", "text": "Poruszenie kulturowej niejasności" },
+        { "language": "ro", "text": "Abordarea unei nedumeriri culturale" },
+        { "language": "sq", "text": "Trajtimi i një paqartësie kulturore" }
+      ],
+      "description": "Nach einem Gruppentreffen bist du unsicher, warum die Aufgaben sehr direkt verteilt wurden. Du fragst neugierig nach, ohne zu urteilen oder zu verallgemeinern.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a group meeting, you are unsure why the tasks were assigned very directly. You ask with curiosity, without judging or generalizing." },
+        { "language": "fa", "text": "بعد از یک دیدار گروهی مطمئن نیستی چرا کارها خیلی مستقیم تقسیم شدند. با کنجکاوی می‌پرسی، بدون قضاوت یا کلی‌گویی." },
+        { "language": "ar", "text": "بعد لقاء جماعي لست متأكداً لماذا تم توزيع المهام بشكل مباشر جداً. تسأل بفضول من دون حكم أو تعميم." },
+        { "language": "tr", "text": "Bir grup buluşmasından sonra görevlerin neden çok doğrudan dağıtıldığından emin değilsin. Yargılamadan veya genellemeden merakla soruyorsun." },
+        { "language": "ru", "text": "После групповой встречи ты не уверен, почему задачи распределили очень прямо. Ты спрашиваешь с любопытством, без осуждения и обобщений." },
+        { "language": "ckb", "text": "دوای دیدارێکی گرووپی، دڵنیا نیت بۆچی ئەرکەکان زۆر ڕاستەوخۆ دابەش کران. بە حەزی زانینەوە دەپرسیت، بێ دادوەری و بێ گشتی‌کردن." },
+        { "language": "kmr", "text": "Piştî hevdîtineke komê, tu ne ewle yî çima peywir pir rasterast hatin dabeşkirin. Tu bi meraq dipirsî, bê dadbarî û bê giştîkirin." },
+        { "language": "pl", "text": "Po spotkaniu grupowym nie jesteś pewien, dlaczego zadania rozdzielono bardzo bezpośrednio. Pytasz z ciekawością, bez oceniania i uogólniania." },
+        { "language": "ro", "text": "După o întâlnire de grup, nu ești sigur de ce sarcinile au fost împărțite foarte direct. Întrebi cu curiozitate, fără judecată sau generalizare." },
+        { "language": "sq", "text": "Pas një takimi grupi, nuk je i sigurt pse detyrat u ndanë shumë drejtpërdrejt. Pyet me kureshtje, pa gjykuar ose përgjithësuar." }
+      ],
+      "learnerGoal": "Frag respektvoll nach einer sozialen Situation, beschreibe deine Beobachtung und vermeide pauschale Aussagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask respectfully about a social situation, describe your observation, and avoid sweeping statements." },
+        { "language": "fa", "text": "محترمانه درباره یک موقعیت اجتماعی بپرس، مشاهده‌ات را توضیح بده و از قضاوت کلی پرهیز کن." },
+        { "language": "ar", "text": "اسأل باحترام عن موقف اجتماعي، وصف ملاحظتك، وتجنب الأحكام العامة." },
+        { "language": "tr", "text": "Sosyal bir durumu saygıyla sor, gözlemini açıkla ve genelleyici ifadelerden kaçın." },
+        { "language": "ru", "text": "Уважительно спроси о социальной ситуации, опиши своё наблюдение и избегай общих утверждений." },
+        { "language": "ckb", "text": "بە ڕێزەوە دەربارەی دۆخێکی کۆمەڵایەتی بپرسە، تێبینیت ڕوون بکەرەوە و لە گوتەی گشتی دوور بکەوە." },
+        { "language": "kmr", "text": "Bi rêz li ser rewşeke civakî bipirse, çavdêriya xwe şirove bike û ji gotinên giştî dûr bikeve." },
+        { "language": "pl", "text": "Zapytaj z szacunkiem o sytuację społeczną, opisz swoją obserwację i unikaj uogólnień." },
+        { "language": "ro", "text": "Întreabă respectuos despre o situație socială, descrie observația ta și evită generalizările." },
+        { "language": "sq", "text": "Pyet me respekt për një situatë sociale, përshkruaj vëzhgimin tënd dhe shmang përgjithësimet." }
+      ],
+      "cefrLevel": "B1",
+      "category": "social",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2640,
+      "roles": [
+        {
+          "roleKey": "local-friend",
+          "displayName": "Bekannte",
+          "translations": [
+            { "language": "en", "text": "Acquaintance" },
+            { "language": "fa", "text": "آشنا" },
+            { "language": "ar", "text": "معارفة" },
+            { "language": "tr", "text": "Tanıdık" },
+            { "language": "ru", "text": "Знакомая" },
+            { "language": "ckb", "text": "ئاشنا" },
+            { "language": "kmr", "text": "Nas" },
+            { "language": "pl", "text": "Znajoma" },
+            { "language": "ro", "text": "Cunoștință" },
+            { "language": "sq", "text": "E njohur" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Du",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "تو" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Sen" },
+            { "language": "ru", "text": "Ты" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Tu" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Tu" },
+            { "language": "sq", "text": "Ti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "local-friend",
+          "baseText": "Du wirkst noch etwas nachdenklich. War beim Gruppentreffen etwas unklar?",
+          "translations": [
+            { "language": "en", "text": "You still seem a little thoughtful. Was something unclear at the group meeting?" },
+            { "language": "fa", "text": "هنوز کمی در فکر به نظر می‌رسی. در دیدار گروهی چیزی برایت نامشخص بود؟" },
+            { "language": "ar", "text": "تبدو ما زلت تفكر قليلاً. هل كان هناك شيء غير واضح في اللقاء الجماعي؟" },
+            { "language": "tr", "text": "Hâlâ biraz düşünceli görünüyorsun. Grup buluşmasında belirsiz bir şey mi vardı?" },
+            { "language": "ru", "text": "Ты всё ещё выглядишь немного задумчивым. На групповой встрече что-то было непонятно?" },
+            { "language": "ckb", "text": "هێشتا کەمێک بیرمەندانە دەردەکەویت. لە دیداری گرووپەکەدا شتێک ناڕوون بوو؟" },
+            { "language": "kmr", "text": "Tu hê jî hinekî fikirî xuya dikî. Di hevdîtina komê de tiştek nezelal bû?" },
+            { "language": "pl", "text": "Wyglądasz jeszcze trochę na zamyślonego. Czy coś było niejasne na spotkaniu grupowym?" },
+            { "language": "ro", "text": "Pari încă puțin pe gânduri. A fost ceva neclar la întâlnirea de grup?" },
+            { "language": "sq", "text": "Dukesh ende pak i menduar. A ishte diçka e paqartë në takimin e grupit?" }
+          ],
+          "function": "open-topic"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich möchte etwas fragen, ohne es falsch zu verstehen. Mir ist aufgefallen, dass die Aufgaben sehr direkt verteilt wurden.",
+          "translations": [
+            { "language": "en", "text": "Yes, I would like to ask something without misunderstanding it. I noticed that the tasks were assigned very directly." },
+            { "language": "fa", "text": "بله، می‌خواهم چیزی بپرسم بدون اینکه اشتباه برداشت کنم. متوجه شدم که کارها خیلی مستقیم تقسیم شدند." },
+            { "language": "ar", "text": "نعم، أود أن أسأل عن شيء من دون أن أفهمه بشكل خاطئ. لاحظت أن المهام وُزعت بشكل مباشر جداً." },
+            { "language": "tr", "text": "Evet, yanlış anlamadan bir şey sormak istiyorum. Görevlerin çok doğrudan dağıtıldığını fark ettim." },
+            { "language": "ru", "text": "Да, я хочу кое-что спросить, чтобы не понять неправильно. Я заметил, что задачи распределили очень прямо." },
+            { "language": "ckb", "text": "بەڵێ، دەمەوێت شتێک بپرسم بێ ئەوەی بە هەڵە تێبگەم. تێبینیم کرد کە ئەرکەکان زۆر ڕاستەوخۆ دابەش کران." },
+            { "language": "kmr", "text": "Erê, ez dixwazim tiştek bipirsim bê ku şaş fêm bikim. Min bala xwe da ku peywir pir rasterast hatin dabeşkirin." },
+            { "language": "pl", "text": "Tak, chciałbym o coś zapytać, żeby tego źle nie zrozumieć. Zauważyłem, że zadania rozdzielono bardzo bezpośrednio." },
+            { "language": "ro", "text": "Da, aș vrea să întreb ceva fără să înțeleg greșit. Am observat că sarcinile au fost împărțite foarte direct." },
+            { "language": "sq", "text": "Po, dua të pyes diçka pa e kuptuar gabim. Vura re se detyrat u ndanë shumë drejtpërdrejt." }
+          ],
+          "function": "ask-with-care",
+          "expectedLearnerAction": "Frame the question as curiosity and name a concrete observation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "local-friend",
+          "baseText": "Meinst du, dass jemand sofort gesagt hat, wer welche Aufgabe übernimmt?",
+          "translations": [
+            { "language": "en", "text": "Do you mean that someone immediately said who would take which task?" },
+            { "language": "fa", "text": "منظورت این است که کسی فوراً گفت چه کسی کدام کار را انجام می‌دهد؟" },
+            { "language": "ar", "text": "هل تقصد أن شخصاً قال فوراً من سيأخذ أي مهمة؟" },
+            { "language": "tr", "text": "Birinin hemen kimin hangi görevi alacağını söylemesini mi kastediyorsun?" },
+            { "language": "ru", "text": "Ты имеешь в виду, что кто-то сразу сказал, кто какую задачу берёт?" },
+            { "language": "ckb", "text": "مەبەستت ئەوەیە کە کەسێک یەکسەر گوت کێ کام ئەرک وەردەگرێت؟" },
+            { "language": "kmr", "text": "Mebesta te ew e ku kesekî yekser got kî kîjan peywirê digire?" },
+            { "language": "pl", "text": "Masz na myśli to, że ktoś od razu powiedział, kto przejmie które zadanie?" },
+            { "language": "ro", "text": "Vrei să spui că cineva a spus imediat cine preia ce sarcină?" },
+            { "language": "sq", "text": "E ke fjalën që dikush tha menjëherë kush merr cilën detyrë?" }
+          ],
+          "function": "clarify-observation"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Genau. Für mich klang das erst ein bisschen streng. Ist das in solchen Gruppen eher normal, damit alle wissen, was zu tun ist?",
+          "translations": [
+            { "language": "en", "text": "Exactly. At first it sounded a little strict to me. Is that rather normal in such groups so that everyone knows what to do?" },
+            { "language": "fa", "text": "دقیقاً. برای من اول کمی سخت‌گیرانه به نظر رسید. آیا در چنین گروه‌هایی این معمول است تا همه بدانند چه کاری باید انجام دهند؟" },
+            { "language": "ar", "text": "بالضبط. في البداية بدا ذلك صارماً قليلاً بالنسبة لي. هل هذا طبيعي نوعاً ما في مثل هذه المجموعات لكي يعرف الجميع ما يجب فعله؟" },
+            { "language": "tr", "text": "Aynen. Bana ilk başta biraz sert geldi. Böyle gruplarda herkes ne yapacağını bilsin diye bu daha normal mi?" },
+            { "language": "ru", "text": "Именно. Сначала это прозвучало для меня немного строго. В таких группах это скорее нормально, чтобы все знали, что делать?" },
+            { "language": "ckb", "text": "بە تەواوی. بۆ من سەرەتا کەمێک توند دەنگی دا. ئایا لە وەها گرووپانەدا ئەمە زیاتر ئاساییە بۆ ئەوەی هەمووان بزانن چی بکەن؟" },
+            { "language": "kmr", "text": "Rast e. Ji bo min di destpêkê de hinekî tund xuya bû. Di komên wisa de ev zêdetir normal e, da ku herkes bizane çi bike?" },
+            { "language": "pl", "text": "Dokładnie. Na początku zabrzmiało to dla mnie trochę surowo. Czy w takich grupach to raczej normalne, żeby wszyscy wiedzieli, co robić?" },
+            { "language": "ro", "text": "Exact. La început mi s-a părut puțin strict. Este mai degrabă normal în astfel de grupuri, ca toți să știe ce au de făcut?" },
+            { "language": "sq", "text": "Saktësisht. Në fillim më tingëlloi pak e rreptë. A është kjo më normale në grupe të tilla që të gjithë të dinë çfarë të bëjnë?" }
+          ],
+          "function": "ask-context",
+          "expectedLearnerAction": "Describe your impression and ask about the local context without judging."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "local-friend",
+          "baseText": "Ja, oft ist das einfach praktisch gemeint. Es soll nicht unfreundlich sein, sondern Zeit sparen.",
+          "translations": [
+            { "language": "en", "text": "Yes, often it is simply meant practically. It is not supposed to be unfriendly, but to save time." },
+            { "language": "fa", "text": "بله، اغلب فقط از نظر عملی منظور می‌شود. قرار نیست بی‌ادبانه باشد، بلکه برای صرفه‌جویی در زمان است." },
+            { "language": "ar", "text": "نعم، غالباً يُقصد به الأمر العملي فقط. ليس الهدف أن يكون غير ودي، بل توفير الوقت." },
+            { "language": "tr", "text": "Evet, çoğu zaman sadece pratik düşünülür. Kaba olmak için değil, zaman kazanmak içindir." },
+            { "language": "ru", "text": "Да, часто это просто практично. Это не должно быть недружелюбно, а помогает сэкономить время." },
+            { "language": "ckb", "text": "بەڵێ، زۆرجار تەنها بە شێوەی کرداری مەبەستە. مەبەست نابێت نادۆستانە بێت، بەڵکو بۆ پاشەکەوتکردنی کاتە." },
+            { "language": "kmr", "text": "Erê, pir caran ev tenê bi awayekî pratîk tê mebest kirin. Ne ji bo bêdostanî ye, lê ji bo demê xilas bike." },
+            { "language": "pl", "text": "Tak, często chodzi po prostu o praktyczność. To nie ma być nieuprzejme, tylko oszczędza czas." },
+            { "language": "ro", "text": "Da, adesea este gândit pur și simplu practic. Nu trebuie să fie neprietenos, ci să economisească timp." },
+            { "language": "sq", "text": "Po, shpesh mendohet thjesht praktikisht. Nuk synon të jetë jo miqësore, por të kursejë kohë." }
+          ],
+          "function": "explain-context"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das hilft mir. Dann kann ich es beim nächsten Mal besser einordnen und muss nicht gleich denken, dass jemand genervt ist.",
+          "translations": [
+            { "language": "en", "text": "That helps me. Then next time I can understand it better and do not have to immediately think that someone is annoyed." },
+            { "language": "fa", "text": "این به من کمک می‌کند. دفعه بعد می‌توانم بهتر برداشت کنم و لازم نیست فوراً فکر کنم کسی ناراحت یا عصبی است." },
+            { "language": "ar", "text": "هذا يساعدني. عندها أستطيع في المرة القادمة أن أفهمه بشكل أفضل ولا أظن فوراً أن أحداً منزعج." },
+            { "language": "tr", "text": "Bu bana yardımcı oluyor. O zaman bir dahaki sefere bunu daha iyi değerlendirebilirim ve hemen birinin sinirlendiğini düşünmem gerekmez." },
+            { "language": "ru", "text": "Это мне помогает. Тогда в следующий раз я смогу лучше это понять и не буду сразу думать, что кто-то раздражён." },
+            { "language": "ckb", "text": "ئەمە یارمەتیم دەدات. ئەوا جارێکی تر دەتوانم باشتر لێکی بدەمەوە و پێویست ناکات یەکسەر بیر بکەم کە کەسێک تووڕەیە." },
+            { "language": "kmr", "text": "Ev ji min re alîkar e. Hingê cara din ez dikarim wê baştir şirove bikim û ne hewce ye yekser bifikirim ku kesek aciz e." },
+            { "language": "pl", "text": "To mi pomaga. Następnym razem mogę to lepiej zrozumieć i nie muszę od razu myśleć, że ktoś jest zdenerwowany." },
+            { "language": "ro", "text": "Asta mă ajută. Data viitoare pot interpreta mai bine și nu trebuie să cred imediat că cineva este iritat." },
+            { "language": "sq", "text": "Kjo më ndihmon. Herën tjetër mund ta kuptoj më mirë dhe nuk duhet të mendoj menjëherë se dikush është i bezdisur." }
+          ],
+          "function": "reflect-learning",
+          "expectedLearnerAction": "Show that you understood and avoid stereotypes."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "local-friend",
+          "baseText": "Genau. Und wenn du unsicher bist, kannst du einfach nachfragen, so wie jetzt.",
+          "translations": [
+            { "language": "en", "text": "Exactly. And if you are unsure, you can simply ask, just like now." },
+            { "language": "fa", "text": "دقیقاً. و اگر مطمئن نیستی، می‌توانی ساده بپرسی، درست مثل الان." },
+            { "language": "ar", "text": "بالضبط. وإذا كنت غير متأكد، يمكنك ببساطة أن تسأل، كما فعلت الآن." },
+            { "language": "tr", "text": "Aynen. Emin değilsen, şimdi olduğu gibi basitçe sorabilirsin." },
+            { "language": "ru", "text": "Именно. И если ты не уверен, можешь просто спросить, как сейчас." },
+            { "language": "ckb", "text": "بە تەواوی. و ئەگەر دڵنیا نەبوویت، دەتوانیت بە سادەیی بپرسی، وەک ئێستا." },
+            { "language": "kmr", "text": "Rast e. Û heke tu ne ewle bî, tu dikarî tenê bipirsî, wek niha." },
+            { "language": "pl", "text": "Dokładnie. A jeśli nie jesteś pewien, możesz po prostu zapytać, tak jak teraz." },
+            { "language": "ro", "text": "Exact. Și dacă nu ești sigur, poți pur și simplu să întrebi, ca acum." },
+            { "language": "sq", "text": "Saktësisht. Dhe nëse nuk je i sigurt, mund të pyesësh thjesht, si tani." }
+          ],
+          "function": "encourage-question"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke, das mache ich. Ich wollte nicht urteilen, sondern nur verstehen, wie die Situation gemeint war.",
+          "translations": [
+            { "language": "en", "text": "Thanks, I will do that. I did not want to judge, but only understand how the situation was meant." },
+            { "language": "fa", "text": "ممنون، همین کار را می‌کنم. نمی‌خواستم قضاوت کنم، فقط می‌خواستم بفهمم منظور از آن موقعیت چه بود." },
+            { "language": "ar", "text": "شكراً، سأفعل ذلك. لم أرد أن أحكم، بل فقط أن أفهم كيف كان المقصود من الموقف." },
+            { "language": "tr", "text": "Teşekkürler, bunu yapacağım. Yargılamak istemedim, sadece durumun nasıl kastedildiğini anlamak istedim." },
+            { "language": "ru", "text": "Спасибо, я так и сделаю. Я не хотел судить, а только понять, что имелось в виду в этой ситуации." },
+            { "language": "ckb", "text": "سوپاس، ئەمە دەکەم. نەمدەویست دادوەری بکەم، تەنها دەمویست تێبگەم دۆخەکە چۆن مەبەست بوو." },
+            { "language": "kmr", "text": "Spas, ez ê wisa bikim. Min nexwest dadbarî bikim, tenê min xwest fêm bikim rewş çawa hatibû mebest kirin." },
+            { "language": "pl", "text": "Dzięki, tak zrobię. Nie chciałem oceniać, tylko zrozumieć, jak ta sytuacja była rozumiana." },
+            { "language": "ro", "text": "Mulțumesc, așa voi face. Nu am vrut să judec, ci doar să înțeleg cum a fost intenționată situația." },
+            { "language": "sq", "text": "Faleminderit, kështu do të bëj. Nuk doja të gjykoja, por vetëm të kuptoja si ishte menduar situata." }
+          ],
+          "function": "close-with-intent",
+          "expectedLearnerAction": "Close with thanks and state a respectful learning intention."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, ich möchte etwas fragen, ohne es falsch zu verstehen. Mir ist aufgefallen, dass die Aufgaben sehr direkt verteilt wurden.",
+              "translations": [
+                { "language": "en", "text": "Yes, I would like to ask something without misunderstanding it. I noticed that the tasks were assigned very directly." },
+                { "language": "fa", "text": "بله، می‌خواهم چیزی بپرسم بدون اینکه اشتباه برداشت کنم. متوجه شدم که کارها خیلی مستقیم تقسیم شدند." },
+                { "language": "ar", "text": "نعم، أود أن أسأل عن شيء من دون أن أفهمه بشكل خاطئ. لاحظت أن المهام وُزعت بشكل مباشر جداً." },
+                { "language": "tr", "text": "Evet, yanlış anlamadan bir şey sormak istiyorum. Görevlerin çok doğrudan dağıtıldığını fark ettim." },
+                { "language": "ru", "text": "Да, я хочу кое-что спросить, чтобы не понять неправильно. Я заметил, что задачи распределили очень прямо." },
+                { "language": "ckb", "text": "بەڵێ، دەمەوێت شتێک بپرسم بێ ئەوەی بە هەڵە تێبگەم. تێبینیم کرد کە ئەرکەکان زۆر ڕاستەوخۆ دابەش کران." },
+                { "language": "kmr", "text": "Erê, ez dixwazim tiştek bipirsim bê ku şaş fêm bikim. Min bala xwe da ku peywir pir rasterast hatin dabeşkirin." },
+                { "language": "pl", "text": "Tak, chciałbym o coś zapytać, żeby tego źle nie zrozumieć. Zauważyłem, że zadania rozdzielono bardzo bezpośrednio." },
+                { "language": "ro", "text": "Da, aș vrea să întreb ceva fără să înțeleg greșit. Am observat că sarcinile au fost împărțite foarte direct." },
+                { "language": "sq", "text": "Po, dua të pyes diçka pa e kuptuar gabim. Vura re se detyrat u ndanë shumë drejtpërdrejt." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist respektvoll: Du beschreibst eine Beobachtung und vermeidest ein Urteil.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is respectful: you describe an observation and avoid judgment." },
+                { "language": "fa", "text": "محترمانه است: یک مشاهده را توضیح می‌دهی و از قضاوت پرهیز می‌کنی." },
+                { "language": "ar", "text": "هذا محترم: تصف ملاحظة وتتجنب الحكم." },
+                { "language": "tr", "text": "Bu saygılı: bir gözlemi anlatıyor ve yargıdan kaçınıyorsun." },
+                { "language": "ru", "text": "Это уважительно: ты описываешь наблюдение и избегаешь оценки." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە: تێبینییەک وەسف دەکەیت و لە دادوەری دوور دەکەویت." },
+                { "language": "kmr", "text": "Ev bi rêz e: tu çavdêriyeke şirove dikî û ji dadbarî dûr dimînî." },
+                { "language": "pl", "text": "To jest pełne szacunku: opisujesz obserwację i unikasz oceny." },
+                { "language": "ro", "text": "Este respectuos: descrii o observație și eviți judecata." },
+                { "language": "sq", "text": "Është me respekt: përshkruan një vëzhgim dhe shmang gjykimin." }
+              ],
+              "explanationKey": "curious-observation"
+            },
+            {
+              "id": "b",
+              "text": "Warum seid ihr bei solchen Treffen immer so direkt?",
+              "translations": [
+                { "language": "en", "text": "Why are you always so direct at such meetings?" },
+                { "language": "fa", "text": "چرا شما در چنین دیدارهایی همیشه این‌قدر مستقیم هستید؟" },
+                { "language": "ar", "text": "لماذا تكونون دائماً مباشرين جداً في مثل هذه اللقاءات؟" },
+                { "language": "tr", "text": "Böyle buluşmalarda neden hep bu kadar doğrudansınız?" },
+                { "language": "ru", "text": "Почему вы на таких встречах всегда такие прямые?" },
+                { "language": "ckb", "text": "بۆچی ئێوە لە وەها دیدارانەدا هەمیشە ئەوەندە ڕاستەوخۆن؟" },
+                { "language": "kmr", "text": "Çima hûn di hevdîtinên wisa de her tim ewqas rasterast in?" },
+                { "language": "pl", "text": "Dlaczego wy na takich spotkaniach zawsze jesteście tacy bezpośredni?" },
+                { "language": "ro", "text": "De ce sunteți mereu atât de direcți la astfel de întâlniri?" },
+                { "language": "sq", "text": "Pse jeni gjithmonë kaq të drejtpërdrejtë në takime të tilla?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage ist verständlich, aber sie klingt verallgemeinernd und kann schnell wertend wirken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question is understandable, but it sounds generalizing and can quickly seem judgmental." },
+                { "language": "fa", "text": "پرسش قابل فهم است، اما کلی‌گویی دارد و ممکن است سریع قضاوت‌آمیز به نظر برسد." },
+                { "language": "ar", "text": "السؤال مفهوم، لكنه يبدو تعميمياً ويمكن أن يبدو حكماً بسرعة." },
+                { "language": "tr", "text": "Soru anlaşılır, ama genelleyici duyuluyor ve kolayca yargılayıcı görünebilir." },
+                { "language": "ru", "text": "Вопрос понятен, но звучит обобщающе и может быстро показаться оценочным." },
+                { "language": "ckb", "text": "پرسیارەکە تێدەگەین، بەڵام وەک گشتی‌کردن دەنگ دەدات و دەتوانێت زوو وەک دادوەری دەربکەوێت." },
+                { "language": "kmr", "text": "Pirs tê fêmkirin, lê wek giştîkirin tê bihîstin û zû dikare wek dadbarî xuya bike." },
+                { "language": "pl", "text": "Pytanie jest zrozumiałe, ale brzmi uogólniająco i może szybko zabrzmieć oceniająco." },
+                { "language": "ro", "text": "Întrebarea este de înțeles, dar sună generalizator și poate părea rapid critică." },
+                { "language": "sq", "text": "Pyetja është e kuptueshme, por tingëllon përgjithësuese dhe mund të duket shpejt gjykuese." }
+              ],
+              "explanationKey": "generalizing-question"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau. Für mich klang das erst ein bisschen streng. Ist das in solchen Gruppen eher normal, damit alle wissen, was zu tun ist?",
+              "translations": [
+                { "language": "en", "text": "Exactly. At first it sounded a little strict to me. Is that rather normal in such groups so that everyone knows what to do?" },
+                { "language": "fa", "text": "دقیقاً. برای من اول کمی سخت‌گیرانه به نظر رسید. آیا در چنین گروه‌هایی این معمول است تا همه بدانند چه کاری باید انجام دهند؟" },
+                { "language": "ar", "text": "بالضبط. في البداية بدا ذلك صارماً قليلاً بالنسبة لي. هل هذا طبيعي نوعاً ما في مثل هذه المجموعات لكي يعرف الجميع ما يجب فعله؟" },
+                { "language": "tr", "text": "Aynen. Bana ilk başta biraz sert geldi. Böyle gruplarda herkes ne yapacağını bilsin diye bu daha normal mi?" },
+                { "language": "ru", "text": "Именно. Сначала это прозвучало для меня немного строго. В таких группах это скорее нормально, чтобы все знали, что делать?" },
+                { "language": "ckb", "text": "بە تەواوی. بۆ من سەرەتا کەمێک توند دەنگی دا. ئایا لە وەها گرووپانەدا ئەمە زیاتر ئاساییە بۆ ئەوەی هەمووان بزانن چی بکەن؟" },
+                { "language": "kmr", "text": "Rast e. Ji bo min di destpêkê de hinekî tund xuya bû. Di komên wisa de ev zêdetir normal e, da ku herkes bizane çi bike?" },
+                { "language": "pl", "text": "Dokładnie. Na początku zabrzmiało to dla mnie trochę surowo. Czy w takich grupach to raczej normalne, żeby wszyscy wiedzieli, co robić?" },
+                { "language": "ro", "text": "Exact. La început mi s-a părut puțin strict. Este mai degrabă normal în astfel de grupuri, ca toți să știe ce au de făcut?" },
+                { "language": "sq", "text": "Saktësisht. Në fillim më tingëlloi pak e rreptë. A është kjo më normale në grupe të tilla që të gjithë të dinë çfarë të bëjnë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du nennst deine Wirkung, fragst nach Kontext und vermeidest Vorwürfe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you name the effect on you, ask for context, and avoid accusations." },
+                { "language": "fa", "text": "خوب است: اثر آن روی خودت را می‌گویی، درباره زمینه می‌پرسی و از اتهام پرهیز می‌کنی." },
+                { "language": "ar", "text": "جيد: تذكر تأثيره عليك، وتسأل عن السياق، وتتجنب الاتهامات." },
+                { "language": "tr", "text": "İyi: sende bıraktığı etkiyi söylüyor, bağlamı soruyor ve suçlamadan kaçınıyorsun." },
+                { "language": "ru", "text": "Хорошо: ты называешь своё впечатление, спрашиваешь о контексте и избегaешь обвинений." },
+                { "language": "ckb", "text": "باشە: کاریگەرییەکە لەسەر خۆت دەڵێیت، دەربارەی پاشبنەما دەپرسیت و لە تاوانبارکردن دوور دەکەویت." },
+                { "language": "kmr", "text": "Baş e: tu bandora li ser xwe dibêjî, li ser konteksê dipirsî û ji sûcdarkirinê dûr dimînî." },
+                { "language": "pl", "text": "Dobrze: mówisz o swoim odbiorze, pytasz o kontekst i unikasz zarzutów." },
+                { "language": "ro", "text": "Bine: numești efectul asupra ta, întrebi despre context și eviți acuzațiile." },
+                { "language": "sq", "text": "Mirë: përmend ndikimin te ti, pyet për kontekstin dhe shmang akuzat." }
+              ],
+              "explanationKey": "context-not-judgment"
+            },
+            {
+              "id": "b",
+              "text": "Das fand ich ziemlich unhöflich.",
+              "translations": [
+                { "language": "en", "text": "I found that quite rude." },
+                { "language": "fa", "text": "به نظرم این خیلی بی‌ادبانه بود." },
+                { "language": "ar", "text": "وجدت ذلك غير مهذب إلى حد ما." },
+                { "language": "tr", "text": "Bunu oldukça kaba buldum." },
+                { "language": "ru", "text": "Я счёл это довольно невежливым." },
+                { "language": "ckb", "text": "ئەوەم بە زۆر بێ‌ڕێزی زانی." },
+                { "language": "kmr", "text": "Min ew pir bê rêz dît." },
+                { "language": "pl", "text": "Uznałem to za dość nieuprzejme." },
+                { "language": "ro", "text": "Mi s-a părut destul de nepoliticos." },
+                { "language": "sq", "text": "M'u duk mjaft e pasjellshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist ehrlich, aber zu wertend, wenn du die Situation erst verstehen möchtest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is honest, but too judgmental if you first want to understand the situation." },
+                { "language": "fa", "text": "صادقانه است، اما اگر اول می‌خواهی موقعیت را بفهمی، بیش از حد قضاوت‌آمیز است." },
+                { "language": "ar", "text": "هذا صريح، لكنه حكمي أكثر من اللازم إذا كنت تريد أولاً فهم الموقف." },
+                { "language": "tr", "text": "Bu dürüst, ama durumu önce anlamak istiyorsan fazla yargılayıcı." },
+                { "language": "ru", "text": "Это честно, но слишком оценочно, если ты сначала хочешь понять ситуацию." },
+                { "language": "ckb", "text": "ئەمە ڕاستگۆیانەیە، بەڵام ئەگەر سەرەتا دەتەوێت دۆخەکە تێبگەیت، زۆر دادوەرانەیە." },
+                { "language": "kmr", "text": "Ev rast e, lê heke tu pêşî dixwazî rewşê fêm bikî, pir dadbarane ye." },
+                { "language": "pl", "text": "To jest szczere, ale zbyt oceniające, jeśli najpierw chcesz zrozumieć sytuację." },
+                { "language": "ro", "text": "Este sincer, dar prea critic dacă mai întâi vrei să înțelegi situația." },
+                { "language": "sq", "text": "Është e sinqertë, por shumë gjykuese nëse fillimisht do ta kuptosh situatën." }
+              ],
+              "explanationKey": "too-judgmental"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke, das mache ich. Ich wollte nicht urteilen, sondern nur verstehen, wie die Situation gemeint war.",
+              "translations": [
+                { "language": "en", "text": "Thanks, I will do that. I did not want to judge, but only understand how the situation was meant." },
+                { "language": "fa", "text": "ممنون، همین کار را می‌کنم. نمی‌خواستم قضاوت کنم، فقط می‌خواستم بفهمم منظور از آن موقعیت چه بود." },
+                { "language": "ar", "text": "شكراً، سأفعل ذلك. لم أرد أن أحكم، بل فقط أن أفهم كيف كان المقصود من الموقف." },
+                { "language": "tr", "text": "Teşekkürler, bunu yapacağım. Yargılamak istemedim, sadece durumun nasıl kastedildiğini anlamak istedim." },
+                { "language": "ru", "text": "Спасибо, я так и сделаю. Я не хотел судить, а только понять, что имелось в виду в этой ситуации." },
+                { "language": "ckb", "text": "سوپاس، ئەمە دەکەم. نەمدەویست دادوەری بکەم، تەنها دەمویست تێبگەم دۆخەکە چۆن مەبەست بوو." },
+                { "language": "kmr", "text": "Spas, ez ê wisa bikim. Min nexwest dadbarî bikim, tenê min xwest fêm bikim rewş çawa hatibû mebest kirin." },
+                { "language": "pl", "text": "Dzięki, tak zrobię. Nie chciałem oceniać, tylko zrozumieć, jak ta sytuacja była rozumiana." },
+                { "language": "ro", "text": "Mulțumesc, așa voi face. Nu am vrut să judec, ci doar să înțeleg cum a fost intenționată situația." },
+                { "language": "sq", "text": "Faleminderit, kështu do të bëj. Nuk doja të gjykoja, por vetëm të kuptoja si ishte menduar situata." }
+              ],
+              "isCorrect": true,
+              "feedback": "Der Abschluss ist gut: Du betonst Lernabsicht statt Bewertung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The closing is good: you emphasize learning intention instead of judgment." },
+                { "language": "fa", "text": "پایان خوب است: به جای قضاوت، نیت یادگیری را برجسته می‌کنی." },
+                { "language": "ar", "text": "الخاتمة جيدة: تؤكد نية التعلم بدلاً من الحكم." },
+                { "language": "tr", "text": "Kapanış iyi: yargı yerine öğrenme niyetini vurguluyorsun." },
+                { "language": "ru", "text": "Завершение хорошее: ты подчёркиваешь желание понять, а не оценивать." },
+                { "language": "ckb", "text": "کۆتاییەکە باشە: لە جیاتی دادوەری، نێتی فێربوون دەردەخەیت." },
+                { "language": "kmr", "text": "Dawî baş e: tu li şûna dadbarî mebesta fêrbûnê derdixî." },
+                { "language": "pl", "text": "Zakończenie jest dobre: podkreślasz intencję uczenia się zamiast oceniania." },
+                { "language": "ro", "text": "Încheierea este bună: subliniezi intenția de a învăța, nu de a judeca." },
+                { "language": "sq", "text": "Mbyllja është e mirë: thekson qëllimin për të mësuar, jo për të gjykuar." }
+              ],
+              "explanationKey": "learning-intention"
+            },
+            {
+              "id": "b",
+              "text": "Okay, dann ist das wohl normal.",
+              "translations": [
+                { "language": "en", "text": "Okay, then that is probably normal." },
+                { "language": "fa", "text": "باشه، پس احتمالاً این عادی است." },
+                { "language": "ar", "text": "حسناً، إذن يبدو أن ذلك طبيعي." },
+                { "language": "tr", "text": "Tamam, o zaman bu herhalde normal." },
+                { "language": "ru", "text": "Хорошо, значит, это, наверное, нормально." },
+                { "language": "ckb", "text": "باشە، ئەوا ڕەنگە ئەمە ئاسایی بێت." },
+                { "language": "kmr", "text": "Baş e, hingê ev dibe ku normal be." },
+                { "language": "pl", "text": "Okej, to pewnie jest normalne." },
+                { "language": "ro", "text": "Bine, atunci probabil este normal." },
+                { "language": "sq", "text": "Në rregull, atëherë kjo ndoshta është normale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber zu knapp; die respektvolle Lernabsicht bleibt unsichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too brief; the respectful learning intention remains invisible." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی کوتاه است؛ نیت محترمانه برای یادگیری دیده نمی‌شود." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه قصير جداً؛ نية التعلم باحترام لا تظهر." },
+                { "language": "tr", "text": "Bu anlaşılır, ama çok kısa; saygılı öğrenme niyeti görünmüyor." },
+                { "language": "ru", "text": "Это понятно, но слишком кратко; уважительное желание понять не видно." },
+                { "language": "ckb", "text": "ئەمە تێدەگەین، بەڵام زۆر کورتە؛ نێتی ڕێزدارانەی فێربوون دیار نییە." },
+                { "language": "kmr", "text": "Ev tê fêmkirin, lê pir kurt e; mebesta fêrbûnê ya bi rêz nayê dîtin." },
+                { "language": "pl", "text": "To jest zrozumiałe, ale zbyt krótkie; pełna szacunku intencja uczenia się nie jest widoczna." },
+                { "language": "ro", "text": "Este de înțeles, dar prea scurt; intenția respectuoasă de învățare nu este vizibilă." },
+                { "language": "sq", "text": "Është e kuptueshme, por shumë e shkurtër; qëllimi i respektueshëm për të mësuar nuk duket." }
+              ],
+              "explanationKey": "closing-too-brief"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei kulturellen Irritationen helfen konkrete Beobachtung, Ich-Perspektive, neugierige Frage und keine pauschalen Urteile.",
+          "translations": [
+            { "language": "en", "text": "B1 target: with cultural irritations, concrete observation, I-perspective, curious question, and no sweeping judgments help." },
+            { "language": "fa", "text": "هدف B1: در ابهام‌های فرهنگی، مشاهده مشخص، نگاه از زاویه خود، پرسش کنجکاوانه و پرهیز از قضاوت کلی کمک می‌کند." },
+            { "language": "ar", "text": "هدف B1: في الالتباسات الثقافية تساعد الملاحظة المحددة، ومنظور المتكلم، والسؤال الفضولي، وتجنب الأحكام العامة." },
+            { "language": "tr", "text": "B1 hedefi: kültürel şaşkınlıklarda somut gözlem, ben dili, meraklı soru ve genelleyici yargılardan kaçınma yardımcı olur." },
+            { "language": "ru", "text": "Цель B1: при культурном недоумении помогают конкретное наблюдение, я-позиция, любопытный вопрос и отсутствие общих оценок." },
+            { "language": "ckb", "text": "ئامانجی B1: لە سەرسوڕمانی کولتووریدا تێبینیی دیاریکراو، دیدگای من، پرسیاری حەزی زانین و نەکردنی دادوەریی گشتی یارمەتی دەدەن." },
+            { "language": "kmr", "text": "Armanca B1: di şaşbûnên çandî de çavdêriya taybet, perspektîfa ez, pirsa bi meraq û bê dadbariyên giştî alîkar in." },
+            { "language": "pl", "text": "Cel B1: przy kulturowych niejasnościach pomagają konkretna obserwacja, perspektywa «ja», ciekawość i brak ogólnych ocen." },
+            { "language": "ro", "text": "Obiectiv B1: în nedumeririle culturale ajută observația concretă, perspectiva personală, întrebarea curioasă și lipsa judecăților generale." },
+            { "language": "sq", "text": "Qëllimi B1: në paqartësitë kulturore ndihmojnë vëzhgimi konkret, këndvështrimi personal, pyetja me kureshtje dhe mungesa e gjykimeve të përgjithshme." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-in-einer-gruppe-zustimmen-und-widersprechen",
+      "linkedDialogueSlug": null,
+      "title": "In einer Gruppe zustimmen und widersprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Agreeing and disagreeing in a group" },
+        { "language": "fa", "text": "موافقت و مخالفت در یک گروه" },
+        { "language": "ar", "text": "الموافقة والاعتراض في مجموعة" },
+        { "language": "tr", "text": "Bir grupta katılmak ve karşı çıkmak" },
+        { "language": "ru", "text": "Соглашаться и возражать в группе" },
+        { "language": "ckb", "text": "ڕازیبوون و ناڕازیبوون لە گرووپێکدا" },
+        { "language": "kmr", "text": "Di komekê de razîbûn û nerazîbûn" },
+        { "language": "pl", "text": "Zgadzanie się i sprzeciw w grupie" },
+        { "language": "ro", "text": "A fi de acord și a nu fi de acord într-un grup" },
+        { "language": "sq", "text": "Të pajtohesh dhe të kundërshtosh në një grup" }
+      ],
+      "description": "In einer Kursgruppe diskutiert ihr, ob Handys während der Übung weggelegt werden sollen. Du stimmst einem Punkt zu, widersprichst einem anderen höflich und begründest deine Meinung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a course group, you discuss whether phones should be put away during practice. You agree with one point, politely disagree with another, and give reasons for your opinion." },
+        { "language": "fa", "text": "در یک گروه کلاسی بحث می‌کنید که آیا موبایل‌ها باید هنگام تمرین کنار گذاشته شوند یا نه. با یک نکته موافقت می‌کنی، با نکته دیگری مودبانه مخالفت می‌کنی و نظرت را دلیل‌دار بیان می‌کنی." },
+        { "language": "ar", "text": "في مجموعة الدورة تناقشون هل يجب وضع الهواتف جانباً أثناء التمرين. توافق على نقطة، وتعترض بأدب على نقطة أخرى، وتبرر رأيك." },
+        { "language": "tr", "text": "Bir kurs grubunda alıştırma sırasında telefonların kaldırılıp kaldırılmamasını tartışıyorsunuz. Bir noktaya katılıyor, başka bir noktaya kibarca karşı çıkıyor ve görüşünü gerekçelendiriyorsun." },
+        { "language": "ru", "text": "В учебной группе вы обсуждаете, нужно ли убирать телефоны во время упражнения. Ты соглашаешься с одним пунктом, вежливо возражаешь другому и обосновываешь своё мнение." },
+        { "language": "ckb", "text": "لە گرووپی کۆرسێکدا گفتوگۆ دەکەن ئایا دەبێت موبایلەکان لە کاتی مەشقکردندا ال بدرێن. لەگەڵ خاڵێک ڕازی دەبیت، بە ڕێزەوە لەگەڵ خاڵێکی تر ناڕازی دەبیت و بۆچوونت بە هۆکار دەڵێیت." },
+        { "language": "kmr", "text": "Di koma kursê de hûn nîqaş dikin gelo divê telefon di dema pratîkê de bên danîn alî. Tu bi xalekê razî dibî, bi xalekî din bi rêz nerazî dibî û ramanê xwe bi sedem dibêjî." },
+        { "language": "pl", "text": "W grupie kursowej dyskutujecie, czy podczas ćwiczeń należy odłożyć telefony. Zgadzasz się z jednym punktem, uprzejmie sprzeciwiasz się innemu i uzasadniasz opinię." },
+        { "language": "ro", "text": "Într-un grup de curs discutați dacă telefoanele ar trebui puse deoparte în timpul exercițiului. Ești de acord cu un punct, nu ești de acord politicos cu altul și îți motivezi opinia." },
+        { "language": "sq", "text": "Në një grup kursi diskutoni nëse telefonat duhet të lihen mënjanë gjatë ushtrimit. Pajtohesh me një pikë, kundërshton me mirësjellje një tjetër dhe jep arsye për mendimin tënd." }
+      ],
+      "learnerGoal": "Stimme einem Argument zu, widersprich höflich mit einem Grund und schlag eine faire Gruppenregel vor.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Agree with one argument, disagree politely with a reason, and suggest a fair group rule." },
+        { "language": "fa", "text": "با یک استدلال موافقت کن، با دلیل مودبانه مخالفت کن و یک قانون منصفانه گروهی پیشنهاد بده." },
+        { "language": "ar", "text": "وافق على حجة واحدة، واعترض بأدب مع سبب، واقترح قاعدة جماعية عادلة." },
+        { "language": "tr", "text": "Bir argümana katıl, bir nedenle kibarca karşı çık ve adil bir grup kuralı öner." },
+        { "language": "ru", "text": "Согласись с одним аргументом, вежливо возрази с причиной и предложи справедливое правило для группы." },
+        { "language": "ckb", "text": "لەگەڵ بەڵگەیەک ڕازی بە، بە هۆکارەوە بە ڕێزەوە ناڕازی بە و ڕێسایەکی دادپەروەرانەی گرووپی پێشنیار بکە." },
+        { "language": "kmr", "text": "Bi argûmanekê razî bibe, bi sedemekê bi rêz nerazî bibe û qaîdeyeke adil a komê pêşniyar bike." },
+        { "language": "pl", "text": "Zgódź się z jednym argumentem, uprzejmie się sprzeciw z powodem i zaproponuj sprawiedliwą zasadę grupową." },
+        { "language": "ro", "text": "Fii de acord cu un argument, exprimă un dezacord politicos cu un motiv și propune o regulă de grup corectă." },
+        { "language": "sq", "text": "Pajtohu me një argument, kundërshto me mirësjellje me një arsye dhe propozo një rregull të drejtë grupi." }
+      ],
+      "cefrLevel": "B1",
+      "category": "social",
+      "topics": ["social-and-relationships", "education-and-training"],
+      "examProfiles": ["dtz-a2-b1", "goethe-b1", "telc-b1"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "agree-disagree",
+      "interactionMode": "group-work",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2650,
+      "roles": [
+        {
+          "roleKey": "group-member",
+          "displayName": "Gruppenmitglied",
+          "translations": [
+            { "language": "en", "text": "Group member" },
+            { "language": "fa", "text": "عضو گروه" },
+            { "language": "ar", "text": "عضو المجموعة" },
+            { "language": "tr", "text": "Grup üyesi" },
+            { "language": "ru", "text": "Участник группы" },
+            { "language": "ckb", "text": "ئەندامی گرووپ" },
+            { "language": "kmr", "text": "Endamê komê" },
+            { "language": "pl", "text": "Członek grupy" },
+            { "language": "ro", "text": "Membru al grupului" },
+            { "language": "sq", "text": "Anëtar grupi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Du",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "تو" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Sen" },
+            { "language": "ru", "text": "Ты" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Tu" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Tu" },
+            { "language": "sq", "text": "Ti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "group-member",
+          "baseText": "Ich finde, wir sollten während der Partnerübung alle Handys komplett weglegen. Sonst konzentriert sich niemand.",
+          "translations": [
+            { "language": "en", "text": "I think we should all put our phones away completely during the partner exercise. Otherwise nobody concentrates." },
+            { "language": "fa", "text": "به نظرم هنگام تمرین دونفره همه باید موبایل‌ها را کاملاً کنار بگذاریم. وگرنه هیچ‌کس تمرکز نمی‌کند." },
+            { "language": "ar", "text": "أعتقد أنه يجب علينا جميعاً وضع الهواتف جانباً تماماً أثناء تمرين الشركاء. وإلا فلن يركز أحد." },
+            { "language": "tr", "text": "Bence eşli alıştırma sırasında hepimiz telefonları tamamen kaldırmalıyız. Yoksa kimse odaklanmaz." },
+            { "language": "ru", "text": "Я думаю, во время упражнения в парах всем нужно полностью убрать телефоны. Иначе никто не сосредоточится." },
+            { "language": "ckb", "text": "پێم وایە لە کاتی مەشقی دووکەسی هەموومان دەبێت موبایلەکان بە تەواوی ال بدەین. ئەگەر نا، هیچ کەسێک تەرکیز ناکات." },
+            { "language": "kmr", "text": "Ez difikirim divê em hemû di dema pratîka hevkarî de telefonan bi tevahî bidin alî. Wekî din kesek balê nade." },
+            { "language": "pl", "text": "Uważam, że podczas ćwiczenia w parach wszyscy powinniśmy całkowicie odłożyć telefony. Inaczej nikt się nie koncentruje." },
+            { "language": "ro", "text": "Cred că în timpul exercițiului în perechi ar trebui să punem cu toții telefoanele complet deoparte. Altfel nimeni nu se concentrează." },
+            { "language": "sq", "text": "Mendoj se gjatë ushtrimit në çifte duhet t'i lëmë të gjithë telefonat plotësisht mënjanë. Përndryshe askush nuk përqendrohet." }
+          ],
+          "function": "state-opinion"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich stimme dir zu, dass Konzentration wichtig ist. Ganz ohne Handy finde ich aber schwierig, weil manche Wörter im Online-Wörterbuch nachschlagen.",
+          "translations": [
+            { "language": "en", "text": "I agree with you that concentration is important. But I find it difficult to have no phone at all because some people look up words in the online dictionary." },
+            { "language": "fa", "text": "با تو موافقم که تمرکز مهم است. اما کاملاً بدون موبایل را سخت می‌دانم، چون بعضی‌ها کلمات را در دیکشنری آنلاین نگاه می‌کنند." },
+            { "language": "ar", "text": "أتفق معك في أن التركيز مهم. لكنني أجد الأمر صعباً من دون هاتف تماماً، لأن بعض الأشخاص يبحثون عن الكلمات في القاموس الإلكتروني." },
+            { "language": "tr", "text": "Konsantrasyonun önemli olduğuna katılıyorum. Ama tamamen telefonsuz olmayı zor buluyorum, çünkü bazı kişiler kelimeleri çevrim içi sözlükte arıyor." },
+            { "language": "ru", "text": "Я согласен, что концентрация важна. Но совсем без телефона мне кажется сложно, потому что некоторые ищут слова в онлайн-словаре." },
+            { "language": "ckb", "text": "لەگەڵت ڕازیم کە تەرکیز گرنگە. بەڵام بە تەواوی بێ موبایل بە زەحمەتم دەزانم، چونکە هەندێک کەس وشەکان لە فەرهەنگی ئۆنلاین دەگەڕێن." },
+            { "language": "kmr", "text": "Ez bi te re razî me ku baldan girîng e. Lê bê telefon bi tevahî ji min re zehmet e, ji ber ku hin kes peyvan di ferhenga serhêl de digerin." },
+            { "language": "pl", "text": "Zgadzam się z tobą, że koncentracja jest ważna. Ale całkowicie bez telefonu jest moim zdaniem trudno, bo niektórzy sprawdzają słowa w słowniku online." },
+            { "language": "ro", "text": "Sunt de acord cu tine că este importantă concentrarea. Dar mi se pare dificil complet fără telefon, deoarece unii caută cuvinte în dicționarul online." },
+            { "language": "sq", "text": "Jam dakord me ty që përqendrimi është i rëndësishëm. Por më duket e vështirë krejt pa telefon, sepse disa kërkojnë fjalë në fjalorin online." }
+          ],
+          "function": "agree-and-soft-disagree",
+          "expectedLearnerAction": "Agree with one point and disagree politely with a reason."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "group-member",
+          "baseText": "Aber wenn alle ständig nachschauen, sprechen wir am Ende weniger Deutsch.",
+          "translations": [
+            { "language": "en", "text": "But if everyone keeps looking things up, in the end we speak less German." },
+            { "language": "fa", "text": "اما اگر همه دائم نگاه کنند، در نهایت کمتر آلمانی صحبت می‌کنیم." },
+            { "language": "ar", "text": "لكن إذا كان الجميع يبحث باستمرار، فسنتحدث في النهاية ألمانية أقل." },
+            { "language": "tr", "text": "Ama herkes sürekli bakarsa, sonunda daha az Almanca konuşuruz." },
+            { "language": "ru", "text": "Но если все постоянно будут смотреть, в итоге мы будем меньше говорить по-немецки." },
+            { "language": "ckb", "text": "بەڵام ئەگەر هەموو کەس بەردەوام بگەڕێت، لە کۆتاییدا کەمتر بە ئەڵمانی قسە دەکەین." },
+            { "language": "kmr", "text": "Lê heke herkes her tim bigere, di dawiyê de em kêmtir Almanî diaxivin." },
+            { "language": "pl", "text": "Ale jeśli wszyscy ciągle sprawdzają, to ostatecznie mówimy mniej po niemiecku." },
+            { "language": "ro", "text": "Dar dacă toți caută mereu, până la urmă vorbim mai puțin germană." },
+            { "language": "sq", "text": "Por nëse të gjithë kërkojnë vazhdimisht, në fund flasim më pak gjermanisht." }
+          ],
+          "function": "raise-objection"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das sehe ich auch. Vielleicht können wir vereinbaren: Erst versuchen wir es zwei Minuten ohne Handy, und danach dürfen wir ein Wort kurz prüfen.",
+          "translations": [
+            { "language": "en", "text": "I see that too. Maybe we can agree: first we try for two minutes without phones, and after that we may briefly check one word." },
+            { "language": "fa", "text": "من هم این را می‌بینم. شاید بتوانیم توافق کنیم: اول دو دقیقه بدون موبایل تلاش کنیم، و بعد اجازه داشته باشیم یک کلمه را کوتاه چک کنیم." },
+            { "language": "ar", "text": "أرى ذلك أيضاً. ربما يمكننا الاتفاق: نحاول أولاً دقيقتين من دون هواتف، وبعد ذلك يمكننا التحقق بسرعة من كلمة واحدة." },
+            { "language": "tr", "text": "Bunu ben de görüyorum. Belki şöyle anlaşabiliriz: önce iki dakika telefonsuz deneriz, sonra bir kelimeyi kısaca kontrol edebiliriz." },
+            { "language": "ru", "text": "Я тоже это понимаю. Может быть, договоримся так: сначала две минуты пробуем без телефонов, а потом можно быстро проверить одно слово." },
+            { "language": "ckb", "text": "منیش ئەمە دەبینم. ڕەنگە بتوانین ڕێک بکەوین: سەرەتا دوو خولەک بێ موبایل هەوڵ دەدەین، و پاشان دەتوانین وشەیەک بە کورتی بپشکنین." },
+            { "language": "kmr", "text": "Ez jî vê dibînim. Belkî em li hev bikin: pêşî em du xulek bê telefon hewl didin, û paşê em dikarin peyvekê bi kurtî kontrol bikin." },
+            { "language": "pl", "text": "Też to widzę. Może możemy ustalić: najpierw próbujemy przez dwie minuty bez telefonów, a potem możemy krótko sprawdzić jedno słowo." },
+            { "language": "ro", "text": "Și eu văd asta. Poate putem conveni: mai întâi încercăm două minute fără telefoane, iar apoi putem verifica pe scurt un cuvânt." },
+            { "language": "sq", "text": "Edhe unë e shoh këtë. Ndoshta mund të biem dakord: fillimisht provojmë dy minuta pa telefon, pastaj mund të kontrollojmë shkurt një fjalë." }
+          ],
+          "function": "suggest-compromise",
+          "expectedLearnerAction": "Acknowledge the objection and propose a fair group rule."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "group-member",
+          "baseText": "Das klingt fair. Dann benutzen wir das Handy nur als Hilfe und nicht als Pause.",
+          "translations": [
+            { "language": "en", "text": "That sounds fair. Then we use the phone only as help and not as a break." },
+            { "language": "fa", "text": "منصفانه به نظر می‌رسد. پس از موبایل فقط به عنوان کمک استفاده می‌کنیم، نه به عنوان وقفه." },
+            { "language": "ar", "text": "هذا يبدو عادلاً. إذن نستخدم الهاتف فقط كمساعدة وليس كاستراحة." },
+            { "language": "tr", "text": "Bu adil geliyor. O zaman telefonu sadece yardım olarak kullanırız, mola olarak değil." },
+            { "language": "ru", "text": "Звучит справедливо. Тогда мы используем телефон только как помощь, а не как паузу." },
+            { "language": "ckb", "text": "دادپەروەرانە دەردەکەوێت. ئەوا موبایل تەنها وەک یارمەتی بەکار دەهێنین، نەک وەک پشوویەک." },
+            { "language": "kmr", "text": "Ev adil xuya dike. Hingê em telefonê tenê wek alîkarî bi kar tînin, ne wek navber." },
+            { "language": "pl", "text": "To brzmi fair. Wtedy używamy telefonu tylko jako pomocy, a nie jako przerwy." },
+            { "language": "ro", "text": "Sună corect. Atunci folosim telefonul doar ca ajutor, nu ca pauză." },
+            { "language": "sq", "text": "Kjo tingëllon e drejtë. Atëherë e përdorim telefonin vetëm si ndihmë, jo si pushim." }
+          ],
+          "function": "accept-compromise"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Genau. Und wenn jemand zu lange am Handy ist, können wir freundlich daran erinnern, wieder weiterzusprechen.",
+          "translations": [
+            { "language": "en", "text": "Exactly. And if someone is on the phone too long, we can remind them kindly to continue speaking." },
+            { "language": "fa", "text": "دقیقاً. و اگر کسی بیش از حد با موبایل بماند، می‌توانیم دوستانه یادآوری کنیم که دوباره صحبت را ادامه دهیم." },
+            { "language": "ar", "text": "بالضبط. وإذا بقي شخص على الهاتف لفترة طويلة، يمكننا أن نذكره بلطف بأن نتابع الحديث." },
+            { "language": "tr", "text": "Aynen. Ve biri telefonda çok uzun kalırsa, konuşmaya devam etmeyi dostça hatırlatabiliriz." },
+            { "language": "ru", "text": "Именно. И если кто-то слишком долго сидит в телефоне, мы можем дружелюбно напомнить продолжить говорить." },
+            { "language": "ckb", "text": "بە تەواوی. و ئەگەر کەسێک زۆر درێژ لەسەر موبایل بوو، دەتوانین بە دۆستانە بیر بخەینەوە کە قسەکردن بەردەوام بکەین." },
+            { "language": "kmr", "text": "Rast e. Û heke kesek pir dem li telefonê bimîne, em dikarin bi dostanî bîr bixin ku dîsa axaftinê bidomînin." },
+            { "language": "pl", "text": "Dokładnie. A jeśli ktoś za długo korzysta z telefonu, możemy życzliwie przypomnieć, żeby mówić dalej." },
+            { "language": "ro", "text": "Exact. Iar dacă cineva stă prea mult pe telefon, putem aminti prietenos să continuăm să vorbim." },
+            { "language": "sq", "text": "Saktësisht. Dhe nëse dikush qëndron shumë gjatë në telefon, mund t'i kujtojmë me mirësi të vazhdojmë të flasim." }
+          ],
+          "function": "add-practical-rule",
+          "expectedLearnerAction": "Add a practical reminder rule without blaming."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "group-member",
+          "baseText": "Gut, dann probieren wir diese Regel heute aus und schauen am Ende, ob sie funktioniert hat.",
+          "translations": [
+            { "language": "en", "text": "Good, then we will try this rule today and see at the end whether it worked." },
+            { "language": "fa", "text": "خوب، پس امروز این قانون را امتحان می‌کنیم و در پایان می‌بینیم آیا کار کرد یا نه." },
+            { "language": "ar", "text": "حسناً، إذن نجرب هذه القاعدة اليوم ونرى في النهاية هل نجحت." },
+            { "language": "tr", "text": "Tamam, o zaman bugün bu kuralı deneriz ve sonunda işe yarayıp yaramadığına bakarız." },
+            { "language": "ru", "text": "Хорошо, тогда сегодня попробуем это правило и в конце посмотрим, сработало ли оно." },
+            { "language": "ckb", "text": "باشە، ئەوا ئەمڕۆ ئەم ڕێسایە تاقی دەکەینەوە و لە کۆتاییدا دەبینین ئایا کاری کردووە یان نا." },
+            { "language": "kmr", "text": "Baş e, hingê em îro vê qaîdeyê ceribînin û di dawiyê de bibînin gelo kar kir yan na." },
+            { "language": "pl", "text": "Dobrze, to dziś wypróbujemy tę zasadę i na końcu zobaczymy, czy zadziałała." },
+            { "language": "ro", "text": "Bine, atunci încercăm această regulă astăzi și vedem la final dacă a funcționat." },
+            { "language": "sq", "text": "Mirë, atëherë sot do ta provojmë këtë rregull dhe në fund do të shohim nëse funksionoi." }
+          ],
+          "function": "confirm-trial"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Einverstanden. Also: erst zwei Minuten sprechen, dann bei Bedarf kurz ein Wort nachschlagen und danach weiterreden.",
+          "translations": [
+            { "language": "en", "text": "Agreed. So: first speak for two minutes, then briefly look up a word if needed, and then continue talking." },
+            { "language": "fa", "text": "موافقم. پس: اول دو دقیقه صحبت می‌کنیم، بعد در صورت نیاز کوتاه یک کلمه را جست‌وجو می‌کنیم و سپس صحبت را ادامه می‌دهیم." },
+            { "language": "ar", "text": "متفقون. إذن: نتحدث أولاً دقيقتين، ثم نبحث بسرعة عن كلمة عند الحاجة، وبعد ذلك نتابع الحديث." },
+            { "language": "tr", "text": "Anlaştık. Yani: önce iki dakika konuşuyoruz, sonra gerekirse kısa bir kelime bakıyoruz ve ardından konuşmaya devam ediyoruz." },
+            { "language": "ru", "text": "Согласен. Итак: сначала говорим две минуты, потом при необходимости быстро смотрим одно слово и затем продолжаем разговор." },
+            { "language": "ckb", "text": "ڕازیم. واتە: سەرەتا دوو خولەک قسە دەکەین، پاشان ئەگەر پێویست بوو بە کورتی وشەیەک دەگەڕێین، و دواتر قسەکردن بەردەوام دەکەین." },
+            { "language": "kmr", "text": "Razî me. Ango: pêşî du xulek diaxivin, paşê heke pêwîst be peyvekê bi kurtî digerin û paşê axaftinê didomînin." },
+            { "language": "pl", "text": "Zgoda. Czyli: najpierw mówimy przez dwie minuty, potem w razie potrzeby krótko sprawdzamy jedno słowo i dalej rozmawiamy." },
+            { "language": "ro", "text": "De acord. Deci: mai întâi vorbim două minute, apoi, dacă este nevoie, verificăm pe scurt un cuvânt și după aceea continuăm să vorbim." },
+            { "language": "sq", "text": "Dakord. Pra: fillimisht flasim dy minuta, pastaj nëse duhet kërkojmë shkurt një fjalë dhe më pas vazhdojmë të flasim." }
+          ],
+          "function": "summarize-rule",
+          "expectedLearnerAction": "Summarize the group rule in clear steps."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich stimme dir zu, dass Konzentration wichtig ist. Ganz ohne Handy finde ich aber schwierig, weil manche Wörter im Online-Wörterbuch nachschlagen.",
+              "translations": [
+                { "language": "en", "text": "I agree with you that concentration is important. But I find it difficult to have no phone at all because some people look up words in the online dictionary." },
+                { "language": "fa", "text": "با تو موافقم که تمرکز مهم است. اما کاملاً بدون موبایل را سخت می‌دانم، چون بعضی‌ها کلمات را در دیکشنری آنلاین نگاه می‌کنند." },
+                { "language": "ar", "text": "أتفق معك في أن التركيز مهم. لكنني أجد الأمر صعباً من دون هاتف تماماً، لأن بعض الأشخاص يبحثون عن الكلمات في القاموس الإلكتروني." },
+                { "language": "tr", "text": "Konsantrasyonun önemli olduğuna katılıyorum. Ama tamamen telefonsuz olmayı zor buluyorum, çünkü bazı kişiler kelimeleri çevrim içi sözlükte arıyor." },
+                { "language": "ru", "text": "Я согласен, что концентрация важна. Но совсем без телефона мне кажется сложно, потому что некоторые ищут слова в онлайн-словаре." },
+                { "language": "ckb", "text": "لەگەڵت ڕازیم کە تەرکیز گرنگە. بەڵام بە تەواوی بێ موبایل بە زەحمەتم دەزانم، چونکە هەندێک کەس وشەکان لە فەرهەنگی ئۆنلاین دەگەڕێن." },
+                { "language": "kmr", "text": "Ez bi te re razî me ku baldan girîng e. Lê bê telefon bi tevahî ji min re zehmet e, ji ber ku hin kes peyvan di ferhenga serhêl de digerin." },
+                { "language": "pl", "text": "Zgadzam się z tobą, że koncentracja jest ważna. Ale całkowicie bez telefonu jest moim zdaniem trudno, bo niektórzy sprawdzają słowa w słowniku online." },
+                { "language": "ro", "text": "Sunt de acord cu tine că este importantă concentrarea. Dar mi se pare dificil complet fără telefon, deoarece unii caută cuvinte în dicționarul online." },
+                { "language": "sq", "text": "Jam dakord me ty që përqendrimi është i rëndësishëm. Por më duket e vështirë krejt pa telefon, sepse disa kërkojnë fjalë në fjalorin online." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist eine gute B1-Antwort: Zustimmung, Widerspruch und Grund sind klar verbunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a good B1 answer: agreement, disagreement, and reason are clearly connected." },
+                { "language": "fa", "text": "این یک پاسخ خوب B1 است: موافقت، مخالفت و دلیل به‌روشنی به هم وصل شده‌اند." },
+                { "language": "ar", "text": "هذه إجابة جيدة لمستوى B1: الموافقة والاعتراض والسبب مرتبطة بوضوح." },
+                { "language": "tr", "text": "Bu iyi bir B1 cevabı: katılma, karşı çıkma ve neden açıkça bağlı." },
+                { "language": "ru", "text": "Это хороший ответ B1: согласие, возражение и причина ясно связаны." },
+                { "language": "ckb", "text": "ئەمە وەڵامێکی باشی B1ە: ڕازیبوون، ناڕازیبوون و هۆکار بە ڕوونی پەیوەستن." },
+                { "language": "kmr", "text": "Ev bersiveke baş a B1 ye: razîbûn, nerazîbûn û sedem bi zelalî girêdayî ne." },
+                { "language": "pl", "text": "To dobra odpowiedź B1: zgoda, sprzeciw i powód są jasno połączone." },
+                { "language": "ro", "text": "Este un răspuns B1 bun: acordul, dezacordul și motivul sunt legate clar." },
+                { "language": "sq", "text": "Është një përgjigje e mirë B1: pajtimi, kundërshtimi dhe arsyeja lidhen qartë." }
+              ],
+              "explanationKey": "agree-disagree-reason"
+            },
+            {
+              "id": "b",
+              "text": "Ich bin nicht ganz deiner Meinung.",
+              "translations": [
+                { "language": "en", "text": "I do not completely agree with you." },
+                { "language": "fa", "text": "کاملاً با تو موافق نیستم." },
+                { "language": "ar", "text": "لا أتفق معك تماماً." },
+                { "language": "tr", "text": "Seninle tamamen aynı fikirde değilim." },
+                { "language": "ru", "text": "Я не совсем с тобой согласен." },
+                { "language": "ckb", "text": "بە تەواوی لەگەڵت ڕازی نیم." },
+                { "language": "kmr", "text": "Ez bi tevahî bi te re razî nînim." },
+                { "language": "pl", "text": "Nie do końca się z tobą zgadzam." },
+                { "language": "ro", "text": "Nu sunt complet de acord cu tine." },
+                { "language": "sq", "text": "Nuk jam plotësisht dakord me ty." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu kurz: Zustimmung zu einem Punkt und eine Begründung fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too short: agreement with one point and a reason are missing." },
+                { "language": "fa", "text": "مودبانه است، اما خیلی کوتاه است: موافقت با یک نکته و دلیل کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه قصير جداً: ينقص الاتفاق مع نقطة واحدة والسبب." },
+                { "language": "tr", "text": "Bu kibar, ama çok kısa: bir noktaya katılma ve gerekçe eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко: не хватает согласия с одним пунктом и причины." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر کورتە: ڕازیبوون لەگەڵ خاڵێک و هۆکار کەمە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir kurt e: razîbûn bi xalekê û sedem kêm in." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt krótkie: brakuje zgody z jednym punktem i uzasadnienia." },
+                { "language": "ro", "text": "Este politicos, dar prea scurt: lipsesc acordul cu un punct și motivul." },
+                { "language": "sq", "text": "Është e sjellshme, por shumë e shkurtër: mungon pajtimi me një pikë dhe arsyeja." }
+              ],
+              "explanationKey": "missing-reason"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das sehe ich auch. Vielleicht können wir vereinbaren: Erst versuchen wir es zwei Minuten ohne Handy, und danach dürfen wir ein Wort kurz prüfen.",
+              "translations": [
+                { "language": "en", "text": "I see that too. Maybe we can agree: first we try for two minutes without phones, and after that we may briefly check one word." },
+                { "language": "fa", "text": "من هم این را می‌بینم. شاید بتوانیم توافق کنیم: اول دو دقیقه بدون موبایل تلاش کنیم، و بعد اجازه داشته باشیم یک کلمه را کوتاه چک کنیم." },
+                { "language": "ar", "text": "أرى ذلك أيضاً. ربما يمكننا الاتفاق: نحاول أولاً دقيقتين من دون هواتف، وبعد ذلك يمكننا التحقق بسرعة من كلمة واحدة." },
+                { "language": "tr", "text": "Bunu ben de görüyorum. Belki şöyle anlaşabiliriz: önce iki dakika telefonsuz deneriz, sonra bir kelimeyi kısaca kontrol edebiliriz." },
+                { "language": "ru", "text": "Я тоже это понимаю. Может быть, договоримся так: сначала две минуты пробуем без телефонов, а потом можно быстро проверить одно слово." },
+                { "language": "ckb", "text": "منیش ئەمە دەبینم. ڕەنگە بتوانین ڕێک بکەوین: سەرەتا دوو خولەک بێ موبایل هەوڵ دەدەین، و پاشان دەتوانین وشەیەک بە کورتی بپشکنین." },
+                { "language": "kmr", "text": "Ez jî vê dibînim. Belkî em li hev bikin: pêşî em du xulek bê telefon hewl didin, û paşê em dikarin peyvekê bi kurtî kontrol bikin." },
+                { "language": "pl", "text": "Też to widzę. Może możemy ustalić: najpierw próbujemy przez dwie minuty bez telefonów, a potem możemy krótko sprawdzić jedno słowo." },
+                { "language": "ro", "text": "Și eu văd asta. Poate putem conveni: mai întâi încercăm două minute fără telefoane, iar apoi putem verifica pe scurt un cuvânt." },
+                { "language": "sq", "text": "Edhe unë e shoh këtë. Ndoshta mund të biem dakord: fillimisht provojmë dy minuta pa telefon, pastaj mund të kontrollojmë shkurt një fjalë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du nimmst den Einwand auf und machst daraus einen fairen Kompromiss.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you take up the objection and turn it into a fair compromise." },
+                { "language": "fa", "text": "خوب است: اعتراض را می‌پذیری و آن را به یک مصالحه منصفانه تبدیل می‌کنی." },
+                { "language": "ar", "text": "جيد: تأخذ الاعتراض وتحوله إلى حل وسط عادل." },
+                { "language": "tr", "text": "İyi: itirazı ele alıyor ve adil bir uzlaşmaya çeviriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты принимаешь возражение и превращаешь его в справедливый компромисс." },
+                { "language": "ckb", "text": "باشە: ناڕەزاییەکە وەردەگریت و دەیکەیت بە ڕێککەوتنێکی دادپەروەرانە." },
+                { "language": "kmr", "text": "Baş e: tu nerazîbûnê digirî û wê dike lihevhatineke adil." },
+                { "language": "pl", "text": "Dobrze: podejmujesz zastrzeżenie i zamieniasz je w sprawiedliwy kompromis." },
+                { "language": "ro", "text": "Bine: preiei obiecția și o transformi într-un compromis corect." },
+                { "language": "sq", "text": "Mirë: e merr kundërshtimin dhe e kthen në një kompromis të drejtë." }
+              ],
+              "explanationKey": "fair-compromise"
+            },
+            {
+              "id": "b",
+              "text": "Dann benutzen wir das Handy einfach weniger.",
+              "translations": [
+                { "language": "en", "text": "Then we simply use the phone less." },
+                { "language": "fa", "text": "پس فقط کمتر از موبایل استفاده کنیم." },
+                { "language": "ar", "text": "إذن نستخدم الهاتف أقل ببساطة." },
+                { "language": "tr", "text": "O zaman telefonu sadece daha az kullanırız." },
+                { "language": "ru", "text": "Тогда просто будем меньше пользоваться телефоном." },
+                { "language": "ckb", "text": "ئەوا تەنها کەمتر موبایل بەکار دەهێنین." },
+                { "language": "kmr", "text": "Hingê em tenê kêmtir telefonê bi kar tînin." },
+                { "language": "pl", "text": "To po prostu będziemy mniej używać telefonu." },
+                { "language": "ro", "text": "Atunci pur și simplu folosim telefonul mai puțin." },
+                { "language": "sq", "text": "Atëherë thjesht e përdorim më pak telefonin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Idee ist sinnvoll, aber zu ungenau: Die Gruppe weiß noch nicht, wann und wie lange.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The idea makes sense, but it is too vague: the group still does not know when and for how long." },
+                { "language": "fa", "text": "ایده منطقی است، اما خیلی مبهم است: گروه هنوز نمی‌داند چه زمانی و چه مدت." },
+                { "language": "ar", "text": "الفكرة منطقية، لكنها غير دقيقة: لا تعرف المجموعة بعد متى وكم من الوقت." },
+                { "language": "tr", "text": "Fikir mantıklı, ama çok belirsiz: grup hâlâ ne zaman ve ne kadar süre olduğunu bilmiyor." },
+                { "language": "ru", "text": "Идея разумная, но слишком неопределённая: группа всё ещё не знает, когда и как долго." },
+                { "language": "ckb", "text": "بیرۆکەکە مانادارە، بەڵام زۆر ناڕوونە: گرووپەکە هێشتا نازانێت کەی و چەندە." },
+                { "language": "kmr", "text": "Raman maqûl e, lê pir nezelal e: kom hê nizane kengî û çiqas dem." },
+                { "language": "pl", "text": "Pomysł ma sens, ale jest zbyt nieprecyzyjny: grupa nadal nie wie, kiedy i jak długo." },
+                { "language": "ro", "text": "Ideea are sens, dar este prea vagă: grupul încă nu știe când și cât timp." },
+                { "language": "sq", "text": "Ideja ka kuptim, por është shumë e paqartë: grupi ende nuk e di kur dhe sa gjatë." }
+              ],
+              "explanationKey": "rule-too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Einverstanden. Also: erst zwei Minuten sprechen, dann bei Bedarf kurz ein Wort nachschlagen und danach weiterreden.",
+              "translations": [
+                { "language": "en", "text": "Agreed. So: first speak for two minutes, then briefly look up a word if needed, and then continue talking." },
+                { "language": "fa", "text": "موافقم. پس: اول دو دقیقه صحبت می‌کنیم، بعد در صورت نیاز کوتاه یک کلمه را جست‌وجو می‌کنیم و سپس صحبت را ادامه می‌دهیم." },
+                { "language": "ar", "text": "متفقون. إذن: نتحدث أولاً دقيقتين، ثم نبحث بسرعة عن كلمة عند الحاجة، وبعد ذلك نتابع الحديث." },
+                { "language": "tr", "text": "Anlaştık. Yani: önce iki dakika konuşuyoruz, sonra gerekirse kısa bir kelime bakıyoruz ve ardından konuşmaya devam ediyoruz." },
+                { "language": "ru", "text": "Согласен. Итак: сначала говорим две минуты, потом при необходимости быстро смотрим одно слово и затем продолжаем разговор." },
+                { "language": "ckb", "text": "ڕازیم. واتە: سەرەتا دوو خولەک قسە دەکەین، پاشان ئەگەر پێویست بوو بە کورتی وشەیەک دەگەڕێین، و دواتر قسەکردن بەردەوام دەکەین." },
+                { "language": "kmr", "text": "Razî me. Ango: pêşî du xulek diaxivin, paşê heke pêwîst be peyvekê bi kurtî digerin û paşê axaftinê didomînin." },
+                { "language": "pl", "text": "Zgoda. Czyli: najpierw mówimy przez dwie minuty, potem w razie potrzeby krótko sprawdzamy jedno słowo i dalej rozmawiamy." },
+                { "language": "ro", "text": "De acord. Deci: mai întâi vorbim două minute, apoi, dacă este nevoie, verificăm pe scurt un cuvânt și după aceea continuăm să vorbim." },
+                { "language": "sq", "text": "Dakord. Pra: fillimisht flasim dy minuta, pastaj nëse duhet kërkojmë shkurt një fjalë dhe më pas vazhdojmë të flasim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Zusammenfassung ist klar und prüfungstauglich: Reihenfolge und Regel sind konkret.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The summary is clear and exam-ready: sequence and rule are concrete." },
+                { "language": "fa", "text": "جمع‌بندی روشن و مناسب امتحان است: ترتیب و قانون مشخص‌اند." },
+                { "language": "ar", "text": "الملخص واضح ومناسب للامتحان: التسلسل والقاعدة محددان." },
+                { "language": "tr", "text": "Özet açık ve sınava uygundur: sıra ve kural somuttur." },
+                { "language": "ru", "text": "Резюме ясное и подходит для экзамена: последовательность и правило конкретны." },
+                { "language": "ckb", "text": "کورتکردنەوەکە ڕوون و بۆ تاقیکردنەوە گونجاوە: ڕیزبەندی و ڕێسا دیاریکراون." },
+                { "language": "kmr", "text": "Kurte zelal û ji bo ezmûnê guncan e: rêz û qaîde taybet in." },
+                { "language": "pl", "text": "Podsumowanie jest jasne i nadaje się na egzamin: kolejność i zasada są konkretne." },
+                { "language": "ro", "text": "Rezumatul este clar și potrivit pentru examen: ordinea și regula sunt concrete." },
+                { "language": "sq", "text": "Përmbledhja është e qartë dhe e përshtatshme për provim: rendi dhe rregulli janë konkretë." }
+              ],
+              "explanationKey": "clear-group-summary"
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann machen wir das so.",
+              "translations": [
+                { "language": "en", "text": "Good, then we will do it that way." },
+                { "language": "fa", "text": "خوب، پس همین کار را می‌کنیم." },
+                { "language": "ar", "text": "جيد، إذن نفعل ذلك هكذا." },
+                { "language": "tr", "text": "İyi, o zaman böyle yaparız." },
+                { "language": "ru", "text": "Хорошо, тогда так и сделаем." },
+                { "language": "ckb", "text": "باشە، ئەوا وا دەکەین." },
+                { "language": "kmr", "text": "Baş e, hingê em wisa dikin." },
+                { "language": "pl", "text": "Dobrze, to tak zrobimy." },
+                { "language": "ro", "text": "Bine, atunci așa facem." },
+                { "language": "sq", "text": "Mirë, atëherë kështu bëjmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber für B1 zu kurz: Die Regel wird nicht noch einmal konkret gesichert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly, but too short for B1: the rule is not secured concretely once more." },
+                { "language": "fa", "text": "دوستانه است، اما برای B1 خیلی کوتاه است: قانون دوباره مشخص تثبیت نمی‌شود." },
+                { "language": "ar", "text": "هذا ودود، لكنه قصير جداً لمستوى B1: القاعدة لا يتم تثبيتها بشكل محدد مرة أخرى." },
+                { "language": "tr", "text": "Bu dostça, ama B1 için çok kısa: kural tekrar somut olarak güvenceye alınmıyor." },
+                { "language": "ru", "text": "Это дружелюбно, но для B1 слишком кратко: правило ещё раз конкретно не закрепляется." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام بۆ B1 زۆر کورتە: ڕێساکە جارێکی تر بە دیاریکراوی پشتڕاست ناکرێتەوە." },
+                { "language": "kmr", "text": "Ev dostane ye, lê ji bo B1 pir kurt e: qaîde careke din bi taybetî nayê piştrastkirin." },
+                { "language": "pl", "text": "To jest życzliwe, ale za krótkie na B1: zasada nie zostaje jeszcze raz konkretnie potwierdzona." },
+                { "language": "ro", "text": "Este prietenos, dar prea scurt pentru B1: regula nu este confirmată concret încă o dată." },
+                { "language": "sq", "text": "Është miqësore, por shumë e shkurtër për B1: rregulli nuk konfirmohet edhe një herë konkretisht." }
+              ],
+              "explanationKey": "summary-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: In Gruppendiskussionen sollte man zuerst einen Punkt anerkennen, dann höflich widersprechen und eine konkrete Lösung vorschlagen.",
+          "translations": [
+            { "language": "en", "text": "B1 target: in group discussions, you should first acknowledge one point, then disagree politely, and suggest a concrete solution." },
+            { "language": "fa", "text": "هدف B1: در بحث‌های گروهی باید اول یک نکته را بپذیری، بعد مودبانه مخالفت کنی و راه‌حل مشخص پیشنهاد بدهی." },
+            { "language": "ar", "text": "هدف B1: في النقاشات الجماعية يجب أولاً الاعتراف بنقطة، ثم الاعتراض بأدب، واقتراح حل محدد." },
+            { "language": "tr", "text": "B1 hedefi: grup tartışmalarında önce bir noktayı kabul etmeli, sonra kibarca karşı çıkmalı ve somut bir çözüm önermelisin." },
+            { "language": "ru", "text": "Цель B1: в групповых обсуждениях нужно сначала признать один пункт, затем вежливо возразить и предложить конкретное решение." },
+            { "language": "ckb", "text": "ئامانجی B1: لە گفتوگۆی گرووپیدا دەبێت سەرەتا خاڵێک بپەژێریت، پاشان بە ڕێزەوە ناڕازی بیت و چارەسەرێکی دیاریکراو پێشنیار بکەیت." },
+            { "language": "kmr", "text": "Armanca B1: di nîqaşên komê de divê pêşî xalekê bipejirînî, paşê bi rêz nerazî bibî û çareseriyeke taybet pêşniyar bikî." },
+            { "language": "pl", "text": "Cel B1: w dyskusjach grupowych należy najpierw uznać jeden punkt, potem uprzejmie się sprzeciwić i zaproponować konkretne rozwiązanie." },
+            { "language": "ro", "text": "Obiectiv B1: în discuțiile de grup trebuie mai întâi să recunoști un punct, apoi să exprimi dezacord politicos și să propui o soluție concretă." },
+            { "language": "sq", "text": "Qëllimi B1: në diskutime grupi duhet fillimisht të pranosh një pikë, pastaj të kundërshtosh me mirësjellje dhe të propozosh një zgjidhje konkrete." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

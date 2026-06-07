@@ -1,0 +1,734 @@
+{
+  "packageId": "roleplays-c2-core-27-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 27 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 27",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-prueferfrage-souveraen-umformulieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Prüferfrage souverän umformulieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Rephrasing an examiner's question confidently" },
+        { "language": "fa", "text": "بازگویی مسلط سؤال ممتحن" },
+        { "language": "ar", "text": "إعادة صياغة سؤال الممتحن بثقة" },
+        { "language": "tr", "text": "Sınav görevlisinin sorusunu kendinden emin biçimde yeniden ifade etmek" },
+        { "language": "ru", "text": "Уверенное переформулирование вопроса экзаменатора" },
+        { "language": "ckb", "text": "دووبارە گێڕانەوەی پرسیاری تاقیکەر بە دڵنیایی" },
+        { "language": "kmr", "text": "Ji nû ve vegotina pirsa nirxîner bi bawerî" },
+        { "language": "pl", "text": "Pewne przeformułowanie pytania egzaminatora" },
+        { "language": "ro", "text": "Reformularea sigură a întrebării examinatorului" },
+        { "language": "sq", "text": "Riformulimi me siguri i pyetjes së provuesit" }
+      ],
+      "description": "In einer mündlichen Prüfung stellt die Prüferin eine lange Frage zur Rolle von Sprache, beruflicher Teilhabe und institutioneller Anerkennung. Die Frage enthält mehrere Ebenen und könnte leicht zu einer unübersichtlichen Antwort führen. Sie sollen die Frage kurz neu fassen, den Schwerpunkt bestätigen und dann strukturiert antworten, ohne ausweichend zu wirken.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral exam, the examiner asks a long question about the role of language, professional participation, and institutional recognition. The question contains several levels and could easily lead to an unclear answer. You are asked to briefly reframe the question, confirm the focus, and then answer in a structured way without sounding evasive." },
+        { "language": "fa", "text": "در یک امتحان شفاهی، ممتحن پرسشی طولانی درباره نقش زبان، مشارکت شغلی و به‌رسمیت‌شناسی نهادی مطرح می‌کند. سؤال چند سطح دارد و به‌راحتی می‌تواند به پاسخی آشفته منجر شود. شما باید سؤال را کوتاه بازگویی کنید، محور را تأیید کنید و سپس ساختارمند پاسخ دهید، بدون اینکه طفره‌رو به نظر برسید." },
+        { "language": "ar", "text": "في امتحان شفهي تطرح الممتحنة سؤالاً طويلاً عن دور اللغة والمشاركة المهنية والاعتراف المؤسسي. يحتوي السؤال على مستويات عدة وقد يؤدي بسهولة إلى جواب غير واضح. المطلوب أن تعيدوا صياغة السؤال باختصار، وتؤكدوا المحور، ثم تجيبوا بشكل منظم من دون أن تبدوا مراوغين." },
+        { "language": "tr", "text": "Sözlü bir sınavda sınav görevlisi dilin, mesleki katılımın ve kurumsal tanınmanın rolü hakkında uzun bir soru soruyor. Soru birkaç düzey içeriyor ve kolayca dağınık bir yanıta yol açabilir. Soruyu kısaca yeniden çerçevelemeniz, odağı onaylamanız ve ardından kaçamak görünmeden yapılandırılmış biçimde yanıtlamanız bekleniyor." },
+        { "language": "ru", "text": "На устном экзамене экзаменатор задает длинный вопрос о роли языка, профессионального участия и институционального признания. Вопрос содержит несколько уровней и легко может привести к неясному ответу. Нужно кратко переформулировать вопрос, подтвердить фокус и затем структурированно ответить, не создавая впечатления уклонения." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەیەکی زارەکیدا تاقیکەر پرسیارێکی درێژ دەکات دەربارەی ڕۆڵی زمان، بەشداریی پیشەیی و دانپێدانانی دامەزراوەیی. پرسەکە چەند ئاستی هەیە و بە ئاسانی دەتوانێت ببێتە وەڵامێکی ناڕێک. دەبێت پرسەکە بە کورتی دووبارە بڵێیتەوە، سەرنجەکە پشتڕاست بکەیت و پاشان بە ڕێکخراوی وەڵام بدەیت، بەبێ ئەوەی وەک خۆدزینەوە دەربکەویت." },
+        { "language": "kmr", "text": "Di îmtîhaneke devkî de nirxîner pirseke dirêj li ser rola ziman, beşdariya pîşeyî û nasandina sazî dike. Pirs çend astan dihewîne û bi hêsanî dikare bibe bersiveke nezelal. Divê hûn pirsê bi kurtî ji nû ve çarçove bikin, fokûsê piştrast bikin û paşê bi rêkxistin bersiv bidin bêyî ku wekî dûrketin xuya bikin." },
+        { "language": "pl", "text": "Na egzaminie ustnym egzaminatorka zadaje długie pytanie o rolę języka, uczestnictwa zawodowego i uznania instytucjonalnego. Pytanie ma kilka poziomów i łatwo może prowadzić do nieprzejrzystej odpowiedzi. Trzeba krótko ująć pytanie na nowo, potwierdzić punkt ciężkości, a następnie odpowiedzieć strukturalnie, bez wrażenia unikania." },
+        { "language": "ro", "text": "Într-un examen oral, examinatoarea pune o întrebare lungă despre rolul limbii, participarea profesională și recunoașterea instituțională. Întrebarea conține mai multe niveluri și poate duce ușor la un răspuns neclar. Trebuie să reformulați scurt întrebarea, să confirmați accentul și apoi să răspundeți structurat, fără să păreți evaziv." },
+        { "language": "sq", "text": "Në një provim me gojë, provuesja bën një pyetje të gjatë për rolin e gjuhës, pjesëmarrjen profesionale dhe njohjen institucionale. Pyetja ka disa nivele dhe lehtë mund të çojë në një përgjigje të paqartë. Ju duhet ta riformuloni shkurt pyetjen, të konfirmoni fokusin dhe pastaj të përgjigjeni në mënyrë të strukturuar, pa u dukur shmangës." }
+      ],
+      "learnerGoal": "Eine komplexe Prüferfrage souverän neu fassen: den Kern der Frage zeigen, Ebenen trennen, den eigenen Antwortweg ankündigen, kurz Zeit gewinnen und anschließend präzise antworten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Reframe a complex examiner question confidently: show the core of the question, separate levels, announce your answer path, briefly gain time, and then answer precisely." },
+        { "language": "fa", "text": "یک سؤال پیچیده ممتحن را مسلط بازگویی کنید: هسته سؤال را نشان دهید، سطح‌ها را جدا کنید، مسیر پاسخ خود را اعلام کنید، کمی زمان بگیرید و سپس دقیق پاسخ دهید." },
+        { "language": "ar", "text": "أعيدوا صياغة سؤال امتحاني معقد بثقة: أظهروا لب السؤال، وافصلوا المستويات، وأعلنوا مسار الإجابة، واكسبوا وقتاً قصيراً، ثم أجيبوا بدقة." },
+        { "language": "tr", "text": "Karmaşık bir sınav sorusunu güvenle yeniden çerçeveleyin: sorunun çekirdeğini gösterin, düzeyleri ayırın, yanıt yolunuzu duyurun, kısa süre kazanın ve ardından kesin yanıt verin." },
+        { "language": "ru", "text": "Уверенно переформулировать сложный вопрос экзаменатора: показать ядро вопроса, разделить уровни, объявить путь ответа, ненадолго выиграть время и затем точно ответить." },
+        { "language": "ckb", "text": "پرسیارێکی ئاڵۆزی تاقیکەر بە دڵنیایی دووبارە بڵێوە: ناوەڕۆکی پرسەکە پیشان بدە، ئاستەکان جیا بکەوە، ڕێگای وەڵامەکەت ڕابگەیەنە، کەمێک کات بەدەست بهێنە و پاشان بە وردی وەڵام بدە." },
+        { "language": "kmr", "text": "Pirseke aloz a nirxîner bi bawerî ji nû ve çarçove bikin: navoka pirsê nîşan bidin, astan cuda bikin, rêya bersiva xwe ragihînin, demeke kurt bistînin û paşê bi hûrgilî bersiv bidin." },
+        { "language": "pl", "text": "Pewnie ująć na nowo złożone pytanie egzaminatora: pokazać rdzeń pytania, oddzielić poziomy, zapowiedzieć tok odpowiedzi, krótko zyskać czas i następnie odpowiedzieć precyzyjnie." },
+        { "language": "ro", "text": "Reformulați sigur o întrebare complexă a examinatorului: arătați nucleul întrebării, separați nivelurile, anunțați traseul răspunsului, câștigați scurt timp și apoi răspundeți precis." },
+        { "language": "sq", "text": "Riformuloni me siguri një pyetje të ndërlikuar të provuesit: tregoni bërthamën e pyetjes, ndani nivelet, njoftoni rrugën e përgjigjes, fitoni pak kohë dhe pastaj përgjigjuni saktë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "exam-discussion",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 27,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Prüfungskandidat",
+          "translations": [
+            { "language": "en", "text": "Exam candidate" },
+            { "language": "fa", "text": "داوطلب امتحان" },
+            { "language": "ar", "text": "الممتحَن" },
+            { "language": "tr", "text": "Sınav adayı" },
+            { "language": "ru", "text": "Экзаменуемый" },
+            { "language": "ckb", "text": "تاقیکراو" },
+            { "language": "kmr", "text": "Namzetê îmtîhanê" },
+            { "language": "pl", "text": "Kandydat egzaminacyjny" },
+            { "language": "ro", "text": "Candidat la examen" },
+            { "language": "sq", "text": "Kandidat provimi" }
+          ]
+        },
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüferin",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحنة" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەر" },
+            { "language": "kmr", "text": "Nirxîner" },
+            { "language": "pl", "text": "Egzaminatorka" },
+            { "language": "ro", "text": "Examinatoare" },
+            { "language": "sq", "text": "Provuesja" }
+          ]
+        },
+        {
+          "roleKey": "co-examiner",
+          "displayName": "Zweitprüfer",
+          "translations": [
+            { "language": "en", "text": "Second examiner" },
+            { "language": "fa", "text": "ممتحن دوم" },
+            { "language": "ar", "text": "الممتحن الثاني" },
+            { "language": "tr", "text": "İkinci sınav görevlisi" },
+            { "language": "ru", "text": "Второй экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەری دووەم" },
+            { "language": "kmr", "text": "Nirxînerê duyem" },
+            { "language": "pl", "text": "Drugi egzaminator" },
+            { "language": "ro", "text": "Al doilea examinator" },
+            { "language": "sq", "text": "Provuesi i dytë" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Sie haben gesagt, Sprachkurse seien für Integration wichtig. Wie bewerten Sie aber das Verhältnis von Sprachkompetenz, beruflicher Teilhabe und institutioneller Anerkennung, wenn formale Abschlüsse zwar vorhanden sind, aber im Arbeitsmarkt kaum zählen?",
+          "translations": [
+            { "language": "en", "text": "You said that language courses are important for integration. But how do you assess the relationship between language competence, professional participation, and institutional recognition when formal qualifications exist but hardly count in the labor market?" },
+            { "language": "fa", "text": "شما گفتید دوره‌های زبان برای ادغام مهم‌اند. اما رابطه میان توانش زبانی، مشارکت شغلی و به‌رسمیت‌شناسی نهادی را چگونه ارزیابی می‌کنید، وقتی مدارک رسمی وجود دارند اما در بازار کار چندان به حساب نمی‌آیند؟" },
+            { "language": "ar", "text": "قلتم إن دورات اللغة مهمة للاندماج. لكن كيف تقيمون العلاقة بين الكفاءة اللغوية والمشاركة المهنية والاعتراف المؤسسي عندما تكون الشهادات الرسمية موجودة لكنها لا تُحسب كثيراً في سوق العمل؟" },
+            { "language": "tr", "text": "Dil kurslarının uyum için önemli olduğunu söylediniz. Peki resmi diplomalar varken ama iş piyasasında pek sayılmıyorken dil yeterliği, mesleki katılım ve kurumsal tanınma arasındaki ilişkiyi nasıl değerlendirirsiniz?" },
+            { "language": "ru", "text": "Вы сказали, что языковые курсы важны для интеграции. Но как вы оцениваете соотношение языковой компетенции, профессионального участия и институционального признания, если формальные дипломы есть, но на рынке труда почти не учитываются?" },
+            { "language": "ckb", "text": "تۆ وتت کۆرسەکانی زمان بۆ یەکگرتن گرنگن. بەڵام پەیوەندیی نێوان توانای زمانی، بەشداریی پیشەیی و دانپێدانانی دامەزراوەیی چۆن هەڵدەسەنگێنیت کاتێک بڕوانامەی فەرمی هەیە، بەڵام لە بازاڕی کاردا زۆر حسابی بۆ ناکرێت؟" },
+            { "language": "kmr", "text": "We got ku kursên ziman ji bo entegrasyonê girîng in. Lê hûn têkiliya di navbera jêhatina ziman, beşdariya pîşeyî û nasandina sazî de çawa dinirxînin, dema ku belgeyên fermî hene lê li bazara karê gelek nayên hesibandin?" },
+            { "language": "pl", "text": "Powiedział pan, że kursy językowe są ważne dla integracji. Jak jednak ocenia pan relację między kompetencją językową, uczestnictwem zawodowym i uznaniem instytucjonalnym, gdy formalne dyplomy istnieją, ale na rynku pracy prawie się nie liczą?" },
+            { "language": "ro", "text": "Ați spus că cursurile de limbă sunt importante pentru integrare. Dar cum evaluați relația dintre competența lingvistică, participarea profesională și recunoașterea instituțională atunci când diplomele formale există, dar contează puțin pe piața muncii?" },
+            { "language": "sq", "text": "Ju thatë se kurset e gjuhës janë të rëndësishme për integrimin. Por si e vlerësoni marrëdhënien mes kompetencës gjuhësore, pjesëmarrjes profesionale dhe njohjes institucionale kur diplomat formale ekzistojnë, por në tregun e punës vlejnë pak?" }
+          ],
+          "function": "ask-complex-exam-question",
+          "toneNote": "Lang, dicht und formal."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Wenn ich Sie richtig verstehe, fragen Sie nicht nur nach Sprachkursen, sondern nach dem Zusammenspiel von Sprache, Zugang zum Beruf und Anerkennung vorhandener Qualifikationen. Ich würde das in drei Schritten beantworten: erst Sprache als Voraussetzung, dann institutionelle Hürden, schließlich die Grenze individueller Anstrengung.",
+          "translations": [
+            { "language": "en", "text": "If I understand you correctly, you are not asking only about language courses, but about the interplay between language, access to work, and recognition of existing qualifications. I would answer this in three steps: first language as a prerequisite, then institutional barriers, and finally the limit of individual effort." },
+            { "language": "fa", "text": "اگر درست متوجه شده باشم، شما فقط درباره دوره‌های زبان نمی‌پرسید، بلکه درباره تعامل میان زبان، دسترسی به کار و به‌رسمیت‌شناسی صلاحیت‌های موجود می‌پرسید. من در سه گام پاسخ می‌دهم: ابتدا زبان به‌عنوان پیش‌شرط، سپس موانع نهادی، و در پایان حد تلاش فردی." },
+            { "language": "ar", "text": "إذا فهمتكم جيداً، فأنتم لا تسألون عن دورات اللغة فقط، بل عن التفاعل بين اللغة والوصول إلى العمل والاعتراف بالمؤهلات الموجودة. سأجيب في ثلاث خطوات: أولاً اللغة كشرط، ثم العوائق المؤسسية، وأخيراً حد الجهد الفردي." },
+            { "language": "tr", "text": "Sizi doğru anladıysam, yalnızca dil kurslarını değil, dil, işe erişim ve mevcut niteliklerin tanınması arasındaki etkileşimi soruyorsunuz. Bunu üç adımda yanıtlardım: önce ön koşul olarak dil, sonra kurumsal engeller, son olarak bireysel çabanın sınırı." },
+            { "language": "ru", "text": "Если я правильно вас понял, вы спрашиваете не только о языковых курсах, а о взаимодействии языка, доступа к профессии и признания имеющихся квалификаций. Я бы ответил в три шага: сначала язык как предпосылка, затем институциональные барьеры и, наконец, предел индивидуальных усилий." },
+            { "language": "ckb", "text": "ئەگەر بە دروستی تێگەیشتبم، تۆ تەنها لە کۆرسی زمان ناپرسیت، بەڵکو لە پێکەوەکاریی زمان، گەیشتن بە کار و دانپێدانانی شارەزاییە هەبووەکان دەپرسیت. من بە سێ هەنگاو وەڵام دەدەم: سەرەتا زمان وەک پێشمەرج، پاشان بەربەستە دامەزراوەییەکان، و لە کۆتاییدا سنووری هەوڵی تاکەکەسی." },
+            { "language": "kmr", "text": "Heke ez we rast fêm kiribim, hûn ne tenê li ser kursên ziman dipirsin, lê li ser hevbandora ziman, gihîştina kar û nasandina jêhatîbûnên heyî. Ez ê di sê gav de bersiv bidim: pêşî ziman wekî pêşmerc, paşê astengên sazî, û dawî sînora hewla kesane." },
+            { "language": "pl", "text": "Jeśli dobrze rozumiem, nie pyta pani tylko o kursy językowe, lecz o współdziałanie języka, dostępu do pracy i uznania istniejących kwalifikacji. Odpowiedziałbym w trzech krokach: najpierw język jako warunek, potem bariery instytucjonalne, a na końcu granica indywidualnego wysiłku." },
+            { "language": "ro", "text": "Dacă vă înțeleg corect, nu întrebați doar despre cursurile de limbă, ci despre interacțiunea dintre limbă, accesul la muncă și recunoașterea calificărilor existente. Aș răspunde în trei pași: mai întâi limba ca premisă, apoi barierele instituționale și, în final, limita efortului individual." },
+            { "language": "sq", "text": "Nëse ju kuptoj drejt, nuk po pyesni vetëm për kurset e gjuhës, por për ndërveprimin mes gjuhës, qasjes në punë dhe njohjes së kualifikimeve ekzistuese. Do të përgjigjesha në tri hapa: së pari gjuha si parakusht, pastaj pengesat institucionale dhe në fund kufiri i përpjekjes individuale." }
+          ],
+          "function": "reframe-question",
+          "toneNote": "Ruhig, präzise und nicht ausweichend.",
+          "expectedLearnerAction": "Die komplexe Frage spiegeln und eine Antwortstruktur ankündigen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "co-examiner",
+          "baseText": "Klingt das nicht so, als würden Sie die eigentliche Frage verschieben?",
+          "translations": [
+            { "language": "en", "text": "Does that not sound as if you are shifting the actual question?" },
+            { "language": "fa", "text": "آیا این طور به نظر نمی‌رسد که دارید سؤال اصلی را جابه‌جا می‌کنید؟" },
+            { "language": "ar", "text": "ألا يبدو ذلك كأنكم تنقلون السؤال الأصلي؟" },
+            { "language": "tr", "text": "Bu, asıl soruyu kaydırıyormuşsunuz gibi gelmiyor mu?" },
+            { "language": "ru", "text": "Разве это не звучит так, будто вы смещаете настоящий вопрос?" },
+            { "language": "ckb", "text": "ئایا ئەمە وەک ئەوە نییە کە پرسە ڕاستەقینەکە دەگوازیتەوە؟" },
+            { "language": "kmr", "text": "Ma ev wisa xuya nake ku hûn pirsa rastîn diguhezînin?" },
+            { "language": "pl", "text": "Czy to nie brzmi tak, jakby przesuwał pan właściwe pytanie?" },
+            { "language": "ro", "text": "Nu sună ca și cum ați deplasa întrebarea propriu-zisă?" },
+            { "language": "sq", "text": "A nuk tingëllon sikur po e zhvendosni pyetjen e vërtetë?" }
+          ],
+          "function": "challenge-reframing",
+          "toneNote": "Skeptisch."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte die Frage nicht verschieben, sondern ihren Kern freilegen. Sie enthält mehrere Ebenen; wenn ich sie trenne, kann ich zuerst die Rolle von Sprache beantworten und danach zeigen, warum Sprache allein für berufliche Teilhabe nicht ausreicht.",
+          "translations": [
+            { "language": "en", "text": "I do not want to shift the question, but to reveal its core. It contains several levels; if I separate them, I can first answer the role of language and then show why language alone is not enough for professional participation." },
+            { "language": "fa", "text": "نمی‌خواهم سؤال را جابه‌جا کنم، بلکه می‌خواهم هسته آن را آشکار کنم. سؤال چند سطح دارد؛ اگر آن‌ها را جدا کنم، می‌توانم ابتدا نقش زبان را پاسخ دهم و سپس نشان دهم چرا زبان به‌تنهایی برای مشارکت شغلی کافی نیست." },
+            { "language": "ar", "text": "لا أريد نقل السؤال، بل كشف لبه. إنه يحتوي على مستويات عدة؛ وإذا فصلتها أستطيع أولاً الإجابة عن دور اللغة، ثم أُظهر لماذا لا تكفي اللغة وحدها للمشاركة المهنية." },
+            { "language": "tr", "text": "Soruyu kaydırmak değil, çekirdeğini ortaya çıkarmak istiyorum. Birkaç düzey içeriyor; bunları ayırırsam önce dilin rolünü yanıtlayabilir, ardından dilin tek başına mesleki katılım için neden yeterli olmadığını gösterebilirim." },
+            { "language": "ru", "text": "Я не хочу смещать вопрос, а хочу выявить его ядро. В нем несколько уровней; если я их разделю, то сначала смогу ответить о роли языка, а затем показать, почему одного языка недостаточно для профессионального участия." },
+            { "language": "ckb", "text": "نامەوێت پرسەکە بگوازمەوە، بەڵکو دەمەوێت ناوەڕۆکەکەی ئاشکرا بکەم. چەند ئاستی هەیە؛ ئەگەر جیا بکەمەوە، دەتوانم سەرەتا وەڵامی ڕۆڵی زمان بدەم و پاشان پیشان بدەم بۆچی زمان بە تەنها بۆ بەشداریی پیشەیی بەس نییە." },
+            { "language": "kmr", "text": "Ez naxwazim pirsê biguhezînim, lê dixwazim navoka wê eşkere bikim. Ew çend astan dihewîne; heke wan cuda bikim, ez dikarim pêşî rola zimanê bersiv bidim û paşê nîşan bidim çima ziman bi tenê ji bo beşdariya pîşeyî têr nake." },
+            { "language": "pl", "text": "Nie chcę przesuwać pytania, lecz odsłonić jego rdzeń. Zawiera kilka poziomów; jeśli je rozdzielę, mogę najpierw odpowiedzieć na pytanie o rolę języka, a potem pokazać, dlaczego sam język nie wystarcza do uczestnictwa zawodowego." },
+            { "language": "ro", "text": "Nu vreau să deplasez întrebarea, ci să îi scot la lumină nucleul. Ea conține mai multe niveluri; dacă le separ, pot răspunde mai întâi despre rolul limbii și apoi pot arăta de ce limba singură nu este suficientă pentru participarea profesională." },
+            { "language": "sq", "text": "Nuk dua ta zhvendos pyetjen, por të nxjerr në pah bërthamën e saj. Ajo përmban disa nivele; nëse i ndaj, mund të përgjigjem fillimisht për rolin e gjuhës dhe pastaj të tregoj pse gjuha vetëm nuk mjafton për pjesëmarrjen profesionale." }
+          ],
+          "function": "defend-reframing",
+          "toneNote": "Klärend und prüfungsfest.",
+          "expectedLearnerAction": "Zeigen, dass die Neuformulierung dem Kern der Frage dient."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Dann nennen Sie bitte den Kern Ihrer Antwort.",
+          "translations": [
+            { "language": "en", "text": "Then please state the core of your answer." },
+            { "language": "fa", "text": "پس لطفاً هسته پاسخ خود را بیان کنید." },
+            { "language": "ar", "text": "إذن اذكروا من فضلكم لب إجابتكم." },
+            { "language": "tr", "text": "O halde lütfen yanıtınızın çekirdeğini belirtin." },
+            { "language": "ru", "text": "Тогда, пожалуйста, назовите ядро вашего ответа." },
+            { "language": "ckb", "text": "ئەوسا تکایە ناوەڕۆکی وەڵامەکەت بڵێ." },
+            { "language": "kmr", "text": "Wê demê ji kerema xwe navoka bersiva xwe bibêjin." },
+            { "language": "pl", "text": "Proszę więc podać rdzeń odpowiedzi." },
+            { "language": "ro", "text": "Atunci vă rog să numiți nucleul răspunsului." },
+            { "language": "sq", "text": "Atëherë ju lutem përmendni bërthamën e përgjigjes suaj." }
+          ],
+          "function": "ask-core-answer",
+          "toneNote": "Direkt."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Der Kern ist: Sprache ist eine notwendige, aber keine hinreichende Bedingung für Teilhabe. Ohne Sprachkompetenz werden Zugänge schwerer; ohne Anerkennung von Abschlüssen, Netzwerke und faire Einstiegswege bleibt Sprachkompetenz allein jedoch begrenzt wirksam.",
+          "translations": [
+            { "language": "en", "text": "The core is this: language is a necessary but not sufficient condition for participation. Without language competence, access becomes more difficult; without recognition of qualifications, networks, and fair entry routes, however, language competence alone remains limited in effect." },
+            { "language": "fa", "text": "هسته پاسخ این است: زبان شرط لازم برای مشارکت است، اما شرط کافی نیست. بدون توانش زبانی دسترسی‌ها دشوارتر می‌شوند؛ اما بدون به‌رسمیت‌شناسی مدارک، شبکه‌ها و مسیرهای ورود عادلانه، توانش زبانی به‌تنهایی اثر محدودی دارد." },
+            { "language": "ar", "text": "اللب هو: اللغة شرط ضروري للمشاركة، لكنها ليست شرطاً كافياً. من دون كفاءة لغوية تصبح سبل الوصول أصعب؛ لكن من دون الاعتراف بالشهادات والشبكات ومسارات دخول عادلة تبقى الكفاءة اللغوية وحدها محدودة الأثر." },
+            { "language": "tr", "text": "Çekirdek şudur: dil katılım için gerekli ama yeterli olmayan bir koşuldur. Dil yeterliği olmadan erişim zorlaşır; ancak diploma tanınması, ağlar ve adil giriş yolları olmadan dil yeterliği tek başına sınırlı etkili kalır." },
+            { "language": "ru", "text": "Ядро таково: язык является необходимым, но недостаточным условием участия. Без языковой компетенции доступы становятся труднее; однако без признания дипломов, сетей и справедливых путей входа одна языковая компетенция остается ограниченно эффективной." },
+            { "language": "ckb", "text": "ناوەڕۆک ئەمەیە: زمان پێشمەرجێکی پێویستە، بەڵام پێشمەرجێکی بەس نییە بۆ بەشداری. بەبێ توانای زمانی، گەیشتن قورس‌تر دەبێت؛ بەڵام بەبێ دانپێدانانی بڕوانامە، تۆڕەکان و ڕێگای چوونەژوورەوەی دادپەروەرانە، توانای زمانی بە تەنها کاریگەرییەکی سنوورداری دەبێت." },
+            { "language": "kmr", "text": "Navok ev e: ziman şertê pêwîst e, lê ne şertê têr e ji bo beşdarî. Bê jêhatina ziman gihîştin dijwartir dibe; lê bê nasandina belgeyan, toran û rêyên ketinê yên dadwerane, jêhatina ziman bi tenê bandoreke sînordar dimîne." },
+            { "language": "pl", "text": "Rdzeń brzmi: język jest warunkiem koniecznym, ale niewystarczającym dla uczestnictwa. Bez kompetencji językowej dostęp staje się trudniejszy; jednak bez uznania dyplomów, sieci kontaktów i sprawiedliwych ścieżek wejścia sama kompetencja językowa ma ograniczony efekt." },
+            { "language": "ro", "text": "Nucleul este: limba este o condiție necesară, dar nu suficientă pentru participare. Fără competență lingvistică, accesul devine mai dificil; însă fără recunoașterea diplomelor, rețele și căi de intrare echitabile, competența lingvistică singură rămâne cu efect limitat." },
+            { "language": "sq", "text": "Bërthama është kjo: gjuha është kusht i domosdoshëm, por jo i mjaftueshëm për pjesëmarrje. Pa kompetencë gjuhësore qasjet bëhen më të vështira; por pa njohje të diplomave, rrjete dhe rrugë hyrjeje të drejta, kompetenca gjuhësore vetëm mbetet me ndikim të kufizuar." }
+          ],
+          "function": "state-core-answer",
+          "toneNote": "Konzise und differenziert.",
+          "expectedLearnerAction": "Eine klare These geben, die Sprache und Strukturen verbindet."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "co-examiner",
+          "baseText": "Wie gewinnen Sie dabei Zeit, ohne dass es nach Ausweichen klingt?",
+          "translations": [
+            { "language": "en", "text": "How do you gain time there without it sounding evasive?" },
+            { "language": "fa", "text": "در این موقعیت چگونه زمان می‌گیرید، بدون اینکه طفره‌رو به نظر برسد؟" },
+            { "language": "ar", "text": "كيف تكسبون وقتاً هنا من دون أن يبدو ذلك مراوغة؟" },
+            { "language": "tr", "text": "Bu durumda kaçamak görünmeden nasıl zaman kazanırsınız?" },
+            { "language": "ru", "text": "Как вы при этом выигрываете время, чтобы это не звучало как уклонение?" },
+            { "language": "ckb", "text": "لێرەدا چۆن کات بەدەست دەهێنیت بەبێ ئەوەی وەک خۆدزینەوە دەربکەوێت؟" },
+            { "language": "kmr", "text": "Li vir hûn çawa dem distînin bêyî ku wekî dûrketin xuya bike?" },
+            { "language": "pl", "text": "Jak zyskuje pan wtedy czas, żeby nie brzmiało to jak unikanie?" },
+            { "language": "ro", "text": "Cum câștigați timp aici fără să sune evaziv?" },
+            { "language": "sq", "text": "Si fitoni kohë këtu pa tingëlluar shmangës?" }
+          ],
+          "function": "ask-time-buying-strategy",
+          "toneNote": "Prüfungsstrategisch."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich mache die Verzögerung transparent: Ich spiegle die Frage knapp und kündige den Antwortweg an. Zum Beispiel: Ich verstehe die Frage als Verhältnis von Sprachkompetenz und Teilhabestrukturen; ich beginne mit Sprache und komme dann zu institutionellen Bedingungen.",
+          "translations": [
+            { "language": "en", "text": "I make the delay transparent: I briefly mirror the question and announce the answer path. For example: I understand the question as the relationship between language competence and participation structures; I begin with language and then move to institutional conditions." },
+            { "language": "fa", "text": "من تأخیر را شفاف می‌کنم: سؤال را کوتاه بازتاب می‌دهم و مسیر پاسخ را اعلام می‌کنم. مثلاً: من سؤال را به‌عنوان رابطه میان توانش زبانی و ساختارهای مشارکت می‌فهمم؛ با زبان شروع می‌کنم و سپس به شرایط نهادی می‌رسم." },
+            { "language": "ar", "text": "أجعل التأخير شفافاً: أعكس السؤال بإيجاز وأعلن مسار الإجابة. مثلاً: أفهم السؤال بوصفه علاقة بين الكفاءة اللغوية وهياكل المشاركة؛ أبدأ باللغة ثم أنتقل إلى الشروط المؤسسية." },
+            { "language": "tr", "text": "Gecikmeyi şeffaf hale getiririm: soruyu kısaca yansıtır ve yanıt yolunu duyururum. Örneğin: soruyu dil yeterliği ile katılım yapıları arasındaki ilişki olarak anlıyorum; dille başlar, sonra kurumsal koşullara geçerim." },
+            { "language": "ru", "text": "Я делаю задержку прозрачной: кратко отражаю вопрос и объявляю путь ответа. Например: я понимаю вопрос как соотношение языковой компетенции и структур участия; начну с языка, а затем перейду к институциональным условиям." },
+            { "language": "ckb", "text": "من دواخستنەکە شفاف دەکەم: پرسەکە بە کورتی دەگێڕمەوە و ڕێگای وەڵام ڕادەگەیەنم. بۆ نموونە: من پرسەکە وەک پەیوەندیی نێوان توانای زمانی و پێکهاتەکانی بەشداری تێدەگەم؛ بە زمان دەست پێدەکەم و پاشان دەچمە سەر مەرجە دامەزراوەییەکان." },
+            { "language": "kmr", "text": "Ez derengiyê zelal dikim: pirsê bi kurtî vedibêjim û rêya bersivê radigihînim. Mînak: ez pirsê wekî têkiliya di navbera jêhatina ziman û avahiyên beşdariyê de fêm dikim; ez bi ziman dest pê dikim û paşê diçim ser şertên sazî." },
+            { "language": "pl", "text": "Czynię opóźnienie przejrzystym: krótko odzwierciedlam pytanie i zapowiadam tok odpowiedzi. Na przykład: rozumiem pytanie jako relację między kompetencją językową a strukturami uczestnictwa; zaczynam od języka, a potem przechodzę do warunków instytucjonalnych." },
+            { "language": "ro", "text": "Fac întârzierea transparentă: oglindesc scurt întrebarea și anunț traseul răspunsului. De exemplu: înțeleg întrebarea ca relație între competența lingvistică și structurile de participare; încep cu limba și trec apoi la condițiile instituționale." },
+            { "language": "sq", "text": "E bëj vonesën transparente: e pasqyroj shkurt pyetjen dhe njoftoj rrugën e përgjigjes. Për shembull: e kuptoj pyetjen si marrëdhënie mes kompetencës gjuhësore dhe strukturave të pjesëmarrjes; filloj me gjuhën dhe pastaj kaloj te kushtet institucionale." }
+          ],
+          "function": "make-time-buying-transparent",
+          "toneNote": "Offen und kontrolliert.",
+          "expectedLearnerAction": "Zeit gewinnen, indem die Struktur der Antwort offen gemacht wird."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Und wenn Sie merken, dass Sie einen Teil der Frage nicht sofort beantworten können?",
+          "translations": [
+            { "language": "en", "text": "And if you realize that you cannot answer one part of the question immediately?" },
+            { "language": "fa", "text": "و اگر متوجه شوید که نمی‌توانید بخشی از سؤال را فوراً پاسخ دهید چه می‌کنید؟" },
+            { "language": "ar", "text": "وماذا إذا لاحظتم أنكم لا تستطيعون الإجابة فوراً عن جزء من السؤال؟" },
+            { "language": "tr", "text": "Peki sorunun bir bölümünü hemen yanıtlayamayacağınızı fark ederseniz?" },
+            { "language": "ru", "text": "А если вы понимаете, что не можете сразу ответить на часть вопроса?" },
+            { "language": "ckb", "text": "ئەگەر تێبینی بکەیت کە ناتوانیت بەشێکی پرسەکە دەستبەجێ وەڵام بدەیت چی؟" },
+            { "language": "kmr", "text": "Û heke hûn bibînin ku hûn nikarin beşek ji pirsê yekser bersiv bidin?" },
+            { "language": "pl", "text": "A jeśli zauważy pan, że nie może od razu odpowiedzieć na część pytania?" },
+            { "language": "ro", "text": "Și dacă observați că nu puteți răspunde imediat la o parte a întrebării?" },
+            { "language": "sq", "text": "Po nëse vini re se nuk mund t'i përgjigjeni menjëherë një pjese të pyetjes?" }
+          ],
+          "function": "ask-partial-knowledge-limit",
+          "toneNote": "Praktisch."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich die Grenze offen benennen und trotzdem im Thema bleiben: Den empirischen Vergleich einzelner Bundesländer kann ich hier nicht vollständig darstellen; ich kann aber das Prinzip anhand von Anerkennung, Beratung und Arbeitsplatzkommunikation erläutern.",
+          "translations": [
+            { "language": "en", "text": "Then I would name the limit openly and still stay on topic: I cannot present the empirical comparison of individual federal states fully here; but I can explain the principle using recognition, counseling, and workplace communication." },
+            { "language": "fa", "text": "در آن صورت محدودیت را آشکارا بیان می‌کنم و با این حال در موضوع می‌مانم: مقایسه تجربی تک‌تک ایالت‌ها را اینجا نمی‌توانم کامل ارائه کنم؛ اما می‌توانم اصل موضوع را با به‌رسمیت‌شناسی، مشاوره و ارتباطات محل کار توضیح دهم." },
+            { "language": "ar", "text": "عندئذ سأذكر الحد بوضوح وأبقى مع ذلك داخل الموضوع: لا أستطيع هنا عرض المقارنة التجريبية بين الولايات كاملة؛ لكن يمكنني شرح المبدأ من خلال الاعتراف والاستشارة والتواصل في مكان العمل." },
+            { "language": "tr", "text": "O zaman sınırı açıkça belirtir ve yine de konuda kalırdım: tek tek eyaletlerin ampirik karşılaştırmasını burada tam olarak sunamam; ancak ilkeyi tanınma, danışmanlık ve işyeri iletişimi üzerinden açıklayabilirim." },
+            { "language": "ru", "text": "Тогда я бы открыто назвал предел и все же остался в теме: эмпирическое сравнение отдельных федеральных земель я не могу здесь полностью представить; но могу объяснить принцип на примере признания, консультирования и коммуникации на рабочем месте." },
+            { "language": "ckb", "text": "ئەوسا سنوورەکە بە ئاشکرا ناودەبەم و هێشتا لە بابەتەکەدا دەمێنمەوە: بەراوردی ئەزموونی هەر ویلایەتێکی فیدراڵ لێرە بە تەواوی ناتوانم پیشان بدەم؛ بەڵام دەتوانم بنەماکە بە دانپێدانان، ڕاوێژکاری و پەیوەندیی شوێنی کار ڕوون بکەمەوە." },
+            { "language": "kmr", "text": "Wê demê ez ê sînorê eşkere nav bikim û dîsa di mijarê de bimînim: ez nikarim li vir berawirdkirina emprîkî ya her eyaleta federal bi tevahî pêşkêş bikim; lê dikarim prensîbê bi nasandin, şêwirmendî û ragihandina cihê karê rave bikim." },
+            { "language": "pl", "text": "Wtedy otwarcie nazwałbym granicę i mimo to pozostał przy temacie: nie mogę tutaj w pełni przedstawić empirycznego porównania poszczególnych krajów związkowych; mogę jednak wyjaśnić zasadę na przykładzie uznania, doradztwa i komunikacji w miejscu pracy." },
+            { "language": "ro", "text": "Atunci aș numi deschis limita și totuși aș rămâne în temă: nu pot prezenta aici complet comparația empirică a landurilor individuale; dar pot explica principiul prin recunoaștere, consiliere și comunicare la locul de muncă." },
+            { "language": "sq", "text": "Atëherë do ta përmendja hapur kufirin dhe prapë do të qëndroja te tema: krahasimin empirik të landeve të veçanta nuk mund ta paraqes plotësisht këtu; por mund ta shpjegoj parimin përmes njohjes, këshillimit dhe komunikimit në vendin e punës." }
+          ],
+          "function": "answer-with-limited-scope",
+          "toneNote": "Transparent und prüfungsstabil.",
+          "expectedLearnerAction": "Eine Wissensgrenze nennen und dennoch eine brauchbare Antwort geben."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wenn ich Sie richtig verstehe, geht es um das Zusammenspiel von Sprache, beruflichem Zugang und Anerkennung vorhandener Qualifikationen. Ich würde zuerst Sprache, dann institutionelle Hürden und zuletzt individuelle Grenzen behandeln.",
+              "translations": [
+                { "language": "en", "text": "If I understand you correctly, this is about the interplay between language, access to work, and recognition of existing qualifications. I would first address language, then institutional barriers, and finally individual limits." },
+                { "language": "fa", "text": "اگر درست متوجه شده باشم، موضوع تعامل میان زبان، دسترسی شغلی و به‌رسمیت‌شناسی صلاحیت‌های موجود است. ابتدا زبان، سپس موانع نهادی و در پایان محدودیت‌های فردی را بررسی می‌کنم." },
+                { "language": "ar", "text": "إذا فهمتكم جيداً، فالأمر يتعلق بالتفاعل بين اللغة والوصول المهني والاعتراف بالمؤهلات الموجودة. سأعالج أولاً اللغة، ثم العوائق المؤسسية، وأخيراً الحدود الفردية." },
+                { "language": "tr", "text": "Sizi doğru anladıysam, mesele dil, işe erişim ve mevcut niteliklerin tanınması arasındaki etkileşimdir. Önce dili, sonra kurumsal engelleri, en sonunda bireysel sınırları ele alırım." },
+                { "language": "ru", "text": "Если я правильно вас понял, речь идет о взаимодействии языка, доступа к работе и признания имеющихся квалификаций. Я сначала рассмотрю язык, затем институциональные барьеры и в конце индивидуальные пределы." },
+                { "language": "ckb", "text": "ئەگەر بە دروستی تێگەیشتبم، بابەتەکە پێکەوەکاریی زمان، گەیشتنی پیشەیی و دانپێدانانی شارەزاییە هەبووەکانە. سەرەتا زمان، پاشان بەربەستە دامەزراوەییەکان و لە کۆتاییدا سنوورە تاکەکەسییەکان باس دەکەم." },
+                { "language": "kmr", "text": "Heke ez we rast fêm kiribim, mijar hevbandora ziman, gihîştina kar û nasandina jêhatîbûnên heyî ye. Ez ê pêşî ziman, paşê astengên sazî û dawî sînorên kesane binirxînim." },
+                { "language": "pl", "text": "Jeśli dobrze rozumiem, chodzi o współdziałanie języka, dostępu zawodowego i uznania istniejących kwalifikacji. Najpierw omówiłbym język, potem bariery instytucjonalne, a na końcu granice indywidualne." },
+                { "language": "ro", "text": "Dacă vă înțeleg corect, este vorba despre interacțiunea dintre limbă, accesul profesional și recunoașterea calificărilor existente. Aș aborda mai întâi limba, apoi barierele instituționale și la final limitele individuale." },
+                { "language": "sq", "text": "Nëse ju kuptoj drejt, bëhet fjalë për ndërveprimin mes gjuhës, qasjes profesionale dhe njohjes së kualifikimeve ekzistuese. Do të trajtoja së pari gjuhën, pastaj pengesat institucionale dhe në fund kufijtë individualë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Frage wird gespiegelt, der Kern bleibt erhalten und der Antwortweg wird sichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the question is mirrored, the core remains intact, and the answer path becomes visible." },
+                { "language": "fa", "text": "قوی است: سؤال بازتاب داده می‌شود، هسته حفظ می‌شود و مسیر پاسخ آشکار می‌شود." },
+                { "language": "ar", "text": "قوي: يُعكس السؤال، ويبقى اللب محفوظاً، ويصبح مسار الإجابة مرئياً." },
+                { "language": "tr", "text": "Güçlü: soru yansıtılıyor, çekirdek korunuyor ve yanıt yolu görünür oluyor." },
+                { "language": "ru", "text": "Сильно: вопрос отражен, ядро сохранено, путь ответа становится видимым." },
+                { "language": "ckb", "text": "بەهێزە: پرسەکە دەگێڕدرێتەوە، ناوەڕۆک دەپارێزرێت و ڕێگای وەڵام ئاشکرا دەبێت." },
+                { "language": "kmr", "text": "Xurt e: pirs tê vedan, navok tê parastin û rêya bersivê xuya dibe." },
+                { "language": "pl", "text": "Mocne: pytanie zostaje odzwierciedlone, rdzeń zachowany, a tok odpowiedzi widoczny." },
+                { "language": "ro", "text": "Puternic: întrebarea este oglindită, nucleul rămâne intact, iar traseul răspunsului devine vizibil." },
+                { "language": "sq", "text": "E fortë: pyetja pasqyrohet, bërthama ruhet dhe rruga e përgjigjes bëhet e dukshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Frage ist sehr breit; ich würde mich deshalb auf die Bedeutung von Sprachkursen konzentrieren.",
+              "translations": [
+                { "language": "en", "text": "The question is very broad; therefore I would focus on the importance of language courses." },
+                { "language": "fa", "text": "سؤال بسیار گسترده است؛ بنابراین روی اهمیت دوره‌های زبان تمرکز می‌کنم." },
+                { "language": "ar", "text": "السؤال واسع جداً؛ لذلك سأركز على أهمية دورات اللغة." },
+                { "language": "tr", "text": "Soru çok geniş; bu yüzden dil kurslarının önemine odaklanırım." },
+                { "language": "ru", "text": "Вопрос очень широкий; поэтому я сосредоточился бы на значении языковых курсов." },
+                { "language": "ckb", "text": "پرسەکە زۆر فراوانە؛ بۆیە سەرنج دەخەمە سەر گرنگیی کۆرسەکانی زمان." },
+                { "language": "kmr", "text": "Pirs pir fireh e; ji ber vê yekê ez ê li girîngiya kursên ziman fokûs bikim." },
+                { "language": "pl", "text": "Pytanie jest bardzo szerokie; dlatego skupiłbym się na znaczeniu kursów językowych." },
+                { "language": "ro", "text": "Întrebarea este foarte largă; de aceea m-aș concentra pe importanța cursurilor de limbă." },
+                { "language": "sq", "text": "Pyetja është shumë e gjerë; prandaj do të përqendrohesha te rëndësia e kurseve të gjuhës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng. Die Antwort reduziert die Frage und verliert berufliche Teilhabe und Anerkennung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow. The answer reduces the question and loses professional participation and recognition." },
+                { "language": "fa", "text": "بیش از حد تنگ است. پاسخ سؤال را کاهش می‌دهد و مشارکت شغلی و به‌رسمیت‌شناسی را از دست می‌دهد." },
+                { "language": "ar", "text": "ضيق أكثر من اللازم. يختزل الجواب السؤال ويفقد المشاركة المهنية والاعتراف." },
+                { "language": "tr", "text": "Fazla dar. Yanıt soruyu daraltıyor ve mesleki katılım ile tanınmayı kaybediyor." },
+                { "language": "ru", "text": "Слишком узко. Ответ сокращает вопрос и теряет профессиональное участие и признание." },
+                { "language": "ckb", "text": "زۆر تەنگە. وەڵامەکە پرسەکە کەم دەکاتەوە و بەشداریی پیشەیی و دانپێدانان لەدەست دەدات." },
+                { "language": "kmr", "text": "Pir teng e. Bersiv pirsê kêm dike û beşdariya pîşeyî û nasandinê winda dike." },
+                { "language": "pl", "text": "Zbyt wąskie. Odpowiedź redukuje pytanie i traci uczestnictwo zawodowe oraz uznanie." },
+                { "language": "ro", "text": "Prea îngust. Răspunsul reduce întrebarea și pierde participarea profesională și recunoașterea." },
+                { "language": "sq", "text": "Tepër e ngushtë. Përgjigjja e redukton pyetjen dhe humb pjesëmarrjen profesionale dhe njohjen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich verschiebe die Frage nicht, sondern lege ihren Kern frei: Erst kläre ich die Rolle von Sprache, dann die institutionellen Bedingungen, die Sprachkompetenz begrenzen oder wirksam machen.",
+              "translations": [
+                { "language": "en", "text": "I am not shifting the question, but revealing its core: first I clarify the role of language, then the institutional conditions that limit or enable language competence." },
+                { "language": "fa", "text": "من سؤال را جابه‌جا نمی‌کنم، بلکه هسته آن را آشکار می‌کنم: ابتدا نقش زبان را روشن می‌کنم، سپس شرایط نهادی را که توانش زبانی را محدود یا مؤثر می‌کنند." },
+                { "language": "ar", "text": "لا أنقل السؤال، بل أكشف لبه: أولاً أوضح دور اللغة، ثم الشروط المؤسسية التي تحد الكفاءة اللغوية أو تجعلها فعالة." },
+                { "language": "tr", "text": "Soruyu kaydırmıyorum, çekirdeğini ortaya çıkarıyorum: önce dilin rolünü, sonra dil yeterliğini sınırlayan ya da etkili kılan kurumsal koşulları açıklarım." },
+                { "language": "ru", "text": "Я не смещаю вопрос, а выявляю его ядро: сначала проясняю роль языка, затем институциональные условия, которые ограничивают или делают языковую компетенцию действенной." },
+                { "language": "ckb", "text": "من پرسەکە ناگوازمەوە، بەڵکو ناوەڕۆکەکەی ئاشکرا دەکەم: سەرەتا ڕۆڵی زمان ڕوون دەکەم، پاشان مەرجە دامەزراوەییەکان کە توانای زمانی سنووردار یان کاریگەر دەکەن." },
+                { "language": "kmr", "text": "Ez pirsê naguhezînim, lê navoka wê eşkere dikim: pêşî rola zimanê zelal dikim, paşê şertên sazî ku jêhatina ziman sînordar an bibandor dikin." },
+                { "language": "pl", "text": "Nie przesuwam pytania, lecz odsłaniam jego rdzeń: najpierw wyjaśniam rolę języka, potem warunki instytucjonalne, które ograniczają lub uruchamiają kompetencję językową." },
+                { "language": "ro", "text": "Nu deplasez întrebarea, ci îi scot la lumină nucleul: mai întâi clarific rolul limbii, apoi condițiile instituționale care limitează sau fac eficientă competența lingvistică." },
+                { "language": "sq", "text": "Nuk e zhvendos pyetjen, por nxjerr në pah bërthamën e saj: së pari sqaroj rolin e gjuhës, pastaj kushtet institucionale që e kufizojnë ose e bëjnë efektive kompetencën gjuhësore." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verteidigt die Umformulierung und hält den Kern der Prüfungsfrage fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer defends the rephrasing and keeps the core of the exam question intact." },
+                { "language": "fa", "text": "قوی است: پاسخ از بازگویی دفاع می‌کند و هسته سؤال امتحان را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: يدافع الجواب عن إعادة الصياغة ويحافظ على لب سؤال الامتحان." },
+                { "language": "tr", "text": "Güçlü: yanıt yeniden ifade etmeyi savunuyor ve sınav sorusunun çekirdeğini koruyor." },
+                { "language": "ru", "text": "Сильно: ответ защищает переформулирование и сохраняет ядро экзаменационного вопроса." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرگری لە دووبارە گێڕانەوە دەکات و ناوەڕۆکی پرسیاری تاقیکردنەوە دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv parastina ji nû ve gotinê dike û navoka pirsa îmtîhanê diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź broni przeformułowania i zachowuje rdzeń pytania egzaminacyjnego." },
+                { "language": "ro", "text": "Puternic: răspunsul apără reformularea și păstrează nucleul întrebării de examen." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron riformulimin dhe ruan bërthamën e pyetjes së provimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde die Frage nur kurz vereinfachen, damit ich sie besser beantworten kann.",
+              "translations": [
+                { "language": "en", "text": "I would only simplify the question briefly so that I can answer it better." },
+                { "language": "fa", "text": "فقط سؤال را کمی ساده‌تر می‌کنم تا بتوانم بهتر پاسخ دهم." },
+                { "language": "ar", "text": "سأبسط السؤال قليلاً فقط حتى أستطيع الإجابة عنه بشكل أفضل." },
+                { "language": "tr", "text": "Soruyu sadece kısaca basitleştirirdim, böylece daha iyi yanıtlayabilirim." },
+                { "language": "ru", "text": "Я бы лишь немного упростил вопрос, чтобы лучше на него ответить." },
+                { "language": "ckb", "text": "تەنها پرسەکە کەمێک سادەتر دەکەم بۆ ئەوەی باشتر وەڵام بدەم." },
+                { "language": "kmr", "text": "Ez ê pirsê tenê hinekî hêsantir bikim da ku baştir bersiv bidim." },
+                { "language": "pl", "text": "Tylko krótko uprościłbym pytanie, żeby móc lepiej odpowiedzieć." },
+                { "language": "ro", "text": "Aș simplifica doar puțin întrebarea ca să pot răspunde mai bine." },
+                { "language": "sq", "text": "Do ta thjeshtoja vetëm pak pyetjen që të mund t'i përgjigjem më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu strategisch und zu wenig fachlich. Es klingt, als würde die Komplexität der Frage verkleinert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too strategic and not sufficiently substantive. It sounds as if the complexity of the question is being reduced." },
+                { "language": "fa", "text": "بیش از حد راهبردی و کم‌محتواست. این طور به نظر می‌رسد که پیچیدگی سؤال کوچک می‌شود." },
+                { "language": "ar", "text": "استراتيجي أكثر من اللازم وغير موضوعي بما يكفي. يبدو كأن تعقيد السؤال يُصغَّر." },
+                { "language": "tr", "text": "Fazla stratejik ve içerik açısından zayıf. Sorunun karmaşıklığı küçültülüyormuş gibi geliyor." },
+                { "language": "ru", "text": "Слишком стратегично и недостаточно содержательно. Звучит так, будто сложность вопроса уменьшается." },
+                { "language": "ckb", "text": "زۆر ستراتیژییە و لە ناوەڕۆکدا کەمە. وەک ئەوە دەردەکەوێت کە ئاڵۆزیی پرسەکە بچووک دەکرێتەوە." },
+                { "language": "kmr", "text": "Pir stratejîk e û ji aliyê naverokê kêm e. Wisa xuya dike ku aloziya pirsê tê biçûkkirin." },
+                { "language": "pl", "text": "Zbyt strategiczne i za mało merytoryczne. Brzmi tak, jakby złożoność pytania była zmniejszana." },
+                { "language": "ro", "text": "Prea strategic și prea puțin substanțial. Sună ca și cum complexitatea întrebării ar fi redusă." },
+                { "language": "sq", "text": "Tepër strategjike dhe jo mjaftueshëm përmbajtësore. Tingëllon sikur kompleksiteti i pyetjes po zvogëlohet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sprache ist notwendig, aber nicht hinreichend: Sie erleichtert Zugang, doch ohne Anerkennung, Netzwerke und faire Einstiegswege bleibt ihre Wirkung begrenzt.",
+              "translations": [
+                { "language": "en", "text": "Language is necessary, but not sufficient: it makes access easier, yet without recognition, networks, and fair entry routes, its effect remains limited." },
+                { "language": "fa", "text": "زبان لازم است، اما کافی نیست: دسترسی را آسان‌تر می‌کند، اما بدون به‌رسمیت‌شناسی، شبکه‌ها و مسیرهای ورود عادلانه، اثر آن محدود می‌ماند." },
+                { "language": "ar", "text": "اللغة ضرورية لكنها غير كافية: إنها تسهل الوصول، لكن من دون الاعتراف والشبكات ومسارات دخول عادلة يبقى أثرها محدوداً." },
+                { "language": "tr", "text": "Dil gereklidir ama yeterli değildir: erişimi kolaylaştırır, ancak tanınma, ağlar ve adil giriş yolları olmadan etkisi sınırlı kalır." },
+                { "language": "ru", "text": "Язык необходим, но недостаточен: он облегчает доступ, но без признания, сетей и справедливых путей входа его действие остается ограниченным." },
+                { "language": "ckb", "text": "زمان پێویستە، بەڵام بەس نییە: گەیشتن ئاسانتر دەکات، بەڵام بەبێ دانپێدانان، تۆڕەکان و ڕێگاکانی چوونەژوورەوەی دادپەروەرانە، کاریگەرییەکەی سنووردار دەمێنێتەوە." },
+                { "language": "kmr", "text": "Ziman pêwîst e, lê têr nake: gihîştinê hêsantir dike, lê bê nasandin, tor û rêyên ketinê yên dadwerane, bandora wê sînordar dimîne." },
+                { "language": "pl", "text": "Język jest konieczny, ale niewystarczający: ułatwia dostęp, lecz bez uznania, sieci kontaktów i sprawiedliwych ścieżek wejścia jego efekt pozostaje ograniczony." },
+                { "language": "ro", "text": "Limba este necesară, dar nu suficientă: facilitează accesul, însă fără recunoaștere, rețele și căi de intrare echitabile, efectul ei rămâne limitat." },
+                { "language": "sq", "text": "Gjuha është e domosdoshme, por jo e mjaftueshme: lehtëson qasjen, por pa njohje, rrjete dhe rrugë hyrjeje të drejta, ndikimi i saj mbetet i kufizuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die These ist knapp, differenziert und direkt an der Frage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the thesis is concise, nuanced, and directly tied to the question." },
+                { "language": "fa", "text": "قوی است: تز کوتاه، دقیق و مستقیم مرتبط با سؤال است." },
+                { "language": "ar", "text": "قوي: الأطروحة موجزة ومتمايزة ومرتبطة مباشرة بالسؤال." },
+                { "language": "tr", "text": "Güçlü: tez kısa, nüanslı ve doğrudan soruya bağlı." },
+                { "language": "ru", "text": "Сильно: тезис краток, дифференцирован и прямо связан с вопросом." },
+                { "language": "ckb", "text": "بەهێزە: تێزەکە کورت، جیاکاری‌دار و ڕاستەوخۆ پەیوەندیدار بە پرسەکەیە." },
+                { "language": "kmr", "text": "Xurt e: tez kurt, nuansdar û rasterast bi pirsê ve girêdayî ye." },
+                { "language": "pl", "text": "Mocne: teza jest krótka, zróżnicowana i bezpośrednio związana z pytaniem." },
+                { "language": "ro", "text": "Puternic: teza este concisă, nuanțată și legată direct de întrebare." },
+                { "language": "sq", "text": "E fortë: teza është e shkurtër, e nuancuar dhe e lidhur drejtpërdrejt me pyetjen." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sprachkurse sind wichtig, weil man ohne gute Deutschkenntnisse im Beruf kaum erfolgreich sein kann.",
+              "translations": [
+                { "language": "en", "text": "Language courses are important because without good German skills one can hardly be successful at work." },
+                { "language": "fa", "text": "دوره‌های زبان مهم‌اند، چون بدون دانش خوب آلمانی در کار به‌سختی می‌توان موفق شد." },
+                { "language": "ar", "text": "دورات اللغة مهمة لأنه من دون معرفة جيدة بالألمانية يصعب النجاح في العمل." },
+                { "language": "tr", "text": "Dil kursları önemlidir, çünkü iyi Almanca bilgisi olmadan işte başarılı olmak zordur." },
+                { "language": "ru", "text": "Языковые курсы важны, потому что без хорошего немецкого на работе трудно добиться успеха." },
+                { "language": "ckb", "text": "کۆرسەکانی زمان گرنگن، چونکە بەبێ زانیاریی باشی ئەڵمانی لە کاردا بە زەحمەت سەرکەوتن دەبێت." },
+                { "language": "kmr", "text": "Kursên ziman girîng in, ji ber ku bê zanîna baş a almanî di kar de serkeftin zehmet e." },
+                { "language": "pl", "text": "Kursy językowe są ważne, bo bez dobrej znajomości niemieckiego trudno odnieść sukces w pracy." },
+                { "language": "ro", "text": "Cursurile de limbă sunt importante deoarece fără cunoștințe bune de germană este greu să ai succes la muncă." },
+                { "language": "sq", "text": "Kurset e gjuhës janë të rëndësishme, sepse pa njohuri të mira të gjermanishtes vështirë se mund të jesh i suksesshëm në punë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einfach für C2. Die Antwort nennt Sprache, aber nicht Anerkennung, Zugang und strukturelle Grenzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple for C2. The answer names language, but not recognition, access, and structural limits." },
+                { "language": "fa", "text": "برای C2 بیش از حد ساده است. پاسخ زبان را نام می‌برد، اما به‌رسمیت‌شناسی، دسترسی و محدودیت‌های ساختاری را نه." },
+                { "language": "ar", "text": "بسيط أكثر من اللازم لمستوى C2. يذكر الجواب اللغة، لكنه لا يذكر الاعتراف والوصول والحدود البنيوية." },
+                { "language": "tr", "text": "C2 için fazla basit. Yanıt dili söylüyor, ama tanınmayı, erişimi ve yapısal sınırları söylemiyor." },
+                { "language": "ru", "text": "Слишком просто для C2. Ответ называет язык, но не признание, доступ и структурные пределы." },
+                { "language": "ckb", "text": "بۆ C2 زۆر سادەیە. وەڵامەکە زمان ناودەبات، بەڵام دانپێدانان، گەیشتن و سنوورە پێکهاتەییەکان نا." },
+                { "language": "kmr", "text": "Ji bo C2 pir hêsan e. Bersiv ziman nav dike, lê nasandin, gihîştin û sînorên avahî na." },
+                { "language": "pl", "text": "Zbyt proste jak na C2. Odpowiedź wymienia język, ale nie uznanie, dostęp i granice strukturalne." },
+                { "language": "ro", "text": "Prea simplu pentru C2. Răspunsul numește limba, dar nu recunoașterea, accesul și limitele structurale." },
+                { "language": "sq", "text": "Tepër e thjeshtë për C2. Përgjigjja përmend gjuhën, por jo njohjen, qasjen dhe kufijtë strukturorë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich mache die Verzögerung transparent: Ich spiegle die Frage knapp und kündige an, erst Sprache und dann institutionelle Bedingungen zu behandeln.",
+              "translations": [
+                { "language": "en", "text": "I make the delay transparent: I briefly mirror the question and announce that I will first address language and then institutional conditions." },
+                { "language": "fa", "text": "تأخیر را شفاف می‌کنم: سؤال را کوتاه بازتاب می‌دهم و اعلام می‌کنم که ابتدا زبان و سپس شرایط نهادی را بررسی می‌کنم." },
+                { "language": "ar", "text": "أجعل التأخير شفافاً: أعكس السؤال بإيجاز وأعلن أنني سأعالج أولاً اللغة ثم الشروط المؤسسية." },
+                { "language": "tr", "text": "Gecikmeyi şeffaf hale getiririm: soruyu kısaca yansıtır ve önce dili, sonra kurumsal koşulları ele alacağımı belirtirim." },
+                { "language": "ru", "text": "Я делаю задержку прозрачной: кратко отражаю вопрос и объявляю, что сначала рассмотрю язык, а затем институциональные условия." },
+                { "language": "ckb", "text": "دواخستنەکە شفاف دەکەم: پرسەکە بە کورتی دەگێڕمەوە و ڕادەگەیەنم کە سەرەتا زمان و پاشان مەرجە دامەزراوەییەکان باس دەکەم." },
+                { "language": "kmr", "text": "Ez derengiyê zelal dikim: pirsê bi kurtî vedibêjim û radigihînim ku pêşî ziman û paşê şertên sazî binirxînim." },
+                { "language": "pl", "text": "Czynię opóźnienie przejrzystym: krótko odzwierciedlam pytanie i zapowiadam, że najpierw omówię język, a potem warunki instytucjonalne." },
+                { "language": "ro", "text": "Fac întârzierea transparentă: oglindesc scurt întrebarea și anunț că voi trata mai întâi limba și apoi condițiile instituționale." },
+                { "language": "sq", "text": "E bëj vonesën transparente: e pasqyroj shkurt pyetjen dhe njoftoj se do të trajtoj fillimisht gjuhën dhe pastaj kushtet institucionale." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Zeitgewinn wird als Strukturierung sichtbar und nicht als Ausflucht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: gaining time becomes visible as structuring, not as an escape." },
+                { "language": "fa", "text": "قوی است: زمان گرفتن به‌عنوان ساختاردهی دیده می‌شود، نه فرار از پاسخ." },
+                { "language": "ar", "text": "قوي: يصبح كسب الوقت ظاهراً كتنظيم، لا كمخرج." },
+                { "language": "tr", "text": "Güçlü: zaman kazanma kaçış değil, yapılandırma olarak görünür." },
+                { "language": "ru", "text": "Сильно: выигрыш времени выглядит как структурирование, а не как уход от ответа." },
+                { "language": "ckb", "text": "بەهێزە: کات بەدەستهێنان وەک ڕێکخستن دەردەکەوێت، نە وەک ڕاکردن." },
+                { "language": "kmr", "text": "Xurt e: dem standin wekî rêkxistin xuya dike, ne wekî revîn." },
+                { "language": "pl", "text": "Mocne: zyskiwanie czasu staje się widoczne jako strukturyzacja, nie jako ucieczka." },
+                { "language": "ro", "text": "Puternic: câștigarea timpului devine vizibilă ca structurare, nu ca evitare." },
+                { "language": "sq", "text": "E fortë: fitimi i kohës shihet si strukturim, jo si shmangie." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde zuerst sagen, dass die Frage sehr interessant ist, und dann langsam mit dem ersten Punkt beginnen.",
+              "translations": [
+                { "language": "en", "text": "I would first say that the question is very interesting and then slowly begin with the first point." },
+                { "language": "fa", "text": "ابتدا می‌گویم سؤال بسیار جالب است و سپس آرام با نکته اول شروع می‌کنم." },
+                { "language": "ar", "text": "سأقول أولاً إن السؤال مثير جداً للاهتمام، ثم أبدأ ببطء بالنقطة الأولى." },
+                { "language": "tr", "text": "Önce sorunun çok ilginç olduğunu söyler, sonra yavaşça ilk noktayla başlardım." },
+                { "language": "ru", "text": "Сначала я бы сказал, что вопрос очень интересный, а затем медленно начал бы с первого пункта." },
+                { "language": "ckb", "text": "سەرەتا دەڵێم پرسەکە زۆر سەرنجڕاکێشە، پاشان هێواش بە خاڵی یەکەم دەست پێدەکەم." },
+                { "language": "kmr", "text": "Pêşî ez ê bibêjim ku pirs pir balkêş e, paşê hêdî bi xala yekem dest pê bikim." },
+                { "language": "pl", "text": "Najpierw powiedziałbym, że pytanie jest bardzo interesujące, a potem powoli zaczął od pierwszego punktu." },
+                { "language": "ro", "text": "Mai întâi aș spune că întrebarea este foarte interesantă, apoi aș începe încet cu primul punct." },
+                { "language": "sq", "text": "Së pari do të thosha se pyetja është shumë interesante dhe pastaj do të filloja ngadalë me pikën e parë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber schwach. Es gewinnt Zeit, zeigt aber keine fachliche Struktur der Frage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but weak. It gains time, but shows no substantive structure of the question." },
+                { "language": "fa", "text": "قابل‌قبول است، اما ضعیف. زمان می‌گیرد، اما ساختار محتوایی سؤال را نشان نمی‌دهد." },
+                { "language": "ar", "text": "معقول، لكنه ضعيف. يكسب وقتاً لكنه لا يُظهر بنية السؤال من حيث المحتوى." },
+                { "language": "tr", "text": "Makul ama zayıf. Zaman kazandırır, fakat sorunun içerik yapısını göstermez." },
+                { "language": "ru", "text": "Правдоподобно, но слабо. Это выигрывает время, но не показывает содержательную структуру вопроса." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام لاوازە. کات بەدەست دەهێنێت، بەڵام پێکهاتەی ناوەڕۆکی پرسەکە نیشان نادات." },
+                { "language": "kmr", "text": "Maqûl e, lê qels e. Dem distîne, lê avahiya naverokî ya pirsê nîşan nade." },
+                { "language": "pl", "text": "Prawdopodobne, ale słabe. Zyskuje czas, lecz nie pokazuje merytorycznej struktury pytania." },
+                { "language": "ro", "text": "Plauzibil, dar slab. Câștigă timp, dar nu arată structura de conținut a întrebării." },
+                { "language": "sq", "text": "E besueshme, por e dobët. Fiton kohë, por nuk tregon strukturën përmbajtësore të pyetjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich benenne die Grenze offen: Den Ländervergleich kann ich nicht vollständig darstellen; ich kann aber das Prinzip anhand von Anerkennung, Beratung und Arbeitsplatzkommunikation erläutern.",
+              "translations": [
+                { "language": "en", "text": "I name the limit openly: I cannot present the comparison of federal states fully, but I can explain the principle using recognition, counseling, and workplace communication." },
+                { "language": "fa", "text": "محدودیت را آشکارا بیان می‌کنم: مقایسه ایالت‌ها را کامل نمی‌توانم ارائه کنم، اما می‌توانم اصل موضوع را با به‌رسمیت‌شناسی، مشاوره و ارتباطات محل کار توضیح دهم." },
+                { "language": "ar", "text": "أذكر الحد بوضوح: لا أستطيع عرض مقارنة الولايات كاملة، لكن يمكنني شرح المبدأ من خلال الاعتراف والاستشارة والتواصل في مكان العمل." },
+                { "language": "tr", "text": "Sınırı açıkça belirtirim: eyalet karşılaştırmasını tam sunamam; ancak ilkeyi tanınma, danışmanlık ve işyeri iletişimi üzerinden açıklayabilirim." },
+                { "language": "ru", "text": "Я открыто называю предел: я не могу полностью представить сравнение федеральных земель, но могу объяснить принцип на примере признания, консультирования и коммуникации на рабочем месте." },
+                { "language": "ckb", "text": "سنوورەکە بە ئاشکرا ناودەبەم: بەراوردی ویلایەتەکان بە تەواوی ناتوانم پیشان بدەم؛ بەڵام دەتوانم بنەماکە بە دانپێدانان، ڕاوێژکاری و پەیوەندیی شوێنی کار ڕوون بکەمەوە." },
+                { "language": "kmr", "text": "Ez sînorê eşkere nav dikim: ez nikarim berawirdkirina eyaletan bi tevahî pêşkêş bikim; lê dikarim prensîbê bi nasandin, şêwirmendî û ragihandina cihê karê rave bikim." },
+                { "language": "pl", "text": "Otwarcie nazywam granicę: nie mogę w pełni przedstawić porównania krajów związkowych, ale mogę wyjaśnić zasadę na przykładzie uznania, doradztwa i komunikacji w miejscu pracy." },
+                { "language": "ro", "text": "Numesc deschis limita: nu pot prezenta complet comparația landurilor, dar pot explica principiul prin recunoaștere, consiliere și comunicare la locul de muncă." },
+                { "language": "sq", "text": "E përmend hapur kufirin: krahasimin e landeve nuk mund ta paraqes plotësisht, por mund ta shpjegoj parimin përmes njohjes, këshillimit dhe komunikimit në vendin e punës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Grenze wird ehrlich benannt, und die Antwort bleibt trotzdem fachlich brauchbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the limit is named honestly, and the answer still remains substantively useful." },
+                { "language": "fa", "text": "قوی است: محدودیت صادقانه نام برده می‌شود و پاسخ همچنان از نظر محتوایی مفید می‌ماند." },
+                { "language": "ar", "text": "قوي: يُذكر الحد بصدق، وتبقى الإجابة مفيدة من حيث المحتوى." },
+                { "language": "tr", "text": "Güçlü: sınır dürüstçe belirtiliyor ve yanıt yine de içerik açısından yararlı kalıyor." },
+                { "language": "ru", "text": "Сильно: предел честно назван, и ответ все равно остается содержательно полезным." },
+                { "language": "ckb", "text": "بەهێزە: سنوورەکە بە ڕاستگۆیی ناودەبرێت و وەڵامەکە هێشتا لە ڕووی ناوەڕۆکەوە بەسوود دەمێنێتەوە." },
+                { "language": "kmr", "text": "Xurt e: sînor bi rastgoiyê tê navkirin û bersiv dîsa ji aliyê naverokê ve bikêr dimîne." },
+                { "language": "pl", "text": "Mocne: granica zostaje uczciwie nazwana, a odpowiedź nadal pozostaje merytorycznie użyteczna." },
+                { "language": "ro", "text": "Puternic: limita este numită onest, iar răspunsul rămâne totuși util ca substanță." },
+                { "language": "sq", "text": "E fortë: kufiri përmendet ndershmërisht dhe përgjigjja mbetet megjithatë e dobishme nga ana përmbajtësore." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde sagen, dass ich darauf später zurückkomme, und zuerst die allgemeinen Punkte erklären.",
+              "translations": [
+                { "language": "en", "text": "I would say that I will come back to that later and first explain the general points." },
+                { "language": "fa", "text": "می‌گویم بعداً به آن برمی‌گردم و ابتدا نکات کلی را توضیح می‌دهم." },
+                { "language": "ar", "text": "سأقول إنني سأعود إلى ذلك لاحقاً، وأشرح أولاً النقاط العامة." },
+                { "language": "tr", "text": "Buna daha sonra döneceğimi söyler ve önce genel noktaları açıklardım." },
+                { "language": "ru", "text": "Я бы сказал, что вернусь к этому позже, и сначала объяснил бы общие пункты." },
+                { "language": "ckb", "text": "دەڵێم دواتر دەگەڕێمەوە بۆ ئەوە، و سەرەتا خاڵە گشتییەکان ڕوون دەکەمەوە." },
+                { "language": "kmr", "text": "Ez ê bêjim ku ez paşê vedigerim ser wê, û pêşî xalên giştî rave dikim." },
+                { "language": "pl", "text": "Powiedziałbym, że wrócę do tego później, i najpierw wyjaśnił punkty ogólne." },
+                { "language": "ro", "text": "Aș spune că revin la asta mai târziu și aș explica mai întâi punctele generale." },
+                { "language": "sq", "text": "Do të thosha se do t'i kthehem më vonë dhe fillimisht do të shpjegoja pikat e përgjithshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend. Die Antwort verschiebt den schwierigen Teil, statt eine klare Grenze und ein brauchbares Teilangebot zu geben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive. The answer postpones the difficult part instead of giving a clear limit and a useful partial answer." },
+                { "language": "fa", "text": "بیش از حد طفره‌رو است. پاسخ بخش دشوار را عقب می‌اندازد، به‌جای اینکه محدودیت روشن و پاسخ جزئی مفید بدهد." },
+                { "language": "ar", "text": "مراوغ أكثر من اللازم. يؤجل الجواب الجزء الصعب بدلاً من تقديم حد واضح وجزء مفيد من الإجابة." },
+                { "language": "tr", "text": "Fazla kaçamak. Yanıt zor kısmı erteliyor; açık bir sınır ve yararlı kısmi yanıt vermiyor." },
+                { "language": "ru", "text": "Слишком уклончиво. Ответ откладывает трудную часть вместо того, чтобы дать ясный предел и полезный частичный ответ." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە. وەڵامەکە بەشی قورس دوا دەخات، لەبری ئەوەی سنوورێکی ڕوون و وەڵامێکی بەشەکی بەسوود بدات." },
+                { "language": "kmr", "text": "Pir dûrketin e. Bersiv beşa dijwar paş dixe, li şûna ku sînorek zelal û bersiveke qismî ya bikêr bide." },
+                { "language": "pl", "text": "Zbyt wymijające. Odpowiedź odkłada trudną część, zamiast podać jasną granicę i użyteczną odpowiedź częściową." },
+                { "language": "ro", "text": "Prea evaziv. Răspunsul amână partea dificilă în loc să ofere o limită clară și un răspuns parțial util." },
+                { "language": "sq", "text": "Tepër shmangëse. Përgjigjja e shtyn pjesën e vështirë, në vend që të japë një kufi të qartë dhe një përgjigje të pjesshme të dobishme." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "question-framing",
+          "text": "Eine gute Umformulierung zeigt den Kern der Frage und macht den Antwortweg sichtbar.",
+          "translations": [
+            { "language": "en", "text": "A good rephrasing shows the core of the question and makes the answer path visible." },
+            { "language": "fa", "text": "بازگویی خوب هسته سؤال را نشان می‌دهد و مسیر پاسخ را آشکار می‌کند." },
+            { "language": "ar", "text": "إعادة الصياغة الجيدة تُظهر لب السؤال وتجعل مسار الإجابة مرئياً." },
+            { "language": "tr", "text": "İyi bir yeniden ifade, sorunun çekirdeğini gösterir ve yanıt yolunu görünür kılar." },
+            { "language": "ru", "text": "Хорошее переформулирование показывает ядро вопроса и делает путь ответа видимым." },
+            { "language": "ckb", "text": "دووبارە گێڕانەوەی باش ناوەڕۆکی پرسەکە نیشان دەدات و ڕێگای وەڵام ئاشکرا دەکات." },
+            { "language": "kmr", "text": "Ji nû ve gotineke baş navoka pirsê nîşan dide û rêya bersivê xuya dike." },
+            { "language": "pl", "text": "Dobre przeformułowanie pokazuje rdzeń pytania i uwidacznia tok odpowiedzi." },
+            { "language": "ro", "text": "O reformulare bună arată nucleul întrebării și face vizibil traseul răspunsului." },
+            { "language": "sq", "text": "Një riformulim i mirë tregon bërthamën e pyetjes dhe e bën të dukshme rrugën e përgjigjes." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "clarification",
+          "text": "Die Frage neu zu fassen ist nur stark, wenn ihr Inhalt nicht verkleinert wird.",
+          "translations": [
+            { "language": "en", "text": "Reframing the question is strong only if its content is not made smaller." },
+            { "language": "fa", "text": "بازگویی سؤال فقط وقتی قوی است که محتوای آن کوچک‌تر نشود." },
+            { "language": "ar", "text": "إعادة تأطير السؤال تكون قوية فقط إذا لم يُصغَّر محتواه." },
+            { "language": "tr", "text": "Soruyu yeniden çerçevelemek ancak içeriği küçültülmezse güçlüdür." },
+            { "language": "ru", "text": "Переформулирование вопроса сильно только тогда, когда его содержание не уменьшается." },
+            { "language": "ckb", "text": "دووبارە قابگرتنی پرسەکە تەنها کاتێک بەهێزە کە ناوەڕۆکەکەی بچووک نەکرێتەوە." },
+            { "language": "kmr", "text": "Ji nû ve çarçovekirina pirsê tenê dema xurt e ku naveroka wê neyê biçûkkirin." },
+            { "language": "pl", "text": "Ujęcie pytania na nowo jest mocne tylko wtedy, gdy jego treść nie zostaje pomniejszona." },
+            { "language": "ro", "text": "Reîncadrarea întrebării este puternică doar dacă nu îi micșorează conținutul." },
+            { "language": "sq", "text": "Rikornizimi i pyetjes është i fortë vetëm kur përmbajtja e saj nuk zvogëlohet." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "exam-strategy",
+          "text": "Zeitgewinn wirkt souverän, wenn er als transparente Strukturierung erscheint.",
+          "translations": [
+            { "language": "en", "text": "Gaining time sounds confident when it appears as transparent structuring." },
+            { "language": "fa", "text": "زمان گرفتن وقتی مسلط به نظر می‌رسد که به‌صورت ساختاردهی شفاف دیده شود." },
+            { "language": "ar", "text": "يبدو كسب الوقت واثقاً عندما يظهر كتنظيم شفاف." },
+            { "language": "tr", "text": "Zaman kazanma, şeffaf yapılandırma olarak göründüğünde güvenli durur." },
+            { "language": "ru", "text": "Выигрыш времени выглядит уверенно, когда он предстает как прозрачное структурирование." },
+            { "language": "ckb", "text": "کات بەدەستهێنان بە دڵنیایی دەردەکەوێت کاتێک وەک ڕێکخستنی شفاف دەردەکەوێت." },
+            { "language": "kmr", "text": "Dem standin dema wekî rêkxistina zelal xuya dike, bi bawerî tê dîtin." },
+            { "language": "pl", "text": "Zyskiwanie czasu brzmi pewnie, gdy wygląda jak przejrzyste strukturyzowanie." },
+            { "language": "ro", "text": "Câștigarea timpului sună sigur când apare ca structurare transparentă." },
+            { "language": "sq", "text": "Fitimi i kohës tingëllon i sigurt kur shfaqet si strukturim transparent." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "scope-limit",
+          "text": "Eine offene Grenze ist besser als ein vages Versprechen, später darauf zurückzukommen.",
+          "translations": [
+            { "language": "en", "text": "An open limit is better than a vague promise to return to it later." },
+            { "language": "fa", "text": "محدودیت آشکار بهتر از وعده مبهم برای بازگشت بعدی به موضوع است." },
+            { "language": "ar", "text": "الحد المعلن أفضل من وعد غامض بالعودة إليه لاحقاً." },
+            { "language": "tr", "text": "Açık bir sınır, buna daha sonra dönme yönündeki belirsiz bir sözden daha iyidir." },
+            { "language": "ru", "text": "Открыто названный предел лучше расплывчатого обещания вернуться к этому позже." },
+            { "language": "ckb", "text": "سنووری ئاشکرا باشترە لە بەڵێنی ناڕوون کە دواتر بگەڕێیتەوە بۆی." },
+            { "language": "kmr", "text": "Sînorek eşkere baştir e ji soza nezelal ku paşê vegerin ser wê." },
+            { "language": "pl", "text": "Otwarta granica jest lepsza niż niejasna obietnica powrotu do tematu później." },
+            { "language": "ro", "text": "O limită deschisă este mai bună decât o promisiune vagă de a reveni mai târziu." },
+            { "language": "sq", "text": "Një kufi i hapur është më i mirë se një premtim i paqartë për t'iu kthyer më vonë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "oral-exam-complex-question",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal oral exam where a candidate calmly reframes a complex examiner question before answering.",
+          "altText": "Eine erwachsene Prüfungskandidatin sitzt in einem ruhigen Prüfungsraum vor zwei Prüfenden und strukturiert eine komplexe Frage mit Notizen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An adult exam candidate sits in a quiet exam room in front of two examiners and structures a complex question with notes." },
+            { "language": "fa", "text": "یک داوطلب بزرگسال در اتاق آرام امتحان روبه‌روی دو ممتحن نشسته و با یادداشت‌ها یک سؤال پیچیده را ساختار می‌دهد." },
+            { "language": "ar", "text": "مرشحة بالغة تجلس في غرفة امتحان هادئة أمام ممتحنين وتنظم سؤالاً معقداً باستخدام ملاحظات." },
+            { "language": "tr", "text": "Yetişkin bir sınav adayı sakin bir sınav odasında iki sınav görevlisinin karşısında oturuyor ve notlarla karmaşık bir soruyu yapılandırıyor." },
+            { "language": "ru", "text": "Взрослая экзаменуемая сидит в тихой экзаменационной комнате перед двумя экзаменаторами и структурирует сложный вопрос с помощью заметок." },
+            { "language": "ckb", "text": "تاقیکراوێکی گەورەساڵ لە ژووری ئارامی تاقیکردنەوەدا لە بەرامبەر دوو تاقیکەردا دانیشتووە و بە تێبینی پرسیارێکی ئاڵۆز ڕێکدەخات." },
+            { "language": "kmr", "text": "Namzeteke mezin di odeya îmtîhanê ya aram de li hember du nirxîneran rûniştiye û bi notan pirseke aloz rêz dike." },
+            { "language": "pl", "text": "Dorosła kandydatka siedzi w spokojnej sali egzaminacyjnej przed dwojgiem egzaminatorów i strukturyzuje złożone pytanie za pomocą notatek." },
+            { "language": "ro", "text": "O candidată adultă stă într-o sală de examen liniștită în fața a doi examinatori și structurează o întrebare complexă cu notițe." },
+            { "language": "sq", "text": "Një kandidate e rritur provimi ulet në një dhomë të qetë provimi përballë dy provuesve dhe strukturon një pyetje të ndërlikuar me shënime." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adults in a quiet German oral exam room, exam candidate calmly reframing a complex examiner question, two examiners at a table, notebook and pen, no readable text, no logos, no private data, accessible composition, formal but calm academic mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "packageId": "roleplays-c2-core-10-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 10 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 10",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-ein-eskaliertes-kundengespraech-deeskalieren",
+      "linkedDialogueSlug": null,
+      "title": "Ein eskaliertes Kundengespräch deeskalieren",
+      "titleTranslations": [
+        { "language": "en", "text": "De-escalating an escalated customer conversation" },
+        { "language": "fa", "text": "آرام‌کردن گفت‌وگوی تشدیدشده با مشتری" },
+        { "language": "ar", "text": "تهدئة حديث متصاعد مع عميل" },
+        { "language": "tr", "text": "Tırmanmış bir müşteri görüşmesini yatıştırmak" },
+        { "language": "ru", "text": "Снизить напряжение в обострившемся разговоре с клиентом" },
+        { "language": "ckb", "text": "هێورکردنەوەی گفتوگۆیەکی توندبووی کڕیار" },
+        { "language": "kmr", "text": "Aramkirina axaftineke xerîdar a tûj bûyî" },
+        { "language": "pl", "text": "Deeskalacja zaostrzonej rozmowy z klientem" },
+        { "language": "ro", "text": "Dezescaladarea unei discuții tensionate cu un client" },
+        { "language": "sq", "text": "Ulja e tensionit në një bisedë të përshkallëzuar me klientin" }
+      ],
+      "description": "Ein wichtiger Kunde ruft verärgert an, weil eine Lieferung verspätet ist und im Unternehmen widersprüchliche Auskünfte gegeben wurden. Sie übernehmen das Gespräch, erkennen die Belastung an, korrigieren falsche Annahmen ohne Gegenangriff und bieten einen verbindlichen, realistischen nächsten Schritt an.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "An important customer calls angrily because a delivery is late and the company has given contradictory information. You take over the conversation, acknowledge the strain, correct wrong assumptions without counterattacking, and offer a binding, realistic next step." },
+        { "language": "fa", "text": "یک مشتری مهم با عصبانیت تماس می‌گیرد، چون تحویل دیر شده و شرکت اطلاعات متناقض داده است. شما گفت‌وگو را به عهده می‌گیرید، فشار ایجادشده را می‌پذیرید، برداشت‌های نادرست را بدون حمله متقابل اصلاح می‌کنید و یک قدم بعدی الزام‌آور و واقع‌بینانه پیشنهاد می‌دهید." },
+        { "language": "ar", "text": "يتصل عميل مهم بغضب لأن التسليم تأخر ولأن الشركة قدمت معلومات متناقضة. تتولى الحديث، وتعترف بالضغط، وتصحح الافتراضات الخاطئة من دون هجوم مضاد، وتعرض خطوة تالية ملزمة وواقعية." },
+        { "language": "tr", "text": "Önemli bir müşteri teslimat geciktiği ve şirkette çelişkili bilgiler verildiği için öfkeyle arar. Görüşmeyi devralır, oluşan yükü kabul eder, yanlış varsayımları karşı saldırıya geçmeden düzeltir ve bağlayıcı, gerçekçi bir sonraki adım önerirsiniz." },
+        { "language": "ru", "text": "Важный клиент звонит раздраженно, потому что поставка задерживается, а компания дала противоречивую информацию. Вы берете разговор на себя, признаете нагрузку, исправляете неверные предположения без контратаки и предлагаете обязательный, реалистичный следующий шаг." },
+        { "language": "ckb", "text": "کڕیارێکی گرنگ بە تووڕەیی پەیوەندی دەکات، چونکە گەیاندن دوا کەوتووە و لە کۆمپانیا زانیاری دژ بەیەک دراوە. تۆ گفتوگۆکە وەردەگریت، فشاری دروستبوو دەناسیت، تێگەیشتنە هەڵەکان بێ هێرشی بەرامبەر ڕاست دەکەیتەوە و هەنگاوێکی داهاتووی پابەند و واقیعی پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Xerîdarekî girîng bi hêrs telefon dike, ji ber ku radestkirin dereng maye û di şirketê de agahiyên dijber hatine dayîn. Hûn axaftinê digirin, barê çêbûyî qebûl dikin, têgihiştinên şaş bêyî êrîşa dijber rast dikin û gaveke din a girêdayî û rastîn pêşniyar dikin." },
+        { "language": "pl", "text": "Ważny klient dzwoni zdenerwowany, ponieważ dostawa jest opóźniona, a firma przekazała sprzeczne informacje. Przejmuje Pan/Pani rozmowę, uznaje obciążenie, koryguje błędne założenia bez kontrataku i proponuje wiążący, realistyczny następny krok." },
+        { "language": "ro", "text": "Un client important sună supărat deoarece livrarea întârzie, iar compania a oferit informații contradictorii. Preluați discuția, recunoașteți presiunea creată, corectați presupunerile greșite fără contraatac și propuneți un pas următor ferm și realist." },
+        { "language": "sq", "text": "Një klient i rëndësishëm telefonon i zemëruar sepse dorëzimi është vonuar dhe kompania ka dhënë informacione kontradiktore. Ju e merrni përsipër bisedën, pranoni ngarkesën e krijuar, korrigjoni supozimet e gabuara pa kundërsulm dhe ofroni një hap të ardhshëm të detyrueshëm e realist." }
+      ],
+      "learnerGoal": "Ein angespanntes Kundengespräch auf C2-Niveau führen: Ärger anerkennen, Fakten präzise klären, Schuldzuweisungen vermeiden, Grenzen setzen und eine belastbare Lösung mit Termin und Zuständigkeit formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Handle a tense customer conversation at C2 level: acknowledge anger, clarify facts precisely, avoid blame, set boundaries, and formulate a reliable solution with deadline and responsibility." },
+        { "language": "fa", "text": "یک گفت‌وگوی پرتنش با مشتری را در سطح C2 مدیریت کنید: ناراحتی را بپذیرید، واقعیت‌ها را دقیق روشن کنید، از سرزنش دوری کنید، مرز بگذارید و راه‌حلی قابل اتکا با زمان و مسئول مشخص بیان کنید." },
+        { "language": "ar", "text": "أدر حديثاً متوتراً مع عميل على مستوى C2: اعترف بالغضب، ووضح الحقائق بدقة، وتجنب اللوم، وضع حدوداً، وصغ حلاً موثوقاً مع موعد ومسؤولية." },
+        { "language": "tr", "text": "C2 düzeyinde gergin bir müşteri görüşmesini yönetin: öfkeyi kabul edin, gerçekleri kesin biçimde açıklığa kavuşturun, suçlamadan kaçının, sınır koyun ve tarih ile sorumluluk içeren güvenilir bir çözüm ifade edin." },
+        { "language": "ru", "text": "Провести напряженный разговор с клиентом на уровне C2: признать раздражение, точно прояснить факты, избегать обвинений, обозначить границы и сформулировать надежное решение со сроком и ответственным лицом." },
+        { "language": "ckb", "text": "گفتوگۆیەکی پڕ فشار لەگەڵ کڕیار لە ئاستی C2 بەڕێوە ببە: تووڕەیی بناسە، ڕاستییەکان بە وردی ڕوون بکەوە، لە تاوانبارکردن دوور بکەوە، سنوور دابنێ و چارەسەرێکی باوەڕپێکراو لەگەڵ کات و بەرپرسیاریەتی دیاری بکە." },
+        { "language": "kmr", "text": "Axaftineke bi tansiyon a xerîdar di asta C2 de rêve bibin: hêrsê qebûl bikin, rastiyan bi hûrgilî zelal bikin, ji sûcdarkirinê dûr bimînin, sînor danin û çareseriyeke pêbawer bi dem û berpirsiyarî bêjin." },
+        { "language": "pl", "text": "Poprowadzić napiętą rozmowę z klientem na poziomie C2: uznać złość, precyzyjnie wyjaśnić fakty, unikać obwiniania, wyznaczyć granice i sformułować solidne rozwiązanie z terminem oraz odpowiedzialnością." },
+        { "language": "ro", "text": "Gestionați o discuție tensionată cu un client la nivel C2: recunoașteți nemulțumirea, clarificați precis faptele, evitați atribuirea vinei, stabiliți limite și formulați o soluție solidă cu termen și responsabilitate." },
+        { "language": "sq", "text": "Drejtoni një bisedë të tensionuar me klientin në nivel C2: pranoni zemërimin, sqaroni saktë faktet, shmangni fajësimin, vendosni kufij dhe formuloni një zgjidhje të besueshme me afat dhe përgjegjësi." }
+      ],
+      "cefrLevel": "C2",
+      "category": "customer-service",
+      "topics": ["customer-service", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "service-interaction", "complaint-handling"],
+      "taskType": "complain-politely",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 10,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Serviceleitung",
+          "translations": [
+            { "language": "en", "text": "Service lead" },
+            { "language": "fa", "text": "مسئول خدمات مشتری" },
+            { "language": "ar", "text": "مسؤول خدمة العملاء" },
+            { "language": "tr", "text": "Müşteri hizmetleri sorumlusu" },
+            { "language": "ru", "text": "Руководитель клиентского сервиса" },
+            { "language": "ckb", "text": "بەرپرسی خزمەتگوزاری کڕیار" },
+            { "language": "kmr", "text": "Berpirsê xizmeta xerîdar" },
+            { "language": "pl", "text": "Kierownik obsługi klienta" },
+            { "language": "ro", "text": "Responsabil servicii clienți" },
+            { "language": "sq", "text": "Përgjegjës i shërbimit ndaj klientit" }
+          ]
+        },
+        {
+          "roleKey": "customer",
+          "displayName": "Kunde",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "عميل" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиент" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Xerîdar" },
+            { "language": "pl", "text": "Klient" },
+            { "language": "ro", "text": "Client" },
+            { "language": "sq", "text": "Klient" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollege",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميل" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Współpracownik" },
+            { "language": "ro", "text": "Coleg" },
+            { "language": "sq", "text": "Koleg" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Der Kunde ist seit zehn Minuten in der Leitung und sehr aufgebracht. Es gab gestern eine falsche Zusage zum Liefertermin, und heute Morgen wurde wieder etwas anderes gesagt.",
+          "translations": [
+            { "language": "en", "text": "The customer has been on the line for ten minutes and is very upset. Yesterday there was an incorrect promise about the delivery date, and this morning something different was said again." },
+            { "language": "fa", "text": "مشتری ده دقیقه است پشت خط است و بسیار ناراحت است. دیروز وعده نادرستی درباره تاریخ تحویل داده شد و امروز صبح دوباره چیز دیگری گفته شد." },
+            { "language": "ar", "text": "العميل على الخط منذ عشر دقائق وهو منزعج جداً. بالأمس قُدم وعد غير صحيح بشأن موعد التسليم، وصباح اليوم قيل شيء مختلف مرة أخرى." },
+            { "language": "tr", "text": "Müşteri on dakikadır hatta ve çok öfkeli. Dün teslim tarihiyle ilgili yanlış bir söz verildi, bu sabah da yine farklı bir şey söylendi." },
+            { "language": "ru", "text": "Клиент уже десять минут на линии и очень раздражен. Вчера было дано неверное обещание по сроку поставки, а сегодня утром снова сказали другое." },
+            { "language": "ckb", "text": "کڕیارەکە دە خولەکە لەسەر هێڵە و زۆر تووڕەیە. دوێنێ بەڵێنێکی هەڵە دەربارەی کاتی گەیاندن درا، ئەم بەیانییەش جارێکی تر شتێکی جیاواز وترا." },
+            { "language": "kmr", "text": "Xerîdar deh deqîqe ye li ser xetê ye û pir hêrs e. Doh sozê şaş li ser dema radestkirinê hat dayîn, û vê sibehê careke din tiştek cuda hat gotin." },
+            { "language": "pl", "text": "Klient jest na linii od dziesięciu minut i jest bardzo zdenerwowany. Wczoraj padła błędna obietnica dotycząca terminu dostawy, a dziś rano znów powiedziano coś innego." },
+            { "language": "ro", "text": "Clientul este pe linie de zece minute și este foarte supărat. Ieri s-a făcut o promisiune greșită privind termenul de livrare, iar în această dimineață s-a spus din nou altceva." },
+            { "language": "sq", "text": "Klienti është në linjë prej dhjetë minutash dhe është shumë i zemëruar. Dje u dha një premtim i gabuar për afatin e dorëzimit, ndërsa këtë mëngjes u tha sërish diçka tjetër." }
+          ],
+          "function": "hands over an escalated complaint",
+          "toneNote": "urgent, factual"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke, ich übernehme. Ich steige nicht mit einer Verteidigung ein, sondern fasse zuerst die Belastung zusammen: verspätete Lieferung, widersprüchliche Auskünfte und dadurch fehlende Planbarkeit auf Kundenseite.",
+          "translations": [
+            { "language": "en", "text": "Thank you, I will take over. I will not begin with a defense; first I will summarize the strain: late delivery, contradictory information, and therefore lack of planning certainty on the customer side." },
+            { "language": "fa", "text": "ممنون، من ادامه را به عهده می‌گیرم. با دفاع شروع نمی‌کنم، بلکه اول فشار ایجادشده را جمع‌بندی می‌کنم: تحویل دیر، اطلاعات متناقض، و در نتیجه نبود امکان برنامه‌ریزی برای مشتری." },
+            { "language": "ar", "text": "شكراً، سأتولى الأمر. لن أبدأ بالدفاع، بل ألخص أولاً الضغط: تسليم متأخر، معلومات متناقضة، وبالتالي غياب إمكانية التخطيط لدى العميل." },
+            { "language": "tr", "text": "Teşekkür ederim, ben devralıyorum. Savunmayla başlamayacağım; önce oluşan yükü özetleyeceğim: geciken teslimat, çelişkili bilgiler ve bu yüzden müşteri tarafında planlama güvenliğinin olmaması." },
+            { "language": "ru", "text": "Спасибо, я беру разговор на себя. Я начну не с защиты, а сначала подытожу нагрузку: задержанная поставка, противоречивая информация и из-за этого отсутствие планируемости у клиента." },
+            { "language": "ckb", "text": "سوپاس، من وەردەگرم. بە بەرگریکردن دەست پێناکەم، بەڵکو یەکەم جار فشارەکە کورت دەکەمەوە: گەیاندنی دواخراو، زانیاری دژ بەیەک، و لە ئەنجامدا نەبوونی توانای پلاندانان لای کڕیار." },
+            { "language": "kmr", "text": "Spas, ez digirim. Ez bi parastinê dest pê nakim, lê pêşî barê çêbûyî kurte dikim: radestkirina dereng, agahiyên dijber û ji ber vê yekê tunebûna ewlekariya planê li aliyê xerîdar." },
+            { "language": "pl", "text": "Dziękuję, przejmuję rozmowę. Nie zacznę od obrony, tylko najpierw podsumuję obciążenie: opóźniona dostawa, sprzeczne informacje i przez to brak możliwości planowania po stronie klienta." },
+            { "language": "ro", "text": "Mulțumesc, preiau eu. Nu încep cu o apărare, ci rezum mai întâi presiunea: livrare întârziată, informații contradictorii și, prin urmare, lipsă de predictibilitate pentru client." },
+            { "language": "sq", "text": "Faleminderit, po e marr unë përsipër. Nuk do ta nis me mbrojtje, por së pari do të përmbledh ngarkesën: dorëzim i vonuar, informacione kontradiktore dhe për pasojë mungesë planifikueshmërie për klientin." }
+          ],
+          "function": "chooses a de-escalating opening strategy",
+          "toneNote": "controlled, service-oriented",
+          "expectedLearnerAction": "Name the customer's burden before correcting facts."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "customer",
+          "baseText": "Ich habe mich auf Ihre Aussagen verlassen. Jetzt steht bei uns die Produktion still, und jedes Mal höre ich eine andere Erklärung. Das wirkt, als hätte niemand die Sache im Griff.",
+          "translations": [
+            { "language": "en", "text": "I relied on your statements. Now our production is standing still, and every time I hear a different explanation. It feels as if nobody has the matter under control." },
+            { "language": "fa", "text": "من به گفته‌های شما تکیه کردم. حالا تولید ما متوقف شده و هر بار توضیح دیگری می‌شنوم. این‌طور به نظر می‌رسد که هیچ‌کس موضوع را کنترل نمی‌کند." },
+            { "language": "ar", "text": "اعتمدت على تصريحاتكم. الآن توقف الإنتاج لدينا، وفي كل مرة أسمع تفسيراً مختلفاً. يبدو الأمر كأن لا أحد يسيطر على الموضوع." },
+            { "language": "tr", "text": "Sizin açıklamalarınıza güvendim. Şimdi bizim üretimimiz durdu ve her seferinde farklı bir açıklama duyuyorum. Sanki kimse konuyu kontrol etmiyormuş gibi görünüyor." },
+            { "language": "ru", "text": "Я полагался на ваши заявления. Теперь наше производство стоит, и каждый раз я слышу другое объяснение. Выглядит так, будто никто не держит ситуацию под контролем." },
+            { "language": "ckb", "text": "من پشت بە قسەکانی ئێوە بەستم. ئێستا بەرهەمهێنانی ئێمە وەستاوە، و هەر جار ڕوونکردنەوەیەکی تر دەبیستم. وادەردەکەوێت وەک ئەوەی هیچ کەسێک بابەتەکەی لە ژێر کۆنترۆڵدا نەبێت." },
+            { "language": "kmr", "text": "Min xwe spart gotinên we. Niha hilberîna me rawestaye, û her car ez şîroveyeke din dibihîzim. Wisa xuya dike ku kesek mijarê di bin kontrolê de nagire." },
+            { "language": "pl", "text": "Oparłem/Oparłam się na Państwa informacjach. Teraz nasza produkcja stoi, a za każdym razem słyszę inne wyjaśnienie. Wygląda to tak, jakby nikt nie miał sprawy pod kontrolą." },
+            { "language": "ro", "text": "M-am bazat pe afirmațiile dumneavoastră. Acum producția noastră este oprită și de fiecare dată aud altă explicație. Pare că nimeni nu are situația sub control." },
+            { "language": "sq", "text": "Unë u mbështeta te deklaratat tuaja. Tani prodhimi ynë është ndalur dhe çdo herë dëgjoj një shpjegim tjetër. Duket sikur askush nuk e ka çështjen nën kontroll." }
+          ],
+          "function": "states impact and loss of trust",
+          "toneNote": "angry, disappointed"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe, dass das für Sie nicht nur ärgerlich, sondern operativ kritisch ist. Ich möchte zwei Dinge trennen: Die widersprüchliche Kommunikation liegt bei uns, und dafür entschuldige ich mich. Den aktuellen Lieferstatus kläre ich jetzt anhand der bestätigten Daten.",
+          "translations": [
+            { "language": "en", "text": "I understand that for you this is not only annoying but operationally critical. I would like to separate two things: the contradictory communication is on us, and I apologize for that. I will now clarify the current delivery status using the confirmed data." },
+            { "language": "fa", "text": "درک می‌کنم که این برای شما فقط آزاردهنده نیست، بلکه از نظر عملیاتی بحرانی است. می‌خواهم دو چیز را جدا کنم: ارتباط متناقض از طرف ما بوده و بابت آن عذرخواهی می‌کنم. وضعیت فعلی تحویل را اکنون بر اساس داده‌های تأییدشده روشن می‌کنم." },
+            { "language": "ar", "text": "أفهم أن الأمر بالنسبة إليكم ليس مزعجاً فقط، بل حرجاً من الناحية التشغيلية. أود أن أفصل بين أمرين: التواصل المتناقض من جانبنا، وأعتذر عن ذلك. سأوضح الآن حالة التسليم الحالية بناءً على البيانات المؤكدة." },
+            { "language": "tr", "text": "Bunun sizin için sadece can sıkıcı değil, operasyonel olarak kritik olduğunu anlıyorum. İki şeyi ayırmak istiyorum: çelişkili iletişim bizim tarafımızdan kaynaklandı ve bunun için özür dilerim. Güncel teslim durumunu şimdi doğrulanmış verilere göre açıklığa kavuşturacağım." },
+            { "language": "ru", "text": "Я понимаю, что для вас это не только неприятно, но и критично для работы. Я хочу разделить две вещи: противоречивая коммуникация была с нашей стороны, и за это я извиняюсь. Текущий статус поставки я сейчас уточню на основе подтвержденных данных." },
+            { "language": "ckb", "text": "تێدەگەم کە ئەمە بۆ ئێوە تەنها بێزارکەر نییە، بەڵکو لە ڕووی کارکردنەوە زۆر گرنگە. دەمەوێت دوو شت جیا بکەمەوە: پەیوەندی دژ بەیەک لە لای ئێمەوە بووە و بۆ ئەوە داوای لێبوردن دەکەم. ئێستا دۆخی گەیاندنی ئێستا بە پشتبەستن بە داتای پشتڕاستکراوە ڕوون دەکەمەوە." },
+            { "language": "kmr", "text": "Ez têdigihîjim ku ev ji bo we ne tenê acizker e, lê ji aliyê xebatê ve krîtîk e. Ez dixwazim du tiştan ji hev veqetînim: têkiliya dijber li aliyê me bû, û ez ji bo wê lêborînê dixwazim. Ez ê niha rewşa radestkirina heyî li ser bingeha daneyên piştrastkirî zelal bikim." },
+            { "language": "pl", "text": "Rozumiem, że to dla Państwa nie tylko irytujące, lecz także krytyczne operacyjnie. Chcę rozdzielić dwie rzeczy: sprzeczna komunikacja była po naszej stronie i za to przepraszam. Aktualny status dostawy wyjaśnię teraz na podstawie potwierdzonych danych." },
+            { "language": "ro", "text": "Înțeleg că pentru dumneavoastră acest lucru nu este doar supărător, ci și critic operațional. Aș vrea să separ două lucruri: comunicarea contradictorie este responsabilitatea noastră și îmi cer scuze pentru aceasta. Voi clarifica acum starea actuală a livrării pe baza datelor confirmate." },
+            { "language": "sq", "text": "E kuptoj që për ju kjo nuk është vetëm shqetësuese, por edhe kritike nga ana operative. Dua të ndaj dy gjëra: komunikimi kontradiktor është nga ana jonë dhe për këtë kërkoj ndjesë. Tani do ta sqaroj gjendjen aktuale të dorëzimit mbi bazën e të dhënave të konfirmuara." }
+          ],
+          "function": "acknowledges impact and separates responsibility from facts",
+          "toneNote": "empathetic, precise",
+          "expectedLearnerAction": "Accept communication responsibility while checking confirmed facts."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "customer",
+          "baseText": "Ich brauche keine lange Analyse, sondern eine Zusage. Wenn das morgen nicht da ist, haben wir ein massives Problem mit unserem Endkunden.",
+          "translations": [
+            { "language": "en", "text": "I do not need a long analysis; I need a commitment. If it is not there tomorrow, we will have a massive problem with our end customer." },
+            { "language": "fa", "text": "من تحلیل طولانی نمی‌خواهم، یک تعهد می‌خواهم. اگر فردا نرسد، ما با مشتری نهایی خود مشکل بزرگی خواهیم داشت." },
+            { "language": "ar", "text": "لا أحتاج إلى تحليل طويل، بل إلى تعهد. إذا لم يصل غداً، فستكون لدينا مشكلة كبيرة مع عميلنا النهائي." },
+            { "language": "tr", "text": "Uzun bir analiz istemiyorum, bir taahhüt istiyorum. Yarın orada olmazsa son müşterimizle büyük bir sorun yaşayacağız." },
+            { "language": "ru", "text": "Мне не нужен долгий анализ, мне нужно обязательство. Если завтра этого не будет, у нас возникнет серьезная проблема с нашим конечным клиентом." },
+            { "language": "ckb", "text": "من شیکردنەوەی درێژم ناوێت، بەڵکو پابەندبوونم دەوێت. ئەگەر سبەی لەوێ نەبێت، لەگەڵ کڕیاری کۆتاییمان کێشەیەکی زۆر گەورەمان دەبێت." },
+            { "language": "kmr", "text": "Ez analîzeke dirêj naxwazim, ez sozê girêdayî dixwazim. Ger ew sibê li wir nebe, em ê bi xerîdarê dawî re pirsgirêkeke mezin hebin." },
+            { "language": "pl", "text": "Nie potrzebuję długiej analizy, tylko zobowiązania. Jeśli jutro tego nie będzie, będziemy mieli ogromny problem z naszym klientem końcowym." },
+            { "language": "ro", "text": "Nu am nevoie de o analiză lungă, ci de un angajament. Dacă nu ajunge mâine, vom avea o problemă majoră cu clientul nostru final." },
+            { "language": "sq", "text": "Nuk kam nevojë për analizë të gjatë, por për një zotim. Nëse nuk arrin nesër, do të kemi një problem të madh me klientin tonë përfundimtar." }
+          ],
+          "function": "pressures for a promise",
+          "toneNote": "urgent, demanding"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte Ihnen keine Zusage geben, die ich in fünf Minuten wieder einschränken muss. Verbindlich sagen kann ich jetzt: Ich prüfe den letzten bestätigten Transportstatus, nenne Ihnen bis 14 Uhr eine belastbare Lieferoption und halte Sie danach nicht mehr mit Zwischenständen ohne Entscheidungswert auf.",
+          "translations": [
+            { "language": "en", "text": "I do not want to give you a commitment that I have to qualify again in five minutes. What I can say bindingly now is this: I will check the last confirmed transport status, give you a reliable delivery option by 2 p.m., and after that I will not burden you with interim updates that do not help you decide." },
+            { "language": "fa", "text": "نمی‌خواهم تعهدی بدهم که پنج دقیقه بعد مجبور شوم دوباره محدودش کنم. چیزی که اکنون به‌طور الزام‌آور می‌توانم بگویم این است: آخرین وضعیت تأییدشده حمل را بررسی می‌کنم، تا ساعت ۱۴ یک گزینه تحویل قابل اتکا به شما می‌دهم و بعد از آن شما را با گزارش‌های میانی که ارزش تصمیم‌گیری ندارند درگیر نمی‌کنم." },
+            { "language": "ar", "text": "لا أريد أن أعطيكم تعهداً أضطر بعد خمس دقائق إلى تقييده من جديد. ما أستطيع قوله بشكل ملزم الآن هو: سأفحص آخر حالة نقل مؤكدة، وسأعطيكم حتى الساعة الثانية بعد الظهر خيار تسليم موثوقاً، وبعد ذلك لن أشغلكم بتحديثات مرحلية لا تساعد على اتخاذ قرار." },
+            { "language": "tr", "text": "Size beş dakika sonra yeniden sınırlamak zorunda kalacağım bir taahhüt vermek istemiyorum. Şu anda bağlayıcı olarak söyleyebileceğim şey şu: son doğrulanmış taşıma durumunu kontrol edeceğim, saat 14.00'e kadar güvenilir bir teslim seçeneği bildireceğim ve bundan sonra karar değeri olmayan ara bilgilerle sizi meşgul etmeyeceğim." },
+            { "language": "ru", "text": "Я не хочу давать вам обещание, которое через пять минут придется снова ограничивать. Сейчас я могу обязаться к следующему: я проверю последний подтвержденный статус перевозки, до 14:00 назову вам надежный вариант поставки и после этого не буду отвлекать вас промежуточными сообщениями без ценности для решения." },
+            { "language": "ckb", "text": "نامەوێت بەڵێنێکتان پێ بدەم کە پاش پێنج خولەک ناچار بم دوبارە سنوورداری بکەم. ئەوەی ئێستا بە پابەندی دەتوانم بڵێم ئەمەیە: دوا دۆخی پشتڕاستکراوی گواستنەوە دەبینم، تا کاتژمێر ١٤ هەڵبژاردەیەکی گەیاندنی باوەڕپێکراوتان پێ دەدەم، و پاشان بە نوێکارییە نێوانەکان کە نرخی بڕیاردانیان نییە سەرقاڵتان ناکەم." },
+            { "language": "kmr", "text": "Ez naxwazim sozekê bidim we ku piştî pênc deqîqeyan dîsa divê sînor lê deynim. Tişta ku ez niha bi girêdayî dikarim bibêjim ev e: ez rewşa veguheztina herî dawî ya piştrastkirî kontrol dikim, heta saet 14:00 vebijarkeke radestkirina pêbawer didim we, û piştî wê ê we bi agahiyên navber ên bê nirxa biryardanê mijûl nekim." },
+            { "language": "pl", "text": "Nie chcę dać Państwu zobowiązania, które za pięć minut będę musiał/musiała znów ograniczyć. Wiążąco mogę teraz powiedzieć: sprawdzę ostatni potwierdzony status transportu, do godziny 14 podam Państwu solidną opcję dostawy, a potem nie będę obciążać Państwa komunikatami pośrednimi bez wartości decyzyjnej." },
+            { "language": "ro", "text": "Nu vreau să vă dau un angajament pe care peste cinci minute trebuie să îl limitez din nou. Ceea ce pot spune acum ferm este: verific ultimul status confirmat al transportului, vă transmit până la ora 14 o opțiune de livrare solidă și după aceea nu vă mai încarc cu actualizări intermediare fără valoare decizională." },
+            { "language": "sq", "text": "Nuk dua t'ju jap një zotim që pas pesë minutash duhet ta kufizoj sërish. Ajo që mund të them tani në mënyrë të detyrueshme është kjo: do të kontrolloj gjendjen e fundit të konfirmuar të transportit, deri në orën 14 do t'ju jap një opsion të besueshëm dorëzimi dhe pas kësaj nuk do t'ju ngarkoj me njoftime të ndërmjetme pa vlerë vendimmarrëse." }
+          ],
+          "function": "sets a reliable commitment instead of an unsafe promise",
+          "toneNote": "firm, transparent",
+          "expectedLearnerAction": "Offer a concrete commitment you can keep."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "customer",
+          "baseText": "Das klingt wieder nach Vertrösten. Ich will wissen, ob ich mich auf Ihr Wort verlassen kann.",
+          "translations": [
+            { "language": "en", "text": "That sounds like putting me off again. I want to know whether I can rely on your word." },
+            { "language": "fa", "text": "این دوباره شبیه وقت‌کشی به نظر می‌رسد. می‌خواهم بدانم آیا می‌توانم به حرف شما اعتماد کنم." },
+            { "language": "ar", "text": "هذا يبدو مرة أخرى كأنه تأجيل. أريد أن أعرف هل أستطيع الاعتماد على كلامكم." },
+            { "language": "tr", "text": "Bu yine oyalama gibi geliyor. Sözünüze güvenip güvenemeyeceğimi bilmek istiyorum." },
+            { "language": "ru", "text": "Это снова звучит как откладывание. Я хочу знать, могу ли я положиться на ваше слово." },
+            { "language": "ckb", "text": "ئەمە جارێکی تر وەک دواخستن دێتە بەرچاو. دەمەوێت بزانم ئایا دەتوانم پشت بە قسەتان ببەستم." },
+            { "language": "kmr", "text": "Ev dîsa wekî paşxistinê xuya dike. Ez dixwazim bizanim gelo ez dikarim xwe bispêrim gotina we." },
+            { "language": "pl", "text": "To znów brzmi jak odkładanie mnie na później. Chcę wiedzieć, czy mogę polegać na Pana/Pani słowie." },
+            { "language": "ro", "text": "Asta sună din nou ca o amânare. Vreau să știu dacă mă pot baza pe cuvântul dumneavoastră." },
+            { "language": "sq", "text": "Kjo tingëllon përsëri si shtyrje. Dua të di nëse mund të mbështetem te fjala juaj." }
+          ],
+          "function": "tests credibility",
+          "toneNote": "skeptical"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Sie können sich darauf verlassen, dass ich nicht beschönige. Wenn eine Lieferung morgen nicht belastbar zugesagt werden kann, sage ich das offen und nenne Ihnen die beste abgesicherte Alternative. Für Sie zählt jetzt nicht ein optimistischer Satz, sondern eine Entscheidung, mit der Sie intern planen können.",
+          "translations": [
+            { "language": "en", "text": "You can rely on me not to gloss things over. If a delivery for tomorrow cannot be reliably promised, I will say that openly and give you the best secured alternative. What matters to you now is not an optimistic sentence, but a decision you can use for internal planning." },
+            { "language": "fa", "text": "می‌توانید به این اعتماد کنید که من موضوع را زیبا جلوه نمی‌دهم. اگر تحویل برای فردا به‌طور قابل اتکا قابل تعهد نباشد، آن را آشکارا می‌گویم و بهترین جایگزین تضمین‌شده را به شما اعلام می‌کنم. چیزی که اکنون برای شما مهم است یک جمله خوش‌بینانه نیست، بلکه تصمیمی است که بتوانید با آن در داخل برنامه‌ریزی کنید." },
+            { "language": "ar", "text": "يمكنكم الاعتماد على أنني لن أجمل الأمر. إذا لم يكن بالإمكان التعهد بتسليم موثوق غداً، فسأقول ذلك بصراحة وأذكر لكم أفضل بديل مؤكد. ما يهمكم الآن ليس جملة متفائلة، بل قرار تستطيعون التخطيط داخلياً بناءً عليه." },
+            { "language": "tr", "text": "Size durumu süslemeyeceğime güvenebilirsiniz. Yarın için güvenilir bir teslim taahhüdü verilemiyorsa bunu açıkça söyler ve size en güvence altına alınmış alternatifi bildiririm. Sizin için şimdi önemli olan iyimser bir cümle değil, içeride plan yapabileceğiniz bir karardır." },
+            { "language": "ru", "text": "Вы можете рассчитывать на то, что я не буду приукрашивать ситуацию. Если поставку на завтра нельзя надежно пообещать, я скажу об этом открыто и назову вам лучшую обеспеченную альтернативу. Для вас сейчас важна не оптимистичная фраза, а решение, с которым вы сможете планировать внутри своей компании." },
+            { "language": "ckb", "text": "دەتوانن پشت بەوە ببەستن کە من بابەتەکە جوان نیشان نادەم. ئەگەر نەتوانرێت گەیاندنی سبەی بە شێوەیەکی باوەڕپێکراو بەڵێن بدرێت، بە ئاشکرا دەیڵێم و باشترین جێگرەوەی دڵنیاکراوتان پێ دەدەم. ئێستا بۆ ئێوە گرنگ نییە ڕستەیەکی هیواخوازانە، بەڵکو بڕیارێکە کە بتوانن لە ناوخۆدا پلانی لەسەر دابنێن." },
+            { "language": "kmr", "text": "Hûn dikarin xwe bispêrin vê yekê ku ez rewşê xweş nîşan nadim. Ger radestkirina sibê bi awayekî pêbawer nikaribe were sozdan, ez wê vekirî dibêjim û baştirîn alternatîfa ewlekirî didim we. Niha ji bo we ne hevokeke bi hêvî girîng e, lê biryarek e ku hûn dikarin bi wê li hundir plan bikin." },
+            { "language": "pl", "text": "Może Pan/Pani polegać na tym, że nie będę upiększać sytuacji. Jeśli dostawy na jutro nie będzie można wiarygodnie obiecać, powiem to otwarcie i podam najlepszą zabezpieczoną alternatywę. Dla Państwa liczy się teraz nie optymistyczne zdanie, lecz decyzja, z którą można planować wewnętrznie." },
+            { "language": "ro", "text": "Vă puteți baza pe faptul că nu voi cosmetiza situația. Dacă livrarea de mâine nu poate fi promisă în mod solid, voi spune deschis acest lucru și vă voi oferi cea mai bună alternativă asigurată. Pentru dumneavoastră contează acum nu o frază optimistă, ci o decizie cu care puteți planifica intern." },
+            { "language": "sq", "text": "Mund të mbështeteni te fakti që nuk do ta zbukuroj situatën. Nëse dorëzimi për nesër nuk mund të premtohet në mënyrë të besueshme, do ta them hapur dhe do t'ju jap alternativën më të siguruar. Për ju tani nuk ka rëndësi një fjali optimiste, por një vendim me të cilin mund të planifikoni brenda kompanisë." }
+          ],
+          "function": "rebuilds credibility through honest boundaries",
+          "toneNote": "serious, trustworthy",
+          "expectedLearnerAction": "Make reliability depend on honest information, not optimistic wording."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Der Transportdienst meldet gerade: Die komplette Lieferung morgen ist unwahrscheinlich, aber eine Teillieferung bis 11 Uhr kann bestätigt werden. Der Rest wäre am Folgetag realistisch.",
+          "translations": [
+            { "language": "en", "text": "The transport provider is reporting now: the full delivery tomorrow is unlikely, but a partial delivery by 11 a.m. can be confirmed. The rest would realistically arrive the following day." },
+            { "language": "fa", "text": "شرکت حمل‌ونقل همین حالا اعلام می‌کند: تحویل کامل برای فردا بعید است، اما تحویل بخشی تا ساعت ۱۱ می‌تواند تأیید شود. باقی آن به‌طور واقع‌بینانه روز بعد می‌رسد." },
+            { "language": "ar", "text": "شركة النقل تبلغ الآن: التسليم الكامل غداً غير مرجح، لكن يمكن تأكيد تسليم جزئي حتى الساعة الحادية عشرة. أما الباقي فمن الواقعي أن يصل في اليوم التالي." },
+            { "language": "tr", "text": "Taşıma şirketi şimdi bildiriyor: yarın tam teslimat olası görünmüyor, ancak saat 11'e kadar kısmi teslimat doğrulanabilir. Kalan kısmın ertesi gün gelmesi gerçekçi." },
+            { "language": "ru", "text": "Транспортная служба сейчас сообщает: полная поставка завтра маловероятна, но частичная поставка до 11 часов может быть подтверждена. Остальное реалистично ожидать на следующий день." },
+            { "language": "ckb", "text": "خزمەتگوزاری گواستنەوە ئێستا ڕادەگەیەنێت: گەیاندنی تەواو بۆ سبەی ئەگەری کەمە، بەڵام گەیاندنی بەشێک تا کاتژمێر ١١ دەتوانرێت پشتڕاست بکرێتەوە. بەشەکەی تر بە شێوەی واقیعی ڕۆژی دواتر دەگات." },
+            { "language": "kmr", "text": "Peydakara veguhastinê niha agahî dide: radestkirina hemû ya sibê ne zêde gengaz e, lê radestkirina beşekê heta saet 11 dikare were piştrastkirin. Beşa mayî bi awayekî rastîn roja din digihîje." },
+            { "language": "pl", "text": "Firma transportowa właśnie informuje: pełna dostawa jutro jest mało prawdopodobna, ale można potwierdzić dostawę częściową do godziny 11. Reszta realnie dotarłaby następnego dnia." },
+            { "language": "ro", "text": "Furnizorul de transport anunță acum: livrarea completă mâine este improbabilă, dar o livrare parțială până la ora 11 poate fi confirmată. Restul ar fi realist pentru ziua următoare." },
+            { "language": "sq", "text": "Ofruesi i transportit sapo njofton: dorëzimi i plotë nesër nuk ka shumë gjasa, por një dorëzim i pjesshëm deri në orën 11 mund të konfirmohet. Pjesa tjetër realisht do të arrinte ditën pasuese." }
+          ],
+          "function": "provides verified operational update",
+          "toneNote": "factual"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich habe jetzt eine belastbare Information: Die vollständige Lieferung für morgen kann ich Ihnen nicht seriös zusagen. Bestätigt ist eine Teillieferung bis 11 Uhr; für den Rest nenne ich den Folgetag als realistische Planung. Zusätzlich prüfe ich, ob wir die kritischen Komponenten priorisieren können.",
+          "translations": [
+            { "language": "en", "text": "I now have reliable information: I cannot seriously promise you the complete delivery for tomorrow. A partial delivery by 11 a.m. is confirmed; for the rest, I am naming the following day as the realistic planning basis. In addition, I am checking whether we can prioritize the critical components." },
+            { "language": "fa", "text": "اکنون اطلاعات قابل اتکا دارم: نمی‌توانم به‌طور جدی تحویل کامل برای فردا را به شما وعده بدهم. تحویل بخشی تا ساعت ۱۱ تأیید شده است؛ برای باقی، روز بعد را به‌عنوان مبنای واقع‌بینانه برنامه‌ریزی اعلام می‌کنم. علاوه بر آن بررسی می‌کنم آیا می‌توانیم قطعات حیاتی را در اولویت قرار دهیم." },
+            { "language": "ar", "text": "لدي الآن معلومات موثوقة: لا أستطيع أن أعدكم بجدية بالتسليم الكامل غداً. المؤكد هو تسليم جزئي حتى الساعة الحادية عشرة؛ أما الباقي فأذكر اليوم التالي كأساس واقعي للتخطيط. إضافة إلى ذلك، أتحقق مما إذا كان بإمكاننا إعطاء الأولوية للمكونات الحرجة." },
+            { "language": "tr", "text": "Şimdi güvenilir bilgiye sahibim: yarın tam teslimatı ciddi biçimde vaat edemem. Saat 11'e kadar kısmi teslimat doğrulandı; kalan kısım için gerçekçi planlama temeli olarak ertesi günü belirtiyorum. Ayrıca kritik parçaları önceliklendirebilir miyiz diye kontrol ediyorum." },
+            { "language": "ru", "text": "Теперь у меня есть надежная информация: я не могу ответственно обещать вам полную поставку завтра. Подтверждена частичная поставка до 11 часов; для остального я называю следующий день как реалистичную основу планирования. Кроме того, я проверяю, можем ли мы приоритизировать критические компоненты." },
+            { "language": "ckb", "text": "ئێستا زانیارییەکی باوەڕپێکراوم هەیە: ناتوانم بە جدی بەڵێنی گەیاندنی تەواو بۆ سبەیتان پێ بدەم. گەیاندنی بەشێک تا کاتژمێر ١١ پشتڕاستکراوە؛ بۆ بەشەکەی تر ڕۆژی دواتر وەک بنەمای پلاندانانی واقیعی ناو دەبەم. هەروەها دەبینم ئایا دەتوانین پێکهاتە گرنگەکان بخەینە پێشەوە." },
+            { "language": "kmr", "text": "Niha agahiyeke pêbawer heye: ez nikarim radestkirina hemû ya sibê bi awayekî cidî soz bidim we. Radestkirina beşekê heta saet 11 hat piştrastkirin; ji bo ya mayî ez roja din wek bingeha plana rastîn dibêjim. Her wiha ez kontrol dikim ka em dikarin parçeyên krîtîk pêşîn bikin." },
+            { "language": "pl", "text": "Mam teraz wiarygodną informację: nie mogę odpowiedzialnie obiecać pełnej dostawy na jutro. Potwierdzona jest dostawa częściowa do godziny 11; dla pozostałej części wskazuję następny dzień jako realistyczną podstawę planowania. Dodatkowo sprawdzam, czy możemy nadać priorytet krytycznym komponentom." },
+            { "language": "ro", "text": "Am acum o informație solidă: nu vă pot promite în mod serios livrarea completă pentru mâine. Este confirmată o livrare parțială până la ora 11; pentru rest, indic ziua următoare ca bază realistă de planificare. În plus, verific dacă putem prioritiza componentele critice." },
+            { "language": "sq", "text": "Tani kam një informacion të besueshëm: nuk mund t'ju premtoj seriozisht dorëzimin e plotë për nesër. Është konfirmuar një dorëzim i pjesshëm deri në orën 11; për pjesën tjetër përmend ditën pasuese si bazë realiste planifikimi. Përveç kësaj, po kontrolloj nëse mund t'u japim përparësi komponentëve kritikë." }
+          ],
+          "function": "communicates verified option and realistic limit",
+          "toneNote": "honest, solution-focused",
+          "expectedLearnerAction": "Give the confirmed option and avoid overstating certainty."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "customer",
+          "baseText": "Das ist nicht das, was wir gehofft hatten. Aber wenn die kritischen Teile morgen kommen, kann ich intern zumindest eine Notlösung planen.",
+          "translations": [
+            { "language": "en", "text": "That is not what we had hoped for. But if the critical parts arrive tomorrow, I can at least plan an emergency solution internally." },
+            { "language": "fa", "text": "این چیزی نیست که امیدوار بودیم. اما اگر قطعات حیاتی فردا برسند، حداقل می‌توانم در داخل یک راه‌حل اضطراری برنامه‌ریزی کنم." },
+            { "language": "ar", "text": "هذا ليس ما كنا نأمله. لكن إذا وصلت الأجزاء الحرجة غداً، يمكنني على الأقل التخطيط لحل طارئ داخلياً." },
+            { "language": "tr", "text": "Bu umduğumuz şey değil. Ama kritik parçalar yarın gelirse, içeride en azından bir acil çözüm planlayabilirim." },
+            { "language": "ru", "text": "Это не то, на что мы надеялись. Но если критические детали прибудут завтра, я смогу хотя бы спланировать внутри аварийное решение." },
+            { "language": "ckb", "text": "ئەمە ئەوە نییە کە هیوامان پێی بوو. بەڵام ئەگەر پارچە گرنگەکان سبەی بگەن، لە ناوخۆدا دەتوانم لانیکەم چارەسەرێکی فریاکەوتن پلانی بۆ دابنێم." },
+            { "language": "kmr", "text": "Ev ne tişta ku me hêvî dikir bû. Lê ger parçeyên krîtîk sibê bigihîjin, ez dikarim li hundir herî kêm çareseriyeke acîl plan bikim." },
+            { "language": "pl", "text": "To nie jest to, na co liczyliśmy. Ale jeśli krytyczne części dotrą jutro, mogę przynajmniej zaplanować wewnętrznie rozwiązanie awaryjne." },
+            { "language": "ro", "text": "Nu este ceea ce speram. Dar dacă piesele critice ajung mâine, pot cel puțin să planific intern o soluție de urgență." },
+            { "language": "sq", "text": "Kjo nuk është ajo që kishim shpresuar. Por nëse pjesët kritike arrijnë nesër, të paktën mund të planifikoj brenda kompanisë një zgjidhje emergjente." }
+          ],
+          "function": "accepts constrained solution",
+          "toneNote": "still disappointed, more constructive"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann halte ich es verbindlich fest: Bis 11 Uhr morgen kommt die Teillieferung mit den kritischen Komponenten, bis 14 Uhr erhalten Sie von mir eine schriftliche Bestätigung mit Resttermin und Ansprechpartner. Parallel klären wir intern, warum die Auskünfte auseinanderliefen, damit Sie nicht erneut zwischen Versionen wechseln müssen.",
+          "translations": [
+            { "language": "en", "text": "Then I will record this bindingly: by 11 a.m. tomorrow the partial delivery with the critical components will arrive; by 2 p.m. you will receive written confirmation from me with the remaining date and contact person. In parallel, we will clarify internally why the information diverged so that you do not have to switch between versions again." },
+            { "language": "fa", "text": "پس این را به‌صورت الزام‌آور ثبت می‌کنم: تا ساعت ۱۱ فردا تحویل بخشی شامل قطعات حیاتی می‌رسد؛ تا ساعت ۱۴ از طرف من تأییدیه کتبی با زمان باقی‌مانده و شخص مسئول دریافت می‌کنید. هم‌زمان در داخل روشن می‌کنیم چرا اطلاعات متفاوت شد تا شما دوباره مجبور نباشید بین روایت‌های مختلف جابه‌جا شوید." },
+            { "language": "ar", "text": "إذن سأثبت ذلك بشكل ملزم: حتى الساعة الحادية عشرة غداً تصل الشحنة الجزئية مع المكونات الحرجة، وحتى الساعة الثانية بعد الظهر ستحصلون مني على تأكيد خطي يتضمن موعد الباقي والشخص المسؤول. وبالتوازي سنوضح داخلياً لماذا اختلفت المعلومات حتى لا تضطروا مرة أخرى إلى التنقل بين روايات مختلفة." },
+            { "language": "tr", "text": "O halde bunu bağlayıcı şekilde kaydediyorum: yarın saat 11'e kadar kritik parçaları içeren kısmi teslimat gelecek; saat 14'e kadar benden kalan tarih ve ilgili kişiyle birlikte yazılı onay alacaksınız. Paralel olarak, bilgilerin neden farklılaştığını içeride açıklığa kavuşturacağız; böylece yeniden farklı versiyonlar arasında kalmak zorunda olmayacaksınız." },
+            { "language": "ru", "text": "Тогда я фиксирую это как обязательство: до 11 часов завтра прибудет частичная поставка с критическими компонентами; до 14 часов вы получите от меня письменное подтверждение с датой остатка и контактным лицом. Параллельно мы внутри выясним, почему информация расходилась, чтобы вам не пришлось снова переключаться между разными версиями." },
+            { "language": "ckb", "text": "کەواتە بە شێوەی پابەند تۆماری دەکەم: تا کاتژمێر ١١ی سبەی گەیاندنی بەشێک لەگەڵ پێکهاتە گرنگەکان دەگات؛ تا کاتژمێر ١٤ پشتڕاستکردنەوەی نووسراو لە من وەردەگرن لەگەڵ کاتی بەشەکەی تر و کەسی پەیوەندیدار. هاوکات لە ناوخۆدا ڕوون دەکەینەوە بۆچی زانیارییەکان جیاواز بوون، بۆ ئەوەی جارێکی تر ناچار نەبن لە نێوان وەشانە جیاوازەکان بگۆڕن." },
+            { "language": "kmr", "text": "Wê demê ez vê bi girêdayî tomar dikim: heta saet 11ê sibê radestkirina beşekê bi parçeyên krîtîk digihîje; heta saet 14ê hûn ji min piştrastkirineke nivîskî bi dema beşa mayî û kesê peywendîdar distînin. Di heman demê de em li hundir zelal dikin ka çima agahî ji hev veqetiyan, da ku hûn careke din neçar nemînin di navbera guhertoyên cuda de biguherin." },
+            { "language": "pl", "text": "W takim razie zapisuję to wiążąco: do godziny 11 jutro dotrze dostawa częściowa z krytycznymi komponentami, do godziny 14 otrzymają Państwo ode mnie pisemne potwierdzenie z terminem pozostałej części i osobą kontaktową. Równolegle wyjaśnimy wewnętrznie, dlaczego informacje się rozeszły, aby nie musieli Państwo ponownie przełączać się między wersjami." },
+            { "language": "ro", "text": "Atunci consemnez ferm: până mâine la ora 11 ajunge livrarea parțială cu componentele critice, iar până la ora 14 veți primi de la mine o confirmare scrisă cu termenul pentru rest și persoana de contact. În paralel clarificăm intern de ce informațiile au fost divergente, astfel încât să nu mai trebuiască să oscilați între versiuni diferite." },
+            { "language": "sq", "text": "Atëherë po e regjistroj në mënyrë të detyrueshme: deri nesër në orën 11 vjen dorëzimi i pjesshëm me komponentët kritikë; deri në orën 14 do të merrni nga unë një konfirmim me shkrim me afatin për pjesën e mbetur dhe personin përgjegjës. Paralelisht do të sqarojmë brenda kompanisë pse informacionet ndryshuan, që të mos detyroheni përsëri të kaloni mes versioneve të ndryshme." }
+          ],
+          "function": "closes with binding next steps and internal learning",
+          "toneNote": "precise, accountable",
+          "expectedLearnerAction": "Close with time, scope, owner, and prevention of repeated confusion."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke, ich übernehme. Ich steige nicht mit einer Verteidigung ein, sondern fasse zuerst die Belastung zusammen: verspätete Lieferung, widersprüchliche Auskünfte und dadurch fehlende Planbarkeit auf Kundenseite.",
+              "translations": [
+                { "language": "en", "text": "Thank you, I will take over. I will not begin with a defense; first I will summarize the strain: late delivery, contradictory information, and therefore lack of planning certainty on the customer side." },
+                { "language": "fa", "text": "ممنون، من ادامه را به عهده می‌گیرم. با دفاع شروع نمی‌کنم، بلکه اول فشار ایجادشده را جمع‌بندی می‌کنم: تحویل دیر، اطلاعات متناقض، و در نتیجه نبود امکان برنامه‌ریزی برای مشتری." },
+                { "language": "ar", "text": "شكراً، سأتولى الأمر. لن أبدأ بالدفاع، بل ألخص أولاً الضغط: تسليم متأخر، معلومات متناقضة، وبالتالي غياب إمكانية التخطيط لدى العميل." },
+                { "language": "tr", "text": "Teşekkür ederim, ben devralıyorum. Savunmayla başlamayacağım; önce oluşan yükü özetleyeceğim: geciken teslimat, çelişkili bilgiler ve bu yüzden müşteri tarafında planlama güvenliğinin olmaması." },
+                { "language": "ru", "text": "Спасибо, я беру разговор на себя. Я начну не с защиты, а сначала подытожу нагрузку: задержанная поставка, противоречивая информация и из-за этого отсутствие планируемости у клиента." },
+                { "language": "ckb", "text": "سوپاس، من وەردەگرم. بە بەرگریکردن دەست پێناکەم، بەڵکو یەکەم جار فشارەکە کورت دەکەمەوە: گەیاندنی دواخراو، زانیاری دژ بەیەک، و لە ئەنجامدا نەبوونی توانای پلاندانان لای کڕیار." },
+                { "language": "kmr", "text": "Spas, ez digirim. Ez bi parastinê dest pê nakim, lê pêşî barê çêbûyî kurte dikim: radestkirina dereng, agahiyên dijber û ji ber vê yekê tunebûna ewlekariya planê li aliyê xerîdar." },
+                { "language": "pl", "text": "Dziękuję, przejmuję rozmowę. Nie zacznę od obrony, tylko najpierw podsumuję obciążenie: opóźniona dostawa, sprzeczne informacje i przez to brak możliwości planowania po stronie klienta." },
+                { "language": "ro", "text": "Mulțumesc, preiau eu. Nu încep cu o apărare, ci rezum mai întâi presiunea: livrare întârziată, informații contradictorii și, prin urmare, lipsă de predictibilitate pentru client." },
+                { "language": "sq", "text": "Faleminderit, po e marr unë përsipër. Nuk do ta nis me mbrojtje, por së pari do të përmbledh ngarkesën: dorëzim i vonuar, informacione kontradiktore dhe për pasojë mungesë planifikueshmërie për klientin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort priorisiert Anerkennung und Struktur statt Verteidigung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response prioritizes acknowledgement and structure instead of defense." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ به جای دفاع، پذیرش و ساختار را در اولویت می‌گذارد." },
+                { "language": "ar", "text": "جيد جداً: تعطي الإجابة الأولوية للاعتراف والتنظيم بدلاً من الدفاع." },
+                { "language": "tr", "text": "Çok iyi: cevap savunma yerine kabul ve yapıya öncelik verir." },
+                { "language": "ru", "text": "Очень хорошо: ответ ставит признание и структуру выше защиты." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە ناسینەوە و پێکهاتە لە پێش بەرگری دەخات." },
+                { "language": "kmr", "text": "Pir baş: bersiv qebûlkirin û avahî li pêş parastinê dide." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź stawia uznanie i strukturę przed obroną." },
+                { "language": "ro", "text": "Foarte bine: răspunsul prioritizează recunoașterea și structura în locul apărării." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja i jep përparësi pranimit dhe strukturës në vend të mbrojtjes." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich übernehme und erkläre dem Kunden zuerst, dass wir für den Transportdienst nicht direkt verantwortlich sind.",
+              "translations": [
+                { "language": "en", "text": "I will take over and first explain to the customer that we are not directly responsible for the transport provider." },
+                { "language": "fa", "text": "من ادامه را به عهده می‌گیرم و اول برای مشتری توضیح می‌دهم که ما مستقیماً مسئول شرکت حمل‌ونقل نیستیم." },
+                { "language": "ar", "text": "سأتولى الأمر وأشرح للعميل أولاً أننا لسنا مسؤولين مباشرة عن شركة النقل." },
+                { "language": "tr", "text": "Ben devralırım ve müşteriye önce taşıma şirketinden doğrudan sorumlu olmadığımızı açıklarım." },
+                { "language": "ru", "text": "Я возьму разговор на себя и сначала объясню клиенту, что мы не несем прямой ответственности за транспортную службу." },
+                { "language": "ckb", "text": "من وەردەگرم و یەکەم جار بۆ کڕیار ڕوون دەکەمەوە کە ئێمە بە ڕاستەوخۆ بەرپرسی خزمەتگوزاری گواستنەوە نین." },
+                { "language": "kmr", "text": "Ez digirim û pêşî ji xerîdar re şîrove dikim ku em rasterast berpirsê peydakara veguhastinê nîn." },
+                { "language": "pl", "text": "Przejmę rozmowę i najpierw wyjaśnię klientowi, że nie odpowiadamy bezpośrednio za firmę transportową." },
+                { "language": "ro", "text": "Preiau discuția și îi explic mai întâi clientului că nu suntem direct responsabili pentru furnizorul de transport." },
+                { "language": "sq", "text": "E marr përsipër dhe fillimisht i shpjegoj klientit se nuk jemi drejtpërdrejt përgjegjës për ofruesin e transportit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu defensiv: Der Kunde braucht zuerst Anerkennung der Belastung, nicht eine Zuständigkeitsabwehr.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too defensive: the customer first needs acknowledgement of the strain, not a deflection of responsibility." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد دفاعی است: مشتری اول به پذیرش فشار ایجادشده نیاز دارد، نه دفع مسئولیت." },
+                { "language": "ar", "text": "ممكن، لكنه دفاعي أكثر من اللازم: يحتاج العميل أولاً إلى الاعتراف بالضغط، لا إلى دفع المسؤولية." },
+                { "language": "tr", "text": "Makul görünüyor ama fazla savunmacı: müşteri önce oluşan yükün kabul edilmesine ihtiyaç duyar, sorumluluğun uzaklaştırılmasına değil." },
+                { "language": "ru", "text": "Правдоподобно, но слишком оборонительно: клиенту сначала нужно признание нагрузки, а не отведение ответственности." },
+                { "language": "ckb", "text": "ڕەنگە گونجاو بێت، بەڵام زۆر بەرگرییە: کڕیار پێش هەموو شت پێویستی بە ناسینی فشارەکە هەیە، نە دوورخستنەوەی بەرپرسیاریەتی." },
+                { "language": "kmr", "text": "Gengaz xuya dike, lê pir parastinî ye: xerîdar pêşî hewcedarê qebûlkirina barê ye, ne dûrxistina berpirsiyariyê." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt defensywne: klient najpierw potrzebuje uznania obciążenia, a nie odsuwania odpowiedzialności." },
+                { "language": "ro", "text": "Plauzibil, dar prea defensiv: clientul are nevoie mai întâi de recunoașterea presiunii, nu de îndepărtarea responsabilității." },
+                { "language": "sq", "text": "E besueshme, por tepër mbrojtëse: klienti ka nevojë së pari për pranimin e ngarkesës, jo për largimin e përgjegjësisë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich verstehe, dass das für Sie nicht nur ärgerlich, sondern operativ kritisch ist. Ich möchte zwei Dinge trennen: Die widersprüchliche Kommunikation liegt bei uns, und dafür entschuldige ich mich. Den aktuellen Lieferstatus kläre ich jetzt anhand der bestätigten Daten.",
+              "translations": [
+                { "language": "en", "text": "I understand that for you this is not only annoying but operationally critical. I would like to separate two things: the contradictory communication is on us, and I apologize for that. I will now clarify the current delivery status using the confirmed data." },
+                { "language": "fa", "text": "درک می‌کنم که این برای شما فقط آزاردهنده نیست، بلکه از نظر عملیاتی بحرانی است. می‌خواهم دو چیز را جدا کنم: ارتباط متناقض از طرف ما بوده و بابت آن عذرخواهی می‌کنم. وضعیت فعلی تحویل را اکنون بر اساس داده‌های تأییدشده روشن می‌کنم." },
+                { "language": "ar", "text": "أفهم أن الأمر بالنسبة إليكم ليس مزعجاً فقط، بل حرجاً من الناحية التشغيلية. أود أن أفصل بين أمرين: التواصل المتناقض من جانبنا، وأعتذر عن ذلك. سأوضح الآن حالة التسليم الحالية بناءً على البيانات المؤكدة." },
+                { "language": "tr", "text": "Bunun sizin için sadece can sıkıcı değil, operasyonel olarak kritik olduğunu anlıyorum. İki şeyi ayırmak istiyorum: çelişkili iletişim bizim tarafımızdan kaynaklandı ve bunun için özür dilerim. Güncel teslim durumunu şimdi doğrulanmış verilere göre açıklığa kavuşturacağım." },
+                { "language": "ru", "text": "Я понимаю, что для вас это не только неприятно, но и критично для работы. Я хочу разделить две вещи: противоречивая коммуникация была с нашей стороны, и за это я извиняюсь. Текущий статус поставки я сейчас уточню на основе подтвержденных данных." },
+                { "language": "ckb", "text": "تێدەگەم کە ئەمە بۆ ئێوە تەنها بێزارکەر نییە، بەڵکو لە ڕووی کارکردنەوە زۆر گرنگە. دەمەوێت دوو شت جیا بکەمەوە: پەیوەندی دژ بەیەک لە لای ئێمەوە بووە و بۆ ئەوە داوای لێبوردن دەکەم. ئێستا دۆخی گەیاندنی ئێستا بە پشتبەستن بە داتای پشتڕاستکراوە ڕوون دەکەمەوە." },
+                { "language": "kmr", "text": "Ez têdigihîjim ku ev ji bo we ne tenê acizker e, lê ji aliyê xebatê ve krîtîk e. Ez dixwazim du tiştan ji hev veqetînim: têkiliya dijber li aliyê me bû, û ez ji bo wê lêborînê dixwazim. Ez ê niha rewşa radestkirina heyî li ser bingeha daneyên piştrastkirî zelal bikim." },
+                { "language": "pl", "text": "Rozumiem, że to dla Państwa nie tylko irytujące, lecz także krytyczne operacyjnie. Chcę rozdzielić dwie rzeczy: sprzeczna komunikacja była po naszej stronie i za to przepraszam. Aktualny status dostawy wyjaśnię teraz na podstawie potwierdzonych danych." },
+                { "language": "ro", "text": "Înțeleg că pentru dumneavoastră acest lucru nu este doar supărător, ci și critic operațional. Aș vrea să separ două lucruri: comunicarea contradictorie este responsabilitatea noastră și îmi cer scuze pentru aceasta. Voi clarifica acum starea actuală a livrării pe baza datelor confirmate." },
+                { "language": "sq", "text": "E kuptoj që për ju kjo nuk është vetëm shqetësuese, por edhe kritike nga ana operative. Dua të ndaj dy gjëra: komunikimi kontradiktor është nga ana jonë dhe për këtë kërkoj ndjesë. Tani do ta sqaroj gjendjen aktuale të dorëzimit mbi bazën e të dhënave të konfirmuara." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort übernimmt Kommunikationsverantwortung, ohne ungeprüfte Fakten zu behaupten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response takes responsibility for communication without claiming unchecked facts." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ مسئولیت ارتباط را می‌پذیرد، بدون اینکه واقعیت‌های بررسی‌نشده را ادعا کند." },
+                { "language": "ar", "text": "جيد جداً: تتحمل الإجابة مسؤولية التواصل من دون ادعاء حقائق غير محققة." },
+                { "language": "tr", "text": "Çok iyi: cevap iletişim sorumluluğunu alır, ama kontrol edilmemiş gerçekleri iddia etmez." },
+                { "language": "ru", "text": "Очень хорошо: ответ берет ответственность за коммуникацию, не утверждая непроверенных фактов." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بەرپرسیاریەتی پەیوەندی وەردەگرێت، بێ ئەوەی ڕاستیی نەسەلمێنراو بانگەشە بکات." },
+                { "language": "kmr", "text": "Pir baş: bersiv berpirsiyariya têkiliyê digire, bêyî ku rastiyên nehate kontrolkirin îdia bike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź bierze odpowiedzialność za komunikację, nie twierdząc rzeczy niesprawdzonych." },
+                { "language": "ro", "text": "Foarte bine: răspunsul își asumă responsabilitatea comunicării fără a afirma fapte neverificate." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja merr përgjegjësi për komunikimin pa pretenduar fakte të pakontrolluara." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verstehe Ihren Ärger, aber lassen Sie mich erst intern klären, wer Ihnen die falsche Information gegeben hat.",
+              "translations": [
+                { "language": "en", "text": "I understand your anger, but first let me clarify internally who gave you the wrong information." },
+                { "language": "fa", "text": "ناراحتی شما را درک می‌کنم، اما اجازه دهید اول در داخل روشن کنم چه کسی اطلاعات نادرست را به شما داده است." },
+                { "language": "ar", "text": "أفهم غضبكم، لكن دعوني أوضح أولاً داخلياً من قدم لكم المعلومة الخاطئة." },
+                { "language": "tr", "text": "Öfkenizi anlıyorum, ama önce size yanlış bilgiyi kimin verdiğini içeride açıklığa kavuşturmama izin verin." },
+                { "language": "ru", "text": "Я понимаю ваше раздражение, но сначала позвольте мне внутри выяснить, кто дал вам неверную информацию." },
+                { "language": "ckb", "text": "تووڕەییەکەتان تێدەگەم، بەڵام با یەکەم جار لە ناوخۆدا ڕوون بکەمەوە کێ زانیاری هەڵەی پێداون." },
+                { "language": "kmr", "text": "Ez hêrsê we têdigihîjim, lê bihêlin pêşî li hundir zelal bikim ka kê agahiya şaş daye we." },
+                { "language": "pl", "text": "Rozumiem Pana/Pani złość, ale proszę pozwolić mi najpierw wewnętrznie wyjaśnić, kto przekazał błędną informację." },
+                { "language": "ro", "text": "Înțeleg supărarea dumneavoastră, dar permiteți-mi mai întâi să clarific intern cine v-a dat informația greșită." },
+                { "language": "sq", "text": "E kuptoj zemërimin tuaj, por më lejoni së pari të sqaroj brenda kompanisë kush ju dha informacionin e gabuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu früh personenzentriert: Die Antwort verschiebt den Fokus auf Schuldige statt auf Status, Entlastung und Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too person-focused too early: the response shifts attention to who is at fault instead of status, relief, and solution." },
+                { "language": "fa", "text": "خیلی زود فردمحور می‌شود: پاسخ تمرکز را به جای وضعیت، کاهش فشار و راه‌حل، به سمت مقصر می‌برد." },
+                { "language": "ar", "text": "تركز على الأشخاص مبكراً جداً: تنقل الإجابة الانتباه إلى المذنب بدلاً من الحالة والتخفيف والحل." },
+                { "language": "tr", "text": "Çok erken kişi odaklı: cevap odağı durum, rahatlatma ve çözüm yerine suçluya kaydırır." },
+                { "language": "ru", "text": "Слишком рано фокус на человеке: ответ переводит внимание на виновного вместо статуса, облегчения и решения." },
+                { "language": "ckb", "text": "زۆر زوو کەس-محەوەرە: وەڵامەکە سەرنج لە دۆخ، کەمکردنەوەی فشار و چارەسەر دەگوازێتەوە بۆ تاوانبار." },
+                { "language": "kmr", "text": "Pir zû li ser kesê disekine: bersiv bala ji rewş, sivikkirin û çareseriyê diguhezîne ser kesê sûcdar." },
+                { "language": "pl", "text": "Zbyt wcześnie skupia się na osobie: odpowiedź przenosi uwagę na winnego zamiast na status, odciążenie i rozwiązanie." },
+                { "language": "ro", "text": "Prea devreme centrat pe persoană: răspunsul mută atenția spre vinovat în loc de status, reducerea presiunii și soluție." },
+                { "language": "sq", "text": "Shumë herët e përqendruar te personi: përgjigjja e zhvendos vëmendjen te fajtori në vend të gjendjes, lehtësimit dhe zgjidhjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte Ihnen keine Zusage geben, die ich in fünf Minuten wieder einschränken muss. Verbindlich sagen kann ich jetzt: Ich prüfe den letzten bestätigten Transportstatus, nenne Ihnen bis 14 Uhr eine belastbare Lieferoption und halte Sie danach nicht mehr mit Zwischenständen ohne Entscheidungswert auf.",
+              "translations": [
+                { "language": "en", "text": "I do not want to give you a commitment that I have to qualify again in five minutes. What I can say bindingly now is this: I will check the last confirmed transport status, give you a reliable delivery option by 2 p.m., and after that I will not burden you with interim updates that do not help you decide." },
+                { "language": "fa", "text": "نمی‌خواهم تعهدی بدهم که پنج دقیقه بعد مجبور شوم دوباره محدودش کنم. چیزی که اکنون به‌طور الزام‌آور می‌توانم بگویم این است: آخرین وضعیت تأییدشده حمل را بررسی می‌کنم، تا ساعت ۱۴ یک گزینه تحویل قابل اتکا به شما می‌دهم و بعد از آن شما را با گزارش‌های میانی که ارزش تصمیم‌گیری ندارند درگیر نمی‌کنم." },
+                { "language": "ar", "text": "لا أريد أن أعطيكم تعهداً أضطر بعد خمس دقائق إلى تقييده من جديد. ما أستطيع قوله بشكل ملزم الآن هو: سأفحص آخر حالة نقل مؤكدة، وسأعطيكم حتى الساعة الثانية بعد الظهر خيار تسليم موثوقاً، وبعد ذلك لن أشغلكم بتحديثات مرحلية لا تساعد على اتخاذ قرار." },
+                { "language": "tr", "text": "Size beş dakika sonra yeniden sınırlamak zorunda kalacağım bir taahhüt vermek istemiyorum. Şu anda bağlayıcı olarak söyleyebileceğim şey şu: son doğrulanmış taşıma durumunu kontrol edeceğim, saat 14.00'e kadar güvenilir bir teslim seçeneği bildireceğim ve bundan sonra karar değeri olmayan ara bilgilerle sizi meşgul etmeyeceğim." },
+                { "language": "ru", "text": "Я не хочу давать вам обещание, которое через пять минут придется снова ограничивать. Сейчас я могу обязаться к следующему: я проверю последний подтвержденный статус перевозки, до 14:00 назову вам надежный вариант поставки и после этого не буду отвлекать вас промежуточными сообщениями без ценности для решения." },
+                { "language": "ckb", "text": "نامەوێت بەڵێنێکتان پێ بدەم کە پاش پێنج خولەک ناچار بم دوبارە سنوورداری بکەم. ئەوەی ئێستا بە پابەندی دەتوانم بڵێم ئەمەیە: دوا دۆخی پشتڕاستکراوی گواستنەوە دەبینم، تا کاتژمێر ١٤ هەڵبژاردەیەکی گەیاندنی باوەڕپێکراوتان پێ دەدەم، و پاشان بە نوێکارییە نێوانەکان کە نرخی بڕیاردانیان نییە سەرقاڵتان ناکەم." },
+                { "language": "kmr", "text": "Ez naxwazim sozekê bidim we ku piştî pênc deqîqeyan dîsa divê sînor lê deynim. Tişta ku ez niha bi girêdayî dikarim bibêjim ev e: ez rewşa veguheztina herî dawî ya piştrastkirî kontrol dikim, heta saet 14:00 vebijarkeke radestkirina pêbawer didim we, û piştî wê ê we bi agahiyên navber ên bê nirxa biryardanê mijûl nekim." },
+                { "language": "pl", "text": "Nie chcę dać Państwu zobowiązania, które za pięć minut będę musiał/musiała znów ograniczyć. Wiążąco mogę teraz powiedzieć: sprawdzę ostatni potwierdzony status transportu, do godziny 14 podam Państwu solidną opcję dostawy, a potem nie będę obciążać Państwa komunikatami pośrednimi bez wartości decyzyjnej." },
+                { "language": "ro", "text": "Nu vreau să vă dau un angajament pe care peste cinci minute trebuie să îl limitez din nou. Ceea ce pot spune acum ferm este: verific ultimul status confirmat al transportului, vă transmit până la ora 14 o opțiune de livrare solidă și după aceea nu vă mai încarc cu actualizări intermediare fără valoare decizională." },
+                { "language": "sq", "text": "Nuk dua t'ju jap një zotim që pas pesë minutash duhet ta kufizoj sërish. Ajo që mund të them tani në mënyrë të detyrueshme është kjo: do të kontrolloj gjendjen e fundit të konfirmuar të transportit, deri në orën 14 do t'ju jap një opsion të besueshëm dorëzimi dhe pas kësaj nuk do t'ju ngarkoj me njoftime të ndërmjetme pa vlerë vendimmarrëse." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort ersetzt eine riskante Zusage durch einen präzisen, haltbaren nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response replaces a risky promise with a precise, sustainable next step." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ یک وعده پرریسک را با قدم بعدی دقیق و قابل نگه‌داشتن جایگزین می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تستبدل الإجابة وعداً خطراً بخطوة تالية دقيقة وقابلة للالتزام." },
+                { "language": "tr", "text": "Çok iyi: cevap riskli bir vaadi kesin ve sürdürülebilir bir sonraki adımla değiştirir." },
+                { "language": "ru", "text": "Очень хорошо: ответ заменяет рискованное обещание точным и устойчивым следующим шагом." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بەڵێنی مەترسیدار بە هەنگاوێکی داهاتووی ورد و جێگیر دەگۆڕێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv sozê xeternak bi gaveke din a rast û domdar diguherîne." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź zastępuje ryzykowną obietnicę precyzyjnym i trwałym kolejnym krokiem." },
+                { "language": "ro", "text": "Foarte bine: răspunsul înlocuiește o promisiune riscantă cu un pas următor precis și sustenabil." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja zëvendëson një premtim të rrezikshëm me një hap të ardhshëm të saktë dhe të qëndrueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich gehe davon aus, dass wir das bis morgen schaffen, aber ich muss das vorsichtshalber noch einmal prüfen.",
+              "translations": [
+                { "language": "en", "text": "I assume we will manage it by tomorrow, but to be safe I still need to check it again." },
+                { "language": "fa", "text": "فرض می‌کنم تا فردا انجامش می‌دهیم، اما برای احتیاط باید یک بار دیگر بررسی کنم." },
+                { "language": "ar", "text": "أفترض أننا سننجز ذلك حتى الغد، لكن للاحتياط يجب أن أتحقق منه مرة أخرى." },
+                { "language": "tr", "text": "Yarına kadar başaracağımızı varsayıyorum, ama tedbiren bunu bir kez daha kontrol etmem gerekiyor." },
+                { "language": "ru", "text": "Я предполагаю, что мы справимся до завтра, но на всякий случай мне нужно еще раз это проверить." },
+                { "language": "ckb", "text": "وام دەزانم تا سبەی بتوانین ئەنجامی بدەین، بەڵام بۆ وریایی دەبێت جارێکی تر بیبینم." },
+                { "language": "kmr", "text": "Ez texmîn dikim em heta sibê wê biqedînin, lê ji bo hişyarî divê careke din kontrol bikim." },
+                { "language": "pl", "text": "Zakładam, że uda nam się to do jutra, ale dla pewności muszę to jeszcze raz sprawdzić." },
+                { "language": "ro", "text": "Presupun că vom reuși până mâine, dar pentru siguranță trebuie să verific încă o dată." },
+                { "language": "sq", "text": "Mendoj se do t'ia dalim deri nesër, por për siguri duhet ta kontrolloj edhe një herë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort klingt hoffnungsvoll, aber sie gibt weder verlässlichen Zeitpunkt noch verwertbare Entscheidungsgrundlage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the response sounds hopeful but gives neither a reliable time nor usable decision basis." },
+                { "language": "fa", "text": "بیش از حد مبهم: پاسخ امیدوارانه به نظر می‌رسد، اما نه زمان قابل اتکا می‌دهد و نه مبنای قابل استفاده برای تصمیم." },
+                { "language": "ar", "text": "غامضة أكثر من اللازم: تبدو الإجابة متفائلة لكنها لا تعطي وقتاً موثوقاً ولا أساساً قابلاً للاستخدام لاتخاذ القرار." },
+                { "language": "tr", "text": "Çok belirsiz: cevap umutlu duyuluyor, ama ne güvenilir bir zaman ne de kullanılabilir karar temeli veriyor." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ звучит обнадеживающе, но не дает ни надежного времени, ни пригодной основы для решения." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە هیواخوازانە دەنگ دەدات، بەڵام نە کاتێکی باوەڕپێکراو دەدات و نە بنەمایەکی بەکارهێنراو بۆ بڕیار." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv bi hêvî xuya dike, lê ne demeke pêbawer dide ne jî bingeheke biryardanê ya bikêrhatî." },
+                { "language": "pl", "text": "Zbyt niejasno: odpowiedź brzmi optymistycznie, ale nie daje ani wiarygodnego terminu, ani użytecznej podstawy decyzji." },
+                { "language": "ro", "text": "Prea vag: răspunsul sună optimist, dar nu oferă nici un termen fiabil, nici o bază utilizabilă pentru decizie." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja tingëllon shpresëdhënëse, por nuk jep as kohë të besueshme, as bazë të përdorshme për vendim." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sie können sich darauf verlassen, dass ich nicht beschönige. Wenn eine Lieferung morgen nicht belastbar zugesagt werden kann, sage ich das offen und nenne Ihnen die beste abgesicherte Alternative. Für Sie zählt jetzt nicht ein optimistischer Satz, sondern eine Entscheidung, mit der Sie intern planen können.",
+              "translations": [
+                { "language": "en", "text": "You can rely on me not to gloss things over. If a delivery for tomorrow cannot be reliably promised, I will say that openly and give you the best secured alternative. What matters to you now is not an optimistic sentence, but a decision you can use for internal planning." },
+                { "language": "fa", "text": "می‌توانید به این اعتماد کنید که من موضوع را زیبا جلوه نمی‌دهم. اگر تحویل برای فردا به‌طور قابل اتکا قابل تعهد نباشد، آن را آشکارا می‌گویم و بهترین جایگزین تضمین‌شده را به شما اعلام می‌کنم. چیزی که اکنون برای شما مهم است یک جمله خوش‌بینانه نیست، بلکه تصمیمی است که بتوانید با آن در داخل برنامه‌ریزی کنید." },
+                { "language": "ar", "text": "يمكنكم الاعتماد على أنني لن أجمل الأمر. إذا لم يكن بالإمكان التعهد بتسليم موثوق غداً، فسأقول ذلك بصراحة وأذكر لكم أفضل بديل مؤكد. ما يهمكم الآن ليس جملة متفائلة، بل قرار تستطيعون التخطيط داخلياً بناءً عليه." },
+                { "language": "tr", "text": "Size durumu süslemeyeceğime güvenebilirsiniz. Yarın için güvenilir bir teslim taahhüdü verilemiyorsa bunu açıkça söyler ve size en güvence altına alınmış alternatifi bildiririm. Sizin için şimdi önemli olan iyimser bir cümle değil, içeride plan yapabileceğiniz bir karardır." },
+                { "language": "ru", "text": "Вы можете рассчитывать на то, что я не буду приукрашивать ситуацию. Если поставку на завтра нельзя надежно пообещать, я скажу об этом открыто и назову вам лучшую обеспеченную альтернативу. Для вас сейчас важна не оптимистичная фраза, а решение, с которым вы сможете планировать внутри своей компании." },
+                { "language": "ckb", "text": "دەتوانن پشت بەوە ببەستن کە من بابەتەکە جوان نیشان نادەم. ئەگەر نەتوانرێت گەیاندنی سبەی بە شێوەیەکی باوەڕپێکراو بەڵێن بدرێت، بە ئاشکرا دەیڵێم و باشترین جێگرەوەی دڵنیاکراوتان پێ دەدەم. ئێستا بۆ ئێوە گرنگ نییە ڕستەیەکی هیواخوازانە، بەڵکو بڕیارێکە کە بتوانن لە ناوخۆدا پلانی لەسەر دابنێن." },
+                { "language": "kmr", "text": "Hûn dikarin xwe bispêrin vê yekê ku ez rewşê xweş nîşan nadim. Ger radestkirina sibê bi awayekî pêbawer nikaribe were sozdan, ez wê vekirî dibêjim û baştirîn alternatîfa ewlekirî didim we. Niha ji bo we ne hevokeke bi hêvî girîng e, lê biryarek e ku hûn dikarin bi wê li hundir plan bikin." },
+                { "language": "pl", "text": "Może Pan/Pani polegać na tym, że nie będę upiększać sytuacji. Jeśli dostawy na jutro nie będzie można wiarygodnie obiecać, powiem to otwarcie i podam najlepszą zabezpieczoną alternatywę. Dla Państwa liczy się teraz nie optymistyczne zdanie, lecz decyzja, z którą można planować wewnętrznie." },
+                { "language": "ro", "text": "Vă puteți baza pe faptul că nu voi cosmetiza situația. Dacă livrarea de mâine nu poate fi promisă în mod solid, voi spune deschis acest lucru și vă voi oferi cea mai bună alternativă asigurată. Pentru dumneavoastră contează acum nu o frază optimistă, ci o decizie cu care puteți planifica intern." },
+                { "language": "sq", "text": "Mund të mbështeteni te fakti që nuk do ta zbukuroj situatën. Nëse dorëzimi për nesër nuk mund të premtohet në mënyrë të besueshme, do ta them hapur dhe do t'ju jap alternativën më të siguruar. Për ju tani nuk ka rëndësi një fjali optimiste, por një vendim me të cilin mund të planifikoni brenda kompanisë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort macht Glaubwürdigkeit an Ehrlichkeit und Entscheidungsnutzen fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response anchors credibility in honesty and decision usefulness." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ اعتبار را بر صداقت و فایده برای تصمیم‌گیری بنا می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تجعل الإجابة المصداقية قائمة على الصراحة وفائدة القرار." },
+                { "language": "tr", "text": "Çok iyi: cevap güvenilirliği dürüstlük ve karar faydasına bağlar." },
+                { "language": "ru", "text": "Очень хорошо: ответ связывает доверие с честностью и полезностью для решения." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە باوەڕپێکراویی لەسەر ڕاستگۆیی و سوودی بڕیاردان دادەنێت." },
+                { "language": "kmr", "text": "Pir baş: bersiv pêbaweriyê li ser rastgotin û sûda biryardanê ava dike." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź opiera wiarygodność na szczerości i użyteczności dla decyzji." },
+                { "language": "ro", "text": "Foarte bine: răspunsul fixează credibilitatea în onestitate și utilitatea pentru decizie." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja e mbështet besueshmërinë te ndershmëria dhe dobia për vendim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sie können sich darauf verlassen, dass ich mich persönlich darum kümmere und alles versuche, damit es morgen klappt.",
+              "translations": [
+                { "language": "en", "text": "You can rely on me personally taking care of it and trying everything so that it works tomorrow." },
+                { "language": "fa", "text": "می‌توانید مطمئن باشید که من شخصاً پیگیری می‌کنم و همه تلاش خود را می‌کنم تا فردا انجام شود." },
+                { "language": "ar", "text": "يمكنكم الاعتماد على أنني سأهتم شخصياً بالأمر وسأحاول كل شيء لكي ينجح غداً." },
+                { "language": "tr", "text": "Bununla kişisel olarak ilgileneceğime ve yarın gerçekleşmesi için her şeyi deneyeceğime güvenebilirsiniz." },
+                { "language": "ru", "text": "Вы можете рассчитывать на то, что я лично займусь этим и сделаю все возможное, чтобы завтра получилось." },
+                { "language": "ckb", "text": "دەتوانن دڵنیا بن کە من بە کەسی بەدواداچوونی بۆ دەکەم و هەموو هەوڵێک دەدەم تا سبەی جێبەجێ ببێت." },
+                { "language": "kmr", "text": "Hûn dikarin xwe bispêrin ku ez bi xwe li ser vê yekê dixebitim û her tiştî diceribînim da ku sibê pêk were." },
+                { "language": "pl", "text": "Może Pan/Pani polegać na tym, że osobiście się tym zajmę i zrobię wszystko, żeby jutro się udało." },
+                { "language": "ro", "text": "Vă puteți baza că mă ocup personal și încerc totul pentru ca mâine să se rezolve." },
+                { "language": "sq", "text": "Mund të mbështeteni se do të merrem personalisht me këtë dhe do të provoj gjithçka që nesër të realizohet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Gut gemeint, aber zu weich: Die Antwort erzeugt Hoffnung, ohne eine belastbare Alternative oder Entscheidungsgrundlage zu liefern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Well meant, but too soft: the response creates hope without providing a reliable alternative or decision basis." },
+                { "language": "fa", "text": "نیت خوب است، اما بیش از حد نرم است: پاسخ امید ایجاد می‌کند، بدون اینکه جایگزین قابل اتکا یا مبنای تصمیم بدهد." },
+                { "language": "ar", "text": "حسنة النية لكنها لينة أكثر من اللازم: تخلق الإجابة أملاً من دون تقديم بديل موثوق أو أساس لاتخاذ القرار." },
+                { "language": "tr", "text": "İyi niyetli ama fazla yumuşak: cevap umut yaratır, ancak güvenilir bir alternatif veya karar temeli sunmaz." },
+                { "language": "ru", "text": "С хорошим намерением, но слишком мягко: ответ создает надежду, не предоставляя надежной альтернативы или основы для решения." },
+                { "language": "ckb", "text": "نیازی باشە، بەڵام زۆر نەرمە: وەڵامەکە هیوا دروست دەکات بێ ئەوەی جێگرەوەی باوەڕپێکراو یان بنەمای بڕیار بدات." },
+                { "language": "kmr", "text": "Niyet baş e, lê pir nerm e: bersiv hêvî çêdike bêyî ku alternatîfeke pêbawer an bingeha biryarê bide." },
+                { "language": "pl", "text": "Dobre intencje, ale zbyt miękko: odpowiedź budzi nadzieję, nie dając solidnej alternatywy ani podstawy decyzji." },
+                { "language": "ro", "text": "Bine intenționat, dar prea moale: răspunsul creează speranță fără să ofere o alternativă solidă sau o bază de decizie." },
+                { "language": "sq", "text": "Me qëllim të mirë, por tepër e butë: përgjigjja krijon shpresë pa dhënë një alternativë të besueshme ose bazë vendimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich habe jetzt eine belastbare Information: Die vollständige Lieferung für morgen kann ich Ihnen nicht seriös zusagen. Bestätigt ist eine Teillieferung bis 11 Uhr; für den Rest nenne ich den Folgetag als realistische Planung. Zusätzlich prüfe ich, ob wir die kritischen Komponenten priorisieren können.",
+              "translations": [
+                { "language": "en", "text": "I now have reliable information: I cannot seriously promise you the complete delivery for tomorrow. A partial delivery by 11 a.m. is confirmed; for the rest, I am naming the following day as the realistic planning basis. In addition, I am checking whether we can prioritize the critical components." },
+                { "language": "fa", "text": "اکنون اطلاعات قابل اتکا دارم: نمی‌توانم به‌طور جدی تحویل کامل برای فردا را به شما وعده بدهم. تحویل بخشی تا ساعت ۱۱ تأیید شده است؛ برای باقی، روز بعد را به‌عنوان مبنای واقع‌بینانه برنامه‌ریزی اعلام می‌کنم. علاوه بر آن بررسی می‌کنم آیا می‌توانیم قطعات حیاتی را در اولویت قرار دهیم." },
+                { "language": "ar", "text": "لدي الآن معلومات موثوقة: لا أستطيع أن أعدكم بجدية بالتسليم الكامل غداً. المؤكد هو تسليم جزئي حتى الساعة الحادية عشرة؛ أما الباقي فأذكر اليوم التالي كأساس واقعي للتخطيط. إضافة إلى ذلك، أتحقق مما إذا كان بإمكاننا إعطاء الأولوية للمكونات الحرجة." },
+                { "language": "tr", "text": "Şimdi güvenilir bilgiye sahibim: yarın tam teslimatı ciddi biçimde vaat edemem. Saat 11'e kadar kısmi teslimat doğrulandı; kalan kısım için gerçekçi planlama temeli olarak ertesi günü belirtiyorum. Ayrıca kritik parçaları önceliklendirebilir miyiz diye kontrol ediyorum." },
+                { "language": "ru", "text": "Теперь у меня есть надежная информация: я не могу ответственно обещать вам полную поставку завтра. Подтверждена частичная поставка до 11 часов; для остального я называю следующий день как реалистичную основу планирования. Кроме того, я проверяю, можем ли мы приоритизировать критические компоненты." },
+                { "language": "ckb", "text": "ئێستا زانیارییەکی باوەڕپێکراوم هەیە: ناتوانم بە جدی بەڵێنی گەیاندنی تەواو بۆ سبەیتان پێ بدەم. گەیاندنی بەشێک تا کاتژمێر ١١ پشتڕاستکراوە؛ بۆ بەشەکەی تر ڕۆژی دواتر وەک بنەمای پلاندانانی واقیعی ناو دەبەم. هەروەها دەبینم ئایا دەتوانین پێکهاتە گرنگەکان بخەینە پێشەوە." },
+                { "language": "kmr", "text": "Niha agahiyeke pêbawer heye: ez nikarim radestkirina hemû ya sibê bi awayekî cidî soz bidim we. Radestkirina beşekê heta saet 11 hat piştrastkirin; ji bo ya mayî ez roja din wek bingeha plana rastîn dibêjim. Her wiha ez kontrol dikim ka em dikarin parçeyên krîtîk pêşîn bikin." },
+                { "language": "pl", "text": "Mam teraz wiarygodną informację: nie mogę odpowiedzialnie obiecać pełnej dostawy na jutro. Potwierdzona jest dostawa częściowa do godziny 11; dla pozostałej części wskazuję następny dzień jako realistyczną podstawę planowania. Dodatkowo sprawdzam, czy możemy nadać priorytet krytycznym komponentom." },
+                { "language": "ro", "text": "Am acum o informație solidă: nu vă pot promite în mod serios livrarea completă pentru mâine. Este confirmată o livrare parțială până la ora 11; pentru rest, indic ziua următoare ca bază realistă de planificare. În plus, verific dacă putem prioritiza componentele critice." },
+                { "language": "sq", "text": "Tani kam një informacion të besueshëm: nuk mund t'ju premtoj seriozisht dorëzimin e plotë për nesër. Është konfirmuar një dorëzim i pjesshëm deri në orën 11; për pjesën tjetër përmend ditën pasuese si bazë realiste planifikimi. Përveç kësaj, po kontrolloj nëse mund t'u japim përparësi komponentëve kritikë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Die Antwort trennt sicher bestätigte Teile von realistischen Annahmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the response separates safely confirmed parts from realistic assumptions." },
+                { "language": "fa", "text": "خیلی خوب: پاسخ بخش‌های قطعی تأییدشده را از فرض‌های واقع‌بینانه جدا می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تفصل الإجابة بين الأجزاء المؤكدة بأمان والافتراضات الواقعية." },
+                { "language": "tr", "text": "Çok iyi: cevap güvenle doğrulanmış kısımları gerçekçi varsayımlardan ayırır." },
+                { "language": "ru", "text": "Очень хорошо: ответ отделяет надежно подтвержденные части от реалистичных предположений." },
+                { "language": "ckb", "text": "زۆر باش: وەڵامەکە بەشە پشتڕاستکراوە دڵنیاکان لە گریمانە واقیعییەکان جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Pir baş: bersiv beşên bi ewlehî piştrastkirî ji texmînên rastîn veqetîne." },
+                { "language": "pl", "text": "Bardzo dobrze: odpowiedź oddziela bezpiecznie potwierdzone elementy od realistycznych założeń." },
+                { "language": "ro", "text": "Foarte bine: răspunsul separă părțile confirmate sigur de presupunerile realiste." },
+                { "language": "sq", "text": "Shumë mirë: përgjigjja ndan pjesët e konfirmuara me siguri nga supozimet realiste." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die komplette Lieferung wird schwierig, aber wir bekommen bestimmt zumindest einen Teil hin.",
+              "translations": [
+                { "language": "en", "text": "The complete delivery will be difficult, but we will certainly manage at least part of it." },
+                { "language": "fa", "text": "تحویل کامل دشوار خواهد بود، اما حتماً حداقل بخشی از آن را انجام می‌دهیم." },
+                { "language": "ar", "text": "سيكون التسليم الكامل صعباً، لكننا سننجز بالتأكيد جزءاً منه على الأقل." },
+                { "language": "tr", "text": "Tam teslimat zor olacak, ama en azından bir kısmını kesin başarırız." },
+                { "language": "ru", "text": "Полная поставка будет трудной, но мы точно справимся хотя бы с частью." },
+                { "language": "ckb", "text": "گەیاندنی تەواو قورس دەبێت، بەڵام بە دڵنیایی لانیکەم بەشێکی ئەنجام دەدەین." },
+                { "language": "kmr", "text": "Radestkirina hemû dê dijwar be, lê em ê bêguman herî kêm beşekê biqedînin." },
+                { "language": "pl", "text": "Pełna dostawa będzie trudna, ale na pewno uda nam się przynajmniej część." },
+                { "language": "ro", "text": "Livrarea completă va fi dificilă, dar sigur reușim cel puțin o parte." },
+                { "language": "sq", "text": "Dorëzimi i plotë do të jetë i vështirë, por patjetër do të arrijmë të paktën një pjesë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort enthält keine Uhrzeit, keinen Umfang und keine belastbare interne Planungsgrundlage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the response gives no time, no scope, and no reliable basis for internal planning." },
+                { "language": "fa", "text": "بیش از حد نادقیق: پاسخ نه زمان می‌دهد، نه محدوده، و نه مبنای قابل اتکا برای برنامه‌ریزی داخلی." },
+                { "language": "ar", "text": "غير دقيقة بما يكفي: لا تعطي الإجابة وقتاً ولا نطاقاً ولا أساساً موثوقاً للتخطيط الداخلي." },
+                { "language": "tr", "text": "Çok belirsiz: cevap ne zaman, ne kapsam ne de iç planlama için güvenilir bir temel verir." },
+                { "language": "ru", "text": "Слишком неточно: ответ не дает ни времени, ни объема, ни надежной основы для внутреннего планирования." },
+                { "language": "ckb", "text": "زۆر ناوردە: وەڵامەکە نە کات دەدات، نە سنوور، و نە بنەمایەکی باوەڕپێکراو بۆ پلاندانانی ناوخۆ." },
+                { "language": "kmr", "text": "Pir ne rast e: bersiv ne dem dide, ne qada kar û ne bingeheke pêbawer ji bo plana hundir." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjnie: odpowiedź nie podaje ani godziny, ani zakresu, ani solidnej podstawy do planowania wewnętrznego." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul nu oferă nici oră, nici amploare, nici o bază solidă pentru planificarea internă." },
+                { "language": "sq", "text": "Shumë e pasaktë: përgjigjja nuk jep as kohë, as shtrirje, as bazë të besueshme për planifikim të brendshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann halte ich es verbindlich fest: Bis 11 Uhr morgen kommt die Teillieferung mit den kritischen Komponenten, bis 14 Uhr erhalten Sie von mir eine schriftliche Bestätigung mit Resttermin und Ansprechpartner. Parallel klären wir intern, warum die Auskünfte auseinanderliefen, damit Sie nicht erneut zwischen Versionen wechseln müssen.",
+              "translations": [
+                { "language": "en", "text": "Then I will record this bindingly: by 11 a.m. tomorrow the partial delivery with the critical components will arrive; by 2 p.m. you will receive written confirmation from me with the remaining date and contact person. In parallel, we will clarify internally why the information diverged so that you do not have to switch between versions again." },
+                { "language": "fa", "text": "پس این را به‌صورت الزام‌آور ثبت می‌کنم: تا ساعت ۱۱ فردا تحویل بخشی شامل قطعات حیاتی می‌رسد؛ تا ساعت ۱۴ از طرف من تأییدیه کتبی با زمان باقی‌مانده و شخص مسئول دریافت می‌کنید. هم‌زمان در داخل روشن می‌کنیم چرا اطلاعات متفاوت شد تا شما دوباره مجبور نباشید بین روایت‌های مختلف جابه‌جا شوید." },
+                { "language": "ar", "text": "إذن سأثبت ذلك بشكل ملزم: حتى الساعة الحادية عشرة غداً تصل الشحنة الجزئية مع المكونات الحرجة، وحتى الساعة الثانية بعد الظهر ستحصلون مني على تأكيد خطي يتضمن موعد الباقي والشخص المسؤول. وبالتوازي سنوضح داخلياً لماذا اختلفت المعلومات حتى لا تضطروا مرة أخرى إلى التنقل بين روايات مختلفة." },
+                { "language": "tr", "text": "O halde bunu bağlayıcı şekilde kaydediyorum: yarın saat 11'e kadar kritik parçaları içeren kısmi teslimat gelecek; saat 14'e kadar benden kalan tarih ve ilgili kişiyle birlikte yazılı onay alacaksınız. Paralel olarak, bilgilerin neden farklılaştığını içeride açıklığa kavuşturacağız; böylece yeniden farklı versiyonlar arasında kalmak zorunda olmayacaksınız." },
+                { "language": "ru", "text": "Тогда я фиксирую это как обязательство: до 11 часов завтра прибудет частичная поставка с критическими компонентами; до 14 часов вы получите от меня письменное подтверждение с датой остатка и контактным лицом. Параллельно мы внутри выясним, почему информация расходилась, чтобы вам не пришлось снова переключаться между разными версиями." },
+                { "language": "ckb", "text": "کەواتە بە شێوەی پابەند تۆماری دەکەم: تا کاتژمێر ١١ی سبەی گەیاندنی بەشێک لەگەڵ پێکهاتە گرنگەکان دەگات؛ تا کاتژمێر ١٤ پشتڕاستکردنەوەی نووسراو لە من وەردەگرن لەگەڵ کاتی بەشەکەی تر و کەسی پەیوەندیدار. هاوکات لە ناوخۆدا ڕوون دەکەینەوە بۆچی زانیارییەکان جیاواز بوون، بۆ ئەوەی جارێکی تر ناچار نەبن لە نێوان وەشانە جیاوازەکان بگۆڕن." },
+                { "language": "kmr", "text": "Wê demê ez vê bi girêdayî tomar dikim: heta saet 11ê sibê radestkirina beşekê bi parçeyên krîtîk digihîje; heta saet 14ê hûn ji min piştrastkirineke nivîskî bi dema beşa mayî û kesê peywendîdar distînin. Di heman demê de em li hundir zelal dikin ka çima agahî ji hev veqetiyan, da ku hûn careke din neçar nemînin di navbera guhertoyên cuda de biguherin." },
+                { "language": "pl", "text": "W takim razie zapisuję to wiążąco: do godziny 11 jutro dotrze dostawa częściowa z krytycznymi komponentami, do godziny 14 otrzymają Państwo ode mnie pisemne potwierdzenie z terminem pozostałej części i osobą kontaktową. Równolegle wyjaśnimy wewnętrznie, dlaczego informacje się rozeszły, aby nie musieli Państwo ponownie przełączać się między wersjami." },
+                { "language": "ro", "text": "Atunci consemnez ferm: până mâine la ora 11 ajunge livrarea parțială cu componentele critice, iar până la ora 14 veți primi de la mine o confirmare scrisă cu termenul pentru rest și persoana de contact. În paralel clarificăm intern de ce informațiile au fost divergente, astfel încât să nu mai trebuiască să oscilați între versiuni diferite." },
+                { "language": "sq", "text": "Atëherë po e regjistroj në mënyrë të detyrueshme: deri nesër në orën 11 vjen dorëzimi i pjesshëm me komponentët kritikë; deri në orën 14 do të merrni nga unë një konfirmim me shkrim me afatin për pjesën e mbetur dhe personin përgjegjës. Paralelisht do të sqarojmë brenda kompanisë pse informacionet ndryshuan, që të mos detyroheni përsëri të kaloni mes versioneve të ndryshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Der Abschluss bietet Termin, Umfang, Ansprechpartner und Fehlerprävention.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: the closing provides time, scope, contact person, and prevention of repeated error." },
+                { "language": "fa", "text": "خیلی خوب: جمع‌بندی زمان، محدوده، شخص مسئول و پیشگیری از تکرار خطا را ارائه می‌کند." },
+                { "language": "ar", "text": "جيد جداً: تقدم الخاتمة الموعد والنطاق والشخص المسؤول ومنع تكرار الخطأ." },
+                { "language": "tr", "text": "Çok iyi: kapanış zaman, kapsam, ilgili kişi ve hatanın tekrarını önleme sunar." },
+                { "language": "ru", "text": "Очень хорошо: завершение дает срок, объем, контактное лицо и предотвращение повторной ошибки." },
+                { "language": "ckb", "text": "زۆر باش: کۆتاییەکە کات، سنوور، کەسی پەیوەندیدار و ڕێگریکردن لە دووبارەبوونەوەی هەڵە پێشکەش دەکات." },
+                { "language": "kmr", "text": "Pir baş: dawî dem, qada kar, kesê peywendîdar û pêşîlêgirtina dubarebûna şaşiyê dide." },
+                { "language": "pl", "text": "Bardzo dobrze: zakończenie podaje termin, zakres, osobę kontaktową i zapobieganie powtórzeniu błędu." },
+                { "language": "ro", "text": "Foarte bine: închiderea oferă termen, amploare, persoană de contact și prevenirea repetării erorii." },
+                { "language": "sq", "text": "Shumë mirë: mbyllja jep afat, shtrirje, person përgjegjës dhe parandalim të përsëritjes së gabimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich melde mich später schriftlich und hoffe, dass die Teillieferung für Sie vorerst ausreicht.",
+              "translations": [
+                { "language": "en", "text": "I will get back to you in writing later and hope that the partial delivery will be enough for you for now." },
+                { "language": "fa", "text": "بعداً به‌صورت کتبی با شما تماس می‌گیرم و امیدوارم تحویل بخشی فعلاً برای شما کافی باشد." },
+                { "language": "ar", "text": "سأتواصل معكم لاحقاً كتابةً وآمل أن يكون التسليم الجزئي كافياً لكم مؤقتاً." },
+                { "language": "tr", "text": "Daha sonra yazılı olarak size döneceğim ve kısmi teslimatın şimdilik sizin için yeterli olmasını umuyorum." },
+                { "language": "ru", "text": "Я позже свяжусь с вами письменно и надеюсь, что частичной поставки вам пока будет достаточно." },
+                { "language": "ckb", "text": "دواتر بە نووسراو پەیوەندیتان پێوە دەکەم و هیوادارم گەیاندنی بەشێک بۆ ئێستا بەستان بێت." },
+                { "language": "kmr", "text": "Ez ê paşê bi nivîskî vegerim we û hêvî dikim ku radestkirina beşekê ji bo niha ji we re bes be." },
+                { "language": "pl", "text": "Odezwę się później pisemnie i mam nadzieję, że dostawa częściowa na razie Państwu wystarczy." },
+                { "language": "ro", "text": "Vă revin mai târziu în scris și sper că livrarea parțială va fi suficientă pentru moment." },
+                { "language": "sq", "text": "Do t'ju kthehem më vonë me shkrim dhe shpresoj që dorëzimi i pjesshëm për momentin të jetë i mjaftueshëm për ju." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach für C2: Die Antwort hat keine feste Uhrzeit, keine Verantwortlichkeit und klingt eher wie Hoffnung als Verbindlichkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak for C2: the response has no fixed time, no responsibility, and sounds more like hope than commitment." },
+                { "language": "fa", "text": "برای C2 ضعیف است: پاسخ نه زمان ثابت دارد، نه مسئولیت مشخص، و بیشتر شبیه امیدواری است تا تعهد." },
+                { "language": "ar", "text": "ضعيفة لمستوى C2: لا تتضمن الإجابة وقتاً ثابتاً ولا مسؤولية واضحة، وتبدو أقرب إلى الأمل منها إلى الالتزام." },
+                { "language": "tr", "text": "C2 için zayıf: cevapta sabit zaman yok, sorumluluk yok ve taahhütten çok umut gibi duyuluyor." },
+                { "language": "ru", "text": "Слишком слабо для C2: в ответе нет фиксированного времени, ответственности, и он звучит скорее как надежда, чем обязательство." },
+                { "language": "ckb", "text": "بۆ C2 لاوازە: وەڵامەکە نە کاتی جێگیر هەیە، نە بەرپرسیاریەتی، و زیاتر وەک هیوا دەنگ دەدات نە پابەندبوون." },
+                { "language": "kmr", "text": "Ji bo C2 lawaz e: di bersivê de ne demeke sabît heye, ne berpirsiyarî, û zêdetir wekî hêvî tê bihîstin ne wek girêdayîbûn." },
+                { "language": "pl", "text": "Za słabe na C2: odpowiedź nie ma stałej godziny, odpowiedzialności i brzmi bardziej jak nadzieja niż zobowiązanie." },
+                { "language": "ro", "text": "Prea slab pentru C2: răspunsul nu are oră fixă, nici responsabilitate și sună mai mult ca speranță decât ca angajament." },
+                { "language": "sq", "text": "Shumë e dobët për C2: përgjigjja nuk ka orë të caktuar, nuk ka përgjegjësi dhe tingëllon më shumë si shpresë sesa si zotim." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "de-escalation",
+          "text": "Deeskalation beginnt hier nicht mit Entschuldigung allein, sondern mit einer präzisen Zusammenfassung der Kundenseite.",
+          "translations": [
+            { "language": "en", "text": "De-escalation here does not begin with apology alone, but with a precise summary of the customer's side." },
+            { "language": "fa", "text": "آرام‌سازی اینجا فقط با عذرخواهی شروع نمی‌شود، بلکه با جمع‌بندی دقیق موقعیت مشتری آغاز می‌شود." },
+            { "language": "ar", "text": "التهدئة هنا لا تبدأ بالاعتذار وحده، بل بتلخيص دقيق لطرف العميل." },
+            { "language": "tr", "text": "Burada yatıştırma yalnızca özürle değil, müşteri tarafının kesin bir özetiyle başlar." },
+            { "language": "ru", "text": "Снижение напряжения здесь начинается не только с извинения, а с точного резюме позиции клиента." },
+            { "language": "ckb", "text": "هێورکردنەوە لێرە تەنها بە داوای لێبوردن دەست پێناکات، بەڵکو بە کورتکردنەوەی وردی لای کڕیار دەست پێدەکات." },
+            { "language": "kmr", "text": "Aramkirin li vir ne tenê bi lêborînê dest pê dike, lê bi kurtkirineke rast a aliyê xerîdar." },
+            { "language": "pl", "text": "Deeskalacja nie zaczyna się tutaj samymi przeprosinami, lecz precyzyjnym podsumowaniem strony klienta." },
+            { "language": "ro", "text": "Dezescaladarea nu începe aici doar cu scuze, ci cu un rezumat precis al perspectivei clientului." },
+            { "language": "sq", "text": "Ulja e tensionit këtu nuk fillon vetëm me ndjesë, por me një përmbledhje të saktë të anës së klientit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "responsibility",
+          "text": "Stark ist die Trennung zwischen Verantwortung für Kommunikation und noch zu prüfendem Lieferstatus.",
+          "translations": [
+            { "language": "en", "text": "The strong point is the separation between responsibility for communication and delivery status still to be checked." },
+            { "language": "fa", "text": "نقطه قوت، جداسازی مسئولیت ارتباط از وضعیت تحویلی است که هنوز باید بررسی شود." },
+            { "language": "ar", "text": "نقطة القوة هي الفصل بين مسؤولية التواصل وحالة التسليم التي لا تزال بحاجة إلى التحقق." },
+            { "language": "tr", "text": "Güçlü nokta, iletişim sorumluluğu ile hâlâ kontrol edilmesi gereken teslim durumu arasındaki ayrımdır." },
+            { "language": "ru", "text": "Сильная сторона — разделение ответственности за коммуникацию и статуса поставки, который еще нужно проверить." },
+            { "language": "ckb", "text": "خاڵی بەهێز جیاکردنەوەی بەرپرسیاریەتی پەیوەندییە لە دۆخی گەیاندن کە هێشتا دەبێت بپشکنرێت." },
+            { "language": "kmr", "text": "Xala bihêz veqetandina berpirsiyariya têkiliyê ji rewşa radestkirinê ye ku hîn divê were kontrolkirin." },
+            { "language": "pl", "text": "Mocne jest oddzielenie odpowiedzialności za komunikację od statusu dostawy, który trzeba jeszcze sprawdzić." },
+            { "language": "ro", "text": "Punctul forte este separarea dintre responsabilitatea pentru comunicare și starea livrării care încă trebuie verificată." },
+            { "language": "sq", "text": "Pika e fortë është ndarja mes përgjegjësisë për komunikimin dhe gjendjes së dorëzimit që ende duhet kontrolluar." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "boundary",
+          "text": "Auf C2-Niveau ist Glaubwürdigkeit wichtiger als schnelle Beruhigung durch eine unsichere Zusage.",
+          "translations": [
+            { "language": "en", "text": "At C2 level, credibility is more important than quick reassurance through an unsafe promise." },
+            { "language": "fa", "text": "در سطح C2، اعتبار مهم‌تر از آرام‌کردن سریع با یک وعده نامطمئن است." },
+            { "language": "ar", "text": "في مستوى C2، المصداقية أهم من التهدئة السريعة عبر وعد غير آمن." },
+            { "language": "tr", "text": "C2 düzeyinde güvenilirlik, güvensiz bir vaatle hızlı yatıştırmadan daha önemlidir." },
+            { "language": "ru", "text": "На уровне C2 доверие важнее быстрого успокоения с помощью ненадежного обещания." },
+            { "language": "ckb", "text": "لە ئاستی C2دا باوەڕپێکراویی گرنگترە لە هێورکردنەوەی خێرا بە بەڵێنی نادڵنیا." },
+            { "language": "kmr", "text": "Di asta C2 de pêbawerî ji aramkirina bilez bi sozeke neewle girîngtir e." },
+            { "language": "pl", "text": "Na poziomie C2 wiarygodność jest ważniejsza niż szybkie uspokojenie przez niepewną obietnicę." },
+            { "language": "ro", "text": "La nivel C2, credibilitatea este mai importantă decât liniștirea rapidă printr-o promisiune nesigură." },
+            { "language": "sq", "text": "Në nivelin C2, besueshmëria është më e rëndësishme se qetësimi i shpejtë përmes një premtimi të pasigurt." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "precision",
+          "text": "Die Antwort ist belastbar, weil sie Umfang, Zeitpunkt und Unsicherheit offen voneinander trennt.",
+          "translations": [
+            { "language": "en", "text": "The response is reliable because it openly separates scope, timing, and uncertainty." },
+            { "language": "fa", "text": "پاسخ قابل اتکاست، چون محدوده، زمان و عدم قطعیت را آشکارا از هم جدا می‌کند." },
+            { "language": "ar", "text": "الإجابة موثوقة لأنها تفصل بوضوح بين النطاق والوقت وعدم اليقين." },
+            { "language": "tr", "text": "Cevap güvenilirdir, çünkü kapsamı, zamanı ve belirsizliği açıkça birbirinden ayırır." },
+            { "language": "ru", "text": "Ответ надежен, потому что открыто разделяет объем, срок и неопределенность." },
+            { "language": "ckb", "text": "وەڵامەکە باوەڕپێکراوە چونکە سنوور، کات و نادڵنیایی بە ئاشکرا لە یەک جیا دەکاتەوە." },
+            { "language": "kmr", "text": "Bersiv pêbawer e ji ber ku qada kar, dem û nediyarî vekirî ji hev veqetîne." },
+            { "language": "pl", "text": "Odpowiedź jest solidna, bo otwarcie oddziela zakres, czas i niepewność." },
+            { "language": "ro", "text": "Răspunsul este solid deoarece separă deschis amploarea, termenul și incertitudinea." },
+            { "language": "sq", "text": "Përgjigjja është e besueshme sepse ndan hapur shtrirjen, kohën dhe pasigurinë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "Ein guter Abschluss im eskalierten Kundengespräch enthält nicht nur eine Lösung, sondern auch Zuständigkeit und Prävention.",
+          "translations": [
+            { "language": "en", "text": "A good closing in an escalated customer conversation contains not only a solution, but also responsibility and prevention." },
+            { "language": "fa", "text": "جمع‌بندی خوب در گفت‌وگوی تشدیدشده با مشتری فقط راه‌حل ندارد، بلکه مسئولیت و پیشگیری را هم شامل می‌شود." },
+            { "language": "ar", "text": "الخاتمة الجيدة في حديث متصاعد مع عميل لا تتضمن حلاً فقط، بل أيضاً مسؤولية ومنع تكرار." },
+            { "language": "tr", "text": "Tırmanmış bir müşteri görüşmesinde iyi bir kapanış yalnızca çözüm değil, sorumluluk ve önleme de içerir." },
+            { "language": "ru", "text": "Хорошее завершение обострившегося разговора с клиентом содержит не только решение, но и ответственность и предотвращение повторения." },
+            { "language": "ckb", "text": "کۆتاییەکی باش لە گفتوگۆی توندبووی کڕیاردا تەنها چارەسەر نییە، بەڵکو بەرپرسیاریەتی و ڕێگریکردنیش لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Dawiyeke baş di axaftina xerîdar a tûj bûyî de ne tenê çareserî dihewîne, lê berpirsiyarî û pêşîlêgirtin jî." },
+            { "language": "pl", "text": "Dobre zakończenie w zaostrzonej rozmowie z klientem zawiera nie tylko rozwiązanie, lecz także odpowiedzialność i zapobieganie." },
+            { "language": "ro", "text": "O închidere bună într-o discuție tensionată cu un client conține nu doar o soluție, ci și responsabilitate și prevenire." },
+            { "language": "sq", "text": "Një mbyllje e mirë në një bisedë të përshkallëzuar me klientin përmban jo vetëm zgjidhje, por edhe përgjegjësi dhe parandalim." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "deescalation-customer-call",
+          "placement": "detail-header",
+          "purpose": "Illustrate a calm service lead handling a tense customer call in a professional office setting.",
+          "altText": "Eine ruhige Serviceleitung telefoniert an einem Schreibtisch, daneben liegen neutrale Lieferunterlagen und ein Notizblock.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm service lead is speaking on the phone at a desk, with neutral delivery documents and a notepad beside them." },
+            { "language": "fa", "text": "مسئول خدمات مشتری با آرامش پشت میز تلفنی صحبت می‌کند و کنار او مدارک خنثی تحویل و دفترچه یادداشت قرار دارد." },
+            { "language": "ar", "text": "مسؤول خدمة عملاء هادئ يتحدث عبر الهاتف على مكتب، وبجانبه وثائق تسليم محايدة ودفتر ملاحظات." },
+            { "language": "tr", "text": "Sakin bir müşteri hizmetleri sorumlusu masada telefonla konuşuyor; yanında nötr teslim belgeleri ve bir not defteri var." },
+            { "language": "ru", "text": "Спокойный руководитель клиентского сервиса говорит по телефону за столом, рядом лежат нейтральные документы по доставке и блокнот." },
+            { "language": "ckb", "text": "بەرپرسی خزمەتگوزاری کڕیار بە ئارامی لە پشت مێز پەیوەندی تەلەفۆنی دەکات، لە تەنیشتی بەڵگەنامەی بێلایەنی گەیاندن و تێبینی نووسین هەیە." },
+            { "language": "kmr", "text": "Berpirsê xizmeta xerîdar bi aramî li ser maseyê bi telefonê diaxive, li kêleka wî belgeyên radestkirinê yên bêalî û deftera notan hene." },
+            { "language": "pl", "text": "Spokojny kierownik obsługi klienta rozmawia przez telefon przy biurku, obok leżą neutralne dokumenty dostawy i notes." },
+            { "language": "ro", "text": "Un responsabil calm de servicii clienți vorbește la telefon la birou, lângă documente neutre de livrare și un carnețel." },
+            { "language": "sq", "text": "Një përgjegjës i qetë i shërbimit ndaj klientit flet në telefon pranë tavolinës, me dokumente neutrale dorëzimi dhe një bllok shënimesh anash." }
+          ],
+          "imagePrompt": "Clean educational illustration, professional customer service office, calm service lead on the phone, neutral delivery documents and notepad on desk, no readable text, no logos, no private data, accessible composition, diverse adult character, serious but non-dramatic tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

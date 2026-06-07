@@ -1,0 +1,936 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-25-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 25 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 25",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-im-sprachcafe-eine-meinung-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Im Sprachcafé eine Meinung begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Giving a reasoned opinion at a language cafe" },
+        { "language": "fa", "text": "بیان نظر همراه با دلیل در کافه زبان" },
+        { "language": "ar", "text": "تقديم رأي مع سبب في مقهى لغوي" },
+        { "language": "tr", "text": "Dil kafesinde gerekçeli bir görüş belirtmek" },
+        { "language": "ru", "text": "Высказать мнение с обоснованием в языковом кафе" },
+        { "language": "ckb", "text": "دەربڕینی بۆچوون بە هۆکار لە کافەی زمان" },
+        { "language": "kmr", "text": "Di kafeya ziman de nerînek bi sedem gotin" },
+        { "language": "pl", "text": "Wyrażenie opinii z uzasadnieniem w kawiarni językowej" },
+        { "language": "ro", "text": "Exprimarea unei opinii motivate la cafeneaua lingvistică" },
+        { "language": "sq", "text": "Dhënia e një mendimi me arsye në kafenenë gjuhësore" }
+      ],
+      "description": "Du diskutierst im Sprachcafé, ob man mit Videos oder mit Büchern besser Deutsch lernt. Du gibst eine Meinung, nennst ein Beispiel und reagierst freundlich auf eine andere Sicht.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You discuss at the language cafe whether people learn German better with videos or with books. You give an opinion, name an example, and respond politely to another view." },
+        { "language": "fa", "text": "در کافه زبان بحث می‌کنی که آیا با ویدئو بهتر آلمانی یاد می‌گیرند یا با کتاب. نظر می‌دهی، یک مثال می‌آوری و محترمانه به دیدگاه دیگر پاسخ می‌دهی." },
+        { "language": "ar", "text": "تناقش في المقهى اللغوي ما إذا كان تعلم الألمانية أفضل بالفيديوهات أم بالكتب. تقدم رأياً، وتذكر مثالاً، وترد بأدب على وجهة نظر أخرى." },
+        { "language": "tr", "text": "Dil kafesinde Almancanın videolarla mı yoksa kitaplarla mı daha iyi öğrenildiğini tartışıyorsun. Bir görüş söylüyor, örnek veriyor ve başka bir görüşe kibarca yanıt veriyorsun." },
+        { "language": "ru", "text": "В языковом кафе ты обсуждаешь, лучше ли учить немецкий по видео или по книгам. Ты высказываешь мнение, приводишь пример и вежливо реагируешь на другую точку зрения." },
+        { "language": "ckb", "text": "لە کافەی زمان گفتوگۆ دەکەیت کە ئایا بە ڤیدیۆ باشتر ئەڵمانی فێر دەبن یان بە کتێب. بۆچوون دەدەیت، نموونە دەهێنیتەوە و بە ڕێزەوە وەڵامی بۆچوونێکی تر دەدەیتەوە." },
+        { "language": "kmr", "text": "Di kafeya ziman de tu gotubêj dikî ka mirov bi vîdyoyan an bi pirtûkan baştir Elmanî hîn dibe. Tu nerînek dibêjî, mînakekê didî û bi rêz bersiva nerîneke din didî." },
+        { "language": "pl", "text": "W kawiarni językowej dyskutujesz, czy niemieckiego lepiej uczyć się z filmami czy z książkami. Wyrażasz opinię, podajesz przykład i uprzejmie reagujesz na inny punkt widzenia." },
+        { "language": "ro", "text": "La cafeneaua lingvistică discuți dacă germana se învață mai bine cu videoclipuri sau cu cărți. Îți exprimi opinia, dai un exemplu și răspunzi politicos la o altă perspectivă." },
+        { "language": "sq", "text": "Në kafenenë gjuhësore diskuton nëse gjermanishtja mësohet më mirë me video apo me libra. Jep një mendim, jep një shembull dhe përgjigjesh me respekt ndaj një këndvështrimi tjetër." }
+      ],
+      "learnerGoal": "Gib eine klare Meinung, begruende sie mit einem Alltagserlebnis und reagiere respektvoll auf einen anderen Vorschlag.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Give a clear opinion, support it with an everyday experience, and respond respectfully to another suggestion." },
+        { "language": "fa", "text": "یک نظر روشن بده، آن را با یک تجربه روزمره توضیح بده و محترمانه به پیشنهاد دیگر پاسخ بده." },
+        { "language": "ar", "text": "قدّم رأياً واضحاً، وادعمه بتجربة يومية، ورد باحترام على اقتراح آخر." },
+        { "language": "tr", "text": "Net bir görüş belirt, bunu günlük bir deneyimle gerekçelendir ve başka bir öneriye saygılı biçimde yanıt ver." },
+        { "language": "ru", "text": "Выскажи ясное мнение, обоснуй его повседневным опытом и уважительно отреагируй на другое предложение." },
+        { "language": "ckb", "text": "بۆچوونێکی ڕوون بدە، بە ئەزموونێکی ڕۆژانە پاساوی بدە و بە ڕێزەوە وەڵامی پێشنیارێکی تر بدەوە." },
+        { "language": "kmr", "text": "Nerîneke zelal bibêje, wê bi ezmûneke rojane piştgirî bike û bi rêz bersiva pêşniyareke din bide." },
+        { "language": "pl", "text": "Wyraź jasną opinię, uzasadnij ją codziennym doświadczeniem i z szacunkiem odpowiedz na inną propozycję." },
+        { "language": "ro", "text": "Exprimă o opinie clară, susține-o cu o experiență de zi cu zi și răspunde respectuos la o altă propunere." },
+        { "language": "sq", "text": "Jep një mendim të qartë, mbështete me një përvojë të përditshme dhe përgjigju me respekt ndaj një propozimi tjetër." }
+      ],
+      "cefrLevel": "B1",
+      "category": "conversation-cafe",
+      "topics": ["social-and-relationships", "education-and-training"],
+      "examProfiles": ["goethe-b1", "telc-b1", "dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "give-opinion",
+      "interactionMode": "group-work",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 9,
+      "isPublished": true,
+      "sortOrder": 2520,
+      "roles": [
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderatorin",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "گرداننده بحث" },
+            { "language": "ar", "text": "مديرة النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەری گفتوگۆ" },
+            { "language": "kmr", "text": "Rêvebera gotubêjê" },
+            { "language": "pl", "text": "Prowadząca" },
+            { "language": "ro", "text": "Moderatoare" },
+            { "language": "sq", "text": "Moderatorja" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer",
+          "translations": [
+            { "language": "en", "text": "Participant" },
+            { "language": "fa", "text": "شرکت‌کننده" },
+            { "language": "ar", "text": "مشارك" },
+            { "language": "tr", "text": "Katılımcı" },
+            { "language": "ru", "text": "Участник" },
+            { "language": "ckb", "text": "بەشداربوو" },
+            { "language": "kmr", "text": "Beşdar" },
+            { "language": "pl", "text": "Uczestnik" },
+            { "language": "ro", "text": "Participant" },
+            { "language": "sq", "text": "Pjesëmarrës" }
+          ]
+        },
+        {
+          "roleKey": "participant",
+          "displayName": "Andere Teilnehmerin",
+          "translations": [
+            { "language": "en", "text": "Other participant" },
+            { "language": "fa", "text": "شرکت‌کننده دیگر" },
+            { "language": "ar", "text": "مشاركة أخرى" },
+            { "language": "tr", "text": "Diğer katılımcı" },
+            { "language": "ru", "text": "Другая участница" },
+            { "language": "ckb", "text": "بەشداربوویەکی تر" },
+            { "language": "kmr", "text": "Beşdareke din" },
+            { "language": "pl", "text": "Inna uczestniczka" },
+            { "language": "ro", "text": "Altă participantă" },
+            { "language": "sq", "text": "Pjesëmarrëse tjetër" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Unser Thema heute: Lernt man besser mit Videos oder mit Büchern? Was meinen Sie?",
+          "translations": [
+            { "language": "en", "text": "Our topic today: Do people learn better with videos or with books? What do you think?" },
+            { "language": "fa", "text": "موضوع امروز ما این است: آدم‌ها با ویدئو بهتر یاد می‌گیرند یا با کتاب؟ نظر شما چیست؟" },
+            { "language": "ar", "text": "موضوعنا اليوم: هل يتعلم الناس أفضل بالفيديوهات أم بالكتب؟ ما رأيكم؟" },
+            { "language": "tr", "text": "Bugünkü konumuz: İnsanlar videolarla mı yoksa kitaplarla mı daha iyi öğrenir? Siz ne düşünüyorsunuz?" },
+            { "language": "ru", "text": "Наша тема сегодня: лучше учиться с видео или с книгами? Что вы думаете?" },
+            { "language": "ckb", "text": "بابەتی ئەمڕۆمان: مرۆڤ بە ڤیدیۆ باشتر فێر دەبێت یان بە کتێب؟ بۆچوونتان چییە؟" },
+            { "language": "kmr", "text": "Mijara me ya îro: Mirov bi vîdyoyan baştir hîn dibe an bi pirtûkan? Hûn çi difikirin?" },
+            { "language": "pl", "text": "Nasz dzisiejszy temat: czy lepiej uczyć się z filmami czy z książkami? Co państwo sądzą?" },
+            { "language": "ro", "text": "Tema noastră de astăzi: se învață mai bine cu videoclipuri sau cu cărți? Ce părere aveți?" },
+            { "language": "sq", "text": "Tema jonë sot: a mësohet më mirë me video apo me libra? Çfarë mendoni?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich finde, Videos helfen am Anfang mehr, weil man die Aussprache und die Situation direkt sieht. Bei mir bleiben neue Redemittel dann schneller im Kopf.",
+          "translations": [
+            { "language": "en", "text": "I think videos help more at the beginning because you directly see the pronunciation and the situation. For me, new phrases then stay in my head faster." },
+            { "language": "fa", "text": "به نظر من ویدئوها در شروع بیشتر کمک می‌کنند، چون تلفظ و موقعیت را مستقیم می‌بینی. برای من عبارت‌های جدید این‌طور سریع‌تر در ذهن می‌مانند." },
+            { "language": "ar", "text": "أعتقد أن الفيديوهات تساعد أكثر في البداية، لأنك ترى النطق والموقف مباشرة. عندي تبقى العبارات الجديدة في ذهني أسرع بهذه الطريقة." },
+            { "language": "tr", "text": "Bence videolar başlangıçta daha çok yardımcı olur, çünkü telaffuzu ve durumu doğrudan görürsün. Bende yeni ifadeler o zaman daha hızlı akılda kalıyor." },
+            { "language": "ru", "text": "Я считаю, что видео в начале помогают больше, потому что сразу видишь произношение и ситуацию. У меня новые выражения так быстрее остаются в голове." },
+            { "language": "ckb", "text": "بە بۆچوونی من، لە سەرەتادا ڤیدیۆ زیاتر یارمەتی دەدات، چونکە ڕاستەوخۆ دەنگدان و دۆخەکە دەبینیت. لای من دەستەواژە نوێیەکان خێراتر لە مێشکمدا دەمێنن." },
+            { "language": "kmr", "text": "Li gor min, di destpêkê de vîdyo zêdetir alîkar in, ji ber ku tu bilêvkirin û rewşê rasterast dibînî. Bi vî awayî gotinên nû di serê min de zûtir dimînin." },
+            { "language": "pl", "text": "Uważam, że filmy pomagają bardziej na początku, bo od razu widać wymowę i sytuację. Wtedy nowe zwroty szybciej zostają mi w głowie." },
+            { "language": "ro", "text": "Cred că videoclipurile ajută mai mult la început, pentru că vezi direct pronunția și situația. La mine expresiile noi rămân atunci mai repede în minte." },
+            { "language": "sq", "text": "Mendoj se videot ndihmojnë më shumë në fillim, sepse e sheh drejtpërdrejt shqiptimin dhe situatën. Te unë shprehjet e reja mbeten më shpejt në mendje." }
+          ],
+          "function": "give-opinion",
+          "expectedLearnerAction": "Give a clear opinion with a reason and a personal learning example."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "participant",
+          "baseText": "Interessant. Ich lerne lieber mit Büchern, weil ich dort die Grammatik besser markieren kann.",
+          "translations": [
+            { "language": "en", "text": "Interesting. I prefer learning with books because I can mark the grammar better there." },
+            { "language": "fa", "text": "جالب است. من ترجیح می‌دهم با کتاب یاد بگیرم، چون آنجا می‌توانم گرامر را بهتر علامت بزنم." },
+            { "language": "ar", "text": "هذا مثير للاهتمام. أنا أفضل التعلم بالكتب، لأنني أستطيع فيها تحديد القواعد بشكل أفضل." },
+            { "language": "tr", "text": "İlginç. Ben kitaplarla öğrenmeyi tercih ediyorum, çünkü orada grameri daha iyi işaretleyebiliyorum." },
+            { "language": "ru", "text": "Интересно. Я предпочитаю учиться с книгами, потому что там я лучше могу отмечать грамматику." },
+            { "language": "ckb", "text": "سەرنجڕاکێشە. من پێم خۆشترە بە کتێب فێر ببم، چونکە لەوێ دەتوانم ڕێزمان باشتر نیشان بکەم." },
+            { "language": "kmr", "text": "Balkêş e. Ez tercîh dikim bi pirtûkan hîn bibim, ji ber ku ez dikarim li wir rêzimanê baştir nîşan bikim." },
+            { "language": "pl", "text": "Ciekawe. Ja wolę uczyć się z książkami, bo tam mogę lepiej zaznaczać gramatykę." },
+            { "language": "ro", "text": "Interesant. Eu prefer să învăț cu cărți, pentru că acolo pot marca mai bine gramatica." },
+            { "language": "sq", "text": "Interesante. Unë preferoj të mësoj me libra, sepse aty mund ta shënoj më mirë gramatikën." }
+          ],
+          "function": "different-view"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich gut. Für Grammatik finde ich Bücher auch wichtig. Aber für Alltagssprache brauche ich oft ein Beispiel mit Stimme und Gesicht.",
+          "translations": [
+            { "language": "en", "text": "I understand that well. I also find books important for grammar. But for everyday language I often need an example with voice and facial expression." },
+            { "language": "fa", "text": "این را خوب می‌فهمم. برای گرامر من هم کتاب‌ها را مهم می‌دانم. اما برای زبان روزمره اغلب به مثالی با صدا و حالت چهره نیاز دارم." },
+            { "language": "ar", "text": "أفهم ذلك جيداً. أرى أن الكتب مهمة أيضاً للقواعد. لكن في لغة الحياة اليومية أحتاج غالباً إلى مثال بصوت وتعابير وجه." },
+            { "language": "tr", "text": "Bunu iyi anlıyorum. Gramer için kitapları ben de önemli buluyorum. Ama günlük dil için çoğu zaman ses ve yüz ifadesi olan bir örneğe ihtiyaç duyuyorum." },
+            { "language": "ru", "text": "Я это хорошо понимаю. Для грамматики я тоже считаю книги важными. Но для повседневной речи мне часто нужен пример с голосом и выражением лица." },
+            { "language": "ckb", "text": "ئەمە باش تێدەگەم. بۆ ڕێزمان منیش کتێب گرنگ دەزانم. بەڵام بۆ زمانی ڕۆژانە زۆرجار پێویستم بە نموونەیەکە لەگەڵ دەنگ و دەربڕینی ڕووخسار." },
+            { "language": "kmr", "text": "Ez vê baş fêm dikim. Ji bo rêzimanê ez jî pirtûkan girîng dibînim. Lê ji bo zimanê rojane gelek caran mînakek bi deng û rûyê mirov pêwîst e." },
+            { "language": "pl", "text": "Dobrze to rozumiem. Do gramatyki też uważam książki za ważne. Ale do języka codziennego często potrzebuję przykładu z głosem i mimiką." },
+            { "language": "ro", "text": "Înțeleg bine asta. Pentru gramatică și eu consider cărțile importante. Dar pentru limba de zi cu zi am adesea nevoie de un exemplu cu voce și expresie facială." },
+            { "language": "sq", "text": "E kuptoj mirë këtë. Edhe unë i konsideroj librat të rëndësishëm për gramatikën. Por për gjuhën e përditshme shpesh kam nevojë për një shembull me zë dhe mimikë." }
+          ],
+          "function": "respond-politely",
+          "expectedLearnerAction": "Acknowledge the other view and refine your own opinion with a specific distinction."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Können Sie ein konkretes Beispiel aus Ihrem Lernen nennen?",
+          "translations": [
+            { "language": "en", "text": "Can you name a concrete example from your learning?" },
+            { "language": "fa", "text": "می‌توانید یک مثال مشخص از یادگیری خودتان بزنید؟" },
+            { "language": "ar", "text": "هل يمكنك ذكر مثال محدد من تعلمك؟" },
+            { "language": "tr", "text": "Kendi öğrenmenizden somut bir örnek verebilir misiniz?" },
+            { "language": "ru", "text": "Можете привести конкретный пример из своего обучения?" },
+            { "language": "ckb", "text": "دەتوانیت نموونەیەکی دیاریکراو لە فێربوونت بڵێیت؟" },
+            { "language": "kmr", "text": "Hûn dikarin mînakeke zelal ji fêrbûna xwe bidin?" },
+            { "language": "pl", "text": "Czy może pan podać konkretny przykład ze swojej nauki?" },
+            { "language": "ro", "text": "Puteți da un exemplu concret din învățarea dumneavoastră?" },
+            { "language": "sq", "text": "A mund të jepni një shembull konkret nga të mësuarit tuaj?" }
+          ],
+          "function": "ask-example"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja. Ich habe die Redewendung 'Das passt so' in einem Video im Supermarkt gehoert. Durch die Situation habe ich verstanden, dass es beim Bezahlen 'Es ist in Ordnung' bedeutet.",
+          "translations": [
+            { "language": "en", "text": "Yes. I heard the phrase 'Das passt so' in a supermarket video. Through the situation I understood that when paying it means 'It is okay like that.'" },
+            { "language": "fa", "text": "بله. عبارت «Das passt so» را در یک ویدئوی سوپرمارکت شنیدم. از طریق موقعیت فهمیدم که هنگام پرداخت یعنی «همین‌طور درست است»." },
+            { "language": "ar", "text": "نعم. سمعت عبارة Das passt so في فيديو عن السوبرماركت. من خلال الموقف فهمت أنها عند الدفع تعني: الأمر مناسب هكذا." },
+            { "language": "tr", "text": "Evet. 'Das passt so' ifadesini bir süpermarket videosunda duydum. Durum sayesinde bunun ödeme sırasında 'Böyle tamam' anlamına geldiğini anladım." },
+            { "language": "ru", "text": "Да. Я услышал выражение Das passt so в видео про супермаркет. По ситуации я понял, что при оплате это значит «так нормально»." },
+            { "language": "ckb", "text": "بەڵێ. دەستەواژەی Das passt so ـم لە ڤیدیۆیەکی سوپەرمارکێتدا بیست. لە ڕێگەی دۆخەکەوە تێگەیشتم کە کاتی پارەدان مانای «ئەمە باشە» دەدات." },
+            { "language": "kmr", "text": "Erê. Min gotina Das passt so di vîdyoyeke supermarketê de bihîst. Ji rewşê fêm kir ku dema dayîna pereyan wateya 'Wisa baş e' dide." },
+            { "language": "pl", "text": "Tak. Usłyszałem zwrot Das passt so w filmie ze sklepu. Dzięki sytuacji zrozumiałem, że przy płaceniu oznacza on: tak jest w porządku." },
+            { "language": "ro", "text": "Da. Am auzit expresia Das passt so într-un videoclip de supermarket. Din situație am înțeles că la plată înseamnă: este în regulă așa." },
+            { "language": "sq", "text": "Po. E dëgjova shprehjen Das passt so në një video në supermarket. Nga situata kuptova se gjatë pagesës do të thotë: është në rregull kështu." }
+          ],
+          "function": "give-example",
+          "expectedLearnerAction": "Give a concrete learning example that connects expression, context, and meaning."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "participant",
+          "baseText": "Das überzeugt mich teilweise. Vielleicht ist eine Mischung am besten.",
+          "translations": [
+            { "language": "en", "text": "That partly convinces me. Maybe a mixture is best." },
+            { "language": "fa", "text": "این تا حدی من را قانع می‌کند. شاید ترکیب هر دو بهتر باشد." },
+            { "language": "ar", "text": "هذا يقنعني جزئياً. ربما يكون المزج بين الاثنين هو الأفضل." },
+            { "language": "tr", "text": "Bu beni kısmen ikna ediyor. Belki en iyisi bir karışımdır." },
+            { "language": "ru", "text": "Это частично меня убеждает. Возможно, лучше всего сочетание." },
+            { "language": "ckb", "text": "ئەمە تا ڕادەیەک قەناعەتم پێ دەهێنێت. لەوانەیە تێکەڵەیەک باشترین بێت." },
+            { "language": "kmr", "text": "Ev min hinekî qanî dike. Dibe ku tevliheviyek ya herî baş be." },
+            { "language": "pl", "text": "To częściowo mnie przekonuje. Może najlepsze jest połączenie obu metod." },
+            { "language": "ro", "text": "Asta mă convinge parțial. Poate că o combinație este cea mai bună." },
+            { "language": "sq", "text": "Kjo më bind pjesërisht. Ndoshta një përzierje është më e mira." }
+          ],
+          "function": "partial-agreement"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, damit bin ich einverstanden. Ich würde Videos für Situationen und Bücher für Regeln nutzen. So hat jede Methode eine klare Aufgabe.",
+          "translations": [
+            { "language": "en", "text": "Yes, I agree with that. I would use videos for situations and books for rules. That way each method has a clear task." },
+            { "language": "fa", "text": "بله، با این موافقم. من ویدئوها را برای موقعیت‌ها و کتاب‌ها را برای قواعد استفاده می‌کنم. این‌طور هر روش وظیفه روشنی دارد." },
+            { "language": "ar", "text": "نعم، أوافق على ذلك. سأستخدم الفيديوهات للمواقف والكتب للقواعد. بهذه الطريقة يكون لكل طريقة دور واضح." },
+            { "language": "tr", "text": "Evet, buna katılıyorum. Videoları durumlar için, kitapları da kurallar için kullanırdım. Böylece her yöntemin net bir görevi olur." },
+            { "language": "ru", "text": "Да, я с этим согласен. Я бы использовал видео для ситуаций, а книги для правил. Так у каждого метода есть ясная задача." },
+            { "language": "ckb", "text": "بەڵێ، لەگەڵ ئەمەدا هاوڕام. من ڤیدیۆ بۆ دۆخەکان و کتێب بۆ یاساکان بەکاردەهێنم. بەو شێوەیە هەر ڕێگایەک ئەرکێکی ڕوونی هەیە." },
+            { "language": "kmr", "text": "Erê, ez bi vê razî me. Ez ê vîdyoyan ji bo rewşan û pirtûkan ji bo qaîdeyan bi kar bînim. Wisa her rêbaz xwedî erkeke zelal e." },
+            { "language": "pl", "text": "Tak, zgadzam się z tym. Używałbym filmów do sytuacji, a książek do zasad. Wtedy każda metoda ma jasne zadanie." },
+            { "language": "ro", "text": "Da, sunt de acord cu asta. Aș folosi videoclipurile pentru situații și cărțile pentru reguli. Astfel fiecare metodă are un rol clar." },
+            { "language": "sq", "text": "Po, jam dakord me këtë. Do t'i përdorja videot për situata dhe librat për rregulla. Kështu secila metodë ka një detyrë të qartë." }
+          ],
+          "function": "summarize-compromise",
+          "expectedLearnerAction": "Summarize a balanced position and close the discussion constructively."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich finde, Videos helfen am Anfang mehr, weil man die Aussprache und die Situation direkt sieht. Bei mir bleiben neue Redemittel dann schneller im Kopf.",
+              "translations": [
+                { "language": "en", "text": "I think videos help more at the beginning because you directly see the pronunciation and the situation. For me, new phrases then stay in my head faster." },
+                { "language": "fa", "text": "به نظر من ویدئوها در شروع بیشتر کمک می‌کنند، چون تلفظ و موقعیت را مستقیم می‌بینی. برای من عبارت‌های جدید این‌طور سریع‌تر در ذهن می‌مانند." },
+                { "language": "ar", "text": "أعتقد أن الفيديوهات تساعد أكثر في البداية، لأنك ترى النطق والموقف مباشرة. عندي تبقى العبارات الجديدة في ذهني أسرع بهذه الطريقة." },
+                { "language": "tr", "text": "Bence videolar başlangıçta daha çok yardımcı olur, çünkü telaffuzu ve durumu doğrudan görürsün. Bende yeni ifadeler o zaman daha hızlı akılda kalıyor." },
+                { "language": "ru", "text": "Я считаю, что видео в начале помогают больше, потому что сразу видишь произношение и ситуацию. У меня новые выражения так быстрее остаются в голове." },
+                { "language": "ckb", "text": "بە بۆچوونی من، لە سەرەتادا ڤیدیۆ زیاتر یارمەتی دەدات، چونکە ڕاستەوخۆ دەنگدان و دۆخەکە دەبینیت. لای من دەستەواژە نوێیەکان خێراتر لە مێشکمدا دەمێنن." },
+                { "language": "kmr", "text": "Li gor min, di destpêkê de vîdyo zêdetir alîkar in, ji ber ku tu bilêvkirin û rewşê rasterast dibînî. Bi vî awayî gotinên nû di serê min de zûtir dimînin." },
+                { "language": "pl", "text": "Uważam, że filmy pomagają bardziej na początku, bo od razu widać wymowę i sytuację. Wtedy nowe zwroty szybciej zostają mi w głowie." },
+                { "language": "ro", "text": "Cred că videoclipurile ajută mai mult la început, pentru că vezi direct pronunția și situația. La mine expresiile noi rămân atunci mai repede în minte." },
+                { "language": "sq", "text": "Mendoj se videot ndihmojnë më shumë në fillim, sepse e sheh drejtpërdrejt shqiptimin dhe situatën. Te unë shprehjet e reja mbeten më shpejt në mendje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt eine klare Meinung, einen Grund und einen persoenlichen Lerneffekt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer gives a clear opinion, a reason, and a personal learning effect." },
+                { "language": "fa", "text": "این پاسخ یک نظر روشن، یک دلیل و یک اثر شخصی در یادگیری را بیان می‌کند." },
+                { "language": "ar", "text": "تقدم الإجابة رأياً واضحاً وسبباً وأثراً شخصياً في التعلم." },
+                { "language": "tr", "text": "Cevap net bir görüş, bir neden ve kişisel bir öğrenme etkisi belirtir." },
+                { "language": "ru", "text": "Ответ содержит ясное мнение, причину и личный учебный эффект." },
+                { "language": "ckb", "text": "وەڵامەکە بۆچوونێکی ڕوون، هۆکارێک و کاریگەرییەکی کەسی لە فێربووندا دەڵێت." },
+                { "language": "kmr", "text": "Bersiv nerîneke zelal, sedemek û bandoreke kesane ya fêrbûnê dibêje." },
+                { "language": "pl", "text": "Odpowiedź zawiera jasną opinię, powód i osobisty efekt uczenia się." },
+                { "language": "ro", "text": "Răspunsul oferă o opinie clară, un motiv și un efect personal de învățare." },
+                { "language": "sq", "text": "Përgjigjja jep një mendim të qartë, një arsye dhe një efekt personal në të mësuar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Videos sind besser. Ich schaue gern Videos.",
+              "translations": [
+                { "language": "en", "text": "Videos are better. I like watching videos." },
+                { "language": "fa", "text": "ویدئوها بهتر هستند. من دوست دارم ویدئو ببینم." },
+                { "language": "ar", "text": "الفيديوهات أفضل. أحب مشاهدة الفيديوهات." },
+                { "language": "tr", "text": "Videolar daha iyi. Video izlemeyi severim." },
+                { "language": "ru", "text": "Видео лучше. Я люблю смотреть видео." },
+                { "language": "ckb", "text": "ڤیدیۆ باشترە. من حەزم لە بینینی ڤیدیۆیە." },
+                { "language": "kmr", "text": "Vîdyo baştir in. Ez temaşekirina vîdyoyan hez dikim." },
+                { "language": "pl", "text": "Filmy są lepsze. Lubię oglądać filmy." },
+                { "language": "ro", "text": "Videoclipurile sunt mai bune. Îmi place să mă uit la videoclipuri." },
+                { "language": "sq", "text": "Videot janë më të mira. Më pëlqen të shikoj video." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist als Meinung verständlich, aber für B1 zu knapp: Ein Grund und ein Lernbeispiel fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable as an opinion, but too brief for B1: a reason and a learning example are missing." },
+                { "language": "fa", "text": "این به عنوان نظر قابل فهم است، اما برای B1 خیلی کوتاه است: دلیل و مثال یادگیری کم دارد." },
+                { "language": "ar", "text": "هذا مفهوم كرأي، لكنه قصير جداً لمستوى B1: ينقصه سبب ومثال من التعلم." },
+                { "language": "tr", "text": "Bu bir görüş olarak anlaşılır, ama B1 için çok kısadır: bir neden ve öğrenme örneği eksik." },
+                { "language": "ru", "text": "Это понятно как мнение, но слишком кратко для B1: не хватает причины и учебного примера." },
+                { "language": "ckb", "text": "ئەمە وەک بۆچوون تێدەگەی، بەڵام بۆ B1 زۆر کورتە: هۆکار و نموونەی فێربوون نییە." },
+                { "language": "kmr", "text": "Ev wek nerîn tê fêmkirin, lê ji bo B1 pir kurt e: sedem û mînaka fêrbûnê kêm in." },
+                { "language": "pl", "text": "To jest zrozumiałe jako opinia, ale zbyt krótkie na B1: brakuje powodu i przykładu z nauki." },
+                { "language": "ro", "text": "Este de înțeles ca opinie, dar prea scurt pentru B1: lipsesc un motiv și un exemplu de învățare." },
+                { "language": "sq", "text": "Kjo kuptohet si mendim, por është shumë e shkurtër për B1: mungon një arsye dhe një shembull nga të mësuarit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das verstehe ich gut. Für Grammatik finde ich Bücher auch wichtig. Aber für Alltagssprache brauche ich oft ein Beispiel mit Stimme und Gesicht.",
+              "translations": [
+                { "language": "en", "text": "I understand that well. I also find books important for grammar. But for everyday language I often need an example with voice and facial expression." },
+                { "language": "fa", "text": "این را خوب می‌فهمم. برای گرامر من هم کتاب‌ها را مهم می‌دانم. اما برای زبان روزمره اغلب به مثالی با صدا و حالت چهره نیاز دارم." },
+                { "language": "ar", "text": "أفهم ذلك جيداً. أرى أن الكتب مهمة أيضاً للقواعد. لكن في لغة الحياة اليومية أحتاج غالباً إلى مثال بصوت وتعابير وجه." },
+                { "language": "tr", "text": "Bunu iyi anlıyorum. Gramer için kitapları ben de önemli buluyorum. Ama günlük dil için çoğu zaman ses ve yüz ifadesi olan bir örneğe ihtiyaç duyuyorum." },
+                { "language": "ru", "text": "Я это хорошо понимаю. Для грамматики я тоже считаю книги важными. Но для повседневной речи мне часто нужен пример с голосом и выражением лица." },
+                { "language": "ckb", "text": "ئەمە باش تێدەگەم. بۆ ڕێزمان منیش کتێب گرنگ دەزانم. بەڵام بۆ زمانی ڕۆژانە زۆرجار پێویستم بە نموونەیەکە لەگەڵ دەنگ و دەربڕینی ڕووخسار." },
+                { "language": "kmr", "text": "Ez vê baş fêm dikim. Ji bo rêzimanê ez jî pirtûkan girîng dibînim. Lê ji bo zimanê rojane gelek caran mînakek bi deng û rûyê mirov pêwîst e." },
+                { "language": "pl", "text": "Dobrze to rozumiem. Do gramatyki też uważam książki za ważne. Ale do języka codziennego często potrzebuję przykładu z głosem i mimiką." },
+                { "language": "ro", "text": "Înțeleg bine asta. Pentru gramatică și eu consider cărțile importante. Dar pentru limba de zi cu zi am adesea nevoie de un exemplu cu voce și expresie facială." },
+                { "language": "sq", "text": "E kuptoj mirë këtë. Edhe unë i konsideroj librat të rëndësishëm për gramatikën. Por për gjuhën e përditshme shpesh kam nevojë për një shembull me zë dhe mimikë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort widerspricht nicht hart, sondern erkennt den anderen Punkt an und grenzt die eigene Meinung genauer ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer does not contradict harshly; it acknowledges the other point and defines your own opinion more precisely." },
+                { "language": "fa", "text": "این پاسخ تند مخالفت نمی‌کند؛ نکته طرف مقابل را می‌پذیرد و نظر خودت را دقیق‌تر مشخص می‌کند." },
+                { "language": "ar", "text": "لا تعارض الإجابة بشدة، بل تعترف بالنقطة الأخرى وتحدد رأيك بدقة أكبر." },
+                { "language": "tr", "text": "Cevap sert biçimde karşı çıkmaz; diğer noktayı kabul eder ve kendi görüşünü daha net sınırlar." },
+                { "language": "ru", "text": "Ответ не спорит резко, а признаёт другой аргумент и точнее очерчивает собственное мнение." },
+                { "language": "ckb", "text": "وەڵامەکە بە توندی دژایەتی ناکات؛ خاڵی ئەوی تر دەنێرێت و بۆچوونی خۆت وردتر دیاری دەکات." },
+                { "language": "kmr", "text": "Bersiv bi tundî li dijî nabe; xala din qebûl dike û nerîna te bi zelaltirîn awayî sînor dike." },
+                { "language": "pl", "text": "Odpowiedź nie zaprzecza ostro, lecz uznaje drugi punkt i dokładniej określa własną opinię." },
+                { "language": "ro", "text": "Răspunsul nu contrazice dur, ci recunoaște celălalt punct și delimitează mai precis propria opinie." },
+                { "language": "sq", "text": "Përgjigjja nuk kundërshton ashpër; ajo pranon pikën tjetër dhe e përcakton më saktë mendimin tënd." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Nein, ich finde Videos trotzdem besser.",
+              "translations": [
+                { "language": "en", "text": "No, I still think videos are better." },
+                { "language": "fa", "text": "نه، با این حال من فکر می‌کنم ویدئوها بهتر هستند." },
+                { "language": "ar", "text": "لا، مع ذلك أرى أن الفيديوهات أفضل." },
+                { "language": "tr", "text": "Hayır, yine de videoların daha iyi olduğunu düşünüyorum." },
+                { "language": "ru", "text": "Нет, я всё равно считаю, что видео лучше." },
+                { "language": "ckb", "text": "نەخێر، هەرچۆنێک بێت پێم وایە ڤیدیۆ باشترە." },
+                { "language": "kmr", "text": "Na, dîsa jî ez difikirim ku vîdyo baştir in." },
+                { "language": "pl", "text": "Nie, mimo wszystko uważam, że filmy są lepsze." },
+                { "language": "ro", "text": "Nu, totuși cred că videoclipurile sunt mai bune." },
+                { "language": "sq", "text": "Jo, megjithatë mendoj se videot janë më të mira." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das bleibt beim eigenen Standpunkt, aber es reagiert kaum auf die andere Person und klingt in einer Gruppe zu starr.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This keeps your own position, but hardly responds to the other person and sounds too rigid in a group." },
+                { "language": "fa", "text": "این نظر خودت را حفظ می‌کند، اما تقریباً به طرف مقابل پاسخ نمی‌دهد و در گروه بیش از حد خشک به نظر می‌رسد." },
+                { "language": "ar", "text": "هذا يحافظ على موقفك، لكنه لا يرد تقريباً على الشخص الآخر ويبدو جامداً جداً في المجموعة." },
+                { "language": "tr", "text": "Bu kendi görüşünü korur, ama diğer kişiye neredeyse hiç yanıt vermez ve grup içinde fazla katı duyulur." },
+                { "language": "ru", "text": "Это сохраняет вашу позицию, но почти не реагирует на другого человека и звучит в группе слишком жёстко." },
+                { "language": "ckb", "text": "ئەمە بۆچوونی خۆت دەپارێزێت، بەڵام زۆر کەم وەڵامی کەسی تر دەداتەوە و لە گرووپدا زۆر ڕەق دەنگ دەدات." },
+                { "language": "kmr", "text": "Ev helwesta te diparêze, lê pir kêm bersiva kesê din dide û di komê de pir hişk tê bihîstin." },
+                { "language": "pl", "text": "To zachowuje własne stanowisko, ale prawie nie odpowiada drugiej osobie i w grupie brzmi zbyt sztywno." },
+                { "language": "ro", "text": "Păstrează propria poziție, dar aproape nu răspunde celeilalte persoane și sună prea rigid într-un grup." },
+                { "language": "sq", "text": "Kjo e ruan qëndrimin tënd, por pothuajse nuk i përgjigjet personit tjetër dhe tingëllon shumë e ngurtë në grup." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, damit bin ich einverstanden. Ich würde Videos für Situationen und Bücher für Regeln nutzen. So hat jede Methode eine klare Aufgabe.",
+              "translations": [
+                { "language": "en", "text": "Yes, I agree with that. I would use videos for situations and books for rules. That way each method has a clear task." },
+                { "language": "fa", "text": "بله، با این موافقم. من ویدئوها را برای موقعیت‌ها و کتاب‌ها را برای قواعد استفاده می‌کنم. این‌طور هر روش وظیفه روشنی دارد." },
+                { "language": "ar", "text": "نعم، أوافق على ذلك. سأستخدم الفيديوهات للمواقف والكتب للقواعد. بهذه الطريقة يكون لكل طريقة دور واضح." },
+                { "language": "tr", "text": "Evet, buna katılıyorum. Videoları durumlar için, kitapları da kurallar için kullanırdım. Böylece her yöntemin net bir görevi olur." },
+                { "language": "ru", "text": "Да, я с этим согласен. Я бы использовал видео для ситуаций, а книги для правил. Так у каждого метода есть ясная задача." },
+                { "language": "ckb", "text": "بەڵێ، لەگەڵ ئەمەدا هاوڕام. من ڤیدیۆ بۆ دۆخەکان و کتێب بۆ یاساکان بەکاردەهێنم. بەو شێوەیە هەر ڕێگایەک ئەرکێکی ڕوونی هەیە." },
+                { "language": "kmr", "text": "Erê, ez bi vê razî me. Ez ê vîdyoyan ji bo rewşan û pirtûkan ji bo qaîdeyan bi kar bînim. Wisa her rêbaz xwedî erkeke zelal e." },
+                { "language": "pl", "text": "Tak, zgadzam się z tym. Używałbym filmów do sytuacji, a książek do zasad. Wtedy każda metoda ma jasne zadanie." },
+                { "language": "ro", "text": "Da, sunt de acord cu asta. Aș folosi videoclipurile pentru situații și cărțile pentru reguli. Astfel fiecare metodă are un rol clar." },
+                { "language": "sq", "text": "Po, jam dakord me këtë. Do t'i përdorja videot për situata dhe librat për rregulla. Kështu secila metodë ka një detyrë të qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort fasst einen Kompromiss zusammen und schliesst die Diskussion freundlich ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer summarizes a compromise and closes the discussion politely." },
+                { "language": "fa", "text": "این پاسخ یک سازش را جمع‌بندی می‌کند و بحث را محترمانه می‌بندد." },
+                { "language": "ar", "text": "تلخص الإجابة حلاً وسطاً وتنهي النقاش بأدب." },
+                { "language": "tr", "text": "Cevap bir uzlaşmayı özetler ve tartışmayı kibarca kapatır." },
+                { "language": "ru", "text": "Ответ подводит итог компромиссу и вежливо завершает обсуждение." },
+                { "language": "ckb", "text": "وەڵامەکە سازشێک کورت دەکاتەوە و گفتوگۆکە بە ڕێزەوە کۆتایی پێدەهێنێت." },
+                { "language": "kmr", "text": "Bersiv lihevhatinekê kurt dike û gotubêjê bi rêz diqedîne." },
+                { "language": "pl", "text": "Odpowiedź podsumowuje kompromis i uprzejmie kończy dyskusję." },
+                { "language": "ro", "text": "Răspunsul rezumă un compromis și încheie politicos discuția." },
+                { "language": "sq", "text": "Përgjigjja përmbledh një kompromis dhe e mbyll diskutimin me mirësjellje." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Also gut, dann machen wir beides.",
+              "translations": [
+                { "language": "en", "text": "All right, then we do both." },
+                { "language": "fa", "text": "خب، پس هر دو را انجام می‌دهیم." },
+                { "language": "ar", "text": "حسناً، إذن نفعل الأمرين." },
+                { "language": "tr", "text": "Peki, o zaman ikisini de yaparız." },
+                { "language": "ru", "text": "Хорошо, тогда делаем и то и другое." },
+                { "language": "ckb", "text": "باشە، کەواتە هەردووکیان دەکەین." },
+                { "language": "kmr", "text": "Baş e, wê demê em her duyan dikin." },
+                { "language": "pl", "text": "Dobrze, więc robimy jedno i drugie." },
+                { "language": "ro", "text": "Bine, atunci le facem pe amândouă." },
+                { "language": "sq", "text": "Mirë, atëherë i bëjmë të dyja." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist nicht falsch, aber zu allgemein: Es fehlt, wofür jede Methode genutzt werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is not wrong, but too general: it does not say what each method should be used for." },
+                { "language": "fa", "text": "این غلط نیست، اما خیلی کلی است: نمی‌گوید هر روش برای چه چیزی استفاده می‌شود." },
+                { "language": "ar", "text": "هذا ليس خطأ، لكنه عام جداً: لا يوضح فيمَ ستُستخدم كل طريقة." },
+                { "language": "tr", "text": "Bu yanlış değil, ama çok genel: her yöntemin ne için kullanılacağını söylemiyor." },
+                { "language": "ru", "text": "Это не неверно, но слишком общее: не сказано, для чего использовать каждый метод." },
+                { "language": "ckb", "text": "ئەمە هەڵە نییە، بەڵام زۆر گشتییە: ناڵێت هەر ڕێگایەک بۆ چی بەکاردێت." },
+                { "language": "kmr", "text": "Ev ne şaş e, lê pir giştî ye: nabêje her rêbaz ji bo çi were bikaranîn." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt ogólne: nie mówi, do czego ma służyć każda metoda." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea general: nu spune pentru ce trebuie folosită fiecare metodă." },
+                { "language": "sq", "text": "Kjo nuk është gabim, por është shumë e përgjithshme: nuk thotë për çfarë duhet përdorur secila metodë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Meinung plus Grund plus Beispiel, nicht nur Zustimmung oder Vorliebe.",
+          "translations": [
+            { "language": "en", "text": "B1 target: opinion plus reason plus example, not only agreement or preference." },
+            { "language": "fa", "text": "هدف B1: نظر همراه با دلیل و مثال، نه فقط موافقت یا سلیقه." },
+            { "language": "ar", "text": "هدف B1: رأي مع سبب ومثال، وليس مجرد موافقة أو تفضيل." },
+            { "language": "tr", "text": "B1 hedefi: yalnızca onay ya da tercih değil, görüş artı neden artı örnek." },
+            { "language": "ru", "text": "Цель B1: мнение плюс причина плюс пример, а не только согласие или предпочтение." },
+            { "language": "ckb", "text": "ئامانجی B1: بۆچوون لەگەڵ هۆکار و نموونە، نەک تەنها ڕازیبوون یان پێویستی کەسی." },
+            { "language": "kmr", "text": "Armanca B1: nerîn bi sedem û mînak, ne tenê razîbûn an tercîh." },
+            { "language": "pl", "text": "Cel B1: opinia plus powód plus przykład, nie tylko zgoda lub preferencja." },
+            { "language": "ro", "text": "Ținta B1: opinie plus motiv plus exemplu, nu doar acord sau preferință." },
+            { "language": "sq", "text": "Qëllimi B1: mendim plus arsye plus shembull, jo vetëm pajtim ose preferencë." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-reklamation-am-telefon-formulieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Reklamation am Telefon formulieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Making a complaint by phone" },
+        { "language": "fa", "text": "بیان شکایت تلفنی" },
+        { "language": "ar", "text": "تقديم شكوى عبر الهاتف" },
+        { "language": "tr", "text": "Telefonda şikayet dile getirmek" },
+        { "language": "ru", "text": "Сформулировать жалобу по телефону" },
+        { "language": "ckb", "text": "دەربڕینی سکاڵا بە تەلەفۆن" },
+        { "language": "kmr", "text": "Bi telefonê gilîkirin" },
+        { "language": "pl", "text": "Złożenie reklamacji przez telefon" },
+        { "language": "ro", "text": "Formularea unei reclamații la telefon" },
+        { "language": "sq", "text": "Bërja e një ankese me telefon" }
+      ],
+      "description": "Du rufst beim Kundenservice an, weil eine Lieferung beschädigt angekommen ist. Du nennst Bestelldaten, beschreibst das Problem und bittest um Ersatz oder Erstattung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call customer service because a delivery arrived damaged. You give order details, describe the problem, and ask for replacement or refund." },
+        { "language": "fa", "text": "با خدمات مشتریان تماس می‌گیری، چون یک سفارش آسیب‌دیده رسیده است. اطلاعات سفارش را می‌گویی، مشکل را توضیح می‌دهی و درخواست تعویض یا بازپرداخت می‌کنی." },
+        { "language": "ar", "text": "تتصل بخدمة العملاء لأن شحنة وصلت متضررة. تذكر بيانات الطلب، وتصف المشكلة، وتطلب بديلاً أو استرداداً للمبلغ." },
+        { "language": "tr", "text": "Bir teslimat hasarlı geldiği için müşteri hizmetlerini arıyorsun. Sipariş bilgilerini veriyor, sorunu açıklıyor ve değişim ya da para iadesi istiyorsun." },
+        { "language": "ru", "text": "Ты звонишь в службу поддержки, потому что доставка пришла повреждённой. Ты называешь данные заказа, описываешь проблему и просишь замену или возврат денег." },
+        { "language": "ckb", "text": "پەیوەندی بە خزمەتگوزاریی کڕیارانەوە دەکەیت چونکە کاڵاکە بە زیانی گەیشتووە. زانیاریی داواکاری دەڵێیت، کێشەکە ڕوون دەکەیتەوە و داوای جێگرەوە یان گەڕاندنەوەی پارە دەکەیت." },
+        { "language": "kmr", "text": "Tu gazî xizmeta xerîdar dikî, ji ber ku şandina te bi zirar hatîye. Tu agahiyên siparişê dibêjî, pirsgirêkê şirove dikî û guhertin an vegerandina pereyan dixwazî." },
+        { "language": "pl", "text": "Dzwonisz do obsługi klienta, bo dostawa przyszła uszkodzona. Podajesz dane zamówienia, opisujesz problem i prosisz o wymianę albo zwrot pieniędzy." },
+        { "language": "ro", "text": "Suni la serviciul clienți deoarece o livrare a ajuns deteriorată. Dai datele comenzii, descrii problema și ceri înlocuire sau rambursare." },
+        { "language": "sq", "text": "Telefonon shërbimin e klientit sepse një dërgesë ka ardhur e dëmtuar. Jep të dhënat e porosisë, përshkruan problemin dhe kërkon zëvendësim ose rimbursim." }
+      ],
+      "learnerGoal": "Formuliere eine sachliche Reklamation mit Bestellnummer, Problem, Wunschlösung und nächstem Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Formulate a factual complaint with order number, problem, desired solution, and next step." },
+        { "language": "fa", "text": "یک شکایت منطقی با شماره سفارش، مشکل، راه‌حل مورد نظر و قدم بعدی بیان کن." },
+        { "language": "ar", "text": "صغ شكوى موضوعية تتضمن رقم الطلب والمشكلة والحل المطلوب والخطوة التالية." },
+        { "language": "tr", "text": "Sipariş numarası, sorun, istenen çözüm ve sonraki adımla nesnel bir şikayet ifade et." },
+        { "language": "ru", "text": "Сформулируй деловую жалобу с номером заказа, проблемой, желаемым решением и следующим шагом." },
+        { "language": "ckb", "text": "سکاڵایەکی بابەتی دەرببڕە بە ژمارەی داواکاری، کێشە، چارەسەری خوازراو و هەنگاوی داهاتوو." },
+        { "language": "kmr", "text": "Gilîkirineke rast bi jimareya siparişê, pirsgirêk, çareseriya xwestî û gava paşê bibêje." },
+        { "language": "pl", "text": "Sformułuj rzeczową reklamację z numerem zamówienia, problemem, oczekiwanym rozwiązaniem i kolejnym krokiem." },
+        { "language": "ro", "text": "Formulează o reclamație factuală cu numărul comenzii, problema, soluția dorită și pasul următor." },
+        { "language": "sq", "text": "Formulo një ankesë faktike me numrin e porosisë, problemin, zgjidhjen e dëshiruar dhe hapin tjetër." }
+      ],
+      "cefrLevel": "B1",
+      "category": "customer-service",
+      "topics": ["customer-service", "shopping-and-services"],
+      "examProfiles": ["dtz-a2-b1", "berufssprache-b1"],
+      "skillFocus": ["speaking", "roleplay", "phone-call", "complaint-handling"],
+      "taskType": "complain-politely",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2530,
+      "roles": [
+        {
+          "roleKey": "customer-service-agent",
+          "displayName": "Kundenservice",
+          "translations": [
+            { "language": "en", "text": "Customer service" },
+            { "language": "fa", "text": "خدمات مشتریان" },
+            { "language": "ar", "text": "خدمة العملاء" },
+            { "language": "tr", "text": "Müşteri hizmetleri" },
+            { "language": "ru", "text": "Служба поддержки" },
+            { "language": "ckb", "text": "خزمەتگوزاریی کڕیاران" },
+            { "language": "kmr", "text": "Xizmeta xerîdar" },
+            { "language": "pl", "text": "Obsługa klienta" },
+            { "language": "ro", "text": "Serviciul clienți" },
+            { "language": "sq", "text": "Shërbimi i klientit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kundin",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "عميلة" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиентка" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Xerîdar" },
+            { "language": "pl", "text": "Klientka" },
+            { "language": "ro", "text": "Clientă" },
+            { "language": "sq", "text": "Klientja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "customer-service-agent",
+          "baseText": "Guten Tag, Kundenservice Weber. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, Weber customer service. What can I do for you?" },
+            { "language": "fa", "text": "روز بخیر، خدمات مشتریان وبر. چه کاری می‌توانم برای شما انجام دهم؟" },
+            { "language": "ar", "text": "مرحباً، خدمة عملاء فيبر. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler, Weber müşteri hizmetleri. Sizin için ne yapabilirim?" },
+            { "language": "ru", "text": "Добрый день, служба поддержки Weber. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، خزمەتگوزاریی کڕیارانی Weber. چیتان بۆ بکەم؟" },
+            { "language": "kmr", "text": "Roj baş, xizmeta xerîdar a Weber. Ez dikarim çi ji bo we bikim?" },
+            { "language": "pl", "text": "Dzień dobry, obsługa klienta Weber. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, serviciul clienți Weber. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, shërbimi i klientit Weber. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich rufe wegen meiner Bestellung 45821 an. Das Paket ist gestern angekommen, aber zwei Teller waren zerbrochen.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. I am calling about my order 45821. The package arrived yesterday, but two plates were broken." },
+            { "language": "fa", "text": "روز بخیر. درباره سفارش 45821 تماس می‌گیرم. بسته دیروز رسید، اما دو بشقاب شکسته بودند." },
+            { "language": "ar", "text": "مرحباً. أتصل بخصوص طلبي رقم 45821. وصل الطرد أمس، لكن طبقين كانا مكسورين." },
+            { "language": "tr", "text": "İyi günler. 45821 numaralı siparişim için arıyorum. Paket dün geldi, ama iki tabak kırılmıştı." },
+            { "language": "ru", "text": "Добрый день. Я звоню по поводу моего заказа 45821. Посылка пришла вчера, но две тарелки были разбиты." },
+            { "language": "ckb", "text": "ڕۆژ باش. دەربارەی داواکاریی 45821 پەیوەندی دەکەم. پاکەتەکە دوێنێ گەیشت، بەڵام دوو تەبەقەکە شکابوون." },
+            { "language": "kmr", "text": "Roj baş. Ez ji bo siparişê xwe 45821 telefon dikim. Pakêt duh hat, lê du qap şikestî bûn." },
+            { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie mojego zamówienia 45821. Paczka przyszła wczoraj, ale dwa talerze były rozbite." },
+            { "language": "ro", "text": "Bună ziua. Sun în legătură cu comanda mea 45821. Pachetul a ajuns ieri, dar două farfurii erau sparte." },
+            { "language": "sq", "text": "Mirëdita. Telefonoj për porosinë time 45821. Pakoja erdhi dje, por dy pjata ishin të thyera." }
+          ],
+          "function": "state-problem",
+          "expectedLearnerAction": "Give the order number, delivery time, and concrete problem."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "customer-service-agent",
+          "baseText": "Das tut mir leid. Haben Sie ein Foto vom Schaden und von der Verpackung gemacht?",
+          "translations": [
+            { "language": "en", "text": "I am sorry about that. Did you take a photo of the damage and of the packaging?" },
+            { "language": "fa", "text": "متأسفم. آیا از آسیب و بسته‌بندی عکس گرفته‌اید؟" },
+            { "language": "ar", "text": "آسف لذلك. هل التقطت صورة للضرر وللتغليف؟" },
+            { "language": "tr", "text": "Buna üzüldüm. Hasarın ve ambalajın fotoğrafını çektiniz mi?" },
+            { "language": "ru", "text": "Мне очень жаль. Вы сделали фото повреждения и упаковки?" },
+            { "language": "ckb", "text": "پێم ناخۆشە. وێنەی زیانەکە و پاکەتەکەت گرتووە؟" },
+            { "language": "kmr", "text": "Ez xemgîn im. We wêneyê zirarê û pakêtê kişandiye?" },
+            { "language": "pl", "text": "Przykro mi. Czy zrobiła pani zdjęcie uszkodzenia i opakowania?" },
+            { "language": "ro", "text": "Îmi pare rău. Ați făcut o fotografie a deteriorării și a ambalajului?" },
+            { "language": "sq", "text": "Më vjen keq. A keni bërë foto të dëmtimit dhe të paketimit?" }
+          ],
+          "function": "ask-evidence"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, ich habe direkt Fotos gemacht. Ich kann sie Ihnen per E-Mail schicken. Mir wäre am liebsten ein Ersatz, weil ich das Set komplett brauche.",
+          "translations": [
+            { "language": "en", "text": "Yes, I took photos right away. I can send them to you by email. I would prefer a replacement because I need the set complete." },
+            { "language": "fa", "text": "بله، همان لحظه عکس گرفتم. می‌توانم آن‌ها را برای شما ایمیل کنم. ترجیح من تعویض است، چون به سرویس کامل نیاز دارم." },
+            { "language": "ar", "text": "نعم، التقطت صوراً مباشرة. يمكنني إرسالها لكم عبر البريد الإلكتروني. أفضّل الحصول على بديل لأنني أحتاج إلى الطقم كاملاً." },
+            { "language": "tr", "text": "Evet, hemen fotoğraf çektim. Size e-postayla gönderebilirim. Takımı eksiksiz kullanmam gerektiği için değişim benim için en iyisi olur." },
+            { "language": "ru", "text": "Да, я сразу сделала фотографии. Я могу отправить их вам по электронной почте. Мне предпочтительнее замена, потому что мне нужен полный комплект." },
+            { "language": "ckb", "text": "بەڵێ، دەستبەجێ وێنەم گرت. دەتوانم بە ئیمەیڵ بۆتان بنێرم. باشترە بۆ من جێگرەوە بنێرن، چونکە پێویستم بە سێتەکە بە تەواوی هەیە." },
+            { "language": "kmr", "text": "Erê, min yekser wêne kişandin. Ez dikarim wan bi e-nameyê ji we re bişînim. Ji min re guhertin baştir e, ji ber ku ez setê temam pêwîst dikim." },
+            { "language": "pl", "text": "Tak, od razu zrobiłam zdjęcia. Mogę je wysłać e-mailem. Najchętniej chciałabym wymianę, bo potrzebuję kompletnego zestawu." },
+            { "language": "ro", "text": "Da, am făcut imediat fotografii. Vi le pot trimite prin e-mail. Aș prefera o înlocuire, pentru că am nevoie de set complet." },
+            { "language": "sq", "text": "Po, bëra foto menjëherë. Mund t'jua dërgoj me email. Do të preferoja zëvendësim, sepse më duhet seti i plotë." }
+          ],
+          "function": "provide-evidence-and-request",
+          "expectedLearnerAction": "Confirm evidence and state a realistic preferred solution."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "customer-service-agent",
+          "baseText": "Das ist möglich. Ich brauche die Fotos und eine kurze Beschreibung. Danach prüfen wir den Ersatzversand.",
+          "translations": [
+            { "language": "en", "text": "That is possible. I need the photos and a short description. After that we will check replacement shipping." },
+            { "language": "fa", "text": "این امکان دارد. من به عکس‌ها و یک توضیح کوتاه نیاز دارم. بعد از آن ارسال جایگزین را بررسی می‌کنیم." },
+            { "language": "ar", "text": "هذا ممكن. أحتاج إلى الصور ووصف قصير. بعد ذلك نتحقق من إرسال البديل." },
+            { "language": "tr", "text": "Bu mümkün. Fotoğraflara ve kısa bir açıklamaya ihtiyacım var. Ondan sonra değişim gönderisini kontrol ederiz." },
+            { "language": "ru", "text": "Это возможно. Мне нужны фотографии и краткое описание. После этого мы проверим отправку замены." },
+            { "language": "ckb", "text": "ئەمە دەکرێت. پێویستم بە وێنەکان و ڕوونکردنەوەیەکی کورتە. دوای ئەوە ناردنی جێگرەوە دەپشکنین." },
+            { "language": "kmr", "text": "Ev gengaz e. Wêne û ravekirineke kurt pêwîst in. Piştî wê em şandina guhertinê kontrol dikin." },
+            { "language": "pl", "text": "To jest możliwe. Potrzebuję zdjęć i krótkiego opisu. Potem sprawdzimy wysyłkę zamiennika." },
+            { "language": "ro", "text": "Este posibil. Am nevoie de fotografii și de o scurtă descriere. După aceea verificăm trimiterea înlocuirii." },
+            { "language": "sq", "text": "Kjo është e mundur. Më duhen fotot dhe një përshkrim i shkurtër. Pastaj do të kontrollojmë dërgimin e zëvendësimit." }
+          ],
+          "function": "process-info"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Gut, das mache ich heute noch. Können Sie mir bitte sagen, an welche Adresse ich die Fotos schicken soll und wie lange die Prüfung ungefähr dauert?",
+          "translations": [
+            { "language": "en", "text": "Good, I will do that today. Could you please tell me which address I should send the photos to and about how long the review will take?" },
+            { "language": "fa", "text": "خوب، امروز این کار را انجام می‌دهم. لطفاً می‌گویید عکس‌ها را به چه آدرسی بفرستم و بررسی تقریباً چقدر طول می‌کشد؟" },
+            { "language": "ar", "text": "حسناً، سأفعل ذلك اليوم. هل يمكن أن تخبرني من فضلك إلى أي عنوان أرسل الصور وكم تستغرق المراجعة تقريباً؟" },
+            { "language": "tr", "text": "Tamam, bunu bugün yaparım. Fotoğrafları hangi adrese göndermem gerektiğini ve incelemenin yaklaşık ne kadar süreceğini söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Хорошо, я сделаю это сегодня. Подскажите, пожалуйста, на какой адрес отправить фотографии и сколько примерно займёт проверка?" },
+            { "language": "ckb", "text": "باشە، ئەمڕۆ ئەمە دەکەم. تکایە دەتوانن بڵێن وێنەکان بۆ کام ناونیشان بنێرم و پشکنینەکە نزیکەی چەند دەخایەنێت؟" },
+            { "language": "kmr", "text": "Baş e, ez ê îro vê bikim. Ji kerema xwe hûn dikarin bibêjin ez wêneyan ji kîjan navnîşanê re bişînim û lêkolîn qasî çend demê digire?" },
+            { "language": "pl", "text": "Dobrze, zrobię to jeszcze dzisiaj. Czy może mi pan powiedzieć, na jaki adres mam wysłać zdjęcia i jak długo mniej więcej potrwa sprawdzenie?" },
+            { "language": "ro", "text": "Bine, fac asta chiar azi. Îmi puteți spune, vă rog, la ce adresă să trimit fotografiile și cam cât durează verificarea?" },
+            { "language": "sq", "text": "Mirë, do ta bëj sot. A mund të më thoni ju lutem në cilën adresë duhet t'i dërgoj fotot dhe sa zgjat afërsisht kontrolli?" }
+          ],
+          "function": "ask-next-step",
+          "expectedLearnerAction": "Ask for the exact email address and expected processing time."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "customer-service-agent",
+          "baseText": "Bitte schicken Sie alles an service@beispiel.de. Normalerweise melden wir uns innerhalb von drei Werktagen.",
+          "translations": [
+            { "language": "en", "text": "Please send everything to service@beispiel.de. Normally we get back to you within three working days." },
+            { "language": "fa", "text": "لطفاً همه چیز را به service@beispiel.de بفرستید. معمولاً ظرف سه روز کاری با شما تماس می‌گیریم." },
+            { "language": "ar", "text": "يرجى إرسال كل شيء إلى service@beispiel.de. عادة نرد خلال ثلاثة أيام عمل." },
+            { "language": "tr", "text": "Lütfen her şeyi service@beispiel.de adresine gönderin. Normalde üç iş günü içinde size döneriz." },
+            { "language": "ru", "text": "Пожалуйста, отправьте всё на service@beispiel.de. Обычно мы отвечаем в течение трёх рабочих дней." },
+            { "language": "ckb", "text": "تکایە هەموو شتێک بۆ service@beispiel.de بنێرن. بە ئاسایی لە ماوەی سێ ڕۆژی کاری وەڵامتان دەدەینەوە." },
+            { "language": "kmr", "text": "Ji kerema xwe her tiştî ji service@beispiel.de re bişînin. Bi gelemperî di nav sê rojên kar de bersiv didin." },
+            { "language": "pl", "text": "Proszę wysłać wszystko na service@beispiel.de. Zwykle odpowiadamy w ciągu trzech dni roboczych." },
+            { "language": "ro", "text": "Vă rugăm să trimiteți totul la service@beispiel.de. În mod normal vă răspundem în trei zile lucrătoare." },
+            { "language": "sq", "text": "Ju lutem dërgoni gjithçka te service@beispiel.de. Zakonisht përgjigjemi brenda tre ditësh pune." }
+          ],
+          "function": "give-process"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann schicke ich die Fotos mit der Bestellnummer und einer kurzen Beschreibung heute noch. Ich warte dann auf Ihre Rückmeldung innerhalb von drei Werktagen.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will send the photos with the order number and a short description today. I will wait for your response within three working days." },
+            { "language": "fa", "text": "خیلی ممنون. پس امروز عکس‌ها را همراه با شماره سفارش و توضیح کوتاه می‌فرستم. بعد منتظر پاسخ شما ظرف سه روز کاری می‌مانم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأرسل الصور مع رقم الطلب ووصف قصير اليوم. ثم أنتظر ردكم خلال ثلاثة أيام عمل." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde fotoğrafları sipariş numarası ve kısa bir açıklamayla bugün gönderirim. Sonra üç iş günü içinde yanıtınızı beklerim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я сегодня отправлю фотографии с номером заказа и кратким описанием. Затем буду ждать вашего ответа в течение трёх рабочих дней." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ وێنەکان لەگەڵ ژمارەی داواکاری و ڕوونکردنەوەیەکی کورت دەنێرم. پاشان لە ماوەی سێ ڕۆژی کاری چاوەڕێی وەڵامتان دەبم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez îro wêneyan bi jimareya siparişê û ravekirineke kurt re dişînim. Paşê ez di nav sê rojên kar de li benda bersiva we dimînim." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie wyślę dziś zdjęcia z numerem zamówienia i krótkim opisem. Potem będę czekać na odpowiedź w ciągu trzech dni roboczych." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci trimit astăzi fotografiile cu numărul comenzii și o scurtă descriere. Apoi aștept răspunsul dumneavoastră în termen de trei zile lucrătoare." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë do t'i dërgoj sot fotot me numrin e porosisë dhe një përshkrim të shkurtër. Pastaj do të pres përgjigjen tuaj brenda tre ditësh pune." }
+          ],
+          "function": "summarize-next-step",
+          "expectedLearnerAction": "Summarize what you will send and when you expect a reply."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag. Ich rufe wegen meiner Bestellung 45821 an. Das Paket ist gestern angekommen, aber zwei Teller waren zerbrochen.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. I am calling about my order 45821. The package arrived yesterday, but two plates were broken." },
+                { "language": "fa", "text": "روز بخیر. درباره سفارش 45821 تماس می‌گیرم. بسته دیروز رسید، اما دو بشقاب شکسته بودند." },
+                { "language": "ar", "text": "مرحباً. أتصل بخصوص طلبي رقم 45821. وصل الطرد أمس، لكن طبقين كانا مكسورين." },
+                { "language": "tr", "text": "İyi günler. 45821 numaralı siparişim için arıyorum. Paket dün geldi, ama iki tabak kırılmıştı." },
+                { "language": "ru", "text": "Добрый день. Я звоню по поводу моего заказа 45821. Посылка пришла вчера, но две тарелки были разбиты." },
+                { "language": "ckb", "text": "ڕۆژ باش. دەربارەی داواکاریی 45821 پەیوەندی دەکەم. پاکەتەکە دوێنێ گەیشت، بەڵام دوو تەبەقەکە شکابوون." },
+                { "language": "kmr", "text": "Roj baş. Ez ji bo siparişê xwe 45821 telefon dikim. Pakêt duh hat, lê du qap şikestî bûn." },
+                { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie mojego zamówienia 45821. Paczka przyszła wczoraj, ale dwa talerze były rozbite." },
+                { "language": "ro", "text": "Bună ziua. Sun în legătură cu comanda mea 45821. Pachetul a ajuns ieri, dar două farfurii erau sparte." },
+                { "language": "sq", "text": "Mirëdita. Telefonoj për porosinë time 45821. Pakoja erdhi dje, por dy pjata ishin të thyera." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt sofort Bestellnummer, Zeitpunkt und konkreten Schaden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer immediately gives the order number, time, and concrete damage." },
+                { "language": "fa", "text": "این پاسخ بلافاصله شماره سفارش، زمان و آسیب مشخص را می‌گوید." },
+                { "language": "ar", "text": "تذكر الإجابة فوراً رقم الطلب والوقت والضرر المحدد." },
+                { "language": "tr", "text": "Cevap hemen sipariş numarasını, zamanı ve somut hasarı belirtir." },
+                { "language": "ru", "text": "Ответ сразу называет номер заказа, время и конкретное повреждение." },
+                { "language": "ckb", "text": "وەڵامەکە دەستبەجێ ژمارەی داواکاری، کات و زیانی دیاریکراو دەڵێت." },
+                { "language": "kmr", "text": "Bersiv yekser jimareya siparişê, dem û zirara zelal dibêje." },
+                { "language": "pl", "text": "Odpowiedź od razu podaje numer zamówienia, czas i konkretną szkodę." },
+                { "language": "ro", "text": "Răspunsul spune imediat numărul comenzii, momentul și deteriorarea concretă." },
+                { "language": "sq", "text": "Përgjigjja jep menjëherë numrin e porosisë, kohën dhe dëmtimin konkret." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Hallo, mit meiner Lieferung stimmt etwas nicht. Was soll ich machen?",
+              "translations": [
+                { "language": "en", "text": "Hello, something is wrong with my delivery. What should I do?" },
+                { "language": "fa", "text": "سلام، یک چیزی در تحویل سفارش من درست نیست. چه کار باید بکنم؟" },
+                { "language": "ar", "text": "مرحباً، هناك شيء غير صحيح في شحنتي. ماذا يجب أن أفعل؟" },
+                { "language": "tr", "text": "Merhaba, teslimatımda bir sorun var. Ne yapmalıyım?" },
+                { "language": "ru", "text": "Здравствуйте, с моей доставкой что-то не так. Что мне делать?" },
+                { "language": "ckb", "text": "سڵاو، شتێک لە گەیاندنی کاڵاکەمدا دروست نییە. چی بکەم؟" },
+                { "language": "kmr", "text": "Silav, di şandina min de tiştek ne rast e. Ez çi bikim?" },
+                { "language": "pl", "text": "Dzień dobry, coś jest nie tak z moją dostawą. Co mam zrobić?" },
+                { "language": "ro", "text": "Bună, ceva nu este în regulă cu livrarea mea. Ce ar trebui să fac?" },
+                { "language": "sq", "text": "Përshëndetje, diçka nuk është në rregull me dërgesën time. Çfarë duhet të bëj?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist ein möglicher Einstieg, aber für den Kundenservice fehlen Bestellnummer und genaue Schadensbeschreibung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a possible start, but for customer service the order number and exact damage description are missing." },
+                { "language": "fa", "text": "این شروع ممکن است، اما برای خدمات مشتریان شماره سفارش و توضیح دقیق آسیب کم دارد." },
+                { "language": "ar", "text": "هذا مدخل ممكن، لكن لخدمة العملاء ينقصه رقم الطلب ووصف دقيق للضرر." },
+                { "language": "tr", "text": "Bu olası bir başlangıçtır, ama müşteri hizmetleri için sipariş numarası ve net hasar açıklaması eksik." },
+                { "language": "ru", "text": "Это возможное начало, но для службы поддержки не хватает номера заказа и точного описания повреждения." },
+                { "language": "ckb", "text": "ئەمە دەستپێکێکی گونجاوە، بەڵام بۆ خزمەتگوزاریی کڕیاران ژمارەی داواکاری و ڕوونکردنەوەی وردی زیانەکە کەمە." },
+                { "language": "kmr", "text": "Ev destpêkek gengaz e, lê ji bo xizmeta xerîdar jimareya siparişê û ravekirina zelal a zirarê kêm in." },
+                { "language": "pl", "text": "To możliwy początek, ale dla obsługi klienta brakuje numeru zamówienia i dokładnego opisu szkody." },
+                { "language": "ro", "text": "Este un început posibil, dar pentru serviciul clienți lipsesc numărul comenzii și descrierea exactă a deteriorării." },
+                { "language": "sq", "text": "Ky është një fillim i mundshëm, por për shërbimin e klientit mungon numri i porosisë dhe përshkrimi i saktë i dëmtimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, ich habe direkt Fotos gemacht. Ich kann sie Ihnen per E-Mail schicken. Mir wäre am liebsten ein Ersatz, weil ich das Set komplett brauche.",
+              "translations": [
+                { "language": "en", "text": "Yes, I took photos right away. I can send them to you by email. I would prefer a replacement because I need the set complete." },
+                { "language": "fa", "text": "بله، همان لحظه عکس گرفتم. می‌توانم آن‌ها را برای شما ایمیل کنم. ترجیح من تعویض است، چون به سرویس کامل نیاز دارم." },
+                { "language": "ar", "text": "نعم، التقطت صوراً مباشرة. يمكنني إرسالها لكم عبر البريد الإلكتروني. أفضّل الحصول على بديل لأنني أحتاج إلى الطقم كاملاً." },
+                { "language": "tr", "text": "Evet, hemen fotoğraf çektim. Size e-postayla gönderebilirim. Takımı eksiksiz kullanmam gerektiği için değişim benim için en iyisi olur." },
+                { "language": "ru", "text": "Да, я сразу сделала фотографии. Я могу отправить их вам по электронной почте. Мне предпочтительнее замена, потому что мне нужен полный комплект." },
+                { "language": "ckb", "text": "بەڵێ، دەستبەجێ وێنەم گرت. دەتوانم بە ئیمەیڵ بۆتان بنێرم. باشترە بۆ من جێگرەوە بنێرن، چونکە پێویستم بە سێتەکە بە تەواوی هەیە." },
+                { "language": "kmr", "text": "Erê, min yekser wêne kişandin. Ez dikarim wan bi e-nameyê ji we re bişînim. Ji min re guhertin baştir e, ji ber ku ez setê temam pêwîst dikim." },
+                { "language": "pl", "text": "Tak, od razu zrobiłam zdjęcia. Mogę je wysłać e-mailem. Najchętniej chciałabym wymianę, bo potrzebuję kompletnego zestawu." },
+                { "language": "ro", "text": "Da, am făcut imediat fotografii. Vi le pot trimite prin e-mail. Aș prefera o înlocuire, pentru că am nevoie de set complet." },
+                { "language": "sq", "text": "Po, bëra foto menjëherë. Mund t'jua dërgoj me email. Do të preferoja zëvendësim, sepse më duhet seti i plotë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort zeigt, dass Belege vorhanden sind, und nennt eine begruendete Wunschloesung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer shows that evidence is available and names a justified preferred solution." },
+                { "language": "fa", "text": "این پاسخ نشان می‌دهد مدرک وجود دارد و یک راه‌حل مورد نظر با دلیل بیان می‌کند." },
+                { "language": "ar", "text": "تُظهر الإجابة أن الأدلة موجودة وتذكر حلاً مفضلاً مع سبب." },
+                { "language": "tr", "text": "Cevap kanıtların mevcut olduğunu gösterir ve gerekçeli bir istenen çözüm belirtir." },
+                { "language": "ru", "text": "Ответ показывает, что доказательства есть, и называет обоснованное желаемое решение." },
+                { "language": "ckb", "text": "وەڵامەکە نیشان دەدات بەڵگە هەیە و چارەسەری خوازراو بە هۆکار دەڵێت." },
+                { "language": "kmr", "text": "Bersiv nîşan dide ku belge hene û çareseriya xwestî ya bi sedem dibêje." },
+                { "language": "pl", "text": "Odpowiedź pokazuje, że są dowody, i podaje uzasadnione oczekiwane rozwiązanie." },
+                { "language": "ro", "text": "Răspunsul arată că există dovezi și numește o soluție dorită justificată." },
+                { "language": "sq", "text": "Përgjigjja tregon se ka prova dhe përmend një zgjidhje të dëshiruar me arsye." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich habe Fotos. Bitte schicken Sie mir einfach neue Teller.",
+              "translations": [
+                { "language": "en", "text": "I have photos. Please just send me new plates." },
+                { "language": "fa", "text": "من عکس دارم. لطفاً فقط بشقاب‌های جدید برایم بفرستید." },
+                { "language": "ar", "text": "لدي صور. من فضلكم أرسلوا لي أطباقاً جديدة فقط." },
+                { "language": "tr", "text": "Fotoğraflarım var. Lütfen bana sadece yeni tabaklar gönderin." },
+                { "language": "ru", "text": "У меня есть фотографии. Просто пришлите мне новые тарелки, пожалуйста." },
+                { "language": "ckb", "text": "وێنەم هەیە. تکایە تەنها تەبەقی نوێم بۆ بنێرن." },
+                { "language": "kmr", "text": "Wêneyên min hene. Ji kerema xwe tenê qapên nû ji min re bişînin." },
+                { "language": "pl", "text": "Mam zdjęcia. Proszę po prostu wysłać mi nowe talerze." },
+                { "language": "ro", "text": "Am fotografii. Vă rog să-mi trimiteți pur și simplu farfurii noi." },
+                { "language": "sq", "text": "Kam foto. Ju lutem thjesht më dërgoni pjata të reja." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das Ziel ist klar, aber der Ton wirkt etwas fordernd und es fehlt die Begruendung, warum Ersatz besser als Erstattung ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The goal is clear, but the tone sounds a bit demanding and the reason why replacement is better than refund is missing." },
+                { "language": "fa", "text": "هدف روشن است، اما لحن کمی مطالبه‌گر به نظر می‌رسد و دلیل اینکه تعویض بهتر از بازپرداخت است کم دارد." },
+                { "language": "ar", "text": "الهدف واضح، لكن النبرة تبدو مطالبة قليلاً وينقص السبب الذي يجعل البديل أفضل من استرداد المال." },
+                { "language": "tr", "text": "Amaç açık, fakat ton biraz talepkar duyuluyor ve değişimin para iadesinden neden daha iyi olduğu eksik." },
+                { "language": "ru", "text": "Цель ясна, но тон звучит немного требовательно, и не хватает объяснения, почему замена лучше возврата денег." },
+                { "language": "ckb", "text": "ئامانجەکە ڕوونە، بەڵام دەنگەکە کەمێک داواکاریی زۆر دەردەکەوێت و هۆکاری ئەوە کەمە کە بۆچی جێگرەوە باشترە لە گەڕاندنەوەی پارە." },
+                { "language": "kmr", "text": "Armanc zelal e, lê deng hinekî daxwazkar xuya dike û sedema ku guhertin ji vegerandina pereyan baştir e kêm e." },
+                { "language": "pl", "text": "Cel jest jasny, ale ton brzmi trochę żądająco i brakuje powodu, dlaczego wymiana jest lepsza niż zwrot pieniędzy." },
+                { "language": "ro", "text": "Scopul este clar, dar tonul sună puțin revendicativ și lipsește motivul pentru care înlocuirea este mai bună decât rambursarea." },
+                { "language": "sq", "text": "Qëllimi është i qartë, por toni tingëllon pak kërkues dhe mungon arsyeja pse zëvendësimi është më i mirë se rimbursimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann schicke ich die Fotos mit der Bestellnummer und einer kurzen Beschreibung heute noch. Ich warte dann auf Ihre Rückmeldung innerhalb von drei Werktagen.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will send the photos with the order number and a short description today. I will wait for your response within three working days." },
+                { "language": "fa", "text": "خیلی ممنون. پس امروز عکس‌ها را همراه با شماره سفارش و توضیح کوتاه می‌فرستم. بعد منتظر پاسخ شما ظرف سه روز کاری می‌مانم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأرسل الصور مع رقم الطلب ووصف قصير اليوم. ثم أنتظر ردكم خلال ثلاثة أيام عمل." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde fotoğrafları sipariş numarası ve kısa bir açıklamayla bugün gönderirim. Sonra üç iş günü içinde yanıtınızı beklerim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я сегодня отправлю фотографии с номером заказа и кратким описанием. Затем буду ждать вашего ответа в течение трёх рабочих дней." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ وێنەکان لەگەڵ ژمارەی داواکاری و ڕوونکردنەوەیەکی کورت دەنێرم. پاشان لە ماوەی سێ ڕۆژی کاری چاوەڕێی وەڵامتان دەبم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez îro wêneyan bi jimareya siparişê û ravekirineke kurt re dişînim. Paşê ez di nav sê rojên kar de li benda bersiva we dimînim." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie wyślę dziś zdjęcia z numerem zamówienia i krótkim opisem. Potem będę czekać na odpowiedź w ciągu trzech dni roboczych." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci trimit astăzi fotografiile cu numărul comenzii și o scurtă descriere. Apoi aștept răspunsul dumneavoastră în termen de trei zile lucrătoare." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë do t'i dërgoj sot fotot me numrin e porosisë dhe një përshkrim të shkurtër. Pastaj do të pres përgjigjen tuaj brenda tre ditësh pune." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort fasst den nächsten Schritt und die Frist korrekt zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer correctly summarizes the next step and the deadline." },
+                { "language": "fa", "text": "این پاسخ قدم بعدی و مهلت را درست جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "تلخص الإجابة الخطوة التالية والمهلة بشكل صحيح." },
+                { "language": "tr", "text": "Cevap sonraki adımı ve süreyi doğru biçimde özetler." },
+                { "language": "ru", "text": "Ответ правильно резюмирует следующий шаг и срок." },
+                { "language": "ckb", "text": "وەڵامەکە هەنگاوی داهاتوو و ماوەکە بە دروستی کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv gava paşê û demê bi rastî kurt dike." },
+                { "language": "pl", "text": "Odpowiedź poprawnie podsumowuje kolejny krok i termin." },
+                { "language": "ro", "text": "Răspunsul rezumă corect pasul următor și termenul." },
+                { "language": "sq", "text": "Përgjigjja përmbledh saktë hapin tjetër dhe afatin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Okay, ich schicke Ihnen etwas. Danke.",
+              "translations": [
+                { "language": "en", "text": "Okay, I will send you something. Thank you." },
+                { "language": "fa", "text": "باشه، چیزی برایتان می‌فرستم. ممنون." },
+                { "language": "ar", "text": "حسناً، سأرسل لكم شيئاً. شكراً." },
+                { "language": "tr", "text": "Tamam, size bir şey gönderirim. Teşekkürler." },
+                { "language": "ru", "text": "Хорошо, я вам что-нибудь отправлю. Спасибо." },
+                { "language": "ckb", "text": "باشە، شتێکتان بۆ دەنێرم. سوپاس." },
+                { "language": "kmr", "text": "Baş e, ez ê tiştek ji we re bişînim. Spas." },
+                { "language": "pl", "text": "Dobrze, coś państwu wyślę. Dziękuję." },
+                { "language": "ro", "text": "Bine, vă trimit ceva. Mulțumesc." },
+                { "language": "sq", "text": "Në rregull, do t'ju dërgoj diçka. Faleminderit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu ungenau: Es fehlen Fotos, Bestellnummer, Beschreibung und die vereinbarte Frist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly but too vague: photos, order number, description, and the agreed deadline are missing." },
+                { "language": "fa", "text": "این دوستانه است، اما خیلی مبهم است: عکس‌ها، شماره سفارش، توضیح و مهلت توافق‌شده کم دارد." },
+                { "language": "ar", "text": "هذا لطيف لكنه غير دقيق جداً: تنقص الصور ورقم الطلب والوصف والمهلة المتفق عليها." },
+                { "language": "tr", "text": "Bu nazik ama çok belirsiz: fotoğraflar, sipariş numarası, açıklama ve kararlaştırılan süre eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком неопределённо: не хватает фотографий, номера заказа, описания и согласованного срока." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر ناڕوونە: وێنەکان، ژمارەی داواکاری، ڕوونکردنەوە و ماوەی ڕێککەوتوو کەمە." },
+                { "language": "kmr", "text": "Ev dilovan e, lê pir nezelal e: wêne, jimareya siparişê, ravekirin û dema lihevhatî kêm in." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt nieprecyzyjne: brakuje zdjęć, numeru zamówienia, opisu i ustalonego terminu." },
+                { "language": "ro", "text": "Este prietenos, dar prea vag: lipsesc fotografiile, numărul comenzii, descrierea și termenul convenit." },
+                { "language": "sq", "text": "Kjo është miqësore, por shumë e paqartë: mungojnë fotot, numri i porosisë, përshkrimi dhe afati i rënë dakord." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Eine Reklamation braucht konkrete Daten, ein sachliches Problem und eine passende Wunschloesung.",
+          "translations": [
+            { "language": "en", "text": "B1 target: a complaint needs concrete data, a factual problem, and a suitable desired solution." },
+            { "language": "fa", "text": "هدف B1: یک شکایت به داده‌های مشخص، مشکل عینی و راه‌حل مناسب نیاز دارد." },
+            { "language": "ar", "text": "هدف B1: تحتاج الشكوى إلى بيانات محددة ومشكلة موضوعية وحل مطلوب مناسب." },
+            { "language": "tr", "text": "B1 hedefi: bir şikayet somut bilgiler, nesnel bir sorun ve uygun bir istenen çözüm gerektirir." },
+            { "language": "ru", "text": "Цель B1: жалобе нужны конкретные данные, фактическая проблема и подходящее желаемое решение." },
+            { "language": "ckb", "text": "ئامانجی B1: سکاڵا پێویستی بە زانیاریی دیاریکراو، کێشەی بابەتی و چارەسەری خوازراوی گونجاو هەیە." },
+            { "language": "kmr", "text": "Armanca B1: gilîkirin daneyên zelal, pirsgirêkeke rast û çareseriya xwestî ya guncaw dixwaze." },
+            { "language": "pl", "text": "Cel B1: reklamacja potrzebuje konkretnych danych, rzeczowego problemu i odpowiedniego oczekiwanego rozwiązania." },
+            { "language": "ro", "text": "Ținta B1: o reclamație are nevoie de date concrete, o problemă factuală și o soluție dorită potrivită." },
+            { "language": "sq", "text": "Qëllimi B1: një ankesë ka nevojë për të dhëna konkrete, një problem faktik dhe një zgjidhje të përshtatshme të dëshiruar." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

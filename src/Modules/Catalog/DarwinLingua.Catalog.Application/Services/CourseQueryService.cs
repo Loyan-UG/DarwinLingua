@@ -5,12 +5,12 @@ namespace DarwinLingua.Catalog.Application.Services;
 
 internal sealed class CourseQueryService(ICourseRepository repository) : ICourseQueryService
 {
-    public Task<IReadOnlyList<CoursePathListItemModel>> GetPublishedCoursePathsAsync(CoursePathListFilterModel filter, CancellationToken cancellationToken) =>
-        repository.GetPublishedCoursePathsAsync(filter, cancellationToken);
+    public Task<IReadOnlyList<CoursePathListItemModel>> GetPublishedCoursePathsAsync(CoursePathListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedCoursePathsAsync(filter, primaryMeaningLanguageCode, cancellationToken);
 
-    public Task<CoursePathDetailModel?> GetPublishedCoursePathBySlugAsync(string slug, CancellationToken cancellationToken) =>
-        repository.GetPublishedCoursePathBySlugAsync(slug, cancellationToken);
+    public Task<CoursePathDetailModel?> GetPublishedCoursePathBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedCoursePathBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
 
-    public Task<CourseLessonDetailModel?> GetPublishedCourseLessonBySlugAsync(string slug, CancellationToken cancellationToken) =>
-        repository.GetPublishedCourseLessonBySlugAsync(slug, cancellationToken);
+    public Task<CourseLessonDetailModel?> GetPublishedCourseLessonBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedCourseLessonBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
 }

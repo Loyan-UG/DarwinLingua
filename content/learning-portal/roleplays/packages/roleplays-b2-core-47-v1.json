@@ -1,0 +1,662 @@
+{
+  "packageId": "roleplays-b2-core-47-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 47 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 47",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "culture": "de-DE",
+  "sourceLanguage": "de",
+  "notes": "B2 standalone RoleplayScenario package. German-first source content with localized learner-language projections. One scenario only for quality review.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-vertrag-kuendigen-und-nachhaken",
+      "linkedDialogueSlug": null,
+      "title": "Einen Vertrag kündigen und nachhaken",
+      "titleTranslations": [
+        { "language": "en", "text": "Canceling a contract and following up" },
+        { "language": "fa", "text": "لغو قرارداد و پیگیری آن" },
+        { "language": "ar", "text": "إلغاء عقد والمتابعة بشأنه" },
+        { "language": "tr", "text": "Bir sözleşmeyi feshetmek ve takip etmek" },
+        { "language": "ru", "text": "Расторгнуть договор и уточнить статус" },
+        { "language": "ckb", "text": "هەڵوەشاندنەوەی گرێبەست و بەدواداچوون" },
+        { "language": "kmr", "text": "Peymanek betal kirin û şopandin" },
+        { "language": "pl", "text": "Wypowiedzenie umowy i dalsze dopytanie" },
+        { "language": "ro", "text": "Rezilierea unui contract și urmărirea confirmării" },
+        { "language": "sq", "text": "Anulimi i një kontrate dhe ndjekja e çështjes" }
+      ],
+      "description": "Du hast einen Vertrag schriftlich gekündigt, aber noch keine Bestätigung erhalten. Am Telefon klärst du Eingang, Wirksamkeitsdatum, Restbeträge und eine verbindliche schriftliche Bestätigung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You have canceled a contract in writing, but have not received confirmation yet. On the phone, you clarify receipt, effective date, remaining charges, and binding written confirmation." },
+        { "language": "fa", "text": "قراردادی را کتبی لغو کرده‌ای، اما هنوز تأییدیه نگرفته‌ای. تلفنی دریافت درخواست، تاریخ اثرگذاری، مبلغ‌های باقی‌مانده و تأیید کتبی الزام‌آور را روشن می‌کنی." },
+        { "language": "ar", "text": "لقد ألغيت عقدًا كتابةً، لكنك لم تتلقَّ تأكيدًا بعد. عبر الهاتف توضّح وصول الطلب وتاريخ السريان والمبالغ المتبقية والتأكيد الكتابي الملزم." },
+        { "language": "tr", "text": "Bir sözleşmeyi yazılı olarak feshettin, ancak henüz onay almadın. Telefonda başvurunun ulaşıp ulaşmadığını, yürürlük tarihini, kalan tutarları ve bağlayıcı yazılı onayı netleştiriyorsun." },
+        { "language": "ru", "text": "Ты письменно расторг договор, но еще не получил подтверждение. По телефону ты уточняешь получение заявления, дату вступления в силу, остаточные суммы и обязательное письменное подтверждение." },
+        { "language": "ckb", "text": "گرێبەستێکت بە نووسراوی هەڵوەشاندووەتەوە، بەڵام هێشتا پشتڕاستکردنەوەت وەرنەگرتووە. لە تەلەفۆندا گەیشتنی داواکاری، بەرواری کاریگەر، بڕە پارەی ماوە و پشتڕاستکردنەوەی نووسراوی پابەند ڕوون دەکەیتەوە." },
+        { "language": "kmr", "text": "Te peymanek bi nivîskî betal kiriye, lê hêj piştrastkirin negirtiye. Bi telefonê tu gihiştina daxwazê, roja derbasbûnê, meblağên mayî û piştrastkirina nivîskî ya girêdayî zelal dikî." },
+        { "language": "pl", "text": "Wypowiedziałeś umowę pisemnie, ale nie otrzymałeś jeszcze potwierdzenia. Przez telefon wyjaśniasz wpływ wypowiedzenia, datę skuteczności, pozostałe kwoty i wiążące potwierdzenie pisemne." },
+        { "language": "ro", "text": "Ai reziliat un contract în scris, dar nu ai primit încă o confirmare. La telefon clarifici primirea cererii, data efectivă, sumele rămase și o confirmare scrisă obligatorie." },
+        { "language": "sq", "text": "Ke anuluar një kontratë me shkrim, por ende nuk ke marrë konfirmim. Në telefon sqaron marrjen e kërkesës, datën e hyrjes në fuqi, shumat e mbetura dhe një konfirmim detyrues me shkrim." }
+      ],
+      "learnerGoal": "Kläre den Status einer Kündigung präzise: Nachweis nennen, Wirksamkeitsdatum sichern, Restkosten abfragen und eine schriftliche Bestätigung verlangen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify the status of a cancellation precisely: name your proof, secure the effective date, ask about remaining charges, and request written confirmation." },
+        { "language": "fa", "text": "وضعیت لغو را دقیق روشن کن: مدرک خودت را نام ببر، تاریخ اثرگذاری را قطعی کن، درباره‌ی هزینه‌های باقی‌مانده بپرس و تأیید کتبی بخواه." },
+        { "language": "ar", "text": "وضّح حالة الإلغاء بدقة: اذكر دليلك، وثبّت تاريخ السريان، واسأل عن التكاليف المتبقية، واطلب تأكيدًا مكتوبًا." },
+        { "language": "tr", "text": "Fesih durumunu netleştir: kanıtını belirt, geçerli tarihi güvenceye al, kalan masrafları sor ve yazılı onay iste." },
+        { "language": "ru", "text": "Точно уточни статус расторжения: назови доказательство, зафиксируй дату вступления в силу, спроси об оставшихся расходах и потребуй письменное подтверждение." },
+        { "language": "ckb", "text": "دۆخی هەڵوەشاندنەوەکە بە وردی ڕوون بکە: بەڵگەکەت ناو ببە، بەرواری کاریگەر دڵنیا بکە، پرسیار لەسەر تێچووی ماوە بکە و پشتڕاستکردنەوەی نووسراو بخوازە." },
+        { "language": "kmr", "text": "Rewşa betalkirinê bi zelalî eşkere bike: belgeya xwe bibêje, roja derbasbûnê ewle bike, li ser lêçûnên mayî bipirse û piştrastkirina nivîskî bixwaze." },
+        { "language": "pl", "text": "Precyzyjnie wyjaśnij status wypowiedzenia: wskaż dowód, zabezpiecz datę skuteczności, zapytaj o pozostałe koszty i poproś o pisemne potwierdzenie." },
+        { "language": "ro", "text": "Clarifică precis statutul rezilierii: numește dovada, asigură data efectivă, întreabă despre costurile rămase și cere confirmare scrisă." },
+        { "language": "sq", "text": "Sqaro saktë statusin e anulimit: përmend provën, siguro datën e hyrjes në fuqi, pyet për kostot e mbetura dhe kërko konfirmim me shkrim." }
+      ],
+      "cefrLevel": "B2",
+      "category": "customer-service",
+      "topics": [
+        "customer-service",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "taskType": "ask-for-information",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "service-agent",
+          "displayName": "Kundenservice",
+          "translations": [
+            { "language": "en", "text": "Customer service" },
+            { "language": "fa", "text": "خدمات مشتری" },
+            { "language": "ar", "text": "خدمة العملاء" },
+            { "language": "tr", "text": "Müşteri hizmetleri" },
+            { "language": "ru", "text": "Служба поддержки" },
+            { "language": "ckb", "text": "خزمەتگوزاری کڕیاران" },
+            { "language": "kmr", "text": "Xizmeta mişteriyan" },
+            { "language": "pl", "text": "Obsługa klienta" },
+            { "language": "ro", "text": "Serviciul clienți" },
+            { "language": "sq", "text": "Shërbimi ndaj klientit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kunde",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "العميل" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиент" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Mişterî" },
+            { "language": "pl", "text": "Klient" },
+            { "language": "ro", "text": "Client" },
+            { "language": "sq", "text": "Klienti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "service-agent",
+          "baseText": "Kundenservice der Firma Connecta, guten Tag. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Connecta customer service, good day. What can I do for you?" },
+            { "language": "fa", "text": "خدمات مشتری شرکت کونکتا، روز بخیر. چه کاری می‌توانم برای شما انجام بدهم؟" },
+            { "language": "ar", "text": "خدمة عملاء شركة كونكتا، نهارك سعيد. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "Connecta müşteri hizmetleri, iyi günler. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Служба поддержки компании Connecta, добрый день. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "خزمەتگوزاری کڕیارانی کۆمپانیای کۆنێکتا، ڕۆژ باش. چۆن دەتوانم یارمەتیت بدەم؟" },
+            { "language": "kmr", "text": "Xizmeta mişteriyan a şirketa Connecta, roj baş. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Obsługa klienta firmy Connecta, dzień dobry. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Serviciul clienți al firmei Connecta, bună ziua. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Shërbimi ndaj klientit i firmës Connecta, mirëdita. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening",
+          "toneNote": "Formeller Serviceeinstieg am Telefon.",
+          "expectedLearnerAction": "Anliegen und Kündigungsstatus nennen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe meinen Vertrag am 14. Mai per E-Mail gekündigt und bisher keine Bestätigung erhalten. Ich möchte nachfragen, ob die Kündigung eingegangen ist und zu welchem Datum sie wirksam wird.",
+          "translations": [
+            { "language": "en", "text": "Good day. I canceled my contract by email on May 14 and have not received confirmation yet. I would like to ask whether the cancellation was received and on which date it becomes effective." },
+            { "language": "fa", "text": "روز بخیر. من قرارداد خودم را در ۱۴ مه از طریق ایمیل لغو کردم و تا حالا تأییدیه‌ای نگرفته‌ام. می‌خواهم پیگیری کنم آیا درخواست لغو دریافت شده و از چه تاریخی اثرگذار می‌شود." },
+            { "language": "ar", "text": "نهارك سعيد. ألغيت عقدي عبر البريد الإلكتروني في 14 مايو ولم أتلقَّ تأكيدًا حتى الآن. أود الاستفسار عما إذا كان طلب الإلغاء قد وصل، ومن أي تاريخ يصبح ساريًا." },
+            { "language": "tr", "text": "İyi günler. Sözleşmemi 14 Mayıs'ta e-posta ile feshettim ve henüz onay almadım. Feshin ulaşıp ulaşmadığını ve hangi tarihten itibaren geçerli olacağını sormak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я расторг свой договор по электронной почте 14 мая и пока не получил подтверждение. Я хотел бы уточнить, получено ли заявление и с какой даты оно вступит в силу." },
+            { "language": "ckb", "text": "ڕۆژ باش. من گرێبەستەکەم لە ١٤ی مای بە نامەی ئەلیکترۆنی هەڵوەشاندەوە و تا ئێستا پشتڕاستکردنەوەم وەرنەگرتووە. دەمەوێت بپرسم ئایا داواکاری هەڵوەشاندنەوەکە گەیشتووە و لە چ بەروارێکەوە کاریگەر دەبێت." },
+            { "language": "kmr", "text": "Roj baş. Min peymana xwe di 14ê Gulanê de bi nameya elektronîkî betal kir û hêj piştrastkirin negirtiye. Dixwazim bipirsim ka betalkirin gihiştiye û ji kîjan rojê ve derbas dibe." },
+            { "language": "pl", "text": "Dzień dobry. Wypowiedziałem umowę e-mailem 14 maja i dotąd nie otrzymałem potwierdzenia. Chciałbym zapytać, czy wypowiedzenie wpłynęło i od jakiej daty będzie skuteczne." },
+            { "language": "ro", "text": "Bună ziua. Mi-am reziliat contractul prin e-mail pe 14 mai și nu am primit încă o confirmare. Aș dori să întreb dacă cererea de reziliere a fost primită și de la ce dată devine efectivă." },
+            { "language": "sq", "text": "Mirëdita. E anulova kontratën time me email më 14 maj dhe ende nuk kam marrë konfirmim. Dua të pyes nëse kërkesa e anulimit është marrë dhe nga cila datë hyn në fuqi." }
+          ],
+          "function": "status request",
+          "toneNote": "Der Einstieg nennt Datum, Kanal und konkrete Klärungsfragen.",
+          "expectedLearnerAction": "Kündigung, Nachweis und Ziel der Nachfrage klar nennen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "service-agent",
+          "baseText": "Ich schaue gern nach. Haben Sie Ihre Kundennummer oder Vertragsnummer zur Hand?",
+          "translations": [
+            { "language": "en", "text": "I will gladly check. Do you have your customer number or contract number at hand?" },
+            { "language": "fa", "text": "با کمال میل بررسی می‌کنم. شماره مشتری یا شماره قرارداد را در دسترس دارید؟" },
+            { "language": "ar", "text": "سأتحقق بكل سرور. هل لديك رقم العميل أو رقم العقد؟" },
+            { "language": "tr", "text": "Memnuniyetle kontrol ederim. Müşteri numaranız veya sözleşme numaranız yanınızda mı?" },
+            { "language": "ru", "text": "Я с удовольствием проверю. У вас под рукой номер клиента или номер договора?" },
+            { "language": "ckb", "text": "بە دڵنیاییەوە دەیپشکنم. ژمارەی کڕیار یان ژمارەی گرێبەست لەبەردەستتدایە؟" },
+            { "language": "kmr", "text": "Ez bi kêfxweşî kontrol dikim. Hejmareya mişterî an hejmareya peymanê li ber destê we heye?" },
+            { "language": "pl", "text": "Chętnie sprawdzę. Czy ma pan/pani pod ręką numer klienta albo numer umowy?" },
+            { "language": "ro", "text": "Verific cu plăcere. Aveți la îndemână numărul de client sau numărul contractului?" },
+            { "language": "sq", "text": "Do ta kontrolloj me kënaqësi. A e keni pranë numrin e klientit ose numrin e kontratës?" }
+          ],
+          "function": "request identifier",
+          "toneNote": "Der Service braucht eine eindeutige Zuordnung.",
+          "expectedLearnerAction": "Vertragsdaten nennen und die Kündigungsfrist ansprechen."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, meine Kundennummer ist 48291, die Vertragsnummer lautet C-7782. Laut Vertrag ist die Mindestlaufzeit bereits vorbei, deshalb sollte die Kündigung zum Ende des nächsten Monats möglich sein. Können Sie das bitte prüfen?",
+          "translations": [
+            { "language": "en", "text": "Yes, my customer number is 48291, and the contract number is C-7782. According to the contract, the minimum term has already ended, so cancellation should be possible at the end of next month. Could you please check that?" },
+            { "language": "fa", "text": "بله، شماره مشتری من ۴۸۲۹۱ است و شماره قرارداد C-7782 است. طبق قرارداد، حداقل مدت قرارداد قبلاً تمام شده، پس لغو باید برای پایان ماه آینده ممکن باشد. لطفاً می‌توانید این را بررسی کنید؟" },
+            { "language": "ar", "text": "نعم، رقم العميل لدي هو 48291، ورقم العقد هو C-7782. حسب العقد، انتهت مدة الحد الأدنى بالفعل، لذلك ينبغي أن يكون الإلغاء ممكنًا في نهاية الشهر القادم. هل يمكنكم التحقق من ذلك؟" },
+            { "language": "tr", "text": "Evet, müşteri numaram 48291, sözleşme numaram C-7782. Sözleşmeye göre asgari süre zaten sona erdi, bu nedenle fesih gelecek ayın sonunda mümkün olmalı. Bunu kontrol edebilir misiniz?" },
+            { "language": "ru", "text": "Да, мой номер клиента 48291, номер договора C-7782. Согласно договору, минимальный срок уже закончился, поэтому расторжение должно быть возможно к концу следующего месяца. Можете это проверить?" },
+            { "language": "ckb", "text": "بەڵێ، ژمارەی کڕیارەکەم ٤٨٢٩١ە و ژمارەی گرێبەستەکە C-7782ە. بەپێی گرێبەستەکە، ماوەی کەمینە پێشتر تەواو بووە، بۆیە دەبێت هەڵوەشاندنەوە بۆ کۆتایی مانگی داهاتوو ممکن بێت. تکایە دەتوانن ئەمە بپشکنن؟" },
+            { "language": "kmr", "text": "Erê, hejmareya mişteriya min 48291 e, hejmareya peymanê C-7782 e. Li gorî peymanê, dema herî kêm jixwe qediya, ji ber vê divê betalkirin heta dawiya meha bê gengaz be. Hûn dikarin vê kontrol bikin?" },
+            { "language": "pl", "text": "Tak, mój numer klienta to 48291, a numer umowy to C-7782. Zgodnie z umową minimalny okres już minął, dlatego wypowiedzenie powinno być możliwe na koniec przyszłego miesiąca. Czy mogą państwo to sprawdzić?" },
+            { "language": "ro", "text": "Da, numărul meu de client este 48291, iar numărul contractului este C-7782. Conform contractului, perioada minimă a trecut deja, deci rezilierea ar trebui să fie posibilă la sfârșitul lunii viitoare. Puteți verifica, vă rog?" },
+            { "language": "sq", "text": "Po, numri im i klientit është 48291, numri i kontratës është C-7782. Sipas kontratës, periudha minimale ka përfunduar tashmë, prandaj anulimi duhet të jetë i mundur në fund të muajit të ardhshëm. A mund ta kontrolloni ju lutem?" }
+          ],
+          "function": "provide identifiers",
+          "toneNote": "Du verbindest Identifikationsdaten mit einer begründeten Erwartung.",
+          "expectedLearnerAction": "Nummern nennen und rechtliche Grundlage vorsichtig formulieren."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "service-agent",
+          "baseText": "Ich sehe Ihre E-Mail im System, sie wurde aber noch nicht abschließend bearbeitet. Nach aktuellem Stand wäre der Vertrag zum 30. Juni kündbar.",
+          "translations": [
+            { "language": "en", "text": "I can see your email in the system, but it has not been fully processed yet. According to the current status, the contract could be canceled as of June 30." },
+            { "language": "fa", "text": "ایمیل شما را در سیستم می‌بینم، اما هنوز به‌طور نهایی پردازش نشده است. طبق وضعیت فعلی، قرارداد برای ۳۰ ژوئن قابل لغو است." },
+            { "language": "ar", "text": "أرى بريدك الإلكتروني في النظام، لكنه لم يُعالج نهائيًا بعد. وفقًا للحالة الحالية، يمكن إنهاء العقد في 30 يونيو." },
+            { "language": "tr", "text": "E-postanızı sistemde görüyorum, ancak henüz nihai olarak işlenmemiş. Mevcut duruma göre sözleşme 30 Haziran itibarıyla feshedilebilir." },
+            { "language": "ru", "text": "Я вижу ваше письмо в системе, но оно еще не обработано окончательно. По текущему состоянию договор может быть расторгнут на 30 июня." },
+            { "language": "ckb", "text": "نامەی ئەلیکترۆنییەکەت لە سیستەمدا دەبینم، بەڵام هێشتا بە تەواوی چارەسەر نەکراوە. بەپێی دۆخی ئێستا، گرێبەستەکە دەتوانرێت لە ٣٠ی حوزەیران هەڵبوەشێنرێتەوە." },
+            { "language": "kmr", "text": "Ez nameya we ya elektronîkî di pergalê de dibînim, lê hêj bi dawî nehatiye xebitandin. Li gorî rewşa niha, peyman dikare di 30ê Hezîranê de were betalkirin." },
+            { "language": "pl", "text": "Widzę państwa e-mail w systemie, ale nie został jeszcze ostatecznie opracowany. Zgodnie z aktualnym stanem umowę można wypowiedzieć na 30 czerwca." },
+            { "language": "ro", "text": "Văd e-mailul dumneavoastră în sistem, dar nu a fost procesat definitiv. Conform situației actuale, contractul poate fi reziliat la 30 iunie." },
+            { "language": "sq", "text": "E shoh emailin tuaj në sistem, por ende nuk është përpunuar përfundimisht. Sipas gjendjes aktuale, kontrata mund të anulohet më 30 qershor." }
+          ],
+          "function": "status update",
+          "toneNote": "Der Service bestätigt Eingang, aber noch keine verbindliche Bearbeitung.",
+          "expectedLearnerAction": "Eingangsdatum und schriftliche Bestätigung absichern."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Gut, dann bitte ich darum, den Eingang meiner Kündigung vom 14. Mai im Vorgang festzuhalten und mir den 30. Juni als Beendigungsdatum schriftlich zu bestätigen. Mir ist wichtig, dass daraus keine automatische Verlängerung entsteht.",
+          "translations": [
+            { "language": "en", "text": "Good, then I ask you to record the receipt of my cancellation from May 14 in the case and to confirm June 30 as the end date in writing. It is important to me that this does not lead to an automatic renewal." },
+            { "language": "fa", "text": "خوب، پس لطفاً دریافت درخواست لغو من در ۱۴ مه را در پرونده ثبت کنید و تاریخ ۳۰ ژوئن را به عنوان تاریخ پایان قرارداد کتبی تأیید کنید. برای من مهم است که از این موضوع تمدید خودکار ایجاد نشود." },
+            { "language": "ar", "text": "حسنًا، إذن أطلب تسجيل وصول طلب الإلغاء المؤرخ في 14 مايو في الملف، وتأكيد 30 يونيو كتابيًا كتاريخ انتهاء. من المهم بالنسبة لي ألا يؤدي ذلك إلى تمديد تلقائي." },
+            { "language": "tr", "text": "Peki, o hâlde 14 Mayıs tarihli fesih talebimin ulaştığını dosyaya kaydetmenizi ve 30 Haziran'ı bitiş tarihi olarak yazılı biçimde onaylamanızı rica ediyorum. Bunun otomatik uzatmaya yol açmaması benim için önemli." },
+            { "language": "ru", "text": "Хорошо, тогда прошу зафиксировать в деле получение моего заявления от 14 мая и письменно подтвердить 30 июня как дату окончания. Для меня важно, чтобы из этого не возникло автоматическое продление." },
+            { "language": "ckb", "text": "باشە، کەواتە داوا دەکەم گەیشتنی داواکاری هەڵوەشاندنەوەکەم لە ١٤ی مای لە پرۆسەکەدا تۆمار بکرێت و ٣٠ی حوزەیران وەک بەرواری کۆتایی بە نووسراوی پشتڕاست بکرێتەوە. بۆ من گرنگە کە ئەمە نەبێتە هۆی درێژکردنەوەی خۆکار." },
+            { "language": "kmr", "text": "Baş e, hingê ez dixwazim ku gihiştina betalkirina min a 14ê Gulanê di dosyayê de were tomar kirin û 30ê Hezîranê wek roja dawî bi nivîskî were piştrastkirin. Ji bo min girîng e ku ev nebe sedema dirêjkirina xweber." },
+            { "language": "pl", "text": "Dobrze, w takim razie proszę odnotować w sprawie wpływ mojego wypowiedzenia z 14 maja i pisemnie potwierdzić 30 czerwca jako datę zakończenia. Ważne jest dla mnie, aby nie doszło do automatycznego przedłużenia." },
+            { "language": "ro", "text": "Bine, atunci vă rog să consemnați în dosar primirea rezilierii mele din 14 mai și să îmi confirmați în scris data de 30 iunie ca dată de încetare. Pentru mine este important să nu rezulte o prelungire automată." },
+            { "language": "sq", "text": "Mirë, atëherë ju lutem ta shënoni në dosje marrjen e anulimit tim të datës 14 maj dhe të ma konfirmoni me shkrim 30 qershorin si datë përfundimi. Për mua është e rëndësishme që kjo të mos çojë në zgjatje automatike." }
+          ],
+          "function": "secure effective date",
+          "toneNote": "Du verlangst eine verbindliche Dokumentation, ohne den Service anzugreifen.",
+          "expectedLearnerAction": "Eingang, Enddatum und automatische Verlängerung klären."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "service-agent",
+          "baseText": "Das kann ich so vermerken. Es können allerdings noch anteilige Kosten bis zum Vertragsende anfallen.",
+          "translations": [
+            { "language": "en", "text": "I can note it that way. However, prorated costs may still apply until the end of the contract." },
+            { "language": "fa", "text": "می‌توانم همین‌طور ثبت کنم. با این حال ممکن است تا پایان قرارداد، هزینه‌های نسبی باقی‌مانده محاسبه شود." },
+            { "language": "ar", "text": "يمكنني تسجيل ذلك بهذه الطريقة. ومع ذلك قد تترتب تكاليف نسبية حتى نهاية العقد." },
+            { "language": "tr", "text": "Bunu bu şekilde not edebilirim. Ancak sözleşme sonuna kadar orantılı masraflar çıkabilir." },
+            { "language": "ru", "text": "Я могу так это отметить. Однако до окончания договора могут возникнуть пропорциональные расходы." },
+            { "language": "ckb", "text": "دەتوانم بەو شێوەیە تۆماری بکەم. بەڵام لەوانەیە تا کۆتایی گرێبەستەکە تێچووی بەشەکی ماوە هەبێت." },
+            { "language": "kmr", "text": "Ez dikarim wisa tomar bikim. Lê dibe ku heta dawiya peymanê lêçûnên beşî hîn jî hebin." },
+            { "language": "pl", "text": "Mogę to tak odnotować. Mogą jednak jeszcze wystąpić proporcjonalne koszty do końca umowy." },
+            { "language": "ro", "text": "Pot nota acest lucru astfel. Totuși, pot apărea costuri proporționale până la sfârșitul contractului." },
+            { "language": "sq", "text": "Mund ta shënoj kështu. Megjithatë mund të ketë ende kosto proporcionale deri në përfundimin e kontratës." }
+          ],
+          "function": "remaining costs warning",
+          "toneNote": "Der Service weist auf mögliche Restkosten hin.",
+          "expectedLearnerAction": "Restbeträge und Zahlungsweg konkret abfragen."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Bitte teilen Sie mir auch mit, welche Restbeträge bis zum 30. Juni noch offen sind und ob die Einzugsermächtigung danach automatisch endet. Falls ich selbst etwas widerrufen muss, möchte ich das rechtzeitig wissen.",
+          "translations": [
+            { "language": "en", "text": "Please also tell me which remaining amounts are still open until June 30 and whether the direct debit authorization ends automatically afterward. If I need to revoke anything myself, I would like to know in time." },
+            { "language": "fa", "text": "لطفاً همچنین به من بگویید تا ۳۰ ژوئن چه مبلغ‌های باقی‌مانده‌ای هنوز باز است و آیا اجازه برداشت بانکی بعد از آن خودکار پایان می‌یابد. اگر لازم است چیزی را خودم لغو کنم، می‌خواهم به‌موقع بدانم." },
+            { "language": "ar", "text": "يرجى أيضًا إخباري بالمبالغ المتبقية المفتوحة حتى 30 يونيو، وما إذا كان تفويض السحب البنكي ينتهي تلقائيًا بعد ذلك. إذا كان عليّ إلغاء شيء بنفسي، أود معرفة ذلك في الوقت المناسب." },
+            { "language": "tr", "text": "Lütfen 30 Haziran'a kadar hangi kalan tutarların açık olduğunu ve otomatik ödeme izninin bundan sonra kendiliğinden sona erip ermediğini de bildirin. Kendim iptal etmem gereken bir şey varsa bunu zamanında bilmek isterim." },
+            { "language": "ru", "text": "Пожалуйста, также сообщите, какие остаточные суммы еще открыты до 30 июня и заканчивается ли после этого разрешение на списание автоматически. Если мне нужно что-то отозвать самостоятельно, я хотел бы узнать об этом вовремя." },
+            { "language": "ckb", "text": "تکایە هەروەها پێم بڵێن تا ٣٠ی حوزەیران چ بڕە پارەیەکی ماوە هێشتا کراوەیە و ئایا مۆڵەتی ڕاکێشانی بانکی دوای ئەوە خۆکار کۆتایی دێت. ئەگەر پێویست بێت من خۆم شتێک هەڵبوەشێنمەوە، دەمەوێت لە کاتی خۆیدا بزانم." },
+            { "language": "kmr", "text": "Ji kerema xwe her weha ji min re bibêjin heta 30ê Hezîranê kîjan meblağên mayî hîn vekirî ne û gelo destûra kişandina bankê piştî wê xweber bi dawî dibe. Heke divê ez bixwe tiştekî betal bikim, dixwazim di demê de bizanim." },
+            { "language": "pl", "text": "Proszę też poinformować mnie, jakie pozostałe kwoty są jeszcze otwarte do 30 czerwca i czy upoważnienie do polecenia zapłaty potem automatycznie wygasa. Jeśli muszę coś samodzielnie odwołać, chcę wiedzieć o tym odpowiednio wcześniej." },
+            { "language": "ro", "text": "Vă rog să îmi comunicați și ce sume rămase mai sunt deschise până la 30 iunie și dacă autorizația de debitare automată încetează automat după aceea. Dacă trebuie să revoc eu ceva, vreau să știu din timp." },
+            { "language": "sq", "text": "Ju lutem më tregoni edhe cilat shuma të mbetura janë ende të hapura deri më 30 qershor dhe nëse autorizimi i tërheqjes bankare përfundon automatikisht pas kësaj. Nëse duhet të anuloj diçka vetë, dua ta di në kohë." }
+          ],
+          "function": "clarify remaining charges",
+          "toneNote": "Du klärst nicht nur das Ende, sondern auch Zahlungsfolgen und eigene Pflichten.",
+          "expectedLearnerAction": "Restkosten, Lastschrift und eigene Schritte abfragen."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "service-agent",
+          "baseText": "Ich sende Ihnen eine Bestätigung mit Beendigungsdatum, Restbetrag und Hinweis zur Einzugsermächtigung. Sie sollten sie spätestens morgen erhalten.",
+          "translations": [
+            { "language": "en", "text": "I will send you a confirmation with the end date, remaining amount, and a note about the direct debit authorization. You should receive it by tomorrow at the latest." },
+            { "language": "fa", "text": "برای شما تأییدیه‌ای با تاریخ پایان، مبلغ باقی‌مانده و توضیح درباره‌ی اجازه برداشت بانکی می‌فرستم. باید حداکثر تا فردا آن را دریافت کنید." },
+            { "language": "ar", "text": "سأرسل لك تأكيدًا يتضمن تاريخ الانتهاء والمبلغ المتبقي وملاحظة حول تفويض السحب البنكي. ينبغي أن يصلك في موعد أقصاه غدًا." },
+            { "language": "tr", "text": "Size bitiş tarihi, kalan tutar ve otomatik ödeme izniyle ilgili not içeren bir onay göndereceğim. En geç yarına kadar almış olmalısınız." },
+            { "language": "ru", "text": "Я отправлю вам подтверждение с датой окончания, оставшейся суммой и примечанием о разрешении на списание. Вы должны получить его не позднее завтра." },
+            { "language": "ckb", "text": "پشتڕاستکردنەوەیەکت بۆ دەنێرم کە بەرواری کۆتایی، بڕی پارەی ماوە و تێبینی لەسەر مۆڵەتی ڕاکێشانی بانکی تێدایە. پێویستە تا سبەی زۆرترین کات وەریبگریت." },
+            { "language": "kmr", "text": "Ez ê piştrastkirinek bi roja dawî, meblağa mayî û agahdariya li ser destûra kişandina bankê ji we re bişînim. Divê hûn herî dereng heta sibê bistînin." },
+            { "language": "pl", "text": "Wyślę potwierdzenie z datą zakończenia, pozostałą kwotą i informacją o upoważnieniu do polecenia zapłaty. Powinien je pan/pani otrzymać najpóźniej jutro." },
+            { "language": "ro", "text": "Vă trimit o confirmare cu data încetării, suma rămasă și o mențiune despre autorizația de debitare automată. Ar trebui să o primiți cel târziu mâine." },
+            { "language": "sq", "text": "Do t'ju dërgoj një konfirmim me datën e përfundimit, shumën e mbetur dhe shënimin për autorizimin e tërheqjes bankare. Duhet ta merrni më së voni nesër." }
+          ],
+          "function": "promise confirmation",
+          "toneNote": "Der Service nennt konkrete Inhalte und Frist der Bestätigung.",
+          "expectedLearnerAction": "Zusammenfassen und Eskalationspfad bei fehlender Bestätigung sichern."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann erwarte ich bis morgen die schriftliche Bestätigung mit dem Beendigungsdatum 30. Juni, den Restbeträgen und dem Hinweis zur Einzugsermächtigung. Falls nichts ankommt, melde ich mich mit der Vorgangsnummer erneut.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I expect the written confirmation by tomorrow with the end date of June 30, the remaining amounts, and the note about the direct debit authorization. If nothing arrives, I will contact you again with the case number." },
+            { "language": "fa", "text": "بسیار ممنون. پس تا فردا منتظر تأیید کتبی با تاریخ پایان ۳۰ ژوئن، مبلغ‌های باقی‌مانده و توضیح درباره‌ی اجازه برداشت بانکی هستم. اگر چیزی نرسد، دوباره با شماره پرونده تماس می‌گیرم." },
+            { "language": "ar", "text": "شكرًا جزيلًا. إذن أنتظر حتى الغد التأكيد الكتابي مع تاريخ الانتهاء في 30 يونيو، والمبالغ المتبقية، والملاحظة حول تفويض السحب البنكي. إذا لم يصل شيء، فسأتواصل مجددًا باستخدام رقم الملف." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O hâlde yarına kadar 30 Haziran bitiş tarihi, kalan tutarlar ve otomatik ödeme izniyle ilgili not içeren yazılı onayı bekliyorum. Hiçbir şey gelmezse dosya numarasıyla tekrar iletişime geçeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда до завтра я ожидаю письменное подтверждение с датой окончания 30 июня, оставшимися суммами и примечанием о разрешении на списание. Если ничего не придет, я снова свяжусь с вами с номером дела." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە تا سبەی چاوەڕێی پشتڕاستکردنەوەی نووسراوم لەگەڵ بەرواری کۆتایی ٣٠ی حوزەیران، بڕە پارەی ماوە و تێبینی لەسەر مۆڵەتی ڕاکێشانی بانکی. ئەگەر هیچ شتێک نەگات، بە ژمارەی پرۆسەکەوە دووبارە پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Gelek spas. Hingê ez heta sibê li benda piştrastkirina nivîskî me bi roja dawî ya 30ê Hezîranê, meblağên mayî û agahdariya li ser destûra kişandina bankê. Heke tiştek negihêje, ez ê bi hejmareya dozê careke din têkilî bigirim." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie do jutra oczekuję pisemnego potwierdzenia z datą zakończenia 30 czerwca, pozostałymi kwotami i informacją o poleceniu zapłaty. Jeśli nic nie przyjdzie, skontaktuję się ponownie z numerem sprawy." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci aștept până mâine confirmarea scrisă cu data încetării la 30 iunie, sumele rămase și mențiunea despre autorizația de debitare automată. Dacă nu primesc nimic, revin cu numărul cazului." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë deri nesër pres konfirmimin me shkrim me datën e përfundimit 30 qershor, shumat e mbetura dhe shënimin për autorizimin e tërheqjes bankare. Nëse nuk vjen asgjë, do të kontaktoj përsëri me numrin e rastit." }
+          ],
+          "function": "closing summary",
+          "toneNote": "Der Abschluss sichert Inhalt, Frist und nächsten Schritt ab.",
+          "expectedLearnerAction": "Vereinbarung konkret zusammenfassen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "b2-contract-47-t2-a",
+              "text": "Guten Tag. Ich habe meinen Vertrag am 14. Mai per E-Mail gekündigt und bisher keine Bestätigung erhalten. Ich möchte nachfragen, ob die Kündigung eingegangen ist und zu welchem Datum sie wirksam wird.",
+              "translations": [
+                { "language": "en", "text": "Good day. I canceled my contract by email on May 14 and have not received confirmation yet. I would like to ask whether the cancellation was received and on which date it becomes effective." },
+                { "language": "fa", "text": "روز بخیر. من قرارداد خودم را در ۱۴ مه از طریق ایمیل لغو کردم و تا حالا تأییدیه‌ای نگرفته‌ام. می‌خواهم پیگیری کنم آیا درخواست لغو دریافت شده و از چه تاریخی اثرگذار می‌شود." },
+                { "language": "ar", "text": "نهارك سعيد. ألغيت عقدي عبر البريد الإلكتروني في 14 مايو ولم أتلقَّ تأكيدًا حتى الآن. أود الاستفسار عما إذا كان طلب الإلغاء قد وصل، ومن أي تاريخ يصبح ساريًا." },
+                { "language": "tr", "text": "İyi günler. Sözleşmemi 14 Mayıs'ta e-posta ile feshettim ve henüz onay almadım. Feshin ulaşıp ulaşmadığını ve hangi tarihten itibaren geçerli olacağını sormak istiyorum." },
+                { "language": "ru", "text": "Добрый день. Я расторг свой договор по электронной почте 14 мая и пока не получил подтверждение. Я хотел бы уточнить, получено ли заявление и с какой даты оно вступит в силу." },
+                { "language": "ckb", "text": "ڕۆژ باش. من گرێبەستەکەم لە ١٤ی مای بە نامەی ئەلیکترۆنی هەڵوەشاندەوە و تا ئێستا پشتڕاستکردنەوەم وەرنەگرتووە. دەمەوێت بپرسم ئایا داواکاری هەڵوەشاندنەوەکە گەیشتووە و لە چ بەروارێکەوە کاریگەر دەبێت." },
+                { "language": "kmr", "text": "Roj baş. Min peymana xwe di 14ê Gulanê de bi nameya elektronîkî betal kir û hêj piştrastkirin negirtiye. Dixwazim bipirsim ka betalkirin gihiştiye û ji kîjan rojê ve derbas dibe." },
+                { "language": "pl", "text": "Dzień dobry. Wypowiedziałem umowę e-mailem 14 maja i dotąd nie otrzymałem potwierdzenia. Chciałbym zapytać, czy wypowiedzenie wpłynęło i od jakiej daty będzie skuteczne." },
+                { "language": "ro", "text": "Bună ziua. Mi-am reziliat contractul prin e-mail pe 14 mai și nu am primit încă o confirmare. Aș dori să întreb dacă cererea de reziliere a fost primită și de la ce dată devine efectivă." },
+                { "language": "sq", "text": "Mirëdita. E anulova kontratën time me email më 14 maj dhe ende nuk kam marrë konfirmim. Dua të pyes nëse kërkesa e anulimit është marrë dhe nga cila datë hyn në fuqi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist stark: Du nennst Datum, Kanal und zwei konkrete Klärungsfragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is strong: you state the date, channel, and two concrete clarification questions." },
+                { "language": "fa", "text": "این پاسخ قوی است: تاریخ، روش ارسال و دو سؤال روشن برای پیگیری را می‌گویی." },
+                { "language": "ar", "text": "هذه إجابة قوية: تذكر التاريخ والطريقة وسؤالين محددين للتوضيح." },
+                { "language": "tr", "text": "Bu güçlü bir cevap: tarihi, iletişim yolunu ve iki somut açıklama sorusunu belirtiyorsun." },
+                { "language": "ru", "text": "Это сильный ответ: ты называешь дату, канал отправки и два конкретных вопроса для уточнения." },
+                { "language": "ckb", "text": "ئەم وەڵامە بەهێزە: بەروار، شێوازی ناردن و دوو پرسیاری ڕوون بۆ ڕوونکردنەوە دەڵێیت." },
+                { "language": "kmr", "text": "Ev bersiv bihêz e: tu dîrok, rêya şandinê û du pirsên zelal ji bo eşkerekirinê dibêjî." },
+                { "language": "pl", "text": "To mocna odpowiedź: podajesz datę, kanał wysłania i dwa konkretne pytania wyjaśniające." },
+                { "language": "ro", "text": "Este un răspuns puternic: menționezi data, canalul și două întrebări concrete de clarificare." },
+                { "language": "sq", "text": "Kjo është përgjigje e fortë: përmend datën, mënyrën e dërgimit dhe dy pyetje konkrete për sqarim." }
+              ],
+              "explanationKey": "date-channel-questions"
+            },
+            {
+              "id": "b2-contract-47-t2-b",
+              "text": "Guten Tag. Ich wollte nur fragen, ob meine Kündigung schon bearbeitet wurde.",
+              "translations": [
+                { "language": "en", "text": "Good day. I just wanted to ask whether my cancellation has already been processed." },
+                { "language": "fa", "text": "روز بخیر. فقط می‌خواستم بپرسم آیا درخواست لغو من قبلاً پردازش شده است یا نه." },
+                { "language": "ar", "text": "نهارك سعيد. أردت فقط أن أسأل هل تمت معالجة طلب الإلغاء الخاص بي بالفعل." },
+                { "language": "tr", "text": "İyi günler. Sadece fesih talebimin işlenip işlenmediğini sormak istemiştim." },
+                { "language": "ru", "text": "Добрый день. Я просто хотел спросить, обработано ли уже мое заявление о расторжении." },
+                { "language": "ckb", "text": "ڕۆژ باش. تەنها دەمویست بپرسم ئایا داواکاری هەڵوەشاندنەوەکەم پێشتر چارەسەر کراوە یان نا." },
+                { "language": "kmr", "text": "Roj baş. Min tenê dixwest bipirsim gelo daxwaza betalkirina min jixwe hatiye xebitandin an na." },
+                { "language": "pl", "text": "Dzień dobry. Chciałem tylko zapytać, czy moje wypowiedzenie zostało już opracowane." },
+                { "language": "ro", "text": "Bună ziua. Voiam doar să întreb dacă cererea mea de reziliere a fost deja procesată." },
+                { "language": "sq", "text": "Mirëdita. Doja vetëm të pyes nëse kërkesa ime e anulimit është përpunuar tashmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber für B2 zu dünn. Es fehlen Datum, Nachweis und die Frage nach dem wirksamen Enddatum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too thin for B2. It lacks the date, proof, and the question about the effective end date." },
+                { "language": "fa", "text": "این مؤدبانه است، اما برای B2 بیش از حد کم‌جزئیات است. تاریخ، مدرک و سؤال درباره‌ی تاریخ پایان اثرگذار در آن نیست." },
+                { "language": "ar", "text": "هذا مهذب، لكنه ضعيف جدًا لمستوى B2. ينقصه التاريخ والدليل والسؤال عن تاريخ الانتهاء الفعلي." },
+                { "language": "tr", "text": "Bu kibar, ama B2 için fazla zayıf. Tarih, kanıt ve geçerli bitiş tarihi sorusu eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком слабо для B2. Не хватает даты, доказательства и вопроса о фактической дате окончания." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام بۆ B2 زۆر کەم وردەکارییە. بەروار، بەڵگە و پرسیار لەسەر بەرواری کۆتایی کاریگەر تێیدا نییە." },
+                { "language": "kmr", "text": "Ev bi rêzdarî ye, lê ji bo B2 pir kêm e. Dîrok, belge û pirs li ser roja dawî ya derbas tê de tune ye." },
+                { "language": "pl", "text": "To uprzejme, ale zbyt ubogie jak na B2. Brakuje daty, dowodu i pytania o skuteczną datę zakończenia." },
+                { "language": "ro", "text": "Este politicos, dar prea subțire pentru B2. Lipsesc data, dovada și întrebarea despre data efectivă de încheiere." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e varfër për B2. Mungojnë data, prova dhe pyetja për datën efektive të përfundimit." }
+              ],
+              "explanationKey": "too-little-context"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "b2-contract-47-t4-a",
+              "text": "Ja, meine Kundennummer ist 48291, die Vertragsnummer lautet C-7782. Laut Vertrag ist die Mindestlaufzeit bereits vorbei, deshalb sollte die Kündigung zum Ende des nächsten Monats möglich sein. Können Sie das bitte prüfen?",
+              "translations": [
+                { "language": "en", "text": "Yes, my customer number is 48291, and the contract number is C-7782. According to the contract, the minimum term has already ended, so cancellation should be possible at the end of next month. Could you please check that?" },
+                { "language": "fa", "text": "بله، شماره مشتری من ۴۸۲۹۱ است و شماره قرارداد C-7782 است. طبق قرارداد، حداقل مدت قرارداد قبلاً تمام شده، پس لغو باید برای پایان ماه آینده ممکن باشد. لطفاً می‌توانید این را بررسی کنید؟" },
+                { "language": "ar", "text": "نعم، رقم العميل لدي هو 48291، ورقم العقد هو C-7782. حسب العقد، انتهت مدة الحد الأدنى بالفعل، لذلك ينبغي أن يكون الإلغاء ممكنًا في نهاية الشهر القادم. هل يمكنكم التحقق من ذلك؟" },
+                { "language": "tr", "text": "Evet, müşteri numaram 48291, sözleşme numaram C-7782. Sözleşmeye göre asgari süre zaten sona erdi, bu nedenle fesih gelecek ayın sonunda mümkün olmalı. Bunu kontrol edebilir misiniz?" },
+                { "language": "ru", "text": "Да, мой номер клиента 48291, номер договора C-7782. Согласно договору, минимальный срок уже закончился, поэтому расторжение должно быть возможно к концу следующего месяца. Можете это проверить?" },
+                { "language": "ckb", "text": "بەڵێ، ژمارەی کڕیارەکەم ٤٨٢٩١ە و ژمارەی گرێبەستەکە C-7782ە. بەپێی گرێبەستەکە، ماوەی کەمینە پێشتر تەواو بووە، بۆیە دەبێت هەڵوەشاندنەوە بۆ کۆتایی مانگی داهاتوو ممکن بێت. تکایە دەتوانن ئەمە بپشکنن؟" },
+                { "language": "kmr", "text": "Erê, hejmareya mişteriya min 48291 e, hejmareya peymanê C-7782 e. Li gorî peymanê, dema herî kêm jixwe qediya, ji ber vê divê betalkirin heta dawiya meha bê gengaz be. Hûn dikarin vê kontrol bikin?" },
+                { "language": "pl", "text": "Tak, mój numer klienta to 48291, a numer umowy to C-7782. Zgodnie z umową minimalny okres już minął, dlatego wypowiedzenie powinno być możliwe na koniec przyszłego miesiąca. Czy mogą państwo to sprawdzić?" },
+                { "language": "ro", "text": "Da, numărul meu de client este 48291, iar numărul contractului este C-7782. Conform contractului, perioada minimă a trecut deja, deci rezilierea ar trebui să fie posibilă la sfârșitul lunii viitoare. Puteți verifica, vă rog?" },
+                { "language": "sq", "text": "Po, numri im i klientit është 48291, numri i kontratës është C-7782. Sipas kontratës, periudha minimale ka përfunduar tashmë, prandaj anulimi duhet të jetë i mundur në fund të muajit të ardhshëm. A mund ta kontrolloni ju lutem?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du gibst eindeutige Daten und formulierst deine Erwartung als prüfbare Bitte, nicht als Vorwurf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you provide clear data and phrase your expectation as a checkable request, not as an accusation." },
+                { "language": "fa", "text": "خوب است: داده‌های مشخص می‌دهی و انتظار خودت را به شکل درخواست قابل بررسی بیان می‌کنی، نه اتهام." },
+                { "language": "ar", "text": "جيد: تقدم بيانات واضحة وتصوغ توقعك كطلب يمكن التحقق منه، وليس كاتهام." },
+                { "language": "tr", "text": "İyi: net bilgiler veriyor ve beklentini suçlama olarak değil, kontrol edilebilir bir rica olarak ifade ediyorsun." },
+                { "language": "ru", "text": "Хорошо: ты даешь точные данные и формулируешь ожидание как проверяемую просьбу, а не как обвинение." },
+                { "language": "ckb", "text": "باشە: زانیاری ڕوون دەدەیت و چاوەڕوانییەکەت وەک داوایەکی پشکنین‌کراو دەردەبڕیت، نە وەک تۆمەت." },
+                { "language": "kmr", "text": "Baş e: tu agahiyên zelal didî û hêviya xwe wek daxwazeke kontrolkirinê dibêjî, ne wek tawanbar kirin." },
+                { "language": "pl", "text": "Dobrze: podajesz jednoznaczne dane i formułujesz oczekiwanie jako sprawdzalną prośbę, a nie zarzut." },
+                { "language": "ro", "text": "Bine: oferi date clare și formulezi așteptarea ca o cerere verificabilă, nu ca o acuzație." },
+                { "language": "sq", "text": "Mirë: jep të dhëna të qarta dhe e formulon pritjen si kërkesë të verifikueshme, jo si akuzë." }
+              ],
+              "explanationKey": "identifiers-plus-basis"
+            },
+            {
+              "id": "b2-contract-47-t4-b",
+              "text": "Meine Nummer müsste irgendwo im System stehen. Ich habe jedenfalls schon lange einen Vertrag bei Ihnen.",
+              "translations": [
+                { "language": "en", "text": "My number should be somewhere in the system. In any case, I have had a contract with you for a long time." },
+                { "language": "fa", "text": "شماره من باید جایی در سیستم باشد. به هر حال مدت زیادی است که با شما قرارداد دارم." },
+                { "language": "ar", "text": "ينبغي أن يكون رقمي موجودًا في مكان ما في النظام. على أي حال لدي عقد معكم منذ فترة طويلة." },
+                { "language": "tr", "text": "Numaram sistemde bir yerlerde olmalı. Sonuçta uzun zamandır sizinle sözleşmem var." },
+                { "language": "ru", "text": "Мой номер должен быть где-то в системе. В любом случае у меня с вами уже давно договор." },
+                { "language": "ckb", "text": "ژمارەکەم دەبێت لە شوێنێک لە سیستەمدا هەبێت. بە هەر حال، ماوەیەکی زۆرە لەگەڵتان گرێبەستم هەیە." },
+                { "language": "kmr", "text": "Hejmareya min divê li cîhekî di pergalê de hebe. Bi her awayî, demeke dirêj e peymana min bi we re heye." },
+                { "language": "pl", "text": "Mój numer powinien być gdzieś w systemie. W każdym razie mam u państwa umowę od dawna." },
+                { "language": "ro", "text": "Numărul meu ar trebui să fie undeva în sistem. Oricum, am contract cu dumneavoastră de mult timp." },
+                { "language": "sq", "text": "Numri im duhet të jetë diku në sistem. Sidoqoftë, kam kontratë me ju prej shumë kohësh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber nicht effizient. Ohne Nummern und Vertragsbezug dauert die Prüfung länger und bleibt ungenau.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but not efficient. Without numbers and contract reference, the review takes longer and remains imprecise." },
+                { "language": "fa", "text": "این قابل فهم است، اما کارآمد نیست. بدون شماره‌ها و اشاره به قرارداد، بررسی طولانی‌تر و نامشخص‌تر می‌شود." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه غير فعّال. من دون أرقام وإشارة إلى العقد، تستغرق المراجعة وقتًا أطول وتبقى غير دقيقة." },
+                { "language": "tr", "text": "Bu anlaşılır, ama verimli değil. Numara ve sözleşme bağlantısı olmadan inceleme daha uzun sürer ve belirsiz kalır." },
+                { "language": "ru", "text": "Это понятно, но неэффективно. Без номеров и ссылки на договор проверка займет больше времени и останется неточной." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتراوە، بەڵام کارا نییە. بەبێ ژمارەکان و ئاماژە بە گرێبەست، پشکنینەکە درێژتر دەبێت و ناورد دەبێت." },
+                { "language": "kmr", "text": "Ev têgihiştbar e, lê ne bi bandor e. Bê hejmar û îşareta peymanê, kontrol dirêjtir dibe û nezelal dimîne." },
+                { "language": "pl", "text": "To zrozumiałe, ale nieefektywne. Bez numerów i odniesienia do umowy sprawdzanie trwa dłużej i pozostaje niedokładne." },
+                { "language": "ro", "text": "Este de înțeles, dar nu este eficient. Fără numere și trimitere la contract, verificarea durează mai mult și rămâne imprecisă." },
+                { "language": "sq", "text": "Kjo është e kuptueshme, por jo efikase. Pa numra dhe referim te kontrata, verifikimi zgjat më shumë dhe mbetet i pasaktë." }
+              ],
+              "explanationKey": "missing-identifiers"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "b2-contract-47-t6-a",
+              "text": "Gut, dann bitte ich darum, den Eingang meiner Kündigung vom 14. Mai im Vorgang festzuhalten und mir den 30. Juni als Beendigungsdatum schriftlich zu bestätigen. Mir ist wichtig, dass daraus keine automatische Verlängerung entsteht.",
+              "translations": [
+                { "language": "en", "text": "Good, then I ask you to record the receipt of my cancellation from May 14 in the case and to confirm June 30 as the end date in writing. It is important to me that this does not lead to an automatic renewal." },
+                { "language": "fa", "text": "خوب، پس لطفاً دریافت درخواست لغو من در ۱۴ مه را در پرونده ثبت کنید و تاریخ ۳۰ ژوئن را به عنوان تاریخ پایان قرارداد کتبی تأیید کنید. برای من مهم است که از این موضوع تمدید خودکار ایجاد نشود." },
+                { "language": "ar", "text": "حسنًا، إذن أطلب تسجيل وصول طلب الإلغاء المؤرخ في 14 مايو في الملف، وتأكيد 30 يونيو كتابيًا كتاريخ انتهاء. من المهم بالنسبة لي ألا يؤدي ذلك إلى تمديد تلقائي." },
+                { "language": "tr", "text": "Peki, o hâlde 14 Mayıs tarihli fesih talebimin ulaştığını dosyaya kaydetmenizi ve 30 Haziran'ı bitiş tarihi olarak yazılı biçimde onaylamanızı rica ediyorum. Bunun otomatik uzatmaya yol açmaması benim için önemli." },
+                { "language": "ru", "text": "Хорошо, тогда прошу зафиксировать в деле получение моего заявления от 14 мая и письменно подтвердить 30 июня как дату окончания. Для меня важно, чтобы из этого не возникло автоматическое продление." },
+                { "language": "ckb", "text": "باشە، کەواتە داوا دەکەم گەیشتنی داواکاری هەڵوەشاندنەوەکەم لە ١٤ی مای لە پرۆسەکەدا تۆمار بکرێت و ٣٠ی حوزەیران وەک بەرواری کۆتایی بە نووسراوی پشتڕاست بکرێتەوە. بۆ من گرنگە کە ئەمە نەبێتە هۆی درێژکردنەوەی خۆکار." },
+                { "language": "kmr", "text": "Baş e, hingê ez dixwazim ku gihiştina betalkirina min a 14ê Gulanê di dosyayê de were tomar kirin û 30ê Hezîranê wek roja dawî bi nivîskî were piştrastkirin. Ji bo min girîng e ku ev nebe sedema dirêjkirina xweber." },
+                { "language": "pl", "text": "Dobrze, w takim razie proszę odnotować w sprawie wpływ mojego wypowiedzenia z 14 maja i pisemnie potwierdzić 30 czerwca jako datę zakończenia. Ważne jest dla mnie, aby nie doszło do automatycznego przedłużenia." },
+                { "language": "ro", "text": "Bine, atunci vă rog să consemnați în dosar primirea rezilierii mele din 14 mai și să îmi confirmați în scris data de 30 iunie ca dată de încetare. Pentru mine este important să nu rezulte o prelungire automată." },
+                { "language": "sq", "text": "Mirë, atëherë ju lutem ta shënoni në dosje marrjen e anulimit tim të datës 14 maj dhe të ma konfirmoni me shkrim 30 qershorin si datë përfundimi. Për mua është e rëndësishme që kjo të mos çojë në zgjatje automatike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Du sicherst Eingang, Enddatum und das Risiko einer automatischen Verlängerung ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: you secure receipt, the end date, and the risk of automatic renewal." },
+                { "language": "fa", "text": "خیلی خوب: دریافت درخواست، تاریخ پایان و خطر تمدید خودکار را روشن و امن می‌کنی." },
+                { "language": "ar", "text": "جيد جدًا: تؤمّن وصول الطلب وتاريخ الانتهاء وخطر التمديد التلقائي." },
+                { "language": "tr", "text": "Çok iyi: ulaşma durumunu, bitiş tarihini ve otomatik uzatma riskini güvenceye alıyorsun." },
+                { "language": "ru", "text": "Очень хорошо: ты фиксируешь получение, дату окончания и риск автоматического продления." },
+                { "language": "ckb", "text": "زۆر باشە: گەیشتن، بەرواری کۆتایی و مەترسی درێژکردنەوەی خۆکار دڵنیا دەکەیت." },
+                { "language": "kmr", "text": "Gelek baş: tu gihiştin, roja dawî û metirsiya dirêjkirina xweber ewle dikî." },
+                { "language": "pl", "text": "Bardzo dobrze: zabezpieczasz wpływ wypowiedzenia, datę zakończenia i ryzyko automatycznego przedłużenia." },
+                { "language": "ro", "text": "Foarte bine: asiguri primirea, data de încetare și riscul unei prelungiri automate." },
+                { "language": "sq", "text": "Shumë mirë: siguron marrjen, datën e përfundimit dhe rrezikun e zgjatjes automatike." }
+              ],
+              "explanationKey": "secure-end-date"
+            },
+            {
+              "id": "b2-contract-47-t6-b",
+              "text": "Okay, dann warte ich einfach, bis die Bearbeitung fertig ist.",
+              "translations": [
+                { "language": "en", "text": "Okay, then I will simply wait until processing is finished." },
+                { "language": "fa", "text": "باشه، پس فقط منتظر می‌مانم تا پردازش تمام شود." },
+                { "language": "ar", "text": "حسنًا، إذن سأنتظر ببساطة حتى تنتهي المعالجة." },
+                { "language": "tr", "text": "Tamam, o zaman işlem tamamlanana kadar beklerim." },
+                { "language": "ru", "text": "Хорошо, тогда я просто подожду, пока обработка завершится." },
+                { "language": "ckb", "text": "باشە، کەواتە تەنها چاوەڕێ دەکەم تا چارەسەرکردنەکە تەواو دەبێت." },
+                { "language": "kmr", "text": "Baş e, hingê ez tenê li bendê dimînim heta xebitandin qediya." },
+                { "language": "pl", "text": "Dobrze, w takim razie po prostu poczekam, aż opracowanie zostanie zakończone." },
+                { "language": "ro", "text": "Bine, atunci pur și simplu aștept până se termină procesarea." },
+                { "language": "sq", "text": "Në rregull, atëherë thjesht do të pres derisa përpunimi të përfundojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist zu passiv. Wenn die Kündigung noch nicht abgeschlossen ist, solltest du Eingang, Enddatum und Verlängerungsrisiko schriftlich absichern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is too passive. If the cancellation is not complete yet, you should secure receipt, end date, and renewal risk in writing." },
+                { "language": "fa", "text": "این بیش از حد منفعل است. اگر لغو هنوز نهایی نشده، باید دریافت درخواست، تاریخ پایان و خطر تمدید را کتبی روشن کنی." },
+                { "language": "ar", "text": "هذا سلبي جدًا. إذا لم يكتمل الإلغاء بعد، ينبغي توثيق الوصول وتاريخ الانتهاء وخطر التمديد كتابيًا." },
+                { "language": "tr", "text": "Bu fazla pasif. Fesih henüz tamamlanmadıysa ulaşma durumunu, bitiş tarihini ve uzatma riskini yazılı olarak güvenceye almalısın." },
+                { "language": "ru", "text": "Это слишком пассивно. Если расторжение еще не завершено, нужно письменно зафиксировать получение, дату окончания и риск продления." },
+                { "language": "ckb", "text": "ئەمە زۆر نائاکتیڤە. ئەگەر هەڵوەشاندنەوەکە هێشتا تەواو نەبووە، پێویستە گەیشتن، بەرواری کۆتایی و مەترسی درێژکردنەوە بە نووسراوی دڵنیا بکەیت." },
+                { "language": "kmr", "text": "Ev pir pasîf e. Heke betalkirin hêj neqediyaye, divê gihiştin, roja dawî û metirsiya dirêjkirinê bi nivîskî ewle bikî." },
+                { "language": "pl", "text": "To zbyt bierne. Jeśli wypowiedzenie nie jest jeszcze zakończone, trzeba pisemnie zabezpieczyć wpływ, datę zakończenia i ryzyko przedłużenia." },
+                { "language": "ro", "text": "Este prea pasiv. Dacă rezilierea nu este încă finalizată, trebuie să asiguri în scris primirea, data de încetare și riscul de prelungire." },
+                { "language": "sq", "text": "Kjo është shumë pasive. Nëse anulimi ende nuk është përfunduar, duhet të sigurosh me shkrim marrjen, datën e përfundimit dhe rrezikun e zgjatjes." }
+              ],
+              "explanationKey": "passive-followup"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "b2-contract-47-t10-a",
+              "text": "Vielen Dank. Dann erwarte ich bis morgen die schriftliche Bestätigung mit dem Beendigungsdatum 30. Juni, den Restbeträgen und dem Hinweis zur Einzugsermächtigung. Falls nichts ankommt, melde ich mich mit der Vorgangsnummer erneut.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I expect the written confirmation by tomorrow with the end date of June 30, the remaining amounts, and the note about the direct debit authorization. If nothing arrives, I will contact you again with the case number." },
+                { "language": "fa", "text": "بسیار ممنون. پس تا فردا منتظر تأیید کتبی با تاریخ پایان ۳۰ ژوئن، مبلغ‌های باقی‌مانده و توضیح درباره‌ی اجازه برداشت بانکی هستم. اگر چیزی نرسد، دوباره با شماره پرونده تماس می‌گیرم." },
+                { "language": "ar", "text": "شكرًا جزيلًا. إذن أنتظر حتى الغد التأكيد الكتابي مع تاريخ الانتهاء في 30 يونيو، والمبالغ المتبقية، والملاحظة حول تفويض السحب البنكي. إذا لم يصل شيء، فسأتواصل مجددًا باستخدام رقم الملف." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O hâlde yarına kadar 30 Haziran bitiş tarihi, kalan tutarlar ve otomatik ödeme izniyle ilgili not içeren yazılı onayı bekliyorum. Hiçbir şey gelmezse dosya numarasıyla tekrar iletişime geçeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда до завтра я ожидаю письменное подтверждение с датой окончания 30 июня, оставшимися суммами и примечанием о разрешении на списание. Если ничего не придет, я снова свяжусь с вами с номером дела." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە تا سبەی چاوەڕێی پشتڕاستکردنەوەی نووسراوم لەگەڵ بەرواری کۆتایی ٣٠ی حوزەیران، بڕە پارەی ماوە و تێبینی لەسەر مۆڵەتی ڕاکێشانی بانکی. ئەگەر هیچ شتێک نەگات، بە ژمارەی پرۆسەکەوە دووبارە پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Gelek spas. Hingê ez heta sibê li benda piştrastkirina nivîskî me bi roja dawî ya 30ê Hezîranê, meblağên mayî û agahdariya li ser destûra kişandina bankê. Heke tiştek negihêje, ez ê bi hejmareya dozê careke din têkilî bigirim." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie do jutra oczekuję pisemnego potwierdzenia z datą zakończenia 30 czerwca, pozostałymi kwotami i informacją o poleceniu zapłaty. Jeśli nic nie przyjdzie, skontaktuję się ponownie z numerem sprawy." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci aștept până mâine confirmarea scrisă cu data încetării la 30 iunie, sumele rămase și mențiunea despre autorizația de debitare automată. Dacă nu primesc nimic, revin cu numărul cazului." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë deri nesër pres konfirmimin me shkrim me datën e përfundimit 30 qershor, shumat e mbetura dhe shënimin për autorizimin e tërheqjes bankare. Nëse nuk vjen asgjë, do të kontaktoj përsëri me numrin e rastit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist ein sauberer Abschluss: Du wiederholst Inhalt, Frist und deinen nächsten Schritt, falls die Bestätigung ausbleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a clean closing: you repeat the content, deadline, and your next step if the confirmation does not arrive." },
+                { "language": "fa", "text": "این پایان‌بندی تمیزی است: محتوا، مهلت و قدم بعدی خودت را در صورت نرسیدن تأییدیه تکرار می‌کنی." },
+                { "language": "ar", "text": "هذه خاتمة منظمة: تكرر المحتوى والمهلة وخطوتك التالية إذا لم يصل التأكيد." },
+                { "language": "tr", "text": "Bu düzenli bir kapanış: onay gelmezse içerik, süre ve sonraki adımını tekrar ediyorsun." },
+                { "language": "ru", "text": "Это четкое завершение: ты повторяешь содержание, срок и свой следующий шаг, если подтверждение не придет." },
+                { "language": "ckb", "text": "ئەمە کۆتاییەکی ڕێکوپێکە: ناوەڕۆک، مۆڵەت و هەنگاوی داهاتووت دووبارە دەکەیتەوە ئەگەر پشتڕاستکردنەوەکە نەگات." },
+                { "language": "kmr", "text": "Ev dawîkirineke paqij e: tu naverok, dem û gavê xwe yê din dubare dikî heke piştrastkirin negihêje." },
+                { "language": "pl", "text": "To porządne zakończenie: powtarzasz treść, termin i kolejny krok, jeśli potwierdzenie nie nadejdzie." },
+                { "language": "ro", "text": "Este o încheiere clară: repeți conținutul, termenul și pasul următor dacă nu sosește confirmarea." },
+                { "language": "sq", "text": "Kjo është mbyllje e rregullt: përsërit përmbajtjen, afatin dhe hapin tjetër nëse konfirmimi nuk vjen." }
+              ],
+              "explanationKey": "clear-closing"
+            },
+            {
+              "id": "b2-contract-47-t10-b",
+              "text": "Vielen Dank. Dann warte ich auf Ihre Nachricht.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for your message." },
+                { "language": "fa", "text": "ممنون. پس منتظر پیام شما می‌مانم." },
+                { "language": "ar", "text": "شكرًا. إذن سأنتظر رسالتكم." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman mesajınızı bekleyeceğim." },
+                { "language": "ru", "text": "Спасибо. Тогда я буду ждать вашего сообщения." },
+                { "language": "ckb", "text": "سوپاس. کەواتە چاوەڕێی نامەکەتان دەکەم." },
+                { "language": "kmr", "text": "Spas. Hingê ez ê li benda peyama we bim." },
+                { "language": "pl", "text": "Dziękuję. W takim razie poczekam na państwa wiadomość." },
+                { "language": "ro", "text": "Mulțumesc. Atunci aștept mesajul dumneavoastră." },
+                { "language": "sq", "text": "Faleminderit. Atëherë do të pres mesazhin tuaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu allgemein. Es fehlen Beendigungsdatum, Restbeträge, Hinweis zur Einzugsermächtigung und ein nächster Schritt bei fehlender Antwort.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly, but too general. It lacks the end date, remaining amounts, direct debit note, and a next step if no answer arrives." },
+                { "language": "fa", "text": "این دوستانه است، اما بیش از حد کلی است. تاریخ پایان، مبلغ‌های باقی‌مانده، توضیح برداشت بانکی و قدم بعدی در صورت نیامدن پاسخ در آن نیست." },
+                { "language": "ar", "text": "هذا ودود، لكنه عام جدًا. ينقصه تاريخ الانتهاء والمبالغ المتبقية وملاحظة السحب البنكي والخطوة التالية إذا لم يصل رد." },
+                { "language": "tr", "text": "Bu nazik, ama fazla genel. Bitiş tarihi, kalan tutarlar, otomatik ödeme notu ve yanıt gelmezse sonraki adım eksik." },
+                { "language": "ru", "text": "Это дружелюбно, но слишком общее. Не хватает даты окончания, оставшихся сумм, примечания о списании и следующего шага при отсутствии ответа." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر گشتییە. بەرواری کۆتایی، بڕە پارەی ماوە، تێبینی ڕاکێشانی بانکی و هەنگاوی داهاتوو ئەگەر وەڵام نەگات تێیدا نییە." },
+                { "language": "kmr", "text": "Ev bi hevalane ye, lê pir giştî ye. Roja dawî, meblağên mayî, agahdariya kişandina bankê û gavê din heke bersiv negihêje tê de tune ye." },
+                { "language": "pl", "text": "To uprzejme, ale zbyt ogólne. Brakuje daty zakończenia, pozostałych kwot, informacji o poleceniu zapłaty i kolejnego kroku, jeśli odpowiedź nie nadejdzie." },
+                { "language": "ro", "text": "Este prietenos, dar prea general. Lipsesc data încetării, sumele rămase, mențiunea despre debitarea automată și pasul următor dacă nu vine răspuns." },
+                { "language": "sq", "text": "Kjo është miqësore, por shumë e përgjithshme. Mungojnë data e përfundimit, shumat e mbetura, shënimi për tërheqjen bankare dhe hapi tjetër nëse nuk vjen përgjigje." }
+              ],
+              "explanationKey": "too-general-closing"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Nenne beim Nachhaken immer Datum, Versandweg und konkrete Frage. So wird aus einer allgemeinen Nachfrage ein prüfbarer Vorgang.",
+          "translations": [
+            { "language": "en", "text": "When following up, always state the date, sending method, and concrete question. That turns a general inquiry into a checkable case." },
+            { "language": "fa", "text": "هنگام پیگیری همیشه تاریخ، روش ارسال و سؤال مشخص را بگو. این کار یک پیگیری کلی را به پرونده‌ای قابل بررسی تبدیل می‌کند." },
+            { "language": "ar", "text": "عند المتابعة، اذكر دائمًا التاريخ وطريقة الإرسال والسؤال المحدد. هكذا يتحول الاستفسار العام إلى ملف قابل للتحقق." },
+            { "language": "tr", "text": "Takip ederken her zaman tarihi, gönderim yolunu ve somut soruyu belirt. Böylece genel bir soru kontrol edilebilir bir dosyaya dönüşür." },
+            { "language": "ru", "text": "При уточнении всегда называй дату, способ отправки и конкретный вопрос. Так общий запрос становится проверяемым делом." },
+            { "language": "ckb", "text": "لە کاتی بەدواداچووندا هەمیشە بەروار، شێوازی ناردن و پرسیاری دیاریکراو بڵێ. بەمە پرسیارێکی گشتی دەبێتە پرۆسەیەکی پشکنین‌کراو." },
+            { "language": "kmr", "text": "Dema tu şopandin dikî, her tim dîrok, rêya şandinê û pirsa zelal bibêje. Wisa pirsiyareke giştî dibe dozeke kontrolkirinê." },
+            { "language": "pl", "text": "Przy dopytywaniu zawsze podawaj datę, sposób wysłania i konkretne pytanie. Wtedy ogólne zapytanie staje się sprawdzalną sprawą." },
+            { "language": "ro", "text": "Când revii cu o întrebare, menționează mereu data, modalitatea de trimitere și întrebarea concretă. Astfel, o întrebare generală devine un caz verificabil." },
+            { "language": "sq", "text": "Kur ndjek një çështje, përmend gjithmonë datën, mënyrën e dërgimit dhe pyetjen konkrete. Kështu një pyetje e përgjithshme bëhet rast i verifikueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "precision",
+          "text": "Vertragsnummer und Mindestlaufzeit helfen, die Kündigungsfrist sachlich zu klären, ohne Druck aufzubauen.",
+          "translations": [
+            { "language": "en", "text": "The contract number and minimum term help clarify the notice period factually without creating pressure." },
+            { "language": "fa", "text": "شماره قرارداد و حداقل مدت قرارداد کمک می‌کنند مهلت لغو را واقع‌بینانه روشن کنی، بدون اینکه فشار ایجاد کنی." },
+            { "language": "ar", "text": "يساعد رقم العقد ومدة الحد الأدنى على توضيح مهلة الإلغاء بموضوعية من دون خلق ضغط." },
+            { "language": "tr", "text": "Sözleşme numarası ve asgari süre, fesih süresini baskı kurmadan nesnel biçimde netleştirmeye yardım eder." },
+            { "language": "ru", "text": "Номер договора и минимальный срок помогают предметно уточнить срок расторжения без давления." },
+            { "language": "ckb", "text": "ژمارەی گرێبەست و ماوەی کەمینە یارمەتیدەرن بۆ ڕوونکردنەوەی مۆڵەتی هەڵوەشاندنەوە بە شێوەی بابەتی، بەبێ دروستکردنی فشار." },
+            { "language": "kmr", "text": "Hejmareya peymanê û dema herî kêm alîkar in ku dema betalkirinê bê zext bi awayekî objektîf zelal bikî." },
+            { "language": "pl", "text": "Numer umowy i minimalny okres pomagają rzeczowo wyjaśnić termin wypowiedzenia bez wywierania presji." },
+            { "language": "ro", "text": "Numărul contractului și perioada minimă ajută la clarificarea obiectivă a termenului de reziliere, fără presiune." },
+            { "language": "sq", "text": "Numri i kontratës dhe periudha minimale ndihmojnë të sqarohet objektivisht afati i anulimit pa krijuar presion." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "risk",
+          "text": "Wenn eine Kündigung noch nicht vollständig bearbeitet ist, sind Enddatum und automatische Verlängerung die wichtigsten Risiken.",
+          "translations": [
+            { "language": "en", "text": "If a cancellation has not been fully processed yet, the end date and automatic renewal are the most important risks." },
+            { "language": "fa", "text": "اگر لغو هنوز کامل پردازش نشده، تاریخ پایان و تمدید خودکار مهم‌ترین ریسک‌ها هستند." },
+            { "language": "ar", "text": "إذا لم تتم معالجة الإلغاء بالكامل بعد، فإن تاريخ الانتهاء والتمديد التلقائي هما أهم المخاطر." },
+            { "language": "tr", "text": "Fesih henüz tamamen işlenmediyse, bitiş tarihi ve otomatik uzatma en önemli risklerdir." },
+            { "language": "ru", "text": "Если расторжение еще не полностью обработано, дата окончания и автоматическое продление являются главными рисками." },
+            { "language": "ckb", "text": "ئەگەر هەڵوەشاندنەوەکە هێشتا بە تەواوی چارەسەر نەکرابێت، بەرواری کۆتایی و درێژکردنەوەی خۆکار گرنگترین مەترسییەکانن." },
+            { "language": "kmr", "text": "Heke betalkirin hêj bi tevahî nehatiye xebitandin, roja dawî û dirêjkirina xweber metirsiyên herî girîng in." },
+            { "language": "pl", "text": "Jeśli wypowiedzenie nie zostało jeszcze w pełni opracowane, najważniejsze ryzyka to data zakończenia i automatyczne przedłużenie." },
+            { "language": "ro", "text": "Dacă rezilierea nu a fost încă procesată complet, data încetării și prelungirea automată sunt cele mai importante riscuri." },
+            { "language": "sq", "text": "Nëse anulimi ende nuk është përpunuar plotësisht, data e përfundimit dhe zgjatja automatike janë rreziqet kryesore." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "closing",
+          "text": "Ein B2-Abschluss wiederholt nicht nur Danke, sondern fasst Inhalt, Frist und nächsten Schritt zusammen.",
+          "translations": [
+            { "language": "en", "text": "A B2-level closing does not only say thank you; it summarizes the content, deadline, and next step." },
+            { "language": "fa", "text": "پایان‌بندی سطح B2 فقط تشکر نمی‌کند؛ بلکه محتوا، مهلت و قدم بعدی را جمع‌بندی می‌کند." },
+            { "language": "ar", "text": "الخاتمة في مستوى B2 لا تكتفي بالشكر؛ بل تلخص المحتوى والمهلة والخطوة التالية." },
+            { "language": "tr", "text": "B2 düzeyinde bir kapanış yalnızca teşekkür etmez; içerik, süre ve sonraki adımı özetler." },
+            { "language": "ru", "text": "Завершение уровня B2 не просто благодарит, а подводит итог содержанию, сроку и следующему шагу." },
+            { "language": "ckb", "text": "کۆتاییەکی ئاستی B2 تەنها سوپاس ناکات؛ بەڵکو ناوەڕۆک، مۆڵەت و هەنگاوی داهاتوو کورت دەکاتەوە." },
+            { "language": "kmr", "text": "Dawîkirineke asta B2 tenê spas nakê; naverok, dem û gavê din kurt dike." },
+            { "language": "pl", "text": "Zakończenie na poziomie B2 nie tylko dziękuje, lecz podsumowuje treść, termin i kolejny krok." },
+            { "language": "ro", "text": "O încheiere de nivel B2 nu spune doar mulțumesc, ci rezumă conținutul, termenul și pasul următor." },
+            { "language": "sq", "text": "Një mbyllje e nivelit B2 nuk thotë vetëm faleminderit; përmbledh përmbajtjen, afatin dhe hapin tjetër." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3470
+    }
+  ]
+}

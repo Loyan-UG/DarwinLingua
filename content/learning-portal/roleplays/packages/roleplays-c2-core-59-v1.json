@@ -1,0 +1,723 @@
+{
+  "packageId": "roleplays-c2-core-59-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 59 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 59",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-goethe-c2-eine-spontane-nachfrage-praezise-beantworten",
+      "linkedDialogueSlug": null,
+      "title": "Goethe C2 eine spontane Nachfrage präzise beantworten",
+      "titleTranslations": [
+        { "language": "en", "text": "Answering a spontaneous follow-up precisely in Goethe C2" },
+        { "language": "fa", "text": "پاسخ دقیق به پرسش ناگهانی در Goethe C2" },
+        { "language": "ar", "text": "الإجابة بدقة عن سؤال متابعة مفاجئ في Goethe C2" },
+        { "language": "tr", "text": "Goethe C2'de ani bir ek soruya kesin yanıt vermek" },
+        { "language": "ru", "text": "Точно ответить на спонтанный уточняющий вопрос на Goethe C2" },
+        { "language": "ckb", "text": "وەڵامدانەوەی ورد بە پرسیاری لەپڕی بەدواداچوون لە Goethe C2" },
+        { "language": "kmr", "text": "Di Goethe C2 de bersiva rast a pirseke şopandinê ya nişkêva" },
+        { "language": "pl", "text": "Precyzyjna odpowiedź na spontaniczne pytanie dodatkowe na Goethe C2" },
+        { "language": "ro", "text": "Răspuns precis la o întrebare spontană de continuare la Goethe C2" },
+        { "language": "sq", "text": "Përgjigje e saktë ndaj një pyetjeje spontane shtesë në Goethe C2" }
+      ],
+      "description": "Nach einem kurzen Prüfungsbeitrag fragt die prüfende Person spontan nach: „Wenn Sie von Verantwortung sprechen, wer ist konkret verantwortlich?“ Sie müssen die Frage schnell strukturieren, Unsicherheit begrenzen, Beispiele knapp einordnen und eine präzise Antwort geben, ohne in Allgemeinplätze auszuweichen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a short exam contribution, the examiner asks spontaneously: 'When you speak of responsibility, who exactly is responsible?' You need to structure the question quickly, limit uncertainty, classify examples briefly, and give a precise answer without escaping into generalities." },
+        { "language": "fa", "text": "بعد از یک ارائه کوتاه در آزمون، ممتحن ناگهانی می‌پرسد: «وقتی از مسئولیت حرف می‌زنید، دقیقاً چه کسی مسئول است؟» باید سؤال را سریع ساختار بدهید، عدم قطعیت را محدود کنید، مثال‌ها را کوتاه دسته‌بندی کنید و پاسخ دقیق بدهید، بدون اینکه به کلی‌گویی فرار کنید." },
+        { "language": "ar", "text": "بعد مساهمة قصيرة في الاختبار يسأل الفاحص فجأة: «عندما تتحدثون عن المسؤولية، من المسؤول تحديدًا؟» عليكم أن تنظموا السؤال بسرعة، وتحدوا عدم اليقين، وتصنفوا الأمثلة بإيجاز، وتقدموا إجابة دقيقة من دون الهروب إلى العموميات." },
+        { "language": "tr", "text": "Kısa bir sınav katkısından sonra sınav görevlisi ani olarak sorar: 'Sorumluluktan söz ettiğinizde, somut olarak kim sorumludur?' Soruyu hızla yapılandırmanız, belirsizliği sınırlamanız, örnekleri kısaca sınıflandırmanız ve genellemelere kaçmadan kesin yanıt vermeniz gerekir." },
+        { "language": "ru", "text": "После короткого экзаменационного высказывания экзаменатор спонтанно спрашивает: «Когда вы говорите об ответственности, кто конкретно несет ответственность?» Нужно быстро структурировать вопрос, ограничить неопределенность, кратко классифицировать примеры и дать точный ответ, не уходя в общие места." },
+        { "language": "ckb", "text": "دوای بەشدارییەکی کورتی تاقیکردنەوە، تاقیکەرەوە لەپڕ دەپرسێت: «کاتێک باس لە بەرپرسیارێتی دەکەیت، بە دیاریکراوی کێ بەرپرسیارە؟» پێویستە پرسیارەکە بە خێرایی ڕێکبخەیت، نادڵنیایی سنووردار بکەیت، نموونەکان بە کورتی ڕیزبەندی بکەیت و وەڵامێکی ورد بدەیتەوە، بەبێ هەڵاتن بۆ قسەی گشتی." },
+        { "language": "kmr", "text": "Piştî beşdariyeke kurt a ezmûnê, kesê ezmûnê nişkêva dipirse: 'Dema hûn ji berpirsiyariyê diaxivin, bi şênberî kî berpirsiyar e?' Divê pirsê zû bi rêxistin bikin, nezelaliyê sînor bikin, mînakan bi kurtî bicih bikin û bê ku birevin gotinên giştî bersiveke rast bidin." },
+        { "language": "pl", "text": "Po krótkiej wypowiedzi egzaminacyjnej egzaminator pyta spontanicznie: „Gdy mówi Pan/Pani o odpowiedzialności, kto konkretnie jest odpowiedzialny?” Trzeba szybko ustrukturyzować pytanie, ograniczyć niepewność, krótko uporządkować przykłady i odpowiedzieć precyzyjnie, bez uciekania w ogólniki." },
+        { "language": "ro", "text": "După o scurtă contribuție la examen, examinatorul întreabă spontan: „Când vorbiți despre responsabilitate, cine este concret responsabil?” Trebuie să structurați rapid întrebarea, să limitați incertitudinea, să încadrați scurt exemplele și să dați un răspuns precis, fără să fugiți în generalități." },
+        { "language": "sq", "text": "Pas një kontributi të shkurtër në provim, ekzaminuesi pyet spontan: “Kur flisni për përgjegjësi, kush është konkretisht përgjegjës?” Duhet ta strukturoni shpejt pyetjen, ta kufizoni pasigurinë, t'i vendosni shembujt shkurt dhe të jepni përgjigje të saktë pa ikur te përgjithësimet." }
+      ],
+      "learnerGoal": "Eine spontane Prüfungsnachfrage präzise beantworten: kurz Zeit gewinnen, die Frage in zwei Ebenen strukturieren, eine begrenzte Antwort geben, einen Einwand aufnehmen und am Ende die Antwort in einem klaren Satz bündeln.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Answer a spontaneous exam follow-up precisely: gain a little time, structure the question on two levels, give a limited answer, address an objection, and finally bundle the answer into one clear sentence." },
+        { "language": "fa", "text": "به پرسش ناگهانی آزمون دقیق پاسخ دهید: کمی زمان بگیرید، سؤال را در دو سطح ساختار دهید، پاسخ محدود بدهید، یک ایراد را بپذیرید و در پایان پاسخ را در یک جمله روشن جمع کنید." },
+        { "language": "ar", "text": "أجيبوا بدقة عن سؤال متابعة مفاجئ في الاختبار: اكسبوا قليلًا من الوقت، ونظموا السؤال على مستويين، وقدموا إجابة محددة، وتناولوا اعتراضًا، ثم اجمعوا الإجابة في جملة واضحة." },
+        { "language": "tr", "text": "Ani bir sınav ek sorusuna kesin yanıt verin: biraz zaman kazanın, soruyu iki düzeyde yapılandırın, sınırlı yanıt verin, bir itirazı ele alın ve sonunda yanıtı tek açık cümlede toplayın." },
+        { "language": "ru", "text": "Точно ответить на спонтанный экзаменационный вопрос: немного выиграть время, структурировать вопрос на двух уровнях, дать ограниченный ответ, учесть возражение и в конце собрать ответ в одно ясное предложение." },
+        { "language": "ckb", "text": "بە وردی وەڵامی پرسیاری لەپڕی تاقیکردنەوە بدەوە: کەمێک کات بەدەستبهێنە، پرسیارەکە لە دوو ئاستدا ڕێکبخە، وەڵامێکی سنووردار بدە، ڕەخنەیەک وەربگرە و لە کۆتاییدا وەڵامەکە لە یەک ڕستەی ڕووندا کۆبکەرەوە." },
+        { "language": "kmr", "text": "Bersiva rast bidin pirseke nişkêva ya ezmûnê: hinek dem bi dest bixin, pirsê li ser du astan bi rêxistin bikin, bersiveke sînorkirî bidin, îtirazekê bigirin û di dawiyê de bersivê di hevokeke zelal de bicivînin." },
+        { "language": "pl", "text": "Precyzyjnie odpowiedzieć na spontaniczne pytanie egzaminacyjne: zyskać chwilę, ustrukturyzować pytanie na dwóch poziomach, dać ograniczoną odpowiedź, uwzględnić zarzut i na końcu zebrać odpowiedź w jednym jasnym zdaniu." },
+        { "language": "ro", "text": "Răspundeți precis la o întrebare spontană de examen: câștigați puțin timp, structurați întrebarea pe două niveluri, dați un răspuns limitat, abordați o obiecție și la final concentrați răspunsul într-o propoziție clară." },
+        { "language": "sq", "text": "Përgjigjuni saktë një pyetjeje spontane provimi: fitoni pak kohë, strukturoni pyetjen në dy nivele, jepni një përgjigje të kufizuar, trajtoni një kundërshtim dhe në fund përmblidheni përgjigjen në një fjali të qartë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["goethe-c2"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "exam-roleplay",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 59,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kandidat/in",
+          "translations": [
+            { "language": "en", "text": "Candidate" },
+            { "language": "fa", "text": "داوطلب" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Aday" },
+            { "language": "ru", "text": "Кандидат" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Namzed" },
+            { "language": "pl", "text": "Kandydat" },
+            { "language": "ro", "text": "Candidat" },
+            { "language": "sq", "text": "Kandidati" }
+          ]
+        },
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfende Person",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الفاحص" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Kesê ezmûnê" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Sie haben mehrmals von Verantwortung gesprochen. Wenn Sie das spontan präzisieren müssten: Wer trägt in Ihrem Beispiel konkret Verantwortung?",
+          "translations": [
+            { "language": "en", "text": "You have spoken several times about responsibility. If you had to specify that spontaneously: who exactly bears responsibility in your example?" },
+            { "language": "fa", "text": "شما چند بار از مسئولیت صحبت کردید. اگر ناگهانی بخواهید آن را دقیق کنید: در مثال شما دقیقاً چه کسی مسئولیت دارد؟" },
+            { "language": "ar", "text": "تحدثتم عدة مرات عن المسؤولية. إذا كان عليكم توضيح ذلك تلقائيًا: من يتحمل المسؤولية تحديدًا في مثالكم؟" },
+            { "language": "tr", "text": "Birkaç kez sorumluluktan söz ettiniz. Bunu ani olarak kesinleştirmeniz gerekse: örneğinizde somut olarak sorumluluğu kim taşır?" },
+            { "language": "ru", "text": "Вы несколько раз говорили об ответственности. Если нужно спонтанно уточнить: кто конкретно несет ответственность в вашем примере?" },
+            { "language": "ckb", "text": "تۆ چەند جار باس لە بەرپرسیارێتی کرد. ئەگەر پێویست بێت لەپڕ وردی بکەیتەوە: لە نموونەکەتدا بە دیاریکراوی کێ بەرپرسیارێتی هەڵدەگرێت؟" },
+            { "language": "kmr", "text": "Hûn çend caran ji berpirsiyariyê axivîn. Heke pêwîst be nişkêva wê rast bikin: di mînaka we de bi şênberî kî berpirsiyarî hildigire?" },
+            { "language": "pl", "text": "Kilka razy mówił Pan/Pani o odpowiedzialności. Gdyby trzeba było to spontanicznie doprecyzować: kto konkretnie ponosi odpowiedzialność w Pana/Pani przykładzie?" },
+            { "language": "ro", "text": "Ați vorbit de mai multe ori despre responsabilitate. Dacă ar trebui să precizați spontan: cine poartă concret responsabilitatea în exemplul dumneavoastră?" },
+            { "language": "sq", "text": "Keni folur disa herë për përgjegjësinë. Nëse duhet ta saktësoni spontanisht: kush mban konkretisht përgjegjësi në shembullin tuaj?" }
+          ],
+          "function": "spontaneous-follow-up",
+          "toneNote": "Unexpected exam question; the learner should not panic or become vague.",
+          "expectedLearnerAction": "Take the question, structure it, and answer with limits."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Frage in zwei Ebenen aufteilen: Verantwortung für Entscheidungen und Verantwortung für Folgen. Im Beispiel liegt die Entscheidung bei der Leitung, die Folgen müssen aber im Team transparent aufgefangen werden.",
+          "translations": [
+            { "language": "en", "text": "I would divide the question into two levels: responsibility for decisions and responsibility for consequences. In the example, the decision lies with leadership, but the consequences must be handled transparently within the team." },
+            { "language": "fa", "text": "من سؤال را به دو سطح تقسیم می‌کنم: مسئولیت تصمیم‌ها و مسئولیت پیامدها. در مثال، تصمیم با مدیریت است، اما پیامدها باید در تیم به‌صورت شفاف مدیریت شوند." },
+            { "language": "ar", "text": "سأقسم السؤال إلى مستويين: مسؤولية القرارات ومسؤولية النتائج. في المثال تقع عملية القرار عند الإدارة، لكن النتائج يجب أن تُدار بشفافية داخل الفريق." },
+            { "language": "tr", "text": "Soruyu iki düzeye ayırırdım: kararların sorumluluğu ve sonuçların sorumluluğu. Örnekte karar yönetimdedir, ama sonuçlar ekip içinde şeffaf biçimde ele alınmalıdır." },
+            { "language": "ru", "text": "Я бы разделил вопрос на два уровня: ответственность за решения и ответственность за последствия. В примере решение находится у руководства, но последствия должны прозрачно обрабатываться в команде." },
+            { "language": "ckb", "text": "من پرسیارەکە بە دوو ئاست دابەش دەکەم: بەرپرسیارێتی بۆ بڕیارەکان و بەرپرسیارێتی بۆ ئەنجامەکان. لە نموونەکەدا بڕیار لە لایەن بەڕێوەبردنەوەیە، بەڵام ئەنجامەکان دەبێت لە تیمدا بە شەفافی وەربگیرێن." },
+            { "language": "kmr", "text": "Ez ê pirsê li du astan parçe bikim: berpirsiyariya biryaran û berpirsiyariya encaman. Di mînakê de biryar li cem rêveberiyê ye, lê encam divê di tîmê de bi zelalî bên girtin." },
+            { "language": "pl", "text": "Podzieliłbym/Podzieliłabym pytanie na dwa poziomy: odpowiedzialność za decyzje i odpowiedzialność za skutki. W przykładzie decyzja należy do kierownictwa, ale skutki muszą być przejrzyście przejęte w zespole." },
+            { "language": "ro", "text": "Aș împărți întrebarea pe două niveluri: responsabilitatea pentru decizii și responsabilitatea pentru consecințe. În exemplu, decizia aparține conducerii, dar consecințele trebuie gestionate transparent în echipă." },
+            { "language": "sq", "text": "Do ta ndaja pyetjen në dy nivele: përgjegjësia për vendimet dhe përgjegjësia për pasojat. Në shembull, vendimi është te drejtimi, por pasojat duhet të trajtohen në ekip në mënyrë transparente." }
+          ],
+          "function": "structure-answer",
+          "toneNote": "The learner gains control by splitting the question into two levels.",
+          "expectedLearnerAction": "Structure the spontaneous question before answering."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "examiner",
+          "baseText": "Das klingt strukturiert, aber noch etwas abstrakt. Können Sie das in einem Satz auf Ihren Fall anwenden?",
+          "translations": [
+            { "language": "en", "text": "That sounds structured, but still somewhat abstract. Can you apply it to your case in one sentence?" },
+            { "language": "fa", "text": "این ساختارمند به نظر می‌رسد، اما هنوز کمی انتزاعی است. می‌توانید آن را در یک جمله به مورد خودتان اعمال کنید؟" },
+            { "language": "ar", "text": "يبدو ذلك منظمًا، لكنه ما زال مجردًا بعض الشيء. هل يمكنكم تطبيقه على حالتكم في جملة واحدة؟" },
+            { "language": "tr", "text": "Bu yapılandırılmış duyuluyor, ama hâlâ biraz soyut. Bunu kendi durumunuza tek cümlede uygulayabilir misiniz?" },
+            { "language": "ru", "text": "Это звучит структурированно, но все еще немного абстрактно. Можете применить это к своему случаю в одном предложении?" },
+            { "language": "ckb", "text": "ئەمە ڕێکخراو دەبیسترێت، بەڵام هێشتا کەمێک ئەبستراکتە. دەتوانیت لە یەک ڕستەدا بۆ حاڵەتەکەت بەکاریبهێنیت؟" },
+            { "language": "kmr", "text": "Ev bi rêxistin xuya dike, lê hîn hinekî razber e. Hûn dikarin wê di hevokekê de li rewşa xwe sepandin?" },
+            { "language": "pl", "text": "Brzmi to strukturalnie, ale nadal trochę abstrakcyjnie. Czy może Pan/Pani zastosować to do swojego przypadku w jednym zdaniu?" },
+            { "language": "ro", "text": "Sună structurat, dar încă puțin abstract. Puteți aplica acest lucru cazului dumneavoastră într-o singură propoziție?" },
+            { "language": "sq", "text": "Kjo tingëllon e strukturuar, por ende pak abstrakte. A mund ta zbatoni në rastin tuaj me një fjali?" }
+          ],
+          "function": "request-concrete-application",
+          "toneNote": "The examiner asks for compression under pressure.",
+          "expectedLearnerAction": "Apply the structure in one precise sentence."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Konkret heißt das: Die Leitung muss die Priorität begründen, während das Team offen sagen darf, welche praktischen Folgen diese Priorität für Qualität und Zeitplan hat.",
+          "translations": [
+            { "language": "en", "text": "Concretely, this means: leadership must justify the priority, while the team must be allowed to state openly what practical consequences this priority has for quality and schedule." },
+            { "language": "fa", "text": "مشخصاً یعنی: مدیریت باید اولویت را توجیه کند، در حالی که تیم باید بتواند آشکارا بگوید این اولویت چه پیامدهای عملی برای کیفیت و زمان‌بندی دارد." },
+            { "language": "ar", "text": "بشكل ملموس يعني ذلك: على الإدارة أن تبرر الأولوية، بينما يجب أن يُسمح للفريق بأن يقول بصراحة ما النتائج العملية لهذه الأولوية على الجودة والجدول الزمني." },
+            { "language": "tr", "text": "Somut olarak bu şu demektir: Yönetim önceliği gerekçelendirmeli, ekip ise bu önceliğin kalite ve takvim için hangi pratik sonuçları olduğunu açıkça söyleyebilmelidir." },
+            { "language": "ru", "text": "Конкретно это означает: руководство должно обосновать приоритет, а команда должна иметь возможность открыто сказать, какие практические последствия этот приоритет имеет для качества и графика." },
+            { "language": "ckb", "text": "بە دیاریکراوی ئەمە واتە: بەڕێوەبردن دەبێت پێشینەییەکە پاساو بدات، لە کاتێکدا تیم دەبێت بتوانێت بە ئاشکرا بڵێت ئەم پێشینەییە چ ئەنجامێکی کرداری بۆ کوالیتی و خشتەی کات هەیە." },
+            { "language": "kmr", "text": "Bi şênberî ev wate dide: rêveberî divê pêşîniyê rewa bike, lê tîm divê bikare bi vekirî bêje ku ev pêşînî ji bo kalîte û plana demê çi encamên pratîk hene." },
+            { "language": "pl", "text": "Konkretnie oznacza to: kierownictwo musi uzasadnić priorytet, a zespół powinien móc otwarcie powiedzieć, jakie praktyczne skutki ma ten priorytet dla jakości i harmonogramu." },
+            { "language": "ro", "text": "Concret, aceasta înseamnă: conducerea trebuie să justifice prioritatea, iar echipa trebuie să poată spune deschis ce consecințe practice are această prioritate pentru calitate și calendar." },
+            { "language": "sq", "text": "Konkretisht kjo do të thotë: drejtimi duhet ta arsyetojë prioritetin, ndërsa ekipi duhet të lejohet të thotë hapur çfarë pasojash praktike ka ky prioritet për cilësinë dhe afatin." }
+          ],
+          "function": "apply-structure",
+          "toneNote": "One-sentence application with actors and consequences.",
+          "expectedLearnerAction": "Make the abstract structure concrete."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Was machen Sie, wenn Ihnen in der Prüfung nicht sofort ein passendes Beispiel einfällt?",
+          "translations": [
+            { "language": "en", "text": "What do you do if a suitable example does not immediately come to mind in the exam?" },
+            { "language": "fa", "text": "اگر در آزمون فوراً مثال مناسبی به ذهنتان نرسد، چه می‌کنید؟" },
+            { "language": "ar", "text": "ماذا تفعلون إذا لم يخطر لكم فورًا مثال مناسب في الاختبار؟" },
+            { "language": "tr", "text": "Sınavda hemen uygun bir örnek aklınıza gelmezse ne yaparsınız?" },
+            { "language": "ru", "text": "Что вы делаете, если на экзамене вам сразу не приходит подходящий пример?" },
+            { "language": "ckb", "text": "ئەگەر لە تاقیکردنەوەدا دەستبەجێ نموونەیەکی گونجاو بە بیرت نەهات، چی دەکەیت؟" },
+            { "language": "kmr", "text": "Heke di ezmûnê de yekser mînakeke guncaw neyê bîra we, hûn çi dikin?" },
+            { "language": "pl", "text": "Co Pan/Pani robi, jeśli w egzaminie od razu nie przychodzi do głowy odpowiedni przykład?" },
+            { "language": "ro", "text": "Ce faceți dacă la examen nu vă vine imediat în minte un exemplu potrivit?" },
+            { "language": "sq", "text": "Çfarë bëni nëse në provim nuk ju vjen menjëherë ndër mend një shembull i përshtatshëm?" }
+          ],
+          "function": "ask-strategy-under-pressure",
+          "toneNote": "The examiner tests exam strategy, not only content knowledge.",
+          "expectedLearnerAction": "Explain how to handle limited recall without sounding empty."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich das offen, aber knapp markieren: Mir fällt gerade kein Einzelfall ein, deshalb formuliere ich das Muster. Entscheidend ist, dass ich nicht schweige, sondern die Antwort kontrolliert auf einer allgemeineren Ebene halte.",
+          "translations": [
+            { "language": "en", "text": "Then I would mark that openly but briefly: I cannot think of a single case right now, so I will formulate the pattern. The decisive point is that I do not fall silent, but keep the answer controlled on a more general level." },
+            { "language": "fa", "text": "در این صورت آن را آشکار اما کوتاه علامت‌گذاری می‌کنم: الان مورد مشخصی به ذهنم نمی‌رسد، بنابراین الگو را بیان می‌کنم. نکته تعیین‌کننده این است که سکوت نکنم، بلکه پاسخ را کنترل‌شده در سطحی کلی‌تر نگه دارم." },
+            { "language": "ar", "text": "عندئذ أُشير إلى ذلك بصراحة وباختصار: لا يخطر لي الآن مثال فردي، لذلك سأصوغ النمط. النقطة الحاسمة هي ألا أصمت، بل أبقي الإجابة مسيطرًا عليها على مستوى أعم." },
+            { "language": "tr", "text": "O zaman bunu açık ama kısa belirtirdim: Şu anda tekil bir olay aklıma gelmiyor, bu yüzden örüntüyü formüle ediyorum. Belirleyici olan susmamam, yanıtı daha genel bir düzeyde kontrollü tutmamdır." },
+            { "language": "ru", "text": "Тогда я бы открыто, но кратко обозначил это: сейчас мне не приходит в голову отдельный случай, поэтому я сформулирую модель. Главное, чтобы я не молчал, а контролируемо держал ответ на более общем уровне." },
+            { "language": "ckb", "text": "ئەوکات ئەمە بە ئاشکرا، بەڵام بە کورتی نیشان دەدەم: ئێستا حاڵەتێکی تاکم بە بیر نایەت، بۆیە ئەلگۆکە دادەڕێژم. خاڵی گرنگ ئەوەیە بێدەنگ نابم، بەڵکو وەڵامەکە بە کۆنترۆڵەوە لە ئاستێکی گشتیتر دەهێڵمەوە." },
+            { "language": "kmr", "text": "Wê demê ez ê vê vekirî lê bi kurtî nîşan bidim: Niha rewşeke yekane nayê bîra min, ji ber vê ez şablonê ava dikim. Ya girîng ew e ku ez bêdeng namînim, lê bersivê bi kontrol li asteke giştîtir digirim." },
+            { "language": "pl", "text": "Wtedy zaznaczyłbym/zaznaczyłabym to otwarcie, ale krótko: w tej chwili nie przychodzi mi do głowy pojedynczy przypadek, więc sformułuję wzorzec. Kluczowe jest to, że nie milczę, lecz kontrolowanie utrzymuję odpowiedź na bardziej ogólnym poziomie." },
+            { "language": "ro", "text": "Atunci aș marca acest lucru deschis, dar scurt: nu îmi vine acum în minte un caz individual, așa că formulez modelul. Esențial este să nu tac, ci să păstrez răspunsul controlat la un nivel mai general." },
+            { "language": "sq", "text": "Atëherë do ta shënoja hapur, por shkurt: tani nuk më vjen në mendje një rast i veçantë, prandaj formuloj modelin. Vendimtare është të mos hesht, por ta mbaj përgjigjen të kontrolluar në një nivel më të përgjithshëm." }
+          ],
+          "function": "handle-recall-gap",
+          "toneNote": "Honest but controlled; no apology spiral.",
+          "expectedLearnerAction": "Acknowledge limited recall and still answer structurally."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "examiner",
+          "baseText": "Könnte das nicht ausweichend wirken?",
+          "translations": [
+            { "language": "en", "text": "Could that not seem evasive?" },
+            { "language": "fa", "text": "آیا این ممکن نیست طفره‌رفتن به نظر برسد؟" },
+            { "language": "ar", "text": "ألا يمكن أن يبدو ذلك تهربًا؟" },
+            { "language": "tr", "text": "Bu kaçamak görünmez mi?" },
+            { "language": "ru", "text": "Разве это не может показаться уклонением?" },
+            { "language": "ckb", "text": "ئایا ئەمە ناتوانێت وەک خۆدزینەوە دەربکەوێت؟" },
+            { "language": "kmr", "text": "Ma ev nikare wek xwe-vekişandin xuya bike?" },
+            { "language": "pl", "text": "Czy to nie mogłoby zabrzmieć wymijająco?" },
+            { "language": "ro", "text": "Nu ar putea părea evaziv?" },
+            { "language": "sq", "text": "A nuk mund të duket kjo si shmangie?" }
+          ],
+          "function": "challenge-strategy",
+          "toneNote": "The examiner challenges the strategy; learner should add a safeguard.",
+          "expectedLearnerAction": "Explain how to avoid evasion."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, wenn man dabei stehen bleibt. Deshalb würde ich sofort ein Kriterium nachreichen: Verantwortlich ist, wer Entscheidungsspielraum hat und die Folgen vorhersehen kann. Damit wird die Antwort prüfbar statt bloß vorsichtig.",
+          "translations": [
+            { "language": "en", "text": "Yes, if one stops there. That is why I would immediately add a criterion: responsible is whoever has decision-making room and can foresee the consequences. That makes the answer testable rather than merely cautious." },
+            { "language": "fa", "text": "بله، اگر همان‌جا متوقف شویم. برای همین فوراً یک معیار اضافه می‌کنم: مسئول کسی است که اختیار تصمیم دارد و می‌تواند پیامدها را پیش‌بینی کند. این پاسخ را قابل سنجش می‌کند، نه فقط محتاط." },
+            { "language": "ar", "text": "نعم، إذا توقف المرء عند ذلك. لذلك سأضيف فورًا معيارًا: المسؤول هو من لديه هامش قرار ويمكنه توقع النتائج. بذلك تصبح الإجابة قابلة للفحص لا مجرد حذرة." },
+            { "language": "tr", "text": "Evet, orada kalınırsa. Bu yüzden hemen bir ölçüt eklerdim: Sorumlu olan, karar alanına sahip olan ve sonuçları öngörebilendir. Böylece yanıt yalnızca temkinli değil, sınanabilir olur." },
+            { "language": "ru", "text": "Да, если на этом остановиться. Поэтому я сразу добавил бы критерий: ответственен тот, у кого есть пространство для решения и кто может предвидеть последствия. Так ответ становится проверяемым, а не просто осторожным." },
+            { "language": "ckb", "text": "بەڵێ، ئەگەر لەوێدا بوەستین. بۆیە دەستبەجێ پێوەرێک زیاد دەکەم: بەرپرسیار ئەو کەسەیە کە مەودای بڕیاریدان هەیە و دەتوانێت ئەنجامەکان پێشبینی بکات. بەوە وەڵامەکە پشکنینپێکراو دەبێت نەک تەنها وریا." },
+            { "language": "kmr", "text": "Erê, heke mirov li wir raweste. Ji ber vê ez ê yekser pîvanekê lê zêde bikim: berpirsiyar ew e ku qada biryardanê heye û dikare encaman pêşbîne. Bi vî awayî bersiv tê kontrolkirin, ne tenê baldar dimîne." },
+            { "language": "pl", "text": "Tak, jeśli się na tym poprzestanie. Dlatego od razu dodałbym/dodałabym kryterium: odpowiedzialny jest ten, kto ma przestrzeń decyzyjną i może przewidzieć skutki. Dzięki temu odpowiedź staje się sprawdzalna, a nie tylko ostrożna." },
+            { "language": "ro", "text": "Da, dacă te oprești acolo. De aceea aș adăuga imediat un criteriu: responsabil este cel care are spațiu de decizie și poate prevedea consecințele. Astfel răspunsul devine verificabil, nu doar prudent." },
+            { "language": "sq", "text": "Po, nëse ndalesh aty. Prandaj do të shtoja menjëherë një kriter: përgjegjës është ai që ka hapësirë vendimmarrjeje dhe mund të parashikojë pasojat. Kështu përgjigjja bëhet e verifikueshme, jo vetëm e kujdesshme." }
+          ],
+          "function": "add-criterion",
+          "toneNote": "The answer accepts the risk and adds a criterion.",
+          "expectedLearnerAction": "Turn caution into a testable criterion."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Bitte bündeln Sie Ihre Antwort zum Schluss in einem Satz.",
+          "translations": [
+            { "language": "en", "text": "Please bundle your answer into one sentence at the end." },
+            { "language": "fa", "text": "لطفاً در پایان پاسخ خود را در یک جمله جمع کنید." },
+            { "language": "ar", "text": "يرجى جمع إجابتكم في النهاية في جملة واحدة." },
+            { "language": "tr", "text": "Lütfen sonunda yanıtınızı tek cümlede toplayın." },
+            { "language": "ru", "text": "Пожалуйста, в конце соберите свой ответ в одно предложение." },
+            { "language": "ckb", "text": "تکایە لە کۆتاییدا وەڵامەکەت لە یەک ڕستەدا کۆبکەرەوە." },
+            { "language": "kmr", "text": "Ji kerema xwe di dawiyê de bersiva xwe di hevokekê de bicivînin." },
+            { "language": "pl", "text": "Proszę na końcu zebrać odpowiedź w jednym zdaniu." },
+            { "language": "ro", "text": "Vă rog să concentrați răspunsul la final într-o singură propoziție." },
+            { "language": "sq", "text": "Ju lutem në fund përmblidheni përgjigjen në një fjali." }
+          ],
+          "function": "request-one-sentence-summary",
+          "toneNote": "The examiner asks for concise synthesis.",
+          "expectedLearnerAction": "Provide one precise final sentence."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Kurz gesagt: Verantwortung trägt vor allem, wer entscheiden kann; wer Folgen mittragen muss, braucht aber rechtzeitig Informationen, damit Verantwortung nicht nachträglich nach unten verschoben wird.",
+          "translations": [
+            { "language": "en", "text": "In short: responsibility is borne above all by those who can decide; but those who must carry consequences need information in time so that responsibility is not shifted downward after the fact." },
+            { "language": "fa", "text": "خلاصه: مسئولیت در درجه اول بر عهده کسی است که می‌تواند تصمیم بگیرد؛ اما کسانی که باید پیامدها را تحمل کنند، به اطلاعات به‌موقع نیاز دارند تا مسئولیت بعداً به پایین منتقل نشود." },
+            { "language": "ar", "text": "باختصار: يتحمل المسؤولية قبل كل شيء من يستطيع اتخاذ القرار؛ لكن من يجب أن يتحمل النتائج يحتاج إلى معلومات في الوقت المناسب حتى لا تُنقل المسؤولية لاحقًا إلى الأسفل." },
+            { "language": "tr", "text": "Kısaca: Sorumluluğu öncelikle karar verebilen kişi taşır; fakat sonuçları taşımak zorunda olanlar zamanında bilgiye ihtiyaç duyar ki sorumluluk sonradan aşağıya itilmesin." },
+            { "language": "ru", "text": "Коротко: ответственность прежде всего несет тот, кто может принимать решения; но тем, кто должен нести последствия, нужна своевременная информация, чтобы ответственность задним числом не переносилась вниз." },
+            { "language": "ckb", "text": "بە کورتی: بەرپرسیارێتی سەرەتا لەسەر ئەو کەسەیە کە دەتوانێت بڕیار بدات؛ بەڵام ئەوانەی دەبێت ئەنجامەکان هەڵبگرن پێویستیان بە زانیاریی کاتی خۆی هەیە، بۆ ئەوەی بەرپرسیارێتی دواتر بۆ خوارەوە نەگوازرێتەوە." },
+            { "language": "kmr", "text": "Bi kurtî: berpirsiyarî berî her tiştî li ser kesê dikare biryar bide ye; lê kesên ku divê encaman hilgirin pêwîstiya wan bi agahiya di demê xwe de heye, da ku berpirsiyarî paşê ber bi jêr ve neyê veguhastin." },
+            { "language": "pl", "text": "Krótko mówiąc: odpowiedzialność ponosi przede wszystkim ten, kto może decydować; ci jednak, którzy muszą nieść skutki, potrzebują informacji na czas, aby odpowiedzialność nie została później przesunięta w dół." },
+            { "language": "ro", "text": "Pe scurt: responsabilitatea o poartă în primul rând cel care poate decide; însă cei care trebuie să suporte consecințele au nevoie de informații la timp, pentru ca responsabilitatea să nu fie mutată ulterior în jos." },
+            { "language": "sq", "text": "Shkurt: përgjegjësinë e mban para së gjithash ai që mund të vendosë; por ata që duhet të mbajnë pasojat kanë nevojë për informacion në kohë, që përgjegjësia të mos zhvendoset më pas poshtë." }
+          ],
+          "function": "one-sentence-synthesis",
+          "toneNote": "A concise C2 synthesis with hierarchy and fairness.",
+          "expectedLearnerAction": "End with one precise sentence."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-two-level-structure",
+              "text": "Ich würde die Frage in zwei Ebenen aufteilen: Verantwortung für Entscheidungen und Verantwortung für Folgen.",
+              "translations": [
+                { "language": "en", "text": "I would divide the question into two levels: responsibility for decisions and responsibility for consequences." },
+                { "language": "fa", "text": "من سؤال را به دو سطح تقسیم می‌کنم: مسئولیت تصمیم‌ها و مسئولیت پیامدها." },
+                { "language": "ar", "text": "سأقسم السؤال إلى مستويين: مسؤولية القرارات ومسؤولية النتائج." },
+                { "language": "tr", "text": "Soruyu iki düzeye ayırırdım: kararların sorumluluğu ve sonuçların sorumluluğu." },
+                { "language": "ru", "text": "Я бы разделил вопрос на два уровня: ответственность за решения и ответственность за последствия." },
+                { "language": "ckb", "text": "من پرسیارەکە بە دوو ئاست دابەش دەکەم: بەرپرسیارێتی بۆ بڕیارەکان و بەرپرسیارێتی بۆ ئەنجامەکان." },
+                { "language": "kmr", "text": "Ez ê pirsê li du astan parçe bikim: berpirsiyariya biryaran û berpirsiyariya encaman." },
+                { "language": "pl", "text": "Podzieliłbym/Podzieliłabym pytanie na dwa poziomy: odpowiedzialność za decyzje i odpowiedzialność za skutki." },
+                { "language": "ro", "text": "Aș împărți întrebarea pe două niveluri: responsabilitatea pentru decizii și responsabilitatea pentru consecințe." },
+                { "language": "sq", "text": "Do ta ndaja pyetjen në dy nivele: përgjegjësia për vendimet dhe përgjegjësia për pasojat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong spontaneous answer: it buys time by structuring the question rather than repeating it.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong spontaneous answer: it buys time by structuring the question rather than repeating it." },
+                { "language": "fa", "text": "پاسخ ناگهانی قوی: با ساختار دادن به سؤال زمان می‌گیرد، نه با تکرار آن." },
+                { "language": "ar", "text": "إجابة تلقائية قوية: تكسب الوقت بتنظيم السؤال لا بتكراره." },
+                { "language": "tr", "text": "Güçlü ani yanıt: soruyu tekrar etmek yerine yapılandırarak zaman kazanır." },
+                { "language": "ru", "text": "Сильный спонтанный ответ: он выигрывает время через структуру, а не через повтор вопроса." },
+                { "language": "ckb", "text": "وەڵامی لەپڕی بەهێز: بە ڕێکخستنی پرسیارەکە کات بەدەستدەهێنێت، نە بە دووبارەکردنەوەی." },
+                { "language": "kmr", "text": "Bersiva nişkêva ya xurt: bi rêxistina pirsê dem bi dest dixe, ne bi dubarekirina wê." },
+                { "language": "pl", "text": "Mocna spontaniczna odpowiedź: zyskuje czas przez strukturę pytania, a nie przez jego powtarzanie." },
+                { "language": "ro", "text": "Răspuns spontan puternic: câștigă timp prin structurarea întrebării, nu prin repetarea ei." },
+                { "language": "sq", "text": "Përgjigje spontane e fortë: fiton kohë duke strukturuar pyetjen, jo duke e përsëritur." }
+              ]
+            },
+            {
+              "id": "weak-too-general",
+              "text": "Verantwortung ist immer ein komplexes Thema und hängt vom Kontext ab.",
+              "translations": [
+                { "language": "en", "text": "Responsibility is always a complex topic and depends on the context." },
+                { "language": "fa", "text": "مسئولیت همیشه موضوعی پیچیده است و به زمینه بستگی دارد." },
+                { "language": "ar", "text": "المسؤولية دائمًا موضوع معقد وتعتمد على السياق." },
+                { "language": "tr", "text": "Sorumluluk her zaman karmaşık bir konudur ve bağlama bağlıdır." },
+                { "language": "ru", "text": "Ответственность всегда сложная тема и зависит от контекста." },
+                { "language": "ckb", "text": "بەرپرسیارێتی هەمیشە بابەتێکی ئاڵۆزە و بە پێوەندیدارەوە گرێدراوە." },
+                { "language": "kmr", "text": "Berpirsiyarî her dem mijareke tevlihev e û bi çarçoveyê ve girêdayî ye." },
+                { "language": "pl", "text": "Odpowiedzialność jest zawsze tematem złożonym i zależy od kontekstu." },
+                { "language": "ro", "text": "Responsabilitatea este întotdeauna un subiect complex și depinde de context." },
+                { "language": "sq", "text": "Përgjegjësia është gjithmonë temë komplekse dhe varet nga konteksti." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weak: it sounds sophisticated, yet it does not answer who is responsible.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: it sounds sophisticated, yet it does not answer who is responsible." },
+                { "language": "fa", "text": "قابل تصور اما ضعیف است: پیچیده به نظر می‌رسد، اما پاسخ نمی‌دهد چه کسی مسئول است." },
+                { "language": "ar", "text": "محتمل لكنه ضعيف: يبدو متقدمًا، لكنه لا يجيب عن سؤال من المسؤول." },
+                { "language": "tr", "text": "Makul ama zayıf: gelişmiş duyulur, ama kimin sorumlu olduğunu yanıtlamaz." },
+                { "language": "ru", "text": "Возможно, но слабо: звучит сложно, однако не отвечает, кто ответственен." },
+                { "language": "ckb", "text": "ئەگەری هەیە، بەڵام لاوازە: پێشکەوتوو دەبیسترێت، بەڵام وەڵامی ئەوە ناداتەوە کێ بەرپرسیارە." },
+                { "language": "kmr", "text": "Mumkun e, lê lawaz e: pêşketî xuya dike, lê bersiva kî berpirsiyar e nade." },
+                { "language": "pl", "text": "Brzmi możliwie, ale słabo: wydaje się zaawansowane, lecz nie odpowiada, kto jest odpowiedzialny." },
+                { "language": "ro", "text": "Plauzibil, dar slab: sună sofisticat, însă nu răspunde cine este responsabil." },
+                { "language": "sq", "text": "E mundshme, por e dobët: tingëllon e sofistikuar, por nuk përgjigjet kush është përgjegjës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-one-sentence-case",
+              "text": "Die Leitung muss die Priorität begründen, während das Team die praktischen Folgen offen benennen darf.",
+              "translations": [
+                { "language": "en", "text": "Leadership must justify the priority, while the team must be allowed to name the practical consequences openly." },
+                { "language": "fa", "text": "مدیریت باید اولویت را توجیه کند، در حالی که تیم باید بتواند پیامدهای عملی را آشکارا نام ببرد." },
+                { "language": "ar", "text": "على الإدارة أن تبرر الأولوية، بينما يجب أن يُسمح للفريق بتسمية النتائج العملية بصراحة." },
+                { "language": "tr", "text": "Yönetim önceliği gerekçelendirmeli, ekip ise pratik sonuçları açıkça adlandırabilmelidir." },
+                { "language": "ru", "text": "Руководство должно обосновать приоритет, а команда должна иметь право открыто назвать практические последствия." },
+                { "language": "ckb", "text": "بەڕێوەبردن دەبێت پێشینەییەکە پاساو بدات، لە کاتێکدا تیم دەبێت بتوانێت ئەنجامە کردارییەکان بە ئاشکرا ناوببەیت." },
+                { "language": "kmr", "text": "Rêveberî divê pêşîniyê rewa bike, lê tîm divê bikare encamên pratîk bi vekirî nav bike." },
+                { "language": "pl", "text": "Kierownictwo musi uzasadnić priorytet, a zespół powinien móc otwarcie nazwać praktyczne skutki." },
+                { "language": "ro", "text": "Conducerea trebuie să justifice prioritatea, iar echipa trebuie să poată numi deschis consecințele practice." },
+                { "language": "sq", "text": "Drejtimi duhet ta arsyetojë prioritetin, ndërsa ekipi duhet të lejohet të përmendë hapur pasojat praktike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good compressed answer: it names the actor, the duty, and the team's legitimate role.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good compressed answer: it names the actor, the duty, and the team's legitimate role." },
+                { "language": "fa", "text": "پاسخ فشرده خوب: عامل، وظیفه و نقش مشروع تیم را نام می‌برد." },
+                { "language": "ar", "text": "إجابة مكثفة جيدة: تسمي الفاعل والواجب والدور المشروع للفريق." },
+                { "language": "tr", "text": "İyi sıkıştırılmış yanıt: aktörü, görevi ve ekibin meşru rolünü adlandırır." },
+                { "language": "ru", "text": "Хороший сжатый ответ: он называет участника, обязанность и законную роль команды." },
+                { "language": "ckb", "text": "وەڵامی فشاری باش: بکەر، ئەرک و ڕۆڵی ڕەوای تیم ناودەبات." },
+                { "language": "kmr", "text": "Bersiva kurtkirî ya baş: aktor, erk û rola rewa ya tîmê nav dike." },
+                { "language": "pl", "text": "Dobra skondensowana odpowiedź: nazywa aktora, obowiązek i uprawnioną rolę zespołu." },
+                { "language": "ro", "text": "Răspuns concentrat bun: numește actorul, obligația și rolul legitim al echipei." },
+                { "language": "sq", "text": "Përgjigje e mirë e përmbledhur: emërton aktorin, detyrën dhe rolin e ligjshëm të ekipit." }
+              ]
+            },
+            {
+              "id": "weak-one-sided",
+              "text": "Die Leitung ist verantwortlich, weil sie am Ende entscheidet.",
+              "translations": [
+                { "language": "en", "text": "Leadership is responsible because it decides in the end." },
+                { "language": "fa", "text": "مدیریت مسئول است، چون در نهایت تصمیم می‌گیرد." },
+                { "language": "ar", "text": "الإدارة مسؤولة لأنها تقرر في النهاية." },
+                { "language": "tr", "text": "Yönetim sorumludur, çünkü sonunda o karar verir." },
+                { "language": "ru", "text": "Руководство ответственно, потому что в конце оно принимает решение." },
+                { "language": "ckb", "text": "بەڕێوەبردن بەرپرسیارە، چونکە لە کۆتاییدا ئەو بڕیار دەدات." },
+                { "language": "kmr", "text": "Rêveberî berpirsiyar e, ji ber ku di dawiyê de ew biryar dide." },
+                { "language": "pl", "text": "Kierownictwo jest odpowiedzialne, ponieważ na końcu decyduje." },
+                { "language": "ro", "text": "Conducerea este responsabilă, deoarece ea decide în final." },
+                { "language": "sq", "text": "Drejtimi është përgjegjës, sepse në fund ai vendos." }
+              ],
+              "isCorrect": false,
+              "feedback": "Partly right, but too one-sided: it ignores consequences and communication duties.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly right, but too one-sided: it ignores consequences and communication duties." },
+                { "language": "fa", "text": "تا حدی درست است، اما یک‌طرفه است: پیامدها و وظایف ارتباطی را نادیده می‌گیرد." },
+                { "language": "ar", "text": "صحيح جزئيًا لكنه أحادي جدًا: يتجاهل النتائج وواجبات التواصل." },
+                { "language": "tr", "text": "Kısmen doğru, ama fazla tek taraflı: sonuçları ve iletişim görevlerini görmez." },
+                { "language": "ru", "text": "Отчасти верно, но слишком односторонне: игнорирует последствия и обязанности коммуникации." },
+                { "language": "ckb", "text": "تا ڕادەیەک ڕاستە، بەڵام زۆر یەکلایەنەیە: ئەنجامەکان و ئەرکەکانی پەیوەندیکردن پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Hinekî rast e, lê pir yekalî ye: encam û erkên têkiliyê paşguh dike." },
+                { "language": "pl", "text": "Częściowo słuszne, ale zbyt jednostronne: pomija skutki i obowiązki komunikacyjne." },
+                { "language": "ro", "text": "Parțial corect, dar prea unilateral: ignoră consecințele și obligațiile de comunicare." },
+                { "language": "sq", "text": "Pjesërisht e drejtë, por shumë e njëanshme: shpërfill pasojat dhe detyrat e komunikimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-mark-gap-pattern",
+              "text": "Mir fällt gerade kein Einzelfall ein, deshalb formuliere ich das Muster.",
+              "translations": [
+                { "language": "en", "text": "I cannot think of a single case right now, so I will formulate the pattern." },
+                { "language": "fa", "text": "الان مورد مشخصی به ذهنم نمی‌رسد، بنابراین الگو را بیان می‌کنم." },
+                { "language": "ar", "text": "لا يخطر لي الآن مثال فردي، لذلك سأصوغ النمط." },
+                { "language": "tr", "text": "Şu anda tekil bir olay aklıma gelmiyor, bu yüzden örüntüyü formüle ediyorum." },
+                { "language": "ru", "text": "Сейчас мне не приходит в голову отдельный случай, поэтому я сформулирую модель." },
+                { "language": "ckb", "text": "ئێستا حاڵەتێکی تاکم بە بیر نایەت، بۆیە ئەلگۆکە دادەڕێژم." },
+                { "language": "kmr", "text": "Niha rewşeke yekane nayê bîra min, ji ber vê ez şablonê ava dikim." },
+                { "language": "pl", "text": "W tej chwili nie przychodzi mi do głowy pojedynczy przypadek, więc sformułuję wzorzec." },
+                { "language": "ro", "text": "Nu îmi vine acum în minte un caz individual, așa că formulez modelul." },
+                { "language": "sq", "text": "Tani nuk më vjen në mendje një rast i veçantë, prandaj formuloj modelin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Useful under pressure: it is honest, brief, and immediately offers a structured answer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Useful under pressure: it is honest, brief, and immediately offers a structured answer." },
+                { "language": "fa", "text": "زیر فشار مفید است: صادقانه و کوتاه است و فوراً پاسخ ساختاریافته ارائه می‌دهد." },
+                { "language": "ar", "text": "مفيد تحت الضغط: صادق وموجز ويقدم فورًا إجابة منظمة." },
+                { "language": "tr", "text": "Baskı altında kullanışlı: dürüst, kısa ve hemen yapılandırılmış yanıt sunuyor." },
+                { "language": "ru", "text": "Полезно под давлением: честно, кратко и сразу предлагает структурированный ответ." },
+                { "language": "ckb", "text": "لە ژێر فشاردیدا بەسوودە: ڕاستگۆیانە و کورتە و دەستبەجێ وەڵامێکی ڕێکخراو پێشکەش دەکات." },
+                { "language": "kmr", "text": "Di bin zextê de bikêr e: rast, kurt û yekser bersiveke bi rêxistin pêşkêş dike." },
+                { "language": "pl", "text": "Przydatne pod presją: jest szczere, krótkie i od razu oferuje uporządkowaną odpowiedź." },
+                { "language": "ro", "text": "Util sub presiune: este sincer, scurt și oferă imediat un răspuns structurat." },
+                { "language": "sq", "text": "E dobishme nën presion: është e sinqertë, e shkurtër dhe ofron menjëherë përgjigje të strukturuar." }
+              ]
+            },
+            {
+              "id": "weak-apology",
+              "text": "Entschuldigung, mir fällt gerade kein gutes Beispiel ein.",
+              "translations": [
+                { "language": "en", "text": "Sorry, I cannot think of a good example right now." },
+                { "language": "fa", "text": "ببخشید، الان مثال خوبی به ذهنم نمی‌رسد." },
+                { "language": "ar", "text": "عذرًا، لا يخطر لي الآن مثال جيد." },
+                { "language": "tr", "text": "Üzgünüm, şu anda iyi bir örnek aklıma gelmiyor." },
+                { "language": "ru", "text": "Извините, сейчас мне не приходит в голову хороший пример." },
+                { "language": "ckb", "text": "ببوورە، ئێستا نموونەیەکی باشم بە بیر نایەت." },
+                { "language": "kmr", "text": "Bibore, niha mînakeke baş nayê bîra min." },
+                { "language": "pl", "text": "Przepraszam, w tej chwili nie przychodzi mi do głowy dobry przykład." },
+                { "language": "ro", "text": "Îmi pare rău, nu îmi vine acum în minte un exemplu bun." },
+                { "language": "sq", "text": "Më falni, tani nuk më vjen në mendje një shembull i mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Honest but incomplete: it stops at the gap and gives no usable answer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Honest but incomplete: it stops at the gap and gives no usable answer." },
+                { "language": "fa", "text": "صادقانه اما ناقص است: در کمبود مثال متوقف می‌شود و پاسخ قابل استفاده نمی‌دهد." },
+                { "language": "ar", "text": "صادق لكنه غير مكتمل: يتوقف عند الفجوة ولا يقدم إجابة مفيدة." },
+                { "language": "tr", "text": "Dürüst ama tamamlanmamış: boşlukta kalır ve kullanılabilir yanıt vermez." },
+                { "language": "ru", "text": "Честно, но неполно: останавливается на пробеле и не дает пригодного ответа." },
+                { "language": "ckb", "text": "ڕاستگۆیانەیە، بەڵام ناقسە: لە کەمی نموونەدا دەوەستێت و وەڵامی بەکارهێنراو نادات." },
+                { "language": "kmr", "text": "Rast e, lê netemam e: li valahiyê disekine û bersiveke bikêr nade." },
+                { "language": "pl", "text": "Szczere, ale niepełne: zatrzymuje się na braku przykładu i nie daje użytecznej odpowiedzi." },
+                { "language": "ro", "text": "Sincer, dar incomplet: se oprește la lipsă și nu oferă un răspuns utilizabil." },
+                { "language": "sq", "text": "E sinqertë, por e paplotë: ndalet te mungesa dhe nuk jep përgjigje të përdorshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-add-criterion",
+              "text": "Verantwortlich ist, wer Entscheidungsspielraum hat und die Folgen vorhersehen kann.",
+              "translations": [
+                { "language": "en", "text": "Responsible is whoever has decision-making room and can foresee the consequences." },
+                { "language": "fa", "text": "مسئول کسی است که اختیار تصمیم دارد و می‌تواند پیامدها را پیش‌بینی کند." },
+                { "language": "ar", "text": "المسؤول هو من لديه هامش قرار ويمكنه توقع النتائج." },
+                { "language": "tr", "text": "Sorumlu olan, karar alanına sahip olan ve sonuçları öngörebilendir." },
+                { "language": "ru", "text": "Ответственен тот, у кого есть пространство для решения и кто может предвидеть последствия." },
+                { "language": "ckb", "text": "بەرپرسیار ئەو کەسەیە کە مەودای بڕیاریدان هەیە و دەتوانێت ئەنجامەکان پێشبینی بکات." },
+                { "language": "kmr", "text": "Berpirsiyar ew e ku qada biryardanê heye û dikare encaman pêşbîne." },
+                { "language": "pl", "text": "Odpowiedzialny jest ten, kto ma przestrzeń decyzyjną i może przewidzieć skutki." },
+                { "language": "ro", "text": "Responsabil este cel care are spațiu de decizie și poate prevedea consecințele." },
+                { "language": "sq", "text": "Përgjegjës është ai që ka hapësirë vendimmarrjeje dhe mund të parashikojë pasojat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong safeguard: a criterion prevents the careful answer from becoming evasive.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong safeguard: a criterion prevents the careful answer from becoming evasive." },
+                { "language": "fa", "text": "محافظ قوی: یک معیار مانع می‌شود پاسخ محتاطانه به طفره‌رفتن تبدیل شود." },
+                { "language": "ar", "text": "ضمان قوي: المعيار يمنع الإجابة الحذرة من أن تصبح تهربًا." },
+                { "language": "tr", "text": "Güçlü güvence: bir ölçüt, dikkatli yanıtın kaçamak olmasını önler." },
+                { "language": "ru", "text": "Сильная защита: критерий не дает осторожному ответу стать уклончивым." },
+                { "language": "ckb", "text": "پارێزەری بەهێز: پێوەر ڕێ دەگرێت لەوەی وەڵامی وریا ببێتە خۆدزینەوە." },
+                { "language": "kmr", "text": "Parastineke xurt: pîvan nahêle bersiva baldar bibe xwe-vekişandin." },
+                { "language": "pl", "text": "Mocne zabezpieczenie: kryterium nie pozwala, by ostrożna odpowiedź stała się wymijająca." },
+                { "language": "ro", "text": "Garanție puternică: un criteriu împiedică răspunsul prudent să devină evaziv." },
+                { "language": "sq", "text": "Siguresë e fortë: një kriter nuk lejon që përgjigjja e kujdesshme të bëhet shmangëse." }
+              ]
+            },
+            {
+              "id": "weak-depends",
+              "text": "Es hängt einfach davon ab, wie viel Einfluss jemand hat.",
+              "translations": [
+                { "language": "en", "text": "It simply depends on how much influence someone has." },
+                { "language": "fa", "text": "فقط بستگی دارد کسی چقدر نفوذ دارد." },
+                { "language": "ar", "text": "الأمر يعتمد ببساطة على مقدار تأثير الشخص." },
+                { "language": "tr", "text": "Bu basitçe birinin ne kadar etkisi olduğuna bağlıdır." },
+                { "language": "ru", "text": "Это просто зависит от того, сколько влияния у человека." },
+                { "language": "ckb", "text": "ئەمە تەنها بەوەوە گرێدراوە کە کەسێک چەندە کاریگەری هەیە." },
+                { "language": "kmr", "text": "Ev bi sadehî bi qasî bandora kesekî ve girêdayî ye." },
+                { "language": "pl", "text": "To po prostu zależy od tego, ile ktoś ma wpływu." },
+                { "language": "ro", "text": "Depinde pur și simplu de câtă influență are cineva." },
+                { "language": "sq", "text": "Varet thjesht nga sa ndikim ka dikush." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too vague: influence is relevant, but it needs a clearer criterion such as decision room and foreseeability.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: influence is relevant, but it needs a clearer criterion such as decision room and foreseeability." },
+                { "language": "fa", "text": "خیلی مبهم است: نفوذ مهم است، اما به معیاری روشن‌تر مثل اختیار تصمیم و پیش‌بینی‌پذیری نیاز دارد." },
+                { "language": "ar", "text": "غامض جدًا: التأثير مهم، لكنه يحتاج إلى معيار أوضح مثل هامش القرار وإمكانية التوقع." },
+                { "language": "tr", "text": "Fazla belirsiz: etki önemlidir, ama karar alanı ve öngörülebilirlik gibi daha açık ölçüt gerekir." },
+                { "language": "ru", "text": "Слишком расплывчато: влияние важно, но нужен более ясный критерий, например пространство решения и предвидимость." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: کاریگەری گرنگە، بەڵام پێویستی بە پێوەرێکی ڕوونتر هەیە وەک مەودای بڕیار و پێشبینیپێکراوی." },
+                { "language": "kmr", "text": "Pir nezelal e: bandor girîng e, lê pîvaneke zelaltir pêwîst e wek qada biryarê û pêşbîniyê." },
+                { "language": "pl", "text": "Zbyt niejasne: wpływ jest ważny, ale potrzebne jest jaśniejsze kryterium, jak przestrzeń decyzyjna i przewidywalność." },
+                { "language": "ro", "text": "Prea vag: influența este relevantă, dar este nevoie de un criteriu mai clar, precum spațiul decizional și previzibilitatea." },
+                { "language": "sq", "text": "Shumë e paqartë: ndikimi është i rëndësishëm, por duhet kriter më i qartë si hapësira e vendimmarrjes dhe parashikueshmëria." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-final-sentence",
+              "text": "Verantwortung trägt vor allem, wer entscheiden kann; wer Folgen mittragen muss, braucht rechtzeitig Informationen.",
+              "translations": [
+                { "language": "en", "text": "Responsibility is borne above all by those who can decide; those who must carry consequences need information in time." },
+                { "language": "fa", "text": "مسئولیت در درجه اول بر عهده کسی است که می‌تواند تصمیم بگیرد؛ کسانی که باید پیامدها را تحمل کنند، به اطلاعات به‌موقع نیاز دارند." },
+                { "language": "ar", "text": "يتحمل المسؤولية قبل كل شيء من يستطيع اتخاذ القرار؛ ومن يجب أن يتحمل النتائج يحتاج إلى معلومات في الوقت المناسب." },
+                { "language": "tr", "text": "Sorumluluğu öncelikle karar verebilen kişi taşır; sonuçları taşımak zorunda olanlar zamanında bilgiye ihtiyaç duyar." },
+                { "language": "ru", "text": "Ответственность прежде всего несет тот, кто может решать; тем, кто должен нести последствия, нужна своевременная информация." },
+                { "language": "ckb", "text": "بەرپرسیارێتی سەرەتا لەسەر ئەو کەسەیە کە دەتوانێت بڕیار بدات؛ ئەوانەی دەبێت ئەنجامەکان هەڵبگرن پێویستیان بە زانیاریی کاتی خۆی هەیە." },
+                { "language": "kmr", "text": "Berpirsiyarî berî her tiştî li ser kesê dikare biryar bide ye; kesên ku divê encaman hilgirin pêwîstiya wan bi agahiya di demê xwe de heye." },
+                { "language": "pl", "text": "Odpowiedzialność ponosi przede wszystkim ten, kto może decydować; ci, którzy muszą nieść skutki, potrzebują informacji na czas." },
+                { "language": "ro", "text": "Responsabilitatea o poartă în primul rând cel care poate decide; cei care trebuie să suporte consecințele au nevoie de informații la timp." },
+                { "language": "sq", "text": "Përgjegjësinë e mban para së gjithash ai që mund të vendosë; ata që duhet të mbajnë pasojat kanë nevojë për informacion në kohë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Strong final sentence: it is short, balanced, and keeps both authority and consequence in view.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong final sentence: it is short, balanced, and keeps both authority and consequence in view." },
+                { "language": "fa", "text": "جمله پایانی قوی: کوتاه و متعادل است و هم اختیار و هم پیامد را در نظر دارد." },
+                { "language": "ar", "text": "جملة ختامية قوية: قصيرة ومتوازنة وتُبقي السلطة والنتيجة في الحسبان." },
+                { "language": "tr", "text": "Güçlü son cümle: kısa, dengeli ve hem yetkiyi hem sonucu göz önünde tutar." },
+                { "language": "ru", "text": "Сильное итоговое предложение: оно короткое, сбалансированное и учитывает как полномочие, так и последствие." },
+                { "language": "ckb", "text": "ڕستەی کۆتایی بەهێز: کورت و هاوسەنگە و هەم دەسەڵات و هەم ئەنجام لەبەرچاو دەگرێت." },
+                { "language": "kmr", "text": "Hevoka dawî ya xurt: kurt, hevseng e û hem desthilat hem jî encam li ber çavan digire." },
+                { "language": "pl", "text": "Mocne zdanie końcowe: jest krótkie, wyważone i uwzględnia zarówno uprawnienie, jak i skutek." },
+                { "language": "ro", "text": "Propoziție finală puternică: este scurtă, echilibrată și păstrează în vedere atât autoritatea, cât și consecința." },
+                { "language": "sq", "text": "Fjali përfundimtare e fortë: është e shkurtër, e balancuar dhe mban parasysh si autoritetin, ashtu edhe pasojën." }
+              ]
+            },
+            {
+              "id": "weak-final-repetition",
+              "text": "Also ist Verantwortung wichtig, aber man muss immer den Kontext beachten.",
+              "translations": [
+                { "language": "en", "text": "So responsibility is important, but one must always consider the context." },
+                { "language": "fa", "text": "پس مسئولیت مهم است، اما همیشه باید زمینه را در نظر گرفت." },
+                { "language": "ar", "text": "إذن المسؤولية مهمة، لكن يجب دائمًا مراعاة السياق." },
+                { "language": "tr", "text": "Yani sorumluluk önemlidir, ama bağlam her zaman dikkate alınmalıdır." },
+                { "language": "ru", "text": "Итак, ответственность важна, но всегда нужно учитывать контекст." },
+                { "language": "ckb", "text": "کەواتە بەرپرسیارێتی گرنگە، بەڵام هەمیشە دەبێت پێوەندیدار لەبەرچاو بگیرێت." },
+                { "language": "kmr", "text": "Yanî berpirsiyarî girîng e, lê divê her dem çarçove were hesibandin." },
+                { "language": "pl", "text": "A więc odpowiedzialność jest ważna, ale zawsze trzeba brać pod uwagę kontekst." },
+                { "language": "ro", "text": "Așadar responsabilitatea este importantă, dar trebuie întotdeauna avut în vedere contextul." },
+                { "language": "sq", "text": "Pra përgjegjësia është e rëndësishme, por gjithmonë duhet marrë parasysh konteksti." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too generic: it repeats the theme but does not answer the examiner's concrete follow-up.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too generic: it repeats the theme but does not answer the examiner's concrete follow-up." },
+                { "language": "fa", "text": "بیش از حد کلی است: موضوع را تکرار می‌کند، اما به پرسش مشخص ممتحن پاسخ نمی‌دهد." },
+                { "language": "ar", "text": "عام جدًا: يكرر الموضوع لكنه لا يجيب عن سؤال المتابعة المحدد من الفاحص." },
+                { "language": "tr", "text": "Fazla genel: konuyu tekrarlar, ama sınav görevlisinin somut ek sorusunu yanıtlamaz." },
+                { "language": "ru", "text": "Слишком общее: повторяет тему, но не отвечает на конкретный уточняющий вопрос экзаменатора." },
+                { "language": "ckb", "text": "زۆر گشتییە: بابەتەکە دووبارە دەکاتەوە، بەڵام وەڵامی پرسیاری دیاریکراوی تاقیکەرەوە ناداتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: mijarê dubare dike, lê bersiva pirsa şênber a kesê ezmûnê nade." },
+                { "language": "pl", "text": "Zbyt ogólne: powtarza temat, ale nie odpowiada na konkretne pytanie dodatkowe egzaminatora." },
+                { "language": "ro", "text": "Prea general: repetă tema, dar nu răspunde întrebării concrete a examinatorului." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përsërit temën, por nuk i përgjigjet pyetjes konkrete shtesë të ekzaminuesit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "quick-structure",
+          "text": "Bei spontanen Nachfragen hilft eine knappe Struktur mehr als ein langer Einstieg.",
+          "translations": [
+            { "language": "en", "text": "With spontaneous follow-ups, a brief structure helps more than a long introduction." },
+            { "language": "fa", "text": "در پرسش‌های ناگهانی، ساختار کوتاه بیشتر از مقدمه طولانی کمک می‌کند." },
+            { "language": "ar", "text": "في أسئلة المتابعة المفاجئة تساعد البنية المختصرة أكثر من مقدمة طويلة." },
+            { "language": "tr", "text": "Ani ek sorularda kısa bir yapı uzun bir girişten daha çok yardımcı olur." },
+            { "language": "ru", "text": "При спонтанных уточняющих вопросах краткая структура помогает больше, чем длинное вступление." },
+            { "language": "ckb", "text": "لە پرسیاری بەدواداچوونی لەپڕدا ڕێکخستنێکی کورت زیاتر یارمەتیدەرە لە دەستپێکێکی درێژ." },
+            { "language": "kmr", "text": "Di pirsên şopandinê yên nişkêva de rêxistineke kurt ji destpêkeke dirêj zêdetir alîkar e." },
+            { "language": "pl", "text": "Przy spontanicznych pytaniach dodatkowych krótka struktura pomaga bardziej niż długi wstęp." },
+            { "language": "ro", "text": "La întrebările spontane de continuare, o structură scurtă ajută mai mult decât o introducere lungă." },
+            { "language": "sq", "text": "Në pyetjet spontane shtesë, një strukturë e shkurtër ndihmon më shumë se një hyrje e gjatë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "concrete-compression",
+          "text": "Eine gute C2-Antwort kann abstrakte Begriffe sofort auf Akteure, Pflichten und Folgen verdichten.",
+          "translations": [
+            { "language": "en", "text": "A good C2 answer can immediately condense abstract terms into actors, duties, and consequences." },
+            { "language": "fa", "text": "پاسخ خوب C2 می‌تواند مفاهیم انتزاعی را فوراً به عامل‌ها، وظایف و پیامدها فشرده کند." },
+            { "language": "ar", "text": "يمكن لإجابة جيدة في C2 أن تكثف المفاهيم المجردة فورًا في فاعلين وواجبات ونتائج." },
+            { "language": "tr", "text": "İyi bir C2 yanıtı soyut kavramları hemen aktörlere, görevlere ve sonuçlara yoğunlaştırabilir." },
+            { "language": "ru", "text": "Хороший ответ C2 может сразу сжать абстрактные понятия до участников, обязанностей и последствий." },
+            { "language": "ckb", "text": "وەڵامی باشی C2 دەتوانێت دەستبەجێ چەمکە ئەبستراکتەکان بکاتە بکەر، ئەرک و ئەنجام." },
+            { "language": "kmr", "text": "Bersiveke baş a C2 dikare têgehên razber yekser bike aktor, erk û encam." },
+            { "language": "pl", "text": "Dobra odpowiedź C2 potrafi od razu skondensować pojęcia abstrakcyjne do aktorów, obowiązków i skutków." },
+            { "language": "ro", "text": "Un răspuns bun de C2 poate condensa imediat conceptele abstracte în actori, obligații și consecințe." },
+            { "language": "sq", "text": "Një përgjigje e mirë C2 mund t'i përmbledhë menjëherë konceptet abstrakte në aktorë, detyra dhe pasoja." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "controlled-uncertainty",
+          "text": "Begrenzte Unsicherheit ist akzeptabel, wenn danach ein klares Muster oder Kriterium folgt.",
+          "translations": [
+            { "language": "en", "text": "Limited uncertainty is acceptable if a clear pattern or criterion follows." },
+            { "language": "fa", "text": "عدم قطعیت محدود قابل قبول است، اگر بعد از آن الگو یا معیار روشنی بیاید." },
+            { "language": "ar", "text": "عدم اليقين المحدود مقبول إذا تبعه نمط أو معيار واضح." },
+            { "language": "tr", "text": "Sınırlı belirsizlik, ardından açık bir örüntü ya da ölçüt gelirse kabul edilebilir." },
+            { "language": "ru", "text": "Ограниченная неопределенность приемлема, если за ней следует ясная модель или критерий." },
+            { "language": "ckb", "text": "نادڵنیایی سنووردار قبووڵکراوە، ئەگەر دوای ئەوە ئەلگۆ یان پێوەرێکی ڕوون بێت." },
+            { "language": "kmr", "text": "Nezelaliya sînorkirî tê qebûlkirin heke piştî wê şablon an pîvaneke zelal bê." },
+            { "language": "pl", "text": "Ograniczona niepewność jest akceptowalna, jeśli potem pojawia się jasny wzorzec lub kryterium." },
+            { "language": "ro", "text": "Incertitudinea limitată este acceptabilă dacă urmează un model sau un criteriu clar." },
+            { "language": "sq", "text": "Pasiguria e kufizuar është e pranueshme nëse më pas vjen një model ose kriter i qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "final-bundling",
+          "text": "Der Schlusssatz sollte die Nachfrage beantworten, nicht nur das Thema noch einmal benennen.",
+          "translations": [
+            { "language": "en", "text": "The final sentence should answer the follow-up, not merely name the topic again." },
+            { "language": "fa", "text": "جمله پایانی باید به پرسش پیگیری پاسخ دهد، نه اینکه فقط دوباره موضوع را نام ببرد." },
+            { "language": "ar", "text": "ينبغي أن تجيب الجملة الختامية عن سؤال المتابعة، لا أن تذكر الموضوع مرة أخرى فقط." },
+            { "language": "tr", "text": "Son cümle ek soruyu yanıtlamalı, yalnızca konuyu yeniden adlandırmamalıdır." },
+            { "language": "ru", "text": "Итоговое предложение должно отвечать на уточняющий вопрос, а не просто снова называть тему." },
+            { "language": "ckb", "text": "ڕستەی کۆتایی دەبێت وەڵامی پرسیاری بەدواداچوون بداتەوە، نەک تەنها جارێکی تر بابەتەکە ناوببەیت." },
+            { "language": "kmr", "text": "Divê hevoka dawî bersiva pirsa şopandinê bide, ne ku tenê mijarê careke din nav bike." },
+            { "language": "pl", "text": "Zdanie końcowe powinno odpowiadać na pytanie dodatkowe, a nie tylko ponownie nazywać temat." },
+            { "language": "ro", "text": "Propoziția finală trebuie să răspundă întrebării de continuare, nu doar să numească din nou tema." },
+            { "language": "sq", "text": "Fjalia përfundimtare duhet t'i përgjigjet pyetjes shtesë, jo vetëm ta përmendë sërish temën." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "goethe-c2-spontaneous-follow-up-exam",
+          "placement": "detail-header",
+          "purpose": "Show a formal C2 oral exam moment with a spontaneous examiner follow-up.",
+          "altText": "Eine prüfende Person stellt in einem ruhigen Prüfungsraum eine spontane Nachfrage, während ein Kandidat strukturiert antwortet.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An examiner asks a spontaneous follow-up in a quiet exam room while a candidate answers in a structured way." },
+            { "language": "fa", "text": "یک ممتحن در اتاق آرام آزمون پرسش ناگهانی می‌پرسد و داوطلب ساختارمند پاسخ می‌دهد." },
+            { "language": "ar", "text": "يطرح فاحص سؤال متابعة مفاجئًا في غرفة اختبار هادئة بينما يجيب مرشح بطريقة منظمة." },
+            { "language": "tr", "text": "Bir sınav görevlisi sakin bir sınav odasında ani bir ek soru sorar, aday ise yapılandırılmış biçimde yanıt verir." },
+            { "language": "ru", "text": "Экзаменатор задает спонтанный уточняющий вопрос в тихой экзаменационной комнате, а кандидат отвечает структурированно." },
+            { "language": "ckb", "text": "تاقیکەرەوە لە ژوورێکی ئارامی تاقیکردنەوە پرسیاری بەدواداچوونی لەپڕ دەکات، لە کاتێکدا بەشداربوو بە ڕێکخراوی وەڵام دەداتەوە." },
+            { "language": "kmr", "text": "Kesê ezmûnê li odeyeke aram a ezmûnê pirseke şopandinê ya nişkêva dike, namzed jî bi rêxistin bersiv dide." },
+            { "language": "pl", "text": "Egzaminator zadaje spontaniczne pytanie dodatkowe w cichej sali egzaminacyjnej, a kandydat odpowiada w uporządkowany sposób." },
+            { "language": "ro", "text": "Un examinator pune o întrebare spontană de continuare într-o sală de examen liniștită, iar un candidat răspunde structurat." },
+            { "language": "sq", "text": "Një ekzaminues bën një pyetje spontane shtesë në një dhomë të qetë provimi, ndërsa kandidati përgjigjet në mënyrë të strukturuar." }
+          ],
+          "imagePrompt": "Clean educational illustration, formal oral exam room, examiner asking a spontaneous follow-up, candidate answering calmly with structured posture, simple table with papers without readable text, no logos, no private data, no text inside image, accessible composition, neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

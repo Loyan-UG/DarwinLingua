@@ -7,15 +7,18 @@ public sealed record ExerciseIndexPageViewModel(
     IReadOnlyList<ExerciseSetListItemModel> ExerciseSets,
     IReadOnlyList<string> CefrLevels,
     string? SelectedCefrLevel,
-    string? Query);
+    string? Query,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record ExerciseSetPageViewModel(
-    ExerciseSetDetailModel ExerciseSet);
+    ExerciseSetDetailModel ExerciseSet,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record ExerciseRunnerPageViewModel(
     ExerciseDetailModel Exercise,
     ExerciseAttemptResultModel? Result,
-    string? SubmittedAnswerJson)
+    string? SubmittedAnswerJson,
+    string PrimaryMeaningLanguageCode)
 {
     public ExercisePromptViewModel Prompt { get; } = ExercisePromptViewModel.FromJson(Exercise.PromptJson);
 }

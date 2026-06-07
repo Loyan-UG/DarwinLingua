@@ -46,6 +46,7 @@ Latest local Web verification:
 - 2026-05-25: Second C2 Everyday Expressions package `expressions-c2-core-02-v1.json` was created with 40 published high-context idiom/rhetorical/cultural entries, including 11 mild-rude/social-risk entries with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 12 packages. Import into `darwinlingua_shared` succeeded with 40 content items and 0 warnings. Public-routed smoke returned HTTP 200 for `/expressions`, `/expressions/den-gordischen-knoten-durchschlagen`, `/expressions/auf-toenernen-fuessen-stehen`, `/api/catalog/expressions`, `/api/catalog/expressions/den-gordischen-knoten-durchschlagen?primaryMeaningLanguageCode=fa`, `/api/catalog/search?q=Gordischen&resultType=expression`, and `/api/admin/catalog/system-report`. Admin report showed 417 Expression records, 412 active records, 80 active C2 records, missing translations 0, unresolved linked words/content references 0, and zero Expressions quality counters.
 - 2026-05-25: Mixed Everyday Expressions supplement `expressions-mixed-supplement-01-v1.json` was created with 14 additional A2-C1 idiom/cultural/social expressions that were absent from the existing packages, including 1 social-risk entry with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 13 packages. Import into `darwinlingua_shared` succeeded with 14 content items and 0 warnings. Public-routed learner/API smoke returned HTTP 200 for `/expressions`, `/expressions/hals-und-beinbruch`, `/expressions/die-faeden-ziehen`, `/api/catalog/expressions/hals-und-beinbruch?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Groschen&resultType=expression`. The admin endpoint returned 401 without credentials as expected; `WebsiteAdminQueryServiceLearningPortalReportTests` passed 2/2 and the strict audit reported zero Expressions quality issues.
 - 2026-05-25: Web legal/compliance baseline added public `/legal`/`/impressum`, `/cookies`/`/cookie-policy`, and `/contact` pages, footer links, `docs/86-Web-Legal-Compliance-Baseline.md`, and `artifacts/validation/web-cookie-storage-inventory.md`. Structural tests cover routes, footer links, registration acknowledgements, policy acceptance records, Sensitive Educational Language settings copy, and the no-banner cookie/storage decision for the current strictly necessary/preference-storage baseline.
+- 2026-05-31: Course Lessons v1 foundation added learner-helper translations, PostgreSQL-backed Course persistence/projection support, admin translation quality counters, and the first A1 pilot package. Import into `darwinlingua_shared` succeeded with 1 path, 1 module, and then 5 cumulative lessons after the second small A1 pass. Targeted parser/import, PostgreSQL repository, admin report tests, Web project build, full solution build, and local Course Web/API smoke passed for `/courses`, course detail, lesson detail, Persian API projection endpoints, and `/courses/a1-einstieg-in-den-alltag/a1-artikel-und-dinge-im-alltag`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 talking about plans and conditions topic.
 - 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-talking-about-plans-and-conditions?primaryMeaningLanguageCode=fa`, `/grammar/b1-talking-about-plans-and-conditions`, and `/grammar`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 talking about plans and conditions topic.
@@ -373,7 +374,7 @@ Latest local Web verification:
 - [x] Admin report tests include RoleplayScenario count visibility by type and CEFR.
 - [x] PostgreSQL integration tests cover RoleplayScenario repository filtering, detail projection, and Unified Learning Search using PostgreSQL-native search semantics.
 - [x] Local shared-database import and Web/API/search smoke passed before and after the first roleplay pilot package import.
-- [ ] Add deeper admin quality counters for RoleplayScenario missing translations, unpublished drafts, missing image assets, and invalid playable sequence after more reviewed packages exist.
+- [x] Add deeper admin quality counters for RoleplayScenario missing translations, unpublished drafts, missing required image assets, missing answer choices/static feedback, and invalid playable sequence after more reviewed packages exist.
 - [x] Migrate Web/API-critical SQLite-backed tests to PostgreSQL when the behavior under test depends on PostgreSQL provider semantics.
   - Evidence: WebApi service tests, Identity bootstrapper tests, RoleplayScenario repository/search tests, admin-report tests, server-content manifest/delivery tests, and catalog publication lifecycle tests now use temporary PostgreSQL databases. The remaining SQLite mentions in WebApi tests are structural assertions that Web startup does not register SQLite.
 
@@ -557,17 +558,23 @@ Latest local Web verification:
 - [x] Exercise attempt and evaluation endpoints are covered by rate-limiting structural checks.
 - [x] Attempt results do not expose answer keys.
 - [x] Type-specific runner controls cover initial choice, single-answer, error-correction, sentence-ordering, and matching submission shapes.
-- [ ] Seeded runner coverage verifies each initial exercise type against real package examples.
+- [x] Seeded deterministic evaluator coverage verifies each initial exercise type against representative answer-key shapes.
+  - Status: first real package `content/learning-portal/exercises/packages/exercises-a1-a2-core-01-v1.json` imported into shared PostgreSQL on 2026-05-31 with 12 translated exercises and one translated exercise set. Targeted tests now cover parser translations, import validation, all 12 evaluator shapes, Web runner projection, exercise endpoints, and admin report counters.
+- [x] Exercise package localization is validated for active learner meaning languages and projected through API/Web as helper text while German source remains canonical.
 
 ### Course Lessons
 
 - [x] Parser coverage exists for the CoursePath/CourseModule/CourseLesson content contract shape.
 - [x] Release route hardening covers `/courses`, course list/detail endpoints, and course lesson detail route registration.
+- [x] Parser/import validation covers Course learner-helper translations and `learningGoalsTranslations`.
+- [x] PostgreSQL repository coverage verifies Course list/detail search and localized helper projection.
+- [x] Admin report coverage includes Course translation quality counters.
 - [ ] Lesson/module/course ordering is stable.
 - [ ] Linked content rendering covers grammar, words, expressions, dialogues, Talk Topics, and exercises.
 - [ ] Prerequisite and next-lesson navigation resolves correctly.
 - [ ] WebApi list/detail endpoint coverage exists.
 - [ ] Progress tracking works where implemented.
+- [x] Browser smoke coverage exists for `/courses`, `/courses/{slug}`, and `/courses/{courseSlug}/{lessonSlug}` after the first pilot package is reviewed in the Web UI.
 
 ### Exam Preparation
 

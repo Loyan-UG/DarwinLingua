@@ -1,0 +1,646 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-04-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 04 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 04",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-projektverzug-erklaeren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Projektverzug erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a project delay" },
+        { "language": "fa", "text": "توضیح دادن تأخیر پروژه" },
+        { "language": "ar", "text": "شرح تأخير في مشروع" },
+        { "language": "tr", "text": "Bir proje gecikmesini açıklamak" },
+        { "language": "ru", "text": "Объяснить задержку проекта" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی دواخستنی پرۆژە" },
+        { "language": "kmr", "text": "Ravekirina derengmayîna projeyê" },
+        { "language": "pl", "text": "Wyjaśnienie opóźnienia projektu" },
+        { "language": "ro", "text": "Explicarea unei întârzieri de proiect" },
+        { "language": "sq", "text": "Shpjegimi i një vonese projekti" }
+      ],
+      "description": "Du musst in einem internen Projektmeeting erklären, warum ein Teilprojekt nicht wie geplant fertig wird. Du nennst Ursache, Auswirkung, verbleibendes Risiko und einen realistischen neuen Zeitplan.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an internal project meeting, you need to explain why one subproject will not be finished as planned. You name the cause, impact, remaining risk, and a realistic new timeline." },
+        { "language": "fa", "text": "در یک جلسه داخلی پروژه باید توضیح بدهی چرا یک بخش از پروژه طبق برنامه تمام نمی‌شود. علت، اثر، ریسک باقی‌مانده و زمان‌بندی جدید واقع‌بینانه را بیان می‌کنی." },
+        { "language": "ar", "text": "في اجتماع مشروع داخلي عليك أن تشرح لماذا لن يكتمل جزء من المشروع كما كان مخططاً. تذكر السبب والتأثير والخطر المتبقي وجدولاً زمنياً جديداً واقعياً." },
+        { "language": "tr", "text": "Dahili bir proje toplantısında bir alt projenin neden planlandığı gibi bitmeyeceğini açıklaman gerekiyor. Nedeni, etkiyi, kalan riski ve gerçekçi yeni zaman planını söylüyorsun." },
+        { "language": "ru", "text": "На внутренней проектной встрече тебе нужно объяснить, почему часть проекта не будет завершена по плану. Ты называешь причину, последствия, оставшийся риск и реалистичный новый график." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی ناوخۆی پرۆژەدا دەبێت ڕوون بکەیت بۆچی بەشێک لە پرۆژەکە وەک پلانکراو تەواو نابێت. هۆکار، کاریگەری، مەترسی ماوە و کات‌بەندی نوێی واقیعی دەڵێیت." },
+        { "language": "kmr", "text": "Di civîneke hundirîn a projeyê de divê tu rave bikî çima beşek ji projeyê wek planê naqede. Tu sedem, bandor, xetera mayî û demnameyeke nû ya rastîn nav dikî." },
+        { "language": "pl", "text": "Na wewnętrznym spotkaniu projektowym musisz wyjaśnić, dlaczego część projektu nie zostanie zakończona zgodnie z planem. Podajesz przyczynę, wpływ, pozostałe ryzyko i realistyczny nowy harmonogram." },
+        { "language": "ro", "text": "Într-o ședință internă de proiect trebuie să explici de ce o parte a proiectului nu va fi finalizată conform planului. Numești cauza, impactul, riscul rămas și un nou calendar realist." },
+        { "language": "sq", "text": "Në një mbledhje të brendshme projekti duhet të shpjegosh pse një pjesë e projektit nuk do të përfundojë sipas planit. Përmend shkakun, ndikimin, rrezikun e mbetur dhe një afat të ri realist." }
+      ],
+      "learnerGoal": "Erkläre einen Projektverzug professionell: Beschreibe Ursache und Auswirkung, vermeide Schuldzuweisungen und sichere einen konkreten neuen Termin mit nächstem Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a project delay professionally: describe cause and impact, avoid blaming, and secure a concrete new date with the next step." },
+        { "language": "fa", "text": "تأخیر پروژه را حرفه‌ای توضیح بده: علت و اثر را توصیف کن، از مقصر دانستن افراد پرهیز کن و یک تاریخ جدید مشخص همراه با قدم بعدی تعیین کن." },
+        { "language": "ar", "text": "اشرح تأخير المشروع بشكل مهني: صف السبب والتأثير، وتجنب توجيه اللوم، وثبّت موعداً جديداً محدداً مع الخطوة التالية." },
+        { "language": "tr", "text": "Bir proje gecikmesini profesyonelce açıkla: nedeni ve etkiyi tarif et, suçlamadan kaçın ve sonraki adımla birlikte somut yeni bir tarih netleştir." },
+        { "language": "ru", "text": "Профессионально объясни задержку проекта: опиши причину и последствия, избегай обвинений и зафиксируй конкретную новую дату со следующим шагом." },
+        { "language": "ckb", "text": "دواخستنی پرۆژە بە شێوەی پیشەیی ڕوون بکە: هۆکار و کاریگەری باس بکە، لە تاوانبارکردن خۆبپارێزە و کاتێکی نوێی دیاریکراو لەگەڵ هەنگاوی داهاتوو مسۆگەر بکە." },
+        { "language": "kmr", "text": "Derengmayîna projeyê bi awayekî profesyonel rave bike: sedem û bandorê binav bike, ji sûcdarkirinê dûr bikeve û dîrokeke nû ya konkret bi gava paşîn re misoger bike." },
+        { "language": "pl", "text": "Wyjaśnij opóźnienie projektu profesjonalnie: opisz przyczynę i wpływ, unikaj obwiniania i ustal konkretny nowy termin z następnym krokiem." },
+        { "language": "ro", "text": "Explică profesional o întârziere de proiect: descrie cauza și impactul, evită atribuirea vinei și stabilește o nouă dată concretă cu pasul următor." },
+        { "language": "sq", "text": "Shpjego një vonesë projekti në mënyrë profesionale: përshkruaj shkakun dhe ndikimin, shmang fajësimin dhe siguro një datë të re konkrete me hapin e ardhshëm." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3040,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Projektleiterin",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مدیر پروژه" },
+            { "language": "ar", "text": "مديرة المشروع" },
+            { "language": "tr", "text": "Proje yöneticisi" },
+            { "language": "ru", "text": "Руководитель проекта" },
+            { "language": "ckb", "text": "بەڕێوەبەری پرۆژە" },
+            { "language": "kmr", "text": "Rêvebera projeyê" },
+            { "language": "pl", "text": "Kierowniczka projektu" },
+            { "language": "ro", "text": "Coordonatoarea proiectului" },
+            { "language": "sq", "text": "Drejtuese projekti" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Im Statusbericht steht, dass das Teilprojekt zwei Tage später fertig wird. Kannst du erklären, was genau passiert ist?",
+          "translations": [
+            { "language": "en", "text": "The status report says that the subproject will be finished two days later. Can you explain what exactly happened?" },
+            { "language": "fa", "text": "در گزارش وضعیت آمده که بخش پروژه دو روز دیرتر تمام می‌شود. می‌توانی توضیح بدهی دقیقاً چه اتفاقی افتاده است؟" },
+            { "language": "ar", "text": "يذكر تقرير الحالة أن الجزء الفرعي من المشروع سينتهي بعد يومين. هل يمكنك أن تشرح ما الذي حدث بالضبط؟" },
+            { "language": "tr", "text": "Durum raporunda alt projenin iki gün geç biteceği yazıyor. Tam olarak ne olduğunu açıklayabilir misin?" },
+            { "language": "ru", "text": "В статусном отчёте указано, что подпроект будет готов на два дня позже. Можешь объяснить, что именно произошло?" },
+            { "language": "ckb", "text": "لە ڕاپۆرتی دۆخدا نووسراوە کە بەشی پرۆژە دوو ڕۆژ دواتر تەواو دەبێت. دەتوانیت ڕوون بکەیت بە وردی چی ڕوویداوە؟" },
+            { "language": "kmr", "text": "Di rapora rewşê de hatiye nivîsîn ku beşa projeyê du roj derengtir diqede. Tu dikarî rave bikî çi bi rastî qewimî?" },
+            { "language": "pl", "text": "W raporcie statusowym jest napisane, że część projektu będzie gotowa dwa dni później. Możesz wyjaśnić, co dokładnie się stało?" },
+            { "language": "ro", "text": "În raportul de stare scrie că subproiectul va fi finalizat cu două zile mai târziu. Poți explica ce s-a întâmplat exact?" },
+            { "language": "sq", "text": "Në raportin e statusit thuhet se nënprojekti do të përfundojë dy ditë më vonë. A mund të shpjegosh çfarë ndodhi saktësisht?" }
+          ],
+          "function": "ask-for-delay-cause"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja. Die Verzögerung hängt vor allem mit einer fehlenden Schnittstellenfreigabe zusammen. Dadurch konnten wir den Integrationstest nicht wie geplant abschließen.",
+          "translations": [
+            { "language": "en", "text": "Yes. The delay is mainly related to a missing interface approval. Because of that, we could not complete the integration test as planned." },
+            { "language": "fa", "text": "بله. تأخیر بیشتر به نبود تأیید رابط فنی مربوط است. به همین دلیل نتوانستیم تست یکپارچه‌سازی را طبق برنامه کامل کنیم." },
+            { "language": "ar", "text": "نعم. التأخير مرتبط أساساً بعدم وجود موافقة على الواجهة. لذلك لم نتمكن من إنهاء اختبار التكامل كما كان مخططاً." },
+            { "language": "tr", "text": "Evet. Gecikme esas olarak eksik arayüz onayıyla bağlantılı. Bu nedenle entegrasyon testini planlandığı gibi tamamlayamadık." },
+            { "language": "ru", "text": "Да. Задержка в основном связана с отсутствующим согласованием интерфейса. Поэтому мы не смогли завершить интеграционный тест по плану." },
+            { "language": "ckb", "text": "بەڵێ. دواخستنەکە زۆرتر پەیوەستە بە نەبوونی پەسەندکردنی ڕووکاری پەیوەندی. بۆیە نەمانتوانی تاقیکردنەوەی یەکخستن وەک پلانکراو تەواو بکەین." },
+            { "language": "kmr", "text": "Erê. Derengmayîn bi taybetî bi nebûna pejirandina navrûya têkiliyê ve girêdayî ye. Ji ber vê yekê me testê yekgirtinê wek planê neqedand." },
+            { "language": "pl", "text": "Tak. Opóźnienie wynika głównie z braku akceptacji interfejsu. Dlatego nie mogliśmy zakończyć testu integracyjnego zgodnie z planem." },
+            { "language": "ro", "text": "Da. Întârzierea este legată în principal de lipsa aprobării interfeței. Din acest motiv nu am putut finaliza testul de integrare conform planului." },
+            { "language": "sq", "text": "Po. Vonesa lidhet kryesisht me mungesën e miratimit të ndërfaqes. Për këtë arsye nuk mundëm ta përfundonim testin e integrimit sipas planit." }
+          ],
+          "function": "explain-cause",
+          "expectedLearnerAction": "Name the concrete cause and connect it to the missed activity."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "War das absehbar? Ich möchte vermeiden, dass es so wirkt, als hätten wir das zu spät gemeldet.",
+          "translations": [
+            { "language": "en", "text": "Was that foreseeable? I want to avoid it looking as if we reported it too late." },
+            { "language": "fa", "text": "آیا قابل پیش‌بینی بود؟ می‌خواهم جلوگیری کنم از اینکه به نظر برسد ما خیلی دیر گزارش داده‌ایم." },
+            { "language": "ar", "text": "هل كان ذلك متوقعاً؟ أريد أن نتجنب أن يبدو الأمر وكأننا أبلغنا عنه متأخرين جداً." },
+            { "language": "tr", "text": "Bu öngörülebilir miydi? Bunu çok geç bildirmişiz gibi görünmesini önlemek istiyorum." },
+            { "language": "ru", "text": "Это было предсказуемо? Я хочу избежать впечатления, что мы сообщили об этом слишком поздно." },
+            { "language": "ckb", "text": "ئایا ئەمە پێشبینی دەکرا؟ دەمەوێت ڕێگری بکەم لەوەی وەک ئەوە دیار بێت زۆر درەنگ ڕاپۆرت کردووە." },
+            { "language": "kmr", "text": "Ma ev pêşbînî dikaribû bibe? Ez dixwazim pêşî lê bigirim ku wisa xuya bike me pir dereng ragihand." },
+            { "language": "pl", "text": "Czy to było do przewidzenia? Chcę uniknąć wrażenia, że zgłosiliśmy to za późno." },
+            { "language": "ro", "text": "Era previzibil? Vreau să evităm să pară că am raportat prea târziu." },
+            { "language": "sq", "text": "A ishte e parashikueshme kjo? Dua të shmangim përshtypjen se e kemi raportuar shumë vonë." }
+          ],
+          "function": "ask-about-foreseeability"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Teilweise ja. Wir hatten das Risiko letzte Woche markiert, aber die Freigabe sollte ursprünglich gestern kommen. Erst heute Morgen wurde klar, dass sie sich verschiebt.",
+          "translations": [
+            { "language": "en", "text": "Partly, yes. We marked the risk last week, but the approval was originally supposed to come yesterday. Only this morning did it become clear that it would be delayed." },
+            { "language": "fa", "text": "تا حدی بله. ما هفته گذشته این ریسک را علامت زده بودیم، اما قرار بود تأیید در اصل دیروز برسد. فقط امروز صبح روشن شد که آن هم عقب می‌افتد." },
+            { "language": "ar", "text": "جزئياً نعم. كنا قد وضعنا علامة على الخطر الأسبوع الماضي، لكن الموافقة كان من المفترض أصلاً أن تصل أمس. لم يتضح إلا هذا الصباح أنها ستتأخر." },
+            { "language": "tr", "text": "Kısmen evet. Riski geçen hafta işaretlemiştik, ancak onayın aslında dün gelmesi gerekiyordu. Ancak bu sabah bunun da gecikeceği netleşti." },
+            { "language": "ru", "text": "Частично да. Мы отметили риск на прошлой неделе, но согласование изначально должно было прийти вчера. Только сегодня утром стало ясно, что оно задерживается." },
+            { "language": "ckb", "text": "بەشێکی بەڵێ. ئێمە هەفتەی ڕابردوو مەترسییەکەمان نیشان کردبوو، بەڵام پەسەندکردنەکە لە بنەڕەتدا دەبوو دوێنێ بگات. تەنها ئەم بەیانییە ڕوون بوو کە ئەویش دوا دەکەوێت." },
+            { "language": "kmr", "text": "Beşek erê. Me xetere hefteya borî nîşan kiribû, lê pejirandin diviyabû eslê xwe duh bihat. Tenê vê sibehê zelal bû ku ew jî dereng dikeve." },
+            { "language": "pl", "text": "Częściowo tak. Oznaczyliśmy ryzyko w zeszłym tygodniu, ale akceptacja pierwotnie miała przyjść wczoraj. Dopiero dziś rano stało się jasne, że też się opóźni." },
+            { "language": "ro", "text": "Parțial, da. Marcasem riscul săptămâna trecută, dar aprobarea trebuia inițial să vină ieri. Abia în această dimineață a devenit clar că se amână." },
+            { "language": "sq", "text": "Pjesërisht po. E kishim shënuar rrezikun javën e kaluar, por miratimi duhej të vinte fillimisht dje. Vetëm këtë mëngjes u bë e qartë se edhe ai shtyhet." }
+          ],
+          "function": "explain-timeline",
+          "expectedLearnerAction": "Clarify what was known earlier and what changed now without blaming others."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Welche Auswirkungen hat das konkret auf den Gesamtplan?",
+          "translations": [
+            { "language": "en", "text": "What concrete impact does that have on the overall plan?" },
+            { "language": "fa", "text": "این دقیقاً چه اثری روی برنامه کلی دارد؟" },
+            { "language": "ar", "text": "ما التأثير المحدد لذلك على الخطة العامة؟" },
+            { "language": "tr", "text": "Bunun genel plan üzerinde somut etkisi nedir?" },
+            { "language": "ru", "text": "Какое конкретное влияние это оказывает на общий план?" },
+            { "language": "ckb", "text": "ئەمە بە دیاریکراوی چ کاریگەرییەکی لەسەر پلانی گشتی هەیە؟" },
+            { "language": "kmr", "text": "Ev bi awayekî konkret çi bandorê li plana giştî dike?" },
+            { "language": "pl", "text": "Jaki konkretny wpływ ma to na cały plan?" },
+            { "language": "ro", "text": "Ce impact concret are asta asupra planului general?" },
+            { "language": "sq", "text": "Çfarë ndikimi konkret ka kjo te plani i përgjithshëm?" }
+          ],
+          "function": "ask-for-impact"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Der Go-live verschiebt sich nicht automatisch. Betroffen ist vor allem die Testphase: Wir verlieren zwei Tage Puffer und müssen die Abnahme stärker priorisieren.",
+          "translations": [
+            { "language": "en", "text": "The go-live does not automatically move. What is mainly affected is the test phase: we lose two days of buffer and have to prioritize acceptance testing more strongly." },
+            { "language": "fa", "text": "زمان راه‌اندازی به‌طور خودکار عقب نمی‌افتد. چیزی که بیشتر تحت تأثیر است مرحله تست است: دو روز حاشیه امن را از دست می‌دهیم و باید پذیرش نهایی را بیشتر در اولویت بگذاریم." },
+            { "language": "ar", "text": "لا يتأجل الإطلاق تلقائياً. المتأثر أساساً هو مرحلة الاختبار: نفقد يومين من الهامش ويجب أن نعطي اختبار القبول أولوية أكبر." },
+            { "language": "tr", "text": "Canlıya geçiş otomatik olarak ertelenmiyor. Asıl etkilenen test aşaması: iki günlük tamponu kaybediyoruz ve kabul testini daha güçlü önceliklendirmemiz gerekiyor." },
+            { "language": "ru", "text": "Запуск не переносится автоматически. В первую очередь затронута фаза тестирования: мы теряем два дня резерва и должны сильнее приоритизировать приёмочное тестирование." },
+            { "language": "ckb", "text": "دەستپێکردنی ڕەسمی بە شێوەی خۆکار دوا ناکەوێت. ئەوەی زۆرتر کاریگەری لێدەکەوێت قۆناغی تاقیکردنەوەیە: دوو ڕۆژ پاشەکەوتی کات لەدەست دەدەین و دەبێت پەسەندکردنی کۆتایی زیاتر بکەینە پێشینە." },
+            { "language": "kmr", "text": "Destpêkirina fermî bixweber paş nakeve. Ya herî zêde bandor lê dibe qonaxa testê ye: em du rojên rezervê winda dikin û divê testê pejirandinê zêdetir bikin pêşînî." },
+            { "language": "pl", "text": "Start produkcyjny nie przesuwa się automatycznie. Najbardziej dotknięta jest faza testów: tracimy dwa dni bufora i musimy mocniej priorytetyzować odbiór." },
+            { "language": "ro", "text": "Lansarea nu se mută automat. Este afectată mai ales faza de testare: pierdem două zile de rezervă și trebuie să prioritizăm mai mult acceptanța." },
+            { "language": "sq", "text": "Dalja live nuk shtyhet automatikisht. Më së shumti preket faza e testimit: humbim dy ditë rezervë dhe duhet ta vendosim pranimin më fort në prioritet." }
+          ],
+          "function": "explain-impact",
+          "expectedLearnerAction": "Separate overall deadline from affected phase and name the practical consequence."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Was schlägst du vor, damit wir nicht einfach nur den Verzug melden?",
+          "translations": [
+            { "language": "en", "text": "What do you suggest so that we are not just reporting the delay?" },
+            { "language": "fa", "text": "چه پیشنهادی داری تا فقط تأخیر را گزارش نکرده باشیم؟" },
+            { "language": "ar", "text": "ماذا تقترح حتى لا نكتفي فقط بالإبلاغ عن التأخير؟" },
+            { "language": "tr", "text": "Sadece gecikmeyi bildirmiş olmamak için ne öneriyorsun?" },
+            { "language": "ru", "text": "Что ты предлагаешь, чтобы мы не просто сообщили о задержке?" },
+            { "language": "ckb", "text": "چی پێشنیار دەکەیت بۆ ئەوەی تەنها دواخستنەکە ڕانەگەیەنین؟" },
+            { "language": "kmr", "text": "Tu çi pêşniyar dikî da ku em tenê derengmayînê ragihînin ne?" },
+            { "language": "pl", "text": "Co proponujesz, żebyśmy nie tylko zgłosili opóźnienie?" },
+            { "language": "ro", "text": "Ce propui ca să nu raportăm pur și simplu întârzierea?" },
+            { "language": "sq", "text": "Çfarë propozon që të mos raportojmë thjesht vonesën?" }
+          ],
+          "function": "ask-for-plan"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich schlage drei Maßnahmen vor: Freigabe heute eskalieren, Testfälle nach Risiko sortieren und morgen Mittag einen neuen Abnahmestatus liefern.",
+          "translations": [
+            { "language": "en", "text": "I suggest three measures: escalate the approval today, sort test cases by risk, and provide a new acceptance status tomorrow at noon." },
+            { "language": "fa", "text": "سه اقدام پیشنهاد می‌کنم: امروز موضوع تأیید را به سطح بالاتر پیگیری کنیم، موردهای تست را بر اساس ریسک مرتب کنیم و فردا ظهر وضعیت جدید پذیرش را ارائه بدهیم." },
+            { "language": "ar", "text": "أقترح ثلاث إجراءات: تصعيد الموافقة اليوم، وترتيب حالات الاختبار حسب الخطر، وتقديم حالة قبول جديدة غداً ظهراً." },
+            { "language": "tr", "text": "Üç önlem öneriyorum: onayı bugün eskale etmek, test senaryolarını riske göre sıralamak ve yarın öğlen yeni bir kabul durumu sunmak." },
+            { "language": "ru", "text": "Я предлагаю три меры: сегодня эскалировать согласование, отсортировать тестовые случаи по риску и завтра в полдень предоставить новый статус приёмки." },
+            { "language": "ckb", "text": "سێ هەنگاو پێشنیار دەکەم: ئەمڕۆ پەسەندکردنەکە بەرز بکەینەوە، کەیسەکانی تاقیکردنەوە بە پێی مەترسی ڕیز بکەین و سبەی نیوەڕۆ دۆخی نوێی پەسەندکردن بدەین." },
+            { "language": "kmr", "text": "Ez sê tedbîran pêşniyar dikim: îro pejirandinê bilind bikin, rewşên testê li gorî xetereyê rêz bikin û sibê nîvro rewşa nû ya pejirandinê bidin." },
+            { "language": "pl", "text": "Proponuję trzy działania: dziś eskalować akceptację, posortować przypadki testowe według ryzyka i jutro w południe dostarczyć nowy status odbioru." },
+            { "language": "ro", "text": "Propun trei măsuri: să escaladăm aprobarea astăzi, să sortăm cazurile de testare după risc și să livrăm mâine la prânz un nou status de acceptanță." },
+            { "language": "sq", "text": "Propozoj tre masa: të eskalojmë miratimin sot, t'i rendisim rastet e testimit sipas rrezikut dhe nesër në mesditë të japim një status të ri pranimi." }
+          ],
+          "function": "propose-recovery-actions",
+          "expectedLearnerAction": "Offer concrete mitigation steps instead of only reporting delay."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Und wie realistisch ist der neue Termin? Ich brauche eine Aussage, die ich nach außen vertreten kann.",
+          "translations": [
+            { "language": "en", "text": "And how realistic is the new date? I need a statement that I can represent externally." },
+            { "language": "fa", "text": "و تاریخ جدید چقدر واقع‌بینانه است؟ من به جمله‌ای نیاز دارم که بتوانم بیرون از تیم از آن دفاع کنم." },
+            { "language": "ar", "text": "وما مدى واقعية الموعد الجديد؟ أحتاج إلى تصريح أستطيع تمثيله خارجياً." },
+            { "language": "tr", "text": "Peki yeni tarih ne kadar gerçekçi? Dışarıya karşı savunabileceğim bir ifadeye ihtiyacım var." },
+            { "language": "ru", "text": "И насколько реалистична новая дата? Мне нужна формулировка, которую я смогу представлять вовне." },
+            { "language": "ckb", "text": "کاتی نوێ چەند واقیعییە؟ پێویستم بە دەربڕینێکە کە بتوانم لە دەرەوە نوێنەرایەتی بکەم." },
+            { "language": "kmr", "text": "Û dîroka nû çiqas rastîn e? Ez hewceyî gotinekê me ku karibim li derve wê temsîl bikim." },
+            { "language": "pl", "text": "A jak realistyczny jest nowy termin? Potrzebuję sformułowania, które mogę reprezentować na zewnątrz." },
+            { "language": "ro", "text": "Și cât de realistă este noua dată? Am nevoie de o formulare pe care să o pot susține în exterior." },
+            { "language": "sq", "text": "Dhe sa realiste është data e re? Më duhet një formulim që mund ta përfaqësoj jashtë ekipit." }
+          ],
+          "function": "ask-for-realistic-commitment"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Realistisch ist Freitagmittag für die Abnahme, wenn die Freigabe heute kommt. Falls sie erst morgen kommt, brauchen wir bis Montagvormittag.",
+          "translations": [
+            { "language": "en", "text": "Friday noon is realistic for acceptance if the approval comes today. If it only comes tomorrow, we need until Monday morning." },
+            { "language": "fa", "text": "اگر تأیید امروز برسد، ظهر جمعه برای پذیرش واقع‌بینانه است. اگر تازه فردا برسد، تا دوشنبه صبح زمان لازم داریم." },
+            { "language": "ar", "text": "ظهر الجمعة واقعي للقبول إذا وصلت الموافقة اليوم. إذا وصلت غداً فقط، فنحتاج حتى صباح الاثنين." },
+            { "language": "tr", "text": "Onay bugün gelirse kabul için cuma öğlen gerçekçi. Ancak yarın gelirse pazartesi sabahına kadar zamana ihtiyacımız var." },
+            { "language": "ru", "text": "Полдень пятницы реалистичен для приёмки, если согласование придёт сегодня. Если оно придёт только завтра, нам нужно время до утра понедельника." },
+            { "language": "ckb", "text": "ئەگەر پەسەندکردن ئەمڕۆ بگات، نیوەڕۆی هەینی بۆ پەسەندکردن واقیعییە. ئەگەر تەنها سبەی بگات، تا بەیانی دووشەممە پێویستمان بە کاتە." },
+            { "language": "kmr", "text": "Ger pejirandin îro were, nîvroya înê ji bo pejirandinê rastîn e. Ger tenê sibê were, em heta sibeya duşemê hewceyî demê ne." },
+            { "language": "pl", "text": "Piątek w południe jest realistyczny dla odbioru, jeśli akceptacja przyjdzie dziś. Jeśli przyjdzie dopiero jutro, potrzebujemy czasu do poniedziałku rano." },
+            { "language": "ro", "text": "Vineri la prânz este realist pentru acceptanță dacă aprobarea vine astăzi. Dacă vine abia mâine, avem nevoie până luni dimineață." },
+            { "language": "sq", "text": "E premtja në mesditë është realiste për pranimin nëse miratimi vjen sot. Nëse vjen vetëm nesër, na duhet kohë deri të hënën paradite." }
+          ],
+          "function": "give-conditional-timeline",
+          "expectedLearnerAction": "Give a realistic timeline with conditions instead of a vague promise."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Bitte fasse das so zusammen, dass ich es im Lenkungskreis verwenden kann.",
+          "translations": [
+            { "language": "en", "text": "Please summarize that in a way I can use in the steering committee." },
+            { "language": "fa", "text": "لطفاً این را طوری جمع‌بندی کن که بتوانم در کمیته راهبری استفاده کنم." },
+            { "language": "ar", "text": "من فضلك لخص ذلك بطريقة أستطيع استخدامها في لجنة التوجيه." },
+            { "language": "tr", "text": "Lütfen bunu yönlendirme kurulunda kullanabileceğim şekilde özetle." },
+            { "language": "ru", "text": "Пожалуйста, подытожь это так, чтобы я могла использовать в управляющем комитете." },
+            { "language": "ckb", "text": "تکایە ئەمە بە شێوەیەک پوختە بکەوە کە بتوانم لە کۆمیتەی ئاراستەکردندا بەکاری بهێنم." },
+            { "language": "kmr", "text": "Ji kerema xwe vê wisa kurt bike ku ez bikaribim di komîteya rêvebirinê de bikar bînim." },
+            { "language": "pl", "text": "Proszę podsumuj to tak, żebym mogła użyć tego w komitecie sterującym." },
+            { "language": "ro", "text": "Te rog rezumă asta astfel încât să o pot folosi în comitetul de coordonare." },
+            { "language": "sq", "text": "Të lutem përmblidhe këtë në mënyrë që ta përdor në komitetin drejtues." }
+          ],
+          "function": "request-steering-summary"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Kurz gesagt: Der Verzug entsteht durch eine noch offene Schnittstellenfreigabe. Der Go-live bleibt möglich, wenn die Freigabe heute kommt; andernfalls verschiebt sich die Abnahme auf Montagvormittag.",
+          "translations": [
+            { "language": "en", "text": "In short: the delay is caused by an interface approval that is still open. The go-live remains possible if the approval comes today; otherwise acceptance moves to Monday morning." },
+            { "language": "fa", "text": "خلاصه اینکه: تأخیر به دلیل تأیید رابط فنی است که هنوز باز مانده. اگر تأیید امروز برسد، راه‌اندازی همچنان ممکن است؛ در غیر این صورت پذیرش نهایی به دوشنبه صبح منتقل می‌شود." },
+            { "language": "ar", "text": "باختصار: التأخير ناتج عن موافقة واجهة ما زالت مفتوحة. يبقى الإطلاق ممكناً إذا وصلت الموافقة اليوم؛ وإلا فسينتقل القبول إلى صباح الاثنين." },
+            { "language": "tr", "text": "Kısaca: gecikme hâlâ açık olan bir arayüz onayından kaynaklanıyor. Onay bugün gelirse canlıya geçiş mümkün kalır; aksi halde kabul pazartesi sabahına kayar." },
+            { "language": "ru", "text": "Коротко: задержка вызвана ещё открытым согласованием интерфейса. Запуск остаётся возможным, если согласование придёт сегодня; иначе приёмка переносится на утро понедельника." },
+            { "language": "ckb", "text": "بە کورتی: دواخستنەکە بەهۆی پەسەندکردنی ڕووکاری پەیوەندییەکە کە هێشتا کراوەیە. ئەگەر پەسەندکردن ئەمڕۆ بگات، دەستپێکردنی ڕەسمی هێشتا دەکرێت؛ ئەگەر نا، پەسەندکردن دەگوازرێتەوە بۆ بەیانی دووشەممە." },
+            { "language": "kmr", "text": "Bi kurtî: derengmayîn ji pejirandina navrûya têkiliyê ya hîn vekirî tê. Ger pejirandin îro were, destpêkirina fermî hîn gengaz e; wekî din pejirandin diçe sibeya duşemê." },
+            { "language": "pl", "text": "Krótko mówiąc: opóźnienie wynika z wciąż otwartej akceptacji interfejsu. Start pozostaje możliwy, jeśli akceptacja przyjdzie dziś; w przeciwnym razie odbiór przesuwa się na poniedziałek rano." },
+            { "language": "ro", "text": "Pe scurt: întârzierea este cauzată de o aprobare de interfață încă deschisă. Lansarea rămâne posibilă dacă aprobarea vine astăzi; altfel acceptanța se mută luni dimineață." },
+            { "language": "sq", "text": "Shkurt: vonesa vjen nga një miratim ndërfaqeje që ende është i hapur. Dalja live mbetet e mundur nëse miratimi vjen sot; përndryshe pranimi shtyhet për të hënën paradite." }
+          ],
+          "function": "summarize-delay",
+          "expectedLearnerAction": "Summarize cause, condition, impact, and revised acceptance time."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "cause-and-effect",
+              "text": "Die Verzögerung hängt mit einer fehlenden Schnittstellenfreigabe zusammen. Deshalb konnten wir den Integrationstest nicht abschließen.",
+              "translations": [
+                { "language": "en", "text": "The delay is related to a missing interface approval. That is why we could not complete the integration test." },
+                { "language": "fa", "text": "تأخیر به نبود تأیید رابط فنی مربوط است. به همین دلیل نتوانستیم تست یکپارچه‌سازی را کامل کنیم." },
+                { "language": "ar", "text": "التأخير مرتبط بعدم وجود موافقة على الواجهة. لذلك لم نتمكن من إنهاء اختبار التكامل." },
+                { "language": "tr", "text": "Gecikme eksik arayüz onayıyla bağlantılı. Bu yüzden entegrasyon testini tamamlayamadık." },
+                { "language": "ru", "text": "Задержка связана с отсутствующим согласованием интерфейса. Поэтому мы не смогли завершить интеграционный тест." },
+                { "language": "ckb", "text": "دواخستنەکە پەیوەستە بە نەبوونی پەسەندکردنی ڕووکاری پەیوەندی. بۆیە نەمانتوانی تاقیکردنەوەی یەکخستن تەواو بکەین." },
+                { "language": "kmr", "text": "Derengmayîn bi nebûna pejirandina navrûya têkiliyê ve girêdayî ye. Ji ber vê yekê me testê yekgirtinê neqedand." },
+                { "language": "pl", "text": "Opóźnienie jest związane z brakiem akceptacji interfejsu. Dlatego nie mogliśmy zakończyć testu integracyjnego." },
+                { "language": "ro", "text": "Întârzierea este legată de lipsa aprobării interfeței. De aceea nu am putut finaliza testul de integrare." },
+                { "language": "sq", "text": "Vonesa lidhet me mungesën e miratimit të ndërfaqes. Prandaj nuk mundëm ta përfundonim testin e integrimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives a concrete cause and connects it directly to the delayed work package.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives a concrete cause and connects it directly to the delayed work package." },
+                { "language": "fa", "text": "خوب است: علت مشخصی می‌دهد و آن را مستقیم به بخش کاری عقب‌افتاده وصل می‌کند." },
+                { "language": "ar", "text": "جيد: يعطي سبباً محدداً ويربطه مباشرة بجزء العمل المتأخر." },
+                { "language": "tr", "text": "İyi: somut bir neden veriyor ve bunu geciken iş paketine doğrudan bağlıyor." },
+                { "language": "ru", "text": "Хорошо: названа конкретная причина и напрямую связана с задержавшимся рабочим пакетом." },
+                { "language": "ckb", "text": "باشە: هۆکارێکی دیاریکراو دەدات و ڕاستەوخۆ بە بەشی کاری دواخراوەوە دەیبەستێت." },
+                { "language": "kmr", "text": "Baş e: sedemeke konkret dide û wê rasterast bi pakêta karê derengmayî ve girê dide." },
+                { "language": "pl", "text": "Dobrze: podaje konkretną przyczynę i bezpośrednio łączy ją z opóźnionym pakietem pracy." },
+                { "language": "ro", "text": "Bine: oferă o cauză concretă și o leagă direct de pachetul de lucru întârziat." },
+                { "language": "sq", "text": "Mirë: jep një shkak konkret dhe e lidh drejtpërdrejt me paketën e punës së vonuar." }
+              ],
+              "explanationKey": "cause-effect"
+            },
+            {
+              "id": "vague-delay",
+              "text": "Es hat leider ein paar Probleme gegeben, deshalb sind wir etwas später dran.",
+              "translations": [
+                { "language": "en", "text": "Unfortunately there were a few problems, so we are a bit behind." },
+                { "language": "fa", "text": "متأسفانه چند مشکل پیش آمد، برای همین کمی عقب هستیم." },
+                { "language": "ar", "text": "للأسف حدثت بعض المشكلات، لذلك نحن متأخرون قليلاً." },
+                { "language": "tr", "text": "Maalesef birkaç sorun oldu, bu yüzden biraz gerideyiz." },
+                { "language": "ru", "text": "К сожалению, возникло несколько проблем, поэтому мы немного отстаём." },
+                { "language": "ckb", "text": "بەداخەوە چەند کێشەیەک ڕوویدا، بۆیە کەمێک دوا کەوتووین." },
+                { "language": "kmr", "text": "Mixabin çend pirsgirêk çêbûn, ji ber vê yekê em hinekî dereng mane." },
+                { "language": "pl", "text": "Niestety pojawiło się kilka problemów, dlatego jesteśmy trochę opóźnieni." },
+                { "language": "ro", "text": "Din păcate au apărut câteva probleme, de aceea suntem puțin în urmă." },
+                { "language": "sq", "text": "Fatkeqësisht pati disa probleme, prandaj jemi pak me vonesë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too vague for B2: it does not name the cause, affected activity, or practical consequence.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague for this level: it does not name the cause, affected activity, or practical consequence." },
+                { "language": "fa", "text": "برای این سطح خیلی مبهم است: علت، فعالیت تحت تأثیر یا پیامد عملی را نام نمی‌برد." },
+                { "language": "ar", "text": "عام جداً لهذا المستوى: لا يذكر السبب أو النشاط المتأثر أو النتيجة العملية." },
+                { "language": "tr", "text": "Bu seviye için çok belirsiz: nedeni, etkilenen faaliyeti veya pratik sonucu söylemiyor." },
+                { "language": "ru", "text": "Слишком расплывчато для этого уровня: не названы причина, затронутая деятельность или практическое последствие." },
+                { "language": "ckb", "text": "بۆ ئەم ئاستە زۆر گشتییە: هۆکار، چالاکی کاریگەربوو یان ئەنجامی کردەیی ناو نابردرێت." },
+                { "language": "kmr", "text": "Ji bo vê astê pir giştî ye: sedem, çalakiya bandorlêbûyî an encama pratîk nayê gotin." },
+                { "language": "pl", "text": "Zbyt ogólne na ten poziom: nie podaje przyczyny, dotkniętego działania ani praktycznej konsekwencji." },
+                { "language": "ro", "text": "Prea vag pentru acest nivel: nu numește cauza, activitatea afectată sau consecința practică." },
+                { "language": "sq", "text": "Shumë e paqartë për këtë nivel: nuk përmend shkakun, aktivitetin e prekur ose pasojën praktike." }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "impact-with-buffer",
+              "text": "Der Go-live verschiebt sich nicht automatisch. Betroffen ist vor allem die Testphase; wir verlieren zwei Tage Puffer.",
+              "translations": [
+                { "language": "en", "text": "The go-live does not automatically move. The test phase is mainly affected; we lose two days of buffer." },
+                { "language": "fa", "text": "زمان راه‌اندازی به‌طور خودکار عقب نمی‌افتد. بیشتر مرحله تست تحت تأثیر است؛ دو روز حاشیه امن را از دست می‌دهیم." },
+                { "language": "ar", "text": "لا يتأجل الإطلاق تلقائياً. المتأثر أساساً هو مرحلة الاختبار؛ نفقد يومين من الهامش." },
+                { "language": "tr", "text": "Canlıya geçiş otomatik olarak ertelenmiyor. Asıl etkilenen test aşaması; iki günlük tamponu kaybediyoruz." },
+                { "language": "ru", "text": "Запуск не переносится автоматически. В первую очередь затронута фаза тестирования; мы теряем два дня резерва." },
+                { "language": "ckb", "text": "دەستپێکردنی ڕەسمی بە شێوەی خۆکار دوا ناکەوێت. زۆرتر قۆناغی تاقیکردنەوە کاریگەری لێدەکەوێت؛ دوو ڕۆژ پاشەکەوتی کات لەدەست دەدەین." },
+                { "language": "kmr", "text": "Destpêkirina fermî bixweber paş nakeve. Bi taybetî qonaxa testê bandor lê dibe; em du rojên rezervê winda dikin." },
+                { "language": "pl", "text": "Start produkcyjny nie przesuwa się automatycznie. Najbardziej dotknięta jest faza testów; tracimy dwa dni bufora." },
+                { "language": "ro", "text": "Lansarea nu se mută automat. Este afectată mai ales faza de testare; pierdem două zile de rezervă." },
+                { "language": "sq", "text": "Dalja live nuk shtyhet automatikisht. Më së shumti preket faza e testimit; humbim dy ditë rezervë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this separates the overall deadline from the affected phase and names the concrete loss of buffer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this separates the overall deadline from the affected phase and names the concrete loss of buffer." },
+                { "language": "fa", "text": "خوب است: مهلت کلی را از مرحله تحت تأثیر جدا می‌کند و از دست رفتن مشخص حاشیه امن را نام می‌برد." },
+                { "language": "ar", "text": "جيد: يفرق بين الموعد العام والمرحلة المتأثرة ويذكر خسارة الهامش بشكل محدد." },
+                { "language": "tr", "text": "İyi: genel teslim tarihini etkilenen aşamadan ayırıyor ve somut tampon kaybını söylüyor." },
+                { "language": "ru", "text": "Хорошо: общий срок отделён от затронутой фазы и названа конкретная потеря резерва." },
+                { "language": "ckb", "text": "باشە: کاتی کۆتایی گشتی لە قۆناغی کاریگەربوو جیا دەکاتەوە و لەدەستدانی دیاریکراوی پاشەکەوت ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: dema dawî ya giştî ji qonaxa bandorlêbûyî vediqetîne û windabûna konkreta rezervê nav dike." },
+                { "language": "pl", "text": "Dobrze: oddziela ogólny termin od dotkniętej fazy i wskazuje konkretną utratę bufora." },
+                { "language": "ro", "text": "Bine: separă termenul general de faza afectată și numește pierderea concretă a rezervei." },
+                { "language": "sq", "text": "Mirë: e ndan afatin e përgjithshëm nga faza e prekur dhe përmend humbjen konkrete të rezervës." }
+              ],
+              "explanationKey": "impact-specific"
+            },
+            {
+              "id": "unclear-impact",
+              "text": "Der Plan ändert sich ein bisschen, aber wir versuchen trotzdem fertig zu werden.",
+              "translations": [
+                { "language": "en", "text": "The plan changes a little, but we still try to finish." },
+                { "language": "fa", "text": "برنامه کمی تغییر می‌کند، اما با این حال تلاش می‌کنیم تمام کنیم." },
+                { "language": "ar", "text": "تتغير الخطة قليلاً، لكننا نحاول رغم ذلك أن ننتهي." },
+                { "language": "tr", "text": "Plan biraz değişiyor, ama yine de bitirmeye çalışıyoruz." },
+                { "language": "ru", "text": "План немного меняется, но мы всё равно постараемся закончить." },
+                { "language": "ckb", "text": "پلانەکە کەمێک دەگۆڕێت، بەڵام هەر هەوڵ دەدەین تەواو بکەین." },
+                { "language": "kmr", "text": "Plan hinekî diguhere, lê em dîsa hewl didin biqedînin." },
+                { "language": "pl", "text": "Plan trochę się zmienia, ale mimo to spróbujemy skończyć." },
+                { "language": "ro", "text": "Planul se schimbă puțin, dar tot încercăm să terminăm." },
+                { "language": "sq", "text": "Plani ndryshon pak, por gjithsesi përpiqemi ta përfundojmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too unclear: it hides the real impact and gives no information about which phase or buffer is affected.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unclear: it hides the real impact and gives no information about which phase or buffer is affected." },
+                { "language": "fa", "text": "خیلی نامشخص است: اثر واقعی را پنهان می‌کند و نمی‌گوید کدام مرحله یا حاشیه امن تحت تأثیر است." },
+                { "language": "ar", "text": "غير واضح جداً: يخفي التأثير الحقيقي ولا يعطي معلومات عن المرحلة أو الهامش المتأثر." },
+                { "language": "tr", "text": "Çok belirsiz: gerçek etkiyi saklıyor ve hangi aşama veya tamponun etkilendiğini söylemiyor." },
+                { "language": "ru", "text": "Слишком неясно: скрывает реальное влияние и не даёт информации, какая фаза или резерв затронуты." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: کاریگەری ڕاستەقینە دەشارێتەوە و زانیاری نادات کام قۆناغ یان پاشەکەوت کاریگەری لێکەوتووە." },
+                { "language": "kmr", "text": "Pir nezelal e: bandora rastîn vedigere û agahî nade ka kîjan qonax an rezerv bandor lê bûye." },
+                { "language": "pl", "text": "Zbyt niejasne: ukrywa realny wpływ i nie mówi, która faza lub bufor są dotknięte." },
+                { "language": "ro", "text": "Prea neclar: ascunde impactul real și nu spune ce fază sau rezervă este afectată." },
+                { "language": "sq", "text": "Shumë e paqartë: fsheh ndikimin real dhe nuk tregon cila fazë ose rezervë është prekur." }
+              ],
+              "explanationKey": "unclear-impact"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "three-mitigation-steps",
+              "text": "Wir eskalieren heute die Freigabe, sortieren die Testfälle nach Risiko und liefern morgen Mittag einen neuen Abnahmestatus.",
+              "translations": [
+                { "language": "en", "text": "We escalate the approval today, sort the test cases by risk, and provide a new acceptance status tomorrow at noon." },
+                { "language": "fa", "text": "امروز موضوع تأیید را پیگیری سطح بالاتر می‌کنیم، موردهای تست را بر اساس ریسک مرتب می‌کنیم و فردا ظهر وضعیت جدید پذیرش را ارائه می‌دهیم." },
+                { "language": "ar", "text": "نصعّد الموافقة اليوم، ونرتب حالات الاختبار حسب الخطر، ونقدم حالة قبول جديدة غداً ظهراً." },
+                { "language": "tr", "text": "Onayı bugün eskale ediyoruz, test senaryolarını riske göre sıralıyoruz ve yarın öğlen yeni kabul durumunu sunuyoruz." },
+                { "language": "ru", "text": "Сегодня эскалируем согласование, сортируем тестовые случаи по риску и завтра в полдень предоставляем новый статус приёмки." },
+                { "language": "ckb", "text": "ئەمڕۆ پەسەندکردنەکە بەرز دەکەینەوە، کەیسەکانی تاقیکردنەوە بە پێی مەترسی ڕیز دەکەین و سبەی نیوەڕۆ دۆخی نوێی پەسەندکردن دەدەین." },
+                { "language": "kmr", "text": "Em îro pejirandinê bilind dikin, rewşên testê li gorî xetereyê rêz dikin û sibê nîvro rewşa nû ya pejirandinê didin." },
+                { "language": "pl", "text": "Dziś eskalujemy akceptację, sortujemy przypadki testowe według ryzyka i jutro w południe dostarczamy nowy status odbioru." },
+                { "language": "ro", "text": "Escaladăm aprobarea astăzi, sortăm cazurile de testare după risc și livrăm mâine la prânz un nou status de acceptanță." },
+                { "language": "sq", "text": "Eskalojmë miratimin sot, i rendisim rastet e testimit sipas rrezikut dhe nesër në mesditë japim një status të ri pranimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this turns the delay into concrete recovery actions with a short follow-up deadline.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this turns the delay into concrete recovery actions with a short follow-up deadline." },
+                { "language": "fa", "text": "خوب است: تأخیر را به اقدام‌های مشخص برای جبران و یک مهلت کوتاه پیگیری تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: يحول التأخير إلى إجراءات استدراك محددة مع موعد متابعة قصير." },
+                { "language": "tr", "text": "İyi: gecikmeyi somut toparlama adımlarına ve kısa bir takip tarihine dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: задержка превращается в конкретные меры восстановления с коротким сроком последующей проверки." },
+                { "language": "ckb", "text": "باشە: دواخستنەکە دەگۆڕێت بۆ هەنگاوە دیاریکراوەکانی چاککردنەوە و کاتێکی نزیکی بەدواداچوون." },
+                { "language": "kmr", "text": "Baş e: derengmayînê dike gavên konkret ên başkirinê û demeke kurt a şopandinê." },
+                { "language": "pl", "text": "Dobrze: zamienia opóźnienie w konkretne działania naprawcze z krótkim terminem kontrolnym." },
+                { "language": "ro", "text": "Bine: transformă întârzierea în acțiuni concrete de recuperare cu un termen scurt de urmărire." },
+                { "language": "sq", "text": "Mirë: e kthen vonesën në hapa konkretë rikuperimi me një afat të shkurtër ndjekjeje." }
+              ],
+              "explanationKey": "mitigation-plan"
+            },
+            {
+              "id": "passive-waiting",
+              "text": "Wir warten erst einmal auf die Freigabe und sehen dann weiter.",
+              "translations": [
+                { "language": "en", "text": "We wait for the approval first and then see what happens." },
+                { "language": "fa", "text": "فعلاً منتظر تأیید می‌مانیم و بعد می‌بینیم چه می‌شود." },
+                { "language": "ar", "text": "ننتظر أولاً الموافقة ثم نرى ماذا يحدث." },
+                { "language": "tr", "text": "Önce onayı bekleriz, sonra bakarız." },
+                { "language": "ru", "text": "Сначала подождём согласования, а потом посмотрим." },
+                { "language": "ckb", "text": "سەرەتا چاوەڕێی پەسەندکردن دەکەین و پاشان دەبینین چی دەبێت." },
+                { "language": "kmr", "text": "Em pêşî li benda pejirandinê dimînin û paşê dibînin çi dibe." },
+                { "language": "pl", "text": "Najpierw poczekamy na akceptację, a potem zobaczymy." },
+                { "language": "ro", "text": "Mai întâi așteptăm aprobarea și apoi vedem ce urmează." },
+                { "language": "sq", "text": "Së pari presim miratimin dhe pastaj shohim çfarë ndodh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too passive: it does not show ownership, prioritization, or a follow-up time for the project lead.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: it does not show ownership, prioritization, or a follow-up time for the project lead." },
+                { "language": "fa", "text": "بیش از حد منفعل است: مالکیت، اولویت‌بندی یا زمان پیگیری برای مدیر پروژه نشان نمی‌دهد." },
+                { "language": "ar", "text": "سلبي جداً: لا يظهر مسؤولية ولا ترتيب أولويات ولا وقت متابعة لمديرة المشروع." },
+                { "language": "tr", "text": "Fazla pasif: proje yöneticisine sahiplenme, önceliklendirme veya takip zamanı göstermiyor." },
+                { "language": "ru", "text": "Слишком пассивно: не показывает ответственности, приоритизации или времени последующей проверки для руководителя проекта." },
+                { "language": "ckb", "text": "زۆر پاسیڤە: خاوەندارێتی، پێشینەدان یان کاتی بەدواداچوون بۆ بەڕێوەبەری پرۆژە نیشان نادات." },
+                { "language": "kmr", "text": "Pir pasîf e: xwedîtiyê, pêşînîdanê an dema şopandinê ji rêvebera projeyê re nîşan nade." },
+                { "language": "pl", "text": "Zbyt pasywne: nie pokazuje odpowiedzialności, priorytetyzacji ani terminu follow-upu dla kierowniczki projektu." },
+                { "language": "ro", "text": "Prea pasiv: nu arată asumare, prioritizare sau timp de urmărire pentru coordonatoarea proiectului." },
+                { "language": "sq", "text": "Shumë pasive: nuk tregon përgjegjësi, prioritizim ose kohë ndjekjeje për drejtuesen e projektit." }
+              ],
+              "explanationKey": "passive-response"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "complete-delay-summary",
+              "text": "Der Verzug entsteht durch die offene Schnittstellenfreigabe. Bei Freigabe heute bleibt der Go-live möglich; sonst verschiebt sich die Abnahme auf Montagvormittag.",
+              "translations": [
+                { "language": "en", "text": "The delay is caused by the open interface approval. If approval comes today, go-live remains possible; otherwise acceptance moves to Monday morning." },
+                { "language": "fa", "text": "تأخیر به دلیل تأیید باز رابط فنی است. اگر تأیید امروز برسد، راه‌اندازی همچنان ممکن است؛ در غیر این صورت پذیرش نهایی به دوشنبه صبح منتقل می‌شود." },
+                { "language": "ar", "text": "التأخير ناتج عن موافقة الواجهة المفتوحة. إذا وصلت الموافقة اليوم يبقى الإطلاق ممكناً؛ وإلا ينتقل القبول إلى صباح الاثنين." },
+                { "language": "tr", "text": "Gecikme açık arayüz onayından kaynaklanıyor. Onay bugün gelirse canlıya geçiş mümkün kalır; aksi halde kabul pazartesi sabahına kayar." },
+                { "language": "ru", "text": "Задержка вызвана открытым согласованием интерфейса. Если согласование придёт сегодня, запуск остаётся возможным; иначе приёмка переносится на утро понедельника." },
+                { "language": "ckb", "text": "دواخستنەکە بەهۆی پەسەندکردنی کراوەی ڕووکاری پەیوەندییە. ئەگەر پەسەندکردن ئەمڕۆ بگات، دەستپێکردنی ڕەسمی هێشتا دەکرێت؛ ئەگەر نا، پەسەندکردن دەگوازرێتەوە بۆ بەیانی دووشەممە." },
+                { "language": "kmr", "text": "Derengmayîn ji pejirandina vekirî ya navrûya têkiliyê tê. Ger pejirandin îro were, destpêkirina fermî hîn gengaz e; wekî din pejirandin diçe sibeya duşemê." },
+                { "language": "pl", "text": "Opóźnienie wynika z otwartej akceptacji interfejsu. Jeśli akceptacja przyjdzie dziś, start pozostaje możliwy; w przeciwnym razie odbiór przesuwa się na poniedziałek rano." },
+                { "language": "ro", "text": "Întârzierea este cauzată de aprobarea deschisă a interfeței. Dacă aprobarea vine astăzi, lansarea rămâne posibilă; altfel acceptanța se mută luni dimineață." },
+                { "language": "sq", "text": "Vonesa vjen nga miratimi i hapur i ndërfaqes. Nëse miratimi vjen sot, dalja live mbetet e mundur; përndryshe pranimi shtyhet për të hënën paradite." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this summary gives cause, condition, impact, and a revised acceptance time.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this summary gives cause, condition, impact, and a revised acceptance time." },
+                { "language": "fa", "text": "خوب است: این جمع‌بندی علت، شرط، اثر و زمان اصلاح‌شده پذیرش را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: يقدم هذا الملخص السبب والشرط والتأثير ووقت القبول المعدل." },
+                { "language": "tr", "text": "İyi: bu özet nedeni, koşulu, etkiyi ve revize edilmiş kabul zamanını veriyor." },
+                { "language": "ru", "text": "Хорошо: это резюме даёт причину, условие, влияние и пересмотренное время приёмки." },
+                { "language": "ckb", "text": "باشە: ئەم پوختەیە هۆکار، مەرج، کاریگەری و کاتی چاککراوەی پەسەندکردن دەدات." },
+                { "language": "kmr", "text": "Baş e: ev kurtkirin sedem, şert, bandor û dema guhartî ya pejirandinê dide." },
+                { "language": "pl", "text": "Dobrze: to podsumowanie podaje przyczynę, warunek, wpływ i zmieniony czas odbioru." },
+                { "language": "ro", "text": "Bine: acest rezumat oferă cauza, condiția, impactul și timpul revizuit de acceptanță." },
+                { "language": "sq", "text": "Mirë: kjo përmbledhje jep shkakun, kushtin, ndikimin dhe kohën e rishikuar të pranimit." }
+              ],
+              "explanationKey": "complete-delay-summary"
+            },
+            {
+              "id": "missing-condition",
+              "text": "Wir sind etwas im Verzug, aber wahrscheinlich schaffen wir es trotzdem.",
+              "translations": [
+                { "language": "en", "text": "We are a bit delayed, but we will probably still manage it." },
+                { "language": "fa", "text": "کمی تأخیر داریم، اما احتمالاً با این حال می‌توانیم انجامش دهیم." },
+                { "language": "ar", "text": "لدينا بعض التأخير، لكن من المحتمل أن ننجز الأمر رغم ذلك." },
+                { "language": "tr", "text": "Biraz geciktik, ama muhtemelen yine de yetiştiririz." },
+                { "language": "ru", "text": "Мы немного задерживаемся, но, вероятно, всё равно справимся." },
+                { "language": "ckb", "text": "کەمێک دوا کەوتووین، بەڵام ئەگەری زۆر هەیە هەر بتوانین تەواوی بکەین." },
+                { "language": "kmr", "text": "Em hinekî dereng mane, lê dibe ku em dîsa bikaribin biqedînin." },
+                { "language": "pl", "text": "Mamy trochę opóźnienia, ale prawdopodobnie mimo to damy radę." },
+                { "language": "ro", "text": "Suntem puțin în întârziere, dar probabil vom reuși totuși." },
+                { "language": "sq", "text": "Jemi pak me vonesë, por ndoshta gjithsesi do t'ia dalim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too weak for steering-level communication: it gives no cause, no condition, and no revised acceptance time.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak for steering-level communication: it gives no cause, no condition, and no revised acceptance time." },
+                { "language": "fa", "text": "برای ارتباط در سطح کمیته راهبری خیلی ضعیف است: علت، شرط و زمان اصلاح‌شده پذیرش را نمی‌دهد." },
+                { "language": "ar", "text": "ضعيف جداً للتواصل على مستوى لجنة التوجيه: لا يعطي سبباً ولا شرطاً ولا وقت قبول معدلاً." },
+                { "language": "tr", "text": "Yönlendirme kurulu düzeyindeki iletişim için çok zayıf: neden, koşul veya revize kabul zamanı vermiyor." },
+                { "language": "ru", "text": "Слишком слабо для коммуникации на уровне управляющего комитета: нет причины, условия и пересмотренного времени приёмки." },
+                { "language": "ckb", "text": "بۆ پەیوەندی لە ئاستی کۆمیتەی ئاراستەکردن زۆر لاوازە: هۆکار، مەرج و کاتی چاککراوەی پەسەندکردن نادات." },
+                { "language": "kmr", "text": "Ji bo ragihandina asta komîteya rêvebirinê pir qels e: sedem, şert û dema guhartî ya pejirandinê nade." },
+                { "language": "pl", "text": "Zbyt słabe dla komunikacji na poziomie komitetu sterującego: nie podaje przyczyny, warunku ani zmienionego czasu odbioru." },
+                { "language": "ro", "text": "Prea slab pentru comunicarea la nivel de comitet de coordonare: nu oferă cauză, condiție sau timp revizuit de acceptanță." },
+                { "language": "sq", "text": "Shumë e dobët për komunikim në nivel komiteti drejtues: nuk jep shkak, kusht ose kohë të rishikuar pranimi." }
+              ],
+              "explanationKey": "weak-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "problem-explanation-note",
+          "text": "A professional delay explanation starts with a concrete cause and immediately connects it to the affected work step.",
+          "translations": [
+            { "language": "en", "text": "A professional delay explanation starts with a concrete cause and immediately connects it to the affected work step." },
+            { "language": "fa", "text": "توضیح حرفه‌ای تأخیر با یک علت مشخص شروع می‌شود و آن را بلافاصله به مرحله کاری تحت تأثیر وصل می‌کند." },
+            { "language": "ar", "text": "يبدأ شرح التأخير المهني بسبب محدد ويربطه فوراً بخطوة العمل المتأثرة." },
+            { "language": "tr", "text": "Profesyonel bir gecikme açıklaması somut bir nedenle başlar ve bunu hemen etkilenen iş adımına bağlar." },
+            { "language": "ru", "text": "Профессиональное объяснение задержки начинается с конкретной причины и сразу связывает её с затронутым рабочим шагом." },
+            { "language": "ckb", "text": "ڕوونکردنەوەی پیشەیی بۆ دواخستن بە هۆکارێکی دیاریکراو دەست پێدەکات و دەستبەجێ بە هەنگاوی کاری کاریگەربوو دەیبەستێت." },
+            { "language": "kmr", "text": "Ravekirina profesyonel a derengmayînê bi sedemeke konkret dest pê dike û wê tavilê bi gava karê bandorlêbûyî ve girê dide." },
+            { "language": "pl", "text": "Profesjonalne wyjaśnienie opóźnienia zaczyna się od konkretnej przyczyny i od razu łączy ją z dotkniętym krokiem pracy." },
+            { "language": "ro", "text": "O explicație profesională a întârzierii începe cu o cauză concretă și o leagă imediat de pasul de lucru afectat." },
+            { "language": "sq", "text": "Një shpjegim profesional i vonesës fillon me një shkak konkret dhe e lidh menjëherë me hapin e punës të prekur." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "recovery-plan-note",
+          "text": "A recovery plan should show ownership: escalation, prioritization, and a near-term status update.",
+          "translations": [
+            { "language": "en", "text": "A recovery plan should show ownership: escalation, prioritization, and a near-term status update." },
+            { "language": "fa", "text": "برنامه جبران باید مسئولیت‌پذیری نشان بدهد: پیگیری سطح بالاتر، اولویت‌بندی و به‌روزرسانی وضعیت در زمان نزدیک." },
+            { "language": "ar", "text": "ينبغي أن تُظهر خطة الاستدراك تحمّل المسؤولية: التصعيد، وترتيب الأولويات، وتحديث حالة قريب." },
+            { "language": "tr", "text": "Bir toparlama planı sahiplenme göstermelidir: eskalasyon, önceliklendirme ve yakın tarihli durum güncellemesi." },
+            { "language": "ru", "text": "План восстановления должен показывать ответственность: эскалацию, приоритизацию и ближайшее обновление статуса." },
+            { "language": "ckb", "text": "پلانی چاککردنەوە دەبێت خاوەندارێتی نیشان بدات: بەرزکردنەوەی بابەت، پێشینەدان و نوێکردنەوەی دۆخ لە کاتێکی نزیک." },
+            { "language": "kmr", "text": "Plana başkirinê divê xwedîtiyê nîşan bide: bilindkirin, pêşînîdan û nûkirina rewşê di demeke nêzîk de." },
+            { "language": "pl", "text": "Plan naprawczy powinien pokazywać odpowiedzialność: eskalację, priorytetyzację i bliską aktualizację statusu." },
+            { "language": "ro", "text": "Un plan de recuperare trebuie să arate asumare: escaladare, prioritizare și o actualizare de status pe termen scurt." },
+            { "language": "sq", "text": "Një plan rikuperimi duhet të tregojë përgjegjësi: eskalim, prioritizim dhe përditësim të afërt të statusit." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "For steering-level communication, summarize cause, condition, impact, and revised timing in one clear statement.",
+          "translations": [
+            { "language": "en", "text": "For steering-level communication, summarize cause, condition, impact, and revised timing in one clear statement." },
+            { "language": "fa", "text": "برای ارتباط در سطح راهبری، علت، شرط، اثر و زمان‌بندی اصلاح‌شده را در یک جمله روشن جمع‌بندی کن." },
+            { "language": "ar", "text": "للتواصل على مستوى التوجيه، لخص السبب والشرط والتأثير والتوقيت المعدل في عبارة واضحة واحدة." },
+            { "language": "tr", "text": "Yönlendirme düzeyi iletişim için nedeni, koşulu, etkiyi ve revize zamanı tek net ifadede özetle." },
+            { "language": "ru", "text": "Для коммуникации на уровне управления суммируй причину, условие, влияние и пересмотренные сроки в одном ясном заявлении." },
+            { "language": "ckb", "text": "بۆ پەیوەندی لە ئاستی ئاراستەکردن، هۆکار، مەرج، کاریگەری و کات‌بەندی چاککراوە لە یەک دەربڕینی ڕووندا پوختە بکەوە." },
+            { "language": "kmr", "text": "Ji bo ragihandina asta rêvebirinê, sedem, şert, bandor û demkirina guhartî di yek gotineke zelal de kurt bike." },
+            { "language": "pl", "text": "W komunikacji na poziomie sterującym podsumuj przyczynę, warunek, wpływ i zmieniony termin w jednym jasnym zdaniu." },
+            { "language": "ro", "text": "Pentru comunicarea la nivel de coordonare, rezumă cauza, condiția, impactul și calendarul revizuit într-o formulare clară." },
+            { "language": "sq", "text": "Për komunikim në nivel drejtues, përmblidh shkakun, kushtin, ndikimin dhe afatin e rishikuar në një deklaratë të qartë." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

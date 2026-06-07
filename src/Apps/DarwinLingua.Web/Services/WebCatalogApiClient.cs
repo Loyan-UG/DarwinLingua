@@ -74,31 +74,38 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
         ExerciseSetListFilterModel filter,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(
         string slug,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExerciseDetailModel?> GetExerciseBySlugAsync(
         string slug,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(
         string slug,
         ExerciseAttemptRequestModel request,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(
         CoursePathListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<CoursePathDetailModel?> GetCourseBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
@@ -737,6 +744,7 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
         ExerciseSetListFilterModel filter,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ExerciseSetListItemModel>>(
             BuildPath(
@@ -745,27 +753,38 @@ internal sealed class WebCatalogApiClient(
                     new("cefrLevel", filter.CefrLevel),
                     new("ownerType", filter.OwnerType),
                     new("ownerSlug", filter.OwnerSlug),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(
         string slug,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<ExerciseSetDetailModel>($"/api/catalog/exercise-sets/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<ExerciseSetDetailModel>(
+            BuildPath($"/api/catalog/exercise-sets/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public Task<ExerciseDetailModel?> GetExerciseBySlugAsync(
         string slug,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<ExerciseDetailModel>($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<ExerciseDetailModel>(
+            BuildPath($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public async Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(
         string slug,
         ExerciseAttemptRequestModel request,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         using HttpResponseMessage response = await httpClient
-            .PostAsJsonAsync($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}/evaluate", request, cancellationToken)
+            .PostAsJsonAsync(
+                BuildPath($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}/evaluate", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+                request,
+                cancellationToken)
             .ConfigureAwait(false);
 
         if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -779,25 +798,33 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(
         CoursePathListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<CoursePathListItemModel>>(
             BuildPath(
                 "/api/catalog/courses",
                 [
                     new("cefrLevel", filter.CefrLevel),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<CoursePathDetailModel?> GetCourseBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<CoursePathDetailModel>($"/api/catalog/courses/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<CoursePathDetailModel>(
+            BuildPath($"/api/catalog/courses/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<CourseLessonDetailModel>($"/api/catalog/course-lessons/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<CourseLessonDetailModel>(
+            BuildPath($"/api/catalog/course-lessons/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
         WritingTemplateListFilterModel filter,
@@ -2903,6 +2930,18 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int UnpublishedDraftCount,
     int GrammarTopicsMissingExercises,
     int CourseLessonsMissingExerciseSets,
+    int CoursePathsMissingTranslations,
+    int CourseModulesMissingTranslations,
+    int CourseLessonsMissingTranslations,
+    int ExercisesMissingTranslations,
+    int ExerciseSetsMissingTranslations,
+    int ExercisesUnpublishedDrafts,
+    int ExerciseSetsUnpublishedDrafts,
+    int ExerciseSetsWithoutItems,
+    int ExerciseSetsWithUnresolvedExerciseSlugs,
+    int ExercisesWithMalformedPrompt,
+    int ExercisesWithMalformedAnswerKey,
+    int ExercisesMissingExplanations,
     int ExpressionEntriesMissingEligibilityMetadata,
     int ExpressionEntriesWithOrdinaryLiteralLeakage,
     int ExpressionEntriesMissingTeachingReason,
@@ -2914,6 +2953,12 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExpressionEntriesBlockedOrExplicitAdult,
     int ExpressionEntriesMissingSensitiveUsagePolicy,
     int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+    int RoleplayScenariosMissingTranslations,
+    int RoleplayScenariosUnpublishedDrafts,
+    int RoleplayScenariosMissingRequiredImageAssets,
+    int RoleplayScenariosWithoutAnswerChoices,
+    int RoleplayScenariosWithoutStaticFeedback,
+    int RoleplayScenariosWithInvalidPlayableSequence,
     IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
 
 public sealed record AdminLearningPortalCountRowResponse(

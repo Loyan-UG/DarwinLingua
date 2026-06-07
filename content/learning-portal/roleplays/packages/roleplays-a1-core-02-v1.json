@@ -1,0 +1,4656 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-a1-core-02-v1",
+  "packageName": "Roleplay-Szenarien A1 Core 02 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "a1-im-cafe-etwas-bestellen",
+      "title": "Im Cafe etwas bestellen",
+      "cefrLevel": "A1",
+      "category": "customer-service",
+      "topics": [
+        "shopping-and-services",
+        "everyday-life"
+      ],
+      "interactionMode": "service-counter",
+      "register": "neutral",
+      "taskType": "order-and-pay",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 60,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Servicekraft",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Service staff"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند خدمات"
+            },
+            {
+              "language": "ar",
+              "text": "موظف الخدمة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудник сервиса"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەندی خزمەتگوزاری"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmendê xizmetê"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownik obsługi"
+            },
+            {
+              "language": "ro",
+              "text": "Personal de serviciu"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjës shërbimi"
+            }
+          ]
+        }
+      ],
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Order something in a cafe"
+        },
+        {
+          "language": "fa",
+          "text": "سفارش دادن در کافه"
+        },
+        {
+          "language": "ar",
+          "text": "اطلب شيئاً في المقهى"
+        },
+        {
+          "language": "tr",
+          "text": "Kafede bir şey sipariş et"
+        },
+        {
+          "language": "ru",
+          "text": "Заказать что-то в кафе"
+        },
+        {
+          "language": "ckb",
+          "text": "لە کافە شتێک داوا بکە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li kafeyê tiştekî siparîş bike"
+        },
+        {
+          "language": "pl",
+          "text": "Zamów coś w kawiarni"
+        },
+        {
+          "language": "ro",
+          "text": "Comandă ceva la cafenea"
+        },
+        {
+          "language": "sq",
+          "text": "Porosit diçka në kafene"
+        }
+      ],
+      "description": "Du übst, ein Getränk höflich zu bestellen und eine kurze Rückfrage zu beantworten.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice ordering a drink politely and answering a short follow-up question."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی یک نوشیدنی را مؤدبانه سفارش بدهی و به یک سؤال کوتاه جواب بدهی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على طلب مشروب بلطف والإجابة عن سؤال قصير."
+        },
+        {
+          "language": "tr",
+          "text": "Bir içeceği nazikçe sipariş etmeyi ve kısa bir soruya cevap vermeyi çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься вежливо заказать напиток и ответить на короткий вопрос."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت خواردنەوەیەک بە ڕێزەوە داوا بکەیت و وەڵامی پرسیارێکی کورت بدەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu fêr dibî vexwarinekê bi rêz siparîş bikî û bersiva pirsiyareke kurt bidî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz uprzejme zamówienie napoju i odpowiedź na krótkie pytanie."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să comanzi politicos o băutură și să răspunzi la o întrebare scurtă."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të porosisësh me mirësjellje një pije dhe t’i përgjigjesh një pyetjeje të shkurtër."
+        }
+      ],
+      "learnerGoal": "Du kannst in einem Cafe höflich bestellen und eine einfache Auswahl nennen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can order politely in a cafe and name one simple choice."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی در کافه مؤدبانه سفارش بدهی و یک انتخاب ساده بگویی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تطلب بلطف في المقهى وتذكر خياراً بسيطاً."
+        },
+        {
+          "language": "tr",
+          "text": "Kafede nazikçe sipariş verebilir ve basit bir seçenek söyleyebilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь вежливо заказать в кафе и назвать простой выбор."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت لە کافە بە ڕێزەوە داوا بکەیت و هەڵبژاردەیەکی سادە بڵێیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî li kafeyê bi rêz siparîş bikî û vebijêrkeke hêsan bêjî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz uprzejmie zamówić w kawiarni i podać prosty wybór."
+        },
+        {
+          "language": "ro",
+          "text": "Poți comanda politicos într-o cafenea și poți spune o alegere simplă."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të porosisësh me mirësjellje në kafene dhe të thuash një zgjedhje të thjeshtë."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag. Was möchten Sie?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good afternoon. What would you like?"
+            },
+            {
+              "language": "fa",
+              "text": "روز بخیر. چه میل دارید؟"
+            },
+            {
+              "language": "ar",
+              "text": "طاب يومكم. ماذا تريد؟"
+            },
+            {
+              "language": "tr",
+              "text": "İyi günler. Ne istersiniz?"
+            },
+            {
+              "language": "ru",
+              "text": "Добрый день. Что вы хотите?"
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژ باش. چیتان دەوێت؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Roj baş. Hûn çi dixwazin?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Co Pan/Pani chce?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua. Ce doriți?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëdita. Çfarë dëshironi?"
+            }
+          ],
+          "function": "ask-order",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Einen Kaffee bitte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good afternoon. A coffee, please."
+            },
+            {
+              "language": "fa",
+              "text": "روز بخیر. یک قهوه لطفاً."
+            },
+            {
+              "language": "ar",
+              "text": "طاب يومكم. قهوة من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "İyi günler. Bir kahve lütfen."
+            },
+            {
+              "language": "ru",
+              "text": "Добрый день. Один кофе, пожалуйста."
+            },
+            {
+              "language": "ckb",
+              "text": "ڕۆژ باش. قاوەیەک تکایە."
+            },
+            {
+              "language": "kmr",
+              "text": "Roj baş. Qehweyek ji kerema xwe."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Poproszę kawę."
+            },
+            {
+              "language": "ro",
+              "text": "Bună ziua. O cafea, vă rog."
+            },
+            {
+              "language": "sq",
+              "text": "Mirëdita. Një kafe, ju lutem."
+            }
+          ],
+          "function": "order",
+          "toneNote": null,
+          "expectedLearnerAction": "order-one-item"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Mit Milch oder schwarz?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "With milk or black?"
+            },
+            {
+              "language": "fa",
+              "text": "با شیر یا ساده؟"
+            },
+            {
+              "language": "ar",
+              "text": "مع حليب أم أسود؟"
+            },
+            {
+              "language": "tr",
+              "text": "Sütlü mü sade mi?"
+            },
+            {
+              "language": "ru",
+              "text": "С молоком или чёрный?"
+            },
+            {
+              "language": "ckb",
+              "text": "بە شیر یان ڕەش؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Bi şîr an reş?"
+            },
+            {
+              "language": "pl",
+              "text": "Z mlekiem czy czarna?"
+            },
+            {
+              "language": "ro",
+              "text": "Cu lapte sau neagră?"
+            },
+            {
+              "language": "sq",
+              "text": "Me qumësht apo e zezë?"
+            }
+          ],
+          "function": "ask-choice",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mit Milch bitte. Danke.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "With milk, please. Thank you."
+            },
+            {
+              "language": "fa",
+              "text": "با شیر لطفاً. ممنون."
+            },
+            {
+              "language": "ar",
+              "text": "مع حليب من فضلك. شكراً."
+            },
+            {
+              "language": "tr",
+              "text": "Sütlü lütfen. Teşekkürler."
+            },
+            {
+              "language": "ru",
+              "text": "С молоком, пожалуйста. Спасибо."
+            },
+            {
+              "language": "ckb",
+              "text": "بە شیر تکایە. سوپاس."
+            },
+            {
+              "language": "kmr",
+              "text": "Bi şîr ji kerema xwe. Spas."
+            },
+            {
+              "language": "pl",
+              "text": "Z mlekiem, proszę. Dziękuję."
+            },
+            {
+              "language": "ro",
+              "text": "Cu lapte, vă rog. Mulțumesc."
+            },
+            {
+              "language": "sq",
+              "text": "Me qumësht, ju lutem. Faleminderit."
+            }
+          ],
+          "function": "choose",
+          "toneNote": null,
+          "expectedLearnerAction": "answer-choice"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Einen Kaffee bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good afternoon. A coffee, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "روز بخیر. یک قهوه لطفاً."
+                },
+                {
+                  "language": "ar",
+                  "text": "طاب يومكم. قهوة من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "İyi günler. Bir kahve lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Добрый день. Один кофе, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ڕۆژ باش. قاوەیەک تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Roj baş. Qehweyek ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Poproszę kawę."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună ziua. O cafea, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëdita. Një kafe, ju lutem."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This is a polite complete order.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-politeness",
+              "text": "Kaffee.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Coffee."
+                },
+                {
+                  "language": "fa",
+                  "text": "قهوه."
+                },
+                {
+                  "language": "ar",
+                  "text": "قهوة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Kahve."
+                },
+                {
+                  "language": "ru",
+                  "text": "Кофе."
+                },
+                {
+                  "language": "ckb",
+                  "text": "قاوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Qehwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Kawa."
+                },
+                {
+                  "language": "ro",
+                  "text": "Cafea."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kafe."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is understandable, but too abrupt without a greeting or bitte.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is understandable, but too abrupt without a greeting or bitte."
+                },
+                {
+                  "language": "fa",
+                  "text": "قابل فهم است، اما بدون سلام یا bitte خیلی ناگهانی است."
+                },
+                {
+                  "language": "ar",
+                  "text": "مفهوم، لكنه حاد جداً بلا تحية أو bitte."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılır, ama selam veya bitte olmadan çok sert."
+                },
+                {
+                  "language": "ru",
+                  "text": "Понятно, но без приветствия или bitte слишком резко."
+                },
+                {
+                  "language": "ckb",
+                  "text": "تێدەگەندرێت، بەڵام بەبێ سڵاو یان bitte زۆر کتوپڕە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tê fêmkirin, lê bê silav an bitte pir tund e."
+                },
+                {
+                  "language": "pl",
+                  "text": "To zrozumiałe, ale bez powitania lub bitte brzmi zbyt ostro."
+                },
+                {
+                  "language": "ro",
+                  "text": "Se înțelege, dar fără salut sau bitte sună prea brusc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kuptohet, por pa përshëndetje ose bitte tingëllon shumë e prerë."
+                }
+              ],
+              "explanationKey": "missing-politeness"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Mit Milch bitte. Danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "With milk, please. Thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "با شیر لطفاً. ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "مع حليب من فضلك. شكراً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Sütlü lütfen. Teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "С молоком, пожалуйста. Спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بە شیر تکایە. سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Bi şîr ji kerema xwe. Spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Z mlekiem, proszę. Dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Cu lapte, vă rog. Mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Me qumësht, ju lutem. Faleminderit."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This answers the follow-up and stays polite.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "too-short",
+              "text": "Milch.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Milk."
+                },
+                {
+                  "language": "fa",
+                  "text": "شیر."
+                },
+                {
+                  "language": "ar",
+                  "text": "حليب."
+                },
+                {
+                  "language": "tr",
+                  "text": "Süt."
+                },
+                {
+                  "language": "ru",
+                  "text": "Молоко."
+                },
+                {
+                  "language": "ckb",
+                  "text": "شیر."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Şîr."
+                },
+                {
+                  "language": "pl",
+                  "text": "Mleko."
+                },
+                {
+                  "language": "ro",
+                  "text": "Lapte."
+                },
+                {
+                  "language": "sq",
+                  "text": "Qumësht."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This gives the choice, but it is too short for polite service.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short and misses useful information."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است و اطلاعات مفید کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً وتنقصها معلومات مفيدة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa ve yararlı bilgi eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко и не хватает полезной информации."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە و زانیاری بەسوودی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e û agahiya bikêr kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie i brakuje przydatnej informacji."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt și îi lipsesc informații utile."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër dhe mungon informacion i dobishëm."
+                }
+              ],
+              "explanationKey": "too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "a1-practice-note",
+          "text": "In A1-Servicegesprächen machen „bitte“ und „danke“ die Antwort höflicher.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In A1 service conversations, bitte and danke make the answer more polite."
+            },
+            {
+              "language": "fa",
+              "text": "در مکالمه‌های خدماتی A1، bitte و danke پاسخ را مؤدبانه‌تر می‌کنند."
+            },
+            {
+              "language": "ar",
+              "text": "في محادثات الخدمة A1 تجعل bitte و danke الإجابة ألطف."
+            },
+            {
+              "language": "tr",
+              "text": "A1 hizmet konuşmalarında bitte ve danke cevabı daha nazik yapar."
+            },
+            {
+              "language": "ru",
+              "text": "В сервисных разговорах A1 слова bitte и danke делают ответ вежливее."
+            },
+            {
+              "language": "ckb",
+              "text": "لە گفتوگۆی خزمەتگوزاری A1 دا bitte و danke وەڵامەکە ڕێزدارانەتر دەکەن."
+            },
+            {
+              "language": "kmr",
+              "text": "Di axaftinên xizmetê yên A1 de bitte û danke bersivê bi rêztir dikin."
+            },
+            {
+              "language": "pl",
+              "text": "W rozmowach obsługowych A1 bitte i danke czynią odpowiedź uprzejmiejszą."
+            },
+            {
+              "language": "ro",
+              "text": "În conversațiile de serviciu A1, bitte și danke fac răspunsul mai politicos."
+            },
+            {
+              "language": "sq",
+              "text": "Në bisedat e shërbimit A1, bitte dhe danke e bëjnë përgjigjen më të sjellshme."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "cafe-order",
+          "placement": "header",
+          "purpose": "Set a clear A1 service context without exposing authoring metadata to learners.",
+          "altText": "Eine Person bestellt an einer ruhigen Cafe-Theke.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person orders at a quiet cafe counter."
+            },
+            {
+              "language": "fa",
+              "text": "فردی کنار پیشخوان آرام کافه سفارش می‌دهد."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يطلب عند طاولة خدمة هادئة في مقهى."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi sakin bir kafe tezgahında sipariş veriyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек заказывает у спокойной стойки кафе."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک لە لای کەونتەری ئارامی کافە داوا دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek li ber kontra kafeyeke aram siparîş dike."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba zamawia przy spokojnej ladzie kawiarni."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană comandă la o tejghea liniștită de cafenea."
+            },
+            {
+              "language": "sq",
+              "text": "Një person porosit te një banak i qetë kafeneje."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult ordering at a cafe counter in Germany, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-im-baeckerei-einkaufen",
+      "title": "In der Baeckerei einkaufen",
+      "cefrLevel": "A1",
+      "category": "shopping-and-services",
+      "topics": [
+        "shopping-and-services",
+        "everyday-life"
+      ],
+      "interactionMode": "service-counter",
+      "register": "neutral",
+      "taskType": "order-and-pay",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 70,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Servicekraft",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Service staff"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند خدمات"
+            },
+            {
+              "language": "ar",
+              "text": "موظف الخدمة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудник сервиса"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەندی خزمەتگوزاری"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmendê xizmetê"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownik obsługi"
+            },
+            {
+              "language": "ro",
+              "text": "Personal de serviciu"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjës shërbimi"
+            }
+          ]
+        }
+      ],
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Shop in the bakery"
+        },
+        {
+          "language": "fa",
+          "text": "خرید از نانوایی"
+        },
+        {
+          "language": "ar",
+          "text": "تسوّق في المخبز"
+        },
+        {
+          "language": "tr",
+          "text": "Fırında alışveriş yap"
+        },
+        {
+          "language": "ru",
+          "text": "Купить в пекарне"
+        },
+        {
+          "language": "ckb",
+          "text": "لە نانەواخانە بکڕە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li firinê kirîn bike"
+        },
+        {
+          "language": "pl",
+          "text": "Kup w piekarni"
+        },
+        {
+          "language": "ro",
+          "text": "Cumpără la brutărie"
+        },
+        {
+          "language": "sq",
+          "text": "Bli në furrë"
+        }
+      ],
+      "description": "Du übst, in der Baeckerei ein Teil zu bestellen und den Preis zu verstehen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice ordering one item in the bakery and understanding the price."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی در نانوایی یک چیز سفارش بدهی و قیمت را بفهمی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على طلب شيء واحد في المخبز وفهم السعر."
+        },
+        {
+          "language": "tr",
+          "text": "Fırında bir şey istemeyi ve fiyatı anlamayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься заказать один товар в пекарне и понять цену."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت لە نانەواخانە شتێک داوا بکەیت و نرخەکە تێبگەیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu li firinê tiştekî dixwazî û bihayê fêm dikî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz zamówienie jednej rzeczy w piekarni i zrozumienie ceny."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să ceri un produs la brutărie și să înțelegi prețul."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të kërkosh një gjë në furrë dhe të kuptosh çmimin."
+        }
+      ],
+      "learnerGoal": "Du kannst ein Gebaeck nennen, die Menge sagen und bezahlen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can name a baked item, say the quantity, and pay."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی نام یک نان یا شیرینی را بگویی، تعداد را بگویی و پرداخت کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تذكر نوع مخبوزات، والكمية، وتدفع."
+        },
+        {
+          "language": "tr",
+          "text": "Bir hamur işinin adını, miktarı söyleyebilir ve ödeme yapabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь назвать выпечку, количество и заплатить."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت ناوی نان/شیرینییەک، ژمارەکە و پارەدان بڵێیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî navê nanekê, hejmarê bêjî û pere bidî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz nazwać wypiek, podać ilość i zapłacić."
+        },
+        {
+          "language": "ro",
+          "text": "Poți numi un produs de panificație, spune cantitatea și plăti."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të thuash emrin e një produkti furre, sasinë dhe të paguash."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Morgen. Was darf es sein?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. What can I get you?"
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر. چه چیزی می‌خواهید؟"
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير. ماذا تريد؟"
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın. Ne alırsınız?"
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро. Что вам дать?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش. چیتان دەوێت؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Beyanî baş. Hûn çi dixwazin?"
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Co podać?"
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața. Ce doriți?"
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes. Çfarë dëshironi?"
+            }
+          ],
+          "function": "ask-order",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Morgen. Zwei Broetchen bitte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good morning. Two rolls, please."
+            },
+            {
+              "language": "fa",
+              "text": "صبح بخیر. دو نان کوچک لطفاً."
+            },
+            {
+              "language": "ar",
+              "text": "صباح الخير. قطعتا خبز من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "Günaydın. İki küçük ekmek lütfen."
+            },
+            {
+              "language": "ru",
+              "text": "Доброе утро. Две булочки, пожалуйста."
+            },
+            {
+              "language": "ckb",
+              "text": "بەیانی باش. دوو نانی بچووک تکایە."
+            },
+            {
+              "language": "kmr",
+              "text": "Beyanî baş. Du nanên biçûk ji kerema xwe."
+            },
+            {
+              "language": "pl",
+              "text": "Dzień dobry. Poproszę dwie bułki."
+            },
+            {
+              "language": "ro",
+              "text": "Bună dimineața. Două chifle, vă rog."
+            },
+            {
+              "language": "sq",
+              "text": "Mirëmëngjes. Dy simite, ju lutem."
+            }
+          ],
+          "function": "order",
+          "toneNote": null,
+          "expectedLearnerAction": "order-quantity"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Das macht zwei Euro zwanzig.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That is two euros twenty."
+            },
+            {
+              "language": "fa",
+              "text": "می‌شود دو یورو و بیست سنت."
+            },
+            {
+              "language": "ar",
+              "text": "المجموع يوروان وعشرون سنتاً."
+            },
+            {
+              "language": "tr",
+              "text": "İki avro yirmi eder."
+            },
+            {
+              "language": "ru",
+              "text": "Это два евро двадцать."
+            },
+            {
+              "language": "ckb",
+              "text": "دەکات دوو یۆرۆ و بیست."
+            },
+            {
+              "language": "kmr",
+              "text": "Dike du euro û bîst."
+            },
+            {
+              "language": "pl",
+              "text": "To będzie dwa euro dwadzieścia."
+            },
+            {
+              "language": "ro",
+              "text": "Face doi euro douăzeci."
+            },
+            {
+              "language": "sq",
+              "text": "Bën dy euro e njëzet."
+            }
+          ],
+          "function": "say-price",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich bezahle mit Karte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you. I pay by card."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون. با کارت پرداخت می‌کنم."
+            },
+            {
+              "language": "ar",
+              "text": "شكراً. أدفع بالبطاقة."
+            },
+            {
+              "language": "tr",
+              "text": "Teşekkürler. Kartla ödüyorum."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо. Я плачу картой."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس. بە کارت پارە دەدەم."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas. Ez bi kartê pere didim."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję. Płacę kartą."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc. Plătesc cu cardul."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit. Paguaj me kartë."
+            }
+          ],
+          "function": "pay",
+          "toneNote": null,
+          "expectedLearnerAction": "state-payment"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Morgen. Zwei Broetchen bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good morning. Two rolls, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "صبح بخیر. دو نان کوچک لطفاً."
+                },
+                {
+                  "language": "ar",
+                  "text": "صباح الخير. قطعتا خبز من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Günaydın. İki küçük ekmek lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Доброе утро. Две булочки, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەیانی باش. دوو نانی بچووک تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Beyanî baş. Du nanên biçûk ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dzień dobry. Poproszę dwie bułki."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bună dimineața. Două chifle, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirëmëngjes. Dy simite, ju lutem."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This includes greeting, quantity, item, and bitte.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-quantity",
+              "text": "Broetchen bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Rolls, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "نان کوچک لطفاً."
+                },
+                {
+                  "language": "ar",
+                  "text": "خبز من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Küçük ekmek lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Булочки, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "نانی بچووک تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Nanên biçûk ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Bułki, proszę."
+                },
+                {
+                  "language": "ro",
+                  "text": "Chifle, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Simite, ju lutem."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is polite, but the quantity is missing.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite, but the quantity is missing."
+                },
+                {
+                  "language": "fa",
+                  "text": "این مؤدبانه است، اما تعداد را نمی‌گوید."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه إجابة مهذبة، لكن الكمية ناقصة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Nazik, ama miktar eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это вежливо, но не хватает количества."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە ڕێزدارانەیە، بەڵام ژمارەکە نییە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bi rêz e, lê hejmar tune."
+                },
+                {
+                  "language": "pl",
+                  "text": "To uprzejme, ale brakuje ilości."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este politicos, dar lipsește cantitatea."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e sjellshme, por mungon sasia."
+                }
+              ],
+              "explanationKey": "missing-quantity"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Ich bezahle mit Karte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thank you. I pay by card."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون. با کارت پرداخت می‌کنم."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكراً. أدفع بالبطاقة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler. Kartla ödüyorum."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо. Я плачу картой."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس. بە کارت پارە دەدەم."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas. Ez bi kartê pere didim."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję. Płacę kartą."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc. Plătesc cu cardul."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit. Paguaj me kartë."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This closes the purchase clearly and politely.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "unclear-payment",
+              "text": "Karte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Card."
+                },
+                {
+                  "language": "fa",
+                  "text": "کارت."
+                },
+                {
+                  "language": "ar",
+                  "text": "بطاقة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Kart."
+                },
+                {
+                  "language": "ru",
+                  "text": "Карта."
+                },
+                {
+                  "language": "ckb",
+                  "text": "کارت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Kart."
+                },
+                {
+                  "language": "pl",
+                  "text": "Karta."
+                },
+                {
+                  "language": "ro",
+                  "text": "Card."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kartë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This may be understood, but it is too short and not a full sentence.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short and misses useful information."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است و اطلاعات مفید کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً وتنقصها معلومات مفيدة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa ve yararlı bilgi eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко и не хватает полезной информации."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە و زانیاری بەسوودی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e û agahiya bikêr kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie i brakuje przydatnej informacji."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt și îi lipsesc informații utile."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër dhe mungon informacion i dobishëm."
+                }
+              ],
+              "explanationKey": "unclear-payment"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "a1-practice-note",
+          "text": "Beim Einkaufen sind Menge, Produkt und Zahlungsart wichtige A1-Informationen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "When shopping, quantity, product, and payment method are important A1 information."
+            },
+            {
+              "language": "fa",
+              "text": "در خرید، تعداد، محصول و روش پرداخت اطلاعات مهم A1 هستند."
+            },
+            {
+              "language": "ar",
+              "text": "عند التسوق، الكمية والمنتج وطريقة الدفع معلومات مهمة في A1."
+            },
+            {
+              "language": "tr",
+              "text": "Alışverişte miktar, ürün ve ödeme şekli önemli A1 bilgileridir."
+            },
+            {
+              "language": "ru",
+              "text": "При покупках количество, товар и способ оплаты — важная информация A1."
+            },
+            {
+              "language": "ckb",
+              "text": "لە کڕیندا ژمارە، بەرهەم و شێوازی پارەدان زانیاری گرنگی A1 ن."
+            },
+            {
+              "language": "kmr",
+              "text": "Di kirînê de hejmar, hilber û awayê dayîna pere agahiyên girîng ên A1 ne."
+            },
+            {
+              "language": "pl",
+              "text": "Podczas zakupów ilość, produkt i sposób płatności to ważne informacje A1."
+            },
+            {
+              "language": "ro",
+              "text": "La cumpărături, cantitatea, produsul și metoda de plată sunt informații importante A1."
+            },
+            {
+              "language": "sq",
+              "text": "Në blerje, sasia, produkti dhe mënyra e pagesës janë informacione të rëndësishme A1."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "bakery-counter",
+          "placement": "header",
+          "purpose": "Set a clear A1 service context without exposing authoring metadata to learners.",
+          "altText": "Eine ruhige Baeckerei-Theke mit Broetchen.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A quiet bakery counter with rolls."
+            },
+            {
+              "language": "fa",
+              "text": "پیشخوان آرام نانوایی با نان‌های کوچک."
+            },
+            {
+              "language": "ar",
+              "text": "طاولة مخبز هادئة مع قطع خبز."
+            },
+            {
+              "language": "tr",
+              "text": "Küçük ekmeklerle sakin bir fırın tezgahı."
+            },
+            {
+              "language": "ru",
+              "text": "Спокойная стойка пекарни с булочками."
+            },
+            {
+              "language": "ckb",
+              "text": "کەونتەری ئارامی نانەواخانە بە نانی بچووک."
+            },
+            {
+              "language": "kmr",
+              "text": "Kontra firinê ya aram bi nanên biçûk."
+            },
+            {
+              "language": "pl",
+              "text": "Spokojna lada piekarni z bułkami."
+            },
+            {
+              "language": "ro",
+              "text": "O tejghea liniștită de brutărie cu chifle."
+            },
+            {
+              "language": "sq",
+              "text": "Një banak i qetë furre me simite."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of a German bakery counter with rolls, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-an-der-kasse-bezahlen",
+      "title": "An der Kasse bezahlen",
+      "cefrLevel": "A1",
+      "category": "shopping-and-services",
+      "topics": [
+        "shopping-and-services",
+        "everyday-life"
+      ],
+      "interactionMode": "service-counter",
+      "register": "neutral",
+      "taskType": "order-and-pay",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 80,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Servicekraft",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Service staff"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند خدمات"
+            },
+            {
+              "language": "ar",
+              "text": "موظف الخدمة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудник сервиса"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەندی خزمەتگوزاری"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmendê xizmetê"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownik obsługi"
+            },
+            {
+              "language": "ro",
+              "text": "Personal de serviciu"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjës shërbimi"
+            }
+          ]
+        }
+      ],
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Pay at the checkout"
+        },
+        {
+          "language": "fa",
+          "text": "پرداخت کردن پشت صندوق"
+        },
+        {
+          "language": "ar",
+          "text": "ادفع عند الصندوق"
+        },
+        {
+          "language": "tr",
+          "text": "Kasada ödeme yap"
+        },
+        {
+          "language": "ru",
+          "text": "Оплатить на кассе"
+        },
+        {
+          "language": "ckb",
+          "text": "لە کاسەدا پارە بدە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li kasa pere bidî"
+        },
+        {
+          "language": "pl",
+          "text": "Zapłać przy kasie"
+        },
+        {
+          "language": "ro",
+          "text": "Plătește la casă"
+        },
+        {
+          "language": "sq",
+          "text": "Paguaj te kasa"
+        }
+      ],
+      "description": "Du übst, an der Kasse auf eine einfache Frage zu Karte oder bar zu antworten.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice answering a simple card-or-cash question at checkout."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی پشت صندوق به سؤال ساده کارت یا نقد جواب بدهی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على الإجابة عن سؤال بسيط حول البطاقة أو النقد عند الصندوق."
+        },
+        {
+          "language": "tr",
+          "text": "Kasada kart mı nakit mi sorusuna cevap vermeyi çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься отвечать на простой вопрос: картой или наличными."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت لە کاسەدا وەڵامی پرسیاری کارت یان کاش بدەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu li kasa bersiva pirsê kart an pereyê dest didî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz odpowiedź na proste pytanie: karta czy gotówka."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să răspunzi la întrebarea simplă card sau numerar."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të përgjigjesh për kartë apo para në dorë te kasa."
+        }
+      ],
+      "learnerGoal": "Du kannst die Zahlungsart nennen und dich freundlich verabschieden.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can name the payment method and say goodbye politely."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی روش پرداخت را بگویی و مؤدبانه خداحافظی کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تذكر طريقة الدفع وتودّع بلطف."
+        },
+        {
+          "language": "tr",
+          "text": "Ödeme şeklini söyleyebilir ve nazikçe vedalaşabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь назвать способ оплаты и вежливо попрощаться."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت شێوازی پارەدان بڵێیت و بە ڕێزەوە ماڵئاوایی بکەیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî awayê dayîna pere bêjî û bi rêz xatirê xwe bixwazî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz podać sposób płatności i uprzejmie się pożegnać."
+        },
+        {
+          "language": "ro",
+          "text": "Poți spune metoda de plată și îți poți lua rămas-bun politicos."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të thuash mënyrën e pagesës dhe të përshëndetesh me mirësjellje."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Das macht acht Euro. Bar oder mit Karte?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That is eight euros. Cash or by card?"
+            },
+            {
+              "language": "fa",
+              "text": "می‌شود هشت یورو. نقد یا با کارت؟"
+            },
+            {
+              "language": "ar",
+              "text": "المجموع ثمانية يورو. نقداً أم بالبطاقة؟"
+            },
+            {
+              "language": "tr",
+              "text": "Sekiz avro. Nakit mi kartla mı?"
+            },
+            {
+              "language": "ru",
+              "text": "Это восемь евро. Наличными или картой?"
+            },
+            {
+              "language": "ckb",
+              "text": "دەکات هەشت یۆرۆ. کاش یان بە کارت؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Dike heşt euro. Bi pereyê dest an kartê?"
+            },
+            {
+              "language": "pl",
+              "text": "To będzie osiem euro. Gotówką czy kartą?"
+            },
+            {
+              "language": "ro",
+              "text": "Face opt euro. Numerar sau cu cardul?"
+            },
+            {
+              "language": "sq",
+              "text": "Bën tetë euro. Me para në dorë apo me kartë?"
+            }
+          ],
+          "function": "ask-payment",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Mit Karte bitte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "By card, please."
+            },
+            {
+              "language": "fa",
+              "text": "با کارت لطفاً."
+            },
+            {
+              "language": "ar",
+              "text": "بالبطاقة من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "Kartla lütfen."
+            },
+            {
+              "language": "ru",
+              "text": "Картой, пожалуйста."
+            },
+            {
+              "language": "ckb",
+              "text": "بە کارت تکایە."
+            },
+            {
+              "language": "kmr",
+              "text": "Bi kartê ji kerema xwe."
+            },
+            {
+              "language": "pl",
+              "text": "Kartą, proszę."
+            },
+            {
+              "language": "ro",
+              "text": "Cu cardul, vă rog."
+            },
+            {
+              "language": "sq",
+              "text": "Me kartë, ju lutem."
+            }
+          ],
+          "function": "state-payment",
+          "toneNote": null,
+          "expectedLearnerAction": "state-payment"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Bitte hier bezahlen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Please pay here."
+            },
+            {
+              "language": "fa",
+              "text": "لطفاً اینجا پرداخت کنید."
+            },
+            {
+              "language": "ar",
+              "text": "ادفع هنا من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "Lütfen burada ödeyin."
+            },
+            {
+              "language": "ru",
+              "text": "Пожалуйста, оплатите здесь."
+            },
+            {
+              "language": "ckb",
+              "text": "تکایە لێرە پارە بدە."
+            },
+            {
+              "language": "kmr",
+              "text": "Ji kerema xwe li vir pere bidin."
+            },
+            {
+              "language": "pl",
+              "text": "Proszę zapłacić tutaj."
+            },
+            {
+              "language": "ro",
+              "text": "Vă rog să plătiți aici."
+            },
+            {
+              "language": "sq",
+              "text": "Ju lutem paguani këtu."
+            }
+          ],
+          "function": "give-instruction",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Danke. Auf Wiedersehen.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Thank you. Goodbye."
+            },
+            {
+              "language": "fa",
+              "text": "ممنون. خداحافظ."
+            },
+            {
+              "language": "ar",
+              "text": "شكراً. إلى اللقاء."
+            },
+            {
+              "language": "tr",
+              "text": "Teşekkürler. Hoşça kalın."
+            },
+            {
+              "language": "ru",
+              "text": "Спасибо. До свидания."
+            },
+            {
+              "language": "ckb",
+              "text": "سوپاس. ماڵئاوایی."
+            },
+            {
+              "language": "kmr",
+              "text": "Spas. Bi xatirê te."
+            },
+            {
+              "language": "pl",
+              "text": "Dziękuję. Do widzenia."
+            },
+            {
+              "language": "ro",
+              "text": "Mulțumesc. La revedere."
+            },
+            {
+              "language": "sq",
+              "text": "Faleminderit. Mirupafshim."
+            }
+          ],
+          "function": "close",
+          "toneNote": null,
+          "expectedLearnerAction": "say-goodbye"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Mit Karte bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "By card, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "با کارت لطفاً."
+                },
+                {
+                  "language": "ar",
+                  "text": "بالبطاقة من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Kartla lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Картой, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بە کارت تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Bi kartê ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Kartą, proszę."
+                },
+                {
+                  "language": "ro",
+                  "text": "Cu cardul, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Me kartë, ju lutem."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This answers the payment question clearly and politely.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "ambiguous",
+              "text": "Ja bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Yes, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "بله لطفاً."
+                },
+                {
+                  "language": "ar",
+                  "text": "نعم من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Evet lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Да, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەڵێ تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erê ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Tak, proszę."
+                },
+                {
+                  "language": "ro",
+                  "text": "Da, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Po, ju lutem."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is polite, but it does not say card or cash.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite, but it does not say card or cash."
+                },
+                {
+                  "language": "fa",
+                  "text": "این مؤدبانه است، اما نمی‌گوید کارت یا نقد."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مهذب، لكنه لا يذكر بطاقة أم نقداً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Nazik, ama kart mı nakit mi söylemiyor."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это вежливо, но не говорит: карта или наличные."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە ڕێزدارانەیە، بەڵام ناڵێت کارت یان کاش."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bi rêz e, lê nabêje kart an pereyê dest."
+                },
+                {
+                  "language": "pl",
+                  "text": "To uprzejme, ale nie mówi: karta czy gotówka."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este politicos, dar nu spune card sau numerar."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e sjellshme, por nuk thotë kartë apo para në dorë."
+                }
+              ],
+              "explanationKey": "ambiguous"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Auf Wiedersehen.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thank you. Goodbye."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون. خداحافظ."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكراً. إلى اللقاء."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler. Hoşça kalın."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо. До свидания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس. ماڵئاوایی."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas. Bi xatirê te."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję. Do widzenia."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc. La revedere."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit. Mirupafshim."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This closes the exchange politely.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-close",
+              "text": "Danke.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Thank you."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممنون."
+                },
+                {
+                  "language": "ar",
+                  "text": "شكراً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Teşekkürler."
+                },
+                {
+                  "language": "ru",
+                  "text": "Спасибо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "سوپاس."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Spas."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dziękuję."
+                },
+                {
+                  "language": "ro",
+                  "text": "Mulțumesc."
+                },
+                {
+                  "language": "sq",
+                  "text": "Faleminderit."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is polite, but a short goodbye is better at the end.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite, but a short goodbye is better at the end."
+                },
+                {
+                  "language": "fa",
+                  "text": "این مؤدبانه است، اما در پایان یک خداحافظی کوتاه بهتر است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مهذب، لكن وداعاً قصيراً أفضل في النهاية."
+                },
+                {
+                  "language": "tr",
+                  "text": "Nazik, ama sonda kısa bir veda daha iyidir."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это вежливо, но в конце лучше коротко попрощаться."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە ڕێزدارانەیە، بەڵام لە کۆتاییدا ماڵئاواییەکی کورت باشترە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bi rêz e, lê li dawiyê xatirxwestineke kurt çêtir e."
+                },
+                {
+                  "language": "pl",
+                  "text": "To uprzejme, ale na końcu lepsze jest krótkie pożegnanie."
+                },
+                {
+                  "language": "ro",
+                  "text": "Este politicos, dar la final este mai bine un rămas-bun scurt."
+                },
+                {
+                  "language": "sq",
+                  "text": "Është e sjellshme, por në fund është më mirë një përshëndetje e shkurtër."
+                }
+              ],
+              "explanationKey": "missing-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "a1-practice-note",
+          "text": "Eine klare Zahlungsart verhindert Missverständnisse an der Kasse.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "A clear payment method prevents misunderstandings at checkout."
+            },
+            {
+              "language": "fa",
+              "text": "روش پرداخت روشن از سوءتفاهم پشت صندوق جلوگیری می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "طريقة دفع واضحة تمنع سوء الفهم عند الصندوق."
+            },
+            {
+              "language": "tr",
+              "text": "Açık ödeme şekli kasada yanlış anlamayı önler."
+            },
+            {
+              "language": "ru",
+              "text": "Ясный способ оплаты предотвращает недоразумения на кассе."
+            },
+            {
+              "language": "ckb",
+              "text": "شێوازی پارەدانی ڕوون لە کاسەدا لە تێنەگەیشتن ڕێگری دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Awayê zelal ê dayîna pere li kasa ji şaşfêmkirinê diparêze."
+            },
+            {
+              "language": "pl",
+              "text": "Jasny sposób płatności zapobiega nieporozumieniom przy kasie."
+            },
+            {
+              "language": "ro",
+              "text": "O metodă de plată clară previne neînțelegerile la casă."
+            },
+            {
+              "language": "sq",
+              "text": "Një mënyrë e qartë pagese shmang keqkuptimet te kasa."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "checkout-payment",
+          "placement": "header",
+          "purpose": "Set a clear A1 service context without exposing authoring metadata to learners.",
+          "altText": "Eine Person bezahlt an einer modernen Kasse.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person pays at a modern checkout."
+            },
+            {
+              "language": "fa",
+              "text": "فردی پشت صندوق مدرن پرداخت می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يدفع عند صندوق حديث."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi modern bir kasada ödeme yapıyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек платит на современной кассе."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک لە کاسەیەکی نوێدا پارە دەدات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek li kaseke nûjen pere dide."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba płaci przy nowoczesnej kasie."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană plătește la o casă modernă."
+            },
+            {
+              "language": "sq",
+              "text": "Një person paguan te një kasë moderne."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of a person paying at a checkout in Germany, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-nach-dem-preis-fragen",
+      "title": "Nach dem Preis fragen",
+      "cefrLevel": "A1",
+      "category": "shopping-and-services",
+      "topics": [
+        "shopping-and-services",
+        "everyday-life"
+      ],
+      "interactionMode": "service-counter",
+      "register": "neutral",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 90,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Servicekraft",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Service staff"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند خدمات"
+            },
+            {
+              "language": "ar",
+              "text": "موظف الخدمة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудник сервиса"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەندی خزمەتگوزاری"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmendê xizmetê"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownik obsługi"
+            },
+            {
+              "language": "ro",
+              "text": "Personal de serviciu"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjës shërbimi"
+            }
+          ]
+        }
+      ],
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Ask for the price"
+        },
+        {
+          "language": "fa",
+          "text": "پرسیدن قیمت"
+        },
+        {
+          "language": "ar",
+          "text": "اسأل عن السعر"
+        },
+        {
+          "language": "tr",
+          "text": "Fiyat sormak"
+        },
+        {
+          "language": "ru",
+          "text": "Спросить цену"
+        },
+        {
+          "language": "ckb",
+          "text": "پرسیارکردن لە نرخ"
+        },
+        {
+          "language": "kmr",
+          "text": "Bihayê pirsîn"
+        },
+        {
+          "language": "pl",
+          "text": "Zapytaj o cenę"
+        },
+        {
+          "language": "ro",
+          "text": "Întreabă prețul"
+        },
+        {
+          "language": "sq",
+          "text": "Pyet për çmimin"
+        }
+      ],
+      "description": "Du übst, den Preis zu fragen und kurz zu entscheiden.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice asking the price and making a short decision."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی قیمت را بپرسی و کوتاه تصمیم بگیری."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على السؤال عن السعر واتخاذ قرار قصير."
+        },
+        {
+          "language": "tr",
+          "text": "Fiyat sormayı ve kısa karar vermeyi çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься спросить цену и коротко принять решение."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت پرسیار لە نرخ بکەیت و بە کورتی بڕیار بدەیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu bihayê dipirsî û bi kurtî biryar didî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz pytanie o cenę i krótką decyzję."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să întrebi prețul și să iei o decizie scurtă."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të pyesësh çmimin dhe të marrësh një vendim të shkurtër."
+        }
+      ],
+      "learnerGoal": "Du kannst einen Preis erfragen und höflich ja oder nein sagen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can ask for a price and politely say yes or no."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی قیمت را بپرسی و مؤدبانه بله یا نه بگویی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تسأل عن السعر وتقول نعم أو لا بلطف."
+        },
+        {
+          "language": "tr",
+          "text": "Fiyat sorabilir ve nazikçe evet ya da hayır diyebilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь спросить цену и вежливо сказать да или нет."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت پرسیار لە نرخ بکەیت و بە ڕێزەوە بەڵێ یان نەخێر بڵێیت."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî bihayê bipirsî û bi rêz erê an na bêjî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz zapytać o cenę i uprzejmie powiedzieć tak lub nie."
+        },
+        {
+          "language": "ro",
+          "text": "Poți întreba prețul și poți spune politicos da sau nu."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të pyesësh çmimin dhe të thuash me mirësjellje po ose jo."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "learner",
+          "baseText": "Entschuldigung, was kostet das?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Excuse me, how much does this cost?"
+            },
+            {
+              "language": "fa",
+              "text": "ببخشید، این چقدر قیمت دارد؟"
+            },
+            {
+              "language": "ar",
+              "text": "عذراً، كم يكلف هذا؟"
+            },
+            {
+              "language": "tr",
+              "text": "Affedersiniz, bu ne kadar?"
+            },
+            {
+              "language": "ru",
+              "text": "Извините, сколько это стоит?"
+            },
+            {
+              "language": "ckb",
+              "text": "ببورە، ئەمە چەندە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Bibore, ev çend e?"
+            },
+            {
+              "language": "pl",
+              "text": "Przepraszam, ile to kosztuje?"
+            },
+            {
+              "language": "ro",
+              "text": "Scuzați, cât costă acesta?"
+            },
+            {
+              "language": "sq",
+              "text": "Më falni, sa kushton kjo?"
+            }
+          ],
+          "function": "ask-price",
+          "toneNote": null,
+          "expectedLearnerAction": "ask-price"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "office-staff",
+          "baseText": "Das kostet fuenf Euro.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "That costs five euros."
+            },
+            {
+              "language": "fa",
+              "text": "این پنج یورو قیمت دارد."
+            },
+            {
+              "language": "ar",
+              "text": "هذا يكلف خمسة يورو."
+            },
+            {
+              "language": "tr",
+              "text": "Bu beş avro."
+            },
+            {
+              "language": "ru",
+              "text": "Это стоит пять евро."
+            },
+            {
+              "language": "ckb",
+              "text": "ئەمە پێنج یۆرۆیە."
+            },
+            {
+              "language": "kmr",
+              "text": "Ev pênc euro ye."
+            },
+            {
+              "language": "pl",
+              "text": "To kosztuje pięć euro."
+            },
+            {
+              "language": "ro",
+              "text": "Acesta costă cinci euro."
+            },
+            {
+              "language": "sq",
+              "text": "Kjo kushton pesë euro."
+            }
+          ],
+          "function": "answer-price",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "learner",
+          "baseText": "Gut, ich nehme das bitte.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Good, I will take it, please."
+            },
+            {
+              "language": "fa",
+              "text": "خوب، لطفاً آن را می‌خواهم."
+            },
+            {
+              "language": "ar",
+              "text": "حسناً، سآخذه من فضلك."
+            },
+            {
+              "language": "tr",
+              "text": "Tamam, bunu alıyorum lütfen."
+            },
+            {
+              "language": "ru",
+              "text": "Хорошо, я возьму это, пожалуйста."
+            },
+            {
+              "language": "ckb",
+              "text": "باشە، ئەمە دەگرم تکایە."
+            },
+            {
+              "language": "kmr",
+              "text": "Baş e, ez vî digirim ji kerema xwe."
+            },
+            {
+              "language": "pl",
+              "text": "Dobrze, poproszę to."
+            },
+            {
+              "language": "ro",
+              "text": "Bine, îl iau, vă rog."
+            },
+            {
+              "language": "sq",
+              "text": "Mirë, e marr këtë, ju lutem."
+            }
+          ],
+          "function": "accept",
+          "toneNote": null,
+          "expectedLearnerAction": "accept-price"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "office-staff",
+          "baseText": "Gerne. Moechten Sie eine Tuete?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Sure. Would you like a bag?"
+            },
+            {
+              "language": "fa",
+              "text": "با کمال میل. کیسه می‌خواهید؟"
+            },
+            {
+              "language": "ar",
+              "text": "بكل سرور. هل تريد كيساً؟"
+            },
+            {
+              "language": "tr",
+              "text": "Memnuniyetle. Poşet ister misiniz?"
+            },
+            {
+              "language": "ru",
+              "text": "Конечно. Хотите пакет?"
+            },
+            {
+              "language": "ckb",
+              "text": "بە خۆشی. جانتا دەتەوێت؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Bi kêfxweşî. Hûn kîsikek dixwazin?"
+            },
+            {
+              "language": "pl",
+              "text": "Chętnie. Czy chce Pan/Pani torbę?"
+            },
+            {
+              "language": "ro",
+              "text": "Cu plăcere. Doriți o pungă?"
+            },
+            {
+              "language": "sq",
+              "text": "Me kënaqësi. Dëshironi qese?"
+            }
+          ],
+          "function": "ask-bag",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 1,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Entschuldigung, was kostet das?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Excuse me, how much does this cost?"
+                },
+                {
+                  "language": "fa",
+                  "text": "ببخشید، این چقدر قیمت دارد؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "عذراً، كم يكلف هذا؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Affedersiniz, bu ne kadar?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Извините, сколько это стоит?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "ببورە، ئەمە چەندە؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Bibore, ev çend e?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Przepraszam, ile to kosztuje?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Scuzați, cât costă acesta?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Më falni, sa kushton kjo?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This is a clear and polite price question.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "too-short",
+              "text": "Preis?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Price?"
+                },
+                {
+                  "language": "fa",
+                  "text": "قیمت؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "السعر؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Fiyat?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Цена?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "نرخ؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Biha?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Cena?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Preț?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Çmimi?"
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This may work, but it sounds too short and not polite.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This may be understood, but it is too short and misses useful information."
+                },
+                {
+                  "language": "fa",
+                  "text": "ممکن است فهمیده شود، اما خیلی کوتاه است و اطلاعات مفید کم دارد."
+                },
+                {
+                  "language": "ar",
+                  "text": "قد تُفهم، لكنها قصيرة جداً وتنقصها معلومات مفيدة."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılabilir, ama çok kısa ve yararlı bilgi eksik."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это можно понять, но слишком коротко и не хватает полезной информации."
+                },
+                {
+                  "language": "ckb",
+                  "text": "لەوانەیە تێبگەندرێت، بەڵام زۆر کورتە و زانیاری بەسوودی کەمە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Dibe ku were fêmkirin, lê pir kurt e û agahiya bikêr kêm e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Może być zrozumiałe, ale jest za krótkie i brakuje przydatnej informacji."
+                },
+                {
+                  "language": "ro",
+                  "text": "Poate fi înțeles, dar este prea scurt și îi lipsesc informații utile."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mund të kuptohet, por është shumë e shkurtër dhe mungon informacion i dobishëm."
+                }
+              ],
+              "explanationKey": "too-short"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Gut, ich nehme das bitte.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good, I will take it, please."
+                },
+                {
+                  "language": "fa",
+                  "text": "خوب، لطفاً آن را می‌خواهم."
+                },
+                {
+                  "language": "ar",
+                  "text": "حسناً، سآخذه من فضلك."
+                },
+                {
+                  "language": "tr",
+                  "text": "Tamam, bunu alıyorum lütfen."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо, я возьму это, пожалуйста."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باشە، ئەمە دەگرم تکایە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Baş e, ez vî digirim ji kerema xwe."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dobrze, poproszę to."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bine, îl iau, vă rog."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirë, e marr këtë, ju lutem."
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This gives a clear decision and stays polite.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "unclear-decision",
+              "text": "Gut.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Good."
+                },
+                {
+                  "language": "fa",
+                  "text": "خوب."
+                },
+                {
+                  "language": "ar",
+                  "text": "حسناً."
+                },
+                {
+                  "language": "tr",
+                  "text": "Tamam."
+                },
+                {
+                  "language": "ru",
+                  "text": "Хорошо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باشە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Baş e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Dobrze."
+                },
+                {
+                  "language": "ro",
+                  "text": "Bine."
+                },
+                {
+                  "language": "sq",
+                  "text": "Mirë."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This sounds positive, but it does not say whether you want to buy it.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This sounds positive, but it does not say whether you want to buy it."
+                },
+                {
+                  "language": "fa",
+                  "text": "مثبت به نظر می‌رسد، اما نمی‌گوید آیا می‌خواهی آن را بخری یا نه."
+                },
+                {
+                  "language": "ar",
+                  "text": "يبدو إيجابياً، لكنه لا يقول هل تريد شراءه أم لا."
+                },
+                {
+                  "language": "tr",
+                  "text": "Olumlu duyulur, ama almak isteyip istemediğini söylemez."
+                },
+                {
+                  "language": "ru",
+                  "text": "Звучит положительно, но не говорит, хотите ли вы это купить."
+                },
+                {
+                  "language": "ckb",
+                  "text": "باش دەردەکەوێت، بەڵام ناڵێت دەتەوێت بیکڕیت یان نا."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Erênî xuya dike, lê nabêje tu dixwazî bikirî an na."
+                },
+                {
+                  "language": "pl",
+                  "text": "Brzmi pozytywnie, ale nie mówi, czy chcesz to kupić."
+                },
+                {
+                  "language": "ro",
+                  "text": "Sună pozitiv, dar nu spune dacă vrei să îl cumperi."
+                },
+                {
+                  "language": "sq",
+                  "text": "Tingëllon pozitive, por nuk thotë nëse do ta blesh apo jo."
+                }
+              ],
+              "explanationKey": "unclear-decision"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 3,
+          "feedbackType": "a1-practice-note",
+          "text": "Eine gute A1-Antwort sagt nicht nur „gut“, sondern nennt die Entscheidung.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "A good A1 answer does not only say good; it names the decision."
+            },
+            {
+              "language": "fa",
+              "text": "یک پاسخ خوب A1 فقط «خوب» نمی‌گوید، بلکه تصمیم را هم بیان می‌کند."
+            },
+            {
+              "language": "ar",
+              "text": "إجابة A1 الجيدة لا تقول فقط حسناً، بل تذكر القرار."
+            },
+            {
+              "language": "tr",
+              "text": "İyi bir A1 cevabı sadece tamam demez; kararı da söyler."
+            },
+            {
+              "language": "ru",
+              "text": "Хороший ответ A1 не только говорит хорошо, но и называет решение."
+            },
+            {
+              "language": "ckb",
+              "text": "وەڵامی باشی A1 تەنها باشە ناڵێت؛ بڕیارەکەش دەڵێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Bersiveke baş a A1 tenê baş nabêje; biryarê jî dibêje."
+            },
+            {
+              "language": "pl",
+              "text": "Dobra odpowiedź A1 nie mówi tylko dobrze, ale podaje decyzję."
+            },
+            {
+              "language": "ro",
+              "text": "Un răspuns bun A1 nu spune doar bine, ci numește decizia."
+            },
+            {
+              "language": "sq",
+              "text": "Një përgjigje e mirë A1 nuk thotë vetëm mirë, por tregon vendimin."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "price-question",
+          "placement": "header",
+          "purpose": "Set a clear A1 service context without exposing authoring metadata to learners.",
+          "altText": "Eine Person fragt in einem Laden nach dem Preis.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person asks for the price in a shop."
+            },
+            {
+              "language": "fa",
+              "text": "فردی در مغازه قیمت را می‌پرسد."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يسأل عن السعر في متجر."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi mağazada fiyat soruyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек спрашивает цену в магазине."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک لە دوکاندا پرسیار لە نرخ دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek li dikanê bihayê dipirse."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba pyta o cenę w sklepie."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană întreabă prețul într-un magazin."
+            },
+            {
+              "language": "sq",
+              "text": "Një person pyet për çmimin në dyqan."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult asking for a price in a German shop, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "slug": "a1-im-laden-um-hilfe-bitten",
+      "title": "Im Laden um Hilfe bitten",
+      "cefrLevel": "A1",
+      "category": "shopping-and-services",
+      "topics": [
+        "shopping-and-services",
+        "customer-service"
+      ],
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "taskType": "ask-for-help",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "service-interaction"
+      ],
+      "examProfiles": [
+        "goethe-a1"
+      ],
+      "sortOrder": 100,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Learner"
+            },
+            {
+              "language": "fa",
+              "text": "زبان‌آموز"
+            },
+            {
+              "language": "ar",
+              "text": "المتعلّم"
+            },
+            {
+              "language": "tr",
+              "text": "Öğrenen"
+            },
+            {
+              "language": "ru",
+              "text": "Учащийся"
+            },
+            {
+              "language": "ckb",
+              "text": "فێرخواز"
+            },
+            {
+              "language": "kmr",
+              "text": "Fêrker"
+            },
+            {
+              "language": "pl",
+              "text": "Osoba ucząca się"
+            },
+            {
+              "language": "ro",
+              "text": "Cursant"
+            },
+            {
+              "language": "sq",
+              "text": "Nxënës"
+            }
+          ]
+        },
+        {
+          "roleKey": "office-staff",
+          "displayName": "Servicekraft",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Service staff"
+            },
+            {
+              "language": "fa",
+              "text": "کارمند خدمات"
+            },
+            {
+              "language": "ar",
+              "text": "موظف الخدمة"
+            },
+            {
+              "language": "tr",
+              "text": "Görevli"
+            },
+            {
+              "language": "ru",
+              "text": "Сотрудник сервиса"
+            },
+            {
+              "language": "ckb",
+              "text": "کارمەندی خزمەتگوزاری"
+            },
+            {
+              "language": "kmr",
+              "text": "Karmendê xizmetê"
+            },
+            {
+              "language": "pl",
+              "text": "Pracownik obsługi"
+            },
+            {
+              "language": "ro",
+              "text": "Personal de serviciu"
+            },
+            {
+              "language": "sq",
+              "text": "Punonjës shërbimi"
+            }
+          ]
+        }
+      ],
+      "estimatedPracticeMinutes": 6,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "titleTranslations": [
+        {
+          "language": "en",
+          "text": "Ask for help in a shop"
+        },
+        {
+          "language": "fa",
+          "text": "در مغازه کمک خواستن"
+        },
+        {
+          "language": "ar",
+          "text": "اطلب المساعدة في متجر"
+        },
+        {
+          "language": "tr",
+          "text": "Mağazada yardım istemek"
+        },
+        {
+          "language": "ru",
+          "text": "Попросить помощи в магазине"
+        },
+        {
+          "language": "ckb",
+          "text": "لە دوکاندا داوای یارمەتی بکە"
+        },
+        {
+          "language": "kmr",
+          "text": "Li dikanê alîkarî bixwaze"
+        },
+        {
+          "language": "pl",
+          "text": "Poproś o pomoc w sklepie"
+        },
+        {
+          "language": "ro",
+          "text": "Cere ajutor într-un magazin"
+        },
+        {
+          "language": "sq",
+          "text": "Kërko ndihmë në dyqan"
+        }
+      ],
+      "description": "Du übst, im Laden höflich nach einem Produkt zu fragen.",
+      "descriptionTranslations": [
+        {
+          "language": "en",
+          "text": "You practice asking politely for a product in a shop."
+        },
+        {
+          "language": "fa",
+          "text": "تمرین می‌کنی در مغازه مؤدبانه درباره یک کالا سؤال کنی."
+        },
+        {
+          "language": "ar",
+          "text": "تتدرّب على السؤال بلطف عن منتج في متجر."
+        },
+        {
+          "language": "tr",
+          "text": "Mağazada bir ürün hakkında nazikçe sormayı çalışırsın."
+        },
+        {
+          "language": "ru",
+          "text": "Ты тренируешься вежливо спросить о товаре в магазине."
+        },
+        {
+          "language": "ckb",
+          "text": "تمرین دەکەیت لە دوکاندا بە ڕێزەوە دەربارەی بەرهەمێک بپرسی."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu li dikanê bi rêz derbarê hilberekê dipirsî."
+        },
+        {
+          "language": "pl",
+          "text": "Ćwiczysz uprzejme pytanie o produkt w sklepie."
+        },
+        {
+          "language": "ro",
+          "text": "Exersezi să întrebi politicos despre un produs într-un magazin."
+        },
+        {
+          "language": "sq",
+          "text": "Ushtron të pyesësh me mirësjellje për një produkt në dyqan."
+        }
+      ],
+      "learnerGoal": "Du kannst Hilfe erbitten, das Produkt nennen und die Antwort bestätigen.",
+      "learnerGoalTranslations": [
+        {
+          "language": "en",
+          "text": "You can ask for help, name the product, and confirm the answer."
+        },
+        {
+          "language": "fa",
+          "text": "می‌توانی کمک بخواهی، نام کالا را بگویی و پاسخ را تأیید کنی."
+        },
+        {
+          "language": "ar",
+          "text": "يمكنك أن تطلب المساعدة، وتذكر المنتج، وتؤكد الإجابة."
+        },
+        {
+          "language": "tr",
+          "text": "Yardım isteyebilir, ürünü söyleyebilir ve cevabı onaylayabilirsin."
+        },
+        {
+          "language": "ru",
+          "text": "Ты можешь попросить помощи, назвать товар и подтвердить ответ."
+        },
+        {
+          "language": "ckb",
+          "text": "دەتوانیت داوای یارمەتی بکەیت، ناوی بەرهەم بڵێیت و وەڵامەکە پشتڕاست بکەیتەوە."
+        },
+        {
+          "language": "kmr",
+          "text": "Tu dikarî alîkarî bixwazî, navê hilberê bêjî û bersivê piştrast bikî."
+        },
+        {
+          "language": "pl",
+          "text": "Potrafisz poprosić o pomoc, nazwać produkt i potwierdzić odpowiedź."
+        },
+        {
+          "language": "ro",
+          "text": "Poți cere ajutor, numi produsul și confirma răspunsul."
+        },
+        {
+          "language": "sq",
+          "text": "Mund të kërkosh ndihmë, të thuash produktin dhe të konfirmosh përgjigjen."
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "learner",
+          "baseText": "Entschuldigung, koennen Sie mir helfen?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Excuse me, can you help me?"
+            },
+            {
+              "language": "fa",
+              "text": "ببخشید، می‌توانید به من کمک کنید؟"
+            },
+            {
+              "language": "ar",
+              "text": "عذراً، هل يمكنك مساعدتي؟"
+            },
+            {
+              "language": "tr",
+              "text": "Affedersiniz, bana yardım edebilir misiniz?"
+            },
+            {
+              "language": "ru",
+              "text": "Извините, вы можете мне помочь?"
+            },
+            {
+              "language": "ckb",
+              "text": "ببورە، دەتوانن یارمەتیم بدەن؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Bibore, hûn dikarin alîkariya min bikin?"
+            },
+            {
+              "language": "pl",
+              "text": "Przepraszam, czy może mi Pan/Pani pomóc?"
+            },
+            {
+              "language": "ro",
+              "text": "Scuzați, mă puteți ajuta?"
+            },
+            {
+              "language": "sq",
+              "text": "Më falni, a mund të më ndihmoni?"
+            }
+          ],
+          "function": "ask-help",
+          "toneNote": null,
+          "expectedLearnerAction": "ask-for-help"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "office-staff",
+          "baseText": "Ja, gerne. Was suchen Sie?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "Yes, gladly. What are you looking for?"
+            },
+            {
+              "language": "fa",
+              "text": "بله، با کمال میل. دنبال چه چیزی هستید؟"
+            },
+            {
+              "language": "ar",
+              "text": "نعم، بكل سرور. ماذا تبحث؟"
+            },
+            {
+              "language": "tr",
+              "text": "Evet, memnuniyetle. Ne arıyorsunuz?"
+            },
+            {
+              "language": "ru",
+              "text": "Да, конечно. Что вы ищете?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەڵێ، بە خۆشی. بەدوای چیدا دەگەڕێن؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Erê, bi kêfxweşî. Hûn li çi digerin?"
+            },
+            {
+              "language": "pl",
+              "text": "Tak, chętnie. Czego Pan/Pani szuka?"
+            },
+            {
+              "language": "ro",
+              "text": "Da, cu plăcere. Ce căutați?"
+            },
+            {
+              "language": "sq",
+              "text": "Po, me kënaqësi. Çfarë kërkoni?"
+            }
+          ],
+          "function": "ask-product",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "learner",
+          "baseText": "Ich suche Milch. Wo ist die Milch bitte?",
+          "translations": [
+            {
+              "language": "en",
+              "text": "I am looking for milk. Where is the milk, please?"
+            },
+            {
+              "language": "fa",
+              "text": "دنبال شیر هستم. شیر کجاست لطفاً؟"
+            },
+            {
+              "language": "ar",
+              "text": "أبحث عن الحليب. أين الحليب من فضلك؟"
+            },
+            {
+              "language": "tr",
+              "text": "Süt arıyorum. Süt nerede lütfen?"
+            },
+            {
+              "language": "ru",
+              "text": "Я ищу молоко. Где молоко, пожалуйста?"
+            },
+            {
+              "language": "ckb",
+              "text": "بەدوای شیردا دەگەڕێم. تکایە شیر لە کوێیە؟"
+            },
+            {
+              "language": "kmr",
+              "text": "Ez li şîrê digerim. Şîr li ku ye ji kerema xwe?"
+            },
+            {
+              "language": "pl",
+              "text": "Szukam mleka. Gdzie jest mleko, proszę?"
+            },
+            {
+              "language": "ro",
+              "text": "Caut lapte. Unde este laptele, vă rog?"
+            },
+            {
+              "language": "sq",
+              "text": "Po kërkoj qumësht. Ku është qumështi, ju lutem?"
+            }
+          ],
+          "function": "name-product",
+          "toneNote": null,
+          "expectedLearnerAction": "name-product"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "office-staff",
+          "baseText": "Im Regal links. Gleich hier vorne.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "On the shelf on the left. Right here at the front."
+            },
+            {
+              "language": "fa",
+              "text": "در قفسه سمت چپ. همین جلو."
+            },
+            {
+              "language": "ar",
+              "text": "على الرف يساراً. هنا في الأمام."
+            },
+            {
+              "language": "tr",
+              "text": "Soldaki rafta. Hemen burada önde."
+            },
+            {
+              "language": "ru",
+              "text": "На полке слева. Прямо здесь впереди."
+            },
+            {
+              "language": "ckb",
+              "text": "لەسەر ڕەفەی چەپ. هەر لێرە پێشەوە."
+            },
+            {
+              "language": "kmr",
+              "text": "Li refa çepê. Hemen li vir pêş."
+            },
+            {
+              "language": "pl",
+              "text": "Na półce po lewej. Tu z przodu."
+            },
+            {
+              "language": "ro",
+              "text": "Pe raftul din stânga. Chiar aici în față."
+            },
+            {
+              "language": "sq",
+              "text": "Në raftin majtas. Pikërisht këtu përpara."
+            }
+          ],
+          "function": "give-location",
+          "toneNote": null,
+          "expectedLearnerAction": null
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 1,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Entschuldigung, koennen Sie mir helfen?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Excuse me, can you help me?"
+                },
+                {
+                  "language": "fa",
+                  "text": "ببخشید، می‌توانید به من کمک کنید؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "عذراً، هل يمكنك مساعدتي؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Affedersiniz, bana yardım edebilir misiniz?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Извините, вы можете мне помочь?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "ببورە، دەتوانن یارمەتیم بدەن؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Bibore, hûn dikarin alîkariya min bikin?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Przepraszam, czy może mi Pan/Pani pomóc?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Scuzați, mă puteți ajuta?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Më falni, a mund të më ndihmoni?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This is a polite way to start a request in a shop.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "too-direct",
+              "text": "Helfen Sie mir.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Help me."
+                },
+                {
+                  "language": "fa",
+                  "text": "به من کمک کنید."
+                },
+                {
+                  "language": "ar",
+                  "text": "ساعدني."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bana yardım edin."
+                },
+                {
+                  "language": "ru",
+                  "text": "Помогите мне."
+                },
+                {
+                  "language": "ckb",
+                  "text": "یارمەتیم بدەن."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Alîkariya min bikin."
+                },
+                {
+                  "language": "pl",
+                  "text": "Proszę mi pomóc."
+                },
+                {
+                  "language": "ro",
+                  "text": "Ajutați-mă."
+                },
+                {
+                  "language": "sq",
+                  "text": "Më ndihmoni."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This is understandable, but it sounds too direct without Entschuldigung or a question form.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is understandable, but it sounds too direct without Entschuldigung or a question form."
+                },
+                {
+                  "language": "fa",
+                  "text": "قابل فهم است، اما بدون Entschuldigung یا فرم سؤال خیلی مستقیم به نظر می‌رسد."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا مفهوم، لكنه يبدو مباشراً جداً بلا Entschuldigung أو صيغة سؤال."
+                },
+                {
+                  "language": "tr",
+                  "text": "Anlaşılır, ama Entschuldigung veya soru biçimi olmadan çok direkt duyulur."
+                },
+                {
+                  "language": "ru",
+                  "text": "Понятно, но без Entschuldigung или вопросительной формы звучит слишком прямо."
+                },
+                {
+                  "language": "ckb",
+                  "text": "تێدەگەندرێت، بەڵام بەبێ Entschuldigung یان شێوەی پرسیار زۆر ڕاستەوخۆ دەردەکەوێت."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Tê fêmkirin, lê bê Entschuldigung an forma pirsê pir rasterast xuya dike."
+                },
+                {
+                  "language": "pl",
+                  "text": "To zrozumiałe, ale bez Entschuldigung lub formy pytania brzmi zbyt bezpośrednio."
+                },
+                {
+                  "language": "ro",
+                  "text": "Se înțelege, dar fără Entschuldigung sau formă de întrebare sună prea direct."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kuptohet, por pa Entschuldigung ose formë pyetjeje tingëllon shumë direkte."
+                }
+              ],
+              "explanationKey": "too-direct"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich suche Milch. Wo ist die Milch bitte?",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "I am looking for milk. Where is the milk, please?"
+                },
+                {
+                  "language": "fa",
+                  "text": "دنبال شیر هستم. شیر کجاست لطفاً؟"
+                },
+                {
+                  "language": "ar",
+                  "text": "أبحث عن الحليب. أين الحليب من فضلك؟"
+                },
+                {
+                  "language": "tr",
+                  "text": "Süt arıyorum. Süt nerede lütfen?"
+                },
+                {
+                  "language": "ru",
+                  "text": "Я ищу молоко. Где молоко, пожалуйста?"
+                },
+                {
+                  "language": "ckb",
+                  "text": "بەدوای شیردا دەگەڕێم. تکایە شیر لە کوێیە؟"
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ez li şîrê digerim. Şîr li ku ye ji kerema xwe?"
+                },
+                {
+                  "language": "pl",
+                  "text": "Szukam mleka. Gdzie jest mleko, proszę?"
+                },
+                {
+                  "language": "ro",
+                  "text": "Caut lapte. Unde este laptele, vă rog?"
+                },
+                {
+                  "language": "sq",
+                  "text": "Po kërkoj qumësht. Ku është qumështi, ju lutem?"
+                }
+              ],
+              "isCorrect": true,
+              "feedback": "This names the product and asks a clear location question.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This is polite and complete enough for a simple service situation."
+                },
+                {
+                  "language": "fa",
+                  "text": "این پاسخ برای یک موقعیت ساده خدماتی مؤدبانه و به‌اندازه کافی کامل است."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذه الإجابة مهذبة وكاملة بما يكفي لموقف خدمة بسيط."
+                },
+                {
+                  "language": "tr",
+                  "text": "Bu cevap basit bir hizmet durumunda nazik ve yeterince tamdır."
+                },
+                {
+                  "language": "ru",
+                  "text": "Этот ответ вежливый и достаточно полный для простой ситуации обслуживания."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەم وەڵامە بۆ دۆخێکی سادەی خزمەتگوزاری ڕێزدارانە و بە ڕادەی پێویست تەواوە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev bersiv ji bo rewşeke hêsan a xizmetê bi rêz û têra xwe temam e."
+                },
+                {
+                  "language": "pl",
+                  "text": "Ta odpowiedź jest uprzejma i wystarczająco pełna w prostej sytuacji obsługi."
+                },
+                {
+                  "language": "ro",
+                  "text": "Răspunsul este politicos și suficient de complet pentru o situație simplă de servire."
+                },
+                {
+                  "language": "sq",
+                  "text": "Kjo përgjigje është e sjellshme dhe mjaft e plotë për një situatë të thjeshtë shërbimi."
+                }
+              ],
+              "explanationKey": "recommended"
+            },
+            {
+              "id": "missing-question",
+              "text": "Milch.",
+              "translations": [
+                {
+                  "language": "en",
+                  "text": "Milk."
+                },
+                {
+                  "language": "fa",
+                  "text": "شیر."
+                },
+                {
+                  "language": "ar",
+                  "text": "حليب."
+                },
+                {
+                  "language": "tr",
+                  "text": "Süt."
+                },
+                {
+                  "language": "ru",
+                  "text": "Молоко."
+                },
+                {
+                  "language": "ckb",
+                  "text": "شیر."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Şîr."
+                },
+                {
+                  "language": "pl",
+                  "text": "Mleko."
+                },
+                {
+                  "language": "ro",
+                  "text": "Lapte."
+                },
+                {
+                  "language": "sq",
+                  "text": "Qumësht."
+                }
+              ],
+              "isCorrect": false,
+              "feedback": "This gives the product, but it does not ask where it is.",
+              "feedbackTranslations": [
+                {
+                  "language": "en",
+                  "text": "This gives the product, but it does not ask where it is."
+                },
+                {
+                  "language": "fa",
+                  "text": "این کالا را می‌گوید، اما نمی‌پرسد کجاست."
+                },
+                {
+                  "language": "ar",
+                  "text": "هذا يذكر المنتج، لكنه لا يسأل أين هو."
+                },
+                {
+                  "language": "tr",
+                  "text": "Ürünü söyler, ama nerede olduğunu sormaz."
+                },
+                {
+                  "language": "ru",
+                  "text": "Это называет товар, но не спрашивает, где он."
+                },
+                {
+                  "language": "ckb",
+                  "text": "ئەمە بەرهەمەکە دەڵێت، بەڵام ناپرسێت لە کوێیە."
+                },
+                {
+                  "language": "kmr",
+                  "text": "Ev hilberê dibêje, lê napirse li ku ye."
+                },
+                {
+                  "language": "pl",
+                  "text": "To podaje produkt, ale nie pyta, gdzie on jest."
+                },
+                {
+                  "language": "ro",
+                  "text": "Spune produsul, dar nu întreabă unde este."
+                },
+                {
+                  "language": "sq",
+                  "text": "Thotë produktin, por nuk pyet ku është."
+                }
+              ],
+              "explanationKey": "missing-question"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 3,
+          "feedbackType": "a1-practice-note",
+          "text": "In formellen A1-Situationen klingt eine Frage mit „koennen Sie“ freundlicher.",
+          "translations": [
+            {
+              "language": "en",
+              "text": "In formal A1 situations, a question with koennen Sie sounds friendlier."
+            },
+            {
+              "language": "fa",
+              "text": "در موقعیت‌های رسمی A1، سؤال با koennen Sie دوستانه‌تر به نظر می‌رسد."
+            },
+            {
+              "language": "ar",
+              "text": "في مواقف A1 الرسمية، السؤال مع koennen Sie يبدو ألطف."
+            },
+            {
+              "language": "tr",
+              "text": "Resmi A1 durumlarında koennen Sie ile soru daha nazik duyulur."
+            },
+            {
+              "language": "ru",
+              "text": "В формальных ситуациях A1 вопрос с koennen Sie звучит дружелюбнее."
+            },
+            {
+              "language": "ckb",
+              "text": "لە دۆخە فەرمییەکانی A1 دا پرسیار بە koennen Sie دۆستانەتر دەردەکەوێت."
+            },
+            {
+              "language": "kmr",
+              "text": "Di rewşên fermî yên A1 de pirs bi koennen Sie hevalanetir xuya dike."
+            },
+            {
+              "language": "pl",
+              "text": "W formalnych sytuacjach A1 pytanie z koennen Sie brzmi przyjaźniej."
+            },
+            {
+              "language": "ro",
+              "text": "În situațiile formale A1, o întrebare cu koennen Sie sună mai prietenos."
+            },
+            {
+              "language": "sq",
+              "text": "Në situata formale A1, pyetja me koennen Sie tingëllon më miqësore."
+            }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "shop-help",
+          "placement": "header",
+          "purpose": "Set a clear A1 service context without exposing authoring metadata to learners.",
+          "altText": "Eine Person bittet in einem Laden freundlich um Hilfe.",
+          "altTextTranslations": [
+            {
+              "language": "en",
+              "text": "A person politely asks for help in a shop."
+            },
+            {
+              "language": "fa",
+              "text": "فردی در مغازه مؤدبانه کمک می‌خواهد."
+            },
+            {
+              "language": "ar",
+              "text": "شخص يطلب المساعدة بلطف في متجر."
+            },
+            {
+              "language": "tr",
+              "text": "Bir kişi mağazada nazikçe yardım istiyor."
+            },
+            {
+              "language": "ru",
+              "text": "Человек вежливо просит помощи в магазине."
+            },
+            {
+              "language": "ckb",
+              "text": "کەسێک لە دوکاندا بە ڕێزەوە داوای یارمەتی دەکات."
+            },
+            {
+              "language": "kmr",
+              "text": "Kesek li dikanê bi rêz alîkarî dixwaze."
+            },
+            {
+              "language": "pl",
+              "text": "Osoba uprzejmie prosi o pomoc w sklepie."
+            },
+            {
+              "language": "ro",
+              "text": "O persoană cere politicos ajutor într-un magazin."
+            },
+            {
+              "language": "sq",
+              "text": "Një person kërkon ndihmë me mirësjellje në dyqan."
+            }
+          ],
+          "imagePrompt": "Clean educational illustration of an adult asking shop staff for help in Germany, no logos, no readable text.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

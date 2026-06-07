@@ -62,6 +62,7 @@ public sealed class ReportsController(
             new("Unpublished drafts", learningPortal.UnpublishedDraftCount.ToString(), "Learning Portal content rows not marked Active."),
             new("Grammar without exercises", learningPortal.GrammarTopicsMissingExercises.ToString(), "Grammar topics without linked exercises."),
             new("Lessons without exercise sets", learningPortal.CourseLessonsMissingExerciseSets.ToString(), "Course lessons without linked exercise sets."),
+            new("Course translation gaps", (learningPortal.CoursePathsMissingTranslations + learningPortal.CourseModulesMissingTranslations + learningPortal.CourseLessonsMissingTranslations).ToString(), "Course paths, modules, or lessons missing required learner-language helper translations."),
             new("Sensitive opt-in expressions", learningPortal.ExpressionEntriesRequiringSensitiveOptIn.ToString(), "Expression entries hidden unless Sensitive Educational Language is enabled."),
             new("Verified-adult blocked expressions", learningPortal.ExpressionEntriesRequiringVerifiedAdult.ToString(), "Expression entries requiring verified adult access; these remain hidden because no verified-adult system exists."),
             new("Blocked or explicit expressions", learningPortal.ExpressionEntriesBlockedOrExplicitAdult.ToString(), "Expression entries classified as blocked-illegal, explicit-adult, or blocked usage policy."),

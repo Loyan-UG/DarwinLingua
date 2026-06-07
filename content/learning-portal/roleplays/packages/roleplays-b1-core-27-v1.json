@@ -1,0 +1,920 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-27-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 27 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 27",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-einen-liefertermin-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Einen Liefertermin verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating a delivery appointment" },
+        { "language": "fa", "text": "مذاکره درباره زمان تحویل" },
+        { "language": "ar", "text": "التفاوض حول موعد التسليم" },
+        { "language": "tr", "text": "Teslimat tarihi için pazarlık yapmak" },
+        { "language": "ru", "text": "Договориться о сроке доставки" },
+        { "language": "ckb", "text": "گفتوگۆکردن دەربارەی کاتی گەیاندن" },
+        { "language": "kmr", "text": "Li ser dema radestkirinê danûstandin kirin" },
+        { "language": "pl", "text": "Negocjowanie terminu dostawy" },
+        { "language": "ro", "text": "Negocierea unui termen de livrare" },
+        { "language": "sq", "text": "Negocimi i një afati dorëzimi" }
+      ],
+      "description": "Du rufst beim Kundenservice an, weil deine Lieferung verspätet ist. Du erklärst, warum der ursprüngliche Termin nicht mehr passt, schlägst Alternativen vor und bestätigst die neue Vereinbarung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call customer service because your delivery is delayed. You explain why the original appointment no longer works, suggest alternatives, and confirm the new arrangement." },
+        { "language": "fa", "text": "با خدمات مشتریان تماس می‌گیری، چون تحویل سفارش تأخیر دارد. توضیح می‌دهی چرا زمان اولیه دیگر مناسب نیست، جایگزین پیشنهاد می‌کنی و توافق جدید را تأیید می‌کنی." },
+        { "language": "ar", "text": "تتصل بخدمة العملاء لأن تسليم طلبك متأخر. تشرح لماذا لم يعد الموعد الأصلي مناسباً، وتقترح بدائل، وتؤكد الاتفاق الجديد." },
+        { "language": "tr", "text": "Teslimatın geciktiği için müşteri hizmetlerini arıyorsun. İlk randevunun artık neden uygun olmadığını açıklıyor, alternatifler öneriyor ve yeni anlaşmayı onaylıyorsun." },
+        { "language": "ru", "text": "Ты звонишь в службу поддержки, потому что доставка задерживается. Ты объясняешь, почему первоначальное время больше не подходит, предлагаешь варианты и подтверждаешь новую договорённость." },
+        { "language": "ckb", "text": "پەیوەندی بە خزمەتگوزاریی کڕیارانەوە دەکەیت چونکە گەیاندنی داواکارییەکەت دواخراوە. ڕوون دەکەیتەوە بۆچی کاتی سەرەتا چیتر ناگونجێت، جێگرەوە پێشنیار دەکەیت و ڕێککەوتنی نوێ پشتڕاست دەکەیتەوە." },
+        { "language": "kmr", "text": "Tu gazî xizmeta xerîdar dikî, ji ber ku radestkirina te dereng maye. Tu şirove dikî çima dema destpêkê êdî nagunce, alternatîfan pêşniyar dikî û lihevhatina nû piştrast dikî." },
+        { "language": "pl", "text": "Dzwonisz do obsługi klienta, bo dostawa się opóźnia. Wyjaśniasz, dlaczego pierwotny termin już nie pasuje, proponujesz alternatywy i potwierdzasz nowe ustalenie." },
+        { "language": "ro", "text": "Suni la serviciul clienți deoarece livrarea întârzie. Explici de ce termenul inițial nu mai este potrivit, propui alternative și confirmi noua înțelegere." },
+        { "language": "sq", "text": "Telefonon shërbimin e klientit sepse dorëzimi yt është vonuar. Shpjegon pse afati fillestar nuk përshtatet më, propozon alternativa dhe konfirmon marrëveshjen e re." }
+      ],
+      "learnerGoal": "Verhandle einen neuen Liefertermin höflich, nenne zwei mögliche Zeitfenster und fasse die Vereinbarung klar zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate a new delivery appointment politely, name two possible time windows, and summarize the arrangement clearly." },
+        { "language": "fa", "text": "مودبانه درباره زمان تحویل جدید مذاکره کن، دو بازه زمانی ممکن را بگو و توافق را روشن جمع‌بندی کن." },
+        { "language": "ar", "text": "تفاوض بأدب حول موعد تسليم جديد، واذكر فترتين زمنيتين ممكنتين، ولخص الاتفاق بوضوح." },
+        { "language": "tr", "text": "Yeni bir teslimat tarihini kibarca görüş, iki olası zaman aralığı belirt ve anlaşmayı net biçimde özetle." },
+        { "language": "ru", "text": "Вежливо договорись о новом сроке доставки, назови два возможных временных окна и ясно резюмируй договорённость." },
+        { "language": "ckb", "text": "بە ڕێزەوە دەربارەی کاتی نوێی گەیاندن گفتوگۆ بکە، دوو ماوەی کاتی گونجاو بڵێ و ڕێککەوتنەکە بە ڕوونی کورت بکەرەوە." },
+        { "language": "kmr", "text": "Bi rêz li ser dema nû ya radestkirinê danûstandin bike, du navberên demê yên gengaz bibêje û lihevhatinê zelal kurt bike." },
+        { "language": "pl", "text": "Uprzejmie wynegocjuj nowy termin dostawy, podaj dwa możliwe okna czasowe i jasno podsumuj ustalenie." },
+        { "language": "ro", "text": "Negociază politicos un nou termen de livrare, numește două intervale posibile și rezumă clar înțelegerea." },
+        { "language": "sq", "text": "Negocio me mirësjellje një afat të ri dorëzimi, përmend dy intervale të mundshme dhe përmblidh qartë marrëveshjen." }
+      ],
+      "cefrLevel": "B1",
+      "category": "customer-service",
+      "topics": ["customer-service", "shopping-and-services"],
+      "examProfiles": ["dtz-a2-b1", "berufssprache-b1"],
+      "skillFocus": ["speaking", "roleplay", "phone-call", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2560,
+      "roles": [
+        {
+          "roleKey": "delivery-agent",
+          "displayName": "Lieferdienst",
+          "translations": [
+            { "language": "en", "text": "Delivery service" },
+            { "language": "fa", "text": "خدمات تحویل" },
+            { "language": "ar", "text": "خدمة التوصيل" },
+            { "language": "tr", "text": "Teslimat hizmeti" },
+            { "language": "ru", "text": "Служба доставки" },
+            { "language": "ckb", "text": "خزمەتگوزاریی گەیاندن" },
+            { "language": "kmr", "text": "Xizmeta radestkirinê" },
+            { "language": "pl", "text": "Firma dostawcza" },
+            { "language": "ro", "text": "Serviciul de livrare" },
+            { "language": "sq", "text": "Shërbimi i dorëzimit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kundin",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "عميلة" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиентка" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Xerîdar" },
+            { "language": "pl", "text": "Klientka" },
+            { "language": "ro", "text": "Clientă" },
+            { "language": "sq", "text": "Klientja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "delivery-agent",
+          "baseText": "Guten Tag, Lieferdienst Krüger. Sie rufen wegen eines Liefertermins an?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, Krüger delivery service. Are you calling about a delivery appointment?" },
+            { "language": "fa", "text": "روز بخیر، خدمات تحویل کروگر. درباره زمان تحویل تماس می‌گیرید؟" },
+            { "language": "ar", "text": "مرحباً، خدمة توصيل كروغر. هل تتصلين بخصوص موعد تسليم؟" },
+            { "language": "tr", "text": "İyi günler, Krüger teslimat hizmeti. Teslimat randevusu için mi arıyorsunuz?" },
+            { "language": "ru", "text": "Добрый день, служба доставки Krüger. Вы звоните по поводу срока доставки?" },
+            { "language": "ckb", "text": "ڕۆژ باش، خزمەتگوزاریی گەیاندنی Krüger. دەربارەی کاتی گەیاندن پەیوەندی دەکەن؟" },
+            { "language": "kmr", "text": "Roj baş, xizmeta radestkirinê ya Krüger. Hûn ji bo dema radestkirinê telefon dikin?" },
+            { "language": "pl", "text": "Dzień dobry, dostawa Krüger. Dzwoni pani w sprawie terminu dostawy?" },
+            { "language": "ro", "text": "Bună ziua, serviciul de livrare Krüger. Sunați în legătură cu un termen de livrare?" },
+            { "language": "sq", "text": "Mirëdita, shërbimi i dorëzimit Krüger. Po telefononi për një afat dorëzimi?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, genau. Meine Lieferung wurde von Dienstag auf Freitag verschoben. Am Freitag bin ich aber wegen der Arbeit nicht zu Hause.",
+          "translations": [
+            { "language": "en", "text": "Yes, exactly. My delivery was moved from Tuesday to Friday. But on Friday I am not at home because of work." },
+            { "language": "fa", "text": "بله، دقیقاً. تحویل من از سه‌شنبه به جمعه منتقل شده است. اما جمعه به خاطر کار خانه نیستم." },
+            { "language": "ar", "text": "نعم، بالضبط. تم نقل تسليمي من الثلاثاء إلى الجمعة. لكن يوم الجمعة لن أكون في المنزل بسبب العمل." },
+            { "language": "tr", "text": "Evet, doğru. Teslimatım salı gününden cumaya ertelendi. Ama cuma günü iş nedeniyle evde değilim." },
+            { "language": "ru", "text": "Да, именно. Мою доставку перенесли со вторника на пятницу. Но в пятницу я из-за работы не буду дома." },
+            { "language": "ckb", "text": "بەڵێ، ڕاستە. گەیاندنەکەم لە سێشەممەوە بۆ هەینی دواخراوە. بەڵام هەینی بەهۆی کارەوە لە ماڵەوە نیم." },
+            { "language": "kmr", "text": "Erê, rast e. Radestkirina min ji sêşemê bo înê hate guhertin. Lê roja înê ji ber kar ez li malê nînim." },
+            { "language": "pl", "text": "Tak, dokładnie. Moja dostawa została przesunięta z wtorku na piątek. W piątek jednak nie będzie mnie w domu z powodu pracy." },
+            { "language": "ro", "text": "Da, exact. Livrarea mea a fost mutată de marți pe vineri. Dar vineri nu sunt acasă din cauza serviciului." },
+            { "language": "sq", "text": "Po, saktësisht. Dorëzimi im u zhvendos nga e marta në të premte. Por të premten nuk jam në shtëpi për shkak të punës." }
+          ],
+          "function": "state-problem",
+          "expectedLearnerAction": "Explain the changed appointment and why it no longer works."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "delivery-agent",
+          "baseText": "Ich verstehe. Wir können versuchen, einen anderen Termin zu finden. Welche Zeitfenster würden für Sie passen?",
+          "translations": [
+            { "language": "en", "text": "I understand. We can try to find another appointment. Which time windows would work for you?" },
+            { "language": "fa", "text": "متوجه شدم. می‌توانیم تلاش کنیم زمان دیگری پیدا کنیم. چه بازه‌های زمانی برای شما مناسب است؟" },
+            { "language": "ar", "text": "فهمت. يمكننا أن نحاول إيجاد موعد آخر. أي فترات زمنية تناسبك؟" },
+            { "language": "tr", "text": "Anladım. Başka bir randevu bulmaya çalışabiliriz. Hangi zaman aralıkları sizin için uygun olur?" },
+            { "language": "ru", "text": "Понимаю. Мы можем попробовать найти другое время. Какие временные окна вам подходят?" },
+            { "language": "ckb", "text": "تێگەیشتم. دەتوانین هەوڵ بدەین کاتێکی تر بدۆزینەوە. کام ماوەی کاتی بۆتان دەگونجێت؟" },
+            { "language": "kmr", "text": "Fêm kirim. Em dikarin hewl bidin demeke din bibînin. Kîjan navberên demê ji we re diguncin?" },
+            { "language": "pl", "text": "Rozumiem. Możemy spróbować znaleźć inny termin. Jakie okna czasowe pani pasują?" },
+            { "language": "ro", "text": "Înțeleg. Putem încerca să găsim un alt termen. Ce intervale orare vi s-ar potrivi?" },
+            { "language": "sq", "text": "E kuptoj. Mund të përpiqemi të gjejmë një afat tjetër. Cilat intervale kohore ju përshtaten?" }
+          ],
+          "function": "ask-options"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Am besten wäre Donnerstag zwischen 16 und 19 Uhr. Alternativ könnte ich Samstagvormittag zu Hause sein.",
+          "translations": [
+            { "language": "en", "text": "Thursday between 4 and 7 p.m. would be best. Alternatively, I could be at home on Saturday morning." },
+            { "language": "fa", "text": "بهترین زمان پنجشنبه بین ساعت ۱۶ تا ۱۹ است. در غیر این صورت شنبه صبح هم می‌توانم خانه باشم." },
+            { "language": "ar", "text": "الأفضل أن يكون يوم الخميس بين الساعة 16 و19. وبدلاً من ذلك يمكنني أن أكون في المنزل صباح السبت." },
+            { "language": "tr", "text": "En iyisi perşembe 16 ile 19 arası olur. Alternatif olarak cumartesi sabahı evde olabilirim." },
+            { "language": "ru", "text": "Лучше всего было бы в четверг с 16 до 19 часов. Как вариант, я могу быть дома в субботу утром." },
+            { "language": "ckb", "text": "باشترین کات پێنجشەممە لە نێوان ١٦ و ١٩ ـە. وەک جێگرەوە، شەممە بەیانی دەتوانم لە ماڵەوە بم." },
+            { "language": "kmr", "text": "Ya herî baş pêncşem di navbera 16 û 19 de ye. Wek alternatîf, ez dikarim şemiyê sibê li malê bim." },
+            { "language": "pl", "text": "Najlepiej byłoby w czwartek między 16 a 19. Alternatywnie mogłabym być w domu w sobotę rano." },
+            { "language": "ro", "text": "Cel mai bine ar fi joi între 16 și 19. Alternativ, aș putea fi acasă sâmbătă dimineața." },
+            { "language": "sq", "text": "Më mirë do të ishte të enjten midis orës 16 dhe 19. Si alternativë, mund të jem në shtëpi të shtunën paradite." }
+          ],
+          "function": "offer-options",
+          "expectedLearnerAction": "Offer two realistic delivery windows."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "delivery-agent",
+          "baseText": "Donnerstag ist leider voll. Samstag zwischen 9 und 12 Uhr wäre möglich.",
+          "translations": [
+            { "language": "en", "text": "Thursday is unfortunately fully booked. Saturday between 9 a.m. and 12 p.m. would be possible." },
+            { "language": "fa", "text": "پنجشنبه متأسفانه کاملاً پر است. شنبه بین ساعت ۹ تا ۱۲ ممکن است." },
+            { "language": "ar", "text": "الخميس ممتلئ للأسف. السبت بين الساعة 9 و12 ممكن." },
+            { "language": "tr", "text": "Perşembe maalesef dolu. Cumartesi 9 ile 12 arası mümkün olur." },
+            { "language": "ru", "text": "Четверг, к сожалению, полностью занят. Суббота с 9 до 12 возможна." },
+            { "language": "ckb", "text": "پێنجشەممە بەداخەوە پڕە. شەممە لە نێوان ٩ و ١٢ دەکرێت." },
+            { "language": "kmr", "text": "Pêncşem mixabin tijî ye. Şemî di navbera 9 û 12 de gengaz e." },
+            { "language": "pl", "text": "Czwartek jest niestety zajęty. Sobota między 9 a 12 byłaby możliwa." },
+            { "language": "ro", "text": "Joi este din păcate ocupat complet. Sâmbătă între 9 și 12 ar fi posibil." },
+            { "language": "sq", "text": "E enjtja fatkeqësisht është e zënë. E shtuna midis orës 9 dhe 12 do të ishte e mundur." }
+          ],
+          "function": "offer-slot"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Samstag zwischen 9 und 12 Uhr passt. Können Sie mir bitte noch sagen, ob ich vorher eine SMS bekomme?",
+          "translations": [
+            { "language": "en", "text": "Saturday between 9 a.m. and 12 p.m. works. Could you please also tell me whether I will receive a text message beforehand?" },
+            { "language": "fa", "text": "شنبه بین ساعت ۹ تا ۱۲ مناسب است. لطفاً می‌گویید آیا قبلش پیامک دریافت می‌کنم؟" },
+            { "language": "ar", "text": "السبت بين الساعة 9 و12 يناسبني. هل يمكن أن تخبرني من فضلك هل سأحصل على رسالة نصية قبل ذلك؟" },
+            { "language": "tr", "text": "Cumartesi 9 ile 12 arası uygundur. Önceden SMS alıp almayacağımı da söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Суббота с 9 до 12 подходит. Подскажите, пожалуйста, получу ли я заранее SMS?" },
+            { "language": "ckb", "text": "شەممە لە نێوان ٩ و ١٢ دەگونجێت. تکایە دەتوانن بڵێن ئایا پێشتر نامەی SMS وەردەگرم؟" },
+            { "language": "kmr", "text": "Şemî di navbera 9 û 12 de digunce. Hûn dikarin her wiha bibêjin gelo ez berê SMS distînim?" },
+            { "language": "pl", "text": "Sobota między 9 a 12 pasuje. Czy może mi pan jeszcze powiedzieć, czy wcześniej dostanę SMS?" },
+            { "language": "ro", "text": "Sâmbătă între 9 și 12 se potrivește. Îmi puteți spune, vă rog, dacă primesc un SMS înainte?" },
+            { "language": "sq", "text": "E shtuna midis orës 9 dhe 12 më përshtatet. A mund të më thoni ju lutem nëse do të marr një SMS më parë?" }
+          ],
+          "function": "accept-and-clarify",
+          "expectedLearnerAction": "Accept one offered slot and ask for one practical confirmation detail."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "delivery-agent",
+          "baseText": "Ja, Sie bekommen am Samstagmorgen eine SMS mit einem genaueren Zeitfenster.",
+          "translations": [
+            { "language": "en", "text": "Yes, you will receive a text message on Saturday morning with a more exact time window." },
+            { "language": "fa", "text": "بله، شنبه صبح پیامکی با بازه زمانی دقیق‌تر دریافت می‌کنید." },
+            { "language": "ar", "text": "نعم، ستتلقين صباح السبت رسالة نصية بفترة زمنية أدق." },
+            { "language": "tr", "text": "Evet, cumartesi sabahı daha kesin bir zaman aralığı içeren bir SMS alacaksınız." },
+            { "language": "ru", "text": "Да, в субботу утром вы получите SMS с более точным временным окном." },
+            { "language": "ckb", "text": "بەڵێ، شەممە بەیانی SMSێک بە ماوەی کاتی وردتر وەردەگرن." },
+            { "language": "kmr", "text": "Erê, şemiyê sibê hûn SMSek bi navbereke demê ya zelaltir distînin." },
+            { "language": "pl", "text": "Tak, w sobotę rano dostanie pani SMS z dokładniejszym oknem czasowym." },
+            { "language": "ro", "text": "Da, sâmbătă dimineața primiți un SMS cu un interval orar mai exact." },
+            { "language": "sq", "text": "Po, të shtunën në mëngjes do të merrni një SMS me një interval më të saktë kohor." }
+          ],
+          "function": "confirm-detail"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann ist der neue Liefertermin Samstag zwischen 9 und 12 Uhr, und ich bekomme morgens noch eine SMS mit der genaueren Zeit.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then the new delivery appointment is Saturday between 9 a.m. and 12 p.m., and I will receive another text message in the morning with the more exact time." },
+            { "language": "fa", "text": "خیلی ممنون. پس زمان تحویل جدید شنبه بین ساعت ۹ تا ۱۲ است و صبح همان روز پیامکی با زمان دقیق‌تر دریافت می‌کنم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن موعد التسليم الجديد هو السبت بين الساعة 9 و12، وسأتلقى صباحاً رسالة نصية بالوقت الأدق." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde yeni teslimat tarihi cumartesi 9 ile 12 arası ve sabah daha kesin saatle ilgili bir SMS alacağım." },
+            { "language": "ru", "text": "Большое спасибо. Тогда новый срок доставки — суббота с 9 до 12, и утром я ещё получу SMS с более точным временем." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە کاتی نوێی گەیاندن شەممە لە نێوان ٩ و ١٢ ـە، و بەیانی SMSێک بە کاتی وردتر وەردەگرم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê dema nû ya radestkirinê şemî di navbera 9 û 12 de ye, û ez ê sibê SMSek bi demeke zelaltir bistînim." },
+            { "language": "pl", "text": "Dziękuję bardzo. Nowy termin dostawy to więc sobota między 9 a 12, a rano dostanę jeszcze SMS z dokładniejszą godziną." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci noul termen de livrare este sâmbătă între 9 și 12, iar dimineața primesc încă un SMS cu ora mai exactă." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë afati i ri i dorëzimit është të shtunën midis orës 9 dhe 12, dhe në mëngjes do të marr edhe një SMS me kohën më të saktë." }
+          ],
+          "function": "summarize-arrangement",
+          "expectedLearnerAction": "Repeat the final delivery slot and the confirmation detail."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, genau. Meine Lieferung wurde von Dienstag auf Freitag verschoben. Am Freitag bin ich aber wegen der Arbeit nicht zu Hause.",
+              "translations": [
+                { "language": "en", "text": "Yes, exactly. My delivery was moved from Tuesday to Friday. But on Friday I am not at home because of work." },
+                { "language": "fa", "text": "بله، دقیقاً. تحویل من از سه‌شنبه به جمعه منتقل شده است. اما جمعه به خاطر کار خانه نیستم." },
+                { "language": "ar", "text": "نعم، بالضبط. تم نقل تسليمي من الثلاثاء إلى الجمعة. لكن يوم الجمعة لن أكون في المنزل بسبب العمل." },
+                { "language": "tr", "text": "Evet, doğru. Teslimatım salı gününden cumaya ertelendi. Ama cuma günü iş nedeniyle evde değilim." },
+                { "language": "ru", "text": "Да, именно. Мою доставку перенесли со вторника на пятницу. Но в пятницу я из-за работы не буду дома." },
+                { "language": "ckb", "text": "بەڵێ، ڕاستە. گەیاندنەکەم لە سێشەممەوە بۆ هەینی دواخراوە. بەڵام هەینی بەهۆی کارەوە لە ماڵەوە نیم." },
+                { "language": "kmr", "text": "Erê, rast e. Radestkirina min ji sêşemê bo înê hate guhertin. Lê roja înê ji ber kar ez li malê nînim." },
+                { "language": "pl", "text": "Tak, dokładnie. Moja dostawa została przesunięta z wtorku na piątek. W piątek jednak nie będzie mnie w domu z powodu pracy." },
+                { "language": "ro", "text": "Da, exact. Livrarea mea a fost mutată de marți pe vineri. Dar vineri nu sunt acasă din cauza serviciului." },
+                { "language": "sq", "text": "Po, saktësisht. Dorëzimi im u zhvendos nga e marta në të premte. Por të premten nuk jam në shtëpi për shkak të punës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort erklärt die Terminänderung und den konkreten Grund, warum der neue Termin nicht passt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer explains the appointment change and the concrete reason why the new appointment does not work." },
+                { "language": "fa", "text": "این پاسخ تغییر زمان و دلیل مشخص نامناسب بودن زمان جدید را توضیح می‌دهد." },
+                { "language": "ar", "text": "تشرح الإجابة تغيير الموعد والسبب المحدد لعدم مناسبة الموعد الجديد." },
+                { "language": "tr", "text": "Cevap randevu değişikliğini ve yeni randevunun neden uymadığını somut olarak açıklar." },
+                { "language": "ru", "text": "Ответ объясняет изменение срока и конкретную причину, почему новое время не подходит." },
+                { "language": "ckb", "text": "وەڵامەکە گۆڕانی کات و هۆکاری دیاریکراوی نەگونجانی کاتی نوێ ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv guhartina demê û sedema zelal ku dema nû nagunce şirove dike." },
+                { "language": "pl", "text": "Odpowiedź wyjaśnia zmianę terminu i konkretny powód, dlaczego nowy termin nie pasuje." },
+                { "language": "ro", "text": "Răspunsul explică schimbarea termenului și motivul concret pentru care noul termen nu se potrivește." },
+                { "language": "sq", "text": "Përgjigjja shpjegon ndryshimin e afatit dhe arsyen konkrete pse afati i ri nuk përshtatet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Termin am Freitag passt mir leider nicht.",
+              "translations": [
+                { "language": "en", "text": "The appointment on Friday unfortunately does not work for me." },
+                { "language": "fa", "text": "زمان جمعه متأسفانه برای من مناسب نیست." },
+                { "language": "ar", "text": "الموعد يوم الجمعة لا يناسبني للأسف." },
+                { "language": "tr", "text": "Cuma günü olan randevu maalesef bana uymuyor." },
+                { "language": "ru", "text": "Срок в пятницу, к сожалению, мне не подходит." },
+                { "language": "ckb", "text": "کاتی هەینی بەداخەوە بۆ من ناگونجێت." },
+                { "language": "kmr", "text": "Dema roja înê mixabin ji min re nagunce." },
+                { "language": "pl", "text": "Termin w piątek niestety mi nie pasuje." },
+                { "language": "ro", "text": "Termenul de vineri din păcate nu mi se potrivește." },
+                { "language": "sq", "text": "Afati të premten fatkeqësisht nuk më përshtatet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu knapp: Es fehlt, dass der Termin verschoben wurde und warum Freitag nicht geht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite but too brief: it does not say that the appointment was moved or why Friday does not work." },
+                { "language": "fa", "text": "این مودبانه است، اما خیلی کوتاه است: نمی‌گوید زمان منتقل شده و چرا جمعه مناسب نیست." },
+                { "language": "ar", "text": "هذا مهذب لكنه مختصر جداً: لا يذكر أن الموعد تم نقله ولا لماذا لا يناسب يوم الجمعة." },
+                { "language": "tr", "text": "Bu kibar ama çok kısa: randevunun ertelendiğini ve cuma gününün neden uymadığını söylemiyor." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко: не сказано, что срок перенесли и почему пятница не подходит." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر کورتە: ناڵێت کاتەکە دواخراوە و بۆچی هەینی ناگونجێت." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir kurt e: nabêje dem hatiye guhertin û çima în nagunce." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt krótkie: nie mówi, że termin został przesunięty ani dlaczego piątek nie pasuje." },
+                { "language": "ro", "text": "Este politicos, dar prea scurt: nu spune că termenul a fost mutat și de ce vineri nu merge." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e shkurtër: nuk thotë se afati u zhvendos dhe pse e premtja nuk përshtatet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Am besten wäre Donnerstag zwischen 16 und 19 Uhr. Alternativ könnte ich Samstagvormittag zu Hause sein.",
+              "translations": [
+                { "language": "en", "text": "Thursday between 4 and 7 p.m. would be best. Alternatively, I could be at home on Saturday morning." },
+                { "language": "fa", "text": "بهترین زمان پنجشنبه بین ساعت ۱۶ تا ۱۹ است. در غیر این صورت شنبه صبح هم می‌توانم خانه باشم." },
+                { "language": "ar", "text": "الأفضل أن يكون يوم الخميس بين الساعة 16 و19. وبدلاً من ذلك يمكنني أن أكون في المنزل صباح السبت." },
+                { "language": "tr", "text": "En iyisi perşembe 16 ile 19 arası olur. Alternatif olarak cumartesi sabahı evde olabilirim." },
+                { "language": "ru", "text": "Лучше всего было бы в четверг с 16 до 19 часов. Как вариант, я могу быть дома в субботу утром." },
+                { "language": "ckb", "text": "باشترین کات پێنجشەممە لە نێوان ١٦ و ١٩ ـە. وەک جێگرەوە، شەممە بەیانی دەتوانم لە ماڵەوە بم." },
+                { "language": "kmr", "text": "Ya herî baş pêncşem di navbera 16 û 19 de ye. Wek alternatîf, ez dikarim şemiyê sibê li malê bim." },
+                { "language": "pl", "text": "Najlepiej byłoby w czwartek między 16 a 19. Alternatywnie mogłabym być w domu w sobotę rano." },
+                { "language": "ro", "text": "Cel mai bine ar fi joi între 16 și 19. Alternativ, aș putea fi acasă sâmbătă dimineața." },
+                { "language": "sq", "text": "Më mirë do të ishte të enjten midis orës 16 dhe 19. Si alternativë, mund të jem në shtëpi të shtunën paradite." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort bietet zwei konkrete Zeitfenster und erleichtert dem Lieferdienst die Planung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer offers two concrete time windows and makes planning easier for the delivery service." },
+                { "language": "fa", "text": "این پاسخ دو بازه زمانی مشخص پیشنهاد می‌کند و برنامه‌ریزی را برای خدمات تحویل آسان‌تر می‌کند." },
+                { "language": "ar", "text": "تقدم الإجابة فترتين زمنيتين محددتين وتسهل التخطيط على خدمة التوصيل." },
+                { "language": "tr", "text": "Cevap iki somut zaman aralığı sunar ve teslimat hizmetinin planlamasını kolaylaştırır." },
+                { "language": "ru", "text": "Ответ предлагает два конкретных временных окна и облегчает планирование службе доставки." },
+                { "language": "ckb", "text": "وەڵامەکە دوو ماوەی کاتی دیاریکراو پێشنیار دەکات و پلانکردن بۆ خزمەتگوزاریی گەیاندن ئاسانتر دەکات." },
+                { "language": "kmr", "text": "Bersiv du navberên demê yên zelal pêşniyar dike û plansaziyê ji xizmeta radestkirinê re hêsantir dike." },
+                { "language": "pl", "text": "Odpowiedź podaje dwa konkretne okna czasowe i ułatwia planowanie firmie dostawczej." },
+                { "language": "ro", "text": "Răspunsul oferă două intervale concrete și ușurează planificarea pentru serviciul de livrare." },
+                { "language": "sq", "text": "Përgjigjja ofron dy intervale konkrete dhe ia lehtëson planifikimin shërbimit të dorëzimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Vielleicht geht ein anderer Tag.",
+              "translations": [
+                { "language": "en", "text": "Maybe another day works." },
+                { "language": "fa", "text": "شاید یک روز دیگر مناسب باشد." },
+                { "language": "ar", "text": "ربما يناسب يوم آخر." },
+                { "language": "tr", "text": "Belki başka bir gün olur." },
+                { "language": "ru", "text": "Может быть, подойдёт другой день." },
+                { "language": "ckb", "text": "لەوانەیە ڕۆژێکی تر بگونجێت." },
+                { "language": "kmr", "text": "Dibe ku rojeke din bigunce." },
+                { "language": "pl", "text": "Może pasuje inny dzień." },
+                { "language": "ro", "text": "Poate merge o altă zi." },
+                { "language": "sq", "text": "Ndoshta përshtatet një ditë tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist nicht falsch, aber zu unkonkret: Ohne Zeitfenster kann der Lieferdienst kaum planen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is not wrong, but too vague: without a time window the delivery service can hardly plan." },
+                { "language": "fa", "text": "این غلط نیست، اما خیلی مبهم است: بدون بازه زمانی، خدمات تحویل سخت می‌تواند برنامه‌ریزی کند." },
+                { "language": "ar", "text": "هذا ليس خطأ، لكنه غير محدد جداً: من دون فترة زمنية يصعب على خدمة التوصيل التخطيط." },
+                { "language": "tr", "text": "Bu yanlış değil, ama çok belirsiz: zaman aralığı olmadan teslimat hizmeti zor plan yapar." },
+                { "language": "ru", "text": "Это не неверно, но слишком неопределённо: без временного окна службе доставки трудно планировать." },
+                { "language": "ckb", "text": "ئەمە هەڵە نییە، بەڵام زۆر ناڕوونە: بەبێ ماوەی کاتی، خزمەتگوزاریی گەیاندن بە زەحمەت پلان دادەنێت." },
+                { "language": "kmr", "text": "Ev ne şaş e, lê pir nezelal e: bê navbera demê xizmeta radestkirinê zehmet plansazî dike." },
+                { "language": "pl", "text": "To nie jest błędne, ale zbyt niekonkretne: bez okna czasowego firma dostawcza prawie nie może planować." },
+                { "language": "ro", "text": "Nu este greșit, dar prea vag: fără un interval orar, serviciul de livrare poate planifica greu." },
+                { "language": "sq", "text": "Kjo nuk është gabim, por shumë e paqartë: pa një interval kohor, shërbimi i dorëzimit vështirë se mund të planifikojë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann ist der neue Liefertermin Samstag zwischen 9 und 12 Uhr, und ich bekomme morgens noch eine SMS mit der genaueren Zeit.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then the new delivery appointment is Saturday between 9 a.m. and 12 p.m., and I will receive another text message in the morning with the more exact time." },
+                { "language": "fa", "text": "خیلی ممنون. پس زمان تحویل جدید شنبه بین ساعت ۹ تا ۱۲ است و صبح همان روز پیامکی با زمان دقیق‌تر دریافت می‌کنم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن موعد التسليم الجديد هو السبت بين الساعة 9 و12، وسأتلقى صباحاً رسالة نصية بالوقت الأدق." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde yeni teslimat tarihi cumartesi 9 ile 12 arası ve sabah daha kesin saatle ilgili bir SMS alacağım." },
+                { "language": "ru", "text": "Большое спасибо. Тогда новый срок доставки — суббота с 9 до 12, и утром я ещё получу SMS с более точным временем." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە کاتی نوێی گەیاندن شەممە لە نێوان ٩ و ١٢ ـە، و بەیانی SMSێک بە کاتی وردتر وەردەگرم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê dema nû ya radestkirinê şemî di navbera 9 û 12 de ye, û ez ê sibê SMSek bi demeke zelaltir bistînim." },
+                { "language": "pl", "text": "Dziękuję bardzo. Nowy termin dostawy to więc sobota między 9 a 12, a rano dostanę jeszcze SMS z dokładniejszą godziną." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci noul termen de livrare este sâmbătă între 9 și 12, iar dimineața primesc încă un SMS cu ora mai exactă." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë afati i ri i dorëzimit është të shtunën midis orës 9 dhe 12, dhe në mëngjes do të marr edhe një SMS me kohën më të saktë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort fasst den Termin und die SMS-Bestätigung vollständig zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer fully summarizes the appointment and the text-message confirmation." },
+                { "language": "fa", "text": "این پاسخ زمان تحویل و تأیید پیامکی را کامل جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "تلخص الإجابة الموعد وتأكيد الرسالة النصية بشكل كامل." },
+                { "language": "tr", "text": "Cevap randevuyu ve SMS onayını eksiksiz özetler." },
+                { "language": "ru", "text": "Ответ полностью резюмирует срок и SMS-подтверждение." },
+                { "language": "ckb", "text": "وەڵامەکە کات و پشتڕاستکردنەوەی SMS بە تەواوی کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv dem û piştrastkirina SMSê bi temamî kurt dike." },
+                { "language": "pl", "text": "Odpowiedź w pełni podsumowuje termin i potwierdzenie SMS." },
+                { "language": "ro", "text": "Răspunsul rezumă complet termenul și confirmarea prin SMS." },
+                { "language": "sq", "text": "Përgjigjja përmbledh plotësisht afatin dhe konfirmimin me SMS." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Okay, Samstag passt. Danke.",
+              "translations": [
+                { "language": "en", "text": "Okay, Saturday works. Thank you." },
+                { "language": "fa", "text": "باشه، شنبه مناسب است. ممنون." },
+                { "language": "ar", "text": "حسناً، السبت مناسب. شكراً." },
+                { "language": "tr", "text": "Tamam, cumartesi uygun. Teşekkürler." },
+                { "language": "ru", "text": "Хорошо, суббота подходит. Спасибо." },
+                { "language": "ckb", "text": "باشە، شەممە دەگونجێت. سوپاس." },
+                { "language": "kmr", "text": "Baş e, şemî digunce. Spas." },
+                { "language": "pl", "text": "Dobrze, sobota pasuje. Dziękuję." },
+                { "language": "ro", "text": "Bine, sâmbătă se potrivește. Mulțumesc." },
+                { "language": "sq", "text": "Në rregull, e shtuna përshtatet. Faleminderit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das bestätigt den Tag, aber Zeitfenster und SMS-Information fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This confirms the day, but the time window and text-message information are missing." },
+                { "language": "fa", "text": "این روز را تأیید می‌کند، اما بازه زمانی و اطلاعات پیامک کم دارد." },
+                { "language": "ar", "text": "هذا يؤكد اليوم، لكن فترة الوقت ومعلومة الرسالة النصية مفقودتان." },
+                { "language": "tr", "text": "Bu günü onaylar, ama zaman aralığı ve SMS bilgisi eksik." },
+                { "language": "ru", "text": "Это подтверждает день, но не хватает временного окна и информации об SMS." },
+                { "language": "ckb", "text": "ئەمە ڕۆژەکە پشتڕاست دەکاتەوە، بەڵام ماوەی کاتی و زانیاریی SMS کەمە." },
+                { "language": "kmr", "text": "Ev rojê piştrast dike, lê navbera demê û agahiya SMSê kêm in." },
+                { "language": "pl", "text": "To potwierdza dzień, ale brakuje okna czasowego i informacji o SMS-ie." },
+                { "language": "ro", "text": "Aceasta confirmă ziua, dar lipsesc intervalul orar și informația despre SMS." },
+                { "language": "sq", "text": "Kjo konfirmon ditën, por mungon intervali kohor dhe informacioni për SMS-in." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei Terminverhandlungen helfen konkrete Zeitfenster und eine kurze Zusammenfassung der Vereinbarung.",
+          "translations": [
+            { "language": "en", "text": "B1 target: in appointment negotiations, concrete time windows and a short summary of the arrangement help." },
+            { "language": "fa", "text": "هدف B1: در مذاکره درباره زمان، بازه‌های زمانی مشخص و جمع‌بندی کوتاه توافق کمک می‌کند." },
+            { "language": "ar", "text": "هدف B1: في التفاوض على المواعيد تساعد الفترات الزمنية المحددة وملخص قصير للاتفاق." },
+            { "language": "tr", "text": "B1 hedefi: randevu görüşmelerinde somut zaman aralıkları ve anlaşmanın kısa özeti yardımcı olur." },
+            { "language": "ru", "text": "Цель B1: при согласовании сроков помогают конкретные временные окна и краткое резюме договорённости." },
+            { "language": "ckb", "text": "ئامانجی B1: لە گفتوگۆی کاتدا ماوەی کاتی دیاریکراو و کورتکردنەوەی ڕێککەوتن یارمەتی دەدەن." },
+            { "language": "kmr", "text": "Armanca B1: di danûstandina demê de navberên demê yên zelal û kurteya lihevhatinê alîkar in." },
+            { "language": "pl", "text": "Cel B1: przy negocjowaniu terminów pomagają konkretne okna czasowe i krótkie podsumowanie ustalenia." },
+            { "language": "ro", "text": "Ținta B1: în negocierile de termen ajută intervalele concrete și un scurt rezumat al înțelegerii." },
+            { "language": "sq", "text": "Qëllimi B1: në negociimin e afateve ndihmojnë intervalet konkrete dhe një përmbledhje e shkurtër e marrëveshjes." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-bei-zugausfall-nach-alternativen-fragen",
+      "linkedDialogueSlug": null,
+      "title": "Bei Zugausfall nach Alternativen fragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Asking for alternatives after a train cancellation" },
+        { "language": "fa", "text": "پرسیدن درباره جایگزین‌ها بعد از لغو قطار" },
+        { "language": "ar", "text": "السؤال عن بدائل بعد إلغاء القطار" },
+        { "language": "tr", "text": "Tren iptalinden sonra alternatifleri sormak" },
+        { "language": "ru", "text": "Спросить об альтернативах после отмены поезда" },
+        { "language": "ckb", "text": "پرسین دەربارەی جێگرەوەکان دوای هەڵوەشاندنەوەی شەمەندەفەر" },
+        { "language": "kmr", "text": "Pirsîna alternatîfan piştî betalkirina trênê" },
+        { "language": "pl", "text": "Pytanie o alternatywy po odwołaniu pociągu" },
+        { "language": "ro", "text": "Întrebarea despre alternative după anularea trenului" },
+        { "language": "sq", "text": "Pyetja për alternativa pas anulimit të trenit" }
+      ],
+      "description": "Dein Zug fällt aus. Am Service-Schalter fragst du nach zwei möglichen Verbindungen, vergleichst Ankunftszeit und Umstieg und wiederholst die endgültige Verbindung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "Your train is cancelled. At the service counter you ask about two possible connections, compare arrival time and transfers, and repeat the final connection." },
+        { "language": "fa", "text": "قطارت لغو شده است. در باجه خدمات درباره دو مسیر ممکن می‌پرسی، زمان رسیدن و تعویض قطار را مقایسه می‌کنی و مسیر نهایی را تکرار می‌کنی." },
+        { "language": "ar", "text": "تم إلغاء قطارك. عند مكتب الخدمة تسأل عن رحلتين ممكنتين، وتقارن وقت الوصول والتبديل، وتكرر الرحلة النهائية." },
+        { "language": "tr", "text": "Trenin iptal oldu. Hizmet gişesinde iki olası bağlantıyı soruyor, varış saati ve aktarmayı karşılaştırıyor ve son bağlantıyı tekrar ediyorsun." },
+        { "language": "ru", "text": "Твой поезд отменён. У сервисной стойки ты спрашиваешь о двух возможных маршрутах, сравниваешь время прибытия и пересадку и повторяешь окончательный маршрут." },
+        { "language": "ckb", "text": "شەمەندەفەرەکەت هەڵوەشاوەتەوە. لە باجەی خزمەتگوزاریدا دەربارەی دوو پەیوەندیی گونجاو دەپرسیت، کاتی گەیشتن و گۆڕینی شەمەندەفەر بەراورد دەکەیت و پەیوەندیی کۆتایی دووبارە دەکەیتەوە." },
+        { "language": "kmr", "text": "Trêna te betal bûye. Li gişeya xizmetê tu li ser du girêdanên gengaz dipirsî, dema gihîştinê û veguhastinê didî ber hev û girêdana dawî dubare dikî." },
+        { "language": "pl", "text": "Twój pociąg jest odwołany. Przy punkcie obsługi pytasz o dwa możliwe połączenia, porównujesz czas przyjazdu i przesiadkę oraz powtarzasz końcowe połączenie." },
+        { "language": "ro", "text": "Trenul tău este anulat. La ghișeul de service întrebi despre două legături posibile, compari ora sosirii și schimbarea și repeți conexiunea finală." },
+        { "language": "sq", "text": "Treni yt është anuluar. Te sporteli i shërbimit pyet për dy lidhje të mundshme, krahason kohën e mbërritjes dhe ndërrimin dhe përsërit lidhjen përfundimtare." }
+      ],
+      "learnerGoal": "Frage nach realistischen Ersatzverbindungen, vergleiche die Optionen und bestätige die gewählte Verbindung mit Abfahrtszeit und Gleis.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask for realistic replacement connections, compare the options, and confirm the chosen connection with departure time and platform." },
+        { "language": "fa", "text": "درباره مسیرهای جایگزین واقع‌بینانه بپرس، گزینه‌ها را مقایسه کن و مسیر انتخاب‌شده را با زمان حرکت و سکو تأیید کن." },
+        { "language": "ar", "text": "اسأل عن رحلات بديلة واقعية، وقارن الخيارات، وأكد الرحلة المختارة مع وقت المغادرة والرصيف." },
+        { "language": "tr", "text": "Gerçekçi alternatif bağlantılar sor, seçenekleri karşılaştır ve seçilen bağlantıyı kalkış saati ve peronla onayla." },
+        { "language": "ru", "text": "Спроси о реалистичных заменяющих маршрутах, сравни варианты и подтверди выбранный маршрут со временем отправления и платформой." },
+        { "language": "ckb", "text": "دەربارەی پەیوەندییە جێگرەوە واقیعییەکان بپرسە، هەڵبژاردەکان بەراورد بکە و پەیوەندیی هەڵبژێردراو بە کاتی ڕۆیشتن و سکۆ پشتڕاست بکەرەوە." },
+        { "language": "kmr", "text": "Li ser girêdanên cîgir ên rastîn bipirse, vebijarkan bide ber hev û girêdana hilbijartî bi dema çûnê û platformê piştrast bike." },
+        { "language": "pl", "text": "Zapytaj o realistyczne połączenia zastępcze, porównaj opcje i potwierdź wybrane połączenie z godziną odjazdu i peronem." },
+        { "language": "ro", "text": "Întreabă despre conexiuni de înlocuire realiste, compară opțiunile și confirmă conexiunea aleasă cu ora de plecare și peronul." },
+        { "language": "sq", "text": "Pyet për lidhje zëvendësuese realiste, krahaso opsionet dhe konfirmo lidhjen e zgjedhur me orën e nisjes dhe platformën." }
+      ],
+      "cefrLevel": "B1",
+      "category": "transport",
+      "topics": ["transport-and-travel", "customer-service"],
+      "examProfiles": ["dtz-a2-b1", "telc-b1"],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "ask-for-information",
+      "interactionMode": "service-counter",
+      "register": "formal",
+      "estimatedPracticeMinutes": 10,
+      "isPublished": true,
+      "sortOrder": 2570,
+      "roles": [
+        {
+          "roleKey": "rail-service-agent",
+          "displayName": "Service-Mitarbeiter",
+          "translations": [
+            { "language": "en", "text": "Service employee" },
+            { "language": "fa", "text": "کارمند خدمات" },
+            { "language": "ar", "text": "موظف الخدمة" },
+            { "language": "tr", "text": "Hizmet görevlisi" },
+            { "language": "ru", "text": "Сотрудник сервиса" },
+            { "language": "ckb", "text": "کارمەندی خزمەتگوزاری" },
+            { "language": "kmr", "text": "Karmendê xizmetê" },
+            { "language": "pl", "text": "Pracownik obsługi" },
+            { "language": "ro", "text": "Angajat de service" },
+            { "language": "sq", "text": "Punonjës shërbimi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Reisende",
+          "translations": [
+            { "language": "en", "text": "Passenger" },
+            { "language": "fa", "text": "مسافر" },
+            { "language": "ar", "text": "مسافرة" },
+            { "language": "tr", "text": "Yolcu" },
+            { "language": "ru", "text": "Пассажирка" },
+            { "language": "ckb", "text": "گەشتیار" },
+            { "language": "kmr", "text": "Rêwî" },
+            { "language": "pl", "text": "Podróżna" },
+            { "language": "ro", "text": "Călătoare" },
+            { "language": "sq", "text": "Udhëtarja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Guten Tag. Ihr Zug fällt aus. Wohin möchten Sie weiterfahren?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. Your train is cancelled. Where would you like to continue travelling?" },
+            { "language": "fa", "text": "روز بخیر. قطار شما لغو شده است. می‌خواهید به کجا ادامه مسیر بدهید؟" },
+            { "language": "ar", "text": "مرحباً. تم إلغاء قطارك. إلى أين تريدين متابعة السفر؟" },
+            { "language": "tr", "text": "İyi günler. Treniniz iptal oldu. Nereye devam etmek istiyorsunuz?" },
+            { "language": "ru", "text": "Добрый день. Ваш поезд отменён. Куда вы хотите ехать дальше?" },
+            { "language": "ckb", "text": "ڕۆژ باش. شەمەندەفەرەکەتان هەڵوەشاوەتەوە. دەتەوێت بەرەو کوێ بەردەوام بن؟" },
+            { "language": "kmr", "text": "Roj baş. Trêna we betal bûye. Hûn dixwazin ber bi ku ve biçin?" },
+            { "language": "pl", "text": "Dzień dobry. Pani pociąg jest odwołany. Dokąd chce pani jechać dalej?" },
+            { "language": "ro", "text": "Bună ziua. Trenul dumneavoastră este anulat. Încotro doriți să continuați călătoria?" },
+            { "language": "sq", "text": "Mirëdita. Treni juaj është anuluar. Ku dëshironi të vazhdoni udhëtimin?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich muss heute noch nach Köln. Können Sie mir bitte zwei mögliche Verbindungen nennen, damit ich die Ankunftszeiten vergleichen kann?",
+          "translations": [
+            { "language": "en", "text": "I still have to get to Cologne today. Could you please name two possible connections so that I can compare the arrival times?" },
+            { "language": "fa", "text": "من باید امروز حتماً به کلن برسم. لطفاً می‌توانید دو مسیر ممکن بگویید تا زمان‌های رسیدن را مقایسه کنم؟" },
+            { "language": "ar", "text": "يجب أن أصل إلى كولن اليوم. هل يمكن أن تذكر لي رحلتين ممكنتين لكي أقارن أوقات الوصول؟" },
+            { "language": "tr", "text": "Bugün hâlâ Köln'e gitmem gerekiyor. Varış saatlerini karşılaştırabilmem için bana iki olası bağlantı söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Мне нужно сегодня ещё добраться до Кёльна. Можете назвать две возможные пересадки, чтобы я сравнила время прибытия?" },
+            { "language": "ckb", "text": "دەبێت ئەمڕۆ هەر بگەمە کۆڵن. تکایە دەتوانن دوو پەیوەندیی گونجاو بڵێن بۆ ئەوەی کاتەکانی گەیشتن بەراورد بکەم؟" },
+            { "language": "kmr", "text": "Divê ez îro hê bigihîjim Kölnê. Hûn dikarin du girêdanên gengaz bibêjin da ku ez demên gihîştinê bidim ber hev?" },
+            { "language": "pl", "text": "Muszę dziś jeszcze dojechać do Kolonii. Czy może pan podać mi dwa możliwe połączenia, żebym mogła porównać godziny przyjazdu?" },
+            { "language": "ro", "text": "Trebuie să ajung astăzi la Köln. Îmi puteți spune, vă rog, două legături posibile ca să pot compara orele de sosire?" },
+            { "language": "sq", "text": "Duhet të arrij sot në Këln. A mund të më jepni ju lutem dy lidhje të mundshme që të krahasoj oraret e mbërritjes?" }
+          ],
+          "function": "ask-options",
+          "expectedLearnerAction": "State destination and ask for two comparable alternatives."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Eine Verbindung fährt um 14:20 Uhr über Düsseldorf. Sie kommen um 16:05 Uhr an. Die zweite fährt um 14:45 Uhr über Bonn und kommt um 16:30 Uhr an.",
+          "translations": [
+            { "language": "en", "text": "One connection leaves at 2:20 p.m. via Düsseldorf. You arrive at 4:05 p.m. The second leaves at 2:45 p.m. via Bonn and arrives at 4:30 p.m." },
+            { "language": "fa", "text": "یک مسیر ساعت ۱۴:۲۰ از طریق دوسلدورف حرکت می‌کند. ساعت ۱۶:۰۵ می‌رسید. مسیر دوم ساعت ۱۴:۴۵ از طریق بن حرکت می‌کند و ساعت ۱۶:۳۰ می‌رسد." },
+            { "language": "ar", "text": "رحلة تغادر الساعة 14:20 عبر دوسلدورف. تصلين الساعة 16:05. الرحلة الثانية تغادر الساعة 14:45 عبر بون وتصل الساعة 16:30." },
+            { "language": "tr", "text": "Bir bağlantı 14:20'de Düsseldorf üzerinden kalkıyor. 16:05'te varırsınız. İkincisi 14:45'te Bonn üzerinden kalkıyor ve 16:30'da varıyor." },
+            { "language": "ru", "text": "Один маршрут отправляется в 14:20 через Дюссельдорф. Вы прибываете в 16:05. Второй отправляется в 14:45 через Бонн и прибывает в 16:30." },
+            { "language": "ckb", "text": "پەیوەندییەک لە ١٤:٢٠ لە ڕێگەی دوسلدۆرف دەڕوات. لە ١٦:٠٥ دەگەن. دووەمیان لە ١٤:٤٥ لە ڕێگەی بۆن دەڕوات و لە ١٦:٣٠ دەگات." },
+            { "language": "kmr", "text": "Girêdanek saet 14:20 bi rêya Düsseldorfê diçe. Hûn saet 16:05 digihîjin. Ya duyem saet 14:45 bi rêya Bonnê diçe û saet 16:30 digihîje." },
+            { "language": "pl", "text": "Jedno połączenie odjeżdża o 14:20 przez Düsseldorf. Przyjazd jest o 16:05. Drugie odjeżdża o 14:45 przez Bonn i przyjeżdża o 16:30." },
+            { "language": "ro", "text": "O legătură pleacă la 14:20 prin Düsseldorf. Ajungeți la 16:05. A doua pleacă la 14:45 prin Bonn și ajunge la 16:30." },
+            { "language": "sq", "text": "Një lidhje niset në orën 14:20 përmes Dyseldorfit. Mbërrini në 16:05. E dyta niset në 14:45 përmes Bonit dhe mbërrin në 16:30." }
+          ],
+          "function": "give-options"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die erste Verbindung ist schneller. Muss ich in Düsseldorf den Bahnsteig wechseln, und reicht die Umsteigezeit?",
+          "translations": [
+            { "language": "en", "text": "The first connection is faster. Do I have to change platforms in Düsseldorf, and is the transfer time enough?" },
+            { "language": "fa", "text": "مسیر اول سریع‌تر است. آیا در دوسلدورف باید سکو را عوض کنم و زمان تعویض کافی است؟" },
+            { "language": "ar", "text": "الرحلة الأولى أسرع. هل يجب أن أغير الرصيف في دوسلدورف، وهل وقت التبديل كافٍ؟" },
+            { "language": "tr", "text": "İlk bağlantı daha hızlı. Düsseldorf'ta peron değiştirmem gerekiyor mu ve aktarma süresi yeterli mi?" },
+            { "language": "ru", "text": "Первый маршрут быстрее. Нужно ли мне в Дюссельдорфе менять платформу, и достаточно ли времени на пересадку?" },
+            { "language": "ckb", "text": "پەیوەندیی یەکەم خێراترە. ئایا لە دوسلدۆرف دەبێت سکۆ بگۆڕم، و کاتی گۆڕین بەسە؟" },
+            { "language": "kmr", "text": "Girêdana yekem zûtir e. Ma li Düsseldorfê divê ez platformê biguherînim, û dema veguhastinê bes e?" },
+            { "language": "pl", "text": "Pierwsze połączenie jest szybsze. Czy w Düsseldorfie muszę zmienić peron i czy czas na przesiadkę wystarczy?" },
+            { "language": "ro", "text": "Prima legătură este mai rapidă. Trebuie să schimb peronul la Düsseldorf și este suficient timpul de transfer?" },
+            { "language": "sq", "text": "Lidhja e parë është më e shpejtë. A duhet të ndërroj platformën në Dyseldorf dhe a mjafton koha e ndërrimit?" }
+          ],
+          "function": "compare-and-clarify",
+          "expectedLearnerAction": "Compare the options and ask about the practical transfer risk."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Sie müssen von Gleis 5 zu Gleis 7 wechseln. Die Umsteigezeit beträgt zwölf Minuten; das ist normalerweise ausreichend.",
+          "translations": [
+            { "language": "en", "text": "You have to change from platform 5 to platform 7. The transfer time is twelve minutes; that is normally enough." },
+            { "language": "fa", "text": "باید از سکوی ۵ به سکوی ۷ بروید. زمان تعویض دوازده دقیقه است؛ معمولاً کافی است." },
+            { "language": "ar", "text": "يجب أن تنتقلي من الرصيف 5 إلى الرصيف 7. وقت التبديل اثنتا عشرة دقيقة؛ وهذا عادة كافٍ." },
+            { "language": "tr", "text": "5. perondan 7. perona geçmeniz gerekiyor. Aktarma süresi on iki dakika; bu normalde yeterlidir." },
+            { "language": "ru", "text": "Вам нужно перейти с платформы 5 на платформу 7. Время пересадки двенадцать минут; обычно этого достаточно." },
+            { "language": "ckb", "text": "دەبێت لە سکۆی ٥ بۆ سکۆی ٧ بگۆڕن. کاتی گۆڕین دوازدە خولەکە؛ بە ئاسایی بەسە." },
+            { "language": "kmr", "text": "Divê hûn ji platforma 5ê biçin platforma 7ê. Dema veguhastinê diwanzdeh xulek e; ev bi gelemperî bes e." },
+            { "language": "pl", "text": "Musi pani przejść z peronu 5 na peron 7. Czas na przesiadkę wynosi dwanaście minut; zwykle to wystarcza." },
+            { "language": "ro", "text": "Trebuie să treceți de la peronul 5 la peronul 7. Timpul de transfer este de douăsprezece minute; de obicei este suficient." },
+            { "language": "sq", "text": "Duhet të kaloni nga platforma 5 në platformën 7. Koha e ndërrimit është dymbëdhjetë minuta; zakonisht mjafton." }
+          ],
+          "function": "explain-transfer"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann nehme ich die Verbindung um 14:20 Uhr über Düsseldorf. Können Sie mir bitte noch das Abfahrtsgleis hier nennen?",
+          "translations": [
+            { "language": "en", "text": "Then I will take the connection at 2:20 p.m. via Düsseldorf. Could you please also tell me the departure platform here?" },
+            { "language": "fa", "text": "پس مسیر ساعت ۱۴:۲۰ از طریق دوسلدورف را می‌گیرم. لطفاً می‌توانید سکوی حرکت از اینجا را هم بگویید؟" },
+            { "language": "ar", "text": "إذن سآخذ الرحلة الساعة 14:20 عبر دوسلدورف. هل يمكن أن تخبرني من فضلك رصيف المغادرة هنا أيضاً؟" },
+            { "language": "tr", "text": "O zaman 14:20'de Düsseldorf üzerinden olan bağlantıyı alırım. Buradaki kalkış peronunu da söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Тогда я возьму маршрут в 14:20 через Дюссельдорф. Подскажите, пожалуйста, платформу отправления здесь?" },
+            { "language": "ckb", "text": "کەواتە پەیوەندیی ١٤:٢٠ لە ڕێگەی دوسلدۆرف دەگرم. تکایە دەتوانن سکۆی ڕۆیشتن لێرەش بڵێن؟" },
+            { "language": "kmr", "text": "Wê demê ez girêdana 14:20 bi rêya Düsseldorfê digirim. Hûn dikarin platforma çûnê ya vir jî bibêjin?" },
+            { "language": "pl", "text": "W takim razie wybiorę połączenie o 14:20 przez Düsseldorf. Czy może pan jeszcze podać peron odjazdu tutaj?" },
+            { "language": "ro", "text": "Atunci iau legătura de la 14:20 prin Düsseldorf. Îmi puteți spune, vă rog, și peronul de plecare de aici?" },
+            { "language": "sq", "text": "Atëherë do të marr lidhjen në orën 14:20 përmes Dyseldorfit. A mund të më thoni ju lutem edhe platformën e nisjes këtu?" }
+          ],
+          "function": "choose-option",
+          "expectedLearnerAction": "Choose one option and ask for the missing departure platform."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "rail-service-agent",
+          "baseText": "Der Zug fährt hier von Gleis 3 ab. Bitte achten Sie auf die Anzeige, falls sich kurzfristig etwas ändert.",
+          "translations": [
+            { "language": "en", "text": "The train departs here from platform 3. Please watch the display in case something changes at short notice." },
+            { "language": "fa", "text": "قطار از اینجا از سکوی ۳ حرکت می‌کند. لطفاً به تابلو توجه کنید، اگر در لحظه آخر چیزی تغییر کند." },
+            { "language": "ar", "text": "ينطلق القطار هنا من الرصيف 3. يرجى الانتباه إلى الشاشة في حال حدث تغيير قصير المدى." },
+            { "language": "tr", "text": "Tren buradan 3. perondan kalkıyor. Kısa süre içinde bir değişiklik olursa lütfen ekrana dikkat edin." },
+            { "language": "ru", "text": "Поезд отправляется здесь с платформы 3. Пожалуйста, следите за табло на случай краткосрочных изменений." },
+            { "language": "ckb", "text": "شەمەندەفەرەکە لێرە لە سکۆی ٣ دەڕوات. تکایە سەرنجی تابلۆکە بدەن ئەگەر لە کاتی کورتدا شتێک بگۆڕێت." },
+            { "language": "kmr", "text": "Trên li vir ji platforma 3ê diçe. Ji kerema xwe li tabloyê binêrin, heke tiştek di demeke kurt de biguhere." },
+            { "language": "pl", "text": "Pociąg odjeżdża tutaj z peronu 3. Proszę zwracać uwagę na tablicę, gdyby coś się zmieniło w ostatniej chwili." },
+            { "language": "ro", "text": "Trenul pleacă de aici de la peronul 3. Vă rugăm să urmăriți afișajul, în cazul în care ceva se schimbă pe termen scurt." },
+            { "language": "sq", "text": "Treni niset këtu nga platforma 3. Ju lutem shikoni tabelën, nëse diçka ndryshon në momentin e fundit." }
+          ],
+          "function": "give-platform"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich fahre also um 14:20 Uhr von Gleis 3 über Düsseldorf, steige dort von Gleis 5 auf Gleis 7 um und komme um 16:05 Uhr in Köln an.",
+          "translations": [
+            { "language": "en", "text": "Thank you. So I leave at 2:20 p.m. from platform 3 via Düsseldorf, change there from platform 5 to platform 7, and arrive in Cologne at 4:05 p.m." },
+            { "language": "fa", "text": "ممنون. پس ساعت ۱۴:۲۰ از سکوی ۳ از طریق دوسلدورف می‌روم، آنجا از سکوی ۵ به سکوی ۷ تعویض می‌کنم و ساعت ۱۶:۰۵ به کلن می‌رسم." },
+            { "language": "ar", "text": "شكراً. إذن أسافر الساعة 14:20 من الرصيف 3 عبر دوسلدورف، وأبدل هناك من الرصيف 5 إلى الرصيف 7، وأصل إلى كولن الساعة 16:05." },
+            { "language": "tr", "text": "Teşekkür ederim. Yani 14:20'de 3. perondan Düsseldorf üzerinden gidiyorum, orada 5. perondan 7. perona aktarma yapıyorum ve 16:05'te Köln'e varıyorum." },
+            { "language": "ru", "text": "Спасибо. Значит, я отправляюсь в 14:20 с платформы 3 через Дюссельдорф, там пересаживаюсь с платформы 5 на платформу 7 и прибываю в Кёльн в 16:05." },
+            { "language": "ckb", "text": "سوپاس. کەواتە لە ١٤:٢٠ لە سکۆی ٣ بە ڕێگەی دوسلدۆرف دەڕۆم، لەوێ لە سکۆی ٥ بۆ سکۆی ٧ دەگۆڕم و لە ١٦:٠٥ دەگەمە کۆڵن." },
+            { "language": "kmr", "text": "Spas. Wê demê ez saet 14:20 ji platforma 3ê bi rêya Düsseldorfê diçim, li wir ji platforma 5ê bo 7ê diguherim û saet 16:05 digihîjim Kölnê." },
+            { "language": "pl", "text": "Dziękuję. Czyli jadę o 14:20 z peronu 3 przez Düsseldorf, tam przesiadam się z peronu 5 na peron 7 i przyjeżdżam do Kolonii o 16:05." },
+            { "language": "ro", "text": "Mulțumesc. Deci plec la 14:20 de la peronul 3 prin Düsseldorf, schimb acolo de la peronul 5 la peronul 7 și ajung la Köln la 16:05." },
+            { "language": "sq", "text": "Faleminderit. Pra nisem në orën 14:20 nga platforma 3 përmes Dyseldorfit, aty ndërroj nga platforma 5 në platformën 7 dhe mbërrij në Këln në 16:05." }
+          ],
+          "function": "repeat-connection",
+          "expectedLearnerAction": "Repeat the final connection with departure time, platform, transfer, and arrival time."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich muss heute noch nach Köln. Können Sie mir bitte zwei mögliche Verbindungen nennen, damit ich die Ankunftszeiten vergleichen kann?",
+              "translations": [
+                { "language": "en", "text": "I still have to get to Cologne today. Could you please name two possible connections so that I can compare the arrival times?" },
+                { "language": "fa", "text": "من باید امروز حتماً به کلن برسم. لطفاً می‌توانید دو مسیر ممکن بگویید تا زمان‌های رسیدن را مقایسه کنم؟" },
+                { "language": "ar", "text": "يجب أن أصل إلى كولن اليوم. هل يمكن أن تذكر لي رحلتين ممكنتين لكي أقارن أوقات الوصول؟" },
+                { "language": "tr", "text": "Bugün hâlâ Köln'e gitmem gerekiyor. Varış saatlerini karşılaştırabilmem için bana iki olası bağlantı söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Мне нужно сегодня ещё добраться до Кёльна. Можете назвать две возможные пересадки, чтобы я сравнила время прибытия?" },
+                { "language": "ckb", "text": "دەبێت ئەمڕۆ هەر بگەمە کۆڵن. تکایە دەتوانن دوو پەیوەندیی گونجاو بڵێن بۆ ئەوەی کاتەکانی گەیشتن بەراورد بکەم؟" },
+                { "language": "kmr", "text": "Divê ez îro hê bigihîjim Kölnê. Hûn dikarin du girêdanên gengaz bibêjin da ku ez demên gihîştinê bidim ber hev?" },
+                { "language": "pl", "text": "Muszę dziś jeszcze dojechać do Kolonii. Czy może pan podać mi dwa możliwe połączenia, żebym mogła porównać godziny przyjazdu?" },
+                { "language": "ro", "text": "Trebuie să ajung astăzi la Köln. Îmi puteți spune, vă rog, două legături posibile ca să pot compara orele de sosire?" },
+                { "language": "sq", "text": "Duhet të arrij sot në Këln. A mund të më jepni ju lutem dy lidhje të mundshme që të krahasoj oraret e mbërritjes?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt Ziel und Zweck der Frage: Du willst zwei Alternativen vergleichen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer names the destination and purpose of the question: you want to compare two alternatives." },
+                { "language": "fa", "text": "این پاسخ مقصد و هدف سؤال را می‌گوید: می‌خواهی دو جایگزین را مقایسه کنی." },
+                { "language": "ar", "text": "تذكر الإجابة الوجهة وهدف السؤال: تريدين مقارنة بديلين." },
+                { "language": "tr", "text": "Cevap hedefi ve sorunun amacını belirtir: iki alternatifi karşılaştırmak istiyorsun." },
+                { "language": "ru", "text": "Ответ называет пункт назначения и цель вопроса: ты хочешь сравнить две альтернативы." },
+                { "language": "ckb", "text": "وەڵامەکە شوێنی مەبەست و ئامانجی پرسیارەکە دەڵێت: دەتەوێت دوو جێگرەوە بەراورد بکەیت." },
+                { "language": "kmr", "text": "Bersiv armanc û mebesta pirsê dibêje: tu dixwazî du alternatîfan bidî ber hev." },
+                { "language": "pl", "text": "Odpowiedź podaje cel podróży i cel pytania: chcesz porównać dwie alternatywy." },
+                { "language": "ro", "text": "Răspunsul numește destinația și scopul întrebării: vrei să compari două alternative." },
+                { "language": "sq", "text": "Përgjigjja tregon destinacionin dhe qëllimin e pyetjes: dëshiron të krahasosh dy alternativa." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich brauche einen anderen Zug nach Köln.",
+              "translations": [
+                { "language": "en", "text": "I need another train to Cologne." },
+                { "language": "fa", "text": "من به یک قطار دیگر به کلن نیاز دارم." },
+                { "language": "ar", "text": "أحتاج إلى قطار آخر إلى كولن." },
+                { "language": "tr", "text": "Köln'e başka bir trene ihtiyacım var." },
+                { "language": "ru", "text": "Мне нужен другой поезд в Кёльн." },
+                { "language": "ckb", "text": "پێویستم بە شەمەندەفەرێکی ترە بۆ کۆڵن." },
+                { "language": "kmr", "text": "Ji min re trêneke din bo Kölnê pêwîst e." },
+                { "language": "pl", "text": "Potrzebuję innego pociągu do Kolonii." },
+                { "language": "ro", "text": "Am nevoie de un alt tren spre Köln." },
+                { "language": "sq", "text": "Më duhet një tren tjetër për në Këln." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber für B1 zu knapp: Es fehlt, dass du Alternativen mit Ankunftszeiten vergleichen möchtest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too brief for B1: it does not say that you want to compare alternatives with arrival times." },
+                { "language": "fa", "text": "این قابل فهم است، اما برای B1 خیلی کوتاه است: نمی‌گوید می‌خواهی جایگزین‌ها را با زمان رسیدن مقایسه کنی." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه مختصر جداً لمستوى B1: لا يذكر أنك تريدين مقارنة البدائل مع أوقات الوصول." },
+                { "language": "tr", "text": "Bu anlaşılır, ama B1 için çok kısa: varış saatleriyle alternatifleri karşılaştırmak istediğini söylemiyor." },
+                { "language": "ru", "text": "Это понятно, но слишком кратко для B1: не сказано, что ты хочешь сравнить альтернативы по времени прибытия." },
+                { "language": "ckb", "text": "ئەمە تێدەگەی، بەڵام بۆ B1 زۆر کورتە: ناڵێت دەتەوێت جێگرەوەکان لەگەڵ کاتی گەیشتن بەراورد بکەیت." },
+                { "language": "kmr", "text": "Ev tê fêmkirin, lê ji bo B1 pir kurt e: nabêje tu dixwazî alternatîfan bi demên gihîştinê bidî ber hev." },
+                { "language": "pl", "text": "To jest zrozumiałe, ale zbyt krótkie na B1: nie mówi, że chcesz porównać alternatywy z godzinami przyjazdu." },
+                { "language": "ro", "text": "Este de înțeles, dar prea scurt pentru B1: nu spune că vrei să compari alternativele cu orele de sosire." },
+                { "language": "sq", "text": "Kjo kuptohet, por është shumë e shkurtër për B1: nuk thotë se dëshiron të krahasosh alternativat me oraret e mbërritjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die erste Verbindung ist schneller. Muss ich in Düsseldorf den Bahnsteig wechseln, und reicht die Umsteigezeit?",
+              "translations": [
+                { "language": "en", "text": "The first connection is faster. Do I have to change platforms in Düsseldorf, and is the transfer time enough?" },
+                { "language": "fa", "text": "مسیر اول سریع‌تر است. آیا در دوسلدورف باید سکو را عوض کنم و زمان تعویض کافی است؟" },
+                { "language": "ar", "text": "الرحلة الأولى أسرع. هل يجب أن أغير الرصيف في دوسلدورف، وهل وقت التبديل كافٍ؟" },
+                { "language": "tr", "text": "İlk bağlantı daha hızlı. Düsseldorf'ta peron değiştirmem gerekiyor mu ve aktarma süresi yeterli mi?" },
+                { "language": "ru", "text": "Первый маршрут быстрее. Нужно ли мне в Дюссельдорфе менять платформу, и достаточно ли времени на пересадку?" },
+                { "language": "ckb", "text": "پەیوەندیی یەکەم خێراترە. ئایا لە دوسلدۆرف دەبێت سکۆ بگۆڕم، و کاتی گۆڕین بەسە؟" },
+                { "language": "kmr", "text": "Girêdana yekem zûtir e. Ma li Düsseldorfê divê ez platformê biguherînim, û dema veguhastinê bes e?" },
+                { "language": "pl", "text": "Pierwsze połączenie jest szybsze. Czy w Düsseldorfie muszę zmienić peron i czy czas na przesiadkę wystarczy?" },
+                { "language": "ro", "text": "Prima legătură este mai rapidă. Trebuie să schimb peronul la Düsseldorf și este suficient timpul de transfer?" },
+                { "language": "sq", "text": "Lidhja e parë është më e shpejtë. A duhet të ndërroj platformën në Dyseldorf dhe a mjafton koha e ndërrimit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort vergleicht die Optionen und fragt nach dem praktischen Risiko beim Umstieg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer compares the options and asks about the practical transfer risk." },
+                { "language": "fa", "text": "این پاسخ گزینه‌ها را مقایسه می‌کند و درباره ریسک عملی هنگام تعویض می‌پرسد." },
+                { "language": "ar", "text": "تقارن الإجابة الخيارات وتسأل عن الخطر العملي عند التبديل." },
+                { "language": "tr", "text": "Cevap seçenekleri karşılaştırır ve aktarmadaki pratik riski sorar." },
+                { "language": "ru", "text": "Ответ сравнивает варианты и спрашивает о практическом риске при пересадке." },
+                { "language": "ckb", "text": "وەڵامەکە هەڵبژاردەکان بەراورد دەکات و دەربارەی مەترسیی کرداری لە گۆڕیندا دەپرسێت." },
+                { "language": "kmr", "text": "Bersiv vebijarkan dide ber hev û li ser xetera pratîk a veguhastinê dipirse." },
+                { "language": "pl", "text": "Odpowiedź porównuje opcje i pyta o praktyczne ryzyko przy przesiadce." },
+                { "language": "ro", "text": "Răspunsul compară opțiunile și întreabă despre riscul practic la schimbare." },
+                { "language": "sq", "text": "Përgjigjja krahason opsionet dhe pyet për rrezikun praktik gjatë ndërrimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann nehme ich die erste Verbindung.",
+              "translations": [
+                { "language": "en", "text": "Then I will take the first connection." },
+                { "language": "fa", "text": "پس مسیر اول را می‌گیرم." },
+                { "language": "ar", "text": "إذن سآخذ الرحلة الأولى." },
+                { "language": "tr", "text": "O zaman ilk bağlantıyı alırım." },
+                { "language": "ru", "text": "Тогда я возьму первый маршрут." },
+                { "language": "ckb", "text": "کەواتە پەیوەندیی یەکەم دەگرم." },
+                { "language": "kmr", "text": "Wê demê ez girêdana yekem digirim." },
+                { "language": "pl", "text": "W takim razie wybiorę pierwsze połączenie." },
+                { "language": "ro", "text": "Atunci iau prima legătură." },
+                { "language": "sq", "text": "Atëherë do të marr lidhjen e parë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist eine Entscheidung, aber ohne Frage zum Umstieg. Bei Ausfall und Ersatzverbindung ist das zu wenig abgesichert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a decision, but without a transfer question. With a cancellation and replacement connection, that is not secure enough." },
+                { "language": "fa", "text": "این یک تصمیم است، اما بدون سؤال درباره تعویض. در حالت لغو و مسیر جایگزین، این کافی مطمئن نیست." },
+                { "language": "ar", "text": "هذا قرار، لكنه من دون سؤال عن التبديل. عند الإلغاء والرحلة البديلة هذا غير كافٍ للتأكد." },
+                { "language": "tr", "text": "Bu bir karar, ama aktarma sorusu yok. İptal ve yedek bağlantıda bu yeterince güvenli değil." },
+                { "language": "ru", "text": "Это решение, но без вопроса о пересадке. При отмене и заменяющем маршруте этого недостаточно надёжно." },
+                { "language": "ckb", "text": "ئەمە بڕیارێکە، بەڵام بێ پرسیار دەربارەی گۆڕین. لە هەڵوەشاندنەوە و پەیوەندیی جێگرەوەدا ئەمە بەس دڵنیا نییە." },
+                { "language": "kmr", "text": "Ev biryar e, lê bê pirsa veguhastinê. Di betalkirin û girêdana cîgir de ev têra ewlehiyê nake." },
+                { "language": "pl", "text": "To jest decyzja, ale bez pytania o przesiadkę. Przy odwołaniu i połączeniu zastępczym to za mało pewne." },
+                { "language": "ro", "text": "Este o decizie, dar fără întrebare despre schimbare. La o anulare și o legătură de înlocuire nu este suficient de sigur." },
+                { "language": "sq", "text": "Ky është një vendim, por pa pyetje për ndërrimin. Me anulim dhe lidhje zëvendësuese, kjo nuk është mjaft e sigurt." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke. Ich fahre also um 14:20 Uhr von Gleis 3 über Düsseldorf, steige dort von Gleis 5 auf Gleis 7 um und komme um 16:05 Uhr in Köln an.",
+              "translations": [
+                { "language": "en", "text": "Thank you. So I leave at 2:20 p.m. from platform 3 via Düsseldorf, change there from platform 5 to platform 7, and arrive in Cologne at 4:05 p.m." },
+                { "language": "fa", "text": "ممنون. پس ساعت ۱۴:۲۰ از سکوی ۳ از طریق دوسلدورف می‌روم، آنجا از سکوی ۵ به سکوی ۷ تعویض می‌کنم و ساعت ۱۶:۰۵ به کلن می‌رسم." },
+                { "language": "ar", "text": "شكراً. إذن أسافر الساعة 14:20 من الرصيف 3 عبر دوسلدورف، وأبدل هناك من الرصيف 5 إلى الرصيف 7، وأصل إلى كولن الساعة 16:05." },
+                { "language": "tr", "text": "Teşekkür ederim. Yani 14:20'de 3. perondan Düsseldorf üzerinden gidiyorum, orada 5. perondan 7. perona aktarma yapıyorum ve 16:05'te Köln'e varıyorum." },
+                { "language": "ru", "text": "Спасибо. Значит, я отправляюсь в 14:20 с платформы 3 через Дюссельдорф, там пересаживаюсь с платформы 5 на платформу 7 и прибываю в Кёльн в 16:05." },
+                { "language": "ckb", "text": "سوپاس. کەواتە لە ١٤:٢٠ لە سکۆی ٣ بە ڕێگەی دوسلدۆرف دەڕۆم، لەوێ لە سکۆی ٥ بۆ سکۆی ٧ دەگۆڕم و لە ١٦:٠٥ دەگەمە کۆڵن." },
+                { "language": "kmr", "text": "Spas. Wê demê ez saet 14:20 ji platforma 3ê bi rêya Düsseldorfê diçim, li wir ji platforma 5ê bo 7ê diguherim û saet 16:05 digihîjim Kölnê." },
+                { "language": "pl", "text": "Dziękuję. Czyli jadę o 14:20 z peronu 3 przez Düsseldorf, tam przesiadam się z peronu 5 na peron 7 i przyjeżdżam do Kolonii o 16:05." },
+                { "language": "ro", "text": "Mulțumesc. Deci plec la 14:20 de la peronul 3 prin Düsseldorf, schimb acolo de la peronul 5 la peronul 7 și ajung la Köln la 16:05." },
+                { "language": "sq", "text": "Faleminderit. Pra nisem në orën 14:20 nga platforma 3 përmes Dyseldorfit, aty ndërroj nga platforma 5 në platformën 7 dhe mbërrij në Këln në 16:05." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort wiederholt alle wichtigen Daten der Ersatzverbindung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer repeats all important details of the replacement connection." },
+                { "language": "fa", "text": "این پاسخ همه اطلاعات مهم مسیر جایگزین را تکرار می‌کند." },
+                { "language": "ar", "text": "تكرر الإجابة كل المعلومات المهمة عن الرحلة البديلة." },
+                { "language": "tr", "text": "Cevap yedek bağlantının tüm önemli bilgilerini tekrar eder." },
+                { "language": "ru", "text": "Ответ повторяет все важные данные заменяющего маршрута." },
+                { "language": "ckb", "text": "وەڵامەکە هەموو زانیارییە گرنگەکانی پەیوەندیی جێگرەوە دووبارە دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv hemû agahiyên girîng ên girêdana cîgir dubare dike." },
+                { "language": "pl", "text": "Odpowiedź powtarza wszystkie ważne dane połączenia zastępczego." },
+                { "language": "ro", "text": "Răspunsul repetă toate datele importante ale conexiunii de înlocuire." },
+                { "language": "sq", "text": "Përgjigjja përsërit të gjitha të dhënat e rëndësishme të lidhjes zëvendësuese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann nehme ich den Zug um 14:20 Uhr.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will take the train at 2:20 p.m." },
+                { "language": "fa", "text": "ممنون، پس قطار ساعت ۱۴:۲۰ را می‌گیرم." },
+                { "language": "ar", "text": "شكراً، إذن سآخذ القطار الساعة 14:20." },
+                { "language": "tr", "text": "Teşekkürler, o zaman 14:20 trenine binerim." },
+                { "language": "ru", "text": "Спасибо, тогда я возьму поезд в 14:20." },
+                { "language": "ckb", "text": "سوپاس، کەواتە شەمەندەفەری ١٤:٢٠ دەگرم." },
+                { "language": "kmr", "text": "Spas, wê demê ez trêna 14:20 digirim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie wezmę pociąg o 14:20." },
+                { "language": "ro", "text": "Mulțumesc, atunci iau trenul de la 14:20." },
+                { "language": "sq", "text": "Faleminderit, atëherë do të marr trenin në 14:20." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das nennt die Abfahrtszeit, aber Gleis, Umstieg und Ankunftszeit fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This names the departure time, but platform, transfer, and arrival time are missing." },
+                { "language": "fa", "text": "این زمان حرکت را می‌گوید، اما سکو، تعویض و زمان رسیدن کم دارد." },
+                { "language": "ar", "text": "هذا يذكر وقت المغادرة، لكن الرصيف والتبديل ووقت الوصول مفقودة." },
+                { "language": "tr", "text": "Bu kalkış saatini söyler, ama peron, aktarma ve varış saati eksik." },
+                { "language": "ru", "text": "Это называет время отправления, но не хватает платформы, пересадки и времени прибытия." },
+                { "language": "ckb", "text": "ئەمە کاتی ڕۆیشتن دەڵێت، بەڵام سکۆ، گۆڕین و کاتی گەیشتن کەمە." },
+                { "language": "kmr", "text": "Ev dema çûnê dibêje, lê platform, veguhastin û dema gihîştinê kêm in." },
+                { "language": "pl", "text": "To podaje godzinę odjazdu, ale brakuje peronu, przesiadki i godziny przyjazdu." },
+                { "language": "ro", "text": "Aceasta numește ora plecării, dar lipsesc peronul, schimbarea și ora sosirii." },
+                { "language": "sq", "text": "Kjo përmend orën e nisjes, por mungojnë platforma, ndërrimi dhe ora e mbërritjes." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criterion",
+          "text": "B1-Ziel: Bei Zugausfall sollten Ziel, Alternativen, Umstieg, Gleis und Ankunftszeit aktiv geklärt werden.",
+          "translations": [
+            { "language": "en", "text": "B1 target: after a train cancellation, destination, alternatives, transfer, platform, and arrival time should be actively clarified." },
+            { "language": "fa", "text": "هدف B1: هنگام لغو قطار باید مقصد، جایگزین‌ها، تعویض، سکو و زمان رسیدن را فعالانه روشن کرد." },
+            { "language": "ar", "text": "هدف B1: عند إلغاء القطار يجب توضيح الوجهة والبدائل والتبديل والرصيف ووقت الوصول بشكل نشط." },
+            { "language": "tr", "text": "B1 hedefi: tren iptalinde hedef, alternatifler, aktarma, peron ve varış saati aktif olarak netleştirilmelidir." },
+            { "language": "ru", "text": "Цель B1: при отмене поезда нужно активно уточнить пункт назначения, альтернативы, пересадку, платформу и время прибытия." },
+            { "language": "ckb", "text": "ئامانجی B1: لە هەڵوەشاندنەوەی شەمەندەفەردا دەبێت مەبەست، جێگرەوەکان، گۆڕین، سکۆ و کاتی گەیشتن بە چاالکی ڕوون بکرێنەوە." },
+            { "language": "kmr", "text": "Armanca B1: piştî betalkirina trênê divê armanc, alternatîf, veguhastin, platform û dema gihîştinê bi çalakî werin zelalkirin." },
+            { "language": "pl", "text": "Cel B1: przy odwołaniu pociągu trzeba aktywnie wyjaśnić cel, alternatywy, przesiadkę, peron i czas przyjazdu." },
+            { "language": "ro", "text": "Ținta B1: la anularea trenului trebuie clarificate activ destinația, alternativele, schimbarea, peronul și ora sosirii." },
+            { "language": "sq", "text": "Qëllimi B1: pas anulimit të trenit duhet të sqarohen aktivisht destinacioni, alternativat, ndërrimi, platforma dhe ora e mbërritjes." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

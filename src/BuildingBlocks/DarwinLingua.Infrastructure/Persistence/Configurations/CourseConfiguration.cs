@@ -14,6 +14,8 @@ internal sealed class CoursePathConfiguration : IEntityTypeConfiguration<CourseP
         builder.Property(course => course.Slug).HasMaxLength(128).IsRequired();
         builder.Property(course => course.Title).HasMaxLength(256).IsRequired();
         builder.Property(course => course.Description).HasMaxLength(2000).IsRequired();
+        builder.Property(course => course.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(course => course.DescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(course => course.CefrLevel).HasConversion<string>().HasMaxLength(8);
         builder.Property(course => course.CefrRange).HasMaxLength(32).IsRequired();
         builder.Property(course => course.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
@@ -38,6 +40,8 @@ internal sealed class CourseModuleConfiguration : IEntityTypeConfiguration<Cours
         builder.Property(module => module.Slug).HasMaxLength(128).IsRequired();
         builder.Property(module => module.Title).HasMaxLength(256).IsRequired();
         builder.Property(module => module.Description).HasMaxLength(2000).IsRequired();
+        builder.Property(module => module.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(module => module.DescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(module => module.ModuleNumber).IsRequired();
         builder.Property(module => module.CefrLevel).HasConversion<string>().HasMaxLength(8).IsRequired();
         builder.Property(module => module.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
@@ -65,9 +69,13 @@ internal sealed class CourseLessonConfiguration : IEntityTypeConfiguration<Cours
         builder.Property(lesson => lesson.Title).HasMaxLength(256).IsRequired();
         builder.Property(lesson => lesson.ShortDescription).HasMaxLength(1000).IsRequired();
         builder.Property(lesson => lesson.Narrative).HasMaxLength(4000).IsRequired();
+        builder.Property(lesson => lesson.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(lesson => lesson.ShortDescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(lesson => lesson.NarrativeTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.CefrLevel).HasConversion<string>().HasMaxLength(8).IsRequired();
         builder.Property(lesson => lesson.EstimatedMinutes).IsRequired();
         builder.Property(lesson => lesson.LearningGoalsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(lesson => lesson.LearningGoalsTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.PrerequisiteLessonSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.NextLessonSlug).HasMaxLength(128);
         builder.Property(lesson => lesson.LinkedGrammarTopicSlugsJson).HasColumnType("TEXT").IsRequired();
@@ -79,6 +87,8 @@ internal sealed class CourseLessonConfiguration : IEntityTypeConfiguration<Cours
         builder.Property(lesson => lesson.LinkedExamPrepSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.ReviewSummary).HasMaxLength(2000);
         builder.Property(lesson => lesson.HomeworkTask).HasMaxLength(2000);
+        builder.Property(lesson => lesson.ReviewSummaryTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(lesson => lesson.HomeworkTaskTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
         builder.Property(lesson => lesson.SortOrder).IsRequired();
         builder.Property(lesson => lesson.CreatedAtUtc).IsRequired();

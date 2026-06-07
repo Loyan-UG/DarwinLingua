@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-38-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 38 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 38",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-mit-der-krankenkasse-eine-ablehnung-besprechen",
+      "linkedDialogueSlug": null,
+      "title": "Mit der Krankenkasse eine Ablehnung besprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing a rejection with the health insurance fund" },
+        { "language": "fa", "text": "گفت‌وگو با بیمه درمانی درباره رد شدن درخواست" },
+        { "language": "ar", "text": "مناقشة رفض مع صندوق التأمين الصحي" },
+        { "language": "tr", "text": "Sağlık sigortasıyla bir ret kararını görüşmek" },
+        { "language": "ru", "text": "Обсуждение отказа с медицинской страховой кассой" },
+        { "language": "ckb", "text": "گفتوگۆ لەگەڵ بیمەی تەندروستی دەربارەی ڕەتکردنەوە" },
+        { "language": "kmr", "text": "Bi sîgorta tenduristiyê re redkirinek nîqaş kirin" },
+        { "language": "pl", "text": "Omówienie odmowy z kasą chorych" },
+        { "language": "ro", "text": "Discutarea unui refuz cu casa de asigurări de sănătate" },
+        { "language": "sq", "text": "Diskutimi i një refuzimi me sigurimin shëndetësor" }
+      ],
+      "description": "Sie rufen bei Ihrer Krankenkasse an, weil ein Antrag auf Kostenübernahme abgelehnt wurde. Sie fragen nach der genauen Begründung, fehlenden Unterlagen, Fristen und dem passenden Weg für eine sachliche Überprüfung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call your health insurance fund because an application for cost coverage was rejected. You ask about the exact reasons, missing documents, deadlines, and the appropriate route for a factual review." },
+        { "language": "fa", "text": "شما با بیمه درمانی تماس می‌گیرید چون درخواست پوشش هزینه رد شده است. درباره دلیل دقیق، مدارک ناقص، مهلت‌ها و مسیر مناسب برای بازبینی عینی سؤال می‌کنید." },
+        { "language": "ar", "text": "تتصل بصندوق التأمين الصحي لأن طلب تغطية التكاليف رُفض. تسأل عن السبب الدقيق والوثائق الناقصة والمواعيد النهائية والطريق المناسب لمراجعة موضوعية." },
+        { "language": "tr", "text": "Masraf karşılaması başvurusu reddedildiği için sağlık sigortanızı arıyorsunuz. Kesin gerekçe, eksik belgeler, süreler ve nesnel inceleme için uygun yol hakkında soruyorsunuz." },
+        { "language": "ru", "text": "Вы звоните в свою медицинскую страховую кассу, потому что заявление на покрытие расходов было отклонено. Вы спрашиваете о точном обосновании, недостающих документах, сроках и подходящем пути для фактической проверки." },
+        { "language": "ckb", "text": "پەیوەندی بە بیمەی تەندروستییەکەت دەکەیت، چونکە داواکاری دابینکردنی تێچوون ڕەتکراوەتەوە. دەربارەی هۆکاری ورد، بەڵگەی کەم، مۆڵەتەکان و ڕێگای گونجاو بۆ پێداچوونەوەی بابەتی دەپرسیت." },
+        { "language": "kmr", "text": "Hûn telefonî sîgorta xwe ya tenduristiyê dikin, ji ber ku daxwaza dayîna lêçûnê hatî red kirin. Hûn li ser sedema rast, belgeyên kêm, demên dawî û rêya guncaw ji bo vekolîna rastî dipirsin." },
+        { "language": "pl", "text": "Dzwoni Pan do swojej kasy chorych, ponieważ wniosek o pokrycie kosztów został odrzucony. Pyta Pan o dokładne uzasadnienie, brakujące dokumenty, terminy i właściwą drogę rzeczowej weryfikacji." },
+        { "language": "ro", "text": "Sunați la casa de asigurări de sănătate deoarece o cerere de acoperire a costurilor a fost respinsă. Întrebați despre motivarea exactă, documentele lipsă, termenele și calea potrivită pentru o verificare factuală." },
+        { "language": "sq", "text": "Telefononi sigurimin tuaj shëndetësor sepse një kërkesë për mbulimin e kostove është refuzuar. Pyesni për arsyetimin e saktë, dokumentet që mungojnë, afatet dhe rrugën e duhur për rishqyrtim faktik." }
+      ],
+      "learnerGoal": "Eine Ablehnung sachlich besprechen: Aktenzeichen nennen, Begründung und fehlende Nachweise erfragen, Fristen klären und einen überprüfbaren nächsten Schritt formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss a rejection factually: state the file number, ask about the reasons and missing evidence, clarify deadlines, and formulate a reviewable next step." },
+        { "language": "fa", "text": "رد شدن درخواست را عینی مطرح کنید: شماره پرونده را بگویید، دلیل و مدارک ناقص را بپرسید، مهلت‌ها را روشن کنید و گام بعدی قابل بررسی را بیان کنید." },
+        { "language": "ar", "text": "ناقش الرفض بشكل موضوعي: اذكر رقم الملف، واسأل عن السبب والأدلة الناقصة، ووضح المواعيد النهائية، وصغ خطوة تالية قابلة للمراجعة." },
+        { "language": "tr", "text": "Bir ret kararını nesnel görüşün: dosya numarasını belirtin, gerekçe ve eksik kanıtları sorun, süreleri netleştirin ve incelenebilir bir sonraki adımı formüle edin." },
+        { "language": "ru", "text": "Фактически обсудить отказ: назвать номер дела, спросить об обосновании и недостающих доказательствах, уточнить сроки и сформулировать проверяемый следующий шаг." },
+        { "language": "ckb", "text": "ڕەتکردنەوەیەک بە بابەتی گفتوگۆ بکە: ژمارەی پەڕگە بڵێ، هۆکار و بەڵگەی کەم بپرسە، مۆڵەتەکان ڕوون بکەوە و هەنگاوێکی دواتری پێداچوونەوەکراو دەرببڕە." },
+        { "language": "kmr", "text": "Redkirinek bi rastî nîqaş bikin: jimareya pelê bibêjin, li ser sedem û belgeyên kêm bipirsin, demên dawî zelal bikin û gaveke paşîn a vekolînbar formul bikin." },
+        { "language": "pl", "text": "Rzeczowo omówić odmowę: podać numer sprawy, zapytać o uzasadnienie i brakujące dowody, wyjaśnić terminy oraz sformułować weryfikowalny następny krok." },
+        { "language": "ro", "text": "Discutați factual un refuz: menționați numărul dosarului, întrebați despre motivare și dovezile lipsă, clarificați termenele și formulați un pas următor verificabil." },
+        { "language": "sq", "text": "Diskutoni faktikisht një refuzim: jepni numrin e dosjes, pyesni për arsyen dhe provat që mungojnë, sqaroni afatet dhe formuloni një hap të ardhshëm të verifikueshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "health",
+      "topics": ["appointments-and-health", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "complain-politely",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 38,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Versicherte/r",
+          "translations": [
+            { "language": "en", "text": "Insured person" },
+            { "language": "fa", "text": "بیمه‌شده" },
+            { "language": "ar", "text": "المؤمَّن عليه" },
+            { "language": "tr", "text": "Sigortalı kişi" },
+            { "language": "ru", "text": "Застрахованное лицо" },
+            { "language": "ckb", "text": "بیمەکراو" },
+            { "language": "kmr", "text": "Kesê sîgortekirî" },
+            { "language": "pl", "text": "Osoba ubezpieczona" },
+            { "language": "ro", "text": "Persoană asigurată" },
+            { "language": "sq", "text": "Person i siguruar" }
+          ]
+        },
+        {
+          "roleKey": "insurance-agent",
+          "displayName": "Mitarbeiterin der Krankenkasse",
+          "translations": [
+            { "language": "en", "text": "Health insurance employee" },
+            { "language": "fa", "text": "کارمند بیمه درمانی" },
+            { "language": "ar", "text": "موظفة صندوق التأمين الصحي" },
+            { "language": "tr", "text": "Sağlık sigortası çalışanı" },
+            { "language": "ru", "text": "Сотрудница страховой кассы" },
+            { "language": "ckb", "text": "کارمەندی بیمەی تەندروستی" },
+            { "language": "kmr", "text": "Karmenda sîgorta tenduristiyê" },
+            { "language": "pl", "text": "Pracownica kasy chorych" },
+            { "language": "ro", "text": "Angajată a casei de asigurări" },
+            { "language": "sq", "text": "Punonjëse e sigurimit shëndetësor" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "insurance-agent",
+          "baseText": "Guten Tag, Sie sprechen mit der Krankenkasse. Wobei kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "Good day, you are speaking with the health insurance fund. How can I help you?" },
+            { "language": "fa", "text": "روز بخیر، با بیمه درمانی صحبت می‌کنید. چطور می‌توانم کمک کنم؟" },
+            { "language": "ar", "text": "نهارك سعيد، أنت تتحدث مع صندوق التأمين الصحي. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "İyi günler, sağlık sigortasıyla görüşüyorsunuz. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день, вы говорите с медицинской страховой кассой. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، لەگەڵ بیمەی تەندروستی قسە دەکەیت. چۆن دەتوانم یارمەتیت بدەم؟" },
+            { "language": "kmr", "text": "Roj baş, hûn bi sîgorta tenduristiyê re diaxivin. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Dzień dobry, rozmawia Pan z kasą chorych. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Bună ziua, vorbiți cu casa de asigurări de sănătate. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, po flisni me sigurimin shëndetësor. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "phone-opening",
+          "toneNote": "formal",
+          "expectedLearnerAction": "Anliegen mit Aktenzeichen eröffnen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich rufe wegen des Bescheids vom 14. Mai an, Aktenzeichen K-4827. Mein Antrag auf Kostenübernahme für eine ambulante Rehabilitation wurde abgelehnt. Ich möchte nicht einfach widersprechen, sondern zuerst genau verstehen, auf welche Gründe sich die Ablehnung stützt.",
+          "translations": [
+            { "language": "en", "text": "Good day. I am calling about the notice dated May 14, file number K-4827. My application for coverage of outpatient rehabilitation was rejected. I do not simply want to object; first I want to understand exactly which reasons the rejection is based on." },
+            { "language": "fa", "text": "روز بخیر. درباره نامه تصمیم مورخ ۱۴ مه تماس می‌گیرم، شماره پرونده K-4827. درخواست من برای پوشش هزینه توان‌بخشی سرپایی رد شده است. نمی‌خواهم فقط اعتراض کنم؛ اول می‌خواهم دقیق بفهمم رد شدن بر چه دلایلی تکیه دارد." },
+            { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص القرار بتاريخ 14 مايو، رقم الملف K-4827. رُفض طلبي لتغطية تكاليف إعادة تأهيل خارجية. لا أريد أن أقدم اعتراضاً مباشرة؛ أريد أولاً أن أفهم بدقة على أي أسباب يستند الرفض." },
+            { "language": "tr", "text": "İyi günler. 14 Mayıs tarihli karar için arıyorum, dosya numarası K-4827. Ayakta rehabilitasyon masraflarının karşılanması başvurum reddedildi. Sadece itiraz etmek istemiyorum; önce reddin tam olarak hangi gerekçelere dayandığını anlamak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я звоню по поводу решения от 14 мая, номер дела K-4827. Моё заявление на покрытие амбулаторной реабилитации было отклонено. Я не хочу просто подавать возражение; сначала хочу точно понять, на каких основаниях основан отказ." },
+            { "language": "ckb", "text": "ڕۆژ باش. دەربارەی بڕیارنامەی ١٤ی مانگی مەی پەیوەندی دەکەم، ژمارەی پەڕگە K-4827. داواکارییەکەم بۆ دابینکردنی تێچووی ڕیهابێلیتەیشنی دەرەوەی نەخۆشخانە ڕەتکراوەتەوە. نامەوێت تەنها نارەزایی پێشکەش بکەم؛ سەرەتا دەمەوێت بە وردی تێبگەم ڕەتکردنەوەکە لەسەر کام هۆکارەکان دامەزراوە." },
+            { "language": "kmr", "text": "Roj baş. Ez ji bo biryara 14ê Gulanê telefon dikim, jimareya pelê K-4827. Daxwaza min ji bo dayîna lêçûna rehabîlîtasyona derveyî nexweşxaneyê hat red kirin. Ez naxwazim tenê nerazîbûn bidim; pêşî dixwazim bi rastî fêm bikim redkirin li ser kîjan sedeman hatiye avakirin." },
+            { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie decyzji z 14 maja, numer sprawy K-4827. Mój wniosek o pokrycie kosztów rehabilitacji ambulatoryjnej został odrzucony. Nie chcę po prostu składać sprzeciwu; najpierw chcę dokładnie zrozumieć, na jakich powodach opiera się odmowa." },
+            { "language": "ro", "text": "Bună ziua. Sun în legătură cu decizia din 14 mai, numărul dosarului K-4827. Cererea mea de acoperire a costurilor pentru o reabilitare ambulatorie a fost respinsă. Nu vreau pur și simplu să contest; mai întâi vreau să înțeleg exact pe ce motive se bazează refuzul." },
+            { "language": "sq", "text": "Mirëdita. Po telefonoj për vendimin e datës 14 maj, numri i dosjes K-4827. Kërkesa ime për mbulimin e kostos së rehabilitimit ambulator është refuzuar. Nuk dua thjesht të kundërshtoj; së pari dua të kuptoj saktësisht mbi cilat arsye mbështetet refuzimi." }
+          ],
+          "function": "case-opening",
+          "toneNote": "sachlich, nicht konfrontativ",
+          "expectedLearnerAction": "Bescheid, Aktenzeichen und Ziel nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "insurance-agent",
+          "baseText": "Ich sehe den Vorgang. Im Bescheid steht, dass die medizinische Notwendigkeit nach Aktenlage nicht ausreichend belegt sei. Welche Frage haben Sie dazu konkret?",
+          "translations": [
+            { "language": "en", "text": "I can see the case. The notice says that the medical necessity is not sufficiently documented based on the file. What specific question do you have about that?" },
+            { "language": "fa", "text": "پرونده را می‌بینم. در تصمیم نوشته شده که ضرورت پزشکی بر اساس مدارک پرونده به اندازه کافی ثابت نشده است. سؤال مشخص شما درباره آن چیست؟" },
+            { "language": "ar", "text": "أرى الملف. ورد في القرار أن الضرورة الطبية غير مثبتة بشكل كافٍ حسب الملف. ما سؤالك المحدد حول ذلك؟" },
+            { "language": "tr", "text": "Dosyayı görüyorum. Kararda, dosya durumuna göre tıbbi gerekliliğin yeterince belgelenmediği yazıyor. Bununla ilgili somut sorunuz nedir?" },
+            { "language": "ru", "text": "Я вижу дело. В решении указано, что медицинская необходимость по материалам дела недостаточно подтверждена. Какой у вас конкретный вопрос по этому поводу?" },
+            { "language": "ckb", "text": "پەڕگەکە دەبینم. لە بڕیارنامەکەدا نووسراوە کە پێویستی پزیشکی بە پێی پەڕگە بە تەواوی پشتڕاست نەکراوەتەوە. پرسیاری دیاریکراوت دەربارەی ئەمە چییە؟" },
+            { "language": "kmr", "text": "Ez dosyayê dibînim. Di biryarê de hatiye nivîsîn ku pêwîstiya bijîşkî li gor pelan bi têrî nehatiye belgekirin. Pirsa we ya konkret li ser vê çi ye?" },
+            { "language": "pl", "text": "Widzę sprawę. W decyzji napisano, że konieczność medyczna według akt nie jest wystarczająco udokumentowana. Jakie konkretne pytanie ma Pan do tego?" },
+            { "language": "ro", "text": "Văd cazul. În decizie scrie că necesitatea medicală nu este suficient dovedită pe baza dosarului. Ce întrebare concretă aveți despre asta?" },
+            { "language": "sq", "text": "E shoh çështjen. Në vendim thuhet se nevoja mjekësore sipas dosjes nuk është dokumentuar mjaftueshëm. Cila është pyetja juaj konkrete për këtë?" }
+          ],
+          "function": "rejection-reason",
+          "toneNote": "formal, aktenbezogen",
+          "expectedLearnerAction": "Begründung und Nachweise präzisieren"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Meine Frage ist, ob es um fehlende Befunde, um die Begründung der Ärztin oder um nicht ausgeschöpfte Vorbehandlungen geht. Im Bescheid wird das nur allgemein formuliert. Für eine sinnvolle Ergänzung müsste ich wissen, welche konkrete Lücke die Kasse sieht.",
+          "translations": [
+            { "language": "en", "text": "My question is whether this is about missing findings, the doctor's justification, or previous treatments that have not been exhausted. The notice phrases this only generally. For a useful supplement, I would need to know which concrete gap the fund sees." },
+            { "language": "fa", "text": "سؤال من این است که موضوع مدارک پزشکی ناقص است، توضیح پزشک است، یا درمان‌های قبلی‌ای که کامل امتحان نشده‌اند. در نامه تصمیم این فقط کلی نوشته شده است. برای تکمیل مفید، باید بدانم بیمه دقیقاً چه شکافی می‌بیند." },
+            { "language": "ar", "text": "سؤالي هو هل يتعلق الأمر بنتائج طبية ناقصة، أم بتبرير الطبيبة، أم بعلاجات سابقة لم تُستنفد. في القرار صيغ ذلك بشكل عام فقط. لكي أضيف شيئاً مفيداً، يجب أن أعرف أي فجوة محددة تراها الصندوق." },
+            { "language": "tr", "text": "Sorum şu: konu eksik bulgular mı, doktorun gerekçesi mi, yoksa tüketilmemiş önceki tedaviler mi? Kararda bu sadece genel olarak ifade edilmiş. Anlamlı bir ekleme için sigortanın hangi somut boşluğu gördüğünü bilmem gerekir." },
+            { "language": "ru", "text": "Мой вопрос в том, идёт ли речь о недостающих результатах, об обосновании врача или о неиспользованных предварительных методах лечения. В решении это сформулировано лишь общо. Для полезного дополнения мне нужно знать, какой конкретный пробел видит касса." },
+            { "language": "ckb", "text": "پرسیارەکەم ئەوەیە ئایا بابەتەکە بەڵگەی پزیشکی کەمە، یان پاساوی پزیشکەکە، یان چارەسەرە پێشووترەکانە کە تەواو تاقی نەکراونەتەوە. لە بڕیارنامەکەدا ئەمە تەنها بە گشتی نووسراوە. بۆ تەواوکارییەکی بەسوود پێویستمە بزانم بیمەکە بە دیاریکراوی کام بۆشایی دەبینێت." },
+            { "language": "kmr", "text": "Pirsa min ev e ka mijar belgeyên bijîşkî yên kêm in, sedemkirina doktorê ye, an dermankirinên berê ku hêj temam nehatine ceribandin. Di biryarê de ev tenê bi giştî hatiye gotin. Ji bo zêdekirineke bikêr, divê ez bizanim sîgorta kîjan valahiya konkret dibîne." },
+            { "language": "pl", "text": "Moje pytanie brzmi, czy chodzi o brakujące wyniki, uzasadnienie lekarki, czy o niewyczerpane wcześniejsze leczenie. W decyzji sformułowano to tylko ogólnie. Aby sensownie uzupełnić dokumenty, musiałbym wiedzieć, jaką konkretną lukę widzi kasa." },
+            { "language": "ro", "text": "Întrebarea mea este dacă este vorba despre rezultate lipsă, despre motivarea medicului sau despre tratamente anterioare neepuizate. În decizie acest lucru este formulat doar general. Pentru o completare utilă ar trebui să știu ce gol concret vede casa." },
+            { "language": "sq", "text": "Pyetja ime është nëse bëhet fjalë për rezultate mjekësore që mungojnë, për arsyetimin e mjekes apo për trajtime të mëparshme që nuk janë shteruar. Në vendim kjo është formuluar vetëm në përgjithësi. Për një plotësim të dobishëm duhet të di cilin boshllëk konkret sheh sigurimi." }
+          ],
+          "function": "clarify-gap",
+          "toneNote": "präzise, verwaltungsorientiert",
+          "expectedLearnerAction": "Unklare Begründung in konkrete Nachweisfrage übersetzen"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "insurance-agent",
+          "baseText": "Nach dem Vermerk des Medizinischen Dienstes fehlen vor allem Angaben dazu, welche ambulanten Maßnahmen bereits durchgeführt wurden und warum diese nicht ausreichen.",
+          "translations": [
+            { "language": "en", "text": "According to the note from the Medical Service, the main missing information concerns which outpatient measures have already been carried out and why they are not sufficient." },
+            { "language": "fa", "text": "بر اساس یادداشت خدمات پزشکی، عمدتاً اطلاعاتی کم است که چه اقدامات سرپایی قبلاً انجام شده‌اند و چرا کافی نیستند." },
+            { "language": "ar", "text": "بحسب ملاحظة الخدمة الطبية، تنقص خصوصاً معلومات حول الإجراءات الخارجية التي نُفذت بالفعل ولماذا لا تكفي." },
+            { "language": "tr", "text": "Tıbbi Hizmet'in notuna göre özellikle hangi ayakta tedavi önlemlerinin zaten yapıldığı ve bunların neden yeterli olmadığına dair bilgiler eksik." },
+            { "language": "ru", "text": "Согласно пометке Медицинской службы, прежде всего отсутствуют сведения о том, какие амбулаторные меры уже проводились и почему они недостаточны." },
+            { "language": "ckb", "text": "بەپێی تێبینی خزمەتی پزیشکی، بە تایبەتی زانیاری لەسەر ئەوە کەمە کە کام هەنگاوە دەرەوەی نەخۆشخانە پێشتر ئەنجام دراون و بۆچی بەس نین." },
+            { "language": "kmr", "text": "Li gor nîşeya Xizmeta Bijîşkî, bi taybetî agahî kêm in ka kîjan tedbîrên derveyî nexweşxaneyê jixwe hatine kirin û çima ew têr nakin." },
+            { "language": "pl", "text": "Według notatki Służby Medycznej brakuje przede wszystkim danych o tym, jakie działania ambulatoryjne zostały już przeprowadzone i dlaczego nie są wystarczające." },
+            { "language": "ro", "text": "Potrivit notei Serviciului Medical, lipsesc mai ales informații despre ce măsuri ambulatorii au fost deja efectuate și de ce nu sunt suficiente." },
+            { "language": "sq", "text": "Sipas shënimit të Shërbimit Mjekësor, mungojnë kryesisht të dhëna se cilat masa ambulatore janë kryer tashmë dhe pse ato nuk mjaftojnë." }
+          ],
+          "function": "missing-evidence",
+          "toneNote": "aktenbezogen",
+          "expectedLearnerAction": "Bestehende Maßnahmen und Belege nennen"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das hilft mir weiter. Es gab sechs Monate Physiotherapie, ein Schmerzprogramm und eine ärztlich dokumentierte Anpassung der Medikation. Wenn diese Nachweise bisher nicht vollständig angekommen sind, würde ich gern wissen, ob ich sie im Rahmen eines Widerspruchs nachreichen muss oder ob eine Ergänzung vorab möglich ist.",
+          "translations": [
+            { "language": "en", "text": "That helps me. There were six months of physiotherapy, a pain program, and a medically documented adjustment of medication. If this evidence has not yet arrived completely, I would like to know whether I have to submit it as part of an objection or whether a supplement is possible beforehand." },
+            { "language": "fa", "text": "این به من کمک می‌کند. شش ماه فیزیوتراپی، یک برنامه درد و تنظیم دارو با مستندات پزشکی وجود داشته است. اگر این مدارک تا حالا کامل نرسیده‌اند، می‌خواهم بدانم آیا باید آن‌ها را در چارچوب اعتراض ارسال کنم یا تکمیل قبل از آن ممکن است." },
+            { "language": "ar", "text": "هذا يساعدني. كانت هناك ستة أشهر من العلاج الطبيعي وبرنامج للألم وتعديل موثق طبياً للأدوية. إذا لم تصل هذه الأدلة كاملة حتى الآن، أود أن أعرف هل يجب أن أقدمها ضمن اعتراض أم إن الإضافة ممكنة مسبقاً." },
+            { "language": "tr", "text": "Bu bana yardımcı oluyor. Altı ay fizyoterapi, bir ağrı programı ve tıbben belgelenmiş ilaç ayarlaması vardı. Bu kanıtlar şimdiye kadar tam ulaşmadıysa, bunları itiraz kapsamında mı sunmam gerekir yoksa önceden ekleme mümkün mü, bunu bilmek istiyorum." },
+            { "language": "ru", "text": "Это мне помогает. Были шесть месяцев физиотерапии, программа боли и медицински задокументированная корректировка медикаментов. Если эти доказательства до сих пор поступили не полностью, я хотел бы знать, нужно ли мне дослать их в рамках возражения или возможно дополнение заранее." },
+            { "language": "ckb", "text": "ئەمە یارمەتیم دەدات. شەش مانگ فیزیۆتێراپی، بەرنامەیەکی ئازار و گۆڕانکارییەکی دەرمان بە بەڵگەی پزیشکی هەبووە. ئەگەر ئەم بەڵگانە تا ئێستا بە تەواوی نەگەیشتوون، دەمەوێت بزانم ئایا پێویستە لە چوارچێوەی نارەزاییدا بینێرم یان تەواوکاری پێشتر گونجاوە." },
+            { "language": "kmr", "text": "Ev alîkariya min dike. Şeş meh fîzyoterapî, bernameyeke êşê û guhertina dermanan a bi belgeya bijîşkî hebû. Ger ev belge heta niha bi temamî nehatine, ez dixwazim bizanim gelo divê wan di çarçoveya nerazîbûnê de bişînim an berê zêdekirin gengaz e." },
+            { "language": "pl", "text": "To mi pomaga. Było sześć miesięcy fizjoterapii, program leczenia bólu i medycznie udokumentowane dostosowanie leków. Jeśli te dowody nie dotarły dotąd w całości, chciałbym wiedzieć, czy muszę je dosłać w ramach sprzeciwu, czy możliwe jest wcześniejsze uzupełnienie." },
+            { "language": "ro", "text": "Asta mă ajută. Au existat șase luni de fizioterapie, un program pentru durere și o ajustare a medicației documentată medical. Dacă aceste dovezi nu au ajuns încă integral, aș vrea să știu dacă trebuie să le depun în cadrul unei contestații sau dacă este posibilă o completare înainte." },
+            { "language": "sq", "text": "Kjo më ndihmon. Ka pasur gjashtë muaj fizioterapi, një program dhimbjeje dhe një përshtatje të ilaçeve të dokumentuar nga mjeku. Nëse këto prova nuk kanë mbërritur ende plotësisht, dua të di nëse duhet t'i dorëzoj në kuadër të kundërshtimit apo nëse një plotësim paraprak është i mundur." }
+          ],
+          "function": "evidence-response",
+          "toneNote": "kooperativ, konkret",
+          "expectedLearnerAction": "Vorbehandlungen und Verfahrensfrage verbinden"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "insurance-agent",
+          "baseText": "Der Bescheid enthält eine Widerspruchsfrist von einem Monat. Sie können innerhalb dieser Frist Widerspruch einlegen und ergänzende Unterlagen nachreichen.",
+          "translations": [
+            { "language": "en", "text": "The notice contains an objection deadline of one month. You can file an objection within this period and submit supplementary documents." },
+            { "language": "fa", "text": "در نامه تصمیم مهلت اعتراض یک‌ماهه وجود دارد. می‌توانید در این مهلت اعتراض ثبت کنید و مدارک تکمیلی را ارسال کنید." },
+            { "language": "ar", "text": "يتضمن القرار مهلة اعتراض مدتها شهر واحد. يمكنك تقديم اعتراض ضمن هذه المهلة وإرسال وثائق تكميلية." },
+            { "language": "tr", "text": "Kararda bir aylık itiraz süresi yer alıyor. Bu süre içinde itiraz edebilir ve tamamlayıcı belgeler sunabilirsiniz." },
+            { "language": "ru", "text": "В решении указан срок возражения в один месяц. Вы можете подать возражение в этот срок и дослать дополнительные документы." },
+            { "language": "ckb", "text": "بڕیارنامەکە مۆڵەتی نارەزایی یەک مانگ لەخۆ دەگرێت. دەتوانیت لەناو ئەم مۆڵەتەدا نارەزایی پێشکەش بکەیت و بەڵگەی تەواوکەر بنێریت." },
+            { "language": "kmr", "text": "Di biryarê de demeke nerazîbûnê ya yek meh heye. Hûn dikarin di vê demê de nerazîbûn bidin û belgeyên zêdekirî bişînin." },
+            { "language": "pl", "text": "Decyzja zawiera miesięczny termin sprzeciwu. Może Pan w tym terminie złożyć sprzeciw i dosłać dokumenty uzupełniające." },
+            { "language": "ro", "text": "Decizia conține un termen de contestație de o lună. Puteți depune contestație în acest termen și puteți trimite documente suplimentare." },
+            { "language": "sq", "text": "Vendimi përmban një afat kundërshtimi prej një muaji. Mund të paraqisni kundërshtim brenda këtij afati dhe të dorëzoni dokumente plotësuese." }
+          ],
+          "function": "deadline-info",
+          "toneNote": "formal",
+          "expectedLearnerAction": "Frist und Form klären"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann möchte ich die Frist nicht versäumen. Können Sie mir bitte bestätigen, ob ein kurzer Widerspruch zur Fristwahrung reicht und ob ich die medizinischen Unterlagen danach mit einer ärztlichen Stellungnahme ergänzen kann?",
+          "translations": [
+            { "language": "en", "text": "Then I do not want to miss the deadline. Could you please confirm whether a brief objection is sufficient to preserve the deadline and whether I can then supplement the medical documents with a doctor's statement?" },
+            { "language": "fa", "text": "پس نمی‌خواهم مهلت را از دست بدهم. لطفاً می‌توانید تأیید کنید آیا یک اعتراض کوتاه برای حفظ مهلت کافی است و آیا بعد از آن می‌توانم مدارک پزشکی را با نظر پزشک تکمیل کنم؟" },
+            { "language": "ar", "text": "إذن لا أريد أن أفوّت المهلة. هل يمكنك أن تؤكدي لي من فضلك هل يكفي اعتراض قصير لحفظ المهلة، وهل يمكنني بعد ذلك استكمال الوثائق الطبية بتقرير من الطبيبة؟" },
+            { "language": "tr", "text": "O zaman süreyi kaçırmak istemiyorum. Kısa bir itirazın süreyi korumak için yeterli olup olmadığını ve ardından tıbbi belgeleri doktorun görüşüyle tamamlayıp tamamlayamayacağımı onaylar mısınız?" },
+            { "language": "ru", "text": "Тогда я не хочу пропустить срок. Можете, пожалуйста, подтвердить, достаточно ли короткого возражения для сохранения срока и могу ли я затем дополнить медицинские документы заключением врача?" },
+            { "language": "ckb", "text": "ئەوا نامەوێت مۆڵەتەکە لەدەست بدەم. تکایە دەتوانن پشتڕاست بکەنەوە ئایا نارەزاییەکی کورت بۆ پاراستنی مۆڵەت بەسە و ئایا دواتر دەتوانم بەڵگە پزیشکییەکان بە ڕاوبۆچوونی پزیشک تەواو بکەم؟" },
+            { "language": "kmr", "text": "Wê demê ez naxwazim demê ji dest bidim. Ji kerema xwe dikarin piştrast bikin gelo nerazîbûneke kurt ji bo parastina demê têr e û gelo piştre dikarim belgeyên bijîşkî bi daxuyaniya doktorê temam bikim?" },
+            { "language": "pl", "text": "W takim razie nie chcę przegapić terminu. Czy może Pani potwierdzić, czy krótki sprzeciw wystarczy do zachowania terminu i czy potem mogę uzupełnić dokumenty medyczne o stanowisko lekarki?" },
+            { "language": "ro", "text": "Atunci nu vreau să ratez termenul. Îmi puteți confirma, vă rog, dacă o contestație scurtă este suficientă pentru păstrarea termenului și dacă pot completa apoi documentele medicale cu o opinie a medicului?" },
+            { "language": "sq", "text": "Atëherë nuk dua ta humbas afatin. A mund të më konfirmoni nëse një kundërshtim i shkurtër mjafton për ruajtjen e afatit dhe nëse më pas mund t'i plotësoj dokumentet mjekësore me një deklaratë të mjekes?" }
+          ],
+          "function": "deadline-protection",
+          "toneNote": "präzise, höflich",
+          "expectedLearnerAction": "Fristwahrung und Nachreichung klären"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "insurance-agent",
+          "baseText": "Ja, wichtig ist, dass der Widerspruch fristgerecht eingeht. Für die inhaltliche Prüfung wären die bisherigen Therapien, deren Dauer und eine ärztliche Begründung der Reha-Notwendigkeit hilfreich.",
+          "translations": [
+            { "language": "en", "text": "Yes, what matters is that the objection arrives within the deadline. For the substantive review, the previous therapies, their duration, and a medical justification of the rehabilitation necessity would be helpful." },
+            { "language": "fa", "text": "بله، مهم این است که اعتراض در مهلت مقرر برسد. برای بررسی محتوایی، درمان‌های قبلی، مدت آن‌ها و توضیح پزشکی درباره ضرورت توان‌بخشی مفید خواهد بود." },
+            { "language": "ar", "text": "نعم، المهم أن يصل الاعتراض ضمن المهلة. للمراجعة الموضوعية ستكون العلاجات السابقة ومدتها وتبرير طبي لضرورة إعادة التأهيل مفيدة." },
+            { "language": "tr", "text": "Evet, önemli olan itirazın süre içinde ulaşmasıdır. İçerik incelemesi için önceki tedaviler, süreleri ve rehabilitasyon gerekliliğine dair tıbbi gerekçe yardımcı olur." },
+            { "language": "ru", "text": "Да, важно, чтобы возражение поступило в срок. Для содержательной проверки были бы полезны предыдущие терапии, их продолжительность и медицинское обоснование необходимости реабилитации." },
+            { "language": "ckb", "text": "بەڵێ، گرنگ ئەوەیە نارەزاییەکە لەناو مۆڵەتدا بگات. بۆ پێداچوونەوەی ناوەڕۆکی، چارەسەرە پێشووترەکان، ماوەکانیان و پاساوی پزیشکی بۆ پێویستی ڕیهابێلیتەیشن بەسوود دەبن." },
+            { "language": "kmr", "text": "Erê, girîng ew e ku nerazîbûn di demê de bigihêje. Ji bo vekolîna naverokê, dermankirinên berê, demên wan û sedemkirina bijîşkî ya pêwîstiya rehabîlîtasyonê alîkar in." },
+            { "language": "pl", "text": "Tak, ważne jest, aby sprzeciw wpłynął w terminie. Do merytorycznej weryfikacji pomocne byłyby dotychczasowe terapie, ich czas trwania i lekarskie uzasadnienie konieczności rehabilitacji." },
+            { "language": "ro", "text": "Da, important este ca contestația să ajungă în termen. Pentru verificarea de fond ar fi utile terapiile anterioare, durata lor și o justificare medicală a necesității reabilitării." },
+            { "language": "sq", "text": "Po, e rëndësishme është që kundërshtimi të mbërrijë brenda afatit. Për shqyrtimin përmbajtësor do të ndihmonin terapitë e mëparshme, kohëzgjatja e tyre dhe një arsyetim mjekësor për nevojën e rehabilitimit." }
+          ],
+          "function": "document-list",
+          "toneNote": "beratend",
+          "expectedLearnerAction": "Dokumentliste und Einreichungsweg absichern"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Könnten Sie mir diese Punkte bitte schriftlich oder zumindest als kurze Notiz im Kundenportal bestätigen? Dann kann ich gezielt die Therapienachweise, den Medikamentenplan und eine ergänzende ärztliche Stellungnahme einreichen, statt Unterlagen doppelt oder unpassend zu schicken.",
+          "translations": [
+            { "language": "en", "text": "Could you please confirm these points in writing or at least as a short note in the customer portal? Then I can submit the therapy evidence, medication plan, and an additional doctor's statement in a targeted way instead of sending documents twice or inappropriately." },
+            { "language": "fa", "text": "لطفاً می‌توانید این نکات را کتبی یا حداقل به‌صورت یادداشت کوتاه در پرتال مشتری تأیید کنید؟ آن‌وقت می‌توانم مدارک درمان، برنامه دارو و نظر تکمیلی پزشک را هدفمند ارسال کنم، به جای اینکه مدارک را دوباره یا نامناسب بفرستم." },
+            { "language": "ar", "text": "هل يمكنك من فضلك تأكيد هذه النقاط خطياً أو على الأقل كملاحظة قصيرة في بوابة العملاء؟ عندها أستطيع إرسال أدلة العلاج وخطة الأدوية ورأي طبي إضافي بشكل موجه بدلاً من إرسال وثائق مكررة أو غير مناسبة." },
+            { "language": "tr", "text": "Bu noktaları lütfen yazılı olarak veya en azından müşteri portalında kısa bir not olarak onaylayabilir misiniz? Böylece terapi kanıtlarını, ilaç planını ve ek doktor görüşünü hedefli şekilde sunabilirim; belgeleri tekrar veya uygunsuz biçimde göndermem." },
+            { "language": "ru", "text": "Не могли бы вы подтвердить эти пункты письменно или хотя бы короткой заметкой в клиентском портале? Тогда я смогу целенаправленно подать подтверждения терапии, план лекарств и дополнительное заключение врача, вместо того чтобы отправлять документы повторно или не к месту." },
+            { "language": "ckb", "text": "تکایە دەتوانن ئەم خاڵانە بە نووسراو یان لانیکەم وەک تێبینییەکی کورت لە پۆرتاڵی کڕیاردا پشتڕاست بکەنەوە؟ ئەوا دەتوانم بە ئامانجدار بەڵگەی چارەسەر، پلانی دەرمان و ڕاوبۆچوونی تەواوکەری پزیشک بنێرم، لەبری ئەوەی بەڵگەکان دووبارە یان نادروست بنێرم." },
+            { "language": "kmr", "text": "Ji kerema xwe dikarin van xalan bi nivîskî an herî kêm wekî nîşeyeke kurt di portala xerîdar de piştrast bikin? Wê demê dikarim belgeyên dermankirinê, plana dermanan û daxuyaniya zêdekirî ya doktorê bi armanc bişînim, ne ku belgeyan ducar an ne guncaw bişînim." },
+            { "language": "pl", "text": "Czy mogłaby Pani potwierdzić te punkty pisemnie albo przynajmniej jako krótką notatkę w portalu klienta? Wtedy mogę celowo złożyć dowody terapii, plan leków i uzupełniające stanowisko lekarskie, zamiast wysyłać dokumenty podwójnie lub nieodpowiednio." },
+            { "language": "ro", "text": "Ați putea, vă rog, să confirmați aceste puncte în scris sau măcar ca notă scurtă în portalul clientului? Atunci pot depune țintit dovezile terapiilor, planul de medicamente și o opinie medicală suplimentară, în loc să trimit documente dublu sau nepotrivit." },
+            { "language": "sq", "text": "A mund t'i konfirmoni këto pika me shkrim ose të paktën si shënim të shkurtër në portalin e klientit? Atëherë mund të dorëzoj me qëllim provat e terapisë, planin e ilaçeve dhe një deklaratë shtesë të mjekut, në vend që të dërgoj dokumente dy herë ose jo si duhet." }
+          ],
+          "function": "written-confirmation",
+          "toneNote": "höflich, effizient",
+          "expectedLearnerAction": "Schriftliche Orientierung und gezielte Unterlagen erbitten"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "insurance-agent",
+          "baseText": "Ich kann im Kundenportal vermerken, welche Unterlagen laut Akte besonders relevant sind. Bitte reichen Sie den Widerspruch separat ein; die ergänzenden Nachweise können Sie danach hochladen.",
+          "translations": [
+            { "language": "en", "text": "I can note in the customer portal which documents are especially relevant according to the file. Please submit the objection separately; you can upload the supplementary evidence afterward." },
+            { "language": "fa", "text": "می‌توانم در پرتال مشتری یادداشت کنم طبق پرونده کدام مدارک به‌ویژه مهم هستند. لطفاً اعتراض را جداگانه ارسال کنید؛ مدارک تکمیلی را می‌توانید بعد از آن بارگذاری کنید." },
+            { "language": "ar", "text": "يمكنني أن أدوّن في بوابة العملاء أي الوثائق مهمة بشكل خاص حسب الملف. يرجى تقديم الاعتراض بشكل منفصل؛ ويمكنك بعد ذلك رفع الأدلة التكميلية." },
+            { "language": "tr", "text": "Müşteri portalında dosyaya göre hangi belgelerin özellikle ilgili olduğunu not edebilirim. Lütfen itirazı ayrı olarak sunun; tamamlayıcı kanıtları sonrasında yükleyebilirsiniz." },
+            { "language": "ru", "text": "Я могу отметить в клиентском портале, какие документы согласно делу особенно важны. Пожалуйста, подайте возражение отдельно; дополнительные доказательства вы можете загрузить после этого." },
+            { "language": "ckb", "text": "دەتوانم لە پۆرتاڵی کڕیاردا تێبینی بکەم کە بە پێی پەڕگە کام بەڵگەکان بە تایبەتی پەیوەندیدارن. تکایە نارەزاییەکە جیا پێشکەش بکە؛ بەڵگە تەواوکەرەکان دەتوانیت دواتر باربکەیت." },
+            { "language": "kmr", "text": "Ez dikarim di portala xerîdar de nîşan bikim ka li gor dosyayê kîjan belge bi taybetî girîng in. Ji kerema xwe nerazîbûnê cuda pêşkêş bikin; belgeyên zêdekirî dikarin piştre barkirin." },
+            { "language": "pl", "text": "Mogę odnotować w portalu klienta, które dokumenty według akt są szczególnie istotne. Proszę złożyć sprzeciw osobno; uzupełniające dowody może Pan potem przesłać." },
+            { "language": "ro", "text": "Pot nota în portalul clientului ce documente sunt deosebit de relevante conform dosarului. Vă rog să depuneți contestația separat; dovezile suplimentare le puteți încărca ulterior." },
+            { "language": "sq", "text": "Mund të shënoj në portalin e klientit cilat dokumente janë veçanërisht të rëndësishme sipas dosjes. Ju lutem paraqiteni kundërshtimin veçmas; provat plotësuese mund t'i ngarkoni më pas." }
+          ],
+          "function": "process-next-step",
+          "toneNote": "praktisch",
+          "expectedLearnerAction": "Abschluss mit überprüfbaren nächsten Schritten"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann reiche ich fristgerecht einen kurzen Widerspruch ein, lade danach die Therapienachweise und die ärztliche Stellungnahme hoch und beziehe mich auf Ihre Notiz im Kundenportal. Falls die Kasse danach noch etwas benötigt, bitte ich um eine konkrete schriftliche Rückmeldung.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will submit a brief objection within the deadline, upload the therapy evidence and the doctor's statement afterward, and refer to your note in the customer portal. If the fund then needs anything else, I ask for specific written feedback." },
+            { "language": "fa", "text": "خیلی ممنون. پس در مهلت مقرر یک اعتراض کوتاه ارسال می‌کنم، بعد مدارک درمان و نظر پزشک را بارگذاری می‌کنم و به یادداشت شما در پرتال مشتری ارجاع می‌دهم. اگر بعد از آن بیمه چیز دیگری لازم داشت، درخواست بازخورد کتبی مشخص دارم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأقدم اعتراضاً قصيراً ضمن المهلة، ثم أرفع أدلة العلاج ورأي الطبيبة، وأشير إلى ملاحظتك في بوابة العملاء. إذا احتاج الصندوق بعد ذلك إلى شيء آخر، أطلب رداً خطياً محدداً." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman süre içinde kısa bir itiraz sunacağım, ardından terapi kanıtlarını ve doktor görüşünü yükleyeceğim ve müşteri portalındaki notunuza atıfta bulunacağım. Sigorta bundan sonra başka bir şeye ihtiyaç duyarsa, somut yazılı geri bildirim rica ediyorum." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я в срок подам короткое возражение, затем загружу подтверждения терапии и заключение врача и сошлюсь на вашу заметку в клиентском портале. Если кассе после этого ещё что-то потребуется, я прошу конкретный письменный ответ." },
+            { "language": "ckb", "text": "زۆر سوپاس. ئەوا لەناو مۆڵەتدا نارەزاییەکی کورت پێشکەش دەکەم، دواتر بەڵگەکانی چارەسەر و ڕاوبۆچوونی پزیشک بار دەکەم و ئاماژە بە تێبینییەکەتان لە پۆرتاڵی کڕیار دەکەم. ئەگەر بیمەکە دواتر شتێکی تری پێویست بوو، داوای وەڵامێکی نووسراوی دیاریکراو دەکەم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez di demê de nerazîbûneke kurt pêşkêş dikim, piştre belgeyên dermankirinê û daxuyaniya doktorê barkirim û behsa nîşeya we di portala xerîdar de dikim. Ger sîgorta piştre tiştekî din bixwaze, ez daxwaza bersiveke nivîskî ya konkret dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie złożę w terminie krótki sprzeciw, potem prześlę dowody terapii i stanowisko lekarskie oraz powołam się na Pani notatkę w portalu klienta. Jeśli kasa będzie potem jeszcze czegoś potrzebować, proszę o konkretną pisemną informację zwrotną." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci voi depune în termen o contestație scurtă, voi încărca apoi dovezile terapiilor și opinia medicului și mă voi referi la nota dumneavoastră din portalul clientului. Dacă după aceea casa mai are nevoie de ceva, solicit un răspuns scris concret." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë do të paraqes brenda afatit një kundërshtim të shkurtër, pastaj do të ngarkoj provat e terapisë dhe deklaratën e mjekut dhe do t'i referohem shënimit tuaj në portalin e klientit. Nëse sigurimi më pas ka nevojë për diçka tjetër, kërkoj një përgjigje konkrete me shkrim." }
+          ],
+          "function": "final-process-summary",
+          "toneNote": "klar, höflich",
+          "expectedLearnerAction": "Nächste Schritte verlässlich zusammenfassen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-case-opening",
+              "text": "Ich rufe mit Aktenzeichen an und möchte zuerst die genaue Begründung verstehen, bevor ich über einen Widerspruch entscheide.",
+              "translations": [
+                { "language": "en", "text": "I am calling with the file number and first want to understand the exact reasoning before deciding about an objection." },
+                { "language": "fa", "text": "با شماره پرونده تماس می‌گیرم و اول می‌خواهم دلیل دقیق را بفهمم، قبل از اینکه درباره اعتراض تصمیم بگیرم." },
+                { "language": "ar", "text": "أتصل مع رقم الملف وأريد أولاً أن أفهم السبب الدقيق قبل أن أقرر بشأن الاعتراض." },
+                { "language": "tr", "text": "Dosya numarasıyla arıyorum ve itiraz hakkında karar vermeden önce kesin gerekçeyi anlamak istiyorum." },
+                { "language": "ru", "text": "Я звоню с номером дела и сначала хочу понять точное обоснование, прежде чем решать вопрос о возражении." },
+                { "language": "ckb", "text": "بە ژمارەی پەڕگە پەیوەندی دەکەم و سەرەتا دەمەوێت هۆکاری ورد تێبگەم، پێش ئەوەی دەربارەی نارەزایی بڕیار بدەم." },
+                { "language": "kmr", "text": "Ez bi jimareya pelê telefon dikim û pêşî dixwazim sedema rast fêm bikim, berî ku li ser nerazîbûnê biryar bidim." },
+                { "language": "pl", "text": "Dzwonię z numerem sprawy i najpierw chcę zrozumieć dokładne uzasadnienie, zanim zdecyduję o sprzeciwie." },
+                { "language": "ro", "text": "Sun cu numărul dosarului și vreau mai întâi să înțeleg motivarea exactă înainte să decid asupra unei contestații." },
+                { "language": "sq", "text": "Po telefonoj me numrin e dosjes dhe së pari dua të kuptoj arsyetimin e saktë para se të vendos për kundërshtim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist sachlich, nennt das Verfahren und wirkt nicht sofort konfrontativ.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer is factual, names the process, and does not sound immediately confrontational." },
+                { "language": "fa", "text": "قوی: پاسخ عینی است، روند را نام می‌برد و فوراً حالت تقابلی ندارد." },
+                { "language": "ar", "text": "قوي: الإجابة موضوعية، تسمي الإجراء، ولا تبدو تصادمية فوراً." },
+                { "language": "tr", "text": "Güçlü: Yanıt nesnel, süreci adlandırıyor ve hemen çatışmacı duyulmuyor." },
+                { "language": "ru", "text": "Сильно: ответ фактический, называет процесс и не звучит сразу конфронтационно." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بابەتییە، پرۆسەکە ناو دەبات و دەستبەجێ دژبەر نییە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rastî ye, pêvajoyê nav dike û yekser dijberî nayê bihîstin." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest rzeczowa, nazywa procedurę i nie brzmi od razu konfrontacyjnie." },
+                { "language": "ro", "text": "Puternic: răspunsul este factual, numește procedura și nu sună imediat conflictual." },
+                { "language": "sq", "text": "E fortë: përgjigjja është faktike, emërton procedurën dhe nuk tingëllon menjëherë konfrontuese." }
+              ],
+              "explanationKey": "case-before-complaint"
+            },
+            {
+              "id": "weak-angry-opening",
+              "text": "Ich verstehe diese Ablehnung überhaupt nicht und möchte, dass das sofort noch einmal geprüft wird.",
+              "translations": [
+                { "language": "en", "text": "I do not understand this rejection at all and want it to be checked again immediately." },
+                { "language": "fa", "text": "من اصلاً این رد شدن را نمی‌فهمم و می‌خواهم فوراً دوباره بررسی شود." },
+                { "language": "ar", "text": "لا أفهم هذا الرفض إطلاقاً وأريد أن يُراجع فوراً مرة أخرى." },
+                { "language": "tr", "text": "Bu reddi hiç anlamıyorum ve bunun hemen yeniden incelenmesini istiyorum." },
+                { "language": "ru", "text": "Я совершенно не понимаю этот отказ и хочу, чтобы это немедленно проверили ещё раз." },
+                { "language": "ckb", "text": "من بە هیچ شێوەیەک ئەم ڕەتکردنەوەیە تێناگەم و دەمەوێت دەستبەجێ جارێکی تر پێداچوونەوەی بۆ بکرێت." },
+                { "language": "kmr", "text": "Ez vê redkirinê qet fêm nakim û dixwazim ew tavilê careke din were vekolîn." },
+                { "language": "pl", "text": "W ogóle nie rozumiem tej odmowy i chcę, żeby natychmiast sprawdzono to jeszcze raz." },
+                { "language": "ro", "text": "Nu înțeleg deloc acest refuz și vreau să fie verificat imediat încă o dată." },
+                { "language": "sq", "text": "Nuk e kuptoj fare këtë refuzim dhe dua që të kontrollohet menjëherë edhe një herë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unstrukturiert: Für C1 fehlen Aktenzeichen, konkretes Ziel und ruhige Verfahrenssprache.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too unstructured: for C1, file number, concrete goal, and calm procedural language are missing." },
+                { "language": "fa", "text": "قابل قبول است، اما بیش از حد بی‌ساختار: برای C1 شماره پرونده، هدف مشخص و زبان آرام اداری کم است." },
+                { "language": "ar", "text": "مقبول، لكنه غير منظم جداً: في مستوى C1 ينقص رقم الملف والهدف المحدد ولغة إجرائية هادئة." },
+                { "language": "tr", "text": "Makûl, ama fazla dağınık: C1 için dosya numarası, somut hedef ve sakin usul dili eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неструктурировано: для C1 не хватает номера дела, конкретной цели и спокойного процедурного языка." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر بێ‌ڕێکخستنە: بۆ C1 ژمارەی پەڕگە، ئامانجی دیاریکراو و زمانی ئارامی پرۆسە کەمن." },
+                { "language": "kmr", "text": "Guncan e, lê pir bêavahî ye: ji bo C1 jimareya pelê, armanca konkret û zimanê pêvajoyî yê aram kêm in." },
+                { "language": "pl", "text": "Plausible, ale zbyt nieustrukturyzowane: na C1 brakuje numeru sprawy, konkretnego celu i spokojnego języka proceduralnego." },
+                { "language": "ro", "text": "Plauzibil, dar prea nestructurat: pentru C1 lipsesc numărul dosarului, scopul concret și limbajul procedural calm." },
+                { "language": "sq", "text": "E besueshme, por shumë e pastrukturuar: për C1 mungojnë numri i dosjes, qëllimi konkret dhe gjuha e qetë procedurale." }
+              ],
+              "explanationKey": "unstructured-complaint"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-gap-question",
+              "text": "Ich müsste wissen, ob Befunde, ärztliche Begründung oder Nachweise zu Vorbehandlungen fehlen.",
+              "translations": [
+                { "language": "en", "text": "I would need to know whether findings, medical justification, or evidence of previous treatments are missing." },
+                { "language": "fa", "text": "باید بدانم آیا نتایج پزشکی، توضیح پزشک یا مدارک درمان‌های قبلی کم است." },
+                { "language": "ar", "text": "أحتاج إلى معرفة هل تنقص نتائج طبية أم تبرير طبي أم أدلة على علاجات سابقة." },
+                { "language": "tr", "text": "Bulguların mı, tıbbi gerekçenin mi, yoksa önceki tedavilere dair kanıtların mı eksik olduğunu bilmem gerekir." },
+                { "language": "ru", "text": "Мне нужно знать, отсутствуют ли результаты, медицинское обоснование или доказательства предыдущих методов лечения." },
+                { "language": "ckb", "text": "پێویستە بزانم ئایا ئەنجامە پزیشکییەکان، پاساوی پزیشک یان بەڵگەی چارەسەرە پێشووترەکان کەمن." },
+                { "language": "kmr", "text": "Divê ez bizanim gelo encam, sedemkirina bijîşkî an belgeyên dermankirinên berê kêm in." },
+                { "language": "pl", "text": "Musiałbym wiedzieć, czy brakuje wyników, uzasadnienia lekarskiego czy dowodów wcześniejszego leczenia." },
+                { "language": "ro", "text": "Ar trebui să știu dacă lipsesc rezultate, motivarea medicală sau dovezi ale tratamentelor anterioare." },
+                { "language": "sq", "text": "Duhet të di nëse mungojnë rezultate, arsyetim mjekësor apo prova për trajtimet e mëparshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort übersetzt eine allgemeine Ablehnung in konkrete Nachweiskategorien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer translates a general rejection into concrete evidence categories." },
+                { "language": "fa", "text": "قوی: پاسخ یک رد کلی را به دسته‌های مشخص مدارک تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة تحول رفضاً عاماً إلى فئات أدلة محددة." },
+                { "language": "tr", "text": "Güçlü: Yanıt genel bir reddi somut kanıt kategorilerine çeviriyor." },
+                { "language": "ru", "text": "Сильно: ответ переводит общий отказ в конкретные категории доказательств." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕەتکردنەوەی گشتی دەگۆڕێت بۆ پۆلە دیاریکراوەکانی بەڵگە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv redkirineke giştî vediguhezîne kategoriyên belge yên konkret." },
+                { "language": "pl", "text": "Mocne: odpowiedź przekłada ogólną odmowę na konkretne kategorie dowodów." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă un refuz general în categorii concrete de dovezi." },
+                { "language": "sq", "text": "E fortë: përgjigjja e përkthen një refuzim të përgjithshëm në kategori konkrete provash." }
+              ],
+              "explanationKey": "evidence-categories"
+            },
+            {
+              "id": "weak-general-disagreement",
+              "text": "Ich finde die Begründung nicht überzeugend und möchte wissen, warum Sie meinen Antrag so sehen.",
+              "translations": [
+                { "language": "en", "text": "I do not find the reasoning convincing and would like to know why you see my application that way." },
+                { "language": "fa", "text": "دلیل را قانع‌کننده نمی‌دانم و می‌خواهم بدانم چرا درخواست من را این‌طور می‌بینید." },
+                { "language": "ar", "text": "لا أجد التبرير مقنعاً وأريد أن أعرف لماذا ترون طلبي بهذه الطريقة." },
+                { "language": "tr", "text": "Gerekçeyi ikna edici bulmuyorum ve başvurumu neden böyle gördüğünüzü bilmek istiyorum." },
+                { "language": "ru", "text": "Я не считаю обоснование убедительным и хотел бы знать, почему вы так оцениваете моё заявление." },
+                { "language": "ckb", "text": "پاساوەکە بە قانعکەر نازانم و دەمەوێت بزانم بۆچی داواکارییەکەم بەو شێوەیە دەبینن." },
+                { "language": "kmr", "text": "Ez sedemkirinê qanîker nabînim û dixwazim bizanim çima hûn daxwaza min wisa dibînin." },
+                { "language": "pl", "text": "Nie uważam uzasadnienia za przekonujące i chciałbym wiedzieć, dlaczego tak oceniacie mój wniosek." },
+                { "language": "ro", "text": "Nu găsesc motivarea convingătoare și aș vrea să știu de ce vedeți cererea mea așa." },
+                { "language": "sq", "text": "Nuk e gjej arsyetimin bindës dhe dua të di pse e shihni kështu kërkesën time." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wertend: Die Frage ist verständlich, aber sie führt nicht gezielt zu fehlenden Unterlagen oder prüfbaren Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too judgmental: the question is understandable, but it does not lead specifically to missing documents or reviewable criteria." },
+                { "language": "fa", "text": "بیش از حد قضاوت‌آمیز است: سؤال قابل فهم است، اما هدفمند به مدارک ناقص یا معیارهای قابل بررسی نمی‌رسد." },
+                { "language": "ar", "text": "تقييمي جداً: السؤال مفهوم، لكنه لا يقود بشكل موجه إلى وثائق ناقصة أو معايير قابلة للفحص." },
+                { "language": "tr", "text": "Fazla yargılayıcı: Soru anlaşılır, ama hedefli olarak eksik belgelere veya incelenebilir ölçütlere götürmüyor." },
+                { "language": "ru", "text": "Слишком оценочно: вопрос понятен, но не ведёт целенаправленно к недостающим документам или проверяемым критериям." },
+                { "language": "ckb", "text": "زۆر هەڵسەنگاندنئامێزە: پرسیارەکە تێگەیشتراوە، بەڵام بە ئامانجدار ناگاتە بەڵگەی کەم یان پێوانەی پێداچوونەوەکراو." },
+                { "language": "kmr", "text": "Pir nirxandinî ye: Pirs tê fêmkirin, lê bi armanc nayê belgeyên kêm an pîvanên vekolînbar." },
+                { "language": "pl", "text": "Zbyt oceniające: pytanie jest zrozumiałe, ale nie prowadzi celowo do brakujących dokumentów ani weryfikowalnych kryteriów." },
+                { "language": "ro", "text": "Prea evaluativ: întrebarea este de înțeles, dar nu duce țintit la documente lipsă sau criterii verificabile." },
+                { "language": "sq", "text": "Shumë gjykuese: pyetja është e kuptueshme, por nuk çon drejtpërdrejt te dokumentet që mungojnë ose kriteret e verifikueshme." }
+              ],
+              "explanationKey": "judgment-not-gap"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-evidence-and-process",
+              "text": "Ich kann Vorbehandlungen belegen; bitte sagen Sie mir, ob ich diese im Widerspruch oder vorab ergänzen soll.",
+              "translations": [
+                { "language": "en", "text": "I can document previous treatments; please tell me whether I should add them in the objection or beforehand." },
+                { "language": "fa", "text": "می‌توانم درمان‌های قبلی را مستند کنم؛ لطفاً بگویید باید آن‌ها را در اعتراض اضافه کنم یا قبل از آن." },
+                { "language": "ar", "text": "أستطيع إثبات العلاجات السابقة؛ من فضلك أخبريني هل أضيفها ضمن الاعتراض أم مسبقاً." },
+                { "language": "tr", "text": "Önceki tedavileri belgeleyebilirim; lütfen bunları itirazda mı yoksa önceden mi eklemem gerektiğini söyleyin." },
+                { "language": "ru", "text": "Я могу подтвердить предыдущие методы лечения; пожалуйста, скажите, должен ли я добавить их в возражении или заранее." },
+                { "language": "ckb", "text": "دەتوانم چارەسەرە پێشووترەکان بەڵگە بکەم؛ تکایە بڵێن ئایا پێویستە لە نارەزاییدا بیانخەمەوە یان پێشتر تەواویان بکەم." },
+                { "language": "kmr", "text": "Ez dikarim dermankirinên berê belge bikim; ji kerema xwe bibêjin gelo divê wan di nerazîbûnê de zêde bikim an berê." },
+                { "language": "pl", "text": "Mogę udokumentować wcześniejsze leczenie; proszę powiedzieć, czy mam je uzupełnić w sprzeciwie, czy wcześniej." },
+                { "language": "ro", "text": "Pot documenta tratamentele anterioare; vă rog să îmi spuneți dacă trebuie să le completez în contestație sau înainte." },
+                { "language": "sq", "text": "Mund t'i dokumentoj trajtimet e mëparshme; ju lutem më thoni nëse duhet t'i shtoj në kundërshtim apo paraprakisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort kombiniert Inhalt und Verfahren, statt nur die Entscheidung emotional zu kritisieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer combines content and procedure instead of only emotionally criticizing the decision." },
+                { "language": "fa", "text": "قوی: پاسخ محتوا و روند را ترکیب می‌کند، به جای اینکه فقط تصمیم را احساسی نقد کند." },
+                { "language": "ar", "text": "قوي: الإجابة تجمع بين المحتوى والإجراء بدلاً من نقد القرار عاطفياً فقط." },
+                { "language": "tr", "text": "Güçlü: Yanıt içerik ve usulü birleştiriyor; kararı sadece duygusal olarak eleştirmiyor." },
+                { "language": "ru", "text": "Сильно: ответ объединяет содержание и процедуру, а не только эмоционально критикует решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ناوەڕۆک و پرۆسە پێکەوە دەبەستێت، نە تەنها بە شێوەی هەستی بڕیارەکە ڕەخنە بکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv naverok û pêvajo bi hev ve girê dide, ne ku tenê biryarê bi hestî rexne bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy treść i procedurę, zamiast tylko emocjonalnie krytykować decyzję." },
+                { "language": "ro", "text": "Puternic: răspunsul combină conținutul și procedura, nu doar critică emoțional decizia." },
+                { "language": "sq", "text": "E fortë: përgjigjja kombinon përmbajtjen dhe procedurën, në vend që vetëm ta kritikojë emocionalisht vendimin." }
+              ],
+              "explanationKey": "evidence-plus-process"
+            },
+            {
+              "id": "weak-evidence-dump",
+              "text": "Ich schicke Ihnen einfach alles, was ich habe, und dann sehen Sie bitte noch einmal darüber.",
+              "translations": [
+                { "language": "en", "text": "I will simply send you everything I have, and then please look over it again." },
+                { "language": "fa", "text": "من هرچه دارم برایتان می‌فرستم و بعد لطفاً دوباره بررسی کنید." },
+                { "language": "ar", "text": "سأرسل لكم ببساطة كل ما لدي، ثم من فضلكم راجعوه مرة أخرى." },
+                { "language": "tr", "text": "Size elimde ne varsa göndereyim, sonra lütfen tekrar bakın." },
+                { "language": "ru", "text": "Я просто отправлю вам всё, что у меня есть, а вы, пожалуйста, ещё раз это посмотрите." },
+                { "language": "ckb", "text": "هەموو ئەوەی هەمە بۆتان دەنێرم، پاشان تکایە جارێکی تر سەیری بکەنەوە." },
+                { "language": "kmr", "text": "Ez her tiştê ku bi min re heye ji we re dişînim, paşê ji kerema xwe careke din lê binêrin." },
+                { "language": "pl", "text": "Po prostu wyślę Państwu wszystko, co mam, a potem proszę jeszcze raz to przejrzeć." },
+                { "language": "ro", "text": "Vă trimit pur și simplu tot ce am, iar apoi vă rog să vă mai uitați o dată." },
+                { "language": "sq", "text": "Do t'ju dërgoj thjesht gjithçka që kam dhe pastaj ju lutem shikojeni edhe një herë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber ineffizient: Ohne gezielte Lücke und Verfahrensweg kann die Prüfung länger und unklarer werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but inefficient: without a targeted gap and procedural route, the review can become longer and less clear." },
+                { "language": "fa", "text": "قابل قبول است، اما ناکارآمد: بدون شکاف مشخص و مسیر روندی، بررسی می‌تواند طولانی‌تر و مبهم‌تر شود." },
+                { "language": "ar", "text": "مقبول، لكنه غير فعال: من دون فجوة محددة ومسار إجرائي قد تصبح المراجعة أطول وأقل وضوحاً." },
+                { "language": "tr", "text": "Makûl, ama verimsiz: hedefli boşluk ve usul yolu olmadan inceleme uzayabilir ve belirsizleşebilir." },
+                { "language": "ru", "text": "Правдоподобно, но неэффективно: без целевого пробела и процедурного пути проверка может стать дольше и менее ясной." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام کەمکاریگەرە: بەبێ بۆشایی ئامانجدار و ڕێگای پرۆسە، پێداچوونەوەکە دەتوانێت درێژتر و ناڕوونتر بێت." },
+                { "language": "kmr", "text": "Guncan e, lê neefektîf e: bê valahiya armancdar û rêya pêvajoyê, vekolîn dikare dirêjtir û nezelaltir bibe." },
+                { "language": "pl", "text": "Plausible, ale nieefektywne: bez konkretnej luki i ścieżki proceduralnej weryfikacja może potrwać dłużej i być mniej jasna." },
+                { "language": "ro", "text": "Plauzibil, dar ineficient: fără un gol țintit și o cale procedurală, verificarea poate deveni mai lungă și mai neclară." },
+                { "language": "sq", "text": "E besueshme, por joefikase: pa një boshllëk të synuar dhe rrugë procedurale, shqyrtimi mund të bëhet më i gjatë dhe më i paqartë." }
+              ],
+              "explanationKey": "untargeted-documents"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-deadline-protection",
+              "text": "Bitte bestätigen Sie mir, ob ein kurzer Widerspruch die Frist wahrt und die medizinischen Nachweise danach ergänzt werden können.",
+              "translations": [
+                { "language": "en", "text": "Please confirm whether a brief objection preserves the deadline and whether the medical evidence can be supplemented afterward." },
+                { "language": "fa", "text": "لطفاً تأیید کنید آیا یک اعتراض کوتاه مهلت را حفظ می‌کند و آیا مدارک پزشکی بعد از آن قابل تکمیل هستند." },
+                { "language": "ar", "text": "من فضلك أكد لي هل يحفظ اعتراض قصير المهلة وهل يمكن استكمال الأدلة الطبية بعد ذلك." },
+                { "language": "tr", "text": "Lütfen kısa bir itirazın süreyi koruyup korumadığını ve tıbbi kanıtların sonradan tamamlanıp tamamlanamayacağını onaylayın." },
+                { "language": "ru", "text": "Пожалуйста, подтвердите, сохраняет ли короткое возражение срок и можно ли затем дополнить медицинские доказательства." },
+                { "language": "ckb", "text": "تکایە پشتڕاست بکەنەوە ئایا نارەزاییەکی کورت مۆڵەت دەپارێزێت و ئایا بەڵگە پزیشکییەکان دواتر تەواو دەکرێن." },
+                { "language": "kmr", "text": "Ji kerema xwe piştrast bikin gelo nerazîbûneke kurt demê diparêze û gelo belgeyên bijîşkî piştre dikarin bêne temamkirin." },
+                { "language": "pl", "text": "Proszę potwierdzić, czy krótki sprzeciw zachowuje termin i czy dowody medyczne można uzupełnić później." },
+                { "language": "ro", "text": "Vă rog să confirmați dacă o contestație scurtă păstrează termenul și dacă dovezile medicale pot fi completate ulterior." },
+                { "language": "sq", "text": "Ju lutem konfirmoni nëse një kundërshtim i shkurtër e ruan afatin dhe nëse provat mjekësore mund të plotësohen më pas." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt die Frist und klärt gleichzeitig den realistischen Nachreichungsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer protects the deadline and at the same time clarifies the realistic route for later submission." },
+                { "language": "fa", "text": "قوی: پاسخ مهلت را حفظ می‌کند و هم‌زمان مسیر واقع‌بینانه ارسال تکمیلی را روشن می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة تحمي المهلة وتوضح في الوقت نفسه الطريق الواقعي للتقديم اللاحق." },
+                { "language": "tr", "text": "Güçlü: Yanıt süreyi koruyor ve aynı zamanda sonradan sunma yolunu gerçekçi biçimde açıklığa kavuşturuyor." },
+                { "language": "ru", "text": "Сильно: ответ защищает срок и одновременно уточняет реалистичный путь последующей подачи." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە مۆڵەت دەپارێزێت و هەمان کات ڕێگای واقیعی ناردنی دواتر ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv demê diparêze û hevdem rêya rast a şandina paşîn zelal dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni termin i jednocześnie wyjaśnia realistyczną drogę późniejszego dosłania." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează termenul și clarifică în același timp calea realistă pentru completare ulterioară." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron afatin dhe njëkohësisht sqaron rrugën realiste për dorëzim të mëvonshëm." }
+              ],
+              "explanationKey": "deadline-and-supplement"
+            },
+            {
+              "id": "weak-deadline-vague",
+              "text": "Ich möchte noch etwas Zeit haben, um die Unterlagen zusammenzusuchen.",
+              "translations": [
+                { "language": "en", "text": "I would like to have some more time to gather the documents." },
+                { "language": "fa", "text": "می‌خواهم کمی زمان بیشتری داشته باشم تا مدارک را جمع‌آوری کنم." },
+                { "language": "ar", "text": "أود أن أحصل على بعض الوقت الإضافي لجمع الوثائق." },
+                { "language": "tr", "text": "Belgeleri toplamak için biraz daha zamanım olsun istiyorum." },
+                { "language": "ru", "text": "Я хотел бы иметь ещё немного времени, чтобы собрать документы." },
+                { "language": "ckb", "text": "دەمەوێت کەمێک کاتی زیاتر هەبێت بۆ کۆکردنەوەی بەڵگەکان." },
+                { "language": "kmr", "text": "Ez dixwazim hinekî demê zêdetir hebim da ku belgeyan kom bikim." },
+                { "language": "pl", "text": "Chciałbym mieć jeszcze trochę czasu, żeby zebrać dokumenty." },
+                { "language": "ro", "text": "Aș vrea să mai am puțin timp ca să adun documentele." },
+                { "language": "sq", "text": "Do të doja të kisha edhe pak kohë për të mbledhur dokumentet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Bitte nennt keine Fristwahrung und klärt nicht, ob späteres Nachreichen möglich ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the request does not mention preserving the deadline and does not clarify whether later submission is possible." },
+                { "language": "fa", "text": "بیش از حد مبهم است: درخواست حفظ مهلت را نام نمی‌برد و روشن نمی‌کند ارسال بعدی ممکن است یا نه." },
+                { "language": "ar", "text": "غامض جداً: لا يذكر الطلب حفظ المهلة ولا يوضح هل التقديم اللاحق ممكن." },
+                { "language": "tr", "text": "Fazla belirsiz: Rica süreyi korumayı belirtmiyor ve sonradan sunmanın mümkün olup olmadığını açıklamıyor." },
+                { "language": "ru", "text": "Слишком расплывчато: просьба не упоминает сохранение срока и не уточняет, возможна ли последующая подача." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: داواکارییەکە پاراستنی مۆڵەت ناو نابێت و ڕوون ناکاتەوە ئایا ناردنی دواتر گونجاوە." },
+                { "language": "kmr", "text": "Pir nezelal e: daxwaz behsa parastina demê nake û zelal nake gelo şandina paşîn gengaz e." },
+                { "language": "pl", "text": "Zbyt ogólne: prośba nie mówi o zachowaniu terminu i nie wyjaśnia, czy późniejsze dosłanie jest możliwe." },
+                { "language": "ro", "text": "Prea vag: cererea nu menționează păstrarea termenului și nu clarifică dacă depunerea ulterioară este posibilă." },
+                { "language": "sq", "text": "Shumë e paqartë: kërkesa nuk përmend ruajtjen e afatit dhe nuk sqaron nëse dorëzimi i mëvonshëm është i mundur." }
+              ],
+              "explanationKey": "vague-time-request"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-written-guidance",
+              "text": "Bitte bestätigen Sie mir die relevanten Unterlagen schriftlich, damit ich gezielt und ohne Doppelungen nachreichen kann.",
+              "translations": [
+                { "language": "en", "text": "Please confirm the relevant documents in writing so that I can submit them in a targeted way without duplicates." },
+                { "language": "fa", "text": "لطفاً مدارک مربوط را کتبی تأیید کنید تا بتوانم هدفمند و بدون تکرار ارسال تکمیلی انجام دهم." },
+                { "language": "ar", "text": "من فضلك أكد لي الوثائق ذات الصلة خطياً لكي أستطيع تقديمها بشكل موجه ومن دون تكرار." },
+                { "language": "tr", "text": "İlgili belgeleri lütfen yazılı olarak onaylayın, böylece hedefli ve tekrar olmadan tamamlayabilirim." },
+                { "language": "ru", "text": "Пожалуйста, подтвердите соответствующие документы письменно, чтобы я мог целенаправленно дослать их без повторов." },
+                { "language": "ckb", "text": "تکایە بەڵگە پەیوەندیدارەکان بە نووسراو پشتڕاست بکەنەوە، بۆ ئەوەی بتوانم بە ئامانجدار و بەبێ دووبارەبوونەوە بنێرم." },
+                { "language": "kmr", "text": "Ji kerema xwe belgeyên têkildar bi nivîskî piştrast bikin, da ku ez bi armanc û bê dubarekirin bişînim." },
+                { "language": "pl", "text": "Proszę potwierdzić właściwe dokumenty pisemnie, abym mógł je dosłać celowo i bez powtórzeń." },
+                { "language": "ro", "text": "Vă rog să confirmați documentele relevante în scris, ca să le pot depune țintit și fără dubluri." },
+                { "language": "sq", "text": "Ju lutem konfirmoni me shkrim dokumentet përkatëse, që t'i dorëzoj me qëllim dhe pa përsëritje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte ist höflich, dokumentierbar und spart unnötige Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is polite, documentable, and saves unnecessary documents." },
+                { "language": "fa", "text": "قوی: درخواست محترمانه، قابل مستندسازی و مانع مدارک غیرضروری است." },
+                { "language": "ar", "text": "قوي: الطلب مهذب وقابل للتوثيق ويوفر وثائق غير ضرورية." },
+                { "language": "tr", "text": "Güçlü: Rica kibar, belgelenebilir ve gereksiz belgeleri önler." },
+                { "language": "ru", "text": "Сильно: просьба вежливая, документируемая и экономит ненужные документы." },
+                { "language": "ckb", "text": "بەهێزە: داواکارییەکە ڕێزدارانە، بەڵگەکراو و ڕێگری لە بەڵگەی ناپێویست دەکات." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz nazik, belgekirinbar û belgeyên nepêwîst kêm dike." },
+                { "language": "pl", "text": "Mocne: prośba jest uprzejma, możliwa do udokumentowania i oszczędza zbędne dokumenty." },
+                { "language": "ro", "text": "Puternic: cererea este politicoasă, documentabilă și evită documente inutile." },
+                { "language": "sq", "text": "E fortë: kërkesa është e sjellshme, e dokumentueshme dhe kursen dokumente të panevojshme." }
+              ],
+              "explanationKey": "written-guidance"
+            },
+            {
+              "id": "weak-phone-only",
+              "text": "Dann sagen Sie mir bitte am Telefon kurz, was ich ungefähr schicken soll.",
+              "translations": [
+                { "language": "en", "text": "Then please briefly tell me on the phone what I should roughly send." },
+                { "language": "fa", "text": "پس لطفاً تلفنی کوتاه بگویید تقریباً چه چیزی باید بفرستم." },
+                { "language": "ar", "text": "إذن من فضلك قولي لي هاتفياً باختصار ما الذي ينبغي أن أرسله تقريباً." },
+                { "language": "tr", "text": "O zaman telefonda kısaca yaklaşık ne göndermem gerektiğini söyleyin lütfen." },
+                { "language": "ru", "text": "Тогда, пожалуйста, коротко скажите мне по телефону, что примерно я должен отправить." },
+                { "language": "ckb", "text": "ئەوا تکایە بە تەلەفۆن بە کورتی بڵێن نزیکەیی چی بنێرم." },
+                { "language": "kmr", "text": "Wê demê ji kerema xwe bi telefonê kurt bibêjin ez nêzîkî çi bişînim." },
+                { "language": "pl", "text": "W takim razie proszę mi krótko powiedzieć przez telefon, co mniej więcej mam wysłać." },
+                { "language": "ro", "text": "Atunci vă rog să îmi spuneți scurt la telefon cam ce ar trebui să trimit." },
+                { "language": "sq", "text": "Atëherë ju lutem më thoni shkurt në telefon afërsisht çfarë duhet të dërgoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unsicher für Verwaltungssprache: Ohne schriftliche Orientierung entstehen leicht Missverständnisse oder doppelte Uploads.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too uncertain for administrative language: without written guidance, misunderstandings or duplicate uploads can easily arise." },
+                { "language": "fa", "text": "برای زبان اداری بیش از حد نامطمئن است: بدون راهنمایی کتبی، سوءتفاهم یا بارگذاری تکراری به‌راحتی پیش می‌آید." },
+                { "language": "ar", "text": "غير موثوق بما يكفي للغة إدارية: من دون توجيه مكتوب قد تنشأ بسهولة سوء تفاهم أو رفع مكرر." },
+                { "language": "tr", "text": "İdari dil için fazla belirsiz: yazılı yönlendirme olmadan kolayca yanlış anlamalar veya çift yüklemeler oluşabilir." },
+                { "language": "ru", "text": "Слишком неопределённо для административного языка: без письменного ориентира легко возникают недоразумения или повторные загрузки." },
+                { "language": "ckb", "text": "بۆ زمانی کارگێڕی زۆر نادڵنیایە: بەبێ ڕێنمایی نووسراو بە ئاسانی تێنەگەیشتن یان بارکردنی دووبارە دروست دەبێت." },
+                { "language": "kmr", "text": "Ji bo zimanê îdarî pir neewle ye: bê rêberiya nivîskî, şaşfêmkirin an barkirina dubare hêsan çêdibe." },
+                { "language": "pl", "text": "Zbyt niepewne jak na język administracyjny: bez pisemnych wskazówek łatwo o nieporozumienia lub podwójne przesłanie." },
+                { "language": "ro", "text": "Prea nesigur pentru limbaj administrativ: fără orientare scrisă apar ușor neînțelegeri sau încărcări duble." },
+                { "language": "sq", "text": "Shumë e pasigurt për gjuhë administrative: pa udhëzim me shkrim krijohen lehtë keqkuptime ose ngarkime të dyfishta." }
+              ],
+              "explanationKey": "phone-only-guidance"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "strong-process-summary",
+              "text": "Ich reiche fristgerecht Widerspruch ein, lade die relevanten Nachweise hoch und bitte bei weiterem Bedarf um konkrete schriftliche Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "I will file the objection within the deadline, upload the relevant evidence, and ask for specific written feedback if anything else is needed." },
+                { "language": "fa", "text": "در مهلت مقرر اعتراض ثبت می‌کنم، مدارک مربوط را بارگذاری می‌کنم و اگر چیز دیگری لازم بود، درخواست بازخورد کتبی مشخص دارم." },
+                { "language": "ar", "text": "سأقدم الاعتراض ضمن المهلة، وأرفع الأدلة ذات الصلة، وأطلب رداً خطياً محدداً إذا كانت هناك حاجة إلى شيء آخر." },
+                { "language": "tr", "text": "Süre içinde itiraz edeceğim, ilgili kanıtları yükleyeceğim ve başka bir şey gerekirse somut yazılı geri bildirim rica edeceğim." },
+                { "language": "ru", "text": "Я подам возражение в срок, загружу соответствующие доказательства и попрошу конкретный письменный ответ, если потребуется что-то ещё." },
+                { "language": "ckb", "text": "لەناو مۆڵەتدا نارەزایی پێشکەش دەکەم، بەڵگە پەیوەندیدارەکان بار دەکەم و ئەگەر شتێکی تر پێویست بوو، داوای وەڵامی نووسراوی دیاریکراو دەکەم." },
+                { "language": "kmr", "text": "Ez di demê de nerazîbûnê pêşkêş dikim, belgeyên têkildar barkirim û ger tiştekî din pêwîst be, daxwaza bersiveke nivîskî ya konkret dikim." },
+                { "language": "pl", "text": "Złożę sprzeciw w terminie, prześlę właściwe dowody i w razie dalszej potrzeby poproszę o konkretną pisemną informację." },
+                { "language": "ro", "text": "Voi depune contestația în termen, voi încărca dovezile relevante și, dacă mai este nevoie de ceva, voi solicita un răspuns scris concret." },
+                { "language": "sq", "text": "Do ta paraqes kundërshtimin brenda afatit, do të ngarkoj provat përkatëse dhe nëse duhet diçka tjetër, do të kërkoj një përgjigje konkrete me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss ist prüfbar, fristbewusst und bleibt höflich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The close is reviewable, deadline-aware, and remains polite." },
+                { "language": "fa", "text": "قوی: جمع‌بندی قابل بررسی، آگاه به مهلت و همچنان محترمانه است." },
+                { "language": "ar", "text": "قوي: الخاتمة قابلة للمراجعة، واعية بالمهلة، وتبقى مهذبة." },
+                { "language": "tr", "text": "Güçlü: Kapanış incelenebilir, süre bilincine sahip ve kibar kalıyor." },
+                { "language": "ru", "text": "Сильно: завершение проверяемое, учитывает срок и остаётся вежливым." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە پێداچوونەوەکراوە، ئاگای لە مۆڵەتە و ڕێزدارانە دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: Dawî vekolînbar e, demê dihesibîne û nazik dimîne." },
+                { "language": "pl", "text": "Mocne: zakończenie jest weryfikowalne, świadome terminu i pozostaje uprzejme." },
+                { "language": "ro", "text": "Puternic: încheierea este verificabilă, atentă la termen și rămâne politicoasă." },
+                { "language": "sq", "text": "E fortë: përmbyllja është e verifikueshme, e vetëdijshme për afatin dhe mbetet e sjellshme." }
+              ],
+              "explanationKey": "clear-process-close"
+            },
+            {
+              "id": "weak-close-pressure",
+              "text": "Ich hoffe, dass das diesmal klappt, denn die Ablehnung war für mich wirklich enttäuschend.",
+              "translations": [
+                { "language": "en", "text": "I hope it works this time, because the rejection was really disappointing for me." },
+                { "language": "fa", "text": "امیدوارم این بار درست شود، چون رد شدن درخواست واقعاً برایم ناامیدکننده بود." },
+                { "language": "ar", "text": "آمل أن ينجح الأمر هذه المرة، لأن الرفض كان محبطاً حقاً بالنسبة لي." },
+                { "language": "tr", "text": "Bu sefer olacağını umuyorum, çünkü ret kararı benim için gerçekten hayal kırıklığıydı." },
+                { "language": "ru", "text": "Я надеюсь, что на этот раз получится, потому что отказ был для меня действительно разочаровывающим." },
+                { "language": "ckb", "text": "هیوادارم ئەم جارە سەر بکەوێت، چونکە ڕەتکردنەوەکە بەڕاستی بۆ من نائومێدکەر بوو." },
+                { "language": "kmr", "text": "Ez hêvî dikim vê carê bibe, ji ber ku redkirin ji bo min bi rastî bêhêvîker bû." },
+                { "language": "pl", "text": "Mam nadzieję, że tym razem się uda, bo odmowa była dla mnie naprawdę rozczarowująca." },
+                { "language": "ro", "text": "Sper că de data aceasta va merge, pentru că refuzul a fost cu adevărat dezamăgitor pentru mine." },
+                { "language": "sq", "text": "Shpresoj që këtë herë të funksionojë, sepse refuzimi ishte vërtet zhgënjyes për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber als Abschluss zu schwach: Es fehlen Frist, Unterlagen und die konkrete Bitte um Rückmeldung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too weak as a close: deadline, documents, and the specific request for feedback are missing." },
+                { "language": "fa", "text": "قابل فهم است، اما برای جمع‌بندی ضعیف است: مهلت، مدارک و درخواست مشخص برای بازخورد کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه ضعيف كخاتمة: تنقص المهلة والوثائق والطلب المحدد للرد." },
+                { "language": "tr", "text": "Anlaşılır, ama kapanış olarak zayıf: süre, belgeler ve somut geri bildirim isteği eksik." },
+                { "language": "ru", "text": "Понятно, но как завершение слишком слабо: отсутствуют срок, документы и конкретная просьба об ответе." },
+                { "language": "ckb", "text": "تێگەیشتراوە، بەڵام وەک کۆتایی لاوازە: مۆڵەت، بەڵگە و داواکاری دیاریکراو بۆ وەڵام کەمن." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê wekî dawî lawaz e: dem, belge û daxwaza konkret a bersivê kêm in." },
+                { "language": "pl", "text": "Zrozumiałe, ale jako zakończenie zbyt słabe: brakuje terminu, dokumentów i konkretnej prośby o informację zwrotną." },
+                { "language": "ro", "text": "De înțeles, dar prea slab ca încheiere: lipsesc termenul, documentele și cererea concretă de răspuns." },
+                { "language": "sq", "text": "E kuptueshme, por e dobët si përmbyllje: mungojnë afati, dokumentet dhe kërkesa konkrete për përgjigje." }
+              ],
+              "explanationKey": "emotional-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "administrative-opening",
+          "text": "Bei Bescheiden hilft zuerst Verfahrenssprache: Aktenzeichen, Datum, Ziel des Anrufs und ruhige Klärungsabsicht.",
+          "translations": [
+            { "language": "en", "text": "With official notices, procedural language helps first: file number, date, goal of the call, and calm intent to clarify." },
+            { "language": "fa", "text": "در نامه‌های تصمیم، ابتدا زبان روندی کمک می‌کند: شماره پرونده، تاریخ، هدف تماس و قصد آرام برای روشن‌سازی." },
+            { "language": "ar", "text": "في القرارات الرسمية تساعد لغة الإجراء أولاً: رقم الملف، التاريخ، هدف الاتصال، ونية هادئة للتوضيح." },
+            { "language": "tr", "text": "Kararlarda önce usul dili yardımcı olur: dosya numarası, tarih, aramanın amacı ve sakin açıklama niyeti." },
+            { "language": "ru", "text": "В официальных решениях сначала помогает процедурный язык: номер дела, дата, цель звонка и спокойное намерение уточнить." },
+            { "language": "ckb", "text": "لە بڕیارنامەکاندا سەرەتا زمانی پرۆسە یارمەتیدەرە: ژمارەی پەڕگە، بەروار، ئامانجی پەیوەندی و مەبەستی ئارامی ڕوونکردنەوە." },
+            { "language": "kmr", "text": "Di biryaran de pêşî zimanê pêvajoyê alîkar e: jimareya pelê, dîrok, armanca telefonê û niyeta aram a zelalkirinê." },
+            { "language": "pl", "text": "Przy decyzjach najpierw pomaga język proceduralny: numer sprawy, data, cel telefonu i spokojna intencja wyjaśnienia." },
+            { "language": "ro", "text": "La decizii ajută mai întâi limbajul procedural: numărul dosarului, data, scopul apelului și intenția calmă de clarificare." },
+            { "language": "sq", "text": "Te vendimet zyrtare ndihmon së pari gjuha procedurale: numri i dosjes, data, qëllimi i telefonatës dhe synimi i qetë për sqarim." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "reason-to-evidence",
+          "text": "C1-Kompetenz bedeutet hier, eine allgemeine Begründung in konkrete Nachweiskategorien zu übersetzen.",
+          "translations": [
+            { "language": "en", "text": "C1 competence here means translating a general justification into concrete evidence categories." },
+            { "language": "fa", "text": "توانش C1 اینجا یعنی تبدیل یک دلیل کلی به دسته‌های مشخص مدارک." },
+            { "language": "ar", "text": "تعني كفاءة C1 هنا تحويل تبرير عام إلى فئات أدلة محددة." },
+            { "language": "tr", "text": "Burada C1 yetkinliği genel bir gerekçeyi somut kanıt kategorilerine çevirmektir." },
+            { "language": "ru", "text": "Компетенция C1 здесь означает перевести общее обоснование в конкретные категории доказательств." },
+            { "language": "ckb", "text": "توانای C1 لێرەدا واتە گۆڕینی پاساوی گشتی بۆ پۆلە دیاریکراوەکانی بەڵگە." },
+            { "language": "kmr", "text": "Jêhatîbûna C1 li vir tê wateya veguherandina sedemkirineke giştî bo kategoriyên belge yên konkret." },
+            { "language": "pl", "text": "Kompetencja C1 oznacza tu przełożenie ogólnego uzasadnienia na konkretne kategorie dowodów." },
+            { "language": "ro", "text": "Competența C1 aici înseamnă transformarea unei motivări generale în categorii concrete de dovezi." },
+            { "language": "sq", "text": "Kompetenca C1 këtu do të thotë ta kthesh një arsyetim të përgjithshëm në kategori konkrete provash." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "procedure-and-content",
+          "text": "Gute Verwaltungssprache verbindet Inhalt und Verfahren: Was fehlt fachlich, und wie darf es nachgereicht werden?",
+          "translations": [
+            { "language": "en", "text": "Good administrative language connects content and procedure: what is missing substantively, and how may it be submitted later?" },
+            { "language": "fa", "text": "زبان اداری خوب محتوا و روند را وصل می‌کند: از نظر محتوایی چه چیزی کم است و چگونه می‌توان آن را بعداً ارسال کرد؟" },
+            { "language": "ar", "text": "اللغة الإدارية الجيدة تربط بين المحتوى والإجراء: ما الذي ينقص موضوعياً، وكيف يمكن تقديمه لاحقاً؟" },
+            { "language": "tr", "text": "İyi idari dil içerik ve usulü bağlar: içerik olarak ne eksik ve nasıl sonradan sunulabilir?" },
+            { "language": "ru", "text": "Хороший административный язык связывает содержание и процедуру: чего не хватает по существу и как это можно дослать?" },
+            { "language": "ckb", "text": "زمانی کارگێڕیی باش ناوەڕۆک و پرۆسە پێکەوە دەبەستێت: لە ڕووی ناوەڕۆکەوە چی کەمە، و چۆن دەتوانرێت دواتر بنێردرێت؟" },
+            { "language": "kmr", "text": "Zimanê îdarî yê baş naverok û pêvajo bi hev ve girê dide: ji aliyê naverokê ve çi kêm e, û çawa dikare paşê were şandin?" },
+            { "language": "pl", "text": "Dobry język administracyjny łączy treść i procedurę: czego brakuje merytorycznie i jak można to dosłać?" },
+            { "language": "ro", "text": "Limbajul administrativ bun leagă conținutul și procedura: ce lipsește pe fond și cum poate fi depus ulterior?" },
+            { "language": "sq", "text": "Gjuha e mirë administrative lidh përmbajtjen dhe procedurën: çfarë mungon në thelb dhe si mund të dorëzohet më vonë?" }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "deadline",
+          "text": "Fristwahrung sollte ausdrücklich angesprochen werden; sonst kann eine inhaltlich gute Ergänzung zu spät kommen.",
+          "translations": [
+            { "language": "en", "text": "Preserving the deadline should be addressed explicitly; otherwise a good substantive supplement may arrive too late." },
+            { "language": "fa", "text": "حفظ مهلت باید صریحاً مطرح شود؛ وگرنه یک تکمیل محتوایی خوب ممکن است دیر برسد." },
+            { "language": "ar", "text": "ينبغي ذكر حفظ المهلة صراحة؛ وإلا قد تصل إضافة موضوعية جيدة متأخرة." },
+            { "language": "tr", "text": "Süreyi koruma açıkça ele alınmalıdır; aksi halde içerik olarak iyi bir ekleme geç gelebilir." },
+            { "language": "ru", "text": "Сохранение срока следует явно обсудить; иначе хорошее содержательное дополнение может прийти слишком поздно." },
+            { "language": "ckb", "text": "پاراستنی مۆڵەت پێویستە بە ڕوونی باس بکرێت؛ ئەگەر نا، تەواوکارییەکی ناوەڕۆکی باش دەتوانێت زۆر درەنگ بگات." },
+            { "language": "kmr", "text": "Parastina demê divê eşkere bê gotin; wekî din zêdekirineke naverokî ya baş dikare pir dereng bigihêje." },
+            { "language": "pl", "text": "Zachowanie terminu powinno zostać wyraźnie poruszone; inaczej dobre uzupełnienie merytoryczne może przyjść za późno." },
+            { "language": "ro", "text": "Păstrarea termenului trebuie abordată explicit; altfel o completare bună pe fond poate ajunge prea târziu." },
+            { "language": "sq", "text": "Ruajtja e afatit duhet të trajtohet shprehimisht; përndryshe një plotësim i mirë përmbajtësor mund të vijë tepër vonë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing",
+          "text": "Der Abschluss sollte nicht nur Hoffnung ausdrücken, sondern Frist, Unterlagen, Bezugspunkt und gewünschte Rückmeldung sichern.",
+          "translations": [
+            { "language": "en", "text": "The close should not only express hope, but secure the deadline, documents, reference point, and desired feedback." },
+            { "language": "fa", "text": "جمع‌بندی نباید فقط امید را بیان کند، بلکه باید مهلت، مدارک، نقطه ارجاع و بازخورد مورد نظر را تثبیت کند." },
+            { "language": "ar", "text": "ينبغي ألا تعبّر الخاتمة عن الأمل فقط، بل أن تؤمن المهلة والوثائق ونقطة الإشارة والرد المطلوب." },
+            { "language": "tr", "text": "Kapanış yalnızca umut ifade etmemeli; süreyi, belgeleri, referans noktasını ve istenen geri bildirimi güvenceye almalıdır." },
+            { "language": "ru", "text": "Завершение должно не только выражать надежду, но и фиксировать срок, документы, точку ссылки и желаемый ответ." },
+            { "language": "ckb", "text": "کۆتایی نابێت تەنها هیوا دەرببڕێت، بەڵکو پێویستە مۆڵەت، بەڵگە، خاڵی ئاماژە و وەڵامی خوازراو دڵنیا بکات." },
+            { "language": "kmr", "text": "Dawî divê ne tenê hêviyê bibêje, lê dem, belge, xalê referansê û bersiva xwestî misoger bike." },
+            { "language": "pl", "text": "Zakończenie nie powinno tylko wyrażać nadziei, lecz zabezpieczyć termin, dokumenty, punkt odniesienia i oczekiwaną informację zwrotną." },
+            { "language": "ro", "text": "Încheierea nu ar trebui doar să exprime speranță, ci să asigure termenul, documentele, punctul de referință și răspunsul dorit." },
+            { "language": "sq", "text": "Përmbyllja nuk duhet vetëm të shprehë shpresë, por të sigurojë afatin, dokumentet, pikën e referimit dhe përgjigjen e dëshiruar." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "health-insurance-rejection-phone-call",
+          "placement": "hero",
+          "purpose": "Show a formal phone call with health insurance about a rejection notice, file number, deadlines, and missing documents.",
+          "altText": "Eine versicherte Person telefoniert mit der Krankenkasse und notiert Aktenzeichen, Frist, fehlende Unterlagen und nächste Schritte.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An insured person calls the health insurance fund and notes the file number, deadline, missing documents, and next steps." },
+            { "language": "fa", "text": "یک بیمه‌شده با بیمه درمانی تماس می‌گیرد و شماره پرونده، مهلت، مدارک ناقص و گام‌های بعدی را یادداشت می‌کند." },
+            { "language": "ar", "text": "شخص مؤمَّن عليه يتصل بصندوق التأمين الصحي ويدون رقم الملف والمهلة والوثائق الناقصة والخطوات التالية." },
+            { "language": "tr", "text": "Sigortalı bir kişi sağlık sigortasını arar ve dosya numarasını, süreyi, eksik belgeleri ve sonraki adımları not eder." },
+            { "language": "ru", "text": "Застрахованное лицо звонит в страховую кассу и записывает номер дела, срок, недостающие документы и следующие шаги." },
+            { "language": "ckb", "text": "کەسێکی بیمەکراو پەیوەندی بە بیمەی تەندروستی دەکات و ژمارەی پەڕگە، مۆڵەت، بەڵگەی کەم و هەنگاوەکانی دواتر تێبینی دەکات." },
+            { "language": "kmr", "text": "Kesekî sîgortekirî telefonî sîgorta tenduristiyê dike û jimareya pelê, dem, belgeyên kêm û gavên paşîn dinivîse." },
+            { "language": "pl", "text": "Osoba ubezpieczona dzwoni do kasy chorych i notuje numer sprawy, termin, brakujące dokumenty oraz następne kroki." },
+            { "language": "ro", "text": "O persoană asigurată sună la casa de asigurări și notează numărul dosarului, termenul, documentele lipsă și pașii următori." },
+            { "language": "sq", "text": "Një person i siguruar telefonon sigurimin shëndetësor dhe shënon numrin e dosjes, afatin, dokumentet që mungojnë dhe hapat e ardhshëm." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal phone call with a German health insurance fund. An insured adult writes neutral notes with icons for file number, deadline, missing documents, objection, and upload portal; no readable private data, no logos, accessible composition, diverse adult, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

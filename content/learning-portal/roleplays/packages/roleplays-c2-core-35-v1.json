@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-35-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 35 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 35",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-datenauskunft-verstaendlich-einfordern",
+      "linkedDialogueSlug": null,
+      "title": "Eine Datenauskunft verständlich einfordern",
+      "titleTranslations": [
+        { "language": "en", "text": "Requesting understandable information about stored records" },
+        { "language": "fa", "text": "درخواست قابل فهم برای اطلاعات و سوابق ذخیره‌شده" },
+        { "language": "ar", "text": "طلب معلومات مفهومة عن السجلات المخزنة" },
+        { "language": "tr", "text": "Saklanan kayıtlar hakkında anlaşılır bilgi istemek" },
+        { "language": "ru", "text": "Запрос понятной информации о сохраненных записях" },
+        { "language": "ckb", "text": "داواکاریی زانیاریی تێگەیشتوو دەربارەی تۆمارە پارێزراوەکان" },
+        { "language": "kmr", "text": "Xwestina agahiya fêmbar li ser tomarên parastî" },
+        { "language": "pl", "text": "Żądanie zrozumiałej informacji o zapisanych danych" },
+        { "language": "ro", "text": "Solicitarea unor informații inteligibile despre evidențele stocate" },
+        { "language": "sq", "text": "Kërkimi i informacionit të kuptueshëm për regjistrat e ruajtur" }
+      ],
+      "description": "Sie rufen bei einer Behörde an, weil Sie wissen möchten, welche Angaben zu Ihrem Antrag gespeichert sind. Sie wollen keine pauschale Beschwerde und keine juristische Debatte führen, sondern eine verständliche Auskunft zu drei Punkten bekommen: gespeicherte Kontaktadresse, vermerkte Unterlagen und letzter Bearbeitungsstand. Sie sollen die Anfrage präzise, höflich und begrenzt formulieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call a public office because you want to know which details are stored for your application. You do not want to make a broad complaint or start a legal debate, but to receive understandable information on three points: stored contact address, recorded documents, and latest case status. You should phrase the request precisely, politely, and within clear limits." },
+        { "language": "fa", "text": "با یک اداره تماس می‌گیرید چون می‌خواهید بدانید چه اطلاعاتی درباره درخواست شما ذخیره شده است. هدف شما شکایت کلی یا بحث حقوقی نیست، بلکه می‌خواهید درباره سه نکته پاسخ قابل فهم بگیرید: نشانی تماس ثبت‌شده، مدارک ثبت‌شده و آخرین وضعیت پرونده. باید درخواست را دقیق، مؤدبانه و محدود مطرح کنید." },
+        { "language": "ar", "text": "تتصلون بدائرة حكومية لأنكم تريدون معرفة أي معلومات محفوظة عن طلبكم. لا تريدون تقديم شكوى عامة أو الدخول في نقاش قانوني، بل الحصول على معلومات مفهومة حول ثلاث نقاط: عنوان الاتصال المسجل، والوثائق المسجلة، وآخر حالة للملف. ينبغي صياغة الطلب بدقة وتهذيب وحدود واضحة." },
+        { "language": "tr", "text": "Başvurunuzla ilgili hangi bilgilerin saklandığını öğrenmek için bir resmi daireyi arıyorsunuz. Genel bir şikâyet ya da hukuki tartışma yapmak istemiyorsunuz; üç konuda anlaşılır bilgi almak istiyorsunuz: kayıtlı iletişim adresi, kaydedilmiş belgeler ve son dosya durumu. Talebi kesin, nazik ve sınırlı ifade etmelisiniz." },
+        { "language": "ru", "text": "Вы звоните в учреждение, потому что хотите узнать, какие сведения сохранены по вашему заявлению. Вы не хотите подавать общую жалобу или начинать юридический спор, а хотите получить понятную информацию по трем пунктам: сохраненный контактный адрес, зарегистрированные документы и последний статус дела. Запрос нужно сформулировать точно, вежливо и ограниченно." },
+        { "language": "ckb", "text": "پەیوەندی بە فەرمانگەیەکەوە دەکەیت چونکە دەتەوێت بزانیت کام زانیاری دەربارەی داواکارییەکەت پارێزراوە. ناتەوێت سکاڵایەکی گشتی بکەیت یان گفتوگۆی یاسایی دەست پێبکەیت، بەڵکو دەتەوێت دەربارەی سێ خاڵ زانیاریی تێگەیشتوو وەربگریت: ناونیشانی پەیوەندی تۆمارکراو، بەڵگە تۆمارکراوەکان و دوا دۆخی دۆسیە. پێویستە داواکارییەکە بە وردی، ڕێزدارانە و سنووردار داڕێژیت." },
+        { "language": "kmr", "text": "Hûn telefonî dezgehekê dikin, ji ber ku dixwazin bizanin kîjan agahî li ser daxwaza we hatine parastin. Hûn naxwazin gilîyek giştî bikin an nîqaşeke hiqûqî dest pê bikin; hûn dixwazin li ser sê xal agahiyeke fêmbar bistînin: navnîşana têkiliyê ya tomarbûyî, belgeyên tomarbûyî û statûya dawî ya dosyayê. Divê daxwaz bi hûrgilî, bi rêzdarî û bi sînorên zelal bê gotin." },
+        { "language": "pl", "text": "Dzwoni Pan/Pani do urzędu, ponieważ chce się dowiedzieć, jakie informacje zapisano przy Pana/Pani wniosku. Nie chodzi o ogólną skargę ani debatę prawną, lecz o zrozumiałą informację w trzech punktach: zapisany adres kontaktowy, odnotowane dokumenty i ostatni stan sprawy. Prośbę należy sformułować precyzyjnie, uprzejmie i w ograniczonym zakresie." },
+        { "language": "ro", "text": "Sunați la o instituție publică pentru că doriți să aflați ce informații sunt stocate despre cererea dumneavoastră. Nu doriți o plângere generală sau o dezbatere juridică, ci informații inteligibile despre trei puncte: adresa de contact stocată, documentele consemnate și ultimul status al dosarului. Cererea trebuie formulată precis, politicos și limitat." },
+        { "language": "sq", "text": "Telefononi një zyrë publike sepse doni të dini cilat të dhëna janë ruajtur për kërkesën tuaj. Nuk doni të bëni ankesë të përgjithshme apo debat juridik, por të merrni informacion të kuptueshëm për tri pika: adresën e kontaktit të regjistruar, dokumentet e shënuara dhe statusin e fundit të dosjes. Kërkesa duhet formuluar saktë, me mirësjellje dhe e kufizuar." }
+      ],
+      "learnerGoal": "Eine Datenauskunft verständlich und begrenzt einfordern: Zweck und Umfang nennen, konkrete Datenkategorien abfragen, Identitätsprüfung akzeptieren, keine pauschale Herausgabe aller Akten verlangen und eine schriftliche Antwort in verständlicher Form erbitten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Request information about stored records in an understandable and limited way: state purpose and scope, ask for specific categories, accept identity checks, avoid demanding every file wholesale, and request a written answer in understandable form." },
+        { "language": "fa", "text": "درخواست اطلاعات ذخیره‌شده را قابل فهم و محدود مطرح کنید: هدف و دامنه را بگویید، دسته‌های مشخص اطلاعات را بپرسید، بررسی هویت را بپذیرید، درخواست کلی برای همه پرونده‌ها نکنید و پاسخ کتبی قابل فهم بخواهید." },
+        { "language": "ar", "text": "اطلبوا معلومات عن السجلات المخزنة بطريقة مفهومة ومحدودة: اذكروا الهدف والنطاق، واسألوا عن فئات محددة، واقبلوا التحقق من الهوية، وتجنبوا طلب كل الملفات بشكل شامل، واطلبوا جوابًا خطيًا مفهومًا." },
+        { "language": "tr", "text": "Saklanan kayıtlar hakkında anlaşılır ve sınırlı bilgi isteyin: amacı ve kapsamı belirtin, somut kategorileri sorun, kimlik kontrolünü kabul edin, tüm dosyaların toptan verilmesini istemeyin ve anlaşılır biçimde yazılı yanıt rica edin." },
+        { "language": "ru", "text": "Запросите сведения о сохраненных записях понятно и ограниченно: назовите цель и объем, спросите о конкретных категориях данных, примите проверку личности, не требуйте все материалы целиком и попросите письменный ответ в понятной форме." },
+        { "language": "ckb", "text": "داواکاری زانیاری دەربارەی تۆمارە پارێزراوەکان بە شێوەی تێگەیشتوو و سنووردار بکە: ئامانج و سنوور ناوببە، دەربارەی پۆلە دیاریکراوەکان بپرسە، پشکنینی ناسنامە بپەسەندە، داوای گشتی بۆ هەموو دۆسیەکان مەکە و وەڵامی نووسراوی تێگەیشتوو داوا بکە." },
+        { "language": "kmr", "text": "Agahiyê li ser tomarên parastî bi awayekî fêmbar û sînorkirî bixwazin: armanc û berfirehî nav bikin, li kategoriyên konkret bipirsin, kontrola nasnameyê qebûl bikin, daxwaza giştî ya hemû dosyayan nekin û bersiveke nivîskî ya fêmbar bixwazin." },
+        { "language": "pl", "text": "Zażądać informacji o zapisanych danych w sposób zrozumiały i ograniczony: wskazać cel i zakres, zapytać o konkretne kategorie, zaakceptować weryfikację tożsamości, nie żądać hurtowo wszystkich akt i poprosić o pisemną odpowiedź w zrozumiałej formie." },
+        { "language": "ro", "text": "Solicitați informații despre evidențele stocate într-un mod inteligibil și limitat: precizați scopul și domeniul, întrebați despre categorii concrete, acceptați verificarea identității, evitați să cereți toate dosarele în bloc și solicitați un răspuns scris într-o formă clară." },
+        { "language": "sq", "text": "Kërkoni informacion për regjistrat e ruajtur në mënyrë të kuptueshme dhe të kufizuar: tregoni qëllimin dhe fushën, pyesni për kategori konkrete, pranoni verifikimin e identitetit, mos kërkoni të gjitha dosjet në mënyrë të përgjithshme dhe kërkoni përgjigje me shkrim të kuptueshme." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "ask-for-information",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 35,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌دهنده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeiterin",
+          "translations": [
+            { "language": "en", "text": "Case worker" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "الموظفة المختصة" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудница по делу" },
+            { "language": "ckb", "text": "کارمەندی دۆسیە" },
+            { "language": "kmr", "text": "Karmenda dosyayê" },
+            { "language": "pl", "text": "Urzędniczka prowadząca sprawę" },
+            { "language": "ro", "text": "Funcționara responsabilă de dosar" },
+            { "language": "sq", "text": "Punonjësja e dosjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Guten Tag, Bürgerbüro. Worum geht es bei Ihrem Anruf?",
+          "translations": [
+            { "language": "en", "text": "Good day, citizens' office. What is your call about?" },
+            { "language": "fa", "text": "روز بخیر، دفتر شهروندان. تماس شما درباره چیست؟" },
+            { "language": "ar", "text": "طاب يومكم، مكتب المواطنين. ما موضوع اتصالكم؟" },
+            { "language": "tr", "text": "İyi günler, vatandaş bürosu. Aramanız ne hakkında?" },
+            { "language": "ru", "text": "Добрый день, бюро граждан. По какому вопросу вы звоните?" },
+            { "language": "ckb", "text": "ڕۆژ باش، نووسینگەی هاووڵاتیان. پەیوەندییەکەت دەربارەی چییە؟" },
+            { "language": "kmr", "text": "Roj baş, ofîsa hemwelatiyan. Telefonê we li ser çi ye?" },
+            { "language": "pl", "text": "Dzień dobry, biuro obywatelskie. W jakiej sprawie Pan/Pani dzwoni?" },
+            { "language": "ro", "text": "Bună ziua, biroul pentru cetățeni. Despre ce este apelul dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita, zyra e qytetarëve. Për çfarë është telefonata juaj?" }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich möchte eine Datenauskunft zu meinem laufenden Antrag erbitten, aber ausdrücklich begrenzt: Es geht mir nur um die gespeicherte Kontaktadresse, die vermerkten Unterlagen und den letzten Bearbeitungsstand.",
+          "translations": [
+            { "language": "en", "text": "Good day. I would like to request information about stored records for my current application, but expressly within limits: I only mean the stored contact address, the recorded documents, and the latest case status." },
+            { "language": "fa", "text": "روز بخیر. می‌خواهم درباره سوابق ذخیره‌شده درخواست جاری‌ام اطلاعات بخواهم، اما صریحاً محدود: فقط نشانی تماس ثبت‌شده، مدارک ثبت‌شده و آخرین وضعیت پرونده مد نظر من است." },
+            { "language": "ar", "text": "طاب يومكم. أود طلب معلومات عن السجلات المخزنة الخاصة بطلبي الجاري، لكن بشكل محدود صراحة: أقصد فقط عنوان الاتصال المسجل، والوثائق المسجلة، وآخر حالة للملف." },
+            { "language": "tr", "text": "İyi günler. Devam eden başvurumla ilgili saklanan kayıtlar hakkında bilgi istemek istiyorum, ancak açıkça sınırlı olarak: yalnızca kayıtlı iletişim adresi, kaydedilmiş belgeler ve son dosya durumu." },
+            { "language": "ru", "text": "Добрый день. Я хотел бы запросить информацию о сохраненных записях по моему текущему заявлению, но прямо в ограниченном объеме: только сохраненный контактный адрес, зарегистрированные документы и последний статус дела." },
+            { "language": "ckb", "text": "ڕۆژ باش. دەمەوێت زانیاری دەربارەی تۆمارە پارێزراوەکانی داواکارییە بەردەوامەکەم داوا بکەم، بەڵام بە ڕوونی سنووردار: تەنها ناونیشانی پەیوەندی تۆمارکراو، بەڵگە تۆمارکراوەکان و دوا دۆخی دۆسیە." },
+            { "language": "kmr", "text": "Roj baş. Ez dixwazim agahiyê li ser tomarên parastî yên daxwaza xwe ya niha bixwazim, lê bi eşkere sînorkirî: tenê navnîşana têkiliyê ya tomarbûyî, belgeyên tomarbûyî û statûya dawî ya dosyayê." },
+            { "language": "pl", "text": "Dzień dobry. Chciałbym/chciałabym poprosić o informację o zapisanych danych dotyczących mojego bieżącego wniosku, ale wyraźnie w ograniczonym zakresie: chodzi tylko o zapisany adres kontaktowy, odnotowane dokumenty i ostatni stan sprawy." },
+            { "language": "ro", "text": "Bună ziua. Aș dori să solicit informații despre evidențele stocate privind cererea mea în curs, dar în mod expres limitat: mă interesează doar adresa de contact stocată, documentele consemnate și ultimul status al dosarului." },
+            { "language": "sq", "text": "Mirëdita. Dua të kërkoj informacion për regjistrat e ruajtur lidhur me kërkesën time në vazhdim, por shprehimisht të kufizuar: vetëm adresën e kontaktit të regjistruar, dokumentet e shënuara dhe statusin e fundit të dosjes." }
+          ],
+          "function": "limited-request",
+          "toneNote": "Begrenzung gleich am Anfang nennen.",
+          "expectedLearnerAction": "State scope and categories precisely."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Für solche Auskünfte müssen wir zuerst sicherstellen, dass Sie die antragstellende Person sind. Können Sie Ihr Aktenzeichen nennen?",
+          "translations": [
+            { "language": "en", "text": "For such information, we first have to make sure that you are the applicant. Can you give your file number?" },
+            { "language": "fa", "text": "برای چنین اطلاعاتی ابتدا باید مطمئن شویم که شما همان درخواست‌دهنده هستید. می‌توانید شماره پرونده را بگویید؟" },
+            { "language": "ar", "text": "لهذه المعلومات يجب أولًا التأكد من أنكم مقدم الطلب. هل يمكنكم ذكر رقم الملف؟" },
+            { "language": "tr", "text": "Bu tür bilgiler için önce başvuru sahibi olduğunuzdan emin olmamız gerekir. Dosya numaranızı söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Для такой информации мы сначала должны убедиться, что вы являетесь заявителем. Можете назвать номер дела?" },
+            { "language": "ckb", "text": "بۆ ئەم جۆرە زانیارییانە پێویستە سەرەتا دڵنیا بین کە تۆ داواکەرەکەیت. دەتوانیت ژمارەی دۆسیەکەت بڵێیت؟" },
+            { "language": "kmr", "text": "Ji bo van agahiyan divê em pêşî piştrast bikin ku hûn daxwazkar in. Hûn dikarin jimareya dosyaya xwe bêjin?" },
+            { "language": "pl", "text": "Przy takich informacjach musimy najpierw upewnić się, że jest Pan/Pani osobą składającą wniosek. Czy może Pan/Pani podać numer sprawy?" },
+            { "language": "ro", "text": "Pentru astfel de informații trebuie mai întâi să ne asigurăm că sunteți solicitantul. Ne puteți spune numărul dosarului?" },
+            { "language": "sq", "text": "Për këto informacione duhet së pari të sigurohemi që ju jeni aplikuesi. A mund të jepni numrin e dosjes?" }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, das ist nachvollziehbar. Das Aktenzeichen lautet 24-3178. Wenn weitere Identitätsangaben nötig sind, geben Sie mir bitte nur die erforderlichen Schritte an; ich möchte keine unnötigen Daten am Telefon nennen.",
+          "translations": [
+            { "language": "en", "text": "Yes, that is understandable. The file number is 24-3178. If further identity details are necessary, please tell me only the required steps; I do not want to provide unnecessary details by phone." },
+            { "language": "fa", "text": "بله، قابل فهم است. شماره پرونده 24-3178 است. اگر اطلاعات هویتی بیشتری لازم است، لطفاً فقط مراحل لازم را بگویید؛ نمی‌خواهم اطلاعات غیرضروری را تلفنی اعلام کنم." },
+            { "language": "ar", "text": "نعم، هذا مفهوم. رقم الملف هو 24-3178. إذا كانت هناك بيانات هوية إضافية مطلوبة، يرجى ذكر الخطوات اللازمة فقط؛ لا أريد إعطاء معلومات غير ضرورية عبر الهاتف." },
+            { "language": "tr", "text": "Evet, bu anlaşılır. Dosya numarası 24-3178. Daha fazla kimlik bilgisi gerekiyorsa lütfen yalnızca gerekli adımları belirtin; telefonda gereksiz bilgi vermek istemiyorum." },
+            { "language": "ru", "text": "Да, это понятно. Номер дела 24-3178. Если нужны дополнительные сведения для проверки личности, пожалуйста, назовите только необходимые шаги; я не хочу сообщать по телефону лишние данные." },
+            { "language": "ckb", "text": "بەڵێ، ئەوە تێگەیشتووە. ژمارەی دۆسیە 24-3178 ـە. ئەگەر زانیاریی ناسنامەی زیاتر پێویستە، تکایە تەنها هەنگاوە پێویستەکان بڵێن؛ نامەوێت زانیاریی ناپێویست بە تەلەفۆن بڵێم." },
+            { "language": "kmr", "text": "Erê, ev tê fêmkirin. Jimareya dosyayê 24-3178 e. Heke agahiyên zêdetir ên nasnameyê pêwîst bin, ji kerema xwe tenê gavên pêwîst bêjin; ez naxwazim agahiyên nehewce bi telefonê bidim." },
+            { "language": "pl", "text": "Tak, to zrozumiałe. Numer sprawy to 24-3178. Jeśli potrzebne są dalsze dane identyfikacyjne, proszę podać tylko wymagane kroki; nie chcę podawać przez telefon zbędnych danych." },
+            { "language": "ro", "text": "Da, este de înțeles. Numărul dosarului este 24-3178. Dacă sunt necesare alte date de identificare, vă rog să îmi indicați doar pașii necesari; nu doresc să dau telefonic date inutile." },
+            { "language": "sq", "text": "Po, kjo është e kuptueshme. Numri i dosjes është 24-3178. Nëse duhen të dhëna të tjera identifikimi, ju lutem më tregoni vetëm hapat e nevojshëm; nuk dua të jap të dhëna të panevojshme në telefon." }
+          ],
+          "function": "identity-check-boundary",
+          "toneNote": "Identitätsprüfung akzeptieren, aber Datensparsamkeit wahren.",
+          "expectedLearnerAction": "Give file number and set a privacy-conscious boundary."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Ich sehe die Akte. Was genau soll ich Ihnen mitteilen?",
+          "translations": [
+            { "language": "en", "text": "I can see the file. What exactly should I tell you?" },
+            { "language": "fa", "text": "پرونده را می‌بینم. دقیقاً چه چیزی را باید به شما بگویم؟" },
+            { "language": "ar", "text": "أرى الملف. ما الذي ينبغي أن أخبركم به تحديدًا؟" },
+            { "language": "tr", "text": "Dosyayı görüyorum. Size tam olarak ne bildirmeliyim?" },
+            { "language": "ru", "text": "Я вижу дело. Что именно я должен вам сообщить?" },
+            { "language": "ckb", "text": "دۆسیەکە دەبینم. بە وردی چی پێتان بڵێم؟" },
+            { "language": "kmr", "text": "Ez dosyayê dibînim. Divê ez bi hûrgilî çi ji we re bêjim?" },
+            { "language": "pl", "text": "Widzę akta. Co dokładnie mam Panu/Pani przekazać?" },
+            { "language": "ro", "text": "Văd dosarul. Ce anume să vă comunic?" },
+            { "language": "sq", "text": "E shoh dosjen. Çfarë saktësisht duhet t'ju them?" }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Bitte nennen Sie mir erstens die aktuell hinterlegte Kontaktadresse, zweitens welche Unterlagen als eingegangen vermerkt sind, und drittens den letzten fachlichen Bearbeitungsstand. Ich brauche keine internen Notizen oder Namen einzelner Mitarbeitender.",
+          "translations": [
+            { "language": "en", "text": "Please tell me, first, the contact address currently stored; second, which documents are marked as received; and third, the latest substantive case status. I do not need internal notes or names of individual staff members." },
+            { "language": "fa", "text": "لطفاً اول نشانی تماس فعلی ثبت‌شده را بگویید، دوم اینکه کدام مدارک به‌عنوان دریافت‌شده ثبت شده‌اند، و سوم آخرین وضعیت محتوایی پرونده را. من به یادداشت‌های داخلی یا نام کارکنان مشخص نیاز ندارم." },
+            { "language": "ar", "text": "يرجى إخباري أولًا بعنوان الاتصال المسجل حاليًا، وثانيًا بالوثائق المعلَّمة كموصولة، وثالثًا بآخر حالة فنية للملف. لا أحتاج إلى ملاحظات داخلية أو أسماء موظفين بعينهم." },
+            { "language": "tr", "text": "Lütfen önce şu anda kayıtlı iletişim adresini, ikinci olarak hangi belgelerin alınmış olarak işaretlendiğini ve üçüncü olarak son içeriksel dosya durumunu söyleyin. İç notlara ya da tek tek çalışan adlarına ihtiyacım yok." },
+            { "language": "ru", "text": "Пожалуйста, назовите мне, во-первых, текущий сохраненный контактный адрес; во-вторых, какие документы отмечены как полученные; и, в-третьих, последний содержательный статус дела. Мне не нужны внутренние заметки или имена отдельных сотрудников." },
+            { "language": "ckb", "text": "تکایە یەکەم ناونیشانی پەیوەندیی ئێستای تۆمارکراو بڵێن، دووەم کام بەڵگەکان وەک گەیشتوو تۆمارکراون، و سێیەم دوا دۆخی بابەتی دۆسیە. پێویستم بە تێبینیی ناوخۆیی یان ناوی کارمەندی دیاریکراو نییە." },
+            { "language": "kmr", "text": "Ji kerema xwe yekem navnîşana têkiliyê ya niha tomarbûyî bêjin, duyem kîjan belge wek wergirtî hatine tomar kirin, û sêyem statûya dawî ya naverokî ya dosyayê. Notên hundirîn an navên karmendên taybet ji min re pêwîst nînin." },
+            { "language": "pl", "text": "Proszę podać po pierwsze aktualnie zapisany adres kontaktowy, po drugie, które dokumenty są odnotowane jako otrzymane, i po trzecie ostatni merytoryczny stan sprawy. Nie potrzebuję notatek wewnętrznych ani nazwisk poszczególnych pracowników." },
+            { "language": "ro", "text": "Vă rog să îmi spuneți, mai întâi, adresa de contact stocată în prezent; apoi ce documente sunt marcate ca primite; și, în al treilea rând, ultimul status de fond al dosarului. Nu am nevoie de note interne sau de nume ale unor angajați." },
+            { "language": "sq", "text": "Ju lutem më tregoni së pari adresën aktuale të kontaktit të regjistruar, së dyti cilat dokumente janë shënuar si të pranuara, dhe së treti statusin e fundit përmbajtësor të dosjes. Nuk më duhen shënime të brendshme apo emra punonjësish të veçantë." }
+          ],
+          "function": "specific-categories",
+          "toneNote": "Konkrete Kategorien nennen und unnötige Einsicht ausschließen.",
+          "expectedLearnerAction": "Ask for precise categories and exclude unnecessary internal details."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Manche Angaben können wir am Telefon nur eingeschränkt nennen. Eine schriftliche Auskunft wäre wahrscheinlich geeigneter.",
+          "translations": [
+            { "language": "en", "text": "Some details can only be given by phone to a limited extent. A written answer would probably be more suitable." },
+            { "language": "fa", "text": "برخی اطلاعات را تلفنی فقط به‌صورت محدود می‌توانیم بدهیم. احتمالاً پاسخ کتبی مناسب‌تر است." },
+            { "language": "ar", "text": "بعض المعلومات لا يمكننا ذكرها عبر الهاتف إلا بشكل محدود. ربما يكون الجواب الخطي أنسب." },
+            { "language": "tr", "text": "Bazı bilgiler telefonda yalnızca sınırlı ölçüde verilebilir. Yazılı bir yanıt muhtemelen daha uygun olur." },
+            { "language": "ru", "text": "Некоторые сведения мы можем сообщить по телефону только ограниченно. Письменный ответ, вероятно, был бы более подходящим." },
+            { "language": "ckb", "text": "هەندێک زانیاری بە تەلەفۆن تەنها بە شێوەی سنووردار دەدرێت. وەڵامی نووسراو ڕەنگە گونجاوتر بێت." },
+            { "language": "kmr", "text": "Hin agahî bi telefonê tenê bi awayekî sînorkirî dikarin werin gotin. Bersiveke nivîskî dibe ku guncavtir be." },
+            { "language": "pl", "text": "Niektóre informacje możemy podać telefonicznie tylko w ograniczonym zakresie. Pisemna odpowiedź byłaby prawdopodobnie właściwsza." },
+            { "language": "ro", "text": "Unele informații le putem oferi telefonic doar într-o măsură limitată. Un răspuns scris ar fi probabil mai potrivit." },
+            { "language": "sq", "text": "Disa informacione mund t'i japim në telefon vetëm në masë të kufizuar. Një përgjigje me shkrim ndoshta do të ishte më e përshtatshme." }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann bitte ich um eine schriftliche Auskunft in verständlicher Form. Mir reicht eine kurze Übersicht zu den drei genannten Punkten; falls etwas nicht herausgegeben werden kann, bitte ich um eine kurze Begründung dafür.",
+          "translations": [
+            { "language": "en", "text": "Then I ask for a written answer in understandable form. A short overview of the three points I named is enough for me; if something cannot be provided, I ask for a brief reason." },
+            { "language": "fa", "text": "پس درخواست پاسخ کتبی به شکل قابل فهم دارم. یک مرور کوتاه درباره همان سه نکته برای من کافی است؛ اگر چیزی قابل ارائه نیست، لطفاً دلیل کوتاهی برای آن ذکر شود." },
+            { "language": "ar", "text": "إذن أطلب جوابًا خطيًا بصيغة مفهومة. تكفيني نظرة قصيرة على النقاط الثلاث المذكورة؛ وإذا تعذر تقديم شيء، أرجو ذكر سبب موجز لذلك." },
+            { "language": "tr", "text": "O halde anlaşılır biçimde yazılı bir yanıt rica ediyorum. Belirttiğim üç nokta hakkında kısa bir özet benim için yeterli; bir şey verilemiyorsa bunun için kısa bir gerekçe rica ederim." },
+            { "language": "ru", "text": "Тогда я прошу письменный ответ в понятной форме. Краткого обзора по трем названным пунктам мне достаточно; если что-то нельзя предоставить, прошу кратко указать причину." },
+            { "language": "ckb", "text": "ئەوا داوای وەڵامی نووسراو بە شێوەی تێگەیشتوو دەکەم. کورتەیەک دەربارەی ئەو سێ خاڵەی ناوم بردووە بۆ من بەسە؛ ئەگەر شتێک ناتوانرێت بدرێت، تکایە هۆکارێکی کورتی بۆ بنووسرێت." },
+            { "language": "kmr", "text": "Wê demê ez bersiveke nivîskî bi awayekî fêmbar dixwazim. Kurteyek li ser sê xalên ku min nav kirin ji min re bes e; heke tiştek nikare were dayîn, ji kerema xwe sedemeke kurt jê re bê gotin." },
+            { "language": "pl", "text": "W takim razie proszę o pisemną odpowiedź w zrozumiałej formie. Wystarczy mi krótki przegląd trzech wskazanych punktów; jeśli czegoś nie można udostępnić, proszę o krótkie uzasadnienie." },
+            { "language": "ro", "text": "Atunci solicit un răspuns scris într-o formă inteligibilă. Îmi este suficientă o scurtă prezentare a celor trei puncte menționate; dacă ceva nu poate fi furnizat, vă rog să indicați pe scurt motivul." },
+            { "language": "sq", "text": "Atëherë kërkoj përgjigje me shkrim në formë të kuptueshme. Më mjafton një përmbledhje e shkurtër për tri pikat e përmendura; nëse diçka nuk mund të jepet, ju lutem të jepet një arsye e shkurtër." }
+          ],
+          "function": "written-readable-answer",
+          "toneNote": "Schriftliche Antwort konkret und maßvoll anfordern.",
+          "expectedLearnerAction": "Request a short understandable written answer."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Soll die Antwort an die hinterlegte Adresse oder an eine andere Kontaktadresse gehen?",
+          "translations": [
+            { "language": "en", "text": "Should the answer go to the stored address or to a different contact address?" },
+            { "language": "fa", "text": "پاسخ به نشانی ثبت‌شده ارسال شود یا به نشانی تماس دیگری؟" },
+            { "language": "ar", "text": "هل ينبغي إرسال الجواب إلى العنوان المسجل أم إلى عنوان اتصال آخر؟" },
+            { "language": "tr", "text": "Yanıt kayıtlı adrese mi yoksa başka bir iletişim adresine mi gitsin?" },
+            { "language": "ru", "text": "Ответ следует направить на сохраненный адрес или на другой контактный адрес?" },
+            { "language": "ckb", "text": "وەڵامەکە بۆ ناونیشانی تۆمارکراو بنێردرێت یان بۆ ناونیشانی پەیوەندییەکی تر؟" },
+            { "language": "kmr", "text": "Bersiv divê biçe navnîşana tomarbûyî an navnîşaneke têkiliyê ya din?" },
+            { "language": "pl", "text": "Czy odpowiedź ma zostać wysłana na zapisany adres czy na inny adres kontaktowy?" },
+            { "language": "ro", "text": "Răspunsul trebuie trimis la adresa stocată sau la o altă adresă de contact?" },
+            { "language": "sq", "text": "A duhet përgjigjja të dërgohet në adresën e regjistruar apo në një adresë tjetër kontakti?" }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Bitte senden Sie die Antwort an die hinterlegte Adresse und bestätigen Sie mir vorab nur, welche Adresse dort steht. Wenn diese veraltet ist, möchte ich getrennt eine Adressänderung einreichen.",
+          "translations": [
+            { "language": "en", "text": "Please send the answer to the stored address and first confirm only which address is listed there. If it is outdated, I would like to submit a separate address change." },
+            { "language": "fa", "text": "لطفاً پاسخ را به نشانی ثبت‌شده بفرستید و ابتدا فقط تأیید کنید چه نشانی‌ای آنجا ثبت شده است. اگر قدیمی است، می‌خواهم جداگانه تغییر نشانی ثبت کنم." },
+            { "language": "ar", "text": "يرجى إرسال الجواب إلى العنوان المسجل وتأكيد العنوان الموجود هناك فقط أولًا. إذا كان قديمًا، أود تقديم تغيير عنوان بشكل منفصل." },
+            { "language": "tr", "text": "Lütfen yanıtı kayıtlı adrese gönderin ve önce yalnızca orada hangi adresin yazılı olduğunu teyit edin. Güncel değilse ayrı bir adres değişikliği sunmak istiyorum." },
+            { "language": "ru", "text": "Пожалуйста, отправьте ответ на сохраненный адрес и сначала подтвердите только, какой адрес там указан. Если он устарел, я хочу отдельно подать изменение адреса." },
+            { "language": "ckb", "text": "تکایە وەڵامەکە بۆ ناونیشانی تۆمارکراو بنێرن و سەرەتا تەنها پشتڕاست بکەنەوە کام ناونیشان لەوێ نووسراوە. ئەگەر کۆن بوو، دەمەوێت بە جیا گۆڕینی ناونیشان پێشکەش بکەم." },
+            { "language": "kmr", "text": "Ji kerema xwe bersivê bişînin navnîşana tomarbûyî û pêşî tenê piştrast bikin kîjan navnîşan li wir nivîsandî ye. Heke kevn be, ez dixwazim guherandina navnîşanê cuda pêşkêş bikim." },
+            { "language": "pl", "text": "Proszę wysłać odpowiedź na zapisany adres i najpierw potwierdzić tylko, jaki adres tam widnieje. Jeśli jest nieaktualny, chciałbym/chciałabym osobno złożyć zmianę adresu." },
+            { "language": "ro", "text": "Vă rog să trimiteți răspunsul la adresa stocată și să îmi confirmați înainte doar ce adresă este trecută acolo. Dacă este veche, doresc să depun separat o modificare de adresă." },
+            { "language": "sq", "text": "Ju lutem dërgojeni përgjigjen në adresën e regjistruar dhe më konfirmoni paraprakisht vetëm cila adresë është aty. Nëse është e vjetër, dua të dorëzoj veçmas një ndryshim adrese." }
+          ],
+          "function": "delivery-and-correction",
+          "toneNote": "Antwortweg klären und mögliche Korrektur getrennt halten.",
+          "expectedLearnerAction": "Confirm delivery address and separate address correction."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guten Tag. Ich möchte eine Datenauskunft zu meinem laufenden Antrag erbitten, aber ausdrücklich begrenzt: Es geht mir nur um die gespeicherte Kontaktadresse, die vermerkten Unterlagen und den letzten Bearbeitungsstand.",
+              "translations": [
+                { "language": "en", "text": "Good day. I would like to request information about stored records for my current application, but expressly within limits: I only mean the stored contact address, the recorded documents, and the latest case status." },
+                { "language": "fa", "text": "روز بخیر. می‌خواهم درباره سوابق ذخیره‌شده درخواست جاری‌ام اطلاعات بخواهم، اما صریحاً محدود: فقط نشانی تماس ثبت‌شده، مدارک ثبت‌شده و آخرین وضعیت پرونده مد نظر من است." },
+                { "language": "ar", "text": "طاب يومكم. أود طلب معلومات عن السجلات المخزنة الخاصة بطلبي الجاري، لكن بشكل محدود صراحة: أقصد فقط عنوان الاتصال المسجل، والوثائق المسجلة، وآخر حالة للملف." },
+                { "language": "tr", "text": "İyi günler. Devam eden başvurumla ilgili saklanan kayıtlar hakkında bilgi istemek istiyorum, ancak açıkça sınırlı olarak: yalnızca kayıtlı iletişim adresi, kaydedilmiş belgeler ve son dosya durumu." },
+                { "language": "ru", "text": "Добрый день. Я хотел бы запросить информацию о сохраненных записях по моему текущему заявлению, но прямо в ограниченном объеме: только сохраненный контактный адрес, зарегистрированные документы и последний статус дела." },
+                { "language": "ckb", "text": "ڕۆژ باش. دەمەوێت زانیاری دەربارەی تۆمارە پارێزراوەکانی داواکارییە بەردەوامەکەم داوا بکەم، بەڵام بە ڕوونی سنووردار: تەنها ناونیشانی پەیوەندی تۆمارکراو، بەڵگە تۆمارکراوەکان و دوا دۆخی دۆسیە." },
+                { "language": "kmr", "text": "Roj baş. Ez dixwazim agahiyê li ser tomarên parastî yên daxwaza xwe ya niha bixwazim, lê bi eşkere sînorkirî: tenê navnîşana têkiliyê ya tomarbûyî, belgeyên tomarbûyî û statûya dawî ya dosyayê." },
+                { "language": "pl", "text": "Dzień dobry. Chciałbym/chciałabym poprosić o informację o zapisanych danych dotyczących mojego bieżącego wniosku, ale wyraźnie w ograniczonym zakresie: chodzi tylko o zapisany adres kontaktowy, odnotowane dokumenty i ostatni stan sprawy." },
+                { "language": "ro", "text": "Bună ziua. Aș dori să solicit informații despre evidențele stocate privind cererea mea în curs, dar în mod expres limitat: mă interesează doar adresa de contact stocată, documentele consemnate și ultimul status al dosarului." },
+                { "language": "sq", "text": "Mirëdita. Dua të kërkoj informacion për regjistrat e ruajtur lidhur me kërkesën time në vazhdim, por shprehimisht të kufizuar: vetëm adresën e kontaktit të regjistruar, dokumentet e shënuara dhe statusin e fundit të dosjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Anfrage nennt Umfang und Kategorien sofort und bleibt dadurch bearbeitbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request names scope and categories immediately, which makes it workable." },
+                { "language": "fa", "text": "قوی: درخواست از همان ابتدا دامنه و دسته‌ها را می‌گوید و به همین دلیل قابل رسیدگی است." },
+                { "language": "ar", "text": "قوي: يذكر الطلب النطاق والفئات فورًا، ولذلك يصبح قابلًا للمعالجة." },
+                { "language": "tr", "text": "Güçlü: Talep kapsamı ve kategorileri hemen belirtiyor, bu yüzden ele alınabilir." },
+                { "language": "ru", "text": "Сильно: запрос сразу называет объем и категории, поэтому его можно обработать." },
+                { "language": "ckb", "text": "بەهێزە: داواکارییەکە لە سەرەتاوە سنوور و پۆلەکان ناودەبات و بۆیە جێبەجێکردنی ئاسانترە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz ji destpêkê ve sînor û kategoriyan nav dike, ji ber vê dikare were birêvebirin." },
+                { "language": "pl", "text": "Mocne: prośba od razu wskazuje zakres i kategorie, dzięki czemu da się ją obsłużyć." },
+                { "language": "ro", "text": "Puternic: cererea numește imediat domeniul și categoriile, deci poate fi gestionată." },
+                { "language": "sq", "text": "E fortë: kërkesa e përmend menjëherë fushën dhe kategoritë, prandaj mund të trajtohet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich möchte wissen, was alles über mich gespeichert ist.",
+              "translations": [
+                { "language": "en", "text": "I would like to know everything that is stored about me." },
+                { "language": "fa", "text": "می‌خواهم بدانم همه چیزهایی که درباره من ذخیره شده چیست." },
+                { "language": "ar", "text": "أريد أن أعرف كل ما هو محفوظ عني." },
+                { "language": "tr", "text": "Hakkımda saklanan her şeyi bilmek istiyorum." },
+                { "language": "ru", "text": "Я хочу знать всё, что обо мне сохранено." },
+                { "language": "ckb", "text": "دەمەوێت بزانم هەموو ئەوەی دەربارەی من پارێزراوە چییە." },
+                { "language": "kmr", "text": "Ez dixwazim bizanim her tiştê ku li ser min hatiye parastin çi ye." },
+                { "language": "pl", "text": "Chcę wiedzieć wszystko, co jest o mnie zapisane." },
+                { "language": "ro", "text": "Vreau să știu tot ce este stocat despre mine." },
+                { "language": "sq", "text": "Dua të di gjithçka që është ruajtur për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu breit. Für ein Telefonat ist eine begrenzte, konkrete Anfrage deutlich stärker.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too broad. For a phone call, a limited and concrete request is much stronger." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد گسترده. برای تماس تلفنی، درخواست محدود و مشخص بسیار قوی‌تر است." },
+                { "language": "ar", "text": "معقول لكنه واسع جدًا. في مكالمة هاتفية يكون الطلب المحدد والمحدود أقوى بكثير." },
+                { "language": "tr", "text": "Makul ama çok geniş. Bir telefon görüşmesi için sınırlı ve somut bir talep çok daha güçlüdür." },
+                { "language": "ru", "text": "Правдоподобно, но слишком широко. Для телефонного звонка ограниченный и конкретный запрос гораздо сильнее." },
+                { "language": "ckb", "text": "ئەگەرییە، بەڵام زۆر فراوانە. بۆ پەیوەندیی تەلەفۆنی، داواکاریی سنووردار و دیاریکراو زۆر بەهێزترە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir fireh e. Ji bo telefonê, daxwazeke sînorkirî û konkret gelek xurtir e." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt szerokie. W rozmowie telefonicznej ograniczona i konkretna prośba jest znacznie mocniejsza." },
+                { "language": "ro", "text": "Plauzibil, dar prea larg. Pentru un apel telefonic, o cerere limitată și concretă este mult mai puternică." },
+                { "language": "sq", "text": "E besueshme, por shumë e gjerë. Për një telefonatë, një kërkesë e kufizuar dhe konkrete është shumë më e fortë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, das ist nachvollziehbar. Das Aktenzeichen lautet 24-3178. Wenn weitere Identitätsangaben nötig sind, geben Sie mir bitte nur die erforderlichen Schritte an; ich möchte keine unnötigen Daten am Telefon nennen.",
+              "translations": [
+                { "language": "en", "text": "Yes, that is understandable. The file number is 24-3178. If further identity details are necessary, please tell me only the required steps; I do not want to provide unnecessary details by phone." },
+                { "language": "fa", "text": "بله، قابل فهم است. شماره پرونده 24-3178 است. اگر اطلاعات هویتی بیشتری لازم است، لطفاً فقط مراحل لازم را بگویید؛ نمی‌خواهم اطلاعات غیرضروری را تلفنی اعلام کنم." },
+                { "language": "ar", "text": "نعم، هذا مفهوم. رقم الملف هو 24-3178. إذا كانت هناك بيانات هوية إضافية مطلوبة، يرجى ذكر الخطوات اللازمة فقط؛ لا أريد إعطاء معلومات غير ضرورية عبر الهاتف." },
+                { "language": "tr", "text": "Evet, bu anlaşılır. Dosya numarası 24-3178. Daha fazla kimlik bilgisi gerekiyorsa lütfen yalnızca gerekli adımları belirtin; telefonda gereksiz bilgi vermek istemiyorum." },
+                { "language": "ru", "text": "Да, это понятно. Номер дела 24-3178. Если нужны дополнительные сведения для проверки личности, пожалуйста, назовите только необходимые шаги; я не хочу сообщать по телефону лишние данные." },
+                { "language": "ckb", "text": "بەڵێ، ئەوە تێگەیشتووە. ژمارەی دۆسیە 24-3178 ـە. ئەگەر زانیاریی ناسنامەی زیاتر پێویستە، تکایە تەنها هەنگاوە پێویستەکان بڵێن؛ نامەوێت زانیاریی ناپێویست بە تەلەفۆن بڵێم." },
+                { "language": "kmr", "text": "Erê, ev tê fêmkirin. Jimareya dosyayê 24-3178 e. Heke agahiyên zêdetir ên nasnameyê pêwîst bin, ji kerema xwe tenê gavên pêwîst bêjin; ez naxwazim agahiyên nehewce bi telefonê bidim." },
+                { "language": "pl", "text": "Tak, to zrozumiałe. Numer sprawy to 24-3178. Jeśli potrzebne są dalsze dane identyfikacyjne, proszę podać tylko wymagane kroki; nie chcę podawać przez telefon zbędnych danych." },
+                { "language": "ro", "text": "Da, este de înțeles. Numărul dosarului este 24-3178. Dacă sunt necesare alte date de identificare, vă rog să îmi indicați doar pașii necesari; nu doresc să dau telefonic date inutile." },
+                { "language": "sq", "text": "Po, kjo është e kuptueshme. Numri i dosjes është 24-3178. Nëse duhen të dhëna të tjera identifikimi, ju lutem më tregoni vetëm hapat e nevojshëm; nuk dua të jap të dhëna të panevojshme në telefon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert die Identitätsprüfung und wahrt zugleich Datensparsamkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts the identity check while preserving data minimisation." },
+                { "language": "fa", "text": "قوی: پاسخ بررسی هویت را می‌پذیرد و هم‌زمان اصل کمینه‌سازی داده را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يقبل التحقق من الهوية ويحافظ في الوقت نفسه على تقليل البيانات." },
+                { "language": "tr", "text": "Güçlü: Yanıt kimlik kontrolünü kabul ederken veri minimizasyonunu koruyor." },
+                { "language": "ru", "text": "Сильно: ответ принимает проверку личности и одновременно сохраняет минимизацию данных." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پشکنینی ناسنامە دەقبوڵێت و هەمان کات کەمکردنەوەی زانیاری دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv kontrola nasnameyê qebûl dike û di heman demê de kêmkirina daneyan diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź akceptuje weryfikację tożsamości i jednocześnie zachowuje minimalizację danych." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă verificarea identității și păstrează în același timp minimizarea datelor." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon verifikimin e identitetit dhe njëkohësisht ruan minimizimin e të dhënave." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich gebe Ihnen alles, was Sie brauchen, damit es schneller geht.",
+              "translations": [
+                { "language": "en", "text": "I will give you everything you need so that it goes faster." },
+                { "language": "fa", "text": "هرچه لازم دارید می‌دهم تا سریع‌تر پیش برود." },
+                { "language": "ar", "text": "سأعطيكم كل ما تحتاجونه لكي يسير الأمر أسرع." },
+                { "language": "tr", "text": "Daha hızlı olsun diye ihtiyacınız olan her şeyi veririm." },
+                { "language": "ru", "text": "Я дам вам всё, что нужно, чтобы было быстрее." },
+                { "language": "ckb", "text": "هەرچی پێویستانە پێتان دەدەم تا خێراتر بڕوات." },
+                { "language": "kmr", "text": "Ez ê her tiştê ku ji we re pêwîst e bidim da ku zûtir bibe." },
+                { "language": "pl", "text": "Podam wszystko, czego Państwo potrzebują, żeby było szybciej." },
+                { "language": "ro", "text": "Vă dau tot ce aveți nevoie ca să meargă mai repede." },
+                { "language": "sq", "text": "Do t'ju jap gjithçka që ju duhet që të ecë më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen. Bei Datenauskünften sollte man notwendige Schritte akzeptieren, aber unnötige Angaben vermeiden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open-ended. For record requests, accept necessary steps but avoid unnecessary details." },
+                { "language": "fa", "text": "بیش از حد باز است. در درخواست اطلاعات باید مراحل لازم را پذیرفت، اما از اطلاعات غیرضروری پرهیز کرد." },
+                { "language": "ar", "text": "مفتوح جدًا. في طلبات المعلومات ينبغي قبول الخطوات اللازمة وتجنب المعلومات غير الضرورية." },
+                { "language": "tr", "text": "Çok açık uçlu. Bilgi taleplerinde gerekli adımlar kabul edilmeli, gereksiz bilgilerden kaçınılmalıdır." },
+                { "language": "ru", "text": "Слишком открыто. При запросах сведений следует принимать необходимые шаги, но избегать лишних данных." },
+                { "language": "ckb", "text": "زۆر کراوەیە. لە داواکاری زانیاری پێویستە هەنگاوی پێویست بپەسەندرێت، بەڵام لە زانیاریی ناپێویست دوور بکەوێتەوە." },
+                { "language": "kmr", "text": "Pir vekirî ye. Di daxwazên agahiyê de divê gavên pêwîst werin qebûlkirin, lê ji agahiyên nehewce dûr bimînin." },
+                { "language": "pl", "text": "Zbyt otwarte. Przy żądaniu informacji należy zaakceptować konieczne kroki, ale unikać zbędnych danych." },
+                { "language": "ro", "text": "Prea deschis. În cererile de informații trebuie acceptați pașii necesari, dar evitate detaliile inutile." },
+                { "language": "sq", "text": "Shumë e hapur. Në kërkesat për informacion duhen pranuar hapat e nevojshëm, por duhen shmangur të dhënat e panevojshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Bitte nennen Sie mir erstens die aktuell hinterlegte Kontaktadresse, zweitens welche Unterlagen als eingegangen vermerkt sind, und drittens den letzten fachlichen Bearbeitungsstand. Ich brauche keine internen Notizen oder Namen einzelner Mitarbeitender.",
+              "translations": [
+                { "language": "en", "text": "Please tell me, first, the contact address currently stored; second, which documents are marked as received; and third, the latest substantive case status. I do not need internal notes or names of individual staff members." },
+                { "language": "fa", "text": "لطفاً اول نشانی تماس فعلی ثبت‌شده را بگویید، دوم اینکه کدام مدارک به‌عنوان دریافت‌شده ثبت شده‌اند، و سوم آخرین وضعیت محتوایی پرونده را. من به یادداشت‌های داخلی یا نام کارکنان مشخص نیاز ندارم." },
+                { "language": "ar", "text": "يرجى إخباري أولًا بعنوان الاتصال المسجل حاليًا، وثانيًا بالوثائق المعلَّمة كموصولة، وثالثًا بآخر حالة فنية للملف. لا أحتاج إلى ملاحظات داخلية أو أسماء موظفين بعينهم." },
+                { "language": "tr", "text": "Lütfen önce şu anda kayıtlı iletişim adresini, ikinci olarak hangi belgelerin alınmış olarak işaretlendiğini ve üçüncü olarak son içeriksel dosya durumunu söyleyin. İç notlara ya da tek tek çalışan adlarına ihtiyacım yok." },
+                { "language": "ru", "text": "Пожалуйста, назовите мне, во-первых, текущий сохраненный контактный адрес; во-вторых, какие документы отмечены как полученные; и, в-третьих, последний содержательный статус дела. Мне не нужны внутренние заметки или имена отдельных сотрудников." },
+                { "language": "ckb", "text": "تکایە یەکەم ناونیشانی پەیوەندیی ئێستای تۆمارکراو بڵێن، دووەم کام بەڵگەکان وەک گەیشتوو تۆمارکراون، و سێیەم دوا دۆخی بابەتی دۆسیە. پێویستم بە تێبینیی ناوخۆیی یان ناوی کارمەندی دیاریکراو نییە." },
+                { "language": "kmr", "text": "Ji kerema xwe yekem navnîşana têkiliyê ya niha tomarbûyî bêjin, duyem kîjan belge wek wergirtî hatine tomar kirin, û sêyem statûya dawî ya naverokî ya dosyayê. Notên hundirîn an navên karmendên taybet ji min re pêwîst nînin." },
+                { "language": "pl", "text": "Proszę podać po pierwsze aktualnie zapisany adres kontaktowy, po drugie, które dokumenty są odnotowane jako otrzymane, i po trzecie ostatni merytoryczny stan sprawy. Nie potrzebuję notatek wewnętrznych ani nazwisk poszczególnych pracowników." },
+                { "language": "ro", "text": "Vă rog să îmi spuneți, mai întâi, adresa de contact stocată în prezent; apoi ce documente sunt marcate ca primite; și, în al treilea rând, ultimul status de fond al dosarului. Nu am nevoie de note interne sau de nume ale unor angajați." },
+                { "language": "sq", "text": "Ju lutem më tregoni së pari adresën aktuale të kontaktit të regjistruar, së dyti cilat dokumente janë shënuar si të pranuara, dhe së treti statusin e fundit përmbajtësor të dosjes. Nuk më duhen shënime të brendshme apo emra punonjësish të veçantë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt drei brauchbare Kategorien und schließt unnötige interne Details aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names three useful categories and excludes unnecessary internal details." },
+                { "language": "fa", "text": "قوی: پاسخ سه دسته کاربردی را نام می‌برد و جزئیات داخلی غیرضروری را کنار می‌گذارد." },
+                { "language": "ar", "text": "قوي: الجواب يذكر ثلاث فئات مفيدة ويستبعد التفاصيل الداخلية غير الضرورية." },
+                { "language": "tr", "text": "Güçlü: Yanıt üç kullanışlı kategori belirtiyor ve gereksiz iç ayrıntıları dışarıda bırakıyor." },
+                { "language": "ru", "text": "Сильно: ответ называет три полезные категории и исключает ненужные внутренние детали." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سێ پۆلی بەسوود ناودەبات و وردەکاریی ناوخۆیی ناپێویست لا دەدات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sê kategoriyên bikêr nav dike û hûrgiliyên hundirîn ên nehewce derve dihêle." },
+                { "language": "pl", "text": "Mocne: odpowiedź wskazuje trzy użyteczne kategorie i wyklucza zbędne szczegóły wewnętrzne." },
+                { "language": "ro", "text": "Puternic: răspunsul numește trei categorii utile și exclude detaliile interne inutile." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmend tri kategori të dobishme dhe përjashton detaje të brendshme të panevojshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sagen Sie mir bitte einfach, was in meiner Akte steht.",
+              "translations": [
+                { "language": "en", "text": "Please simply tell me what is in my file." },
+                { "language": "fa", "text": "لطفاً فقط بگویید در پرونده من چه چیزی هست." },
+                { "language": "ar", "text": "يرجى ببساطة إخباري بما يوجد في ملفي." },
+                { "language": "tr", "text": "Lütfen bana dosyamda ne olduğunu söyleyin." },
+                { "language": "ru", "text": "Пожалуйста, просто скажите мне, что есть в моем деле." },
+                { "language": "ckb", "text": "تکایە تەنها پێم بڵێن لە دۆسیەکەمدا چی هەیە." },
+                { "language": "kmr", "text": "Ji kerema xwe tenê ji min re bêjin di dosyaya min de çi heye." },
+                { "language": "pl", "text": "Proszę po prostu powiedzieć mi, co jest w moich aktach." },
+                { "language": "ro", "text": "Vă rog să îmi spuneți pur și simplu ce este în dosarul meu." },
+                { "language": "sq", "text": "Ju lutem më tregoni thjesht çfarë ka në dosjen time." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unbestimmt. Die Sachbearbeitung müsste selbst auswählen, welche Informationen gemeint sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague. The case worker would have to choose which information is meant." },
+                { "language": "fa", "text": "بیش از حد نامشخص است. کارشناس پرونده باید خودش انتخاب کند منظور کدام اطلاعات است." },
+                { "language": "ar", "text": "غير محدد بما يكفي. سيضطر الموظف المختص إلى اختيار المعلومات المقصودة بنفسه." },
+                { "language": "tr", "text": "Çok belirsiz. Dosya görevlisi hangi bilgilerin kastedildiğini kendi seçmek zorunda kalır." },
+                { "language": "ru", "text": "Слишком неопределенно. Сотруднику по делу пришлось бы самому выбирать, какая информация имеется в виду." },
+                { "language": "ckb", "text": "زۆر نادیارە. کارمەندی دۆسیە دەبێت خۆی هەڵبژێرێت کام زانیاری مەبەستە." },
+                { "language": "kmr", "text": "Pir nezelal e. Karmenda dosyayê divê xwe hilbijêre kîjan agahî tê armanc kirin." },
+                { "language": "pl", "text": "Zbyt nieokreślone. Urzędnik musiałby sam wybrać, o które informacje chodzi." },
+                { "language": "ro", "text": "Prea neclar. Funcționarul ar trebui să aleagă singur ce informații sunt vizate." },
+                { "language": "sq", "text": "Shumë e papërcaktuar. Punonjësi i dosjes do të duhej të zgjidhte vetë cilat informacione nënkuptohen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann bitte ich um eine schriftliche Auskunft in verständlicher Form. Mir reicht eine kurze Übersicht zu den drei genannten Punkten; falls etwas nicht herausgegeben werden kann, bitte ich um eine kurze Begründung dafür.",
+              "translations": [
+                { "language": "en", "text": "Then I ask for a written answer in understandable form. A short overview of the three points I named is enough for me; if something cannot be provided, I ask for a brief reason." },
+                { "language": "fa", "text": "پس درخواست پاسخ کتبی به شکل قابل فهم دارم. یک مرور کوتاه درباره همان سه نکته برای من کافی است؛ اگر چیزی قابل ارائه نیست، لطفاً دلیل کوتاهی برای آن ذکر شود." },
+                { "language": "ar", "text": "إذن أطلب جوابًا خطيًا بصيغة مفهومة. تكفيني نظرة قصيرة على النقاط الثلاث المذكورة؛ وإذا تعذر تقديم شيء، أرجو ذكر سبب موجز لذلك." },
+                { "language": "tr", "text": "O halde anlaşılır biçimde yazılı bir yanıt rica ediyorum. Belirttiğim üç nokta hakkında kısa bir özet benim için yeterli; bir şey verilemiyorsa bunun için kısa bir gerekçe rica ederim." },
+                { "language": "ru", "text": "Тогда я прошу письменный ответ в понятной форме. Краткого обзора по трем названным пунктам мне достаточно; если что-то нельзя предоставить, прошу кратко указать причину." },
+                { "language": "ckb", "text": "ئەوا داوای وەڵامی نووسراو بە شێوەی تێگەیشتوو دەکەم. کورتەیەک دەربارەی ئەو سێ خاڵەی ناوم بردووە بۆ من بەسە؛ ئەگەر شتێک ناتوانرێت بدرێت، تکایە هۆکارێکی کورتی بۆ بنووسرێت." },
+                { "language": "kmr", "text": "Wê demê ez bersiveke nivîskî bi awayekî fêmbar dixwazim. Kurteyek li ser sê xalên ku min nav kirin ji min re bes e; heke tiştek nikare were dayîn, ji kerema xwe sedemeke kurt jê re bê gotin." },
+                { "language": "pl", "text": "W takim razie proszę o pisemną odpowiedź w zrozumiałej formie. Wystarczy mi krótki przegląd trzech wskazanych punktów; jeśli czegoś nie można udostępnić, proszę o krótkie uzasadnienie." },
+                { "language": "ro", "text": "Atunci solicit un răspuns scris într-o formă inteligibilă. Îmi este suficientă o scurtă prezentare a celor trei puncte menționate; dacă ceva nu poate fi furnizat, vă rog să indicați pe scurt motivul." },
+                { "language": "sq", "text": "Atëherë kërkoj përgjigje me shkrim në formë të kuptueshme. Më mjafton një përmbledhje e shkurtër për tri pikat e përmendura; nëse diçka nuk mund të jepet, ju lutem të jepet një arsye e shkurtër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert Grenzen und verlangt dennoch eine verständliche, verwertbare Auskunft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts limits while still requesting understandable, usable information." },
+                { "language": "fa", "text": "قوی: پاسخ محدودیت‌ها را می‌پذیرد و با این حال اطلاعات قابل فهم و قابل استفاده می‌خواهد." },
+                { "language": "ar", "text": "قوي: الجواب يقبل الحدود ومع ذلك يطلب معلومات مفهومة وقابلة للاستخدام." },
+                { "language": "tr", "text": "Güçlü: Yanıt sınırları kabul ederken yine de anlaşılır ve kullanılabilir bilgi istiyor." },
+                { "language": "ru", "text": "Сильно: ответ принимает ограничения, но все же просит понятную и пригодную информацию." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنوورەکان دەقبوڵێت و هێشتا زانیاریی تێگەیشتوو و بەکاربێنراو داوا دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sînoran qebûl dike û hê jî agahiyeke fêmbar û bikêr dixwaze." },
+                { "language": "pl", "text": "Mocne: odpowiedź akceptuje ograniczenia, a mimo to żąda zrozumiałej i użytecznej informacji." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă limitele și totuși solicită informații inteligibile și utile." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon kufizimet dhe megjithatë kërkon informacion të kuptueshëm dhe të përdorshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann schicken Sie mir bitte alles schriftlich zu.",
+              "translations": [
+                { "language": "en", "text": "Then please send me everything in writing." },
+                { "language": "fa", "text": "پس لطفاً همه چیز را کتبی برایم بفرستید." },
+                { "language": "ar", "text": "إذن يرجى إرسال كل شيء إلي خطيًا." },
+                { "language": "tr", "text": "O halde lütfen her şeyi bana yazılı olarak gönderin." },
+                { "language": "ru", "text": "Тогда, пожалуйста, пришлите мне всё письменно." },
+                { "language": "ckb", "text": "ئەوا تکایە هەموو شتێک بە نووسراو بۆم بنێرن." },
+                { "language": "kmr", "text": "Wê demê ji kerema xwe her tiştî bi nivîskî ji min re bişînin." },
+                { "language": "pl", "text": "W takim razie proszę przesłać mi wszystko pisemnie." },
+                { "language": "ro", "text": "Atunci vă rog să îmi trimiteți totul în scris." },
+                { "language": "sq", "text": "Atëherë ju lutem më dërgoni gjithçka me shkrim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu breit. Eine schriftliche Antwort ist sinnvoll, aber der Umfang muss weiter begrenzt bleiben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too broad. A written answer is sensible, but the scope still needs to remain limited." },
+                { "language": "fa", "text": "بیش از حد گسترده است. پاسخ کتبی منطقی است، اما دامنه همچنان باید محدود بماند." },
+                { "language": "ar", "text": "واسع جدًا. الجواب الخطي منطقي، لكن النطاق يجب أن يبقى محدودًا." },
+                { "language": "tr", "text": "Çok geniş. Yazılı yanıt mantıklı, ancak kapsam sınırlı kalmalıdır." },
+                { "language": "ru", "text": "Слишком широко. Письменный ответ разумен, но объем все равно должен оставаться ограниченным." },
+                { "language": "ckb", "text": "زۆر فراوانە. وەڵامی نووسراو گونجاوە، بەڵام سنوورەکە هێشتا پێویستە سنووردار بمێنێت." },
+                { "language": "kmr", "text": "Pir fireh e. Bersiva nivîskî maqûl e, lê berfirehî divê hê jî sînorkirî bimîne." },
+                { "language": "pl", "text": "Zbyt szerokie. Odpowiedź pisemna ma sens, ale zakres nadal powinien pozostać ograniczony." },
+                { "language": "ro", "text": "Prea larg. Un răspuns scris este logic, dar domeniul trebuie să rămână limitat." },
+                { "language": "sq", "text": "Shumë e gjerë. Përgjigjja me shkrim ka kuptim, por fusha duhet të mbetet e kufizuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Bitte senden Sie die Antwort an die hinterlegte Adresse und bestätigen Sie mir vorab nur, welche Adresse dort steht. Wenn diese veraltet ist, möchte ich getrennt eine Adressänderung einreichen.",
+              "translations": [
+                { "language": "en", "text": "Please send the answer to the stored address and first confirm only which address is listed there. If it is outdated, I would like to submit a separate address change." },
+                { "language": "fa", "text": "لطفاً پاسخ را به نشانی ثبت‌شده بفرستید و ابتدا فقط تأیید کنید چه نشانی‌ای آنجا ثبت شده است. اگر قدیمی است، می‌خواهم جداگانه تغییر نشانی ثبت کنم." },
+                { "language": "ar", "text": "يرجى إرسال الجواب إلى العنوان المسجل وتأكيد العنوان الموجود هناك فقط أولًا. إذا كان قديمًا، أود تقديم تغيير عنوان بشكل منفصل." },
+                { "language": "tr", "text": "Lütfen yanıtı kayıtlı adrese gönderin ve önce yalnızca orada hangi adresin yazılı olduğunu teyit edin. Güncel değilse ayrı bir adres değişikliği sunmak istiyorum." },
+                { "language": "ru", "text": "Пожалуйста, отправьте ответ на сохраненный адрес и сначала подтвердите только, какой адрес там указан. Если он устарел, я хочу отдельно подать изменение адреса." },
+                { "language": "ckb", "text": "تکایە وەڵامەکە بۆ ناونیشانی تۆمارکراو بنێرن و سەرەتا تەنها پشتڕاست بکەنەوە کام ناونیشان لەوێ نووسراوە. ئەگەر کۆن بوو، دەمەوێت بە جیا گۆڕینی ناونیشان پێشکەش بکەم." },
+                { "language": "kmr", "text": "Ji kerema xwe bersivê bişînin navnîşana tomarbûyî û pêşî tenê piştrast bikin kîjan navnîşan li wir nivîsandî ye. Heke kevn be, ez dixwazim guherandina navnîşanê cuda pêşkêş bikim." },
+                { "language": "pl", "text": "Proszę wysłać odpowiedź na zapisany adres i najpierw potwierdzić tylko, jaki adres tam widnieje. Jeśli jest nieaktualny, chciałbym/chciałabym osobno złożyć zmianę adresu." },
+                { "language": "ro", "text": "Vă rog să trimiteți răspunsul la adresa stocată și să îmi confirmați înainte doar ce adresă este trecută acolo. Dacă este veche, doresc să depun separat o modificare de adresă." },
+                { "language": "sq", "text": "Ju lutem dërgojeni përgjigjen në adresën e regjistruar dhe më konfirmoni paraprakisht vetëm cila adresë është aty. Nëse është e vjetër, dua të dorëzoj veçmas një ndryshim adrese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort klärt den Versandweg und trennt eine mögliche Korrektur vom Auskunftsantrag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer clarifies the delivery route and separates a possible correction from the information request." },
+                { "language": "fa", "text": "قوی: پاسخ مسیر ارسال را روشن می‌کند و اصلاح احتمالی را از درخواست اطلاعات جدا نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: الجواب يوضح طريق الإرسال ويفصل التصحيح المحتمل عن طلب المعلومات." },
+                { "language": "tr", "text": "Güçlü: Yanıt gönderim yolunu netleştirir ve olası düzeltmeyi bilgi talebinden ayırır." },
+                { "language": "ru", "text": "Сильно: ответ проясняет путь отправки и отделяет возможное исправление от запроса информации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێگای ناردن ڕوون دەکاتەوە و ڕاستکردنەوەی ئەگەری لە داواکاریی زانیاری جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv riya şandinê zelal dike û rastkirineke gengaz ji daxwaza agahiyê veqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia drogę wysyłki i oddziela ewentualną korektę od wniosku o informację." },
+                { "language": "ro", "text": "Puternic: răspunsul clarifică ruta de trimitere și separă o posibilă corectare de cererea de informații." },
+                { "language": "sq", "text": "E fortë: përgjigjja sqaron rrugën e dërgimit dhe ndan një korrigjim të mundshëm nga kërkesa për informacion." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Schicken Sie es einfach an meine neue Adresse, die alte stimmt wahrscheinlich nicht mehr.",
+              "translations": [
+                { "language": "en", "text": "Just send it to my new address; the old one is probably no longer correct." },
+                { "language": "fa", "text": "فقط آن را به نشانی جدیدم بفرستید؛ احتمالاً نشانی قدیمی دیگر درست نیست." },
+                { "language": "ar", "text": "أرسلوه ببساطة إلى عنواني الجديد؛ ربما لم يعد العنوان القديم صحيحًا." },
+                { "language": "tr", "text": "Sadece yeni adresime gönderin; eski adres muhtemelen artık doğru değil." },
+                { "language": "ru", "text": "Просто отправьте это на мой новый адрес; старый, вероятно, уже неверен." },
+                { "language": "ckb", "text": "هەر بۆ ناونیشانی نوێم بینێرن؛ ناونیشانی کۆن ڕەنگە ئیتر دروست نەبێت." },
+                { "language": "kmr", "text": "Tenê bişînin navnîşana min a nû; ya kevn dibe ku êdî rast nebe." },
+                { "language": "pl", "text": "Proszę po prostu wysłać to na mój nowy adres; stary prawdopodobnie nie jest już aktualny." },
+                { "language": "ro", "text": "Trimiteți-l pur și simplu la noua mea adresă; cea veche probabil nu mai este corectă." },
+                { "language": "sq", "text": "Dërgojeni thjesht në adresën time të re; e vjetra ndoshta nuk është më e saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unsauber. Eine neue Zustelladresse sollte formal getrennt geändert werden, damit die Auskunft nicht falsch verschickt wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise. A new delivery address should be changed separately and formally so the answer is not sent incorrectly." },
+                { "language": "fa", "text": "بیش از حد نامرتب است. نشانی جدید باید جداگانه و رسمی تغییر کند تا پاسخ اشتباه ارسال نشود." },
+                { "language": "ar", "text": "غير دقيق بما يكفي. ينبغي تغيير عنوان التسليم الجديد بشكل منفصل ورسمي حتى لا يُرسل الجواب بشكل خاطئ." },
+                { "language": "tr", "text": "Çok düzensiz. Yanıtın yanlış gönderilmemesi için yeni teslim adresi ayrı ve resmi olarak değiştirilmelidir." },
+                { "language": "ru", "text": "Слишком неаккуратно. Новый адрес доставки следует изменить отдельно и официально, чтобы ответ не был отправлен неверно." },
+                { "language": "ckb", "text": "زۆر نادروستە. ناونیشانی نوێی گەیاندن پێویستە بە جیا و بە فەرمی بگۆڕدرێت تا وەڵامەکە بە هەڵە نەنێردرێت." },
+                { "language": "kmr", "text": "Pir nepak e. Navnîşana nû ya şandinê divê cuda û fermî were guhertin da ku bersiv şaş neyê şandin." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne. Nowy adres doręczenia należy zmienić osobno i formalnie, aby odpowiedź nie została wysłana błędnie." },
+                { "language": "ro", "text": "Prea neclar. O nouă adresă de livrare ar trebui modificată separat și formal, ca răspunsul să nu fie trimis greșit." },
+                { "language": "sq", "text": "Shumë e pasaktë. Një adresë e re dërgimi duhet ndryshuar veçmas dhe zyrtarisht që përgjigjja të mos dërgohet gabim." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "limited-scope",
+          "text": "Eine gute Datenauskunft nennt früh Zweck, Umfang und Kategorien.",
+          "translations": [
+            { "language": "en", "text": "A good information request names purpose, scope, and categories early." },
+            { "language": "fa", "text": "درخواست اطلاعات خوب از ابتدا هدف، دامنه و دسته‌ها را نام می‌برد." },
+            { "language": "ar", "text": "طلب المعلومات الجيد يذكر الهدف والنطاق والفئات مبكرًا." },
+            { "language": "tr", "text": "İyi bir bilgi talebi amacı, kapsamı ve kategorileri erken belirtir." },
+            { "language": "ru", "text": "Хороший запрос информации рано называет цель, объем и категории." },
+            { "language": "ckb", "text": "داواکاریی زانیاریی باش زوو ئامانج، سنوور و پۆلەکان ناودەبات." },
+            { "language": "kmr", "text": "Daxwaza agahiyê ya baş zû armanc, sînor û kategoriyan nav dike." },
+            { "language": "pl", "text": "Dobry wniosek o informację wcześnie wskazuje cel, zakres i kategorie." },
+            { "language": "ro", "text": "O cerere bună de informații numește devreme scopul, domeniul și categoriile." },
+            { "language": "sq", "text": "Një kërkesë e mirë informacioni përmend herët qëllimin, fushën dhe kategoritë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "identity-and-minimisation",
+          "text": "Identitätsprüfung und Datensparsamkeit widersprechen sich nicht.",
+          "translations": [
+            { "language": "en", "text": "Identity checks and data minimisation do not contradict each other." },
+            { "language": "fa", "text": "بررسی هویت و کمینه‌سازی داده با هم تناقض ندارند." },
+            { "language": "ar", "text": "التحقق من الهوية وتقليل البيانات لا يتعارضان." },
+            { "language": "tr", "text": "Kimlik kontrolü ve veri minimizasyonu birbirine aykırı değildir." },
+            { "language": "ru", "text": "Проверка личности и минимизация данных не противоречат друг другу." },
+            { "language": "ckb", "text": "پشکنینی ناسنامە و کەمکردنەوەی زانیاری پێچەوانەی یەکتر نین." },
+            { "language": "kmr", "text": "Kontrola nasnameyê û kêmkirina daneyan li dijî hev nînin." },
+            { "language": "pl", "text": "Weryfikacja tożsamości i minimalizacja danych nie są ze sobą sprzeczne." },
+            { "language": "ro", "text": "Verificarea identității și minimizarea datelor nu se contrazic." },
+            { "language": "sq", "text": "Verifikimi i identitetit dhe minimizimi i të dhënave nuk bien ndesh." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "specific-categories",
+          "text": "Konkrete Kategorien machen die Auskunft für beide Seiten leichter.",
+          "translations": [
+            { "language": "en", "text": "Specific categories make the answer easier for both sides." },
+            { "language": "fa", "text": "دسته‌های مشخص پاسخ را برای هر دو طرف آسان‌تر می‌کند." },
+            { "language": "ar", "text": "الفئات المحددة تجعل الجواب أسهل للطرفين." },
+            { "language": "tr", "text": "Somut kategoriler yanıtı her iki taraf için kolaylaştırır." },
+            { "language": "ru", "text": "Конкретные категории облегчают ответ для обеих сторон." },
+            { "language": "ckb", "text": "پۆلە دیاریکراوەکان وەڵام بۆ هەردوو لا ئاسانتر دەکەن." },
+            { "language": "kmr", "text": "Kategoriyên konkret bersivê ji bo her du aliyan hêsantir dikin." },
+            { "language": "pl", "text": "Konkretne kategorie ułatwiają odpowiedź obu stronom." },
+            { "language": "ro", "text": "Categoriile concrete fac răspunsul mai ușor pentru ambele părți." },
+            { "language": "sq", "text": "Kategoritë konkrete e bëjnë përgjigjen më të lehtë për të dyja palët." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "delivery-separation",
+          "text": "Zustelladresse und Adressänderung sollten klar getrennt werden.",
+          "translations": [
+            { "language": "en", "text": "Delivery address and address change should be clearly separated." },
+            { "language": "fa", "text": "نشانی ارسال و تغییر نشانی باید روشن از هم جدا شوند." },
+            { "language": "ar", "text": "ينبغي فصل عنوان الإرسال وتغيير العنوان بوضوح." },
+            { "language": "tr", "text": "Teslim adresi ve adres değişikliği açıkça ayrılmalıdır." },
+            { "language": "ru", "text": "Адрес доставки и изменение адреса следует четко разделять." },
+            { "language": "ckb", "text": "ناونیشانی گەیاندن و گۆڕینی ناونیشان پێویستە بە ڕوونی جیا بکرێنەوە." },
+            { "language": "kmr", "text": "Navnîşana şandinê û guherandina navnîşanê divê bi zelalî werin veqetandin." },
+            { "language": "pl", "text": "Adres doręczenia i zmianę adresu należy wyraźnie rozdzielić." },
+            { "language": "ro", "text": "Adresa de trimitere și modificarea adresei ar trebui separate clar." },
+            { "language": "sq", "text": "Adresa e dërgimit dhe ndryshimi i adresës duhet të ndahen qartë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "phone-records-information-request",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal phone call where an applicant requests limited understandable information about stored records.",
+          "altText": "Eine erwachsene Person telefoniert an einem Schreibtisch mit einem Bürgerbüro und notiert drei begrenzte Auskunftspunkte.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An adult person calls a citizens' office from a desk and notes three limited information points." },
+            { "language": "fa", "text": "یک فرد بزرگسال پشت میز با دفتر شهروندان تلفنی صحبت می‌کند و سه نکته محدود برای درخواست اطلاعات یادداشت می‌کند." },
+            { "language": "ar", "text": "شخص بالغ يتصل من مكتب بمكتب المواطنين ويدون ثلاث نقاط معلومات محدودة." },
+            { "language": "tr", "text": "Yetişkin bir kişi masasında vatandaş bürosunu arıyor ve üç sınırlı bilgi noktasını not ediyor." },
+            { "language": "ru", "text": "Взрослый человек звонит с рабочего стола в бюро граждан и записывает три ограниченных пункта запроса." },
+            { "language": "ckb", "text": "کەسێکی گەورە لەسەر مێز پەیوەندی بە نووسینگەی هاووڵاتیانەوە دەکات و سێ خاڵی سنوورداری زانیاری تۆمار دەکات." },
+            { "language": "kmr", "text": "Kesekî mezin ji ser maseyê telefonî ofîsa hemwelatiyan dike û sê xalên agahiyê yên sînorkirî dinivîse." },
+            { "language": "pl", "text": "Dorosła osoba dzwoni z biurka do biura obywatelskiego i zapisuje trzy ograniczone punkty informacji." },
+            { "language": "ro", "text": "O persoană adultă telefonează de la birou la biroul cetățenilor și notează trei puncte limitate de informații." },
+            { "language": "sq", "text": "Një person i rritur telefonon nga tavolina zyrën e qytetarëve dhe shënon tri pika të kufizuara informacioni." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult at a desk making a formal phone call to a German citizens' office, notebook with three simple bullet marks but no readable text, folder nearby, calm privacy-conscious mood, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

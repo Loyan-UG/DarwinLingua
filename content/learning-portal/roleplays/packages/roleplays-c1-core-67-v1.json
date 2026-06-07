@@ -1,0 +1,845 @@
+{
+  "packageId": "roleplays-c1-core-67-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 67 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 67",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-telc-c1-eine-praesentation-verteidigen",
+      "linkedDialogueSlug": null,
+      "title": "telc C1 eine Präsentation verteidigen",
+      "titleTranslations": [
+        { "language": "en", "text": "telc C1 defending a presentation" },
+        { "language": "fa", "text": "دفاع از یک ارائه در telc C1" },
+        { "language": "ar", "text": "الدفاع عن عرض تقديمي في telc C1" },
+        { "language": "tr", "text": "telc C1'de bir sunumu savunmak" },
+        { "language": "ru", "text": "Защита презентации на telc C1" },
+        { "language": "ckb", "text": "بەرگری لە پێشکەشکردنێک لە telc C1" },
+        { "language": "kmr", "text": "Parastina pêşkêşiyekê di telc C1 de" },
+        { "language": "pl", "text": "Obrona prezentacji na telc C1" },
+        { "language": "ro", "text": "Apărarea unei prezentări la telc C1" },
+        { "language": "sq", "text": "Mbrojtja e një prezantimi në telc C1" }
+      ],
+      "description": "In einer mündlichen C1-Prüfung verteidigen Sie eine Präsentation über Bibliotheken als Lern- und Beratungszentren. Sie müssen kritische Nachfragen aufnehmen, Annahmen präzisieren, Grenzen einräumen und Ihre Kernthese trotzdem überzeugend halten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral C1 exam, you defend a presentation about libraries as learning and advisory centers. You must take up critical questions, clarify assumptions, concede limits, and still keep your main thesis convincing." },
+        { "language": "fa", "text": "در یک آزمون شفاهی C1 از ارائه‌ای درباره کتابخانه‌ها به‌عنوان مراکز یادگیری و راهنمایی دفاع می‌کنید. باید پرسش‌های انتقادی را بپذیرید، فرض‌ها را دقیق کنید، محدودیت‌ها را بپذیرید و با این حال تز اصلی خود را قانع‌کننده نگه دارید." },
+        { "language": "ar", "text": "في امتحان شفهي C1 تدافع عن عرض حول المكتبات كمراكز للتعلم والإرشاد. عليك تناول الأسئلة النقدية، وتوضيح الافتراضات، والاعتراف بالحدود، ومع ذلك إبقاء أطروحتك الأساسية مقنعة." },
+        { "language": "tr", "text": "Sözlü bir C1 sınavında kütüphanelerin öğrenme ve danışma merkezleri olması üzerine bir sunumu savunursunuz. Eleştirel soruları ele almalı, varsayımları netleştirmeli, sınırları kabul etmeli ve yine de ana tezinizi ikna edici tutmalısınız." },
+        { "language": "ru", "text": "На устном экзамене C1 Вы защищаете презентацию о библиотеках как центрах обучения и консультации. Нужно принять критические вопросы, уточнить предпосылки, признать ограничения и при этом убедительно удержать основной тезис." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی زاری C1 دا بەرگری لە پێشکەشکردنێک دەکەیت دەربارەی کتێبخانەکان وەک ناوەندی فێربوون و ڕێنمایی. پێویستە پرسیارە ڕەخنەییەکان وەربگریت، گریمانەکان ورد بکەیت، سنوورەکان بدەیتەوە و هێشتا تێزی سەرەکی بە قانعکەر بهێڵیتەوە." },
+        { "language": "kmr", "text": "Di ezmûneke devkî ya C1 de hûn pêşkêşiyekê li ser pirtûkxaneyan wekî navendên fêrbûn û şêwirmendiyê diparêzin. Divê pirsên rexneyî bigirin, texmînan zelal bikin, sînoran bipejirînin û her wiha teza bingehîn a xwe qaneker bihêlin." },
+        { "language": "pl", "text": "Na ustnym egzaminie C1 broni Pan prezentacji o bibliotekach jako centrach nauki i doradztwa. Trzeba podjąć krytyczne pytania, doprecyzować założenia, przyznać ograniczenia i mimo to utrzymać przekonujący główny tez." },
+        { "language": "ro", "text": "Într-un examen oral C1 apărați o prezentare despre biblioteci ca centre de învățare și consiliere. Trebuie să preluați întrebările critice, să clarificați presupunerile, să admiteți limitele și totuși să păstrați convingătoare teza principală." },
+        { "language": "sq", "text": "Në një provim me gojë C1 mbroni një prezantim për bibliotekat si qendra mësimi dhe këshillimi. Duhet t'i trajtoni pyetjet kritike, t'i sqaroni supozimet, t'i pranoni kufijtë dhe prapë ta mbani bindëse tezën kryesore." }
+      ],
+      "learnerGoal": "Eine Präsentation gegen kritische Nachfragen verteidigen: den Vorschlag präzisieren, berechtigte Einwände anerkennen, Annahmen belegen, Grenzen setzen und die Kernthese am Ende differenziert bestätigen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Defend a presentation against critical questions: clarify the proposal, acknowledge justified objections, support assumptions, set limits, and confirm the main thesis in a nuanced way at the end." },
+        { "language": "fa", "text": "از یک ارائه در برابر پرسش‌های انتقادی دفاع کنید: پیشنهاد را دقیق کنید، ایرادهای موجه را بپذیرید، فرض‌ها را پشتیبانی کنید، مرزها را مشخص کنید و در پایان تز اصلی را با دقت تأیید کنید." },
+        { "language": "ar", "text": "دافع عن عرض أمام أسئلة نقدية: وضّح الاقتراح، واعترف بالاعتراضات المبررة، وادعم الافتراضات، وضع حدوداً، وأكد الأطروحة الأساسية في النهاية بتمايز." },
+        { "language": "tr", "text": "Bir sunumu eleştirel sorulara karşı savunun: öneriyi netleştirin, haklı itirazları kabul edin, varsayımları destekleyin, sınırlar koyun ve sonunda ana tezi nüanslı biçimde doğrulayın." },
+        { "language": "ru", "text": "Защитить презентацию от критических вопросов: уточнить предложение, признать обоснованные возражения, подкрепить предпосылки, обозначить границы и в конце дифференцированно подтвердить основной тезис." },
+        { "language": "ckb", "text": "بەرگری لە پێشکەشکردنێک بکە لە بەرامبەر پرسیارە ڕەخنەییەکان: پێشنیارەکە ورد بکە، ناڕەزاییە ڕەواکانی وەربگرە، گریمانەکان پشتڕاست بکەوە، سنوور دابنێ و لە کۆتاییدا تێزی سەرەکی بە وردی پشتڕاست بکەوە." },
+        { "language": "kmr", "text": "Pêşkêşiyekê li hember pirsên rexneyî biparêzin: pêşniyarê zelal bikin, nerazîbûnên maqûl bipejirînin, texmînan piştgirî bikin, sînoran danin û di dawiyê de teza bingehîn bi hûrgilî piştrast bikin." },
+        { "language": "pl", "text": "Obronić prezentację wobec krytycznych pytań: doprecyzować propozycję, uznać uzasadnione zastrzeżenia, poprzeć założenia, wyznaczyć granice i na końcu zniuansowanie potwierdzić główną tezę." },
+        { "language": "ro", "text": "Apărați o prezentare în fața întrebărilor critice: clarificați propunerea, recunoașteți obiecțiile justificate, susțineți presupunerile, stabiliți limite și confirmați la final teza principală în mod nuanțat." },
+        { "language": "sq", "text": "Mbroni një prezantim ndaj pyetjeve kritike: sqaroni propozimin, pranoni kundërshtimet e arsyeshme, mbështetni supozimet, vendosni kufij dhe në fund konfirmoni tezën kryesore me nuancë." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["telc-c1"],
+      "skillFocus": ["speaking", "roleplay", "presentation-support"],
+      "taskType": "exam-roleplay",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 67,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Prüfungsteilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Exam candidate" },
+            { "language": "fa", "text": "شرکت‌کننده آزمون" },
+            { "language": "ar", "text": "مشارك في الامتحان" },
+            { "language": "tr", "text": "Sınav adayı" },
+            { "language": "ru", "text": "Участник экзамена" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Beşdarê ezmûnê" },
+            { "language": "pl", "text": "Uczestnik egzaminu" },
+            { "language": "ro", "text": "Candidat la examen" },
+            { "language": "sq", "text": "Kandidat provimi" }
+          ]
+        },
+        {
+          "roleKey": "interviewer",
+          "displayName": "Prüfer/in",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnger" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminues" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "interviewer",
+          "baseText": "In Ihrer Präsentation haben Sie vorgeschlagen, öffentliche Bibliotheken zu Lern- und Beratungszentren auszubauen. Einige Punkte wirken noch nicht ausreichend belegt. Bitte reagieren Sie auf kritische Nachfragen.",
+          "translations": [
+            { "language": "en", "text": "In your presentation, you proposed expanding public libraries into learning and advisory centers. Some points do not yet seem sufficiently supported. Please respond to critical questions." },
+            { "language": "fa", "text": "در ارائه خود پیشنهاد دادید که کتابخانه‌های عمومی به مراکز یادگیری و راهنمایی گسترش پیدا کنند. بعضی نکات هنوز به اندازه کافی مستند به نظر نمی‌رسند. لطفاً به پرسش‌های انتقادی پاسخ دهید." },
+            { "language": "ar", "text": "في عرضك اقترحت توسيع المكتبات العامة لتصبح مراكز للتعلم والإرشاد. بعض النقاط لا تبدو مدعومة بما يكفي بعد. من فضلك رد على الأسئلة النقدية." },
+            { "language": "tr", "text": "Sunumunuzda kamu kütüphanelerinin öğrenme ve danışma merkezlerine dönüştürülmesini önerdiniz. Bazı noktalar henüz yeterince desteklenmiş görünmüyor. Lütfen eleştirel sorulara yanıt verin." },
+            { "language": "ru", "text": "В своей презентации Вы предложили развивать публичные библиотеки как центры обучения и консультации. Некоторые пункты пока кажутся недостаточно обоснованными. Пожалуйста, ответьте на критические вопросы." },
+            { "language": "ckb", "text": "لە پێشکەشکردنەکەتدا پێشنیارت کرد کتێبخانە گشتییەکان ببنە ناوەندی فێربوون و ڕێنمایی. هەندێک خاڵ هێشتا بە تەواوی پشتڕاستکراوەوە ناڕوونە. تکایە وەڵامی پرسیارە ڕەخنەییەکان بدەوە." },
+            { "language": "kmr", "text": "Di pêşkêşiya xwe de we pêşniyar kir ku pirtûkxaneyên giştî bibin navendên fêrbûn û şêwirmendiyê. Hin xal hêj têr piştgirîkirî xuya nakin. Ji kerema xwe bersiva pirsên rexneyî bidin." },
+            { "language": "pl", "text": "W prezentacji zaproponował Pan rozbudowę bibliotek publicznych w centra nauki i doradztwa. Niektóre punkty wydają się jeszcze niewystarczająco uzasadnione. Proszę odpowiedzieć na krytyczne pytania." },
+            { "language": "ro", "text": "În prezentarea dumneavoastră ați propus extinderea bibliotecilor publice ca centre de învățare și consiliere. Unele puncte nu par încă suficient susținute. Vă rog să răspundeți la întrebări critice." },
+            { "language": "sq", "text": "Në prezantimin tuaj propozuat që bibliotekat publike të zgjerohen si qendra mësimi dhe këshillimi. Disa pika ende nuk duken të mbështetura mjaftueshëm. Ju lutem përgjigjuni pyetjeve kritike." }
+          ],
+          "function": "exam-challenge",
+          "toneNote": "formal critical prompt"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gern. Zunächst möchte ich präzisieren: Mein Vorschlag bedeutet nicht, Bibliotheken vollständig umzubauen, sondern ihre bestehende Bildungsfunktion gezielt zu erweitern.",
+          "translations": [
+            { "language": "en", "text": "Certainly. First, I would like to clarify: My proposal does not mean completely rebuilding libraries, but selectively expanding their existing educational function." },
+            { "language": "fa", "text": "با کمال میل. ابتدا می‌خواهم دقیق کنم: پیشنهاد من به معنی بازسازی کامل کتابخانه‌ها نیست، بلکه گسترش هدفمند نقش آموزشی موجود آن‌هاست." },
+            { "language": "ar", "text": "بكل سرور. أولاً أود أن أوضح: اقتراحي لا يعني إعادة بناء المكتبات بالكامل، بل توسيع وظيفتها التعليمية القائمة بشكل موجه." },
+            { "language": "tr", "text": "Memnuniyetle. Öncelikle netleştirmek isterim: Önerim kütüphaneleri tamamen yeniden kurmak değil, mevcut eğitim işlevlerini hedefli biçimde genişletmektir." },
+            { "language": "ru", "text": "Конечно. Сначала я хотел бы уточнить: мое предложение не означает полностью перестраивать библиотеки, а целенаправленно расширить их существующую образовательную функцию." },
+            { "language": "ckb", "text": "بە دڵنیایی. سەرەتا دەمەوێت وردی بکەمەوە: پێشنیارەکەم واتای گۆڕینی تەواوی کتێبخانەکان نییە، بەڵکو فراوانکردنی ئامانجدارانی فەرکی فێرکارییە هەبووەکەیانە." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Pêşî dixwazim zelal bikim: Pêşniyara min ne wateya nûavakirina tevahî ya pirtûkxaneyan e, lê firehkirina armancdar a erkê wan ê perwerdeyî yê heyî ye." },
+            { "language": "pl", "text": "Oczywiście. Najpierw chciałbym doprecyzować: moja propozycja nie oznacza całkowitej przebudowy bibliotek, lecz celowe rozszerzenie ich istniejącej funkcji edukacyjnej." },
+            { "language": "ro", "text": "Desigur. Mai întâi aș dori să clarific: propunerea mea nu înseamnă reconstruirea completă a bibliotecilor, ci extinderea țintită a funcției lor educaționale existente." },
+            { "language": "sq", "text": "Me kënaqësi. Së pari dua të sqaroj: propozimi im nuk do të thotë rindërtim i plotë i bibliotekave, por zgjerim i synuar i funksionit të tyre ekzistues arsimor." }
+          ],
+          "function": "clarify-proposal",
+          "toneNote": "calm and precise"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "interviewer",
+          "baseText": "Ist das nicht unrealistisch, weil viele Kommunen schon jetzt zu wenig Geld und Personal haben?",
+          "translations": [
+            { "language": "en", "text": "Isn't that unrealistic because many municipalities already have too little money and staff?" },
+            { "language": "fa", "text": "آیا این غیرواقع‌بینانه نیست، چون بسیاری از شهرداری‌ها همین حالا هم پول و نیروی کافی ندارند؟" },
+            { "language": "ar", "text": "أليس هذا غير واقعي، لأن كثيراً من البلديات لديها أصلاً مال وموظفون غير كافيين؟" },
+            { "language": "tr", "text": "Bu gerçekçi değil mi, çünkü birçok belediyenin zaten yeterli parası ve personeli yok?" },
+            { "language": "ru", "text": "Разве это не нереалистично, ведь у многих муниципалитетов уже сейчас недостаточно денег и персонала?" },
+            { "language": "ckb", "text": "ئایا ئەمە ناواقیعی نییە، چونکە زۆر شارەوانی ئێستا پارە و کارمەندی پێویستیان نییە؟" },
+            { "language": "kmr", "text": "Ma ev ne realîst nîn e, ji ber ku gelek şaredarî jixwe pere û karmendên têr nînin?" },
+            { "language": "pl", "text": "Czy to nie jest nierealistyczne, skoro wiele gmin już teraz ma zbyt mało pieniędzy i personelu?" },
+            { "language": "ro", "text": "Nu este nerealist, deoarece multe comune au deja prea puțini bani și personal?" },
+            { "language": "sq", "text": "A nuk është kjo jorealiste, sepse shumë komuna tashmë kanë shumë pak para dhe personel?" }
+          ],
+          "function": "resource-objection",
+          "toneNote": "critical but fair"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dieser Einwand ist berechtigt. Deshalb würde ich nicht von einem sofortigen Komplettausbau sprechen, sondern von Pilotphasen: feste Beratungszeiten, Kooperationen mit Volkshochschulen und eine anschließende Auswertung.",
+          "translations": [
+            { "language": "en", "text": "This objection is justified. That is why I would not speak of an immediate complete expansion, but of pilot phases: fixed advisory hours, cooperation with adult education centers, and subsequent evaluation." },
+            { "language": "fa", "text": "این ایراد موجه است. به همین دلیل من از گسترش کامل و فوری صحبت نمی‌کنم، بلکه از مرحله‌های آزمایشی: زمان‌های ثابت مشاوره، همکاری با مراکز آموزش بزرگسالان و سپس ارزیابی." },
+            { "language": "ar", "text": "هذا الاعتراض مبرر. لذلك لن أتحدث عن توسع كامل فوري، بل عن مراحل تجريبية: أوقات إرشاد ثابتة، وتعاون مع مراكز تعليم الكبار، ثم تقييم لاحق." },
+            { "language": "tr", "text": "Bu itiraz haklıdır. Bu yüzden hemen tam bir genişlemeden değil, pilot aşamalardan söz ederdim: sabit danışma saatleri, halk eğitim merkezleriyle işbirliği ve ardından değerlendirme." },
+            { "language": "ru", "text": "Это возражение обосновано. Поэтому я говорил бы не о немедленном полном расширении, а о пилотных этапах: фиксированные часы консультаций, сотрудничество с народными университетами и последующая оценка." },
+            { "language": "ckb", "text": "ئەم ناڕەزاییە ڕەوایە. بۆیە من باس لە فراوانکردنی تەواوی دەستبەجێ ناکەم، بەڵکو لە قۆناغە تاقیکارییەکان: کاتی ڕێنماییی دیاریکراو، هاوکاری لەگەڵ ناوەندەکانی فێربوونی گەورەسالان و دواتر هەڵسەنگاندن." },
+            { "language": "kmr", "text": "Ev nerazîbûn maqûl e. Ji ber vê yekê ez behsa firehkirineke tevahî ya tavilê nakim, lê behsa qonaxên ceribandinê: demên sabit ên şêwirmendiyê, hevkarî bi navendên perwerdehiya mezinan û paşê nirxandin." },
+            { "language": "pl", "text": "To zastrzeżenie jest uzasadnione. Dlatego nie mówiłbym o natychmiastowej pełnej rozbudowie, lecz o fazach pilotażowych: stałe godziny doradztwa, współpraca z centrami edukacji dorosłych i późniejsza ocena." },
+            { "language": "ro", "text": "Această obiecție este justificată. De aceea nu aș vorbi despre o extindere completă imediată, ci despre faze pilot: ore fixe de consiliere, cooperare cu centre de educație pentru adulți și o evaluare ulterioară." },
+            { "language": "sq", "text": "Ky kundërshtim është i arsyeshëm. Prandaj nuk do të flisja për zgjerim të plotë të menjëhershëm, por për faza pilot: orare të caktuara këshillimi, bashkëpunim me qendra të arsimit për të rritur dhe vlerësim më pas." }
+          ],
+          "function": "concede-and-limit",
+          "toneNote": "accepts objection without losing position"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "interviewer",
+          "baseText": "Sie setzen voraus, dass Menschen solche Angebote überhaupt nutzen. Worauf stützen Sie diese Annahme?",
+          "translations": [
+            { "language": "en", "text": "You assume that people would use such offers at all. What do you base this assumption on?" },
+            { "language": "fa", "text": "شما فرض می‌کنید که مردم اصلاً از چنین برنامه‌هایی استفاده می‌کنند. این فرض را بر چه چیزی تکیه می‌دهید؟" },
+            { "language": "ar", "text": "أنت تفترض أن الناس سيستخدمون هذه العروض أصلاً. على ماذا تستند في هذا الافتراض؟" },
+            { "language": "tr", "text": "İnsanların bu tür teklifleri gerçekten kullanacağını varsayıyorsunuz. Bu varsayımı neye dayandırıyorsunuz?" },
+            { "language": "ru", "text": "Вы предполагаете, что люди вообще будут пользоваться такими предложениями. На чем основано это предположение?" },
+            { "language": "ckb", "text": "تۆ گریمانە دەکەیت کە خەڵک بەڕاستی ئەم جۆرە پێشنیارانە بەکار دەهێنن. ئەم گریمانەیە لەسەر چی دامەزراوە؟" },
+            { "language": "kmr", "text": "Hûn texmîn dikin ku mirov dê van pêşniyaran bi rastî bikar bînin. Hûn vê texmînê li ser çi ava dikin?" },
+            { "language": "pl", "text": "Zakłada Pan, że ludzie w ogóle skorzystają z takich ofert. Na czym opiera Pan to założenie?" },
+            { "language": "ro", "text": "Presupuneți că oamenii vor folosi astfel de oferte. Pe ce vă bazați această presupunere?" },
+            { "language": "sq", "text": "Ju supozoni se njerëzit do t'i përdorin fare këto oferta. Në çfarë e mbështesni këtë supozim?" }
+          ],
+          "function": "evidence-question",
+          "toneNote": "asks for basis"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Die Annahme stütze ich auf einen beobachtbaren Bedarf: Viele alltägliche Vorgänge, etwa digitale Termine, Formulare oder Bewerbungen, überfordern Menschen punktuell. Die Bibliothek wäre dabei keine Behörde, sondern eine Orientierungshilfe.",
+          "translations": [
+            { "language": "en", "text": "I base the assumption on an observable need: many everyday procedures, such as digital appointments, forms, or applications, overwhelm people at specific points. The library would not be an authority, but an orientation aid." },
+            { "language": "fa", "text": "این فرض را بر یک نیاز قابل مشاهده تکیه می‌دهم: بسیاری از کارهای روزمره، مثل وقت‌های دیجیتال، فرم‌ها یا درخواست‌های شغلی، در بعضی مرحله‌ها مردم را سردرگم می‌کند. کتابخانه در اینجا اداره نیست، بلکه راهنمایی اولیه است." },
+            { "language": "ar", "text": "أستند في هذا الافتراض إلى حاجة يمكن ملاحظتها: كثير من الإجراءات اليومية، مثل المواعيد الرقمية أو النماذج أو طلبات العمل، تربك الناس في نقاط معينة. ولن تكون المكتبة سلطة رسمية، بل مساعدة للتوجيه." },
+            { "language": "tr", "text": "Bu varsayımı gözlemlenebilir bir ihtiyaca dayandırıyorum: dijital randevular, formlar veya iş başvuruları gibi birçok günlük işlem insanları belirli noktalarda zorlayabiliyor. Kütüphane burada resmi kurum değil, yön bulma yardımı olurdu." },
+            { "language": "ru", "text": "Я основываю это предположение на наблюдаемой потребности: многие повседневные процессы, например цифровые записи, формуляры или заявления на работу, точечно перегружают людей. Библиотека была бы не ведомством, а помощью в ориентации." },
+            { "language": "ckb", "text": "ئەم گریمانەیە لەسەر پێویستییەکی بینراو دامەزراندووە: زۆر کاری ڕۆژانە، وەک کاتگرتنی دیجیتاڵی، فۆرم یان داواکاریی کار، لە هەندێک خاڵدا خەڵک ماندوو و سەرلێشێواو دەکات. کتێبخانە لێرەدا دەزگای فەرمی نییە، بەڵکو یارمەتیی ڕێنوێنییە." },
+            { "language": "kmr", "text": "Ez vê texmînê li ser hewcedariyeke xuya ava dikim: gelek karên rojane, wekî randevûyên dijîtal, form an serlêdanên kar, mirov li hin xalan zêde bar dikin. Pirtûkxane li vir ne dezgehek fermî, lê alîkariya rêberiyê ye." },
+            { "language": "pl", "text": "Opieram to założenie na obserwowalnej potrzebie: wiele codziennych procedur, takich jak terminy cyfrowe, formularze czy podania o pracę, punktowo przerasta ludzi. Biblioteka nie byłaby urzędem, lecz pomocą orientacyjną." },
+            { "language": "ro", "text": "Îmi bazez presupunerea pe o nevoie observabilă: multe proceduri cotidiene, cum ar fi programările digitale, formularele sau candidaturile, îi copleșesc punctual pe oameni. Biblioteca nu ar fi o autoritate, ci un ajutor de orientare." },
+            { "language": "sq", "text": "E mbështes këtë supozim në një nevojë të vëzhgueshme: shumë procedura të përditshme, si takimet digjitale, formularët ose aplikimet për punë, i mbingarkojnë njerëzit në pika të caktuara. Biblioteka nuk do të ishte institucion zyrtar, por ndihmë orientuese." }
+          ],
+          "function": "support-assumption",
+          "toneNote": "evidence-oriented and limited"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "interviewer",
+          "baseText": "Könnte dadurch nicht die eigentliche Bildungsarbeit der Bibliotheken verwässert werden?",
+          "translations": [
+            { "language": "en", "text": "Could this not dilute the actual educational work of libraries?" },
+            { "language": "fa", "text": "آیا این کار باعث نمی‌شود کار آموزشی اصلی کتابخانه‌ها کم‌رنگ شود؟" },
+            { "language": "ar", "text": "ألا يمكن أن يؤدي ذلك إلى إضعاف العمل التعليمي الأصلي للمكتبات؟" },
+            { "language": "tr", "text": "Bu, kütüphanelerin asıl eğitim çalışmasını sulandırmaz mı?" },
+            { "language": "ru", "text": "Не может ли это размыть собственно образовательную работу библиотек?" },
+            { "language": "ckb", "text": "ئایا ئەمە نابێتە هۆی ئەوەی کاری فێرکاریی سەرەکی کتێبخانەکان لاواز ببێت؟" },
+            { "language": "kmr", "text": "Ma ev nikare karê perwerdeyî yê rastîn ê pirtûkxaneyan lawaz bike?" },
+            { "language": "pl", "text": "Czy to nie mogłoby rozmyć właściwej pracy edukacyjnej bibliotek?" },
+            { "language": "ro", "text": "Nu ar putea acest lucru să dilueze munca educațională propriu-zisă a bibliotecilor?" },
+            { "language": "sq", "text": "A nuk mund ta zbehë kjo punën e mirëfilltë arsimore të bibliotekave?" }
+          ],
+          "function": "mission-risk-question",
+          "toneNote": "critical"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Diese Gefahr sehe ich. Man müsste den Auftrag deshalb klar begrenzen: keine Rechtsberatung, keine dauerhafte Sozialberatung, sondern Hilfe beim Zugang zu Informationen, Technik und Lernangeboten.",
+          "translations": [
+            { "language": "en", "text": "I do see that risk. The mandate would therefore have to be clearly limited: no legal advice, no permanent social counseling, but help with access to information, technology, and learning offers." },
+            { "language": "fa", "text": "من این خطر را می‌بینم. بنابراین باید مأموریت را روشن محدود کرد: نه مشاوره حقوقی، نه مشاوره اجتماعی دائمی، بلکه کمک برای دسترسی به اطلاعات، فناوری و برنامه‌های یادگیری." },
+            { "language": "ar", "text": "أرى هذا الخطر. لذلك يجب تحديد المهمة بوضوح: لا استشارة قانونية، ولا إرشاد اجتماعي دائم، بل مساعدة في الوصول إلى المعلومات والتقنية وعروض التعلم." },
+            { "language": "tr", "text": "Bu riski görüyorum. Bu nedenle görev açıkça sınırlandırılmalı: hukuki danışmanlık yok, kalıcı sosyal danışmanlık yok; bilgiye, teknolojiye ve öğrenme tekliflerine erişimde yardım var." },
+            { "language": "ru", "text": "Я вижу эту опасность. Поэтому мандат нужно четко ограничить: не юридическая консультация, не постоянная социальная консультация, а помощь в доступе к информации, технике и учебным предложениям." },
+            { "language": "ckb", "text": "من ئەم مەترسییە دەبینم. بۆیە پێویستە ئەرکەکە بە ڕوونی سنووردار بکرێت: نە ڕاوێژی یاسایی، نە ڕاوێژی کۆمەڵایەتی بەردەوام، بەڵکو یارمەتی بۆ دەستگەیشتن بە زانیاری، تەکنەلۆژیا و پێشنیارە فێرکارییەکان." },
+            { "language": "kmr", "text": "Ez vê metirsiyê dibînim. Ji ber vê yekê divê erka wê bi zelalî bê sînorkirin: ne şêwirmendiya hiqûqî, ne şêwirmendiya civakî ya domdar, lê alîkarî ji bo gihîştina agahdarî, teknolojî û pêşniyarên fêrbûnê." },
+            { "language": "pl", "text": "Widzę to ryzyko. Dlatego mandat trzeba byłoby jasno ograniczyć: brak porad prawnych, brak stałego doradztwa społecznego, lecz pomoc w dostępie do informacji, technologii i ofert edukacyjnych." },
+            { "language": "ro", "text": "Văd acest risc. De aceea mandatul ar trebui limitat clar: fără consiliere juridică, fără consiliere socială permanentă, ci ajutor pentru acces la informații, tehnologie și oferte de învățare." },
+            { "language": "sq", "text": "E shoh këtë rrezik. Prandaj mandati duhet kufizuar qartë: jo këshillim juridik, jo këshillim social i përhershëm, por ndihmë për qasje në informacion, teknologji dhe oferta mësimi." }
+          ],
+          "function": "set-boundaries",
+          "toneNote": "concedes and defines scope"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "interviewer",
+          "baseText": "Was würden Sie antworten, wenn jemand sagt, Ihr Vorschlag sei sozialpolitisch wünschenswert, aber organisatorisch zu vage?",
+          "translations": [
+            { "language": "en", "text": "What would you answer if someone said your proposal is desirable from a social-policy perspective, but organizationally too vague?" },
+            { "language": "fa", "text": "اگر کسی بگوید پیشنهاد شما از نظر سیاست اجتماعی مطلوب است، اما از نظر سازمانی بیش از حد مبهم است، چه پاسخ می‌دهید؟" },
+            { "language": "ar", "text": "ماذا ستجيب إذا قال شخص إن اقتراحك مرغوب من منظور السياسة الاجتماعية، لكنه غامض تنظيمياً أكثر من اللازم؟" },
+            { "language": "tr", "text": "Biri önerinizin sosyal politika açısından istenebilir, ama örgütsel olarak fazla belirsiz olduğunu söylese ne cevap verirdiniz?" },
+            { "language": "ru", "text": "Что бы Вы ответили, если бы кто-то сказал, что Ваше предложение желательно с точки зрения социальной политики, но организационно слишком расплывчато?" },
+            { "language": "ckb", "text": "ئەگەر کەسێک بڵێت پێشنیارەکەت لە ڕووی سیاسەتی کۆمەڵایەتییەوە خوازراوە، بەڵام لە ڕووی ڕێکخستنەوە زۆر ناڕوونە، چی وەڵام دەدەیتەوە؟" },
+            { "language": "kmr", "text": "Heke kesek bibêje pêşniyara we ji aliyê siyaseta civakî ve xwestek e, lê ji aliyê rêxistinî ve pir nezelal e, hûn dê çi bersiv bidin?" },
+            { "language": "pl", "text": "Co odpowiedziałby Pan, gdyby ktoś powiedział, że propozycja jest pożądana społecznie, ale organizacyjnie zbyt niejasna?" },
+            { "language": "ro", "text": "Ce ați răspunde dacă cineva ar spune că propunerea este de dorit din perspectivă socială, dar prea vagă organizatoric?" },
+            { "language": "sq", "text": "Çfarë do të përgjigjeshit nëse dikush thotë se propozimi juaj është i dëshirueshëm nga politika sociale, por organizativisht shumë i paqartë?" }
+          ],
+          "function": "vagueness-objection",
+          "toneNote": "asks for precision"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich die Kritik teilweise akzeptieren und präzisieren: Man braucht Zuständigkeiten, Datenschutzregeln, Öffnungszeiten und Erfolgskriterien, etwa die Zahl der Beratungen und Rückmeldungen der Nutzerinnen und Nutzer.",
+          "translations": [
+            { "language": "en", "text": "Then I would partly accept the criticism and make it more precise: one needs responsibilities, data protection rules, opening hours, and success criteria, such as the number of consultations and user feedback." },
+            { "language": "fa", "text": "در این صورت نقد را تا حدی می‌پذیرم و دقیق‌تر می‌کنم: به مسئولیت‌های مشخص، قواعد حفاظت از داده، ساعت‌های کاری و معیارهای موفقیت نیاز است؛ مثلاً تعداد مشاوره‌ها و بازخورد کاربران." },
+            { "language": "ar", "text": "عندئذ سأقبل النقد جزئياً وأجعله أدق: نحتاج إلى مسؤوليات محددة، وقواعد لحماية البيانات، وأوقات فتح، ومعايير نجاح، مثل عدد الاستشارات وردود فعل المستخدمين." },
+            { "language": "tr", "text": "O zaman eleştiriyi kısmen kabul eder ve netleştirirdim: sorumluluklar, veri koruma kuralları, çalışma saatleri ve başarı ölçütleri gerekir; örneğin danışma sayısı ve kullanıcı geri bildirimleri." },
+            { "language": "ru", "text": "Тогда я бы частично принял критику и уточнил: нужны зоны ответственности, правила защиты данных, часы работы и критерии успеха, например количество консультаций и отзывы пользователей." },
+            { "language": "ckb", "text": "ئەوکات ڕەخنەکە بەشێک وەردەگرم و وردتری دەکەم: پێویستە بەرپرسیارێتی، ڕێسای پاراستنی داتا، کاتی کارکردن و پێوەری سەرکەوتن هەبن، وەک ژمارەی ڕاوێژەکان و پاشخانی بەکارهێنەران." },
+            { "language": "kmr", "text": "Wê demê ez rexneyê beşekî dipejirînim û zelaltir dikim: berpirsiyarî, rêzikên parastina daneyan, demên vekirinê û pîvanên serkeftinê hewce ne, wekî hejmara şêwirmendiyan û vegerên bikarhêneran." },
+            { "language": "pl", "text": "Wtedy częściowo przyjąłbym krytykę i doprecyzował: potrzebne są odpowiedzialności, zasady ochrony danych, godziny otwarcia i kryteria sukcesu, na przykład liczba konsultacji i opinie użytkowników." },
+            { "language": "ro", "text": "Atunci aș accepta parțial critica și aș preciza: este nevoie de responsabilități, reguli de protecție a datelor, program și criterii de succes, de exemplu numărul consilierilor și feedbackul utilizatorilor." },
+            { "language": "sq", "text": "Atëherë do ta pranoja pjesërisht kritikën dhe do ta saktësoja: duhen përgjegjësi, rregulla për mbrojtjen e të dhënave, orare pune dhe kritere suksesi, për shembull numri i këshillimeve dhe reagimet e përdoruesve." }
+          ],
+          "function": "make-operational",
+          "toneNote": "specific and accountable"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "interviewer",
+          "baseText": "Bitte verteidigen Sie Ihre Kernthese noch einmal knapp.",
+          "translations": [
+            { "language": "en", "text": "Please defend your main thesis once more briefly." },
+            { "language": "fa", "text": "لطفاً تز اصلی خود را یک بار دیگر کوتاه دفاع کنید." },
+            { "language": "ar", "text": "من فضلك دافع عن أطروحتك الأساسية مرة أخرى باختصار." },
+            { "language": "tr", "text": "Lütfen ana tezinizi bir kez daha kısaca savunun." },
+            { "language": "ru", "text": "Пожалуйста, кратко защитите свой основной тезис еще раз." },
+            { "language": "ckb", "text": "تکایە جارێکی تر بە کورتی بەرگری لە تێزی سەرەکیت بکە." },
+            { "language": "kmr", "text": "Ji kerema xwe careke din bi kurtî teza xwe ya bingehîn biparêzin." },
+            { "language": "pl", "text": "Proszę jeszcze raz krótko obronić główną tezę." },
+            { "language": "ro", "text": "Vă rog să vă apărați încă o dată pe scurt teza principală." },
+            { "language": "sq", "text": "Ju lutem mbrojeni edhe një herë shkurt tezën tuaj kryesore." }
+          ],
+          "function": "ask-final-defense",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Meine Kernthese bleibt: Bibliotheken können eine Brücke zwischen Bildung, digitalem Alltag und öffentlicher Teilhabe bilden. Tragfähig ist der Vorschlag aber nur, wenn er schrittweise, begrenzt und überprüfbar umgesetzt wird.",
+          "translations": [
+            { "language": "en", "text": "My main thesis remains: libraries can form a bridge between education, digital everyday life, and public participation. However, the proposal is viable only if it is implemented step by step, with limits and measurable review." },
+            { "language": "fa", "text": "تز اصلی من همچنان این است: کتابخانه‌ها می‌توانند پلی میان آموزش، زندگی دیجیتال روزمره و مشارکت عمومی باشند. اما این پیشنهاد فقط زمانی پایدار است که مرحله‌به‌مرحله، محدود و قابل ارزیابی اجرا شود." },
+            { "language": "ar", "text": "تبقى أطروحتي الأساسية: يمكن للمكتبات أن تشكل جسراً بين التعليم والحياة الرقمية اليومية والمشاركة العامة. لكن الاقتراح يكون قابلاً للاستمرار فقط إذا نُفذ تدريجياً وبحدود وبشكل قابل للتقييم." },
+            { "language": "tr", "text": "Ana tezim şudur: kütüphaneler eğitim, dijital gündelik yaşam ve kamusal katılım arasında bir köprü kurabilir. Ancak öneri yalnızca adım adım, sınırlı ve denetlenebilir biçimde uygulanırsa sürdürülebilir olur." },
+            { "language": "ru", "text": "Мой основной тезис сохраняется: библиотеки могут стать мостом между образованием, цифровой повседневностью и общественным участием. Но предложение жизнеспособно только при поэтапной, ограниченной и проверяемой реализации." },
+            { "language": "ckb", "text": "تێزی سەرەکیم هەمانە: کتێبخانەکان دەتوانن ببنە پردێک لە نێوان فێربوون، ژیانی دیجیتاڵی ڕۆژانە و بەشداری گشتیدا. بەڵام پێشنیارەکە تەنها کاتێک بەهێزە کە بە قۆناغ، بە سنوور و بە شێوەی پشکنینکراو جێبەجێ بکرێت." },
+            { "language": "kmr", "text": "Teza min a bingehîn dimîne: pirtûkxane dikarin di navbera perwerdehî, jiyana rojane ya dijîtal û beşdariya giştî de bibin pirek. Lê pêşniyar tenê dema ku bi gav-gav, bi sînor û bi awayekî kontrolbar were pêkanîn dikare mayînde be." },
+            { "language": "pl", "text": "Moja główna teza pozostaje taka: biblioteki mogą tworzyć pomost między edukacją, cyfrową codziennością i uczestnictwem publicznym. Propozycja jest jednak nośna tylko wtedy, gdy zostanie wdrożona etapowo, z ograniczeniami i w sposób sprawdzalny." },
+            { "language": "ro", "text": "Teza mea principală rămâne: bibliotecile pot crea o punte între educație, viața digitală cotidiană și participarea publică. Propunerea este însă viabilă doar dacă este implementată treptat, limitat și verificabil." },
+            { "language": "sq", "text": "Teza ime kryesore mbetet: bibliotekat mund të krijojnë një urë midis arsimit, jetës së përditshme digjitale dhe pjesëmarrjes publike. Por propozimi është i qëndrueshëm vetëm nëse zbatohet hap pas hapi, me kufij dhe në mënyrë të verifikueshme." }
+          ],
+          "function": "final-defense",
+          "toneNote": "concise and nuanced"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "clarify-scope",
+              "text": "Gern. Zunächst möchte ich präzisieren: Mein Vorschlag bedeutet nicht, Bibliotheken vollständig umzubauen, sondern ihre bestehende Bildungsfunktion gezielt zu erweitern.",
+              "translations": [
+                { "language": "en", "text": "Certainly. First, I would like to clarify: My proposal does not mean completely rebuilding libraries, but selectively expanding their existing educational function." },
+                { "language": "fa", "text": "با کمال میل. ابتدا می‌خواهم دقیق کنم: پیشنهاد من به معنی بازسازی کامل کتابخانه‌ها نیست، بلکه گسترش هدفمند نقش آموزشی موجود آن‌هاست." },
+                { "language": "ar", "text": "بكل سرور. أولاً أود أن أوضح: اقتراحي لا يعني إعادة بناء المكتبات بالكامل، بل توسيع وظيفتها التعليمية القائمة بشكل موجه." },
+                { "language": "tr", "text": "Memnuniyetle. Öncelikle netleştirmek isterim: Önerim kütüphaneleri tamamen yeniden kurmak değil, mevcut eğitim işlevlerini hedefli biçimde genişletmektir." },
+                { "language": "ru", "text": "Конечно. Сначала я хотел бы уточнить: мое предложение не означает полностью перестраивать библиотеки, а целенаправленно расширить их существующую образовательную функцию." },
+                { "language": "ckb", "text": "بە دڵنیایی. سەرەتا دەمەوێت وردی بکەمەوە: پێشنیارەکەم واتای گۆڕینی تەواوی کتێبخانەکان نییە، بەڵکو فراوانکردنی ئامانجدارانی فەرکی فێرکارییە هەبووەکەیانە." },
+                { "language": "kmr", "text": "Bi kêfxweşî. Pêşî dixwazim zelal bikim: Pêşniyara min ne wateya nûavakirina tevahî ya pirtûkxaneyan e, lê firehkirina armancdar a erkê wan ê perwerdeyî yê heyî ye." },
+                { "language": "pl", "text": "Oczywiście. Najpierw chciałbym doprecyzować: moja propozycja nie oznacza całkowitej przebudowy bibliotek, lecz celowe rozszerzenie ich istniejącej funkcji edukacyjnej." },
+                { "language": "ro", "text": "Desigur. Mai întâi aș dori să clarific: propunerea mea nu înseamnă reconstruirea completă a bibliotecilor, ci extinderea țintită a funcției lor educaționale existente." },
+                { "language": "sq", "text": "Me kënaqësi. Së pari dua të sqaroj: propozimi im nuk do të thotë rindërtim i plotë i bibliotekave, por zgjerim i synuar i funksionit të tyre ekzistues arsimor." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort klärt den Umfang des Vorschlags, bevor sie verteidigt. Dadurch klingt sie nicht defensiv.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer clarifies the scope of the proposal before defending it. That keeps it from sounding defensive." },
+                { "language": "fa", "text": "خوب: پاسخ پیش از دفاع، دامنه پیشنهاد را روشن می‌کند. به همین دلیل حالت دفاعی پیدا نمی‌کند." },
+                { "language": "ar", "text": "جيد: توضح الإجابة نطاق الاقتراح قبل الدفاع عنه، ولذلك لا تبدو دفاعية." },
+                { "language": "tr", "text": "İyi: Yanıt, savunmadan önce önerinin kapsamını netleştiriyor. Böylece savunmacı duyulmuyor." },
+                { "language": "ru", "text": "Хорошо: ответ сначала уточняет рамки предложения, а затем защищает его. Поэтому он не звучит оборонительно." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پێش بەرگری سنووری پێشنیارەکە ڕوون دەکاتەوە. بەمەش وەک بەرگرییەکی توند نابیسترێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv berî parastinê sînorê pêşniyarê zelal dike. Ji ber vê yekê dengê wê parastinkar xuya nake." },
+                { "language": "pl", "text": "Dobrze: odpowiedź najpierw wyjaśnia zakres propozycji, zanim jej broni. Dzięki temu nie brzmi defensywnie." },
+                { "language": "ro", "text": "Bine: răspunsul clarifică mai întâi domeniul propunerii, înainte să o apere. Astfel nu sună defensiv." },
+                { "language": "sq", "text": "Mirë: përgjigjja sqaron fillimisht kufirin e propozimit para se ta mbrojë. Kështu nuk tingëllon mbrojtëse." }
+              ],
+              "explanationKey": "clarify-before-defense"
+            },
+            {
+              "id": "too-general",
+              "text": "Ich habe nur gesagt, dass Bibliotheken wichtiger werden sollen.",
+              "translations": [
+                { "language": "en", "text": "I only said that libraries should become more important." },
+                { "language": "fa", "text": "من فقط گفتم که کتابخانه‌ها باید مهم‌تر شوند." },
+                { "language": "ar", "text": "قلت فقط إن المكتبات ينبغي أن تصبح أكثر أهمية." },
+                { "language": "tr", "text": "Ben sadece kütüphanelerin daha önemli hale gelmesi gerektiğini söyledim." },
+                { "language": "ru", "text": "Я лишь сказал, что библиотеки должны стать важнее." },
+                { "language": "ckb", "text": "من تەنها وتم کە کتێبخانەکان پێویستە گرنگتر ببن." },
+                { "language": "kmr", "text": "Min tenê got ku divê pirtûkxane girîngtir bibin." },
+                { "language": "pl", "text": "Powiedziałem tylko, że biblioteki powinny stać się ważniejsze." },
+                { "language": "ro", "text": "Am spus doar că bibliotecile ar trebui să devină mai importante." },
+                { "language": "sq", "text": "Unë thashë vetëm se bibliotekat duhet të bëhen më të rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Das ist zwar nicht falsch, aber es präzisiert den kritisierten Vorschlag nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: It is not wrong, but it does not clarify the criticized proposal." },
+                { "language": "fa", "text": "ضعیف است: اشتباه نیست، اما پیشنهاد مورد نقد را دقیق نمی‌کند." },
+                { "language": "ar", "text": "ضعيف جداً: ليس خطأ، لكنه لا يوضح الاقتراح الذي تعرض للنقد." },
+                { "language": "tr", "text": "Çok zayıf: Yanlış değil, ama eleştirilen öneriyi netleştirmiyor." },
+                { "language": "ru", "text": "Слишком слабо: это не ошибка, но предложение, подвергшееся критике, не уточняется." },
+                { "language": "ckb", "text": "زۆر لاوازە: هەڵە نییە، بەڵام پێشنیارە ڕەخنەکراوەکە ورد ناکاتەوە." },
+                { "language": "kmr", "text": "Pir lawaz e: Ev şaş nîne, lê pêşniyara rexnekirî zelal nake." },
+                { "language": "pl", "text": "Za słabe: to nie jest błędne, ale nie doprecyzowuje krytykowanej propozycji." },
+                { "language": "ro", "text": "Prea slab: nu este greșit, dar nu clarifică propunerea criticată." },
+                { "language": "sq", "text": "Shumë e dobët: nuk është gabim, por nuk e saktëson propozimin e kritikuar." }
+              ],
+              "explanationKey": "missing-clarification"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "pilot-phases",
+              "text": "Dieser Einwand ist berechtigt. Deshalb würde ich nicht von einem sofortigen Komplettausbau sprechen, sondern von Pilotphasen: feste Beratungszeiten, Kooperationen mit Volkshochschulen und eine anschließende Auswertung.",
+              "translations": [
+                { "language": "en", "text": "This objection is justified. That is why I would not speak of an immediate complete expansion, but of pilot phases: fixed advisory hours, cooperation with adult education centers, and subsequent evaluation." },
+                { "language": "fa", "text": "این ایراد موجه است. به همین دلیل من از گسترش کامل و فوری صحبت نمی‌کنم، بلکه از مرحله‌های آزمایشی: زمان‌های ثابت مشاوره، همکاری با مراکز آموزش بزرگسالان و سپس ارزیابی." },
+                { "language": "ar", "text": "هذا الاعتراض مبرر. لذلك لن أتحدث عن توسع كامل فوري، بل عن مراحل تجريبية: أوقات إرشاد ثابتة، وتعاون مع مراكز تعليم الكبار، ثم تقييم لاحق." },
+                { "language": "tr", "text": "Bu itiraz haklıdır. Bu yüzden hemen tam bir genişlemeden değil, pilot aşamalardan söz ederdim: sabit danışma saatleri, halk eğitim merkezleriyle işbirliği ve ardından değerlendirme." },
+                { "language": "ru", "text": "Это возражение обосновано. Поэтому я говорил бы не о немедленном полном расширении, а о пилотных этапах: фиксированные часы консультаций, сотрудничество с народными университетами и последующая оценка." },
+                { "language": "ckb", "text": "ئەم ناڕەزاییە ڕەوایە. بۆیە من باس لە فراوانکردنی تەواوی دەستبەجێ ناکەم، بەڵکو لە قۆناغە تاقیکارییەکان: کاتی ڕێنماییی دیاریکراو، هاوکاری لەگەڵ ناوەندەکانی فێربوونی گەورەسالان و دواتر هەڵسەنگاندن." },
+                { "language": "kmr", "text": "Ev nerazîbûn maqûl e. Ji ber vê yekê ez behsa firehkirineke tevahî ya tavilê nakim, lê behsa qonaxên ceribandinê: demên sabit ên şêwirmendiyê, hevkarî bi navendên perwerdehiya mezinan û paşê nirxandin." },
+                { "language": "pl", "text": "To zastrzeżenie jest uzasadnione. Dlatego nie mówiłbym o natychmiastowej pełnej rozbudowie, lecz o fazach pilotażowych: stałe godziny doradztwa, współpraca z centrami edukacji dorosłych i późniejsza ocena." },
+                { "language": "ro", "text": "Această obiecție este justificată. De aceea nu aș vorbi despre o extindere completă imediată, ci despre faze pilot: ore fixe de consiliere, cooperare cu centre de educație pentru adulți și o evaluare ulterioară." },
+                { "language": "sq", "text": "Ky kundërshtim është i arsyeshëm. Prandaj nuk do të flisja për zgjerim të plotë të menjëhershëm, por për faza pilot: orare të caktuara këshillimi, bashkëpunim me qendra të arsimit për të rritur dhe vlerësim më pas." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt den Ressourceneinwand ernst und macht den Vorschlag kleiner, prüfbarer und realistischer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer takes the resource objection seriously and makes the proposal smaller, testable, and more realistic." },
+                { "language": "fa", "text": "خوب: پاسخ ایراد منابع را جدی می‌گیرد و پیشنهاد را کوچک‌تر، قابل آزمون‌تر و واقعی‌تر می‌کند." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة اعتراض الموارد بجدية وتجعل الاقتراح أصغر وقابلاً للاختبار وأكثر واقعية." },
+                { "language": "tr", "text": "İyi: Yanıt kaynak itirazını ciddiye alıyor ve öneriyi daha küçük, sınanabilir ve gerçekçi yapıyor." },
+                { "language": "ru", "text": "Хорошо: ответ серьезно относится к возражению о ресурсах и делает предложение меньше, проверяемым и реалистичнее." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ناڕەزایی سەرچاوەکان بە جدی وەردەگرێت و پێشنیارەکە بچووکتر، تاقیکردنەوەکراوتر و واقیعیتر دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv nerazîbûna çavkaniyan bi cidî digire û pêşniyarê biçûktir, ceribandinbar û realîsttir dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź traktuje zastrzeżenie dotyczące zasobów poważnie i czyni propozycję mniejszą, sprawdzalną oraz bardziej realistyczną." },
+                { "language": "ro", "text": "Bine: răspunsul ia în serios obiecția privind resursele și face propunerea mai mică, testabilă și mai realistă." },
+                { "language": "sq", "text": "Mirë: përgjigjja e merr seriozisht kundërshtimin për burimet dhe e bën propozimin më të vogël, të testueshëm dhe më realist." }
+              ],
+              "explanationKey": "concede-and-operationalize"
+            },
+            {
+              "id": "ignores-feasibility",
+              "text": "Geld ist immer ein Problem, aber man muss es trotzdem machen.",
+              "translations": [
+                { "language": "en", "text": "Money is always a problem, but one still has to do it." },
+                { "language": "fa", "text": "پول همیشه مشکل است، اما با این حال باید این کار را انجام داد." },
+                { "language": "ar", "text": "المال دائماً مشكلة، لكن يجب فعل ذلك رغم هذا." },
+                { "language": "tr", "text": "Para her zaman bir sorundur, ama yine de bunu yapmak gerekir." },
+                { "language": "ru", "text": "Деньги всегда проблема, но всё равно нужно это делать." },
+                { "language": "ckb", "text": "پارە هەمیشە کێشەیە، بەڵام هەر دەبێت ئەمە بکرێت." },
+                { "language": "kmr", "text": "Pere her dem pirsgirêk e, lê dîsa jî divê ev bê kirin." },
+                { "language": "pl", "text": "Pieniądze zawsze są problemem, ale mimo to trzeba to zrobić." },
+                { "language": "ro", "text": "Banii sunt mereu o problemă, dar tot trebuie făcut." },
+                { "language": "sq", "text": "Paratë janë gjithmonë problem, por megjithatë duhet bërë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unzureichend: Die Antwort bleibt moralisch und zeigt nicht, wie der Vorschlag trotz knapper Ressourcen funktionieren könnte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but insufficient: The answer remains moral and does not show how the proposal could work despite scarce resources." },
+                { "language": "fa", "text": "قابل تصور اما ناکافی: پاسخ اخلاقی می‌ماند و نشان نمی‌دهد پیشنهاد با وجود کمبود منابع چطور می‌تواند عملی شود." },
+                { "language": "ar", "text": "مقبول ظاهرياً لكنه غير كاف: تبقى الإجابة أخلاقية ولا تبين كيف يمكن للاقتراح أن يعمل رغم قلة الموارد." },
+                { "language": "tr", "text": "Makul ama yetersiz: Yanıt ahlaki düzeyde kalıyor ve kısıtlı kaynaklara rağmen önerinin nasıl işleyeceğini göstermiyor." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно: ответ остается моральным и не показывает, как предложение может работать при нехватке ресурсов." },
+                { "language": "ckb", "text": "قابلی قبوڵە بەڵام ناکافییە: وەڵامەکە لە ئاستی ئەخلاقیدا دەمێنێت و نیشان نادات پێشنیارەکە لەگەڵ کەمبوونی سەرچاوە چۆن کار دەکات." },
+                { "language": "kmr", "text": "Maqûl e lê têr nake: Bersiv li asta exlaqî dimîne û nîşan nade pêşniyar tevî kêmbûna çavkaniyan çawa dikare bixebite." },
+                { "language": "pl", "text": "Plausybilne, ale niewystarczające: odpowiedź pozostaje moralna i nie pokazuje, jak propozycja mogłaby działać mimo ograniczonych zasobów." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient: răspunsul rămâne moral și nu arată cum ar putea funcționa propunerea în ciuda resurselor limitate." },
+                { "language": "sq", "text": "E besueshme, por e pamjaftueshme: përgjigjja mbetet morale dhe nuk tregon si mund të funksionojë propozimi pavarësisht burimeve të pakta." }
+              ],
+              "explanationKey": "missing-feasibility"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "observable-need",
+              "text": "Die Annahme stütze ich auf einen beobachtbaren Bedarf: Viele alltägliche Vorgänge, etwa digitale Termine, Formulare oder Bewerbungen, überfordern Menschen punktuell. Die Bibliothek wäre dabei keine Behörde, sondern eine Orientierungshilfe.",
+              "translations": [
+                { "language": "en", "text": "I base the assumption on an observable need: many everyday procedures, such as digital appointments, forms, or applications, overwhelm people at specific points. The library would not be an authority, but an orientation aid." },
+                { "language": "fa", "text": "این فرض را بر یک نیاز قابل مشاهده تکیه می‌دهم: بسیاری از کارهای روزمره، مثل وقت‌های دیجیتال، فرم‌ها یا درخواست‌های شغلی، در بعضی مرحله‌ها مردم را سردرگم می‌کند. کتابخانه در اینجا اداره نیست، بلکه راهنمایی اولیه است." },
+                { "language": "ar", "text": "أستند في هذا الافتراض إلى حاجة يمكن ملاحظتها: كثير من الإجراءات اليومية، مثل المواعيد الرقمية أو النماذج أو طلبات العمل، تربك الناس في نقاط معينة. ولن تكون المكتبة سلطة رسمية، بل مساعدة للتوجيه." },
+                { "language": "tr", "text": "Bu varsayımı gözlemlenebilir bir ihtiyaca dayandırıyorum: dijital randevular, formlar veya iş başvuruları gibi birçok günlük işlem insanları belirli noktalarda zorlayabiliyor. Kütüphane burada resmi kurum değil, yön bulma yardımı olurdu." },
+                { "language": "ru", "text": "Я основываю это предположение на наблюдаемой потребности: многие повседневные процессы, например цифровые записи, формуляры или заявления на работу, точечно перегружают людей. Библиотека была бы не ведомством, а помощью в ориентации." },
+                { "language": "ckb", "text": "ئەم گریمانەیە لەسەر پێویستییەکی بینراو دامەزراندووە: زۆر کاری ڕۆژانە، وەک کاتگرتنی دیجیتاڵی، فۆرم یان داواکاریی کار، لە هەندێک خاڵدا خەڵک ماندوو و سەرلێشێواو دەکات. کتێبخانە لێرەدا دەزگای فەرمی نییە، بەڵکو یارمەتیی ڕێنوێنییە." },
+                { "language": "kmr", "text": "Ez vê texmînê li ser hewcedariyeke xuya ava dikim: gelek karên rojane, wekî randevûyên dijîtal, form an serlêdanên kar, mirov li hin xalan zêde bar dikin. Pirtûkxane li vir ne dezgehek fermî, lê alîkariya rêberiyê ye." },
+                { "language": "pl", "text": "Opieram to założenie na obserwowalnej potrzebie: wiele codziennych procedur, takich jak terminy cyfrowe, formularze czy podania o pracę, punktowo przerasta ludzi. Biblioteka nie byłaby urzędem, lecz pomocą orientacyjną." },
+                { "language": "ro", "text": "Îmi bazez presupunerea pe o nevoie observabilă: multe proceduri cotidiene, cum ar fi programările digitale, formularele sau candidaturile, îi copleșesc punctual pe oameni. Biblioteca nu ar fi o autoritate, ci un ajutor de orientare." },
+                { "language": "sq", "text": "E mbështes këtë supozim në një nevojë të vëzhgueshme: shumë procedura të përditshme, si takimet digjitale, formularët ose aplikimet për punë, i mbingarkojnë njerëzit në pika të caktuara. Biblioteka nuk do të ishte institucion zyrtar, por ndihmë orientuese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt eine beobachtbare Grundlage und begrenzt zugleich die Rolle der Bibliothek.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer names an observable basis while also limiting the library's role." },
+                { "language": "fa", "text": "خوب: پاسخ یک پایه قابل مشاهده را نام می‌برد و هم‌زمان نقش کتابخانه را محدود می‌کند." },
+                { "language": "ar", "text": "جيد: تسمي الإجابة أساساً قابلاً للملاحظة وتحد في الوقت نفسه من دور المكتبة." },
+                { "language": "tr", "text": "İyi: Yanıt gözlemlenebilir bir temel adlandırıyor ve aynı anda kütüphanenin rolünü sınırlandırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет наблюдаемую основу и одновременно ограничивает роль библиотеки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بنەمایەکی بینراو ناو دەبات و هاوکات ڕۆڵی کتێبخانەکە سنووردار دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv bingehineke xuya nav dike û di heman demê de rola pirtûkxaneyê sînordar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wskazuje obserwowalną podstawę, a jednocześnie ogranicza rolę biblioteki." },
+                { "language": "ro", "text": "Bine: răspunsul numește o bază observabilă și limitează în același timp rolul bibliotecii." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend një bazë të vëzhgueshme dhe njëkohësisht kufizon rolin e bibliotekës." }
+              ],
+              "explanationKey": "evidence-plus-boundary"
+            },
+            {
+              "id": "mere-belief",
+              "text": "Aus meiner Erfahrung brauchen viele Menschen bei digitalen Formularen Unterstützung.",
+              "translations": [
+                { "language": "en", "text": "In my experience, many people need support with digital forms." },
+                { "language": "fa", "text": "طبق تجربه من، بسیاری از افراد در فرم‌های دیجیتال به پشتیبانی نیاز دارند." },
+                { "language": "ar", "text": "من خلال تجربتي، يحتاج كثير من الناس إلى دعم في النماذج الرقمية." },
+                { "language": "tr", "text": "Benim deneyimime göre birçok insan dijital formlarda desteğe ihtiyaç duyuyor." },
+                { "language": "ru", "text": "По моему опыту, многим людям нужна поддержка с цифровыми формулярами." },
+                { "language": "ckb", "text": "بەپێی ئەزموونی من، زۆر کەس لە فۆرمە دیجیتاڵییەکاندا پێویستی بە پشتگیری هەیە." },
+                { "language": "kmr", "text": "Li gorî ezmûna min, gelek kes di formên dijîtal de hewcedarê piştgiriyê ne." },
+                { "language": "pl", "text": "Z mojego doświadczenia wiele osób potrzebuje wsparcia przy formularzach cyfrowych." },
+                { "language": "ro", "text": "Din experiența mea, mulți oameni au nevoie de sprijin la formularele digitale." },
+                { "language": "sq", "text": "Nga përvoja ime, shumë njerëz kanë nevojë për mbështetje me formularët digjitalë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber noch zu schmal: Eine persönliche Erfahrung allein ersetzt keine beobachtbare Grundlage und keine klare Rollenbegrenzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but still too narrow: Personal experience alone does not replace an observable basis or clear role limits." },
+                { "language": "fa", "text": "قابل‌قبول، اما هنوز محدود است: تجربه شخصی به‌تنهایی جای پایه قابل مشاهده و مرزبندی روشن نقش را نمی‌گیرد." },
+                { "language": "ar", "text": "مقبول، لكنه ما زال ضيقاً: التجربة الشخصية وحدها لا تعوض أساساً قابلاً للملاحظة ولا تحديداً واضحاً للدور." },
+                { "language": "tr", "text": "Makul, ama hâlâ dar: Kişisel deneyim tek başına gözlemlenebilir temel veya net rol sınırı yerine geçmez." },
+                { "language": "ru", "text": "Правдоподобно, но всё еще слишком узко: личный опыт сам по себе не заменяет наблюдаемую основу и четкие границы роли." },
+                { "language": "ckb", "text": "قابلی قبوڵە، بەڵام هێشتا زۆر تەسکە: ئەزموونی کەسی بە تەنها جێگەی بنەمای بینراو و سنووری ڕوونی ڕۆڵ ناگرێتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê hê jî teng e: Ezmûna kesane bi tenê cihê bingehineke xuya û sînorên zelal ên rolê nagire." },
+                { "language": "pl", "text": "Plausybilne, ale nadal zbyt wąskie: samo doświadczenie osobiste nie zastępuje obserwowalnej podstawy ani jasnego ograniczenia roli." },
+                { "language": "ro", "text": "Plauzibil, dar încă prea îngust: experiența personală singură nu înlocuiește o bază observabilă și limite clare ale rolului." },
+                { "language": "sq", "text": "E besueshme, por ende shumë e ngushtë: përvoja personale vetëm nuk zëvendëson një bazë të vëzhgueshme dhe kufij të qartë të rolit." }
+              ],
+              "explanationKey": "unsupported-assumption"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "limited-mandate",
+              "text": "Diese Gefahr sehe ich. Man müsste den Auftrag deshalb klar begrenzen: keine Rechtsberatung, keine dauerhafte Sozialberatung, sondern Hilfe beim Zugang zu Informationen, Technik und Lernangeboten.",
+              "translations": [
+                { "language": "en", "text": "I do see that risk. The mandate would therefore have to be clearly limited: no legal advice, no permanent social counseling, but help with access to information, technology, and learning offers." },
+                { "language": "fa", "text": "من این خطر را می‌بینم. بنابراین باید مأموریت را روشن محدود کرد: نه مشاوره حقوقی، نه مشاوره اجتماعی دائمی، بلکه کمک برای دسترسی به اطلاعات، فناوری و برنامه‌های یادگیری." },
+                { "language": "ar", "text": "أرى هذا الخطر. لذلك يجب تحديد المهمة بوضوح: لا استشارة قانونية، ولا إرشاد اجتماعي دائم، بل مساعدة في الوصول إلى المعلومات والتقنية وعروض التعلم." },
+                { "language": "tr", "text": "Bu riski görüyorum. Bu nedenle görev açıkça sınırlandırılmalı: hukuki danışmanlık yok, kalıcı sosyal danışmanlık yok; bilgiye, teknolojiye ve öğrenme tekliflerine erişimde yardım var." },
+                { "language": "ru", "text": "Я вижу эту опасность. Поэтому мандат нужно четко ограничить: не юридическая консультация, не постоянная социальная консультация, а помощь в доступе к информации, технике и учебным предложениям." },
+                { "language": "ckb", "text": "من ئەم مەترسییە دەبینم. بۆیە پێویستە ئەرکەکە بە ڕوونی سنووردار بکرێت: نە ڕاوێژی یاسایی، نە ڕاوێژی کۆمەڵایەتی بەردەوام، بەڵکو یارمەتی بۆ دەستگەیشتن بە زانیاری، تەکنەلۆژیا و پێشنیارە فێرکارییەکان." },
+                { "language": "kmr", "text": "Ez vê metirsiyê dibînim. Ji ber vê yekê divê erka wê bi zelalî bê sînorkirin: ne şêwirmendiya hiqûqî, ne şêwirmendiya civakî ya domdar, lê alîkarî ji bo gihîştina agahdarî, teknolojî û pêşniyarên fêrbûnê." },
+                { "language": "pl", "text": "Widzę to ryzyko. Dlatego mandat trzeba byłoby jasno ograniczyć: brak porad prawnych, brak stałego doradztwa społecznego, lecz pomoc w dostępie do informacji, technologii i ofert edukacyjnych." },
+                { "language": "ro", "text": "Văd acest risc. De aceea mandatul ar trebui limitat clar: fără consiliere juridică, fără consiliere socială permanentă, ci ajutor pentru acces la informații, tehnologie și oferte de învățare." },
+                { "language": "sq", "text": "E shoh këtë rrezik. Prandaj mandati duhet kufizuar qartë: jo këshillim juridik, jo këshillim social i përhershëm, por ndihmë për qasje në informacion, teknologji dhe oferta mësimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort schützt die Kernthese, indem sie klare Grenzen setzt und den Bildungsauftrag bewahrt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer protects the main thesis by setting clear boundaries and preserving the educational mission." },
+                { "language": "fa", "text": "خوب: پاسخ با تعیین مرزهای روشن، تز اصلی را حفظ می‌کند و مأموریت آموزشی را نگه می‌دارد." },
+                { "language": "ar", "text": "جيد: تحمي الإجابة الأطروحة الأساسية من خلال وضع حدود واضحة والحفاظ على المهمة التعليمية." },
+                { "language": "tr", "text": "İyi: Yanıt net sınırlar koyarak ana tezi koruyor ve eğitim görevini muhafaza ediyor." },
+                { "language": "ru", "text": "Хорошо: ответ защищает основной тезис, устанавливая четкие границы и сохраняя образовательную миссию." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بە دانانی سنووری ڕوون تێزی سەرەکی دەپارێزێت و ئەرکی فێرکاری دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv bi danîna sînorên zelal teza bingehîn diparêze û erka perwerdeyî diparêze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź chroni główną tezę, wyznaczając jasne granice i zachowując misję edukacyjną." },
+                { "language": "ro", "text": "Bine: răspunsul protejează teza principală prin stabilirea unor limite clare și păstrarea misiunii educaționale." },
+                { "language": "sq", "text": "Mirë: përgjigjja mbron tezën kryesore duke vendosur kufij të qartë dhe duke ruajtur misionin arsimor." }
+              ],
+              "explanationKey": "protect-core-by-limiting"
+            },
+            {
+              "id": "dismisses-risk",
+              "text": "Nein, Bibliotheken sollen einfach moderner werden.",
+              "translations": [
+                { "language": "en", "text": "No, libraries should simply become more modern." },
+                { "language": "fa", "text": "نه، کتابخانه‌ها فقط باید مدرن‌تر شوند." },
+                { "language": "ar", "text": "لا، ينبغي فقط أن تصبح المكتبات أكثر حداثة." },
+                { "language": "tr", "text": "Hayır, kütüphaneler sadece daha modern olmalı." },
+                { "language": "ru", "text": "Нет, библиотеки просто должны стать современнее." },
+                { "language": "ckb", "text": "نەخێر، کتێبخانەکان تەنها دەبێت نوێتر ببن." },
+                { "language": "kmr", "text": "Na, divê pirtûkxane tenê nûtir bibin." },
+                { "language": "pl", "text": "Nie, biblioteki powinny po prostu stać się nowocześniejsze." },
+                { "language": "ro", "text": "Nu, bibliotecile ar trebui pur și simplu să devină mai moderne." },
+                { "language": "sq", "text": "Jo, bibliotekat thjesht duhet të bëhen më moderne." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal: Die Antwort weicht dem konkreten Risiko aus und erklärt nicht, welche Aufgaben Bibliotheken übernehmen dürfen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping: The answer evades the concrete risk and does not explain which tasks libraries may take on." },
+                { "language": "fa", "text": "بیش از حد کلی است: پاسخ از خطر مشخص فرار می‌کند و توضیح نمی‌دهد کتابخانه‌ها چه وظایفی را می‌توانند بر عهده بگیرند." },
+                { "language": "ar", "text": "عام جداً: تتهرب الإجابة من الخطر المحدد ولا توضح أي مهام يمكن للمكتبات توليها." },
+                { "language": "tr", "text": "Çok genelleyici: Yanıt somut riskten kaçıyor ve kütüphanelerin hangi görevleri üstlenebileceğini açıklamıyor." },
+                { "language": "ru", "text": "Слишком обобщенно: ответ уклоняется от конкретного риска и не объясняет, какие задачи библиотеки могут брать на себя." },
+                { "language": "ckb", "text": "زۆر گشتییە: وەڵامەکە لە مەترسییە دیاریکراوەکە دەداتە لا و ڕوون ناکاتەوە کتێبخانەکان دەتوانن کام ئەرک وەربگرن." },
+                { "language": "kmr", "text": "Pir giştî ye: Bersiv ji metirsiya konkret direve û rave nake ka pirtûkxane dikarin kîjan erkan bigirin." },
+                { "language": "pl", "text": "Zbyt ogólne: odpowiedź omija konkretne ryzyko i nie wyjaśnia, jakie zadania biblioteki mogą przejąć." },
+                { "language": "ro", "text": "Prea general: răspunsul evită riscul concret și nu explică ce sarcini pot prelua bibliotecile." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përgjigjja shmang rrezikun konkret dhe nuk shpjegon cilat detyra mund të marrin bibliotekat." }
+              ],
+              "explanationKey": "risk-dismissed"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "define-criteria",
+              "text": "Dann würde ich die Kritik teilweise akzeptieren und präzisieren: Man braucht Zuständigkeiten, Datenschutzregeln, Öffnungszeiten und Erfolgskriterien, etwa die Zahl der Beratungen und Rückmeldungen der Nutzerinnen und Nutzer.",
+              "translations": [
+                { "language": "en", "text": "Then I would partly accept the criticism and make it more precise: one needs responsibilities, data protection rules, opening hours, and success criteria, such as the number of consultations and user feedback." },
+                { "language": "fa", "text": "در این صورت نقد را تا حدی می‌پذیرم و دقیق‌تر می‌کنم: به مسئولیت‌های مشخص، قواعد حفاظت از داده، ساعت‌های کاری و معیارهای موفقیت نیاز است؛ مثلاً تعداد مشاوره‌ها و بازخورد کاربران." },
+                { "language": "ar", "text": "عندئذ سأقبل النقد جزئياً وأجعله أدق: نحتاج إلى مسؤوليات محددة، وقواعد لحماية البيانات، وأوقات فتح، ومعايير نجاح، مثل عدد الاستشارات وردود فعل المستخدمين." },
+                { "language": "tr", "text": "O zaman eleştiriyi kısmen kabul eder ve netleştirirdim: sorumluluklar, veri koruma kuralları, çalışma saatleri ve başarı ölçütleri gerekir; örneğin danışma sayısı ve kullanıcı geri bildirimleri." },
+                { "language": "ru", "text": "Тогда я бы частично принял критику и уточнил: нужны зоны ответственности, правила защиты данных, часы работы и критерии успеха, например количество консультаций и отзывы пользователей." },
+                { "language": "ckb", "text": "ئەوکات ڕەخنەکە بەشێک وەردەگرم و وردتری دەکەم: پێویستە بەرپرسیارێتی، ڕێسای پاراستنی داتا، کاتی کارکردن و پێوەری سەرکەوتن هەبن، وەک ژمارەی ڕاوێژەکان و پاشخانی بەکارهێنەران." },
+                { "language": "kmr", "text": "Wê demê ez rexneyê beşekî dipejirînim û zelaltir dikim: berpirsiyarî, rêzikên parastina daneyan, demên vekirinê û pîvanên serkeftinê hewce ne, wekî hejmara şêwirmendiyan û vegerên bikarhêneran." },
+                { "language": "pl", "text": "Wtedy częściowo przyjąłbym krytykę i doprecyzował: potrzebne są odpowiedzialności, zasady ochrony danych, godziny otwarcia i kryteria sukcesu, na przykład liczba konsultacji i opinie użytkowników." },
+                { "language": "ro", "text": "Atunci aș accepta parțial critica și aș preciza: este nevoie de responsabilități, reguli de protecție a datelor, program și criterii de succes, de exemplu numărul consilierilor și feedbackul utilizatorilor." },
+                { "language": "sq", "text": "Atëherë do ta pranoja pjesërisht kritikën dhe do ta saktësoja: duhen përgjegjësi, rregulla për mbrojtjen e të dhënave, orare pune dhe kritere suksesi, për shembull numri i këshillimeve dhe reagimet e përdoruesve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verwandelt eine vage Idee in überprüfbare organisatorische Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer turns a vague idea into verifiable organizational criteria." },
+                { "language": "fa", "text": "خوب: پاسخ یک ایده مبهم را به معیارهای سازمانی قابل بررسی تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: تحول الإجابة فكرة غامضة إلى معايير تنظيمية قابلة للتحقق." },
+                { "language": "tr", "text": "İyi: Yanıt belirsiz bir fikri denetlenebilir örgütsel ölçütlere dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: ответ превращает расплывчатую идею в проверяемые организационные критерии." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بیرۆکەیەکی ناڕوون دەگۆڕێت بۆ پێوەری ڕێکخستنەوەی قابل پشکنین." },
+                { "language": "kmr", "text": "Baş e: Bersiv ramaneke nezelal vediguherîne pîvanên rêxistinî yên kontrolbar." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zamienia niejasny pomysł w sprawdzalne kryteria organizacyjne." },
+                { "language": "ro", "text": "Bine: răspunsul transformă o idee vagă în criterii organizatorice verificabile." },
+                { "language": "sq", "text": "Mirë: përgjigjja e kthen një ide të paqartë në kritere organizative të verifikueshme." }
+              ],
+              "explanationKey": "operational-precision"
+            },
+            {
+              "id": "postpones-detail",
+              "text": "Man kann das später genauer planen.",
+              "translations": [
+                { "language": "en", "text": "One can plan that more precisely later." },
+                { "language": "fa", "text": "می‌توان بعداً آن را دقیق‌تر برنامه‌ریزی کرد." },
+                { "language": "ar", "text": "يمكن التخطيط لذلك بدقة أكبر لاحقاً." },
+                { "language": "tr", "text": "Bunu daha sonra daha ayrıntılı planlayabiliriz." },
+                { "language": "ru", "text": "Это можно позже спланировать точнее." },
+                { "language": "ckb", "text": "دەتوانرێت دواتر ئەمە وردتر پلاندانانی بۆ بکرێت." },
+                { "language": "kmr", "text": "Ev dikare paşê bi hûrgilî bê plansazkirin." },
+                { "language": "pl", "text": "Można to później dokładniej zaplanować." },
+                { "language": "ro", "text": "Se poate planifica mai precis mai târziu." },
+                { "language": "sq", "text": "Kjo mund të planifikohet më saktë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend: In einer C1-Verteidigung muss zumindest gezeigt werden, welche Details später geklärt werden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive: In a C1 defense, you must at least show which details should be clarified later." },
+                { "language": "fa", "text": "بیش از حد طفره‌آمیز است: در دفاع C1 باید دست‌کم نشان دهید کدام جزئیات قرار است بعداً روشن شوند." },
+                { "language": "ar", "text": "مراوغ جداً: في دفاع C1 يجب على الأقل إظهار أي تفاصيل ينبغي توضيحها لاحقاً." },
+                { "language": "tr", "text": "Çok kaçamak: Bir C1 savunmasında en azından hangi ayrıntıların daha sonra netleştirileceği gösterilmelidir." },
+                { "language": "ru", "text": "Слишком уклончиво: в защите C1 нужно как минимум показать, какие детали предстоит уточнить позже." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە: لە بەرگری C1 دا دەبێت لانیکەم نیشان بدرێت کام وردەکارییەکان دواتر ڕوون دەکرێنەوە." },
+                { "language": "kmr", "text": "Pir revokî ye: Di parastina C1 de divê herî kêm were nîşandan ka kîjan hûrgilî paşê dê zelal bibin." },
+                { "language": "pl", "text": "Zbyt wymijające: w obronie na C1 trzeba przynajmniej pokazać, jakie szczegóły mają zostać później wyjaśnione." },
+                { "language": "ro", "text": "Prea evaziv: într-o apărare C1 trebuie măcar arătat ce detalii urmează să fie clarificate mai târziu." },
+                { "language": "sq", "text": "Shumë shmangëse: në një mbrojtje C1 duhet të tregohet të paktën cilat detaje do të sqarohen më vonë." }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "nuanced-defense",
+              "text": "Meine Kernthese bleibt: Bibliotheken können eine Brücke zwischen Bildung, digitalem Alltag und öffentlicher Teilhabe bilden. Tragfähig ist der Vorschlag aber nur, wenn er schrittweise, begrenzt und überprüfbar umgesetzt wird.",
+              "translations": [
+                { "language": "en", "text": "My main thesis remains: libraries can form a bridge between education, digital everyday life, and public participation. However, the proposal is viable only if it is implemented step by step, with limits and measurable review." },
+                { "language": "fa", "text": "تز اصلی من همچنان این است: کتابخانه‌ها می‌توانند پلی میان آموزش، زندگی دیجیتال روزمره و مشارکت عمومی باشند. اما این پیشنهاد فقط زمانی پایدار است که مرحله‌به‌مرحله، محدود و قابل ارزیابی اجرا شود." },
+                { "language": "ar", "text": "تبقى أطروحتي الأساسية: يمكن للمكتبات أن تشكل جسراً بين التعليم والحياة الرقمية اليومية والمشاركة العامة. لكن الاقتراح يكون قابلاً للاستمرار فقط إذا نُفذ تدريجياً وبحدود وبشكل قابل للتقييم." },
+                { "language": "tr", "text": "Ana tezim şudur: kütüphaneler eğitim, dijital gündelik yaşam ve kamusal katılım arasında bir köprü kurabilir. Ancak öneri yalnızca adım adım, sınırlı ve denetlenebilir biçimde uygulanırsa sürdürülebilir olur." },
+                { "language": "ru", "text": "Мой основной тезис сохраняется: библиотеки могут стать мостом между образованием, цифровой повседневностью и общественным участием. Но предложение жизнеспособно только при поэтапной, ограниченной и проверяемой реализации." },
+                { "language": "ckb", "text": "تێزی سەرەکیم هەمانە: کتێبخانەکان دەتوانن ببنە پردێک لە نێوان فێربوون، ژیانی دیجیتاڵی ڕۆژانە و بەشداری گشتیدا. بەڵام پێشنیارەکە تەنها کاتێک بەهێزە کە بە قۆناغ، بە سنوور و بە شێوەی پشکنینکراو جێبەجێ بکرێت." },
+                { "language": "kmr", "text": "Teza min a bingehîn dimîne: pirtûkxane dikarin di navbera perwerdehî, jiyana rojane ya dijîtal û beşdariya giştî de bibin pirek. Lê pêşniyar tenê dema ku bi gav-gav, bi sînor û bi awayekî kontrolbar were pêkanîn dikare mayînde be." },
+                { "language": "pl", "text": "Moja główna teza pozostaje taka: biblioteki mogą tworzyć pomost między edukacją, cyfrową codziennością i uczestnictwem publicznym. Propozycja jest jednak nośna tylko wtedy, gdy zostanie wdrożona etapowo, z ograniczeniami i w sposób sprawdzalny." },
+                { "language": "ro", "text": "Teza mea principală rămâne: bibliotecile pot crea o punte între educație, viața digitală cotidiană și participarea publică. Propunerea este însă viabilă doar dacă este implementată treptat, limitat și verificabil." },
+                { "language": "sq", "text": "Teza ime kryesore mbetet: bibliotekat mund të krijojnë një urë midis arsimit, jetës së përditshme digjitale dhe pjesëmarrjes publike. Por propozimi është i qëndrueshëm vetëm nëse zbatohet hap pas hapi, me kufij dhe në mënyrë të verifikueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Fazit verteidigt die These, ohne die genannten Einschränkungen zu vergessen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The conclusion defends the thesis without forgetting the limitations that were named." },
+                { "language": "fa", "text": "خوب: جمع‌بندی از تز دفاع می‌کند، بدون اینکه محدودیت‌های گفته‌شده را فراموش کند." },
+                { "language": "ar", "text": "جيد: تدافع الخاتمة عن الأطروحة دون أن تنسى القيود التي ذُكرت." },
+                { "language": "tr", "text": "İyi: Sonuç, belirtilen sınırlamaları unutmadan tezi savunuyor." },
+                { "language": "ru", "text": "Хорошо: вывод защищает тезис, не забывая названные ограничения." },
+                { "language": "ckb", "text": "باشە: ئەنجامگیرییەکە بەرگری لە تێزەکە دەکات بەبێ ئەوەی سنوورە ناوبراوەکان لەبیر بکات." },
+                { "language": "kmr", "text": "Baş e: Encam teza diparêze bêyî ku sînorên navkirî ji bîr bike." },
+                { "language": "pl", "text": "Dobrze: wniosek broni tezy, nie zapominając o wymienionych ograniczeniach." },
+                { "language": "ro", "text": "Bine: concluzia apără teza fără să uite limitările numite." },
+                { "language": "sq", "text": "Mirë: përfundimi mbron tezën pa harruar kufizimet e përmendura." }
+              ],
+              "explanationKey": "qualified-final-defense"
+            },
+            {
+              "id": "generic-ending",
+              "text": "Zusammenfassend finde ich Bibliotheken sehr wichtig.",
+              "translations": [
+                { "language": "en", "text": "In summary, I find libraries very important." },
+                { "language": "fa", "text": "در جمع‌بندی، کتابخانه‌ها را بسیار مهم می‌دانم." },
+                { "language": "ar", "text": "خلاصة القول، أرى أن المكتبات مهمة جداً." },
+                { "language": "tr", "text": "Özetle, kütüphaneleri çok önemli buluyorum." },
+                { "language": "ru", "text": "В заключение я считаю библиотеки очень важными." },
+                { "language": "ckb", "text": "بە کورتی، من کتێبخانەکان زۆر گرنگ دەزانم." },
+                { "language": "kmr", "text": "Bi kurtasî, ez pirtûkxaneyan pir girîng dibînim." },
+                { "language": "pl", "text": "Podsumowując, uważam biblioteki za bardzo ważne." },
+                { "language": "ro", "text": "În concluzie, consider bibliotecile foarte importante." },
+                { "language": "sq", "text": "Si përmbledhje, i konsideroj bibliotekat shumë të rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Das Fazit verteidigt keine konkrete These und nimmt die kritischen Einwände nicht wieder auf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: The conclusion does not defend a concrete thesis and does not take up the critical objections again." },
+                { "language": "fa", "text": "بیش از حد کلی است: جمع‌بندی از تز مشخصی دفاع نمی‌کند و ایرادهای انتقادی را دوباره وارد نمی‌کند." },
+                { "language": "ar", "text": "عام جداً: الخاتمة لا تدافع عن أطروحة محددة ولا تعود إلى الاعتراضات النقدية." },
+                { "language": "tr", "text": "Çok genel: Sonuç somut bir tezi savunmuyor ve eleştirel itirazları yeniden ele almıyor." },
+                { "language": "ru", "text": "Слишком общо: вывод не защищает конкретный тезис и не возвращается к критическим возражениям." },
+                { "language": "ckb", "text": "زۆر گشتییە: ئەنجامگیرییەکە بەرگری لە تێزێکی دیاریکراو ناکات و ناڕەزاییە ڕەخنەییەکان دووبارە ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: Encam tezeke konkret naparêze û careke din nerazîbûnên rexneyî nagire." },
+                { "language": "pl", "text": "Zbyt ogólne: wniosek nie broni konkretnej tezy i nie wraca do krytycznych zastrzeżeń." },
+                { "language": "ro", "text": "Prea general: concluzia nu apără o teză concretă și nu reia obiecțiile critice." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përfundimi nuk mbron një tezë konkrete dhe nuk i rimerr kundërshtimet kritike." }
+              ],
+              "explanationKey": "generic-conclusion"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "clarification-note",
+          "text": "Nach einer kritischen Nachfrage ist eine präzise Eingrenzung oft stärker als sofortige Verteidigung.",
+          "translations": [
+            { "language": "en", "text": "After a critical question, precise narrowing is often stronger than immediate defense." },
+            { "language": "fa", "text": "بعد از پرسش انتقادی، محدود کردن دقیق موضوع اغلب قوی‌تر از دفاع فوری است." },
+            { "language": "ar", "text": "بعد سؤال نقدي، يكون التحديد الدقيق غالباً أقوى من الدفاع الفوري." },
+            { "language": "tr", "text": "Eleştirel bir sorudan sonra, kesin sınırlandırma çoğu zaman hemen savunmadan daha güçlüdür." },
+            { "language": "ru", "text": "После критического вопроса точное ограничение темы часто сильнее немедленной защиты." },
+            { "language": "ckb", "text": "دوای پرسیاری ڕەخنەیی، سنووردارکردنی ورد زۆرجار بەهێزترە لە بەرگریی دەستبەجێ." },
+            { "language": "kmr", "text": "Piştî pirseke rexneyî, sînorkirina hûrgilî gelek caran ji parastina tavilê bihêztir e." },
+            { "language": "pl", "text": "Po krytycznym pytaniu precyzyjne zawężenie jest często silniejsze niż natychmiastowa obrona." },
+            { "language": "ro", "text": "După o întrebare critică, delimitarea precisă este adesea mai puternică decât apărarea imediată." },
+            { "language": "sq", "text": "Pas një pyetjeje kritike, kufizimi i saktë shpesh është më i fortë se mbrojtja e menjëhershme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "concession-note",
+          "text": "Ein Einwand verliert nicht Ihre Position, wenn Sie ihn anerkennen und daraus eine realistischere Umsetzung ableiten.",
+          "translations": [
+            { "language": "en", "text": "An objection does not make you lose your position if you acknowledge it and derive a more realistic implementation from it." },
+            { "language": "fa", "text": "پذیرفتن یک ایراد موضع شما را از بین نمی‌برد، اگر از آن اجرای واقع‌بینانه‌تری نتیجه بگیرید." },
+            { "language": "ar", "text": "لا تفقد موقفك بسبب اعتراض إذا اعترفت به واستنتجت منه تنفيذاً أكثر واقعية." },
+            { "language": "tr", "text": "Bir itirazı kabul etmek, ondan daha gerçekçi bir uygulama çıkarırsanız pozisyonunuzu kaybettirmez." },
+            { "language": "ru", "text": "Возражение не лишает Вас позиции, если Вы признаете его и выводите из него более реалистичную реализацию." },
+            { "language": "ckb", "text": "ناڕەزاییەک هەڵوێستەکەت لەناو نابات ئەگەر وەریبگریت و جێبەجێکردنێکی واقیعیتر لێ دابڕێژیت." },
+            { "language": "kmr", "text": "Nerazîbûn helwesta we ji dest nade heke hûn wê bipejirînin û ji wê pêkanîneke realîsttir derxin." },
+            { "language": "pl", "text": "Zastrzeżenie nie odbiera Panu stanowiska, jeśli je Pan uzna i wyprowadzi z niego bardziej realistyczne wdrożenie." },
+            { "language": "ro", "text": "O obiecție nu vă face să pierdeți poziția dacă o recunoașteți și deduceți din ea o implementare mai realistă." },
+            { "language": "sq", "text": "Një kundërshtim nuk ju heq qëndrimin nëse e pranoni dhe nxirrni prej tij një zbatim më realist." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "evidence-note",
+          "text": "C1-Antworten sollten Annahmen nicht nur behaupten, sondern mit beobachtbaren Situationen oder klar begrenzten Beispielen stützen.",
+          "translations": [
+            { "language": "en", "text": "C1 answers should not merely claim assumptions, but support them with observable situations or clearly limited examples." },
+            { "language": "fa", "text": "پاسخ‌های C1 نباید فرض‌ها را فقط ادعا کنند، بلکه باید آن‌ها را با موقعیت‌های قابل مشاهده یا مثال‌های محدود و روشن پشتیبانی کنند." },
+            { "language": "ar", "text": "ينبغي ألا تكتفي إجابات C1 بادعاء الافتراضات، بل تدعمها بمواقف قابلة للملاحظة أو أمثلة محددة بوضوح." },
+            { "language": "tr", "text": "C1 yanıtları varsayımları yalnızca iddia etmemeli, onları gözlemlenebilir durumlar veya açık sınırlı örneklerle desteklemelidir." },
+            { "language": "ru", "text": "Ответы C1 должны не только утверждать предпосылки, но и подкреплять их наблюдаемыми ситуациями или четко ограниченными примерами." },
+            { "language": "ckb", "text": "وەڵامەکانی C1 نابێت تەنها گریمانەکان بدەن، بەڵکو پێویستە بە دۆخی بینراو یان نموونەی سنوورداری ڕوون پشتگیرییان بکەن." },
+            { "language": "kmr", "text": "Bersivên C1 divê texmînan tenê ne îdia bikin, lê bi rewşên xuya an mînakên sînordar ên zelal piştgirî bikin." },
+            { "language": "pl", "text": "Odpowiedzi C1 nie powinny jedynie twierdzić założeń, lecz wspierać je obserwowalnymi sytuacjami albo jasno ograniczonymi przykładami." },
+            { "language": "ro", "text": "Răspunsurile C1 nu ar trebui doar să afirme presupuneri, ci să le susțină cu situații observabile sau exemple clar delimitate." },
+            { "language": "sq", "text": "Përgjigjet C1 nuk duhet vetëm të pohojnë supozime, por t'i mbështesin me situata të vëzhgueshme ose shembuj të kufizuar qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "boundary-note",
+          "text": "Eine starke Verteidigung enthält Grenzen: Sie zeigt, was der Vorschlag leisten soll und was ausdrücklich nicht.",
+          "translations": [
+            { "language": "en", "text": "A strong defense contains boundaries: it shows what the proposal should achieve and what it explicitly should not." },
+            { "language": "fa", "text": "دفاع قوی مرز دارد: نشان می‌دهد پیشنهاد چه کاری باید انجام دهد و صراحتاً چه کاری نه." },
+            { "language": "ar", "text": "الدفاع القوي يحتوي على حدود: يوضح ما ينبغي للاقتراح أن يحققه وما لا ينبغي له صراحة." },
+            { "language": "tr", "text": "Güçlü bir savunma sınırlar içerir: önerinin neyi başarması gerektiğini ve özellikle neyi yapmaması gerektiğini gösterir." },
+            { "language": "ru", "text": "Сильная защита содержит границы: она показывает, что предложение должно делать и чего явно не должно делать." },
+            { "language": "ckb", "text": "بەرگریی بەهێز سنوور هەیە: نیشان دەدات پێشنیارەکە چی بکات و بە ڕوونی چی نەکات." },
+            { "language": "kmr", "text": "Parastineke bihêz sînor dihewîne: nîşan dide pêşniyar divê çi bike û bi eşkere divê çi neke." },
+            { "language": "pl", "text": "Silna obrona zawiera granice: pokazuje, co propozycja ma osiągnąć, a czego wyraźnie nie ma robić." },
+            { "language": "ro", "text": "O apărare puternică include limite: arată ce trebuie să realizeze propunerea și ce anume nu trebuie să facă." },
+            { "language": "sq", "text": "Një mbrojtje e fortë përmban kufij: tregon çfarë duhet të arrijë propozimi dhe çfarë jo në mënyrë të qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "final-defense-note",
+          "text": "Ein überzeugendes Schlusswort verbindet Kernthese, Einwände und Bedingungen zu einer belastbaren Position.",
+          "translations": [
+            { "language": "en", "text": "A convincing closing statement connects the main thesis, objections, and conditions into a resilient position." },
+            { "language": "fa", "text": "جمع‌بندی قانع‌کننده تز اصلی، ایرادها و شرط‌ها را به موضعی قابل اتکا وصل می‌کند." },
+            { "language": "ar", "text": "الخاتمة المقنعة تربط الأطروحة الأساسية والاعتراضات والشروط في موقف متين." },
+            { "language": "tr", "text": "İkna edici bir kapanış, ana tezi, itirazları ve koşulları dayanıklı bir pozisyona bağlar." },
+            { "language": "ru", "text": "Убедительное заключительное слово соединяет основной тезис, возражения и условия в устойчивую позицию." },
+            { "language": "ckb", "text": "قسەی کۆتایی قانعکەر تێزی سەرەکی، ناڕەزاییەکان و مەرجەکان دەبەستێتەوە بە هەڵوێستێکی جێگیر." },
+            { "language": "kmr", "text": "Gotina dawî ya qane dikare teza bingehîn, nerazîbûn û şertan bike yek di helwesteke xurt de." },
+            { "language": "pl", "text": "Przekonujące słowo końcowe łączy główną tezę, zastrzeżenia i warunki w stabilne stanowisko." },
+            { "language": "ro", "text": "O concluzie convingătoare leagă teza principală, obiecțiile și condițiile într-o poziție solidă." },
+            { "language": "sq", "text": "Një mbyllje bindëse lidh tezën kryesore, kundërshtimet dhe kushtet në një qëndrim të qëndrueshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "telc-c1-presentation-defense",
+          "placement": "header",
+          "purpose": "Show a formal oral exam situation where a candidate answers critical questions about a presentation.",
+          "altText": "Eine ruhige Illustration einer C1-Prüfung, in der eine Person eine Präsentation gegen kritische Nachfragen verteidigt.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm illustration of a C1 exam where one person defends a presentation against critical questions." },
+            { "language": "fa", "text": "تصویری آرام از آزمون C1 که در آن فردی از ارائه خود در برابر پرسش‌های انتقادی دفاع می‌کند." },
+            { "language": "ar", "text": "رسم هادئ لامتحان C1 يدافع فيه شخص عن عرضه أمام أسئلة نقدية." },
+            { "language": "tr", "text": "Bir kişinin sunumunu eleştirel sorulara karşı savunduğu sakin bir C1 sınavı illüstrasyonu." },
+            { "language": "ru", "text": "Спокойная иллюстрация экзамена C1, где человек защищает презентацию от критических вопросов." },
+            { "language": "ckb", "text": "وێنەیەکی ئارام لە تاقیکردنەوەی C1 کە کەسێک لە پێشکەشکردنەکەی بەرامبەر پرسیارە ڕەخنەییەکان بەرگری دەکات." },
+            { "language": "kmr", "text": "Wêneyeke aram a ezmûna C1 ku kesek pêşkêşiya xwe li hember pirsên rexneyî diparêze." },
+            { "language": "pl", "text": "Spokojna ilustracja egzaminu C1, w którym jedna osoba broni prezentacji przed krytycznymi pytaniami." },
+            { "language": "ro", "text": "O ilustrație calmă a unui examen C1 în care o persoană își apără prezentarea în fața întrebărilor critice." },
+            { "language": "sq", "text": "Një ilustrim i qetë i një provimi C1 ku një person mbron prezantimin ndaj pyetjeve kritike." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, formal oral exam setting in Germany, adult candidate at a small table with abstract presentation notes, examiner listening with a neutral expression, no readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

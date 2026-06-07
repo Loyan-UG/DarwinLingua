@@ -1,0 +1,646 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-02-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 02 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 02",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-kritische-rueckmeldung-geben",
+      "linkedDialogueSlug": null,
+      "title": "Eine kritische Rückmeldung geben",
+      "titleTranslations": [
+        { "language": "en", "text": "Giving critical feedback" },
+        { "language": "fa", "text": "دادن بازخورد انتقادی" },
+        { "language": "ar", "text": "تقديم ملاحظة نقدية" },
+        { "language": "tr", "text": "Eleştirel geri bildirim vermek" },
+        { "language": "ru", "text": "Дать критическую обратную связь" },
+        { "language": "ckb", "text": "دانانی فیدباکی ڕەخنەیی" },
+        { "language": "kmr", "text": "Dayîna vegerandina rexneyî" },
+        { "language": "pl", "text": "Udzielanie krytycznej informacji zwrotnej" },
+        { "language": "ro", "text": "Oferirea unui feedback critic" },
+        { "language": "sq", "text": "Dhënia e një reagimi kritik" }
+      ],
+      "description": "Du gibst einer Kollegin Rückmeldung zu einem Entwurf für eine Kundenpräsentation. Die Präsentation enthält gute Inhalte, ist aber zu lang und der rote Faden ist noch nicht klar genug.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You give a colleague feedback on a draft customer presentation. The presentation has good content, but it is too long and the main thread is not clear enough yet." },
+        { "language": "fa", "text": "به یک همکار درباره پیش‌نویس ارائه برای مشتری بازخورد می‌دهی. ارائه محتوای خوبی دارد، اما بیش از حد طولانی است و خط اصلی آن هنوز به اندازه کافی روشن نیست." },
+        { "language": "ar", "text": "تقدم ملاحظة لزميلة حول مسودة عرض للعميل. يحتوي العرض على محتوى جيد، لكنه طويل جداً والخيط الرئيسي ليس واضحاً بما يكفي بعد." },
+        { "language": "tr", "text": "Bir iş arkadaşına müşteri sunumu taslağı hakkında geri bildirim veriyorsun. Sunumun içeriği iyi, ancak çok uzun ve ana çizgisi henüz yeterince net değil." },
+        { "language": "ru", "text": "Ты даёшь коллеге обратную связь по черновику презентации для клиента. В презентации хороший материал, но она слишком длинная, а основная линия пока недостаточно ясна." },
+        { "language": "ckb", "text": "بە هاوکارێک فیدباک دەدەیت لەسەر پێش‌نووسی پێشکەشکردنێک بۆ کڕیار. پێشکەشکردنەکە ناوەڕۆکی باشی هەیە، بەڵام زۆر درێژە و هێڵی سەرەکییەکە هێشتا بە تەواوی ڕوون نییە." },
+        { "language": "kmr", "text": "Tu ji hevkarekê re li ser pêşnivîsa pêşkêşiyekê ji bo xerîdar vegerandin didî. Naveroka pêşkêşiyê baş e, lê pir dirêj e û xeta sereke hîn têra xwe zelal nîne." },
+        { "language": "pl", "text": "Udzielasz koleżance informacji zwrotnej do szkicu prezentacji dla klienta. Prezentacja ma dobre treści, ale jest za długa, a główna myśl nie jest jeszcze wystarczająco jasna." },
+        { "language": "ro", "text": "Îi dai unei colege feedback la o schiță de prezentare pentru client. Prezentarea are conținut bun, dar este prea lungă, iar firul principal nu este încă suficient de clar." },
+        { "language": "sq", "text": "I jep një kolegeje reagim për draftin e një prezantimi për klientin. Prezantimi ka përmbajtje të mirë, por është shumë i gjatë dhe linja kryesore ende nuk është mjaft e qartë." }
+      ],
+      "learnerGoal": "Gib kritische Rückmeldung sachlich und konstruktiv: Nenne eine konkrete Beobachtung, erkläre die Wirkung und formuliere eine machbare Bitte zur Überarbeitung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Give critical feedback in a factual and constructive way: name a concrete observation, explain the effect, and formulate a feasible request for revision." },
+        { "language": "fa", "text": "بازخورد انتقادی را عینی و سازنده بیان کن: یک مشاهده مشخص را نام ببر، اثر آن را توضیح بده و یک درخواست قابل انجام برای بازبینی مطرح کن." },
+        { "language": "ar", "text": "قدّم الملاحظة النقدية بطريقة موضوعية وبنّاءة: اذكر ملاحظة محددة، واشرح أثرها، وصغ طلباً قابلاً للتنفيذ للمراجعة." },
+        { "language": "tr", "text": "Eleştirel geri bildirimi nesnel ve yapıcı ver: somut bir gözlem söyle, etkisini açıkla ve revizyon için uygulanabilir bir rica formüle et." },
+        { "language": "ru", "text": "Дай критическую обратную связь предметно и конструктивно: назови конкретное наблюдение, объясни эффект и сформулируй выполнимую просьбу о доработке." },
+        { "language": "ckb", "text": "فیدباکی ڕەخنەیی بە شێوەی بابەتی و سازندە بدە: تێبینییەکی دیاریکراو ناو ببە، کاریگەرییەکەی ڕوون بکە و داواکارییەکی جێبەجێکراو بۆ چاککردنەوە دەرببڕە." },
+        { "language": "kmr", "text": "Vegerandina rexneyî bi awayekî rast û avaker bide: çavdêriyek konkret nav bike, bandora wê rave bike û daxwazeke pêkan ji bo sererastkirinê bibêje." },
+        { "language": "pl", "text": "Udziel krytycznej informacji zwrotnej rzeczowo i konstruktywnie: nazwij konkretną obserwację, wyjaśnij jej wpływ i sformułuj wykonalną prośbę o poprawę." },
+        { "language": "ro", "text": "Oferă feedback critic într-un mod factual și constructiv: numește o observație concretă, explică efectul și formulează o cerere realistă de revizuire." },
+        { "language": "sq", "text": "Jep reagim kritik në mënyrë faktike dhe ndërtuese: përmend një vëzhgim konkret, shpjego ndikimin dhe formulo një kërkesë të realizueshme për rishikim." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "agree-disagree",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3020,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka z pracy" },
+            { "language": "ro", "text": "Colega" },
+            { "language": "sq", "text": "Kolege" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Du hast dir meinen Entwurf für die Kundenpräsentation angesehen. Kannst du mir kurz sagen, wie er auf dich wirkt?",
+          "translations": [
+            { "language": "en", "text": "You looked at my draft for the customer presentation. Can you briefly tell me how it comes across to you?" },
+            { "language": "fa", "text": "تو پیش‌نویس ارائه من برای مشتری را دیدی. می‌توانی کوتاه بگویی از نظر تو چه تأثیری دارد؟" },
+            { "language": "ar", "text": "اطلعت على مسودة العرض للعميل. هل يمكنك أن تخبرني باختصار كيف تبدو لك؟" },
+            { "language": "tr", "text": "Müşteri sunumu taslağıma baktın. Kısaca sende nasıl bir izlenim bıraktığını söyleyebilir misin?" },
+            { "language": "ru", "text": "Ты посмотрел мой черновик презентации для клиента. Можешь коротко сказать, как он на тебя действует?" },
+            { "language": "ckb", "text": "تۆ پێش‌نووسی پێشکەشکردنەکەم بۆ کڕیار بینی. دەتوانیت بە کورتی بڵێیت لەسەر تۆ چۆن کاریگەری دەکات؟" },
+            { "language": "kmr", "text": "Te li pêşnivîsa min a pêşkêşiyê ji bo xerîdar nihêrî. Tu dikarî bi kurtî bibêjî ew li te çawa dixuye?" },
+            { "language": "pl", "text": "Przejrzałeś mój szkic prezentacji dla klienta. Możesz krótko powiedzieć, jakie robi na tobie wrażenie?" },
+            { "language": "ro", "text": "Te-ai uitat peste schița mea pentru prezentarea clientului. Poți să-mi spui pe scurt ce impresie îți lasă?" },
+            { "language": "sq", "text": "E pe draftin tim për prezantimin e klientit. A mund të më thuash shkurt si të duket?" }
+          ],
+          "function": "request-feedback"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Die Inhalte sind fachlich stark. Mir ist aber aufgefallen, dass die Präsentation sehr viele Details enthält, sodass die zentrale Botschaft etwas untergeht.",
+          "translations": [
+            { "language": "en", "text": "The content is technically strong. However, I noticed that the presentation contains a lot of details, so the central message gets a bit lost." },
+            { "language": "fa", "text": "محتوا از نظر تخصصی قوی است. اما متوجه شدم ارائه جزئیات زیادی دارد، به‌طوری که پیام اصلی کمی گم می‌شود." },
+            { "language": "ar", "text": "المحتوى قوي من الناحية المتخصصة. لكنني لاحظت أن العرض يحتوي على تفاصيل كثيرة جداً، بحيث تضيع الرسالة الأساسية قليلاً." },
+            { "language": "tr", "text": "İçerik teknik olarak güçlü. Ancak sunumun çok fazla ayrıntı içerdiğini fark ettim; bu yüzden ana mesaj biraz kayboluyor." },
+            { "language": "ru", "text": "Содержание профессионально сильное. Но я заметил, что в презентации очень много деталей, из-за чего основная мысль немного теряется." },
+            { "language": "ckb", "text": "ناوەڕۆکەکە لە ڕووی پیشەییەوە بەهێزە. بەڵام تێبینیم کرد پێشکەشکردنەکە وردەکاری زۆری تێدایە، بە جۆرێک پەیامی سەرەکی کەمێک ون دەبێت." },
+            { "language": "kmr", "text": "Naverok ji aliyê pisporiyê ve bihêz e. Lê min dît ku pêşkêşî gelek hûrguliyan dihewîne, ji ber vê yekê peyama sereke hinekî winda dibe." },
+            { "language": "pl", "text": "Treść jest merytorycznie mocna. Zauważyłem jednak, że prezentacja zawiera bardzo dużo szczegółów, przez co główny przekaz trochę się gubi." },
+            { "language": "ro", "text": "Conținutul este solid din punct de vedere profesional. Totuși, am observat că prezentarea conține foarte multe detalii, astfel încât mesajul central se pierde puțin." },
+            { "language": "sq", "text": "Përmbajtja është e fortë nga ana profesionale. Por vura re se prezantimi ka shumë detaje, ndaj mesazhi kryesor humbet pak." }
+          ],
+          "function": "give-balanced-observation",
+          "expectedLearnerAction": "Start with a factual strength, then name one concrete observation and its effect."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Ich wollte gerade zeigen, dass wir gründlich gearbeitet haben. Findest du, dass es zu ausführlich ist?",
+          "translations": [
+            { "language": "en", "text": "I wanted to show that we worked thoroughly. Do you think it is too detailed?" },
+            { "language": "fa", "text": "من دقیقاً می‌خواستم نشان بدهم که ما با دقت کار کرده‌ایم. به نظرت بیش از حد مفصل است؟" },
+            { "language": "ar", "text": "كنت أريد بالضبط أن أُظهر أننا عملنا بدقة. هل تعتقد أنه مفصل أكثر من اللازم؟" },
+            { "language": "tr", "text": "Aslında titiz çalıştığımızı göstermek istedim. Sence fazla ayrıntılı mı?" },
+            { "language": "ru", "text": "Я как раз хотела показать, что мы работали тщательно. Ты считаешь, что это слишком подробно?" },
+            { "language": "ckb", "text": "من ڕاستەوخۆ دەویستم نیشان بدەم کە بە وردی کارمان کردووە. پێت وایە زۆر بە وردییە؟" },
+            { "language": "kmr", "text": "Min dixwest nîşan bidim ku me bi hûrgulî xebitî ye. Tu difikirî ew pir hûrgulî ye?" },
+            { "language": "pl", "text": "Chciałam właśnie pokazać, że pracowaliśmy dokładnie. Uważasz, że jest zbyt szczegółowo?" },
+            { "language": "ro", "text": "Tocmai voiam să arăt că am lucrat temeinic. Crezi că este prea detaliat?" },
+            { "language": "sq", "text": "Doja pikërisht të tregoja se kemi punuar me kujdes. Mendon se është shumë e detajuar?" }
+          ],
+          "function": "clarify-intention"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Die Gründlichkeit ist ein Pluspunkt. Für den Kundentermin würde ich aber die Details stärker bündeln, damit die Entscheidung am Ende leichter fällt.",
+          "translations": [
+            { "language": "en", "text": "The thoroughness is a strength. For the customer meeting, however, I would group the details more clearly so that the decision is easier at the end." },
+            { "language": "fa", "text": "دقت کار یک نقطه قوت است. اما برای جلسه مشتری، من جزئیات را بیشتر دسته‌بندی می‌کردم تا تصمیم‌گیری در پایان آسان‌تر شود." },
+            { "language": "ar", "text": "الدقة نقطة قوة. لكن بالنسبة لموعد العميل، كنت سأجمع التفاصيل بشكل أوضح حتى يصبح اتخاذ القرار في النهاية أسهل." },
+            { "language": "tr", "text": "Titizlik bir artı nokta. Ancak müşteri toplantısı için ayrıntıları daha net gruplardım ki sonunda karar vermek daha kolay olsun." },
+            { "language": "ru", "text": "Тщательность — это сильная сторона. Но для встречи с клиентом я бы сильнее сгруппировал детали, чтобы в конце было легче принять решение." },
+            { "language": "ckb", "text": "وردکاری خاڵێکی بەهێزە. بەڵام بۆ دیداری کڕیار، من وردەکارییەکان زیاتر دەخستمە گرووپەوە، بۆ ئەوەی بڕیاردان لە کۆتاییدا ئاسانتر بێت." },
+            { "language": "kmr", "text": "Hûrgulîkirin xalekî erênî ye. Lê ji bo hevdîtina xerîdar, ez ê hûrguliyan zelaltir kom bikim, da ku biryardan di dawiyê de hêsantir bibe." },
+            { "language": "pl", "text": "Dokładność jest mocną stroną. Na spotkanie z klientem mocniej pogrupowałbym jednak szczegóły, żeby na końcu łatwiej było podjąć decyzję." },
+            { "language": "ro", "text": "Temeinicia este un punct forte. Totuși, pentru întâlnirea cu clientul aș grupa mai clar detaliile, ca decizia de la final să fie mai ușoară." },
+            { "language": "sq", "text": "Kujdesi është një pikë e fortë. Por për takimin me klientin do t'i grupoja më qartë detajet, që vendimi në fund të jetë më i lehtë." }
+          ],
+          "function": "separate-strength-from-request",
+          "expectedLearnerAction": "Validate the colleague's intention, then explain why a change is useful for the customer context."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Welche Stelle meinst du konkret? Ich möchte ungern wichtige Informationen streichen.",
+          "translations": [
+            { "language": "en", "text": "Which part do you mean specifically? I would prefer not to cut important information." },
+            { "language": "fa", "text": "دقیقاً منظورت کدام بخش است؟ ترجیح می‌دهم اطلاعات مهم را حذف نکنم." },
+            { "language": "ar", "text": "أي جزء تقصد بالتحديد؟ لا أفضل حذف معلومات مهمة." },
+            { "language": "tr", "text": "Somut olarak hangi kısmı kastediyorsun? Önemli bilgileri silmek istemem." },
+            { "language": "ru", "text": "Какую часть ты имеешь в виду конкретно? Мне не хотелось бы убирать важную информацию." },
+            { "language": "ckb", "text": "بە دیاریکراوی مەبەستت کام بەشە؟ نامەوێت زانیاریی گرنگ بسڕمەوە." },
+            { "language": "kmr", "text": "Tu bi taybetî kîjan beşê dibêjî? Ez naxwazim agahiyên girîng jê bibe." },
+            { "language": "pl", "text": "Które miejsce masz konkretnie na myśli? Nie chciałabym usuwać ważnych informacji." },
+            { "language": "ro", "text": "La ce parte te referi concret? Nu aș vrea să elimin informații importante." },
+            { "language": "sq", "text": "Cilën pjesë ke konkretisht parasysh? Nuk do të doja të hiqja informacione të rëndësishme." }
+          ],
+          "function": "ask-for-specific-example"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Zum Beispiel auf den Folien sechs bis acht: Dort stehen drei ähnliche Beispiele. Ich würde eines zeigen und die anderen in den Anhang verschieben.",
+          "translations": [
+            { "language": "en", "text": "For example on slides six to eight: there are three similar examples there. I would show one and move the others to the appendix." },
+            { "language": "fa", "text": "مثلاً در اسلایدهای شش تا هشت: آنجا سه مثال مشابه آمده است. من یکی را نشان می‌دادم و بقیه را به پیوست منتقل می‌کردم." },
+            { "language": "ar", "text": "مثلاً في الشرائح من السادسة إلى الثامنة: توجد هناك ثلاثة أمثلة متشابهة. كنت سأعرض واحداً وأنقل البقية إلى الملحق." },
+            { "language": "tr", "text": "Örneğin altıdan sekize kadar olan slaytlarda: orada üç benzer örnek var. Birini gösterir, diğerlerini eke taşırdım." },
+            { "language": "ru", "text": "Например, на слайдах с шестого по восьмой: там три похожих примера. Я бы показал один, а остальные перенёс в приложение." },
+            { "language": "ckb", "text": "بۆ نموونە لە سلایدەکانی شەش تا هەشت: لەوێ سێ نموونەی هاوشێوە هەیە. من یەکێکیان نیشان دەدەم و ئەوانی تر دەخەمە پاشکۆوە." },
+            { "language": "kmr", "text": "Mînakî li slaydên şeş heta heşt: li wir sê mînakên hevşib hene. Ez ê yekê nîşan bidim û yên din bixim pêvekê." },
+            { "language": "pl", "text": "Na przykład na slajdach od szóstego do ósmego: są tam trzy podobne przykłady. Pokazałbym jeden, a pozostałe przeniósł do załącznika." },
+            { "language": "ro", "text": "De exemplu pe slide-urile șase până la opt: acolo sunt trei exemple asemănătoare. Aș arăta unul și le-aș muta pe celelalte în anexă." },
+            { "language": "sq", "text": "Për shembull në slidet gjashtë deri në tetë: aty ka tre shembuj të ngjashëm. Do të tregoja njërin dhe të tjerët do t'i kaloja në shtojcë." }
+          ],
+          "function": "give-specific-example",
+          "expectedLearnerAction": "Name a concrete place in the draft and suggest a precise revision."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Das klingt sinnvoll. Ich frage mich nur, ob der Kunde dann genug Hintergrund bekommt.",
+          "translations": [
+            { "language": "en", "text": "That sounds reasonable. I just wonder whether the customer will then get enough background." },
+            { "language": "fa", "text": "این منطقی به نظر می‌رسد. فقط برایم سؤال است که آیا مشتری در این صورت پیش‌زمینه کافی دریافت می‌کند یا نه." },
+            { "language": "ar", "text": "هذا يبدو منطقياً. لكنني أتساءل فقط هل سيحصل العميل عندها على خلفية كافية." },
+            { "language": "tr", "text": "Bu mantıklı geliyor. Sadece müşterinin o zaman yeterli arka plan bilgisi alıp almayacağını merak ediyorum." },
+            { "language": "ru", "text": "Это звучит разумно. Я только думаю, получит ли клиент тогда достаточно контекста." },
+            { "language": "ckb", "text": "ئەوە بەجێ دەردەکەوێت. تەنها پرسیارم ئەوەیە کە کڕیار ئەوکات پاشبنەمای پێویست وەردەگرێت یان نا." },
+            { "language": "kmr", "text": "Ev maqûl dixuye. Tenê ez dipirsim ka wê xerîdar wê demê têra xwe agahdariya paşxanê bistîne an na." },
+            { "language": "pl", "text": "To brzmi sensownie. Zastanawiam się tylko, czy klient dostanie wtedy wystarczający kontekst." },
+            { "language": "ro", "text": "Sună rezonabil. Mă întreb doar dacă clientul va primi atunci suficient context." },
+            { "language": "sq", "text": "Kjo tingëllon e arsyeshme. Vetëm pyes veten nëse klienti do të marrë mjaftueshëm sfond atëherë." }
+          ],
+          "function": "raise-background-concern"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Den Hintergrund würde ich nicht streichen, sondern vorziehen: zuerst die Ausgangslage, dann die Empfehlung und erst danach die Detailbeispiele.",
+          "translations": [
+            { "language": "en", "text": "I would not remove the background, but move it forward: first the starting situation, then the recommendation, and only after that the detailed examples." },
+            { "language": "fa", "text": "پیش‌زمینه را حذف نمی‌کردم، بلکه جلوتر می‌آوردم: اول وضعیت اولیه، بعد پیشنهاد، و فقط پس از آن مثال‌های جزئی." },
+            { "language": "ar", "text": "لن أحذف الخلفية، بل سأقدمها إلى الأمام: أولاً الوضع الأولي، ثم التوصية، وبعد ذلك فقط الأمثلة التفصيلية." },
+            { "language": "tr", "text": "Arka planı silmezdim, öne alırdım: önce başlangıç durumu, sonra öneri ve ancak ondan sonra ayrıntılı örnekler." },
+            { "language": "ru", "text": "Я бы не удалял контекст, а перенёс его вперёд: сначала исходная ситуация, затем рекомендация и только потом подробные примеры." },
+            { "language": "ckb", "text": "پاشبنەماکە ناسڕمەوە، بەڵکو دەیهێنمە پێشەوە: سەرەتا دۆخی سەرەکی، پاشان پێشنیار، و تەنها دوای ئەوە نموونە وردەکان." },
+            { "language": "kmr", "text": "Ez paşxanê jê nabim, lê wê pêş de tînim: pêşî rewşa destpêkê, paşê pêşniyar û tenê paşê mînakên hûrgulî." },
+            { "language": "pl", "text": "Nie usuwałbym kontekstu, tylko przesunął go wcześniej: najpierw sytuacja wyjściowa, potem rekomendacja, a dopiero potem szczegółowe przykłady." },
+            { "language": "ro", "text": "Nu aș elimina contextul, ci l-aș muta mai în față: mai întâi situația inițială, apoi recomandarea și abia după aceea exemplele detaliate." },
+            { "language": "sq", "text": "Nuk do ta hiqja sfondin, por do ta vendosja më përpara: së pari situata fillestare, pastaj rekomandimi dhe vetëm më pas shembujt e detajuar." }
+          ],
+          "function": "preserve-concern-and-reframe",
+          "expectedLearnerAction": "Respond to the concern by preserving the colleague's goal and proposing a better structure."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Okay. Wie formuliere ich das im Team, ohne dass es so klingt, als hätte ich alles falsch aufgebaut?",
+          "translations": [
+            { "language": "en", "text": "Okay. How do I phrase that in the team without making it sound as if I built everything the wrong way?" },
+            { "language": "fa", "text": "باشه. چطور این را در تیم بیان کنم که انگار همه چیز را اشتباه ساخته‌ام به نظر نرسد؟" },
+            { "language": "ar", "text": "حسناً. كيف أصوغ ذلك في الفريق من دون أن يبدو كأنني بنيت كل شيء بشكل خاطئ؟" },
+            { "language": "tr", "text": "Tamam. Bunu ekip içinde nasıl ifade ederim ki her şeyi yanlış kurmuşum gibi duyulmasın?" },
+            { "language": "ru", "text": "Хорошо. Как мне сформулировать это в команде, чтобы не звучало так, будто я всё построила неправильно?" },
+            { "language": "ckb", "text": "باشە. چۆن ئەمە لە تیمدا دەرببڕم بێ ئەوەی وەک ئەوە بێت هەموو شتێکم بە هەڵە ڕێکخستووە؟" },
+            { "language": "kmr", "text": "Baş e. Ez vê di tîmê de çawa bibêjim bêyî ku wisa xuya bike ku min her tişt şaş ava kiriye?" },
+            { "language": "pl", "text": "Okej. Jak mam to sformułować w zespole, żeby nie brzmiało tak, jakbym wszystko źle zbudowała?" },
+            { "language": "ro", "text": "Bine. Cum formulez asta în echipă fără să sune ca și cum aș fi construit totul greșit?" },
+            { "language": "sq", "text": "Mirë. Si ta formuloj këtë në ekip pa tingëlluar sikur e kam ndërtuar gjithçka gabim?" }
+          ],
+          "function": "ask-for-reframing"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Du könntest sagen: Die Inhalte stehen, aber wir schärfen jetzt die Dramaturgie, damit der Kunde schneller zur Entscheidung kommt.",
+          "translations": [
+            { "language": "en", "text": "You could say: the content is in place, but we are now sharpening the structure so that the customer reaches a decision faster." },
+            { "language": "fa", "text": "می‌توانی بگویی: محتوا آماده است، اما حالا ساختار روایی را دقیق‌تر می‌کنیم تا مشتری سریع‌تر به تصمیم برسد." },
+            { "language": "ar", "text": "يمكنك أن تقولي: المحتوى موجود، لكننا الآن نوضح البناء حتى يصل العميل إلى القرار بسرعة أكبر." },
+            { "language": "tr", "text": "Şöyle diyebilirsin: içerik hazır, ama şimdi akışı netleştiriyoruz ki müşteri daha hızlı karar verebilsin." },
+            { "language": "ru", "text": "Можно сказать: содержание уже есть, но сейчас мы точнее выстраиваем драматургию, чтобы клиент быстрее пришёл к решению." },
+            { "language": "ckb", "text": "دەتوانیت بڵێیت: ناوەڕۆکەکە ئامادەیە، بەڵام ئێستا ڕێکخستنی گێڕانەوەکە توندتر دەکەین بۆ ئەوەی کڕیار خێراتر بگاتە بڕیار." },
+            { "language": "kmr", "text": "Tu dikarî bibêjî: naverok amade ye, lê em niha avakirina çîrokê zelaltir dikin, da ku xerîdar zûtir bigihîje biryarê." },
+            { "language": "pl", "text": "Możesz powiedzieć: treści są gotowe, ale teraz doprecyzowujemy dramaturgię, żeby klient szybciej doszedł do decyzji." },
+            { "language": "ro", "text": "Ai putea spune: conținutul există, dar acum clarificăm structura narativă, ca clientul să ajungă mai repede la decizie." },
+            { "language": "sq", "text": "Mund të thuash: përmbajtja është gati, por tani po e mprehim strukturën rrëfyese që klienti të arrijë më shpejt te vendimi." }
+          ],
+          "function": "offer-team-safe-wording",
+          "expectedLearnerAction": "Offer wording that protects the colleague's work and frames the change as improvement."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Das hilft mir. Kannst du die Rückmeldung noch einmal zusammenfassen, damit ich sie direkt umsetzen kann?",
+          "translations": [
+            { "language": "en", "text": "That helps me. Can you summarize the feedback once more so I can implement it directly?" },
+            { "language": "fa", "text": "این به من کمک می‌کند. می‌توانی بازخورد را یک‌بار دیگر جمع‌بندی کنی تا بتوانم مستقیم اجرا کنم؟" },
+            { "language": "ar", "text": "هذا يساعدني. هل يمكنك أن تلخص الملاحظة مرة أخرى حتى أستطيع تنفيذها مباشرة؟" },
+            { "language": "tr", "text": "Bu bana yardımcı oluyor. Geri bildirimi bir kez daha özetleyebilir misin ki doğrudan uygulayabileyim?" },
+            { "language": "ru", "text": "Это мне помогает. Можешь ещё раз подытожить обратную связь, чтобы я могла сразу это применить?" },
+            { "language": "ckb", "text": "ئەمە یارمەتیم دەدات. دەتوانیت فیدباکەکە جارێکی تر پوختە بکەیتەوە تا بتوانم ڕاستەوخۆ جێبەجێی بکەم؟" },
+            { "language": "kmr", "text": "Ev alîkariya min dike. Tu dikarî vegerandinê carekê din kurt bikî, da ku ez rasterast pêk bînim?" },
+            { "language": "pl", "text": "To mi pomaga. Możesz jeszcze raz podsumować informację zwrotną, żebym mogła od razu ją wdrożyć?" },
+            { "language": "ro", "text": "Asta mă ajută. Poți să rezumi feedbackul încă o dată, ca să îl pot aplica direct?" },
+            { "language": "sq", "text": "Kjo më ndihmon. A mund ta përmbledhësh edhe një herë reagimin që ta zbatoj drejtpërdrejt?" }
+          ],
+          "function": "request-actionable-summary"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Gern: Die Inhalte sind stark, aber die Präsentation braucht eine klarere Linie. Ich würde zuerst Ausgangslage und Empfehlung zeigen, Beispiele kürzen und Details in den Anhang legen.",
+          "translations": [
+            { "language": "en", "text": "Sure: the content is strong, but the presentation needs a clearer line. I would show the starting situation and recommendation first, shorten examples, and put details in the appendix." },
+            { "language": "fa", "text": "حتماً: محتوا قوی است، اما ارائه به خط روشن‌تری نیاز دارد. من اول وضعیت اولیه و پیشنهاد را نشان می‌دادم، مثال‌ها را کوتاه می‌کردم و جزئیات را به پیوست می‌بردم." },
+            { "language": "ar", "text": "بكل سرور: المحتوى قوي، لكن العرض يحتاج إلى خط أوضح. كنت سأعرض أولاً الوضع الأولي والتوصية، وأختصر الأمثلة، وأضع التفاصيل في الملحق." },
+            { "language": "tr", "text": "Tabii: içerik güçlü, ama sunumun daha net bir çizgiye ihtiyacı var. Önce başlangıç durumunu ve öneriyi gösterir, örnekleri kısaltır ve ayrıntıları eke koyardım." },
+            { "language": "ru", "text": "Конечно: содержание сильное, но презентации нужна более ясная линия. Я бы сначала показал исходную ситуацию и рекомендацию, сократил примеры и перенёс детали в приложение." },
+            { "language": "ckb", "text": "بە دڵنیاییەوە: ناوەڕۆکەکە بەهێزە، بەڵام پێشکەشکردنەکە پێویستی بە هێڵێکی ڕوونتر هەیە. من سەرەتا دۆخی سەرەکی و پێشنیار نیشان دەدەم، نموونەکان کورت دەکەمەوە و وردەکارییەکان دەخەمە پاشکۆوە." },
+            { "language": "kmr", "text": "Bi kêfxweşî: naverok bihêz e, lê pêşkêşî xeteke zelaltir dixwaze. Ez ê pêşî rewşa destpêkê û pêşniyarê nîşan bidim, mînakan kurt bikim û hûrguliyan bixim pêvekê." },
+            { "language": "pl", "text": "Jasne: treść jest mocna, ale prezentacja potrzebuje wyraźniejszej linii. Najpierw pokazałbym sytuację wyjściową i rekomendację, skrócił przykłady i przeniósł szczegóły do załącznika." },
+            { "language": "ro", "text": "Sigur: conținutul este puternic, dar prezentarea are nevoie de o linie mai clară. Aș arăta mai întâi situația inițială și recomandarea, aș scurta exemplele și aș pune detaliile în anexă." },
+            { "language": "sq", "text": "Patjetër: përmbajtja është e fortë, por prezantimi ka nevojë për një vijë më të qartë. Do të tregoja së pari situatën fillestare dhe rekomandimin, do t'i shkurtoja shembujt dhe do t'i vendosja detajet në shtojcë." }
+          ],
+          "function": "summarize-actionable-feedback",
+          "expectedLearnerAction": "Summarize the feedback with strength, issue, and concrete revision steps."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "balanced-observation",
+              "text": "Die Inhalte sind fachlich stark. Mir ist aber aufgefallen, dass durch die vielen Details die zentrale Botschaft etwas untergeht.",
+              "translations": [
+                { "language": "en", "text": "The content is technically strong. However, I noticed that the many details make the central message get a bit lost." },
+                { "language": "fa", "text": "محتوا از نظر تخصصی قوی است. اما متوجه شدم به خاطر جزئیات زیاد، پیام اصلی کمی گم می‌شود." },
+                { "language": "ar", "text": "المحتوى قوي من الناحية المتخصصة. لكنني لاحظت أن كثرة التفاصيل تجعل الرسالة الأساسية تضيع قليلاً." },
+                { "language": "tr", "text": "İçerik teknik olarak güçlü. Ancak çok fazla ayrıntı nedeniyle ana mesajın biraz kaybolduğunu fark ettim." },
+                { "language": "ru", "text": "Содержание профессионально сильное. Но я заметил, что из-за большого количества деталей основная мысль немного теряется." },
+                { "language": "ckb", "text": "ناوەڕۆکەکە لە ڕووی پیشەییەوە بەهێزە. بەڵام تێبینیم کرد بەهۆی وردەکاری زۆرەوە پەیامی سەرەکی کەمێک ون دەبێت." },
+                { "language": "kmr", "text": "Naverok ji aliyê pisporiyê ve bihêz e. Lê min dît ku ji ber hûrguliyên zêde peyama sereke hinekî winda dibe." },
+                { "language": "pl", "text": "Treść jest merytorycznie mocna. Zauważyłem jednak, że przez wiele szczegółów główny przekaz trochę się gubi." },
+                { "language": "ro", "text": "Conținutul este solid din punct de vedere profesional. Totuși, am observat că din cauza multor detalii mesajul central se pierde puțin." },
+                { "language": "sq", "text": "Përmbajtja është e fortë nga ana profesionale. Por vura re se për shkak të shumë detajeve mesazhi kryesor humbet pak." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this answer starts with a strength, then names a concrete observation and its effect.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer starts with a strength, then names a concrete observation and its effect." },
+                { "language": "fa", "text": "خوب است: این پاسخ با یک نقطه قوت شروع می‌کند، سپس یک مشاهده مشخص و اثر آن را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تبدأ هذه الإجابة بنقطة قوة، ثم تذكر ملاحظة محددة وأثرها." },
+                { "language": "tr", "text": "İyi: bu cevap bir güçlü yönle başlıyor, sonra somut bir gözlem ve etkisini söylüyor." },
+                { "language": "ru", "text": "Хорошо: ответ начинается с сильной стороны, затем называет конкретное наблюдение и его эффект." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە بە خاڵێکی بەهێز دەست پێدەکات، پاشان تێبینییەکی دیاریکراو و کاریگەرییەکەی دەڵێت." },
+                { "language": "kmr", "text": "Baş e: ev bersiv bi xalekî bihêz dest pê dike, paşê çavdêriyek konkret û bandora wê dibêje." },
+                { "language": "pl", "text": "Dobrze: ta odpowiedź zaczyna od mocnej strony, potem nazywa konkretną obserwację i jej efekt." },
+                { "language": "ro", "text": "Bine: răspunsul începe cu un punct forte, apoi numește o observație concretă și efectul ei." },
+                { "language": "sq", "text": "Mirë: kjo përgjigje fillon me një pikë të fortë, pastaj përmend një vëzhgim konkret dhe efektin e tij." }
+              ],
+              "explanationKey": "observation-impact"
+            },
+            {
+              "id": "too-personal",
+              "text": "Die Präsentation ist leider zu lang und wirkt nicht klar genug.",
+              "translations": [
+                { "language": "en", "text": "Unfortunately, the presentation is too long and does not seem clear enough." },
+                { "language": "fa", "text": "متأسفانه ارائه بیش از حد طولانی است و به اندازه کافی روشن به نظر نمی‌رسد." },
+                { "language": "ar", "text": "للأسف العرض طويل جداً ولا يبدو واضحاً بما يكفي." },
+                { "language": "tr", "text": "Ne yazık ki sunum çok uzun ve yeterince net görünmüyor." },
+                { "language": "ru", "text": "К сожалению, презентация слишком длинная и выглядит недостаточно ясной." },
+                { "language": "ckb", "text": "بەداخەوە پێشکەشکردنەکە زۆر درێژە و بە تەواوی ڕوون دیار نییە." },
+                { "language": "kmr", "text": "Mixabin pêşkêşî pir dirêj e û têra xwe zelal xuya nake." },
+                { "language": "pl", "text": "Niestety prezentacja jest za długa i nie wydaje się wystarczająco jasna." },
+                { "language": "ro", "text": "Din păcate, prezentarea este prea lungă și nu pare suficient de clară." },
+                { "language": "sq", "text": "Fatkeqësisht prezantimi është shumë i gjatë dhe nuk duket mjaft i qartë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weak: it is direct, yet it gives no concrete example and starts too negatively for a constructive feedback situation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: it is direct, yet it gives no concrete example and starts too negatively for a constructive feedback situation." },
+                { "language": "fa", "text": "قابل تصور است اما ضعیف است: مستقیم است، ولی مثال مشخص ندارد و برای بازخورد سازنده بیش از حد منفی شروع می‌شود." },
+                { "language": "ar", "text": "ممكن لكنه ضعيف: هو مباشر، لكنه لا يعطي مثالاً محدداً ويبدأ بسلبية زائدة في موقف ملاحظة بنّاءة." },
+                { "language": "tr", "text": "Makul ama zayıf: doğrudan, fakat somut örnek vermiyor ve yapıcı geri bildirim için fazla olumsuz başlıyor." },
+                { "language": "ru", "text": "Возможно, но слабо: ответ прямой, однако без конкретного примера и слишком негативно начинается для конструктивной обратной связи." },
+                { "language": "ckb", "text": "ڕەنگە گونجاو بێت بەڵام لاوازە: ڕاستەوخۆیە، بەڵام نموونەی دیاریکراو نادات و بۆ فیدباکی سازندە زۆر نەرێنی دەست پێدەکات." },
+                { "language": "kmr", "text": "Dibe ku maqûl be lê qels e: rasterast e, lê mînaka konkret nade û ji bo vegerandina avaker pir neyînî dest pê dike." },
+                { "language": "pl", "text": "Możliwe, ale słabe: jest bezpośrednie, lecz nie podaje konkretnego przykładu i zaczyna zbyt negatywnie jak na konstruktywną informację zwrotną." },
+                { "language": "ro", "text": "Plauzibil, dar slab: este direct, însă nu oferă un exemplu concret și începe prea negativ pentru un feedback constructiv." },
+                { "language": "sq", "text": "E mundshme, por e dobët: është e drejtpërdrejtë, por nuk jep shembull konkret dhe fillon shumë negativisht për një reagim ndërtues." }
+              ],
+              "explanationKey": "too-negative"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "validate-and-reframe",
+              "text": "Die Gründlichkeit ist ein Pluspunkt. Für den Kundentermin würde ich die Details aber stärker bündeln.",
+              "translations": [
+                { "language": "en", "text": "The thoroughness is a strength. For the customer meeting, however, I would group the details more clearly." },
+                { "language": "fa", "text": "دقت کار یک نقطه قوت است. اما برای جلسه مشتری، من جزئیات را بیشتر دسته‌بندی می‌کردم." },
+                { "language": "ar", "text": "الدقة نقطة قوة. لكن بالنسبة لموعد العميل، كنت سأجمع التفاصيل بشكل أوضح." },
+                { "language": "tr", "text": "Titizlik bir artı nokta. Ancak müşteri toplantısı için ayrıntıları daha net gruplardım." },
+                { "language": "ru", "text": "Тщательность — сильная сторона. Но для встречи с клиентом я бы сильнее сгруппировал детали." },
+                { "language": "ckb", "text": "وردکاری خاڵێکی بەهێزە. بەڵام بۆ دیداری کڕیار، من وردەکارییەکان زیاتر دەخستمە گرووپەوە." },
+                { "language": "kmr", "text": "Hûrgulîkirin xalekî erênî ye. Lê ji bo hevdîtina xerîdar, ez ê hûrguliyan zelaltir kom bikim." },
+                { "language": "pl", "text": "Dokładność jest mocną stroną. Na spotkanie z klientem mocniej pogrupowałbym jednak szczegóły." },
+                { "language": "ro", "text": "Temeinicia este un punct forte. Totuși, pentru întâlnirea cu clientul aș grupa mai clar detaliile." },
+                { "language": "sq", "text": "Kujdesi është një pikë e fortë. Por për takimin me klientin do t'i grupoja më qartë detajet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: it protects the colleague's intention and gives a customer-oriented reason for the change.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: it protects the colleague's intention and gives a customer-oriented reason for the change." },
+                { "language": "fa", "text": "خوب است: نیت همکار را حفظ می‌کند و دلیل تغییر را از زاویه نیاز مشتری توضیح می‌دهد." },
+                { "language": "ar", "text": "جيد: يحافظ على نية الزميلة ويعطي سبباً للتغيير من زاوية حاجة العميل." },
+                { "language": "tr", "text": "İyi: iş arkadaşının niyetini koruyor ve değişiklik için müşteri odaklı bir gerekçe veriyor." },
+                { "language": "ru", "text": "Хорошо: сохраняет намерение коллеги и объясняет изменение с точки зрения потребности клиента." },
+                { "language": "ckb", "text": "باشە: نیازی هاوکارەکە دەپارێزێت و هۆکاری گۆڕانەکە لە ڕوانگەی پێویستی کڕیارەوە ڕوون دەکات." },
+                { "language": "kmr", "text": "Baş e: mebesta hevkarê diparêze û sedema guherînê ji aliyê hewcedariya xerîdar ve rave dike." },
+                { "language": "pl", "text": "Dobrze: chroni intencję koleżanki i podaje powód zmiany z perspektywy klienta." },
+                { "language": "ro", "text": "Bine: protejează intenția colegei și oferă un motiv orientat spre client pentru schimbare." },
+                { "language": "sq", "text": "Mirë: e ruan qëllimin e koleges dhe jep një arsye të orientuar te klienti për ndryshimin." }
+              ],
+              "explanationKey": "protect-intention"
+            },
+            {
+              "id": "dismissive",
+              "text": "Ja, es ist zu ausführlich. Der Kunde wird das nicht alles lesen wollen.",
+              "translations": [
+                { "language": "en", "text": "Yes, it is too detailed. The customer will not want to read all of that." },
+                { "language": "fa", "text": "بله، بیش از حد مفصل است. مشتری نمی‌خواهد همه این‌ها را بخواند." },
+                { "language": "ar", "text": "نعم، إنه مفصل أكثر من اللازم. لن يرغب العميل في قراءة كل ذلك." },
+                { "language": "tr", "text": "Evet, fazla ayrıntılı. Müşteri bunların hepsini okumak istemeyecek." },
+                { "language": "ru", "text": "Да, слишком подробно. Клиент не захочет всё это читать." },
+                { "language": "ckb", "text": "بەڵێ، زۆر بە وردییە. کڕیار نامەوێت هەموو ئەمانە بخوێنێتەوە." },
+                { "language": "kmr", "text": "Erê, pir hûrgulî ye. Xerîdar naxwaze hemû van bixwîne." },
+                { "language": "pl", "text": "Tak, jest zbyt szczegółowo. Klient nie będzie chciał tego wszystkiego czytać." },
+                { "language": "ro", "text": "Da, este prea detaliat. Clientul nu va dori să citească toate acestea." },
+                { "language": "sq", "text": "Po, është shumë e detajuar. Klienti nuk do të dojë t'i lexojë të gjitha këto." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too blunt: it may be true, but it ignores the colleague's purpose and does not offer a constructive path.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too blunt: it may be true, but it ignores the colleague's purpose and does not offer a constructive path." },
+                { "language": "fa", "text": "بیش از حد تند است: شاید درست باشد، اما هدف همکار را نادیده می‌گیرد و مسیر سازنده‌ای پیشنهاد نمی‌دهد." },
+                { "language": "ar", "text": "حادة جداً: قد تكون صحيحة، لكنها تتجاهل هدف الزميلة ولا تقدم مساراً بنّاءً." },
+                { "language": "tr", "text": "Fazla sert: doğru olabilir, ama iş arkadaşının amacını görmezden geliyor ve yapıcı bir yol sunmuyor." },
+                { "language": "ru", "text": "Слишком резко: возможно, это правда, но игнорируется цель коллеги и не предлагается конструктивный путь." },
+                { "language": "ckb", "text": "زۆر توندە: ڕەنگە ڕاست بێت، بەڵام ئامانجی هاوکارەکە لەبەرچاو ناگرێت و ڕێگایەکی سازندە پێشنیار ناکات." },
+                { "language": "kmr", "text": "Pir tund e: dibe ku rast be, lê armanca hevkarê paşguh dike û rêyekî avaker pêşniyar nake." },
+                { "language": "pl", "text": "Zbyt ostre: może być prawdziwe, ale ignoruje cel koleżanki i nie proponuje konstruktywnej drogi." },
+                { "language": "ro", "text": "Prea dur: poate fi adevărat, dar ignoră scopul colegei și nu oferă o cale constructivă." },
+                { "language": "sq", "text": "Shumë e prerë: mund të jetë e vërtetë, por e shpërfill qëllimin e koleges dhe nuk ofron një rrugë ndërtuese." }
+              ],
+              "explanationKey": "too-blunt"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "preserve-and-restructure",
+              "text": "Den Hintergrund würde ich nicht streichen, sondern vorziehen: erst Ausgangslage, dann Empfehlung, danach die Details.",
+              "translations": [
+                { "language": "en", "text": "I would not remove the background, but move it forward: first the starting situation, then the recommendation, then the details." },
+                { "language": "fa", "text": "پیش‌زمینه را حذف نمی‌کردم، بلکه جلوتر می‌آوردم: اول وضعیت اولیه، بعد پیشنهاد، سپس جزئیات." },
+                { "language": "ar", "text": "لن أحذف الخلفية، بل سأقدمها إلى الأمام: أولاً الوضع الأولي، ثم التوصية، ثم التفاصيل." },
+                { "language": "tr", "text": "Arka planı silmezdim, öne alırdım: önce başlangıç durumu, sonra öneri, ardından ayrıntılar." },
+                { "language": "ru", "text": "Я бы не удалял контекст, а перенёс его вперёд: сначала исходная ситуация, затем рекомендация, потом детали." },
+                { "language": "ckb", "text": "پاشبنەماکە ناسڕمەوە، بەڵکو دەیهێنمە پێشەوە: سەرەتا دۆخی سەرەکی، پاشان پێشنیار، دواتر وردەکارییەکان." },
+                { "language": "kmr", "text": "Ez paşxanê jê nabim, lê wê pêş de tînim: pêşî rewşa destpêkê, paşê pêşniyar, dûv re hûrgulî." },
+                { "language": "pl", "text": "Nie usuwałbym kontekstu, tylko przesunął go wcześniej: najpierw sytuacja wyjściowa, potem rekomendacja, potem szczegóły." },
+                { "language": "ro", "text": "Nu aș elimina contextul, ci l-aș muta mai în față: mai întâi situația inițială, apoi recomandarea, apoi detaliile." },
+                { "language": "sq", "text": "Nuk do ta hiqja sfondin, por do ta vendosja më përpara: së pari situata fillestare, pastaj rekomandimi, pastaj detajet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this keeps the background but changes the order so the customer understands the decision path faster.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this keeps the background but changes the order so the customer understands the decision path faster." },
+                { "language": "fa", "text": "خوب است: پیش‌زمینه را نگه می‌دارد، اما ترتیب را تغییر می‌دهد تا مشتری مسیر تصمیم را سریع‌تر بفهمد." },
+                { "language": "ar", "text": "جيد: يحافظ على الخلفية لكنه يغير الترتيب حتى يفهم العميل مسار القرار بسرعة أكبر." },
+                { "language": "tr", "text": "İyi: arka planı koruyor ama sırayı değiştiriyor, böylece müşteri karar yolunu daha hızlı anlıyor." },
+                { "language": "ru", "text": "Хорошо: контекст сохраняется, но меняется порядок, чтобы клиент быстрее понял путь к решению." },
+                { "language": "ckb", "text": "باشە: پاشبنەماکە دەپارێزێت، بەڵام ڕیزبەندی دەگۆڕێت بۆ ئەوەی کڕیار خێراتر ڕێگای بڕیار تێبگات." },
+                { "language": "kmr", "text": "Baş e: paşxanê diparêze, lê rêzê diguherîne da ku xerîdar rêya biryarê zûtir fam bike." },
+                { "language": "pl", "text": "Dobrze: zachowuje kontekst, ale zmienia kolejność, żeby klient szybciej zrozumiał drogę do decyzji." },
+                { "language": "ro", "text": "Bine: păstrează contextul, dar schimbă ordinea, astfel încât clientul să înțeleagă mai repede drumul spre decizie." },
+                { "language": "sq", "text": "Mirë: e ruan sfondin, por ndryshon rendin që klienti ta kuptojë më shpejt rrugën drejt vendimit." }
+              ],
+              "explanationKey": "restructure-not-remove"
+            },
+            {
+              "id": "remove-background",
+              "text": "Dann lass den Hintergrund einfach weg, damit es kürzer wird.",
+              "translations": [
+                { "language": "en", "text": "Then just leave out the background so it becomes shorter." },
+                { "language": "fa", "text": "پس پیش‌زمینه را کلاً حذف کن تا کوتاه‌تر شود." },
+                { "language": "ar", "text": "إذن احذفي الخلفية ببساطة حتى يصبح أقصر." },
+                { "language": "tr", "text": "O zaman arka planı tamamen çıkar ki daha kısa olsun." },
+                { "language": "ru", "text": "Тогда просто убери контекст, чтобы было короче." },
+                { "language": "ckb", "text": "ئەوا پاشبنەماکە بە تەواوی لابەرە، بۆ ئەوەی کورتتر بێت." },
+                { "language": "kmr", "text": "Wê demê paşxanê bi tevahî derxe, da ku kurtir bibe." },
+                { "language": "pl", "text": "W takim razie po prostu pomiń kontekst, żeby było krócej." },
+                { "language": "ro", "text": "Atunci scoate pur și simplu contextul, ca să fie mai scurt." },
+                { "language": "sq", "text": "Atëherë thjesht hiqe sfondin që të bëhet më i shkurtër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too narrow: it solves length, but it may remove information the customer needs to trust the recommendation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: it solves length, but it may remove information the customer needs to trust the recommendation." },
+                { "language": "fa", "text": "خیلی محدود است: مشکل طول را حل می‌کند، اما ممکن است اطلاعاتی را حذف کند که مشتری برای اعتماد به پیشنهاد نیاز دارد." },
+                { "language": "ar", "text": "ضيق جداً: يحل مشكلة الطول، لكنه قد يحذف معلومات يحتاجها العميل للثقة بالتوصية." },
+                { "language": "tr", "text": "Fazla dar: uzunluk sorununu çözer, ama müşterinin öneriye güvenmesi için gereken bilgileri çıkarabilir." },
+                { "language": "ru", "text": "Слишком узко: решает проблему длины, но может убрать информацию, нужную клиенту для доверия к рекомендации." },
+                { "language": "ckb", "text": "زۆر تەسکە: کێشەی درێژی چارەسەر دەکات، بەڵام ڕەنگە زانیارییەک بسڕێتەوە کە کڕیار بۆ متمانە بە پێشنیار پێویستی پێیەتی." },
+                { "language": "kmr", "text": "Pir teng e: pirsgirêka dirêjbûnê çareser dike, lê dibe agahiyên ku xerîdar ji bo baweriya bi pêşniyarê pêwîst dike jê bibe." },
+                { "language": "pl", "text": "Zbyt wąskie: rozwiązuje problem długości, ale może usunąć informacje potrzebne klientowi, by zaufał rekomendacji." },
+                { "language": "ro", "text": "Prea limitat: rezolvă problema lungimii, dar poate elimina informații de care clientul are nevoie ca să aibă încredere în recomandare." },
+                { "language": "sq", "text": "Shumë e ngushtë: zgjidh problemin e gjatësisë, por mund të heqë informacione që klientit i duhen për t'i besuar rekomandimit." }
+              ],
+              "explanationKey": "overcutting-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "actionable-summary",
+              "text": "Die Inhalte sind stark, aber die Linie sollte klarer werden: erst Ausgangslage und Empfehlung, dann weniger Beispiele und Details im Anhang.",
+              "translations": [
+                { "language": "en", "text": "The content is strong, but the line should become clearer: first the starting situation and recommendation, then fewer examples and details in the appendix." },
+                { "language": "fa", "text": "محتوا قوی است، اما خط اصلی باید روشن‌تر شود: اول وضعیت اولیه و پیشنهاد، بعد مثال‌های کمتر و جزئیات در پیوست." },
+                { "language": "ar", "text": "المحتوى قوي، لكن الخط الرئيسي يجب أن يصبح أوضح: أولاً الوضع الأولي والتوصية، ثم أمثلة أقل والتفاصيل في الملحق." },
+                { "language": "tr", "text": "İçerik güçlü, ama çizgi daha net olmalı: önce başlangıç durumu ve öneri, sonra daha az örnek ve ayrıntılar ekte." },
+                { "language": "ru", "text": "Содержание сильное, но линия должна стать яснее: сначала исходная ситуация и рекомендация, затем меньше примеров, а детали в приложении." },
+                { "language": "ckb", "text": "ناوەڕۆکەکە بەهێزە، بەڵام هێڵی سەرەکی دەبێت ڕوونتر بێت: سەرەتا دۆخی سەرەکی و پێشنیار، پاشان نموونەی کەمتر و وردەکاری لە پاشکۆدا." },
+                { "language": "kmr", "text": "Naverok bihêz e, lê xeta sereke divê zelaltir bibe: pêşî rewşa destpêkê û pêşniyar, paşê mînakên kêmtir û hûrgulî di pêvekê de." },
+                { "language": "pl", "text": "Treść jest mocna, ale linia powinna być jaśniejsza: najpierw sytuacja wyjściowa i rekomendacja, potem mniej przykładów, a szczegóły w załączniku." },
+                { "language": "ro", "text": "Conținutul este puternic, dar linia trebuie să fie mai clară: mai întâi situația inițială și recomandarea, apoi mai puține exemple și detaliile în anexă." },
+                { "language": "sq", "text": "Përmbajtja është e fortë, por linja duhet të bëhet më e qartë: së pari situata fillestare dhe rekomandimi, pastaj më pak shembuj dhe detajet në shtojcë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this summary is actionable and keeps both the positive point and the requested changes.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this summary is actionable and keeps both the positive point and the requested changes." },
+                { "language": "fa", "text": "خوب است: این جمع‌بندی قابل اجراست و هم نکته مثبت و هم تغییرهای درخواستی را نگه می‌دارد." },
+                { "language": "ar", "text": "جيد: هذا الملخص قابل للتنفيذ ويحافظ على النقطة الإيجابية والتغييرات المطلوبة معاً." },
+                { "language": "tr", "text": "İyi: bu özet uygulanabilir ve hem olumlu noktayı hem de istenen değişiklikleri koruyor." },
+                { "language": "ru", "text": "Хорошо: резюме применимо на практике и сохраняет как положительный момент, так и запрошенные изменения." },
+                { "language": "ckb", "text": "باشە: ئەم پوختەیە جێبەجێکراوە و هەم خاڵی ئەرێنی و هەم گۆڕانکارییە داواکراوەکان دەپارێزێت." },
+                { "language": "kmr", "text": "Baş e: ev kurtkirin pêkan e û hem xala erênî hem jî guherînên xwestî diparêze." },
+                { "language": "pl", "text": "Dobrze: to podsumowanie jest wykonalne i zachowuje zarówno punkt pozytywny, jak i oczekiwane zmiany." },
+                { "language": "ro", "text": "Bine: acest rezumat este aplicabil și păstrează atât punctul pozitiv, cât și schimbările cerute." },
+                { "language": "sq", "text": "Mirë: kjo përmbledhje është e zbatueshme dhe ruan si pikën pozitive, ashtu edhe ndryshimet e kërkuara." }
+              ],
+              "explanationKey": "actionable-feedback-summary"
+            },
+            {
+              "id": "too-vague-summary",
+              "text": "Die Präsentation ist gut, aber du solltest sie noch etwas verbessern.",
+              "translations": [
+                { "language": "en", "text": "The presentation is good, but you should improve it a bit more." },
+                { "language": "fa", "text": "ارائه خوب است، اما باید کمی بیشتر بهترش کنی." },
+                { "language": "ar", "text": "العرض جيد، لكن ينبغي أن تحسنيه قليلاً أكثر." },
+                { "language": "tr", "text": "Sunum iyi, ama onu biraz daha geliştirmen gerekiyor." },
+                { "language": "ru", "text": "Презентация хорошая, но тебе стоит ещё немного её улучшить." },
+                { "language": "ckb", "text": "پێشکەشکردنەکە باشە، بەڵام دەبێت کەمێک زیاتر باشتر بکەیت." },
+                { "language": "kmr", "text": "Pêşkêşî baş e, lê divê tu wê hinekî din baştir bikî." },
+                { "language": "pl", "text": "Prezentacja jest dobra, ale powinnaś ją jeszcze trochę poprawić." },
+                { "language": "ro", "text": "Prezentarea este bună, dar ar trebui să o mai îmbunătățești puțin." },
+                { "language": "sq", "text": "Prezantimi është i mirë, por duhet ta përmirësosh edhe pak." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too vague: it sounds friendly, but it gives no observation, no impact, and no concrete revision step.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: it sounds friendly, but it gives no observation, no impact, and no concrete revision step." },
+                { "language": "fa", "text": "خیلی مبهم است: دوستانه به نظر می‌رسد، اما هیچ مشاهده، اثر یا قدم مشخصی برای بازبینی نمی‌دهد." },
+                { "language": "ar", "text": "عام جداً: يبدو ودوداً، لكنه لا يقدم ملاحظة ولا أثراً ولا خطوة مراجعة محددة." },
+                { "language": "tr", "text": "Çok belirsiz: dostça geliyor, ama gözlem, etki veya somut revizyon adımı vermiyor." },
+                { "language": "ru", "text": "Слишком расплывчато: звучит дружелюбно, но нет наблюдения, эффекта и конкретного шага по доработке." },
+                { "language": "ckb", "text": "زۆر گشتییە: دۆستانە دەنگ دەدات، بەڵام هیچ تێبینی، کاریگەری یان هەنگاوێکی دیاریکراوی چاککردنەوە نادات." },
+                { "language": "kmr", "text": "Pir giştî ye: dostane dixuye, lê tu çavdêrî, bandor an gaveke konkret a sererastkirinê nade." },
+                { "language": "pl", "text": "Zbyt ogólne: brzmi życzliwie, ale nie podaje obserwacji, wpływu ani konkretnego kroku poprawy." },
+                { "language": "ro", "text": "Prea vag: sună prietenos, dar nu oferă observație, impact sau pas concret de revizuire." },
+                { "language": "sq", "text": "Shumë e paqartë: tingëllon miqësore, por nuk jep vëzhgim, ndikim ose hap konkret për rishikim." }
+              ],
+              "explanationKey": "vague-feedback"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "feedback-structure-note",
+          "text": "Strong feedback separates the person from the work: first a concrete observation, then the effect, then a constructive request.",
+          "translations": [
+            { "language": "en", "text": "Strong feedback separates the person from the work: first a concrete observation, then the effect, then a constructive request." },
+            { "language": "fa", "text": "بازخورد قوی شخص را از کار جدا می‌کند: اول مشاهده مشخص، بعد اثر، سپس درخواست سازنده." },
+            { "language": "ar", "text": "تفصل الملاحظة القوية بين الشخص والعمل: أولاً ملاحظة محددة، ثم الأثر، ثم طلب بنّاء." },
+            { "language": "tr", "text": "Güçlü geri bildirim kişiyi işten ayırır: önce somut gözlem, sonra etki, sonra yapıcı rica." },
+            { "language": "ru", "text": "Сильная обратная связь отделяет человека от работы: сначала конкретное наблюдение, затем эффект, затем конструктивная просьба." },
+            { "language": "ckb", "text": "فیدباکی بەهێز کەسەکە لە کارەکە جیا دەکاتەوە: سەرەتا تێبینییەکی دیاریکراو، پاشان کاریگەری، دواتر داواکارییەکی سازندە." },
+            { "language": "kmr", "text": "Vegerandina bihêz kes ji karê vediqetîne: pêşî çavdêriyek konkret, paşê bandor, dûv re daxwazeke avaker." },
+            { "language": "pl", "text": "Mocna informacja zwrotna oddziela osobę od pracy: najpierw konkretna obserwacja, potem wpływ, potem konstruktywna prośba." },
+            { "language": "ro", "text": "Feedbackul puternic separă persoana de muncă: mai întâi o observație concretă, apoi efectul, apoi o cerere constructivă." },
+            { "language": "sq", "text": "Reagimi i fortë e ndan personin nga puna: së pari një vëzhgim konkret, pastaj efekti, pastaj një kërkesë ndërtuese." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "tone-note",
+          "text": "When a colleague worries about losing important information, preserve the concern and change the structure instead of simply cutting content.",
+          "translations": [
+            { "language": "en", "text": "When a colleague worries about losing important information, preserve the concern and change the structure instead of simply cutting content." },
+            { "language": "fa", "text": "وقتی همکار نگران حذف اطلاعات مهم است، نگرانی را حفظ کن و به جای حذف ساده محتوا، ساختار را تغییر بده." },
+            { "language": "ar", "text": "عندما تقلق زميلة من فقدان معلومات مهمة، حافظ على هذا القلق وغيّر البنية بدلاً من حذف المحتوى ببساطة." },
+            { "language": "tr", "text": "Bir iş arkadaşı önemli bilgileri kaybetmekten endişeleniyorsa, bu kaygıyı koru ve içeriği basitçe kesmek yerine yapıyı değiştir." },
+            { "language": "ru", "text": "Когда коллега боится потерять важную информацию, сохрани эту обеспокоенность и меняй структуру, а не просто сокращай содержание." },
+            { "language": "ckb", "text": "کاتێک هاوکار نیگەرانی لە ونبوونی زانیاریی گرنگە، ئەو نیگەرانییە بپارێزە و لە جیاتی سڕینەوەی سادەی ناوەڕۆک، پێکهاتەکە بگۆڕە." },
+            { "language": "kmr", "text": "Dema hevkar ji windabûna agahiyên girîng ditirse, wê fikarê biparêze û li şûna tenê jêbirina naverokê, avahiyê biguherîne." },
+            { "language": "pl", "text": "Gdy koleżanka obawia się utraty ważnych informacji, zachowaj tę troskę i zmień strukturę zamiast po prostu ciąć treść." },
+            { "language": "ro", "text": "Când o colegă se teme că se pierd informații importante, păstrează această preocupare și schimbă structura în loc să tai pur și simplu conținutul." },
+            { "language": "sq", "text": "Kur një kolege shqetësohet se mund të humbasin informacione të rëndësishme, ruaje këtë shqetësim dhe ndrysho strukturën në vend që thjesht të presësh përmbajtjen." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "An actionable feedback summary includes the strength, the issue, and the exact revision steps.",
+          "translations": [
+            { "language": "en", "text": "An actionable feedback summary includes the strength, the issue, and the exact revision steps." },
+            { "language": "fa", "text": "یک جمع‌بندی قابل اجرا از بازخورد شامل نقطه قوت، مشکل و قدم‌های دقیق بازبینی است." },
+            { "language": "ar", "text": "يتضمن ملخص الملاحظة القابل للتنفيذ نقطة القوة والمشكلة وخطوات المراجعة الدقيقة." },
+            { "language": "tr", "text": "Uygulanabilir bir geri bildirim özeti güçlü yönü, sorunu ve kesin revizyon adımlarını içerir." },
+            { "language": "ru", "text": "Практичное резюме обратной связи включает сильную сторону, проблему и точные шаги доработки." },
+            { "language": "ckb", "text": "پوختەیەکی جێبەجێکراوی فیدباک خاڵی بەهێز، کێشە و هەنگاوە وردەکانی چاککردنەوە لەخۆدەگرێت." },
+            { "language": "kmr", "text": "Kurtkirineke vegerandinê ya pêkan xala bihêz, pirsgirêk û gavên rast ên sererastkirinê dihewîne." },
+            { "language": "pl", "text": "Wykonalne podsumowanie informacji zwrotnej zawiera mocną stronę, problem i dokładne kroki poprawy." },
+            { "language": "ro", "text": "Un rezumat aplicabil al feedbackului include punctul forte, problema și pașii exacți de revizuire." },
+            { "language": "sq", "text": "Një përmbledhje e zbatueshme e reagimit përfshin pikën e fortë, problemin dhe hapat e saktë të rishikimit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

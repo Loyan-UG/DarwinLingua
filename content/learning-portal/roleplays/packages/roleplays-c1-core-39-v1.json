@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-39-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 39 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 39",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-mietrechtliche-streitfrage-sachlich-besprechen",
+      "linkedDialogueSlug": null,
+      "title": "Eine mietrechtliche Streitfrage sachlich besprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing a tenancy-law dispute factually" },
+        { "language": "fa", "text": "گفت‌وگوی عینی درباره اختلاف حقوق اجاره" },
+        { "language": "ar", "text": "مناقشة مسألة خلافية في قانون الإيجار بموضوعية" },
+        { "language": "tr", "text": "Kira hukukuyla ilgili bir anlaşmazlığı nesnel görüşmek" },
+        { "language": "ru", "text": "Фактическое обсуждение спорного вопроса по аренде" },
+        { "language": "ckb", "text": "گفتوگۆی بابەتی دەربارەی ناکۆکییەکی یاسای کرێ" },
+        { "language": "kmr", "text": "Nîqaşkirina pirsek nakok a hiqûqa kirê bi rastî" },
+        { "language": "pl", "text": "Rzeczowe omówienie sporu z prawa najmu" },
+        { "language": "ro", "text": "Discutarea factuală a unei dispute de drept locativ" },
+        { "language": "sq", "text": "Diskutimi faktik i një çështjeje të kontestuar të qirasë" }
+      ],
+      "description": "Sie sprechen mit der Hausverwaltung über eine strittige Nebenkostenposition. Sie bleiben sachlich, beziehen sich auf Vertrag, Abrechnung und Belege, und bitten um eine dokumentierte Lösung statt um eine Eskalation.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with the property management about a disputed service-charge item. You remain factual, refer to the contract, statement, and receipts, and ask for a documented solution rather than escalation." },
+        { "language": "fa", "text": "شما با مدیریت ساختمان درباره یک مورد اختلافی در هزینه‌های جانبی صحبت می‌کنید. عینی می‌مانید، به قرارداد، صورت‌حساب و مدارک ارجاع می‌دهید و به جای تشدید اختلاف، راه‌حل مستند می‌خواهید." },
+        { "language": "ar", "text": "تتحدث مع إدارة العقار عن بند متنازع عليه في التكاليف الإضافية. تبقى موضوعياً، وتشير إلى العقد والكشف والإيصالات، وتطلب حلاً موثقاً بدلاً من التصعيد." },
+        { "language": "tr", "text": "Bina yönetimiyle yan giderlerde tartışmalı bir kalem hakkında konuşuyorsunuz. Nesnel kalıyor, sözleşmeye, hesap dökümüne ve belgelere atıf yapıyor, tırmandırmak yerine belgelenmiş bir çözüm istiyorsunuz." },
+        { "language": "ru", "text": "Вы говорите с управляющей компанией о спорной позиции в дополнительных расходах. Вы сохраняете фактический тон, ссылаетесь на договор, расчёт и подтверждения и просите документированное решение вместо эскалации." },
+        { "language": "ckb", "text": "لەگەڵ بەڕێوەبەرایەتی خانوو دەربارەی خاڵێکی ناکۆک لە تێچووی لاوەکی قسە دەکەیت. بابەتی دەمێنیت، ئاماژە بە گرێبەست، حیساب و بەڵگەکان دەکەیت، و لەبری هەڵکشاندنی ناکۆکی داوای چارەسەرێکی بەڵگەکراو دەکەیت." },
+        { "language": "kmr", "text": "Hûn bi rêveberiya avahiyê re li ser xalekî nakok di lêçûnên alî de diaxivin. Hûn rastî dimînin, behsa peyman, hesab û belgeyan dikin, û li şûna têkçûna nakokiyê çareseriyeke belgekirî dixwazin." },
+        { "language": "pl", "text": "Rozmawia Pan z administracją budynku o spornej pozycji w kosztach dodatkowych. Pozostaje Pan rzeczowy, odwołuje się do umowy, rozliczenia i dowodów oraz prosi o udokumentowane rozwiązanie zamiast eskalacji." },
+        { "language": "ro", "text": "Vorbiți cu administrația imobilului despre o poziție contestată din costurile auxiliare. Rămâneți factual, faceți referire la contract, decont și documente și cereți o soluție documentată, nu escaladare." },
+        { "language": "sq", "text": "Flisni me administrimin e ndërtesës për një zë të kontestuar në kostot shtesë. Qëndroni faktik, i referoheni kontratës, faturimit dhe provave dhe kërkoni një zgjidhje të dokumentuar, jo përshkallëzim." }
+      ],
+      "learnerGoal": "Eine mietrechtliche Streitfrage ruhig strukturieren: strittigen Punkt benennen, Fakten und Belege nennen, die Gegenseite anhören, Vorbehalt formulieren und eine schriftlich nachvollziehbare Lösung vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure a tenancy-law dispute calmly: name the disputed point, state facts and evidence, listen to the other side, formulate a reservation, and agree on a solution that is traceable in writing." },
+        { "language": "fa", "text": "یک اختلاف اجاره را آرام ساختاربندی کنید: نقطه اختلاف را نام ببرید، واقعیت‌ها و مدارک را بگویید، طرف مقابل را بشنوید، تحفظ خود را بیان کنید و راه‌حلی قابل پیگیری کتبی توافق کنید." },
+        { "language": "ar", "text": "نظّم مسألة خلافية في الإيجار بهدوء: سمِّ النقطة المتنازع عليها، واذكر الوقائع والأدلة، واستمع إلى الطرف الآخر، وصغ تحفظاً، واتفق على حل يمكن تتبعه كتابياً." },
+        { "language": "tr", "text": "Bir kira uyuşmazlığını sakin biçimde yapılandırın: tartışmalı noktayı adlandırın, gerçekleri ve belgeleri belirtin, karşı tarafı dinleyin, çekince formüle edin ve yazılı olarak izlenebilir bir çözüm kararlaştırın." },
+        { "language": "ru", "text": "Спокойно структурировать спор по аренде: назвать спорный пункт, привести факты и доказательства, выслушать другую сторону, сформулировать оговорку и согласовать письменно прослеживаемое решение." },
+        { "language": "ckb", "text": "ناکۆکییەکی کرێ بە ئارامی ڕێک بخە: خاڵی ناکۆک ناو ببە، ڕاستی و بەڵگەکان بڵێ، گوێ لە لایەنی بەرامبەر بگرە، مەرجێک دەرببڕە و چارەسەرێکی بە نووسراو شوێنکەوتوو ڕێک بکە." },
+        { "language": "kmr", "text": "Nakokiyeke kirê bi aramî ava bikin: xala nakok nav bikin, rastî û belgeyan bibêjin, aliyê din bibihîzin, şertê xwe formul bikin û çareseriyeke nivîskî şopbar li hev bikin." },
+        { "language": "pl", "text": "Spokojnie uporządkować spór najmu: nazwać sporny punkt, podać fakty i dowody, wysłuchać drugiej strony, sformułować zastrzeżenie i uzgodnić rozwiązanie możliwe do odtworzenia na piśmie." },
+        { "language": "ro", "text": "Structurați calm o dispută locativă: numiți punctul contestat, menționați fapte și dovezi, ascultați cealaltă parte, formulați o rezervă și conveniți o soluție urmărită în scris." },
+        { "language": "sq", "text": "Strukturoni qetësisht një mosmarrëveshje qiraje: emërtoni pikën e kontestuar, jepni faktet dhe provat, dëgjoni palën tjetër, formuloni një rezervë dhe bini dakord për një zgjidhje të gjurmueshme me shkrim." }
+      ],
+      "cefrLevel": "C1",
+      "category": "housing",
+      "topics": ["housing", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "agree-disagree",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 39,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Mieter/in",
+          "translations": [
+            { "language": "en", "text": "Tenant" },
+            { "language": "fa", "text": "مستأجر" },
+            { "language": "ar", "text": "المستأجر" },
+            { "language": "tr", "text": "Kiracı" },
+            { "language": "ru", "text": "Арендатор" },
+            { "language": "ckb", "text": "کرێچی" },
+            { "language": "kmr", "text": "Kirêdar" },
+            { "language": "pl", "text": "Najemca" },
+            { "language": "ro", "text": "Chiriaș" },
+            { "language": "sq", "text": "Qiramarrës" }
+          ]
+        },
+        {
+          "roleKey": "property-manager",
+          "displayName": "Hausverwaltung",
+          "translations": [
+            { "language": "en", "text": "Property management" },
+            { "language": "fa", "text": "مدیریت ساختمان" },
+            { "language": "ar", "text": "إدارة العقار" },
+            { "language": "tr", "text": "Bina yönetimi" },
+            { "language": "ru", "text": "Управляющая компания" },
+            { "language": "ckb", "text": "بەڕێوەبەرایەتی خانوو" },
+            { "language": "kmr", "text": "Rêveberiya avahiyê" },
+            { "language": "pl", "text": "Administracja budynku" },
+            { "language": "ro", "text": "Administrația imobilului" },
+            { "language": "sq", "text": "Administrimi i ndërtesës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "property-manager",
+          "baseText": "Guten Tag. Sie wollten die Nebenkostenabrechnung besprechen. Um welchen Punkt geht es genau?",
+          "translations": [
+            { "language": "en", "text": "Good day. You wanted to discuss the service-charge statement. Which point exactly is it about?" },
+            { "language": "fa", "text": "روز بخیر. می‌خواستید درباره صورت‌حساب هزینه‌های جانبی صحبت کنید. دقیقاً درباره کدام مورد است؟" },
+            { "language": "ar", "text": "نهارك سعيد. أردتَ مناقشة كشف التكاليف الإضافية. عن أي نقطة تحديداً يدور الأمر؟" },
+            { "language": "tr", "text": "İyi günler. Yan gider hesap dökümünü görüşmek istiyordunuz. Tam olarak hangi nokta söz konusu?" },
+            { "language": "ru", "text": "Добрый день. Вы хотели обсудить расчёт дополнительных расходов. О каком пункте именно речь?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەتویست دەربارەی حیسابی تێچووی لاوەکی قسە بکەیت. بە وردی بابەتەکە کام خاڵە؟" },
+            { "language": "kmr", "text": "Roj baş. We dixwest hesabê lêçûnên alî nîqaş bikin. Bi rastî mijar kîjan xal e?" },
+            { "language": "pl", "text": "Dzień dobry. Chciał Pan omówić rozliczenie kosztów dodatkowych. O który punkt dokładnie chodzi?" },
+            { "language": "ro", "text": "Bună ziua. Doreați să discutăm decontul costurilor auxiliare. Despre ce punct este vorba exact?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironit të diskutonit faturimin e kostove shtesë. Për cilën pikë bëhet fjalë saktësisht?" }
+          ],
+          "function": "opening-question",
+          "toneNote": "formal",
+          "expectedLearnerAction": "Strittigen Punkt benennen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Es geht um die Position Gartenpflege in der Abrechnung 2025. Ich möchte den Betrag nicht pauschal zurückweisen, aber er ist gegenüber dem Vorjahr fast verdoppelt, ohne dass in der Abrechnung ein zusätzlicher Leistungsumfang erkennbar ist.",
+          "translations": [
+            { "language": "en", "text": "Good day. It concerns the garden maintenance item in the 2025 statement. I do not want to reject the amount across the board, but it has almost doubled compared with the previous year without any additional scope of service being visible in the statement." },
+            { "language": "fa", "text": "روز بخیر. موضوع مربوط به مورد نگهداری باغ در صورت‌حساب ۲۰۲۵ است. نمی‌خواهم مبلغ را به‌طور کلی رد کنم، اما نسبت به سال قبل تقریباً دو برابر شده، بدون اینکه در صورت‌حساب حجم خدمات اضافه‌ای مشخص باشد." },
+            { "language": "ar", "text": "نهارك سعيد. يتعلق الأمر ببند العناية بالحديقة في كشف 2025. لا أريد رفض المبلغ بشكل عام، لكنه تضاعف تقريباً مقارنة بالعام السابق من دون أن يظهر في الكشف نطاق خدمة إضافي." },
+            { "language": "tr", "text": "İyi günler. Konu 2025 hesap dökümündeki bahçe bakımı kalemi. Tutarı genel olarak reddetmek istemiyorum, ancak önceki yıla göre neredeyse iki katına çıkmış ve dökümde ek bir hizmet kapsamı görünmüyor." },
+            { "language": "ru", "text": "Добрый день. Речь идёт о позиции ухода за садом в расчёте 2025 года. Я не хочу полностью отвергать сумму, но она почти удвоилась по сравнению с предыдущим годом, без того чтобы в расчёте был виден дополнительный объём услуг." },
+            { "language": "ckb", "text": "ڕۆژ باش. بابەتەکە دەربارەی خاڵی چاودێری باخە لە حیسابی ٢٠٢٥. نامەوێت بڕەکە بە گشتی ڕەت بکەمەوە، بەڵام بەراورد بە ساڵی پێشووتر نزیکەی دوو هێندە بووە، بەبێ ئەوەی لە حیسابەکەدا قەبارەی خزمەتی زیادە دیار بێت." },
+            { "language": "kmr", "text": "Roj baş. Mijar xala lênihêrîna baxçeyê di hesabê 2025 de ye. Ez naxwazim mîqdarê bi giştî red bikim, lê li gor sala berê hema du qat bûye bêyî ku di hesabê de qada xizmeta zêde xuya be." },
+            { "language": "pl", "text": "Dzień dobry. Chodzi o pozycję pielęgnacji ogrodu w rozliczeniu 2025. Nie chcę z góry odrzucać kwoty, ale prawie się podwoiła względem poprzedniego roku, bez widocznego w rozliczeniu dodatkowego zakresu usług." },
+            { "language": "ro", "text": "Bună ziua. Este vorba despre poziția de întreținere a grădinii din decontul 2025. Nu vreau să resping suma în bloc, dar aproape s-a dublat față de anul anterior fără ca în decont să fie vizibil un volum suplimentar de servicii." },
+            { "language": "sq", "text": "Mirëdita. Bëhet fjalë për zërin e mirëmbajtjes së kopshtit në faturimin 2025. Nuk dua ta refuzoj shumën në mënyrë të përgjithshme, por ajo është pothuajse dyfishuar krahasuar me vitin e kaluar, pa u dukur në faturim një shtrirje shtesë shërbimi." }
+          ],
+          "function": "issue-framing",
+          "toneNote": "sachlich, nicht pauschal",
+          "expectedLearnerAction": "Streitpunkt und sachlichen Vorbehalt nennen"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "property-manager",
+          "baseText": "Die Kosten wurden entsprechend der Rechnung des Dienstleisters umgelegt. Welche Unterlagen oder Informationen fehlen Ihnen?",
+          "translations": [
+            { "language": "en", "text": "The costs were allocated according to the service provider's invoice. Which documents or information are you missing?" },
+            { "language": "fa", "text": "هزینه‌ها مطابق فاکتور شرکت خدماتی تقسیم شده‌اند. چه مدارک یا اطلاعاتی برای شما کم است؟" },
+            { "language": "ar", "text": "وُزعت التكاليف وفقاً لفاتورة مقدم الخدمة. ما الوثائق أو المعلومات التي تنقصك؟" },
+            { "language": "tr", "text": "Masraflar hizmet sağlayıcının faturasına göre paylaştırıldı. Hangi belgeler veya bilgiler sizde eksik?" },
+            { "language": "ru", "text": "Расходы были распределены согласно счёту поставщика услуг. Каких документов или информации вам не хватает?" },
+            { "language": "ckb", "text": "تێچووەکان بەپێی فاکتووری دابینکەری خزمەت دابەش کراون. کام بەڵگە یان زانیارییەکت کەمە؟" },
+            { "language": "kmr", "text": "Lêçûn li gor faturaya peydakera xizmetê hatine dabeşkirin. Kîjan belge an agahî ji we re kêm in?" },
+            { "language": "pl", "text": "Koszty zostały rozliczone zgodnie z fakturą usługodawcy. Jakich dokumentów lub informacji Panu brakuje?" },
+            { "language": "ro", "text": "Costurile au fost repartizate conform facturii prestatorului. Ce documente sau informații vă lipsesc?" },
+            { "language": "sq", "text": "Kostot janë shpërndarë sipas faturës së ofruesit të shërbimit. Cilat dokumente ose informacione ju mungojnë?" }
+          ],
+          "function": "document-question",
+          "toneNote": "aktenbezogen",
+          "expectedLearnerAction": "Konkreten Belegbedarf nennen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mir fehlt vor allem eine nachvollziehbare Aufschlüsselung: Welche Leistungen wurden zusätzlich erbracht, in welchem Zeitraum und auf welcher Grundlage werden sie auf die Mietparteien verteilt? Ich bitte also nicht um eine Kulanzentscheidung, sondern um Einsicht in die Belege und eine kurze Erläuterung der Umlage.",
+          "translations": [
+            { "language": "en", "text": "What I am mainly missing is a traceable breakdown: which services were additionally provided, in which period, and on what basis are they allocated to the tenants? So I am not asking for a goodwill decision, but for access to the receipts and a brief explanation of the allocation." },
+            { "language": "fa", "text": "چیزی که بیشتر کم دارم یک تفکیک قابل پیگیری است: چه خدماتی اضافه انجام شده، در چه بازه‌ای، و بر چه اساسی بین مستأجرها تقسیم شده‌اند؟ بنابراین درخواست لطف یا تخفیف ندارم، بلکه دسترسی به مدارک و توضیح کوتاه درباره تقسیم هزینه را می‌خواهم." },
+            { "language": "ar", "text": "ما ينقصني خصوصاً هو تفصيل يمكن تتبعه: ما الخدمات الإضافية التي قُدمت، وفي أي فترة، وعلى أي أساس وُزعت على المستأجرين؟ لذلك لا أطلب قراراً من باب المجاملة، بل الاطلاع على الأدلة وشرحاً قصيراً للتوزيع." },
+            { "language": "tr", "text": "Özellikle izlenebilir bir döküm eksik: hangi hizmetler ek olarak verildi, hangi dönemde ve hangi temele göre kiracılara dağıtılıyor? Yani bir iyi niyet kararı değil, belgelere erişim ve dağılımın kısa açıklamasını istiyorum." },
+            { "language": "ru", "text": "Мне прежде всего не хватает прослеживаемой разбивки: какие услуги были оказаны дополнительно, в какой период и на каком основании они распределяются между арендаторами? Я прошу не о жесте доброй воли, а о доступе к подтверждениям и кратком объяснении распределения." },
+            { "language": "ckb", "text": "زۆرتر پێویستم بە دابەشکردنێکی شوێنکەوتووە: کام خزمەتە زیادە ئەنجام دراوە، لە کام ماوەدا، و لەسەر کام بنەما بەسەر کرێچییەکاندا دابەش دەکرێت؟ کەواتە داوای بڕیاری لوتف ناکەم، بەڵکو داوای بینینی بەڵگەکان و ڕوونکردنەوەیەکی کورت دەربارەی دابەشکردنەکە دەکەم." },
+            { "language": "kmr", "text": "Ji min re herî zêde dabeşkirineke şopbar kêm e: kîjan xizmetên zêde hatine kirin, di kîjan demê de, û li ser kîjan bingehê li kirêdaran têne dabeşkirin? Ji ber vê ez daxwaza biryareke keremê nakim, lê daxwaza dîtina belgeyan û ravekirineke kurt a dabeşkirinê dikim." },
+            { "language": "pl", "text": "Brakuje mi przede wszystkim zrozumiałego rozbicia: jakie usługi wykonano dodatkowo, w jakim okresie i na jakiej podstawie rozdziela się je między najemców? Nie proszę więc o decyzję uznaniową, lecz o wgląd w dowody i krótkie wyjaśnienie podziału." },
+            { "language": "ro", "text": "Îmi lipsește mai ales o defalcare urmărită: ce servicii au fost prestate suplimentar, în ce perioadă și pe ce bază sunt repartizate între chiriași? Deci nu cer o decizie de bunăvoință, ci acces la documente și o scurtă explicație a repartizării." },
+            { "language": "sq", "text": "Më mungon sidomos një ndarje e gjurmueshme: cilat shërbime janë kryer shtesë, në cilën periudhë dhe mbi çfarë baze u shpërndahen qiramarrësve? Pra nuk kërkoj një vendim mirëdashjeje, por qasje në prova dhe një shpjegim të shkurtër të shpërndarjes." }
+          ],
+          "function": "evidence-request",
+          "toneNote": "präzise, nicht fordernd",
+          "expectedLearnerAction": "Belegbedarf und Rechtsposition sachlich formulieren"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "property-manager",
+          "baseText": "Die Belege können wir Ihnen zur Einsicht bereitstellen. Allerdings ändert das zunächst nichts daran, dass die Abrechnung fällig ist.",
+          "translations": [
+            { "language": "en", "text": "We can provide the receipts for inspection. However, that initially does not change the fact that the statement is due." },
+            { "language": "fa", "text": "می‌توانیم مدارک را برای مشاهده در اختیار شما بگذاریم. با این حال، این در ابتدا چیزی را در مورد سررسید بودن صورت‌حساب تغییر نمی‌دهد." },
+            { "language": "ar", "text": "يمكننا توفير الأدلة للاطلاع. لكن ذلك لا يغير في البداية أن الكشف مستحق الدفع." },
+            { "language": "tr", "text": "Belgeleri incelemeniz için sunabiliriz. Ancak bu, hesap dökümünün vadesinin geldiği gerçeğini şimdilik değiştirmez." },
+            { "language": "ru", "text": "Мы можем предоставить вам подтверждения для ознакомления. Однако это пока не меняет того, что расчёт подлежит оплате." },
+            { "language": "ckb", "text": "دەتوانین بەڵگەکان بۆ بینینتان ئامادە بکەین. بەڵام ئەمە لە سەرەتادا ئەوە ناگۆڕێت کە حیسابەکە کاتی پارەدانەکەی هاتووە." },
+            { "language": "kmr", "text": "Em dikarin belgeyan ji bo dîtinê ji we re amade bikin. Lê ev di destpêkê de tiştek naguhere ku hesab êdî divê were dayîn." },
+            { "language": "pl", "text": "Możemy udostępnić Panu dowody do wglądu. Nie zmienia to jednak na razie faktu, że rozliczenie jest wymagalne." },
+            { "language": "ro", "text": "Vă putem pune la dispoziție documentele pentru consultare. Totuși, acest lucru nu schimbă deocamdată faptul că decontul este scadent." },
+            { "language": "sq", "text": "Mund t'jua vëmë provat në dispozicion për shqyrtim. Megjithatë kjo fillimisht nuk ndryshon faktin që faturimi është i pagueshëm." }
+          ],
+          "function": "payment-position",
+          "toneNote": "formal, abgrenzend",
+          "expectedLearnerAction": "Vorbehalt und Zahlungsbereitschaft differenzieren"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich verstehe, dass Sie die Fälligkeit aus Ihrer Sicht aufrechterhalten. Ich möchte aber die strittige Position ausdrücklich unter Vorbehalt stellen, bis die Belege geprüft sind. Für die unstrittigen Teile der Abrechnung bin ich bereit, fristgerecht zu zahlen.",
+          "translations": [
+            { "language": "en", "text": "I understand that from your point of view you maintain the due date. However, I would like to expressly reserve my position on the disputed item until the receipts have been checked. For the undisputed parts of the statement, I am prepared to pay on time." },
+            { "language": "fa", "text": "می‌فهمم که از نظر شما سررسید بودن پابرجاست. اما می‌خواهم مورد اختلافی را تا زمان بررسی مدارک صراحتاً با تحفظ مطرح کنم. برای بخش‌های بدون اختلاف صورت‌حساب آماده‌ام در مهلت مقرر پرداخت کنم." },
+            { "language": "ar", "text": "أفهم أنكم تتمسكون بالاستحقاق من وجهة نظركم. لكنني أريد أن أضع البند المتنازع عليه صراحةً تحت التحفظ إلى أن تُفحص الأدلة. أما الأجزاء غير المتنازع عليها من الكشف فأنا مستعد لدفعها في الموعد." },
+            { "language": "tr", "text": "Sizin açınızdan vadenin devam ettiğini anlıyorum. Ancak tartışmalı kalemi belgeler incelenene kadar açıkça ihtirazi kayıtla ele almak istiyorum. Hesap dökümünün tartışmasız kısımları için süresinde ödeme yapmaya hazırım." },
+            { "language": "ru", "text": "Я понимаю, что с вашей точки зрения срок оплаты сохраняется. Однако спорную позицию я хотел бы явно поставить под оговорку до проверки документов. Неоспариваемые части расчёта я готов оплатить в срок." },
+            { "language": "ckb", "text": "تێدەگەم کە لە ڕوانگەی ئێوەوە کاتی پارەدان هەر ماوە. بەڵام دەمەوێت خاڵی ناکۆک بە ڕوونی تا پشکنینی بەڵگەکان بە مەرج دابنێم. بۆ بەشە ناکۆک نەبووەکانی حیسابەکە ئامادەم لە مۆڵەتدا پارە بدەم." },
+            { "language": "kmr", "text": "Ez fêm dikim ku ji aliyê we ve demê dayînê hîn dimîne. Lê ez dixwazim xala nakok heta belge bên kontrolkirin bi eşkere bi şertê xwe bihêlim. Ji bo beşên bê nakok ên hesabê ez amade me di demê de bidim." },
+            { "language": "pl", "text": "Rozumiem, że z Państwa perspektywy wymagalność pozostaje. Chciałbym jednak wyraźnie zastrzec sporną pozycję do czasu sprawdzenia dowodów. Za bezsporne części rozliczenia jestem gotów zapłacić w terminie." },
+            { "language": "ro", "text": "Înțeleg că din perspectiva dumneavoastră scadența rămâne. Totuși, doresc să formulez expres o rezervă pentru poziția contestată până la verificarea documentelor. Pentru părțile necontestate ale decontului sunt dispus să plătesc la termen." },
+            { "language": "sq", "text": "E kuptoj që nga këndvështrimi juaj afati i pagesës mbetet. Por dua ta vendos shprehimisht zërin e kontestuar me rezervë derisa të kontrollohen provat. Për pjesët e pakontestuara të faturimit jam gati të paguaj brenda afatit." }
+          ],
+          "function": "reservation-and-payment",
+          "toneNote": "differenziert, deeskalierend",
+          "expectedLearnerAction": "Vorbehalt und unstrittige Zahlung trennen"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "property-manager",
+          "baseText": "Das können wir so notieren. Möchten Sie einen Termin zur Belegeinsicht oder sollen wir Ihnen Kopien gegen Kostenerstattung zusenden?",
+          "translations": [
+            { "language": "en", "text": "We can note it that way. Would you like an appointment to inspect the receipts, or should we send you copies against reimbursement of costs?" },
+            { "language": "fa", "text": "می‌توانیم این را این‌طور ثبت کنیم. آیا قرار برای مشاهده مدارک می‌خواهید یا باید نسخه‌ها را با جبران هزینه برایتان ارسال کنیم؟" },
+            { "language": "ar", "text": "يمكننا تدوين ذلك بهذه الطريقة. هل تريد موعداً للاطلاع على الأدلة أم نرسل لك نسخاً مقابل تعويض التكاليف؟" },
+            { "language": "tr", "text": "Bunu böyle not edebiliriz. Belgeleri incelemek için randevu mu istersiniz, yoksa masraf karşılığı size kopya mı gönderelim?" },
+            { "language": "ru", "text": "Мы можем так это зафиксировать. Вы хотите назначить встречу для ознакомления с документами или нам отправить вам копии за возмещение расходов?" },
+            { "language": "ckb", "text": "دەتوانین ئەمە بەو شێوەیە تێبینی بکەین. دەتەوێت کاتێک بۆ بینینی بەڵگەکان دابنێین یان کۆپییەکان بە جێگرەوەی تێچوو بۆت بنێرین؟" },
+            { "language": "kmr", "text": "Em dikarin vê wisa qeyd bikin. Hûn dixwazin demek ji bo dîtina belgeyan, an em kopiyan bi vegerandina lêçûnê ji we re bişînin?" },
+            { "language": "pl", "text": "Możemy to tak odnotować. Czy chce Pan termin wglądu w dokumenty, czy mamy przesłać kopie za zwrotem kosztów?" },
+            { "language": "ro", "text": "Putem nota așa. Doriți o programare pentru consultarea documentelor sau să vă trimitem copii contra rambursării costurilor?" },
+            { "language": "sq", "text": "Mund ta shënojmë kështu. Dëshironi një takim për të parë provat apo t'ju dërgojmë kopje kundrejt rimbursimit të kostove?" }
+          ],
+          "function": "solution-option",
+          "toneNote": "lösungsorientiert",
+          "expectedLearnerAction": "Praktischen Prüfweg wählen"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ein Termin zur Einsicht wäre für mich sinnvoller. Ich würde gern vorher schriftlich wissen, welche Belege bereitliegen: Rechnung, Leistungsbeschreibung, Zeitraum und Verteilerschlüssel. Dann kann der Termin kurz und zielgerichtet bleiben.",
+          "translations": [
+            { "language": "en", "text": "An inspection appointment would make more sense for me. I would like to know in writing beforehand which documents will be available: invoice, service description, period, and allocation key. Then the appointment can remain short and focused." },
+            { "language": "fa", "text": "قرار برای مشاهده مدارک برای من منطقی‌تر است. دوست دارم قبل از آن کتبی بدانم چه مدارکی آماده است: فاکتور، شرح خدمات، بازه زمانی و کلید تقسیم. آن‌وقت جلسه کوتاه و هدفمند می‌ماند." },
+            { "language": "ar", "text": "سيكون موعد الاطلاع أكثر منطقية بالنسبة لي. أود أن أعرف خطياً مسبقاً أي أدلة ستكون متاحة: الفاتورة، وصف الخدمة، الفترة، ومفتاح التوزيع. عندها يمكن أن يبقى الموعد قصيراً وموجهاً." },
+            { "language": "tr", "text": "Belgeleri incelemek için randevu benim için daha mantıklı olur. Önceden yazılı olarak hangi belgelerin hazır olduğunu bilmek isterim: fatura, hizmet açıklaması, dönem ve dağıtım anahtarı. Böylece randevu kısa ve hedefli kalabilir." },
+            { "language": "ru", "text": "Встреча для ознакомления с документами для меня была бы разумнее. Я хотел бы заранее письменно знать, какие документы будут готовы: счёт, описание услуг, период и ключ распределения. Тогда встреча может остаться короткой и целенаправленной." },
+            { "language": "ckb", "text": "کاتێک بۆ بینینی بەڵگەکان بۆ من گونجاوترە. دەمەوێت پێشتر بە نووسراو بزانم کام بەڵگەکان ئامادەن: فاکتوور، وەسفی خزمەت، ماوە و کلیلەی دابەشکردن. ئەوا کاتەکە دەتوانێت کورت و ئامانجدار بمێنێت." },
+            { "language": "kmr", "text": "Demek ji bo dîtina belgeyan ji bo min maqûltir e. Ez dixwazim berê bi nivîskî bizanim kîjan belge amade ne: fatura, ravekirina xizmetê, dem û kilîta dabeşkirinê. Wê demê hevdîtin dikare kurt û armancdar bimîne." },
+            { "language": "pl", "text": "Termin wglądu byłby dla mnie sensowniejszy. Chciałbym wcześniej pisemnie wiedzieć, jakie dokumenty będą dostępne: faktura, opis usługi, okres i klucz podziału. Wtedy termin może pozostać krótki i celowy." },
+            { "language": "ro", "text": "O programare pentru consultare ar fi mai potrivită pentru mine. Aș dori să știu înainte, în scris, ce documente vor fi disponibile: factura, descrierea serviciului, perioada și cheia de repartizare. Astfel, întâlnirea poate rămâne scurtă și țintită." },
+            { "language": "sq", "text": "Një takim për shqyrtimin e provave do të kishte më shumë kuptim për mua. Dua të di paraprakisht me shkrim cilat dokumente do të jenë gati: fatura, përshkrimi i shërbimit, periudha dhe çelësi i shpërndarjes. Kështu takimi mund të mbetet i shkurtër dhe i synuar." }
+          ],
+          "function": "inspection-request",
+          "toneNote": "praktisch, dokumentationsorientiert",
+          "expectedLearnerAction": "Belegeinsicht konkret organisieren"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "property-manager",
+          "baseText": "Wir können Ihnen bis Freitag eine Übersicht schicken und für nächste Woche einen Termin anbieten. Was erwarten Sie danach als Ergebnis?",
+          "translations": [
+            { "language": "en", "text": "We can send you an overview by Friday and offer an appointment for next week. What result do you expect afterward?" },
+            { "language": "fa", "text": "می‌توانیم تا جمعه یک خلاصه برایتان بفرستیم و برای هفته آینده یک قرار پیشنهاد کنیم. بعد از آن چه نتیجه‌ای انتظار دارید؟" },
+            { "language": "ar", "text": "يمكننا أن نرسل لك نظرة عامة حتى يوم الجمعة ونقدم موعداً للأسبوع القادم. ما النتيجة التي تتوقعها بعد ذلك؟" },
+            { "language": "tr", "text": "Cuma gününe kadar size bir özet gönderebilir ve gelecek hafta için bir randevu sunabiliriz. Sonrasında hangi sonucu bekliyorsunuz?" },
+            { "language": "ru", "text": "Мы можем отправить вам обзор до пятницы и предложить встречу на следующей неделе. Какого результата вы ожидаете после этого?" },
+            { "language": "ckb", "text": "دەتوانین تا هەینی کورتەیەک بۆت بنێرین و بۆ هەفتەی داهاتوو کاتێک پێشنیار بکەین. پاشان چ ئەنجامێک چاوەڕوان دەکەیت؟" },
+            { "language": "kmr", "text": "Em dikarin heta Înê kurteyek ji we re bişînin û ji bo hefteya pêş dema hevdîtinê pêşniyar bikin. Piştî wê hûn kîjan encamê hêvî dikin?" },
+            { "language": "pl", "text": "Możemy wysłać Panu zestawienie do piątku i zaproponować termin na przyszły tydzień. Jakiego wyniku oczekuje Pan potem?" },
+            { "language": "ro", "text": "Vă putem trimite o prezentare până vineri și oferi o programare pentru săptămâna viitoare. Ce rezultat așteptați după aceea?" },
+            { "language": "sq", "text": "Mund t'ju dërgojmë një përmbledhje deri të premten dhe të ofrojmë një takim për javën tjetër. Çfarë rezultati prisni më pas?" }
+          ],
+          "function": "result-question",
+          "toneNote": "lösungsorientiert",
+          "expectedLearnerAction": "Erwartetes Ergebnis ohne Drohung formulieren"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Wenn die Belege die Erhöhung nachvollziehbar erklären, akzeptiere ich die Position. Falls sich aber zeigt, dass Leistungen doppelt berechnet wurden oder der Verteilerschlüssel nicht passt, bitte ich um eine korrigierte Abrechnung oder zumindest um eine schriftliche Stellungnahme.",
+          "translations": [
+            { "language": "en", "text": "If the receipts explain the increase in a traceable way, I will accept the item. However, if it turns out that services were charged twice or the allocation key does not fit, I ask for a corrected statement or at least a written response." },
+            { "language": "fa", "text": "اگر مدارک افزایش را قابل پیگیری توضیح بدهند، آن مورد را می‌پذیرم. اما اگر مشخص شود خدمات دوبار حساب شده‌اند یا کلید تقسیم مناسب نیست، درخواست صورت‌حساب اصلاح‌شده یا حداقل پاسخ کتبی دارم." },
+            { "language": "ar", "text": "إذا أوضحت الأدلة الزيادة بشكل يمكن تتبعه، فسأقبل البند. أما إذا ظهر أن الخدمات حُسبت مرتين أو أن مفتاح التوزيع غير مناسب، فأطلب كشفاً مصححاً أو على الأقل رداً خطياً." },
+            { "language": "tr", "text": "Belgeler artışı izlenebilir şekilde açıklarsa kalemi kabul ederim. Ancak hizmetlerin iki kez hesaplandığı veya dağıtım anahtarının uygun olmadığı görülürse düzeltilmiş bir hesap dökümü ya da en azından yazılı bir açıklama rica ederim." },
+            { "language": "ru", "text": "Если подтверждения прослеживаемо объяснят увеличение, я приму эту позицию. Но если выяснится, что услуги были рассчитаны дважды или ключ распределения не подходит, я прошу исправленный расчёт или как минимум письменное заключение." },
+            { "language": "ckb", "text": "ئەگەر بەڵگەکان هەڵکشانی بڕەکە بە شێوەی شوێنکەوتوو ڕوون بکەنەوە، خاڵەکە وەردەگرم. بەڵام ئەگەر دەرکەوێت خزمەتەکان دووجار حیساب کراون یان کلیلەی دابەشکردن ناگونجێت، داوای حیسابی ڕاستکراو یان لانیکەم وەڵامێکی نووسراو دەکەم." },
+            { "language": "kmr", "text": "Ger belge zêdebûnê bi awayekî şopbar rave bikin, ez xalê qebûl dikim. Lê ger xuya bibe ku xizmet ducar hatine hesabkirin an kilîta dabeşkirinê nagunce, ez daxwaza hesabeke rastkirî an herî kêm bersiveke nivîskî dikim." },
+            { "language": "pl", "text": "Jeśli dowody w sposób możliwy do prześledzenia wyjaśnią podwyżkę, zaakceptuję pozycję. Jeśli jednak okaże się, że usługi naliczono podwójnie albo klucz podziału nie pasuje, proszę o skorygowane rozliczenie albo przynajmniej pisemne stanowisko." },
+            { "language": "ro", "text": "Dacă documentele explică majorarea într-un mod urmărit, voi accepta poziția. Însă dacă se arată că serviciile au fost calculate dublu sau cheia de repartizare nu se potrivește, solicit un decont corectat sau cel puțin o poziție scrisă." },
+            { "language": "sq", "text": "Nëse provat e shpjegojnë rritjen në mënyrë të gjurmueshme, do ta pranoj zërin. Por nëse del se shërbimet janë llogaritur dy herë ose çelësi i shpërndarjes nuk përshtatet, kërkoj një faturim të korrigjuar ose të paktën një qëndrim me shkrim." }
+          ],
+          "function": "conditional-outcome",
+          "toneNote": "fair, überprüfbar",
+          "expectedLearnerAction": "Akzeptanz und Korrekturbedarf konditional formulieren"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "property-manager",
+          "baseText": "Das ist nachvollziehbar. Ich notiere: Belegeinsicht, Vorbehalt zur Gartenpflege und schriftliche Rückmeldung nach Prüfung. Können wir das so festhalten?",
+          "translations": [
+            { "language": "en", "text": "That is understandable. I will note: receipt inspection, reservation regarding garden maintenance, and written feedback after review. Can we record it that way?" },
+            { "language": "fa", "text": "قابل فهم است. یادداشت می‌کنم: مشاهده مدارک، تحفظ درباره نگهداری باغ و پاسخ کتبی بعد از بررسی. آیا می‌توانیم این‌طور ثبت کنیم؟" },
+            { "language": "ar", "text": "هذا مفهوم. سأدوّن: الاطلاع على الأدلة، التحفظ بخصوص العناية بالحديقة، والرد الخطي بعد الفحص. هل يمكننا تثبيت ذلك هكذا؟" },
+            { "language": "tr", "text": "Bu anlaşılır. Not ediyorum: belge inceleme, bahçe bakımı için ihtirazi kayıt ve incelemeden sonra yazılı geri bildirim. Bunu böyle kaydedebilir miyiz?" },
+            { "language": "ru", "text": "Это понятно. Я фиксирую: ознакомление с документами, оговорка по уходу за садом и письменный ответ после проверки. Можем так это зафиксировать?" },
+            { "language": "ckb", "text": "ئەمە تێگەیشتراوە. تێبینی دەکەم: بینینی بەڵگەکان، مەرج بۆ چاودێری باخ و وەڵامی نووسراو دوای پشکنین. دەتوانین ئەمە بەو شێوەیە تۆمار بکەین؟" },
+            { "language": "kmr", "text": "Ev tê fêmkirin. Ez qeyd dikim: dîtina belgeyan, şert ji bo lênihêrîna baxçeyê û bersiva nivîskî piştî kontrolê. Em dikarin vê wisa tomar bikin?" },
+            { "language": "pl", "text": "To jest zrozumiałe. Notuję: wgląd w dowody, zastrzeżenie do pielęgnacji ogrodu i pisemna informacja po sprawdzeniu. Czy możemy tak to ustalić?" },
+            { "language": "ro", "text": "Este de înțeles. Notez: consultarea documentelor, rezervă privind întreținerea grădinii și răspuns scris după verificare. Putem consemna așa?" },
+            { "language": "sq", "text": "Kjo është e kuptueshme. Po shënoj: shqyrtim provash, rezervë për mirëmbajtjen e kopshtit dhe përgjigje me shkrim pas kontrollit. A mund ta regjistrojmë kështu?" }
+          ],
+          "function": "agreement-check",
+          "toneNote": "zusammenfassend",
+          "expectedLearnerAction": "Vereinbarung bestätigen und schriftliche Spur sichern"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ja, so können wir es festhalten. Bitte senden Sie mir die Übersicht bis Freitag und bestätigen Sie den Vorbehalt schriftlich. Ich zahle die unstrittigen Beträge fristgerecht und entscheide über die Gartenpflegeposition nach der Belegeinsicht.",
+          "translations": [
+            { "language": "en", "text": "Yes, we can record it that way. Please send me the overview by Friday and confirm the reservation in writing. I will pay the undisputed amounts on time and decide on the garden maintenance item after inspecting the receipts." },
+            { "language": "fa", "text": "بله، می‌توانیم همین‌طور ثبت کنیم. لطفاً خلاصه را تا جمعه بفرستید و تحفظ را کتبی تأیید کنید. من مبلغ‌های بدون اختلاف را در مهلت مقرر پرداخت می‌کنم و درباره مورد نگهداری باغ بعد از مشاهده مدارک تصمیم می‌گیرم." },
+            { "language": "ar", "text": "نعم، يمكننا تثبيت الأمر هكذا. من فضلك أرسلوا لي النظرة العامة حتى الجمعة وأكدوا التحفظ خطياً. سأدفع المبالغ غير المتنازع عليها في الموعد وأقرر بشأن بند العناية بالحديقة بعد الاطلاع على الأدلة." },
+            { "language": "tr", "text": "Evet, bunu böyle kaydedebiliriz. Lütfen özeti cuma gününe kadar gönderin ve ihtirazi kaydı yazılı olarak onaylayın. Tartışmasız tutarları süresinde ödeyeceğim ve bahçe bakımı kalemi hakkında belge incelemesinden sonra karar vereceğim." },
+            { "language": "ru", "text": "Да, мы можем так это зафиксировать. Пожалуйста, отправьте мне обзор до пятницы и письменно подтвердите оговорку. Неоспариваемые суммы я оплачу в срок, а по позиции ухода за садом приму решение после ознакомления с документами." },
+            { "language": "ckb", "text": "بەڵێ، دەتوانین بەو شێوەیە تۆماری بکەین. تکایە کورتەکە تا هەینی بۆم بنێرن و مەرجەکە بە نووسراو پشتڕاست بکەنەوە. من بڕە ناکۆک نەبووەکان لە مۆڵەتدا دەدەم و دەربارەی خاڵی چاودێری باخ دوای بینینی بەڵگەکان بڕیار دەدەم." },
+            { "language": "kmr", "text": "Erê, em dikarin wê wisa tomar bikin. Ji kerema xwe kurteyê heta Înê ji min re bişînin û şertê bi nivîskî piştrast bikin. Ez mîqdarên bê nakok di demê de didim û li ser xala lênihêrîna baxçeyê piştî dîtina belgeyan biryar didim." },
+            { "language": "pl", "text": "Tak, możemy to tak ustalić. Proszę przesłać mi zestawienie do piątku i potwierdzić zastrzeżenie pisemnie. Bezsporne kwoty zapłacę w terminie, a o pozycji pielęgnacji ogrodu zdecyduję po wglądzie w dowody." },
+            { "language": "ro", "text": "Da, putem consemna așa. Vă rog să îmi trimiteți prezentarea până vineri și să confirmați rezerva în scris. Voi plăti sumele necontestate la termen și voi decide asupra poziției de întreținere a grădinii după consultarea documentelor." },
+            { "language": "sq", "text": "Po, mund ta regjistrojmë kështu. Ju lutem më dërgoni përmbledhjen deri të premten dhe konfirmoni rezervën me shkrim. Shumat e pakontestuara do t'i paguaj brenda afatit dhe për zërin e mirëmbajtjes së kopshtit do të vendos pas shqyrtimit të provave." }
+          ],
+          "function": "final-agreement",
+          "toneNote": "klar, deeskalierend",
+          "expectedLearnerAction": "Schriftliche Vereinbarung und nächsten Schritt bestätigen"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "strong-specific-reservation",
+              "text": "Ich weise den Betrag nicht pauschal zurück, möchte aber die fast verdoppelte Gartenpflegeposition nachvollziehen.",
+              "translations": [
+                { "language": "en", "text": "I am not rejecting the amount across the board, but I would like to understand the garden maintenance item, which has almost doubled." },
+                { "language": "fa", "text": "مبلغ را به‌طور کلی رد نمی‌کنم، اما می‌خواهم مورد نگهداری باغ را که تقریباً دو برابر شده قابل پیگیری بفهمم." },
+                { "language": "ar", "text": "لا أرفض المبلغ بشكل عام، لكنني أريد فهم بند العناية بالحديقة الذي تضاعف تقريباً." },
+                { "language": "tr", "text": "Tutarı genel olarak reddetmiyorum, ancak neredeyse iki katına çıkan bahçe bakımı kalemini anlamak istiyorum." },
+                { "language": "ru", "text": "Я не отвергаю сумму полностью, но хочу понять позицию ухода за садом, которая почти удвоилась." },
+                { "language": "ckb", "text": "بڕەکە بە گشتی ڕەت ناکەمەوە، بەڵام دەمەوێت خاڵی چاودێری باخ کە نزیکەی دوو هێندە بووە تێبگەم." },
+                { "language": "kmr", "text": "Ez mîqdarê bi giştî red nakim, lê dixwazim xala lênihêrîna baxçeyê ya hema du qat bûyî fêm bikim." },
+                { "language": "pl", "text": "Nie odrzucam kwoty z góry, ale chcę zrozumieć pozycję pielęgnacji ogrodu, która prawie się podwoiła." },
+                { "language": "ro", "text": "Nu resping suma în bloc, dar vreau să înțeleg poziția de întreținere a grădinii, care aproape s-a dublat." },
+                { "language": "sq", "text": "Nuk e refuzoj shumën në mënyrë të përgjithshme, por dua të kuptoj zërin e mirëmbajtjes së kopshtit që është pothuajse dyfishuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort benennt den Streitpunkt, bleibt offen für Belege und vermeidet Eskalation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names the disputed point, remains open to evidence, and avoids escalation." },
+                { "language": "fa", "text": "قوی: پاسخ نقطه اختلاف را نام می‌برد، برای مدارک باز می‌ماند و از تشدید اختلاف پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة تسمي نقطة الخلاف، وتبقى منفتحة على الأدلة، وتتجنب التصعيد." },
+                { "language": "tr", "text": "Güçlü: Yanıt tartışmalı noktayı adlandırıyor, belgelere açık kalıyor ve tırmandırmadan kaçınıyor." },
+                { "language": "ru", "text": "Сильно: ответ называет спорный пункт, остаётся открытым к доказательствам и избегает эскалации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە خاڵی ناکۆک ناو دەبات، بۆ بەڵگەکان کراوە دەمێنێت و لە هەڵکشاندن دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv xala nakok nav dike, ji bo belgeyan vekirî dimîne û ji eskalasyonê dûr dikeve." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa punkt sporny, pozostaje otwarta na dowody i unika eskalacji." },
+                { "language": "ro", "text": "Puternic: răspunsul numește punctul contestat, rămâne deschis la dovezi și evită escaladarea." },
+                { "language": "sq", "text": "E fortë: përgjigjja emërton pikën e kontestuar, mbetet e hapur ndaj provave dhe shmang përshkallëzimin." }
+              ],
+              "explanationKey": "specific-non-escalating-opening"
+            },
+            {
+              "id": "weak-accusatory-opening",
+              "text": "Diese Abrechnung kann so nicht stimmen, und ich sehe nicht ein, warum ich das zahlen soll.",
+              "translations": [
+                { "language": "en", "text": "This statement cannot be correct like this, and I do not see why I should pay it." },
+                { "language": "fa", "text": "این صورت‌حساب نمی‌تواند درست باشد و نمی‌فهمم چرا باید آن را پرداخت کنم." },
+                { "language": "ar", "text": "لا يمكن أن يكون هذا الكشف صحيحاً هكذا، ولا أرى لماذا يجب أن أدفعه." },
+                { "language": "tr", "text": "Bu hesap dökümü böyle doğru olamaz ve bunu neden ödemem gerektiğini anlamıyorum." },
+                { "language": "ru", "text": "Этот расчёт не может быть правильным, и я не понимаю, почему должен это платить." },
+                { "language": "ckb", "text": "ئەم حیسابە بەو شێوەیە ناتوانێت دروست بێت و تێناگەم بۆچی پێویستە پارەی بدەم." },
+                { "language": "kmr", "text": "Ev hesab wisa nikare rast be, û ez fêm nakim çima divê ez wê bidim." },
+                { "language": "pl", "text": "To rozliczenie nie może być tak prawidłowe i nie widzę, dlaczego miałbym to płacić." },
+                { "language": "ro", "text": "Acest decont nu poate fi corect așa și nu văd de ce ar trebui să îl plătesc." },
+                { "language": "sq", "text": "Ky faturim nuk mund të jetë i saktë kështu dhe nuk e kuptoj pse duhet ta paguaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu konfrontativ: Es fehlen konkreter Streitpunkt, Belegbezug und Zahlungsdifferenzierung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too confrontational: the specific disputed point, reference to evidence, and payment distinction are missing." },
+                { "language": "fa", "text": "قابل قبول است، اما بیش از حد تقابلی: نقطه اختلاف مشخص، ارجاع به مدارک و تفکیک پرداخت کم است." },
+                { "language": "ar", "text": "مقبول، لكنه تصادمي جداً: تنقص نقطة الخلاف المحددة والإشارة إلى الأدلة وتفريق الدفع." },
+                { "language": "tr", "text": "Makûl, ama fazla çatışmacı: somut tartışmalı nokta, belge bağlantısı ve ödeme ayrımı eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком конфронтационно: не хватает конкретного спорного пункта, ссылки на доказательства и различения оплаты." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر دژبەرە: خاڵی ناکۆکی دیاریکراو، پەیوەندی بە بەڵگە و جیاکردنەوەی پارەدان کەمە." },
+                { "language": "kmr", "text": "Guncan e, lê pir dijberî ye: xala nakok a konkret, têkiliya belge û cihêkirina dayînê kêm in." },
+                { "language": "pl", "text": "Plausible, ale zbyt konfrontacyjne: brakuje konkretnego punktu spornego, odniesienia do dowodów i rozróżnienia płatności." },
+                { "language": "ro", "text": "Plauzibil, dar prea conflictual: lipsesc punctul contestat concret, referirea la dovezi și diferențierea plății." },
+                { "language": "sq", "text": "E besueshme, por shumë konfrontuese: mungojnë pika konkrete e kontestuar, lidhja me provat dhe dallimi i pagesës." }
+              ],
+              "explanationKey": "accusatory-opening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "strong-evidence-request",
+              "text": "Ich bitte um Rechnung, Leistungsbeschreibung, Zeitraum und Verteilerschlüssel, damit die Umlage nachvollziehbar wird.",
+              "translations": [
+                { "language": "en", "text": "I ask for the invoice, service description, period, and allocation key so that the allocation becomes traceable." },
+                { "language": "fa", "text": "درخواست فاکتور، شرح خدمات، بازه زمانی و کلید تقسیم دارم تا تقسیم هزینه قابل پیگیری شود." },
+                { "language": "ar", "text": "أطلب الفاتورة ووصف الخدمة والفترة ومفتاح التوزيع لكي يصبح التوزيع قابلاً للتتبع." },
+                { "language": "tr", "text": "Dağılımın izlenebilir olması için fatura, hizmet açıklaması, dönem ve dağıtım anahtarını rica ediyorum." },
+                { "language": "ru", "text": "Я прошу счёт, описание услуг, период и ключ распределения, чтобы распределение стало прослеживаемым." },
+                { "language": "ckb", "text": "داوای فاکتوور، وەسفی خزمەت، ماوە و کلیلەی دابەشکردن دەکەم، بۆ ئەوەی دابەشکردنەکە شوێنکەوتوو بێت." },
+                { "language": "kmr", "text": "Ez daxwaza fatura, ravekirina xizmetê, dem û kilîta dabeşkirinê dikim, da ku dabeşkirin şopbar bibe." },
+                { "language": "pl", "text": "Proszę o fakturę, opis usługi, okres i klucz podziału, aby rozliczenie było możliwe do prześledzenia." },
+                { "language": "ro", "text": "Solicit factura, descrierea serviciului, perioada și cheia de repartizare, pentru ca repartizarea să fie urmărită." },
+                { "language": "sq", "text": "Kërkoj faturën, përshkrimin e shërbimit, periudhën dhe çelësin e shpërndarjes, që shpërndarja të jetë e gjurmueshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht den Belegbedarf konkret und bleibt auf Prüfung statt Angriff ausgerichtet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer makes the evidence need concrete and stays focused on review rather than attack." },
+                { "language": "fa", "text": "قوی: پاسخ نیاز به مدارک را مشخص می‌کند و به جای حمله بر بررسی متمرکز می‌ماند." },
+                { "language": "ar", "text": "قوي: الإجابة تجعل الحاجة إلى الأدلة ملموسة وتبقى موجهة نحو الفحص لا الهجوم." },
+                { "language": "tr", "text": "Güçlü: Yanıt belge ihtiyacını somutlaştırıyor ve saldırı yerine incelemeye odaklı kalıyor." },
+                { "language": "ru", "text": "Сильно: ответ конкретизирует потребность в доказательствах и остаётся направленным на проверку, а не на нападение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێویستی بەڵگە دیاریکراو دەکات و لەبری هێرش لەسەر پشکنین دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv hewcedariya belge konkret dike û li şûna êrîşê li ser kontrolê dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź konkretyzuje potrzebę dowodów i pozostaje nastawiona na sprawdzenie, nie atak." },
+                { "language": "ro", "text": "Puternic: răspunsul concretizează nevoia de dovezi și rămâne orientat spre verificare, nu spre atac." },
+                { "language": "sq", "text": "E fortë: përgjigjja e konkretizon nevojën për prova dhe mbetet e orientuar te kontrolli, jo te sulmi." }
+              ],
+              "explanationKey": "specific-evidence-request"
+            },
+            {
+              "id": "weak-proof-demand",
+              "text": "Dann müssen Sie mir erst einmal beweisen, dass diese Kosten überhaupt berechtigt sind.",
+              "translations": [
+                { "language": "en", "text": "Then you first have to prove to me that these costs are justified at all." },
+                { "language": "fa", "text": "پس اول باید به من ثابت کنید که این هزینه‌ها اصلاً موجه هستند." },
+                { "language": "ar", "text": "إذن عليكم أولاً أن تثبتوا لي أن هذه التكاليف مبررة أصلاً." },
+                { "language": "tr", "text": "O zaman önce bu masrafların gerçekten haklı olduğunu bana kanıtlamalısınız." },
+                { "language": "ru", "text": "Тогда вы сначала должны доказать мне, что эти расходы вообще обоснованы." },
+                { "language": "ckb", "text": "ئەوا پێویستە سەرەتا بۆ من بسەلمێنن کە ئەم تێچووانە بەڕاستی پاساوپێدراون." },
+                { "language": "kmr", "text": "Wê demê divê hûn pêşî ji min re îsbat bikin ku ev lêçûn bi rastî rewa ne." },
+                { "language": "pl", "text": "W takim razie najpierw muszą mi Państwo udowodnić, że te koszty w ogóle są uzasadnione." },
+                { "language": "ro", "text": "Atunci trebuie mai întâi să îmi dovediți că aceste costuri sunt într-adevăr justificate." },
+                { "language": "sq", "text": "Atëherë së pari duhet të më provoni se këto kosto janë fare të justifikuara." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu scharf: Die Aussage fordert Beweise, nennt aber nicht, welche Unterlagen konkret geprüft werden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sharp: the statement demands proof but does not name which documents should be checked specifically." },
+                { "language": "fa", "text": "بیش از حد تند است: جمله مدرک می‌خواهد، اما نمی‌گوید دقیقاً کدام مدارک باید بررسی شوند." },
+                { "language": "ar", "text": "حاد جداً: العبارة تطلب إثباتاً لكنها لا تسمي الوثائق التي ينبغي فحصها تحديداً." },
+                { "language": "tr", "text": "Fazla sert: İfade kanıt istiyor, ama hangi belgelerin somut olarak inceleneceğini belirtmiyor." },
+                { "language": "ru", "text": "Слишком резко: высказывание требует доказательств, но не называет, какие документы конкретно нужно проверить." },
+                { "language": "ckb", "text": "زۆر توندە: وتەکە بەڵگە داوا دەکات، بەڵام ناڵێت بە دیاریکراوی کام بەڵگەکان پێویستە پشکنرێن." },
+                { "language": "kmr", "text": "Pir tûj e: Gotin îsbat dixwaze, lê nabêje kîjan belge bi taybetî divê bên kontrolkirin." },
+                { "language": "pl", "text": "Zbyt ostre: wypowiedź żąda dowodu, ale nie mówi, które dokumenty konkretnie mają zostać sprawdzone." },
+                { "language": "ro", "text": "Prea aspru: afirmația cere dovezi, dar nu numește ce documente trebuie verificate concret." },
+                { "language": "sq", "text": "Shumë e ashpër: fjalia kërkon prova, por nuk emërton cilat dokumente konkretisht duhen kontrolluar." }
+              ],
+              "explanationKey": "sharp-proof-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "strong-reservation-payment",
+              "text": "Die unstrittigen Beträge zahle ich fristgerecht; die Gartenpflegeposition stelle ich bis zur Belegeinsicht unter Vorbehalt.",
+              "translations": [
+                { "language": "en", "text": "I will pay the undisputed amounts on time; I reserve my position on the garden maintenance item until I inspect the receipts." },
+                { "language": "fa", "text": "مبلغ‌های بدون اختلاف را در مهلت مقرر پرداخت می‌کنم؛ مورد نگهداری باغ را تا مشاهده مدارک با تحفظ مطرح می‌کنم." },
+                { "language": "ar", "text": "سأدفع المبالغ غير المتنازع عليها في الموعد؛ وأضع بند العناية بالحديقة تحت التحفظ إلى حين الاطلاع على الأدلة." },
+                { "language": "tr", "text": "Tartışmasız tutarları süresinde ödeyeceğim; bahçe bakımı kalemini belge incelemesine kadar ihtirazi kayıtla tutuyorum." },
+                { "language": "ru", "text": "Неоспариваемые суммы я оплачу в срок; по позиции ухода за садом сохраняю оговорку до ознакомления с документами." },
+                { "language": "ckb", "text": "بڕە ناکۆک نەبووەکان لە مۆڵەتدا دەدەم؛ خاڵی چاودێری باخ تا بینینی بەڵگەکان بە مەرج دادەنێم." },
+                { "language": "kmr", "text": "Ez mîqdarên bê nakok di demê de didim; xala lênihêrîna baxçeyê heta dîtina belgeyan bi şertê xwe dihêlim." },
+                { "language": "pl", "text": "Bezsporne kwoty zapłacę w terminie; pozycję pielęgnacji ogrodu zastrzegam do czasu wglądu w dowody." },
+                { "language": "ro", "text": "Voi plăti sumele necontestate la termen; pentru poziția de întreținere a grădinii formulez rezervă până la consultarea documentelor." },
+                { "language": "sq", "text": "Shumat e pakontestuara do t'i paguaj brenda afatit; zërin e mirëmbajtjes së kopshtit e vendos me rezervë deri në shqyrtimin e provave." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Zahlung, Vorbehalt und Prüfung sauber und wirkt deeskalierend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer cleanly separates payment, reservation, and review and has a de-escalating effect." },
+                { "language": "fa", "text": "قوی: پاسخ پرداخت، تحفظ و بررسی را تمیز جدا می‌کند و اثر آرام‌کننده دارد." },
+                { "language": "ar", "text": "قوي: الإجابة تفصل بوضوح بين الدفع والتحفظ والفحص وتعمل على التهدئة." },
+                { "language": "tr", "text": "Güçlü: Yanıt ödeme, ihtirazi kayıt ve incelemeyi temiz ayırıyor ve gerilimi düşürüyor." },
+                { "language": "ru", "text": "Сильно: ответ чётко разделяет оплату, оговорку и проверку и действует деэскалирующе." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پارەدان، مەرج و پشکنین بە پاکی جیا دەکاتەوە و ناکۆکی کەم دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv dayîn, şert û kontrolê paqij cihê dike û aramker e." },
+                { "language": "pl", "text": "Mocne: odpowiedź jasno oddziela płatność, zastrzeżenie i sprawdzenie oraz działa deeskalująco." },
+                { "language": "ro", "text": "Puternic: răspunsul separă clar plata, rezerva și verificarea și are efect de detensionare." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan qartë pagesën, rezervën dhe kontrollin dhe ul tensionin." }
+              ],
+              "explanationKey": "reservation-payment-split"
+            },
+            {
+              "id": "weak-payment-refusal",
+              "text": "Solange das nicht geklärt ist, zahle ich erst einmal gar nichts.",
+              "translations": [
+                { "language": "en", "text": "As long as this is not clarified, I will not pay anything for now." },
+                { "language": "fa", "text": "تا وقتی این روشن نشده، فعلاً هیچ چیزی پرداخت نمی‌کنم." },
+                { "language": "ar", "text": "ما دام هذا غير واضح، فلن أدفع شيئاً حالياً." },
+                { "language": "tr", "text": "Bu açıklığa kavuşmadığı sürece şimdilik hiçbir şey ödemem." },
+                { "language": "ru", "text": "Пока это не выяснено, я пока ничего не буду платить." },
+                { "language": "ckb", "text": "تا ئەمە ڕوون نەبێتەوە، فعلاً هیچ شتێک نادەم." },
+                { "language": "kmr", "text": "Heta ev zelal nebe, ez niha tiştek nadim." },
+                { "language": "pl", "text": "Dopóki to nie zostanie wyjaśnione, na razie nic nie zapłacę." },
+                { "language": "ro", "text": "Cât timp nu este clarificat, deocamdată nu plătesc nimic." },
+                { "language": "sq", "text": "Për sa kohë kjo nuk sqarohet, për momentin nuk paguaj asgjë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Riskant: Eine vollständige Zahlungsverweigerung kann unnötig eskalieren, wenn unstrittige Beträge vorhanden sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Risky: a complete refusal to pay can escalate unnecessarily when undisputed amounts exist." },
+                { "language": "fa", "text": "پرریسک است: خودداری کامل از پرداخت وقتی مبلغ‌های بدون اختلاف وجود دارند می‌تواند بی‌دلیل اختلاف را تشدید کند." },
+                { "language": "ar", "text": "محفوف بالمخاطر: رفض الدفع بالكامل قد يصعّد بلا حاجة إذا كانت هناك مبالغ غير متنازع عليها." },
+                { "language": "tr", "text": "Riskli: tartışmasız tutarlar varken tamamen ödeme reddi gereksiz yere tırmandırabilir." },
+                { "language": "ru", "text": "Рискованно: полный отказ от оплаты может ненужно эскалировать ситуацию, если есть неоспариваемые суммы." },
+                { "language": "ckb", "text": "مەترسیدارە: ڕەتکردنەوەی تەواوی پارەدان دەتوانێت بێ پێویست ناکۆکی هەڵبکێشێت، ئەگەر بڕی ناکۆک نەبوو هەبێت." },
+                { "language": "kmr", "text": "Rîskdar e: redkirina temam a dayînê dikare bê hewce eskalasyon çêbike, ger mîqdarên bê nakok hebin." },
+                { "language": "pl", "text": "Ryzykowne: całkowita odmowa zapłaty może niepotrzebnie eskalować, jeśli istnieją kwoty bezsporne." },
+                { "language": "ro", "text": "Riscant: refuzul complet de plată poate escalada inutil când există sume necontestate." },
+                { "language": "sq", "text": "E rrezikshme: refuzimi i plotë i pagesës mund të përshkallëzojë pa nevojë kur ka shuma të pakontestuara." }
+              ],
+              "explanationKey": "total-payment-refusal"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "strong-inspection-plan",
+              "text": "Bitte schicken Sie mir vor dem Termin eine Übersicht der bereitliegenden Belege, damit die Einsicht zielgerichtet bleibt.",
+              "translations": [
+                { "language": "en", "text": "Please send me an overview of the available receipts before the appointment so that the inspection remains focused." },
+                { "language": "fa", "text": "لطفاً قبل از قرار، خلاصه‌ای از مدارک آماده برایم بفرستید تا مشاهده مدارک هدفمند بماند." },
+                { "language": "ar", "text": "من فضلك أرسل لي قبل الموعد نظرة عامة على الأدلة المتاحة لكي يبقى الاطلاع موجهاً." },
+                { "language": "tr", "text": "Lütfen randevudan önce hazır belgelerin bir özetini gönderin, böylece inceleme hedefli kalır." },
+                { "language": "ru", "text": "Пожалуйста, отправьте мне перед встречей обзор имеющихся документов, чтобы ознакомление оставалось целенаправленным." },
+                { "language": "ckb", "text": "تکایە پێش کاتەکە کورتەیەک لە بەڵگە ئامادەکان بۆم بنێرە، بۆ ئەوەی بینینەکە ئامانجدار بمێنێت." },
+                { "language": "kmr", "text": "Ji kerema xwe berî hevdîtinê kurteyek ji belgeyên amade ji min re bişînin, da ku dîtin armancdar bimîne." },
+                { "language": "pl", "text": "Proszę przesłać mi przed terminem zestawienie dostępnych dowodów, aby wgląd pozostał celowy." },
+                { "language": "ro", "text": "Vă rog să îmi trimiteți înainte de programare o prezentare a documentelor disponibile, ca verificarea să rămână țintită." },
+                { "language": "sq", "text": "Ju lutem më dërgoni para takimit një përmbledhje të provave të gatshme, që shqyrtimi të mbetet i synuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte ist praktisch und verhindert, dass der Termin unklar oder unnötig lang wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is practical and prevents the appointment from becoming unclear or unnecessarily long." },
+                { "language": "fa", "text": "قوی: درخواست عملی است و مانع می‌شود جلسه مبهم یا بی‌دلیل طولانی شود." },
+                { "language": "ar", "text": "قوي: الطلب عملي ويمنع أن يصبح الموعد غير واضح أو طويلاً بلا ضرورة." },
+                { "language": "tr", "text": "Güçlü: Rica pratik ve randevunun belirsiz veya gereksiz uzun olmasını engelliyor." },
+                { "language": "ru", "text": "Сильно: просьба практична и предотвращает неясную или ненужно долгую встречу." },
+                { "language": "ckb", "text": "بەهێزە: داواکارییەکە کردارییە و ڕێگری دەکات لەوەی کاتەکە ناڕوون یان بێ پێویست درێژ بێت." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz pratîk e û rê nade ku hevdîtin nezelal an bê hewce dirêj bibe." },
+                { "language": "pl", "text": "Mocne: prośba jest praktyczna i zapobiega temu, by termin był niejasny lub niepotrzebnie długi." },
+                { "language": "ro", "text": "Puternic: cererea este practică și împiedică întâlnirea să devină neclară sau inutil de lungă." },
+                { "language": "sq", "text": "E fortë: kërkesa është praktike dhe parandalon që takimi të bëhet i paqartë ose i gjatë pa nevojë." }
+              ],
+              "explanationKey": "focused-inspection"
+            },
+            {
+              "id": "weak-open-ended-inspection",
+              "text": "Ich komme einfach vorbei und schaue mir dann an, was Sie dort haben.",
+              "translations": [
+                { "language": "en", "text": "I will simply come by and then look at what you have there." },
+                { "language": "fa", "text": "من همین‌طور می‌آیم و بعد می‌بینم چه چیزی آنجا دارید." },
+                { "language": "ar", "text": "سأمر ببساطة ثم أنظر إلى ما لديكم هناك." },
+                { "language": "tr", "text": "Öylesine uğrarım ve sonra orada ne olduğunu bakarım." },
+                { "language": "ru", "text": "Я просто зайду и потом посмотрю, что у вас там есть." },
+                { "language": "ckb", "text": "من هەر وا دێم و پاشان دەبینم چی لەوێ هەتانە." },
+                { "language": "kmr", "text": "Ez tenê derbas dibim û paşê dibînim li wir çi bi we re heye." },
+                { "language": "pl", "text": "Po prostu przyjdę i wtedy zobaczę, co Państwo tam mają." },
+                { "language": "ro", "text": "Trec pur și simplu și văd atunci ce aveți acolo." },
+                { "language": "sq", "text": "Thjesht do të kaloj dhe pastaj do të shoh çfarë keni aty." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unvorbereitet: Ohne Liste der Belege bleibt unklar, ob der Termin die Streitfrage wirklich klärt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unprepared: without a list of receipts, it remains unclear whether the appointment will really clarify the dispute." },
+                { "language": "fa", "text": "بیش از حد آماده‌نشده است: بدون فهرست مدارک، روشن نیست جلسه واقعاً اختلاف را حل می‌کند یا نه." },
+                { "language": "ar", "text": "غير مستعد بما يكفي: من دون قائمة بالأدلة يبقى غير واضح هل سيوضح الموعد الخلاف فعلاً." },
+                { "language": "tr", "text": "Fazla hazırlıksız: belge listesi olmadan randevunun anlaşmazlığı gerçekten açıklığa kavuşturup kavuşturmayacağı belirsiz kalır." },
+                { "language": "ru", "text": "Слишком неподготовленно: без списка документов остаётся неясным, действительно ли встреча прояснит спор." },
+                { "language": "ckb", "text": "زۆر بێ ئامادەکارییە: بەبێ لیستی بەڵگەکان ناڕوون دەمێنێت ئایا کاتەکە بەڕاستی ناکۆکییەکە ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Pir bê amadekarî ye: bê lîsteya belgeyan nezelal dimîne ka hevdîtin bi rastî nakokiyê zelal dike an na." },
+                { "language": "pl", "text": "Zbyt nieprzygotowane: bez listy dowodów nie wiadomo, czy termin rzeczywiście wyjaśni spór." },
+                { "language": "ro", "text": "Prea nepregătit: fără lista documentelor rămâne neclar dacă întâlnirea va clarifica realmente disputa." },
+                { "language": "sq", "text": "Shumë e papërgatitur: pa listën e provave mbetet e paqartë nëse takimi do ta sqarojë vërtet mosmarrëveshjen." }
+              ],
+              "explanationKey": "unfocused-inspection"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "strong-conditional-outcome",
+              "text": "Wenn die Belege die Erhöhung erklären, akzeptiere ich sie; wenn nicht, bitte ich um Korrektur oder schriftliche Stellungnahme.",
+              "translations": [
+                { "language": "en", "text": "If the receipts explain the increase, I accept it; if not, I ask for a correction or written response." },
+                { "language": "fa", "text": "اگر مدارک افزایش را توضیح دهند، می‌پذیرم؛ اگر نه، درخواست اصلاح یا پاسخ کتبی دارم." },
+                { "language": "ar", "text": "إذا أوضحت الأدلة الزيادة فسأقبلها؛ وإذا لم تفعل، أطلب تصحيحاً أو رداً خطياً." },
+                { "language": "tr", "text": "Belgeler artışı açıklarsa kabul ederim; açıklamazsa düzeltme veya yazılı açıklama rica ederim." },
+                { "language": "ru", "text": "Если документы объяснят увеличение, я приму его; если нет, попрошу исправление или письменный ответ." },
+                { "language": "ckb", "text": "ئەگەر بەڵگەکان هەڵکشانەکە ڕوون بکەنەوە، وەردەگرم؛ ئەگەر نا، داوای ڕاستکردنەوە یان وەڵامی نووسراو دەکەم." },
+                { "language": "kmr", "text": "Ger belge zêdebûnê rave bikin, ez qebûl dikim; ger na, ez daxwaza rastkirinê an bersiva nivîskî dikim." },
+                { "language": "pl", "text": "Jeśli dowody wyjaśnią podwyżkę, zaakceptuję ją; jeśli nie, poproszę o korektę albo pisemne stanowisko." },
+                { "language": "ro", "text": "Dacă documentele explică majorarea, o accept; dacă nu, solicit corectare sau poziție scrisă." },
+                { "language": "sq", "text": "Nëse provat e shpjegojnë rritjen, e pranoj; nëse jo, kërkoj korrigjim ose qëndrim me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist fair, überprüfbar und hält beide möglichen Ergebnisse offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer is fair, reviewable, and keeps both possible outcomes open." },
+                { "language": "fa", "text": "قوی: پاسخ منصفانه، قابل بررسی است و هر دو نتیجه ممکن را باز می‌گذارد." },
+                { "language": "ar", "text": "قوي: الإجابة عادلة وقابلة للفحص وتترك النتيجتين المحتملتين مفتوحتين." },
+                { "language": "tr", "text": "Güçlü: Yanıt adil, incelenebilir ve iki olası sonucu da açık tutuyor." },
+                { "language": "ru", "text": "Сильно: ответ честный, проверяемый и оставляет открытыми оба возможных результата." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دادپەروەرانە، پێداچوونەوەکراوە و هەردوو ئەنجامی ئەگەری کراوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv dadwer, vekolînbar e û her du encamên gengaz vekirî dihêle." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest uczciwa, weryfikowalna i pozostawia otwarte oba możliwe wyniki." },
+                { "language": "ro", "text": "Puternic: răspunsul este corect, verificabil și păstrează deschise ambele rezultate posibile." },
+                { "language": "sq", "text": "E fortë: përgjigjja është e drejtë, e verifikueshme dhe i lë të hapura të dy rezultatet e mundshme." }
+              ],
+              "explanationKey": "conditional-fairness"
+            },
+            {
+              "id": "weak-demand-correction",
+              "text": "Ich erwarte, dass Sie die Abrechnung nach unten korrigieren, sonst bringt der Termin nichts.",
+              "translations": [
+                { "language": "en", "text": "I expect you to correct the statement downward; otherwise the appointment is pointless." },
+                { "language": "fa", "text": "انتظار دارم صورت‌حساب را به مبلغ پایین‌تر اصلاح کنید، وگرنه جلسه فایده‌ای ندارد." },
+                { "language": "ar", "text": "أتوقع أن تصححوا الكشف إلى مبلغ أقل، وإلا فلن يكون للموعد فائدة." },
+                { "language": "tr", "text": "Hesap dökümünü aşağı doğru düzeltmenizi bekliyorum; aksi halde randevunun anlamı yok." },
+                { "language": "ru", "text": "Я ожидаю, что вы исправите расчёт в меньшую сторону, иначе встреча не имеет смысла." },
+                { "language": "ckb", "text": "چاوەڕوانم حیسابەکە بۆ بڕێکی کەمتر ڕاست بکەنەوە، ئەگەر نا کاتەکە هیچ سوودی نییە." },
+                { "language": "kmr", "text": "Ez hêvî dikim hûn hesabê berjêr rast bikin, wekî din hevdîtin bê wate ye." },
+                { "language": "pl", "text": "Oczekuję, że skorygują Państwo rozliczenie w dół, inaczej termin nie ma sensu." },
+                { "language": "ro", "text": "Mă aștept să corectați decontul în jos, altfel întâlnirea nu are rost." },
+                { "language": "sq", "text": "Pres që ta korrigjoni faturimin në ulje, përndryshe takimi nuk ka kuptim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu festgelegt: Das Ergebnis wird verlangt, bevor die Belege geprüft wurden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too predetermined: the outcome is demanded before the receipts have been checked." },
+                { "language": "fa", "text": "بیش از حد از قبل تعیین شده است: نتیجه قبل از بررسی مدارک مطالبه می‌شود." },
+                { "language": "ar", "text": "محدد مسبقاً جداً: تُطلب النتيجة قبل فحص الأدلة." },
+                { "language": "tr", "text": "Fazla önceden belirlenmiş: Belgeler incelenmeden sonuç talep ediliyor." },
+                { "language": "ru", "text": "Слишком заранее задано: результат требуется до проверки документов." },
+                { "language": "ckb", "text": "زۆر پێشتر دیاریکراوە: ئەنجام داوا دەکرێت پێش ئەوەی بەڵگەکان پشکنرێن." },
+                { "language": "kmr", "text": "Pir pêşwext diyarkirî ye: encam tê xwestin berî ku belge bên kontrolkirin." },
+                { "language": "pl", "text": "Zbyt z góry ustalone: wynik jest żądany przed sprawdzeniem dowodów." },
+                { "language": "ro", "text": "Prea prestabilit: rezultatul este cerut înainte ca documentele să fie verificate." },
+                { "language": "sq", "text": "Shumë e paracaktuar: rezultati kërkohet para se provat të kontrollohen." }
+              ],
+              "explanationKey": "predetermined-outcome"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "strong-final-agreement",
+              "text": "Bitte bestätigen Sie Übersicht, Vorbehalt und Termin schriftlich; die unstrittigen Beträge zahle ich fristgerecht.",
+              "translations": [
+                { "language": "en", "text": "Please confirm the overview, reservation, and appointment in writing; I will pay the undisputed amounts on time." },
+                { "language": "fa", "text": "لطفاً خلاصه، تحفظ و قرار را کتبی تأیید کنید؛ مبلغ‌های بدون اختلاف را در مهلت مقرر پرداخت می‌کنم." },
+                { "language": "ar", "text": "من فضلك أكد النظرة العامة والتحفظ والموعد خطياً؛ وسأدفع المبالغ غير المتنازع عليها في الموعد." },
+                { "language": "tr", "text": "Lütfen özet, ihtirazi kayıt ve randevuyu yazılı olarak onaylayın; tartışmasız tutarları süresinde ödeyeceğim." },
+                { "language": "ru", "text": "Пожалуйста, письменно подтвердите обзор, оговорку и встречу; неоспариваемые суммы я оплачу в срок." },
+                { "language": "ckb", "text": "تکایە کورتە، مەرج و کاتەکە بە نووسراو پشتڕاست بکەنەوە؛ بڕە ناکۆک نەبووەکان لە مۆڵەتدا دەدەم." },
+                { "language": "kmr", "text": "Ji kerema xwe kurte, şert û demê bi nivîskî piştrast bikin; ez mîqdarên bê nakok di demê de didim." },
+                { "language": "pl", "text": "Proszę potwierdzić zestawienie, zastrzeżenie i termin pisemnie; bezsporne kwoty zapłacę w terminie." },
+                { "language": "ro", "text": "Vă rog să confirmați în scris prezentarea, rezerva și programarea; voi plăti sumele necontestate la termen." },
+                { "language": "sq", "text": "Ju lutem konfirmoni me shkrim përmbledhjen, rezervën dhe takimin; shumat e pakontestuara do t'i paguaj brenda afatit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Abschluss sichert eine schriftliche Spur und zeigt Kooperationsbereitschaft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The closing secures a written trail and shows willingness to cooperate." },
+                { "language": "fa", "text": "قوی: جمع‌بندی ردپای کتبی را تضمین می‌کند و آمادگی همکاری را نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: الخاتمة تؤمن أثراً كتابياً وتُظهر الاستعداد للتعاون." },
+                { "language": "tr", "text": "Güçlü: Kapanış yazılı iz bırakıyor ve işbirliği isteğini gösteriyor." },
+                { "language": "ru", "text": "Сильно: завершение обеспечивает письменный след и показывает готовность к сотрудничеству." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە شوێنەواری نووسراو دڵنیا دەکات و ئامادەیی هاوکاری پیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: Dawî şopa nivîskî misoger dike û amadebûna hevkariyê nîşan dide." },
+                { "language": "pl", "text": "Mocne: zakończenie zabezpiecza ślad pisemny i pokazuje gotowość do współpracy." },
+                { "language": "ro", "text": "Puternic: încheierea asigură o urmă scrisă și arată disponibilitate de cooperare." },
+                { "language": "sq", "text": "E fortë: përmbyllja siguron një gjurmë me shkrim dhe tregon gatishmëri për bashkëpunim." }
+              ],
+              "explanationKey": "written-trail-closing"
+            },
+            {
+              "id": "weak-final-threat",
+              "text": "Wenn das nicht geklärt wird, muss ich mir weitere Schritte überlegen.",
+              "translations": [
+                { "language": "en", "text": "If this is not clarified, I will have to consider further steps." },
+                { "language": "fa", "text": "اگر این روشن نشود، باید به گام‌های بعدی فکر کنم." },
+                { "language": "ar", "text": "إذا لم يتم توضيح ذلك، فسأضطر إلى التفكير في خطوات أخرى." },
+                { "language": "tr", "text": "Bu açıklığa kavuşmazsa başka adımları düşünmem gerekecek." },
+                { "language": "ru", "text": "Если это не будет выяснено, мне придётся подумать о дальнейших шагах." },
+                { "language": "ckb", "text": "ئەگەر ئەمە ڕوون نەکرێتەوە، پێویستە بیر لە هەنگاوەکانی تر بکەمەوە." },
+                { "language": "kmr", "text": "Ger ev zelal nebe, divê ez li ser gavên din bifikirim." },
+                { "language": "pl", "text": "Jeśli to nie zostanie wyjaśnione, będę musiał rozważyć dalsze kroki." },
+                { "language": "ro", "text": "Dacă acest lucru nu este clarificat, va trebui să mă gândesc la pași suplimentari." },
+                { "language": "sq", "text": "Nëse kjo nuk sqarohet, do të duhet të mendoj për hapa të tjerë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber als Abschluss zu drohend und unkonkret: Termin, Vorbehalt und Zahlungspfad fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too threatening and unspecific as a close: appointment, reservation, and payment path are missing." },
+                { "language": "fa", "text": "قابل قبول است، اما برای پایان بیش از حد تهدیدآمیز و نامشخص است: قرار، تحفظ و مسیر پرداخت کم است." },
+                { "language": "ar", "text": "مقبول، لكنه كخاتمة مهدد وغير محدد جداً: ينقص الموعد والتحفظ ومسار الدفع." },
+                { "language": "tr", "text": "Makûl, ama kapanış olarak fazla tehditkâr ve belirsiz: randevu, ihtirazi kayıt ve ödeme yolu eksik." },
+                { "language": "ru", "text": "Правдоподобно, но как завершение слишком угрожающе и неконкретно: не хватает встречи, оговорки и пути оплаты." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام وەک کۆتایی زۆر هەڕەشەئامێز و ناڕوونە: کات، مەرج و ڕێگای پارەدان کەمن." },
+                { "language": "kmr", "text": "Guncan e, lê wekî dawî pir tehdîdî û nezelal e: dem, şert û rêya dayînê kêm in." },
+                { "language": "pl", "text": "Plausible, ale jako zakończenie zbyt grożące i niekonkretne: brakuje terminu, zastrzeżenia i ścieżki płatności." },
+                { "language": "ro", "text": "Plauzibil, dar ca încheiere prea amenințător și nespecific: lipsesc programarea, rezerva și calea de plată." },
+                { "language": "sq", "text": "E besueshme, por si përmbyllje shumë kërcënuese dhe e paspecifikuar: mungojnë takimi, rezerva dhe rruga e pagesës." }
+              ],
+              "explanationKey": "threatening-close"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "issue-framing",
+          "text": "Eine gute Eröffnung nennt den strittigen Punkt und vermeidet, die ganze Abrechnung pauschal anzugreifen.",
+          "translations": [
+            { "language": "en", "text": "A good opening names the disputed point and avoids attacking the whole statement across the board." },
+            { "language": "fa", "text": "شروع خوب نقطه اختلاف را نام می‌برد و از حمله کلی به کل صورت‌حساب پرهیز می‌کند." },
+            { "language": "ar", "text": "الافتتاح الجيد يسمي نقطة الخلاف ويتجنب مهاجمة الكشف كله بشكل عام." },
+            { "language": "tr", "text": "İyi bir açılış tartışmalı noktayı adlandırır ve tüm hesap dökümüne genel saldırıdan kaçınır." },
+            { "language": "ru", "text": "Хорошее начало называет спорный пункт и избегает общей атаки на весь расчёт." },
+            { "language": "ckb", "text": "دەستپێکی باش خاڵی ناکۆک ناو دەبات و لە هێرشی گشتی بۆ هەموو حیسابەکە دوور دەکەوێتەوە." },
+            { "language": "kmr", "text": "Destpêkeke baş xala nakok nav dike û ji êrîşa giştî li hemû hesabê dûr dikeve." },
+            { "language": "pl", "text": "Dobre otwarcie nazywa punkt sporny i unika ogólnego ataku na całe rozliczenie." },
+            { "language": "ro", "text": "O deschidere bună numește punctul contestat și evită atacarea în bloc a întregului decont." },
+            { "language": "sq", "text": "Një hapje e mirë emërton pikën e kontestuar dhe shmang sulmin e përgjithshëm ndaj gjithë faturimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Im Mietkonflikt ist „nachvollziehbar“ ein Schlüsselwort: Es lenkt auf Belege statt auf Schuldzuweisungen.",
+          "translations": [
+            { "language": "en", "text": "In a tenancy conflict, \"traceable\" is a key word: it directs attention to receipts rather than blame." },
+            { "language": "fa", "text": "در اختلاف اجاره، «قابل پیگیری» واژه کلیدی است: توجه را به مدارک می‌برد، نه سرزنش." },
+            { "language": "ar", "text": "في نزاع الإيجار، كلمة «قابل للتتبع» أساسية: فهي توجه الانتباه إلى الأدلة لا إلى اللوم." },
+            { "language": "tr", "text": "Kira çatışmasında \"izlenebilir\" anahtar kelimedir: dikkati suçlamaya değil belgelere yönlendirir." },
+            { "language": "ru", "text": "В арендном конфликте «прослеживаемо» — ключевое слово: оно направляет внимание на документы, а не на обвинения." },
+            { "language": "ckb", "text": "لە ناکۆکی کرێدا «شوێنکەوتوو» وشەیەکی سەرەکییە: سەرنج دەباتەسەر بەڵگە، نە تاوانبارکردن." },
+            { "language": "kmr", "text": "Di nakokiya kirê de \"şopbar\" peyveke girîng e: balê dibe ser belgeyan, ne ser sûcdarkirinê." },
+            { "language": "pl", "text": "W konflikcie najmu „możliwe do prześledzenia” to słowo kluczowe: kieruje uwagę na dowody, nie na obwinianie." },
+            { "language": "ro", "text": "În conflictul locativ, „urmărit” este un cuvânt-cheie: mută atenția spre documente, nu spre învinovățiri." },
+            { "language": "sq", "text": "Në konfliktin e qirasë, “i gjurmueshëm” është fjalë kyçe: e drejton vëmendjen te provat, jo te fajësimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "deescalation",
+          "text": "Unstrittige Beträge und strittige Positionen getrennt zu behandeln, hält das Gespräch lösungsfähig.",
+          "translations": [
+            { "language": "en", "text": "Treating undisputed amounts and disputed items separately keeps the conversation solution-oriented." },
+            { "language": "fa", "text": "برخورد جداگانه با مبلغ‌های بدون اختلاف و موارد اختلافی، گفت‌وگو را قابل حل نگه می‌دارد." },
+            { "language": "ar", "text": "التعامل مع المبالغ غير المتنازع عليها والبنود المتنازع عليها بشكل منفصل يبقي الحوار قابلاً للحل." },
+            { "language": "tr", "text": "Tartışmasız tutarlar ile tartışmalı kalemleri ayrı ele almak konuşmayı çözüme açık tutar." },
+            { "language": "ru", "text": "Раздельное рассмотрение неоспариваемых сумм и спорных позиций сохраняет разговор способным к решению." },
+            { "language": "ckb", "text": "جیا مامەڵەکردن لەگەڵ بڕە ناکۆک نەبووەکان و خاڵە ناکۆکەکان گفتوگۆکە چارەسەرپەسەند دەهێڵێتەوە." },
+            { "language": "kmr", "text": "Cihêkirina mîqdarên bê nakok û xalên nakok axaftinê çareserîbar dihêle." },
+            { "language": "pl", "text": "Oddzielne traktowanie kwot bezspornych i pozycji spornych utrzymuje rozmowę w trybie rozwiązania." },
+            { "language": "ro", "text": "Tratarea separată a sumelor necontestate și a pozițiilor contestate menține discuția orientată spre soluție." },
+            { "language": "sq", "text": "Trajtimi veçmas i shumave të pakontestuara dhe i zërave të kontestuar e mban bisedën të orientuar drejt zgjidhjes." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "conditional-result",
+          "text": "Eine faire Kondition zeigt Kooperationsbereitschaft: akzeptieren, wenn die Belege tragen; korrigieren, wenn sie es nicht tun.",
+          "translations": [
+            { "language": "en", "text": "A fair condition shows willingness to cooperate: accept if the receipts support it; correct if they do not." },
+            { "language": "fa", "text": "شرط منصفانه آمادگی همکاری را نشان می‌دهد: اگر مدارک پشتیبانی کردند بپذیر، اگر نکردند اصلاح کن." },
+            { "language": "ar", "text": "الشرط العادل يُظهر الاستعداد للتعاون: القبول إذا دعمت الأدلة ذلك، والتصحيح إذا لم تفعل." },
+            { "language": "tr", "text": "Adil bir koşul işbirliği isteğini gösterir: belgeler destekliyorsa kabul etmek, desteklemiyorsa düzeltmek." },
+            { "language": "ru", "text": "Справедливое условие показывает готовность к сотрудничеству: принять, если документы подтверждают; исправить, если нет." },
+            { "language": "ckb", "text": "مەرجێکی دادپەروەرانە ئامادەیی هاوکاری پیشان دەدات: ئەگەر بەڵگەکان پشتگیری بکەن وەربگرە؛ ئەگەر نا ڕاستی بکەوە." },
+            { "language": "kmr", "text": "Şerteke dadwer amadebûna hevkariyê nîşan dide: qebûl bikin ger belge piştgirî bikin; rast bikin ger nekin." },
+            { "language": "pl", "text": "Uczciwy warunek pokazuje gotowość do współpracy: zaakceptować, jeśli dowody to potwierdzają; skorygować, jeśli nie." },
+            { "language": "ro", "text": "O condiție corectă arată disponibilitate de cooperare: accepți dacă documentele susțin; corectezi dacă nu." },
+            { "language": "sq", "text": "Një kusht i drejtë tregon gatishmëri për bashkëpunim: prano nëse provat e mbështesin; korrigjo nëse jo." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing",
+          "text": "Der Abschluss sollte eine schriftliche Spur sichern: Übersicht, Vorbehalt, Termin und Zahlungsweg.",
+          "translations": [
+            { "language": "en", "text": "The close should secure a written trail: overview, reservation, appointment, and payment path." },
+            { "language": "fa", "text": "جمع‌بندی باید ردپای کتبی را تضمین کند: خلاصه، تحفظ، قرار و مسیر پرداخت." },
+            { "language": "ar", "text": "ينبغي أن تؤمن الخاتمة أثراً كتابياً: النظرة العامة، التحفظ، الموعد، ومسار الدفع." },
+            { "language": "tr", "text": "Kapanış yazılı iz bırakmalıdır: özet, ihtirazi kayıt, randevu ve ödeme yolu." },
+            { "language": "ru", "text": "Завершение должно обеспечить письменный след: обзор, оговорка, встреча и путь оплаты." },
+            { "language": "ckb", "text": "کۆتایی پێویستە شوێنەواری نووسراو دڵنیا بکات: کورتە، مەرج، کات و ڕێگای پارەدان." },
+            { "language": "kmr", "text": "Dawî divê şopa nivîskî misoger bike: kurte, şert, dem û rêya dayînê." },
+            { "language": "pl", "text": "Zakończenie powinno zabezpieczyć ślad pisemny: zestawienie, zastrzeżenie, termin i ścieżkę płatności." },
+            { "language": "ro", "text": "Încheierea ar trebui să asigure o urmă scrisă: prezentare, rezervă, programare și cale de plată." },
+            { "language": "sq", "text": "Përmbyllja duhet të sigurojë një gjurmë me shkrim: përmbledhje, rezervë, takim dhe rrugë pagese." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "housing-dispute-documents-meeting",
+          "placement": "hero",
+          "purpose": "Show a calm meeting about a rental statement, receipts, allocation key, and a documented next step.",
+          "altText": "Ein Mieter bespricht mit der Hausverwaltung eine Nebenkostenabrechnung und markiert Belege, Verteilerschlüssel und Vorbehalt.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A tenant discusses a service-charge statement with property management and marks receipts, allocation key, and reservation." },
+            { "language": "fa", "text": "یک مستأجر با مدیریت ساختمان درباره صورت‌حساب هزینه‌های جانبی صحبت می‌کند و مدارک، کلید تقسیم و تحفظ را مشخص می‌کند." },
+            { "language": "ar", "text": "مستأجر يناقش كشف التكاليف الإضافية مع إدارة العقار ويحدد الأدلة ومفتاح التوزيع والتحفظ." },
+            { "language": "tr", "text": "Bir kiracı bina yönetimiyle yan gider hesap dökümünü görüşüyor ve belgeleri, dağıtım anahtarını ve ihtirazi kaydı işaretliyor." },
+            { "language": "ru", "text": "Арендатор обсуждает с управляющей компанией расчёт дополнительных расходов и отмечает документы, ключ распределения и оговорку." },
+            { "language": "ckb", "text": "کرێچییەک لەگەڵ بەڕێوەبەرایەتی خانوو دەربارەی حیسابی تێچووی لاوەکی گفتوگۆ دەکات و بەڵگە، کلیلەی دابەشکردن و مەرج دیاری دەکات." },
+            { "language": "kmr", "text": "Kirêdarek bi rêveberiya avahiyê re hesabê lêçûnên alî nîqaş dike û belge, kilîta dabeşkirinê û şert nîşan dide." },
+            { "language": "pl", "text": "Najemca omawia z administracją budynku rozliczenie kosztów dodatkowych i zaznacza dowody, klucz podziału oraz zastrzeżenie." },
+            { "language": "ro", "text": "Un chiriaș discută cu administrația imobilului un decont al costurilor auxiliare și marchează documentele, cheia de repartizare și rezerva." },
+            { "language": "sq", "text": "Një qiramarrës diskuton me administrimin e ndërtesës faturimin e kostove shtesë dhe shënon provat, çelësin e shpërndarjes dhe rezervën." }
+          ],
+          "imagePrompt": "Clean educational illustration of a calm meeting in a German apartment management office. A tenant and property manager review a service-charge statement with neutral icons for receipts, allocation key, appointment, written note, and payment; no readable private data, no logos, accessible composition, diverse adults, non-photorealistic style.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-01-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 01 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 01",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-im-team-eine-prioritaet-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Im Team eine Priorität verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating a priority in the team" },
+        { "language": "fa", "text": "مذاکره درباره یک اولویت در تیم" },
+        { "language": "ar", "text": "التفاوض حول أولوية داخل الفريق" },
+        { "language": "tr", "text": "Ekip içinde bir önceliği müzakere etmek" },
+        { "language": "ru", "text": "Обсудить приоритет в команде" },
+        { "language": "ckb", "text": "دانوستان لەسەر پێشینەیەک لە تیمدا" },
+        { "language": "kmr", "text": "Li tîmê li ser pêşîniyekê danûstandin kirin" },
+        { "language": "pl", "text": "Negocjowanie priorytetu w zespole" },
+        { "language": "ro", "text": "Negocierea unei priorități în echipă" },
+        { "language": "sq", "text": "Negocimi i një prioriteti në ekip" }
+      ],
+      "description": "In einem Teammeeting musst du begründen, welche von zwei dringenden Aufgaben zuerst erledigt werden soll. Du vergleichst Fristen, Wirkung und verfügbare Ressourcen und schlägst einen realistischen Kompromiss vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a team meeting, you need to justify which of two urgent tasks should be done first. You compare deadlines, impact, and available resources and suggest a realistic compromise." },
+        { "language": "fa", "text": "در یک جلسه تیمی باید توضیح بدهی کدام‌یک از دو کار فوری باید اول انجام شود. مهلت‌ها، اثر کار و منابع موجود را مقایسه می‌کنی و یک سازش واقع‌بینانه پیشنهاد می‌دهی." },
+        { "language": "ar", "text": "في اجتماع فريق عليك أن تبرر أي مهمة من مهمتين عاجلتين يجب إنجازها أولاً. تقارن المواعيد النهائية والتأثير والموارد المتاحة وتقترح حلاً وسطاً واقعياً." },
+        { "language": "tr", "text": "Bir ekip toplantısında iki acil görevden hangisinin önce yapılması gerektiğini gerekçelendirmen gerekiyor. Teslim tarihlerini, etkiyi ve mevcut kaynakları karşılaştırıp gerçekçi bir uzlaşma öneriyorsun." },
+        { "language": "ru", "text": "На командной встрече тебе нужно обосновать, какую из двух срочных задач следует выполнить первой. Ты сравниваешь сроки, влияние и доступные ресурсы и предлагаешь реалистичный компромисс." },
+        { "language": "ckb", "text": "لە کۆبوونەوەی تیمدا دەبێت ڕوون بکەیت کێ لە دوو ئەرکی پەلەدار پێشتر تەواو بکرێت. کاتی کۆتایی، کاریگەری و سەرچاوە بەردەستەکان بەراورد دەکەیت و سازشێکی واقیعی پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Di civîneke tîmê de divê tu rave bikî ka ji du erkên lezgîn kîjan yek pêşî were qedandin. Tu demên dawî, bandor û çavkaniyên heyî berhev dikî û lihevhatineke rastîn pêşniyar dikî." },
+        { "language": "pl", "text": "Na spotkaniu zespołu musisz uzasadnić, które z dwóch pilnych zadań powinno zostać wykonane najpierw. Porównujesz terminy, wpływ i dostępne zasoby oraz proponujesz realistyczny kompromis." },
+        { "language": "ro", "text": "Într-o ședință de echipă trebuie să justifici care dintre două sarcini urgente ar trebui făcută prima. Compari termenele, impactul și resursele disponibile și propui un compromis realist." },
+        { "language": "sq", "text": "Në një mbledhje ekipi duhet të arsyetosh se cila nga dy detyrat urgjente duhet bërë e para. Krahason afatet, ndikimin dhe burimet në dispozicion dhe propozon një kompromis realist." }
+      ],
+      "learnerGoal": "Verhandle eine Priorität, ohne die andere Aufgabe abzuwerten: Begründe deine Einschätzung mit Frist, Wirkung und Aufwand und sichere einen konkreten nächsten Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate a priority without dismissing the other task: justify your assessment with deadline, impact, and effort, and secure a concrete next step." },
+        { "language": "fa", "text": "درباره یک اولویت مذاکره کن بدون اینکه کار دیگر را بی‌اهمیت نشان بدهی: ارزیابی خود را با مهلت، اثر و میزان تلاش لازم توضیح بده و یک قدم بعدی مشخص تعیین کن." },
+        { "language": "ar", "text": "تفاوض حول أولوية من دون التقليل من أهمية المهمة الأخرى: برر تقييمك بالموعد النهائي والتأثير والجهد المطلوب وثبّت خطوة تالية واضحة." },
+        { "language": "tr", "text": "Diğer görevi değersizleştirmeden bir öncelik üzerinde müzakere et: değerlendirmeni teslim tarihi, etki ve emekle gerekçelendir ve somut bir sonraki adımı netleştir." },
+        { "language": "ru", "text": "Обсуди приоритет, не обесценивая другую задачу: обоснуй оценку сроком, влиянием и усилиями и зафиксируй конкретный следующий шаг." },
+        { "language": "ckb", "text": "لەسەر پێشینەیەک دانوستان بکە بەبێ ئەوەی ئەرکی تر کەم‌بایەخ بکەیت: هەڵسەنگاندنەکەت بە کاتی کۆتایی، کاریگەری و هەوڵی پێویست ڕوون بکە و هەنگاوێکی داهاتووی دیاریکراو مسۆگەر بکە." },
+        { "language": "kmr", "text": "Li ser pêşîniyekê danûstandin bike bêyî ku erkê din kêm nirx bidî: nirxandina xwe bi dema dawî, bandor û xebata pêwîst re rave bike û gaveke paşîn a zelal misoger bike." },
+        { "language": "pl", "text": "Negocjuj priorytet, nie umniejszając drugiego zadania: uzasadnij ocenę terminem, wpływem i nakładem pracy oraz ustal konkretny następny krok." },
+        { "language": "ro", "text": "Negociază o prioritate fără să minimalizezi cealaltă sarcină: justifică evaluarea prin termen, impact și efort și stabilește un pas următor concret." },
+        { "language": "sq", "text": "Negocio një prioritet pa e nënvlerësuar detyrën tjetër: arsyeto vlerësimin me afatin, ndikimin dhe përpjekjen dhe siguro një hap të ardhshëm konkret." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3010,
+      "roles": [
+        {
+          "roleKey": "colleague",
+          "displayName": "Kollegin",
+          "translations": [
+            { "language": "en", "text": "Colleague" },
+            { "language": "fa", "text": "همکار" },
+            { "language": "ar", "text": "زميلة" },
+            { "language": "tr", "text": "İş arkadaşı" },
+            { "language": "ru", "text": "Коллега" },
+            { "language": "ckb", "text": "هاوکار" },
+            { "language": "kmr", "text": "Hevkar" },
+            { "language": "pl", "text": "Koleżanka z pracy" },
+            { "language": "ro", "text": "Colega" },
+            { "language": "sq", "text": "Kolege" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلّم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrker" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursant" },
+            { "language": "sq", "text": "Nxënës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "colleague",
+          "baseText": "Wir haben diese Woche zwei dringende Aufgaben: den Kundenbericht und die interne Dokumentation. Was sollten wir aus deiner Sicht zuerst priorisieren?",
+          "translations": [
+            { "language": "en", "text": "This week we have two urgent tasks: the customer report and the internal documentation. From your point of view, what should we prioritize first?" },
+            { "language": "fa", "text": "این هفته دو کار فوری داریم: گزارش مشتری و مستندسازی داخلی. از نظر تو اول کدام را باید در اولویت بگذاریم؟" },
+            { "language": "ar", "text": "لدينا هذا الأسبوع مهمتان عاجلتان: تقرير العميل والتوثيق الداخلي. من وجهة نظرك، ماذا يجب أن نعطيه الأولوية أولاً؟" },
+            { "language": "tr", "text": "Bu hafta iki acil görevimiz var: müşteri raporu ve iç dokümantasyon. Sence önce hangisini önceliklendirmeliyiz?" },
+            { "language": "ru", "text": "На этой неделе у нас две срочные задачи: отчёт для клиента и внутренняя документация. Что, по-твоему, следует поставить в приоритет сначала?" },
+            { "language": "ckb", "text": "ئەم هەفتەیە دوو ئەرکی پەلەدارمان هەیە: ڕاپۆرتی کڕیار و بەڵگەنامەی ناوخۆ. بە بۆچوونی تۆ، سەرەتا کامەیان بکەینە پێشینە؟" },
+            { "language": "kmr", "text": "Vê hefteyê du erkên me yên lezgîn hene: rapora xerîdar û belgekirina hundirîn. Li gorî te, divê em pêşî kîjanê bikin pêşînî?" },
+            { "language": "pl", "text": "W tym tygodniu mamy dwa pilne zadania: raport dla klienta i dokumentację wewnętrzną. Co twoim zdaniem powinniśmy najpierw potraktować priorytetowo?" },
+            { "language": "ro", "text": "Săptămâna aceasta avem două sarcini urgente: raportul pentru client și documentația internă. Din punctul tău de vedere, ce ar trebui să prioritizăm mai întâi?" },
+            { "language": "sq", "text": "Këtë javë kemi dy detyra urgjente: raportin për klientin dhe dokumentacionin e brendshëm. Sipas teje, cilën duhet ta vendosim të parën në prioritet?" }
+          ],
+          "function": "open-priority-question"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde zuerst den Kundenbericht priorisieren, weil die Rückmeldung bis Donnerstag raus muss. Die interne Dokumentation sollten wir parallel vorbereiten, aber heute nicht vollständig abschließen.",
+          "translations": [
+            { "language": "en", "text": "I would prioritize the customer report first because the response has to go out by Thursday. We should prepare the internal documentation in parallel, but not finish it completely today." },
+            { "language": "fa", "text": "من اول گزارش مشتری را در اولویت می‌گذارم، چون پاسخ باید تا پنجشنبه ارسال شود. مستندسازی داخلی را باید هم‌زمان آماده کنیم، اما لازم نیست امروز کامل تمامش کنیم." },
+            { "language": "ar", "text": "أود أن أعطي الأولوية أولاً لتقرير العميل، لأن الرد يجب أن يخرج حتى يوم الخميس. ينبغي أن نجهز التوثيق الداخلي بالتوازي، لكن لا نحتاج إلى إنهائه بالكامل اليوم." },
+            { "language": "tr", "text": "Önce müşteri raporunu önceliklendirirdim, çünkü geri bildirimin perşembeye kadar çıkması gerekiyor. İç dokümantasyonu paralel hazırlamalıyız, ama bugün tamamen bitirmemiz şart değil." },
+            { "language": "ru", "text": "Я бы сначала поставил в приоритет отчёт для клиента, потому что ответ нужно отправить до четверга. Внутреннюю документацию стоит готовить параллельно, но сегодня не обязательно завершать полностью." },
+            { "language": "ckb", "text": "من سەرەتا ڕاپۆرتی کڕیار دەکەمە پێشینە، چونکە وەڵام دەبێت تا پێنجشەممە بنێردرێت. بەڵگەنامەی ناوخۆ دەبێت هاوکات ئامادە بکەین، بەڵام پێویست ناکات ئەمڕۆ بە تەواوی تەواوی بکەین." },
+            { "language": "kmr", "text": "Ez ê pêşî rapora xerîdar bikim pêşînî, ji ber ku divê bersiv heta pêncşemê were şandin. Divê em belgekirina hundirîn jî hevdem amade bikin, lê ne pêwîst e îro bi tevahî biqedînin." },
+            { "language": "pl", "text": "Najpierw potraktowałbym priorytetowo raport dla klienta, bo odpowiedź musi wyjść do czwartku. Dokumentację wewnętrzną powinniśmy przygotowywać równolegle, ale nie musimy jej dziś całkowicie kończyć." },
+            { "language": "ro", "text": "Aș prioritiza mai întâi raportul pentru client, deoarece răspunsul trebuie trimis până joi. Documentația internă ar trebui pregătită în paralel, dar nu trebuie finalizată complet astăzi." },
+            { "language": "sq", "text": "Unë do ta vendosja së pari në prioritet raportin për klientin, sepse përgjigjja duhet të dërgohet deri të enjten. Dokumentacionin e brendshëm duhet ta përgatitim paralelisht, por jo ta përfundojmë plotësisht sot." }
+          ],
+          "function": "state-priority-with-reason",
+          "expectedLearnerAction": "State a priority and justify it with deadline and scope."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Ich verstehe den Punkt. Gleichzeitig brauchen wir die Dokumentation für die Übergabe, sonst entsteht nächste Woche wieder Druck.",
+          "translations": [
+            { "language": "en", "text": "I understand the point. At the same time, we need the documentation for the handover; otherwise, pressure will build up again next week." },
+            { "language": "fa", "text": "نکته‌ات را می‌فهمم. هم‌زمان، برای تحویل کار به مستندسازی نیاز داریم؛ وگرنه هفته آینده دوباره فشار ایجاد می‌شود." },
+            { "language": "ar", "text": "أفهم هذه النقطة. في الوقت نفسه نحتاج إلى التوثيق من أجل التسليم، وإلا سيظهر ضغط جديد الأسبوع المقبل." },
+            { "language": "tr", "text": "Bu noktayı anlıyorum. Aynı zamanda devir teslim için dokümantasyona ihtiyacımız var; yoksa gelecek hafta yine baskı oluşacak." },
+            { "language": "ru", "text": "Я понимаю этот аргумент. В то же время документация нужна для передачи дел, иначе на следующей неделе снова возникнет давление." },
+            { "language": "ckb", "text": "ئەم خاڵە تێدەگەم. لە هەمان کاتدا بۆ گواستنەوەی کار پێویستمان بە بەڵگەنامە هەیە؛ ئەگەر نا، هەفتەی داهاتوو دووبارە فشار دروست دەبێت." },
+            { "language": "kmr", "text": "Ez vê xalê fam dikim. Di heman demê de ji bo radestkirinê belgekirinê divê, wekî din hefteya bê dîsa zext çêdibe." },
+            { "language": "pl", "text": "Rozumiem ten argument. Jednocześnie potrzebujemy dokumentacji do przekazania, inaczej w przyszłym tygodniu znów pojawi się presja." },
+            { "language": "ro", "text": "Înțeleg acest punct. În același timp avem nevoie de documentație pentru predare, altfel săptămâna viitoare va apărea din nou presiune." },
+            { "language": "sq", "text": "E kuptoj këtë pikë. Në të njëjtën kohë na duhet dokumentacioni për dorëzimin e punës; përndryshe javën tjetër do të krijohet sërish presion." }
+          ],
+          "function": "raise-counterpriority"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das stimmt. Deshalb schlage ich vor, dass wir heute die kritischen Punkte der Dokumentation sichern und morgen den Bericht finalisieren.",
+          "translations": [
+            { "language": "en", "text": "That is true. That is why I suggest we secure the critical points of the documentation today and finalize the report tomorrow." },
+            { "language": "fa", "text": "درست است. برای همین پیشنهاد می‌کنم امروز نکات حساس مستندسازی را ثبت کنیم و فردا گزارش را نهایی کنیم." },
+            { "language": "ar", "text": "هذا صحيح. لذلك أقترح أن نثبت اليوم النقاط الحساسة في التوثيق وأن ننجز التقرير نهائياً غداً." },
+            { "language": "tr", "text": "Bu doğru. Bu yüzden bugün dokümantasyonun kritik noktalarını güvenceye almayı ve raporu yarın son haline getirmeyi öneriyorum." },
+            { "language": "ru", "text": "Это верно. Поэтому я предлагаю сегодня зафиксировать критические пункты документации, а завтра завершить отчёт." },
+            { "language": "ckb", "text": "ئەوە ڕاستە. بۆیە پێشنیار دەکەم ئەمڕۆ خاڵە هەستیارەکانی بەڵگەنامە تۆمار بکەین و سبەی ڕاپۆرتەکە کۆتایی پێبهێنین." },
+            { "language": "kmr", "text": "Ev rast e. Ji ber vê yekê ez pêşniyar dikim ku em îro xalên girîng ên belgekirinê misoger bikin û sibê raportê biqedînin." },
+            { "language": "pl", "text": "To prawda. Dlatego proponuję, żebyśmy dziś zabezpieczyli krytyczne punkty dokumentacji, a jutro sfinalizowali raport." },
+            { "language": "ro", "text": "Așa este. De aceea propun să stabilim astăzi punctele critice ale documentației și mâine să finalizăm raportul." },
+            { "language": "sq", "text": "Kjo është e vërtetë. Prandaj propozoj që sot të sigurojmë pikat kritike të dokumentacionit dhe nesër ta finalizojmë raportin." }
+          ],
+          "function": "acknowledge-and-compromise",
+          "expectedLearnerAction": "Acknowledge the counterargument and propose a realistic split."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Wenn wir es so aufteilen, müssen die Aufgaben sehr klar sein. Wer übernimmt welchen Teil?",
+          "translations": [
+            { "language": "en", "text": "If we split it that way, the tasks have to be very clear. Who takes which part?" },
+            { "language": "fa", "text": "اگر این‌طور تقسیم کنیم، وظیفه‌ها باید خیلی روشن باشند. چه کسی کدام بخش را بر عهده می‌گیرد؟" },
+            { "language": "ar", "text": "إذا قسمنا الأمر بهذا الشكل، فيجب أن تكون المهام واضحة جداً. من يتولى أي جزء؟" },
+            { "language": "tr", "text": "Bunu böyle bölersek görevlerin çok net olması gerekiyor. Kim hangi kısmı üstleniyor?" },
+            { "language": "ru", "text": "Если мы так разделим работу, задачи должны быть очень чёткими. Кто берёт какую часть?" },
+            { "language": "ckb", "text": "ئەگەر بەو شێوەیە دابەشی بکەین، ئەرکەکان دەبێت زۆر ڕوون بن. کێ کام بەش وەردەگرێت؟" },
+            { "language": "kmr", "text": "Ger em wisa parve bikin, divê erk gelek zelal bin. Kî kîjan beşê digire ser xwe?" },
+            { "language": "pl", "text": "Jeśli tak to podzielimy, zadania muszą być bardzo jasne. Kto przejmuje którą część?" },
+            { "language": "ro", "text": "Dacă împărțim lucrurile așa, sarcinile trebuie să fie foarte clare. Cine preia ce parte?" },
+            { "language": "sq", "text": "Nëse e ndajmë kështu, detyrat duhet të jenë shumë të qarta. Kush e merr cilën pjesë?" }
+          ],
+          "function": "ask-for-task-split"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich kann den Bericht strukturieren und die offenen Zahlen markieren. Du könntest die Dokumentation auf die wichtigsten Risiken prüfen, damit wir nichts Entscheidendes übersehen.",
+          "translations": [
+            { "language": "en", "text": "I can structure the report and mark the missing figures. You could review the documentation for the most important risks so that we do not overlook anything critical." },
+            { "language": "fa", "text": "من می‌توانم گزارش را ساختاربندی کنم و عددهای ناقص را علامت بزنم. تو می‌توانی مستندسازی را از نظر مهم‌ترین ریسک‌ها بررسی کنی تا نکته مهمی را از قلم نیندازیم." },
+            { "language": "ar", "text": "يمكنني أن أنظم التقرير وأضع علامة على الأرقام الناقصة. يمكنك أنت مراجعة التوثيق من ناحية أهم المخاطر حتى لا نغفل شيئاً حاسماً." },
+            { "language": "tr", "text": "Ben raporu yapılandırabilir ve eksik sayıları işaretleyebilirim. Sen dokümantasyonu en önemli riskler açısından kontrol edebilirsin ki kritik bir şeyi gözden kaçırmayalım." },
+            { "language": "ru", "text": "Я могу структурировать отчёт и отметить недостающие цифры. Ты могла бы проверить документацию на самые важные риски, чтобы мы не упустили ничего существенного." },
+            { "language": "ckb", "text": "من دەتوانم ڕاپۆرتەکە ڕێکبخەم و ژمارە نەماوەکان نیشان بکەم. تۆ دەتوانیت بەڵگەنامەکە لە ڕووی گرنگترین مەترسییەکانەوە بپشکنیت، بۆ ئەوەی هیچ شتێکی گرنگ لەبیر نەکەین." },
+            { "language": "kmr", "text": "Ez dikarim raportê bi rêz bikim û hejmarên kêm nîşan bikim. Tu dikarî belgekirinê ji bo girîngtirîn xetereyan kontrol bikî, da ku em tiştekî girîng ji bîr nekin." },
+            { "language": "pl", "text": "Mogę uporządkować raport i zaznaczyć brakujące liczby. Ty mogłabyś sprawdzić dokumentację pod kątem najważniejszych ryzyk, żebyśmy nie przeoczyli niczego kluczowego." },
+            { "language": "ro", "text": "Eu pot structura raportul și pot marca cifrele lipsă. Tu ai putea verifica documentația în privința celor mai importante riscuri, ca să nu omitem ceva esențial." },
+            { "language": "sq", "text": "Unë mund ta strukturoj raportin dhe të shënoj shifrat që mungojnë. Ti mund ta kontrollosh dokumentacionin për rreziqet më të rëndësishme, që të mos na shpëtojë diçka vendimtare." }
+          ],
+          "function": "assign-tasks-with-rationale",
+          "expectedLearnerAction": "Assign tasks and explain why this split reduces risk."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Die Leitung erwartet aber morgen ein klares Ergebnis. Ein Zwischenstand klingt vielleicht zu unverbindlich.",
+          "translations": [
+            { "language": "en", "text": "But management expects a clear result tomorrow. An interim status might sound too noncommittal." },
+            { "language": "fa", "text": "اما مدیریت فردا یک نتیجه روشن انتظار دارد. گزارش موقت شاید بیش از حد غیرقطعی به نظر برسد." },
+            { "language": "ar", "text": "لكن الإدارة تتوقع نتيجة واضحة غداً. قد يبدو عرض حالة مؤقتة غير ملزم بما يكفي." },
+            { "language": "tr", "text": "Ama yönetim yarın net bir sonuç bekliyor. Ara durum bilgisi belki fazla bağlayıcı olmayan bir şey gibi duyulabilir." },
+            { "language": "ru", "text": "Но руководство завтра ожидает чёткий результат. Промежуточный статус может звучать слишком неопределённо." },
+            { "language": "ckb", "text": "بەڵام بەڕێوەبەرایەتی سبەی ئەنجامێکی ڕوون چاوەڕێ دەکات. دۆخی نێوانەوە ڕەنگە زۆر نابەندەوار دیار بێت." },
+            { "language": "kmr", "text": "Lê rêveberî sibê encameke zelal hêvî dike. Rewşa navberî dibe ku pir ne-girêdayî xuya bike." },
+            { "language": "pl", "text": "Ale kierownictwo oczekuje jutro jasnego wyniku. Stan pośredni może zabrzmieć zbyt mało wiążąco." },
+            { "language": "ro", "text": "Dar conducerea așteaptă mâine un rezultat clar. Un stadiu intermediar ar putea suna prea neangajant." },
+            { "language": "sq", "text": "Por drejtuesit presin nesër një rezultat të qartë. Një status i ndërmjetëm mund të tingëllojë shumë pak i vendosur." }
+          ],
+          "function": "challenge-compromise"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir transparent formulieren: Der Bericht ist bis Donnerstag lieferbar, die Dokumentation bekommt morgen einen belastbaren Zwischenstand mit offenen Punkten.",
+          "translations": [
+            { "language": "en", "text": "Then we should phrase it transparently: the report can be delivered by Thursday, and the documentation will have a reliable interim status with open points tomorrow." },
+            { "language": "fa", "text": "پس باید شفاف بیان کنیم: گزارش تا پنجشنبه قابل تحویل است و مستندسازی فردا یک وضعیت موقت قابل اتکا همراه با نکات باز خواهد داشت." },
+            { "language": "ar", "text": "إذن ينبغي أن نصوغ الأمر بشفافية: التقرير قابل للتسليم حتى الخميس، وستحصل الوثائق غداً على حالة مؤقتة موثوقة مع النقاط المفتوحة." },
+            { "language": "tr", "text": "O zaman bunu şeffaf ifade etmeliyiz: rapor perşembeye kadar teslim edilebilir, dokümantasyon ise yarın açık noktalarla birlikte güvenilir bir ara durum alır." },
+            { "language": "ru", "text": "Тогда нужно сформулировать прозрачно: отчёт можно предоставить к четвергу, а по документации завтра будет надёжный промежуточный статус с открытыми пунктами." },
+            { "language": "ckb", "text": "ئەوا دەبێت بە شەفافی بیڵێین: ڕاپۆرتەکە تا پێنجشەممە دەتوانرێت بدەین، بەڵگەنامەکەش سبەی دۆخێکی نێوانەی پشتپێبەستوو لەگەڵ خاڵە کراوەکان دەبێت." },
+            { "language": "kmr", "text": "Wê demê divê em bi şefafî bibêjin: raport heta pêncşemê dikare were radestkirin, belgekirin jî sibê bi xalên vekirî re rewşeke navberî ya bawerbar digire." },
+            { "language": "pl", "text": "W takim razie powinniśmy sformułować to przejrzyście: raport będzie gotowy do czwartku, a dokumentacja jutro otrzyma solidny stan pośredni z otwartymi punktami." },
+            { "language": "ro", "text": "Atunci ar trebui să formulăm transparent: raportul poate fi livrat până joi, iar documentația va avea mâine un stadiu intermediar solid, cu punctele deschise." },
+            { "language": "sq", "text": "Atëherë duhet ta formulojmë qartë: raporti mund të dorëzohet deri të enjten, ndërsa dokumentacioni nesër do të ketë një status të ndërmjetëm të besueshëm me pikat e hapura." }
+          ],
+          "function": "set-realistic-expectation",
+          "expectedLearnerAction": "Turn the compromise into a clear, transparent status statement."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Was machen wir, wenn der Kunde heute noch zusätzliche Fragen schickt?",
+          "translations": [
+            { "language": "en", "text": "What do we do if the customer sends additional questions today?" },
+            { "language": "fa", "text": "اگر مشتری امروز باز هم سؤال‌های اضافی بفرستد، چه کار می‌کنیم؟" },
+            { "language": "ar", "text": "ماذا نفعل إذا أرسل العميل اليوم أسئلة إضافية؟" },
+            { "language": "tr", "text": "Müşteri bugün ek sorular gönderirse ne yaparız?" },
+            { "language": "ru", "text": "Что мы будем делать, если клиент сегодня пришлёт дополнительные вопросы?" },
+            { "language": "ckb", "text": "ئەگەر کڕیار ئەمڕۆ پرسیاری زیادە بنێرێت، چی دەکەین؟" },
+            { "language": "kmr", "text": "Ger xerîdar îro pirsên zêde bişîne, em ê çi bikin?" },
+            { "language": "pl", "text": "Co zrobimy, jeśli klient jeszcze dziś wyśle dodatkowe pytania?" },
+            { "language": "ro", "text": "Ce facem dacă clientul trimite astăzi întrebări suplimentare?" },
+            { "language": "sq", "text": "Çfarë bëjmë nëse klienti dërgon sot pyetje shtesë?" }
+          ],
+          "function": "raise-contingency"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann prüfen wir zuerst, ob die Fragen die Entscheidung beeinflussen. Wenn ja, verschieben wir einen Teil der Dokumentation; wenn nicht, beantworten wir sie nach dem Bericht.",
+          "translations": [
+            { "language": "en", "text": "Then we first check whether the questions affect the decision. If they do, we postpone part of the documentation; if not, we answer them after the report." },
+            { "language": "fa", "text": "آن‌وقت اول بررسی می‌کنیم آیا سؤال‌ها روی تصمیم اثر می‌گذارند یا نه. اگر بله، بخشی از مستندسازی را عقب می‌اندازیم؛ اگر نه، بعد از گزارش به آن‌ها پاسخ می‌دهیم." },
+            { "language": "ar", "text": "عندها نتحقق أولاً مما إذا كانت الأسئلة تؤثر في القرار. إذا كان الأمر كذلك، نؤجل جزءاً من التوثيق؛ وإذا لم يكن كذلك، نجيب عنها بعد التقرير." },
+            { "language": "tr", "text": "O zaman önce soruların kararı etkileyip etkilemediğini kontrol ederiz. Etkiliyorsa dokümantasyonun bir kısmını erteleriz; etkilemiyorsa rapordan sonra cevaplarız." },
+            { "language": "ru", "text": "Тогда сначала проверим, влияют ли вопросы на решение. Если да, отложим часть документации; если нет, ответим на них после отчёта." },
+            { "language": "ckb", "text": "ئەوا سەرەتا دەبینین ئەو پرسیارانە کاریگەرییان لەسەر بڕیار هەیە یان نا. ئەگەر هەبێت، بەشێک لە بەڵگەنامە دوا دەخەین؛ ئەگەر نا، دوای ڕاپۆرتەکە وەڵامیان دەدەینەوە." },
+            { "language": "kmr", "text": "Wê demê em pêşî kontrol dikin ka pirs bandorê li biryarê dikin an na. Ger erê, em beşek ji belgekirinê paş dixin; ger na, piştî raportê bersiv didin." },
+            { "language": "pl", "text": "Wtedy najpierw sprawdzimy, czy pytania wpływają na decyzję. Jeśli tak, przesuniemy część dokumentacji; jeśli nie, odpowiemy na nie po raporcie." },
+            { "language": "ro", "text": "Atunci verificăm mai întâi dacă întrebările influențează decizia. Dacă da, amânăm o parte din documentație; dacă nu, răspundem la ele după raport." },
+            { "language": "sq", "text": "Atëherë kontrollojmë së pari nëse pyetjet ndikojnë në vendim. Nëse po, shtyjmë një pjesë të dokumentacionit; nëse jo, u përgjigjemi pas raportit." }
+          ],
+          "function": "define-contingency-rule",
+          "expectedLearnerAction": "Set a condition-based rule for new customer questions."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Gut. Kannst du unsere Priorität und die nächsten Schritte noch einmal knapp zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "Good. Can you briefly summarize our priority and the next steps once more?" },
+            { "language": "fa", "text": "خوب. می‌توانی اولویت و قدم‌های بعدی‌مان را یک‌بار دیگر کوتاه جمع‌بندی کنی؟" },
+            { "language": "ar", "text": "جيد. هل يمكنك أن تلخص مرة أخرى بإيجاز أولويتنا والخطوات التالية؟" },
+            { "language": "tr", "text": "Güzel. Önceliğimizi ve sonraki adımları bir kez daha kısaca özetleyebilir misin?" },
+            { "language": "ru", "text": "Хорошо. Можешь ещё раз кратко подытожить наш приоритет и следующие шаги?" },
+            { "language": "ckb", "text": "باشە. دەتوانیت پێشینە و هەنگاوە داهاتووەکانمان جارێکی تر بە کورتی پوختە بکەیتەوە؟" },
+            { "language": "kmr", "text": "Baş e. Tu dikarî pêşîniya me û gavên paşîn carekê din bi kurtî kurt bikî?" },
+            { "language": "pl", "text": "Dobrze. Czy możesz jeszcze raz krótko podsumować nasz priorytet i następne kroki?" },
+            { "language": "ro", "text": "Bine. Poți să rezumi încă o dată pe scurt prioritatea noastră și pașii următori?" },
+            { "language": "sq", "text": "Mirë. A mund ta përmbledhësh edhe një herë shkurt prioritetin tonë dhe hapat e ardhshëm?" }
+          ],
+          "function": "request-summary"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Wir priorisieren den Kundenbericht, weil er eine externe Frist hat. Gleichzeitig sichern wir die wichtigsten Dokumentationspunkte, verteilen die Aufgaben klar und melden der Leitung die offenen Risiken.",
+          "translations": [
+            { "language": "en", "text": "We prioritize the customer report because it has an external deadline. At the same time, we secure the most important documentation points, divide the tasks clearly, and report the open risks to management." },
+            { "language": "fa", "text": "ما گزارش مشتری را در اولویت می‌گذاریم، چون مهلت بیرونی دارد. هم‌زمان مهم‌ترین نکات مستندسازی را ثبت می‌کنیم، وظیفه‌ها را روشن تقسیم می‌کنیم و ریسک‌های باز را به مدیریت گزارش می‌دهیم." },
+            { "language": "ar", "text": "نعطي الأولوية لتقرير العميل لأنه مرتبط بموعد خارجي. في الوقت نفسه نثبت أهم نقاط التوثيق، نقسم المهام بوضوح، ونبلغ الإدارة بالمخاطر المفتوحة." },
+            { "language": "tr", "text": "Müşteri raporunu önceliklendiriyoruz, çünkü dış bir teslim tarihi var. Aynı zamanda en önemli dokümantasyon noktalarını güvenceye alıyor, görevleri net bölüyor ve açık riskleri yönetime bildiriyoruz." },
+            { "language": "ru", "text": "Мы ставим в приоритет отчёт для клиента, потому что у него внешний срок. Одновременно фиксируем самые важные пункты документации, чётко распределяем задачи и сообщаем руководству об открытых рисках." },
+            { "language": "ckb", "text": "ئێمە ڕاپۆرتی کڕیار دەکەینە پێشینە، چونکە کاتی کۆتایی دەرەکی هەیە. لە هەمان کاتدا گرنگترین خاڵەکانی بەڵگەنامە مسۆگەر دەکەین، ئەرکەکان بە ڕوونی دابەش دەکەین و مەترسییە کراوەکان بە بەڕێوەبەرایەتی ڕادەگەیەنین." },
+            { "language": "kmr", "text": "Em rapora xerîdar dikin pêşînî, ji ber ku dema wê ya dawî ya derveyî heye. Di heman demê de em xalên herî girîng ên belgekirinê misoger dikin, erkan bi zelalî parve dikin û xetereyên vekirî ji rêveberiyê re radigihînin." },
+            { "language": "pl", "text": "Priorytetem jest raport dla klienta, ponieważ ma zewnętrzny termin. Jednocześnie zabezpieczamy najważniejsze punkty dokumentacji, jasno dzielimy zadania i zgłaszamy kierownictwu otwarte ryzyka." },
+            { "language": "ro", "text": "Prioritizăm raportul pentru client, deoarece are un termen extern. În același timp stabilim cele mai importante puncte ale documentației, împărțim clar sarcinile și raportăm conducerii riscurile deschise." },
+            { "language": "sq", "text": "Ne e vendosim raportin për klientin në prioritet, sepse ka një afat të jashtëm. Në të njëjtën kohë sigurojmë pikat më të rëndësishme të dokumentacionit, ndajmë qartë detyrat dhe i raportojmë drejtimit rreziqet e hapura." }
+          ],
+          "function": "summarize-agreement",
+          "expectedLearnerAction": "Summarize priority, reason, task split, and risk communication."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "priority-with-deadline",
+              "text": "Ich würde zuerst den Kundenbericht priorisieren, weil die Rückmeldung bis Donnerstag raus muss. Die Dokumentation bereiten wir parallel vor.",
+              "translations": [
+                { "language": "en", "text": "I would prioritize the customer report first because the response has to go out by Thursday. We prepare the documentation in parallel." },
+                { "language": "fa", "text": "من اول گزارش مشتری را در اولویت می‌گذارم، چون پاسخ باید تا پنجشنبه ارسال شود. مستندسازی را هم‌زمان آماده می‌کنیم." },
+                { "language": "ar", "text": "أود أن أعطي الأولوية أولاً لتقرير العميل، لأن الرد يجب أن يخرج حتى الخميس. نجهز التوثيق بالتوازي." },
+                { "language": "tr", "text": "Önce müşteri raporunu önceliklendirirdim, çünkü geri bildirimin perşembeye kadar çıkması gerekiyor. Dokümantasyonu paralel hazırlarız." },
+                { "language": "ru", "text": "Я бы сначала поставил в приоритет отчёт для клиента, потому что ответ нужно отправить до четверга. Документацию готовим параллельно." },
+                { "language": "ckb", "text": "من سەرەتا ڕاپۆرتی کڕیار دەکەمە پێشینە، چونکە وەڵام دەبێت تا پێنجشەممە بنێردرێت. بەڵگەنامە هاوکات ئامادە دەکەین." },
+                { "language": "kmr", "text": "Ez ê pêşî rapora xerîdar bikim pêşînî, ji ber ku divê bersiv heta pêncşemê were şandin. Em belgekirinê hevdem amade dikin." },
+                { "language": "pl", "text": "Najpierw potraktowałbym priorytetowo raport dla klienta, bo odpowiedź musi wyjść do czwartku. Dokumentację przygotowujemy równolegle." },
+                { "language": "ro", "text": "Aș prioritiza mai întâi raportul pentru client, deoarece răspunsul trebuie trimis până joi. Pregătim documentația în paralel." },
+                { "language": "sq", "text": "Unë do ta vendosja së pari në prioritet raportin për klientin, sepse përgjigjja duhet të dërgohet deri të enjten. Dokumentacionin e përgatitim paralelisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this answer names the priority and gives a deadline-based reason while keeping the second task in view.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer names the priority and gives a deadline-based reason while keeping the second task in view." },
+                { "language": "fa", "text": "خوب است: این پاسخ اولویت را نام می‌برد و دلیل مبتنی بر مهلت می‌دهد، بدون اینکه کار دوم را نادیده بگیرد." },
+                { "language": "ar", "text": "جيد: تسمي هذه الإجابة الأولوية وتعطي سبباً مرتبطاً بالموعد النهائي مع إبقاء المهمة الثانية في الحسبان." },
+                { "language": "tr", "text": "İyi: bu cevap önceliği adlandırıyor ve teslim tarihine dayalı bir gerekçe veriyor, aynı zamanda ikinci görevi de göz önünde tutuyor." },
+                { "language": "ru", "text": "Хорошо: ответ называет приоритет и даёт причину, связанную со сроком, при этом не забывает вторую задачу." },
+                { "language": "ckb", "text": "باشە: ئەم وەڵامە پێشینە ناو دەبات و هۆکارێکی پەیوەست بە کاتی کۆتایی دەدات، لە هەمان کاتدا ئەرکی دووەمیش لەبەرچاو دەگرێت." },
+                { "language": "kmr", "text": "Baş e: ev bersiv pêşînî nav dike û sedemeke girêdayî dema dawî dide, di heman demê de erkê duyem jî ji bîr nake." },
+                { "language": "pl", "text": "Dobrze: ta odpowiedź wskazuje priorytet i podaje powód związany z terminem, nie tracąc z oczu drugiego zadania." },
+                { "language": "ro", "text": "Bine: răspunsul numește prioritatea și oferă un motiv legat de termen, păstrând în vedere și a doua sarcină." },
+                { "language": "sq", "text": "Mirë: kjo përgjigje e emërton prioritetin dhe jep një arsye të lidhur me afatin, duke mbajtur parasysh edhe detyrën e dytë." }
+              ],
+              "explanationKey": "deadline-based-priority"
+            },
+            {
+              "id": "too-general-priority",
+              "text": "Ich finde den Kundenbericht wichtiger, weil er dringend ist.",
+              "translations": [
+                { "language": "en", "text": "I think the customer report is more important because it is urgent." },
+                { "language": "fa", "text": "به نظر من گزارش مشتری مهم‌تر است، چون فوری است." },
+                { "language": "ar", "text": "أعتقد أن تقرير العميل أهم لأنه عاجل." },
+                { "language": "tr", "text": "Bence müşteri raporu daha önemli, çünkü acil." },
+                { "language": "ru", "text": "Я думаю, отчёт для клиента важнее, потому что он срочный." },
+                { "language": "ckb", "text": "بە بۆچوونی من ڕاپۆرتی کڕیار گرنگترە، چونکە پەلەدارە." },
+                { "language": "kmr", "text": "Li gorî min rapora xerîdar girîngtir e, ji ber ku lezgîn e." },
+                { "language": "pl", "text": "Uważam, że raport dla klienta jest ważniejszy, bo jest pilny." },
+                { "language": "ro", "text": "Cred că raportul pentru client este mai important, pentru că este urgent." },
+                { "language": "sq", "text": "Mendoj se raporti për klientin është më i rëndësishëm, sepse është urgjent." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but too vague for B2: it lacks the concrete deadline and does not explain what happens to the documentation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague for B2: it lacks the concrete deadline and does not explain what happens to the documentation." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما برای این سطح خیلی مبهم است: مهلت مشخص ندارد و توضیح نمی‌دهد با مستندسازی چه می‌شود." },
+                { "language": "ar", "text": "يبدو مقبولاً، لكنه عام جداً لهذا المستوى: لا يذكر الموعد المحدد ولا يوضح ماذا سيحدث للتوثيق." },
+                { "language": "tr", "text": "Makul görünüyor ama B2 için fazla belirsiz: somut teslim tarihini vermiyor ve dokümantasyona ne olacağını açıklamıyor." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слишком расплывчато для этого уровня: нет конкретного срока и не объяснено, что будет с документацией." },
+                { "language": "ckb", "text": "ڕەنگە گونجاو دیار بێت، بەڵام بۆ ئەم ئاستە زۆر گشتییە: کاتی کۆتایی دیار ناکات و ڕوون ناکات چی بە بەڵگەنامە دەکرێت." },
+                { "language": "kmr", "text": "Wisa xuya dike ku maqûl e, lê ji bo B2 pir giştî ye: dema dawî ya konkret tune ye û nayê gotin dê belgekirin çi bibe." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ogólne na B2: brakuje konkretnego terminu i informacji, co stanie się z dokumentacją." },
+                { "language": "ro", "text": "Pare plauzibil, dar este prea vag pentru B2: lipsește termenul concret și nu explică ce se întâmplă cu documentația." },
+                { "language": "sq", "text": "Duket e arsyeshme, por është shumë e përgjithshme për B2: mungon afati konkret dhe nuk shpjegohet çfarë ndodh me dokumentacionin." }
+              ],
+              "explanationKey": "too-vague-for-b2"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "clear-split-with-risk",
+              "text": "Ich strukturiere den Bericht und markiere offene Zahlen. Du prüfst die Dokumentation auf die wichtigsten Risiken.",
+              "translations": [
+                { "language": "en", "text": "I structure the report and mark missing figures. You review the documentation for the most important risks." },
+                { "language": "fa", "text": "من گزارش را ساختاربندی می‌کنم و عددهای ناقص را علامت می‌زنم. تو مستندسازی را از نظر مهم‌ترین ریسک‌ها بررسی می‌کنی." },
+                { "language": "ar", "text": "أنا أنظم التقرير وأضع علامة على الأرقام الناقصة. أنت تراجعين التوثيق من ناحية أهم المخاطر." },
+                { "language": "tr", "text": "Ben raporu yapılandırıp eksik sayıları işaretliyorum. Sen dokümantasyonu en önemli riskler açısından kontrol ediyorsun." },
+                { "language": "ru", "text": "Я структурирую отчёт и отмечаю недостающие цифры. Ты проверяешь документацию на самые важные риски." },
+                { "language": "ckb", "text": "من ڕاپۆرتەکە ڕێکدەخەم و ژمارە نەماوەکان نیشان دەکەم. تۆ بەڵگەنامەکە لە ڕووی گرنگترین مەترسییەکانەوە دەپشکنیت." },
+                { "language": "kmr", "text": "Ez raportê bi rêz dikim û hejmarên kêm nîşan dikim. Tu belgekirinê ji bo girîngtirîn xetereyan kontrol dikî." },
+                { "language": "pl", "text": "Ja uporządkuję raport i zaznaczę brakujące liczby. Ty sprawdzisz dokumentację pod kątem najważniejszych ryzyk." },
+                { "language": "ro", "text": "Eu structurez raportul și marchez cifrele lipsă. Tu verifici documentația în privința celor mai importante riscuri." },
+                { "language": "sq", "text": "Unë e strukturoj raportin dhe shënoj shifrat që mungojnë. Ti kontrollon dokumentacionin për rreziqet më të rëndësishme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this divides work concretely and explains the risk-focused reason for the split.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this divides work concretely and explains the risk-focused reason for the split." },
+                { "language": "fa", "text": "خوب است: کارها را مشخص تقسیم می‌کند و دلیل تقسیم را بر اساس ریسک توضیح می‌دهد." },
+                { "language": "ar", "text": "جيد: يقسم العمل بشكل محدد ويشرح سبب التقسيم المرتبط بالمخاطر." },
+                { "language": "tr", "text": "İyi: işi somut biçimde bölüyor ve bu paylaşımın risk odaklı gerekçesini açıklıyor." },
+                { "language": "ru", "text": "Хорошо: работа распределена конкретно и объяснена причина разделения с учётом рисков." },
+                { "language": "ckb", "text": "باشە: کارەکان بە دیاریکراوی دابەش دەکات و هۆکاری دابەشکردنەکە بە پشتبەستن بە مەترسی ڕوون دەکات." },
+                { "language": "kmr", "text": "Baş e: kar bi awayekî konkret parve dike û sedema parvekirinê ya girêdayî xetereyê rave dike." },
+                { "language": "pl", "text": "Dobrze: konkretnie dzieli pracę i wyjaśnia powód podziału związany z ryzykiem." },
+                { "language": "ro", "text": "Bine: împarte munca concret și explică motivul împărțirii orientat spre risc." },
+                { "language": "sq", "text": "Mirë: e ndan punën në mënyrë konkrete dhe shpjegon arsyen e ndarjes duke u bazuar te rreziku." }
+              ],
+              "explanationKey": "concrete-task-split"
+            },
+            {
+              "id": "unclear-help",
+              "text": "Ich mache den Bericht und du hilfst bei der Dokumentation.",
+              "translations": [
+                { "language": "en", "text": "I do the report and you help with the documentation." },
+                { "language": "fa", "text": "من گزارش را انجام می‌دهم و تو در مستندسازی کمک می‌کنی." },
+                { "language": "ar", "text": "أنا أعمل على التقرير وأنت تساعدين في التوثيق." },
+                { "language": "tr", "text": "Ben raporu yaparım, sen de dokümantasyona yardım edersin." },
+                { "language": "ru", "text": "Я сделаю отчёт, а ты поможешь с документацией." },
+                { "language": "ckb", "text": "من ڕاپۆرتەکە دەکەم و تۆ لە بەڵگەنامەدا یارمەتی دەدەیت." },
+                { "language": "kmr", "text": "Ez raportê dikim û tu di belgekirinê de alîkarî dikî." },
+                { "language": "pl", "text": "Ja zrobię raport, a ty pomożesz przy dokumentacji." },
+                { "language": "ro", "text": "Eu fac raportul, iar tu ajuți la documentație." },
+                { "language": "sq", "text": "Unë bëj raportin dhe ti ndihmon me dokumentacionin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too simple for B2: it assigns tasks, but it does not define the exact work, risk focus, or expected result.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple for B2: it assigns tasks, but it does not define the exact work, risk focus, or expected result." },
+                { "language": "fa", "text": "برای این سطح خیلی ساده است: وظیفه‌ها را تقسیم می‌کند، اما کار دقیق، تمرکز روی ریسک یا نتیجه مورد انتظار را مشخص نمی‌کند." },
+                { "language": "ar", "text": "بسيط جداً لهذا المستوى: يقسم المهام، لكنه لا يحدد العمل الدقيق أو التركيز على المخاطر أو النتيجة المتوقعة." },
+                { "language": "tr", "text": "B2 için fazla basit: görevleri paylaştırıyor ama tam işi, risk odağını veya beklenen sonucu tanımlamıyor." },
+                { "language": "ru", "text": "Слишком просто для этого уровня: задачи распределены, но не определены точная работа, фокус на рисках или ожидаемый результат." },
+                { "language": "ckb", "text": "بۆ ئەم ئاستە زۆر سادەیە: ئەرکەکان دابەش دەکات، بەڵام کاری ورد، سەرنجی مەترسی یان ئەنجامی چاوەڕوانکراو دیاری ناکات." },
+                { "language": "kmr", "text": "Ji bo B2 pir sade ye: erkan parve dike, lê karê rast, bala xetereyê an encama hêvîkirî diyar nake." },
+                { "language": "pl", "text": "Za proste na B2: dzieli zadania, ale nie określa dokładnej pracy, ryzyka ani oczekiwanego wyniku." },
+                { "language": "ro", "text": "Prea simplu pentru B2: împarte sarcinile, dar nu definește munca exactă, accentul pe risc sau rezultatul așteptat." },
+                { "language": "sq", "text": "Shumë e thjeshtë për B2: i ndan detyrat, por nuk përcakton punën e saktë, fokusin te rreziku ose rezultatin e pritur." }
+              ],
+              "explanationKey": "unclear-task-split"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "transparent-status",
+              "text": "Wir sagen transparent, was bis wann realistisch ist: Bericht bis Donnerstag, Dokumentation morgen als belastbarer Zwischenstand.",
+              "translations": [
+                { "language": "en", "text": "We say transparently what is realistic by when: the report by Thursday, the documentation tomorrow as a reliable interim status." },
+                { "language": "fa", "text": "شفاف می‌گوییم چه چیزی تا چه زمانی واقع‌بینانه است: گزارش تا پنجشنبه و مستندسازی فردا به‌عنوان وضعیت موقت قابل اتکا." },
+                { "language": "ar", "text": "نقول بشفافية ما هو واقعي ومتى: التقرير حتى الخميس، والتوثيق غداً كحالة مؤقتة موثوقة." },
+                { "language": "tr", "text": "Neyin ne zamana kadar gerçekçi olduğunu şeffaf söylüyoruz: rapor perşembeye kadar, dokümantasyon yarın güvenilir ara durum olarak." },
+                { "language": "ru", "text": "Мы прозрачно говорим, что и к какому сроку реалистично: отчёт к четвергу, документация завтра как надёжный промежуточный статус." },
+                { "language": "ckb", "text": "بە شەفافی دەڵێین چی تا کەی واقیعییە: ڕاپۆرت تا پێنجشەممە، بەڵگەنامە سبەی وەک دۆخێکی نێوانەی پشتپێبەستوو." },
+                { "language": "kmr", "text": "Em bi şefafî dibêjin çi heta kengî rastîn e: raport heta pêncşemê, belgekirin sibê wek rewşeke navberî ya bawerbar." },
+                { "language": "pl", "text": "Mówimy przejrzyście, co i do kiedy jest realistyczne: raport do czwartku, dokumentacja jutro jako solidny stan pośredni." },
+                { "language": "ro", "text": "Spunem transparent ce este realist și până când: raportul până joi, documentația mâine ca stadiu intermediar solid." },
+                { "language": "sq", "text": "E themi qartë çfarë është realiste dhe deri kur: raporti deri të enjten, dokumentacioni nesër si status i ndërmjetëm i besueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this answer is transparent, time-bound, and avoids promising more than the team can deliver.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this answer is transparent, time-bound, and avoids promising more than the team can deliver." },
+                { "language": "fa", "text": "خوب است: پاسخ شفاف و زمان‌دار است و بیشتر از توان تیم وعده نمی‌دهد." },
+                { "language": "ar", "text": "جيد: الإجابة شفافة ومحددة زمنياً ولا تعد بأكثر مما يستطيع الفريق إنجازه." },
+                { "language": "tr", "text": "İyi: cevap şeffaf, zamana bağlı ve ekibin yapabileceğinden fazlasını vaat etmiyor." },
+                { "language": "ru", "text": "Хорошо: ответ прозрачен, привязан ко времени и не обещает больше, чем команда может выполнить." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە شەفاف و کاتدیارە و زیاتر لە توانای تیم بەڵێن نادات." },
+                { "language": "kmr", "text": "Baş e: bersiv şefaf e, bi demê ve girêdayî ye û zêdetir ji hêza tîmê soz nade." },
+                { "language": "pl", "text": "Dobrze: odpowiedź jest przejrzysta, związana z terminem i nie obiecuje więcej, niż zespół może dostarczyć." },
+                { "language": "ro", "text": "Bine: răspunsul este transparent, legat de termen și nu promite mai mult decât poate livra echipa." },
+                { "language": "sq", "text": "Mirë: përgjigjja është e qartë, e lidhur me afatin dhe nuk premton më shumë sesa mund të dorëzojë ekipi." }
+              ],
+              "explanationKey": "transparent-expectation"
+            },
+            {
+              "id": "overpromise",
+              "text": "Wir versuchen einfach, beides bis morgen fertig zu machen.",
+              "translations": [
+                { "language": "en", "text": "We simply try to finish both by tomorrow." },
+                { "language": "fa", "text": "فقط تلاش می‌کنیم هر دو را تا فردا تمام کنیم." },
+                { "language": "ar", "text": "نحاول ببساطة أن ننهي الأمرين حتى الغد." },
+                { "language": "tr", "text": "İkisini de yarına kadar bitirmeye çalışırız." },
+                { "language": "ru", "text": "Мы просто попробуем закончить оба дела к завтрашнему дню." },
+                { "language": "ckb", "text": "تەنها هەوڵ دەدەین هەردووکیان تا سبەی تەواو بکەین." },
+                { "language": "kmr", "text": "Em tenê hewl didin her duyan heta sibê biqedînin." },
+                { "language": "pl", "text": "Po prostu spróbujemy skończyć oba zadania do jutra." },
+                { "language": "ro", "text": "Încercăm pur și simplu să le terminăm pe amândouă până mâine." },
+                { "language": "sq", "text": "Thjesht përpiqemi t'i përfundojmë të dyja deri nesër." }
+              ],
+              "isCorrect": false,
+              "feedback": "This sounds committed, but it is risky: it gives no priority, no trade-off, and no honest status for management.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This sounds committed, but it is risky: it gives no priority, no trade-off, and no honest status for management." },
+                { "language": "fa", "text": "متعهدانه به نظر می‌رسد، اما پرریسک است: نه اولویت مشخص می‌کند، نه بده‌بستان کاری، و نه وضعیت صادقانه‌ای برای مدیریت می‌دهد." },
+                { "language": "ar", "text": "يبدو ملتزماً، لكنه محفوف بالمخاطر: لا يحدد أولوية ولا مقايضة ولا حالة صادقة للإدارة." },
+                { "language": "tr", "text": "Kararlı geliyor ama riskli: öncelik, takas veya yönetime dürüst bir durum bilgisi vermiyor." },
+                { "language": "ru", "text": "Звучит решительно, но рискованно: нет приоритета, компромисса и честного статуса для руководства." },
+                { "language": "ckb", "text": "بە پابەندبوون دەنگ دەدات، بەڵام مەترسیدارە: نە پێشینە دیاری دەکات، نە جێگۆڕکێی کار، نە دۆخێکی ڕاستگۆیانە بۆ بەڕێوەبەرایەتی." },
+                { "language": "kmr", "text": "Wisa xuya dike ku berpirsiyar e, lê bi xetere ye: ne pêşînî dide, ne danûstandina karî, ne jî rewşeke rast ji rêveberiyê re." },
+                { "language": "pl", "text": "Brzmi to odpowiedzialnie, ale jest ryzykowne: nie ma priorytetu, kompromisu ani uczciwego statusu dla kierownictwa." },
+                { "language": "ro", "text": "Sună angajat, dar este riscant: nu oferă prioritate, compromis sau un status sincer pentru conducere." },
+                { "language": "sq", "text": "Tingëllon e përkushtuar, por është e rrezikshme: nuk jep prioritet, kompromis pune ose status të sinqertë për drejtimin." }
+              ],
+              "explanationKey": "overpromising-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "structured-summary",
+              "text": "Wir priorisieren den Kundenbericht wegen der externen Frist, sichern parallel die wichtigsten Dokumentationspunkte und melden der Leitung die offenen Risiken.",
+              "translations": [
+                { "language": "en", "text": "We prioritize the customer report because of the external deadline, secure the most important documentation points in parallel, and report the open risks to management." },
+                { "language": "fa", "text": "ما به خاطر مهلت بیرونی، گزارش مشتری را در اولویت می‌گذاریم، هم‌زمان مهم‌ترین نکات مستندسازی را ثبت می‌کنیم و ریسک‌های باز را به مدیریت گزارش می‌دهیم." },
+                { "language": "ar", "text": "نعطي الأولوية لتقرير العميل بسبب الموعد الخارجي، ونثبت بالتوازي أهم نقاط التوثيق، ونبلغ الإدارة بالمخاطر المفتوحة." },
+                { "language": "tr", "text": "Dış teslim tarihi nedeniyle müşteri raporunu önceliklendiriyoruz, paralel olarak en önemli dokümantasyon noktalarını güvenceye alıyor ve açık riskleri yönetime bildiriyoruz." },
+                { "language": "ru", "text": "Мы ставим в приоритет отчёт для клиента из-за внешнего срока, параллельно фиксируем важнейшие пункты документации и сообщаем руководству об открытых рисках." },
+                { "language": "ckb", "text": "ئێمە بەهۆی کاتی کۆتایی دەرەکی، ڕاپۆرتی کڕیار دەکەینە پێشینە، هاوکات گرنگترین خاڵەکانی بەڵگەنامە مسۆگەر دەکەین و مەترسییە کراوەکان بە بەڕێوەبەرایەتی ڕادەگەیەنین." },
+                { "language": "kmr", "text": "Em ji ber dema dawî ya derveyî rapora xerîdar dikin pêşînî, hevdem xalên herî girîng ên belgekirinê misoger dikin û xetereyên vekirî ji rêveberiyê re radigihînin." },
+                { "language": "pl", "text": "Priorytetem jest raport dla klienta ze względu na zewnętrzny termin, równolegle zabezpieczamy najważniejsze punkty dokumentacji i zgłaszamy kierownictwu otwarte ryzyka." },
+                { "language": "ro", "text": "Prioritizăm raportul pentru client din cauza termenului extern, stabilim în paralel cele mai importante puncte ale documentației și raportăm conducerii riscurile deschise." },
+                { "language": "sq", "text": "Ne e vendosim raportin për klientin në prioritet për shkak të afatit të jashtëm, paralelisht sigurojmë pikat më të rëndësishme të dokumentacionit dhe i raportojmë drejtimit rreziqet e hapura." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this summary combines priority, reason, parallel work, and risk communication.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this summary combines priority, reason, parallel work, and risk communication." },
+                { "language": "fa", "text": "خوب است: این جمع‌بندی اولویت، دلیل، کار هم‌زمان و گزارش ریسک را با هم می‌آورد." },
+                { "language": "ar", "text": "جيد: يجمع هذا الملخص بين الأولوية والسبب والعمل الموازي والتواصل حول المخاطر." },
+                { "language": "tr", "text": "İyi: bu özet önceliği, gerekçeyi, paralel çalışmayı ve risk iletişimini birleştiriyor." },
+                { "language": "ru", "text": "Хорошо: это резюме объединяет приоритет, причину, параллельную работу и сообщение о рисках." },
+                { "language": "ckb", "text": "باشە: ئەم پوختەیە پێشینە، هۆکار، کاری هاوکات و ڕاگەیاندنی مەترسی کۆدەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: ev kurtkirin pêşînî, sedem, xebata hevdem û ragihandina xetereyan digihîne hev." },
+                { "language": "pl", "text": "Dobrze: to podsumowanie łączy priorytet, powód, pracę równoległą i komunikację o ryzykach." },
+                { "language": "ro", "text": "Bine: acest rezumat combină prioritatea, motivul, munca în paralel și comunicarea riscurilor." },
+                { "language": "sq", "text": "Mirë: kjo përmbledhje bashkon prioritetin, arsyen, punën paralele dhe komunikimin e rreziqeve." }
+              ],
+              "explanationKey": "summary-with-risk"
+            },
+            {
+              "id": "missing-next-step",
+              "text": "Wir kümmern uns zuerst um den Bericht und später um die Dokumentation.",
+              "translations": [
+                { "language": "en", "text": "We first take care of the report and later the documentation." },
+                { "language": "fa", "text": "ما اول به گزارش رسیدگی می‌کنیم و بعداً به مستندسازی." },
+                { "language": "ar", "text": "نهتم أولاً بالتقرير ثم لاحقاً بالتوثيق." },
+                { "language": "tr", "text": "Önce raporla, sonra dokümantasyonla ilgileniriz." },
+                { "language": "ru", "text": "Сначала займёмся отчётом, а позже документацией." },
+                { "language": "ckb", "text": "سەرەتا گرنگی بە ڕاپۆرت دەدەین و دواتر بەڵگەنامە." },
+                { "language": "kmr", "text": "Em pêşî li raportê dinêrin û paşê li belgekirinê." },
+                { "language": "pl", "text": "Najpierw zajmiemy się raportem, a później dokumentacją." },
+                { "language": "ro", "text": "Ne ocupăm mai întâi de raport și mai târziu de documentație." },
+                { "language": "sq", "text": "Së pari merremi me raportin dhe më vonë me dokumentacionin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Incomplete: it gives a sequence, but it misses the external deadline, parallel work, risks, and management communication.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: it gives a sequence, but it misses the external deadline, parallel work, risks, and management communication." },
+                { "language": "fa", "text": "ناقص است: ترتیب کار را می‌گوید، اما مهلت بیرونی، کار هم‌زمان، ریسک‌ها و اطلاع‌رسانی به مدیریت را جا می‌اندازد." },
+                { "language": "ar", "text": "ناقص: يذكر التسلسل، لكنه لا يتضمن الموعد الخارجي والعمل الموازي والمخاطر والتواصل مع الإدارة." },
+                { "language": "tr", "text": "Eksik: sırayı veriyor ama dış teslim tarihini, paralel çalışmayı, riskleri ve yönetimle iletişimi atlıyor." },
+                { "language": "ru", "text": "Неполно: указан порядок, но отсутствуют внешний срок, параллельная работа, риски и коммуникация с руководством." },
+                { "language": "ckb", "text": "ناتەواوە: ڕیزبەندی دەڵێت، بەڵام کاتی کۆتایی دەرەکی، کاری هاوکات، مەترسی و پەیوەندی لەگەڵ بەڕێوەبەرایەتی لەبیر دەکات." },
+                { "language": "kmr", "text": "Netemam e: rêzê dide, lê dema dawî ya derveyî, xebata hevdem, xetere û ragihandina bi rêveberiyê re ji bîr dike." },
+                { "language": "pl", "text": "Niepełne: podaje kolejność, ale pomija zewnętrzny termin, pracę równoległą, ryzyka i komunikację z kierownictwem." },
+                { "language": "ro", "text": "Incomplet: oferă o ordine, dar omite termenul extern, munca în paralel, riscurile și comunicarea cu conducerea." },
+                { "language": "sq", "text": "E paplotë: jep rendin, por lë jashtë afatin e jashtëm, punën paralele, rreziqet dhe komunikimin me drejtimin." }
+              ],
+              "explanationKey": "incomplete-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "negotiation-note",
+          "text": "At B2, a priority should be justified with criteria such as deadline, external impact, internal risk, and available capacity.",
+          "translations": [
+            { "language": "en", "text": "At B2, a priority should be justified with criteria such as deadline, external impact, internal risk, and available capacity." },
+            { "language": "fa", "text": "در این سطح، اولویت باید با معیارهایی مانند مهلت، اثر بیرونی، ریسک داخلی و ظرفیت موجود توجیه شود." },
+            { "language": "ar", "text": "في هذا المستوى ينبغي تبرير الأولوية بمعايير مثل الموعد النهائي والتأثير الخارجي والمخاطر الداخلية والقدرة المتاحة." },
+            { "language": "tr", "text": "B2 düzeyinde bir öncelik; teslim tarihi, dış etki, iç risk ve mevcut kapasite gibi ölçütlerle gerekçelendirilmelidir." },
+            { "language": "ru", "text": "На этом уровне приоритет следует обосновывать такими критериями, как срок, внешнее влияние, внутренний риск и доступные ресурсы." },
+            { "language": "ckb", "text": "لە ئەم ئاستەدا دەبێت پێشینە بە پێوەرەکانی وەک کاتی کۆتایی، کاریگەری دەرەکی، مەترسی ناوخۆ و توانای بەردەست ڕوون بکرێتەوە." },
+            { "language": "kmr", "text": "Di asta B2 de divê pêşînî bi pîvanên wek dema dawî, bandora derveyî, xetera hundirîn û kapasîteya heyî were rastkirin." },
+            { "language": "pl", "text": "Na poziomie B2 priorytet powinien być uzasadniony kryteriami takimi jak termin, wpływ zewnętrzny, ryzyko wewnętrzne i dostępna zdolność." },
+            { "language": "ro", "text": "La nivel B2, o prioritate trebuie justificată prin criterii precum termenul, impactul extern, riscul intern și capacitatea disponibilă." },
+            { "language": "sq", "text": "Në nivelin B2, një prioritet duhet arsyetuar me kritere si afati, ndikimi i jashtëm, rreziku i brendshëm dhe kapaciteti në dispozicion." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "common-mistake",
+          "text": "Avoid overpromising. A realistic, transparent interim result often sounds more professional than a vague promise to finish everything.",
+          "translations": [
+            { "language": "en", "text": "Avoid overpromising. A realistic, transparent interim result often sounds more professional than a vague promise to finish everything." },
+            { "language": "fa", "text": "از وعده بیش از حد پرهیز کن. یک نتیجه موقت واقع‌بینانه و شفاف اغلب حرفه‌ای‌تر از وعده مبهم برای تمام‌کردن همه چیز است." },
+            { "language": "ar", "text": "تجنب الوعود الزائدة. فالنتيجة المؤقتة الواقعية والشفافة غالباً تبدو أكثر مهنية من وعد غامض بإنهاء كل شيء." },
+            { "language": "tr", "text": "Aşırı söz vermekten kaçın. Gerçekçi ve şeffaf bir ara sonuç çoğu zaman her şeyi bitirme vaadinden daha profesyonel duyulur." },
+            { "language": "ru", "text": "Избегай чрезмерных обещаний. Реалистичный и прозрачный промежуточный результат часто звучит профессиональнее, чем расплывчатое обещание всё закончить." },
+            { "language": "ckb", "text": "لە بەڵێنی زیاتر لە توانادا خۆبپارێزە. ئەنجامێکی نێوانەی واقیعی و شەفاف زۆرجار پیشەیی‌تر دەنگ دەدات وەک بەڵێنێکی ناڕوون بۆ تەواوکردنی هەموو شتێک." },
+            { "language": "kmr", "text": "Ji zêde-sozdanê dûr bikeve. Encameke navberî ya rastîn û şefaf pir caran profesyoneltir xuya dike ji sozeke nezelal ku her tişt were qedandin." },
+            { "language": "pl", "text": "Unikaj obiecywania zbyt wiele. Realistyczny i przejrzysty wynik pośredni często brzmi bardziej profesjonalnie niż mglista obietnica skończenia wszystkiego." },
+            { "language": "ro", "text": "Evită promisiunile exagerate. Un rezultat intermediar realist și transparent sună adesea mai profesionist decât o promisiune vagă că totul va fi terminat." },
+            { "language": "sq", "text": "Shmang premtimet e tepërta. Një rezultat i ndërmjetëm realist dhe i qartë shpesh tingëllon më profesional se një premtim i paqartë për të përfunduar gjithçka." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary-note",
+          "text": "A strong B2 summary connects the decision to a reason, names the trade-off, and makes the next communication step explicit.",
+          "translations": [
+            { "language": "en", "text": "A strong B2 summary connects the decision to a reason, names the trade-off, and makes the next communication step explicit." },
+            { "language": "fa", "text": "یک جمع‌بندی قوی در این سطح تصمیم را به دلیل وصل می‌کند، بده‌بستان کاری را نام می‌برد و قدم ارتباطی بعدی را روشن می‌کند." },
+            { "language": "ar", "text": "يربط ملخص قوي في هذا المستوى القرار بسبب، ويسمي المقايضة، ويجعل خطوة التواصل التالية واضحة." },
+            { "language": "tr", "text": "Güçlü bir B2 özeti kararı bir gerekçeye bağlar, iş takasını adlandırır ve sonraki iletişim adımını açık hale getirir." },
+            { "language": "ru", "text": "Сильное резюме на этом уровне связывает решение с причиной, называет компромисс и явно обозначает следующий шаг коммуникации." },
+            { "language": "ckb", "text": "پوختەیەکی بەهێز لەم ئاستەدا بڕیارەکە بە هۆکارەوە دەبەستێت، جێگۆڕکێی کار ناو دەبات و هەنگاوی پەیوەندی داهاتوو ڕوون دەکات." },
+            { "language": "kmr", "text": "Kurtkirineke bihêz a B2 biryarê bi sedemê ve girê dide, danûstandina karî nav dike û gava ragihandinê ya paşîn zelal dike." },
+            { "language": "pl", "text": "Mocne podsumowanie na B2 łączy decyzję z powodem, nazywa kompromis i jasno wskazuje kolejny krok komunikacyjny." },
+            { "language": "ro", "text": "Un rezumat B2 solid leagă decizia de un motiv, numește compromisurile și face explicit următorul pas de comunicare." },
+            { "language": "sq", "text": "Një përmbledhje e fortë B2 e lidh vendimin me arsyen, e emërton kompromisin dhe e bën të qartë hapin e ardhshëm të komunikimit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

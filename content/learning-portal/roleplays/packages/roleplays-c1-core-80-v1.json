@@ -1,0 +1,816 @@
+{
+  "packageId": "roleplays-c1-core-80-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 80 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 80",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-diskussion-trotz-einwaenden-strukturieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Diskussion trotz Einwänden strukturieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Structuring a discussion despite objections" },
+        { "language": "fa", "text": "ساختار دادن به بحث با وجود اعتراض‌ها" },
+        { "language": "ar", "text": "تنظيم نقاش رغم الاعتراضات" },
+        { "language": "tr", "text": "İtirazlara rağmen bir tartışmayı yapılandırmak" },
+        { "language": "ru", "text": "Структурирование дискуссии несмотря на возражения" },
+        { "language": "ckb", "text": "ڕێکخستنی گفتوگۆ لەگەڵ بوونی ناڕەزاییەکان" },
+        { "language": "kmr", "text": "Rêxistina nîqaşê tevî nerazîbûnan" },
+        { "language": "pl", "text": "Strukturyzowanie dyskusji mimo zastrzeżeń" },
+        { "language": "ro", "text": "Structurarea unei discuții în ciuda obiecțiilor" },
+        { "language": "sq", "text": "Strukturimi i një diskutimi pavarësisht kundërshtimeve" }
+      ],
+      "description": "In einer formalen Prüfungsdiskussion geht es darum, ob digitale Lernplattformen den Präsenzunterricht ergänzen sollen. Sie halten die Diskussion trotz Einwänden strukturiert, greifen Gegenargumente fair auf und führen zum roten Faden zurück.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a formal exam discussion, the question is whether digital learning platforms should complement face-to-face lessons. You keep the discussion structured despite objections, take up counterarguments fairly, and return to the main thread." },
+        { "language": "fa", "text": "در یک بحث رسمی آزمونی، موضوع این است که آیا پلتفرم‌های یادگیری دیجیتال باید آموزش حضوری را تکمیل کنند. شما با وجود اعتراض‌ها بحث را ساختارمند نگه می‌دارید، استدلال‌های مخالف را منصفانه می‌گیرید و به خط اصلی بحث برمی‌گردانید." },
+        { "language": "ar", "text": "في نقاش امتحاني رسمي يدور السؤال حول ما إذا كان ينبغي للمنصات التعليمية الرقمية أن تكمل التعليم الحضوري. تحافظ على بنية النقاش رغم الاعتراضات، وتتناول الحجج المضادة بإنصاف، وتعود إلى الخيط الرئيسي." },
+        { "language": "tr", "text": "Resmi bir sınav tartışmasında dijital öğrenme platformlarının yüz yüze dersleri tamamlayıp tamamlamaması konuşulur. İtirazlara rağmen tartışmayı yapılandırır, karşı argümanları adil biçimde ele alır ve ana çizgiye geri dönersiniz." },
+        { "language": "ru", "text": "В официальной экзаменационной дискуссии обсуждается, должны ли цифровые учебные платформы дополнять очное обучение. Вы сохраняете структуру дискуссии несмотря на возражения, справедливо учитываете контраргументы и возвращаетесь к основной линии." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی فەرمی تاقیکردنەوەدا باس لەوە دەکرێت ئایا پلاتفۆرمە دیجیتاڵەکانی فێربوون دەبێت وانەی ڕووبەڕوو تەواو بکەن. تۆ لەگەڵ بوونی ناڕەزاییەکان گفتوگۆکە بە ڕێکخراوی دەهێڵیتەوە، بە دادپەروەری بەڵگەی دژ وەردەگریت و دەگەڕێیتەوە بۆ هێڵی سەرەکی." },
+        { "language": "kmr", "text": "Di nîqaşeke azmûnê ya fermî de mijar ew e ka platformên fêrbûna dîjîtal divê dersên rûbirû temam bikin an na. Hûn tevî nerazîbûnan nîqaşê bi rêxistinî digirin, argumanên dij bi dadperwerî digirin û vedigerin rêza sereke." },
+        { "language": "pl", "text": "W formalnej dyskusji egzaminacyjnej chodzi o to, czy cyfrowe platformy edukacyjne powinny uzupełniać nauczanie stacjonarne. Utrzymuje Pan/Pani strukturę dyskusji mimo zastrzeżeń, uczciwie podejmuje kontrargumenty i wraca do głównego wątku." },
+        { "language": "ro", "text": "Într-o discuție formală de examen se pune întrebarea dacă platformele digitale de învățare ar trebui să completeze predarea față în față. Mențineți discuția structurată în ciuda obiecțiilor, preluați corect contraargumentele și reveniți la firul principal." },
+        { "language": "sq", "text": "Në një diskutim formal provimi, çështja është nëse platformat digjitale të mësimit duhet të plotësojnë mësimin me prani fizike. E mbani diskutimin të strukturuar pavarësisht kundërshtimeve, merrni drejt kundërargumentet dhe ktheheni te fija kryesore." }
+      ],
+      "learnerGoal": "Eine Diskussion strukturieren: Einwände fair zusammenfassen, den Fokus sichern, Argumente ordnen, Übergänge formulieren und am Ende eine abgewogene Position festhalten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Structure a discussion: present objections fairly, secure the focus, order arguments, formulate transitions, and state a balanced position at the end." },
+        { "language": "fa", "text": "یک بحث را ساختار دهید: اعتراض‌ها را منصفانه جمع‌بندی کنید، تمرکز را حفظ کنید، استدلال‌ها را مرتب کنید، گذارها را بیان کنید و در پایان موضعی متوازن ثبت کنید." },
+        { "language": "ar", "text": "نظّم نقاشاً: لخص الاعتراضات بإنصاف، واحفظ التركيز، ورتب الحجج، وصغ انتقالات، وثبت في النهاية موقفاً متوازناً." },
+        { "language": "tr", "text": "Bir tartışmayı yapılandırın: itirazları adil biçimde toparlayın, odağı koruyun, argümanları sıralayın, geçişler kurun ve sonunda dengeli bir konum belirtin." },
+        { "language": "ru", "text": "Структурировать дискуссию: справедливо передать возражения, удержать фокус, упорядочить аргументы, сформулировать переходы и в конце зафиксировать взвешенную позицию." },
+        { "language": "ckb", "text": "گفتوگۆیەک ڕێکبخە: ناڕەزاییەکان بە دادپەروەری کورت بکەوە، سەرنج بپارێزە، بەڵگەکان ڕیز بکە، گواستنەوەکان دابڕێژە و لە کۆتاییدا هەڵوێستێکی هاوسەنگ تۆمار بکە." },
+        { "language": "kmr", "text": "Nîqaşekê rêxistin bikin: nerazîbûnan bi dadperwerî kurt bikin, fokusê biparêzin, argumanan rêz bikin, derbasbûnê formule bikin û di dawiyê de helwesteke hevseng bidin." },
+        { "language": "pl", "text": "Strukturyzować dyskusję: uczciwie przedstawić zastrzeżenia, utrzymać fokus, uporządkować argumenty, formułować przejścia i na końcu utrwalić wyważone stanowisko." },
+        { "language": "ro", "text": "Structurați o discuție: rezumați corect obiecțiile, păstrați concentrarea, ordonați argumentele, formulați tranziții și fixați la final o poziție echilibrată." },
+        { "language": "sq", "text": "Strukturoni një diskutim: përmblidhni kundërshtimet me drejtësi, ruani fokusin, renditni argumentet, formuloni kalime dhe në fund shprehni një qëndrim të balancuar." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 80,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsleiter/in",
+          "translations": [
+            { "language": "en", "text": "Discussion leader" },
+            { "language": "fa", "text": "هدایت‌کننده بحث" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Tartışma yöneticisi" },
+            { "language": "ru", "text": "Ведущий дискуссии" },
+            { "language": "ckb", "text": "ڕێبەری گفتوگۆ" },
+            { "language": "kmr", "text": "Rêberê nîqaşê" },
+            { "language": "pl", "text": "Osoba prowadząca dyskusję" },
+            { "language": "ro", "text": "Moderatorul discuției" },
+            { "language": "sq", "text": "Drejtuesi i diskutimit" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Gesprächspartner/in",
+          "translations": [
+            { "language": "en", "text": "Discussion partner" },
+            { "language": "fa", "text": "هم‌بحث" },
+            { "language": "ar", "text": "شريك النقاش" },
+            { "language": "tr", "text": "Tartışma partneri" },
+            { "language": "ru", "text": "Собеседник в дискуссии" },
+            { "language": "ckb", "text": "هاوگفتوگۆ" },
+            { "language": "kmr", "text": "Hevpeyvînkarê nîqaşê" },
+            { "language": "pl", "text": "Partner w dyskusji" },
+            { "language": "ro", "text": "Partenerul de discuție" },
+            { "language": "sq", "text": "Partneri i diskutimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Ich finde, digitale Lernplattformen lenken eher ab. Warum sollte man sie im Unterricht noch stärker einsetzen?",
+          "translations": [
+            { "language": "en", "text": "I think digital learning platforms tend to distract. Why should they be used even more in class?" },
+            { "language": "fa", "text": "به نظر من پلتفرم‌های یادگیری دیجیتال بیشتر حواس را پرت می‌کنند. چرا باید در کلاس بیشتر از آن‌ها استفاده کرد؟" },
+            { "language": "ar", "text": "أرى أن المنصات التعليمية الرقمية تشتت الانتباه أكثر. لماذا ينبغي استخدامها أكثر في الدرس؟" },
+            { "language": "tr", "text": "Bence dijital öğrenme platformları daha çok dikkat dağıtıyor. Neden derste daha fazla kullanılmalı?" },
+            { "language": "ru", "text": "Мне кажется, цифровые учебные платформы скорее отвлекают. Почему их нужно еще активнее использовать на уроке?" },
+            { "language": "ckb", "text": "بە بۆچوونی من پلاتفۆرمە دیجیتاڵەکانی فێربوون زیاتر سەرنج پەرت دەکەن. بۆچی دەبێت لە وانەدا زیاتر بەکاربهێنرێن؟" },
+            { "language": "kmr", "text": "Li gorî min platformên fêrbûna dîjîtal zêdetir bala mirovî belav dikin. Çima divê di dersê de hîn zêdetir werin bikaranîn?" },
+            { "language": "pl", "text": "Uważam, że cyfrowe platformy edukacyjne raczej rozpraszają. Dlaczego powinno się ich jeszcze częściej używać na lekcji?" },
+            { "language": "ro", "text": "Eu cred că platformele digitale de învățare mai degrabă distrag atenția. De ce ar trebui folosite și mai mult la clasă?" },
+            { "language": "sq", "text": "Mendoj se platformat digjitale të mësimit më shumë shpërqendrojnë. Pse duhet të përdoren edhe më shumë në mësim?" }
+          ],
+          "function": "raise-opening-objection",
+          "toneNote": "direct but formal"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Den Einwand verstehe ich. Damit wir die Frage geordnet diskutieren, würde ich zuerst zwischen bloßer Bildschirmzeit und didaktisch begründetem Einsatz unterscheiden.",
+          "translations": [
+            { "language": "en", "text": "I understand the objection. To discuss the question in an organized way, I would first distinguish between mere screen time and didactically justified use." },
+            { "language": "fa", "text": "این اعتراض را می‌فهمم. برای اینکه پرسش را منظم بررسی کنیم، ابتدا بین زمان صرفاً جلوی صفحه و کاربردی که از نظر آموزشی توجیه دارد تفاوت می‌گذارم." },
+            { "language": "ar", "text": "أفهم هذا الاعتراض. لكي نناقش السؤال بصورة منظمة، سأميز أولاً بين مجرد وقت أمام الشاشة والاستخدام المبرر تعليمياً." },
+            { "language": "tr", "text": "Bu itirazı anlıyorum. Soruyu düzenli tartışmak için önce salt ekran süresi ile didaktik olarak gerekçelendirilmiş kullanım arasında ayrım yapardım." },
+            { "language": "ru", "text": "Я понимаю это возражение. Чтобы обсуждать вопрос упорядоченно, я бы сначала различил простое экранное время и дидактически обоснованное использование." },
+            { "language": "ckb", "text": "ئەم ناڕەزاییە تێدەگەم. بۆ ئەوەی پرسیارەکە بە ڕێکخراوی باس بکەین، یەکەم جیاوازی دەکەم لە نێوان کاتی تەنها لەبەردەم شاشە و بەکارهێنانی پەروەردەیی بەهۆکار." },
+            { "language": "kmr", "text": "Ez vê nerazîbûnê fêm dikim. Ji bo em pirsê bi rêxistinî nîqaş bikin, ez pêşî cudahî dikim di navbera dema tenê li ber ekranê û bikaranîna bi sedema didaktîkî de." },
+            { "language": "pl", "text": "Rozumiem to zastrzeżenie. Aby omówić pytanie w uporządkowany sposób, najpierw odróżniłbym/odróżniłabym sam czas przed ekranem od użycia uzasadnionego dydaktycznie." },
+            { "language": "ro", "text": "Înțeleg această obiecție. Pentru a discuta întrebarea ordonat, aș distinge mai întâi între simplul timp petrecut în fața ecranului și utilizarea justificată didactic." },
+            { "language": "sq", "text": "E kuptoj këtë kundërshtim. Për ta diskutuar pyetjen në mënyrë të rregullt, së pari do të dalloja kohën e thjeshtë para ekranit nga përdorimi i arsyetuar didaktikisht." }
+          ],
+          "function": "structure-opening",
+          "toneNote": "organizing move"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Aber in der Praxis landet man doch genau bei mehr Bildschirmzeit.",
+          "translations": [
+            { "language": "en", "text": "But in practice, one ends up with more screen time anyway." },
+            { "language": "fa", "text": "اما در عمل باز هم دقیقاً به زمان بیشتر جلوی صفحه می‌رسیم." },
+            { "language": "ar", "text": "لكن في التطبيق العملي ينتهي الأمر فعلاً إلى وقت أطول أمام الشاشة." },
+            { "language": "tr", "text": "Ama pratikte yine tam olarak daha fazla ekran süresine varılıyor." },
+            { "language": "ru", "text": "Но на практике всё равно получается больше экранного времени." },
+            { "language": "ckb", "text": "بەڵام لە کردەوەدا هەر دەگەینە کاتی زیاتر لەبەردەم شاشە." },
+            { "language": "kmr", "text": "Lê di pratîkê de mirov dîsa digihêje dema zêdetir li ber ekranê." },
+            { "language": "pl", "text": "Ale w praktyce i tak kończy się to większą ilością czasu przed ekranem." },
+            { "language": "ro", "text": "Dar în practică se ajunge totuși exact la mai mult timp în fața ecranului." },
+            { "language": "sq", "text": "Por në praktikë prapë përfundon te më shumë kohë para ekranit." }
+          ],
+          "function": "repeat-objection",
+          "toneNote": "skeptical"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein berechtigter Hinweis. Ich würde ihn als Qualitätskriterium aufnehmen: Digitale Phasen müssen zeitlich begrenzt, zielklar und mit einer analogen Reflexion verbunden sein.",
+          "translations": [
+            { "language": "en", "text": "That is a justified point. I would include it as a quality criterion: digital phases must be time-limited, goal-oriented, and connected with an offline reflection." },
+            { "language": "fa", "text": "این نکته موجهی است. من آن را به‌عنوان معیار کیفیت وارد می‌کنم: بخش‌های دیجیتال باید از نظر زمان محدود، از نظر هدف روشن و با بازاندیشی غیردیجیتال همراه باشند." },
+            { "language": "ar", "text": "هذه ملاحظة مبررة. سأدرجها كمعيار جودة: يجب أن تكون المراحل الرقمية محدودة زمنياً، واضحة الهدف، ومرتبطة بتأمل غير رقمي." },
+            { "language": "tr", "text": "Bu haklı bir nokta. Bunu bir kalite ölçütü olarak alırdım: dijital aşamalar zamanla sınırlı, hedefi açık ve analog bir değerlendirmeyle bağlantılı olmalıdır." },
+            { "language": "ru", "text": "Это обоснованное замечание. Я включил бы его как критерий качества: цифровые фазы должны быть ограничены по времени, иметь ясную цель и быть связаны с офлайн-рефлексией." },
+            { "language": "ckb", "text": "ئەمە تێبینییەکی ڕەوایە. من وەک پێوەری کوالیتی وەریدەگرم: قۆناغە دیجیتاڵەکان دەبێت کات‌سنووردار، ئامانج‌ڕوون و پەیوەست بە بیرکردنەوەی نادیجیتاڵ بن." },
+            { "language": "kmr", "text": "Ev têbîniyeke mafdar e. Ez ê wê wek pîvana kalîteyê bigirim: qonaxên dîjîtal divê bi demê sînordar, bi armancê zelal û bi refleksiyoneke ne-dîjîtal ve girêdayî bin." },
+            { "language": "pl", "text": "To uzasadniona uwaga. Włączyłbym/włączyłabym ją jako kryterium jakości: fazy cyfrowe muszą być ograniczone czasowo, jasno ukierunkowane i połączone z refleksją analogową." },
+            { "language": "ro", "text": "Este o observație justificată. Aș include-o ca criteriu de calitate: fazele digitale trebuie să fie limitate în timp, clare ca scop și legate de o reflecție analogică." },
+            { "language": "sq", "text": "Kjo është një vërejtje e arsyeshme. Do ta përfshija si kriter cilësie: fazat digjitale duhet të jenë të kufizuara në kohë, me qëllim të qartë dhe të lidhura me reflektim jodigjital." }
+          ],
+          "function": "integrate-objection",
+          "toneNote": "fair concession"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Für schwächere Lernende kann eine Plattform aber auch überfordern.",
+          "translations": [
+            { "language": "en", "text": "For weaker learners, however, a platform can also be overwhelming." },
+            { "language": "fa", "text": "اما برای زبان‌آموزان یا دانش‌آموزان ضعیف‌تر، یک پلتفرم می‌تواند فشار زیادی ایجاد کند." },
+            { "language": "ar", "text": "لكن بالنسبة للمتعلمين الأضعف يمكن أن تكون المنصة مرهقة أيضاً." },
+            { "language": "tr", "text": "Ancak daha zayıf öğrenenler için bir platform bunaltıcı da olabilir." },
+            { "language": "ru", "text": "Но для более слабых учащихся платформа тоже может быть перегружающей." },
+            { "language": "ckb", "text": "بەڵام بۆ فێرخوازانی لاوازتر پلاتفۆرمێک دەتوانێت زۆر قورس بێت." },
+            { "language": "kmr", "text": "Lê ji bo fêrkerên lawaztir platformek dikare zêde giran jî be." },
+            { "language": "pl", "text": "Dla słabszych uczących się platforma może jednak także przytłaczać." },
+            { "language": "ro", "text": "Pentru cei care învață mai greu, o platformă poate fi însă și copleșitoare." },
+            { "language": "sq", "text": "Për nxënësit më të dobët, një platformë mund të jetë gjithashtu mbingarkuese." }
+          ],
+          "function": "raise-accessibility-objection",
+          "toneNote": "learner support concern"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb sollte der Einsatz nicht als Selbstlern-Ersatz verstanden werden. Sinnvoll wäre ein Dreischritt: Einführung durch die Lehrkraft, kurze digitale Übung und anschließend gemeinsame Auswertung.",
+          "translations": [
+            { "language": "en", "text": "That is exactly why the use should not be understood as a replacement for self-study. A three-step approach would be useful: introduction by the teacher, a short digital exercise, and then a joint evaluation." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل نباید استفاده از آن را جایگزین خودآموزیِ تنها دانست. یک روند سه‌مرحله‌ای مفیدتر است: معرفی توسط معلم، تمرین دیجیتال کوتاه و سپس ارزیابی مشترک." },
+            { "language": "ar", "text": "لهذا السبب تحديداً لا ينبغي فهم الاستخدام كبديل للتعلم الذاتي وحده. سيكون النهج الثلاثي مفيداً: تقديم من المعلم، تدريب رقمي قصير، ثم تقييم مشترك." },
+            { "language": "tr", "text": "Tam da bu yüzden kullanım kendi kendine öğrenmenin yerine geçecek bir şey olarak anlaşılmamalıdır. Üç adımlı bir yaklaşım anlamlı olur: öğretmenin tanıtımı, kısa dijital alıştırma ve ardından ortak değerlendirme." },
+            { "language": "ru", "text": "Именно поэтому использование не следует понимать как замену самостоятельного обучения. Полезен был бы трехшаговый подход: введение учителем, короткое цифровое упражнение и затем совместная оценка." },
+            { "language": "ckb", "text": "ڕێک بەهۆی ئەوە نابێت بەکارهێنان وەک جێگرەوەی خۆفێربوون تێبگەین. ڕێگای سێ قۆناغی سودمەند دەبێت: ناساندن لەلایەن مامۆستا، ڕاهێنانی دیجیتاڵی کورت و پاشان هەڵسەنگاندنی هاوبەش." },
+            { "language": "kmr", "text": "Rast ji ber vê yekê bikaranîn divê wek cihgira xwe-fêrbûnê neyê fêmkirin. Rêbazeke sê-gavî bikêr dibe: danasîna ji aliyê mamoste ve, pratîka dîjîtal a kurt û paşê nirxandina hevbeş." },
+            { "language": "pl", "text": "Właśnie dlatego użycia nie należy rozumieć jako zamiennika samodzielnej nauki. Sensowne byłoby podejście trzystopniowe: wprowadzenie przez nauczyciela, krótkie ćwiczenie cyfrowe, a potem wspólna ewaluacja." },
+            { "language": "ro", "text": "Tocmai de aceea utilizarea nu ar trebui înțeleasă ca înlocuitor al studiului individual. Ar fi util un pas în trei etape: introducere de către profesor, exercițiu digital scurt și apoi evaluare comună." },
+            { "language": "sq", "text": "Pikërisht për këtë arsye përdorimi nuk duhet kuptuar si zëvendësim i vetënxënies. I dobishëm do të ishte një hap me tre faza: prezantim nga mësuesi, ushtrim digjital i shkurtër dhe pastaj vlerësim i përbashkët." }
+          ],
+          "function": "propose-structure",
+          "toneNote": "clear sequence"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Das klingt gut, aber viele Schulen haben gar nicht die gleiche technische Ausstattung.",
+          "translations": [
+            { "language": "en", "text": "That sounds good, but many schools do not have the same technical equipment at all." },
+            { "language": "fa", "text": "این خوب به نظر می‌رسد، اما بسیاری از مدرسه‌ها اصلاً تجهیزات فنی یکسان ندارند." },
+            { "language": "ar", "text": "هذا يبدو جيداً، لكن كثيراً من المدارس لا تملك التجهيز التقني نفسه إطلاقاً." },
+            { "language": "tr", "text": "Bu iyi geliyor, ama birçok okul aynı teknik donanıma hiç sahip değil." },
+            { "language": "ru", "text": "Это звучит хорошо, но у многих школ совсем нет одинакового технического оснащения." },
+            { "language": "ckb", "text": "ئەمە باش دەنگ دەدات، بەڵام زۆر قوتابخانە هیچ کەرەستەی تەکنیکی یەکسانیان نییە." },
+            { "language": "kmr", "text": "Ev baş tê bihîstin, lê gelek dibistan qet amûrên teknîkî yên wekhev nînin." },
+            { "language": "pl", "text": "To brzmi dobrze, ale wiele szkół wcale nie ma takiego samego wyposażenia technicznego." },
+            { "language": "ro", "text": "Sună bine, dar multe școli nu au deloc aceeași dotare tehnică." },
+            { "language": "sq", "text": "Kjo tingëllon mirë, por shumë shkolla nuk kanë fare të njëjtat pajisje teknike." }
+          ],
+          "function": "raise-equity-objection",
+          "toneNote": "system concern"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Damit sprechen Sie einen zweiten Punkt an: Zugangsgerechtigkeit. Ich würde deshalb die Diskussion in zwei Ebenen ordnen: erst pädagogischer Nutzen, dann technische Mindestbedingungen.",
+          "translations": [
+            { "language": "en", "text": "With that, you are addressing a second point: equal access. I would therefore organize the discussion on two levels: first pedagogical benefit, then technical minimum conditions." },
+            { "language": "fa", "text": "با این نکته، شما به موضوع دوم اشاره می‌کنید: عدالت در دسترسی. بنابراین بحث را در دو سطح مرتب می‌کنم: اول فایده آموزشی، سپس شرایط فنی حداقلی." },
+            { "language": "ar", "text": "بهذا تطرح نقطة ثانية: عدالة الوصول. لذلك سأرتب النقاش على مستويين: أولاً الفائدة التربوية، ثم الشروط التقنية الدنيا." },
+            { "language": "tr", "text": "Bununla ikinci bir noktaya değiniyorsunuz: erişim adaleti. Bu nedenle tartışmayı iki düzeyde düzenlerdim: önce pedagojik yarar, sonra teknik asgari koşullar." },
+            { "language": "ru", "text": "Этим Вы затрагиваете второй пункт: справедливость доступа. Поэтому я бы упорядочил дискуссию на двух уровнях: сначала педагогическая польза, затем технические минимальные условия." },
+            { "language": "ckb", "text": "بەمە تۆ خاڵێکی دووەم دەهێنیتە گۆڕێ: دادپەروەری لە دەستگەیشتن. بۆیە گفتوگۆکە لە دوو ئاستدا ڕێکدەخەم: یەکەم سودی پەروەردەیی، پاشان مەرجە تەکنیکییە کەمینەکان." },
+            { "language": "kmr", "text": "Bi vê yekê hûn xalek duyemîn tînin: dadperweriya gihîştinê. Ji ber vê yekê ez nîqaşê li du astan rêz dikim: pêşî sûda perwerdeyî, paşê mercên teknîkî yên herî kêm." },
+            { "language": "pl", "text": "Porusza Pan/Pani tym drugi punkt: sprawiedliwość dostępu. Dlatego uporządkowałbym/uporządkowałabym dyskusję na dwóch poziomach: najpierw korzyść pedagogiczna, potem minimalne warunki techniczne." },
+            { "language": "ro", "text": "Prin aceasta abordați un al doilea punct: echitatea accesului. De aceea aș ordona discuția pe două niveluri: mai întâi utilitatea pedagogică, apoi condițiile tehnice minime." },
+            { "language": "sq", "text": "Me këtë prekni një pikë të dytë: drejtësinë e qasjes. Prandaj do ta rendisja diskutimin në dy nivele: së pari dobia pedagogjike, pastaj kushtet minimale teknike." }
+          ],
+          "function": "reframe-and-order",
+          "toneNote": "discussion structure"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Dann müsste man aber erst investieren, bevor man überhaupt über Nutzen spricht.",
+          "translations": [
+            { "language": "en", "text": "Then one would have to invest first before even talking about benefit." },
+            { "language": "fa", "text": "پس اول باید سرمایه‌گذاری کرد، قبل از اینکه اصلاً درباره فایده صحبت کنیم." },
+            { "language": "ar", "text": "إذن يجب الاستثمار أولاً قبل الحديث أصلاً عن الفائدة." },
+            { "language": "tr", "text": "O zaman yarardan söz etmeden önce ilk olarak yatırım yapmak gerekir." },
+            { "language": "ru", "text": "Тогда сначала пришлось бы инвестировать, прежде чем вообще говорить о пользе." },
+            { "language": "ckb", "text": "کەواتە دەبێت یەکەم وەبەرهێنان بکرێت پێش ئەوەی هەر قسە لەسەر سود بکرێت." },
+            { "language": "kmr", "text": "Wê hingê divê pêşî veberhênan were kirin berî ku mirov qet li ser sûdê biaxive." },
+            { "language": "pl", "text": "W takim razie trzeba by najpierw inwestować, zanim w ogóle zacznie się mówić o korzyściach." },
+            { "language": "ro", "text": "Atunci ar trebui investit mai întâi, înainte chiar de a vorbi despre utilitate." },
+            { "language": "sq", "text": "Atëherë duhet së pari të investohet, para se të flitet fare për dobinë." }
+          ],
+          "function": "push-priority-objection",
+          "toneNote": "practical objection"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das wäre eine mögliche Schlussfolgerung, aber sie muss nicht alternativlos sein. Man könnte Pilotphasen nutzen, klare Kriterien festlegen und erst danach entscheiden, ob ein Ausbau gerechtfertigt ist.",
+          "translations": [
+            { "language": "en", "text": "That would be one possible conclusion, but it does not have to be the only option. One could use pilot phases, define clear criteria, and only then decide whether expansion is justified." },
+            { "language": "fa", "text": "این می‌تواند یک نتیجه ممکن باشد، اما تنها گزینه نیست. می‌توان از مرحله‌های آزمایشی استفاده کرد، معیارهای روشن تعیین کرد و فقط بعد تصمیم گرفت که گسترش آن توجیه دارد یا نه." },
+            { "language": "ar", "text": "سيكون ذلك استنتاجاً ممكناً، لكنه ليس بلا بديل. يمكن استخدام مراحل تجريبية، وتحديد معايير واضحة، ثم اتخاذ قرار لاحقاً بشأن ما إذا كان التوسع مبرراً." },
+            { "language": "tr", "text": "Bu olası bir sonuç olurdu, ama tek seçenek olmak zorunda değil. Pilot aşamalar kullanılabilir, açık ölçütler belirlenebilir ve ancak sonra genişlemenin gerekçeli olup olmadığına karar verilebilir." },
+            { "language": "ru", "text": "Это был бы возможный вывод, но не единственный вариант. Можно использовать пилотные фазы, установить ясные критерии и только затем решить, оправдано ли расширение." },
+            { "language": "ckb", "text": "ئەمە دەتوانێت دەرئەنجامێکی ممکن بێت، بەڵام تەنها ڕێگا نییە. دەتوانرێت قۆناغی تاقیکاری بەکاربهێنرێت، پێوەری ڕوون دیاری بکرێت و پاشان بڕیار بدرێت ئایا فراوانکردنەکە بەهۆکارە یان نا." },
+            { "language": "kmr", "text": "Ev dikare encameke gengaz be, lê ne hewce ye ku bê alternatîf be. Mirov dikare qonaxên pilot bikar bîne, pîvanên zelal destnîşan bike û tenê paşê biryar bide ka berfirehkirin bi sedem e an na." },
+            { "language": "pl", "text": "To byłby możliwy wniosek, ale nie musi być jedyną opcją. Można wykorzystać fazy pilotażowe, ustalić jasne kryteria i dopiero potem zdecydować, czy rozszerzenie jest uzasadnione." },
+            { "language": "ro", "text": "Aceasta ar fi o concluzie posibilă, dar nu trebuie să fie singura opțiune. S-ar putea folosi faze pilot, stabili criterii clare și abia apoi decide dacă extinderea este justificată." },
+            { "language": "sq", "text": "Kjo do të ishte një përfundim i mundshëm, por nuk duhet të jetë opsioni i vetëm. Mund të përdoren faza pilot, të përcaktohen kritere të qarta dhe vetëm pastaj të vendoset nëse zgjerimi është i arsyetuar." }
+          ],
+          "function": "avoid-false-dilemma",
+          "toneNote": "balanced transition"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Können Sie die Diskussionslinie noch einmal knapp bündeln?",
+          "translations": [
+            { "language": "en", "text": "Can you briefly bring the line of discussion together again?" },
+            { "language": "fa", "text": "می‌توانید خط اصلی بحث را یک بار دیگر کوتاه کنار هم بگذارید؟" },
+            { "language": "ar", "text": "هل يمكنك أن تجمع خط النقاش مرة أخرى بإيجاز؟" },
+            { "language": "tr", "text": "Tartışma çizgisini tekrar kısaca toparlayabilir misiniz?" },
+            { "language": "ru", "text": "Можете еще раз кратко собрать линию дискуссии?" },
+            { "language": "ckb", "text": "دەتوانیت هێڵی گفتوگۆکە جارێکی تر بە کورتەیی کۆبکەیتەوە؟" },
+            { "language": "kmr", "text": "Hûn dikarin rêza nîqaşê careke din bi kurtî bigirin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani jeszcze raz krótko zebrać linię dyskusji?" },
+            { "language": "ro", "text": "Puteți să reuniți încă o dată pe scurt firul discuției?" },
+            { "language": "sq", "text": "A mund ta përmblidhni edhe një herë shkurt vijën e diskutimit?" }
+          ],
+          "function": "ask-closing-structure",
+          "toneNote": "exam wrap-up"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Gern: Erstens brauchen digitale Plattformen einen klaren pädagogischen Zweck, zweitens müssen Ablenkung und Überforderung begrenzt werden, und drittens darf ein Ausbau erst nach geprüften Pilotphasen erfolgen.",
+          "translations": [
+            { "language": "en", "text": "Gladly: first, digital platforms need a clear pedagogical purpose; second, distraction and overload must be limited; and third, expansion should only happen after evaluated pilot phases." },
+            { "language": "fa", "text": "با کمال میل: اول، پلتفرم‌های دیجیتال به هدف آموزشی روشن نیاز دارند؛ دوم، حواس‌پرتی و فشار بیش از حد باید محدود شود؛ و سوم، گسترش فقط پس از مرحله‌های آزمایشیِ ارزیابی‌شده انجام شود." },
+            { "language": "ar", "text": "بكل سرور: أولاً تحتاج المنصات الرقمية إلى هدف تربوي واضح؛ ثانياً يجب الحد من التشتت والإرهاق؛ وثالثاً لا ينبغي التوسع إلا بعد مراحل تجريبية مقيمة." },
+            { "language": "tr", "text": "Memnuniyetle: birincisi, dijital platformların açık bir pedagojik amacı olmalı; ikincisi, dikkat dağınıklığı ve aşırı yük sınırlanmalı; üçüncüsü, genişleme ancak değerlendirilmiş pilot aşamalardan sonra yapılmalı." },
+            { "language": "ru", "text": "Конечно: во-первых, цифровым платформам нужна ясная педагогическая цель; во-вторых, отвлечение и перегрузку нужно ограничивать; и в-третьих, расширение должно происходить только после оцененных пилотных фаз." },
+            { "language": "ckb", "text": "بە دڵخۆشییەوە: یەکەم، پلاتفۆرمە دیجیتاڵەکان پێویستیان بە ئامانجی پەروەردەیی ڕوونە؛ دووەم، سەرنج‌پەرتبوون و بارگرانی زۆر دەبێت سنووردار بکرێن؛ سێیەم، فراوانکردن دەبێت تەنها دوای قۆناغە تاقیکارییە هەڵسەنگێندراوەکان بێت." },
+            { "language": "kmr", "text": "Bi kêfxweşî: yekem, platformên dîjîtal hewceyî armanceke perwerdeyî ya zelal in; duyem, belavbûna balê û barkirina zêde divê bêne sînordarkirin; sêyem, berfirehkirin divê tenê piştî qonaxên pilot ên nirxandî çêbibe." },
+            { "language": "pl", "text": "Chętnie: po pierwsze, platformy cyfrowe potrzebują jasnego celu pedagogicznego; po drugie, rozproszenie i przeciążenie muszą być ograniczone; po trzecie, rozszerzenie powinno nastąpić dopiero po ocenionych fazach pilotażowych." },
+            { "language": "ro", "text": "Cu plăcere: în primul rând, platformele digitale au nevoie de un scop pedagogic clar; în al doilea rând, distragerea și suprasolicitarea trebuie limitate; iar în al treilea rând, extinderea ar trebui să aibă loc numai după faze pilot evaluate." },
+            { "language": "sq", "text": "Me kënaqësi: së pari, platformat digjitale kanë nevojë për një qëllim pedagogjik të qartë; së dyti, shpërqendrimi dhe mbingarkesa duhet të kufizohen; dhe së treti, zgjerimi duhet të ndodhë vetëm pas fazave pilot të vlerësuara." }
+          ],
+          "function": "close-structured-discussion",
+          "toneNote": "ordered conclusion"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Den Einwand verstehe ich. Damit wir die Frage geordnet diskutieren, würde ich zuerst zwischen bloßer Bildschirmzeit und didaktisch begründetem Einsatz unterscheiden.",
+              "translations": [
+                { "language": "en", "text": "I understand the objection. To discuss the question in an organized way, I would first distinguish between mere screen time and didactically justified use." },
+                { "language": "fa", "text": "این اعتراض را می‌فهمم. برای بحث منظم، ابتدا بین زمان صرفاً جلوی صفحه و کاربرد آموزشیِ توجیه‌شده تفاوت می‌گذارم." },
+                { "language": "ar", "text": "أفهم الاعتراض. لكي نناقش السؤال بنظام، سأميز أولاً بين مجرد وقت أمام الشاشة والاستخدام المبرر تعليمياً." },
+                { "language": "tr", "text": "İtirazı anlıyorum. Soruyu düzenli tartışmak için önce salt ekran süresi ile didaktik olarak gerekçelendirilmiş kullanım arasında ayrım yapardım." },
+                { "language": "ru", "text": "Я понимаю возражение. Чтобы обсуждать вопрос упорядоченно, я сначала различил бы простое экранное время и дидактически обоснованное использование." },
+                { "language": "ckb", "text": "ناڕەزاییەکە تێدەگەم. بۆ باسکردنی ڕێکخراو، یەکەم جیاوازی دەکەم لە نێوان کاتی تەنها لەبەردەم شاشە و بەکارهێنانی پەروەردەیی بەهۆکار." },
+                { "language": "kmr", "text": "Ez nerazîbûnê fêm dikim. Ji bo pirsê bi rêxistinî nîqaş bikim, ez pêşî di navbera dema tenê li ber ekranê û bikaranîna bi sedema didaktîkî de cudahî dikim." },
+                { "language": "pl", "text": "Rozumiem zastrzeżenie. Aby omówić pytanie w uporządkowany sposób, najpierw odróżniłbym/odróżniłabym sam czas przed ekranem od użycia uzasadnionego dydaktycznie." },
+                { "language": "ro", "text": "Înțeleg obiecția. Pentru a discuta întrebarea ordonat, aș distinge mai întâi între simplul timp în fața ecranului și utilizarea justificată didactic." },
+                { "language": "sq", "text": "E kuptoj kundërshtimin. Për ta diskutuar pyetjen në mënyrë të rregullt, së pari do të dalloja kohën e thjeshtë para ekranit nga përdorimi i arsyetuar didaktikisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort würdigt den Einwand und gibt der Diskussion sofort eine klare Unterscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer respects the objection and immediately gives the discussion a clear distinction." },
+                { "language": "fa", "text": "قوی: پاسخ اعتراض را محترم می‌شمارد و فوراً تمایز روشنی به بحث می‌دهد." },
+                { "language": "ar", "text": "قوي: تحترم الإجابة الاعتراض وتمنح النقاش فوراً تمييزاً واضحاً." },
+                { "language": "tr", "text": "Güçlü: cevap itirazı dikkate alır ve tartışmaya hemen net bir ayrım kazandırır." },
+                { "language": "ru", "text": "Сильно: ответ уважает возражение и сразу дает дискуссии ясное различие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێز لە ناڕەزاییەکە دەگرێت و دەستبەجێ جیاوازییەکی ڕوون دەداتە گفتوگۆکە." },
+                { "language": "kmr", "text": "Xurt e: bersiv rêzê li nerazîbûnê digire û di cih de cudahiyeke zelal dide nîqaşê." },
+                { "language": "pl", "text": "Mocne: odpowiedź respektuje zastrzeżenie i od razu daje dyskusji jasne rozróżnienie." },
+                { "language": "ro", "text": "Puternic: răspunsul respectă obiecția și oferă imediat discuției o distincție clară." },
+                { "language": "sq", "text": "E fortë: përgjigjja e respekton kundërshtimin dhe i jep menjëherë diskutimit një dallim të qartë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Digitale Plattformen sind nicht automatisch schlecht, aber man muss natürlich aufpassen, dass sie nicht stören.",
+              "translations": [
+                { "language": "en", "text": "Digital platforms are not automatically bad, but one must of course be careful that they do not disturb." },
+                { "language": "fa", "text": "پلتفرم‌های دیجیتال خودبه‌خود بد نیستند، اما البته باید مراقب بود که مزاحمت ایجاد نکنند." },
+                { "language": "ar", "text": "المنصات الرقمية ليست سيئة تلقائياً، لكن يجب طبعاً الانتباه إلى ألا تزعج." },
+                { "language": "tr", "text": "Dijital platformlar otomatik olarak kötü değildir, ama elbette rahatsız etmemelerine dikkat etmek gerekir." },
+                { "language": "ru", "text": "Цифровые платформы не автоматически плохи, но, конечно, нужно следить, чтобы они не мешали." },
+                { "language": "ckb", "text": "پلاتفۆرمە دیجیتاڵەکان خۆکار خراپ نین، بەڵام بە دڵنیایی دەبێت ئاگادار بین کە دەستتێوەردان نەکەن." },
+                { "language": "kmr", "text": "Platformên dîjîtal bi otomatîkî xerab nînin, lê bêguman divê mirov baldar be ku asteng nekin." },
+                { "language": "pl", "text": "Platformy cyfrowe nie są automatycznie złe, ale oczywiście trzeba uważać, żeby nie przeszkadzały." },
+                { "language": "ro", "text": "Platformele digitale nu sunt automat rele, dar trebuie desigur avut grijă să nu deranjeze." },
+                { "language": "sq", "text": "Platformat digjitale nuk janë automatikisht të këqija, por sigurisht duhet pasur kujdes që të mos pengojnë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu locker: Die Antwort beruhigt nur und liefert noch keine Struktur für die weitere Diskussion.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too loose: the answer only reassures and does not yet provide structure for the further discussion." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی شل است: پاسخ فقط آرام می‌کند و هنوز ساختاری برای ادامه بحث نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه فضفاض جداً: تهدئ الإجابة فقط ولا تقدم بعد بنية لمواصلة النقاش." },
+                { "language": "tr", "text": "Makul ama fazla gevşek: cevap yalnızca yatıştırır ve devam eden tartışma için henüz yapı sunmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком свободно: ответ лишь успокаивает и пока не дает структуры для дальнейшей дискуссии." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر شل و گشتییە: وەڵامەکە تەنها ئارام دەکاتەوە و هێشتا پێکهاتە بۆ بەردەوامی گفتوگۆ نادات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir şil e: bersiv tenê aram dike û hîn avahiyek ji bo nîqaşa paşê nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt luźne: odpowiedź tylko uspokaja i nie daje jeszcze struktury dla dalszej dyskusji." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: răspunsul doar liniștește și nu oferă încă structură pentru discuția următoare." },
+                { "language": "sq", "text": "E besueshme, por shumë e lirshme: përgjigjja vetëm qetëson dhe ende nuk jep strukturë për diskutimin e mëtejshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das ist ein berechtigter Hinweis. Ich würde ihn als Qualitätskriterium aufnehmen: Digitale Phasen müssen zeitlich begrenzt, zielklar und mit einer analogen Reflexion verbunden sein.",
+              "translations": [
+                { "language": "en", "text": "That is a justified point. I would include it as a quality criterion: digital phases must be time-limited, goal-oriented, and connected with an offline reflection." },
+                { "language": "fa", "text": "این نکته موجهی است. آن را معیار کیفیت می‌گیرم: بخش‌های دیجیتال باید محدود از نظر زمان، روشن از نظر هدف و همراه با بازاندیشی غیردیجیتال باشند." },
+                { "language": "ar", "text": "هذه ملاحظة مبررة. سأعدها معيار جودة: يجب أن تكون المراحل الرقمية محدودة زمنياً، واضحة الهدف، ومرتبطة بتأمل غير رقمي." },
+                { "language": "tr", "text": "Bu haklı bir nokta. Bunu kalite ölçütü olarak alırdım: dijital aşamalar zamanla sınırlı, hedefi açık ve analog bir değerlendirmeyle bağlantılı olmalıdır." },
+                { "language": "ru", "text": "Это обоснованное замечание. Я бы взял его как критерий качества: цифровые фазы должны быть ограничены по времени, иметь ясную цель и быть связаны с офлайн-рефлексией." },
+                { "language": "ckb", "text": "ئەمە تێبینییەکی ڕەوایە. وەک پێوەری کوالیتی وەریدەگرم: قۆناغە دیجیتاڵەکان دەبێت کات‌سنووردار، ئامانج‌ڕوون و پەیوەست بە بیرکردنەوەی نادیجیتاڵ بن." },
+                { "language": "kmr", "text": "Ev têbîniyeke mafdar e. Ez wê wek pîvana kalîteyê digirim: qonaxên dîjîtal divê bi demê sînordar, bi armancê zelal û bi refleksiyoneke ne-dîjîtal ve girêdayî bin." },
+                { "language": "pl", "text": "To uzasadniona uwaga. Przyjąłbym/przyjęłabym ją jako kryterium jakości: fazy cyfrowe muszą być ograniczone czasowo, jasno ukierunkowane i połączone z refleksją analogową." },
+                { "language": "ro", "text": "Este o observație justificată. Aș lua-o ca pe un criteriu de calitate: fazele digitale trebuie să fie limitate în timp, clare ca scop și legate de o reflecție analogică." },
+                { "language": "sq", "text": "Kjo është një vërejtje e arsyeshme. Do ta merrja si kriter cilësie: fazat digjitale duhet të jenë të kufizuara në kohë, me qëllim të qartë dhe të lidhura me reflektim jodigjital." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Einwand wird nicht abgewehrt, sondern in ein Kriterium umgewandelt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the objection is not dismissed, but transformed into a criterion." },
+                { "language": "fa", "text": "قوی: اعتراض دفع نمی‌شود، بلکه به معیار تبدیل می‌شود." },
+                { "language": "ar", "text": "قوي: لا يرفض الاعتراض، بل يحول إلى معيار." },
+                { "language": "tr", "text": "Güçlü: itiraz reddedilmiyor, bir ölçüte dönüştürülüyor." },
+                { "language": "ru", "text": "Сильно: возражение не отклоняется, а превращается в критерий." },
+                { "language": "ckb", "text": "بەهێزە: ناڕەزاییەکە ڕەت ناکرێتەوە، بەڵکو دەگۆڕدرێت بۆ پێوەر." },
+                { "language": "kmr", "text": "Xurt e: nerazîbûn nayê redkirin, lê dibe pîvan." },
+                { "language": "pl", "text": "Mocne: zastrzeżenie nie zostaje odparte, lecz przekształcone w kryterium." },
+                { "language": "ro", "text": "Puternic: obiecția nu este respinsă, ci transformată într-un criteriu." },
+                { "language": "sq", "text": "E fortë: kundërshtimi nuk hidhet poshtë, por kthehet në kriter." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann muss man die Bildschirmzeit eben kontrollieren und klare Regeln für die Nutzung machen.",
+              "translations": [
+                { "language": "en", "text": "Then one simply has to control screen time and make clear rules for use." },
+                { "language": "fa", "text": "پس باید زمان صفحه را کنترل کرد و برای استفاده قوانین روشن گذاشت." },
+                { "language": "ar", "text": "إذن يجب ببساطة التحكم في وقت الشاشة ووضع قواعد واضحة للاستخدام." },
+                { "language": "tr", "text": "O zaman ekran süresini kontrol etmek ve kullanım için net kurallar koymak gerekir." },
+                { "language": "ru", "text": "Тогда нужно просто контролировать экранное время и установить ясные правила использования." },
+                { "language": "ckb", "text": "کەواتە دەبێت کاتی شاشە کۆنترۆڵ بکرێت و یاسای ڕوون بۆ بەکارهێنان دابنرێت." },
+                { "language": "kmr", "text": "Wê hingê divê dema ekranê were kontrolkirin û ji bo bikaranînê rêzikên zelal bên danîn." },
+                { "language": "pl", "text": "Wtedy trzeba po prostu kontrolować czas przed ekranem i ustalić jasne zasady korzystania." },
+                { "language": "ro", "text": "Atunci trebuie pur și simplu controlat timpul de ecran și stabilite reguli clare de utilizare." },
+                { "language": "sq", "text": "Atëherë thjesht duhet kontrolluar koha para ekranit dhe duhen vendosur rregulla të qarta përdorimi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu administrativ: Regeln allein erklären noch nicht, wann der digitale Einsatz didaktisch sinnvoll ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too administrative: rules alone do not explain when digital use is didactically meaningful." },
+                { "language": "fa", "text": "قابل‌تصور است، اما بیش از حد اداری است: قوانین به‌تنهایی توضیح نمی‌دهند چه زمانی کاربرد دیجیتال از نظر آموزشی مفید است." },
+                { "language": "ar", "text": "مقبول لكنه إداري جداً: القواعد وحدها لا تشرح متى يكون الاستخدام الرقمي مفيداً تعليمياً." },
+                { "language": "tr", "text": "Makul ama fazla idari: kurallar tek başına dijital kullanımın ne zaman didaktik olarak anlamlı olduğunu açıklamaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком административно: одни правила не объясняют, когда цифровое использование дидактически осмысленно." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر ئیدارییە: یاساکان بە تەنها ڕوون ناکەنەوە کە بەکارهێنانی دیجیتاڵ کەی پەروەردەیی سودمەندە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir îdarî ye: rêzik tenê venakin ka bikaranîna dîjîtal kengî ji aliyê didaktîkî ve watedar e." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt administracyjne: same zasady nie wyjaśniają, kiedy użycie cyfrowe ma sens dydaktyczny." },
+                { "language": "ro", "text": "Plauzibil, dar prea administrativ: regulile singure nu explică atunci când utilizarea digitală este didactic utilă." },
+                { "language": "sq", "text": "E besueshme, por shumë administrative: rregullat vetëm nuk shpjegojnë kur përdorimi digjital ka kuptim didaktik." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau deshalb sollte der Einsatz nicht als Selbstlern-Ersatz verstanden werden. Sinnvoll wäre ein Dreischritt: Einführung durch die Lehrkraft, kurze digitale Übung und anschließend gemeinsame Auswertung.",
+              "translations": [
+                { "language": "en", "text": "That is exactly why the use should not be understood as a replacement for self-study. A three-step approach would be useful: introduction by the teacher, a short digital exercise, and then a joint evaluation." },
+                { "language": "fa", "text": "دقیقاً به همین دلیل نباید آن را جایگزین خودآموزی دانست. روند سه‌مرحله‌ای مناسب‌تر است: معرفی توسط معلم، تمرین دیجیتال کوتاه و سپس ارزیابی مشترک." },
+                { "language": "ar", "text": "لهذا السبب تحديداً لا ينبغي فهم الاستخدام كبديل للتعلم الذاتي. سيكون النهج الثلاثي مفيداً: تقديم من المعلم، تدريب رقمي قصير، ثم تقييم مشترك." },
+                { "language": "tr", "text": "Tam da bu yüzden kullanım kendi kendine öğrenmenin yerine geçecek bir şey olarak anlaşılmamalıdır. Üç adımlı bir yaklaşım uygundur: öğretmenin tanıtımı, kısa dijital alıştırma ve ardından ortak değerlendirme." },
+                { "language": "ru", "text": "Именно поэтому использование не следует понимать как замену самостоятельного обучения. Подход в три шага был бы полезен: введение учителем, короткое цифровое упражнение и затем совместная оценка." },
+                { "language": "ckb", "text": "ڕێک بەهۆی ئەوە نابێت بەکارهێنان وەک جێگرەوەی خۆفێربوون تێبگەین. ڕێگای سێ قۆناغی گونجاوە: ناساندن لەلایەن مامۆستا، ڕاهێنانی دیجیتاڵی کورت و پاشان هەڵسەنگاندنی هاوبەش." },
+                { "language": "kmr", "text": "Rast ji ber vê yekê bikaranîn divê wek cihgira xwe-fêrbûnê neyê fêmkirin. Rêbazeke sê-gavî guncan e: danasîna ji aliyê mamoste ve, pratîka dîjîtal a kurt û paşê nirxandina hevbeş." },
+                { "language": "pl", "text": "Właśnie dlatego użycia nie należy rozumieć jako zamiennika samodzielnej nauki. Sensowne byłoby podejście trzystopniowe: wprowadzenie przez nauczyciela, krótkie ćwiczenie cyfrowe, a potem wspólna ewaluacja." },
+                { "language": "ro", "text": "Tocmai de aceea utilizarea nu ar trebui înțeleasă ca înlocuitor al studiului individual. Ar fi potrivit un parcurs în trei pași: introducere de către profesor, exercițiu digital scurt și apoi evaluare comună." },
+                { "language": "sq", "text": "Pikërisht për këtë arsye përdorimi nuk duhet kuptuar si zëvendësim i vetënxënies. Do të ishte i përshtatshëm një model me tre hapa: prezantim nga mësuesi, ushtrim digjital i shkurtër dhe pastaj vlerësim i përbashkët." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort reagiert auf die Sorge und gibt eine konkrete Sequenz für den Unterricht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer responds to the concern and gives a concrete sequence for the lesson." },
+                { "language": "fa", "text": "قوی: پاسخ به نگرانی واکنش نشان می‌دهد و توالی مشخصی برای کلاس ارائه می‌کند." },
+                { "language": "ar", "text": "قوي: تستجيب الإجابة للقلق وتقدم تسلسلاً عملياً للدرس." },
+                { "language": "tr", "text": "Güçlü: cevap kaygıya yanıt verir ve ders için somut bir sıra sunar." },
+                { "language": "ru", "text": "Сильно: ответ реагирует на опасение и дает конкретную последовательность для урока." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە وەڵامی نیگەرانییەکە دەداتەوە و زنجیرەیەکی کردار بۆ وانە پێشکەش دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv li fikarê vedigere û rêzeke konkret ji bo dersê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź reaguje na obawę i podaje konkretną sekwencję dla lekcji." },
+                { "language": "ro", "text": "Puternic: răspunsul reacționează la îngrijorare și oferă o secvență concretă pentru lecție." },
+                { "language": "sq", "text": "E fortë: përgjigjja i përgjigjet shqetësimit dhe jep një sekuencë konkrete për mësimin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Schwächere Lernende brauchen dann mehr Hilfe von der Lehrkraft, damit sie mit der Plattform zurechtkommen.",
+              "translations": [
+                { "language": "en", "text": "Weaker learners then need more help from the teacher so that they can cope with the platform." },
+                { "language": "fa", "text": "یادگیرندگان ضعیف‌تر در این صورت به کمک بیشتری از معلم نیاز دارند تا بتوانند با پلتفرم کنار بیایند." },
+                { "language": "ar", "text": "يحتاج المتعلمون الأضعف عندئذ إلى مساعدة أكبر من المعلم لكي يتعاملوا مع المنصة." },
+                { "language": "tr", "text": "Daha zayıf öğrenenler platformla başa çıkabilmek için öğretmenden daha fazla yardım ister." },
+                { "language": "ru", "text": "Более слабым учащимся тогда нужна большая помощь учителя, чтобы справиться с платформой." },
+                { "language": "ckb", "text": "فێرخوازانی لاوازتر پاشان پێویستیان بە یارمەتی زیاتر لە مامۆستا هەیە بۆ ئەوەی بتوانن لەگەڵ پلاتفۆرمەکە کار بکەن." },
+                { "language": "kmr", "text": "Fêrkerên lawaztir wê hingê ji mamoste alîkariya zêdetir dixwazin da ku bi platformê re bikarin bixebitin." },
+                { "language": "pl", "text": "Słabsi uczący się potrzebują wtedy większej pomocy nauczyciela, aby poradzić sobie z platformą." },
+                { "language": "ro", "text": "Cei care învață mai greu au atunci nevoie de mai mult ajutor din partea profesorului ca să se descurce cu platforma." },
+                { "language": "sq", "text": "Nxënësit më të dobët atëherë kanë nevojë për më shumë ndihmë nga mësuesi që të përballen me platformën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu reaktiv: Die Antwort nennt Hilfe, zeigt aber keinen Ablauf, der Überforderung vorbeugt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too reactive: the answer names help, but shows no process that prevents overload." },
+                { "language": "fa", "text": "قابل‌تصور است، اما بیش از حد واکنشی است: پاسخ کمک را نام می‌برد، اما روندی برای پیشگیری از فشار بیش از حد نشان نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه تفاعلي جداً: تذكر الإجابة المساعدة، لكنها لا تظهر مساراً يمنع الإرهاق." },
+                { "language": "tr", "text": "Makul ama fazla tepkisel: cevap yardımı belirtir, fakat aşırı yükü önleyen bir süreç göstermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком реактивно: ответ называет помощь, но не показывает процесс, предотвращающий перегрузку." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر وەڵامدانەوەییە: وەڵامەکە یارمەتی ناو دەبات، بەڵام ڕێڕەوێک نیشان نادات کە لە بارگرانی زۆر پێشگیری بکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir reaktîf e: bersiv alîkarî nav dike, lê pêvajoyek ku pêşî li barkirina zêde bigire nîşan nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt reaktywne: odpowiedź wskazuje pomoc, lecz nie pokazuje procesu zapobiegającego przeciążeniu." },
+                { "language": "ro", "text": "Plauzibil, dar prea reactiv: răspunsul numește ajutorul, dar nu arată un proces care previne suprasolicitarea." },
+                { "language": "sq", "text": "E besueshme, por shumë reaktive: përgjigjja përmend ndihmën, por nuk tregon një proces që parandalon mbingarkesën." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Damit sprechen Sie einen zweiten Punkt an: Zugangsgerechtigkeit. Ich würde deshalb die Diskussion in zwei Ebenen ordnen: erst pädagogischer Nutzen, dann technische Mindestbedingungen.",
+              "translations": [
+                { "language": "en", "text": "With that, you are addressing a second point: equal access. I would therefore organize the discussion on two levels: first pedagogical benefit, then technical minimum conditions." },
+                { "language": "fa", "text": "با این نکته موضوع دوم را مطرح می‌کنید: عدالت در دسترسی. بنابراین بحث را در دو سطح مرتب می‌کنم: اول فایده آموزشی، سپس شرایط فنی حداقلی." },
+                { "language": "ar", "text": "بهذا تطرح نقطة ثانية: عدالة الوصول. لذلك سأرتب النقاش على مستويين: أولاً الفائدة التربوية، ثم الشروط التقنية الدنيا." },
+                { "language": "tr", "text": "Bununla ikinci bir noktaya değiniyorsunuz: erişim adaleti. Bu nedenle tartışmayı iki düzeyde düzenlerdim: önce pedagojik yarar, sonra teknik asgari koşullar." },
+                { "language": "ru", "text": "Этим Вы затрагиваете второй пункт: справедливость доступа. Поэтому я бы упорядочил дискуссию на двух уровнях: сначала педагогическая польза, затем технические минимальные условия." },
+                { "language": "ckb", "text": "بەمە خاڵێکی دووەم دەهێنیتە گۆڕێ: دادپەروەری لە دەستگەیشتن. بۆیە گفتوگۆکە لە دوو ئاستدا ڕێکدەخەم: یەکەم سودی پەروەردەیی، پاشان مەرجە تەکنیکییە کەمینەکان." },
+                { "language": "kmr", "text": "Bi vê yekê hûn xalek duyemîn tînin: dadperweriya gihîştinê. Ji ber vê yekê ez nîqaşê li du astan rêz dikim: pêşî sûda perwerdeyî, paşê mercên teknîkî yên herî kêm." },
+                { "language": "pl", "text": "Porusza Pan/Pani tym drugi punkt: sprawiedliwość dostępu. Dlatego uporządkowałbym/uporządkowałabym dyskusję na dwóch poziomach: najpierw korzyść pedagogiczna, potem minimalne warunki techniczne." },
+                { "language": "ro", "text": "Prin aceasta abordați un al doilea punct: echitatea accesului. De aceea aș ordona discuția pe două niveluri: mai întâi utilitatea pedagogică, apoi condițiile tehnice minime." },
+                { "language": "sq", "text": "Me këtë prekni një pikë të dytë: drejtësinë e qasjes. Prandaj do ta rendisja diskutimin në dy nivele: së pari dobia pedagogjike, pastaj kushtet minimale teknike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt einen neuen Einwand auf, ohne den roten Faden zu verlieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes up a new objection without losing the main thread." },
+                { "language": "fa", "text": "قوی: پاسخ اعتراض جدید را می‌گیرد، بدون اینکه خط اصلی بحث را از دست بدهد." },
+                { "language": "ar", "text": "قوي: تتناول الإجابة اعتراضاً جديداً من دون أن تفقد الخيط الرئيسي." },
+                { "language": "tr", "text": "Güçlü: cevap yeni bir itirazı ele alır, ana çizgiyi kaybetmez." },
+                { "language": "ru", "text": "Сильно: ответ принимает новое возражение, не теряя основной линии." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ناڕەزاییەکی نوێ وەردەگرێت بێ ئەوەی هێڵی سەرەکی لەدەست بدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv nerazîbûneke nû digire bêyî ku rêza sereke winda bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź podejmuje nowe zastrzeżenie, nie tracąc głównego wątku." },
+                { "language": "ro", "text": "Puternic: răspunsul preia o nouă obiecție fără a pierde firul principal." },
+                { "language": "sq", "text": "E fortë: përgjigjja merr një kundërshtim të ri pa humbur vijën kryesore." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Technische Ausstattung ist natürlich wichtig, aber zuerst sollte man über die Lernziele sprechen.",
+              "translations": [
+                { "language": "en", "text": "Technical equipment is of course important, but first one should talk about the learning goals." },
+                { "language": "fa", "text": "تجهیزات فنی البته مهم است، اما اول باید درباره هدف‌های یادگیری صحبت کرد." },
+                { "language": "ar", "text": "التجهيز التقني مهم بالطبع، لكن ينبغي أولاً الحديث عن أهداف التعلم." },
+                { "language": "tr", "text": "Teknik donanım elbette önemlidir, ama önce öğrenme hedefleri konuşulmalıdır." },
+                { "language": "ru", "text": "Техническое оснащение, конечно, важно, но сначала нужно говорить об учебных целях." },
+                { "language": "ckb", "text": "کەرەستەی تەکنیکی بە دڵنیایی گرنگە، بەڵام یەکەم دەبێت قسە لەسەر ئامانجەکانی فێربوون بکرێت." },
+                { "language": "kmr", "text": "Amûrên teknîkî bêguman girîng in, lê pêşî divê li ser armancên fêrbûnê were axaftin." },
+                { "language": "pl", "text": "Wyposażenie techniczne jest oczywiście ważne, ale najpierw należy mówić o celach uczenia się." },
+                { "language": "ro", "text": "Dotarea tehnică este desigur importantă, dar mai întâi ar trebui discutate obiectivele de învățare." },
+                { "language": "sq", "text": "Pajisjet teknike janë sigurisht të rëndësishme, por së pari duhet folur për qëllimet e të nxënit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu schlicht: Die Antwort setzt eine Priorität, ordnet die Diskussion aber nicht in zwei bearbeitbare Ebenen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too simple: the answer sets a priority, but does not organize the discussion into two workable levels." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی ساده است: پاسخ اولویت می‌گذارد، اما بحث را به دو سطح قابل‌کار تقسیم نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه بسيط جداً: تحدد الإجابة أولوية، لكنها لا تنظم النقاش في مستويين قابلين للعمل." },
+                { "language": "tr", "text": "Makul ama fazla basit: cevap bir öncelik belirler, fakat tartışmayı işlenebilir iki düzeye ayırmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком просто: ответ задает приоритет, но не организует дискуссию на два рабочих уровня." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر سادەیە: وەڵامەکە پێشینەیەک دادەنێت، بەڵام گفتوگۆکە بە دوو ئاستی کارپێکراو ڕێکناخات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir hêsan e: bersiv pêşîniyekê datîne, lê nîqaşê li du astên karbar rêz nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt proste: odpowiedź ustala priorytet, lecz nie porządkuje dyskusji na dwóch możliwych do opracowania poziomach." },
+                { "language": "ro", "text": "Plauzibil, dar prea simplu: răspunsul stabilește o prioritate, dar nu ordonează discuția în două niveluri lucrabile." },
+                { "language": "sq", "text": "E besueshme, por shumë e thjeshtë: përgjigjja vendos një prioritet, por nuk e organizon diskutimin në dy nivele të punueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das wäre eine mögliche Schlussfolgerung, aber sie muss nicht alternativlos sein. Man könnte Pilotphasen nutzen, klare Kriterien festlegen und erst danach entscheiden, ob ein Ausbau gerechtfertigt ist.",
+              "translations": [
+                { "language": "en", "text": "That would be one possible conclusion, but it does not have to be the only option. One could use pilot phases, define clear criteria, and only then decide whether expansion is justified." },
+                { "language": "fa", "text": "این می‌تواند یک نتیجه ممکن باشد، اما تنها گزینه نیست. می‌توان مرحله‌های آزمایشی به کار برد، معیارهای روشن تعیین کرد و بعد تصمیم گرفت گسترش موجه است یا نه." },
+                { "language": "ar", "text": "سيكون ذلك استنتاجاً ممكناً، لكنه ليس الخيار الوحيد. يمكن استخدام مراحل تجريبية، وتحديد معايير واضحة، ثم اتخاذ قرار بشأن ما إذا كان التوسع مبرراً." },
+                { "language": "tr", "text": "Bu olası bir sonuç olurdu, ama tek seçenek olmak zorunda değil. Pilot aşamalar kullanılabilir, açık ölçütler belirlenebilir ve ancak sonra genişlemenin gerekçeli olup olmadığına karar verilebilir." },
+                { "language": "ru", "text": "Это был бы возможный вывод, но не единственный вариант. Можно использовать пилотные фазы, установить ясные критерии и только затем решить, оправдано ли расширение." },
+                { "language": "ckb", "text": "ئەمە دەتوانێت دەرئەنجامێکی ممکن بێت، بەڵام تەنها بژاردە نییە. دەتوانرێت قۆناغی تاقیکاری بەکاربهێنرێت، پێوەری ڕوون دیاری بکرێت و پاشان بڕیار بدرێت ئایا فراوانکردنەکە بەهۆکارە یان نا." },
+                { "language": "kmr", "text": "Ev dikare encameke gengaz be, lê ne tenê vebijêrk e. Mirov dikare qonaxên pilot bikar bîne, pîvanên zelal destnîşan bike û tenê paşê biryar bide ka berfirehkirin bi sedem e an na." },
+                { "language": "pl", "text": "To byłby możliwy wniosek, ale nie musi być jedyną opcją. Można wykorzystać fazy pilotażowe, ustalić jasne kryteria i dopiero potem zdecydować, czy rozszerzenie jest uzasadnione." },
+                { "language": "ro", "text": "Aceasta ar fi o concluzie posibilă, dar nu trebuie să fie singura opțiune. S-ar putea folosi faze pilot, stabili criterii clare și abia apoi decide dacă extinderea este justificată." },
+                { "language": "sq", "text": "Ky do të ishte një përfundim i mundshëm, por nuk duhet të jetë opsioni i vetëm. Mund të përdoren faza pilot, të përcaktohen kritere të qarta dhe pastaj të vendoset nëse zgjerimi është i arsyetuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet ein Entweder-oder und führt die Diskussion zu einem prüfbaren Verfahren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids an either-or and leads the discussion toward a testable procedure." },
+                { "language": "fa", "text": "قوی: پاسخ از دوگانه‌سازی پرهیز می‌کند و بحث را به روندی قابل‌ارزیابی می‌برد." },
+                { "language": "ar", "text": "قوي: تتجنب الإجابة ثنائية إما أو، وتقود النقاش إلى إجراء قابل للاختبار." },
+                { "language": "tr", "text": "Güçlü: cevap bir ya-o-ya-bu ikileminden kaçınır ve tartışmayı sınanabilir bir sürece götürür." },
+                { "language": "ru", "text": "Сильно: ответ избегает схемы «или-или» и ведет дискуссию к проверяемой процедуре." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە دووڕێی «یان ئەوە یان ئەمە» دەدوورکەوێت و گفتوگۆکە دەباتە ڕێڕەوێکی پشکنراو." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji dubendiya yan-yan dûr dikeve û nîqaşê ber bi pêvajoyeke ceribandinbar ve dibe." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika alternatywy albo-albo i prowadzi dyskusję ku sprawdzalnej procedurze." },
+                { "language": "ro", "text": "Puternic: răspunsul evită un ori-ori și conduce discuția spre o procedură testabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang një zgjedhje ose-ose dhe e çon diskutimin drejt një procedure të testueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte zuerst kleinere Projekte ausprobieren und dann sehen, ob die Investition sinnvoll ist.",
+              "translations": [
+                { "language": "en", "text": "One should first try smaller projects and then see whether the investment makes sense." },
+                { "language": "fa", "text": "باید اول پروژه‌های کوچک‌تر را امتحان کرد و بعد دید آیا سرمایه‌گذاری منطقی است یا نه." },
+                { "language": "ar", "text": "ينبغي أولاً تجربة مشاريع أصغر ثم رؤية ما إذا كان الاستثمار منطقياً." },
+                { "language": "tr", "text": "Önce daha küçük projeler denenmeli, sonra yatırımın anlamlı olup olmadığına bakılmalıdır." },
+                { "language": "ru", "text": "Сначала следует попробовать меньшие проекты, а затем посмотреть, имеет ли инвестиция смысл." },
+                { "language": "ckb", "text": "دەبێت یەکەم پڕۆژەی بچووکتر تاقی بکرێتەوە و پاشان ببینرێت ئایا وەبەرهێنانەکە واتادارە یان نا." },
+                { "language": "kmr", "text": "Divê pêşî projeyên piçûktir werin ceribandin û paşê were dîtin ka veberhênan watedar e an na." },
+                { "language": "pl", "text": "Najpierw należy wypróbować mniejsze projekty, a potem zobaczyć, czy inwestycja ma sens." },
+                { "language": "ro", "text": "Mai întâi ar trebui încercate proiecte mai mici și apoi văzut dacă investiția are sens." },
+                { "language": "sq", "text": "Së pari duhen provuar projekte më të vogla dhe pastaj të shihet nëse investimi ka kuptim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Antwort nennt Pilotprojekte, aber keine Kriterien, nach denen entschieden werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: the answer names pilot projects, but no criteria for deciding." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کلی است: پاسخ پروژه‌های آزمایشی را نام می‌برد، اما معیاری برای تصمیم‌گیری نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه عام جداً: تذكر الإجابة المشاريع التجريبية، لكنها لا تقدم معايير لاتخاذ القرار." },
+                { "language": "tr", "text": "Makul ama fazla genel: cevap pilot projeleri belirtir, fakat karar için ölçüt vermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общо: ответ называет пилотные проекты, но не критерии решения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر گشتییە: وەڵامەکە پڕۆژە تاقیکارییەکان ناو دەبات، بەڵام پێوەر بۆ بڕیار نادات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir giştî ye: bersiv projeyên pilot nav dike, lê pîvanên biryardanê nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne: odpowiedź wskazuje projekty pilotażowe, lecz nie podaje kryteriów decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul numește proiecte pilot, dar nu oferă criterii pentru decizie." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: përgjigjja përmend projekte pilot, por nuk jep kritere për vendimmarrje." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gern: Erstens brauchen digitale Plattformen einen klaren pädagogischen Zweck, zweitens müssen Ablenkung und Überforderung begrenzt werden, und drittens darf ein Ausbau erst nach geprüften Pilotphasen erfolgen.",
+              "translations": [
+                { "language": "en", "text": "Gladly: first, digital platforms need a clear pedagogical purpose; second, distraction and overload must be limited; and third, expansion should only happen after evaluated pilot phases." },
+                { "language": "fa", "text": "با کمال میل: اول، پلتفرم‌های دیجیتال به هدف آموزشی روشن نیاز دارند؛ دوم، حواس‌پرتی و فشار بیش از حد باید محدود شود؛ سوم، گسترش فقط پس از مرحله‌های آزمایشی ارزیابی‌شده انجام شود." },
+                { "language": "ar", "text": "بكل سرور: أولاً تحتاج المنصات الرقمية إلى هدف تربوي واضح؛ ثانياً يجب الحد من التشتت والإرهاق؛ وثالثاً لا ينبغي التوسع إلا بعد مراحل تجريبية مقيمة." },
+                { "language": "tr", "text": "Memnuniyetle: birincisi, dijital platformların açık bir pedagojik amacı olmalı; ikincisi, dikkat dağınıklığı ve aşırı yük sınırlanmalı; üçüncüsü, genişleme ancak değerlendirilmiş pilot aşamalardan sonra yapılmalı." },
+                { "language": "ru", "text": "Конечно: во-первых, цифровым платформам нужна ясная педагогическая цель; во-вторых, отвлечение и перегрузку нужно ограничивать; в-третьих, расширение должно происходить только после оцененных пилотных фаз." },
+                { "language": "ckb", "text": "بە دڵخۆشییەوە: یەکەم، پلاتفۆرمە دیجیتاڵەکان پێویستیان بە ئامانجی پەروەردەیی ڕوونە؛ دووەم، سەرنج‌پەرتبوون و بارگرانی زۆر دەبێت سنووردار بکرێن؛ سێیەم، فراوانکردن دەبێت تەنها دوای قۆناغە تاقیکارییە هەڵسەنگێندراوەکان بێت." },
+                { "language": "kmr", "text": "Bi kêfxweşî: yekem, platformên dîjîtal hewceyî armanceke perwerdeyî ya zelal in; duyem, belavbûna balê û barkirina zêde divê bêne sînordarkirin; sêyem, berfirehkirin divê tenê piştî qonaxên pilot ên nirxandî çêbibe." },
+                { "language": "pl", "text": "Chętnie: po pierwsze, platformy cyfrowe potrzebują jasnego celu pedagogicznego; po drugie, rozproszenie i przeciążenie muszą być ograniczone; po trzecie, rozszerzenie powinno nastąpić dopiero po ocenionych fazach pilotażowych." },
+                { "language": "ro", "text": "Cu plăcere: în primul rând, platformele digitale au nevoie de un scop pedagogic clar; în al doilea rând, distragerea și suprasolicitarea trebuie limitate; iar în al treilea rând, extinderea ar trebui să aibă loc numai după faze pilot evaluate." },
+                { "language": "sq", "text": "Me kënaqësi: së pari, platformat digjitale kanë nevojë për një qëllim pedagogjik të qartë; së dyti, shpërqendrimi dhe mbingarkesa duhet të kufizohen; së treti, zgjerimi duhet të ndodhë vetëm pas fazave pilot të vlerësuara." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bündelt die Diskussion in drei klaren Punkten und zeigt die Argumentationslinie.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer brings the discussion together in three clear points and shows the line of argument." },
+                { "language": "fa", "text": "قوی: پاسخ بحث را در سه نکته روشن جمع می‌کند و مسیر استدلال را نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: تجمع الإجابة النقاش في ثلاث نقاط واضحة وتظهر مسار الحجة." },
+                { "language": "tr", "text": "Güçlü: cevap tartışmayı üç net noktada toplar ve argüman çizgisini gösterir." },
+                { "language": "ru", "text": "Сильно: ответ объединяет дискуссию в три ясных пункта и показывает линию аргументации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گفتوگۆکە لە سێ خاڵی ڕووندا کۆدەکاتەوە و ڕێڕەوی بەڵگەهێنانەکە نیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv nîqaşê di sê xalên zelal de digire û rêza argumanê nîşan dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź zbiera dyskusję w trzech jasnych punktach i pokazuje linię argumentacji." },
+                { "language": "ro", "text": "Puternic: răspunsul reunește discuția în trei puncte clare și arată linia argumentării." },
+                { "language": "sq", "text": "E fortë: përgjigjja e mbledh diskutimin në tri pika të qarta dhe tregon vijën e argumentimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Also sollte man digitale Plattformen nutzen, aber nur vorsichtig und mit guten Regeln.",
+              "translations": [
+                { "language": "en", "text": "So one should use digital platforms, but only carefully and with good rules." },
+                { "language": "fa", "text": "پس باید از پلتفرم‌های دیجیتال استفاده کرد، اما فقط با احتیاط و با قوانین خوب." },
+                { "language": "ar", "text": "إذن ينبغي استخدام المنصات الرقمية، لكن بحذر وبقواعد جيدة فقط." },
+                { "language": "tr", "text": "Yani dijital platformlar kullanılmalı, ama yalnızca dikkatli ve iyi kurallarla." },
+                { "language": "ru", "text": "То есть цифровые платформы следует использовать, но только осторожно и с хорошими правилами." },
+                { "language": "ckb", "text": "کەواتە دەبێت پلاتفۆرمە دیجیتاڵەکان بەکاربهێنرێن، بەڵام تەنها بە ئاگاداری و بە یاسای باش." },
+                { "language": "kmr", "text": "Ango divê platformên dîjîtal werin bikaranîn, lê tenê bi baldarî û bi rêzikên baş." },
+                { "language": "pl", "text": "Czyli należy używać platform cyfrowych, ale tylko ostrożnie i z dobrymi zasadami." },
+                { "language": "ro", "text": "Deci ar trebui folosite platformele digitale, dar numai cu prudență și cu reguli bune." },
+                { "language": "sq", "text": "Pra duhet të përdoren platformat digjitale, por vetëm me kujdes dhe me rregulla të mira." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu grob: Die Antwort enthält eine Position, lässt aber die drei entwickelten Kriterien fast vollständig weg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too rough: the answer contains a position, but almost completely leaves out the three developed criteria." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی خام است: پاسخ موضع دارد، اما سه معیار ساخته‌شده را تقریباً کاملاً کنار می‌گذارد." },
+                { "language": "ar", "text": "مقبول لكنه خشن جداً: تحتوي الإجابة على موقف، لكنها تترك المعايير الثلاثة المطورة تقريباً بالكامل." },
+                { "language": "tr", "text": "Makul ama fazla kaba: cevap bir konum içerir, fakat geliştirilen üç ölçütü neredeyse tamamen dışarıda bırakır." },
+                { "language": "ru", "text": "Правдоподобно, но слишком грубо: ответ содержит позицию, но почти полностью опускает три разработанных критерия." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر خاوە: وەڵامەکە هەڵوێستێک هەیە، بەڵام سێ پێوەری دروستکراو نزیکەی بە تەواوی جێدەهێڵێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir qelew e: bersiv helwestekê dihewîne, lê sê pîvanên pêşxistî hema hema bi tevahî berdide." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt zgrubne: odpowiedź zawiera stanowisko, lecz prawie całkowicie pomija trzy wypracowane kryteria." },
+                { "language": "ro", "text": "Plauzibil, dar prea brut: răspunsul conține o poziție, dar omite aproape complet cele trei criterii dezvoltate." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: përgjigjja përmban një qëndrim, por lë pothuajse plotësisht jashtë tri kriteret e zhvilluara." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Greifen Sie einen Einwand zuerst fair auf, bevor Sie die Struktur der Diskussion vorgeben.",
+          "translations": [
+            { "language": "en", "text": "Take up an objection fairly first before setting the structure of the discussion." },
+            { "language": "fa", "text": "پیش از تعیین ساختار بحث، ابتدا اعتراض را منصفانه بگیرید." },
+            { "language": "ar", "text": "تناول الاعتراض أولاً بإنصاف قبل أن تحدد بنية النقاش." },
+            { "language": "tr", "text": "Tartışmanın yapısını vermeden önce bir itirazı adil biçimde ele alın." },
+            { "language": "ru", "text": "Сначала справедливо примите возражение, прежде чем задавать структуру дискуссии." },
+            { "language": "ckb", "text": "پێش ئەوەی پێکهاتەی گفتوگۆ دیاری بکەیت، یەکەم ناڕەزاییەکە بە دادپەروەری وەربگرە." },
+            { "language": "kmr", "text": "Berî ku hûn avahiya nîqaşê bidin, pêşî nerazîbûnê bi dadperwerî bigirin." },
+            { "language": "pl", "text": "Najpierw uczciwie podejmij zastrzeżenie, zanim wyznaczysz strukturę dyskusji." },
+            { "language": "ro", "text": "Preluați mai întâi corect o obiecție înainte de a stabili structura discuției." },
+            { "language": "sq", "text": "Merrni së pari kundërshtimin me drejtësi para se të vendosni strukturën e diskutimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "content",
+          "text": "Ein starker Diskussionsbeitrag macht aus Kritik ein Kriterium, an dem ein Vorschlag geprüft werden kann.",
+          "translations": [
+            { "language": "en", "text": "A strong discussion contribution turns criticism into a criterion by which a proposal can be evaluated." },
+            { "language": "fa", "text": "مشارکت قوی در بحث، نقد را به معیاری تبدیل می‌کند که پیشنهاد با آن سنجیده شود." },
+            { "language": "ar", "text": "المساهمة القوية في النقاش تحول النقد إلى معيار يمكن من خلاله فحص الاقتراح." },
+            { "language": "tr", "text": "Güçlü bir tartışma katkısı eleştiriyi, bir önerinin değerlendirilebileceği ölçüte dönüştürür." },
+            { "language": "ru", "text": "Сильный вклад в дискуссию превращает критику в критерий, по которому можно проверить предложение." },
+            { "language": "ckb", "text": "بەشدارییەکی بەهێز لە گفتوگۆدا ڕەخنە دەگۆڕێت بۆ پێوەرێک کە پێشنیارێک پێی دەپشکنرێت." },
+            { "language": "kmr", "text": "Beşdariya xurt a nîqaşê rexneyê dike pîvanek ku pêşniyarek pê were nirxandin." },
+            { "language": "pl", "text": "Mocny wkład w dyskusję zamienia krytykę w kryterium, według którego można sprawdzić propozycję." },
+            { "language": "ro", "text": "O contribuție puternică într-o discuție transformă critica într-un criteriu după care poate fi evaluată o propunere." },
+            { "language": "sq", "text": "Një kontribut i fortë në diskutim e kthen kritikën në kriter me të cilin mund të vlerësohet një propozim." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "language",
+          "text": "Formulierungen wie „damit sprechen Sie einen zweiten Punkt an“ helfen, neue Einwände einzubauen, ohne den Fokus zu verlieren.",
+          "translations": [
+            { "language": "en", "text": "Phrases such as “with that, you are addressing a second point” help integrate new objections without losing focus." },
+            { "language": "fa", "text": "فرمول‌هایی مثل «با این نکته موضوع دوم را مطرح می‌کنید» کمک می‌کنند اعتراض‌های تازه را وارد کنید، بدون اینکه تمرکز از دست برود." },
+            { "language": "ar", "text": "تساعد صيغ مثل «بهذا تطرح نقطة ثانية» على إدخال اعتراضات جديدة من دون فقدان التركيز." },
+            { "language": "tr", "text": "“Bununla ikinci bir noktaya değiniyorsunuz” gibi ifadeler, odağı kaybetmeden yeni itirazları eklemeye yardım eder." },
+            { "language": "ru", "text": "Формулировки вроде «этим Вы затрагиваете второй пункт» помогают включать новые возражения, не теряя фокус." },
+            { "language": "ckb", "text": "دەربڕینەکانی وەک «بەمە خاڵێکی دووەم دەهێنیتە گۆڕێ» یارمەتی دەدەن ناڕەزایی نوێ زیاد بکەیت بێ ئەوەی سەرنج لەدەست بچێت." },
+            { "language": "kmr", "text": "Gotinên wek “bi vê yekê hûn xalek duyemîn tînin” alîkar in ku nerazîbûnên nû werin têxistin bêyî ku fokus winda bibe." },
+            { "language": "pl", "text": "Sformułowania takie jak „tym porusza Pan/Pani drugi punkt” pomagają włączać nowe zastrzeżenia bez utraty fokusu." },
+            { "language": "ro", "text": "Formulări precum „prin aceasta abordați un al doilea punct” ajută la integrarea unor obiecții noi fără pierderea concentrării." },
+            { "language": "sq", "text": "Shprehje si “me këtë prekni një pikë të dytë” ndihmojnë të përfshini kundërshtime të reja pa humbur fokusin." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "exam-technique",
+          "text": "Am Ende einer Prüfungsgesprächsphase sind nummerierte Punkte oft stärker als ein einzelner allgemeiner Satz.",
+          "translations": [
+            { "language": "en", "text": "At the end of an exam discussion phase, numbered points are often stronger than a single general sentence." },
+            { "language": "fa", "text": "در پایان بخش گفت‌وگوی آزمونی، نکته‌های شماره‌دار اغلب قوی‌تر از یک جمله کلی تنها هستند." },
+            { "language": "ar", "text": "في نهاية مرحلة نقاش امتحاني تكون النقاط المرقمة غالباً أقوى من جملة عامة واحدة." },
+            { "language": "tr", "text": "Bir sınav konuşması aşamasının sonunda numaralandırılmış noktalar çoğu zaman tek bir genel cümleden daha güçlüdür." },
+            { "language": "ru", "text": "В конце фазы экзаменационной беседы пронумерованные пункты часто сильнее одного общего предложения." },
+            { "language": "ckb", "text": "لە کۆتایی قۆناغی گفتوگۆی تاقیکردنەوەدا خاڵە ژمارەکراوەکان زۆرجار بەهێزترن لە یەک ڕستەی گشتی." },
+            { "language": "kmr", "text": "Di dawiyê ya qonaxa axaftina azmûnê de xalên hejmartî gelek caran ji hevokeke giştî xurtir in." },
+            { "language": "pl", "text": "Na końcu fazy rozmowy egzaminacyjnej punkty numerowane są często mocniejsze niż jedno ogólne zdanie." },
+            { "language": "ro", "text": "La finalul unei faze de discuție de examen, punctele numerotate sunt adesea mai puternice decât o singură frază generală." },
+            { "language": "sq", "text": "Në fund të një faze diskutimi provimi, pikat e numëruara shpesh janë më të forta se një fjali e vetme e përgjithshme." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "structured-exam-discussion",
+          "placement": "hero",
+          "purpose": "Show a structured formal exam group discussion about digital learning tools.",
+          "altText": "Eine formale Gruppendiskussion in einem Prüfungsraum mit Notizen auf einem Tisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A formal group discussion in an exam room with notes on a table." },
+            { "language": "fa", "text": "یک بحث گروهی رسمی در اتاق آزمون با یادداشت‌هایی روی میز." },
+            { "language": "ar", "text": "نقاش جماعي رسمي في غرفة امتحان مع ملاحظات على طاولة." },
+            { "language": "tr", "text": "Bir sınav odasında, masada notlarla yapılan resmi bir grup tartışması." },
+            { "language": "ru", "text": "Официальная групповая дискуссия в экзаменационной комнате с заметками на столе." },
+            { "language": "ckb", "text": "گفتوگۆی گرووپی فەرمی لە ژووری تاقیکردنەوەدا بە تێبینییەکان لەسەر مێز." },
+            { "language": "kmr", "text": "Nîqaşeke komî ya fermî di odeya azmûnê de bi notan li ser maseyê." },
+            { "language": "pl", "text": "Formalna dyskusja grupowa w sali egzaminacyjnej z notatkami na stole." },
+            { "language": "ro", "text": "O discuție formală de grup într-o sală de examen, cu notițe pe masă." },
+            { "language": "sq", "text": "Një diskutim formal grupor në një dhomë provimi me shënime mbi tryezë." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal German oral exam group discussion: three diverse adults at a simple table with neutral note cards, calm structured atmosphere, no logos, no readable text, no private data, accessible composition, soft natural colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

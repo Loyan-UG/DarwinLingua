@@ -1,0 +1,833 @@
+{
+  "packageId": "roleplays-c2-core-04-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 04 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 04",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-interessenkonflikt-offenlegen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Interessenkonflikt offenlegen",
+      "titleTranslations": [
+        { "language": "en", "text": "Disclosing a conflict of interest" },
+        { "language": "fa", "text": "افشای یک تعارض منافع" },
+        { "language": "ar", "text": "الإفصاح عن تضارب مصالح" },
+        { "language": "tr", "text": "Bir çıkar çatışmasını açıklamak" },
+        { "language": "ru", "text": "Раскрытие конфликта интересов" },
+        { "language": "ckb", "text": "ئاشکراکردنی دژایەتی بەرژەوەندی" },
+        { "language": "kmr", "text": "Aşkerakirina nakokiya berjewendiyan" },
+        { "language": "pl", "text": "Ujawnienie konfliktu interesów" },
+        { "language": "ro", "text": "Dezvăluirea unui conflict de interese" },
+        { "language": "sq", "text": "Zbulimi i një konflikti interesi" }
+      ],
+      "description": "In einer Auswahlrunde für einen neuen Dienstleister merken Sie, dass einer der Anbieter Ihr früherer Arbeitgeber ist. Sie kennen das Produkt gut, möchten die Diskussion fachlich unterstützen, dürfen aber Ihre Unabhängigkeit nicht gefährden. Sie legen den Interessenkonflikt offen und schlagen ein faires Verfahren vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a selection round for a new service provider, you realize that one of the vendors is your former employer. You know the product well and want to support the discussion professionally, but must not endanger your independence. You disclose the conflict of interest and propose a fair process." },
+        { "language": "fa", "text": "در یک جلسه انتخاب ارائه‌دهنده خدمات جدید متوجه می‌شوید که یکی از شرکت‌های پیشنهادی کارفرمای سابق شماست. محصول را خوب می‌شناسید و می‌خواهید بحث را تخصصی پشتیبانی کنید، اما نباید استقلال خود را به خطر بیندازید. تعارض منافع را آشکار می‌کنید و یک روند منصفانه پیشنهاد می‌دهید." },
+        { "language": "ar", "text": "في جولة اختيار مزود خدمة جديد تلاحظ أن أحد الموردين هو صاحب عملك السابق. تعرف المنتج جيداً وتريد دعم النقاش مهنياً، لكن لا يجوز أن تعرض استقلاليتك للخطر. تفصح عن تضارب المصالح وتقترح إجراءً عادلاً." },
+        { "language": "tr", "text": "Yeni bir hizmet sağlayıcı için seçim turunda, adaylardan birinin eski işvereniniz olduğunu fark ediyorsunuz. Ürünü iyi tanıyorsunuz ve tartışmayı uzmanlıkla desteklemek istiyorsunuz, ancak bağımsızlığınızı tehlikeye atmamalısınız. Çıkar çatışmasını açıklıyor ve adil bir süreç öneriyorsunuz." },
+        { "language": "ru", "text": "На раунде выбора нового поставщика услуг вы замечаете, что один из участников - ваш бывший работодатель. Вы хорошо знаете продукт и хотите профессионально поддержать обсуждение, но не должны ставить под угрозу свою независимость. Вы раскрываете конфликт интересов и предлагаете справедливую процедуру." },
+        { "language": "ckb", "text": "لە دانیشتنێکی هەڵبژاردنی دابینکەری خزمەتگوزاری نوێدا تێدەگەیت کە یەکێک لە پێشکەشکارەکان کارفرمای پێشووتە. تۆ بەرهەمەکە باش دەناسیت و دەتەوێت گفتوگۆکە بە پیشەیی پشتیوانی بکەیت، بەڵام نابێت سەربەخۆییت بخەیتە مەترسییەوە. دژایەتی بەرژەوەندی ئاشکرا دەکەیت و ڕێکارێکی دادپەروەرانە پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Di gera hilbijartina dabînkerê xizmetê yê nû de hûn dibînin ku yek ji pêşkêşkaran kardêrê berê yê we ye. Hûn hilberê baş nas dikin û dixwazin nîqaşê bi pisporî piştgirî bikin, lê divê serbixwebûna xwe nexin xeterê. Hûn nakokiya berjewendiyan aşkere dikin û pêvajoyeke dadmend pêşniyar dikin." },
+        { "language": "pl", "text": "W rundzie wyboru nowego usługodawcy zauważa Pan/Pani, że jeden z oferentów jest Pańskim/Pani byłym pracodawcą. Zna Pan/Pani produkt dobrze i chce merytorycznie wesprzeć dyskusję, ale nie może narazić swojej niezależności. Ujawnia Pan/Pani konflikt interesów i proponuje uczciwą procedurę." },
+        { "language": "ro", "text": "Într-o rundă de selecție pentru un nou furnizor de servicii observați că unul dintre ofertanți este fostul dumneavoastră angajator. Cunoașteți bine produsul și doriți să sprijiniți discuția profesional, dar nu trebuie să vă puneți independența în pericol. Dezvăluiți conflictul de interese și propuneți un proces corect." },
+        { "language": "sq", "text": "Në një raund përzgjedhjeje për një ofrues të ri shërbimi, vini re se një nga ofruesit është ish-punëdhënësi juaj. E njihni mirë produktin dhe doni ta mbështesni diskutimin profesionalisht, por nuk duhet të rrezikoni pavarësinë tuaj. Ju e zbuloni konfliktin e interesit dhe propozoni një procedurë të drejtë." }
+      ],
+      "learnerGoal": "Einen Interessenkonflikt offenlegen: die eigene Nähe präzise benennen, Kompetenz von Entscheidungsbefugnis trennen, Transparenz herstellen, ohne sich selbst zu diskreditieren, und ein überprüfbares Verfahren vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Disclose a conflict of interest: name your proximity precisely, separate expertise from decision authority, create transparency without discrediting yourself, and propose a verifiable process." },
+        { "language": "fa", "text": "یک تعارض منافع را آشکار کنید: نزدیکی خود را دقیق نام ببرید، تخصص را از اختیار تصمیم جدا کنید، شفافیت ایجاد کنید بدون اینکه خودتان را بی‌اعتبار کنید، و روندی قابل‌بررسی پیشنهاد دهید." },
+        { "language": "ar", "text": "أفصح عن تضارب مصالح: سم قربك بدقة، وافصل الخبرة عن صلاحية القرار، وأنشئ شفافية من دون أن تضعف مصداقيتك، واقترح إجراءً قابلاً للتحقق." },
+        { "language": "tr", "text": "Bir çıkar çatışmasını açıklayın: yakınlığınızı kesin biçimde adlandırın, uzmanlığı karar yetkisinden ayırın, kendinizi itibarsızlaştırmadan şeffaflık sağlayın ve denetlenebilir bir süreç önerin." },
+        { "language": "ru", "text": "Раскрыть конфликт интересов: точно назвать свою близость, отделить экспертизу от полномочий принятия решения, создать прозрачность, не дискредитируя себя, и предложить проверяемую процедуру." },
+        { "language": "ckb", "text": "دژایەتی بەرژەوەندی ئاشکرا بکە: نزیکی خۆت بە وردی ناو ببه، شارەزایی لە دەسەڵاتی بڕیار جیا بکەوە، شەفافیەت دروست بکە بێ ئەوەی خۆت بێ‌باوەڕ بکەیت، و ڕێکارێکی پشکنراو پێشنیار بکە." },
+        { "language": "kmr", "text": "Nakokiya berjewendiyan aşkere bikin: nêzîkbûna xwe bi rastî bi nav bikin, pisporiyê ji desthilata biryarê cuda bikin, zelalî çêkin bêyî ku xwe bêbawer bikin, û pêvajoyeke kontrolkirbar pêşniyar bikin." },
+        { "language": "pl", "text": "Ujawnić konflikt interesów: precyzyjnie nazwać swoją bliskość, oddzielić kompetencję od uprawnienia decyzyjnego, stworzyć przejrzystość bez dyskredytowania siebie i zaproponować weryfikowalną procedurę." },
+        { "language": "ro", "text": "Dezvăluiți un conflict de interese: numiți precis apropierea proprie, separați expertiza de autoritatea decizională, creați transparență fără a vă discredita și propuneți un proces verificabil." },
+        { "language": "sq", "text": "Zbuloni një konflikt interesi: emërtoni saktë afërsinë tuaj, ndani ekspertizën nga autoriteti vendimmarrës, krijoni transparencë pa e diskredituar veten dhe propozoni një procedurë të verifikueshme." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 4,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Fachverantwortliche/r",
+          "translations": [
+            { "language": "en", "text": "Subject-matter lead" },
+            { "language": "fa", "text": "مسئول تخصصی" },
+            { "language": "ar", "text": "المسؤول المتخصص" },
+            { "language": "tr", "text": "Konu uzmanı sorumlusu" },
+            { "language": "ru", "text": "Ответственный эксперт" },
+            { "language": "ckb", "text": "بەرپرسی شارەزایی" },
+            { "language": "kmr", "text": "Berpirsiyarê pisporiyê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna merytorycznie" },
+            { "language": "ro", "text": "Responsabil de specialitate" },
+            { "language": "sq", "text": "Përgjegjës profesional" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Einkaufsleitung",
+          "translations": [
+            { "language": "en", "text": "Head of procurement" },
+            { "language": "fa", "text": "مدیر خرید" },
+            { "language": "ar", "text": "مدير المشتريات" },
+            { "language": "tr", "text": "Satın alma yöneticisi" },
+            { "language": "ru", "text": "Руководитель закупок" },
+            { "language": "ckb", "text": "بەڕێوەبەری کڕین" },
+            { "language": "kmr", "text": "Rêveberê kirînê" },
+            { "language": "pl", "text": "Kierownik zakupów" },
+            { "language": "ro", "text": "Director achiziții" },
+            { "language": "sq", "text": "Drejtues i prokurimit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Wir gehen gleich in die Bewertungsrunde für die drei Anbieter. Sie kennen die Lösung von NordSys sehr gut. Können Sie die technische Einschätzung übernehmen?",
+          "translations": [
+            { "language": "en", "text": "We are about to enter the evaluation round for the three vendors. You know the NordSys solution very well. Can you take over the technical assessment?" },
+            { "language": "fa", "text": "الان وارد مرحله ارزیابی سه ارائه‌دهنده می‌شویم. شما راه‌حل NordSys را خیلی خوب می‌شناسید. می‌توانید ارزیابی فنی را بر عهده بگیرید؟" },
+            { "language": "ar", "text": "سنبدأ الآن جولة تقييم المزودين الثلاثة. أنت تعرف حل NordSys جيداً جداً. هل يمكنك تولي التقييم التقني؟" },
+            { "language": "tr", "text": "Üç sağlayıcı için değerlendirme turuna geçmek üzereyiz. NordSys çözümünü çok iyi biliyorsunuz. Teknik değerlendirmeyi üstlenebilir misiniz?" },
+            { "language": "ru", "text": "Мы сейчас переходим к раунду оценки трех поставщиков. Вы очень хорошо знаете решение NordSys. Можете взять на себя техническую оценку?" },
+            { "language": "ckb", "text": "ئێستا دەچینە قۆناغی هەڵسەنگاندنی سێ پێشکەشکار. تۆ چارەسەری NordSys زۆر باش دەناسیت. دەتوانیت هەڵسەنگاندنی تەکنیکی وەربگریت؟" },
+            { "language": "kmr", "text": "Em niha dikevin gera nirxandina sê pêşkêşkaran. Hûn çareseriya NordSys gelek baş nas dikin. Hûn dikarin nirxandina teknîkî bigirin?" },
+            { "language": "pl", "text": "Za chwilę przechodzimy do rundy oceny trzech dostawców. Zna Pan/Pani rozwiązanie NordSys bardzo dobrze. Czy może Pan/Pani przejąć ocenę techniczną?" },
+            { "language": "ro", "text": "Intrăm imediat în runda de evaluare pentru cei trei furnizori. Cunoașteți foarte bine soluția NordSys. Puteți prelua evaluarea tehnică?" },
+            { "language": "sq", "text": "Po hyjmë tani në raundin e vlerësimit për tre ofruesit. Ju e njihni shumë mirë zgjidhjen NordSys. A mund ta merrni përsipër vlerësimin teknik?" }
+          ],
+          "function": "request-expert-evaluation",
+          "toneNote": "routine procurement opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Bevor ich die Einschätzung übernehme, sollte ich transparent machen: NordSys war bis vor zwei Jahren mein Arbeitgeber. Ich kann technische Fakten einordnen, möchte aber nicht allein bewerten oder eine Empfehlung mitentscheiden.",
+          "translations": [
+            { "language": "en", "text": "Before I take over the assessment, I should make something transparent: NordSys was my employer until two years ago. I can contextualize technical facts, but I do not want to evaluate alone or co-decide on a recommendation." },
+            { "language": "fa", "text": "قبل از اینکه ارزیابی را بر عهده بگیرم، باید شفاف بگویم: NordSys تا دو سال پیش کارفرمای من بود. می‌توانم واقعیت‌های فنی را توضیح بدهم، اما نمی‌خواهم به‌تنهایی ارزیابی کنم یا در تصمیم‌گیری توصیه نهایی شریک باشم." },
+            { "language": "ar", "text": "قبل أن أتولى التقييم، ينبغي أن أوضح شيئاً بشفافية: كانت NordSys صاحب عملي حتى قبل عامين. أستطيع وضع الحقائق التقنية في سياقها، لكنني لا أريد أن أقيّم وحدي أو أشارك في اتخاذ التوصية." },
+            { "language": "tr", "text": "Değerlendirmeyi üstlenmeden önce şunu şeffaf biçimde belirtmeliyim: NordSys iki yıl öncesine kadar işverenimdi. Teknik olguları bağlama oturtabilirim, ancak tek başıma değerlendirmek veya tavsiyede karar ortağı olmak istemem." },
+            { "language": "ru", "text": "Прежде чем я возьму на себя оценку, должен прозрачно сказать: NordSys был моим работодателем до двух лет назад. Я могу контекстуализировать технические факты, но не хочу оценивать один или участвовать в принятии рекомендации." },
+            { "language": "ckb", "text": "پێش ئەوەی هەڵسەنگاندنەکە وەربگرم، دەبێت شەفاف بکەم: NordSys تا دوو ساڵ پێش ئێستا کارفرمای من بوو. دەتوانم ڕاستییە تەکنیکییەکان لە چوارچێوە دابنێم، بەڵام نامەوێت بە تەنها هەڵسەنگاندن بکەم یان لە بڕیاری پێشنیاری کۆتایی بەشدار بم." },
+            { "language": "kmr", "text": "Berî ku ez nirxandinê bigirim, divê tiştekî zelal bikim: NordSys heta du sal berê kardêrê min bû. Ez dikarim rastiyên teknîkî di çarçoveyê de danim, lê naxwazim bi tenê binirxînim an di pêşniyara dawî de hevbiryar bim." },
+            { "language": "pl", "text": "Zanim przejmę ocenę, powinienem/powinnam coś transparentnie powiedzieć: NordSys był moim pracodawcą do dwóch lat temu. Mogę osadzić fakty techniczne w kontekście, ale nie chcę oceniać samodzielnie ani współdecydować o rekomendacji." },
+            { "language": "ro", "text": "Înainte să preiau evaluarea, ar trebui să clarific transparent: NordSys a fost angajatorul meu până acum doi ani. Pot contextualiza faptele tehnice, dar nu vreau să evaluez singur sau să co-decid recomandarea." },
+            { "language": "sq", "text": "Para se ta marr përsipër vlerësimin, duhet të bëj diçka transparente: NordSys ishte punëdhënësi im deri para dy vitesh. Mund t'i vendos faktet teknike në kontekst, por nuk dua të vlerësoj vetëm ose të bashkëvendos për rekomandimin." }
+          ],
+          "function": "disclose-conflict-clearly",
+          "toneNote": "transparent and controlled"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Danke für die Offenheit. Heißt das, dass Ihre Einschätzung zu NordSys gar nicht verwendbar ist?",
+          "translations": [
+            { "language": "en", "text": "Thank you for being open. Does that mean your assessment of NordSys cannot be used at all?" },
+            { "language": "fa", "text": "ممنون از شفافیتتان. یعنی ارزیابی شما درباره NordSys اصلاً قابل‌استفاده نیست؟" },
+            { "language": "ar", "text": "شكراً على الصراحة. هل يعني ذلك أن تقييمك لـ NordSys غير قابل للاستخدام إطلاقاً؟" },
+            { "language": "tr", "text": "Açıklığınız için teşekkürler. Bu, NordSys hakkındaki değerlendirmenizin hiç kullanılamayacağı anlamına mı geliyor?" },
+            { "language": "ru", "text": "Спасибо за открытость. Значит ли это, что вашу оценку NordSys вообще нельзя использовать?" },
+            { "language": "ckb", "text": "سوپاس بۆ شەفافیەت. واتە هەڵسەنگاندنی تۆ دەربارەی NordSys بە هیچ شێوەیەک بەکارهێنراو نییە؟" },
+            { "language": "kmr", "text": "Spas ji bo vekirîbûnê. Ev tê wê wateyê ku nirxandina we ya li ser NordSys qet nikare were bikaranîn?" },
+            { "language": "pl", "text": "Dziękuję za otwartość. Czy to znaczy, że Pańska/Pani ocena NordSys w ogóle nie nadaje się do użycia?" },
+            { "language": "ro", "text": "Vă mulțumesc pentru deschidere. Înseamnă asta că evaluarea dumneavoastră despre NordSys nu poate fi folosită deloc?" },
+            { "language": "sq", "text": "Faleminderit për hapjen. A do të thotë kjo se vlerësimi juaj për NordSys nuk mund të përdoret fare?" }
+          ],
+          "function": "test-credibility-after-disclosure",
+          "toneNote": "concern about usability"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Nicht gar nicht. Ich würde zwischen Fachwissen und Entscheidungseinfluss unterscheiden: Ich kann Architektur, Integrationsaufwand und bekannte Grenzen erklären. Die Gewichtung im Anbieter-Scoring sollte aber jemand ohne frühere Nähe übernehmen.",
+          "translations": [
+            { "language": "en", "text": "Not at all. I would distinguish between expertise and decision influence: I can explain architecture, integration effort, and known limitations. But someone without prior proximity should take over the weighting in the vendor scoring." },
+            { "language": "fa", "text": "نه، اصلاً این‌طور نیست. من بین دانش تخصصی و اثرگذاری بر تصمیم فرق می‌گذارم: می‌توانم معماری، حجم کار یکپارچه‌سازی و محدودیت‌های شناخته‌شده را توضیح بدهم. اما وزن‌دهی در امتیازدهی ارائه‌دهندگان را بهتر است کسی انجام دهد که نزدیکی قبلی ندارد." },
+            { "language": "ar", "text": "ليس إطلاقاً. سأميز بين الخبرة والتأثير على القرار: أستطيع شرح المعمارية وجهد الدمج والحدود المعروفة. لكن ينبغي أن يتولى وزن النقاط في تقييم الموردين شخص ليست لديه صلة سابقة." },
+            { "language": "tr", "text": "Hiç de değil. Uzmanlık ile karar etkisini ayırırdım: mimariyi, entegrasyon çabasını ve bilinen sınırları açıklayabilirim. Ancak sağlayıcı puanlamasındaki ağırlıklandırmayı önceki yakınlığı olmayan biri üstlenmeli." },
+            { "language": "ru", "text": "Вовсе нет. Я бы различал экспертизу и влияние на решение: я могу объяснить архитектуру, усилия по интеграции и известные ограничения. Но взвешивание в оценке поставщиков должен взять на себя кто-то без прежней близости." },
+            { "language": "ckb", "text": "نەخێر، بە هیچ شێوەیەک. من جیاوازی دەکەم لە نێوان شارەزایی و کاریگەری لەسەر بڕیار: دەتوانم معماری، هەوڵی یەکخستن و سنوورە ناسراوەکان ڕوون بکەمەوە. بەڵام وزن‌دانان لە خاڵدانانی پێشکەشکاران باشترە کەسێک وەربگرێت کە نزیکی پێشووی نییە." },
+            { "language": "kmr", "text": "Na, qet ne. Ez di navbera pisporî û bandora biryarê de cudahî dikim: ez dikarim avahî, hewla entegrasyonê û sînorên naskirî rave bikim. Lê giraniya di pûandana pêşkêşkaran de divê kesekî bê nêzîkbûna berê bigire." },
+            { "language": "pl", "text": "Nie, wcale nie. Rozróżniłbym/rozróżniłabym wiedzę fachową od wpływu na decyzję: mogę wyjaśnić architekturę, nakład integracji i znane ograniczenia. Ważenie w punktacji dostawców powinien jednak przejąć ktoś bez wcześniejszej bliskości." },
+            { "language": "ro", "text": "Nu, deloc. Aș distinge între expertiză și influență decizională: pot explica arhitectura, efortul de integrare și limitele cunoscute. Dar ponderarea în scorarea furnizorilor ar trebui preluată de cineva fără apropiere anterioară." },
+            { "language": "sq", "text": "Jo, aspak. Do të bëja dallim mes ekspertizës dhe ndikimit në vendim: mund të shpjegoj arkitekturën, përpjekjen e integrimit dhe kufijtë e njohur. Por peshimin në vlerësimin e ofruesve duhet ta marrë dikush pa afërsi të mëparshme." }
+          ],
+          "function": "separate-expertise-from-decision-power",
+          "toneNote": "credibility-preserving distinction"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Das klingt vernünftig. Wir müssen aber dokumentieren, warum Sie trotzdem im Raum bleiben. Sonst wirkt es später inkonsequent.",
+          "translations": [
+            { "language": "en", "text": "That sounds reasonable. But we have to document why you still remain in the room. Otherwise it may later look inconsistent." },
+            { "language": "fa", "text": "منطقی به نظر می‌رسد. اما باید مستند کنیم چرا شما همچنان در جلسه می‌مانید. وگرنه بعداً ممکن است ناسازگار به نظر برسد." },
+            { "language": "ar", "text": "هذا يبدو معقولاً. لكن علينا أن نوثق لماذا تبقى مع ذلك في الغرفة. وإلا فقد يبدو الأمر لاحقاً غير متسق." },
+            { "language": "tr", "text": "Bu makul görünüyor. Ama yine de odada neden kaldığınızı belgelemeliyiz. Aksi halde daha sonra tutarsız görünebilir." },
+            { "language": "ru", "text": "Это звучит разумно. Но нам нужно задокументировать, почему вы все равно остаетесь в комнате. Иначе позже это может выглядеть непоследовательно." },
+            { "language": "ckb", "text": "ئەمە عاقڵانە دەردەکەوێت. بەڵام دەبێت بەڵگە بکەین بۆچی تۆ هێشتا لە ژوورەکەدا دەمێنیتەوە. ئەگەر نا، دواتر وەک نایەکسان دەردەکەوێت." },
+            { "language": "kmr", "text": "Ev maqûl dixuye. Lê divê em belge bikin çima hûn dîsa di odeyê de dimînin. Wekî din paşê dikare nehevgirtî xuya bike." },
+            { "language": "pl", "text": "To brzmi rozsądnie. Musimy jednak udokumentować, dlaczego mimo to pozostaje Pan/Pani w pokoju. Inaczej później może to wyglądać niespójnie." },
+            { "language": "ro", "text": "Sună rezonabil. Dar trebuie să documentăm de ce rămâneți totuși în sală. Altfel, mai târziu poate părea inconsecvent." },
+            { "language": "sq", "text": "Kjo tingëllon e arsyeshme. Por duhet të dokumentojmë pse ju megjithatë qëndroni në dhomë. Përndryshe më vonë mund të duket e paqëndrueshme." }
+          ],
+          "function": "request-documentation-rationale",
+          "toneNote": "process safeguard"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde protokollieren: Meine Rolle beschränkt sich auf die fachliche Erläuterung prüfbarer Produktmerkmale. Ich nehme nicht an der finalen Punktevergabe teil und enthalte mich bei der Empfehlung zum Zuschlag.",
+          "translations": [
+            { "language": "en", "text": "I would record this: my role is limited to the professional explanation of verifiable product features. I will not take part in the final scoring and will abstain from the award recommendation." },
+            { "language": "fa", "text": "من این را در صورتجلسه ثبت می‌کنم: نقش من محدود به توضیح تخصصی ویژگی‌های قابل‌بررسی محصول است. در امتیازدهی نهایی شرکت نمی‌کنم و در توصیه برای انتخاب نهایی رأی نمی‌دهم." },
+            { "language": "ar", "text": "سأوثق ما يلي: يقتصر دوري على الشرح المهني لخصائص المنتج القابلة للتحقق. لن أشارك في منح النقاط النهائي، وسأمتنع عن التوصية بالترسية." },
+            { "language": "tr", "text": "Şunu tutanağa geçirirdim: rolüm, doğrulanabilir ürün özelliklerinin uzmanlıkla açıklanmasıyla sınırlıdır. Nihai puanlamaya katılmam ve ihale önerisinde çekimser kalırım." },
+            { "language": "ru", "text": "Я бы зафиксировал это в протоколе: моя роль ограничивается профессиональным объяснением проверяемых характеристик продукта. Я не участвую в финальном выставлении баллов и воздерживаюсь при рекомендации присуждения." },
+            { "language": "ckb", "text": "من ئەمە لە پڕۆتۆکۆڵدا تۆمار دەکەم: ڕۆڵی من سنووردارە بە ڕوونکردنەوەی پیشەیی تایبەتمەندییە پشکنراوەکانی بەرهەم. لە خاڵدانانی کۆتایی بەشدار نابم و لە پێشنیاری دابەشکردنی گرێبەستدا خۆم دەگرمەوە." },
+            { "language": "kmr", "text": "Ez wisa di protokolê de tomar dikim: rola min bi ravekirina pisporî ya taybetmendiyên hilberê yên kontrolkirbar sînordar e. Ez beşdarî pûankirina dawî nabim û di pêşniyara dayîna peymanê de xwe digirim." },
+            { "language": "pl", "text": "Zaprotokołowałbym/zaprotokołowałabym to tak: moja rola ogranicza się do merytorycznego wyjaśnienia sprawdzalnych cech produktu. Nie biorę udziału w końcowym punktowaniu i wstrzymuję się przy rekomendacji wyboru." },
+            { "language": "ro", "text": "Aș consemna astfel: rolul meu se limitează la explicarea profesională a caracteristicilor verificabile ale produsului. Nu particip la punctajul final și mă abțin la recomandarea de atribuire." },
+            { "language": "sq", "text": "Do ta regjistroja kështu: roli im kufizohet te shpjegimi profesional i veçorive të verifikueshme të produktit. Nuk marr pjesë në pikëzimin përfundimtar dhe abstenoj në rekomandimin për fituesin." }
+          ],
+          "function": "define-limited-role",
+          "toneNote": "precise procedural language"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Was sagen wir, falls ein anderes Teammitglied später fragt, warum wir Ihre Vorerfahrung nicht einfach als Vorteil genutzt haben?",
+          "translations": [
+            { "language": "en", "text": "What do we say if another team member later asks why we did not simply use your prior experience as an advantage?" },
+            { "language": "fa", "text": "اگر بعداً یکی از اعضای دیگر تیم بپرسد چرا تجربه قبلی شما را به‌سادگی به‌عنوان مزیت استفاده نکردیم، چه می‌گوییم؟" },
+            { "language": "ar", "text": "ماذا نقول إذا سأل عضو آخر في الفريق لاحقاً لماذا لم نستخدم خبرتك السابقة ببساطة كميزة؟" },
+            { "language": "tr", "text": "Başka bir ekip üyesi daha sonra neden önceki deneyiminizi doğrudan avantaj olarak kullanmadığımızı sorarsa ne deriz?" },
+            { "language": "ru", "text": "Что мы скажем, если другой член команды позже спросит, почему мы просто не использовали ваш прежний опыт как преимущество?" },
+            { "language": "ckb", "text": "چی دەڵێین ئەگەر ئەندامێکی تری تیم دواتر بپرسێت بۆچی ئەزموونی پێشووتان بە سادەیی وەک سوودێک بەکارنەهێنا؟" },
+            { "language": "kmr", "text": "Em çi bêjin heke endamekî din ê tîmê paşê bipirse çima me ezmûna berê ya we tenê wek avantaj bikar neanî?" },
+            { "language": "pl", "text": "Co powiemy, jeśli inny członek zespołu później zapyta, dlaczego nie wykorzystaliśmy po prostu Pańskiego/Pani wcześniejszego doświadczenia jako atutu?" },
+            { "language": "ro", "text": "Ce spunem dacă un alt membru al echipei întreabă mai târziu de ce nu am folosit pur și simplu experiența dumneavoastră anterioară ca avantaj?" },
+            { "language": "sq", "text": "Çfarë themi nëse një anëtar tjetër i ekipit pyet më vonë pse nuk e përdorëm thjesht përvojën tuaj të mëparshme si avantazh?" }
+          ],
+          "function": "ask-about-team-framing",
+          "toneNote": "internal fairness concern"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wir können sagen: Die Vorerfahrung ist als Informationsquelle hilfreich, aber nicht als Bewertungsmandat. Gerade weil ich das Produkt kenne, machen wir transparent, wo mein Beitrag endet und wo die unabhängige Bewertung beginnt.",
+          "translations": [
+            { "language": "en", "text": "We can say: the prior experience is helpful as a source of information, but not as an evaluation mandate. Precisely because I know the product, we make transparent where my contribution ends and where independent evaluation begins." },
+            { "language": "fa", "text": "می‌توانیم بگوییم: تجربه قبلی به‌عنوان منبع اطلاعات مفید است، اما به‌عنوان اختیار ارزیابی نه. دقیقاً چون من محصول را می‌شناسم، شفاف می‌کنیم سهم من کجا تمام می‌شود و ارزیابی مستقل از کجا شروع می‌شود." },
+            { "language": "ar", "text": "يمكننا أن نقول: الخبرة السابقة مفيدة كمصدر للمعلومات، لكنها ليست تفويضاً للتقييم. وبالتحديد لأنني أعرف المنتج، نجعل شفافاً أين ينتهي مساهمتي وأين يبدأ التقييم المستقل." },
+            { "language": "tr", "text": "Şunu söyleyebiliriz: önceki deneyim bilgi kaynağı olarak yararlıdır, ama değerlendirme yetkisi olarak değil. Ürünü bildiğim için tam da katkımın nerede bittiğini ve bağımsız değerlendirmenin nerede başladığını şeffaflaştırıyoruz." },
+            { "language": "ru", "text": "Мы можем сказать: прежний опыт полезен как источник информации, но не как мандат на оценку. Именно потому что я знаю продукт, мы прозрачно показываем, где заканчивается мой вклад и где начинается независимая оценка." },
+            { "language": "ckb", "text": "دەتوانین بڵێین: ئەزموونی پێشوو وەک سەرچاوەی زانیاری سوودبەخشە، بەڵام وەک مانداتی هەڵسەنگاندن نا. ڕێک چونکە من بەرهەمەکە دەناسم، شەفاف دەکەین بەشداریی من لە کوێ کۆتایی دێت و هەڵسەنگاندنی سەربەخۆ لە کوێ دەست پێدەکات." },
+            { "language": "kmr", "text": "Em dikarin bêjin: ezmûna berê wek çavkaniya agahiyê alîkar e, lê ne wek destûra nirxandinê. Rast ji ber ku ez hilberê nas dikim, em zelal dikin ku beşdariya min li ku diqede û nirxandina serbixwe li ku dest pê dike." },
+            { "language": "pl", "text": "Możemy powiedzieć: wcześniejsze doświadczenie jest pomocne jako źródło informacji, ale nie jako mandat do oceny. Właśnie dlatego, że znam produkt, pokazujemy transparentnie, gdzie kończy się mój wkład, a gdzie zaczyna niezależna ocena." },
+            { "language": "ro", "text": "Putem spune: experiența anterioară este utilă ca sursă de informație, dar nu ca mandat de evaluare. Tocmai pentru că știu produsul, facem transparent unde se termină contribuția mea și unde începe evaluarea independentă." },
+            { "language": "sq", "text": "Mund të themi: përvoja e mëparshme është e dobishme si burim informacioni, por jo si mandat vlerësimi. Pikërisht sepse e njoh produktin, e bëjmë transparente ku mbaron kontributi im dhe ku fillon vlerësimi i pavarur." }
+          ],
+          "function": "frame-experience-as-information-not-mandate",
+          "toneNote": "fairness and credibility"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Einverstanden. Brauchen wir zusätzlich eine externe Zweitmeinung oder reicht die interne Trennung der Rollen?",
+          "translations": [
+            { "language": "en", "text": "Agreed. Do we also need an external second opinion, or is the internal separation of roles sufficient?" },
+            { "language": "fa", "text": "موافقم. آیا علاوه بر این به یک نظر دوم خارجی نیاز داریم یا جداکردن نقش‌ها در داخل کافی است؟" },
+            { "language": "ar", "text": "متفقون. هل نحتاج أيضاً إلى رأي ثان خارجي، أم يكفي الفصل الداخلي للأدوار؟" },
+            { "language": "tr", "text": "Anlaştık. Ek olarak dış bir ikinci görüşe ihtiyacımız var mı, yoksa iç rol ayrımı yeterli mi?" },
+            { "language": "ru", "text": "Согласен. Нужна ли нам дополнительно внешняя вторая оценка, или достаточно внутреннего разделения ролей?" },
+            { "language": "ckb", "text": "ڕازیم. ئایا بە جگە لەوە پێویستمان بە ڕای دووەمی دەرەکی هەیە، یان جیاکردنەوەی ڕۆڵەکان لە ناوخۆدا بەسە؟" },
+            { "language": "kmr", "text": "Li hev hat. Ma pêdiviya me bi ramaneke duyem a derveyî jî heye, an cudakirina rolên hundirîn bes e?" },
+            { "language": "pl", "text": "Zgoda. Czy potrzebujemy dodatkowo zewnętrznej drugiej opinii, czy wystarczy wewnętrzne rozdzielenie ról?" },
+            { "language": "ro", "text": "De acord. Avem nevoie și de o a doua opinie externă sau este suficientă separarea internă a rolurilor?" },
+            { "language": "sq", "text": "Dakord. A na duhet edhe një mendim i dytë i jashtëm apo mjafton ndarja e brendshme e roleve?" }
+          ],
+          "function": "ask-for-additional-safeguard",
+          "toneNote": "process calibration"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Für die Vorauswahl reicht die Rollentrennung, wenn sie dokumentiert ist. Für die finale Zuschlagsentscheidung würde ich eine kurze Gegenprüfung durch eine unabhängige Person empfehlen, damit der Vorgang auch rückblickend belastbar bleibt.",
+          "translations": [
+            { "language": "en", "text": "For the preliminary selection, role separation is sufficient if documented. For the final award decision, I would recommend a brief counter-review by an independent person so that the process remains robust in retrospect as well." },
+            { "language": "fa", "text": "برای پیش‌انتخاب، اگر جداکردن نقش‌ها مستند شود کافی است. برای تصمیم نهایی انتخاب، یک بررسی کوتاه توسط فردی مستقل را توصیه می‌کنم تا روند حتی در نگاه بعدی هم قابل‌دفاع بماند." },
+            { "language": "ar", "text": "بالنسبة إلى الاختيار الأولي يكفي فصل الأدوار إذا تم توثيقه. أما في قرار الترسية النهائي فأوصي بمراجعة مقابلة قصيرة من شخص مستقل، حتى يبقى الإجراء متيناً أيضاً عند النظر إليه لاحقاً." },
+            { "language": "tr", "text": "Ön seçim için, belgelenirse rol ayrımı yeterlidir. Nihai ihale kararı için, sürecin geriye dönük olarak da sağlam kalması adına bağımsız bir kişi tarafından kısa bir karşı inceleme öneririm." },
+            { "language": "ru", "text": "Для предварительного отбора достаточно разделения ролей, если оно задокументировано. Для окончательного решения о присуждении я бы рекомендовал краткую встречную проверку независимым лицом, чтобы процесс оставался надежным и в ретроспективе." },
+            { "language": "ckb", "text": "بۆ هەڵبژاردنی پێشەکی، جیاکردنەوەی ڕۆڵەکان بەسە ئەگەر بەڵگە بکرێت. بۆ بڕیاری کۆتایی دابەشکردنی گرێبەست، پێشنیار دەکەم پشکنینێکی کورت لەلایەن کەسێکی سەربەخۆوە بکرێت، بۆ ئەوەی پرۆسەکە لە پاشاوەش بەهێز بمێنێت." },
+            { "language": "kmr", "text": "Ji bo hilbijartina pêşîn, cudakirina rolan bes e heke were belgekirin. Ji bo biryara dawî ya dayîna peymanê, ez kontrolkirineke kurt ji aliyê kesekî serbixwe ve pêşniyar dikim, da ku pêvajo paşê jî bihêz bimîne." },
+            { "language": "pl", "text": "Do preselekcji wystarczy rozdzielenie ról, jeśli jest udokumentowane. Przy ostatecznej decyzji o wyborze rekomendowałbym/rekomendowałabym krótką kontrolę przez osobę niezależną, aby procedura pozostała odporna także z perspektywy czasu." },
+            { "language": "ro", "text": "Pentru preselecție, separarea rolurilor este suficientă dacă este documentată. Pentru decizia finală de atribuire aș recomanda o scurtă verificare de către o persoană independentă, astfel încât procesul să rămână solid și retrospectiv." },
+            { "language": "sq", "text": "Për përzgjedhjen paraprake, ndarja e roleve mjafton nëse dokumentohet. Për vendimin përfundimtar të dhënies, do të rekomandoja një kontroll të shkurtër nga një person i pavarur, që procesi të mbetet i qëndrueshëm edhe më vonë." }
+          ],
+          "function": "recommend-proportional-safeguard",
+          "toneNote": "risk-based process suggestion"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Dann schließen wir es so ab: Sie liefern Fakten, nicht Punkte. Ich dokumentiere die Rollenabgrenzung und organisiere für die finale Entscheidung eine unabhängige Gegenprüfung.",
+          "translations": [
+            { "language": "en", "text": "Then we will close it this way: you provide facts, not scores. I document the role boundary and organize an independent counter-review for the final decision." },
+            { "language": "fa", "text": "پس این‌طور جمع‌بندی می‌کنیم: شما واقعیت‌ها را ارائه می‌دهید، نه امتیازها را. من مرزبندی نقش‌ها را مستند می‌کنم و برای تصمیم نهایی یک بررسی مستقل هماهنگ می‌کنم." },
+            { "language": "ar", "text": "إذن نختم الأمر هكذا: أنت تقدم الحقائق لا النقاط. أوثق حدود الدور وأنظم مراجعة مقابلة مستقلة للقرار النهائي." },
+            { "language": "tr", "text": "O halde şöyle kapatıyoruz: siz puan değil, olgu sunuyorsunuz. Ben rol sınırını belgeliyor ve nihai karar için bağımsız bir karşı inceleme organize ediyorum." },
+            { "language": "ru", "text": "Тогда завершаем так: вы предоставляете факты, а не баллы. Я документирую границу ролей и организую независимую встречную проверку для окончательного решения." },
+            { "language": "ckb", "text": "ئەوا ئاوا کۆتایی پێدەهێنین: تۆ ڕاستییەکان پێشکەش دەکەیت، نە خاڵەکان. من سنووری ڕۆڵەکان بەڵگە دەکەم و بۆ بڕیاری کۆتایی پشکنینێکی سەربەخۆ ڕێکدەخەم." },
+            { "language": "kmr", "text": "Wê demê em wisa diqedînin: hûn rastiyan pêşkêş dikin, ne pûanan. Ez sînorê rolan belge dikim û ji bo biryara dawî kontrolkirineke serbixwe saz dikim." },
+            { "language": "pl", "text": "W takim razie zamykamy to tak: dostarcza Pan/Pani fakty, nie punkty. Ja dokumentuję granicę roli i organizuję niezależną kontrolę do decyzji końcowej." },
+            { "language": "ro", "text": "Atunci închidem astfel: dumneavoastră furnizați fapte, nu punctaje. Eu documentez delimitarea rolurilor și organizez o verificare independentă pentru decizia finală." },
+            { "language": "sq", "text": "Atëherë e mbyllim kështu: ju jepni fakte, jo pikë. Unë dokumentoj kufirin e roleve dhe organizoj një kontroll të pavarur për vendimin përfundimtar." }
+          ],
+          "function": "summarize-agreed-safeguard",
+          "toneNote": "clear closure"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Genau. So bleibt meine Fachkenntnis nutzbar, ohne dass der Eindruck entsteht, ich würde einen früheren Arbeitgeber bevorzugen. Ich ergänze die technischen Hinweise entsprechend neutral und verweise bei Bewertungen auf das dokumentierte Verfahren.",
+          "translations": [
+            { "language": "en", "text": "Exactly. This keeps my expertise usable without creating the impression that I am favoring a former employer. I will add the technical notes in a correspondingly neutral way and refer any evaluations to the documented process." },
+            { "language": "fa", "text": "دقیقاً. این‌طور دانش تخصصی من قابل‌استفاده می‌ماند، بدون اینکه این تصور ایجاد شود که من کارفرمای سابقم را ترجیح می‌دهم. نکات فنی را به‌شکل متناسب و خنثی اضافه می‌کنم و برای هر ارزیابی به روند مستند ارجاع می‌دهم." },
+            { "language": "ar", "text": "بالضبط. هكذا تبقى خبرتي قابلة للاستخدام من دون أن ينشأ انطباع بأنني أفضل صاحب عمل سابق. سأضيف الملاحظات التقنية بشكل محايد مناسب، وأحيل أي تقييمات إلى الإجراء الموثق." },
+            { "language": "tr", "text": "Aynen. Böylece uzmanlığım kullanılabilir kalır, ama eski işverenimi kayırdığım izlenimi oluşmaz. Teknik notları buna uygun tarafsızlıkla ekleyeceğim ve değerlendirmelerde belgelenmiş sürece atıf yapacağım." },
+            { "language": "ru", "text": "Именно. Так моя экспертиза остается полезной, не создавая впечатления, что я предпочитаю бывшего работодателя. Я добавлю технические замечания нейтрально и при оценках буду ссылаться на задокументированную процедуру." },
+            { "language": "ckb", "text": "ڕێک. بەم شێوەیە شارەزایی من بەکارهێنراو دەمێنێتەوە، بێ ئەوەی ئەو تێگەیشتنە دروست بێت کە من کارفرمای پێشووم پێشتر دەخەم. تێبینییە تەکنیکییەکان بە شێوەیەکی گونجاوی بێلایەن زیاد دەکەم و لە هەڵسەنگاندنەکاندا ئاماژە بە ڕێکاری بەڵگەکراو دەکەم." },
+            { "language": "kmr", "text": "Rast e. Wisa pisporiya min bikaranînbar dimîne bêyî ku wêneyek çêbibe ku ez kardêrê berê tercîh dikim. Ez têbînîyên teknîkî bi awayekî bêalî lê zêde dikim û di nirxandinan de balê didim pêvajoya belgekirî." },
+            { "language": "pl", "text": "Dokładnie. W ten sposób moja wiedza fachowa pozostaje użyteczna, bez tworzenia wrażenia, że faworyzuję byłego pracodawcę. Uzupełnię uwagi techniczne odpowiednio neutralnie, a przy ocenach będę odsyłać do udokumentowanej procedury." },
+            { "language": "ro", "text": "Exact. Astfel expertiza mea rămâne utilizabilă fără să se creeze impresia că favorizez un fost angajator. Voi adăuga observațiile tehnice în mod corespunzător neutru și voi trimite evaluările către procesul documentat." },
+            { "language": "sq", "text": "Pikërisht. Kështu ekspertiza ime mbetet e përdorshme pa krijuar përshtypjen se po favorizoj një ish-punëdhënës. Do t'i shtoj shënimet teknike në mënyrë përkatësisht neutrale dhe për vlerësimet do t'i referohem procedurës së dokumentuar." }
+          ],
+          "function": "confirm-neutral-contribution",
+          "toneNote": "professional final commitment"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Bevor ich die Einschätzung übernehme, sollte ich transparent machen: NordSys war bis vor zwei Jahren mein Arbeitgeber. Ich kann technische Fakten einordnen, möchte aber nicht allein bewerten oder eine Empfehlung mitentscheiden.",
+              "translations": [
+                { "language": "en", "text": "Before I take over the assessment, I should make something transparent: NordSys was my employer until two years ago. I can contextualize technical facts, but I do not want to evaluate alone or co-decide on a recommendation." },
+                { "language": "fa", "text": "قبل از اینکه ارزیابی را بر عهده بگیرم، باید شفاف بگویم: NordSys تا دو سال پیش کارفرمای من بود. می‌توانم واقعیت‌های فنی را توضیح بدهم، اما نمی‌خواهم به‌تنهایی ارزیابی کنم یا در تصمیم‌گیری توصیه نهایی شریک باشم." },
+                { "language": "ar", "text": "قبل أن أتولى التقييم، ينبغي أن أوضح شيئاً بشفافية: كانت NordSys صاحب عملي حتى قبل عامين. أستطيع وضع الحقائق التقنية في سياقها، لكنني لا أريد أن أقيّم وحدي أو أشارك في اتخاذ التوصية." },
+                { "language": "tr", "text": "Değerlendirmeyi üstlenmeden önce şunu şeffaf biçimde belirtmeliyim: NordSys iki yıl öncesine kadar işverenimdi. Teknik olguları bağlama oturtabilirim, ancak tek başıma değerlendirmek veya tavsiyede karar ortağı olmak istemem." },
+                { "language": "ru", "text": "Прежде чем я возьму на себя оценку, должен прозрачно сказать: NordSys был моим работодателем до двух лет назад. Я могу контекстуализировать технические факты, но не хочу оценивать один или участвовать в принятии рекомендации." },
+                { "language": "ckb", "text": "پێش ئەوەی هەڵسەنگاندنەکە وەربگرم، دەبێت شەفاف بکەم: NordSys تا دوو ساڵ پێش ئێستا کارفرمای من بوو. دەتوانم ڕاستییە تەکنیکییەکان لە چوارچێوە دابنێم، بەڵام نامەوێت بە تەنها هەڵسەنگاندن بکەم یان لە بڕیاری پێشنیاری کۆتایی بەشدار بم." },
+                { "language": "kmr", "text": "Berî ku ez nirxandinê bigirim, divê tiştekî zelal bikim: NordSys heta du sal berê kardêrê min bû. Ez dikarim rastiyên teknîkî di çarçoveyê de danim, lê naxwazim bi tenê binirxînim an di pêşniyara dawî de hevbiryar bim." },
+                { "language": "pl", "text": "Zanim przejmę ocenę, powinienem/powinnam coś transparentnie powiedzieć: NordSys był moim pracodawcą do dwóch lat temu. Mogę osadzić fakty techniczne w kontekście, ale nie chcę oceniać samodzielnie ani współdecydować o rekomendacji." },
+                { "language": "ro", "text": "Înainte să preiau evaluarea, ar trebui să clarific transparent: NordSys a fost angajatorul meu până acum doi ani. Pot contextualiza faptele tehnice, dar nu vreau să evaluez singur sau să co-decid recomandarea." },
+                { "language": "sq", "text": "Para se ta marr përsipër vlerësimin, duhet të bëj diçka transparente: NordSys ishte punëdhënësi im deri para dy vitesh. Mund t'i vendos faktet teknike në kontekst, por nuk dua të vlerësoj vetëm ose të bashkëvendos për rekomandimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt die Nähe konkret und setzt sofort eine Grenze für Entscheidungseinfluss.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer names the proximity concretely and immediately sets a boundary for decision influence." },
+                { "language": "fa", "text": "قوی: پاسخ نزدیکی را مشخص و دقیق نام می‌برد و فوراً مرزی برای اثرگذاری بر تصمیم تعیین می‌کند." },
+                { "language": "ar", "text": "قوي: تسمي الإجابة القرب بشكل ملموس وتضع فوراً حداً للتأثير على القرار." },
+                { "language": "tr", "text": "Güçlü: cevap yakınlığı somut biçimde adlandırır ve karar etkisi için hemen bir sınır koyar." },
+                { "language": "ru", "text": "Сильно: ответ конкретно называет близость и сразу устанавливает границу влияния на решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نزیکییەکە بە دیاریکراوی ناو دەبات و دەستبەجێ سنوورێک بۆ کاریگەری بڕیار دادەنێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv nêzîkbûnê bi konkret bi nav dike û tavilê sînorek ji bo bandora biryarê datîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź konkretnie nazywa bliskość i od razu wyznacza granicę wpływu na decyzję." },
+                { "language": "ro", "text": "Puternic: răspunsul numește concret apropierea și stabilește imediat o limită pentru influența decizională." },
+                { "language": "sq", "text": "E fortë: përgjigjja e emërton konkretisht afërsinë dhe vendos menjëherë një kufi për ndikimin në vendim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich kenne NordSys gut und kann dazu etwas sagen, aber wir sollten meine frühere Verbindung im Hinterkopf behalten.",
+              "translations": [
+                { "language": "en", "text": "I know NordSys well and can say something about it, but we should keep my former connection in mind." },
+                { "language": "fa", "text": "من NordSys را خوب می‌شناسم و می‌توانم درباره‌اش توضیح بدهم، اما باید ارتباط قبلی من را در نظر داشته باشیم." },
+                { "language": "ar", "text": "أعرف NordSys جيداً ويمكنني أن أقول شيئاً عنها، لكن ينبغي أن نضع صلتي السابقة في الحسبان." },
+                { "language": "tr", "text": "NordSys'i iyi tanıyorum ve bununla ilgili bir şeyler söyleyebilirim, ama eski bağlantımı akılda tutmalıyız." },
+                { "language": "ru", "text": "Я хорошо знаю NordSys и могу кое-что сказать, но мы должны иметь в виду мою прежнюю связь." },
+                { "language": "ckb", "text": "من NordSys باش دەناسم و دەتوانم شتێک لەسەری بڵێم، بەڵام دەبێت پەیوەندی پێشووی من لەبەرچاو بگرین." },
+                { "language": "kmr", "text": "Ez NordSys baş nas dikim û dikarim tiştinan li ser bêjim, lê divê em girêdana min a berê di bîrê de bihêlin." },
+                { "language": "pl", "text": "Znam NordSys dobrze i mogę coś o tym powiedzieć, ale powinniśmy pamiętać o moim wcześniejszym powiązaniu." },
+                { "language": "ro", "text": "Cunosc bine NordSys și pot spune ceva despre asta, dar ar trebui să ținem cont de legătura mea anterioară." },
+                { "language": "sq", "text": "E njoh mirë NordSys dhe mund të them diçka për të, por duhet ta kemi parasysh lidhjen time të mëparshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu schwach: Die Antwort bleibt vage und legt keine Rollen- oder Entscheidungsgrenze fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too weak: the answer remains vague and sets no boundary for role or decision-making." },
+                { "language": "fa", "text": "قابل‌تصور است، اما ضعیف است: پاسخ مبهم می‌ماند و هیچ مرزی برای نقش یا تصمیم‌گیری تعیین نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف: تبقى الإجابة غامضة ولا تحدد حدوداً للدور أو القرار." },
+                { "language": "tr", "text": "Makul ama zayıf: cevap belirsiz kalır ve rol ya da karar için sınır koymaz." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: ответ остается расплывчатым и не устанавливает границы роли или решения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام لاوازە: وەڵامەکە لێڵ دەمێنێتەوە و هیچ سنوورێک بۆ ڕۆڵ یان بڕیار دانانادەنێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê lawaz e: bersiv nezelal dimîne û tu sînorek ji bo rol an biryarê datîne." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt słabe: odpowiedź pozostaje niejasna i nie wyznacza granicy roli ani decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: răspunsul rămâne vag și nu stabilește o limită pentru rol sau decizie." },
+                { "language": "sq", "text": "E besueshme, por e dobët: përgjigjja mbetet e paqartë dhe nuk vendos kufi për rolin ose vendimmarrjen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nicht gar nicht. Ich würde zwischen Fachwissen und Entscheidungseinfluss unterscheiden: Ich kann Architektur, Integrationsaufwand und bekannte Grenzen erklären. Die Gewichtung im Anbieter-Scoring sollte aber jemand ohne frühere Nähe übernehmen.",
+              "translations": [
+                { "language": "en", "text": "Not at all. I would distinguish between expertise and decision influence: I can explain architecture, integration effort, and known limitations. But someone without prior proximity should take over the weighting in the vendor scoring." },
+                { "language": "fa", "text": "نه، اصلاً این‌طور نیست. من بین دانش تخصصی و اثرگذاری بر تصمیم فرق می‌گذارم: می‌توانم معماری، حجم کار یکپارچه‌سازی و محدودیت‌های شناخته‌شده را توضیح بدهم. اما وزن‌دهی در امتیازدهی ارائه‌دهندگان را بهتر است کسی انجام دهد که نزدیکی قبلی ندارد." },
+                { "language": "ar", "text": "ليس إطلاقاً. سأميز بين الخبرة والتأثير على القرار: أستطيع شرح المعمارية وجهد الدمج والحدود المعروفة. لكن ينبغي أن يتولى وزن النقاط في تقييم الموردين شخص ليست لديه صلة سابقة." },
+                { "language": "tr", "text": "Hiç de değil. Uzmanlık ile karar etkisini ayırırdım: mimariyi, entegrasyon çabasını ve bilinen sınırları açıklayabilirim. Ancak sağlayıcı puanlamasındaki ağırlıklandırmayı önceki yakınlığı olmayan biri üstlenmeli." },
+                { "language": "ru", "text": "Вовсе нет. Я бы различал экспертизу и влияние на решение: я могу объяснить архитектуру, усилия по интеграции и известные ограничения. Но взвешивание в оценке поставщиков должен взять на себя кто-то без прежней близости." },
+                { "language": "ckb", "text": "نەخێر، بە هیچ شێوەیەک. من جیاوازی دەکەم لە نێوان شارەزایی و کاریگەری لەسەر بڕیار: دەتوانم معماری، هەوڵی یەکخستن و سنوورە ناسراوەکان ڕوون بکەمەوە. بەڵام وزن‌دانان لە خاڵدانانی پێشکەشکاران باشترە کەسێک وەربگرێت کە نزیکی پێشووی نییە." },
+                { "language": "kmr", "text": "Na, qet ne. Ez di navbera pisporî û bandora biryarê de cudahî dikim: ez dikarim avahî, hewla entegrasyonê û sînorên naskirî rave bikim. Lê giraniya di pûandana pêşkêşkaran de divê kesekî bê nêzîkbûna berê bigire." },
+                { "language": "pl", "text": "Nie, wcale nie. Rozróżniłbym/rozróżniłabym wiedzę fachową od wpływu na decyzję: mogę wyjaśnić architekturę, nakład integracji i znane ograniczenia. Ważenie w punktacji dostawców powinien jednak przejąć ktoś bez wcześniejszej bliskości." },
+                { "language": "ro", "text": "Nu, deloc. Aș distinge între expertiză și influență decizională: pot explica arhitectura, efortul de integrare și limitele cunoscute. Dar ponderarea în scorarea furnizorilor ar trebui preluată de cineva fără apropiere anterioară." },
+                { "language": "sq", "text": "Jo, aspak. Do të bëja dallim mes ekspertizës dhe ndikimit në vendim: mund të shpjegoj arkitekturën, përpjekjen e integrimit dhe kufijtë e njohur. Por peshimin në vlerësimin e ofruesve duhet ta marrë dikush pa afërsi të mëparshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort rettet die Fachkenntnis und begrenzt gleichzeitig den kritischen Entscheidungseinfluss.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer preserves the expertise while limiting the critical decision influence." },
+                { "language": "fa", "text": "قوی: پاسخ دانش تخصصی را حفظ می‌کند و همزمان اثرگذاری حساس بر تصمیم را محدود می‌کند." },
+                { "language": "ar", "text": "قوي: تحافظ الإجابة على الخبرة وتحد في الوقت نفسه من التأثير الحاسم على القرار." },
+                { "language": "tr", "text": "Güçlü: cevap uzmanlığı korur ve aynı zamanda kritik karar etkisini sınırlar." },
+                { "language": "ru", "text": "Сильно: ответ сохраняет экспертизу и одновременно ограничивает критическое влияние на решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە شارەزایی دەپارێزێت و لە هەمان کاتدا کاریگەری گرنگی بڕیار سنووردار دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv pisporiyê diparêze û di heman demê de bandora biryarê ya krîtîk sînordar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź zachowuje wiedzę fachową i jednocześnie ogranicza krytyczny wpływ na decyzję." },
+                { "language": "ro", "text": "Puternic: răspunsul păstrează expertiza și limitează în același timp influența critică asupra deciziei." },
+                { "language": "sq", "text": "E fortë: përgjigjja ruan ekspertizën dhe njëkohësisht kufizon ndikimin kritik në vendim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Meine Einschätzung kann trotzdem hilfreich sein, solange alle wissen, dass ich früher dort gearbeitet habe.",
+              "translations": [
+                { "language": "en", "text": "My assessment can still be helpful as long as everyone knows that I used to work there." },
+                { "language": "fa", "text": "ارزیابی من همچنان می‌تواند مفید باشد، تا وقتی همه بدانند که قبلاً آنجا کار کرده‌ام." },
+                { "language": "ar", "text": "يمكن أن يكون تقييمي مفيداً مع ذلك، ما دام الجميع يعرف أنني عملت هناك سابقاً." },
+                { "language": "tr", "text": "Herkes daha önce orada çalıştığımı bildiği sürece değerlendirmem yine de yararlı olabilir." },
+                { "language": "ru", "text": "Моя оценка все равно может быть полезной, пока все знают, что я раньше там работал." },
+                { "language": "ckb", "text": "هەڵسەنگاندنی من هێشتا دەتوانێت سوودبەخش بێت، مادام هەمووان بزانن کە پێشتر لەوێ کارم کردووە." },
+                { "language": "kmr", "text": "Nirxandina min dîsa dikare alîkar be, heta ku hemû kes bizanin ku ez berê li wir xebitîm." },
+                { "language": "pl", "text": "Moja ocena nadal może być pomocna, o ile wszyscy wiedzą, że wcześniej tam pracowałem/pracowałam." },
+                { "language": "ro", "text": "Evaluarea mea poate fi totuși utilă, atâta timp cât toți știu că am lucrat acolo înainte." },
+                { "language": "sq", "text": "Vlerësimi im mund të jetë ende i dobishëm, për sa kohë të gjithë e dinë se kam punuar më parë atje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungeschützt: Transparenz allein reicht nicht, wenn Bewertung und Entscheidung weiterhin vermischt bleiben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but insufficiently protected: transparency alone is not enough if evaluation and decision remain mixed." },
+                { "language": "fa", "text": "قابل‌تصور است، اما به‌اندازه کافی محافظت‌شده نیست: شفافیت تنها کافی نیست اگر ارزیابی و تصمیم همچنان مخلوط بمانند." },
+                { "language": "ar", "text": "مقبول لكنه غير محمي بما يكفي: الشفافية وحدها لا تكفي إذا بقي التقييم والقرار مختلطين." },
+                { "language": "tr", "text": "Makul ama yeterince korunmuş değil: değerlendirme ve karar karışık kalırsa şeffaflık tek başına yeterli değildir." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно защищено: одной прозрачности мало, если оценка и решение остаются смешанными." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام پاراستنی بەس نییە: شەفافیەت بە تەنها بەس نییە ئەگەر هەڵسەنگاندن و بڕیار هێشتا تێکەڵ بن." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê ne bes parastî ye: zelalî bi tenê bes nake heke nirxandin û biryar hîn tevlihev bimînin." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt słabo zabezpieczone: sama przejrzystość nie wystarczy, jeśli ocena i decyzja nadal są zmieszane." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient protejat: transparența singură nu este suficientă dacă evaluarea și decizia rămân amestecate." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e mbrojtur: transparenca vetëm nuk mjafton nëse vlerësimi dhe vendimi mbeten të përziera." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde protokollieren: Meine Rolle beschränkt sich auf die fachliche Erläuterung prüfbarer Produktmerkmale. Ich nehme nicht an der finalen Punktevergabe teil und enthalte mich bei der Empfehlung zum Zuschlag.",
+              "translations": [
+                { "language": "en", "text": "I would record this: my role is limited to the professional explanation of verifiable product features. I will not take part in the final scoring and will abstain from the award recommendation." },
+                { "language": "fa", "text": "من این را در صورتجلسه ثبت می‌کنم: نقش من محدود به توضیح تخصصی ویژگی‌های قابل‌بررسی محصول است. در امتیازدهی نهایی شرکت نمی‌کنم و در توصیه برای انتخاب نهایی رأی نمی‌دهم." },
+                { "language": "ar", "text": "سأوثق ما يلي: يقتصر دوري على الشرح المهني لخصائص المنتج القابلة للتحقق. لن أشارك في منح النقاط النهائي، وسأمتنع عن التوصية بالترسية." },
+                { "language": "tr", "text": "Şunu tutanağa geçirirdim: rolüm, doğrulanabilir ürün özelliklerinin uzmanlıkla açıklanmasıyla sınırlıdır. Nihai puanlamaya katılmam ve ihale önerisinde çekimser kalırım." },
+                { "language": "ru", "text": "Я бы зафиксировал это в протоколе: моя роль ограничивается профессиональным объяснением проверяемых характеристик продукта. Я не участвую в финальном выставлении баллов и воздерживаюсь при рекомендации присуждения." },
+                { "language": "ckb", "text": "من ئەمە لە پڕۆتۆکۆڵدا تۆمار دەکەم: ڕۆڵی من سنووردارە بە ڕوونکردنەوەی پیشەیی تایبەتمەندییە پشکنراوەکانی بەرهەم. لە خاڵدانانی کۆتایی بەشدار نابم و لە پێشنیاری دابەشکردنی گرێبەستدا خۆم دەگرمەوە." },
+                { "language": "kmr", "text": "Ez wisa di protokolê de tomar dikim: rola min bi ravekirina pisporî ya taybetmendiyên hilberê yên kontrolkirbar sînordar e. Ez beşdarî pûankirina dawî nabim û di pêşniyara dayîna peymanê de xwe digirim." },
+                { "language": "pl", "text": "Zaprotokołowałbym/zaprotokołowałabym to tak: moja rola ogranicza się do merytorycznego wyjaśnienia sprawdzalnych cech produktu. Nie biorę udziału w końcowym punktowaniu i wstrzymuję się przy rekomendacji wyboru." },
+                { "language": "ro", "text": "Aș consemna astfel: rolul meu se limitează la explicarea profesională a caracteristicilor verificabile ale produsului. Nu particip la punctajul final și mă abțin la recomandarea de atribuire." },
+                { "language": "sq", "text": "Do ta regjistroja kështu: roli im kufizohet te shpjegimi profesional i veçorive të verifikueshme të produktit. Nuk marr pjesë në pikëzimin përfundimtar dhe abstenoj në rekomandimin për fituesin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist protokollfähig und macht Rolle, Grenze und Enthaltung eindeutig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer is suitable for minutes and makes role, boundary, and abstention unambiguous." },
+                { "language": "fa", "text": "قوی: پاسخ برای صورتجلسه مناسب است و نقش، مرز و خودداری از رأی را روشن می‌کند." },
+                { "language": "ar", "text": "قوي: الإجابة صالحة للتوثيق وتجعل الدور والحد والامتناع واضحاً." },
+                { "language": "tr", "text": "Güçlü: cevap tutanağa uygundur ve rolü, sınırı ve çekimserliği açık kılar." },
+                { "language": "ru", "text": "Сильно: ответ подходит для протокола и однозначно определяет роль, границу и воздержание." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بۆ پڕۆتۆکۆڵ گونجاوە و ڕۆڵ، سنوور و خۆگرتن بە ڕوونی دیاری دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji bo protokolê guncaw e û rol, sînor û xwegirtinê eşkere dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź nadaje się do protokołu i jednoznacznie określa rolę, granicę oraz wstrzymanie się." },
+                { "language": "ro", "text": "Puternic: răspunsul este potrivit pentru proces-verbal și face clare rolul, limita și abținerea." },
+                { "language": "sq", "text": "E fortë: përgjigjja është e përshtatshme për procesverbal dhe e bën të qartë rolin, kufirin dhe abstenimin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können im Protokoll erwähnen, dass ich früher dort gearbeitet habe und deshalb vorsichtig mit meiner Empfehlung bin.",
+              "translations": [
+                { "language": "en", "text": "We can mention in the minutes that I used to work there and am therefore cautious with my recommendation." },
+                { "language": "fa", "text": "می‌توانیم در صورتجلسه ذکر کنیم که قبلاً آنجا کار کرده‌ام و بنابراین در توصیه‌ام محتاط هستم." },
+                { "language": "ar", "text": "يمكننا أن نذكر في المحضر أنني عملت هناك سابقاً ولذلك أكون حذراً في توصييتي." },
+                { "language": "tr", "text": "Tutanakta daha önce orada çalıştığımı ve bu nedenle tavsiyemde dikkatli olduğumu belirtebiliriz." },
+                { "language": "ru", "text": "Мы можем упомянуть в протоколе, что я раньше там работал и поэтому осторожен в своей рекомендации." },
+                { "language": "ckb", "text": "دەتوانین لە پڕۆتۆکۆڵدا ئاماژە بکەین کە پێشتر لەوێ کارم کردووە و بۆیە لە پێشنیارەکەمدا وریام." },
+                { "language": "kmr", "text": "Em dikarin di protokolê de bibêjin ku ez berê li wir xebitîm û ji ber vê di pêşniyara xwe de hişyar im." },
+                { "language": "pl", "text": "Możemy wspomnieć w protokole, że wcześniej tam pracowałem/pracowałam i dlatego ostrożnie podchodzę do swojej rekomendacji." },
+                { "language": "ro", "text": "Putem menționa în procesul-verbal că am lucrat acolo înainte și de aceea sunt prudent în recomandarea mea." },
+                { "language": "sq", "text": "Mund të përmendim në procesverbal se kam punuar më parë atje dhe prandaj jam i kujdesshëm me rekomandimin tim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unzureichend: Die Antwort dokumentiert Nähe, lässt aber die konkrete Rolle und Enthaltung offen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but insufficient: the answer documents proximity but leaves the concrete role and abstention open." },
+                { "language": "fa", "text": "قابل‌تصور است، اما ناکافی است: پاسخ نزدیکی را مستند می‌کند، اما نقش مشخص و خودداری از رأی را باز می‌گذارد." },
+                { "language": "ar", "text": "مقبول لكنه غير كاف: توثق الإجابة القرب، لكنها تترك الدور المحدد والامتناع مفتوحين." },
+                { "language": "tr", "text": "Makul ama yetersiz: cevap yakınlığı belgeler, fakat somut rolü ve çekimserliği açık bırakır." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно: ответ документирует близость, но оставляет открытыми конкретную роль и воздержание." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام ناکافییە: وەڵامەکە نزیکی بەڵگە دەکات، بەڵام ڕۆڵی دیاریکراو و خۆگرتن کراوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê ne bes e: bersiv nêzîkbûnê belge dike, lê rola konkret û xwegirtinê vekirî dihêle." },
+                { "language": "pl", "text": "Wiarygodne, ale niewystarczające: odpowiedź dokumentuje bliskość, ale pozostawia otwartą konkretną rolę i wstrzymanie się." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient: răspunsul documentează apropierea, dar lasă deschise rolul concret și abținerea." },
+                { "language": "sq", "text": "E besueshme, por e pamjaftueshme: përgjigjja dokumenton afërsinë, por lë të hapur rolin konkret dhe abstenimin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir können sagen: Die Vorerfahrung ist als Informationsquelle hilfreich, aber nicht als Bewertungsmandat. Gerade weil ich das Produkt kenne, machen wir transparent, wo mein Beitrag endet und wo die unabhängige Bewertung beginnt.",
+              "translations": [
+                { "language": "en", "text": "We can say: the prior experience is helpful as a source of information, but not as an evaluation mandate. Precisely because I know the product, we make transparent where my contribution ends and where independent evaluation begins." },
+                { "language": "fa", "text": "می‌توانیم بگوییم: تجربه قبلی به‌عنوان منبع اطلاعات مفید است، اما به‌عنوان اختیار ارزیابی نه. دقیقاً چون من محصول را می‌شناسم، شفاف می‌کنیم سهم من کجا تمام می‌شود و ارزیابی مستقل از کجا شروع می‌شود." },
+                { "language": "ar", "text": "يمكننا أن نقول: الخبرة السابقة مفيدة كمصدر للمعلومات، لكنها ليست تفويضاً للتقييم. وبالتحديد لأنني أعرف المنتج، نجعل شفافاً أين ينتهي مساهمتي وأين يبدأ التقييم المستقل." },
+                { "language": "tr", "text": "Şunu söyleyebiliriz: önceki deneyim bilgi kaynağı olarak yararlıdır, ama değerlendirme yetkisi olarak değil. Ürünü bildiğim için tam da katkımın nerede bittiğini ve bağımsız değerlendirmenin nerede başladığını şeffaflaştırıyoruz." },
+                { "language": "ru", "text": "Мы можем сказать: прежний опыт полезен как источник информации, но не как мандат на оценку. Именно потому что я знаю продукт, мы прозрачно показываем, где заканчивается мой вклад и где начинается независимая оценка." },
+                { "language": "ckb", "text": "دەتوانین بڵێین: ئەزموونی پێشوو وەک سەرچاوەی زانیاری سوودبەخشە، بەڵام وەک مانداتی هەڵسەنگاندن نا. ڕێک چونکە من بەرهەمەکە دەناسم، شەفاف دەکەین بەشداریی من لە کوێ کۆتایی دێت و هەڵسەنگاندنی سەربەخۆ لە کوێ دەست پێدەکات." },
+                { "language": "kmr", "text": "Em dikarin bêjin: ezmûna berê wek çavkaniya agahiyê alîkar e, lê ne wek destûra nirxandinê. Rast ji ber ku ez hilberê nas dikim, em zelal dikin ku beşdariya min li ku diqede û nirxandina serbixwe li ku dest pê dike." },
+                { "language": "pl", "text": "Możemy powiedzieć: wcześniejsze doświadczenie jest pomocne jako źródło informacji, ale nie jako mandat do oceny. Właśnie dlatego, że znam produkt, pokazujemy transparentnie, gdzie kończy się mój wkład, a gdzie zaczyna niezależna ocena." },
+                { "language": "ro", "text": "Putem spune: experiența anterioară este utilă ca sursă de informație, dar nu ca mandat de evaluare. Tocmai pentru că știu produsul, facem transparent unde se termină contribuția mea și unde începe evaluarea independentă." },
+                { "language": "sq", "text": "Mund të themi: përvoja e mëparshme është e dobishme si burim informacioni, por jo si mandat vlerësimi. Pikërisht sepse e njoh produktin, e bëjmë transparente ku mbaron kontributi im dhe ku fillon vlerësimi i pavarur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht aus der Vorerfahrung keinen Makel, sondern eine nutzbare, begrenzte Informationsquelle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer turns prior experience not into a flaw, but into a usable, limited information source." },
+                { "language": "fa", "text": "قوی: پاسخ تجربه قبلی را به عیب تبدیل نمی‌کند، بلکه آن را به منبع اطلاعاتی قابل‌استفاده اما محدود تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: لا تجعل الإجابة الخبرة السابقة عيباً، بل مصدراً مفيداً ومحدوداً للمعلومات." },
+                { "language": "tr", "text": "Güçlü: cevap önceki deneyimi kusur değil, kullanılabilir ama sınırlı bir bilgi kaynağı yapar." },
+                { "language": "ru", "text": "Сильно: ответ превращает прежний опыт не в недостаток, а в полезный, ограниченный источник информации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئەزموونی پێشوو ناکاتە کەم و کوڕی، بەڵکو دەیکاتە سەرچاوەی زانیاری بەکارهێنراوی سنووردار." },
+                { "language": "kmr", "text": "Xurt e: bersiv ezmûna berê nake kêmasî, lê dike çavkaniyeke agahiyê ya bikaranînbar û sînordar." },
+                { "language": "pl", "text": "Mocne: odpowiedź nie robi z wcześniejszego doświadczenia wady, lecz użyteczne, ograniczone źródło informacji." },
+                { "language": "ro", "text": "Puternic: răspunsul nu transformă experiența anterioară într-un defect, ci într-o sursă de informație utilizabilă și limitată." },
+                { "language": "sq", "text": "E fortë: përgjigjja nuk e kthen përvojën e mëparshme në mangësi, por në një burim informacioni të përdorshëm dhe të kufizuar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können sagen, dass meine Erfahrung ein Vorteil ist, solange wir sie transparent machen.",
+              "translations": [
+                { "language": "en", "text": "We can say that my experience is an advantage as long as we make it transparent." },
+                { "language": "fa", "text": "می‌توانیم بگوییم تجربه من یک مزیت است، تا وقتی آن را شفاف کنیم." },
+                { "language": "ar", "text": "يمكننا أن نقول إن خبرتي ميزة ما دمنا نجعلها شفافة." },
+                { "language": "tr", "text": "Şeffaf yaptığımız sürece deneyimimin bir avantaj olduğunu söyleyebiliriz." },
+                { "language": "ru", "text": "Мы можем сказать, что мой опыт является преимуществом, если мы делаем его прозрачным." },
+                { "language": "ckb", "text": "دەتوانین بڵێین ئەزموونی من سوودە، مادام شەفاف دەیکەین." },
+                { "language": "kmr", "text": "Em dikarin bêjin ku ezmûna min avantaj e, heta ku em wê zelal bikin." },
+                { "language": "pl", "text": "Możemy powiedzieć, że moje doświadczenie jest atutem, o ile je ujawniamy." },
+                { "language": "ro", "text": "Putem spune că experiența mea este un avantaj, atâta timp cât o facem transparentă." },
+                { "language": "sq", "text": "Mund të themi se përvoja ime është avantazh, për sa kohë e bëjmë transparente." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu optimistisch: Die Antwort übersieht, dass Transparenz ohne Rollenbegrenzung weiterhin als Befangenheit wirken kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too optimistic: the answer overlooks that transparency without role limits can still look like bias." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی خوش‌بینانه است: پاسخ نادیده می‌گیرد که شفافیت بدون مرزبندی نقش همچنان می‌تواند جانبداری به نظر برسد." },
+                { "language": "ar", "text": "مقبول لكنه متفائل جداً: تتجاهل الإجابة أن الشفافية من دون حدود للدور قد تبدو مع ذلك انحيازاً." },
+                { "language": "tr", "text": "Makul ama fazla iyimser: cevap, rol sınırı olmadan şeffaflığın yine de taraflılık gibi görünebileceğini gözden kaçırır." },
+                { "language": "ru", "text": "Правдоподобно, но слишком оптимистично: ответ упускает, что прозрачность без ограничения роли все еще может выглядеть как предвзятость." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر گەشبینانەیە: وەڵامەکە نادیدە دەگرێت کە شەفافیەت بەبێ سنووری ڕۆڵ هێشتا دەتوانێت وەک لایەنگری دەربکەوێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir hêvîdar e: bersiv ji bîr dike ku zelalî bê sînorê rolê hîn dikare wek alîgirî xuya bike." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt optymistyczne: odpowiedź pomija, że przejrzystość bez ograniczenia roli nadal może wyglądać jak stronniczość." },
+                { "language": "ro", "text": "Plauzibil, dar prea optimist: răspunsul trece cu vederea că transparența fără limitarea rolului poate părea în continuare părtinire." },
+                { "language": "sq", "text": "E besueshme, por shumë optimiste: përgjigjja shpërfill se transparenca pa kufij roli mund të duket ende si anësi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Für die Vorauswahl reicht die Rollentrennung, wenn sie dokumentiert ist. Für die finale Zuschlagsentscheidung würde ich eine kurze Gegenprüfung durch eine unabhängige Person empfehlen, damit der Vorgang auch rückblickend belastbar bleibt.",
+              "translations": [
+                { "language": "en", "text": "For the preliminary selection, role separation is sufficient if documented. For the final award decision, I would recommend a brief counter-review by an independent person so that the process remains robust in retrospect as well." },
+                { "language": "fa", "text": "برای پیش‌انتخاب، اگر جداکردن نقش‌ها مستند شود کافی است. برای تصمیم نهایی انتخاب، یک بررسی کوتاه توسط فردی مستقل را توصیه می‌کنم تا روند حتی در نگاه بعدی هم قابل‌دفاع بماند." },
+                { "language": "ar", "text": "بالنسبة إلى الاختيار الأولي يكفي فصل الأدوار إذا تم توثيقه. أما في قرار الترسية النهائي فأوصي بمراجعة مقابلة قصيرة من شخص مستقل، حتى يبقى الإجراء متيناً أيضاً عند النظر إليه لاحقاً." },
+                { "language": "tr", "text": "Ön seçim için, belgelenirse rol ayrımı yeterlidir. Nihai ihale kararı için, sürecin geriye dönük olarak da sağlam kalması adına bağımsız bir kişi tarafından kısa bir karşı inceleme öneririm." },
+                { "language": "ru", "text": "Для предварительного отбора достаточно разделения ролей, если оно задокументировано. Для окончательного решения о присуждении я бы рекомендовал краткую встречную проверку независимым лицом, чтобы процесс оставался надежным и в ретроспективе." },
+                { "language": "ckb", "text": "بۆ هەڵبژاردنی پێشەکی، جیاکردنەوەی ڕۆڵەکان بەسە ئەگەر بەڵگە بکرێت. بۆ بڕیاری کۆتایی دابەشکردنی گرێبەست، پێشنیار دەکەم پشکنینێکی کورت لەلایەن کەسێکی سەربەخۆوە بکرێت، بۆ ئەوەی پرۆسەکە لە پاشاوەش بەهێز بمێنێت." },
+                { "language": "kmr", "text": "Ji bo hilbijartina pêşîn, cudakirina rolan bes e heke were belgekirin. Ji bo biryara dawî ya dayîna peymanê, ez kontrolkirineke kurt ji aliyê kesekî serbixwe ve pêşniyar dikim, da ku pêvajo paşê jî bihêz bimîne." },
+                { "language": "pl", "text": "Do preselekcji wystarczy rozdzielenie ról, jeśli jest udokumentowane. Przy ostatecznej decyzji o wyborze rekomendowałbym/rekomendowałabym krótką kontrolę przez osobę niezależną, aby procedura pozostała odporna także z perspektywy czasu." },
+                { "language": "ro", "text": "Pentru preselecție, separarea rolurilor este suficientă dacă este documentată. Pentru decizia finală de atribuire aș recomanda o scurtă verificare de către o persoană independentă, astfel încât procesul să rămână solid și retrospectiv." },
+                { "language": "sq", "text": "Për përzgjedhjen paraprake, ndarja e roleve mjafton nëse dokumentohet. Për vendimin përfundimtar të dhënies, do të rekomandoja një kontroll të shkurtër nga një person i pavarur, që procesi të mbetet i qëndrueshëm edhe më vonë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ist verhältnismäßig und unterscheidet Vorauswahl von finaler Zuschlagsentscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer is proportionate and distinguishes preliminary selection from the final award decision." },
+                { "language": "fa", "text": "قوی: پاسخ متناسب است و بین پیش‌انتخاب و تصمیم نهایی انتخاب تفاوت می‌گذارد." },
+                { "language": "ar", "text": "قوي: الإجابة متناسبة وتميز بين الاختيار الأولي وقرار الترسية النهائي." },
+                { "language": "tr", "text": "Güçlü: cevap ölçülüdür ve ön seçim ile nihai ihale kararını ayırır." },
+                { "language": "ru", "text": "Сильно: ответ соразмерен и различает предварительный отбор и окончательное решение о присуждении." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هاوسەنگە و جیاوازی نێوان هەڵبژاردنی پێشەکی و بڕیاری کۆتایی دابەشکردن دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv li gor e û di navbera hilbijartina pêşîn û biryara dawî ya dayînê de cudahî dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź jest proporcjonalna i odróżnia preselekcję od ostatecznej decyzji wyboru." },
+                { "language": "ro", "text": "Puternic: răspunsul este proporțional și distinge preselecția de decizia finală de atribuire." },
+                { "language": "sq", "text": "E fortë: përgjigjja është proporcionale dhe dallon përzgjedhjen paraprake nga vendimi përfundimtar i dhënies." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde vorsichtshalber immer eine externe Zweitmeinung einholen.",
+              "translations": [
+                { "language": "en", "text": "As a precaution, I would always obtain an external second opinion." },
+                { "language": "fa", "text": "برای احتیاط، من همیشه یک نظر دوم خارجی می‌گیرم." },
+                { "language": "ar", "text": "احتياطياً، سأحصل دائماً على رأي ثان خارجي." },
+                { "language": "tr", "text": "Tedbir olarak her zaman dış bir ikinci görüş alırdım." },
+                { "language": "ru", "text": "На всякий случай я бы всегда получал внешнее второе мнение." },
+                { "language": "ckb", "text": "بۆ وریایی، من هەمیشە ڕای دووەمی دەرەکی وەردەگرم." },
+                { "language": "kmr", "text": "Ji bo hişyariyê, ez her dem ramaneke duyem a derveyî digirim." },
+                { "language": "pl", "text": "Na wszelki wypadek zawsze zasięgnąłbym/zasięgnęłabym zewnętrznej drugiej opinii." },
+                { "language": "ro", "text": "Din prudență, aș obține întotdeauna o a doua opinie externă." },
+                { "language": "sq", "text": "Për siguri, gjithmonë do të merrja një mendim të dytë të jashtëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu pauschal: Die Antwort ist sicher, aber nicht verhältnismäßig und unterscheidet keine Entscheidungsstufen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too sweeping: the answer is safe, but not proportionate and does not distinguish decision stages." },
+                { "language": "fa", "text": "قابل‌تصور است، اما زیادی کلی است: پاسخ امن است، اما متناسب نیست و بین مراحل تصمیم تفاوت نمی‌گذارد." },
+                { "language": "ar", "text": "مقبول لكنه عام جداً: الإجابة آمنة، لكنها غير متناسبة ولا تميز بين مراحل القرار." },
+                { "language": "tr", "text": "Makul ama fazla genelleyici: cevap güvenlidir, fakat ölçülü değildir ve karar aşamalarını ayırmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком обобщенно: ответ безопасен, но несоразмерен и не различает этапы решения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر گشتییە: وەڵامەکە پارێزراوە، بەڵام هاوسەنگ نییە و قۆناغەکانی بڕیار جیا ناکاتەوە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir giştî ye: bersiv ewle ye, lê li gor nîne û astên biryarê cuda nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne: odpowiedź jest bezpieczna, ale nieproporcjonalna i nie rozróżnia etapów decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul este sigur, dar nu proporțional și nu distinge etapele deciziei." },
+                { "language": "sq", "text": "E besueshme, por shumë gjithëpërfshirëse: përgjigjja është e sigurt, por jo proporcionale dhe nuk dallon fazat e vendimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau. So bleibt meine Fachkenntnis nutzbar, ohne dass der Eindruck entsteht, ich würde einen früheren Arbeitgeber bevorzugen. Ich ergänze die technischen Hinweise entsprechend neutral und verweise bei Bewertungen auf das dokumentierte Verfahren.",
+              "translations": [
+                { "language": "en", "text": "Exactly. This keeps my expertise usable without creating the impression that I am favoring a former employer. I will add the technical notes in a correspondingly neutral way and refer any evaluations to the documented process." },
+                { "language": "fa", "text": "دقیقاً. این‌طور دانش تخصصی من قابل‌استفاده می‌ماند، بدون اینکه این تصور ایجاد شود که من کارفرمای سابقم را ترجیح می‌دهم. نکات فنی را به‌شکل متناسب و خنثی اضافه می‌کنم و برای هر ارزیابی به روند مستند ارجاع می‌دهم." },
+                { "language": "ar", "text": "بالضبط. هكذا تبقى خبرتي قابلة للاستخدام من دون أن ينشأ انطباع بأنني أفضل صاحب عمل سابق. سأضيف الملاحظات التقنية بشكل محايد مناسب، وأحيل أي تقييمات إلى الإجراء الموثق." },
+                { "language": "tr", "text": "Aynen. Böylece uzmanlığım kullanılabilir kalır, ama eski işverenimi kayırdığım izlenimi oluşmaz. Teknik notları buna uygun tarafsızlıkla ekleyeceğim ve değerlendirmelerde belgelenmiş sürece atıf yapacağım." },
+                { "language": "ru", "text": "Именно. Так моя экспертиза остается полезной, не создавая впечатления, что я предпочитаю бывшего работодателя. Я добавлю технические замечания нейтрально и при оценках буду ссылаться на задокументированную процедуру." },
+                { "language": "ckb", "text": "ڕێک. بەم شێوەیە شارەزایی من بەکارهێنراو دەمێنێتەوە، بێ ئەوەی ئەو تێگەیشتنە دروست بێت کە من کارفرمای پێشووم پێشتر دەخەم. تێبینییە تەکنیکییەکان بە شێوەیەکی گونجاوی بێلایەن زیاد دەکەم و لە هەڵسەنگاندنەکاندا ئاماژە بە ڕێکاری بەڵگەکراو دەکەم." },
+                { "language": "kmr", "text": "Rast e. Wisa pisporiya min bikaranînbar dimîne bêyî ku wêneyek çêbibe ku ez kardêrê berê tercîh dikim. Ez têbînîyên teknîkî bi awayekî bêalî lê zêde dikim û di nirxandinan de balê didim pêvajoya belgekirî." },
+                { "language": "pl", "text": "Dokładnie. W ten sposób moja wiedza fachowa pozostaje użyteczna, bez tworzenia wrażenia, że faworyzuję byłego pracodawcę. Uzupełnię uwagi techniczne odpowiednio neutralnie, a przy ocenach będę odsyłać do udokumentowanej procedury." },
+                { "language": "ro", "text": "Exact. Astfel expertiza mea rămâne utilizabilă fără să se creeze impresia că favorizez un fost angajator. Voi adăuga observațiile tehnice în mod corespunzător neutru și voi trimite evaluările către procesul documentat." },
+                { "language": "sq", "text": "Pikërisht. Kështu ekspertiza ime mbetet e përdorshme pa krijuar përshtypjen se po favorizoj një ish-punëdhënës. Do t'i shtoj shënimet teknike në mënyrë përkatësisht neutrale dhe për vlerësimet do t'i referohem procedurës së dokumentuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schließt mit neutralem Beitrag, dokumentiertem Verfahren und klarer Reputationssicherung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer closes with a neutral contribution, a documented process, and clear protection of reputation." },
+                { "language": "fa", "text": "قوی: پاسخ با سهم خنثی، روند مستند و حفاظت روشن از اعتبار حرفه‌ای پایان می‌یابد." },
+                { "language": "ar", "text": "قوي: تختتم الإجابة بمساهمة محايدة وإجراء موثق وحماية واضحة للسمعة." },
+                { "language": "tr", "text": "Güçlü: cevap tarafsız katkı, belgelenmiş süreç ve açık itibar korumasıyla kapanır." },
+                { "language": "ru", "text": "Сильно: ответ завершается нейтральным вкладом, задокументированной процедурой и ясной защитой репутации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە بەشداری بێلایەن، ڕێکاری بەڵگەکراو و پاراستنی ڕوونی ناوبانگ کۆتایی دێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi beşdariya bêalî, pêvajoya belgekirî û parastina zelal a navûdengê diqede." },
+                { "language": "pl", "text": "Mocne: odpowiedź kończy się neutralnym wkładem, udokumentowaną procedurą i wyraźną ochroną reputacji." },
+                { "language": "ro", "text": "Puternic: răspunsul se încheie cu o contribuție neutră, un proces documentat și protecție clară a reputației." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbyllet me kontribut neutral, procedurë të dokumentuar dhe mbrojtje të qartë të reputacionit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Gut, dann gebe ich nur technische Hinweise und halte mich bei der Entscheidung zurück.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will only give technical notes and hold back on the decision." },
+                { "language": "fa", "text": "خوب، پس فقط نکات فنی می‌دهم و در تصمیم‌گیری عقب می‌مانم." },
+                { "language": "ar", "text": "جيد، إذن سأقدم ملاحظات تقنية فقط وسأتحفظ في القرار." },
+                { "language": "tr", "text": "İyi, o zaman yalnızca teknik notlar veririm ve kararda geri dururum." },
+                { "language": "ru", "text": "Хорошо, тогда я дам только технические замечания и воздержусь в решении." },
+                { "language": "ckb", "text": "باشە، ئەوا تەنها تێبینی تەکنیکی دەدەم و لە بڕیاردا خۆم دەگرمەوە." },
+                { "language": "kmr", "text": "Baş e, wê demê ez tenê têbînîyên teknîkî didim û di biryarê de xwe digirim." },
+                { "language": "pl", "text": "Dobrze, wtedy dam tylko uwagi techniczne i powstrzymam się przy decyzji." },
+                { "language": "ro", "text": "Bine, atunci voi da doar observații tehnice și mă voi retrage din decizie." },
+                { "language": "sq", "text": "Mirë, atëherë do të jap vetëm shënime teknike dhe do të tërhiqem nga vendimi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu knapp: Die Antwort ist korrekt gemeint, benennt aber weder Neutralität noch dokumentiertes Verfahren oder Reputationsschutz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too brief: the answer is well intentioned, but names neither neutrality, documented process, nor reputation protection." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کوتاه است: پاسخ نیت درستی دارد، اما نه بی‌طرفی، نه روند مستند و نه حفاظت از اعتبار را نام می‌برد." },
+                { "language": "ar", "text": "مقبول لكنه مختصر جداً: النية صحيحة، لكنه لا يسمي الحياد ولا الإجراء الموثق ولا حماية السمعة." },
+                { "language": "tr", "text": "Makul ama fazla kısa: niyet doğru, ancak tarafsızlığı, belgelenmiş süreci veya itibar korumasını adlandırmıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком кратко: ответ верен по намерению, но не называет ни нейтральность, ни документированный процесс, ни защиту репутации." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر کورتە: مەبەستەکە دروستە، بەڵام نە بێلایەنی، نە ڕێکاری بەڵگەکراو، نە پاراستنی ناوبانگ ناونابات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir kurt e: niyet rast e, lê ne bêalîbûn, ne pêvajoya belgekirî, ne jî parastina navûdengê bi nav dike." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt krótkie: odpowiedź ma dobrą intencję, lecz nie nazywa neutralności, udokumentowanej procedury ani ochrony reputacji." },
+                { "language": "ro", "text": "Plauzibil, dar prea scurt: răspunsul este bine intenționat, dar nu numește neutralitatea, procesul documentat sau protecția reputației." },
+                { "language": "sq", "text": "E besueshme, por shumë e shkurtër: përgjigjja ka qëllim të mirë, por nuk emërton neutralitetin, procedurën e dokumentuar apo mbrojtjen e reputacionit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Eine gute Offenlegung benennt Nähe konkret und setzt sofort Grenzen für Bewertung und Entscheidung.",
+          "translations": [
+            { "language": "en", "text": "Good disclosure names proximity concretely and immediately sets boundaries for evaluation and decision-making." },
+            { "language": "fa", "text": "افشای خوب نزدیکی را مشخص و دقیق نام می‌برد و فوراً برای ارزیابی و تصمیم‌گیری مرز می‌گذارد." },
+            { "language": "ar", "text": "الإفصاح الجيد يسمي القرب بشكل ملموس ويضع فوراً حدوداً للتقييم واتخاذ القرار." },
+            { "language": "tr", "text": "İyi bir açıklama yakınlığı somut biçimde adlandırır ve değerlendirme ile karar için hemen sınır koyar." },
+            { "language": "ru", "text": "Хорошее раскрытие конкретно называет близость и сразу устанавливает границы оценки и решения." },
+            { "language": "ckb", "text": "ئاشکراکردنی باش نزیکییەکە بە دیاریکراوی ناو دەبات و دەستبەجێ سنوور بۆ هەڵسەنگاندن و بڕیار دادەنێت." },
+            { "language": "kmr", "text": "Aşkerakirina baş nêzîkbûnê bi konkret bi nav dike û tavilê sînor ji bo nirxandin û biryarê datîne." },
+            { "language": "pl", "text": "Dobre ujawnienie konkretnie nazywa bliskość i natychmiast wyznacza granice oceny oraz decyzji." },
+            { "language": "ro", "text": "O dezvăluire bună numește concret apropierea și stabilește imediat limite pentru evaluare și decizie." },
+            { "language": "sq", "text": "Një zbulim i mirë e emërton konkretisht afërsinë dhe vendos menjëherë kufij për vlerësimin dhe vendimmarrjen." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "Für C2 reicht „Ich bin vorsichtig“ nicht; die Rolle muss protokollfähig und überprüfbar abgegrenzt werden.",
+          "translations": [
+            { "language": "en", "text": "For C2, “I am cautious” is not enough; the role must be delimited in a way suitable for minutes and review." },
+            { "language": "fa", "text": "برای C2، «من محتاط هستم» کافی نیست؛ نقش باید به‌گونه‌ای مرزبندی شود که قابل ثبت در صورتجلسه و قابل‌بررسی باشد." },
+            { "language": "ar", "text": "في مستوى C2 لا تكفي عبارة «أنا حذر»؛ يجب تحديد الدور بطريقة صالحة للتوثيق والمراجعة." },
+            { "language": "tr", "text": "C2 için “dikkatliyim” yeterli değildir; rol tutanağa ve denetime uygun biçimde sınırlandırılmalıdır." },
+            { "language": "ru", "text": "Для C2 фразы «я осторожен» недостаточно; роль должна быть разграничена так, чтобы это подходило для протокола и проверки." },
+            { "language": "ckb", "text": "بۆ C2، «من وریام» بەس نییە؛ ڕۆڵەکە دەبێت بە شێوەیەک سنووردار بکرێت کە بۆ پڕۆتۆکۆڵ و پشکنین گونجاو بێت." },
+            { "language": "kmr", "text": "Ji bo C2, “ez hişyar im” bes nake; divê rol bi awayekî ji bo protokol û kontrolê guncaw were sînordarkirin." },
+            { "language": "pl", "text": "Na C2 samo „jestem ostrożny/ostrożna” nie wystarczy; rola musi być ograniczona w sposób protokołowalny i sprawdzalny." },
+            { "language": "ro", "text": "Pentru C2 nu este suficient „sunt prudent”; rolul trebuie delimitat într-un mod potrivit pentru proces-verbal și verificare." },
+            { "language": "sq", "text": "Për C2 nuk mjafton “jam i kujdesshëm”; roli duhet kufizuar në mënyrë të përshtatshme për procesverbal dhe kontroll." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "content",
+          "text": "Vorerfahrung kann wertvoll sein, aber nur, wenn klar bleibt, dass sie Information liefert und keine Bewertungsmacht ersetzt.",
+          "translations": [
+            { "language": "en", "text": "Prior experience can be valuable, but only if it remains clear that it provides information and does not replace evaluation authority." },
+            { "language": "fa", "text": "تجربه قبلی می‌تواند ارزشمند باشد، اما فقط وقتی روشن بماند که اطلاعات می‌دهد و جای اختیار ارزیابی را نمی‌گیرد." },
+            { "language": "ar", "text": "يمكن أن تكون الخبرة السابقة قيمة، لكن فقط إذا بقي واضحاً أنها تقدم معلومات ولا تحل محل سلطة التقييم." },
+            { "language": "tr", "text": "Önceki deneyim değerli olabilir, ancak yalnızca bilgi sağladığı ve değerlendirme yetkisinin yerine geçmediği açık kalırsa." },
+            { "language": "ru", "text": "Прежний опыт может быть ценным, но только если остается ясно, что он дает информацию и не заменяет полномочия оценки." },
+            { "language": "ckb", "text": "ئەزموونی پێشوو دەتوانێت بەهادار بێت، بەڵام تەنها ئەگەر ڕوون بمێنێتەوە کە زانیاری دەدات و جێی دەسەڵاتی هەڵسەنگاندن ناگرێتەوە." },
+            { "language": "kmr", "text": "Ezmûna berê dikare hêja be, lê tenê heke zelal bimîne ku agahî dide û cihê desthilata nirxandinê nagire." },
+            { "language": "pl", "text": "Wcześniejsze doświadczenie może być wartościowe, ale tylko wtedy, gdy pozostaje jasne, że dostarcza informacji i nie zastępuje władzy oceny." },
+            { "language": "ro", "text": "Experiența anterioară poate fi valoroasă, dar numai dacă rămâne clar că oferă informații și nu înlocuiește autoritatea de evaluare." },
+            { "language": "sq", "text": "Përvoja e mëparshme mund të jetë e vlefshme, por vetëm nëse mbetet e qartë se jep informacion dhe nuk zëvendëson autoritetin e vlerësimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "Ein guter Safeguard ist verhältnismäßig: nicht maximal vorsichtig, sondern passend zur Entscheidungsstufe.",
+          "translations": [
+            { "language": "en", "text": "A good safeguard is proportionate: not maximally cautious, but appropriate to the decision stage." },
+            { "language": "fa", "text": "اقدام حفاظتی خوب متناسب است: نه حداکثر محتاطانه، بلکه متناسب با مرحله تصمیم." },
+            { "language": "ar", "text": "الإجراء الوقائي الجيد متناسب: ليس حذراً إلى أقصى حد، بل مناسباً لمرحلة القرار." },
+            { "language": "tr", "text": "İyi bir güvence önlemi ölçülüdür: azami dikkat değil, karar aşamasına uygun dikkat." },
+            { "language": "ru", "text": "Хорошая защита соразмерна: не максимально осторожна, а соответствует этапу решения." },
+            { "language": "ckb", "text": "پاراستنی باش هاوسەنگە: نە زۆرترین وریایی، بەڵکو گونجاو بە قۆناغی بڕیار." },
+            { "language": "kmr", "text": "Parastina baş li gor e: ne hişyariya herî zêde, lê ya li gor asta biryarê." },
+            { "language": "pl", "text": "Dobre zabezpieczenie jest proporcjonalne: nie maksymalnie ostrożne, lecz odpowiednie do etapu decyzji." },
+            { "language": "ro", "text": "O garanție bună este proporțională: nu maxim prudentă, ci potrivită etapei deciziei." },
+            { "language": "sq", "text": "Një masë mbrojtëse e mirë është proporcionale: jo maksimalisht e kujdesshme, por e përshtatshme me fazën e vendimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "strategy",
+          "text": "Der Abschluss sollte die eigene Glaubwürdigkeit schützen und zugleich das Team handlungsfähig lassen.",
+          "translations": [
+            { "language": "en", "text": "The closing should protect your own credibility while keeping the team able to act." },
+            { "language": "fa", "text": "جمع‌بندی باید اعتبار خودتان را حفظ کند و همزمان تیم را قادر به اقدام نگه دارد." },
+            { "language": "ar", "text": "ينبغي أن تحمي الخاتمة مصداقيتك الشخصية وتبقي الفريق قادراً على العمل في الوقت نفسه." },
+            { "language": "tr", "text": "Kapanış kendi güvenilirliğinizi korumalı ve aynı zamanda ekibi eyleme hazır bırakmalıdır." },
+            { "language": "ru", "text": "Завершение должно защищать вашу собственную надежность и одновременно оставлять команду способной действовать." },
+            { "language": "ckb", "text": "کۆتاییەکە دەبێت باوەڕپێکراوی خۆت بپارێزێت و لە هەمان کاتدا تیمەکە توانای کردار هەبێت." },
+            { "language": "kmr", "text": "Dawî divê baweriyariya xwe biparêze û di heman demê de tîmê karibêje bihêle." },
+            { "language": "pl", "text": "Zakończenie powinno chronić własną wiarygodność i jednocześnie pozostawiać zespół zdolnym do działania." },
+            { "language": "ro", "text": "Încheierea ar trebui să vă protejeze credibilitatea și, în același timp, să lase echipa capabilă să acționeze." },
+            { "language": "sq", "text": "Mbyllja duhet të mbrojë besueshmërinë tuaj dhe njëkohësisht ta lërë ekipin të aftë për veprim." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "procurement-conflict-disclosure",
+          "placement": "hero",
+          "purpose": "Show a formal procurement meeting where a subject-matter expert transparently defines their role.",
+          "altText": "Eine formale Beschaffungsrunde mit Unterlagen auf einem Konferenztisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A formal procurement meeting with documents on a conference table." },
+            { "language": "fa", "text": "یک جلسه رسمی خرید با اسناد روی میز کنفرانس." },
+            { "language": "ar", "text": "اجتماع مشتريات رسمي مع مستندات على طاولة مؤتمر." },
+            { "language": "tr", "text": "Bir konferans masasında belgelerle resmi bir satın alma toplantısı." },
+            { "language": "ru", "text": "Официальное совещание по закупкам с документами на конференц-столе." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی فەرمی کڕین بە بەڵگەنامەکان لەسەر مێزی کۆنفرانس." },
+            { "language": "kmr", "text": "Civîneke fermî ya kirînê bi belgeyan li ser maseya konferansê." },
+            { "language": "pl", "text": "Formalne spotkanie zakupowe z dokumentami na stole konferencyjnym." },
+            { "language": "ro", "text": "O ședință formală de achiziții cu documente pe masa de conferință." },
+            { "language": "sq", "text": "Një takim formal prokurimi me dokumente mbi tryezën e konferencës." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal procurement meeting: diverse adults at a conference table with neutral documents, one person calmly explaining a role boundary, no readable company names, no logos, no private data, accessible composition, professional neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

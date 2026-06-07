@@ -1,0 +1,845 @@
+{
+  "packageId": "roleplays-c1-core-66-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 66 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 66",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-goethe-c1-ein-thema-strukturiert-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Goethe C1 ein Thema strukturiert diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Goethe C1 discussing a topic in a structured way" },
+        { "language": "fa", "text": "بحث ساختارمند درباره یک موضوع در Goethe C1" },
+        { "language": "ar", "text": "مناقشة موضوع بشكل منظم في Goethe C1" },
+        { "language": "tr", "text": "Goethe C1'de bir konuyu yapılandırılmış tartışmak" },
+        { "language": "ru", "text": "Структурированное обсуждение темы на Goethe C1" },
+        { "language": "ckb", "text": "گفتوگۆی ڕێکخراو دەربارەی بابەتێک لە Goethe C1" },
+        { "language": "kmr", "text": "Nîqaşa mijarekê bi avahiyekê di Goethe C1 de" },
+        { "language": "pl", "text": "Strukturalne omawianie tematu w Goethe C1" },
+        { "language": "ro", "text": "Discutarea structurată a unui subiect la Goethe C1" },
+        { "language": "sq", "text": "Diskutimi i strukturuar i një teme në Goethe C1" }
+      ],
+      "description": "In einer mündlichen C1-Prüfung diskutieren Sie, ob berufliche Weiterbildung künftig stärker online stattfinden sollte. Sie sollen Ihre Position klar aufbauen, Gegenargumente fair behandeln und am Ende eine differenzierte Schlussfolgerung ziehen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral C1 exam, you discuss whether continuing professional training should take place more online in the future. You should build your position clearly, treat counterarguments fairly, and end with a nuanced conclusion." },
+        { "language": "fa", "text": "در یک آزمون شفاهی C1 بحث می‌کنید که آیا آموزش‌های شغلی ضمن کار در آینده باید بیشتر آنلاین برگزار شوند یا نه. باید موضع خود را روشن بسازید، ضد‌استدلال‌ها را منصفانه بررسی کنید و در پایان نتیجه‌گیری چندبعدی داشته باشید." },
+        { "language": "ar", "text": "في امتحان شفهي C1 تناقش ما إذا كان ينبغي أن يتم التدريب المهني المستمر مستقبلاً عبر الإنترنت أكثر. عليك بناء موقفك بوضوح، ومعالجة الحجج المضادة بإنصاف، وإنهاء الحديث باستنتاج متمايز." },
+        { "language": "tr", "text": "Sözlü bir C1 sınavında mesleki Weiterbildung'ın gelecekte daha fazla çevrim içi yapılması gerekip gerekmediğini tartışırsınız. Görüşünüzü açık kurmalı, karşı argümanları adil ele almalı ve sonunda nüanslı bir sonuç çıkarmalısınız." },
+        { "language": "ru", "text": "На устном экзамене C1 Вы обсуждаете, должна ли профессиональная переподготовка в будущем чаще проходить онлайн. Нужно ясно выстроить позицию, справедливо рассмотреть контраргументы и завершить дифференцированным выводом." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی زاری C1 دا باس دەکەیت ئایا فێربوونی پیشەیی بەردەوام لە داهاتوودا پێویستە زیاتر ئۆنلاین بکرێت یان نا. پێویستە هەڵوێستەکەت بە ڕوونی دابنێیت، بەڵگەی پێچەوانە بە دادپەروەری هەڵبسەنگێنیت و لە کۆتاییدا ئەنجامگیرییەکی ورد بکەیت." },
+        { "language": "kmr", "text": "Di ezmûneke devkî ya C1 de hûn nîqaş dikin ka divê perwerdehiya pîşeyî ya berdewam di pêşerojê de zêdetir online be an na. Divê hûn helwesta xwe bi zelalî ava bikin, argûmanên dijber bi adilî bigirin û di dawiyê de encameke cuda-dîtinî derxin." },
+        { "language": "pl", "text": "Na ustnym egzaminie C1 omawia Pan, czy doskonalenie zawodowe powinno w przyszłości częściej odbywać się online. Należy jasno zbudować stanowisko, uczciwie potraktować kontrargumenty i zakończyć zniuansowanym wnioskiem." },
+        { "language": "ro", "text": "Într-un examen oral C1 discutați dacă formarea profesională continuă ar trebui să aibă loc mai mult online în viitor. Trebuie să vă construiți clar poziția, să tratați corect contraargumentele și să încheiați cu o concluzie nuanțată." },
+        { "language": "sq", "text": "Në një provim me gojë C1 diskutoni nëse trajnimi profesional i vazhdueshëm duhet të zhvillohet më shumë online në të ardhmen. Duhet ta ndërtoni qartë qëndrimin, t'i trajtoni drejt kundërargumentet dhe të përfundoni me një përfundim të nuancuar." }
+      ],
+      "learnerGoal": "Ein Prüfungsthema strukturiert diskutieren: Thema eingrenzen, These formulieren, ein tragfähiges Argument geben, Gegenargument fair aufnehmen, darauf differenziert reagieren und eine klare Schlussfolgerung ziehen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss an exam topic in a structured way: narrow the topic, formulate a thesis, give a solid argument, take up a counterargument fairly, respond to it in a nuanced way, and draw a clear conclusion." },
+        { "language": "fa", "text": "یک موضوع امتحانی را ساختارمند بحث کنید: موضوع را محدود کنید، تز بیان کنید، یک استدلال محکم بیاورید، ضد‌استدلال را منصفانه بپذیرید، به آن با دقت پاسخ دهید و نتیجه روشن بگیرید." },
+        { "language": "ar", "text": "ناقش موضوعاً امتحانياً بشكل منظم: حدّد نطاق الموضوع، وصغ أطروحة، وقدّم حجة متينة، وتناول حجة مضادة بإنصاف، ورد عليها بتمايز، واستخلص نتيجة واضحة." },
+        { "language": "tr", "text": "Bir sınav konusunu yapılandırılmış tartışın: konuyu sınırlandırın, tez formüle edin, sağlam bir argüman verin, karşı argümanı adilce ele alın, ona nüanslı yanıt verin ve net bir sonuç çıkarın." },
+        { "language": "ru", "text": "Структурированно обсудить экзаменационную тему: сузить тему, сформулировать тезис, привести устойчивый аргумент, справедливо учесть контраргумент, дифференцированно ответить и сделать ясный вывод." },
+        { "language": "ckb", "text": "بابەتێکی تاقیکردنەوە بە ڕێکخراوی باس بکە: بابەتەکە سنووردار بکە، تێز دابڕێژە، بەڵگەیەکی بەهێز بدە، بەڵگەی پێچەوانە بە دادپەروەری وەربگرە، بە وردی وەڵامی بدەوە و ئەنجامگیرییەکی ڕوون بکە." },
+        { "language": "kmr", "text": "Mijareke ezmûnê bi avahî nîqaş bikin: mijarê sînordar bikin, tezek formule bikin, argûmaneke bihêz bidin, argûmana dijber bi adilî bigirin, bi hûrgilî bersiv bidin û encameke zelal derxin." },
+        { "language": "pl", "text": "Strukturalnie omówić temat egzaminacyjny: zawęzić temat, sformułować tezę, podać solidny argument, uczciwie podjąć kontrargument, odpowiedzieć na niego zniuansowanie i wyciągnąć jasny wniosek." },
+        { "language": "ro", "text": "Discutați structurat un subiect de examen: delimitați tema, formulați o teză, dați un argument solid, preluați corect un contraargument, răspundeți nuanțat și trageți o concluzie clară." },
+        { "language": "sq", "text": "Diskutoni në mënyrë të strukturuar një temë provimi: kufizoni temën, formuloni tezë, jepni argument të fortë, merrni drejt një kundërargument, përgjigjuni me nuancë dhe nxirrni përfundim të qartë." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["goethe-c1"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "exam-discussion",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 66,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Prüfungsteilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Exam candidate" },
+            { "language": "fa", "text": "شرکت‌کننده آزمون" },
+            { "language": "ar", "text": "مشارك في الامتحان" },
+            { "language": "tr", "text": "Sınav adayı" },
+            { "language": "ru", "text": "Участник экзамена" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Beşdarê ezmûnê" },
+            { "language": "pl", "text": "Uczestnik egzaminu" },
+            { "language": "ro", "text": "Candidat la examen" },
+            { "language": "sq", "text": "Kandidat provimi" }
+          ]
+        },
+        {
+          "roleKey": "interviewer",
+          "displayName": "Prüfer/in",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnger" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Ekzaminues" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "interviewer",
+          "baseText": "Diskutieren Sie bitte das Thema: Sollte berufliche Weiterbildung künftig überwiegend online stattfinden? Achten Sie auf eine klare Struktur.",
+          "translations": [
+            { "language": "en", "text": "Please discuss the topic: Should continuing professional training take place mainly online in the future? Pay attention to a clear structure." },
+            { "language": "fa", "text": "لطفاً این موضوع را بحث کنید: آیا آموزش شغلی ضمن کار در آینده باید عمدتاً آنلاین برگزار شود؟ به ساختار روشن توجه کنید." },
+            { "language": "ar", "text": "ناقش من فضلك الموضوع: هل ينبغي أن يتم التدريب المهني المستمر مستقبلاً في الغالب عبر الإنترنت؟ انتبه إلى بنية واضحة." },
+            { "language": "tr", "text": "Lütfen şu konuyu tartışın: Mesleki Weiterbildung gelecekte ağırlıklı olarak çevrim içi mi yapılmalı? Net bir yapıya dikkat edin." },
+            { "language": "ru", "text": "Пожалуйста, обсудите тему: должна ли профессиональная переподготовка в будущем в основном проходить онлайн? Обратите внимание на ясную структуру." },
+            { "language": "ckb", "text": "تکایە ئەم بابەتە باس بکە: ئایا فێربوونی پیشەیی بەردەوام لە داهاتوودا پێویستە بە زۆری ئۆنلاین بکرێت؟ ئاگاداری پێکهاتەی ڕوون بە." },
+            { "language": "kmr", "text": "Ji kerema xwe vê mijarê nîqaş bikin: Ma divê perwerdehiya pîşeyî ya berdewam di pêşerojê de bi piranî online be? Bala xwe bidin avahiyeke zelal." },
+            { "language": "pl", "text": "Proszę omówić temat: Czy doskonalenie zawodowe powinno w przyszłości odbywać się głównie online? Proszę zwrócić uwagę na jasną strukturę." },
+            { "language": "ro", "text": "Vă rog să discutați tema: Ar trebui ca formarea profesională continuă să aibă loc în viitor preponderent online? Fiți atent la o structură clară." },
+            { "language": "sq", "text": "Ju lutem diskutoni temën: A duhet që trajnimi profesional i vazhdueshëm në të ardhmen të zhvillohet kryesisht online? Kushtojini vëmendje një strukture të qartë." }
+          ],
+          "function": "exam-topic-prompt",
+          "toneNote": "formal exam prompt"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Frage nicht mit einem einfachen Ja oder Nein beantworten. Sinnvoller ist zu unterscheiden: Welche Inhalte eignen sich online, und wo braucht Weiterbildung weiterhin persönliche Begleitung?",
+          "translations": [
+            { "language": "en", "text": "I would not answer the question with a simple yes or no. It is more useful to distinguish: Which content is suitable online, and where does training still need personal support?" },
+            { "language": "fa", "text": "من به این سؤال با یک بله یا نه ساده پاسخ نمی‌دهم. مفیدتر است تفکیک کنیم: کدام محتوا برای آنلاین مناسب است و کجا آموزش همچنان به همراهی حضوری نیاز دارد؟" },
+            { "language": "ar", "text": "لن أجيب عن السؤال بنعم أو لا بسيطة. من الأنسب التمييز: ما المحتوى المناسب عبر الإنترنت، وأين لا يزال التدريب يحتاج إلى مرافقة شخصية؟" },
+            { "language": "tr", "text": "Bu soruya basit bir evet ya da hayır ile cevap vermezdim. Şunu ayırmak daha anlamlıdır: Hangi içerikler çevrim içi uygundur ve Weiterbildung nerede hâlâ kişisel rehberliğe ihtiyaç duyar?" },
+            { "language": "ru", "text": "Я бы не отвечал на этот вопрос простым да или нет. Разумнее различать: какие содержания подходят для онлайн-формата, а где обучение по-прежнему требует личного сопровождения?" },
+            { "language": "ckb", "text": "من وەڵامی ئەم پرسیارە بە بەڵێ یان نەخێرێکی سادە نادەمەوە. باشترە جیا بکەینەوە: کام ناوەڕۆک بۆ ئۆنلاین گونجاوە و لە کوێ فێربوون هێشتا پێویستی بە هاوڕێیەتی کەسی هەیە؟" },
+            { "language": "kmr", "text": "Ez vê pirsê bi erê an na ya sade bersiv nadim. Watedartir e ku em cuda bikin: Kîjan naverok ji bo online guncav e, û li ku perwerdehî hê jî piştgiriya kesane hewce dike?" },
+            { "language": "pl", "text": "Nie odpowiedziałbym na to pytanie prostym tak albo nie. Sensowniej jest rozróżnić: jakie treści nadają się online, a gdzie szkolenie nadal potrzebuje osobistego wsparcia?" },
+            { "language": "ro", "text": "Nu aș răspunde la întrebare cu un simplu da sau nu. Este mai util să distingem: ce conținuturi se potrivesc online și unde formarea are în continuare nevoie de însoțire personală?" },
+            { "language": "sq", "text": "Unë nuk do t'i përgjigjesha pyetjes me një po ose jo të thjeshtë. Është më e dobishme të dallojmë: cilat përmbajtje përshtaten online dhe ku trajnimi ka ende nevojë për shoqërim personal?" }
+          ],
+          "function": "structured-introduction",
+          "toneNote": "formal and framing"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "interviewer",
+          "baseText": "Beginnen Sie bitte mit Ihrem wichtigsten Argument für mehr Online-Angebote.",
+          "translations": [
+            { "language": "en", "text": "Please begin with your most important argument for more online offers." },
+            { "language": "fa", "text": "لطفاً با مهم‌ترین استدلال خود برای برنامه‌های آنلاین بیشتر شروع کنید." },
+            { "language": "ar", "text": "ابدأ من فضلك بأهم حجتك لصالح المزيد من العروض عبر الإنترنت." },
+            { "language": "tr", "text": "Lütfen daha fazla çevrim içi teklif için en önemli argümanınızla başlayın." },
+            { "language": "ru", "text": "Пожалуйста, начните с Вашего главного аргумента в пользу большего количества онлайн-предложений." },
+            { "language": "ckb", "text": "تکایە بە گرنگترین بەڵگەی خۆت بۆ پێشنیاری ئۆنلاین زیاتر دەست پێبکە." },
+            { "language": "kmr", "text": "Ji kerema xwe bi argûmana xwe ya herî girîng ji bo pêşniyarên online zêdetir dest pê bikin." },
+            { "language": "pl", "text": "Proszę zacząć od najważniejszego argumentu za większą liczbą ofert online." },
+            { "language": "ro", "text": "Vă rog să începeți cu cel mai important argument pentru mai multe oferte online." },
+            { "language": "sq", "text": "Ju lutem filloni me argumentin tuaj më të rëndësishëm për më shumë oferta online." }
+          ],
+          "function": "ask-main-argument",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das stärkste Argument ist der Zugang. Online-Angebote können Menschen erreichen, die wegen Arbeitszeiten, Kinderbetreuung oder Entfernung sonst gar nicht teilnehmen würden.",
+          "translations": [
+            { "language": "en", "text": "The strongest argument is access. Online offers can reach people who otherwise would not participate at all because of working hours, childcare, or distance." },
+            { "language": "fa", "text": "قوی‌ترین استدلال دسترسی است. برنامه‌های آنلاین می‌توانند به افرادی برسند که به خاطر ساعت کاری، مراقبت از کودک یا فاصله، در غیر این صورت اصلاً شرکت نمی‌کردند." },
+            { "language": "ar", "text": "أقوى حجة هي الوصول. يمكن للعروض عبر الإنترنت أن تصل إلى أشخاص لم يكونوا سيشاركون أصلاً بسبب أوقات العمل أو رعاية الأطفال أو البعد." },
+            { "language": "tr", "text": "En güçlü argüman erişimdir. Çevrim içi teklifler, çalışma saatleri, çocuk bakımı veya mesafe nedeniyle aksi halde hiç katılamayacak insanlara ulaşabilir." },
+            { "language": "ru", "text": "Самый сильный аргумент — доступ. Онлайн-предложения могут достичь людей, которые иначе вообще не участвовали бы из-за рабочего времени, ухода за детьми или расстояния." },
+            { "language": "ckb", "text": "بەهێزترین بەڵگە دەستگەیشتنە. پێشنیارە ئۆنلاینەکان دەتوانن بگەن بە کەسانێک کە بەهۆی کاتی کار، چاودێری منداڵ یان دوورییەوە ئەگەر نا هەر بەشداری نەدەکرد." },
+            { "language": "kmr", "text": "Argûmana herî bihêz gihîştin e. Pêşniyarên online dikarin bigihîjin kesên ku ji ber demên karê, lênêrîna zarokan an dûrbûnê wekî din qet beşdar nedibûn." },
+            { "language": "pl", "text": "Najmocniejszym argumentem jest dostęp. Oferty online mogą dotrzeć do osób, które z powodu godzin pracy, opieki nad dziećmi albo odległości inaczej w ogóle by nie uczestniczyły." },
+            { "language": "ro", "text": "Cel mai puternic argument este accesul. Ofertele online pot ajunge la persoane care altfel nu ar participa deloc din cauza programului de lucru, îngrijirii copiilor sau distanței." },
+            { "language": "sq", "text": "Argumenti më i fortë është qasja. Ofertat online mund të arrijnë njerëz që për shkak të orarit të punës, kujdesit për fëmijët ose largësisë përndryshe nuk do të merrnin pjesë fare." }
+          ],
+          "function": "main-argument",
+          "toneNote": "clear and concrete"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "interviewer",
+          "baseText": "Was spricht aus Ihrer Sicht gegen eine überwiegend digitale Weiterbildung?",
+          "translations": [
+            { "language": "en", "text": "From your perspective, what argues against predominantly digital continuing training?" },
+            { "language": "fa", "text": "از دید شما چه چیزی علیه آموزش ضمن کار عمدتاً دیجیتال است؟" },
+            { "language": "ar", "text": "من وجهة نظرك، ما الذي يعارض تدريباً مستمراً رقمياً في الغالب؟" },
+            { "language": "tr", "text": "Sizin bakış açınıza göre ağırlıklı dijital Weiterbildung'a karşı ne konuşur?" },
+            { "language": "ru", "text": "С Вашей точки зрения, что говорит против преимущественно цифрового повышения квалификации?" },
+            { "language": "ckb", "text": "لە ڕوانگەی تۆوە چی دژی فێربوونی بەردەوامی بە زۆری دیجیتاڵییە؟" },
+            { "language": "kmr", "text": "Ji perspektîfa we ve çi li dijî perwerdehiya berdewam a bi piranî dijîtal diaxive?" },
+            { "language": "pl", "text": "Co z Pana perspektywy przemawia przeciwko szkoleniom w przeważającej mierze cyfrowym?" },
+            { "language": "ro", "text": "Din perspectiva dumneavoastră, ce vorbește împotriva unei formări continue predominant digitale?" },
+            { "language": "sq", "text": "Nga këndvështrimi juaj, çfarë flet kundër trajnimit të vazhdueshëm kryesisht digjital?" }
+          ],
+          "function": "ask-counterargument",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ein gewichtiges Gegenargument ist, dass Lernen nicht nur Informationsaufnahme ist. Gerade bei komplexen Themen entstehen Fragen, Unsicherheiten und Austausch, die online leichter verloren gehen.",
+          "translations": [
+            { "language": "en", "text": "A weighty counterargument is that learning is not only the intake of information. Especially with complex topics, questions, uncertainties, and exchange arise, and these are more easily lost online." },
+            { "language": "fa", "text": "یک ضد‌استدلال مهم این است که یادگیری فقط دریافت اطلاعات نیست. مخصوصاً در موضوع‌های پیچیده، پرسش‌ها، تردیدها و تبادل نظر ایجاد می‌شود که آنلاین راحت‌تر از دست می‌رود." },
+            { "language": "ar", "text": "حجة مضادة مهمة هي أن التعلم ليس مجرد تلقي معلومات. خصوصاً في المواضيع المعقدة تظهر أسئلة وشكوك وتبادل، وهذه تضيع بسهولة أكبر عبر الإنترنت." },
+            { "language": "tr", "text": "Önemli bir karşı argüman, öğrenmenin yalnızca bilgi alma olmadığıdır. Özellikle karmaşık konularda sorular, belirsizlikler ve etkileşim ortaya çıkar; bunlar çevrim içi daha kolay kaybolur." },
+            { "language": "ru", "text": "Весомый контраргумент состоит в том, что обучение — это не только получение информации. Особенно при сложных темах возникают вопросы, неуверенность и обмен, которые онлайн легче теряются." },
+            { "language": "ckb", "text": "بەڵگەیەکی پێچەوانەی گرنگ ئەوەیە کە فێربوون تەنها وەرگرتنی زانیاری نییە. بە تایبەتی لە بابەتە ئاڵۆزەکاندا پرسیار، دڵنیانەبوون و ئاڵوگۆڕ دروست دەبێت کە لە ئۆنلاین ئاسانتر ون دەبێت." },
+            { "language": "kmr", "text": "Argûmaneke dijber a girîng ev e ku fêrbûn ne tenê wergirtina agahdariyê ye. Bi taybetî di mijarên tevlihev de pirs, neewlehî û danûstandin çêdibin ku online hêsantir winda dibin." },
+            { "language": "pl", "text": "Ważnym kontrargumentem jest to, że uczenie się nie polega tylko na przyjmowaniu informacji. Zwłaszcza przy złożonych tematach pojawiają się pytania, niepewność i wymiana, które online łatwiej giną." },
+            { "language": "ro", "text": "Un contraargument important este că învățarea nu înseamnă doar preluarea informației. Mai ales la teme complexe apar întrebări, incertitudini și schimb, care se pierd mai ușor online." },
+            { "language": "sq", "text": "Një kundërargument i rëndësishëm është se të nxënit nuk është vetëm marrje informacioni. Sidomos në temat komplekse lindin pyetje, pasiguri dhe shkëmbim, të cilat online humbasin më lehtë." }
+          ],
+          "function": "fair-counterargument",
+          "toneNote": "balanced"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "interviewer",
+          "baseText": "Wie würden Sie diesen Einwand in Ihre Position integrieren, ohne Ihre ursprüngliche These aufzugeben?",
+          "translations": [
+            { "language": "en", "text": "How would you integrate this objection into your position without giving up your original thesis?" },
+            { "language": "fa", "text": "چطور این ایراد را در موضع خود وارد می‌کنید، بدون اینکه تز اولیه خود را کنار بگذارید؟" },
+            { "language": "ar", "text": "كيف ستدمج هذا الاعتراض في موقفك من دون التخلي عن أطروحتك الأصلية؟" },
+            { "language": "tr", "text": "Bu itirazı, ilk tezinizi bırakmadan görüşünüze nasıl entegre edersiniz?" },
+            { "language": "ru", "text": "Как бы Вы интегрировали это возражение в свою позицию, не отказываясь от исходного тезиса?" },
+            { "language": "ckb", "text": "چۆن ئەم ڕەخنەیە دەهێنیتە ناو هەڵوێستەکەت، بەبێ ئەوەی تێزی سەرەتایی خۆت واز لێبهێنیت؟" },
+            { "language": "kmr", "text": "Hûn çawa vê nerazîbûnê têxin helwesta xwe, bêyî ku ji teza xwe ya destpêkê dev berdin?" },
+            { "language": "pl", "text": "Jak włączyłby Pan ten zarzut do swojego stanowiska, nie rezygnując z pierwotnej tezy?" },
+            { "language": "ro", "text": "Cum ați integra această obiecție în poziția dumneavoastră fără să renunțați la teza inițială?" },
+            { "language": "sq", "text": "Si do ta integronit këtë kundërshtim në qëndrimin tuaj pa hequr dorë nga teza fillestare?" }
+          ],
+          "function": "ask-synthesis",
+          "toneNote": "probing"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde deshalb nicht für reine Online-Weiterbildung plädieren, sondern für ein gestuftes Modell: Wissensvermittlung online, Vertiefung und Feedback in Präsenz oder in kleinen betreuten Gruppen.",
+          "translations": [
+            { "language": "en", "text": "For that reason, I would not argue for purely online training, but for a staged model: knowledge transfer online, deepening and feedback in person or in small supervised groups." },
+            { "language": "fa", "text": "به همین دلیل از آموزش کاملاً آنلاین دفاع نمی‌کنم، بلکه از یک مدل مرحله‌ای: انتقال دانش آنلاین، تعمیق و بازخورد حضوری یا در گروه‌های کوچک با راهنما." },
+            { "language": "ar", "text": "لذلك لن أدافع عن تدريب عبر الإنترنت فقط، بل عن نموذج تدريجي: نقل المعرفة عبر الإنترنت، والتعمق والتغذية الراجعة حضورياً أو في مجموعات صغيرة مُرافقة." },
+            { "language": "tr", "text": "Bu yüzden tamamen çevrim içi Weiterbildung'ı savunmazdım; aşamalı bir modeli savunurdum: bilgi aktarımı çevrim içi, derinleşme ve geri bildirim yüz yüze ya da küçük rehberli gruplarda." },
+            { "language": "ru", "text": "Поэтому я бы выступал не за чисто онлайн-обучение, а за ступенчатую модель: передача знаний онлайн, углубление и обратная связь очно или в небольших сопровождаемых группах." },
+            { "language": "ckb", "text": "بۆیە من بەرگری لە فێربوونی تەنها ئۆنلاین ناکەم، بەڵکو لە مۆدێلێکی قۆناغبەندی: گواستنەوەی زانیاری ئۆنلاین، قووڵکردنەوە و فیدباک بە ئامادەبوون یان لە گروپی بچووک و چاودێریکراودا." },
+            { "language": "kmr", "text": "Ji ber vê ez ne alîgirê perwerdehiya tenê online me, lê alîgirê modelekê ya qonaxî me: ragihandina zanînê online, kûrkirin û feedback bi amadebûnê an di komên biçûk ên bi rêberî de." },
+            { "language": "pl", "text": "Dlatego nie opowiadałbym się za szkoleniem wyłącznie online, lecz za modelem stopniowym: przekazywanie wiedzy online, pogłębienie i informacja zwrotna stacjonarnie albo w małych grupach z opieką." },
+            { "language": "ro", "text": "De aceea nu aș pleda pentru formare exclusiv online, ci pentru un model etapizat: transmiterea cunoștințelor online, aprofundare și feedback în prezență sau în grupuri mici supravegheate." },
+            { "language": "sq", "text": "Prandaj nuk do të mbroja trajnim vetëm online, por një model me faza: përcjellje e njohurive online, thellim dhe feedback me prani fizike ose në grupe të vogla të udhëhequra." }
+          ],
+          "function": "synthesis-position",
+          "toneNote": "nuanced"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "interviewer",
+          "baseText": "Können Sie noch kurz erklären, warum diese Struktur für Lernende gerechter wäre?",
+          "translations": [
+            { "language": "en", "text": "Can you briefly explain why this structure would be fairer for learners?" },
+            { "language": "fa", "text": "می‌توانید کوتاه توضیح دهید چرا این ساختار برای یادگیرندگان منصفانه‌تر است؟" },
+            { "language": "ar", "text": "هل يمكنك أن تشرح بإيجاز لماذا ستكون هذه البنية أكثر إنصافاً للمتعلمين؟" },
+            { "language": "tr", "text": "Bu yapının öğrenenler için neden daha adil olacağını kısaca açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Можете кратко объяснить, почему такая структура была бы справедливее для учащихся?" },
+            { "language": "ckb", "text": "دەتوانیت بە کورتی ڕوون بکەیتەوە بۆچی ئەم پێکهاتەیە بۆ فێرخوازان دادپەروەرانەتر دەبێت؟" },
+            { "language": "kmr", "text": "Hûn dikarin kurt rave bikin çima ev avahî ji bo fêrbûyan adiltir dibe?" },
+            { "language": "pl", "text": "Czy może Pan krótko wyjaśnić, dlaczego taka struktura byłaby sprawiedliwsza dla uczących się?" },
+            { "language": "ro", "text": "Puteți explica pe scurt de ce această structură ar fi mai corectă pentru cursanți?" },
+            { "language": "sq", "text": "A mund të shpjegoni shkurt pse kjo strukturë do të ishte më e drejtë për nxënësit?" }
+          ],
+          "function": "ask-equity-justification",
+          "toneNote": "formal"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Gerechter wäre sie, weil unterschiedliche Lebenslagen berücksichtigt werden. Wer flexibel lernen muss, erhält Zugang; wer Unterstützung braucht, wird nicht mit einer Plattform allein gelassen.",
+          "translations": [
+            { "language": "en", "text": "It would be fairer because different life situations are taken into account. Those who need flexible learning gain access; those who need support are not left alone with a platform." },
+            { "language": "fa", "text": "منصفانه‌تر است، چون شرایط زندگی متفاوت در نظر گرفته می‌شود. کسی که باید انعطاف‌پذیر یاد بگیرد، دسترسی پیدا می‌کند؛ کسی که حمایت لازم دارد، با یک پلتفرم تنها گذاشته نمی‌شود." },
+            { "language": "ar", "text": "ستكون أكثر إنصافاً لأنها تراعي أوضاعاً حياتية مختلفة. من يحتاج إلى تعلم مرن يحصل على الوصول؛ ومن يحتاج إلى دعم لا يُترك وحده مع منصة." },
+            { "language": "tr", "text": "Daha adil olurdu, çünkü farklı yaşam koşulları dikkate alınır. Esnek öğrenmesi gereken kişi erişim kazanır; desteğe ihtiyacı olan kişi bir platformla yalnız bırakılmaz." },
+            { "language": "ru", "text": "Это было бы справедливее, потому что учитываются разные жизненные ситуации. Тот, кому нужно гибкое обучение, получает доступ; тот, кому нужна поддержка, не остается один на один с платформой." },
+            { "language": "ckb", "text": "دادپەروەرانەتر دەبوو، چونکە دۆخی ژیانی جیاواز لەبەرچاو دەگیرێت. ئەوەی پێویستی بە فێربوونی نەرم هەیە دەستگەیشتن وەردەگرێت؛ ئەوەی پێویستی بە پاڵپشتی هەیە لەگەڵ پلاتفۆرمێک بە تەنیا بەجێناهێڵرێت." },
+            { "language": "kmr", "text": "Adiltir dibe, ji ber ku rewşên jiyanê yên cuda têne hesibandin. Kesê ku fêrbûna fleksîbl hewce dike gihîştinê digire; kesê ku piştgirî hewce dike bi platformekê tenê nayê hiştin." },
+            { "language": "pl", "text": "Byłaby sprawiedliwsza, ponieważ uwzględnia różne sytuacje życiowe. Kto musi uczyć się elastycznie, zyskuje dostęp; kto potrzebuje wsparcia, nie zostaje sam z platformą." },
+            { "language": "ro", "text": "Ar fi mai corectă deoarece sunt luate în considerare situații de viață diferite. Cine trebuie să învețe flexibil primește acces; cine are nevoie de sprijin nu este lăsat singur cu o platformă." },
+            { "language": "sq", "text": "Do të ishte më e drejtë, sepse merren parasysh situata të ndryshme jetese. Kush duhet të mësojë me fleksibilitet fiton qasje; kush ka nevojë për mbështetje nuk lihet vetëm me një platformë." }
+          ],
+          "function": "equity-justification",
+          "toneNote": "reasoned"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "interviewer",
+          "baseText": "Bitte schließen Sie mit einem Fazit, das Ihre Position zusammenfasst.",
+          "translations": [
+            { "language": "en", "text": "Please close with a conclusion that summarizes your position." },
+            { "language": "fa", "text": "لطفاً با نتیجه‌ای که موضع شما را خلاصه می‌کند پایان دهید." },
+            { "language": "ar", "text": "من فضلك اختتم باستنتاج يلخص موقفك." },
+            { "language": "tr", "text": "Lütfen görüşünüzü özetleyen bir sonuçla bitirin." },
+            { "language": "ru", "text": "Пожалуйста, завершите выводом, который подытоживает Вашу позицию." },
+            { "language": "ckb", "text": "تکایە بە ئەنجامگیرییەک کۆتایی بهێنە کە هەڵوێستەکەت کورت دەکاتەوە." },
+            { "language": "kmr", "text": "Ji kerema xwe bi encamekê biqedînin ku helwesta we kurt dike." },
+            { "language": "pl", "text": "Proszę zakończyć wnioskiem, który podsumowuje Pana stanowisko." },
+            { "language": "ro", "text": "Vă rog să încheiați cu o concluzie care vă rezumă poziția." },
+            { "language": "sq", "text": "Ju lutem përfundoni me një konkluzion që përmbledh qëndrimin tuaj." }
+          ],
+          "function": "ask-conclusion",
+          "toneNote": "formal exam closure"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Mein Fazit lautet daher: Weiterbildung sollte digitaler werden, aber nicht ausschließlich digital. Entscheidend ist ein kluger Mix, der Zugang erweitert und gleichzeitig Austausch, Feedback und Verbindlichkeit sichert.",
+          "translations": [
+            { "language": "en", "text": "My conclusion is therefore: continuing training should become more digital, but not exclusively digital. The decisive point is a smart mix that expands access while also securing exchange, feedback, and commitment." },
+            { "language": "fa", "text": "نتیجه من بنابراین این است: آموزش ضمن کار باید دیجیتال‌تر شود، اما نه کاملاً دیجیتال. نکته تعیین‌کننده ترکیب هوشمندانه‌ای است که دسترسی را گسترش دهد و هم‌زمان تبادل نظر، بازخورد و تعهد را حفظ کند." },
+            { "language": "ar", "text": "لذلك فإن خلاصة موقفي هي: ينبغي أن يصبح التدريب المستمر أكثر رقمية، لكن ليس رقمياً حصراً. النقطة الحاسمة هي مزيج ذكي يوسع الوصول ويضمن في الوقت نفسه التبادل والتغذية الراجعة والالتزام." },
+            { "language": "tr", "text": "Bu nedenle sonucum şudur: Weiterbildung daha dijital olmalı, ama tamamen dijital olmamalıdır. Belirleyici olan, erişimi genişleten ve aynı zamanda etkileşimi, geri bildirimi ve bağlayıcılığı güvenceye alan akıllı bir karışımdır." },
+            { "language": "ru", "text": "Мой вывод поэтому таков: повышение квалификации должно стать более цифровым, но не исключительно цифровым. Решающим является разумное сочетание, которое расширяет доступ и одновременно обеспечивает обмен, обратную связь и обязательность." },
+            { "language": "ckb", "text": "ئەنجامگیریی من بۆیە ئەمەیە: فێربوونی بەردەوام پێویستە دیجیتاڵیتر ببێت، بەڵام نە تەنها دیجیتاڵی. خاڵی بڕیارده‌ر تێکەڵەیەکی زیرەکانەیە کە دەستگەیشتن فراوان بکات و لە هەمان کاتدا ئاڵوگۆڕ، فیدباک و پابەندی دابین بکات." },
+            { "language": "kmr", "text": "Encama min ji ber vê ev e: perwerdehiya berdewam divê dijîtaltir bibe, lê ne tenê dijîtal. Ya diyarker tevliheviyeke jîr e ku gihîştinê fireh dike û di heman demê de danûstandin, feedback û girêdanê ewle dike." },
+            { "language": "pl", "text": "Mój wniosek brzmi więc: doskonalenie zawodowe powinno stać się bardziej cyfrowe, ale nie wyłącznie cyfrowe. Decydujący jest mądry miks, który rozszerza dostęp, a jednocześnie zabezpiecza wymianę, informację zwrotną i zobowiązanie." },
+            { "language": "ro", "text": "Concluzia mea este deci: formarea continuă ar trebui să devină mai digitală, dar nu exclusiv digitală. Decisiv este un mix inteligent care extinde accesul și asigură în același timp schimbul, feedbackul și angajamentul." },
+            { "language": "sq", "text": "Përfundimi im është pra: trajnimi i vazhdueshëm duhet të bëhet më digjital, por jo vetëm digjital. Vendimtar është një kombinim i mençur që zgjeron qasjen dhe njëkohësisht siguron shkëmbimin, feedbackun dhe detyrimin." }
+          ],
+          "function": "structured-conclusion",
+          "toneNote": "formal and concise"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "structured-frame",
+              "text": "Ich würde die Frage nicht mit einem einfachen Ja oder Nein beantworten. Sinnvoller ist zu unterscheiden: Welche Inhalte eignen sich online, und wo braucht Weiterbildung weiterhin persönliche Begleitung?",
+              "translations": [
+                { "language": "en", "text": "I would not answer the question with a simple yes or no. It is more useful to distinguish: Which content is suitable online, and where does training still need personal support?" },
+                { "language": "fa", "text": "من به این سؤال با یک بله یا نه ساده پاسخ نمی‌دهم. مفیدتر است تفکیک کنیم: کدام محتوا برای آنلاین مناسب است و کجا آموزش همچنان به همراهی حضوری نیاز دارد؟" },
+                { "language": "ar", "text": "لن أجيب عن السؤال بنعم أو لا بسيطة. من الأنسب التمييز: ما المحتوى المناسب عبر الإنترنت، وأين لا يزال التدريب يحتاج إلى مرافقة شخصية؟" },
+                { "language": "tr", "text": "Bu soruya basit bir evet ya da hayır ile cevap vermezdim. Şunu ayırmak daha anlamlıdır: Hangi içerikler çevrim içi uygundur ve Weiterbildung nerede hâlâ kişisel rehberliğe ihtiyaç duyar?" },
+                { "language": "ru", "text": "Я бы не отвечал на этот вопрос простым да или нет. Разумнее различать: какие содержания подходят для онлайн-формата, а где обучение по-прежнему требует личного сопровождения?" },
+                { "language": "ckb", "text": "من وەڵامی ئەم پرسیارە بە بەڵێ یان نەخێرێکی سادە نادەمەوە. باشترە جیا بکەینەوە: کام ناوەڕۆک بۆ ئۆنلاین گونجاوە و لە کوێ فێربوون هێشتا پێویستی بە هاوڕێیەتی کەسی هەیە؟" },
+                { "language": "kmr", "text": "Ez vê pirsê bi erê an na ya sade bersiv nadim. Watedartir e ku em cuda bikin: Kîjan naverok ji bo online guncav e, û li ku perwerdehî hê jî piştgiriya kesane hewce dike?" },
+                { "language": "pl", "text": "Nie odpowiedziałbym na to pytanie prostym tak albo nie. Sensowniej jest rozróżnić: jakie treści nadają się online, a gdzie szkolenie nadal potrzebuje osobistego wsparcia?" },
+                { "language": "ro", "text": "Nu aș răspunde la întrebare cu un simplu da sau nu. Este mai util să distingem: ce conținuturi se potrivesc online și unde formarea are în continuare nevoie de însoțire personală?" },
+                { "language": "sq", "text": "Unë nuk do t'i përgjigjesha pyetjes me një po ose jo të thjeshtë. Është më e dobishme të dallojmë: cilat përmbajtje përshtaten online dhe ku trajnimi ka ende nevojë për shoqërim personal?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort grenzt das Thema ein und kündigt eine klare Struktur an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer narrows the topic and signals a clear structure." },
+                { "language": "fa", "text": "خوب است: پاسخ موضوع را محدود می‌کند و ساختاری روشن را نشان می‌دهد." },
+                { "language": "ar", "text": "جيد: تحدد الإجابة نطاق الموضوع وتشير إلى بنية واضحة." },
+                { "language": "tr", "text": "İyi: yanıt konuyu sınırlandırıyor ve net bir yapı işaret ediyor." },
+                { "language": "ru", "text": "Хорошо: ответ сужает тему и обозначает ясную структуру." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بابەتەکە سنووردار دەکات و پێکهاتەیەکی ڕوون نیشان دەدات." },
+                { "language": "kmr", "text": "Baş e: bersiv mijarê sînordar dike û avahiyeke zelal nîşan dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zawęża temat i zapowiada jasną strukturę." },
+                { "language": "ro", "text": "Bine: răspunsul delimitează tema și anunță o structură clară." },
+                { "language": "sq", "text": "Mirë: përgjigjja e kufizon temën dhe sinjalizon një strukturë të qartë." }
+              ],
+              "explanationKey": "structured-topic-opening"
+            },
+            {
+              "id": "memorized-opening",
+              "text": "Das Thema ist sehr aktuell und hat viele Vor- und Nachteile, über die man lange diskutieren kann.",
+              "translations": [
+                { "language": "en", "text": "The topic is very current and has many advantages and disadvantages that can be discussed at length." },
+                { "language": "fa", "text": "موضوع بسیار به‌روز است و مزایا و معایب زیادی دارد که می‌توان مدت طولانی درباره آن‌ها بحث کرد." },
+                { "language": "ar", "text": "الموضوع راهن جداً وله مزايا وعيوب كثيرة يمكن مناقشتها طويلاً." },
+                { "language": "tr", "text": "Konu çok günceldir ve uzun uzun tartışılabilecek birçok avantajı ve dezavantajı vardır." },
+                { "language": "ru", "text": "Тема очень актуальна и имеет много преимуществ и недостатков, о которых можно долго дискутировать." },
+                { "language": "ckb", "text": "بابەتەکە زۆر نوێیە و زۆر سوود و زیانی هەیە کە دەتوانرێت ماوەیەکی درێژ باسیان بکرێت." },
+                { "language": "kmr", "text": "Mijar pir aktuel e û gelek avantaj û dezavantaj hene ku dikare dirêj were nîqaşkirin." },
+                { "language": "pl", "text": "Temat jest bardzo aktualny i ma wiele zalet oraz wad, o których można długo dyskutować." },
+                { "language": "ro", "text": "Tema este foarte actuală și are multe avantaje și dezavantaje despre care se poate discuta mult." },
+                { "language": "sq", "text": "Tema është shumë aktuale dhe ka shumë përparësi e mangësi për të cilat mund të diskutohet gjatë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu formelhaft: Die Einleitung klingt flüssig, aber sie grenzt die Diskussion nicht ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too formulaic: the introduction sounds fluent, but it does not narrow the discussion." },
+                { "language": "fa", "text": "بیش از حد قالبی است: مقدمه روان به نظر می‌رسد، اما بحث را محدود نمی‌کند." },
+                { "language": "ar", "text": "صياغة قالبية جداً: تبدو المقدمة سلسة، لكنها لا تحدد نطاق النقاش." },
+                { "language": "tr", "text": "Çok kalıplaşmış: giriş akıcı geliyor, ama tartışmayı sınırlandırmıyor." },
+                { "language": "ru", "text": "Слишком шаблонно: вступление звучит плавно, но не сужает обсуждение." },
+                { "language": "ckb", "text": "زۆر قاڵبێکییە: پێشەکییەکە ڕەوان دەردەکەوێت، بەڵام باسەکە سنووردار ناکات." },
+                { "language": "kmr", "text": "Pir qalibî ye: destpêk herikbar xuya dike, lê nîqaşê sînordar nake." },
+                { "language": "pl", "text": "Zbyt schematyczne: wstęp brzmi płynnie, ale nie zawęża dyskusji." },
+                { "language": "ro", "text": "Prea șablonard: introducerea sună fluent, dar nu delimitează discuția." },
+                { "language": "sq", "text": "Shumë formulë: hyrja tingëllon rrjedhshëm, por nuk e kufizon diskutimin." }
+              ],
+              "explanationKey": "generic-exam-opening"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "access-argument",
+              "text": "Das stärkste Argument ist der Zugang. Online-Angebote können Menschen erreichen, die wegen Arbeitszeiten, Kinderbetreuung oder Entfernung sonst gar nicht teilnehmen würden.",
+              "translations": [
+                { "language": "en", "text": "The strongest argument is access. Online offers can reach people who otherwise would not participate at all because of working hours, childcare, or distance." },
+                { "language": "fa", "text": "قوی‌ترین استدلال دسترسی است. برنامه‌های آنلاین می‌توانند به افرادی برسند که به خاطر ساعت کاری، مراقبت از کودک یا فاصله، در غیر این صورت اصلاً شرکت نمی‌کردند." },
+                { "language": "ar", "text": "أقوى حجة هي الوصول. يمكن للعروض عبر الإنترنت أن تصل إلى أشخاص لم يكونوا سيشاركون أصلاً بسبب أوقات العمل أو رعاية الأطفال أو البعد." },
+                { "language": "tr", "text": "En güçlü argüman erişimdir. Çevrim içi teklifler, çalışma saatleri, çocuk bakımı veya mesafe nedeniyle aksi halde hiç katılamayacak insanlara ulaşabilir." },
+                { "language": "ru", "text": "Самый сильный аргумент — доступ. Онлайн-предложения могут достичь людей, которые иначе вообще не участвовали бы из-за рабочего времени, ухода за детьми или расстояния." },
+                { "language": "ckb", "text": "بەهێزترین بەڵگە دەستگەیشتنە. پێشنیارە ئۆنلاینەکان دەتوانن بگەن بە کەسانێک کە بەهۆی کاتی کار، چاودێری منداڵ یان دوورییەوە ئەگەر نا هەر بەشداری نەدەکرد." },
+                { "language": "kmr", "text": "Argûmana herî bihêz gihîştin e. Pêşniyarên online dikarin bigihîjin kesên ku ji ber demên karê, lênêrîna zarokan an dûrbûnê wekî din qet beşdar nedibûn." },
+                { "language": "pl", "text": "Najmocniejszym argumentem jest dostęp. Oferty online mogą dotrzeć do osób, które z powodu godzin pracy, opieki nad dziećmi albo odległości inaczej w ogóle by nie uczestniczyły." },
+                { "language": "ro", "text": "Cel mai puternic argument este accesul. Ofertele online pot ajunge la persoane care altfel nu ar participa deloc din cauza programului de lucru, îngrijirii copiilor sau distanței." },
+                { "language": "sq", "text": "Argumenti më i fortë është qasja. Ofertat online mund të arrijnë njerëz që për shkak të orarit të punës, kujdesit për fëmijët ose largësisë përndryshe nuk do të merrnin pjesë fare." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Argument ist klar, konkret und mit mehreren realistischen Gründen gestützt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the argument is clear, concrete, and supported by several realistic reasons." },
+                { "language": "fa", "text": "خوب است: استدلال روشن، مشخص و با چند دلیل واقع‌بینانه پشتیبانی شده است." },
+                { "language": "ar", "text": "جيد: الحجة واضحة وملموسة ومدعومة بعدة أسباب واقعية." },
+                { "language": "tr", "text": "İyi: argüman net, somut ve birkaç gerçekçi gerekçeyle destekleniyor." },
+                { "language": "ru", "text": "Хорошо: аргумент ясен, конкретен и подкреплен несколькими реалистичными причинами." },
+                { "language": "ckb", "text": "باشە: بەڵگەکە ڕوون، دیاریکراو و بە چەند هۆکاری واقیعی پاڵپشتی کراوە." },
+                { "language": "kmr", "text": "Baş e: argûman zelal, konkret û bi çend sedemên realîstîk piştgirîkirî ye." },
+                { "language": "pl", "text": "Dobrze: argument jest jasny, konkretny i poparty kilkoma realistycznymi powodami." },
+                { "language": "ro", "text": "Bine: argumentul este clar, concret și susținut de mai multe motive realiste." },
+                { "language": "sq", "text": "Mirë: argumenti është i qartë, konkret dhe i mbështetur me disa arsye realiste." }
+              ],
+              "explanationKey": "concrete-main-argument"
+            },
+            {
+              "id": "abstract-argument",
+              "text": "Online-Angebote sind einfach moderner und passen besser zu unserer heutigen Gesellschaft.",
+              "translations": [
+                { "language": "en", "text": "Online offers are simply more modern and fit our society today better." },
+                { "language": "fa", "text": "برنامه‌های آنلاین ساده‌تر مدرن‌تر هستند و با جامعه امروز ما بهتر جور درمی‌آیند." },
+                { "language": "ar", "text": "العروض عبر الإنترنت ببساطة أكثر حداثة وتناسب مجتمعنا اليوم بشكل أفضل." },
+                { "language": "tr", "text": "Çevrim içi teklifler daha moderndir ve bugünkü toplumumuza daha iyi uyar." },
+                { "language": "ru", "text": "Онлайн-предложения просто современнее и лучше подходят нашему сегодняшнему обществу." },
+                { "language": "ckb", "text": "پێشنیارە ئۆنلاینەکان بە سادەیی مۆدێرنترن و لەگەڵ کۆمەڵگای ئەمڕۆمان باشتر دەگونجێن." },
+                { "language": "kmr", "text": "Pêşniyarên online bi sadebûnê modernîtir in û bi civaka me ya îroyîn re çêtir diguncin." },
+                { "language": "pl", "text": "Oferty online są po prostu nowocześniejsze i lepiej pasują do naszego dzisiejszego społeczeństwa." },
+                { "language": "ro", "text": "Ofertele online sunt pur și simplu mai moderne și se potrivesc mai bine societății noastre actuale." },
+                { "language": "sq", "text": "Ofertat online janë thjesht më moderne dhe përshtaten më mirë me shoqërinë tonë të sotme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu abstrakt: Die Aussage klingt überzeugend, aber sie erklärt nicht, für wen Online-Angebote konkret besser sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too abstract: the statement sounds persuasive, but it does not explain for whom online offers are concretely better." },
+                { "language": "fa", "text": "بیش از حد انتزاعی است: جمله قانع‌کننده به نظر می‌رسد، اما توضیح نمی‌دهد برنامه آنلاین دقیقاً برای چه کسانی بهتر است." },
+                { "language": "ar", "text": "مجرد جداً: تبدو العبارة مقنعة، لكنها لا تشرح لمن تكون العروض عبر الإنترنت أفضل بشكل ملموس." },
+                { "language": "tr", "text": "Çok soyut: ifade ikna edici geliyor, ama çevrim içi tekliflerin somut olarak kimler için daha iyi olduğunu açıklamıyor." },
+                { "language": "ru", "text": "Слишком абстрактно: высказывание звучит убедительно, но не объясняет, для кого онлайн-предложения конкретно лучше." },
+                { "language": "ckb", "text": "زۆر ئەبستراکتە: وتەکە قەناعەتپێکەر دەردەکەوێت، بەڵام ڕوون ناکاتەوە پێشنیاری ئۆنلاین بە دیاریکراوی بۆ کێ باشترە." },
+                { "language": "kmr", "text": "Pir abstrakt e: gotin qanîker xuya dike, lê rave nake ji bo kê pêşniyarên online bi konkretî çêtir in." },
+                { "language": "pl", "text": "Zbyt abstrakcyjne: wypowiedź brzmi przekonująco, ale nie wyjaśnia, dla kogo oferty online są konkretnie lepsze." },
+                { "language": "ro", "text": "Prea abstract: afirmația sună convingător, dar nu explică pentru cine sunt concret mai bune ofertele online." },
+                { "language": "sq", "text": "Shumë abstrakte: pohimi tingëllon bindës, por nuk shpjegon për kë janë konkretisht më të mira ofertat online." }
+              ],
+              "explanationKey": "abstract-main-argument"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "fair-counterargument",
+              "text": "Ein gewichtiges Gegenargument ist, dass Lernen nicht nur Informationsaufnahme ist. Gerade bei komplexen Themen entstehen Fragen, Unsicherheiten und Austausch, die online leichter verloren gehen.",
+              "translations": [
+                { "language": "en", "text": "A weighty counterargument is that learning is not only the intake of information. Especially with complex topics, questions, uncertainties, and exchange arise, and these are more easily lost online." },
+                { "language": "fa", "text": "یک ضد‌استدلال مهم این است که یادگیری فقط دریافت اطلاعات نیست. مخصوصاً در موضوع‌های پیچیده، پرسش‌ها، تردیدها و تبادل نظر ایجاد می‌شود که آنلاین راحت‌تر از دست می‌رود." },
+                { "language": "ar", "text": "حجة مضادة مهمة هي أن التعلم ليس مجرد تلقي معلومات. خصوصاً في المواضيع المعقدة تظهر أسئلة وشكوك وتبادل، وهذه تضيع بسهولة أكبر عبر الإنترنت." },
+                { "language": "tr", "text": "Önemli bir karşı argüman, öğrenmenin yalnızca bilgi alma olmadığıdır. Özellikle karmaşık konularda sorular, belirsizlikler ve etkileşim ortaya çıkar; bunlar çevrim içi daha kolay kaybolur." },
+                { "language": "ru", "text": "Весомый контраргумент состоит в том, что обучение — это не только получение информации. Особенно при сложных темах возникают вопросы, неуверенность и обмен, которые онлайн легче теряются." },
+                { "language": "ckb", "text": "بەڵگەیەکی پێچەوانەی گرنگ ئەوەیە کە فێربوون تەنها وەرگرتنی زانیاری نییە. بە تایبەتی لە بابەتە ئاڵۆزەکاندا پرسیار، دڵنیانەبوون و ئاڵوگۆڕ دروست دەبێت کە لە ئۆنلاین ئاسانتر ون دەبێت." },
+                { "language": "kmr", "text": "Argûmaneke dijber a girîng ev e ku fêrbûn ne tenê wergirtina agahdariyê ye. Bi taybetî di mijarên tevlihev de pirs, neewlehî û danûstandin çêdibin ku online hêsantir winda dibin." },
+                { "language": "pl", "text": "Ważnym kontrargumentem jest to, że uczenie się nie polega tylko na przyjmowaniu informacji. Zwłaszcza przy złożonych tematach pojawiają się pytania, niepewność i wymiana, które online łatwiej giną." },
+                { "language": "ro", "text": "Un contraargument important este că învățarea nu înseamnă doar preluarea informației. Mai ales la teme complexe apar întrebări, incertitudini și schimb, care se pierd mai ușor online." },
+                { "language": "sq", "text": "Një kundërargument i rëndësishëm është se të nxënit nuk është vetëm marrje informacioni. Sidomos në temat komplekse lindin pyetje, pasiguri dhe shkëmbim, të cilat online humbasin më lehtë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Gegenargument ist fair und schwächt die eigene Position nicht, sondern macht sie differenzierter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the counterargument is fair and does not weaken your position, but makes it more nuanced." },
+                { "language": "fa", "text": "خوب است: ضد‌استدلال منصفانه است و موضع شما را ضعیف نمی‌کند، بلکه دقیق‌تر می‌کند." },
+                { "language": "ar", "text": "جيد: الحجة المضادة منصفة ولا تضعف موقفك، بل تجعله أكثر تمايزاً." },
+                { "language": "tr", "text": "İyi: karşı argüman adil ve kendi görüşünüzü zayıflatmıyor, aksine daha nüanslı kılıyor." },
+                { "language": "ru", "text": "Хорошо: контраргумент справедлив и не ослабляет Вашу позицию, а делает ее более дифференцированной." },
+                { "language": "ckb", "text": "باشە: بەڵگەی پێچەوانە دادپەروەرانەیە و هەڵوێستەکەت لاواز ناکات، بەڵکو وردتری دەکات." },
+                { "language": "kmr", "text": "Baş e: argûmana dijber adil e û helwesta we lawaz nake, lê wê cuda-dîtinîtir dike." },
+                { "language": "pl", "text": "Dobrze: kontrargument jest uczciwy i nie osłabia własnego stanowiska, lecz czyni je bardziej zniuansowanym." },
+                { "language": "ro", "text": "Bine: contraargumentul este corect și nu slăbește poziția proprie, ci o face mai nuanțată." },
+                { "language": "sq", "text": "Mirë: kundërargumenti është i drejtë dhe nuk e dobëson qëndrimin tuaj, por e bën më të nuancuar." }
+              ],
+              "explanationKey": "fair-counterargument-structure"
+            },
+            {
+              "id": "dismiss-counterargument",
+              "text": "Dagegen spricht eigentlich wenig, denn wer motiviert ist, kann auch online gut lernen.",
+              "translations": [
+                { "language": "en", "text": "There is actually little against it, because anyone who is motivated can also learn well online." },
+                { "language": "fa", "text": "در واقع چیز زیادی علیه آن نیست، چون هرکس انگیزه داشته باشد، آنلاین هم می‌تواند خوب یاد بگیرد." },
+                { "language": "ar", "text": "لا يوجد في الواقع الكثير ضد ذلك، لأن من لديه دافع يستطيع التعلم جيداً عبر الإنترنت أيضاً." },
+                { "language": "tr", "text": "Aslında buna karşı çok az şey var, çünkü motive olan herkes çevrim içi de iyi öğrenebilir." },
+                { "language": "ru", "text": "На самом деле против этого мало что говорит, потому что тот, кто мотивирован, может хорошо учиться и онлайн." },
+                { "language": "ckb", "text": "لە ڕاستیدا زۆر شت دژی ئەوە نییە، چونکە هەر کەسێک هاندەر هەبێت دەتوانێت ئۆنلاینیش باش فێر ببێت." },
+                { "language": "kmr", "text": "Bi rastî tiştê zêde li dijî vê tune ye, ji ber ku kesê motîve be dikare online jî baş fêr bibe." },
+                { "language": "pl", "text": "Właściwie niewiele przemawia przeciwko temu, bo kto jest zmotywowany, może dobrze uczyć się także online." },
+                { "language": "ro", "text": "De fapt, puține lucruri vorbesc împotrivă, deoarece cine este motivat poate învăța bine și online." },
+                { "language": "sq", "text": "Në fakt ka pak gjëra kundër, sepse kush është i motivuar mund të mësojë mirë edhe online." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu abwertend: Die Antwort reduziert ein strukturelles Problem auf individuelle Motivation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too dismissive: the answer reduces a structural problem to individual motivation." },
+                { "language": "fa", "text": "بیش از حد نادیده‌گیرنده است: پاسخ یک مشکل ساختاری را به انگیزه فردی کاهش می‌دهد." },
+                { "language": "ar", "text": "استخفافي جداً: تختزل الإجابة مشكلة بنيوية في الدافع الفردي." },
+                { "language": "tr", "text": "Çok küçümseyici: yanıt yapısal bir sorunu bireysel motivasyona indirger." },
+                { "language": "ru", "text": "Слишком пренебрежительно: ответ сводит структурную проблему к индивидуальной мотивации." },
+                { "language": "ckb", "text": "زۆر پشتگوێخەرە: وەڵامەکە کێشەیەکی پێکهاتەیی دەگەڕێنێتەوە بۆ هاندەری تاکەکەسی." },
+                { "language": "kmr", "text": "Pir piştguhker e: bersiv pirsgirêkeke avahî dikişîne ser motîvasyona kesane." },
+                { "language": "pl", "text": "Zbyt lekceważące: odpowiedź redukuje problem strukturalny do indywidualnej motywacji." },
+                { "language": "ro", "text": "Prea disprețuitor: răspunsul reduce o problemă structurală la motivația individuală." },
+                { "language": "sq", "text": "Shumë shpërfillëse: përgjigjja e redukton një problem strukturor në motivim individual." }
+              ],
+              "explanationKey": "dismisses-counterargument"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "hybrid-synthesis",
+              "text": "Ich würde deshalb nicht für reine Online-Weiterbildung plädieren, sondern für ein gestuftes Modell: Wissensvermittlung online, Vertiefung und Feedback in Präsenz oder in kleinen betreuten Gruppen.",
+              "translations": [
+                { "language": "en", "text": "For that reason, I would not argue for purely online training, but for a staged model: knowledge transfer online, deepening and feedback in person or in small supervised groups." },
+                { "language": "fa", "text": "به همین دلیل از آموزش کاملاً آنلاین دفاع نمی‌کنم، بلکه از یک مدل مرحله‌ای: انتقال دانش آنلاین، تعمیق و بازخورد حضوری یا در گروه‌های کوچک با راهنما." },
+                { "language": "ar", "text": "لذلك لن أدافع عن تدريب عبر الإنترنت فقط، بل عن نموذج تدريجي: نقل المعرفة عبر الإنترنت، والتعمق والتغذية الراجعة حضورياً أو في مجموعات صغيرة مُرافقة." },
+                { "language": "tr", "text": "Bu yüzden tamamen çevrim içi Weiterbildung'ı savunmazdım; aşamalı bir modeli savunurdum: bilgi aktarımı çevrim içi, derinleşme ve geri bildirim yüz yüze ya da küçük rehberli gruplarda." },
+                { "language": "ru", "text": "Поэтому я бы выступал не за чисто онлайн-обучение, а за ступенчатую модель: передача знаний онлайн, углубление и обратная связь очно или в небольших сопровождаемых группах." },
+                { "language": "ckb", "text": "بۆیە من بەرگری لە فێربوونی تەنها ئۆنلاین ناکەم، بەڵکو لە مۆدێلێکی قۆناغبەندی: گواستنەوەی زانیاری ئۆنلاین، قووڵکردنەوە و فیدباک بە ئامادەبوون یان لە گروپی بچووک و چاودێریکراودا." },
+                { "language": "kmr", "text": "Ji ber vê ez ne alîgirê perwerdehiya tenê online me, lê alîgirê modelekê ya qonaxî me: ragihandina zanînê online, kûrkirin û feedback bi amadebûnê an di komên biçûk ên bi rêberî de." },
+                { "language": "pl", "text": "Dlatego nie opowiadałbym się za szkoleniem wyłącznie online, lecz za modelem stopniowym: przekazywanie wiedzy online, pogłębienie i informacja zwrotna stacjonarnie albo w małych grupach z opieką." },
+                { "language": "ro", "text": "De aceea nu aș pleda pentru formare exclusiv online, ci pentru un model etapizat: transmiterea cunoștințelor online, aprofundare și feedback în prezență sau în grupuri mici supravegheate." },
+                { "language": "sq", "text": "Prandaj nuk do të mbroja trajnim vetëm online, por një model me faza: përcjellje e njohurive online, thellim dhe feedback me prani fizike ose në grupe të vogla të udhëhequra." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort integriert das Gegenargument und entwickelt daraus eine differenzierte Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer integrates the counterargument and develops a nuanced solution from it." },
+                { "language": "fa", "text": "خوب است: پاسخ ضد‌استدلال را وارد می‌کند و از آن راه‌حلی دقیق‌تر می‌سازد." },
+                { "language": "ar", "text": "جيد: تدمج الإجابة الحجة المضادة وتطور منها حلاً متمايزاً." },
+                { "language": "tr", "text": "İyi: yanıt karşı argümanı entegre ediyor ve bundan nüanslı bir çözüm geliştiriyor." },
+                { "language": "ru", "text": "Хорошо: ответ интегрирует контраргумент и развивает из него дифференцированное решение." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەی پێچەوانە دەهێنێتە ناوەوە و لێی چارەسەرێکی ورد دروست دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv argûmana dijber têxe navê û ji wê çareseriyeke cuda-dîtinî pêş dixe." },
+                { "language": "pl", "text": "Dobrze: odpowiedź integruje kontrargument i rozwija z niego zniuansowane rozwiązanie." },
+                { "language": "ro", "text": "Bine: răspunsul integrează contraargumentul și dezvoltă din el o soluție nuanțată." },
+                { "language": "sq", "text": "Mirë: përgjigjja e integron kundërargumentin dhe prej tij zhvillon një zgjidhje të nuancuar." }
+              ],
+              "explanationKey": "integrated-counterargument"
+            },
+            {
+              "id": "weak-compromise",
+              "text": "Vielleicht könnte man einfach beides anbieten, damit jeder selbst entscheiden kann.",
+              "translations": [
+                { "language": "en", "text": "Maybe one could simply offer both, so everyone can decide for themselves." },
+                { "language": "fa", "text": "شاید بتوان به‌سادگی هر دو را ارائه کرد تا هرکس خودش تصمیم بگیرد." },
+                { "language": "ar", "text": "ربما يمكن ببساطة تقديم الاثنين، بحيث يقرر كل شخص بنفسه." },
+                { "language": "tr", "text": "Belki ikisi de sunulabilir, böylece herkes kendi kararını verebilir." },
+                { "language": "ru", "text": "Может быть, можно просто предлагать и то и другое, чтобы каждый сам решал." },
+                { "language": "ckb", "text": "لەوانەیە بە سادەیی هەردووکیان پێشکەش بکرێت، تا هەر کەس خۆی بڕیار بدات." },
+                { "language": "kmr", "text": "Belkî dikare her du jî werin pêşkêşkirin, da ku her kes bixwe biryar bide." },
+                { "language": "pl", "text": "Może można po prostu oferować jedno i drugie, żeby każdy mógł sam zdecydować." },
+                { "language": "ro", "text": "Poate s-ar putea oferi pur și simplu ambele, ca fiecare să decidă singur." },
+                { "language": "sq", "text": "Ndoshta thjesht mund të ofrohen të dyja, që secili të vendosë vetë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise plausibel, aber zu ungenau: Es fehlt, welche Bestandteile online und welche begleitet stattfinden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly plausible, but too imprecise: it is missing which parts should be online and which should be supported." },
+                { "language": "fa", "text": "تا حدی قابل قبول است، اما بیش از حد نامشخص: روشن نیست کدام بخش‌ها آنلاین و کدام بخش‌ها همراهی‌شده باشند." },
+                { "language": "ar", "text": "مقبول جزئياً لكنه غير دقيق: لا يوضح أي أجزاء تكون عبر الإنترنت وأيها تحتاج إلى مرافقة." },
+                { "language": "tr", "text": "Kısmen makul, ama çok belirsiz: hangi bölümlerin çevrim içi, hangilerinin destekli olması gerektiği eksik." },
+                { "language": "ru", "text": "Отчасти правдоподобно, но слишком неточно: неясно, какие части должны быть онлайн, а какие сопровождаться." },
+                { "language": "ckb", "text": "تا ڕادەیەک قەناعەتپێکەرە، بەڵام زۆر نادیارە: دیار نییە کام بەش ئۆنلاین و کام بەش بە هاوڕێیەتی بکرێت." },
+                { "language": "kmr", "text": "Hinek maqûl e, lê pir nezelal e: kêmasî heye ka kîjan beş online û kîjan bi piştgirî bin." },
+                { "language": "pl", "text": "Częściowo wiarygodne, ale zbyt nieprecyzyjne: brakuje wskazania, które elementy mają być online, a które wspierane." },
+                { "language": "ro", "text": "Parțial plauzibil, dar prea imprecis: lipsește ce părți ar trebui să fie online și ce părți însoțite." },
+                { "language": "sq", "text": "Pjesërisht e besueshme, por shumë e pasaktë: mungon cilat pjesë duhet të jenë online dhe cilat të mbështetura." }
+              ],
+              "explanationKey": "vague-hybrid-model"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "equity-explanation",
+              "text": "Gerechter wäre sie, weil unterschiedliche Lebenslagen berücksichtigt werden. Wer flexibel lernen muss, erhält Zugang; wer Unterstützung braucht, wird nicht mit einer Plattform allein gelassen.",
+              "translations": [
+                { "language": "en", "text": "It would be fairer because different life situations are taken into account. Those who need flexible learning gain access; those who need support are not left alone with a platform." },
+                { "language": "fa", "text": "منصفانه‌تر است، چون شرایط زندگی متفاوت در نظر گرفته می‌شود. کسی که باید انعطاف‌پذیر یاد بگیرد، دسترسی پیدا می‌کند؛ کسی که حمایت لازم دارد، با یک پلتفرم تنها گذاشته نمی‌شود." },
+                { "language": "ar", "text": "ستكون أكثر إنصافاً لأنها تراعي أوضاعاً حياتية مختلفة. من يحتاج إلى تعلم مرن يحصل على الوصول؛ ومن يحتاج إلى دعم لا يُترك وحده مع منصة." },
+                { "language": "tr", "text": "Daha adil olurdu, çünkü farklı yaşam koşulları dikkate alınır. Esnek öğrenmesi gereken kişi erişim kazanır; desteğe ihtiyacı olan kişi bir platformla yalnız bırakılmaz." },
+                { "language": "ru", "text": "Это было бы справедливее, потому что учитываются разные жизненные ситуации. Тот, кому нужно гибкое обучение, получает доступ; тот, кому нужна поддержка, не остается один на один с платформой." },
+                { "language": "ckb", "text": "دادپەروەرانەتر دەبوو، چونکە دۆخی ژیانی جیاواز لەبەرچاو دەگیرێت. ئەوەی پێویستی بە فێربوونی نەرم هەیە دەستگەیشتن وەردەگرێت؛ ئەوەی پێویستی بە پاڵپشتی هەیە لەگەڵ پلاتفۆرمێک بە تەنیا بەجێناهێڵرێت." },
+                { "language": "kmr", "text": "Adiltir dibe, ji ber ku rewşên jiyanê yên cuda têne hesibandin. Kesê ku fêrbûna fleksîbl hewce dike gihîştinê digire; kesê ku piştgirî hewce dike bi platformekê tenê nayê hiştin." },
+                { "language": "pl", "text": "Byłaby sprawiedliwsza, ponieważ uwzględnia różne sytuacje życiowe. Kto musi uczyć się elastycznie, zyskuje dostęp; kto potrzebuje wsparcia, nie zostaje sam z platformą." },
+                { "language": "ro", "text": "Ar fi mai corectă deoarece sunt luate în considerare situații de viață diferite. Cine trebuie să învețe flexibil primește acces; cine are nevoie de sprijin nu este lăsat singur cu o platformă." },
+                { "language": "sq", "text": "Do të ishte më e drejtë, sepse merren parasysh situata të ndryshme jetese. Kush duhet të mësojë me fleksibilitet fiton qasje; kush ka nevojë për mbështetje nuk lihet vetëm me një platformë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Begründung verbindet Gerechtigkeit mit konkreten Lernbedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the justification connects fairness with concrete learning conditions." },
+                { "language": "fa", "text": "خوب است: دلیل، عدالت را با شرایط مشخص یادگیری پیوند می‌دهد." },
+                { "language": "ar", "text": "جيد: يربط التعليل بين الإنصاف وشروط تعلم ملموسة." },
+                { "language": "tr", "text": "İyi: gerekçe adaleti somut öğrenme koşullarıyla bağlıyor." },
+                { "language": "ru", "text": "Хорошо: обоснование связывает справедливость с конкретными условиями обучения." },
+                { "language": "ckb", "text": "باشە: پاساوەکە دادپەروەری لەگەڵ مەرجە دیاریکراوەکانی فێربوون دەبەستێتەوە." },
+                { "language": "kmr", "text": "Baş e: hincet adaletê bi şertên fêrbûnê yên konkret ve girê dide." },
+                { "language": "pl", "text": "Dobrze: uzasadnienie łączy sprawiedliwość z konkretnymi warunkami uczenia się." },
+                { "language": "ro", "text": "Bine: justificarea leagă echitatea de condiții concrete de învățare." },
+                { "language": "sq", "text": "Mirë: arsyetimi e lidh drejtësinë me kushte konkrete të të nxënit." }
+              ],
+              "explanationKey": "equity-with-learning-conditions"
+            },
+            {
+              "id": "convenience-explanation",
+              "text": "Gerechter wäre es, weil dann jeder bequem von zu Hause aus teilnehmen kann.",
+              "translations": [
+                { "language": "en", "text": "It would be fairer because then everyone can participate comfortably from home." },
+                { "language": "fa", "text": "منصفانه‌تر است، چون آن‌وقت همه می‌توانند راحت از خانه شرکت کنند." },
+                { "language": "ar", "text": "سيكون أكثر إنصافاً لأن الجميع يستطيعون عندها المشاركة براحة من البيت." },
+                { "language": "tr", "text": "Daha adil olurdu, çünkü o zaman herkes evden rahatça katılabilir." },
+                { "language": "ru", "text": "Это было бы справедливее, потому что тогда каждый может удобно участвовать из дома." },
+                { "language": "ckb", "text": "دادپەروەرانەتر دەبوو، چونکە ئەوکات هەمووان دەتوانن بە ئاسوودەیی لە ماڵەوە بەشداری بکەن." },
+                { "language": "kmr", "text": "Adiltir dibe, ji ber ku wê demê her kes dikare bi rehetî ji malê beşdar bibe." },
+                { "language": "pl", "text": "Byłoby sprawiedliwiej, bo wtedy każdy może wygodnie uczestniczyć z domu." },
+                { "language": "ro", "text": "Ar fi mai corect, deoarece atunci fiecare poate participa comod de acasă." },
+                { "language": "sq", "text": "Do të ishte më e drejtë, sepse atëherë secili mund të marrë pjesë rehat nga shtëpia." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einfach: Bequemlichkeit ist ein Vorteil, erklärt aber nicht, wie unterschiedliche Lernvoraussetzungen berücksichtigt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple: convenience is an advantage, but it does not explain how different learning conditions are considered." },
+                { "language": "fa", "text": "بیش از حد ساده است: راحتی یک مزیت است، اما توضیح نمی‌دهد شرایط متفاوت یادگیری چگونه در نظر گرفته می‌شود." },
+                { "language": "ar", "text": "بسيط جداً: الراحة ميزة، لكنها لا تشرح كيف تُراعى شروط التعلم المختلفة." },
+                { "language": "tr", "text": "Çok basit: rahatlık bir avantajdır, ama farklı öğrenme koşullarının nasıl dikkate alındığını açıklamaz." },
+                { "language": "ru", "text": "Слишком просто: удобство — преимущество, но оно не объясняет, как учитываются разные условия обучения." },
+                { "language": "ckb", "text": "زۆر سادەیە: ئاسوودەیی سوودێکە، بەڵام ڕوون ناکاتەوە چۆن مەرجە جیاوازەکانی فێربوون لەبەرچاو دەگیرێن." },
+                { "language": "kmr", "text": "Pir sade ye: rehetî avantajek e, lê rave nake çawa şertên fêrbûnê yên cuda têne hesibandin." },
+                { "language": "pl", "text": "Zbyt proste: wygoda jest zaletą, ale nie wyjaśnia, jak uwzględnia się różne warunki uczenia się." },
+                { "language": "ro", "text": "Prea simplu: comoditatea este un avantaj, dar nu explică modul în care sunt luate în considerare condiții diferite de învățare." },
+                { "language": "sq", "text": "Shumë e thjeshtë: komoditeti është përparësi, por nuk shpjegon si merren parasysh kushtet e ndryshme të të nxënit." }
+              ],
+              "explanationKey": "convenience-too-simple"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "balanced-conclusion",
+              "text": "Mein Fazit lautet daher: Weiterbildung sollte digitaler werden, aber nicht ausschließlich digital. Entscheidend ist ein kluger Mix, der Zugang erweitert und gleichzeitig Austausch, Feedback und Verbindlichkeit sichert.",
+              "translations": [
+                { "language": "en", "text": "My conclusion is therefore: continuing training should become more digital, but not exclusively digital. The decisive point is a smart mix that expands access while also securing exchange, feedback, and commitment." },
+                { "language": "fa", "text": "نتیجه من بنابراین این است: آموزش ضمن کار باید دیجیتال‌تر شود، اما نه کاملاً دیجیتال. نکته تعیین‌کننده ترکیب هوشمندانه‌ای است که دسترسی را گسترش دهد و هم‌زمان تبادل نظر، بازخورد و تعهد را حفظ کند." },
+                { "language": "ar", "text": "لذلك فإن خلاصة موقفي هي: ينبغي أن يصبح التدريب المستمر أكثر رقمية، لكن ليس رقمياً حصراً. النقطة الحاسمة هي مزيج ذكي يوسع الوصول ويضمن في الوقت نفسه التبادل والتغذية الراجعة والالتزام." },
+                { "language": "tr", "text": "Bu nedenle sonucum şudur: Weiterbildung daha dijital olmalı, ama tamamen dijital olmamalıdır. Belirleyici olan, erişimi genişleten ve aynı zamanda etkileşimi, geri bildirimi ve bağlayıcılığı güvenceye alan akıllı bir karışımdır." },
+                { "language": "ru", "text": "Мой вывод поэтому таков: повышение квалификации должно стать более цифровым, но не исключительно цифровым. Решающим является разумное сочетание, которое расширяет доступ и одновременно обеспечивает обмен, обратную связь и обязательность." },
+                { "language": "ckb", "text": "ئەنجامگیریی من بۆیە ئەمەیە: فێربوونی بەردەوام پێویستە دیجیتاڵیتر ببێت، بەڵام نە تەنها دیجیتاڵی. خاڵی بڕیارده‌ر تێکەڵەیەکی زیرەکانەیە کە دەستگەیشتن فراوان بکات و لە هەمان کاتدا ئاڵوگۆڕ، فیدباک و پابەندی دابین بکات." },
+                { "language": "kmr", "text": "Encama min ji ber vê ev e: perwerdehiya berdewam divê dijîtaltir bibe, lê ne tenê dijîtal. Ya diyarker tevliheviyeke jîr e ku gihîştinê fireh dike û di heman demê de danûstandin, feedback û girêdanê ewle dike." },
+                { "language": "pl", "text": "Mój wniosek brzmi więc: doskonalenie zawodowe powinno stać się bardziej cyfrowe, ale nie wyłącznie cyfrowe. Decydujący jest mądry miks, który rozszerza dostęp, a jednocześnie zabezpiecza wymianę, informację zwrotną i zobowiązanie." },
+                { "language": "ro", "text": "Concluzia mea este deci: formarea continuă ar trebui să devină mai digitală, dar nu exclusiv digitală. Decisiv este un mix inteligent care extinde accesul și asigură în același timp schimbul, feedbackul și angajamentul." },
+                { "language": "sq", "text": "Përfundimi im është pra: trajnimi i vazhdueshëm duhet të bëhet më digjital, por jo vetëm digjital. Vendimtar është një kombinim i mençur që zgjeron qasjen dhe njëkohësisht siguron shkëmbimin, feedbackun dhe detyrimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Das Fazit nimmt die eigene These wieder auf und zeigt klar, wie Argument und Gegenargument zusammengeführt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the conclusion returns to your thesis and clearly shows how argument and counterargument are brought together." },
+                { "language": "fa", "text": "خوب است: نتیجه‌گیری به تز خود برمی‌گردد و روشن نشان می‌دهد استدلال و ضد‌استدلال چگونه جمع شده‌اند." },
+                { "language": "ar", "text": "جيد: يعود الاستنتاج إلى الأطروحة ويظهر بوضوح كيف جُمعت الحجة والحجة المضادة." },
+                { "language": "tr", "text": "İyi: sonuç kendi tezinize geri dönüyor ve argüman ile karşı argümanın nasıl birleştirildiğini açık gösteriyor." },
+                { "language": "ru", "text": "Хорошо: вывод возвращается к Вашему тезису и ясно показывает, как объединяются аргумент и контраргумент." },
+                { "language": "ckb", "text": "باشە: ئەنجامگیرییەکە دەگەڕێتەوە بۆ تێزەکەت و بە ڕوونی نیشان دەدات چۆن بەڵگە و بەڵگەی پێچەوانە پێکدەهێنرێن." },
+                { "language": "kmr", "text": "Baş e: encam vedigere ser teza we û bi zelalî nîşan dide ka argûman û argûmana dijber çawa tên yek kirin." },
+                { "language": "pl", "text": "Dobrze: wniosek wraca do własnej tezy i jasno pokazuje, jak połączono argument i kontrargument." },
+                { "language": "ro", "text": "Bine: concluzia revine la teza proprie și arată clar cum sunt reunite argumentul și contraargumentul." },
+                { "language": "sq", "text": "Mirë: përfundimi kthehet te teza juaj dhe tregon qartë si bashkohen argumenti dhe kundërargumenti." }
+              ],
+              "explanationKey": "structured-exam-conclusion"
+            },
+            {
+              "id": "generic-conclusion",
+              "text": "Abschließend kann man sagen, dass Online-Weiterbildung ein wichtiges Thema ist und in Zukunft sicher weiter diskutiert wird.",
+              "translations": [
+                { "language": "en", "text": "In conclusion, one can say that online continuing training is an important topic and will surely continue to be discussed in the future." },
+                { "language": "fa", "text": "در پایان می‌توان گفت که آموزش آنلاین ضمن کار موضوع مهمی است و قطعاً در آینده همچنان درباره آن بحث خواهد شد." },
+                { "language": "ar", "text": "في الختام يمكن القول إن التدريب المستمر عبر الإنترنت موضوع مهم وسيستمر بالتأكيد النقاش حوله في المستقبل." },
+                { "language": "tr", "text": "Sonuç olarak çevrim içi Weiterbildung'ın önemli bir konu olduğu ve gelecekte kesinlikle tartışılmaya devam edeceği söylenebilir." },
+                { "language": "ru", "text": "В заключение можно сказать, что онлайн-повышение квалификации — важная тема и в будущем наверняка будет обсуждаться дальше." },
+                { "language": "ckb", "text": "لە کۆتاییدا دەتوانرێت بگوترێت فێربوونی بەردەوامی ئۆنلاین بابەتێکی گرنگە و لە داهاتوودا بە دڵنیایی هێشتا باس دەکرێت." },
+                { "language": "kmr", "text": "Di dawiyê de dikare were gotin ku perwerdehiya berdewam a online mijareke girîng e û di pêşerojê de bêguman dê hê were nîqaşkirin." },
+                { "language": "pl", "text": "Na zakończenie można powiedzieć, że szkolenia online są ważnym tematem i z pewnością będą dalej dyskutowane w przyszłości." },
+                { "language": "ro", "text": "În concluzie, se poate spune că formarea continuă online este un subiect important și va fi cu siguranță discutată în continuare în viitor." },
+                { "language": "sq", "text": "Në përfundim mund të thuhet se trajnimi i vazhdueshëm online është një temë e rëndësishme dhe me siguri do të diskutohet edhe në të ardhmen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Das Fazit klingt prüfungstypisch, fasst aber die eigene Argumentation nicht konkret zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: the conclusion sounds exam-like, but it does not concretely summarize your own argumentation." },
+                { "language": "fa", "text": "بیش از حد کلی است: نتیجه‌گیری شبیه زبان آزمون است، اما استدلال خودتان را مشخص خلاصه نمی‌کند." },
+                { "language": "ar", "text": "عام جداً: يبدو الخاتمة امتحانية، لكنها لا تلخص حجتك الخاصة بشكل ملموس." },
+                { "language": "tr", "text": "Çok genel: sonuç sınav dili gibi geliyor, ama kendi argümantasyonunuzu somut özetlemiyor." },
+                { "language": "ru", "text": "Слишком общо: вывод звучит по-экзаменационному, но конкретно не подытоживает Вашу собственную аргументацию." },
+                { "language": "ckb", "text": "زۆر گشتییە: ئەنجامگیرییەکە وەک زمانی تاقیکردنەوە دەردەکەوێت، بەڵام بەڵگەکانی خۆت بە دیاریکراوی کورت ناکاتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: encam wekî zimanê ezmûnê xuya dike, lê argûmentasyona xwe bi konkretî kurt nake." },
+                { "language": "pl", "text": "Zbyt ogólne: wniosek brzmi egzaminacyjnie, ale nie podsumowuje konkretnie własnej argumentacji." },
+                { "language": "ro", "text": "Prea general: concluzia sună ca de examen, dar nu rezumă concret propria argumentație." },
+                { "language": "sq", "text": "Shumë e përgjithshme: përfundimi tingëllon si provim, por nuk përmbledh konkretisht argumentimin tuaj." }
+              ],
+              "explanationKey": "generic-exam-conclusion"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "structure-note",
+          "text": "Eine starke C1-Eröffnung grenzt das Thema ein, statt nur allgemeine Vor- und Nachteile anzukündigen.",
+          "translations": [
+            { "language": "en", "text": "A strong C1 opening narrows the topic instead of merely announcing general advantages and disadvantages." },
+            { "language": "fa", "text": "شروع قوی C1 موضوع را محدود می‌کند، نه اینکه فقط مزایا و معایب کلی را اعلام کند." },
+            { "language": "ar", "text": "الافتتاح القوي في C1 يحدد نطاق الموضوع بدلاً من الاكتفاء بإعلان مزايا وعيوب عامة." },
+            { "language": "tr", "text": "Güçlü bir C1 açılışı yalnızca genel avantaj ve dezavantajları duyurmak yerine konuyu sınırlandırır." },
+            { "language": "ru", "text": "Сильное вступление C1 сужает тему, а не просто объявляет общие преимущества и недостатки." },
+            { "language": "ckb", "text": "دەستپێکی بەهێزی C1 بابەتەکە سنووردار دەکات، نە تەنها سوود و زیانی گشتی ڕابگەیەنێت." },
+            { "language": "kmr", "text": "Destpêka bihêz a C1 mijarê sînordar dike, ne tenê avantaj û dezavantajên giştî ragihîne." },
+            { "language": "pl", "text": "Mocne otwarcie C1 zawęża temat, zamiast tylko zapowiadać ogólne zalety i wady." },
+            { "language": "ro", "text": "O deschidere puternică de C1 delimitează tema, în loc să anunțe doar avantaje și dezavantaje generale." },
+            { "language": "sq", "text": "Një hyrje e fortë C1 e kufizon temën, në vend që vetëm të paralajmërojë përparësi dhe mangësi të përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "argument-note",
+          "text": "Ein gutes Argument nennt nicht nur einen Vorteil, sondern zeigt, welche konkrete Gruppe davon profitiert.",
+          "translations": [
+            { "language": "en", "text": "A good argument does not only name an advantage; it shows which concrete group benefits from it." },
+            { "language": "fa", "text": "استدلال خوب فقط یک مزیت را نام نمی‌برد؛ نشان می‌دهد کدام گروه مشخص از آن سود می‌برد." },
+            { "language": "ar", "text": "الحجة الجيدة لا تذكر ميزة فقط، بل تظهر أي مجموعة ملموسة تستفيد منها." },
+            { "language": "tr", "text": "İyi bir argüman yalnızca bir avantajı belirtmez; hangi somut grubun bundan yararlandığını gösterir." },
+            { "language": "ru", "text": "Хороший аргумент не только называет преимущество, но и показывает, какая конкретная группа от него выигрывает." },
+            { "language": "ckb", "text": "بەڵگەی باش تەنها سوودێک ناو نابا؛ نیشان دەدات کام گروپی دیاریکراو سوودی لێ دەبینێت." },
+            { "language": "kmr", "text": "Argûmana baş ne tenê avantajekê nav dike; nîşan dide kîjan koma konkret jê sûd digire." },
+            { "language": "pl", "text": "Dobry argument nie tylko wskazuje zaletę, lecz pokazuje, jaka konkretna grupa z niej korzysta." },
+            { "language": "ro", "text": "Un argument bun nu numește doar un avantaj, ci arată ce grup concret beneficiază de acesta." },
+            { "language": "sq", "text": "Një argument i mirë nuk përmend vetëm një përparësi; tregon cili grup konkret përfiton prej saj." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "counterargument-note",
+          "text": "Ein Gegenargument wird stärker, wenn es nicht als lästige Pflicht, sondern als echter Prüfstein der eigenen Position erscheint.",
+          "translations": [
+            { "language": "en", "text": "A counterargument becomes stronger when it appears not as an annoying obligation, but as a real test of one's own position." },
+            { "language": "fa", "text": "ضد‌استدلال وقتی قوی‌تر می‌شود که نه به‌عنوان وظیفه‌ای مزاحم، بلکه به‌عنوان آزمون واقعی موضع خود دیده شود." },
+            { "language": "ar", "text": "تصبح الحجة المضادة أقوى عندما لا تبدو واجباً مزعجاً، بل اختباراً حقيقياً للموقف الخاص." },
+            { "language": "tr", "text": "Bir karşı argüman, rahatsız edici bir görev değil de kendi görüşünün gerçek sınavı gibi göründüğünde güçlenir." },
+            { "language": "ru", "text": "Контраргумент становится сильнее, когда он выглядит не как неприятная обязанность, а как настоящая проверка собственной позиции." },
+            { "language": "ckb", "text": "بەڵگەی پێچەوانە کاتێک بەهێزتر دەبێت کە وەک ئەرکێکی بێزارکەر نەردەکەوێت، بەڵکو وەک تاقیکردنەوەی ڕاستەقینەی هەڵوێستی خۆت." },
+            { "language": "kmr", "text": "Argûmana dijber dema ne wekî erka acizker, lê wekî ceribandina rastîn a helwesta xwe xuya bike bihêztir dibe." },
+            { "language": "pl", "text": "Kontrargument staje się silniejszy, gdy nie wygląda jak uciążliwy obowiązek, lecz jak rzeczywisty test własnego stanowiska." },
+            { "language": "ro", "text": "Un contraargument devine mai puternic atunci când nu apare ca o obligație deranjantă, ci ca un test real al propriei poziții." },
+            { "language": "sq", "text": "Një kundërargument bëhet më i fortë kur nuk duket si detyrë e bezdisshme, por si provë reale e qëndrimit të vet." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "synthesis-note",
+          "text": "Die beste Reaktion auf ein starkes Gegenargument ist oft keine Abwehr, sondern eine präzisere Version der eigenen These.",
+          "translations": [
+            { "language": "en", "text": "The best response to a strong counterargument is often not defense, but a more precise version of one's own thesis." },
+            { "language": "fa", "text": "بهترین پاسخ به ضد‌استدلال قوی اغلب دفاع نیست، بلکه نسخه دقیق‌تر تز خود است." },
+            { "language": "ar", "text": "أفضل رد على حجة مضادة قوية غالباً ليس الدفاع، بل نسخة أدق من الأطروحة الخاصة." },
+            { "language": "tr", "text": "Güçlü bir karşı argümana en iyi yanıt çoğu zaman savunma değil, kendi tezinin daha kesin bir versiyonudur." },
+            { "language": "ru", "text": "Лучший ответ на сильный контраргумент часто не защита, а более точная версия собственного тезиса." },
+            { "language": "ckb", "text": "باشترین وەڵام بۆ بەڵگەی پێچەوانەی بەهێز زۆرجار بەرگری نییە، بەڵکو وەشانی وردتری تێزی خۆتە." },
+            { "language": "kmr", "text": "Bersiva herî baş ji argûmaneke dijber a bihêz re gelek caran ne parastin e, lê versiyoneke hûrgilîtir a teza xwe ye." },
+            { "language": "pl", "text": "Najlepsza reakcja na silny kontrargument to często nie obrona, lecz precyzyjniejsza wersja własnej tezy." },
+            { "language": "ro", "text": "Cea mai bună reacție la un contraargument puternic este adesea nu apărarea, ci o versiune mai precisă a propriei teze." },
+            { "language": "sq", "text": "Përgjigjja më e mirë ndaj një kundërargumenti të fortë shpesh nuk është mbrojtja, por një version më i saktë i tezës suaj." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "conclusion-note",
+          "text": "Ein gutes C1-Fazit wiederholt nicht nur das Thema, sondern zeigt, wie Argument und Gegenargument zu einer Position geführt haben.",
+          "translations": [
+            { "language": "en", "text": "A good C1 conclusion does not merely repeat the topic, but shows how argument and counterargument led to a position." },
+            { "language": "fa", "text": "جمع‌بندی خوب C1 فقط موضوع را تکرار نمی‌کند، بلکه نشان می‌دهد استدلال و ضد‌استدلال چگونه به یک موضع رسیده‌اند." },
+            { "language": "ar", "text": "الخاتمة الجيدة في C1 لا تكرر الموضوع فقط، بل تظهر كيف قادت الحجة والحجة المضادة إلى موقف." },
+            { "language": "tr", "text": "İyi bir C1 sonucu yalnızca konuyu tekrarlamaz, argüman ve karşı argümanın nasıl bir görüşe götürdüğünü gösterir." },
+            { "language": "ru", "text": "Хороший вывод C1 не просто повторяет тему, а показывает, как аргумент и контраргумент привели к позиции." },
+            { "language": "ckb", "text": "ئەنجامگیریی باشی C1 تەنها بابەتەکە دووبارە ناکاتەوە، بەڵکو نیشان دەدات چۆن بەڵگە و بەڵگەی پێچەوانە گەیشتوونەتە هەڵوێستێک." },
+            { "language": "kmr", "text": "Encama baş a C1 ne tenê mijarê dubare dike, lê nîşan dide ka argûman û argûmana dijber çawa gihîştine helwestekê." },
+            { "language": "pl", "text": "Dobry wniosek C1 nie tylko powtarza temat, lecz pokazuje, jak argument i kontrargument doprowadziły do stanowiska." },
+            { "language": "ro", "text": "O concluzie bună de C1 nu repetă doar tema, ci arată cum argumentul și contraargumentul au dus la o poziție." },
+            { "language": "sq", "text": "Një përfundim i mirë C1 nuk e përsërit vetëm temën, por tregon si argumenti dhe kundërargumenti çuan në një qëndrim." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "goethe-c1-structured-topic-discussion",
+          "placement": "header",
+          "purpose": "Show a formal oral exam discussion with a candidate structuring a topic and an examiner listening.",
+          "altText": "Eine ruhige Illustration einer mündlichen Prüfung, in der eine Person ein Thema strukturiert diskutiert.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm illustration of an oral exam where one person discusses a topic in a structured way." },
+            { "language": "fa", "text": "تصویری آرام از آزمون شفاهی که در آن فردی موضوعی را ساختارمند بحث می‌کند." },
+            { "language": "ar", "text": "رسم هادئ لامتحان شفهي يناقش فيه شخص موضوعاً بشكل منظم." },
+            { "language": "tr", "text": "Bir kişinin bir konuyu yapılandırılmış biçimde tartıştığı sözlü sınavın sakin illüstrasyonu." },
+            { "language": "ru", "text": "Спокойная иллюстрация устного экзамена, где человек структурированно обсуждает тему." },
+            { "language": "ckb", "text": "وێنەیەکی ئارام لە تاقیکردنەوەی زاری کە کەسێک بابەتێک بە ڕێکخراوی باس دەکات." },
+            { "language": "kmr", "text": "Wêneyeke aram a ezmûneke devkî ku kesek mijarekê bi avahî nîqaş dike." },
+            { "language": "pl", "text": "Spokojna ilustracja egzaminu ustnego, w którym jedna osoba omawia temat w sposób uporządkowany." },
+            { "language": "ro", "text": "O ilustrație calmă a unui examen oral în care o persoană discută structurat un subiect." },
+            { "language": "sq", "text": "Një ilustrim i qetë i një provimi me gojë ku një person diskuton një temë në mënyrë të strukturuar." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, oral exam setting in Germany, adult candidate and examiner at a table, simple note cards with abstract icons only, calm professional discussion, no readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

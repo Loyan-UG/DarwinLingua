@@ -21,10 +21,16 @@ internal sealed class ExerciseConfiguration : IEntityTypeConfiguration<Exercise>
         builder.Property(exercise => exercise.OwnerSlug).HasMaxLength(128);
         builder.Property(exercise => exercise.PromptJson).HasColumnType("TEXT").IsRequired();
         builder.Property(exercise => exercise.AnswerKeyJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(exercise => exercise.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(exercise => exercise.InstructionTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(exercise => exercise.CorrectExplanation).HasMaxLength(2000).IsRequired();
+        builder.Property(exercise => exercise.CorrectExplanationTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(exercise => exercise.IncorrectExplanation).HasMaxLength(2000).IsRequired();
+        builder.Property(exercise => exercise.IncorrectExplanationTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(exercise => exercise.Hint).HasMaxLength(1000);
+        builder.Property(exercise => exercise.HintTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(exercise => exercise.CommonMistakeNote).HasMaxLength(1000);
+        builder.Property(exercise => exercise.CommonMistakeNoteTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(exercise => exercise.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
         builder.Property(exercise => exercise.SortOrder).IsRequired();
         builder.Property(exercise => exercise.CreatedAtUtc).IsRequired();
@@ -44,7 +50,9 @@ internal sealed class ExerciseSetConfiguration : IEntityTypeConfiguration<Exerci
         builder.Property(set => set.Id).ValueGeneratedNever();
         builder.Property(set => set.Slug).HasMaxLength(128).IsRequired();
         builder.Property(set => set.Title).HasMaxLength(256).IsRequired();
+        builder.Property(set => set.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(set => set.Description).HasMaxLength(2000).IsRequired();
+        builder.Property(set => set.DescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(set => set.CefrLevel).HasConversion<string>().HasMaxLength(8).IsRequired();
         builder.Property(set => set.OwnerType).HasMaxLength(64).IsRequired();
         builder.Property(set => set.OwnerSlug).HasMaxLength(128);

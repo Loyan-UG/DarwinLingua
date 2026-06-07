@@ -1,0 +1,726 @@
+{
+  "packageId": "roleplays-b2-core-37-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 37 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 37",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-ueberweisung-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Eine Überweisung begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Justify a referral" },
+        { "language": "fa", "text": "دلیل آوردن برای ارجاع پزشکی" },
+        { "language": "ar", "text": "توضيح سبب طلب إحالة طبية" },
+        { "language": "tr", "text": "Bir sevk talebini gerekçelendirmek" },
+        { "language": "ru", "text": "Обосновать направление к специалисту" },
+        { "language": "ckb", "text": "هۆکار هێنانەوە بۆ ڕەوانەکردنی پزیشکی" },
+        { "language": "kmr", "text": "Sedema şandina bijîşkî rave kirin" },
+        { "language": "pl", "text": "Uzasadnić skierowanie" },
+        { "language": "ro", "text": "Justificarea unei trimiteri medicale" },
+        { "language": "sq", "text": "Arsyetimi i një referimi mjekësor" }
+      ],
+      "description": "Du sprichst mit deiner Hausärztin darüber, ob eine Überweisung zu einer Facharztpraxis sinnvoll ist. Du erklärst den bisherigen Verlauf, aktuelle Einschränkungen, frühere Maßnahmen und bittest sachlich um eine weitere Einschätzung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You talk with your general practitioner about whether a referral to a specialist practice makes sense. You explain the previous course, current limitations, earlier measures, and ask objectively for further assessment." },
+        { "language": "fa", "text": "با پزشک خانواده درباره این صحبت می‌کنی که آیا ارجاع به مطب تخصصی منطقی است یا نه. روند قبلی، محدودیت‌های فعلی، اقدامات قبلی را توضیح می‌دهی و با لحن واقع‌بینانه درخواست ارزیابی بیشتر می‌کنی." },
+        { "language": "ar", "text": "تتحدث مع طبيبة الأسرة عما إذا كانت الإحالة إلى عيادة تخصصية مناسبة. تشرح المسار السابق والقيود الحالية والإجراءات السابقة وتطلب تقييماً إضافياً بشكل موضوعي." },
+        { "language": "tr", "text": "Aile hekiminle bir uzman muayenehanesine sevkin mantıklı olup olmadığını konuşursun. Önceki süreci, mevcut kısıtlamaları, önceki önlemleri açıklar ve nesnel biçimde ek değerlendirme istersin." },
+        { "language": "ru", "text": "Вы говорите с семейным врачом о том, имеет ли смысл направление к специалисту. Вы объясняете предыдущий ход, текущие ограничения, прежние меры и спокойно просите о дальнейшей оценке." },
+        { "language": "ckb", "text": "لەگەڵ پزیشکی خێزان قسە دەکەیت کە ئایا ڕەوانەکردن بۆ کلینیکی پسپۆڕی مانادارە یان نا. ڕەوتی پێشوو، سنووردارییە ئێستاکان، هەنگاوە پێشووترەکان ڕوون دەکەیتەوە و بە شێوەی بابەتی داوای هەڵسەنگاندنی زیاتر دەکەیت." },
+        { "language": "kmr", "text": "Tu bi bijîşka malbatê re diaxivî ka gelo şandina bo pratîka pispor watedar e an na. Tu pêvajoya berê, sînordariyên niha, gavên berê rave dikî û bi awayekî objektîf nirxandineke zêdetir dixwazî." },
+        { "language": "pl", "text": "Rozmawiasz z lekarką rodzinną o tym, czy skierowanie do specjalisty ma sens. Wyjaśniasz dotychczasowy przebieg, obecne ograniczenia, wcześniejsze działania i rzeczowo prosisz o dalszą ocenę." },
+        { "language": "ro", "text": "Vorbești cu medicul de familie despre dacă o trimitere la un specialist are sens. Explici evoluția de până acum, limitările actuale, măsurile anterioare și ceri obiectiv o evaluare suplimentară." },
+        { "language": "sq", "text": "Flet me mjekun e familjes nëse një referim te një specialist ka kuptim. Shpjegon ecurinë e deritanishme, kufizimet aktuale, masat e mëparshme dhe kërkon në mënyrë objektive një vlerësim të mëtejshëm." }
+      ],
+      "learnerGoal": "Begründe eine mögliche Überweisung mit Verlauf, aktuellen Einschränkungen, bisherigen Maßnahmen und einer sachlichen Bitte um fachärztliche Einschätzung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Justify a possible referral with the course so far, current limitations, previous measures, and an objective request for specialist assessment." },
+        { "language": "fa", "text": "یک ارجاع احتمالی را با روند تا اینجا، محدودیت‌های فعلی، اقدامات قبلی و درخواست واقع‌بینانه برای ارزیابی تخصصی توضیح بده." },
+        { "language": "ar", "text": "برر إحالة محتملة من خلال المسار حتى الآن والقيود الحالية والإجراءات السابقة وطلب موضوعي لتقييم متخصص." },
+        { "language": "tr", "text": "Olası bir sevki şimdiye kadarki süreç, mevcut kısıtlamalar, önceki önlemler ve uzman değerlendirmesi için nesnel bir taleple gerekçelendir." },
+        { "language": "ru", "text": "Обоснуйте возможное направление ходом до сих пор, текущими ограничениями, прежними мерами и объективной просьбой о специализированной оценке." },
+        { "language": "ckb", "text": "ڕەوانەکردنێکی ئەگەری بە ڕەوتی تا ئێستا، سنووردارییە ئێستاکان، هەنگاوە پێشووترەکان و داواکارییەکی بابەتی بۆ هەڵسەنگاندنی پسپۆڕی ڕوون بکەوە." },
+        { "language": "kmr", "text": "Şandineke gengaz bi pêvajoya heta niha, sînordariyên niha, gavên berê û daxwazeke objektîf ji bo nirxandina pisporî rave bike." },
+        { "language": "pl", "text": "Uzasadnij możliwe skierowanie przebiegiem dotychczasowym, obecnymi ograniczeniami, wcześniejszymi działaniami i rzeczową prośbą o ocenę specjalistyczną." },
+        { "language": "ro", "text": "Justifică o posibilă trimitere prin evoluția de până acum, limitările actuale, măsurile anterioare și o cerere obiectivă de evaluare de specialitate." },
+        { "language": "sq", "text": "Arsyeto një referim të mundshëm me ecurinë deri tani, kufizimet aktuale, masat e mëparshme dhe një kërkesë objektive për vlerësim specialistik." }
+      ],
+      "cefrLevel": "B2",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "taskType": "ask-for-help",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "doctor",
+          "displayName": "Hausärztin",
+          "translations": [
+            { "language": "en", "text": "General practitioner" },
+            { "language": "fa", "text": "پزشک خانواده" },
+            { "language": "ar", "text": "طبيبة الأسرة" },
+            { "language": "tr", "text": "Aile hekimi" },
+            { "language": "ru", "text": "Семейный врач" },
+            { "language": "ckb", "text": "پزیشکی خێزان" },
+            { "language": "kmr", "text": "Bijîşka malbatê" },
+            { "language": "pl", "text": "Lekarka rodzinna" },
+            { "language": "ro", "text": "Medicul de familie" },
+            { "language": "sq", "text": "Mjekja e familjes" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacienti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Guten Tag. Sie wollten heute besprechen, ob eine Überweisung sinnvoll sein könnte. Worum geht es genau?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. Today you wanted to discuss whether a referral might make sense. What exactly is it about?" },
+            { "language": "fa", "text": "سلام. امروز می‌خواستید درباره این صحبت کنیم که آیا ارجاع می‌تواند منطقی باشد یا نه. دقیقاً موضوع چیست؟" },
+            { "language": "ar", "text": "مرحباً. أردت اليوم أن نناقش ما إذا كانت الإحالة قد تكون مناسبة. ما الموضوع بالضبط؟" },
+            { "language": "tr", "text": "İyi günler. Bugün bir sevkin mantıklı olup olmayacağını konuşmak istemiştiniz. Tam olarak konu nedir?" },
+            { "language": "ru", "text": "Добрый день. Сегодня вы хотели обсудить, может ли направление иметь смысл. О чем именно речь?" },
+            { "language": "ckb", "text": "ڕۆژ باش. ئەمڕۆ ویستتان قسە بکەین کە ئایا ڕەوانەکردنێک مانادار دەبێت یان نا. بابەتەکە بە وردی چییە؟" },
+            { "language": "kmr", "text": "Roj baş. Îro we dixwest nîqaş bikin ka gelo şandin dikare watedar be an na. Bi rastî mijar çi ye?" },
+            { "language": "pl", "text": "Dzień dobry. Chciał pan dziś omówić, czy skierowanie mogłoby mieć sens. O co dokładnie chodzi?" },
+            { "language": "ro", "text": "Bună ziua. Astăzi ați vrut să discutăm dacă o trimitere ar putea avea sens. Despre ce este vorba exact?" },
+            { "language": "sq", "text": "Mirëdita. Sot donit të diskutonim nëse një referim mund të kishte kuptim. Për çfarë bëhet fjalë saktësisht?" }
+          ],
+          "function": "open-referral-request",
+          "toneNote": "medical intake",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Es geht um meine Knieschmerzen. Ich war deshalb in den letzten drei Monaten zweimal hier, habe die Übungen gemacht und die Belastung reduziert, aber beim Treppensteigen und längeren Gehen wird es weiterhin deutlich schlimmer.",
+          "translations": [
+            { "language": "en", "text": "It is about my knee pain. I have been here twice for it in the last three months, did the exercises, and reduced strain, but it still gets clearly worse when climbing stairs and walking longer distances." },
+            { "language": "fa", "text": "موضوع درد زانوی من است. در سه ماه گذشته به همین دلیل دو بار اینجا بودم، تمرین‌ها را انجام دادم و فشار را کم کردم، اما هنگام بالا رفتن از پله و راه رفتن طولانی‌تر همچنان به‌طور واضح بدتر می‌شود." },
+            { "language": "ar", "text": "الأمر يتعلق بألم الركبة لدي. حضرت بسبب ذلك مرتين خلال الأشهر الثلاثة الماضية، وقمت بالتمارين وخففت الضغط، لكنه لا يزال يزداد سوءاً بوضوح عند صعود الدرج والمشي لمسافات أطول." },
+            { "language": "tr", "text": "Diz ağrımla ilgili. Son üç ay içinde bunun için iki kez buradaydım, egzersizleri yaptım ve yükü azalttım, ama merdiven çıkarken ve daha uzun yürürken hâlâ belirgin şekilde kötüleşiyor." },
+            { "language": "ru", "text": "Речь о боли в колене. За последние три месяца я был здесь из-за этого дважды, делал упражнения и уменьшил нагрузку, но при подъеме по лестнице и более длительной ходьбе все еще заметно становится хуже." },
+            { "language": "ckb", "text": "بابەتەکە لەبارەی ئازاری ئەژنۆمە. لە سێ مانگی ڕابردوودا دوو جار بۆ ئەمە هاتووم، ڕاهێنانەکانم کردووە و فشارم کەم کردووە، بەڵام لە سەرکەوتنی پلیکانی و ڕۆیشتنی درێژتر هێشتا بە ڕوونی خراپتر دەبێت." },
+            { "language": "kmr", "text": "Mijar li ser êşa çokê min e. Di sê mehên dawî de ji ber vê du caran hatime vir, hînkirinan kirine û barê kêm kirine, lê dema derketina pileyê û meşiya dirêjtir hîn jî bi eşkere xirabtir dibe." },
+            { "language": "pl", "text": "Chodzi o ból kolana. Byłem z tego powodu dwa razy w ciągu ostatnich trzech miesięcy, wykonywałem ćwiczenia i ograniczyłem obciążenie, ale przy wchodzeniu po schodach i dłuższym chodzeniu nadal wyraźnie się pogarsza." },
+            { "language": "ro", "text": "Este vorba despre durerea mea de genunchi. Am fost aici de două ori în ultimele trei luni pentru asta, am făcut exercițiile și am redus solicitarea, dar la urcatul scărilor și la mersul mai lung se agravează în continuare clar." },
+            { "language": "sq", "text": "Bëhet fjalë për dhimbjen time të gjurit. Kam qenë këtu dy herë për këtë gjatë tre muajve të fundit, i kam bërë ushtrimet dhe e kam ulur ngarkesën, por gjatë ngjitjes së shkallëve dhe ecjes më të gjatë ende përkeqësohet dukshëm." }
+          ],
+          "function": "describe-history-and-current-limitation",
+          "toneNote": "structured history",
+          "expectedLearnerAction": "Nenne Verlauf, bisherige Maßnahmen und konkrete Alltagsbelastungen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Welche Veränderungen merken Sie im Vergleich zum letzten Termin, und gibt es neue Beschwerden?",
+          "translations": [
+            { "language": "en", "text": "What changes do you notice compared with the last appointment, and are there any new symptoms?" },
+            { "language": "fa", "text": "در مقایسه با وقت قبلی چه تغییراتی متوجه شده‌اید و آیا ناراحتی جدیدی وجود دارد؟" },
+            { "language": "ar", "text": "ما التغييرات التي تلاحظها مقارنة بالموعد السابق، وهل توجد أعراض جديدة؟" },
+            { "language": "tr", "text": "Son randevuya göre hangi değişiklikleri fark ediyorsunuz ve yeni şikayetler var mı?" },
+            { "language": "ru", "text": "Какие изменения вы замечаете по сравнению с прошлым приемом, и есть ли новые жалобы?" },
+            { "language": "ckb", "text": "بە بەراورد لەگەڵ کاتی پێشوو چ گۆڕانکارییەک تێدەبینن و ئایا نارەحەتیی نوێ هەیە؟" },
+            { "language": "kmr", "text": "Li gorî randevûya berê hûn kîjan guhertinan dibînin û gelo gilîyên nû hene?" },
+            { "language": "pl", "text": "Jakie zmiany zauważa pan w porównaniu z ostatnią wizytą i czy są nowe dolegliwości?" },
+            { "language": "ro", "text": "Ce schimbări observați față de consultația anterioară și există simptome noi?" },
+            { "language": "sq", "text": "Çfarë ndryshimesh vini re krahasuar me takimin e fundit dhe a ka shqetësime të reja?" }
+          ],
+          "function": "ask-change-and-new-symptoms",
+          "toneNote": "clarifying",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Neu ist, dass das Knie nach Belastung manchmal anschwillt und ich am nächsten Tag vorsichtiger gehen muss. Ich möchte nicht dramatisieren, aber ich habe Sorge, dass wir ohne weitere Einschätzung etwas übersehen.",
+          "translations": [
+            { "language": "en", "text": "What is new is that the knee sometimes swells after strain and I have to walk more carefully the next day. I do not want to dramatize it, but I am concerned that without further assessment we might miss something." },
+            { "language": "fa", "text": "نکته جدید این است که زانو بعد از فشار گاهی ورم می‌کند و روز بعد باید محتاط‌تر راه بروم. نمی‌خواهم موضوع را بزرگ‌نمایی کنم، اما نگرانم که بدون ارزیابی بیشتر چیزی را نادیده بگیریم." },
+            { "language": "ar", "text": "الجديد هو أن الركبة تنتفخ أحياناً بعد الضغط، وفي اليوم التالي أضطر إلى المشي بحذر أكبر. لا أريد تهويل الأمر، لكنني قلق من أننا قد نفوّت شيئاً من دون تقييم إضافي." },
+            { "language": "tr", "text": "Yeni olan şu: Diz yüklenmeden sonra bazen şişiyor ve ertesi gün daha dikkatli yürümek zorunda kalıyorum. Bunu abartmak istemiyorum, ama ek değerlendirme olmadan bir şeyi gözden kaçırabileceğimizden endişeliyim." },
+            { "language": "ru", "text": "Новое то, что колено иногда отекает после нагрузки, и на следующий день мне приходится ходить осторожнее. Я не хочу драматизировать, но боюсь, что без дальнейшей оценки мы можем что-то упустить." },
+            { "language": "ckb", "text": "شتی نوێ ئەوەیە کە ئەژنۆکە دوای فشار هەندێک جار دەئاوسێت و ڕۆژی دواتر پێویستە بە ئاگاداری زیاتر بڕۆم. نامەوێت شتەکە گەورە بکەمەوە، بەڵام نیگەرانم کە بەبێ هەڵسەنگاندنی زیاتر شتێک لەدەست بدەین." },
+            { "language": "kmr", "text": "Tiştê nû ew e ku çok piştî barê carinan diwerim û roja paşê divê bi hişyariyeke zêdetir bimeşim. Ez naxwazim wê mezin bikim, lê xemgîn im ku bê nirxandineke zêdetir dibe ku em tiştekî ji ber çavan derbas bikin." },
+            { "language": "pl", "text": "Nowe jest to, że kolano czasami puchnie po obciążeniu i następnego dnia muszę chodzić ostrożniej. Nie chcę dramatyzować, ale obawiam się, że bez dalszej oceny możemy coś przeoczyć." },
+            { "language": "ro", "text": "Nou este faptul că genunchiul se umflă uneori după efort și a doua zi trebuie să merg mai prudent. Nu vreau să dramatizez, dar mă tem că fără o evaluare suplimentară am putea omite ceva." },
+            { "language": "sq", "text": "E reja është se gjuri ndonjëherë fryhet pas ngarkesës dhe ditën tjetër duhet të eci më me kujdes. Nuk dua ta dramatizoj, por kam shqetësimin se pa një vlerësim të mëtejshëm mund të na shpëtojë diçka." }
+          ],
+          "function": "explain-current-concern",
+          "toneNote": "balanced concern",
+          "expectedLearnerAction": "Beschreibe die neue Beobachtung und formuliere die Sorge sachlich."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Was genau erhoffen Sie sich von einer fachärztlichen Einschätzung?",
+          "translations": [
+            { "language": "en", "text": "What exactly are you hoping for from a specialist assessment?" },
+            { "language": "fa", "text": "دقیقاً از ارزیابی تخصصی چه انتظاری دارید؟" },
+            { "language": "ar", "text": "ماذا تتوقع بالضبط من تقييم متخصص؟" },
+            { "language": "tr", "text": "Uzman değerlendirmesinden tam olarak ne bekliyorsunuz?" },
+            { "language": "ru", "text": "Чего именно вы ожидаете от специализированной оценки?" },
+            { "language": "ckb", "text": "بە وردی چ چاوەڕوانییەکتان لە هەڵسەنگاندنی پسپۆڕی هەیە؟" },
+            { "language": "kmr", "text": "Hûn bi hûrgilî ji nirxandina pisporî çi hêvî dikin?" },
+            { "language": "pl", "text": "Czego dokładnie oczekuje pan od oceny specjalistycznej?" },
+            { "language": "ro", "text": "Ce anume sperați de la o evaluare de specialitate?" },
+            { "language": "sq", "text": "Çfarë prisni saktësisht nga një vlerësim specialistik?" }
+          ],
+          "function": "ask-referral-purpose",
+          "toneNote": "clarifying",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte vor allem klären lassen, ob eine orthopädische Untersuchung sinnvoll ist und ob wir den bisherigen Plan anpassen sollten. Mir geht es nicht darum, selbst eine Diagnose zu stellen.",
+          "translations": [
+            { "language": "en", "text": "Above all, I would like to have clarified whether an orthopedic examination makes sense and whether we should adjust the previous plan. I am not trying to make a diagnosis myself." },
+            { "language": "fa", "text": "در درجه اول می‌خواهم روشن شود که آیا معاینه ارتوپدی منطقی است و آیا باید برنامه قبلی را تنظیم کنیم یا نه. هدفم این نیست که خودم تشخیص بدهم." },
+            { "language": "ar", "text": "أريد قبل كل شيء توضيح ما إذا كان فحص العظام مناسباً وما إذا كان ينبغي تعديل الخطة السابقة. لا أقصد أن أشخص الحالة بنفسي." },
+            { "language": "tr", "text": "Öncelikle ortopedik bir muayenenin mantıklı olup olmadığını ve önceki planı ayarlamamız gerekip gerekmediğini netleştirmek istiyorum. Amacım kendi başıma tanı koymak değil." },
+            { "language": "ru", "text": "Прежде всего я хотел бы уточнить, имеет ли смысл ортопедическое обследование и нужно ли нам скорректировать прежний план. Я не пытаюсь сам поставить диагноз." },
+            { "language": "ckb", "text": "سەرەتا دەمەوێت ڕوون بکرێتەوە ئایا پشکنینی ئۆرتۆپیدی مانادارە و ئایا پێویستە پلانی پێشوو بگۆڕین. مەبەستم ئەوە نییە خۆم دەستنیشانکردن بکەم." },
+            { "language": "kmr", "text": "Berî her tiştî ez dixwazim zelal bibe ka gelo vekolîneke ortopedî watedar e û gelo divê em plana berê biguherînin. Armanca min ne ew e ku ez bi serê xwe teşxîs bikim." },
+            { "language": "pl", "text": "Przede wszystkim chciałbym wyjaśnić, czy badanie ortopedyczne ma sens i czy powinniśmy dostosować dotychczasowy plan. Nie chodzi mi o to, żebym sam stawiał diagnozę." },
+            { "language": "ro", "text": "În primul rând aș vrea să clarific dacă o examinare ortopedică are sens și dacă ar trebui să ajustăm planul de până acum. Nu urmăresc să îmi pun singur un diagnostic." },
+            { "language": "sq", "text": "Para së gjithash dua të sqarohet nëse një kontroll ortopedik ka kuptim dhe nëse duhet ta përshtatim planin e deritanishëm. Nuk synoj të vendos vetë diagnozë." }
+          ],
+          "function": "request-specialist-assessment",
+          "toneNote": "non-self-diagnosing",
+          "expectedLearnerAction": "Bitte um fachärztliche Einschätzung, ohne selbst eine Diagnose zu behaupten."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Das ist nachvollziehbar. Für die Überweisung wäre hilfreich, wenn wir den Verlauf und die bisherigen Maßnahmen kurz und klar dokumentieren.",
+          "translations": [
+            { "language": "en", "text": "That is understandable. For the referral, it would be helpful if we document the course and the previous measures briefly and clearly." },
+            { "language": "fa", "text": "قابل درک است. برای ارجاع مفید است که روند و اقدامات قبلی را کوتاه و روشن ثبت کنیم." },
+            { "language": "ar", "text": "هذا مفهوم. بالنسبة للإحالة سيكون من المفيد أن نوثق المسار والإجراءات السابقة بشكل موجز وواضح." },
+            { "language": "tr", "text": "Bu anlaşılır. Sevk için süreci ve önceki önlemleri kısa ve net belgelememiz yararlı olur." },
+            { "language": "ru", "text": "Это понятно. Для направления было бы полезно кратко и ясно задокументировать ход и предыдущие меры." },
+            { "language": "ckb", "text": "ئەمە تێگەیشتنەکەی ڕوونە. بۆ ڕەوانەکردنەکە بەسوودە ئەگەر ڕەوت و هەنگاوە پێشووترەکان بە کورتی و ڕوونی تۆمار بکەین." },
+            { "language": "kmr", "text": "Ev têgihiştinbar e. Ji bo şandinê dê bikêr be heke em pêvajo û gavên berê kurt û zelal belge bikin." },
+            { "language": "pl", "text": "To zrozumiałe. Do skierowania pomocne byłoby krótkie i jasne udokumentowanie przebiegu oraz wcześniejszych działań." },
+            { "language": "ro", "text": "Este de înțeles. Pentru trimitere ar fi util să documentăm scurt și clar evoluția și măsurile anterioare." },
+            { "language": "sq", "text": "Kjo është e kuptueshme. Për referimin do të ishte e dobishme të dokumentojmë shkurt dhe qartë ecurinë dhe masat e mëparshme." }
+          ],
+          "function": "explain-referral-documentation",
+          "toneNote": "administrative-medical",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Könnten wir in der Überweisung festhalten, dass die Beschwerden seit drei Monaten bestehen, trotz Übungen nicht ausreichend besser wurden und im Alltag vor allem Treppensteigen und längeres Gehen einschränken?",
+          "translations": [
+            { "language": "en", "text": "Could we record in the referral that the symptoms have existed for three months, have not improved sufficiently despite exercises, and limit everyday life especially when climbing stairs and walking longer distances?" },
+            { "language": "fa", "text": "آیا می‌توانیم در ارجاع ثبت کنیم که علائم سه ماه است وجود دارند، با وجود تمرین‌ها به اندازه کافی بهتر نشده‌اند و در زندگی روزمره به‌خصوص بالا رفتن از پله و راه رفتن طولانی‌تر را محدود می‌کنند؟" },
+            { "language": "ar", "text": "هل يمكننا أن نثبت في الإحالة أن الأعراض موجودة منذ ثلاثة أشهر، ولم تتحسن بما يكفي رغم التمارين، وتحدّ الحياة اليومية خصوصاً عند صعود الدرج والمشي لمسافات أطول؟" },
+            { "language": "tr", "text": "Sevkte şikayetlerin üç aydır sürdüğünü, egzersizlere rağmen yeterince düzelmediğini ve günlük yaşamda özellikle merdiven çıkmayı ve daha uzun yürümeyi kısıtladığını belirtebilir miyiz?" },
+            { "language": "ru", "text": "Можем ли мы указать в направлении, что жалобы существуют три месяца, несмотря на упражнения улучшились недостаточно и в повседневной жизни ограничивают прежде всего подъем по лестнице и более длительную ходьбу?" },
+            { "language": "ckb", "text": "دەتوانین لە ڕەوانەکردنەکەدا تۆمار بکەین کە نارەحەتییەکان سێ مانگە هەن، سەرەڕای ڕاهێنانەکان بە پێی پێویست باشتر نەبوون و لە ژیانی ڕۆژانەدا بە تایبەتی سەرکەوتنی پلیکانی و ڕۆیشتنی درێژتر سنووردار دەکەن؟" },
+            { "language": "kmr", "text": "Em dikarin di şandinê de tomar bikin ku gilî sê mehan e hene, tevî hînkirinan têr baştir nebûne û di jiyana rojane de bi taybetî derketina pileyê û meşiya dirêjtir sînordar dikin?" },
+            { "language": "pl", "text": "Czy możemy zapisać w skierowaniu, że dolegliwości trwają od trzech miesięcy, mimo ćwiczeń nie poprawiły się wystarczająco i w codzienności ograniczają przede wszystkim wchodzenie po schodach oraz dłuższe chodzenie?" },
+            { "language": "ro", "text": "Putem nota în trimitere că simptomele există de trei luni, nu s-au ameliorat suficient în ciuda exercițiilor și limitează în viața de zi cu zi mai ales urcatul scărilor și mersul mai lung?" },
+            { "language": "sq", "text": "A mund të shënojmë në referim se shqetësimet zgjasin prej tre muajsh, nuk janë përmirësuar mjaftueshëm pavarësisht ushtrimeve dhe në përditshmëri kufizojnë sidomos ngjitjen e shkallëve dhe ecjen më të gjatë?" }
+          ],
+          "function": "formulate-referral-note",
+          "toneNote": "precise administrative request",
+          "expectedLearnerAction": "Formuliere, welche Informationen die Überweisung enthalten soll."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Ja, das können wir so aufnehmen. Ich stelle Ihnen eine Überweisung zur Orthopädie aus und gebe Ihnen eine kurze Zusammenfassung für die Terminvereinbarung mit.",
+          "translations": [
+            { "language": "en", "text": "Yes, we can include it like that. I will issue you a referral to orthopedics and give you a short summary for making the appointment." },
+            { "language": "fa", "text": "بله، می‌توانیم همین‌طور وارد کنیم. برای شما ارجاع به ارتوپدی صادر می‌کنم و یک خلاصه کوتاه برای گرفتن وقت به شما می‌دهم." },
+            { "language": "ar", "text": "نعم، يمكننا إدراج ذلك بهذا الشكل. سأصدر لك إحالة إلى طب العظام وأعطيك ملخصاً قصيراً لحجز الموعد." },
+            { "language": "tr", "text": "Evet, bunu böyle ekleyebiliriz. Size ortopediye sevk çıkaracağım ve randevu almak için kısa bir özet vereceğim." },
+            { "language": "ru", "text": "Да, мы можем так это включить. Я выпишу вам направление к ортопеду и дам короткое резюме для записи на прием." },
+            { "language": "ckb", "text": "بەڵێ، دەتوانین بەو شێوەیە تۆماری بکەین. ڕەوانەکردن بۆ ئۆرتۆپیدی بۆتان دەدەم و پوختەیەکی کورت بۆ دیاریکردنی کات پێتان دەدەم." },
+            { "language": "kmr", "text": "Erê, em dikarin wê wisa tê de binivîsin. Ez ji we re şandina bo ortopediyê derdixim û kurteyekê ji bo girtina randevûyê didim we." },
+            { "language": "pl", "text": "Tak, możemy to tak ująć. Wystawię panu skierowanie do ortopedii i dam krótkie podsumowanie do umawiania terminu." },
+            { "language": "ro", "text": "Da, putem include acest lucru așa. Vă eliberez o trimitere la ortopedie și vă dau un scurt rezumat pentru programare." },
+            { "language": "sq", "text": "Po, mund ta përfshijmë kështu. Do t'ju lëshoj një referim për ortopedi dhe do t'ju jap një përmbledhje të shkurtër për caktimin e takimit." }
+          ],
+          "function": "confirm-referral",
+          "toneNote": "administrative next step",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Danke, dann fasse ich zusammen: Ich bekomme eine Überweisung zur Orthopädie mit Verlauf, bisherigen Maßnahmen und aktuellen Einschränkungen. Für die Terminvereinbarung nutze ich die Zusammenfassung und melde mich wieder, wenn sich die Beschwerden deutlich verändern.",
+          "translations": [
+            { "language": "en", "text": "Thank you, then I will summarize: I will receive a referral to orthopedics with the course so far, previous measures, and current limitations. For making the appointment I will use the summary and contact you again if the symptoms change clearly." },
+            { "language": "fa", "text": "ممنون، پس خلاصه می‌کنم: یک ارجاع به ارتوپدی دریافت می‌کنم که روند، اقدامات قبلی و محدودیت‌های فعلی را شامل می‌شود. برای گرفتن وقت از خلاصه استفاده می‌کنم و اگر علائم به‌طور واضح تغییر کردند دوباره تماس می‌گیرم." },
+            { "language": "ar", "text": "شكراً، إذن ألخص: سأحصل على إحالة إلى طب العظام تتضمن المسار والإجراءات السابقة والقيود الحالية. لحجز الموعد سأستخدم الملخص وسأتواصل مرة أخرى إذا تغيرت الأعراض بوضوح." },
+            { "language": "tr", "text": "Teşekkür ederim, o halde özetliyorum: Süreci, önceki önlemleri ve mevcut kısıtlamaları içeren bir ortopedi sevki alıyorum. Randevu almak için özeti kullanacağım ve şikayetler belirgin şekilde değişirse tekrar iletişime geçeceğim." },
+            { "language": "ru", "text": "Спасибо, тогда я резюмирую: я получу направление к ортопеду с описанием хода, прежних мер и текущих ограничений. Для записи на прием я использую резюме и снова свяжусь, если жалобы заметно изменятся." },
+            { "language": "ckb", "text": "سوپاس، کەواتە پوخت دەکەمەوە: ڕەوانەکردنێک بۆ ئۆرتۆپیدی وەردەگرم کە ڕەوت، هەنگاوە پێشووترەکان و سنووردارییە ئێستاکان لەخۆ دەگرێت. بۆ دیاریکردنی کات پوختەکە بەکاردەهێنم و ئەگەر نارەحەتییەکان بە ڕوونی گۆڕان، دووبارە پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Spas, wê demê ez kurte dikim: ez şandineke bo ortopediyê distînim ku pêvajo, gavên berê û sînordariyên niha tê de ne. Ji bo girtina randevûyê ez kurteyê bi kar tînim û heke gilî bi eşkere biguherin dîsa têkilî datînim." },
+            { "language": "pl", "text": "Dziękuję, w takim razie podsumuję: otrzymam skierowanie do ortopedii z przebiegiem, wcześniejszymi działaniami i obecnymi ograniczeniami. Do umówienia terminu użyję podsumowania i zgłoszę się ponownie, jeśli dolegliwości wyraźnie się zmienią." },
+            { "language": "ro", "text": "Mulțumesc, atunci rezum: primesc o trimitere la ortopedie cu evoluția, măsurile anterioare și limitările actuale. Pentru programare folosesc rezumatul și revin dacă simptomele se schimbă clar." },
+            { "language": "sq", "text": "Faleminderit, atëherë po përmbledh: marr një referim për ortopedi me ecurinë, masat e mëparshme dhe kufizimet aktuale. Për caktimin e takimit përdor përmbledhjen dhe kontaktoj përsëri nëse shqetësimet ndryshojnë dukshëm." }
+          ],
+          "function": "summarize-referral-next-step",
+          "toneNote": "structured closing summary",
+          "expectedLearnerAction": "Fasse Überweisung, Inhalt der Zusammenfassung und nächsten Schritt zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Es geht um meine Knieschmerzen. Ich war deshalb in den letzten drei Monaten zweimal hier, habe die Übungen gemacht und die Belastung reduziert, aber beim Treppensteigen und längeren Gehen wird es weiterhin deutlich schlimmer.",
+              "translations": [
+                { "language": "en", "text": "It is about my knee pain. I have been here twice for it in the last three months, did the exercises, and reduced strain, but it still gets clearly worse when climbing stairs and walking longer distances." },
+                { "language": "fa", "text": "موضوع درد زانوی من است. در سه ماه گذشته به همین دلیل دو بار اینجا بودم، تمرین‌ها را انجام دادم و فشار را کم کردم، اما هنگام بالا رفتن از پله و راه رفتن طولانی‌تر همچنان به‌طور واضح بدتر می‌شود." },
+                { "language": "ar", "text": "الأمر يتعلق بألم الركبة لدي. حضرت بسبب ذلك مرتين خلال الأشهر الثلاثة الماضية، وقمت بالتمارين وخففت الضغط، لكنه لا يزال يزداد سوءاً بوضوح عند صعود الدرج والمشي لمسافات أطول." },
+                { "language": "tr", "text": "Diz ağrımla ilgili. Son üç ay içinde bunun için iki kez buradaydım, egzersizleri yaptım ve yükü azalttım, ama merdiven çıkarken ve daha uzun yürürken hâlâ belirgin şekilde kötüleşiyor." },
+                { "language": "ru", "text": "Речь о боли в колене. За последние три месяца я был здесь из-за этого дважды, делал упражнения и уменьшил нагрузку, но при подъеме по лестнице и более длительной ходьбе все еще заметно становится хуже." },
+                { "language": "ckb", "text": "بابەتەکە لەبارەی ئازاری ئەژنۆمە. لە سێ مانگی ڕابردوودا دوو جار بۆ ئەمە هاتووم، ڕاهێنانەکانم کردووە و فشارم کەم کردووە، بەڵام لە سەرکەوتنی پلیکانی و ڕۆیشتنی درێژتر هێشتا بە ڕوونی خراپتر دەبێت." },
+                { "language": "kmr", "text": "Mijar li ser êşa çokê min e. Di sê mehên dawî de ji ber vê du caran hatime vir, hînkirinan kirine û barê kêm kirine, lê dema derketina pileyê û meşiya dirêjtir hîn jî bi eşkere xirabtir dibe." },
+                { "language": "pl", "text": "Chodzi o ból kolana. Byłem z tego powodu dwa razy w ciągu ostatnich trzech miesięcy, wykonywałem ćwiczenia i ograniczyłem obciążenie, ale przy wchodzeniu po schodach i dłuższym chodzeniu nadal wyraźnie się pogarsza." },
+                { "language": "ro", "text": "Este vorba despre durerea mea de genunchi. Am fost aici de două ori în ultimele trei luni pentru asta, am făcut exercițiile și am redus solicitarea, dar la urcatul scărilor și la mersul mai lung se agravează în continuare clar." },
+                { "language": "sq", "text": "Bëhet fjalë për dhimbjen time të gjurit. Kam qenë këtu dy herë për këtë gjatë tre muajve të fundit, i kam bërë ushtrimet dhe e kam ulur ngarkesën, por gjatë ngjitjes së shkallëve dhe ecjes më të gjatë ende përkeqësohet dukshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Verlauf, bisherige Maßnahmen und konkrete Alltagseinschränkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names the course so far, previous measures, and a concrete daily-life limitation." },
+                { "language": "fa", "text": "خوب است: پاسخ روند، اقدامات قبلی و یک محدودیت روزمره مشخص را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة المسار حتى الآن والإجراءات السابقة وقيداً يومياً محدداً." },
+                { "language": "tr", "text": "İyi: cevap süreci, önceki önlemleri ve somut bir günlük yaşam kısıtlamasını belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ называет ход, прежние меры и конкретное ограничение в повседневной жизни." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕەوت، هەنگاوە پێشووترەکان و سنووردارییەکی دیاریکراوی ژیانی ڕۆژانە ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: bersiv pêvajo, gavên berê û sînordariyeke zehf diyar a jiyana rojane dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje przebieg, wcześniejsze działania i konkretne ograniczenie w codzienności." },
+                { "language": "ro", "text": "Bine: răspunsul numește evoluția, măsurile anterioare și o limitare concretă din viața de zi cu zi." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend ecurinë, masat e mëparshme dhe një kufizim konkret në përditshmëri." }
+              ],
+              "explanationKey": "b2-referral-history-limitation"
+            },
+            {
+              "id": "weak-referral-first",
+              "text": "Ich hätte gern eine Überweisung, weil mein Knie immer noch weh tut.",
+              "translations": [
+                { "language": "en", "text": "I would like a referral because my knee still hurts." },
+                { "language": "fa", "text": "می‌خواهم ارجاع بگیرم، چون زانویم هنوز درد می‌کند." },
+                { "language": "ar", "text": "أود الحصول على إحالة لأن ركبتي ما زالت تؤلمني." },
+                { "language": "tr", "text": "Dizim hâlâ ağrıdığı için sevk almak istiyorum." },
+                { "language": "ru", "text": "Я хотел бы направление, потому что колено все еще болит." },
+                { "language": "ckb", "text": "دەمەوێت ڕەوانەکردن وەربگرم چونکە ئەژنۆم هێشتا ئازار دەکات." },
+                { "language": "kmr", "text": "Ez dixwazim şandinekê bistînim ji ber ku çokê min hîn jî diêşe." },
+                { "language": "pl", "text": "Chciałbym skierowanie, bo kolano nadal mnie boli." },
+                { "language": "ro", "text": "Aș dori o trimitere, pentru că genunchiul încă mă doare." },
+                { "language": "sq", "text": "Do të doja një referim, sepse gjuri ende më dhemb." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu knapp: Für B2 fehlen Verlauf, bisherige Maßnahmen und konkrete Einschränkungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too brief: for B2, the course, previous measures, and concrete limitations are missing." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کوتاه است: برای B2 روند، اقدامات قبلی و محدودیت‌های مشخص کم است." },
+                { "language": "ar", "text": "مقبول، لكنه قصير جداً: في B2 ينقص المسار والإجراءات السابقة والقيود المحددة." },
+                { "language": "tr", "text": "Olası ama fazla kısa: B2 için süreç, önceki önlemler ve somut kısıtlamalar eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком кратко: для B2 не хватает хода, прежних мер и конкретных ограничений." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر کورتە: بۆ B2 ڕەوت، هەنگاوە پێشووترەکان و سنووردارییە دیاریکراوەکان کەمە." },
+                { "language": "kmr", "text": "Guncaw e, lê pir kurt e: ji bo B2 pêvajo, gavên berê û sînordariyên zehf diyar kêm in." },
+                { "language": "pl", "text": "Plausible, ale zbyt krótkie: na poziomie B2 brakuje przebiegu, wcześniejszych działań i konkretnych ograniczeń." },
+                { "language": "ro", "text": "Plausibil, dar prea scurt: pentru B2 lipsesc evoluția, măsurile anterioare și limitările concrete." },
+                { "language": "sq", "text": "E besueshme, por tepër e shkurtër: për B2 mungojnë ecuria, masat e mëparshme dhe kufizimet konkrete." }
+              ],
+              "explanationKey": "b2-referral-avoid-short-request"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Neu ist, dass das Knie nach Belastung manchmal anschwillt und ich am nächsten Tag vorsichtiger gehen muss. Ich möchte nicht dramatisieren, aber ich habe Sorge, dass wir ohne weitere Einschätzung etwas übersehen.",
+              "translations": [
+                { "language": "en", "text": "What is new is that the knee sometimes swells after strain and I have to walk more carefully the next day. I do not want to dramatize it, but I am concerned that without further assessment we might miss something." },
+                { "language": "fa", "text": "نکته جدید این است که زانو بعد از فشار گاهی ورم می‌کند و روز بعد باید محتاط‌تر راه بروم. نمی‌خواهم موضوع را بزرگ‌نمایی کنم، اما نگرانم که بدون ارزیابی بیشتر چیزی را نادیده بگیریم." },
+                { "language": "ar", "text": "الجديد هو أن الركبة تنتفخ أحياناً بعد الضغط، وفي اليوم التالي أضطر إلى المشي بحذر أكبر. لا أريد تهويل الأمر، لكنني قلق من أننا قد نفوّت شيئاً من دون تقييم إضافي." },
+                { "language": "tr", "text": "Yeni olan şu: Diz yüklenmeden sonra bazen şişiyor ve ertesi gün daha dikkatli yürümek zorunda kalıyorum. Bunu abartmak istemiyorum, ama ek değerlendirme olmadan bir şeyi gözden kaçırabileceğimizden endişeliyim." },
+                { "language": "ru", "text": "Новое то, что колено иногда отекает после нагрузки, и на следующий день мне приходится ходить осторожнее. Я не хочу драматизировать, но боюсь, что без дальнейшей оценки мы можем что-то упустить." },
+                { "language": "ckb", "text": "شتی نوێ ئەوەیە کە ئەژنۆکە دوای فشار هەندێک جار دەئاوسێت و ڕۆژی دواتر پێویستە بە ئاگاداری زیاتر بڕۆم. نامەوێت شتەکە گەورە بکەمەوە، بەڵام نیگەرانم کە بەبێ هەڵسەنگاندنی زیاتر شتێک لەدەست بدەین." },
+                { "language": "kmr", "text": "Tiştê nû ew e ku çok piştî barê carinan diwerim û roja paşê divê bi hişyariyeke zêdetir bimeşim. Ez naxwazim wê mezin bikim, lê xemgîn im ku bê nirxandineke zêdetir dibe ku em tiştekî ji ber çavan derbas bikin." },
+                { "language": "pl", "text": "Nowe jest to, że kolano czasami puchnie po obciążeniu i następnego dnia muszę chodzić ostrożniej. Nie chcę dramatyzować, ale obawiam się, że bez dalszej oceny możemy coś przeoczyć." },
+                { "language": "ro", "text": "Nou este faptul că genunchiul se umflă uneori după efort și a doua zi trebuie să merg mai prudent. Nu vreau să dramatizez, dar mă tem că fără o evaluare suplimentară am putea omite ceva." },
+                { "language": "sq", "text": "E reja është se gjuri ndonjëherë fryhet pas ngarkesës dhe ditën tjetër duhet të eci më me kujdes. Nuk dua ta dramatizoj, por kam shqetësimin se pa një vlerësim të mëtejshëm mund të na shpëtojë diçka." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt eine neue Beobachtung und formuliert die Sorge sachlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names a new observation and expresses the concern objectively." },
+                { "language": "fa", "text": "خوب است: پاسخ یک مشاهده جدید را بیان می‌کند و نگرانی را واقع‌بینانه مطرح می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة ملاحظة جديدة وتعبّر عن القلق بشكل موضوعي." },
+                { "language": "tr", "text": "İyi: cevap yeni bir gözlemi belirtir ve endişeyi nesnel ifade eder." },
+                { "language": "ru", "text": "Хорошо: ответ называет новое наблюдение и объективно формулирует опасение." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە تێبینییەکی نوێ ناو دەبات و نیگەرانییەکە بابەتیانە دەردەبڕێت." },
+                { "language": "kmr", "text": "Baş e: bersiv çavdêriyeke nû dibêje û xeman bi awayekî objektîf tîne zimên." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje nową obserwację i rzeczowo formułuje obawę." },
+                { "language": "ro", "text": "Bine: răspunsul numește o observație nouă și formulează îngrijorarea obiectiv." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend një vëzhgim të ri dhe e shpreh shqetësimin në mënyrë objektive." }
+              ],
+              "explanationKey": "b2-referral-current-concern"
+            },
+            {
+              "id": "weak-too-dramatic",
+              "text": "Ich glaube, dass da bestimmt etwas Schlimmes dahintersteckt.",
+              "translations": [
+                { "language": "en", "text": "I think there is definitely something serious behind it." },
+                { "language": "fa", "text": "فکر می‌کنم حتماً چیز بدی پشت آن است." },
+                { "language": "ar", "text": "أعتقد أن هناك بالتأكيد شيئاً خطيراً وراء ذلك." },
+                { "language": "tr", "text": "Bence bunun arkasında kesinlikle kötü bir şey var." },
+                { "language": "ru", "text": "Я думаю, что за этим точно стоит что-то серьезное." },
+                { "language": "ckb", "text": "پێم وایە بە دڵنیایی شتێکی خراپ لە پشت ئەمەوە هەیە." },
+                { "language": "kmr", "text": "Ez difikirim ku bi rastî tiştekî xirab li pişt vê heye." },
+                { "language": "pl", "text": "Myślę, że na pewno stoi za tym coś poważnego." },
+                { "language": "ro", "text": "Cred că sigur este ceva grav în spate." },
+                { "language": "sq", "text": "Mendoj se patjetër ka diçka serioze pas kësaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu stark formuliert: Die Sorge ist verständlich, aber ohne konkrete Beobachtung klingt es dramatisch und wenig präzise.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too strongly worded: the concern is understandable, but without a concrete observation it sounds dramatic and imprecise." },
+                { "language": "fa", "text": "بیش از حد شدید بیان شده است: نگرانی قابل فهم است، اما بدون مشاهده مشخص، دراماتیک و کم‌دقت به نظر می‌رسد." },
+                { "language": "ar", "text": "صياغة قوية جداً: القلق مفهوم، لكنه من دون ملاحظة محددة يبدو درامياً وغير دقيق." },
+                { "language": "tr", "text": "Fazla güçlü ifade edilmiş: endişe anlaşılır, ama somut gözlem olmadan dramatik ve belirsiz gelir." },
+                { "language": "ru", "text": "Слишком сильно сформулировано: опасение понятно, но без конкретного наблюдения звучит драматично и неточно." },
+                { "language": "ckb", "text": "زۆر بە توندی گوتراوە: نیگەرانییەکە تێگەیشتنەکەی ڕوونە، بەڵام بەبێ تێبینیی دیاریکراو دراماتیکی و ناوردە دیارە." },
+                { "language": "kmr", "text": "Pir bi tundî hatiye gotin: xem têgihiştinbar e, lê bê çavdêriyeke zehf diyar dramatîk û nezelal xuya dike." },
+                { "language": "pl", "text": "Zbyt mocno sformułowane: obawa jest zrozumiała, ale bez konkretnej obserwacji brzmi dramatycznie i mało precyzyjnie." },
+                { "language": "ro", "text": "Formulat prea puternic: îngrijorarea este de înțeles, dar fără o observație concretă sună dramatic și imprecis." },
+                { "language": "sq", "text": "E formuluar tepër fort: shqetësimi është i kuptueshëm, por pa një vëzhgim konkret tingëllon dramatik dhe i pasaktë." }
+              ],
+              "explanationKey": "b2-referral-avoid-drama"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ich möchte vor allem klären lassen, ob eine orthopädische Untersuchung sinnvoll ist und ob wir den bisherigen Plan anpassen sollten. Mir geht es nicht darum, selbst eine Diagnose zu stellen.",
+              "translations": [
+                { "language": "en", "text": "Above all, I would like to have clarified whether an orthopedic examination makes sense and whether we should adjust the previous plan. I am not trying to make a diagnosis myself." },
+                { "language": "fa", "text": "در درجه اول می‌خواهم روشن شود که آیا معاینه ارتوپدی منطقی است و آیا باید برنامه قبلی را تنظیم کنیم یا نه. هدفم این نیست که خودم تشخیص بدهم." },
+                { "language": "ar", "text": "أريد قبل كل شيء توضيح ما إذا كان فحص العظام مناسباً وما إذا كان ينبغي تعديل الخطة السابقة. لا أقصد أن أشخص الحالة بنفسي." },
+                { "language": "tr", "text": "Öncelikle ortopedik bir muayenenin mantıklı olup olmadığını ve önceki planı ayarlamamız gerekip gerekmediğini netleştirmek istiyorum. Amacım kendi başıma tanı koymak değil." },
+                { "language": "ru", "text": "Прежде всего я хотел бы уточнить, имеет ли смысл ортопедическое обследование и нужно ли нам скорректировать прежний план. Я не пытаюсь сам поставить диагноз." },
+                { "language": "ckb", "text": "سەرەتا دەمەوێت ڕوون بکرێتەوە ئایا پشکنینی ئۆرتۆپیدی مانادارە و ئایا پێویستە پلانی پێشوو بگۆڕین. مەبەستم ئەوە نییە خۆم دەستنیشانکردن بکەم." },
+                { "language": "kmr", "text": "Berî her tiştî ez dixwazim zelal bibe ka gelo vekolîneke ortopedî watedar e û gelo divê em plana berê biguherînin. Armanca min ne ew e ku ez bi serê xwe teşxîs bikim." },
+                { "language": "pl", "text": "Przede wszystkim chciałbym wyjaśnić, czy badanie ortopedyczne ma sens i czy powinniśmy dostosować dotychczasowy plan. Nie chodzi mi o to, żebym sam stawiał diagnozę." },
+                { "language": "ro", "text": "În primul rând aș vrea să clarific dacă o examinare ortopedică are sens și dacă ar trebui să ajustăm planul de până acum. Nu urmăresc să îmi pun singur un diagnostic." },
+                { "language": "sq", "text": "Para së gjithash dua të sqarohet nëse një kontroll ortopedik ka kuptim dhe nëse duhet ta përshtatim planin e deritanishëm. Nuk synoj të vendos vetë diagnozë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bittet um Einschätzung und vermeidet Selbstdiagnose.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer asks for assessment and avoids self-diagnosis." },
+                { "language": "fa", "text": "خوب است: پاسخ درخواست ارزیابی می‌کند و از خودتشخیصی دوری می‌کند." },
+                { "language": "ar", "text": "جيد: تطلب الإجابة تقييماً وتتجنب التشخيص الذاتي." },
+                { "language": "tr", "text": "İyi: cevap değerlendirme ister ve kendi kendine tanı koymaktan kaçınır." },
+                { "language": "ru", "text": "Хорошо: ответ просит об оценке и избегает самодиагностики." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە داوای هەڵسەنگاندن دەکات و لە دەستنیشانکردنی خۆسەرانە دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv nirxandinê dixwaze û ji teşxîsa bi serê xwe dûr dimîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź prosi o ocenę i unika samodiagnozy." },
+                { "language": "ro", "text": "Bine: răspunsul cere evaluare și evită autodiagnosticarea." },
+                { "language": "sq", "text": "Mirë: përgjigjja kërkon vlerësim dhe shmang vetëdiagnostikimin." }
+              ],
+              "explanationKey": "b2-referral-assessment-not-diagnosis"
+            },
+            {
+              "id": "weak-demand",
+              "text": "Ich brauche jetzt einfach eine Überweisung, damit endlich jemand anderes draufschaut.",
+              "translations": [
+                { "language": "en", "text": "I simply need a referral now so that someone else finally looks at it." },
+                { "language": "fa", "text": "الان فقط به یک ارجاع نیاز دارم تا بالاخره شخص دیگری آن را بررسی کند." },
+                { "language": "ar", "text": "أحتاج الآن ببساطة إلى إحالة لكي ينظر شخص آخر في الأمر أخيراً." },
+                { "language": "tr", "text": "Şimdi sadece bir sevke ihtiyacım var ki sonunda başka biri baksın." },
+                { "language": "ru", "text": "Мне сейчас просто нужно направление, чтобы наконец кто-то другой это посмотрел." },
+                { "language": "ckb", "text": "ئێستا تەنها پێویستم بە ڕەوانەکردنێکە بۆ ئەوەی کەسێکی تر کۆتاییجار سەیری بکات." },
+                { "language": "kmr", "text": "Niha ez tenê hewceyê şandinekê me da ku dawiyê kesekî din li wê binêre." },
+                { "language": "pl", "text": "Teraz po prostu potrzebuję skierowania, żeby wreszcie ktoś inny na to spojrzał." },
+                { "language": "ro", "text": "Acum am pur și simplu nevoie de o trimitere ca să se uite în sfârșit altcineva." },
+                { "language": "sq", "text": "Tani thjesht më duhet një referim që më në fund ta shohë dikush tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu fordernd: Die Antwort nennt keinen medizinischen Zweck und klingt weniger kooperativ.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too demanding: the answer does not name a medical purpose and sounds less cooperative." },
+                { "language": "fa", "text": "بیش از حد مطالبه‌گر است: پاسخ هدف پزشکی را بیان نمی‌کند و کمتر همکاری‌جویانه به نظر می‌رسد." },
+                { "language": "ar", "text": "مطالب جداً: لا تذكر الإجابة هدفاً طبياً وتبدو أقل تعاوناً." },
+                { "language": "tr", "text": "Fazla talepkar: cevap tıbbi amacı belirtmiyor ve daha az işbirlikçi geliyor." },
+                { "language": "ru", "text": "Слишком требовательно: ответ не называет медицинскую цель и звучит менее кооперативно." },
+                { "language": "ckb", "text": "زۆر داواکارییە: وەڵامەکە ئامانجی پزیشکی ناڵێت و کەمتر هاوکارییانە دەردەکەوێت." },
+                { "language": "kmr", "text": "Pir daxwazkar e: bersiv armanceke bijîşkî nabêje û kêmtir hevkariyane xuya dike." },
+                { "language": "pl", "text": "Zbyt roszczeniowe: odpowiedź nie podaje celu medycznego i brzmi mniej współpracująco." },
+                { "language": "ro", "text": "Prea revendicativ: răspunsul nu numește un scop medical și sună mai puțin cooperant." },
+                { "language": "sq", "text": "Tepër kërkuese: përgjigjja nuk përmend një qëllim mjekësor dhe tingëllon më pak bashkëpunuese." }
+              ],
+              "explanationKey": "b2-referral-avoid-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Könnten wir in der Überweisung festhalten, dass die Beschwerden seit drei Monaten bestehen, trotz Übungen nicht ausreichend besser wurden und im Alltag vor allem Treppensteigen und längeres Gehen einschränken?",
+              "translations": [
+                { "language": "en", "text": "Could we record in the referral that the symptoms have existed for three months, have not improved sufficiently despite exercises, and limit everyday life especially when climbing stairs and walking longer distances?" },
+                { "language": "fa", "text": "آیا می‌توانیم در ارجاع ثبت کنیم که علائم سه ماه است وجود دارند، با وجود تمرین‌ها به اندازه کافی بهتر نشده‌اند و در زندگی روزمره به‌خصوص بالا رفتن از پله و راه رفتن طولانی‌تر را محدود می‌کنند؟" },
+                { "language": "ar", "text": "هل يمكننا أن نثبت في الإحالة أن الأعراض موجودة منذ ثلاثة أشهر، ولم تتحسن بما يكفي رغم التمارين، وتحدّ الحياة اليومية خصوصاً عند صعود الدرج والمشي لمسافات أطول؟" },
+                { "language": "tr", "text": "Sevkte şikayetlerin üç aydır sürdüğünü, egzersizlere rağmen yeterince düzelmediğini ve günlük yaşamda özellikle merdiven çıkmayı ve daha uzun yürümeyi kısıtladığını belirtebilir miyiz?" },
+                { "language": "ru", "text": "Можем ли мы указать в направлении, что жалобы существуют три месяца, несмотря на упражнения улучшились недостаточно и в повседневной жизни ограничивают прежде всего подъем по лестнице и более длительную ходьбу?" },
+                { "language": "ckb", "text": "دەتوانین لە ڕەوانەکردنەکەدا تۆمار بکەین کە نارەحەتییەکان سێ مانگە هەن، سەرەڕای ڕاهێنانەکان بە پێی پێویست باشتر نەبوون و لە ژیانی ڕۆژانەدا بە تایبەتی سەرکەوتنی پلیکانی و ڕۆیشتنی درێژتر سنووردار دەکەن؟" },
+                { "language": "kmr", "text": "Em dikarin di şandinê de tomar bikin ku gilî sê mehan e hene, tevî hînkirinan têr baştir nebûne û di jiyana rojane de bi taybetî derketina pileyê û meşiya dirêjtir sînordar dikin?" },
+                { "language": "pl", "text": "Czy możemy zapisać w skierowaniu, że dolegliwości trwają od trzech miesięcy, mimo ćwiczeń nie poprawiły się wystarczająco i w codzienności ograniczają przede wszystkim wchodzenie po schodach oraz dłuższe chodzenie?" },
+                { "language": "ro", "text": "Putem nota în trimitere că simptomele există de trei luni, nu s-au ameliorat suficient în ciuda exercițiilor și limitează în viața de zi cu zi mai ales urcatul scărilor și mersul mai lung?" },
+                { "language": "sq", "text": "A mund të shënojmë në referim se shqetësimet zgjasin prej tre muajsh, nuk janë përmirësuar mjaftueshëm pavarësisht ushtrimeve dhe në përditshmëri kufizojnë sidomos ngjitjen e shkallëve dhe ecjen më të gjatë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort formuliert konkret, was in der Überweisung stehen soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer states concretely what should be written in the referral." },
+                { "language": "fa", "text": "خوب است: پاسخ مشخص می‌کند چه چیزی باید در ارجاع نوشته شود." },
+                { "language": "ar", "text": "جيد: توضح الإجابة بشكل محدد ما ينبغي أن يكتب في الإحالة." },
+                { "language": "tr", "text": "İyi: cevap sevkte ne yazması gerektiğini somut biçimde ifade eder." },
+                { "language": "ru", "text": "Хорошо: ответ конкретно формулирует, что должно быть написано в направлении." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بە دیاریکراوی دەڵێت چی پێویستە لە ڕەوانەکردنەکەدا بنووسرێت." },
+                { "language": "kmr", "text": "Baş e: bersiv bi awayekî zehf diyar dibêje divê di şandinê de çi were nivîsîn." },
+                { "language": "pl", "text": "Dobrze: odpowiedź konkretnie formułuje, co powinno znaleźć się w skierowaniu." },
+                { "language": "ro", "text": "Bine: răspunsul formulează concret ce ar trebui să apară în trimitere." },
+                { "language": "sq", "text": "Mirë: përgjigjja formulon konkretisht çfarë duhet të shkruhet në referim." }
+              ],
+              "explanationKey": "b2-referral-note-content"
+            },
+            {
+              "id": "weak-admin-vague",
+              "text": "Könnten Sie einfach alles Wichtige in die Überweisung schreiben?",
+              "translations": [
+                { "language": "en", "text": "Could you simply write everything important in the referral?" },
+                { "language": "fa", "text": "می‌توانید فقط همه چیزهای مهم را در ارجاع بنویسید؟" },
+                { "language": "ar", "text": "هل يمكنك ببساطة كتابة كل الأمور المهمة في الإحالة؟" },
+                { "language": "tr", "text": "Sevke sadece önemli olan her şeyi yazabilir misiniz?" },
+                { "language": "ru", "text": "Можете просто написать в направлении все важное?" },
+                { "language": "ckb", "text": "دەتوانن تەنها هەموو شتە گرنگەکان لە ڕەوانەکردنەکەدا بنووسن؟" },
+                { "language": "kmr", "text": "Hûn dikarin tenê her tiştê girîng di şandinê de binivîsin?" },
+                { "language": "pl", "text": "Czy może pani po prostu wpisać do skierowania wszystko, co ważne?" },
+                { "language": "ro", "text": "Puteți pur și simplu să scrieți în trimitere tot ce este important?" },
+                { "language": "sq", "text": "A mund të shkruani thjesht gjithçka të rëndësishme në referim?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu vage: Eine präzise Bitte hilft, damit Verlauf, Maßnahmen und Einschränkungen nicht fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too vague: a precise request helps so the course, measures, and limitations are not missing." },
+                { "language": "fa", "text": "قابل فهم است، اما خیلی مبهم است: درخواست دقیق کمک می‌کند روند، اقدامات و محدودیت‌ها جا نیفتند." },
+                { "language": "ar", "text": "مفهوم، لكنه غامض جداً: الطلب الدقيق يساعد حتى لا يغيب المسار والإجراءات والقيود." },
+                { "language": "tr", "text": "Anlaşılır, ama fazla belirsiz: kesin bir rica süreç, önlemler ve kısıtlamaların eksik kalmamasına yardımcı olur." },
+                { "language": "ru", "text": "Понятно, но слишком расплывчато: точная просьба помогает, чтобы ход, меры и ограничения не были упущены." },
+                { "language": "ckb", "text": "تێگەیشتنەکە ڕوونە، بەڵام زۆر ناڕوونە: داواکاریی ورد یارمەتی دەدات ڕەوت، هەنگاوەکان و سنووردارییەکان لەدەست نەچن." },
+                { "language": "kmr", "text": "Têgihiştinbar e, lê pir nezelal e: daxwazeke rast alîkar e ku pêvajo, gav û sînordarî kêm nemînin." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt ogólne: precyzyjna prośba pomaga, żeby nie zabrakło przebiegu, działań i ograniczeń." },
+                { "language": "ro", "text": "De înțeles, dar prea vag: o cerere precisă ajută ca evoluția, măsurile și limitările să nu lipsească." },
+                { "language": "sq", "text": "E kuptueshme, por tepër e paqartë: një kërkesë e saktë ndihmon që ecuria, masat dhe kufizimet të mos mungojnë." }
+              ],
+              "explanationKey": "b2-referral-avoid-vague-admin"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke, dann fasse ich zusammen: Ich bekomme eine Überweisung zur Orthopädie mit Verlauf, bisherigen Maßnahmen und aktuellen Einschränkungen. Für die Terminvereinbarung nutze ich die Zusammenfassung und melde mich wieder, wenn sich die Beschwerden deutlich verändern.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will summarize: I will receive a referral to orthopedics with the course so far, previous measures, and current limitations. For making the appointment I will use the summary and contact you again if the symptoms change clearly." },
+                { "language": "fa", "text": "ممنون، پس خلاصه می‌کنم: یک ارجاع به ارتوپدی دریافت می‌کنم که روند، اقدامات قبلی و محدودیت‌های فعلی را شامل می‌شود. برای گرفتن وقت از خلاصه استفاده می‌کنم و اگر علائم به‌طور واضح تغییر کردند دوباره تماس می‌گیرم." },
+                { "language": "ar", "text": "شكراً، إذن ألخص: سأحصل على إحالة إلى طب العظام تتضمن المسار والإجراءات السابقة والقيود الحالية. لحجز الموعد سأستخدم الملخص وسأتواصل مرة أخرى إذا تغيرت الأعراض بوضوح." },
+                { "language": "tr", "text": "Teşekkür ederim, o halde özetliyorum: Süreci, önceki önlemleri ve mevcut kısıtlamaları içeren bir ortopedi sevki alıyorum. Randevu almak için özeti kullanacağım ve şikayetler belirgin şekilde değişirse tekrar iletişime geçeceğim." },
+                { "language": "ru", "text": "Спасибо, тогда я резюмирую: я получу направление к ортопеду с описанием хода, прежних мер и текущих ограничений. Для записи на прием я использую резюме и снова свяжусь, если жалобы заметно изменятся." },
+                { "language": "ckb", "text": "سوپاس، کەواتە پوخت دەکەمەوە: ڕەوانەکردنێک بۆ ئۆرتۆپیدی وەردەگرم کە ڕەوت، هەنگاوە پێشووترەکان و سنووردارییە ئێستاکان لەخۆ دەگرێت. بۆ دیاریکردنی کات پوختەکە بەکاردەهێنم و ئەگەر نارەحەتییەکان بە ڕوونی گۆڕان، دووبارە پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez kurte dikim: ez şandineke bo ortopediyê distînim ku pêvajo, gavên berê û sînordariyên niha tê de ne. Ji bo girtina randevûyê ez kurteyê bi kar tînim û heke gilî bi eşkere biguherin dîsa têkilî datînim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie podsumuję: otrzymam skierowanie do ortopedii z przebiegiem, wcześniejszymi działaniami i obecnymi ograniczeniami. Do umówienia terminu użyję podsumowania i zgłoszę się ponownie, jeśli dolegliwości wyraźnie się zmienią." },
+                { "language": "ro", "text": "Mulțumesc, atunci rezum: primesc o trimitere la ortopedie cu evoluția, măsurile anterioare și limitările actuale. Pentru programare folosesc rezumatul și revin dacă simptomele se schimbă clar." },
+                { "language": "sq", "text": "Faleminderit, atëherë po përmbledh: marr një referim për ortopedi me ecurinë, masat e mëparshme dhe kufizimet aktuale. Për caktimin e takimit përdor përmbledhjen dhe kontaktoj përsëri nëse shqetësimet ndryshojnë dukshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Schlussantwort nennt Dokument, Inhalt, Terminorganisation und nächsten Kontaktgrund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the closing answer names the document, content, appointment organization, and next reason to contact the office." },
+                { "language": "fa", "text": "خوب است: پاسخ پایانی سند، محتوای آن، گرفتن وقت و دلیل تماس بعدی را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة الختامية الوثيقة والمحتوى وتنظيم الموعد وسبب التواصل التالي." },
+                { "language": "tr", "text": "İyi: kapanış cevabı belgeyi, içeriği, randevu düzenlemeyi ve sonraki iletişim nedenini belirtir." },
+                { "language": "ru", "text": "Хорошо: заключительный ответ называет документ, содержание, организацию приема и следующую причину для связи." },
+                { "language": "ckb", "text": "باشە: وەڵامی کۆتایی بەڵگەنامە، ناوەڕۆک، ڕێکخستنی کات و هۆکاری پەیوەندی داهاتوو دەستنیشان دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiva dawî belge, naverok, rêkxistina randevûyê û sedema têkiliya paşê dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź końcowa podaje dokument, treść, organizację terminu i kolejny powód kontaktu." },
+                { "language": "ro", "text": "Bine: răspunsul final numește documentul, conținutul, organizarea programării și următorul motiv de contact." },
+                { "language": "sq", "text": "Mirë: përgjigjja përfundimtare përmend dokumentin, përmbajtjen, organizimin e takimit dhe arsyen e ardhshme të kontaktit." }
+              ],
+              "explanationKey": "b2-referral-final-summary"
+            },
+            {
+              "id": "weak-missing-summary-content",
+              "text": "Danke, dann mache ich einfach einen Termin bei der Orthopädie.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will simply make an appointment with orthopedics." },
+                { "language": "fa", "text": "ممنون، پس فقط یک وقت ارتوپدی می‌گیرم." },
+                { "language": "ar", "text": "شكراً، إذن سأحجز ببساطة موعداً في عيادة العظام." },
+                { "language": "tr", "text": "Teşekkür ederim, o zaman sadece ortopediden randevu alırım." },
+                { "language": "ru", "text": "Спасибо, тогда я просто запишусь к ортопеду." },
+                { "language": "ckb", "text": "سوپاس، کەواتە تەنها کاتێک لە ئۆرتۆپیدی دیاری دەکەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez tenê ji ortopediyê randevûyekê digirim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie po prostu umówię termin w ortopedii." },
+                { "language": "ro", "text": "Mulțumesc, atunci fac pur și simplu o programare la ortopedie." },
+                { "language": "sq", "text": "Faleminderit, atëherë thjesht do të caktoj një takim te ortopedia." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Die Antwort erwähnt den Termin, aber nicht den Inhalt der Überweisung oder wann erneute Rückmeldung nötig ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: the answer mentions the appointment, but not the content of the referral or when renewed contact is necessary." },
+                { "language": "fa", "text": "ناقص است: پاسخ وقت را ذکر می‌کند، اما محتوای ارجاع یا زمان تماس دوباره را نمی‌گوید." },
+                { "language": "ar", "text": "غير كامل: تذكر الإجابة الموعد، لكن لا تذكر محتوى الإحالة أو متى يلزم التواصل مرة أخرى." },
+                { "language": "tr", "text": "Eksik: cevap randevuyu belirtir, ama sevkin içeriğini veya ne zaman tekrar iletişim gerektiğini söylemez." },
+                { "language": "ru", "text": "Неполно: ответ упоминает прием, но не содержание направления и не то, когда нужна повторная связь." },
+                { "language": "ckb", "text": "ناتەواوە: وەڵامەکە کاتەکە ناو دەبات، بەڵام ناوەڕۆکی ڕەوانەکردن یان کەی پەیوەندیی دووبارە پێویستە ناڵێت." },
+                { "language": "kmr", "text": "Netemam e: bersiv randevûyê dibêje, lê naveroka şandinê an kengê têkiliya nû pêwîst e nabêje." },
+                { "language": "pl", "text": "Niepełne: odpowiedź wspomina termin, ale nie treść skierowania ani kiedy potrzebny jest ponowny kontakt." },
+                { "language": "ro", "text": "Incomplet: răspunsul menționează programarea, dar nu conținutul trimiterii sau când este necesar un nou contact." },
+                { "language": "sq", "text": "E paplotë: përgjigjja përmend takimin, por jo përmbajtjen e referimit ose kur nevojitet kontakt i ri." }
+              ],
+              "explanationKey": "b2-referral-summary-complete"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Eine gute Begründung für eine Überweisung beginnt mit Verlauf, bisherigen Maßnahmen und konkreten Einschränkungen.",
+          "translations": [
+            { "language": "en", "text": "A good justification for a referral starts with the course so far, previous measures, and concrete limitations." },
+            { "language": "fa", "text": "دلیل‌آوری خوب برای ارجاع با روند، اقدامات قبلی و محدودیت‌های مشخص شروع می‌شود." },
+            { "language": "ar", "text": "تبرير جيد للإحالة يبدأ بالمسار حتى الآن والإجراءات السابقة والقيود المحددة." },
+            { "language": "tr", "text": "Bir sevk için iyi gerekçe, süreç, önceki önlemler ve somut kısıtlamalarla başlar." },
+            { "language": "ru", "text": "Хорошее обоснование направления начинается с хода, прежних мер и конкретных ограничений." },
+            { "language": "ckb", "text": "هۆکار هێنانەوەی باش بۆ ڕەوانەکردن بە ڕەوت، هەنگاوە پێشووترەکان و سنووردارییە دیاریکراوەکان دەست پێ دەکات." },
+            { "language": "kmr", "text": "Sedema baş ji bo şandinê bi pêvajo, gavên berê û sînordariyên zehf diyar dest pê dike." },
+            { "language": "pl", "text": "Dobre uzasadnienie skierowania zaczyna się od przebiegu, wcześniejszych działań i konkretnych ograniczeń." },
+            { "language": "ro", "text": "O justificare bună pentru o trimitere începe cu evoluția, măsurile anterioare și limitările concrete." },
+            { "language": "sq", "text": "Një arsyetim i mirë për referim fillon me ecurinë, masat e mëparshme dhe kufizimet konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "safety-note",
+          "text": "In medizinischen Gesprächen ist eine Bitte um Einschätzung stärker und sicherer als eine selbst behauptete Diagnose.",
+          "translations": [
+            { "language": "en", "text": "In medical conversations, a request for assessment is stronger and safer than a self-claimed diagnosis." },
+            { "language": "fa", "text": "در گفت‌وگوهای پزشکی، درخواست ارزیابی قوی‌تر و امن‌تر از ادعای تشخیص توسط خود فرد است." },
+            { "language": "ar", "text": "في المحادثات الطبية يكون طلب التقييم أقوى وأكثر أماناً من ادعاء تشخيص ذاتي." },
+            { "language": "tr", "text": "Tıbbi konuşmalarda değerlendirme istemek, kendi kendine tanı iddiasından daha güçlü ve güvenlidir." },
+            { "language": "ru", "text": "В медицинских разговорах просьба об оценке сильнее и безопаснее, чем самостоятельно заявленный диагноз." },
+            { "language": "ckb", "text": "لە گفتوگۆ پزیشکییەکاندا داوای هەڵسەنگاندن بەهێزتر و سەلامەتترە لە دەستنیشانکردنی بانگەشەکراوی خۆسەرانە." },
+            { "language": "kmr", "text": "Di axaftinên bijîşkî de daxwaza nirxandinê ji teşxîsa bi serê xwe bihêztir û ewletir e." },
+            { "language": "pl", "text": "W rozmowach medycznych prośba o ocenę jest silniejsza i bezpieczniejsza niż samodzielnie stawiana diagnoza." },
+            { "language": "ro", "text": "În conversațiile medicale, cererea de evaluare este mai puternică și mai sigură decât un diagnostic afirmat de pacient." },
+            { "language": "sq", "text": "Në bisedat mjekësore, kërkesa për vlerësim është më e fortë dhe më e sigurt se një diagnozë e shpallur vetë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "administrative-language",
+          "text": "Für eine Überweisung hilft präzise Verwaltungssprache: seit wann, was wurde versucht, was schränkt aktuell ein.",
+          "translations": [
+            { "language": "en", "text": "For a referral, precise administrative language helps: since when, what was tried, what currently limits daily life." },
+            { "language": "fa", "text": "برای ارجاع، زبان اداری دقیق کمک می‌کند: از چه زمانی، چه چیزی امتحان شده، و اکنون چه چیزی محدود می‌کند." },
+            { "language": "ar", "text": "للإحالة تساعد اللغة الإدارية الدقيقة: منذ متى، ما الذي جُرّب، وما الذي يقيّد حالياً." },
+            { "language": "tr", "text": "Sevk için kesin idari dil yardımcı olur: ne zamandan beri, ne denendi, şu anda neyi kısıtlıyor." },
+            { "language": "ru", "text": "Для направления помогает точный административный язык: с какого времени, что пробовали, что сейчас ограничивает." },
+            { "language": "ckb", "text": "بۆ ڕەوانەکردن زمانی کارگێڕیی ورد یارمەتی دەدات: لە کەیەوە، چی تاقیکراوەتەوە، چی ئێستا سنووردار دەکات." },
+            { "language": "kmr", "text": "Ji bo şandinê zimanê rêveberî yê rast alîkar e: ji kengê ve, çi hatiye ceribandin, niha çi sînordar dike." },
+            { "language": "pl", "text": "Przy skierowaniu pomaga precyzyjny język administracyjny: od kiedy, co próbowano, co obecnie ogranicza." },
+            { "language": "ro", "text": "Pentru o trimitere ajută limbajul administrativ precis: de când, ce s-a încercat, ce limitează acum." },
+            { "language": "sq", "text": "Për një referim ndihmon gjuha administrative e saktë: që kur, çfarë është provuar, çfarë kufizon tani." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Eine gute Schlusszusammenfassung nennt die Überweisung, ihren Inhalt, die Terminorganisation und wann erneute Rückmeldung nötig ist.",
+          "translations": [
+            { "language": "en", "text": "A good closing summary names the referral, its content, appointment organization, and when renewed contact is necessary." },
+            { "language": "fa", "text": "یک خلاصه پایانی خوب ارجاع، محتوای آن، گرفتن وقت و زمان نیاز به تماس دوباره را بیان می‌کند." },
+            { "language": "ar", "text": "ملخص ختامي جيد يذكر الإحالة ومحتواها وتنظيم الموعد ومتى يلزم التواصل مرة أخرى." },
+            { "language": "tr", "text": "İyi bir kapanış özeti sevki, içeriğini, randevu düzenlemeyi ve ne zaman tekrar iletişim gerektiğini belirtir." },
+            { "language": "ru", "text": "Хорошее заключительное резюме называет направление, его содержание, организацию приема и когда нужна повторная связь." },
+            { "language": "ckb", "text": "پوختەی کۆتایی باش ڕەوانەکردن، ناوەڕۆکەکەی، ڕێکخستنی کات و کەی پەیوەندیی دووبارە پێویستە ناو دەبات." },
+            { "language": "kmr", "text": "Kurtekirina dawî ya baş şandinê, naveroka wê, rêkxistina randevûyê û kengê têkiliya nû pêwîst e dibêje." },
+            { "language": "pl", "text": "Dobre podsumowanie końcowe wymienia skierowanie, jego treść, organizację terminu i kiedy potrzebny jest ponowny kontakt." },
+            { "language": "ro", "text": "Un rezumat final bun numește trimiterea, conținutul ei, organizarea programării și când este necesar un nou contact." },
+            { "language": "sq", "text": "Një përmbledhje e mirë përfundimtare përmend referimin, përmbajtjen e tij, organizimin e takimit dhe kur nevojitet kontakt i ri." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3370
+    }
+  ]
+}

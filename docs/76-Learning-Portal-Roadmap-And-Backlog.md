@@ -49,6 +49,8 @@ Last updated: 2026-05-25.
 - The Web legal/compliance baseline now exists in `docs/86-Web-Legal-Compliance-Baseline.md`. Public Web pages exist for Terms, Privacy, Legal Notice/Impressum, Cookie/Storage Notice, and Contact, with footer links and a cookie/storage inventory at `artifacts/validation/web-cookie-storage-inventory.md`. Current checked-in Web behavior uses only necessary/preference storage and first-party PWA cache, so no cookie banner is required unless non-essential storage is added later.
 - The reviewed Everyday Expressions packages imported into `darwinlingua_shared` on 2026-05-25 with zero import warnings. After the first mixed supplement import, the shared database contains 431 Expression records: 426 active and 5 draft ordinary-literal archive findings. Public-routed Web/API smoke returned HTTP 200 for `/expressions`, `/expressions/hals-und-beinbruch`, `/expressions/die-faeden-ziehen`, `/api/catalog/expressions`, `/api/catalog/expressions/hals-und-beinbruch?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Groschen&resultType=expression`. The public admin report endpoint now requires credentials and returns 401 without them; admin report query tests and the strict content audit remain green, with zero ordinary-literal leakage, zero missing eligibility metadata, zero low example counts, zero missing translations, zero unresolved word/content links, and zero missing risky-content warnings.
 - Roleplay terminology is now split into three surfaces: Dialogue-derived Roleplay at `/dialogues/{slug}/roleplay`, Event Preparation `roleplayPrompts`, and standalone `RoleplayScenario` packages at `/roleplays`. Standalone RoleplayScenario infrastructure now has a Web-first pilot-ready implementation slice: parser support, import validation, shared-content persistence, Web API list/detail routes, Web list/detail pages, Unified Search result support, and admin count visibility. The first standalone pilot package exists at `content/learning-portal/roleplays/packages/roleplays-a1-b2-pilot-v1.json` with 10 A1-B2 scenarios, deterministic answer choices/static feedback, and safe image placeholders. It imported into `darwinlingua_shared` on 2026-05-25 with zero warnings and local Web/API/search smoke passed. Bulk roleplay generation remains blocked.
+- Exercise Engine is complete-for-v1 on Web/API. Its first small real package at `content/learning-portal/exercises/packages/exercises-a1-a2-core-01-v1.json` contains 12 deterministic A1/A2 exercises and one exercise set covering all initial exercise shapes. It now includes learner-helper translations for `en`, `fa`, `ar`, `tr`, `ru`, `ckb`, `kmr`, `pl`, `ro`, and `sq`; it imported into `darwinlingua_shared` on 2026-05-31 with zero warnings after the PostgreSQL shared-database Exercise retrofit and localization columns were added.
+- Course Lessons now have a Web/API v1 foundation with German-first source fields, learner-helper translations, PostgreSQL retrofit support, Web/API localized projection, and admin quality counters for missing course translations. The first small A1 pilot package exists at `content/learning-portal/courses/packages/course-a1-foundation-pilot-v1.json` with 1 path, 1 module, and 5 lessons; it imported into `darwinlingua_shared` on 2026-05-31 with zero warnings. Local Course Web/API smoke passed for list, course detail, lesson detail, Persian API projection endpoints, and the latest lesson detail route. Because Course imports replace an existing path tree, follow-up batches for the same path are cumulative and must retain earlier reviewed lessons. Course planning is now captured for every CEFR level before further content generation: `artifacts/planning/course-a1-lesson-candidates.md`, `artifacts/planning/course-a2-lesson-candidates.md`, `artifacts/planning/course-b1-lesson-candidates.md`, `artifacts/planning/course-b2-lesson-candidates.md`, `artifacts/planning/course-c1-lesson-candidates.md`, and `artifacts/planning/course-c2-lesson-candidates.md`.
 - Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, and suppression handling. Production launch still requires operational Brevo configuration outside source control, verified sender domain, SPF/DKIM/DMARC, webhook secret, and provider DPA review.
 - Mobile/MAUI parity remains later-stage work. Do not modify mobile learning content surfaces until Web/API contracts, imports, rendering, search, admin visibility, and tests are stable.
 - Web and WebApi production persistence is PostgreSQL-only. SQLite is allowed only for mobile/local surfaces where SQLite is the actual runtime store; it must not drive Web/API production query behavior.
@@ -59,8 +61,9 @@ Immediate next order:
 2. Keep the Web-side Sensitive Educational Language and registration/legal acknowledgement gates covered by tests before adding more sensitive content.
 3. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
 4. Review the first RoleplayScenario pilot in Web and keep any further standalone Roleplay content to small reviewed batches with import and smoke gates.
-5. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
-6. Start Exercises only after Grammar, Conversation, and Expressions are stable enough to link to.
+5. Review the completed A1-C2 Course planning files, then continue Course Lessons only as small reviewed cumulative batches with German source, learner-helper translations, import, count verification, and admin report checks.
+6. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
+7. Keep Course Lesson content small until Web rendering, localized helper display, linked content behavior, and admin quality counters stay green across several imports.
 
 ---
 
@@ -852,7 +855,8 @@ The portal should track learner progress across content types without mixing use
 - [x] migrate Web/API-critical tests away from SQLite-backed fixtures when they validate PostgreSQL-only production behavior
   - Progress: WebApi service tests, Identity bootstrapper tests, RoleplayScenario repository/search tests, admin-report tests, server-content manifest/delivery tests, and catalog publication lifecycle tests now run against temporary PostgreSQL databases. Web/API production code rejects or avoids SQLite runtime branches. SQLite remains only for mobile/local surfaces where SQLite is the actual runtime store, not as a Web/API dependency.
   - Rule: Do not change production Web/API queries to satisfy SQLite-backed tests. PostgreSQL-specific behavior must be covered with PostgreSQL integration tests.
-- [ ] add deeper RoleplayScenario admin quality counters for missing translations, unpublished drafts, missing image assets, and invalid playable sequence after more reviewed packages exist
+- [x] add deeper RoleplayScenario admin quality counters for missing translations, unpublished drafts, missing image assets, and invalid playable sequence after more reviewed packages exist
+  - Progress: system report now counts RoleplayScenario missing translations, unpublished drafts, missing required image assets, missing answer choices/static feedback, and invalid playable sequences; WebApi admin report tests cover the counters.
 - [ ] add broader validation coverage for every rich block type after more reviewed pilot packages are available
 - [ ] keep mobile parity tracked after Web sign-off
 
@@ -890,7 +894,8 @@ The portal should track learner progress across content types without mixing use
 - [x] bound and validate submitted-answer JSON before evaluation or persistence
 - [x] rate-limit exercise evaluation and attempt endpoints
 - [x] broaden runner UI beyond generic JSON submission for initial choice, single-answer, error-correction, sentence-ordering, and matching inputs
-- [ ] add tests for every initial exercise type after first real exercise package is available
+- [x] add tests for every initial exercise type after first real exercise package is available
+  - Progress: first real package `exercises-a1-a2-core-01-v1.json` imports into shared PostgreSQL with 12 translated exercises and one translated exercise set; evaluator coverage now verifies correct and plausible wrong answer shapes for all 12 initial deterministic exercise types.
 
 ### Phase 7.5: Course Lessons And Learning Paths
 
@@ -971,7 +976,7 @@ The portal should track learner progress across content types without mixing use
 - [x] add content quality reports
   - Progress: Admin Reports includes Learning Portal quality metrics and issue samples.
 - [x] add reports for missing links, unresolved words, missing exercises, missing translations, and unpublished drafts
-  - Progress: system report summarizes unresolved linked words, unresolved cross-content references, missing translations, unpublished drafts, grammar topics without exercises, and lessons without exercise sets.
+  - Progress: system report summarizes unresolved linked words, unresolved cross-content references, missing translations, unpublished drafts, grammar topics without exercises, lessons without exercise sets, and RoleplayScenario quality counters for missing translations, unpublished drafts, missing required image assets, missing answer choices/static feedback, and invalid playable sequences.
 - [x] add seed coverage reports per CEFR/module
   - Progress: coverage tables include CEFR and course-module counts for implemented modules.
 - [ ] add import validation summaries per Phase 7 module package after import diagnostics are expanded

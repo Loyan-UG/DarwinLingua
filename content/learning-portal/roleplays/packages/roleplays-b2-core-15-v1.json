@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-15-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 15 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 15",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-kundenwunsch-realistisch-einordnen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Kundenwunsch realistisch einordnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Assessing a customer request realistically" },
+        { "language": "fa", "text": "ارزیابی واقع‌بینانه خواسته مشتری" },
+        { "language": "ar", "text": "تقييم طلب عميل بشكل واقعي" },
+        { "language": "tr", "text": "Bir müşteri isteğini gerçekçi değerlendirmek" },
+        { "language": "ru", "text": "Реалистично оценить запрос клиента" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی داواکارییەکی کڕیار بە شێوەی ڕاستەقینە" },
+        { "language": "kmr", "text": "Nirxandina daxwaza xerîdar bi awayekî rastîn" },
+        { "language": "pl", "text": "Realistyczna ocena życzenia klienta" },
+        { "language": "ro", "text": "Evaluarea realistă a unei solicitări a clientului" },
+        { "language": "sq", "text": "Vlerësimi realist i kërkesës së klientit" }
+      ],
+      "description": "Ein Kunde wünscht eine umfangreiche Funktion sehr kurzfristig. Du sollst intern erklären, warum der Wunsch verständlich, aber in der gewünschten Form riskant ist, und eine tragfähige Alternative vorbereiten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "A customer wants an extensive feature on very short notice. You should explain internally why the request is understandable but risky in the requested form, and prepare a viable alternative." },
+        { "language": "fa", "text": "یک مشتری یک قابلیت گسترده را در زمان بسیار کوتاه می‌خواهد. باید در داخل تیم توضیح بدهی چرا این خواسته قابل فهم است اما در شکل درخواستی پرریسک است، و یک جایگزین قابل اجرا آماده کنی." },
+        { "language": "ar", "text": "يريد عميل ميزة واسعة خلال وقت قصير جداً. ينبغي أن تشرح داخلياً لماذا الطلب مفهوم لكنه محفوف بالمخاطر بالشكل المطلوب، وأن تجهز بديلاً قابلاً للتنفيذ." },
+        { "language": "tr", "text": "Bir müşteri çok kısa sürede kapsamlı bir özellik istiyor. İsteğin anlaşılır olduğunu ama istenen biçimiyle riskli olduğunu ekip içinde açıklamalı ve uygulanabilir bir alternatif hazırlamalısın." },
+        { "language": "ru", "text": "Клиент хочет крупную функцию в очень короткий срок. Нужно внутри команды объяснить, почему запрос понятен, но рискован в желаемом виде, и подготовить реалистичную альтернативу." },
+        { "language": "ckb", "text": "کڕیارێک تایبەتمەندییەکی گەورە لە ماوەیەکی زۆر کورتدا دەوێت. دەبێت لە ناوخۆی تیمدا ڕوون بکەیتەوە بۆچی داواکارییەکە تێگەیشتنی هەیە، بەڵام بەو شێوە داواکراوە مەترسیدارە، و جێگرەوەیەکی کرداری ئامادە بکەیت." },
+        { "language": "kmr", "text": "Xerîdarek di demeke pir kurt de taybetmendiyeke fireh dixwaze. Divê tu di nav tîmê de rave bikî çima daxwaz tê fêmkirin, lê bi awayê xwestî xeternak e, û alternatîveke bikêr amade bikî." },
+        { "language": "pl", "text": "Klient chce rozbudowanej funkcji w bardzo krótkim czasie. Masz wewnętrznie wyjaśnić, dlaczego prośba jest zrozumiała, ale w oczekiwanej formie ryzykowna, oraz przygotować realną alternatywę." },
+        { "language": "ro", "text": "Un client dorește o funcție amplă într-un termen foarte scurt. Trebuie să explici intern de ce solicitarea este de înțeles, dar riscantă în forma cerută, și să pregătești o alternativă realizabilă." },
+        { "language": "sq", "text": "Një klient kërkon një funksion të gjerë brenda një afati shumë të shkurtër. Duhet të shpjegosh brenda ekipit pse kërkesa është e kuptueshme, por e rrezikshme në formën e kërkuar, dhe të përgatitësh një alternativë të realizueshme." }
+      ],
+      "learnerGoal": "Ordne den Kundenwunsch realistisch ein: Zeige Verständnis, benenne Risiken, trenne Muss- und Kann-Anforderungen, schlage eine Zwischenlösung vor und sichere die nächsten Informationen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Assess the customer request realistically: show understanding, name risks, separate must-have and optional requirements, propose an interim solution, and secure the next information." },
+        { "language": "fa", "text": "خواسته مشتری را واقع‌بینانه ارزیابی کن: همدلی نشان بده، ریسک‌ها را نام ببر، نیازهای ضروری و اختیاری را جدا کن، یک راه‌حل موقت پیشنهاد بده و اطلاعات بعدی را مشخص کن." },
+        { "language": "ar", "text": "قيّم طلب العميل بشكل واقعي: أظهر التفهم، واذكر المخاطر، وافصل بين المتطلبات الضرورية والاختيارية، واقترح حلاً مؤقتاً، وثبّت المعلومات التالية المطلوبة." },
+        { "language": "tr", "text": "Müşteri isteğini gerçekçi değerlendir: anlayış göster, riskleri adlandır, zorunlu ve isteğe bağlı gereksinimleri ayır, geçici bir çözüm öner ve sonraki bilgileri netleştir." },
+        { "language": "ru", "text": "Оцени запрос клиента реалистично: покажи понимание, назови риски, отдели обязательные требования от желательных, предложи промежуточное решение и зафиксируй нужную следующую информацию." },
+        { "language": "ckb", "text": "داواکاریی کڕیار بە شێوەی ڕاستەقینە هەڵبسەنگێنە: تێگەیشتن پیشان بدە، مەترسییەکان ناو ببرە، پێداویستییە زۆر پێویستەکان لە خواستە زیادەکان جیا بکەرەوە، چارەسەرێکی کاتی پێشنیار بکە و زانیارییەکانی هەنگاوی داهاتوو دیاری بکە." },
+        { "language": "kmr", "text": "Daxwaza xerîdar bi rastî binirxîne: têgihiştin nîşan bide, xeteran binav bike, hewcedariyên pêwîst ji yên bijartî veqetîne, çareseriyeke demkî pêşniyar bike û agahiyên paşîn zelal bike." },
+        { "language": "pl", "text": "Oceń życzenie klienta realistycznie: okaż zrozumienie, nazwij ryzyka, oddziel wymagania konieczne od opcjonalnych, zaproponuj rozwiązanie przejściowe i ustal potrzebne kolejne informacje." },
+        { "language": "ro", "text": "Evaluează realist solicitarea clientului: arată înțelegere, numește riscurile, separă cerințele obligatorii de cele opționale, propune o soluție intermediară și clarifică informațiile următoare." },
+        { "language": "sq", "text": "Vlerëso realist kërkesën e klientit: trego mirëkuptim, përmend rreziqet, ndaj kërkesat e domosdoshme nga ato opsionale, propozo një zgjidhje të përkohshme dhe siguro informacionet e radhës." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "customer-service"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "service-interaction"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3150,
+      "roles": [
+        {
+          "roleKey": "project-lead",
+          "displayName": "Projektleitung",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مدیر پروژه" },
+            { "language": "ar", "text": "مديرة المشروع" },
+            { "language": "tr", "text": "Proje yöneticisi" },
+            { "language": "ru", "text": "Руководитель проекта" },
+            { "language": "ckb", "text": "بەڕێوەبەری پڕۆژە" },
+            { "language": "kmr", "text": "Rêvebera projeyê" },
+            { "language": "pl", "text": "Kierowniczka projektu" },
+            { "language": "ro", "text": "Coordonatoarea proiectului" },
+            { "language": "sq", "text": "Drejtuesja e projektit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kundenbetreuer",
+          "translations": [
+            { "language": "en", "text": "Customer account manager" },
+            { "language": "fa", "text": "مسئول ارتباط با مشتری" },
+            { "language": "ar", "text": "مسؤول متابعة العملاء" },
+            { "language": "tr", "text": "Müşteri sorumlusu" },
+            { "language": "ru", "text": "Менеджер по работе с клиентами" },
+            { "language": "ckb", "text": "بەرپرسی پەیوەندیی کڕیار" },
+            { "language": "kmr", "text": "Berpirsê têkiliya xerîdar" },
+            { "language": "pl", "text": "Opiekun klienta" },
+            { "language": "ro", "text": "Responsabil de client" },
+            { "language": "sq", "text": "Përgjegjësi për klientin" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "project-lead",
+          "baseText": "Der Kunde möchte die neue Auswertungsfunktion schon vor der Vorstandssitzung in zwei Wochen haben. Können Sie den Wunsch kurz einordnen?",
+          "translations": [
+            { "language": "en", "text": "The customer wants the new reporting feature before the board meeting in two weeks. Can you briefly assess the request?" },
+            { "language": "fa", "text": "مشتری می‌خواهد قابلیت جدید گزارش‌گیری را قبل از جلسه هیئت‌مدیره در دو هفته آینده داشته باشد. می‌توانید این خواسته را کوتاه ارزیابی کنید؟" },
+            { "language": "ar", "text": "يريد العميل وظيفة التحليل الجديدة قبل اجتماع مجلس الإدارة بعد أسبوعين. هل يمكنك تقييم الطلب بإيجاز؟" },
+            { "language": "tr", "text": "Müşteri yeni raporlama özelliğini iki hafta sonraki yönetim kurulu toplantısından önce istiyor. Bu isteği kısaca değerlendirebilir misiniz?" },
+            { "language": "ru", "text": "Клиент хочет новую функцию отчётности до заседания правления через две недели. Можете кратко оценить этот запрос?" },
+            { "language": "ckb", "text": "کڕیار دەیەوێت تایبەتمەندیی نوێی ڕاپۆرتکردن پێش کۆبوونەوەی ئەنجومەنی بەڕێوەبردن لە دوو هەفتەی داهاتوودا هەبێت. دەتوانیت بە کورتی داواکارییەکە هەڵبسەنگێنیت؟" },
+            { "language": "kmr", "text": "Xerîdar dixwaze taybetmendiya nû ya raporkirinê berî civîna rêveberiyê ya di du hefteyan de hebe. Tu dikarî daxwazê bi kurtî binirxînî?" },
+            { "language": "pl", "text": "Klient chce mieć nową funkcję raportowania jeszcze przed posiedzeniem zarządu za dwa tygodnie. Czy może Pan krótko ocenić tę prośbę?" },
+            { "language": "ro", "text": "Clientul dorește noua funcție de raportare înainte de ședința conducerii de peste două săptămâni. Puteți evalua pe scurt solicitarea?" },
+            { "language": "sq", "text": "Klienti dëshiron funksionin e ri të raportimit para mbledhjes së bordit pas dy javësh. Mund ta vlerësoni shkurt këtë kërkesë?" }
+          ],
+          "function": "ask-for-assessment"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Der Wunsch ist nachvollziehbar, weil der Kunde vor der Sitzung belastbare Zahlen zeigen möchte. In der vollständigen Form betrifft die Funktion aber Datenquellen, Rechte und Tests. Deshalb sollten wir sie nicht einfach zusagen.",
+          "translations": [
+            { "language": "en", "text": "The request is understandable because the customer wants to show reliable figures before the meeting. In its full form, however, the feature affects data sources, permissions, and testing. That is why we should not simply promise it." },
+            { "language": "fa", "text": "این خواسته قابل فهم است، چون مشتری می‌خواهد قبل از جلسه عددهای قابل اتکا نشان بدهد. اما در شکل کامل، این قابلیت به منابع داده، دسترسی‌ها و تست‌ها مربوط می‌شود. برای همین نباید آن را ساده قول بدهیم." },
+            { "language": "ar", "text": "الطلب مفهوم، لأن العميل يريد عرض أرقام موثوقة قبل الاجتماع. لكن الوظيفة بصورتها الكاملة تمس مصادر البيانات والصلاحيات والاختبارات. لذلك لا ينبغي أن نعد بها ببساطة." },
+            { "language": "tr", "text": "İstek anlaşılır, çünkü müşteri toplantıdan önce güvenilir rakamlar göstermek istiyor. Ancak özellik tam hâliyle veri kaynaklarını, yetkileri ve testleri etkiliyor. Bu yüzden bunu kolayca söz vermemeliyiz." },
+            { "language": "ru", "text": "Запрос понятен, потому что клиент хочет показать надёжные цифры перед заседанием. Но в полной версии функция затрагивает источники данных, права доступа и тестирование. Поэтому нам не стоит просто обещать её." },
+            { "language": "ckb", "text": "داواکارییەکە تێگەیشتنی هەیە، چونکە کڕیار دەیەوێت پێش کۆبوونەوەکە ژمارەی پشتپێبەستراو پیشان بدات. بەڵام بە شێوەی تەواو، تایبەتمەندییەکە پەیوەندی بە سەرچاوەکانی داتا، مۆڵەتەکان و تاقیکردنەوەکانەوە هەیە. بۆیە نابێت بە ئاسانی بەڵێنی بدەین." },
+            { "language": "kmr", "text": "Daxwaz tê fêmkirin, ji ber ku xerîdar dixwaze berî civînê hejmarên pêbawer nîşan bide. Lê di awayê temam de ev taybetmendî bi çavkaniyên daneyan, destûran û ceribandinan ve girêdayî ye. Ji ber vê yekê divê em wê bi hêsanî soz nedin." },
+            { "language": "pl", "text": "Prośba jest zrozumiała, bo klient chce przed posiedzeniem pokazać wiarygodne liczby. W pełnej wersji funkcja dotyczy jednak źródeł danych, uprawnień i testów. Dlatego nie powinniśmy jej po prostu obiecać." },
+            { "language": "ro", "text": "Solicitarea este de înțeles, deoarece clientul vrea să prezinte cifre fiabile înainte de ședință. În forma completă însă, funcția implică surse de date, drepturi de acces și teste. De aceea nu ar trebui să o promitem pur și simplu." },
+            { "language": "sq", "text": "Kërkesa është e kuptueshme, sepse klienti dëshiron të tregojë shifra të besueshme para mbledhjes. Por në formën e plotë, funksioni prek burimet e të dhënave, të drejtat e qasjes dhe testimet. Prandaj nuk duhet ta premtojmë thjesht." }
+          ],
+          "function": "show-empathy-and-risk",
+          "expectedLearnerAction": "Acknowledge the customer need and name concrete feasibility risks."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "project-lead",
+          "baseText": "Was genau macht die vollständige Umsetzung in diesem Zeitraum so riskant?",
+          "translations": [
+            { "language": "en", "text": "What exactly makes full implementation so risky within this timeframe?" },
+            { "language": "fa", "text": "دقیقاً چه چیزی اجرای کامل را در این بازه زمانی تا این حد پرریسک می‌کند؟" },
+            { "language": "ar", "text": "ما الذي يجعل التنفيذ الكامل في هذه المدة محفوفاً بالمخاطر تحديداً؟" },
+            { "language": "tr", "text": "Tam uygulamayı bu süre içinde bu kadar riskli yapan tam olarak nedir?" },
+            { "language": "ru", "text": "Что именно делает полную реализацию в эти сроки настолько рискованной?" },
+            { "language": "ckb", "text": "چی بە وردی وای لە جێبەجێکردنی تەواو لەم ماوەیەدا دەکات ئەوەندە مەترسیدار بێت؟" },
+            { "language": "kmr", "text": "Bi rastî çi cîbicîkirina temam di vê demê de ewqas xeternak dike?" },
+            { "language": "pl", "text": "Co dokładnie sprawia, że pełna realizacja w tym czasie jest tak ryzykowna?" },
+            { "language": "ro", "text": "Ce anume face implementarea completă atât de riscantă în acest interval?" },
+            { "language": "sq", "text": "Çfarë saktësisht e bën zbatimin e plotë kaq të rrezikshëm brenda këtij afati?" }
+          ],
+          "function": "ask-for-specific-risk"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Vor allem ist noch nicht klar, welche Kennzahlen verbindlich sind und wer welche Auswertung sehen darf. Wenn wir das überspringen, liefern wir vielleicht pünktlich, aber mit falschen Zahlen oder zu breiten Zugriffsrechten.",
+          "translations": [
+            { "language": "en", "text": "Most importantly, it is not yet clear which metrics are binding and who may see which report. If we skip that, we might deliver on time, but with wrong figures or access rights that are too broad." },
+            { "language": "fa", "text": "مهم‌تر از همه هنوز روشن نیست کدام شاخص‌ها الزام‌آور هستند و چه کسی اجازه دارد کدام گزارش را ببیند. اگر از این بخش عبور کنیم، شاید به‌موقع تحویل بدهیم، اما با عددهای اشتباه یا دسترسی‌های بیش از حد گسترده." },
+            { "language": "ar", "text": "الأهم أن المؤشرات الملزمة ومن يحق له رؤية أي تقرير ليسا واضحين بعد. إذا تجاوزنا ذلك، فقد نسلّم في الموعد، لكن بأرقام خاطئة أو بصلاحيات وصول واسعة أكثر من اللازم." },
+            { "language": "tr", "text": "En önemlisi, hangi göstergelerin bağlayıcı olduğu ve kimin hangi raporu görebileceği henüz net değil. Bunu atlarsak zamanında teslim edebiliriz, ama yanlış rakamlarla veya çok geniş erişim haklarıyla." },
+            { "language": "ru", "text": "Прежде всего, ещё не ясно, какие показатели являются обязательными и кто какие отчёты может видеть. Если мы это пропустим, возможно, поставим вовремя, но с неверными цифрами или слишком широкими правами доступа." },
+            { "language": "ckb", "text": "لە هەموو گرنگتر، هێشتا ڕوون نییە کام پێوەرەکان پابەندن و کێ دەتوانێت کام ڕاپۆرت ببینێت. ئەگەر ئەمە تێپەڕێنین، ڕەنگە لە کاتدا تحویل بدەین، بەڵام بە ژمارەی هەڵە یان مۆڵەتی دەستگەیشتنی زۆر فراوان." },
+            { "language": "kmr", "text": "Herî girîng, hêj ne zelal e ka kîjan pîvan pêgir in û kî dikare kîjan raporê bibîne. Ger em vê derbas bikin, dibe ku di wextê xwe de radest bikin, lê bi hejmarên şaş an destûrên gihîştinê yên pir fireh." },
+            { "language": "pl", "text": "Przede wszystkim nie jest jeszcze jasne, które wskaźniki są wiążące i kto może widzieć które zestawienie. Jeśli to pominiemy, być może dostarczymy na czas, ale z błędnymi liczbami albo zbyt szerokimi uprawnieniami." },
+            { "language": "ro", "text": "În primul rând, nu este încă clar ce indicatori sunt obligatorii și cine are voie să vadă ce raport. Dacă sărim peste asta, poate livrăm la timp, dar cu cifre greșite sau drepturi de acces prea largi." },
+            { "language": "sq", "text": "Para së gjithash, ende nuk është e qartë cilët tregues janë detyrues dhe kush mund të shohë cilin raport. Nëse e anashkalojmë këtë, mund të dorëzojmë në kohë, por me shifra të gabuara ose me të drejta qasjeje shumë të gjera." }
+          ],
+          "function": "explain-specific-risk",
+          "expectedLearnerAction": "Explain the risk through metrics, permissions, and quality instead of vague workload."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "project-lead",
+          "baseText": "Wie könnten wir dem Kunden trotzdem entgegenkommen, ohne falsche Erwartungen zu wecken?",
+          "translations": [
+            { "language": "en", "text": "How could we still accommodate the customer without creating false expectations?" },
+            { "language": "fa", "text": "چطور می‌توانیم با این حال به مشتری کمک کنیم، بدون اینکه انتظار اشتباه ایجاد کنیم؟" },
+            { "language": "ar", "text": "كيف يمكننا رغم ذلك أن نقترب من طلب العميل من دون خلق توقعات خاطئة؟" },
+            { "language": "tr", "text": "Yine de müşteriye nasıl yardımcı olabiliriz, yanlış beklentiler oluşturmadan?" },
+            { "language": "ru", "text": "Как мы всё же можем пойти клиенту навстречу, не создавая ложных ожиданий?" },
+            { "language": "ckb", "text": "چۆن دەتوانین هەرچەندە یارمەتی کڕیار بدەین، بەبێ ئەوەی چاوەڕوانی هەڵە دروست بکەین؟" },
+            { "language": "kmr", "text": "Em çawa dikarin dîsa jî alîkariya xerîdar bikin, bêyî ku hêviyên şaş çêbikin?" },
+            { "language": "pl", "text": "Jak możemy mimo to wyjść klientowi naprzeciw, nie tworząc fałszywych oczekiwań?" },
+            { "language": "ro", "text": "Cum am putea totuși să venim în întâmpinarea clientului fără să creăm așteptări false?" },
+            { "language": "sq", "text": "Si mund t’i dalim megjithatë në ndihmë klientit pa krijuar pritshmëri të gabuara?" }
+          ],
+          "function": "ask-for-alternative"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde eine Zwischenlösung vorschlagen: Bis Freitag liefern wir eine geprüfte Übersicht mit den drei wichtigsten Kennzahlen und einem klaren Hinweis auf die Grenzen. Die vollständige Funktion planen wir danach mit geklärten Anforderungen.",
+          "translations": [
+            { "language": "en", "text": "I would suggest an interim solution: by Friday we deliver a reviewed overview with the three most important metrics and a clear note about the limits. We then plan the full feature after the requirements have been clarified." },
+            { "language": "fa", "text": "من یک راه‌حل موقت پیشنهاد می‌دهم: تا جمعه یک نمای کلی بررسی‌شده با سه شاخص مهم و یک توضیح روشن درباره محدودیت‌ها تحویل بدهیم. بعد از روشن شدن نیازمندی‌ها، قابلیت کامل را برنامه‌ریزی کنیم." },
+            { "language": "ar", "text": "أقترح حلاً مؤقتاً: حتى يوم الجمعة نسلّم عرضاً عاماً مُراجعاً يتضمن أهم ثلاثة مؤشرات مع إشارة واضحة إلى الحدود. ثم نخطط للوظيفة الكاملة بعد توضيح المتطلبات." },
+            { "language": "tr", "text": "Geçici bir çözüm öneririm: Cuma gününe kadar en önemli üç göstergeyi içeren kontrol edilmiş bir özet ve sınırlar hakkında açık bir not teslim ederiz. Tam özelliği ise gereksinimler netleştikten sonra planlarız." },
+            { "language": "ru", "text": "Я бы предложил промежуточное решение: до пятницы мы поставим проверенный обзор с тремя самыми важными показателями и чётким указанием ограничений. Полную функцию затем спланируем после уточнения требований." },
+            { "language": "ckb", "text": "من چارەسەرێکی کاتی پێشنیار دەکەم: تا هەینی، پوختەیەکی پشکنراو لەگەڵ سێ پێوەری گرنگترین و تێبینییەکی ڕوون لەسەر سنوورەکان تحویل دەدەین. دوای ڕوونبوونەوەی پێداویستییەکان، تایبەتمەندیی تەواو پلان دەکەین." },
+            { "language": "kmr", "text": "Ez ê çareseriyeke demkî pêşniyar bikim: heta Înê em kurtedîtineke kontrolkirî bi sê pîvanên herî girîng û têbîniyeke zelal li ser sînoran radest bikin. Piştî zelalbûna hewcedariyan em taybetmendiya temam plan bikin." },
+            { "language": "pl", "text": "Zaproponowałbym rozwiązanie przejściowe: do piątku dostarczymy sprawdzony przegląd z trzema najważniejszymi wskaźnikami i jasną informacją o ograniczeniach. Pełną funkcję zaplanujemy potem po doprecyzowaniu wymagań." },
+            { "language": "ro", "text": "Aș propune o soluție intermediară: până vineri livrăm o prezentare verificată cu cei trei indicatori principali și o notă clară despre limite. Funcția completă o planificăm apoi după clarificarea cerințelor." },
+            { "language": "sq", "text": "Do të propozoja një zgjidhje të përkohshme: deri të premten dorëzojmë një përmbledhje të kontrolluar me tre treguesit më të rëndësishëm dhe një shënim të qartë për kufizimet. Funksionin e plotë e planifikojmë më pas, pasi të sqarohen kërkesat." }
+          ],
+          "function": "propose-interim-solution",
+          "expectedLearnerAction": "Offer a concrete partial solution and a safe path to the full request."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "project-lead",
+          "baseText": "Welche Informationen brauchen wir vom Kunden, damit die zweite Phase nicht wieder unklar startet?",
+          "translations": [
+            { "language": "en", "text": "What information do we need from the customer so that the second phase does not start unclear again?" },
+            { "language": "fa", "text": "چه اطلاعاتی از مشتری لازم داریم تا فاز دوم دوباره مبهم شروع نشود؟" },
+            { "language": "ar", "text": "ما المعلومات التي نحتاجها من العميل حتى لا تبدأ المرحلة الثانية بشكل غير واضح مرة أخرى؟" },
+            { "language": "tr", "text": "İkinci aşamanın yeniden belirsiz başlamaması için müşteriden hangi bilgilere ihtiyacımız var?" },
+            { "language": "ru", "text": "Какая информация нужна нам от клиента, чтобы второй этап снова не начался неясно?" },
+            { "language": "ckb", "text": "چ زانیارییەکمان لە کڕیار پێویستە بۆ ئەوەی قۆناغی دووەم جارێکی تر بە نادیاری دەست پێ نەکات؟" },
+            { "language": "kmr", "text": "Ji xerîdar kîjan agahî ji me re pêwîst e, da ku qonaxa duyem dîsa nezelal dest pê neke?" },
+            { "language": "pl", "text": "Jakich informacji potrzebujemy od klienta, żeby druga faza nie zaczęła się znowu niejasno?" },
+            { "language": "ro", "text": "De ce informații avem nevoie de la client, ca faza a doua să nu înceapă din nou neclar?" },
+            { "language": "sq", "text": "Çfarë informacionesh na duhen nga klienti, që faza e dytë të mos fillojë përsëri paqartë?" }
+          ],
+          "function": "ask-for-clarification-needs"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wir brauchen eine Priorisierung der Kennzahlen, die Nutzergruppen mit Zugriffsrechten und eine Entscheidung, ob die Vorstandssitzung wirklich der feste Termin ist. Ich kann dem Kunden heute eine strukturierte Liste mit diesen Punkten schicken.",
+          "translations": [
+            { "language": "en", "text": "We need prioritization of the metrics, the user groups with access rights, and a decision on whether the board meeting is truly the fixed deadline. I can send the customer a structured list of these points today." },
+            { "language": "fa", "text": "ما به اولویت‌بندی شاخص‌ها، گروه‌های کاربری با سطح دسترسی و تصمیم درباره این نیاز داریم که آیا جلسه هیئت‌مدیره واقعاً موعد ثابت است یا نه. امروز می‌توانم یک فهرست ساختارمند از این نکات برای مشتری بفرستم." },
+            { "language": "ar", "text": "نحتاج إلى ترتيب أولويات المؤشرات، ومجموعات المستخدمين مع صلاحيات الوصول، وقرار حول ما إذا كان اجتماع مجلس الإدارة هو فعلاً الموعد الثابت. يمكنني أن أرسل للعميل اليوم قائمة منظمة بهذه النقاط." },
+            { "language": "tr", "text": "Göstergelerin önceliklendirilmesine, erişim haklarına sahip kullanıcı gruplarına ve yönetim kurulu toplantısının gerçekten sabit son tarih olup olmadığına dair karara ihtiyacımız var. Bu noktaları içeren yapılandırılmış bir listeyi bugün müşteriye gönderebilirim." },
+            { "language": "ru", "text": "Нам нужна приоритизация показателей, группы пользователей с правами доступа и решение, действительно ли заседание правления является жёстким сроком. Я могу сегодня отправить клиенту структурированный список этих пунктов." },
+            { "language": "ckb", "text": "پێویستمان بە پێشینەکردنی پێوەرەکان، گرووپەکانی بەکارهێنەر لەگەڵ مافی دەستگەیشتن و بڕیارێک هەیە کە ئایا کۆبوونەوەی ئەنجومەنی بەڕێوەبردن بەڕاستی کاتی جێگیرە یان نا. دەتوانم ئەمڕۆ لیستێکی ڕێکخراو بەمانە بۆ کڕیار بنێرم." },
+            { "language": "kmr", "text": "Ji me re pêşînkirina pîvanan, komên bikarhêneran bi mafên gihîştinê û biryarek pêwîst e ka civîna rêveberiyê bi rastî dema sabît e an na. Ez dikarim îro lîsteyeke rêkûpêk a van xalan ji xerîdar re bişînim." },
+            { "language": "pl", "text": "Potrzebujemy priorytetyzacji wskaźników, grup użytkowników z uprawnieniami dostępu oraz decyzji, czy posiedzenie zarządu naprawdę jest stałym terminem. Mogę dziś wysłać klientowi uporządkowaną listę tych punktów." },
+            { "language": "ro", "text": "Avem nevoie de prioritizarea indicatorilor, de grupurile de utilizatori cu drepturi de acces și de o decizie dacă ședința conducerii este într-adevăr termenul fix. Pot trimite clientului astăzi o listă structurată cu aceste puncte." },
+            { "language": "sq", "text": "Na duhet renditja e treguesve sipas përparësisë, grupet e përdoruesve me të drejta qasjeje dhe një vendim nëse mbledhja e bordit është vërtet afati i pandryshueshëm. Mund t’i dërgoj sot klientit një listë të strukturuar me këto pika." }
+          ],
+          "function": "request-structured-information",
+          "expectedLearnerAction": "Name the exact customer inputs needed for the next phase."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "project-lead",
+          "baseText": "Und falls der Kunde trotzdem auf dem vollen Umfang bis zur Sitzung besteht?",
+          "translations": [
+            { "language": "en", "text": "And what if the customer still insists on the full scope by the meeting?" },
+            { "language": "fa", "text": "و اگر مشتری با این حال روی کل دامنه کار تا زمان جلسه اصرار کند چه؟" },
+            { "language": "ar", "text": "وماذا لو أصر العميل رغم ذلك على النطاق الكامل حتى موعد الاجتماع؟" },
+            { "language": "tr", "text": "Peki müşteri yine de toplantıya kadar tam kapsamda ısrar ederse?" },
+            { "language": "ru", "text": "А если клиент всё равно будет настаивать на полном объёме к заседанию?" },
+            { "language": "ckb", "text": "ئەگەر کڕیار هێشتا لەسەر تەواوی مەودای کار تا کاتی کۆبوونەوەکە سوور بێت چی؟" },
+            { "language": "kmr", "text": "Û ger xerîdar dîsa jî heta civînê li ser qada temam israr bike?" },
+            { "language": "pl", "text": "A jeśli klient mimo to będzie nalegał na pełny zakres do posiedzenia?" },
+            { "language": "ro", "text": "Și dacă clientul insistă totuși asupra întregului domeniu până la ședință?" },
+            { "language": "sq", "text": "Po nëse klienti megjithatë këmbëngul për gjithë shtrirjen deri në mbledhje?" }
+          ],
+          "function": "ask-about-insistence"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir die Entscheidung bewusst eskalieren: Entweder halten wir den Termin und reduzieren den Umfang, oder wir halten den Umfang und verschieben den Termin. Ich würde die Zwischenlösung empfehlen und die Entscheidung schriftlich festhalten.",
+          "translations": [
+            { "language": "en", "text": "Then we should deliberately escalate the decision: either we keep the date and reduce the scope, or we keep the scope and move the date. I would recommend the interim solution and document the decision in writing." },
+            { "language": "fa", "text": "در این صورت باید تصمیم را آگاهانه به سطح بالاتر ببریم: یا موعد را نگه می‌داریم و دامنه کار را کم می‌کنیم، یا دامنه کار را نگه می‌داریم و موعد را عقب می‌اندازیم. من راه‌حل موقت را توصیه می‌کنم و تصمیم را کتبی ثبت می‌کنم." },
+            { "language": "ar", "text": "عندئذ ينبغي أن نصعّد القرار بوعي: إما أن نحافظ على الموعد ونقلل النطاق، أو نحافظ على النطاق ونؤجل الموعد. أوصي بالحل المؤقت وتوثيق القرار كتابياً." },
+            { "language": "tr", "text": "O zaman kararı bilinçli şekilde üst seviyeye taşımalıyız: Ya tarihi koruyup kapsamı azaltırız ya da kapsamı koruyup tarihi erteleriz. Ben geçici çözümü önerir ve kararı yazılı olarak kaydederdim." },
+            { "language": "ru", "text": "Тогда нам следует осознанно вынести решение на более высокий уровень: либо сохраняем срок и сокращаем объём, либо сохраняем объём и переносим срок. Я бы рекомендовал промежуточное решение и письменно зафиксировал решение." },
+            { "language": "ckb", "text": "ئەو کاتە دەبێت بڕیارەکە بە ئاگایی بەرز بکەینەوە: یان کاتەکە دەپارێزین و مەودای کار کەم دەکەینەوە، یان مەودای کار دەپارێزین و کاتەکە دوا دەخەین. من چارەسەری کاتی پێشنیار دەکەم و بڕیارەکە بە نووسراوی تۆمار دەکەم." },
+            { "language": "kmr", "text": "Wê demê divê em biryarê bi zanîn bilind bikin: an em demê diparêzin û qada karê kêm dikin, an em qada karê diparêzin û demê paş dixin. Ez çareseriya demkî pêşniyar dikim û biryarê bi nivîskî tomar dikim." },
+            { "language": "pl", "text": "Wtedy powinniśmy świadomie eskalować decyzję: albo utrzymujemy termin i ograniczamy zakres, albo utrzymujemy zakres i przesuwamy termin. Rekomendowałbym rozwiązanie przejściowe i pisemne zapisanie decyzji." },
+            { "language": "ro", "text": "Atunci ar trebui să escaladăm decizia în mod conștient: fie păstrăm termenul și reducem domeniul, fie păstrăm domeniul și amânăm termenul. Aș recomanda soluția intermediară și aș consemna decizia în scris." },
+            { "language": "sq", "text": "Atëherë duhet ta ngremë vendimin me vetëdije në një nivel më të lartë: ose mbajmë afatin dhe zvogëlojmë shtrirjen, ose mbajmë shtrirjen dhe shtyjmë afatin. Unë do të rekomandoja zgjidhjen e përkohshme dhe do ta shënoja vendimin me shkrim." }
+          ],
+          "function": "escalate-tradeoff",
+          "expectedLearnerAction": "Frame the decision as a time-scope-quality tradeoff and recommend a safe option."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Wunsch ist nachvollziehbar, weil der Kunde vor der Sitzung belastbare Zahlen zeigen möchte. In der vollständigen Form betrifft die Funktion aber Datenquellen, Rechte und Tests. Deshalb sollten wir sie nicht einfach zusagen.",
+              "translations": [
+                { "language": "en", "text": "The request is understandable because the customer wants to show reliable figures before the meeting. In its full form, however, the feature affects data sources, permissions, and testing. That is why we should not simply promise it." },
+                { "language": "fa", "text": "این خواسته قابل فهم است، چون مشتری می‌خواهد قبل از جلسه عددهای قابل اتکا نشان بدهد. اما در شکل کامل، این قابلیت به منابع داده، دسترسی‌ها و تست‌ها مربوط می‌شود. برای همین نباید آن را ساده قول بدهیم." },
+                { "language": "ar", "text": "الطلب مفهوم، لأن العميل يريد عرض أرقام موثوقة قبل الاجتماع. لكن الوظيفة بصورتها الكاملة تمس مصادر البيانات والصلاحيات والاختبارات. لذلك لا ينبغي أن نعد بها ببساطة." },
+                { "language": "tr", "text": "İstek anlaşılır, çünkü müşteri toplantıdan önce güvenilir rakamlar göstermek istiyor. Ancak özellik tam hâliyle veri kaynaklarını, yetkileri ve testleri etkiliyor. Bu yüzden bunu kolayca söz vermemeliyiz." },
+                { "language": "ru", "text": "Запрос понятен, потому что клиент хочет показать надёжные цифры перед заседанием. Но в полной версии функция затрагивает источники данных, права доступа и тестирование. Поэтому нам не стоит просто обещать её." },
+                { "language": "ckb", "text": "داواکارییەکە تێگەیشتنی هەیە، چونکە کڕیار دەیەوێت پێش کۆبوونەوەکە ژمارەی پشتپێبەستراو پیشان بدات. بەڵام بە شێوەی تەواو، تایبەتمەندییەکە پەیوەندی بە سەرچاوەکانی داتا، مۆڵەتەکان و تاقیکردنەوەکانەوە هەیە. بۆیە نابێت بە ئاسانی بەڵێنی بدەین." },
+                { "language": "kmr", "text": "Daxwaz tê fêmkirin, ji ber ku xerîdar dixwaze berî civînê hejmarên pêbawer nîşan bide. Lê di awayê temam de ev taybetmendî bi çavkaniyên daneyan, destûran û ceribandinan ve girêdayî ye. Ji ber vê yekê divê em wê bi hêsanî soz nedin." },
+                { "language": "pl", "text": "Prośba jest zrozumiała, bo klient chce przed posiedzeniem pokazać wiarygodne liczby. W pełnej wersji funkcja dotyczy jednak źródeł danych, uprawnień i testów. Dlatego nie powinniśmy jej po prostu obiecać." },
+                { "language": "ro", "text": "Solicitarea este de înțeles, deoarece clientul vrea să prezinte cifre fiabile înainte de ședință. În forma completă însă, funcția implică surse de date, drepturi de acces și teste. De aceea nu ar trebui să o promitem pur și simplu." },
+                { "language": "sq", "text": "Kërkesa është e kuptueshme, sepse klienti dëshiron të tregojë shifra të besueshme para mbledhjes. Por në formën e plotë, funksioni prek burimet e të dhënave, të drejtat e qasjes dhe testimet. Prandaj nuk duhet ta premtojmë thjesht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this validates the customer need while naming concrete delivery risks.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this validates the customer need while naming concrete delivery risks." },
+                { "language": "fa", "text": "خوب است: نیاز مشتری را تأیید می‌کند و همزمان ریسک‌های مشخص تحویل را نام می‌برد." },
+                { "language": "ar", "text": "جيد: يؤكد حاجة العميل وفي الوقت نفسه يذكر مخاطر تسليم محددة." },
+                { "language": "tr", "text": "İyi: müşteri ihtiyacını kabul ediyor ve aynı zamanda somut teslim risklerini adlandırıyor." },
+                { "language": "ru", "text": "Хорошо: ответ признаёт потребность клиента и одновременно называет конкретные риски поставки." },
+                { "language": "ckb", "text": "باشە: پێویستیی کڕیار پشتڕاست دەکاتەوە و هەمان کات مەترسییە دیاریکراوەکانی تحویل ناو دەبات." },
+                { "language": "kmr", "text": "Baş e: hewcedariya xerîdar erê dike û di heman demê de xeterên radestkirinê yên konkret bi nav dike." },
+                { "language": "pl", "text": "Dobrze: uznaje potrzebę klienta, a jednocześnie nazywa konkretne ryzyka dostarczenia." },
+                { "language": "ro", "text": "Bine: validează nevoia clientului și numește riscuri concrete de livrare." },
+                { "language": "sq", "text": "Mirë: e pranon nevojën e klientit dhe njëkohësisht përmend rreziqe konkrete të dorëzimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Kunde braucht die Funktion sehr dringend, und wahrscheinlich können wir irgendwie eine schnelle Version bauen, wenn alle mithelfen.",
+              "translations": [
+                { "language": "en", "text": "The customer needs the feature very urgently, and we can probably somehow build a quick version if everyone helps." },
+                { "language": "fa", "text": "مشتری این قابلیت را خیلی فوری لازم دارد، و احتمالاً اگر همه کمک کنند، به نوعی می‌توانیم یک نسخه سریع بسازیم." },
+                { "language": "ar", "text": "العميل يحتاج إلى الوظيفة بشكل عاجل جداً، وربما نستطيع بطريقة ما بناء نسخة سريعة إذا ساعد الجميع." },
+                { "language": "tr", "text": "Müşteri bu özelliğe çok acil ihtiyaç duyuyor ve herkes yardım ederse muhtemelen bir şekilde hızlı bir sürüm yapabiliriz." },
+                { "language": "ru", "text": "Клиенту эта функция нужна очень срочно, и, наверное, мы как-нибудь сможем быстро сделать версию, если все помогут." },
+                { "language": "ckb", "text": "کڕیار بە زۆر پەلە پێویستی بەو تایبەتمەندییە هەیە، و ڕەنگە بە جۆرێک بتوانین وەشانی خێرا دروست بکەین ئەگەر هەمووان یارمەتی بدەن." },
+                { "language": "kmr", "text": "Xerîdar bi lez pir hewcedarê vê taybetmendiyê ye, û ger her kes alîkarî bike, dibe ku em bi awayekî guhertoyeke lezgîn ava bikin." },
+                { "language": "pl", "text": "Klient bardzo pilnie potrzebuje tej funkcji i prawdopodobnie jakoś zbudujemy szybką wersję, jeśli wszyscy pomogą." },
+                { "language": "ro", "text": "Clientul are nevoie foarte urgent de funcție și probabil putem construi cumva o versiune rapidă dacă ajută toată lumea." },
+                { "language": "sq", "text": "Klientit i duhet shumë urgjentisht ky funksion dhe ndoshta mund të ndërtojmë disi një version të shpejtë nëse ndihmojnë të gjithë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weak: it shows urgency, but it does not define risks or protect the team from unclear commitments.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: it shows urgency, but it does not define risks or protect the team from unclear commitments." },
+                { "language": "fa", "text": "قابل تصور اما ضعیف است: فوریت را نشان می‌دهد، اما ریسک‌ها را تعریف نمی‌کند و تیم را از تعهد مبهم محافظت نمی‌کند." },
+                { "language": "ar", "text": "محتمل لكنه ضعيف: يوضح الاستعجال، لكنه لا يحدد المخاطر ولا يحمي الفريق من التزامات غير واضحة." },
+                { "language": "tr", "text": "Mantıklı görünüyor ama zayıf: aciliyeti gösteriyor, fakat riskleri tanımlamıyor ve ekibi belirsiz taahhütlerden korumuyor." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: срочность видна, однако риски не определены и команда не защищена от неясных обязательств." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام لاوازە: پەلەبوون پیشان دەدات، بەڵام مەترسییەکان دیاری ناکات و تیم لە بەڵێنی نادیار ناپارێزێت." },
+                { "language": "kmr", "text": "Pêkan e lê qels e: lez nîşan dide, lê xeteran diyar nake û tîmê ji pabendiyên nezelal naparêze." },
+                { "language": "pl", "text": "Brzmi możliwie, ale jest słabe: pokazuje pilność, lecz nie definiuje ryzyk ani nie chroni zespołu przed niejasnymi zobowiązaniami." },
+                { "language": "ro", "text": "Plauzibil, dar slab: arată urgența, însă nu definește riscurile și nu protejează echipa de angajamente neclare." },
+                { "language": "sq", "text": "E besueshme, por e dobët: tregon urgjencën, por nuk përcakton rreziqet dhe nuk e mbron ekipin nga zotime të paqarta." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vor allem ist noch nicht klar, welche Kennzahlen verbindlich sind und wer welche Auswertung sehen darf. Wenn wir das überspringen, liefern wir vielleicht pünktlich, aber mit falschen Zahlen oder zu breiten Zugriffsrechten.",
+              "translations": [
+                { "language": "en", "text": "Most importantly, it is not yet clear which metrics are binding and who may see which report. If we skip that, we might deliver on time, but with wrong figures or access rights that are too broad." },
+                { "language": "fa", "text": "مهم‌تر از همه هنوز روشن نیست کدام شاخص‌ها الزام‌آور هستند و چه کسی اجازه دارد کدام گزارش را ببیند. اگر از این بخش عبور کنیم، شاید به‌موقع تحویل بدهیم، اما با عددهای اشتباه یا دسترسی‌های بیش از حد گسترده." },
+                { "language": "ar", "text": "الأهم أن المؤشرات الملزمة ومن يحق له رؤية أي تقرير ليسا واضحين بعد. إذا تجاوزنا ذلك، فقد نسلّم في الموعد، لكن بأرقام خاطئة أو بصلاحيات وصول واسعة أكثر من اللازم." },
+                { "language": "tr", "text": "En önemlisi, hangi göstergelerin bağlayıcı olduğu ve kimin hangi raporu görebileceği henüz net değil. Bunu atlarsak zamanında teslim edebiliriz, ama yanlış rakamlarla veya çok geniş erişim haklarıyla." },
+                { "language": "ru", "text": "Прежде всего, ещё не ясно, какие показатели являются обязательными и кто какие отчёты может видеть. Если мы это пропустим, возможно, поставим вовремя, но с неверными цифрами или слишком широкими правами доступа." },
+                { "language": "ckb", "text": "لە هەموو گرنگتر، هێشتا ڕوون نییە کام پێوەرەکان پابەندن و کێ دەتوانێت کام ڕاپۆرت ببینێت. ئەگەر ئەمە تێپەڕێنین، ڕەنگە لە کاتدا تحویل بدەین، بەڵام بە ژمارەی هەڵە یان مۆڵەتی دەستگەیشتنی زۆر فراوان." },
+                { "language": "kmr", "text": "Herî girîng, hêj ne zelal e ka kîjan pîvan pêgir in û kî dikare kîjan raporê bibîne. Ger em vê derbas bikin, dibe ku di wextê xwe de radest bikin, lê bi hejmarên şaş an destûrên gihîştinê yên pir fireh." },
+                { "language": "pl", "text": "Przede wszystkim nie jest jeszcze jasne, które wskaźniki są wiążące i kto może widzieć które zestawienie. Jeśli to pominiemy, być może dostarczymy na czas, ale z błędnymi liczbami albo zbyt szerokimi uprawnieniami." },
+                { "language": "ro", "text": "În primul rând, nu este încă clar ce indicatori sunt obligatorii și cine are voie să vadă ce raport. Dacă sărim peste asta, poate livrăm la timp, dar cu cifre greșite sau drepturi de acces prea largi." },
+                { "language": "sq", "text": "Para së gjithash, ende nuk është e qartë cilët tregues janë detyrues dhe kush mund të shohë cilin raport. Nëse e anashkalojmë këtë, mund të dorëzojmë në kohë, por me shifra të gabuara ose me të drejta qasjeje shumë të gjera." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this turns a general objection into concrete quality, security, and reliability risks.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this turns a general objection into concrete quality, security, and reliability risks." },
+                { "language": "fa", "text": "خوب است: یک مخالفت کلی را به ریسک‌های مشخص کیفیت، امنیت و قابل اتکا بودن تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: يحول الاعتراض العام إلى مخاطر ملموسة في الجودة والأمان والموثوقية." },
+                { "language": "tr", "text": "İyi: genel bir itirazı somut kalite, güvenlik ve güvenilirlik risklerine dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: общий довод превращается в конкретные риски качества, безопасности и надёжности." },
+                { "language": "ckb", "text": "باشە: ناڕەزاییەکی گشتی دەگۆڕێت بۆ مەترسیی دیاریکراوی کوالیتی، ئاسایش و پشتپێبەستنی کار." },
+                { "language": "kmr", "text": "Baş e: nerazîbûneke giştî vediguherîne xeterên konkret ên kalîte, ewlehî û pêbaweriyê." },
+                { "language": "pl", "text": "Dobrze: ogólny sprzeciw zostaje przełożony na konkretne ryzyka jakości, bezpieczeństwa i wiarygodności." },
+                { "language": "ro", "text": "Bine: transformă o obiecție generală în riscuri concrete de calitate, securitate și fiabilitate." },
+                { "language": "sq", "text": "Mirë: e kthen një kundërshtim të përgjithshëm në rreziqe konkrete për cilësinë, sigurinë dhe besueshmërinë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das Problem ist vor allem, dass zwei Wochen sehr knapp sind und wir im Moment schon viele andere Aufgaben im Team haben.",
+              "translations": [
+                { "language": "en", "text": "The problem is mainly that two weeks are very tight and we already have many other tasks in the team right now." },
+                { "language": "fa", "text": "مشکل اصلی این است که دو هفته خیلی کم است و ما همین حالا در تیم کارهای دیگری هم زیاد داریم." },
+                { "language": "ar", "text": "المشكلة أساساً أن أسبوعين مدة ضيقة جداً وأن لدينا حالياً مهاماً أخرى كثيرة في الفريق." },
+                { "language": "tr", "text": "Sorun özellikle iki haftanın çok kısa olması ve ekipte şu anda zaten birçok başka görevimizin bulunması." },
+                { "language": "ru", "text": "Проблема в основном в том, что две недели — очень мало, а у команды сейчас уже много других задач." },
+                { "language": "ckb", "text": "کێشەکە بە تایبەتی ئەوەیە کە دوو هەفتە زۆر کەمە و ئێمە لە تیمدا ئێستا ئەرکی دیکەی زۆرمان هەیە." },
+                { "language": "kmr", "text": "Pirsgirêk bi taybetî ew e ku du hefte pir teng in û me niha di tîmê de gelek erkên din hene." },
+                { "language": "pl", "text": "Problem polega głównie na tym, że dwa tygodnie to bardzo mało, a w zespole mamy teraz już wiele innych zadań." },
+                { "language": "ro", "text": "Problema este mai ales că două săptămâni sunt foarte puține și că în echipă avem deja multe alte sarcini." },
+                { "language": "sq", "text": "Problemi kryesor është se dy javë janë shumë pak dhe ekipi ka tashmë shumë detyra të tjera." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too generic: workload matters, but B2 workplace language should explain business and quality consequences.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too generic: workload matters, but B2 workplace language should explain business and quality consequences." },
+                { "language": "fa", "text": "بیش از حد کلی است: حجم کار مهم است، اما زبان کاری B2 باید پیامدهای تجاری و کیفی را توضیح بدهد." },
+                { "language": "ar", "text": "عام جداً: حجم العمل مهم، لكن لغة العمل في مستوى B2 ينبغي أن تشرح العواقب التجارية والمتعلقة بالجودة." },
+                { "language": "tr", "text": "Çok genel: iş yükü önemlidir, ancak B2 iş dili ticari ve kaliteyle ilgili sonuçları açıklamalıdır." },
+                { "language": "ru", "text": "Слишком обобщённо: нагрузка важна, но рабочая речь уровня B2 должна объяснять бизнес- и качественные последствия." },
+                { "language": "ckb", "text": "زۆر گشتییە: قورسایی کار گرنگە، بەڵام زمانی کاری B2 دەبێت کاریگەرییە بازرگانی و کوالیتییەکان ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye: barkirina karê girîng e, lê zimanê karê B2 divê encamên bazirganî û kalîteyê rave bike." },
+                { "language": "pl", "text": "Zbyt ogólne: obciążenie pracą ma znaczenie, ale język zawodowy B2 powinien wyjaśniać skutki biznesowe i jakościowe." },
+                { "language": "ro", "text": "Prea generic: volumul de muncă este important, dar limbajul profesional B2 trebuie să explice consecințele de afaceri și de calitate." },
+                { "language": "sq", "text": "Shumë e përgjithshme: ngarkesa e punës ka rëndësi, por gjuha profesionale B2 duhet të shpjegojë pasojat për biznesin dhe cilësinë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde eine Zwischenlösung vorschlagen: Bis Freitag liefern wir eine geprüfte Übersicht mit den drei wichtigsten Kennzahlen und einem klaren Hinweis auf die Grenzen. Die vollständige Funktion planen wir danach mit geklärten Anforderungen.",
+              "translations": [
+                { "language": "en", "text": "I would suggest an interim solution: by Friday we deliver a reviewed overview with the three most important metrics and a clear note about the limits. We then plan the full feature after the requirements have been clarified." },
+                { "language": "fa", "text": "من یک راه‌حل موقت پیشنهاد می‌دهم: تا جمعه یک نمای کلی بررسی‌شده با سه شاخص مهم و یک توضیح روشن درباره محدودیت‌ها تحویل بدهیم. بعد از روشن شدن نیازمندی‌ها، قابلیت کامل را برنامه‌ریزی کنیم." },
+                { "language": "ar", "text": "أقترح حلاً مؤقتاً: حتى يوم الجمعة نسلّم عرضاً عاماً مُراجعاً يتضمن أهم ثلاثة مؤشرات مع إشارة واضحة إلى الحدود. ثم نخطط للوظيفة الكاملة بعد توضيح المتطلبات." },
+                { "language": "tr", "text": "Geçici bir çözüm öneririm: Cuma gününe kadar en önemli üç göstergeyi içeren kontrol edilmiş bir özet ve sınırlar hakkında açık bir not teslim ederiz. Tam özelliği ise gereksinimler netleştikten sonra planlarız." },
+                { "language": "ru", "text": "Я бы предложил промежуточное решение: до пятницы мы поставим проверенный обзор с тремя самыми важными показателями и чётким указанием ограничений. Полную функцию затем спланируем после уточнения требований." },
+                { "language": "ckb", "text": "من چارەسەرێکی کاتی پێشنیار دەکەم: تا هەینی، پوختەیەکی پشکنراو لەگەڵ سێ پێوەری گرنگترین و تێبینییەکی ڕوون لەسەر سنوورەکان تحویل دەدەین. دوای ڕوونبوونەوەی پێداویستییەکان، تایبەتمەندیی تەواو پلان دەکەین." },
+                { "language": "kmr", "text": "Ez ê çareseriyeke demkî pêşniyar bikim: heta Înê em kurtedîtineke kontrolkirî bi sê pîvanên herî girîng û têbîniyeke zelal li ser sînoran radest bikin. Piştî zelalbûna hewcedariyan em taybetmendiya temam plan bikin." },
+                { "language": "pl", "text": "Zaproponowałbym rozwiązanie przejściowe: do piątku dostarczymy sprawdzony przegląd z trzema najważniejszymi wskaźnikami i jasną informacją o ograniczeniach. Pełną funkcję zaplanujemy potem po doprecyzowaniu wymagań." },
+                { "language": "ro", "text": "Aș propune o soluție intermediară: până vineri livrăm o prezentare verificată cu cei trei indicatori principali și o notă clară despre limite. Funcția completă o planificăm apoi după clarificarea cerințelor." },
+                { "language": "sq", "text": "Do të propozoja një zgjidhje të përkohshme: deri të premten dorëzojmë një përmbledhje të kontrolluar me tre treguesit më të rëndësishëm dhe një shënim të qartë për kufizimet. Funksionin e plotë e planifikojmë më pas, pasi të sqarohen kërkesat." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives the customer something useful while keeping quality and expectations under control.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives the customer something useful while keeping quality and expectations under control." },
+                { "language": "fa", "text": "خوب است: چیزی مفید به مشتری می‌دهد و همزمان کیفیت و انتظارها را کنترل می‌کند." },
+                { "language": "ar", "text": "جيد: يقدم للعميل شيئاً مفيداً وفي الوقت نفسه يبقي الجودة والتوقعات تحت السيطرة." },
+                { "language": "tr", "text": "İyi: müşteriye yararlı bir şey sunuyor ve aynı zamanda kaliteyi ve beklentileri kontrol altında tutuyor." },
+                { "language": "ru", "text": "Хорошо: клиент получает что-то полезное, а качество и ожидания остаются под контролем." },
+                { "language": "ckb", "text": "باشە: شتێکی بەسوود بە کڕیار دەدات و هەمان کات کوالیتی و چاوەڕوانییەکان لەژێر کۆنترۆڵدا دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Baş e: tiştekî bikêr dide xerîdar û di heman demê de kalîte û hêviyan di bin kontrolê de dihêle." },
+                { "language": "pl", "text": "Dobrze: daje klientowi coś użytecznego, a jednocześnie utrzymuje jakość i oczekiwania pod kontrolą." },
+                { "language": "ro", "text": "Bine: oferă clientului ceva util și menține în același timp calitatea și așteptările sub control." },
+                { "language": "sq", "text": "Mirë: i jep klientit diçka të dobishme dhe njëkohësisht mban nën kontroll cilësinë dhe pritshmëritë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir könnten dem Kunden sagen, dass wir erst einmal eine einfache Version bauen und später schauen, was noch fehlt.",
+              "translations": [
+                { "language": "en", "text": "We could tell the customer that we will first build a simple version and later see what is still missing." },
+                { "language": "fa", "text": "می‌توانیم به مشتری بگوییم که اول یک نسخه ساده می‌سازیم و بعداً می‌بینیم چه چیزهایی هنوز کم است." },
+                { "language": "ar", "text": "يمكننا أن نقول للعميل إننا سنبني أولاً نسخة بسيطة ثم نرى لاحقاً ما الذي لا يزال ناقصاً." },
+                { "language": "tr", "text": "Müşteriye önce basit bir sürüm yapacağımızı ve daha sonra neyin eksik kaldığına bakacağımızı söyleyebiliriz." },
+                { "language": "ru", "text": "Мы могли бы сказать клиенту, что сначала сделаем простую версию, а позже посмотрим, чего ещё не хватает." },
+                { "language": "ckb", "text": "دەتوانین بە کڕیار بڵێین کە سەرەتا وەشانێکی سادە دروست دەکەین و دواتر دەبینین چی هێشتا کەمە." },
+                { "language": "kmr", "text": "Em dikarin ji xerîdar re bêjin ku em pêşî guhertoyeke sade ava dikin û paşê dibînin ka çi hêj kêm e." },
+                { "language": "pl", "text": "Moglibyśmy powiedzieć klientowi, że najpierw zbudujemy prostą wersję, a później zobaczymy, czego jeszcze brakuje." },
+                { "language": "ro", "text": "Am putea spune clientului că mai întâi construim o versiune simplă și vedem mai târziu ce mai lipsește." },
+                { "language": "sq", "text": "Mund t’i themi klientit se fillimisht ndërtojmë një version të thjeshtë dhe më vonë shohim çfarë mungon ende." }
+              ],
+              "isCorrect": false,
+              "feedback": "Incomplete: it suggests a smaller version, but it does not define content, deadline, or limits clearly enough.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: it suggests a smaller version, but it does not define content, deadline, or limits clearly enough." },
+                { "language": "fa", "text": "ناقص است: نسخه کوچک‌تر پیشنهاد می‌کند، اما محتوا، موعد و محدودیت‌ها را به اندازه کافی روشن نمی‌کند." },
+                { "language": "ar", "text": "ناقص: يقترح نسخة أصغر، لكنه لا يحدد المحتوى أو الموعد أو الحدود بوضوح كاف." },
+                { "language": "tr", "text": "Eksik: daha küçük bir sürüm öneriyor, ancak içeriği, son tarihi ve sınırları yeterince net tanımlamıyor." },
+                { "language": "ru", "text": "Неполно: предлагается меньшая версия, но содержание, срок и ограничения определены недостаточно ясно." },
+                { "language": "ckb", "text": "ناتەواوە: وەشانێکی بچووکتر پێشنیار دەکات، بەڵام ناوەڕۆک، کات و سنوورەکان بە تەواوی ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Netemam e: guhertoyeke biçûktir pêşniyar dike, lê naverok, dem û sînoran têra xwe zelal nake." },
+                { "language": "pl", "text": "Niepełne: proponuje mniejszą wersję, ale nie określa dość jasno zawartości, terminu ani ograniczeń." },
+                { "language": "ro", "text": "Incomplet: propune o versiune mai mică, dar nu definește suficient de clar conținutul, termenul sau limitele." },
+                { "language": "sq", "text": "E paplotë: propozon një version më të vogël, por nuk përcakton mjaft qartë përmbajtjen, afatin ose kufizimet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir brauchen eine Priorisierung der Kennzahlen, die Nutzergruppen mit Zugriffsrechten und eine Entscheidung, ob die Vorstandssitzung wirklich der feste Termin ist. Ich kann dem Kunden heute eine strukturierte Liste mit diesen Punkten schicken.",
+              "translations": [
+                { "language": "en", "text": "We need prioritization of the metrics, the user groups with access rights, and a decision on whether the board meeting is truly the fixed deadline. I can send the customer a structured list of these points today." },
+                { "language": "fa", "text": "ما به اولویت‌بندی شاخص‌ها، گروه‌های کاربری با سطح دسترسی و تصمیم درباره این نیاز داریم که آیا جلسه هیئت‌مدیره واقعاً موعد ثابت است یا نه. امروز می‌توانم یک فهرست ساختارمند از این نکات برای مشتری بفرستم." },
+                { "language": "ar", "text": "نحتاج إلى ترتيب أولويات المؤشرات، ومجموعات المستخدمين مع صلاحيات الوصول، وقرار حول ما إذا كان اجتماع مجلس الإدارة هو فعلاً الموعد الثابت. يمكنني أن أرسل للعميل اليوم قائمة منظمة بهذه النقاط." },
+                { "language": "tr", "text": "Göstergelerin önceliklendirilmesine, erişim haklarına sahip kullanıcı gruplarına ve yönetim kurulu toplantısının gerçekten sabit son tarih olup olmadığına dair karara ihtiyacımız var. Bu noktaları içeren yapılandırılmış bir listeyi bugün müşteriye gönderebilirim." },
+                { "language": "ru", "text": "Нам нужна приоритизация показателей, группы пользователей с правами доступа и решение, действительно ли заседание правления является жёстким сроком. Я могу сегодня отправить клиенту структурированный список этих пунктов." },
+                { "language": "ckb", "text": "پێویستمان بە پێشینەکردنی پێوەرەکان، گرووپەکانی بەکارهێنەر لەگەڵ مافی دەستگەیشتن و بڕیارێک هەیە کە ئایا کۆبوونەوەی ئەنجومەنی بەڕێوەبردن بەڕاستی کاتی جێگیرە یان نا. دەتوانم ئەمڕۆ لیستێکی ڕێکخراو بەمانە بۆ کڕیار بنێرم." },
+                { "language": "kmr", "text": "Ji me re pêşînkirina pîvanan, komên bikarhêneran bi mafên gihîştinê û biryarek pêwîst e ka civîna rêveberiyê bi rastî dema sabît e an na. Ez dikarim îro lîsteyeke rêkûpêk a van xalan ji xerîdar re bişînim." },
+                { "language": "pl", "text": "Potrzebujemy priorytetyzacji wskaźników, grup użytkowników z uprawnieniami dostępu oraz decyzji, czy posiedzenie zarządu naprawdę jest stałym terminem. Mogę dziś wysłać klientowi uporządkowaną listę tych punktów." },
+                { "language": "ro", "text": "Avem nevoie de prioritizarea indicatorilor, de grupurile de utilizatori cu drepturi de acces și de o decizie dacă ședința conducerii este într-adevăr termenul fix. Pot trimite clientului astăzi o listă structurată cu aceste puncte." },
+                { "language": "sq", "text": "Na duhet renditja e treguesve sipas përparësisë, grupet e përdoruesve me të drejta qasjeje dhe një vendim nëse mbledhja e bordit është vërtet afati i pandryshueshëm. Mund t’i dërgoj sot klientit një listë të strukturuar me këto pika." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this turns uncertainty into specific information requests and an immediate action.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this turns uncertainty into specific information requests and an immediate action." },
+                { "language": "fa", "text": "خوب است: ابهام را به درخواست‌های اطلاعاتی مشخص و یک اقدام فوری تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: يحول الغموض إلى طلبات معلومات محددة وإجراء فوري." },
+                { "language": "tr", "text": "İyi: belirsizliği belirli bilgi taleplerine ve hemen yapılacak bir adıma dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: неопределённость превращается в конкретные запросы информации и немедленное действие." },
+                { "language": "ckb", "text": "باشە: نادیاری دەگۆڕێت بۆ داواکاری زانیاریی دیاریکراو و کردارێکی دەستبەجێ." },
+                { "language": "kmr", "text": "Baş e: nezelalî vediguherîne daxwazên agahiyê yên konkret û çalakiyeke tavilê." },
+                { "language": "pl", "text": "Dobrze: niepewność zostaje przełożona na konkretne pytania informacyjne i natychmiastowe działanie." },
+                { "language": "ro", "text": "Bine: transformă incertitudinea în cereri concrete de informații și într-o acțiune imediată." },
+                { "language": "sq", "text": "Mirë: e kthen paqartësinë në kërkesa konkrete për informacion dhe në një veprim të menjëhershëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir müssten den Kunden noch einmal fragen, was genau er meint, und dann im Team schauen, ob das irgendwie machbar ist.",
+              "translations": [
+                { "language": "en", "text": "We would need to ask the customer again what exactly they mean and then check in the team whether it is somehow feasible." },
+                { "language": "fa", "text": "باید دوباره از مشتری بپرسیم دقیقاً منظورش چیست و بعد در تیم بررسی کنیم که آیا به نوعی قابل انجام است یا نه." },
+                { "language": "ar", "text": "ينبغي أن نسأل العميل مرة أخرى عما يقصده بالضبط، ثم نرى داخل الفريق ما إذا كان ذلك ممكناً بطريقة ما." },
+                { "language": "tr", "text": "Müşteriye tam olarak neyi kastettiğini tekrar sormalı ve sonra ekipte bunun bir şekilde mümkün olup olmadığını bakmalıyız." },
+                { "language": "ru", "text": "Нужно ещё раз спросить клиента, что именно он имеет в виду, а затем в команде посмотреть, возможно ли это как-нибудь." },
+                { "language": "ckb", "text": "دەبێت جارێکی تر لە کڕیار بپرسین بە وردی مەبەستی چییە، پاشان لە تیمدا ببینین ئایا بە جۆرێک دەکرێت یان نا." },
+                { "language": "kmr", "text": "Divê em careke din ji xerîdar bipirsin ka bi rastî çi dixwaze, paşê di tîmê de bibînin ka ew bi awayekî pêkan e an na." },
+                { "language": "pl", "text": "Musielibyśmy jeszcze raz zapytać klienta, co dokładnie ma na myśli, a potem w zespole sprawdzić, czy da się to jakoś zrobić." },
+                { "language": "ro", "text": "Ar trebui să întrebăm din nou clientul ce anume vrea să spună și apoi să vedem în echipă dacă este cumva posibil." },
+                { "language": "sq", "text": "Duhet ta pyesim klientin edhe një herë çfarë ka saktësisht parasysh dhe pastaj të shohim në ekip nëse është disi e mundur." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too vague: it asks again, but it does not guide the customer toward the exact decisions needed.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: it asks again, but it does not guide the customer toward the exact decisions needed." },
+                { "language": "fa", "text": "بیش از حد مبهم است: دوباره سؤال می‌پرسد، اما مشتری را به سمت تصمیم‌های دقیق لازم هدایت نمی‌کند." },
+                { "language": "ar", "text": "غامض جداً: يطرح السؤال مرة أخرى، لكنه لا يوجه العميل نحو القرارات المحددة المطلوبة." },
+                { "language": "tr", "text": "Çok belirsiz: tekrar soruyor, ama müşteriyi gereken kesin kararlara yönlendirmiyor." },
+                { "language": "ru", "text": "Слишком расплывчато: вопрос задаётся снова, но клиент не направляется к нужным конкретным решениям." },
+                { "language": "ckb", "text": "زۆر نادیارە: جارێکی تر دەپرسێت، بەڵام کڕیار بەرەو بڕیارە دیاریکراوە پێویستەکان ئاراستە ناکات." },
+                { "language": "kmr", "text": "Pir nezelal e: dîsa dipirse, lê xerîdar ber bi biryarên konkret ên pêwîst ve rêberî nake." },
+                { "language": "pl", "text": "Zbyt niejasne: ponownie pyta, ale nie prowadzi klienta do konkretnych potrzebnych decyzji." },
+                { "language": "ro", "text": "Prea vag: întreabă din nou, dar nu ghidează clientul către deciziile exacte necesare." },
+                { "language": "sq", "text": "Shumë e paqartë: pyet përsëri, por nuk e udhëzon klientin drejt vendimeve të sakta që duhen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollten wir die Entscheidung bewusst eskalieren: Entweder halten wir den Termin und reduzieren den Umfang, oder wir halten den Umfang und verschieben den Termin. Ich würde die Zwischenlösung empfehlen und die Entscheidung schriftlich festhalten.",
+              "translations": [
+                { "language": "en", "text": "Then we should deliberately escalate the decision: either we keep the date and reduce the scope, or we keep the scope and move the date. I would recommend the interim solution and document the decision in writing." },
+                { "language": "fa", "text": "در این صورت باید تصمیم را آگاهانه به سطح بالاتر ببریم: یا موعد را نگه می‌داریم و دامنه کار را کم می‌کنیم، یا دامنه کار را نگه می‌داریم و موعد را عقب می‌اندازیم. من راه‌حل موقت را توصیه می‌کنم و تصمیم را کتبی ثبت می‌کنم." },
+                { "language": "ar", "text": "عندئذ ينبغي أن نصعّد القرار بوعي: إما أن نحافظ على الموعد ونقلل النطاق، أو نحافظ على النطاق ونؤجل الموعد. أوصي بالحل المؤقت وتوثيق القرار كتابياً." },
+                { "language": "tr", "text": "O zaman kararı bilinçli şekilde üst seviyeye taşımalıyız: Ya tarihi koruyup kapsamı azaltırız ya da kapsamı koruyup tarihi erteleriz. Ben geçici çözümü önerir ve kararı yazılı olarak kaydederdim." },
+                { "language": "ru", "text": "Тогда нам следует осознанно вынести решение на более высокий уровень: либо сохраняем срок и сокращаем объём, либо сохраняем объём и переносим срок. Я бы рекомендовал промежуточное решение и письменно зафиксировал решение." },
+                { "language": "ckb", "text": "ئەو کاتە دەبێت بڕیارەکە بە ئاگایی بەرز بکەینەوە: یان کاتەکە دەپارێزین و مەودای کار کەم دەکەینەوە، یان مەودای کار دەپارێزین و کاتەکە دوا دەخەین. من چارەسەری کاتی پێشنیار دەکەم و بڕیارەکە بە نووسراوی تۆمار دەکەم." },
+                { "language": "kmr", "text": "Wê demê divê em biryarê bi zanîn bilind bikin: an em demê diparêzin û qada karê kêm dikin, an em qada karê diparêzin û demê paş dixin. Ez çareseriya demkî pêşniyar dikim û biryarê bi nivîskî tomar dikim." },
+                { "language": "pl", "text": "Wtedy powinniśmy świadomie eskalować decyzję: albo utrzymujemy termin i ograniczamy zakres, albo utrzymujemy zakres i przesuwamy termin. Rekomendowałbym rozwiązanie przejściowe i pisemne zapisanie decyzji." },
+                { "language": "ro", "text": "Atunci ar trebui să escaladăm decizia în mod conștient: fie păstrăm termenul și reducem domeniul, fie păstrăm domeniul și amânăm termenul. Aș recomanda soluția intermediară și aș consemna decizia în scris." },
+                { "language": "sq", "text": "Atëherë duhet ta ngremë vendimin me vetëdije në një nivel më të lartë: ose mbajmë afatin dhe zvogëlojmë shtrirjen, ose mbajmë shtrirjen dhe shtyjmë afatin. Unë do të rekomandoja zgjidhjen e përkohshme dhe do ta shënoja vendimin me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this makes the tradeoff explicit and protects the project through a documented decision.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this makes the tradeoff explicit and protects the project through a documented decision." },
+                { "language": "fa", "text": "خوب است: مبادله بین زمان و دامنه کار را روشن می‌کند و با تصمیم مستند از پروژه محافظت می‌کند." },
+                { "language": "ar", "text": "جيد: يوضح المفاضلة ويحمي المشروع من خلال قرار موثق." },
+                { "language": "tr", "text": "İyi: ödünleşimi açık hale getiriyor ve belgelenmiş bir kararla projeyi koruyor." },
+                { "language": "ru", "text": "Хорошо: компромисс становится явным, а проект защищается документированным решением." },
+                { "language": "ckb", "text": "باشە: ئاڵوگۆڕی نێوان کات و مەودای کار ڕوون دەکاتەوە و بە بڕیارێکی تۆمارکراو پڕۆژەکە دەپارێزێت." },
+                { "language": "kmr", "text": "Baş e: danûstandina di navbera dem û qada karê de zelal dike û projeyê bi biryareke tomarbûyî diparêze." },
+                { "language": "pl", "text": "Dobrze: jasno pokazuje kompromis i chroni projekt dzięki udokumentowanej decyzji." },
+                { "language": "ro", "text": "Bine: face explicit compromisul și protejează proiectul printr-o decizie documentată." },
+                { "language": "sq", "text": "Mirë: e bën të qartë kompromisin dhe e mbron projektin përmes një vendimi të dokumentuar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann müssen wir prüfen, ob das Team kurzfristig mehr Kapazität bekommt, damit der Kunde möglichst alles rechtzeitig erhält.",
+              "translations": [
+                { "language": "en", "text": "Then we need to check whether the team can get more capacity at short notice so that the customer receives as much as possible on time." },
+                { "language": "fa", "text": "در این صورت باید بررسی کنیم آیا تیم می‌تواند در کوتاه‌مدت ظرفیت بیشتری بگیرد تا مشتری تا حد ممکن همه چیز را به‌موقع دریافت کند." },
+                { "language": "ar", "text": "عندئذ يجب أن نتحقق مما إذا كان يمكن للفريق الحصول على قدرة إضافية في وقت قصير، حتى يحصل العميل على أكبر قدر ممكن في الموعد." },
+                { "language": "tr", "text": "O zaman ekibin kısa sürede daha fazla kapasite alıp alamayacağını kontrol etmeliyiz, böylece müşteri mümkün olduğunca her şeyi zamanında alır." },
+                { "language": "ru", "text": "Тогда нужно проверить, может ли команда быстро получить больше ресурсов, чтобы клиент получил как можно больше вовремя." },
+                { "language": "ckb", "text": "ئەو کاتە دەبێت بپشکنین ئایا تیم دەتوانێت لە ماوەی کورتدا توانای زیاتر وەربگرێت، بۆ ئەوەی کڕیار تا دەتوانرێت هەموو شتێک لە کاتدا وەربگرێت." },
+                { "language": "kmr", "text": "Wê demê divê em kontrol bikin ka tîm dikare di demeke kurt de kapasîteya zêdetir bistîne, da ku xerîdar bi qasî gengaz her tiştî di wextê xwe de bistîne." },
+                { "language": "pl", "text": "Wtedy musimy sprawdzić, czy zespół może krótkoterminowo dostać więcej mocy, żeby klient otrzymał jak najwięcej na czas." },
+                { "language": "ro", "text": "Atunci trebuie să verificăm dacă echipa poate primi capacitate suplimentară pe termen scurt, astfel încât clientul să primească la timp cât mai mult posibil." },
+                { "language": "sq", "text": "Atëherë duhet të kontrollojmë nëse ekipi mund të marrë kapacitet shtesë afatshkurtër, që klienti të marrë sa më shumë në kohë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Still incomplete: more capacity may help, but it does not solve unclear requirements or the time-scope-quality decision.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Still incomplete: more capacity may help, but it does not solve unclear requirements or the time-scope-quality decision." },
+                { "language": "fa", "text": "هنوز ناقص است: ظرفیت بیشتر ممکن است کمک کند، اما نیازمندی‌های مبهم یا تصمیم بین زمان، دامنه و کیفیت را حل نمی‌کند." },
+                { "language": "ar", "text": "ما زال ناقصاً: قد تساعد القدرة الإضافية، لكنها لا تحل المتطلبات غير الواضحة ولا قرار الوقت والنطاق والجودة." },
+                { "language": "tr", "text": "Hâlâ eksik: daha fazla kapasite yardımcı olabilir, ancak belirsiz gereksinimleri ya da zaman-kapsam-kalite kararını çözmez." },
+                { "language": "ru", "text": "Всё ещё неполно: дополнительные ресурсы могут помочь, но они не решают неясные требования и выбор между сроком, объёмом и качеством." },
+                { "language": "ckb", "text": "هێشتا ناتەواوە: توانای زیاتر ڕەنگە یارمەتی بدات، بەڵام پێداویستیی نادیار یان بڕیاری نێوان کات، مەودای کار و کوالیتی چارەسەر ناکات." },
+                { "language": "kmr", "text": "Hêj netemam e: kapasîteya zêdetir dibe ku alîkar be, lê hewcedariyên nezelal an biryara dem-qada karê-kalîteyê çareser nake." },
+                { "language": "pl", "text": "Nadal niepełne: większa moc może pomóc, ale nie rozwiązuje niejasnych wymagań ani decyzji między czasem, zakresem i jakością." },
+                { "language": "ro", "text": "Încă incomplet: capacitatea suplimentară poate ajuta, dar nu rezolvă cerințele neclare sau decizia între timp, domeniu și calitate." },
+                { "language": "sq", "text": "Ende e paplotë: kapaciteti shtesë mund të ndihmojë, por nuk zgjidh kërkesat e paqarta ose vendimin mes kohës, shtrirjes dhe cilësisë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Start with the customer's goal, then move to concrete feasibility risks. This keeps the message cooperative instead of defensive.",
+          "translations": [
+            { "language": "en", "text": "Start with the customer's goal, then move to concrete feasibility risks. This keeps the message cooperative instead of defensive." },
+            { "language": "fa", "text": "با هدف مشتری شروع کن، سپس به ریسک‌های مشخص امکان‌پذیری برو. این کار پیام را همکاری‌محور نگه می‌دارد، نه دفاعی." },
+            { "language": "ar", "text": "ابدأ بهدف العميل، ثم انتقل إلى مخاطر التنفيذ الملموسة. هذا يجعل الرسالة تعاونية بدلاً من دفاعية." },
+            { "language": "tr", "text": "Müşterinin hedefiyle başla, sonra somut uygulanabilirlik risklerine geç. Bu, mesajı savunmacı değil işbirlikçi tutar." },
+            { "language": "ru", "text": "Начните с цели клиента, затем переходите к конкретным рискам реализуемости. Так сообщение остаётся кооперативным, а не оборонительным." },
+            { "language": "ckb", "text": "بە ئامانجی کڕیار دەست پێ بکە، پاشان بچۆ سەر مەترسییە دیاریکراوەکانی جێبەجێکردن. ئەمە پەیامەکە هاوکاریی دەهێڵێتەوە، نە بەرگری." },
+            { "language": "kmr", "text": "Bi armanca xerîdar dest pê bike, paşê derbasî xeterên konkret ên pêkanînê bibe. Ev peyamê hevkarîparêz dihêle, ne berevanî." },
+            { "language": "pl", "text": "Zacznij od celu klienta, a potem przejdź do konkretnych ryzyk wykonalności. Dzięki temu komunikat brzmi współpracująco, a nie defensywnie." },
+            { "language": "ro", "text": "Începe cu obiectivul clientului, apoi treci la riscurile concrete de fezabilitate. Astfel mesajul rămâne cooperant, nu defensiv." },
+            { "language": "sq", "text": "Fillo me qëllimin e klientit, pastaj kalo te rreziqet konkrete të realizueshmërisë. Kjo e mban mesazhin bashkëpunues, jo mbrojtës." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "A useful B2 answer does not only say what is impossible. It names a partial deliverable, a deadline, and the condition for the complete solution.",
+          "translations": [
+            { "language": "en", "text": "A useful B2 answer does not only say what is impossible. It names a partial deliverable, a deadline, and the condition for the complete solution." },
+            { "language": "fa", "text": "یک پاسخ مفید B2 فقط نمی‌گوید چه چیزی غیرممکن است. خروجی جزئی، موعد و شرط راه‌حل کامل را هم نام می‌برد." },
+            { "language": "ar", "text": "الإجابة المفيدة في مستوى B2 لا تقول فقط ما هو غير ممكن. إنها تذكر مخرجاً جزئياً وموعداً وشرط الحل الكامل." },
+            { "language": "tr", "text": "Yararlı bir B2 cevabı yalnızca neyin imkânsız olduğunu söylemez. Kısmi teslimi, son tarihi ve tam çözümün koşulunu belirtir." },
+            { "language": "ru", "text": "Полезный ответ уровня B2 не только говорит, что невозможно. Он называет частичный результат, срок и условие для полного решения." },
+            { "language": "ckb", "text": "وەڵامی بەسوودی B2 تەنها ناڵێت چی ناکرێت. ئەنجامی بەشێکی کار، کات و مەرجی چارەسەری تەواو ناو دەبات." },
+            { "language": "kmr", "text": "Bersiveke bikêr a B2 tenê nabêje çi ne mimkûn e. Ew radestkirineke beşî, dem û mercê çareseriya temam bi nav dike." },
+            { "language": "pl", "text": "Użyteczna odpowiedź B2 nie mówi tylko, co jest niemożliwe. Nazywa częściowy rezultat, termin i warunek pełnego rozwiązania." },
+            { "language": "ro", "text": "Un răspuns util de B2 nu spune doar ce este imposibil. El numește o livrare parțială, un termen și condiția pentru soluția completă." },
+            { "language": "sq", "text": "Një përgjigje e dobishme B2 nuk thotë vetëm çfarë është e pamundur. Ajo përmend dorëzimin e pjesshëm, afatin dhe kushtin për zgjidhjen e plotë." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "strategy",
+          "text": "Clarification questions should be specific enough that the customer can make decisions, not just repeat the request.",
+          "translations": [
+            { "language": "en", "text": "Clarification questions should be specific enough that the customer can make decisions, not just repeat the request." },
+            { "language": "fa", "text": "سؤال‌های شفاف‌سازی باید آن‌قدر مشخص باشند که مشتری بتواند تصمیم بگیرد، نه اینکه فقط درخواست را تکرار کند." },
+            { "language": "ar", "text": "ينبغي أن تكون أسئلة التوضيح محددة بما يكفي ليتمكن العميل من اتخاذ قرارات، لا أن تكرر الطلب فقط." },
+            { "language": "tr", "text": "Netleştirme soruları, müşterinin karar verebileceği kadar belirli olmalıdır; yalnızca isteği tekrar etmemelidir." },
+            { "language": "ru", "text": "Уточняющие вопросы должны быть достаточно конкретными, чтобы клиент мог принимать решения, а не просто повторять запрос." },
+            { "language": "ckb", "text": "پرسیارەکانی ڕوونکردنەوە دەبێت ئەوەندە دیاریکراو بن کە کڕیار بتوانێت بڕیار بدات، نە تەنها داواکارییەکە دووبارە بکاتەوە." },
+            { "language": "kmr", "text": "Pirsên zelalkirinê divê ewqas konkret bin ku xerîdar bikare biryar bide, ne ku tenê daxwazê dubare bike." },
+            { "language": "pl", "text": "Pytania doprecyzowujące powinny być na tyle konkretne, aby klient mógł podjąć decyzje, a nie tylko powtórzyć prośbę." },
+            { "language": "ro", "text": "Întrebările de clarificare trebuie să fie suficient de specifice încât clientul să poată lua decizii, nu doar să repete solicitarea." },
+            { "language": "sq", "text": "Pyetjet sqaruese duhet të jenë mjaft konkrete që klienti të mund të marrë vendime, jo vetëm të përsërisë kërkesën." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "When the full request cannot be safely promised, frame the decision as a tradeoff between date, scope, and quality.",
+          "translations": [
+            { "language": "en", "text": "When the full request cannot be safely promised, frame the decision as a tradeoff between date, scope, and quality." },
+            { "language": "fa", "text": "وقتی نمی‌توان کل درخواست را با اطمینان قول داد، تصمیم را به‌صورت مبادله بین موعد، دامنه کار و کیفیت مطرح کن." },
+            { "language": "ar", "text": "عندما لا يمكن الوعد بالطلب الكامل بأمان، صغ القرار كمفاضلة بين الموعد والنطاق والجودة." },
+            { "language": "tr", "text": "Tam isteğe güvenli şekilde söz verilemiyorsa kararı tarih, kapsam ve kalite arasında bir ödünleşim olarak çerçevele." },
+            { "language": "ru", "text": "Когда весь запрос нельзя безопасно обещать, формулируйте решение как выбор между сроком, объёмом и качеством." },
+            { "language": "ckb", "text": "کاتێک ناتوانرێت بە دڵنیایی بەڵێنی تەواوی داواکارییەکە بدرێت، بڕیارەکە وەک ئاڵوگۆڕێک لە نێوان کات، مەودای کار و کوالیتی بخە ڕوو." },
+            { "language": "kmr", "text": "Dema daxwaza temam bi ewlehî nayê sozdan, biryarê wek danûstandinek di navbera dem, qada karê û kalîteyê de pêşkêş bike." },
+            { "language": "pl", "text": "Gdy pełnej prośby nie można bezpiecznie obiecać, przedstaw decyzję jako kompromis między terminem, zakresem i jakością." },
+            { "language": "ro", "text": "Când solicitarea completă nu poate fi promisă în siguranță, formulează decizia ca un compromis între termen, domeniu și calitate." },
+            { "language": "sq", "text": "Kur nuk mund të premtohet në mënyrë të sigurt e gjithë kërkesa, paraqite vendimin si kompromis mes afatit, shtrirjes dhe cilësisë." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

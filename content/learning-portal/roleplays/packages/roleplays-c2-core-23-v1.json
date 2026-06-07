@@ -1,0 +1,750 @@
+{
+  "packageId": "roleplays-c2-core-23-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 23 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 23",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-akademische-kontroverse-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine akademische Kontroverse moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating an academic controversy" },
+        { "language": "fa", "text": "مدیریت یک بحث علمی اختلافی" },
+        { "language": "ar", "text": "إدارة جدل أكاديمي" },
+        { "language": "tr", "text": "Akademik bir tartışmayı yönetmek" },
+        { "language": "ru", "text": "Модерация академического спора" },
+        { "language": "ckb", "text": "بەڕێوەبردنی مشتومڕێکی ئەکادیمی" },
+        { "language": "kmr", "text": "Rêvebirina nakokiyeke akademîk" },
+        { "language": "pl", "text": "Moderowanie kontrowersji akademickiej" },
+        { "language": "ro", "text": "Moderarea unei controverse academice" },
+        { "language": "sq", "text": "Moderimi i një polemike akademike" }
+      ],
+      "description": "In einem Masterseminar wird diskutiert, ob digitale Lernplattformen Bildung gerechter machen. Eine Gruppe betont flexible Zugänge und individualisiertes Lernen, eine andere verweist auf ungleiche Geräteausstattung, Ablenkung und schwache Betreuung. Sie sollen die Kontroverse moderieren, beide Positionen präzise zusammenfassen und am Ende eine offene Forschungsfrage ableiten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a master's seminar, students discuss whether digital learning platforms make education fairer. One group emphasizes flexible access and individualized learning; another points to unequal device access, distraction, and weak support. You are asked to moderate the controversy, summarize both positions precisely, and derive an open research question at the end." },
+        { "language": "fa", "text": "در یک سمینار کارشناسی ارشد بحث می‌شود که آیا سکوهای یادگیری دیجیتال آموزش را عادلانه‌تر می‌کنند یا نه. یک گروه بر دسترسی منعطف و یادگیری فردی‌شده تأکید دارد، گروه دیگر به نابرابری در دسترسی به دستگاه، حواس‌پرتی و پشتیبانی ضعیف اشاره می‌کند. شما باید بحث اختلافی را مدیریت کنید، هر دو موضع را دقیق خلاصه کنید و در پایان یک پرسش پژوهشی باز نتیجه بگیرید." },
+        { "language": "ar", "text": "في ندوة ماجستير يُناقش ما إذا كانت منصات التعلم الرقمية تجعل التعليم أكثر إنصافاً. تؤكد مجموعة على الوصول المرن والتعلم الفردي، وتشير مجموعة أخرى إلى عدم تكافؤ الأجهزة والتشتت وضعف الدعم. المطلوب إدارة الجدل، وتلخيص الموقفين بدقة، واستخلاص سؤال بحثي مفتوح في النهاية." },
+        { "language": "tr", "text": "Bir yüksek lisans seminerinde dijital öğrenme platformlarının eğitimi daha adil yapıp yapmadığı tartışılıyor. Bir grup esnek erişimi ve bireyselleştirilmiş öğrenmeyi vurguluyor; başka bir grup eşitsiz cihaz erişimine, dikkat dağınıklığına ve zayıf desteğe işaret ediyor. Tartışmayı yönetmeniz, iki pozisyonu kesin biçimde özetlemeniz ve sonunda açık bir araştırma sorusu çıkarmanız bekleniyor." },
+        { "language": "ru", "text": "На магистерском семинаре обсуждают, делают ли цифровые учебные платформы образование справедливее. Одна группа подчеркивает гибкий доступ и индивидуализированное обучение, другая указывает на неравный доступ к устройствам, отвлечение и слабое сопровождение. Нужно модерировать спор, точно суммировать обе позиции и в конце вывести открытый исследовательский вопрос." },
+        { "language": "ckb", "text": "لە سمینارێکی ماستەردا گفتوگۆ دەکرێت ئایا پلاتفۆڕمە دیجیتاڵەکانی فێربوون خوێندن دادپەروەرانەتر دەکەن یان نا. گرووپێک جەخت لە گەیشتنی نەرم و فێربوونی تاکەکەسی دەکات، گرووپێکی تر ئاماژە بە نایەکسانی لە دەستگە، پەرتبوونی سەرنج و پشتیوانی لاواز دەکات. دەبێت مشتومڕەکە بەڕێوەببەیت، هەردوو هەڵوێست بە وردی کورت بکەیتەوە و لە کۆتاییدا پرسیارێکی توێژینەوەی کراوە دەربهێنیت." },
+        { "language": "kmr", "text": "Di semînareke masterê de tê gotûbêjkirin ka platformên fêrbûna dîjîtal perwerdeyê dadweranetir dikin an na. Komek gihîştina nerm û fêrbûna kesane tekez dike, komeke din li newekheviya gihîştina amûran, belavbûna balê û piştgiriya lawaz nîşan dide. Divê hûn nakokiyê rêve bibin, her du helwestan bi hûrgilî kurt bikin û di dawiyê de pirseke lêkolînê ya vekirî derxin." },
+        { "language": "pl", "text": "Na seminarium magisterskim dyskutuje się, czy cyfrowe platformy edukacyjne czynią edukację bardziej sprawiedliwą. Jedna grupa podkreśla elastyczny dostęp i zindywidualizowane uczenie się, inna wskazuje na nierówny dostęp do urządzeń, rozproszenie uwagi i słabe wsparcie. Trzeba moderować kontrowersję, precyzyjnie podsumować oba stanowiska i na końcu wyprowadzić otwarte pytanie badawcze." },
+        { "language": "ro", "text": "Într-un seminar de masterat se discută dacă platformele digitale de învățare fac educația mai echitabilă. Un grup subliniază accesul flexibil și învățarea individualizată, altul indică accesul inegal la dispozitive, distragerea atenției și sprijinul slab. Trebuie să moderați controversa, să rezumați precis ambele poziții și să derivați la final o întrebare de cercetare deschisă." },
+        { "language": "sq", "text": "Në një seminar masteri diskutohet nëse platformat digjitale të mësimit e bëjnë arsimin më të drejtë. Një grup thekson qasjen fleksibël dhe mësimin e individualizuar, një tjetër tregon qasjen e pabarabartë në pajisje, shpërqendrimin dhe mbështetjen e dobët. Ju duhet ta moderoni polemikën, t'i përmblidhni saktë të dyja pozicionet dhe në fund të nxirrni një pyetje kërkimore të hapur." }
+      ],
+      "learnerGoal": "Eine akademische Kontroverse formal moderieren: zwei theoretische Positionen fair zusammenfassen, empirische Befunde von Interpretation trennen, methodische Grenzen sichtbar machen, die Diskussion strukturieren und eine präzise offene Forschungsfrage ableiten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate an academic controversy formally: summarize two theoretical positions fairly, separate empirical findings from interpretation, make methodological limits visible, structure the discussion, and derive a precise open research question." },
+        { "language": "fa", "text": "یک بحث علمی اختلافی را به‌صورت رسمی مدیریت کنید: دو موضع نظری را منصفانه خلاصه کنید، یافته‌های تجربی را از تفسیر جدا کنید، محدودیت‌های روش‌شناختی را آشکار کنید، بحث را ساختار دهید و یک پرسش پژوهشی باز و دقیق نتیجه بگیرید." },
+        { "language": "ar", "text": "أديروا جدلاً أكاديمياً بشكل رسمي: لخصوا موقفين نظريين بإنصاف، وافصلوا النتائج التجريبية عن التفسير، واجعلوا الحدود المنهجية مرئية، ونظموا النقاش، واستخلصوا سؤالاً بحثياً مفتوحاً ودقيقاً." },
+        { "language": "tr", "text": "Akademik bir tartışmayı resmi biçimde yönetin: iki kuramsal pozisyonu adilce özetleyin, ampirik bulguları yorumdan ayırın, yöntemsel sınırları görünür kılın, tartışmayı yapılandırın ve kesin bir açık araştırma sorusu çıkarın." },
+        { "language": "ru", "text": "Формально модерировать академический спор: справедливо суммировать две теоретические позиции, отделить эмпирические результаты от интерпретации, показать методологические ограничения, структурировать дискуссию и вывести точный открытый исследовательский вопрос." },
+        { "language": "ckb", "text": "مشتومڕێکی ئەکادیمی بە فەرمی بەڕێوەببە: دوو هەڵوێستی تیۆری بە دادپەروەرانە کورت بکەوە، دۆزینەوەی ئەزموونی لە لێکدانەوە جیا بکە، سنوورەکانی ڕێبازناسی ئاشکرا بکە، گفتوگۆکە ڕێکبخە و پرسیارێکی توێژینەوەی کراوە و ورد دەربهێنە." },
+        { "language": "kmr", "text": "Nakokiyeke akademîk bi awayekî fermî rêve bibin: du helwestên teorîk bi dadwerî kurt bikin, encamên emprîkî ji şîroveyê cuda bikin, sînorên rêbazî xuya bikin, gotûbêjê rêz bikin û pirseke lêkolînê ya vekirî û hûr derxin." },
+        { "language": "pl", "text": "Formalnie moderować kontrowersję akademicką: uczciwie podsumować dwa stanowiska teoretyczne, oddzielić ustalenia empiryczne od interpretacji, uwidocznić granice metodologiczne, uporządkować dyskusję i wyprowadzić precyzyjne otwarte pytanie badawcze." },
+        { "language": "ro", "text": "Moderați formal o controversă academică: rezumați echitabil două poziții teoretice, separați constatările empirice de interpretare, faceți vizibile limitele metodologice, structurați discuția și derivați o întrebare de cercetare deschisă și precisă." },
+        { "language": "sq", "text": "Moderoni formalisht një polemikë akademike: përmblidhni drejt dy pozicione teorike, ndani gjetjet empirike nga interpretimi, bëni të dukshme kufijtë metodologjikë, strukturoni diskutimin dhe nxirrni një pyetje kërkimore të hapur dhe të saktë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "exam-discussion",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 23,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Seminarmoderation",
+          "translations": [
+            { "language": "en", "text": "Seminar moderator" },
+            { "language": "fa", "text": "گرداننده سمینار" },
+            { "language": "ar", "text": "مدير الندوة" },
+            { "language": "tr", "text": "Seminer moderatörü" },
+            { "language": "ru", "text": "Модератор семинара" },
+            { "language": "ckb", "text": "بەڕێوەبەری سمینار" },
+            { "language": "kmr", "text": "Moderatorê semînarê" },
+            { "language": "pl", "text": "Moderator seminarium" },
+            { "language": "ro", "text": "Moderator de seminar" },
+            { "language": "sq", "text": "Moderator seminari" }
+          ]
+        },
+        {
+          "roleKey": "lecturer",
+          "displayName": "Dozentin",
+          "translations": [
+            { "language": "en", "text": "Lecturer" },
+            { "language": "fa", "text": "مدرس" },
+            { "language": "ar", "text": "محاضرة" },
+            { "language": "tr", "text": "Öğretim görevlisi" },
+            { "language": "ru", "text": "Преподавательница" },
+            { "language": "ckb", "text": "مامۆستای زانکۆ" },
+            { "language": "kmr", "text": "Mamosteya zanîngehê" },
+            { "language": "pl", "text": "Prowadząca" },
+            { "language": "ro", "text": "Cadru didactic" },
+            { "language": "sq", "text": "Lektore" }
+          ]
+        },
+        {
+          "roleKey": "student-a",
+          "displayName": "Student A",
+          "translations": [
+            { "language": "en", "text": "Student A" },
+            { "language": "fa", "text": "دانشجو الف" },
+            { "language": "ar", "text": "الطالب أ" },
+            { "language": "tr", "text": "Öğrenci A" },
+            { "language": "ru", "text": "Студент A" },
+            { "language": "ckb", "text": "خوێندکاری A" },
+            { "language": "kmr", "text": "Xwendekar A" },
+            { "language": "pl", "text": "Student A" },
+            { "language": "ro", "text": "Student A" },
+            { "language": "sq", "text": "Studenti A" }
+          ]
+        },
+        {
+          "roleKey": "student-b",
+          "displayName": "Student B",
+          "translations": [
+            { "language": "en", "text": "Student B" },
+            { "language": "fa", "text": "دانشجو ب" },
+            { "language": "ar", "text": "الطالب ب" },
+            { "language": "tr", "text": "Öğrenci B" },
+            { "language": "ru", "text": "Студент B" },
+            { "language": "ckb", "text": "خوێندکاری B" },
+            { "language": "kmr", "text": "Xwendekar B" },
+            { "language": "pl", "text": "Student B" },
+            { "language": "ro", "text": "Student B" },
+            { "language": "sq", "text": "Studenti B" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "lecturer",
+          "baseText": "Bitte moderieren Sie die Kontroverse: Machen digitale Lernplattformen Bildung gerechter, oder verstärken sie bestehende Ungleichheiten?",
+          "translations": [
+            { "language": "en", "text": "Please moderate the controversy: do digital learning platforms make education fairer, or do they reinforce existing inequalities?" },
+            { "language": "fa", "text": "لطفاً این بحث اختلافی را مدیریت کنید: آیا سکوهای یادگیری دیجیتال آموزش را عادلانه‌تر می‌کنند یا نابرابری‌های موجود را تقویت می‌کنند؟" },
+            { "language": "ar", "text": "يرجى إدارة هذا الجدل: هل تجعل منصات التعلم الرقمية التعليم أكثر إنصافاً، أم تعزز أوجه عدم المساواة القائمة؟" },
+            { "language": "tr", "text": "Lütfen tartışmayı yönetin: dijital öğrenme platformları eğitimi daha adil mi yapar, yoksa mevcut eşitsizlikleri mi güçlendirir?" },
+            { "language": "ru", "text": "Пожалуйста, модерируйте спор: делают ли цифровые учебные платформы образование справедливее или усиливают существующее неравенство?" },
+            { "language": "ckb", "text": "تکایە مشتومڕەکە بەڕێوەببە: ئایا پلاتفۆڕمە دیجیتاڵەکانی فێربوون خوێندن دادپەروەرانەتر دەکەن، یان نایەکسانییە هەبووەکان بەهێزتر دەکەن؟" },
+            { "language": "kmr", "text": "Ji kerema xwe nakokiyê rêve bibin: platformên fêrbûna dîjîtal perwerdeyê dadweranetir dikin, an newekheviyên heyî xurtir dikin?" },
+            { "language": "pl", "text": "Proszę moderować kontrowersję: czy cyfrowe platformy edukacyjne czynią edukację bardziej sprawiedliwą, czy wzmacniają istniejące nierówności?" },
+            { "language": "ro", "text": "Vă rog să moderați controversa: platformele digitale de învățare fac educația mai echitabilă sau întăresc inegalitățile existente?" },
+            { "language": "sq", "text": "Ju lutem moderoni polemikën: a e bëjnë platformat digjitale të mësimit arsimin më të drejtë, apo i forcojnë pabarazitë ekzistuese?" }
+          ],
+          "function": "frame-academic-question",
+          "toneNote": "Formal und offen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Frage zunächst als Spannungsverhältnis rahmen. Die eine Position sieht digitale Plattformen als Ausweitung von Zugang und Selbststeuerung; die andere betont, dass Zugang allein ohne Geräte, Ruhe, Betreuung und Medienkompetenz keine Chancengleichheit schafft.",
+          "translations": [
+            { "language": "en", "text": "I would first frame the question as a tension. One position sees digital platforms as expanding access and self-directed learning; the other emphasizes that access alone, without devices, quiet space, support, and media competence, does not create equal opportunity." },
+            { "language": "fa", "text": "من ابتدا پرسش را به‌صورت یک تنش مفهومی قاب‌بندی می‌کنم. یک موضع سکوهای دیجیتال را گسترش دسترسی و خودراهبری در یادگیری می‌بیند؛ موضع دیگر تأکید می‌کند که دسترسی به تنهایی، بدون دستگاه، فضای آرام، پشتیبانی و سواد رسانه‌ای، فرصت برابر ایجاد نمی‌کند." },
+            { "language": "ar", "text": "سأؤطر السؤال أولاً كتوتر مفهومي. يرى موقف أن المنصات الرقمية توسع الوصول والتعلم الذاتي؛ ويؤكد الموقف الآخر أن الوصول وحده، من دون أجهزة وهدوء ودعم وكفاءة إعلامية، لا يخلق تكافؤ فرص." },
+            { "language": "tr", "text": "Soruyu önce bir gerilim ilişkisi olarak çerçevelerdim. Bir pozisyon dijital platformları erişim ve öz yönelimli öğrenmeyi genişleten araçlar olarak görüyor; diğeri ise cihaz, sessiz ortam, destek ve medya yetkinliği olmadan erişimin tek başına fırsat eşitliği yaratmadığını vurguluyor." },
+            { "language": "ru", "text": "Сначала я бы оформил вопрос как напряжение. Одна позиция видит цифровые платформы как расширение доступа и саморегулируемого обучения; другая подчеркивает, что один доступ без устройств, тишины, поддержки и медиакомпетентности не создает равенства возможностей." },
+            { "language": "ckb", "text": "من سەرەتا پرسیارەکە وەک پەیوەندییەکی توند قاب دەکەم. هەڵوێستێک پلاتفۆڕمە دیجیتاڵەکان وەک فراوانکردنی گەیشتن و فێربوونی خۆڕێکخراو دەبینێت؛ ئەوی تر جەخت دەکات کە گەیشتن بە تەنیا، بەبێ دەستگە، شوێنی ئارام، پشتیوانی و توانای میدیایی، دەرفەتی یەکسان دروست ناکات." },
+            { "language": "kmr", "text": "Ez ê pêşî pirsê wekî têkiliyeke tengijî çarçove bikim. Helwestek platformên dîjîtal wekî firehkirina gihîştinê û fêrbûna xwe-rêvebir dibîne; ya din tekez dike ku gihîştin bi tena xwe, bê amûr, cihê aram, piştgirî û şiyanên medyayê, wekheviya derfetan çênake." },
+            { "language": "pl", "text": "Najpierw ująłbym pytanie jako napięcie. Jedno stanowisko widzi platformy cyfrowe jako rozszerzenie dostępu i samosterownego uczenia się; drugie podkreśla, że sam dostęp bez urządzeń, ciszy, wsparcia i kompetencji medialnej nie tworzy równości szans." },
+            { "language": "ro", "text": "Aș încadra mai întâi întrebarea ca pe o tensiune. O poziție vede platformele digitale ca extindere a accesului și a învățării autodirijate; cealaltă subliniază că accesul singur, fără dispozitive, liniște, sprijin și competență media, nu creează egalitate de șanse." },
+            { "language": "sq", "text": "Së pari do ta kornizoja pyetjen si një tension. Një pozicion i sheh platformat digjitale si zgjerim të qasjes dhe të të mësuarit të vetëdrejtuar; tjetri thekson se qasja vetëm, pa pajisje, qetësi, mbështetje dhe aftësi mediatike, nuk krijon barazi mundësish." }
+          ],
+          "function": "frame-positions",
+          "toneNote": "Beide Positionen fair anlegen.",
+          "expectedLearnerAction": "Zwei Positionen präzise und symmetrisch eröffnen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "student-a",
+          "baseText": "Die Daten zeigen doch, dass viele Lernende mit Plattformen häufiger üben und schneller Feedback bekommen. Das spricht für mehr Gerechtigkeit.",
+          "translations": [
+            { "language": "en", "text": "The data do show that many learners practice more often with platforms and receive feedback faster. That supports more fairness." },
+            { "language": "fa", "text": "داده‌ها نشان می‌دهند که بسیاری از یادگیرندگان با سکوها بیشتر تمرین می‌کنند و سریع‌تر بازخورد می‌گیرند. این به نفع عدالت بیشتر است." },
+            { "language": "ar", "text": "تُظهر البيانات فعلاً أن كثيراً من المتعلمين يتدربون أكثر مع المنصات ويحصلون على تغذية راجعة أسرع. هذا يدعم إنصافاً أكبر." },
+            { "language": "tr", "text": "Veriler birçok öğrenenin platformlarla daha sık alıştırma yaptığını ve daha hızlı geri bildirim aldığını gösteriyor. Bu daha fazla adalet lehine konuşuyor." },
+            { "language": "ru", "text": "Данные ведь показывают, что многие учащиеся чаще практикуются с платформами и быстрее получают обратную связь. Это говорит в пользу большей справедливости." },
+            { "language": "ckb", "text": "داتاکان دەردەخەن کە زۆر فێرخواز بە پلاتفۆڕمەکان زیاتر ڕاهێنان دەکەن و خێراتر فیدباک وەردەگرن. ئەمە لە بەرژەوەندی دادپەروەریی زیاترە." },
+            { "language": "kmr", "text": "Dane nîşan didin ku gelek fêrker bi platforman zêdetir pratîk dikin û zûtir paşxwendinê digirin. Ev ji bo dadweriya zêdetir piştgirî ye." },
+            { "language": "pl", "text": "Dane pokazują przecież, że wielu uczących się częściej ćwiczy z platformami i szybciej otrzymuje informację zwrotną. To przemawia za większą sprawiedliwością." },
+            { "language": "ro", "text": "Datele arată totuși că mulți cursanți exersează mai des cu platformele și primesc feedback mai rapid. Asta susține mai multă echitate." },
+            { "language": "sq", "text": "Të dhënat tregojnë se shumë nxënës ushtrohen më shpesh me platforma dhe marrin reagim më shpejt. Kjo flet për më shumë drejtësi." }
+          ],
+          "function": "offer-evidence-positive",
+          "toneNote": "Empirisch zugespitzt."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein relevanter Befund, aber er beantwortet noch nicht die Gerechtigkeitsfrage vollständig. Häufigeres Üben und schnelleres Feedback zeigen Nutzungsvorteile; wir müssen zusätzlich prüfen, wer diese Vorteile erreicht, wer ausgeschlossen bleibt und unter welchen Lernbedingungen die Effekte auftreten.",
+          "translations": [
+            { "language": "en", "text": "That is a relevant finding, but it does not yet answer the fairness question fully. More frequent practice and faster feedback show usage benefits; we also need to examine who reaches these benefits, who remains excluded, and under which learning conditions the effects occur." },
+            { "language": "fa", "text": "این یافته مهمی است، اما هنوز پرسش عدالت را کامل پاسخ نمی‌دهد. تمرین بیشتر و بازخورد سریع‌تر مزیت‌های استفاده را نشان می‌دهند؛ علاوه بر آن باید بررسی کنیم چه کسانی به این مزیت‌ها دست می‌یابند، چه کسانی بیرون می‌مانند و این اثرها در چه شرایط یادگیری رخ می‌دهند." },
+            { "language": "ar", "text": "هذا اكتشاف مهم، لكنه لا يجيب بعد عن سؤال الإنصاف كاملاً. التدريب الأكثر والتغذية الراجعة الأسرع يظهران مزايا استخدام؛ لكن علينا أيضاً فحص من يصل إلى هذه المزايا، ومن يبقى مستبعداً، وتحت أي شروط تعلم تظهر الآثار." },
+            { "language": "tr", "text": "Bu ilgili bir bulgu, ancak adalet sorusunu henüz tam yanıtlamıyor. Daha sık alıştırma ve daha hızlı geri bildirim kullanım yararlarını gösterir; ayrıca bu yararlara kimin ulaştığını, kimin dışarıda kaldığını ve etkilerin hangi öğrenme koşullarında ortaya çıktığını incelemeliyiz." },
+            { "language": "ru", "text": "Это релевантный результат, но он еще не полностью отвечает на вопрос справедливости. Более частая практика и более быстрая обратная связь показывают преимущества использования; дополнительно нужно проверить, кто получает эти преимущества, кто остается исключенным и при каких условиях обучения возникают эффекты." },
+            { "language": "ckb", "text": "ئەمە دۆزینەوەیەکی پەیوەندیدارە، بەڵام هێشتا پرسی دادپەروەری بە تەواوی وەڵام ناداتەوە. ڕاهێنانی زیاتر و فیدباکی خێراتر سوودی بەکارهێنان پیشان دەدەن؛ پێویستە هەروەها بپشکنین کێ دەگات بەو سوودانە، کێ دەرەوە دەمێنێتەوە و کاریگەرییەکان لە ژێر چ مەرجی فێربووندا ڕوودەدەن." },
+            { "language": "kmr", "text": "Ev encameke têkildar e, lê hê bi tevahî bersiva pirsa dadweriyê nade. Pratîka zêdetir û paşxwendina zûtir sûdên bikaranînê nîşan didin; divê em herwiha bipirsin kî digihîje van sûdan, kî derve dimîne û bandor di bin kîjan şertên fêrbûnê de derdikevin." },
+            { "language": "pl", "text": "To istotne ustalenie, ale nie odpowiada jeszcze w pełni na pytanie o sprawiedliwość. Częstsze ćwiczenie i szybsza informacja zwrotna pokazują korzyści użytkowania; musimy dodatkowo sprawdzić, kto z nich korzysta, kto pozostaje wykluczony i w jakich warunkach uczenia się pojawiają się efekty." },
+            { "language": "ro", "text": "Este o constatare relevantă, dar nu răspunde încă pe deplin la întrebarea echității. Exersarea mai frecventă și feedbackul mai rapid arată beneficii de utilizare; trebuie să verificăm suplimentar cine ajunge la aceste beneficii, cine rămâne exclus și în ce condiții de învățare apar efectele." },
+            { "language": "sq", "text": "Kjo është një gjetje e rëndësishme, por nuk i përgjigjet ende plotësisht pyetjes së drejtësisë. Ushtrimi më i shpeshtë dhe reagimi më i shpejtë tregojnë përfitime përdorimi; duhet të kontrollojmë gjithashtu kush i arrin këto përfitime, kush mbetet i përjashtuar dhe në cilat kushte mësimi shfaqen efektet." }
+          ],
+          "function": "separate-finding-interpretation",
+          "toneNote": "Befund anerkennen, Reichweite begrenzen.",
+          "expectedLearnerAction": "Empirischen Befund von normativer Deutung trennen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "student-b",
+          "baseText": "Aber wenn gerade benachteiligte Lernende weniger stabile Geräte und weniger ruhige Lernorte haben, kann die Plattform die Ungleichheit doch vergrößern.",
+          "translations": [
+            { "language": "en", "text": "But if disadvantaged learners in particular have less stable devices and fewer quiet learning spaces, the platform can increase inequality." },
+            { "language": "fa", "text": "اما اگر دقیقاً یادگیرندگان محروم‌تر دستگاه‌های پایدارتر و مکان‌های آرام کمتری برای یادگیری داشته باشند، سکو می‌تواند نابرابری را افزایش دهد." },
+            { "language": "ar", "text": "لكن إذا كان المتعلمون الأكثر حرماناً بالذات يملكون أجهزة أقل استقراراً وأماكن تعلم هادئة أقل، فقد تزيد المنصة عدم المساواة." },
+            { "language": "tr", "text": "Ama özellikle dezavantajlı öğrenenlerin daha az sağlam cihazı ve daha az sessiz öğrenme alanı varsa platform eşitsizliği artırabilir." },
+            { "language": "ru", "text": "Но если именно у неблагополучных учащихся менее надежные устройства и меньше тихих мест для учебы, платформа может увеличить неравенство." },
+            { "language": "ckb", "text": "بەڵام ئەگەر بە تایبەتی فێرخوازانی کەم‌دەرفەت دەستگەی جێگیرتر و شوێنی فێربوونی ئارامی کەمتر هەبێت، پلاتفۆڕمەکە دەتوانێت نایەکسانی زیاد بکات." },
+            { "language": "kmr", "text": "Lê heke bi taybetî fêrkerên kêm-derfet amûrên kêmtir stabîl û cihên fêrbûnê yên aram kêmtir hebin, platform dikare newekheviyê zêde bike." },
+            { "language": "pl", "text": "Ale jeśli właśnie uczący się w gorszej sytuacji mają mniej stabilne urządzenia i mniej cichych miejsc do nauki, platforma może zwiększyć nierówność." },
+            { "language": "ro", "text": "Dar dacă tocmai cursanții dezavantajați au dispozitive mai puțin stabile și mai puține locuri liniștite de învățare, platforma poate mări inegalitatea." },
+            { "language": "sq", "text": "Por nëse pikërisht nxënësit e pafavorizuar kanë pajisje më pak të qëndrueshme dhe më pak vende të qeta mësimi, platforma mund ta rrisë pabarazinë." }
+          ],
+          "function": "offer-equity-objection",
+          "toneNote": "Methodisch relevant."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das ist der stärkere Gegenpunkt: Nicht die Plattform an sich entscheidet über Gerechtigkeit, sondern die Einbettung. Wir sollten daher zwischen technischem Zugang, pädagogischer Begleitung und sozialem Lernumfeld unterscheiden, statt die Wirkung der Plattform allein zuzuschreiben.",
+          "translations": [
+            { "language": "en", "text": "That is the stronger counterpoint: fairness is not decided by the platform itself, but by how it is embedded. We should therefore distinguish between technical access, pedagogical support, and the social learning environment instead of attributing the effect to the platform alone." },
+            { "language": "fa", "text": "این نقطه مقابل قوی‌تری است: عدالت را خود سکو تعیین نمی‌کند، بلکه نحوه جای‌گیری آن در محیط آموزشی تعیین می‌کند. بنابراین باید میان دسترسی فنی، همراهی آموزشی و محیط اجتماعی یادگیری تفاوت بگذاریم، نه اینکه اثر را فقط به سکو نسبت دهیم." },
+            { "language": "ar", "text": "هذه نقطة مقابلة أقوى: لا تحدد المنصة نفسها الإنصاف، بل طريقة إدماجها. لذلك ينبغي التمييز بين الوصول التقني، والمرافقة التربوية، وبيئة التعلم الاجتماعية، بدلاً من إسناد الأثر إلى المنصة وحدها." },
+            { "language": "tr", "text": "Bu daha güçlü karşı noktadır: adaleti platformun kendisi değil, onun nasıl yerleştirildiği belirler. Bu nedenle etkiyi yalnızca platforma yüklemek yerine teknik erişim, pedagojik destek ve sosyal öğrenme ortamı arasında ayrım yapmalıyız." },
+            { "language": "ru", "text": "Это более сильный контраргумент: справедливость определяется не самой платформой, а тем, как она встроена. Поэтому нужно различать технический доступ, педагогическое сопровождение и социальную учебную среду, вместо того чтобы приписывать эффект только платформе." },
+            { "language": "ckb", "text": "ئەمە خاڵی بەرامبەری بەهێزترە: دادپەروەری بە پلاتفۆڕمەکە خۆی دیاری ناکرێت، بەڵکو بە چۆنیەتی جێگیرکردنی. بۆیە دەبێت جیاوازی بکەین لە نێوان گەیشتنی تەکنیکی، هاوڕێیەتی پەروەردەیی و ژینگەی کۆمەڵایەتی فێربوون، نەوەک کاریگەرییەکە تەنها بدرێتە پاڵ پلاتفۆڕمەکە." },
+            { "language": "kmr", "text": "Ev xala dijber a xurtir e: dadwerî ne ji aliyê platformê bi xwe ve tê diyarkirin, lê ji aliyê çawa tê bicihkirin. Ji ber vê yekê divê em gihîştina teknîkî, piştgiriya pedagogîk û hawîrdora civakî ya fêrbûnê ji hev cuda bikin, ne ku bandorê tenê li platformê bibar bikin." },
+            { "language": "pl", "text": "To mocniejszy kontrpunkt: o sprawiedliwości nie decyduje sama platforma, lecz jej osadzenie. Dlatego powinniśmy odróżnić dostęp techniczny, wsparcie pedagogiczne i społeczne środowisko uczenia się, zamiast przypisywać efekt samej platformie." },
+            { "language": "ro", "text": "Acesta este contraargumentul mai puternic: echitatea nu este decisă de platforma în sine, ci de modul în care este integrată. De aceea trebuie să distingem între acces tehnic, sprijin pedagogic și mediul social de învățare, în loc să atribuim efectul doar platformei." },
+            { "language": "sq", "text": "Kjo është pika kundërshtuese më e fortë: drejtësinë nuk e vendos vetë platforma, por mënyra si ajo integrohet. Prandaj duhet të dallojmë qasjen teknike, mbështetjen pedagogjike dhe mjedisin shoqëror të mësimit, në vend që efektin t'ia atribuojmë vetëm platformës." }
+          ],
+          "function": "refine-causal-model",
+          "toneNote": "Theorie und Bedingungen verbinden.",
+          "expectedLearnerAction": "Kausalmodell differenzieren."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "lecturer",
+          "baseText": "Wie würden Sie die beiden Positionen nun so bündeln, dass keine Seite verzerrt wird?",
+          "translations": [
+            { "language": "en", "text": "How would you now bundle the two positions so that neither side is distorted?" },
+            { "language": "fa", "text": "اکنون چگونه دو موضع را طوری جمع‌بندی می‌کنید که هیچ طرفی تحریف نشود؟" },
+            { "language": "ar", "text": "كيف ستجمعون الآن الموقفين بحيث لا يُشوَّه أي طرف؟" },
+            { "language": "tr", "text": "Şimdi iki pozisyonu hiçbir taraf çarpıtılmayacak şekilde nasıl bir araya getirirsiniz?" },
+            { "language": "ru", "text": "Как вы теперь объедините две позиции так, чтобы ни одна сторона не была искажена?" },
+            { "language": "ckb", "text": "ئێستا چۆن هەردوو هەڵوێست پێکەوە دەخەیتەوە بە شێوەیەک کە هیچ لایەنێک شێوەشکێن نەکرێت؟" },
+            { "language": "kmr", "text": "Hûn ê niha her du helwestan çawa bi hev ve girê bidin bêyî ku ti alî were şikandin?" },
+            { "language": "pl", "text": "Jak teraz połączyłby Pan/Pani oba stanowiska, aby żadna strona nie została zniekształcona?" },
+            { "language": "ro", "text": "Cum ați grupa acum cele două poziții astfel încât niciuna să nu fie distorsionată?" },
+            { "language": "sq", "text": "Si do t'i bashkonit tani të dyja pozicionet në mënyrë që asnjëra palë të mos shtrembërohet?" }
+          ],
+          "function": "ask-synthesis",
+          "toneNote": "Präzise."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Position A betont das Potenzial digitaler Plattformen, Lernzeit, Feedback und individuelle Wiederholung zu erweitern. Position B warnt, dass dieses Potenzial sozial ungleich verteilt bleibt, wenn Ausstattung, Lernraum und Betreuung fehlen. Die Kontroverse liegt also nicht bei digital oder nicht digital, sondern bei den Bedingungen wirksamer Nutzung.",
+          "translations": [
+            { "language": "en", "text": "I would say: Position A emphasizes the potential of digital platforms to expand learning time, feedback, and individual repetition. Position B warns that this potential remains socially unequally distributed if equipment, learning space, and support are missing. The controversy therefore is not digital or not digital, but the conditions of effective use." },
+            { "language": "fa", "text": "من می‌گویم: موضع الف بر ظرفیت سکوهای دیجیتال برای گسترش زمان یادگیری، بازخورد و تکرار فردی تأکید دارد. موضع ب هشدار می‌دهد که این ظرفیت اگر تجهیزات، فضای یادگیری و پشتیبانی وجود نداشته باشد، از نظر اجتماعی نابرابر توزیع می‌ماند. بنابراین اختلاف بر سر دیجیتال یا غیردیجیتال بودن نیست، بلکه بر سر شرایط استفاده مؤثر است." },
+            { "language": "ar", "text": "سأقول: يؤكد الموقف أ إمكانات المنصات الرقمية في توسيع وقت التعلم والتغذية الراجعة والتكرار الفردي. ويحذر الموقف ب من أن هذه الإمكانات تبقى موزعة اجتماعياً بشكل غير متساوٍ إذا غابت الأجهزة ومساحة التعلم والدعم. لذلك لا يدور الجدل حول رقمي أو غير رقمي، بل حول شروط الاستخدام الفعال." },
+            { "language": "tr", "text": "Şunu söylerdim: Pozisyon A dijital platformların öğrenme süresini, geri bildirimi ve bireysel tekrarı genişletme potansiyelini vurguluyor. Pozisyon B ise donanım, öğrenme alanı ve destek yoksa bu potansiyelin sosyal olarak eşitsiz dağıldığı konusunda uyarıyor. Tartışma bu yüzden dijital olup olmamakta değil, etkili kullanım koşullarındadır." },
+            { "language": "ru", "text": "Я бы сказал: позиция A подчеркивает потенциал цифровых платформ расширять время обучения, обратную связь и индивидуальное повторение. Позиция B предупреждает, что этот потенциал остается социально неравномерно распределенным, если отсутствуют оборудование, учебное пространство и поддержка. Спор, следовательно, не в том, цифровое или не цифровое, а в условиях эффективного использования." },
+            { "language": "ckb", "text": "من دەڵێم: هەڵوێستی A جەخت لە توانای پلاتفۆڕمە دیجیتاڵەکان دەکات بۆ فراوانکردنی کاتی فێربوون، فیدباک و دووبارەکردنەوەی تاکەکەسی. هەڵوێستی B ئاگادار دەکاتەوە کە ئەم توانایە بە کۆمەڵایەتی نایەکسان دابەش دەمێنێتەوە ئەگەر ئامێر، شوێنی فێربوون و پشتیوانی نەبن. بۆیە مشتومڕەکە لەسەر دیجیتاڵ یان نادیجیتاڵ نییە، بەڵکو لەسەر مەرجەکانی بەکارهێنانی کاریگەرە." },
+            { "language": "kmr", "text": "Ez ê bibêjim: Helwesta A potansiyela platformên dîjîtal ji bo firehkirina dema fêrbûnê, paşxwendinê û dubarekirina kesane tekez dike. Helwesta B hişyar dike ku ev potensiyel heke amûr, cihê fêrbûnê û piştgirî tune bin, ji aliyê civakî ve newekhev belav dimîne. Ji ber vê yekê nakokî ne li ser dîjîtal an ne-dîjîtal e, lê li ser şertên bikaranîna bandorker e." },
+            { "language": "pl", "text": "Powiedziałbym: stanowisko A podkreśla potencjał platform cyfrowych do rozszerzania czasu nauki, informacji zwrotnej i indywidualnego powtarzania. Stanowisko B ostrzega, że ten potencjał pozostaje społecznie nierówno rozłożony, jeśli brakuje sprzętu, miejsca do nauki i wsparcia. Kontrowersja nie dotyczy więc tego, cyfrowe czy niecyfrowe, lecz warunków skutecznego użycia." },
+            { "language": "ro", "text": "Aș spune: Poziția A subliniază potențialul platformelor digitale de a extinde timpul de învățare, feedbackul și repetarea individuală. Poziția B avertizează că acest potențial rămâne distribuit social inegal dacă lipsesc echipamentele, spațiul de învățare și sprijinul. Controversa nu este deci digital sau nedigital, ci condițiile utilizării eficiente." },
+            { "language": "sq", "text": "Do të thosha: Pozicioni A thekson potencialin e platformave digjitale për të zgjeruar kohën e mësimit, reagimin dhe përsëritjen individuale. Pozicioni B paralajmëron se ky potencial mbetet i shpërndarë pabarazisht shoqërisht nëse mungojnë pajisjet, hapësira e mësimit dhe mbështetja. Pra polemika nuk qëndron te digjitale apo jo digjitale, por te kushtet e përdorimit efektiv." }
+          ],
+          "function": "fair-synthesis",
+          "toneNote": "Symmetrisch und präzise.",
+          "expectedLearnerAction": "Beide Positionen ohne Strohmann zusammenführen."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "lecturer",
+          "baseText": "Bitte schließen Sie mit einer offenen Forschungsfrage, die aus dieser Kontroverse folgt.",
+          "translations": [
+            { "language": "en", "text": "Please close with an open research question that follows from this controversy." },
+            { "language": "fa", "text": "لطفاً با یک پرسش پژوهشی باز که از این بحث اختلافی نتیجه می‌شود، جمع‌بندی کنید." },
+            { "language": "ar", "text": "يرجى الختام بسؤال بحثي مفتوح ينتج عن هذا الجدل." },
+            { "language": "tr", "text": "Lütfen bu tartışmadan çıkan açık bir araştırma sorusuyla bitirin." },
+            { "language": "ru", "text": "Пожалуйста, завершите открытым исследовательским вопросом, который следует из этого спора." },
+            { "language": "ckb", "text": "تکایە بە پرسیارێکی توێژینەوەی کراوە کۆتایی پێبهێنە کە لەم مشتومڕەوە دەردەچێت." },
+            { "language": "kmr", "text": "Ji kerema xwe bi pirseke lêkolînê ya vekirî bi dawî bikin ku ji vê nakokiyê derdikeve." },
+            { "language": "pl", "text": "Proszę zakończyć otwartym pytaniem badawczym wynikającym z tej kontrowersji." },
+            { "language": "ro", "text": "Vă rog să încheiați cu o întrebare de cercetare deschisă care rezultă din această controversă." },
+            { "language": "sq", "text": "Ju lutem mbylleni me një pyetje kërkimore të hapur që del nga kjo polemikë." }
+          ],
+          "function": "request-research-question",
+          "toneNote": "Abschließend."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Eine präzise Forschungsfrage wäre: Unter welchen technischen, pädagogischen und häuslichen Bedingungen verbessern digitale Lernplattformen nicht nur die durchschnittliche Leistung, sondern auch die Lernchancen benachteiligter Gruppen? Damit bleibt die Kontroverse empirisch prüfbar und normativ relevant.",
+          "translations": [
+            { "language": "en", "text": "A precise research question would be: under which technical, pedagogical, and home conditions do digital learning platforms improve not only average performance, but also the learning opportunities of disadvantaged groups? This keeps the controversy empirically testable and normatively relevant." },
+            { "language": "fa", "text": "یک پرسش پژوهشی دقیق این است: سکوهای یادگیری دیجیتال تحت چه شرایط فنی، آموزشی و خانگی نه فقط عملکرد میانگین، بلکه فرصت‌های یادگیری گروه‌های محروم‌تر را بهبود می‌دهند؟ به این ترتیب، بحث هم از نظر تجربی قابل بررسی می‌ماند و هم از نظر هنجاری مرتبط." },
+            { "language": "ar", "text": "سؤال بحثي دقيق سيكون: تحت أي شروط تقنية وتربوية ومنزلية تحسن منصات التعلم الرقمية ليس الأداء المتوسط فقط، بل أيضاً فرص التعلم لدى الجماعات الأقل حظاً؟ هكذا يبقى الجدل قابلاً للفحص تجريبياً وذا صلة معيارية." },
+            { "language": "tr", "text": "Kesin bir araştırma sorusu şu olurdu: dijital öğrenme platformları hangi teknik, pedagojik ve ev içi koşullarda yalnızca ortalama performansı değil, dezavantajlı grupların öğrenme fırsatlarını da iyileştirir? Böylece tartışma hem ampirik olarak sınanabilir hem de normatif olarak ilgili kalır." },
+            { "language": "ru", "text": "Точный исследовательский вопрос был бы таким: при каких технических, педагогических и домашних условиях цифровые учебные платформы улучшают не только среднюю успеваемость, но и учебные возможности неблагополучных групп? Так спор остается эмпирически проверяемым и нормативно значимым." },
+            { "language": "ckb", "text": "پرسیارێکی توێژینەوەی ورد ئەمە دەبێت: پلاتفۆڕمە دیجیتاڵەکانی فێربوون لە ژێر چ مەرجی تەکنیکی، پەروەردەیی و ماڵەوەدا نە تەنها ئەدای ناوەندی، بەڵکو دەرفەتەکانی فێربوونی گرووپە کەم‌دەرفەتەکان باشتر دەکەن؟ بەم شێوەیە مشتومڕەکە هەم ئەزموونانە پشکنراو دەمێنێتەوە و هەم هەنجاری گرنگ." },
+            { "language": "kmr", "text": "Pirseke lêkolînê ya hûr ev e: platformên fêrbûna dîjîtal di bin kîjan şertên teknîkî, pedagogîk û malê de ne tenê performansa navîn, lê derfetên fêrbûnê yên komên kêm-derfet jî baştir dikin? Bi vî awayî nakokî hem emprîkî dikare were ceribandin û hem jî ji aliyê normatîf ve girîng dimîne." },
+            { "language": "pl", "text": "Precyzyjne pytanie badawcze brzmiałoby: w jakich warunkach technicznych, pedagogicznych i domowych cyfrowe platformy edukacyjne poprawiają nie tylko średnie wyniki, lecz także szanse uczenia się grup w gorszej sytuacji? Dzięki temu kontrowersja pozostaje empirycznie sprawdzalna i normatywnie istotna." },
+            { "language": "ro", "text": "O întrebare de cercetare precisă ar fi: în ce condiții tehnice, pedagogice și domestice platformele digitale de învățare îmbunătățesc nu doar performanța medie, ci și șansele de învățare ale grupurilor dezavantajate? Astfel controversa rămâne verificabilă empiric și relevantă normativ." },
+            { "language": "sq", "text": "Një pyetje kërkimore e saktë do të ishte: në cilat kushte teknike, pedagogjike dhe shtëpiake platformat digjitale të mësimit përmirësojnë jo vetëm performancën mesatare, por edhe mundësitë e mësimit të grupeve të pafavorizuara? Kështu polemika mbetet e testueshme empirikisht dhe e rëndësishme normativisht." }
+          ],
+          "function": "research-question",
+          "toneNote": "Präzise und wissenschaftlich.",
+          "expectedLearnerAction": "Aus der Kontroverse eine prüfbare Forschungsfrage ableiten."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde die Frage als Spannungsverhältnis rahmen: Plattformen können Zugang und Selbststeuerung erweitern; ohne Geräte, Ruhe, Betreuung und Medienkompetenz schaffen sie aber keine Chancengleichheit.",
+              "translations": [
+                { "language": "en", "text": "I would frame the question as a tension: platforms can expand access and self-directed learning; without devices, quiet space, support, and media competence, however, they do not create equal opportunity." },
+                { "language": "fa", "text": "من پرسش را به‌صورت یک تنش قاب‌بندی می‌کنم: سکوها می‌توانند دسترسی و خودراهبری در یادگیری را گسترش دهند؛ اما بدون دستگاه، فضای آرام، پشتیبانی و سواد رسانه‌ای، فرصت برابر ایجاد نمی‌کنند." },
+                { "language": "ar", "text": "سأؤطر السؤال كتوتر: يمكن للمنصات أن توسع الوصول والتعلم الذاتي؛ لكنها من دون أجهزة وهدوء ودعم وكفاءة إعلامية لا تخلق تكافؤ فرص." },
+                { "language": "tr", "text": "Soruyu bir gerilim olarak çerçevelerdim: platformlar erişimi ve öz yönelimli öğrenmeyi genişletebilir; ancak cihaz, sessiz ortam, destek ve medya yetkinliği olmadan fırsat eşitliği yaratmaz." },
+                { "language": "ru", "text": "Я бы оформил вопрос как напряжение: платформы могут расширять доступ и саморегулируемое обучение; однако без устройств, тишины, поддержки и медиакомпетентности они не создают равенства возможностей." },
+                { "language": "ckb", "text": "من پرسیارەکە وەک توندییەک قاب دەکەم: پلاتفۆڕمەکان دەتوانن گەیشتن و فێربوونی خۆڕێکخراو فراوان بکەن؛ بەڵام بەبێ دەستگە، شوێنی ئارام، پشتیوانی و توانای میدیایی، دەرفەتی یەکسان دروست ناکەن." },
+                { "language": "kmr", "text": "Ez ê pirsê wekî tengijîyek çarçove bikim: platform dikarin gihîştin û fêrbûna xwe-rêvebir fireh bikin; lê bê amûr, cihê aram, piştgirî û şiyanên medyayê, wekheviya derfetan çênakin." },
+                { "language": "pl", "text": "Ująłbym pytanie jako napięcie: platformy mogą rozszerzać dostęp i samosterowne uczenie się; bez urządzeń, ciszy, wsparcia i kompetencji medialnej nie tworzą jednak równości szans." },
+                { "language": "ro", "text": "Aș încadra întrebarea ca pe o tensiune: platformele pot extinde accesul și învățarea autodirijată; fără dispozitive, liniște, sprijin și competență media, însă nu creează egalitate de șanse." },
+                { "language": "sq", "text": "Do ta kornizoja pyetjen si tension: platformat mund të zgjerojnë qasjen dhe mësimin e vetëdrejtuar; por pa pajisje, qetësi, mbështetje dhe aftësi mediatike, nuk krijojnë barazi mundësish." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort eröffnet beide Positionen symmetrisch und ohne Strohmann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer opens both positions symmetrically and without a straw-man version." },
+                { "language": "fa", "text": "قوی است: پاسخ هر دو موضع را متقارن و بدون تحریف باز می‌کند." },
+                { "language": "ar", "text": "قوي: تفتح الإجابة الموقفين بشكل متماثل ومن دون تشويه." },
+                { "language": "tr", "text": "Güçlü: cevap iki pozisyonu simetrik ve çarpıtmadan açıyor." },
+                { "language": "ru", "text": "Сильно: ответ открывает обе позиции симметрично и без карикатурного искажения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەردوو هەڵوێست بە هاوسەنگی و بەبێ شێوەشکاندن دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv her du helwestan bi hevsengî û bê şikandin vedike." },
+                { "language": "pl", "text": "Mocne: odpowiedź otwiera oba stanowiska symetrycznie i bez zniekształcenia." },
+                { "language": "ro", "text": "Puternic: răspunsul deschide ambele poziții simetric și fără deformare." },
+                { "language": "sq", "text": "E fortë: përgjigjja i hap të dyja pozicionet në mënyrë simetrike dhe pa shtrembërim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde sagen, dass beide Seiten gute Argumente haben und man die Forschungslage genauer ansehen muss.",
+              "translations": [
+                { "language": "en", "text": "I would say that both sides have good arguments and that the research situation must be examined more closely." },
+                { "language": "fa", "text": "من می‌گویم هر دو طرف استدلال‌های خوبی دارند و باید وضعیت پژوهش را دقیق‌تر بررسی کرد." },
+                { "language": "ar", "text": "سأقول إن لدى الطرفين حججاً جيدة وإنه يجب فحص وضع البحث بدقة أكبر." },
+                { "language": "tr", "text": "İki tarafın da iyi argümanları olduğunu ve araştırma durumuna daha yakından bakmak gerektiğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал, что у обеих сторон есть хорошие аргументы и что состояние исследований нужно рассмотреть точнее." },
+                { "language": "ckb", "text": "من دەڵێم هەردوو لا ئارگیومێنتی باشیان هەیە و دەبێت دۆخی توێژینەوە وردتر ببینرێت." },
+                { "language": "kmr", "text": "Ez ê bibêjim ku her du alî argumanên baş hene û divê rewşa lêkolînê hûrtir were dîtin." },
+                { "language": "pl", "text": "Powiedziałbym, że obie strony mają dobre argumenty i że trzeba dokładniej przyjrzeć się stanowi badań." },
+                { "language": "ro", "text": "Aș spune că ambele părți au argumente bune și că situația cercetării trebuie analizată mai atent." },
+                { "language": "sq", "text": "Do të thosha se të dyja palët kanë argumente të mira dhe se gjendja e kërkimit duhet parë më saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber zu allgemein. Für C2 fehlen die konkreten Achsen der Kontroverse.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite, but too general. For C2, the concrete axes of the controversy are missing." },
+                { "language": "fa", "text": "مودبانه است، اما بیش از حد کلی. برای C2 محورهای مشخص اختلاف کم است." },
+                { "language": "ar", "text": "مهذب، لكنه عام أكثر من اللازم. لمستوى C2 تنقصه المحاور المحددة للجدل." },
+                { "language": "tr", "text": "Kibar, ama fazla genel. C2 için tartışmanın somut eksenleri eksik." },
+                { "language": "ru", "text": "Вежливо, но слишком общее. Для C2 не хватает конкретных осей спора." },
+                { "language": "ckb", "text": "بەڕێزە، بەڵام زۆر گشتییە. بۆ C2 تەوەرە دیاریکراوەکانی مشتومڕەکە کەمە." },
+                { "language": "kmr", "text": "Bi rêz e, lê pir giştî ye. Ji bo C2 tewreyên taybet ên nakokiyê kêm in." },
+                { "language": "pl", "text": "Uprzejme, ale zbyt ogólne. Na C2 brakuje konkretnych osi kontrowersji." },
+                { "language": "ro", "text": "Politicos, dar prea general. Pentru C2 lipsesc axele concrete ale controversei." },
+                { "language": "sq", "text": "E sjellshme, por tepër e përgjithshme. Për C2 mungojnë boshtet konkrete të polemikës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Befund ist relevant, beantwortet aber die Gerechtigkeitsfrage nicht vollständig. Wir müssen prüfen, wer die Vorteile erreicht, wer ausgeschlossen bleibt und unter welchen Lernbedingungen die Effekte auftreten.",
+              "translations": [
+                { "language": "en", "text": "The finding is relevant, but it does not answer the fairness question fully. We need to examine who reaches the benefits, who remains excluded, and under which learning conditions the effects occur." },
+                { "language": "fa", "text": "یافته مهم است، اما پرسش عدالت را کامل پاسخ نمی‌دهد. باید بررسی کنیم چه کسانی به مزیت‌ها دست می‌یابند، چه کسانی بیرون می‌مانند و اثرها در چه شرایط یادگیری رخ می‌دهند." },
+                { "language": "ar", "text": "الاكتشاف مهم، لكنه لا يجيب عن سؤال الإنصاف كاملاً. علينا فحص من يصل إلى المزايا، ومن يبقى مستبعداً، وتحت أي شروط تعلم تظهر الآثار." },
+                { "language": "tr", "text": "Bulgu önemlidir, ancak adalet sorusunu tam yanıtlamaz. Yararların kime ulaştığını, kimin dışarıda kaldığını ve etkilerin hangi öğrenme koşullarında ortaya çıktığını incelemeliyiz." },
+                { "language": "ru", "text": "Результат релевантен, но не полностью отвечает на вопрос справедливости. Нужно проверить, кто получает преимущества, кто остается исключенным и при каких условиях обучения возникают эффекты." },
+                { "language": "ckb", "text": "دۆزینەوەکە پەیوەندیدارە، بەڵام پرسی دادپەروەری بە تەواوی وەڵام ناداتەوە. دەبێت بپشکنین کێ دەگات بە سوودەکان، کێ دەرەوە دەمێنێتەوە و کاریگەرییەکان لە ژێر چ مەرجی فێربووندا ڕوودەدەن." },
+                { "language": "kmr", "text": "Encam têkildar e, lê pirsa dadweriyê bi tevahî bersiv nade. Divê em bipirsin kî digihîje sûdan, kî derve dimîne û bandor di bin kîjan şertên fêrbûnê de derdikevin." },
+                { "language": "pl", "text": "Ustalenie jest istotne, ale nie odpowiada w pełni na pytanie o sprawiedliwość. Musimy sprawdzić, kto korzysta z zalet, kto pozostaje wykluczony i w jakich warunkach uczenia się pojawiają się efekty." },
+                { "language": "ro", "text": "Constatarea este relevantă, dar nu răspunde pe deplin la întrebarea echității. Trebuie să verificăm cine ajunge la beneficii, cine rămâne exclus și în ce condiții de învățare apar efectele." },
+                { "language": "sq", "text": "Gjetja është e rëndësishme, por nuk i përgjigjet plotësisht pyetjes së drejtësisë. Duhet të kontrollojmë kush i arrin përfitimet, kush mbetet i përjashtuar dhe në cilat kushte mësimi shfaqen efektet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt empirischen Befund und normative Reichweite.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer separates empirical finding and normative reach." },
+                { "language": "fa", "text": "قوی است: پاسخ یافته تجربی و دامنه هنجاری را از هم جدا می‌کند." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بين الاكتشاف التجريبي والمدى المعياري." },
+                { "language": "tr", "text": "Güçlü: cevap ampirik bulgu ile normatif kapsamı ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ разделяет эмпирический результат и нормативный охват." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دۆزینەوەی ئەزموونی و مەودای هەنجاری جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv encama emprîkî û firehiya normatîf ji hev cuda dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela ustalenie empiryczne od zasięgu normatywnego." },
+                { "language": "ro", "text": "Puternic: răspunsul separă constatarea empirică de raza normativă." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan gjetjen empirike nga shtrirja normative." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das ist ein gutes Argument, weil mehr Übung und schnelleres Feedback für Lernende grundsätzlich hilfreich sind.",
+              "translations": [
+                { "language": "en", "text": "That is a good argument because more practice and faster feedback are generally helpful for learners." },
+                { "language": "fa", "text": "این استدلال خوبی است، چون تمرین بیشتر و بازخورد سریع‌تر اصولاً برای یادگیرندگان مفید است." },
+                { "language": "ar", "text": "هذه حجة جيدة لأن التدريب الأكثر والتغذية الراجعة الأسرع مفيدان عموماً للمتعلمين." },
+                { "language": "tr", "text": "Bu iyi bir argümandır, çünkü daha fazla alıştırma ve daha hızlı geri bildirim öğrenenler için genel olarak yararlıdır." },
+                { "language": "ru", "text": "Это хороший аргумент, потому что больше практики и более быстрая обратная связь в принципе полезны учащимся." },
+                { "language": "ckb", "text": "ئەمە ئارگیومێنتێکی باشە، چونکە ڕاهێنانی زیاتر و فیدباکی خێراتر بە گشتی بۆ فێرخوازان بەسوودن." },
+                { "language": "kmr", "text": "Ev argumanek baş e, ji ber ku pratîka zêdetir û paşxwendina zûtir bi giştî ji bo fêrkeran sûdmend in." },
+                { "language": "pl", "text": "To dobry argument, ponieważ więcej ćwiczeń i szybsza informacja zwrotna są zasadniczo pomocne dla uczących się." },
+                { "language": "ro", "text": "Este un argument bun, deoarece mai mult exercițiu și feedback mai rapid sunt în principiu utile pentru cursanți." },
+                { "language": "sq", "text": "Ky është një argument i mirë, sepse më shumë ushtrim dhe reagim më i shpejtë janë në parim të dobishme për nxënësit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unkritisch. Die Antwort übernimmt den Nutzen, ohne die Verteilung und Bedingungen zu prüfen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too uncritical. The answer accepts the benefit without examining distribution and conditions." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد غیرانتقادی. پاسخ فایده را می‌پذیرد، بدون آنکه توزیع و شرایط را بررسی کند." },
+                { "language": "ar", "text": "محتمل، لكنه غير نقدي بما يكفي. تقبل الإجابة الفائدة من دون فحص التوزيع والشروط." },
+                { "language": "tr", "text": "Makul, ama fazla eleştirel değil. Cevap yararı kabul ediyor, dağılımı ve koşulları incelemiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком некритично. Ответ принимает пользу, не проверяя распределение и условия." },
+                { "language": "ckb", "text": "گونجاو دەردەکەوێت، بەڵام زۆر بێ‌ڕەخنەیە. وەڵامەکە سوودەکە وەردەگرێت، بەبێ پشکنینی دابەشبوون و مەرجەکان." },
+                { "language": "kmr", "text": "Wekî maqûl xuya dike, lê pir bêrexne ye. Bersiv sûdê qebûl dike bêyî ku belavbûn û şertan bipirse." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt bezkrytyczne. Odpowiedź przyjmuje korzyść bez sprawdzenia dystrybucji i warunków." },
+                { "language": "ro", "text": "Plauzibil, dar prea necritic. Răspunsul acceptă beneficiul fără să examineze distribuția și condițiile." },
+                { "language": "sq", "text": "E besueshme, por tepër jokritike. Përgjigjja e pranon përfitimin pa shqyrtuar shpërndarjen dhe kushtet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nicht die Plattform an sich entscheidet über Gerechtigkeit, sondern ihre Einbettung. Wir sollten zwischen technischem Zugang, pädagogischer Begleitung und sozialem Lernumfeld unterscheiden.",
+              "translations": [
+                { "language": "en", "text": "Fairness is not decided by the platform itself, but by how it is embedded. We should distinguish between technical access, pedagogical support, and the social learning environment." },
+                { "language": "fa", "text": "عدالت را خود سکو تعیین نمی‌کند، بلکه نحوه جای‌گیری آن در محیط آموزشی تعیین می‌کند. باید میان دسترسی فنی، همراهی آموزشی و محیط اجتماعی یادگیری تفاوت بگذاریم." },
+                { "language": "ar", "text": "لا تحدد المنصة نفسها الإنصاف، بل طريقة إدماجها. ينبغي التمييز بين الوصول التقني، والمرافقة التربوية، وبيئة التعلم الاجتماعية." },
+                { "language": "tr", "text": "Adaleti platformun kendisi değil, onun nasıl yerleştirildiği belirler. Teknik erişim, pedagojik destek ve sosyal öğrenme ortamı arasında ayrım yapmalıyız." },
+                { "language": "ru", "text": "Справедливость определяется не самой платформой, а тем, как она встроена. Нужно различать технический доступ, педагогическое сопровождение и социальную учебную среду." },
+                { "language": "ckb", "text": "دادپەروەری بە پلاتفۆڕمەکە خۆی دیاری ناکرێت، بەڵکو بە چۆنیەتی جێگیرکردنی. دەبێت جیاوازی بکەین لە نێوان گەیشتنی تەکنیکی، هاوڕێیەتی پەروەردەیی و ژینگەی کۆمەڵایەتی فێربوون." },
+                { "language": "kmr", "text": "Dadwerî ne ji aliyê platformê bi xwe ve tê diyarkirin, lê ji aliyê çawa tê bicihkirin. Divê em gihîştina teknîkî, piştgiriya pedagogîk û hawîrdora civakî ya fêrbûnê ji hev cuda bikin." },
+                { "language": "pl", "text": "O sprawiedliwości nie decyduje sama platforma, lecz jej osadzenie. Powinniśmy odróżnić dostęp techniczny, wsparcie pedagogiczne i społeczne środowisko uczenia się." },
+                { "language": "ro", "text": "Echitatea nu este decisă de platforma în sine, ci de modul în care este integrată. Trebuie să distingem între acces tehnic, sprijin pedagogic și mediul social de învățare." },
+                { "language": "sq", "text": "Drejtësinë nuk e vendos vetë platforma, por mënyra si ajo integrohet. Duhet të dallojmë qasjen teknike, mbështetjen pedagogjike dhe mjedisin shoqëror të mësimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verschiebt die Debatte von Technikglauben zu Bedingungen der Nutzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer shifts the debate from faith in technology to conditions of use." },
+                { "language": "fa", "text": "قوی است: پاسخ بحث را از باور ساده به فناوری به شرایط استفاده منتقل می‌کند." },
+                { "language": "ar", "text": "قوي: تنقل الإجابة النقاش من الثقة بالتقنية إلى شروط الاستخدام." },
+                { "language": "tr", "text": "Güçlü: cevap tartışmayı teknoloji inancından kullanım koşullarına kaydırıyor." },
+                { "language": "ru", "text": "Сильно: ответ переносит дискуссию с веры в технику на условия использования." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گفتوگۆکە لە باوەڕی تەکنەلۆژیاوە دەگوازێتەوە بۆ مەرجەکانی بەکارهێنان." },
+                { "language": "kmr", "text": "Xurt e: bersiv gotûbêjê ji baweriya teknolojiyê vediguherîne şertên bikaranînê." },
+                { "language": "pl", "text": "Mocne: odpowiedź przesuwa debatę z wiary w technologię na warunki użycia." },
+                { "language": "ro", "text": "Puternic: răspunsul mută dezbaterea de la credința în tehnologie la condițiile de utilizare." },
+                { "language": "sq", "text": "E fortë: përgjigjja e zhvendos debatin nga besimi te teknologjia te kushtet e përdorimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte daher digitale Plattformen nur einsetzen, wenn alle Lernenden dieselben Geräte haben.",
+              "translations": [
+                { "language": "en", "text": "Therefore, digital platforms should only be used if all learners have the same devices." },
+                { "language": "fa", "text": "بنابراین باید سکوهای دیجیتال را فقط وقتی به کار برد که همه یادگیرندگان دستگاه‌های یکسان داشته باشند." },
+                { "language": "ar", "text": "لذلك ينبغي استخدام المنصات الرقمية فقط إذا كان لدى جميع المتعلمين الأجهزة نفسها." },
+                { "language": "tr", "text": "Bu nedenle dijital platformlar yalnızca tüm öğrenenler aynı cihazlara sahipse kullanılmalıdır." },
+                { "language": "ru", "text": "Поэтому цифровые платформы следует использовать только тогда, когда у всех учащихся одинаковые устройства." },
+                { "language": "ckb", "text": "بۆیە دەبێت پلاتفۆڕمە دیجیتاڵەکان تەنها کاتێک بەکاربهێنرێن کە هەموو فێرخوازان هەمان دەستگەیان هەبێت." },
+                { "language": "kmr", "text": "Ji ber vê yekê divê platformên dîjîtal tenê dema hemû fêrker heman amûran hebin werin bikaranîn." },
+                { "language": "pl", "text": "Dlatego platformy cyfrowe powinno się stosować tylko wtedy, gdy wszyscy uczący się mają takie same urządzenia." },
+                { "language": "ro", "text": "Prin urmare, platformele digitale ar trebui folosite doar dacă toți cursanții au aceleași dispozitive." },
+                { "language": "sq", "text": "Prandaj platformat digjitale duhet të përdoren vetëm kur të gjithë nxënësit kanë të njëjtat pajisje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng. Geräte sind wichtig, aber die Antwort reduziert die Bedingungen auf einen einzigen Faktor.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow. Devices matter, but the answer reduces the conditions to a single factor." },
+                { "language": "fa", "text": "بیش از حد محدود است. دستگاه‌ها مهم‌اند، اما پاسخ شرایط را به یک عامل واحد کاهش می‌دهد." },
+                { "language": "ar", "text": "ضيق أكثر من اللازم. الأجهزة مهمة، لكن الإجابة تختزل الشروط في عامل واحد." },
+                { "language": "tr", "text": "Fazla dar. Cihazlar önemlidir, ama cevap koşulları tek bir faktöre indirger." },
+                { "language": "ru", "text": "Слишком узко. Устройства важны, но ответ сводит условия к одному фактору." },
+                { "language": "ckb", "text": "زۆر تەسکە. دەستگە گرنگە، بەڵام وەڵامەکە مەرجەکان بۆ یەک هۆکار کەم دەکاتەوە." },
+                { "language": "kmr", "text": "Pir teng e. Amûr girîng in, lê bersiv şertan tenê li faktorê yekê kêm dike." },
+                { "language": "pl", "text": "Zbyt wąskie. Urządzenia są ważne, ale odpowiedź redukuje warunki do jednego czynnika." },
+                { "language": "ro", "text": "Prea îngust. Dispozitivele contează, dar răspunsul reduce condițiile la un singur factor." },
+                { "language": "sq", "text": "Tepër e ngushtë. Pajisjet kanë rëndësi, por përgjigjja i redukton kushtet në një faktor të vetëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Position A betont das Potenzial digitaler Plattformen für Lernzeit, Feedback und Wiederholung. Position B warnt, dass dieses Potenzial ohne Ausstattung, Lernraum und Betreuung sozial ungleich verteilt bleibt.",
+              "translations": [
+                { "language": "en", "text": "Position A emphasizes the potential of digital platforms for learning time, feedback, and repetition. Position B warns that this potential remains socially unequally distributed without equipment, learning space, and support." },
+                { "language": "fa", "text": "موضع الف بر ظرفیت سکوهای دیجیتال برای زمان یادگیری، بازخورد و تکرار تأکید دارد. موضع ب هشدار می‌دهد که این ظرفیت بدون تجهیزات، فضای یادگیری و پشتیبانی از نظر اجتماعی نابرابر توزیع می‌ماند." },
+                { "language": "ar", "text": "يؤكد الموقف أ إمكانات المنصات الرقمية لوقت التعلم والتغذية الراجعة والتكرار. ويحذر الموقف ب من أن هذه الإمكانات تبقى موزعة اجتماعياً بشكل غير متساوٍ من دون تجهيزات ومساحة تعلم ودعم." },
+                { "language": "tr", "text": "Pozisyon A dijital platformların öğrenme süresi, geri bildirim ve tekrar için potansiyelini vurguluyor. Pozisyon B, bu potansiyelin donanım, öğrenme alanı ve destek olmadan sosyal olarak eşitsiz dağıldığı konusunda uyarıyor." },
+                { "language": "ru", "text": "Позиция A подчеркивает потенциал цифровых платформ для времени обучения, обратной связи и повторения. Позиция B предупреждает, что этот потенциал без оборудования, учебного пространства и поддержки остается социально неравномерно распределенным." },
+                { "language": "ckb", "text": "هەڵوێستی A جەخت لە توانای پلاتفۆڕمە دیجیتاڵەکان بۆ کاتی فێربوون، فیدباک و دووبارەکردنەوە دەکات. هەڵوێستی B ئاگادار دەکاتەوە کە ئەم توانایە بەبێ ئامێر، شوێنی فێربوون و پشتیوانی بە کۆمەڵایەتی نایەکسان دابەش دەمێنێتەوە." },
+                { "language": "kmr", "text": "Helwesta A potansiyela platformên dîjîtal ji bo dema fêrbûnê, paşxwendin û dubarekirinê tekez dike. Helwesta B hişyar dike ku ev potensiyel bê amûr, cihê fêrbûnê û piştgirî ji aliyê civakî ve newekhev belav dimîne." },
+                { "language": "pl", "text": "Stanowisko A podkreśla potencjał platform cyfrowych dla czasu nauki, informacji zwrotnej i powtarzania. Stanowisko B ostrzega, że ten potencjał bez sprzętu, miejsca do nauki i wsparcia pozostaje społecznie nierówno rozłożony." },
+                { "language": "ro", "text": "Poziția A subliniază potențialul platformelor digitale pentru timpul de învățare, feedback și repetare. Poziția B avertizează că acest potențial rămâne distribuit social inegal fără echipamente, spațiu de învățare și sprijin." },
+                { "language": "sq", "text": "Pozicioni A thekson potencialin e platformave digjitale për kohën e mësimit, reagimin dhe përsëritjen. Pozicioni B paralajmëron se ky potencial mbetet i shpërndarë pabarazisht shoqërisht pa pajisje, hapësirë mësimi dhe mbështetje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Beide Positionen werden knapp, fair und ohne Überzeichnung wiedergegeben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: both positions are rendered briefly, fairly, and without exaggeration." },
+                { "language": "fa", "text": "قوی است: هر دو موضع کوتاه، منصفانه و بدون بزرگ‌نمایی بازگو می‌شوند." },
+                { "language": "ar", "text": "قوي: يُعاد عرض الموقفين باختصار وإنصاف ومن دون مبالغة." },
+                { "language": "tr", "text": "Güçlü: iki pozisyon kısa, adil ve abartısız aktarılıyor." },
+                { "language": "ru", "text": "Сильно: обе позиции переданы кратко, справедливо и без преувеличения." },
+                { "language": "ckb", "text": "بەهێزە: هەردوو هەڵوێست بە کورتەیی، دادپەروەرانە و بەبێ گەورەکردنەوە دەگێڕدرێنەوە." },
+                { "language": "kmr", "text": "Xurt e: her du helwest kurt, dadwerane û bê zêdekrin têne vegotin." },
+                { "language": "pl", "text": "Mocne: oba stanowiska są oddane krótko, uczciwie i bez przerysowania." },
+                { "language": "ro", "text": "Puternic: ambele poziții sunt redate pe scurt, corect și fără exagerare." },
+                { "language": "sq", "text": "E fortë: të dyja pozicionet jepen shkurt, drejt dhe pa teprim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die eine Seite ist eher optimistisch, die andere eher skeptisch; beide Perspektiven sollten in der Forschung berücksichtigt werden.",
+              "translations": [
+                { "language": "en", "text": "One side is rather optimistic, the other rather skeptical; both perspectives should be considered in research." },
+                { "language": "fa", "text": "یک طرف بیشتر خوش‌بین است، طرف دیگر بیشتر بدبین؛ هر دو دیدگاه باید در پژوهش در نظر گرفته شوند." },
+                { "language": "ar", "text": "أحد الطرفين متفائل إلى حد ما، والآخر متشكك إلى حد ما؛ ينبغي أخذ المنظورين في البحث." },
+                { "language": "tr", "text": "Bir taraf daha iyimser, diğeri daha şüpheci; iki bakış açısı da araştırmada dikkate alınmalıdır." },
+                { "language": "ru", "text": "Одна сторона скорее оптимистична, другая скорее скептична; обе перспективы следует учитывать в исследовании." },
+                { "language": "ckb", "text": "لایەک زیاتر خۆشبینە، ئەوی تر زیاتر گومانبارە؛ دەبێت هەردوو دیدگا لە توێژینەوەدا لەبەرچاو بگیرێن." },
+                { "language": "kmr", "text": "Aliyek hinekî hêvîdar e, yê din hinekî gumanbar e; divê her du perspektîf di lêkolînê de werin berçavgirtin." },
+                { "language": "pl", "text": "Jedna strona jest raczej optymistyczna, druga raczej sceptyczna; obie perspektywy powinny zostać uwzględnione w badaniach." },
+                { "language": "ro", "text": "O parte este mai degrabă optimistă, cealaltă mai degrabă sceptică; ambele perspective ar trebui luate în cercetare." },
+                { "language": "sq", "text": "Njëra palë është më shumë optimiste, tjetra më shumë skeptike; të dyja perspektivat duhet të merren parasysh në kërkim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu oberflächlich. Die Antwort benennt Stimmungen, aber nicht die theoretischen und empirischen Kernpunkte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too superficial. The answer names attitudes, but not the theoretical and empirical core points." },
+                { "language": "fa", "text": "بیش از حد سطحی است. پاسخ حال‌وهوای دو طرف را می‌گوید، اما نکات نظری و تجربی اصلی را نام نمی‌برد." },
+                { "language": "ar", "text": "سطحي أكثر من اللازم. تذكر الإجابة المواقف النفسية، لا النقاط النظرية والتجريبية الأساسية." },
+                { "language": "tr", "text": "Fazla yüzeysel. Cevap tutumları belirtiyor, ama teorik ve ampirik çekirdek noktaları değil." },
+                { "language": "ru", "text": "Слишком поверхностно. Ответ называет настроения, но не теоретические и эмпирические ключевые пункты." },
+                { "language": "ckb", "text": "زۆر سەرپێییە. وەڵامەکە هەستەکان ناودەبات، بەڵام خاڵە سەرەکییە تیۆری و ئەزموونییەکان ناودەبات." },
+                { "language": "kmr", "text": "Pir serûber e. Bersiv helwestên hestî nav dike, lê xalên bingehîn ên teorîk û emprîkî nav nake." },
+                { "language": "pl", "text": "Zbyt powierzchowne. Odpowiedź nazywa nastawienia, ale nie teoretyczne i empiryczne punkty rdzeniowe." },
+                { "language": "ro", "text": "Prea superficial. Răspunsul numește atitudini, dar nu punctele teoretice și empirice centrale." },
+                { "language": "sq", "text": "Tepër sipërfaqësore. Përgjigjja përmend qëndrimet, por jo pikat kryesore teorike dhe empirike." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Unter welchen technischen, pädagogischen und häuslichen Bedingungen verbessern digitale Lernplattformen nicht nur die durchschnittliche Leistung, sondern auch die Lernchancen benachteiligter Gruppen?",
+              "translations": [
+                { "language": "en", "text": "Under which technical, pedagogical, and home conditions do digital learning platforms improve not only average performance, but also the learning opportunities of disadvantaged groups?" },
+                { "language": "fa", "text": "سکوهای یادگیری دیجیتال تحت چه شرایط فنی، آموزشی و خانگی نه فقط عملکرد میانگین، بلکه فرصت‌های یادگیری گروه‌های محروم‌تر را بهبود می‌دهند؟" },
+                { "language": "ar", "text": "تحت أي شروط تقنية وتربوية ومنزلية تحسن منصات التعلم الرقمية ليس الأداء المتوسط فقط، بل أيضاً فرص التعلم لدى الجماعات الأقل حظاً؟" },
+                { "language": "tr", "text": "Dijital öğrenme platformları hangi teknik, pedagojik ve ev içi koşullarda yalnızca ortalama performansı değil, dezavantajlı grupların öğrenme fırsatlarını da iyileştirir?" },
+                { "language": "ru", "text": "При каких технических, педагогических и домашних условиях цифровые учебные платформы улучшают не только среднюю успеваемость, но и учебные возможности неблагополучных групп?" },
+                { "language": "ckb", "text": "پلاتفۆڕمە دیجیتاڵەکانی فێربوون لە ژێر چ مەرجی تەکنیکی، پەروەردەیی و ماڵەوەدا نە تەنها ئەدای ناوەندی، بەڵکو دەرفەتەکانی فێربوونی گرووپە کەم‌دەرفەتەکان باشتر دەکەن؟" },
+                { "language": "kmr", "text": "Platformên fêrbûna dîjîtal di bin kîjan şertên teknîkî, pedagogîk û malê de ne tenê performansa navîn, lê derfetên fêrbûnê yên komên kêm-derfet jî baştir dikin?" },
+                { "language": "pl", "text": "W jakich warunkach technicznych, pedagogicznych i domowych cyfrowe platformy edukacyjne poprawiają nie tylko średnie wyniki, lecz także szanse uczenia się grup w gorszej sytuacji?" },
+                { "language": "ro", "text": "În ce condiții tehnice, pedagogice și domestice platformele digitale de învățare îmbunătățesc nu doar performanța medie, ci și șansele de învățare ale grupurilor dezavantajate?" },
+                { "language": "sq", "text": "Në cilat kushte teknike, pedagogjike dhe shtëpiake platformat digjitale të mësimit përmirësojnë jo vetëm performancën mesatare, por edhe mundësitë e mësimit të grupeve të pafavorizuara?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Frage ist offen, prüfbar und verbindet Leistung mit Chancengerechtigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the question is open, testable, and connects performance with equal opportunity." },
+                { "language": "fa", "text": "قوی است: پرسش باز، قابل بررسی و پیونددهنده عملکرد با عدالت فرصت‌هاست." },
+                { "language": "ar", "text": "قوي: السؤال مفتوح وقابل للفحص ويربط الأداء بتكافؤ الفرص." },
+                { "language": "tr", "text": "Güçlü: soru açık, sınanabilir ve performansı fırsat eşitliğiyle bağlıyor." },
+                { "language": "ru", "text": "Сильно: вопрос открыт, проверяем и связывает успеваемость с равенством возможностей." },
+                { "language": "ckb", "text": "بەهێزە: پرسیارەکە کراوە و پشکنراوە و ئەدا بە دادپەروەری دەرفەتەکان دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: pirs vekirî û ceribandinbar e û performansê bi wekheviya derfetan ve girê dide." },
+                { "language": "pl", "text": "Mocne: pytanie jest otwarte, sprawdzalne i łączy wyniki z równością szans." },
+                { "language": "ro", "text": "Puternic: întrebarea este deschisă, verificabilă și leagă performanța de egalitatea de șanse." },
+                { "language": "sq", "text": "E fortë: pyetja është e hapur, e testueshme dhe lidh performancën me barazinë e mundësive." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Sind digitale Plattformen eher gut oder schlecht für die Bildungsgerechtigkeit?",
+              "translations": [
+                { "language": "en", "text": "Are digital platforms rather good or bad for educational fairness?" },
+                { "language": "fa", "text": "آیا سکوهای دیجیتال برای عدالت آموزشی بیشتر خوب‌اند یا بد؟" },
+                { "language": "ar", "text": "هل المنصات الرقمية جيدة أم سيئة إلى حد ما للإنصاف التعليمي؟" },
+                { "language": "tr", "text": "Dijital platformlar eğitim adaleti için daha çok iyi midir, kötü müdür?" },
+                { "language": "ru", "text": "Цифровые платформы скорее хороши или плохи для образовательной справедливости?" },
+                { "language": "ckb", "text": "ئایا پلاتفۆڕمە دیجیتاڵەکان بۆ دادپەروەریی خوێندن زیاتر باشن یان خراپ؟" },
+                { "language": "kmr", "text": "Platformên dîjîtal ji bo dadweriya perwerdeyê zêdetir baş in an xirab?" },
+                { "language": "pl", "text": "Czy platformy cyfrowe są raczej dobre czy złe dla sprawiedliwości edukacyjnej?" },
+                { "language": "ro", "text": "Sunt platformele digitale mai degrabă bune sau rele pentru echitatea educațională?" },
+                { "language": "sq", "text": "A janë platformat digjitale më shumë të mira apo të këqija për drejtësinë arsimore?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu binär. Die Frage bleibt bei gut oder schlecht und erfasst Bedingungen, Gruppenunterschiede und Messkriterien nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too binary. The question stays with good or bad and does not capture conditions, group differences, or measurement criteria." },
+                { "language": "fa", "text": "بیش از حد دوگانه است. پرسش در سطح خوب یا بد می‌ماند و شرایط، تفاوت گروه‌ها و معیارهای سنجش را دربر نمی‌گیرد." },
+                { "language": "ar", "text": "ثنائي أكثر من اللازم. يبقى السؤال عند جيد أو سيئ ولا يلتقط الشروط وفروق الجماعات ومعايير القياس." },
+                { "language": "tr", "text": "Fazla ikili. Soru iyi ya da kötü düzeyinde kalıyor ve koşulları, grup farklarını ve ölçüm kriterlerini yakalamıyor." },
+                { "language": "ru", "text": "Слишком бинарно. Вопрос остается на уровне хорошо или плохо и не охватывает условия, различия групп и критерии измерения." },
+                { "language": "ckb", "text": "زۆر دووانەییە. پرسیارەکە لە ئاستی باش یان خراپ دەمێنێتەوە و مەرج، جیاوازیی گرووپ و پێوەری پێوانەکردن ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir dualî ye. Pirs li asta baş an xirab dimîne û şert, cudahiyên koman û pîvanên pîvandinê nagire." },
+                { "language": "pl", "text": "Zbyt binarne. Pytanie pozostaje przy dobrym lub złym i nie obejmuje warunków, różnic między grupami ani kryteriów pomiaru." },
+                { "language": "ro", "text": "Prea binar. Întrebarea rămâne la bun sau rău și nu surprinde condițiile, diferențele de grup și criteriile de măsurare." },
+                { "language": "sq", "text": "Tepër binare. Pyetja mbetet te e mirë apo e keqe dhe nuk kap kushtet, dallimet mes grupeve dhe kriteret e matjes." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "framing",
+          "text": "C2-Moderation eröffnet eine Kontroverse als Spannungsverhältnis, nicht als Siegerfrage.",
+          "translations": [
+            { "language": "en", "text": "C2 moderation opens a controversy as a tension, not as a question of winners." },
+            { "language": "fa", "text": "مدیریت بحث در C2 اختلاف را به صورت تنش مفهومی باز می‌کند، نه به صورت پرسش برنده و بازنده." },
+            { "language": "ar", "text": "تفتح إدارة النقاش في C2 الجدل كتوتر، لا كسؤال عن الفائز." },
+            { "language": "tr", "text": "C2 moderasyonu bir tartışmayı kazanan sorusu olarak değil, gerilim ilişkisi olarak açar." },
+            { "language": "ru", "text": "Модерация C2 открывает спор как напряжение, а не как вопрос победителя." },
+            { "language": "ckb", "text": "بەڕێوەبردنی C2 مشتومڕ وەک پەیوەندییەکی توند دەکاتەوە، نە وەک پرسی براوە." },
+            { "language": "kmr", "text": "Moderasyona C2 nakokiyê wekî tengijî vedike, ne wekî pirsa serketî." },
+            { "language": "pl", "text": "Moderacja C2 otwiera kontrowersję jako napięcie, nie jako pytanie o zwycięzcę." },
+            { "language": "ro", "text": "Moderarea C2 deschide controversa ca tensiune, nu ca întrebare despre câștigător." },
+            { "language": "sq", "text": "Moderimi C2 e hap polemikën si tension, jo si pyetje për fituesin." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Ein Befund kann stark sein und trotzdem nur eine begrenzte normative Reichweite haben.",
+          "translations": [
+            { "language": "en", "text": "A finding can be strong and still have only limited normative reach." },
+            { "language": "fa", "text": "یک یافته می‌تواند قوی باشد و با این حال دامنه هنجاری محدودی داشته باشد." },
+            { "language": "ar", "text": "يمكن أن يكون الاكتشاف قوياً ومع ذلك لا يملك إلا مدى معيارياً محدوداً." },
+            { "language": "tr", "text": "Bir bulgu güçlü olabilir ve yine de yalnızca sınırlı normatif kapsama sahip olabilir." },
+            { "language": "ru", "text": "Результат может быть сильным и все же иметь лишь ограниченный нормативный охват." },
+            { "language": "ckb", "text": "دۆزینەوەیەک دەتوانێت بەهێز بێت و هێشتا تەنها مەودای هەنجاریی سنوورداری هەبێت." },
+            { "language": "kmr", "text": "Encamek dikare xurt be û dîsa jî firehiya normatîf a sînorkirî hebe." },
+            { "language": "pl", "text": "Ustalenie może być mocne, a mimo to mieć tylko ograniczony zasięg normatywny." },
+            { "language": "ro", "text": "O constatare poate fi puternică și totuși să aibă doar o rază normativă limitată." },
+            { "language": "sq", "text": "Një gjetje mund të jetë e fortë dhe megjithatë të ketë vetëm shtrirje normative të kufizuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "synthesis",
+          "text": "Eine faire Synthese benennt Potenzial und Bedingtheit, statt Positionen zu etikettieren.",
+          "translations": [
+            { "language": "en", "text": "A fair synthesis names potential and conditionality instead of labeling positions." },
+            { "language": "fa", "text": "ترکیب منصفانه ظرفیت و وابستگی به شرایط را نام می‌برد، نه اینکه فقط به موضع‌ها برچسب بزند." },
+            { "language": "ar", "text": "التوليف المنصف يذكر الإمكانات والاشتراطية بدلاً من لصق تسميات بالمواقف." },
+            { "language": "tr", "text": "Adil bir sentez pozisyonları etiketlemek yerine potansiyeli ve koşulluluğu belirtir." },
+            { "language": "ru", "text": "Справедливый синтез называет потенциал и условность, вместо того чтобы навешивать ярлыки на позиции." },
+            { "language": "ckb", "text": "پێکەوەبەستنی دادپەروەرانە توانای و مەرجداربوون ناودەبات، نەوەک تەنها لیبڵ بە هەڵوێستەکان بدات." },
+            { "language": "kmr", "text": "Sentezeke dadwerane potansiyel û şertdarbûnê nav dike, ne ku tenê etîket li helwestan bike." },
+            { "language": "pl", "text": "Uczciwa synteza nazywa potencjał i warunkowość, zamiast etykietować stanowiska." },
+            { "language": "ro", "text": "O sinteză corectă numește potențialul și condiționarea, în loc să eticheteze pozițiile." },
+            { "language": "sq", "text": "Një sintezë e drejtë përmend potencialin dhe kushtëzimin, në vend që t'u vendosë etiketa pozicioneve." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "research-question",
+          "text": "Eine gute Forschungsfrage macht die Kontroverse prüfbar, ohne ihren normativen Kern zu verlieren.",
+          "translations": [
+            { "language": "en", "text": "A good research question makes the controversy testable without losing its normative core." },
+            { "language": "fa", "text": "پرسش پژوهشی خوب بحث اختلافی را قابل بررسی می‌کند، بدون آنکه هسته هنجاری آن را از دست بدهد." },
+            { "language": "ar", "text": "السؤال البحثي الجيد يجعل الجدل قابلاً للفحص من دون فقدان جوهره المعياري." },
+            { "language": "tr", "text": "İyi bir araştırma sorusu tartışmayı sınanabilir kılar, normatif çekirdeğini kaybetmeden." },
+            { "language": "ru", "text": "Хороший исследовательский вопрос делает спор проверяемым, не теряя его нормативного ядра." },
+            { "language": "ckb", "text": "پرسیاری توێژینەوەی باش مشتومڕەکە پشکنراو دەکات، بەبێ لەدەستدانی ناوەڕۆکی هەنجارییەکەی." },
+            { "language": "kmr", "text": "Pirseke lêkolînê ya baş nakokiyê ceribandinbar dike bêyî ku naveroka wê ya normatîf winda bike." },
+            { "language": "pl", "text": "Dobre pytanie badawcze czyni kontrowersję sprawdzalną, nie tracąc jej normatywnego rdzenia." },
+            { "language": "ro", "text": "O întrebare de cercetare bună face controversa verificabilă fără să îi piardă nucleul normativ." },
+            { "language": "sq", "text": "Një pyetje e mirë kërkimore e bën polemikën të testueshme pa humbur bërthamën e saj normative." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "academic-seminar-digital-learning",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal academic seminar discussion about digital learning, evidence, equity, and research questions.",
+          "altText": "Eine diverse Gruppe Erwachsener diskutiert in einem Seminarraum sachlich über digitale Lernplattformen, mit Laptop, Notizen und Tafel ohne lesbaren Text.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A diverse group of adults discusses digital learning platforms factually in a seminar room, with a laptop, notes, and a board without readable text." },
+            { "language": "fa", "text": "گروهی متنوع از بزرگسالان در اتاق سمینار درباره سکوهای یادگیری دیجیتال واقع‌محور گفت‌وگو می‌کنند، با لپ‌تاپ، یادداشت و تخته بدون متن خوانا." },
+            { "language": "ar", "text": "مجموعة متنوعة من البالغين تناقش منصات التعلم الرقمية بموضوعية في غرفة ندوة، مع حاسوب محمول وملاحظات ولوح من دون نص مقروء." },
+            { "language": "tr", "text": "Farklı yetişkinlerden oluşan bir grup seminer odasında dijital öğrenme platformlarını olgusal biçimde tartışıyor; dizüstü bilgisayar, notlar ve okunabilir metin içermeyen tahta var." },
+            { "language": "ru", "text": "Разнообразная группа взрослых предметно обсуждает цифровые учебные платформы в семинарской комнате, с ноутбуком, заметками и доской без читаемого текста." },
+            { "language": "ckb", "text": "گرووپێکی جۆراوجۆری گەورەساڵ لە ژووری سمیناردا بە بابەتی دەربارەی پلاتفۆڕمە دیجیتاڵەکانی فێربوون گفتوگۆ دەکەن، لەگەڵ لاپتۆپ، تێبینی و تەختەی بێ دەقی خوێندراو." },
+            { "language": "kmr", "text": "Komeke cihêreng a mezinan di odeya semînarê de bi awayekî rastîparêz li ser platformên fêrbûna dîjîtal gotûbêj dike, bi laptop, not û textaya bê nivîsa xwendinbar." },
+            { "language": "pl", "text": "Zróżnicowana grupa dorosłych rzeczowo dyskutuje w sali seminaryjnej o cyfrowych platformach edukacyjnych, z laptopem, notatkami i tablicą bez czytelnego tekstu." },
+            { "language": "ro", "text": "Un grup divers de adulți discută factual într-o sală de seminar despre platforme digitale de învățare, cu laptop, notițe și tablă fără text lizibil." },
+            { "language": "sq", "text": "Një grup i larmishëm të rriturish diskuton faktikisht në një dhomë seminari për platformat digjitale të mësimit, me laptop, shënime dhe tabelë pa tekst të lexueshëm." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult graduate students and a lecturer in a German seminar room discussing digital learning platforms, laptop and notebooks on table, whiteboard with abstract shapes but no readable text, no logos, no private data, accessible composition, calm academic discussion mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

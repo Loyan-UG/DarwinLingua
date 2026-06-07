@@ -730,7 +730,240 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         await EnsureGrammarGuideSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureGrammarRichContentSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureExpressionEntrySchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureExerciseEngineSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureCourseLocalizationSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureRoleplayScenarioSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureCourseLocalizationSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "CoursePaths" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "Description" character varying(2000) NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "CefrLevel" character varying(8),
+                "CefrRange" character varying(32) NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_CoursePaths" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "CourseModules" (
+                "Id" uuid NOT NULL,
+                "CoursePathId" uuid NOT NULL,
+                "CoursePathSlug" character varying(128) NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "Description" character varying(2000) NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ModuleNumber" integer NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_CourseModules" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_CourseModules_CoursePaths_CoursePathId"
+                    FOREIGN KEY ("CoursePathId") REFERENCES "CoursePaths" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "CourseLessons" (
+                "Id" uuid NOT NULL,
+                "CourseModuleId" uuid NOT NULL,
+                "CoursePathSlug" character varying(128) NOT NULL,
+                "ModuleSlug" character varying(128) NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "LessonNumber" integer NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "ShortDescription" character varying(1000) NOT NULL,
+                "Narrative" character varying(4000) NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "NarrativeTranslationsJson" text NOT NULL DEFAULT '[]',
+                "CefrLevel" character varying(8) NOT NULL,
+                "EstimatedMinutes" integer NOT NULL,
+                "LearningGoalsJson" text NOT NULL,
+                "LearningGoalsTranslationsJson" text NOT NULL DEFAULT '[]',
+                "PrerequisiteLessonSlugsJson" text NOT NULL,
+                "NextLessonSlug" character varying(128),
+                "LinkedGrammarTopicSlugsJson" text NOT NULL,
+                "LinkedWordSlugsJson" text NOT NULL,
+                "LinkedExpressionSlugsJson" text NOT NULL,
+                "LinkedDialogueSlugsJson" text NOT NULL,
+                "LinkedTalkTopicSlugsJson" text NOT NULL,
+                "LinkedExerciseSetSlugsJson" text NOT NULL,
+                "LinkedExamPrepSlugsJson" text NOT NULL,
+                "ReviewSummary" character varying(2000),
+                "HomeworkTask" character varying(2000),
+                "ReviewSummaryTranslationsJson" text NOT NULL DEFAULT '[]',
+                "HomeworkTaskTranslationsJson" text NOT NULL DEFAULT '[]',
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_CourseLessons" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_CourseLessons_CourseModules_CourseModuleId"
+                    FOREIGN KEY ("CourseModuleId") REFERENCES "CourseModules" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CoursePaths_Slug"
+                ON "CoursePaths" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_CoursePaths_CefrLevel"
+                ON "CoursePaths" ("CefrLevel");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CourseModules_Slug"
+                ON "CourseModules" ("Slug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CourseModules_CoursePathId_ModuleNumber"
+                ON "CourseModules" ("CoursePathId", "ModuleNumber");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CourseLessons_Slug"
+                ON "CourseLessons" ("Slug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CourseLessons_CourseModuleId_LessonNumber"
+                ON "CourseLessons" ("CourseModuleId", "LessonNumber");
+            CREATE INDEX IF NOT EXISTS "IX_CourseLessons_CoursePathSlug_ModuleSlug"
+                ON "CourseLessons" ("CoursePathSlug", "ModuleSlug");
+
+            ALTER TABLE "CoursePaths" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CoursePaths" ADD COLUMN IF NOT EXISTS "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseModules" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseModules" ADD COLUMN IF NOT EXISTS "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "NarrativeTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "LearningGoalsTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "ReviewSummaryTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "HomeworkTaskTranslationsJson" text NOT NULL DEFAULT '[]';
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureExerciseEngineSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "Exercises" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "Instruction" character varying(2000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "ExerciseType" character varying(64) NOT NULL,
+                "TargetSkill" character varying(64) NOT NULL,
+                "OwnerType" character varying(64) NOT NULL,
+                "OwnerSlug" character varying(128),
+                "PromptJson" text NOT NULL,
+                "AnswerKeyJson" text NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "InstructionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "CorrectExplanation" character varying(2000) NOT NULL,
+                "CorrectExplanationTranslationsJson" text NOT NULL DEFAULT '[]',
+                "IncorrectExplanation" character varying(2000) NOT NULL,
+                "IncorrectExplanationTranslationsJson" text NOT NULL DEFAULT '[]',
+                "Hint" character varying(1000),
+                "HintTranslationsJson" text NOT NULL DEFAULT '[]',
+                "CommonMistakeNote" character varying(1000),
+                "CommonMistakeNoteTranslationsJson" text NOT NULL DEFAULT '[]',
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_Exercises" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExerciseSets" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "Description" character varying(2000) NOT NULL,
+                "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "CefrLevel" character varying(8) NOT NULL,
+                "OwnerType" character varying(64) NOT NULL,
+                "OwnerSlug" character varying(128),
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExerciseSets" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExerciseSetItems" (
+                "Id" uuid NOT NULL,
+                "ExerciseSetId" uuid NOT NULL,
+                "ExerciseSlug" character varying(128) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExerciseSetItems" PRIMARY KEY ("Id"),
+                CONSTRAINT "FK_ExerciseSetItems_ExerciseSets_ExerciseSetId"
+                    FOREIGN KEY ("ExerciseSetId") REFERENCES "ExerciseSets" ("Id") ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS "UserExerciseAttempts" (
+                "Id" uuid NOT NULL,
+                "UserId" character varying(256) NOT NULL,
+                "ExerciseSlug" character varying(128) NOT NULL,
+                "SubmittedAnswerJson" text NOT NULL,
+                "IsCorrect" boolean NOT NULL,
+                "FeedbackExplanation" character varying(2000) NOT NULL,
+                "AttemptedAtUtc" timestamp with time zone NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_UserExerciseAttempts" PRIMARY KEY ("Id")
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_Exercises_Slug"
+                ON "Exercises" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_Exercises_CefrLevel_ExerciseType_TargetSkill"
+                ON "Exercises" ("CefrLevel", "ExerciseType", "TargetSkill");
+            CREATE INDEX IF NOT EXISTS "IX_Exercises_OwnerType_OwnerSlug"
+                ON "Exercises" ("OwnerType", "OwnerSlug");
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExerciseSets_Slug"
+                ON "ExerciseSets" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ExerciseSets_OwnerType_OwnerSlug"
+                ON "ExerciseSets" ("OwnerType", "OwnerSlug");
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExerciseSetItems_ExerciseSetId_ExerciseSlug"
+                ON "ExerciseSetItems" ("ExerciseSetId", "ExerciseSlug");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExerciseSetItems_ExerciseSetId_SortOrder"
+                ON "ExerciseSetItems" ("ExerciseSetId", "SortOrder");
+
+            CREATE INDEX IF NOT EXISTS "IX_UserExerciseAttempts_UserId_ExerciseSlug_AttemptedAtUtc"
+                ON "UserExerciseAttempts" ("UserId", "ExerciseSlug", "AttemptedAtUtc");
+
+            ALTER TABLE "Exercises" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "Exercises" ADD COLUMN IF NOT EXISTS "InstructionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "Exercises" ADD COLUMN IF NOT EXISTS "CorrectExplanationTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "Exercises" ADD COLUMN IF NOT EXISTS "IncorrectExplanationTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "Exercises" ADD COLUMN IF NOT EXISTS "HintTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "Exercises" ADD COLUMN IF NOT EXISTS "CommonMistakeNoteTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExerciseSets" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExerciseSets" ADD COLUMN IF NOT EXISTS "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            """,
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task EnsureRoleplayScenarioSchemaAsync(

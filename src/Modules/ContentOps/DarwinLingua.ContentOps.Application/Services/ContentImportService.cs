@@ -298,8 +298,8 @@ internal sealed class ContentImportService : IContentImportService
         ValidateTalkTopics(parsedPackage.TalkTopics, topicsByKey, meaningLanguages, issues);
         ValidateGrammarTopics(parsedPackage.GrammarTopics, topicsByKey, meaningLanguages, issues);
         ValidateExpressionEntries(parsedPackage.ExpressionEntries, topicsByKey, meaningLanguages, issues);
-        ValidateExercises(parsedPackage.Exercises, parsedPackage.ExerciseSets, issues);
-        ValidateCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, issues);
+        ValidateExercises(parsedPackage.Exercises, parsedPackage.ExerciseSets, meaningLanguages, issues);
+        ValidateCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, meaningLanguages, issues);
         ValidateWritingTemplates(parsedPackage.WritingTemplates, issues);
         ValidateCulturalNotes(parsedPackage.CulturalNotes, issues);
         ValidateExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, issues);
@@ -1316,7 +1316,13 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeOptionalText(parsedExercise.CommonMistakeNote),
                 parsedExercise.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedExercise.SortOrder,
-                timestampUtc));
+                timestampUtc,
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.TitleTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.InstructionTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.CorrectExplanationTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.IncorrectExplanationTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.HintTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.CommonMistakeNoteTranslations))));
         }
     }
 
@@ -1335,7 +1341,9 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeOptionalText(parsedSet.OwnerSlug)?.ToLowerInvariant(),
                 parsedSet.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedSet.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                JsonSerializer.Serialize(NormalizeTranslations(parsedSet.TitleTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedSet.DescriptionTranslations)));
 
             for (int index = 0; index < parsedSet.ExerciseSlugs.Count; index++)
             {
@@ -1369,7 +1377,9 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeOptionalText(parsedCourse.CefrRange),
                 parsedCourse.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedCourse.SortOrder,
-                timestampUtc));
+                timestampUtc,
+                JsonSerializer.Serialize(NormalizeTranslations(parsedCourse.TitleTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedCourse.DescriptionTranslations))));
         }
 
         foreach (ParsedCourseModuleModel parsedModule in courseModules)
@@ -1384,7 +1394,9 @@ internal sealed class ContentImportService : IContentImportService
                 Enum.Parse<CefrLevel>(NormalizeText(parsedModule.CefrLevel), true),
                 parsedModule.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedModule.SortOrder,
-                timestampUtc));
+                timestampUtc,
+                JsonSerializer.Serialize(NormalizeTranslations(parsedModule.TitleTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedModule.DescriptionTranslations))));
         }
 
         foreach (ParsedCourseLessonModel parsedLesson in courseLessons)
@@ -1414,9 +1426,24 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeOptionalText(parsedLesson.HomeworkTask),
                 parsedLesson.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedLesson.SortOrder,
-                timestampUtc));
+                timestampUtc,
+                JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.TitleTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.ShortDescriptionTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.NarrativeTranslations)),
+                JsonSerializer.Serialize(NormalizeTextListTranslations(parsedLesson.LearningGoalsTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.ReviewSummaryTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.HomeworkTaskTranslations))));
         }
     }
+
+    private static object[] NormalizeTextListTranslations(IEnumerable<ParsedCourseTextListTranslationModel> translations) =>
+        translations
+            .Select(translation => new
+            {
+                language = NormalizeText(translation.Language).ToLowerInvariant(),
+                texts = translation.Texts.Select(NormalizeText).ToArray(),
+            })
+            .ToArray();
 
     private static void ProcessWritingTemplates(
         IReadOnlyList<ParsedWritingTemplateModel> writingTemplates,
@@ -4005,6 +4032,7 @@ internal sealed class ContentImportService : IContentImportService
     private static void ValidateExercises(
         IReadOnlyList<ParsedExerciseModel> exercises,
         IReadOnlyList<ParsedExerciseSetModel> exerciseSets,
+        IReadOnlySet<LanguageCode> meaningLanguages,
         ICollection<ImportIssueModel> issues)
     {
         HashSet<string> exerciseSlugs = [];
@@ -4031,6 +4059,12 @@ internal sealed class ContentImportService : IContentImportService
             ValidateExerciseAnswerKey(exerciseType, exercise.AnswerKeyJson, errors);
             if (string.IsNullOrWhiteSpace(NormalizeText(exercise.CorrectExplanation))) errors.Add("Exercise correctExplanation is required.");
             if (string.IsNullOrWhiteSpace(NormalizeText(exercise.IncorrectExplanation))) errors.Add("Exercise incorrectExplanation is required.");
+            ValidateOptionalMeaningTranslations(exercise.TitleTranslations, meaningLanguages, "Exercise titleTranslations", errors);
+            ValidateOptionalMeaningTranslations(exercise.InstructionTranslations, meaningLanguages, "Exercise instructionTranslations", errors);
+            ValidateOptionalMeaningTranslations(exercise.CorrectExplanationTranslations, meaningLanguages, "Exercise correctExplanationTranslations", errors);
+            ValidateOptionalMeaningTranslations(exercise.IncorrectExplanationTranslations, meaningLanguages, "Exercise incorrectExplanationTranslations", errors);
+            ValidateOptionalMeaningTranslations(exercise.HintTranslations, meaningLanguages, "Exercise hintTranslations", errors);
+            ValidateOptionalMeaningTranslations(exercise.CommonMistakeNoteTranslations, meaningLanguages, "Exercise commonMistakeNoteTranslations", errors);
             foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"exercises[{index + 1}]: {error}"));
         }
 
@@ -4047,6 +4081,8 @@ internal sealed class ContentImportService : IContentImportService
             if (!Enum.TryParse(NormalizeText(set.CefrLevel), true, out CefrLevel _)) errors.Add("Exercise set CEFR level is invalid.");
             string ownerType = NormalizeText(set.OwnerType).ToLowerInvariant();
             if (!ExerciseOwnerTypes.Contains(ownerType)) errors.Add($"Exercise set ownerType '{ownerType}' is not supported.");
+            ValidateOptionalMeaningTranslations(set.TitleTranslations, meaningLanguages, "Exercise set titleTranslations", errors);
+            ValidateOptionalMeaningTranslations(set.DescriptionTranslations, meaningLanguages, "Exercise set descriptionTranslations", errors);
             if (set.ExerciseSlugs.Count == 0) errors.Add("Exercise set exerciseSlugs must contain at least one exercise slug.");
             ValidateGrammarSlugList(set.ExerciseSlugs, "Exercise set exerciseSlugs", errors);
             foreach (string exerciseSlug in set.ExerciseSlugs.Select(item => NormalizeText(item).ToLowerInvariant()))
@@ -4064,6 +4100,7 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlyList<ParsedCoursePathModel> coursePaths,
         IReadOnlyList<ParsedCourseModuleModel> courseModules,
         IReadOnlyList<ParsedCourseLessonModel> courseLessons,
+        IReadOnlySet<LanguageCode> meaningLanguages,
         ICollection<ImportIssueModel> issues)
     {
         HashSet<string> courseSlugs = [];
@@ -4076,6 +4113,8 @@ internal sealed class ContentImportService : IContentImportService
             else if (!courseSlugs.Add(slug)) errors.Add($"Duplicate course slug '{slug}' is not allowed inside one package.");
             if (string.IsNullOrWhiteSpace(NormalizeText(course.Title))) errors.Add("Course title is required.");
             if (string.IsNullOrWhiteSpace(NormalizeText(course.Description))) errors.Add("Course description is required.");
+            ValidateOptionalMeaningTranslations(course.TitleTranslations, meaningLanguages, "Course titleTranslations", errors);
+            ValidateOptionalMeaningTranslations(course.DescriptionTranslations, meaningLanguages, "Course descriptionTranslations", errors);
             string cefrLevel = NormalizeText(course.CefrLevel);
             string cefrRange = NormalizeText(course.CefrRange);
             if (string.IsNullOrWhiteSpace(cefrLevel) && string.IsNullOrWhiteSpace(cefrRange)) errors.Add("Course cefrLevel or cefrRange is required.");
@@ -4096,6 +4135,8 @@ internal sealed class ContentImportService : IContentImportService
             else if (!courseSlugs.Contains(courseSlug)) errors.Add($"Course module references unknown course path slug '{courseSlug}'.");
             if (string.IsNullOrWhiteSpace(NormalizeText(module.Title))) errors.Add("Course module title is required.");
             if (string.IsNullOrWhiteSpace(NormalizeText(module.Description))) errors.Add("Course module description is required.");
+            ValidateOptionalMeaningTranslations(module.TitleTranslations, meaningLanguages, "Course module titleTranslations", errors);
+            ValidateOptionalMeaningTranslations(module.DescriptionTranslations, meaningLanguages, "Course module descriptionTranslations", errors);
             if (module.ModuleNumber <= 0) errors.Add("Course module moduleNumber must be positive.");
             if (!Enum.TryParse(NormalizeText(module.CefrLevel), true, out CefrLevel _)) errors.Add("Course module CEFR level is invalid.");
             foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"courseModules[{index + 1}]: {error}"));
@@ -4126,6 +4167,12 @@ internal sealed class ContentImportService : IContentImportService
             if (string.IsNullOrWhiteSpace(NormalizeText(lesson.Title))) errors.Add("Course lesson title is required.");
             if (string.IsNullOrWhiteSpace(NormalizeText(lesson.ShortDescription))) errors.Add("Course lesson shortDescription is required.");
             if (string.IsNullOrWhiteSpace(NormalizeText(lesson.Narrative))) errors.Add("Course lesson narrative is required.");
+            ValidateOptionalMeaningTranslations(lesson.TitleTranslations, meaningLanguages, "Course lesson titleTranslations", errors);
+            ValidateOptionalMeaningTranslations(lesson.ShortDescriptionTranslations, meaningLanguages, "Course lesson shortDescriptionTranslations", errors);
+            ValidateOptionalMeaningTranslations(lesson.NarrativeTranslations, meaningLanguages, "Course lesson narrativeTranslations", errors);
+            ValidateCourseTextListTranslations(lesson.LearningGoalsTranslations, lesson.LearningGoals.Count, meaningLanguages, "Course lesson learningGoalsTranslations", errors);
+            ValidateOptionalMeaningTranslations(lesson.ReviewSummaryTranslations, meaningLanguages, "Course lesson reviewSummaryTranslations", errors);
+            ValidateOptionalMeaningTranslations(lesson.HomeworkTaskTranslations, meaningLanguages, "Course lesson homeworkTaskTranslations", errors);
             if (!Enum.TryParse(NormalizeText(lesson.CefrLevel), true, out CefrLevel _)) errors.Add("Course lesson CEFR level is invalid.");
             if (lesson.EstimatedMinutes <= 0) errors.Add("Course lesson estimatedMinutes must be positive.");
             ValidateLearningGoals(lesson.LearningGoals, errors);
@@ -4147,6 +4194,60 @@ internal sealed class ContentImportService : IContentImportService
             if (nextLessonSlug is not null && !lessonSlugs.Contains(nextLessonSlug)) errors.Add($"Course lesson references unknown next lesson slug '{nextLessonSlug}'.");
             if (string.Equals(nextLessonSlug, slug, StringComparison.Ordinal)) errors.Add("Course lesson cannot list itself as next lesson.");
             foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"courseLessons[{index + 1}]: {error}"));
+        }
+    }
+
+    private static void ValidateCourseTextListTranslations(
+        IReadOnlyList<ParsedCourseTextListTranslationModel> translations,
+        int expectedItemCount,
+        IReadOnlySet<LanguageCode> meaningLanguages,
+        string fieldName,
+        ICollection<string> errors)
+    {
+        HashSet<LanguageCode> seenLanguages = [];
+        for (int index = 0; index < translations.Count; index++)
+        {
+            ParsedCourseTextListTranslationModel translation = translations[index];
+            string normalizedLanguage = NormalizeText(translation.Language).ToLowerInvariant();
+            if (string.IsNullOrWhiteSpace(normalizedLanguage))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language is required.");
+                continue;
+            }
+
+            LanguageCode languageCode;
+            try
+            {
+                languageCode = LanguageCode.From(normalizedLanguage);
+            }
+            catch (ArgumentException)
+            {
+                errors.Add($"{fieldName}[{index + 1}] language '{normalizedLanguage}' is invalid.");
+                continue;
+            }
+
+            if (!meaningLanguages.Contains(languageCode))
+            {
+                errors.Add($"{fieldName}[{index + 1}] language '{normalizedLanguage}' is not an active learner meaning language.");
+            }
+
+            if (!seenLanguages.Add(languageCode))
+            {
+                errors.Add($"{fieldName}[{index + 1}] duplicates language '{normalizedLanguage}'.");
+            }
+
+            if (translation.Texts.Count != expectedItemCount)
+            {
+                errors.Add($"{fieldName}[{index + 1}] must contain {expectedItemCount} translated item(s).");
+            }
+
+            for (int textIndex = 0; textIndex < translation.Texts.Count; textIndex++)
+            {
+                if (string.IsNullOrWhiteSpace(NormalizeText(translation.Texts[textIndex])))
+                {
+                    errors.Add($"{fieldName}[{index + 1}].texts[{textIndex + 1}] is required.");
+                }
+            }
         }
     }
 

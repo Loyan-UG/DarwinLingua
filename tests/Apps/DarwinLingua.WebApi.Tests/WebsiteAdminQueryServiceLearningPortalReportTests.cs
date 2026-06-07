@@ -48,6 +48,12 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Equal(0, report.LearningPortal.ExpressionEntriesWithOrdinaryLiteralLeakage);
             Assert.Equal(0, report.LearningPortal.ExpressionEntriesMissingTeachingReason);
             Assert.Equal(1, report.LearningPortal.ExpressionEntriesWithFewerThanTwoExamples);
+            Assert.Equal(1, report.LearningPortal.RoleplayScenariosMissingTranslations);
+            Assert.Equal(0, report.LearningPortal.RoleplayScenariosUnpublishedDrafts);
+            Assert.Equal(1, report.LearningPortal.RoleplayScenariosMissingRequiredImageAssets);
+            Assert.Equal(1, report.LearningPortal.RoleplayScenariosWithoutAnswerChoices);
+            Assert.Equal(1, report.LearningPortal.RoleplayScenariosWithoutStaticFeedback);
+            Assert.Equal(1, report.LearningPortal.RoleplayScenariosWithInvalidPlayableSequence);
             Assert.NotEmpty(report.LearningPortal.SampleIssues);
         }
         finally
@@ -199,7 +205,22 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             "[]",
             "[]",
             "[]",
-            "[]",
+            JsonSerializer.Serialize(
+                new[]
+                {
+                    new
+                    {
+                        slotKey = "main",
+                        placement = "hero",
+                        purpose = "Visual context",
+                        altText = "Service counter",
+                        altTextTranslations = Array.Empty<object>(),
+                        imagePrompt = "Clean educational illustration of a service counter.",
+                        assetPath = (string?)null,
+                        isRequired = true,
+                    },
+                },
+                new JsonSerializerOptions(JsonSerializerDefaults.Web)),
             PublicationStatus.Active,
             30,
             now);

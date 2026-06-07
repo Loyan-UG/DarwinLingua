@@ -1,0 +1,822 @@
+{
+  "packageId": "roleplays-c1-core-16-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 16 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 16",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-ethischen-konflikt-im-unternehmen-ansprechen",
+      "linkedDialogueSlug": null,
+      "title": "Einen ethischen Konflikt im Unternehmen ansprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Raising an ethical conflict in a company" },
+        { "language": "fa", "text": "طرح کردن یک تعارض اخلاقی در شرکت" },
+        { "language": "ar", "text": "طرح تعارض أخلاقي في شركة" },
+        { "language": "tr", "text": "Bir şirkette etik bir çatışmayı dile getirmek" },
+        { "language": "ru", "text": "Поднять этический конфликт в компании" },
+        { "language": "ckb", "text": "باسکردنی ناکۆکییەکی ئەخلاقی لە کۆمپانیا" },
+        { "language": "kmr", "text": "Anîna pirsgirêkeke exlaqî di şirketê de" },
+        { "language": "pl", "text": "Poruszenie konfliktu etycznego w firmie" },
+        { "language": "ro", "text": "Abordarea unui conflict etic într-o companie" },
+        { "language": "sq", "text": "Ngritja e një konflikti etik në kompani" }
+      ],
+      "description": "In einem C1-Arbeitsmeeting sprechen Sie eine ethische Sorge zur Nutzung von Kundendaten an, ohne Vorwürfe zu erheben oder den Projektfortschritt unnötig zu blockieren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 workplace meeting, you raise an ethical concern about the use of customer data without making accusations or unnecessarily blocking project progress." },
+        { "language": "fa", "text": "در یک جلسه کاری سطح سی‌یک، نگرانی اخلاقی درباره استفاده از داده‌های مشتریان را مطرح می‌کنید، بدون اینکه اتهام بزنید یا پیشرفت پروژه را بی‌دلیل متوقف کنید." },
+        { "language": "ar", "text": "في اجتماع عمل بمستوى C1، تطرح قلقاً أخلاقياً بشأن استخدام بيانات العملاء من دون توجيه اتهامات أو تعطيل تقدم المشروع بلا داع." },
+        { "language": "tr", "text": "C1 düzeyinde bir iş toplantısında, suçlama yöneltmeden veya proje ilerlemesini gereksiz yere engellemeden müşteri verilerinin kullanımına dair etik bir kaygıyı dile getirirsiniz." },
+        { "language": "ru", "text": "На рабочей встрече уровня C1 вы поднимаете этическую обеспокоенность по поводу использования клиентских данных, не выдвигая обвинений и не блокируя без необходимости ход проекта." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی کاری ئاستی C1دا، نیگەرانییەکی ئەخلاقی دەربارەی بەکارهێنانی داتای کڕیاران دەخەیتەڕوو، بەبێ ئەوەی تۆمەت بخەیت یان پێشکەوتنی پڕۆژەکە بەبێ پێویست بوەستێنیت." },
+        { "language": "kmr", "text": "Di civîneke kar a asta C1 de, hûn xemgîniyeke exlaqî derbarê bikaranîna daneyên xerîdaran tînin ziman, bêyî sûcdarkirin an astengkirina bêhewce ya pêşveçûna projeyê." },
+        { "language": "pl", "text": "Na spotkaniu zawodowym na poziomie C1 poruszasz etyczną obawę dotyczącą wykorzystania danych klientów, bez formułowania oskarżeń i bez niepotrzebnego blokowania postępu projektu." },
+        { "language": "ro", "text": "Într-o ședință de lucru de nivel C1, ridicați o preocupare etică privind utilizarea datelor clienților fără a acuza sau a bloca inutil progresul proiectului." },
+        { "language": "sq", "text": "Në një takim pune të nivelit C1, ngrini një shqetësim etik për përdorimin e të dhënave të klientëve pa bërë akuza ose pa bllokuar panevojshëm ecurinë e projektit." }
+      ],
+      "learnerGoal": "Eine ethische Sorge professionell ansprechen: Fakten von Bewertungen trennen, Risiken ohne Schuldzuweisung benennen, offene Fragen präzisieren und einen neutralen Prüfpfad vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Raise an ethical concern professionally: separate facts from judgments, name risks without assigning blame, clarify open questions, and propose a neutral review path." },
+        { "language": "fa", "text": "یک نگرانی اخلاقی را حرفه‌ای مطرح کنید: واقعیت‌ها را از قضاوت‌ها جدا کنید، ریسک‌ها را بدون مقصر دانستن افراد نام ببرید، پرسش‌های باز را دقیق کنید و مسیر بررسی بی‌طرف پیشنهاد دهید." },
+        { "language": "ar", "text": "اطرح قلقاً أخلاقياً بمهنية: افصل الحقائق عن الأحكام، واذكر المخاطر من دون تحميل اللوم، ووضح الأسئلة المفتوحة، واقترح مسار مراجعة محايداً." },
+        { "language": "tr", "text": "Etik bir kaygıyı profesyonelce dile getirin: gerçekleri yargılardan ayırın, suç yüklemeden riskleri adlandırın, açık soruları netleştirin ve tarafsız bir inceleme yolu önerin." },
+        { "language": "ru", "text": "Профессионально поднять этическую обеспокоенность: отделить факты от оценок, назвать риски без обвинений, уточнить открытые вопросы и предложить нейтральный путь проверки." },
+        { "language": "ckb", "text": "نیگەرانییەکی ئەخلاقی بە شێوەی پیشەیی بخەڕوو: ڕاستییەکان لە هەڵسەنگاندنەکان جیا بکەوە، مەترسییەکان بەبێ تاوانبارکردن ناو ببە، پرسیارە کراوەکان ورد بکە و ڕێڕەوی پشکنینی بێلایەن پێشنیار بکە." },
+        { "language": "kmr", "text": "Xemgîniyeke exlaqî bi awayekî pîşeyî bînin ziman: rastiyan ji nirxandinan veqetînin, rîskan bê sûcdarkirin nav bikin, pirsên vekirî zelal bikin û rêyeke kontrolê ya bêalî pêşniyar bikin." },
+        { "language": "pl", "text": "Profesjonalnie poruszyć obawę etyczną: oddzielić fakty od ocen, nazwać ryzyka bez przypisywania winy, doprecyzować otwarte pytania i zaproponować neutralną ścieżkę weryfikacji." },
+        { "language": "ro", "text": "Abordați profesional o preocupare etică: separați faptele de evaluări, numiți riscurile fără a atribui vină, clarificați întrebările deschise și propuneți un parcurs neutru de verificare." },
+        { "language": "sq", "text": "Ngrini profesionalisht një shqetësim etik: ndani faktet nga gjykimet, emërtoni rreziqet pa fajësuar, saktësoni pyetjet e hapura dhe propozoni një rrugë neutrale shqyrtimi." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "agree-disagree",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 16,
+      "roles": [
+        {
+          "roleKey": "moderator",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "گرداننده جلسه" },
+            { "language": "ar", "text": "مدير الجلسة" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەری باس" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderatori" }
+          ]
+        },
+        {
+          "roleKey": "product-lead",
+          "displayName": "Produktleitung",
+          "translations": [
+            { "language": "en", "text": "Product lead" },
+            { "language": "fa", "text": "مسئول محصول" },
+            { "language": "ar", "text": "مسؤول المنتج" },
+            { "language": "tr", "text": "Ürün sorumlusu" },
+            { "language": "ru", "text": "Руководитель продукта" },
+            { "language": "ckb", "text": "بەرپرسی بەرهەم" },
+            { "language": "kmr", "text": "Berpirsê hilberê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za produkt" },
+            { "language": "ro", "text": "Responsabilul de produs" },
+            { "language": "sq", "text": "Përgjegjësi i produktit" }
+          ]
+        },
+        {
+          "roleKey": "compliance-lead",
+          "displayName": "Compliance-Leitung",
+          "translations": [
+            { "language": "en", "text": "Compliance lead" },
+            { "language": "fa", "text": "مسئول رعایت مقررات" },
+            { "language": "ar", "text": "مسؤول الامتثال" },
+            { "language": "tr", "text": "Uyum sorumlusu" },
+            { "language": "ru", "text": "Руководитель по комплаенсу" },
+            { "language": "ckb", "text": "بەرپرسی پابەندی بە ڕێسا" },
+            { "language": "kmr", "text": "Berpirsê lihevhatinê bi rêzikan" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za zgodność" },
+            { "language": "ro", "text": "Responsabilul de conformitate" },
+            { "language": "sq", "text": "Përgjegjësi i pajtueshmërisë" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Lernende Person",
+          "translations": [
+            { "language": "en", "text": "Learner" },
+            { "language": "fa", "text": "زبان‌آموز" },
+            { "language": "ar", "text": "المتعلم" },
+            { "language": "tr", "text": "Öğrenen kişi" },
+            { "language": "ru", "text": "Учащийся" },
+            { "language": "ckb", "text": "فێرخواز" },
+            { "language": "kmr", "text": "Fêrbûner" },
+            { "language": "pl", "text": "Osoba ucząca się" },
+            { "language": "ro", "text": "Cursantul" },
+            { "language": "sq", "text": "Nxënësi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Wir stehen kurz vor der Freigabe des Analyseprojekts. Sie hatten angekündigt, noch eine grundsätzliche Sorge zur Datennutzung anzusprechen.",
+          "translations": [
+            { "language": "en", "text": "We are close to approving the analytics project. You had announced that you still wanted to raise a fundamental concern about data use." },
+            { "language": "fa", "text": "ما در آستانه تأیید پروژه تحلیل هستیم. شما گفته بودید هنوز می‌خواهید یک نگرانی اساسی درباره استفاده از داده‌ها مطرح کنید." },
+            { "language": "ar", "text": "نحن على وشك الموافقة على مشروع التحليل. كنت قد أعلنت أنك تريد طرح قلق أساسي بشأن استخدام البيانات." },
+            { "language": "tr", "text": "Analiz projesinin onayına yakınız. Veri kullanımıyla ilgili temel bir kaygıyı hâlâ dile getirmek istediğinizi söylemiştiniz." },
+            { "language": "ru", "text": "Мы близки к утверждению аналитического проекта. Вы сообщали, что хотите поднять принципиальную обеспокоенность по поводу использования данных." },
+            { "language": "ckb", "text": "ئێمە نزیکین لە پەسەندکردنی پڕۆژەی شیکردنەوە. تۆ پێشتر گوتبووت هێشتا دەتەوێت نیگەرانییەکی بنەڕەتی دەربارەی بەکارهێنانی داتا بخەیتەڕوو." },
+            { "language": "kmr", "text": "Em nêzî pejirandina projeya analîzê ne. We gotibû ku hûn dixwazin hîn xemgîniyeke bingehîn derbarê bikaranîna daneyan bînin ziman." },
+            { "language": "pl", "text": "Jesteśmy blisko zatwierdzenia projektu analitycznego. Zapowiadał(a) Pan/Pani, że chce jeszcze poruszyć zasadniczą obawę dotyczącą wykorzystania danych." },
+            { "language": "ro", "text": "Suntem aproape de aprobarea proiectului de analiză. Ați anunțat că doriți să ridicați încă o preocupare fundamentală privind utilizarea datelor." },
+            { "language": "sq", "text": "Jemi afër miratimit të projektit të analizës. Ju kishit njoftuar se dëshironi ende të ngrini një shqetësim themelor për përdorimin e të dhënave." }
+          ],
+          "function": "invite-ethical-concern",
+          "toneNote": "Die Moderation öffnet Raum für eine heikle, aber sachliche Sorge.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja. Ich möchte das ausdrücklich nicht als Vorwurf formulieren. Mir geht es darum, drei Ebenen sauber zu trennen: welche Kundendaten tatsächlich genutzt werden, welcher neue Zweck damit verbunden ist und welche ethische Wirkung das auf Vertrauen haben kann.",
+          "translations": [
+            { "language": "en", "text": "Yes. I explicitly do not want to formulate this as an accusation. My point is to separate three levels clearly: which customer data is actually used, what new purpose is connected to it, and what ethical effect that may have on trust." },
+            { "language": "fa", "text": "بله. صریحاً نمی‌خواهم این را به شکل اتهام مطرح کنم. هدفم این است که سه سطح را دقیق از هم جدا کنیم: واقعاً کدام داده‌های مشتریان استفاده می‌شود، چه هدف جدیدی به آن وصل است، و این موضوع چه اثر اخلاقی بر اعتماد می‌تواند داشته باشد." },
+            { "language": "ar", "text": "نعم. لا أريد إطلاقاً صياغة ذلك كاتهام. ما يهمني هو أن نفصل بوضوح بين ثلاثة مستويات: أي بيانات عملاء تُستخدم فعلاً، وما الغرض الجديد المرتبط بها، وما الأثر الأخلاقي المحتمل على الثقة." },
+            { "language": "tr", "text": "Evet. Bunu özellikle bir suçlama olarak formüle etmek istemiyorum. Amacım üç düzeyi temiz biçimde ayırmak: hangi müşteri verileri gerçekten kullanılıyor, bununla hangi yeni amaç bağlantılı ve bunun güven üzerinde ne tür etik etkisi olabilir." },
+            { "language": "ru", "text": "Да. Я явно не хочу формулировать это как обвинение. Мне важно четко разделить три уровня: какие клиентские данные фактически используются, какая новая цель с этим связана и какое этическое воздействие это может иметь на доверие." },
+            { "language": "ckb", "text": "بەڵێ. بە ڕوونی نامەوێت ئەمە وەک تۆمەت داڕێژم. مەبەستم ئەوەیە سێ ئاست بە پاکی جیا بکەینەوە: بەڕاستی کام داتای کڕیار بەکار دەهێنرێت، کام ئامانجی نوێی پێوە بەستراوە، و ئەمە چ کاریگەرییەکی ئەخلاقی لەسەر متمانە دەتوانێت هەبێت." },
+            { "language": "kmr", "text": "Erê. Ez bi eşkere naxwazim vê wekî sûcdarkirinê bibêjim. Armanca min ew e ku em sê astan zelal veqetînin: kîjan daneyên xerîdaran bi rastî têne bikaranîn, kîjan armanca nû pê ve girêdayî ye, û ev dikare çi bandoreke exlaqî li ser baweriyê hebe." },
+            { "language": "pl", "text": "Tak. Wyraźnie nie chcę formułować tego jako zarzutu. Chodzi mi o czyste oddzielenie trzech poziomów: jakie dane klientów faktycznie są używane, jaki nowy cel się z tym wiąże i jaki etyczny wpływ może to mieć na zaufanie." },
+            { "language": "ro", "text": "Da. Nu vreau să formulez acest lucru ca acuzație. Mă interesează să separăm clar trei niveluri: ce date ale clienților sunt folosite efectiv, ce scop nou este legat de ele și ce efect etic poate avea asupra încrederii." },
+            { "language": "sq", "text": "Po. Nuk dua ta formuloj këtë si akuzë. Synimi im është të ndajmë qartë tri nivele: cilat të dhëna të klientëve përdoren realisht, cili qëllim i ri lidhet me to dhe çfarë ndikimi etik mund të ketë kjo mbi besimin." }
+          ],
+          "function": "neutral-opening",
+          "toneNote": "C1: Die Antwort verhindert Eskalation, indem sie Sorge, Fakten und Bewertung trennt.",
+          "expectedLearnerAction": "Open an ethical concern without accusation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "product-lead",
+          "baseText": "Aus Produktsicht nutzen wir nur vorhandene Support-Tickets. Es geht nicht um Veröffentlichung, sondern um interne Mustererkennung.",
+          "translations": [
+            { "language": "en", "text": "From a product perspective, we only use existing support tickets. This is not about publication, but about internal pattern recognition." },
+            { "language": "fa", "text": "از نگاه محصول، ما فقط از درخواست‌های پشتیبانی موجود استفاده می‌کنیم. موضوع انتشار نیست، بلکه تشخیص الگو به‌صورت داخلی است." },
+            { "language": "ar", "text": "من منظور المنتج، نستخدم فقط تذاكر الدعم الموجودة. لا يتعلق الأمر بالنشر، بل بالتعرف الداخلي على الأنماط." },
+            { "language": "tr", "text": "Ürün açısından yalnızca mevcut destek kayıtlarını kullanıyoruz. Konu yayınlama değil, dahili örüntü tanıma." },
+            { "language": "ru", "text": "С точки зрения продукта мы используем только существующие тикеты поддержки. Речь не о публикации, а о внутреннем распознавании шаблонов." },
+            { "language": "ckb", "text": "لە دیدی بەرهەمەوە، ئێمە تەنها داواکارییەکانی پشتیوانیی ئامادە بەکار دەهێنین. بابەتەکە بڵاوکردنەوە نییە، بەڵکو ناسینەوەی شێوەکانە بە شێوەی ناوخۆیی." },
+            { "language": "kmr", "text": "Ji aliyê hilberê ve, em tenê tîketên piştgiriyê yên heyî bi kar tînin. Mijar ne weşandin e, lê naskirina şêweyan a hundirîn e." },
+            { "language": "pl", "text": "Z perspektywy produktu używamy tylko istniejących zgłoszeń wsparcia. Nie chodzi o publikację, lecz o wewnętrzne rozpoznawanie wzorców." },
+            { "language": "ro", "text": "Din perspectiva produsului folosim doar tichete de suport existente. Nu este vorba despre publicare, ci despre recunoaștere internă de tipare." },
+            { "language": "sq", "text": "Nga këndvështrimi i produktit, përdorim vetëm kërkesat ekzistuese të mbështetjes. Nuk bëhet fjalë për publikim, por për njohje të brendshme modelesh." }
+          ],
+          "function": "product-defense",
+          "toneNote": "Die Produktleitung relativiert das Risiko über den internen Nutzungsrahmen.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein wichtiger Unterschied. Gleichzeitig ändert sich der Zweck: Die Tickets wurden für Problemlösung erhoben, jetzt sollen sie zur Produktsteuerung ausgewertet werden. Das muss nicht falsch sein, aber es sollte bewusst geprüft werden.",
+          "translations": [
+            { "language": "en", "text": "That is an important distinction. At the same time, the purpose changes: the tickets were collected for problem solving; now they are to be evaluated for product steering. That does not have to be wrong, but it should be reviewed deliberately." },
+            { "language": "fa", "text": "این تفاوت مهمی است. هم‌زمان هدف تغییر می‌کند: این درخواست‌ها برای حل مشکل جمع‌آوری شده‌اند، اما حالا قرار است برای هدایت محصول تحلیل شوند. این لزوماً غلط نیست، اما باید آگاهانه بررسی شود." },
+            { "language": "ar", "text": "هذا تمييز مهم. في الوقت نفسه يتغير الغرض: جُمعت التذاكر لحل المشكلات، والآن ينبغي تحليلها لتوجيه المنتج. ليس بالضرورة أن يكون ذلك خطأ، لكنه ينبغي أن يُراجع بوعي." },
+            { "language": "tr", "text": "Bu önemli bir ayrım. Aynı zamanda amaç değişiyor: kayıtlar sorun çözmek için toplandı, şimdi ürün yönlendirmesi için değerlendirilecek. Bu yanlış olmak zorunda değil, ama bilinçli biçimde incelenmeli." },
+            { "language": "ru", "text": "Это важное различие. В то же время меняется цель: тикеты собирались для решения проблем, а теперь должны анализироваться для управления продуктом. Это не обязательно неправильно, но это следует осознанно проверить." },
+            { "language": "ckb", "text": "ئەمە جیاوازییەکی گرنگە. هاوکات ئامانجەکە دەگۆڕێت: داواکارییەکان بۆ چارەسەری کێشە کۆکراونەتەوە، ئێستا دەبێت بۆ ئاراستەکردنی بەرهەم شیکرێنەوە. ئەمە پێویست نییە هەڵە بێت، بەڵام دەبێت بە ئاگایی بپشکنرێت." },
+            { "language": "kmr", "text": "Ev cudahiyeke girîng e. Di heman demê de armanc diguhere: tîket ji bo çareserkirina pirsgirêkan hatine komkirin, niha divê ji bo rêvebirina hilberê werin nirxandin. Ev ne hewce ye şaş be, lê divê bi hişyarî were kontrolkirin." },
+            { "language": "pl", "text": "To ważne rozróżnienie. Jednocześnie zmienia się cel: zgłoszenia zebrano do rozwiązywania problemów, a teraz mają być analizowane do sterowania produktem. To nie musi być błędne, ale powinno zostać świadomie sprawdzone." },
+            { "language": "ro", "text": "Este o distincție importantă. În același timp se schimbă scopul: tichetele au fost colectate pentru rezolvarea problemelor, iar acum urmează să fie evaluate pentru orientarea produsului. Nu trebuie să fie greșit, dar ar trebui verificat conștient." },
+            { "language": "sq", "text": "Ky është një dallim i rëndësishëm. Njëkohësisht ndryshon qëllimi: kërkesat u mblodhën për zgjidhje problemesh, tani do të analizohen për drejtimin e produktit. Kjo nuk është domosdoshmërisht e gabuar, por duhet shqyrtuar me vetëdije." }
+          ],
+          "function": "purpose-change",
+          "toneNote": "Die Antwort anerkennt den Einwand und benennt den ethischen Kern: Zweckänderung.",
+          "expectedLearnerAction": "Distinguish internal use from purpose change."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "compliance-lead",
+          "baseText": "Welche Punkte müssten aus Ihrer Sicht vor der Freigabe geklärt werden?",
+          "translations": [
+            { "language": "en", "text": "Which points would need to be clarified from your perspective before approval?" },
+            { "language": "fa", "text": "از نظر شما قبل از تأیید چه نکاتی باید روشن شود؟" },
+            { "language": "ar", "text": "ما النقاط التي يجب توضيحها من وجهة نظرك قبل الموافقة؟" },
+            { "language": "tr", "text": "Sizin bakış açınıza göre onaydan önce hangi noktaların netleşmesi gerekir?" },
+            { "language": "ru", "text": "Какие пункты, с вашей точки зрения, нужно прояснить до утверждения?" },
+            { "language": "ckb", "text": "لە دیدی تۆوە پێش پەسەندکردن کام خاڵەکان دەبێت ڕوون بکرێنەوە؟" },
+            { "language": "kmr", "text": "Ji dîtina we, berî pejirandinê kîjan xal divê zelal bibin?" },
+            { "language": "pl", "text": "Jakie punkty, Pana/Pani zdaniem, należałoby wyjaśnić przed zatwierdzeniem?" },
+            { "language": "ro", "text": "Ce puncte ar trebui clarificate din perspectiva dumneavoastră înainte de aprobare?" },
+            { "language": "sq", "text": "Cilat pika, sipas jush, duhet të sqarohen para miratimit?" }
+          ],
+          "function": "ask-review-points",
+          "toneNote": "Compliance fragt nach konkreten Prüffragen statt nach allgemeiner Kritik.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde vier Prüffragen festhalten: Sind die Daten ausreichend anonymisiert? Ist der neue Zweck transparent dokumentiert? Gibt es eine Begrenzung der Aufbewahrung? Und wer entscheidet, falls ein Ticket sensible Informationen enthält?",
+          "translations": [
+            { "language": "en", "text": "I would record four review questions: Is the data sufficiently anonymized? Is the new purpose transparently documented? Is there a limit on retention? And who decides if a ticket contains sensitive information?" },
+            { "language": "fa", "text": "من چهار پرسش بررسی ثبت می‌کنم: آیا داده‌ها به اندازه کافی ناشناس‌سازی شده‌اند؟ آیا هدف جدید شفاف مستند شده است؟ آیا برای نگهداری داده‌ها محدودیت زمانی وجود دارد؟ و اگر یک درخواست شامل اطلاعات حساس باشد، چه کسی تصمیم می‌گیرد؟" },
+            { "language": "ar", "text": "سأثبت أربعة أسئلة مراجعة: هل البيانات مجهولة الهوية بما يكفي؟ هل الغرض الجديد موثق بشفافية؟ هل هناك حد للاحتفاظ؟ ومن يقرر إذا احتوت تذكرة على معلومات حساسة؟" },
+            { "language": "tr", "text": "Dört inceleme sorusu kaydederdim: Veriler yeterince anonimleştirildi mi? Yeni amaç şeffaf biçimde belgelendi mi? Saklama için bir sınır var mı? Ve bir kayıt hassas bilgi içerirse kim karar verir?" },
+            { "language": "ru", "text": "Я бы зафиксировал четыре вопроса проверки: достаточно ли анонимизированы данные? Прозрачно ли документирована новая цель? Есть ли ограничение хранения? И кто решает, если тикет содержит чувствительную информацию?" },
+            { "language": "ckb", "text": "من چوار پرسیاری پشکنین تۆمار دەکەم: ئایا داتاکان بە تەواوی بێناسنامە کراون؟ ئایا ئامانجی نوێ بە شەفافی تۆمارکراوە؟ ئایا سنووری هەڵگرتن هەیە؟ و ئەگەر داواکارییەک زانیاریی هەستیار لەخۆ بگرێت، کێ بڕیار دەدات؟" },
+            { "language": "kmr", "text": "Ez ê çar pirsên kontrolê qeyd bikim: Dane têra xwe bênav kirine? Armanca nû bi zelalî hatiye belgekirin? Sînorek ji bo parastinê heye? Û heke tîketek agahiyên hestiyar bigire, kî biryar dide?" },
+            { "language": "pl", "text": "Zapisałbym cztery pytania kontrolne: Czy dane są wystarczająco zanonimizowane? Czy nowy cel jest przejrzyście udokumentowany? Czy istnieje limit przechowywania? I kto decyduje, jeśli zgłoszenie zawiera informacje wrażliwe?" },
+            { "language": "ro", "text": "Aș nota patru întrebări de verificare: Sunt datele suficient anonimizate? Este noul scop documentat transparent? Există o limită de păstrare? Și cine decide dacă un tichet conține informații sensibile?" },
+            { "language": "sq", "text": "Do të shënoja katër pyetje verifikimi: A janë të dhënat mjaftueshëm të anonimizuara? A është dokumentuar qartë qëllimi i ri? A ka kufi për ruajtjen? Dhe kush vendos nëse një kërkesë përmban informacion të ndjeshëm?" }
+          ],
+          "function": "specific-review-questions",
+          "toneNote": "Die Antwort macht aus einer abstrakten Sorge konkrete, prüfbare Fragen.",
+          "expectedLearnerAction": "Convert ethical concern into specific review questions."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "product-lead",
+          "baseText": "Ich verstehe den Punkt, aber wenn wir jetzt noch eine Prüfung einschieben, verlieren wir mindestens zwei Wochen.",
+          "translations": [
+            { "language": "en", "text": "I understand the point, but if we insert another review now, we lose at least two weeks." },
+            { "language": "fa", "text": "نکته را می‌فهمم، اما اگر الان یک بررسی دیگر اضافه کنیم، دست‌کم دو هفته از دست می‌دهیم." },
+            { "language": "ar", "text": "أفهم النقطة، لكن إذا أدخلنا مراجعة أخرى الآن فسنخسر أسبوعين على الأقل." },
+            { "language": "tr", "text": "Noktayı anlıyorum, ancak şimdi bir inceleme daha eklersek en az iki hafta kaybederiz." },
+            { "language": "ru", "text": "Я понимаю пункт, но если мы сейчас вставим еще одну проверку, потеряем минимум две недели." },
+            { "language": "ckb", "text": "خاڵەکە تێدەگەم، بەڵام ئەگەر ئێستا پشکنینێکی تر زیاد بکەین، بە کەمترین دوو هەفتە لەدەست دەدەین." },
+            { "language": "kmr", "text": "Ez xalê fam dikim, lê heke em niha kontrola din têxin navê, em herî kêm du hefteyan winda dikin." },
+            { "language": "pl", "text": "Rozumiem ten punkt, ale jeśli teraz wstawimy kolejną weryfikację, stracimy co najmniej dwa tygodnie." },
+            { "language": "ro", "text": "Înțeleg punctul, dar dacă introducem acum încă o verificare, pierdem cel puțin două săptămâni." },
+            { "language": "sq", "text": "E kuptoj pikën, por nëse shtojmë tani edhe një verifikim, humbasim të paktën dy javë." }
+          ],
+          "function": "timeline-objection",
+          "toneNote": "Die Produktleitung sieht die Prüfung als Zeitverlust.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde nicht den gesamten Projektplan stoppen. Mein Vorschlag ist eine 48-Stunden-Prüfung mit klarer Ampel: Grün, wenn Anonymisierung, Zweckdokumentation und Löschfrist belastbar sind; Gelb, wenn nur einzelne Punkte nachgeschärft werden müssen; Rot, wenn sensible Inhalte ungefiltert einfließen.",
+          "translations": [
+            { "language": "en", "text": "I would not stop the entire project plan. My proposal is a 48-hour review with a clear traffic-light logic: green if anonymization, purpose documentation, and deletion period are reliable; yellow if only individual points need tightening; red if sensitive content flows in unfiltered." },
+            { "language": "fa", "text": "من کل برنامه پروژه را متوقف نمی‌کنم. پیشنهاد من یک بررسی ۴۸ ساعته با منطق چراغ راهنماست: سبز، اگر ناشناس‌سازی، مستندسازی هدف و مهلت حذف قابل اتکا باشند؛ زرد، اگر فقط چند نکته باید دقیق‌تر شود؛ قرمز، اگر محتوای حساس بدون فیلتر وارد شود." },
+            { "language": "ar", "text": "لن أوقف خطة المشروع كلها. اقتراحي هو مراجعة خلال 48 ساعة بمنطق إشارة واضح: أخضر إذا كانت إخفاء الهوية وتوثيق الغرض ومدة الحذف موثوقة؛ أصفر إذا احتاجت نقاط فردية فقط إلى تدقيق؛ أحمر إذا دخلت محتويات حساسة من دون تصفية." },
+            { "language": "tr", "text": "Tüm proje planını durdurmazdım. Önerim net bir trafik ışığı mantığıyla 48 saatlik bir inceleme: anonimleştirme, amaç belgesi ve silme süresi sağlam ise yeşil; yalnızca tekil noktalar netleştirilecekse sarı; hassas içerikler filtresiz giriyorsa kırmızı." },
+            { "language": "ru", "text": "Я бы не останавливал весь проектный план. Мое предложение — 48-часовая проверка с четкой логикой светофора: зеленый, если анонимизация, документация цели и срок удаления надежны; желтый, если нужно уточнить отдельные пункты; красный, если чувствительное содержание поступает без фильтра." },
+            { "language": "ckb", "text": "من هەموو پلانی پڕۆژەکە ناوەستێنم. پێشنیارم پشکنینی ٤٨ کاتژمێرییە بە لۆژیکی ڕوونی چرای هاتووچۆ: سەوز، ئەگەر بێناسنامەکردن، تۆمارکردنی ئامانج و ماوەی سڕینەوە پشتپێبەستوو بن؛ زەرد، ئەگەر تەنها هەندێک خاڵ پێویستی بە وردکردن هەبێت؛ سوور، ئەگەر ناوەڕۆکی هەستیار بەبێ پاڵاوتن بچێتە ناوەوە." },
+            { "language": "kmr", "text": "Ez hemû plana projeyê rawestanînim. Pêşniyara min kontrola 48 demjimêran e bi mantiqa ronahiyên rêyê: kesk, heke bênavkirin, belgekirina armancê û dema jêbirinê pêbawer bin; zer, heke tenê hin xal hewceyî hûrkirinê bin; sor, heke naveroka hestiyar bê parzûn bikeve." },
+            { "language": "pl", "text": "Nie zatrzymywałbym całego planu projektu. Proponuję 48-godzinną weryfikację z jasną logiką świateł: zielone, jeśli anonimizacja, dokumentacja celu i termin usunięcia są solidne; żółte, jeśli trzeba doprecyzować pojedyncze punkty; czerwone, jeśli wrażliwe treści wpływają bez filtrowania." },
+            { "language": "ro", "text": "Nu aș opri întregul plan de proiect. Propun o verificare de 48 de ore cu o logică clară de semafor: verde dacă anonimizarea, documentarea scopului și termenul de ștergere sunt solide; galben dacă doar unele puncte trebuie ajustate; roșu dacă intră conținut sensibil nefiltrat." },
+            { "language": "sq", "text": "Nuk do ta ndaloja të gjithë planin e projektit. Propozimi im është një verifikim 48-orësh me logjikë të qartë semafori: jeshile nëse anonimizimi, dokumentimi i qëllimit dhe afati i fshirjes janë të besueshme; e verdhë nëse duhen saktësuar vetëm disa pika; e kuqe nëse përmbajtje të ndjeshme hyjnë pa filtër." }
+          ],
+          "function": "bounded-review-path",
+          "toneNote": "Die Antwort schützt den Projektfortschritt, ohne die ethische Prüfung zu verwässern.",
+          "expectedLearnerAction": "Propose a bounded review path instead of a full stop."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "compliance-lead",
+          "baseText": "Für mich wäre außerdem wichtig, dass bis zur Prüfung keine personenbezogenen Beispiele in Präsentationen oder Trainingsmaterial wandern.",
+          "translations": [
+            { "language": "en", "text": "For me it would also be important that no personal examples move into presentations or training material before the review." },
+            { "language": "fa", "text": "برای من همچنین مهم است که تا زمان بررسی، هیچ نمونه دارای اطلاعات شخصی وارد ارائه‌ها یا مواد آموزشی نشود." },
+            { "language": "ar", "text": "من المهم بالنسبة لي أيضاً ألا تنتقل أي أمثلة شخصية إلى العروض أو مواد التدريب قبل المراجعة." },
+            { "language": "tr", "text": "Benim için ayrıca incelemeye kadar hiçbir kişisel örneğin sunumlara veya eğitim materyaline girmemesi önemli olurdu." },
+            { "language": "ru", "text": "Для меня также важно, чтобы до проверки никакие персональные примеры не попали в презентации или учебные материалы." },
+            { "language": "ckb", "text": "بۆ من هەروەها گرنگە تا کاتی پشکنین هیچ نموونەیەکی خاوەن زانیاریی کەسی نەچێتە ناو پێشکەشکردن یان ماددەی ڕاهێنان." },
+            { "language": "kmr", "text": "Ji bo min herwiha girîng e ku heta kontrolê tu mînakên kesane nekevin pêşkêşkirin an materyalên perwerdeyê." },
+            { "language": "pl", "text": "Dla mnie ważne byłoby też, aby do czasu weryfikacji żadne osobowe przykłady nie trafiły do prezentacji ani materiałów szkoleniowych." },
+            { "language": "ro", "text": "Pentru mine ar fi important și ca până la verificare niciun exemplu cu date personale să nu ajungă în prezentări sau materiale de instruire." },
+            { "language": "sq", "text": "Për mua do të ishte gjithashtu e rëndësishme që deri në verifikim asnjë shembull me të dhëna personale të mos kalojë në prezantime ose materiale trajnimi." }
+          ],
+          "function": "temporary-safeguard",
+          "toneNote": "Compliance verlangt eine Sofortschutzmaßnahme.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das halte ich für sinnvoll. Als Zwischenentscheidung könnten wir festhalten: Die technische Auswertung läuft nur mit anonymisierten Testauszügen weiter; personenbezogene Beispiele werden bis zur Prüfung weder exportiert noch in Schulungsunterlagen verwendet.",
+          "translations": [
+            { "language": "en", "text": "I think that makes sense. As an interim decision we could record: the technical evaluation continues only with anonymized test excerpts; personal examples are neither exported nor used in training documents until the review." },
+            { "language": "fa", "text": "این را منطقی می‌دانم. به‌عنوان تصمیم موقت می‌توانیم ثبت کنیم: ارزیابی فنی فقط با گزیده‌های آزمایشی ناشناس‌سازی‌شده ادامه پیدا می‌کند؛ نمونه‌های دارای اطلاعات شخصی تا پایان بررسی نه صادر می‌شوند و نه در اسناد آموزشی استفاده می‌شوند." },
+            { "language": "ar", "text": "أرى أن ذلك منطقي. كقرار مؤقت يمكننا أن نثبت: يستمر التقييم التقني فقط بمقتطفات اختبار مجهولة الهوية؛ ولا تُصدَّر الأمثلة الشخصية ولا تُستخدم في مواد التدريب حتى انتهاء المراجعة." },
+            { "language": "tr", "text": "Bunu mantıklı buluyorum. Ara karar olarak şunu kaydedebiliriz: teknik değerlendirme yalnızca anonimleştirilmiş test alıntılarıyla devam eder; kişisel örnekler incelemeye kadar ne dışa aktarılır ne de eğitim belgelerinde kullanılır." },
+            { "language": "ru", "text": "Я считаю это разумным. В качестве промежуточного решения мы могли бы зафиксировать: техническая оценка продолжается только с анонимизированными тестовыми фрагментами; персональные примеры до проверки не экспортируются и не используются в учебных материалах." },
+            { "language": "ckb", "text": "ئەمە بە ژیرانە دەزانم. وەک بڕیاری کاتی دەتوانین تۆمار بکەین: هەڵسەنگاندنی تەکنیکی تەنها بە پارچەی تاقیکردنەوەی بێناسنامەکراو بەردەوام دەبێت؛ نموونە خاوەن زانیارییە کەسییەکان تا پشکنین نە دەنێردرێنە دەرەوە و نە لە بەڵگەنامەی ڕاهێناندا بەکار دەهێنرێن." },
+            { "language": "kmr", "text": "Ez vê maqûl dibînim. Wekî biryara demkî em dikarin qeyd bikin: nirxandina teknîkî tenê bi parçeyên testê yên bênavkirî didome; mînakên kesane heta kontrolê ne têne derxistin û ne jî di belgeyên perwerdeyê de têne bikaranîn." },
+            { "language": "pl", "text": "Uważam to za sensowne. Jako decyzję przejściową moglibyśmy zapisać: ocena techniczna trwa dalej tylko na zanonimizowanych fragmentach testowych; przykłady osobowe do czasu weryfikacji nie są eksportowane ani używane w materiałach szkoleniowych." },
+            { "language": "ro", "text": "Consider că are sens. Ca decizie interimară am putea nota: evaluarea tehnică continuă doar cu extrase de test anonimizate; exemplele cu date personale nu sunt exportate și nu sunt folosite în documente de instruire până la verificare." },
+            { "language": "sq", "text": "Më duket e arsyeshme. Si vendim i përkohshëm mund të shënojmë: vlerësimi teknik vazhdon vetëm me fragmente testuese të anonimizuara; shembujt me të dhëna personale deri në verifikim as nuk eksportohen, as nuk përdoren në materiale trajnimi." }
+          ],
+          "function": "interim-safeguard",
+          "toneNote": "Die Antwort erlaubt technischen Fortschritt unter klaren Schutzgrenzen.",
+          "expectedLearnerAction": "Agree on interim safeguards without stopping all work."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "moderator",
+          "baseText": "Können Sie daraus bitte eine abschließende Formulierung machen, die weder alarmistisch noch verharmlosend klingt?",
+          "translations": [
+            { "language": "en", "text": "Could you please turn that into a final formulation that sounds neither alarmist nor minimizing?" },
+            { "language": "fa", "text": "لطفاً می‌توانید از این یک جمله پایانی بسازید که نه هشداردهنده افراطی باشد و نه موضوع را کوچک جلوه دهد؟" },
+            { "language": "ar", "text": "هل يمكنك من فضلك صياغة ذلك كخلاصة لا تبدو تهويلية ولا مقللة من شأن الموضوع؟" },
+            { "language": "tr", "text": "Bunu lütfen ne alarmist ne de küçümseyici duyulan bir son ifadeye dönüştürebilir misiniz?" },
+            { "language": "ru", "text": "Можете, пожалуйста, сформулировать это в заключительной фразе, которая не звучит ни паникерски, ни преуменьшающе?" },
+            { "language": "ckb", "text": "تکایە دەتوانیت ئەمە بکەیتە داڕشتنێکی کۆتایی کە نە وەک ئاگادارکردنەوەی زێدەڕەوی دەنگ بدات و نە بابەتەکە بچووک بکاتەوە؟" },
+            { "language": "kmr", "text": "Ji kerema xwe dikarin vê bikin gotineke dawî ku ne wekî alarmîst û ne jî wekî biçûkxistina mijarê bê bihîstin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani sformułować z tego końcową wypowiedź, która nie brzmi ani alarmistycznie, ani bagatelizująco?" },
+            { "language": "ro", "text": "Puteți, vă rog, să transformați acest lucru într-o formulare finală care să nu sune nici alarmist, nici minimalizator?" },
+            { "language": "sq", "text": "A mund ta ktheni këtë në një formulim përfundimtar që të mos tingëllojë as alarmues, as nënvlerësues?" }
+          ],
+          "function": "request-balanced-final",
+          "toneNote": "Die Moderation fordert eine ausgewogene Schlussformulierung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann würde ich formulieren: Das Projekt wird fachlich weiterverfolgt, aber vor der Freigabe klären Produkt und Compliance innerhalb von 48 Stunden Zweckänderung, Anonymisierung, Aufbewahrungsfrist und Umgang mit sensiblen Inhalten. Bis dahin bleiben personenbezogene Beispiele außerhalb von Präsentationen und Trainingsmaterial.",
+          "translations": [
+            { "language": "en", "text": "Then I would formulate it as follows: the project continues from a subject-matter perspective, but before approval Product and Compliance clarify within 48 hours the purpose change, anonymization, retention period, and handling of sensitive content. Until then, personal examples remain outside presentations and training material." },
+            { "language": "fa", "text": "پس این‌طور فرمول‌بندی می‌کنم: پروژه از نظر تخصصی ادامه پیدا می‌کند، اما پیش از تأیید، بخش محصول و مسئول رعایت مقررات ظرف ۴۸ ساعت تغییر هدف، ناشناس‌سازی، مهلت نگهداری و نحوه برخورد با محتوای حساس را روشن می‌کنند. تا آن زمان، نمونه‌های دارای اطلاعات شخصی خارج از ارائه‌ها و مواد آموزشی می‌مانند." },
+            { "language": "ar", "text": "إذن سأصوغها كالتالي: يستمر المشروع من الناحية التخصصية، لكن قبل الموافقة يوضح المنتج والامتثال خلال 48 ساعة تغيير الغرض، وإخفاء الهوية، ومدة الاحتفاظ، وطريقة التعامل مع المحتويات الحساسة. وحتى ذلك الحين تبقى الأمثلة الشخصية خارج العروض ومواد التدريب." },
+            { "language": "tr", "text": "O halde şöyle formüle ederdim: proje uzmanlık açısından sürdürülür, ancak onaydan önce Ürün ve Uyum 48 saat içinde amaç değişikliğini, anonimleştirmeyi, saklama süresini ve hassas içeriklerin ele alınmasını netleştirir. O zamana kadar kişisel örnekler sunumların ve eğitim materyalinin dışında kalır." },
+            { "language": "ru", "text": "Тогда я сформулировал бы так: проект продолжается по содержательной линии, но до утверждения продукт и комплаенс в течение 48 часов проясняют изменение цели, анонимизацию, срок хранения и обращение с чувствительным содержанием. До тех пор персональные примеры остаются вне презентаций и учебных материалов." },
+            { "language": "ckb", "text": "ئەوا من وا داڕێژم: پڕۆژەکە لە ڕووی پیشەییەوە بەردەوام دەبێت، بەڵام پێش پەسەندکردن، بەشی بەرهەم و بەرپرسی پابەندی بە ڕێسا لە ماوەی ٤٨ کاتژمێردا گۆڕانی ئامانج، بێناسنامەکردن، ماوەی هەڵگرتن و مامەڵەکردن لەگەڵ ناوەڕۆکی هەستیار ڕوون دەکەنەوە. تا ئەو کاتە، نموونە خاوەن زانیارییە کەسییەکان لە دەرەوەی پێشکەشکردن و ماددەی ڕاهێنان دەمێننەوە." },
+            { "language": "kmr", "text": "Wê demê ez wisa diafirînim: proje ji aliyê pisporî ve didome, lê berî pejirandinê, Hilber û Lihevhatin di 48 demjimêran de guhertina armancê, bênavkirin, dema parastinê û rêvebirina naveroka hestiyar zelal dikin. Heta wê demê mînakên kesane li derveyî pêşkêşkirin û materyalên perwerdeyê dimînin." },
+            { "language": "pl", "text": "Wtedy sformułowałbym to tak: projekt jest kontynuowany merytorycznie, ale przed zatwierdzeniem produkt i zgodność w ciągu 48 godzin wyjaśniają zmianę celu, anonimizację, okres przechowywania i postępowanie z treściami wrażliwymi. Do tego czasu przykłady osobowe pozostają poza prezentacjami i materiałami szkoleniowymi." },
+            { "language": "ro", "text": "Atunci aș formula astfel: proiectul continuă din punct de vedere profesional, dar înainte de aprobare Produsul și Conformitatea clarifică în 48 de ore schimbarea scopului, anonimizarea, perioada de păstrare și gestionarea conținutului sensibil. Până atunci, exemplele cu date personale rămân în afara prezentărilor și materialelor de instruire." },
+            { "language": "sq", "text": "Atëherë do ta formuloja kështu: projekti vazhdon në aspektin profesional, por para miratimit Produkti dhe Pajtueshmëria sqarojnë brenda 48 orësh ndryshimin e qëllimit, anonimizimin, afatin e ruajtjes dhe trajtimin e përmbajtjes së ndjeshme. Deri atëherë, shembujt me të dhëna personale mbeten jashtë prezantimeve dhe materialeve të trajnimit." }
+          ],
+          "function": "balanced-final-wording",
+          "toneNote": "Die Schlussformulierung verbindet Projektfortschritt mit klarer ethischer Prüfung.",
+          "expectedLearnerAction": "Summarize the ethical concern as a neutral review path."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ja. Ich möchte das ausdrücklich nicht als Vorwurf formulieren. Mir geht es darum, drei Ebenen sauber zu trennen: welche Kundendaten tatsächlich genutzt werden, welcher neue Zweck damit verbunden ist und welche ethische Wirkung das auf Vertrauen haben kann.",
+              "translations": [
+                { "language": "en", "text": "Yes. I explicitly do not want to formulate this as an accusation. My point is to separate three levels clearly: which customer data is actually used, what new purpose is connected to it, and what ethical effect that may have on trust." },
+                { "language": "fa", "text": "بله. صریحاً نمی‌خواهم این را به شکل اتهام مطرح کنم. هدفم این است که سه سطح را دقیق از هم جدا کنیم: واقعاً کدام داده‌های مشتریان استفاده می‌شود، چه هدف جدیدی به آن وصل است، و این موضوع چه اثر اخلاقی بر اعتماد می‌تواند داشته باشد." },
+                { "language": "ar", "text": "نعم. لا أريد إطلاقاً صياغة ذلك كاتهام. ما يهمني هو أن نفصل بوضوح بين ثلاثة مستويات: أي بيانات عملاء تُستخدم فعلاً، وما الغرض الجديد المرتبط بها، وما الأثر الأخلاقي المحتمل على الثقة." },
+                { "language": "tr", "text": "Evet. Bunu özellikle bir suçlama olarak formüle etmek istemiyorum. Amacım üç düzeyi temiz biçimde ayırmak: hangi müşteri verileri gerçekten kullanılıyor, bununla hangi yeni amaç bağlantılı ve bunun güven üzerinde ne tür etik etkisi olabilir." },
+                { "language": "ru", "text": "Да. Я явно не хочу формулировать это как обвинение. Мне важно четко разделить три уровня: какие клиентские данные фактически используются, какая новая цель с этим связана и какое этическое воздействие это может иметь на доверие." },
+                { "language": "ckb", "text": "بەڵێ. بە ڕوونی نامەوێت ئەمە وەک تۆمەت داڕێژم. مەبەستم ئەوەیە سێ ئاست بە پاکی جیا بکەینەوە: بەڕاستی کام داتای کڕیار بەکار دەهێنرێت، کام ئامانجی نوێی پێوە بەستراوە، و ئەمە چ کاریگەرییەکی ئەخلاقی لەسەر متمانە دەتوانێت هەبێت." },
+                { "language": "kmr", "text": "Erê. Ez bi eşkere naxwazim vê wekî sûcdarkirinê bibêjim. Armanca min ew e ku em sê astan zelal veqetînin: kîjan daneyên xerîdaran bi rastî têne bikaranîn, kîjan armanca nû pê ve girêdayî ye, û ev dikare çi bandoreke exlaqî li ser baweriyê hebe." },
+                { "language": "pl", "text": "Tak. Wyraźnie nie chcę formułować tego jako zarzutu. Chodzi mi o czyste oddzielenie trzech poziomów: jakie dane klientów faktycznie są używane, jaki nowy cel się z tym wiąże i jaki etyczny wpływ może to mieć na zaufanie." },
+                { "language": "ro", "text": "Da. Nu vreau să formulez acest lucru ca acuzație. Mă interesează să separăm clar trei niveluri: ce date ale clienților sunt folosite efectiv, ce scop nou este legat de ele și ce efect etic poate avea asupra încrederii." },
+                { "language": "sq", "text": "Po. Nuk dua ta formuloj këtë si akuzë. Synimi im është të ndajmë qartë tri nivele: cilat të dhëna të klientëve përdoren realisht, cili qëllim i ri lidhet me to dhe çfarë ndikimi etik mund të ketë kjo mbi besimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort senkt die Spannung und macht klar, dass es um Prüfung statt Schuldzuweisung geht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer lowers the tension and makes clear that this is about review, not blame." },
+                { "language": "fa", "text": "قوی: پاسخ تنش را پایین می‌آورد و روشن می‌کند که موضوع بررسی است، نه مقصر دانستن." },
+                { "language": "ar", "text": "قوي: يخفض الجواب التوتر ويوضح أن الأمر يتعلق بالمراجعة لا بإلقاء اللوم." },
+                { "language": "tr", "text": "Güçlü: cevap gerilimi düşürür ve konunun suçlama değil inceleme olduğunu netleştirir." },
+                { "language": "ru", "text": "Сильно: ответ снижает напряжение и ясно показывает, что речь о проверке, а не о поиске виновных." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە گرژی کەم دەکاتەوە و ڕوون دەکاتەوە کە بابەتەکە پشکنینە، نە تاوانبارکردن." },
+                { "language": "kmr", "text": "Xurt e: bersiv tengasiyê kêm dike û zelal dike ku mijar kontrol e, ne sûcdarkirin." },
+                { "language": "pl", "text": "Mocne: odpowiedź obniża napięcie i jasno pokazuje, że chodzi o weryfikację, a nie o przypisywanie winy." },
+                { "language": "ro", "text": "Puternic: răspunsul reduce tensiunea și clarifică faptul că este vorba despre verificare, nu despre vină." },
+                { "language": "sq", "text": "E fortë: përgjigjja ul tensionin dhe e bën të qartë se bëhet fjalë për shqyrtim, jo për fajësim." }
+              ],
+              "explanationKey": "neutral-ethical-opening"
+            },
+            {
+              "id": "weak",
+              "text": "Ich habe den Eindruck, dass wir hier möglicherweise ein ethisches Problem übersehen, und möchte das vor der Freigabe diskutieren.",
+              "translations": [
+                { "language": "en", "text": "I have the impression that we may be overlooking an ethical problem here, and I would like to discuss that before approval." },
+                { "language": "fa", "text": "احساس می‌کنم شاید اینجا یک مشکل اخلاقی را نادیده گرفته‌ایم و می‌خواهم قبل از تأیید درباره آن صحبت کنیم." },
+                { "language": "ar", "text": "لدي انطباع بأننا ربما نتجاهل مشكلة أخلاقية هنا، وأود مناقشة ذلك قبل الموافقة." },
+                { "language": "tr", "text": "Burada etik bir sorunu gözden kaçırıyor olabileceğimiz izlenimindeyim ve bunu onaydan önce tartışmak istiyorum." },
+                { "language": "ru", "text": "У меня впечатление, что мы, возможно, упускаем здесь этическую проблему, и я хотел бы обсудить это до утверждения." },
+                { "language": "ckb", "text": "هەستم وایە لێرەدا لەوانەیە کێشەیەکی ئەخلاقی پشتگوێ خستبێت و دەمەوێت پێش پەسەندکردن باسی بکەین." },
+                { "language": "kmr", "text": "Ez wisa hîs dikim ku em dibe pirsgirêkeke exlaqî li vir ji bîr bikin, û ez dixwazim berî pejirandinê wê gotûbêj bikim." },
+                { "language": "pl", "text": "Mam wrażenie, że możemy tu przeoczyć problem etyczny, i chciałbym/chciałabym omówić to przed zatwierdzeniem." },
+                { "language": "ro", "text": "Am impresia că este posibil să trecem cu vederea o problemă etică aici și aș dori să discutăm înainte de aprobare." },
+                { "language": "sq", "text": "Kam përshtypjen se ndoshta po anashkalojmë një problem etik këtu dhe dua ta diskutojmë para miratimit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Formulierung nennt keine Ebenen und kann schnell wie ein pauschaler Vorwurf wirken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too general: the wording names no levels and can quickly sound like a broad accusation." },
+                { "language": "fa", "text": "قابل‌باور اما بیش از حد کلی: جمله هیچ سطحی را مشخص نمی‌کند و می‌تواند سریع شبیه اتهام کلی شنیده شود." },
+                { "language": "ar", "text": "معقول لكنه عام جداً: لا تذكر الصياغة أي مستويات وقد تبدو بسرعة كاتهام عام." },
+                { "language": "tr", "text": "Makuldür ama çok genel: ifade hiçbir düzey belirtmez ve hızla genel bir suçlama gibi duyulabilir." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общее: формулировка не называет уровней и может быстро прозвучать как общее обвинение." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر گشتییە: داڕشتنەکە هیچ ئاستێک ناو نابات و خێرا دەتوانێت وەک تۆمەتێکی گشتی دەنگ بدات." },
+                { "language": "kmr", "text": "Bawerbar e lê pir giştî ye: gotin tu astan nav nake û zû dikare wekî sûcdarkirineke giştî bê bihîstin." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt ogólne: sformułowanie nie wskazuje poziomów i szybko może zabrzmieć jak ogólny zarzut." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: formularea nu numește niveluri și poate suna rapid ca o acuzație generală." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: formulimi nuk përmend nivele dhe mund të tingëllojë shpejt si akuzë e përgjithshme." }
+              ],
+              "explanationKey": "general-ethical-claim"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das ist ein wichtiger Unterschied. Gleichzeitig ändert sich der Zweck: Die Tickets wurden für Problemlösung erhoben, jetzt sollen sie zur Produktsteuerung ausgewertet werden. Das muss nicht falsch sein, aber es sollte bewusst geprüft werden.",
+              "translations": [
+                { "language": "en", "text": "That is an important distinction. At the same time, the purpose changes: the tickets were collected for problem solving; now they are to be evaluated for product steering. That does not have to be wrong, but it should be reviewed deliberately." },
+                { "language": "fa", "text": "این تفاوت مهمی است. هم‌زمان هدف تغییر می‌کند: این درخواست‌ها برای حل مشکل جمع‌آوری شده‌اند، اما حالا قرار است برای هدایت محصول تحلیل شوند. این لزوماً غلط نیست، اما باید آگاهانه بررسی شود." },
+                { "language": "ar", "text": "هذا تمييز مهم. في الوقت نفسه يتغير الغرض: جُمعت التذاكر لحل المشكلات، والآن ينبغي تحليلها لتوجيه المنتج. ليس بالضرورة أن يكون ذلك خطأ، لكنه ينبغي أن يُراجع بوعي." },
+                { "language": "tr", "text": "Bu önemli bir ayrım. Aynı zamanda amaç değişiyor: kayıtlar sorun çözmek için toplandı, şimdi ürün yönlendirmesi için değerlendirilecek. Bu yanlış olmak zorunda değil, ama bilinçli biçimde incelenmeli." },
+                { "language": "ru", "text": "Это важное различие. В то же время меняется цель: тикеты собирались для решения проблем, а теперь должны анализироваться для управления продуктом. Это не обязательно неправильно, но это следует осознанно проверить." },
+                { "language": "ckb", "text": "ئەمە جیاوازییەکی گرنگە. هاوکات ئامانجەکە دەگۆڕێت: داواکارییەکان بۆ چارەسەری کێشە کۆکراونەتەوە، ئێستا دەبێت بۆ ئاراستەکردنی بەرهەم شیکرێنەوە. ئەمە پێویست نییە هەڵە بێت، بەڵام دەبێت بە ئاگایی بپشکنرێت." },
+                { "language": "kmr", "text": "Ev cudahiyeke girîng e. Di heman demê de armanc diguhere: tîket ji bo çareserkirina pirsgirêkan hatine komkirin, niha divê ji bo rêvebirina hilberê werin nirxandin. Ev ne hewce ye şaş be, lê divê bi hişyarî were kontrolkirin." },
+                { "language": "pl", "text": "To ważne rozróżnienie. Jednocześnie zmienia się cel: zgłoszenia zebrano do rozwiązywania problemów, a teraz mają być analizowane do sterowania produktem. To nie musi być błędne, ale powinno zostać świadomie sprawdzone." },
+                { "language": "ro", "text": "Este o distincție importantă. În același timp se schimbă scopul: tichetele au fost colectate pentru rezolvarea problemelor, iar acum urmează să fie evaluate pentru orientarea produsului. Nu trebuie să fie greșit, dar ar trebui verificat conștient." },
+                { "language": "sq", "text": "Ky është një dallim i rëndësishëm. Njëkohësisht ndryshon qëllimi: kërkesat u mblodhën për zgjidhje problemesh, tani do të analizohen për drejtimin e produktit. Kjo nuk është domosdoshmërisht e gabuar, por duhet shqyrtuar me vetëdije." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert den internen Rahmen, aber benennt präzise die Zweckänderung als prüfbaren Kern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer accepts the internal frame, but precisely identifies the purpose change as the reviewable core." },
+                { "language": "fa", "text": "قوی: پاسخ چارچوب داخلی را می‌پذیرد، اما تغییر هدف را دقیقاً به‌عنوان هسته قابل بررسی نام می‌برد." },
+                { "language": "ar", "text": "قوي: يقبل الجواب الإطار الداخلي، لكنه يحدد بدقة تغيير الغرض كجوهر قابل للمراجعة." },
+                { "language": "tr", "text": "Güçlü: cevap iç çerçeveyi kabul eder, ama amaç değişikliğini denetlenebilir çekirdek olarak kesin biçimde belirtir." },
+                { "language": "ru", "text": "Сильно: ответ принимает внутренний рамочный контекст, но точно называет изменение цели проверяемым ядром." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە چوارچێوەی ناوخۆیی پەسەند دەکات، بەڵام گۆڕانی ئامانج بە وردی وەک ناوەڕۆکی پشکنراو ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: bersiv çarçoveya hundirîn dipejirîne, lê guhertina armancê bi hûrbûn wekî navenda kontrolbar nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź akceptuje wewnętrzne ramy, ale precyzyjnie wskazuje zmianę celu jako sprawdzalne sedno." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă cadrul intern, dar identifică precis schimbarea scopului ca nucleu verificabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon kornizën e brendshme, por e emërton saktë ndryshimin e qëllimit si thelb të verifikueshëm." }
+              ],
+              "explanationKey": "purpose-change-core"
+            },
+            {
+              "id": "weak",
+              "text": "Auch bei interner Nutzung sollten wir vorsichtig sein, weil Kundendaten immer ein sensibles Thema sind.",
+              "translations": [
+                { "language": "en", "text": "Even with internal use, we should be careful because customer data is always a sensitive topic." },
+                { "language": "fa", "text": "حتی در استفاده داخلی هم باید محتاط باشیم، چون داده‌های مشتریان همیشه موضوع حساسی است." },
+                { "language": "ar", "text": "حتى عند الاستخدام الداخلي ينبغي أن نكون حذرين، لأن بيانات العملاء موضوع حساس دائماً." },
+                { "language": "tr", "text": "Dahili kullanımda bile dikkatli olmalıyız, çünkü müşteri verileri her zaman hassas bir konudur." },
+                { "language": "ru", "text": "Даже при внутреннем использовании нам следует быть осторожными, потому что клиентские данные всегда чувствительная тема." },
+                { "language": "ckb", "text": "تەنانەت لە بەکارهێنانی ناوخۆییشدا دەبێت وریا بین، چونکە داتای کڕیاران هەمیشە بابەتێکی هەستیارە." },
+                { "language": "kmr", "text": "Her çiqas bikaranîn hundirîn be jî, divê em baldar bin, ji ber ku daneyên xerîdaran her tim mijareke hestiyar e." },
+                { "language": "pl", "text": "Nawet przy użyciu wewnętrznym powinniśmy być ostrożni, bo dane klientów zawsze są tematem wrażliwym." },
+                { "language": "ro", "text": "Chiar și în utilizarea internă ar trebui să fim atenți, deoarece datele clienților sunt întotdeauna un subiect sensibil." },
+                { "language": "sq", "text": "Edhe në përdorim të brendshëm duhet të jemi të kujdesshëm, sepse të dhënat e klientëve janë gjithmonë temë e ndjeshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Die Antwort bleibt bei allgemeiner Vorsicht und nennt nicht den konkreten Zweckwechsel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: the answer stays with general caution and does not name the concrete purpose change." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی مبهم: پاسخ در حد احتیاط کلی می‌ماند و تغییر هدف مشخص را نام نمی‌برد." },
+                { "language": "ar", "text": "معقول لكنه مبهم جداً: يبقى الجواب عند الحذر العام ولا يذكر تغيير الغرض المحدد." },
+                { "language": "tr", "text": "Makuldür ama çok belirsiz: cevap genel dikkat düzeyinde kalır ve somut amaç değişikliğini belirtmez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: ответ остается на уровне общей осторожности и не называет конкретное изменение цели." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر ناڕوونە: وەڵامەکە لە ئاستی وریایی گشتی دەمێنێتەوە و گۆڕانی ئامانجی دیاریکراو ناو نابات." },
+                { "language": "kmr", "text": "Bawerbar e lê pir nezelal e: bersiv li asta baldarîya giştî dimîne û guhertina armanca konkret nav nake." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt niejasne: odpowiedź pozostaje przy ogólnej ostrożności i nie wskazuje konkretnej zmiany celu." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: răspunsul rămâne la precauție generală și nu numește schimbarea concretă a scopului." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: përgjigjja mbetet te kujdesi i përgjithshëm dhe nuk përmend ndryshimin konkret të qëllimit." }
+              ],
+              "explanationKey": "general-data-caution"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde vier Prüffragen festhalten: Sind die Daten ausreichend anonymisiert? Ist der neue Zweck transparent dokumentiert? Gibt es eine Begrenzung der Aufbewahrung? Und wer entscheidet, falls ein Ticket sensible Informationen enthält?",
+              "translations": [
+                { "language": "en", "text": "I would record four review questions: Is the data sufficiently anonymized? Is the new purpose transparently documented? Is there a limit on retention? And who decides if a ticket contains sensitive information?" },
+                { "language": "fa", "text": "من چهار پرسش بررسی ثبت می‌کنم: آیا داده‌ها به اندازه کافی ناشناس‌سازی شده‌اند؟ آیا هدف جدید شفاف مستند شده است؟ آیا برای نگهداری داده‌ها محدودیت زمانی وجود دارد؟ و اگر یک درخواست شامل اطلاعات حساس باشد، چه کسی تصمیم می‌گیرد؟" },
+                { "language": "ar", "text": "سأثبت أربعة أسئلة مراجعة: هل البيانات مجهولة الهوية بما يكفي؟ هل الغرض الجديد موثق بشفافية؟ هل هناك حد للاحتفاظ؟ ومن يقرر إذا احتوت تذكرة على معلومات حساسة؟" },
+                { "language": "tr", "text": "Dört inceleme sorusu kaydederdim: Veriler yeterince anonimleştirildi mi? Yeni amaç şeffaf biçimde belgelendi mi? Saklama için bir sınır var mı? Ve bir kayıt hassas bilgi içerirse kim karar verir?" },
+                { "language": "ru", "text": "Я бы зафиксировал четыре вопроса проверки: достаточно ли анонимизированы данные? Прозрачно ли документирована новая цель? Есть ли ограничение хранения? И кто решает, если тикет содержит чувствительную информацию?" },
+                { "language": "ckb", "text": "من چوار پرسیاری پشکنین تۆمار دەکەم: ئایا داتاکان بە تەواوی بێناسنامە کراون؟ ئایا ئامانجی نوێ بە شەفافی تۆمارکراوە؟ ئایا سنووری هەڵگرتن هەیە؟ و ئەگەر داواکارییەک زانیاریی هەستیار لەخۆ بگرێت، کێ بڕیار دەدات؟" },
+                { "language": "kmr", "text": "Ez ê çar pirsên kontrolê qeyd bikim: Dane têra xwe bênav kirine? Armanca nû bi zelalî hatiye belgekirin? Sînorek ji bo parastinê heye? Û heke tîketek agahiyên hestiyar bigire, kî biryar dide?" },
+                { "language": "pl", "text": "Zapisałbym cztery pytania kontrolne: Czy dane są wystarczająco zanonimizowane? Czy nowy cel jest przejrzyście udokumentowany? Czy istnieje limit przechowywania? I kto decyduje, jeśli zgłoszenie zawiera informacje wrażliwe?" },
+                { "language": "ro", "text": "Aș nota patru întrebări de verificare: Sunt datele suficient anonimizate? Este noul scop documentat transparent? Există o limită de păstrare? Și cine decide dacă un tichet conține informații sensibile?" },
+                { "language": "sq", "text": "Do të shënoja katër pyetje verifikimi: A janë të dhënat mjaftueshëm të anonimizuara? A është dokumentuar qartë qëllimi i ri? A ka kufi për ruajtjen? Dhe kush vendos nëse një kërkesë përmban informacion të ndjeshëm?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht die Sorge prüfbar, ohne das Projekt pauschal zu stoppen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer makes the concern reviewable without stopping the project broadly." },
+                { "language": "fa", "text": "قوی: پاسخ نگرانی را قابل بررسی می‌کند، بدون اینکه کل پروژه را به‌طور کلی متوقف کند." },
+                { "language": "ar", "text": "قوي: يجعل الجواب القلق قابلاً للمراجعة من دون إيقاف المشروع بشكل عام." },
+                { "language": "tr", "text": "Güçlü: cevap kaygıyı denetlenebilir hale getirir, projeyi genel olarak durdurmaz." },
+                { "language": "ru", "text": "Сильно: ответ делает обеспокоенность проверяемой, не останавливая проект в целом." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانییەکە دەکاتە پشکنراو، بەبێ ئەوەی پڕۆژەکە بە گشتی بوەستێنێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv xemgîniyê kontrolbar dike, bêyî ku projeyê bi giştî rawestîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź czyni obawę sprawdzalną, nie zatrzymując projektu ogólnie." },
+                { "language": "ro", "text": "Puternic: răspunsul face preocuparea verificabilă fără a opri proiectul în ansamblu." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën shqetësimin të verifikueshëm pa ndalur projektin në përgjithësi." }
+              ],
+              "explanationKey": "review-questions"
+            },
+            {
+              "id": "weak",
+              "text": "Wir sollten vor der Freigabe noch einmal prüfen, ob Datenschutz und Ethik ausreichend berücksichtigt wurden.",
+              "translations": [
+                { "language": "en", "text": "Before approval, we should check again whether data protection and ethics were sufficiently considered." },
+                { "language": "fa", "text": "قبل از تأیید باید دوباره بررسی کنیم آیا حفاظت از داده‌ها و اخلاق به اندازه کافی در نظر گرفته شده‌اند یا نه." },
+                { "language": "ar", "text": "قبل الموافقة ينبغي أن نتحقق مرة أخرى مما إذا كانت حماية البيانات والأخلاقيات قد أُخذت في الاعتبار بما يكفي." },
+                { "language": "tr", "text": "Onaydan önce veri koruma ve etiğin yeterince dikkate alınıp alınmadığını tekrar kontrol etmeliyiz." },
+                { "language": "ru", "text": "Перед утверждением нам следует еще раз проверить, были ли достаточно учтены защита данных и этика." },
+                { "language": "ckb", "text": "پێش پەسەندکردن دەبێت جارێکی تر بپشکنین ئایا پاراستنی داتا و ئەخلاق بە تەواوی لەبەرچاو گیراون یان نا." },
+                { "language": "kmr", "text": "Berî pejirandinê divê em careke din kontrol bikin ka parastina daneyan û exlaq têra xwe hatine berçavgirtin an na." },
+                { "language": "pl", "text": "Przed zatwierdzeniem powinniśmy jeszcze raz sprawdzić, czy ochrona danych i etyka zostały wystarczająco uwzględnione." },
+                { "language": "ro", "text": "Înainte de aprobare ar trebui să verificăm încă o dată dacă protecția datelor și etica au fost luate suficient în considerare." },
+                { "language": "sq", "text": "Para miratimit duhet të kontrollojmë edhe një herë nëse mbrojtja e të dhënave dhe etika janë marrë mjaftueshëm parasysh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu breit: Die Antwort nennt keine konkreten Prüffragen und bleibt dadurch schwer umsetzbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too broad: the answer names no concrete review questions and is therefore hard to implement." },
+                { "language": "fa", "text": "قابل‌باور اما بیش از حد گسترده: پاسخ هیچ پرسش بررسی مشخصی نمی‌گوید و بنابراین اجرای آن سخت است." },
+                { "language": "ar", "text": "معقول لكنه واسع جداً: لا يذكر الجواب أسئلة مراجعة محددة ولذلك يصعب تنفيذه." },
+                { "language": "tr", "text": "Makuldür ama fazla geniş: cevap somut inceleme soruları belirtmez ve bu yüzden uygulanması zordur." },
+                { "language": "ru", "text": "Правдоподобно, но слишком широко: ответ не называет конкретных вопросов проверки, поэтому его трудно реализовать." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر فراوانە: وەڵامەکە هیچ پرسیاری پشکنینی دیاریکراو ناو نابات و بۆیە جێبەجێکردنی قورسە." },
+                { "language": "kmr", "text": "Bawerbar e lê pir berfireh e: bersiv tu pirsên kontrolê yên konkret nav nake û ji ber vê pêkanîna wê dijwar e." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt szerokie: odpowiedź nie podaje konkretnych pytań kontrolnych, więc trudno ją wdrożyć." },
+                { "language": "ro", "text": "Plauzibil, dar prea larg: răspunsul nu numește întrebări concrete de verificare și de aceea este greu de implementat." },
+                { "language": "sq", "text": "E besueshme, por shumë e gjerë: përgjigjja nuk përmend pyetje konkrete verifikimi dhe prandaj është e vështirë për t'u zbatuar." }
+              ],
+              "explanationKey": "broad-review"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde nicht den gesamten Projektplan stoppen. Mein Vorschlag ist eine 48-Stunden-Prüfung mit klarer Ampel: Grün, wenn Anonymisierung, Zweckdokumentation und Löschfrist belastbar sind; Gelb, wenn nur einzelne Punkte nachgeschärft werden müssen; Rot, wenn sensible Inhalte ungefiltert einfließen.",
+              "translations": [
+                { "language": "en", "text": "I would not stop the entire project plan. My proposal is a 48-hour review with a clear traffic-light logic: green if anonymization, purpose documentation, and deletion period are reliable; yellow if only individual points need tightening; red if sensitive content flows in unfiltered." },
+                { "language": "fa", "text": "من کل برنامه پروژه را متوقف نمی‌کنم. پیشنهاد من یک بررسی ۴۸ ساعته با منطق چراغ راهنماست: سبز، اگر ناشناس‌سازی، مستندسازی هدف و مهلت حذف قابل اتکا باشند؛ زرد، اگر فقط چند نکته باید دقیق‌تر شود؛ قرمز، اگر محتوای حساس بدون فیلتر وارد شود." },
+                { "language": "ar", "text": "لن أوقف خطة المشروع كلها. اقتراحي هو مراجعة خلال 48 ساعة بمنطق إشارة واضح: أخضر إذا كانت إخفاء الهوية وتوثيق الغرض ومدة الحذف موثوقة؛ أصفر إذا احتاجت نقاط فردية فقط إلى تدقيق؛ أحمر إذا دخلت محتويات حساسة من دون تصفية." },
+                { "language": "tr", "text": "Tüm proje planını durdurmazdım. Önerim net bir trafik ışığı mantığıyla 48 saatlik bir inceleme: anonimleştirme, amaç belgesi ve silme süresi sağlam ise yeşil; yalnızca tekil noktalar netleştirilecekse sarı; hassas içerikler filtresiz giriyorsa kırmızı." },
+                { "language": "ru", "text": "Я бы не останавливал весь проектный план. Мое предложение — 48-часовая проверка с четкой логикой светофора: зеленый, если анонимизация, документация цели и срок удаления надежны; желтый, если нужно уточнить отдельные пункты; красный, если чувствительное содержание поступает без фильтра." },
+                { "language": "ckb", "text": "من هەموو پلانی پڕۆژەکە ناوەستێنم. پێشنیارم پشکنینی ٤٨ کاتژمێرییە بە لۆژیکی ڕوونی چرای هاتووچۆ: سەوز، ئەگەر بێناسنامەکردن، تۆمارکردنی ئامانج و ماوەی سڕینەوە پشتپێبەستوو بن؛ زەرد، ئەگەر تەنها هەندێک خاڵ پێویستی بە وردکردن هەبێت؛ سوور، ئەگەر ناوەڕۆکی هەستیار بەبێ پاڵاوتن بچێتە ناوەوە." },
+                { "language": "kmr", "text": "Ez hemû plana projeyê rawestanînim. Pêşniyara min kontrola 48 demjimêran e bi mantiqa ronahiyên rêyê: kesk, heke bênavkirin, belgekirina armancê û dema jêbirinê pêbawer bin; zer, heke tenê hin xal hewceyî hûrkirinê bin; sor, heke naveroka hestiyar bê parzûn bikeve." },
+                { "language": "pl", "text": "Nie zatrzymywałbym całego planu projektu. Proponuję 48-godzinną weryfikację z jasną logiką świateł: zielone, jeśli anonimizacja, dokumentacja celu i termin usunięcia są solidne; żółte, jeśli trzeba doprecyzować pojedyncze punkty; czerwone, jeśli wrażliwe treści wpływają bez filtrowania." },
+                { "language": "ro", "text": "Nu aș opri întregul plan de proiect. Propun o verificare de 48 de ore cu o logică clară de semafor: verde dacă anonimizarea, documentarea scopului și termenul de ștergere sunt solide; galben dacă doar unele puncte trebuie ajustate; roșu dacă intră conținut sensibil nefiltrat." },
+                { "language": "sq", "text": "Nuk do ta ndaloja të gjithë planin e projektit. Propozimi im është një verifikim 48-orësh me logjikë të qartë semafori: jeshile nëse anonimizimi, dokumentimi i qëllimit dhe afati i fshirjes janë të besueshme; e verdhë nëse duhen saktësuar vetëm disa pika; e kuqe nëse përmbajtje të ndjeshme hyjnë pa filtër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Tempo und Sorgfalt, statt Prüfung und Fortschritt gegeneinander auszuspielen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer connects speed and care instead of playing review and progress against each other." },
+                { "language": "fa", "text": "قوی: پاسخ سرعت و دقت را به هم وصل می‌کند، نه اینکه بررسی و پیشرفت را مقابل هم قرار دهد." },
+                { "language": "ar", "text": "قوي: يربط الجواب بين السرعة والعناية بدلاً من وضع المراجعة والتقدم في مواجهة بعضهما." },
+                { "language": "tr", "text": "Güçlü: cevap inceleme ile ilerlemeyi birbirine karşı koymak yerine hız ve özeni birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ связывает скорость и тщательность, а не противопоставляет проверку и прогресс." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە خێرایی و وردی پێکەوە دەبەستێت، نە ئەوەی پشکنین و پێشکەوتن دژی یەک بکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv lez û baldarî bi hev ve girê dide, ne ku kontrol û pêşveçûn li dijî hev bîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy tempo i staranność, zamiast przeciwstawiać weryfikację postępowi." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă viteza și grija, în loc să opună verificarea progresului." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh shpejtësinë dhe kujdesin, në vend që ta vërë verifikimin kundër përparimit." }
+              ],
+              "explanationKey": "bounded-review"
+            },
+            {
+              "id": "weak",
+              "text": "Ich möchte das Projekt nicht aufhalten, aber ohne Prüfung kann ich die Freigabe nicht unterstützen.",
+              "translations": [
+                { "language": "en", "text": "I do not want to hold up the project, but without a review I cannot support approval." },
+                { "language": "fa", "text": "نمی‌خواهم پروژه را معطل کنم، اما بدون بررسی نمی‌توانم از تأیید آن حمایت کنم." },
+                { "language": "ar", "text": "لا أريد تعطيل المشروع، لكن من دون مراجعة لا أستطيع دعم الموافقة." },
+                { "language": "tr", "text": "Projeyi geciktirmek istemiyorum, ama inceleme olmadan onayı destekleyemem." },
+                { "language": "ru", "text": "Я не хочу задерживать проект, но без проверки не могу поддержать утверждение." },
+                { "language": "ckb", "text": "نامەوێت پڕۆژەکە دوا بخەم، بەڵام بەبێ پشکنین ناتوانم پشتیوانی لە پەسەندکردن بکەم." },
+                { "language": "kmr", "text": "Ez naxwazim projeyê dereng bikim, lê bê kontrol ez nikarim piştgirî bidim pejirandinê." },
+                { "language": "pl", "text": "Nie chcę wstrzymywać projektu, ale bez weryfikacji nie mogę poprzeć zatwierdzenia." },
+                { "language": "ro", "text": "Nu vreau să blochez proiectul, dar fără verificare nu pot susține aprobarea." },
+                { "language": "sq", "text": "Nuk dua ta vonoj projektin, por pa verifikim nuk mund ta mbështes miratimin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu konfrontativ: Die Antwort setzt eine Grenze, bietet aber keinen zeitlich begrenzten Prüfpfad.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too confrontational: the answer sets a boundary, but offers no time-limited review path." },
+                { "language": "fa", "text": "قابل‌باور اما بیش از حد تقابلی: پاسخ مرز می‌گذارد، اما مسیر بررسی محدود به زمان پیشنهاد نمی‌دهد." },
+                { "language": "ar", "text": "معقول لكنه تصادمي أكثر من اللازم: يضع الجواب حداً، لكنه لا يقدم مسار مراجعة محدوداً زمنياً." },
+                { "language": "tr", "text": "Makuldür ama fazla karşıt: cevap bir sınır koyar, ancak zamanla sınırlı bir inceleme yolu sunmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком конфронтационно: ответ устанавливает границу, но не предлагает ограниченный по времени путь проверки." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر بەرامبەرکێیە: وەڵامەکە سنوور دادەنێت، بەڵام ڕێڕەوی پشکنینی سنووردار بە کات پێشنیار ناکات." },
+                { "language": "kmr", "text": "Bawerbar e lê pir rûbirû ye: bersiv sînor datîne, lê rêyeke kontrolê ya bi demê sînorkirî pêşniyar nake." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt konfrontacyjne: odpowiedź stawia granicę, lecz nie proponuje ograniczonej czasowo ścieżki weryfikacji." },
+                { "language": "ro", "text": "Plauzibil, dar prea conflictual: răspunsul stabilește o limită, dar nu oferă un parcurs de verificare limitat în timp." },
+                { "language": "sq", "text": "E besueshme, por shumë përballëse: përgjigjja vendos kufi, por nuk ofron një rrugë verifikimi të kufizuar në kohë." }
+              ],
+              "explanationKey": "boundary-without-path"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dann würde ich formulieren: Das Projekt wird fachlich weiterverfolgt, aber vor der Freigabe klären Produkt und Compliance innerhalb von 48 Stunden Zweckänderung, Anonymisierung, Aufbewahrungsfrist und Umgang mit sensiblen Inhalten. Bis dahin bleiben personenbezogene Beispiele außerhalb von Präsentationen und Trainingsmaterial.",
+              "translations": [
+                { "language": "en", "text": "Then I would formulate it as follows: the project continues from a subject-matter perspective, but before approval Product and Compliance clarify within 48 hours the purpose change, anonymization, retention period, and handling of sensitive content. Until then, personal examples remain outside presentations and training material." },
+                { "language": "fa", "text": "پس این‌طور فرمول‌بندی می‌کنم: پروژه از نظر تخصصی ادامه پیدا می‌کند، اما پیش از تأیید، بخش محصول و مسئول رعایت مقررات ظرف ۴۸ ساعت تغییر هدف، ناشناس‌سازی، مهلت نگهداری و نحوه برخورد با محتوای حساس را روشن می‌کنند. تا آن زمان، نمونه‌های دارای اطلاعات شخصی خارج از ارائه‌ها و مواد آموزشی می‌مانند." },
+                { "language": "ar", "text": "إذن سأصوغها كالتالي: يستمر المشروع من الناحية التخصصية، لكن قبل الموافقة يوضح المنتج والامتثال خلال 48 ساعة تغيير الغرض، وإخفاء الهوية، ومدة الاحتفاظ، وطريقة التعامل مع المحتويات الحساسة. وحتى ذلك الحين تبقى الأمثلة الشخصية خارج العروض ومواد التدريب." },
+                { "language": "tr", "text": "O halde şöyle formüle ederdim: proje uzmanlık açısından sürdürülür, ancak onaydan önce Ürün ve Uyum 48 saat içinde amaç değişikliğini, anonimleştirmeyi, saklama süresini ve hassas içeriklerin ele alınmasını netleştirir. O zamana kadar kişisel örnekler sunumların ve eğitim materyalinin dışında kalır." },
+                { "language": "ru", "text": "Тогда я сформулировал бы так: проект продолжается по содержательной линии, но до утверждения продукт и комплаенс в течение 48 часов проясняют изменение цели, анонимизацию, срок хранения и обращение с чувствительным содержанием. До тех пор персональные примеры остаются вне презентаций и учебных материалов." },
+                { "language": "ckb", "text": "ئەوا من وا داڕێژم: پڕۆژەکە لە ڕووی پیشەییەوە بەردەوام دەبێت، بەڵام پێش پەسەندکردن، بەشی بەرهەم و بەرپرسی پابەندی بە ڕێسا لە ماوەی ٤٨ کاتژمێردا گۆڕانی ئامانج، بێناسنامەکردن، ماوەی هەڵگرتن و مامەڵەکردن لەگەڵ ناوەڕۆکی هەستیار ڕوون دەکەنەوە. تا ئەو کاتە، نموونە خاوەن زانیارییە کەسییەکان لە دەرەوەی پێشکەشکردن و ماددەی ڕاهێنان دەمێننەوە." },
+                { "language": "kmr", "text": "Wê demê ez wisa diafirînim: proje ji aliyê pisporî ve didome, lê berî pejirandinê, Hilber û Lihevhatin di 48 demjimêran de guhertina armancê, bênavkirin, dema parastinê û rêvebirina naveroka hestiyar zelal dikin. Heta wê demê mînakên kesane li derveyî pêşkêşkirin û materyalên perwerdeyê dimînin." },
+                { "language": "pl", "text": "Wtedy sformułowałbym to tak: projekt jest kontynuowany merytorycznie, ale przed zatwierdzeniem produkt i zgodność w ciągu 48 godzin wyjaśniają zmianę celu, anonimizację, okres przechowywania i postępowanie z treściami wrażliwymi. Do tego czasu przykłady osobowe pozostają poza prezentacjami i materiałami szkoleniowymi." },
+                { "language": "ro", "text": "Atunci aș formula astfel: proiectul continuă din punct de vedere profesional, dar înainte de aprobare Produsul și Conformitatea clarifică în 48 de ore schimbarea scopului, anonimizarea, perioada de păstrare și gestionarea conținutului sensibil. Până atunci, exemplele cu date personale rămân în afara prezentărilor și materialelor de instruire." },
+                { "language": "sq", "text": "Atëherë do ta formuloja kështu: projekti vazhdon në aspektin profesional, por para miratimit Produkti dhe Pajtueshmëria sqarojnë brenda 48 orësh ndryshimin e qëllimit, anonimizimin, afatin e ruajtjes dhe trajtimin e përmbajtjes së ndjeshme. Deri atëherë, shembujt me të dhëna personale mbeten jashtë prezantimeve dhe materialeve të trajnimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussfassung ist ausgewogen: Sie erlaubt Fortschritt, schützt aber bis zur Prüfung vor riskanter Weiterverwendung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the final wording is balanced: it allows progress, but protects against risky further use until the review." },
+                { "language": "fa", "text": "قوی: جمع‌بندی نهایی متعادل است: پیشرفت را ممکن می‌کند، اما تا زمان بررسی از استفاده بعدی پرریسک جلوگیری می‌کند." },
+                { "language": "ar", "text": "قوي: الصياغة الختامية متوازنة: تسمح بالتقدم، لكنها تحمي من الاستخدام اللاحق المحفوف بالمخاطر حتى المراجعة." },
+                { "language": "tr", "text": "Güçlü: son ifade dengelidir: ilerlemeye izin verir, ancak incelemeye kadar riskli sonraki kullanıma karşı korur." },
+                { "language": "ru", "text": "Сильно: финальная формулировка сбалансирована: она позволяет прогресс, но защищает от рискованного дальнейшего использования до проверки." },
+                { "language": "ckb", "text": "بەهێزە: داڕشتنی کۆتایی هاوسەنگە: ڕێ بە پێشکەوتن دەدات، بەڵام تا کاتی پشکنین لە بەکارهێنانی داهاتووی پڕمەترسی دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: gotina dawî hevseng e: rê dide pêşveçûnê, lê heta kontrolê ji bikaranîna paşê ya rîskdar diparêze." },
+                { "language": "pl", "text": "Mocne: końcowe sformułowanie jest wyważone: pozwala na postęp, ale chroni przed ryzykownym dalszym użyciem do czasu weryfikacji." },
+                { "language": "ro", "text": "Puternic: formularea finală este echilibrată: permite progresul, dar protejează împotriva utilizării ulterioare riscante până la verificare." },
+                { "language": "sq", "text": "E fortë: formulimi përfundimtar është i balancuar: lejon përparim, por mbron nga përdorimi i mëtejshëm me rrezik deri në verifikim." }
+              ],
+              "explanationKey": "balanced-ethical-final"
+            },
+            {
+              "id": "weak",
+              "text": "Das Projekt kann weiterlaufen, aber wir sollten Datenschutz, Zweckänderung und sensible Inhalte vorher noch einmal prüfen.",
+              "translations": [
+                { "language": "en", "text": "The project can continue, but we should first check data protection, purpose change, and sensitive content again." },
+                { "language": "fa", "text": "پروژه می‌تواند ادامه پیدا کند، اما باید پیش از آن حفاظت از داده‌ها، تغییر هدف و محتوای حساس را دوباره بررسی کنیم." },
+                { "language": "ar", "text": "يمكن أن يستمر المشروع، لكن ينبغي أن نراجع أولاً حماية البيانات وتغيير الغرض والمحتويات الحساسة مرة أخرى." },
+                { "language": "tr", "text": "Proje devam edebilir, ancak önce veri korumayı, amaç değişikliğini ve hassas içerikleri tekrar kontrol etmeliyiz." },
+                { "language": "ru", "text": "Проект может продолжаться, но нам следует сначала еще раз проверить защиту данных, изменение цели и чувствительное содержание." },
+                { "language": "ckb", "text": "پڕۆژەکە دەتوانێت بەردەوام بێت، بەڵام دەبێت پێشتر پاراستنی داتا، گۆڕانی ئامانج و ناوەڕۆکی هەستیار جارێکی تر بپشکنین." },
+                { "language": "kmr", "text": "Proje dikare bidome, lê divê em pêşî parastina daneyan, guhertina armancê û naveroka hestiyar careke din kontrol bikin." },
+                { "language": "pl", "text": "Projekt może iść dalej, ale powinniśmy wcześniej jeszcze raz sprawdzić ochronę danych, zmianę celu i treści wrażliwe." },
+                { "language": "ro", "text": "Proiectul poate continua, dar ar trebui să verificăm înainte încă o dată protecția datelor, schimbarea scopului și conținutul sensibil." },
+                { "language": "sq", "text": "Projekti mund të vazhdojë, por më parë duhet të kontrollojmë edhe një herë mbrojtjen e të dhënave, ndryshimin e qëllimit dhe përmbajtjen e ndjeshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig verbindlich: Es fehlen Frist, Verantwortliche und die konkrete Zwischenregel für personenbezogene Beispiele.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but not binding enough: it lacks a deadline, responsible parties, and the concrete interim rule for personal examples." },
+                { "language": "fa", "text": "قابل‌باور اما به اندازه کافی الزام‌آور نیست: مهلت، مسئولان و قاعده موقت مشخص برای نمونه‌های دارای اطلاعات شخصی ندارد." },
+                { "language": "ar", "text": "معقول لكنه غير ملزم بما يكفي: تنقصه المهلة والمسؤولون والقاعدة المؤقتة المحددة للأمثلة الشخصية." },
+                { "language": "tr", "text": "Makuldür ama yeterince bağlayıcı değil: süre, sorumlular ve kişisel örnekler için somut ara kural eksik." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно обязательно: нет срока, ответственных и конкретного промежуточного правила для персональных примеров." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام بە تەواوی پابەندکەر نییە: ماوە، بەرپرسیارەکان و ڕێسای کاتیی دیاریکراو بۆ نموونە خاوەن زانیارییە کەسییەکان نییە." },
+                { "language": "kmr", "text": "Bawerbar e lê têra xwe girêdanê çênake: dem, berpirsiyar û rêgezeke demkî ya konkret ji bo mînakên kesane tune." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt mało wiążące: brakuje terminu, odpowiedzialnych osób i konkretnej reguły przejściowej dla przykładów osobowych." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient de obligatoriu: lipsesc termenul, responsabilii și regula interimară concretă pentru exemplele cu date personale." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft detyruese: mungojnë afati, përgjegjësit dhe rregulli i përkohshëm konkret për shembujt me të dhëna personale." }
+              ],
+              "explanationKey": "nonbinding-final"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "neutral-ethics",
+          "text": "Ethische Bedenken wirken stärker, wenn sie ohne Vorwurf und mit klaren Prüfebenen formuliert werden.",
+          "translations": [
+            { "language": "en", "text": "Ethical concerns are stronger when formulated without accusation and with clear levels of review." },
+            { "language": "fa", "text": "نگرانی‌های اخلاقی وقتی قوی‌ترند که بدون اتهام و با سطح‌های روشن برای بررسی بیان شوند." },
+            { "language": "ar", "text": "تكون المخاوف الأخلاقية أقوى عندما تُصاغ من دون اتهام ومع مستويات مراجعة واضحة." },
+            { "language": "tr", "text": "Etik kaygılar, suçlama olmadan ve net inceleme düzeyleriyle formüle edildiğinde daha güçlü olur." },
+            { "language": "ru", "text": "Этические опасения звучат сильнее, когда они сформулированы без обвинения и с четкими уровнями проверки." },
+            { "language": "ckb", "text": "نیگەرانییە ئەخلاقییەکان کاتێک بەهێزترن کە بەبێ تۆمەت و بە ئاستی پشکنینی ڕوون داڕێژرێن." },
+            { "language": "kmr", "text": "Xemgîniyên exlaqî dema bê sûcdarkirin û bi astên kontrolê yên zelal werin gotin, xurtir dibin." },
+            { "language": "pl", "text": "Obawy etyczne brzmią mocniej, gdy są formułowane bez oskarżenia i z jasnymi poziomami weryfikacji." },
+            { "language": "ro", "text": "Preocupările etice sunt mai puternice când sunt formulate fără acuzație și cu niveluri clare de verificare." },
+            { "language": "sq", "text": "Shqetësimet etike janë më të forta kur formulohen pa akuza dhe me nivele të qarta verifikimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "purpose-change",
+          "text": "Der entscheidende Punkt ist nicht nur, ob Daten intern bleiben, sondern ob sich ihr Zweck verändert.",
+          "translations": [
+            { "language": "en", "text": "The decisive point is not only whether data remains internal, but whether its purpose changes." },
+            { "language": "fa", "text": "نکته تعیین‌کننده فقط این نیست که داده‌ها داخلی می‌مانند یا نه، بلکه این است که هدف استفاده از آن‌ها تغییر می‌کند یا نه." },
+            { "language": "ar", "text": "النقطة الحاسمة ليست فقط ما إذا كانت البيانات تبقى داخلية، بل ما إذا كان غرضها يتغير." },
+            { "language": "tr", "text": "Belirleyici nokta yalnızca verilerin içeride kalıp kalmaması değil, amacının değişip değişmediğidir." },
+            { "language": "ru", "text": "Решающим является не только то, остаются ли данные внутри, но и меняется ли их цель." },
+            { "language": "ckb", "text": "خاڵی چارەنووساز تەنها ئەوە نییە کە داتا ناوخۆیی دەمێنێتەوە یان نا، بەڵکو ئەوەیە ئایا ئامانجەکەی دەگۆڕێت یان نا." },
+            { "language": "kmr", "text": "Xala diyarker ne tenê ew e ka dane li hundir dimînin an na, lê ka armanca wan diguhere an na." },
+            { "language": "pl", "text": "Kluczowe jest nie tylko to, czy dane pozostają wewnętrzne, lecz czy zmienia się ich cel." },
+            { "language": "ro", "text": "Punctul decisiv nu este doar dacă datele rămân interne, ci dacă li se schimbă scopul." },
+            { "language": "sq", "text": "Pika vendimtare nuk është vetëm nëse të dhënat mbeten të brendshme, por nëse ndryshon qëllimi i tyre." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "review-questions",
+          "text": "Aus abstrakten Bedenken werden handhabbare Aufgaben, wenn sie als konkrete Prüffragen formuliert sind.",
+          "translations": [
+            { "language": "en", "text": "Abstract concerns become manageable tasks when they are formulated as concrete review questions." },
+            { "language": "fa", "text": "نگرانی‌های انتزاعی زمانی به وظیفه‌های قابل مدیریت تبدیل می‌شوند که به شکل پرسش‌های مشخص برای بررسی بیان شوند." },
+            { "language": "ar", "text": "تصبح المخاوف المجردة مهام قابلة للإدارة عندما تُصاغ كأسئلة مراجعة ملموسة." },
+            { "language": "tr", "text": "Soyut kaygılar, somut inceleme soruları olarak formüle edildiğinde yönetilebilir görevlere dönüşür." },
+            { "language": "ru", "text": "Абстрактные опасения становятся управляемыми задачами, когда они сформулированы как конкретные вопросы проверки." },
+            { "language": "ckb", "text": "نیگەرانییە ئەبستراکتەکان کاتێک دەبنە ئەرکی بەڕێوەبردراو کە وەک پرسیاری پشکنینی دیاریکراو داڕێژرابن." },
+            { "language": "kmr", "text": "Xemgîniyên abstrakt dema wekî pirsên kontrolê yên konkret werin gotin, dibin erkên rêvebirbar." },
+            { "language": "pl", "text": "Abstrakcyjne obawy stają się zadaniami do opanowania, gdy są sformułowane jako konkretne pytania kontrolne." },
+            { "language": "ro", "text": "Preocupările abstracte devin sarcini gestionabile când sunt formulate ca întrebări concrete de verificare." },
+            { "language": "sq", "text": "Shqetësimet abstrakte bëhen detyra të menaxhueshme kur formulohen si pyetje konkrete verifikimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "bounded-review",
+          "text": "Eine kurze, klar begrenzte Prüfung ist oft überzeugender als ein pauschales Stoppsignal.",
+          "translations": [
+            { "language": "en", "text": "A short, clearly limited review is often more convincing than a blanket stop signal." },
+            { "language": "fa", "text": "یک بررسی کوتاه و دقیقاً محدود، اغلب قانع‌کننده‌تر از یک علامت توقف کلی است." },
+            { "language": "ar", "text": "غالباً تكون المراجعة القصيرة والمحددة بوضوح أكثر إقناعاً من إشارة توقف عامة." },
+            { "language": "tr", "text": "Kısa ve net sınırlı bir inceleme çoğu zaman genel bir durdurma sinyalinden daha ikna edicidir." },
+            { "language": "ru", "text": "Короткая, четко ограниченная проверка часто убедительнее, чем общий сигнал остановки." },
+            { "language": "ckb", "text": "پشکنینێکی کورت و بە ڕوونی سنووردار زۆرجار لە نیشانەی وەستاندنی گشتی قایلکەرترە." },
+            { "language": "kmr", "text": "Kontroleke kurt û bi zelalî sînorkirî gelek caran ji nîşana rawestandina giştî qaneker tir e." },
+            { "language": "pl", "text": "Krótka, jasno ograniczona weryfikacja bywa bardziej przekonująca niż ogólny sygnał stop." },
+            { "language": "ro", "text": "O verificare scurtă și clar limitată este adesea mai convingătoare decât un semnal general de oprire." },
+            { "language": "sq", "text": "Një verifikim i shkurtër dhe qartë i kufizuar është shpesh më bindës se një sinjal i përgjithshëm ndalimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "balanced-final",
+          "text": "Eine gute Schlussformulierung hält Projektfortschritt und ethische Sorgfalt gleichzeitig im Blick.",
+          "translations": [
+            { "language": "en", "text": "Good final wording keeps project progress and ethical care in view at the same time." },
+            { "language": "fa", "text": "یک جمع‌بندی پایانی خوب، پیشرفت پروژه و دقت اخلاقی را هم‌زمان در نظر نگه می‌دارد." },
+            { "language": "ar", "text": "تحافظ الصياغة الختامية الجيدة على تقدم المشروع والعناية الأخلاقية في الوقت نفسه." },
+            { "language": "tr", "text": "İyi bir son ifade, proje ilerlemesini ve etik özeni aynı anda göz önünde tutar." },
+            { "language": "ru", "text": "Хорошая финальная формулировка одновременно держит в поле зрения прогресс проекта и этическую тщательность." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی باش پێشکەوتنی پڕۆژە و وردی ئەخلاقی هاوکات لەبەرچاو دەگرێت." },
+            { "language": "kmr", "text": "Gotineke dawî ya baş pêşveçûna projeyê û baldarîya exlaqî di heman demê de li ber çavan digire." },
+            { "language": "pl", "text": "Dobre końcowe sformułowanie jednocześnie uwzględnia postęp projektu i etyczną staranność." },
+            { "language": "ro", "text": "O formulare finală bună păstrează simultan în vedere progresul proiectului și grija etică." },
+            { "language": "sq", "text": "Një formulim i mirë përfundimtar mban njëkohësisht parasysh përparimin e projektit dhe kujdesin etik." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "ethical-review-meeting",
+          "placement": "hero",
+          "purpose": "Show a neutral workplace meeting where colleagues review data-use questions responsibly.",
+          "altText": "Drei Erwachsene in einem professionellen Besprechungsraum prüfen eine neutrale Checkliste zur Datennutzung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Three adults in a professional meeting room review a neutral checklist about data use." },
+            { "language": "fa", "text": "سه بزرگسال در یک اتاق جلسه حرفه‌ای یک فهرست بررسی خنثی درباره استفاده از داده‌ها را مرور می‌کنند." },
+            { "language": "ar", "text": "ثلاثة بالغين في غرفة اجتماع مهنية يراجعون قائمة فحص محايدة حول استخدام البيانات." },
+            { "language": "tr", "text": "Profesyonel bir toplantı odasında üç yetişkin veri kullanımıyla ilgili nötr bir kontrol listesini inceliyor." },
+            { "language": "ru", "text": "Трое взрослых в профессиональной переговорной просматривают нейтральный контрольный список по использованию данных." },
+            { "language": "ckb", "text": "سێ پێگەیشتوو لە ژووری کۆبوونەوەیەکی پیشەیی لیستی پشکنینی بێلایەن دەربارەی بەکارهێنانی داتا دەخوێننەوە." },
+            { "language": "kmr", "text": "Sê mezin di odeyeke civînê ya pîşeyî de lîsteyeke kontrolê ya bêalî derbarê bikaranîna daneyan dinirxînin." },
+            { "language": "pl", "text": "Troje dorosłych w profesjonalnej sali spotkań przegląda neutralną listę kontrolną dotyczącą wykorzystania danych." },
+            { "language": "ro", "text": "Trei adulți într-o sală de ședință profesională analizează o listă neutră de verificare privind utilizarea datelor." },
+            { "language": "sq", "text": "Tre të rritur në një sallë profesionale takimesh shqyrtojnë një listë neutrale kontrolli për përdorimin e të dhënave." }
+          ],
+          "imagePrompt": "Clean educational illustration of a professional workplace ethics review meeting in Germany, three diverse adults around a meeting table reviewing an abstract data-use checklist, neutral serious tone, no readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

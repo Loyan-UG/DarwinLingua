@@ -1,0 +1,873 @@
+{
+  "packageId": "roleplays-c1-core-17-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 17 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 17",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-in-einem-seminar-eine-these-einordnen",
+      "linkedDialogueSlug": null,
+      "title": "In einem Seminar eine These einordnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Placing a thesis in context in a seminar" },
+        { "language": "fa", "text": "قرار دادن یک تز در چارچوب بحث سمیناری" },
+        { "language": "ar", "text": "وضع أطروحة في سياقها داخل ندوة" },
+        { "language": "tr", "text": "Bir seminerde bir tezi bağlama oturtmak" },
+        { "language": "ru", "text": "Вписать тезис в контекст на семинаре" },
+        { "language": "ckb", "text": "دانانی تێزێک لە چوارچێوەی سیمیناردا" },
+        { "language": "kmr", "text": "Di semînerê de danîna tezekê di çarçoveyê de" },
+        { "language": "pl", "text": "Umieszczenie tezy w kontekście podczas seminarium" },
+        { "language": "ro", "text": "Încadrarea unei teze într-un seminar" },
+        { "language": "sq", "text": "Vendosja e një teze në kontekst në seminar" }
+      ],
+      "description": "In einer C1-Seminardiskussion ordnen Sie eine These zu digitalen Prüfungen ein, grenzen sie ein, beziehen Gegenargumente ein und formulieren eine präzisere Forschungsfrage.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 seminar discussion, you contextualize a thesis about digital exams, limit its scope, include counterarguments, and formulate a more precise research question." },
+        { "language": "fa", "text": "در یک بحث سمیناری سطح سی‌یک، تز مربوط به آزمون‌های دیجیتال را در چارچوب درست قرار می‌دهید، دامنه آن را محدود می‌کنید، استدلال مخالف را وارد می‌کنید و پرسش پژوهشی دقیق‌تری می‌سازید." },
+        { "language": "ar", "text": "في نقاش ندوة بمستوى C1، تضع أطروحة عن الامتحانات الرقمية في سياقها، وتحدد نطاقها، وتدخل الحجج المضادة، وتصوغ سؤال بحث أدق." },
+        { "language": "tr", "text": "C1 düzeyinde bir seminer tartışmasında, dijital sınavlarla ilgili bir tezi bağlama oturtur, kapsamını sınırlar, karşı argümanları dahil eder ve daha kesin bir araştırma sorusu formüle edersiniz." },
+        { "language": "ru", "text": "В семинарской дискуссии уровня C1 вы помещаете тезис о цифровых экзаменах в контекст, ограничиваете его рамки, учитываете контраргументы и формулируете более точный исследовательский вопрос." },
+        { "language": "ckb", "text": "لە گفتوگۆی سیمیناری ئاستی C1دا، تێزێک دەربارەی تاقیکردنەوە دیجیتاڵییەکان لە چوارچێوەی خۆیدا دادەنێیت، سنووری دەستنیشان دەکەیت، بەڵگەی پێچەوانەش دەهێنیتە ناو باسەکە و پرسیارێکی توێژینەوەی وردتر دادەنێیت." },
+        { "language": "kmr", "text": "Di nîqaşeke semînerê ya asta C1 de, hûn tezekê derbarê ezmûnên dijîtal di çarçoveyê de datînin, sînorê wê diyar dikin, argumanên dijber jî têxin nîqaşê û pirseke lêkolînê ya rastir formule dikin." },
+        { "language": "pl", "text": "W dyskusji seminaryjnej na poziomie C1 osadzasz tezę o egzaminach cyfrowych w kontekście, zawężasz jej zakres, uwzględniasz kontrargumenty i formułujesz precyzyjniejsze pytanie badawcze." },
+        { "language": "ro", "text": "Într-o discuție de seminar de nivel C1, contextualizați o teză despre examenele digitale, îi delimitați domeniul, includeți contraargumente și formulați o întrebare de cercetare mai precisă." },
+        { "language": "sq", "text": "Në një diskutim seminarik të nivelit C1, e vendosni në kontekst një tezë për provimet digjitale, ia kufizoni fushën, përfshini kundërargumente dhe formuloni një pyetje kërkimore më të saktë." }
+      ],
+      "learnerGoal": "Eine akademische These differenziert einordnen: Aussage, Belege, Begrenzung, Gegenargument und Forschungsfrage sprachlich präzise miteinander verbinden.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Contextualize an academic thesis in a nuanced way: connect claim, evidence, limitation, counterargument, and research question with precise language." },
+        { "language": "fa", "text": "یک تز دانشگاهی را با دقت در جایگاه درست قرار دهید: ادعا، شواهد، محدودیت، استدلال مخالف و پرسش پژوهشی را با زبان دقیق به هم وصل کنید." },
+        { "language": "ar", "text": "ضع أطروحة أكاديمية في سياقها بدقة: اربط بين الادعاء والأدلة والحدود والحجة المضادة وسؤال البحث بلغة دقيقة." },
+        { "language": "tr", "text": "Akademik bir tezi ayrıntılı biçimde bağlama oturtun: iddia, kanıt, sınırlama, karşı argüman ve araştırma sorusunu kesin bir dille birbirine bağlayın." },
+        { "language": "ru", "text": "Дифференцированно поместить академический тезис в контекст: точно связать утверждение, доказательства, ограничения, контраргумент и исследовательский вопрос." },
+        { "language": "ckb", "text": "تێزێکی ئەکادیمی بە وردی لە شوێنی خۆیدا دابنێ: بانگەشە، بەڵگە، سنوور، بەڵگەی پێچەوانە و پرسیاری توێژینەوە بە زمانێکی ورد پێکەوە ببەستەوە." },
+        { "language": "kmr", "text": "Tezeke akademîk bi awayekî hûrgulî di çarçoveyê de bi cih bikin: îdia, delîl, sînor, argumana dijber û pirsa lêkolînê bi zimanekî rast girê bidin." },
+        { "language": "pl", "text": "Zniuansowanie osadzić tezę akademicką w kontekście: precyzyjnie połączyć twierdzenie, dowody, ograniczenie, kontrargument i pytanie badawcze." },
+        { "language": "ro", "text": "Încadrați nuanțat o teză academică: legați precis afirmația, dovezile, limitele, contraargumentul și întrebarea de cercetare." },
+        { "language": "sq", "text": "Vendosni me nuancë një tezë akademike në kontekst: lidhni qartë pohimin, provat, kufizimin, kundërargumentin dhe pyetjen kërkimore." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "give-opinion",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 17,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant" },
+            { "language": "fa", "text": "شرکت‌کننده" },
+            { "language": "ar", "text": "المشارك" },
+            { "language": "tr", "text": "Katılımcı" },
+            { "language": "ru", "text": "Участник" },
+            { "language": "ckb", "text": "بەشداربوو" },
+            { "language": "kmr", "text": "Beşdar" },
+            { "language": "pl", "text": "Uczestnik" },
+            { "language": "ro", "text": "Participantul" },
+            { "language": "sq", "text": "Pjesëmarrësi" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Mitstudent/in",
+          "translations": [
+            { "language": "en", "text": "Fellow student" },
+            { "language": "fa", "text": "هم‌دانشجو" },
+            { "language": "ar", "text": "زميل دراسي" },
+            { "language": "tr", "text": "Sınıf arkadaşı" },
+            { "language": "ru", "text": "Однокурсник" },
+            { "language": "ckb", "text": "هاوخوێندکار" },
+            { "language": "kmr", "text": "Hev-xwendekar" },
+            { "language": "pl", "text": "Kolega ze studiów" },
+            { "language": "ro", "text": "Coleg de studiu" },
+            { "language": "sq", "text": "Bashkëstudent" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Ihre Ausgangsthese lautet: Digitale Prüfungen können zu einer faireren Bewertung beitragen. Ordnen Sie diese These bitte ein, ohne sie sofort entweder zu verteidigen oder zu verwerfen.",
+          "translations": [
+            { "language": "en", "text": "Your starting thesis is: Digital exams can contribute to fairer assessment. Please contextualize this thesis without immediately defending or rejecting it." },
+            { "language": "fa", "text": "تز اولیه شما این است: آزمون‌های دیجیتال می‌توانند به ارزیابی عادلانه‌تر کمک کنند. لطفاً این تز را در چارچوب مناسب قرار دهید، بدون اینکه فوراً از آن دفاع کنید یا آن را رد کنید." },
+            { "language": "ar", "text": "أطروحتك الأولية هي: يمكن للامتحانات الرقمية أن تسهم في تقييم أكثر عدلاً. يرجى وضع هذه الأطروحة في سياقها من دون الدفاع عنها أو رفضها فوراً." },
+            { "language": "tr", "text": "Başlangıç teziniz şu: Dijital sınavlar daha adil bir değerlendirmeye katkı sağlayabilir. Lütfen bu tezi hemen savunmadan ya da reddetmeden bağlama oturtun." },
+            { "language": "ru", "text": "Ваш исходный тезис таков: цифровые экзамены могут способствовать более справедливому оцениванию. Пожалуйста, поместите этот тезис в контекст, не защищая и не отвергая его сразу." },
+            { "language": "ckb", "text": "تێزی سەرەتایی تۆ ئەمەیە: تاقیکردنەوە دیجیتاڵییەکان دەتوانن یارمەتی هەڵسەنگاندنی دادپەروەرانەتر بدەن. تکایە ئەم تێزە لە چوارچێوەی خۆیدا دابنێ، بەبێ ئەوەی دەستبەجێ بەرگری لێ بکەیت یان ڕەت بکەیتەوە." },
+            { "language": "kmr", "text": "Teza we ya destpêkê ev e: Ezmûnên dijîtal dikarin alîkariya nirxandineke adiltir bikin. Ji kerema xwe vê tezê di çarçoveyê de binirxînin, bêyî ku wê yekser biparêzin an red bikin." },
+            { "language": "pl", "text": "Twoja teza wyjściowa brzmi: Egzaminy cyfrowe mogą przyczynić się do bardziej sprawiedliwej oceny. Proszę ją osadzić w kontekście, nie broniąc jej ani nie odrzucając od razu." },
+            { "language": "ro", "text": "Teza dumneavoastră inițială este: examenele digitale pot contribui la o evaluare mai echitabilă. Vă rog să o contextualizați fără să o apărați sau să o respingeți imediat." },
+            { "language": "sq", "text": "Teza juaj fillestare është: provimet digjitale mund të kontribuojnë në një vlerësim më të drejtë. Ju lutem vendoseni këtë tezë në kontekst pa e mbrojtur ose hedhur poshtë menjëherë." }
+          ],
+          "function": "seminar-prompt",
+          "toneNote": "Academic and open-ended.",
+          "expectedLearnerAction": "contextualize-thesis"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die These zunächst als bedingte Annahme verstehen. Sie ist plausibel, wenn digitale Prüfungen nicht nur technische Abläufe ersetzen, sondern Aufgabenformate, Bewertungskriterien und Zugangsvoraussetzungen transparent zusammen gedacht werden.",
+          "translations": [
+            { "language": "en", "text": "I would first understand the thesis as a conditional assumption. It is plausible if digital exams do not merely replace technical procedures, but if task formats, assessment criteria, and access conditions are considered transparently together." },
+            { "language": "fa", "text": "من ابتدا این تز را به‌عنوان یک فرض مشروط می‌فهمم. این تز زمانی قابل قبول است که آزمون‌های دیجیتال فقط روندهای فنی را جایگزین نکنند، بلکه قالب تکلیف، معیارهای ارزیابی و شرایط دسترسی را شفاف و در کنار هم ببینند." },
+            { "language": "ar", "text": "أفهم هذه الأطروحة أولاً بوصفها افتراضاً مشروطاً. فهي مقنعة إذا لم تستبدل الامتحانات الرقمية الإجراءات التقنية فقط، بل نُظر إلى صيغ المهام ومعايير التقييم وشروط الوصول معاً بشفافية." },
+            { "language": "tr", "text": "Bu tezi önce koşullu bir varsayım olarak anlarım. Dijital sınavlar yalnızca teknik süreçlerin yerini almakla kalmaz, görev biçimleri, değerlendirme ölçütleri ve erişim koşulları birlikte ve şeffaf biçimde düşünülürse tez ikna edici olur." },
+            { "language": "ru", "text": "Я бы сначала понял этот тезис как условное предположение. Он убедителен, если цифровые экзамены не просто заменяют технические процедуры, а прозрачно связывают форматы заданий, критерии оценки и условия доступа." },
+            { "language": "ckb", "text": "من سەرەتا ئەم تێزە وەک گریمانەیەکی مەرجدار تێدەگەم. ئەو کاتە باوەڕپێکراوە کە تاقیکردنەوە دیجیتاڵییەکان تەنها ڕێکارە تەکنیکییەکان نەگۆڕن، بەڵکو شێوەی ئەرک، پێوەرەکانی هەڵسەنگاندن و مەرجەکانی دەستگەیشتن بە شەفافی پێکەوە ببینن." },
+            { "language": "kmr", "text": "Ez vê tezê pêşî wekî texmînekê bi merc dibînim. Ew maqûl e heke ezmûnên dijîtal tenê pêvajoyên teknîkî neguherînin, lê şêweyên peywirê, pîvanên nirxandinê û mercên gihîştinê bi awayekî zelal bi hev re bihesibînin." },
+            { "language": "pl", "text": "Najpierw rozumiałbym tę tezę jako założenie warunkowe. Jest ona przekonująca, jeśli egzaminy cyfrowe nie tylko zastępują procedury techniczne, lecz łączą przejrzyście format zadań, kryteria oceny i warunki dostępu." },
+            { "language": "ro", "text": "Aș înțelege mai întâi teza ca pe o ipoteză condiționată. Ea este plauzibilă dacă examenele digitale nu înlocuiesc doar proceduri tehnice, ci gândesc împreună, transparent, formatele sarcinilor, criteriile de evaluare și condițiile de acces." },
+            { "language": "sq", "text": "Fillimisht do ta kuptoja tezën si një supozim të kushtëzuar. Ajo është e besueshme nëse provimet digjitale nuk zëvendësojnë vetëm procedura teknike, por i lidhin qartë formatet e detyrave, kriteret e vlerësimit dhe kushtet e qasjes." }
+          ],
+          "function": "model-response",
+          "toneNote": "Nuanced and non-defensive.",
+          "expectedLearnerAction": "state-conditioned-thesis"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Heißt das, Sie stimmen der These im Grunde zu? Für mich klingt das noch ziemlich optimistisch.",
+          "translations": [
+            { "language": "en", "text": "Does that mean you basically agree with the thesis? To me it still sounds rather optimistic." },
+            { "language": "fa", "text": "یعنی شما در اصل با این تز موافق هستید؟ برای من هنوز کمی خوش‌بینانه به نظر می‌رسد." },
+            { "language": "ar", "text": "هل يعني ذلك أنك توافق أساساً على الأطروحة؟ بالنسبة لي ما زالت تبدو متفائلة إلى حد كبير." },
+            { "language": "tr", "text": "Bu, temelde teze katıldığınız anlamına mı geliyor? Bana hâlâ oldukça iyimser geliyor." },
+            { "language": "ru", "text": "То есть вы в целом согласны с тезисом? Для меня он всё ещё звучит довольно оптимистично." },
+            { "language": "ckb", "text": "ئایا ئەمە واتە لە بنەڕەتدا لەگەڵ تێزەکە هاوڕایت؟ بۆ من هێشتا زۆر خۆشبینانە دەردەکەوێت." },
+            { "language": "kmr", "text": "Ev tê wê wateyê ku hûn bi bingehîn li ser tezê razî ne? Ji bo min hê jî pir hêvîdar xuya dike." },
+            { "language": "pl", "text": "Czy to znaczy, że zasadniczo zgadza się pan z tą tezą? Dla mnie brzmi ona nadal dość optymistycznie." },
+            { "language": "ro", "text": "Înseamnă că sunteți, în fond, de acord cu teza? Pentru mine încă sună destul de optimist." },
+            { "language": "sq", "text": "A do të thotë kjo se në thelb jeni dakord me tezën? Për mua ende tingëllon mjaft optimiste." }
+          ],
+          "function": "critical-follow-up",
+          "toneNote": "Skeptical but not hostile.",
+          "expectedLearnerAction": "avoid-simple-agreement"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde eher sagen: Ich sehe einen möglichen Beitrag, aber keinen Automatismus. Die Forschungslage müsste danach unterscheiden, ob Fairness durch technische Standardisierung, durch klarere Aufgaben oder durch bessere Nachvollziehbarkeit der Bewertung entsteht.",
+          "translations": [
+            { "language": "en", "text": "I would rather say: I see a possible contribution, but no automatic effect. The research would need to distinguish whether fairness arises through technical standardization, clearer tasks, or better traceability of assessment." },
+            { "language": "fa", "text": "من بیشتر می‌گویم: یک امکان برای کمک می‌بینم، اما نه یک اثر خودکار. وضعیت پژوهش باید فرق بگذارد که عدالت از استانداردسازی فنی ایجاد می‌شود، از تکلیف‌های روشن‌تر، یا از قابل‌پیگیری‌تر شدن ارزیابی." },
+            { "language": "ar", "text": "أفضل أن أقول: أرى مساهمة محتملة، لكن ليس أثراً تلقائياً. يجب أن تميّز الأبحاث هل تنشأ العدالة من التوحيد التقني، أم من مهام أوضح، أم من قابلية أفضل لتتبع التقييم." },
+            { "language": "tr", "text": "Daha çok şöyle derdim: Olası bir katkı görüyorum, ama otomatik bir sonuç değil. Araştırma, adaletin teknik standartlaşmadan mı, daha net görevlerden mi, yoksa değerlendirmenin daha izlenebilir olmasından mı doğduğunu ayırmalı." },
+            { "language": "ru", "text": "Я бы скорее сказал так: я вижу возможный вклад, но не автоматический эффект. Исследования должны различать, возникает ли справедливость благодаря технической стандартизации, более ясным заданиям или лучшей прослеживаемости оценивания." },
+            { "language": "ckb", "text": "من زیاتر دەڵێم: بەشدارییەکی ئەگەری دەبینم، بەڵام کاریگەرییەکی خودکاری نا. پێویستە توێژینەوە جیاوازی بکات کە دادپەروەری لە ستانداردکردنی تەکنیکییەوە دێت، یان لە ئەرکە ڕوونترەکان، یان لە شوێنکەوتنی باشتر بۆ هەڵسەنگاندن." },
+            { "language": "kmr", "text": "Ez zêdetir wisa dibêjim: Ez beşdariyeke gengaz dibînim, lê ne bandoreke xweber. Lêkolîn divê cihê bike ka adalet ji standardkirina teknîkî, ji peywirên zelaltir, an ji şopandina baştir a nirxandinê tê." },
+            { "language": "pl", "text": "Powiedziałbym raczej: widzę możliwy wkład, ale nie automatyczny efekt. Stan badań musiałby rozróżnić, czy sprawiedliwość wynika ze standaryzacji technicznej, jaśniejszych zadań czy lepszej przejrzystości oceny." },
+            { "language": "ro", "text": "Aș spune mai degrabă: văd o contribuție posibilă, dar nu un efect automat. Cercetarea ar trebui să distingă dacă echitatea apare prin standardizare tehnică, prin sarcini mai clare sau printr-o trasabilitate mai bună a evaluării." },
+            { "language": "sq", "text": "Do të thosha më tepër: shoh një kontribut të mundshëm, por jo një efekt automatik. Hulumtimi duhet të dallojë nëse drejtësia vjen nga standardizimi teknik, nga detyra më të qarta apo nga gjurmueshmëria më e mirë e vlerësimit." }
+          ],
+          "function": "model-response",
+          "toneNote": "Qualified agreement with conceptual distinctions.",
+          "expectedLearnerAction": "distinguish-evidence-paths"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Welche größere Debatte steckt dahinter? Versuchen Sie, die These nicht nur technisch, sondern bildungstheoretisch einzuordnen.",
+          "translations": [
+            { "language": "en", "text": "What larger debate lies behind this? Try to place the thesis not only technically, but also in terms of educational theory." },
+            { "language": "fa", "text": "چه بحث بزرگ‌تری پشت این موضوع است؟ سعی کنید تز را نه فقط از نظر فنی، بلکه از دیدگاه نظریه آموزش هم در جایگاه خودش قرار دهید." },
+            { "language": "ar", "text": "ما النقاش الأوسع الكامن خلف ذلك؟ حاول أن تضع الأطروحة ليس فقط تقنياً، بل أيضاً من منظور نظرية التعليم." },
+            { "language": "tr", "text": "Bunun arkasında hangi daha büyük tartışma var? Tezi yalnızca teknik olarak değil, eğitim kuramı açısından da bağlama oturtmaya çalışın." },
+            { "language": "ru", "text": "Какая более широкая дискуссия стоит за этим? Попробуйте поместить тезис в контекст не только технически, но и с точки зрения теории образования." },
+            { "language": "ckb", "text": "چ گفتوگۆیەکی گەورەتر لە پشت ئەمەوەیە؟ هەوڵ بدە تێزەکە تەنها تەکنیکی نەکەیت، بەڵکو لە ڕووی تیۆری پەروەردەشەوە لە شوێنی خۆیدا دابنێیت." },
+            { "language": "kmr", "text": "Li pişt vê çi nîqaşeke mezintir heye? Hewl bidin tezê ne tenê teknîkî, lê jî ji aliyê teoriyên perwerdehiyê ve di çarçoveyê de bikin." },
+            { "language": "pl", "text": "Jaka większa debata stoi za tym zagadnieniem? Proszę spróbować osadzić tezę nie tylko technicznie, lecz także z perspektywy teorii edukacji." },
+            { "language": "ro", "text": "Ce dezbatere mai amplă se află în spate? Încercați să încadrați teza nu doar tehnic, ci și din perspectiva teoriei educației." },
+            { "language": "sq", "text": "Çfarë debati më i gjerë qëndron pas kësaj? Përpiquni ta vendosni tezën jo vetëm teknikisht, por edhe nga këndvështrimi i teorisë së arsimit." }
+          ],
+          "function": "deeper-prompt",
+          "toneNote": "Requires abstraction.",
+          "expectedLearnerAction": "connect-to-theory"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dahinter steht für mich die Frage, ob Prüfungen eher Kompetenzen sichtbar machen oder vor allem Kontrolle organisieren sollen. Digitale Formate verschärfen diese Spannung, weil sie sowohl individualisierte Aufgaben als auch engmaschige Überwachung ermöglichen.",
+          "translations": [
+            { "language": "en", "text": "For me, behind this lies the question of whether exams should primarily make competencies visible or mainly organize control. Digital formats intensify this tension because they enable both individualized tasks and close monitoring." },
+            { "language": "fa", "text": "برای من پشت این بحث این پرسش است که آیا آزمون‌ها باید بیشتر توانایی‌ها را قابل مشاهده کنند یا در درجه اول کنترل را سازمان دهند. قالب‌های دیجیتال این تنش را شدیدتر می‌کنند، چون هم تکلیف‌های فردی‌شده را ممکن می‌سازند و هم نظارت بسیار نزدیک را." },
+            { "language": "ar", "text": "بالنسبة لي، تكمن وراء ذلك مسألة ما إذا كانت الامتحانات ينبغي أن تجعل الكفاءات مرئية أم أن تنظم الرقابة بالدرجة الأولى. الصيغ الرقمية تزيد هذا التوتر لأنها تتيح مهاماً مخصصة ومراقبة دقيقة في الوقت نفسه." },
+            { "language": "tr", "text": "Bana göre bunun arkasında, sınavların daha çok yeterlilikleri görünür mü kılması yoksa esas olarak kontrol mü düzenlemesi gerektiği sorusu var. Dijital biçimler bu gerilimi artırır, çünkü hem bireyselleştirilmiş görevleri hem de sıkı gözetimi mümkün kılar." },
+            { "language": "ru", "text": "Для меня за этим стоит вопрос о том, должны ли экзамены прежде всего делать компетенции видимыми или главным образом организовывать контроль. Цифровые форматы усиливают это напряжение, потому что позволяют и индивидуализированные задания, и плотный надзор." },
+            { "language": "ckb", "text": "بۆ من لە پشت ئەمەدا ئەو پرسیارەیە کە ئایا تاقیکردنەوەکان پێویستە زیاتر تواناکان دیار بکەن یان بە تایبەتی چاودێری ڕێک بخەن. شێوە دیجیتاڵییەکان ئەم گرژییە توندتر دەکەن، چونکە هەمان کات ئەرکی تاکەکەسی کراو و چاودێری وردیش دەکەنەوە." },
+            { "language": "kmr", "text": "Ji bo min, li pişt vê pirsa heye ka gelo ezmûn divê zêdetir jêhatîbûnê xuya bikin an bi taybetî kontrolê rêxistin bikin. Formatên dijîtal vê tengaviyê zêdetir dikin, ji ber ku hem peywirên kesane û hem çavdêriya nêzîk gengaz dikin." },
+            { "language": "pl", "text": "Dla mnie stoi za tym pytanie, czy egzaminy mają przede wszystkim uwidaczniać kompetencje, czy raczej organizować kontrolę. Formaty cyfrowe nasilają to napięcie, ponieważ umożliwiają zarówno zadania zindywidualizowane, jak i ścisły nadzór." },
+            { "language": "ro", "text": "Pentru mine, în spate se află întrebarea dacă examenele trebuie să facă vizibile competențele sau să organizeze în primul rând controlul. Formatele digitale accentuează această tensiune, deoarece permit atât sarcini individualizate, cât și supraveghere strictă." },
+            { "language": "sq", "text": "Për mua, pas kësaj qëndron pyetja nëse provimet duhet të bëjnë të dukshme kompetencat apo kryesisht të organizojnë kontrollin. Formatet digjitale e shtojnë këtë tension, sepse mundësojnë si detyra të individualizuara, ashtu edhe mbikëqyrje të ngushtë." }
+          ],
+          "function": "model-response",
+          "toneNote": "Abstract but tied to the thesis.",
+          "expectedLearnerAction": "name-broader-debate"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Aber wenn digitale Prüfungen Betrugsversuche erleichtern, ist die Fairness doch gerade gefährdet. Müsste dieser Einwand nicht stärker gewichtet werden?",
+          "translations": [
+            { "language": "en", "text": "But if digital exams make cheating easier, fairness is precisely at risk. Shouldn’t this objection be weighted more strongly?" },
+            { "language": "fa", "text": "اما اگر آزمون‌های دیجیتال تقلب را آسان‌تر کنند، دقیقاً عدالت به خطر می‌افتد. آیا نباید این ایراد وزن بیشتری داشته باشد؟" },
+            { "language": "ar", "text": "لكن إذا كانت الامتحانات الرقمية تسهّل محاولات الغش، فالعدالة تحديداً تصبح مهددة. أليس من الضروري إعطاء هذا الاعتراض وزناً أكبر؟" },
+            { "language": "tr", "text": "Ama dijital sınavlar kopya girişimlerini kolaylaştırıyorsa, adalet tam da tehlikeye girer. Bu itiraza daha fazla ağırlık verilmesi gerekmez mi?" },
+            { "language": "ru", "text": "Но если цифровые экзамены облегчают попытки списывания, справедливость как раз оказывается под угрозой. Не следует ли придать этому возражению больший вес?" },
+            { "language": "ckb", "text": "بەڵام ئەگەر تاقیکردنەوە دیجیتاڵییەکان هەوڵی فێڵکردن ئاسانتر بکەن، ئەوا دادپەروەری خۆی لە مەترسیدایە. نابێت ئەم ڕەخنەیە زیاتر گرنگ بکرێت؟" },
+            { "language": "kmr", "text": "Lê heke ezmûnên dijîtal ceribandinên xapandinê hêsantir bikin, wê demê adalet rastî xeterê tê. Ma divê ev îtiraz girantir neyê nirxandin?" },
+            { "language": "pl", "text": "Ale jeśli egzaminy cyfrowe ułatwiają próby oszustwa, to właśnie sprawiedliwość jest zagrożona. Czy ten zarzut nie powinien mieć większej wagi?" },
+            { "language": "ro", "text": "Dar dacă examenele digitale facilitează tentativele de fraudă, tocmai echitatea este pusă în pericol. Nu ar trebui ca această obiecție să cântărească mai mult?" },
+            { "language": "sq", "text": "Por nëse provimet digjitale i lehtësojnë përpjekjet për mashtrim, pikërisht drejtësia rrezikohet. A nuk duhet t’i jepet më shumë peshë këtij kundërshtimi?" }
+          ],
+          "function": "counterargument",
+          "toneNote": "Strong objection.",
+          "expectedLearnerAction": "integrate-counterargument"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ja, dieser Einwand ist zentral. Ich würde ihn aber nicht als Gegenbeweis behandeln, sondern als Bedingung für die These. Wenn Prüfungsaufgaben stärker an Anwendung, Begründung und Reflexion gebunden sind, verschiebt sich die Fairnessfrage vom reinen Überwachen hin zur Qualität des Aufgabenentwurfs.",
+          "translations": [
+            { "language": "en", "text": "Yes, this objection is central. However, I would not treat it as a disproof, but as a condition for the thesis. If exam tasks are more strongly tied to application, reasoning, and reflection, the fairness question shifts from pure monitoring to the quality of task design." },
+            { "language": "fa", "text": "بله، این ایراد مرکزی است. اما من آن را ردکننده کامل تز نمی‌دانم، بلکه شرطی برای آن می‌بینم. اگر تکلیف‌های آزمون بیشتر به کاربرد، استدلال و بازاندیشی وصل شوند، مسئله عدالت از نظارت صرف به کیفیت طراحی تکلیف جابه‌جا می‌شود." },
+            { "language": "ar", "text": "نعم، هذا الاعتراض جوهري. لكنني لا أتعامل معه كدليل نقض، بل كشرط للأطروحة. فإذا ارتبطت مهام الامتحان أكثر بالتطبيق والتبرير والتأمل، تنتقل مسألة العدالة من المراقبة الصرفة إلى جودة تصميم المهام." },
+            { "language": "tr", "text": "Evet, bu itiraz merkezîdir. Ancak bunu tezi çürüten bir kanıt olarak değil, tezin koşulu olarak ele alırım. Sınav görevleri uygulama, gerekçelendirme ve yansıtmayla daha güçlü bağlanırsa adalet sorusu yalnızca gözetimden görev tasarımının kalitesine kayar." },
+            { "language": "ru", "text": "Да, это центральное возражение. Но я рассматривал бы его не как опровержение, а как условие тезиса. Если экзаменационные задания сильнее связаны с применением, обоснованием и рефлексией, вопрос справедливости смещается от простого надзора к качеству проектирования заданий." },
+            { "language": "ckb", "text": "بەڵێ، ئەم ڕەخنەیە ناوەندییە. بەڵام من وەک بەڵگەی ڕەتکردنەوە مامەڵەی لەگەڵ ناکەم، بەڵکو وەک مەرجێک بۆ تێزەکە دەیبینم. ئەگەر ئەرکەکانی تاقیکردنەوە زیاتر بە بەکارهێنان، پاساو و بیرکردنەوە ببەسترێنەوە، پرسی دادپەروەری لە چاودێرییەکی تەنهاوە دەگوازرێتەوە بۆ کوالیتی داڕشتنی ئەرکەکان." },
+            { "language": "kmr", "text": "Erê, ev îtiraz navendî ye. Lê ez wê ne wekî delîla redkirinê, belkî wekî merca tezê dibînim. Heke peywirên ezmûnê zêdetir bi bikaranîn, sedemdan û refleksiyonê ve bên girêdan, pirsa adaletê ji çavdêriya tenê ber bi kalîteya sêwirana peywirê ve diguhere." },
+            { "language": "pl", "text": "Tak, ten zarzut jest kluczowy. Nie traktowałbym go jednak jako obalenia tezy, lecz jako jej warunek. Jeśli zadania egzaminacyjne są silniej powiązane z zastosowaniem, uzasadnieniem i refleksją, pytanie o sprawiedliwość przesuwa się z samego nadzoru na jakość projektu zadań." },
+            { "language": "ro", "text": "Da, această obiecție este centrală. Totuși, nu aș trata-o ca pe o infirmare, ci ca pe o condiție a tezei. Dacă sarcinile de examen sunt legate mai puternic de aplicare, argumentare și reflecție, problema echității se mută de la simpla supraveghere la calitatea proiectării sarcinilor." },
+            { "language": "sq", "text": "Po, ky kundërshtim është qendror. Megjithatë nuk do ta trajtoja si rrëzim të tezës, por si kusht për të. Nëse detyrat e provimit lidhen më fort me zbatimin, arsyetimin dhe reflektimin, çështja e drejtësisë zhvendoset nga mbikëqyrja e thjeshtë te cilësia e hartimit të detyrave." }
+          ],
+          "function": "model-response",
+          "toneNote": "Accepts the objection and reframes it.",
+          "expectedLearnerAction": "turn-objection-into-condition"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Das ist eine gute Einordnung. Können Sie daraus eine präzisere Version Ihrer These oder sogar eine Forschungsfrage ableiten?",
+          "translations": [
+            { "language": "en", "text": "That is a good contextualization. Can you derive a more precise version of your thesis from it, or even a research question?" },
+            { "language": "fa", "text": "این جای‌گذاری خوبی است. آیا می‌توانید از آن نسخه دقیق‌تری از تز خود، یا حتی یک پرسش پژوهشی، استخراج کنید؟" },
+            { "language": "ar", "text": "هذا وضع جيد للأطروحة في سياقها. هل يمكنك أن تستخلص منه صيغة أدق لأطروحتك، أو حتى سؤالاً بحثياً؟" },
+            { "language": "tr", "text": "Bu iyi bir bağlamlandırma. Buradan tezinizin daha kesin bir biçimini, hatta bir araştırma sorusunu çıkarabilir misiniz?" },
+            { "language": "ru", "text": "Это хорошее контекстуальное уточнение. Можете ли вы вывести из него более точную версию своего тезиса или даже исследовательский вопрос?" },
+            { "language": "ckb", "text": "ئەمە دانانێکی باشە لە چوارچێوەدا. دەتوانیت لێیەوە وەشانی وردتری تێزەکەت، یان تەنانەت پرسیارێکی توێژینەوە، دەربهێنیت؟" },
+            { "language": "kmr", "text": "Ev cihgirtineke baş e. Ma hûn dikarin ji vê guhertoyeke rastir a teza xwe, an heta pirseke lêkolînê derxin?" },
+            { "language": "pl", "text": "To dobre osadzenie w kontekście. Czy może pan wyprowadzić z tego bardziej precyzyjną wersję swojej tezy albo nawet pytanie badawcze?" },
+            { "language": "ro", "text": "Aceasta este o contextualizare bună. Puteți deriva de aici o versiune mai precisă a tezei sau chiar o întrebare de cercetare?" },
+            { "language": "sq", "text": "Kjo është një vendosje e mirë në kontekst. A mund të nxirrni prej saj një version më të saktë të tezës suaj, apo madje një pyetje kërkimore?" }
+          ],
+          "function": "precision-prompt",
+          "toneNote": "Invites synthesis.",
+          "expectedLearnerAction": "formulate-research-question"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Eine präzisere These wäre: Digitale Prüfungen fördern Fairness nur dann, wenn das Prüfungsdesign kompetenzorientiert ist, die Bewertungskriterien offenliegen und technische Unterschiede zwischen den Teilnehmenden systematisch ausgeglichen werden.",
+          "translations": [
+            { "language": "en", "text": "A more precise thesis would be: Digital exams promote fairness only when the exam design is competence-oriented, the assessment criteria are transparent, and technical differences among participants are systematically balanced out." },
+            { "language": "fa", "text": "تز دقیق‌تر این است: آزمون‌های دیجیتال فقط زمانی عدالت را تقویت می‌کنند که طراحی آزمون بر توانایی متمرکز باشد، معیارهای ارزیابی شفاف باشند و تفاوت‌های فنی میان شرکت‌کنندگان به‌صورت نظام‌مند جبران شوند." },
+            { "language": "ar", "text": "صياغة أدق للأطروحة هي: الامتحانات الرقمية تعزز العدالة فقط عندما يكون تصميم الامتحان موجهاً نحو الكفاءة، وتكون معايير التقييم واضحة، وتُعالج الفروق التقنية بين المشاركين بصورة منهجية." },
+            { "language": "tr", "text": "Daha kesin bir tez şöyle olurdu: Dijital sınavlar, ancak sınav tasarımı yeterlilik odaklı olduğunda, değerlendirme ölçütleri açık olduğunda ve katılımcılar arasındaki teknik farklılıklar sistematik biçimde dengelendiğinde adaleti destekler." },
+            { "language": "ru", "text": "Более точный тезис звучал бы так: цифровые экзамены способствуют справедливости только тогда, когда дизайн экзамена ориентирован на компетенции, критерии оценивания открыты, а технические различия между участниками систематически компенсируются." },
+            { "language": "ckb", "text": "تێزی وردتر ئەمە دەبێت: تاقیکردنەوە دیجیتاڵییەکان تەنها ئەو کاتە دادپەروەری بەهێز دەکەن کە داڕشتنی تاقیکردنەوە لەسەر توانایی بنیات نرابێت، پێوەرەکانی هەڵسەنگاندن ئاشکرا بن و جیاوازییە تەکنیکییەکانی نێوان بەشداربووان بە شێوەیەکی سیستەماتیک جێگیر بکرێن." },
+            { "language": "kmr", "text": "Tezeke rastir dê ev be: Ezmûnên dijîtal tenê wê demê adaletê xurt dikin ku sêwirana ezmûnê li ser jêhatîbûnê be, pîvanên nirxandinê vekirî bin û cudahiyên teknîkî yên nav beşdaran bi awayekî pergalkirî bên hevsengkirin." },
+            { "language": "pl", "text": "Precyzyjniejsza teza brzmiałaby: egzaminy cyfrowe wspierają sprawiedliwość tylko wtedy, gdy projekt egzaminu jest zorientowany na kompetencje, kryteria oceny są jawne, a różnice techniczne między uczestnikami są systematycznie wyrównywane." },
+            { "language": "ro", "text": "O teză mai precisă ar fi: examenele digitale promovează echitatea doar atunci când proiectarea examenului este orientată spre competențe, criteriile de evaluare sunt transparente, iar diferențele tehnice dintre participanți sunt compensate sistematic." },
+            { "language": "sq", "text": "Një tezë më e saktë do të ishte: provimet digjitale e nxisin drejtësinë vetëm kur dizajni i provimit është i orientuar nga kompetencat, kriteret e vlerësimit janë transparente dhe dallimet teknike mes pjesëmarrësve kompensohen në mënyrë sistematike." }
+          ],
+          "function": "model-response",
+          "toneNote": "Precise and thesis-like.",
+          "expectedLearnerAction": "refine-thesis"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Wenn Sie das so formulieren, wirkt die These viel enger. Was wäre dann der nächste sinnvolle Schritt in Ihrer Argumentation?",
+          "translations": [
+            { "language": "en", "text": "If you formulate it like that, the thesis seems much narrower. What would then be the next sensible step in your argument?" },
+            { "language": "fa", "text": "اگر این‌طور فرمول‌بندی کنید، تز خیلی محدودتر به نظر می‌رسد. پس قدم منطقی بعدی در استدلال شما چه خواهد بود؟" },
+            { "language": "ar", "text": "إذا صغتها بهذا الشكل، تبدو الأطروحة أضيق بكثير. فما الخطوة المنطقية التالية في حجتك؟" },
+            { "language": "tr", "text": "Bunu böyle formüle ederseniz tez çok daha dar görünüyor. O hâlde argümanınızdaki bir sonraki mantıklı adım ne olur?" },
+            { "language": "ru", "text": "Если сформулировать это так, тезис становится значительно уже. Какой следующий логичный шаг в вашей аргументации?" },
+            { "language": "ckb", "text": "ئەگەر بەو شێوەیە دایبڕێژیت، تێزەکە زۆر تەسکتر دەردەکەوێت. ئەوا هەنگاوی ژیرانەی دواتر لە پاساوەکەتدا چی دەبێت؟" },
+            { "language": "kmr", "text": "Heke hûn wisa formule bikin, tez pir tengtir xuya dike. Wê demê gavê maqûl ê din di argumana we de çi be?" },
+            { "language": "pl", "text": "Jeśli sformułuje pan to w ten sposób, teza wydaje się znacznie węższa. Jaki byłby więc kolejny sensowny krok w argumentacji?" },
+            { "language": "ro", "text": "Dacă o formulați astfel, teza pare mult mai restrânsă. Care ar fi atunci următorul pas logic în argumentație?" },
+            { "language": "sq", "text": "Nëse e formuloni kështu, teza duket shumë më e ngushtë. Cili do të ishte atëherë hapi tjetër i arsyeshëm në argumentimin tuaj?" }
+          ],
+          "function": "synthesis-follow-up",
+          "toneNote": "Pushes for next argumentative step.",
+          "expectedLearnerAction": "state-next-step"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Der nächste Schritt wäre, die These in eine Forschungsfrage zu überführen: Unter welchen Bedingungen nehmen Studierende digitale Prüfungen als fairer wahr, und welche Rolle spielen dabei Aufgabenformat, technische Ausstattung und Transparenz der Bewertung?",
+          "translations": [
+            { "language": "en", "text": "The next step would be to turn the thesis into a research question: Under what conditions do students perceive digital exams as fairer, and what role do task format, technical equipment, and assessment transparency play?" },
+            { "language": "fa", "text": "قدم بعدی این است که تز را به یک پرسش پژوهشی تبدیل کنیم: دانشجویان در چه شرایطی آزمون‌های دیجیتال را عادلانه‌تر درک می‌کنند، و قالب تکلیف، امکانات فنی و شفافیت ارزیابی در این میان چه نقشی دارند؟" },
+            { "language": "ar", "text": "الخطوة التالية هي تحويل الأطروحة إلى سؤال بحث: تحت أي ظروف يرى الطلاب الامتحانات الرقمية أكثر عدلاً، وما دور صيغة المهام والتجهيز التقني وشفافية التقييم في ذلك؟" },
+            { "language": "tr", "text": "Bir sonraki adım tezi bir araştırma sorusuna dönüştürmek olurdu: Öğrenciler dijital sınavları hangi koşullarda daha adil algılar ve görev biçimi, teknik donanım ile değerlendirme şeffaflığı bunda nasıl bir rol oynar?" },
+            { "language": "ru", "text": "Следующим шагом было бы превратить тезис в исследовательский вопрос: при каких условиях студенты воспринимают цифровые экзамены как более справедливые, и какую роль играют формат задания, техническое оснащение и прозрачность оценки?" },
+            { "language": "ckb", "text": "هەنگاوی دواتر ئەوەیە تێزەکە بگۆڕین بۆ پرسیاری توێژینەوە: خوێندکاران لە چ مەرجێکدا تاقیکردنەوە دیجیتاڵییەکان وەک دادپەروەرانەتر دەبینن، و شێوەی ئەرک، ئامادەیی تەکنیکی و شەفافی هەڵسەنگاندن چ ڕۆڵێکیان هەیە؟" },
+            { "language": "kmr", "text": "Gava din ew e ku em tezê veguherînin pirseke lêkolînê: Di bin çi mercan de xwendekar ezmûnên dijîtal wekî adiltir dibînin, û şêweya peywirê, amûrên teknîkî û zelaliya nirxandinê tê de çi rola wan heye?" },
+            { "language": "pl", "text": "Kolejnym krokiem byłoby przekształcenie tezy w pytanie badawcze: w jakich warunkach studenci postrzegają egzaminy cyfrowe jako bardziej sprawiedliwe i jaką rolę odgrywają format zadania, wyposażenie techniczne oraz przejrzystość oceny?" },
+            { "language": "ro", "text": "Următorul pas ar fi transformarea tezei într-o întrebare de cercetare: în ce condiții percep studenții examenele digitale ca fiind mai echitabile și ce rol joacă formatul sarcinii, dotarea tehnică și transparența evaluării?" },
+            { "language": "sq", "text": "Hapi tjetër do të ishte ta kthenim tezën në një pyetje kërkimore: në cilat kushte studentët i perceptojnë provimet digjitale si më të drejta dhe çfarë roli luajnë formati i detyrës, pajisjet teknike dhe transparenca e vlerësimit?" }
+          ],
+          "function": "model-response",
+          "toneNote": "Final synthesis with research direction.",
+          "expectedLearnerAction": "convert-thesis-to-question"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde die These zunächst als bedingte Annahme verstehen. Sie ist plausibel, wenn digitale Prüfungen nicht nur technische Abläufe ersetzen, sondern Aufgabenformate, Bewertungskriterien und Zugangsvoraussetzungen transparent zusammen gedacht werden.",
+              "translations": [
+                { "language": "en", "text": "I would first understand the thesis as a conditional assumption. It is plausible if digital exams do not merely replace technical procedures, but if task formats, assessment criteria, and access conditions are considered transparently together." },
+                { "language": "fa", "text": "من ابتدا این تز را به‌عنوان یک فرض مشروط می‌فهمم. این تز زمانی قابل قبول است که آزمون‌های دیجیتال فقط روندهای فنی را جایگزین نکنند، بلکه قالب تکلیف، معیارهای ارزیابی و شرایط دسترسی را شفاف و در کنار هم ببینند." },
+                { "language": "ar", "text": "أفهم هذه الأطروحة أولاً بوصفها افتراضاً مشروطاً. فهي مقنعة إذا لم تستبدل الامتحانات الرقمية الإجراءات التقنية فقط، بل نُظر إلى صيغ المهام ومعايير التقييم وشروط الوصول معاً بشفافية." },
+                { "language": "tr", "text": "Bu tezi önce koşullu bir varsayım olarak anlarım. Dijital sınavlar yalnızca teknik süreçlerin yerini almakla kalmaz, görev biçimleri, değerlendirme ölçütleri ve erişim koşulları birlikte ve şeffaf biçimde düşünülürse tez ikna edici olur." },
+                { "language": "ru", "text": "Я бы сначала понял этот тезис как условное предположение. Он убедителен, если цифровые экзамены не просто заменяют технические процедуры, а прозрачно связывают форматы заданий, критерии оценки и условия доступа." },
+                { "language": "ckb", "text": "من سەرەتا ئەم تێزە وەک گریمانەیەکی مەرجدار تێدەگەم. ئەو کاتە باوەڕپێکراوە کە تاقیکردنەوە دیجیتاڵییەکان تەنها ڕێکارە تەکنیکییەکان نەگۆڕن، بەڵکو شێوەی ئەرک، پێوەرەکانی هەڵسەنگاندن و مەرجەکانی دەستگەیشتن بە شەفافی پێکەوە ببینن." },
+                { "language": "kmr", "text": "Ez vê tezê pêşî wekî texmînekê bi merc dibînim. Ew maqûl e heke ezmûnên dijîtal tenê pêvajoyên teknîkî neguherînin, lê şêweyên peywirê, pîvanên nirxandinê û mercên gihîştinê bi awayekî zelal bi hev re bihesibînin." },
+                { "language": "pl", "text": "Najpierw rozumiałbym tę tezę jako założenie warunkowe. Jest ona przekonująca, jeśli egzaminy cyfrowe nie tylko zastępują procedury techniczne, lecz łączą przejrzyście format zadań, kryteria oceny i warunki dostępu." },
+                { "language": "ro", "text": "Aș înțelege mai întâi teza ca pe o ipoteză condiționată. Ea este plauzibilă dacă examenele digitale nu înlocuiesc doar proceduri tehnice, ci gândesc împreună, transparent, formatele sarcinilor, criteriile de evaluare și condițiile de acces." },
+                { "language": "sq", "text": "Fillimisht do ta kuptoja tezën si një supozim të kushtëzuar. Ajo është e besueshme nëse provimet digjitale nuk zëvendësojnë vetëm procedura teknike, por i lidhin qartë formatet e detyrave, kriteret e vlerësimit dhe kushtet e qasjes." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet ein vorschnelles Ja oder Nein und nennt die Bedingungen, unter denen die These tragfähig wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer avoids a premature yes or no and names the conditions under which the thesis becomes viable." },
+                { "language": "fa", "text": "قوی: پاسخ از بله یا نه زودهنگام پرهیز می‌کند و شرایطی را می‌گوید که تز تحت آن قابل دفاع می‌شود." },
+                { "language": "ar", "text": "قوي: تتجنب الإجابة الموافقة أو الرفض المتسرع وتذكر الشروط التي تصبح الأطروحة في ظلها قابلة للدفاع." },
+                { "language": "tr", "text": "Güçlü: Yanıt erken bir evet ya da hayırdan kaçınır ve tezin hangi koşullarda sağlam hâle geldiğini belirtir." },
+                { "language": "ru", "text": "Сильно: ответ избегает преждевременного да или нет и называет условия, при которых тезис становится состоятельным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە بەڵێ یان نەخێری پەلەیی دوور دەکەوێتەوە و ئەو مەرجانە ناو دەبات کە تێزەکە لە ژێریاندا بەهێز دەبێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ji erê an na ya zû dûr dikeve û mercên ku tez di bin wan de pêbawer dibe nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika przedwczesnego tak lub nie i wskazuje warunki, pod którymi teza staje się nośna." },
+                { "language": "ro", "text": "Puternic: răspunsul evită un da sau nu prematur și numește condițiile în care teza devine sustenabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang një po ose jo të parakohshme dhe emërton kushtet në të cilat teza bëhet e qëndrueshme." }
+              ],
+              "explanationKey": "conditioned-thesis"
+            },
+            {
+              "id": "weaker",
+              "text": "Ich finde digitale Prüfungen grundsätzlich fairer, weil alle dieselbe Plattform benutzen und die Auswertung schneller geht.",
+              "translations": [
+                { "language": "en", "text": "I generally find digital exams fairer because everyone uses the same platform and grading is faster." },
+                { "language": "fa", "text": "من آزمون‌های دیجیتال را در کل عادلانه‌تر می‌دانم، چون همه از یک پلتفرم استفاده می‌کنند و تصحیح سریع‌تر انجام می‌شود." },
+                { "language": "ar", "text": "أرى أن الامتحانات الرقمية أكثر عدلاً عموماً لأن الجميع يستخدم المنصة نفسها ولأن التصحيح أسرع." },
+                { "language": "tr", "text": "Dijital sınavları genel olarak daha adil buluyorum, çünkü herkes aynı platformu kullanıyor ve değerlendirme daha hızlı oluyor." },
+                { "language": "ru", "text": "Я в целом считаю цифровые экзамены более справедливыми, потому что все используют одну платформу, а проверка идёт быстрее." },
+                { "language": "ckb", "text": "من بە گشتی تاقیکردنەوە دیجیتاڵییەکان دادپەروەرانەتر دەزانم، چونکە هەمووان هەمان پلاتفۆرم بەکاردەهێنن و هەڵسەنگاندن خێراترە." },
+                { "language": "kmr", "text": "Ez bi giştî ezmûnên dijîtal adiltir dibînim, ji ber ku herkes heman platformê bi kar tîne û nirxandin zûtir dibe." },
+                { "language": "pl", "text": "Uważam ogólnie egzaminy cyfrowe za bardziej sprawiedliwe, ponieważ wszyscy korzystają z tej samej platformy, a ocena jest szybsza." },
+                { "language": "ro", "text": "Consider, în general, examenele digitale mai echitabile, deoarece toți folosesc aceeași platformă, iar evaluarea este mai rapidă." },
+                { "language": "sq", "text": "Në përgjithësi i konsideroj provimet digjitale më të drejta, sepse të gjithë përdorin të njëjtën platformë dhe vlerësimi bëhet më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu glatt: Die Antwort nennt Vorteile, prüft aber weder Zugangsunterschiede noch Aufgabenqualität oder Bewertungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too smooth: The answer names advantages, but checks neither access differences nor task quality or assessment criteria." },
+                { "language": "fa", "text": "زیادی ساده‌سازی شده است: پاسخ مزیت‌ها را می‌گوید، اما تفاوت دسترسی، کیفیت تکلیف یا معیارهای ارزیابی را بررسی نمی‌کند." },
+                { "language": "ar", "text": "مبسطة أكثر من اللازم: تذكر الإجابة مزايا، لكنها لا تفحص فروق الوصول ولا جودة المهام ولا معايير التقييم." },
+                { "language": "tr", "text": "Fazla düz: Yanıt avantajları sayıyor, ancak erişim farklarını, görev kalitesini ya da değerlendirme ölçütlerini incelemiyor." },
+                { "language": "ru", "text": "Слишком гладко: ответ называет преимущества, но не проверяет различия доступа, качество заданий или критерии оценки." },
+                { "language": "ckb", "text": "زۆر سادەیە: وەڵامەکە سوودەکان دەڵێت، بەڵام جیاوازی دەستگەیشتن، کوالیتی ئەرک یان پێوەرەکانی هەڵسەنگاندن ناپشکنێت." },
+                { "language": "kmr", "text": "Pir hêsan e: Bersiv avantaj nav dike, lê cudahiyên gihîştinê, kalîteya peywirê an pîvanên nirxandinê venakole." },
+                { "language": "pl", "text": "Zbyt gładko: odpowiedź wymienia zalety, ale nie sprawdza różnic dostępu, jakości zadań ani kryteriów oceny." },
+                { "language": "ro", "text": "Prea simplu: răspunsul numește avantaje, dar nu verifică diferențele de acces, calitatea sarcinilor sau criteriile de evaluare." },
+                { "language": "sq", "text": "Shumë e thjeshtuar: përgjigjja përmend përparësi, por nuk shqyrton dallimet e qasjes, cilësinë e detyrave ose kriteret e vlerësimit." }
+              ],
+              "explanationKey": "too-broad-agreement"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde eher sagen: Ich sehe einen möglichen Beitrag, aber keinen Automatismus. Die Forschungslage müsste danach unterscheiden, ob Fairness durch technische Standardisierung, durch klarere Aufgaben oder durch bessere Nachvollziehbarkeit der Bewertung entsteht.",
+              "translations": [
+                { "language": "en", "text": "I would rather say: I see a possible contribution, but no automatic effect. The research would need to distinguish whether fairness arises through technical standardization, clearer tasks, or better traceability of assessment." },
+                { "language": "fa", "text": "من بیشتر می‌گویم: یک امکان برای کمک می‌بینم، اما نه یک اثر خودکار. وضعیت پژوهش باید فرق بگذارد که عدالت از استانداردسازی فنی ایجاد می‌شود، از تکلیف‌های روشن‌تر، یا از قابل‌پیگیری‌تر شدن ارزیابی." },
+                { "language": "ar", "text": "أفضل أن أقول: أرى مساهمة محتملة، لكن ليس أثراً تلقائياً. يجب أن تميّز الأبحاث هل تنشأ العدالة من التوحيد التقني، أم من مهام أوضح، أم من قابلية أفضل لتتبع التقييم." },
+                { "language": "tr", "text": "Daha çok şöyle derdim: Olası bir katkı görüyorum, ama otomatik bir sonuç değil. Araştırma, adaletin teknik standartlaşmadan mı, daha net görevlerden mi, yoksa değerlendirmenin daha izlenebilir olmasından mı doğduğunu ayırmalı." },
+                { "language": "ru", "text": "Я бы скорее сказал так: я вижу возможный вклад, но не автоматический эффект. Исследования должны различать, возникает ли справедливость благодаря технической стандартизации, более ясным заданиям или лучшей прослеживаемости оценивания." },
+                { "language": "ckb", "text": "من زیاتر دەڵێم: بەشدارییەکی ئەگەری دەبینم، بەڵام کاریگەرییەکی خودکاری نا. پێویستە توێژینەوە جیاوازی بکات کە دادپەروەری لە ستانداردکردنی تەکنیکییەوە دێت، یان لە ئەرکە ڕوونترەکان، یان لە شوێنکەوتنی باشتر بۆ هەڵسەنگاندن." },
+                { "language": "kmr", "text": "Ez zêdetir wisa dibêjim: Ez beşdariyeke gengaz dibînim, lê ne bandoreke xweber. Lêkolîn divê cihê bike ka adalet ji standardkirina teknîkî, ji peywirên zelaltir, an ji şopandina baştir a nirxandinê tê." },
+                { "language": "pl", "text": "Powiedziałbym raczej: widzę możliwy wkład, ale nie automatyczny efekt. Stan badań musiałby rozróżnić, czy sprawiedliwość wynika ze standaryzacji technicznej, jaśniejszych zadań czy lepszej przejrzystości oceny." },
+                { "language": "ro", "text": "Aș spune mai degrabă: văd o contribuție posibilă, dar nu un efect automat. Cercetarea ar trebui să distingă dacă echitatea apare prin standardizare tehnică, prin sarcini mai clare sau printr-o trasabilitate mai bună a evaluării." },
+                { "language": "sq", "text": "Do të thosha më tepër: shoh një kontribut të mundshëm, por jo një efekt automatik. Hulumtimi duhet të dallojë nëse drejtësia vjen nga standardizimi teknik, nga detyra më të qarta apo nga gjurmueshmëria më e mirë e vlerësimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt den Einwand auf und macht aus Zustimmung eine differenzierte Forschungsstruktur.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer takes up the objection and turns agreement into a differentiated research structure." },
+                { "language": "fa", "text": "قوی: پاسخ ایراد را وارد بحث می‌کند و موافقت ساده را به ساختار پژوهشی تفکیک‌شده تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تأخذ الإجابة الاعتراض بعين الاعتبار وتحول الموافقة إلى بنية بحثية متمايزة." },
+                { "language": "tr", "text": "Güçlü: Yanıt itirazı dikkate alır ve basit onayı ayrıştırılmış bir araştırma yapısına dönüştürür." },
+                { "language": "ru", "text": "Сильно: ответ учитывает возражение и превращает согласие в дифференцированную исследовательскую структуру." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕەخنەکە دەهێنێتە ناو باسەکە و هاوڕایی سادە دەگۆڕێت بۆ پێکهاتەیەکی توێژینەوەی جیاکراوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv îtirazê digire û razîbûna sade vediguherîne avahiyeke lêkolînê ya cuda." },
+                { "language": "pl", "text": "Mocne: odpowiedź uwzględnia zarzut i zamienia prostą zgodę w zróżnicowaną strukturę badawczą." },
+                { "language": "ro", "text": "Puternic: răspunsul preia obiecția și transformă acordul într-o structură de cercetare diferențiată." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr parasysh kundërshtimin dhe e kthen pajtimin në një strukturë kërkimore të diferencuar." }
+              ],
+              "explanationKey": "differentiate-agreement"
+            },
+            {
+              "id": "weaker",
+              "text": "Ja, ich stimme grundsätzlich zu, aber natürlich gibt es auch Nachteile, die man später noch erwähnen kann.",
+              "translations": [
+                { "language": "en", "text": "Yes, I basically agree, but of course there are also disadvantages that one can mention later." },
+                { "language": "fa", "text": "بله، در اصل موافقم، اما طبیعتاً معایبی هم وجود دارد که می‌توان بعداً به آن‌ها اشاره کرد." },
+                { "language": "ar", "text": "نعم، أوافق من حيث المبدأ، لكن بالطبع توجد أيضاً سلبيات يمكن ذكرها لاحقاً." },
+                { "language": "tr", "text": "Evet, temelde katılıyorum, ama elbette daha sonra değinilebilecek dezavantajlar da var." },
+                { "language": "ru", "text": "Да, я в целом согласен, но, конечно, есть и недостатки, которые можно упомянуть позже." },
+                { "language": "ckb", "text": "بەڵێ، لە بنەڕەتدا هاوڕام، بەڵام بێگومان لاوازییەکانیش هەن کە دواتر دەتوانرێت باس بکرێن." },
+                { "language": "kmr", "text": "Erê, bi bingehîn razî me, lê bêguman dezavantaj jî hene ku dikarin paşê bên gotin." },
+                { "language": "pl", "text": "Tak, zasadniczo się zgadzam, ale oczywiście są też wady, o których można wspomnieć później." },
+                { "language": "ro", "text": "Da, sunt în principiu de acord, dar desigur există și dezavantaje care pot fi menționate mai târziu." },
+                { "language": "sq", "text": "Po, në thelb jam dakord, por natyrisht ka edhe mangësi që mund të përmenden më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Die Antwort nennt keine analytischen Kategorien und verschiebt die Kritik nur nach hinten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: The answer names no analytical categories and merely postpones the criticism." },
+                { "language": "fa", "text": "قابل‌باور است، اما زیادی مبهم: پاسخ هیچ دسته تحلیلی نمی‌سازد و فقط نقد را به بعد موکول می‌کند." },
+                { "language": "ar", "text": "مقبولة ظاهرياً لكنها غامضة جداً: لا تذكر الإجابة فئات تحليلية، بل تؤجل النقد فقط." },
+                { "language": "tr", "text": "Makûl ama fazla belirsiz: Yanıt analitik kategori adlandırmıyor, yalnızca eleştiriyi sonraya erteliyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: ответ не называет аналитических категорий и лишь откладывает критику." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر ناڕوونە: وەڵامەکە هیچ پۆلێکی شیکاری ناو نابڕێت و تەنها ڕەخنەکە دەخاتە دواوە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e: Bersiv tu kategoriyên analîtîk nav nake û tenê rexneyê paşve dixe." },
+                { "language": "pl", "text": "Plausible, ale zbyt ogólne: odpowiedź nie podaje kategorii analitycznych i tylko odkłada krytykę na później." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: răspunsul nu numește categorii analitice și doar amână critica." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: përgjigjja nuk përmend kategori analitike dhe vetëm e shtyn kritikën për më vonë." }
+              ],
+              "explanationKey": "vague-qualification"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dahinter steht für mich die Frage, ob Prüfungen eher Kompetenzen sichtbar machen oder vor allem Kontrolle organisieren sollen. Digitale Formate verschärfen diese Spannung, weil sie sowohl individualisierte Aufgaben als auch engmaschige Überwachung ermöglichen.",
+              "translations": [
+                { "language": "en", "text": "For me, behind this lies the question of whether exams should primarily make competencies visible or mainly organize control. Digital formats intensify this tension because they enable both individualized tasks and close monitoring." },
+                { "language": "fa", "text": "برای من پشت این بحث این پرسش است که آیا آزمون‌ها باید بیشتر توانایی‌ها را قابل مشاهده کنند یا در درجه اول کنترل را سازمان دهند. قالب‌های دیجیتال این تنش را شدیدتر می‌کنند، چون هم تکلیف‌های فردی‌شده را ممکن می‌سازند و هم نظارت بسیار نزدیک را." },
+                { "language": "ar", "text": "بالنسبة لي، تكمن وراء ذلك مسألة ما إذا كانت الامتحانات ينبغي أن تجعل الكفاءات مرئية أم أن تنظم الرقابة بالدرجة الأولى. الصيغ الرقمية تزيد هذا التوتر لأنها تتيح مهاماً مخصصة ومراقبة دقيقة في الوقت نفسه." },
+                { "language": "tr", "text": "Bana göre bunun arkasında, sınavların daha çok yeterlilikleri görünür mü kılması yoksa esas olarak kontrol mü düzenlemesi gerektiği sorusu var. Dijital biçimler bu gerilimi artırır, çünkü hem bireyselleştirilmiş görevleri hem de sıkı gözetimi mümkün kılar." },
+                { "language": "ru", "text": "Для меня за этим стоит вопрос о том, должны ли экзамены прежде всего делать компетенции видимыми или главным образом организовывать контроль. Цифровые форматы усиливают это напряжение, потому что позволяют и индивидуализированные задания, и плотный надзор." },
+                { "language": "ckb", "text": "بۆ من لە پشت ئەمەدا ئەو پرسیارەیە کە ئایا تاقیکردنەوەکان پێویستە زیاتر تواناکان دیار بکەن یان بە تایبەتی چاودێری ڕێک بخەن. شێوە دیجیتاڵییەکان ئەم گرژییە توندتر دەکەن، چونکە هەمان کات ئەرکی تاکەکەسی کراو و چاودێری وردیش دەکەنەوە." },
+                { "language": "kmr", "text": "Ji bo min, li pişt vê pirsa heye ka gelo ezmûn divê zêdetir jêhatîbûnê xuya bikin an bi taybetî kontrolê rêxistin bikin. Formatên dijîtal vê tengaviyê zêdetir dikin, ji ber ku hem peywirên kesane û hem çavdêriya nêzîk gengaz dikin." },
+                { "language": "pl", "text": "Dla mnie stoi za tym pytanie, czy egzaminy mają przede wszystkim uwidaczniać kompetencje, czy raczej organizować kontrolę. Formaty cyfrowe nasilają to napięcie, ponieważ umożliwiają zarówno zadania zindywidualizowane, jak i ścisły nadzór." },
+                { "language": "ro", "text": "Pentru mine, în spate se află întrebarea dacă examenele trebuie să facă vizibile competențele sau să organizeze în primul rând controlul. Formatele digitale accentuează această tensiune, deoarece permit atât sarcini individualizate, cât și supraveghere strictă." },
+                { "language": "sq", "text": "Për mua, pas kësaj qëndron pyetja nëse provimet duhet të bëjnë të dukshme kompetencat apo kryesisht të organizojnë kontrollin. Formatet digjitale e shtojnë këtë tension, sepse mundësojnë si detyra të individualizuara, ashtu edhe mbikëqyrje të ngushtë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort hebt die Diskussion von der Technik auf die Ebene von Bildungsziel und Prüfungslogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer lifts the discussion from technology to the level of educational goals and exam logic." },
+                { "language": "fa", "text": "قوی: پاسخ بحث را از سطح فناوری به سطح هدف آموزشی و منطق آزمون منتقل می‌کند." },
+                { "language": "ar", "text": "قوي: ترفع الإجابة النقاش من التقنية إلى مستوى الهدف التعليمي ومنطق الامتحان." },
+                { "language": "tr", "text": "Güçlü: Yanıt tartışmayı teknolojiden eğitim hedefi ve sınav mantığı düzeyine taşır." },
+                { "language": "ru", "text": "Сильно: ответ поднимает дискуссию с уровня технологии на уровень образовательной цели и логики экзамена." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە باسەکە لە تەکنەلۆژیاوە دەگوازێتەوە بۆ ئاستی ئامانجی پەروەردە و لۆژیکی تاقیکردنەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nîqaşê ji teknolojiyê digihîne asta armanca perwerdehiyê û mantiqa ezmûnê." },
+                { "language": "pl", "text": "Mocne: odpowiedź przenosi dyskusję z poziomu technologii na poziom celu edukacyjnego i logiki egzaminu." },
+                { "language": "ro", "text": "Puternic: răspunsul ridică discuția de la tehnologie la nivelul obiectivului educațional și al logicii examenului." },
+                { "language": "sq", "text": "E fortë: përgjigjja e ngre diskutimin nga teknologjia te niveli i qëllimit arsimor dhe logjikës së provimit." }
+              ],
+              "explanationKey": "theory-context"
+            },
+            {
+              "id": "weaker",
+              "text": "Die größere Debatte ist, ob Universitäten moderner werden müssen und ob digitale Systeme dabei helfen können.",
+              "translations": [
+                { "language": "en", "text": "The larger debate is whether universities need to become more modern and whether digital systems can help with that." },
+                { "language": "fa", "text": "بحث بزرگ‌تر این است که آیا دانشگاه‌ها باید مدرن‌تر شوند و آیا سیستم‌های دیجیتال می‌توانند در این زمینه کمک کنند." },
+                { "language": "ar", "text": "النقاش الأوسع هو ما إذا كانت الجامعات يجب أن تصبح أكثر حداثة، وما إذا كانت الأنظمة الرقمية يمكن أن تساعد في ذلك." },
+                { "language": "tr", "text": "Daha büyük tartışma, üniversitelerin daha modern olup olmaması ve dijital sistemlerin buna yardımcı olup olamayacağıdır." },
+                { "language": "ru", "text": "Более широкая дискуссия заключается в том, должны ли университеты становиться современнее и могут ли цифровые системы помочь в этом." },
+                { "language": "ckb", "text": "گفتوگۆی گەورەتر ئەوەیە کە ئایا زانکۆکان پێویستە نوێتر بن و ئایا سیستەمە دیجیتاڵییەکان دەتوانن یارمەتی بدەن." },
+                { "language": "kmr", "text": "Nîqaşa mezintir ew e ka gelo zanîngeh divê nûjentir bibin û gelo pergalên dijîtal dikarin alîkar bin." },
+                { "language": "pl", "text": "Szersza debata dotyczy tego, czy uniwersytety muszą stać się nowocześniejsze i czy systemy cyfrowe mogą w tym pomóc." },
+                { "language": "ro", "text": "Dezbaterea mai amplă este dacă universitățile trebuie să devină mai moderne și dacă sistemele digitale pot ajuta în acest sens." },
+                { "language": "sq", "text": "Debati më i gjerë është nëse universitetet duhet të bëhen më moderne dhe nëse sistemet digjitale mund të ndihmojnë për këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise passend, aber zu allgemein: Die Antwort bleibt bei Modernisierung und erklärt nicht die Prüfungslogik.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly relevant, but too general: The answer stays with modernization and does not explain the logic of exams." },
+                { "language": "fa", "text": "تا حدی مرتبط است، اما زیادی کلی: پاسخ در سطح مدرن‌سازی می‌ماند و منطق آزمون را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "مرتبط جزئياً لكنه عام جداً: تبقى الإجابة عند مستوى التحديث ولا تشرح منطق الامتحانات." },
+                { "language": "tr", "text": "Kısmen ilgili ama fazla genel: Yanıt modernleşmede kalıyor ve sınav mantığını açıklamıyor." },
+                { "language": "ru", "text": "Частично уместно, но слишком общее: ответ остаётся на уровне модернизации и не объясняет логику экзаменов." },
+                { "language": "ckb", "text": "تا ڕادەیەک پەیوەندیدارە، بەڵام زۆر گشتییە: وەڵامەکە لە ئاستی نوێکردنەوەدا دەمێنێتەوە و لۆژیکی تاقیکردنەوە ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Hinekî têkildar e, lê pir giştî ye: Bersiv li modernkirinê dimîne û mantiqa ezmûnê rave nake." },
+                { "language": "pl", "text": "Częściowo trafne, ale zbyt ogólne: odpowiedź pozostaje przy modernizacji i nie wyjaśnia logiki egzaminu." },
+                { "language": "ro", "text": "Parțial relevant, dar prea general: răspunsul rămâne la modernizare și nu explică logica examenului." },
+                { "language": "sq", "text": "Pjesërisht e përshtatshme, por shumë e përgjithshme: përgjigjja mbetet te modernizimi dhe nuk shpjegon logjikën e provimit." }
+              ],
+              "explanationKey": "too-general-context"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ja, dieser Einwand ist zentral. Ich würde ihn aber nicht als Gegenbeweis behandeln, sondern als Bedingung für die These. Wenn Prüfungsaufgaben stärker an Anwendung, Begründung und Reflexion gebunden sind, verschiebt sich die Fairnessfrage vom reinen Überwachen hin zur Qualität des Aufgabenentwurfs.",
+              "translations": [
+                { "language": "en", "text": "Yes, this objection is central. However, I would not treat it as a disproof, but as a condition for the thesis. If exam tasks are more strongly tied to application, reasoning, and reflection, the fairness question shifts from pure monitoring to the quality of task design." },
+                { "language": "fa", "text": "بله، این ایراد مرکزی است. اما من آن را ردکننده کامل تز نمی‌دانم، بلکه شرطی برای آن می‌بینم. اگر تکلیف‌های آزمون بیشتر به کاربرد، استدلال و بازاندیشی وصل شوند، مسئله عدالت از نظارت صرف به کیفیت طراحی تکلیف جابه‌جا می‌شود." },
+                { "language": "ar", "text": "نعم، هذا الاعتراض جوهري. لكنني لا أتعامل معه كدليل نقض، بل كشرط للأطروحة. فإذا ارتبطت مهام الامتحان أكثر بالتطبيق والتبرير والتأمل، تنتقل مسألة العدالة من المراقبة الصرفة إلى جودة تصميم المهام." },
+                { "language": "tr", "text": "Evet, bu itiraz merkezîdir. Ancak bunu tezi çürüten bir kanıt olarak değil, tezin koşulu olarak ele alırım. Sınav görevleri uygulama, gerekçelendirme ve yansıtmayla daha güçlü bağlanırsa adalet sorusu yalnızca gözetimden görev tasarımının kalitesine kayar." },
+                { "language": "ru", "text": "Да, это центральное возражение. Но я рассматривал бы его не как опровержение, а как условие тезиса. Если экзаменационные задания сильнее связаны с применением, обоснованием и рефлексией, вопрос справедливости смещается от простого надзора к качеству проектирования заданий." },
+                { "language": "ckb", "text": "بەڵێ، ئەم ڕەخنەیە ناوەندییە. بەڵام من وەک بەڵگەی ڕەتکردنەوە مامەڵەی لەگەڵ ناکەم، بەڵکو وەک مەرجێک بۆ تێزەکە دەیبینم. ئەگەر ئەرکەکانی تاقیکردنەوە زیاتر بە بەکارهێنان، پاساو و بیرکردنەوە ببەسترێنەوە، پرسی دادپەروەری لە چاودێرییەکی تەنهاوە دەگوازرێتەوە بۆ کوالیتی داڕشتنی ئەرکەکان." },
+                { "language": "kmr", "text": "Erê, ev îtiraz navendî ye. Lê ez wê ne wekî delîla redkirinê, belkî wekî merca tezê dibînim. Heke peywirên ezmûnê zêdetir bi bikaranîn, sedemdan û refleksiyonê ve bên girêdan, pirsa adaletê ji çavdêriya tenê ber bi kalîteya sêwirana peywirê ve diguhere." },
+                { "language": "pl", "text": "Tak, ten zarzut jest kluczowy. Nie traktowałbym go jednak jako obalenia tezy, lecz jako jej warunek. Jeśli zadania egzaminacyjne są silniej powiązane z zastosowaniem, uzasadnieniem i refleksją, pytanie o sprawiedliwość przesuwa się z samego nadzoru na jakość projektu zadań." },
+                { "language": "ro", "text": "Da, această obiecție este centrală. Totuși, nu aș trata-o ca pe o infirmare, ci ca pe o condiție a tezei. Dacă sarcinile de examen sunt legate mai puternic de aplicare, argumentare și reflecție, problema echității se mută de la simpla supraveghere la calitatea proiectării sarcinilor." },
+                { "language": "sq", "text": "Po, ky kundërshtim është qendror. Megjithatë nuk do ta trajtoja si rrëzim të tezës, por si kusht për të. Nëse detyrat e provimit lidhen më fort me zbatimin, arsyetimin dhe reflektimin, çështja e drejtësisë zhvendoset nga mbikëqyrja e thjeshtë te cilësia e hartimit të detyrave." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert das Gegenargument, ohne die These aufzugeben, und leitet daraus eine genauere Bedingung ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts the counterargument without abandoning the thesis and derives a more precise condition from it." },
+                { "language": "fa", "text": "قوی: پاسخ استدلال مخالف را می‌پذیرد، بدون اینکه تز را رها کند، و از آن شرط دقیق‌تری استخراج می‌کند." },
+                { "language": "ar", "text": "قوي: تقبل الإجابة الحجة المضادة من دون التخلي عن الأطروحة، وتستخلص منها شرطاً أدق." },
+                { "language": "tr", "text": "Güçlü: Yanıt karşı argümanı kabul eder, tezi terk etmez ve buradan daha kesin bir koşul çıkarır." },
+                { "language": "ru", "text": "Сильно: ответ принимает контраргумент, не отказываясь от тезиса, и выводит из него более точное условие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەڵگەی پێچەوانە دەگرێت، بەبێ ئەوەی تێزەکە بەجێ بهێڵێت، و مەرجێکی وردتر لێی دەرهێنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv argumana dijber qebûl dike, bêyî ku tezê berde, û ji wê mercê rastir derdixe." },
+                { "language": "pl", "text": "Mocne: odpowiedź przyjmuje kontrargument, nie porzucając tezy, i wyprowadza z niego dokładniejszy warunek." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă contraargumentul fără a abandona teza și derivă din el o condiție mai precisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon kundërargumentin pa e braktisur tezën dhe nxjerr prej tij një kusht më të saktë." }
+              ],
+              "explanationKey": "counterargument-as-condition"
+            },
+            {
+              "id": "weaker",
+              "text": "Das stimmt, Betrug ist ein Problem. Trotzdem sollte man digitale Prüfungen nutzen, weil sie praktischer sind.",
+              "translations": [
+                { "language": "en", "text": "That is true, cheating is a problem. Still, digital exams should be used because they are more practical." },
+                { "language": "fa", "text": "درست است، تقلب یک مشکل است. با این حال باید از آزمون‌های دیجیتال استفاده کرد، چون عملی‌تر هستند." },
+                { "language": "ar", "text": "صحيح، الغش مشكلة. ومع ذلك ينبغي استخدام الامتحانات الرقمية لأنها أكثر عملية." },
+                { "language": "tr", "text": "Doğru, kopya bir sorundur. Yine de dijital sınavlar kullanılmalı, çünkü daha pratiktir." },
+                { "language": "ru", "text": "Это правда, списывание является проблемой. Тем не менее цифровые экзамены следует использовать, потому что они практичнее." },
+                { "language": "ckb", "text": "ڕاستە، فێڵکردن کێشەیە. بەڵام هەرچۆنێک بێت پێویستە تاقیکردنەوە دیجیتاڵییەکان بەکاربهێنرێن، چونکە کرداریترن." },
+                { "language": "kmr", "text": "Rast e, xapandin pirsgirêk e. Dîsa jî divê ezmûnên dijîtal bên bikaranîn, ji ber ku pratîktir in." },
+                { "language": "pl", "text": "To prawda, oszustwo jest problemem. Mimo to należy stosować egzaminy cyfrowe, bo są praktyczniejsze." },
+                { "language": "ro", "text": "Este adevărat, frauda este o problemă. Totuși, examenele digitale ar trebui folosite, pentru că sunt mai practice." },
+                { "language": "sq", "text": "Është e vërtetë, mashtrimi është problem. Megjithatë provimet digjitale duhen përdorur, sepse janë më praktike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kurz: Die Antwort erkennt das Problem, verbindet es aber nicht mit Prüfungsdesign, Bewertung oder Fairness.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: The answer recognizes the problem but does not connect it to exam design, assessment, or fairness." },
+                { "language": "fa", "text": "زیادی کوتاه است: پاسخ مشکل را می‌شناسد، اما آن را به طراحی آزمون، ارزیابی یا عدالت وصل نمی‌کند." },
+                { "language": "ar", "text": "قصيرة جداً: تعترف الإجابة بالمشكلة لكنها لا تربطها بتصميم الامتحان أو التقييم أو العدالة." },
+                { "language": "tr", "text": "Çok kısa: Yanıt sorunu kabul ediyor, ancak sınav tasarımı, değerlendirme veya adaletle ilişkilendirmiyor." },
+                { "language": "ru", "text": "Слишком кратко: ответ признаёт проблему, но не связывает её с дизайном экзамена, оцениванием или справедливостью." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە کێشەکە دەناسێت، بەڵام بە داڕشتنی تاقیکردنەوە، هەڵسەنگاندن یان دادپەروەرییەوەی نابەستێت." },
+                { "language": "kmr", "text": "Pir kurt e: Bersiv pirsgirêkê nas dike, lê wê bi sêwirana ezmûnê, nirxandinê an adaletê ve nagirêde." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź rozpoznaje problem, ale nie łączy go z projektem egzaminu, oceną ani sprawiedliwością." },
+                { "language": "ro", "text": "Prea scurt: răspunsul recunoaște problema, dar nu o leagă de proiectarea examenului, evaluare sau echitate." },
+                { "language": "sq", "text": "Shumë shkurt: përgjigjja e njeh problemin, por nuk e lidh me dizajnin e provimit, vlerësimin ose drejtësinë." }
+              ],
+              "explanationKey": "weak-counterargument-handling"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Eine präzisere These wäre: Digitale Prüfungen fördern Fairness nur dann, wenn das Prüfungsdesign kompetenzorientiert ist, die Bewertungskriterien offenliegen und technische Unterschiede zwischen den Teilnehmenden systematisch ausgeglichen werden.",
+              "translations": [
+                { "language": "en", "text": "A more precise thesis would be: Digital exams promote fairness only when the exam design is competence-oriented, the assessment criteria are transparent, and technical differences among participants are systematically balanced out." },
+                { "language": "fa", "text": "تز دقیق‌تر این است: آزمون‌های دیجیتال فقط زمانی عدالت را تقویت می‌کنند که طراحی آزمون بر توانایی متمرکز باشد، معیارهای ارزیابی شفاف باشند و تفاوت‌های فنی میان شرکت‌کنندگان به‌صورت نظام‌مند جبران شوند." },
+                { "language": "ar", "text": "صياغة أدق للأطروحة هي: الامتحانات الرقمية تعزز العدالة فقط عندما يكون تصميم الامتحان موجهاً نحو الكفاءة، وتكون معايير التقييم واضحة، وتُعالج الفروق التقنية بين المشاركين بصورة منهجية." },
+                { "language": "tr", "text": "Daha kesin bir tez şöyle olurdu: Dijital sınavlar, ancak sınav tasarımı yeterlilik odaklı olduğunda, değerlendirme ölçütleri açık olduğunda ve katılımcılar arasındaki teknik farklılıklar sistematik biçimde dengelendiğinde adaleti destekler." },
+                { "language": "ru", "text": "Более точный тезис звучал бы так: цифровые экзамены способствуют справедливости только тогда, когда дизайн экзамена ориентирован на компетенции, критерии оценивания открыты, а технические различия между участниками систематически компенсируются." },
+                { "language": "ckb", "text": "تێزی وردتر ئەمە دەبێت: تاقیکردنەوە دیجیتاڵییەکان تەنها ئەو کاتە دادپەروەری بەهێز دەکەن کە داڕشتنی تاقیکردنەوە لەسەر توانایی بنیات نرابێت، پێوەرەکانی هەڵسەنگاندن ئاشکرا بن و جیاوازییە تەکنیکییەکانی نێوان بەشداربووان بە شێوەیەکی سیستەماتیک جێگیر بکرێن." },
+                { "language": "kmr", "text": "Tezeke rastir dê ev be: Ezmûnên dijîtal tenê wê demê adaletê xurt dikin ku sêwirana ezmûnê li ser jêhatîbûnê be, pîvanên nirxandinê vekirî bin û cudahiyên teknîkî yên nav beşdaran bi awayekî pergalkirî bên hevsengkirin." },
+                { "language": "pl", "text": "Precyzyjniejsza teza brzmiałaby: egzaminy cyfrowe wspierają sprawiedliwość tylko wtedy, gdy projekt egzaminu jest zorientowany na kompetencje, kryteria oceny są jawne, a różnice techniczne między uczestnikami są systematycznie wyrównywane." },
+                { "language": "ro", "text": "O teză mai precisă ar fi: examenele digitale promovează echitatea doar atunci când proiectarea examenului este orientată spre competențe, criteriile de evaluare sunt transparente, iar diferențele tehnice dintre participanți sunt compensate sistematic." },
+                { "language": "sq", "text": "Një tezë më e saktë do të ishte: provimet digjitale e nxisin drejtësinë vetëm kur dizajni i provimit është i orientuar nga kompetencat, kriteret e vlerësimit janë transparente dhe dallimet teknike mes pjesëmarrësve kompensohen në mënyrë sistematike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die These ist eng genug, um untersuchbar zu sein, und enthält mehrere prüfbare Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The thesis is narrow enough to be researchable and contains several testable conditions." },
+                { "language": "fa", "text": "قوی: تز آن‌قدر محدود شده که قابل بررسی باشد و چند شرط قابل آزمون دارد." },
+                { "language": "ar", "text": "قوي: أصبحت الأطروحة محددة بما يكفي لتكون قابلة للبحث وتحتوي على عدة شروط قابلة للاختبار." },
+                { "language": "tr", "text": "Güçlü: Tez araştırılabilir olacak kadar dar ve birkaç test edilebilir koşul içeriyor." },
+                { "language": "ru", "text": "Сильно: тезис достаточно узок для исследования и содержит несколько проверяемых условий." },
+                { "language": "ckb", "text": "بەهێزە: تێزەکە بە قەدەر پێویست تەسکە بۆ توێژینەوە و چەند مەرجێکی تاقیکردنەوەی تێدایە." },
+                { "language": "kmr", "text": "Xurt e: Tez ewqas teng e ku dikare bê lêkolînkirin û çend mercên ceribandinê dihewîne." },
+                { "language": "pl", "text": "Mocne: teza jest wystarczająco wąska, by dało się ją badać, i zawiera kilka sprawdzalnych warunków." },
+                { "language": "ro", "text": "Puternic: teza este suficient de restrânsă pentru a fi cercetată și conține mai multe condiții verificabile." },
+                { "language": "sq", "text": "E fortë: teza është mjaft e ngushtë për t’u hulumtuar dhe përmban disa kushte të verifikueshme." }
+              ],
+              "explanationKey": "precise-thesis"
+            },
+            {
+              "id": "weaker",
+              "text": "Meine These wäre: Digitale Prüfungen haben Vorteile und Nachteile, und man muss beide Seiten betrachten.",
+              "translations": [
+                { "language": "en", "text": "My thesis would be: Digital exams have advantages and disadvantages, and one must consider both sides." },
+                { "language": "fa", "text": "تز من این است: آزمون‌های دیجیتال مزایا و معایبی دارند و باید هر دو طرف را در نظر گرفت." },
+                { "language": "ar", "text": "أطروحتي ستكون: للامتحانات الرقمية مزايا وعيوب، ويجب النظر إلى الجانبين." },
+                { "language": "tr", "text": "Tezim şu olurdu: Dijital sınavların avantajları ve dezavantajları var ve iki tarafı da değerlendirmek gerekir." },
+                { "language": "ru", "text": "Мой тезис был бы таким: у цифровых экзаменов есть преимущества и недостатки, и нужно рассматривать обе стороны." },
+                { "language": "ckb", "text": "تێزی من ئەمە دەبێت: تاقیکردنەوە دیجیتاڵییەکان سوود و لاوازییان هەیە و پێویستە هەردوو لا ببیندرێت." },
+                { "language": "kmr", "text": "Teza min dê ev be: Ezmûnên dijîtal avantaj û dezavantaj hene û divê her du alî bên dîtin." },
+                { "language": "pl", "text": "Moja teza brzmiałaby: egzaminy cyfrowe mają zalety i wady i trzeba rozważyć obie strony." },
+                { "language": "ro", "text": "Teza mea ar fi: examenele digitale au avantaje și dezavantaje, iar ambele părți trebuie analizate." },
+                { "language": "sq", "text": "Teza ime do të ishte: provimet digjitale kanë përparësi dhe mangësi, dhe duhen parë të dyja anët." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein für C1: Die Antwort ist ausgewogen, aber nicht präzise genug, um eine akademische Argumentation zu tragen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general for C1: The answer is balanced, but not precise enough to carry an academic argument." },
+                { "language": "fa", "text": "برای سطح سی‌یک زیادی کلی است: پاسخ متعادل است، اما آن‌قدر دقیق نیست که یک استدلال دانشگاهی را پیش ببرد." },
+                { "language": "ar", "text": "عام جداً لمستوى C1: الإجابة متوازنة لكنها ليست دقيقة بما يكفي لحمل حجة أكاديمية." },
+                { "language": "tr", "text": "C1 için fazla genel: Yanıt dengeli, ancak akademik bir argümanı taşıyacak kadar kesin değil." },
+                { "language": "ru", "text": "Слишком общее для C1: ответ сбалансирован, но недостаточно точен, чтобы нести академическую аргументацию." },
+                { "language": "ckb", "text": "بۆ ئاستی C1 زۆر گشتییە: وەڵامەکە هاوسەنگە، بەڵام ئەوەندە ورد نییە کە پاساوێکی ئەکادیمی هەڵبگرێت." },
+                { "language": "kmr", "text": "Ji bo asta C1 pir giştî ye: Bersiv hevseng e, lê ne ewqas rast e ku argumaneke akademîk hilgire." },
+                { "language": "pl", "text": "Zbyt ogólne jak na C1: odpowiedź jest wyważona, ale niewystarczająco precyzyjna, by unieść argument akademicki." },
+                { "language": "ro", "text": "Prea general pentru C1: răspunsul este echilibrat, dar nu suficient de precis pentru a susține o argumentație academică." },
+                { "language": "sq", "text": "Shumë e përgjithshme për C1: përgjigjja është e ekuilibruar, por jo mjaft e saktë për të mbajtur një argument akademik." }
+              ],
+              "explanationKey": "generic-thesis"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der nächste Schritt wäre, die These in eine Forschungsfrage zu überführen: Unter welchen Bedingungen nehmen Studierende digitale Prüfungen als fairer wahr, und welche Rolle spielen dabei Aufgabenformat, technische Ausstattung und Transparenz der Bewertung?",
+              "translations": [
+                { "language": "en", "text": "The next step would be to turn the thesis into a research question: Under what conditions do students perceive digital exams as fairer, and what role do task format, technical equipment, and assessment transparency play?" },
+                { "language": "fa", "text": "قدم بعدی این است که تز را به یک پرسش پژوهشی تبدیل کنیم: دانشجویان در چه شرایطی آزمون‌های دیجیتال را عادلانه‌تر درک می‌کنند، و قالب تکلیف، امکانات فنی و شفافیت ارزیابی در این میان چه نقشی دارند؟" },
+                { "language": "ar", "text": "الخطوة التالية هي تحويل الأطروحة إلى سؤال بحث: تحت أي ظروف يرى الطلاب الامتحانات الرقمية أكثر عدلاً، وما دور صيغة المهام والتجهيز التقني وشفافية التقييم في ذلك؟" },
+                { "language": "tr", "text": "Bir sonraki adım tezi bir araştırma sorusuna dönüştürmek olurdu: Öğrenciler dijital sınavları hangi koşullarda daha adil algılar ve görev biçimi, teknik donanım ile değerlendirme şeffaflığı bunda nasıl bir rol oynar?" },
+                { "language": "ru", "text": "Следующим шагом было бы превратить тезис в исследовательский вопрос: при каких условиях студенты воспринимают цифровые экзамены как более справедливые, и какую роль играют формат задания, техническое оснащение и прозрачность оценки?" },
+                { "language": "ckb", "text": "هەنگاوی دواتر ئەوەیە تێزەکە بگۆڕین بۆ پرسیاری توێژینەوە: خوێندکاران لە چ مەرجێکدا تاقیکردنەوە دیجیتاڵییەکان وەک دادپەروەرانەتر دەبینن، و شێوەی ئەرک، ئامادەیی تەکنیکی و شەفافی هەڵسەنگاندن چ ڕۆڵێکیان هەیە؟" },
+                { "language": "kmr", "text": "Gava din ew e ku em tezê veguherînin pirseke lêkolînê: Di bin çi mercan de xwendekar ezmûnên dijîtal wekî adiltir dibînin, û şêweya peywirê, amûrên teknîkî û zelaliya nirxandinê tê de çi rola wan heye?" },
+                { "language": "pl", "text": "Kolejnym krokiem byłoby przekształcenie tezy w pytanie badawcze: w jakich warunkach studenci postrzegają egzaminy cyfrowe jako bardziej sprawiedliwe i jaką rolę odgrywają format zadania, wyposażenie techniczne oraz przejrzystość oceny?" },
+                { "language": "ro", "text": "Următorul pas ar fi transformarea tezei într-o întrebare de cercetare: în ce condiții percep studenții examenele digitale ca fiind mai echitabile și ce rol joacă formatul sarcinii, dotarea tehnică și transparența evaluării?" },
+                { "language": "sq", "text": "Hapi tjetër do të ishte ta kthenim tezën në një pyetje kërkimore: në cilat kushte studentët i perceptojnë provimet digjitale si më të drejta dhe çfarë roli luajnë formati i detyrës, pajisjet teknike dhe transparenca e vlerësimit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt den nächsten akademischen Schritt und verbindet Variablen, Wahrnehmung und Untersuchungsrahmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer shows the next academic step and connects variables, perception, and research frame." },
+                { "language": "fa", "text": "قوی: پاسخ قدم دانشگاهی بعدی را نشان می‌دهد و متغیرها، ادراک و چارچوب بررسی را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تُظهر الإجابة الخطوة الأكاديمية التالية وتربط بين المتغيرات والإدراك وإطار البحث." },
+                { "language": "tr", "text": "Güçlü: Yanıt bir sonraki akademik adımı gösterir ve değişkenleri, algıyı ve araştırma çerçevesini birbirine bağlar." },
+                { "language": "ru", "text": "Сильно: ответ показывает следующий академический шаг и связывает переменные, восприятие и рамку исследования." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەنگاوی ئەکادیمی دواتر پیشان دەدات و گۆڕاوەکان، تێگەیشتن و چوارچێوەی توێژینەوە پێکەوە دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv gava akademîk a din nîşan dide û guhêrbar, têgihiştin û çarçoveya lêkolînê bi hev re girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje kolejny krok akademicki i łączy zmienne, percepcję oraz ramę badawczą." },
+                { "language": "ro", "text": "Puternic: răspunsul arată următorul pas academic și leagă variabilele, percepția și cadrul de cercetare." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon hapin tjetër akademik dhe lidh variablat, perceptimin dhe kornizën e hulumtimit." }
+              ],
+              "explanationKey": "research-question"
+            },
+            {
+              "id": "weaker",
+              "text": "Als nächstes würde ich noch mehr Beispiele sammeln und dann entscheiden, ob die These stimmt.",
+              "translations": [
+                { "language": "en", "text": "Next, I would collect more examples and then decide whether the thesis is true." },
+                { "language": "fa", "text": "در قدم بعدی مثال‌های بیشتری جمع می‌کنم و بعد تصمیم می‌گیرم که تز درست است یا نه." },
+                { "language": "ar", "text": "في الخطوة التالية سأجمع أمثلة أكثر ثم أقرر ما إذا كانت الأطروحة صحيحة أم لا." },
+                { "language": "tr", "text": "Sonra daha fazla örnek toplar ve tezin doğru olup olmadığına karar verirdim." },
+                { "language": "ru", "text": "Дальше я бы собрал больше примеров и затем решил, верен тезис или нет." },
+                { "language": "ckb", "text": "لە هەنگاوی دواتردا نموونەی زیاتری کۆدەکەمەوە و پاشان بڕیار دەدەم کە تێزەکە ڕاستە یان نا." },
+                { "language": "kmr", "text": "Paşê ez ê mînakên zêdetir kom bikim û paşê biryar bidim ka tez rast e an na." },
+                { "language": "pl", "text": "Następnie zebrałbym więcej przykładów i zdecydował, czy teza jest prawdziwa." },
+                { "language": "ro", "text": "În continuare aș aduna mai multe exemple și apoi aș decide dacă teza este adevărată." },
+                { "language": "sq", "text": "Më pas do të mblidhja më shumë shembuj dhe pastaj do të vendosja nëse teza është e vërtetë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu unscharf: Für C1 sollte der nächste Schritt als prüfbare Forschungsfrage formuliert werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too imprecise: At C1, the next step should be formulated as a testable research question." },
+                { "language": "fa", "text": "غلط نیست، اما زیادی نامشخص است: در سطح سی‌یک، قدم بعدی باید به شکل پرسش پژوهشی قابل بررسی بیان شود." },
+                { "language": "ar", "text": "ليست خاطئة، لكنها غير دقيقة: في مستوى C1 ينبغي صياغة الخطوة التالية كسؤال بحث قابل للفحص." },
+                { "language": "tr", "text": "Yanlış değil, ama fazla belirsiz: C1 düzeyinde sonraki adım test edilebilir bir araştırma sorusu olarak formüle edilmelidir." },
+                { "language": "ru", "text": "Не неверно, но слишком неточно: на уровне C1 следующий шаг должен быть сформулирован как проверяемый исследовательский вопрос." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر ناوردە: لە ئاستی C1دا پێویستە هەنگاوی دواتر وەک پرسیاری توێژینەوەی قابل پشکنین دابڕێژرێت." },
+                { "language": "kmr", "text": "Ne şaş e, lê pir nezelal e: Di asta C1 de divê gava din wekî pirseke lêkolînê ya ceribandinbar bê formulekirin." },
+                { "language": "pl", "text": "Nie jest błędne, ale zbyt nieprecyzyjne: na poziomie C1 następny krok powinien być sformułowany jako sprawdzalne pytanie badawcze." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea imprecis: la nivel C1, următorul pas ar trebui formulat ca întrebare de cercetare verificabilă." },
+                { "language": "sq", "text": "Nuk është gabim, por shumë e pasaktë: në nivelin C1, hapi tjetër duhet të formulohet si pyetje kërkimore e verifikueshme." }
+              ],
+              "explanationKey": "imprecise-next-step"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "academic-framing",
+          "text": "At C1, a seminar answer should frame a thesis as conditional or limited before defending it.",
+          "translations": [
+            { "language": "en", "text": "At C1, a seminar answer should frame a thesis as conditional or limited before defending it." },
+            { "language": "fa", "text": "در سطح سی‌یک، پاسخ سمیناری باید پیش از دفاع، تز را به‌عنوان گزاره‌ای مشروط یا محدود چارچوب‌بندی کند." },
+            { "language": "ar", "text": "في مستوى C1، ينبغي أن تؤطر إجابة الندوة الأطروحة بوصفها مشروطة أو محدودة قبل الدفاع عنها." },
+            { "language": "tr", "text": "C1 düzeyinde bir seminer yanıtı, tezi savunmadan önce koşullu veya sınırlı olarak çerçevelemelidir." },
+            { "language": "ru", "text": "На уровне C1 семинарский ответ должен сначала представить тезис как условный или ограниченный, прежде чем его защищать." },
+            { "language": "ckb", "text": "لە ئاستی C1دا، وەڵامی سیمینار پێویستە پێش بەرگری، تێزەکە وەک مەرجدار یان سنووردار چوارچێوە بکات." },
+            { "language": "kmr", "text": "Di asta C1 de, bersiva semînerê divê berî parastinê tezê wekî bi merc an sînorkirî çarçove bike." },
+            { "language": "pl", "text": "Na poziomie C1 odpowiedź seminaryjna powinna najpierw ująć tezę jako warunkową lub ograniczoną, zanim zacznie jej bronić." },
+            { "language": "ro", "text": "La nivel C1, un răspuns de seminar trebuie să încadreze teza ca fiind condiționată sau limitată înainte de a o apăra." },
+            { "language": "sq", "text": "Në nivelin C1, një përgjigje seminarike duhet ta kornizojë tezën si të kushtëzuar ose të kufizuar para se ta mbrojë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "differentiation",
+          "text": "Strong academic speech distinguishes possible contribution from automatic effect and names categories for analysis.",
+          "translations": [
+            { "language": "en", "text": "Strong academic speech distinguishes possible contribution from automatic effect and names categories for analysis." },
+            { "language": "fa", "text": "بیان دانشگاهی قوی میان کمک احتمالی و اثر خودکار فرق می‌گذارد و دسته‌های تحلیلی را نام می‌برد." },
+            { "language": "ar", "text": "الحديث الأكاديمي القوي يميز بين المساهمة المحتملة والأثر التلقائي، ويذكر فئات للتحليل." },
+            { "language": "tr", "text": "Güçlü akademik konuşma, olası katkıyı otomatik etkiden ayırır ve analiz kategorilerini adlandırır." },
+            { "language": "ru", "text": "Сильная академическая речь отличает возможный вклад от автоматического эффекта и называет категории анализа." },
+            { "language": "ckb", "text": "قسەکردنی ئەکادیمی بەهێز جیاوازی دەکات لە نێوان بەشداریی ئەگەری و کاریگەری خودکار، و پۆلەکانی شیکاری ناو دەبات." },
+            { "language": "kmr", "text": "Axaftina akademîk a xurt beşdariya gengaz ji bandora xweber vediqetîne û kategoriyên analîzê nav dike." },
+            { "language": "pl", "text": "Mocna wypowiedź akademicka odróżnia możliwy wkład od automatycznego efektu i nazywa kategorie analizy." },
+            { "language": "ro", "text": "Un discurs academic puternic distinge contribuția posibilă de efectul automat și numește categorii de analiză." },
+            { "language": "sq", "text": "Të folurit akademik i fortë dallon kontributin e mundshëm nga efekti automatik dhe emërton kategori analize." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "theoretical-context",
+          "text": "The response becomes C1-level when it connects the concrete thesis to a broader educational debate.",
+          "translations": [
+            { "language": "en", "text": "The response becomes C1-level when it connects the concrete thesis to a broader educational debate." },
+            { "language": "fa", "text": "پاسخ زمانی سطح سی‌یک می‌شود که تز مشخص را به بحث گسترده‌تر آموزشی وصل کند." },
+            { "language": "ar", "text": "تصبح الإجابة بمستوى C1 عندما تربط الأطروحة المحددة بنقاش تربوي أوسع." },
+            { "language": "tr", "text": "Yanıt, somut tezi daha geniş bir eğitim tartışmasına bağladığında C1 düzeyine ulaşır." },
+            { "language": "ru", "text": "Ответ становится уровнем C1, когда связывает конкретный тезис с более широкой образовательной дискуссией." },
+            { "language": "ckb", "text": "وەڵامەکە کاتێک دەبێتە ئاستی C1 کە تێزی دیاریکراو بە گفتوگۆیەکی پەروەردەیی فراوانتر ببەستێتەوە." },
+            { "language": "kmr", "text": "Bersiv wê demê dibe asta C1 ku teza şênber bi nîqaşeke perwerdehiyê ya berfirehtir ve girê bide." },
+            { "language": "pl", "text": "Odpowiedź osiąga poziom C1, gdy łączy konkretną tezę z szerszą debatą edukacyjną." },
+            { "language": "ro", "text": "Răspunsul devine de nivel C1 atunci când leagă teza concretă de o dezbatere educațională mai amplă." },
+            { "language": "sq", "text": "Përgjigjja bëhet e nivelit C1 kur e lidh tezën konkrete me një debat më të gjerë arsimor." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "counterargument",
+          "text": "A counterargument should not simply be rejected; it can define the condition under which the thesis remains valid.",
+          "translations": [
+            { "language": "en", "text": "A counterargument should not simply be rejected; it can define the condition under which the thesis remains valid." },
+            { "language": "fa", "text": "استدلال مخالف نباید فقط رد شود؛ می‌تواند شرطی را مشخص کند که تز تحت آن همچنان معتبر می‌ماند." },
+            { "language": "ar", "text": "لا ينبغي رفض الحجة المضادة ببساطة؛ يمكن أن تحدد الشرط الذي تظل الأطروحة في ظله صالحة." },
+            { "language": "tr", "text": "Karşı argüman basitçe reddedilmemelidir; tezin hangi koşul altında geçerli kaldığını tanımlayabilir." },
+            { "language": "ru", "text": "Контраргумент не следует просто отвергать; он может определить условие, при котором тезис остаётся действительным." },
+            { "language": "ckb", "text": "بەڵگەی پێچەوانە نابێت تەنها ڕەت بکرێتەوە؛ دەتوانێت ئەو مەرجە دیاری بکات کە تێزەکە لە ژێریدا هێشتا بەردەوامە." },
+            { "language": "kmr", "text": "Argumana dijber divê ne tenê bê redkirin; ew dikare merca ku tez di bin wê de hê jî derbasdar e diyar bike." },
+            { "language": "pl", "text": "Kontrargumentu nie należy po prostu odrzucać; może on określić warunek, pod którym teza pozostaje ważna." },
+            { "language": "ro", "text": "Un contraargument nu trebuie respins pur și simplu; el poate defini condiția în care teza rămâne validă." },
+            { "language": "sq", "text": "Një kundërargument nuk duhet thjesht të refuzohet; ai mund të përcaktojë kushtin në të cilin teza mbetet e vlefshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "synthesis",
+          "text": "The final answer is strong because it turns a broad thesis into a researchable question with variables.",
+          "translations": [
+            { "language": "en", "text": "The final answer is strong because it turns a broad thesis into a researchable question with variables." },
+            { "language": "fa", "text": "پاسخ پایانی قوی است، چون یک تز گسترده را به پرسش پژوهشی دارای متغیر تبدیل می‌کند." },
+            { "language": "ar", "text": "الإجابة النهائية قوية لأنها تحول أطروحة واسعة إلى سؤال بحث يتضمن متغيرات." },
+            { "language": "tr", "text": "Son yanıt güçlüdür, çünkü geniş bir tezi değişkenleri olan araştırılabilir bir soruya dönüştürür." },
+            { "language": "ru", "text": "Финальный ответ силён, потому что превращает широкий тезис в исследовательский вопрос с переменными." },
+            { "language": "ckb", "text": "وەڵامی کۆتایی بەهێزە، چونکە تێزێکی فراوان دەگۆڕێت بۆ پرسیاری توێژینەوەی خاوەن گۆڕاو." },
+            { "language": "kmr", "text": "Bersiva dawî xurt e, ji ber ku tezeke berfireh vediguherîne pirseke lêkolînê ya bi guhêrbaran." },
+            { "language": "pl", "text": "Odpowiedź końcowa jest mocna, ponieważ przekształca szeroką tezę w badalne pytanie ze zmiennymi." },
+            { "language": "ro", "text": "Răspunsul final este puternic deoarece transformă o teză largă într-o întrebare de cercetare cu variabile." },
+            { "language": "sq", "text": "Përgjigjja përfundimtare është e fortë, sepse e kthen një tezë të gjerë në pyetje kërkimore me variabla." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "seminar-discussion",
+          "placement": "header",
+          "purpose": "Show a university seminar discussion setting without exposing real people or personal data.",
+          "altText": "A small university seminar group discusses a thesis at a table with notebooks and a projected abstract chart.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A small university seminar group discusses a thesis at a table with notebooks and a projected abstract chart." },
+            { "language": "fa", "text": "یک گروه کوچک سمینار دانشگاهی دور میز با دفترچه‌ها و نمودار انتزاعی روی پرده درباره یک تز بحث می‌کند." },
+            { "language": "ar", "text": "مجموعة صغيرة في ندوة جامعية تناقش أطروحة حول طاولة مع دفاتر ومخطط تجريدي معروض." },
+            { "language": "tr", "text": "Küçük bir üniversite seminer grubu, defterler ve yansıtılmış soyut bir grafikle masada bir tezi tartışır." },
+            { "language": "ru", "text": "Небольшая университетская семинарская группа обсуждает тезис за столом с тетрадями и проецируемой абстрактной схемой." },
+            { "language": "ckb", "text": "گرووپێکی بچوکی سیمیناری زانکۆ لەسەر مێزێک بە دەفتەر و هێڵکارییەکی ئەبستراکت لەسەر پەردە، دەربارەی تێزێک گفتوگۆ دەکات." },
+            { "language": "kmr", "text": "Komeke biçûk a semînera zanîngehê li ser maseyekê bi defter û şemayeke abstrakt a pêşandanê li ser tezekê nîqaş dike." },
+            { "language": "pl", "text": "Mała grupa seminarium uniwersyteckiego omawia tezę przy stole z notatnikami i wyświetlonym abstrakcyjnym wykresem." },
+            { "language": "ro", "text": "Un mic grup de seminar universitar discută o teză la o masă cu caiete și o diagramă abstractă proiectată." },
+            { "language": "sq", "text": "Një grup i vogël seminari universitar diskuton një tezë në një tryezë me fletore dhe një grafik abstrakt të projektuar." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult university seminar group discussing a thesis at a table, notebooks, projected abstract chart, German higher-education setting, no logos, no readable text, no private data, accessible composition, calm academic atmosphere.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

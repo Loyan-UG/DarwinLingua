@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-34-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 34 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 34",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-beschwerde-ueber-verfahrensdauer-vortragen",
+      "linkedDialogueSlug": null,
+      "title": "Eine Beschwerde über Verfahrensdauer vortragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Making a complaint about procedure duration" },
+        { "language": "fa", "text": "طرح شکایت درباره طولانی‌شدن فرایند اداری" },
+        { "language": "ar", "text": "تقديم شكوى بشأن طول مدة الإجراء" },
+        { "language": "tr", "text": "İşlem süresinin uzaması hakkında şikâyette bulunmak" },
+        { "language": "ru", "text": "Подача жалобы на длительность процедуры" },
+        { "language": "ckb", "text": "پێشکەشکردنی سکاڵا دەربارەی درێژبوونی ڕێکار" },
+        { "language": "kmr", "text": "Pêşkêşkirina gilî li ser dirêjbûna prosedurê" },
+        { "language": "pl", "text": "Zgłoszenie skargi na długość procedury" },
+        { "language": "ro", "text": "Formularea unei plângeri privind durata procedurii" },
+        { "language": "sq", "text": "Paraqitja e një ankese për zgjatjen e procedurës" }
+      ],
+      "description": "Ihr Antrag auf eine städtische Unterstützungsleistung liegt seit mehreren Monaten bei der Behörde. Im Online-Portal steht nur \"in Bearbeitung\". Sie haben alle Unterlagen nachgereicht, aber keine belastbare Auskunft erhalten. Sie sollen sich sachlich über die lange Dauer beschweren, eine klare Chronologie geben, die konkreten Folgen schildern und einen realistischen nächsten Schritt verlangen, ohne drohend oder aggressiv zu klingen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "Your application for municipal support has been with the public office for several months. The online portal only says \"being reviewed\". You submitted all documents but have not received reliable information. You should complain factually about the long duration, give a clear timeline, describe the concrete consequences, and request a realistic next step without sounding threatening or aggressive." },
+        { "language": "fa", "text": "درخواست شما برای یک حمایت شهری چند ماه است نزد اداره مانده است. در پورتال آنلاین فقط نوشته شده «در حال بررسی». شما همه مدارک را تکمیل کرده‌اید، اما پاسخ قابل اتکا نگرفته‌اید. باید درباره طولانی‌شدن روند به‌صورت واقع‌محور شکایت کنید، خط زمانی روشن بدهید، پیامدهای مشخص را توضیح دهید و بدون تهدید یا پرخاش، گام بعدی واقع‌بینانه بخواهید." },
+        { "language": "ar", "text": "طلبكم للحصول على دعم بلدي موجود لدى الدائرة منذ عدة أشهر. في البوابة الإلكترونية لا يظهر إلا «قيد المعالجة». لقد قدمتم كل الوثائق، لكنكم لم تحصلوا على معلومة موثوقة. ينبغي أن تشتكوا بموضوعية من طول المدة، وتقدموا تسلسلًا زمنيًا واضحًا، وتصفوا النتائج الملموسة، وتطلبوا خطوة تالية واقعية من دون تهديد أو عدوانية." },
+        { "language": "tr", "text": "Belediyeye ait bir destek için başvurunuz birkaç aydır resmi dairede bekliyor. Çevrim içi portalda yalnızca \"işlemde\" yazıyor. Tüm belgeleri tamamladınız, ancak güvenilir bilgi almadınız. Uzun süreyi nesnel biçimde şikâyet etmeli, net bir zaman çizelgesi vermeli, somut sonuçları açıklamalı ve tehditkâr ya da saldırgan görünmeden gerçekçi bir sonraki adım istemelisiniz." },
+        { "language": "ru", "text": "Ваше заявление на муниципальную поддержку уже несколько месяцев находится в учреждении. В онлайн-портале указано только «в обработке». Вы подали все документы, но не получили надежной информации. Нужно фактически пожаловаться на долгий срок, дать ясную хронологию, описать конкретные последствия и попросить реалистичный следующий шаг без угроз и агрессии." },
+        { "language": "ckb", "text": "داواکارییەکەت بۆ پشتگیرییەکی شارەوانی چەند مانگێکە لە فەرمانگەدا ماوەتەوە. لە پۆرتاڵی ئۆنلاین تەنها نووسراوە «لە کارکردندایە». هەموو بەڵگەکانت پێشکەش کردووە، بەڵام زانیارییەکی پشتپێبەستراوت وەرنەگرتووە. پێویستە بە شێوەی بابەتی سکاڵا لە درێژبوونی ماوەکە بکەیت، کاتژمێرییەکی ڕوون بدەیت، ئاکامە دیاریکراوەکان باس بکەیت و هەنگاوێکی داهاتووی ڕاستەقینە داوا بکەیت بەبێ هەڕەشە یان توندی." },
+        { "language": "kmr", "text": "Daxwaza we ji bo piştgiriya şaredariyê çend meh in li dezgehê maye. Di portalê serhêl de tenê \"di xebatê de\" hatiye nivîsîn. We hemû belge pêşkêş kirin, lê agahiyeke piştrast wernagirt. Divê hûn bi awayekî rastiyan li ser dirêjbûna demê gilî bikin, rêzeke demê ya zelal bidin, encamên konkret rave bikin û bê tehdît an tundî gaveke paşê ya realistîk bixwazin." },
+        { "language": "pl", "text": "Pana/Pani wniosek o miejskie wsparcie od kilku miesięcy znajduje się w urzędzie. W portalu internetowym widnieje tylko „w trakcie rozpatrywania”. Wszystkie dokumenty zostały uzupełnione, ale nie otrzymał Pan/Pani wiarygodnej informacji. Należy rzeczowo poskarżyć się na długi czas trwania, podać jasną chronologię, opisać konkretne skutki i zażądać realistycznego następnego kroku bez brzmienia groźnie lub agresywnie." },
+        { "language": "ro", "text": "Cererea dumneavoastră pentru un sprijin municipal se află de câteva luni la instituție. În portalul online apare doar „în lucru”. Ați depus toate documentele, dar nu ați primit o informație sigură. Trebuie să vă plângeți factual de durata lungă, să oferiți o cronologie clară, să descrieți consecințele concrete și să cereți un pas următor realist fără să sunați amenințător sau agresiv." },
+        { "language": "sq", "text": "Kërkesa juaj për një mbështetje komunale ka disa muaj në zyrë. Në portalin online shkruhet vetëm “në shqyrtim”. Ju keni dorëzuar të gjitha dokumentet, por nuk keni marrë informacion të besueshëm. Duhet të ankoheni në mënyrë faktike për zgjatjen, të jepni një kronologji të qartë, të përshkruani pasojat konkrete dhe të kërkoni një hap të ardhshëm realist pa tingëlluar kërcënues ose agresiv." }
+      ],
+      "learnerGoal": "Eine Beschwerde über Verfahrensdauer wirksam und sachlich vortragen: Chronologie, bisherige Mitwirkung, konkrete Belastung und realistische Erwartung verbinden, ohne Schuldzuweisung, Drohung oder pauschale Behördenkritik.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Present a complaint about procedure duration effectively and factually: connect timeline, previous cooperation, concrete burden, and realistic expectation without blame, threats, or sweeping criticism of the office." },
+        { "language": "fa", "text": "شکایت درباره طولانی‌شدن فرایند را مؤثر و واقع‌محور مطرح کنید: خط زمانی، همکاری قبلی، فشار مشخص و انتظار واقع‌بینانه را بدون مقصر دانستن، تهدید یا انتقاد کلی از اداره به هم وصل کنید." },
+        { "language": "ar", "text": "اعرضوا شكوى بشأن مدة الإجراء بفعالية وموضوعية: اربطوا التسلسل الزمني والتعاون السابق والعبء الملموس والتوقع الواقعي من دون لوم أو تهديد أو نقد عام للدائرة." },
+        { "language": "tr", "text": "İşlem süresine ilişkin şikâyeti etkili ve nesnel biçimde sunun: zaman çizelgesini, önceki iş birliğini, somut yükü ve gerçekçi beklentiyi suçlama, tehdit veya genel kurum eleştirisi olmadan bağlayın." },
+        { "language": "ru", "text": "Эффективно и фактически изложите жалобу на длительность процедуры: свяжите хронологию, прежнее сотрудничество, конкретную нагрузку и реалистичное ожидание без обвинений, угроз или общей критики учреждения." },
+        { "language": "ckb", "text": "سکاڵا دەربارەی درێژبوونی ڕێکار بە کاریگەر و بابەتی پێشکەش بکە: کاتژمێر، هاوکاریی پێشووتر، فشارێکی دیاریکراو و چاوەڕوانیی ڕاستەقینە پێکەوە ببەستەوە، بەبێ تاوانبارکردن، هەڕەشە یان ڕەخنەی گشتی لە فەرمانگە." },
+        { "language": "kmr", "text": "Gilî li ser dirêjbûna prosedurê bi awayekî bandor û rastiyan pêşkêş bikin: rêza demê, hevkariya berê, barê konkret û hêviya realistîk bi hev ve girêdin, bê sûcdarkirin, tehdît an rexneya giştî ya dezgehê." },
+        { "language": "pl", "text": "Skutecznie i rzeczowo przedstawić skargę na długość procedury: połączyć chronologię, dotychczasową współpracę, konkretny ciężar i realistyczne oczekiwanie bez obwiniania, gróźb lub ogólnej krytyki urzędu." },
+        { "language": "ro", "text": "Prezentați eficient și factual o plângere privind durata procedurii: conectați cronologia, cooperarea anterioară, povara concretă și așteptarea realistă fără învinovățire, amenințări sau critică generală a instituției." },
+        { "language": "sq", "text": "Paraqitni në mënyrë efektive dhe faktike një ankesë për zgjatjen e procedurës: lidhni kronologjinë, bashkëpunimin e mëparshëm, barrën konkrete dhe pritjen realiste pa fajësim, kërcënim ose kritikë të përgjithshme ndaj zyrës." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "complaint-handling"],
+      "taskType": "complain-politely",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 34,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "درخواست‌دهنده" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        },
+        {
+          "roleKey": "clerk",
+          "displayName": "Sachbearbeiter",
+          "translations": [
+            { "language": "en", "text": "Case worker" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "الموظف المختص" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудник по делу" },
+            { "language": "ckb", "text": "کارمەندی دۆسیە" },
+            { "language": "kmr", "text": "Karmendê dosyayê" },
+            { "language": "pl", "text": "Urzędnik prowadzący sprawę" },
+            { "language": "ro", "text": "Funcționarul responsabil de dosar" },
+            { "language": "sq", "text": "Punonjësi i dosjes" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "clerk",
+          "baseText": "Sie möchten wegen der Bearbeitungsdauer Ihres Antrags sprechen. Worum geht es genau?",
+          "translations": [
+            { "language": "en", "text": "You would like to speak about the review time for your application. What exactly is the issue?" },
+            { "language": "fa", "text": "شما می‌خواهید درباره مدت بررسی درخواست خود صحبت کنید. موضوع دقیقاً چیست؟" },
+            { "language": "ar", "text": "تريدون التحدث عن مدة معالجة طلبكم. ما الموضوع تحديدًا؟" },
+            { "language": "tr", "text": "Başvurunuzun işlem süresi hakkında konuşmak istiyorsunuz. Konu tam olarak nedir?" },
+            { "language": "ru", "text": "Вы хотите поговорить о сроке рассмотрения вашего заявления. В чем именно дело?" },
+            { "language": "ckb", "text": "تۆ دەتەوێت دەربارەی ماوەی کارکردن لەسەر داواکارییەکەت قسە بکەیت. بابەتەکە بە وردی چییە؟" },
+            { "language": "kmr", "text": "Hûn dixwazin li ser demê vekolîna daxwaza xwe biaxivin. Mijar bi rastî çi ye?" },
+            { "language": "pl", "text": "Chce Pan/Pani porozmawiać o czasie rozpatrywania wniosku. O co dokładnie chodzi?" },
+            { "language": "ro", "text": "Doriți să discutați despre durata examinării cererii. Despre ce este vorba exact?" },
+            { "language": "sq", "text": "Ju dëshironi të flisni për kohëzgjatjen e shqyrtimit të kërkesës suaj. Për çfarë bëhet fjalë saktësisht?" }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte mich sachlich über die bisherige Verfahrensdauer beschweren. Der Antrag wurde am 3. Februar gestellt, die fehlenden Unterlagen habe ich am 12. Februar nachgereicht, und seit dem 19. März steht im Portal unverändert \"in Bearbeitung\".",
+          "translations": [
+            { "language": "en", "text": "I would like to make a factual complaint about the duration so far. The application was submitted on 3 February, I supplied the missing documents on 12 February, and since 19 March the portal has remained unchanged at \"being reviewed\"." },
+            { "language": "fa", "text": "می‌خواهم به‌صورت واقع‌محور درباره مدت روند تا اینجا شکایت کنم. درخواست در ۳ فوریه ثبت شد، مدارک ناقص را در ۱۲ فوریه تکمیل کردم، و از ۱۹ مارس در پورتال بدون تغییر نوشته شده «در حال بررسی»." },
+            { "language": "ar", "text": "أود أن أقدم شكوى موضوعية بشأن مدة الإجراء حتى الآن. قُدم الطلب في 3 شباط، وقدمت الوثائق الناقصة في 12 شباط، ومنذ 19 آذار بقيت البوابة بلا تغيير على عبارة «قيد المعالجة»." },
+            { "language": "tr", "text": "Şu ana kadarki süre hakkında nesnel bir şikâyette bulunmak istiyorum. Başvuru 3 Şubat'ta yapıldı, eksik belgeleri 12 Şubat'ta tamamladım ve 19 Mart'tan beri portalda değişmeden \"işlemde\" yazıyor." },
+            { "language": "ru", "text": "Я хотел бы фактически пожаловаться на длительность процедуры до настоящего момента. Заявление было подано 3 февраля, недостающие документы я представил 12 февраля, и с 19 марта в портале без изменений стоит «в обработке»." },
+            { "language": "ckb", "text": "دەمەوێت بە شێوەی بابەتی سکاڵا لە ماوەی ڕێکارەکە تا ئێستا بکەم. داواکارییەکە لە ٣ی شوبات پێشکەش کرا، بەڵگە ناتەواوەکانم لە ١٢ی شوبات تەواوکرد، و لە ١٩ی ئادارەوە لە پۆرتاڵدا بەبێ گۆڕان نووسراوە «لە کارکردندایە»." },
+            { "language": "kmr", "text": "Ez dixwazim bi awayekî rastiyan li ser demê prosedurê heta niha gilî bikim. Daxwaz di 3ê Sibatê de hat dayîn, belgeyên kêm min di 12ê Sibatê de temam kirin, û ji 19ê Adarê ve di portalê de bê guhertin \"di xebatê de\" dimîne." },
+            { "language": "pl", "text": "Chciałbym/chciałabym rzeczowo poskarżyć się na dotychczasowy czas trwania procedury. Wniosek złożono 3 lutego, brakujące dokumenty uzupełniłem/uzupełniłam 12 lutego, a od 19 marca w portalu bez zmian widnieje „w trakcie rozpatrywania”." },
+            { "language": "ro", "text": "Aș dori să formulez o plângere factuală privind durata de până acum. Cererea a fost depusă la 3 februarie, documentele lipsă le-am completat la 12 februarie, iar din 19 martie în portal apare neschimbat „în lucru”." },
+            { "language": "sq", "text": "Dua të paraqes një ankesë faktike për kohëzgjatjen deri tani. Kërkesa u dorëzua më 3 shkurt, dokumentet që mungonin i plotësova më 12 shkurt, dhe që nga 19 marsi në portal mbetet pa ndryshim “në shqyrtim”." }
+          ],
+          "function": "timeline-complaint",
+          "toneNote": "Chronologie statt Vorwurf.",
+          "expectedLearnerAction": "State timeline and complaint factually."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "clerk",
+          "baseText": "Wir haben derzeit viele offene Anträge. Eine genaue Bearbeitungszeit kann ich nicht versprechen.",
+          "translations": [
+            { "language": "en", "text": "We currently have many open applications. I cannot promise an exact review time." },
+            { "language": "fa", "text": "در حال حاضر درخواست‌های باز زیادی داریم. نمی‌توانم زمان دقیق بررسی را قول بدهم." },
+            { "language": "ar", "text": "لدينا حاليًا طلبات كثيرة مفتوحة. لا أستطيع أن أعد بمدة معالجة دقيقة." },
+            { "language": "tr", "text": "Şu anda birçok açık başvurumuz var. Kesin bir işlem süresi vaat edemem." },
+            { "language": "ru", "text": "Сейчас у нас много открытых заявлений. Я не могу обещать точный срок рассмотрения." },
+            { "language": "ckb", "text": "ئێستا داواکاریی کراوەی زۆرمان هەیە. ناتوانم ماوەیەکی وردی کارکردن بەڵێن بدەم." },
+            { "language": "kmr", "text": "Niha gelek daxwazên vekirî hene. Ez nikarim demeke vekolînê ya rast soz bidim." },
+            { "language": "pl", "text": "Obecnie mamy wiele otwartych wniosków. Nie mogę obiecać dokładnego czasu rozpatrywania." },
+            { "language": "ro", "text": "În prezent avem multe cereri deschise. Nu pot promite o durată exactă de examinare." },
+            { "language": "sq", "text": "Aktualisht kemi shumë kërkesa të hapura. Nuk mund të premtoj një kohë të saktë shqyrtimi." }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Mir geht es nicht um einen Vorwurf an einzelne Mitarbeitende, sondern um eine belastbare Auskunft: Fehlt aus Ihrer Sicht noch etwas, oder wartet der Antrag nur auf die abschließende Prüfung?",
+          "translations": [
+            { "language": "en", "text": "I understand that. I am not blaming individual staff members; I need reliable information: from your perspective, is anything still missing, or is the application only waiting for final review?" },
+            { "language": "fa", "text": "این را می‌فهمم. هدفم سرزنش کارکنان مشخص نیست، بلکه به یک پاسخ قابل اتکا نیاز دارم: از نظر شما هنوز چیزی کم است یا درخواست فقط منتظر بررسی نهایی است؟" },
+            { "language": "ar", "text": "أفهم ذلك. لا أقصد لوم موظفين بعينهم، بل أحتاج إلى معلومة موثوقة: هل ينقص شيء من وجهة نظركم، أم أن الطلب ينتظر فقط المراجعة النهائية؟" },
+            { "language": "tr", "text": "Bunu anlıyorum. Amacım tek tek çalışanları suçlamak değil; güvenilir bilgiye ihtiyacım var: Size göre hâlâ eksik bir şey var mı, yoksa başvuru yalnızca son incelemeyi mi bekliyor?" },
+            { "language": "ru", "text": "Я это понимаю. Я не хочу обвинять отдельных сотрудников, мне нужна надежная информация: с вашей точки зрения, еще чего-то не хватает или заявление только ожидает окончательной проверки?" },
+            { "language": "ckb", "text": "ئەوە تێدەگەم. مەبەستم تاوانبارکردنی کارمەندی دیاریکراو نییە، بەڵکو پێویستم بە زانیارییەکی پشتپێبەستراوە: لە ڕوانگەی ئێوەوە هێشتا شتێک کەمە، یان داواکارییەکە تەنها چاوەڕێی پشکنینی کۆتایییە؟" },
+            { "language": "kmr", "text": "Ez wê fêm dikim. Mebesta min sûcdarkirina karmendên taybet nîne, lê agahiyeke piştrast pêwîst e: Li gor we hêj tiştek kêm e, an daxwaz tenê li benda vekolîna dawî ye?" },
+            { "language": "pl", "text": "Rozumiem to. Nie chodzi mi o zarzut wobec konkretnych pracowników, lecz o wiarygodną informację: czy z Państwa punktu widzenia czegoś jeszcze brakuje, czy wniosek czeka tylko na końcową weryfikację?" },
+            { "language": "ro", "text": "Înțeleg acest lucru. Nu este vorba despre a învinovăți anumiți angajați, ci despre o informație sigură: din perspectiva dumneavoastră mai lipsește ceva sau cererea așteaptă doar verificarea finală?" },
+            { "language": "sq", "text": "E kuptoj këtë. Nuk dua të fajësoj punonjës të veçantë, por kam nevojë për informacion të besueshëm: sipas jush, mungon ende diçka apo kërkesa pret vetëm shqyrtimin përfundimtar?" }
+          ],
+          "function": "non-accusatory-clarification",
+          "toneNote": "Belastbare Auskunft verlangen, ohne einzelne Personen anzugreifen.",
+          "expectedLearnerAction": "Ask for status and missing items without blame."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "clerk",
+          "baseText": "Im System sehe ich keine offene Nachforderung. Ich kann aber nicht sagen, wann die Entscheidung unterschrieben wird.",
+          "translations": [
+            { "language": "en", "text": "I do not see any open request for additional documents in the system. But I cannot say when the decision will be signed." },
+            { "language": "fa", "text": "در سیستم هیچ درخواست باز برای مدارک تکمیلی نمی‌بینم. اما نمی‌توانم بگویم تصمیم چه زمانی امضا می‌شود." },
+            { "language": "ar", "text": "لا أرى في النظام أي طلب مفتوح لوثائق إضافية. لكن لا أستطيع أن أقول متى سيُوقّع القرار." },
+            { "language": "tr", "text": "Sistemde açık bir ek belge talebi görmüyorum. Ancak kararın ne zaman imzalanacağını söyleyemem." },
+            { "language": "ru", "text": "В системе я не вижу открытого запроса на дополнительные документы. Но не могу сказать, когда решение будет подписано." },
+            { "language": "ckb", "text": "لە سیستەمدا هیچ داوایەکی کراوە بۆ بەڵگەی تەواوکەر نابینم. بەڵام ناتوانم بڵێم بڕیارەکە کەی واژۆ دەکرێت." },
+            { "language": "kmr", "text": "Di pergalê de daxwazeke vekirî ji bo belgeyên zêde nabînim. Lê nikarim bêjim biryar kengê tê îmzekirin." },
+            { "language": "pl", "text": "W systemie nie widzę żadnego otwartego wezwania do uzupełnienia dokumentów. Nie mogę jednak powiedzieć, kiedy decyzja zostanie podpisana." },
+            { "language": "ro", "text": "În sistem nu văd nicio solicitare deschisă de documente suplimentare. Dar nu pot spune când va fi semnată decizia." },
+            { "language": "sq", "text": "Në sistem nuk shoh ndonjë kërkesë të hapur për dokumente shtesë. Por nuk mund të them kur do të nënshkruhet vendimi." }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Gerade diese Unsicherheit ist für mich das Problem. Ich muss laufende Kosten überbrücken und kann ohne Zwischenstand weder mit dem Vermieter noch mit der Beratungsstelle verlässlich planen.",
+          "translations": [
+            { "language": "en", "text": "That uncertainty is exactly the problem for me. I have to bridge ongoing costs, and without an interim status I cannot plan reliably with either the landlord or the advisory service." },
+            { "language": "fa", "text": "دقیقاً همین عدم قطعیت برای من مشکل است. باید هزینه‌های جاری را پوشش بدهم و بدون وضعیت میانی نمی‌توانم نه با صاحبخانه و نه با مرکز مشاوره قابل اتکا برنامه‌ریزی کنم." },
+            { "language": "ar", "text": "هذه عدم اليقين بالضبط هي المشكلة بالنسبة لي. يجب أن أغطي تكاليف جارية، ومن دون حالة مؤقتة لا أستطيع التخطيط بشكل موثوق لا مع المؤجر ولا مع مركز الاستشارة." },
+            { "language": "tr", "text": "Benim için sorun tam da bu belirsizlik. Devam eden masrafları karşılamam gerekiyor ve ara durum bilgisi olmadan ne ev sahibiyle ne de danışmanlık merkeziyle güvenilir plan yapabiliyorum." },
+            { "language": "ru", "text": "Именно эта неопределенность для меня проблема. Мне нужно покрывать текущие расходы, и без промежуточного статуса я не могу надежно планировать ни с арендодателем, ни с консультационной службой." },
+            { "language": "ckb", "text": "هەر ئەم نادڵنیاییە بۆ من کێشەیە. پێویستە تێچووە بەردەوامەکان بپۆشم و بەبێ دۆخی ناوەندی ناتوانم نە لەگەڵ خاوەن ماڵ نە لەگەڵ ناوەندی ڕاوێژکاری بە پشتپێبەستن پلان دابنێم." },
+            { "language": "kmr", "text": "Ev nezelalî bi rastî ji bo min pirsgirêk e. Divê ez lêçûnên domdar derbas bikim û bê statûya navîn ez nikarim ne bi xwediyê malê re ne jî bi navenda şêwirmendiyê re bi piştrastî plan bikim." },
+            { "language": "pl", "text": "Właśnie ta niepewność jest dla mnie problemem. Muszę pokrywać bieżące koszty i bez informacji pośredniej nie mogę wiarygodnie planować ani z właścicielem mieszkania, ani z poradnią." },
+            { "language": "ro", "text": "Tocmai această incertitudine este problema pentru mine. Trebuie să acopăr costuri curente și fără un status intermediar nu pot planifica în mod fiabil nici cu proprietarul, nici cu centrul de consiliere." },
+            { "language": "sq", "text": "Pikërisht kjo pasiguri është problemi për mua. Duhet të mbuloj shpenzime të vazhdueshme dhe pa një status të ndërmjetëm nuk mund të planifikoj me besueshmëri as me qiradhënësin, as me qendrën e këshillimit." }
+          ],
+          "function": "concrete-consequence",
+          "toneNote": "Konkrete Folgen schildern, nicht nur Druck machen.",
+          "expectedLearnerAction": "Explain real-world consequences without exaggeration."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "clerk",
+          "baseText": "Was erwarten Sie denn jetzt konkret von uns?",
+          "translations": [
+            { "language": "en", "text": "What exactly do you now expect from us?" },
+            { "language": "fa", "text": "الان دقیقاً چه انتظاری از ما دارید؟" },
+            { "language": "ar", "text": "ماذا تتوقعون الآن تحديدًا منا؟" },
+            { "language": "tr", "text": "Şimdi bizden tam olarak ne bekliyorsunuz?" },
+            { "language": "ru", "text": "Чего именно вы сейчас от нас ожидаете?" },
+            { "language": "ckb", "text": "ئێستا بە دیاریکراوی چاوەڕێی چیتان لە ئێمە هەیە؟" },
+            { "language": "kmr", "text": "Niha hûn bi awayekî konkret çi ji me hêvî dikin?" },
+            { "language": "pl", "text": "Czego konkretnie oczekuje Pan/Pani teraz od nas?" },
+            { "language": "ro", "text": "Ce așteptați acum concret de la noi?" },
+            { "language": "sq", "text": "Çfarë prisni tani konkretisht nga ne?" }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich bitte nicht um eine sofortige Zusage, sondern um einen verbindlichen Zwischenstand: ob die Akte vollständig ist, in welchem Schritt sie sich befindet und bis wann ich mit einer Rückmeldung rechnen kann.",
+          "translations": [
+            { "language": "en", "text": "I am not asking for an immediate approval, but for a reliable interim status: whether the file is complete, which step it is in, and by when I can expect a response." },
+            { "language": "fa", "text": "من تأیید فوری نمی‌خواهم، بلکه یک وضعیت میانی قابل اتکا می‌خواهم: آیا پرونده کامل است، در کدام مرحله قرار دارد و تا چه زمانی می‌توانم منتظر پاسخ باشم." },
+            { "language": "ar", "text": "لا أطلب موافقة فورية، بل حالة مؤقتة موثوقة: هل الملف كامل، وفي أي خطوة هو، ومتى يمكنني توقع رد." },
+            { "language": "tr", "text": "Hemen onay istemiyorum; güvenilir bir ara durum istiyorum: dosya tamam mı, hangi adımda bulunuyor ve ne zamana kadar yanıt bekleyebilirim." },
+            { "language": "ru", "text": "Я не прошу немедленного одобрения, а прошу надежный промежуточный статус: полное ли дело, на каком этапе оно находится и к какому сроку я могу ожидать ответа." },
+            { "language": "ckb", "text": "من داوای پەسەندکردنی خێرا ناکەم، بەڵکو دۆخێکی ناوەندیی پشتپێبەستراو دەمەوێت: ئایا دۆسیەکە تەواوە، لە کام هەنگاوەدایە و تا کەی دەتوانم چاوەڕێی وەڵام بم." },
+            { "language": "kmr", "text": "Ez pejirandineke bilez naxwazim, lê statûyeke navîn a piştrast dixwazim: ka dosya temam e, di kîjan gavê de ye û heta kengê ez dikarim li benda bersivê bim." },
+            { "language": "pl", "text": "Nie proszę o natychmiastową zgodę, lecz o wiarygodną informację pośrednią: czy akta są kompletne, na jakim etapie się znajdują i do kiedy mogę spodziewać się odpowiedzi." },
+            { "language": "ro", "text": "Nu cer o aprobare imediată, ci un status intermediar fiabil: dacă dosarul este complet, în ce etapă se află și până când pot aștepta un răspuns." },
+            { "language": "sq", "text": "Nuk kërkoj miratim të menjëhershëm, por një status të ndërmjetëm të besueshëm: nëse dosja është e plotë, në cilin hap ndodhet dhe deri kur mund të pres një përgjigje." }
+          ],
+          "function": "reasonable-next-step",
+          "toneNote": "Realistische Forderung: Zwischenstand statt sofortige Entscheidung.",
+          "expectedLearnerAction": "Request a concrete interim status and response timeframe."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "clerk",
+          "baseText": "Ich kann eine Notiz an die zuständige Stelle geben. Eine schriftliche Antwort dauert aber möglicherweise einige Tage.",
+          "translations": [
+            { "language": "en", "text": "I can send a note to the responsible unit. A written answer may take a few days, however." },
+            { "language": "fa", "text": "می‌توانم یک یادداشت به بخش مسئول بدهم. اما پاسخ کتبی ممکن است چند روز طول بکشد." },
+            { "language": "ar", "text": "يمكنني إرسال ملاحظة إلى الجهة المختصة. لكن الجواب الخطي قد يستغرق بضعة أيام." },
+            { "language": "tr", "text": "Sorumlu birime bir not iletebilirim. Ancak yazılı yanıt birkaç gün sürebilir." },
+            { "language": "ru", "text": "Я могу передать записку ответственному отделу. Но письменный ответ может занять несколько дней." },
+            { "language": "ckb", "text": "دەتوانم تێبینییەک بدەمە بەشی بەرپرس. بەڵام وەڵامی نووسراو ڕەنگە چەند ڕۆژێک بخایەنێت." },
+            { "language": "kmr", "text": "Ez dikarim notekê bidim beşa berpirs. Lê bersiva nivîskî dibe ku çend roj bidome." },
+            { "language": "pl", "text": "Mogę przekazać notatkę do właściwej jednostki. Pisemna odpowiedź może jednak potrwać kilka dni." },
+            { "language": "ro", "text": "Pot transmite o notă către departamentul responsabil. Totuși un răspuns scris poate dura câteva zile." },
+            { "language": "sq", "text": "Mund t'i dërgoj një shënim njësisë përgjegjëse. Por një përgjigje me shkrim mund të zgjasë disa ditë." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das wäre hilfreich. Bitte halten Sie in der Notiz fest, dass seit dem 12. Februar alle Unterlagen vorliegen, dass die lange Dauer für mich finanzielle Unsicherheit verursacht und dass ich bis Ende nächster Woche einen schriftlichen Zwischenstand erbitte.",
+          "translations": [
+            { "language": "en", "text": "That would be helpful. Please record in the note that all documents have been available since 12 February, that the long duration is causing financial uncertainty for me, and that I request a written interim status by the end of next week." },
+            { "language": "fa", "text": "این کمک‌کننده است. لطفاً در یادداشت ثبت کنید که از ۱۲ فوریه همه مدارک موجود است، طولانی‌شدن روند برای من نااطمینانی مالی ایجاد کرده، و تا پایان هفته آینده درخواست وضعیت میانی کتبی دارم." },
+            { "language": "ar", "text": "سيكون ذلك مفيدًا. يرجى تسجيل أن جميع الوثائق موجودة منذ 12 شباط، وأن طول المدة يسبب لي عدم يقين مالي، وأنني أطلب حالة مؤقتة خطية حتى نهاية الأسبوع القادم." },
+            { "language": "tr", "text": "Bu yardımcı olur. Lütfen notta 12 Şubat'tan beri tüm belgelerin mevcut olduğunu, uzun sürenin benim için mali belirsizlik yarattığını ve gelecek haftanın sonuna kadar yazılı bir ara durum istediğimi belirtin." },
+            { "language": "ru", "text": "Это было бы полезно. Пожалуйста, зафиксируйте в записке, что с 12 февраля все документы имеются, что долгий срок вызывает у меня финансовую неопределенность и что я прошу письменный промежуточный статус до конца следующей недели." },
+            { "language": "ckb", "text": "ئەوە یارمەتیدەر دەبێت. تکایە لە تێبینییەکەدا تۆمار بکەن کە لە ١٢ی شوباتەوە هەموو بەڵگەکان هەن، درێژبوونی ماوەکە بۆ من نادڵنیایی دارایی دروست دەکات، و تا کۆتایی هەفتەی داهاتوو داوای دۆخی ناوەندیی نووسراو دەکەم." },
+            { "language": "kmr", "text": "Ev alîkar dibe. Ji kerema xwe di notê de qeyd bikin ku ji 12ê Sibatê ve hemû belge amade ne, dirêjbûna demê ji bo min nezelaliya darayî çêdike, û heta dawîya hefteya bê ez statûyeke navîn a nivîskî dixwazim." },
+            { "language": "pl", "text": "To byłoby pomocne. Proszę odnotować, że od 12 lutego wszystkie dokumenty są dostępne, że długi czas trwania powoduje u mnie niepewność finansową i że proszę o pisemną informację pośrednią do końca przyszłego tygodnia." },
+            { "language": "ro", "text": "Ar fi util. Vă rog să notați că toate documentele sunt disponibile din 12 februarie, că durata lungă îmi provoacă incertitudine financiară și că solicit un status intermediar scris până la sfârșitul săptămânii viitoare." },
+            { "language": "sq", "text": "Kjo do të ishte e dobishme. Ju lutem shënoni se që nga 12 shkurti të gjitha dokumentet janë dorëzuar, se zgjatja më shkakton pasiguri financiare dhe se kërkoj një status të ndërmjetëm me shkrim deri në fund të javës së ardhshme." }
+          ],
+          "function": "documented-complaint-request",
+          "toneNote": "Die Bitte dokumentiert Chronologie, Belastung und realistische Frist.",
+          "expectedLearnerAction": "Ask the office to record the key points and written response deadline."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte mich sachlich über die bisherige Verfahrensdauer beschweren. Der Antrag wurde am 3. Februar gestellt, die fehlenden Unterlagen habe ich am 12. Februar nachgereicht, und seit dem 19. März steht im Portal unverändert \"in Bearbeitung\".",
+              "translations": [
+                { "language": "en", "text": "I would like to make a factual complaint about the duration so far. The application was submitted on 3 February, I supplied the missing documents on 12 February, and since 19 March the portal has remained unchanged at \"being reviewed\"." },
+                { "language": "fa", "text": "می‌خواهم به‌صورت واقع‌محور درباره مدت روند تا اینجا شکایت کنم. درخواست در ۳ فوریه ثبت شد، مدارک ناقص را در ۱۲ فوریه تکمیل کردم، و از ۱۹ مارس در پورتال بدون تغییر نوشته شده «در حال بررسی»." },
+                { "language": "ar", "text": "أود أن أقدم شكوى موضوعية بشأن مدة الإجراء حتى الآن. قُدم الطلب في 3 شباط، وقدمت الوثائق الناقصة في 12 شباط، ومنذ 19 آذار بقيت البوابة بلا تغيير على عبارة «قيد المعالجة»." },
+                { "language": "tr", "text": "Şu ana kadarki süre hakkında nesnel bir şikâyette bulunmak istiyorum. Başvuru 3 Şubat'ta yapıldı, eksik belgeleri 12 Şubat'ta tamamladım ve 19 Mart'tan beri portalda değişmeden \"işlemde\" yazıyor." },
+                { "language": "ru", "text": "Я хотел бы фактически пожаловаться на длительность процедуры до настоящего момента. Заявление было подано 3 февраля, недостающие документы я представил 12 февраля, и с 19 марта в портале без изменений стоит «в обработке»." },
+                { "language": "ckb", "text": "دەمەوێت بە شێوەی بابەتی سکاڵا لە ماوەی ڕێکارەکە تا ئێستا بکەم. داواکارییەکە لە ٣ی شوبات پێشکەش کرا، بەڵگە ناتەواوەکانم لە ١٢ی شوبات تەواوکرد، و لە ١٩ی ئادارەوە لە پۆرتاڵدا بەبێ گۆڕان نووسراوە «لە کارکردندایە»." },
+                { "language": "kmr", "text": "Ez dixwazim bi awayekî rastiyan li ser demê prosedurê heta niha gilî bikim. Daxwaz di 3ê Sibatê de hat dayîn, belgeyên kêm min di 12ê Sibatê de temam kirin, û ji 19ê Adarê ve di portalê de bê guhertin \"di xebatê de\" dimîne." },
+                { "language": "pl", "text": "Chciałbym/chciałabym rzeczowo poskarżyć się na dotychczasowy czas trwania procedury. Wniosek złożono 3 lutego, brakujące dokumenty uzupełniłem/uzupełniłam 12 lutego, a od 19 marca w portalu bez zmian widnieje „w trakcie rozpatrywania”." },
+                { "language": "ro", "text": "Aș dori să formulez o plângere factuală privind durata de până acum. Cererea a fost depusă la 3 februarie, documentele lipsă le-am completat la 12 februarie, iar din 19 martie în portal apare neschimbat „în lucru”." },
+                { "language": "sq", "text": "Dua të paraqes një ankesë faktike për kohëzgjatjen deri tani. Kërkesa u dorëzua më 3 shkurt, dokumentet që mungonin i plotësova më 12 shkurt, dhe që nga 19 marsi në portal mbetet pa ndryshim “në shqyrtim”." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Beschwerde beginnt mit einer überprüfbaren Chronologie statt mit Ärger.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The complaint starts with a verifiable timeline instead of frustration." },
+                { "language": "fa", "text": "قوی: شکایت با خط زمانی قابل بررسی شروع می‌شود، نه با عصبانیت." },
+                { "language": "ar", "text": "قوي: تبدأ الشكوى بتسلسل زمني قابل للتحقق بدلًا من الغضب." },
+                { "language": "tr", "text": "Güçlü: Şikâyet öfkeyle değil, doğrulanabilir bir zaman çizelgesiyle başlıyor." },
+                { "language": "ru", "text": "Сильно: жалоба начинается с проверяемой хронологии, а не с раздражения." },
+                { "language": "ckb", "text": "بەهێزە: سکاڵاکە بە کاتژمێرییەکی پشکنراو دەست پێدەکات، نە بە تووڕەیی." },
+                { "language": "kmr", "text": "Xurt e: Gilî bi rêza demê ya kontrolbar dest pê dike, ne bi hêrsê." },
+                { "language": "pl", "text": "Mocne: skarga zaczyna się od sprawdzalnej chronologii, a nie od złości." },
+                { "language": "ro", "text": "Puternic: plângerea începe cu o cronologie verificabilă, nu cu frustrare." },
+                { "language": "sq", "text": "E fortë: ankesa nis me një kronologji të verifikueshme, jo me zemërim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich warte schon viel zu lange und finde das langsam wirklich nicht mehr akzeptabel.",
+              "translations": [
+                { "language": "en", "text": "I have been waiting far too long and slowly find this really no longer acceptable." },
+                { "language": "fa", "text": "خیلی بیش از حد منتظر مانده‌ام و دیگر واقعاً این وضعیت را قابل قبول نمی‌دانم." },
+                { "language": "ar", "text": "لقد انتظرت طويلًا جدًا، وأجد أن هذا لم يعد مقبولًا حقًا." },
+                { "language": "tr", "text": "Çok uzun zamandır bekliyorum ve artık bunu gerçekten kabul edilebilir bulmuyorum." },
+                { "language": "ru", "text": "Я жду уже слишком долго и постепенно считаю это действительно неприемлемым." },
+                { "language": "ckb", "text": "زۆر زۆر چاوەڕێ بووم و ئیتر بەڕاستی ئەمە بە قبوڵکراو نازانم." },
+                { "language": "kmr", "text": "Ez ji xwe pir zêde li bendê mam û êdî vê rastî nepejirandî dibînim." },
+                { "language": "pl", "text": "Czekam już zdecydowanie za długo i powoli naprawdę nie uważam tego za akceptowalne." },
+                { "language": "ro", "text": "Aștept de mult prea mult timp și încep să consider că acest lucru nu mai este acceptabil." },
+                { "language": "sq", "text": "Kam pritur shumë gjatë dhe tani vërtet nuk e konsideroj më të pranueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig belastbar. Es fehlt eine Chronologie, die die Dauer nachvollziehbar macht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not solid enough. It lacks a timeline that makes the duration understandable." },
+                { "language": "fa", "text": "قابل تصور است، اما به اندازه کافی قابل اتکا نیست. خط زمانی ندارد که طولانی‌شدن را قابل پیگیری کند." },
+                { "language": "ar", "text": "معقول لكنه غير متين بما يكفي. ينقصه تسلسل زمني يجعل المدة مفهومة." },
+                { "language": "tr", "text": "Makul ama yeterince sağlam değil. Süreyi anlaşılır kılan bir zaman çizelgesi eksik." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно убедительно. Не хватает хронологии, которая делает длительность понятной." },
+                { "language": "ckb", "text": "ئەگەرییە، بەڵام بەس پشتپێبەستراو نییە. کاتژمێرییەک کەمە کە درێژبوونەکە تێگەیشتوو بکات." },
+                { "language": "kmr", "text": "Maqûl e, lê têra xwe ne xurt e. Rêza demê kêm e ku dirêjbûnê fêmbar bike." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt mało konkretne. Brakuje chronologii, która czyni czas trwania zrozumiałym." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient de solid. Lipsește o cronologie care să facă durata ușor de înțeles." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e fortë. Mungon një kronologji që e bën kohëzgjatjen të kuptueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das verstehe ich. Mir geht es nicht um einen Vorwurf an einzelne Mitarbeitende, sondern um eine belastbare Auskunft: Fehlt aus Ihrer Sicht noch etwas, oder wartet der Antrag nur auf die abschließende Prüfung?",
+              "translations": [
+                { "language": "en", "text": "I understand that. I am not blaming individual staff members; I need reliable information: from your perspective, is anything still missing, or is the application only waiting for final review?" },
+                { "language": "fa", "text": "این را می‌فهمم. هدفم سرزنش کارکنان مشخص نیست، بلکه به یک پاسخ قابل اتکا نیاز دارم: از نظر شما هنوز چیزی کم است یا درخواست فقط منتظر بررسی نهایی است؟" },
+                { "language": "ar", "text": "أفهم ذلك. لا أقصد لوم موظفين بعينهم، بل أحتاج إلى معلومة موثوقة: هل ينقص شيء من وجهة نظركم، أم أن الطلب ينتظر فقط المراجعة النهائية؟" },
+                { "language": "tr", "text": "Bunu anlıyorum. Amacım tek tek çalışanları suçlamak değil; güvenilir bilgiye ihtiyacım var: Size göre hâlâ eksik bir şey var mı, yoksa başvuru yalnızca son incelemeyi mi bekliyor?" },
+                { "language": "ru", "text": "Я это понимаю. Я не хочу обвинять отдельных сотрудников, мне нужна надежная информация: с вашей точки зрения, еще чего-то не хватает или заявление только ожидает окончательной проверки?" },
+                { "language": "ckb", "text": "ئەوە تێدەگەم. مەبەستم تاوانبارکردنی کارمەندی دیاریکراو نییە، بەڵکو پێویستم بە زانیارییەکی پشتپێبەستراوە: لە ڕوانگەی ئێوەوە هێشتا شتێک کەمە، یان داواکارییەکە تەنها چاوەڕێی پشکنینی کۆتایییە؟" },
+                { "language": "kmr", "text": "Ez wê fêm dikim. Mebesta min sûcdarkirina karmendên taybet nîne, lê agahiyeke piştrast pêwîst e: Li gor we hêj tiştek kêm e, an daxwaz tenê li benda vekolîna dawî ye?" },
+                { "language": "pl", "text": "Rozumiem to. Nie chodzi mi o zarzut wobec konkretnych pracowników, lecz o wiarygodną informację: czy z Państwa punktu widzenia czegoś jeszcze brakuje, czy wniosek czeka tylko na końcową weryfikację?" },
+                { "language": "ro", "text": "Înțeleg acest lucru. Nu este vorba despre a învinovăți anumiți angajați, ci despre o informație sigură: din perspectiva dumneavoastră mai lipsește ceva sau cererea așteaptă doar verificarea finală?" },
+                { "language": "sq", "text": "E kuptoj këtë. Nuk dua të fajësoj punonjës të veçantë, por kam nevojë për informacion të besueshëm: sipas jush, mungon ende diçka apo kërkesa pret vetëm shqyrtimin përfundimtar?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert Belastung in der Behörde und fragt dennoch nach einem konkreten Aktenstand.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer acknowledges the office's workload while still asking for a concrete file status." },
+                { "language": "fa", "text": "قوی: پاسخ فشار کاری اداره را می‌پذیرد، اما همچنان وضعیت مشخص پرونده را می‌خواهد." },
+                { "language": "ar", "text": "قوي: الجواب يعترف بعبء العمل في الدائرة ومع ذلك يسأل عن حالة ملف محددة." },
+                { "language": "tr", "text": "Güçlü: Yanıt kurumun iş yükünü kabul ediyor, yine de somut dosya durumunu soruyor." },
+                { "language": "ru", "text": "Сильно: ответ признает нагрузку учреждения, но все же спрашивает о конкретном статусе дела." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە فشاری کاری فەرمانگە دەقبوڵێت، بەڵام هێشتا دۆخی دیاریکراوی دۆسیە دەپرسێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv barê karê dezgehê qebûl dike, lê hê jî li statûya konkret a dosyayê dipirse." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje obciążenie urzędu, a mimo to pyta o konkretny stan akt." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște volumul de muncă al instituției și totuși cere un status concret al dosarului." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon ngarkesën e zyrës dhe megjithatë kërkon status konkret të dosjes." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dass Sie viel zu tun haben, kann ja nicht mein Problem sein.",
+              "translations": [
+                { "language": "en", "text": "The fact that you have a lot to do cannot be my problem." },
+                { "language": "fa", "text": "اینکه شما کار زیادی دارید که نباید مشکل من باشد." },
+                { "language": "ar", "text": "كون لديكم عمل كثير لا يمكن أن يكون مشكلتي." },
+                { "language": "tr", "text": "Sizin çok işiniz olması benim sorunum olamaz." },
+                { "language": "ru", "text": "То, что у вас много работы, не может быть моей проблемой." },
+                { "language": "ckb", "text": "ئەوەی ئێوە کاری زۆرتان هەیە نابێت کێشەی من بێت." },
+                { "language": "kmr", "text": "Ew ku karê we pir e nikare pirsgirêka min be." },
+                { "language": "pl", "text": "To, że mają Państwo dużo pracy, nie może być moim problemem." },
+                { "language": "ro", "text": "Faptul că aveți mult de lucru nu poate fi problema mea." },
+                { "language": "sq", "text": "Fakti që keni shumë punë nuk mund të jetë problemi im." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu konfrontativ. Der Satz kann emotional nachvollziehbar sein, verschlechtert aber die Gesprächslage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too confrontational. The sentence may be emotionally understandable, but it worsens the conversation." },
+                { "language": "fa", "text": "بیش از حد تقابلی است. جمله از نظر احساسی قابل فهم است، اما فضای گفتگو را بدتر می‌کند." },
+                { "language": "ar", "text": "تصادمي جدًا. قد تكون الجملة مفهومة عاطفيًا، لكنها تسيء إلى جو الحوار." },
+                { "language": "tr", "text": "Çok çatışmacı. Cümle duygusal olarak anlaşılabilir, ancak görüşme ortamını kötüleştirir." },
+                { "language": "ru", "text": "Слишком конфронтационно. Фраза может быть эмоционально понятной, но ухудшает разговор." },
+                { "language": "ckb", "text": "زۆر ڕووبەڕووبوونەوەیە. ڕستەکە لە ڕووی هەستییەوە تێگەیشتووە، بەڵام دۆخی گفتوگۆ خراپتر دەکات." },
+                { "language": "kmr", "text": "Pir rûbirû ye. Hevok ji aliyê hestyarî ve tê fêmkirin, lê rewşa axaftinê xirabtir dike." },
+                { "language": "pl", "text": "Zbyt konfrontacyjne. Zdanie może być emocjonalnie zrozumiałe, ale pogarsza rozmowę." },
+                { "language": "ro", "text": "Prea confruntațional. Fraza poate fi de înțeles emoțional, dar înrăutățește discuția." },
+                { "language": "sq", "text": "Shumë konfrontuese. Fjalia mund të jetë e kuptueshme emocionalisht, por e përkeqëson bisedën." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gerade diese Unsicherheit ist für mich das Problem. Ich muss laufende Kosten überbrücken und kann ohne Zwischenstand weder mit dem Vermieter noch mit der Beratungsstelle verlässlich planen.",
+              "translations": [
+                { "language": "en", "text": "That uncertainty is exactly the problem for me. I have to bridge ongoing costs, and without an interim status I cannot plan reliably with either the landlord or the advisory service." },
+                { "language": "fa", "text": "دقیقاً همین عدم قطعیت برای من مشکل است. باید هزینه‌های جاری را پوشش بدهم و بدون وضعیت میانی نمی‌توانم نه با صاحبخانه و نه با مرکز مشاوره قابل اتکا برنامه‌ریزی کنم." },
+                { "language": "ar", "text": "هذه عدم اليقين بالضبط هي المشكلة بالنسبة لي. يجب أن أغطي تكاليف جارية، ومن دون حالة مؤقتة لا أستطيع التخطيط بشكل موثوق لا مع المؤجر ولا مع مركز الاستشارة." },
+                { "language": "tr", "text": "Benim için sorun tam da bu belirsizlik. Devam eden masrafları karşılamam gerekiyor ve ara durum bilgisi olmadan ne ev sahibiyle ne de danışmanlık merkeziyle güvenilir plan yapabiliyorum." },
+                { "language": "ru", "text": "Именно эта неопределенность для меня проблема. Мне нужно покрывать текущие расходы, и без промежуточного статуса я не могу надежно планировать ни с арендодателем, ни с консультационной службой." },
+                { "language": "ckb", "text": "هەر ئەم نادڵنیاییە بۆ من کێشەیە. پێویستە تێچووە بەردەوامەکان بپۆشم و بەبێ دۆخی ناوەندی ناتوانم نە لەگەڵ خاوەن ماڵ نە لەگەڵ ناوەندی ڕاوێژکاری بە پشتپێبەستن پلان دابنێم." },
+                { "language": "kmr", "text": "Ev nezelalî bi rastî ji bo min pirsgirêk e. Divê ez lêçûnên domdar derbas bikim û bê statûya navîn ez nikarim ne bi xwediyê malê re ne jî bi navenda şêwirmendiyê re bi piştrastî plan bikim." },
+                { "language": "pl", "text": "Właśnie ta niepewność jest dla mnie problemem. Muszę pokrywać bieżące koszty i bez informacji pośredniej nie mogę wiarygodnie planować ani z właścicielem mieszkania, ani z poradnią." },
+                { "language": "ro", "text": "Tocmai această incertitudine este problema pentru mine. Trebuie să acopăr costuri curente și fără un status intermediar nu pot planifica în mod fiabil nici cu proprietarul, nici cu centrul de consiliere." },
+                { "language": "sq", "text": "Pikërisht kjo pasiguri është problemi për mua. Duhet të mbuloj shpenzime të vazhdueshme dhe pa një status të ndërmjetëm nuk mund të planifikoj me besueshmëri as me qiradhënësin, as me qendrën e këshillimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt die konkrete Belastung, ohne künstlich zu dramatisieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer explains the concrete burden without artificially dramatizing it." },
+                { "language": "fa", "text": "قوی: پاسخ فشار مشخص را توضیح می‌دهد، بدون اینکه مصنوعی بزرگ‌نمایی کند." },
+                { "language": "ar", "text": "قوي: الجواب يشرح العبء الملموس من دون تهويل مصطنع." },
+                { "language": "tr", "text": "Güçlü: Yanıt somut yükü yapay biçimde dramatize etmeden açıklıyor." },
+                { "language": "ru", "text": "Сильно: ответ объясняет конкретную нагрузку, не драматизируя искусственно." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە فشاری دیاریکراو ڕوون دەکاتەوە، بەبێ گەورەکردنەوەی دەستکرد." },
+                { "language": "kmr", "text": "Xurt e: Bersiv barê konkret rave dike bê ku wê bi awayekî çêkirî dramatîze bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia konkretny ciężar bez sztucznego dramatyzowania." },
+                { "language": "ro", "text": "Puternic: răspunsul explică povara concretă fără a o dramatiza artificial." },
+                { "language": "sq", "text": "E fortë: përgjigjja shpjegon barrën konkrete pa e dramatizuar artificialisht." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich brauche das Geld dringend, sonst wird es für mich schwierig.",
+              "translations": [
+                { "language": "en", "text": "I urgently need the money, otherwise it will become difficult for me." },
+                { "language": "fa", "text": "من فوراً به پول نیاز دارم، وگرنه برایم سخت می‌شود." },
+                { "language": "ar", "text": "أحتاج إلى المال بشكل عاجل، وإلا سيصبح الأمر صعبًا بالنسبة لي." },
+                { "language": "tr", "text": "Paraya acilen ihtiyacım var, yoksa benim için zor olacak." },
+                { "language": "ru", "text": "Мне срочно нужны деньги, иначе мне будет трудно." },
+                { "language": "ckb", "text": "بە پەلە پێویستم بە پارەکە هەیە، ئەگەر نا بۆ من سەخت دەبێت." },
+                { "language": "kmr", "text": "Bi lez pere ji min re pêwîst e, wekî din ji bo min dijwar dibe." },
+                { "language": "pl", "text": "Pilnie potrzebuję pieniędzy, inaczej będzie mi trudno." },
+                { "language": "ro", "text": "Am nevoie urgent de bani, altfel îmi va fi dificil." },
+                { "language": "sq", "text": "Kam nevojë urgjente për paratë, përndryshe do të bëhet e vështirë për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu allgemein. C2 verlangt konkrete Folgen, damit die Dringlichkeit nachvollziehbar wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too general. C2 requires concrete consequences so the urgency becomes clear." },
+                { "language": "fa", "text": "قابل فهم است، اما بیش از حد کلی. در C2 باید پیامدهای مشخص گفته شود تا فوریت قابل درک شود." },
+                { "language": "ar", "text": "مفهوم لكنه عام جدًا. في C2 يجب ذكر نتائج ملموسة كي تصبح العجلة مفهومة." },
+                { "language": "tr", "text": "Anlaşılır ama çok genel. C2 düzeyinde aciliyetin anlaşılması için somut sonuçlar gerekir." },
+                { "language": "ru", "text": "Понятно, но слишком общее. На C2 нужны конкретные последствия, чтобы срочность стала понятной." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام زۆر گشتییە. لە C2 پێویستە ئاکامی دیاریکراو هەبێت تا پەلە تێگەیشتوو بێت." },
+                { "language": "kmr", "text": "Tê fêmkirin, lê pir giştî ye. Di C2 de encamên konkret pêwîst in da ku lezgînî fêmbar bibe." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt ogólne. Na C2 potrzebne są konkretne skutki, aby pilność była zrozumiała." },
+                { "language": "ro", "text": "De înțeles, dar prea general. La C2 sunt necesare consecințe concrete pentru ca urgența să fie clară." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e përgjithshme. Në C2 duhen pasoja konkrete që urgjenca të bëhet e qartë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich bitte nicht um eine sofortige Zusage, sondern um einen verbindlichen Zwischenstand: ob die Akte vollständig ist, in welchem Schritt sie sich befindet und bis wann ich mit einer Rückmeldung rechnen kann.",
+              "translations": [
+                { "language": "en", "text": "I am not asking for an immediate approval, but for a reliable interim status: whether the file is complete, which step it is in, and by when I can expect a response." },
+                { "language": "fa", "text": "من تأیید فوری نمی‌خواهم، بلکه یک وضعیت میانی قابل اتکا می‌خواهم: آیا پرونده کامل است، در کدام مرحله قرار دارد و تا چه زمانی می‌توانم منتظر پاسخ باشم." },
+                { "language": "ar", "text": "لا أطلب موافقة فورية، بل حالة مؤقتة موثوقة: هل الملف كامل، وفي أي خطوة هو، ومتى يمكنني توقع رد." },
+                { "language": "tr", "text": "Hemen onay istemiyorum; güvenilir bir ara durum istiyorum: dosya tamam mı, hangi adımda bulunuyor ve ne zamana kadar yanıt bekleyebilirim." },
+                { "language": "ru", "text": "Я не прошу немедленного одобрения, а прошу надежный промежуточный статус: полное ли дело, на каком этапе оно находится и к какому сроку я могу ожидать ответа." },
+                { "language": "ckb", "text": "من داوای پەسەندکردنی خێرا ناکەم، بەڵکو دۆخێکی ناوەندیی پشتپێبەستراو دەمەوێت: ئایا دۆسیەکە تەواوە، لە کام هەنگاوەدایە و تا کەی دەتوانم چاوەڕێی وەڵام بم." },
+                { "language": "kmr", "text": "Ez pejirandineke bilez naxwazim, lê statûyeke navîn a piştrast dixwazim: ka dosya temam e, di kîjan gavê de ye û heta kengê ez dikarim li benda bersivê bim." },
+                { "language": "pl", "text": "Nie proszę o natychmiastową zgodę, lecz o wiarygodną informację pośrednią: czy akta są kompletne, na jakim etapie się znajdują i do kiedy mogę spodziewać się odpowiedzi." },
+                { "language": "ro", "text": "Nu cer o aprobare imediată, ci un status intermediar fiabil: dacă dosarul este complet, în ce etapă se află și până când pot aștepta un răspuns." },
+                { "language": "sq", "text": "Nuk kërkoj miratim të menjëhershëm, por një status të ndërmjetëm të besueshëm: nëse dosja është e plotë, në cilin hap ndodhet dhe deri kur mund të pres një përgjigje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Forderung ist realistisch und nennt genau, welche Auskunft gebraucht wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request is realistic and states exactly what information is needed." },
+                { "language": "fa", "text": "قوی: درخواست واقع‌بینانه است و دقیقاً می‌گوید چه اطلاعاتی لازم است." },
+                { "language": "ar", "text": "قوي: الطلب واقعي ويذكر بالضبط أي معلومات مطلوبة." },
+                { "language": "tr", "text": "Güçlü: Talep gerçekçi ve hangi bilginin gerektiğini tam olarak söylüyor." },
+                { "language": "ru", "text": "Сильно: требование реалистично и точно называет, какая информация нужна." },
+                { "language": "ckb", "text": "بەهێزە: داواکە ڕاستەقینەیە و بە وردی دەڵێت چ زانیارییەک پێویستە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz realistîk e û bi hûrgilî dibêje kîjan agahî pêwîst e." },
+                { "language": "pl", "text": "Mocne: żądanie jest realistyczne i dokładnie wskazuje, jaka informacja jest potrzebna." },
+                { "language": "ro", "text": "Puternic: solicitarea este realistă și spune exact ce informație este necesară." },
+                { "language": "sq", "text": "E fortë: kërkesa është realiste dhe tregon saktësisht çfarë informacioni nevojitet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich möchte, dass mein Antrag jetzt endlich bevorzugt bearbeitet wird.",
+              "translations": [
+                { "language": "en", "text": "I want my application to finally be handled with priority now." },
+                { "language": "fa", "text": "می‌خواهم درخواست من بالاخره همین حالا در اولویت بررسی شود." },
+                { "language": "ar", "text": "أريد أن يُعالج طلبي أخيرًا الآن بأولوية." },
+                { "language": "tr", "text": "Başvurumun artık öncelikli olarak ele alınmasını istiyorum." },
+                { "language": "ru", "text": "Я хочу, чтобы мое заявление наконец сейчас рассмотрели в приоритетном порядке." },
+                { "language": "ckb", "text": "دەمەوێت داواکارییەکەم ئیتر ئێستا بە پێشینەیی کار لەسەر بکرێت." },
+                { "language": "kmr", "text": "Ez dixwazim daxwaza min êdî niha bi pêşînî were vekolîn." },
+                { "language": "pl", "text": "Chcę, żeby mój wniosek wreszcie został teraz potraktowany priorytetowo." },
+                { "language": "ro", "text": "Vreau ca cererea mea să fie în sfârșit tratată cu prioritate acum." },
+                { "language": "sq", "text": "Dua që kërkesa ime më në fund të trajtohet tani me përparësi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu stark formuliert. Ohne Anspruch auf Vorrang wirkt die Forderung weniger überzeugend als eine konkrete Statusbitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too strong. Without a claim to priority, the demand is less convincing than a concrete status request." },
+                { "language": "fa", "text": "بیش از حد شدید است. بدون مبنای اولویت، این مطالبه از درخواست وضعیت مشخص کمتر قانع‌کننده است." },
+                { "language": "ar", "text": "مصاغ بقوة زائدة. من دون أساس للأولوية، يبدو الطلب أقل إقناعًا من طلب حالة محددة." },
+                { "language": "tr", "text": "Çok sert ifade edilmiş. Öncelik hakkı olmadan bu talep, somut durum bilgisinden daha az ikna edicidir." },
+                { "language": "ru", "text": "Слишком сильно сформулировано. Без основания для приоритета требование менее убедительно, чем конкретная просьба о статусе." },
+                { "language": "ckb", "text": "زۆر توند داڕێژراوە. بەبێ بنەمای پێشینەیی، داواکە کەمتر قایلکەرە لە داوای دۆخی دیاریکراو." },
+                { "language": "kmr", "text": "Pir xurt hatiye gotin. Bê bingeha pêşînî, daxwaz ji daxwaza statûya konkret kêmtir bawerker e." },
+                { "language": "pl", "text": "Sformułowane zbyt mocno. Bez podstawy do pierwszeństwa żądanie jest mniej przekonujące niż konkretna prośba o status." },
+                { "language": "ro", "text": "Formulat prea puternic. Fără un temei pentru prioritate, cererea este mai puțin convingătoare decât o solicitare concretă de status." },
+                { "language": "sq", "text": "E formuluar shumë fort. Pa bazë për përparësi, kërkesa është më pak bindëse sesa një kërkesë konkrete për status." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das wäre hilfreich. Bitte halten Sie in der Notiz fest, dass seit dem 12. Februar alle Unterlagen vorliegen, dass die lange Dauer für mich finanzielle Unsicherheit verursacht und dass ich bis Ende nächster Woche einen schriftlichen Zwischenstand erbitte.",
+              "translations": [
+                { "language": "en", "text": "That would be helpful. Please record in the note that all documents have been available since 12 February, that the long duration is causing financial uncertainty for me, and that I request a written interim status by the end of next week." },
+                { "language": "fa", "text": "این کمک‌کننده است. لطفاً در یادداشت ثبت کنید که از ۱۲ فوریه همه مدارک موجود است، طولانی‌شدن روند برای من نااطمینانی مالی ایجاد کرده، و تا پایان هفته آینده درخواست وضعیت میانی کتبی دارم." },
+                { "language": "ar", "text": "سيكون ذلك مفيدًا. يرجى تسجيل أن جميع الوثائق موجودة منذ 12 شباط، وأن طول المدة يسبب لي عدم يقين مالي، وأنني أطلب حالة مؤقتة خطية حتى نهاية الأسبوع القادم." },
+                { "language": "tr", "text": "Bu yardımcı olur. Lütfen notta 12 Şubat'tan beri tüm belgelerin mevcut olduğunu, uzun sürenin benim için mali belirsizlik yarattığını ve gelecek haftanın sonuna kadar yazılı bir ara durum istediğimi belirtin." },
+                { "language": "ru", "text": "Это было бы полезно. Пожалуйста, зафиксируйте в записке, что с 12 февраля все документы имеются, что долгий срок вызывает у меня финансовую неопределенность и что я прошу письменный промежуточный статус до конца следующей недели." },
+                { "language": "ckb", "text": "ئەوە یارمەتیدەر دەبێت. تکایە لە تێبینییەکەدا تۆمار بکەن کە لە ١٢ی شوباتەوە هەموو بەڵگەکان هەن، درێژبوونی ماوەکە بۆ من نادڵنیایی دارایی دروست دەکات، و تا کۆتایی هەفتەی داهاتوو داوای دۆخی ناوەندیی نووسراو دەکەم." },
+                { "language": "kmr", "text": "Ev alîkar dibe. Ji kerema xwe di notê de qeyd bikin ku ji 12ê Sibatê ve hemû belge amade ne, dirêjbûna demê ji bo min nezelaliya darayî çêdike, û heta dawîya hefteya bê ez statûyeke navîn a nivîskî dixwazim." },
+                { "language": "pl", "text": "To byłoby pomocne. Proszę odnotować, że od 12 lutego wszystkie dokumenty są dostępne, że długi czas trwania powoduje u mnie niepewność finansową i że proszę o pisemną informację pośrednią do końca przyszłego tygodnia." },
+                { "language": "ro", "text": "Ar fi util. Vă rog să notați că toate documentele sunt disponibile din 12 februarie, că durata lungă îmi provoacă incertitudine financiară și că solicit un status intermediar scris până la sfârșitul săptămânii viitoare." },
+                { "language": "sq", "text": "Kjo do të ishte e dobishme. Ju lutem shënoni se që nga 12 shkurti të gjitha dokumentet janë dorëzuar, se zgjatja më shkakton pasiguri financiare dhe se kërkoj një status të ndërmjetëm me shkrim deri në fund të javës së ardhshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Bitte macht aus der Beschwerde eine dokumentierbare, realistische nächste Handlung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The request turns the complaint into a documented, realistic next action." },
+                { "language": "fa", "text": "قوی: درخواست، شکایت را به یک اقدام بعدی قابل ثبت و واقع‌بینانه تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: يحول الطلب الشكوى إلى خطوة تالية موثقة وواقعية." },
+                { "language": "tr", "text": "Güçlü: Rica şikâyeti belgelenebilir ve gerçekçi bir sonraki adıma dönüştürüyor." },
+                { "language": "ru", "text": "Сильно: просьба превращает жалобу в документируемое, реалистичное следующее действие." },
+                { "language": "ckb", "text": "بەهێزە: داواکە سکاڵاکە دەکاتە هەنگاوێکی داهاتووی تۆمارکراو و ڕاستەقینە." },
+                { "language": "kmr", "text": "Xurt e: Daxwaz gilîyê vediguhezîne gaveke paşê ya belgekirî û realistîk." },
+                { "language": "pl", "text": "Mocne: prośba zmienia skargę w udokumentowany, realistyczny następny krok." },
+                { "language": "ro", "text": "Puternic: cererea transformă plângerea într-un pas următor documentabil și realist." },
+                { "language": "sq", "text": "E fortë: kërkesa e kthen ankesën në një hap të ardhshëm të dokumentueshëm dhe realist." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sagen Sie bitte einfach weiter, dass ich dringend eine Antwort brauche.",
+              "translations": [
+                { "language": "en", "text": "Then please simply pass on that I urgently need an answer." },
+                { "language": "fa", "text": "پس لطفاً فقط منتقل کنید که من فوراً به پاسخ نیاز دارم." },
+                { "language": "ar", "text": "إذن يرجى فقط نقل أنني أحتاج إلى جواب عاجل." },
+                { "language": "tr", "text": "O zaman lütfen sadece acilen bir yanıta ihtiyacım olduğunu iletin." },
+                { "language": "ru", "text": "Тогда просто передайте, пожалуйста, что мне срочно нужен ответ." },
+                { "language": "ckb", "text": "ئەوا تکایە تەنها بگەیەنن کە من بە پەلە پێویستم بە وەڵام هەیە." },
+                { "language": "kmr", "text": "Wê demê ji kerema xwe tenê ragihînin ku bi lez bersivek ji min re pêwîst e." },
+                { "language": "pl", "text": "W takim razie proszę po prostu przekazać, że pilnie potrzebuję odpowiedzi." },
+                { "language": "ro", "text": "Atunci vă rog doar să transmiteți că am nevoie urgent de un răspuns." },
+                { "language": "sq", "text": "Atëherë ju lutem thjesht përcillni se kam nevojë urgjente për një përgjigje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu dünn. Die Dringlichkeit wird genannt, aber Chronologie, Belastung und gewünschte Frist fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too thin. Urgency is mentioned, but timeline, burden, and desired timeframe are missing." },
+                { "language": "fa", "text": "بیش از حد کم‌جزئیات است. فوریت گفته می‌شود، اما خط زمانی، فشار و مهلت مورد انتظار کم است." },
+                { "language": "ar", "text": "ضعيف التفاصيل. تُذكر العجلة، لكن التسلسل الزمني والعبء والمهلة المطلوبة غائبة." },
+                { "language": "tr", "text": "Çok zayıf. Aciliyet belirtiliyor, ancak zaman çizelgesi, yük ve istenen süre eksik." },
+                { "language": "ru", "text": "Слишком мало содержания. Срочность названа, но отсутствуют хронология, нагрузка и желаемый срок." },
+                { "language": "ckb", "text": "زۆر کەمە. پەلە ناودەبرێت، بەڵام کاتژمێر، فشار و ماوەی داواکراو کەمە." },
+                { "language": "kmr", "text": "Pir tenik e. Lezgînî tê gotin, lê rêza demê, bar û demê daxwazkirî kêm in." },
+                { "language": "pl", "text": "Zbyt ubogie. Pilność jest wspomniana, ale brakuje chronologii, obciążenia i oczekiwanego terminu." },
+                { "language": "ro", "text": "Prea subțire. Urgența este menționată, dar lipsesc cronologia, povara și termenul dorit." },
+                { "language": "sq", "text": "Shumë e varfër në detaje. Urgjenca përmendet, por mungojnë kronologjia, barra dhe afati i dëshiruar." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "timeline",
+          "text": "Eine Beschwerde über Dauer wird stärker, wenn sie mit konkreten Daten beginnt.",
+          "translations": [
+            { "language": "en", "text": "A complaint about duration becomes stronger when it starts with concrete dates." },
+            { "language": "fa", "text": "شکایت درباره مدت وقتی قوی‌تر می‌شود که با تاریخ‌های مشخص شروع شود." },
+            { "language": "ar", "text": "تصبح الشكوى بشأن المدة أقوى عندما تبدأ بتواريخ محددة." },
+            { "language": "tr", "text": "Süreye ilişkin şikâyet somut tarihlerle başladığında daha güçlü olur." },
+            { "language": "ru", "text": "Жалоба на длительность становится сильнее, когда начинается с конкретных дат." },
+            { "language": "ckb", "text": "سکاڵا دەربارەی ماوە بەهێزتر دەبێت کاتێک بە ڕێکەوتی دیاریکراو دەست پێدەکات." },
+            { "language": "kmr", "text": "Gilî li ser demê xurtir dibe dema ku bi tarîxên konkret dest pê dike." },
+            { "language": "pl", "text": "Skarga na czas trwania jest mocniejsza, gdy zaczyna się od konkretnych dat." },
+            { "language": "ro", "text": "O plângere privind durata devine mai puternică atunci când începe cu date concrete." },
+            { "language": "sq", "text": "Një ankesë për kohëzgjatjen bëhet më e fortë kur nis me data konkrete." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "non-accusatory",
+          "text": "C2-Beschwerden trennen Systembelastung, Aktenstand und persönliche Belastung.",
+          "translations": [
+            { "language": "en", "text": "C2 complaints separate system workload, file status, and personal burden." },
+            { "language": "fa", "text": "شکایت‌های C2 فشار سیستم، وضعیت پرونده و فشار شخصی را از هم جدا می‌کنند." },
+            { "language": "ar", "text": "تفصل شكاوى C2 بين عبء النظام وحالة الملف والعبء الشخصي." },
+            { "language": "tr", "text": "C2 şikâyetleri sistem yükünü, dosya durumunu ve kişisel yükü ayırır." },
+            { "language": "ru", "text": "Жалобы уровня C2 разделяют нагрузку системы, состояние дела и личную нагрузку." },
+            { "language": "ckb", "text": "سکاڵاکانی C2 فشاری سیستەم، دۆخی دۆسیە و فشاری کەسی جیا دەکەنەوە." },
+            { "language": "kmr", "text": "Gilîyên C2 barê pergalê, statûya dosyayê û barê kesane veqetînin." },
+            { "language": "pl", "text": "Skargi na C2 oddzielają obciążenie systemu, stan akt i osobiste obciążenie." },
+            { "language": "ro", "text": "Plângerile C2 separă volumul de muncă al sistemului, statusul dosarului și povara personală." },
+            { "language": "sq", "text": "Ankesat C2 ndajnë ngarkesën e sistemit, statusin e dosjes dhe barrën personale." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "realistic-request",
+          "text": "Ein realistischer Zwischenstand ist oft stärker als die Forderung nach sofortiger Entscheidung.",
+          "translations": [
+            { "language": "en", "text": "A realistic interim status is often stronger than demanding an immediate decision." },
+            { "language": "fa", "text": "درخواست وضعیت میانی واقع‌بینانه اغلب قوی‌تر از مطالبه تصمیم فوری است." },
+            { "language": "ar", "text": "الحالة المؤقتة الواقعية غالبًا أقوى من المطالبة بقرار فوري." },
+            { "language": "tr", "text": "Gerçekçi bir ara durum, çoğu zaman hemen karar talep etmekten daha güçlüdür." },
+            { "language": "ru", "text": "Реалистичный промежуточный статус часто сильнее, чем требование немедленного решения." },
+            { "language": "ckb", "text": "دۆخی ناوەندیی ڕاستەقینە زۆرجار بەهێزترە لە داوای بڕیاری خێرا." },
+            { "language": "kmr", "text": "Statûyeke navîn a realistîk gelek caran ji daxwaza biryara bilez xurtir e." },
+            { "language": "pl", "text": "Realistyczna informacja pośrednia jest często mocniejsza niż żądanie natychmiastowej decyzji." },
+            { "language": "ro", "text": "Un status intermediar realist este adesea mai puternic decât cererea unei decizii imediate." },
+            { "language": "sq", "text": "Një status i ndërmjetëm realist shpesh është më i fortë sesa kërkesa për vendim të menjëhershëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "documented-next-step",
+          "text": "Die Schlussbitte sollte dokumentieren, was passiert ist, warum es belastet und bis wann eine Antwort erwartet wird.",
+          "translations": [
+            { "language": "en", "text": "The final request should document what happened, why it creates burden, and by when an answer is expected." },
+            { "language": "fa", "text": "درخواست پایانی باید ثبت کند چه اتفاقی افتاده، چرا فشار ایجاد کرده و تا چه زمانی پاسخ انتظار می‌رود." },
+            { "language": "ar", "text": "ينبغي أن يوثق الطلب الختامي ما حدث، ولماذا يسبب عبئًا، ومتى يُتوقع الجواب." },
+            { "language": "tr", "text": "Son rica ne olduğunu, neden yük oluşturduğunu ve ne zamana kadar yanıt beklendiğini belgelemelidir." },
+            { "language": "ru", "text": "Финальная просьба должна зафиксировать, что произошло, почему это создает нагрузку и к какому сроку ожидается ответ." },
+            { "language": "ckb", "text": "داوای کۆتایی پێویستە تۆمار بکات چی ڕوویداوە، بۆچی فشار دروست دەکات و تا کەی وەڵام چاوەڕێ دەکرێت." },
+            { "language": "kmr", "text": "Daxwaza dawî divê belge bike çi qewimî, çima bar çêdike û heta kengê bersiv tê hêvîkirin." },
+            { "language": "pl", "text": "Końcowa prośba powinna dokumentować, co się stało, dlaczego obciąża i do kiedy oczekiwana jest odpowiedź." },
+            { "language": "ro", "text": "Cererea finală ar trebui să documenteze ce s-a întâmplat, de ce creează povară și până când este așteptat un răspuns." },
+            { "language": "sq", "text": "Kërkesa përfundimtare duhet të dokumentojë çfarë ndodhi, pse krijon barrë dhe deri kur pritet përgjigjja." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "procedure-duration-complaint-counter",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal public-office conversation where an applicant presents a timeline and asks for a written interim status.",
+          "altText": "Ein Antragsteller spricht an einem deutschen Amtsschalter sachlich über eine lange Bearbeitungsdauer, eine Akte und einen schriftlichen Zwischenstand.",
+          "altTextTranslations": [
+            { "language": "en", "text": "An applicant speaks factually at a German public-office counter about a long review time, a file, and a written interim status." },
+            { "language": "fa", "text": "یک درخواست‌دهنده در پیشخوان اداره آلمان به‌صورت واقع‌محور درباره مدت طولانی بررسی، پرونده و وضعیت میانی کتبی صحبت می‌کند." },
+            { "language": "ar", "text": "يتحدث مقدم طلب بموضوعية عند شباك دائرة ألمانية عن مدة معالجة طويلة وملف وحالة مؤقتة خطية." },
+            { "language": "tr", "text": "Bir başvuru sahibi Alman resmi daire gişesinde uzun işlem süresi, dosya ve yazılı ara durum hakkında nesnel biçimde konuşuyor." },
+            { "language": "ru", "text": "Заявитель у стойки немецкого учреждения фактически говорит о долгом сроке рассмотрения, деле и письменном промежуточном статусе." },
+            { "language": "ckb", "text": "داواکەرێک لە کەونتەری فەرمانگەیەکی ئەڵمانیدا بە بابەتی دەربارەی ماوەی درێژی کارکردن، دۆسیە و دۆخی ناوەندیی نووسراو قسە دەکات." },
+            { "language": "kmr", "text": "Daxwazkarek li ber maseya dezgeheke Alman bi awayekî rastiyan li ser demê dirêj a vekolînê, dosya û statûya navîn a nivîskî diaxive." },
+            { "language": "pl", "text": "Wnioskodawca rzeczowo rozmawia przy niemieckim stanowisku urzędowym o długim czasie rozpatrywania, aktach i pisemnej informacji pośredniej." },
+            { "language": "ro", "text": "Un solicitant discută factual la un ghișeu german despre o durată lungă de examinare, un dosar și un status intermediar scris." },
+            { "language": "sq", "text": "Një aplikues flet në mënyrë faktike në një sportel gjerman për një kohë të gjatë shqyrtimi, një dosje dhe një status të ndërmjetëm me shkrim." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult applicant at a German public-office counter, applicant calmly showing a simple timeline sheet and folder while discussing long review time with a case worker, no readable text, no logos, no private data, accessible composition, formal cooperative mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

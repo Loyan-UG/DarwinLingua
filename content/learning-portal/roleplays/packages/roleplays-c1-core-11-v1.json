@@ -1,0 +1,806 @@
+{
+  "packageId": "roleplays-c1-core-11-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 11 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 11",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-zwischen-transparenz-und-diplomatie-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Zwischen Transparenz und Diplomatie abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Balancing transparency and diplomacy" },
+        { "language": "fa", "text": "سنجیدن بین شفافیت و دیپلماسی" },
+        { "language": "ar", "text": "الموازنة بين الشفافية والدبلوماسية" },
+        { "language": "tr", "text": "Şeffaflık ile diplomasi arasında denge kurmak" },
+        { "language": "ru", "text": "Взвесить прозрачность и дипломатичность" },
+        { "language": "ckb", "text": "هەڵسەنگاندن لەنێوان شەفافیەت و دیپلۆماسیەتدا" },
+        { "language": "kmr", "text": "Lihevkirina şefafî û dîplomasiyê" },
+        { "language": "pl", "text": "Wyważenie przejrzystości i dyplomacji" },
+        { "language": "ro", "text": "Echilibrarea transparenței și diplomației" },
+        { "language": "sq", "text": "Balancimi mes transparencës dhe diplomacisë" }
+      ],
+      "description": "In einem C1-Arbeitsmeeting entscheiden Sie, wie offen ein sensibles Kundenrisiko kommuniziert werden soll, ohne Vertrauen zu verlieren oder Fakten zu beschönigen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 workplace meeting, you decide how openly a sensitive customer risk should be communicated without losing trust or softening the facts." },
+        { "language": "fa", "text": "در یک جلسه کاری سطح C1 تصمیم می‌گیرید یک ریسک حساس برای مشتری چقدر شفاف بیان شود، بدون اینکه اعتماد از بین برود یا واقعیت‌ها زیبا جلوه داده شوند." },
+        { "language": "ar", "text": "في اجتماع عمل بمستوى C1، تقرر مدى صراحة التواصل بشأن خطر حساس يخص العميل دون فقدان الثقة أو تلطيف الحقائق." },
+        { "language": "tr", "text": "C1 düzeyinde bir iş toplantısında, hassas bir müşteri riskinin güven kaybetmeden veya gerçekleri yumuşatmadan ne kadar açık iletileceğine karar verirsiniz." },
+        { "language": "ru", "text": "На рабочей встрече уровня C1 вы решаете, насколько открыто сообщать о чувствительном клиентском риске, не теряя доверия и не смягчая факты." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی کاری ئاستی C1دا، بڕیار دەدەیت مەترسییەکی هەستیار بۆ کڕیار چەندە بە شەفافی بگەیەنرێت، بەبێ لەدەستدانی متمانە یان جوانکردنی ڕاستییەکان." },
+        { "language": "kmr", "text": "Di civîneke kar a asta C1 de, hûn biryar didin ka xetereke hestiyar a mişterî çiqas vekirî were ragihandin bêyî windakirina baweriyê an nermkirina rastiyan." },
+        { "language": "pl", "text": "Na spotkaniu zawodowym na poziomie C1 decydujesz, jak otwarcie zakomunikować wrażliwe ryzyko dla klienta bez utraty zaufania i bez upiększania faktów." },
+        { "language": "ro", "text": "Într-o ședință de lucru de nivel C1, decideți cât de deschis trebuie comunicat un risc sensibil pentru client fără a pierde încrederea sau a înfrumuseța faptele." },
+        { "language": "sq", "text": "Në një takim pune të nivelit C1, vendosni sa hapur duhet komunikuar një rrezik i ndjeshëm për klientin pa humbur besimin ose pa zbukuruar faktet." }
+      ],
+      "learnerGoal": "Transparenz und Diplomatie abwägen: Fakten klar benennen, Timing und Ton steuern, unnötige Alarmwirkung vermeiden, Vertrauen sichern und eine verantwortliche Kommunikationslinie formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Balance transparency and diplomacy: name facts clearly, manage timing and tone, avoid unnecessary alarm, protect trust, and formulate a responsible communication line." },
+        { "language": "fa", "text": "شفافیت و دیپلماسی را بسنجید: واقعیت‌ها را روشن بیان کنید، زمان‌بندی و لحن را کنترل کنید، هشدار غیرضروری ایجاد نکنید، اعتماد را حفظ کنید و خط ارتباطی مسئولانه بسازید." },
+        { "language": "ar", "text": "وازن بين الشفافية والدبلوماسية: اذكر الوقائع بوضوح، وتحكم في التوقيت والنبرة، وتجنب إثارة إنذار غير ضروري، وحافظ على الثقة، وصغ خط تواصل مسؤولاً." },
+        { "language": "tr", "text": "Şeffaflık ile diplomasi arasında denge kurun: olguları net adlandırın, zamanlama ve tonu yönetin, gereksiz alarmı önleyin, güveni koruyun ve sorumlu bir iletişim çizgisi formüle edin." },
+        { "language": "ru", "text": "Взвесить прозрачность и дипломатичность: ясно назвать факты, управлять временем и тоном, избегать ненужной тревоги, сохранить доверие и сформулировать ответственную линию коммуникации." },
+        { "language": "ckb", "text": "شەفافیەت و دیپلۆماسیەت هەڵبسەنگێنە: ڕاستییەکان بە ڕوونی ناو ببە، کات و تۆن بەڕێوە ببە، هۆشداریی ناپێویست دروست مەکە، متمانە بپارێزە و هێڵێکی پەیوەندیی بەرپرسانە داڕێژە." },
+        { "language": "kmr", "text": "Şefafî û dîplomasiyê li hev bikin: rastiyan zelal nav bikin, dem û tonê rêve bibin, alarmeke nepêwîst çênekin, baweriyê biparêzin û rêzika ragihandina berpirsiyar biafirînin." },
+        { "language": "pl", "text": "Wyważ przejrzystość i dyplomację: jasno nazwij fakty, zarządzaj czasem i tonem, unikaj niepotrzebnego alarmu, chroń zaufanie i sformułuj odpowiedzialną linię komunikacji." },
+        { "language": "ro", "text": "Echilibrați transparența și diplomația: numiți clar faptele, gestionați momentul și tonul, evitați alarma inutilă, protejați încrederea și formulați o linie de comunicare responsabilă." },
+        { "language": "sq", "text": "Balancë mes transparencës dhe diplomacisë: përmendni qartë faktet, menaxhoni kohën dhe tonin, shmangni alarmimin e panevojshëm, ruani besimin dhe formuloni një linjë komunikimi të përgjegjshme." }
+      ],
+      "cefrLevel": "C1",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": ["berufssprache-b2", "berufssprache-c1"],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "compare-options",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 11,
+      "roles": [
+        {
+          "roleKey": "department-lead",
+          "displayName": "Abteilungsleitung",
+          "translations": [
+            { "language": "en", "text": "Department lead" },
+            { "language": "fa", "text": "مدیر دپارتمان" },
+            { "language": "ar", "text": "مدير القسم" },
+            { "language": "tr", "text": "Departman yöneticisi" },
+            { "language": "ru", "text": "Руководитель отдела" },
+            { "language": "ckb", "text": "بەڕێوەبەری دەپارتەمان" },
+            { "language": "kmr", "text": "Rêvebirê departmanê" },
+            { "language": "pl", "text": "Kierownik działu" },
+            { "language": "ro", "text": "Manager de departament" },
+            { "language": "sq", "text": "Drejtuesi i departamentit" }
+          ]
+        },
+        {
+          "roleKey": "communications-lead",
+          "displayName": "Kommunikationsleitung",
+          "translations": [
+            { "language": "en", "text": "Communications lead" },
+            { "language": "fa", "text": "مسئول ارتباطات" },
+            { "language": "ar", "text": "مسؤول التواصل" },
+            { "language": "tr", "text": "İletişim yöneticisi" },
+            { "language": "ru", "text": "Руководитель коммуникаций" },
+            { "language": "ckb", "text": "بەڕێوەبەری پەیوەندیکردن" },
+            { "language": "kmr", "text": "Rêvebirê ragihandinê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za komunikację" },
+            { "language": "ro", "text": "Responsabilul de comunicare" },
+            { "language": "sq", "text": "Drejtuesi i komunikimit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Sie",
+          "translations": [
+            { "language": "en", "text": "You" },
+            { "language": "fa", "text": "شما" },
+            { "language": "ar", "text": "أنت" },
+            { "language": "tr", "text": "Siz" },
+            { "language": "ru", "text": "Вы" },
+            { "language": "ckb", "text": "تۆ" },
+            { "language": "kmr", "text": "Hûn" },
+            { "language": "pl", "text": "Ty" },
+            { "language": "ro", "text": "Dumneavoastră" },
+            { "language": "sq", "text": "Ju" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "department-lead",
+          "baseText": "Wir haben ein heikles Thema: Bei einem Bestandskunden verzögert sich die technische Umstellung wahrscheinlich um zwei Wochen. Der Kunde fragt morgen nach dem Status. Wie offen sollten wir das ansprechen?",
+          "translations": [
+            { "language": "en", "text": "We have a delicate issue: for an existing customer, the technical migration will probably be delayed by two weeks. The customer is asking for a status update tomorrow. How openly should we address this?" },
+            { "language": "fa", "text": "یک موضوع حساس داریم: برای یکی از مشتریان فعلی، تغییر فنی احتمالاً دو هفته تأخیر خواهد داشت. مشتری فردا وضعیت را می‌پرسد. چقدر باید این موضوع را شفاف مطرح کنیم؟" },
+            { "language": "ar", "text": "لدينا موضوع حساس: لدى عميل قائم، من المحتمل أن يتأخر التحويل التقني أسبوعين. سيسأل العميل غداً عن الوضع. إلى أي مدى ينبغي أن نتحدث عن ذلك بصراحة؟" },
+            { "language": "tr", "text": "Hassas bir konumuz var: mevcut bir müşteride teknik geçiş muhtemelen iki hafta gecikecek. Müşteri yarın durum bilgisini soracak. Bunu ne kadar açık dile getirmeliyiz?" },
+            { "language": "ru", "text": "У нас деликатная тема: у действующего клиента технический переход, вероятно, задержится на две недели. Завтра клиент спросит о статусе. Насколько открыто нам стоит это озвучить?" },
+            { "language": "ckb", "text": "بابەتێکی هەستیارمان هەیە: بۆ کڕیارێکی ئێستا، گۆڕانی تەکنیکی بە ئەگەرێکی زۆر دوو هەفتە دوا دەکەوێت. کڕیار سبەی پرسیاری دۆخ دەکات. چەندە بە ڕوونی ئەمە باس بکەین؟" },
+            { "language": "kmr", "text": "Mijareke hestiyar heye: ji bo mişteriyekî heyî, veguherîna teknîkî bi îhtîmalek mezin du hefteyan dereng dikeve. Mişterî sibê rewşê dipirse. Divê em vê çiqas vekirî bibêjin?" },
+            { "language": "pl", "text": "Mamy delikatny temat: u stałego klienta techniczna migracja prawdopodobnie opóźni się o dwa tygodnie. Klient jutro zapyta o status. Jak otwarcie powinniśmy to poruszyć?" },
+            { "language": "ro", "text": "Avem un subiect delicat: la un client existent, trecerea tehnică va întârzia probabil cu două săptămâni. Clientul va întreba mâine despre status. Cât de deschis ar trebui să abordăm asta?" },
+            { "language": "sq", "text": "Kemi një temë delikate: te një klient ekzistues, kalimi teknik ka gjasa të vonohet dy javë. Klienti nesër do të pyesë për statusin. Sa hapur duhet ta trajtojmë këtë?" }
+          ],
+          "function": "sensitive-communication-setup",
+          "toneNote": "Die Abteilungsleitung stellt ein Kommunikationsdilemma zwischen Offenheit und Vertrauensschutz dar.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde weder beschwichtigen noch den Kunden mit Rohdaten überfallen. Wir sollten klar sagen, dass sich ein Risiko konkretisiert hat, gleichzeitig aber erklären, was wir bereits tun und wann der Kunde eine belastbare Entscheidung bekommt.",
+          "translations": [
+            { "language": "en", "text": "I would neither downplay it nor overwhelm the customer with raw data. We should clearly say that a risk has become concrete, but also explain what we are already doing and when the customer will receive a reliable decision." },
+            { "language": "fa", "text": "نه آن را کوچک جلوه می‌دهم و نه مشتری را با داده‌های خام غافلگیر می‌کنم. باید روشن بگوییم یک ریسک مشخص شده است، اما همزمان توضیح دهیم چه کاری در حال انجام است و مشتری چه زمانی تصمیم قابل اتکا دریافت می‌کند." },
+            { "language": "ar", "text": "لن أهوّن الأمر، ولن أفاجئ العميل ببيانات خام. ينبغي أن نقول بوضوح إن خطراً أصبح ملموساً، وفي الوقت نفسه نشرح ما نفعله بالفعل ومتى سيحصل العميل على قرار موثوق." },
+            { "language": "tr", "text": "Ne durumu hafife alırdım ne de müşteriyi ham verilerle boğardım. Bir riskin somutlaştığını açıkça söylemeli, aynı zamanda ne yaptığımızı ve müşterinin ne zaman güvenilir bir karar alacağını açıklamalıyız." },
+            { "language": "ru", "text": "Я бы не стал ни успокаивать пустыми словами, ни заваливать клиента сырыми данными. Нужно ясно сказать, что риск стал конкретным, и одновременно объяснить, что мы уже делаем и когда клиент получит надежное решение." },
+            { "language": "ckb", "text": "نە دەمەوێت مەسەلەکە بچووک بکەمەوە، نە کڕیار بە داتای خام سەرسام بکەم. دەبێت بە ڕوونی بڵێین مەترسییەک ڕوون بووە، بە هەمان کات ڕوون بکەین ئێستا چی دەکەین و کڕیار کەی بڕیارێکی پشتپێبەستوو وەردەگرێت." },
+            { "language": "kmr", "text": "Ez ne dixwazim wê biçûk nîşan bidim, ne jî mişterî bi daneyên xav mat bikim. Divê em zelal bibêjin ku xeterek konkret bûye, lê di heman demê de rave bikin em jixwe çi dikin û mişterî kengî biryareke pêbawer distîne." },
+            { "language": "pl", "text": "Nie bagatelizowałbym tego ani nie zasypywał klienta surowymi danymi. Powinniśmy jasno powiedzieć, że ryzyko się skonkretyzowało, a jednocześnie wyjaśnić, co już robimy i kiedy klient otrzyma wiążącą decyzję." },
+            { "language": "ro", "text": "Nu aș minimaliza situația și nici nu aș copleși clientul cu date brute. Ar trebui să spunem clar că un risc s-a concretizat, dar să explicăm totodată ce facem deja și când va primi clientul o decizie solidă." },
+            { "language": "sq", "text": "Nuk do ta zbusja situatën dhe as nuk do ta mbingarkoja klientin me të dhëna të papërpunuara. Duhet të themi qartë se një rrezik është konkretizuar, por edhe të shpjegojmë çfarë po bëjmë tashmë dhe kur klienti do të marrë një vendim të besueshëm." }
+          ],
+          "function": "balanced-opening-line",
+          "toneNote": "C1: Die Antwort vermeidet zwei Extreme und definiert eine transparente, aber kontrollierte Kommunikationslinie.",
+          "expectedLearnerAction": "Balance openness and diplomacy in an initial recommendation."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "communications-lead",
+          "baseText": "Wenn wir schon von Risiko sprechen, klingt das schnell dramatisch. Wäre es nicht besser, nur von einer internen Prüfung zu sprechen?",
+          "translations": [
+            { "language": "en", "text": "If we already speak of risk, it can quickly sound dramatic. Wouldn't it be better to speak only of an internal review?" },
+            { "language": "fa", "text": "اگر همین حالا از ریسک حرف بزنیم، سریع دراماتیک به نظر می‌رسد. بهتر نیست فقط از یک بررسی داخلی صحبت کنیم؟" },
+            { "language": "ar", "text": "إذا تحدثنا الآن عن خطر، فقد يبدو الأمر درامياً بسرعة. أليس من الأفضل أن نتحدث فقط عن مراجعة داخلية؟" },
+            { "language": "tr", "text": "Şimdiden riskten söz edersek bu hızlıca dramatik duyulabilir. Sadece iç incelemeden söz etmek daha iyi olmaz mı?" },
+            { "language": "ru", "text": "Если мы уже сейчас говорим о риске, это быстро может прозвучать драматично. Не лучше ли говорить только о внутренней проверке?" },
+            { "language": "ckb", "text": "ئەگەر ئێستا باس لە مەترسی بکەین، زوو دراماتیکی دەنگ دەدات. باشتر نییە تەنها باس لە پێداچوونەوەی ناوخۆیی بکەین؟" },
+            { "language": "kmr", "text": "Heke em niha ji xeterê biaxivin, ev zû dramatîk xuya dike. Ma ne çêtir e ku em tenê ji vekolîna hundirîn biaxivin?" },
+            { "language": "pl", "text": "Jeśli już mówimy o ryzyku, szybko zabrzmi to dramatycznie. Czy nie lepiej mówić tylko o wewnętrznej weryfikacji?" },
+            { "language": "ro", "text": "Dacă vorbim deja despre risc, poate suna repede dramatic. Nu ar fi mai bine să vorbim doar despre o verificare internă?" },
+            { "language": "sq", "text": "Nëse flasim që tani për rrezik, mund të tingëllojë shpejt dramatike. A nuk do të ishte më mirë të flasim vetëm për një kontroll të brendshëm?" }
+          ],
+          "function": "diplomacy-objection",
+          "toneNote": "Die Kommunikationsleitung schlägt eine weichere, aber möglicherweise zu vage Formulierung vor.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Der Begriff Prüfung allein ist zu ausweichend, wenn wir bereits eine wahrscheinliche Verzögerung sehen. Diplomatisch wäre eher: Wir prüfen gerade eine technische Abweichung, die den Termin beeinflussen kann, und melden bis Freitag eine belastbare Einschätzung.",
+          "translations": [
+            { "language": "en", "text": "The term review alone is too evasive if we already see a probable delay. A more diplomatic wording would be: we are currently reviewing a technical deviation that may affect the timeline, and we will provide a reliable assessment by Friday." },
+            { "language": "fa", "text": "واژه بررسی به‌تنهایی بیش از حد طفره‌آمیز است وقتی ما از قبل یک تأخیر محتمل می‌بینیم. شکل دیپلماتیک‌تر این است: ما در حال بررسی یک انحراف فنی هستیم که می‌تواند روی زمان‌بندی اثر بگذارد، و تا جمعه ارزیابی قابل اتکا ارائه می‌کنیم." },
+            { "language": "ar", "text": "مصطلح المراجعة وحده مراوغ أكثر من اللازم إذا كنا نرى بالفعل تأخيراً محتملاً. الصياغة الدبلوماسية أكثر هي: نراجع حالياً انحرافاً تقنياً قد يؤثر في الموعد، وسنقدم تقييماً موثوقاً بحلول الجمعة." },
+            { "language": "tr", "text": "Sadece inceleme demek, olası bir gecikmeyi zaten görüyorsak fazla kaçamak olur. Daha diplomatik ifade şu olabilir: Zaman planını etkileyebilecek teknik bir sapmayı şu anda inceliyoruz ve cuma gününe kadar güvenilir bir değerlendirme sunacağız." },
+            { "language": "ru", "text": "Одного слова проверка слишком уклончиво, если мы уже видим вероятную задержку. Более дипломатично: мы сейчас проверяем техническое отклонение, которое может повлиять на срок, и до пятницы дадим надежную оценку." },
+            { "language": "ckb", "text": "وشەی پێداچوونەوە بە تەنها زۆر خۆدزینەوەیە ئەگەر ئێمە پێشتر دواخستنی ئەگەری ببینین. داڕشتنی دیپلۆماسیتر ئەمەیە: ئێمە ئێستا لادانێکی تەکنیکی دەپشکنین کە دەتوانێت کاریگەری لەسەر کات‌بەندی هەبێت، و تا هەینی هەڵسەنگاندنێکی پشتپێبەستوو دەدەین." },
+            { "language": "kmr", "text": "Gotina vekolînê bi tena serê xwe pir dûrketin e, heke em jixwe derengiyeke gengaz dibînin. Gotineke dîplomatîktir ev e: em niha cudahiyeke teknîkî vedikolin ku dikare demê bandor bike, û heta înê nirxandineke pêbawer didin." },
+            { "language": "pl", "text": "Samo słowo weryfikacja jest zbyt wymijające, jeśli już widzimy prawdopodobne opóźnienie. Bardziej dyplomatycznie byłoby: obecnie sprawdzamy odchylenie techniczne, które może wpłynąć na termin, i do piątku przekażemy wiążącą ocenę." },
+            { "language": "ro", "text": "Termenul verificare singur este prea evaziv dacă vedem deja o întârziere probabilă. O formulare mai diplomatică ar fi: analizăm în prezent o abatere tehnică ce poate influența termenul și vom transmite până vineri o evaluare solidă." },
+            { "language": "sq", "text": "Termi kontroll i vetëm është shumë shmangës nëse tashmë shohim një vonesë të mundshme. Një formulim më diplomatik do të ishte: po shqyrtojmë aktualisht një devijim teknik që mund të ndikojë afatin dhe deri të premten do të japim një vlerësim të besueshëm." }
+          ],
+          "function": "precise-diplomatic-wording",
+          "toneNote": "Die Antwort ersetzt eine zu vage Formulierung durch kontrollierte Transparenz.",
+          "expectedLearnerAction": "Reject a vague formulation and propose a precise diplomatic alternative."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "department-lead",
+          "baseText": "Der Vertrieb befürchtet, dass der Kunde sofort den gesamten Projektplan infrage stellt. Wie grenzen wir die Botschaft ein?",
+          "translations": [
+            { "language": "en", "text": "Sales fears that the customer will immediately question the entire project plan. How do we limit the message?" },
+            { "language": "fa", "text": "فروش نگران است که مشتری فوراً کل برنامه پروژه را زیر سؤال ببرد. پیام را چطور محدود کنیم؟" },
+            { "language": "ar", "text": "يخشى قسم المبيعات أن يشكك العميل فوراً في خطة المشروع كلها. كيف نحدد الرسالة؟" },
+            { "language": "tr", "text": "Satış ekibi, müşterinin hemen tüm proje planını sorgulayacağından endişe ediyor. Mesajı nasıl sınırlandırırız?" },
+            { "language": "ru", "text": "Отдел продаж опасается, что клиент сразу поставит под вопрос весь план проекта. Как нам ограничить сообщение?" },
+            { "language": "ckb", "text": "فرۆشتن نیگەرانی ئەوەیە کە کڕیار دەستبەجێ هەموو پلانی پڕۆژە بخاتە ژێر پرسیار. پەیامەکە چۆن سنووردار بکەین؟" },
+            { "language": "kmr", "text": "Firotin ditirse ku mişterî yekser hemû plana projeyê bike bin pirs. Em peyamê çawa sînor bikin?" },
+            { "language": "pl", "text": "Sprzedaż obawia się, że klient od razu zakwestionuje cały plan projektu. Jak ograniczymy przekaz?" },
+            { "language": "ro", "text": "Vânzările se tem că clientul va pune imediat sub semnul întrebării întregul plan de proiect. Cum delimităm mesajul?" },
+            { "language": "sq", "text": "Shitjet kanë frikë se klienti do ta vërë menjëherë në pikëpyetje të gjithë planin e projektit. Si ta kufizojmë mesazhin?" }
+          ],
+          "function": "scope-control-request",
+          "toneNote": "Die Abteilungsleitung fragt nach einer begrenzenden Kommunikationsstrategie.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir sollten den Umfang ausdrücklich begrenzen: Es geht um die technische Umstellung eines Teilmoduls, nicht um die gesamte Projektarchitektur. Gleichzeitig nennen wir offen, welche Abhängigkeiten wir bis Freitag prüfen.",
+          "translations": [
+            { "language": "en", "text": "We should explicitly limit the scope: it concerns the technical migration of one submodule, not the entire project architecture. At the same time, we openly name which dependencies we are checking by Friday." },
+            { "language": "fa", "text": "باید دامنه را صریح محدود کنیم: موضوع تغییر فنی یک زیرماژول است، نه کل معماری پروژه. همزمان شفاف می‌گوییم تا جمعه کدام وابستگی‌ها را بررسی می‌کنیم." },
+            { "language": "ar", "text": "ينبغي أن نحدد النطاق صراحة: الأمر يتعلق بالتحويل التقني لوحدة فرعية، لا ببنية المشروع كلها. وفي الوقت نفسه نذكر بوضوح أي اعتماديات نراجعها حتى الجمعة." },
+            { "language": "tr", "text": "Kapsamı açıkça sınırlandırmalıyız: konu tüm proje mimarisi değil, bir alt modülün teknik geçişidir. Aynı zamanda cuma gününe kadar hangi bağımlılıkları kontrol ettiğimizi açıkça belirtiriz." },
+            { "language": "ru", "text": "Нам следует явно ограничить масштаб: речь идет о техническом переходе одного подмодуля, а не о всей архитектуре проекта. Одновременно мы открыто называем, какие зависимости проверяем до пятницы." },
+            { "language": "ckb", "text": "دەبێت قەبارەکە بە ڕوونی سنووردار بکەین: باس لە گۆڕانی تەکنیکی ژێرماژوولێکە، نە هەموو ئەندازەی پڕۆژە. هەمان کات بە شەفافی ناو دەبەین کام پەیوەستبوونەکان تا هەینی دەپشکنین." },
+            { "language": "kmr", "text": "Divê em qada mijarê eşkere sînor bikin: mijar veguherîna teknîkî ya binmodulekê ye, ne hemû avahiya projeyê. Di heman demê de em vekirî nav dikin ka heta înê kîjan girêdanan kontrol dikin." },
+            { "language": "pl", "text": "Powinniśmy wyraźnie ograniczyć zakres: chodzi o techniczną migrację jednego modułu cząstkowego, a nie o całą architekturę projektu. Jednocześnie otwarcie wskazujemy, które zależności sprawdzamy do piątku." },
+            { "language": "ro", "text": "Ar trebui să limităm explicit domeniul: este vorba despre trecerea tehnică a unui submodul, nu despre întreaga arhitectură a proiectului. În același timp, numim deschis ce dependențe verificăm până vineri." },
+            { "language": "sq", "text": "Duhet ta kufizojmë qartë fushën: bëhet fjalë për kalimin teknik të një nënmoduli, jo për gjithë arkitekturën e projektit. Njëkohësisht përmendim hapur cilat varësi po kontrollojmë deri të premten." }
+          ],
+          "function": "scope-and-dependencies",
+          "toneNote": "C1: Die Antwort begrenzt die Botschaft und bleibt dabei sachlich transparent.",
+          "expectedLearnerAction": "Limit the scope without hiding relevant dependencies."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "communications-lead",
+          "baseText": "Sollen wir die möglichen zwei Wochen schon nennen? Oder warten wir, bis die Prüfung abgeschlossen ist?",
+          "translations": [
+            { "language": "en", "text": "Should we already mention the possible two weeks? Or should we wait until the review is complete?" },
+            { "language": "fa", "text": "آیا همین حالا دو هفته احتمالی را بگوییم؟ یا صبر کنیم تا بررسی تمام شود؟" },
+            { "language": "ar", "text": "هل ينبغي أن نذكر الأسبوعين المحتملين الآن؟ أم ننتظر حتى تنتهي المراجعة؟" },
+            { "language": "tr", "text": "Olası iki haftayı şimdiden belirtmeli miyiz? Yoksa inceleme tamamlanana kadar beklemeli miyiz?" },
+            { "language": "ru", "text": "Стоит ли уже сейчас назвать возможные две недели? Или подождать, пока проверка завершится?" },
+            { "language": "ckb", "text": "ئایا دەبێت دوو هەفتەی ئەگەری ئێستا ناو ببەین؟ یان چاوەڕێ بکەین تا پێداچوونەوەکە تەواو دەبێت؟" },
+            { "language": "kmr", "text": "Ma divê em van du hefteyên gengaz niha bibêjin? Yan heta vekolîn temam bibe bisekinin?" },
+            { "language": "pl", "text": "Czy powinniśmy już wspomnieć o możliwych dwóch tygodniach? Czy poczekać, aż weryfikacja się zakończy?" },
+            { "language": "ro", "text": "Ar trebui să menționăm deja cele două săptămâni posibile? Sau să așteptăm până se încheie verificarea?" },
+            { "language": "sq", "text": "A duhet t’i përmendim që tani dy javët e mundshme? Apo të presim derisa kontrolli të përfundojë?" }
+          ],
+          "function": "timing-question",
+          "toneNote": "Die Kommunikationsleitung fragt nach Timing und Grad der Offenheit.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die zwei Wochen nicht als feste Verzögerung darstellen, aber als realistische Spannbreite nennen. Sonst wirkt die spätere Korrektur wie eine Überraschung, obwohl wir das Risiko heute schon sehen.",
+          "translations": [
+            { "language": "en", "text": "I would not present the two weeks as a fixed delay, but I would name them as a realistic range. Otherwise the later correction will look like a surprise, even though we already see the risk today." },
+            { "language": "fa", "text": "دو هفته را به‌عنوان تأخیر قطعی بیان نمی‌کنم، اما آن را به‌عنوان بازه واقع‌بینانه نام می‌برم. وگرنه اصلاح بعدی شبیه غافلگیری به نظر می‌رسد، در حالی که ما همین امروز ریسک را می‌بینیم." },
+            { "language": "ar", "text": "لن أعرض الأسبوعين كتأخير ثابت، لكنني سأذكرهما كنطاق واقعي. وإلا ستبدو المراجعة اللاحقة مفاجئة، رغم أننا نرى الخطر اليوم بالفعل." },
+            { "language": "tr", "text": "İki haftayı kesin bir gecikme olarak sunmazdım, ama gerçekçi bir aralık olarak belirtirdim. Aksi halde sonraki düzeltme bir sürpriz gibi görünür, oysa riski bugün zaten görüyoruz." },
+            { "language": "ru", "text": "Я бы не представлял две недели как фиксированную задержку, но назвал бы их реалистичным диапазоном. Иначе последующая корректировка будет выглядеть как сюрприз, хотя мы уже сегодня видим риск." },
+            { "language": "ckb", "text": "دوو هەفتە وەک دواخستنی جێگیر پیشان نادەم، بەڵام وەک مەودایەکی ڕاستبینانە ناوی دەبەم. ئەگینا چاککردنەوەی دواتر وەک سەرسوڕمان دەردەکەوێت، لە کاتێکدا ئێمە ئەمڕۆ مەترسییەکە دەبینین." },
+            { "language": "kmr", "text": "Ez ê du hefteyan wekî derengiyeke sabît nîşan nedim, lê wekî navbereke rastîn nav bikim. Wekî din rastkirina paşê wekî surprîzek xuya dike, herçend em îro jixwe xeterê dibînin." },
+            { "language": "pl", "text": "Nie przedstawiałbym dwóch tygodni jako stałego opóźnienia, ale nazwałbym je realistycznym zakresem. W przeciwnym razie późniejsza korekta będzie wyglądała jak zaskoczenie, choć już dziś widzimy ryzyko." },
+            { "language": "ro", "text": "Nu aș prezenta cele două săptămâni ca întârziere fixă, dar le-aș numi ca interval realist. Altfel corecția ulterioară va părea o surpriză, deși vedem deja riscul astăzi." },
+            { "language": "sq", "text": "Nuk do t’i paraqisja dy javët si vonesë të sigurt, por do t’i përmendja si interval realist. Përndryshe korrigjimi i mëvonshëm do të duket si surprizë, megjithëse rrezikun e shohim që sot." }
+          ],
+          "function": "range-not-certainty",
+          "toneNote": "Die Antwort unterscheidet zwischen wahrscheinlicher Spannbreite und endgültiger Aussage.",
+          "expectedLearnerAction": "Choose transparent timing language without overstating certainty."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "department-lead",
+          "baseText": "Was ist mit der internen Verantwortung? Der Kunde könnte fragen, warum wir das nicht früher gesehen haben.",
+          "translations": [
+            { "language": "en", "text": "What about internal responsibility? The customer might ask why we did not see this earlier." },
+            { "language": "fa", "text": "مسئولیت داخلی چه می‌شود؟ ممکن است مشتری بپرسد چرا زودتر این را ندیدیم." },
+            { "language": "ar", "text": "ماذا عن المسؤولية الداخلية؟ قد يسأل العميل لماذا لم نرَ ذلك في وقت أبكر." },
+            { "language": "tr", "text": "Peki ya iç sorumluluk? Müşteri bunu neden daha önce görmediğimizi sorabilir." },
+            { "language": "ru", "text": "А как быть с внутренней ответственностью? Клиент может спросить, почему мы не увидели это раньше." },
+            { "language": "ckb", "text": "بەرپرسیارێتیی ناوخۆیی چی؟ کڕیار ڕەنگە بپرسێت بۆچی زووتر ئەمەمان نەبینی." },
+            { "language": "kmr", "text": "Berpirsiyariya hundirîn çi? Mişterî dikare bipirse çima me vê zûtir nedît." },
+            { "language": "pl", "text": "A co z odpowiedzialnością wewnętrzną? Klient może zapytać, dlaczego nie zauważyliśmy tego wcześniej." },
+            { "language": "ro", "text": "Dar responsabilitatea internă? Clientul ar putea întreba de ce nu am văzut asta mai devreme." },
+            { "language": "sq", "text": "Po përgjegjësia e brendshme? Klienti mund të pyesë pse nuk e pamë këtë më herët." }
+          ],
+          "function": "accountability-question",
+          "toneNote": "Die Abteilungsleitung fragt nach verantwortlicher, aber nicht selbstschädigender Sprache.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Wir sollten Verantwortung auf Prozessebene übernehmen: Die Abhängigkeit wurde zu spät sichtbar, und wir haben den Prüfpunkt nachgeschärft. Ich würde nicht sagen, dass jemand versagt hat, sondern dass wir die Frühwarnung verbessern.",
+          "translations": [
+            { "language": "en", "text": "We should take responsibility at process level: the dependency became visible too late, and we have tightened the review point. I would not say that someone failed, but that we are improving early warning." },
+            { "language": "fa", "text": "باید مسئولیت را در سطح فرایند بپذیریم: وابستگی دیر دیده شد و ما نقطه بررسی را دقیق‌تر کرده‌ایم. نمی‌گویم کسی شکست خورده است، بلکه می‌گویم هشدار زودهنگام را بهتر می‌کنیم." },
+            { "language": "ar", "text": "ينبغي أن نتحمل المسؤولية على مستوى العملية: ظهرت الاعتمادية في وقت متأخر، وقد شددنا نقطة المراجعة. لن أقول إن شخصاً فشل، بل إننا نحسن الإنذار المبكر." },
+            { "language": "tr", "text": "Süreç düzeyinde sorumluluk almalıyız: bağımlılık çok geç görünür hale geldi ve kontrol noktasını netleştirdik. Birinin başarısız olduğunu söylemezdim; erken uyarıyı iyileştirdiğimizi söylerdim." },
+            { "language": "ru", "text": "Нам следует взять ответственность на уровне процесса: зависимость стала видимой слишком поздно, и мы усилили точку проверки. Я бы не говорил, что кто-то провалился, а что мы улучшаем раннее предупреждение." },
+            { "language": "ckb", "text": "دەبێت بەرپرسیارێتی لە ئاستی پرۆسەدا وەربگرین: پەیوەستبوونەکە زۆر درەنگ دیار بوو، و ئێمە خاڵی پشکنینمان وردتر کردووە. ناڵێم کەسێک شکستیهێناوە، بەڵکو دەڵێم هۆشداریی پێشوەخت باشتر دەکەین." },
+            { "language": "kmr", "text": "Divê em berpirsiyarî li asta pêvajoyê bigirin: girêdan pir dereng xuya bû, û me xala kontrolê tundtir kir. Ez ê nebêjim kesek bi ser neket, lê bêjim em hişyariya zû baştir dikin." },
+            { "language": "pl", "text": "Powinniśmy wziąć odpowiedzialność na poziomie procesu: zależność stała się widoczna zbyt późno, a my doprecyzowaliśmy punkt kontrolny. Nie mówiłbym, że ktoś zawiódł, lecz że poprawiamy wczesne ostrzeganie." },
+            { "language": "ro", "text": "Ar trebui să ne asumăm responsabilitatea la nivel de proces: dependența a devenit vizibilă prea târziu, iar noi am întărit punctul de verificare. Nu aș spune că cineva a eșuat, ci că îmbunătățim avertizarea timpurie." },
+            { "language": "sq", "text": "Duhet të marrim përgjegjësi në nivel procesi: varësia u bë e dukshme shumë vonë dhe ne e kemi forcuar pikën e kontrollit. Nuk do të thosha se dikush dështoi, por se po përmirësojmë paralajmërimin e hershëm." }
+          ],
+          "function": "process-accountability",
+          "toneNote": "C1: Die Antwort übernimmt Verantwortung, ohne einzelne Personen oder das Unternehmen unnötig zu beschädigen.",
+          "expectedLearnerAction": "Formulate accountability at process level, not as personal blame."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "communications-lead",
+          "baseText": "Können Sie daraus eine kurze Linie für das Kundengespräch formulieren?",
+          "translations": [
+            { "language": "en", "text": "Can you turn that into a brief line for the customer conversation?" },
+            { "language": "fa", "text": "می‌توانید از این یک خط کوتاه برای گفت‌وگو با مشتری بسازید؟" },
+            { "language": "ar", "text": "هل يمكنك صياغة خط قصير من ذلك لمحادثة العميل؟" },
+            { "language": "tr", "text": "Bundan müşteri görüşmesi için kısa bir çizgi formüle edebilir misiniz?" },
+            { "language": "ru", "text": "Можете сформулировать из этого короткую линию для разговора с клиентом?" },
+            { "language": "ckb", "text": "دەتوانیت لەمە هێڵێکی کورتی پەیوەندی بۆ گفتوگۆی کڕیار داڕێژیت؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji vê ji bo axaftina bi mişterî re rêzikeke kurt biafirînin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani sformułować z tego krótką linię do rozmowy z klientem?" },
+            { "language": "ro", "text": "Puteți formula din asta o linie scurtă pentru discuția cu clientul?" },
+            { "language": "sq", "text": "A mund ta formuloni këtë si një linjë të shkurtër për bisedën me klientin?" }
+          ],
+          "function": "ask-for-final-wording",
+          "toneNote": "Die Kommunikationsleitung bittet um eine konkrete Formulierung.",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Unsere Linie wäre: Wir sehen bei einem Teilmodul eine technische Abweichung, die den Termin um bis zu zwei Wochen beeinflussen kann. Wir prüfen die Abhängigkeiten bis Freitag, nennen dann eine belastbare Entscheidung und haben den internen Prüfpunkt bereits verschärft.",
+          "translations": [
+            { "language": "en", "text": "Our line would be: we see a technical deviation in one submodule that may affect the timeline by up to two weeks. We are checking the dependencies by Friday, will then provide a reliable decision, and have already tightened the internal review point." },
+            { "language": "fa", "text": "خط ما این است: در یک زیرماژول یک انحراف فنی می‌بینیم که می‌تواند زمان‌بندی را تا دو هفته تحت تأثیر قرار دهد. تا جمعه وابستگی‌ها را بررسی می‌کنیم، سپس تصمیم قابل اتکا می‌دهیم و نقطه بررسی داخلی را از قبل سخت‌گیرانه‌تر کرده‌ایم." },
+            { "language": "ar", "text": "سيكون خطنا: نرى في وحدة فرعية انحرافاً تقنياً يمكن أن يؤثر في الموعد بما يصل إلى أسبوعين. نراجع الاعتماديات حتى الجمعة، ثم نقدم قراراً موثوقاً، وقد شددنا بالفعل نقطة المراجعة الداخلية." },
+            { "language": "tr", "text": "Çizgimiz şu olurdu: Bir alt modülde zaman planını iki haftaya kadar etkileyebilecek teknik bir sapma görüyoruz. Bağımlılıkları cuma gününe kadar kontrol ediyoruz, ardından güvenilir bir karar vereceğiz ve iç kontrol noktasını zaten sıkılaştırdık." },
+            { "language": "ru", "text": "Наша линия была бы такой: в одном подмодуле мы видим техническое отклонение, которое может повлиять на срок до двух недель. До пятницы мы проверяем зависимости, затем дадим надежное решение и уже усилили внутреннюю точку проверки." },
+            { "language": "ckb", "text": "هێڵی ئێمە ئەمە دەبێت: لە ژێرماژوولێکدا لادانێکی تەکنیکی دەبینین کە دەتوانێت تا دوو هەفتە کاریگەری لەسەر کات‌بەندی هەبێت. تا هەینی پەیوەستبوونەکان دەپشکنین، پاشان بڕیارێکی پشتپێبەستوو دەدەین و خاڵی پشکنینی ناوخۆمان پێشتر توندتر کردووە." },
+            { "language": "kmr", "text": "Rêzika me ev e: em di binmodulekê de cudahiyeke teknîkî dibînin ku dikare heta du hefteyan demê bandor bike. Em heta înê girêdanan kontrol dikin, paşê biryareke pêbawer didin û xala kontrola hundirîn jixwe tundtir kiriye." },
+            { "language": "pl", "text": "Nasza linia brzmiałaby: w jednym module cząstkowym widzimy odchylenie techniczne, które może wpłynąć na termin nawet o dwa tygodnie. Do piątku sprawdzamy zależności, potem przekażemy wiążącą decyzję i już zaostrzyliśmy wewnętrzny punkt kontrolny." },
+            { "language": "ro", "text": "Linia noastră ar fi: vedem la un submodul o abatere tehnică ce poate influența termenul cu până la două săptămâni. Verificăm dependențele până vineri, apoi comunicăm o decizie solidă și am întărit deja punctul intern de verificare." },
+            { "language": "sq", "text": "Linja jonë do të ishte: te një nënmodul shohim një devijim teknik që mund të ndikojë afatin deri në dy javë. Deri të premten kontrollojmë varësitë, pastaj japim një vendim të besueshëm dhe e kemi forcuar tashmë pikën e brendshme të kontrollit." }
+          ],
+          "function": "final-communication-line",
+          "toneNote": "Die Abschlussformulierung verbindet Transparenz, Begrenzung, Zeitpunkt und Prozessverantwortung.",
+          "expectedLearnerAction": "Produce a concise customer-facing communication line."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde weder beschwichtigen noch den Kunden mit Rohdaten überfallen. Wir sollten klar sagen, dass sich ein Risiko konkretisiert hat, gleichzeitig aber erklären, was wir bereits tun und wann der Kunde eine belastbare Entscheidung bekommt.",
+              "translations": [
+                { "language": "en", "text": "I would neither downplay it nor overwhelm the customer with raw data. We should clearly say that a risk has become concrete, but also explain what we are already doing and when the customer will receive a reliable decision." },
+                { "language": "fa", "text": "نه آن را کوچک جلوه می‌دهم و نه مشتری را با داده‌های خام غافلگیر می‌کنم. باید روشن بگوییم یک ریسک مشخص شده است، اما همزمان توضیح دهیم چه کاری در حال انجام است و مشتری چه زمانی تصمیم قابل اتکا دریافت می‌کند." },
+                { "language": "ar", "text": "لن أهوّن الأمر، ولن أفاجئ العميل ببيانات خام. ينبغي أن نقول بوضوح إن خطراً أصبح ملموساً، وفي الوقت نفسه نشرح ما نفعله بالفعل ومتى سيحصل العميل على قرار موثوق." },
+                { "language": "tr", "text": "Ne durumu hafife alırdım ne de müşteriyi ham verilerle boğardım. Bir riskin somutlaştığını açıkça söylemeli, aynı zamanda ne yaptığımızı ve müşterinin ne zaman güvenilir bir karar alacağını açıklamalıyız." },
+                { "language": "ru", "text": "Я бы не стал ни успокаивать пустыми словами, ни заваливать клиента сырыми данными. Нужно ясно сказать, что риск стал конкретным, и одновременно объяснить, что мы уже делаем и когда клиент получит надежное решение." },
+                { "language": "ckb", "text": "نە دەمەوێت مەسەلەکە بچووک بکەمەوە، نە کڕیار بە داتای خام سەرسام بکەم. دەبێت بە ڕوونی بڵێین مەترسییەک ڕوون بووە، بە هەمان کات ڕوون بکەین ئێستا چی دەکەین و کڕیار کەی بڕیارێکی پشتپێبەستوو وەردەگرێت." },
+                { "language": "kmr", "text": "Ez ne dixwazim wê biçûk nîşan bidim, ne jî mişterî bi daneyên xav mat bikim. Divê em zelal bibêjin ku xeterek konkret bûye, lê di heman demê de rave bikin em jixwe çi dikin û mişterî kengî biryareke pêbawer distîne." },
+                { "language": "pl", "text": "Nie bagatelizowałbym tego ani nie zasypywał klienta surowymi danymi. Powinniśmy jasno powiedzieć, że ryzyko się skonkretyzowało, a jednocześnie wyjaśnić, co już robimy i kiedy klient otrzyma wiążącą decyzję." },
+                { "language": "ro", "text": "Nu aș minimaliza situația și nici nu aș copleși clientul cu date brute. Ar trebui să spunem clar că un risc s-a concretizat, dar să explicăm totodată ce facem deja și când va primi clientul o decizie solidă." },
+                { "language": "sq", "text": "Nuk do ta zbusja situatën dhe as nuk do ta mbingarkoja klientin me të dhëna të papërpunuara. Duhet të themi qartë se një rrezik është konkretizuar, por edhe të shpjegojmë çfarë po bëjmë tashmë dhe kur klienti do të marrë një vendim të besueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet beide Extreme und verbindet Offenheit mit Handlungsfähigkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids both extremes and combines openness with capacity to act." },
+                { "language": "fa", "text": "قوی: پاسخ از هر دو افراط پرهیز می‌کند و شفافیت را با توان اقدام ترکیب می‌کند." },
+                { "language": "ar", "text": "قوي: يتجنب الجواب كلا الطرفين ويجمع بين الصراحة والقدرة على التصرف." },
+                { "language": "tr", "text": "Güçlü: cevap iki uçtan da kaçınır ve açıklığı eylem kapasitesiyle birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ избегает обеих крайностей и соединяет открытость со способностью действовать." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە هەردوو توندڕەوییەکە دوور دەکەوێتەوە و کراوەیی لەگەڵ توانای کردار پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji her du aliyan dûr dimîne û vekirîbûnê bi karîna çalakiyê re girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika obu skrajności i łączy otwartość ze zdolnością działania." },
+                { "language": "ro", "text": "Puternic: răspunsul evită ambele extreme și combină deschiderea cu capacitatea de acțiune." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang të dy ekstremet dhe bashkon hapjen me aftësinë për të vepruar." }
+              ],
+              "explanationKey": "balanced-transparency"
+            },
+            {
+              "id": "weak",
+              "text": "Wir sollten dem Kunden erst einmal sagen, dass wir intern noch prüfen und uns melden, sobald wir Genaueres wissen.",
+              "translations": [
+                { "language": "en", "text": "For now, we should tell the customer that we are still reviewing things internally and will get back to them as soon as we know more." },
+                { "language": "fa", "text": "فعلاً باید به مشتری بگوییم که هنوز در حال بررسی داخلی هستیم و به محض اینکه دقیق‌تر بدانیم، خبر می‌دهیم." },
+                { "language": "ar", "text": "ينبغي أن نقول للعميل أولاً إننا ما زلنا نراجع داخلياً وسنعود إليه عندما نعرف المزيد." },
+                { "language": "tr", "text": "Şimdilik müşteriye hâlâ içeride incelediğimizi ve daha kesin bilgi sahibi olur olmaz döneceğimizi söylemeliyiz." },
+                { "language": "ru", "text": "Пока нам следует сказать клиенту, что мы еще проверяем это внутри и свяжемся, как только узнаем больше." },
+                { "language": "ckb", "text": "بۆ ئێستا دەبێت بە کڕیار بڵێین هێشتا ناوخۆیی دەپشکنین و هەر کات زانیاری وردترمان هەبوو دەگەڕێینەوە." },
+                { "language": "kmr", "text": "Niha divê em ji mişterî re bibêjin ku em hê hundirîn vedikolin û gava zanyariyeke hûrtir hebe em vedigerin." },
+                { "language": "pl", "text": "Na razie powinniśmy powiedzieć klientowi, że jeszcze sprawdzamy to wewnętrznie i odezwiemy się, gdy będziemy wiedzieć więcej." },
+                { "language": "ro", "text": "Deocamdată ar trebui să îi spunem clientului că încă verificăm intern și revenim când știm mai multe." },
+                { "language": "sq", "text": "Për momentin duhet t’i themi klientit se ende po e kontrollojmë brenda dhe do të kthehemi sapo të dimë më saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Die Antwort schützt kurzfristig, verschweigt aber ein bereits erkennbares Risiko.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: the answer protects the situation briefly but hides a risk that is already visible." },
+                { "language": "fa", "text": "قابل‌باور اما خیلی مبهم: پاسخ در کوتاه‌مدت محافظت می‌کند، اما ریسکی را که از قبل دیده می‌شود پنهان می‌کند." },
+                { "language": "ar", "text": "معقول لكنه غامض جداً: يحمي الجواب الموقف مؤقتاً، لكنه يخفي خطراً بات واضحاً بالفعل." },
+                { "language": "tr", "text": "Makuldür ama çok belirsiz: cevap kısa vadede korur, ancak zaten görünen bir riski gizler." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: ответ краткосрочно защищает ситуацию, но скрывает уже видимый риск." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام زۆر ناڕوونە: وەڵامەکە بۆ ماوەیەکی کورت دۆخەکە دەپارێزێت، بەڵام مەترسییەکی پێشتر دیار دەشارێتەوە." },
+                { "language": "kmr", "text": "Bawerbar e lê pir nezelal e: bersiv demek kurt rewşê diparêze, lê xetereke jixwe xuya veşêre." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt niejasne: odpowiedź chroni sytuację krótkoterminowo, ale ukrywa już widoczne ryzyko." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: răspunsul protejează pe termen scurt, dar ascunde un risc deja vizibil." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: përgjigjja mbron përkohësisht, por fsheh një rrezik tashmë të dukshëm." }
+              ],
+              "explanationKey": "vague-protection"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Begriff Prüfung allein ist zu ausweichend, wenn wir bereits eine wahrscheinliche Verzögerung sehen. Diplomatisch wäre eher: Wir prüfen gerade eine technische Abweichung, die den Termin beeinflussen kann, und melden bis Freitag eine belastbare Einschätzung.",
+              "translations": [
+                { "language": "en", "text": "The term review alone is too evasive if we already see a probable delay. A more diplomatic wording would be: we are currently reviewing a technical deviation that may affect the timeline, and we will provide a reliable assessment by Friday." },
+                { "language": "fa", "text": "واژه بررسی به‌تنهایی بیش از حد طفره‌آمیز است وقتی ما از قبل یک تأخیر محتمل می‌بینیم. شکل دیپلماتیک‌تر این است: ما در حال بررسی یک انحراف فنی هستیم که می‌تواند روی زمان‌بندی اثر بگذارد، و تا جمعه ارزیابی قابل اتکا ارائه می‌کنیم." },
+                { "language": "ar", "text": "مصطلح المراجعة وحده مراوغ أكثر من اللازم إذا كنا نرى بالفعل تأخيراً محتملاً. الصياغة الدبلوماسية أكثر هي: نراجع حالياً انحرافاً تقنياً قد يؤثر في الموعد، وسنقدم تقييماً موثوقاً بحلول الجمعة." },
+                { "language": "tr", "text": "Sadece inceleme demek, olası bir gecikmeyi zaten görüyorsak fazla kaçamak olur. Daha diplomatik ifade şu olabilir: Zaman planını etkileyebilecek teknik bir sapmayı şu anda inceliyoruz ve cuma gününe kadar güvenilir bir değerlendirme sunacağız." },
+                { "language": "ru", "text": "Одного слова проверка слишком уклончиво, если мы уже видим вероятную задержку. Более дипломатично: мы сейчас проверяем техническое отклонение, которое может повлиять на срок, и до пятницы дадим надежную оценку." },
+                { "language": "ckb", "text": "وشەی پێداچوونەوە بە تەنها زۆر خۆدزینەوەیە ئەگەر ئێمە پێشتر دواخستنی ئەگەری ببینین. داڕشتنی دیپلۆماسیتر ئەمەیە: ئێمە ئێستا لادانێکی تەکنیکی دەپشکنین کە دەتوانێت کاریگەری لەسەر کات‌بەندی هەبێت، و تا هەینی هەڵسەنگاندنێکی پشتپێبەستوو دەدەین." },
+                { "language": "kmr", "text": "Gotina vekolînê bi tena serê xwe pir dûrketin e, heke em jixwe derengiyeke gengaz dibînin. Gotineke dîplomatîktir ev e: em niha cudahiyeke teknîkî vedikolin ku dikare demê bandor bike, û heta înê nirxandineke pêbawer didin." },
+                { "language": "pl", "text": "Samo słowo weryfikacja jest zbyt wymijające, jeśli już widzimy prawdopodobne opóźnienie. Bardziej dyplomatycznie byłoby: obecnie sprawdzamy odchylenie techniczne, które może wpłynąć na termin, i do piątku przekażemy wiążącą ocenę." },
+                { "language": "ro", "text": "Termenul verificare singur este prea evaziv dacă vedem deja o întârziere probabilă. O formulare mai diplomatică ar fi: analizăm în prezent o abatere tehnică ce poate influența termenul și vom transmite până vineri o evaluare solidă." },
+                { "language": "sq", "text": "Termi kontroll i vetëm është shumë shmangës nëse tashmë shohim një vonesë të mundshme. Një formulim më diplomatik do të ishte: po shqyrtojmë aktualisht një devijim teknik që mund të ndikojë afatin dhe deri të premten do të japim një vlerësim të besueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ersetzt Verschleierung durch präzise, begrenzte und zeitlich abgesicherte Transparenz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer replaces concealment with precise, limited, and time-bound transparency." },
+                { "language": "fa", "text": "قوی: پاسخ پنهان‌کاری را با شفافیت دقیق، محدود و زمان‌بندی‌شده جایگزین می‌کند." },
+                { "language": "ar", "text": "قوي: يستبدل الجواب الإخفاء بشفافية دقيقة ومحدودة ومؤطرة زمنياً." },
+                { "language": "tr", "text": "Güçlü: cevap gizlemeyi kesin, sınırlı ve zamana bağlı şeffaflıkla değiştirir." },
+                { "language": "ru", "text": "Сильно: ответ заменяет сокрытие точной, ограниченной и привязанной ко времени прозрачностью." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە شاردنەوە بە شەفافیەتی ورد، سنووردار و کات‌دیارکراو دەگۆڕێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv veşartinê bi şefafiyeke hûr, sînorkirî û demgirêdayî diguherîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź zastępuje ukrywanie precyzyjną, ograniczoną i osadzoną w czasie przejrzystością." },
+                { "language": "ro", "text": "Puternic: răspunsul înlocuiește ascunderea cu transparență precisă, limitată și încadrată în timp." },
+                { "language": "sq", "text": "E fortë: përgjigjja zëvendëson fshehjen me transparencë të saktë, të kufizuar dhe të lidhur me kohën." }
+              ],
+              "explanationKey": "precise-time-bound-transparency"
+            },
+            {
+              "id": "weak",
+              "text": "Wir können von einer internen Prüfung sprechen und erst später ergänzen, dass es möglicherweise Auswirkungen auf den Termin gibt.",
+              "translations": [
+                { "language": "en", "text": "We can speak of an internal review and only later add that there may be an impact on the timeline." },
+                { "language": "fa", "text": "می‌توانیم از بررسی داخلی صحبت کنیم و فقط بعداً اضافه کنیم که ممکن است روی زمان‌بندی اثر داشته باشد." },
+                { "language": "ar", "text": "يمكننا الحديث عن مراجعة داخلية، ثم نضيف لاحقاً فقط أن ذلك قد يؤثر في الموعد." },
+                { "language": "tr", "text": "İç incelemeden söz edebilir ve ancak daha sonra bunun zaman planını etkileyebileceğini ekleyebiliriz." },
+                { "language": "ru", "text": "Мы можем говорить о внутренней проверке и только позже добавить, что это может повлиять на срок." },
+                { "language": "ckb", "text": "دەتوانین باس لە پێداچوونەوەی ناوخۆیی بکەین و تەنها دواتر زیاد بکەین کە ڕەنگە کاریگەری لەسەر کات‌بەندی هەبێت." },
+                { "language": "kmr", "text": "Em dikarin ji vekolîna hundirîn biaxivin û tenê paşê lê zêde bikin ku dibe demê bandor bike." },
+                { "language": "pl", "text": "Możemy mówić o wewnętrznej weryfikacji i dopiero później dodać, że może to mieć wpływ na termin." },
+                { "language": "ro", "text": "Putem vorbi despre o verificare internă și abia mai târziu să adăugăm că ar putea exista efecte asupra termenului." },
+                { "language": "sq", "text": "Mund të flasim për një kontroll të brendshëm dhe vetëm më vonë të shtojmë se mund të ketë ndikim në afat." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu taktisch: Die Antwort kann kurzfristig ruhig wirken, aber später als Zurückhalten relevanter Information verstanden werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too tactical: the answer may seem calm in the short term, but later be understood as withholding relevant information." },
+                { "language": "fa", "text": "بیش از حد تاکتیکی: پاسخ ممکن است کوتاه‌مدت آرام به نظر برسد، اما بعداً به‌عنوان نگه داشتن اطلاعات مهم فهمیده شود." },
+                { "language": "ar", "text": "تكتيكي أكثر من اللازم: قد يبدو الجواب هادئاً على المدى القصير، لكنه قد يُفهم لاحقاً كإخفاء لمعلومة مهمة." },
+                { "language": "tr", "text": "Fazla taktiksel: cevap kısa vadede sakin görünebilir, ama sonra önemli bilgiyi tutmak olarak anlaşılabilir." },
+                { "language": "ru", "text": "Слишком тактически: ответ может краткосрочно звучать спокойно, но позже быть воспринят как удержание важной информации." },
+                { "language": "ckb", "text": "زۆر تاکتیکییە: وەڵامەکە لە ماوەی کورتدا ئارام دەردەکەوێت، بەڵام دواتر وەک گرتنی زانیاریی گرنگ تێدەگەیەنرێت." },
+                { "language": "kmr", "text": "Pir taktîkî ye: bersiv demek kurt aram xuya dike, lê paşê dikare wekî veşartina agahiyeke girîng were têgihiştin." },
+                { "language": "pl", "text": "Zbyt taktyczne: odpowiedź może krótkoterminowo brzmieć spokojnie, ale później zostać odebrana jako zatrzymywanie istotnej informacji." },
+                { "language": "ro", "text": "Prea tactic: răspunsul poate părea liniștitor pe termen scurt, dar ulterior poate fi înțeles ca reținere a unei informații relevante." },
+                { "language": "sq", "text": "Shumë taktike: përgjigjja mund të duket e qetë afatshkurtër, por më vonë të kuptohet si mbajtje e informacionit të rëndësishëm." }
+              ],
+              "explanationKey": "delayed-transparency-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Wir sollten den Umfang ausdrücklich begrenzen: Es geht um die technische Umstellung eines Teilmoduls, nicht um die gesamte Projektarchitektur. Gleichzeitig nennen wir offen, welche Abhängigkeiten wir bis Freitag prüfen.",
+              "translations": [
+                { "language": "en", "text": "We should explicitly limit the scope: it concerns the technical migration of one submodule, not the entire project architecture. At the same time, we openly name which dependencies we are checking by Friday." },
+                { "language": "fa", "text": "باید دامنه را صریح محدود کنیم: موضوع تغییر فنی یک زیرماژول است، نه کل معماری پروژه. همزمان شفاف می‌گوییم تا جمعه کدام وابستگی‌ها را بررسی می‌کنیم." },
+                { "language": "ar", "text": "ينبغي أن نحدد النطاق صراحة: الأمر يتعلق بالتحويل التقني لوحدة فرعية، لا ببنية المشروع كلها. وفي الوقت نفسه نذكر بوضوح أي اعتماديات نراجعها حتى الجمعة." },
+                { "language": "tr", "text": "Kapsamı açıkça sınırlandırmalıyız: konu tüm proje mimarisi değil, bir alt modülün teknik geçişidir. Aynı zamanda cuma gününe kadar hangi bağımlılıkları kontrol ettiğimizi açıkça belirtiriz." },
+                { "language": "ru", "text": "Нам следует явно ограничить масштаб: речь идет о техническом переходе одного подмодуля, а не о всей архитектуре проекта. Одновременно мы открыто называем, какие зависимости проверяем до пятницы." },
+                { "language": "ckb", "text": "دەبێت قەبارەکە بە ڕوونی سنووردار بکەین: باس لە گۆڕانی تەکنیکی ژێرماژوولێکە، نە هەموو ئەندازەی پڕۆژە. هەمان کات بە شەفافی ناو دەبەین کام پەیوەستبوونەکان تا هەینی دەپشکنین." },
+                { "language": "kmr", "text": "Divê em qada mijarê eşkere sînor bikin: mijar veguherîna teknîkî ya binmodulekê ye, ne hemû avahiya projeyê. Di heman demê de em vekirî nav dikin ka heta înê kîjan girêdanan kontrol dikin." },
+                { "language": "pl", "text": "Powinniśmy wyraźnie ograniczyć zakres: chodzi o techniczną migrację jednego modułu cząstkowego, a nie o całą architekturę projektu. Jednocześnie otwarcie wskazujemy, które zależności sprawdzamy do piątku." },
+                { "language": "ro", "text": "Ar trebui să limităm explicit domeniul: este vorba despre trecerea tehnică a unui submodul, nu despre întreaga arhitectură a proiectului. În același timp, numim deschis ce dependențe verificăm până vineri." },
+                { "language": "sq", "text": "Duhet ta kufizojmë qartë fushën: bëhet fjalë për kalimin teknik të një nënmoduli, jo për gjithë arkitekturën e projektit. Njëkohësisht përmendim hapur cilat varësi po kontrollojmë deri të premten." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort begrenzt die mögliche Sorge und nennt trotzdem die relevanten Abhängigkeiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer limits the possible concern while still naming the relevant dependencies." },
+                { "language": "fa", "text": "قوی: پاسخ نگرانی احتمالی را محدود می‌کند و در عین حال وابستگی‌های مهم را نام می‌برد." },
+                { "language": "ar", "text": "قوي: يحد الجواب القلق المحتمل، ومع ذلك يذكر الاعتماديات المهمة." },
+                { "language": "tr", "text": "Güçlü: cevap olası endişeyi sınırlar ve yine de ilgili bağımlılıkları belirtir." },
+                { "language": "ru", "text": "Сильно: ответ ограничивает возможное беспокойство и при этом называет релевантные зависимости." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانیی ئەگەری سنووردار دەکات و هەمان کات پەیوەستبوونە گرنگەکان ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: bersiv xemeke gengaz sînor dike û di heman demê de girêdanên girîng nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź ogranicza możliwą obawę, a jednocześnie nazywa istotne zależności." },
+                { "language": "ro", "text": "Puternic: răspunsul limitează îngrijorarea posibilă și numește totuși dependențele relevante." },
+                { "language": "sq", "text": "E fortë: përgjigjja kufizon shqetësimin e mundshëm dhe megjithatë përmend varësitë përkatëse." }
+              ],
+              "explanationKey": "scope-control-with-transparency"
+            },
+            {
+              "id": "weak",
+              "text": "Wir sollten betonen, dass nur ein Teilmodul betroffen ist und der restliche Projektplan grundsätzlich weiterläuft.",
+              "translations": [
+                { "language": "en", "text": "We should emphasize that only one submodule is affected and that the rest of the project plan is basically continuing." },
+                { "language": "fa", "text": "باید تأکید کنیم که فقط یک زیرماژول درگیر است و بقیه برنامه پروژه اصولاً ادامه دارد." },
+                { "language": "ar", "text": "ينبغي أن نؤكد أن وحدة فرعية واحدة فقط متأثرة وأن بقية خطة المشروع مستمرة أساساً." },
+                { "language": "tr", "text": "Yalnızca bir alt modülün etkilendiğini ve proje planının geri kalanının temelde devam ettiğini vurgulamalıyız." },
+                { "language": "ru", "text": "Нам следует подчеркнуть, что затронут только один подмодуль, а остальной план проекта в целом продолжается." },
+                { "language": "ckb", "text": "دەبێت جەخت بکەینەوە کە تەنها ژێرماژوولێک کاریگەری وەرگرتووە و بەشی تری پلانی پڕۆژە بە گشتی بەردەوامە." },
+                { "language": "kmr", "text": "Divê em tekez bikin ku tenê binmodulek bandor dibe û beşa mayî ya plana projeyê bi giştî berdewam dike." },
+                { "language": "pl", "text": "Powinniśmy podkreślić, że dotyczy to tylko jednego modułu cząstkowego, a reszta planu projektu zasadniczo jest kontynuowana." },
+                { "language": "ro", "text": "Ar trebui să subliniem că este afectat doar un submodul și că restul planului de proiect continuă în principiu." },
+                { "language": "sq", "text": "Duhet të theksojmë se preket vetëm një nënmodul dhe se pjesa tjetër e planit të projektit në parim vazhdon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Die Antwort begrenzt zwar den Umfang, nennt aber nicht, welche Abhängigkeiten noch geprüft werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but incomplete: the answer does limit the scope, but does not name which dependencies are still being checked." },
+                { "language": "fa", "text": "قابل‌باور اما ناقص: پاسخ دامنه را محدود می‌کند، اما نمی‌گوید کدام وابستگی‌ها هنوز بررسی می‌شوند." },
+                { "language": "ar", "text": "معقول لكنه ناقص: يحدد الجواب النطاق، لكنه لا يذكر أي اعتماديات لا تزال قيد المراجعة." },
+                { "language": "tr", "text": "Makuldür ama eksik: cevap kapsamı sınırlar, ancak hangi bağımlılıkların hâlâ kontrol edildiğini belirtmez." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: ответ ограничивает масштаб, но не называет, какие зависимости еще проверяются." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام ناتەواوە: وەڵامەکە قەبارە سنووردار دەکات، بەڵام ناڵێت کام پەیوەستبوونەکان هێشتا دەپشکنرێن." },
+                { "language": "kmr", "text": "Bawerbar e lê ne temam e: bersiv qadê sînor dike, lê nav nake ka kîjan girêdan hê têne kontrolkirin." },
+                { "language": "pl", "text": "Prawdopodobne, ale niepełne: odpowiedź ogranicza zakres, ale nie wskazuje, które zależności są jeszcze sprawdzane." },
+                { "language": "ro", "text": "Plauzibil, dar incomplet: răspunsul limitează domeniul, dar nu numește ce dependențe sunt încă verificate." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: përgjigjja e kufizon fushën, por nuk përmend cilat varësi po kontrollohen ende." }
+              ],
+              "explanationKey": "scope-without-dependencies"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde die zwei Wochen nicht als feste Verzögerung darstellen, aber als realistische Spannbreite nennen. Sonst wirkt die spätere Korrektur wie eine Überraschung, obwohl wir das Risiko heute schon sehen.",
+              "translations": [
+                { "language": "en", "text": "I would not present the two weeks as a fixed delay, but I would name them as a realistic range. Otherwise the later correction will look like a surprise, even though we already see the risk today." },
+                { "language": "fa", "text": "دو هفته را به‌عنوان تأخیر قطعی بیان نمی‌کنم، اما آن را به‌عنوان بازه واقع‌بینانه نام می‌برم. وگرنه اصلاح بعدی شبیه غافلگیری به نظر می‌رسد، در حالی که ما همین امروز ریسک را می‌بینیم." },
+                { "language": "ar", "text": "لن أعرض الأسبوعين كتأخير ثابت، لكنني سأذكرهما كنطاق واقعي. وإلا ستبدو المراجعة اللاحقة مفاجئة، رغم أننا نرى الخطر اليوم بالفعل." },
+                { "language": "tr", "text": "İki haftayı kesin bir gecikme olarak sunmazdım, ama gerçekçi bir aralık olarak belirtirdim. Aksi halde sonraki düzeltme bir sürpriz gibi görünür, oysa riski bugün zaten görüyoruz." },
+                { "language": "ru", "text": "Я бы не представлял две недели как фиксированную задержку, но назвал бы их реалистичным диапазоном. Иначе последующая корректировка будет выглядеть как сюрприз, хотя мы уже сегодня видим риск." },
+                { "language": "ckb", "text": "دوو هەفتە وەک دواخستنی جێگیر پیشان نادەم، بەڵام وەک مەودایەکی ڕاستبینانە ناوی دەبەم. ئەگینا چاککردنەوەی دواتر وەک سەرسوڕمان دەردەکەوێت، لە کاتێکدا ئێمە ئەمڕۆ مەترسییەکە دەبینین." },
+                { "language": "kmr", "text": "Ez ê du hefteyan wekî derengiyeke sabît nîşan nedim, lê wekî navbereke rastîn nav bikim. Wekî din rastkirina paşê wekî surprîzek xuya dike, herçend em îro jixwe xeterê dibînin." },
+                { "language": "pl", "text": "Nie przedstawiałbym dwóch tygodni jako stałego opóźnienia, ale nazwałbym je realistycznym zakresem. W przeciwnym razie późniejsza korekta będzie wyglądała jak zaskoczenie, choć już dziś widzimy ryzyko." },
+                { "language": "ro", "text": "Nu aș prezenta cele două săptămâni ca întârziere fixă, dar le-aș numi ca interval realist. Altfel corecția ulterioară va părea o surpriză, deși vedem deja riscul astăzi." },
+                { "language": "sq", "text": "Nuk do t’i paraqisja dy javët si vonesë të sigurt, por do t’i përmendja si interval realist. Përndryshe korrigjimi i mëvonshëm do të duket si surprizë, megjithëse rrezikun e shohim që sot." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt die mögliche Auswirkung, ohne Unsicherheit als Gewissheit auszugeben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer names the possible impact without presenting uncertainty as certainty." },
+                { "language": "fa", "text": "قوی: پاسخ اثر احتمالی را نام می‌برد بدون اینکه عدم قطعیت را قطعی جلوه دهد." },
+                { "language": "ar", "text": "قوي: يذكر الجواب التأثير المحتمل دون تقديم عدم اليقين كأنه يقين." },
+                { "language": "tr", "text": "Güçlü: cevap olası etkiyi belirtir, belirsizliği kesinlik gibi sunmaz." },
+                { "language": "ru", "text": "Сильно: ответ называет возможное влияние, не выдавая неопределенность за уверенность." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کاریگەریی ئەگەری ناو دەبات بەبێ ئەوەی نادڵنیایی وەک دڵنیایی پیشان بدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv bandora gengaz nav dike bêyî ku nediyarî wekî piştrastî nîşan bide." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa możliwy wpływ, nie przedstawiając niepewności jako pewności." },
+                { "language": "ro", "text": "Puternic: răspunsul numește impactul posibil fără să prezinte incertitudinea ca certitudine." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmend ndikimin e mundshëm pa e paraqitur pasigurinë si siguri." }
+              ],
+              "explanationKey": "range-without-overclaim"
+            },
+            {
+              "id": "weak",
+              "text": "Ich würde die zwei Wochen erst nennen, wenn wir sicher sind, damit der Kunde nicht unnötig beunruhigt wird.",
+              "translations": [
+                { "language": "en", "text": "I would mention the two weeks only once we are sure, so the customer is not unnecessarily worried." },
+                { "language": "fa", "text": "دو هفته را فقط وقتی می‌گویم که مطمئن باشیم، تا مشتری بی‌دلیل نگران نشود." },
+                { "language": "ar", "text": "سأذكر الأسبوعين فقط عندما نكون متأكدين، حتى لا يقلق العميل دون داع." },
+                { "language": "tr", "text": "Müşteriyi gereksiz yere endişelendirmemek için iki haftayı ancak emin olduğumuzda belirtirdim." },
+                { "language": "ru", "text": "Я бы назвал две недели только тогда, когда мы будем уверены, чтобы клиент не волновался без необходимости." },
+                { "language": "ckb", "text": "دوو هەفتە تەنها کاتێک ناو دەبەم کە دڵنیا بین، تاکو کڕیار بەبێ پێویستی نیگەران نەبێت." },
+                { "language": "kmr", "text": "Ez ê du hefteyan tenê dema em piştrast bin bibêjim, da ku mişterî bê hewce nebe bi xem." },
+                { "language": "pl", "text": "Wspomniałbym o dwóch tygodniach dopiero wtedy, gdy będziemy pewni, żeby klient nie martwił się niepotrzebnie." },
+                { "language": "ro", "text": "Aș menționa cele două săptămâni abia când suntem siguri, ca să nu îngrijorăm inutil clientul." },
+                { "language": "sq", "text": "Do t’i përmendja dy javët vetëm kur të jemi të sigurt, që klienti të mos shqetësohet pa nevojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu spät: Die Antwort schützt vor Alarm, kann aber Vertrauen kosten, wenn die Verzögerung später doch eintritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too late: the answer avoids alarm, but may cost trust if the delay later occurs." },
+                { "language": "fa", "text": "قابل‌باور اما دیرهنگام: پاسخ از هشدار جلوگیری می‌کند، اما اگر بعداً تأخیر رخ دهد، ممکن است اعتماد را از بین ببرد." },
+                { "language": "ar", "text": "معقول لكنه متأخر جداً: يتجنب الجواب الإنذار، لكنه قد يكلف الثقة إذا حدث التأخير لاحقاً." },
+                { "language": "tr", "text": "Makuldür ama geç: cevap alarmı önler, ancak gecikme sonra gerçekleşirse güvene mal olabilir." },
+                { "language": "ru", "text": "Правдоподобно, но слишком поздно: ответ избегает тревоги, но может стоить доверия, если задержка позже произойдет." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام درەنگە: وەڵامەکە لە هۆشداری دوور دەکەوێتەوە، بەڵام ئەگەر دواخستن دواتر ڕوو بدات دەتوانێت متمانە تێک بدات." },
+                { "language": "kmr", "text": "Bawerbar e lê dereng e: bersiv ji alarmê dûr dikeve, lê heke derengî paşê çêbibe dikare baweriyê xerab bike." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt późne: odpowiedź unika alarmu, ale może kosztować zaufanie, jeśli opóźnienie później wystąpi." },
+                { "language": "ro", "text": "Plauzibil, dar prea târziu: răspunsul evită alarma, dar poate costa încredere dacă întârzierea apare ulterior." },
+                { "language": "sq", "text": "E besueshme, por shumë vonë: përgjigjja shmang alarmimin, por mund të kushtojë besim nëse vonesa ndodh më vonë." }
+              ],
+              "explanationKey": "late-disclosure-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Wir sollten Verantwortung auf Prozessebene übernehmen: Die Abhängigkeit wurde zu spät sichtbar, und wir haben den Prüfpunkt nachgeschärft. Ich würde nicht sagen, dass jemand versagt hat, sondern dass wir die Frühwarnung verbessern.",
+              "translations": [
+                { "language": "en", "text": "We should take responsibility at process level: the dependency became visible too late, and we have tightened the review point. I would not say that someone failed, but that we are improving early warning." },
+                { "language": "fa", "text": "باید مسئولیت را در سطح فرایند بپذیریم: وابستگی دیر دیده شد و ما نقطه بررسی را دقیق‌تر کرده‌ایم. نمی‌گویم کسی شکست خورده است، بلکه می‌گویم هشدار زودهنگام را بهتر می‌کنیم." },
+                { "language": "ar", "text": "ينبغي أن نتحمل المسؤولية على مستوى العملية: ظهرت الاعتمادية في وقت متأخر، وقد شددنا نقطة المراجعة. لن أقول إن شخصاً فشل، بل إننا نحسن الإنذار المبكر." },
+                { "language": "tr", "text": "Süreç düzeyinde sorumluluk almalıyız: bağımlılık çok geç görünür hale geldi ve kontrol noktasını netleştirdik. Birinin başarısız olduğunu söylemezdim; erken uyarıyı iyileştirdiğimizi söylerdim." },
+                { "language": "ru", "text": "Нам следует взять ответственность на уровне процесса: зависимость стала видимой слишком поздно, и мы усилили точку проверки. Я бы не говорил, что кто-то провалился, а что мы улучшаем раннее предупреждение." },
+                { "language": "ckb", "text": "دەبێت بەرپرسیارێتی لە ئاستی پرۆسەدا وەربگرین: پەیوەستبوونەکە زۆر درەنگ دیار بوو، و ئێمە خاڵی پشکنینمان وردتر کردووە. ناڵێم کەسێک شکستیهێناوە، بەڵکو دەڵێم هۆشداریی پێشوەخت باشتر دەکەین." },
+                { "language": "kmr", "text": "Divê em berpirsiyarî li asta pêvajoyê bigirin: girêdan pir dereng xuya bû, û me xala kontrolê tundtir kir. Ez ê nebêjim kesek bi ser neket, lê bêjim em hişyariya zû baştir dikin." },
+                { "language": "pl", "text": "Powinniśmy wziąć odpowiedzialność na poziomie procesu: zależność stała się widoczna zbyt późno, a my doprecyzowaliśmy punkt kontrolny. Nie mówiłbym, że ktoś zawiódł, lecz że poprawiamy wczesne ostrzeganie." },
+                { "language": "ro", "text": "Ar trebui să ne asumăm responsabilitatea la nivel de proces: dependența a devenit vizibilă prea târziu, iar noi am întărit punctul de verificare. Nu aș spune că cineva a eșuat, ci că îmbunătățim avertizarea timpurie." },
+                { "language": "sq", "text": "Duhet të marrim përgjegjësi në nivel procesi: varësia u bë e dukshme shumë vonë dhe ne e kemi forcuar pikën e kontrollit. Nuk do të thosha se dikush dështoi, por se po përmirësojmë paralajmërimin e hershëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort übernimmt Verantwortung, ohne sie in persönliche Schuld oder Selbstbeschädigung zu verwandeln.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes responsibility without turning it into personal blame or self-damage." },
+                { "language": "fa", "text": "قوی: پاسخ مسئولیت را می‌پذیرد بدون اینکه آن را به سرزنش شخصی یا آسیب به خود تبدیل کند." },
+                { "language": "ar", "text": "قوي: يتحمل الجواب المسؤولية دون تحويلها إلى لوم شخصي أو إضرار بالذات." },
+                { "language": "tr", "text": "Güçlü: cevap sorumluluk alır, ama bunu kişisel suçlamaya veya kendine zarar veren ifadeye dönüştürmez." },
+                { "language": "ru", "text": "Сильно: ответ берет ответственность, не превращая ее в личное обвинение или самоповреждающую формулировку." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرپرسیارێتی وەردەگرێت بەبێ ئەوەی بیکاتە تاوانی کەسی یان زیان بە خۆ." },
+                { "language": "kmr", "text": "Xurt e: bersiv berpirsiyarî digire bêyî ku wê bike sûcdarkirina kesane an gotineke zirardar ji xwe re." },
+                { "language": "pl", "text": "Mocne: odpowiedź bierze odpowiedzialność, nie zamieniając jej w osobiste obwinianie ani szkodliwą dla siebie wypowiedź." },
+                { "language": "ro", "text": "Puternic: răspunsul își asumă responsabilitatea fără să o transforme în vină personală sau autodezavantajare." },
+                { "language": "sq", "text": "E fortë: përgjigjja merr përgjegjësi pa e kthyer në fajësim personal ose dëm ndaj vetes." }
+              ],
+              "explanationKey": "process-accountability-without-blame"
+            },
+            {
+              "id": "weak",
+              "text": "Wir sollten sagen, dass wir die interne Verantwortung prüfen und daraus Verbesserungen für den nächsten Projektabschnitt ableiten.",
+              "translations": [
+                { "language": "en", "text": "We should say that we are reviewing internal responsibility and deriving improvements for the next project phase." },
+                { "language": "fa", "text": "باید بگوییم که مسئولیت داخلی را بررسی می‌کنیم و از آن بهبودهایی برای بخش بعدی پروژه نتیجه می‌گیریم." },
+                { "language": "ar", "text": "ينبغي أن نقول إننا نراجع المسؤولية الداخلية ونستخلص منها تحسينات لمرحلة المشروع التالية." },
+                { "language": "tr", "text": "İç sorumluluğu incelediğimizi ve bundan sonraki proje aşaması için iyileştirmeler çıkardığımızı söylemeliyiz." },
+                { "language": "ru", "text": "Нам следует сказать, что мы проверяем внутреннюю ответственность и выводим из этого улучшения для следующего этапа проекта." },
+                { "language": "ckb", "text": "دەبێت بڵێین بەرپرسیارێتیی ناوخۆیی دەپشکنین و لێی باشترکردن بۆ قۆناغی داهاتووی پڕۆژە دەردەهێنین." },
+                { "language": "kmr", "text": "Divê em bibêjin ku em berpirsiyariya hundirîn vedikolin û ji wê başkirinên ji bo qonaxa din a projeyê derdixin." },
+                { "language": "pl", "text": "Powinniśmy powiedzieć, że sprawdzamy odpowiedzialność wewnętrzną i wyprowadzamy z tego ulepszenia dla kolejnego etapu projektu." },
+                { "language": "ro", "text": "Ar trebui să spunem că analizăm responsabilitatea internă și derivăm de aici îmbunătățiri pentru următoarea etapă a proiectului." },
+                { "language": "sq", "text": "Duhet të themi se po shqyrtojmë përgjegjësinë e brendshme dhe prej saj nxjerrim përmirësime për fazën e ardhshme të projektit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber ungenau: Die Antwort klingt verantwortlich, bleibt aber abstrakt und kann neue Unsicherheit erzeugen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but imprecise: the answer sounds responsible, but remains abstract and may create new uncertainty." },
+                { "language": "fa", "text": "قابل‌باور اما غیر دقیق: پاسخ مسئولانه به نظر می‌رسد، اما انتزاعی می‌ماند و ممکن است ابهام تازه ایجاد کند." },
+                { "language": "ar", "text": "معقول لكنه غير دقيق: يبدو الجواب مسؤولاً، لكنه يبقى مجرداً وقد يخلق غموضاً جديداً." },
+                { "language": "tr", "text": "Makuldür ama belirsiz: cevap sorumlu duyulur, ancak soyut kalır ve yeni belirsizlik yaratabilir." },
+                { "language": "ru", "text": "Правдоподобно, но неточно: ответ звучит ответственно, но остается абстрактным и может создать новую неопределенность." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام ناوردە: وەڵامەکە بەرپرسانە دەنگ دەدات، بەڵام گشتی دەمێنێتەوە و ڕەنگە نادڵنیایی نوێ دروست بکات." },
+                { "language": "kmr", "text": "Bawerbar e lê ne hûr e: bersiv berpirsiyar xuya dike, lê razber dimîne û dikare nediyariyeke nû çêbike." },
+                { "language": "pl", "text": "Prawdopodobne, ale nieprecyzyjne: odpowiedź brzmi odpowiedzialnie, lecz pozostaje abstrakcyjna i może stworzyć nową niepewność." },
+                { "language": "ro", "text": "Plauzibil, dar imprecis: răspunsul sună responsabil, dar rămâne abstract și poate crea o nouă incertitudine." },
+                { "language": "sq", "text": "E besueshme, por jo e saktë: përgjigjja tingëllon e përgjegjshme, por mbetet abstrakte dhe mund të krijojë pasiguri të re." }
+              ],
+              "explanationKey": "abstract-accountability"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei sensibler Kommunikation sind zwei Extreme schwach: Beschwichtigen wirkt unehrlich, Rohdaten ohne Einordnung wirken alarmierend.",
+          "translations": [
+            { "language": "en", "text": "In sensitive communication, two extremes are weak: downplaying sounds dishonest, while raw data without framing sounds alarming." },
+            { "language": "fa", "text": "در ارتباط حساس، دو افراط ضعیف است: کوچک جلوه دادن غیرصادقانه به نظر می‌رسد و داده خام بدون چارچوب هشداردهنده است." },
+            { "language": "ar", "text": "في التواصل الحساس، هناك طرفان ضعيفان: التهوين يبدو غير صادق، والبيانات الخام دون إطار تبدو مثيرة للإنذار." },
+            { "language": "tr", "text": "Hassas iletişimde iki uç zayıftır: hafife almak dürüst olmayan bir izlenim verir, çerçevesiz ham veri ise alarm yaratır." },
+            { "language": "ru", "text": "В чувствительной коммуникации две крайности слабы: преуменьшение выглядит нечестно, а сырые данные без рамки тревожат." },
+            { "language": "ckb", "text": "لە پەیوەندیی هەستیاردا دوو توندڕەوی لاوازە: بچووککردنەوە بێڕاستی دەردەکەوێت، داتای خام بەبێ چوارچێوە هۆشدارییە." },
+            { "language": "kmr", "text": "Di ragihandina hestiyar de du alî lawaz in: biçûkxistin bêrastî xuya dike, daneyên xav bê çarçove alarmdar in." },
+            { "language": "pl", "text": "W komunikacji wrażliwej dwie skrajności są słabe: bagatelizowanie brzmi nieuczciwie, a surowe dane bez kontekstu alarmują." },
+            { "language": "ro", "text": "În comunicarea sensibilă, două extreme sunt slabe: minimalizarea pare necinstită, iar datele brute fără context par alarmante." },
+            { "language": "sq", "text": "Në komunikim të ndjeshëm, dy ekstreme janë të dobëta: zbutja duket e pasinqertë, ndërsa të dhënat e papërpunuara pa kornizë alarmojnë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language-function",
+          "text": "Diplomatie bedeutet nicht Verschleierung. Eine gute Formulierung benennt den Kern und begrenzt gleichzeitig die Unsicherheit.",
+          "translations": [
+            { "language": "en", "text": "Diplomacy does not mean concealment. Good wording names the core issue while also limiting uncertainty." },
+            { "language": "fa", "text": "دیپلماسی به معنای پنهان‌کاری نیست. فرمول‌بندی خوب موضوع اصلی را نام می‌برد و همزمان عدم قطعیت را محدود می‌کند." },
+            { "language": "ar", "text": "الدبلوماسية لا تعني الإخفاء. الصياغة الجيدة تذكر جوهر الموضوع وتحد في الوقت نفسه من عدم اليقين." },
+            { "language": "tr", "text": "Diplomasi gizleme demek değildir. İyi bir ifade çekirdek konuyu adlandırır ve aynı zamanda belirsizliği sınırlar." },
+            { "language": "ru", "text": "Дипломатичность не означает сокрытие. Хорошая формулировка называет суть и одновременно ограничивает неопределенность." },
+            { "language": "ckb", "text": "دیپلۆماسیەت مانای شاردنەوە نییە. داڕشتنی باش ناوکی بابەتەکە ناو دەبات و هەمان کات نادڵنیایی سنووردار دەکات." },
+            { "language": "kmr", "text": "Dîplomasî nayê wateya veşartinê. Gotineke baş mijara bingehîn nav dike û di heman demê de nediyarî sînor dike." },
+            { "language": "pl", "text": "Dyplomacja nie oznacza ukrywania. Dobre sformułowanie nazywa sedno i jednocześnie ogranicza niepewność." },
+            { "language": "ro", "text": "Diplomația nu înseamnă ascundere. O formulare bună numește esența și limitează în același timp incertitudinea." },
+            { "language": "sq", "text": "Diplomacia nuk do të thotë fshehje. Një formulim i mirë përmend thelbin dhe njëkohësisht kufizon pasigurinë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "scope-control",
+          "text": "Eine begrenzte Botschaft ist nicht automatisch untransparent. Sie trennt das betroffene Element von unnötiger Gesamtalarmierung.",
+          "translations": [
+            { "language": "en", "text": "A limited message is not automatically non-transparent. It separates the affected element from unnecessary overall alarm." },
+            { "language": "fa", "text": "پیام محدود لزوماً غیرشفاف نیست. این پیام عنصر درگیر را از هشدار کلی غیرضروری جدا می‌کند." },
+            { "language": "ar", "text": "الرسالة المحددة ليست بالضرورة غير شفافة. إنها تفصل العنصر المتأثر عن إنذار عام غير ضروري." },
+            { "language": "tr", "text": "Sınırlı bir mesaj otomatik olarak şeffaf olmayan mesaj değildir. Etkilenen öğeyi gereksiz genel alarmdan ayırır." },
+            { "language": "ru", "text": "Ограниченное сообщение не обязательно непрозрачно. Оно отделяет затронутый элемент от ненужной общей тревоги." },
+            { "language": "ckb", "text": "پەیامی سنووردار بە شێوەیەکی خودکار ناشەفاف نییە. ئەو توخمی کاریگەر لە هۆشداریی گشتیی ناپێویست جیا دەکاتەوە." },
+            { "language": "kmr", "text": "Peyameke sînorkirî bi xwe ne neşefaf e. Ew hêmanê bandordar ji alarma giştî ya nepêwîst veqetîne." },
+            { "language": "pl", "text": "Ograniczony komunikat nie jest automatycznie nieprzejrzysty. Oddziela element dotknięty problemem od niepotrzebnego ogólnego alarmu." },
+            { "language": "ro", "text": "Un mesaj limitat nu este automat netransparent. El separă elementul afectat de alarma generală inutilă." },
+            { "language": "sq", "text": "Një mesazh i kufizuar nuk është automatikisht jo transparent. Ai ndan elementin e prekur nga alarmimi i përgjithshëm i panevojshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "decision-quality",
+          "text": "Unsichere Zeitangaben sollten als Spannbreite formuliert werden. Das ist ehrlicher als Schweigen und vorsichtiger als eine feste Zusage.",
+          "translations": [
+            { "language": "en", "text": "Uncertain time information should be formulated as a range. That is more honest than silence and more cautious than a fixed promise." },
+            { "language": "fa", "text": "اطلاعات زمانی نامطمئن باید به‌صورت بازه بیان شود. این از سکوت صادقانه‌تر و از وعده قطعی محتاطانه‌تر است." },
+            { "language": "ar", "text": "ينبغي صياغة المعلومات الزمنية غير المؤكدة كنطاق. هذا أصدق من الصمت وأكثر حذراً من وعد ثابت." },
+            { "language": "tr", "text": "Belirsiz zaman bilgileri aralık olarak formüle edilmelidir. Bu sessizlikten daha dürüst, kesin taahhütten daha ihtiyatlıdır." },
+            { "language": "ru", "text": "Неопределенные сроки следует формулировать как диапазон. Это честнее молчания и осторожнее твердого обещания." },
+            { "language": "ckb", "text": "زانیاریی کاتی نادڵنیا دەبێت وەک مەودا داڕێژرێت. ئەمە لە بێدەنگی ڕاستگۆترە و لە بەڵێنی جێگیر وریاترە." },
+            { "language": "kmr", "text": "Agahiyên demê yên nediyar divê wekî navber bêne gotin. Ev ji bêdengiyê rasttir û ji soza sabît baldarane-tir e." },
+            { "language": "pl", "text": "Niepewne informacje czasowe powinny być formułowane jako zakres. To uczciwsze niż milczenie i ostrożniejsze niż stała obietnica." },
+            { "language": "ro", "text": "Informațiile temporale incerte trebuie formulate ca interval. Este mai onest decât tăcerea și mai prudent decât o promisiune fixă." },
+            { "language": "sq", "text": "Informacionet kohore të pasigurta duhet të formulohen si interval. Kjo është më e ndershme se heshtja dhe më e kujdesshme se një premtim i prerë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "tone",
+          "text": "Verantwortung auf Prozessebene zeigt Reife: Sie vermeidet Schuldzuweisung und verhindert zugleich, dass die Kommunikation beliebig klingt.",
+          "translations": [
+            { "language": "en", "text": "Responsibility at process level shows maturity: it avoids blame while preventing the communication from sounding arbitrary." },
+            { "language": "fa", "text": "مسئولیت در سطح فرایند نشانه پختگی است: از سرزنش جلوگیری می‌کند و همزمان نمی‌گذارد ارتباط مبهم و دل‌بخواهی به نظر برسد." },
+            { "language": "ar", "text": "المسؤولية على مستوى العملية تدل على نضج: فهي تتجنب اللوم وتمنع في الوقت نفسه أن يبدو التواصل اعتباطياً." },
+            { "language": "tr", "text": "Süreç düzeyinde sorumluluk olgunluk gösterir: suçlamayı önler ve aynı zamanda iletişimin keyfi duyulmasını engeller." },
+            { "language": "ru", "text": "Ответственность на уровне процесса показывает зрелость: она избегает обвинений и одновременно не дает коммуникации звучать произвольно." },
+            { "language": "ckb", "text": "بەرپرسیارێتی لە ئاستی پرۆسەدا پێگەیشتوویی پیشان دەدات: لە تاوانبارکردن دوور دەکەوێتەوە و هەمان کات ڕێ نادات پەیوەندییەکە هەڕەمەکی دەنگ بدات." },
+            { "language": "kmr", "text": "Berpirsiyarî li asta pêvajoyê gihîştîbûnê nîşan dide: ew ji sûcdarkirinê dûr dikeve û di heman demê de nahêle ragihandin bêbingeh xuya bike." },
+            { "language": "pl", "text": "Odpowiedzialność na poziomie procesu pokazuje dojrzałość: unika obwiniania i jednocześnie zapobiega temu, by komunikacja brzmiała dowolnie." },
+            { "language": "ro", "text": "Responsabilitatea la nivel de proces arată maturitate: evită vina și împiedică în același timp comunicarea să pară arbitrară." },
+            { "language": "sq", "text": "Përgjegjësia në nivel procesi tregon pjekuri: shmang fajësimin dhe njëkohësisht parandalon që komunikimi të tingëllojë arbitrar." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "transparent-diplomatic-customer-update",
+          "placement": "hero",
+          "purpose": "Show a neutral workplace preparation meeting for a careful customer status update balancing transparency and diplomacy.",
+          "altText": "A clean educational illustration of colleagues preparing a careful customer update with transparency and diplomacy.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Colleagues prepare a careful customer update with transparency and diplomacy." },
+            { "language": "fa", "text": "همکاران یک به‌روزرسانی محتاطانه برای مشتری را با شفافیت و دیپلماسی آماده می‌کنند." },
+            { "language": "ar", "text": "زملاء يحضرون تحديثاً حذراً للعميل بشفافية ودبلوماسية." },
+            { "language": "tr", "text": "Çalışma arkadaşları şeffaflık ve diplomasiyle dikkatli bir müşteri güncellemesi hazırlıyor." },
+            { "language": "ru", "text": "Коллеги готовят аккуратное обновление для клиента с прозрачностью и дипломатичностью." },
+            { "language": "ckb", "text": "هاوکاران نوێکردنەوەیەکی وریای کڕیار بە شەفافیەت و دیپلۆماسیەت ئامادە دەکەن." },
+            { "language": "kmr", "text": "Hevkar nûvekirineke baldar a mişterî bi şefafî û dîplomasiyê amade dikin." },
+            { "language": "pl", "text": "Współpracownicy przygotowują ostrożną aktualizację dla klienta z przejrzystością i dyplomacją." },
+            { "language": "ro", "text": "Colegi pregătesc o actualizare atentă pentru client, cu transparență și diplomație." },
+            { "language": "sq", "text": "Kolegët përgatisin një përditësim të kujdesshëm për klientin me transparencë dhe diplomaci." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, diverse adults in a German workplace meeting room preparing a careful customer status update, abstract cards for timeline, risk, and next step, no readable private text, no logos, calm professional atmosphere, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

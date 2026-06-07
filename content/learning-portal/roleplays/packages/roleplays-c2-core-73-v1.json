@@ -1,0 +1,718 @@
+{
+  "packageId": "roleplays-c2-core-73-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 73 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 73",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-ueber-datenethik-in-einem-produktteam-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Über Datenethik in einem Produktteam diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing data ethics in a product team" },
+        { "language": "fa", "text": "بحث درباره اخلاق داده در یک تیم محصول" },
+        { "language": "ar", "text": "مناقشة أخلاقيات البيانات في فريق منتج" },
+        { "language": "tr", "text": "Bir ürün ekibinde veri etiğini tartışmak" },
+        { "language": "ru", "text": "Обсуждать этику данных в продуктовой команде" },
+        { "language": "ckb", "text": "گفتوگۆ لەسەر ئەخلاقی داتا لە تیمێکی بەرهەمدا" },
+        { "language": "kmr", "text": "Gotûbêja etîka daneyan di tîmeke hilberê de" },
+        { "language": "pl", "text": "Dyskusja o etyce danych w zespole produktu" },
+        { "language": "ro", "text": "Discuție despre etica datelor într-o echipă de produs" },
+        { "language": "sq", "text": "Diskutim për etikën e të dhënave në një ekip produkti" }
+      ],
+      "description": "In einem Produktteam wird vorgeschlagen, mehr Nutzungsdaten zu erfassen, um Empfehlungen zu verbessern. Sie diskutieren differenziert, welche Daten nötig sind, welche nicht erhoben werden sollten und wie Vertrauen erhalten bleibt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a product team, someone proposes collecting more usage data to improve recommendations. You discuss in a nuanced way which data is necessary, which should not be collected, and how trust can be preserved." },
+        { "language": "fa", "text": "در یک تیم محصول پیشنهاد می‌شود برای بهتر کردن پیشنهادها، داده‌های استفاده بیشتری جمع‌آوری شود. شما با دقت بحث می‌کنید کدام داده لازم است، کدام داده نباید جمع‌آوری شود و اعتماد چگونه حفظ می‌شود." },
+        { "language": "ar", "text": "في فريق منتج يُقترح جمع مزيد من بيانات الاستخدام لتحسين التوصيات. تناقشون بتوازن أي بيانات ضرورية، وأي بيانات لا ينبغي جمعها، وكيف يمكن الحفاظ على الثقة." },
+        { "language": "tr", "text": "Bir ürün ekibinde önerileri iyileştirmek için daha fazla kullanım verisi toplanması önerilir. Hangi verinin gerekli olduğunu, hangisinin toplanmaması gerektiğini ve güvenin nasıl korunacağını ayrıntılı biçimde tartışırsınız." },
+        { "language": "ru", "text": "В продуктовой команде предлагают собирать больше данных об использовании, чтобы улучшить рекомендации. Вы дифференцированно обсуждаете, какие данные нужны, какие не следует собирать и как сохранить доверие." },
+        { "language": "ckb", "text": "لە تیمێکی بەرهەمدا پێشنیار دەکرێت داتای بەکارهێنانی زیاتر کۆبکرێتەوە بۆ باشترکردنی پێشنیارەکان. تۆ بە وردی گفتوگۆ دەکەیت کام داتا پێویستە، کام داتا نابێت کۆبکرێتەوە و چۆن متمانە دەپارێزرێت." },
+        { "language": "kmr", "text": "Di tîmeke hilberê de tê pêşniyarkirin ku ji bo baştirkirina pêşniyaran daneyên bikaranînê zêdetir bên komkirin. Hûn bi hûrgilî nîqaş dikin kîjan dane pêwîst in, kîjan nabe bên komkirin û bawerî çawa tê parastin." },
+        { "language": "pl", "text": "W zespole produktu proponuje się zbieranie większej liczby danych o korzystaniu, aby ulepszyć rekomendacje. Omawia Pan/Pani w sposób zróżnicowany, które dane są potrzebne, których nie należy zbierać i jak zachować zaufanie." },
+        { "language": "ro", "text": "Într-o echipă de produs se propune colectarea mai multor date de utilizare pentru îmbunătățirea recomandărilor. Discutați nuanțat ce date sunt necesare, ce date nu ar trebui colectate și cum se păstrează încrederea." },
+        { "language": "sq", "text": "Në një ekip produkti propozohet mbledhja e më shumë të dhënave të përdorimit për të përmirësuar rekomandimet. Ju diskutoni me nuancë cilat të dhëna duhen, cilat nuk duhet të mblidhen dhe si ruhet besimi." }
+      ],
+      "learnerGoal": "Datenethik auf C2-Niveau diskutieren: Produktnutzen anerkennen, Datenminimierung begründen, Machtasymmetrien benennen, Transparenz fordern und eine klare Grenze für nicht vertretbare Datenerhebung formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss data ethics at C2 level: acknowledge product value, justify data minimization, name power asymmetries, demand transparency, and formulate a clear boundary for unacceptable data collection." },
+        { "language": "fa", "text": "اخلاق داده را در سطح C2 بحث کنید: فایده محصول را بپذیرید، کمینه‌سازی داده را توجیه کنید، نابرابری قدرت را نام ببرید، شفافیت بخواهید و مرزی روشن برای جمع‌آوری داده غیرقابل قبول بیان کنید." },
+        { "language": "ar", "text": "ناقشوا أخلاقيات البيانات بمستوى C2: اعترفوا بقيمة المنتج، وبرروا تقليل البيانات، واذكروا اختلالات القوة، وطالبوا بالشفافية، وصوغوا حدًا واضحًا لجمع بيانات غير مقبول." },
+        { "language": "tr", "text": "Veri etiğini C2 düzeyinde tartışın: ürün değerini kabul edin, veri minimizasyonunu gerekçelendirin, güç asimetrilerini adlandırın, şeffaflık isteyin ve kabul edilemez veri toplama için net bir sınır formüle edin." },
+        { "language": "ru", "text": "Обсуждать этику данных на уровне C2: признавать пользу продукта, обосновывать минимизацию данных, называть асимметрию власти, требовать прозрачности и формулировать четкую границу недопустимого сбора данных." },
+        { "language": "ckb", "text": "ئەخلاقی داتا لە ئاستی C2 گفتوگۆ بکە: سوودی بەرهەم بپەسەندە، کمکردنەوەی داتا پاساو بدە، نایەکسانی هێز ناوببە، شەفافیەت داوا بکە و سنوورێکی ڕوون بۆ کۆکردنەوەی داتای نەپەسەند دابڕێژە." },
+        { "language": "kmr", "text": "Etîka daneyan di asta C2 de nîqaş bikin: sûda hilberê bipejirînin, kêmbûna daneyan bi sedem bikin, nehevsengiya hêzê nav bikin, zelalbûnê bixwazin û sînoreke zelal ji bo komkirina daneyên nepêjirandî ava bikin." },
+        { "language": "pl", "text": "Dyskutować o etyce danych na poziomie C2: uznać wartość produktu, uzasadnić minimalizację danych, nazwać asymetrie władzy, domagać się przejrzystości i sformułować jasną granicę niedopuszczalnego zbierania danych." },
+        { "language": "ro", "text": "Discutați etica datelor la nivel C2: recunoașteți valoarea produsului, justificați minimizarea datelor, numiți asimetriile de putere, cereți transparență și formulați o limită clară pentru colectarea inacceptabilă de date." },
+        { "language": "sq", "text": "Diskutoni etikën e të dhënave në nivel C2: pranoni vlerën e produktit, arsyetoni minimizimin e të dhënave, emërtoni pabarazitë e pushtetit, kërkoni transparencë dhe formuloni një kufi të qartë për mbledhjen e papranueshme të të dhënave." }
+      ],
+      "cefrLevel": "C2",
+      "category": "technology",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "agree-disagree",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 73,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Produktverantwortliche/r",
+          "translations": [
+            { "language": "en", "text": "Product owner" },
+            { "language": "fa", "text": "مسئول محصول" },
+            { "language": "ar", "text": "مسؤول المنتج" },
+            { "language": "tr", "text": "Ürün sorumlusu" },
+            { "language": "ru", "text": "Ответственный за продукт" },
+            { "language": "ckb", "text": "بەرپرسی بەرهەم" },
+            { "language": "kmr", "text": "Berpirsiyarê hilberê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za produkt" },
+            { "language": "ro", "text": "Responsabilul de produs" },
+            { "language": "sq", "text": "Përgjegjësi i produktit" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Teamleitung",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "قائد الفريق" },
+            { "language": "tr", "text": "Ekip lideri" },
+            { "language": "ru", "text": "Руководитель команды" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Lider zespołu" },
+            { "language": "ro", "text": "Coordonatorul echipei" },
+            { "language": "sq", "text": "Udhëheqësi i ekipit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Das Team möchte zusätzliche Nutzungsdaten erfassen, damit Empfehlungen treffsicherer werden. Einige finden das sinnvoll, andere sehen ein Vertrauensproblem. Wie steigen Sie in die Diskussion ein?",
+          "translations": [
+            { "language": "en", "text": "The team wants to collect additional usage data so recommendations become more accurate. Some find that sensible, others see a trust problem. How do you enter the discussion?" },
+            { "language": "fa", "text": "تیم می‌خواهد داده‌های استفاده بیشتری جمع‌آوری کند تا پیشنهادها دقیق‌تر شوند. بعضی این را منطقی می‌دانند، بعضی مشکل اعتماد می‌بینند. شما بحث را چگونه شروع می‌کنید؟" },
+            { "language": "ar", "text": "يريد الفريق جمع بيانات استخدام إضافية كي تصبح التوصيات أدق. يرى بعضهم ذلك منطقيًا، بينما يرى آخرون مشكلة ثقة. كيف تدخلون النقاش؟" },
+            { "language": "tr", "text": "Ekip, önerilerin daha isabetli olması için ek kullanım verileri toplamak istiyor. Bazıları bunu makul buluyor, bazıları güven sorunu görüyor. Tartışmaya nasıl girersiniz?" },
+            { "language": "ru", "text": "Команда хочет собирать дополнительные данные об использовании, чтобы рекомендации стали точнее. Одни считают это разумным, другие видят проблему доверия. Как вы входите в обсуждение?" },
+            { "language": "ckb", "text": "تیمەکە دەیەوێت داتای بەکارهێنانی زیاتر کۆبکاتەوە بۆ ئەوەی پێشنیارەکان وردتر بن. هەندێک ئەمە بە گونجاو دەزانن، ئەوانی تر کێشەی متمانە دەبینن. تۆ چۆن دەچیتە ناو گفتوگۆکە؟" },
+            { "language": "kmr", "text": "Tîm dixwaze daneyên bikaranînê yên zêde kom bike da ku pêşniyar rasttir bibin. Hin kes vê maqûl dibînin, hinên din pirsgirêka baweriyê dibînin. Hûn çawa dikevin nîqaşê?" },
+            { "language": "pl", "text": "Zespół chce zbierać dodatkowe dane o korzystaniu, aby rekomendacje były trafniejsze. Jedni uważają to za sensowne, inni widzą problem zaufania. Jak Pan/Pani wchodzi w dyskusję?" },
+            { "language": "ro", "text": "Echipa dorește să colecteze date suplimentare de utilizare pentru ca recomandările să fie mai precise. Unii consideră acest lucru util, alții văd o problemă de încredere. Cum intrați în discuție?" },
+            { "language": "sq", "text": "Ekipi dëshiron të mbledhë të dhëna shtesë përdorimi që rekomandimet të jenë më të sakta. Disa e shohin si të arsyeshme, të tjerë shohin problem besimi. Si hyni në diskutim?" }
+          ],
+          "function": "opening prompt",
+          "toneNote": "formal, balanced"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Nutzen nicht bestreiten, aber ihn an eine Bedingung knüpfen: Wir sollten nur Daten erheben, die für die konkrete Verbesserung wirklich nötig sind und deren Zweck wir verständlich erklären können.",
+          "translations": [
+            { "language": "en", "text": "I would not deny the benefit, but I would attach a condition to it: we should collect only data that is truly necessary for the specific improvement and whose purpose we can explain clearly." },
+            { "language": "fa", "text": "من فایده را انکار نمی‌کنم، اما آن را به یک شرط وصل می‌کنم: فقط داده‌ای را جمع‌آوری کنیم که برای بهبود مشخص واقعاً لازم است و بتوانیم هدفش را روشن توضیح دهیم." },
+            { "language": "ar", "text": "لن أنكر الفائدة، لكنني أربطها بشرط: ينبغي أن نجمع فقط البيانات الضرورية فعلًا للتحسين المحدد والتي نستطيع شرح هدفها بوضوح." },
+            { "language": "tr", "text": "Yararı reddetmem, ama bunu bir koşula bağlarım: yalnızca somut iyileştirme için gerçekten gerekli olan ve amacını açıkça açıklayabildiğimiz verileri toplamalıyız." },
+            { "language": "ru", "text": "Я бы не отрицал пользу, но связал бы ее с условием: мы должны собирать только те данные, которые действительно нужны для конкретного улучшения и цель которых мы можем понятно объяснить." },
+            { "language": "ckb", "text": "من سوودەکە ڕەت ناکەمەوە، بەڵام بە مەرجێک دەیبەستمەوە: تەنها ئەو داتایە کۆبکەینەوە کە بۆ باشترکردنی دیاریکراو بەڕاستی پێویستە و دەتوانین ئامانجەکەی بە ڕوونی ڕوون بکەینەوە." },
+            { "language": "kmr", "text": "Ez sûdê red nakim, lê wê bi şertê ve girê didim: divê em tenê ew daneyên ku ji bo baştirkirina diyarkirî bi rastî pêwîst in û armanca wan dikarin zelal rave bikin kom bikin." },
+            { "language": "pl", "text": "Nie kwestionowałbym korzyści, ale powiązałbym ją z warunkiem: powinniśmy zbierać tylko dane naprawdę potrzebne do konkretnego ulepszenia i takie, których cel potrafimy jasno wyjaśnić." },
+            { "language": "ro", "text": "Nu aș nega beneficiul, dar l-aș lega de o condiție: ar trebui să colectăm doar datele cu adevărat necesare pentru îmbunătățirea concretă și al căror scop îl putem explica limpede." },
+            { "language": "sq", "text": "Nuk do ta mohoja përfitimin, por do ta lidhja me një kusht: të mbledhim vetëm të dhëna që janë vërtet të nevojshme për përmirësimin konkret dhe që mund t'ua shpjegojmë qartë qëllimin." }
+          ],
+          "function": "balanced condition",
+          "toneNote": "nuanced, principled",
+          "expectedLearnerAction": "Acknowledge benefit and set a minimization condition."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Einige im Team sagen: Je mehr Daten wir haben, desto besser wird das Produkt. Warum reicht diese Logik nicht aus?",
+          "translations": [
+            { "language": "en", "text": "Some people on the team say: the more data we have, the better the product becomes. Why is that logic not enough?" },
+            { "language": "fa", "text": "بعضی در تیم می‌گویند: هرچه داده بیشتری داشته باشیم، محصول بهتر می‌شود. چرا این منطق کافی نیست؟" },
+            { "language": "ar", "text": "يقول بعض أعضاء الفريق: كلما امتلكنا بيانات أكثر، أصبح المنتج أفضل. لماذا لا تكفي هذه الحجة؟" },
+            { "language": "tr", "text": "Ekipte bazıları şöyle diyor: Ne kadar çok verimiz olursa ürün o kadar iyi olur. Bu mantık neden yeterli değil?" },
+            { "language": "ru", "text": "Некоторые в команде говорят: чем больше у нас данных, тем лучше станет продукт. Почему этой логики недостаточно?" },
+            { "language": "ckb", "text": "هەندێک لە تیمەکە دەڵێن: هەرچەند داتامان زیاتر بێت، بەرهەمەکە باشتر دەبێت. بۆچی ئەم لۆژیکە بەس نییە؟" },
+            { "language": "kmr", "text": "Hin kes di tîmê de dibêjin: Her çiqas dane zêdetir hebin, hilber baştir dibe. Çima ev mantiq têr nake?" },
+            { "language": "pl", "text": "Niektórzy w zespole mówią: im więcej danych mamy, tym lepszy będzie produkt. Dlaczego ta logika nie wystarcza?" },
+            { "language": "ro", "text": "Unii din echipă spun: cu cât avem mai multe date, cu atât produsul va fi mai bun. De ce nu este suficientă această logică?" },
+            { "language": "sq", "text": "Disa në ekip thonë: sa më shumë të dhëna të kemi, aq më i mirë bëhet produkti. Pse nuk mjafton kjo logjikë?" }
+          ],
+          "function": "challenge prompt",
+          "toneNote": "critical"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mehr Daten bedeuten nicht automatisch bessere Entscheidungen. Sie können auch falsche Sicherheit erzeugen, sensible Gewohnheiten sichtbar machen oder Menschen dazu bringen, sich beobachtet zu fühlen. Deshalb brauchen wir Zweckbindung und eine klare Obergrenze.",
+          "translations": [
+            { "language": "en", "text": "More data does not automatically mean better decisions. It can also create false certainty, reveal sensitive habits, or make people feel watched. That is why we need purpose limitation and a clear upper boundary." },
+            { "language": "fa", "text": "داده بیشتر خودبه‌خود به معنی تصمیم بهتر نیست. می‌تواند اطمینان کاذب ایجاد کند، عادت‌های حساس را آشکار کند یا باعث شود افراد احساس کنند زیر نظر هستند. به همین دلیل به محدودیت هدف و سقف روشن نیاز داریم." },
+            { "language": "ar", "text": "البيانات الأكثر لا تعني تلقائيًا قرارات أفضل. قد تخلق يقينًا زائفًا، أو تكشف عادات حساسة، أو تجعل الناس يشعرون بأنهم مراقَبون. لذلك نحتاج إلى ربط واضح بالغرض وحد أعلى محدد." },
+            { "language": "tr", "text": "Daha fazla veri otomatik olarak daha iyi karar anlamına gelmez. Yanlış bir güven yaratabilir, hassas alışkanlıkları görünür kılabilir veya insanlara izlendiği hissini verebilir. Bu yüzden amaç sınırlaması ve net bir üst sınır gerekir." },
+            { "language": "ru", "text": "Больше данных не означает автоматически лучших решений. Они могут создать ложную уверенность, сделать видимыми чувствительные привычки или вызвать у людей ощущение наблюдения. Поэтому нужны привязка к цели и четкий верхний предел." },
+            { "language": "ckb", "text": "داتای زیاتر بە خۆکار مانای بڕیاری باشتر نییە. دەتوانێت دڵنیایی ساختە دروست بکات، عادەتی هەستیار دیار بکات یان وا بکات خەڵک هەست بکەن چاودێری دەکرێن. بۆیە پێویستمان بە بەستنەوە بە ئامانج و سنووری سەرەوەی ڕوون هەیە." },
+            { "language": "kmr", "text": "Daneya zêdetir bi xweber wateya biryarên baştir nade. Ew dikare ewlehiya derewîn çêbike, adetên nazik xuya bike an mirovan bike ku xwe di bin çavdêriyê de hîs bikin. Ji ber vê yekê pêdivî bi girêdana armancê û sînoreke jorîn a zelal heye." },
+            { "language": "pl", "text": "Więcej danych nie oznacza automatycznie lepszych decyzji. Może też tworzyć fałszywą pewność, ujawniać wrażliwe nawyki albo sprawiać, że ludzie czują się obserwowani. Dlatego potrzebujemy powiązania z celem i jasnej górnej granicy." },
+            { "language": "ro", "text": "Mai multe date nu înseamnă automat decizii mai bune. Ele pot crea și o siguranță falsă, pot face vizibile obiceiuri sensibile sau îi pot face pe oameni să se simtă supravegheați. De aceea avem nevoie de limitare la scop și de o limită superioară clară." },
+            { "language": "sq", "text": "Më shumë të dhëna nuk do të thotë automatikisht vendime më të mira. Ato mund të krijojnë siguri të rreme, të bëjnë të dukshme zakone të ndjeshme ose t'i bëjnë njerëzit të ndihen të vëzhguar. Prandaj na duhet lidhje me qëllimin dhe një kufi i sipërm i qartë." }
+          ],
+          "function": "ethical risk framing",
+          "toneNote": "critical, precise",
+          "expectedLearnerAction": "Explain why more data is not automatically better."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Wo ziehen Sie konkret die Grenze zwischen legitimer Produktverbesserung und problematischer Datenerhebung?",
+          "translations": [
+            { "language": "en", "text": "Where exactly do you draw the line between legitimate product improvement and problematic data collection?" },
+            { "language": "fa", "text": "مرز دقیق بین بهبود مشروع محصول و جمع‌آوری مسئله‌دار داده را کجا می‌گذارید؟" },
+            { "language": "ar", "text": "أين ترسمون تحديدًا الحد بين تحسين المنتج المشروع وجمع البيانات الإشكالي؟" },
+            { "language": "tr", "text": "Meşru ürün iyileştirmesi ile sorunlu veri toplama arasındaki sınırı tam olarak nerede çiziyorsunuz?" },
+            { "language": "ru", "text": "Где именно вы проводите границу между легитимным улучшением продукта и проблемным сбором данных?" },
+            { "language": "ckb", "text": "بە وردی سنوور لە نێوان باشترکردنی ڕەوای بەرهەم و کۆکردنەوەی کێشەداری داتا لە کوێ دادەنێیت؟" },
+            { "language": "kmr", "text": "Hûn sînorê di navbera baştirkirina rewa ya hilberê û komkirina daneyên pirsgirêkdar de bi taybetî li ku dikêşin?" },
+            { "language": "pl", "text": "Gdzie dokładnie wyznacza Pan/Pani granicę między uprawnionym ulepszaniem produktu a problematycznym zbieraniem danych?" },
+            { "language": "ro", "text": "Unde trasați concret limita dintre îmbunătățirea legitimă a produsului și colectarea problematică de date?" },
+            { "language": "sq", "text": "Ku e vendosni konkret kufirin midis përmirësimit legjitim të produktit dhe mbledhjes problematike të të dhënave?" }
+          ],
+          "function": "boundary prompt",
+          "toneNote": "direct"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Legitim ist, was für eine nachvollziehbare Funktion erforderlich ist, sparsam erhoben wird und den Nutzerinnen und Nutzern erklärbar bleibt. Problematisch wird es, wenn Daten gesammelt werden, nur weil sie später vielleicht einmal nützlich sein könnten.",
+          "translations": [
+            { "language": "en", "text": "What is legitimate is what is required for a comprehensible function, collected sparingly, and remains explainable to users. It becomes problematic when data is collected only because it might possibly be useful later." },
+            { "language": "fa", "text": "مشروع آن چیزی است که برای یک عملکرد قابل فهم لازم باشد، به‌صرفه و محدود جمع‌آوری شود و برای کاربران قابل توضیح بماند. وقتی داده فقط به این دلیل جمع شود که شاید بعداً روزی مفید باشد، مسئله‌دار می‌شود." },
+            { "language": "ar", "text": "المشروع هو ما يكون ضروريًا لوظيفة مفهومة، ويُجمع باقتصاد، ويبقى قابلًا للشرح للمستخدمين. يصبح الأمر إشكاليًا عندما تُجمع البيانات فقط لأنها قد تكون مفيدة لاحقًا يومًا ما." },
+            { "language": "tr", "text": "Meşru olan, anlaşılır bir işlev için gerekli olan, ölçülü toplanan ve kullanıcılara açıklanabilir kalan veridir. Veri yalnızca ileride belki işe yarar diye toplanırsa sorunlu hale gelir." },
+            { "language": "ru", "text": "Легитимно то, что необходимо для понятной функции, собирается экономно и остается объяснимым для пользователей. Проблема начинается, когда данные собирают только потому, что когда-нибудь позже они могут пригодиться." },
+            { "language": "ckb", "text": "ڕەوا ئەوەیە کە بۆ کارێکی تێگەیشتوو پێویست بێت، بە کەمترین شێوە کۆبکرێتەوە و بۆ بەکارهێنەران ڕوونکردنەوەی هەبێت. کێشەدار دەبێت کاتێک داتا تەنها بۆ ئەوە کۆدەکرێتەوە کە ڕەنگە دواتر ڕۆژێک بەسوود بێت." },
+            { "language": "kmr", "text": "Rewa ew e ku ji bo karekî têgihiştî pêwîst be, bi kêmî were komkirin û ji bo bikarhêneran were ravekirin. Ew pirsgirêkdar dibe dema dane tenê ji ber ku dibe ku paşê rojekê bikêr be were komkirin." },
+            { "language": "pl", "text": "Uprawnione jest to, co jest potrzebne do zrozumiałej funkcji, zbierane oszczędnie i możliwe do wyjaśnienia użytkownikom. Problem zaczyna się wtedy, gdy dane zbiera się tylko dlatego, że być może kiedyś później się przydadzą." },
+            { "language": "ro", "text": "Legitim este ceea ce este necesar pentru o funcție inteligibilă, colectat cu economie și explicabil pentru utilizatori. Devine problematic atunci când datele sunt colectate doar pentru că ar putea fi utile cândva mai târziu." },
+            { "language": "sq", "text": "Legjitime është ajo që nevojitet për një funksion të kuptueshëm, mblidhet me kursim dhe mbetet e shpjegueshme për përdoruesit. Bëhet problematike kur të dhënat mblidhen vetëm sepse ndoshta mund të jenë të dobishme dikur më vonë." }
+          ],
+          "function": "ethical boundary",
+          "toneNote": "principled, concrete",
+          "expectedLearnerAction": "Draw a defensible data boundary."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Wie nehmen Sie den Einwand auf, dass zu strenge Grenzen Innovation ausbremsen?",
+          "translations": [
+            { "language": "en", "text": "How do you respond to the objection that overly strict limits slow innovation down?" },
+            { "language": "fa", "text": "به این ایراد که مرزهای بیش از حد سخت نوآوری را کند می‌کنند چگونه پاسخ می‌دهید؟" },
+            { "language": "ar", "text": "كيف تتعاملون مع الاعتراض القائل إن الحدود الصارمة جدًا تُبطئ الابتكار؟" },
+            { "language": "tr", "text": "Aşırı sıkı sınırların yeniliği yavaşlattığı itirazına nasıl yanıt verirsiniz?" },
+            { "language": "ru", "text": "Как вы отвечаете на возражение, что слишком строгие границы тормозят инновации?" },
+            { "language": "ckb", "text": "چۆن وەڵامی ئەو ڕەخنەیە دەدەیتەوە کە سنووری زۆر توند نوێکاری کند دەکات؟" },
+            { "language": "kmr", "text": "Hûn çawa bersiva wê rexneyê didin ku sînorên pir hişk nûbûnê hêdî dikin?" },
+            { "language": "pl", "text": "Jak odpowiada Pan/Pani na zarzut, że zbyt surowe granice hamują innowację?" },
+            { "language": "ro", "text": "Cum răspundeți obiecției că limitele prea stricte încetinesc inovația?" },
+            { "language": "sq", "text": "Si i përgjigjeni kundërshtimit se kufijtë tepër të rreptë e ngadalësojnë risinë?" }
+          ],
+          "function": "objection prompt",
+          "toneNote": "challenging"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Grenzen bremsen nicht automatisch Innovation; sie machen sie belastbarer. Ein Produkt, das Vertrauen verliert, wird langfristig schwächer. Deshalb sollten wir mit kleinen, begründeten Datensätzen testen, statt vorsorglich alles mitzunehmen.",
+          "translations": [
+            { "language": "en", "text": "Limits do not automatically slow innovation; they make it more robust. A product that loses trust becomes weaker in the long term. That is why we should test with small, justified datasets instead of collecting everything as a precaution." },
+            { "language": "fa", "text": "مرزها خودبه‌خود نوآوری را کند نمی‌کنند؛ آن را قابل اتکاتر می‌کنند. محصولی که اعتماد را از دست بدهد در بلندمدت ضعیف‌تر می‌شود. بنابراین باید با مجموعه‌داده‌های کوچک و توجیه‌شده آزمایش کنیم، نه اینکه برای احتیاط همه چیز را با خود ببریم." },
+            { "language": "ar", "text": "الحدود لا تُبطئ الابتكار تلقائيًا؛ بل تجعله أكثر متانة. المنتج الذي يفقد الثقة يصبح أضعف على المدى الطويل. لذلك ينبغي أن نختبر بمجموعات بيانات صغيرة ومبررة بدلًا من أخذ كل شيء احتياطًا." },
+            { "language": "tr", "text": "Sınırlar yeniliği otomatik olarak yavaşlatmaz; onu daha dayanıklı kılar. Güven kaybeden bir ürün uzun vadede zayıflar. Bu yüzden tedbir olsun diye her şeyi toplamak yerine küçük ve gerekçeli veri kümeleriyle test etmeliyiz." },
+            { "language": "ru", "text": "Границы не автоматически тормозят инновации; они делают их устойчивее. Продукт, теряющий доверие, в долгосрочной перспективе становится слабее. Поэтому нужно тестировать на небольших, обоснованных наборах данных, а не брать все заранее." },
+            { "language": "ckb", "text": "سنوورەکان بە خۆکار نوێکاری کند ناکەن؛ بەڵکو پشتپێبەستراوتر دەیکەن. بەرهەمێک کە متمانە لەدەست بدات لە درێژخایەندا لاوازتر دەبێت. بۆیە پێویستە بە کۆمەڵەداتای بچووک و پاساودراو تاقی بکەینەوە، نە ئەوەی بۆ پێشبینی هەموو شتێک کۆبکەینەوە." },
+            { "language": "kmr", "text": "Sînor bi xweber nûbûnê hêdî nakin; ew wê pêbawertir dikin. Hilberek ku baweriyê winda bike di demeke dirêj de lawaztir dibe. Ji ber vê yekê divê em bi komên daneyên biçûk û bi sedem ceribandin bikin, ne ku ji bo tedbîrê her tiştî kom bikin." },
+            { "language": "pl", "text": "Granice nie hamują automatycznie innowacji; czynią ją bardziej trwałą. Produkt, który traci zaufanie, w dłuższej perspektywie słabnie. Dlatego powinniśmy testować na małych, uzasadnionych zbiorach danych, zamiast zapobiegawczo brać wszystko." },
+            { "language": "ro", "text": "Limitele nu încetinesc automat inovația; o fac mai solidă. Un produs care pierde încrederea devine mai slab pe termen lung. De aceea ar trebui să testăm cu seturi mici și justificate de date, nu să luăm totul preventiv." },
+            { "language": "sq", "text": "Kufijtë nuk e ngadalësojnë automatikisht risinë; ata e bëjnë më të qëndrueshme. Një produkt që humb besimin dobësohet afatgjatë. Prandaj duhet të testojmë me grupe të vogla dhe të arsyetuara të dhënash, jo të marrim gjithçka për çdo rast." }
+          ],
+          "function": "objection response",
+          "toneNote": "strategic, trust-oriented",
+          "expectedLearnerAction": "Respond to innovation objection with trust and testability."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Formulieren Sie zum Abschluss bitte eine Entscheidungsempfehlung für das Team.",
+          "translations": [
+            { "language": "en", "text": "To conclude, please formulate a decision recommendation for the team." },
+            { "language": "fa", "text": "در پایان لطفاً یک پیشنهاد تصمیم‌گیری برای تیم بیان کنید." },
+            { "language": "ar", "text": "في الختام، يرجى صياغة توصية قرار للفريق." },
+            { "language": "tr", "text": "Son olarak lütfen ekip için bir karar önerisi formüle edin." },
+            { "language": "ru", "text": "В заключение сформулируйте, пожалуйста, рекомендацию по решению для команды." },
+            { "language": "ckb", "text": "لە کۆتاییدا تکایە پێشنیارێکی بڕیار بۆ تیمەکە دابڕێژە." },
+            { "language": "kmr", "text": "Di dawiyê de ji kerema xwe pêşniyareke biryarê ji bo tîmê ava bikin." },
+            { "language": "pl", "text": "Na zakończenie proszę sformułować rekomendację decyzji dla zespołu." },
+            { "language": "ro", "text": "La final, vă rog să formulați o recomandare de decizie pentru echipă." },
+            { "language": "sq", "text": "Në fund, ju lutem formuloni një rekomandim vendimi për ekipin." }
+          ],
+          "function": "decision prompt",
+          "toneNote": "synthesis"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich empfehle, die Erweiterung nur als begrenzten Test freizugeben: mit klar benannten Datenfeldern, kurzer Speicherdauer, sichtbarer Erklärung für die Nutzerinnen und Nutzer und einem Verbot, zusätzliche Verhaltensdaten auf Vorrat zu sammeln.",
+          "translations": [
+            { "language": "en", "text": "I recommend approving the extension only as a limited test: with clearly named data fields, short retention, a visible explanation for users, and a ban on collecting additional behavioral data in reserve." },
+            { "language": "fa", "text": "من پیشنهاد می‌کنم گسترش فقط به‌عنوان یک آزمایش محدود آزاد شود: با فیلدهای داده روشن، مدت نگهداری کوتاه، توضیح قابل مشاهده برای کاربران و ممنوعیت جمع‌آوری داده‌های رفتاری اضافی برای استفاده احتمالی آینده." },
+            { "language": "ar", "text": "أوصي بالموافقة على التوسيع فقط كتجربة محدودة: مع حقول بيانات مسماة بوضوح، ومدة حفظ قصيرة، وشرح ظاهر للمستخدمين، وحظر جمع بيانات سلوكية إضافية للاحتياط." },
+            { "language": "tr", "text": "Genişletmenin yalnızca sınırlı bir test olarak onaylanmasını öneriyorum: açıkça adlandırılmış veri alanları, kısa saklama süresi, kullanıcılar için görünür açıklama ve ek davranış verilerini yedek amaçla toplamama yasağıyla." },
+            { "language": "ru", "text": "Я рекомендую разрешить расширение только как ограниченный тест: с четко названными полями данных, коротким сроком хранения, видимым объяснением для пользователей и запретом собирать дополнительные поведенческие данные про запас." },
+            { "language": "ckb", "text": "من پێشنیار دەکەم فراوانکردن تەنها وەک تاقیکردنەوەیەکی سنووردار ڕێگەپێبدرێت: بە خانەداتای ڕوون، ماوەی هەڵگرتنی کورت، ڕوونکردنەوەی دیار بۆ بەکارهێنەران و قەدەغەی کۆکردنەوەی داتای ڕەفتاری زیاتر بۆ پێشبینی داهاتوو." },
+            { "language": "kmr", "text": "Ez pêşniyar dikim ku berfirehkirin tenê wek ceribandineke sînordar were pejirandin: bi qadên daneyan ên zelal, demeke kurt a parastinê, ravekirineke xuya ji bo bikarhêneran û qedexeya komkirina daneyên tevgerî yên zêde ji bo ihtîmalên paşerojê." },
+            { "language": "pl", "text": "Rekomenduję dopuścić rozszerzenie tylko jako ograniczony test: z jasno nazwanymi polami danych, krótkim okresem przechowywania, widocznym wyjaśnieniem dla użytkowników i zakazem zbierania dodatkowych danych behawioralnych na zapas." },
+            { "language": "ro", "text": "Recomand aprobarea extinderii doar ca test limitat: cu câmpuri de date numite clar, durată scurtă de păstrare, explicație vizibilă pentru utilizatori și interdicție de a colecta date comportamentale suplimentare pentru eventuale utilizări viitoare." },
+            { "language": "sq", "text": "Rekomandoj që zgjerimi të lejohet vetëm si test i kufizuar: me fusha të dhënash të emërtuara qartë, kohë të shkurtër ruajtjeje, shpjegim të dukshëm për përdoruesit dhe ndalim të mbledhjes së të dhënave shtesë të sjelljes për përdorime të mundshme të mëvonshme." }
+          ],
+          "function": "final recommendation",
+          "toneNote": "clear, governance-oriented",
+          "expectedLearnerAction": "Give a decision with concrete safeguards."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich erkenne den Nutzen an, würde aber nur Daten erheben, die für eine konkrete Verbesserung nötig und verständlich erklärbar sind.",
+              "translations": [
+                { "language": "en", "text": "I acknowledge the benefit, but would collect only data that is necessary for a specific improvement and can be explained clearly." },
+                { "language": "fa", "text": "فایده را می‌پذیرم، اما فقط داده‌ای را جمع می‌کنم که برای یک بهبود مشخص لازم باشد و بتوان آن را روشن توضیح داد." },
+                { "language": "ar", "text": "أعترف بالفائدة، لكنني سأجمع فقط البيانات الضرورية لتحسين محدد والقابلة للشرح بوضوح." },
+                { "language": "tr", "text": "Yararı kabul ederim, ancak yalnızca belirli bir iyileştirme için gerekli ve açıkça açıklanabilir verileri toplarım." },
+                { "language": "ru", "text": "Я признаю пользу, но собирал бы только данные, необходимые для конкретного улучшения и понятно объяснимые." },
+                { "language": "ckb", "text": "سوودەکە دەناسێنم، بەڵام تەنها ئەو داتایە کۆدەکەمەوە کە بۆ باشترکردنێکی دیاریکراو پێویستە و بە ڕوونی ڕوون دەکرێتەوە." },
+                { "language": "kmr", "text": "Ez sûdê nas dikim, lê tenê ew daneyên ku ji bo baştirkirineke diyarkirî pêwîst û bi zelalî ravebar in kom dikim." },
+                { "language": "pl", "text": "Uznaję korzyść, ale zbierałbym tylko dane potrzebne do konkretnego ulepszenia i możliwe do jasnego wyjaśnienia." },
+                { "language": "ro", "text": "Recunosc beneficiul, dar aș colecta doar date necesare pentru o îmbunătățire concretă și explicabile clar." },
+                { "language": "sq", "text": "E pranoj përfitimin, por do të mblidhja vetëm të dhëna të nevojshme për një përmirësim konkret dhe të shpjegueshme qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Produktnutzen mit Datenminimierung und Erklärbarkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects product value with data minimization and explainability." },
+                { "language": "fa", "text": "قوی: پاسخ فایده محصول را به کمینه‌سازی داده و قابلیت توضیح وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة قيمة المنتج بتقليل البيانات وقابلية الشرح." },
+                { "language": "tr", "text": "Güçlü: Yanıt ürün değerini veri minimizasyonu ve açıklanabilirlikle birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ связывает пользу продукта с минимизацией данных и объяснимостью." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سوودی بەرهەم بە کمکردنەوەی داتا و ڕوونکردنەوە دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv sûda hilberê bi kêmbûna daneyan û ravebarî ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy wartość produktu z minimalizacją danych i wyjaśnialnością." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă valoarea produsului de minimizarea datelor și explicabilitate." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh vlerën e produktit me minimizimin e të dhënave dhe shpjegueshmërinë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn die Empfehlungen besser werden, sollten wir die Datenerhebung nicht zu früh einschränken.",
+              "translations": [
+                { "language": "en", "text": "If the recommendations improve, we should not restrict data collection too early." },
+                { "language": "fa", "text": "اگر پیشنهادها بهتر می‌شوند، نباید جمع‌آوری داده را خیلی زود محدود کنیم." },
+                { "language": "ar", "text": "إذا تحسنت التوصيات، فلا ينبغي أن نقيّد جمع البيانات مبكرًا جدًا." },
+                { "language": "tr", "text": "Öneriler iyileşiyorsa veri toplamayı çok erken sınırlamamalıyız." },
+                { "language": "ru", "text": "Если рекомендации улучшаются, не следует слишком рано ограничивать сбор данных." },
+                { "language": "ckb", "text": "ئەگەر پێشنیارەکان باشتر دەبن، نابێت کۆکردنەوەی داتا زۆر زوو سنووردار بکەین." },
+                { "language": "kmr", "text": "Heke pêşniyar baştir dibin, nabe em komkirina daneyan pir zû sînordar bikin." },
+                { "language": "pl", "text": "Jeśli rekomendacje się poprawiają, nie powinniśmy zbyt wcześnie ograniczać zbierania danych." },
+                { "language": "ro", "text": "Dacă recomandările se îmbunătățesc, nu ar trebui să limităm colectarea datelor prea devreme." },
+                { "language": "sq", "text": "Nëse rekomandimet përmirësohen, nuk duhet ta kufizojmë mbledhjen e të dhënave shumë herët." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu produktzentriert: Vertrauen und Zweckbindung bleiben unklar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too product-centered: trust and purpose limitation remain unclear." },
+                { "language": "fa", "text": "قابل‌باور است، اما بیش از حد محصول‌محور است: اعتماد و محدودیت هدف روشن نمی‌مانند." },
+                { "language": "ar", "text": "معقول، لكنه متمحور كثيرًا حول المنتج: تبقى الثقة وربط الغرض غير واضحين." },
+                { "language": "tr", "text": "Akla yatkın ama fazla ürün merkezli: güven ve amaç sınırlaması belirsiz kalıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком сосредоточено на продукте: доверие и привязка к цели остаются неясными." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر بەرهەم-ناوەندە: متمانە و بەستنەوە بە ئامانج ناڕوون دەمێنن." },
+                { "language": "kmr", "text": "Bawerbar e, lê pir hilber-navend e: bawerî û girêdana armancê nezelal dimînin." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt produktocentryczne: zaufanie i powiązanie z celem pozostają niejasne." },
+                { "language": "ro", "text": "Plauzibil, dar prea centrat pe produs: încrederea și limitarea la scop rămân neclare." },
+                { "language": "sq", "text": "E besueshme, por shumë e përqendruar te produkti: besimi dhe kufizimi te qëllimi mbeten të paqarta." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mehr Daten können falsche Sicherheit erzeugen und sensible Gewohnheiten sichtbar machen; deshalb brauchen wir Zweckbindung und eine klare Obergrenze.",
+              "translations": [
+                { "language": "en", "text": "More data can create false certainty and reveal sensitive habits; that is why we need purpose limitation and a clear upper boundary." },
+                { "language": "fa", "text": "داده بیشتر می‌تواند اطمینان کاذب ایجاد کند و عادت‌های حساس را آشکار سازد؛ بنابراین به محدودیت هدف و سقف روشن نیاز داریم." },
+                { "language": "ar", "text": "قد تخلق البيانات الأكثر يقينًا زائفًا وتكشف عادات حساسة؛ لذلك نحتاج إلى ربط واضح بالغرض وحد أعلى محدد." },
+                { "language": "tr", "text": "Daha fazla veri yanlış güven yaratabilir ve hassas alışkanlıkları görünür kılabilir; bu nedenle amaç sınırlaması ve net bir üst sınır gerekir." },
+                { "language": "ru", "text": "Больше данных может создать ложную уверенность и раскрыть чувствительные привычки; поэтому нужны привязка к цели и четкий верхний предел." },
+                { "language": "ckb", "text": "داتای زیاتر دەتوانێت دڵنیایی ساختە دروست بکات و عادەتی هەستیار دیار بکات؛ بۆیە پێویستمان بە بەستنەوە بە ئامانج و سنووری سەرەوەی ڕوون هەیە." },
+                { "language": "kmr", "text": "Daneya zêdetir dikare ewlehiya derewîn çêbike û adetên nazik xuya bike; ji ber vê yekê pêdivî bi girêdana armancê û sînoreke jorîn a zelal heye." },
+                { "language": "pl", "text": "Więcej danych może tworzyć fałszywą pewność i ujawniać wrażliwe nawyki; dlatego potrzebujemy powiązania z celem i jasnej górnej granicy." },
+                { "language": "ro", "text": "Mai multe date pot crea o siguranță falsă și pot face vizibile obiceiuri sensibile; de aceea avem nevoie de limitare la scop și de o limită superioară clară." },
+                { "language": "sq", "text": "Më shumë të dhëna mund të krijojnë siguri të rreme dhe të zbulojnë zakone të ndjeshme; prandaj na duhet lidhje me qëllimin dhe një kufi i sipërm i qartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort widerspricht der Mehr-Daten-Logik mit konkreten ethischen Risiken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer counters the more-data logic with concrete ethical risks." },
+                { "language": "fa", "text": "قوی: پاسخ منطق داده بیشتر را با خطرهای اخلاقی مشخص نقد می‌کند." },
+                { "language": "ar", "text": "قوي: تواجه الإجابة منطق المزيد من البيانات بمخاطر أخلاقية ملموسة." },
+                { "language": "tr", "text": "Güçlü: Yanıt daha fazla veri mantığına somut etik risklerle karşı çıkar." },
+                { "language": "ru", "text": "Сильно: ответ противопоставляет логике «больше данных» конкретные этические риски." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە مەترسیی ئەخلاقی دیاریکراو دژی لۆژیکی داتای زیاتر دەوەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi xeterên etîkî yên diyarkirî li hember mantiqa daneya zêdetir radiweste." },
+                { "language": "pl", "text": "Mocne: odpowiedź przeciwstawia logice większej ilości danych konkretne ryzyka etyczne." },
+                { "language": "ro", "text": "Puternic: răspunsul contrazice logica mai multor date prin riscuri etice concrete." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kundërshton logjikën e më shumë të dhënave me rreziqe etike konkrete." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Mehr Daten sind nur dann problematisch, wenn sie rechtlich nicht sauber abgesichert sind.",
+              "translations": [
+                { "language": "en", "text": "More data is problematic only when it is not legally secured cleanly." },
+                { "language": "fa", "text": "داده بیشتر فقط زمانی مسئله‌دار است که از نظر حقوقی درست پوشش داده نشده باشد." },
+                { "language": "ar", "text": "تصبح البيانات الأكثر إشكالية فقط عندما لا تكون مضمونة قانونيًا بشكل سليم." },
+                { "language": "tr", "text": "Daha fazla veri ancak hukuken düzgün güvenceye alınmadığında sorunludur." },
+                { "language": "ru", "text": "Больше данных проблематично только тогда, когда они юридически не обеспечены чисто." },
+                { "language": "ckb", "text": "داتای زیاتر تەنها کاتێک کێشەدارە کە لە ڕووی یاساییەوە بە دروستی پارێزراو نەبێت." },
+                { "language": "kmr", "text": "Daneya zêdetir tenê wê demê pirsgirêkdar e ku ji aliyê yasayî ve baş nehatibe ewlekirin." },
+                { "language": "pl", "text": "Więcej danych jest problematyczne tylko wtedy, gdy nie jest porządnie zabezpieczone prawnie." },
+                { "language": "ro", "text": "Mai multe date sunt problematice doar atunci când nu sunt asigurate juridic în mod corect." },
+                { "language": "sq", "text": "Më shumë të dhëna janë problematike vetëm kur nuk janë të siguruara si duhet juridikisht." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng: Rechtliche Absicherung ersetzt keine ethische Bewertung von Vertrauen und Machtasymmetrie.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: legal safeguards do not replace an ethical assessment of trust and power asymmetry." },
+                { "language": "fa", "text": "بیش از حد محدود است: پوشش حقوقی جای ارزیابی اخلاقی اعتماد و نابرابری قدرت را نمی‌گیرد." },
+                { "language": "ar", "text": "ضيق جدًا: الضمان القانوني لا يعوض تقييمًا أخلاقيًا للثقة واختلال القوة." },
+                { "language": "tr", "text": "Fazla dar: Hukuki güvence, güven ve güç asimetrisine dair etik değerlendirmeyi ikame etmez." },
+                { "language": "ru", "text": "Слишком узко: юридическое обеспечение не заменяет этической оценки доверия и асимметрии власти." },
+                { "language": "ckb", "text": "زۆر تەسکە: پاراستنی یاسایی شوێنی هەڵسەنگاندنی ئەخلاقیی متمانە و نایەکسانی هێز ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir teng e: ewlekariya yasayî cihê nirxandina etîkî ya bawerî û nehevsengiya hêzê nagire." },
+                { "language": "pl", "text": "Zbyt wąskie: zabezpieczenie prawne nie zastępuje etycznej oceny zaufania i asymetrii władzy." },
+                { "language": "ro", "text": "Prea îngust: garanția juridică nu înlocuiește evaluarea etică a încrederii și a asimetriei de putere." },
+                { "language": "sq", "text": "Shumë e ngushtë: mbrojtja juridike nuk zëvendëson vlerësimin etik të besimit dhe pabarazisë së pushtetit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Legitim ist nur, was für eine nachvollziehbare Funktion nötig ist, sparsam erhoben wird und Nutzerinnen und Nutzern erklärbar bleibt.",
+              "translations": [
+                { "language": "en", "text": "Only what is necessary for a comprehensible function, collected sparingly, and explainable to users is legitimate." },
+                { "language": "fa", "text": "فقط چیزی مشروع است که برای یک عملکرد قابل فهم لازم باشد، محدود جمع‌آوری شود و برای کاربران قابل توضیح بماند." },
+                { "language": "ar", "text": "المشروع فقط ما يكون ضروريًا لوظيفة مفهومة، ويُجمع باقتصاد، ويبقى قابلًا للشرح للمستخدمين." },
+                { "language": "tr", "text": "Yalnızca anlaşılır bir işlev için gerekli olan, ölçülü toplanan ve kullanıcılara açıklanabilir kalan veri meşrudur." },
+                { "language": "ru", "text": "Легитимно только то, что необходимо для понятной функции, собирается экономно и остается объяснимым для пользователей." },
+                { "language": "ckb", "text": "تەنها ئەوە ڕەوایە کە بۆ کارێکی تێگەیشتوو پێویست بێت، بە کەمترین شێوە کۆبکرێتەوە و بۆ بەکارهێنەران ڕوونکردنەوەی هەبێت." },
+                { "language": "kmr", "text": "Tenê ew rewa ye ku ji bo karekî têgihiştî pêwîst be, bi kêmî were komkirin û ji bo bikarhêneran were ravekirin." },
+                { "language": "pl", "text": "Uprawnione jest tylko to, co potrzebne do zrozumiałej funkcji, zbierane oszczędnie i możliwe do wyjaśnienia użytkownikom." },
+                { "language": "ro", "text": "Legitim este doar ceea ce este necesar pentru o funcție inteligibilă, colectat cu economie și explicabil pentru utilizatori." },
+                { "language": "sq", "text": "Legjitime është vetëm ajo që nevojitet për një funksion të kuptueshëm, mblidhet me kursim dhe mund t'u shpjegohet përdoruesve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort liefert eine klare, prüfbare Grenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer provides a clear, testable boundary." },
+                { "language": "fa", "text": "قوی: پاسخ مرزی روشن و قابل بررسی ارائه می‌دهد." },
+                { "language": "ar", "text": "قوي: تقدم الإجابة حدًا واضحًا قابلًا للفحص." },
+                { "language": "tr", "text": "Güçlü: Yanıt açık ve denetlenebilir bir sınır sunar." },
+                { "language": "ru", "text": "Сильно: ответ дает четкую, проверяемую границу." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە سنوورێکی ڕوون و پشکنراو پێشکەش دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv sînoreke zelal û kontrolbar pêşkêş dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź daje jasną, sprawdzalną granicę." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă o limită clară și verificabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja jep një kufi të qartë dhe të verifikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Grenze liegt dort, wo Nutzerinnen und Nutzer der Datennutzung nicht mehr zustimmen würden.",
+              "translations": [
+                { "language": "en", "text": "The boundary is where users would no longer agree to the data use." },
+                { "language": "fa", "text": "مرز جایی است که کاربران دیگر با استفاده از داده موافقت نکنند." },
+                { "language": "ar", "text": "يقع الحد حيث لا يعود المستخدمون يوافقون على استخدام البيانات." },
+                { "language": "tr", "text": "Sınır, kullanıcıların veri kullanımına artık onay vermeyeceği yerdedir." },
+                { "language": "ru", "text": "Граница там, где пользователи больше не согласились бы на использование данных." },
+                { "language": "ckb", "text": "سنوور لەو شوێنەدایە کە بەکارهێنەران چیتر ڕازی نابن بە بەکارهێنانی داتا." },
+                { "language": "kmr", "text": "Sînor li wir e ku bikarhêner êdî razî nebin bi bikaranîna daneyan." },
+                { "language": "pl", "text": "Granica jest tam, gdzie użytkownicy nie zgodziliby się już na użycie danych." },
+                { "language": "ro", "text": "Limita este acolo unde utilizatorii nu ar mai accepta utilizarea datelor." },
+                { "language": "sq", "text": "Kufiri është aty ku përdoruesit nuk do të pranonin më përdorimin e të dhënave." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise richtig, aber zu subjektiv: Zustimmung allein ersetzt keine Zweck- und Sparsamkeitsprüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly right, but too subjective: agreement alone does not replace review of purpose and minimization." },
+                { "language": "fa", "text": "تا حدی درست است، اما بیش از حد ذهنی است: موافقت به‌تنهایی جای بررسی هدف و کمینه‌سازی را نمی‌گیرد." },
+                { "language": "ar", "text": "صحيح جزئيًا، لكنه ذاتي جدًا: الموافقة وحدها لا تعوض فحص الغرض والتقليل." },
+                { "language": "tr", "text": "Kısmen doğru ama fazla öznel: Onay tek başına amaç ve minimizasyon incelemesinin yerini tutmaz." },
+                { "language": "ru", "text": "Отчасти верно, но слишком субъективно: согласие само по себе не заменяет проверки цели и минимизации." },
+                { "language": "ckb", "text": "تا ڕادەیەک ڕاستە، بەڵام زۆر تاکەکەسییە: ڕەزامەندی بە تەنها شوێنی پشکنینی ئامانج و کمکردنەوە ناگرێتەوە." },
+                { "language": "kmr", "text": "Hinî rast e, lê pir subjektîf e: razîbûn bi tena serê xwe cihê kontrola armanc û kêmbûnê nagire." },
+                { "language": "pl", "text": "Częściowo słuszne, ale zbyt subiektywne: sama zgoda nie zastępuje sprawdzenia celu i minimalizacji." },
+                { "language": "ro", "text": "Parțial corect, dar prea subiectiv: acordul singur nu înlocuiește verificarea scopului și a minimizării." },
+                { "language": "sq", "text": "Pjesërisht e drejtë, por shumë subjektive: pëlqimi vetëm nuk zëvendëson kontrollin e qëllimit dhe të minimizimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Grenzen machen Innovation belastbarer, weil ein Produkt ohne Vertrauen langfristig schwächer wird.",
+              "translations": [
+                { "language": "en", "text": "Limits make innovation more robust because a product without trust becomes weaker in the long term." },
+                { "language": "fa", "text": "مرزها نوآوری را قابل اتکاتر می‌کنند، چون محصول بدون اعتماد در بلندمدت ضعیف‌تر می‌شود." },
+                { "language": "ar", "text": "الحدود تجعل الابتكار أكثر متانة، لأن المنتج من دون ثقة يصبح أضعف على المدى الطويل." },
+                { "language": "tr", "text": "Sınırlar yeniliği daha dayanıklı kılar, çünkü güven olmayan bir ürün uzun vadede zayıflar." },
+                { "language": "ru", "text": "Границы делают инновации устойчивее, потому что продукт без доверия в долгосрочной перспективе становится слабее." },
+                { "language": "ckb", "text": "سنوورەکان نوێکاری پشتپێبەستراوتر دەکەن، چونکە بەرهەمێک بێ متمانە لە درێژخایەندا لاوازتر دەبێت." },
+                { "language": "kmr", "text": "Sînor nûbûnê pêbawertir dikin, ji ber ku hilberek bê bawerî di demeke dirêj de lawaztir dibe." },
+                { "language": "pl", "text": "Granice czynią innowację bardziej trwałą, ponieważ produkt bez zaufania w dłuższej perspektywie słabnie." },
+                { "language": "ro", "text": "Limitele fac inovația mai solidă, deoarece un produs fără încredere devine mai slab pe termen lung." },
+                { "language": "sq", "text": "Kufijtë e bëjnë risinë më të qëndrueshme, sepse një produkt pa besim dobësohet afatgjatë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort beantwortet den Innovationseinwand strategisch statt defensiv.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer responds to the innovation objection strategically rather than defensively." },
+                { "language": "fa", "text": "قوی: پاسخ به ایراد مربوط به نوآوری راهبردی جواب می‌دهد، نه دفاعی." },
+                { "language": "ar", "text": "قوي: تجيب الإجابة عن اعتراض الابتكار استراتيجيًا لا دفاعيًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt yenilik itirazına savunmacı değil, stratejik biçimde cevap verir." },
+                { "language": "ru", "text": "Сильно: ответ реагирует на возражение об инновациях стратегически, а не оборонительно." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە شێوەی ستراتیژی وەڵامی ڕەخنەی نوێکاری دەداتەوە، نە بەرگریکارانە." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi awayekî stratejîk bersiva rexneya nûbûnê dide, ne parastinî." },
+                { "language": "pl", "text": "Mocne: odpowiedź reaguje na zarzut dotyczący innowacji strategicznie, a nie defensywnie." },
+                { "language": "ro", "text": "Puternic: răspunsul tratează obiecția privind inovația strategic, nu defensiv." },
+                { "language": "sq", "text": "E fortë: përgjigjja i përgjigjet kundërshtimit për risinë në mënyrë strategjike, jo mbrojtëse." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können die Grenzen später nachziehen, wenn wir sehen, welche Daten wirklich problematisch sind.",
+              "translations": [
+                { "language": "en", "text": "We can tighten the limits later once we see which data is really problematic." },
+                { "language": "fa", "text": "می‌توانیم مرزها را بعداً سخت‌تر کنیم، وقتی ببینیم کدام داده واقعاً مسئله‌دار است." },
+                { "language": "ar", "text": "يمكننا تشديد الحدود لاحقًا عندما نرى أي بيانات هي فعلًا إشكالية." },
+                { "language": "tr", "text": "Hangi verinin gerçekten sorunlu olduğunu gördüğümüzde sınırları daha sonra sıkılaştırabiliriz." },
+                { "language": "ru", "text": "Мы можем ужесточить границы позже, когда увидим, какие данные действительно проблематичны." },
+                { "language": "ckb", "text": "دەتوانین دواتر سنوورەکان توندتر بکەین، کاتێک ببینین کام داتا بەڕاستی کێشەدارە." },
+                { "language": "kmr", "text": "Em dikarin paşê sînoran hişktir bikin, dema em bibînin kîjan dane bi rastî pirsgirêkdar in." },
+                { "language": "pl", "text": "Możemy zaostrzyć granice później, gdy zobaczymy, które dane są naprawdę problematyczne." },
+                { "language": "ro", "text": "Putem înăspri limitele mai târziu, când vedem ce date sunt cu adevărat problematice." },
+                { "language": "sq", "text": "Mund t'i shtrëngojmë kufijtë më vonë, kur të shohim cilat të dhëna janë vërtet problematike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu spät gedacht: Ethische Grenzen sollten vor der Erhebung wirken, nicht erst danach.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too late: ethical limits should apply before collection, not only afterward." },
+                { "language": "fa", "text": "خیلی دیر است: مرزهای اخلاقی باید پیش از جمع‌آوری اثر داشته باشند، نه فقط بعد از آن." },
+                { "language": "ar", "text": "متأخر جدًا: ينبغي أن تعمل الحدود الأخلاقية قبل الجمع، لا بعده فقط." },
+                { "language": "tr", "text": "Geç kalmış bir yaklaşım: Etik sınırlar toplama öncesinde işlemeli, sadece sonrasında değil." },
+                { "language": "ru", "text": "Слишком поздний подход: этические границы должны действовать до сбора, а не только после." },
+                { "language": "ckb", "text": "زۆر درەنگ بیرکراوەتەوە: سنوورە ئەخلاقییەکان دەبێت پێش کۆکردنەوە کاریگەرییان هەبێت، نە تەنها پاشان." },
+                { "language": "kmr", "text": "Pir dereng hatiye fikirandin: sînorên etîkî divê berî komkirinê bixebitin, ne tenê paşê." },
+                { "language": "pl", "text": "Za późno: granice etyczne powinny działać przed zbieraniem, nie dopiero po nim." },
+                { "language": "ro", "text": "Prea târziu: limitele etice trebuie să funcționeze înainte de colectare, nu doar după." },
+                { "language": "sq", "text": "Shumë vonë: kufijtë etikë duhet të veprojnë para mbledhjes, jo vetëm pas saj." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich empfehle einen begrenzten Test mit klaren Datenfeldern, kurzer Speicherdauer, sichtbarer Erklärung und ohne Datensammlung auf Vorrat.",
+              "translations": [
+                { "language": "en", "text": "I recommend a limited test with clear data fields, short retention, visible explanation, and no reserve data collection." },
+                { "language": "fa", "text": "من یک آزمایش محدود با فیلدهای داده روشن، مدت نگهداری کوتاه، توضیح قابل مشاهده و بدون جمع‌آوری داده برای آینده احتمالی پیشنهاد می‌کنم." },
+                { "language": "ar", "text": "أوصي بتجربة محدودة مع حقول بيانات واضحة، ومدة حفظ قصيرة، وشرح ظاهر، ومن دون جمع بيانات للاحتياط." },
+                { "language": "tr", "text": "Açık veri alanları, kısa saklama süresi, görünür açıklama ve yedek amaçlı veri toplama olmadan sınırlı bir test öneriyorum." },
+                { "language": "ru", "text": "Я рекомендую ограниченный тест с четкими полями данных, коротким сроком хранения, видимым объяснением и без сбора данных про запас." },
+                { "language": "ckb", "text": "من تاقیکردنەوەیەکی سنووردار پێشنیار دەکەم بە خانەداتای ڕوون، ماوەی هەڵگرتنی کورت، ڕوونکردنەوەی دیار و بێ کۆکردنەوەی داتا بۆ پێشبینی داهاتوو." },
+                { "language": "kmr", "text": "Ez ceribandineke sînordar pêşniyar dikim bi qadên daneyan ên zelal, demeke kurt a parastinê, ravekirineke xuya û bê komkirina daneyan ji bo ihtîmalên paşerojê." },
+                { "language": "pl", "text": "Rekomenduję ograniczony test z jasnymi polami danych, krótkim okresem przechowywania, widocznym wyjaśnieniem i bez zbierania danych na zapas." },
+                { "language": "ro", "text": "Recomand un test limitat cu câmpuri de date clare, durată scurtă de păstrare, explicație vizibilă și fără colectare de date pentru eventuale utilizări viitoare." },
+                { "language": "sq", "text": "Rekomandoj një test të kufizuar me fusha të qarta të dhënash, kohë të shkurtër ruajtjeje, shpjegim të dukshëm dhe pa mbledhje të dhënash për raste të ardhshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Empfehlung ist konkret, prüfbar und ethisch begrenzt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The recommendation is concrete, testable, and ethically bounded." },
+                { "language": "fa", "text": "قوی: پیشنهاد مشخص، قابل بررسی و از نظر اخلاقی محدود است." },
+                { "language": "ar", "text": "قوي: التوصية ملموسة وقابلة للفحص ومحددة أخلاقيًا." },
+                { "language": "tr", "text": "Güçlü: Öneri somut, denetlenebilir ve etik olarak sınırlıdır." },
+                { "language": "ru", "text": "Сильно: рекомендация конкретна, проверяема и этически ограничена." },
+                { "language": "ckb", "text": "بەهێزە: پێشنیارەکە دیاریکراو، پشکنراو و لە ڕووی ئەخلاقییەوە سنووردارە." },
+                { "language": "kmr", "text": "Xurt e: pêşniyar diyarkirî, kontrolbar û ji aliyê etîkî ve sînordar e." },
+                { "language": "pl", "text": "Mocne: rekomendacja jest konkretna, sprawdzalna i etycznie ograniczona." },
+                { "language": "ro", "text": "Puternic: recomandarea este concretă, verificabilă și limitată etic." },
+                { "language": "sq", "text": "E fortë: rekomandimi është konkret, i verifikueshëm dhe i kufizuar etikisht." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich empfehle, die Erweiterung zu testen und die Details der Datennutzung nach der ersten Auswertung festzulegen.",
+              "translations": [
+                { "language": "en", "text": "I recommend testing the extension and defining the details of data use after the first evaluation." },
+                { "language": "fa", "text": "پیشنهاد می‌کنم گسترش را آزمایش کنیم و جزئیات استفاده از داده را پس از نخستین ارزیابی تعیین کنیم." },
+                { "language": "ar", "text": "أوصي بتجربة التوسيع وتحديد تفاصيل استخدام البيانات بعد التقييم الأول." },
+                { "language": "tr", "text": "Genişletmeyi test etmeyi ve veri kullanımının ayrıntılarını ilk değerlendirmeden sonra belirlemeyi öneriyorum." },
+                { "language": "ru", "text": "Я рекомендую протестировать расширение и определить детали использования данных после первой оценки." },
+                { "language": "ckb", "text": "پێشنیار دەکەم فراوانکردنەکە تاقی بکەینەوە و وردەکاری بەکارهێنانی داتا پاش هەڵسەنگاندنی یەکەم دیاری بکەین." },
+                { "language": "kmr", "text": "Ez pêşniyar dikim berfirehkirinê ceribandin bikin û hûrgiliyên bikaranîna daneyan piştî nirxandina yekem diyarkirin." },
+                { "language": "pl", "text": "Rekomenduję przetestować rozszerzenie i ustalić szczegóły użycia danych po pierwszej ocenie." },
+                { "language": "ro", "text": "Recomand testarea extinderii și stabilirea detaliilor utilizării datelor după prima evaluare." },
+                { "language": "sq", "text": "Rekomandoj ta testojmë zgjerimin dhe t'i përcaktojmë detajet e përdorimit të të dhënave pas vlerësimit të parë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen: Die Datennutzung muss vor dem Test begrenzt werden, nicht erst danach.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open: data use must be limited before the test, not only afterward." },
+                { "language": "fa", "text": "بیش از حد باز است: استفاده از داده باید پیش از آزمایش محدود شود، نه بعد از آن." },
+                { "language": "ar", "text": "مفتوح جدًا: يجب تحديد استخدام البيانات قبل التجربة، لا بعدها فقط." },
+                { "language": "tr", "text": "Fazla açık: Veri kullanımı testten önce sınırlandırılmalıdır, yalnızca sonrasında değil." },
+                { "language": "ru", "text": "Слишком открыто: использование данных нужно ограничить до теста, а не только после него." },
+                { "language": "ckb", "text": "زۆر کراوەیە: بەکارهێنانی داتا دەبێت پێش تاقیکردنەوە سنووردار بکرێت، نە تەنها پاشان." },
+                { "language": "kmr", "text": "Pir vekirî ye: bikaranîna daneyan divê berî ceribandinê were sînordarkirin, ne tenê paşê." },
+                { "language": "pl", "text": "Zbyt otwarte: użycie danych trzeba ograniczyć przed testem, nie dopiero po nim." },
+                { "language": "ro", "text": "Prea deschis: utilizarea datelor trebuie limitată înainte de test, nu doar după." },
+                { "language": "sq", "text": "Shumë e hapur: përdorimi i të dhënave duhet kufizuar para testit, jo vetëm pas tij." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Beginnen Sie nicht mit Technikbegeisterung oder Datenschutzangst, sondern mit Zweck, Notwendigkeit und Erklärbarkeit.",
+          "translations": [
+            { "language": "en", "text": "Do not begin with technology enthusiasm or data-protection fear, but with purpose, necessity, and explainability." },
+            { "language": "fa", "text": "با هیجان فناوری یا ترس از حفاظت داده شروع نکنید، بلکه با هدف، ضرورت و قابلیت توضیح شروع کنید." },
+            { "language": "ar", "text": "لا تبدأوا بحماس تقني أو خوف من حماية البيانات، بل بالغرض والضرورة وقابلية الشرح." },
+            { "language": "tr", "text": "Teknoloji coşkusu ya da veri koruma korkusuyla değil; amaç, gereklilik ve açıklanabilirlikle başlayın." },
+            { "language": "ru", "text": "Начинайте не с технологического восторга или страха защиты данных, а с цели, необходимости и объяснимости." },
+            { "language": "ckb", "text": "بە خۆشحاڵی تەکنەلۆژیا یان ترسی پاراستنی داتا دەست پێمەکە؛ بەڵکو بە ئامانج، پێویستی و ڕوونکردنەوە دەست پێبکە." },
+            { "language": "kmr", "text": "Bi kêfxweşiya teknîkê an tirsa parastina daneyan dest pê nekin; bi armanc, pêwîstî û ravebarî dest pê bikin." },
+            { "language": "pl", "text": "Nie zaczynaj od entuzjazmu technologicznego ani lęku o ochronę danych, lecz od celu, konieczności i wyjaśnialności." },
+            { "language": "ro", "text": "Nu începeți cu entuziasm tehnologic sau teamă de protecția datelor, ci cu scop, necesitate și explicabilitate." },
+            { "language": "sq", "text": "Mos filloni me entuziazëm teknologjik ose frikë për mbrojtjen e të dhënave, por me qëllim, domosdoshmëri dhe shpjegueshmëri." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "ethics",
+          "text": "Datenethik heißt nicht nur Regelkonformität, sondern auch Vertrauen, Machtverhältnis und Folgen im Alltag mitzudenken.",
+          "translations": [
+            { "language": "en", "text": "Data ethics means considering not only rule compliance, but also trust, power relations, and everyday consequences." },
+            { "language": "fa", "text": "اخلاق داده فقط رعایت قاعده نیست؛ یعنی اعتماد، نسبت قدرت و پیامدهای روزمره را هم در نظر گرفتن." },
+            { "language": "ar", "text": "أخلاقيات البيانات لا تعني الامتثال للقواعد فقط، بل التفكير أيضًا في الثقة وعلاقة القوة والنتائج اليومية." },
+            { "language": "tr", "text": "Veri etiği yalnızca kurallara uyum değildir; güveni, güç ilişkisini ve gündelik sonuçları da düşünmektir." },
+            { "language": "ru", "text": "Этика данных означает не только соблюдение правил, но и учет доверия, соотношения власти и повседневных последствий." },
+            { "language": "ckb", "text": "ئەخلاقی داتا تەنها پابەندبوون بە یاسا نییە، بەڵکو بیرکردنەوەی متمانە، پەیوەندیی هێز و ئەنجامەکانی ژیانی ڕۆژانەشە." },
+            { "language": "kmr", "text": "Etîka daneyan ne tenê lihevhatina bi rêgezan e, lê jî fikirandina bawerî, têkiliya hêzê û encamên jiyana rojane ye." },
+            { "language": "pl", "text": "Etyka danych to nie tylko zgodność z regułami, lecz także myślenie o zaufaniu, relacji władzy i skutkach w codzienności." },
+            { "language": "ro", "text": "Etica datelor nu înseamnă doar conformitate cu regulile, ci și luarea în calcul a încrederii, a raportului de putere și a consecințelor cotidiene." },
+            { "language": "sq", "text": "Etika e të dhënave nuk është vetëm pajtueshmëri me rregullat, por edhe mendim për besimin, raportin e pushtetit dhe pasojat e përditshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "boundary",
+          "text": "Eine starke Grenze nennt Zweck, Sparsamkeit, Erklärbarkeit und das, was ausdrücklich nicht gesammelt wird.",
+          "translations": [
+            { "language": "en", "text": "A strong boundary names purpose, minimization, explainability, and what is explicitly not collected." },
+            { "language": "fa", "text": "مرز قوی هدف، کمینه‌سازی، قابلیت توضیح و چیزی را که صریحاً جمع‌آوری نمی‌شود نام می‌برد." },
+            { "language": "ar", "text": "الحد القوي يذكر الغرض والتقليل وقابلية الشرح وما لا يُجمع صراحة." },
+            { "language": "tr", "text": "Güçlü bir sınır amaç, minimizasyon, açıklanabilirlik ve özellikle toplanmayan şeyi belirtir." },
+            { "language": "ru", "text": "Сильная граница называет цель, минимизацию, объяснимость и то, что явно не собирается." },
+            { "language": "ckb", "text": "سنووری بەهێز ئامانج، کمکردنەوە، ڕوونکردنەوە و ئەوەی بە ڕوونی کۆناکرێتەوە ناودەبات." },
+            { "language": "kmr", "text": "Sînoreke xurt armanc, kêmbûn, ravebarî û tiştê ku bi eşkere nayê komkirin nav dike." },
+            { "language": "pl", "text": "Mocna granica nazywa cel, minimalizację, wyjaśnialność oraz to, czego wyraźnie się nie zbiera." },
+            { "language": "ro", "text": "O limită puternică numește scopul, minimizarea, explicabilitatea și ceea ce nu se colectează explicit." },
+            { "language": "sq", "text": "Një kufi i fortë emërton qëllimin, minimizimin, shpjegueshmërinë dhe atë që qartazi nuk mblidhet." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "decision",
+          "text": "Eine C2-Empfehlung sollte nicht nur Ja oder Nein sagen, sondern Bedingungen, Laufzeit, Sichtbarkeit und Verbote benennen.",
+          "translations": [
+            { "language": "en", "text": "A C2 recommendation should not merely say yes or no, but name conditions, duration, visibility, and prohibitions." },
+            { "language": "fa", "text": "پیشنهاد C2 نباید فقط بله یا نه بگوید، بلکه باید شرط‌ها، مدت، شفافیت قابل مشاهده و ممنوعیت‌ها را نام ببرد." },
+            { "language": "ar", "text": "لا ينبغي أن تقول توصية C2 نعم أو لا فقط، بل يجب أن تذكر الشروط والمدة والوضوح المرئي والمحظورات." },
+            { "language": "tr", "text": "Bir C2 önerisi yalnızca evet ya da hayır dememeli; koşulları, süreyi, görünürlüğü ve yasakları belirtmelidir." },
+            { "language": "ru", "text": "Рекомендация уровня C2 должна не просто говорить да или нет, а называть условия, срок, видимость и запреты." },
+            { "language": "ckb", "text": "پێشنیاری C2 نابێت تەنها بەڵێ یان نەخێر بڵێت، بەڵکو دەبێت مەرج، ماوە، دیاری و قەدەغەکان ناوببات." },
+            { "language": "kmr", "text": "Pêşniyareke C2 nabe tenê erê an na bêje, lê divê şert, dem, xuya-bûn û qedexeyan nav bike." },
+            { "language": "pl", "text": "Rekomendacja C2 nie powinna tylko mówić tak lub nie, lecz wskazywać warunki, czas trwania, widoczność i zakazy." },
+            { "language": "ro", "text": "O recomandare C2 nu ar trebui să spună doar da sau nu, ci să numească condițiile, durata, vizibilitatea și interdicțiile." },
+            { "language": "sq", "text": "Një rekomandim C2 nuk duhet të thotë vetëm po ose jo, por të emërtojë kushtet, kohëzgjatjen, dukshmërinë dhe ndalimet." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "product-team-data-ethics",
+          "placement": "detail-header",
+          "purpose": "Show a neutral product-team discussion about data use, trust, and transparent limits.",
+          "altText": "Ein Produktteam diskutiert an einem Tisch über Datennutzung und Vertrauen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A product team discusses data use and trust at a table." },
+            { "language": "fa", "text": "یک تیم محصول پشت میز درباره استفاده از داده و اعتماد بحث می‌کند." },
+            { "language": "ar", "text": "فريق منتج يناقش على طاولة استخدام البيانات والثقة." },
+            { "language": "tr", "text": "Bir ürün ekibi masada veri kullanımı ve güveni tartışıyor." },
+            { "language": "ru", "text": "Продуктовая команда за столом обсуждает использование данных и доверие." },
+            { "language": "ckb", "text": "تیمێکی بەرهەم لەسەر مێزێک لەسەر بەکارهێنانی داتا و متمانە گفتوگۆ دەکات." },
+            { "language": "kmr", "text": "Tîmeke hilberê li ser maseyekê li ser bikaranîna daneyan û baweriyê nîqaş dike." },
+            { "language": "pl", "text": "Zespół produktu przy stole dyskutuje o użyciu danych i zaufaniu." },
+            { "language": "ro", "text": "O echipă de produs discută la masă despre utilizarea datelor și încredere." },
+            { "language": "sq", "text": "Një ekip produkti diskuton në tryezë për përdorimin e të dhënave dhe besimin." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse product team in a professional meeting, looking at abstract cards labeled only with simple icons for data, trust, and limits, no readable private data, no logos, no real product names, no text inside image, calm neutral workplace setting, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

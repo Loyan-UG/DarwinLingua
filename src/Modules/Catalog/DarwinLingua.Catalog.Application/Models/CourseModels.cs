@@ -8,6 +8,8 @@ public sealed record CoursePathListItemModel(
     string Slug,
     string Title,
     string Description,
+    string? LearnerLanguageTitle,
+    string? LearnerLanguageDescription,
     string? CefrLevel,
     string CefrRange,
     int ModuleCount,
@@ -17,6 +19,8 @@ public sealed record CoursePathDetailModel(
     string Slug,
     string Title,
     string Description,
+    string? LearnerLanguageTitle,
+    string? LearnerLanguageDescription,
     string? CefrLevel,
     string CefrRange,
     IReadOnlyList<CourseModuleModel> Modules);
@@ -25,6 +29,8 @@ public sealed record CourseModuleModel(
     string Slug,
     string Title,
     string Description,
+    string? LearnerLanguageTitle,
+    string? LearnerLanguageDescription,
     int ModuleNumber,
     string CefrLevel,
     IReadOnlyList<CourseLessonListItemModel> Lessons);
@@ -36,6 +42,8 @@ public sealed record CourseLessonListItemModel(
     int LessonNumber,
     string Title,
     string ShortDescription,
+    string? LearnerLanguageTitle,
+    string? LearnerLanguageShortDescription,
     string CefrLevel,
     int EstimatedMinutes);
 
@@ -47,9 +55,13 @@ public sealed record CourseLessonDetailModel(
     string Title,
     string ShortDescription,
     string Narrative,
+    string? LearnerLanguageTitle,
+    string? LearnerLanguageShortDescription,
+    string? LearnerLanguageNarrative,
     string CefrLevel,
     int EstimatedMinutes,
     IReadOnlyList<string> LearningGoals,
+    IReadOnlyList<string> LearnerLanguageLearningGoals,
     IReadOnlyList<string> PrerequisiteLessonSlugs,
     string? NextLessonSlug,
     IReadOnlyList<string> LinkedGrammarTopicSlugs,
@@ -60,4 +72,6 @@ public sealed record CourseLessonDetailModel(
     IReadOnlyList<string> LinkedExerciseSetSlugs,
     IReadOnlyList<string> LinkedExamPrepSlugs,
     string? ReviewSummary,
-    string? HomeworkTask);
+    string? LearnerLanguageReviewSummary,
+    string? HomeworkTask,
+    string? LearnerLanguageHomeworkTask);

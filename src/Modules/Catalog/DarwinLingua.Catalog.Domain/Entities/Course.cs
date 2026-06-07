@@ -18,6 +18,8 @@ public sealed class CoursePath
         Slug = string.Empty;
         Title = string.Empty;
         Description = string.Empty;
+        TitleTranslationsJson = "[]";
+        DescriptionTranslationsJson = "[]";
         CefrRange = string.Empty;
     }
 
@@ -30,12 +32,16 @@ public sealed class CoursePath
         string? cefrRange,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string titleTranslationsJson = "[]",
+        string descriptionTranslationsJson = "[]")
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course path id is required.") : id;
         Slug = NormalizeKebabKey(slug, "Course path slug");
         Title = RequireText(title, "Course path title", 256);
         Description = RequireText(description, "Course path description", 2000);
+        TitleTranslationsJson = RequireText(titleTranslationsJson, "Course path title translations JSON", 12000);
+        DescriptionTranslationsJson = RequireText(descriptionTranslationsJson, "Course path description translations JSON", 12000);
         CefrLevel = cefrLevel;
         CefrRange = NormalizeOptionalText(cefrRange, 32, "Course path CEFR range") ?? cefrLevel?.ToString() ?? string.Empty;
         if (string.IsNullOrWhiteSpace(CefrRange))
@@ -53,6 +59,8 @@ public sealed class CoursePath
     public string Slug { get; private set; }
     public string Title { get; private set; }
     public string Description { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
+    public string DescriptionTranslationsJson { get; private set; }
     public CefrLevel? CefrLevel { get; private set; }
     public string CefrRange { get; private set; }
     public PublicationStatus PublicationStatus { get; private set; }
@@ -121,6 +129,8 @@ public sealed class CourseModule
         Slug = string.Empty;
         Title = string.Empty;
         Description = string.Empty;
+        TitleTranslationsJson = "[]";
+        DescriptionTranslationsJson = "[]";
     }
 
     public CourseModule(
@@ -133,13 +143,17 @@ public sealed class CourseModule
         CefrLevel cefrLevel,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string titleTranslationsJson = "[]",
+        string descriptionTranslationsJson = "[]")
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course module id is required.") : id;
         CoursePathSlug = CoursePath.NormalizeKebabKey(coursePathSlug, "Course path slug");
         Slug = CoursePath.NormalizeKebabKey(slug, "Course module slug");
         Title = CoursePath.RequireText(title, "Course module title", 256);
         Description = CoursePath.RequireText(description, "Course module description", 2000);
+        TitleTranslationsJson = CoursePath.RequireText(titleTranslationsJson, "Course module title translations JSON", 12000);
+        DescriptionTranslationsJson = CoursePath.RequireText(descriptionTranslationsJson, "Course module description translations JSON", 12000);
         ModuleNumber = moduleNumber <= 0 ? throw new DomainRuleException("Course module number must be positive.") : moduleNumber;
         CefrLevel = cefrLevel;
         PublicationStatus = publicationStatus;
@@ -154,6 +168,8 @@ public sealed class CourseModule
     public string Slug { get; private set; }
     public string Title { get; private set; }
     public string Description { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
+    public string DescriptionTranslationsJson { get; private set; }
     public int ModuleNumber { get; private set; }
     public CefrLevel CefrLevel { get; private set; }
     public PublicationStatus PublicationStatus { get; private set; }
@@ -186,7 +202,11 @@ public sealed class CourseLesson
         Title = string.Empty;
         ShortDescription = string.Empty;
         Narrative = string.Empty;
+        TitleTranslationsJson = "[]";
+        ShortDescriptionTranslationsJson = "[]";
+        NarrativeTranslationsJson = "[]";
         LearningGoalsJson = "[]";
+        LearningGoalsTranslationsJson = "[]";
         PrerequisiteLessonSlugsJson = "[]";
         LinkedGrammarTopicSlugsJson = "[]";
         LinkedWordSlugsJson = "[]";
@@ -195,6 +215,8 @@ public sealed class CourseLesson
         LinkedTalkTopicSlugsJson = "[]";
         LinkedExerciseSetSlugsJson = "[]";
         LinkedExamPrepSlugsJson = "[]";
+        ReviewSummaryTranslationsJson = "[]";
+        HomeworkTaskTranslationsJson = "[]";
     }
 
     public CourseLesson(
@@ -222,7 +244,13 @@ public sealed class CourseLesson
         string? homeworkTask,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string titleTranslationsJson = "[]",
+        string shortDescriptionTranslationsJson = "[]",
+        string narrativeTranslationsJson = "[]",
+        string learningGoalsTranslationsJson = "[]",
+        string reviewSummaryTranslationsJson = "[]",
+        string homeworkTaskTranslationsJson = "[]")
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course lesson id is required.") : id;
         CoursePathSlug = CoursePath.NormalizeKebabKey(coursePathSlug, "Course path slug");
@@ -232,9 +260,13 @@ public sealed class CourseLesson
         Title = CoursePath.RequireText(title, "Course lesson title", 256);
         ShortDescription = CoursePath.RequireText(shortDescription, "Course lesson short description", 1000);
         Narrative = CoursePath.RequireText(narrative, "Course lesson narrative", 4000);
+        TitleTranslationsJson = CoursePath.RequireText(titleTranslationsJson, "Course lesson title translations JSON", 12000);
+        ShortDescriptionTranslationsJson = CoursePath.RequireText(shortDescriptionTranslationsJson, "Course lesson short description translations JSON", 12000);
+        NarrativeTranslationsJson = CoursePath.RequireText(narrativeTranslationsJson, "Course lesson narrative translations JSON", 24000);
         CefrLevel = cefrLevel;
         EstimatedMinutes = estimatedMinutes <= 0 ? throw new DomainRuleException("Course lesson estimated minutes must be positive.") : estimatedMinutes;
         LearningGoalsJson = CoursePath.RequireText(learningGoalsJson, "Course lesson learning goals JSON", 12000);
+        LearningGoalsTranslationsJson = CoursePath.RequireText(learningGoalsTranslationsJson, "Course lesson learning goals translations JSON", 24000);
         PrerequisiteLessonSlugsJson = CoursePath.RequireText(prerequisiteLessonSlugsJson, "Course lesson prerequisite JSON", 8000);
         NextLessonSlug = CoursePath.NormalizeOptionalKebabKey(nextLessonSlug, "Course lesson next slug");
         LinkedGrammarTopicSlugsJson = CoursePath.RequireText(linkedGrammarTopicSlugsJson, "Linked grammar JSON", 12000);
@@ -246,6 +278,8 @@ public sealed class CourseLesson
         LinkedExamPrepSlugsJson = CoursePath.RequireText(linkedExamPrepSlugsJson, "Linked exam prep JSON", 12000);
         ReviewSummary = CoursePath.NormalizeOptionalText(reviewSummary, 2000, "Course lesson review summary");
         HomeworkTask = CoursePath.NormalizeOptionalText(homeworkTask, 2000, "Course lesson homework task");
+        ReviewSummaryTranslationsJson = CoursePath.RequireText(reviewSummaryTranslationsJson, "Course lesson review summary translations JSON", 12000);
+        HomeworkTaskTranslationsJson = CoursePath.RequireText(homeworkTaskTranslationsJson, "Course lesson homework task translations JSON", 12000);
         PublicationStatus = publicationStatus;
         SortOrder = Math.Max(0, sortOrder);
         CreatedAtUtc = timestampUtc;
@@ -261,9 +295,13 @@ public sealed class CourseLesson
     public string Title { get; private set; }
     public string ShortDescription { get; private set; }
     public string Narrative { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
+    public string ShortDescriptionTranslationsJson { get; private set; }
+    public string NarrativeTranslationsJson { get; private set; }
     public CefrLevel CefrLevel { get; private set; }
     public int EstimatedMinutes { get; private set; }
     public string LearningGoalsJson { get; private set; }
+    public string LearningGoalsTranslationsJson { get; private set; }
     public string PrerequisiteLessonSlugsJson { get; private set; }
     public string? NextLessonSlug { get; private set; }
     public string LinkedGrammarTopicSlugsJson { get; private set; }
@@ -275,6 +313,8 @@ public sealed class CourseLesson
     public string LinkedExamPrepSlugsJson { get; private set; }
     public string? ReviewSummary { get; private set; }
     public string? HomeworkTask { get; private set; }
+    public string ReviewSummaryTranslationsJson { get; private set; }
+    public string HomeworkTaskTranslationsJson { get; private set; }
     public PublicationStatus PublicationStatus { get; private set; }
     public int SortOrder { get; private set; }
     public DateTime CreatedAtUtc { get; private set; }

@@ -1,0 +1,745 @@
+{
+  "packageId": "roleplays-c2-core-16-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 16 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 16",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-gesellschaftliche-zumutung-abwaegen",
+      "linkedDialogueSlug": null,
+      "title": "Eine gesellschaftliche Zumutung abwägen",
+      "titleTranslations": [
+        { "language": "en", "text": "Weighing a public burden" },
+        { "language": "fa", "text": "سنجیدن یک بار اجتماعی تحمیلی" },
+        { "language": "ar", "text": "موازنة عبء اجتماعي مفروض" },
+        { "language": "tr", "text": "Toplumsal bir yükü tartmak" },
+        { "language": "ru", "text": "Взвешивание общественного обременения" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی بارێکی کۆمەڵایەتی" },
+        { "language": "kmr", "text": "Nirxandina barekî civakî" },
+        { "language": "pl", "text": "Rozważanie społecznej uciążliwości" },
+        { "language": "ro", "text": "Cântărirea unei poveri sociale" },
+        { "language": "sq", "text": "Peshimi i një barre shoqërore" }
+      ],
+      "description": "In einer Bürgerrunde wird eine befristete Wassersparregel diskutiert: In einer Trockenperiode sollen private Pools nicht neu befüllt und große Rasenflächen nur eingeschränkt bewässert werden. Die Maßnahme soll Versorgung und Stadtgrün schützen, greift aber in private Gewohnheiten ein. Sie müssen abwägen, ob die Zumutung verhältnismäßig ist.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "A citizens' discussion is debating a temporary water-saving rule: during a dry period, private pools should not be refilled and large lawns should only be watered in a limited way. The measure is meant to protect supply and urban greenery, but it interferes with private habits. You must weigh whether the burden is proportionate." },
+        { "language": "fa", "text": "در یک نشست شهروندی درباره یک قانون موقت صرفه‌جویی آب بحث می‌شود: در دوره خشکسالی، استخرهای خصوصی نباید دوباره پر شوند و آبیاری چمن‌های بزرگ باید محدود شود. این اقدام قرار است تأمین آب و فضای سبز شهری را حفظ کند، اما در عادت‌های خصوصی دخالت می‌کند. شما باید بسنجید آیا این بار تحمیلی متناسب است یا نه." },
+        { "language": "ar", "text": "في حلقة مواطنين تُناقش قاعدة مؤقتة لتوفير المياه: خلال فترة جفاف لا ينبغي إعادة ملء المسابح الخاصة، ويجب ري المساحات العشبية الكبيرة بشكل محدود فقط. تهدف الإجراء إلى حماية الإمداد والمسطحات الخضراء في المدينة، لكنه يتدخل في عادات خاصة. عليكم موازنة ما إذا كان العبء متناسباً." },
+        { "language": "tr", "text": "Bir yurttaş toplantısında geçici bir su tasarrufu kuralı tartışılıyor: kurak bir dönemde özel havuzlar yeniden doldurulmamalı ve büyük çimler yalnızca sınırlı biçimde sulanmalı. Önlem su arzını ve şehir yeşilini korumayı amaçlıyor, ancak özel alışkanlıklara müdahale ediyor. Bu yükün orantılı olup olmadığını tartmanız gerekir." },
+        { "language": "ru", "text": "На собрании жителей обсуждается временное правило экономии воды: в период засухи частные бассейны не должны заново наполняться, а большие газоны можно поливать только ограниченно. Мера должна защитить водоснабжение и городскую зелень, но вмешивается в частные привычки. Вам нужно оценить, соразмерно ли это обременение." },
+        { "language": "ckb", "text": "لە بازنەیەکی هاووڵاتیاندا ڕێسایەکی کاتی بۆ پاراستنی ئاو گفتوگۆ دەکرێت: لە ماوەی وشکەساڵیدا نابێت مەلەوانگە تایبەتییەکان دووبارە پڕ بکرێنەوە و ئاوپێدانی چیمەنە گەورەکان تەنها بە سنوورداری بکرێت. ڕێکارەکە بۆ پاراستنی دابینکردن و سەوزایی شارە، بەڵام دەست لە عادەتی تایبەتی وەردەدات. دەبێت هەڵبسەنگێنیت ئایا ئەم بارە گونجاوە یان نا." },
+        { "language": "kmr", "text": "Di civîneke welatiyan de rêgezeke demkî ya teserufa avê tê gotûbêjkirin: di demeke ziwabûnê de divê hewzên taybet ji nû ve neyên tijekirin û çîmenên mezin tenê bi sînordarî bêne avdan. Pîvan dixwaze dabînkirinê û keskahiya bajêr biparêze, lê dest li adetên taybet dixe. Divê hûn binirxînin ka ev bar maqûl e an na." },
+        { "language": "pl", "text": "Na spotkaniu mieszkańców omawia się czasową zasadę oszczędzania wody: w okresie suszy prywatne baseny nie mają być ponownie napełniane, a duże trawniki wolno podlewać tylko w ograniczonym zakresie. Środek ma chronić zaopatrzenie i zieleń miejską, ale ingeruje w prywatne nawyki. Trzeba rozważyć, czy obciążenie jest proporcjonalne." },
+        { "language": "ro", "text": "Într-o rundă cetățenească se discută o regulă temporară de economisire a apei: în perioadă de secetă, piscinele private nu ar trebui reumplute, iar peluzele mari ar trebui udate doar limitat. Măsura urmărește să protejeze alimentarea și verdeața urbană, dar intervine în obiceiuri private. Trebuie să cântăriți dacă povara este proporțională." },
+        { "language": "sq", "text": "Në një takim qytetar diskutohet një rregull i përkohshëm për kursimin e ujit: gjatë një periudhe thatësire, pishinat private nuk duhet të rimbushen dhe lëndinat e mëdha duhet të ujiten vetëm në mënyrë të kufizuar. Masa synon të mbrojë furnizimin dhe gjelbërimin urban, por ndërhyn në zakone private. Duhet të peshoni nëse barra është proporcionale." }
+      ],
+      "learnerGoal": "Eine öffentliche Maßnahme differenziert bewerten: individuelle Belastung, Gemeinwohl, Verhältnismäßigkeit, Ausnahmen, Kontrolle und zeitliche Begrenzung gegeneinander abwägen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Evaluate a public measure in a nuanced way: weigh individual burden, public interest, proportionality, exceptions, enforcement, and time limits against each other." },
+        { "language": "fa", "text": "یک اقدام عمومی را دقیق ارزیابی کنید: بار فردی، منفعت عمومی، تناسب، استثناها، کنترل اجرا و محدودیت زمانی را در برابر هم بسنجید." },
+        { "language": "ar", "text": "قيّموا إجراءً عاماً بصورة متمايزة: وازنوا بين العبء الفردي والمصلحة العامة والتناسب والاستثناءات والرقابة والحد الزمني." },
+        { "language": "tr", "text": "Bir kamu önlemini nüanslı değerlendirin: bireysel yükü, kamu yararını, orantılılığı, istisnaları, denetimi ve zaman sınırını karşılaştırın." },
+        { "language": "ru", "text": "Нюансированно оценить общественную меру: сопоставить индивидуальную нагрузку, общественный интерес, соразмерность, исключения, контроль и временное ограничение." },
+        { "language": "ckb", "text": "ڕێکارێکی گشتی بە وردی هەڵبسەنگێنە: باری تاکەکەسی، بەرژەوەندی گشتی، گونجاوی، دەرچوونەکان، چاودێری جێبەجێکردن و سنووری کات بەرامبەر یەک بسەنگێنە." },
+        { "language": "kmr", "text": "Pîvaneke giştî bi hûrgilî binirxînin: barê kesane, berjewendiya giştî, hevsengî, îstîsna, kontrol û sînorê demê li hember hev bixin." },
+        { "language": "pl", "text": "Ocenić środek publiczny w sposób zniuansowany: zważyć indywidualne obciążenie, dobro wspólne, proporcjonalność, wyjątki, kontrolę i ograniczenie czasowe." },
+        { "language": "ro", "text": "Evaluați nuanțat o măsură publică: cântăriți povara individuală, interesul public, proporționalitatea, excepțiile, controlul și limita de timp." },
+        { "language": "sq", "text": "Vlerësoni në mënyrë të nuancuar një masë publike: peshoni barrën individuale, të mirën publike, proporcionalitetin, përjashtimet, kontrollin dhe kufizimin kohor." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-discussion",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "compare-options",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 23,
+      "isPublished": true,
+      "sortOrder": 16,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsteilnahme",
+          "translations": [
+            { "language": "en", "text": "Discussion participant" },
+            { "language": "fa", "text": "شرکت‌کننده در بحث" },
+            { "language": "ar", "text": "مشارك في النقاش" },
+            { "language": "tr", "text": "Tartışma katılımcısı" },
+            { "language": "ru", "text": "Участник дискуссии" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê" },
+            { "language": "pl", "text": "Uczestnik dyskusji" },
+            { "language": "ro", "text": "Participant la discuție" },
+            { "language": "sq", "text": "Pjesëmarrës në diskutim" }
+          ]
+        },
+        {
+          "roleKey": "moderation",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مجری" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderator" }
+          ]
+        },
+        {
+          "roleKey": "resident",
+          "displayName": "Anwohner",
+          "translations": [
+            { "language": "en", "text": "Resident" },
+            { "language": "fa", "text": "ساکن محله" },
+            { "language": "ar", "text": "ساكن" },
+            { "language": "tr", "text": "Mahalle sakini" },
+            { "language": "ru", "text": "Житель" },
+            { "language": "ckb", "text": "دانیشتوو" },
+            { "language": "kmr", "text": "Rûniştvan" },
+            { "language": "pl", "text": "Mieszkaniec" },
+            { "language": "ro", "text": "Locuitor" },
+            { "language": "sq", "text": "Banor" }
+          ]
+        },
+        {
+          "roleKey": "city-representative",
+          "displayName": "Vertretung der Stadt",
+          "translations": [
+            { "language": "en", "text": "City representative" },
+            { "language": "fa", "text": "نماینده شهر" },
+            { "language": "ar", "text": "ممثل المدينة" },
+            { "language": "tr", "text": "Şehir temsilcisi" },
+            { "language": "ru", "text": "Представитель города" },
+            { "language": "ckb", "text": "نوێنەری شار" },
+            { "language": "kmr", "text": "Nûnerê bajêr" },
+            { "language": "pl", "text": "Przedstawiciel miasta" },
+            { "language": "ro", "text": "Reprezentant al orașului" },
+            { "language": "sq", "text": "Përfaqësues i qytetit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderation",
+          "baseText": "Die Stadt plant befristete Wassersparregeln. Manche sprechen von Verantwortung, andere von einer unverhältnismäßigen Zumutung. Wie würden Sie die Maßnahme grundsätzlich einordnen?",
+          "translations": [
+            { "language": "en", "text": "The city is planning temporary water-saving rules. Some call it responsibility, others an excessive burden. How would you classify the measure in principle?" },
+            { "language": "fa", "text": "شهر قصد دارد مقررات موقت صرفه‌جویی آب اجرا کند. برخی آن را مسئولیت می‌دانند، برخی دیگر تحمیلی نامتناسب. شما این اقدام را در اصل چگونه ارزیابی می‌کنید؟" },
+            { "language": "ar", "text": "تخطط المدينة لقواعد مؤقتة لتوفير المياه. يسميها البعض مسؤولية، ويسميها آخرون عبئاً غير متناسب. كيف تصنفون الإجراء من حيث المبدأ؟" },
+            { "language": "tr", "text": "Şehir geçici su tasarrufu kuralları planlıyor. Kimileri bunu sorumluluk, kimileri orantısız bir yük olarak görüyor. Önlemi ilkesel olarak nasıl değerlendirirsiniz?" },
+            { "language": "ru", "text": "Город планирует временные правила экономии воды. Одни называют это ответственностью, другие — несоразмерным обременением. Как вы в целом оцените эту меру?" },
+            { "language": "ckb", "text": "شار پلان دەکات ڕێسای کاتی بۆ پاراستنی ئاو دابنێت. هەندێک ئەمە بە بەرپرسیاریەتی دەزانن، هەندێکی تر بە بارێکی نەگونجاو. تۆ بە بنەڕەت چۆن ئەم ڕێکارە هەڵدەسەنگێنیت؟" },
+            { "language": "kmr", "text": "Şar rêzikên demkî yên teserufa avê plan dike. Hin kes wê wekî berpirsiyarî dibînin, hin kes jî wekî barekî nehevseng. Hûn di bingehê de vê pîvanê çawa dinirxînin?" },
+            { "language": "pl", "text": "Miasto planuje czasowe zasady oszczędzania wody. Jedni mówią o odpowiedzialności, inni o nieproporcjonalnej uciążliwości. Jak zasadniczo oceniłby Pan/Pani ten środek?" },
+            { "language": "ro", "text": "Orașul planifică reguli temporare de economisire a apei. Unii vorbesc despre responsabilitate, alții despre o povară disproporționată. Cum ați încadra măsura în principiu?" },
+            { "language": "sq", "text": "Qyteti po planifikon rregulla të përkohshme për kursimin e ujit. Disa flasin për përgjegjësi, të tjerë për një barrë joproporcionale. Si do ta vlerësonit masën në parim?" }
+          ],
+          "function": "frame-issue",
+          "toneNote": "Neutral and formal."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde weder sofort von Bevormundung noch von alternativloser Pflicht sprechen. Entscheidend ist, ob die Maßnahme geeignet, erforderlich und zumutbar ist: Gibt es einen nachvollziehbaren Wassermangel, betrifft die Regel besonders verschwenderische Nutzung, und bleibt sie zeitlich klar begrenzt?",
+          "translations": [
+            { "language": "en", "text": "I would not immediately call it paternalism or an unavoidable duty. The key question is whether the measure is suitable, necessary, and reasonable: is there a comprehensible water shortage, does the rule target particularly wasteful use, and is it clearly limited in time?" },
+            { "language": "fa", "text": "من فوراً آن را نه قیم‌مآبی می‌نامم و نه وظیفه‌ای بی‌جایگزین. نکته تعیین‌کننده این است که آیا اقدام مناسب، ضروری و قابل تحمل است: آیا کمبود آب قابل فهمی وجود دارد، آیا قانون مصرف‌های واقعاً پرمصرف را هدف می‌گیرد، و آیا از نظر زمانی روشن محدود است؟" },
+            { "language": "ar", "text": "لن أسميه فوراً وصاية ولا واجباً بلا بديل. السؤال الحاسم هو ما إذا كان الإجراء مناسباً وضرورياً ومحتملًا: هل يوجد نقص مياه مفهوم، وهل تستهدف القاعدة استخداماً مبذراً بشكل خاص، وهل تبقى محددة زمنياً بوضوح؟" },
+            { "language": "tr", "text": "Bunu hemen vesayet ya da alternatifsiz bir görev olarak adlandırmazdım. Belirleyici olan önlemin uygun, gerekli ve katlanılabilir olup olmadığıdır: anlaşılır bir su kıtlığı var mı, kural özellikle israfçı kullanımı mı hedefliyor ve zamanı açıkça sınırlı mı?" },
+            { "language": "ru", "text": "Я бы не называл это сразу ни опекой сверху, ни безальтернативной обязанностью. Важно, является ли мера пригодной, необходимой и допустимой: есть ли понятный дефицит воды, касается ли правило особенно расточительного использования и четко ли ограничено по времени?" },
+            { "language": "ckb", "text": "من دەستبەجێ نە بە سەرپەرشتیی زۆر ناوی دەبەم، نە بە ئەرکێکی بێ جێگرەوە. گرنگ ئەوەیە ئایا ڕێکارەکە گونجاو، پێویست و قابل قبووڵە: ئایا کەمبوونی ئاوی تێگەیشتوو هەیە، ئایا ڕێساکە بەکارهێنانی زۆر بەفیڕۆدەری دەگرێتەوە، و ئایا بە ڕوونی لە کاتدا سنووردارە؟" },
+            { "language": "kmr", "text": "Ez ê wê yekser ne wekî serperiştî û ne wekî erka bê alternatîv binav bikim. Ya biryardar ev e ka pîvan guncan, pêwîst û qebûlkirbar e: kêmasiya avê ya têgihiştî heye, rêzik bi taybetî karanîna îsrafker digire, û bi demê zelal hatiye sînordarkirin?" },
+            { "language": "pl", "text": "Nie nazwałbym tego od razu ani protekcjonalnym narzucaniem, ani obowiązkiem bez alternatywy. Decydujące jest, czy środek jest odpowiedni, konieczny i akceptowalny: czy istnieje zrozumiały niedobór wody, czy zasada dotyczy szczególnie marnotrawnego użycia i czy jest jasno ograniczona w czasie?" },
+            { "language": "ro", "text": "Nu aș numi-o imediat nici tutelă, nici obligație fără alternativă. Decisiv este dacă măsura este adecvată, necesară și suportabilă: există un deficit de apă explicabil, vizează regula utilizări deosebit de risipitoare și rămâne clar limitată în timp?" },
+            { "language": "sq", "text": "Nuk do ta quaja menjëherë as patronizim, as detyrë pa alternativë. Vendimtare është nëse masa është e përshtatshme, e nevojshme dhe e përballueshme: a ka mungesë uji të kuptueshme, a synon rregulli përdorim veçanërisht shpërdorues dhe a mbetet qartë i kufizuar në kohë?" }
+          ],
+          "function": "set-proportionality-frame",
+          "toneNote": "Structured and non-polarizing."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "resident",
+          "baseText": "Ich verstehe den Wassermangel, aber warum soll gerade mein Garten das Problem lösen? Industrie, Baustellen und die Stadt selbst verbrauchen doch viel mehr.",
+          "translations": [
+            { "language": "en", "text": "I understand the water shortage, but why should my garden in particular solve the problem? Industry, construction sites, and the city itself use much more." },
+            { "language": "fa", "text": "کمبود آب را می‌فهمم، اما چرا دقیقاً باغچه من باید مشکل را حل کند؟ صنعت، کارگاه‌های ساختمانی و خود شهر خیلی بیشتر مصرف می‌کنند." },
+            { "language": "ar", "text": "أفهم نقص المياه، لكن لماذا يجب أن يحل حديقتي تحديداً المشكلة؟ الصناعة ومواقع البناء والمدينة نفسها تستهلك أكثر بكثير." },
+            { "language": "tr", "text": "Su kıtlığını anlıyorum, ama neden özellikle benim bahçem sorunu çözmeli? Sanayi, şantiyeler ve şehrin kendisi çok daha fazla tüketiyor." },
+            { "language": "ru", "text": "Я понимаю дефицит воды, но почему именно мой сад должен решать проблему? Промышленность, стройки и сам город потребляют гораздо больше." },
+            { "language": "ckb", "text": "کەمبوونی ئاو تێدەگەم، بەڵام بۆچی هەر باخچەی من دەبێت کێشەکە چارەسەر بکات؟ پیشەسازی، بیناسازی و خودی شار زۆر زیاتر بەکاردەهێنن." },
+            { "language": "kmr", "text": "Ez kêmasiya avê fam dikim, lê çima rast baxçeya min divê pirsgirêkê çareser bike? Pîşesazî, şantiyeler û şar bixwe pir zêdetir bikar tînin." },
+            { "language": "pl", "text": "Rozumiem niedobór wody, ale dlaczego akurat mój ogród ma rozwiązywać problem? Przemysł, budowy i samo miasto zużywają przecież znacznie więcej." },
+            { "language": "ro", "text": "Înțeleg deficitul de apă, dar de ce tocmai grădina mea ar trebui să rezolve problema? Industria, șantierele și orașul însuși consumă mult mai mult." },
+            { "language": "sq", "text": "E kuptoj mungesën e ujit, por pse pikërisht kopshti im duhet ta zgjidhë problemin? Industria, kantieret dhe vetë qyteti konsumojnë shumë më tepër." }
+          ],
+          "function": "raise-fairness-objection",
+          "toneNote": "Reasonable objection."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein starker Einwand, weil Zumutbarkeit auch Gleichbehandlung bedeutet. Eine private Einschränkung ist nur glaubwürdig, wenn größere Verbraucher ebenfalls sichtbar einbezogen werden. Sonst wirkt die Regel symbolisch und ungerecht, selbst wenn ihr Ziel nachvollziehbar ist.",
+          "translations": [
+            { "language": "en", "text": "That is a strong objection, because reasonableness also means equal treatment. A private restriction is credible only if larger consumers are visibly included as well. Otherwise the rule appears symbolic and unfair, even if its goal is understandable." },
+            { "language": "fa", "text": "این اعتراض مهمی است، چون قابل تحمل بودن یعنی برخورد برابر هم. محدودیت برای افراد خصوصی فقط زمانی معتبر است که مصرف‌کنندگان بزرگ‌تر هم به‌صورت قابل مشاهده درگیر شوند. وگرنه قانون نمادین و ناعادلانه به نظر می‌رسد، حتی اگر هدفش قابل فهم باشد." },
+            { "language": "ar", "text": "هذا اعتراض قوي، لأن قابلية التحمل تعني أيضاً المعاملة المتساوية. لا تكون القيود الخاصة موثوقة إلا إذا أُدرج المستهلكون الأكبر بصورة مرئية أيضاً. وإلا بدت القاعدة رمزية وغير عادلة، حتى لو كان هدفها مفهوماً." },
+            { "language": "tr", "text": "Bu güçlü bir itirazdır, çünkü katlanılabilirlik eşit muamele de demektir. Özel bir kısıtlama ancak daha büyük tüketiciler de görünür biçimde dahil edilirse inandırıcı olur. Aksi halde kuralın amacı anlaşılır olsa bile sembolik ve adaletsiz görünür." },
+            { "language": "ru", "text": "Это сильное возражение, потому что допустимость также означает равное обращение. Частное ограничение убедительно только тогда, когда более крупные потребители также явно включены. Иначе правило выглядит символическим и несправедливым, даже если его цель понятна." },
+            { "language": "ckb", "text": "ئەمە ناڕەزایەتییەکی بەهێزە، چونکە قابل قبووڵبوون واتە مامەڵەی یەکسانیش. سنووردارکردنی تایبەتی تەنها کاتێک باوەڕپێکراوە کە بەکارهێنەرە گەورەترەکانیش بە ئاشکرا بگیرێنەوە. ئەگەر نا، ڕێساکە نیشانەیی و نادادپەروەرانە دەردەکەوێت، تەنانەت ئەگەر ئامانجەکەی تێگەیشتوو بێت." },
+            { "language": "kmr", "text": "Ev rexneyeke xurt e, ji ber ku qebûlkirbarî tê wateya muameleya wekhev jî. Sînordarkirineke taybet tenê wê demê bawerbar e ku bikarhênerên mezintir jî bi awayekî xuya bêne têkildarkirin. Wekî din rêzik sembolîk û nedadwerane xuya dike, her çend armanca wê têgihiştî be." },
+            { "language": "pl", "text": "To mocny zarzut, bo akceptowalność oznacza też równe traktowanie. Ograniczenie prywatne jest wiarygodne tylko wtedy, gdy większych odbiorców również widocznie się obejmie. Inaczej zasada wygląda symbolicznie i niesprawiedliwie, nawet jeśli jej cel jest zrozumiały." },
+            { "language": "ro", "text": "Este o obiecție puternică, deoarece suportabilitatea înseamnă și tratament egal. O restricție privată este credibilă doar dacă utilizatorii mai mari sunt incluși vizibil. Altfel regula pare simbolică și nedreaptă, chiar dacă scopul ei este inteligibil." },
+            { "language": "sq", "text": "Ky është një kundërshtim i fortë, sepse përballueshmëria do të thotë edhe trajtim i barabartë. Një kufizim privat është bindës vetëm nëse përfshihen dukshëm edhe konsumatorët më të mëdhenj. Përndryshe rregulli duket simbolik dhe i padrejtë, edhe nëse qëllimi i tij është i kuptueshëm." }
+          ],
+          "function": "acknowledge-fairness",
+          "toneNote": "Validates fairness while keeping the measure open."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "city-representative",
+          "baseText": "Wir haben aber nur schnell wirksame Regeln für private Außenflächen. Für Betriebe laufen separate Prüfungen, die länger dauern.",
+          "translations": [
+            { "language": "en", "text": "But we only have quickly effective rules for private outdoor areas. Separate reviews for businesses are under way and take longer." },
+            { "language": "fa", "text": "اما ما فقط برای فضاهای بیرونی خصوصی مقرراتی داریم که سریع اثر می‌گذارد. بررسی‌های جداگانه برای کسب‌وکارها در جریان است و بیشتر طول می‌کشد." },
+            { "language": "ar", "text": "لكن لدينا فقط قواعد سريعة الأثر للمساحات الخارجية الخاصة. تجري فحوصات منفصلة للشركات وتستغرق وقتاً أطول." },
+            { "language": "tr", "text": "Ama elimizde özel dış alanlar için hızlı etkili kurallar var. İşletmeler için ayrı incelemeler sürüyor ve daha uzun sürüyor." },
+            { "language": "ru", "text": "Но у нас есть быстро действующие правила только для частных наружных территорий. По предприятиям идут отдельные проверки, которые требуют больше времени." },
+            { "language": "ckb", "text": "بەڵام تەنها ڕێسای خێراکاریگەرمان بۆ شوێنە دەرەوە تایبەتییەکان هەیە. بۆ کارگاکان پشکنینی جیاواز بەڕێوە دەچێت و زیاتر دەخایەنێت." },
+            { "language": "kmr", "text": "Lê me tenê rêzikên zûbandor ji bo qadên derve yên taybet hene. Ji bo karsaziyan kontrolên cuda dimeşin û demeke dirêjtir digirin." },
+            { "language": "pl", "text": "Mamy jednak tylko szybko działające zasady dla prywatnych terenów zewnętrznych. Dla przedsiębiorstw trwają odrębne kontrole, które potrwają dłużej." },
+            { "language": "ro", "text": "Dar avem doar reguli cu efect rapid pentru spațiile exterioare private. Pentru firme sunt în curs verificări separate, care durează mai mult." },
+            { "language": "sq", "text": "Por kemi vetëm rregulla me efekt të shpejtë për hapësirat e jashtme private. Për bizneset po bëhen kontrolle të veçanta, që zgjasin më shumë." }
+          ],
+          "function": "explain-implementation-limit",
+          "toneNote": "Administrative constraint."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann müsste die Stadt gerade diese Asymmetrie offen benennen. Man kann sagen: Diese Regel ist ein sofortiger erster Schritt, aber sie bleibt nur verhältnismäßig, wenn innerhalb einer festen Frist auch gewerbliche und städtische Verbräuche geprüft und öffentlich berichtet werden.",
+          "translations": [
+            { "language": "en", "text": "Then the city would need to name exactly this asymmetry openly. One can say: this rule is an immediate first step, but it remains proportionate only if commercial and municipal consumption is reviewed and publicly reported within a fixed deadline." },
+            { "language": "fa", "text": "در این صورت شهر باید دقیقاً همین عدم تقارن را آشکارا نام ببرد. می‌توان گفت: این قانون یک گام فوری اول است، اما فقط زمانی متناسب می‌ماند که مصرف تجاری و شهری نیز در مهلتی ثابت بررسی و به‌صورت عمومی گزارش شود." },
+            { "language": "ar", "text": "عندئذ يجب على المدينة أن تسمي هذه اللامساواة تحديداً بصراحة. يمكن القول: هذه القاعدة خطوة أولى فورية، لكنها تبقى متناسبة فقط إذا فُحص الاستهلاك التجاري والبلدي خلال مهلة ثابتة ونُشر تقرير عنه علناً." },
+            { "language": "tr", "text": "O zaman şehir tam da bu asimetriyi açıkça adlandırmalıdır. Şöyle denebilir: bu kural acil bir ilk adımdır, ama ancak ticari ve belediyeye ait tüketimler sabit bir süre içinde incelenip kamuya raporlanırsa orantılı kalır." },
+            { "language": "ru", "text": "Тогда город должен прямо назвать именно эту асимметрию. Можно сказать: это правило — немедленный первый шаг, но оно остается соразмерным только если коммерческое и муниципальное потребление будет проверено и публично описано в фиксированный срок." },
+            { "language": "ckb", "text": "ئەوا دەبێت شار هەر ئەم نایەکسانییە بە ئاشکرا ناو ببە. دەتوانرێت بگوترێت: ئەم ڕێسایە هەنگاوی یەکەمی دەستبەجێیە، بەڵام تەنها کاتێک گونجاو دەمێنێتەوە کە لە ماوەیەکی دیاریکراودا بەکارهێنانی بازرگانی و شارەوانییش پشکنرێت و بە گشتی ڕاپۆرت بکرێت." },
+            { "language": "kmr", "text": "Wê demê divê şar rast vê nehevsengiyê bi nav bike. Mirov dikare bêje: ev rêzik gaveke yekem a lezgîn e, lê tenê wê demê hevseng dimîne ku karanîna bazirganî û şaredariyê di dema diyarkirî de were kontrolkirin û bi giştî were ragihandin." },
+            { "language": "pl", "text": "Wtedy miasto musiałoby otwarcie nazwać właśnie tę asymetrię. Można powiedzieć: ta zasada jest natychmiastowym pierwszym krokiem, ale pozostaje proporcjonalna tylko wtedy, gdy w ustalonym terminie sprawdzi się i publicznie opisze zużycie komercyjne oraz miejskie." },
+            { "language": "ro", "text": "Atunci orașul ar trebui să numească deschis tocmai această asimetrie. Se poate spune: această regulă este un prim pas imediat, dar rămâne proporțională doar dacă, într-un termen fix, sunt verificate și raportate public consumurile comerciale și municipale." },
+            { "language": "sq", "text": "Atëherë qyteti duhet ta emërtojë hapur pikërisht këtë asimetri. Mund të thuhet: ky rregull është një hap i parë i menjëhershëm, por mbetet proporcional vetëm nëse brenda një afati të caktuar kontrollohen dhe raportohen publikisht edhe konsumi tregtar dhe ai komunal." }
+          ],
+          "function": "turn-limit-into-condition",
+          "toneNote": "Constructive but demanding."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "resident",
+          "baseText": "Und was ist mit Menschen, die aus gesundheitlichen Gründen Wasser im Außenbereich brauchen oder für die ein gepflegter Garten Teil ihrer Arbeit ist?",
+          "translations": [
+            { "language": "en", "text": "And what about people who need water outdoors for health reasons or for whom a maintained garden is part of their work?" },
+            { "language": "fa", "text": "و تکلیف کسانی که به دلایل سلامتی در فضای بیرون به آب نیاز دارند یا باغچه مرتب بخشی از کارشان است چیست؟" },
+            { "language": "ar", "text": "وماذا عن الأشخاص الذين يحتاجون إلى الماء في الخارج لأسباب صحية، أو الذين يشكل لهم الحديقة المرتبة جزءاً من عملهم؟" },
+            { "language": "tr", "text": "Peki sağlık nedenleriyle dış alanda suya ihtiyaç duyan ya da bakımlı bahçesi işinin parçası olan insanlar ne olacak?" },
+            { "language": "ru", "text": "А как быть с людьми, которым вода на улице нужна по медицинским причинам, или для которых ухоженный сад является частью работы?" },
+            { "language": "ckb", "text": "ئەی ئەو کەسانەی بە هۆکاری تەندروستی لە دەرەوە پێویستیان بە ئاوە یان باخچەی ڕێکوپێک بەشێکە لە کاریان چی؟" },
+            { "language": "kmr", "text": "Û kesên ku ji sedemên tenduristî li derve pêdivî bi avê hene an baxçeyek birêkûpêk beşek ji karê wan e çi dibin?" },
+            { "language": "pl", "text": "A co z osobami, które z powodów zdrowotnych potrzebują wody na zewnątrz albo dla których zadbany ogród jest częścią pracy?" },
+            { "language": "ro", "text": "Și ce facem cu oamenii care au nevoie de apă în exterior din motive medicale sau pentru care o grădină îngrijită face parte din muncă?" },
+            { "language": "sq", "text": "Po njerëzit që për arsye shëndetësore kanë nevojë për ujë jashtë, ose për të cilët një kopsht i mirëmbajtur është pjesë e punës?" }
+          ],
+          "function": "ask-exceptions",
+          "toneNote": "Legitimate exception question."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Eine verhältnismäßige Regel braucht Ausnahmen, aber keine Hintertür für alle. Sinnvoll wären enge Kriterien: medizinische Notwendigkeit, berufliche Existenz oder frisch gepflanzte Stadtbäume. Alles andere sollte nicht automatisch verboten, sondern nach Dringlichkeit und Wassermenge gestaffelt werden.",
+          "translations": [
+            { "language": "en", "text": "A proportionate rule needs exceptions, but not a back door for everyone. Narrow criteria would make sense: medical necessity, professional livelihood, or newly planted city trees. Everything else should not be automatically banned, but graded according to urgency and water volume." },
+            { "language": "fa", "text": "یک قانون متناسب به استثنا نیاز دارد، اما نه راه فرار برای همه. معیارهای محدود منطقی‌اند: ضرورت پزشکی، معیشت شغلی، یا درختان شهری تازه کاشته‌شده. بقیه موارد نباید خودکار ممنوع شوند، بلکه باید بر اساس فوریت و مقدار آب درجه‌بندی شوند." },
+            { "language": "ar", "text": "تحتاج القاعدة المتناسبة إلى استثناءات، لكن ليس إلى باب خلفي للجميع. ستكون المعايير الضيقة مناسبة: ضرورة طبية، مصدر رزق مهني، أو أشجار مدينة مزروعة حديثاً. أما كل شيء آخر فلا ينبغي حظره تلقائياً، بل تدريجه بحسب الإلحاح وكمية المياه." },
+            { "language": "tr", "text": "Orantılı bir kural istisnalara ihtiyaç duyar, ama herkes için arka kapıya değil. Dar kriterler anlamlı olur: tıbbi zorunluluk, mesleki geçim ya da yeni dikilmiş şehir ağaçları. Diğer her şey otomatik yasaklanmamalı, aciliyet ve su miktarına göre kademelendirilmelidir." },
+            { "language": "ru", "text": "Соразмерному правилу нужны исключения, но не лазейка для всех. Разумны узкие критерии: медицинская необходимость, профессиональное существование или недавно посаженные городские деревья. Всё остальное не должно автоматически запрещаться, а должно градуироваться по срочности и объему воды." },
+            { "language": "ckb", "text": "ڕێسایەکی گونجاو پێویستی بە دەرچوون هەیە، بەڵام نە دەرگای پشتەوە بۆ هەمووان. پێوەری تەسک گونجاوە: پێویستی پزیشکی، بژێوی پیشەیی، یان دارە شارەوانییە تازە چێنراوەکان. هەموو شتی تر نابێت خۆکارانە قەدەغە بکرێت، بەڵکو بە پێی پێویستی خێرا و بڕی ئاو پلەبەندی بکرێت." },
+            { "language": "kmr", "text": "Rêzikeke hevseng pêdivî bi îstîsna heye, lê ne bi deriyeke paşîn ji bo herkes. Pîvanên teng watedar in: pêwîstiya bijîjkî, debara pîşeyî, an darên bajarê nû hatine çandin. Tiştên din divê xweber neyên qedexekirin, lê li gorî lezgînî û qebareya avê bêne astkirin." },
+            { "language": "pl", "text": "Proporcjonalna zasada potrzebuje wyjątków, ale nie furtki dla wszystkich. Sensowne byłyby wąskie kryteria: konieczność medyczna, byt zawodowy albo świeżo posadzone drzewa miejskie. Cała reszta nie powinna być automatycznie zakazana, lecz stopniowana według pilności i ilości wody." },
+            { "language": "ro", "text": "O regulă proporțională are nevoie de excepții, dar nu de o portiță pentru toți. Ar avea sens criterii înguste: necesitate medicală, existență profesională sau arbori urbani proaspăt plantați. Restul nu ar trebui interzis automat, ci gradat după urgență și cantitatea de apă." },
+            { "language": "sq", "text": "Një rregull proporcional ka nevojë për përjashtime, por jo për një derë të pasme për të gjithë. Do të kishin kuptim kritere të ngushta: nevojë mjekësore, ekzistencë profesionale ose pemë të qytetit të sapombjella. Gjërat e tjera nuk duhet të ndalohen automatikisht, por të shkallëzohen sipas urgjencës dhe sasisë së ujit." }
+          ],
+          "function": "define-narrow-exceptions",
+          "toneNote": "Precise and balanced."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderation",
+          "baseText": "Können Sie daraus ein Fazit formulieren, das weder die Belastung verharmlost noch die Maßnahme blockiert?",
+          "translations": [
+            { "language": "en", "text": "Can you formulate a conclusion from this that neither downplays the burden nor blocks the measure?" },
+            { "language": "fa", "text": "می‌توانید از این یک جمع‌بندی بسازید که نه بار تحمیلی را کوچک جلوه دهد و نه اقدام را مسدود کند؟" },
+            { "language": "ar", "text": "هل يمكنكم صياغة خلاصة من ذلك لا تستهين بالعبء ولا تعطل الإجراء؟" },
+            { "language": "tr", "text": "Bundan, yükü küçümsemeyen ama önlemi de engellemeyen bir sonuç çıkarabilir misiniz?" },
+            { "language": "ru", "text": "Можете сформулировать вывод, который не преуменьшает нагрузку и не блокирует меру?" },
+            { "language": "ckb", "text": "دەتوانیت لەمە کۆتاییەک دابڕێژیت کە نە بارەکە بچووک بکاتەوە و نە ڕێکارەکە بلۆک بکات؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji vê encamekê ava bikin ku ne barê biçûk nîşan bide û ne jî pîvanê asteng bike?" },
+            { "language": "pl", "text": "Czy może Pan/Pani sformułować wniosek, który ani nie bagatelizuje obciążenia, ani nie blokuje środka?" },
+            { "language": "ro", "text": "Puteți formula o concluzie care nici nu minimalizează povara, nici nu blochează măsura?" },
+            { "language": "sq", "text": "A mund të formuloni një përfundim që as nuk e minimizon barrën, as nuk e bllokon masën?" }
+          ],
+          "function": "request-synthesis",
+          "toneNote": "Synthesis prompt."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Mein Fazit wäre: Die Regel kann in einer akuten Trockenperiode verhältnismäßig sein, wenn sie befristet, begründet, überprüfbar und fair verteilt ist. Sie wird zur unzumutbaren Geste, wenn nur private Haushalte sichtbar eingeschränkt werden, während größere Verbräuche unklar bleiben.",
+          "translations": [
+            { "language": "en", "text": "My conclusion would be: the rule can be proportionate in an acute dry period if it is temporary, justified, verifiable, and fairly distributed. It becomes an unreasonable gesture if only private households are visibly restricted while larger consumption remains unclear." },
+            { "language": "fa", "text": "جمع‌بندی من این است: این قانون در دوره خشکسالی حاد می‌تواند متناسب باشد، اگر موقت، مستدل، قابل بررسی و عادلانه توزیع شده باشد. اما اگر فقط خانوارهای خصوصی به‌طور آشکار محدود شوند و مصرف‌های بزرگ‌تر مبهم بمانند، به ژستی غیرقابل تحمل تبدیل می‌شود." },
+            { "language": "ar", "text": "خلاصتي هي: يمكن أن تكون القاعدة متناسبة في فترة جفاف حادة إذا كانت مؤقتة ومبررة وقابلة للتحقق وموزعة بعدل. لكنها تصبح إيماءة غير محتملة إذا قُيدت الأسر الخاصة فقط بصورة مرئية بينما بقيت الاستهلاكات الأكبر غير واضحة." },
+            { "language": "tr", "text": "Sonucum şu olurdu: kural akut bir kurak dönemde, geçici, gerekçeli, denetlenebilir ve adil dağıtılmışsa orantılı olabilir. Yalnızca özel haneler görünür biçimde kısıtlanırken daha büyük tüketimler belirsiz kalırsa katlanılamaz bir jest haline gelir." },
+            { "language": "ru", "text": "Мой вывод был бы таким: правило может быть соразмерным в острый период засухи, если оно временное, обоснованное, проверяемое и справедливо распределено. Оно становится недопустимым жестом, если явно ограничиваются только частные домохозяйства, а более крупное потребление остается неясным." },
+            { "language": "ckb", "text": "کۆتاییەکەم ئەمە دەبێت: ڕێساکە لە ماوەی وشکەساڵیی تونددا دەتوانێت گونجاو بێت، ئەگەر کاتی، بەهۆکار، قابل پشکنین و بە دادپەروەری دابەشکراو بێت. دەبێتە ئاماژەیەکی نەگونجاو ئەگەر تەنها ماڵە تایبەتییەکان بە ئاشکرا سنووردار بکرێن و بەکارهێنانە گەورەترەکان ناڕوون بمێننەوە." },
+            { "language": "kmr", "text": "Encama min ev e: rêzik di demeke ziwabûna giran de dikare hevseng be, heke demkî, bi sedem, dikare were kontrolkirin û bi dadwerî hatiye belavkirin. Ew dibe jesteke neqebûlkirbar heke tenê malbatên taybet bi awayekî xuya bêne sînordarkirin û karanînên mezintir nezelal bimînin." },
+            { "language": "pl", "text": "Mój wniosek byłby taki: zasada może być proporcjonalna w ostrej suszy, jeśli jest czasowa, uzasadniona, sprawdzalna i sprawiedliwie rozłożona. Staje się nieakceptowalnym gestem, jeśli widocznie ogranicza się tylko prywatne gospodarstwa, podczas gdy większe zużycie pozostaje niejasne." },
+            { "language": "ro", "text": "Concluzia mea ar fi: regula poate fi proporțională într-o perioadă acută de secetă dacă este temporară, justificată, verificabilă și distribuită corect. Devine un gest insuportabil dacă doar gospodăriile private sunt restricționate vizibil, în timp ce consumurile mai mari rămân neclare." },
+            { "language": "sq", "text": "Përfundimi im do të ishte: rregulli mund të jetë proporcional në një periudhë të rëndë thatësire nëse është i përkohshëm, i arsyetuar, i verifikueshëm dhe i shpërndarë drejt. Ai kthehet në një gjest të papranueshëm nëse kufizohen dukshëm vetëm familjet private, ndërsa konsumet më të mëdha mbeten të paqarta." }
+          ],
+          "function": "balanced-conclusion",
+          "toneNote": "Clear, conditional, and fair."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde weder sofort von Bevormundung noch von alternativloser Pflicht sprechen. Entscheidend ist, ob die Maßnahme geeignet, erforderlich und zumutbar ist: Gibt es einen nachvollziehbaren Wassermangel, betrifft die Regel besonders verschwenderische Nutzung, und bleibt sie zeitlich klar begrenzt?",
+              "translations": [
+                { "language": "en", "text": "I would not immediately call it paternalism or an unavoidable duty. The key question is whether the measure is suitable, necessary, and reasonable: is there a comprehensible water shortage, does the rule target particularly wasteful use, and is it clearly limited in time?" },
+                { "language": "fa", "text": "من فوراً آن را نه قیم‌مآبی می‌نامم و نه وظیفه‌ای بی‌جایگزین. نکته تعیین‌کننده این است که آیا اقدام مناسب، ضروری و قابل تحمل است: آیا کمبود آب قابل فهمی وجود دارد، آیا قانون مصرف‌های واقعاً پرمصرف را هدف می‌گیرد، و آیا از نظر زمانی روشن محدود است؟" },
+                { "language": "ar", "text": "لن أسميه فوراً وصاية ولا واجباً بلا بديل. السؤال الحاسم هو ما إذا كان الإجراء مناسباً وضرورياً ومحتملًا: هل يوجد نقص مياه مفهوم، وهل تستهدف القاعدة استخداماً مبذراً بشكل خاص، وهل تبقى محددة زمنياً بوضوح؟" },
+                { "language": "tr", "text": "Bunu hemen vesayet ya da alternatifsiz bir görev olarak adlandırmazdım. Belirleyici olan önlemin uygun, gerekli ve katlanılabilir olup olmadığıdır: anlaşılır bir su kıtlığı var mı, kural özellikle israfçı kullanımı mı hedefliyor ve zamanı açıkça sınırlı mı?" },
+                { "language": "ru", "text": "Я бы не называл это сразу ни опекой сверху, ни безальтернативной обязанностью. Важно, является ли мера пригодной, необходимой и допустимой: есть ли понятный дефицит воды, касается ли правило особенно расточительного использования и четко ли ограничено по времени?" },
+                { "language": "ckb", "text": "من دەستبەجێ نە بە سەرپەرشتیی زۆر ناوی دەبەم، نە بە ئەرکێکی بێ جێگرەوە. گرنگ ئەوەیە ئایا ڕێکارەکە گونجاو، پێویست و قابل قبووڵە: ئایا کەمبوونی ئاوی تێگەیشتوو هەیە، ئایا ڕێساکە بەکارهێنانی زۆر بەفیڕۆدەری دەگرێتەوە، و ئایا بە ڕوونی لە کاتدا سنووردارە؟" },
+                { "language": "kmr", "text": "Ez ê wê yekser ne wekî serperiştî û ne wekî erka bê alternatîv binav bikim. Ya biryardar ev e ka pîvan guncan, pêwîst û qebûlkirbar e: kêmasiya avê ya têgihiştî heye, rêzik bi taybetî karanîna îsrafker digire, û bi demê zelal hatiye sînordarkirin?" },
+                { "language": "pl", "text": "Nie nazwałbym tego od razu ani protekcjonalnym narzucaniem, ani obowiązkiem bez alternatywy. Decydujące jest, czy środek jest odpowiedni, konieczny i akceptowalny: czy istnieje zrozumiały niedobór wody, czy zasada dotyczy szczególnie marnotrawnego użycia i czy jest jasno ograniczona w czasie?" },
+                { "language": "ro", "text": "Nu aș numi-o imediat nici tutelă, nici obligație fără alternativă. Decisiv este dacă măsura este adecvată, necesară și suportabilă: există un deficit de apă explicabil, vizează regula utilizări deosebit de risipitoare și rămâne clar limitată în timp?" },
+                { "language": "sq", "text": "Nuk do ta quaja menjëherë as patronizim, as detyrë pa alternativë. Vendimtare është nëse masa është e përshtatshme, e nevojshme dhe e përballueshme: a ka mungesë uji të kuptueshme, a synon rregulli përdorim veçanërisht shpërdorues dhe a mbetet qartë i kufizuar në kohë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort eröffnet mit Kriterien statt mit einem Schlagwort.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer opens with criteria rather than a slogan." },
+                { "language": "fa", "text": "قوی است: پاسخ با معیار شروع می‌کند، نه با شعار." },
+                { "language": "ar", "text": "قوي: يبدأ الجواب بالمعايير لا بالشعار." },
+                { "language": "tr", "text": "Güçlü: cevap bir sloganla değil, kriterlerle başlıyor." },
+                { "language": "ru", "text": "Сильно: ответ начинается с критериев, а не с лозунга." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە پێوەر دەست پێدەکات، نە بە دروشم." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi pîvanan dest pê dike, ne bi sloganê." },
+                { "language": "pl", "text": "Mocne: odpowiedź zaczyna od kryteriów, a nie od sloganu." },
+                { "language": "ro", "text": "Puternic: răspunsul începe cu criterii, nu cu un slogan." },
+                { "language": "sq", "text": "E fortë: përgjigjja fillon me kritere, jo me slogan." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "In einer Krise müssen alle eben ein bisschen verzichten.",
+              "translations": [
+                { "language": "en", "text": "In a crisis, everyone simply has to give up a little." },
+                { "language": "fa", "text": "در بحران همه باید کمی چشم‌پوشی کنند." },
+                { "language": "ar", "text": "في الأزمة يجب على الجميع ببساطة أن يتنازلوا قليلاً." },
+                { "language": "tr", "text": "Krizde herkes biraz fedakârlık yapmak zorundadır." },
+                { "language": "ru", "text": "В кризис всем просто нужно немного отказаться от привычного." },
+                { "language": "ckb", "text": "لە قەیراندا هەمووان دەبێت کەمێک دەستبەردار بن." },
+                { "language": "kmr", "text": "Di krîzê de herkes divê hinek dev jê berde." },
+                { "language": "pl", "text": "W kryzysie wszyscy muszą po prostu trochę zrezygnować." },
+                { "language": "ro", "text": "Într-o criză, toți trebuie pur și simplu să renunțe puțin." },
+                { "language": "sq", "text": "Në krizë të gjithë duhet thjesht të heqin dorë pak." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu grob. Die Antwort ignoriert Verhältnismäßigkeit, Gleichbehandlung und zeitliche Begrenzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too rough. The answer ignores proportionality, equal treatment, and time limits." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی کلی است. پاسخ تناسب، برخورد برابر و محدودیت زمانی را نادیده می‌گیرد." },
+                { "language": "ar", "text": "معقول، لكنه خشن جداً. يتجاهل الجواب التناسب والمعاملة المتساوية والحد الزمني." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla kaba. Cevap orantılılığı, eşit muameleyi ve zaman sınırını görmezden geliyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком грубо. Ответ игнорирует соразмерность, равное обращение и временное ограничение." },
+                { "language": "ckb", "text": "قابل قبووڵە، بەڵام زۆر گشتییە. وەڵامەکە گونجاوی، مامەڵەی یەکسان و سنووری کات پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Wateyê wê heye, lê pir kevneşopî ye. Bersiv hevsengî, muameleya wekhev û sînorê demê paşguh dike." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne. Odpowiedź ignoruje proporcjonalność, równe traktowanie i ograniczenie czasowe." },
+                { "language": "ro", "text": "Plauzibil, dar prea grosier. Răspunsul ignoră proporționalitatea, tratamentul egal și limita de timp." },
+                { "language": "sq", "text": "E besueshme, por tepër e përgjithshme. Përgjigjja injoron proporcionalitetin, trajtimin e barabartë dhe kufizimin kohor." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das ist ein starker Einwand, weil Zumutbarkeit auch Gleichbehandlung bedeutet. Eine private Einschränkung ist nur glaubwürdig, wenn größere Verbraucher ebenfalls sichtbar einbezogen werden. Sonst wirkt die Regel symbolisch und ungerecht, selbst wenn ihr Ziel nachvollziehbar ist.",
+              "translations": [
+                { "language": "en", "text": "That is a strong objection, because reasonableness also means equal treatment. A private restriction is credible only if larger consumers are visibly included as well. Otherwise the rule appears symbolic and unfair, even if its goal is understandable." },
+                { "language": "fa", "text": "این اعتراض مهمی است، چون قابل تحمل بودن یعنی برخورد برابر هم. محدودیت برای افراد خصوصی فقط زمانی معتبر است که مصرف‌کنندگان بزرگ‌تر هم به‌صورت قابل مشاهده درگیر شوند. وگرنه قانون نمادین و ناعادلانه به نظر می‌رسد، حتی اگر هدفش قابل فهم باشد." },
+                { "language": "ar", "text": "هذا اعتراض قوي، لأن قابلية التحمل تعني أيضاً المعاملة المتساوية. لا تكون القيود الخاصة موثوقة إلا إذا أُدرج المستهلكون الأكبر بصورة مرئية أيضاً. وإلا بدت القاعدة رمزية وغير عادلة، حتى لو كان هدفها مفهوماً." },
+                { "language": "tr", "text": "Bu güçlü bir itirazdır, çünkü katlanılabilirlik eşit muamele de demektir. Özel bir kısıtlama ancak daha büyük tüketiciler de görünür biçimde dahil edilirse inandırıcı olur. Aksi halde kuralın amacı anlaşılır olsa bile sembolik ve adaletsiz görünür." },
+                { "language": "ru", "text": "Это сильное возражение, потому что допустимость также означает равное обращение. Частное ограничение убедительно только тогда, когда более крупные потребители также явно включены. Иначе правило выглядит символическим и несправедливым, даже если его цель понятна." },
+                { "language": "ckb", "text": "ئەمە ناڕەزایەتییەکی بەهێزە، چونکە قابل قبووڵبوون واتە مامەڵەی یەکسانیش. سنووردارکردنی تایبەتی تەنها کاتێک باوەڕپێکراوە کە بەکارهێنەرە گەورەترەکانیش بە ئاشکرا بگیرێنەوە. ئەگەر نا، ڕێساکە نیشانەیی و نادادپەروەرانە دەردەکەوێت، تەنانەت ئەگەر ئامانجەکەی تێگەیشتوو بێت." },
+                { "language": "kmr", "text": "Ev rexneyeke xurt e, ji ber ku qebûlkirbarî tê wateya muameleya wekhev jî. Sînordarkirineke taybet tenê wê demê bawerbar e ku bikarhênerên mezintir jî bi awayekî xuya bêne têkildarkirin. Wekî din rêzik sembolîk û nedadwerane xuya dike, her çend armanca wê têgihiştî be." },
+                { "language": "pl", "text": "To mocny zarzut, bo akceptowalność oznacza też równe traktowanie. Ograniczenie prywatne jest wiarygodne tylko wtedy, gdy większych odbiorców również widocznie się obejmie. Inaczej zasada wygląda symbolicznie i niesprawiedliwie, nawet jeśli jej cel jest zrozumiały." },
+                { "language": "ro", "text": "Este o obiecție puternică, deoarece suportabilitatea înseamnă și tratament egal. O restricție privată este credibilă doar dacă utilizatorii mai mari sunt incluși vizibil. Altfel regula pare simbolică și nedreaptă, chiar dacă scopul ei este inteligibil." },
+                { "language": "sq", "text": "Ky është një kundërshtim i fortë, sepse përballueshmëria do të thotë edhe trajtim i barabartë. Një kufizim privat është bindës vetëm nëse përfshihen dukshëm edhe konsumatorët më të mëdhenj. Përndryshe rregulli duket simbolik dhe i padrejtë, edhe nëse qëllimi i tij është i kuptueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort anerkennt die Last und macht Gleichbehandlung zum Kriterium.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer recognizes the burden and makes equal treatment a criterion." },
+                { "language": "fa", "text": "قوی است: پاسخ بار تحمیلی را می‌پذیرد و برخورد برابر را به معیار تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: يعترف الجواب بالعبء ويجعل المعاملة المتساوية معياراً." },
+                { "language": "tr", "text": "Güçlü: cevap yükü kabul ediyor ve eşit muameleyi kriter haline getiriyor." },
+                { "language": "ru", "text": "Сильно: ответ признает нагрузку и делает равное обращение критерием." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بارەکە دەناسێت و مامەڵەی یەکسان دەکاتە پێوەر." },
+                { "language": "kmr", "text": "Xurt e: bersiv barê nas dike û muameleya wekhev dike pîvan." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje obciążenie i czyni równe traktowanie kryterium." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște povara și face din tratamentul egal un criteriu." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon barrën dhe e bën trajtimin e barabartë kriter." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Natürlich gibt es immer größere Verbraucher, aber private Haushalte können eben sofort anfangen.",
+              "translations": [
+                { "language": "en", "text": "Of course there are always larger consumers, but private households can simply start immediately." },
+                { "language": "fa", "text": "طبیعی است که همیشه مصرف‌کنندگان بزرگ‌تری وجود دارند، اما خانوارهای خصوصی می‌توانند فوراً شروع کنند." },
+                { "language": "ar", "text": "بالطبع يوجد دائماً مستهلكون أكبر، لكن الأسر الخاصة تستطيع ببساطة أن تبدأ فوراً." },
+                { "language": "tr", "text": "Elbette her zaman daha büyük tüketiciler vardır, ama özel haneler hemen başlayabilir." },
+                { "language": "ru", "text": "Конечно, всегда есть более крупные потребители, но частные домохозяйства могут просто начать сразу." },
+                { "language": "ckb", "text": "بێگومان هەمیشە بەکارهێنەری گەورەتر هەیە، بەڵام ماڵە تایبەتییەکان دەتوانن دەستبەجێ دەست پێبکەن." },
+                { "language": "kmr", "text": "Bê guman her tim bikarhênerên mezintir hene, lê malbatên taybet dikarin yekser dest pê bikin." },
+                { "language": "pl", "text": "Oczywiście zawsze są więksi odbiorcy, ale prywatne gospodarstwa mogą po prostu zacząć od razu." },
+                { "language": "ro", "text": "Desigur, există întotdeauna utilizatori mai mari, dar gospodăriile private pot începe imediat." },
+                { "language": "sq", "text": "Sigurisht ka gjithmonë konsumatorë më të mëdhenj, por familjet private mund të fillojnë menjëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu bequem. Die Antwort nennt Umsetzbarkeit, aber sie behandelt das Fairnessproblem nicht ausreichend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too convenient. The answer names feasibility, but does not deal sufficiently with the fairness problem." },
+                { "language": "fa", "text": "بیش از حد راحت‌گیرانه است. پاسخ امکان اجرا را نام می‌برد، اما با مسئله عدالت کافی برخورد نمی‌کند." },
+                { "language": "ar", "text": "مريح أكثر من اللازم. يذكر الجواب قابلية التنفيذ، لكنه لا يتعامل بما يكفي مع مشكلة العدالة." },
+                { "language": "tr", "text": "Fazla kolaycı. Cevap uygulanabilirliği söylüyor, ama adalet sorununu yeterince ele almıyor." },
+                { "language": "ru", "text": "Слишком удобно. Ответ называет реализуемость, но недостаточно разбирает проблему справедливости." },
+                { "language": "ckb", "text": "زۆر ئاسانگیرە. وەڵامەکە جێبەجێکردن ناو دەبات، بەڵام بە باشی مامەڵە لەگەڵ کێشەی دادپەروەری ناکات." },
+                { "language": "kmr", "text": "Pir hêsankar e. Bersiv pêkanînê bi nav dike, lê pirsgirêka dadweriyê têr nagire dest." },
+                { "language": "pl", "text": "Zbyt wygodne. Odpowiedź mówi o wykonalności, ale nie zajmuje się wystarczająco problemem sprawiedliwości." },
+                { "language": "ro", "text": "Prea comod. Răspunsul numește fezabilitatea, dar nu tratează suficient problema echității." },
+                { "language": "sq", "text": "Tepër e lehtë. Përgjigjja përmend zbatueshmërinë, por nuk e trajton mjaftueshëm problemin e drejtësisë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann müsste die Stadt gerade diese Asymmetrie offen benennen. Man kann sagen: Diese Regel ist ein sofortiger erster Schritt, aber sie bleibt nur verhältnismäßig, wenn innerhalb einer festen Frist auch gewerbliche und städtische Verbräuche geprüft und öffentlich berichtet werden.",
+              "translations": [
+                { "language": "en", "text": "Then the city would need to name exactly this asymmetry openly. One can say: this rule is an immediate first step, but it remains proportionate only if commercial and municipal consumption is reviewed and publicly reported within a fixed deadline." },
+                { "language": "fa", "text": "در این صورت شهر باید دقیقاً همین عدم تقارن را آشکارا نام ببرد. می‌توان گفت: این قانون یک گام فوری اول است، اما فقط زمانی متناسب می‌ماند که مصرف تجاری و شهری نیز در مهلتی ثابت بررسی و به‌صورت عمومی گزارش شود." },
+                { "language": "ar", "text": "عندئذ يجب على المدينة أن تسمي هذه اللامساواة تحديداً بصراحة. يمكن القول: هذه القاعدة خطوة أولى فورية، لكنها تبقى متناسبة فقط إذا فُحص الاستهلاك التجاري والبلدي خلال مهلة ثابتة ونُشر تقرير عنه علناً." },
+                { "language": "tr", "text": "O zaman şehir tam da bu asimetriyi açıkça adlandırmalıdır. Şöyle denebilir: bu kural acil bir ilk adımdır, ama ancak ticari ve belediyeye ait tüketimler sabit bir süre içinde incelenip kamuya raporlanırsa orantılı kalır." },
+                { "language": "ru", "text": "Тогда город должен прямо назвать именно эту асимметрию. Можно сказать: это правило — немедленный первый шаг, но оно остается соразмерным только если коммерческое и муниципальное потребление будет проверено и публично описано в фиксированный срок." },
+                { "language": "ckb", "text": "ئەوا دەبێت شار هەر ئەم نایەکسانییە بە ئاشکرا ناو ببە. دەتوانرێت بگوترێت: ئەم ڕێسایە هەنگاوی یەکەمی دەستبەجێیە، بەڵام تەنها کاتێک گونجاو دەمێنێتەوە کە لە ماوەیەکی دیاریکراودا بەکارهێنانی بازرگانی و شارەوانییش پشکنرێت و بە گشتی ڕاپۆرت بکرێت." },
+                { "language": "kmr", "text": "Wê demê divê şar rast vê nehevsengiyê bi nav bike. Mirov dikare bêje: ev rêzik gaveke yekem a lezgîn e, lê tenê wê demê hevseng dimîne ku karanîna bazirganî û şaredariyê di dema diyarkirî de were kontrolkirin û bi giştî were ragihandin." },
+                { "language": "pl", "text": "Wtedy miasto musiałoby otwarcie nazwać właśnie tę asymetrię. Można powiedzieć: ta zasada jest natychmiastowym pierwszym krokiem, ale pozostaje proporcjonalna tylko wtedy, gdy w ustalonym terminie sprawdzi się i publicznie opisze zużycie komercyjne oraz miejskie." },
+                { "language": "ro", "text": "Atunci orașul ar trebui să numească deschis tocmai această asimetrie. Se poate spune: această regulă este un prim pas imediat, dar rămâne proporțională doar dacă, într-un termen fix, sunt verificate și raportate public consumurile comerciale și municipale." },
+                { "language": "sq", "text": "Atëherë qyteti duhet ta emërtojë hapur pikërisht këtë asimetri. Mund të thuhet: ky rregull është një hap i parë i menjëhershëm, por mbetet proporcional vetëm nëse brenda një afati të caktuar kontrollohen dhe raportohen publikisht edhe konsumi tregtar dhe ai komunal." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht aus einer Schwäche eine überprüfbare Bedingung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer turns a weakness into a verifiable condition." },
+                { "language": "fa", "text": "قوی است: پاسخ یک ضعف را به شرطی قابل بررسی تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: يحول الجواب نقطة ضعف إلى شرط قابل للتحقق." },
+                { "language": "tr", "text": "Güçlü: cevap bir zayıflığı denetlenebilir bir koşula çeviriyor." },
+                { "language": "ru", "text": "Сильно: ответ превращает слабое место в проверяемое условие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لاوازییەک دەگۆڕێت بۆ مەرجێکی قابل پشکنین." },
+                { "language": "kmr", "text": "Xurt e: bersiv lawaziyekê diguherîne şertê dikare were kontrolkirin." },
+                { "language": "pl", "text": "Mocne: odpowiedź zamienia słabość w sprawdzalny warunek." },
+                { "language": "ro", "text": "Puternic: răspunsul transformă o slăbiciune într-o condiție verificabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kthen një dobësi në kusht të verifikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man muss irgendwo anfangen; später kann man die anderen Bereiche immer noch anschauen.",
+              "translations": [
+                { "language": "en", "text": "You have to start somewhere; the other areas can still be looked at later." },
+                { "language": "fa", "text": "بالاخره باید از جایی شروع کرد؛ بخش‌های دیگر را بعداً هم می‌توان بررسی کرد." },
+                { "language": "ar", "text": "يجب البدء من مكان ما؛ ويمكن النظر في المجالات الأخرى لاحقاً." },
+                { "language": "tr", "text": "Bir yerden başlamak gerekir; diğer alanlara daha sonra da bakılabilir." },
+                { "language": "ru", "text": "Нужно с чего-то начинать; другие области можно рассмотреть позже." },
+                { "language": "ckb", "text": "دەبێت لە شوێنێکەوە دەست پێبکرێت؛ دواتر دەتوانرێت بوارەکانی تر ببینرێن." },
+                { "language": "kmr", "text": "Divê ji cihekê dest pê bê kirin; qadên din dikarin paşê werin dîtin." },
+                { "language": "pl", "text": "Trzeba gdzieś zacząć; inne obszary można jeszcze obejrzeć później." },
+                { "language": "ro", "text": "Trebuie să începi de undeva; celelalte domenii pot fi analizate și mai târziu." },
+                { "language": "sq", "text": "Duhet nisur diku; fushat e tjera mund të shihen edhe më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unbestimmt. Ohne Frist und Berichtspflicht bleibt das Versprechen unverbindlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague. Without a deadline and reporting duty, the promise remains non-binding." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد مبهم. بدون مهلت و الزام گزارش‌دهی، وعده الزام‌آور نیست." },
+                { "language": "ar", "text": "معقول، لكنه غير محدد بما يكفي. من دون مهلة وواجب تقرير، يبقى الوعد غير ملزم." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla belirsiz. Süre ve raporlama yükümlülüğü olmadan söz bağlayıcı kalmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неопределенно. Без срока и обязанности отчитаться обещание остается необязательным." },
+                { "language": "ckb", "text": "قابل قبووڵە، بەڵام زۆر ناڕوونە. بەبێ ماوە و ئەرکی ڕاپۆرتدان، بەڵێنەکە نابەستە." },
+                { "language": "kmr", "text": "Wateyê wê heye, lê pir nezelal e. Bê dema diyarkirî û erka raporkirinê, soz ne girêdayî dimîne." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt nieokreślone. Bez terminu i obowiązku raportu obietnica pozostaje niewiążąca." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag. Fără termen și obligație de raportare, promisiunea rămâne neangajantă." },
+                { "language": "sq", "text": "E besueshme, por tepër e paqartë. Pa afat dhe detyrim raportimi, premtimi mbetet jo detyrues." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eine verhältnismäßige Regel braucht Ausnahmen, aber keine Hintertür für alle. Sinnvoll wären enge Kriterien: medizinische Notwendigkeit, berufliche Existenz oder frisch gepflanzte Stadtbäume. Alles andere sollte nicht automatisch verboten, sondern nach Dringlichkeit und Wassermenge gestaffelt werden.",
+              "translations": [
+                { "language": "en", "text": "A proportionate rule needs exceptions, but not a back door for everyone. Narrow criteria would make sense: medical necessity, professional livelihood, or newly planted city trees. Everything else should not be automatically banned, but graded according to urgency and water volume." },
+                { "language": "fa", "text": "یک قانون متناسب به استثنا نیاز دارد، اما نه راه فرار برای همه. معیارهای محدود منطقی‌اند: ضرورت پزشکی، معیشت شغلی، یا درختان شهری تازه کاشته‌شده. بقیه موارد نباید خودکار ممنوع شوند، بلکه باید بر اساس فوریت و مقدار آب درجه‌بندی شوند." },
+                { "language": "ar", "text": "تحتاج القاعدة المتناسبة إلى استثناءات، لكن ليس إلى باب خلفي للجميع. ستكون المعايير الضيقة مناسبة: ضرورة طبية، مصدر رزق مهني، أو أشجار مدينة مزروعة حديثاً. أما كل شيء آخر فلا ينبغي حظره تلقائياً، بل تدريجه بحسب الإلحاح وكمية المياه." },
+                { "language": "tr", "text": "Orantılı bir kural istisnalara ihtiyaç duyar, ama herkes için arka kapıya değil. Dar kriterler anlamlı olur: tıbbi zorunluluk, mesleki geçim ya da yeni dikilmiş şehir ağaçları. Diğer her şey otomatik yasaklanmamalı, aciliyet ve su miktarına göre kademelendirilmelidir." },
+                { "language": "ru", "text": "Соразмерному правилу нужны исключения, но не лазейка для всех. Разумны узкие критерии: медицинская необходимость, профессиональное существование или недавно посаженные городские деревья. Всё остальное не должно автоматически запрещаться, а должно градуироваться по срочности и объему воды." },
+                { "language": "ckb", "text": "ڕێسایەکی گونجاو پێویستی بە دەرچوون هەیە، بەڵام نە دەرگای پشتەوە بۆ هەمووان. پێوەری تەسک گونجاوە: پێویستی پزیشکی، بژێوی پیشەیی، یان دارە شارەوانییە تازە چێنراوەکان. هەموو شتی تر نابێت خۆکارانە قەدەغە بکرێت، بەڵکو بە پێی پێویستی خێرا و بڕی ئاو پلەبەندی بکرێت." },
+                { "language": "kmr", "text": "Rêzikeke hevseng pêdivî bi îstîsna heye, lê ne bi deriyeke paşîn ji bo herkes. Pîvanên teng watedar in: pêwîstiya bijîjkî, debara pîşeyî, an darên bajarê nû hatine çandin. Tiştên din divê xweber neyên qedexekirin, lê li gorî lezgînî û qebareya avê bêne astkirin." },
+                { "language": "pl", "text": "Proporcjonalna zasada potrzebuje wyjątków, ale nie furtki dla wszystkich. Sensowne byłyby wąskie kryteria: konieczność medyczna, byt zawodowy albo świeżo posadzone drzewa miejskie. Cała reszta nie powinna być automatycznie zakazana, lecz stopniowana według pilności i ilości wody." },
+                { "language": "ro", "text": "O regulă proporțională are nevoie de excepții, dar nu de o portiță pentru toți. Ar avea sens criterii înguste: necesitate medicală, existență profesională sau arbori urbani proaspăt plantați. Restul nu ar trebui interzis automat, ci gradat după urgență și cantitatea de apă." },
+                { "language": "sq", "text": "Një rregull proporcional ka nevojë për përjashtime, por jo për një derë të pasme për të gjithë. Do të kishin kuptim kritere të ngushta: nevojë mjekësore, ekzistencë profesionale ose pemë të qytetit të sapombjella. Gjërat e tjera nuk duhet të ndalohen automatikisht, por të shkallëzohen sipas urgjencës dhe sasisë së ujit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erlaubt Ausnahmen, hält sie aber eng und nachvollziehbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer allows exceptions, but keeps them narrow and understandable." },
+                { "language": "fa", "text": "قوی است: پاسخ استثنا را می‌پذیرد، اما آن را محدود و قابل فهم نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: يسمح الجواب بالاستثناءات، لكنه يبقيها ضيقة ومفهومة." },
+                { "language": "tr", "text": "Güçlü: cevap istisnalara izin veriyor, ama onları dar ve anlaşılır tutuyor." },
+                { "language": "ru", "text": "Сильно: ответ допускает исключения, но держит их узкими и понятными." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دەرچوون ڕێگە پێدەدات، بەڵام تەسک و تێگەیشتوو دەیهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv rê dide îstîsnayan, lê wan teng û têgihiştî dihêle." },
+                { "language": "pl", "text": "Mocne: odpowiedź dopuszcza wyjątki, ale utrzymuje je wąsko i zrozumiale." },
+                { "language": "ro", "text": "Puternic: răspunsul permite excepții, dar le menține înguste și inteligibile." },
+                { "language": "sq", "text": "E fortë: përgjigjja lejon përjashtime, por i mban të ngushta dhe të kuptueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ausnahmen sind wichtig, aber sie sollten einfach großzügig gehandhabt werden.",
+              "translations": [
+                { "language": "en", "text": "Exceptions are important, but they should simply be handled generously." },
+                { "language": "fa", "text": "استثناها مهم‌اند، اما بهتر است به‌سادگی سخاوتمندانه با آن‌ها برخورد شود." },
+                { "language": "ar", "text": "الاستثناءات مهمة، لكن ينبغي التعامل معها ببساطة بسخاء." },
+                { "language": "tr", "text": "İstisnalar önemlidir, ama basitçe cömertçe ele alınmalıdır." },
+                { "language": "ru", "text": "Исключения важны, но с ними следует просто обращаться щедро." },
+                { "language": "ckb", "text": "دەرچوونەکان گرنگن، بەڵام باشترە بە بەخشندەیی مامەڵەیان لەگەڵ بکرێت." },
+                { "language": "kmr", "text": "Îstîsna girîng in, lê divê bi hêsanî bi comerdî bêne birêvebirin." },
+                { "language": "pl", "text": "Wyjątki są ważne, ale powinny być po prostu traktowane hojnie." },
+                { "language": "ro", "text": "Excepțiile sunt importante, dar ar trebui tratate pur și simplu generos." },
+                { "language": "sq", "text": "Përjashtimet janë të rëndësishme, por duhet trajtuar thjesht me bujari." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu offen. Ohne Kriterien werden Ausnahmen ungleich und die Regel verliert ihre Wirkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too open. Without criteria, exceptions become unequal and the rule loses its effect." },
+                { "language": "fa", "text": "بیش از حد باز است. بدون معیار، استثناها نابرابر می‌شوند و قانون اثر خود را از دست می‌دهد." },
+                { "language": "ar", "text": "مفتوح أكثر من اللازم. من دون معايير تصبح الاستثناءات غير متساوية وتفقد القاعدة أثرها." },
+                { "language": "tr", "text": "Fazla açık. Kriter olmadan istisnalar eşitsizleşir ve kural etkisini kaybeder." },
+                { "language": "ru", "text": "Слишком открыто. Без критериев исключения становятся неравными, и правило теряет эффект." },
+                { "language": "ckb", "text": "زۆر کراوەیە. بەبێ پێوەر، دەرچوونەکان نایەکسان دەبن و ڕێساکە کاریگەری لەدەست دەدات." },
+                { "language": "kmr", "text": "Pir vekirî ye. Bê pîvanan, îstîsna newekhev dibin û rêzik bandora xwe winda dike." },
+                { "language": "pl", "text": "Zbyt otwarte. Bez kryteriów wyjątki stają się nierówne, a zasada traci skuteczność." },
+                { "language": "ro", "text": "Prea deschis. Fără criterii, excepțiile devin inegale și regula își pierde efectul." },
+                { "language": "sq", "text": "Tepër e hapur. Pa kritere, përjashtimet bëhen të pabarabarta dhe rregulli humb efektin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mein Fazit wäre: Die Regel kann in einer akuten Trockenperiode verhältnismäßig sein, wenn sie befristet, begründet, überprüfbar und fair verteilt ist. Sie wird zur unzumutbaren Geste, wenn nur private Haushalte sichtbar eingeschränkt werden, während größere Verbräuche unklar bleiben.",
+              "translations": [
+                { "language": "en", "text": "My conclusion would be: the rule can be proportionate in an acute dry period if it is temporary, justified, verifiable, and fairly distributed. It becomes an unreasonable gesture if only private households are visibly restricted while larger consumption remains unclear." },
+                { "language": "fa", "text": "جمع‌بندی من این است: این قانون در دوره خشکسالی حاد می‌تواند متناسب باشد، اگر موقت، مستدل، قابل بررسی و عادلانه توزیع شده باشد. اما اگر فقط خانوارهای خصوصی به‌طور آشکار محدود شوند و مصرف‌های بزرگ‌تر مبهم بمانند، به ژستی غیرقابل تحمل تبدیل می‌شود." },
+                { "language": "ar", "text": "خلاصتي هي: يمكن أن تكون القاعدة متناسبة في فترة جفاف حادة إذا كانت مؤقتة ومبررة وقابلة للتحقق وموزعة بعدل. لكنها تصبح إيماءة غير محتملة إذا قُيدت الأسر الخاصة فقط بصورة مرئية بينما بقيت الاستهلاكات الأكبر غير واضحة." },
+                { "language": "tr", "text": "Sonucum şu olurdu: kural akut bir kurak dönemde, geçici, gerekçeli, denetlenebilir ve adil dağıtılmışsa orantılı olabilir. Yalnızca özel haneler görünür biçimde kısıtlanırken daha büyük tüketimler belirsiz kalırsa katlanılamaz bir jest haline gelir." },
+                { "language": "ru", "text": "Мой вывод был бы таким: правило может быть соразмерным в острый период засухи, если оно временное, обоснованное, проверяемое и справедливо распределено. Оно становится недопустимым жестом, если явно ограничиваются только частные домохозяйства, а более крупное потребление остается неясным." },
+                { "language": "ckb", "text": "کۆتاییەکەم ئەمە دەبێت: ڕێساکە لە ماوەی وشکەساڵیی تونددا دەتوانێت گونجاو بێت، ئەگەر کاتی، بەهۆکار، قابل پشکنین و بە دادپەروەری دابەشکراو بێت. دەبێتە ئاماژەیەکی نەگونجاو ئەگەر تەنها ماڵە تایبەتییەکان بە ئاشکرا سنووردار بکرێن و بەکارهێنانە گەورەترەکان ناڕوون بمێننەوە." },
+                { "language": "kmr", "text": "Encama min ev e: rêzik di demeke ziwabûna giran de dikare hevseng be, heke demkî, bi sedem, dikare were kontrolkirin û bi dadwerî hatiye belavkirin. Ew dibe jesteke neqebûlkirbar heke tenê malbatên taybet bi awayekî xuya bêne sînordarkirin û karanînên mezintir nezelal bimînin." },
+                { "language": "pl", "text": "Mój wniosek byłby taki: zasada może być proporcjonalna w ostrej suszy, jeśli jest czasowa, uzasadniona, sprawdzalna i sprawiedliwie rozłożona. Staje się nieakceptowalnym gestem, jeśli widocznie ogranicza się tylko prywatne gospodarstwa, podczas gdy większe zużycie pozostaje niejasne." },
+                { "language": "ro", "text": "Concluzia mea ar fi: regula poate fi proporțională într-o perioadă acută de secetă dacă este temporară, justificată, verificabilă și distribuită corect. Devine un gest insuportabil dacă doar gospodăriile private sunt restricționate vizibil, în timp ce consumurile mai mari rămân neclare." },
+                { "language": "sq", "text": "Përfundimi im do të ishte: rregulli mund të jetë proporcional në një periudhë të rëndë thatësire nëse është i përkohshëm, i arsyetuar, i verifikueshëm dhe i shpërndarë drejt. Ai kthehet në një gjest të papranueshëm nëse kufizohen dukshëm vetëm familjet private, ndërsa konsumet më të mëdha mbeten të paqarta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Zustimmung, Bedingungen und klare Grenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer combines approval, conditions, and a clear boundary." },
+                { "language": "fa", "text": "قوی است: پاسخ موافقت، شرط‌ها و مرز روشن را ترکیب می‌کند." },
+                { "language": "ar", "text": "قوي: يجمع الجواب بين الموافقة والشروط والحد الواضح." },
+                { "language": "tr", "text": "Güçlü: cevap onay, koşullar ve net sınırı birleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ сочетает согласие, условия и ясную границу." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕازیبوون، مەرج و سنووری ڕوون پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv razîbûn, şert û sînorê zelal girê dide hev." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy zgodę, warunki i jasną granicę." },
+                { "language": "ro", "text": "Puternic: răspunsul combină acordul, condițiile și o limită clară." },
+                { "language": "sq", "text": "E fortë: përgjigjja bashkon miratimin, kushtet dhe kufirin e qartë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Maßnahme ist schwierig, aber wahrscheinlich notwendig, wenn die Trockenheit anhält.",
+              "translations": [
+                { "language": "en", "text": "The measure is difficult, but probably necessary if the drought continues." },
+                { "language": "fa", "text": "این اقدام سخت است، اما اگر خشکسالی ادامه پیدا کند احتمالاً ضروری است." },
+                { "language": "ar", "text": "الإجراء صعب، لكنه على الأرجح ضروري إذا استمر الجفاف." },
+                { "language": "tr", "text": "Önlem zor, ama kuraklık sürerse muhtemelen gerekli." },
+                { "language": "ru", "text": "Мера сложная, но, вероятно, необходимая, если засуха продолжится." },
+                { "language": "ckb", "text": "ڕێکارەکە قورسە، بەڵام ئەگەر وشکەساڵی بەردەوام بێت بە ئەگەرێکی زۆر پێویستە." },
+                { "language": "kmr", "text": "Pîvan dijwar e, lê heke ziwabûn berdewam bike dibe ku pêwîst be." },
+                { "language": "pl", "text": "Środek jest trudny, ale prawdopodobnie konieczny, jeśli susza się utrzyma." },
+                { "language": "ro", "text": "Măsura este dificilă, dar probabil necesară dacă seceta continuă." },
+                { "language": "sq", "text": "Masa është e vështirë, por ndoshta e nevojshme nëse thatësira vazhdon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Die Antwort fehlt an Kriterien: befristet, überprüfbar, fair verteilt und klar begründet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. The answer lacks criteria: temporary, verifiable, fairly distributed, and clearly justified." },
+                { "language": "fa", "text": "خیلی کلی است. پاسخ معیار ندارد: موقت، قابل بررسی، عادلانه توزیع‌شده و با دلیل روشن." },
+                { "language": "ar", "text": "عام جداً. يفتقر الجواب إلى المعايير: مؤقت، قابل للتحقق، موزع بعدل ومبرر بوضوح." },
+                { "language": "tr", "text": "Fazla genel. Cevap kriterlerden yoksun: geçici, denetlenebilir, adil dağıtılmış ve açık gerekçeli." },
+                { "language": "ru", "text": "Слишком общо. Ответу не хватает критериев: временно, проверяемо, справедливо распределено и ясно обосновано." },
+                { "language": "ckb", "text": "زۆر گشتییە. وەڵامەکە پێوەری نییە: کاتی، قابل پشکنین، بە دادپەروەری دابەشکراو و بە هۆکاری ڕوون." },
+                { "language": "kmr", "text": "Pir giştî ye. Bersiv pîvanan tune dike: demkî, dikare were kontrolkirin, bi dadwerî hatiye belavkirin û bi sedema zelal." },
+                { "language": "pl", "text": "Zbyt ogólne. Odpowiedzi brakuje kryteriów: czasowości, sprawdzalności, sprawiedliwego rozłożenia i jasnego uzasadnienia." },
+                { "language": "ro", "text": "Prea general. Răspunsului îi lipsesc criteriile: temporar, verificabil, distribuit corect și clar justificat." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Përgjigjjes i mungojnë kriteret: e përkohshme, e verifikueshme, e shpërndarë drejt dhe e arsyetuar qartë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "criteria",
+          "text": "Bei gesellschaftlichen Zumutungen ist die erste C2-Frage nicht Zustimmung oder Ablehnung, sondern der Maßstab.",
+          "translations": [
+            { "language": "en", "text": "With public burdens, the first C2 question is not agreement or rejection, but the standard of judgment." },
+            { "language": "fa", "text": "در بارهای اجتماعی تحمیلی، نخستین پرسش C2 موافقت یا رد نیست، بلکه معیار سنجش است." },
+            { "language": "ar", "text": "في الأعباء الاجتماعية، السؤال الأول في C2 ليس الموافقة أو الرفض، بل معيار الحكم." },
+            { "language": "tr", "text": "Toplumsal yüklerde ilk C2 sorusu kabul ya da ret değil, değerlendirme ölçütüdür." },
+            { "language": "ru", "text": "При общественных обременениях первый вопрос C2 — не согласие или отказ, а критерий оценки." },
+            { "language": "ckb", "text": "لە بارە کۆمەڵایەتییەکاندا پرسی یەکەمی C2 ڕازیبوون یان ڕەتکردنەوە نییە، بەڵکو پێوەری دادوەرییە." },
+            { "language": "kmr", "text": "Di barên civakî de pirsa yekem a C2 ne razîbûn an redkirin e, lê pîvana nirxandinê ye." },
+            { "language": "pl", "text": "Przy społecznych uciążliwościach pierwsze pytanie C2 nie brzmi: zgoda czy odrzucenie, lecz: jaki standard oceny." },
+            { "language": "ro", "text": "În cazul poverilor sociale, prima întrebare de C2 nu este acordul sau respingerea, ci criteriul de judecată." },
+            { "language": "sq", "text": "Te barrat shoqërore, pyetja e parë C2 nuk është pajtimi apo refuzimi, por standardi i gjykimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "accountability",
+          "text": "Eine Übergangslösung bleibt nur fair, wenn die fehlenden Bereiche verbindlich nachgezogen werden.",
+          "translations": [
+            { "language": "en", "text": "A transitional solution remains fair only if the missing areas are added in a binding way." },
+            { "language": "fa", "text": "راه‌حل گذار فقط زمانی عادلانه می‌ماند که بخش‌های جاافتاده به‌صورت الزام‌آور اضافه شوند." },
+            { "language": "ar", "text": "لا يبقى الحل الانتقالي عادلاً إلا إذا أُلحقت المجالات الناقصة بصورة ملزمة." },
+            { "language": "tr", "text": "Geçiş çözümü, eksik alanlar bağlayıcı biçimde eklendiğinde adil kalır." },
+            { "language": "ru", "text": "Переходное решение остается справедливым только если недостающие области обязательным образом добавляются." },
+            { "language": "ckb", "text": "چارەسەری گواستنەوە تەنها کاتێک دادپەروەرانە دەمێنێتەوە کە بوارە کەمەکان بە شێوەی پابەند زیاد بکرێن." },
+            { "language": "kmr", "text": "Çareseriya derbasbûnê tenê wê demê dadwerane dimîne ku qadên kêm bi awayekî girêdayî zêde bibin." },
+            { "language": "pl", "text": "Rozwiązanie przejściowe pozostaje uczciwe tylko wtedy, gdy brakujące obszary zostaną wiążąco dołączone." },
+            { "language": "ro", "text": "O soluție de tranziție rămâne corectă doar dacă domeniile lipsă sunt adăugate în mod obligatoriu." },
+            { "language": "sq", "text": "Një zgjidhje kalimtare mbetet e drejtë vetëm nëse fushat e munguara shtohen në mënyrë detyruese." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "exceptions",
+          "text": "Ausnahmen sind auf C2 nicht bloß Freundlichkeit, sondern ein Test für Präzision und Gleichbehandlung.",
+          "translations": [
+            { "language": "en", "text": "At C2, exceptions are not merely kindness, but a test of precision and equal treatment." },
+            { "language": "fa", "text": "در سطح C2، استثناها فقط مهربانی نیستند، بلکه آزمون دقت و برخورد برابرند." },
+            { "language": "ar", "text": "في مستوى C2 ليست الاستثناءات مجرد لطف، بل اختبار للدقة والمعاملة المتساوية." },
+            { "language": "tr", "text": "C2 düzeyinde istisnalar yalnızca nezaket değil, kesinlik ve eşit muamele testidir." },
+            { "language": "ru", "text": "На C2 исключения — это не просто доброжелательность, а проверка точности и равного обращения." },
+            { "language": "ckb", "text": "لە C2 دەرچوونەکان تەنها میهرەبانی نین، بەڵکو تاقیکردنەوەی وردی و مامەڵەی یەکسانن." },
+            { "language": "kmr", "text": "Di C2 de îstîsna ne tenê dilovanî ne, lê testa hûrgilî û muameleya wekhev in." },
+            { "language": "pl", "text": "Na C2 wyjątki nie są tylko uprzejmością, lecz testem precyzji i równego traktowania." },
+            { "language": "ro", "text": "La C2, excepțiile nu sunt doar bunăvoință, ci un test de precizie și tratament egal." },
+            { "language": "sq", "text": "Në C2 përjashtimet nuk janë thjesht mirësi, por test për saktësi dhe trajtim të barabartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "synthesis",
+          "text": "Ein starkes Fazit kann eine Maßnahme unterstützen und zugleich die Grenze ihrer Legitimität nennen.",
+          "translations": [
+            { "language": "en", "text": "A strong conclusion can support a measure while also naming the limit of its legitimacy." },
+            { "language": "fa", "text": "جمع‌بندی قوی می‌تواند از یک اقدام حمایت کند و هم‌زمان مرز مشروعیت آن را نام ببرد." },
+            { "language": "ar", "text": "يمكن لخلاصة قوية أن تدعم إجراءً وأن تسمي في الوقت نفسه حد مشروعيته." },
+            { "language": "tr", "text": "Güçlü bir sonuç, bir önlemi desteklerken meşruiyetinin sınırını da adlandırabilir." },
+            { "language": "ru", "text": "Сильный вывод может поддержать меру и одновременно назвать границу ее легитимности." },
+            { "language": "ckb", "text": "کۆتاییەکی بەهێز دەتوانێت پشتگیری لە ڕێکارێک بکات و هاوکات سنووری ڕەواییەکەی ناو ببات." },
+            { "language": "kmr", "text": "Encameke xurt dikare pîvanekê piştgirî bike û di heman demê de sînorê rewatîya wê binav bike." },
+            { "language": "pl", "text": "Mocny wniosek może poprzeć środek, a jednocześnie nazwać granicę jego legitymizacji." },
+            { "language": "ro", "text": "O concluzie puternică poate susține o măsură și, în același timp, poate numi limita legitimității ei." },
+            { "language": "sq", "text": "Një përfundim i fortë mund të mbështesë një masë dhe njëkohësisht të emërtojë kufirin e legjitimitetit të saj." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "water-saving-civic-discussion",
+          "placement": "detail-header",
+          "purpose": "Illustrate a neutral civic discussion about temporary water-saving rules during a dry period.",
+          "altText": "Eine ruhige Bürgerrunde in einem Gemeinderaum diskutiert über Wassersparen, mit neutralen Symbolen für Wasser und Stadtgrün.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm citizens' discussion in a community room talks about saving water, with neutral symbols for water and urban greenery." },
+            { "language": "fa", "text": "یک نشست آرام شهروندی در سالن اجتماعی درباره صرفه‌جویی آب بحث می‌کند، با نمادهای بی‌طرف برای آب و فضای سبز شهری." },
+            { "language": "ar", "text": "حلقة مواطنين هادئة في غرفة مجتمعية تناقش توفير المياه، مع رموز محايدة للماء والخضرة الحضرية." },
+            { "language": "tr", "text": "Bir toplum odasında sakin bir yurttaş toplantısı su tasarrufunu tartışıyor; su ve şehir yeşili için nötr semboller var." },
+            { "language": "ru", "text": "Спокойная встреча жителей в общественной комнате обсуждает экономию воды, с нейтральными символами воды и городской зелени." },
+            { "language": "ckb", "text": "بازنەیەکی ئارامی هاووڵاتیان لە ژوورێکی کۆمەڵایەتی دەربارەی پاراستنی ئاو گفتوگۆ دەکات، لەگەڵ هێمای بێلایەن بۆ ئاو و سەوزایی شار." },
+            { "language": "kmr", "text": "Civîneke aram a welatiyan di odeya civakî de li ser teserufa avê gotûbêj dike, bi sembolên bêalî ji bo av û keskahiya bajêr." },
+            { "language": "pl", "text": "Spokojna grupa mieszkańców w sali społecznej rozmawia o oszczędzaniu wody, z neutralnymi symbolami wody i zieleni miejskiej." },
+            { "language": "ro", "text": "O discuție cetățenească liniștită într-o sală comunitară discută despre economisirea apei, cu simboluri neutre pentru apă și verdeață urbană." },
+            { "language": "sq", "text": "Një takim i qetë qytetar në një sallë komunitare diskuton kursimin e ujit, me simbole neutrale për ujin dhe gjelbërimin urban." }
+          ],
+          "imagePrompt": "Clean educational illustration, German community room, diverse adults in a calm civic discussion about temporary water-saving rules, neutral water drop and urban greenery symbols, no readable text, no logos, no political symbols, no private data, accessible composition, balanced serious tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

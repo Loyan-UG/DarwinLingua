@@ -1,0 +1,703 @@
+{
+  "packageId": "roleplays-c2-core-53-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 53 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 53",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-ein-nicht-gesagtes-problem-ansprechen",
+      "linkedDialogueSlug": null,
+      "title": "Ein nicht gesagtes Problem ansprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Addressing an unspoken problem" },
+        { "language": "fa", "text": "مطرح کردن مشکلی که صریح گفته نشده است" },
+        { "language": "ar", "text": "طرح مشكلة غير مصرح بها" },
+        { "language": "tr", "text": "Açıkça söylenmemiş bir sorunu dile getirmek" },
+        { "language": "ru", "text": "Поднять невысказанную проблему" },
+        { "language": "ckb", "text": "باسکردنی کێشەیەک کە بە ڕوونی نەگوترابێت" },
+        { "language": "kmr", "text": "Anîna ziman a pirsgirêkeke negotî" },
+        { "language": "pl", "text": "Poruszenie niewypowiedzianego problemu" },
+        { "language": "ro", "text": "Abordarea unei probleme nespuse" },
+        { "language": "sq", "text": "Trajtimi i një problemi të pathënë" }
+      ],
+      "description": "Nach einem gemeinsamen Treffen wirkt eine befreundete Person distanziert: Antworten kommen knapper, ein Vorschlag bleibt unbeantwortet, und im Gespräch entsteht eine ungewohnte Zurückhaltung. Ziel ist, die Spannung anzusprechen, ohne Gedanken zu lesen, Vorwürfe zu machen oder sofort eine Erklärung zu erzwingen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a shared meeting, a friend seems distant: replies are shorter, a suggestion remains unanswered, and the conversation feels unusually reserved. The goal is to address the tension without reading minds, making accusations, or forcing an explanation immediately." },
+        { "language": "fa", "text": "بعد از یک دیدار مشترک، یکی از دوستان دورتر به نظر می‌رسد: پاسخ‌ها کوتاه‌تر شده، یک پیشنهاد بی‌پاسخ مانده و در گفت‌وگو نوعی احتیاط غیرمعمول دیده می‌شود. هدف این است که تنش را مطرح کنید، بدون اینکه ذهن‌خوانی کنید، اتهام بزنید یا فوراً توضیح بخواهید." },
+        { "language": "ar", "text": "بعد لقاء مشترك، يبدو صديق بعيدًا: الردود أقصر، واقتراح بقي بلا جواب، وفي الحوار يظهر تحفظ غير معتاد. الهدف هو طرح التوتر من دون قراءة أفكار، أو اتهام، أو إجبار الطرف الآخر على تفسير فوري." },
+        { "language": "tr", "text": "Ortak bir buluşmadan sonra bir arkadaş mesafeli görünüyor: cevaplar daha kısa geliyor, bir öneri yanıtsız kalıyor ve konuşmada alışılmadık bir çekingenlik oluşuyor. Amaç, düşünce okumadan, suçlamadan ya da hemen açıklama zorlamadan gerilimi dile getirmektir." },
+        { "language": "ru", "text": "После общей встречи друг кажется отстраненным: ответы становятся короче, одно предложение остается без ответа, а в разговоре появляется непривычная сдержанность. Цель — поднять напряжение без чтения мыслей, обвинений и немедленного требования объяснений." },
+        { "language": "ckb", "text": "دوای چاوپێکەوتنێکی هاوبەش، هاوڕێیەک دوورتر دەردەکەوێت: وەڵامەکان کورتترن، پێشنیارێک بێ وەڵام ماوەتەوە و لە گفتوگۆدا خۆگرتنێکی نەناسراو هەیە. ئامانج ئەوەیە گرژییەکە باس بکەیت، بەبێ خوێندنەوەی بیر، تۆمەتبارکردن یان ناچارکردنی ڕوونکردنەوەی دەستبەجێ." },
+        { "language": "kmr", "text": "Piştî hevdîtineke hevpar, hevalek dûr xuya dike: bersiv kurtir tên, pêşniyarek bê bersiv dimîne û di axaftinê de xwe-girtineke neasayî çêdibe. Armanc ew e ku tengasiyê bînin ziman, bê ku ramana kesê din bixwînin, sûc bidin an ravekirineke tavilê ferz bikin." },
+        { "language": "pl", "text": "Po wspólnym spotkaniu znajoma osoba wydaje się zdystansowana: odpowiedzi są krótsze, jedna propozycja pozostaje bez odpowiedzi, a w rozmowie pojawia się nietypowa powściągliwość. Celem jest nazwanie napięcia bez czytania w myślach, oskarżeń i wymuszania natychmiastowego wyjaśnienia." },
+        { "language": "ro", "text": "După o întâlnire comună, o persoană apropiată pare distantă: răspunsurile sunt mai scurte, o propunere rămâne fără răspuns, iar în conversație apare o reținere neobișnuită. Scopul este să abordați tensiunea fără să ghiciți gânduri, fără acuzații și fără să forțați imediat o explicație." },
+        { "language": "sq", "text": "Pas një takimi të përbashkët, një mik duket i distancuar: përgjigjet janë më të shkurtra, një propozim mbetet pa përgjigje dhe në bisedë shfaqet një rezervim i pazakontë. Qëllimi është ta trajtoni tensionin pa lexuar mendime, pa akuzuar dhe pa kërkuar menjëherë shpjegim." }
+      ],
+      "learnerGoal": "Ein unausgesprochenes Problem vorsichtig öffnen: konkrete Beobachtungen nennen, die eigene Deutung als unsicher markieren, zur Korrektur einladen, keine Motive unterstellen und einen kleinen nächsten Schritt vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Open an unspoken problem carefully: name concrete observations, mark your interpretation as uncertain, invite correction, do not assume motives, and suggest a small next step." },
+        { "language": "fa", "text": "یک مشکل ناگفته را با احتیاط باز کنید: مشاهدات مشخص را نام ببرید، برداشت خود را قطعی نشان ندهید، از طرف مقابل بخواهید اگر اشتباه فهمیده‌اید اصلاح کند، انگیزه نسبت ندهید و یک قدم کوچک بعدی پیشنهاد دهید." },
+        { "language": "ar", "text": "افتحوا مشكلة غير مصرح بها بحذر: سمّوا ملاحظات محددة، واجعلوا تفسيركم غير مؤكد، وادعوا إلى التصحيح، ولا تفترضوا الدوافع، واقترحوا خطوة صغيرة تالية." },
+        { "language": "tr", "text": "Söylenmemiş bir sorunu dikkatle açın: somut gözlemleri adlandırın, yorumunuzu kesin olmayan bir yorum olarak belirtin, düzeltmeye davet edin, niyet varsaymayın ve küçük bir sonraki adım önerin." },
+        { "language": "ru", "text": "Осторожно открыть невысказанную проблему: назвать конкретные наблюдения, обозначить свое толкование как неуверенное, пригласить к исправлению, не приписывать мотивы и предложить небольшой следующий шаг." },
+        { "language": "ckb", "text": "کێشەیەکی نەگوتراو بە وریایی بکەرەوە: تێبینییە دیاریکراوەکان ناوببە، لێکدانەوەی خۆت وەک نادڵنیا نیشان بدە، داوا بکە ئەگەر هەڵەیە ڕاست بکرێتەوە، نیت مەبەخشە و هەنگاوێکی بچووی دواتر پێشنیار بکە." },
+        { "language": "kmr", "text": "Pirsgirêkeke negotî bi baldarî vekin: çavdêriyên berbiçav nav bikin, şîroveya xwe wek neewle nîşan bidin, vexwendina sererastkirinê bikin, mebestan ferz nekin û gaveke biçûk a din pêşniyar bikin." },
+        { "language": "pl", "text": "Ostrożnie otworzyć niewypowiedziany problem: nazwać konkretne obserwacje, zaznaczyć własną interpretację jako niepewną, zaprosić do sprostowania, nie przypisywać motywów i zaproponować mały kolejny krok." },
+        { "language": "ro", "text": "Deschideți cu grijă o problemă nespusă: numiți observații concrete, marcați interpretarea proprie ca nesigură, invitați la corectare, nu atribuiți motive și propuneți un mic pas următor." },
+        { "language": "sq", "text": "Hapni me kujdes një problem të pathënë: përmendni vëzhgime konkrete, shënojeni interpretimin tuaj si të pasigurt, ftoni korrigjimin, mos supozoni motive dhe propozoni një hap të vogël të radhës." }
+      ],
+      "cefrLevel": "C2",
+      "category": "social",
+      "topics": ["social-and-relationships", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "face-to-face",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 53,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Ansprechende Person",
+          "translations": [
+            { "language": "en", "text": "Person raising the issue" },
+            { "language": "fa", "text": "فردی که موضوع را مطرح می‌کند" },
+            { "language": "ar", "text": "الشخص الذي يطرح الموضوع" },
+            { "language": "tr", "text": "Konuyu açan kişi" },
+            { "language": "ru", "text": "Человек, поднимающий тему" },
+            { "language": "ckb", "text": "کەسی بابەتەکە دەورووژێنێت" },
+            { "language": "kmr", "text": "Kesê mijarê vedike" },
+            { "language": "pl", "text": "Osoba poruszająca temat" },
+            { "language": "ro", "text": "Persoana care deschide subiectul" },
+            { "language": "sq", "text": "Personi që hap temën" }
+          ]
+        },
+        {
+          "roleKey": "speaker",
+          "displayName": "Zurückhaltende Person",
+          "translations": [
+            { "language": "en", "text": "Reserved person" },
+            { "language": "fa", "text": "فرد محتاط" },
+            { "language": "ar", "text": "الشخص المتحفظ" },
+            { "language": "tr", "text": "Çekingen kişi" },
+            { "language": "ru", "text": "Сдержанный человек" },
+            { "language": "ckb", "text": "کەسی خۆگرتوو" },
+            { "language": "kmr", "text": "Kesê xwe-girtî" },
+            { "language": "pl", "text": "Osoba powściągliwa" },
+            { "language": "ro", "text": "Persoana rezervată" },
+            { "language": "sq", "text": "Personi i rezervuar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte etwas vorsichtig ansprechen. Mir ist aufgefallen, dass unsere Nachrichten seit dem Treffen knapper geworden sind und mein Vorschlag für Freitag offen geblieben ist.",
+          "translations": [
+            { "language": "en", "text": "I would like to raise something carefully. I noticed that our messages have become shorter since the meeting and that my suggestion for Friday remained open." },
+            { "language": "fa", "text": "می‌خواهم موضوعی را با احتیاط مطرح کنم. متوجه شده‌ام که پیام‌های ما بعد از آن دیدار کوتاه‌تر شده و پیشنهاد من برای جمعه بی‌پاسخ مانده است." },
+            { "language": "ar", "text": "أود أن أطرح شيئًا بحذر. لاحظت أن رسائلنا أصبحت أقصر منذ اللقاء وأن اقتراحي ليوم الجمعة بقي مفتوحًا." },
+            { "language": "tr", "text": "Bir şeyi dikkatli biçimde açmak istiyorum. Buluşmadan beri mesajlarımızın kısaldığını ve cuma önerimin açık kaldığını fark ettim." },
+            { "language": "ru", "text": "Я хотел бы осторожно поднять одну тему. Я заметил, что наши сообщения после встречи стали короче, а мое предложение на пятницу осталось открытым." },
+            { "language": "ckb", "text": "دەمەوێت شتێک بە وریایی باس بکەم. تێبینیم کرد کە نامەکانمان دوای چاوپێکەوتنەکە کورتتر بوون و پێشنیارەکەم بۆ هەینی کراوە ماوەتەوە." },
+            { "language": "kmr", "text": "Ez dixwazim tiştek bi baldarî bînim ziman. Min dît ku peyamên me piştî hevdîtinê kurtir bûne û pêşniyara min ji bo înê vekirî ma." },
+            { "language": "pl", "text": "Chciałbym/Chciałabym ostrożnie poruszyć jedną rzecz. Zauważyłem/Zauważyłam, że nasze wiadomości po spotkaniu stały się krótsze, a moja propozycja na piątek została bez decyzji." },
+            { "language": "ro", "text": "Aș vrea să deschid cu grijă un subiect. Am observat că mesajele noastre au devenit mai scurte după întâlnire și că propunerea mea pentru vineri a rămas deschisă." },
+            { "language": "sq", "text": "Do të doja të hapja me kujdes një temë. Kam vënë re se mesazhet tona pas takimit janë bërë më të shkurtra dhe se propozimi im për të premten ka mbetur i hapur." }
+          ],
+          "function": "careful-opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "speaker",
+          "baseText": "Ich wollte daraus eigentlich kein großes Thema machen. Es ist nur etwas hängen geblieben.",
+          "translations": [
+            { "language": "en", "text": "I actually did not want to make a big topic out of it. Something just stayed with me." },
+            { "language": "fa", "text": "راستش نمی‌خواستم از آن موضوع بزرگی بسازم. فقط چیزی در ذهنم مانده است." },
+            { "language": "ar", "text": "في الحقيقة لم أكن أريد أن أجعل منه موضوعًا كبيرًا. فقط بقي شيء في ذهني." },
+            { "language": "tr", "text": "Aslında bunu büyük bir konu yapmak istemedim. Sadece bir şey aklımda kaldı." },
+            { "language": "ru", "text": "Я вообще не хотел делать из этого большую тему. Просто что-то осталось у меня внутри." },
+            { "language": "ckb", "text": "لە ڕاستیدا نەمدەویست بابەتێکی گەورەی لێ دروست بکەم. تەنها شتێک لە مێشکمدا ماوەتەوە." },
+            { "language": "kmr", "text": "Di rastiyê de min nexwest ji vê mijareke mezin çêkim. Tenê tiştek di hişê min de ma." },
+            { "language": "pl", "text": "Właściwie nie chciałem/chciałam robić z tego dużego tematu. Po prostu coś mi zostało w głowie." },
+            { "language": "ro", "text": "De fapt nu am vrut să fac din asta un subiect mare. Doar că mi-a rămas ceva în minte." },
+            { "language": "sq", "text": "Në fakt nuk doja ta bëja temë të madhe. Thjesht diçka më ka mbetur në mendje." }
+          ],
+          "function": "partial-opening"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "learner",
+          "baseText": "Danke, dass du das sagst. Ich will nicht raten, was es ist. Wenn ich danebenliege, korrigier mich bitte: Hatte es mit meiner Bemerkung über die Planung zu tun?",
+          "translations": [
+            { "language": "en", "text": "Thank you for saying that. I do not want to guess what it is. If I am off, please correct me: did it have to do with my remark about the planning?" },
+            { "language": "fa", "text": "ممنون که این را می‌گویی. نمی‌خواهم حدس بزنم موضوع چیست. اگر اشتباه می‌کنم، لطفاً اصلاحم کن: آیا به جمله من درباره برنامه‌ریزی مربوط بود؟" },
+            { "language": "ar", "text": "شكرًا لأنك تقول ذلك. لا أريد أن أخمّن ما هو الأمر. إذا كنت مخطئًا فصححني من فضلك: هل كان له علاقة بملاحظتي حول التخطيط؟" },
+            { "language": "tr", "text": "Bunu söylediğin için teşekkür ederim. Ne olduğunu tahmin etmek istemiyorum. Yanılıyorsam lütfen düzelt: planlama hakkındaki yorumumla mı ilgiliydi?" },
+            { "language": "ru", "text": "Спасибо, что говоришь это. Я не хочу угадывать, в чем дело. Если я ошибаюсь, пожалуйста, поправь меня: это было связано с моим замечанием о планировании?" },
+            { "language": "ckb", "text": "سوپاس کە ئەمە دەڵێیت. نامەوێت خەیاڵ بکەم بابەتەکە چییە. ئەگەر هەڵەم، تکایە ڕاستم بکەرەوە: ئایا پەیوەندی بە تێبینییەکەم دەربارەی پلاندانانەوە هەبوو؟" },
+            { "language": "kmr", "text": "Spas ku tu vê dibêjî. Ez naxwazim texmîn bikim ka mijar çi ye. Heke ez şaş im, ji kerema xwe min sererast bike: Ma ew bi şîroveya min derbarê plansaziyê ve girêdayî bû?" },
+            { "language": "pl", "text": "Dziękuję, że to mówisz. Nie chcę zgadywać, o co chodzi. Jeśli się mylę, popraw mnie proszę: czy miało to związek z moją uwagą o planowaniu?" },
+            { "language": "ro", "text": "Mulțumesc că spuneți asta. Nu vreau să ghicesc despre ce este vorba. Dacă greșesc, vă rog să mă corectați: avea legătură cu observația mea despre planificare?" },
+            { "language": "sq", "text": "Faleminderit që e thua këtë. Nuk dua të hamendësoj se çfarë është. Nëse gaboj, të lutem më korrigjo: kishte lidhje me vërejtjen time për planifikimin?" }
+          ],
+          "function": "invite-correction"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "speaker",
+          "baseText": "Ja, teilweise. Es klang für mich so, als würdest du sagen, ich hätte alles unstrukturiert gemacht.",
+          "translations": [
+            { "language": "en", "text": "Yes, partly. To me it sounded as if you were saying that I had done everything in an unstructured way." },
+            { "language": "fa", "text": "بله، تا حدی. برای من این‌طور شنیده شد که انگار می‌گویی من همه چیز را بی‌ساختار انجام داده‌ام." },
+            { "language": "ar", "text": "نعم، جزئيًا. بدا لي الأمر وكأنك تقول إنني فعلت كل شيء بطريقة غير منظمة." },
+            { "language": "tr", "text": "Evet, kısmen. Bana sanki her şeyi düzensiz yaptığımı söylüyormuşsun gibi geldi." },
+            { "language": "ru", "text": "Да, отчасти. Для меня это прозвучало так, будто ты говоришь, что я сделал все неструктурированно." },
+            { "language": "ckb", "text": "بەڵێ، تا ڕادەیەک. بۆ من وا دەنگی دا وەک ئەوەی بڵێیت من هەموو شتێکم بێ ڕێکخستن کردووە." },
+            { "language": "kmr", "text": "Erê, hinekî. Ji bo min wisa deng da wek ku tu bibêjî min her tişt bê rêkûpêk kir." },
+            { "language": "pl", "text": "Tak, częściowo. Dla mnie zabrzmiało to tak, jakbyś mówił/mówiła, że zrobiłem/zrobiłam wszystko bez struktury." },
+            { "language": "ro", "text": "Da, parțial. Pentru mine a sunat ca și cum ați spune că am făcut totul fără structură." },
+            { "language": "sq", "text": "Po, pjesërisht. Mua më tingëlloi sikur po thoshe se i kisha bërë të gjitha pa strukturë." }
+          ],
+          "function": "specific-concern"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "learner",
+          "baseText": "Das kann ich nachvollziehen. Meine Absicht war, den Ablauf für die nächste Runde klarer zu machen, aber die Formulierung konnte wie eine Abwertung deiner Arbeit klingen.",
+          "translations": [
+            { "language": "en", "text": "I can understand that. My intention was to make the process clearer for the next round, but the wording could sound like a devaluation of your work." },
+            { "language": "fa", "text": "این را می‌توانم درک کنم. نیت من این بود که روند برای دور بعد روشن‌تر شود، اما جمله‌بندی می‌توانست شبیه کم‌ارزش کردن کار تو شنیده شود." },
+            { "language": "ar", "text": "أستطيع فهم ذلك. كان قصدي أن أجعل المسار أوضح للجولة التالية، لكن الصياغة كان يمكن أن تبدو كأنها تقليل من قيمة عملك." },
+            { "language": "tr", "text": "Bunu anlayabiliyorum. Niyetim bir sonraki tur için süreci daha açık hale getirmekti, ama ifade tarzı senin emeğini değersizleştiriyormuş gibi duyulabilirdi." },
+            { "language": "ru", "text": "Я могу это понять. Мое намерение было сделать процесс яснее для следующего раунда, но формулировка могла прозвучать как обесценивание твоей работы." },
+            { "language": "ckb", "text": "دەتوانم ئەمە تێبگەم. مەبەستم ئەوە بوو ڕێڕەوەکە بۆ جارێکی داهاتوو ڕوونتر بکەم، بەڵام دابڕینەکە دەیتوانی وەک کەمکردنەوەی بهایی کارەکەت دەنگ بدات." },
+            { "language": "kmr", "text": "Ez dikarim vê fam bikim. Mebesta min ew bû ku ji bo gera din pêvajoyê zelaltir bikim, lê formulekirin dikaribû wek kêmnirxkirina xebata te bê bihîstin." },
+            { "language": "pl", "text": "Mogę to zrozumieć. Chciałem/Chciałam uporządkować proces na następną rundę, ale sformułowanie mogło zabrzmieć jak umniejszenie twojej pracy." },
+            { "language": "ro", "text": "Pot înțelege asta. Intenția mea era să fac procesul mai clar pentru următoarea rundă, dar formularea putea suna ca o devalorizare a muncii dumneavoastră." },
+            { "language": "sq", "text": "Mund ta kuptoj këtë. Qëllimi im ishte ta bëja procesin më të qartë për raundin e ardhshëm, por formulimi mund të tingëllonte si ulje e vlerës së punës sate." }
+          ],
+          "function": "separate-intent-impact"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "speaker",
+          "baseText": "Genau. Ich habe viel Zeit hineingesteckt, und in dem Moment fühlte es sich so an, als wäre das unsichtbar.",
+          "translations": [
+            { "language": "en", "text": "Exactly. I put a lot of time into it, and in that moment it felt as if that was invisible." },
+            { "language": "fa", "text": "دقیقاً. من زمان زیادی برایش گذاشته بودم و در آن لحظه احساس کردم این دیده نمی‌شود." },
+            { "language": "ar", "text": "بالضبط. لقد وضعت فيه وقتًا كثيرًا، وفي تلك اللحظة شعرت وكأن ذلك غير مرئي." },
+            { "language": "tr", "text": "Aynen. Buna çok zaman harcadım ve o anda sanki bu görünmezmiş gibi hissettim." },
+            { "language": "ru", "text": "Именно. Я вложил в это много времени, и в тот момент мне показалось, будто этого не видно." },
+            { "language": "ckb", "text": "هەمان ئەوە. من کاتی زۆرم تێدا دانا، و لەو ساتەدا هەستم کرد وەک ئەوەی ئەمە نەبینرابێت." },
+            { "language": "kmr", "text": "Rast ew e. Min gelek dem tê de danî, û di wê kêliyê de wisa hest kir wek ku ew nayê dîtin." },
+            { "language": "pl", "text": "Dokładnie. Włożyłem/Włożyłam w to dużo czasu i w tamtym momencie miałem/miałam poczucie, jakby to było niewidoczne." },
+            { "language": "ro", "text": "Exact. Am pus mult timp în asta, iar în acel moment am simțit ca și cum nu se vedea." },
+            { "language": "sq", "text": "Pikërisht. Kam investuar shumë kohë në të dhe në atë moment u ndjeva sikur kjo nuk shihej." }
+          ],
+          "function": "underlying-need"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "learner",
+          "baseText": "Dann möchte ich zwei Dinge nachholen: Erstens sehe ich den Aufwand, den du getragen hast. Zweitens hätte ich meine Kritik enger auf den nächsten Schritt beziehen sollen, nicht auf deine gesamte Vorbereitung.",
+          "translations": [
+            { "language": "en", "text": "Then I would like to make up for two things: first, I see the effort you carried. Second, I should have tied my criticism more narrowly to the next step, not to your whole preparation." },
+            { "language": "fa", "text": "پس می‌خواهم دو چیز را جبران کنم: اول اینکه تلاش تو را که بر دوش داشتی می‌بینم. دوم اینکه باید نقد خود را محدودتر به قدم بعدی ربط می‌دادم، نه به کل آماده‌سازی تو." },
+            { "language": "ar", "text": "إذن أود أن أستدرك أمرين: أولًا، أرى الجهد الذي تحملته. ثانيًا، كان ينبغي أن أربط نقدي بالخطوة التالية بشكل أضيق، لا بتحضيرك كله." },
+            { "language": "tr", "text": "O zaman iki şeyi telafi etmek istiyorum: Birincisi, üstlendiğin emeği görüyorum. İkincisi, eleştirimi tüm hazırlığına değil, daha dar biçimde sonraki adıma bağlamalıydım." },
+            { "language": "ru", "text": "Тогда я хочу восполнить две вещи: во-первых, я вижу усилие, которое ты взял на себя. Во-вторых, мне следовало связать критику уже со следующим шагом, а не со всей твоей подготовкой." },
+            { "language": "ckb", "text": "ئەوا دەمەوێت دوو شت قەرەبوو بکەمەوە: یەکەم، هەوڵەکەی تۆ کە لەسەرت بوو دەبینم. دووەم، دەبوو ڕەخنەکەم تەنها بە هەنگاوی داهاتووەوە ببەستم، نە بە هەموو ئامادەکارییەکەت." },
+            { "language": "kmr", "text": "Hingê ez dixwazim du tiştan telafî bikim: yekem, ez hewldana ku te hilgirtî dibînim. Duyem, diviyabû ez rexneya xwe tengtir bi gava din ve girê bidim, ne bi tevahiya amadekariya te." },
+            { "language": "pl", "text": "W takim razie chciałbym/chciałabym dopowiedzieć dwie rzeczy: po pierwsze, widzę wysiłek, który wziąłeś/wzięłaś na siebie. Po drugie, powinienem/powinnam był/a zawęzić krytykę do następnego kroku, a nie do całego twojego przygotowania." },
+            { "language": "ro", "text": "Atunci aș vrea să repar două lucruri: în primul rând, văd efortul pe care l-ați dus. În al doilea rând, ar fi trebuit să leg critica mai strict de pasul următor, nu de întreaga dumneavoastră pregătire." },
+            { "language": "sq", "text": "Atëherë dua të plotësoj dy gjëra: së pari, e shoh përpjekjen që ke mbajtur. Së dyti, duhej ta lidhja kritikën më ngushtë me hapin e ardhshëm, jo me gjithë përgatitjen tënde." }
+          ],
+          "function": "repair-and-reframe"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "speaker",
+          "baseText": "Das hilft. Ich wollte nicht beleidigt wirken, aber ich wusste nicht, wie ich es ansprechen soll.",
+          "translations": [
+            { "language": "en", "text": "That helps. I did not want to seem offended, but I did not know how to bring it up." },
+            { "language": "fa", "text": "این کمک می‌کند. نمی‌خواستم دلخور به نظر برسم، اما نمی‌دانستم چطور آن را مطرح کنم." },
+            { "language": "ar", "text": "هذا يساعد. لم أرد أن أبدو مستاءً، لكنني لم أعرف كيف أطرحه." },
+            { "language": "tr", "text": "Bu yardımcı oluyor. Alınmış gibi görünmek istemedim, ama bunu nasıl açacağımı bilemedim." },
+            { "language": "ru", "text": "Это помогает. Я не хотел выглядеть обиженным, но не знал, как это поднять." },
+            { "language": "ckb", "text": "ئەمە یارمەتی دەدات. نەمدەویست وەک دڵگران دەربکەوم، بەڵام نەمدەزانی چۆن بیورووژێنم." },
+            { "language": "kmr", "text": "Ev alîkar e. Min nexwest wek kesek dilgir xuya bikim, lê min nizanî çawa wê bînim ziman." },
+            { "language": "pl", "text": "To pomaga. Nie chciałem/chciałam wyglądać na urażonego/urażoną, ale nie wiedziałem/wiedziałam, jak to poruszyć." },
+            { "language": "ro", "text": "Asta ajută. Nu am vrut să par ofensat, dar nu știam cum să deschid subiectul." },
+            { "language": "sq", "text": "Kjo ndihmon. Nuk doja të dukesha i/e ofenduar, por nuk dija si ta hapja." }
+          ],
+          "function": "relief"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "learner",
+          "baseText": "Für das nächste Mal schlage ich vor: Wenn eine Bemerkung von mir schief ankommt, sag kurz: „So klingt das für mich gerade.“ Dann kann ich sofort präzisieren, bevor es stehen bleibt.",
+          "translations": [
+            { "language": "en", "text": "For next time I suggest this: if a remark of mine lands badly, just say briefly, 'That is how it sounds to me right now.' Then I can clarify immediately before it remains unresolved." },
+            { "language": "fa", "text": "برای دفعه بعد پیشنهاد می‌کنم: اگر جمله‌ای از من بد برداشت شد، کوتاه بگو: «الان برای من این‌طور شنیده می‌شود.» آن‌وقت می‌توانم فوراً دقیق‌تر کنم، قبل از اینکه همان‌طور بماند." },
+            { "language": "ar", "text": "للمرة القادمة أقترح: إذا وصل تعليق مني بطريقة غير جيدة، فقل باختصار: «هكذا يبدو لي الآن». عندها أستطيع التوضيح فورًا قبل أن يبقى الأمر عالقًا." },
+            { "language": "tr", "text": "Bir dahaki sefer için şunu öneriyorum: Bir sözüm kötü gelirse kısaca 'Şu anda bana böyle duyuluyor' de. O zaman konu öylece kalmadan hemen netleştirebilirim." },
+            { "language": "ru", "text": "На следующий раз я предлагаю так: если мое замечание прозвучит неудачно, коротко скажи: «Сейчас для меня это звучит так». Тогда я смогу сразу уточнить, пока это не осталось висеть." },
+            { "language": "ckb", "text": "بۆ جارێکی داهاتوو پێشنیارم ئەمەیە: ئەگەر تێبینییەکم خراپ بگات، بە کورتی بڵێ: «ئێستا بۆ من وا دەنگ دەدات.» ئەوسا دەتوانم دەستبەجێ وردتری بکەم پێش ئەوەی بەو شێوەیە بمێنێتەوە." },
+            { "language": "kmr", "text": "Ji bo careke din ez vê pêşniyar dikim: heke gotineke min xerab were wergirtin, bi kurtî bêje: 'Niha ji bo min wisa deng dide.' Hingê ez dikarim tavilê zelaltir bikim berî ku ew wisa bimîne." },
+            { "language": "pl", "text": "Na przyszłość proponuję: jeśli moja uwaga zabrzmi źle, powiedz krótko: „Teraz brzmi to dla mnie tak”. Wtedy mogę od razu doprecyzować, zanim to zostanie bez wyjaśnienia." },
+            { "language": "ro", "text": "Pentru data viitoare propun așa: dacă o remarcă de-a mea ajunge prost, spuneți scurt: „Așa sună pentru mine acum.” Atunci pot clarifica imediat, înainte să rămână nerezolvat." },
+            { "language": "sq", "text": "Për herën tjetër propozoj këtë: nëse një vërejtje e imja merret keq, thuaj shkurt: “Kështu më tingëllon tani.” Atëherë mund ta sqaroj menjëherë para se të mbetet pezull." }
+          ],
+          "function": "future-signal"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "speaker",
+          "baseText": "Das ist ein guter Vorschlag. Dann muss ich nicht warten, bis sich aus einem kleinen Satz ein größeres Schweigen entwickelt.",
+          "translations": [
+            { "language": "en", "text": "That is a good suggestion. Then I do not have to wait until a small sentence turns into a larger silence." },
+            { "language": "fa", "text": "این پیشنهاد خوبی است. آن‌وقت لازم نیست صبر کنم تا از یک جمله کوچک، سکوت بزرگ‌تری شکل بگیرد." },
+            { "language": "ar", "text": "هذا اقتراح جيد. عندها لا أحتاج إلى الانتظار حتى تتحول جملة صغيرة إلى صمت أكبر." },
+            { "language": "tr", "text": "Bu iyi bir öneri. O zaman küçük bir cümlenin daha büyük bir sessizliğe dönüşmesini beklemek zorunda kalmam." },
+            { "language": "ru", "text": "Это хорошее предложение. Тогда мне не нужно ждать, пока маленькая фраза превратится в большее молчание." },
+            { "language": "ckb", "text": "ئەمە پێشنیارێکی باشە. ئەوسا پێویست ناکات چاوەڕێ بکەم تا لە ڕستەیەکی بچووک بێدەنگییەکی گەورەتر دروست ببێت." },
+            { "language": "kmr", "text": "Ev pêşniyareke baş e. Hingê ne hewce ye ez li bendê bim heta hevokeke biçûk bibe bêdengiyeke mezintir." },
+            { "language": "pl", "text": "To dobra propozycja. Wtedy nie muszę czekać, aż z małego zdania rozwinie się większe milczenie." },
+            { "language": "ro", "text": "Este o propunere bună. Atunci nu trebuie să aștept până când o propoziție mică se transformă într-o tăcere mai mare." },
+            { "language": "sq", "text": "Ky është një propozim i mirë. Atëherë nuk duhet të pres derisa një fjali e vogël të kthehet në një heshtje më të madhe." }
+          ],
+          "function": "agreement"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 1,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich möchte etwas vorsichtig ansprechen. Mir ist aufgefallen, dass unsere Nachrichten seit dem Treffen knapper geworden sind und mein Vorschlag für Freitag offen geblieben ist.",
+              "translations": [
+                { "language": "en", "text": "I would like to raise something carefully. I noticed that our messages have become shorter since the meeting and that my suggestion for Friday remained open." },
+                { "language": "fa", "text": "می‌خواهم موضوعی را با احتیاط مطرح کنم. متوجه شده‌ام که پیام‌های ما بعد از آن دیدار کوتاه‌تر شده و پیشنهاد من برای جمعه بی‌پاسخ مانده است." },
+                { "language": "ar", "text": "أود أن أطرح شيئًا بحذر. لاحظت أن رسائلنا أصبحت أقصر منذ اللقاء وأن اقتراحي ليوم الجمعة بقي مفتوحًا." },
+                { "language": "tr", "text": "Bir şeyi dikkatli biçimde açmak istiyorum. Buluşmadan beri mesajlarımızın kısaldığını ve cuma önerimin açık kaldığını fark ettim." },
+                { "language": "ru", "text": "Я хотел бы осторожно поднять одну тему. Я заметил, что наши сообщения после встречи стали короче, а мое предложение на пятницу осталось открытым." },
+                { "language": "ckb", "text": "دەمەوێت شتێک بە وریایی باس بکەم. تێبینیم کرد کە نامەکانمان دوای چاوپێکەوتنەکە کورتتر بوون و پێشنیارەکەم بۆ هەینی کراوە ماوەتەوە." },
+                { "language": "kmr", "text": "Ez dixwazim tiştek bi baldarî bînim ziman. Min dît ku peyamên me piştî hevdîtinê kurtir bûne û pêşniyara min ji bo înê vekirî ma." },
+                { "language": "pl", "text": "Chciałbym/Chciałabym ostrożnie poruszyć jedną rzecz. Zauważyłem/Zauważyłam, że nasze wiadomości po spotkaniu stały się krótsze, a moja propozycja na piątek została bez decyzji." },
+                { "language": "ro", "text": "Aș vrea să deschid cu grijă un subiect. Am observat că mesajele noastre au devenit mai scurte după întâlnire și că propunerea mea pentru vineri a rămas deschisă." },
+                { "language": "sq", "text": "Do të doja të hapja me kujdes një temë. Kam vënë re se mesazhet tona pas takimit janë bërë më të shkurtra dhe se propozimi im për të premten ka mbetur i hapur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort startet mit beobachtbaren Signalen statt mit einer Unterstellung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer starts with observable signals instead of an assumption." },
+                { "language": "fa", "text": "درست است: پاسخ با نشانه‌های قابل مشاهده شروع می‌کند، نه با نسبت دادن نیت." },
+                { "language": "ar", "text": "صحيح: تبدأ الإجابة بإشارات قابلة للملاحظة بدلًا من افتراض." },
+                { "language": "tr", "text": "Doğru: cevap bir varsayımla değil, gözlemlenebilir işaretlerle başlar." },
+                { "language": "ru", "text": "Правильно: ответ начинается с наблюдаемых признаков, а не с предположения." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە بە نیشانەی بینراو دەست پێدەکات، نە بە دانانی مەبەست." },
+                { "language": "kmr", "text": "Rast e: bersiv bi nîşanên dîtbar dest pê dike, ne bi ferzekê." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zaczyna się od obserwowalnych sygnałów, a nie od założenia." },
+                { "language": "ro", "text": "Corect: răspunsul începe cu semnale observabile, nu cu o presupunere." },
+                { "language": "sq", "text": "Saktë: përgjigjja fillon me shenja të vëzhgueshme, jo me supozim." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Du bist seit dem Treffen irgendwie komisch zu mir.",
+              "translations": [
+                { "language": "en", "text": "You have been kind of strange with me since the meeting." },
+                { "language": "fa", "text": "تو بعد از آن دیدار یک جورهایی با من عجیب رفتار می‌کنی." },
+                { "language": "ar", "text": "أنت تتصرف معي بشكل غريب نوعًا ما منذ اللقاء." },
+                { "language": "tr", "text": "Buluşmadan beri bana biraz tuhaf davranıyorsun." },
+                { "language": "ru", "text": "После встречи ты как-то странно со мной общаешься." },
+                { "language": "ckb", "text": "تۆ دوای چاوپێکەوتنەکە جۆرێک بە شێوەیەکی نامۆ لەگەڵم دەجوڵێیت." },
+                { "language": "kmr", "text": "Tu piştî hevdîtinê bi awayekî ecêb bi min re reftar dikî." },
+                { "language": "pl", "text": "Od spotkania zachowujesz się wobec mnie jakoś dziwnie." },
+                { "language": "ro", "text": "De la întâlnire vă purtați cumva ciudat cu mine." },
+                { "language": "sq", "text": "Që nga takimi po sillesh disi çuditshëm me mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wertend: Die Antwort benennt ein Gefühl, aber nicht die konkreten Signale, auf denen es beruht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too judgmental: the answer names a feeling, but not the concrete signals it is based on." },
+                { "language": "fa", "text": "بیش از حد داورانه است: پاسخ یک حس را نام می‌برد، اما نشانه‌های مشخصی را که بر آن بنا شده نمی‌گوید." },
+                { "language": "ar", "text": "حكمي جدًا: تسمي الإجابة شعورًا، لكنها لا تسمي الإشارات المحددة التي يستند إليها." },
+                { "language": "tr", "text": "Fazla yargılayıcı: cevap bir duyguyu adlandırır, ama bunun dayandığı somut işaretleri söylemez." },
+                { "language": "ru", "text": "Слишком оценочно: ответ называет чувство, но не конкретные признаки, на которых оно основано." },
+                { "language": "ckb", "text": "زۆر دادوەرانەیە: وەڵامەکە هەستێک ناودەبات، بەڵام نیشانە دیاریکراوەکانی بنەمای ئەو هەستە ناڵێت." },
+                { "language": "kmr", "text": "Pir dadbar e: bersiv hestek nav dike, lê nîşanên berbiçav ên bingeha wê nabêje." },
+                { "language": "pl", "text": "Zbyt oceniające: odpowiedź nazywa odczucie, ale nie konkretne sygnały, na których się opiera." },
+                { "language": "ro", "text": "Prea evaluativ: răspunsul numește o senzație, dar nu semnalele concrete pe care se bazează." },
+                { "language": "sq", "text": "Shumë gjykuese: përgjigjja përmend një ndjesi, por jo shenjat konkrete ku mbështetet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Danke, dass du das sagst. Ich will nicht raten, was es ist. Wenn ich danebenliege, korrigier mich bitte: Hatte es mit meiner Bemerkung über die Planung zu tun?",
+              "translations": [
+                { "language": "en", "text": "Thank you for saying that. I do not want to guess what it is. If I am off, please correct me: did it have to do with my remark about the planning?" },
+                { "language": "fa", "text": "ممنون که این را می‌گویی. نمی‌خواهم حدس بزنم موضوع چیست. اگر اشتباه می‌کنم، لطفاً اصلاحم کن: آیا به جمله من درباره برنامه‌ریزی مربوط بود؟" },
+                { "language": "ar", "text": "شكرًا لأنك تقول ذلك. لا أريد أن أخمّن ما هو الأمر. إذا كنت مخطئًا فصححني من فضلك: هل كان له علاقة بملاحظتي حول التخطيط؟" },
+                { "language": "tr", "text": "Bunu söylediğin için teşekkür ederim. Ne olduğunu tahmin etmek istemiyorum. Yanılıyorsam lütfen düzelt: planlama hakkındaki yorumumla mı ilgiliydi?" },
+                { "language": "ru", "text": "Спасибо, что говоришь это. Я не хочу угадывать, в чем дело. Если я ошибаюсь, пожалуйста, поправь меня: это было связано с моим замечанием о планировании?" },
+                { "language": "ckb", "text": "سوپاس کە ئەمە دەڵێیت. نامەوێت خەیاڵ بکەم بابەتەکە چییە. ئەگەر هەڵەم، تکایە ڕاستم بکەرەوە: ئایا پەیوەندی بە تێبینییەکەم دەربارەی پلاندانانەوە هەبوو؟" },
+                { "language": "kmr", "text": "Spas ku tu vê dibêjî. Ez naxwazim texmîn bikim ka mijar çi ye. Heke ez şaş im, ji kerema xwe min sererast bike: Ma ew bi şîroveya min derbarê plansaziyê ve girêdayî bû?" },
+                { "language": "pl", "text": "Dziękuję, że to mówisz. Nie chcę zgadywać, o co chodzi. Jeśli się mylę, popraw mnie proszę: czy miało to związek z moją uwagą o planowaniu?" },
+                { "language": "ro", "text": "Mulțumesc că spuneți asta. Nu vreau să ghicesc despre ce este vorba. Dacă greșesc, vă rog să mă corectați: avea legătură cu observația mea despre planificare?" },
+                { "language": "sq", "text": "Faleminderit që e thua këtë. Nuk dua të hamendësoj se çfarë është. Nëse gaboj, të lutem më korrigjo: kishte lidhje me vërejtjen time për planifikimin?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort markiert die eigene Deutung als unsicher und lädt zur Korrektur ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer marks your interpretation as uncertain and invites correction." },
+                { "language": "fa", "text": "درست است: پاسخ برداشت خود را نامطمئن نشان می‌دهد و از طرف مقابل می‌خواهد آن را اصلاح کند." },
+                { "language": "ar", "text": "صحيح: تجعل الإجابة تفسيركم غير مؤكد وتدعو إلى التصحيح." },
+                { "language": "tr", "text": "Doğru: cevap kendi yorumunuzu kesin olmayan bir yorum olarak gösterir ve düzeltmeye davet eder." },
+                { "language": "ru", "text": "Правильно: ответ обозначает собственное толкование как неуверенное и приглашает к исправлению." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە لێکدانەوەی خۆت وەک نادڵنیا نیشان دەدات و داوای ڕاستکردنەوە دەکات." },
+                { "language": "kmr", "text": "Rast e: bersiv şîroveya xwe wek neewle nîşan dide û vexwendina sererastkirinê dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zaznacza własną interpretację jako niepewną i zaprasza do sprostowania." },
+                { "language": "ro", "text": "Corect: răspunsul marchează interpretarea proprie ca nesigură și invită la corectare." },
+                { "language": "sq", "text": "Saktë: përgjigjja e shënon interpretimin tuaj si të pasigurt dhe fton korrigjimin." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich nehme an, du bist wegen meiner Bemerkung sauer.",
+              "translations": [
+                { "language": "en", "text": "I assume you are angry because of my remark." },
+                { "language": "fa", "text": "فکر می‌کنم به خاطر جمله من عصبانی هستی." },
+                { "language": "ar", "text": "أفترض أنك غاضب بسبب ملاحظتي." },
+                { "language": "tr", "text": "Yorumum yüzünden kızgın olduğunu varsayıyorum." },
+                { "language": "ru", "text": "Я предполагаю, что ты злишься из-за моего замечания." },
+                { "language": "ckb", "text": "پێم وایە بەهۆی تێبینییەکەمەوە تووڕەیت." },
+                { "language": "kmr", "text": "Ez ferz dikim ku tu ji ber şîroveya min hêrs bûyî." },
+                { "language": "pl", "text": "Zakładam, że jesteś zły/zła z powodu mojej uwagi." },
+                { "language": "ro", "text": "Presupun că sunteți supărat din cauza observației mele." },
+                { "language": "sq", "text": "Supozoj se je i/e zemëruar për shkak të vërejtjes sime." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu festgelegt: Die Antwort nimmt den Grund und die Emotion bereits vorweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too fixed: the answer already anticipates the reason and the emotion." },
+                { "language": "fa", "text": "بیش از حد قطعی است: پاسخ از قبل دلیل و احساس را مشخص فرض می‌کند." },
+                { "language": "ar", "text": "محدد جدًا: تفترض الإجابة السبب والشعور مسبقًا." },
+                { "language": "tr", "text": "Fazla kesin: cevap nedeni ve duyguyu önceden belirlemiş olur." },
+                { "language": "ru", "text": "Слишком определенно: ответ заранее задает причину и эмоцию." },
+                { "language": "ckb", "text": "زۆر دیاریکراوە: وەڵامەکە پێشتر هۆکار و هەستەکە دادەنێت." },
+                { "language": "kmr", "text": "Pir diyarkirî ye: bersiv sedem û hestê ji berê ve destnîşan dike." },
+                { "language": "pl", "text": "Zbyt stanowcze: odpowiedź z góry zakłada powód i emocję." },
+                { "language": "ro", "text": "Prea fix: răspunsul anticipează deja motivul și emoția." },
+                { "language": "sq", "text": "Shumë e përcaktuar: përgjigjja e parashikon që më parë arsyen dhe emocionin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 5,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das kann ich nachvollziehen. Meine Absicht war, den Ablauf für die nächste Runde klarer zu machen, aber die Formulierung konnte wie eine Abwertung deiner Arbeit klingen.",
+              "translations": [
+                { "language": "en", "text": "I can understand that. My intention was to make the process clearer for the next round, but the wording could sound like a devaluation of your work." },
+                { "language": "fa", "text": "این را می‌توانم درک کنم. نیت من این بود که روند برای دور بعد روشن‌تر شود، اما جمله‌بندی می‌توانست شبیه کم‌ارزش کردن کار تو شنیده شود." },
+                { "language": "ar", "text": "أستطيع فهم ذلك. كان قصدي أن أجعل المسار أوضح للجولة التالية، لكن الصياغة كان يمكن أن تبدو كأنها تقليل من قيمة عملك." },
+                { "language": "tr", "text": "Bunu anlayabiliyorum. Niyetim bir sonraki tur için süreci daha açık hale getirmekti, ama ifade tarzı senin emeğini değersizleştiriyormuş gibi duyulabilirdi." },
+                { "language": "ru", "text": "Я могу это понять. Мое намерение было сделать процесс яснее для следующего раунда, но формулировка могла прозвучать как обесценивание твоей работы." },
+                { "language": "ckb", "text": "دەتوانم ئەمە تێبگەم. مەبەستم ئەوە بوو ڕێڕەوەکە بۆ جارێکی داهاتوو ڕوونتر بکەم، بەڵام دابڕینەکە دەیتوانی وەک کەمکردنەوەی بهایی کارەکەت دەنگ بدات." },
+                { "language": "kmr", "text": "Ez dikarim vê fam bikim. Mebesta min ew bû ku ji bo gera din pêvajoyê zelaltir bikim, lê formulekirin dikaribû wek kêmnirxkirina xebata te bê bihîstin." },
+                { "language": "pl", "text": "Mogę to zrozumieć. Chciałem/Chciałam uporządkować proces na następną rundę, ale sformułowanie mogło zabrzmieć jak umniejszenie twojej pracy." },
+                { "language": "ro", "text": "Pot înțelege asta. Intenția mea era să fac procesul mai clar pentru următoarea rundă, dar formularea putea suna ca o devalorizare a muncii dumneavoastră." },
+                { "language": "sq", "text": "Mund ta kuptoj këtë. Qëllimi im ishte ta bëja procesin më të qartë për raundin e ardhshëm, por formulimi mund të tingëllonte si ulje e vlerës së punës sate." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort trennt Absicht und Wirkung, ohne die Wirkung kleinzureden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer separates intention and impact without downplaying the impact." },
+                { "language": "fa", "text": "درست است: پاسخ نیت و اثر را جدا می‌کند، بدون اینکه اثر را کم‌اهمیت نشان دهد." },
+                { "language": "ar", "text": "صحيح: تفصل الإجابة بين النية والأثر من دون التقليل من الأثر." },
+                { "language": "tr", "text": "Doğru: cevap niyet ile etkiyi ayırır, etkiyi küçümsemeden." },
+                { "language": "ru", "text": "Правильно: ответ разделяет намерение и воздействие, не преуменьшая воздействие." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە نیت و کاریگەری جیادەکاتەوە، بەبێ کەمکردنەوەی کاریگەرییەکە." },
+                { "language": "kmr", "text": "Rast e: bersiv niyet û bandorê ji hev vediqetîne, bê ku bandorê kêm bike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź oddziela intencję od skutku, nie pomniejszając skutku." },
+                { "language": "ro", "text": "Corect: răspunsul separă intenția de efect fără să micșoreze efectul." },
+                { "language": "sq", "text": "Saktë: përgjigjja ndan qëllimin nga ndikimi, pa e minimizuar ndikimin." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "So war es nicht gemeint, du hast das vielleicht etwas hart verstanden.",
+              "translations": [
+                { "language": "en", "text": "That is not how it was meant; maybe you understood it a bit harshly." },
+                { "language": "fa", "text": "منظورم این نبود؛ شاید تو آن را کمی سخت برداشت کردی." },
+                { "language": "ar", "text": "لم يكن المقصود هكذا؛ ربما فهمت الأمر بقسوة بعض الشيء." },
+                { "language": "tr", "text": "Öyle demek istemedim; belki biraz sert anlamış olabilirsin." },
+                { "language": "ru", "text": "Это не так имелось в виду; возможно, ты понял это немного жестко." },
+                { "language": "ckb", "text": "مەبەستم وا نەبوو؛ ڕەنگە تۆ کەمێک بە توندی تێگەیشتبیت." },
+                { "language": "kmr", "text": "Mebesta min ew nebû; dibe ku te ew hinekî tûj fam kiribe." },
+                { "language": "pl", "text": "Nie to miałem/miałam na myśli; może odebrałeś/odebrałaś to trochę zbyt ostro." },
+                { "language": "ro", "text": "Nu asta am vrut să spun; poate ați înțeles-o puțin prea dur." },
+                { "language": "sq", "text": "Nuk e kisha me atë kuptim; ndoshta e kuptove pak ashpër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Die Antwort erklärt die Absicht, legt die Verantwortung aber bei der Wahrnehmung der anderen Person ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: the answer explains the intention but places responsibility on the other person's perception." },
+                { "language": "fa", "text": "بیش از حد تدافعی است: پاسخ نیت را توضیح می‌دهد، اما مسئولیت را روی برداشت طرف مقابل می‌گذارد." },
+                { "language": "ar", "text": "دفاعي جدًا: تشرح الإجابة النية لكنها تضع المسؤولية على إدراك الطرف الآخر." },
+                { "language": "tr", "text": "Fazla savunmacı: cevap niyeti açıklar, ama sorumluluğu diğer kişinin algısına yükler." },
+                { "language": "ru", "text": "Слишком защитно: ответ объясняет намерение, но перекладывает ответственность на восприятие другого человека." },
+                { "language": "ckb", "text": "زۆر بەرگرییە: وەڵامەکە نیت ڕوون دەکاتەوە، بەڵام بەرپرسیاری دەخاتە سەر تێگەیشتنی کەسی بەرامبەر." },
+                { "language": "kmr", "text": "Pir parastinî ye: bersiv niyetê rave dike, lê berpirsiyarî dixe ser têgihiştina kesê din." },
+                { "language": "pl", "text": "Zbyt defensywne: odpowiedź wyjaśnia intencję, ale przenosi odpowiedzialność na odbiór drugiej osoby." },
+                { "language": "ro", "text": "Prea defensiv: răspunsul explică intenția, dar pune responsabilitatea pe percepția celeilalte persoane." },
+                { "language": "sq", "text": "Shumë mbrojtëse: përgjigjja shpjegon qëllimin, por e vendos përgjegjësinë te perceptimi i personit tjetër." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 7,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Dann möchte ich zwei Dinge nachholen: Erstens sehe ich den Aufwand, den du getragen hast. Zweitens hätte ich meine Kritik enger auf den nächsten Schritt beziehen sollen, nicht auf deine gesamte Vorbereitung.",
+              "translations": [
+                { "language": "en", "text": "Then I would like to make up for two things: first, I see the effort you carried. Second, I should have tied my criticism more narrowly to the next step, not to your whole preparation." },
+                { "language": "fa", "text": "پس می‌خواهم دو چیز را جبران کنم: اول اینکه تلاش تو را که بر دوش داشتی می‌بینم. دوم اینکه باید نقد خود را محدودتر به قدم بعدی ربط می‌دادم، نه به کل آماده‌سازی تو." },
+                { "language": "ar", "text": "إذن أود أن أستدرك أمرين: أولًا، أرى الجهد الذي تحملته. ثانيًا، كان ينبغي أن أربط نقدي بالخطوة التالية بشكل أضيق، لا بتحضيرك كله." },
+                { "language": "tr", "text": "O zaman iki şeyi telafi etmek istiyorum: Birincisi, üstlendiğin emeği görüyorum. İkincisi, eleştirimi tüm hazırlığına değil, daha dar biçimde sonraki adıma bağlamalıydım." },
+                { "language": "ru", "text": "Тогда я хочу восполнить две вещи: во-первых, я вижу усилие, которое ты взял на себя. Во-вторых, мне следовало связать критику уже со следующим шагом, а не со всей твоей подготовкой." },
+                { "language": "ckb", "text": "ئەوا دەمەوێت دوو شت قەرەبوو بکەمەوە: یەکەم، هەوڵەکەی تۆ کە لەسەرت بوو دەبینم. دووەم، دەبوو ڕەخنەکەم تەنها بە هەنگاوی داهاتووەوە ببەستم، نە بە هەموو ئامادەکارییەکەت." },
+                { "language": "kmr", "text": "Hingê ez dixwazim du tiştan telafî bikim: yekem, ez hewldana ku te hilgirtî dibînim. Duyem, diviyabû ez rexneya xwe tengtir bi gava din ve girê bidim, ne bi tevahiya amadekariya te." },
+                { "language": "pl", "text": "W takim razie chciałbym/chciałabym dopowiedzieć dwie rzeczy: po pierwsze, widzę wysiłek, który wziąłeś/wzięłaś na siebie. Po drugie, powinienem/powinnam był/a zawęzić krytykę do następnego kroku, a nie do całego twojego przygotowania." },
+                { "language": "ro", "text": "Atunci aș vrea să repar două lucruri: în primul rând, văd efortul pe care l-ați dus. În al doilea rând, ar fi trebuit să leg critica mai strict de pasul următor, nu de întreaga dumneavoastră pregătire." },
+                { "language": "sq", "text": "Atëherë dua të plotësoj dy gjëra: së pari, e shoh përpjekjen që ke mbajtur. Së dyti, duhej ta lidhja kritikën më ngushtë me hapin e ardhshëm, jo me gjithë përgatitjen tënde." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort würdigt den Aufwand und rahmt die eigene Kritik präziser.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer acknowledges the effort and reframes your own criticism more precisely." },
+                { "language": "fa", "text": "درست است: پاسخ تلاش طرف مقابل را می‌بیند و نقد خود را دقیق‌تر چارچوب‌بندی می‌کند." },
+                { "language": "ar", "text": "صحيح: تعترف الإجابة بالجهد وتعيد تأطير النقد بدقة أكبر." },
+                { "language": "tr", "text": "Doğru: cevap emeği takdir eder ve kendi eleştirisini daha kesin çerçeveler." },
+                { "language": "ru", "text": "Правильно: ответ признает усилие и точнее переосмысливает собственную критику." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە هەوڵەکە دەبینێت و ڕەخنەی خۆی وردتر چوارچێوە دەکات." },
+                { "language": "kmr", "text": "Rast e: bersiv hewldanê qedir dike û rexneya xwe hûrgiltir di çarçoveyê de datîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź docenia wysiłek i precyzyjniej ramuje własną krytykę." },
+                { "language": "ro", "text": "Corect: răspunsul apreciază efortul și reîncadrează mai precis propria critică." },
+                { "language": "sq", "text": "Saktë: përgjigjja vlerëson përpjekjen dhe e vendos më saktë kritikën tuaj." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Ich wollte wirklich nur helfen, die nächste Runde besser zu organisieren.",
+              "translations": [
+                { "language": "en", "text": "I really only wanted to help organize the next round better." },
+                { "language": "fa", "text": "واقعاً فقط می‌خواستم کمک کنم دور بعد بهتر سازمان‌دهی شود." },
+                { "language": "ar", "text": "كنت أريد حقًا فقط أن أساعد في تنظيم الجولة التالية بشكل أفضل." },
+                { "language": "tr", "text": "Gerçekten sadece sonraki turun daha iyi düzenlenmesine yardım etmek istedim." },
+                { "language": "ru", "text": "Я действительно только хотел помочь лучше организовать следующий раунд." },
+                { "language": "ckb", "text": "بەڕاستی تەنها دەمەویست یارمەتی بدەم جارێکی داهاتوو باشتر ڕێکبخرێت." },
+                { "language": "kmr", "text": "Bi rastî min tenê xwest ku ji bo rêkxistina baştir a gera din alîkar bim." },
+                { "language": "pl", "text": "Naprawdę chciałem/chciałam tylko pomóc lepiej zorganizować następną rundę." },
+                { "language": "ro", "text": "Chiar am vrut doar să ajut la organizarea mai bună a următoarei runde." },
+                { "language": "sq", "text": "Vërtet doja vetëm të ndihmoja që raundi tjetër të organizohej më mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wenig: Die Antwort erklärt erneut die Absicht, würdigt aber den Aufwand der anderen Person nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too little: the answer explains the intention again, but does not acknowledge the other person's effort." },
+                { "language": "fa", "text": "ناکافی است: پاسخ دوباره نیت را توضیح می‌دهد، اما تلاش طرف مقابل را نمی‌بیند." },
+                { "language": "ar", "text": "غير كاف: تشرح الإجابة النية مرة أخرى، لكنها لا تعترف بجهد الطرف الآخر." },
+                { "language": "tr", "text": "Yetersiz: cevap niyeti tekrar açıklar, ama diğer kişinin emeğini takdir etmez." },
+                { "language": "ru", "text": "Недостаточно: ответ снова объясняет намерение, но не признает усилие другого человека." },
+                { "language": "ckb", "text": "کەمە: وەڵامەکە جارێکی تر نیت ڕوون دەکاتەوە، بەڵام هەوڵی کەسی بەرامبەر نابینێت." },
+                { "language": "kmr", "text": "Kêm e: bersiv dîsa niyetê rave dike, lê hewldana kesê din qedir nake." },
+                { "language": "pl", "text": "Za mało: odpowiedź znów wyjaśnia intencję, ale nie uznaje wysiłku drugiej osoby." },
+                { "language": "ro", "text": "Prea puțin: răspunsul explică din nou intenția, dar nu apreciază efortul celeilalte persoane." },
+                { "language": "sq", "text": "Shumë pak: përgjigjja e shpjegon përsëri qëllimin, por nuk vlerëson përpjekjen e personit tjetër." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 9,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Für das nächste Mal schlage ich vor: Wenn eine Bemerkung von mir schief ankommt, sag kurz: „So klingt das für mich gerade.“ Dann kann ich sofort präzisieren, bevor es stehen bleibt.",
+              "translations": [
+                { "language": "en", "text": "For next time I suggest this: if a remark of mine lands badly, just say briefly, 'That is how it sounds to me right now.' Then I can clarify immediately before it remains unresolved." },
+                { "language": "fa", "text": "برای دفعه بعد پیشنهاد می‌کنم: اگر جمله‌ای از من بد برداشت شد، کوتاه بگو: «الان برای من این‌طور شنیده می‌شود.» آن‌وقت می‌توانم فوراً دقیق‌تر کنم، قبل از اینکه همان‌طور بماند." },
+                { "language": "ar", "text": "للمرة القادمة أقترح: إذا وصل تعليق مني بطريقة غير جيدة، فقل باختصار: «هكذا يبدو لي الآن». عندها أستطيع التوضيح فورًا قبل أن يبقى الأمر عالقًا." },
+                { "language": "tr", "text": "Bir dahaki sefer için şunu öneriyorum: Bir sözüm kötü gelirse kısaca 'Şu anda bana böyle duyuluyor' de. O zaman konu öylece kalmadan hemen netleştirebilirim." },
+                { "language": "ru", "text": "На следующий раз я предлагаю так: если мое замечание прозвучит неудачно, коротко скажи: «Сейчас для меня это звучит так». Тогда я смогу сразу уточнить, пока это не осталось висеть." },
+                { "language": "ckb", "text": "بۆ جارێکی داهاتوو پێشنیارم ئەمەیە: ئەگەر تێبینییەکم خراپ بگات، بە کورتی بڵێ: «ئێستا بۆ من وا دەنگ دەدات.» ئەوسا دەتوانم دەستبەجێ وردتری بکەم پێش ئەوەی بەو شێوەیە بمێنێتەوە." },
+                { "language": "kmr", "text": "Ji bo careke din ez vê pêşniyar dikim: heke gotineke min xerab were wergirtin, bi kurtî bêje: 'Niha ji bo min wisa deng dide.' Hingê ez dikarim tavilê zelaltir bikim berî ku ew wisa bimîne." },
+                { "language": "pl", "text": "Na przyszłość proponuję: jeśli moja uwaga zabrzmi źle, powiedz krótko: „Teraz brzmi to dla mnie tak”. Wtedy mogę od razu doprecyzować, zanim to zostanie bez wyjaśnienia." },
+                { "language": "ro", "text": "Pentru data viitoare propun așa: dacă o remarcă de-a mea ajunge prost, spuneți scurt: „Așa sună pentru mine acum.” Atunci pot clarifica imediat, înainte să rămână nerezolvat." },
+                { "language": "sq", "text": "Për herën tjetër propozoj këtë: nëse një vërejtje e imja merret keq, thuaj shkurt: “Kështu më tingëllon tani.” Atëherë mund ta sqaroj menjëherë para se të mbetet pezull." }
+              ],
+              "isCorrect": true,
+              "feedback": "Richtig: Die Antwort macht aus dem unausgesprochenen Problem ein künftiges Signal mit kurzer Formulierung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Correct: the answer turns the unspoken problem into a future signal with a short phrase." },
+                { "language": "fa", "text": "درست است: پاسخ مشکل ناگفته را به یک نشانه‌ی آینده با جمله‌ای کوتاه تبدیل می‌کند." },
+                { "language": "ar", "text": "صحيح: تحول الإجابة المشكلة غير المصرح بها إلى إشارة مستقبلية بعبارة قصيرة." },
+                { "language": "tr", "text": "Doğru: cevap söylenmemiş sorunu kısa bir ifadeyle gelecekteki bir işarete dönüştürür." },
+                { "language": "ru", "text": "Правильно: ответ превращает невысказанную проблему в будущий сигнал с короткой фразой." },
+                { "language": "ckb", "text": "دروستە: وەڵامەکە کێشەی نەگوتراو دەکاتە نیشانەیەکی داهاتوو بە دەستەواژەیەکی کورت." },
+                { "language": "kmr", "text": "Rast e: bersiv pirsgirêka negotî dike nîşaneyeke paşerojê bi gotineke kurt." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zmienia niewypowiedziany problem w przyszły sygnał z krótką formułą." },
+                { "language": "ro", "text": "Corect: răspunsul transformă problema nespusă într-un semnal viitor cu o formulare scurtă." },
+                { "language": "sq", "text": "Saktë: përgjigjja e kthen problemin e pathënë në një sinjal të ardhshëm me një formulim të shkurtër." }
+              ]
+            },
+            {
+              "id": "weak",
+              "text": "Sag dann einfach sofort, wenn dich etwas stört.",
+              "translations": [
+                { "language": "en", "text": "Then just say immediately when something bothers you." },
+                { "language": "fa", "text": "پس هر وقت چیزی اذیتت کرد، فقط همان لحظه بگو." },
+                { "language": "ar", "text": "إذن قل فورًا عندما يزعجك شيء." },
+                { "language": "tr", "text": "O zaman bir şey seni rahatsız ederse hemen söyle." },
+                { "language": "ru", "text": "Тогда просто сразу говори, если тебя что-то беспокоит." },
+                { "language": "ckb", "text": "ئەوا ئەگەر شتێک ناڕەحەتی کرد، تەنها دەستبەجێ بیڵێ." },
+                { "language": "kmr", "text": "Hingê heke tiştek te aciz bike, tenê tavilê bêje." },
+                { "language": "pl", "text": "W takim razie po prostu mów od razu, jeśli coś ci przeszkadza." },
+                { "language": "ro", "text": "Atunci spuneți pur și simplu imediat când ceva vă deranjează." },
+                { "language": "sq", "text": "Atëherë thuaj menjëherë kur diçka të pengon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort gibt eine Anweisung, aber keine sichere Formulierung für heikle Momente.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: the answer gives an instruction, but no safe wording for delicate moments." },
+                { "language": "fa", "text": "بیش از حد کوتاه است: پاسخ دستور می‌دهد، اما عبارت امنی برای لحظه‌های حساس نمی‌دهد." },
+                { "language": "ar", "text": "مقتضب جدًا: تعطي الإجابة تعليمات، لكنها لا تقدم صياغة آمنة للحظات الحساسة." },
+                { "language": "tr", "text": "Fazla kısa: cevap bir talimat verir, ama hassas anlar için güvenli bir ifade sunmaz." },
+                { "language": "ru", "text": "Слишком кратко: ответ дает указание, но не дает безопасной формулировки для тонких моментов." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە ڕێنمایی دەدات، بەڵام دابڕینێکی ئارام بۆ ساتە هەستیارەکان نادات." },
+                { "language": "kmr", "text": "Pir kurt e: bersiv fermanek dide, lê ji bo kêliyên hestyar gotineke ewle nade." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź daje polecenie, ale nie daje bezpiecznej formuły na delikatne momenty." },
+                { "language": "ro", "text": "Prea scurt: răspunsul dă o instrucțiune, dar nu oferă o formulare sigură pentru momente delicate." },
+                { "language": "sq", "text": "Shumë e shkurtër: përgjigjja jep një udhëzim, por jo një formulim të sigurt për momente delikate." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 1,
+          "feedbackType": "observation",
+          "text": "Bei unausgesprochenen Problemen sind konkrete Beobachtungen besser als Etiketten wie „komisch“ oder „kalt“.",
+          "translations": [
+            { "language": "en", "text": "With unspoken problems, concrete observations are better than labels such as 'strange' or 'cold'." },
+            { "language": "fa", "text": "در مشکلات ناگفته، مشاهده‌های مشخص بهتر از برچسب‌هایی مثل «عجیب» یا «سرد» هستند." },
+            { "language": "ar", "text": "في المشكلات غير المصرح بها، تكون الملاحظات المحددة أفضل من أوصاف مثل «غريب» أو «بارد»." },
+            { "language": "tr", "text": "Söylenmemiş sorunlarda somut gözlemler, 'tuhaf' ya da 'soğuk' gibi etiketlerden daha iyidir." },
+            { "language": "ru", "text": "В невысказанных проблемах конкретные наблюдения лучше ярлыков вроде «странно» или «холодно»." },
+            { "language": "ckb", "text": "لە کێشە نەگوتراوەکاندا، تێبینیی دیاریکراو باشترە لە ناونانی وەک «نامۆ» یان «سارد»." },
+            { "language": "kmr", "text": "Di pirsgirêkên negotî de çavdêriyên berbiçav ji labelên wek 'ecêb' an 'sar' baştir in." },
+            { "language": "pl", "text": "Przy niewypowiedzianych problemach konkretne obserwacje są lepsze niż etykiety typu „dziwnie” czy „chłodno”." },
+            { "language": "ro", "text": "În problemele nespuse, observațiile concrete sunt mai bune decât etichete precum „ciudat” sau „rece”." },
+            { "language": "sq", "text": "Te problemet e pathëna, vëzhgimet konkrete janë më të mira se etiketat si “çuditshëm” ose “ftohtë”." }
+          ]
+        },
+        {
+          "turnSortOrder": 3,
+          "feedbackType": "uncertainty",
+          "text": "C2-Nuance entsteht hier durch markierte Unsicherheit: Sie sprechen die Vermutung aus, aber halten sie korrigierbar.",
+          "translations": [
+            { "language": "en", "text": "C2 nuance appears here through marked uncertainty: you state the assumption, but keep it open to correction." },
+            { "language": "fa", "text": "ظرافت C2 اینجا از نامطمئن نشان دادن برداشت می‌آید: حدس را می‌گویید، اما آن را قابل اصلاح نگه می‌دارید." },
+            { "language": "ar", "text": "تظهر دقة C2 هنا عبر عدم اليقين المعلن: تذكرون الافتراض، لكنكم تبقونه قابلًا للتصحيح." },
+            { "language": "tr", "text": "C2 inceliği burada işaretlenmiş belirsizlikten doğar: varsayımı söylersiniz, ama düzeltmeye açık tutarsınız." },
+            { "language": "ru", "text": "Нюанс C2 здесь возникает через обозначенную неуверенность: вы высказываете предположение, но оставляете его исправимым." },
+            { "language": "ckb", "text": "وردیی C2 لێرەدا لە نادڵنیایی نیشاندراوەوە دروست دەبێت: گومانەکە دەڵێیت، بەڵام دەیهێڵیتەوە بۆ ڕاستکردنەوە." },
+            { "language": "kmr", "text": "Hûrgiliya C2 li vir ji neewlehiya nîşankirî tê: hûn ferzê dibêjin, lê wê vekirî ji bo sererastkirinê dihêlin." },
+            { "language": "pl", "text": "Niuans C2 powstaje tu przez zaznaczoną niepewność: wypowiada się przypuszczenie, ale zostawia je do sprostowania." },
+            { "language": "ro", "text": "Nuanța C2 apare aici prin incertitudine marcată: formulați presupunerea, dar o lăsați corectabilă." },
+            { "language": "sq", "text": "Nuanca C2 këtu krijohet nga pasiguria e shënuar: e thoni supozimin, por e mbani të korrigjueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 5,
+          "feedbackType": "intent-impact",
+          "text": "Eine reife Antwort verteidigt die Absicht nicht, sondern erkennt an, wie die Formulierung wirken konnte.",
+          "translations": [
+            { "language": "en", "text": "A mature answer does not defend the intention, but acknowledges how the wording could have landed." },
+            { "language": "fa", "text": "یک پاسخ بالغ از نیت دفاع نمی‌کند، بلکه می‌پذیرد که جمله‌بندی چگونه می‌توانسته شنیده شود." },
+            { "language": "ar", "text": "الإجابة الناضجة لا تدافع عن النية، بل تعترف بكيف كان يمكن للصياغة أن تصل." },
+            { "language": "tr", "text": "Olgun bir cevap niyeti savunmaz; ifade tarzının nasıl duyulabileceğini kabul eder." },
+            { "language": "ru", "text": "Зрелый ответ не защищает намерение, а признает, как могла прозвучать формулировка." },
+            { "language": "ckb", "text": "وەڵامێکی پێگەیشتوو بەرگری لە نیت ناکات، بەڵکو پەسەند دەکات کە دابڕینەکە چۆن دەیتوانی بگات." },
+            { "language": "kmr", "text": "Bersiveke gihîştî niyetê naparêze, lê qebûl dike ka formulekirin çawa dikaribû were bihîstin." },
+            { "language": "pl", "text": "Dojrzała odpowiedź nie broni intencji, lecz uznaje, jak mogło zabrzmieć sformułowanie." },
+            { "language": "ro", "text": "Un răspuns matur nu apără intenția, ci recunoaște cum putea să sune formularea." },
+            { "language": "sq", "text": "Një përgjigje e pjekur nuk mbron qëllimin, por pranon si mund të ketë tingëlluar formulimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 9,
+          "feedbackType": "future-signal",
+          "text": "Ein kurzer Satz als künftiges Signal verhindert, dass kleine Irritationen zu langem Schweigen werden.",
+          "translations": [
+            { "language": "en", "text": "A short sentence as a future signal prevents small irritations from turning into long silence." },
+            { "language": "fa", "text": "یک جمله کوتاه به‌عنوان نشانه آینده مانع می‌شود ناراحتی‌های کوچک به سکوت طولانی تبدیل شوند." },
+            { "language": "ar", "text": "جملة قصيرة كإشارة مستقبلية تمنع الانزعاجات الصغيرة من التحول إلى صمت طويل." },
+            { "language": "tr", "text": "Gelecekteki bir işaret olarak kısa bir cümle, küçük rahatsızlıkların uzun sessizliğe dönüşmesini önler." },
+            { "language": "ru", "text": "Короткая фраза как будущий сигнал не дает мелким раздражениям превратиться в долгое молчание." },
+            { "language": "ckb", "text": "ڕستەیەکی کورت وەک نیشانەی داهاتوو ڕێ دەگرێت لەوەی ناڕەحەتییە بچووکەکان ببنە بێدەنگیی درێژ." },
+            { "language": "kmr", "text": "Hevokeke kurt wek nîşaneyeke paşerojê rê nade ku acizbûnên biçûk bibin bêdengiyeke dirêj." },
+            { "language": "pl", "text": "Krótkie zdanie jako przyszły sygnał zapobiega temu, by małe irytacje zmieniały się w długie milczenie." },
+            { "language": "ro", "text": "O propoziție scurtă ca semnal viitor previne transformarea micilor iritări în tăcere lungă." },
+            { "language": "sq", "text": "Një fjali e shkurtër si sinjal i ardhshëm parandalon që bezditë e vogla të kthehen në heshtje të gjatë." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "unspoken-tension-cafe-table",
+          "placement": "detail-header",
+          "purpose": "Show a quiet conversation where two people address a subtle social tension.",
+          "altText": "Zwei Personen sitzen in einem ruhigen Café und sprechen vorsichtig über eine unausgesprochene Spannung.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two people sit in a quiet cafe and speak carefully about an unspoken tension." },
+            { "language": "fa", "text": "دو نفر در یک کافه آرام نشسته‌اند و با احتیاط درباره تنشی ناگفته صحبت می‌کنند." },
+            { "language": "ar", "text": "شخصان يجلسان في مقهى هادئ ويتحدثان بحذر عن توتر غير مصرح به." },
+            { "language": "tr", "text": "İki kişi sakin bir kafede oturur ve söylenmemiş bir gerilim hakkında dikkatle konuşur." },
+            { "language": "ru", "text": "Два человека сидят в тихом кафе и осторожно говорят о невысказанном напряжении." },
+            { "language": "ckb", "text": "دوو کەس لە کافەیەکی ئارام دانیشتوون و بە وریایی دەربارەی گرژییەکی نەگوتراو قسە دەکەن." },
+            { "language": "kmr", "text": "Du kes li kafeyeke aram rûniştine û bi baldarî li ser tengasiyeke negotî diaxivin." },
+            { "language": "pl", "text": "Dwie osoby siedzą w spokojnej kawiarni i ostrożnie rozmawiają o niewypowiedzianym napięciu." },
+            { "language": "ro", "text": "Două persoane stau într-o cafenea liniștită și discută cu grijă despre o tensiune nespusă." },
+            { "language": "sq", "text": "Dy persona ulen në një kafene të qetë dhe flasin me kujdes për një tension të pathënë." }
+          ],
+          "imagePrompt": "Clean educational illustration, two diverse people seated at a small cafe table, calm careful conversation, subtle distance but respectful body language, no text inside the image, no logos, no private data, accessible composition, warm neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

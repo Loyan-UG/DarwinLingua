@@ -1,0 +1,841 @@
+{
+  "packageId": "roleplays-c1-core-48-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 48 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 48",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-verbraucherbeschwerde-sachlich-eskalieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Verbraucherbeschwerde sachlich eskalieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Escalating a consumer complaint factually" },
+        { "language": "fa", "text": "پیگیری رسمی و منطقی یک شکایت مصرف‌کننده" },
+        { "language": "ar", "text": "تصعيد شكوى مستهلك بشكل موضوعي" },
+        { "language": "tr", "text": "Bir tüketici şikayetini nesnel biçimde üst aşamaya taşımak" },
+        { "language": "ru", "text": "Предметно передать жалобу потребителя на следующий уровень" },
+        { "language": "ckb", "text": "بردنەسەری سکاڵای بەکارهێنەر بە شێوەی بابەتی" },
+        { "language": "kmr", "text": "Gilîkirina xerîdar bi awayekî rast derxistin asta bilindtir" },
+        { "language": "pl", "text": "Rzeczowe eskalowanie skargi konsumenckiej" },
+        { "language": "ro", "text": "Escaladarea factuală a unei reclamații de consumator" },
+        { "language": "sq", "text": "Eskalimi faktik i një ankese të konsumatorit" }
+      ],
+      "description": "Ihre Reklamation wurde im System als erledigt markiert, obwohl Rückerstattung, Liefernachweis und schriftliche Abschlussantwort noch offen sind. Sie rufen an, um den Fall sachlich an das Beschwerdemanagement weiterzugeben und den nächsten Prozessschritt zu klären.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "Your complaint has been marked as resolved in the system, although the refund, delivery evidence, and written final response are still open. You call to pass the case factually to complaint management and clarify the next process step." },
+        { "language": "fa", "text": "شکایت شما در سیستم به‌عنوان تمام‌شده ثبت شده، در حالی که بازپرداخت، مدرک تحویل و پاسخ نهایی کتبی هنوز باز است. تماس می‌گیرید تا پرونده را منطقی به بخش رسیدگی به شکایات منتقل کنید و قدم بعدی فرایند را روشن کنید." },
+        { "language": "ar", "text": "تم وضع شكواك في النظام على أنها منتهية، رغم أن الاسترداد وإثبات التسليم والرد النهائي المكتوب ما زالت مفتوحة. تتصل لتحويل الحالة موضوعياً إلى إدارة الشكاوى وتوضيح الخطوة التالية." },
+        { "language": "tr", "text": "Şikayetiniz sistemde tamamlandı olarak işaretlenmiş, ancak iade, teslimat kanıtı ve yazılı son yanıt hâlâ açık. Dosyayı nesnel biçimde şikayet yönetimine iletmek ve bir sonraki süreç adımını netleştirmek için arıyorsunuz." },
+        { "language": "ru", "text": "В системе ваша рекламация отмечена как завершенная, хотя возврат, подтверждение доставки и письменный итоговый ответ еще открыты. Вы звоните, чтобы предметно передать случай в отдел жалоб и уточнить следующий шаг процесса." },
+        { "language": "ckb", "text": "سکاڵاکەت لە سیستەمدا وەک تەواوبوو نیشانکراوە، بەڵام گەڕاندنەوەی پارە، بەڵگەی گەیاندن و وەڵامی کۆتاییی نووسراو هێشتا کراوەن. پەیوەندی دەکەیت بۆ ئەوەی دۆسیەکە بە شێوەی بابەتی بدەیتە بەڕێوەبردنی سکاڵاکان و هەنگاوی دواتر ڕوون بکەیتەوە." },
+        { "language": "kmr", "text": "Gilîkirina we di pergalê de wekî qediyayî hatî nîşandan, lê vegerandina pere, belgeya radestkirinê û bersiva dawî ya nivîskî hîn vekirî ne. Hûn telefon dikin da ku dozê bi awayekî rast bidin rêveberiya giliyên û gava din zelal bikin." },
+        { "language": "pl", "text": "Pańska reklamacja została w systemie oznaczona jako zakończona, choć zwrot, dowód dostawy i pisemna odpowiedź końcowa są nadal otwarte. Dzwoni Pan, aby rzeczowo przekazać sprawę do działu reklamacji i wyjaśnić kolejny krok procesu." },
+        { "language": "ro", "text": "Reclamația dumneavoastră a fost marcată în sistem ca rezolvată, deși rambursarea, dovada livrării și răspunsul final scris sunt încă deschise. Sunați ca să transmiteți cazul factual către managementul reclamațiilor și să clarificați pasul următor." },
+        { "language": "sq", "text": "Ankesa juaj është shënuar në sistem si e mbyllur, megjithëse rimbursimi, prova e dorëzimit dhe përgjigjja përfundimtare me shkrim mbeten ende të hapura. Telefononi për ta kaluar rastin faktikisht te menaxhimi i ankesave dhe për të sqaruar hapin tjetër." }
+      ],
+      "learnerGoal": "Eine Beschwerde ohne Drohung eskalieren: offene Punkte benennen, Belege strukturiert anbieten, Systemstatus und Sachproblem trennen, eine zweite Prüfung mit Frist anfragen und eine schriftliche Abschlussantwort sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Escalate a complaint without threats: name open points, offer evidence in a structured way, separate system status from the factual issue, request a second review with a deadline, and secure a written final response." },
+        { "language": "fa", "text": "شکایت را بدون تهدید پیگیری کنید: نکات باز را نام ببرید، مدارک را ساختارمند ارائه کنید، وضعیت سیستم و مشکل واقعی را جدا کنید، بررسی دوم با مهلت بخواهید و پاسخ نهایی کتبی بگیرید." },
+        { "language": "ar", "text": "صعّد الشكوى بلا تهديد: سمّ النقاط المفتوحة، وقدّم الأدلة بشكل منظم، وافصل بين حالة النظام والمشكلة الفعلية، واطلب فحصاً ثانياً مع مهلة، واحصل على رد نهائي مكتوب." },
+        { "language": "tr", "text": "Şikayeti tehdit etmeden üst aşamaya taşıyın: açık noktaları belirtin, kanıtları düzenli sunun, sistem durumu ile fiili sorunu ayırın, süreli ikinci inceleme isteyin ve yazılı son yanıt alın." },
+        { "language": "ru", "text": "Передать жалобу на следующий уровень без угроз: назвать открытые пункты, структурированно предложить доказательства, отделить статус системы от сути проблемы, запросить повторную проверку со сроком и получить письменный итоговый ответ." },
+        { "language": "ckb", "text": "سکاڵاکە بەبێ هەڕەشە بەرز بکەوە: خاڵە کراوەکان ناو ببە، بەڵگەکان بە ڕێکخراوی پێشکەش بکە، دۆخی سیستەم و کێشەی ڕاستەقینە جیا بکەوە، پشکنینی دووبارە بە مۆڵەت داوا بکە و وەڵامی کۆتاییی نووسراو وەربگرە." },
+        { "language": "kmr", "text": "Gilîkirinê bê tehdîd derxînin asta bilindtir: xalên vekirî bi nav bikin, belgeyan bi rêkûpêk pêşkêş bikin, rewşa pergalê ji pirsgirêka rast veqetînin, kontrola duyemîn bi demekê bixwazin û bersiva dawî ya nivîskî bistînin." },
+        { "language": "pl", "text": "Eskalować skargę bez gróźb: nazwać otwarte punkty, uporządkowanie zaoferować dowody, oddzielić status systemowy od problemu merytorycznego, poprosić o drugą ocenę z terminem i uzyskać pisemną odpowiedź końcową." },
+        { "language": "ro", "text": "Escaladați o reclamație fără amenințări: numiți punctele deschise, oferiți dovezile structurat, separați statutul din sistem de problema de fond, cereți o a doua verificare cu termen și obțineți un răspuns final scris." },
+        { "language": "sq", "text": "Eskaloni një ankesë pa kërcënime: përmendni pikat e hapura, ofroni provat në mënyrë të strukturuar, ndani statusin e sistemit nga problemi faktik, kërkoni një shqyrtim të dytë me afat dhe siguroni përgjigje përfundimtare me shkrim." }
+      ],
+      "cefrLevel": "C1",
+      "category": "customer-service",
+      "topics": ["customer-service", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "complaint-handling"],
+      "taskType": "complain-politely",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 48,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kund/in",
+          "translations": [
+            { "language": "en", "text": "Customer escalating a complaint" },
+            { "language": "fa", "text": "مشتری که شکایت را پیگیری رسمی می‌کند" },
+            { "language": "ar", "text": "العميل الذي يصعّد شكوى" },
+            { "language": "tr", "text": "Şikayeti üst aşamaya taşıyan müşteri" },
+            { "language": "ru", "text": "Клиент, передающий жалобу на следующий уровень" },
+            { "language": "ckb", "text": "کڕیارێک کە سکاڵا بەرز دەکاتەوە" },
+            { "language": "kmr", "text": "Mişteriyê ku gilî derdixe asta bilindtir" },
+            { "language": "pl", "text": "Klient eskalujący skargę" },
+            { "language": "ro", "text": "Client care escaladează o reclamație" },
+            { "language": "sq", "text": "Klienti që eskalon një ankesë" }
+          ]
+        },
+        {
+          "roleKey": "agent",
+          "displayName": "Beschwerdemanagement",
+          "translations": [
+            { "language": "en", "text": "Complaint management representative" },
+            { "language": "fa", "text": "کارمند بخش رسیدگی به شکایات" },
+            { "language": "ar", "text": "موظف إدارة الشكاوى" },
+            { "language": "tr", "text": "Şikayet yönetimi temsilcisi" },
+            { "language": "ru", "text": "Сотрудник отдела жалоб" },
+            { "language": "ckb", "text": "نوێنەری بەڕێوەبردنی سکاڵاکان" },
+            { "language": "kmr", "text": "Nûnerê rêveberiya giliyan" },
+            { "language": "pl", "text": "Pracownik działu reklamacji" },
+            { "language": "ro", "text": "Reprezentant al managementului reclamațiilor" },
+            { "language": "sq", "text": "Përfaqësues i menaxhimit të ankesave" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "agent",
+          "baseText": "Guten Tag, ich sehe hier, dass Ihre Reklamation bereits als erledigt markiert wurde. Wobei kann ich Ihnen noch helfen?",
+          "translations": [
+            { "language": "en", "text": "Good day, I see here that your complaint has already been marked as resolved. How can I still help you?" },
+            { "language": "fa", "text": "روز بخیر، اینجا می‌بینم که شکایت شما قبلاً به‌عنوان انجام‌شده ثبت شده است. هنوز چطور می‌توانم کمک کنم؟" },
+            { "language": "ar", "text": "مرحباً، أرى هنا أن شكواك تم وضعها بالفعل على أنها منتهية. كيف يمكنني مساعدتك أيضاً؟" },
+            { "language": "tr", "text": "İyi günler, burada şikayetinizin zaten tamamlandı olarak işaretlendiğini görüyorum. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Добрый день, я вижу, что ваша рекламация уже отмечена как завершенная. Чем я могу еще помочь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، لێرە دەبینم سکاڵاکەت پێشتر وەک تەواوبوو نیشانکراوە. دەتوانم چی تر یارمەتیت بدەم؟" },
+            { "language": "kmr", "text": "Roj baş, ez li vir dibînim ku gilîkirina we jixwe wekî qediyayî hatiye nîşandan. Ez dikarim çawa hîn alîkarî bikim?" },
+            { "language": "pl", "text": "Dzień dobry, widzę tutaj, że Pańska reklamacja została już oznaczona jako zakończona. W czym mogę jeszcze pomóc?" },
+            { "language": "ro", "text": "Bună ziua, văd aici că reclamația dumneavoastră a fost deja marcată ca rezolvată. Cu ce vă mai pot ajuta?" },
+            { "language": "sq", "text": "Mirëdita, shoh këtu që ankesa juaj është shënuar tashmë si e mbyllur. Si mund t'ju ndihmoj ende?" }
+          ],
+          "function": "open-call",
+          "toneNote": "formal and process-oriented"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte den Fall sachlich eskalieren, ohne eine Drohung auszusprechen. Für mich sind drei Punkte noch offen: die Rückerstattung, der Liefernachweis und eine schriftliche Abschlussantwort.",
+          "translations": [
+            { "language": "en", "text": "I would like to escalate the case factually, without making a threat. For me, three points are still open: the refund, the delivery evidence, and a written final response." },
+            { "language": "fa", "text": "می‌خواهم پرونده را منطقی به سطح بالاتر ببرم، بدون اینکه تهدید کنم. برای من سه نکته هنوز باز است: بازپرداخت، مدرک تحویل و پاسخ نهایی کتبی." },
+            { "language": "ar", "text": "أود تصعيد الحالة بشكل موضوعي من دون توجيه تهديد. بالنسبة لي ما زالت ثلاث نقاط مفتوحة: الاسترداد، وإثبات التسليم، والرد النهائي المكتوب." },
+            { "language": "tr", "text": "Dosyayı tehdit etmeden nesnel biçimde üst aşamaya taşımak istiyorum. Benim için üç nokta hâlâ açık: iade, teslimat kanıtı ve yazılı son yanıt." },
+            { "language": "ru", "text": "Я хотел бы предметно передать случай на следующий уровень, без угроз. Для меня остаются открытыми три пункта: возврат, подтверждение доставки и письменный итоговый ответ." },
+            { "language": "ckb", "text": "دەمەوێت دۆسیەکە بە شێوەی بابەتی بەرز بکەمەوە، بەبێ ئەوەی هەڕەشە بکەم. بۆ من سێ خاڵ هێشتا کراوەن: گەڕاندنەوەی پارە، بەڵگەی گەیاندن و وەڵامی کۆتاییی نووسراو." },
+            { "language": "kmr", "text": "Ez dixwazim dozê bê tehdîd bi awayekî rast derxim asta bilindtir. Ji bo min sê xal hîn vekirî ne: vegerandina pere, belgeya radestkirinê û bersiva dawî ya nivîskî." },
+            { "language": "pl", "text": "Chciałbym rzeczowo eskalować sprawę, bez formułowania groźby. Dla mnie trzy punkty są nadal otwarte: zwrot, dowód dostawy i pisemna odpowiedź końcowa." },
+            { "language": "ro", "text": "Aș dori să escaladez cazul factual, fără să formulez o amenințare. Pentru mine rămân deschise trei puncte: rambursarea, dovada livrării și răspunsul final scris." },
+            { "language": "sq", "text": "Dua ta eskaloj rastin në mënyrë faktike, pa bërë kërcënim. Për mua mbeten të hapura tri pika: rimbursimi, prova e dorëzimit dhe përgjigjja përfundimtare me shkrim." }
+          ],
+          "function": "state-escalation-scope",
+          "toneNote": "calm and precise",
+          "expectedLearnerAction": "Open with process language and name the unresolved points."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "agent",
+          "baseText": "Welche Unterlagen oder Angaben stützen Ihre Einschätzung, dass die Reklamation noch nicht abgeschlossen ist?",
+          "translations": [
+            { "language": "en", "text": "Which documents or details support your view that the complaint is not yet closed?" },
+            { "language": "fa", "text": "کدام مدارک یا اطلاعات از نظر شما پشتیبانی می‌کند که شکایت هنوز بسته نشده است؟" },
+            { "language": "ar", "text": "ما المستندات أو البيانات التي تدعم رأيك بأن الشكوى لم تُغلق بعد؟" },
+            { "language": "tr", "text": "Şikayetin henüz kapanmadığı görüşünüzü hangi belgeler veya bilgiler destekliyor?" },
+            { "language": "ru", "text": "Какие документы или сведения подтверждают вашу оценку, что рекламация еще не завершена?" },
+            { "language": "ckb", "text": "کام بەڵگە یان زانیاری پشتگیری لەو بۆچوونەت دەکات کە سکاڵاکە هێشتا داخراو نییە؟" },
+            { "language": "kmr", "text": "Kîjan belge an agahdarî piştgirî didin nirxandina we ku gilîkirin hîn negirtî ye?" },
+            { "language": "pl", "text": "Jakie dokumenty lub informacje potwierdzają Pańską ocenę, że reklamacja nie jest jeszcze zakończona?" },
+            { "language": "ro", "text": "Ce documente sau informații susțin aprecierea dumneavoastră că reclamația nu este încă închisă?" },
+            { "language": "sq", "text": "Cilat dokumente ose të dhëna mbështesin vlerësimin tuaj se ankesa nuk është ende e mbyllur?" }
+          ],
+          "function": "ask-evidence"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich kann die Bestellnummer, den Zahlungsbeleg, die E-Mail mit der Rücksendezusage, den Screenshot der Sendungsverfolgung und Fotos des zurückgesendeten Artikels nachreichen.",
+          "translations": [
+            { "language": "en", "text": "I can provide the order number, the payment receipt, the email confirming the return, the tracking screenshot, and photos of the returned item." },
+            { "language": "fa", "text": "می‌توانم شماره سفارش، رسید پرداخت، ایمیل تأیید بازگشت، اسکرین‌شات رهگیری ارسال و عکس‌های کالای برگشتی را ارائه کنم." },
+            { "language": "ar", "text": "يمكنني تقديم رقم الطلب وإيصال الدفع والبريد الإلكتروني الذي يؤكد الإرجاع ولقطة شاشة تتبع الشحنة وصور السلعة المعادة." },
+            { "language": "tr", "text": "Sipariş numarasını, ödeme dekontunu, iade onayı e-postasını, kargo takibi ekran görüntüsünü ve iade edilen ürünün fotoğraflarını sunabilirim." },
+            { "language": "ru", "text": "Я могу предоставить номер заказа, платежную квитанцию, письмо с подтверждением возврата, снимок отслеживания отправления и фотографии возвращенного товара." },
+            { "language": "ckb", "text": "دەتوانم ژمارەی داواکاری، پسووڵەی پارەدان، ئیمەیلی ڕەزامەندی گەڕاندنەوە، وێنەی شوێنپێهەڵگرتنی بار و وێنەکانی کاڵای گەڕاوە پێشکەش بکەم." },
+            { "language": "kmr", "text": "Ez dikarim jimareya siparişê, belgeya dayînê, e-nameya pejirandina vegerandinê, wêneya şopandina barkirinê û wêneyên tiştê vegerandî pêşkêş bikim." },
+            { "language": "pl", "text": "Mogę dosłać numer zamówienia, potwierdzenie płatności, e-mail z potwierdzeniem zwrotu, zrzut śledzenia przesyłki i zdjęcia zwróconego artykułu." },
+            { "language": "ro", "text": "Pot trimite numărul comenzii, dovada plății, e-mailul cu acordul de retur, captura urmăririi coletului și fotografii ale articolului returnat." },
+            { "language": "sq", "text": "Mund të dërgoj numrin e porosisë, dëshminë e pagesës, emailin me miratimin e kthimit, pamjen e gjurmimit të dërgesës dhe fotografitë e artikullit të kthyer." }
+          ],
+          "function": "provide-evidence-list",
+          "expectedLearnerAction": "Offer specific document categories instead of saying the company already has everything."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "agent",
+          "baseText": "Im System steht, dass die Lieferung zugestellt wurde. Deshalb wurde die Rückerstattung zunächst abgelehnt.",
+          "translations": [
+            { "language": "en", "text": "The system says the delivery was delivered. That is why the refund was initially rejected." },
+            { "language": "fa", "text": "در سیستم نوشته شده که ارسال تحویل داده شده است. به همین دلیل بازپرداخت ابتدا رد شده است." },
+            { "language": "ar", "text": "في النظام مذكور أن الشحنة تم تسليمها. لذلك رُفض الاسترداد في البداية." },
+            { "language": "tr", "text": "Sistemde teslimatın yapıldığı yazıyor. Bu nedenle iade başlangıçta reddedildi." },
+            { "language": "ru", "text": "В системе указано, что доставка была выполнена. Поэтому возврат сначала был отклонен." },
+            { "language": "ckb", "text": "لە سیستەمدا نووسراوە کە بارەکە گەیەندراوە. بۆیە گەڕاندنەوەی پارە لە سەرەتادا ڕەتکراوەتەوە." },
+            { "language": "kmr", "text": "Di pergalê de nivîsandî ye ku radestkirin pêk hatiye. Ji ber vê yekê vegerandina pere di destpêkê de hat redkirin." },
+            { "language": "pl", "text": "W systemie widnieje, że dostawa została doręczona. Dlatego zwrot został początkowo odrzucony." },
+            { "language": "ro", "text": "În sistem apare că livrarea a fost efectuată. De aceea rambursarea a fost inițial respinsă." },
+            { "language": "sq", "text": "Në sistem shkruhet se dërgesa është dorëzuar. Prandaj rimbursimi u refuzua fillimisht." }
+          ],
+          "function": "state-system-position"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Genau hier sehe ich den Klärungsbedarf: Der Zustellscan erklärt die Lieferung, aber nicht den Zustand des zurückgesendeten Artikels und nicht die Bearbeitung der Rückerstattung.",
+          "translations": [
+            { "language": "en", "text": "This is exactly where I see the need for clarification: the delivery scan explains the delivery, but not the condition of the returned item and not the processing of the refund." },
+            { "language": "fa", "text": "دقیقاً همین‌جا نیاز به روشن‌سازی می‌بینم: اسکن تحویل، تحویل را توضیح می‌دهد، اما وضعیت کالای برگشتی و پردازش بازپرداخت را توضیح نمی‌دهد." },
+            { "language": "ar", "text": "هنا بالضبط أرى الحاجة إلى توضيح: مسح التسليم يوضح التسليم، لكنه لا يوضح حالة السلعة المعادة ولا معالجة الاسترداد." },
+            { "language": "tr", "text": "Tam burada açıklığa ihtiyaç görüyorum: teslimat taraması teslimatı açıklar, fakat iade edilen ürünün durumunu ve iade işlemini açıklamaz." },
+            { "language": "ru", "text": "Именно здесь я вижу необходимость уточнения: скан доставки объясняет доставку, но не состояние возвращенного товара и не обработку возврата." },
+            { "language": "ckb", "text": "لێرەدا بە وردی پێویستی بە ڕوونکردنەوە دەبینم: سکانی گەیاندن، گەیاندن ڕوون دەکاتەوە، بەڵام دۆخی کاڵای گەڕاوە و چارەسەری گەڕاندنەوەی پارە ڕوون ناکاتەوە." },
+            { "language": "kmr", "text": "Li vir ez hewcedariya zelalkirinê dibînim: skana radestkirinê radestkirinê rave dike, lê rewşa tiştê vegerandî û pêvajoya vegerandina pere rave nake." },
+            { "language": "pl", "text": "Właśnie tutaj widzę potrzebę wyjaśnienia: skan doręczenia wyjaśnia dostawę, ale nie stan zwróconego artykułu ani obsługę zwrotu pieniędzy." },
+            { "language": "ro", "text": "Exact aici văd nevoia de clarificare: scanarea livrării explică livrarea, dar nu starea articolului returnat și nici procesarea rambursării." },
+            { "language": "sq", "text": "Pikërisht këtu shoh nevojë për sqarim: skanimi i dorëzimit shpjegon dorëzimin, por jo gjendjen e artikullit të kthyer dhe as përpunimin e rimbursimit." }
+          ],
+          "function": "separate-system-status-and-issue",
+          "expectedLearnerAction": "Separate the delivery status from the refund and item-condition questions."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "agent",
+          "baseText": "Ich kann den Vorgang wieder öffnen, aber ich kann Ihnen am Telefon kein Ergebnis zusagen. Welchen Eskalationsweg erwarten Sie konkret?",
+          "translations": [
+            { "language": "en", "text": "I can reopen the case, but I cannot promise an outcome on the phone. Which escalation path do you specifically expect?" },
+            { "language": "fa", "text": "می‌توانم پرونده را دوباره باز کنم، اما نمی‌توانم تلفنی نتیجه‌ای قول بدهم. دقیقاً چه مسیر پیگیری رسمی انتظار دارید؟" },
+            { "language": "ar", "text": "يمكنني إعادة فتح الإجراء، لكن لا أستطيع أن أعدك بنتيجة عبر الهاتف. ما مسار التصعيد الذي تتوقعه تحديداً؟" },
+            { "language": "tr", "text": "Dosyayı tekrar açabilirim, ancak telefonda size sonuç sözü veremem. Somut olarak hangi üst inceleme yolunu bekliyorsunuz?" },
+            { "language": "ru", "text": "Я могу снова открыть процесс, но не могу обещать результат по телефону. Какой путь эскалации вы конкретно ожидаете?" },
+            { "language": "ckb", "text": "دەتوانم کارەکە دوبارە بکەمەوە، بەڵام لە تەلەفۆندا ناتوانم ئەنجامێک بەڵێن بدەم. بە وردی چ ڕێگای بەرزکردنەوە چاوەڕوان دەکەیت؟" },
+            { "language": "kmr", "text": "Ez dikarim pêvajoyê dîsa vekim, lê nikarim di telefonê de encamek soz bidim. Hûn bi taybetî kîjan rêya derxistinê dixwazin?" },
+            { "language": "pl", "text": "Mogę ponownie otworzyć sprawę, ale nie mogę obiecać wyniku przez telefon. Jakiej ścieżki eskalacji konkretnie Pan oczekuje?" },
+            { "language": "ro", "text": "Pot redeschide procedura, dar nu vă pot promite un rezultat la telefon. Ce cale de escaladare așteptați concret?" },
+            { "language": "sq", "text": "Mund ta rihap procesin, por nuk mund t'ju premtoj rezultat në telefon. Cilin rrugëtim eskalimi prisni konkretisht?" }
+          ],
+          "function": "ask-escalation-path"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich bitte um eine Prüfung durch das Beschwerdemanagement, eine schriftliche Antwort zu den drei offenen Punkten und eine realistische Rückmeldung innerhalb von zehn Werktagen.",
+          "translations": [
+            { "language": "en", "text": "I am asking for a review by complaint management, a written response to the three open points, and a realistic update within ten business days." },
+            { "language": "fa", "text": "درخواست بررسی توسط بخش رسیدگی به شکایات، پاسخ کتبی به سه نکته باز و یک بازخورد واقع‌بینانه ظرف ده روز کاری دارم." },
+            { "language": "ar", "text": "أطلب فحصاً من إدارة الشكاوى ورداً مكتوباً على النقاط الثلاث المفتوحة وتحديثاً واقعياً خلال عشرة أيام عمل." },
+            { "language": "tr", "text": "Şikayet yönetimi tarafından inceleme, üç açık noktaya yazılı yanıt ve on iş günü içinde gerçekçi bir geri bildirim rica ediyorum." },
+            { "language": "ru", "text": "Я прошу проверку отделом жалоб, письменный ответ по трем открытым пунктам и реалистичную обратную связь в течение десяти рабочих дней." },
+            { "language": "ckb", "text": "داوای پشکنین لەلایەن بەڕێوەبردنی سکاڵاکان، وەڵامی نووسراو بۆ سێ خاڵە کراوەکە و ئاگادارکردنەوەیەکی ڕاستەقینە لە ماوەی دە ڕۆژی کاری دەکەم." },
+            { "language": "kmr", "text": "Ez daxwaza kontrolê ji aliyê rêveberiya giliyan, bersiva nivîskî ji bo sê xalên vekirî û agahdariyeke rast di nav deh rojên kar de dikim." },
+            { "language": "pl", "text": "Proszę o ocenę przez dział reklamacji, pisemną odpowiedź na trzy otwarte punkty oraz realistyczną informację zwrotną w ciągu dziesięciu dni roboczych." },
+            { "language": "ro", "text": "Solicit o verificare de către managementul reclamațiilor, un răspuns scris la cele trei puncte deschise și o informare realistă în termen de zece zile lucrătoare." },
+            { "language": "sq", "text": "Kërkoj shqyrtim nga menaxhimi i ankesave, përgjigje me shkrim për tri pikat e hapura dhe një njoftim realist brenda dhjetë ditëve pune." }
+          ],
+          "function": "request-second-level-review",
+          "expectedLearnerAction": "Ask for a concrete review route, written response, and realistic timeframe."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "agent",
+          "baseText": "Möchten Sie damit auch eine externe Verbraucherberatung einschalten, oder soll es zunächst intern geprüft werden?",
+          "translations": [
+            { "language": "en", "text": "Do you also want to involve external consumer advice with this, or should it first be reviewed internally?" },
+            { "language": "fa", "text": "آیا با این کار می‌خواهید مشاوره مصرف‌کننده بیرونی را هم وارد کنید، یا ابتدا باید داخلی بررسی شود؟" },
+            { "language": "ar", "text": "هل تريد أيضاً إشراك جهة استشارة للمستهلك خارجية، أم ينبغي فحص الأمر داخلياً أولاً؟" },
+            { "language": "tr", "text": "Bununla birlikte dış tüketici danışmanlığını da devreye almak mı istiyorsunuz, yoksa önce içeride mi incelensin?" },
+            { "language": "ru", "text": "Вы хотите также подключить внешнюю консультацию для потребителей или сначала нужно проверить это внутри компании?" },
+            { "language": "ckb", "text": "ئایا دەتەوێت بەوەش ڕاوێژکاریی دەرەکیی بەکارهێنەر داخڵ بکەیت، یان سەرەتا ناوخۆیی بپشکنرێت؟" },
+            { "language": "kmr", "text": "Ma hûn dixwazin şêwirmendiya xerîdar a derveyî jî têxin nav, an bila pêşî di hundir de were kontrolkirin?" },
+            { "language": "pl", "text": "Czy chce Pan w ten sposób włączyć również zewnętrzne doradztwo konsumenckie, czy najpierw ma to zostać sprawdzone wewnętrznie?" },
+            { "language": "ro", "text": "Doriți să implicați și o consiliere externă pentru consumatori sau să fie verificat mai întâi intern?" },
+            { "language": "sq", "text": "Dëshironi të përfshini edhe këshillim të jashtëm për konsumatorët, apo fillimisht të shqyrtohet brenda kompanisë?" }
+          ],
+          "function": "ask-external-route"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Zunächst möchte ich eine interne Abschlussposition. Falls die Beschwerde danach nicht gelöst ist, wäre für mich nur wichtig zu wissen, welcher anerkannte weitere Prozessweg vorgesehen ist.",
+          "translations": [
+            { "language": "en", "text": "First, I would like an internal final position. If the complaint is not resolved after that, it would only be important for me to know which recognized further process path is provided." },
+            { "language": "fa", "text": "ابتدا می‌خواهم موضع نهایی داخلی را داشته باشم. اگر بعد از آن شکایت حل نشد، فقط برایم مهم است بدانم چه مسیر فرایندی شناخته‌شده‌ای در نظر گرفته شده است." },
+            { "language": "ar", "text": "أولاً أود الحصول على موقف نهائي داخلي. إذا لم تُحل الشكوى بعد ذلك، فسيهمني فقط معرفة المسار الإجرائي المعترف به بعد ذلك." },
+            { "language": "tr", "text": "Önce iç nihai pozisyonu almak istiyorum. Şikayet bundan sonra çözülmezse, benim için yalnızca hangi tanınmış sonraki süreç yolunun öngörüldüğünü bilmek önemli olur." },
+            { "language": "ru", "text": "Сначала я хотел бы получить внутреннюю итоговую позицию. Если после этого жалоба не будет решена, мне будет важно лишь знать, какой признанный дальнейший процесс предусмотрен." },
+            { "language": "ckb", "text": "سەرەتا دەمەوێت هەڵوێستی کۆتاییی ناوخۆیی وەربگرم. ئەگەر دوای ئەوە سکاڵاکە چارەسەر نەبوو، تەنها گرنگە بزانم کام ڕێگای پڕۆسەی ناسراوی دواتر هەیە." },
+            { "language": "kmr", "text": "Pêşî ez dixwazim helwesta dawî ya hundirî bistînim. Ger gilî piştî wê çareser nebe, ji bo min tenê girîng e ku bizanim kîjan rêya pêvajoya din a naskirî hatiye destnîşankirin." },
+            { "language": "pl", "text": "Najpierw chciałbym otrzymać wewnętrzne stanowisko końcowe. Jeśli skarga potem nie zostanie rozwiązana, ważne będzie dla mnie tylko, jaka uznana dalsza ścieżka procesu jest przewidziana." },
+            { "language": "ro", "text": "Mai întâi aș dori o poziție finală internă. Dacă reclamația nu este rezolvată după aceea, pentru mine ar fi important doar să știu ce cale procedurală recunoscută este prevăzută." },
+            { "language": "sq", "text": "Fillimisht dua një qëndrim përfundimtar të brendshëm. Nëse ankesa nuk zgjidhet pas kësaj, për mua do të jetë e rëndësishme vetëm të di cili rrugëtim i njohur i mëtejshëm është parashikuar." }
+          ],
+          "function": "frame-external-route-neutrally",
+          "expectedLearnerAction": "Avoid threats; ask first for an internal final position and only then for process information."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "agent",
+          "baseText": "In Ordnung. Ich öffne den Vorgang für das Beschwerdemanagement, vermerke die drei offenen Punkte und sende Ihnen gleich einen Upload-Link für die Unterlagen.",
+          "translations": [
+            { "language": "en", "text": "All right. I will open the case for complaint management, note the three open points, and send you an upload link for the documents shortly." },
+            { "language": "fa", "text": "بسیار خوب. پرونده را برای بخش رسیدگی به شکایات باز می‌کنم، سه نکته باز را ثبت می‌کنم و همین حالا لینک بارگذاری مدارک را برای شما می‌فرستم." },
+            { "language": "ar", "text": "حسناً. سأفتح الإجراء لإدارة الشكاوى، وأسجل النقاط الثلاث المفتوحة، وأرسل لك فوراً رابط رفع المستندات." },
+            { "language": "tr", "text": "Peki. Dosyayı şikayet yönetimi için açıyorum, üç açık noktayı not ediyorum ve belgeler için size hemen bir yükleme bağlantısı gönderiyorum." },
+            { "language": "ru", "text": "Хорошо. Я открою процесс для отдела жалоб, отмечу три открытых пункта и сразу отправлю вам ссылку для загрузки документов." },
+            { "language": "ckb", "text": "باشە. کارەکە بۆ بەڕێوەبردنی سکاڵاکان دەکەمەوە، سێ خاڵە کراوەکە تۆمار دەکەم و ئێستا بەستەری بارکردنی بەڵگەکانت بۆ دەنێرم." },
+            { "language": "kmr", "text": "Baş e. Ez pêvajoyê ji bo rêveberiya giliyan vedikim, sê xalên vekirî tomar dikim û niha girêdana barkirina belgeyan ji we re dişînim." },
+            { "language": "pl", "text": "W porządku. Otworzę sprawę dla działu reklamacji, zanotuję trzy otwarte punkty i zaraz wyślę Panu link do przesłania dokumentów." },
+            { "language": "ro", "text": "În regulă. Redeschid procedura pentru managementul reclamațiilor, notez cele trei puncte deschise și vă trimit imediat un link de încărcare pentru documente." },
+            { "language": "sq", "text": "Në rregull. Do ta hap procesin për menaxhimin e ankesave, do të shënoj tri pikat e hapura dhe menjëherë do t'ju dërgoj një lidhje për ngarkimin e dokumenteve." }
+          ],
+          "function": "confirm-process"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Dann halte ich fest: Ich lade die Unterlagen heute hoch, Ihr Beschwerdemanagement prüft Lieferung, Artikelzustand und Rückerstattung getrennt, und ich erhalte innerhalb von zehn Werktagen eine schriftliche Antwort mit Begründung.",
+          "translations": [
+            { "language": "en", "text": "Then I will record this: I will upload the documents today, your complaint management will review delivery, item condition, and refund separately, and I will receive a written response with reasons within ten business days." },
+            { "language": "fa", "text": "پس این را ثبت می‌کنم: امروز مدارک را بارگذاری می‌کنم، بخش رسیدگی به شکایات شما تحویل، وضعیت کالا و بازپرداخت را جداگانه بررسی می‌کند، و من ظرف ده روز کاری پاسخ کتبی همراه با دلیل دریافت می‌کنم." },
+            { "language": "ar", "text": "إذن أسجل ما يلي: سأرفع المستندات اليوم، وستفحص إدارة الشكاوى لديكم التسليم وحالة السلعة والاسترداد بشكل منفصل، وسأتلقى رداً مكتوباً مع التبرير خلال عشرة أيام عمل." },
+            { "language": "tr", "text": "O halde şöyle not ediyorum: belgeleri bugün yükleyeceğim, şikayet yönetiminiz teslimatı, ürün durumunu ve iadeyi ayrı ayrı inceleyecek, ben de on iş günü içinde gerekçeli yazılı yanıt alacağım." },
+            { "language": "ru", "text": "Тогда я зафиксирую: сегодня загружу документы, ваш отдел жалоб отдельно проверит доставку, состояние товара и возврат, а в течение десяти рабочих дней я получу письменный ответ с обоснованием." },
+            { "language": "ckb", "text": "کەواتە ئەمە تۆمار دەکەم: ئەمڕۆ بەڵگەکان بار دەکەم، بەڕێوەبردنی سکاڵاکانتان گەیاندن، دۆخی کاڵا و گەڕاندنەوەی پارە جیاجیا دەپشکنێت، و لە ماوەی دە ڕۆژی کاری وەڵامی نووسراو بە پاساو وەردەگرم." },
+            { "language": "kmr", "text": "Wê demê ez wiha tomar dikim: ez îro belgeyan bar dikim, rêveberiya giliyên we radestkirin, rewşa tiştê û vegerandina pere cuda kontrol dike, û ez di nav deh rojên kar de bersiveke nivîskî bi hincet distînim." },
+            { "language": "pl", "text": "W takim razie zapisuję: dziś prześlę dokumenty, Państwa dział reklamacji osobno sprawdzi dostawę, stan artykułu i zwrot, a w ciągu dziesięciu dni roboczych otrzymam pisemną odpowiedź z uzasadnieniem." },
+            { "language": "ro", "text": "Atunci rețin următoarele: încarc documentele astăzi, managementul reclamațiilor verifică separat livrarea, starea articolului și rambursarea, iar în termen de zece zile lucrătoare primesc un răspuns scris motivat." },
+            { "language": "sq", "text": "Atëherë e shënoj kështu: dokumentet i ngarkoj sot, menaxhimi juaj i ankesave shqyrton veçmas dorëzimin, gjendjen e artikullit dhe rimbursimin, dhe brenda dhjetë ditëve pune marr përgjigje me shkrim me arsyetim." }
+          ],
+          "function": "close-with-summary",
+          "expectedLearnerAction": "Summarize documents, review scope, deadline, and written reasoning."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "structured-escalation-opening",
+              "text": "Ich möchte den Fall sachlich eskalieren, ohne eine Drohung auszusprechen. Für mich sind drei Punkte noch offen: die Rückerstattung, der Liefernachweis und eine schriftliche Abschlussantwort.",
+              "translations": [
+                { "language": "en", "text": "I would like to escalate the case factually, without making a threat. Three points are still open for me: the refund, the delivery evidence, and a written final response." },
+                { "language": "fa", "text": "می‌خواهم پرونده را منطقی به سطح بالاتر ببرم، بدون تهدید. برای من سه نکته هنوز باز است: بازپرداخت، مدرک تحویل و پاسخ نهایی کتبی." },
+                { "language": "ar", "text": "أود تصعيد الحالة بشكل موضوعي بلا تهديد. ثلاث نقاط ما زالت مفتوحة بالنسبة لي: الاسترداد وإثبات التسليم والرد النهائي المكتوب." },
+                { "language": "tr", "text": "Dosyayı tehdit etmeden nesnel biçimde üst aşamaya taşımak istiyorum. Benim için üç nokta açık: iade, teslimat kanıtı ve yazılı son yanıt." },
+                { "language": "ru", "text": "Я хотел бы предметно передать случай на следующий уровень, без угроз. Для меня открыты три пункта: возврат, подтверждение доставки и письменный итоговый ответ." },
+                { "language": "ckb", "text": "دەمەوێت دۆسیەکە بە شێوەی بابەتی بەرز بکەمەوە، بەبێ هەڕەشە. بۆ من سێ خاڵ کراوەن: گەڕاندنەوەی پارە، بەڵگەی گەیاندن و وەڵامی کۆتاییی نووسراو." },
+                { "language": "kmr", "text": "Ez dixwazim dozê bê tehdîd bi awayekî rast derxim asta bilindtir. Ji bo min sê xal vekirî ne: vegerandina pere, belgeya radestkirinê û bersiva dawî ya nivîskî." },
+                { "language": "pl", "text": "Chciałbym rzeczowo eskalować sprawę, bez groźby. Dla mnie otwarte są trzy punkty: zwrot, dowód dostawy i pisemna odpowiedź końcowa." },
+                { "language": "ro", "text": "Aș dori să escaladez cazul factual, fără amenințare. Pentru mine sunt deschise trei puncte: rambursarea, dovada livrării și răspunsul final scris." },
+                { "language": "sq", "text": "Dua ta eskaloj rastin në mënyrë faktike, pa kërcënim. Për mua janë të hapura tri pika: rimbursimi, prova e dorëzimit dhe përgjigjja përfundimtare me shkrim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt den Eskalationswunsch, bleibt ruhig und definiert die offenen Punkte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names the escalation request, stays calm, and defines the open points." },
+                { "language": "fa", "text": "خوب است: پاسخ درخواست پیگیری رسمی را نام می‌برد، آرام می‌ماند و نکات باز را مشخص می‌کند." },
+                { "language": "ar", "text": "جيد: تسمي الإجابة طلب التصعيد، وتبقى هادئة، وتحدد النقاط المفتوحة." },
+                { "language": "tr", "text": "İyi: yanıt üst inceleme isteğini belirtir, sakin kalır ve açık noktaları tanımlar." },
+                { "language": "ru", "text": "Хорошо: ответ называет просьбу об эскалации, сохраняет спокойный тон и определяет открытые пункты." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە داوای بەرزکردنەوە ناو دەبات، ئارام دەمێنێت و خاڵە کراوەکان دیاری دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv daxwaza derxistinê bi nav dike, aram dimîne û xalên vekirî diyar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nazywa prośbę o eskalację, zachowuje spokój i określa otwarte punkty." },
+                { "language": "ro", "text": "Bine: răspunsul numește cererea de escaladare, rămâne calm și definește punctele deschise." },
+                { "language": "sq", "text": "Mirë: përgjigjja emërton kërkesën për eskalim, ruan qetësinë dhe përcakton pikat e hapura." }
+              ],
+              "explanationKey": "open-with-process-and-points"
+            },
+            {
+              "id": "rights-threat-opening",
+              "text": "Ich kenne meine Rechte und akzeptiere das nicht. Wenn Sie das nicht sofort ändern, werde ich mich beschweren.",
+              "translations": [
+                { "language": "en", "text": "I know my rights and I do not accept this. If you do not change it immediately, I will complain." },
+                { "language": "fa", "text": "من حق و حقوقم را می‌دانم و این را قبول نمی‌کنم. اگر فوراً تغییرش ندهید، شکایت می‌کنم." },
+                { "language": "ar", "text": "أعرف حقوقي ولا أقبل ذلك. إذا لم تغيروا هذا فوراً فسأشتكي." },
+                { "language": "tr", "text": "Haklarımı biliyorum ve bunu kabul etmiyorum. Bunu hemen değiştirmezseniz şikayet edeceğim." },
+                { "language": "ru", "text": "Я знаю свои права и не принимаю это. Если вы немедленно это не измените, я буду жаловаться." },
+                { "language": "ckb", "text": "من مافەکانم دەزانم و ئەمە قبوڵ ناکەم. ئەگەر دەستبەجێ ئەمە نەگۆڕن، سکاڵا دەکەم." },
+                { "language": "kmr", "text": "Ez mafên xwe dizanim û vê qebûl nakim. Ger hûn vê tavilê neguherînin, ez ê gilî bikim." },
+                { "language": "pl", "text": "Znam swoje prawa i tego nie akceptuję. Jeśli natychmiast tego Państwo nie zmienią, złożę skargę." },
+                { "language": "ro", "text": "Îmi cunosc drepturile și nu accept acest lucru. Dacă nu îl schimbați imediat, voi face reclamație." },
+                { "language": "sq", "text": "I di të drejtat e mia dhe nuk e pranoj këtë. Nëse nuk e ndryshoni menjëherë, do të ankohem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu konfrontativ: Die Antwort klingt wie Druck, nennt aber keine prüfbaren offenen Punkte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too confrontational: the answer sounds like pressure, but does not name verifiable open points." },
+                { "language": "fa", "text": "زیادی تقابلی است: پاسخ شبیه فشار است، اما نکات باز قابل بررسی را نام نمی‌برد." },
+                { "language": "ar", "text": "تصادمية أكثر من اللازم: تبدو الإجابة كضغط، لكنها لا تسمي نقاطاً مفتوحة قابلة للفحص." },
+                { "language": "tr", "text": "Fazla çatışmacı: yanıt baskı gibi duyulur, ama denetlenebilir açık noktaları belirtmez." },
+                { "language": "ru", "text": "Слишком конфронтационно: ответ звучит как давление, но не называет проверяемые открытые пункты." },
+                { "language": "ckb", "text": "زۆر ڕووبەڕووانەیە: وەڵامەکە وەک فشار دەنگ دەدات، بەڵام خاڵی کراوەی پشکنراو ناو نابا." },
+                { "language": "kmr", "text": "Pir dijberî ye: bersiv wekî zext xuya dike, lê xalên vekirî yên kontrolbar bi nav nake." },
+                { "language": "pl", "text": "Zbyt konfrontacyjnie: odpowiedź brzmi jak nacisk, ale nie nazywa sprawdzalnych otwartych punktów." },
+                { "language": "ro", "text": "Prea conflictual: răspunsul sună ca presiune, dar nu numește puncte deschise verificabile." },
+                { "language": "sq", "text": "Shumë konfrontuese: përgjigjja tingëllon si presion, por nuk përmend pika të hapura të verifikueshme." }
+              ],
+              "explanationKey": "avoid-threats"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "structured-evidence-list",
+              "text": "Ich kann die Bestellnummer, den Zahlungsbeleg, die E-Mail mit der Rücksendezusage, den Screenshot der Sendungsverfolgung und Fotos des zurückgesendeten Artikels nachreichen.",
+              "translations": [
+                { "language": "en", "text": "I can provide the order number, the payment receipt, the return-confirmation email, the tracking screenshot, and photos of the returned item." },
+                { "language": "fa", "text": "می‌توانم شماره سفارش، رسید پرداخت، ایمیل تأیید بازگشت، اسکرین‌شات رهگیری و عکس‌های کالای برگشتی را ارائه کنم." },
+                { "language": "ar", "text": "يمكنني تقديم رقم الطلب وإيصال الدفع وبريد تأكيد الإرجاع ولقطة تتبع الشحنة وصور السلعة المعادة." },
+                { "language": "tr", "text": "Sipariş numarasını, ödeme dekontunu, iade onayı e-postasını, kargo takibi ekran görüntüsünü ve iade edilen ürünün fotoğraflarını sunabilirim." },
+                { "language": "ru", "text": "Я могу предоставить номер заказа, платежную квитанцию, письмо о подтверждении возврата, снимок отслеживания и фотографии возвращенного товара." },
+                { "language": "ckb", "text": "دەتوانم ژمارەی داواکاری، پسووڵەی پارەدان، ئیمەیلی پشتڕاستکردنەوەی گەڕاندنەوە، وێنەی شوێنپێهەڵگرتن و وێنەکانی کاڵای گەڕاوە پێشکەش بکەم." },
+                { "language": "kmr", "text": "Ez dikarim jimareya siparişê, belgeya dayînê, e-nameya pejirandina vegerandinê, wêneya şopandina barkirinê û wêneyên tiştê vegerandî pêşkêş bikim." },
+                { "language": "pl", "text": "Mogę dosłać numer zamówienia, potwierdzenie płatności, e-mail potwierdzający zwrot, zrzut śledzenia i zdjęcia zwróconego artykułu." },
+                { "language": "ro", "text": "Pot furniza numărul comenzii, dovada plății, e-mailul de confirmare a returului, captura de urmărire și fotografii ale articolului returnat." },
+                { "language": "sq", "text": "Mund të jap numrin e porosisë, dëshminë e pagesës, emailin e konfirmimit të kthimit, pamjen e gjurmimit dhe fotografitë e artikullit të kthyer." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort sortiert Belege nach Funktion und macht die erneute Prüfung leichter.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer sorts evidence by function and makes the new review easier." },
+                { "language": "fa", "text": "خوب است: پاسخ مدارک را بر اساس کارکرد مرتب می‌کند و بررسی دوباره را آسان‌تر می‌سازد." },
+                { "language": "ar", "text": "جيد: ترتب الإجابة الأدلة حسب الوظيفة وتجعل الفحص الجديد أسهل." },
+                { "language": "tr", "text": "İyi: yanıt kanıtları işleve göre düzenler ve yeni incelemeyi kolaylaştırır." },
+                { "language": "ru", "text": "Хорошо: ответ сортирует доказательства по функции и облегчает повторную проверку." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەکان بە پێی ئەرک ڕێک دەخات و پشکنینی دووبارە ئاسانتر دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv belgeyan li gorî erkê rêz dike û kontrola nû hêsantir dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź porządkuje dowody według funkcji i ułatwia ponowną ocenę." },
+                { "language": "ro", "text": "Bine: răspunsul sortează dovezile după funcție și face reanalizarea mai ușoară." },
+                { "language": "sq", "text": "Mirë: përgjigjja i rendit provat sipas funksionit dhe e lehtëson shqyrtimin e ri." }
+              ],
+              "explanationKey": "evidence-by-function"
+            },
+            {
+              "id": "company-has-everything",
+              "text": "Sie müssten doch alle Daten im System haben. Ich möchte nicht alles noch einmal zusammensuchen.",
+              "translations": [
+                { "language": "en", "text": "You should already have all the data in the system. I do not want to gather everything again." },
+                { "language": "fa", "text": "شما باید همه داده‌ها را در سیستم داشته باشید. نمی‌خواهم همه چیز را دوباره جمع کنم." },
+                { "language": "ar", "text": "ينبغي أن تكون كل البيانات لديكم في النظام. لا أريد جمع كل شيء مرة أخرى." },
+                { "language": "tr", "text": "Tüm veriler sistemde sizde olmalı. Her şeyi yeniden toplamak istemiyorum." },
+                { "language": "ru", "text": "У вас ведь должны быть все данные в системе. Я не хочу снова все собирать." },
+                { "language": "ckb", "text": "دەبێت هەموو داتاکان لە سیستەمەکەتاندا هەبن. نامەوێت هەموو شتێک جارێکی تر کۆ بکەمەوە." },
+                { "language": "kmr", "text": "Divê hemû dane di pergala we de hebin. Ez naxwazim her tiştî careke din kom bikim." },
+                { "language": "pl", "text": "Powinni Państwo mieć wszystkie dane w systemie. Nie chcę ponownie wszystkiego kompletować." },
+                { "language": "ro", "text": "Ar trebui să aveți toate datele în sistem. Nu vreau să adun totul din nou." },
+                { "language": "sq", "text": "Duhet t'i keni të gjitha të dhënat në sistem. Nuk dua t'i mbledh të gjitha përsëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber schwach: Die Antwort benennt keine prüfbaren Unterlagen und verlangsamt die Bearbeitung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: the answer names no verifiable documents and slows processing." },
+                { "language": "fa", "text": "قابل‌باور اما ضعیف است: پاسخ هیچ مدرک قابل بررسی را نام نمی‌برد و رسیدگی را کند می‌کند." },
+                { "language": "ar", "text": "معقولة لكنها ضعيفة: لا تسمي الإجابة مستندات قابلة للفحص وتبطئ المعالجة." },
+                { "language": "tr", "text": "Makul ama zayıf: yanıt denetlenebilir belge belirtmez ve işlemi yavaşlatır." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: ответ не называет проверяемые документы и замедляет обработку." },
+                { "language": "ckb", "text": "باوەڕپێکراوە بەڵام لاوازە: وەڵامەکە هیچ بەڵگەی پشکنراو ناو نابا و چارەسەرکردن خاو دەکاتەوە." },
+                { "language": "kmr", "text": "Guncaw xuya dike lê lawaz e: bersiv belgeyên kontrolbar bi nav nake û pêvajo hêdî dike." },
+                { "language": "pl", "text": "Wiarygodne, ale słabe: odpowiedź nie nazywa sprawdzalnych dokumentów i spowalnia obsługę." },
+                { "language": "ro", "text": "Plauzibil, dar slab: răspunsul nu numește documente verificabile și încetinește procesarea." },
+                { "language": "sq", "text": "E besueshme, por e dobët: përgjigjja nuk përmend dokumente të verifikueshme dhe ngadalëson përpunimin." }
+              ],
+              "explanationKey": "avoid-evidence-vagueness"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "separate-delivery-and-refund",
+              "text": "Der Zustellscan erklärt die Lieferung, aber nicht den Zustand des zurückgesendeten Artikels und nicht die Bearbeitung der Rückerstattung.",
+              "translations": [
+                { "language": "en", "text": "The delivery scan explains the delivery, but not the condition of the returned item and not the processing of the refund." },
+                { "language": "fa", "text": "اسکن تحویل، تحویل را توضیح می‌دهد، اما وضعیت کالای برگشتی و پردازش بازپرداخت را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "مسح التسليم يوضح التسليم، لكنه لا يوضح حالة السلعة المعادة ولا معالجة الاسترداد." },
+                { "language": "tr", "text": "Teslimat taraması teslimatı açıklar, fakat iade edilen ürünün durumunu ve iade işlemini açıklamaz." },
+                { "language": "ru", "text": "Скан доставки объясняет доставку, но не состояние возвращенного товара и не обработку возврата." },
+                { "language": "ckb", "text": "سکانی گەیاندن گەیاندن ڕوون دەکاتەوە، بەڵام دۆخی کاڵای گەڕاوە و چارەسەری گەڕاندنەوەی پارە ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Skana radestkirinê radestkirinê rave dike, lê rewşa tiştê vegerandî û pêvajoya vegerandina pere rave nake." },
+                { "language": "pl", "text": "Skan doręczenia wyjaśnia dostawę, ale nie stan zwróconego artykułu ani obsługę zwrotu." },
+                { "language": "ro", "text": "Scanarea livrării explică livrarea, dar nu starea articolului returnat și nici procesarea rambursării." },
+                { "language": "sq", "text": "Skanimi i dorëzimit shpjegon dorëzimin, por jo gjendjen e artikullit të kthyer dhe as përpunimin e rimbursimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort trennt Systemstatus, Sachverhalt und Zahlungsfrage sauber.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer cleanly separates system status, factual issue, and payment question." },
+                { "language": "fa", "text": "خوب است: پاسخ وضعیت سیستم، موضوع واقعی و مسئله پرداخت را تمیز از هم جدا می‌کند." },
+                { "language": "ar", "text": "جيد: تفصل الإجابة بوضوح بين حالة النظام والموضوع الفعلي ومسألة الدفع." },
+                { "language": "tr", "text": "İyi: yanıt sistem durumunu, fiili konuyu ve ödeme sorusunu temiz biçimde ayırır." },
+                { "language": "ru", "text": "Хорошо: ответ четко отделяет статус системы, фактический вопрос и платежный вопрос." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە دۆخی سیستەم، بابەتی ڕاستەقینە و پرسی پارەدان بە پاکی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv rewşa pergalê, mijara rast û pirsa dayînê baş ji hev vediqetîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź jasno oddziela status systemowy, stan faktyczny i kwestię płatności." },
+                { "language": "ro", "text": "Bine: răspunsul separă clar statutul sistemului, situația de fapt și întrebarea de plată." },
+                { "language": "sq", "text": "Mirë: përgjigjja ndan qartë statusin e sistemit, çështjen faktike dhe pyetjen e pagesës." }
+              ],
+              "explanationKey": "separate-issues"
+            },
+            {
+              "id": "system-is-wrong",
+              "text": "Dann ist Ihr System eben falsch. Bitte korrigieren Sie das und zahlen Sie den Betrag aus.",
+              "translations": [
+                { "language": "en", "text": "Then your system is simply wrong. Please correct it and pay out the amount." },
+                { "language": "fa", "text": "پس سیستم شما اشتباه است. لطفاً آن را اصلاح کنید و مبلغ را پرداخت کنید." },
+                { "language": "ar", "text": "إذن نظامكم ببساطة خاطئ. من فضلكم صححوا ذلك وادفعوا المبلغ." },
+                { "language": "tr", "text": "O zaman sisteminiz yanlış. Lütfen bunu düzeltin ve tutarı ödeyin." },
+                { "language": "ru", "text": "Значит, ваша система просто неверна. Пожалуйста, исправьте это и выплатите сумму." },
+                { "language": "ckb", "text": "کەواتە سیستەمەکەتان هەڵەیە. تکایە ئەمە ڕاست بکەنەوە و بڕە پارەکە بدەن." },
+                { "language": "kmr", "text": "Wê demê pergala we şaş e. Ji kerema xwe vê rast bikin û mîqdarê bidin." },
+                { "language": "pl", "text": "W takim razie Państwa system jest po prostu błędny. Proszę to poprawić i wypłacić kwotę." },
+                { "language": "ro", "text": "Atunci sistemul dumneavoastră este pur și simplu greșit. Vă rog să îl corectați și să achitați suma." },
+                { "language": "sq", "text": "Atëherë sistemi juaj është thjesht gabim. Ju lutem korrigjojeni dhe paguani shumën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu sprunghaft: Die Antwort fordert ein Ergebnis, ohne die strittigen Prüfpunkte sauber zu trennen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too abrupt: the answer demands an outcome without cleanly separating the disputed review points." },
+                { "language": "fa", "text": "زیادی ناگهانی است: پاسخ نتیجه می‌خواهد، بدون اینکه نقاط بررسی مورد اختلاف را تمیز جدا کند." },
+                { "language": "ar", "text": "متسرعة أكثر من اللازم: تطلب الإجابة نتيجة من دون فصل نقاط الفحص المختلف عليها بوضوح." },
+                { "language": "tr", "text": "Fazla ani: yanıt sonucu talep eder, ama tartışmalı inceleme noktalarını net ayırmaz." },
+                { "language": "ru", "text": "Слишком резко: ответ требует результата, не отделяя спорные пункты проверки." },
+                { "language": "ckb", "text": "زۆر پەلەییە: وەڵامەکە ئەنجام داوا دەکات، بەبێ ئەوەی خاڵە جێناکۆکەکانی پشکنین بە پاکی جیا بکاتەوە." },
+                { "language": "kmr", "text": "Pir bilez e: bersiv encam dixwaze, bê ku xalên kontrolê yên nakokî baş ji hev veqetîne." },
+                { "language": "pl", "text": "Zbyt gwałtownie: odpowiedź żąda wyniku, nie oddzielając jasno spornych punktów kontroli." },
+                { "language": "ro", "text": "Prea brusc: răspunsul cere un rezultat fără să separe clar punctele de verificare disputate." },
+                { "language": "sq", "text": "Shumë e menjëhershme: përgjigjja kërkon rezultat pa ndarë qartë pikat e diskutueshme të shqyrtimit." }
+              ],
+              "explanationKey": "avoid-jumping-to-result"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "review-written-answer-deadline",
+              "text": "Ich bitte um eine Prüfung durch das Beschwerdemanagement, eine schriftliche Antwort zu den drei offenen Punkten und eine realistische Rückmeldung innerhalb von zehn Werktagen.",
+              "translations": [
+                { "language": "en", "text": "I am asking for a review by complaint management, a written response to the three open points, and a realistic update within ten business days." },
+                { "language": "fa", "text": "درخواست بررسی توسط بخش رسیدگی به شکایات، پاسخ کتبی به سه نکته باز و بازخورد واقع‌بینانه ظرف ده روز کاری دارم." },
+                { "language": "ar", "text": "أطلب فحصاً من إدارة الشكاوى ورداً مكتوباً على النقاط الثلاث المفتوحة وتحديثاً واقعياً خلال عشرة أيام عمل." },
+                { "language": "tr", "text": "Şikayet yönetimi tarafından inceleme, üç açık noktaya yazılı yanıt ve on iş günü içinde gerçekçi geri bildirim rica ediyorum." },
+                { "language": "ru", "text": "Я прошу проверку отделом жалоб, письменный ответ по трем открытым пунктам и реалистичную обратную связь в течение десяти рабочих дней." },
+                { "language": "ckb", "text": "داوای پشکنین لەلایەن بەڕێوەبردنی سکاڵاکان، وەڵامی نووسراو بۆ سێ خاڵە کراوەکە و ئاگاداریی ڕاستەقینە لە ماوەی دە ڕۆژی کاری دەکەم." },
+                { "language": "kmr", "text": "Ez daxwaza kontrolê ji aliyê rêveberiya giliyan, bersiva nivîskî ji bo sê xalên vekirî û agahdariya rast di nav deh rojên kar de dikim." },
+                { "language": "pl", "text": "Proszę o ocenę przez dział reklamacji, pisemną odpowiedź na trzy otwarte punkty i realistyczną informację w ciągu dziesięciu dni roboczych." },
+                { "language": "ro", "text": "Solicit o verificare de către managementul reclamațiilor, un răspuns scris la cele trei puncte deschise și o informare realistă în zece zile lucrătoare." },
+                { "language": "sq", "text": "Kërkoj shqyrtim nga menaxhimi i ankesave, përgjigje me shkrim për tri pikat e hapura dhe njoftim realist brenda dhjetë ditëve pune." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fordert nicht sofort ein Ergebnis, sondern einen nachvollziehbaren Prüfprozess.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer does not demand an immediate outcome, but a traceable review process." },
+                { "language": "fa", "text": "خوب است: پاسخ نتیجه فوری نمی‌خواهد، بلکه فرایند بررسی قابل پیگیری می‌خواهد." },
+                { "language": "ar", "text": "جيد: لا تطلب الإجابة نتيجة فورية، بل عملية فحص قابلة للتتبع." },
+                { "language": "tr", "text": "İyi: yanıt hemen sonuç istemez, izlenebilir bir inceleme süreci ister." },
+                { "language": "ru", "text": "Хорошо: ответ требует не немедленного результата, а прослеживаемого процесса проверки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ئەنجامی دەستبەجێ داوا ناکات، بەڵکوو پڕۆسەی پشکنینی شوێنپێهەڵگیراو دەخوازێت." },
+                { "language": "kmr", "text": "Baş e: bersiv encama tavilê naxwaze, lê pêvajoya kontrolê ya şopbar dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nie żąda natychmiastowego wyniku, lecz możliwego do prześledzenia procesu kontroli." },
+                { "language": "ro", "text": "Bine: răspunsul nu cere un rezultat imediat, ci un proces de verificare trasabil." },
+                { "language": "sq", "text": "Mirë: përgjigjja nuk kërkon rezultat të menjëhershëm, por një proces shqyrtimi të gjurmueshëm." }
+              ],
+              "explanationKey": "request-process-not-instant-outcome"
+            },
+            {
+              "id": "immediate-refund-demand",
+              "text": "Der Eskalationsweg ist für mich einfach: Ich möchte heute die Rückerstattung bestätigt bekommen.",
+              "translations": [
+                { "language": "en", "text": "The escalation path is simple for me: I want the refund confirmed today." },
+                { "language": "fa", "text": "مسیر پیگیری برای من ساده است: می‌خواهم امروز بازپرداخت تأیید شود." },
+                { "language": "ar", "text": "مسار التصعيد بالنسبة لي بسيط: أريد تأكيد الاسترداد اليوم." },
+                { "language": "tr", "text": "Benim için üst inceleme yolu basit: iadenin bugün onaylanmasını istiyorum." },
+                { "language": "ru", "text": "Для меня путь эскалации прост: я хочу получить подтверждение возврата сегодня." },
+                { "language": "ckb", "text": "ڕێگای بەرزکردنەوە بۆ من سادەیە: دەمەوێت ئەمڕۆ گەڕاندنەوەی پارە پشتڕاست بکرێتەوە." },
+                { "language": "kmr", "text": "Rêya derxistinê ji bo min hêsan e: ez dixwazim vegerandina pere îro were pejirandin." },
+                { "language": "pl", "text": "Ścieżka eskalacji jest dla mnie prosta: chcę dziś otrzymać potwierdzenie zwrotu." },
+                { "language": "ro", "text": "Calea de escaladare este simplă pentru mine: vreau confirmarea rambursării astăzi." },
+                { "language": "sq", "text": "Rruga e eskalimit për mua është e thjeshtë: dua konfirmimin e rimbursimit sot." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu eng: Die Antwort fordert nur das Wunschergebnis und lässt Belege, Prüffragen und Antwortfrist aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too narrow: the answer only demands the desired outcome and leaves out evidence, review questions, and response timeframe." },
+                { "language": "fa", "text": "زیادی محدود است: پاسخ فقط نتیجه مطلوب را می‌خواهد و مدارک، پرسش‌های بررسی و مهلت پاسخ را حذف می‌کند." },
+                { "language": "ar", "text": "ضيقة جداً: تطلب الإجابة النتيجة المطلوبة فقط وتحذف الأدلة وأسئلة الفحص ومهلة الرد." },
+                { "language": "tr", "text": "Fazla dar: yanıt yalnızca istenen sonucu talep eder; kanıtları, inceleme sorularını ve yanıt süresini dışarıda bırakır." },
+                { "language": "ru", "text": "Слишком узко: ответ требует только желаемый результат и пропускает доказательства, вопросы проверки и срок ответа." },
+                { "language": "ckb", "text": "زۆر تەسکە: وەڵامەکە تەنها ئەنجامی خوازراو داوا دەکات و بەڵگە، پرسیارەکانی پشکنین و مۆڵەتی وەڵام دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Pir teng e: bersiv tenê encama xwestî dixwaze û belge, pirsên kontrolê û dema bersivê derdixe." },
+                { "language": "pl", "text": "Zbyt wąsko: odpowiedź żąda tylko pożądanego wyniku i pomija dowody, pytania kontrolne oraz termin odpowiedzi." },
+                { "language": "ro", "text": "Prea îngust: răspunsul cere doar rezultatul dorit și omite dovezile, întrebările de verificare și termenul de răspuns." },
+                { "language": "sq", "text": "Shumë e ngushtë: përgjigjja kërkon vetëm rezultatin e dëshiruar dhe lë jashtë provat, pyetjet e shqyrtimit dhe afatin e përgjigjes." }
+              ],
+              "explanationKey": "avoid-result-only-request"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "neutral-external-process",
+              "text": "Zunächst möchte ich eine interne Abschlussposition. Falls die Beschwerde danach nicht gelöst ist, wäre für mich nur wichtig zu wissen, welcher anerkannte weitere Prozessweg vorgesehen ist.",
+              "translations": [
+                { "language": "en", "text": "First, I would like an internal final position. If the complaint is not resolved after that, I only need to know which recognized further process path is provided." },
+                { "language": "fa", "text": "ابتدا می‌خواهم موضع نهایی داخلی را داشته باشم. اگر بعد از آن شکایت حل نشد، فقط باید بدانم چه مسیر فرایندی شناخته‌شده‌ای وجود دارد." },
+                { "language": "ar", "text": "أولاً أود الحصول على موقف نهائي داخلي. إذا لم تُحل الشكوى بعد ذلك، فأحتاج فقط إلى معرفة المسار الإجرائي المعترف به بعد ذلك." },
+                { "language": "tr", "text": "Önce iç nihai pozisyonu almak istiyorum. Şikayet bundan sonra çözülmezse, yalnızca hangi tanınmış sonraki süreç yolunun olduğunu bilmem gerekir." },
+                { "language": "ru", "text": "Сначала я хотел бы получить внутреннюю итоговую позицию. Если после этого жалоба не будет решена, мне нужно лишь знать, какой признанный дальнейший процесс предусмотрен." },
+                { "language": "ckb", "text": "سەرەتا دەمەوێت هەڵوێستی کۆتاییی ناوخۆیی وەربگرم. ئەگەر دوای ئەوە سکاڵاکە چارەسەر نەبوو، تەنها پێویستمە بزانم کام ڕێگای پڕۆسەی ناسراوی دواتر هەیە." },
+                { "language": "kmr", "text": "Pêşî ez dixwazim helwesta dawî ya hundirî bistînim. Ger gilî piştî wê çareser nebe, tenê divê ez bizanim kîjan rêya pêvajoya din a naskirî heye." },
+                { "language": "pl", "text": "Najpierw chciałbym otrzymać wewnętrzne stanowisko końcowe. Jeśli skarga potem nie zostanie rozwiązana, muszę tylko wiedzieć, jaka uznana dalsza ścieżka procesu jest przewidziana." },
+                { "language": "ro", "text": "Mai întâi aș dori o poziție finală internă. Dacă reclamația nu se rezolvă după aceea, trebuie doar să știu ce cale procedurală recunoscută este prevăzută." },
+                { "language": "sq", "text": "Fillimisht dua një qëndrim përfundimtar të brendshëm. Nëse ankesa nuk zgjidhet pas kësaj, më duhet vetëm të di cili rrugëtim i njohur i mëtejshëm është parashikuar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort erwähnt externe Wege nur als spätere Prozessinformation, nicht als Druckmittel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer mentions external routes only as later process information, not as pressure." },
+                { "language": "fa", "text": "خوب است: پاسخ مسیرهای بیرونی را فقط به‌عنوان اطلاعات فرایندی بعدی مطرح می‌کند، نه ابزار فشار." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة المسارات الخارجية فقط كمعلومة إجرائية لاحقة، لا كوسيلة ضغط." },
+                { "language": "tr", "text": "İyi: yanıt dış yolları yalnızca sonraki süreç bilgisi olarak anar, baskı aracı olarak değil." },
+                { "language": "ru", "text": "Хорошо: ответ упоминает внешние пути только как дальнейшую процессную информацию, а не как средство давления." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ڕێگا دەرەکییەکان تەنها وەک زانیاری پڕۆسەی دواتر دەهێنێت، نە وەک ئامرازی فشار." },
+                { "language": "kmr", "text": "Baş e: bersiv rêyên derveyî tenê wekî agahdariya pêvajoya paşê tîne, ne wekî amûra zextê." },
+                { "language": "pl", "text": "Dobrze: odpowiedź wspomina ścieżki zewnętrzne tylko jako późniejszą informację procesową, nie jako nacisk." },
+                { "language": "ro", "text": "Bine: răspunsul menționează căile externe doar ca informație procedurală ulterioară, nu ca presiune." },
+                { "language": "sq", "text": "Mirë: përgjigjja i përmend rrugët e jashtme vetëm si informacion të mëvonshëm procesi, jo si presion." }
+              ],
+              "explanationKey": "external-route-neutral"
+            },
+            {
+              "id": "external-threat",
+              "text": "Wenn Sie das nicht lösen, gehe ich direkt zur Verbraucherberatung. Das sollten Sie lieber vermeiden.",
+              "translations": [
+                { "language": "en", "text": "If you do not solve this, I will go straight to consumer advice. You should better avoid that." },
+                { "language": "fa", "text": "اگر این را حل نکنید، مستقیم به مشاوره مصرف‌کننده می‌روم. بهتر است از این جلوگیری کنید." },
+                { "language": "ar", "text": "إذا لم تحلوا هذا، فسأذهب مباشرة إلى جهة استشارة المستهلك. من الأفضل أن تتجنبوا ذلك." },
+                { "language": "tr", "text": "Bunu çözmezseniz doğrudan tüketici danışmanlığına giderim. Bunu önlemeniz daha iyi olur." },
+                { "language": "ru", "text": "Если вы это не решите, я сразу обращусь в консультацию для потребителей. Вам лучше этого избежать." },
+                { "language": "ckb", "text": "ئەگەر ئەمە چارەسەر نەکەن، ڕاستەوخۆ دەچمە ڕاوێژکاریی بەکارهێنەر. باشترە ئەمە ڕێگری بکەن." },
+                { "language": "kmr", "text": "Ger hûn vê çareser nekin, ez rasterast diçim şêwirmendiya xerîdar. Baş e hûn vê asteng bikin." },
+                { "language": "pl", "text": "Jeśli Państwo tego nie rozwiążą, pójdę od razu do doradztwa konsumenckiego. Lepiej tego uniknąć." },
+                { "language": "ro", "text": "Dacă nu rezolvați acest lucru, merg direct la consilierea consumatorilor. Ar fi mai bine să evitați asta." },
+                { "language": "sq", "text": "Nëse nuk e zgjidhni këtë, do të shkoj direkt te këshillimi i konsumatorëve. Më mirë ta shmangni këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu drohend: Die Antwort kann die Gesprächsatmosphäre verschlechtern und ersetzt keine interne Abschlussklärung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too threatening: the answer can worsen the tone of the conversation and does not replace internal final clarification." },
+                { "language": "fa", "text": "زیادی تهدیدآمیز است: پاسخ می‌تواند فضای گفتگو را بدتر کند و جای روشن‌سازی نهایی داخلی را نمی‌گیرد." },
+                { "language": "ar", "text": "تهديدية أكثر من اللازم: قد تسوء أجواء الحديث ولا تغني عن التوضيح النهائي الداخلي." },
+                { "language": "tr", "text": "Fazla tehditkar: yanıt konuşma atmosferini kötüleştirebilir ve iç nihai açıklamanın yerini tutmaz." },
+                { "language": "ru", "text": "Слишком угрожающе: ответ может ухудшить атмосферу разговора и не заменяет внутреннее итоговое уточнение." },
+                { "language": "ckb", "text": "زۆر هەڕەشەئامێزە: وەڵامەکە دەتوانێت کەشی گفتوگۆ خراپ بکات و جێی ڕوونکردنەوەی کۆتاییی ناوخۆیی ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir tehdîdkar e: bersiv dikare atmosferê xirab bike û cihê zelalkirina dawî ya hundirî nagire." },
+                { "language": "pl", "text": "Zbyt grożąco: odpowiedź może pogorszyć atmosferę rozmowy i nie zastępuje wewnętrznego końcowego wyjaśnienia." },
+                { "language": "ro", "text": "Prea amenințător: răspunsul poate înrăutăți atmosfera conversației și nu înlocuiește clarificarea finală internă." },
+                { "language": "sq", "text": "Shumë kërcënuese: përgjigjja mund ta përkeqësojë atmosferën e bisedës dhe nuk zëvendëson sqarimin përfundimtar të brendshëm." }
+              ],
+              "explanationKey": "avoid-external-threat"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "precise-final-summary",
+              "text": "Ich lade die Unterlagen heute hoch, Ihr Beschwerdemanagement prüft Lieferung, Artikelzustand und Rückerstattung getrennt, und ich erhalte innerhalb von zehn Werktagen eine schriftliche Antwort mit Begründung.",
+              "translations": [
+                { "language": "en", "text": "I will upload the documents today, your complaint management will review delivery, item condition, and refund separately, and I will receive a written response with reasons within ten business days." },
+                { "language": "fa", "text": "امروز مدارک را بارگذاری می‌کنم، بخش رسیدگی به شکایات شما تحویل، وضعیت کالا و بازپرداخت را جداگانه بررسی می‌کند، و ظرف ده روز کاری پاسخ کتبی همراه با دلیل دریافت می‌کنم." },
+                { "language": "ar", "text": "سأرفع المستندات اليوم، وستفحص إدارة الشكاوى لديكم التسليم وحالة السلعة والاسترداد بشكل منفصل، وسأتلقى رداً مكتوباً مع التبرير خلال عشرة أيام عمل." },
+                { "language": "tr", "text": "Belgeleri bugün yükleyeceğim, şikayet yönetiminiz teslimatı, ürün durumunu ve iadeyi ayrı ayrı inceleyecek, ben de on iş günü içinde gerekçeli yazılı yanıt alacağım." },
+                { "language": "ru", "text": "Сегодня я загружу документы, ваш отдел жалоб отдельно проверит доставку, состояние товара и возврат, а в течение десяти рабочих дней я получу письменный ответ с обоснованием." },
+                { "language": "ckb", "text": "ئەمڕۆ بەڵگەکان بار دەکەم، بەڕێوەبردنی سکاڵاکانتان گەیاندن، دۆخی کاڵا و گەڕاندنەوەی پارە جیاجیا دەپشکنێت، و لە ماوەی دە ڕۆژی کاری وەڵامی نووسراو بە پاساو وەردەگرم." },
+                { "language": "kmr", "text": "Ez îro belgeyan bar dikim, rêveberiya giliyên we radestkirin, rewşa tiştê û vegerandina pere cuda kontrol dike, û ez di nav deh rojên kar de bersiveke nivîskî bi hincet distînim." },
+                { "language": "pl", "text": "Dziś prześlę dokumenty, Państwa dział reklamacji osobno sprawdzi dostawę, stan artykułu i zwrot, a w ciągu dziesięciu dni roboczych otrzymam pisemną odpowiedź z uzasadnieniem." },
+                { "language": "ro", "text": "Încarc documentele astăzi, managementul reclamațiilor verifică separat livrarea, starea articolului și rambursarea, iar în termen de zece zile lucrătoare primesc un răspuns scris motivat." },
+                { "language": "sq", "text": "Dokumentet i ngarkoj sot, menaxhimi juaj i ankesave shqyrton veçmas dorëzimin, gjendjen e artikullit dhe rimbursimin, dhe brenda dhjetë ditëve pune marr përgjigje me shkrim me arsyetim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Zusammenfassung hält Aufgaben, Prüfumfang, Frist und Antwortform fest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the summary records tasks, review scope, deadline, and response format." },
+                { "language": "fa", "text": "خوب است: خلاصه وظایف، محدوده بررسی، مهلت و شکل پاسخ را ثبت می‌کند." },
+                { "language": "ar", "text": "جيد: يسجل الملخص المهام ونطاق الفحص والمهلة وشكل الرد." },
+                { "language": "tr", "text": "İyi: özet görevleri, inceleme kapsamını, süreyi ve yanıt biçimini kayda geçirir." },
+                { "language": "ru", "text": "Хорошо: резюме фиксирует задачи, объем проверки, срок и форму ответа." },
+                { "language": "ckb", "text": "باشە: پوختەکە ئەرکەکان، سنووری پشکنین، مۆڵەت و شێوەی وەڵام تۆمار دەکات." },
+                { "language": "kmr", "text": "Baş e: kurtasî erk, qada kontrolê, dem û forma bersivê tomar dike." },
+                { "language": "pl", "text": "Dobrze: podsumowanie zapisuje zadania, zakres oceny, termin i formę odpowiedzi." },
+                { "language": "ro", "text": "Bine: rezumatul fixează sarcinile, domeniul verificării, termenul și forma răspunsului." },
+                { "language": "sq", "text": "Mirë: përmbledhja fikson detyrat, fushën e shqyrtimit, afatin dhe formën e përgjigjes." }
+              ],
+              "explanationKey": "close-with-file-ready-summary"
+            },
+            {
+              "id": "vague-hope-close",
+              "text": "Gut, dann hoffe ich, dass Sie das jetzt intern klären und mir bald Bescheid geben.",
+              "translations": [
+                { "language": "en", "text": "Good, then I hope you will clarify this internally now and let me know soon." },
+                { "language": "fa", "text": "خوب، پس امیدوارم این را حالا داخلی روشن کنید و به‌زودی خبر بدهید." },
+                { "language": "ar", "text": "حسناً، آمل إذن أن توضحوا هذا داخلياً الآن وتخبروني قريباً." },
+                { "language": "tr", "text": "Peki, o zaman bunu şimdi içeride netleştirmenizi ve bana yakında bilgi vermenizi umuyorum." },
+                { "language": "ru", "text": "Хорошо, тогда надеюсь, что вы теперь уточните это внутри компании и скоро сообщите мне." },
+                { "language": "ckb", "text": "باشە، کەواتە هیوادارم ئێستا ئەمە ناوخۆیی ڕوون بکەنەوە و بەم زووانە ئاگادارم بکەنەوە." },
+                { "language": "kmr", "text": "Baş e, wê demê ez hêvî dikim hûn vê niha di hundir de zelal bikin û zû min agahdar bikin." },
+                { "language": "pl", "text": "Dobrze, mam więc nadzieję, że wyjaśnią to Państwo teraz wewnętrznie i wkrótce dadzą mi znać." },
+                { "language": "ro", "text": "Bine, atunci sper să clarificați acest lucru intern acum și să mă anunțați curând." },
+                { "language": "sq", "text": "Mirë, atëherë shpresoj ta sqaroni këtë tani brenda kompanisë dhe të më njoftoni së shpejti." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Die Antwort klingt höflich, sichert aber weder Prüfumfang noch Frist noch schriftliche Begründung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: the answer sounds polite, but secures neither review scope, timeframe, nor written reasoning." },
+                { "language": "fa", "text": "زیادی مبهم است: پاسخ مودبانه به نظر می‌رسد، اما نه محدوده بررسی، نه مهلت و نه دلیل کتبی را تضمین می‌کند." },
+                { "language": "ar", "text": "غامضة جداً: تبدو الإجابة مهذبة، لكنها لا تؤمن لا نطاق الفحص ولا المهلة ولا التبرير المكتوب." },
+                { "language": "tr", "text": "Fazla belirsiz: yanıt kibar duyulur, ama ne inceleme kapsamını ne süreyi ne de yazılı gerekçeyi güvenceye alır." },
+                { "language": "ru", "text": "Слишком расплывчато: ответ звучит вежливо, но не закрепляет ни объем проверки, ни срок, ни письменное обоснование." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: وەڵامەکە مودەب دەنگ دەدات، بەڵام نە سنووری پشکنین، نە مۆڵەت و نە پاساوی نووسراو دڵنیاناکاتەوە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv bi edeb xuya dike, lê ne qada kontrolê, ne dem û ne hinceta nivîskî ewle nake." },
+                { "language": "pl", "text": "Zbyt niejasno: odpowiedź brzmi uprzejmie, ale nie zabezpiecza ani zakresu oceny, ani terminu, ani pisemnego uzasadnienia." },
+                { "language": "ro", "text": "Prea vag: răspunsul sună politicos, dar nu asigură nici domeniul verificării, nici termenul, nici justificarea scrisă." },
+                { "language": "sq", "text": "Shumë e paqartë: përgjigjja tingëllon e sjellshme, por nuk siguron as fushën e shqyrtimit, as afatin, as arsyetimin me shkrim." }
+              ],
+              "explanationKey": "avoid-vague-closing"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "opening-note",
+          "text": "Eine starke Eskalation beginnt nicht mit Druck, sondern mit einem klaren Prozessziel und überprüfbaren offenen Punkten.",
+          "translations": [
+            { "language": "en", "text": "A strong escalation does not begin with pressure, but with a clear process goal and verifiable open points." },
+            { "language": "fa", "text": "پیگیری رسمی قوی با فشار شروع نمی‌شود، بلکه با هدف فرایندی روشن و نکات باز قابل بررسی شروع می‌شود." },
+            { "language": "ar", "text": "لا يبدأ التصعيد القوي بالضغط، بل بهدف إجرائي واضح ونقاط مفتوحة قابلة للفحص." },
+            { "language": "tr", "text": "Güçlü bir eskalasyon baskıyla değil, net bir süreç hedefi ve denetlenebilir açık noktalarla başlar." },
+            { "language": "ru", "text": "Сильная эскалация начинается не с давления, а с ясной процессной цели и проверяемых открытых пунктов." },
+            { "language": "ckb", "text": "بەرزکردنەوەی بەهێز بە فشار دەست پێناکات، بەڵکوو بە ئامانجی پڕۆسەی ڕوون و خاڵە کراوەی پشکنراو دەست پێدەکات." },
+            { "language": "kmr", "text": "Derxistineke xurt bi zextê dest pê nake, lê bi armanceke pêvajoyê ya zelal û xalên vekirî yên kontrolbar dest pê dike." },
+            { "language": "pl", "text": "Mocna eskalacja nie zaczyna się od nacisku, lecz od jasnego celu procesowego i sprawdzalnych otwartych punktów." },
+            { "language": "ro", "text": "O escaladare puternică nu începe cu presiune, ci cu un obiectiv procedural clar și puncte deschise verificabile." },
+            { "language": "sq", "text": "Një eskalim i fortë nuk fillon me presion, por me një qëllim të qartë procesi dhe pika të hapura të verifikueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence-note",
+          "text": "Auf C1-Niveau reicht es nicht, auf Unterlagen zu verweisen; sie müssen nach Funktion geordnet werden.",
+          "translations": [
+            { "language": "en", "text": "At C1 level, it is not sufficient to refer to documents; they must be organized by function." },
+            { "language": "fa", "text": "در سطح C1، اشاره به مدارک کافی نیست؛ باید بر اساس کارکرد مرتب شوند." },
+            { "language": "ar", "text": "في مستوى C1 لا يكفي الإشارة إلى المستندات؛ يجب ترتيبها حسب وظيفتها." },
+            { "language": "tr", "text": "C1 düzeyinde belgelere işaret etmek yeterli değildir; işlevlerine göre düzenlenmeleri gerekir." },
+            { "language": "ru", "text": "На уровне C1 недостаточно сослаться на документы; их нужно упорядочить по функции." },
+            { "language": "ckb", "text": "لە ئاستی C1دا ئاماژەکردن بە بەڵگەکان بەس نییە؛ دەبێت بە پێی ئەرک ڕێک بخرێن." },
+            { "language": "kmr", "text": "Di asta C1 de tenê gotina belgeyan têr nake; divê li gorî erkê bên rêzkirin." },
+            { "language": "pl", "text": "Na poziomie C1 samo odwołanie się do dokumentów nie wystarcza; trzeba je uporządkować według funkcji." },
+            { "language": "ro", "text": "La nivel C1 nu este suficient să faceți trimitere la documente; ele trebuie ordonate după funcție." },
+            { "language": "sq", "text": "Në nivelin C1 nuk mjafton t'u referohesh dokumenteve; ato duhet të renditen sipas funksionit." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "separation-note",
+          "text": "Der entscheidende Schritt ist die Trennung von Lieferstatus, Artikelzustand und Erstattungsprozess.",
+          "translations": [
+            { "language": "en", "text": "The decisive step is separating delivery status, item condition, and refund process." },
+            { "language": "fa", "text": "قدم تعیین‌کننده جدا کردن وضعیت تحویل، وضعیت کالا و فرایند بازپرداخت است." },
+            { "language": "ar", "text": "الخطوة الحاسمة هي فصل حالة التسليم وحالة السلعة وعملية الاسترداد." },
+            { "language": "tr", "text": "Belirleyici adım teslimat durumunu, ürün durumunu ve iade sürecini ayırmaktır." },
+            { "language": "ru", "text": "Решающий шаг — отделить статус доставки, состояние товара и процесс возврата." },
+            { "language": "ckb", "text": "هەنگاوی یەکلاکەرەوە جیاکردنەوەی دۆخی گەیاندن، دۆخی کاڵا و پڕۆسەی گەڕاندنەوەی پارەیە." },
+            { "language": "kmr", "text": "Gava diyarker veqetandina rewşa radestkirinê, rewşa tiştê û pêvajoya vegerandina pere ye." },
+            { "language": "pl", "text": "Kluczowy krok to oddzielenie statusu dostawy, stanu artykułu i procesu zwrotu." },
+            { "language": "ro", "text": "Pasul decisiv este separarea statutului livrării, a stării articolului și a procesului de rambursare." },
+            { "language": "sq", "text": "Hapi vendimtar është ndarja e statusit të dorëzimit, gjendjes së artikullit dhe procesit të rimbursimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "process-note",
+          "text": "Eine realistische Frist und eine schriftliche Begründung machen die Beschwerde nachverfolgbar.",
+          "translations": [
+            { "language": "en", "text": "A realistic timeframe and written reasoning make the complaint traceable." },
+            { "language": "fa", "text": "مهلت واقع‌بینانه و دلیل کتبی، شکایت را قابل پیگیری می‌کند." },
+            { "language": "ar", "text": "المهلة الواقعية والتبرير المكتوب يجعلان الشكوى قابلة للتتبع." },
+            { "language": "tr", "text": "Gerçekçi bir süre ve yazılı gerekçe şikayeti izlenebilir kılar." },
+            { "language": "ru", "text": "Реалистичный срок и письменное обоснование делают жалобу отслеживаемой." },
+            { "language": "ckb", "text": "مۆڵەتی ڕاستەقینە و پاساوی نووسراو سکاڵاکە شوێنپێهەڵگیراو دەکات." },
+            { "language": "kmr", "text": "Demeke rast û hinceta nivîskî gilîkirinê şopbar dike." },
+            { "language": "pl", "text": "Realistyczny termin i pisemne uzasadnienie czynią skargę możliwą do śledzenia." },
+            { "language": "ro", "text": "Un termen realist și o justificare scrisă fac reclamația trasabilă." },
+            { "language": "sq", "text": "Një afat realist dhe arsyetim me shkrim e bëjnë ankesën të gjurmueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing-note",
+          "text": "Eine C1-Zusammenfassung sichert nicht nur das Ergebnis, sondern auch Zuständigkeit, Prüfumfang und Antwortform.",
+          "translations": [
+            { "language": "en", "text": "A C1-level summary secures not only the outcome, but also responsibility, review scope, and response format." },
+            { "language": "fa", "text": "خلاصه سطح C1 فقط نتیجه را تضمین نمی‌کند، بلکه مسئولیت، محدوده بررسی و شکل پاسخ را هم مشخص می‌کند." },
+            { "language": "ar", "text": "ملخص مستوى C1 لا يؤمن النتيجة فقط، بل أيضاً المسؤولية ونطاق الفحص وشكل الرد." },
+            { "language": "tr", "text": "C1 düzeyinde bir özet yalnızca sonucu değil, sorumluluğu, inceleme kapsamını ve yanıt biçimini de güvenceye alır." },
+            { "language": "ru", "text": "Резюме уровня C1 закрепляет не только результат, но и ответственность, объем проверки и форму ответа." },
+            { "language": "ckb", "text": "پوختەی ئاستی C1 تەنها ئەنجام دڵنیا ناکاتەوە، بەڵکوو بەرپرسیارێتی، سنووری پشکنین و شێوەی وەڵامیش دیاری دەکات." },
+            { "language": "kmr", "text": "Kurtasiya asta C1 ne tenê encamê ewle dike, lê berpirsiyarî, qada kontrolê û forma bersivê jî diyar dike." },
+            { "language": "pl", "text": "Podsumowanie na poziomie C1 zabezpiecza nie tylko wynik, lecz także odpowiedzialność, zakres oceny i formę odpowiedzi." },
+            { "language": "ro", "text": "Un rezumat de nivel C1 asigură nu doar rezultatul, ci și responsabilitatea, domeniul verificării și forma răspunsului." },
+            { "language": "sq", "text": "Një përmbledhje e nivelit C1 siguron jo vetëm rezultatin, por edhe përgjegjësinë, fushën e shqyrtimit dhe formën e përgjigjes." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "consumer-complaint-escalation-documents",
+          "placement": "header",
+          "purpose": "Show a calm consumer-service phone call with organized evidence, complaint notes, and a written response path.",
+          "altText": "Eine neutrale Illustration eines sachlichen Beschwerdetelefonats mit geordneten Unterlagen, Fallnotiz und Upload-Link.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a factual complaint phone call with organized documents, case note, and upload link." },
+            { "language": "fa", "text": "تصویری بی‌طرف از تماس تلفنی شکایت با مدارک مرتب، یادداشت پرونده و لینک بارگذاری." },
+            { "language": "ar", "text": "رسم محايد لمكالمة شكوى موضوعية مع مستندات منظمة وملاحظة حالة ورابط رفع." },
+            { "language": "tr", "text": "Düzenli belgeler, dosya notu ve yükleme bağlantısı olan nesnel bir şikayet telefon görüşmesinin tarafsız illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация предметного звонка по жалобе с упорядоченными документами, заметкой по делу и ссылкой для загрузки." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە پەیوەندی تەلەفۆنی سکاڵای بابەتی بە بەڵگەی ڕێکخراو، تێبینی دۆسیە و بەستەری بارکردن." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya telefonê gilîkirinê ya rast bi belgeyên rêzkirî, notê dozê û girêdana barkirinê." },
+            { "language": "pl", "text": "Neutralna ilustracja rzeczowej rozmowy reklamacyjnej z uporządkowanymi dokumentami, notatką sprawy i linkiem do przesłania." },
+            { "language": "ro", "text": "O ilustrație neutră a unui apel factual de reclamație cu documente ordonate, notă de caz și link de încărcare." },
+            { "language": "sq", "text": "Një ilustrim neutral i një telefonate faktike ankese me dokumente të renditura, shënim rasti dhe lidhje ngarkimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, adult customer on a phone call with organized consumer complaint documents, generic upload link screen, case note and written response timeline shown as abstract blocks, calm professional mood, no readable private data, no logos, accessible composition, neutral German customer-service context.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

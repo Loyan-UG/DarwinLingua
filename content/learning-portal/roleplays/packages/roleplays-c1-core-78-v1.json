@@ -1,0 +1,816 @@
+{
+  "packageId": "roleplays-c1-core-78-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 78 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 78",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-ein-wissenschaftliches-thema-verstaendlich-erklaeren",
+      "linkedDialogueSlug": null,
+      "title": "Ein wissenschaftliches Thema verständlich erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a scientific topic clearly" },
+        { "language": "fa", "text": "توضیح روشن یک موضوع علمی" },
+        { "language": "ar", "text": "شرح موضوع علمي بوضوح" },
+        { "language": "tr", "text": "Bilimsel bir konuyu anlaşılır açıklamak" },
+        { "language": "ru", "text": "Понятное объяснение научной темы" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی بابەتێکی زانستی بە شێوەی تێگەیشتوو" },
+        { "language": "kmr", "text": "Ravekirina mijareke zanistî bi awayekî têgihiştî" },
+        { "language": "pl", "text": "Zrozumiałe wyjaśnienie tematu naukowego" },
+        { "language": "ro", "text": "Explicarea clară a unui subiect științific" },
+        { "language": "sq", "text": "Shpjegimi i qartë i një teme shkencore" }
+      ],
+      "description": "In einer formalen Prüfung erklären Sie für Nicht-Fachleute, warum eine Wettervorhersage etwas anderes ist als ein Klimamodell. Sie vereinfachen die Begriffe, ohne die wissenschaftliche Aussage zu verfälschen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a formal exam, you explain to non-specialists why a weather forecast is different from a climate model. You simplify the terms without distorting the scientific message." },
+        { "language": "fa", "text": "در یک آزمون رسمی برای افراد غیرمتخصص توضیح می‌دهید چرا پیش‌بینی هوا با مدل اقلیم فرق دارد. مفاهیم را ساده می‌کنید، بدون اینکه پیام علمی را تحریف کنید." },
+        { "language": "ar", "text": "في امتحان رسمي تشرح لغير المتخصصين لماذا تختلف نشرة الطقس عن نموذج المناخ. تبسط المصطلحات من دون تشويه الرسالة العلمية." },
+        { "language": "tr", "text": "Resmi bir sınavda uzman olmayanlara hava tahmininin iklim modelinden neden farklı olduğunu açıklarsınız. Terimleri bilimsel mesajı çarpıtmadan basitleştirirsiniz." },
+        { "language": "ru", "text": "На официальном экзамене Вы объясняете неспециалистам, почему прогноз погоды отличается от климатической модели. Вы упрощаете термины, не искажая научный смысл." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەیەکی فەرمیدا بۆ کەسانی نەپیشەیی ڕوون دەکەیتەوە بۆچی پێشبینی کەشوهەوا لە مۆدێلی ئاقلیم جیاوازە. چەمکەکان سادە دەکەیت بێ ئەوەی پەیامی زانستی بشێوێنیت." },
+        { "language": "kmr", "text": "Di azmûneke fermî de hûn ji kesên ne-pispor re rave dikin çima pêşbîniya hewayê ji modela avhewayê cuda ye. Hûn têgehan hêsan dikin bêyî ku peyama zanistî şaş bikin." },
+        { "language": "pl", "text": "Na formalnym egzaminie wyjaśnia Pan/Pani osobom niespecjalistycznym, dlaczego prognoza pogody różni się od modelu klimatycznego. Upraszcza Pan/Pani pojęcia, nie zniekształcając przekazu naukowego." },
+        { "language": "ro", "text": "Într-un examen formal explicați pentru nespecialiști de ce o prognoză meteo este diferită de un model climatic. Simplificați termenii fără să deformați mesajul științific." },
+        { "language": "sq", "text": "Në një provim formal u shpjegoni joprofesionistëve pse parashikimi i motit ndryshon nga modeli klimatik. I thjeshtoni termat pa shtrembëruar mesazhin shkencor." }
+      ],
+      "learnerGoal": "Ein wissenschaftliches Thema verständlich erklären: Fachbegriffe übersetzen, ein Alltagsbild nutzen, Grenzen der Erklärung nennen, eine Rückfrage aufgreifen und die Kernaussage präzise sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a scientific topic clearly: translate technical terms, use an everyday image, name the limits of the explanation, take up a follow-up question, and secure the core message precisely." },
+        { "language": "fa", "text": "یک موضوع علمی را روشن توضیح دهید: اصطلاحات تخصصی را ترجمه کنید، از تصویر روزمره استفاده کنید، محدودیت توضیح را نام ببرید، سؤال پیگیری را بگیرید و پیام اصلی را دقیق نگه دارید." },
+        { "language": "ar", "text": "اشرح موضوعاً علمياً بوضوح: ترجم المصطلحات المتخصصة، واستخدم صورة من الحياة اليومية، واذكر حدود الشرح، وتناول سؤال متابعة، وثبت الرسالة الأساسية بدقة." },
+        { "language": "tr", "text": "Bilimsel bir konuyu anlaşılır açıklayın: teknik terimleri çevirin, günlük bir imge kullanın, açıklamanın sınırlarını belirtin, takip sorusunu ele alın ve ana mesajı kesin biçimde güvenceye alın." },
+        { "language": "ru", "text": "Понятно объяснить научную тему: перевести специальные термины, использовать повседневный образ, назвать пределы объяснения, ответить на уточняющий вопрос и точно сохранить основную мысль." },
+        { "language": "ckb", "text": "بابەتێکی زانستی بە ڕوونی ڕوون بکەوە: زاراوە پیشەییەکان وەربگێڕە، وێنەیەکی ڕۆژانە بەکاربهێنە، سنووری ڕوونکردنەوەکە ناو ببە، پرسیاری بەدواداچوون وەربگرە و پەیامی سەرەکی بە وردی بپارێزە." },
+        { "language": "kmr", "text": "Mijareke zanistî bi zelalî rave bikin: peyvên pisporî vegerînin, wêneyeke rojane bikar bînin, sînorên ravekirinê nav bikin, pirseke şopandinê bigirin û peyama sereke bi hûrgilî biparêzin." },
+        { "language": "pl", "text": "Zrozumiale wyjaśnić temat naukowy: przełożyć terminy fachowe, użyć obrazu z życia codziennego, nazwać granice wyjaśnienia, podjąć pytanie uzupełniające i precyzyjnie zabezpieczyć główny przekaz." },
+        { "language": "ro", "text": "Explicați clar un subiect științific: traduceți termenii tehnici, folosiți o imagine din viața de zi cu zi, numiți limitele explicației, preluați o întrebare de urmărire și fixați precis mesajul central." },
+        { "language": "sq", "text": "Shpjegoni qartë një temë shkencore: përktheni termat teknikë, përdorni një figurë të përditshme, përmendni kufijtë e shpjegimit, merrni një pyetje ndjekëse dhe siguroni saktë mesazhin kryesor." }
+      ],
+      "cefrLevel": "C1",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "presentation-support"],
+      "taskType": "exam-roleplay",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 78,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Erklärende/r",
+          "translations": [
+            { "language": "en", "text": "Explainer" },
+            { "language": "fa", "text": "توضیح‌دهنده" },
+            { "language": "ar", "text": "الشارح" },
+            { "language": "tr", "text": "Açıklayan kişi" },
+            { "language": "ru", "text": "Объясняющий" },
+            { "language": "ckb", "text": "ڕوونکەرەوە" },
+            { "language": "kmr", "text": "Raveker" },
+            { "language": "pl", "text": "Osoba wyjaśniająca" },
+            { "language": "ro", "text": "Persoana care explică" },
+            { "language": "sq", "text": "Shpjeguesi" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Nachfragende/r",
+          "translations": [
+            { "language": "en", "text": "Questioner" },
+            { "language": "fa", "text": "پرسشگر" },
+            { "language": "ar", "text": "السائل" },
+            { "language": "tr", "text": "Soru soran kişi" },
+            { "language": "ru", "text": "Задающий вопрос" },
+            { "language": "ckb", "text": "پرسیارکەر" },
+            { "language": "kmr", "text": "Pirsker" },
+            { "language": "pl", "text": "Osoba dopytująca" },
+            { "language": "ro", "text": "Persoana care întreabă" },
+            { "language": "sq", "text": "Pyetësi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Ich verstehe den Unterschied nicht: Wenn man das Wetter für nächste Woche oft falsch vorhersagt, wie kann man dann das Klima in dreißig Jahren modellieren?",
+          "translations": [
+            { "language": "en", "text": "I do not understand the difference: if the weather for next week is often predicted incorrectly, how can one model the climate in thirty years?" },
+            { "language": "fa", "text": "تفاوت را نمی‌فهمم: اگر هوای هفته آینده را اغلب اشتباه پیش‌بینی می‌کنند، چطور می‌توان اقلیم سی سال آینده را مدل‌سازی کرد؟" },
+            { "language": "ar", "text": "لا أفهم الفرق: إذا كان الطقس للأسبوع القادم يتنبأ به كثيراً بشكل خاطئ، فكيف يمكن نمذجة المناخ بعد ثلاثين عاماً؟" },
+            { "language": "tr", "text": "Farkı anlamıyorum: gelecek haftanın havası sık sık yanlış tahmin ediliyorsa, otuz yıl sonraki iklim nasıl modellenebilir?" },
+            { "language": "ru", "text": "Я не понимаю разницы: если погоду на следующую неделю часто предсказывают неверно, как можно моделировать климат через тридцать лет?" },
+            { "language": "ckb", "text": "جیاوازییەکە تێناگەم: ئەگەر کەشوهەوای هەفتەی داهاتوو زۆرجار بە هەڵە پێشبینی دەکرێت، چۆن دەتوانرێت ئاقلیمی سی ساڵی داهاتوو مۆدێل بکرێت؟" },
+            { "language": "kmr", "text": "Ez cudahiyê fêm nakim: heke hewaya hefteya bê gelek caran şaş tê pêşbînîkirin, çawa mirov dikare avhewaya piştî sî salan model bike?" },
+            { "language": "pl", "text": "Nie rozumiem różnicy: jeśli pogodę na przyszły tydzień często przewiduje się błędnie, to jak można modelować klimat za trzydzieści lat?" },
+            { "language": "ro", "text": "Nu înțeleg diferența: dacă vremea pentru săptămâna viitoare este adesea prognozată greșit, cum se poate modela clima peste treizeci de ani?" },
+            { "language": "sq", "text": "Nuk e kuptoj ndryshimin: nëse moti për javën e ardhshme shpesh parashikohet gabim, si mund të modelohet klima pas tridhjetë vjetësh?" }
+          ],
+          "function": "ask-core-confusion",
+          "toneNote": "non-specialist question"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Der entscheidende Unterschied ist die Ebene der Aussage. Wetter meint konkrete Zustände an einem Ort und Tag; Klima meint Muster und Durchschnittswerte über lange Zeiträume.",
+          "translations": [
+            { "language": "en", "text": "The decisive difference is the level of the statement. Weather means concrete conditions at a place and on a day; climate means patterns and averages over long periods." },
+            { "language": "fa", "text": "تفاوت اصلی در سطحِ ادعاست. آب‌وهوا یعنی وضعیت‌های مشخص در یک مکان و یک روز؛ اقلیم یعنی الگوها و میانگین‌ها در دوره‌های طولانی." },
+            { "language": "ar", "text": "الفرق الحاسم هو مستوى العبارة. الطقس يعني حالات ملموسة في مكان ويوم معينين؛ أما المناخ فيعني الأنماط والمتوسطات على فترات طويلة." },
+            { "language": "tr", "text": "Belirleyici fark, ifadenin düzeyidir. Hava durumu belirli bir yer ve gündeki somut koşulları; iklim ise uzun dönemlerdeki örüntüleri ve ortalamaları ifade eder." },
+            { "language": "ru", "text": "Решающая разница заключается в уровне утверждения. Погода означает конкретные условия в одном месте и в один день; климат означает закономерности и средние значения за длительные периоды." },
+            { "language": "ckb", "text": "جیاوازییە سەرەکییەکە ئاستی قسەکەیە. کەشوهەوا واتە دۆخی دیاریکراو لە شوێن و ڕۆژێکدا؛ ئاقلیم واتە الگو و ناوەندەکان لە ماوەی درێژدا." },
+            { "language": "kmr", "text": "Cudahiyê biryarder asta gotinê ye. Hewa tê wateya rewşên konkret li cih û rojekê; avhewa tê wateya şablon û navînên di demên dirêj de." },
+            { "language": "pl", "text": "Decydująca różnica leży na poziomie wypowiedzi. Pogoda oznacza konkretne warunki w danym miejscu i dniu; klimat oznacza wzorce i średnie z długich okresów." },
+            { "language": "ro", "text": "Diferența decisivă este nivelul afirmației. Vremea înseamnă stări concrete într-un loc și într-o zi; clima înseamnă tipare și medii pe perioade lungi." },
+            { "language": "sq", "text": "Dallimi vendimtar është niveli i pohimit. Moti nënkupton gjendje konkrete në një vend dhe ditë; klima nënkupton modele dhe mesatare gjatë periudhave të gjata." }
+          ],
+          "function": "define-core-distinction",
+          "toneNote": "clear definition"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Können Sie dafür ein Bild verwenden, das nicht zu technisch klingt?",
+          "translations": [
+            { "language": "en", "text": "Can you use an image for that that does not sound too technical?" },
+            { "language": "fa", "text": "می‌توانید برای آن تصویری به کار ببرید که بیش از حد فنی به نظر نرسد؟" },
+            { "language": "ar", "text": "هل يمكنك استخدام صورة لذلك لا تبدو تقنية جداً؟" },
+            { "language": "tr", "text": "Bunun için fazla teknik duyulmayan bir imge kullanabilir misiniz?" },
+            { "language": "ru", "text": "Можете использовать для этого образ, который не звучит слишком технически?" },
+            { "language": "ckb", "text": "دەتوانیت بۆ ئەمە وێنەیەک بەکاربهێنیت کە زۆر تەکنیکی دەنگ نەدات؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji bo vê yekê wêneyekê bikar bînin ku pir teknîkî neyê bihîstin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani użyć do tego obrazu, który nie brzmi zbyt technicznie?" },
+            { "language": "ro", "text": "Puteți folosi pentru aceasta o imagine care să nu sune prea tehnic?" },
+            { "language": "sq", "text": "A mund të përdorni për këtë një figurë që të mos tingëllojë shumë teknike?" }
+          ],
+          "function": "ask-everyday-image",
+          "toneNote": "accessibility prompt"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Man kann es mit Verkehr vergleichen: Ich kann nicht sicher sagen, welches Auto morgen um acht Uhr vor meinem Haus steht. Trotzdem kann ich ziemlich gut beschreiben, wann eine Straße typischerweise voll ist.",
+          "translations": [
+            { "language": "en", "text": "One can compare it with traffic: I cannot say for sure which car will be in front of my house tomorrow at eight. Still, I can describe quite well when a street is typically crowded." },
+            { "language": "fa", "text": "می‌توان آن را با ترافیک مقایسه کرد: نمی‌توانم با قطعیت بگویم فردا ساعت هشت کدام ماشین جلوی خانه من است. با این حال می‌توانم نسبتاً خوب توضیح دهم یک خیابان معمولاً چه زمانی شلوغ است." },
+            { "language": "ar", "text": "يمكن مقارنته بالمرور: لا أستطيع أن أقول بثقة أي سيارة ستكون غداً الساعة الثامنة أمام بيتي. ومع ذلك أستطيع وصف متى يكون شارع ما مزدحماً عادة بشكل جيد." },
+            { "language": "tr", "text": "Bunu trafikle karşılaştırabiliriz: yarın saat sekizde evimin önünde hangi arabanın duracağını kesin söyleyemem. Yine de bir caddenin tipik olarak ne zaman dolu olduğunu oldukça iyi anlatabilirim." },
+            { "language": "ru", "text": "Это можно сравнить с движением: я не могу точно сказать, какая машина завтра в восемь будет стоять перед моим домом. Но я довольно хорошо могу описать, когда улица обычно заполнена." },
+            { "language": "ckb", "text": "دەتوانرێت بە هاتوچۆ بەراورد بکرێت: ناتوانم بە دڵنیایی بڵێم سبەی کاتژمێر هەشت کام ئۆتۆمبێل لە بەردەم ماڵم دەوەستێت. بەڵام دەتوانم زۆر باش ڕوون بکەمەوە کە شەقامێک بە شێوەی ئاسایی کەی قەرەباڵغە." },
+            { "language": "kmr", "text": "Mirov dikare wê bi trafîkê re berhev bike: ez nikarim bi ewlehî bibêjim sibê saet heşt kîjan erebe li ber mala min disekine. Lê ez dikarim baş rave bikim ka kolanek bi gelemperî kengî tije ye." },
+            { "language": "pl", "text": "Można porównać to do ruchu ulicznego: nie mogę pewnie powiedzieć, jaki samochód będzie jutro o ósmej przed moim domem. Mimo to potrafię dość dobrze opisać, kiedy ulica zwykle jest zatłoczona." },
+            { "language": "ro", "text": "Se poate compara cu traficul: nu pot spune sigur ce mașină va fi mâine la ora opt în fața casei mele. Totuși pot descrie destul de bine când o stradă este de obicei aglomerată." },
+            { "language": "sq", "text": "Mund ta krahasojmë me trafikun: nuk mund të them me siguri cila makinë do të jetë nesër në orën tetë para shtëpisë sime. Megjithatë mund të përshkruaj mjaft mirë kur një rrugë zakonisht është e mbushur." }
+          ],
+          "function": "everyday-analogy",
+          "toneNote": "non-technical explanation"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Heißt das, Klimamodelle sind nur grobe Schätzungen?",
+          "translations": [
+            { "language": "en", "text": "Does that mean climate models are only rough estimates?" },
+            { "language": "fa", "text": "آیا این یعنی مدل‌های اقلیم فقط تخمین‌های کلی هستند؟" },
+            { "language": "ar", "text": "هل يعني ذلك أن نماذج المناخ مجرد تقديرات تقريبية؟" },
+            { "language": "tr", "text": "Bu, iklim modellerinin yalnızca kaba tahminler olduğu anlamına mı geliyor?" },
+            { "language": "ru", "text": "Означает ли это, что климатические модели — это лишь грубые оценки?" },
+            { "language": "ckb", "text": "ئایا ئەمە واتای ئەوەیە مۆدێلەکانی ئاقلیم تەنها خەماڵاندنی گشتییە؟" },
+            { "language": "kmr", "text": "Ma ev tê wê wateyê ku modelên avhewayê tenê texmînên giştî ne?" },
+            { "language": "pl", "text": "Czy to znaczy, że modele klimatyczne są tylko przybliżonymi szacunkami?" },
+            { "language": "ro", "text": "Înseamnă aceasta că modelele climatice sunt doar estimări aproximative?" },
+            { "language": "sq", "text": "A do të thotë kjo që modelet klimatike janë vetëm vlerësime të përafërta?" }
+          ],
+          "function": "ask-risk-of-oversimplification",
+          "toneNote": "possible misunderstanding"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Nicht nur. Sie arbeiten mit physikalischen Zusammenhängen und vielen Messdaten. Unsicher ist nicht, ob Treibhausgase Wärme zurückhalten, sondern wie stark einzelne Effekte regional ausfallen.",
+          "translations": [
+            { "language": "en", "text": "Not only that. They work with physical relationships and many measurement data. What is uncertain is not whether greenhouse gases retain heat, but how strongly individual effects appear regionally." },
+            { "language": "fa", "text": "نه فقط این. آن‌ها با روابط فیزیکی و داده‌های اندازه‌گیری فراوان کار می‌کنند. نامطمئن این نیست که آیا گازهای گلخانه‌ای گرما را نگه می‌دارند یا نه، بلکه این است که اثرهای جداگانه در مناطق مختلف چقدر شدید ظاهر می‌شوند." },
+            { "language": "ar", "text": "ليس الأمر كذلك فقط. فهي تعمل بعلاقات فيزيائية وكثير من بيانات القياس. غير المؤكد ليس ما إذا كانت غازات الدفيئة تحتفظ بالحرارة، بل مدى قوة التأثيرات الفردية إقليمياً." },
+            { "language": "tr", "text": "Sadece öyle değil. Fiziksel ilişkiler ve birçok ölçüm verisiyle çalışırlar. Belirsiz olan, sera gazlarının ısıyı tutup tutmadığı değil; tek tek etkilerin bölgesel olarak ne kadar güçlü ortaya çıktığıdır." },
+            { "language": "ru", "text": "Не только. Они работают с физическими взаимосвязями и большим количеством измерительных данных. Неопределенно не то, удерживают ли парниковые газы тепло, а то, насколько сильно отдельные эффекты проявятся по регионам." },
+            { "language": "ckb", "text": "نە تەنها ئەوە. ئەوان بە پەیوەندییە فیزیکییەکان و زانیاریی پێوانەکردنی زۆر کار دەکەن. نادڵنیایی ئەوە نییە ئایا گازەکانی گلخانە گەرمی دەگرنەوە یان نا، بەڵکو ئەوەیە کاریگەرییە تاکەکان لە ناوچە جیاوازەکاندا چەند بەهێز دەردەکەون." },
+            { "language": "kmr", "text": "Ne tenê wisa. Ew bi têkiliyên fîzîkî û gelek daneyên pîvandinê dixebitin. Ya nezelal ne ew e ka gazên serayê germê digirin an na, lê ka bandorên cuda li herêmê çiqas xurt derdikevin." },
+            { "language": "pl", "text": "Nie tylko. Pracują one z zależnościami fizycznymi i wieloma danymi pomiarowymi. Niepewne nie jest to, czy gazy cieplarniane zatrzymują ciepło, lecz jak silnie poszczególne efekty wystąpią regionalnie." },
+            { "language": "ro", "text": "Nu doar atât. Ele lucrează cu relații fizice și multe date de măsurare. Incert nu este dacă gazele cu efect de seră rețin căldura, ci cât de puternic apar regional efectele individuale." },
+            { "language": "sq", "text": "Jo vetëm kaq. Ato punojnë me lidhje fizike dhe shumë të dhëna matjeje. E pasigurt nuk është nëse gazrat serrë mbajnë nxehtësinë, por sa fort shfaqen efektet e veçanta në rajone." }
+          ],
+          "function": "correct-oversimplification",
+          "toneNote": "scientific precision"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Wie erklären Sie Unsicherheit, ohne dass es so klingt, als wisse die Forschung eigentlich nichts?",
+          "translations": [
+            { "language": "en", "text": "How do you explain uncertainty without making it sound as if research actually knows nothing?" },
+            { "language": "fa", "text": "نامطمئنی را چطور توضیح می‌دهید، بدون اینکه طوری به نظر برسد انگار پژوهش در واقع هیچ چیز نمی‌داند؟" },
+            { "language": "ar", "text": "كيف تشرح عدم اليقين من دون أن يبدو الأمر وكأن البحث لا يعرف شيئاً في الحقيقة؟" },
+            { "language": "tr", "text": "Belirsizliği, araştırma aslında hiçbir şey bilmiyormuş gibi duyurmadan nasıl açıklarsınız?" },
+            { "language": "ru", "text": "Как объяснить неопределенность так, чтобы это не звучало, будто наука на самом деле ничего не знает?" },
+            { "language": "ckb", "text": "نادڵنیایی چۆن ڕوون دەکەیتەوە بێ ئەوەی وەک ئەوە دەربکەوێت کە توێژینەوە بەڕاستی هیچ نازانێت؟" },
+            { "language": "kmr", "text": "Hûn nezelaliyê çawa rave dikin bêyî ku wisa were bihîstin ku lêkolîn bi rastî tiştek nizane?" },
+            { "language": "pl", "text": "Jak wyjaśnia Pan/Pani niepewność, aby nie brzmiało to tak, jakby badania właściwie nic nie wiedziały?" },
+            { "language": "ro", "text": "Cum explicați incertitudinea fără să sune ca și cum cercetarea nu ar ști de fapt nimic?" },
+            { "language": "sq", "text": "Si e shpjegoni pasigurinë pa tingëlluar sikur kërkimi në fakt nuk di asgjë?" }
+          ],
+          "function": "ask-uncertainty-framing",
+          "toneNote": "nuance prompt"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde zwischen Richtung und genauer Zahl unterscheiden. Die Richtung der Erwärmung ist sehr gut begründet; die genaue Stärke hängt von Annahmen ab, etwa von künftigen Emissionen und politischen Entscheidungen.",
+          "translations": [
+            { "language": "en", "text": "I would distinguish between direction and exact number. The direction of warming is very well supported; the exact strength depends on assumptions, for example future emissions and political decisions." },
+            { "language": "fa", "text": "من بین جهت و عدد دقیق تفاوت می‌گذارم. جهت گرم‌شدن بسیار خوب مستدل است؛ شدت دقیق به فرض‌ها وابسته است، مثلاً به انتشارهای آینده و تصمیم‌های سیاسی." },
+            { "language": "ar", "text": "سأميز بين الاتجاه والرقم الدقيق. اتجاه الاحترار مبرر جيداً جداً؛ أما القوة الدقيقة فتعتمد على افتراضات، مثل الانبعاثات المستقبلية والقرارات السياسية." },
+            { "language": "tr", "text": "Yön ile kesin sayı arasında ayrım yapardım. Isınmanın yönü çok iyi gerekçelendirilmiştir; kesin şiddeti ise gelecekteki emisyonlar ve siyasi kararlar gibi varsayımlara bağlıdır." },
+            { "language": "ru", "text": "Я бы различал(а) направление и точное число. Направление потепления очень хорошо обосновано; точная сила зависит от допущений, например от будущих выбросов и политических решений." },
+            { "language": "ckb", "text": "من جیاوازی دادەنێم لە نێوان ئاراستە و ژمارەی ورد. ئاراستەی گەرمبوون زۆر باش هۆکاری هەیە؛ بەڵام توندیی وردەکە پەیوەستە بە گریمانەکان، وەک دەرچوونی داهاتوو و بڕیارە سیاسییەکان." },
+            { "language": "kmr", "text": "Ez di navbera araste û hejmarê hûrgilî de cudahî dikim. Arasteya germbûnê pir baş hincetkirî ye; hêza hûrgilî bi qebûlkirinan ve girêdayî ye, wek berdanên paşerojê û biryarên siyasî." },
+            { "language": "pl", "text": "Rozróżnił(a)bym kierunek i dokładną liczbę. Kierunek ocieplenia jest bardzo dobrze uzasadniony; dokładna siła zależy od założeń, na przykład przyszłych emisji i decyzji politycznych." },
+            { "language": "ro", "text": "Aș distinge între direcție și numărul exact. Direcția încălzirii este foarte bine justificată; intensitatea exactă depinde de ipoteze, de exemplu de emisiile viitoare și de deciziile politice." },
+            { "language": "sq", "text": "Do të dalloja midis drejtimit dhe numrit të saktë. Drejtimi i ngrohjes është shumë mirë i arsyetuar; forca e saktë varet nga supozimet, për shembull nga emetimet e ardhshme dhe vendimet politike." }
+          ],
+          "function": "explain-uncertainty",
+          "toneNote": "direction versus magnitude"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Was wäre ein Satz, mit dem Sie eine populäre Fehlinterpretation vermeiden?",
+          "translations": [
+            { "language": "en", "text": "What would be a sentence with which you avoid a popular misinterpretation?" },
+            { "language": "fa", "text": "چه جمله‌ای می‌تواند از یک سوءبرداشت رایج جلوگیری کند؟" },
+            { "language": "ar", "text": "ما الجملة التي يمكن أن تتجنب بها تفسيراً خاطئاً شائعاً؟" },
+            { "language": "tr", "text": "Yaygın bir yanlış yorumu önlemek için nasıl bir cümle kullanırdınız?" },
+            { "language": "ru", "text": "Какое предложение помогло бы Вам избежать популярного неверного толкования?" },
+            { "language": "ckb", "text": "کام ڕستە دەتوانێت لە لێکدانەوەیەکی هەڵەی باو ڕێگری بکات؟" },
+            { "language": "kmr", "text": "Kîjan hevok dikare ji şîrovekirineke şaş a belav dûr bikeve?" },
+            { "language": "pl", "text": "Jakim zdaniem uniknąłby/uniknęłaby Pan/Pani popularnej błędnej interpretacji?" },
+            { "language": "ro", "text": "Care ar fi o propoziție prin care evitați o interpretare greșită populară?" },
+            { "language": "sq", "text": "Cila fjali do të shmangte një keqinterpretim të përhapur?" }
+          ],
+          "function": "ask-misinterpretation",
+          "toneNote": "precision prompt"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Ein kalter Winter widerlegt keinen Klimawandel, genauso wie ein einzelner Stau nicht beweist, dass eine Stadt immer überfüllt ist. Entscheidend sind langfristige Muster.",
+          "translations": [
+            { "language": "en", "text": "I would say: a cold winter does not refute climate change, just as a single traffic jam does not prove that a city is always overcrowded. Long-term patterns are decisive." },
+            { "language": "fa", "text": "می‌گفتم: یک زمستان سرد تغییر اقلیم را رد نمی‌کند، همان‌طور که یک ترافیک تنها ثابت نمی‌کند شهری همیشه بیش از حد شلوغ است. الگوهای بلندمدت تعیین‌کننده‌اند." },
+            { "language": "ar", "text": "سأقول: الشتاء البارد لا يدحض تغير المناخ، كما أن ازدحاماً واحداً لا يثبت أن مدينة ما مزدحمة دائماً. الأنماط طويلة المدى هي الحاسمة." },
+            { "language": "tr", "text": "Şöyle derdim: soğuk bir kış iklim değişikliğini çürütmez; tek bir trafik sıkışıklığının bir şehrin her zaman aşırı dolu olduğunu kanıtlamaması gibi. Belirleyici olan uzun vadeli örüntülerdir." },
+            { "language": "ru", "text": "Я бы сказал(а): холодная зима не опровергает изменение климата, так же как одна пробка не доказывает, что город всегда переполнен. Решающими являются долгосрочные закономерности." },
+            { "language": "ckb", "text": "دەڵێم: زستانێکی سارد گۆڕانی ئاقلیم ڕەت ناکاتەوە، وەک ئەوەی یەک قەرەباڵغی هاتوچۆ سەلمێنەر نییە کە شارێک هەمیشە پڕە. الگو درێژخایەنەکان بڕیاردەرن." },
+            { "language": "kmr", "text": "Ez ê bibêjim: zivistaneke sar guhertina avhewayê red nake, wek ku qerebalixeke trafîkê yekcarî îspat nake ku bajarek her dem pir tije ye. Şablonên demdirêj biryarder in." },
+            { "language": "pl", "text": "Powiedział(a)bym: zimna zima nie obala zmiany klimatu, tak jak pojedynczy korek nie dowodzi, że miasto zawsze jest przepełnione. Decydujące są długoterminowe wzorce." },
+            { "language": "ro", "text": "Aș spune: o iarnă rece nu infirmă schimbarea climatică, așa cum un singur ambuteiaj nu dovedește că un oraș este mereu supraîncărcat. Decisive sunt tiparele pe termen lung." },
+            { "language": "sq", "text": "Do të thosha: një dimër i ftohtë nuk e rrëzon ndryshimin klimatik, ashtu si një bllokim i vetëm trafiku nuk provon se një qytet është gjithmonë i mbushur. Vendimtare janë modelet afatgjata." }
+          ],
+          "function": "avoid-misinterpretation",
+          "toneNote": "guardrail sentence"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Fassen Sie die Erklärung bitte so zusammen, dass sie für Laien verständlich bleibt.",
+          "translations": [
+            { "language": "en", "text": "Please summarize the explanation so that it remains understandable for laypeople." },
+            { "language": "fa", "text": "لطفاً توضیح را طوری جمع‌بندی کنید که برای افراد غیرمتخصص قابل فهم بماند." },
+            { "language": "ar", "text": "لخص الشرح من فضلك بحيث يبقى مفهوماً لغير المتخصصين." },
+            { "language": "tr", "text": "Lütfen açıklamayı uzman olmayanlar için anlaşılır kalacak şekilde özetleyin." },
+            { "language": "ru", "text": "Пожалуйста, подведите итог объяснения так, чтобы оно оставалось понятным для неспециалистов." },
+            { "language": "ckb", "text": "تکایە ڕوونکردنەوەکە بە شێوەیەک کۆبکەوە کە بۆ کەسانی نەپیشەیی تێگەیشتوو بمێنێتەوە." },
+            { "language": "kmr", "text": "Ji kerema xwe ravekirinê wisa kurt bikin ku ji bo kesên ne-pispor têgihiştî bimîne." },
+            { "language": "pl", "text": "Proszę podsumować wyjaśnienie tak, aby pozostało zrozumiałe dla laików." },
+            { "language": "ro", "text": "Vă rog să rezumați explicația astfel încât să rămână inteligibilă pentru nespecialiști." },
+            { "language": "sq", "text": "Ju lutem përmblidheni shpjegimin në mënyrë që të mbetet i kuptueshëm për joprofesionistët." }
+          ],
+          "function": "ask-final-summary",
+          "toneNote": "summary prompt"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Kurz gesagt: Wetter beschreibt den einzelnen Tag, Klima beschreibt das langfristige Muster. Modelle sind deshalb nicht fehlerfreie Kristallkugeln, aber sie zeigen gut begründete Entwicklungen und mögliche Spielräume.",
+          "translations": [
+            { "language": "en", "text": "In short: weather describes the individual day; climate describes the long-term pattern. Models are therefore not error-free crystal balls, but they show well-founded developments and possible ranges." },
+            { "language": "fa", "text": "خلاصه: آب‌وهوا روزِ جداگانه را توصیف می‌کند؛ اقلیم الگوی بلندمدت را. بنابراین مدل‌ها گوی‌های بلورین بی‌خطا نیستند، اما روندهای خوب مستدل و دامنه‌های ممکن را نشان می‌دهند." },
+            { "language": "ar", "text": "باختصار: الطقس يصف اليوم الواحد، والمناخ يصف النمط طويل المدى. لذلك ليست النماذج كرات بلورية بلا أخطاء، لكنها تظهر تطورات مبررة جيداً ونطاقات ممكنة." },
+            { "language": "tr", "text": "Kısaca: hava durumu tek bir günü, iklim uzun vadeli örüntüyü anlatır. Bu yüzden modeller hatasız kristal küreler değildir, ama iyi gerekçelendirilmiş gelişmeleri ve olası aralıkları gösterir." },
+            { "language": "ru", "text": "Коротко: погода описывает отдельный день, климат описывает долгосрочную закономерность. Поэтому модели не являются безошибочными хрустальными шарами, но они показывают хорошо обоснованные тенденции и возможные диапазоны." },
+            { "language": "ckb", "text": "بە کورتی: کەشوهەوا ڕۆژی تاکەکەسەیەک وەسف دەکات، ئاقلیم الگوی درێژخایەن وەسف دەکات. بۆیە مۆدێلەکان گۆی بلوری بێ هەڵە نین، بەڵام پەرەسەندنی باش هۆکارکراو و مەودای ممکن نیشان دەدەن." },
+            { "language": "kmr", "text": "Bi kurtî: hewa roja yekane vedibêje, avhewa şablona demdirêj vedibêje. Ji ber vê yekê model ne topên kristal ên bêşaş in, lê pêşketinên baş hincetkirî û qadên mimkun nîşan didin." },
+            { "language": "pl", "text": "Krótko mówiąc: pogoda opisuje pojedynczy dzień, klimat opisuje długoterminowy wzorzec. Modele nie są więc bezbłędnymi kulami kryształowymi, ale pokazują dobrze uzasadnione kierunki rozwoju i możliwe zakresy." },
+            { "language": "ro", "text": "Pe scurt: vremea descrie ziua individuală, clima descrie tiparul pe termen lung. Modelele nu sunt deci globuri de cristal fără erori, dar arată evoluții bine fundamentate și intervale posibile." },
+            { "language": "sq", "text": "Shkurt: moti përshkruan ditën e veçantë, klima përshkruan modelin afatgjatë. Prandaj modelet nuk janë topa kristali pa gabime, por tregojnë zhvillime të arsyetuara mirë dhe hapësira të mundshme." }
+          ],
+          "function": "plain-language-summary",
+          "toneNote": "accessible synthesis"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der entscheidende Unterschied ist die Ebene der Aussage. Wetter meint konkrete Zustände an einem Ort und Tag; Klima meint Muster und Durchschnittswerte über lange Zeiträume.",
+              "translations": [
+                { "language": "en", "text": "The decisive difference is the level of the statement. Weather means concrete conditions at a place and on a day; climate means patterns and averages over long periods." },
+                { "language": "fa", "text": "تفاوت اصلی در سطحِ ادعاست. آب‌وهوا یعنی وضعیت‌های مشخص در یک مکان و یک روز؛ اقلیم یعنی الگوها و میانگین‌ها در دوره‌های طولانی." },
+                { "language": "ar", "text": "الفرق الحاسم هو مستوى العبارة. الطقس يعني حالات ملموسة في مكان ويوم معينين؛ أما المناخ فيعني الأنماط والمتوسطات على فترات طويلة." },
+                { "language": "tr", "text": "Belirleyici fark, ifadenin düzeyidir. Hava durumu belirli bir yer ve gündeki somut koşulları; iklim ise uzun dönemlerdeki örüntüleri ve ortalamaları ifade eder." },
+                { "language": "ru", "text": "Решающая разница заключается в уровне утверждения. Погода означает конкретные условия в одном месте и в один день; климат означает закономерности и средние значения за длительные периоды." },
+                { "language": "ckb", "text": "جیاوازییە سەرەکییەکە ئاستی قسەکەیە. کەشوهەوا واتە دۆخی دیاریکراو لە شوێن و ڕۆژێکدا؛ ئاقلیم واتە الگو و ناوەندەکان لە ماوەی درێژدا." },
+                { "language": "kmr", "text": "Cudahiyê biryarder asta gotinê ye. Hewa tê wateya rewşên konkret li cih û rojekê; avhewa tê wateya şablon û navînên di demên dirêj de." },
+                { "language": "pl", "text": "Decydująca różnica leży na poziomie wypowiedzi. Pogoda oznacza konkretne warunki w danym miejscu i dniu; klimat oznacza wzorce i średnie z długich okresów." },
+                { "language": "ro", "text": "Diferența decisivă este nivelul afirmației. Vremea înseamnă stări concrete într-un loc și într-o zi; clima înseamnă tipare și medii pe perioade lungi." },
+                { "language": "sq", "text": "Dallimi vendimtar është niveli i pohimit. Moti nënkupton gjendje konkrete në një vend dhe ditë; klima nënkupton modele dhe mesatare gjatë periudhave të gjata." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt präzise zwischen Einzelfall und langfristigem Muster.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer precisely separates individual case and long-term pattern." },
+                { "language": "fa", "text": "قوی: پاسخ به‌دقت بین مورد منفرد و الگوی بلندمدت تفکیک می‌کند." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بدقة بين الحالة الفردية والنمط طويل المدى." },
+                { "language": "tr", "text": "Güçlü: cevap tekil durum ile uzun vadeli örüntüyü kesin biçimde ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ точно разделяет отдельный случай и долгосрочную закономерность." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام بە وردی جیاوازی دەکات لە نێوان کەیسی تاک و الگوی درێژخایەن." },
+                { "language": "kmr", "text": "Xurt e: bersiv bi hûrgilî di navbera rewşa yekane û şablona demdirêj de cudahî dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź precyzyjnie oddziela pojedynczy przypadek od długoterminowego wzorca." },
+                { "language": "ro", "text": "Puternic: răspunsul separă precis cazul individual de tiparul pe termen lung." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan saktë rastin e veçantë nga modeli afatgjatë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wetter ist kurzfristig, Klima ist langfristig. Deshalb ist das Klima einfacher vorherzusagen.",
+              "translations": [
+                { "language": "en", "text": "Weather is short-term, climate is long-term. Therefore climate is easier to predict." },
+                { "language": "fa", "text": "آب‌وهوا کوتاه‌مدت است، اقلیم بلندمدت است. بنابراین پیش‌بینی اقلیم آسان‌تر است." },
+                { "language": "ar", "text": "الطقس قصير المدى، والمناخ طويل المدى. لذلك يكون التنبؤ بالمناخ أسهل." },
+                { "language": "tr", "text": "Hava durumu kısa vadelidir, iklim uzun vadelidir. Bu yüzden iklimi tahmin etmek daha kolaydır." },
+                { "language": "ru", "text": "Погода краткосрочна, климат долгосрочен. Поэтому климат легче предсказывать." },
+                { "language": "ckb", "text": "کەشوهەوا کورتخایەنە، ئاقلیم درێژخایەنە. بۆیە پێشبینی ئاقلیم ئاسانترە." },
+                { "language": "kmr", "text": "Hewa demkurt e, avhewa demdirêj e. Ji ber vê yekê pêşbînîkirina avhewayê hêsantir e." },
+                { "language": "pl", "text": "Pogoda jest krótkoterminowa, klimat długoterminowy. Dlatego klimat łatwiej przewidzieć." },
+                { "language": "ro", "text": "Vremea este pe termen scurt, clima pe termen lung. De aceea clima este mai ușor de prezis." },
+                { "language": "sq", "text": "Moti është afatshkurtër, klima është afatgjatë. Prandaj klima është më e lehtë për t'u parashikuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber wissenschaftlich zu grob: `einfacher vorherzusagen` klingt zu absolut und erklärt die Ebene der Aussage nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but scientifically too rough: `easier to predict` sounds too absolute and does not explain the level of the statement." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما از نظر علمی خیلی خام است: «آسان‌تر پیش‌بینی کردن» بیش از حد مطلق است و سطح ادعا را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه خشن علمياً: «أسهل في التنبؤ» يبدو مطلقاً جداً ولا يشرح مستوى العبارة." },
+                { "language": "tr", "text": "Makul ama bilimsel olarak fazla kaba: `daha kolay tahmin etmek` fazla mutlak duyulur ve ifadenin düzeyini açıklamaz." },
+                { "language": "ru", "text": "Правдоподобно, но научно слишком грубо: «легче предсказывать» звучит слишком абсолютно и не объясняет уровень утверждения." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام لە ڕووی زانستییەوە زۆر خامە: «ئاسانتر پێشبینی کردن» زۆر ڕەها دەنگ دەدات و ئاستی قسەکە ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Wek guncav e, lê zanistî pir qels e: `hêsantir pêşbînîkirin` pir teqez xuya dike û asta gotinê rave nake." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale naukowo jest zbyt uproszczone: „łatwiej przewidzieć” brzmi zbyt absolutnie i nie wyjaśnia poziomu wypowiedzi." },
+                { "language": "ro", "text": "Plauzibil, dar științific prea grosier: `mai ușor de prezis` sună prea absolut și nu explică nivelul afirmației." },
+                { "language": "sq", "text": "Duket e besueshme, por shkencërisht shumë e ashpër: “më e lehtë për t'u parashikuar” tingëllon shumë absolute dhe nuk shpjegon nivelin e pohimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Man kann es mit Verkehr vergleichen: Ich kann nicht sicher sagen, welches Auto morgen um acht Uhr vor meinem Haus steht. Trotzdem kann ich ziemlich gut beschreiben, wann eine Straße typischerweise voll ist.",
+              "translations": [
+                { "language": "en", "text": "One can compare it with traffic: I cannot say for sure which car will be in front of my house tomorrow at eight. Still, I can describe quite well when a street is typically crowded." },
+                { "language": "fa", "text": "می‌توان آن را با ترافیک مقایسه کرد: نمی‌توانم با قطعیت بگویم فردا ساعت هشت کدام ماشین جلوی خانه من است. با این حال می‌توانم نسبتاً خوب توضیح دهم یک خیابان معمولاً چه زمانی شلوغ است." },
+                { "language": "ar", "text": "يمكن مقارنته بالمرور: لا أستطيع أن أقول بثقة أي سيارة ستكون غداً الساعة الثامنة أمام بيتي. ومع ذلك أستطيع وصف متى يكون شارع ما مزدحماً عادة بشكل جيد." },
+                { "language": "tr", "text": "Bunu trafikle karşılaştırabiliriz: yarın saat sekizde evimin önünde hangi arabanın duracağını kesin söyleyemem. Yine de bir caddenin tipik olarak ne zaman dolu olduğunu oldukça iyi anlatabilirim." },
+                { "language": "ru", "text": "Это можно сравнить с движением: я не могу точно сказать, какая машина завтра в восемь будет стоять перед моим домом. Но я довольно хорошо могу описать, когда улица обычно заполнена." },
+                { "language": "ckb", "text": "دەتوانرێت بە هاتوچۆ بەراورد بکرێت: ناتوانم بە دڵنیایی بڵێم سبەی کاتژمێر هەشت کام ئۆتۆمبێل لە بەردەم ماڵم دەوەستێت. بەڵام دەتوانم زۆر باش ڕوون بکەمەوە کە شەقامێک بە شێوەی ئاسایی کەی قەرەباڵغە." },
+                { "language": "kmr", "text": "Mirov dikare wê bi trafîkê re berhev bike: ez nikarim bi ewlehî bibêjim sibê saet heşt kîjan erebe li ber mala min disekine. Lê ez dikarim baş rave bikim ka kolanek bi gelemperî kengî tije ye." },
+                { "language": "pl", "text": "Można porównać to do ruchu ulicznego: nie mogę pewnie powiedzieć, jaki samochód będzie jutro o ósmej przed moim domem. Mimo to potrafię dość dobrze opisać, kiedy ulica zwykle jest zatłoczona." },
+                { "language": "ro", "text": "Se poate compara cu traficul: nu pot spune sigur ce mașină va fi mâine la ora opt în fața casei mele. Totuși pot descrie destul de bine când o stradă este de obicei aglomerată." },
+                { "language": "sq", "text": "Mund ta krahasojmë me trafikun: nuk mund të them me siguri cila makinë do të jetë nesër në orën tetë para shtëpisë sime. Megjithatë mund të përshkruaj mjaft mirë kur një rrugë zakonisht është e mbushur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Bild ist alltagsnah und behält den Unterschied zwischen Einzelereignis und Muster bei.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the image is close to everyday life and keeps the difference between single event and pattern." },
+                { "language": "fa", "text": "قوی: تصویر روزمره است و تفاوت بین رویداد منفرد و الگو را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: الصورة قريبة من الحياة اليومية وتحافظ على الفرق بين الحدث الفردي والنمط." },
+                { "language": "tr", "text": "Güçlü: imge gündelik yaşama yakın ve tekil olay ile örüntü arasındaki farkı koruyor." },
+                { "language": "ru", "text": "Сильно: образ близок к повседневной жизни и сохраняет различие между отдельным событием и закономерностью." },
+                { "language": "ckb", "text": "بەهێزە: وێنەکە نزیکە لە ژیانی ڕۆژانە و جیاوازی نێوان ڕووداوی تاک و الگو دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: wêne nêzîkî jiyana rojane ye û cudahiya di navbera bûyera yekane û şablonê de diparêze." },
+                { "language": "pl", "text": "Mocne: obraz jest bliski codzienności i zachowuje różnicę między pojedynczym zdarzeniem a wzorcem." },
+                { "language": "ro", "text": "Puternic: imaginea este apropiată de viața de zi cu zi și păstrează diferența dintre eveniment individual și tipar." },
+                { "language": "sq", "text": "E fortë: figura është afër jetës së përditshme dhe ruan dallimin midis ngjarjes së vetme dhe modelit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man kann sagen: Wetter ist wie ein einzelnes Foto, Klima ist wie ein ganzer Film.",
+              "translations": [
+                { "language": "en", "text": "One can say: weather is like a single photo; climate is like a whole film." },
+                { "language": "fa", "text": "می‌توان گفت: آب‌وهوا مثل یک عکس تکی است؛ اقلیم مثل یک فیلم کامل است." },
+                { "language": "ar", "text": "يمكن القول: الطقس مثل صورة واحدة، والمناخ مثل فيلم كامل." },
+                { "language": "tr", "text": "Şöyle denebilir: hava durumu tek bir fotoğraf gibidir; iklim ise bütün bir film gibidir." },
+                { "language": "ru", "text": "Можно сказать: погода — как отдельная фотография, климат — как целый фильм." },
+                { "language": "ckb", "text": "دەتوانرێت بوترێت: کەشوهەوا وەک وێنەیەکی تاکە؛ ئاقلیم وەک فیلمێکی تەواوە." },
+                { "language": "kmr", "text": "Mirov dikare bibêje: hewa wek wêneyeke yekane ye; avhewa wek fîlmeke tevahî ye." },
+                { "language": "pl", "text": "Można powiedzieć: pogoda jest jak pojedyncze zdjęcie, klimat jak cały film." },
+                { "language": "ro", "text": "Se poate spune: vremea este ca o singură fotografie, clima ca un film întreg." },
+                { "language": "sq", "text": "Mund të thuhet: moti është si një fotografi e vetme, klima si një film i tërë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber etwas dünn: Das Bild hilft, erklärt aber nicht, warum Modelle trotzdem belastbar sein können.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but a bit thin: the image helps, but does not explain why models can still be robust." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما کمی کم‌عمق است: تصویر کمک می‌کند، اما توضیح نمی‌دهد چرا مدل‌ها همچنان می‌توانند قابل اتکا باشند." },
+                { "language": "ar", "text": "مقبول لكنه قليل العمق: الصورة تساعد لكنها لا تشرح لماذا يمكن أن تبقى النماذج متينة." },
+                { "language": "tr", "text": "Makul ama biraz zayıf: imge yardımcı olur, fakat modellerin yine de neden sağlam olabileceğini açıklamaz." },
+                { "language": "ru", "text": "Правдоподобно, но немного поверхностно: образ помогает, но не объясняет, почему модели все же могут быть надежными." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام کەمێک لاوازە: وێنەکە یارمەتی دەدات، بەڵام ڕوون ناکاتەوە بۆچی مۆدێلەکان هێشتا دەتوانن پشتپێبەستراو بن." },
+                { "language": "kmr", "text": "Wek guncav e, lê hinek qels e: wêne alîkar e, lê rave nake çima model dîsa dikarin bihêz bin." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest trochę płytkie: obraz pomaga, lecz nie wyjaśnia, dlaczego modele mogą być mimo to solidne." },
+                { "language": "ro", "text": "Plauzibil, dar cam subțire: imaginea ajută, dar nu explică de ce modelele pot fi totuși robuste." },
+                { "language": "sq", "text": "Duket e besueshme, por pak e cekët: figura ndihmon, por nuk shpjegon pse modelet mund të jenë ende të qëndrueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nicht nur. Sie arbeiten mit physikalischen Zusammenhängen und vielen Messdaten. Unsicher ist nicht, ob Treibhausgase Wärme zurückhalten, sondern wie stark einzelne Effekte regional ausfallen.",
+              "translations": [
+                { "language": "en", "text": "Not only that. They work with physical relationships and many measurement data. What is uncertain is not whether greenhouse gases retain heat, but how strongly individual effects appear regionally." },
+                { "language": "fa", "text": "نه فقط این. آن‌ها با روابط فیزیکی و داده‌های اندازه‌گیری فراوان کار می‌کنند. نامطمئن این نیست که آیا گازهای گلخانه‌ای گرما را نگه می‌دارند یا نه، بلکه این است که اثرهای جداگانه در مناطق مختلف چقدر شدید ظاهر می‌شوند." },
+                { "language": "ar", "text": "ليس الأمر كذلك فقط. فهي تعمل بعلاقات فيزيائية وكثير من بيانات القياس. غير المؤكد ليس ما إذا كانت غازات الدفيئة تحتفظ بالحرارة، بل مدى قوة التأثيرات الفردية إقليمياً." },
+                { "language": "tr", "text": "Sadece öyle değil. Fiziksel ilişkiler ve birçok ölçüm verisiyle çalışırlar. Belirsiz olan, sera gazlarının ısıyı tutup tutmadığı değil; tek tek etkilerin bölgesel olarak ne kadar güçlü ortaya çıktığıdır." },
+                { "language": "ru", "text": "Не только. Они работают с физическими взаимосвязями и большим количеством измерительных данных. Неопределенно не то, удерживают ли парниковые газы тепло, а то, насколько сильно отдельные эффекты проявятся по регионам." },
+                { "language": "ckb", "text": "نە تەنها ئەوە. ئەوان بە پەیوەندییە فیزیکییەکان و زانیاریی پێوانەکردنی زۆر کار دەکەن. نادڵنیایی ئەوە نییە ئایا گازەکانی گلخانە گەرمی دەگرنەوە یان نا، بەڵکو ئەوەیە کاریگەرییە تاکەکان لە ناوچە جیاوازەکاندا چەند بەهێز دەردەکەون." },
+                { "language": "kmr", "text": "Ne tenê wisa. Ew bi têkiliyên fîzîkî û gelek daneyên pîvandinê dixebitin. Ya nezelal ne ew e ka gazên serayê germê digirin an na, lê ka bandorên cuda li herêmê çiqas xurt derdikevin." },
+                { "language": "pl", "text": "Nie tylko. Pracują one z zależnościami fizycznymi i wieloma danymi pomiarowymi. Niepewne nie jest to, czy gazy cieplarniane zatrzymują ciepło, lecz jak silnie poszczególne efekty wystąpią regionalnie." },
+                { "language": "ro", "text": "Nu doar atât. Ele lucrează cu relații fizice și multe date de măsurare. Incert nu este dacă gazele cu efect de seră rețin căldura, ci cât de puternic apar regional efectele individuale." },
+                { "language": "sq", "text": "Jo vetëm kaq. Ato punojnë me lidhje fizike dhe shumë të dhëna matjeje. E pasigurt nuk është nëse gazrat serrë mbajnë nxehtësinë, por sa fort shfaqen efektet e veçanta në rajone." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort korrigiert die Vereinfachung und trennt gesichertes Wissen von regionaler Unsicherheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer corrects the simplification and separates established knowledge from regional uncertainty." },
+                { "language": "fa", "text": "قوی: پاسخ ساده‌سازی را اصلاح می‌کند و دانش تثبیت‌شده را از نامطمئنی منطقه‌ای جدا می‌کند." },
+                { "language": "ar", "text": "قوي: تصحح الإجابة التبسيط وتفصل المعرفة المؤكدة عن عدم اليقين الإقليمي." },
+                { "language": "tr", "text": "Güçlü: cevap basitleştirmeyi düzeltiyor ve yerleşik bilgiyi bölgesel belirsizlikten ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ корректирует упрощение и отделяет установленное знание от региональной неопределенности." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام سادەکردنەوەکە ڕاست دەکاتەوە و زانیاری جێگیر لە نادڵنیایی ناوچەیی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv hêsankirinê rast dike û zanîna piştrast ji nezelaliya herêmî cuda dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź koryguje uproszczenie i oddziela wiedzę ustaloną od niepewności regionalnej." },
+                { "language": "ro", "text": "Puternic: răspunsul corectează simplificarea și separă cunoașterea stabilită de incertitudinea regională." },
+                { "language": "sq", "text": "E fortë: përgjigjja korrigjon thjeshtimin dhe ndan njohurinë e vërtetuar nga pasiguria rajonale." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, es sind Schätzungen, aber sie sind besser als nichts und helfen bei politischen Entscheidungen.",
+              "translations": [
+                { "language": "en", "text": "Yes, they are estimates, but they are better than nothing and help with political decisions." },
+                { "language": "fa", "text": "بله، آن‌ها تخمین هستند، اما از هیچ بهترند و به تصمیم‌های سیاسی کمک می‌کنند." },
+                { "language": "ar", "text": "نعم، هي تقديرات، لكنها أفضل من لا شيء وتساعد في القرارات السياسية." },
+                { "language": "tr", "text": "Evet, tahmindirler, ama hiç yoktan iyidirler ve siyasi kararlara yardımcı olurlar." },
+                { "language": "ru", "text": "Да, это оценки, но они лучше, чем ничего, и помогают в политических решениях." },
+                { "language": "ckb", "text": "بەڵێ، خەماڵاندنن، بەڵام لە هیچ باشترن و یارمەتی بڕیارە سیاسییەکان دەدەن." },
+                { "language": "kmr", "text": "Erê, ew texmîn in, lê ji tinebûnê baştir in û ji biryarên siyasî re alîkar in." },
+                { "language": "pl", "text": "Tak, to są szacunki, ale są lepsze niż nic i pomagają w decyzjach politycznych." },
+                { "language": "ro", "text": "Da, sunt estimări, dar sunt mai bune decât nimic și ajută la deciziile politice." },
+                { "language": "sq", "text": "Po, janë vlerësime, por janë më mirë se asgjë dhe ndihmojnë në vendime politike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu defensiv: Die Antwort macht Modelle schwächer, als sie wissenschaftlich sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too defensive: the answer makes models sound weaker than they are scientifically." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما بیش از حد دفاعی است: پاسخ مدل‌ها را از نظر علمی ضعیف‌تر از واقعیت نشان می‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه دفاعي جداً: تجعل الإجابة النماذج أضعف مما هي عليه علمياً." },
+                { "language": "tr", "text": "Makul ama fazla savunmacı: cevap modelleri bilimsel olarak olduklarından daha zayıf gösteriyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком оборонительно: ответ представляет модели слабее, чем они являются научно." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر بەرگرییە: وەڵام مۆدێلەکان لە ڕووی زانستییەوە لاوازتر لە ڕاستی پیشان دەدات." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir parastinî ye: bersiv modelan ji rewşa wan a zanistî qelstir nîşan dide." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt defensywne: odpowiedź przedstawia modele jako słabsze, niż są naukowo." },
+                { "language": "ro", "text": "Plauzibil, dar prea defensiv: răspunsul face modelele să pară mai slabe decât sunt științific." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë mbrojtëse: përgjigjja i bën modelet të duken më të dobëta sesa janë shkencërisht." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde zwischen Richtung und genauer Zahl unterscheiden. Die Richtung der Erwärmung ist sehr gut begründet; die genaue Stärke hängt von Annahmen ab, etwa von künftigen Emissionen und politischen Entscheidungen.",
+              "translations": [
+                { "language": "en", "text": "I would distinguish between direction and exact number. The direction of warming is very well supported; the exact strength depends on assumptions, for example future emissions and political decisions." },
+                { "language": "fa", "text": "من بین جهت و عدد دقیق تفاوت می‌گذارم. جهت گرم‌شدن بسیار خوب مستدل است؛ شدت دقیق به فرض‌ها وابسته است، مثلاً به انتشارهای آینده و تصمیم‌های سیاسی." },
+                { "language": "ar", "text": "سأميز بين الاتجاه والرقم الدقيق. اتجاه الاحترار مبرر جيداً جداً؛ أما القوة الدقيقة فتعتمد على افتراضات، مثل الانبعاثات المستقبلية والقرارات السياسية." },
+                { "language": "tr", "text": "Yön ile kesin sayı arasında ayrım yapardım. Isınmanın yönü çok iyi gerekçelendirilmiştir; kesin şiddeti ise gelecekteki emisyonlar ve siyasi kararlar gibi varsayımlara bağlıdır." },
+                { "language": "ru", "text": "Я бы различал(а) направление и точное число. Направление потепления очень хорошо обосновано; точная сила зависит от допущений, например от будущих выбросов и политических решений." },
+                { "language": "ckb", "text": "من جیاوازی دادەنێم لە نێوان ئاراستە و ژمارەی ورد. ئاراستەی گەرمبوون زۆر باش هۆکاری هەیە؛ بەڵام توندیی وردەکە پەیوەستە بە گریمانەکان، وەک دەرچوونی داهاتوو و بڕیارە سیاسییەکان." },
+                { "language": "kmr", "text": "Ez di navbera araste û hejmarê hûrgilî de cudahî dikim. Arasteya germbûnê pir baş hincetkirî ye; hêza hûrgilî bi qebûlkirinan ve girêdayî ye, wek berdanên paşerojê û biryarên siyasî." },
+                { "language": "pl", "text": "Rozróżnił(a)bym kierunek i dokładną liczbę. Kierunek ocieplenia jest bardzo dobrze uzasadniony; dokładna siła zależy od założeń, na przykład przyszłych emisji i decyzji politycznych." },
+                { "language": "ro", "text": "Aș distinge între direcție și numărul exact. Direcția încălzirii este foarte bine justificată; intensitatea exactă depinde de ipoteze, de exemplu de emisiile viitoare și de deciziile politice." },
+                { "language": "sq", "text": "Do të dalloja midis drejtimit dhe numrit të saktë. Drejtimi i ngrohjes është shumë mirë i arsyetuar; forca e saktë varet nga supozimet, për shembull nga emetimet e ardhshme dhe vendimet politike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort erklärt Unsicherheit, ohne gesichertes Wissen zu relativieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer explains uncertainty without relativizing established knowledge." },
+                { "language": "fa", "text": "قوی: پاسخ نامطمئنی را توضیح می‌دهد، بدون اینکه دانش تثبیت‌شده را نسبی کند." },
+                { "language": "ar", "text": "قوي: تشرح الإجابة عدم اليقين من دون نسبية المعرفة المؤكدة." },
+                { "language": "tr", "text": "Güçlü: cevap belirsizliği açıklıyor, fakat yerleşik bilgiyi görecelileştirmiyor." },
+                { "language": "ru", "text": "Сильно: ответ объясняет неопределенность, не релятивизируя установленное знание." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام نادڵنیایی ڕوون دەکاتەوە بێ ئەوەی زانیاری جێگیر ڕێژەیی بکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv nezelaliyê rave dike bêyî ku zanîna piştrast nisbetî bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź wyjaśnia niepewność, nie relatywizując ustalonej wiedzy." },
+                { "language": "ro", "text": "Puternic: răspunsul explică incertitudinea fără să relativizeze cunoașterea stabilită." },
+                { "language": "sq", "text": "E fortë: përgjigjja shpjegon pasigurinë pa relativizuar njohurinë e vërtetuar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Unsicherheit bedeutet, dass man noch nicht alles genau weiß, aber die Forschung trotzdem eine Tendenz sieht.",
+              "translations": [
+                { "language": "en", "text": "Uncertainty means that one does not yet know everything exactly, but research still sees a trend." },
+                { "language": "fa", "text": "نامطمئنی یعنی هنوز همه چیز را دقیق نمی‌دانیم، اما پژوهش با این حال یک روند می‌بیند." },
+                { "language": "ar", "text": "عدم اليقين يعني أننا لا نعرف كل شيء بدقة بعد، لكن البحث يرى رغم ذلك اتجاهاً." },
+                { "language": "tr", "text": "Belirsizlik, henüz her şeyin tam olarak bilinmediği, ama araştırmanın yine de bir eğilim gördüğü anlamına gelir." },
+                { "language": "ru", "text": "Неопределенность означает, что еще не все известно точно, но исследование все же видит тенденцию." },
+                { "language": "ckb", "text": "نادڵنیایی واتە هێشتا هەموو شت بە وردی نازانرێت، بەڵام توێژینەوە هەرچەندە ئاراستەیەک دەبینێت." },
+                { "language": "kmr", "text": "Nezelalî tê wateya ku hê her tişt bi hûrgilî nayê zanîn, lê lêkolîn dîsa arasteyekê dibîne." },
+                { "language": "pl", "text": "Niepewność oznacza, że nie wszystko wiadomo jeszcze dokładnie, ale badania mimo to widzą tendencję." },
+                { "language": "ro", "text": "Incertitudinea înseamnă că nu se știe încă totul exact, dar cercetarea vede totuși o tendință." },
+                { "language": "sq", "text": "Pasiguria do të thotë se ende nuk dihet gjithçka saktë, por kërkimi megjithatë sheh një prirje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Antwort nennt keine Trennung zwischen Richtung und genauer Stärke.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: the answer does not name the separation between direction and exact strength." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما بیش از حد کلی است: پاسخ جدایی بین جهت و شدت دقیق را نام نمی‌برد." },
+                { "language": "ar", "text": "مقبول لكنه عام جداً: لا تذكر الإجابة الفصل بين الاتجاه والقوة الدقيقة." },
+                { "language": "tr", "text": "Makul ama fazla genel: cevap yön ile kesin şiddet arasındaki ayrımı belirtmiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общо: ответ не называет разделение между направлением и точной силой." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر گشتییە: وەڵام جیاکردنەوەی نێوان ئاراستە و توندیی ورد ناو نابات." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir giştî ye: bersiv cudahiya di navbera araste û hêza hûrgilî de nav nake." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ogólne: odpowiedź nie nazywa rozdzielenia kierunku i dokładnej siły." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul nu numește separarea dintre direcție și intensitatea exactă." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e përgjithshme: përgjigjja nuk përmend ndarjen midis drejtimit dhe forcës së saktë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde sagen: Ein kalter Winter widerlegt keinen Klimawandel, genauso wie ein einzelner Stau nicht beweist, dass eine Stadt immer überfüllt ist. Entscheidend sind langfristige Muster.",
+              "translations": [
+                { "language": "en", "text": "I would say: a cold winter does not refute climate change, just as a single traffic jam does not prove that a city is always overcrowded. Long-term patterns are decisive." },
+                { "language": "fa", "text": "می‌گفتم: یک زمستان سرد تغییر اقلیم را رد نمی‌کند، همان‌طور که یک ترافیک تنها ثابت نمی‌کند شهری همیشه بیش از حد شلوغ است. الگوهای بلندمدت تعیین‌کننده‌اند." },
+                { "language": "ar", "text": "سأقول: الشتاء البارد لا يدحض تغير المناخ، كما أن ازدحاماً واحداً لا يثبت أن مدينة ما مزدحمة دائماً. الأنماط طويلة المدى هي الحاسمة." },
+                { "language": "tr", "text": "Şöyle derdim: soğuk bir kış iklim değişikliğini çürütmez; tek bir trafik sıkışıklığının bir şehrin her zaman aşırı dolu olduğunu kanıtlamaması gibi. Belirleyici olan uzun vadeli örüntülerdir." },
+                { "language": "ru", "text": "Я бы сказал(а): холодная зима не опровергает изменение климата, так же как одна пробка не доказывает, что город всегда переполнен. Решающими являются долгосрочные закономерности." },
+                { "language": "ckb", "text": "دەڵێم: زستانێکی سارد گۆڕانی ئاقلیم ڕەت ناکاتەوە، وەک ئەوەی یەک قەرەباڵغی هاتوچۆ سەلمێنەر نییە کە شارێک هەمیشە پڕە. الگو درێژخایەنەکان بڕیاردەرن." },
+                { "language": "kmr", "text": "Ez ê bibêjim: zivistaneke sar guhertina avhewayê red nake, wek ku qerebalixeke trafîkê yekcarî îspat nake ku bajarek her dem pir tije ye. Şablonên demdirêj biryarder in." },
+                { "language": "pl", "text": "Powiedział(a)bym: zimna zima nie obala zmiany klimatu, tak jak pojedynczy korek nie dowodzi, że miasto zawsze jest przepełnione. Decydujące są długoterminowe wzorce." },
+                { "language": "ro", "text": "Aș spune: o iarnă rece nu infirmă schimbarea climatică, așa cum un singur ambuteiaj nu dovedește că un oraș este mereu supraîncărcat. Decisive sunt tiparele pe termen lung." },
+                { "language": "sq", "text": "Do të thosha: një dimër i ftohtë nuk e rrëzon ndryshimin klimatik, ashtu si një bllokim i vetëm trafiku nuk provon se një qytet është gjithmonë i mbushur. Vendimtare janë modelet afatgjata." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verhindert eine typische Fehlinterpretation und bleibt verständlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer prevents a typical misinterpretation and remains understandable." },
+                { "language": "fa", "text": "قوی: پاسخ از یک سوءبرداشت رایج جلوگیری می‌کند و قابل فهم می‌ماند." },
+                { "language": "ar", "text": "قوي: تمنع الإجابة تفسيراً خاطئاً شائعاً وتبقى مفهومة." },
+                { "language": "tr", "text": "Güçlü: cevap tipik bir yanlış yorumu önlüyor ve anlaşılır kalıyor." },
+                { "language": "ru", "text": "Сильно: ответ предотвращает типичное неверное толкование и остается понятным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵام ڕێگری لە لێکدانەوەیەکی هەڵەی باو دەکات و تێگەیشتوو دەمێنێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji şîrovekirineke şaş a tîpîk dûr dikeve û têgihiştî dimîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź zapobiega typowej błędnej interpretacji i pozostaje zrozumiała." },
+                { "language": "ro", "text": "Puternic: răspunsul previne o interpretare greșită tipică și rămâne inteligibil." },
+                { "language": "sq", "text": "E fortë: përgjigjja parandalon një keqinterpretim tipik dhe mbetet e kuptueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ein kalter Winter ist nur eine Ausnahme, und Ausnahmen ändern nichts an der allgemeinen Regel.",
+              "translations": [
+                { "language": "en", "text": "A cold winter is only an exception, and exceptions do not change the general rule." },
+                { "language": "fa", "text": "یک زمستان سرد فقط یک استثناست و استثناها قاعده کلی را تغییر نمی‌دهند." },
+                { "language": "ar", "text": "الشتاء البارد مجرد استثناء، والاستثناءات لا تغير القاعدة العامة." },
+                { "language": "tr", "text": "Soğuk bir kış yalnızca bir istisnadır ve istisnalar genel kuralı değiştirmez." },
+                { "language": "ru", "text": "Холодная зима — лишь исключение, а исключения не меняют общего правила." },
+                { "language": "ckb", "text": "زستانێکی سارد تەنها ئیستسنایەکە و ئیستسناکان ڕێسای گشتی ناگۆڕن." },
+                { "language": "kmr", "text": "Zivistaneke sar tenê îstîsnayek e û îstîsna qaîdeya giştî naguherînin." },
+                { "language": "pl", "text": "Zimna zima jest tylko wyjątkiem, a wyjątki nie zmieniają ogólnej reguły." },
+                { "language": "ro", "text": "O iarnă rece este doar o excepție, iar excepțiile nu schimbă regula generală." },
+                { "language": "sq", "text": "Një dimër i ftohtë është vetëm një përjashtim, dhe përjashtimet nuk e ndryshojnë rregullin e përgjithshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu autoritär: Die Antwort erklärt nicht, warum Einzelereignisse und langfristige Muster getrennt werden müssen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too authoritarian: the answer does not explain why single events and long-term patterns must be separated." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما بیش از حد حکم‌گونه است: پاسخ توضیح نمی‌دهد چرا باید رویدادهای منفرد و الگوهای بلندمدت جدا شوند." },
+                { "language": "ar", "text": "مقبول لكنه سلطوي جداً: لا تشرح الإجابة لماذا يجب فصل الأحداث الفردية عن الأنماط طويلة المدى." },
+                { "language": "tr", "text": "Makul ama fazla buyurgan: cevap tekil olaylar ile uzun vadeli örüntülerin neden ayrılması gerektiğini açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком авторитарно: ответ не объясняет, почему отдельные события и долгосрочные закономерности нужно разделять." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر فەرماندانەیە: وەڵام ڕوون ناکاتەوە بۆچی ڕووداوە تاکەکان و الگو درێژخایەنەکان دەبێت جیا بکرێنەوە." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir desthilatdar e: bersiv rave nake çima bûyerên yekane û şablonên demdirêj divê bên cudakirin." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale zbyt autorytarnie: odpowiedź nie wyjaśnia, dlaczego trzeba oddzielać pojedyncze zdarzenia od długoterminowych wzorców." },
+                { "language": "ro", "text": "Plauzibil, dar prea autoritar: răspunsul nu explică de ce evenimentele individuale și tiparele pe termen lung trebuie separate." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë autoritare: përgjigjja nuk shpjegon pse ngjarjet e vetme dhe modelet afatgjata duhet të ndahen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Kurz gesagt: Wetter beschreibt den einzelnen Tag, Klima beschreibt das langfristige Muster. Modelle sind deshalb nicht fehlerfreie Kristallkugeln, aber sie zeigen gut begründete Entwicklungen und mögliche Spielräume.",
+              "translations": [
+                { "language": "en", "text": "In short: weather describes the individual day; climate describes the long-term pattern. Models are therefore not error-free crystal balls, but they show well-founded developments and possible ranges." },
+                { "language": "fa", "text": "خلاصه: آب‌وهوا روزِ جداگانه را توصیف می‌کند؛ اقلیم الگوی بلندمدت را. بنابراین مدل‌ها گوی‌های بلورین بی‌خطا نیستند، اما روندهای خوب مستدل و دامنه‌های ممکن را نشان می‌دهند." },
+                { "language": "ar", "text": "باختصار: الطقس يصف اليوم الواحد، والمناخ يصف النمط طويل المدى. لذلك ليست النماذج كرات بلورية بلا أخطاء، لكنها تظهر تطورات مبررة جيداً ونطاقات ممكنة." },
+                { "language": "tr", "text": "Kısaca: hava durumu tek bir günü, iklim uzun vadeli örüntüyü anlatır. Bu yüzden modeller hatasız kristal küreler değildir, ama iyi gerekçelendirilmiş gelişmeleri ve olası aralıkları gösterir." },
+                { "language": "ru", "text": "Коротко: погода описывает отдельный день, климат описывает долгосрочную закономерность. Поэтому модели не являются безошибочными хрустальными шарами, но они показывают хорошо обоснованные тенденции и возможные диапазоны." },
+                { "language": "ckb", "text": "بە کورتی: کەشوهەوا ڕۆژی تاکەکەسەیەک وەسف دەکات، ئاقلیم الگوی درێژخایەن وەسف دەکات. بۆیە مۆدێلەکان گۆی بلوری بێ هەڵە نین، بەڵام پەرەسەندنی باش هۆکارکراو و مەودای ممکن نیشان دەدەن." },
+                { "language": "kmr", "text": "Bi kurtî: hewa roja yekane vedibêje, avhewa şablona demdirêj vedibêje. Ji ber vê yekê model ne topên kristal ên bêşaş in, lê pêşketinên baş hincetkirî û qadên mimkun nîşan didin." },
+                { "language": "pl", "text": "Krótko mówiąc: pogoda opisuje pojedynczy dzień, klimat opisuje długoterminowy wzorzec. Modele nie są więc bezbłędnymi kulami kryształowymi, ale pokazują dobrze uzasadnione kierunki rozwoju i możliwe zakresy." },
+                { "language": "ro", "text": "Pe scurt: vremea descrie ziua individuală, clima descrie tiparul pe termen lung. Modelele nu sunt deci globuri de cristal fără erori, dar arată evoluții bine fundamentate și intervale posibile." },
+                { "language": "sq", "text": "Shkurt: moti përshkruan ditën e veçantë, klima përshkruan modelin afatgjatë. Prandaj modelet nuk janë topa kristali pa gabime, por tregojnë zhvillime të arsyetuara mirë dhe hapësira të mundshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung bleibt einfach, nennt aber auch Grenzen und Aussagekraft von Modellen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the summary remains simple, but also names the limits and value of models." },
+                { "language": "fa", "text": "قوی: جمع‌بندی ساده می‌ماند، اما محدودیت‌ها و ارزش مدل‌ها را هم نام می‌برد." },
+                { "language": "ar", "text": "قوي: يبقى الملخص بسيطاً، لكنه يذكر أيضاً حدود النماذج وقيمتها." },
+                { "language": "tr", "text": "Güçlü: özet basit kalıyor, ama modellerin sınırlarını ve değerini de belirtiyor." },
+                { "language": "ru", "text": "Сильно: резюме остается простым, но также называет пределы и ценность моделей." },
+                { "language": "ckb", "text": "بەهێزە: کۆکردنەوەکە سادە دەمێنێت، بەڵام سنوور و بایەخی مۆدێلەکانیش ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: kurtkirin hêsan dimîne, lê sînor û nirxa modelan jî nav dike." },
+                { "language": "pl", "text": "Mocne: podsumowanie pozostaje proste, ale nazywa też granice i wartość modeli." },
+                { "language": "ro", "text": "Puternic: rezumatul rămâne simplu, dar numește și limitele și valoarea modelelor." },
+                { "language": "sq", "text": "E fortë: përmbledhja mbetet e thjeshtë, por përmend edhe kufijtë dhe vlerën e modeleve." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Kurz gesagt: Klima ist kompliziert, aber die Modelle zeigen, dass es wahrscheinlich wärmer wird.",
+              "translations": [
+                { "language": "en", "text": "In short: climate is complicated, but the models show that it will probably get warmer." },
+                { "language": "fa", "text": "خلاصه: اقلیم پیچیده است، اما مدل‌ها نشان می‌دهند که احتمالاً گرم‌تر می‌شود." },
+                { "language": "ar", "text": "باختصار: المناخ معقد، لكن النماذج تظهر أنه سيصبح على الأرجح أكثر دفئاً." },
+                { "language": "tr", "text": "Kısaca: iklim karmaşıktır, ama modeller muhtemelen daha sıcak olacağını gösteriyor." },
+                { "language": "ru", "text": "Коротко: климат сложен, но модели показывают, что, вероятно, станет теплее." },
+                { "language": "ckb", "text": "بە کورتی: ئاقلیم ئاڵۆزە، بەڵام مۆدێلەکان نیشان دەدەن کە بە ئەگەرێکی زۆر گەرمتر دەبێت." },
+                { "language": "kmr", "text": "Bi kurtî: avhewa aloz e, lê model nîşan didin ku bi ihtîmal germtir dibe." },
+                { "language": "pl", "text": "Krótko mówiąc: klimat jest skomplikowany, ale modele pokazują, że prawdopodobnie będzie cieplej." },
+                { "language": "ro", "text": "Pe scurt: clima este complicată, dar modelele arată că probabil va fi mai cald." },
+                { "language": "sq", "text": "Shkurt: klima është e ndërlikuar, por modelet tregojnë se ndoshta do të bëhet më ngrohtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Die Antwort verliert den Unterschied zwischen Wetter und Klima und klingt wie eine bloße Vermutung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: the answer loses the difference between weather and climate and sounds like a mere guess." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد، اما خیلی مبهم است: پاسخ تفاوت آب‌وهوا و اقلیم را از دست می‌دهد و شبیه حدس ساده به نظر می‌رسد." },
+                { "language": "ar", "text": "مقبول لكنه غامض جداً: تفقد الإجابة الفرق بين الطقس والمناخ وتبدو كمجرد تخمين." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: cevap hava durumu ile iklim arasındaki farkı kaybediyor ve yalnızca tahmin gibi duyuluyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: ответ теряет различие между погодой и климатом и звучит как простое предположение." },
+                { "language": "ckb", "text": "وا دیارە گونجاوە، بەڵام زۆر ناڕوونە: وەڵام جیاوازی کەشوهەوا و ئاقلیم لەدەست دەدات و وەک خەماڵاندنێکی سادە دەنگ دەدات." },
+                { "language": "kmr", "text": "Wek guncav e, lê pir nezelal e: bersiv cudahiya hewa û avhewayê winda dike û wek texmînekê tenê xuya dike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt mgliste: odpowiedź traci różnicę między pogodą a klimatem i brzmi jak zwykłe przypuszczenie." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: răspunsul pierde diferența dintre vreme și climă și sună ca o simplă presupunere." },
+                { "language": "sq", "text": "Duket e besueshme, por shumë e paqartë: përgjigjja humb dallimin midis motit dhe klimës dhe tingëllon si një hamendësim i thjeshtë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Beginnen Sie mit der Ebene der Aussage. So vermeiden Sie, dass Wetter und Klima nur als `kurz` und `lang` gegenübergestellt werden.",
+          "translations": [
+            { "language": "en", "text": "Start with the level of the statement. This prevents weather and climate from being contrasted only as `short` and `long`." },
+            { "language": "fa", "text": "با سطحِ ادعا شروع کنید. این باعث می‌شود آب‌وهوا و اقلیم فقط به صورت «کوتاه» و «بلند» در برابر هم قرار نگیرند." },
+            { "language": "ar", "text": "ابدأ بمستوى العبارة. هكذا تتجنب أن يقابل الطقس والمناخ فقط بوصفهما «قصيراً» و«طويلاً»." },
+            { "language": "tr", "text": "İfadenin düzeyiyle başlayın. Böylece hava durumu ve iklimin yalnızca `kısa` ve `uzun` olarak karşılaştırılmasını önlersiniz." },
+            { "language": "ru", "text": "Начните с уровня утверждения. Так Вы избежите того, чтобы погода и климат противопоставлялись только как «краткое» и «долгое»." },
+            { "language": "ckb", "text": "بە ئاستی قسەکە دەست پێ بکە. بەمە ڕێگری دەکەیت کە کەشوهەوا و ئاقلیم تەنها وەک «کورت» و «درێژ» بەرامبەر یەک دابنرێن." },
+            { "language": "kmr", "text": "Bi asta gotinê dest pê bikin. Bi vî awayî hûn rê nadin ku hewa û avhewa tenê wek `kurt` û `dirêj` werin berhevkirin." },
+            { "language": "pl", "text": "Proszę zacząć od poziomu wypowiedzi. Dzięki temu uniknie Pan/Pani zestawienia pogody i klimatu tylko jako „krótkiego” i „długiego”." },
+            { "language": "ro", "text": "Începeți cu nivelul afirmației. Astfel evitați ca vremea și clima să fie opuse doar ca `scurt` și `lung`." },
+            { "language": "sq", "text": "Filloni me nivelin e pohimit. Kështu shmangni që moti dhe klima të krahasohen vetëm si “shkurt” dhe “gjatë”." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "content",
+          "text": "Eine gute wissenschaftliche Erklärung nennt nicht nur Unsicherheit, sondern auch, was trotzdem gut belegt ist.",
+          "translations": [
+            { "language": "en", "text": "A good scientific explanation does not only name uncertainty, but also what is nevertheless well supported." },
+            { "language": "fa", "text": "یک توضیح علمی خوب فقط نامطمئنی را نام نمی‌برد، بلکه می‌گوید چه چیزی با وجود آن خوب اثبات شده است." },
+            { "language": "ar", "text": "الشرح العلمي الجيد لا يذكر عدم اليقين فقط، بل يذكر أيضاً ما هو مؤيد جيداً رغم ذلك." },
+            { "language": "tr", "text": "İyi bir bilimsel açıklama yalnızca belirsizliği değil, buna rağmen neyin iyi desteklendiğini de belirtir." },
+            { "language": "ru", "text": "Хорошее научное объяснение называет не только неопределенность, но и то, что при этом хорошо подтверждено." },
+            { "language": "ckb", "text": "ڕوونکردنەوەی زانستی باش تەنها نادڵنیایی ناو نابات، بەڵکو دەڵێت چی هەرچەندە باش پشتگیری کراوە." },
+            { "language": "kmr", "text": "Ravekirineke zanistî ya baş tenê nezelaliyê nav nake, lê herwiha dibêje çi dîsa baş piştrastkirî ye." },
+            { "language": "pl", "text": "Dobre wyjaśnienie naukowe nie tylko nazywa niepewność, lecz także to, co mimo niej jest dobrze udokumentowane." },
+            { "language": "ro", "text": "O explicație științifică bună nu numește doar incertitudinea, ci și ceea ce este totuși bine susținut." },
+            { "language": "sq", "text": "Një shpjegim i mirë shkencor nuk përmend vetëm pasigurinë, por edhe atë që megjithatë është mirë e mbështetur." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "language",
+          "text": "Die Formel `Richtung und genaue Zahl` ist hilfreich, weil sie Unsicherheit präzise eingrenzt.",
+          "translations": [
+            { "language": "en", "text": "The formula `direction and exact number` is helpful because it precisely limits uncertainty." },
+            { "language": "fa", "text": "فرمول «جهت و عدد دقیق» مفید است، چون نامطمئنی را دقیق محدود می‌کند." },
+            { "language": "ar", "text": "صيغة «الاتجاه والرقم الدقيق» مفيدة لأنها تحدد عدم اليقين بدقة." },
+            { "language": "tr", "text": "`Yön ve kesin sayı` formülü yararlıdır, çünkü belirsizliği kesin biçimde sınırlar." },
+            { "language": "ru", "text": "Формула «направление и точное число» полезна, потому что точно ограничивает неопределенность." },
+            { "language": "ckb", "text": "فۆرمولی «ئاراستە و ژمارەی ورد» سوودبەخشە، چونکە نادڵنیایی بە وردی سنووردار دەکات." },
+            { "language": "kmr", "text": "Formula `araste û hejmarê hûrgilî` alîkar e, ji ber ku nezelaliyê bi hûrgilî sînordar dike." },
+            { "language": "pl", "text": "Formuła „kierunek i dokładna liczba” jest pomocna, ponieważ precyzyjnie ogranicza niepewność." },
+            { "language": "ro", "text": "Formula `direcție și număr exact` este utilă, deoarece delimitează precis incertitudinea." },
+            { "language": "sq", "text": "Formula “drejtimi dhe numri i saktë” është e dobishme, sepse e kufizon saktë pasigurinë." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "exam-technique",
+          "text": "Ein starker Schlusssatz für Laien bleibt kurz, enthält aber Definition, Grenze und Kernaussage.",
+          "translations": [
+            { "language": "en", "text": "A strong closing sentence for laypeople remains short, but contains definition, limit, and core message." },
+            { "language": "fa", "text": "یک جمله پایانی قوی برای افراد غیرمتخصص کوتاه می‌ماند، اما تعریف، محدودیت و پیام اصلی را دارد." },
+            { "language": "ar", "text": "الجملة الختامية القوية لغير المتخصصين تبقى قصيرة، لكنها تحتوي على تعريف وحد ورسالة أساسية." },
+            { "language": "tr", "text": "Uzman olmayanlar için güçlü bir kapanış cümlesi kısa kalır, ama tanım, sınır ve ana mesaj içerir." },
+            { "language": "ru", "text": "Сильное заключительное предложение для неспециалистов остается коротким, но содержит определение, границу и основную мысль." },
+            { "language": "ckb", "text": "ڕستەی کۆتایی بەهێز بۆ کەسانی نەپیشەیی کورت دەمێنێت، بەڵام پێناسە، سنوور و پەیامی سەرەکی لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Hevoke dawî ya xurt ji bo kesên ne-pispor kurt dimîne, lê pênase, sînor û peyama sereke dihewîne." },
+            { "language": "pl", "text": "Mocne zdanie końcowe dla laików pozostaje krótkie, ale zawiera definicję, granicę i główny przekaz." },
+            { "language": "ro", "text": "O propoziție finală puternică pentru nespecialiști rămâne scurtă, dar conține definiție, limită și mesaj central." },
+            { "language": "sq", "text": "Një fjali përmbyllëse e fortë për joprofesionistët mbetet e shkurtër, por përmban përkufizim, kufi dhe mesazh kryesor." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "science-explanation-climate-model",
+          "placement": "detail-hero",
+          "purpose": "Show a neutral formal exam discussion where a scientific idea is explained with an accessible everyday analogy.",
+          "altText": "Zwei Prüfungsteilnehmende erklären an einem Tisch den Unterschied zwischen Wetter und Klima mit einfachen Skizzen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "Two exam candidates at a table explain the difference between weather and climate with simple sketches." },
+            { "language": "fa", "text": "دو شرکت‌کننده آزمون پشت یک میز تفاوت آب‌وهوا و اقلیم را با طرح‌های ساده توضیح می‌دهند." },
+            { "language": "ar", "text": "يشرح ممتحنان على طاولة الفرق بين الطقس والمناخ برسومات بسيطة." },
+            { "language": "tr", "text": "İki sınav adayı bir masada hava durumu ile iklim arasındaki farkı basit çizimlerle açıklar." },
+            { "language": "ru", "text": "Два участника экзамена за столом объясняют разницу между погодой и климатом с помощью простых схем." },
+            { "language": "ckb", "text": "دوو بەشداربووی تاقیکردنەوە لەسەر مێزێک جیاوازی نێوان کەشوهەوا و ئاقلیم بە هێڵکاریی سادە ڕوون دەکەنەوە." },
+            { "language": "kmr", "text": "Du beşdarên azmûnê li ser maseyekê cudahiya di navbera hewa û avhewayê de bi xêzên hêsan rave dikin." },
+            { "language": "pl", "text": "Dwie osoby zdające przy stole wyjaśniają różnicę między pogodą a klimatem za pomocą prostych szkiców." },
+            { "language": "ro", "text": "Doi candidați la examen explică la o masă diferența dintre vreme și climă cu schițe simple." },
+            { "language": "sq", "text": "Dy kandidatë provimi në një tavolinë shpjegojnë dallimin midis motit dhe klimës me skica të thjeshta." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal oral exam setting in Germany: two diverse adult candidates at a table explaining weather versus climate with simple non-readable sketches, calm academic atmosphere, no logos, no private data, no readable text inside the image, accessible composition, soft neutral colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

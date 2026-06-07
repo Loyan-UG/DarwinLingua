@@ -1,0 +1,663 @@
+{
+  "packageId": "roleplays-b2-core-48-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 48 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 48",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "culture": "de-DE",
+  "sourceLanguage": "de",
+  "notes": "B2 standalone RoleplayScenario package. German-first source content with localized learner-language projections. One scenario only for quality review.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-servicefall-eskalieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen Servicefall eskalieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Escalating a service case" },
+        { "language": "fa", "text": "ارجاع دادن یک پرونده خدماتی به مرحله بالاتر" },
+        { "language": "ar", "text": "تصعيد حالة خدمة" },
+        { "language": "tr", "text": "Bir hizmet dosyasını üst seviyeye taşımak" },
+        { "language": "ru", "text": "Эскалировать сервисное обращение" },
+        { "language": "ckb", "text": "بەرزکردنەوەی ئاستی پرۆسەیەکی خزمەتگوزاری" },
+        { "language": "kmr", "text": "Doza xizmetê ber bi asteke bilind ve birin" },
+        { "language": "pl", "text": "Eskalowanie sprawy serwisowej" },
+        { "language": "ro", "text": "Escaladarea unui caz de service" },
+        { "language": "sq", "text": "Eskalimi i një rasti shërbimi" }
+      ],
+      "description": "Du hast wegen eines ungelösten Servicefalls mehrfach Kontakt aufgenommen. Am Telefon bleibst du sachlich, fasst die bisherigen Schritte zusammen und verlangst eine verantwortliche Ansprechperson, eine klare Frist und eine schriftliche Zusammenfassung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You have contacted support several times about an unresolved service case. On the phone, you remain factual, summarize the previous steps, and request a responsible contact person, a clear deadline, and a written summary." },
+        { "language": "fa", "text": "برای یک پرونده خدماتی حل‌نشده چند بار تماس گرفته‌ای. تلفنی واقع‌بینانه می‌مانی، مراحل قبلی را خلاصه می‌کنی و یک مسئول مشخص، مهلت روشن و جمع‌بندی کتبی می‌خواهی." },
+        { "language": "ar", "text": "تواصلت عدة مرات بخصوص حالة خدمة لم تُحل. عبر الهاتف تبقى موضوعيًا، وتلخص الخطوات السابقة، وتطلب شخصًا مسؤولًا للتواصل، ومهلة واضحة، وملخصًا مكتوبًا." },
+        { "language": "tr", "text": "Çözülmemiş bir hizmet dosyası için birkaç kez iletişime geçtin. Telefonda nesnel kalıyor, önceki adımları özetliyor ve sorumlu bir muhatap, net bir süre ve yazılı özet talep ediyorsun." },
+        { "language": "ru", "text": "Ты несколько раз обращался по поводу нерешенного сервисного случая. По телефону ты сохраняешь деловой тон, кратко излагаешь предыдущие шаги и требуешь ответственного контактного лица, четкий срок и письменное резюме." },
+        { "language": "ckb", "text": "چەند جار پەیوەندیت کردووە لەبارەی پرۆسەیەکی خزمەتگوزاری کە چارەسەر نەکراوە. لە تەلەفۆندا بابەتی دەمێنیتەوە، هەنگاوەکانی پێشوو کورت دەکەیتەوە و کەسێکی بەرپرسی پەیوەندی، مۆڵەتێکی ڕوون و کورتەیەکی نووسراو دەخوازیت." },
+        { "language": "kmr", "text": "Te çend caran ji bo dozeke xizmetê ya nehatiye çareserkirin têkilî girtiye. Bi telefonê tu objektîf dimînî, gavên berê kurt dikî û kesekî berpirsiyar, demeke zelal û kurteyeke nivîskî dixwazî." },
+        { "language": "pl", "text": "Kilka razy kontaktowałeś się w sprawie nierozwiązanej sprawy serwisowej. Przez telefon pozostajesz rzeczowy, podsumowujesz wcześniejsze kroki i prosisz o odpowiedzialną osobę kontaktową, jasny termin oraz pisemne podsumowanie." },
+        { "language": "ro", "text": "Ai contactat de mai multe ori serviciul de asistență pentru un caz nerezolvat. La telefon rămâi obiectiv, rezumi pașii anteriori și ceri o persoană responsabilă, un termen clar și un rezumat scris." },
+        { "language": "sq", "text": "Ke kontaktuar disa herë për një rast shërbimi të pazgjidhur. Në telefon qëndron objektiv, përmbledh hapat e mëparshëm dhe kërkon një person përgjegjës kontakti, një afat të qartë dhe një përmbledhje me shkrim." }
+      ],
+      "learnerGoal": "Eskalieren, ohne unhöflich zu werden: bisherigen Verlauf belegen, ein neues Ticket ohne Bezug vermeiden, verantwortliche Bearbeitung verlangen und Fristen schriftlich sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Escalate without becoming impolite: document the previous history, avoid a new unrelated ticket, request responsible handling, and secure deadlines in writing." },
+        { "language": "fa", "text": "بدون بی‌ادب شدن، پرونده را به مرحله بالاتر ببر: سابقه را مستند کن، از ایجاد پرونده جدید بی‌ارتباط جلوگیری کن، رسیدگی مسئولانه بخواه و مهلت‌ها را کتبی قطعی کن." },
+        { "language": "ar", "text": "صعّد الأمر من دون أن تصبح غير مهذب: وثّق المسار السابق، وتجنب فتح ملف جديد بلا ربط، واطلب معالجة مسؤولة، وثبّت المهل كتابةً." },
+        { "language": "tr", "text": "Kaba olmadan üst seviyeye taşı: önceki süreci belgele, bağlantısız yeni dosyadan kaçın, sorumlu işlem talep et ve süreleri yazılı güvenceye al." },
+        { "language": "ru", "text": "Эскалировать без грубости: подтвердить предыдущую историю, избежать нового несвязанного обращения, потребовать ответственной обработки и зафиксировать сроки письменно." },
+        { "language": "ckb", "text": "بابەتەکە بەرز بکەرەوە بەبێ ئەوەی نەڕێزدار ببیت: ڕەوتی پێشوو بە بەڵگە دیاری بکە، لە کردنەوەی پرۆسەی نوێی بێ پەیوەندی دوور بکەوە، داوای چارەسەرکردنی بەرپرسانە بکە و مۆڵەتەکان بە نووسراوی دڵنیا بکە." },
+        { "language": "kmr", "text": "Bê bêedebî mijarê ber bi asteke bilind ve bibe: paşxanê bi belge nîşan bide, ji dozeke nû ya bê girêdan dûr bikeve, xebitandina berpirsiyar bixwaze û deman bi nivîskî ewle bike." },
+        { "language": "pl", "text": "Eskaluj bez nieuprzejmości: udokumentuj dotychczasowy przebieg, uniknij nowego niepowiązanego zgłoszenia, zażądaj odpowiedzialnej obsługi i zabezpiecz terminy pisemnie." },
+        { "language": "ro", "text": "Escaladează fără să devii nepoliticos: documentează istoricul, evită un caz nou fără legătură, cere gestionare responsabilă și asigură termenele în scris." },
+        { "language": "sq", "text": "Eskalo pa u bërë i pasjellshëm: dokumento historinë e mëparshme, shmang një rast të ri pa lidhje, kërko trajtim përgjegjës dhe siguro afatet me shkrim." }
+      ],
+      "cefrLevel": "B2",
+      "category": "customer-service",
+      "topics": [
+        "customer-service",
+        "business-communication"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call",
+        "complaint-handling"
+      ],
+      "taskType": "complain-politely",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "service-agent",
+          "displayName": "Kundenservice",
+          "translations": [
+            { "language": "en", "text": "Customer service" },
+            { "language": "fa", "text": "خدمات مشتری" },
+            { "language": "ar", "text": "خدمة العملاء" },
+            { "language": "tr", "text": "Müşteri hizmetleri" },
+            { "language": "ru", "text": "Служба поддержки" },
+            { "language": "ckb", "text": "خزمەتگوزاری کڕیاران" },
+            { "language": "kmr", "text": "Xizmeta mişteriyan" },
+            { "language": "pl", "text": "Obsługa klienta" },
+            { "language": "ro", "text": "Serviciul clienți" },
+            { "language": "sq", "text": "Shërbimi ndaj klientit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kunde",
+          "translations": [
+            { "language": "en", "text": "Customer" },
+            { "language": "fa", "text": "مشتری" },
+            { "language": "ar", "text": "العميل" },
+            { "language": "tr", "text": "Müşteri" },
+            { "language": "ru", "text": "Клиент" },
+            { "language": "ckb", "text": "کڕیار" },
+            { "language": "kmr", "text": "Mişterî" },
+            { "language": "pl", "text": "Klient" },
+            { "language": "ro", "text": "Client" },
+            { "language": "sq", "text": "Klienti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "service-agent",
+          "baseText": "Kundenservice der Firma Telvia, guten Tag. Wie kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "Telvia customer service, good day. How can I help you?" },
+            { "language": "fa", "text": "خدمات مشتری شرکت تلویا، روز بخیر. چطور می‌توانم کمکتان کنم؟" },
+            { "language": "ar", "text": "خدمة عملاء شركة تيلفيا، نهارك سعيد. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "Telvia müşteri hizmetleri, iyi günler. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Служба поддержки компании Telvia, добрый день. Чем я могу вам помочь?" },
+            { "language": "ckb", "text": "خزمەتگوزاری کڕیارانی کۆمپانیای تێلڤیا، ڕۆژ باش. چۆن دەتوانم یارمەتیت بدەم؟" },
+            { "language": "kmr", "text": "Xizmeta mişteriyan a şirketa Telvia, roj baş. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Obsługa klienta firmy Telvia, dzień dobry. Jak mogę pomóc?" },
+            { "language": "ro", "text": "Serviciul clienți al firmei Telvia, bună ziua. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Shërbimi ndaj klientit i firmës Telvia, mirëdita. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening",
+          "toneNote": "Formeller Einstieg am Telefon.",
+          "expectedLearnerAction": "Servicefallnummer nennen und Eskalationsziel ankündigen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich rufe wegen des Servicefalls S-90318 an. Ich habe in den letzten zwei Wochen dreimal Kontakt aufgenommen, aber das Problem ist weiterhin ungelöst. Ich möchte den Fall deshalb an eine verantwortliche Stelle eskalieren.",
+          "translations": [
+            { "language": "en", "text": "Good day. I am calling about service case S-90318. I have contacted you three times in the last two weeks, but the problem is still unresolved. I would therefore like to escalate the case to a responsible department." },
+            { "language": "fa", "text": "روز بخیر. درباره‌ی پرونده خدماتی S-90318 تماس می‌گیرم. در دو هفته‌ی گذشته سه بار تماس گرفته‌ام، اما مشکل همچنان حل نشده است. به همین دلیل می‌خواهم پرونده را به بخش مسئول بالاتر ارجاع بدهم." },
+            { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص حالة الخدمة S-90318. تواصلت ثلاث مرات خلال الأسبوعين الماضيين، لكن المشكلة لا تزال غير محلولة. لذلك أود تصعيد الحالة إلى جهة مسؤولة." },
+            { "language": "tr", "text": "İyi günler. S-90318 numaralı hizmet dosyası için arıyorum. Son iki hafta içinde üç kez iletişime geçtim, ancak sorun hâlâ çözülmedi. Bu nedenle dosyayı sorumlu bir birime taşımak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я звоню по поводу сервисного обращения S-90318. За последние две недели я связывался с вами три раза, но проблема все еще не решена. Поэтому я хотел бы передать дело ответственному отделу." },
+            { "language": "ckb", "text": "ڕۆژ باش. پەیوەندی دەکەم لەبارەی پرۆسەی خزمەتگوزاری S-90318. لە دوو هەفتەی ڕابردوودا سێ جار پەیوەندیم کردووە، بەڵام کێشەکە هێشتا چارەسەر نەکراوە. بۆیە دەمەوێت پرۆسەکە بۆ بەشێکی بەرپرسی بەرزتر بگوازمەوە." },
+            { "language": "kmr", "text": "Roj baş. Ez ji bo doza xizmetê S-90318 telefon dikim. Di du hefteyên dawî de min sê caran têkilî girtiye, lê pirsgirêk hêj nehatiye çareserkirin. Ji ber vê ez dixwazim dozê bidim beşeke berpirsiyar a bilindtir." },
+            { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie zgłoszenia serwisowego S-90318. W ciągu ostatnich dwóch tygodni kontaktowałem się trzy razy, ale problem nadal nie został rozwiązany. Dlatego chciałbym przekazać sprawę do odpowiedzialnego działu." },
+            { "language": "ro", "text": "Bună ziua. Sun în legătură cu cazul de service S-90318. În ultimele două săptămâni am contactat de trei ori, dar problema este încă nerezolvată. De aceea doresc să escaladez cazul către un departament responsabil." },
+            { "language": "sq", "text": "Mirëdita. Po telefonoj për rastin e shërbimit S-90318. Gjatë dy javëve të fundit kam kontaktuar tri herë, por problemi ende nuk është zgjidhur. Prandaj dua ta eskaloj rastin te një sektor përgjegjës." }
+          ],
+          "function": "escalation request",
+          "toneNote": "Sachlicher Einstieg: Fallnummer, Kontaktanzahl und Ziel der Eskalation.",
+          "expectedLearnerAction": "Verlauf knapp belegen und Eskalation begründen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "service-agent",
+          "baseText": "Ich sehe den Fall. Können Sie kurz zusammenfassen, was bisher passiert ist und was aktuell noch nicht funktioniert?",
+          "translations": [
+            { "language": "en", "text": "I can see the case. Could you briefly summarize what has happened so far and what is currently still not working?" },
+            { "language": "fa", "text": "پرونده را می‌بینم. لطفاً می‌توانید کوتاه خلاصه کنید تا حالا چه اتفاقی افتاده و الان دقیقاً چه چیزی هنوز کار نمی‌کند؟" },
+            { "language": "ar", "text": "أرى الحالة. هل يمكنك تلخيص ما حدث حتى الآن وما الذي لا يزال لا يعمل حاليًا؟" },
+            { "language": "tr", "text": "Dosyayı görüyorum. Şu ana kadar ne olduğunu ve şu anda neyin hâlâ çalışmadığını kısaca özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Я вижу обращение. Можете кратко подытожить, что уже произошло и что сейчас все еще не работает?" },
+            { "language": "ckb", "text": "پرۆسەکە دەبینم. دەتوانیت بە کورتی کورت بکەیتەوە تا ئێستا چی ڕوویداوە و ئێستا چی هێشتا کار ناکات؟" },
+            { "language": "kmr", "text": "Ez dozê dibînim. Hûn dikarin kurt rave bikin heta niha çi qewimiye û niha çi hêj naxebite?" },
+            { "language": "pl", "text": "Widzę sprawę. Czy może pan/pani krótko podsumować, co dotychczas się wydarzyło i co obecnie nadal nie działa?" },
+            { "language": "ro", "text": "Văd cazul. Puteți rezuma pe scurt ce s-a întâmplat până acum și ce nu funcționează încă în prezent?" },
+            { "language": "sq", "text": "E shoh rastin. A mund të përmbledhni shkurt çfarë ka ndodhur deri tani dhe çfarë ende nuk funksionon aktualisht?" }
+          ],
+          "function": "request history",
+          "toneNote": "Der Service fragt nach einer belastbaren Zusammenfassung.",
+          "expectedLearnerAction": "Zeitlinie und konkrete Auswirkungen nennen."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Seit der Tarifumstellung am 6. Mai fällt die Verbindung täglich mehrfach aus. Am 9., 13. und 20. Mai wurden jeweils Neustarts versprochen, aber danach gab es keine stabile Lösung. Ein zugesagter Rückruf der Technik ist ebenfalls nicht erfolgt.",
+          "translations": [
+            { "language": "en", "text": "Since the plan change on May 6, the connection has failed several times a day. On May 9, 13, and 20, restarts were promised each time, but there was no stable solution afterward. A promised callback from technical support also did not happen." },
+            { "language": "fa", "text": "از زمان تغییر تعرفه در ۶ مه، اتصال روزانه چند بار قطع می‌شود. در ۹، ۱۳ و ۲۰ مه هر بار قول راه‌اندازی مجدد داده شد، اما بعد از آن راه‌حل پایداری وجود نداشت. تماس برگشتی وعده‌داده‌شده از بخش فنی هم انجام نشد." },
+            { "language": "ar", "text": "منذ تغيير التعرفة في 6 مايو، ينقطع الاتصال عدة مرات يوميًا. في 9 و13 و20 مايو وُعدت في كل مرة بإعادة تشغيل، لكن لم تظهر بعد ذلك أي حل مستقر. كما أن الاتصال الموعود من القسم الفني لم يحدث." },
+            { "language": "tr", "text": "6 Mayıs'taki tarife değişikliğinden beri bağlantı günde birkaç kez kesiliyor. 9, 13 ve 20 Mayıs'ta her seferinde yeniden başlatma sözü verildi, ancak sonrasında kalıcı bir çözüm olmadı. Teknik birimin söz verdiği geri arama da gerçekleşmedi." },
+            { "language": "ru", "text": "С момента смены тарифа 6 мая соединение несколько раз в день обрывается. 9, 13 и 20 мая каждый раз обещали перезапуск, но после этого стабильного решения не было. Обещанный обратный звонок технического отдела также не состоялся." },
+            { "language": "ckb", "text": "لە کاتی گۆڕینی پلانی نرخی ٦ی مایەوە، پەیوەندییەکە ڕۆژانە چەند جار دەبڕێت. لە ٩، ١٣ و ٢٠ی مای هەر جار بەڵێنی دەستپێکردنەوە درا، بەڵام دواتر هیچ چارەسەرێکی جێگیر نەبوو. پەیوەندییەکی گەڕاوەی بەڵێندراو لە بەشی تەکنیکییش ڕووی نەدا." },
+            { "language": "kmr", "text": "Ji guherîna tarîfê ya 6ê Gulanê ve, girêdan rojane çend caran diqete. Di 9, 13 û 20ê Gulanê de her car destpêkirina ji nû ve hat sozdan, lê piştî wê çareseriyeke aram çênebû. Telefonkirina vegerî ya beşa teknîkî jî pêk nehat." },
+            { "language": "pl", "text": "Od zmiany taryfy 6 maja połączenie zrywa się kilka razy dziennie. 9, 13 i 20 maja za każdym razem obiecywano ponowne uruchomienie, ale potem nie było stabilnego rozwiązania. Obiecany telefon zwrotny z działu technicznego również nie nastąpił." },
+            { "language": "ro", "text": "De la schimbarea tarifului din 6 mai, conexiunea cade de mai multe ori pe zi. Pe 9, 13 și 20 mai s-au promis reporniri, dar după aceea nu a existat o soluție stabilă. Nici apelul promis din partea departamentului tehnic nu a avut loc." },
+            { "language": "sq", "text": "Që nga ndryshimi i tarifës më 6 maj, lidhja ndërpritet disa herë në ditë. Më 9, 13 dhe 20 maj u premtua çdo herë rinisje, por më pas nuk pati zgjidhje të qëndrueshme. Edhe telefonata e premtuar nga sektori teknik nuk u bë." }
+          ],
+          "function": "timeline and impact",
+          "toneNote": "Konkrete Daten ersetzen Ärger durch überprüfbare Fakten.",
+          "expectedLearnerAction": "Kontaktverlauf und ungelöstes Kernproblem belegen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "service-agent",
+          "baseText": "Ich kann ein neues Ticket eröffnen und den Sachverhalt noch einmal aufnehmen.",
+          "translations": [
+            { "language": "en", "text": "I can open a new ticket and record the situation once again." },
+            { "language": "fa", "text": "می‌توانم یک پرونده جدید باز کنم و موضوع را دوباره ثبت کنم." },
+            { "language": "ar", "text": "يمكنني فتح ملف جديد وتسجيل الحالة مرة أخرى." },
+            { "language": "tr", "text": "Yeni bir kayıt açıp durumu yeniden kaydedebilirim." },
+            { "language": "ru", "text": "Я могу открыть новое обращение и еще раз зафиксировать обстоятельства." },
+            { "language": "ckb", "text": "دەتوانم پرۆسەیەکی نوێ بکەمەوە و بابەتەکە جارێکی تر تۆمار بکەم." },
+            { "language": "kmr", "text": "Ez dikarim tîketeke nû vekim û rewşê careke din tomar bikim." },
+            { "language": "pl", "text": "Mogę otworzyć nowe zgłoszenie i jeszcze raz opisać sprawę." },
+            { "language": "ro", "text": "Pot deschide un tichet nou și pot înregistra încă o dată situația." },
+            { "language": "sq", "text": "Mund të hap një rast të ri dhe ta regjistroj situatën edhe një herë." }
+          ],
+          "function": "insufficient offer",
+          "toneNote": "Der Service bietet einen Schritt an, der den bisherigen Verlauf möglicherweise entwertet.",
+          "expectedLearnerAction": "Bestehenden Fallbezug und verantwortliche Bearbeitung verlangen."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ein neues Ticket ohne Bezug zum bisherigen Verlauf hilft mir nicht. Bitte eskalieren Sie den bestehenden Fall mit Priorität und nennen Sie mir eine verantwortliche Ansprechperson, eine Bearbeitungsfrist und die nächsten konkreten Schritte.",
+          "translations": [
+            { "language": "en", "text": "A new ticket without reference to the previous history does not help me. Please escalate the existing case with priority and give me a responsible contact person, a processing deadline, and the next concrete steps." },
+            { "language": "fa", "text": "پرونده جدید بدون ارتباط با سابقه‌ی قبلی کمکی به من نمی‌کند. لطفاً پرونده موجود را با اولویت به مرحله بالاتر ارجاع دهید و یک مسئول مشخص، مهلت رسیدگی و قدم‌های بعدی دقیق را به من اعلام کنید." },
+            { "language": "ar", "text": "فتح ملف جديد من دون ربط بالمسار السابق لا يساعدني. يرجى تصعيد الحالة الحالية بأولوية، وذكر شخص مسؤول للتواصل، ومهلة للمعالجة، والخطوات التالية المحددة." },
+            { "language": "tr", "text": "Önceki süreçle bağlantısı olmayan yeni bir kayıt bana yardımcı olmaz. Lütfen mevcut dosyayı öncelikli olarak üst seviyeye taşıyın ve bana sorumlu bir muhatap, işlem süresi ve sonraki somut adımları bildirin." },
+            { "language": "ru", "text": "Новое обращение без связи с предыдущей историей мне не поможет. Пожалуйста, эскалируйте существующий случай с приоритетом и назовите ответственное контактное лицо, срок обработки и следующие конкретные шаги." },
+            { "language": "ckb", "text": "پرۆسەیەکی نوێ بەبێ پەیوەندی بە ڕەوتی پێشوو یارمەتیم نادات. تکایە پرۆسەی هەنووکەیی بە پێشەنگی بگوازنەوە ئاستی بەرزتر و کەسێکی بەرپرسی پەیوەندی، مۆڵەتی چارەسەرکردن و هەنگاوە دیاریکراوەکانی داهاتووم پێ بڵێن." },
+            { "language": "kmr", "text": "Tîketeke nû bê girêdan bi paşxanê re ji min re alîkar nabe. Ji kerema xwe doza heyî bi pêşengî ber bi asteke bilind ve bibin û kesekî berpirsiyar, dema xebitandinê û gavên din ên zelal ji min re bibêjin." },
+            { "language": "pl", "text": "Nowe zgłoszenie bez odniesienia do dotychczasowego przebiegu mi nie pomoże. Proszę eskalować istniejącą sprawę priorytetowo i podać odpowiedzialną osobę kontaktową, termin opracowania oraz kolejne konkretne kroki." },
+            { "language": "ro", "text": "Un tichet nou fără legătură cu istoricul de până acum nu mă ajută. Vă rog să escaladați cazul existent cu prioritate și să îmi indicați o persoană responsabilă, un termen de procesare și următorii pași concreți." },
+            { "language": "sq", "text": "Një rast i ri pa lidhje me historinë e mëparshme nuk më ndihmon. Ju lutem eskaloni rastin ekzistues me prioritet dhe më jepni një person përgjegjës kontakti, një afat përpunimi dhe hapat konkretë të ardhshëm." }
+          ],
+          "function": "reject weak process offer",
+          "toneNote": "Bestimmt, aber nicht beleidigend: Du erklärst, warum das Angebot nicht reicht.",
+          "expectedLearnerAction": "Priorität, Verantwortlichkeit, Frist und nächste Schritte verlangen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "service-agent",
+          "baseText": "Ich kann den Fall an den Second-Level-Support weiterleiten. Dort meldet sich normalerweise jemand innerhalb von 48 Stunden.",
+          "translations": [
+            { "language": "en", "text": "I can forward the case to second-level support. Usually someone there gets back to you within 48 hours." },
+            { "language": "fa", "text": "می‌توانم پرونده را به پشتیبانی سطح دوم ارجاع بدهم. معمولاً کسی از آن بخش ظرف ۴۸ ساعت با شما تماس می‌گیرد." },
+            { "language": "ar", "text": "يمكنني إحالة الحالة إلى دعم المستوى الثاني. عادةً يتواصل شخص من هناك خلال 48 ساعة." },
+            { "language": "tr", "text": "Dosyayı ikinci seviye desteğe iletebilirim. Oradan normalde 48 saat içinde biri sizinle iletişime geçer." },
+            { "language": "ru", "text": "Я могу передать случай во вторую линию поддержки. Обычно оттуда связываются в течение 48 часов." },
+            { "language": "ckb", "text": "دەتوانم پرۆسەکە بۆ پشتگیری ئاستی دووەم بنێرم. زۆرجار کەسێک لەوێوە لە ماوەی ٤٨ کاتژمێردا پەیوەندی دەکات." },
+            { "language": "kmr", "text": "Ez dikarim dozê ji bo piştgiriya asta duyem bişînim. Bi gelemperî kesek ji wir di nav 48 saetan de têkilî digire." },
+            { "language": "pl", "text": "Mogę przekazać sprawę do wsparcia drugiego poziomu. Zwykle ktoś stamtąd kontaktuje się w ciągu 48 godzin." },
+            { "language": "ro", "text": "Pot transmite cazul către suportul de nivel doi. De obicei, cineva de acolo vă contactează în 48 de ore." },
+            { "language": "sq", "text": "Mund ta përcjell rastin te mbështetja e nivelit të dytë. Zakonisht dikush nga atje kontakton brenda 48 orësh." }
+          ],
+          "function": "escalation offer",
+          "toneNote": "Ein Fortschritt, aber noch ohne schriftliche Absicherung.",
+          "expectedLearnerAction": "Bestätigung, Frist und Ersatzlösung absichern."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein sinnvoller nächster Schritt, wenn ich heute eine schriftliche Bestätigung bekomme. Bitte nehmen Sie auch auf, was passiert, falls innerhalb von 48 Stunden kein Rückruf erfolgt, und ob bis zur Lösung eine Übergangslösung oder Gutschrift möglich ist.",
+          "translations": [
+            { "language": "en", "text": "That is a reasonable next step if I receive written confirmation today. Please also record what happens if no callback occurs within 48 hours and whether a temporary solution or credit is possible until the issue is resolved." },
+            { "language": "fa", "text": "این قدم بعدی منطقی است، به شرطی که امروز تأیید کتبی بگیرم. لطفاً همچنین ثبت کنید اگر ظرف ۴۸ ساعت تماس برگشتی انجام نشود چه اتفاقی می‌افتد و آیا تا زمان حل مشکل، راه‌حل موقت یا اعتبار مالی ممکن است یا نه." },
+            { "language": "ar", "text": "هذه خطوة تالية مناسبة إذا حصلت اليوم على تأكيد مكتوب. يرجى أيضًا تسجيل ما الذي سيحدث إذا لم يتم الاتصال خلال 48 ساعة، وهل يمكن توفير حل مؤقت أو رصيد تعويضي حتى حل المشكلة." },
+            { "language": "tr", "text": "Bugün yazılı onay alırsam bu mantıklı bir sonraki adım olur. Lütfen 48 saat içinde geri arama olmazsa ne olacağını ve çözülene kadar geçici bir çözüm ya da alacak kaydı mümkün olup olmadığını da kaydedin." },
+            { "language": "ru", "text": "Это разумный следующий шаг, если я сегодня получу письменное подтверждение. Пожалуйста, также зафиксируйте, что произойдет, если в течение 48 часов обратного звонка не будет, и возможны ли временное решение или зачет до устранения проблемы." },
+            { "language": "ckb", "text": "ئەمە هەنگاوێکی داهاتووی گونجاوە، ئەگەر ئەمڕۆ پشتڕاستکردنەوەی نووسراو وەربگرم. تکایە هەروەها تۆمار بکەن ئەگەر لە ماوەی ٤٨ کاتژمێردا پەیوەندی گەڕاوە نەکرێت چی ڕوودەدات، و ئایا تا چارەسەرکردن، چارەسەرێکی کاتی یان قەرەبووی دارایی ممکنە." },
+            { "language": "kmr", "text": "Ev gaveke din a maqûl e, heke ez îro piştrastkirina nivîskî bistînim. Ji kerema xwe tomar bikin ku heke di nav 48 saetan de telefonkirina vegerî pêk neyê dê çi bibe, û gelo heta çareseriyê çareseriyeke demkî an krediyek gengaz e." },
+            { "language": "pl", "text": "To rozsądny kolejny krok, jeśli dziś otrzymam pisemne potwierdzenie. Proszę też odnotować, co się stanie, jeśli w ciągu 48 godzin nie będzie telefonu zwrotnego, oraz czy do czasu rozwiązania możliwe jest rozwiązanie przejściowe lub uznanie finansowe." },
+            { "language": "ro", "text": "Este un pas următor rezonabil dacă primesc astăzi o confirmare scrisă. Vă rog să consemnați și ce se întâmplă dacă nu are loc niciun apel în 48 de ore și dacă până la rezolvare este posibilă o soluție temporară sau o compensare." },
+            { "language": "sq", "text": "Ky është një hap i arsyeshëm nëse sot marr konfirmim me shkrim. Ju lutem shënoni edhe çfarë ndodh nëse brenda 48 orësh nuk ka telefonatë kthimi dhe nëse deri në zgjidhje është e mundur një zgjidhje e përkohshme ose kompensim." }
+          ],
+          "function": "conditional acceptance",
+          "toneNote": "Du akzeptierst den Prozess, verlangst aber Bedingungen und einen Ausweichplan.",
+          "expectedLearnerAction": "Schriftliche Bestätigung, Eskalationsfolge und Übergangslösung sichern."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "service-agent",
+          "baseText": "Ich eskaliere den bestehenden Fall jetzt mit Priorität und sende Ihnen gleich eine Zusammenfassung per E-Mail. Wenn bis Freitag kein Rückruf erfolgt, können Sie sich mit derselben Fallnummer direkt wieder melden.",
+          "translations": [
+            { "language": "en", "text": "I am now escalating the existing case with priority and will send you a summary by email shortly. If there is no callback by Friday, you can contact us again directly with the same case number." },
+            { "language": "fa", "text": "اکنون پرونده موجود را با اولویت به مرحله بالاتر ارجاع می‌دهم و تا چند لحظه دیگر یک جمع‌بندی از طریق ایمیل برایتان می‌فرستم. اگر تا جمعه تماس برگشتی انجام نشد، می‌توانید با همان شماره پرونده مستقیم دوباره تماس بگیرید." },
+            { "language": "ar", "text": "سأصعّد الحالة الحالية الآن بأولوية، وسأرسل لك بعد قليل ملخصًا عبر البريد الإلكتروني. إذا لم يتم الاتصال بك حتى يوم الجمعة، يمكنك التواصل مجددًا مباشرةً بالرقم نفسه." },
+            { "language": "tr", "text": "Mevcut dosyayı şimdi öncelikli olarak üst seviyeye taşıyorum ve size birazdan e-posta ile bir özet göndereceğim. Cuma gününe kadar geri arama olmazsa aynı dosya numarasıyla doğrudan tekrar iletişime geçebilirsiniz." },
+            { "language": "ru", "text": "Я сейчас эскалирую существующее обращение с приоритетом и вскоре отправлю вам резюме по электронной почте. Если до пятницы обратного звонка не будет, вы можете снова напрямую обратиться с тем же номером дела." },
+            { "language": "ckb", "text": "ئێستا پرۆسەی هەنووکەیی بە پێشەنگی دەگوازمەوە ئاستی بەرزتر و تا کەمێکی تر کورتەیەک بە نامەی ئەلیکترۆنی بۆتان دەنێرم. ئەگەر تا ڕۆژی هەینی پەیوەندی گەڕاوە نەکرا، دەتوانن بە هەمان ژمارەی پرۆسەوە ڕاستەوخۆ دووبارە پەیوەندی بکەن." },
+            { "language": "kmr", "text": "Ez niha doza heyî bi pêşengî ber bi asteke bilind ve dibim û nêzîk e kurteyê bi nameya elektronîkî ji we re bişînim. Heke heta roja Înê telefonkirina vegerî çênebe, hûn dikarin bi heman hejmareya dozê rasterast careke din têkilî bigirin." },
+            { "language": "pl", "text": "Eskaluję teraz istniejącą sprawę priorytetowo i zaraz wyślę podsumowanie e-mailem. Jeśli do piątku nie będzie telefonu zwrotnego, można ponownie skontaktować się bezpośrednio z tym samym numerem sprawy." },
+            { "language": "ro", "text": "Escaladez acum cazul existent cu prioritate și vă trimit imediat un rezumat prin e-mail. Dacă până vineri nu are loc niciun apel, ne puteți contacta din nou direct cu același număr de caz." },
+            { "language": "sq", "text": "Tani po e eskaloj rastin ekzistues me prioritet dhe do t'ju dërgoj menjëherë një përmbledhje me email. Nëse deri të premten nuk ka telefonatë kthimi, mund të kontaktoni përsëri drejtpërdrejt me të njëjtin numër rasti." }
+          ],
+          "function": "confirmed escalation",
+          "toneNote": "Der Service nennt nun Priorität, schriftliche Zusammenfassung und Folgeweg.",
+          "expectedLearnerAction": "Vereinbarung präzise abschließen."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann erwarte ich heute die schriftliche Zusammenfassung mit Priorität, Fallnummer S-90318, Rückruf bis Freitag und dem Hinweis, wie ich weiter vorgehe, falls der Rückruf ausbleibt.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I expect the written summary today with priority status, case number S-90318, a callback by Friday, and the note on how I should proceed if the callback does not happen." },
+            { "language": "fa", "text": "بسیار ممنون. پس امروز منتظر جمع‌بندی کتبی با وضعیت اولویت‌دار، شماره پرونده S-90318، تماس برگشتی تا جمعه و توضیح درباره‌ی اقدام بعدی در صورت انجام نشدن تماس هستم." },
+            { "language": "ar", "text": "شكرًا جزيلًا. إذن أنتظر اليوم الملخص المكتوب مع حالة الأولوية، ورقم الحالة S-90318، والاتصال حتى يوم الجمعة، والملاحظة حول كيفية المتابعة إذا لم يحدث الاتصال." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O hâlde bugün öncelik durumu, S-90318 dosya numarası, cuma gününe kadar geri arama ve geri arama olmazsa nasıl ilerleyeceğime dair not içeren yazılı özeti bekliyorum." },
+            { "language": "ru", "text": "Большое спасибо. Тогда сегодня я ожидаю письменное резюме с приоритетным статусом, номером дела S-90318, обратным звонком до пятницы и указанием, как действовать дальше, если звонка не будет." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ چاوەڕێی کورتەی نووسراوم لەگەڵ دۆخی پێشەنگی، ژمارەی پرۆسە S-90318، پەیوەندی گەڕاوە تا ڕۆژی هەینی و تێبینی لەسەر ئەوەی ئەگەر پەیوەندی نەکرا چۆن بەردەوام بم." },
+            { "language": "kmr", "text": "Gelek spas. Hingê ez îro li benda kurteya nivîskî me bi rewşa pêşengî, hejmareya dozê S-90318, telefonkirina vegerî heta roja Înê û agahdariya ka heke telefon nebe ez çawa bidomînim." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie oczekuję dziś pisemnego podsumowania z priorytetem, numerem sprawy S-90318, telefonem zwrotnym do piątku i informacją, jak mam postąpić, jeśli telefonu nie będzie." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci aștept astăzi rezumatul scris cu statut de prioritate, numărul cazului S-90318, apel până vineri și mențiunea despre cum procedez dacă apelul nu are loc." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë sot pres përmbledhjen me shkrim me status prioritar, numrin e rastit S-90318, telefonatë deri të premten dhe shënimin se si të veproj nëse telefonata nuk ndodh." }
+          ],
+          "function": "closing summary",
+          "toneNote": "Der Abschluss wiederholt die überprüfbaren Punkte und den Folgeweg.",
+          "expectedLearnerAction": "Eskalation, Frist und Folgeaktion zusammenfassen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "b2-service-48-t2-a",
+              "text": "Guten Tag. Ich rufe wegen des Servicefalls S-90318 an. Ich habe in den letzten zwei Wochen dreimal Kontakt aufgenommen, aber das Problem ist weiterhin ungelöst. Ich möchte den Fall deshalb an eine verantwortliche Stelle eskalieren.",
+              "translations": [
+                { "language": "en", "text": "Good day. I am calling about service case S-90318. I have contacted you three times in the last two weeks, but the problem is still unresolved. I would therefore like to escalate the case to a responsible department." },
+                { "language": "fa", "text": "روز بخیر. درباره‌ی پرونده خدماتی S-90318 تماس می‌گیرم. در دو هفته‌ی گذشته سه بار تماس گرفته‌ام، اما مشکل همچنان حل نشده است. به همین دلیل می‌خواهم پرونده را به بخش مسئول بالاتر ارجاع بدهم." },
+                { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص حالة الخدمة S-90318. تواصلت ثلاث مرات خلال الأسبوعين الماضيين، لكن المشكلة لا تزال غير محلولة. لذلك أود تصعيد الحالة إلى جهة مسؤولة." },
+                { "language": "tr", "text": "İyi günler. S-90318 numaralı hizmet dosyası için arıyorum. Son iki hafta içinde üç kez iletişime geçtim, ancak sorun hâlâ çözülmedi. Bu nedenle dosyayı sorumlu bir birime taşımak istiyorum." },
+                { "language": "ru", "text": "Добрый день. Я звоню по поводу сервисного обращения S-90318. За последние две недели я связывался с вами три раза, но проблема все еще не решена. Поэтому я хотел бы передать дело ответственному отделу." },
+                { "language": "ckb", "text": "ڕۆژ باش. پەیوەندی دەکەم لەبارەی پرۆسەی خزمەتگوزاری S-90318. لە دوو هەفتەی ڕابردوودا سێ جار پەیوەندیم کردووە، بەڵام کێشەکە هێشتا چارەسەر نەکراوە. بۆیە دەمەوێت پرۆسەکە بۆ بەشێکی بەرپرسی بەرزتر بگوازمەوە." },
+                { "language": "kmr", "text": "Roj baş. Ez ji bo doza xizmetê S-90318 telefon dikim. Di du hefteyên dawî de min sê caran têkilî girtiye, lê pirsgirêk hêj nehatiye çareserkirin. Ji ber vê ez dixwazim dozê bidim beşeke berpirsiyar a bilindtir." },
+                { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie zgłoszenia serwisowego S-90318. W ciągu ostatnich dwóch tygodni kontaktowałem się trzy razy, ale problem nadal nie został rozwiązany. Dlatego chciałbym przekazać sprawę do odpowiedzialnego działu." },
+                { "language": "ro", "text": "Bună ziua. Sun în legătură cu cazul de service S-90318. În ultimele două săptămâni am contactat de trei ori, dar problema este încă nerezolvată. De aceea doresc să escaladez cazul către un departament responsabil." },
+                { "language": "sq", "text": "Mirëdita. Po telefonoj për rastin e shërbimit S-90318. Gjatë dy javëve të fundit kam kontaktuar tri herë, por problemi ende nuk është zgjidhur. Prandaj dua ta eskaloj rastin te një sektor përgjegjës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist stark: Du nennst Fallnummer, Kontaktverlauf und den Grund für die Eskalation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is strong: you state the case number, contact history, and reason for escalation." },
+                { "language": "fa", "text": "این پاسخ قوی است: شماره پرونده، سابقه تماس و دلیل ارجاع به مرحله بالاتر را می‌گویی." },
+                { "language": "ar", "text": "هذه إجابة قوية: تذكر رقم الحالة، وسجل التواصل، وسبب التصعيد." },
+                { "language": "tr", "text": "Bu güçlü bir cevap: dosya numarasını, iletişim geçmişini ve üst seviyeye taşıma nedenini belirtiyorsun." },
+                { "language": "ru", "text": "Это сильный ответ: ты называешь номер дела, историю контактов и причину эскалации." },
+                { "language": "ckb", "text": "ئەم وەڵامە بەهێزە: ژمارەی پرۆسە، ڕەوتی پەیوەندی و هۆکاری بەرزکردنەوەی ئاستەکە دەڵێیت." },
+                { "language": "kmr", "text": "Ev bersiv bihêz e: tu hejmareya dozê, paşxana têkiliyê û sedema bilindkirinê dibêjî." },
+                { "language": "pl", "text": "To mocna odpowiedź: podajesz numer sprawy, historię kontaktów i powód eskalacji." },
+                { "language": "ro", "text": "Este un răspuns puternic: menționezi numărul cazului, istoricul contactelor și motivul escaladării." },
+                { "language": "sq", "text": "Kjo është përgjigje e fortë: jep numrin e rastit, historinë e kontakteve dhe arsyen e eskalimit." }
+              ],
+              "explanationKey": "case-history-escalation"
+            },
+            {
+              "id": "b2-service-48-t2-b",
+              "text": "Guten Tag. Ich habe schon öfter angerufen, aber nichts passiert. Können Sie mir endlich helfen?",
+              "translations": [
+                { "language": "en", "text": "Good day. I have called several times already, but nothing has happened. Can you finally help me?" },
+                { "language": "fa", "text": "روز بخیر. من چند بار تماس گرفته‌ام، اما هیچ اتفاقی نیفتاده است. بالاخره می‌توانید کمکم کنید؟" },
+                { "language": "ar", "text": "نهارك سعيد. لقد اتصلت عدة مرات، لكن لم يحدث شيء. هل يمكنكم مساعدتي أخيرًا؟" },
+                { "language": "tr", "text": "İyi günler. Birkaç kez aradım, ama hiçbir şey olmadı. Artık bana yardımcı olabilir misiniz?" },
+                { "language": "ru", "text": "Добрый день. Я уже несколько раз звонил, но ничего не произошло. Вы наконец можете мне помочь?" },
+                { "language": "ckb", "text": "ڕۆژ باش. من چەند جار پەیوەندیم کردووە، بەڵام هیچ شتێک ڕووی نەداوە. ئایا ئێستا دەتوانن یارمەتیم بدەن؟" },
+                { "language": "kmr", "text": "Roj baş. Min çend caran telefon kiriye, lê tiştek neqewimiye. Hûn dikarin êdî alîkariya min bikin?" },
+                { "language": "pl", "text": "Dzień dobry. Dzwoniłem już kilka razy, ale nic się nie wydarzyło. Czy mogą mi państwo wreszcie pomóc?" },
+                { "language": "ro", "text": "Bună ziua. Am sunat deja de mai multe ori, dar nu s-a întâmplat nimic. Mă puteți ajuta în sfârșit?" },
+                { "language": "sq", "text": "Mirëdita. Kam telefonuar disa herë, por asgjë nuk ka ndodhur. A mund të më ndihmoni më në fund?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber zu emotional und ungenau. Für B2 brauchst du Fallnummer, Verlauf und eine konkrete Eskalationsbitte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too emotional and imprecise. For B2, you need the case number, history, and a concrete escalation request." },
+                { "language": "fa", "text": "این قابل فهم است، اما بیش از حد احساسی و نامشخص است. برای B2 به شماره پرونده، سابقه و درخواست روشن برای ارجاع به مرحله بالاتر نیاز داری." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه عاطفي وغير دقيق جدًا. في مستوى B2 تحتاج إلى رقم الحالة والمسار السابق وطلب تصعيد محدد." },
+                { "language": "tr", "text": "Bu anlaşılır, ama fazla duygusal ve belirsiz. B2 için dosya numarası, süreç ve somut bir üst seviyeye taşıma talebi gerekir." },
+                { "language": "ru", "text": "Это понятно, но слишком эмоционально и неточно. Для B2 нужны номер дела, история и конкретная просьба об эскалации." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتراوە، بەڵام زۆر هەستیارانە و ناوردە. بۆ B2 پێویستت بە ژمارەی پرۆسە، ڕەوت و داوایەکی ڕوون بۆ بەرزکردنەوەی ئاستەکە هەیە." },
+                { "language": "kmr", "text": "Ev têgihiştbar e, lê pir hestyarî û nezelal e. Ji bo B2 hejmareya dozê, paşxan û daxwazeke zelal a bilindkirinê divê." },
+                { "language": "pl", "text": "To zrozumiałe, ale zbyt emocjonalne i nieprecyzyjne. Na B2 potrzebujesz numeru sprawy, przebiegu i konkretnej prośby o eskalację." },
+                { "language": "ro", "text": "Este de înțeles, dar prea emoțional și imprecis. Pentru B2 ai nevoie de numărul cazului, istoric și o cerere concretă de escaladare." },
+                { "language": "sq", "text": "Kjo është e kuptueshme, por shumë emocionale dhe e pasaktë. Për B2 të duhet numri i rastit, historiku dhe një kërkesë konkrete për eskalim." }
+              ],
+              "explanationKey": "emotional-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "b2-service-48-t4-a",
+              "text": "Seit der Tarifumstellung am 6. Mai fällt die Verbindung täglich mehrfach aus. Am 9., 13. und 20. Mai wurden jeweils Neustarts versprochen, aber danach gab es keine stabile Lösung. Ein zugesagter Rückruf der Technik ist ebenfalls nicht erfolgt.",
+              "translations": [
+                { "language": "en", "text": "Since the plan change on May 6, the connection has failed several times a day. On May 9, 13, and 20, restarts were promised each time, but there was no stable solution afterward. A promised callback from technical support also did not happen." },
+                { "language": "fa", "text": "از زمان تغییر تعرفه در ۶ مه، اتصال روزانه چند بار قطع می‌شود. در ۹، ۱۳ و ۲۰ مه هر بار قول راه‌اندازی مجدد داده شد، اما بعد از آن راه‌حل پایداری وجود نداشت. تماس برگشتی وعده‌داده‌شده از بخش فنی هم انجام نشد." },
+                { "language": "ar", "text": "منذ تغيير التعرفة في 6 مايو، ينقطع الاتصال عدة مرات يوميًا. في 9 و13 و20 مايو وُعدت في كل مرة بإعادة تشغيل، لكن لم تظهر بعد ذلك أي حل مستقر. كما أن الاتصال الموعود من القسم الفني لم يحدث." },
+                { "language": "tr", "text": "6 Mayıs'taki tarife değişikliğinden beri bağlantı günde birkaç kez kesiliyor. 9, 13 ve 20 Mayıs'ta her seferinde yeniden başlatma sözü verildi, ancak sonrasında kalıcı bir çözüm olmadı. Teknik birimin söz verdiği geri arama da gerçekleşmedi." },
+                { "language": "ru", "text": "С момента смены тарифа 6 мая соединение несколько раз в день обрывается. 9, 13 и 20 мая каждый раз обещали перезапуск, но после этого стабильного решения не было. Обещанный обратный звонок технического отдела также не состоялся." },
+                { "language": "ckb", "text": "لە کاتی گۆڕینی پلانی نرخی ٦ی مایەوە، پەیوەندییەکە ڕۆژانە چەند جار دەبڕێت. لە ٩، ١٣ و ٢٠ی مای هەر جار بەڵێنی دەستپێکردنەوە درا، بەڵام دواتر هیچ چارەسەرێکی جێگیر نەبوو. پەیوەندییەکی گەڕاوەی بەڵێندراو لە بەشی تەکنیکییش ڕووی نەدا." },
+                { "language": "kmr", "text": "Ji guherîna tarîfê ya 6ê Gulanê ve, girêdan rojane çend caran diqete. Di 9, 13 û 20ê Gulanê de her car destpêkirina ji nû ve hat sozdan, lê piştî wê çareseriyeke aram çênebû. Telefonkirina vegerî ya beşa teknîkî jî pêk nehat." },
+                { "language": "pl", "text": "Od zmiany taryfy 6 maja połączenie zrywa się kilka razy dziennie. 9, 13 i 20 maja za każdym razem obiecywano ponowne uruchomienie, ale potem nie było stabilnego rozwiązania. Obiecany telefon zwrotny z działu technicznego również nie nastąpił." },
+                { "language": "ro", "text": "De la schimbarea tarifului din 6 mai, conexiunea cade de mai multe ori pe zi. Pe 9, 13 și 20 mai s-au promis reporniri, dar după aceea nu a existat o soluție stabilă. Nici apelul promis din partea departamentului tehnic nu a avut loc." },
+                { "language": "sq", "text": "Që nga ndryshimi i tarifës më 6 maj, lidhja ndërpritet disa herë në ditë. Më 9, 13 dhe 20 maj u premtua çdo herë rinisje, por më pas nuk pati zgjidhje të qëndrueshme. Edhe telefonata e premtuar nga sektori teknik nuk u bë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du gibst eine kurze, überprüfbare Zeitlinie und nennst die aktuelle Auswirkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: you give a short, checkable timeline and state the current impact." },
+                { "language": "fa", "text": "خوب است: یک خط زمانی کوتاه و قابل بررسی می‌دهی و اثر فعلی مشکل را می‌گویی." },
+                { "language": "ar", "text": "جيد: تقدم خطًا زمنيًا قصيرًا يمكن التحقق منه، وتذكر الأثر الحالي." },
+                { "language": "tr", "text": "İyi: kısa ve kontrol edilebilir bir zaman çizelgesi veriyor ve mevcut etkiyi belirtiyorsun." },
+                { "language": "ru", "text": "Хорошо: ты даешь краткую, проверяемую хронологию и называешь текущее влияние." },
+                { "language": "ckb", "text": "باشە: کاتژمێرێکی کورت و پشکنین‌کراو دەدەیت و کاریگەریی ئێستای کێشەکە دەڵێیت." },
+                { "language": "kmr", "text": "Baş e: tu rêzek demê ya kurt û kontrolkirinê didî û bandora niha dibêjî." },
+                { "language": "pl", "text": "Dobrze: podajesz krótką, sprawdzalną oś czasu i aktualny skutek problemu." },
+                { "language": "ro", "text": "Bine: oferi o cronologie scurtă și verificabilă și menționezi impactul actual." },
+                { "language": "sq", "text": "Mirë: jep një vijë kohore të shkurtër e të verifikueshme dhe përmend ndikimin aktual." }
+              ],
+              "explanationKey": "timeline-impact"
+            },
+            {
+              "id": "b2-service-48-t4-b",
+              "text": "Das Problem besteht schon länger, und jedes Mal wurde mir etwas anderes gesagt.",
+              "translations": [
+                { "language": "en", "text": "The problem has existed for a while, and each time I was told something different." },
+                { "language": "fa", "text": "مشکل مدتی است وجود دارد و هر بار چیز متفاوتی به من گفته شده است." },
+                { "language": "ar", "text": "المشكلة موجودة منذ فترة، وفي كل مرة قيل لي شيء مختلف." },
+                { "language": "tr", "text": "Sorun bir süredir var ve her seferinde bana farklı bir şey söylendi." },
+                { "language": "ru", "text": "Проблема существует уже давно, и каждый раз мне говорили что-то другое." },
+                { "language": "ckb", "text": "کێشەکە ماوەیەکە هەیە و هەر جار شتێکی جیاوازم پێ وتراوە." },
+                { "language": "kmr", "text": "Pirsgirêk demekê ye heye û her car tiştekî cuda ji min re hatiye gotin." },
+                { "language": "pl", "text": "Problem istnieje już od pewnego czasu i za każdym razem powiedziano mi coś innego." },
+                { "language": "ro", "text": "Problema există de ceva timp și de fiecare dată mi s-a spus altceva." },
+                { "language": "sq", "text": "Problemi ekziston prej një kohe dhe çdo herë më është thënë diçka tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist nachvollziehbar, aber zu unkonkret. Für eine Eskalation brauchst du Daten, zugesagte Schritte und den aktuellen Schaden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too unspecific. For escalation, you need dates, promised steps, and the current damage." },
+                { "language": "fa", "text": "این قابل درک است، اما خیلی کلی است. برای ارجاع به مرحله بالاتر به تاریخ‌ها، قدم‌های وعده‌داده‌شده و آسیب فعلی نیاز داری." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه غير محدد. للتصعيد تحتاج إلى تواريخ وخطوات موعودة والضرر الحالي." },
+                { "language": "tr", "text": "Bu anlaşılır, ama fazla belirsiz. Üst seviyeye taşımak için tarihler, vaat edilen adımlar ve mevcut zarar gerekir." },
+                { "language": "ru", "text": "Это понятно, но слишком неконкретно. Для эскалации нужны даты, обещанные шаги и текущий ущерб." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتراوە، بەڵام زۆر گشتییە. بۆ بەرزکردنەوەی ئاستەکە پێویستت بە بەروار، هەنگاوی بەڵێندراو و زیانی ئێستا هەیە." },
+                { "language": "kmr", "text": "Ev têgihiştbar e, lê pir nezelal e. Ji bo bilindkirinê dîrok, gavên sozdayî û ziyana niha divê." },
+                { "language": "pl", "text": "To zrozumiałe, ale zbyt niekonkretne. Do eskalacji potrzebujesz dat, obiecanych kroków i aktualnej szkody." },
+                { "language": "ro", "text": "Este de înțeles, dar prea neconcret. Pentru escaladare ai nevoie de date, pași promiși și prejudiciul actual." },
+                { "language": "sq", "text": "Kjo është e kuptueshme, por shumë e pasaktë. Për eskalim të duhen data, hapa të premtuar dhe dëmi aktual." }
+              ],
+              "explanationKey": "too-unspecific"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "b2-service-48-t6-a",
+              "text": "Ein neues Ticket ohne Bezug zum bisherigen Verlauf hilft mir nicht. Bitte eskalieren Sie den bestehenden Fall mit Priorität und nennen Sie mir eine verantwortliche Ansprechperson, eine Bearbeitungsfrist und die nächsten konkreten Schritte.",
+              "translations": [
+                { "language": "en", "text": "A new ticket without reference to the previous history does not help me. Please escalate the existing case with priority and give me a responsible contact person, a processing deadline, and the next concrete steps." },
+                { "language": "fa", "text": "پرونده جدید بدون ارتباط با سابقه‌ی قبلی کمکی به من نمی‌کند. لطفاً پرونده موجود را با اولویت به مرحله بالاتر ارجاع دهید و یک مسئول مشخص، مهلت رسیدگی و قدم‌های بعدی دقیق را به من اعلام کنید." },
+                { "language": "ar", "text": "فتح ملف جديد من دون ربط بالمسار السابق لا يساعدني. يرجى تصعيد الحالة الحالية بأولوية، وذكر شخص مسؤول للتواصل، ومهلة للمعالجة، والخطوات التالية المحددة." },
+                { "language": "tr", "text": "Önceki süreçle bağlantısı olmayan yeni bir kayıt bana yardımcı olmaz. Lütfen mevcut dosyayı öncelikli olarak üst seviyeye taşıyın ve bana sorumlu bir muhatap, işlem süresi ve sonraki somut adımları bildirin." },
+                { "language": "ru", "text": "Новое обращение без связи с предыдущей историей мне не поможет. Пожалуйста, эскалируйте существующий случай с приоритетом и назовите ответственное контактное лицо, срок обработки и следующие конкретные шаги." },
+                { "language": "ckb", "text": "پرۆسەیەکی نوێ بەبێ پەیوەندی بە ڕەوتی پێشوو یارمەتیم نادات. تکایە پرۆسەی هەنووکەیی بە پێشەنگی بگوازنەوە ئاستی بەرزتر و کەسێکی بەرپرسی پەیوەندی، مۆڵەتی چارەسەرکردن و هەنگاوە دیاریکراوەکانی داهاتووم پێ بڵێن." },
+                { "language": "kmr", "text": "Tîketeke nû bê girêdan bi paşxanê re ji min re alîkar nabe. Ji kerema xwe doza heyî bi pêşengî ber bi asteke bilind ve bibin û kesekî berpirsiyar, dema xebitandinê û gavên din ên zelal ji min re bibêjin." },
+                { "language": "pl", "text": "Nowe zgłoszenie bez odniesienia do dotychczasowego przebiegu mi nie pomoże. Proszę eskalować istniejącą sprawę priorytetowo i podać odpowiedzialną osobę kontaktową, termin opracowania oraz kolejne konkretne kroki." },
+                { "language": "ro", "text": "Un tichet nou fără legătură cu istoricul de până acum nu mă ajută. Vă rog să escaladați cazul existent cu prioritate și să îmi indicați o persoană responsabilă, un termen de procesare și următorii pași concreți." },
+                { "language": "sq", "text": "Një rast i ri pa lidhje me historinë e mëparshme nuk më ndihmon. Ju lutem eskaloni rastin ekzistues me prioritet dhe më jepni një person përgjegjës kontakti, një afat përpunimi dhe hapat konkretë të ardhshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Sehr gut: Du lehnst den schwachen Prozessschritt begründet ab und formulierst klare Alternativen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Very good: you reject the weak process step with a reason and formulate clear alternatives." },
+                { "language": "fa", "text": "خیلی خوب: قدم فرایندی ضعیف را با دلیل رد می‌کنی و جایگزین‌های روشن مطرح می‌کنی." },
+                { "language": "ar", "text": "جيد جدًا: ترفض خطوة إجرائية ضعيفة مع سبب، وتقدم بدائل واضحة." },
+                { "language": "tr", "text": "Çok iyi: zayıf süreç adımını gerekçeyle reddediyor ve net alternatifler formüle ediyorsun." },
+                { "language": "ru", "text": "Очень хорошо: ты обоснованно отклоняешь слабый процессный шаг и формулируешь четкие альтернативы." },
+                { "language": "ckb", "text": "زۆر باشە: هەنگاوی پرۆسەیی لاواز بە هۆکار ڕەت دەکەیتەوە و جێگرەوەی ڕوون دەخەیتەڕوو." },
+                { "language": "kmr", "text": "Gelek baş: tu gava pêvajoyê ya qels bi sedem red dikî û alternatîfên zelal dibêjî." },
+                { "language": "pl", "text": "Bardzo dobrze: odrzucasz słaby krok proceduralny z uzasadnieniem i formułujesz jasne alternatywy." },
+                { "language": "ro", "text": "Foarte bine: respingi pasul procedural slab cu motiv și formulezi alternative clare." },
+                { "language": "sq", "text": "Shumë mirë: refuzon hapin e dobët të procesit me arsye dhe formulon alternativa të qarta." }
+              ],
+              "explanationKey": "reject-new-ticket"
+            },
+            {
+              "id": "b2-service-48-t6-b",
+              "text": "Ja, dann machen Sie bitte ein neues Ticket, aber diesmal soll es wirklich funktionieren.",
+              "translations": [
+                { "language": "en", "text": "Yes, then please create a new ticket, but this time it should really work." },
+                { "language": "fa", "text": "بله، پس لطفاً یک پرونده جدید بسازید، اما این بار واقعاً باید نتیجه بدهد." },
+                { "language": "ar", "text": "نعم، إذن افتحوا ملفًا جديدًا من فضلكم، لكن هذه المرة يجب أن ينجح الأمر فعلًا." },
+                { "language": "tr", "text": "Evet, o zaman lütfen yeni bir kayıt açın, ama bu kez gerçekten işe yaramalı." },
+                { "language": "ru", "text": "Да, тогда, пожалуйста, создайте новое обращение, но на этот раз это действительно должно сработать." },
+                { "language": "ckb", "text": "بەڵێ، کەواتە تکایە پرۆسەیەکی نوێ بکەنەوە، بەڵام ئەم جارە دەبێت بەڕاستی کار بکات." },
+                { "language": "kmr", "text": "Erê, hingê ji kerema xwe tîketeke nû vekin, lê vê carê divê bi rastî bixebite." },
+                { "language": "pl", "text": "Tak, proszę więc utworzyć nowe zgłoszenie, ale tym razem to naprawdę musi zadziałać." },
+                { "language": "ro", "text": "Da, atunci vă rog să deschideți un tichet nou, dar de data aceasta chiar trebuie să funcționeze." },
+                { "language": "sq", "text": "Po, atëherë ju lutem hapni një rast të ri, por këtë herë duhet vërtet të funksionojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das klingt nachvollziehbar, aber du verlierst den bisherigen Verlauf. Besser ist, den bestehenden Fall priorisiert weiterzugeben und Fristen zu sichern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This sounds understandable, but you lose the previous history. It is better to forward the existing case with priority and secure deadlines." },
+                { "language": "fa", "text": "این قابل درک است، اما سابقه‌ی قبلی را از دست می‌دهی. بهتر است پرونده موجود با اولویت ارجاع شود و مهلت‌ها قطعی شوند." },
+                { "language": "ar", "text": "هذا يبدو مفهومًا، لكنك تفقد المسار السابق. الأفضل هو إحالة الحالة الحالية بأولوية وتثبيت المهل." },
+                { "language": "tr", "text": "Bu anlaşılır geliyor, ama önceki süreci kaybediyorsun. Mevcut dosyayı öncelikli iletmek ve süreleri güvenceye almak daha iyidir." },
+                { "language": "ru", "text": "Это звучит понятно, но ты теряешь предыдущую историю. Лучше передать существующее дело с приоритетом и зафиксировать сроки." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتراوە دەنگ دەدات، بەڵام ڕەوتی پێشوو لەدەست دەدەیت. باشترە پرۆسەی هەنووکەیی بە پێشەنگی بنێردرێت و مۆڵەتەکان دڵنیا بکرێن." },
+                { "language": "kmr", "text": "Ev têgihiştbar xuya dike, lê tu paşxana berê winda dikî. Çêtir e doza heyî bi pêşengî were şandin û dem bê ewlekirin." },
+                { "language": "pl", "text": "To brzmi zrozumiale, ale tracisz dotychczasowy przebieg. Lepiej przekazać istniejącą sprawę priorytetowo i zabezpieczyć terminy." },
+                { "language": "ro", "text": "Sună de înțeles, dar pierzi istoricul de până acum. Este mai bine să fie transmis cazul existent cu prioritate și să fie asigurate termenele." },
+                { "language": "sq", "text": "Kjo tingëllon e kuptueshme, por humb historinë e mëparshme. Më mirë është të përcillet rasti ekzistues me prioritet dhe të sigurohen afatet." }
+              ],
+              "explanationKey": "loses-history"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "b2-service-48-t10-a",
+              "text": "Vielen Dank. Dann erwarte ich heute die schriftliche Zusammenfassung mit Priorität, Fallnummer S-90318, Rückruf bis Freitag und dem Hinweis, wie ich weiter vorgehe, falls der Rückruf ausbleibt.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I expect the written summary today with priority status, case number S-90318, a callback by Friday, and the note on how I should proceed if the callback does not happen." },
+                { "language": "fa", "text": "بسیار ممنون. پس امروز منتظر جمع‌بندی کتبی با وضعیت اولویت‌دار، شماره پرونده S-90318، تماس برگشتی تا جمعه و توضیح درباره‌ی اقدام بعدی در صورت انجام نشدن تماس هستم." },
+                { "language": "ar", "text": "شكرًا جزيلًا. إذن أنتظر اليوم الملخص المكتوب مع حالة الأولوية، ورقم الحالة S-90318، والاتصال حتى يوم الجمعة، والملاحظة حول كيفية المتابعة إذا لم يحدث الاتصال." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O hâlde bugün öncelik durumu, S-90318 dosya numarası, cuma gününe kadar geri arama ve geri arama olmazsa nasıl ilerleyeceğime dair not içeren yazılı özeti bekliyorum." },
+                { "language": "ru", "text": "Большое спасибо. Тогда сегодня я ожидаю письменное резюме с приоритетным статусом, номером дела S-90318, обратным звонком до пятницы и указанием, как действовать дальше, если звонка не будет." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ چاوەڕێی کورتەی نووسراوم لەگەڵ دۆخی پێشەنگی، ژمارەی پرۆسە S-90318، پەیوەندی گەڕاوە تا ڕۆژی هەینی و تێبینی لەسەر ئەوەی ئەگەر پەیوەندی نەکرا چۆن بەردەوام بم." },
+                { "language": "kmr", "text": "Gelek spas. Hingê ez îro li benda kurteya nivîskî me bi rewşa pêşengî, hejmareya dozê S-90318, telefonkirina vegerî heta roja Înê û agahdariya ka heke telefon nebe ez çawa bidomînim." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie oczekuję dziś pisemnego podsumowania z priorytetem, numerem sprawy S-90318, telefonem zwrotnym do piątku i informacją, jak mam postąpić, jeśli telefonu nie będzie." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci aștept astăzi rezumatul scris cu statut de prioritate, numărul cazului S-90318, apel până vineri și mențiunea despre cum procedez dacă apelul nu are loc." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë sot pres përmbledhjen me shkrim me status prioritar, numrin e rastit S-90318, telefonatë deri të premten dhe shënimin se si të veproj nëse telefonata nuk ndodh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist ein sauberer Abschluss: Du sicherst Priorität, Fallnummer, Frist und den nächsten Schritt ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a clean closing: you secure priority, case number, deadline, and the next step." },
+                { "language": "fa", "text": "این پایان‌بندی تمیزی است: اولویت، شماره پرونده، مهلت و قدم بعدی را قطعی می‌کنی." },
+                { "language": "ar", "text": "هذه خاتمة منظمة: تثبّت الأولوية ورقم الحالة والمهلة والخطوة التالية." },
+                { "language": "tr", "text": "Bu temiz bir kapanış: önceliği, dosya numarasını, süreyi ve sonraki adımı güvenceye alıyorsun." },
+                { "language": "ru", "text": "Это четкое завершение: ты фиксируешь приоритет, номер дела, срок и следующий шаг." },
+                { "language": "ckb", "text": "ئەمە کۆتاییەکی ڕێکوپێکە: پێشەنگی، ژمارەی پرۆسە، مۆڵەت و هەنگاوی داهاتوو دڵنیا دەکەیت." },
+                { "language": "kmr", "text": "Ev dawîkirineke paqij e: tu pêşengî, hejmareya dozê, dem û gavê din ewle dikî." },
+                { "language": "pl", "text": "To porządne zakończenie: zabezpieczasz priorytet, numer sprawy, termin i kolejny krok." },
+                { "language": "ro", "text": "Este o încheiere clară: asiguri prioritatea, numărul cazului, termenul și pasul următor." },
+                { "language": "sq", "text": "Kjo është mbyllje e rregullt: siguron prioritetin, numrin e rastit, afatin dhe hapin tjetër." }
+              ],
+              "explanationKey": "traceable-escalation-closing"
+            },
+            {
+              "id": "b2-service-48-t10-b",
+              "text": "Vielen Dank. Ich hoffe, dass es diesmal klappt.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I hope it works this time." },
+                { "language": "fa", "text": "ممنون. امیدوارم این بار نتیجه بدهد." },
+                { "language": "ar", "text": "شكرًا. آمل أن ينجح الأمر هذه المرة." },
+                { "language": "tr", "text": "Teşekkür ederim. Umarım bu kez işe yarar." },
+                { "language": "ru", "text": "Спасибо. Надеюсь, в этот раз получится." },
+                { "language": "ckb", "text": "سوپاس. هیوادارم ئەم جارە کار بکات." },
+                { "language": "kmr", "text": "Spas. Ez hêvî dikim vê carê bixebite." },
+                { "language": "pl", "text": "Dziękuję. Mam nadzieję, że tym razem się uda." },
+                { "language": "ro", "text": "Mulțumesc. Sper să funcționeze de data aceasta." },
+                { "language": "sq", "text": "Faleminderit. Shpresoj që këtë herë të funksionojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu schwach. Nach einer Eskalation brauchst du eine schriftliche Zusammenfassung, Frist und Folgeweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly, but too weak. After escalation, you need a written summary, a deadline, and a follow-up path." },
+                { "language": "fa", "text": "این دوستانه است، اما خیلی ضعیف است. بعد از ارجاع به مرحله بالاتر، به جمع‌بندی کتبی، مهلت و مسیر پیگیری نیاز داری." },
+                { "language": "ar", "text": "هذا ودود، لكنه ضعيف جدًا. بعد التصعيد تحتاج إلى ملخص مكتوب، ومهلة، ومسار متابعة." },
+                { "language": "tr", "text": "Bu nazik, ama çok zayıf. Üst seviyeye taşıdıktan sonra yazılı özet, süre ve takip yolu gerekir." },
+                { "language": "ru", "text": "Это дружелюбно, но слишком слабо. После эскалации нужны письменное резюме, срок и путь дальнейшего обращения." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر لاوازە. دوای بەرزکردنەوەی ئاستەکە پێویستت بە کورتەی نووسراو، مۆڵەت و ڕێگای بەدواداچوون هەیە." },
+                { "language": "kmr", "text": "Ev bi hevalane ye, lê pir qels e. Piştî bilindkirinê kurteya nivîskî, dem û rêya şopandinê divê." },
+                { "language": "pl", "text": "To uprzejme, ale zbyt słabe. Po eskalacji potrzebujesz pisemnego podsumowania, terminu i drogi dalszego działania." },
+                { "language": "ro", "text": "Este prietenos, dar prea slab. După escaladare ai nevoie de un rezumat scris, un termen și o cale de urmărire." },
+                { "language": "sq", "text": "Kjo është miqësore, por shumë e dobët. Pas eskalimit të duhet përmbledhje me shkrim, afat dhe rrugë ndjekjeje." }
+              ],
+              "explanationKey": "weak-escalation-closing"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Eine Eskalation wirkt professioneller, wenn du zuerst Fallnummer und bisherigen Kontaktverlauf nennst.",
+          "translations": [
+            { "language": "en", "text": "Escalation sounds more professional when you first state the case number and previous contact history." },
+            { "language": "fa", "text": "ارجاع به مرحله بالاتر وقتی حرفه‌ای‌تر است که اول شماره پرونده و سابقه تماس‌های قبلی را بگویی." },
+            { "language": "ar", "text": "يبدو التصعيد أكثر مهنية عندما تذكر أولًا رقم الحالة وسجل التواصل السابق." },
+            { "language": "tr", "text": "Önce dosya numarasını ve önceki iletişim geçmişini söylediğinde üst seviyeye taşıma daha profesyonel duyulur." },
+            { "language": "ru", "text": "Эскалация звучит профессиональнее, если сначала назвать номер дела и историю предыдущих контактов." },
+            { "language": "ckb", "text": "بەرزکردنەوەی ئاستەکە پیشەیی‌تر دەنگ دەدات کاتێک سەرەتا ژمارەی پرۆسە و ڕەوتی پەیوەندییەکانی پێشوو دەڵێیت." },
+            { "language": "kmr", "text": "Bilindkirin profesyoneltir xuya dike dema ku tu pêşî hejmareya dozê û paşxana têkiliyên berê dibêjî." },
+            { "language": "pl", "text": "Eskalacja brzmi bardziej profesjonalnie, gdy najpierw podajesz numer sprawy i dotychczasową historię kontaktów." },
+            { "language": "ro", "text": "Escaladarea sună mai profesionist dacă menționezi mai întâi numărul cazului și istoricul contactelor." },
+            { "language": "sq", "text": "Eskalimi tingëllon më profesional kur së pari përmend numrin e rastit dhe historinë e kontakteve të mëparshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Daten, zugesagte Maßnahmen und ausgebliebene Rückrufe machen den Fall überprüfbar.",
+          "translations": [
+            { "language": "en", "text": "Dates, promised measures, and missed callbacks make the case checkable." },
+            { "language": "fa", "text": "تاریخ‌ها، اقدام‌های وعده‌داده‌شده و تماس‌های برگشتی انجام‌نشده، پرونده را قابل بررسی می‌کنند." },
+            { "language": "ar", "text": "التواريخ والإجراءات الموعودة والاتصالات التي لم تتم تجعل الحالة قابلة للتحقق." },
+            { "language": "tr", "text": "Tarihler, vaat edilen önlemler ve gerçekleşmeyen geri aramalar dosyayı kontrol edilebilir hâle getirir." },
+            { "language": "ru", "text": "Даты, обещанные меры и несостоявшиеся обратные звонки делают дело проверяемым." },
+            { "language": "ckb", "text": "بەروارەکان، هەنگاوە بەڵێندراوەکان و پەیوەندییە گەڕاوە نەکراوەکان پرۆسەکە دەکەنە شتێکی پشکنین‌کراو." },
+            { "language": "kmr", "text": "Dîrok, gavên sozdayî û telefonkirinên vegerî yên çênebûyî dozê dikin ya kontrolkirinê." },
+            { "language": "pl", "text": "Daty, obiecane działania i niedoszłe telefony zwrotne sprawiają, że sprawę można sprawdzić." },
+            { "language": "ro", "text": "Datele, măsurile promise și apelurile neefectuate fac cazul verificabil." },
+            { "language": "sq", "text": "Datat, masat e premtuara dhe telefonatat e pakthyera e bëjnë rastin të verifikueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "process",
+          "text": "Ein neues Ticket kann sinnvoll sein, aber nicht, wenn dadurch die Vorgeschichte verloren geht.",
+          "translations": [
+            { "language": "en", "text": "A new ticket can make sense, but not if it causes the previous history to be lost." },
+            { "language": "fa", "text": "پرونده جدید می‌تواند مفید باشد، اما نه وقتی که باعث از بین رفتن سابقه‌ی قبلی شود." },
+            { "language": "ar", "text": "قد يكون فتح ملف جديد مفيدًا، لكن ليس إذا أدى ذلك إلى فقدان المسار السابق." },
+            { "language": "tr", "text": "Yeni bir kayıt mantıklı olabilir, ama önceki süreç kayboluyorsa değil." },
+            { "language": "ru", "text": "Новое обращение может быть полезным, но не если из-за него теряется предыдущая история." },
+            { "language": "ckb", "text": "پرۆسەی نوێ دەتوانێت بەسوود بێت، بەڵام نە ئەگەر بەهۆی ئەوەوە ڕەوتی پێشوو لەدەست بچێت." },
+            { "language": "kmr", "text": "Tîketeke nû dikare watedar be, lê ne heke bi wê paşxana berê winda bibe." },
+            { "language": "pl", "text": "Nowe zgłoszenie może mieć sens, ale nie wtedy, gdy przez to ginie dotychczasowy przebieg." },
+            { "language": "ro", "text": "Un tichet nou poate avea sens, dar nu dacă prin el se pierde istoricul anterior." },
+            { "language": "sq", "text": "Një rast i ri mund të ketë kuptim, por jo nëse për shkak të tij humbet historia e mëparshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "closing",
+          "text": "Ein starker Abschluss wiederholt Priorität, Fallnummer, Frist und Folgeweg. Dadurch bleibt die Eskalation nachvollziehbar.",
+          "translations": [
+            { "language": "en", "text": "A strong closing repeats priority, case number, deadline, and follow-up path. That keeps the escalation traceable." },
+            { "language": "fa", "text": "پایان‌بندی قوی اولویت، شماره پرونده، مهلت و مسیر پیگیری را تکرار می‌کند. این باعث می‌شود ارجاع به مرحله بالاتر قابل پیگیری بماند." },
+            { "language": "ar", "text": "الخاتمة القوية تكرر الأولوية ورقم الحالة والمهلة ومسار المتابعة. بذلك يبقى التصعيد قابلاً للتتبع." },
+            { "language": "tr", "text": "Güçlü bir kapanış önceliği, dosya numarasını, süreyi ve takip yolunu tekrar eder. Böylece üst seviyeye taşıma izlenebilir kalır." },
+            { "language": "ru", "text": "Сильное завершение повторяет приоритет, номер дела, срок и путь дальнейших действий. Так эскалация остается отслеживаемой." },
+            { "language": "ckb", "text": "کۆتاییەکی بەهێز پێشەنگی، ژمارەی پرۆسە، مۆڵەت و ڕێگای بەدواداچوون دووبارە دەکاتەوە. بەمە بەرزکردنەوەی ئاستەکە شوێنپێهەڵگر دەمێنێتەوە." },
+            { "language": "kmr", "text": "Dawîkirineke bihêz pêşengî, hejmareya dozê, dem û rêya şopandinê dubare dike. Wisa bilindkirin şopandinbar dimîne." },
+            { "language": "pl", "text": "Mocne zakończenie powtarza priorytet, numer sprawy, termin i drogę dalszego działania. Dzięki temu eskalacja pozostaje możliwa do śledzenia." },
+            { "language": "ro", "text": "O încheiere puternică repetă prioritatea, numărul cazului, termenul și calea de urmărire. Astfel, escaladarea rămâne trasabilă." },
+            { "language": "sq", "text": "Një mbyllje e fortë përsërit prioritetin, numrin e rastit, afatin dhe rrugën e ndjekjes. Kështu eskalimi mbetet i gjurmueshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3480
+    }
+  ]
+}

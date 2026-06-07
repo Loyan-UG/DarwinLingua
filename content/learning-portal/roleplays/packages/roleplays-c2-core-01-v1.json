@@ -1,0 +1,936 @@
+{
+  "packageId": "roleplays-c2-core-01-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 01 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 01",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-heikle-strategieentscheidung-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine heikle Strategieentscheidung moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating a delicate strategic decision" },
+        { "language": "fa", "text": "هدایت یک تصمیم استراتژیک حساس" },
+        { "language": "ar", "text": "إدارة قرار استراتيجي حساس" },
+        { "language": "tr", "text": "Hassas bir strateji kararını yönetmek" },
+        { "language": "ru", "text": "Модерация деликатного стратегического решения" },
+        { "language": "ckb", "text": "ڕێبەریکردنی بڕیارێکی ستراتیژی هەستیار" },
+        { "language": "kmr", "text": "Rêberiya biryareke stratejîk a nazik" },
+        { "language": "pl", "text": "Moderowanie delikatnej decyzji strategicznej" },
+        { "language": "ro", "text": "Moderarea unei decizii strategice sensibile" },
+        { "language": "sq", "text": "Moderimi i një vendimi strategjik të ndjeshëm" }
+      ],
+      "description": "In einem Strategie-Meeting drängen Vertrieb und Produkt auf eine schnelle Markteinführung, während Technik und Support erhebliche Risiken sehen. Sie moderieren die Entscheidung, ohne die Verantwortung zu verwischen oder eine Seite zu überfahren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a strategy meeting, sales and product push for a fast market launch, while engineering and support see significant risks. You moderate the decision without blurring responsibility or overruling one side." },
+        { "language": "fa", "text": "در یک جلسه استراتژی، فروش و محصول بر عرضه سریع به بازار فشار می‌آورند، در حالی که تیم فنی و پشتیبانی ریسک‌های جدی می‌بینند. شما تصمیم را هدایت می‌کنید، بدون اینکه مسئولیت مبهم شود یا یک طرف نادیده گرفته شود." },
+        { "language": "ar", "text": "في اجتماع استراتيجي يضغط فريقا المبيعات والمنتج من أجل إطلاق سريع في السوق، بينما يرى فريقا التقنية والدعم مخاطر كبيرة. تدير القرار من دون طمس المسؤولية أو تجاوز أحد الأطراف." },
+        { "language": "tr", "text": "Bir strateji toplantısında satış ve ürün ekipleri hızlı pazara çıkış için baskı yaparken, teknik ekip ve destek ciddi riskler görüyor. Sorumluluğu belirsizleştirmeden veya bir tarafı ezmeden kararı yönetirsiniz." },
+        { "language": "ru", "text": "На стратегическом совещании отдел продаж и продуктовая команда настаивают на быстром выводе на рынок, тогда как инженерная команда и поддержка видят значительные риски. Вы модерируете решение, не размывая ответственность и не подавляя одну из сторон." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی ستراتیژیدا فرۆشتن و پڕۆداکت فشار دەکەن بۆ خستنەبازاڕی خێرا، لە کاتێکدا تەکنیک و پشتگیری مەترسیی گەورە دەبینن. تۆ بڕیارەکە ڕێبەری دەکەیت بێ ئەوەی بەرپرسیارێتی لێڵ بکرێت یان لایەنێک پشتگوێ بخرێت." },
+        { "language": "kmr", "text": "Di civîneke stratejiyê de firotin û hilber li ser derxistina zû ya bazarê zextê dikin, lê tîma teknîkî û piştgirî xeterên girîng dibînin. Hûn biryarê rêberî dikin bêyî ku berpirsiyarî nezelal bibe an aliyek were pelandin." },
+        { "language": "pl", "text": "Na spotkaniu strategicznym sprzedaż i produkt naciskają na szybkie wejście na rynek, podczas gdy technika i wsparcie widzą poważne ryzyka. Moderuje Pan/Pani decyzję, nie rozmywając odpowiedzialności ani nie przegłosowując jednej strony." },
+        { "language": "ro", "text": "Într-o ședință de strategie, vânzările și produsul presează pentru o lansare rapidă pe piață, în timp ce tehnic și suport văd riscuri semnificative. Moderați decizia fără a estompa responsabilitatea sau a trece peste o parte." },
+        { "language": "sq", "text": "Në një takim strategjie, shitjet dhe produkti shtyjnë për një dalje të shpejtë në treg, ndërsa ekipi teknik dhe mbështetja shohin rreziqe të mëdha. Ju moderoni vendimin pa e mjegulluar përgjegjësinë ose pa shtypur njërën palë." }
+      ],
+      "learnerGoal": "Eine heikle Strategieentscheidung moderieren: Interessen sichtbar machen, Risiken gewichten, Entscheidungskriterien formulieren, Konsens von Verantwortung unterscheiden und einen tragfähigen nächsten Schritt festlegen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate a delicate strategic decision: make interests visible, weigh risks, formulate decision criteria, distinguish consensus from responsibility, and define a viable next step." },
+        { "language": "fa", "text": "یک تصمیم استراتژیک حساس را هدایت کنید: منافع را آشکار کنید، ریسک‌ها را وزن‌دهی کنید، معیارهای تصمیم را بیان کنید، اجماع را از مسئولیت جدا کنید و گام بعدی قابل‌اتکا تعیین کنید." },
+        { "language": "ar", "text": "أدر قراراً استراتيجياً حساساً: اجعل المصالح مرئية، ووازن المخاطر، وصغ معايير القرار، وميز بين التوافق والمسؤولية، وحدد خطوة تالية قابلة للحمل." },
+        { "language": "tr", "text": "Hassas bir strateji kararını yönetin: çıkarları görünür kılın, riskleri tartın, karar ölçütlerini formüle edin, uzlaşı ile sorumluluğu ayırın ve taşıyıcı bir sonraki adım belirleyin." },
+        { "language": "ru", "text": "Модерировать деликатное стратегическое решение: сделать интересы видимыми, взвесить риски, сформулировать критерии решения, отличить консенсус от ответственности и определить устойчивый следующий шаг." },
+        { "language": "ckb", "text": "بڕیارێکی ستراتیژی هەستیار ڕێبەری بکە: بەرژەوەندییەکان دیار بکە، مەترسییەکان هەڵسەنگێنە، پێوەری بڕیار دابڕێژە، جیاوازی نێوان کۆدەنگی و بەرپرسیارێتی بکە و هەنگاوی داهاتووی بەهێز دیاری بکە." },
+        { "language": "kmr", "text": "Biryareke stratejîk a nazik rêberî bikin: berjewendiyan xuya bikin, xeteran bipîvin, pîvanên biryarê formule bikin, di navbera lihevhatin û berpirsiyariyê de cudahî bikin û gaveke din a bihêz destnîşan bikin." },
+        { "language": "pl", "text": "Moderować delikatną decyzję strategiczną: uwidocznić interesy, zważyć ryzyka, sformułować kryteria decyzji, odróżnić konsensus od odpowiedzialności i określić nośny następny krok." },
+        { "language": "ro", "text": "Moderați o decizie strategică sensibilă: faceți vizibile interesele, cântăriți riscurile, formulați criterii de decizie, distingeți consensul de responsabilitate și stabiliți un pas următor solid." },
+        { "language": "sq", "text": "Moderoni një vendim strategjik të ndjeshëm: bëni të dukshme interesat, peshoni rreziqet, formuloni kriteret e vendimit, dalloni konsensusin nga përgjegjësia dhe përcaktoni një hap tjetër të qëndrueshëm." }
+      ],
+      "cefrLevel": "C2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication", "negotiation"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 1,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Moderator/in",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مدیر جلسه" },
+            { "language": "ar", "text": "مدير الجلسة" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "ڕێبەری کۆبوونەوە" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderatori" }
+          ]
+        },
+        {
+          "roleKey": "partner",
+          "displayName": "Bereichsleitung",
+          "translations": [
+            { "language": "en", "text": "Department lead" },
+            { "language": "fa", "text": "مدیر بخش" },
+            { "language": "ar", "text": "مدير القسم" },
+            { "language": "tr", "text": "Bölüm yöneticisi" },
+            { "language": "ru", "text": "Руководитель направления" },
+            { "language": "ckb", "text": "بەڕێوەبەری بەش" },
+            { "language": "kmr", "text": "Rêveberê beşê" },
+            { "language": "pl", "text": "Kierownik działu" },
+            { "language": "ro", "text": "Manager de departament" },
+            { "language": "sq", "text": "Drejtues departamenti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "partner",
+          "baseText": "Wir müssen heute entscheiden: Starten wir die Plattform im Juni oder verschieben wir um drei Monate? Vertrieb und Produkt wollen den Termin halten, Technik und Support warnen vor erheblichen Folgerisiken.",
+          "translations": [
+            { "language": "en", "text": "We have to decide today: do we launch the platform in June or postpone by three months? Sales and product want to keep the date, while engineering and support warn of significant downstream risks." },
+            { "language": "fa", "text": "امروز باید تصمیم بگیریم: پلتفرم را در ژوئن راه‌اندازی کنیم یا سه ماه عقب بیندازیم؟ فروش و محصول می‌خواهند تاریخ حفظ شود، اما فنی و پشتیبانی درباره ریسک‌های جدی بعدی هشدار می‌دهند." },
+            { "language": "ar", "text": "علينا أن نقرر اليوم: هل نطلق المنصة في يونيو أم نؤجلها ثلاثة أشهر؟ المبيعات والمنتج يريدان الحفاظ على الموعد، بينما تحذر التقنية والدعم من مخاطر لاحقة كبيرة." },
+            { "language": "tr", "text": "Bugün karar vermeliyiz: platformu haziranda mı başlatıyoruz, yoksa üç ay erteliyor muyuz? Satış ve ürün tarihi korumak istiyor, teknik ekip ve destek ise ciddi takip riskleri konusunda uyarıyor." },
+            { "language": "ru", "text": "Сегодня мы должны решить: запускаем платформу в июне или переносим на три месяца? Продажи и продукт хотят сохранить срок, а инженерная команда и поддержка предупреждают о значительных последующих рисках." },
+            { "language": "ckb", "text": "ئەمڕۆ دەبێت بڕیار بدەین: پلاتفۆرمەکە لە حوزەیراندا دەست پێدەکەین یان سێ مانگ دوا دەخەین؟ فرۆشتن و پڕۆداکت دەیانەوێت کاتەکە بپارێزن، بەڵام تەکنیک و پشتگیری ئاگاداری مەترسییەکانی دواتر دەدەن." },
+            { "language": "kmr", "text": "Îro divê em biryar bidin: em platformê di hezîranê de dest pê dikin an sê mehan taloq dikin? Firotin û hilber dixwazin tarîxê biparêzin, lê tîma teknîkî û piştgirî ji xeterên paşerojê yên girîng hişyar dikin." },
+            { "language": "pl", "text": "Musimy dziś zdecydować: uruchamiamy platformę w czerwcu czy przesuwamy o trzy miesiące? Sprzedaż i produkt chcą utrzymać termin, a technika i wsparcie ostrzegają przed poważnymi ryzykami następczymi." },
+            { "language": "ro", "text": "Trebuie să decidem astăzi: lansăm platforma în iunie sau amânăm cu trei luni? Vânzările și produsul vor să păstreze termenul, iar tehnic și suport avertizează asupra unor riscuri ulterioare semnificative." },
+            { "language": "sq", "text": "Sot duhet të vendosim: ta nisim platformën në qershor apo ta shtyjmë tre muaj? Shitjet dhe produkti duan të mbajnë datën, ndërsa tekniku dhe mbështetja paralajmërojnë për rreziqe të rëndësishme pasuese." }
+          ],
+          "function": "state-decision-pressure",
+          "toneNote": "high-stakes opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Entscheidung nicht als Ja-oder-Nein-Frage beginnen. Zuerst sollten wir drei Kriterien trennen: Marktdruck, technische Belastbarkeit und Verantwortung gegenüber bestehenden Kunden.",
+          "translations": [
+            { "language": "en", "text": "I would not begin the decision as a yes-or-no question. First, we should separate three criteria: market pressure, technical robustness, and responsibility toward existing customers." },
+            { "language": "fa", "text": "من تصمیم را به‌صورت پرسش بله یا نه شروع نمی‌کنم. اول باید سه معیار را جدا کنیم: فشار بازار، تاب‌آوری فنی و مسئولیت در برابر مشتریان فعلی." },
+            { "language": "ar", "text": "لن أبدأ القرار كسؤال نعم أو لا. أولاً ينبغي أن نفصل ثلاثة معايير: ضغط السوق، والقدرة التقنية على التحمل، والمسؤولية تجاه العملاء الحاليين." },
+            { "language": "tr", "text": "Karara evet-hayır sorusu olarak başlamazdım. Önce üç ölçütü ayırmalıyız: piyasa baskısı, teknik dayanıklılık ve mevcut müşterilere karşı sorumluluk." },
+            { "language": "ru", "text": "Я бы не начинал решение как вопрос «да или нет». Сначала нужно разделить три критерия: давление рынка, техническую устойчивость и ответственность перед существующими клиентами." },
+            { "language": "ckb", "text": "من بڕیارەکە وەک پرسیاری بەڵێ یان نە دەست پێناکەم. یەکەم دەبێت سێ پێوەر جیا بکەین: فشاری بازاڕ، توانای تەکنیکی و بەرپرسیارێتی بەرامبەر کڕیارانی ئێستا." },
+            { "language": "kmr", "text": "Ez biryarê wek pirsa erê-an-na dest pê nakim. Pêşî divê em sê pîvanan cuda bikin: zexta bazarê, berxwedana teknîkî û berpirsiyarî li hember xerîdarên heyî." },
+            { "language": "pl", "text": "Nie zaczynałbym/zaczynałabym decyzji jako pytania tak albo nie. Najpierw powinniśmy oddzielić trzy kryteria: presję rynkową, odporność techniczną i odpowiedzialność wobec obecnych klientów." },
+            { "language": "ro", "text": "Nu aș începe decizia ca pe o întrebare de da sau nu. Mai întâi ar trebui să separăm trei criterii: presiunea pieței, robustețea tehnică și responsabilitatea față de clienții existenți." },
+            { "language": "sq", "text": "Nuk do ta nisja vendimin si pyetje po-jo. Së pari duhet të ndajmë tri kritere: presionin e tregut, qëndrueshmërinë teknike dhe përgjegjësinë ndaj klientëve ekzistues." }
+          ],
+          "function": "frame-decision-criteria",
+          "toneNote": "structured moderation"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "partner",
+          "baseText": "Wenn wir jetzt wieder Kriterien sammeln, verlieren wir den Zeitpunkt. Der Markt wartet nicht auf unsere perfekte interne Abstimmung.",
+          "translations": [
+            { "language": "en", "text": "If we start collecting criteria again now, we will lose the timing. The market does not wait for our perfect internal alignment." },
+            { "language": "fa", "text": "اگر دوباره شروع به جمع‌کردن معیار کنیم، زمان مناسب را از دست می‌دهیم. بازار منتظر هماهنگی داخلی کامل ما نمی‌ماند." },
+            { "language": "ar", "text": "إذا بدأنا الآن بجمع المعايير مرة أخرى فسنفقد التوقيت. السوق لا ينتظر توافقنا الداخلي المثالي." },
+            { "language": "tr", "text": "Şimdi yeniden ölçüt toplamaya başlarsak zamanı kaybederiz. Piyasa bizim kusursuz iç uyumumuzu beklemez." },
+            { "language": "ru", "text": "Если мы сейчас снова начнем собирать критерии, мы потеряем момент. Рынок не ждет нашего идеального внутреннего согласования." },
+            { "language": "ckb", "text": "ئەگەر ئێستا جارێکی تر پێوەر کۆبکەینەوە، کاتی گونجاو لەدەست دەدەین. بازاڕ چاوەڕێی ڕێککەوتنی ناوخۆیی تەواوی ئێمە ناکات." },
+            { "language": "kmr", "text": "Heke em niha dîsa pîvanan kom bikin, em demê winda dikin. Bazar li hevahengiya hundirîn a bêkêmasî ya me nasekine." },
+            { "language": "pl", "text": "Jeśli teraz znowu zaczniemy zbierać kryteria, stracimy właściwy moment. Rynek nie czeka na nasze idealne wewnętrzne uzgodnienie." },
+            { "language": "ro", "text": "Dacă începem acum din nou să strângem criterii, pierdem momentul. Piața nu așteaptă alinierea noastră internă perfectă." },
+            { "language": "sq", "text": "Nëse tani fillojmë sërish të mbledhim kritere, do ta humbim momentin. Tregu nuk pret harmonizimin tonë të brendshëm të përsosur." }
+          ],
+          "function": "challenge-process-delay",
+          "toneNote": "commercial pressure"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Den Zeitdruck nehme ich ernst. Gerade deshalb brauchen wir keine lange Grundsatzdebatte, sondern eine knappe Risikomatrix: Was ist tolerierbar, was braucht eine Absicherung, und was wäre ein Stoppsignal?",
+          "translations": [
+            { "language": "en", "text": "I take the time pressure seriously. Precisely for that reason, we do not need a long debate of principle, but a concise risk matrix: what is tolerable, what needs safeguards, and what would be a stop signal?" },
+            { "language": "fa", "text": "فشار زمان را جدی می‌گیرم. دقیقاً به همین دلیل به بحث طولانی اصولی نیاز نداریم، بلکه به ماتریس ریسک کوتاه نیاز داریم: چه چیزی قابل‌تحمل است، چه چیزی پوشش ایمنی می‌خواهد و چه چیزی علامت توقف است؟" },
+            { "language": "ar", "text": "آخذ ضغط الوقت بجدية. ولهذا بالضبط لا نحتاج إلى نقاش مبدئي طويل، بل إلى مصفوفة مخاطر موجزة: ما المقبول، وما يحتاج إلى ضمان، وما سيكون إشارة توقف؟" },
+            { "language": "tr", "text": "Zaman baskısını ciddiye alıyorum. Tam da bu yüzden uzun bir ilke tartışmasına değil, kısa bir risk matrisine ihtiyacımız var: ne tolere edilebilir, ne güvence ister ve ne dur işareti olur?" },
+            { "language": "ru", "text": "Я серьезно отношусь к давлению времени. Именно поэтому нам нужна не длинная принципиальная дискуссия, а краткая матрица рисков: что допустимо, что требует защиты и что стало бы сигналом остановки?" },
+            { "language": "ckb", "text": "فشاری کات بە جدی وەردەگرم. ڕێک بەهۆی ئەوە پێویستمان بە مشتومڕی بنەمایی درێژ نییە، بەڵکو بە ماتریکسی مەترسیی کورت: چی قبوڵکراوە، چی پێویستی بە پاراستنە، و چی دەبێتە ئاماژەی وەستان؟" },
+            { "language": "kmr", "text": "Ez zexta demê cidî digirim. Rast ji ber vê yekê hewceya me bi nîqaşeke dirêj a prensîbî nîne, lê bi matrîsek xetere ya kurt heye: çi dikare were qebûlkirin, çi pêdivî bi parastinê heye, û çi dê bibe nîşana rawestanê?" },
+            { "language": "pl", "text": "Traktuję presję czasu poważnie. Właśnie dlatego nie potrzebujemy długiej debaty zasadniczej, lecz krótkiej matrycy ryzyka: co jest tolerowalne, co wymaga zabezpieczenia, a co byłoby sygnałem stop?" },
+            { "language": "ro", "text": "Iau presiunea timpului în serios. Tocmai de aceea nu avem nevoie de o dezbatere de principiu lungă, ci de o matrice scurtă de risc: ce este tolerabil, ce are nevoie de garanții și ce ar fi un semnal de oprire?" },
+            { "language": "sq", "text": "E marr seriozisht presionin e kohës. Pikërisht për këtë nuk na duhet një debat i gjatë parimor, por një matricë e shkurtër rreziku: çfarë është e tolerueshme, çfarë kërkon mbrojtje dhe çfarë do të ishte sinjal ndalimi?" }
+          ],
+          "function": "convert-pressure-to-risk-matrix",
+          "toneNote": "decisive but not authoritarian"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "partner",
+          "baseText": "Technik sagt, die Plattform funktioniert grundsätzlich. Das Problem ist eher, dass Fehler im Betrieb teuer werden könnten.",
+          "translations": [
+            { "language": "en", "text": "Engineering says the platform basically works. The problem is rather that errors in operation could become expensive." },
+            { "language": "fa", "text": "تیم فنی می‌گوید پلتفرم اساساً کار می‌کند. مشکل بیشتر این است که خطاها در مرحله بهره‌برداری می‌توانند پرهزینه شوند." },
+            { "language": "ar", "text": "تقول التقنية إن المنصة تعمل من حيث المبدأ. المشكلة بالأحرى أن الأخطاء أثناء التشغيل قد تصبح مكلفة." },
+            { "language": "tr", "text": "Teknik ekip platformun temelde çalıştığını söylüyor. Sorun daha çok işletimdeki hataların pahalıya mal olabilmesi." },
+            { "language": "ru", "text": "Инженерная команда говорит, что платформа в целом работает. Проблема скорее в том, что ошибки в эксплуатации могут стать дорогими." },
+            { "language": "ckb", "text": "تیمە تەکنیکییەکە دەڵێت پلاتفۆرمەکە بە بنەڕەت کار دەکات. کێشە زیاتر ئەوەیە هەڵەکان لە کارپێکردندا دەتوانن گران بکەون." },
+            { "language": "kmr", "text": "Tîma teknîkî dibêje platform bi bingehîn dixebite. Pirsgirêk bêtir ew e ku xeletiyên di karanînê de dikarin biha bibin." },
+            { "language": "pl", "text": "Technika mówi, że platforma zasadniczo działa. Problem polega raczej na tym, że błędy w eksploatacji mogą stać się kosztowne." },
+            { "language": "ro", "text": "Tehnicul spune că platforma funcționează în principiu. Problema este mai degrabă că erorile în operare ar putea deveni costisitoare." },
+            { "language": "sq", "text": "Ekipi teknik thotë se platforma në parim funksionon. Problemi është më shumë se gabimet gjatë operimit mund të bëhen të kushtueshme." }
+          ],
+          "function": "clarify-technical-risk",
+          "toneNote": "risk nuance"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir das Risiko nicht als Blockade formulieren, sondern als Bedingung: Ein Juni-Start wäre nur verantwortbar, wenn Support-Kapazität, Monitoring und ein Rückfallplan vorab verbindlich geklärt sind.",
+          "translations": [
+            { "language": "en", "text": "Then we should not formulate the risk as a blockade, but as a condition: a June launch would only be responsible if support capacity, monitoring, and a fallback plan are clarified bindingly in advance." },
+            { "language": "fa", "text": "پس نباید ریسک را به‌صورت مانع بیان کنیم، بلکه به‌صورت شرط: شروع در ژوئن فقط وقتی مسئولانه است که ظرفیت پشتیبانی، پایش و برنامه برگشت از قبل الزام‌آور روشن شده باشند." },
+            { "language": "ar", "text": "إذن لا ينبغي أن نصوغ الخطر كعائق، بل كشرط: لا يكون إطلاق يونيو مسؤولاً إلا إذا تم توضيح قدرة الدعم والمراقبة وخطة الرجوع مسبقاً بصورة ملزمة." },
+            { "language": "tr", "text": "O halde riski bir blokaj olarak değil, bir koşul olarak formüle etmeliyiz: haziran başlangıcı ancak destek kapasitesi, izleme ve geri dönüş planı önceden bağlayıcı biçimde netleştirilirse sorumlu olur." },
+            { "language": "ru", "text": "Тогда риск нужно формулировать не как блокировку, а как условие: запуск в июне был бы ответственным только при заранее обязательном уточнении мощности поддержки, мониторинга и плана отката." },
+            { "language": "ckb", "text": "کەواتە نابێت مەترسییەکە وەک ڕێگری دابڕێژین، بەڵکو وەک مەرج: دەستپێکردنی حوزەیران تەنها ئەوکاتە بەرپرسیارانەیە کە توانای پشتگیری، چاودێری و پلانی گەڕانەوە پێشتر بە پابەندی ڕوون کرابنەوە." },
+            { "language": "kmr", "text": "Wê hingê divê em xeterê ne wek astengî, lê wek merc formule bikin: destpêka hezîranê tenê wê berpirsiyarane be heke kapasîteya piştgirî, şopandin û plana vegerê ji berê ve bi girêdan were zelalkirin." },
+            { "language": "pl", "text": "Wtedy nie powinniśmy formułować ryzyka jako blokady, lecz jako warunek: start w czerwcu byłby odpowiedzialny tylko wtedy, gdy wcześniej wiążąco wyjaśnione zostaną pojemność wsparcia, monitoring i plan awaryjny." },
+            { "language": "ro", "text": "Atunci nu ar trebui să formulăm riscul ca blocaj, ci ca o condiție: o lansare în iunie ar fi responsabilă doar dacă sunt clarificate în prealabil, în mod obligatoriu, capacitatea de suport, monitorizarea și planul de revenire." },
+            { "language": "sq", "text": "Atëherë nuk duhet ta formulojmë rrezikun si bllokim, por si kusht: një nisje në qershor do të ishte e përgjegjshme vetëm nëse kapaciteti i mbështetjes, monitorimi dhe plani i kthimit janë sqaruar paraprakisht në mënyrë detyruese." }
+          ],
+          "function": "turn-risk-into-condition",
+          "toneNote": "responsible compromise"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "partner",
+          "baseText": "Vertrieb wird sagen, dass solche Bedingungen den Start faktisch wieder verschieben.",
+          "translations": [
+            { "language": "en", "text": "Sales will say that such conditions effectively postpone the launch again." },
+            { "language": "fa", "text": "فروش خواهد گفت چنین شرط‌هایی در عمل دوباره شروع را عقب می‌اندازد." },
+            { "language": "ar", "text": "سيقول فريق المبيعات إن مثل هذه الشروط تؤجل الإطلاق عملياً مرة أخرى." },
+            { "language": "tr", "text": "Satış ekibi bu tür koşulların başlangıcı fiilen yeniden ertelediğini söyleyecektir." },
+            { "language": "ru", "text": "Отдел продаж скажет, что такие условия фактически снова откладывают запуск." },
+            { "language": "ckb", "text": "فرۆشتن دەڵێت ئەم مەرجانە بە کردەوە دەستپێکردنەکە جارێکی تر دوا دەخەن." },
+            { "language": "kmr", "text": "Firotin dê bibêje ku mercên wisa di pratîkê de destpêkê dîsa taloq dikin." },
+            { "language": "pl", "text": "Sprzedaż powie, że takie warunki faktycznie znowu przesuwają start." },
+            { "language": "ro", "text": "Vânzările vor spune că astfel de condiții amână practic din nou lansarea." },
+            { "language": "sq", "text": "Shitjet do të thonë se kushte të tilla praktikisht e shtyjnë sërish nisjen." }
+          ],
+          "function": "raise-sales-objection",
+          "toneNote": "anticipates resistance"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das kann sein. Deshalb würde ich zwei Varianten zur Entscheidung stellen: einen begrenzten Juni-Start mit klar definiertem Kundensegment oder eine Verschiebung mit öffentlich belastbarer Begründung.",
+          "translations": [
+            { "language": "en", "text": "That may be true. Therefore I would put two options up for decision: a limited June launch with a clearly defined customer segment, or a postponement with a publicly robust justification." },
+            { "language": "fa", "text": "ممکن است درست باشد. به همین دلیل دو گزینه را برای تصمیم مطرح می‌کنم: شروع محدود در ژوئن با بخش مشتریان کاملاً تعریف‌شده، یا تعویق با توجیهی که در بیرون قابل‌دفاع باشد." },
+            { "language": "ar", "text": "قد يكون ذلك صحيحاً. لذلك سأطرح خيارين للقرار: إطلاقاً محدوداً في يونيو مع شريحة عملاء محددة بوضوح، أو تأجيلاً مع تبرير قابل للصمود علناً." },
+            { "language": "tr", "text": "Bu doğru olabilir. Bu yüzden karar için iki seçenek sunardım: açık tanımlanmış bir müşteri segmentiyle sınırlı bir haziran başlangıcı ya da kamuya karşı dayanıklı bir gerekçeyle erteleme." },
+            { "language": "ru", "text": "Это может быть так. Поэтому я бы вынес на решение два варианта: ограниченный июньский запуск с четко определенным сегментом клиентов или перенос с публично устойчивым обоснованием." },
+            { "language": "ckb", "text": "لەوانەیە ڕاست بێت. بۆیە دوو بژاردە بۆ بڕیار دادەنێم: دەستپێکردنی سنوورداری حوزەیران بە بەشی کڕیاری ڕوون دیاریکراو، یان دواخستن بە هۆکاری دەرەکیی قبوڵکراو." },
+            { "language": "kmr", "text": "Dibe ku rast be. Ji ber vê yekê ez du vebijêrkan ji bo biryarê datînim: destpêkeke sînordar a hezîranê bi segmenta xerîdarên zelal, an taloqkirin bi sedemeke ku li derve jî xurt be." },
+            { "language": "pl", "text": "To może być prawda. Dlatego poddałbym/poddałabym pod decyzję dwa warianty: ograniczony start w czerwcu z jasno zdefiniowanym segmentem klientów albo przesunięcie z publicznie odpornym uzasadnieniem." },
+            { "language": "ro", "text": "Se poate. De aceea aș pune două variante la decizie: o lansare limitată în iunie cu un segment de clienți clar definit sau o amânare cu o justificare publică solidă." },
+            { "language": "sq", "text": "Kjo mund të jetë e vërtetë. Prandaj do të paraqisja dy variante për vendim: një nisje të kufizuar në qershor me segment klientësh të përcaktuar qartë, ose një shtyrje me arsyetim të mbrojtshëm publikisht." }
+          ],
+          "function": "offer-decision-options",
+          "toneNote": "clear alternatives"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "partner",
+          "baseText": "Wer übernimmt dann die Verantwortung, wenn wir begrenzt starten und es trotzdem Probleme gibt?",
+          "translations": [
+            { "language": "en", "text": "Who then takes responsibility if we launch in a limited way and problems still occur?" },
+            { "language": "fa", "text": "اگر محدود شروع کنیم و با وجود آن مشکل پیش بیاید، چه کسی مسئولیت را بر عهده می‌گیرد؟" },
+            { "language": "ar", "text": "من يتحمل المسؤولية إذا أطلقنا بشكل محدود وحدثت مشكلات رغم ذلك؟" },
+            { "language": "tr", "text": "Sınırlı başlatırsak ve yine de sorun çıkarsa sorumluluğu kim üstlenir?" },
+            { "language": "ru", "text": "Кто тогда несет ответственность, если мы запустим ограниченно, а проблемы всё равно возникнут?" },
+            { "language": "ckb", "text": "ئەگەر بە سنوورداری دەست پێبکەین و بەوەشەوە کێشە ڕووبدات، کێ بەرپرسیارێتی وەردەگرێت؟" },
+            { "language": "kmr", "text": "Heke em bi awayekî sînordar dest pê bikin û dîsa pirsgirêk derkevin, kê berpirsiyarî hildigire?" },
+            { "language": "pl", "text": "Kto wtedy przejmuje odpowiedzialność, jeśli wystartujemy w ograniczony sposób, a mimo to pojawią się problemy?" },
+            { "language": "ro", "text": "Cine își asumă atunci responsabilitatea dacă lansăm limitat și tot apar probleme?" },
+            { "language": "sq", "text": "Kush e merr atëherë përgjegjësinë nëse nisim në mënyrë të kufizuar dhe megjithatë shfaqen probleme?" }
+          ],
+          "function": "ask-accountability",
+          "toneNote": "responsibility pressure"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Konsens ersetzt keine Verantwortung. Mein Vorschlag wäre: Die Geschäftsführung entscheidet auf Basis unserer Kriterien, Technik benennt die Stoppsignale, Support die Kapazitätsgrenzen und Vertrieb die Folgen eines späteren Starts.",
+          "translations": [
+            { "language": "en", "text": "Consensus does not replace responsibility. My proposal would be: management decides based on our criteria, engineering names the stop signals, support names the capacity limits, and sales names the consequences of a later launch." },
+            { "language": "fa", "text": "اجماع جای مسئولیت را نمی‌گیرد. پیشنهاد من این است: مدیریت بر اساس معیارهای ما تصمیم بگیرد، فنی علامت‌های توقف را نام ببرد، پشتیبانی مرزهای ظرفیت را مشخص کند و فروش پیامدهای شروع دیرتر را بیان کند." },
+            { "language": "ar", "text": "التوافق لا يحل محل المسؤولية. اقتراحي هو: تقرر الإدارة على أساس معاييرنا، وتسمي التقنية إشارات التوقف، ويحدد الدعم حدود القدرة، وتذكر المبيعات عواقب الإطلاق المتأخر." },
+            { "language": "tr", "text": "Uzlaşı sorumluluğun yerine geçmez. Önerim şu olurdu: yönetim kriterlerimize göre karar verir, teknik ekip dur işaretlerini belirtir, destek kapasite sınırlarını, satış ise daha geç başlangıcın sonuçlarını adlandırır." },
+            { "language": "ru", "text": "Консенсус не заменяет ответственность. Моё предложение: руководство принимает решение на основе наших критериев, инженерная команда называет сигналы остановки, поддержка — пределы мощности, продажи — последствия более позднего запуска." },
+            { "language": "ckb", "text": "کۆدەنگی جێگرەوەی بەرپرسیارێتی نییە. پێشنیاری من ئەوەیە: بەڕێوەبەرایەتی لەسەر بنەمای پێوەرەکانمان بڕیار بدات، تەکنیک ئاماژەکانی وەستان ناو ببات، پشتگیری سنووری توانای خۆی دیاری بکات و فرۆشتن ئەنجامەکانی دەستپێکردنی دواتر ڕوون بکاتەوە." },
+            { "language": "kmr", "text": "Lihevhatin cihê berpirsiyariyê nagire. Pêşniyara min ev e: rêveberiya giştî li gorî pîvanên me biryar bide, tîma teknîkî nîşanên rawestanê nav bike, piştgirî sînorên kapasîteyê û firotin encamên destpêka derengtir nav bike." },
+            { "language": "pl", "text": "Konsensus nie zastępuje odpowiedzialności. Moja propozycja byłaby taka: zarząd decyduje na podstawie naszych kryteriów, technika wskazuje sygnały stop, wsparcie granice pojemności, a sprzedaż konsekwencje późniejszego startu." },
+            { "language": "ro", "text": "Consensul nu înlocuiește responsabilitatea. Propunerea mea ar fi: conducerea decide pe baza criteriilor noastre, tehnicul numește semnalele de oprire, suportul limitele de capacitate, iar vânzările consecințele unei lansări mai târzii." },
+            { "language": "sq", "text": "Konsensusi nuk zëvendëson përgjegjësinë. Propozimi im do të ishte: drejtoria vendos mbi bazën e kritereve tona, tekniku emërton sinjalet e ndalimit, mbështetja kufijtë e kapacitetit dhe shitjet pasojat e një nisjeje më të vonë." }
+          ],
+          "function": "assign-accountability",
+          "toneNote": "clear responsibility"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "partner",
+          "baseText": "Das klingt sauber, aber es könnte so wirken, als würden wir den Konflikt nach oben schieben.",
+          "translations": [
+            { "language": "en", "text": "That sounds clean, but it could seem as if we are pushing the conflict upward." },
+            { "language": "fa", "text": "این تمیز و روشن به نظر می‌رسد، اما ممکن است طوری دیده شود که انگار تعارض را به سطح بالاتر منتقل می‌کنیم." },
+            { "language": "ar", "text": "هذا يبدو مرتباً، لكنه قد يبدو كأننا ندفع الخلاف إلى الأعلى." },
+            { "language": "tr", "text": "Bu temiz görünüyor, ama çatışmayı yukarıya itiyormuşuz gibi algılanabilir." },
+            { "language": "ru", "text": "Это звучит аккуратно, но может выглядеть так, будто мы переносим конфликт наверх." },
+            { "language": "ckb", "text": "ئەمە ڕوون دەنگ دەدات، بەڵام دەتوانێت وا دەرکەوێت کە ناکۆکییەکە بۆ ئاستی سەرەوە دەگوازینەوە." },
+            { "language": "kmr", "text": "Ev paqij tê bihîstin, lê dikare wisa xuya bike ku em nakokiyê ber bi jor ve didin." },
+            { "language": "pl", "text": "To brzmi przejrzyście, ale może wyglądać tak, jakbyśmy przesuwali konflikt wyżej." },
+            { "language": "ro", "text": "Sună clar, dar ar putea părea că împingem conflictul mai sus." },
+            { "language": "sq", "text": "Kjo tingëllon e pastër, por mund të duket sikur po e shtyjmë konfliktin më lart." }
+          ],
+          "function": "challenge-escalation",
+          "toneNote": "process concern"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Ich würde es nicht als Eskalation darstellen, sondern als Entscheidungsvorlage: Wir liefern eine tragfähige Abwägung, benennen Dissens transparent und lassen die zuständige Ebene entscheiden.",
+          "translations": [
+            { "language": "en", "text": "I would not present it as escalation, but as a decision brief: we deliver a viable assessment, name dissent transparently, and let the responsible level decide." },
+            { "language": "fa", "text": "من آن را به‌صورت ارجاع بحرانی نشان نمی‌دهم، بلکه به‌صورت پیشنهاد تصمیم: ما سنجش قابل‌اتکایی ارائه می‌کنیم، اختلاف را شفاف نام می‌بریم و اجازه می‌دهیم سطح مسئول تصمیم بگیرد." },
+            { "language": "ar", "text": "لن أعرضه كتصعيد، بل كورقة قرار: نقدم موازنة قابلة للحمل، ونسمي الخلاف بشفافية، وندع المستوى المختص يقرر." },
+            { "language": "tr", "text": "Bunu eskalasyon olarak değil, karar notu olarak sunardım: taşıyıcı bir değerlendirme verir, anlaşmazlığı şeffaf biçimde adlandırır ve yetkili seviyenin karar vermesini sağlarız." },
+            { "language": "ru", "text": "Я бы представил это не как эскалацию, а как материал для решения: мы даем устойчивую оценку, прозрачно называем разногласие и позволяем ответственному уровню принять решение." },
+            { "language": "ckb", "text": "من ئەمە وەک پەلەسەندنی کێشە نیشان نادەم، بەڵکو وەک پێشکەشنامەی بڕیار: هەڵسەنگاندنێکی بەهێز پێشکەش دەکەین، ناکۆکی بە شەفافی ناو دەبەین و ئاستی بەرپرسیار دەهێڵین بڕیار بدات." },
+            { "language": "kmr", "text": "Ez wê ne wek eskalasyon, lê wek nivîsa biryarê nîşan didim: em nirxandineke bihêz pêşkêş dikin, nakokî bi şefafî nav dikin û dihêlin asta berpirsiyar biryar bide." },
+            { "language": "pl", "text": "Nie przedstawiłbym/przedstawiłabym tego jako eskalacji, lecz jako materiał decyzyjny: dostarczamy nośną ocenę, przejrzyście nazywamy rozbieżność i pozwalamy zdecydować właściwemu poziomowi." },
+            { "language": "ro", "text": "Nu aș prezenta-o ca escaladare, ci ca material de decizie: livrăm o evaluare solidă, numim transparent dezacordul și lăsăm nivelul responsabil să decidă." },
+            { "language": "sq", "text": "Nuk do ta paraqisja si eskalim, por si material vendimmarrjeje: japim një vlerësim të qëndrueshëm, emërtojmë qartë mospajtimin dhe lëmë nivelin përgjegjës të vendosë." }
+          ],
+          "function": "reframe-escalation-as-brief",
+          "toneNote": "diplomatic precision"
+        },
+        {
+          "sortOrder": 13,
+          "speakerRole": "partner",
+          "baseText": "Bitte formulieren Sie zum Abschluss einen moderierenden Vorschlag, der beide Lager mitnimmt.",
+          "translations": [
+            { "language": "en", "text": "Please formulate a moderating proposal at the end that brings both sides along." },
+            { "language": "fa", "text": "لطفاً در پایان پیشنهادی میانجی‌گرانه بیان کنید که هر دو جناح را همراه کند." },
+            { "language": "ar", "text": "من فضلك صغ في الختام اقتراحاً توفيقياً يصطحب الجانبين." },
+            { "language": "tr", "text": "Lütfen sonunda iki tarafı da beraberinde götüren bir moderasyon önerisi formüle edin." },
+            { "language": "ru", "text": "Пожалуйста, в завершение сформулируйте модераторское предложение, которое вовлекает обе стороны." },
+            { "language": "ckb", "text": "تکایە لە کۆتاییدا پێشنیارێکی نێوبژێوانانە دابڕێژە کە هەردوو لا بەخۆیەوە بگرێت." },
+            { "language": "kmr", "text": "Ji kerema xwe di dawiyê de pêşniyareke navbeynkarî formule bikin ku her du aliyan bi xwe re bibe." },
+            { "language": "pl", "text": "Proszę na koniec sformułować moderującą propozycję, która włączy obie strony." },
+            { "language": "ro", "text": "Vă rog să formulați la final o propunere de moderare care să includă ambele tabere." },
+            { "language": "sq", "text": "Ju lutem formuloni në fund një propozim moderues që i përfshin të dyja palët." }
+          ],
+          "function": "ask-closing-proposal",
+          "toneNote": "closing request"
+        },
+        {
+          "sortOrder": 14,
+          "speakerRole": "learner",
+          "baseText": "Mein Vorschlag lautet: Wir empfehlen keinen unbedingten Vollstart, sondern einen begrenzten Juni-Start mit verbindlichen Stoppsignalen, Support-Grenzen und einer Entscheidungsvorlage für die Geschäftsführung bis Freitag.",
+          "translations": [
+            { "language": "en", "text": "My proposal is: we do not recommend an unconditional full launch, but a limited June launch with binding stop signals, support limits, and a decision brief for management by Friday." },
+            { "language": "fa", "text": "پیشنهاد من این است: ما شروع کامل و بی‌قیدوشرط را توصیه نمی‌کنیم، بلکه شروع محدود در ژوئن را با علامت‌های توقف الزام‌آور، مرزهای پشتیبانی و یک پیشنهاد تصمیم برای مدیریت تا جمعه پیشنهاد می‌دهیم." },
+            { "language": "ar", "text": "اقتراحي هو: لا نوصي بإطلاق كامل غير مشروط، بل بإطلاق محدود في يونيو مع إشارات توقف ملزمة، وحدود للدعم، وورقة قرار للإدارة حتى يوم الجمعة." },
+            { "language": "tr", "text": "Önerim şu: koşulsuz tam başlangıç önermiyoruz; bunun yerine bağlayıcı dur işaretleri, destek sınırları ve cuma gününe kadar yönetime bir karar notu ile sınırlı bir haziran başlangıcı öneriyoruz." },
+            { "language": "ru", "text": "Моё предложение таково: мы рекомендуем не безусловный полный запуск, а ограниченный июньский запуск с обязательными сигналами остановки, пределами поддержки и материалом для решения руководства до пятницы." },
+            { "language": "ckb", "text": "پێشنیاری من ئەمەیە: ئێمە دەستپێکردنی تەواوی بێ مەرج پێشنیار ناکەین، بەڵکو دەستپێکردنی سنوورداری حوزەیران بە ئاماژەی وەستانی پابەند، سنووری پشتگیری و پێشکەشنامەی بڕیار بۆ بەڕێوەبەرایەتی تا هەینی." },
+            { "language": "kmr", "text": "Pêşniyara min ev e: em destpêkeke tevahî ya bêmerc pêşniyar nakin, lê destpêkeke sînordar a hezîranê bi nîşanên rawestanê yên girêdayî, sînorên piştgiriyê û nivîsa biryarê ji bo rêveberiyê heta roja înê." },
+            { "language": "pl", "text": "Moja propozycja brzmi: nie rekomendujemy bezwarunkowego pełnego startu, lecz ograniczony start w czerwcu z wiążącymi sygnałami stop, granicami wsparcia i materiałem decyzyjnym dla zarządu do piątku." },
+            { "language": "ro", "text": "Propunerea mea este: nu recomandăm o lansare completă necondiționată, ci o lansare limitată în iunie cu semnale de oprire obligatorii, limite de suport și un material de decizie pentru conducere până vineri." },
+            { "language": "sq", "text": "Propozimi im është: nuk rekomandojmë një nisje të plotë pa kushte, por një nisje të kufizuar në qershor me sinjale ndalimi detyruese, kufij mbështetjeje dhe një material vendimmarrjeje për drejtorinë deri të premten." }
+          ],
+          "function": "close-with-moderated-recommendation",
+          "toneNote": "balanced decision proposal"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde die Entscheidung nicht als Ja-oder-Nein-Frage beginnen. Zuerst sollten wir drei Kriterien trennen: Marktdruck, technische Belastbarkeit und Verantwortung gegenüber bestehenden Kunden.",
+              "translations": [
+                { "language": "en", "text": "I would not begin the decision as a yes-or-no question. First, we should separate three criteria: market pressure, technical robustness, and responsibility toward existing customers." },
+                { "language": "fa", "text": "من تصمیم را به‌صورت پرسش بله یا نه شروع نمی‌کنم. اول باید سه معیار را جدا کنیم: فشار بازار، تاب‌آوری فنی و مسئولیت در برابر مشتریان فعلی." },
+                { "language": "ar", "text": "لن أبدأ القرار كسؤال نعم أو لا. أولاً ينبغي أن نفصل ثلاثة معايير: ضغط السوق، والقدرة التقنية على التحمل، والمسؤولية تجاه العملاء الحاليين." },
+                { "language": "tr", "text": "Karara evet-hayır sorusu olarak başlamazdım. Önce üç ölçütü ayırmalıyız: piyasa baskısı, teknik dayanıklılık ve mevcut müşterilere karşı sorumluluk." },
+                { "language": "ru", "text": "Я бы не начинал решение как вопрос «да или нет». Сначала нужно разделить три критерия: давление рынка, техническую устойчивость и ответственность перед существующими клиентами." },
+                { "language": "ckb", "text": "من بڕیارەکە وەک پرسیاری بەڵێ یان نە دەست پێناکەم. یەکەم دەبێت سێ پێوەر جیا بکەین: فشاری بازاڕ، توانای تەکنیکی و بەرپرسیارێتی بەرامبەر کڕیارانی ئێستا." },
+                { "language": "kmr", "text": "Ez biryarê wek pirsa erê-an-na dest pê nakim. Pêşî divê em sê pîvanan cuda bikin: zexta bazarê, berxwedana teknîkî û berpirsiyarî li hember xerîdarên heyî." },
+                { "language": "pl", "text": "Nie zaczynałbym/zaczynałabym decyzji jako pytania tak albo nie. Najpierw powinniśmy oddzielić trzy kryteria: presję rynkową, odporność techniczną i odpowiedzialność wobec obecnych klientów." },
+                { "language": "ro", "text": "Nu aș începe decizia ca pe o întrebare de da sau nu. Mai întâi ar trebui să separăm trei criterii: presiunea pieței, robustețea tehnică și responsabilitatea față de clienții existenți." },
+                { "language": "sq", "text": "Nuk do ta nisja vendimin si pyetje po-jo. Së pari duhet të ndajmë tri kritere: presionin e tregut, qëndrueshmërinë teknike dhe përgjegjësinë ndaj klientëve ekzistues." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verhindert eine vorschnelle Lagerbildung und setzt Kriterien, ohne die Entscheidung zu vertagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer prevents premature camps from forming and sets criteria without postponing the decision." },
+                { "language": "fa", "text": "قوی: پاسخ از شکل‌گیری زودهنگام جبهه‌ها جلوگیری می‌کند و معیار می‌گذارد، بدون اینکه تصمیم را عقب بیندازد." },
+                { "language": "ar", "text": "قوي: تمنع الإجابة تشكل المعسكرات مبكراً وتضع معايير من دون تأجيل القرار." },
+                { "language": "tr", "text": "Güçlü: cevap erken kamplaşmayı önler ve kararı ertelemeden ölçüt koyar." },
+                { "language": "ru", "text": "Сильно: ответ предотвращает преждевременное разделение на лагеря и задает критерии, не откладывая решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێگری دەکات لە دروستبوونی زووی بەرەکان و پێوەر دادەنێت بێ دواخستنی بڕیار." },
+                { "language": "kmr", "text": "Xurt e: bersiv pêşî li çêbûna zû ya aliyan digire û pîvanan datîne bêyî ku biryarê taloq bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź zapobiega przedwczesnemu tworzeniu obozów i ustala kryteria bez odkładania decyzji." },
+                { "language": "ro", "text": "Puternic: răspunsul previne formarea prematură a taberelor și stabilește criterii fără a amâna decizia." },
+                { "language": "sq", "text": "E fortë: përgjigjja parandalon krijimin e parakohshëm të kampeve dhe vendos kritere pa e shtyrë vendimin." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten alle Argumente sammeln und dann schauen, welche Seite am meisten überzeugt.",
+              "translations": [
+                { "language": "en", "text": "We should collect all arguments and then see which side is most convincing." },
+                { "language": "fa", "text": "باید همه استدلال‌ها را جمع کنیم و بعد ببینیم کدام طرف بیشتر قانع‌کننده است." },
+                { "language": "ar", "text": "ينبغي أن نجمع كل الحجج ثم نرى أي جانب يقنع أكثر." },
+                { "language": "tr", "text": "Tüm argümanları toplamalı ve sonra hangi tarafın daha ikna edici olduğuna bakmalıyız." },
+                { "language": "ru", "text": "Нужно собрать все аргументы, а затем посмотреть, какая сторона убеждает больше." },
+                { "language": "ckb", "text": "دەبێت هەموو بەڵگەکان کۆبکەینەوە و پاشان ببینین کام لا زیاتر قایلکەرە." },
+                { "language": "kmr", "text": "Divê em hemû argumanan kom bikin û paşê bibînin kîjan alî zêdetir qanî dike." },
+                { "language": "pl", "text": "Powinniśmy zebrać wszystkie argumenty, a potem zobaczyć, która strona najbardziej przekonuje." },
+                { "language": "ro", "text": "Ar trebui să strângem toate argumentele și apoi să vedem care parte convinge cel mai mult." },
+                { "language": "sq", "text": "Duhet të mbledhim të gjitha argumentet dhe pastaj të shohim cila palë bind më shumë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unpräzise: Die Antwort sammelt Meinungen, entwickelt aber keine Entscheidungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise: the answer collects opinions, but develops no decision criteria." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی نامشخص است: پاسخ نظرها را جمع می‌کند، اما معیار تصمیم نمی‌سازد." },
+                { "language": "ar", "text": "مقبول لكنه غير دقيق: تجمع الإجابة الآراء، لكنها لا تطور معايير قرار." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: cevap görüşleri toplar, fakat karar ölçütü geliştirmez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: ответ собирает мнения, но не формирует критерии решения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر ناوردە: وەڵامەکە بۆچوونەکان کۆدەکاتەوە، بەڵام پێوەری بڕیار دروست ناکات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir nezelal e: bersiv nerînan kom dike, lê pîvanên biryarê pêş naxe." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt nieprecyzyjne: odpowiedź zbiera opinie, lecz nie rozwija kryteriów decyzji." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis: răspunsul strânge opinii, dar nu dezvoltă criterii de decizie." },
+                { "language": "sq", "text": "E besueshme, por shumë e pasaktë: përgjigjja mbledh opinione, por nuk zhvillon kritere vendimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Den Zeitdruck nehme ich ernst. Gerade deshalb brauchen wir keine lange Grundsatzdebatte, sondern eine knappe Risikomatrix: Was ist tolerierbar, was braucht eine Absicherung, und was wäre ein Stoppsignal?",
+              "translations": [
+                { "language": "en", "text": "I take the time pressure seriously. Precisely for that reason, we do not need a long debate of principle, but a concise risk matrix: what is tolerable, what needs safeguards, and what would be a stop signal?" },
+                { "language": "fa", "text": "فشار زمان را جدی می‌گیرم. دقیقاً به همین دلیل به بحث طولانی اصولی نیاز نداریم، بلکه به ماتریس ریسک کوتاه نیاز داریم: چه چیزی قابل‌تحمل است، چه چیزی پوشش ایمنی می‌خواهد و چه چیزی علامت توقف است؟" },
+                { "language": "ar", "text": "آخذ ضغط الوقت بجدية. ولهذا بالضبط لا نحتاج إلى نقاش مبدئي طويل، بل إلى مصفوفة مخاطر موجزة: ما المقبول، وما يحتاج إلى ضمان، وما سيكون إشارة توقف؟" },
+                { "language": "tr", "text": "Zaman baskısını ciddiye alıyorum. Tam da bu yüzden uzun bir ilke tartışmasına değil, kısa bir risk matrisine ihtiyacımız var: ne tolere edilebilir, ne güvence ister ve ne dur işareti olur?" },
+                { "language": "ru", "text": "Я серьезно отношусь к давлению времени. Именно поэтому нам нужна не длинная принципиальная дискуссия, а краткая матрица рисков: что допустимо, что требует защиты и что стало бы сигналом остановки?" },
+                { "language": "ckb", "text": "فشاری کات بە جدی وەردەگرم. ڕێک بەهۆی ئەوە پێویستمان بە مشتومڕی بنەمایی درێژ نییە، بەڵکو بە ماتریکسی مەترسیی کورت: چی قبوڵکراوە، چی پێویستی بە پاراستنە، و چی دەبێتە ئاماژەی وەستان؟" },
+                { "language": "kmr", "text": "Ez zexta demê cidî digirim. Rast ji ber vê yekê hewceya me bi nîqaşeke dirêj a prensîbî nîne, lê bi matrîsek xetere ya kurt heye: çi dikare were qebûlkirin, çi pêdivî bi parastinê heye, û çi dê bibe nîşana rawestanê?" },
+                { "language": "pl", "text": "Traktuję presję czasu poważnie. Właśnie dlatego nie potrzebujemy długiej debaty zasadniczej, lecz krótkiej matrycy ryzyka: co jest tolerowalne, co wymaga zabezpieczenia, a co byłoby sygnałem stop?" },
+                { "language": "ro", "text": "Iau presiunea timpului în serios. Tocmai de aceea nu avem nevoie de o dezbatere de principiu lungă, ci de o matrice scurtă de risc: ce este tolerabil, ce are nevoie de garanții și ce ar fi un semnal de oprire?" },
+                { "language": "sq", "text": "E marr seriozisht presionin e kohës. Pikërisht për këtë nuk na duhet një debat i gjatë parimor, por një matricë e shkurtër rreziku: çfarë është e tolerueshme, çfarë kërkon mbrojtje dhe çfarë do të ishte sinjal ndalimi?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt Zeitdruck auf und übersetzt ihn in ein schnelleres, aber sauberes Entscheidungsverfahren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes up time pressure and translates it into a faster but clean decision process." },
+                { "language": "fa", "text": "قوی: پاسخ فشار زمان را می‌پذیرد و آن را به روند تصمیم‌گیری سریع‌تر اما تمیز تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تأخذ الإجابة ضغط الوقت وتحوله إلى إجراء قرار أسرع لكنه منظم." },
+                { "language": "tr", "text": "Güçlü: cevap zaman baskısını alır ve onu daha hızlı ama temiz bir karar sürecine çevirir." },
+                { "language": "ru", "text": "Сильно: ответ принимает давление времени и переводит его в более быстрый, но чистый процесс решения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە فشاری کات وەردەگرێت و دەیگۆڕێت بۆ ڕێڕەوی بڕیاری خێراتر بەڵام ڕوون." },
+                { "language": "kmr", "text": "Xurt e: bersiv zexta demê digire û wê dike pêvajoyeke biryarê ya zûtir lê paqij." },
+                { "language": "pl", "text": "Mocne: odpowiedź podejmuje presję czasu i przekłada ją na szybszy, ale czysty proces decyzyjny." },
+                { "language": "ro", "text": "Puternic: răspunsul preia presiunea timpului și o transformă într-un proces decizional mai rapid, dar curat." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr presionin e kohës dhe e kthen në një proces vendimi më të shpejtë, por të pastër." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Zeitdruck ist wichtig, aber wir dürfen trotzdem nicht unüberlegt handeln.",
+              "translations": [
+                { "language": "en", "text": "Time pressure is important, but we still must not act without thinking." },
+                { "language": "fa", "text": "فشار زمان مهم است، اما با وجود آن نباید نسنجیده عمل کنیم." },
+                { "language": "ar", "text": "ضغط الوقت مهم، لكن رغم ذلك لا يجوز أن نتصرف بلا تفكير." },
+                { "language": "tr", "text": "Zaman baskısı önemlidir, ama yine de düşünmeden hareket etmemeliyiz." },
+                { "language": "ru", "text": "Давление времени важно, но мы всё равно не должны действовать необдуманно." },
+                { "language": "ckb", "text": "فشاری کات گرنگە، بەڵام هێشتا نابێت بێ بیرکردنەوە کار بکەین." },
+                { "language": "kmr", "text": "Zexta demê girîng e, lê dîsa divê em bê fikir ne tevbigirin." },
+                { "language": "pl", "text": "Presja czasu jest ważna, ale mimo to nie wolno nam działać bez namysłu." },
+                { "language": "ro", "text": "Presiunea timpului este importantă, dar totuși nu trebuie să acționăm nechibzuit." },
+                { "language": "sq", "text": "Presioni i kohës është i rëndësishëm, por megjithatë nuk duhet të veprojmë pa menduar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Die Antwort klingt vernünftig, zeigt aber keinen moderierenden nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: the answer sounds reasonable, but shows no moderating next step." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی کلی است: پاسخ منطقی به نظر می‌رسد، اما گام بعدیِ میانجی‌گرانه نشان نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه عام جداً: تبدو الإجابة معقولة، لكنها لا تظهر خطوة تالية توفيقية." },
+                { "language": "tr", "text": "Makul ama fazla genel: cevap mantıklı duyulur, fakat moderasyon sağlayan bir sonraki adım göstermez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общо: ответ звучит разумно, но не показывает модерирующего следующего шага." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر گشتییە: وەڵامەکە ژیرانە دەنگ دەدات، بەڵام هەنگاوی داهاتووی نێوبژێوانانە نیشان نادات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir giştî ye: bersiv aqilmend tê bihîstin, lê gaveke din a navbeynkar nîşan nade." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt ogólne: odpowiedź brzmi rozsądnie, lecz nie pokazuje moderującego następnego kroku." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: răspunsul sună rezonabil, dar nu arată un pas următor de moderare." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: përgjigjja tingëllon e arsyeshme, por nuk tregon një hap tjetër moderues." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollten wir das Risiko nicht als Blockade formulieren, sondern als Bedingung: Ein Juni-Start wäre nur verantwortbar, wenn Support-Kapazität, Monitoring und ein Rückfallplan vorab verbindlich geklärt sind.",
+              "translations": [
+                { "language": "en", "text": "Then we should not formulate the risk as a blockade, but as a condition: a June launch would only be responsible if support capacity, monitoring, and a fallback plan are clarified bindingly in advance." },
+                { "language": "fa", "text": "پس نباید ریسک را به‌صورت مانع بیان کنیم، بلکه به‌صورت شرط: شروع در ژوئن فقط وقتی مسئولانه است که ظرفیت پشتیبانی، پایش و برنامه برگشت از قبل الزام‌آور روشن شده باشند." },
+                { "language": "ar", "text": "إذن لا ينبغي أن نصوغ الخطر كعائق، بل كشرط: لا يكون إطلاق يونيو مسؤولاً إلا إذا تم توضيح قدرة الدعم والمراقبة وخطة الرجوع مسبقاً بصورة ملزمة." },
+                { "language": "tr", "text": "O halde riski bir blokaj olarak değil, bir koşul olarak formüle etmeliyiz: haziran başlangıcı ancak destek kapasitesi, izleme ve geri dönüş planı önceden bağlayıcı biçimde netleştirilirse sorumlu olur." },
+                { "language": "ru", "text": "Тогда риск нужно формулировать не как блокировку, а как условие: запуск в июне был бы ответственным только при заранее обязательном уточнении мощности поддержки, мониторинга и плана отката." },
+                { "language": "ckb", "text": "کەواتە نابێت مەترسییەکە وەک ڕێگری دابڕێژین، بەڵکو وەک مەرج: دەستپێکردنی حوزەیران تەنها ئەوکاتە بەرپرسیارانەیە کە توانای پشتگیری، چاودێری و پلانی گەڕانەوە پێشتر بە پابەندی ڕوون کرابنەوە." },
+                { "language": "kmr", "text": "Wê hingê divê em xeterê ne wek astengî, lê wek merc formule bikin: destpêka hezîranê tenê wê berpirsiyarane be heke kapasîteya piştgirî, şopandin û plana vegerê ji berê ve bi girêdan were zelalkirin." },
+                { "language": "pl", "text": "Wtedy nie powinniśmy formułować ryzyka jako blokady, lecz jako warunek: start w czerwcu byłby odpowiedzialny tylko wtedy, gdy wcześniej wiążąco wyjaśnione zostaną pojemność wsparcia, monitoring i plan awaryjny." },
+                { "language": "ro", "text": "Atunci nu ar trebui să formulăm riscul ca blocaj, ci ca o condiție: o lansare în iunie ar fi responsabilă doar dacă sunt clarificate în prealabil, în mod obligatoriu, capacitatea de suport, monitorizarea și planul de revenire." },
+                { "language": "sq", "text": "Atëherë nuk duhet ta formulojmë rrezikun si bllokim, por si kusht: një nisje në qershor do të ishte e përgjegjshme vetëm nëse kapaciteti i mbështetjes, monitorimi dhe plani i kthimit janë sqaruar paraprakisht në mënyrë detyruese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt die technische Sorge ernst, ohne sie als pauschales Nein zu verwenden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes the technical concern seriously without using it as a blanket no." },
+                { "language": "fa", "text": "قوی: پاسخ نگرانی فنی را جدی می‌گیرد، بدون اینکه آن را به نهِ کلی تبدیل کند." },
+                { "language": "ar", "text": "قوي: تأخذ الإجابة القلق التقني بجدية من دون استخدامه كرفض عام." },
+                { "language": "tr", "text": "Güçlü: cevap teknik kaygıyı ciddiye alır, ama onu genel bir hayır olarak kullanmaz." },
+                { "language": "ru", "text": "Сильно: ответ серьезно относится к технической озабоченности, не превращая ее в общее «нет»." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانی تەکنیکی بە جدی وەردەگرێت، بێ ئەوەی وەک نەخێری گشتی بەکاری بهێنێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv fikara teknîkî cidî digire bêyî ku wê wek na-yeke giştî bikar bîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź traktuje obawę techniczną poważnie, nie używając jej jako ogólnego nie." },
+                { "language": "ro", "text": "Puternic: răspunsul ia în serios îngrijorarea tehnică fără a o folosi ca pe un nu general." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr seriozisht shqetësimin teknik pa e përdorur si një jo të përgjithshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollten Technik und Support bis Ende der Woche sagen, ob sie den Juni-Termin schaffen.",
+              "translations": [
+                { "language": "en", "text": "Then engineering and support should say by the end of the week whether they can manage the June date." },
+                { "language": "fa", "text": "پس فنی و پشتیبانی باید تا پایان هفته بگویند آیا از عهده تاریخ ژوئن برمی‌آیند یا نه." },
+                { "language": "ar", "text": "إذن ينبغي أن تقول التقنية والدعم حتى نهاية الأسبوع ما إذا كانا يستطيعان إنجاز موعد يونيو." },
+                { "language": "tr", "text": "O zaman teknik ekip ve destek hafta sonuna kadar haziran tarihini başarıp başaramayacaklarını söylemelidir." },
+                { "language": "ru", "text": "Тогда инженерная команда и поддержка должны до конца недели сказать, справятся ли они с июньским сроком." },
+                { "language": "ckb", "text": "کەواتە تەکنیک و پشتگیری دەبێت تا کۆتایی هەفتە بڵێن ئایا دەتوانن کاتی حوزەیران بەجێبهێنن یان نا." },
+                { "language": "kmr", "text": "Wê hingê divê tîma teknîkî û piştgirî heta dawiya hefteyê bibêjin ka dikarin tarîxa hezîranê biqedînin an na." },
+                { "language": "pl", "text": "Wtedy technika i wsparcie powinny do końca tygodnia powiedzieć, czy poradzą sobie z terminem czerwcowym." },
+                { "language": "ro", "text": "Atunci tehnicul și suportul ar trebui să spună până la sfârșitul săptămânii dacă pot respecta termenul din iunie." },
+                { "language": "sq", "text": "Atëherë tekniku dhe mbështetja duhet të thonë deri në fund të javës nëse mund ta arrijnë datën e qershorit." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu eng: Die Antwort delegiert die Einschätzung, nennt aber keine Bedingungen für einen verantwortbaren Start.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too narrow: the answer delegates the assessment, but names no conditions for a responsible launch." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی محدود است: پاسخ ارزیابی را واگذار می‌کند، اما شرطی برای شروع مسئولانه نام نمی‌برد." },
+                { "language": "ar", "text": "مقبول لكنه ضيق جداً: تفوض الإجابة التقييم، لكنها لا تسمي شروطاً لإطلاق مسؤول." },
+                { "language": "tr", "text": "Makul ama fazla dar: cevap değerlendirmeyi devreder, fakat sorumlu bir başlangıç için koşul belirtmez." },
+                { "language": "ru", "text": "Правдоподобно, но слишком узко: ответ делегирует оценку, но не называет условий ответственного запуска." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر تەسکە: وەڵامەکە هەڵسەنگاندنەکە دەسپێردرێت، بەڵام مەرجی دەستپێکردنی بەرپرسیارانە ناو نابات." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir teng e: bersiv nirxandinê radest dike, lê mercên destpêkeke berpirsiyarane nav nake." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt wąskie: odpowiedź deleguje ocenę, lecz nie wskazuje warunków odpowiedzialnego startu." },
+                { "language": "ro", "text": "Plauzibil, dar prea îngust: răspunsul deleagă evaluarea, dar nu numește condiții pentru o lansare responsabilă." },
+                { "language": "sq", "text": "E besueshme, por shumë e ngushtë: përgjigjja e delegon vlerësimin, por nuk përmend kushte për një nisje të përgjegjshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das kann sein. Deshalb würde ich zwei Varianten zur Entscheidung stellen: einen begrenzten Juni-Start mit klar definiertem Kundensegment oder eine Verschiebung mit öffentlich belastbarer Begründung.",
+              "translations": [
+                { "language": "en", "text": "That may be true. Therefore I would put two options up for decision: a limited June launch with a clearly defined customer segment, or a postponement with a publicly robust justification." },
+                { "language": "fa", "text": "ممکن است درست باشد. به همین دلیل دو گزینه را برای تصمیم مطرح می‌کنم: شروع محدود در ژوئن با بخش مشتریان کاملاً تعریف‌شده، یا تعویق با توجیهی که در بیرون قابل‌دفاع باشد." },
+                { "language": "ar", "text": "قد يكون ذلك صحيحاً. لذلك سأطرح خيارين للقرار: إطلاقاً محدوداً في يونيو مع شريحة عملاء محددة بوضوح، أو تأجيلاً مع تبرير قابل للصمود علناً." },
+                { "language": "tr", "text": "Bu doğru olabilir. Bu yüzden karar için iki seçenek sunardım: açık tanımlanmış bir müşteri segmentiyle sınırlı bir haziran başlangıcı ya da kamuya karşı dayanıklı bir gerekçeyle erteleme." },
+                { "language": "ru", "text": "Это может быть так. Поэтому я бы вынес на решение два варианта: ограниченный июньский запуск с четко определенным сегментом клиентов или перенос с публично устойчивым обоснованием." },
+                { "language": "ckb", "text": "لەوانەیە ڕاست بێت. بۆیە دوو بژاردە بۆ بڕیار دادەنێم: دەستپێکردنی سنوورداری حوزەیران بە بەشی کڕیاری ڕوون دیاریکراو، یان دواخستن بە هۆکاری دەرەکیی قبوڵکراو." },
+                { "language": "kmr", "text": "Dibe ku rast be. Ji ber vê yekê ez du vebijêrkan ji bo biryarê datînim: destpêkeke sînordar a hezîranê bi segmenta xerîdarên zelal, an taloqkirin bi sedemeke ku li derve jî xurt be." },
+                { "language": "pl", "text": "To może być prawda. Dlatego poddałbym/poddałabym pod decyzję dwa warianty: ograniczony start w czerwcu z jasno zdefiniowanym segmentem klientów albo przesunięcie z publicznie odpornym uzasadnieniem." },
+                { "language": "ro", "text": "Se poate. De aceea aș pune două variante la decizie: o lansare limitată în iunie cu un segment de clienți clar definit sau o amânare cu o justificare publică solidă." },
+                { "language": "sq", "text": "Kjo mund të jetë e vërtetë. Prandaj do të paraqisja dy variante për vendim: një nisje të kufizuar në qershor me segment klientësh të përcaktuar qartë, ose një shtyrje me arsyetim të mbrojtshëm publikisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort gibt Vertrieb eine ernsthafte Option, ohne die Risiken zu verharmlosen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer gives sales a serious option without downplaying the risks." },
+                { "language": "fa", "text": "قوی: پاسخ به فروش گزینه‌ای جدی می‌دهد، بدون اینکه ریسک‌ها را کوچک جلوه دهد." },
+                { "language": "ar", "text": "قوي: تعطي الإجابة المبيعات خياراً جدياً من دون التقليل من المخاطر." },
+                { "language": "tr", "text": "Güçlü: cevap satışa ciddi bir seçenek verir, riskleri küçümsemeden." },
+                { "language": "ru", "text": "Сильно: ответ дает продажам серьезный вариант, не преуменьшая риски." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بژاردەیەکی جدی دەداتە فرۆشتن بێ ئەوەی مەترسییەکان بچووک بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv vebijêrkeke cidî dide firotinê bêyî ku xeteran biçûk bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź daje sprzedaży poważną opcję, nie bagatelizując ryzyk." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă vânzărilor o opțiune serioasă fără a minimiza riscurile." },
+                { "language": "sq", "text": "E fortë: përgjigjja u jep shitjeve një opsion serioz pa i nënvlerësuar rreziqet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Vielleicht starten wir im Juni nur mit wenigen Kunden und verschieben den Rest später.",
+              "translations": [
+                { "language": "en", "text": "Perhaps we launch in June only with a few customers and postpone the rest until later." },
+                { "language": "fa", "text": "شاید در ژوئن فقط با چند مشتری شروع کنیم و بقیه را بعداً عقب بیندازیم." },
+                { "language": "ar", "text": "ربما نطلق في يونيو مع عدد قليل من العملاء فقط ونؤجل الباقي لاحقاً." },
+                { "language": "tr", "text": "Belki haziranda yalnızca birkaç müşteriyle başlarız ve geri kalanını sonraya erteleriz." },
+                { "language": "ru", "text": "Возможно, в июне мы запустимся только с несколькими клиентами, а остальное перенесем на потом." },
+                { "language": "ckb", "text": "لەوانەیە لە حوزەیراندا تەنها بە چەند کڕیارێک دەست پێبکەین و ئەوانی تر دواتر دوا بخەین." },
+                { "language": "kmr", "text": "Dibe ku em di hezîranê de tenê bi çend xerîdaran dest pê bikin û yên din paşê taloq bikin." },
+                { "language": "pl", "text": "Może w czerwcu wystartujemy tylko z kilkoma klientami, a resztę przesuniemy na później." },
+                { "language": "ro", "text": "Poate lansăm în iunie doar cu câțiva clienți și amânăm restul pentru mai târziu." },
+                { "language": "sq", "text": "Ndoshta në qershor nisim vetëm me pak klientë dhe pjesën tjetër e shtyjmë për më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu weich: Die Antwort enthält eine Idee, definiert aber weder Segment noch Begründung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too soft: the answer contains an idea, but defines neither segment nor justification." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی نرم و مبهم است: پاسخ ایده دارد، اما نه بخش مشتریان را تعریف می‌کند و نه توجیه را." },
+                { "language": "ar", "text": "مقبول لكنه لين جداً: تحتوي الإجابة على فكرة، لكنها لا تحدد الشريحة ولا التبرير." },
+                { "language": "tr", "text": "Makul ama fazla yumuşak: cevap bir fikir içerir, fakat ne segmenti ne gerekçeyi tanımlar." },
+                { "language": "ru", "text": "Правдоподобно, но слишком мягко: ответ содержит идею, но не определяет ни сегмент, ни обоснование." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر نەرم و لێڵە: وەڵامەکە بیرۆکەیەک هەیە، بەڵام نە بەشەکە دیاری دەکات نە هۆکارەکە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir nerm e: bersiv ramanekê dihewîne, lê ne segmentê ne jî sedemê diyar dike." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt miękkie: odpowiedź zawiera pomysł, lecz nie definiuje ani segmentu, ani uzasadnienia." },
+                { "language": "ro", "text": "Plauzibil, dar prea moale: răspunsul conține o idee, dar nu definește nici segmentul, nici justificarea." },
+                { "language": "sq", "text": "E besueshme, por shumë e butë: përgjigjja ka një ide, por nuk përcakton as segmentin, as arsyetimin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Konsens ersetzt keine Verantwortung. Mein Vorschlag wäre: Die Geschäftsführung entscheidet auf Basis unserer Kriterien, Technik benennt die Stoppsignale, Support die Kapazitätsgrenzen und Vertrieb die Folgen eines späteren Starts.",
+              "translations": [
+                { "language": "en", "text": "Consensus does not replace responsibility. My proposal would be: management decides based on our criteria, engineering names the stop signals, support names the capacity limits, and sales names the consequences of a later launch." },
+                { "language": "fa", "text": "اجماع جای مسئولیت را نمی‌گیرد. پیشنهاد من این است: مدیریت بر اساس معیارهای ما تصمیم بگیرد، فنی علامت‌های توقف را نام ببرد، پشتیبانی مرزهای ظرفیت را مشخص کند و فروش پیامدهای شروع دیرتر را بیان کند." },
+                { "language": "ar", "text": "التوافق لا يحل محل المسؤولية. اقتراحي هو: تقرر الإدارة على أساس معاييرنا، وتسمي التقنية إشارات التوقف، ويحدد الدعم حدود القدرة، وتذكر المبيعات عواقب الإطلاق المتأخر." },
+                { "language": "tr", "text": "Uzlaşı sorumluluğun yerine geçmez. Önerim şu olurdu: yönetim kriterlerimize göre karar verir, teknik ekip dur işaretlerini belirtir, destek kapasite sınırlarını, satış ise daha geç başlangıcın sonuçlarını adlandırır." },
+                { "language": "ru", "text": "Консенсус не заменяет ответственность. Моё предложение: руководство принимает решение на основе наших критериев, инженерная команда называет сигналы остановки, поддержка — пределы мощности, продажи — последствия более позднего запуска." },
+                { "language": "ckb", "text": "کۆدەنگی جێگرەوەی بەرپرسیارێتی نییە. پێشنیاری من ئەوەیە: بەڕێوەبەرایەتی لەسەر بنەمای پێوەرەکانمان بڕیار بدات، تەکنیک ئاماژەکانی وەستان ناو ببات، پشتگیری سنووری توانای خۆی دیاری بکات و فرۆشتن ئەنجامەکانی دەستپێکردنی دواتر ڕوون بکاتەوە." },
+                { "language": "kmr", "text": "Lihevhatin cihê berpirsiyariyê nagire. Pêşniyara min ev e: rêveberiya giştî li gorî pîvanên me biryar bide, tîma teknîkî nîşanên rawestanê nav bike, piştgirî sînorên kapasîteyê û firotin encamên destpêka derengtir nav bike." },
+                { "language": "pl", "text": "Konsensus nie zastępuje odpowiedzialności. Moja propozycja byłaby taka: zarząd decyduje na podstawie naszych kryteriów, technika wskazuje sygnały stop, wsparcie granice pojemności, a sprzedaż konsekwencje późniejszego startu." },
+                { "language": "ro", "text": "Consensul nu înlocuiește responsabilitatea. Propunerea mea ar fi: conducerea decide pe baza criteriilor noastre, tehnicul numește semnalele de oprire, suportul limitele de capacitate, iar vânzările consecințele unei lansări mai târzii." },
+                { "language": "sq", "text": "Konsensusi nuk zëvendëson përgjegjësinë. Propozimi im do të ishte: drejtoria vendos mbi bazën e kritereve tona, tekniku emërton sinjalet e ndalimit, mbështetja kufijtë e kapacitetit dhe shitjet pasojat e një nisjeje më të vonë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Zustimmung, Expertise und Entscheidungskompetenz sauber voneinander.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer cleanly separates agreement, expertise, and decision authority." },
+                { "language": "fa", "text": "قوی: پاسخ توافق، تخصص و اختیار تصمیم را تمیز از هم جدا می‌کند." },
+                { "language": "ar", "text": "قوي: تفصل الإجابة بوضوح بين الموافقة والخبرة وصلاحية القرار." },
+                { "language": "tr", "text": "Güçlü: cevap onay, uzmanlık ve karar yetkisini temiz biçimde ayırır." },
+                { "language": "ru", "text": "Сильно: ответ четко разделяет согласие, экспертизу и полномочия решения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێککەوتن، شارەزایی و دەسەڵاتی بڕیار بە پاکی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv razîbûn, pisporî û desthilata biryarê bi paqijî ji hev cuda dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź czysto oddziela zgodę, ekspertyzę i kompetencję decyzyjną." },
+                { "language": "ro", "text": "Puternic: răspunsul separă clar acordul, expertiza și autoritatea de decizie." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan qartë pajtimin, ekspertizën dhe autoritetin vendimmarrës." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Am Ende muss die Geschäftsführung entscheiden, weil nur sie die Verantwortung tragen kann.",
+              "translations": [
+                { "language": "en", "text": "In the end, management has to decide because only it can carry the responsibility." },
+                { "language": "fa", "text": "در نهایت مدیریت باید تصمیم بگیرد، چون فقط او می‌تواند مسئولیت را بر عهده بگیرد." },
+                { "language": "ar", "text": "في النهاية يجب أن تقرر الإدارة لأنها وحدها تستطيع تحمل المسؤولية." },
+                { "language": "tr", "text": "Sonunda yönetim karar vermelidir, çünkü sorumluluğu yalnızca o taşıyabilir." },
+                { "language": "ru", "text": "В конце концов руководство должно решить, потому что только оно может нести ответственность." },
+                { "language": "ckb", "text": "لە کۆتاییدا دەبێت بەڕێوەبەرایەتی بڕیار بدات، چونکە تەنها ئەو دەتوانێت بەرپرسیارێتی هەڵبگرێت." },
+                { "language": "kmr", "text": "Di dawiyê de divê rêveberî biryar bide, ji ber ku tenê ew dikare berpirsiyarî hilgire." },
+                { "language": "pl", "text": "Ostatecznie zarząd musi zdecydować, ponieważ tylko on może ponieść odpowiedzialność." },
+                { "language": "ro", "text": "În cele din urmă conducerea trebuie să decidă, deoarece doar ea poate purta responsabilitatea." },
+                { "language": "sq", "text": "Në fund duhet të vendosë drejtoria, sepse vetëm ajo mund ta mbajë përgjegjësinë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu hierarchisch: Die Antwort klärt Verantwortung, nutzt aber die Fachbeiträge der Teams nicht ausreichend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too hierarchical: the answer clarifies responsibility, but does not use the teams' expert input sufficiently." },
+                { "language": "fa", "text": "قابل‌تصور است، اما بیش از حد سلسله‌مراتبی است: پاسخ مسئولیت را روشن می‌کند، اما از ورودی تخصصی تیم‌ها به‌اندازه کافی استفاده نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه هرمي جداً: توضح الإجابة المسؤولية، لكنها لا تستخدم مساهمات الفرق المتخصصة بما يكفي." },
+                { "language": "tr", "text": "Makul ama fazla hiyerarşik: cevap sorumluluğu netleştirir, fakat ekiplerin uzman katkısını yeterince kullanmaz." },
+                { "language": "ru", "text": "Правдоподобно, но слишком иерархично: ответ проясняет ответственность, но недостаточно использует экспертный вклад команд." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام زۆر پلیکانییە: وەڵامەکە بەرپرسیارێتی ڕوون دەکاتەوە، بەڵام بەشداریی شارەزای تیمەکان بە تەواوی بەکارناهێنێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê pir hiyerarşîk e: bersiv berpirsiyarî zelal dike, lê têkariya pisporî ya tîman têra xwe bikar nayîne." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt hierarchiczne: odpowiedź wyjaśnia odpowiedzialność, lecz nie wykorzystuje wystarczająco wkładu eksperckiego zespołów." },
+                { "language": "ro", "text": "Plauzibil, dar prea ierarhic: răspunsul clarifică responsabilitatea, dar nu folosește suficient contribuțiile de specialitate ale echipelor." },
+                { "language": "sq", "text": "E besueshme, por shumë hierarkike: përgjigjja e sqaron përgjegjësinë, por nuk përdor mjaftueshëm kontributet eksperte të ekipeve." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde es nicht als Eskalation darstellen, sondern als Entscheidungsvorlage: Wir liefern eine tragfähige Abwägung, benennen Dissens transparent und lassen die zuständige Ebene entscheiden.",
+              "translations": [
+                { "language": "en", "text": "I would not present it as escalation, but as a decision brief: we deliver a viable assessment, name dissent transparently, and let the responsible level decide." },
+                { "language": "fa", "text": "من آن را به‌صورت ارجاع بحرانی نشان نمی‌دهم، بلکه به‌صورت پیشنهاد تصمیم: ما سنجش قابل‌اتکایی ارائه می‌کنیم، اختلاف را شفاف نام می‌بریم و اجازه می‌دهیم سطح مسئول تصمیم بگیرد." },
+                { "language": "ar", "text": "لن أعرضه كتصعيد، بل كورقة قرار: نقدم موازنة قابلة للحمل، ونسمي الخلاف بشفافية، وندع المستوى المختص يقرر." },
+                { "language": "tr", "text": "Bunu eskalasyon olarak değil, karar notu olarak sunardım: taşıyıcı bir değerlendirme verir, anlaşmazlığı şeffaf biçimde adlandırır ve yetkili seviyenin karar vermesini sağlarız." },
+                { "language": "ru", "text": "Я бы представил это не как эскалацию, а как материал для решения: мы даем устойчивую оценку, прозрачно называем разногласие и позволяем ответственному уровню принять решение." },
+                { "language": "ckb", "text": "من ئەمە وەک پەلەسەندنی کێشە نیشان نادەم، بەڵکو وەک پێشکەشنامەی بڕیار: هەڵسەنگاندنێکی بەهێز پێشکەش دەکەین، ناکۆکی بە شەفافی ناو دەبەین و ئاستی بەرپرسیار دەهێڵین بڕیار بدات." },
+                { "language": "kmr", "text": "Ez wê ne wek eskalasyon, lê wek nivîsa biryarê nîşan didim: em nirxandineke bihêz pêşkêş dikin, nakokî bi şefafî nav dikin û dihêlin asta berpirsiyar biryar bide." },
+                { "language": "pl", "text": "Nie przedstawiłbym/przedstawiłabym tego jako eskalacji, lecz jako materiał decyzyjny: dostarczamy nośną ocenę, przejrzyście nazywamy rozbieżność i pozwalamy zdecydować właściwemu poziomowi." },
+                { "language": "ro", "text": "Nu aș prezenta-o ca escaladare, ci ca material de decizie: livrăm o evaluare solidă, numim transparent dezacordul și lăsăm nivelul responsabil să decidă." },
+                { "language": "sq", "text": "Nuk do ta paraqisja si eskalim, por si material vendimmarrjeje: japim një vlerësim të qëndrueshëm, emërtojmë qartë mospajtimin dhe lëmë nivelin përgjegjës të vendosë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bewahrt die Würde der Runde und macht dennoch sichtbar, wo entschieden werden muss.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer preserves the dignity of the group while still making visible where a decision is needed." },
+                { "language": "fa", "text": "قوی: پاسخ شأن گروه را حفظ می‌کند و با این حال نشان می‌دهد تصمیم باید کجا گرفته شود." },
+                { "language": "ar", "text": "قوي: تحفظ الإجابة كرامة المجموعة ومع ذلك تظهر أين يجب اتخاذ القرار." },
+                { "language": "tr", "text": "Güçlü: cevap grubun itibarını korur ve yine de nerede karar gerektiğini görünür kılar." },
+                { "language": "ru", "text": "Сильно: ответ сохраняет достоинство группы и при этом показывает, где необходимо решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە شکۆی گرووپەکە دەپارێزێت و هەمان کات نیشان دەدات لە کوێ دەبێت بڕیار بدرێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv rûmeta komê diparêze û her wiha xuya dike li ku derê biryar pêwîst e." },
+                { "language": "pl", "text": "Mocne: odpowiedź zachowuje godność grupy, a jednocześnie pokazuje, gdzie trzeba podjąć decyzję." },
+                { "language": "ro", "text": "Puternic: răspunsul păstrează demnitatea grupului și totuși arată unde trebuie luată decizia." },
+                { "language": "sq", "text": "E fortë: përgjigjja ruan dinjitetin e grupit dhe megjithatë tregon ku duhet marrë vendimi." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir geben den Konflikt nicht ab, sondern bitten nur um eine Entscheidung von oben.",
+              "translations": [
+                { "language": "en", "text": "We are not handing off the conflict; we are only asking for a decision from above." },
+                { "language": "fa", "text": "ما تعارض را واگذار نمی‌کنیم، فقط از سطح بالاتر تصمیم می‌خواهیم." },
+                { "language": "ar", "text": "نحن لا نسلم الخلاف، بل نطلب فقط قراراً من الأعلى." },
+                { "language": "tr", "text": "Çatışmayı devretmiyoruz, yalnızca yukarıdan bir karar istiyoruz." },
+                { "language": "ru", "text": "Мы не передаем конфликт, а лишь просим решения сверху." },
+                { "language": "ckb", "text": "ئێمە ناکۆکییەکە ڕادەست ناکەین، تەنها داوای بڕیار لە ئاستی سەرەوە دەکەین." },
+                { "language": "kmr", "text": "Em nakokiyê radest nakin, tenê ji jor biryarekê dixwazin." },
+                { "language": "pl", "text": "Nie oddajemy konfliktu, tylko prosimy o decyzję z góry." },
+                { "language": "ro", "text": "Nu predăm conflictul, ci cerem doar o decizie de sus." },
+                { "language": "sq", "text": "Nuk po e dorëzojmë konfliktin, thjesht kërkojmë një vendim nga lart." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber riskant formuliert: „von oben“ kann defensiv wirken und erklärt den Wert der Vorlage nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but risky wording: “from above” can sound defensive and does not explain the value of the brief." },
+                { "language": "fa", "text": "قابل‌تصور است، اما بیانش پرریسک است: «از بالا» می‌تواند تدافعی به نظر برسد و ارزش پیشنهاد تصمیم را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكن الصياغة محفوفة بالمخاطر: «من الأعلى» قد تبدو دفاعية ولا تشرح قيمة الورقة." },
+                { "language": "tr", "text": "Makul ama riskli bir ifade: “yukarıdan” savunmacı duyulabilir ve karar notunun değerini açıklamaz." },
+                { "language": "ru", "text": "Правдоподобно, но формулировка рискованна: «сверху» может звучать защитно и не объясняет ценность материала." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام داڕشتنەکە مەترسیدارە: «لە سەرەوە» دەتوانێت بەرگریانە دەنگ بدات و نرخی پێشکەشنامەکە ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê gotin metirsîdar e: “ji jor” dikare parastinkar bê bihîstin û nirxa nivîsê venake." },
+                { "language": "pl", "text": "Wiarygodne, ale ryzykownie sformułowane: „z góry” może brzmieć defensywnie i nie wyjaśnia wartości materiału." },
+                { "language": "ro", "text": "Plauzibil, dar formulat riscant: „de sus” poate suna defensiv și nu explică valoarea materialului." },
+                { "language": "sq", "text": "E besueshme, por formulim i rrezikshëm: “nga lart” mund të tingëllojë mbrojtës dhe nuk shpjegon vlerën e materialit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 14,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mein Vorschlag lautet: Wir empfehlen keinen unbedingten Vollstart, sondern einen begrenzten Juni-Start mit verbindlichen Stoppsignalen, Support-Grenzen und einer Entscheidungsvorlage für die Geschäftsführung bis Freitag.",
+              "translations": [
+                { "language": "en", "text": "My proposal is: we do not recommend an unconditional full launch, but a limited June launch with binding stop signals, support limits, and a decision brief for management by Friday." },
+                { "language": "fa", "text": "پیشنهاد من این است: ما شروع کامل و بی‌قیدوشرط را توصیه نمی‌کنیم، بلکه شروع محدود در ژوئن را با علامت‌های توقف الزام‌آور، مرزهای پشتیبانی و یک پیشنهاد تصمیم برای مدیریت تا جمعه پیشنهاد می‌دهیم." },
+                { "language": "ar", "text": "اقتراحي هو: لا نوصي بإطلاق كامل غير مشروط، بل بإطلاق محدود في يونيو مع إشارات توقف ملزمة، وحدود للدعم، وورقة قرار للإدارة حتى يوم الجمعة." },
+                { "language": "tr", "text": "Önerim şu: koşulsuz tam başlangıç önermiyoruz; bunun yerine bağlayıcı dur işaretleri, destek sınırları ve cuma gününe kadar yönetime bir karar notu ile sınırlı bir haziran başlangıcı öneriyoruz." },
+                { "language": "ru", "text": "Моё предложение таково: мы рекомендуем не безусловный полный запуск, а ограниченный июньский запуск с обязательными сигналами остановки, пределами поддержки и материалом для решения руководства до пятницы." },
+                { "language": "ckb", "text": "پێشنیاری من ئەمەیە: ئێمە دەستپێکردنی تەواوی بێ مەرج پێشنیار ناکەین، بەڵکو دەستپێکردنی سنوورداری حوزەیران بە ئاماژەی وەستانی پابەند، سنووری پشتگیری و پێشکەشنامەی بڕیار بۆ بەڕێوەبەرایەتی تا هەینی." },
+                { "language": "kmr", "text": "Pêşniyara min ev e: em destpêkeke tevahî ya bêmerc pêşniyar nakin, lê destpêkeke sînordar a hezîranê bi nîşanên rawestanê yên girêdayî, sînorên piştgiriyê û nivîsa biryarê ji bo rêveberiyê heta roja înê." },
+                { "language": "pl", "text": "Moja propozycja brzmi: nie rekomendujemy bezwarunkowego pełnego startu, lecz ograniczony start w czerwcu z wiążącymi sygnałami stop, granicami wsparcia i materiałem decyzyjnym dla zarządu do piątku." },
+                { "language": "ro", "text": "Propunerea mea este: nu recomandăm o lansare completă necondiționată, ci o lansare limitată în iunie cu semnale de oprire obligatorii, limite de suport și un material de decizie pentru conducere până vineri." },
+                { "language": "sq", "text": "Propozimi im është: nuk rekomandojmë një nisje të plotë pa kushte, por një nisje të kufizuar në qershor me sinjale ndalimi detyruese, kufij mbështetjeje dhe një material vendimmarrjeje për drejtorinë deri të premten." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Vorschlag verbindet Tempo, Risikoabsicherung und Entscheidungskompetenz in einem konkreten nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the proposal connects speed, risk safeguards, and decision authority in one concrete next step." },
+                { "language": "fa", "text": "قوی: پیشنهاد سرعت، پوشش ریسک و اختیار تصمیم را در یک گام بعدی مشخص به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: يربط الاقتراح السرعة وضمان المخاطر وصلاحية القرار في خطوة تالية ملموسة." },
+                { "language": "tr", "text": "Güçlü: öneri hızı, risk güvencesini ve karar yetkisini somut bir sonraki adımda birleştirir." },
+                { "language": "ru", "text": "Сильно: предложение соединяет скорость, защиту от рисков и полномочия решения в одном конкретном следующем шаге." },
+                { "language": "ckb", "text": "بەهێزە: پێشنیارەکە خێرایی، پاراستنی مەترسی و دەسەڵاتی بڕیار لە هەنگاوێکی دیاریکراوی داهاتوودا پەیوەست دەکات." },
+                { "language": "kmr", "text": "Xurt e: pêşniyar lez, parastina xeterê û desthilata biryarê di gaveke din a konkret de girê dide." },
+                { "language": "pl", "text": "Mocne: propozycja łączy tempo, zabezpieczenie ryzyka i kompetencję decyzyjną w jednym konkretnym następnym kroku." },
+                { "language": "ro", "text": "Puternic: propunerea leagă viteza, protecția împotriva riscurilor și autoritatea de decizie într-un pas următor concret." },
+                { "language": "sq", "text": "E fortë: propozimi lidh shpejtësinë, mbrojtjen nga rreziku dhe autoritetin vendimmarrës në një hap tjetër konkret." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir könnten im Juni begrenzt starten, wenn Technik und Support bis Freitag zustimmen.",
+              "translations": [
+                { "language": "en", "text": "We could launch in a limited way in June if engineering and support agree by Friday." },
+                { "language": "fa", "text": "می‌توانیم در ژوئن محدود شروع کنیم، اگر فنی و پشتیبانی تا جمعه موافقت کنند." },
+                { "language": "ar", "text": "يمكننا أن نطلق بشكل محدود في يونيو إذا وافقت التقنية والدعم حتى يوم الجمعة." },
+                { "language": "tr", "text": "Teknik ekip ve destek cuma gününe kadar onay verirse haziranda sınırlı başlayabiliriz." },
+                { "language": "ru", "text": "Мы могли бы ограниченно запуститься в июне, если инженерная команда и поддержка согласятся до пятницы." },
+                { "language": "ckb", "text": "دەتوانین لە حوزەیراندا بە سنوورداری دەست پێبکەین، ئەگەر تەکنیک و پشتگیری تا هەینی ڕازی بن." },
+                { "language": "kmr", "text": "Em dikarin di hezîranê de bi sînordarî dest pê bikin, heke tîma teknîkî û piştgirî heta înê razî bibin." },
+                { "language": "pl", "text": "Moglibyśmy wystartować w czerwcu w ograniczony sposób, jeśli technika i wsparcie zgodzą się do piątku." },
+                { "language": "ro", "text": "Am putea lansa limitat în iunie dacă tehnicul și suportul sunt de acord până vineri." },
+                { "language": "sq", "text": "Mund të nisim në mënyrë të kufizuar në qershor, nëse tekniku dhe mbështetja pajtohen deri të premten." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht C2-stark: Die Antwort reduziert die Entscheidung auf Zustimmung und lässt Stoppsignale, Grenzen und Vorlage weg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not strong enough for C2: the answer reduces the decision to agreement and leaves out stop signals, limits, and the decision brief." },
+                { "language": "fa", "text": "قابل‌تصور است، اما برای C2 کافی قوی نیست: پاسخ تصمیم را به موافقت کاهش می‌دهد و علامت‌های توقف، مرزها و پیشنهاد تصمیم را حذف می‌کند." },
+                { "language": "ar", "text": "مقبول لكنه ليس قوياً بما يكفي لمستوى C2: تختزل الإجابة القرار في الموافقة وتترك إشارات التوقف والحدود وورقة القرار." },
+                { "language": "tr", "text": "Makul ama C2 için yeterince güçlü değil: cevap kararı onaya indirger ve dur işaretlerini, sınırları ve karar notunu dışarıda bırakır." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно сильно для C2: ответ сводит решение к согласию и опускает сигналы остановки, пределы и материал для решения." },
+                { "language": "ckb", "text": "قایل‌بوون پێی دەکرێت، بەڵام بۆ C2 بەهێز نییە: وەڵامەکە بڕیار دەکەمێنێتەوە بۆ ڕەزامەندی و ئاماژەی وەستان، سنوورەکان و پێشکەشنامەی بڕیار جێدەهێڵێت." },
+                { "language": "kmr", "text": "Qebûlkirbar e, lê ji bo C2 ne bes xurt e: bersiv biryarê dike razîbûn û nîşanên rawestanê, sînor û nivîsa biryarê berdide." },
+                { "language": "pl", "text": "Wiarygodne, ale niewystarczająco mocne na C2: odpowiedź redukuje decyzję do zgody i pomija sygnały stop, granice oraz materiał decyzyjny." },
+                { "language": "ro", "text": "Plauzibil, dar nu suficient de puternic pentru C2: răspunsul reduce decizia la acord și omite semnalele de oprire, limitele și materialul de decizie." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e fortë për C2: përgjigjja e zvogëlon vendimin në pajtim dhe lë jashtë sinjalet e ndalimit, kufijtë dhe materialin vendimmarrës." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Beginnen Sie heikle Entscheidungen nicht mit Lagerlogik, sondern mit Kriterien, an denen beide Seiten mitarbeiten können.",
+          "translations": [
+            { "language": "en", "text": "Do not begin delicate decisions with camp logic, but with criteria both sides can work on." },
+            { "language": "fa", "text": "تصمیم‌های حساس را با منطق جبهه‌بندی شروع نکنید، بلکه با معیارهایی شروع کنید که هر دو طرف بتوانند روی آن کار کنند." },
+            { "language": "ar", "text": "لا تبدأ القرارات الحساسة بمنطق المعسكرات، بل بمعايير يستطيع الجانبان العمل عليها." },
+            { "language": "tr", "text": "Hassas kararları kamp mantığıyla değil, iki tarafın da üzerinde çalışabileceği ölçütlerle başlatın." },
+            { "language": "ru", "text": "Не начинайте деликатные решения с логики лагерей, а с критериев, над которыми могут работать обе стороны." },
+            { "language": "ckb", "text": "بڕیارە هەستیارەکان بە لۆژیکی بەرەکان دەست پێمەکە، بەڵکو بە پێوەرەکان کە هەردوو لا بتوانن کاری لەسەر بکەن." },
+            { "language": "kmr", "text": "Biryaran nazik bi mantiqa aliyan dest pê nekin, lê bi pîvanên ku her du alî dikarin li ser bixebitin." },
+            { "language": "pl", "text": "Nie zaczynaj delikatnych decyzji od logiki obozów, lecz od kryteriów, nad którymi obie strony mogą pracować." },
+            { "language": "ro", "text": "Nu începeți deciziile sensibile cu logica taberelor, ci cu criterii la care ambele părți pot lucra." },
+            { "language": "sq", "text": "Mos i nisni vendimet e ndjeshme me logjikë kampesh, por me kritere mbi të cilat të dyja palët mund të punojnë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "content",
+          "text": "Auf C2-Niveau wirkt ein Risiko stärker, wenn es als konkrete Bedingung und nicht als abstrakte Warnung formuliert wird.",
+          "translations": [
+            { "language": "en", "text": "At C2 level, a risk is stronger when formulated as a concrete condition rather than an abstract warning." },
+            { "language": "fa", "text": "در سطح C2، ریسک وقتی قوی‌تر اثر می‌گذارد که به‌صورت شرط مشخص بیان شود، نه هشدار انتزاعی." },
+            { "language": "ar", "text": "في مستوى C2 يكون الخطر أقوى عندما يصاغ كشرط ملموس لا كتحذير مجرد." },
+            { "language": "tr", "text": "C2 düzeyinde bir risk, soyut uyarı yerine somut koşul olarak formüle edildiğinde daha güçlü etki eder." },
+            { "language": "ru", "text": "На уровне C2 риск звучит сильнее, если он сформулирован как конкретное условие, а не как абстрактное предупреждение." },
+            { "language": "ckb", "text": "لە ئاستی C2دا مەترسییەک بەهێزتر کاریگەری دەکات کاتێک وەک مەرجێکی دیاریکراو دابڕێژرێت، نە وەک ئاگادارییەکی ئەبستراکت." },
+            { "language": "kmr", "text": "Di asta C2 de xeterek xurtir bandor dike dema wek mercê konkret tê formulekirin, ne wek hişyariyeke abstrakt." },
+            { "language": "pl", "text": "Na poziomie C2 ryzyko działa mocniej, gdy jest sformułowane jako konkretny warunek, a nie abstrakcyjne ostrzeżenie." },
+            { "language": "ro", "text": "La nivel C2, un risc are efect mai puternic când este formulat ca o condiție concretă, nu ca un avertisment abstract." },
+            { "language": "sq", "text": "Në nivelin C2, një rrezik ka efekt më të fortë kur formulohet si kusht konkret dhe jo si paralajmërim abstrakt." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "language",
+          "text": "Formulierungen wie „Konsens ersetzt keine Verantwortung“ schaffen Klarheit, ohne die Gruppe bloßzustellen.",
+          "translations": [
+            { "language": "en", "text": "Phrases such as “consensus does not replace responsibility” create clarity without exposing the group." },
+            { "language": "fa", "text": "فرمول‌هایی مثل «اجماع جای مسئولیت را نمی‌گیرد» شفافیت ایجاد می‌کنند، بدون اینکه گروه را در موضع بد قرار دهند." },
+            { "language": "ar", "text": "صيغ مثل «التوافق لا يحل محل المسؤولية» تخلق وضوحاً من دون إحراج المجموعة." },
+            { "language": "tr", "text": "“Uzlaşı sorumluluğun yerine geçmez” gibi ifadeler grubu zor durumda bırakmadan açıklık yaratır." },
+            { "language": "ru", "text": "Формулировки вроде «консенсус не заменяет ответственность» создают ясность, не выставляя группу в неловком положении." },
+            { "language": "ckb", "text": "دەربڕینەکانی وەک «کۆدەنگی جێگرەوەی بەرپرسیارێتی نییە» ڕوونی دروست دەکەن بێ ئەوەی گرووپەکە شەرمەزار بکەن." },
+            { "language": "kmr", "text": "Gotinên wek “lihevhatin cihê berpirsiyariyê nagire” zelalbûnê çêdikin bêyî ku komê eşkere bikin." },
+            { "language": "pl", "text": "Sformułowania takie jak „konsensus nie zastępuje odpowiedzialności” tworzą jasność, nie kompromitując grupy." },
+            { "language": "ro", "text": "Formulări precum „consensul nu înlocuiește responsabilitatea” creează claritate fără a expune grupul." },
+            { "language": "sq", "text": "Shprehje si “konsensusi nuk zëvendëson përgjegjësinë” krijojnë qartësi pa e ekspozuar grupin." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "exam-technique",
+          "text": "Eine gute Moderation übergibt nicht den Konflikt, sondern eine belastbare Entscheidungsgrundlage.",
+          "translations": [
+            { "language": "en", "text": "Good moderation does not hand over the conflict, but a robust basis for decision." },
+            { "language": "fa", "text": "مدیریت جلسه خوب تعارض را واگذار نمی‌کند، بلکه مبنای تصمیم قابل‌اتکا تحویل می‌دهد." },
+            { "language": "ar", "text": "الإدارة الجيدة لا تسلم الخلاف، بل تسلم أساساً متيناً للقرار." },
+            { "language": "tr", "text": "İyi moderasyon çatışmayı değil, sağlam bir karar temelini devreder." },
+            { "language": "ru", "text": "Хорошая модерация передает не конфликт, а устойчивую основу для решения." },
+            { "language": "ckb", "text": "ڕێبەری باشی کۆبوونەوە ناکۆکی ڕادەست ناکات، بەڵکو بنەمایەکی بەهێزی بڕیار ڕادەست دەکات." },
+            { "language": "kmr", "text": "Moderasyona baş nakokiyê radest nake, lê bingehê biryarê yê bihêz radest dike." },
+            { "language": "pl", "text": "Dobra moderacja nie przekazuje konfliktu, lecz solidną podstawę decyzji." },
+            { "language": "ro", "text": "O moderare bună nu predă conflictul, ci o bază solidă pentru decizie." },
+            { "language": "sq", "text": "Moderimi i mirë nuk e dorëzon konfliktin, por një bazë të qëndrueshme vendimmarrjeje." }
+          ]
+        },
+        {
+          "turnSortOrder": 14,
+          "feedbackType": "strategy",
+          "text": "Ein tragfähiger Abschluss verbindet Empfehlung, Bedingungen, Zuständigkeit und Termin in einem Satz.",
+          "translations": [
+            { "language": "en", "text": "A viable closing statement connects recommendation, conditions, responsibility, and deadline in one sentence." },
+            { "language": "fa", "text": "جمع‌بندی قابل‌اتکا پیشنهاد، شرط‌ها، مسئولیت و زمان‌بندی را در یک جمله به هم وصل می‌کند." },
+            { "language": "ar", "text": "الخاتمة القابلة للحمل تربط التوصية والشروط والمسؤولية والموعد في جملة واحدة." },
+            { "language": "tr", "text": "Taşıyıcı bir kapanış öneriyi, koşulları, sorumluluğu ve tarihi tek cümlede bağlar." },
+            { "language": "ru", "text": "Устойчивая финальная формулировка соединяет рекомендацию, условия, ответственность и срок в одном предложении." },
+            { "language": "ckb", "text": "کۆتاییەکی بەهێز پێشنیار، مەرجەکان، بەرپرسیارێتی و کات لە یەک ڕستەدا پەیوەست دەکات." },
+            { "language": "kmr", "text": "Dawiyeke bihêz pêşniyar, merc, berpirsiyarî û demê di hevokekê de girê dide." },
+            { "language": "pl", "text": "Nośne zakończenie łączy rekomendację, warunki, odpowiedzialność i termin w jednym zdaniu." },
+            { "language": "ro", "text": "O încheiere solidă leagă recomandarea, condițiile, responsabilitatea și termenul într-o singură frază." },
+            { "language": "sq", "text": "Një mbyllje e qëndrueshme lidh rekomandimin, kushtet, përgjegjësinë dhe afatin në një fjali." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "strategy-decision-meeting",
+          "placement": "hero",
+          "purpose": "Show a formal workplace strategy meeting with several departments discussing a complex launch decision.",
+          "altText": "Eine formale Strategie-Besprechung mit mehreren Erwachsenen an einem Konferenztisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A formal strategy meeting with several adults at a conference table." },
+            { "language": "fa", "text": "یک جلسه رسمی استراتژی با چند بزرگسال پشت میز کنفرانس." },
+            { "language": "ar", "text": "اجتماع استراتيجي رسمي مع عدة بالغين حول طاولة مؤتمر." },
+            { "language": "tr", "text": "Bir konferans masasında birkaç yetişkinle resmi bir strateji toplantısı." },
+            { "language": "ru", "text": "Официальное стратегическое совещание с несколькими взрослыми за конференц-столом." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی ستراتیژی فەرمی بە چەند کەسی پێگەیشتوو لەسەر مێزی کۆنفرانس." },
+            { "language": "kmr", "text": "Civîneke stratejiyê ya fermî bi çend mezinan li ser maseya konferansê." },
+            { "language": "pl", "text": "Formalne spotkanie strategiczne z kilkoma dorosłymi przy stole konferencyjnym." },
+            { "language": "ro", "text": "O ședință formală de strategie cu mai mulți adulți la o masă de conferință." },
+            { "language": "sq", "text": "Një takim formal strategjie me disa të rritur në një tryezë konference." }
+          ],
+          "imagePrompt": "Clean educational illustration of a formal workplace strategy meeting: diverse adults around a simple conference table, neutral charts without readable text, calm but serious decision atmosphere, no logos, no private data, accessible composition, soft natural colors.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

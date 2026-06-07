@@ -1,0 +1,632 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-12-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 12 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 12",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-deadline-mit-risiken-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Eine Deadline mit Risiken verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating a deadline with risks" },
+        { "language": "fa", "text": "مذاکره درباره مهلت همراه با ریسک‌ها" },
+        { "language": "ar", "text": "التفاوض على موعد نهائي مع وجود مخاطر" },
+        { "language": "tr", "text": "Riskler varken bir teslim tarihini müzakere etmek" },
+        { "language": "ru", "text": "Договариваться о сроке с учётом рисков" },
+        { "language": "ckb", "text": "گفتوگۆکردن لەسەر وادەی کۆتایی لەگەڵ مەترسییەکان" },
+        { "language": "kmr", "text": "Li ser dema dawî bi xeteran re li hev kirin" },
+        { "language": "pl", "text": "Negocjowanie terminu przy istniejących ryzykach" },
+        { "language": "ro", "text": "Negocierea unui termen cu riscuri" },
+        { "language": "sq", "text": "Negocimi i një afati me rreziqe" }
+      ],
+      "description": "Im Team soll ein Kundentermin bis Freitag zugesagt werden, obwohl wichtige Tests noch fehlen. Du verhandelst eine realistische Deadline, erklärst die Risiken und schlägst einen lieferbaren Umfang vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In the team, a customer deadline is supposed to be promised for Friday, although important tests are still missing. You negotiate a realistic deadline, explain the risks, and suggest a deliverable scope." },
+        { "language": "fa", "text": "در تیم قرار است به مشتری برای جمعه قول داده شود، در حالی که آزمون‌های مهم هنوز انجام نشده‌اند. تو مهلتی واقع‌بینانه مذاکره می‌کنی، ریسک‌ها را توضیح می‌دهی و محدوده‌ای قابل تحویل پیشنهاد می‌کنی." },
+        { "language": "ar", "text": "في الفريق يُفترض أن يُوعَد العميل بموعد يوم الجمعة، رغم أن اختبارات مهمة ما زالت ناقصة. تتفاوض على موعد واقعي، وتشرح المخاطر، وتقترح نطاقاً يمكن تسليمه." },
+        { "language": "tr", "text": "Ekipte, önemli testler hâlâ eksik olmasına rağmen müşteriye cuma günü için söz verilmesi isteniyor. Gerçekçi bir tarih müzakere eder, riskleri açıklar ve teslim edilebilir bir kapsam önerirsin." },
+        { "language": "ru", "text": "В команде хотят пообещать клиенту срок к пятнице, хотя важные тесты ещё не выполнены. Ты договариваешься о реалистичном сроке, объясняешь риски и предлагаешь объём, который можно надёжно поставить." },
+        { "language": "ckb", "text": "لە تیمەکەدا دەیانەوێت بە کڕیار بۆ ڕۆژی هەینی بەڵێن بدەن، بەڵام تاقیکردنەوەی گرنگ هێشتا نەکراوە. تۆ وادەیەکی ڕاستەقینە گفتوگۆ دەکەیت، مەترسییەکان ڕوون دەکەیتەوە و سنوورێکی دەتوانرێت بسپێردرێت پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Di tîmê de dixwazin ji mişterî re ji bo Înê soz bidin, her çend testên girîng hîn nehatine kirin. Tu li ser dema rastîn li hev dikî, xeteran rave dikî û çarçoveyek ku dikare bê radestkirin pêşniyar dikî." },
+        { "language": "pl", "text": "W zespole ma paść obietnica terminu dla klienta na piątek, chociaż ważne testy nadal nie są gotowe. Negocjujesz realistyczny termin, wyjaśniasz ryzyka i proponujesz zakres możliwy do dostarczenia." },
+        { "language": "ro", "text": "În echipă se dorește promisiunea unui termen pentru client până vineri, deși lipsesc încă teste importante. Negociezi un termen realist, explici riscurile și propui un domeniu care poate fi livrat." },
+        { "language": "sq", "text": "Në ekip kërkohet t’i premtohet klientit një afat për të premten, edhe pse ende mungojnë teste të rëndësishme. Ti negocion një afat realist, shpjegon rreziqet dhe propozon një fushë pune që mund të dorëzohet." }
+      ],
+      "learnerGoal": "Verhandle eine Deadline professionell: Benenne Risiko und Konsequenz, biete mehrere realistische Optionen an und sichere eine klare Entscheidung über Umfang, Termin und Verantwortung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate a deadline professionally: name the risk and consequence, offer several realistic options, and secure a clear decision on scope, date, and responsibility." },
+        { "language": "fa", "text": "یک مهلت را حرفه‌ای مذاکره کن: ریسک و پیامد را نام ببر، چند گزینه واقع‌بینانه ارائه بده و درباره محدوده، زمان و مسئولیت تصمیم روشن بگیر." },
+        { "language": "ar", "text": "تفاوض على موعد نهائي بشكل مهني: اذكر الخطر والنتيجة، وقدّم عدة خيارات واقعية، واحصل على قرار واضح حول النطاق والموعد والمسؤولية." },
+        { "language": "tr", "text": "Bir teslim tarihini profesyonelce müzakere et: riski ve sonucu belirt, birkaç gerçekçi seçenek sun ve kapsam, tarih ve sorumluluk hakkında net bir karar al." },
+        { "language": "ru", "text": "Профессионально договорись о сроке: назови риск и последствия, предложи несколько реалистичных вариантов и добейся ясного решения по объёму, дате и ответственности." },
+        { "language": "ckb", "text": "وادەی کۆتایی بە شێوەی پیشەیی گفتوگۆ بکە: مەترسی و ئەنجامەکە ناو ببرە، چەند هەڵبژاردەی ڕاستەقینە پێشنیار بکە و بڕیارێکی ڕوون لەسەر سنوور، کات و بەرپرسیارێتی بەدەست بهێنە." },
+        { "language": "kmr", "text": "Dema dawî bi awayekî profesyonel li hev bike: xeter û encamê bi nav bike, çend vebijarkên rastîn pêşniyar bike û biryareke zelal li ser çarçove, dem û berpirsiyariyê bistîne." },
+        { "language": "pl", "text": "Profesjonalnie negocjuj termin: nazwij ryzyko i konsekwencje, zaproponuj kilka realistycznych opcji i uzyskaj jasną decyzję co do zakresu, daty i odpowiedzialności." },
+        { "language": "ro", "text": "Negociază profesionist un termen: numește riscul și consecința, oferă mai multe opțiuni realiste și obține o decizie clară privind domeniul, data și responsabilitatea." },
+        { "language": "sq", "text": "Negocio profesionalisht një afat: përmend rrezikun dhe pasojën, ofro disa mundësi realiste dhe siguro një vendim të qartë për fushën, datën dhe përgjegjësinë." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3120,
+      "roles": [
+        {
+          "roleKey": "manager",
+          "displayName": "Projektleitung",
+          "translations": [
+            { "language": "en", "text": "Project lead" },
+            { "language": "fa", "text": "مدیر پروژه" },
+            { "language": "ar", "text": "مديرة المشروع" },
+            { "language": "tr", "text": "Proje yöneticisi" },
+            { "language": "ru", "text": "Руководитель проекта" },
+            { "language": "ckb", "text": "بەڕێوەبەری پڕۆژە" },
+            { "language": "kmr", "text": "Rêveberê projeyê" },
+            { "language": "pl", "text": "Kierownik projektu" },
+            { "language": "ro", "text": "Coordonatorul proiectului" },
+            { "language": "sq", "text": "Drejtuesi i projektit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Teammitglied",
+          "translations": [
+            { "language": "en", "text": "Team member" },
+            { "language": "fa", "text": "عضو تیم" },
+            { "language": "ar", "text": "عضو الفريق" },
+            { "language": "tr", "text": "Ekip üyesi" },
+            { "language": "ru", "text": "Участник команды" },
+            { "language": "ckb", "text": "ئەندامی تیم" },
+            { "language": "kmr", "text": "Endamê tîmê" },
+            { "language": "pl", "text": "Członek zespołu" },
+            { "language": "ro", "text": "Membru al echipei" },
+            { "language": "sq", "text": "Anëtar i ekipit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "manager",
+          "baseText": "Der Kunde möchte bis Freitag eine feste Zusage. Können wir den kompletten Umfang zu diesem Termin liefern?",
+          "translations": [
+            { "language": "en", "text": "The customer wants a firm commitment by Friday. Can we deliver the full scope by that date?" },
+            { "language": "fa", "text": "مشتری تا جمعه یک قول قطعی می‌خواهد. آیا می‌توانیم کل محدوده را تا آن تاریخ تحویل بدهیم؟" },
+            { "language": "ar", "text": "يريد العميل التزاماً ثابتاً حتى يوم الجمعة. هل يمكننا تسليم النطاق الكامل في ذلك الموعد؟" },
+            { "language": "tr", "text": "Müşteri cuma gününe kadar kesin bir taahhüt istiyor. Tüm kapsamı o tarihe kadar teslim edebilir miyiz?" },
+            { "language": "ru", "text": "Клиент хочет твёрдое обещание к пятнице. Можем ли мы поставить весь объём к этому сроку?" },
+            { "language": "ckb", "text": "کڕیار تا ڕۆژی هەینی بەڵێنێکی دڵنیا دەوێت. دەتوانین هەموو سنوورەکە تا ئەو کاتە بسپێرین؟" },
+            { "language": "kmr", "text": "Mişterî heta Înê sozeke teqez dixwaze. Em dikarin hemû çarçoveyê heta wê demê radest bikin?" },
+            { "language": "pl", "text": "Klient chce do piątku wiążącego potwierdzenia. Czy możemy dostarczyć pełny zakres w tym terminie?" },
+            { "language": "ro", "text": "Clientul vrea o promisiune fermă până vineri. Putem livra întregul domeniu până la acel termen?" },
+            { "language": "sq", "text": "Klienti kërkon një zotim të sigurt deri të premten. A mund ta dorëzojmë të gjithë fushën në atë datë?" }
+          ],
+          "function": "open-negotiation",
+          "toneNote": "direct but not hostile"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Für Freitag kann ich den stabilen Kernumfang zusagen, aber nicht den kompletten Umfang ohne zusätzliches Risiko. Wenn wir alles erzwingen, fehlt uns die Zeit für die Rollen- und Migrationstests.",
+          "translations": [
+            { "language": "en", "text": "For Friday I can commit to the stable core scope, but not to the full scope without additional risk. If we force everything, we lack time for the role and migration tests." },
+            { "language": "fa", "text": "برای جمعه می‌توانم محدوده اصلی و پایدار را تعهد کنم، اما نه کل محدوده را بدون ریسک اضافی. اگر همه چیز را اجبار کنیم، برای آزمون‌های نقش‌ها و انتقال داده زمان کم می‌آوریم." },
+            { "language": "ar", "text": "بالنسبة إلى الجمعة يمكنني الالتزام بالنطاق الأساسي المستقر، لكن ليس بالنطاق الكامل من دون خطر إضافي. إذا فرضنا كل شيء، فلن يبقى وقت كافٍ لاختبارات الأدوار ونقل البيانات." },
+            { "language": "tr", "text": "Cuma günü için kararlı çekirdek kapsamı taahhüt edebilirim, ama ek risk olmadan tüm kapsamı değil. Her şeyi zorlayacak olursak rol ve veri taşıma testleri için zamanımız kalmaz." },
+            { "language": "ru", "text": "К пятнице я могу обещать стабильный основной объём, но не весь объём без дополнительного риска. Если мы будем форсировать всё, нам не хватит времени на тесты ролей и миграции." },
+            { "language": "ckb", "text": "بۆ ڕۆژی هەینی دەتوانم سنووری سەرەکی و جێگیر بەڵێن بدەم، بەڵام نە هەموو سنوورەکە بە بێ مەترسیی زیادە. ئەگەر هەموو شتێک بە زۆر بکەین، کاتی تاقیکردنەوەی ڕۆڵەکان و گواستنەوەی داتامان کەم دەبێت." },
+            { "language": "kmr", "text": "Ji bo Înê ez dikarim çarçoveya bingehîn a bi ewle soz bidim, lê ne hemû çarçove bê xetereyeke zêde. Heke em her tiştî bi zorê bikin, dem ji bo testên rol û veguhastina daneyan namîne." },
+            { "language": "pl", "text": "Na piątek mogę zobowiązać się do stabilnego zakresu podstawowego, ale nie do pełnego zakresu bez dodatkowego ryzyka. Jeśli wymusimy wszystko, zabraknie nam czasu na testy ról i migracji." },
+            { "language": "ro", "text": "Pentru vineri pot promite domeniul de bază stabil, dar nu întregul domeniu fără risc suplimentar. Dacă forțăm totul, nu ne rămâne timp pentru testele de roluri și migrare." },
+            { "language": "sq", "text": "Për të premten mund të premtoj fushën bazë të qëndrueshme, por jo të gjithë fushën pa rrezik shtesë. Nëse i shtyjmë të gjitha me forcë, nuk na mbetet kohë për testet e roleve dhe të migrimit." }
+          ],
+          "function": "state-safe-scope",
+          "toneNote": "clear, factual, and solution-oriented",
+          "expectedLearnerAction": "Limit the commitment and name the missing test areas."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "manager",
+          "baseText": "Welche Risiken wären für den Kunden wirklich sichtbar, wenn wir trotzdem den ganzen Umfang am Freitag liefern?",
+          "translations": [
+            { "language": "en", "text": "Which risks would actually be visible to the customer if we still delivered the full scope on Friday?" },
+            { "language": "fa", "text": "اگر با وجود این کل محدوده را جمعه تحویل بدهیم، کدام ریسک‌ها واقعاً برای مشتری قابل مشاهده می‌شوند؟" },
+            { "language": "ar", "text": "ما المخاطر التي ستكون ظاهرة فعلاً للعميل إذا سلّمنا النطاق الكامل يوم الجمعة رغم ذلك؟" },
+            { "language": "tr", "text": "Buna rağmen tüm kapsamı cuma günü teslim edersek müşteri için hangi riskler gerçekten görünür olur?" },
+            { "language": "ru", "text": "Какие риски действительно увидит клиент, если мы всё же поставим весь объём в пятницу?" },
+            { "language": "ckb", "text": "ئەگەر بەهەرحاڵ هەموو سنوورەکە ڕۆژی هەینی بسپێرین، کام مەترسییەکان بەڕاستی بۆ کڕیار دەردەکەون؟" },
+            { "language": "kmr", "text": "Heke em dîsa jî hemû çarçoveyê roja Înê radest bikin, kîjan xeter ji bo mişterî bi rastî xuya dibin?" },
+            { "language": "pl", "text": "Jakie ryzyka byłyby naprawdę widoczne dla klienta, gdybyśmy mimo wszystko dostarczyli pełny zakres w piątek?" },
+            { "language": "ro", "text": "Ce riscuri ar fi cu adevărat vizibile pentru client dacă totuși am livra întregul domeniu vineri?" },
+            { "language": "sq", "text": "Cilat rreziqe do të ishin vërtet të dukshme për klientin nëse megjithatë dorëzojmë të gjithë fushën të premten?" }
+          ],
+          "function": "ask-visible-risk"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das sichtbarste Risiko ist, dass bestimmte Rollen falsche Daten sehen oder gar keinen Zugriff haben. Außerdem könnten alte Kundendaten in der Migration unvollständig übernommen werden.",
+          "translations": [
+            { "language": "en", "text": "The most visible risk is that certain roles see incorrect data or have no access at all. Also, old customer data could be migrated incompletely." },
+            { "language": "fa", "text": "قابل‌مشاهده‌ترین ریسک این است که بعضی نقش‌ها داده‌های اشتباه ببینند یا اصلاً دسترسی نداشته باشند. علاوه بر آن، ممکن است داده‌های قدیمی مشتری در انتقال ناقص منتقل شوند." },
+            { "language": "ar", "text": "الخطر الأكثر وضوحاً هو أن ترى بعض الأدوار بيانات خاطئة أو لا تحصل على وصول إطلاقاً. إضافة إلى ذلك قد تُنقَل بيانات العملاء القديمة بشكل غير كامل." },
+            { "language": "tr", "text": "En görünür risk, bazı rollerin yanlış verileri görmesi ya da hiç erişim alamamasıdır. Ayrıca eski müşteri verileri taşıma sırasında eksik aktarılabilir." },
+            { "language": "ru", "text": "Самый заметный риск в том, что некоторые роли увидят неверные данные или вообще не получат доступ. Кроме того, старые клиентские данные могут перенестись неполно." },
+            { "language": "ckb", "text": "دیارترین مەترسی ئەوەیە کە هەندێک ڕۆڵ داتای هەڵە ببینن یان هەرگیز دەستپێگەیشتن نەبن. هەروەها داتای کۆنی کڕیار لە گواستنەوەدا ناتەواو بگوازرێتەوە." },
+            { "language": "kmr", "text": "Xetera herî xuya ev e ku hin rol daneyên şaş bibînin an jî qet gihiştinê nebin. Her wiha daneyên kevn ên mişterî dikarin di veguhastinê de ne temam bêne veguhastin." },
+            { "language": "pl", "text": "Najbardziej widoczne ryzyko polega na tym, że niektóre role zobaczą błędne dane albo w ogóle nie będą miały dostępu. Poza tym stare dane klienta mogą zostać przeniesione niekompletnie." },
+            { "language": "ro", "text": "Cel mai vizibil risc este ca anumite roluri să vadă date greșite sau să nu aibă deloc acces. În plus, datele vechi ale clientului ar putea fi preluate incomplet la migrare." },
+            { "language": "sq", "text": "Rreziku më i dukshëm është që disa role të shohin të dhëna të gabuara ose të mos kenë fare qasje. Përveç kësaj, të dhënat e vjetra të klientit mund të transferohen në mënyrë të paplotë." }
+          ],
+          "function": "explain-visible-risk",
+          "toneNote": "concrete risk instead of vague concern",
+          "expectedLearnerAction": "Explain customer-visible consequences, not only internal technical problems."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "manager",
+          "baseText": "Wir brauchen trotzdem eine klare Antwort. Welche Optionen können wir dem Kunden anbieten?",
+          "translations": [
+            { "language": "en", "text": "We still need a clear answer. Which options can we offer the customer?" },
+            { "language": "fa", "text": "با این حال به یک پاسخ روشن نیاز داریم. چه گزینه‌هایی می‌توانیم به مشتری پیشنهاد کنیم؟" },
+            { "language": "ar", "text": "مع ذلك نحتاج إلى جواب واضح. ما الخيارات التي يمكن أن نقدمها للعميل؟" },
+            { "language": "tr", "text": "Yine de net bir yanıta ihtiyacımız var. Müşteriye hangi seçenekleri sunabiliriz?" },
+            { "language": "ru", "text": "Нам всё равно нужен ясный ответ. Какие варианты мы можем предложить клиенту?" },
+            { "language": "ckb", "text": "بەهەرحاڵ پێویستمان بە وەڵامێکی ڕوونە. دەتوانین کام هەڵبژاردەکان پێشکەش بە کڕیار بکەین؟" },
+            { "language": "kmr", "text": "Dîsa jî em pêwîstiya bersiveke zelal hene. Em dikarin kîjan vebijarkan ji mişterî re pêşkêş bikin?" },
+            { "language": "pl", "text": "Mimo to potrzebujemy jasnej odpowiedzi. Jakie opcje możemy zaproponować klientowi?" },
+            { "language": "ro", "text": "Totuși avem nevoie de un răspuns clar. Ce opțiuni îi putem oferi clientului?" },
+            { "language": "sq", "text": "Megjithatë na duhet një përgjigje e qartë. Cilat mundësi mund t’i ofrojmë klientit?" }
+          ],
+          "function": "ask-options"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich sehe drei Optionen: Freitag nur den geprüften Kernumfang, Dienstag den vollständigen Umfang mit Tests, oder Freitag alles mit hohem Nacharbeitsrisiko. Fachlich empfehle ich die erste oder zweite Option.",
+          "translations": [
+            { "language": "en", "text": "I see three options: on Friday only the tested core scope, on Tuesday the full scope with tests, or everything on Friday with a high risk of rework. From a professional perspective, I recommend the first or second option." },
+            { "language": "fa", "text": "من سه گزینه می‌بینم: جمعه فقط محدوده اصلیِ آزمون‌شده، سه‌شنبه کل محدوده همراه با آزمون‌ها، یا جمعه همه چیز با ریسک بالای دوباره‌کاری. از نظر تخصصی گزینه اول یا دوم را توصیه می‌کنم." },
+            { "language": "ar", "text": "أرى ثلاثة خيارات: يوم الجمعة النطاق الأساسي المختبَر فقط، أو يوم الثلاثاء النطاق الكامل مع الاختبارات، أو كل شيء يوم الجمعة مع خطر كبير لإعادة العمل. من الناحية المهنية أوصي بالخيار الأول أو الثاني." },
+            { "language": "tr", "text": "Üç seçenek görüyorum: cuma günü yalnızca test edilmiş çekirdek kapsam, salı günü testlerle birlikte tam kapsam, ya da cuma günü her şey ama yüksek yeniden çalışma riskiyle. Uzmanlık açısından birinci veya ikinci seçeneği öneriyorum." },
+            { "language": "ru", "text": "Я вижу три варианта: в пятницу только проверенный основной объём, во вторник полный объём с тестами или всё в пятницу с высоким риском доработок. Профессионально я рекомендую первый или второй вариант." },
+            { "language": "ckb", "text": "سێ هەڵبژاردە دەبینم: ڕۆژی هەینی تەنها سنووری سەرەکیی تاقیکراوە، ڕۆژی سێشەممە هەموو سنوور لەگەڵ تاقیکردنەوەکان، یان ڕۆژی هەینی هەموو شتێک بە مەترسیی بەرزی کارکردنەوە. لە ڕووی پیشەییەوە هەڵبژاردەی یەکەم یان دووەم پێشنیار دەکەم." },
+            { "language": "kmr", "text": "Ez sê vebijarkan dibînim: roja Înê tenê çarçoveya bingehîn a testkirî, roja Sêşemê hemû çarçove bi testan, an jî roja Înê her tişt bi xetera mezin a dubarekarî. Ji aliyê pisporiyê ve ez vebijarka yekem an duyem pêşniyar dikim." },
+            { "language": "pl", "text": "Widzę trzy opcje: w piątek tylko przetestowany zakres podstawowy, we wtorek pełny zakres z testami albo w piątek wszystko z wysokim ryzykiem poprawek. Z perspektywy merytorycznej rekomenduję pierwszą albo drugą opcję." },
+            { "language": "ro", "text": "Văd trei opțiuni: vineri doar domeniul de bază testat, marți domeniul complet cu teste sau vineri totul cu risc mare de refacere. Din punct de vedere profesional recomand prima sau a doua opțiune." },
+            { "language": "sq", "text": "Shoh tri mundësi: të premten vetëm fushën bazë të testuar, të martën të gjithë fushën me teste, ose të premten gjithçka me rrezik të lartë ripunimi. Nga ana profesionale rekomandoj mundësinë e parë ose të dytë." }
+          ],
+          "function": "offer-tradeoffs",
+          "toneNote": "structured comparison with recommendation",
+          "expectedLearnerAction": "Offer options with trade-offs and make a professional recommendation."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "manager",
+          "baseText": "Wenn wir den Kernumfang am Freitag liefern, klingt das für den Kunden vielleicht wie ein Rückschritt. Wie formulieren wir das positiv?",
+          "translations": [
+            { "language": "en", "text": "If we deliver the core scope on Friday, it may sound like a step backward to the customer. How do we phrase it positively?" },
+            { "language": "fa", "text": "اگر جمعه فقط محدوده اصلی را تحویل بدهیم، شاید برای مشتری مثل عقب‌گرد به نظر برسد. چطور آن را مثبت بیان کنیم؟" },
+            { "language": "ar", "text": "إذا سلّمنا النطاق الأساسي يوم الجمعة، فقد يبدو ذلك للعميل كأنه تراجع. كيف نصوغه بطريقة إيجابية؟" },
+            { "language": "tr", "text": "Cuma günü çekirdek kapsamı teslim edersek bu müşteriye geri adım gibi gelebilir. Bunu nasıl olumlu ifade ederiz?" },
+            { "language": "ru", "text": "Если мы поставим основной объём в пятницу, клиенту это может показаться шагом назад. Как сформулировать это позитивно?" },
+            { "language": "ckb", "text": "ئەگەر ڕۆژی هەینی سنووری سەرەکی بسپێرین، لەوانەیە بۆ کڕیار وەک هەنگاوێک بەرەو دواوە دەربکەوێت. چۆن بە شێوەیەکی ئەرێنی دەڵێین؟" },
+            { "language": "kmr", "text": "Heke em roja Înê çarçoveya bingehîn radest bikin, ev dibe ku ji bo mişterî wek gavek paşve xuya bike. Em wê çawa erênî dibêjin?" },
+            { "language": "pl", "text": "Jeśli w piątek dostarczymy zakres podstawowy, dla klienta może to brzmieć jak krok wstecz. Jak sformułować to pozytywnie?" },
+            { "language": "ro", "text": "Dacă livrăm domeniul de bază vineri, pentru client ar putea suna ca un pas înapoi. Cum formulăm pozitiv?" },
+            { "language": "sq", "text": "Nëse të premten dorëzojmë fushën bazë, klientit mund t’i duket si hap prapa. Si ta formulojmë pozitivisht?" }
+          ],
+          "function": "ask-customer-framing"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Wir können sagen: Wir liefern am Freitag den geprüften Funktionskern, damit der Kunde sicher starten kann. Die erweiterten Berichte folgen am Dienstag nach dem Migrationstest, statt ungetestet mitzulaufen.",
+          "translations": [
+            { "language": "en", "text": "We can say: on Friday we deliver the tested functional core so the customer can start safely. The extended reports follow on Tuesday after the migration test, instead of being included untested." },
+            { "language": "fa", "text": "می‌توانیم بگوییم: جمعه هسته کاربردیِ آزمون‌شده را تحویل می‌دهیم تا مشتری با اطمینان شروع کند. گزارش‌های پیشرفته سه‌شنبه بعد از آزمون انتقال داده می‌آیند، نه اینکه بدون آزمون همراه شوند." },
+            { "language": "ar", "text": "يمكننا أن نقول: نسلّم يوم الجمعة النواة الوظيفية المختبَرة حتى يبدأ العميل بأمان. أما التقارير الموسعة فتأتي يوم الثلاثاء بعد اختبار نقل البيانات، بدلاً من إدراجها من دون اختبار." },
+            { "language": "tr", "text": "Şöyle diyebiliriz: cuma günü müşterinin güvenli başlayabilmesi için test edilmiş işlevsel çekirdeği teslim ediyoruz. Genişletilmiş raporlar, test edilmeden eklenmek yerine veri taşıma testinden sonra salı günü gelir." },
+            { "language": "ru", "text": "Мы можем сказать: в пятницу мы поставляем проверенное функциональное ядро, чтобы клиент мог безопасно начать. Расширенные отчёты последуют во вторник после теста миграции, а не будут включены непроверенными." },
+            { "language": "ckb", "text": "دەتوانین بڵێین: ڕۆژی هەینی ناوەڕۆکی کارایی تاقیکراوە دەسپێرین تا کڕیار بە دڵنیایی دەست پێ بکات. ڕاپۆرتە فراوانەکان ڕۆژی سێشەممە دوای تاقیکردنەوەی گواستنەوە دێن، نە بە بێ تاقیکردنەوە هاوڕێ بن." },
+            { "language": "kmr", "text": "Em dikarin bibêjin: roja Înê em navoka karî ya testkirî radest dikin da ku mişterî bi ewle dest pê bike. Raporên fireh roja Sêşemê piştî testa veguhastinê tên, ne ku bê test tê de werin." },
+            { "language": "pl", "text": "Możemy powiedzieć: w piątek dostarczamy przetestowany rdzeń funkcjonalny, aby klient mógł bezpiecznie zacząć. Rozszerzone raporty pojawią się we wtorek po teście migracji, zamiast działać bez testów." },
+            { "language": "ro", "text": "Putem spune: vineri livrăm nucleul funcțional testat, ca clientul să poată începe în siguranță. Rapoartele extinse vin marți după testul de migrare, în loc să fie incluse netestate." },
+            { "language": "sq", "text": "Mund të themi: të premten dorëzojmë bërthamën funksionale të testuar, që klienti të fillojë i sigurt. Raportet e zgjeruara vijnë të martën pas testit të migrimit, jo të përfshira pa testim." }
+          ],
+          "function": "positive-customer-framing",
+          "toneNote": "transparent but confidence-building",
+          "expectedLearnerAction": "Frame reduced scope as a safe staged delivery."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "manager",
+          "baseText": "Gut. Was brauchen wir intern, damit diese Variante belastbar ist?",
+          "translations": [
+            { "language": "en", "text": "Good. What do we need internally so this version is reliable?" },
+            { "language": "fa", "text": "خوب. در داخل تیم به چه چیزی نیاز داریم تا این گزینه قابل اتکا باشد؟" },
+            { "language": "ar", "text": "جيد. ما الذي نحتاجه داخلياً حتى تكون هذه الصيغة موثوقة؟" },
+            { "language": "tr", "text": "İyi. Bu seçeneğin sağlam olması için içeride neye ihtiyacımız var?" },
+            { "language": "ru", "text": "Хорошо. Что нам нужно внутри команды, чтобы этот вариант был надёжным?" },
+            { "language": "ckb", "text": "باشە. لە ناوخۆدا پێویستمان بە چییە تا ئەم وەشانە پشتپێبەستوو بێت؟" },
+            { "language": "kmr", "text": "Baş e. Li hundir em pêwîstiya çi hene da ku ev vebijark ewle be?" },
+            { "language": "pl", "text": "Dobrze. Czego potrzebujemy wewnętrznie, żeby ten wariant był wiarygodny?" },
+            { "language": "ro", "text": "Bine. De ce avem nevoie intern ca această variantă să fie solidă?" },
+            { "language": "sq", "text": "Mirë. Çfarë na duhet brenda ekipit që ky variant të jetë i besueshëm?" }
+          ],
+          "function": "ask-next-steps"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Wir brauchen heute bis 14 Uhr die Entscheidung zum Umfang. Ich übernehme die Testliste, Max prüft die Rollen bis morgen Mittag, und Lara formuliert danach die Kundenzusage mit Freitag und Dienstag als zwei klaren Terminen.",
+          "translations": [
+            { "language": "en", "text": "We need the scope decision by 2 p.m. today. I will take over the test list, Max will check the roles by tomorrow noon, and Lara will then phrase the customer commitment with Friday and Tuesday as two clear dates." },
+            { "language": "fa", "text": "امروز تا ساعت ۱۴ به تصمیم درباره محدوده نیاز داریم. من فهرست آزمون‌ها را بر عهده می‌گیرم، مکس تا فردا ظهر نقش‌ها را بررسی می‌کند و لارا بعد از آن تعهد به مشتری را با جمعه و سه‌شنبه به عنوان دو تاریخ روشن می‌نویسد." },
+            { "language": "ar", "text": "نحتاج اليوم حتى الساعة الثانية بعد الظهر إلى قرار بشأن النطاق. أتولى أنا قائمة الاختبارات، ويفحص ماكس الأدوار حتى ظهر الغد، ثم تصوغ لارا التزام العميل مع الجمعة والثلاثاء كموعدين واضحين." },
+            { "language": "tr", "text": "Bugün saat 14.00’e kadar kapsam kararına ihtiyacımız var. Test listesini ben üstleniyorum, Max rolleri yarın öğlene kadar kontrol ediyor ve Lara ardından müşteri taahhüdünü cuma ve salı olarak iki net tarihle formüle ediyor." },
+            { "language": "ru", "text": "Сегодня до 14:00 нам нужно решение по объёму. Я беру на себя список тестов, Макс проверяет роли до завтрашнего полудня, а Лара затем формулирует обещание клиенту с пятницей и вторником как двумя ясными датами." },
+            { "language": "ckb", "text": "ئەمڕۆ تا کاتژمێر ١٤ پێویستمان بە بڕیاری سنوورەکەیە. من لیستی تاقیکردنەوەکان وەردەگرم، ماکس تا نیوەڕۆی سبەی ڕۆڵەکان دەپشکنێت، و لارا پاشان بەڵێنی کڕیار بە ڕۆژی هەینی و سێشەممە وەک دوو کاتی ڕوون دەنووسێت." },
+            { "language": "kmr", "text": "Îro heta saet 14:00 em pêwîstiya biryara çarçoveyê hene. Ez lîsteya testan digirim, Max heta nîvroya sibê rolan kontrol dike, û Lara paşê soza mişterî bi Înê û Sêşemê wek du demên zelal dinivîse." },
+            { "language": "pl", "text": "Dziś do godziny 14 potrzebujemy decyzji co do zakresu. Ja przejmuję listę testów, Max sprawdza role do jutra do południa, a Lara potem formułuje zobowiązanie dla klienta z piątkiem i wtorkiem jako dwoma jasnymi terminami." },
+            { "language": "ro", "text": "Astăzi până la ora 14 avem nevoie de decizia privind domeniul. Eu preiau lista de teste, Max verifică rolurile până mâine la prânz, iar Lara formulează apoi angajamentul către client cu vineri și marți ca două termene clare." },
+            { "language": "sq", "text": "Sot deri në orën 14 na duhet vendimi për fushën. Unë marr përsipër listën e testeve, Max kontrollon rolet deri nesër në mesditë dhe Lara pastaj formulon zotimin për klientin me të premten dhe të martën si dy data të qarta." }
+          ],
+          "function": "secure-decision-and-owners",
+          "toneNote": "specific and actionable",
+          "expectedLearnerAction": "Close with decision time, owners, and customer-facing dates."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "safe-core-scope",
+              "text": "Für Freitag kann ich den stabilen Kernumfang zusagen, aber nicht den kompletten Umfang ohne zusätzliches Risiko. Wenn wir alles erzwingen, fehlt uns die Zeit für die Rollen- und Migrationstests.",
+              "translations": [
+                { "language": "en", "text": "For Friday I can commit to the stable core scope, but not to the full scope without additional risk. If we force everything, we lack time for the role and migration tests." },
+                { "language": "fa", "text": "برای جمعه می‌توانم محدوده اصلی و پایدار را تعهد کنم، اما نه کل محدوده را بدون ریسک اضافی. اگر همه چیز را اجبار کنیم، برای آزمون‌های نقش‌ها و انتقال داده زمان کم می‌آوریم." },
+                { "language": "ar", "text": "بالنسبة إلى الجمعة يمكنني الالتزام بالنطاق الأساسي المستقر، لكن ليس بالنطاق الكامل من دون خطر إضافي. إذا فرضنا كل شيء، فلن يبقى وقت كافٍ لاختبارات الأدوار ونقل البيانات." },
+                { "language": "tr", "text": "Cuma günü için kararlı çekirdek kapsamı taahhüt edebilirim, ama ek risk olmadan tüm kapsamı değil. Her şeyi zorlayacak olursak rol ve veri taşıma testleri için zamanımız kalmaz." },
+                { "language": "ru", "text": "К пятнице я могу обещать стабильный основной объём, но не весь объём без дополнительного риска. Если мы будем форсировать всё, нам не хватит времени на тесты ролей и миграции." },
+                { "language": "ckb", "text": "بۆ ڕۆژی هەینی دەتوانم سنووری سەرەکی و جێگیر بەڵێن بدەم، بەڵام نە هەموو سنوورەکە بە بێ مەترسیی زیادە. ئەگەر هەموو شتێک بە زۆر بکەین، کاتی تاقیکردنەوەی ڕۆڵەکان و گواستنەوەی داتامان کەم دەبێت." },
+                { "language": "kmr", "text": "Ji bo Înê ez dikarim çarçoveya bingehîn a bi ewle soz bidim, lê ne hemû çarçove bê xetereyeke zêde. Heke em her tiştî bi zorê bikin, dem ji bo testên rol û veguhastina daneyan namîne." },
+                { "language": "pl", "text": "Na piątek mogę zobowiązać się do stabilnego zakresu podstawowego, ale nie do pełnego zakresu bez dodatkowego ryzyka. Jeśli wymusimy wszystko, zabraknie nam czasu na testy ról i migracji." },
+                { "language": "ro", "text": "Pentru vineri pot promite domeniul de bază stabil, dar nu întregul domeniu fără risc suplimentar. Dacă forțăm totul, nu ne rămâne timp pentru testele de roluri și migrare." },
+                { "language": "sq", "text": "Për të premten mund të premtoj fushën bazë të qëndrueshme, por jo të gjithë fushën pa rrezik shtesë. Nëse i shtyjmë të gjitha me forcë, nuk na mbetet kohë për testet e roleve dhe të migrimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this commits to what is safe and names the missing tests instead of just refusing the deadline.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this commits to what is safe and names the missing tests instead of just refusing the deadline." },
+                { "language": "fa", "text": "خوب است: به چیزی که امن است تعهد می‌دهد و آزمون‌های ناقص را نام می‌برد، به جای اینکه فقط مهلت را رد کند." },
+                { "language": "ar", "text": "جيد: يلتزم بما هو آمن ويذكر الاختبارات الناقصة بدلاً من رفض الموعد فقط." },
+                { "language": "tr", "text": "İyi: güvenli olana taahhüt ediyor ve sadece tarihi reddetmek yerine eksik testleri söylüyor." },
+                { "language": "ru", "text": "Хорошо: ответ обещает то, что безопасно, и называет недостающие тесты, а не просто отвергает срок." },
+                { "language": "ckb", "text": "باشە: بەوەی کە سەلامەتە پابەند دەبێت و تاقیکردنەوە ناتەواوەکان ناو دەبات، نەک تەنها وادەکە ڕەت بکاتەوە." },
+                { "language": "kmr", "text": "Baş e: soz dide tiştê ewle û testên kêm nav dike, ne tenê demê red dike." },
+                { "language": "pl", "text": "Dobrze: zobowiązuje się do tego, co bezpieczne, i nazywa brakujące testy, zamiast tylko odrzucać termin." },
+                { "language": "ro", "text": "Bine: se angajează la ce este sigur și numește testele lipsă, nu doar refuză termenul." },
+                { "language": "sq", "text": "Mirë: zotohet për atë që është e sigurt dhe përmend testet që mungojnë, jo vetëm refuzon afatin." }
+              ],
+              "explanationKey": "safe-scope"
+            },
+            {
+              "id": "vague-probably-possible",
+              "text": "Freitag ist wahrscheinlich machbar, wenn alle mitziehen. Wir sollten aber schauen, dass es am Ende irgendwie stabil genug ist.",
+              "translations": [
+                { "language": "en", "text": "Friday is probably doable if everyone pulls together. But we should make sure it is somehow stable enough in the end." },
+                { "language": "fa", "text": "جمعه احتمالاً شدنی است اگر همه همکاری کنند. اما باید ببینیم در نهایت به شکلی به اندازه کافی پایدار باشد." },
+                { "language": "ar", "text": "الجمعة ربما ممكنة إذا تعاون الجميع. لكن علينا أن نرى في النهاية أن يكون الأمر مستقراً بما يكفي بطريقة ما." },
+                { "language": "tr", "text": "Herkes destek olursa cuma muhtemelen mümkün. Ama sonunda bir şekilde yeterince kararlı olduğundan emin olmalıyız." },
+                { "language": "ru", "text": "Пятница, вероятно, возможна, если все подключатся. Но нам нужно посмотреть, чтобы в итоге всё как-то было достаточно стабильным." },
+                { "language": "ckb", "text": "ڕۆژی هەینی بە ئەگەری زۆر دەکرێت ئەگەر هەمووان هاوکاری بکەن. بەڵام دەبێت ببینین لە کۆتاییدا بە شێوەیەک بەشی پێویست جێگیر بێت." },
+                { "language": "kmr", "text": "Heke herkes piştgirî bike, roja Înê dibe ku gengaz be. Lê divê em bibînin ku di dawiyê de bi awayekî têra xwe ewle be." },
+                { "language": "pl", "text": "Piątek jest chyba wykonalny, jeśli wszyscy się zaangażują. Ale musimy zobaczyć, żeby ostatecznie było jakoś wystarczająco stabilnie." },
+                { "language": "ro", "text": "Vineri probabil este posibil dacă toți contribuie. Dar ar trebui să vedem ca la final să fie cumva suficient de stabil." },
+                { "language": "sq", "text": "E premtja ndoshta është e mundur nëse të gjithë ndihmojnë. Por duhet të shohim që në fund të jetë disi mjaftueshëm e qëndrueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too soft: it sounds cooperative, but it does not define scope, risk, or the missing tests.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too soft: it sounds cooperative, but it does not define scope, risk, or the missing tests." },
+                { "language": "fa", "text": "بیش از حد نرم است: همکاری را نشان می‌دهد، اما محدوده، ریسک یا آزمون‌های ناقص را مشخص نمی‌کند." },
+                { "language": "ar", "text": "لين جداً: يبدو متعاوناً، لكنه لا يحدد النطاق أو الخطر أو الاختبارات الناقصة." },
+                { "language": "tr", "text": "Çok yumuşak: iş birliği gibi duruyor, ama kapsamı, riski veya eksik testleri tanımlamıyor." },
+                { "language": "ru", "text": "Слишком мягко: звучит готовность сотрудничать, но не определены объём, риск или недостающие тесты." },
+                { "language": "ckb", "text": "زۆر نەرمە: هاوکاری نیشان دەدات، بەڵام سنوور، مەترسی یان تاقیکردنەوە ناتەواوەکان دیاری ناکات." },
+                { "language": "kmr", "text": "Pir nerm e: wek hevkarî xuya dike, lê çarçove, xeter an testên kêm diyar nake." },
+                { "language": "pl", "text": "Zbyt miękkie: brzmi kooperacyjnie, ale nie określa zakresu, ryzyka ani brakujących testów." },
+                { "language": "ro", "text": "Prea moale: sună cooperant, dar nu definește domeniul, riscul sau testele lipsă." },
+                { "language": "sq", "text": "Shumë e butë: tingëllon bashkëpunuese, por nuk përcakton fushën, rrezikun ose testet që mungojnë." }
+              ],
+              "explanationKey": "too-soft"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "visible-customer-risk",
+              "text": "Das sichtbarste Risiko ist, dass bestimmte Rollen falsche Daten sehen oder gar keinen Zugriff haben. Außerdem könnten alte Kundendaten in der Migration unvollständig übernommen werden.",
+              "translations": [
+                { "language": "en", "text": "The most visible risk is that certain roles see incorrect data or have no access at all. Also, old customer data could be migrated incompletely." },
+                { "language": "fa", "text": "قابل‌مشاهده‌ترین ریسک این است که بعضی نقش‌ها داده‌های اشتباه ببینند یا اصلاً دسترسی نداشته باشند. علاوه بر آن، ممکن است داده‌های قدیمی مشتری در انتقال ناقص منتقل شوند." },
+                { "language": "ar", "text": "الخطر الأكثر وضوحاً هو أن ترى بعض الأدوار بيانات خاطئة أو لا تحصل على وصول إطلاقاً. إضافة إلى ذلك قد تُنقَل بيانات العملاء القديمة بشكل غير كامل." },
+                { "language": "tr", "text": "En görünür risk, bazı rollerin yanlış verileri görmesi ya da hiç erişim alamamasıdır. Ayrıca eski müşteri verileri taşıma sırasında eksik aktarılabilir." },
+                { "language": "ru", "text": "Самый заметный риск в том, что некоторые роли увидят неверные данные или вообще не получат доступ. Кроме того, старые клиентские данные могут перенестись неполно." },
+                { "language": "ckb", "text": "دیارترین مەترسی ئەوەیە کە هەندێک ڕۆڵ داتای هەڵە ببینن یان هەرگیز دەستپێگەیشتن نەبن. هەروەها داتای کۆنی کڕیار لە گواستنەوەدا ناتەواو بگوازرێتەوە." },
+                { "language": "kmr", "text": "Xetera herî xuya ev e ku hin rol daneyên şaş bibînin an jî qet gihiştinê nebin. Her wiha daneyên kevn ên mişterî dikarin di veguhastinê de ne temam bêne veguhastin." },
+                { "language": "pl", "text": "Najbardziej widoczne ryzyko polega na tym, że niektóre role zobaczą błędne dane albo w ogóle nie będą miały dostępu. Poza tym stare dane klienta mogą zostać przeniesione niekompletnie." },
+                { "language": "ro", "text": "Cel mai vizibil risc este ca anumite roluri să vadă date greșite sau să nu aibă deloc acces. În plus, datele vechi ale clientului ar putea fi preluate incomplet la migrare." },
+                { "language": "sq", "text": "Rreziku më i dukshëm është që disa role të shohin të dhëna të gabuara ose të mos kenë fare qasje. Përveç kësaj, të dhënat e vjetra të klientit mund të transferohen në mënyrë të paplotë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this explains the risk from the customer's perspective and makes the consequence concrete.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this explains the risk from the customer's perspective and makes the consequence concrete." },
+                { "language": "fa", "text": "خوب است: ریسک را از دید مشتری توضیح می‌دهد و پیامد را مشخص می‌کند." },
+                { "language": "ar", "text": "جيد: يشرح الخطر من منظور العميل ويجعل النتيجة ملموسة." },
+                { "language": "tr", "text": "İyi: riski müşterinin bakış açısından açıklıyor ve sonucu somutlaştırıyor." },
+                { "language": "ru", "text": "Хорошо: риск объяснён с точки зрения клиента, а последствия конкретны." },
+                { "language": "ckb", "text": "باشە: مەترسییەکە لە ڕوانگەی کڕیارەوە ڕوون دەکاتەوە و ئەنجامەکە دیار دەکات." },
+                { "language": "kmr", "text": "Baş e: xeter ji çavê mişterî ve rave dike û encamê konkret dike." },
+                { "language": "pl", "text": "Dobrze: wyjaśnia ryzyko z perspektywy klienta i konkretyzuje konsekwencję." },
+                { "language": "ro", "text": "Bine: explică riscul din perspectiva clientului și face consecința concretă." },
+                { "language": "sq", "text": "Mirë: e shpjegon rrezikun nga këndvështrimi i klientit dhe e bën pasojën konkrete." }
+              ],
+              "explanationKey": "customer-visible-risk"
+            },
+            {
+              "id": "internal-risk-only",
+              "text": "Intern ist es vor allem stressig, weil noch ein paar technische Punkte offen sind. Für den Kunden sollte das hoffentlich nicht so stark auffallen.",
+              "translations": [
+                { "language": "en", "text": "Internally it is mainly stressful because a few technical points are still open. Hopefully the customer will not notice it too much." },
+                { "language": "fa", "text": "در داخل تیم بیشتر استرس‌زا است، چون چند مورد فنی هنوز باز مانده. امیدوارم مشتری خیلی متوجه آن نشود." },
+                { "language": "ar", "text": "داخلياً هو أمر مرهق أساساً لأن بعض النقاط التقنية ما زالت مفتوحة. نأمل ألا يلاحظ العميل ذلك كثيراً." },
+                { "language": "tr", "text": "İçeride esas olarak stresli, çünkü birkaç teknik nokta hâlâ açık. Umarım müşteri bunu çok fazla fark etmez." },
+                { "language": "ru", "text": "Внутри это прежде всего стресс, потому что ещё открыты несколько технических пунктов. Надеюсь, клиент не слишком это заметит." },
+                { "language": "ckb", "text": "لە ناوخۆدا بە تایبەتی فشارە، چونکە چەند خاڵی تەکنیکی هێشتا کراوەن. هیوادارم کڕیار زۆر پێی هەست نەکات." },
+                { "language": "kmr", "text": "Li hundir ev herî zêde stres e, ji ber ku çend xalên teknîkî hîn vekirî ne. Hêvî ye mişterî pir pê dernakeve." },
+                { "language": "pl", "text": "Wewnętrznie jest to przede wszystkim stresujące, bo kilka punktów technicznych pozostaje otwartych. Mam nadzieję, że klient nie zauważy tego zbyt mocno." },
+                { "language": "ro", "text": "Intern este mai ales stresant, pentru că mai sunt deschise câteva puncte tehnice. Sperăm că clientul nu va observa prea mult." },
+                { "language": "sq", "text": "Brenda ekipit është kryesisht stresuese, sepse disa pika teknike janë ende të hapura. Shpresojmë që klienti të mos e vërejë shumë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Incomplete: it mentions internal stress, but it does not show what could go wrong for the customer.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: it mentions internal stress, but it does not show what could go wrong for the customer." },
+                { "language": "fa", "text": "ناقص است: به فشار داخلی اشاره می‌کند، اما نشان نمی‌دهد چه چیزی ممکن است برای مشتری خراب شود." },
+                { "language": "ar", "text": "ناقص: يذكر الضغط الداخلي، لكنه لا يوضح ما الذي قد يسوء بالنسبة إلى العميل." },
+                { "language": "tr", "text": "Eksik: iç stresi söylüyor, ama müşteri için neyin ters gidebileceğini göstermiyor." },
+                { "language": "ru", "text": "Неполно: упоминается внутренний стресс, но не показано, что может пойти не так для клиента." },
+                { "language": "ckb", "text": "ناتەواوە: فشاری ناوخۆ باس دەکات، بەڵام نیشان نادات چی دەتوانێت بۆ کڕیار خراپ بێت." },
+                { "language": "kmr", "text": "Kêm e: stresê hundir dibêje, lê nîşan nade ku ji bo mişterî çi dikare şaş bibe." },
+                { "language": "pl", "text": "Niepełne: wspomina o stresie wewnętrznym, ale nie pokazuje, co może pójść źle po stronie klienta." },
+                { "language": "ro", "text": "Incomplet: menționează stresul intern, dar nu arată ce ar putea merge prost pentru client." },
+                { "language": "sq", "text": "E paplotë: përmend stresin e brendshëm, por nuk tregon çfarë mund të shkojë keq për klientin." }
+              ],
+              "explanationKey": "internal-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "three-options-with-recommendation",
+              "text": "Ich sehe drei Optionen: Freitag nur den geprüften Kernumfang, Dienstag den vollständigen Umfang mit Tests, oder Freitag alles mit hohem Nacharbeitsrisiko. Fachlich empfehle ich die erste oder zweite Option.",
+              "translations": [
+                { "language": "en", "text": "I see three options: on Friday only the tested core scope, on Tuesday the full scope with tests, or everything on Friday with a high risk of rework. From a professional perspective, I recommend the first or second option." },
+                { "language": "fa", "text": "من سه گزینه می‌بینم: جمعه فقط محدوده اصلیِ آزمون‌شده، سه‌شنبه کل محدوده همراه با آزمون‌ها، یا جمعه همه چیز با ریسک بالای دوباره‌کاری. از نظر تخصصی گزینه اول یا دوم را توصیه می‌کنم." },
+                { "language": "ar", "text": "أرى ثلاثة خيارات: يوم الجمعة النطاق الأساسي المختبَر فقط، أو يوم الثلاثاء النطاق الكامل مع الاختبارات، أو كل شيء يوم الجمعة مع خطر كبير لإعادة العمل. من الناحية المهنية أوصي بالخيار الأول أو الثاني." },
+                { "language": "tr", "text": "Üç seçenek görüyorum: cuma günü yalnızca test edilmiş çekirdek kapsam, salı günü testlerle birlikte tam kapsam, ya da cuma günü her şey ama yüksek yeniden çalışma riskiyle. Uzmanlık açısından birinci veya ikinci seçeneği öneriyorum." },
+                { "language": "ru", "text": "Я вижу три варианта: в пятницу только проверенный основной объём, во вторник полный объём с тестами или всё в пятницу с высоким риском доработок. Профессионально я рекомендую первый или второй вариант." },
+                { "language": "ckb", "text": "سێ هەڵبژاردە دەبینم: ڕۆژی هەینی تەنها سنووری سەرەکیی تاقیکراوە، ڕۆژی سێشەممە هەموو سنوور لەگەڵ تاقیکردنەوەکان، یان ڕۆژی هەینی هەموو شتێک بە مەترسیی بەرزی کارکردنەوە. لە ڕووی پیشەییەوە هەڵبژاردەی یەکەم یان دووەم پێشنیار دەکەم." },
+                { "language": "kmr", "text": "Ez sê vebijarkan dibînim: roja Înê tenê çarçoveya bingehîn a testkirî, roja Sêşemê hemû çarçove bi testan, an jî roja Înê her tişt bi xetera mezin a dubarekarî. Ji aliyê pisporiyê ve ez vebijarka yekem an duyem pêşniyar dikim." },
+                { "language": "pl", "text": "Widzę trzy opcje: w piątek tylko przetestowany zakres podstawowy, we wtorek pełny zakres z testami albo w piątek wszystko z wysokim ryzykiem poprawek. Z perspektywy merytorycznej rekomenduję pierwszą albo drugą opcję." },
+                { "language": "ro", "text": "Văd trei opțiuni: vineri doar domeniul de bază testat, marți domeniul complet cu teste sau vineri totul cu risc mare de refacere. Din punct de vedere profesional recomand prima sau a doua opțiune." },
+                { "language": "sq", "text": "Shoh tri mundësi: të premten vetëm fushën bazë të testuar, të martën të gjithë fushën me teste, ose të premten gjithçka me rrezik të lartë ripunimi. Nga ana profesionale rekomandoj mundësinë e parë ose të dytë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives real alternatives, includes the risky option, and still recommends a safe path.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives real alternatives, includes the risky option, and still recommends a safe path." },
+                { "language": "fa", "text": "خوب است: گزینه‌های واقعی می‌دهد، گزینه پرریسک را هم نشان می‌دهد و با این حال مسیر امن را توصیه می‌کند." },
+                { "language": "ar", "text": "جيد: يعطي بدائل حقيقية، ويذكر الخيار الخطر، ومع ذلك يوصي بمسار آمن." },
+                { "language": "tr", "text": "İyi: gerçek alternatifler sunuyor, riskli seçeneği de içeriyor ve yine de güvenli yolu öneriyor." },
+                { "language": "ru", "text": "Хорошо: даны реальные альтернативы, включая рискованный вариант, и всё равно рекомендован безопасный путь." },
+                { "language": "ckb", "text": "باشە: هەڵبژاردەی ڕاستەقینە دەدات، هەڵبژاردەی مەترسیدار دێنێت و هێشتا ڕێگای سەلامەت پێشنیار دەکات." },
+                { "language": "kmr", "text": "Baş e: vebijarkên rastîn dide, vebijarka xeternak jî tê de ye û dîsa rêya ewle pêşniyar dike." },
+                { "language": "pl", "text": "Dobrze: podaje realne alternatywy, uwzględnia ryzykowną opcję i mimo to rekomenduje bezpieczną drogę." },
+                { "language": "ro", "text": "Bine: oferă alternative reale, include opțiunea riscantă și totuși recomandă o cale sigură." },
+                { "language": "sq", "text": "Mirë: jep alternativa reale, përfshin edhe mundësinë e rrezikshme dhe prapë rekomandon rrugën e sigurt." }
+              ],
+              "explanationKey": "options-with-recommendation"
+            },
+            {
+              "id": "only-one-option-too-rigid",
+              "text": "Ich würde einfach Dienstag als neuen Termin nennen. Dann haben wir genug Zeit und müssen nicht weiter über einzelne Teile diskutieren.",
+              "translations": [
+                { "language": "en", "text": "I would simply name Tuesday as the new date. Then we have enough time and do not need to keep discussing individual parts." },
+                { "language": "fa", "text": "من فقط سه‌شنبه را به عنوان تاریخ جدید اعلام می‌کنم. آن‌وقت زمان کافی داریم و لازم نیست درباره بخش‌های جداگانه بیشتر بحث کنیم." },
+                { "language": "ar", "text": "سأذكر ببساطة يوم الثلاثاء كموعد جديد. عندها يكون لدينا وقت كافٍ ولا نحتاج إلى مواصلة النقاش حول الأجزاء الفردية." },
+                { "language": "tr", "text": "Ben doğrudan salı gününü yeni tarih olarak söylerdim. O zaman yeterli zamanımız olur ve tek tek parçaları tartışmaya devam etmemize gerek kalmaz." },
+                { "language": "ru", "text": "Я бы просто назвал вторник новой датой. Тогда у нас будет достаточно времени, и не нужно дальше обсуждать отдельные части." },
+                { "language": "ckb", "text": "من بە سادەیی ڕۆژی سێشەممە وەک کاتی نوێ ناو دەبەم. ئەوکات کاتی پێویستمان دەبێت و پێویست ناکات زیاتر لەسەر بەشە جیاوازەکان گفتوگۆ بکەین." },
+                { "language": "kmr", "text": "Ez dê bi sadebûnê roja Sêşemê wek dema nû bibêjim. Wê demê me demê têra xwe heye û ne hewce ye em li ser parçeyên cuda bêtir biaxivin." },
+                { "language": "pl", "text": "Po prostu podałbym wtorek jako nowy termin. Wtedy mamy wystarczająco dużo czasu i nie musimy dalej omawiać poszczególnych części." },
+                { "language": "ro", "text": "Aș numi pur și simplu marți ca nou termen. Atunci avem suficient timp și nu mai trebuie să discutăm fiecare parte separat." },
+                { "language": "sq", "text": "Unë thjesht do të jepja të martën si datë të re. Atëherë kemi mjaft kohë dhe nuk duhet të diskutojmë më pjesët veç e veç." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but too rigid: it protects quality, but it gives no Friday option and ignores the customer's urgency.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too rigid: it protects quality, but it gives no Friday option and ignores the customer's urgency." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد اما بیش از حد خشک است: کیفیت را حفظ می‌کند، اما گزینه جمعه نمی‌دهد و فوریت مشتری را نادیده می‌گیرد." },
+                { "language": "ar", "text": "مقبول لكنه جامد جداً: يحمي الجودة، لكنه لا يعطي خيار الجمعة ويتجاهل استعجال العميل." },
+                { "language": "tr", "text": "Makul ama fazla katı: kaliteyi koruyor, fakat cuma seçeneği sunmuyor ve müşterinin aciliyetini göz ardı ediyor." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слишком жёстко: качество защищено, однако нет варианта на пятницу и игнорируется срочность клиента." },
+                { "language": "ckb", "text": "قبوڵکراو دەردەکەوێت بەڵام زۆر وشکە: کوالیتی دەپارێزێت، بەڵام هەڵبژاردەی هەینی نادات و پەلەی کڕیار پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Gengaz xuya dike lê pir hişk e: kalîteyê diparêze, lê vebijarka Înê nade û leza mişterî paşguh dike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt sztywne: chroni jakość, lecz nie daje opcji na piątek i ignoruje pilność po stronie klienta." },
+                { "language": "ro", "text": "Plauzibil, dar prea rigid: protejează calitatea, însă nu oferă opțiunea de vineri și ignoră urgența clientului." },
+                { "language": "sq", "text": "E besueshme, por shumë e ngurtë: mbron cilësinë, por nuk jep mundësi për të premten dhe shpërfill urgjencën e klientit." }
+              ],
+              "explanationKey": "too-rigid"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "decision-owners-dates",
+              "text": "Wir brauchen heute bis 14 Uhr die Entscheidung zum Umfang. Ich übernehme die Testliste, Max prüft die Rollen bis morgen Mittag, und Lara formuliert danach die Kundenzusage mit Freitag und Dienstag als zwei klaren Terminen.",
+              "translations": [
+                { "language": "en", "text": "We need the scope decision by 2 p.m. today. I will take over the test list, Max will check the roles by tomorrow noon, and Lara will then phrase the customer commitment with Friday and Tuesday as two clear dates." },
+                { "language": "fa", "text": "امروز تا ساعت ۱۴ به تصمیم درباره محدوده نیاز داریم. من فهرست آزمون‌ها را بر عهده می‌گیرم، مکس تا فردا ظهر نقش‌ها را بررسی می‌کند و لارا بعد از آن تعهد به مشتری را با جمعه و سه‌شنبه به عنوان دو تاریخ روشن می‌نویسد." },
+                { "language": "ar", "text": "نحتاج اليوم حتى الساعة الثانية بعد الظهر إلى قرار بشأن النطاق. أتولى أنا قائمة الاختبارات، ويفحص ماكس الأدوار حتى ظهر الغد، ثم تصوغ لارا التزام العميل مع الجمعة والثلاثاء كموعدين واضحين." },
+                { "language": "tr", "text": "Bugün saat 14.00’e kadar kapsam kararına ihtiyacımız var. Test listesini ben üstleniyorum, Max rolleri yarın öğlene kadar kontrol ediyor ve Lara ardından müşteri taahhüdünü cuma ve salı olarak iki net tarihle formüle ediyor." },
+                { "language": "ru", "text": "Сегодня до 14:00 нам нужно решение по объёму. Я беру на себя список тестов, Макс проверяет роли до завтрашнего полудня, а Лара затем формулирует обещание клиенту с пятницей и вторником как двумя ясными датами." },
+                { "language": "ckb", "text": "ئەمڕۆ تا کاتژمێر ١٤ پێویستمان بە بڕیاری سنوورەکەیە. من لیستی تاقیکردنەوەکان وەردەگرم، ماکس تا نیوەڕۆی سبەی ڕۆڵەکان دەپشکنێت، و لارا پاشان بەڵێنی کڕیار بە ڕۆژی هەینی و سێشەممە وەک دوو کاتی ڕوون دەنووسێت." },
+                { "language": "kmr", "text": "Îro heta saet 14:00 em pêwîstiya biryara çarçoveyê hene. Ez lîsteya testan digirim, Max heta nîvroya sibê rolan kontrol dike, û Lara paşê soza mişterî bi Înê û Sêşemê wek du demên zelal dinivîse." },
+                { "language": "pl", "text": "Dziś do godziny 14 potrzebujemy decyzji co do zakresu. Ja przejmuję listę testów, Max sprawdza role do jutra do południa, a Lara potem formułuje zobowiązanie dla klienta z piątkiem i wtorkiem jako dwoma jasnymi terminami." },
+                { "language": "ro", "text": "Astăzi până la ora 14 avem nevoie de decizia privind domeniul. Eu preiau lista de teste, Max verifică rolurile până mâine la prânz, iar Lara formulează apoi angajamentul către client cu vineri și marți ca două termene clare." },
+                { "language": "sq", "text": "Sot deri në orën 14 na duhet vendimi për fushën. Unë marr përsipër listën e testeve, Max kontrollon rolet deri nesër në mesditë dhe Lara pastaj formulon zotimin për klientin me të premten dhe të martën si dy data të qarta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this closes the negotiation with a decision time, owners, and customer-facing dates.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this closes the negotiation with a decision time, owners, and customer-facing dates." },
+                { "language": "fa", "text": "خوب است: مذاکره را با زمان تصمیم، مسئول‌ها و تاریخ‌های قابل اعلام به مشتری می‌بندد." },
+                { "language": "ar", "text": "جيد: ينهي التفاوض بوقت قرار ومسؤولين ومواعيد يمكن إبلاغها للعميل." },
+                { "language": "tr", "text": "İyi: müzakereyi karar zamanı, sorumlular ve müşteriye söylenecek tarihlerle kapatıyor." },
+                { "language": "ru", "text": "Хорошо: переговоры закрываются временем решения, ответственными и датами для клиента." },
+                { "language": "ckb", "text": "باشە: گفتوگۆکە بە کاتی بڕیار، بەرپرسان و کاتەکانی دەکرێت بە کڕیار بگوترێن کۆتایی پێدەهێنێت." },
+                { "language": "kmr", "text": "Baş e: li hevkirinê bi dema biryarê, berpirsan û demên ji mişterî re têne gotin bi dawî dike." },
+                { "language": "pl", "text": "Dobrze: zamyka negocjacje czasem decyzji, osobami odpowiedzialnymi i terminami do przekazania klientowi." },
+                { "language": "ro", "text": "Bine: încheie negocierea cu ora deciziei, responsabili și date care pot fi comunicate clientului." },
+                { "language": "sq", "text": "Mirë: e mbyll negocimin me kohën e vendimit, përgjegjësit dhe datat që mund t’i komunikohen klientit." }
+              ],
+              "explanationKey": "clear-closure"
+            },
+            {
+              "id": "needs-more-discussion",
+              "text": "Wir sollten das heute noch einmal mit allen Beteiligten besprechen und danach entscheiden, wie wir es dem Kunden möglichst vorsichtig erklären.",
+              "translations": [
+                { "language": "en", "text": "We should discuss this once more with everyone involved today and then decide how to explain it to the customer as carefully as possible." },
+                { "language": "fa", "text": "باید امروز دوباره با همه افراد درگیر درباره آن صحبت کنیم و بعد تصمیم بگیریم چطور آن را تا حد ممکن با احتیاط به مشتری توضیح بدهیم." },
+                { "language": "ar", "text": "ينبغي أن نناقش هذا اليوم مرة أخرى مع جميع المعنيين، ثم نقرر كيف نشرحه للعميل بأكبر قدر ممكن من الحذر." },
+                { "language": "tr", "text": "Bunu bugün ilgili herkesle bir kez daha konuşmalı ve sonra müşteriye mümkün olduğunca dikkatli nasıl açıklayacağımıza karar vermeliyiz." },
+                { "language": "ru", "text": "Нам следует сегодня ещё раз обсудить это со всеми участниками, а затем решить, как как можно осторожнее объяснить это клиенту." },
+                { "language": "ckb", "text": "دەبێت ئەمڕۆ جارێکی تر لەگەڵ هەموو کەسانی پەیوەندیدار باس بکەین و پاشان بڕیار بدەین چۆن بە زۆرترین وریاییەوە بۆ کڕیار ڕوونی بکەینەوە." },
+                { "language": "kmr", "text": "Divê em îro careke din bi hemû kesên têkildar re biaxivin û paşê biryar bidin ka em wê çawa bi qasî gengaz bi hişyariyê ji mişterî re rave bikin." },
+                { "language": "pl", "text": "Powinniśmy dziś jeszcze raz omówić to ze wszystkimi zaangażowanymi, a potem zdecydować, jak możliwie ostrożnie wyjaśnić to klientowi." },
+                { "language": "ro", "text": "Ar trebui să discutăm astăzi încă o dată cu toți cei implicați și apoi să decidem cum să îi explicăm clientului cât mai prudent." },
+                { "language": "sq", "text": "Duhet ta diskutojmë edhe një herë sot me të gjithë të përfshirët dhe pastaj të vendosim si t’ia shpjegojmë klientit sa më me kujdes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weak: it asks for more discussion, but it does not secure a decision time, owners, or concrete dates.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weak: it asks for more discussion, but it does not secure a decision time, owners, or concrete dates." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد اما ضعیف است: گفت‌وگوی بیشتر می‌خواهد، اما زمان تصمیم، مسئول‌ها یا تاریخ‌های مشخص را قطعی نمی‌کند." },
+                { "language": "ar", "text": "مقبول لكنه ضعيف: يطلب مزيداً من النقاش، لكنه لا يضمن وقت قرار أو مسؤولين أو مواعيد محددة." },
+                { "language": "tr", "text": "Makul ama zayıf: daha fazla görüşme istiyor, fakat karar zamanı, sorumlular veya somut tarihler sağlamıyor." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слабо: просит ещё обсуждения, но не фиксирует время решения, ответственных или конкретные даты." },
+                { "language": "ckb", "text": "قبوڵکراو دەردەکەوێت بەڵام لاوازە: داوای گفتوگۆی زیاتر دەکات، بەڵام کاتی بڕیار، بەرپرسان یان کاتە دیاریکراوەکان دڵنیا ناکات." },
+                { "language": "kmr", "text": "Gengaz xuya dike lê lawaz e: bêtir axaftin dixwaze, lê dema biryarê, berpirsan an demên konkret ewle nake." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest słabe: prosi o dalszą rozmowę, lecz nie zabezpiecza czasu decyzji, osób odpowiedzialnych ani konkretnych dat." },
+                { "language": "ro", "text": "Plauzibil, dar slab: cere mai multă discuție, însă nu asigură ora deciziei, responsabilii sau date concrete." },
+                { "language": "sq", "text": "E besueshme, por e dobët: kërkon më shumë diskutim, por nuk siguron kohën e vendimit, përgjegjësit ose data konkrete." }
+              ],
+              "explanationKey": "no-closure"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "coaching-note",
+          "text": "At B2 level, do not only say that a deadline is impossible. Say what is safe, what is risky, and why.",
+          "translations": [
+            { "language": "en", "text": "At B2 level, do not only say that a deadline is impossible. Say what is safe, what is risky, and why." },
+            { "language": "fa", "text": "در سطح B2 فقط نگو که مهلت غیرممکن است. بگو چه چیزی امن است، چه چیزی ریسک دارد و چرا." },
+            { "language": "ar", "text": "في مستوى B2 لا تقل فقط إن الموعد مستحيل. اذكر ما هو آمن وما هو خطر ولماذا." },
+            { "language": "tr", "text": "B2 düzeyinde yalnızca bir tarihin imkânsız olduğunu söyleme. Neyin güvenli, neyin riskli olduğunu ve nedenini söyle." },
+            { "language": "ru", "text": "На уровне B2 не говори только, что срок невозможен. Скажи, что безопасно, что рискованно и почему." },
+            { "language": "ckb", "text": "لە ئاستی B2 تەنها مەڵێ وادەکە نامومکینە. بڵێ چی سەلامەتە، چی مەترسیدارە و بۆچی." },
+            { "language": "kmr", "text": "Di asta B2 de tenê nebêje ku dem ne gengaz e. Bibêje çi ewle ye, çi xeternak e û çima." },
+            { "language": "pl", "text": "Na poziomie B2 nie mów tylko, że termin jest niemożliwy. Powiedz, co jest bezpieczne, co ryzykowne i dlaczego." },
+            { "language": "ro", "text": "La nivel B2 nu spune doar că termenul este imposibil. Spune ce este sigur, ce este riscant și de ce." },
+            { "language": "sq", "text": "Në nivelin B2 mos thuaj vetëm se afati është i pamundur. Thuaj çfarë është e sigurt, çfarë është e rrezikshme dhe pse." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "coaching-note",
+          "text": "A strong risk explanation connects internal technical facts to customer-visible consequences.",
+          "translations": [
+            { "language": "en", "text": "A strong risk explanation connects internal technical facts to customer-visible consequences." },
+            { "language": "fa", "text": "توضیح قوی درباره ریسک، واقعیت‌های فنی داخلی را به پیامدهای قابل مشاهده برای مشتری وصل می‌کند." },
+            { "language": "ar", "text": "شرح الخطر القوي يربط الحقائق التقنية الداخلية بالنتائج التي يراها العميل." },
+            { "language": "tr", "text": "Güçlü bir risk açıklaması, iç teknik gerçekleri müşterinin göreceği sonuçlara bağlar." },
+            { "language": "ru", "text": "Сильное объяснение риска связывает внутренние технические факты с последствиями, которые увидит клиент." },
+            { "language": "ckb", "text": "ڕوونکردنەوەی بەهێزی مەترسی ڕاستییە تەکنیکییە ناوخۆییەکان بە ئەنجامەکانی دیار بۆ کڕیار دەبەستێتەوە." },
+            { "language": "kmr", "text": "Ravekirineke bihêz a xeterê rastiyên teknîkî yên hundir bi encamên xuya ji bo mişterî ve girê dide." },
+            { "language": "pl", "text": "Mocne wyjaśnienie ryzyka łączy wewnętrzne fakty techniczne z konsekwencjami widocznymi dla klienta." },
+            { "language": "ro", "text": "O explicație solidă a riscului leagă faptele tehnice interne de consecințele vizibile pentru client." },
+            { "language": "sq", "text": "Një shpjegim i fortë i rrezikut lidh faktet teknike të brendshme me pasojat që klienti i sheh." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "coaching-note",
+          "text": "Give options with trade-offs. That keeps the conversation cooperative while still protecting quality.",
+          "translations": [
+            { "language": "en", "text": "Give options with trade-offs. That keeps the conversation cooperative while still protecting quality." },
+            { "language": "fa", "text": "گزینه‌ها را همراه با بده‌بستان‌ها بده. این کار گفت‌وگو را همکاری‌محور نگه می‌دارد و همزمان کیفیت را حفظ می‌کند." },
+            { "language": "ar", "text": "قدّم خيارات مع مزايا وتنازلات. هذا يُبقي الحوار تعاونياً مع حماية الجودة في الوقت نفسه." },
+            { "language": "tr", "text": "Takaslarıyla birlikte seçenekler ver. Bu, konuşmayı iş birliğine açık tutarken kaliteyi de korur." },
+            { "language": "ru", "text": "Давай варианты с компромиссами. Это сохраняет разговор кооперативным и одновременно защищает качество." },
+            { "language": "ckb", "text": "هەڵبژاردەکان لەگەڵ دەستکەوت و دانانیان بدە. ئەمە گفتوگۆکە هاوکارییەتی دەهێڵێتەوە و لە هەمان کاتدا کوالیتی دەپارێزێت." },
+            { "language": "kmr", "text": "Vebijarkan bi danûstandinan re bide. Ev axaftinê hevkarî dihêle û di heman demê de kalîteyê diparêze." },
+            { "language": "pl", "text": "Podaj opcje razem z kompromisami. To utrzymuje rozmowę we współpracy, a jednocześnie chroni jakość." },
+            { "language": "ro", "text": "Oferă opțiuni cu compromisuri. Astfel conversația rămâne cooperantă și calitatea este totuși protejată." },
+            { "language": "sq", "text": "Jep mundësi bashkë me kompromiset. Kjo e mban bisedën bashkëpunuese dhe njëkohësisht mbron cilësinë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "coaching-note",
+          "text": "A B2 workplace negotiation should end with a concrete decision point, owners, and dates, not only with a general intention.",
+          "translations": [
+            { "language": "en", "text": "A B2 workplace negotiation should end with a concrete decision point, owners, and dates, not only with a general intention." },
+            { "language": "fa", "text": "مذاکره کاری در سطح B2 باید با نقطه تصمیم مشخص، مسئول‌ها و تاریخ‌ها تمام شود، نه فقط با یک نیت کلی." },
+            { "language": "ar", "text": "ينبغي أن ينتهي تفاوض العمل في مستوى B2 بنقطة قرار محددة ومسؤولين ومواعيد، لا بمجرد نية عامة." },
+            { "language": "tr", "text": "B2 düzeyinde bir işyeri müzakeresi yalnızca genel bir niyetle değil, somut bir karar noktası, sorumlular ve tarihlerle bitmelidir." },
+            { "language": "ru", "text": "Рабочие переговоры уровня B2 должны завершаться конкретной точкой решения, ответственными и датами, а не только общим намерением." },
+            { "language": "ckb", "text": "گفتوگۆی کاری لە ئاستی B2 دەبێت بە خاڵی بڕیاری دیاریکراو، بەرپرسان و کاتەکان کۆتایی بێت، نە تەنها بە مەبەستێکی گشتی." },
+            { "language": "kmr", "text": "Li hevkirina kar a asta B2 divê bi xala biryara konkret, berpirsan û deman bi dawî bibe, ne tenê bi armanceke giştî." },
+            { "language": "pl", "text": "Negocjacja zawodowa na poziomie B2 powinna kończyć się konkretnym punktem decyzji, osobami odpowiedzialnymi i datami, a nie tylko ogólną intencją." },
+            { "language": "ro", "text": "O negociere profesională la nivel B2 ar trebui să se încheie cu un punct concret de decizie, responsabili și date, nu doar cu o intenție generală." },
+            { "language": "sq", "text": "Një negocim pune në nivelin B2 duhet të përfundojë me një pikë konkrete vendimi, përgjegjës dhe data, jo vetëm me një qëllim të përgjithshëm." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

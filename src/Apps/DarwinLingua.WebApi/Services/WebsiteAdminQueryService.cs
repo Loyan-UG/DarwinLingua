@@ -38,6 +38,7 @@ public interface IWebsiteAdminQueryService
 public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbContext> dbContextFactory) : IWebsiteAdminQueryService
 {
     private static readonly IReadOnlySet<string> EmptyStringSet = new HashSet<string>(StringComparer.Ordinal);
+    private static readonly string[] RequiredLearnerMeaningLanguages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
 
     public async Task<AdminCatalogDashboardResponse> GetDashboardAsync(CancellationToken cancellationToken)
     {
@@ -756,6 +757,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.UnpublishedDraftCount,
             qualitySummary.GrammarTopicsMissingExercises,
             qualitySummary.CourseLessonsMissingExerciseSets,
+            qualitySummary.CoursePathsMissingTranslations,
+            qualitySummary.CourseModulesMissingTranslations,
+            qualitySummary.CourseLessonsMissingTranslations,
+            qualitySummary.ExercisesMissingTranslations,
+            qualitySummary.ExerciseSetsMissingTranslations,
+            qualitySummary.ExercisesUnpublishedDrafts,
+            qualitySummary.ExerciseSetsUnpublishedDrafts,
+            qualitySummary.ExerciseSetsWithoutItems,
+            qualitySummary.ExerciseSetsWithUnresolvedExerciseSlugs,
+            qualitySummary.ExercisesWithMalformedPrompt,
+            qualitySummary.ExercisesWithMalformedAnswerKey,
+            qualitySummary.ExercisesMissingExplanations,
             qualitySummary.ExpressionEntriesMissingEligibilityMetadata,
             qualitySummary.ExpressionEntriesWithOrdinaryLiteralLeakage,
             qualitySummary.ExpressionEntriesMissingTeachingReason,
@@ -767,6 +780,12 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.ExpressionEntriesBlockedOrExplicitAdult,
             qualitySummary.ExpressionEntriesMissingSensitiveUsagePolicy,
             qualitySummary.ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+            qualitySummary.RoleplayScenariosMissingTranslations,
+            qualitySummary.RoleplayScenariosUnpublishedDrafts,
+            qualitySummary.RoleplayScenariosMissingRequiredImageAssets,
+            qualitySummary.RoleplayScenariosWithoutAnswerChoices,
+            qualitySummary.RoleplayScenariosWithoutStaticFeedback,
+            qualitySummary.RoleplayScenariosWithInvalidPlayableSequence,
             qualitySummary.SampleIssues);
     }
 
@@ -993,6 +1012,22 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             ? await dbContext.CourseLessons.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
             : [];
         int lessonsWithoutExerciseSets = lessons.Count(static lesson => ReadStringArray(lesson.LinkedExerciseSetSlugsJson).Count == 0);
+        CourseQualityCounts courseQuality = CountCourseQuality(
+            HasTable(tableAvailability, "CoursePaths")
+                ? await dbContext.CoursePaths.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
+                : [],
+            HasTable(tableAvailability, "CourseModules")
+                ? await dbContext.CourseModules.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
+                : [],
+            lessons);
+        ExerciseQualityCounts exerciseQuality = HasTable(tableAvailability, "Exercises")
+            ? CountExerciseQuality(
+                await dbContext.Exercises.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false),
+                HasTable(tableAvailability, "ExerciseSets")
+                    ? await dbContext.ExerciseSets.AsNoTracking().Include(static set => set.Items).ToArrayAsync(cancellationToken).ConfigureAwait(false)
+                    : [],
+                exerciseSlugs)
+            : new ExerciseQualityCounts(0, 0, 0, 0, 0, 0, 0, 0, 0);
         int expressionsMissingEligibilityMetadata = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
@@ -1087,6 +1122,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                 !item.RequiresSensitiveOptIn),
             cancellationToken).ConfigureAwait(false);
 
+        RoleplayQualityCounts roleplayQuality = HasTable(tableAvailability, "RoleplayScenarios")
+            ? CountRoleplayQuality(await dbContext.RoleplayScenarios.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
+            : new RoleplayQualityCounts(0, 0, 0, 0, 0, 0);
+
         AddQualityIssue(expressionsMissingEligibilityMetadata, "Expression eligibility", "all", "Missing meaningTransparency metadata", issues);
         AddQualityIssue(ordinaryLiteralLeakage, "Expression eligibility", "published", "Published ordinary-literal expression leakage", issues);
         AddQualityIssue(expressionsMissingTeachingReason, "Expression eligibility", "all", "Missing teachingReason", issues);
@@ -1096,6 +1135,24 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         AddQualityIssue(expressionsBlockedOrExplicitAdult, "Expression safety", "all", "Blocked or explicit-adult entries present", issues);
         AddQualityIssue(expressionsMissingSensitiveUsagePolicy, "Expression safety", "all", "Sensitive entry missing usagePolicy", issues);
         AddQualityIssue(expressionsOldRiskyMissingSensitiveMetadata, "Expression safety", "all", "Risky entry missing sensitive metadata", issues);
+        AddQualityIssue(courseQuality.CoursePathsMissingTranslations, "CoursePath quality", "all", "Missing required learner-language translations", issues);
+        AddQualityIssue(courseQuality.CourseModulesMissingTranslations, "CourseModule quality", "all", "Missing required learner-language translations", issues);
+        AddQualityIssue(courseQuality.CourseLessonsMissingTranslations, "CourseLesson quality", "all", "Missing required learner-language translations", issues);
+        AddQualityIssue(exerciseQuality.ExercisesMissingTranslations, "Exercise quality", "all", "Missing required learner-language translations", issues);
+        AddQualityIssue(exerciseQuality.ExerciseSetsMissingTranslations, "ExerciseSet quality", "all", "Missing required learner-language translations", issues);
+        AddQualityIssue(exerciseQuality.ExercisesUnpublishedDrafts, "Exercise quality", "all", "Unpublished draft exercises", issues);
+        AddQualityIssue(exerciseQuality.ExerciseSetsUnpublishedDrafts, "ExerciseSet quality", "all", "Unpublished draft exercise sets", issues);
+        AddQualityIssue(exerciseQuality.ExerciseSetsWithoutItems, "ExerciseSet quality", "published", "Exercise set has no items", issues);
+        AddQualityIssue(exerciseQuality.ExerciseSetsWithUnresolvedExerciseSlugs, "ExerciseSet quality", "all", "Exercise set references missing exercise slug", issues);
+        AddQualityIssue(exerciseQuality.ExercisesWithMalformedPrompt, "Exercise quality", "all", "Malformed prompt JSON", issues);
+        AddQualityIssue(exerciseQuality.ExercisesWithMalformedAnswerKey, "Exercise quality", "all", "Malformed answer key JSON", issues);
+        AddQualityIssue(exerciseQuality.ExercisesMissingExplanations, "Exercise quality", "all", "Missing correct/incorrect explanation", issues);
+        AddQualityIssue(roleplayQuality.MissingTranslations, "RoleplayScenario quality", "all", "Missing required learner-language translations", issues);
+        AddQualityIssue(roleplayQuality.UnpublishedDrafts, "RoleplayScenario quality", "all", "Unpublished draft roleplay scenarios", issues);
+        AddQualityIssue(roleplayQuality.MissingRequiredImageAssets, "RoleplayScenario quality", "all", "Required image slot missing assetPath", issues);
+        AddQualityIssue(roleplayQuality.WithoutAnswerChoices, "RoleplayScenario quality", "published", "No deterministic answer choices", issues);
+        AddQualityIssue(roleplayQuality.WithoutStaticFeedback, "RoleplayScenario quality", "published", "No static feedback", issues);
+        AddQualityIssue(roleplayQuality.InvalidPlayableSequence, "RoleplayScenario quality", "published", "Invalid playable sequence", issues);
 
         return new LearningPortalQualitySummary(
             unresolvedWordCount,
@@ -1104,6 +1161,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             draftCount,
             grammarWithoutExercises,
             lessonsWithoutExerciseSets,
+            courseQuality.CoursePathsMissingTranslations,
+            courseQuality.CourseModulesMissingTranslations,
+            courseQuality.CourseLessonsMissingTranslations,
+            exerciseQuality.ExercisesMissingTranslations,
+            exerciseQuality.ExerciseSetsMissingTranslations,
+            exerciseQuality.ExercisesUnpublishedDrafts,
+            exerciseQuality.ExerciseSetsUnpublishedDrafts,
+            exerciseQuality.ExerciseSetsWithoutItems,
+            exerciseQuality.ExerciseSetsWithUnresolvedExerciseSlugs,
+            exerciseQuality.ExercisesWithMalformedPrompt,
+            exerciseQuality.ExercisesWithMalformedAnswerKey,
+            exerciseQuality.ExercisesMissingExplanations,
             expressionsMissingEligibilityMetadata,
             ordinaryLiteralLeakage,
             expressionsMissingTeachingReason,
@@ -1115,8 +1184,499 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             expressionsBlockedOrExplicitAdult,
             expressionsMissingSensitiveUsagePolicy,
             expressionsOldRiskyMissingSensitiveMetadata,
+            roleplayQuality.MissingTranslations,
+            roleplayQuality.UnpublishedDrafts,
+            roleplayQuality.MissingRequiredImageAssets,
+            roleplayQuality.WithoutAnswerChoices,
+            roleplayQuality.WithoutStaticFeedback,
+            roleplayQuality.InvalidPlayableSequence,
             issues.Take(30).ToArray());
     }
+
+    private static RoleplayQualityCounts CountRoleplayQuality(IReadOnlyList<RoleplayScenario> scenarios)
+    {
+        int missingTranslations = 0;
+        int unpublishedDrafts = 0;
+        int missingRequiredImageAssets = 0;
+        int withoutAnswerChoices = 0;
+        int withoutStaticFeedback = 0;
+        int invalidPlayableSequence = 0;
+
+        foreach (RoleplayScenario scenario in scenarios)
+        {
+            if (scenario.PublicationStatus != PublicationStatus.Active)
+            {
+                unpublishedDrafts++;
+            }
+
+            if (RoleplayScenarioHasMissingTranslations(scenario))
+            {
+                missingTranslations++;
+            }
+
+            if (CountMissingRequiredRoleplayImageAssets(scenario.ImageSlotsJson) > 0)
+            {
+                missingRequiredImageAssets++;
+            }
+
+            if (scenario.PublicationStatus != PublicationStatus.Active)
+            {
+                continue;
+            }
+
+            if (!RoleplayHasAnswerChoiceGroup(scenario.AnswerChoicesJson))
+            {
+                withoutAnswerChoices++;
+            }
+
+            if (!JsonArrayHasItems(scenario.StaticFeedbackJson))
+            {
+                withoutStaticFeedback++;
+            }
+
+            if (!RoleplayHasValidPlayableSequence(scenario.TurnsJson, scenario.AnswerChoicesJson))
+            {
+                invalidPlayableSequence++;
+            }
+        }
+
+        return new RoleplayQualityCounts(
+            missingTranslations,
+            unpublishedDrafts,
+            missingRequiredImageAssets,
+            withoutAnswerChoices,
+            withoutStaticFeedback,
+            invalidPlayableSequence);
+    }
+
+    private static CourseQualityCounts CountCourseQuality(
+        IReadOnlyList<CoursePath> paths,
+        IReadOnlyList<CourseModule> modules,
+        IReadOnlyList<CourseLesson> lessons)
+    {
+        int pathsMissingTranslations = paths.Count(static path =>
+            !TranslationArrayHasRequiredLanguages(path.TitleTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(path.DescriptionTranslationsJson));
+
+        int modulesMissingTranslations = modules.Count(static module =>
+            !TranslationArrayHasRequiredLanguages(module.TitleTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(module.DescriptionTranslationsJson));
+
+        int lessonsMissingTranslations = lessons.Count(static lesson =>
+            !TranslationArrayHasRequiredLanguages(lesson.TitleTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(lesson.ShortDescriptionTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(lesson.NarrativeTranslationsJson) ||
+            !TextListTranslationArrayHasRequiredLanguages(lesson.LearningGoalsTranslationsJson) ||
+            (lesson.ReviewSummary is not null && !TranslationArrayHasRequiredLanguages(lesson.ReviewSummaryTranslationsJson)) ||
+            (lesson.HomeworkTask is not null && !TranslationArrayHasRequiredLanguages(lesson.HomeworkTaskTranslationsJson)));
+
+        return new CourseQualityCounts(pathsMissingTranslations, modulesMissingTranslations, lessonsMissingTranslations);
+    }
+
+    private static bool RoleplayScenarioHasMissingTranslations(RoleplayScenario scenario) =>
+        !TranslationArrayHasRequiredLanguages(scenario.TitleTranslationsJson) ||
+        !TranslationArrayHasRequiredLanguages(scenario.DescriptionTranslationsJson) ||
+        !TranslationArrayHasRequiredLanguages(scenario.LearnerGoalTranslationsJson) ||
+        JsonObjectArrayHasMissingTranslations(scenario.RolesJson, "translations") ||
+        JsonObjectArrayHasMissingTranslations(scenario.TurnsJson, "translations") ||
+        AnswerChoiceJsonHasMissingTranslations(scenario.AnswerChoicesJson) ||
+        JsonObjectArrayHasMissingTranslations(scenario.StaticFeedbackJson, "translations") ||
+        JsonObjectArrayHasMissingTranslations(scenario.ImageSlotsJson, "altTextTranslations");
+
+    private static ExerciseQualityCounts CountExerciseQuality(
+        IReadOnlyList<Exercise> exercises,
+        IReadOnlyList<ExerciseSet> exerciseSets,
+        IReadOnlySet<string> knownExerciseSlugs)
+    {
+        int exercisesMissingTranslations = 0;
+        int exerciseSetsMissingTranslations = 0;
+        int exercisesUnpublishedDrafts = 0;
+        int exerciseSetsUnpublishedDrafts = 0;
+        int exerciseSetsWithoutItems = 0;
+        int exerciseSetsWithUnresolvedExerciseSlugs = 0;
+        int exercisesWithMalformedPrompt = 0;
+        int exercisesWithMalformedAnswerKey = 0;
+        int exercisesMissingExplanations = 0;
+
+        foreach (Exercise exercise in exercises)
+        {
+            if (exercise.PublicationStatus != PublicationStatus.Active)
+            {
+                exercisesUnpublishedDrafts++;
+            }
+
+            if (!TranslationArrayHasRequiredLanguages(exercise.TitleTranslationsJson) ||
+                !TranslationArrayHasRequiredLanguages(exercise.InstructionTranslationsJson) ||
+                !TranslationArrayHasRequiredLanguages(exercise.CorrectExplanationTranslationsJson) ||
+                !TranslationArrayHasRequiredLanguages(exercise.IncorrectExplanationTranslationsJson) ||
+                (exercise.Hint is not null && !TranslationArrayHasRequiredLanguages(exercise.HintTranslationsJson)) ||
+                (exercise.CommonMistakeNote is not null && !TranslationArrayHasRequiredLanguages(exercise.CommonMistakeNoteTranslationsJson)))
+            {
+                exercisesMissingTranslations++;
+            }
+
+            if (!JsonObjectHasItems(exercise.PromptJson))
+            {
+                exercisesWithMalformedPrompt++;
+            }
+
+            if (!JsonObjectHasItems(exercise.AnswerKeyJson))
+            {
+                exercisesWithMalformedAnswerKey++;
+            }
+
+            if (string.IsNullOrWhiteSpace(exercise.CorrectExplanation) ||
+                string.IsNullOrWhiteSpace(exercise.IncorrectExplanation))
+            {
+                exercisesMissingExplanations++;
+            }
+        }
+
+        foreach (ExerciseSet set in exerciseSets)
+        {
+            if (set.PublicationStatus != PublicationStatus.Active)
+            {
+                exerciseSetsUnpublishedDrafts++;
+            }
+
+            if (!TranslationArrayHasRequiredLanguages(set.TitleTranslationsJson) ||
+                !TranslationArrayHasRequiredLanguages(set.DescriptionTranslationsJson))
+            {
+                exerciseSetsMissingTranslations++;
+            }
+
+            if (set.Items.Count == 0)
+            {
+                exerciseSetsWithoutItems++;
+            }
+
+            if (set.Items.Any(item => !knownExerciseSlugs.Contains(item.ExerciseSlug)))
+            {
+                exerciseSetsWithUnresolvedExerciseSlugs++;
+            }
+        }
+
+        return new ExerciseQualityCounts(
+            exercisesMissingTranslations,
+            exerciseSetsMissingTranslations,
+            exercisesUnpublishedDrafts,
+            exerciseSetsUnpublishedDrafts,
+            exerciseSetsWithoutItems,
+            exerciseSetsWithUnresolvedExerciseSlugs,
+            exercisesWithMalformedPrompt,
+            exercisesWithMalformedAnswerKey,
+            exercisesMissingExplanations);
+    }
+
+    private static bool JsonArrayHasItems(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            return document.RootElement.ValueKind == JsonValueKind.Array && document.RootElement.GetArrayLength() > 0;
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool JsonObjectHasItems(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            return document.RootElement.ValueKind == JsonValueKind.Object &&
+                document.RootElement.EnumerateObject().Any();
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool TranslationArrayHasRequiredLanguages(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            return TranslationArrayHasRequiredLanguages(document.RootElement);
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool TranslationArrayHasRequiredLanguages(JsonElement element)
+    {
+        if (element.ValueKind != JsonValueKind.Array)
+        {
+            return false;
+        }
+
+        HashSet<string> languages = new(StringComparer.Ordinal);
+        foreach (JsonElement translation in element.EnumerateArray())
+        {
+            string? language = ReadStringProperty(translation, "language");
+            string? text = ReadStringProperty(translation, "text");
+            if (!string.IsNullOrWhiteSpace(language) && !string.IsNullOrWhiteSpace(text))
+            {
+                languages.Add(language.Trim().ToLowerInvariant());
+            }
+        }
+
+        return RequiredLearnerMeaningLanguages.All(languages.Contains);
+    }
+
+    private static bool TextListTranslationArrayHasRequiredLanguages(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return false;
+            }
+
+            HashSet<string> languages = new(StringComparer.Ordinal);
+            foreach (JsonElement translation in document.RootElement.EnumerateArray())
+            {
+                string? language = ReadStringProperty(translation, "language");
+                if (string.IsNullOrWhiteSpace(language) ||
+                    !translation.TryGetProperty("texts", out JsonElement texts) ||
+                    texts.ValueKind != JsonValueKind.Array ||
+                    texts.GetArrayLength() == 0 ||
+                    texts.EnumerateArray().Any(static item => item.ValueKind != JsonValueKind.String || string.IsNullOrWhiteSpace(item.GetString())))
+                {
+                    continue;
+                }
+
+                languages.Add(language.Trim().ToLowerInvariant());
+            }
+
+            return RequiredLearnerMeaningLanguages.All(languages.Contains);
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool JsonObjectArrayHasMissingTranslations(string json, string translationProperty)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return true;
+            }
+
+            foreach (JsonElement item in document.RootElement.EnumerateArray())
+            {
+                if (item.ValueKind == JsonValueKind.Object &&
+                    (!item.TryGetProperty(translationProperty, out JsonElement translations) ||
+                     !TranslationArrayHasRequiredLanguages(translations)))
+                {
+                    return true;
+                }
+            }
+        }
+        catch (JsonException)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool AnswerChoiceJsonHasMissingTranslations(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return true;
+            }
+
+            foreach (JsonElement group in document.RootElement.EnumerateArray())
+            {
+                if (!group.TryGetProperty("choices", out JsonElement choices) ||
+                    choices.ValueKind != JsonValueKind.Array)
+                {
+                    return true;
+                }
+
+                foreach (JsonElement choice in choices.EnumerateArray())
+                {
+                    if (!choice.TryGetProperty("translations", out JsonElement translations) ||
+                        !TranslationArrayHasRequiredLanguages(translations) ||
+                        !choice.TryGetProperty("feedbackTranslations", out JsonElement feedbackTranslations) ||
+                        !TranslationArrayHasRequiredLanguages(feedbackTranslations))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        catch (JsonException)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static int CountMissingRequiredRoleplayImageAssets(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return 0;
+            }
+
+            int count = 0;
+            foreach (JsonElement slot in document.RootElement.EnumerateArray())
+            {
+                if (ReadBooleanProperty(slot, "isRequired") &&
+                    string.IsNullOrWhiteSpace(ReadStringProperty(slot, "assetPath")))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+        catch (JsonException)
+        {
+            return 0;
+        }
+    }
+
+    private static bool RoleplayHasAnswerChoiceGroup(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return false;
+            }
+
+            return document.RootElement
+                .EnumerateArray()
+                .Any(group =>
+                    group.TryGetProperty("choices", out JsonElement choices) &&
+                    choices.ValueKind == JsonValueKind.Array &&
+                    choices.GetArrayLength() >= 2 &&
+                    choices.EnumerateArray().Any(choice => ReadBooleanProperty(choice, "isCorrect")));
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool RoleplayHasValidPlayableSequence(string turnsJson, string answerChoicesJson)
+    {
+        try
+        {
+            using JsonDocument turnsDocument = JsonDocument.Parse(turnsJson);
+            if (turnsDocument.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return false;
+            }
+
+            RoleplayTurnQualityRow[] turns = turnsDocument.RootElement
+                .EnumerateArray()
+                .Select(static item => new RoleplayTurnQualityRow(
+                    ReadIntProperty(item, "sortOrder"),
+                    ReadStringProperty(item, "speakerRole") ?? string.Empty,
+                    ReadStringProperty(item, "expectedLearnerAction")))
+                .OrderBy(static item => item.SortOrder)
+                .ToArray();
+
+            if (turns.Length < 2)
+            {
+                return false;
+            }
+
+            bool hasPromptedLearnerTurn = turns
+                .Zip(turns.Skip(1), static (current, next) => new { Current = current, Next = next })
+                .Any(static pair =>
+                    !string.Equals(pair.Current.SpeakerRole, "learner", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(pair.Next.SpeakerRole, "learner", StringComparison.OrdinalIgnoreCase));
+
+            if (!hasPromptedLearnerTurn)
+            {
+                return false;
+            }
+
+            HashSet<int> answerChoiceTurnSortOrders = ReadRoleplayAnswerChoiceTurnSortOrders(answerChoicesJson);
+            return turns
+                .Where(static turn => string.Equals(turn.SpeakerRole, "learner", StringComparison.OrdinalIgnoreCase))
+                .All(turn =>
+                    !string.IsNullOrWhiteSpace(turn.ExpectedLearnerAction) ||
+                    answerChoiceTurnSortOrders.Contains(turn.SortOrder));
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static HashSet<int> ReadRoleplayAnswerChoiceTurnSortOrders(string json)
+    {
+        HashSet<int> values = [];
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return values;
+            }
+
+            foreach (JsonElement group in document.RootElement.EnumerateArray())
+            {
+                values.Add(ReadIntProperty(group, "turnSortOrder"));
+            }
+        }
+        catch (JsonException)
+        {
+            return values;
+        }
+
+        return values;
+    }
+
+    private static string? ReadStringProperty(JsonElement element, string propertyName)
+    {
+        if (element.ValueKind != JsonValueKind.Object ||
+            !element.TryGetProperty(propertyName, out JsonElement value) ||
+            value.ValueKind != JsonValueKind.String)
+        {
+            return null;
+        }
+
+        return value.GetString();
+    }
+
+    private static bool ReadBooleanProperty(JsonElement element, string propertyName) =>
+        element.ValueKind == JsonValueKind.Object &&
+        element.TryGetProperty(propertyName, out JsonElement value) &&
+        value.ValueKind == JsonValueKind.True;
+
+    private static int ReadIntProperty(JsonElement element, string propertyName) =>
+        element.ValueKind == JsonValueKind.Object &&
+        element.TryGetProperty(propertyName, out JsonElement value) &&
+        value.ValueKind == JsonValueKind.Number &&
+        value.TryGetInt32(out int result)
+            ? result
+            : 0;
 
     private static void AddQualityIssue(
         int count,
@@ -1554,6 +2114,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int UnpublishedDraftCount,
         int GrammarTopicsMissingExercises,
         int CourseLessonsMissingExerciseSets,
+        int CoursePathsMissingTranslations,
+        int CourseModulesMissingTranslations,
+        int CourseLessonsMissingTranslations,
+        int ExercisesMissingTranslations,
+        int ExerciseSetsMissingTranslations,
+        int ExercisesUnpublishedDrafts,
+        int ExerciseSetsUnpublishedDrafts,
+        int ExerciseSetsWithoutItems,
+        int ExerciseSetsWithUnresolvedExerciseSlugs,
+        int ExercisesWithMalformedPrompt,
+        int ExercisesWithMalformedAnswerKey,
+        int ExercisesMissingExplanations,
         int ExpressionEntriesMissingEligibilityMetadata,
         int ExpressionEntriesWithOrdinaryLiteralLeakage,
         int ExpressionEntriesMissingTeachingReason,
@@ -1565,5 +2137,40 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int ExpressionEntriesBlockedOrExplicitAdult,
         int ExpressionEntriesMissingSensitiveUsagePolicy,
         int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+        int RoleplayScenariosMissingTranslations,
+        int RoleplayScenariosUnpublishedDrafts,
+        int RoleplayScenariosMissingRequiredImageAssets,
+        int RoleplayScenariosWithoutAnswerChoices,
+        int RoleplayScenariosWithoutStaticFeedback,
+        int RoleplayScenariosWithInvalidPlayableSequence,
         IReadOnlyList<AdminLearningPortalIssueRowResponse> SampleIssues);
+
+    private sealed record RoleplayQualityCounts(
+        int MissingTranslations,
+        int UnpublishedDrafts,
+        int MissingRequiredImageAssets,
+        int WithoutAnswerChoices,
+        int WithoutStaticFeedback,
+        int InvalidPlayableSequence);
+
+    private sealed record CourseQualityCounts(
+        int CoursePathsMissingTranslations,
+        int CourseModulesMissingTranslations,
+        int CourseLessonsMissingTranslations);
+
+    private sealed record ExerciseQualityCounts(
+        int ExercisesMissingTranslations,
+        int ExerciseSetsMissingTranslations,
+        int ExercisesUnpublishedDrafts,
+        int ExerciseSetsUnpublishedDrafts,
+        int ExerciseSetsWithoutItems,
+        int ExerciseSetsWithUnresolvedExerciseSlugs,
+        int ExercisesWithMalformedPrompt,
+        int ExercisesWithMalformedAnswerKey,
+        int ExercisesMissingExplanations);
+
+    private sealed record RoleplayTurnQualityRow(
+        int SortOrder,
+        string SpeakerRole,
+        string? ExpectedLearnerAction);
 }

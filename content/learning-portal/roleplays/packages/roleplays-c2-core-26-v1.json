@@ -1,0 +1,750 @@
+{
+  "packageId": "roleplays-c2-core-26-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 26 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 26",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-ein-forschungsdesign-im-kolloquium-erklaeren",
+      "linkedDialogueSlug": null,
+      "title": "Ein Forschungsdesign im Kolloquium erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a research design in a colloquium" },
+        { "language": "fa", "text": "توضیح طرح پژوهش در یک کولکویوم" },
+        { "language": "ar", "text": "شرح تصميم بحثي في ندوة بحثية" },
+        { "language": "tr", "text": "Bir kolokyumda araştırma tasarımını açıklamak" },
+        { "language": "ru", "text": "Объяснение дизайна исследования на коллоквиуме" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی دیزاینی توێژینەوە لە کۆلۆکیۆمدا" },
+        { "language": "kmr", "text": "Ravekirina sêwirana lêkolînê di kolokyûmê de" },
+        { "language": "pl", "text": "Wyjaśnienie schematu badania na kolokwium" },
+        { "language": "ro", "text": "Explicarea unui design de cercetare într-un colocviu" },
+        { "language": "sq", "text": "Shpjegimi i një dizajni kërkimor në kolokuium" }
+      ],
+      "description": "In einem Forschungskolloquium stellen Sie ein Design zur Frage vor, wie Erstsemester in einem digitalen Schreibseminar akademische Schreibsicherheit entwickeln. Sie kombinieren kurze Befragungen zu drei Zeitpunkten, Lernjournale und ausgewählte Interviews. Eine Dozentin fragt, ob dieses Design wirklich zur komplexen Frage passt oder nur mehrere Methoden nebeneinanderstellt.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a research colloquium, you present a design for the question of how first-year students develop academic writing confidence in a digital writing seminar. You combine short surveys at three points in time, learning journals, and selected interviews. A lecturer asks whether this design truly fits the complex question or merely places several methods side by side." },
+        { "language": "fa", "text": "در یک کولکویوم پژوهشی، طرحی را برای این پرسش ارائه می‌کنید که دانشجویان سال اول در یک سمینار نوشتار دیجیتال چگونه اعتماد به نوشتن دانشگاهی را پرورش می‌دهند. شما پرسشنامه‌های کوتاه در سه زمان، ژورنال‌های یادگیری و مصاحبه‌های انتخابی را ترکیب می‌کنید. یک مدرس می‌پرسد آیا این طرح واقعاً با پرسش پیچیده تناسب دارد یا فقط چند روش را کنار هم گذاشته است." },
+        { "language": "ar", "text": "في ندوة بحثية تعرضون تصميماً لسؤال كيف يطور طلاب السنة الأولى ثقة الكتابة الأكاديمية في ندوة كتابة رقمية. تجمعون بين استبيانات قصيرة في ثلاث نقاط زمنية، ويوميات تعلم، ومقابلات مختارة. تسأل محاضرة هل يناسب هذا التصميم السؤال المعقد حقاً أم يضع فقط عدة طرق جنباً إلى جنب." },
+        { "language": "tr", "text": "Bir araştırma kolokyumunda, bir dijital yazma seminerinde birinci sınıf öğrencilerinin akademik yazma güvenini nasıl geliştirdiği sorusu için bir tasarım sunuyorsunuz. Üç zaman noktasında kısa anketleri, öğrenme günlüklerini ve seçilmiş görüşmeleri birleştiriyorsunuz. Bir öğretim görevlisi bu tasarımın karmaşık soruya gerçekten uyup uymadığını, yoksa yalnızca birkaç yöntemi yan yana koyup koymadığını soruyor." },
+        { "language": "ru", "text": "На исследовательском коллоквиуме вы представляете дизайн для вопроса о том, как первокурсники развивают уверенность в академическом письме на цифровом семинаре по письму. Вы сочетаете короткие опросы в трех временных точках, учебные дневники и выбранные интервью. Преподавательница спрашивает, действительно ли этот дизайн подходит к сложному вопросу или лишь ставит несколько методов рядом." },
+        { "language": "ckb", "text": "لە کۆلۆکیۆمێکی توێژینەوەدا دیزاینێک پێشکەش دەکەیت بۆ پرسی ئەوەی خوێندکارانی ساڵی یەکەم لە سمیناری نووسینی دیجیتاڵدا چۆن دڵنیایی لە نووسینی ئەکادیمی پەرە پێدەدەن. تۆ ڕاپرسیی کورت لە سێ کاتی جیاواز، ڕۆژنامەی فێربوون و چاوپێکەوتنی هەڵبژێردراو تێکەڵ دەکەیت. مامۆستایەک دەپرسێت ئایا ئەم دیزاینە بەڕاستی لەگەڵ پرسی ئاڵۆزدا دەگونجێت یان تەنها چەند ڕێبازێک لە تەنیشت یەک داناوە." },
+        { "language": "kmr", "text": "Di kolokyûmeke lêkolînê de hûn sêwiranekê pêşkêş dikin ji bo pirsa ka xwendekarên sala yekem di semînara nivîsandina dîjîtal de çawa baweriya nivîsandina akademîk pêş dixin. Hûn anketên kurt li sê deman, rojnameyên fêrbûnê û hevpeyvînên hilbijartî têkildar dikin. Mamosteyek dipirse ka ev sêwiran bi rastî li pirsa aloz tê an tenê çend rêbaz li rex hev datîne." },
+        { "language": "pl", "text": "Na kolokwium badawczym przedstawiasz schemat dotyczący pytania, jak studenci pierwszego roku rozwijają pewność w pisaniu akademickim podczas cyfrowego seminarium pisarskiego. Łączysz krótkie ankiety w trzech momentach, dzienniki uczenia się i wybrane wywiady. Prowadząca pyta, czy ten schemat naprawdę pasuje do złożonego pytania, czy tylko zestawia kilka metod obok siebie." },
+        { "language": "ro", "text": "Într-un colocviu de cercetare prezentați un design pentru întrebarea cum își dezvoltă studenții din anul întâi siguranța în scrierea academică într-un seminar digital de scriere. Combinați chestionare scurte în trei momente, jurnale de învățare și interviuri selectate. O profesoară întreabă dacă acest design se potrivește cu adevărat întrebării complexe sau doar așază mai multe metode una lângă alta." },
+        { "language": "sq", "text": "Në një kolokuium kërkimor paraqisni një dizajn për pyetjen se si studentët e vitit të parë zhvillojnë siguri në shkrimin akademik në një seminar digjital shkrimi. Ju kombinoni anketa të shkurtra në tri momente, ditarë të të nxënit dhe intervista të zgjedhura. Një lektore pyet nëse ky dizajn i përshtatet vërtet pyetjes së ndërlikuar apo thjesht vendos disa metoda pranë njëra-tjetrës." }
+      ],
+      "learnerGoal": "Ein komplexes Forschungsdesign präzise erklären: Forschungsfrage und Methode verbinden, die Rolle verschiedener Datenquellen abgrenzen, Grenzen benennen und den erwarteten Erkenntnisgewinn realistisch darstellen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a complex research design precisely: connect the research question and method, delimit the role of different data sources, name limits, and present the expected insight realistically." },
+        { "language": "fa", "text": "یک طرح پژوهشی پیچیده را دقیق توضیح دهید: پرسش پژوهش و روش را به هم وصل کنید، نقش منابع داده مختلف را جدا کنید، محدودیت‌ها را نام ببرید و ارزش شناختی مورد انتظار را واقع‌بینانه نشان دهید." },
+        { "language": "ar", "text": "اشرحوا تصميماً بحثياً معقداً بدقة: اربطوا سؤال البحث بالمنهج، وحددوا دور مصادر البيانات المختلفة، واذكروا الحدود، واعرضوا القيمة المعرفية المتوقعة بواقعية." },
+        { "language": "tr", "text": "Karmaşık bir araştırma tasarımını kesin biçimde açıklayın: araştırma sorusu ile yöntemi bağlayın, farklı veri kaynaklarının rolünü ayırın, sınırları adlandırın ve beklenen bilgi katkısını gerçekçi sunun." },
+        { "language": "ru", "text": "Точно объяснить сложный дизайн исследования: связать исследовательский вопрос и метод, разграничить роль разных источников данных, назвать ограничения и реалистично представить ожидаемую познавательную ценность." },
+        { "language": "ckb", "text": "دیزاینێکی ئاڵۆزی توێژینەوە بە وردی ڕوون بکەوە: پرسی توێژینەوە و ڕێباز پێکەوە ببەستە، ڕۆڵی سەرچاوە داتای جیاواز جیا بکەوە، سنوورەکان ناوببە و بەهای زانیاریی چاوەڕوانکراو بە واقیعی پیشان بدە." },
+        { "language": "kmr", "text": "Sêwiraneke lêkolînê ya aloz bi hûrgilî rave bikin: pirsa lêkolînê û rêbazê girê bidin, rola çavkaniyên daneyên cuda sînordar bikin, sînor nav bikin û nirxa zanînê ya hêvîkirî bi rastîparêzî pêşkêş bikin." },
+        { "language": "pl", "text": "Precyzyjnie wyjaśnić złożony schemat badania: połączyć pytanie badawcze z metodą, rozgraniczyć rolę różnych źródeł danych, nazwać ograniczenia i realistycznie przedstawić oczekiwaną wartość poznawczą." },
+        { "language": "ro", "text": "Explicați precis un design de cercetare complex: conectați întrebarea de cercetare cu metoda, delimitați rolul diferitelor surse de date, numiți limitele și prezentați realist valoarea de cunoaștere așteptată." },
+        { "language": "sq", "text": "Shpjegoni saktë një dizajn kërkimor të ndërlikuar: lidhni pyetjen kërkimore me metodën, kufizoni rolin e burimeve të ndryshme të të dhënave, përmendni kufijtë dhe paraqitni realisht vlerën e pritshme të njohjes." }
+      ],
+      "cefrLevel": "C2",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "presentation-support"],
+      "taskType": "explain-problem",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 26,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Präsentierende Person",
+          "translations": [
+            { "language": "en", "text": "Presenter" },
+            { "language": "fa", "text": "ارائه‌دهنده" },
+            { "language": "ar", "text": "الشخص المقدّم" },
+            { "language": "tr", "text": "Sunumu yapan kişi" },
+            { "language": "ru", "text": "Докладчик" },
+            { "language": "ckb", "text": "پێشکەشکار" },
+            { "language": "kmr", "text": "Pêşkêşkar" },
+            { "language": "pl", "text": "Osoba prezentująca" },
+            { "language": "ro", "text": "Persoana care prezintă" },
+            { "language": "sq", "text": "Personi që prezanton" }
+          ]
+        },
+        {
+          "roleKey": "lecturer",
+          "displayName": "Dozentin",
+          "translations": [
+            { "language": "en", "text": "Lecturer" },
+            { "language": "fa", "text": "مدرس" },
+            { "language": "ar", "text": "محاضرة" },
+            { "language": "tr", "text": "Öğretim görevlisi" },
+            { "language": "ru", "text": "Преподавательница" },
+            { "language": "ckb", "text": "مامۆستای زانکۆ" },
+            { "language": "kmr", "text": "Mamosteya zanîngehê" },
+            { "language": "pl", "text": "Prowadząca" },
+            { "language": "ro", "text": "Cadru didactic" },
+            { "language": "sq", "text": "Lektore" }
+          ]
+        },
+        {
+          "roleKey": "student-a",
+          "displayName": "Methodenkritischer Teilnehmer",
+          "translations": [
+            { "language": "en", "text": "Method-critical participant" },
+            { "language": "fa", "text": "شرکت‌کننده منتقد روش" },
+            { "language": "ar", "text": "مشارك ناقد للمنهج" },
+            { "language": "tr", "text": "Yöntem eleştirisi yapan katılımcı" },
+            { "language": "ru", "text": "Участник, критикующий метод" },
+            { "language": "ckb", "text": "بەشداربووی ڕەخنەگری ڕێباز" },
+            { "language": "kmr", "text": "Beşdarê rexnekerê rêbazê" },
+            { "language": "pl", "text": "Uczestnik krytyczny wobec metody" },
+            { "language": "ro", "text": "Participant critic față de metodă" },
+            { "language": "sq", "text": "Pjesëmarrës kritik ndaj metodës" }
+          ]
+        },
+        {
+          "roleKey": "student-b",
+          "displayName": "Kolloquiumsteilnehmerin",
+          "translations": [
+            { "language": "en", "text": "Colloquium participant" },
+            { "language": "fa", "text": "شرکت‌کننده کولکویوم" },
+            { "language": "ar", "text": "مشاركة في الندوة البحثية" },
+            { "language": "tr", "text": "Kolokyum katılımcısı" },
+            { "language": "ru", "text": "Участница коллоквиума" },
+            { "language": "ckb", "text": "بەشداربووی کۆلۆکیۆم" },
+            { "language": "kmr", "text": "Beşdara kolokyûmê" },
+            { "language": "pl", "text": "Uczestniczka kolokwium" },
+            { "language": "ro", "text": "Participantă la colocviu" },
+            { "language": "sq", "text": "Pjesëmarrëse kolokuiumi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "lecturer",
+          "baseText": "Bitte erklären Sie, warum gerade dieses Design zu Ihrer Frage passt. Die Frage klingt sehr komplex; drei Datenquellen wirken schnell wie eine Ansammlung, nicht wie ein klares Design.",
+          "translations": [
+            { "language": "en", "text": "Please explain why this design in particular fits your question. The question sounds very complex; three data sources can quickly look like a collection rather than a clear design." },
+            { "language": "fa", "text": "لطفاً توضیح دهید چرا دقیقاً این طرح با پرسش شما تناسب دارد. پرسش بسیار پیچیده به نظر می‌رسد؛ سه منبع داده خیلی زود می‌توانند شبیه یک مجموعه پراکنده باشند، نه یک طرح روشن." },
+            { "language": "ar", "text": "يرجى شرح لماذا يناسب هذا التصميم بالذات سؤالكم. يبدو السؤال معقداً جداً؛ وثلاثة مصادر بيانات قد تبدو بسرعة كأنها تجميع، لا كتصميم واضح." },
+            { "language": "tr", "text": "Lütfen neden özellikle bu tasarımın sorunuza uyduğunu açıklayın. Soru çok karmaşık görünüyor; üç veri kaynağı hızlıca net bir tasarım değil, bir yığın gibi görünebilir." },
+            { "language": "ru", "text": "Пожалуйста, объясните, почему именно этот дизайн подходит к вашему вопросу. Вопрос звучит очень сложно; три источника данных быстро могут выглядеть как набор, а не как ясный дизайн." },
+            { "language": "ckb", "text": "تکایە ڕوون بکەرەوە بۆچی بە تایبەتی ئەم دیزاینە لەگەڵ پرسی تۆدا دەگونجێت. پرسەکە زۆر ئاڵۆز دەردەکەوێت؛ سێ سەرچاوەی داتا بە خێرایی دەتوانن وەک کۆکراوەیەک دەربکەون، نە وەک دیزاینێکی ڕوون." },
+            { "language": "kmr", "text": "Ji kerema xwe rave bikin çima ev sêwiran bi taybetî li pirsa we tê. Pirs pir aloz xuya dike; sê çavkaniyên daneyan zû dikarin wekî komkirinê xuya bikin, ne wekî sêwiraneke zelal." },
+            { "language": "pl", "text": "Proszę wyjaśnić, dlaczego właśnie ten schemat pasuje do pytania. Pytanie brzmi bardzo złożenie; trzy źródła danych szybko mogą wyglądać jak zbiór, a nie jak jasny schemat." },
+            { "language": "ro", "text": "Vă rog să explicați de ce tocmai acest design se potrivește întrebării. Întrebarea sună foarte complex; trei surse de date pot părea rapid o colecție, nu un design clar." },
+            { "language": "sq", "text": "Ju lutem shpjegoni pse pikërisht ky dizajn i përshtatet pyetjes suaj. Pyetja tingëllon shumë e ndërlikuar; tri burime të dhënash mund të duken shpejt si grumbullim, jo si dizajn i qartë." }
+          ],
+          "function": "challenge-design-coherence",
+          "toneNote": "Formal und prüfend."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Die Frage hat zwei Ebenen: Sie fragt, ob sich Schreibsicherheit verändert, und zugleich, wodurch diese Veränderung im Seminaralltag entsteht. Die Befragungen zeigen Richtung und Stärke der Veränderung, die Lernjournale zeigen konkrete Situationen, und die Interviews klären, wie Studierende diese Situationen deuten.",
+          "translations": [
+            { "language": "en", "text": "The question has two levels: it asks whether writing confidence changes, and at the same time what creates this change in everyday seminar work. The surveys show direction and strength of change, the learning journals show concrete situations, and the interviews clarify how students interpret those situations." },
+            { "language": "fa", "text": "پرسش دو سطح دارد: می‌پرسد آیا اعتماد به نوشتن تغییر می‌کند و هم‌زمان این تغییر در زندگی روزمره سمینار از چه چیزی شکل می‌گیرد. پرسشنامه‌ها جهت و شدت تغییر را نشان می‌دهند، ژورنال‌های یادگیری موقعیت‌های مشخص را نشان می‌دهند و مصاحبه‌ها روشن می‌کنند دانشجویان این موقعیت‌ها را چگونه تفسیر می‌کنند." },
+            { "language": "ar", "text": "للسؤال مستويان: يسأل هل تتغير ثقة الكتابة، وفي الوقت نفسه ما الذي يصنع هذا التغير في يوميات الندوة. تُظهر الاستبيانات اتجاه التغير وقوته، وتُظهر يوميات التعلم مواقف ملموسة، وتوضح المقابلات كيف يفسر الطلاب هذه المواقف." },
+            { "language": "tr", "text": "Sorunun iki düzeyi var: yazma güveninin değişip değişmediğini ve aynı zamanda bu değişimin seminer gündelik hayatında neyle ortaya çıktığını soruyor. Anketler değişimin yönünü ve gücünü gösterir, öğrenme günlükleri somut durumları gösterir, görüşmeler de öğrencilerin bu durumları nasıl yorumladığını açıklar." },
+            { "language": "ru", "text": "У вопроса два уровня: он спрашивает, меняется ли уверенность в письме, и одновременно за счет чего это изменение возникает в повседневной работе семинара. Опросы показывают направление и силу изменения, учебные дневники показывают конкретные ситуации, а интервью проясняют, как студенты эти ситуации интерпретируют." },
+            { "language": "ckb", "text": "پرسەکە دوو ئاستی هەیە: دەپرسێت ئایا دڵنیایی لە نووسین دەگۆڕێت، و هاوکات ئەم گۆڕانە لە ڕۆژانەی سمیناردا لە چییەوە دروست دەبێت. ڕاپرسییەکان ئاڕاستە و هێزی گۆڕان نیشان دەدەن، ڕۆژنامەکانی فێربوون بارودۆخی دیاریکراو نیشان دەدەن، و چاوپێکەوتنەکان ڕوون دەکەن خوێندکاران ئەو بارودۆخانە چۆن لێکدەدەنەوە." },
+            { "language": "kmr", "text": "Pirs du astan heye: ew dipirse ka baweriya nivîsandinê diguhere an na, û di heman demê de ev guherîn di rojane ya semînarê de ji çi çêdibe. Anket araste û hêza guherînê nîşan didin, rojnameyên fêrbûnê rewşên zehmet nîşan didin, û hevpeyvîn diyar dikin xwendekar ew rewşan çawa şîrove dikin." },
+            { "language": "pl", "text": "Pytanie ma dwa poziomy: pyta, czy pewność w pisaniu się zmienia, i jednocześnie z czego ta zmiana wynika w codzienności seminarium. Ankiety pokazują kierunek i siłę zmiany, dzienniki uczenia się pokazują konkretne sytuacje, a wywiady wyjaśniają, jak studenci interpretują te sytuacje." },
+            { "language": "ro", "text": "Întrebarea are două niveluri: întreabă dacă siguranța în scriere se schimbă și, în același timp, prin ce apare această schimbare în viața seminarului. Chestionarele arată direcția și intensitatea schimbării, jurnalele de învățare arată situații concrete, iar interviurile clarifică modul în care studenții interpretează aceste situații." },
+            { "language": "sq", "text": "Pyetja ka dy nivele: pyet nëse siguria në shkrim ndryshon dhe njëkohësisht nga çfarë lind ky ndryshim në përditshmërinë e seminarit. Anketat tregojnë drejtimin dhe forcën e ndryshimit, ditarët e të nxënit tregojnë situata konkrete, ndërsa intervistat qartësojnë si i interpretojnë studentët këto situata." }
+          ],
+          "function": "connect-question-to-data-sources",
+          "toneNote": "Strukturiert und präzise.",
+          "expectedLearnerAction": "Die Forschungsfrage in Ebenen zerlegen und jede Datenquelle begründen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "student-a",
+          "baseText": "Warum reicht dafür nicht ein standardisierter Fragebogen am Anfang und am Ende?",
+          "translations": [
+            { "language": "en", "text": "Why is a standardized questionnaire at the beginning and at the end not enough for that?" },
+            { "language": "fa", "text": "چرا برای این کار یک پرسشنامه استاندارد در ابتدا و پایان کافی نیست؟" },
+            { "language": "ar", "text": "لماذا لا يكفي استبيان موحد في البداية والنهاية لذلك؟" },
+            { "language": "tr", "text": "Bunun için başta ve sonda standart bir anket neden yeterli değil?" },
+            { "language": "ru", "text": "Почему для этого недостаточно стандартизированного опросника в начале и в конце?" },
+            { "language": "ckb", "text": "بۆچی بۆ ئەمە ڕاپرسییەکی ستاندارد لە سەرەتا و کۆتایی بەس نییە؟" },
+            { "language": "kmr", "text": "Çima ji bo vê yekê anketeke standard li destpêkê û dawiyê têr nake?" },
+            { "language": "pl", "text": "Dlaczego nie wystarczy do tego standaryzowany kwestionariusz na początku i na końcu?" },
+            { "language": "ro", "text": "De ce nu este suficient pentru asta un chestionar standardizat la început și la final?" },
+            { "language": "sq", "text": "Pse për këtë nuk mjafton një pyetësor i standardizuar në fillim dhe në fund?" }
+          ],
+          "function": "challenge-need-for-mixed-data",
+          "toneNote": "Methodenkritisch."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ein Fragebogen wäre für die Veränderungsskala nützlich, aber er würde den Entstehungszusammenhang verkürzen. Ich wüsste dann, dass sich Schreibsicherheit verändert hat, aber kaum, ob Feedback, Peer-Austausch, Aufgabenklärung oder eigenes Üben dafür entscheidend war.",
+          "translations": [
+            { "language": "en", "text": "A questionnaire would be useful for the scale of change, but it would shorten the context of emergence. I would then know that writing confidence changed, but hardly whether feedback, peer exchange, task clarification, or individual practice was decisive." },
+            { "language": "fa", "text": "پرسشنامه برای مقیاس تغییر مفید است، اما زمینه پیدایش تغییر را کوتاه می‌کند. آن‌وقت می‌دانم اعتماد به نوشتن تغییر کرده است، اما به‌سختی می‌فهمم بازخورد، تبادل با هم‌سالان، روشن شدن تکلیف یا تمرین فردی عامل تعیین‌کننده بوده است." },
+            { "language": "ar", "text": "سيكون الاستبيان مفيداً لمقياس التغير، لكنه سيختصر سياق نشوء التغير. سأعرف حينها أن ثقة الكتابة تغيرت، لكنني بالكاد سأعرف هل كان الحاسم هو التغذية الراجعة أو تبادل الأقران أو توضيح المهمة أو التدريب الفردي." },
+            { "language": "tr", "text": "Anket değişim ölçeği için yararlı olurdu, ancak değişimin ortaya çıkış bağlamını kısaltırdı. O zaman yazma güveninin değiştiğini bilirdim, ama geribildirimin, akran paylaşımının, görev açıklığının ya da bireysel alıştırmanın belirleyici olup olmadığını pek bilemezdim." },
+            { "language": "ru", "text": "Опросник был бы полезен для шкалы изменения, но он сократил бы контекст возникновения. Тогда я знал бы, что уверенность в письме изменилась, но едва ли понял бы, что было решающим: обратная связь, обмен с peers, прояснение задания или собственная практика." },
+            { "language": "ckb", "text": "ڕاپرسی بۆ پێوانەی گۆڕان بەسوود دەبوو، بەڵام بارودۆخی دروستبوونی گۆڕانەکە کورت دەکاتەوە. ئەوسا دەزانم دڵنیایی لە نووسین گۆڕاوە، بەڵام بە زەحمەت دەزانم ئایا فیدباک، ئاڵوگۆڕی هاوپۆل، ڕوونبوونی ئەرک یان مەشقکردنی خۆیی گرنگتر بووە." },
+            { "language": "kmr", "text": "Anket ji bo pîvana guherînê bikêr bû, lê çarçoveya çêbûna guherînê kurt dikir. Wê demê ez dizanim ku baweriya nivîsandinê guheriye, lê kêm dizanim ka bersivdayîn, danûstandina hevtemenan, zelalbûna erkê an rahênana kesane ya biryardar bû." },
+            { "language": "pl", "text": "Kwestionariusz byłby przydatny dla skali zmiany, ale skróciłby kontekst jej powstawania. Wiedziałbym wtedy, że pewność w pisaniu się zmieniła, ale prawie nie wiedziałbym, czy decydująca była informacja zwrotna, wymiana z rówieśnikami, wyjaśnienie zadania czy własne ćwiczenie." },
+            { "language": "ro", "text": "Un chestionar ar fi util pentru scala schimbării, dar ar scurta contextul apariției ei. Aș ști atunci că siguranța în scriere s-a schimbat, dar cu greu aș ști dacă feedbackul, schimbul cu colegii, clarificarea sarcinii sau exercițiul individual a fost decisiv." },
+            { "language": "sq", "text": "Pyetësori do të ishte i dobishëm për shkallën e ndryshimit, por do ta shkurtonte kontekstin e lindjes së tij. Atëherë do të dija se siguria në shkrim ka ndryshuar, por vështirë se do të dija nëse vendimtare ishte feedback-u, shkëmbimi me bashkëmoshatarët, qartësimi i detyrës apo ushtrimi individual." }
+          ],
+          "function": "justify-qualitative-components",
+          "toneNote": "Differenziert und nicht abwertend.",
+          "expectedLearnerAction": "Erklären, warum eine einzelne Messung nicht zur gesamten Frage passt."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "student-b",
+          "baseText": "Besteht nicht die Gefahr, dass das Design zu breit wird und am Ende nichts wirklich tief analysiert?",
+          "translations": [
+            { "language": "en", "text": "Is there not a risk that the design becomes too broad and in the end analyzes nothing in real depth?" },
+            { "language": "fa", "text": "آیا این خطر وجود ندارد که طرح بیش از حد گسترده شود و در پایان هیچ چیز واقعاً عمیق تحلیل نشود؟" },
+            { "language": "ar", "text": "ألا يوجد خطر أن يصبح التصميم واسعاً أكثر من اللازم، وفي النهاية لا يحلل شيئاً بعمق حقيقي؟" },
+            { "language": "tr", "text": "Tasarımın fazla genişlemesi ve sonunda hiçbir şeyi gerçekten derin analiz etmemesi riski yok mu?" },
+            { "language": "ru", "text": "Нет ли риска, что дизайн станет слишком широким и в итоге ничего по-настоящему глубоко не проанализирует?" },
+            { "language": "ckb", "text": "ئایا مەترسی ئەوە نییە دیزاینەکە زۆر فراوان ببێت و لە کۆتاییدا هیچ شتێک بەڕاستی قووڵ شیکاری نەکرێت؟" },
+            { "language": "kmr", "text": "Ma xetera vê tune ye ku sêwiran pir fireh bibe û di dawiyê de tiştek bi rastî kûr neyê analîzkirin?" },
+            { "language": "pl", "text": "Czy nie ma ryzyka, że schemat stanie się zbyt szeroki i ostatecznie nic nie zostanie naprawdę głęboko przeanalizowane?" },
+            { "language": "ro", "text": "Nu există riscul ca designul să devină prea larg și, în final, nimic să nu fie analizat cu adevărat în profunzime?" },
+            { "language": "sq", "text": "A nuk ka rrezik që dizajni të bëhet tepër i gjerë dhe në fund asgjë të mos analizohet vërtet thellë?" }
+          ],
+          "function": "raise-scope-risk",
+          "toneNote": "Konstruktiv kritisch."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Diese Gefahr besteht, deshalb ist die Abfolge eng begrenzt: drei kurze Messzeitpunkte, wöchentliche Journale nur zu Schreibunsicherheit und Unterstützungsereignissen, und Interviews nur mit ausgewählten Kontrastfällen. Das Design ist nicht breit, sondern sequenziell fokussiert.",
+          "translations": [
+            { "language": "en", "text": "That risk exists, which is why the sequence is tightly limited: three short measurement points, weekly journals only on writing uncertainty and support events, and interviews only with selected contrasting cases. The design is not broad, but sequentially focused." },
+            { "language": "fa", "text": "این خطر وجود دارد، به همین دلیل توالی کار دقیقاً محدود شده است: سه زمان کوتاه سنجش، ژورنال‌های هفتگی فقط درباره نااطمینانی در نوشتن و رویدادهای حمایتی، و مصاحبه فقط با نمونه‌های متضاد انتخاب‌شده. طرح گسترده نیست، بلکه به‌صورت توالی‌مند متمرکز است." },
+            { "language": "ar", "text": "هذا الخطر موجود، ولذلك فإن التسلسل محدود بدقة: ثلاث نقاط قياس قصيرة، ويوميات أسبوعية فقط عن عدم اليقين في الكتابة وأحداث الدعم، ومقابلات فقط مع حالات متباينة مختارة. التصميم ليس واسعاً، بل مركزاً بشكل تسلسلي." },
+            { "language": "tr", "text": "Bu risk var; bu yüzden sıra sıkı biçimde sınırlandırıldı: üç kısa ölçüm noktası, yalnızca yazma belirsizliği ve destek olaylarına ilişkin haftalık günlükler, ayrıca yalnızca seçilmiş karşıt örneklerle görüşmeler. Tasarım geniş değil, ardışık olarak odaklanmış." },
+            { "language": "ru", "text": "Такой риск есть, поэтому последовательность строго ограничена: три короткие точки измерения, еженедельные дневники только о неуверенности в письме и событиях поддержки, а интервью только с выбранными контрастными случаями. Дизайн не широкий, а последовательно сфокусированный." },
+            { "language": "ckb", "text": "ئەم مەترسییە هەیە، بۆیە ڕیزبەندییەکە بە توندی سنووردار کراوە: سێ کاتی کورت بۆ پێوانە، ڕۆژنامەی هەفتانە تەنها دەربارەی نادڵنیایی لە نووسین و ڕووداوی پشتیوانی، و چاوپێکەوتن تەنها لەگەڵ کەیسە جیاوازە هەڵبژێردراوەکان. دیزاینەکە فراوان نییە، بەڵکو بە ڕیزبەندییەکی سەرنجدارە." },
+            { "language": "kmr", "text": "Ev xeter heye, ji ber vê yekê rêz teng hatiye sînordarkirin: sê demên kurt ên pîvandinê, rojnameyên heftane tenê li ser nedilniyaya nivîsandinê û bûyerên piştgiriyê, û hevpeyvîn tenê bi rewşên dijber ên hilbijartî. Sêwiran fireh nîne, lê bi rêza xwe fokûskirî ye." },
+            { "language": "pl", "text": "To ryzyko istnieje, dlatego sekwencja jest ściśle ograniczona: trzy krótkie punkty pomiaru, tygodniowe dzienniki tylko o niepewności w pisaniu i wydarzeniach wsparcia oraz wywiady tylko z wybranymi przypadkami kontrastowymi. Schemat nie jest szeroki, lecz sekwencyjnie ukierunkowany." },
+            { "language": "ro", "text": "Acest risc există, de aceea succesiunea este strict limitată: trei momente scurte de măsurare, jurnale săptămânale doar despre nesiguranța în scriere și evenimentele de sprijin, iar interviuri doar cu cazuri contrastante selectate. Designul nu este larg, ci focalizat secvențial." },
+            { "language": "sq", "text": "Ky rrezik ekziston, prandaj renditja është kufizuar ngushtë: tri momente të shkurtra matjeje, ditarë javorë vetëm për pasigurinë në shkrim dhe ngjarjet e mbështetjes, si dhe intervista vetëm me raste të zgjedhura kontrastuese. Dizajni nuk është i gjerë, por i fokusuar në mënyrë sekuenciale." }
+          ],
+          "function": "limit-design-scope",
+          "toneNote": "Klar und begrenzend.",
+          "expectedLearnerAction": "Den Breiten-Risiko-Einwand aufnehmen und das Design eng fokussieren."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "lecturer",
+          "baseText": "Welche Grenze bleibt trotz dieser Fokussierung bestehen?",
+          "translations": [
+            { "language": "en", "text": "What limit remains despite this focus?" },
+            { "language": "fa", "text": "با وجود این تمرکز، چه محدودیتی باقی می‌ماند؟" },
+            { "language": "ar", "text": "ما الحد الذي يبقى رغم هذا التركيز؟" },
+            { "language": "tr", "text": "Bu odağa rağmen hangi sınır kalıyor?" },
+            { "language": "ru", "text": "Какое ограничение остается несмотря на эту фокусировку?" },
+            { "language": "ckb", "text": "سەرەڕای ئەم سەرنجە، کام سنوور دەمێنێتەوە؟" },
+            { "language": "kmr", "text": "Tevî vê fokûsê kîjan sînor dimîne?" },
+            { "language": "pl", "text": "Jakie ograniczenie pozostaje mimo tego ukierunkowania?" },
+            { "language": "ro", "text": "Ce limită rămâne în ciuda acestei focalizări?" },
+            { "language": "sq", "text": "Cili kufi mbetet pavarësisht këtij fokusimi?" }
+          ],
+          "function": "ask-remaining-limit",
+          "toneNote": "Knapp und methodisch."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Es bleibt ein deutlicher Anteil an Selbstauskunft. Ich kann also nicht behaupten, die tatsächliche Schreibkompetenz vollständig zu messen. Das Design zeigt eher, wie sich wahrgenommene Sicherheit, konkrete Seminarerfahrungen und Deutungen der Studierenden zueinander verhalten.",
+          "translations": [
+            { "language": "en", "text": "A clear share of self-report remains. I therefore cannot claim to measure actual writing competence fully. The design rather shows how perceived confidence, concrete seminar experiences, and students' interpretations relate to one another." },
+            { "language": "fa", "text": "بخش قابل توجهی از خودگزارشی باقی می‌ماند. بنابراین نمی‌توانم ادعا کنم که توانایی واقعی نوشتن را به‌طور کامل می‌سنجم. طرح بیشتر نشان می‌دهد اعتماد ادراک‌شده، تجربه‌های مشخص سمینار و تفسیرهای دانشجویان چگونه با هم رابطه دارند." },
+            { "language": "ar", "text": "يبقى جزء واضح من الإفادة الذاتية. لذلك لا أستطيع الادعاء بأنني أقيس كفاءة الكتابة الفعلية بالكامل. يبين التصميم بالأحرى كيف ترتبط الثقة المدركة والتجارب الملموسة في الندوة وتفسيرات الطلاب بعضها ببعض." },
+            { "language": "tr", "text": "Belirgin bir öz bildirim payı kalır. Bu yüzden gerçek yazma yeterliğini tam olarak ölçtüğümü iddia edemem. Tasarım daha çok algılanan güvenin, somut seminer deneyimlerinin ve öğrencilerin yorumlarının birbiriyle nasıl ilişkili olduğunu gösterir." },
+            { "language": "ru", "text": "Остается заметная доля самоотчета. Поэтому я не могу утверждать, что полностью измеряю реальную письменную компетенцию. Дизайн скорее показывает, как воспринимаемая уверенность, конкретный семинарский опыт и интерпретации студентов соотносятся друг с другом." },
+            { "language": "ckb", "text": "بەشێکی ڕوون لە خۆڕاپۆرتکردن دەمێنێتەوە. بۆیە ناتوانم بانگەشە بکەم کە توانای ڕاستەقینەی نووسین بە تەواوی دەپێوم. دیزاینەکە زیاتر نیشان دەدات دڵنیایی هەستپێکراو، ئەزموونە دیاریکراوەکانی سمینار و لێکدانەوەی خوێندکاران چۆن پەیوەندییان بە یەکەوە هەیە." },
+            { "language": "kmr", "text": "Beşeke zelal a xwe-raportkirinê dimîne. Ji ber vê yekê ez nikarim bibêjim ku ez jêhatina rastîn a nivîsandinê bi tevahî dipîvim. Sêwiran zêdetir nîşan dide ka baweriya têhîştî, ezmûnên zehmet ên semînarê û şîroveyên xwendekaran çawa bi hev ve girêdayî ne." },
+            { "language": "pl", "text": "Pozostaje wyraźny udział samoopisu. Nie mogę więc twierdzić, że w pełni mierzę rzeczywistą kompetencję pisania. Schemat pokazuje raczej, jak postrzegana pewność, konkretne doświadczenia seminaryjne i interpretacje studentów odnoszą się do siebie." },
+            { "language": "ro", "text": "Rămâne o pondere clară de auto-raportare. Prin urmare nu pot afirma că măsor complet competența reală de scriere. Designul arată mai degrabă cum se raportează între ele siguranța percepută, experiențele concrete din seminar și interpretările studenților." },
+            { "language": "sq", "text": "Mbetet një pjesë e qartë vetëraportimi. Prandaj nuk mund të pretendoj se mat plotësisht kompetencën reale të shkrimit. Dizajni më tepër tregon si lidhen me njëra-tjetrën siguria e perceptuar, përvojat konkrete të seminarit dhe interpretimet e studentëve." }
+          ],
+          "function": "name-remaining-limit",
+          "toneNote": "Transparent und begrenzt.",
+          "expectedLearnerAction": "Die Grenze benennen, ohne den Nutzen der Daten zu verlieren."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "student-a",
+          "baseText": "Was wäre dann der erwartete Erkenntnisgewinn, wenn keine endgültige Wirkungsmessung möglich ist?",
+          "translations": [
+            { "language": "en", "text": "Then what would the expected insight be if a final measurement of effect is not possible?" },
+            { "language": "fa", "text": "پس اگر سنجش نهایی اثر ممکن نیست، ارزش شناختی مورد انتظار چیست؟" },
+            { "language": "ar", "text": "إذن ما القيمة المعرفية المتوقعة إذا لم يكن قياس الأثر النهائي ممكناً؟" },
+            { "language": "tr", "text": "O halde nihai etki ölçümü mümkün değilse beklenen bilgi katkısı ne olur?" },
+            { "language": "ru", "text": "Тогда какова ожидаемая познавательная ценность, если окончательное измерение эффекта невозможно?" },
+            { "language": "ckb", "text": "ئەی ئەگەر پێوانەی کۆتایی کاریگەری نەکرێت، بەهای زانیاریی چاوەڕوانکراو چی دەبێت؟" },
+            { "language": "kmr", "text": "Wê demê heke pîvandina dawî ya bandorê ne gengaz be, nirxa zanînê ya hêvîkirî çi ye?" },
+            { "language": "pl", "text": "Jaka byłaby zatem oczekiwana wartość poznawcza, jeśli ostateczny pomiar efektu nie jest możliwy?" },
+            { "language": "ro", "text": "Atunci care ar fi valoarea de cunoaștere așteptată, dacă o măsurare finală a efectului nu este posibilă?" },
+            { "language": "sq", "text": "Atëherë cila do të ishte vlera e pritshme e njohjes, nëse matja përfundimtare e efektit nuk është e mundur?" }
+          ],
+          "function": "ask-expected-insight",
+          "toneNote": "Grundsätzlich."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Der Gewinn liegt darin, ein plausibles Wirkmodell zu schärfen: Welche Seminarerfahrungen fallen mit wachsender Schreibsicherheit zusammen, welche Deutungen geben Studierende diesen Erfahrungen, und an welchen Stellen müsste eine spätere Interventionsstudie genauer ansetzen?",
+          "translations": [
+            { "language": "en", "text": "The gain lies in sharpening a plausible model of effect: which seminar experiences coincide with growing writing confidence, which interpretations students give to these experiences, and where a later intervention study would need to start more precisely." },
+            { "language": "fa", "text": "ارزش کار در دقیق‌تر کردن یک مدل اثرگذاری قابل‌باور است: کدام تجربه‌های سمینار با رشد اعتماد به نوشتن همراه می‌شوند، دانشجویان چه تفسیری به این تجربه‌ها می‌دهند، و یک مطالعه مداخله‌ای بعدی دقیقاً از کدام نقاط باید شروع کند؟" },
+            { "language": "ar", "text": "تكمن القيمة في صقل نموذج تأثير معقول: أي تجارب في الندوة تتزامن مع نمو ثقة الكتابة، وأي تفسيرات يعطيها الطلاب لهذه التجارب، وفي أي نقاط ينبغي لدراسة تدخلية لاحقة أن تبدأ بدقة أكبر." },
+            { "language": "tr", "text": "Katkı, makul bir etki modelini keskinleştirmededir: hangi seminer deneyimleri artan yazma güveniyle birlikte görülüyor, öğrenciler bu deneyimlere hangi anlamları veriyor ve sonraki bir müdahale çalışması tam olarak nereden başlamalı?" },
+            { "language": "ru", "text": "Польза состоит в уточнении правдоподобной модели воздействия: какие семинарские опыты совпадают с ростом уверенности в письме, какие интерпретации студенты дают этим опытам и в каких точках последующему интервенционному исследованию нужно начинать точнее." },
+            { "language": "ckb", "text": "سوودەکە لە تیژکردنەوەی مۆدێلێکی کاریگەریی باوەڕپێکراودایە: کام ئەزموونی سمینار لەگەڵ زیادبوونی دڵنیایی لە نووسین دەکەوێتەوە، خوێندکاران چ لێکدانەوەیەک بۆ ئەم ئەزموونانە دەدەن، و لە کام خاڵاندا توێژینەوەیەکی دەستێوەردانی داهاتوو پێویستە وردتر دەست پێبکات؟" },
+            { "language": "kmr", "text": "Qezenc di hûrkirina modelekê bandorê ya pêbawer de ye: kîjan ezmûnên semînarê bi mezinbûna baweriya nivîsandinê re hevdem in, xwendekar çi şîroveyan ji van ezmûnan re didin, û lêkolîneke mudaxileyê ya paşerojê divê li kîjan xalan hûrtir dest pê bike?" },
+            { "language": "pl", "text": "Zysk polega na doprecyzowaniu wiarygodnego modelu oddziaływania: które doświadczenia seminaryjne współwystępują ze wzrostem pewności w pisaniu, jakie interpretacje nadają im studenci i w których miejscach późniejsze badanie interwencyjne powinno zacząć dokładniej." },
+            { "language": "ro", "text": "Câștigul constă în rafinarea unui model plauzibil al efectului: ce experiențe de seminar coincid cu creșterea siguranței în scriere, ce interpretări dau studenții acestor experiențe și în ce puncte ar trebui să pornească mai precis un studiu intervențional ulterior." },
+            { "language": "sq", "text": "Përfitimi qëndron në mprehjen e një modeli të besueshëm ndikimi: cilat përvoja të seminarit përkojnë me rritjen e sigurisë në shkrim, çfarë interpretimesh u japin studentët këtyre përvojave dhe në cilat pika një studim ndërhyrës i mëvonshëm duhet të nisë më saktë." }
+          ],
+          "function": "state-expected-insight",
+          "toneNote": "Abschließend und realistisch.",
+          "expectedLearnerAction": "Den erwarteten Erkenntnisgewinn realistisch zusammenfassen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das Design passt, weil die Frage Veränderung und Entstehung zugleich untersucht. Befragungen zeigen Richtung und Stärke, Journale konkrete Situationen, und Interviews die Deutung der Studierenden.",
+              "translations": [
+                { "language": "en", "text": "The design fits because the question examines change and emergence at the same time. Surveys show direction and strength, journals show concrete situations, and interviews show students' interpretation." },
+                { "language": "fa", "text": "طرح مناسب است چون پرسش هم‌زمان تغییر و شکل‌گیری تغییر را بررسی می‌کند. پرسشنامه‌ها جهت و شدت را نشان می‌دهند، ژورنال‌ها موقعیت‌های مشخص را، و مصاحبه‌ها تفسیر دانشجویان را." },
+                { "language": "ar", "text": "يناسب التصميم لأن السؤال يدرس التغير ونشوءه في الوقت نفسه. تُظهر الاستبيانات الاتجاه والقوة، وتُظهر اليوميات مواقف ملموسة، وتُظهر المقابلات تفسير الطلاب." },
+                { "language": "tr", "text": "Tasarım uygundur, çünkü soru değişimi ve ortaya çıkışı aynı anda inceler. Anketler yönü ve gücü, günlükler somut durumları, görüşmeler ise öğrencilerin yorumunu gösterir." },
+                { "language": "ru", "text": "Дизайн подходит, потому что вопрос одновременно изучает изменение и его возникновение. Опросы показывают направление и силу, дневники — конкретные ситуации, интервью — интерпретацию студентов." },
+                { "language": "ckb", "text": "دیزاینەکە دەگونجێت، چونکە پرسەکە گۆڕان و دروستبوونی گۆڕان هاوکات دەپشکنێت. ڕاپرسییەکان ئاڕاستە و هێز نیشان دەدەن، ڕۆژنامەکان بارودۆخی دیاریکراو، و چاوپێکەوتنەکان لێکدانەوەی خوێندکاران." },
+                { "language": "kmr", "text": "Sêwiran tê, ji ber ku pirs guherîn û çêbûna wê di heman demê de lêkolîn dike. Anket araste û hêzê, rojname rewşên zehmet, û hevpeyvîn şîroveya xwendekaran nîşan didin." },
+                { "language": "pl", "text": "Schemat pasuje, bo pytanie bada jednocześnie zmianę i jej powstawanie. Ankiety pokazują kierunek i siłę, dzienniki konkretne sytuacje, a wywiady interpretację studentów." },
+                { "language": "ro", "text": "Designul se potrivește deoarece întrebarea examinează simultan schimbarea și apariția ei. Chestionarele arată direcția și intensitatea, jurnalele situațiile concrete, iar interviurile interpretarea studenților." },
+                { "language": "sq", "text": "Dizajni përshtatet sepse pyetja shqyrton njëkohësisht ndryshimin dhe lindjen e tij. Anketat tregojnë drejtimin dhe forcën, ditarët situatat konkrete, ndërsa intervistat interpretimin e studentëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet jede Datenquelle mit einer klaren Funktion in der Forschungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer connects each data source with a clear function in the research question." },
+                { "language": "fa", "text": "قوی است: پاسخ هر منبع داده را به یک کارکرد روشن در پرسش پژوهش وصل می‌کند." },
+                { "language": "ar", "text": "قوي: يربط الجواب كل مصدر بيانات بوظيفة واضحة في سؤال البحث." },
+                { "language": "tr", "text": "Güçlü: yanıt her veri kaynağını araştırma sorusundaki net bir işleve bağlıyor." },
+                { "language": "ru", "text": "Сильно: ответ связывает каждый источник данных с ясной функцией в исследовательском вопросе." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەر سەرچاوەیەکی داتا بە کارکردێکی ڕوون لە پرسی توێژینەوەدا دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv her çavkaniya daneyan bi erkeke zelal di pirsa lêkolînê de girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy każde źródło danych z jasną funkcją w pytaniu badawczym." },
+                { "language": "ro", "text": "Puternic: răspunsul conectează fiecare sursă de date cu o funcție clară în întrebarea de cercetare." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh çdo burim të dhënash me një funksion të qartë në pyetjen kërkimore." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das Design ist sinnvoll, weil mehrere Methoden zusammen ein vollständigeres Bild liefern.",
+              "translations": [
+                { "language": "en", "text": "The design makes sense because several methods together provide a more complete picture." },
+                { "language": "fa", "text": "طرح منطقی است چون چند روش با هم تصویر کامل‌تری می‌دهند." },
+                { "language": "ar", "text": "التصميم منطقي لأن عدة طرق معاً تقدم صورة أكمل." },
+                { "language": "tr", "text": "Tasarım mantıklı, çünkü birkaç yöntem birlikte daha eksiksiz bir resim verir." },
+                { "language": "ru", "text": "Дизайн имеет смысл, потому что несколько методов вместе дают более полную картину." },
+                { "language": "ckb", "text": "دیزاینەکە مانادارە، چونکە چەند ڕێباز پێکەوە وێنەیەکی تەواوتر دەدەن." },
+                { "language": "kmr", "text": "Sêwiran watedar e, ji ber ku çend rêbaz bi hev re wêneyeke temamtir didin." },
+                { "language": "pl", "text": "Schemat ma sens, ponieważ kilka metod razem daje pełniejszy obraz." },
+                { "language": "ro", "text": "Designul are sens deoarece mai multe metode împreună oferă o imagine mai completă." },
+                { "language": "sq", "text": "Dizajni ka kuptim sepse disa metoda së bashku japin një pamje më të plotë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Die Antwort erklärt nicht, welche Methode welchen Teil der Frage trägt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. The answer does not explain which method carries which part of the question." },
+                { "language": "fa", "text": "بیش از حد کلی است. پاسخ توضیح نمی‌دهد کدام روش کدام بخش پرسش را بر عهده دارد." },
+                { "language": "ar", "text": "عام أكثر من اللازم. لا يوضح الجواب أي طريقة تحمل أي جزء من السؤال." },
+                { "language": "tr", "text": "Fazla genel. Yanıt hangi yöntemin sorunun hangi bölümünü taşıdığını açıklamıyor." },
+                { "language": "ru", "text": "Слишком общо. Ответ не объясняет, какой метод несет какую часть вопроса." },
+                { "language": "ckb", "text": "زۆر گشتییە. وەڵامەکە ڕوون ناکات کام ڕێباز کام بەشی پرسەکە هەڵدەگرێت." },
+                { "language": "kmr", "text": "Pir giştî ye. Bersiv rave nake kîjan rêbaz kîjan beşa pirsê digire." },
+                { "language": "pl", "text": "Zbyt ogólne. Odpowiedź nie wyjaśnia, która metoda niesie którą część pytania." },
+                { "language": "ro", "text": "Prea general. Răspunsul nu explică ce metodă susține ce parte a întrebării." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Përgjigjja nuk shpjegon cila metodë mban cilën pjesë të pyetjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ein Fragebogen misst Veränderung, erklärt aber kaum, ob Feedback, Peer-Austausch, Aufgabenklärung oder eigenes Üben entscheidend war.",
+              "translations": [
+                { "language": "en", "text": "A questionnaire measures change, but hardly explains whether feedback, peer exchange, task clarification, or individual practice was decisive." },
+                { "language": "fa", "text": "پرسشنامه تغییر را می‌سنجد، اما به‌سختی توضیح می‌دهد آیا بازخورد، تبادل با هم‌سالان، روشن شدن تکلیف یا تمرین فردی تعیین‌کننده بوده است." },
+                { "language": "ar", "text": "يقيس الاستبيان التغير، لكنه لا يفسر تقريباً هل كان الحاسم هو التغذية الراجعة أو تبادل الأقران أو توضيح المهمة أو التدريب الفردي." },
+                { "language": "tr", "text": "Anket değişimi ölçer, ancak geribildirimin, akran paylaşımının, görev açıklığının ya da bireysel alıştırmanın belirleyici olup olmadığını pek açıklamaz." },
+                { "language": "ru", "text": "Опросник измеряет изменение, но едва ли объясняет, что было решающим: обратная связь, обмен с peers, прояснение задания или собственная практика." },
+                { "language": "ckb", "text": "ڕاپرسی گۆڕان دەپێوێت، بەڵام بە زەحمەت ڕوون دەکاتەوە ئایا فیدباک، ئاڵوگۆڕی هاوپۆل، ڕوونبوونی ئەرک یان مەشقکردنی خۆیی گرنگتر بووە." },
+                { "language": "kmr", "text": "Anket guherînê dipîve, lê kêm rave dike ka bersivdayîn, danûstandina hevtemenan, zelalbûna erkê an rahênana kesane ya biryardar bû." },
+                { "language": "pl", "text": "Kwestionariusz mierzy zmianę, ale prawie nie wyjaśnia, czy decydująca była informacja zwrotna, wymiana z rówieśnikami, wyjaśnienie zadania czy własne ćwiczenie." },
+                { "language": "ro", "text": "Un chestionar măsoară schimbarea, dar cu greu explică dacă feedbackul, schimbul cu colegii, clarificarea sarcinii sau exercițiul individual a fost decisiv." },
+                { "language": "sq", "text": "Pyetësori mat ndryshimin, por vështirë se shpjegon nëse vendimtare ishte feedback-u, shkëmbimi me bashkëmoshatarët, qartësimi i detyrës apo ushtrimi individual." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort respektiert den Fragebogen, begründet aber präzise seine Grenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer respects the questionnaire but precisely justifies its limit." },
+                { "language": "fa", "text": "قوی است: پاسخ ارزش پرسشنامه را حفظ می‌کند، اما محدودیت آن را دقیق توجیه می‌کند." },
+                { "language": "ar", "text": "قوي: يحترم الجواب الاستبيان لكنه يبرر حده بدقة." },
+                { "language": "tr", "text": "Güçlü: yanıt anketi küçümsemiyor, ama sınırını kesin biçimde gerekçelendiriyor." },
+                { "language": "ru", "text": "Сильно: ответ уважает опросник, но точно обосновывает его предел." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕاپرسی ڕێز لێدەگرێت، بەڵام سنوورەکەی بە وردی بەهۆکار دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv hurmeta anketê digire, lê sînora wê bi hûrgilî bi hincet dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź docenia kwestionariusz, ale precyzyjnie uzasadnia jego granicę." },
+                { "language": "ro", "text": "Puternic: răspunsul respectă chestionarul, dar îi justifică precis limita." },
+                { "language": "sq", "text": "E fortë: përgjigjja e respekton pyetësorin, por e arsyeton saktë kufirin e tij." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ein Fragebogen wäre zu oberflächlich, weil er keine persönlichen Erfahrungen erzählt.",
+              "translations": [
+                { "language": "en", "text": "A questionnaire would be too superficial because it does not tell personal experiences." },
+                { "language": "fa", "text": "پرسشنامه بیش از حد سطحی خواهد بود، چون تجربه‌های شخصی را روایت نمی‌کند." },
+                { "language": "ar", "text": "سيكون الاستبيان سطحياً أكثر من اللازم لأنه لا يروي تجارب شخصية." },
+                { "language": "tr", "text": "Anket fazla yüzeysel olurdu, çünkü kişisel deneyimleri anlatmaz." },
+                { "language": "ru", "text": "Опросник был бы слишком поверхностным, потому что он не рассказывает личные опыты." },
+                { "language": "ckb", "text": "ڕاپرسی زۆر سەرەکی دەبوو، چونکە ئەزموونی کەسی ناگێڕێتەوە." },
+                { "language": "kmr", "text": "Anket pir rûyî bû, ji ber ku ezmûnên kesane nagêre." },
+                { "language": "pl", "text": "Kwestionariusz byłby zbyt powierzchowny, bo nie opowiada osobistych doświadczeń." },
+                { "language": "ro", "text": "Un chestionar ar fi prea superficial, deoarece nu povestește experiențe personale." },
+                { "language": "sq", "text": "Pyetësori do të ishte tepër sipërfaqësor, sepse nuk rrëfen përvoja personale." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu abwertend. Die Antwort erklärt nicht, wofür der Fragebogen gut ist und wo er methodisch begrenzt bleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too dismissive. The answer does not explain what the questionnaire is good for and where it remains methodologically limited." },
+                { "language": "fa", "text": "بیش از حد ردکننده است. پاسخ توضیح نمی‌دهد پرسشنامه برای چه چیزی مفید است و کجا از نظر روش‌شناختی محدود می‌ماند." },
+                { "language": "ar", "text": "انتقاصي أكثر من اللازم. لا يوضح الجواب فائدة الاستبيان ولا أين يبقى محدوداً منهجياً." },
+                { "language": "tr", "text": "Fazla küçümseyici. Yanıt anketin neye yaradığı ve yöntemsel olarak nerede sınırlı kaldığını açıklamıyor." },
+                { "language": "ru", "text": "Слишком пренебрежительно. Ответ не объясняет, для чего опросник полезен и где он методологически ограничен." },
+                { "language": "ckb", "text": "زۆر بە کەمبینانەیە. وەڵامەکە ڕوون ناکات ڕاپرسی بۆ چی بەسوودە و لە کوێدا بە ڕێبازناسی سنووردار دەمێنێتەوە." },
+                { "language": "kmr", "text": "Pir kêmnirxandin e. Bersiv rave nake anket ji bo çi bikêr e û li ku derê bi rêbazî sînordar dimîne." },
+                { "language": "pl", "text": "Zbyt lekceważące. Odpowiedź nie wyjaśnia, do czego kwestionariusz jest dobry i gdzie pozostaje metodologicznie ograniczony." },
+                { "language": "ro", "text": "Prea depreciativ. Răspunsul nu explică pentru ce este util chestionarul și unde rămâne limitat metodologic." },
+                { "language": "sq", "text": "Tepër nënvlerësuese. Përgjigjja nuk shpjegon për çfarë shërben pyetësori dhe ku mbetet i kufizuar metodologjikisht." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Breite wird durch die Abfolge begrenzt: drei Messzeitpunkte, Journale nur zu Unsicherheit und Unterstützung, und Interviews nur mit ausgewählten Kontrastfällen.",
+              "translations": [
+                { "language": "en", "text": "The breadth is limited by the sequence: three measurement points, journals only on uncertainty and support, and interviews only with selected contrasting cases." },
+                { "language": "fa", "text": "گستردگی با توالی کار محدود می‌شود: سه زمان سنجش، ژورنال‌ها فقط درباره نااطمینانی و حمایت، و مصاحبه‌ها فقط با نمونه‌های متضاد انتخاب‌شده." },
+                { "language": "ar", "text": "تُحد السعة من خلال التسلسل: ثلاث نقاط قياس، ويوميات فقط عن عدم اليقين والدعم، ومقابلات فقط مع حالات متباينة مختارة." },
+                { "language": "tr", "text": "Genişlik sıra ile sınırlanır: üç ölçüm noktası, yalnızca belirsizlik ve destek üzerine günlükler ve yalnızca seçilmiş karşıt örneklerle görüşmeler." },
+                { "language": "ru", "text": "Широта ограничивается последовательностью: три точки измерения, дневники только о неуверенности и поддержке, интервью только с выбранными контрастными случаями." },
+                { "language": "ckb", "text": "فراوانی بە ڕیزبەندی سنووردار دەکرێت: سێ کاتی پێوانە، ڕۆژنامە تەنها دەربارەی نادڵنیایی و پشتیوانی، و چاوپێکەوتن تەنها لەگەڵ کەیسە جیاوازە هەڵبژێردراوەکان." },
+                { "language": "kmr", "text": "Firehî bi rêzê tê sînordarkirin: sê demên pîvandinê, rojname tenê li ser nedilniyayê û piştgiriyê, û hevpeyvîn tenê bi rewşên dijber ên hilbijartî." },
+                { "language": "pl", "text": "Szerokość jest ograniczona sekwencją: trzy punkty pomiaru, dzienniki tylko o niepewności i wsparciu oraz wywiady tylko z wybranymi przypadkami kontrastowymi." },
+                { "language": "ro", "text": "Lărgimea este limitată prin succesiune: trei momente de măsurare, jurnale doar despre nesiguranță și sprijin, și interviuri doar cu cazuri contrastante selectate." },
+                { "language": "sq", "text": "Gjerësia kufizohet nga renditja: tri momente matjeje, ditarë vetëm për pasigurinë dhe mbështetjen, dhe intervista vetëm me raste të zgjedhura kontrastuese." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt das Risiko ernst und zeigt eine konkrete Begrenzung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes the risk seriously and shows a concrete limitation." },
+                { "language": "fa", "text": "قوی است: پاسخ خطر را جدی می‌گیرد و محدودسازی مشخص نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: يأخذ الجواب الخطر بجدية ويُظهر تحديداً ملموساً." },
+                { "language": "tr", "text": "Güçlü: yanıt riski ciddiye alıyor ve somut bir sınırlama gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ серьезно относится к риску и показывает конкретное ограничение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە مەترسییەکە بە جددی وەردەگرێت و سنووردارکردنی دیاریکراو نیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv xeterê bi cidî digire û sînorkirineke zehmet nîşan dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź traktuje ryzyko poważnie i pokazuje konkretne ograniczenie." },
+                { "language": "ro", "text": "Puternic: răspunsul ia riscul în serios și arată o limitare concretă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr rrezikun seriozisht dhe tregon një kufizim konkret." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das Design bleibt handhabbar, weil alle Daten am Ende gemeinsam ausgewertet werden.",
+              "translations": [
+                { "language": "en", "text": "The design remains manageable because all data are evaluated together at the end." },
+                { "language": "fa", "text": "طرح قابل مدیریت می‌ماند، چون همه داده‌ها در پایان با هم تحلیل می‌شوند." },
+                { "language": "ar", "text": "يبقى التصميم قابلاً للإدارة لأن جميع البيانات تُحلل معاً في النهاية." },
+                { "language": "tr", "text": "Tasarım yönetilebilir kalır, çünkü tüm veriler sonunda birlikte değerlendirilir." },
+                { "language": "ru", "text": "Дизайн остается управляемым, потому что все данные в конце оцениваются вместе." },
+                { "language": "ckb", "text": "دیزاینەکە بەڕێوەبەرایەتی‌پێکراو دەمێنێتەوە، چونکە هەموو داتاکان لە کۆتاییدا پێکەوە هەڵسەنگاندن دەکرێن." },
+                { "language": "kmr", "text": "Sêwiran tê rêvebirin, ji ber ku hemû dane di dawiyê de bi hev re têne nirxandin." },
+                { "language": "pl", "text": "Schemat pozostaje wykonalny, bo wszystkie dane są na końcu analizowane razem." },
+                { "language": "ro", "text": "Designul rămâne gestionabil deoarece toate datele sunt evaluate împreună la final." },
+                { "language": "sq", "text": "Dizajni mbetet i menaxhueshëm sepse të gjitha të dhënat analizohen së bashku në fund." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unklar. Gemeinsame Auswertung allein verhindert keine Überbreite und erklärt die Auswahl der Fälle nicht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unclear. Joint evaluation alone does not prevent excessive breadth and does not explain case selection." },
+                { "language": "fa", "text": "بیش از حد نامشخص است. تحلیل مشترک به‌تنهایی جلوی گستردگی زیاد را نمی‌گیرد و انتخاب نمونه‌ها را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "غير واضح بما يكفي. التحليل المشترك وحده لا يمنع الاتساع الزائد ولا يشرح اختيار الحالات." },
+                { "language": "tr", "text": "Fazla belirsiz. Ortak değerlendirme tek başına aşırı genişliği engellemez ve vaka seçimini açıklamaz." },
+                { "language": "ru", "text": "Слишком неясно. Совместная оценка сама по себе не предотвращает чрезмерную широту и не объясняет выбор случаев." },
+                { "language": "ckb", "text": "زۆر ناڕوونە. هەڵسەنگاندنی پێکەوە بە تەنها ڕێگری لە فراوانیی زۆر ناکات و هەڵبژاردنی کەیسەکان ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Pir nezelal e. Nirxandina hevbeş bi tenê firehiya zêde asteng nake û hilbijartina rewşan rave nake." },
+                { "language": "pl", "text": "Zbyt niejasne. Wspólna analiza sama nie zapobiega nadmiernej szerokości i nie wyjaśnia wyboru przypadków." },
+                { "language": "ro", "text": "Prea neclar. Evaluarea comună singură nu previne lărgimea excesivă și nu explică selecția cazurilor." },
+                { "language": "sq", "text": "Tepër e paqartë. Analiza e përbashkët vetëm nuk e parandalon gjerësinë e tepërt dhe nuk shpjegon zgjedhjen e rasteve." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Grenze bleibt der hohe Anteil an Selbstauskunft. Das Design misst nicht vollständig Schreibkompetenz, sondern den Zusammenhang zwischen wahrgenommener Sicherheit, Seminarerfahrung und Deutung.",
+              "translations": [
+                { "language": "en", "text": "The limit remains the high share of self-report. The design does not fully measure writing competence, but the link between perceived confidence, seminar experience, and interpretation." },
+                { "language": "fa", "text": "محدودیت، سهم بالای خودگزارشی است. طرح توانایی نوشتن را کامل نمی‌سنجد، بلکه رابطه میان اعتماد ادراک‌شده، تجربه سمینار و تفسیر را بررسی می‌کند." },
+                { "language": "ar", "text": "يبقى الحد في النسبة العالية من الإفادة الذاتية. لا يقيس التصميم كفاءة الكتابة بالكامل، بل العلاقة بين الثقة المدركة وتجربة الندوة والتفسير." },
+                { "language": "tr", "text": "Sınır, öz bildirimin yüksek payıdır. Tasarım yazma yeterliğini tam olarak ölçmez; algılanan güven, seminer deneyimi ve yorum arasındaki ilişkiyi ölçer." },
+                { "language": "ru", "text": "Ограничением остается высокая доля самоотчета. Дизайн не полностью измеряет письменную компетенцию, а связь между воспринимаемой уверенностью, семинарским опытом и интерпретацией." },
+                { "language": "ckb", "text": "سنوورەکە بەشی زۆری خۆڕاپۆرتکردنە. دیزاینەکە توانای نووسین بە تەواوی ناپێوێت، بەڵکو پەیوەندیی نێوان دڵنیایی هەستپێکراو، ئەزموونی سمینار و لێکدانەوە دەپێوێت." },
+                { "language": "kmr", "text": "Sînor beşa bilind a xwe-raportkirinê ye. Sêwiran jêhatina nivîsandinê bi tevahî napîve, lê têkiliya di navbera baweriya têhîştî, ezmûna semînarê û şîroveyê de dipîve." },
+                { "language": "pl", "text": "Ograniczeniem pozostaje wysoki udział samoopisu. Schemat nie mierzy w pełni kompetencji pisania, lecz relację między postrzeganą pewnością, doświadczeniem seminaryjnym i interpretacją." },
+                { "language": "ro", "text": "Limita rămâne ponderea mare a auto-raportării. Designul nu măsoară complet competența de scriere, ci legătura dintre siguranța percepută, experiența de seminar și interpretare." },
+                { "language": "sq", "text": "Kufiri mbetet pjesa e lartë e vetëraportimit. Dizajni nuk mat plotësisht kompetencën e shkrimit, por lidhjen mes sigurisë së perceptuar, përvojës së seminarit dhe interpretimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Grenze wird klar genannt und der tatsächliche Messanspruch bleibt realistisch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the limit is named clearly and the actual measurement claim remains realistic." },
+                { "language": "fa", "text": "قوی است: محدودیت روشن نام برده می‌شود و ادعای سنجش واقعی واقع‌بینانه می‌ماند." },
+                { "language": "ar", "text": "قوي: يُذكر الحد بوضوح ويبقى ادعاء القياس الفعلي واقعياً." },
+                { "language": "tr", "text": "Güçlü: sınır açıkça belirtiliyor ve gerçek ölçüm iddiası gerçekçi kalıyor." },
+                { "language": "ru", "text": "Сильно: ограничение названо ясно, а фактическое измерительное притязание остается реалистичным." },
+                { "language": "ckb", "text": "بەهێزە: سنوورەکە بە ڕوونی ناودەبرێت و بانگەشەی پێوانەکردنی ڕاستەقینە واقیعی دەمێنێتەوە." },
+                { "language": "kmr", "text": "Xurt e: sînor bi zelalî tê navkirin û angaşta pîvandina rastîn rastîparêz dimîne." },
+                { "language": "pl", "text": "Mocne: ograniczenie zostaje jasno nazwane, a rzeczywiste roszczenie pomiarowe pozostaje realistyczne." },
+                { "language": "ro", "text": "Puternic: limita este numită clar, iar pretenția reală de măsurare rămâne realistă." },
+                { "language": "sq", "text": "E fortë: kufiri përmendet qartë dhe pretendimi real i matjes mbetet realist." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Grenze ist, dass Studierende ihre eigene Entwicklung manchmal ungenau einschätzen.",
+              "translations": [
+                { "language": "en", "text": "The limit is that students sometimes assess their own development inaccurately." },
+                { "language": "fa", "text": "محدودیت این است که دانشجویان گاهی رشد خودشان را نادقیق ارزیابی می‌کنند." },
+                { "language": "ar", "text": "الحد هو أن الطلاب يقيّمون تطورهم أحياناً بشكل غير دقيق." },
+                { "language": "tr", "text": "Sınır, öğrencilerin kendi gelişimlerini bazen hatalı değerlendirmesidir." },
+                { "language": "ru", "text": "Ограничение в том, что студенты иногда неточно оценивают собственное развитие." },
+                { "language": "ckb", "text": "سنوور ئەوەیە کە خوێندکاران هەندێک جار پەرەسەندنی خۆیان بە نادروستی هەڵدەسەنگێنن." },
+                { "language": "kmr", "text": "Sînor ev e ku xwendekar carinan pêşketina xwe ne rast dinirxînin." },
+                { "language": "pl", "text": "Ograniczenie polega na tym, że studenci czasem niedokładnie oceniają własny rozwój." },
+                { "language": "ro", "text": "Limita este că studenții își evaluează uneori inexact propria dezvoltare." },
+                { "language": "sq", "text": "Kufiri është se studentët ndonjëherë e vlerësojnë pasaktë zhvillimin e tyre." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu eng. Die Antwort erklärt nicht den Unterschied zwischen Schreibkompetenz und wahrgenommener Sicherheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too narrow. The answer does not explain the difference between writing competence and perceived confidence." },
+                { "language": "fa", "text": "قابل‌قبول است، اما بیش از حد تنگ. پاسخ تفاوت میان توانایی نوشتن و اعتماد ادراک‌شده را توضیح نمی‌دهد." },
+                { "language": "ar", "text": "معقول، لكنه ضيق أكثر من اللازم. لا يوضح الجواب الفرق بين كفاءة الكتابة والثقة المدركة." },
+                { "language": "tr", "text": "Makul, ama fazla dar. Yanıt yazma yeterliği ile algılanan güven arasındaki farkı açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком узко. Ответ не объясняет разницу между письменной компетенцией и воспринимаемой уверенностью." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر تەنگە. وەڵامەکە جیاوازیی نێوان توانای نووسین و دڵنیایی هەستپێکراو ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir teng e. Bersiv cudahiya di navbera jêhatina nivîsandinê û baweriya têhîştî de rave nake." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt wąskie. Odpowiedź nie wyjaśnia różnicy między kompetencją pisania a postrzeganą pewnością." },
+                { "language": "ro", "text": "Plauzibil, dar prea îngust. Răspunsul nu explică diferența dintre competența de scriere și siguranța percepută." },
+                { "language": "sq", "text": "E besueshme, por tepër e ngushtë. Përgjigjja nuk shpjegon dallimin mes kompetencës së shkrimit dhe sigurisë së perceptuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Erkenntnisgewinn liegt in einem geschärften Wirkmodell: Welche Seminarerfahrungen mit Schreibsicherheit zusammenfallen und wo eine spätere Interventionsstudie genauer ansetzen müsste.",
+              "translations": [
+                { "language": "en", "text": "The insight lies in a sharpened model of effect: which seminar experiences coincide with writing confidence and where a later intervention study would need to start more precisely." },
+                { "language": "fa", "text": "ارزش شناختی در یک مدل اثرگذاری دقیق‌تر است: کدام تجربه‌های سمینار با اعتماد به نوشتن همراه می‌شوند و یک مطالعه مداخله‌ای بعدی باید دقیق‌تر از کجا شروع کند." },
+                { "language": "ar", "text": "تكمن القيمة المعرفية في نموذج تأثير أدق: أي تجارب في الندوة تتزامن مع ثقة الكتابة، وأين ينبغي لدراسة تدخلية لاحقة أن تبدأ بدقة أكبر." },
+                { "language": "tr", "text": "Bilgi katkısı keskinleşmiş bir etki modelindedir: hangi seminer deneyimlerinin yazma güveniyle birlikte görüldüğü ve sonraki müdahale çalışmasının daha kesin nereden başlaması gerektiği." },
+                { "language": "ru", "text": "Познавательная ценность в уточненной модели воздействия: какие семинарские опыты совпадают с уверенностью в письме и где последующему интервенционному исследованию нужно начинать точнее." },
+                { "language": "ckb", "text": "بەهای زانیاری لە مۆدێلێکی کاریگەریی تیژکراوەدایە: کام ئەزموونی سمینار لەگەڵ دڵنیایی لە نووسین دەکەوێتەوە و توێژینەوەی دەستێوەردانی داهاتوو پێویستە لە کوێ وردتر دەست پێبکات." },
+                { "language": "kmr", "text": "Nirxa zanînê di modelekê bandorê ya hûrkirî de ye: kîjan ezmûnên semînarê bi baweriya nivîsandinê re hevdem in û lêkolîneke mudaxileyê ya paşerojê divê li ku derê hûrtir dest pê bike." },
+                { "language": "pl", "text": "Wartość poznawcza leży w doprecyzowanym modelu oddziaływania: które doświadczenia seminaryjne współwystępują z pewnością w pisaniu i gdzie późniejsze badanie interwencyjne powinno zacząć dokładniej." },
+                { "language": "ro", "text": "Valoarea de cunoaștere constă într-un model al efectului mai clar: ce experiențe de seminar coincid cu siguranța în scriere și unde ar trebui să înceapă mai precis un studiu intervențional ulterior." },
+                { "language": "sq", "text": "Vlera e njohjes qëndron në një model ndikimi më të mprehtë: cilat përvoja të seminarit përkojnë me sigurinë në shkrim dhe ku duhet të nisë më saktë një studim ndërhyrës i mëvonshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Nutzen wird realistisch als Modellschärfung beschrieben, nicht als endgültiger Wirkungsnachweis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the value is described realistically as sharpening a model, not as final proof of effect." },
+                { "language": "fa", "text": "قوی است: ارزش کار واقع‌بینانه به‌عنوان دقیق‌تر کردن مدل توصیف می‌شود، نه اثبات نهایی اثر." },
+                { "language": "ar", "text": "قوي: تُوصف القيمة بواقعية كصقل للنموذج، لا كدليل نهائي على الأثر." },
+                { "language": "tr", "text": "Güçlü: değer gerçekçi biçimde modelin keskinleşmesi olarak anlatılıyor, nihai etki kanıtı olarak değil." },
+                { "language": "ru", "text": "Сильно: ценность реалистично описана как уточнение модели, а не как окончательное доказательство эффекта." },
+                { "language": "ckb", "text": "بەهێزە: سوودەکە بە واقیعی وەک تیژکردنەوەی مۆدێل باس دەکرێت، نە وەک سەلماندنی کۆتایی کاریگەری." },
+                { "language": "kmr", "text": "Xurt e: nirx bi rastîparêzî wekî hûrkirina modelê tê vegotin, ne wekî îspata dawî ya bandorê." },
+                { "language": "pl", "text": "Mocne: wartość jest realistycznie opisana jako doprecyzowanie modelu, a nie ostateczny dowód wpływu." },
+                { "language": "ro", "text": "Puternic: valoarea este descrisă realist ca rafinare a modelului, nu ca dovadă finală a efectului." },
+                { "language": "sq", "text": "E fortë: vlera përshkruhet realisht si mprehje e modelit, jo si provë përfundimtare e ndikimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Erkenntnisgewinn liegt darin, dass man danach besser weiß, ob das digitale Schreibseminar funktioniert.",
+              "translations": [
+                { "language": "en", "text": "The insight lies in then knowing better whether the digital writing seminar works." },
+                { "language": "fa", "text": "ارزش شناختی این است که بعد از آن بهتر می‌دانیم آیا سمینار نوشتار دیجیتال کار می‌کند یا نه." },
+                { "language": "ar", "text": "تكمن القيمة المعرفية في أننا بعد ذلك نعرف بشكل أفضل هل تعمل ندوة الكتابة الرقمية أم لا." },
+                { "language": "tr", "text": "Bilgi katkısı, sonrasında dijital yazma seminerinin işe yarayıp yaramadığını daha iyi bilmekte yatar." },
+                { "language": "ru", "text": "Познавательная ценность в том, что после этого лучше понятно, работает ли цифровой семинар по письму." },
+                { "language": "ckb", "text": "بەهای زانیاری ئەوەیە کە دواتر باشتر دەزانرێت ئایا سمیناری نووسینی دیجیتاڵ کار دەکات یان نا." },
+                { "language": "kmr", "text": "Nirxa zanînê ew e ku paşê baştir tê zanîn ka semînara nivîsandina dîjîtal dixebite an na." },
+                { "language": "pl", "text": "Wartość poznawcza polega na tym, że potem lepiej wiadomo, czy cyfrowe seminarium pisarskie działa." },
+                { "language": "ro", "text": "Valoarea de cunoaștere constă în faptul că după aceea se știe mai bine dacă seminarul digital de scriere funcționează." },
+                { "language": "sq", "text": "Vlera e njohjes qëndron në faktin se më pas dihet më mirë nëse seminari digjital i shkrimit funksionon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu stark vereinfacht. Die Antwort klingt nach Wirkungsnachweis, obwohl das Design eher ein Wirkmodell vorbereitet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simplified. The answer sounds like proof of effect, although the design rather prepares a model of effect." },
+                { "language": "fa", "text": "بیش از حد ساده شده است. پاسخ شبیه اثبات اثر به نظر می‌رسد، در حالی که طرح بیشتر یک مدل اثرگذاری را آماده می‌کند." },
+                { "language": "ar", "text": "مبسّط أكثر من اللازم. يبدو الجواب كدليل على الأثر، مع أن التصميم يعد بالأحرى نموذجاً للأثر." },
+                { "language": "tr", "text": "Fazla basitleştirilmiş. Yanıt etki kanıtı gibi geliyor, oysa tasarım daha çok bir etki modeli hazırlar." },
+                { "language": "ru", "text": "Слишком упрощенно. Ответ звучит как доказательство эффекта, хотя дизайн скорее готовит модель воздействия." },
+                { "language": "ckb", "text": "زۆر سادەکراوەتەوە. وەڵامەکە وەک سەلماندنی کاریگەری دەردەکەوێت، لە کاتێکدا دیزاینەکە زیاتر مۆدێلێکی کاریگەری ئامادە دەکات." },
+                { "language": "kmr", "text": "Pir hêsankirî ye. Bersiv wekî îspata bandorê xuya dike, lê sêwiran zêdetir modelekê bandorê amade dike." },
+                { "language": "pl", "text": "Zbyt uproszczone. Odpowiedź brzmi jak dowód wpływu, choć schemat raczej przygotowuje model oddziaływania." },
+                { "language": "ro", "text": "Prea simplificat. Răspunsul sună ca o dovadă a efectului, deși designul pregătește mai degrabă un model al efectului." },
+                { "language": "sq", "text": "Tepër e thjeshtuar. Përgjigjja tingëllon si provë e ndikimit, ndërsa dizajni më tepër përgatit një model ndikimi." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "design-fit",
+          "text": "Ein starkes Design ordnet jede Datenquelle einer Funktion in der Forschungsfrage zu.",
+          "translations": [
+            { "language": "en", "text": "A strong design assigns each data source a function in the research question." },
+            { "language": "fa", "text": "طرح قوی برای هر منبع داده یک کارکرد در پرسش پژوهش تعیین می‌کند." },
+            { "language": "ar", "text": "يمنح التصميم القوي كل مصدر بيانات وظيفة في سؤال البحث." },
+            { "language": "tr", "text": "Güçlü bir tasarım her veri kaynağına araştırma sorusunda bir işlev verir." },
+            { "language": "ru", "text": "Сильный дизайн отводит каждому источнику данных функцию в исследовательском вопросе." },
+            { "language": "ckb", "text": "دیزاینی بەهێز بۆ هەر سەرچاوەیەکی داتا کارکردێک لە پرسی توێژینەوەدا دیاری دەکات." },
+            { "language": "kmr", "text": "Sêwiraneke xurt ji her çavkaniya daneyan re erkek di pirsa lêkolînê de dide." },
+            { "language": "pl", "text": "Mocny schemat przypisuje każdemu źródłu danych funkcję w pytaniu badawczym." },
+            { "language": "ro", "text": "Un design puternic atribuie fiecărei surse de date o funcție în întrebarea de cercetare." },
+            { "language": "sq", "text": "Një dizajn i fortë i cakton çdo burimi të dhënash një funksion në pyetjen kërkimore." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "scope-control",
+          "text": "C2-Designsprache zeigt nicht nur Vielfalt, sondern auch Begrenzung.",
+          "translations": [
+            { "language": "en", "text": "C2 design language shows not only variety, but also limitation." },
+            { "language": "fa", "text": "زبان طراحی در C2 فقط تنوع را نشان نمی‌دهد، بلکه محدودسازی را هم نشان می‌دهد." },
+            { "language": "ar", "text": "لغة التصميم في C2 لا تُظهر التنوع فقط، بل تُظهر التحديد أيضاً." },
+            { "language": "tr", "text": "C2 tasarım dili yalnızca çeşitliliği değil, sınırlamayı da gösterir." },
+            { "language": "ru", "text": "Язык дизайна на C2 показывает не только разнообразие, но и ограничение." },
+            { "language": "ckb", "text": "زمانی دیزاین لە C2 تەنها جۆراوجۆری نیشان نادات، بەڵکو سنووردارکردنیش نیشان دەدات." },
+            { "language": "kmr", "text": "Zimanê sêwiranê yê C2 ne tenê cihêrengiyê, lê sînordarkirinê jî nîşan dide." },
+            { "language": "pl", "text": "Język opisu schematu na C2 pokazuje nie tylko różnorodność, lecz także ograniczenie." },
+            { "language": "ro", "text": "Limbajul de design la C2 arată nu doar varietate, ci și limitare." },
+            { "language": "sq", "text": "Gjuha e dizajnit në C2 tregon jo vetëm shumëllojshmëri, por edhe kufizim." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "limit",
+          "text": "Eine Grenze bleibt überzeugend, wenn sie den Messanspruch präzise korrigiert.",
+          "translations": [
+            { "language": "en", "text": "A limit remains convincing when it precisely corrects the measurement claim." },
+            { "language": "fa", "text": "محدودیت زمانی قانع‌کننده می‌ماند که ادعای سنجش را دقیق اصلاح کند." },
+            { "language": "ar", "text": "يبقى الحد مقنعاً عندما يصحح ادعاء القياس بدقة." },
+            { "language": "tr", "text": "Bir sınır, ölçüm iddiasını kesin biçimde düzelttiğinde ikna edici kalır." },
+            { "language": "ru", "text": "Ограничение остается убедительным, когда точно корректирует измерительное притязание." },
+            { "language": "ckb", "text": "سنوورێک قانعکەر دەمێنێتەوە کاتێک بانگەشەی پێوانەکردن بە وردی ڕاست دەکاتەوە." },
+            { "language": "kmr", "text": "Sînorek wisa pêbawer dimîne ku angaşta pîvandinê bi hûrgilî rast dike." },
+            { "language": "pl", "text": "Ograniczenie pozostaje przekonujące, gdy precyzyjnie koryguje roszczenie pomiarowe." },
+            { "language": "ro", "text": "O limită rămâne convingătoare când corectează precis pretenția de măsurare." },
+            { "language": "sq", "text": "Një kufi mbetet bindës kur korrigjon saktë pretendimin e matjes." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "expected-insight",
+          "text": "Der Erkenntnisgewinn muss zur Stärke des Designs passen, nicht größer klingen.",
+          "translations": [
+            { "language": "en", "text": "The insight value must match the strength of the design, not sound bigger." },
+            { "language": "fa", "text": "ارزش شناختی باید با قدرت طرح تناسب داشته باشد، نه بزرگ‌تر از آن به نظر برسد." },
+            { "language": "ar", "text": "يجب أن تناسب القيمة المعرفية قوة التصميم، لا أن تبدو أكبر منه." },
+            { "language": "tr", "text": "Bilgi değeri tasarımın gücüne uymalı, ondan daha büyük görünmemelidir." },
+            { "language": "ru", "text": "Познавательная ценность должна соответствовать силе дизайна, а не звучать больше." },
+            { "language": "ckb", "text": "بەهای زانیاری دەبێت لەگەڵ هێزی دیزاینەکە بگونجێت، نە گەورەتر دەربکەوێت." },
+            { "language": "kmr", "text": "Nirxa zanînê divê li hêza sêwiranê bê, ne ku mezintir xuya bike." },
+            { "language": "pl", "text": "Wartość poznawcza musi odpowiadać sile schematu, a nie brzmieć na większą." },
+            { "language": "ro", "text": "Valoarea de cunoaștere trebuie să corespundă puterii designului, nu să pară mai mare." },
+            { "language": "sq", "text": "Vlera e njohjes duhet të përputhet me forcën e dizajnit, jo të tingëllojë më e madhe." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "research-design-colloquium-writing-seminar",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal research colloquium where a presenter explains a focused mixed-methods design for a digital writing seminar.",
+          "altText": "Eine kleine Gruppe Erwachsener diskutiert in einem Seminarraum ein Forschungsdesign mit Befragungen, Lernjournalen und Interviews, mit Laptop und Notizen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A small group of adults discusses a research design with surveys, learning journals, and interviews in a seminar room, with a laptop and notes." },
+            { "language": "fa", "text": "گروه کوچکی از بزرگسالان در اتاق سمینار درباره طرح پژوهشی با پرسشنامه، ژورنال یادگیری و مصاحبه گفت‌وگو می‌کنند، با لپ‌تاپ و یادداشت." },
+            { "language": "ar", "text": "مجموعة صغيرة من البالغين تناقش في غرفة ندوة تصميماً بحثياً يتضمن استبيانات ويوميات تعلم ومقابلات، مع حاسوب محمول وملاحظات." },
+            { "language": "tr", "text": "Küçük bir yetişkin grubu seminer odasında anketler, öğrenme günlükleri ve görüşmeler içeren bir araştırma tasarımını dizüstü bilgisayar ve notlarla tartışıyor." },
+            { "language": "ru", "text": "Небольшая группа взрослых в семинарской комнате обсуждает дизайн исследования с опросами, учебными дневниками и интервью, с ноутбуком и заметками." },
+            { "language": "ckb", "text": "گرووپێکی بچووکی گەورەساڵان لە ژووری سمیناردا دەربارەی دیزاینی توێژینەوەیەک بە ڕاپرسی، ڕۆژنامەی فێربوون و چاوپێکەوتن گفتوگۆ دەکەن، لەگەڵ لاپتۆپ و تێبینی." },
+            { "language": "kmr", "text": "Komeke biçûk a mezinan di odeya semînarê de sêwiraneke lêkolînê bi anket, rojnameyên fêrbûnê û hevpeyvînan, bi laptop û notan gotûbêj dike." },
+            { "language": "pl", "text": "Mała grupa dorosłych omawia w sali seminaryjnej schemat badania z ankietami, dziennikami uczenia się i wywiadami, z laptopem i notatkami." },
+            { "language": "ro", "text": "Un grup mic de adulți discută într-o sală de seminar un design de cercetare cu chestionare, jurnale de învățare și interviuri, cu laptop și notițe." },
+            { "language": "sq", "text": "Një grup i vogël të rriturish diskuton në një dhomë seminari një dizajn kërkimor me anketa, ditarë të të nxënit dhe intervista, me laptop dhe shënime." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult graduate students and lecturer in a German seminar room, presenter explaining a focused mixed-methods research design for a digital writing seminar, laptop and notebooks on table, whiteboard with abstract timelines and shapes but no readable text, no logos, no private data, accessible composition, calm formal academic mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,865 @@
+{
+  "packageId": "roleplays-c2-core-14-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 14 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 14",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-politische-position-differenziert-verteidigen",
+      "linkedDialogueSlug": null,
+      "title": "Eine politische Position differenziert verteidigen",
+      "titleTranslations": [
+        { "language": "en", "text": "Defending a political position in a nuanced way" },
+        { "language": "fa", "text": "دفاع دقیق و چندوجهی از یک موضع سیاسی" },
+        { "language": "ar", "text": "الدفاع عن موقف سياسي بصورة متمايزة" },
+        { "language": "tr", "text": "Siyasi bir görüşü nüanslı biçimde savunmak" },
+        { "language": "ru", "text": "Аргументированно и нюансированно защищать политическую позицию" },
+        { "language": "ckb", "text": "بەرگرییەکی ورد و جیاواز لە هەڵوێستێکی سیاسی" },
+        { "language": "kmr", "text": "Parastina helwesteke siyasî bi awayekî hûrgilî" },
+        { "language": "pl", "text": "Niuansowe bronienie stanowiska politycznego" },
+        { "language": "ro", "text": "Apărarea nuanțată a unei poziții politice" },
+        { "language": "sq", "text": "Mbrojtja e nuancuar e një qëndrimi politik" }
+      ],
+      "description": "In einer öffentlichen Diskussionsrunde geht es um die Frage, ob städtische Kantinen standardmäßig ein pflanzenbetontes Essen anbieten sollen. Sie vertreten die Position, dass eine solche Umstellung sinnvoll sein kann, aber nur mit Wahlmöglichkeiten, sozialer Absicherung, transparenten Kriterien und einer ehrlichen Auswertung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a public discussion, the question is whether municipal canteens should offer a mostly plant-based meal as the default. You represent the position that such a change can make sense, but only with choice, social safeguards, transparent criteria, and honest evaluation." },
+        { "language": "fa", "text": "در یک گفت‌وگوی عمومی، موضوع این است که آیا غذاخوری‌های شهری باید به‌طور پیش‌فرض غذای عمدتاً گیاهی ارائه کنند یا نه. شما از این موضع دفاع می‌کنید که چنین تغییری می‌تواند منطقی باشد، اما فقط همراه با حق انتخاب، حمایت اجتماعی، معیارهای شفاف و ارزیابی صادقانه." },
+        { "language": "ar", "text": "في حلقة نقاش عامة، يدور السؤال حول ما إذا كان ينبغي للمقاصف البلدية أن تقدم وجبة يغلب عليها الطابع النباتي بوصفها الخيار الافتراضي. تمثلون موقفاً يرى أن هذا التغيير قد يكون منطقياً، ولكن فقط مع إمكان الاختيار، وضمانات اجتماعية، ومعايير شفافة، وتقييم صادق." },
+        { "language": "tr", "text": "Bir kamusal tartışma turunda belediye yemekhanelerinin varsayılan olarak ağırlıklı bitkisel bir yemek sunup sunmaması ele alınır. Böyle bir değişikliğin anlamlı olabileceğini, ancak yalnızca seçim hakkı, sosyal güvence, şeffaf kriterler ve dürüst değerlendirme ile savunuyorsunuz." },
+        { "language": "ru", "text": "На публичной дискуссии обсуждается, должны ли городские столовые по умолчанию предлагать преимущественно растительное блюдо. Вы защищаете позицию, что такая перестройка может быть разумной, но только при наличии выбора, социальной защиты, прозрачных критериев и честной оценки." },
+        { "language": "ckb", "text": "لە بازنەیەکی گفتوگۆی گشتی، باس لەوە دەکرێت کە ئایا خواردنگە شارەوانییەکان دەبێت بە شێوەی بنەڕەتی خواردنێکی زیاتر ڕووەکی پێشکەش بکەن یان نا. تۆ ئەو هەڵوێستە دەنوێنیت کە ئەم گۆڕانکارییە دەتوانێت مانادار بێت، بەڵام تەنها لەگەڵ هەڵبژاردن، پاراستنی کۆمەڵایەتی، پێوەری شفاف و هەڵسەنگاندنی ڕاستگۆیانە." },
+        { "language": "kmr", "text": "Di dorhêla gotûbêjeke giştî de tê gotin ka xwaringehên şaredariyê divê wekî bijareya bingehîn xwarinek piraniya wê nebatan be pêşkêş bikin an na. Hûn wê helwestê diparêzin ku ev guhertin dikare watedar be, lê tenê bi mafê hilbijartinê, ewlekariya civakî, pîvanên zelal û nirxandineke rast." },
+        { "language": "pl", "text": "W publicznej dyskusji chodzi o pytanie, czy miejskie stołówki powinny domyślnie oferować posiłek w większości roślinny. Reprezentuje Pan/Pani stanowisko, że taka zmiana może mieć sens, ale tylko z możliwością wyboru, zabezpieczeniem społecznym, przejrzystymi kryteriami i uczciwą oceną." },
+        { "language": "ro", "text": "Într-o discuție publică se pune întrebarea dacă cantinele municipale ar trebui să ofere implicit o masă predominant vegetală. Reprezentați poziția că o astfel de schimbare poate avea sens, dar numai cu posibilitate de alegere, garanții sociale, criterii transparente și o evaluare sinceră." },
+        { "language": "sq", "text": "Në një diskutim publik shtrohet pyetja nëse mensat e qytetit duhet të ofrojnë si zgjedhje të parazgjedhur një vakt kryesisht bimor. Ju mbroni qëndrimin se një ndryshim i tillë mund të ketë kuptim, por vetëm me mundësi zgjedhjeje, mbrojtje sociale, kritere transparente dhe vlerësim të ndershëm." }
+      ],
+      "learnerGoal": "Eine gesellschaftspolitische Position auf C2-Niveau vertreten: den eigenen Standpunkt klar machen, berechtigte Gegenargumente anerkennen, Schlagwörter vermeiden, Bedingungen formulieren, Belege vorsichtig einordnen und am Ende eine tragfähige, begrenzte Forderung verteidigen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Represent a social-political position at C2 level: make your own position clear, acknowledge valid counterarguments, avoid slogans, formulate conditions, handle evidence cautiously, and finally defend a viable, limited demand." },
+        { "language": "fa", "text": "یک موضع اجتماعی-سیاسی را در سطح C2 بیان کنید: موضع خود را روشن کنید، استدلال‌های مخالفِ معتبر را بپذیرید، از شعار دوری کنید، شرط‌ها را فرمول‌بندی کنید، شواهد را با احتیاط توضیح دهید و در پایان از یک مطالبه محدود و قابل اجرا دفاع کنید." },
+        { "language": "ar", "text": "اعرضوا موقفاً اجتماعياً سياسياً على مستوى C2: وضحوا موقفكم، واعترفوا بالحجج المضادة الوجيهة، وتجنبوا الشعارات، وصوغوا الشروط، وتعاملوا مع الأدلة بحذر، ثم دافعوا في النهاية عن مطلب قابل للتنفيذ ومحدود." },
+        { "language": "tr", "text": "C2 düzeyinde toplumsal-siyasal bir pozisyon temsil edin: kendi görüşünüzü açık kılın, geçerli karşı argümanları kabul edin, sloganlardan kaçının, koşullar formüle edin, kanıtları dikkatle konumlandırın ve sonunda uygulanabilir, sınırlı bir talebi savunun." },
+        { "language": "ru", "text": "Представить общественно-политическую позицию на уровне C2: ясно обозначить свою точку зрения, признать обоснованные контраргументы, избегать лозунгов, сформулировать условия, осторожно оценить данные и в конце защитить жизнеспособное, ограниченное требование." },
+        { "language": "ckb", "text": "هەڵوێستێکی کۆمەڵایەتی-سیاسی لە ئاستی C2 بنوێنە: هەڵوێستی خۆت ڕوون بکە، بەڵگەی بەرامبەری دروست بناسە، لە دروشم دوور بکەوە، مەرجەکان دابڕێژە، بەڵگەکان بە وریایی بخەرە شوێنی خۆیان و لە کۆتاییدا داوایەکی سنووردار و جێبەجێکراو بپارێزە." },
+        { "language": "kmr", "text": "Helwesteke civakî-siyasî di asta C2 de nîşan bidin: helwesta xwe zelal bikin, argumanên dijber ên rewa qebûl bikin, ji slogan dûr bisekinin, şertan ava bikin, delîlan bi baldarî binirxînin û di dawiyê de daxwazeke pêkan û sînordar biparêzin." },
+        { "language": "pl", "text": "Przedstawić stanowisko społeczno-polityczne na poziomie C2: jasno pokazać własny punkt widzenia, uznać uzasadnione kontrargumenty, unikać sloganów, sformułować warunki, ostrożnie odnieść się do dowodów i na końcu bronić wykonalnego, ograniczonego postulatu." },
+        { "language": "ro", "text": "Reprezentați o poziție social-politică la nivel C2: clarificați-vă punctul de vedere, recunoașteți contraargumentele justificate, evitați sloganurile, formulați condiții, încadrați prudent dovezile și apărați la final o cerere viabilă și limitată." },
+        { "language": "sq", "text": "Përfaqësoni një qëndrim shoqëror-politik në nivelin C2: bëni të qartë pozicionin tuaj, pranoni kundërargumentet e vlefshme, shmangni sloganet, formuloni kushte, vendosni provat me kujdes dhe në fund mbroni një kërkesë të realizueshme e të kufizuar." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-discussion",
+      "topics": ["social-and-relationships", "education-and-training"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "agree-disagree",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 14,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsteilnahme",
+          "translations": [
+            { "language": "en", "text": "Discussion participant" },
+            { "language": "fa", "text": "شرکت‌کننده در بحث" },
+            { "language": "ar", "text": "مشارك في النقاش" },
+            { "language": "tr", "text": "Tartışma katılımcısı" },
+            { "language": "ru", "text": "Участник дискуссии" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê" },
+            { "language": "pl", "text": "Uczestnik dyskusji" },
+            { "language": "ro", "text": "Participant la discuție" },
+            { "language": "sq", "text": "Pjesëmarrës në diskutim" }
+          ]
+        },
+        {
+          "roleKey": "moderation",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مجری" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderator" }
+          ]
+        },
+        {
+          "roleKey": "skeptical-citizen",
+          "displayName": "Skeptische Bürgerin",
+          "translations": [
+            { "language": "en", "text": "Skeptical citizen" },
+            { "language": "fa", "text": "شهروند منتقد" },
+            { "language": "ar", "text": "مواطنة متشككة" },
+            { "language": "tr", "text": "Şüpheci yurttaş" },
+            { "language": "ru", "text": "Скептически настроенная жительница" },
+            { "language": "ckb", "text": "هاووڵاتیی گومانکار" },
+            { "language": "kmr", "text": "Welatiya gumanbar" },
+            { "language": "pl", "text": "Sceptyczna mieszkanka" },
+            { "language": "ro", "text": "Cetățeană sceptică" },
+            { "language": "sq", "text": "Qytetare skeptike" }
+          ]
+        },
+        {
+          "roleKey": "strong-supporter",
+          "displayName": "Entschiedene Befürwortung",
+          "translations": [
+            { "language": "en", "text": "Strong supporter" },
+            { "language": "fa", "text": "حامی قاطع" },
+            { "language": "ar", "text": "مؤيد حاسم" },
+            { "language": "tr", "text": "Kararlı destekçi" },
+            { "language": "ru", "text": "Решительный сторонник" },
+            { "language": "ckb", "text": "پاڵپشتی بڕیارمەند" },
+            { "language": "kmr", "text": "Piştgirê biryardar" },
+            { "language": "pl", "text": "Zdecydowany zwolennik" },
+            { "language": "ro", "text": "Susținător ferm" },
+            { "language": "sq", "text": "Mbështetës i vendosur" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderation",
+          "baseText": "Wir diskutieren heute, ob städtische Kantinen standardmäßig ein pflanzenbetontes Essen anbieten sollen. Bitte vertreten Sie Ihre Position, ohne die Gegenseite moralisch abzuwerten.",
+          "translations": [
+            { "language": "en", "text": "Today we are discussing whether municipal canteens should offer a mostly plant-based meal as the default. Please present your position without morally devaluing the other side." },
+            { "language": "fa", "text": "امروز بحث می‌کنیم که آیا غذاخوری‌های شهری باید به‌طور پیش‌فرض غذای عمدتاً گیاهی ارائه کنند یا نه. لطفاً موضع خود را بیان کنید، بدون اینکه طرف مقابل را از نظر اخلاقی بی‌ارزش کنید." },
+            { "language": "ar", "text": "نناقش اليوم ما إذا كان ينبغي للمقاصف البلدية أن تقدم وجبة يغلب عليها الطابع النباتي بوصفها الخيار الافتراضي. يرجى عرض موقفكم من دون التقليل الأخلاقي من الطرف الآخر." },
+            { "language": "tr", "text": "Bugün belediye yemekhanelerinin varsayılan olarak ağırlıklı bitkisel bir yemek sunup sunmaması gerektiğini tartışıyoruz. Lütfen karşı tarafı ahlaken değersizleştirmeden pozisyonunuzu ortaya koyun." },
+            { "language": "ru", "text": "Сегодня мы обсуждаем, должны ли городские столовые по умолчанию предлагать преимущественно растительное блюдо. Пожалуйста, изложите свою позицию, не обесценивая другую сторону морально." },
+            { "language": "ckb", "text": "ئەمڕۆ باس دەکەین کە ئایا خواردنگە شارەوانییەکان دەبێت بە شێوەی بنەڕەتی خواردنێکی زیاتر ڕووەکی پێشکەش بکەن یان نا. تکایە هەڵوێستی خۆت بڵێ، بێ ئەوەی لایەنی بەرامبەر لە ڕووی ئەخلاقییەوە کەم نرخ بکەیت." },
+            { "language": "kmr", "text": "Îro em gotûbêj dikin ka xwaringehên şaredariyê divê wekî bijareya bingehîn xwarinek piraniya wê nebatan be pêşkêş bikin an na. Ji kerema xwe helwesta xwe pêşkêş bikin bêyî ku aliyê din ji aliyê exlaqî ve kêm nirx bikin." },
+            { "language": "pl", "text": "Dziś rozmawiamy o tym, czy miejskie stołówki powinny domyślnie oferować posiłek w większości roślinny. Proszę przedstawić swoje stanowisko bez moralnego deprecjonowania strony przeciwnej." },
+            { "language": "ro", "text": "Astăzi discutăm dacă cantinele municipale ar trebui să ofere implicit o masă predominant vegetală. Vă rog să vă prezentați poziția fără a devaloriza moral cealaltă parte." },
+            { "language": "sq", "text": "Sot diskutojmë nëse mensat e qytetit duhet të ofrojnë si zgjedhje të parazgjedhur një vakt kryesisht bimor. Ju lutem paraqiteni pozicionin tuaj pa e zhvlerësuar moralisht palën tjetër." }
+          ],
+          "function": "frame-topic",
+          "toneNote": "Neutral and formal."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich befürworte die Richtung, aber nicht als moralisches Signal. Aus meiner Sicht spricht einiges für ein pflanzenbetontes Standardangebot, wenn Wahlmöglichkeiten, Preisstabilität und kulturelle beziehungsweise gesundheitliche Bedürfnisse von Anfang an mitgedacht werden.",
+          "translations": [
+            { "language": "en", "text": "I support the direction, but not as a moral signal. In my view, there are good arguments for a mostly plant-based default offer if choice, stable prices, and cultural or health-related needs are considered from the start." },
+            { "language": "fa", "text": "من از این جهت‌گیری حمایت می‌کنم، اما نه به‌عنوان یک پیام اخلاقی. از نظر من برای یک پیشنهاد پیش‌فرض عمدتاً گیاهی دلایل خوبی وجود دارد، اگر از ابتدا حق انتخاب، ثبات قیمت و نیازهای فرهنگی یا سلامتی در نظر گرفته شود." },
+            { "language": "ar", "text": "أنا أؤيد هذا الاتجاه، لكن ليس بوصفه إشارة أخلاقية. من وجهة نظري توجد حجج وجيهة لصالح خيار افتراضي يغلب عليه الطابع النباتي إذا أُخذت في الحسبان منذ البداية إمكانات الاختيار، وثبات الأسعار، والاحتياجات الثقافية أو الصحية." },
+            { "language": "tr", "text": "Bu yönü destekliyorum, ama ahlaki bir işaret olarak değil. Bana göre seçim imkânı, fiyat istikrarı ve kültürel ya da sağlıkla ilgili ihtiyaçlar baştan dikkate alınırsa, ağırlıklı bitkisel bir varsayılan teklif için güçlü gerekçeler var." },
+            { "language": "ru", "text": "Я поддерживаю это направление, но не как моральный сигнал. На мой взгляд, есть веские аргументы в пользу преимущественно растительного варианта по умолчанию, если с самого начала учитывать выбор, стабильность цены, а также культурные и медицинские потребности." },
+            { "language": "ckb", "text": "من پشتگیری ئەم ئاراستەیە دەکەم، بەڵام نە وەک ئاماژەیەکی ئەخلاقی. بە بۆچوونی من چەند هۆکارێکی باش هەیە بۆ پێشکەشکردنی خواردنێکی بنەڕەتی زیاتر ڕووەکی، ئەگەر هەڵبژاردن، جێگیری نرخ و پێداویستی کلتووری یان تەندروستی لە سەرەتاوە لەبەرچاو بگیرێن." },
+            { "language": "kmr", "text": "Ez vê alîkariyê piştgirî dikim, lê ne wekî nîşaneke exlaqî. Li gorî min, gelek sedemên baş hene ji bo pêşniyareke bingehîn a piraniya wê nebatî, heke mafê hilbijartinê, stabîlbûna bihayê û pêdiviyên çandî an tenduristî ji destpêkê ve bêne hesibandin." },
+            { "language": "pl", "text": "Popieram ten kierunek, ale nie jako sygnał moralny. Moim zdaniem za domyślną ofertą w większości roślinną przemawia sporo argumentów, jeśli od początku uwzględni się możliwość wyboru, stabilność cen oraz potrzeby kulturowe lub zdrowotne." },
+            { "language": "ro", "text": "Susțin această direcție, dar nu ca semnal moral. Din punctul meu de vedere, există argumente serioase pentru o ofertă implicită predominant vegetală dacă posibilitatea de alegere, stabilitatea prețurilor și nevoile culturale sau medicale sunt luate în calcul de la început." },
+            { "language": "sq", "text": "E mbështes këtë drejtim, por jo si sinjal moral. Sipas meje, ka disa arsye të mira për një ofertë të parazgjedhur kryesisht bimore, nëse mundësia e zgjedhjes, qëndrueshmëria e çmimit dhe nevojat kulturore apo shëndetësore merren parasysh që në fillim." }
+          ],
+          "function": "state-nuanced-position",
+          "toneNote": "Clear, limited, and non-sloganizing."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "skeptical-citizen",
+          "baseText": "Für mich klingt das nach Bevormundung. Familien können selbst entscheiden, was sie essen. Die Stadt sollte sich nicht in Alltagsentscheidungen einmischen.",
+          "translations": [
+            { "language": "en", "text": "To me that sounds like paternalism. Families can decide for themselves what they eat. The city should not interfere in everyday decisions." },
+            { "language": "fa", "text": "برای من این شبیه قیم‌مآبی است. خانواده‌ها می‌توانند خودشان تصمیم بگیرند چه بخورند. شهر نباید در تصمیم‌های روزمره دخالت کند." },
+            { "language": "ar", "text": "بالنسبة لي يبدو هذا كنوع من الوصاية. يمكن للعائلات أن تقرر بنفسها ماذا تأكل. لا ينبغي للمدينة أن تتدخل في قرارات الحياة اليومية." },
+            { "language": "tr", "text": "Bana bu vesayet gibi geliyor. Aileler ne yiyeceklerine kendileri karar verebilir. Şehir gündelik kararlara karışmamalı." },
+            { "language": "ru", "text": "Для меня это звучит как опека сверху. Семьи могут сами решать, что они едят. Город не должен вмешиваться в повседневные решения." },
+            { "language": "ckb", "text": "بۆ من ئەمە وەک سەرپەرشتییەکی زۆر دەنگ دەدات. خێزانەکان دەتوانن خۆیان بڕیار بدەن چی بخۆن. شار نابێت دەست لە بڕیارە ڕۆژانەکان وەربدات." },
+            { "language": "kmr", "text": "Ji bo min ev wekî serperiştiya zêde xuya dike. Malbat dikarin bixwe biryar bidin ka çi dixwin. Şar divê dest li biryarên rojane neke." },
+            { "language": "pl", "text": "Dla mnie brzmi to jak protekcjonalne narzucanie. Rodziny mogą same decydować, co jedzą. Miasto nie powinno ingerować w codzienne decyzje." },
+            { "language": "ro", "text": "Pentru mine sună ca o tutelă impusă. Familiile pot decide singure ce mănâncă. Orașul nu ar trebui să se amestece în deciziile de zi cu zi." },
+            { "language": "sq", "text": "Për mua kjo tingëllon si patronizim. Familjet mund të vendosin vetë çfarë hanë. Qyteti nuk duhet të ndërhyjë në vendimet e përditshme." }
+          ],
+          "function": "raise-objection",
+          "toneNote": "Firm but acceptable."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Der Einwand ist berechtigt, wenn aus einem Standardangebot faktisch ein Zwang wird. Deshalb würde ich zwischen Verbot und Voreinstellung unterscheiden: Niemandem wird eine Ernährungsweise vorgeschrieben, aber die Stadt kann steuern, was sie in ihren Einrichtungen zuerst und am günstigsten anbietet.",
+          "translations": [
+            { "language": "en", "text": "The objection is valid if a default offer effectively becomes compulsion. That is why I would distinguish between a ban and a default setting: no one is prescribed a diet, but the city can guide what it offers first and most affordably in its institutions." },
+            { "language": "fa", "text": "این ایراد زمانی موجه است که یک پیشنهاد پیش‌فرض در عمل به اجبار تبدیل شود. به همین دلیل من میان ممنوعیت و تنظیم پیش‌فرض فرق می‌گذارم: برای هیچ‌کس شیوه تغذیه تجویز نمی‌شود، اما شهر می‌تواند هدایت کند که در مراکز خود چه چیزی را ابتدا و با مناسب‌ترین قیمت ارائه می‌کند." },
+            { "language": "ar", "text": "يكون الاعتراض وجيهاً إذا تحول الخيار الافتراضي عملياً إلى إلزام. لذلك أميز بين الحظر والإعداد الافتراضي: لا تُفرض على أحد طريقة غذاء معينة، لكن يمكن للمدينة أن توجه ما تقدمه أولاً وبأقل كلفة في مؤسساتها." },
+            { "language": "tr", "text": "Varsayılan teklif fiilen zorlamaya dönüşürse bu itiraz haklıdır. Bu yüzden yasak ile varsayılan ayarı ayırırdım: kimseye bir beslenme biçimi dayatılmıyor, ama şehir kendi kurumlarında neyi önce ve en uygun fiyatla sunduğunu yönlendirebilir." },
+            { "language": "ru", "text": "Это возражение обосновано, если вариант по умолчанию фактически становится принуждением. Поэтому я бы различал запрет и настройку по умолчанию: никому не предписывают тип питания, но город может регулировать, что в своих учреждениях он предлагает первым и по самой доступной цене." },
+            { "language": "ckb", "text": "ئەم ناڕەزایەتییە جێی قبووڵە ئەگەر پێشکەشی بنەڕەتی لە کرداردا ببێتە ناچارکردن. بۆیە من جیاوازی دەکەم لە نێوان قەدەغە و ڕێکخستنی بنەڕەتی: هیچ شێوازی خواردن بەسەر کەسدا ناسەپێنرێت، بەڵام شار دەتوانێت ئاراستە بکات کە لە دامەزراوەکانی چی پێشتر و بە نرخی گونجاوتر پێشکەش دەکات." },
+            { "language": "kmr", "text": "Ev rexne rewa ye heke pêşniyara bingehîn di pratîkê de bibe zor. Ji ber vê yekê ez cihê qedexe û mîhengkirina bingehîn ji hev veqetînim: tu şêwazê xwarinê li kesî nayê ferzkirin, lê şar dikare rê bide ka di saziyên xwe de çi yekem û bi bihayê herî guncan pêşkêş dike." },
+            { "language": "pl", "text": "Ten zarzut jest uzasadniony, jeśli domyślna oferta faktycznie staje się przymusem. Dlatego rozróżniłbym zakaz i ustawienie domyślne: nikomu nie narzuca się sposobu odżywiania, ale miasto może kształtować to, co w swoich instytucjach oferuje najpierw i najtaniej." },
+            { "language": "ro", "text": "Obiecția este justificată dacă oferta implicită devine de fapt constrângere. De aceea aș distinge între interdicție și setare implicită: nimănui nu i se prescrie un mod de alimentație, dar orașul poate orienta ce oferă mai întâi și la cel mai accesibil preț în instituțiile sale." },
+            { "language": "sq", "text": "Kundërshtimi është i drejtë nëse një ofertë e parazgjedhur kthehet në fakt në detyrim. Prandaj do të dalloja ndalimin nga zgjedhja e parazgjedhur: askujt nuk i përshkruhet një mënyrë ushqimi, por qyteti mund të orientojë se çfarë ofron i pari dhe me çmimin më të leverdishëm në institucionet e veta." }
+          ],
+          "function": "concede-and-differentiate",
+          "toneNote": "Acknowledges the objection before defending the distinction."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "strong-supporter",
+          "baseText": "Mir ist das zu vorsichtig. Wenn wir ständig Ausnahmen einbauen, bleibt am Ende alles beim Alten. Man muss doch irgendwann klar sagen, was richtig ist.",
+          "translations": [
+            { "language": "en", "text": "That is too cautious for me. If we constantly build in exceptions, everything stays the same in the end. At some point you have to clearly say what is right." },
+            { "language": "fa", "text": "برای من این خیلی محتاطانه است. اگر دائماً استثنا اضافه کنیم، در پایان همه چیز همان قبلی می‌ماند. بالاخره باید جایی روشن گفت چه چیزی درست است." },
+            { "language": "ar", "text": "هذا حذر أكثر من اللازم بالنسبة لي. إذا أضفنا استثناءات باستمرار، فسيبقى كل شيء في النهاية كما كان. في مرحلة ما يجب أن نقول بوضوح ما هو الصحيح." },
+            { "language": "tr", "text": "Bu bana fazla temkinli geliyor. Sürekli istisnalar koyarsak sonunda her şey eskisi gibi kalır. Bir noktada neyin doğru olduğunu açıkça söylemek gerekir." },
+            { "language": "ru", "text": "Для меня это слишком осторожно. Если мы постоянно добавляем исключения, в итоге всё останется по-старому. В какой-то момент нужно ясно сказать, что правильно." },
+            { "language": "ckb", "text": "بۆ من ئەمە زۆر وریایانەیە. ئەگەر بەردەوام دەرچوون زیاد بکەین، لە کۆتاییدا هەموو شتێک وەک پێشوو دەمێنێتەوە. لە شوێنێکدا دەبێت بە ڕوونی بگوترێت چی دروستە." },
+            { "language": "kmr", "text": "Ji bo min ev pir hişyar e. Heke em her tim îstîsna zêde bikin, di dawiyê de her tişt wek berê dimîne. Di demekê de divê mirov zelal bêje ka çi rast e." },
+            { "language": "pl", "text": "To dla mnie zbyt ostrożne. Jeśli ciągle wbudowujemy wyjątki, na końcu wszystko zostaje po staremu. W pewnym momencie trzeba jasno powiedzieć, co jest właściwe." },
+            { "language": "ro", "text": "Pentru mine este prea prudent. Dacă introducem mereu excepții, până la urmă totul rămâne ca înainte. La un moment dat trebuie spus clar ce este corect." },
+            { "language": "sq", "text": "Për mua kjo është tepër e kujdesshme. Nëse vendosim vazhdimisht përjashtime, në fund gjithçka mbetet si më parë. Në një moment duhet thënë qartë çfarë është e drejtë." }
+          ],
+          "function": "challenge-from-supporter",
+          "toneNote": "Pushes for stronger action."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ein klares Ziel ist wichtig, aber es ersetzt keine tragfähige Umsetzung. Wenn eine Maßnahme Akzeptanz verlieren soll, reicht Symbolik; wenn sie wirken soll, braucht sie erreichbare Kriterien: Anteil pflanzlicher Gerichte, Preisgrenze, Beschwerdeweg und eine Auswertung nach sechs Monaten.",
+          "translations": [
+            { "language": "en", "text": "A clear goal is important, but it does not replace workable implementation. If a measure is meant to lose acceptance, symbolism is enough; if it is meant to work, it needs achievable criteria: share of plant-based dishes, price limit, complaint channel, and evaluation after six months." },
+            { "language": "fa", "text": "هدف روشن مهم است، اما جای اجرای قابل دوام را نمی‌گیرد. اگر قرار باشد یک اقدام پذیرش خود را از دست بدهد، نمادسازی کافی است؛ اما اگر قرار است اثر داشته باشد، به معیارهای قابل دستیابی نیاز دارد: سهم غذاهای گیاهی، سقف قیمت، مسیر ثبت شکایت و ارزیابی پس از شش ماه." },
+            { "language": "ar", "text": "الهدف الواضح مهم، لكنه لا يحل محل التنفيذ القابل للاستمرار. إذا كان الهدف أن تفقد التدبير قبولها، فالرمزية تكفي؛ أما إذا كان الهدف أن تنجح، فهي تحتاج إلى معايير قابلة للتحقيق: نسبة الأطباق النباتية، وحد السعر، ومسار الشكوى، وتقييم بعد ستة أشهر." },
+            { "language": "tr", "text": "Açık bir hedef önemlidir, ama uygulanabilirliğin yerini tutmaz. Bir önlem kabulünü kaybetsin isteniyorsa sembolizm yeterlidir; işe yaraması isteniyorsa ulaşılabilir kriterlere ihtiyaç duyar: bitkisel yemek oranı, fiyat sınırı, şikâyet yolu ve altı ay sonra değerlendirme." },
+            { "language": "ru", "text": "Ясная цель важна, но она не заменяет жизнеспособную реализацию. Если мера должна потерять поддержку, достаточно символики; если она должна работать, ей нужны достижимые критерии: доля растительных блюд, ценовой предел, путь для жалоб и оценка через шесть месяцев." },
+            { "language": "ckb", "text": "ئامانجی ڕوون گرنگە، بەڵام جێگەی جێبەجێکردنی بەردەوام ناگرێتەوە. ئەگەر مەبەست ئەوە بێت کە ڕێکارەکە پشتیوانی لەدەست بدات، نیشانەسازی بەسە؛ ئەگەر مەبەست کاریگەری بێت، پێویستی بە پێوەری گەیشتنە: ڕێژەی خواردنە ڕووەکییەکان، سنووری نرخ، ڕێگای سکاڵا و هەڵسەنگاندن دوای شەش مانگ." },
+            { "language": "kmr", "text": "Armanceke zelal girîng e, lê cihê pêkanîna berdewam nagire. Heke pîvanek divê qebûlkirinê winda bike, sembolîzm têr e; heke divê bandor bike, pêdivî bi pîvanên gihîştî heye: rêjeya xwarinên nebatî, sînorê bihayê, rêya gilîkirinê û nirxandin piştî şeş mehan." },
+            { "language": "pl", "text": "Jasny cel jest ważny, ale nie zastępuje wykonalnej realizacji. Jeśli środek ma stracić akceptację, wystarczy symbolika; jeśli ma działać, potrzebuje osiągalnych kryteriów: udziału dań roślinnych, limitu ceny, drogi skargi i oceny po sześciu miesiącach." },
+            { "language": "ro", "text": "Un obiectiv clar este important, dar nu înlocuiește o implementare viabilă. Dacă o măsură trebuie să piardă acceptarea, simbolismul este suficient; dacă trebuie să funcționeze, are nevoie de criterii realizabile: ponderea preparatelor vegetale, limită de preț, cale de reclamație și evaluare după șase luni." },
+            { "language": "sq", "text": "Një qëllim i qartë është i rëndësishëm, por nuk zëvendëson zbatimin e qëndrueshëm. Nëse një masë duhet ta humbasë pranimin, mjafton simbolika; nëse duhet të funksionojë, i duhen kritere të arritshme: përqindja e pjatave bimore, kufiri i çmimit, rruga e ankesës dhe vlerësimi pas gjashtë muajsh." }
+          ],
+          "function": "defend-limited-demand",
+          "toneNote": "Uses controlled contrast without attacking the supporter."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderation",
+          "baseText": "Sie argumentieren mit Wirkung. Können Sie dafür Belege nennen, ohne so zu tun, als sei jede Zahl schon eindeutig?",
+          "translations": [
+            { "language": "en", "text": "You are arguing in terms of impact. Can you name evidence for that without pretending that every number is already unambiguous?" },
+            { "language": "fa", "text": "شما با محور اثرگذاری استدلال می‌کنید. آیا می‌توانید برای آن شواهدی نام ببرید، بدون اینکه وانمود کنید هر عددی از قبل کاملاً روشن است؟" },
+            { "language": "ar", "text": "أنتم تجادلون من زاوية الأثر. هل يمكنكم ذكر أدلة على ذلك من دون التظاهر بأن كل رقم واضح تماماً منذ الآن؟" },
+            { "language": "tr", "text": "Etki üzerinden argüman kuruyorsunuz. Her sayının şimdiden tamamen açık olduğunu varsaymadan buna dair kanıt gösterebilir misiniz?" },
+            { "language": "ru", "text": "Вы аргументируете через эффект. Можете назвать подтверждения, не делая вид, будто каждая цифра уже однозначна?" },
+            { "language": "ckb", "text": "تۆ بە کاریگەری بەڵگە دەهێنیتەوە. دەتوانیت بەڵگەی ئەمە ناو ببەیت، بێ ئەوەی وا پیشان بدەیت کە هەموو ژمارەیەک لە ئێستاوە یەکمانا و ڕوونە؟" },
+            { "language": "kmr", "text": "Hûn bi bandorê arguman dikin. Hûn dikarin delîlan binav bikin bêyî ku wekî her hejmar ji niha ve yekwate be xuya bikin?" },
+            { "language": "pl", "text": "Argumentuje Pan/Pani skutecznością. Czy może Pan/Pani podać dowody, nie udając, że każda liczba jest już jednoznaczna?" },
+            { "language": "ro", "text": "Argumentați prin efect. Puteți numi dovezi fără să pretindeți că fiecare cifră este deja lipsită de ambiguitate?" },
+            { "language": "sq", "text": "Ju argumentoni me efektin. A mund të përmendni prova për këtë pa u shtirur sikur çdo shifër është tashmë e qartë pa mëdyshje?" }
+          ],
+          "function": "request-evidence",
+          "toneNote": "Asks for careful evidence."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde vorsichtig formulieren: Ernährung ist ein relevanter Faktor für Emissionen, aber die konkrete Wirkung hängt von Einkauf, Abfall, Rezeptur und Akzeptanz ab. Deshalb schlage ich keinen endgültigen Umbau vor, sondern einen Pilot mit Datenerhebung zu Kosten, Nachfrage und Zufriedenheit.",
+          "translations": [
+            { "language": "en", "text": "I would phrase it cautiously: food is a relevant factor for emissions, but the concrete effect depends on procurement, waste, recipes, and acceptance. That is why I am not proposing a final conversion, but a pilot with data collection on costs, demand, and satisfaction." },
+            { "language": "fa", "text": "من با احتیاط فرمول‌بندی می‌کنم: تغذیه عاملی مهم برای انتشار آلاینده‌هاست، اما اثر مشخص به خرید، دورریز، دستور غذا و پذیرش بستگی دارد. بنابراین من تغییر نهایی پیشنهاد نمی‌کنم، بلکه یک طرح آزمایشی همراه با جمع‌آوری داده درباره هزینه، تقاضا و رضایت." },
+            { "language": "ar", "text": "سأصوغ الأمر بحذر: الغذاء عامل مهم في الانبعاثات، لكن الأثر الملموس يعتمد على الشراء، والهدر، والوصفات، والقبول. لذلك لا أقترح تحويلاً نهائياً، بل تجربة مصحوبة بجمع بيانات عن التكاليف والطلب والرضا." },
+            { "language": "tr", "text": "Bunu dikkatli ifade ederdim: beslenme emisyonlar için önemli bir faktördür, ama somut etki tedarike, israfa, tarife ve kabule bağlıdır. Bu yüzden kalıcı bir dönüşüm değil, maliyet, talep ve memnuniyet verilerinin toplandığı bir pilot öneriyorum." },
+            { "language": "ru", "text": "Я бы сформулировал осторожно: питание является значимым фактором выбросов, но конкретный эффект зависит от закупок, отходов, рецептуры и принятия. Поэтому я предлагаю не окончательную перестройку, а пилотный этап со сбором данных о затратах, спросе и удовлетворенности." },
+            { "language": "ckb", "text": "من بە وریایی دەیڵێم: خواردن فاکتەرێکی گرنگە بۆ دەرچوونی گازەکان، بەڵام کاریگەری دیاریکراو پەیوەستە بە کڕین، پاشماوە، ڕێسپی و قبووڵکردن. بۆیە من گۆڕانکارییەکی کۆتایی پێشنیار ناکەم، بەڵکو تاقیکردنەوەیەک لەگەڵ کۆکردنەوەی داتا دەربارەی تێچوو، خواست و ڕەزامەندی." },
+            { "language": "kmr", "text": "Ez ê bi baldarî bêjim: xwarin faktorek girîng e ji bo derxistinên gazan, lê bandora konkret girêdayî kirînê, avêtinê, rêçeteyê û qebûlkirinê ye. Ji ber vê yekê ez guherîneke dawî pêşniyar nakim, lê pilotek bi komkirina daneyan li ser mesref, daxwaz û razîbûnê." },
+            { "language": "pl", "text": "Sformułowałbym to ostrożnie: żywienie jest istotnym czynnikiem emisji, ale konkretny efekt zależy od zakupów, odpadów, receptur i akceptacji. Dlatego nie proponuję ostatecznej przebudowy, lecz pilotaż z gromadzeniem danych o kosztach, popycie i zadowoleniu." },
+            { "language": "ro", "text": "Aș formula prudent: alimentația este un factor relevant pentru emisii, dar efectul concret depinde de achiziții, risipă, rețete și acceptare. De aceea nu propun o transformare definitivă, ci un pilot cu colectare de date despre costuri, cerere și satisfacție." },
+            { "language": "sq", "text": "Do ta formuloja me kujdes: ushqimi është faktor i rëndësishëm për emetimet, por efekti konkret varet nga blerja, mbetjet, receta dhe pranimi. Prandaj nuk propozoj një ndryshim përfundimtar, por një pilot me mbledhje të dhënash për koston, kërkesën dhe kënaqësinë." }
+          ],
+          "function": "qualify-evidence",
+          "toneNote": "Avoids overclaiming."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "skeptical-citizen",
+          "baseText": "Ich habe trotzdem den Eindruck, dass Menschen mit wenig Geld am Ende für ein politisches Experiment bezahlen müssen.",
+          "translations": [
+            { "language": "en", "text": "I still have the impression that people with little money will end up having to pay for a political experiment." },
+            { "language": "fa", "text": "با این حال احساس می‌کنم در نهایت کسانی که پول کمی دارند باید هزینه یک آزمایش سیاسی را بپردازند." },
+            { "language": "ar", "text": "مع ذلك ما زال لدي انطباع بأن الأشخاص ذوي الدخل المحدود سيدفعون في النهاية ثمن تجربة سياسية." },
+            { "language": "tr", "text": "Yine de az parası olan insanların sonunda siyasi bir deneyin bedelini ödemek zorunda kalacağı izlenimine sahibim." },
+            { "language": "ru", "text": "И всё же у меня впечатление, что люди с небольшими доходами в итоге будут платить за политический эксперимент." },
+            { "language": "ckb", "text": "هێشتا ئەو هەستم هەیە کە لە کۆتاییدا ئەو کەسانەی پارەیان کەمە دەبێت تێچووی تاقیکردنەوەیەکی سیاسی بدەن." },
+            { "language": "kmr", "text": "Dîsa jî ez wisa hîs dikim ku kesên bi pereyê kêm di dawiyê de dê bihayê ceribandineke siyasî bidin." },
+            { "language": "pl", "text": "Mimo to mam wrażenie, że osoby z małymi pieniędzmi ostatecznie będą musiały zapłacić za polityczny eksperyment." },
+            { "language": "ro", "text": "Totuși am impresia că persoanele cu bani puțini vor ajunge să plătească pentru un experiment politic." },
+            { "language": "sq", "text": "Megjithatë kam përshtypjen se njerëzit me pak para në fund do të duhet të paguajnë për një eksperiment politik." }
+          ],
+          "function": "raise-social-fairness-concern",
+          "toneNote": "Important fairness objection."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Genau dieser Punkt entscheidet für mich über die Legitimität. Wenn das Angebot teurer wird oder bestimmte Gruppen faktisch ausschließt, ist es schlecht gemacht. Meine Bedingung wäre: kein Aufpreis für das Standardessen, echte Alternativen bei Allergien und Religion sowie Beteiligung der Nutzerinnen und Nutzer vor Ort.",
+          "translations": [
+            { "language": "en", "text": "For me, exactly this point determines legitimacy. If the offer becomes more expensive or effectively excludes certain groups, it is badly designed. My condition would be: no surcharge for the default meal, real alternatives for allergies and religion, and participation of local users." },
+            { "language": "fa", "text": "دقیقاً همین نکته برای من تعیین‌کننده مشروعیت است. اگر این پیشنهاد گران‌تر شود یا در عمل گروه‌های خاصی را کنار بگذارد، بد طراحی شده است. شرط من این است: بدون اضافه‌هزینه برای غذای پیش‌فرض، گزینه‌های واقعی برای آلرژی و دین، و مشارکت کاربران همان محل." },
+            { "language": "ar", "text": "هذه النقطة بالذات تحدد بالنسبة لي مدى المشروعية. إذا أصبح العرض أغلى أو استبعد فعلياً فئات معينة، فهو مصمم بشكل سيئ. شرطي هو: لا زيادة سعرية للوجبة الافتراضية، وبدائل حقيقية للحساسية والدين، ومشاركة المستخدمين في المكان نفسه." },
+            { "language": "tr", "text": "Benim için meşruiyeti tam da bu nokta belirler. Teklif pahalılaşırsa ya da bazı grupları fiilen dışlarsa kötü tasarlanmıştır. Koşulum şu olurdu: varsayılan yemek için ek ücret yok, alerji ve din için gerçek alternatifler ve yerel kullanıcıların katılımı." },
+            { "language": "ru", "text": "Именно этот пункт для меня определяет легитимность. Если предложение становится дороже или фактически исключает определенные группы, оно плохо спроектировано. Моё условие: без доплаты за блюдо по умолчанию, реальные альтернативы при аллергиях и религиозных потребностях, а также участие местных пользователей." },
+            { "language": "ckb", "text": "هەر ئەم خاڵە بۆ من ڕەوایی دیاری دەکات. ئەگەر پێشکەشەکە گرانتر ببێت یان لە کرداردا گرووپی دیاریکراو دەر بخات، ئەوا بە خراپی دیزاین کراوە. مەرجی من ئەمەیە: هیچ زیادەپارەیەک بۆ خواردنی بنەڕەتی نەبێت، جێگرەوەی ڕاستەقینە بۆ هەستیاری و ئایین، و بەشداری بەکارهێنەرانی ناوخۆ." },
+            { "language": "kmr", "text": "Ji bo min rast ev xal rewatîyê diyar dike. Heke pêşniyar girantir bibe an hin koman di pratîkê de derxîne derve, ew xirab hatiye sêwirandin. Şerta min ev e: tu pereyê zêde ji bo xwarina bingehîn tune be, alternatîvên rast ji bo alerjî û olê hebin, û bikarhênerên herêmî beşdar bibin." },
+            { "language": "pl", "text": "Właśnie ten punkt decyduje dla mnie o legitymizacji. Jeśli oferta staje się droższa albo faktycznie wyklucza określone grupy, jest źle zaprojektowana. Mój warunek brzmiałby: brak dopłaty do posiłku domyślnego, realne alternatywy przy alergiach i religii oraz udział użytkowników na miejscu." },
+            { "language": "ro", "text": "Exact acest punct decide pentru mine legitimitatea. Dacă oferta devine mai scumpă sau exclude de fapt anumite grupuri, este prost concepută. Condiția mea ar fi: fără cost suplimentar pentru masa implicită, alternative reale pentru alergii și religie și participarea utilizatorilor locali." },
+            { "language": "sq", "text": "Pikërisht kjo pikë vendos për mua legjitimitetin. Nëse oferta bëhet më e shtrenjtë ose përjashton në fakt grupe të caktuara, është projektuar keq. Kushti im do të ishte: pa shtesë çmimi për vaktin e parazgjedhur, alternativa reale për alergjitë dhe fenë, si dhe pjesëmarrje e përdoruesve në vend." }
+          ],
+          "function": "set-fairness-conditions",
+          "toneNote": "Responds to fairness concern without patronizing."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "strong-supporter",
+          "baseText": "Wenn jede Bedingung erfüllt sein muss, kann die Verwaltung das als Vorwand benutzen, um gar nichts zu ändern.",
+          "translations": [
+            { "language": "en", "text": "If every condition has to be met, the administration can use that as an excuse to change nothing at all." },
+            { "language": "fa", "text": "اگر قرار باشد هر شرطی برآورده شود، اداره می‌تواند از آن بهانه بسازد تا اصلاً چیزی را تغییر ندهد." },
+            { "language": "ar", "text": "إذا كان يجب استيفاء كل شرط، فيمكن للإدارة أن تستخدم ذلك ذريعة لعدم تغيير أي شيء." },
+            { "language": "tr", "text": "Her koşulun yerine getirilmesi gerekiyorsa, idare bunu hiçbir şeyi değiştirmemek için bahane olarak kullanabilir." },
+            { "language": "ru", "text": "Если каждое условие должно быть выполнено, администрация может использовать это как предлог, чтобы вообще ничего не менять." },
+            { "language": "ckb", "text": "ئەگەر دەبێت هەموو مەرجێک جێبەجێ بکرێت، کارگێڕی دەتوانێت ئەمە بکاتە بیانوو بۆ ئەوەی هیچ شتێک نەگۆڕێت." },
+            { "language": "kmr", "text": "Heke divê her şert pêk were, rêveberî dikare vê wekî hincetê bikar bîne da ku tiştekî neguherîne." },
+            { "language": "pl", "text": "Jeśli każdy warunek musi być spełniony, administracja może użyć tego jako pretekstu, żeby niczego nie zmieniać." },
+            { "language": "ro", "text": "Dacă fiecare condiție trebuie îndeplinită, administrația poate folosi asta ca pretext pentru a nu schimba nimic." },
+            { "language": "sq", "text": "Nëse çdo kusht duhet të plotësohet, administrata mund ta përdorë këtë si pretekst për të mos ndryshuar asgjë." }
+          ],
+          "function": "warn-against-delay",
+          "toneNote": "Challenges implementation limits."
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Darum würde ich die Bedingungen nicht als Vetorecht formulieren, sondern als Mindeststandard für einen Pilot. Mein Fazit wäre: Die Stadt sollte ein pflanzenbetontes Standardangebot testen, aber sozial abgesichert, auswertbar und korrigierbar. So verteidigt man Veränderung, ohne berechtigte Einwände zu übergehen.",
+          "translations": [
+            { "language": "en", "text": "That is why I would not formulate the conditions as a veto right, but as a minimum standard for a pilot. My conclusion would be: the city should test a mostly plant-based default offer, but with social safeguards, evaluation, and the possibility of correction. That is how you defend change without brushing aside valid objections." },
+            { "language": "fa", "text": "به همین دلیل من شرط‌ها را به‌عنوان حق وتو فرمول‌بندی نمی‌کنم، بلکه به‌عنوان حداقل استاندارد برای یک طرح آزمایشی. جمع‌بندی من این است: شهر باید یک پیشنهاد پیش‌فرض عمدتاً گیاهی را آزمایش کند، اما با حمایت اجتماعی، قابلیت ارزیابی و امکان اصلاح. این‌گونه می‌توان از تغییر دفاع کرد، بدون اینکه اعتراض‌های موجه نادیده گرفته شوند." },
+            { "language": "ar", "text": "لذلك لا أصوغ الشروط كحق نقض، بل كحد أدنى من المعايير لتجربة. وخلاصتي هي: ينبغي للمدينة أن تختبر عرضاً افتراضياً يغلب عليه الطابع النباتي، ولكن مع ضمانات اجتماعية، وقابلية للتقييم، وإمكان التصحيح. هكذا يمكن الدفاع عن التغيير من دون تجاوز الاعتراضات الوجيهة." },
+            { "language": "tr", "text": "Bu yüzden koşulları veto hakkı olarak değil, bir pilot için asgari standart olarak formüle ederdim. Sonucum şu olurdu: şehir ağırlıklı bitkisel bir varsayılan teklifi test etmeli, ama sosyal güvenceli, değerlendirilebilir ve düzeltilebilir biçimde. Geçerli itirazları yok saymadan değişim böyle savunulur." },
+            { "language": "ru", "text": "Поэтому я бы формулировал условия не как право вето, а как минимальный стандарт для пилотного этапа. Мой вывод был бы таким: город должен протестировать преимущественно растительный вариант по умолчанию, но с социальной защитой, возможностью оценки и корректировки. Так можно защищать изменения, не отмахиваясь от обоснованных возражений." },
+            { "language": "ckb", "text": "بۆیە من مەرجەکان وەک مافی ڤیتۆ دانابڕێژم، بەڵکو وەک ستانداردی کەمترین بۆ تاقیکردنەوە. کۆتاییەکەم ئەمە دەبێت: شار دەبێت پێشکەشی بنەڕەتیی زیاتر ڕووەکی تاقی بکاتەوە، بەڵام بە پاراستنی کۆمەڵایەتی، قابلی هەڵسەنگاندن و قابلی ڕاستکردنەوە. بەم شێوەیە دەتوانرێت بەرگری لە گۆڕانکاری بکرێت، بێ ئەوەی ناڕەزایەتییە دروستەکان پشتگوێ بخرێن." },
+            { "language": "kmr", "text": "Ji ber vê yekê ez şertan wekî mafê veto nayênim ziman, lê wekî standarda herî kêm ji bo pilotekê. Encamê min ev e: şar divê pêşniyareke bingehîn a piraniya wê nebatî biceribîne, lê bi ewlekariya civakî, bi şiyana nirxandinê û sererastkirinê. Bi vî awayî mirov guhertinê diparêze bêyî ku rexneyên rewa derbas bike." },
+            { "language": "pl", "text": "Dlatego nie formułowałbym warunków jako prawa weta, lecz jako minimalny standard dla pilotażu. Mój wniosek byłby taki: miasto powinno przetestować domyślną ofertę w większości roślinną, ale zabezpieczoną społecznie, możliwą do oceny i korekty. Tak broni się zmiany, nie pomijając uzasadnionych zastrzeżeń." },
+            { "language": "ro", "text": "De aceea nu aș formula condițiile ca drept de veto, ci ca standard minim pentru un pilot. Concluzia mea ar fi: orașul ar trebui să testeze o ofertă implicită predominant vegetală, dar cu garanții sociale, evaluabilă și corectabilă. Așa se apără schimbarea fără a trece peste obiecții justificate." },
+            { "language": "sq", "text": "Prandaj nuk do t'i formuloja kushtet si të drejtë vetoje, por si standard minimal për një pilot. Përfundimi im do të ishte: qyteti duhet të testojë një ofertë të parazgjedhur kryesisht bimore, por të mbrojtur shoqërisht, të vlerësueshme dhe të korrigjueshme. Kështu mbrohet ndryshimi pa anashkaluar kundërshtimet e drejta." }
+          ],
+          "function": "synthesize-position",
+          "toneNote": "Defends a limited, testable position."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich befürworte die Richtung, aber nicht als moralisches Signal. Aus meiner Sicht spricht einiges für ein pflanzenbetontes Standardangebot, wenn Wahlmöglichkeiten, Preisstabilität und kulturelle beziehungsweise gesundheitliche Bedürfnisse von Anfang an mitgedacht werden.",
+              "translations": [
+                { "language": "en", "text": "I support the direction, but not as a moral signal. In my view, there are good arguments for a mostly plant-based default offer if choice, stable prices, and cultural or health-related needs are considered from the start." },
+                { "language": "fa", "text": "من از این جهت‌گیری حمایت می‌کنم، اما نه به‌عنوان یک پیام اخلاقی. از نظر من برای یک پیشنهاد پیش‌فرض عمدتاً گیاهی دلایل خوبی وجود دارد، اگر از ابتدا حق انتخاب، ثبات قیمت و نیازهای فرهنگی یا سلامتی در نظر گرفته شود." },
+                { "language": "ar", "text": "أنا أؤيد هذا الاتجاه، لكن ليس بوصفه إشارة أخلاقية. من وجهة نظري توجد حجج وجيهة لصالح خيار افتراضي يغلب عليه الطابع النباتي إذا أُخذت في الحسبان منذ البداية إمكانات الاختيار، وثبات الأسعار، والاحتياجات الثقافية أو الصحية." },
+                { "language": "tr", "text": "Bu yönü destekliyorum, ama ahlaki bir işaret olarak değil. Bana göre seçim imkânı, fiyat istikrarı ve kültürel ya da sağlıkla ilgili ihtiyaçlar baştan dikkate alınırsa, ağırlıklı bitkisel bir varsayılan teklif için güçlü gerekçeler var." },
+                { "language": "ru", "text": "Я поддерживаю это направление, но не как моральный сигнал. На мой взгляд, есть веские аргументы в пользу преимущественно растительного варианта по умолчанию, если с самого начала учитывать выбор, стабильность цены, а также культурные и медицинские потребности." },
+                { "language": "ckb", "text": "من پشتگیری ئەم ئاراستەیە دەکەم، بەڵام نە وەک ئاماژەیەکی ئەخلاقی. بە بۆچوونی من چەند هۆکارێکی باش هەیە بۆ پێشکەشکردنی خواردنێکی بنەڕەتی زیاتر ڕووەکی، ئەگەر هەڵبژاردن، جێگیری نرخ و پێداویستی کلتووری یان تەندروستی لە سەرەتاوە لەبەرچاو بگیرێن." },
+                { "language": "kmr", "text": "Ez vê alîkariyê piştgirî dikim, lê ne wekî nîşaneke exlaqî. Li gorî min, gelek sedemên baş hene ji bo pêşniyareke bingehîn a piraniya wê nebatî, heke mafê hilbijartinê, stabîlbûna bihayê û pêdiviyên çandî an tenduristî ji destpêkê ve bêne hesibandin." },
+                { "language": "pl", "text": "Popieram ten kierunek, ale nie jako sygnał moralny. Moim zdaniem za domyślną ofertą w większości roślinną przemawia sporo argumentów, jeśli od początku uwzględni się możliwość wyboru, stabilność cen oraz potrzeby kulturowe lub zdrowotne." },
+                { "language": "ro", "text": "Susțin această direcție, dar nu ca semnal moral. Din punctul meu de vedere, există argumente serioase pentru o ofertă implicită predominant vegetală dacă posibilitatea de alegere, stabilitatea prețurilor și nevoile culturale sau medicale sunt luate în calcul de la început." },
+                { "language": "sq", "text": "E mbështes këtë drejtim, por jo si sinjal moral. Sipas meje, ka disa arsye të mira për një ofertë të parazgjedhur kryesisht bimore, nëse mundësia e zgjedhjes, qëndrueshmëria e çmimit dhe nevojat kulturore apo shëndetësore merren parasysh që në fillim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verteidigt die Position klar, grenzt sich aber von moralischer Überhöhung ab und nennt Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer defends the position clearly while distancing itself from moral overstatement and naming conditions." },
+                { "language": "fa", "text": "قوی است: پاسخ موضع را روشن دفاع می‌کند، اما از بزرگ‌نمایی اخلاقی فاصله می‌گیرد و شرط‌ها را نام می‌برد." },
+                { "language": "ar", "text": "قوي: يدافع الجواب عن الموقف بوضوح، لكنه يبتعد عن التضخيم الأخلاقي ويذكر الشروط." },
+                { "language": "tr", "text": "Güçlü: cevap pozisyonu net savunuyor, ahlaki abartıdan uzak duruyor ve koşulları belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ ясно защищает позицию, но дистанцируется от морального преувеличения и называет условия." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە ڕوونی بەرگری لە هەڵوێستەکە دەکات، بەڵام لە گەورەکردنەوەی ئەخلاقی دوور دەکەوێتەوە و مەرجەکان ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: bersiv helwestê bi zelalî diparêze, lê ji mezinxistina exlaqî dûr dimîne û şertan bi nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź jasno broni stanowiska, ale dystansuje się od moralnego wyolbrzymienia i nazywa warunki." },
+                { "language": "ro", "text": "Puternic: răspunsul apără clar poziția, dar se distanțează de supraîncărcarea morală și numește condiții." },
+                { "language": "sq", "text": "E fortë: përgjigjja e mbron qartë pozicionin, por largohet nga mbingarkesa morale dhe emërton kushtet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich bin dafür, weil Fleisch schlecht fürs Klima ist und wir endlich moderner werden müssen.",
+              "translations": [
+                { "language": "en", "text": "I am in favor because meat is bad for the climate and we finally need to become more modern." },
+                { "language": "fa", "text": "من موافقم چون گوشت برای اقلیم بد است و بالاخره باید مدرن‌تر شویم." },
+                { "language": "ar", "text": "أنا مؤيد لأن اللحم سيئ للمناخ ولأن علينا أخيراً أن نصبح أكثر حداثة." },
+                { "language": "tr", "text": "Ben destekliyorum çünkü et iklim için kötü ve artık daha modern olmamız gerekiyor." },
+                { "language": "ru", "text": "Я за, потому что мясо вредно для климата и нам наконец нужно стать современнее." },
+                { "language": "ckb", "text": "من لەگەڵم چونکە گۆشت بۆ کەشوهەوا خراپە و دەبێت دوای ئەوە نوێتر بین." },
+                { "language": "kmr", "text": "Ez alîgir im ji ber ku goşt ji bo avhewayê xerab e û divê em êdî nûjentir bibin." },
+                { "language": "pl", "text": "Jestem za, bo mięso jest złe dla klimatu i wreszcie musimy stać się nowocześniejsi." },
+                { "language": "ro", "text": "Sunt pentru, pentru că carnea este rea pentru climă și trebuie în sfârșit să devenim mai moderni." },
+                { "language": "sq", "text": "Jam pro, sepse mishi është i keq për klimën dhe më në fund duhet të bëhemi më modernë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu pauschal. Für C2 braucht die Position Grenzen, Bedingungen und Respekt für Einwände.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too sweeping. At C2, the position needs limits, conditions, and respect for objections." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد کلی است. در سطح C2 موضع به حد و مرز، شرط و احترام به اعتراض‌ها نیاز دارد." },
+                { "language": "ar", "text": "معقول ظاهرياً، لكنه عام جداً. في مستوى C2 يحتاج الموقف إلى حدود وشروط واحترام للاعتراضات." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla genelleyici. C2 düzeyinde pozisyonun sınırlara, koşullara ve itirazlara saygıya ihtiyacı var." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слишком обобщенно. На C2 позиции нужны границы, условия и уважение к возражениям." },
+                { "language": "ckb", "text": "قابل قبووڵە، بەڵام زۆر گشتییە. لە C2 هەڵوێست پێویستی بە سنوور، مەرج و ڕێزگرتن لە ناڕەزایەتییەکان هەیە." },
+                { "language": "kmr", "text": "Wateyê wê heye, lê pir giştî ye. Di C2 de helwest pêdivî bi sînor, şert û rêzgirtina rexneyan heye." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt ogólne. Na C2 stanowisko potrzebuje granic, warunków i szacunku dla zastrzeżeń." },
+                { "language": "ro", "text": "Plauzibil, dar prea general. La C2, poziția are nevoie de limite, condiții și respect pentru obiecții." },
+                { "language": "sq", "text": "E besueshme, por tepër e përgjithshme. Në C2 pozicioni ka nevojë për kufij, kushte dhe respekt për kundërshtimet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Einwand ist berechtigt, wenn aus einem Standardangebot faktisch ein Zwang wird. Deshalb würde ich zwischen Verbot und Voreinstellung unterscheiden: Niemandem wird eine Ernährungsweise vorgeschrieben, aber die Stadt kann steuern, was sie in ihren Einrichtungen zuerst und am günstigsten anbietet.",
+              "translations": [
+                { "language": "en", "text": "The objection is valid if a default offer effectively becomes compulsion. That is why I would distinguish between a ban and a default setting: no one is prescribed a diet, but the city can guide what it offers first and most affordably in its institutions." },
+                { "language": "fa", "text": "این ایراد زمانی موجه است که یک پیشنهاد پیش‌فرض در عمل به اجبار تبدیل شود. به همین دلیل من میان ممنوعیت و تنظیم پیش‌فرض فرق می‌گذارم: برای هیچ‌کس شیوه تغذیه تجویز نمی‌شود، اما شهر می‌تواند هدایت کند که در مراکز خود چه چیزی را ابتدا و با مناسب‌ترین قیمت ارائه می‌کند." },
+                { "language": "ar", "text": "يكون الاعتراض وجيهاً إذا تحول الخيار الافتراضي عملياً إلى إلزام. لذلك أميز بين الحظر والإعداد الافتراضي: لا تُفرض على أحد طريقة غذاء معينة، لكن يمكن للمدينة أن توجه ما تقدمه أولاً وبأقل كلفة في مؤسساتها." },
+                { "language": "tr", "text": "Varsayılan teklif fiilen zorlamaya dönüşürse bu itiraz haklıdır. Bu yüzden yasak ile varsayılan ayarı ayırırdım: kimseye bir beslenme biçimi dayatılmıyor, ama şehir kendi kurumlarında neyi önce ve en uygun fiyatla sunduğunu yönlendirebilir." },
+                { "language": "ru", "text": "Это возражение обосновано, если вариант по умолчанию фактически становится принуждением. Поэтому я бы различал запрет и настройку по умолчанию: никому не предписывают тип питания, но город может регулировать, что в своих учреждениях он предлагает первым и по самой доступной цене." },
+                { "language": "ckb", "text": "ئەم ناڕەزایەتییە جێی قبووڵە ئەگەر پێشکەشی بنەڕەتی لە کرداردا ببێتە ناچارکردن. بۆیە من جیاوازی دەکەم لە نێوان قەدەغە و ڕێکخستنی بنەڕەتی: هیچ شێوازی خواردن بەسەر کەسدا ناسەپێنرێت، بەڵام شار دەتوانێت ئاراستە بکات کە لە دامەزراوەکانی چی پێشتر و بە نرخی گونجاوتر پێشکەش دەکات." },
+                { "language": "kmr", "text": "Ev rexne rewa ye heke pêşniyara bingehîn di pratîkê de bibe zor. Ji ber vê yekê ez cihê qedexe û mîhengkirina bingehîn ji hev veqetînim: tu şêwazê xwarinê li kesî nayê ferzkirin, lê şar dikare rê bide ka di saziyên xwe de çi yekem û bi bihayê herî guncan pêşkêş dike." },
+                { "language": "pl", "text": "Ten zarzut jest uzasadniony, jeśli domyślna oferta faktycznie staje się przymusem. Dlatego rozróżniłbym zakaz i ustawienie domyślne: nikomu nie narzuca się sposobu odżywiania, ale miasto może kształtować to, co w swoich instytucjach oferuje najpierw i najtaniej." },
+                { "language": "ro", "text": "Obiecția este justificată dacă oferta implicită devine de fapt constrângere. De aceea aș distinge între interdicție și setare implicită: nimănui nu i se prescrie un mod de alimentație, dar orașul poate orienta ce oferă mai întâi și la cel mai accesibil preț în instituțiile sale." },
+                { "language": "sq", "text": "Kundërshtimi është i drejtë nëse një ofertë e parazgjedhur kthehet në fakt në detyrim. Prandaj do të dalloja ndalimin nga zgjedhja e parazgjedhur: askujt nuk i përshkruhet një mënyrë ushqimi, por qyteti mund të orientojë se çfarë ofron i pari dhe me çmimin më të leverdishëm në institucionet e veta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nimmt die Sorge ernst und verteidigt dann eine präzise Unterscheidung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer takes the concern seriously and then defends a precise distinction." },
+                { "language": "fa", "text": "قوی است: پاسخ نگرانی را جدی می‌گیرد و سپس از یک تمایز دقیق دفاع می‌کند." },
+                { "language": "ar", "text": "قوي: يأخذ الجواب القلق بجدية ثم يدافع عن تمييز دقيق." },
+                { "language": "tr", "text": "Güçlü: cevap kaygıyı ciddiye alıyor ve ardından kesin bir ayrımı savunuyor." },
+                { "language": "ru", "text": "Сильно: ответ серьезно относится к опасению, а затем защищает точное различие." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیگەرانییەکە بە جددی وەردەگرێت و پاشان بەرگری لە جیاوازییەکی ورد دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv xeman cidî digire û paşê cudahiyeke hûrgilî diparêze." },
+                { "language": "pl", "text": "Mocne: odpowiedź traktuje obawę poważnie, a potem broni precyzyjnego rozróżnienia." },
+                { "language": "ro", "text": "Puternic: răspunsul ia îngrijorarea în serios și apoi apără o distincție precisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e merr seriozisht shqetësimin dhe pastaj mbron një dallim të saktë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Niemandem wird etwas weggenommen; es gibt doch immer noch andere Angebote.",
+              "translations": [
+                { "language": "en", "text": "Nothing is being taken away from anyone; there are still other offers." },
+                { "language": "fa", "text": "چیزی از کسی گرفته نمی‌شود؛ هنوز گزینه‌های دیگری هم وجود دارد." },
+                { "language": "ar", "text": "لا يُسلب أحد شيئاً؛ فما زالت هناك عروض أخرى." },
+                { "language": "tr", "text": "Kimseden bir şey alınmıyor; sonuçta hâlâ başka seçenekler var." },
+                { "language": "ru", "text": "У никого ничего не отнимают; ведь всё еще есть другие предложения." },
+                { "language": "ckb", "text": "هیچ شتێک لە هیچ کەسێک وەرناگیرێت؛ هێشتا پێشکەشی تر هەیە." },
+                { "language": "kmr", "text": "Tiştek ji kesî nayê standin; hîn jî pêşniyarên din hene." },
+                { "language": "pl", "text": "Nikomu niczego się nie odbiera; przecież nadal są inne oferty." },
+                { "language": "ro", "text": "Nu i se ia nimănui nimic; există totuși și alte oferte." },
+                { "language": "sq", "text": "Askush nuk humb diçka; gjithsesi ka ende oferta të tjera." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp. Die Antwort klingt beruhigend, erklärt aber nicht, warum ein Standardangebot kein verdeckter Zwang wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief. The answer sounds reassuring, but does not explain why a default offer does not become hidden compulsion." },
+                { "language": "fa", "text": "خیلی کوتاه است. پاسخ آرام‌کننده به نظر می‌رسد، اما توضیح نمی‌دهد چرا پیشنهاد پیش‌فرض به اجبار پنهان تبدیل نمی‌شود." },
+                { "language": "ar", "text": "مقتضب أكثر من اللازم. يبدو الجواب مطمئناً، لكنه لا يشرح لماذا لا يتحول الخيار الافتراضي إلى إلزام خفي." },
+                { "language": "tr", "text": "Fazla kısa. Cevap rahatlatıcı duyuluyor, ama varsayılan teklifin neden gizli zorlamaya dönüşmediğini açıklamıyor." },
+                { "language": "ru", "text": "Слишком кратко. Ответ звучит успокаивающе, но не объясняет, почему вариант по умолчанию не становится скрытым принуждением." },
+                { "language": "ckb", "text": "زۆر کورتە. وەڵامەکە هێورکەرەوە دەنگ دەدات، بەڵام ڕوون ناکاتەوە بۆچی پێشکەشی بنەڕەتی نابێتە ناچارکردنی شاراوە." },
+                { "language": "kmr", "text": "Pir kurt e. Bersiv aramker xuya dike, lê rave nake çima pêşniyara bingehîn nabê zora veşartî." },
+                { "language": "pl", "text": "Zbyt krótko. Odpowiedź brzmi uspokajająco, ale nie wyjaśnia, dlaczego oferta domyślna nie staje się ukrytym przymusem." },
+                { "language": "ro", "text": "Prea scurt. Răspunsul sună liniștitor, dar nu explică de ce oferta implicită nu devine constrângere ascunsă." },
+                { "language": "sq", "text": "Shumë e shkurtër. Përgjigjja tingëllon qetësuese, por nuk shpjegon pse oferta e parazgjedhur nuk kthehet në detyrim të fshehur." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ein klares Ziel ist wichtig, aber es ersetzt keine tragfähige Umsetzung. Wenn eine Maßnahme Akzeptanz verlieren soll, reicht Symbolik; wenn sie wirken soll, braucht sie erreichbare Kriterien: Anteil pflanzlicher Gerichte, Preisgrenze, Beschwerdeweg und eine Auswertung nach sechs Monaten.",
+              "translations": [
+                { "language": "en", "text": "A clear goal is important, but it does not replace workable implementation. If a measure is meant to lose acceptance, symbolism is enough; if it is meant to work, it needs achievable criteria: share of plant-based dishes, price limit, complaint channel, and evaluation after six months." },
+                { "language": "fa", "text": "هدف روشن مهم است، اما جای اجرای قابل دوام را نمی‌گیرد. اگر قرار باشد یک اقدام پذیرش خود را از دست بدهد، نمادسازی کافی است؛ اما اگر قرار است اثر داشته باشد، به معیارهای قابل دستیابی نیاز دارد: سهم غذاهای گیاهی، سقف قیمت، مسیر ثبت شکایت و ارزیابی پس از شش ماه." },
+                { "language": "ar", "text": "الهدف الواضح مهم، لكنه لا يحل محل التنفيذ القابل للاستمرار. إذا كان الهدف أن تفقد التدبير قبولها، فالرمزية تكفي؛ أما إذا كان الهدف أن تنجح، فهي تحتاج إلى معايير قابلة للتحقيق: نسبة الأطباق النباتية، وحد السعر، ومسار الشكوى، وتقييم بعد ستة أشهر." },
+                { "language": "tr", "text": "Açık bir hedef önemlidir, ama uygulanabilirliğin yerini tutmaz. Bir önlem kabulünü kaybetsin isteniyorsa sembolizm yeterlidir; işe yaraması isteniyorsa ulaşılabilir kriterlere ihtiyaç duyar: bitkisel yemek oranı, fiyat sınırı, şikâyet yolu ve altı ay sonra değerlendirme." },
+                { "language": "ru", "text": "Ясная цель важна, но она не заменяет жизнеспособную реализацию. Если мера должна потерять поддержку, достаточно символики; если она должна работать, ей нужны достижимые критерии: доля растительных блюд, ценовой предел, путь для жалоб и оценка через шесть месяцев." },
+                { "language": "ckb", "text": "ئامانجی ڕوون گرنگە، بەڵام جێگەی جێبەجێکردنی بەردەوام ناگرێتەوە. ئەگەر مەبەست ئەوە بێت کە ڕێکارەکە پشتیوانی لەدەست بدات، نیشانەسازی بەسە؛ ئەگەر مەبەست کاریگەری بێت، پێویستی بە پێوەری گەیشتنە: ڕێژەی خواردنە ڕووەکییەکان، سنووری نرخ، ڕێگای سکاڵا و هەڵسەنگاندن دوای شەش مانگ." },
+                { "language": "kmr", "text": "Armanceke zelal girîng e, lê cihê pêkanîna berdewam nagire. Heke pîvanek divê qebûlkirinê winda bike, sembolîzm têr e; heke divê bandor bike, pêdivî bi pîvanên gihîştî heye: rêjeya xwarinên nebatî, sînorê bihayê, rêya gilîkirinê û nirxandin piştî şeş mehan." },
+                { "language": "pl", "text": "Jasny cel jest ważny, ale nie zastępuje wykonalnej realizacji. Jeśli środek ma stracić akceptację, wystarczy symbolika; jeśli ma działać, potrzebuje osiągalnych kryteriów: udziału dań roślinnych, limitu ceny, drogi skargi i oceny po sześciu miesiącach." },
+                { "language": "ro", "text": "Un obiectiv clar este important, dar nu înlocuiește o implementare viabilă. Dacă o măsură trebuie să piardă acceptarea, simbolismul este suficient; dacă trebuie să funcționeze, are nevoie de criterii realizabile: ponderea preparatelor vegetale, limită de preț, cale de reclamație și evaluare după șase luni." },
+                { "language": "sq", "text": "Një qëllim i qartë është i rëndësishëm, por nuk zëvendëson zbatimin e qëndrueshëm. Nëse një masë duhet ta humbasë pranimin, mjafton simbolika; nëse duhet të funksionojë, i duhen kritere të arritshme: përqindja e pjatave bimore, kufiri i çmimit, rruga e ankesës dhe vlerësimi pas gjashtë muajsh." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verteidigt Veränderung, ohne die Umsetzungsfrage zu unterschätzen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer defends change without underestimating the implementation question." },
+                { "language": "fa", "text": "قوی است: پاسخ از تغییر دفاع می‌کند، بدون اینکه مسئله اجرا را دست‌کم بگیرد." },
+                { "language": "ar", "text": "قوي: يدافع الجواب عن التغيير من دون التقليل من سؤال التنفيذ." },
+                { "language": "tr", "text": "Güçlü: cevap değişimi savunuyor, ama uygulama sorusunu küçümsemiyor." },
+                { "language": "ru", "text": "Сильно: ответ защищает изменения, не недооценивая вопрос реализации." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەرگری لە گۆڕانکاری دەکات بێ ئەوەی پرسی جێبەجێکردن کەم بنرخێنێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv guhertinê diparêze bêyî ku pirsa pêkanînê kêm binirxîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź broni zmiany, nie lekceważąc kwestii realizacji." },
+                { "language": "ro", "text": "Puternic: răspunsul apără schimbarea fără a subestima întrebarea implementării." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbron ndryshimin pa e nënvlerësuar çështjen e zbatimit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn die Mehrheit dagegen ist, kann man die Idee eben nicht umsetzen.",
+              "translations": [
+                { "language": "en", "text": "If the majority is against it, then you simply cannot implement the idea." },
+                { "language": "fa", "text": "اگر اکثریت مخالف باشند، دیگر نمی‌توان این ایده را اجرا کرد." },
+                { "language": "ar", "text": "إذا كانت الأغلبية ضد ذلك، فلا يمكن ببساطة تنفيذ الفكرة." },
+                { "language": "tr", "text": "Çoğunluk karşıysa, o zaman bu fikir uygulanamaz." },
+                { "language": "ru", "text": "Если большинство против, то эту идею просто нельзя реализовать." },
+                { "language": "ckb", "text": "ئەگەر زۆرینە دژ بێت، ئەوا ناتوانرێت ئەم بیرۆکەیە جێبەجێ بکرێت." },
+                { "language": "kmr", "text": "Heke pirranî dijî wê be, wê demê mirov nikare vê ramanê pêk bîne." },
+                { "language": "pl", "text": "Jeśli większość jest przeciw, to po prostu nie da się wdrożyć tego pomysłu." },
+                { "language": "ro", "text": "Dacă majoritatea este împotrivă, atunci pur și simplu nu se poate implementa ideea." },
+                { "language": "sq", "text": "Nëse shumica është kundër, atëherë ideja thjesht nuk mund të zbatohet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu defensiv. Die Antwort gibt die eigene Position auf, statt Akzeptanz durch klare Kriterien zu schaffen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too defensive. The answer gives up its own position instead of creating acceptance through clear criteria." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد دفاعی است. پاسخ به‌جای ساختن پذیرش با معیارهای روشن، موضع خود را رها می‌کند." },
+                { "language": "ar", "text": "معقول، لكنه دفاعي أكثر من اللازم. يتخلى الجواب عن موقفه بدلاً من خلق قبول عبر معايير واضحة." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla savunmacı. Cevap, açık kriterlerle kabul oluşturmak yerine kendi pozisyonundan vazgeçiyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком оборонительно. Ответ отказывается от собственной позиции вместо того, чтобы создавать принятие через ясные критерии." },
+                { "language": "ckb", "text": "قابل قبووڵە، بەڵام زۆر بەرگریکارانەیە. وەڵامەکە لە هەڵوێستی خۆی پاشگەز دەبێتەوە، لەبری ئەوەی بە پێوەری ڕوون قبووڵکردن دروست بکات." },
+                { "language": "kmr", "text": "Wateyê wê heye, lê pir parastinî ye. Bersiv ji helwesta xwe vedigere li şûna ku bi pîvanên zelal qebûlkirinê ava bike." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt defensywne. Odpowiedź porzuca własne stanowisko zamiast budować akceptację jasnymi kryteriami." },
+                { "language": "ro", "text": "Plauzibil, dar prea defensiv. Răspunsul renunță la propria poziție în loc să creeze acceptare prin criterii clare." },
+                { "language": "sq", "text": "E besueshme, por tepër mbrojtëse. Përgjigjja heq dorë nga pozicioni i vet në vend që të krijojë pranim përmes kritereve të qarta." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde vorsichtig formulieren: Ernährung ist ein relevanter Faktor für Emissionen, aber die konkrete Wirkung hängt von Einkauf, Abfall, Rezeptur und Akzeptanz ab. Deshalb schlage ich keinen endgültigen Umbau vor, sondern einen Pilot mit Datenerhebung zu Kosten, Nachfrage und Zufriedenheit.",
+              "translations": [
+                { "language": "en", "text": "I would phrase it cautiously: food is a relevant factor for emissions, but the concrete effect depends on procurement, waste, recipes, and acceptance. That is why I am not proposing a final conversion, but a pilot with data collection on costs, demand, and satisfaction." },
+                { "language": "fa", "text": "من با احتیاط فرمول‌بندی می‌کنم: تغذیه عاملی مهم برای انتشار آلاینده‌هاست، اما اثر مشخص به خرید، دورریز، دستور غذا و پذیرش بستگی دارد. بنابراین من تغییر نهایی پیشنهاد نمی‌کنم، بلکه یک طرح آزمایشی همراه با جمع‌آوری داده درباره هزینه، تقاضا و رضایت." },
+                { "language": "ar", "text": "سأصوغ الأمر بحذر: الغذاء عامل مهم في الانبعاثات، لكن الأثر الملموس يعتمد على الشراء، والهدر، والوصفات، والقبول. لذلك لا أقترح تحويلاً نهائياً، بل تجربة مصحوبة بجمع بيانات عن التكاليف والطلب والرضا." },
+                { "language": "tr", "text": "Bunu dikkatli ifade ederdim: beslenme emisyonlar için önemli bir faktördür, ama somut etki tedarike, israfa, tarife ve kabule bağlıdır. Bu yüzden kalıcı bir dönüşüm değil, maliyet, talep ve memnuniyet verilerinin toplandığı bir pilot öneriyorum." },
+                { "language": "ru", "text": "Я бы сформулировал осторожно: питание является значимым фактором выбросов, но конкретный эффект зависит от закупок, отходов, рецептуры и принятия. Поэтому я предлагаю не окончательную перестройку, а пилотный этап со сбором данных о затратах, спросе и удовлетворенности." },
+                { "language": "ckb", "text": "من بە وریایی دەیڵێم: خواردن فاکتەرێکی گرنگە بۆ دەرچوونی گازەکان، بەڵام کاریگەری دیاریکراو پەیوەستە بە کڕین، پاشماوە، ڕێسپی و قبووڵکردن. بۆیە من گۆڕانکارییەکی کۆتایی پێشنیار ناکەم، بەڵکو تاقیکردنەوەیەک لەگەڵ کۆکردنەوەی داتا دەربارەی تێچوو، خواست و ڕەزامەندی." },
+                { "language": "kmr", "text": "Ez ê bi baldarî bêjim: xwarin faktorek girîng e ji bo derxistinên gazan, lê bandora konkret girêdayî kirînê, avêtinê, rêçeteyê û qebûlkirinê ye. Ji ber vê yekê ez guherîneke dawî pêşniyar nakim, lê pilotek bi komkirina daneyan li ser mesref, daxwaz û razîbûnê." },
+                { "language": "pl", "text": "Sformułowałbym to ostrożnie: żywienie jest istotnym czynnikiem emisji, ale konkretny efekt zależy od zakupów, odpadów, receptur i akceptacji. Dlatego nie proponuję ostatecznej przebudowy, lecz pilotaż z gromadzeniem danych o kosztach, popycie i zadowoleniu." },
+                { "language": "ro", "text": "Aș formula prudent: alimentația este un factor relevant pentru emisii, dar efectul concret depinde de achiziții, risipă, rețete și acceptare. De aceea nu propun o transformare definitivă, ci un pilot cu colectare de date despre costuri, cerere și satisfacție." },
+                { "language": "sq", "text": "Do ta formuloja me kujdes: ushqimi është faktor i rëndësishëm për emetimet, por efekti konkret varet nga blerja, mbetjet, receta dhe pranimi. Prandaj nuk propozoj një ndryshim përfundimtar, por një pilot me mbledhje të dhënash për koston, kërkesën dhe kënaqësinë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nutzt Belege, ohne sie stärker erscheinen zu lassen, als sie sind.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer uses evidence without making it appear stronger than it is." },
+                { "language": "fa", "text": "قوی است: پاسخ از شواهد استفاده می‌کند، بدون اینکه آن‌ها را قوی‌تر از واقعیت نشان دهد." },
+                { "language": "ar", "text": "قوي: يستخدم الجواب الأدلة من دون أن يجعلها تبدو أقوى مما هي عليه." },
+                { "language": "tr", "text": "Güçlü: cevap kanıt kullanıyor, ama onu olduğundan daha güçlü göstermiyor." },
+                { "language": "ru", "text": "Сильно: ответ использует данные, не делая их сильнее, чем они есть." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەڵگە بەکاردەهێنێت، بێ ئەوەی لەوە بەهێزتر پیشانی بدات کە هەیە." },
+                { "language": "kmr", "text": "Xurt e: bersiv delîlan bikar tîne bêyî ku wan ji ya rast xurtir nîşan bide." },
+                { "language": "pl", "text": "Mocne: odpowiedź używa dowodów, nie przedstawiając ich jako silniejszych, niż są." },
+                { "language": "ro", "text": "Puternic: răspunsul folosește dovezi fără a le face să pară mai puternice decât sunt." },
+                { "language": "sq", "text": "E fortë: përgjigjja përdor prova pa i paraqitur më të forta se sa janë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Es gibt genug Studien, deshalb müssen wir die Grundsatzfrage nicht immer wieder neu diskutieren.",
+              "translations": [
+                { "language": "en", "text": "There are enough studies, so we do not need to keep discussing the fundamental question again and again." },
+                { "language": "fa", "text": "مطالعات کافی وجود دارد، بنابراین لازم نیست مدام دوباره درباره مسئله اصلی بحث کنیم." },
+                { "language": "ar", "text": "هناك دراسات كافية، لذلك لا نحتاج إلى مناقشة السؤال الأساسي مراراً وتكراراً." },
+                { "language": "tr", "text": "Yeterince çalışma var, bu yüzden temel soruyu sürekli yeniden tartışmamıza gerek yok." },
+                { "language": "ru", "text": "Есть достаточно исследований, поэтому нам не нужно снова и снова обсуждать принципиальный вопрос." },
+                { "language": "ckb", "text": "توێژینەوەی پێویست هەیە، بۆیە پێویست ناکات بەردەوام پرسی بنەڕەتی دووبارە گفتوگۆ بکەین." },
+                { "language": "kmr", "text": "Lêkolînên têr hene, ji ber vê yekê ne hewce ye ku em pirsa bingehîn her tim ji nû ve gotûbêj bikin." },
+                { "language": "pl", "text": "Jest wystarczająco dużo badań, więc nie musimy ciągle od nowa dyskutować kwestii zasadniczej." },
+                { "language": "ro", "text": "Există suficiente studii, deci nu trebuie să discutăm mereu din nou întrebarea de principiu." },
+                { "language": "sq", "text": "Ka mjaft studime, prandaj nuk duhet ta diskutojmë vazhdimisht nga e para çështjen themelore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu geschlossen. Die Antwort klingt informiert, aber sie blockiert die nötige Differenzierung zwischen allgemeiner Evidenz und lokaler Wirkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too closed. The answer sounds informed, but it blocks the necessary distinction between general evidence and local impact." },
+                { "language": "fa", "text": "بیش از حد بسته است. پاسخ آگاهانه به نظر می‌رسد، اما تمایز لازم میان شواهد کلی و اثر محلی را می‌بندد." },
+                { "language": "ar", "text": "مغلق أكثر من اللازم. يبدو الجواب مطلعاً، لكنه يمنع التمييز الضروري بين الأدلة العامة والأثر المحلي." },
+                { "language": "tr", "text": "Fazla kapalı. Cevap bilgili görünüyor, ama genel kanıt ile yerel etki arasındaki gerekli ayrımı engelliyor." },
+                { "language": "ru", "text": "Слишком закрыто. Ответ звучит осведомленно, но блокирует необходимое различие между общими данными и местным эффектом." },
+                { "language": "ckb", "text": "زۆر داخراوە. وەڵامەکە ئاگادار دەنگ دەدات، بەڵام جیاوازی پێویست لە نێوان بەڵگەی گشتی و کاریگەری ناوخۆیی دادەخات." },
+                { "language": "kmr", "text": "Pir girtî ye. Bersiv agahdar xuya dike, lê cudahiya pêwîst di navbera delîla giştî û bandora herêmî de asteng dike." },
+                { "language": "pl", "text": "Zbyt zamknięte. Odpowiedź brzmi kompetentnie, ale blokuje potrzebne rozróżnienie między ogólnymi dowodami a lokalnym efektem." },
+                { "language": "ro", "text": "Prea închis. Răspunsul sună informat, dar blochează distincția necesară între dovezile generale și efectul local." },
+                { "language": "sq", "text": "Tepër e mbyllur. Përgjigjja tingëllon e informuar, por bllokon dallimin e nevojshëm mes provave të përgjithshme dhe efektit lokal." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Genau dieser Punkt entscheidet für mich über die Legitimität. Wenn das Angebot teurer wird oder bestimmte Gruppen faktisch ausschließt, ist es schlecht gemacht. Meine Bedingung wäre: kein Aufpreis für das Standardessen, echte Alternativen bei Allergien und Religion sowie Beteiligung der Nutzerinnen und Nutzer vor Ort.",
+              "translations": [
+                { "language": "en", "text": "For me, exactly this point determines legitimacy. If the offer becomes more expensive or effectively excludes certain groups, it is badly designed. My condition would be: no surcharge for the default meal, real alternatives for allergies and religion, and participation of local users." },
+                { "language": "fa", "text": "دقیقاً همین نکته برای من تعیین‌کننده مشروعیت است. اگر این پیشنهاد گران‌تر شود یا در عمل گروه‌های خاصی را کنار بگذارد، بد طراحی شده است. شرط من این است: بدون اضافه‌هزینه برای غذای پیش‌فرض، گزینه‌های واقعی برای آلرژی و دین، و مشارکت کاربران همان محل." },
+                { "language": "ar", "text": "هذه النقطة بالذات تحدد بالنسبة لي مدى المشروعية. إذا أصبح العرض أغلى أو استبعد فعلياً فئات معينة، فهو مصمم بشكل سيئ. شرطي هو: لا زيادة سعرية للوجبة الافتراضية، وبدائل حقيقية للحساسية والدين، ومشاركة المستخدمين في المكان نفسه." },
+                { "language": "tr", "text": "Benim için meşruiyeti tam da bu nokta belirler. Teklif pahalılaşırsa ya da bazı grupları fiilen dışlarsa kötü tasarlanmıştır. Koşulum şu olurdu: varsayılan yemek için ek ücret yok, alerji ve din için gerçek alternatifler ve yerel kullanıcıların katılımı." },
+                { "language": "ru", "text": "Именно этот пункт для меня определяет легитимность. Если предложение становится дороже или фактически исключает определенные группы, оно плохо спроектировано. Моё условие: без доплаты за блюдо по умолчанию, реальные альтернативы при аллергиях и религиозных потребностях, а также участие местных пользователей." },
+                { "language": "ckb", "text": "هەر ئەم خاڵە بۆ من ڕەوایی دیاری دەکات. ئەگەر پێشکەشەکە گرانتر ببێت یان لە کرداردا گرووپی دیاریکراو دەر بخات، ئەوا بە خراپی دیزاین کراوە. مەرجی من ئەمەیە: هیچ زیادەپارەیەک بۆ خواردنی بنەڕەتی نەبێت، جێگرەوەی ڕاستەقینە بۆ هەستیاری و ئایین، و بەشداری بەکارهێنەرانی ناوخۆ." },
+                { "language": "kmr", "text": "Ji bo min rast ev xal rewatîyê diyar dike. Heke pêşniyar girantir bibe an hin koman di pratîkê de derxîne derve, ew xirab hatiye sêwirandin. Şerta min ev e: tu pereyê zêde ji bo xwarina bingehîn tune be, alternatîvên rast ji bo alerjî û olê hebin, û bikarhênerên herêmî beşdar bibin." },
+                { "language": "pl", "text": "Właśnie ten punkt decyduje dla mnie o legitymizacji. Jeśli oferta staje się droższa albo faktycznie wyklucza określone grupy, jest źle zaprojektowana. Mój warunek brzmiałby: brak dopłaty do posiłku domyślnego, realne alternatywy przy alergiach i religii oraz udział użytkowników na miejscu." },
+                { "language": "ro", "text": "Exact acest punct decide pentru mine legitimitatea. Dacă oferta devine mai scumpă sau exclude de fapt anumite grupuri, este prost concepută. Condiția mea ar fi: fără cost suplimentar pentru masa implicită, alternative reale pentru alergii și religie și participarea utilizatorilor locali." },
+                { "language": "sq", "text": "Pikërisht kjo pikë vendos për mua legjitimitetin. Nëse oferta bëhet më e shtrenjtë ose përjashton në fakt grupe të caktuara, është projektuar keq. Kushti im do të ishte: pa shtesë çmimi për vaktin e parazgjedhur, alternativa reale për alergjitë dhe fenë, si dhe pjesëmarrje e përdoruesve në vend." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht soziale Fairness zur Bedingung, ohne herablassend zu werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer makes social fairness a condition without becoming patronizing." },
+                { "language": "fa", "text": "قوی است: پاسخ عدالت اجتماعی را به شرط تبدیل می‌کند، بدون اینکه از بالا به پایین حرف بزند." },
+                { "language": "ar", "text": "قوي: يجعل الجواب العدالة الاجتماعية شرطاً من دون أن يصبح متعالياً." },
+                { "language": "tr", "text": "Güçlü: cevap sosyal adaleti koşul haline getiriyor, ama üstten konuşmuyor." },
+                { "language": "ru", "text": "Сильно: ответ делает социальную справедливость условием, не становясь снисходительным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دادپەروەری کۆمەڵایەتی دەکاتە مەرج، بێ ئەوەی لەسەرەوە قسە بکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv dadweriya civakî dike şert bêyî ku bi awayekî serdest biaxive." },
+                { "language": "pl", "text": "Mocne: odpowiedź czyni sprawiedliwość społeczną warunkiem, nie brzmiąc protekcjonalnie." },
+                { "language": "ro", "text": "Puternic: răspunsul face din echitatea socială o condiție fără să devină condescendent." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën drejtësinë shoqërore kusht pa u bërë përçmuese." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wer wenig Geld hat, profitiert doch besonders von einfachem und günstigem Essen.",
+              "translations": [
+                { "language": "en", "text": "People with little money benefit especially from simple and inexpensive food." },
+                { "language": "fa", "text": "کسانی که پول کمی دارند اتفاقاً از غذای ساده و ارزان بیشتر سود می‌برند." },
+                { "language": "ar", "text": "الأشخاص ذوو الدخل المحدود يستفيدون خصوصاً من الطعام البسيط والرخيص." },
+                { "language": "tr", "text": "Az parası olanlar basit ve ucuz yemekten özellikle yararlanır." },
+                { "language": "ru", "text": "Люди с небольшими доходами особенно выигрывают от простой и недорогой еды." },
+                { "language": "ckb", "text": "ئەو کەسانەی پارەیان کەمە بە تایبەتی سوود لە خواردنی سادە و هەرزان وەردەگرن." },
+                { "language": "kmr", "text": "Kesên bi pereyê kêm bi taybetî ji xwarina sade û erzan sûd digirin." },
+                { "language": "pl", "text": "Osoby z małymi pieniędzmi szczególnie korzystają przecież z prostego i taniego jedzenia." },
+                { "language": "ro", "text": "Persoanele cu bani puțini beneficiază în mod special de mâncare simplă și ieftină." },
+                { "language": "sq", "text": "Njerëzit me pak para përfitojnë veçanërisht nga ushqimi i thjeshtë dhe i lirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Riskant. Die Antwort kann bevormundend klingen und geht nicht auf Ausschluss, Wahlmöglichkeiten und Preisgarantie ein.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Risky. The answer can sound patronizing and does not address exclusion, choice, and price guarantees." },
+                { "language": "fa", "text": "پرریسک است. پاسخ می‌تواند قیم‌مآبانه به نظر برسد و به کنارگذاشتن، حق انتخاب و تضمین قیمت نمی‌پردازد." },
+                { "language": "ar", "text": "محفوف بالمخاطر. قد يبدو الجواب وصائياً ولا يتناول الإقصاء وإمكان الاختيار وضمان السعر." },
+                { "language": "tr", "text": "Riskli. Cevap vesayetçi duyulabilir ve dışlama, seçim imkânı ve fiyat garantisini ele almıyor." },
+                { "language": "ru", "text": "Рискованно. Ответ может звучать снисходительно и не затрагивает исключение, выбор и гарантию цены." },
+                { "language": "ckb", "text": "مەترسیدارە. وەڵامەکە دەتوانێت سەرپەرشتییانە دەنگ بدات و باس لە دەرخستن، هەڵبژاردن و دڵنیایی نرخ ناکات." },
+                { "language": "kmr", "text": "Bi rîsk e. Bersiv dikare wekî serperiştî xuya bike û behsa derxistinê, mafê hilbijartinê û garantîya bihayê nake." },
+                { "language": "pl", "text": "Ryzykowne. Odpowiedź może brzmieć protekcjonalnie i nie odnosi się do wykluczenia, wyboru ani gwarancji ceny." },
+                { "language": "ro", "text": "Riscant. Răspunsul poate suna paternalist și nu abordează excluderea, alegerea și garanția de preț." },
+                { "language": "sq", "text": "E rrezikshme. Përgjigjja mund të tingëllojë patronizuese dhe nuk trajton përjashtimin, zgjedhjen dhe garancinë e çmimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Darum würde ich die Bedingungen nicht als Vetorecht formulieren, sondern als Mindeststandard für einen Pilot. Mein Fazit wäre: Die Stadt sollte ein pflanzenbetontes Standardangebot testen, aber sozial abgesichert, auswertbar und korrigierbar. So verteidigt man Veränderung, ohne berechtigte Einwände zu übergehen.",
+              "translations": [
+                { "language": "en", "text": "That is why I would not formulate the conditions as a veto right, but as a minimum standard for a pilot. My conclusion would be: the city should test a mostly plant-based default offer, but with social safeguards, evaluation, and the possibility of correction. That is how you defend change without brushing aside valid objections." },
+                { "language": "fa", "text": "به همین دلیل من شرط‌ها را به‌عنوان حق وتو فرمول‌بندی نمی‌کنم، بلکه به‌عنوان حداقل استاندارد برای یک طرح آزمایشی. جمع‌بندی من این است: شهر باید یک پیشنهاد پیش‌فرض عمدتاً گیاهی را آزمایش کند، اما با حمایت اجتماعی، قابلیت ارزیابی و امکان اصلاح. این‌گونه می‌توان از تغییر دفاع کرد، بدون اینکه اعتراض‌های موجه نادیده گرفته شوند." },
+                { "language": "ar", "text": "لذلك لا أصوغ الشروط كحق نقض، بل كحد أدنى من المعايير لتجربة. وخلاصتي هي: ينبغي للمدينة أن تختبر عرضاً افتراضياً يغلب عليه الطابع النباتي، ولكن مع ضمانات اجتماعية، وقابلية للتقييم، وإمكان التصحيح. هكذا يمكن الدفاع عن التغيير من دون تجاوز الاعتراضات الوجيهة." },
+                { "language": "tr", "text": "Bu yüzden koşulları veto hakkı olarak değil, bir pilot için asgari standart olarak formüle ederdim. Sonucum şu olurdu: şehir ağırlıklı bitkisel bir varsayılan teklifi test etmeli, ama sosyal güvenceli, değerlendirilebilir ve düzeltilebilir biçimde. Geçerli itirazları yok saymadan değişim böyle savunulur." },
+                { "language": "ru", "text": "Поэтому я бы формулировал условия не как право вето, а как минимальный стандарт для пилотного этапа. Мой вывод был бы таким: город должен протестировать преимущественно растительный вариант по умолчанию, но с социальной защитой, возможностью оценки и корректировки. Так можно защищать изменения, не отмахиваясь от обоснованных возражений." },
+                { "language": "ckb", "text": "بۆیە من مەرجەکان وەک مافی ڤیتۆ دانابڕێژم، بەڵکو وەک ستانداردی کەمترین بۆ تاقیکردنەوە. کۆتاییەکەم ئەمە دەبێت: شار دەبێت پێشکەشی بنەڕەتیی زیاتر ڕووەکی تاقی بکاتەوە، بەڵام بە پاراستنی کۆمەڵایەتی، قابلی هەڵسەنگاندن و قابلی ڕاستکردنەوە. بەم شێوەیە دەتوانرێت بەرگری لە گۆڕانکاری بکرێت، بێ ئەوەی ناڕەزایەتییە دروستەکان پشتگوێ بخرێن." },
+                { "language": "kmr", "text": "Ji ber vê yekê ez şertan wekî mafê veto nayênim ziman, lê wekî standarda herî kêm ji bo pilotekê. Encamê min ev e: şar divê pêşniyareke bingehîn a piraniya wê nebatî biceribîne, lê bi ewlekariya civakî, bi şiyana nirxandinê û sererastkirinê. Bi vî awayî mirov guhertinê diparêze bêyî ku rexneyên rewa derbas bike." },
+                { "language": "pl", "text": "Dlatego nie formułowałbym warunków jako prawa weta, lecz jako minimalny standard dla pilotażu. Mój wniosek byłby taki: miasto powinno przetestować domyślną ofertę w większości roślinną, ale zabezpieczoną społecznie, możliwą do oceny i korekty. Tak broni się zmiany, nie pomijając uzasadnionych zastrzeżeń." },
+                { "language": "ro", "text": "De aceea nu aș formula condițiile ca drept de veto, ci ca standard minim pentru un pilot. Concluzia mea ar fi: orașul ar trebui să testeze o ofertă implicită predominant vegetală, dar cu garanții sociale, evaluabilă și corectabilă. Așa se apără schimbarea fără a trece peste obiecții justificate." },
+                { "language": "sq", "text": "Prandaj nuk do t'i formuloja kushtet si të drejtë vetoje, por si standard minimal për një pilot. Përfundimi im do të ishte: qyteti duhet të testojë një ofertë të parazgjedhur kryesisht bimore, por të mbrojtur shoqërisht, të vlerësueshme dhe të korrigjueshme. Kështu mbrohet ndryshimi pa anashkaluar kundërshtimet e drejta." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet klare Haltung, Grenzen und einen überprüfbaren nächsten Schritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer connects a clear stance, limits, and a verifiable next step." },
+                { "language": "fa", "text": "قوی است: پاسخ موضع روشن، حد و مرز و گام بعدی قابل بررسی را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: يربط الجواب بين موقف واضح وحدود وخطوة تالية قابلة للتحقق." },
+                { "language": "tr", "text": "Güçlü: cevap net bir duruşu, sınırları ve denetlenebilir bir sonraki adımı birleştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ соединяет ясную позицию, границы и проверяемый следующий шаг." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەڵوێستی ڕوون، سنوور و هەنگاوی داهاتووی قابل پشکنین پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv helwesteke zelal, sînor û gava din a dikare were kontrolkirin girê dide hev." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy jasne stanowisko, granice i sprawdzalny kolejny krok." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă o poziție clară, limite și un pas următor verificabil." },
+                { "language": "sq", "text": "E fortë: përgjigjja lidh qëndrimin e qartë, kufijtë dhe një hap të ardhshëm të verifikueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten es erst einmal ausprobieren und dann sehen wir weiter.",
+              "translations": [
+                { "language": "en", "text": "We should simply try it first and then see how things go." },
+                { "language": "fa", "text": "بهتر است اول آن را امتحان کنیم و بعد ببینیم چه می‌شود." },
+                { "language": "ar", "text": "ينبغي أن نجربه أولاً ثم نرى كيف ستسير الأمور." },
+                { "language": "tr", "text": "Önce bir deneyelim, sonra nasıl devam edeceğimizi görürüz." },
+                { "language": "ru", "text": "Нужно сначала просто попробовать, а потом посмотрим." },
+                { "language": "ckb", "text": "باشترە سەرەتا تاقی بکەینەوە و پاشان ببینین چی دەبێت." },
+                { "language": "kmr", "text": "Divê em pêşî biceribînin û paşê bibînin çawa dibe." },
+                { "language": "pl", "text": "Powinniśmy najpierw po prostu spróbować, a potem zobaczymy, co dalej." },
+                { "language": "ro", "text": "Ar trebui mai întâi să încercăm și apoi vedem mai departe." },
+                { "language": "sq", "text": "Duhet ta provojmë njëherë dhe pastaj të shohim si shkon." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage. Für C2 muss der Pilot mit Mindeststandard, Auswertung und Korrekturmöglichkeit verbunden werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague. At C2, the pilot must be linked to a minimum standard, evaluation, and the possibility of correction." },
+                { "language": "fa", "text": "بیش از حد مبهم است. در سطح C2 طرح آزمایشی باید به حداقل استاندارد، ارزیابی و امکان اصلاح وصل شود." },
+                { "language": "ar", "text": "غامض أكثر من اللازم. في مستوى C2 يجب ربط التجربة بحد أدنى من المعايير والتقييم وإمكان التصحيح." },
+                { "language": "tr", "text": "Fazla belirsiz. C2 düzeyinde pilot, asgari standart, değerlendirme ve düzeltme imkânıyla bağlantılı olmalıdır." },
+                { "language": "ru", "text": "Слишком расплывчато. На C2 пилот должен быть связан с минимальным стандартом, оценкой и возможностью корректировки." },
+                { "language": "ckb", "text": "زۆر ناڕوونە. لە C2 تاقیکردنەوە دەبێت بە کەمترین ستاندارد، هەڵسەنگاندن و ئەگەری ڕاستکردنەوە ببەسترێت." },
+                { "language": "kmr", "text": "Pir nezelal e. Di C2 de divê pilot bi standarda herî kêm, nirxandin û şiyana sererastkirinê ve were girêdan." },
+                { "language": "pl", "text": "Zbyt niejasne. Na C2 pilotaż musi być powiązany z minimalnym standardem, oceną i możliwością korekty." },
+                { "language": "ro", "text": "Prea vag. La C2, pilotul trebuie legat de un standard minim, evaluare și posibilitatea de corectare." },
+                { "language": "sq", "text": "Tepër e paqartë. Në C2 piloti duhet të lidhet me standard minimal, vlerësim dhe mundësi korrigjimi." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "positioning",
+          "text": "Eine starke C2-Position beginnt nicht mit einem Schlagwort, sondern mit einer klar begrenzten These.",
+          "translations": [
+            { "language": "en", "text": "A strong C2 position does not begin with a slogan, but with a clearly limited thesis." },
+            { "language": "fa", "text": "یک موضع قوی در سطح C2 با شعار شروع نمی‌شود، بلکه با یک تز روشن و محدود آغاز می‌شود." },
+            { "language": "ar", "text": "لا يبدأ موقف قوي في مستوى C2 بشعار، بل بأطروحة محددة بوضوح." },
+            { "language": "tr", "text": "Güçlü bir C2 pozisyonu sloganla değil, açıkça sınırlandırılmış bir tezle başlar." },
+            { "language": "ru", "text": "Сильная позиция C2 начинается не с лозунга, а с ясно ограниченного тезиса." },
+            { "language": "ckb", "text": "هەڵوێستێکی بەهێزی C2 بە دروشم دەست پێناکات، بەڵکو بە تێزێکی ڕوون و سنووردار دەست پێدەکات." },
+            { "language": "kmr", "text": "Helwesteke xurt a C2 bi sloganê dest pê nake, lê bi tezeke zelal û sînordar dest pê dike." },
+            { "language": "pl", "text": "Silne stanowisko C2 nie zaczyna się od sloganu, lecz od jasno ograniczonej tezy." },
+            { "language": "ro", "text": "O poziție puternică de C2 nu începe cu un slogan, ci cu o teză clar limitată." },
+            { "language": "sq", "text": "Një qëndrim i fortë C2 nuk fillon me slogan, por me një tezë të kufizuar qartë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "distinction",
+          "text": "Differenziertes Verteidigen heißt: den wahren Kern eines Einwands aufnehmen und trotzdem die eigene Linie halten.",
+          "translations": [
+            { "language": "en", "text": "Nuanced defense means taking up the true core of an objection while still holding your own line." },
+            { "language": "fa", "text": "دفاع دقیق یعنی هسته درست یک اعتراض را بپذیرید و با این حال خط اصلی خود را حفظ کنید." },
+            { "language": "ar", "text": "الدفاع المتمايز يعني التقاط اللب الصحيح للاعتراض مع الحفاظ على خطكم الخاص." },
+            { "language": "tr", "text": "Nüanslı savunma, bir itirazın doğru çekirdeğini alıp yine de kendi çizginizi korumak demektir." },
+            { "language": "ru", "text": "Нюансированная защита означает принять верное ядро возражения и всё же удержать собственную линию." },
+            { "language": "ckb", "text": "بەرگریی ورد واتە ناوەڕۆکی ڕاستی ناڕەزایەتییەک وەربگریت و هێشتا هێڵی خۆت بپارێزیت." },
+            { "language": "kmr", "text": "Parastina hûrgilî wateya wê ye ku navoka rast a rexneyekê bigirî û dîsa jî rêza xwe biparêzî." },
+            { "language": "pl", "text": "Niuansowa obrona oznacza przyjęcie prawdziwego jądra zastrzeżenia i jednoczesne utrzymanie własnej linii." },
+            { "language": "ro", "text": "Apărarea nuanțată înseamnă să preluați nucleul adevărat al unei obiecții și totuși să vă păstrați linia." },
+            { "language": "sq", "text": "Mbrojtje e nuancuar do të thotë të pranosh bërthamën e vërtetë të një kundërshtimi dhe prapë të ruash vijën tënde." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "evidence",
+          "text": "Vorsichtige Evidenzsprache wirkt auf C2 stärker als übertriebene Sicherheit.",
+          "translations": [
+            { "language": "en", "text": "Careful evidence language is stronger at C2 than exaggerated certainty." },
+            { "language": "fa", "text": "زبان محتاطانه درباره شواهد در سطح C2 قوی‌تر از قطعیت اغراق‌آمیز عمل می‌کند." },
+            { "language": "ar", "text": "لغة الأدلة الحذرة أقوى في مستوى C2 من اليقين المبالغ فيه." },
+            { "language": "tr", "text": "Kanıta dair dikkatli dil, C2 düzeyinde abartılı kesinlikten daha güçlüdür." },
+            { "language": "ru", "text": "Осторожный язык доказательств на C2 сильнее преувеличенной уверенности." },
+            { "language": "ckb", "text": "زمانی وریای بەڵگە لە C2 بەهێزترە لە دڵنیایی زیادەڕۆیانە." },
+            { "language": "kmr", "text": "Zimanê baldar ê delîlan di C2 de ji baweriya zêde xurtir e." },
+            { "language": "pl", "text": "Ostrożny język dowodów działa na C2 silniej niż przesadna pewność." },
+            { "language": "ro", "text": "Limbajul prudent al dovezilor este mai puternic la C2 decât certitudinea exagerată." },
+            { "language": "sq", "text": "Gjuha e kujdesshme e provave është më e fortë në C2 sesa siguria e ekzagjeruar." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "fairness",
+          "text": "Soziale Einwände sind nicht Nebenthemen; sie entscheiden, ob eine Position als legitim wahrgenommen wird.",
+          "translations": [
+            { "language": "en", "text": "Social objections are not side issues; they determine whether a position is perceived as legitimate." },
+            { "language": "fa", "text": "اعتراض‌های اجتماعی موضوع فرعی نیستند؛ آن‌ها تعیین می‌کنند که یک موضع مشروع تلقی شود یا نه." },
+            { "language": "ar", "text": "الاعتراضات الاجتماعية ليست قضايا جانبية؛ إنها تحدد ما إذا كان الموقف يُنظر إليه على أنه مشروع." },
+            { "language": "tr", "text": "Sosyal itirazlar yan konu değildir; bir pozisyonun meşru algılanıp algılanmadığını belirler." },
+            { "language": "ru", "text": "Социальные возражения не являются второстепенными; они определяют, воспринимается ли позиция как легитимная." },
+            { "language": "ckb", "text": "ناڕەزایەتییە کۆمەڵایەتییەکان بابەتی لاوەکی نین؛ ئەوان دیاری دەکەن هەڵوێستێک وەک ڕەوا بینرێت یان نا." },
+            { "language": "kmr", "text": "Rexneyên civakî mijarên aliyî nîn; ew diyar dikin ka helwestek wekî rewa tê dîtin an na." },
+            { "language": "pl", "text": "Zastrzeżenia społeczne nie są tematami pobocznymi; decydują, czy stanowisko jest postrzegane jako uprawnione." },
+            { "language": "ro", "text": "Obiecțiile sociale nu sunt teme secundare; ele decid dacă o poziție este percepută ca legitimă." },
+            { "language": "sq", "text": "Kundërshtimet shoqërore nuk janë tema anësore; ato vendosin nëse një pozicion perceptohet si legjitim." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "synthesis",
+          "text": "Ein C2-Fazit verteidigt nicht alles auf einmal, sondern eine begrenzte Forderung mit überprüfbaren Bedingungen.",
+          "translations": [
+            { "language": "en", "text": "A C2 conclusion does not defend everything at once, but a limited demand with verifiable conditions." },
+            { "language": "fa", "text": "جمع‌بندی C2 از همه چیز هم‌زمان دفاع نمی‌کند، بلکه از یک مطالبه محدود با شرط‌های قابل بررسی دفاع می‌کند." },
+            { "language": "ar", "text": "خاتمة C2 لا تدافع عن كل شيء في آن واحد، بل عن مطلب محدود بشروط قابلة للتحقق." },
+            { "language": "tr", "text": "C2 sonucu her şeyi aynı anda savunmaz; denetlenebilir koşulları olan sınırlı bir talebi savunur." },
+            { "language": "ru", "text": "Вывод на C2 защищает не всё сразу, а ограниченное требование с проверяемыми условиями." },
+            { "language": "ckb", "text": "کۆتایی C2 لە هەموو شتێک بە یەکجار بەرگری ناکات، بەڵکو لە داوایەکی سنووردار بە مەرجی قابل پشکنین بەرگری دەکات." },
+            { "language": "kmr", "text": "Encama C2 ji hemû tiştan bi hev re parastin nake, lê daxwazeke sînordar bi şertên dikarin werin kontrolkirin diparêze." },
+            { "language": "pl", "text": "Konkluzja C2 nie broni wszystkiego naraz, lecz ograniczonego postulatu ze sprawdzalnymi warunkami." },
+            { "language": "ro", "text": "O concluzie de C2 nu apără totul deodată, ci o cerere limitată cu condiții verificabile." },
+            { "language": "sq", "text": "Një përfundim C2 nuk mbron gjithçka njëherësh, por një kërkesë të kufizuar me kushte të verifikueshme." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "public-policy-discussion",
+          "placement": "detail-header",
+          "purpose": "Illustrate a neutral civic discussion about food policy in a municipal setting.",
+          "altText": "Eine neutrale Diskussionsrunde in einem Gemeindesaal mit drei Erwachsenen, Notizkarten und einer ruhigen Publikumssituation.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral discussion round in a community hall with three adults, note cards, and a calm audience setting." },
+            { "language": "fa", "text": "یک گفت‌وگوی بی‌طرف در سالن اجتماعی با سه بزرگسال، کارت‌های یادداشت و فضای آرام مخاطبان." },
+            { "language": "ar", "text": "حلقة نقاش محايدة في قاعة مجتمعية مع ثلاثة بالغين وبطاقات ملاحظات وجمهور هادئ." },
+            { "language": "tr", "text": "Bir toplum salonunda üç yetişkin, not kartları ve sakin izleyici ortamıyla nötr bir tartışma turu." },
+            { "language": "ru", "text": "Нейтральная дискуссия в общественном зале с тремя взрослыми, карточками для заметок и спокойной аудиторией." },
+            { "language": "ckb", "text": "بازنەی گفتوگۆیەکی بێلایەن لە هۆڵێکی کۆمەڵایەتی لەگەڵ سێ گەورەسال، کارتی تێبینی و بارودۆخی ئارامی ئامادەبووان." },
+            { "language": "kmr", "text": "Dorhêla gotûbêjeke bêalî di salona civakî de bi sê kesên mezin, kartên notan û rewşeke temaşevanan a aram." },
+            { "language": "pl", "text": "Neutralna runda dyskusyjna w sali społecznej z trzema dorosłymi, kartami notatek i spokojną publicznością." },
+            { "language": "ro", "text": "O rundă de discuții neutră într-o sală comunitară cu trei adulți, cartonașe de notițe și un public calm." },
+            { "language": "sq", "text": "Një raund diskutimi neutral në një sallë komunitare me tre të rritur, karta shënimesh dhe një publik të qetë." }
+          ],
+          "imagePrompt": "Clean educational illustration, municipal community hall in Germany, neutral civic discussion about canteen food policy, three diverse adults seated at a small table, note cards, calm audience, no readable text, no logos, no party symbols, no private data, accessible composition, balanced serious tone.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

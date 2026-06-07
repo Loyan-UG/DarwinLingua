@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-20-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 20 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 20",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-bei-der-auslaenderbehoerde-widerspruch-erklaeren",
+      "linkedDialogueSlug": null,
+      "title": "Bei der Ausländerbehörde einen Widerspruch erklären",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining an objection at the immigration office" },
+        { "language": "fa", "text": "توضیح دادن اعتراض اداری در اداره مهاجرت" },
+        { "language": "ar", "text": "شرح اعتراض إداري في دائرة شؤون الأجانب" },
+        { "language": "tr", "text": "Yabancılar dairesinde itirazı açıklamak" },
+        { "language": "ru", "text": "Объяснить возражение в ведомстве по делам иностранцев" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی ناڕەزاییەکی ئیداری لە فەرمانگەی بیانیان" },
+        { "language": "kmr", "text": "Li daîreya biyanîyan îtîrazekê ravekirin" },
+        { "language": "pl", "text": "Wyjaśnienie sprzeciwu w urzędzie do spraw cudzoziemców" },
+        { "language": "ro", "text": "Explicarea unei contestații la biroul pentru străini" },
+        { "language": "sq", "text": "Shpjegimi i një kundërshtimi në zyrën e të huajve" }
+      ],
+      "description": "Du bist bei der Ausländerbehörde, weil du einen ablehnenden Bescheid erhalten hast. Im Bescheid steht, dass ein Arbeitgebernachweis angeblich fehlt. Du möchtest sachlich erklären, warum du Widerspruch einlegen willst, welche Unterlagen du bereits eingereicht hast und wie das weitere Verfahren abläuft. Es geht um eine formale Klärung, nicht um Rechtsberatung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at the immigration office because you received a negative decision. The notice says that employer proof is allegedly missing. You want to explain factually why you want to object, which documents you have already submitted, and how the next steps work. This is about procedural clarification, not legal advice." },
+        { "language": "fa", "text": "در اداره مهاجرت هستی، چون یک تصمیم رد دریافت کرده‌ای. در نامه نوشته شده که ظاهراً مدرک کارفرما کم است. می‌خواهی با لحن واقع‌محور توضیح بدهی چرا می‌خواهی اعتراض اداری ثبت کنی، چه مدارکی را قبلاً تحویل داده‌ای و روند بعدی چگونه است. موضوع، روشن‌کردن روند اداری است، نه مشاوره حقوقی." },
+        { "language": "ar", "text": "أنت في دائرة شؤون الأجانب لأنك تلقيت قراراً بالرفض. في القرار مذكور أن إثباتاً من جهة العمل غير موجود على ما يبدو. تريد أن تشرح بشكل موضوعي لماذا تريد تقديم اعتراض، وأي مستندات قدمتها سابقاً، وكيف تسير الخطوات التالية. الأمر يتعلق بتوضيح الإجراء، وليس باستشارة قانونية." },
+        { "language": "tr", "text": "Yabancılar dairesindesin, çünkü olumsuz bir karar aldın. Kararda işverenden alınan bir belgenin eksik olduğu yazıyor. Neden itiraz etmek istediğini, hangi belgeleri zaten sunduğunu ve sonraki sürecin nasıl işleyeceğini somut biçimde açıklamak istiyorsun. Bu, hukuki danışmanlık değil, usulü netleştirme konusudur." },
+        { "language": "ru", "text": "Вы находитесь в ведомстве по делам иностранцев, потому что получили отказ. В решении указано, что якобы отсутствует справка от работодателя. Вы хотите фактически объяснить, почему хотите подать возражение, какие документы уже подали и как проходит дальнейшая процедура. Речь идёт о процедурном уточнении, а не о юридической консультации." },
+        { "language": "ckb", "text": "لە فەرمانگەی بیانیانیت چونکە بڕیارێکی ڕەتکردنەوەت وەرگرتووە. لە بڕیارەکەدا نووسراوە کە گوایە بەڵگەی کارفرما کەمە. دەتەوێت بە شێوەی بابەتی ڕوون بکەیتەوە بۆچی دەتەوێت ناڕەزایی پێشکەش بکەیت، کام بەڵگەنامەت پێشتر داوە و ڕێکارەکانی دواتر چۆنە. بابەتەکە ڕوونکردنەوەی ڕێکارییە، نە ڕاوێژی یاسایی." },
+        { "language": "kmr", "text": "Tu li daîreya biyanîyan î, ji ber ku biryareke redkirinê wergirtiye. Di biryarê de hatiye nivîsandin ku belgeyek ji kardêrê te winda ye. Tu dixwazî bi awayekî rastîn rave bikî çima dixwazî îtîraz bikî, kîjan belgeyan berê radest kiriye û pêvajoya paşîn çawa ye. Mijar zelalkirina rêkarê ye, ne şêwirmendiya hiqûqî." },
+        { "language": "pl", "text": "Jesteś w urzędzie do spraw cudzoziemców, ponieważ otrzymałeś decyzję odmowną. W decyzji napisano, że rzekomo brakuje zaświadczenia od pracodawcy. Chcesz rzeczowo wyjaśnić, dlaczego chcesz złożyć sprzeciw, jakie dokumenty już złożyłeś i jak wygląda dalsza procedura. Chodzi o wyjaśnienie procedury, a nie o poradę prawną." },
+        { "language": "ro", "text": "Ești la biroul pentru străini deoarece ai primit o decizie de respingere. În decizie scrie că ar lipsi o dovadă de la angajator. Vrei să explici obiectiv de ce dorești să depui o contestație, ce documente ai depus deja și cum decurge procedura următoare. Este vorba despre clarificarea procedurii, nu despre consiliere juridică." },
+        { "language": "sq", "text": "Je në zyrën e të huajve sepse ke marrë një vendim refuzimi. Në vendim thuhet se gjoja mungon një vërtetim nga punëdhënësi. Dëshiron të shpjegosh në mënyrë faktike pse do të bësh kundërshtim, cilat dokumente i ke dorëzuar tashmë dhe si vazhdon procedura. Bëhet fjalë për sqarim procedural, jo për këshillim juridik." }
+      ],
+      "learnerGoal": "Erkläre sachlich, warum du Widerspruch einlegen möchtest: Nenne den Bescheid, den strittigen Punkt, deine bereits eingereichten Nachweise, die gewünschte Verfahrensauskunft und die Bitte um eine schriftliche Eingangsbestätigung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain factually why you want to file an objection: name the decision, the disputed point, the proof you already submitted, the procedural information you need, and the request for written confirmation of receipt." },
+        { "language": "fa", "text": "با لحن واقع‌محور توضیح بده چرا می‌خواهی اعتراض اداری ثبت کنی: نامه رسمی، نکته مورد اختلاف، مدارکی که قبلاً ارائه کرده‌ای، اطلاعات موردنیاز درباره روند، و درخواست تأیید کتبی دریافت را بیان کن." },
+        { "language": "ar", "text": "اشرح بشكل موضوعي لماذا تريد تقديم اعتراض: اذكر القرار، والنقطة المختلف عليها، والإثباتات التي قدمتها سابقاً، والمعلومة الإجرائية المطلوبة، وطلب تأكيد خطي بالاستلام." },
+        { "language": "tr", "text": "Neden itiraz etmek istediğini somut biçimde açıkla: kararı, tartışmalı noktayı, önceden sunduğun kanıtları, ihtiyaç duyduğun usul bilgisini ve yazılı alındı onayı talebini belirt." },
+        { "language": "ru", "text": "Фактически объясните, почему хотите подать возражение: назовите решение, спорный пункт, уже поданные доказательства, нужную процедурную информацию и просьбу о письменном подтверждении получения." },
+        { "language": "ckb", "text": "بە شێوەی بابەتی ڕوون بکەوە بۆچی دەتەوێت ناڕەزایی پێشکەش بکەیت: بڕیارەکە، خاڵی ناکۆک، بەڵگە پێشکەشکراوەکان، زانیاری ڕێکاری پێویست و داوای پشتڕاستکردنەوەی نووسراوی وەرگرتن ناو ببە." },
+        { "language": "kmr", "text": "Bi awayekî rastîn rave bike çima dixwazî îtîraz bikî: biryarê, xala nakok, delîlên ku berê radest kiriye, agahiya rêkarê ya pêwîst û daxwaza piştrastkirina nivîskî ya wergirtinê bi nav bike." },
+        { "language": "pl", "text": "Rzeczowo wyjaśnij, dlaczego chcesz złożyć sprzeciw: wskaż decyzję, sporny punkt, już złożone dowody, potrzebną informację proceduralną i prośbę o pisemne potwierdzenie wpływu." },
+        { "language": "ro", "text": "Explică obiectiv de ce dorești să depui o contestație: menționează decizia, punctul contestat, dovezile deja depuse, informația procedurală necesară și cererea de confirmare scrisă a primirii." },
+        { "language": "sq", "text": "Shpjego në mënyrë faktike pse dëshiron të paraqesësh kundërshtim: përmend vendimin, pikën e kundërshtuar, provat që ke dorëzuar tashmë, informacionin procedural që të duhet dhe kërkesën për konfirmim me shkrim të marrjes." }
+      ],
+      "cefrLevel": "B2",
+      "category": "public-services",
+      "topics": ["public-services", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "explain-problem",
+      "interactionMode": "government-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 3200,
+      "roles": [
+        {
+          "roleKey": "office-staff",
+          "displayName": "Sachbearbeiterin",
+          "translations": [
+            { "language": "en", "text": "Case officer" },
+            { "language": "fa", "text": "کارشناس پرونده" },
+            { "language": "ar", "text": "موظفة المعاملات" },
+            { "language": "tr", "text": "Dosya görevlisi" },
+            { "language": "ru", "text": "Сотрудница ведомства" },
+            { "language": "ckb", "text": "کارمەندی مامەڵە" },
+            { "language": "kmr", "text": "Karbidesta dosyeyê" },
+            { "language": "pl", "text": "Urzędniczka prowadząca sprawę" },
+            { "language": "ro", "text": "Funcționara de caz" },
+            { "language": "sq", "text": "Nëpunësja e çështjes" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Antragsteller",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "متقاضی" },
+            { "language": "ar", "text": "مقدم الطلب" },
+            { "language": "tr", "text": "Başvuru sahibi" },
+            { "language": "ru", "text": "Заявитель" },
+            { "language": "ckb", "text": "داواکەر" },
+            { "language": "kmr", "text": "Daxwazkar" },
+            { "language": "pl", "text": "Wnioskodawca" },
+            { "language": "ro", "text": "Solicitant" },
+            { "language": "sq", "text": "Aplikuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "office-staff",
+          "baseText": "Guten Tag. Sie möchten wegen eines Bescheids sprechen. Geht es um eine Nachfrage oder möchten Sie Widerspruch einlegen?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. You would like to talk about a decision. Is it a question, or do you want to file an objection?" },
+            { "language": "fa", "text": "روز بخیر. می‌خواهید درباره یک تصمیم اداری صحبت کنید. موضوع فقط پرسش است یا می‌خواهید اعتراض اداری ثبت کنید؟" },
+            { "language": "ar", "text": "نهارك سعيد. تريد التحدث عن قرار إداري. هل الأمر مجرد سؤال أم تريد تقديم اعتراض؟" },
+            { "language": "tr", "text": "İyi günler. Bir karar hakkında konuşmak istiyorsunuz. Bu bir soru mu, yoksa itiraz mı etmek istiyorsunuz?" },
+            { "language": "ru", "text": "Добрый день. Вы хотите поговорить о решении. Это уточняющий вопрос или вы хотите подать возражение?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەتەوێت سەبارەت بە بڕیارێک قسە بکەیت. تەنها پرسیارە یان دەتەوێت ناڕەزایی پێشکەش بکەیت؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn dixwazin derbarê biryarekê biaxivin. Ev tenê pirs e an hûn dixwazin îtîraz bikin?" },
+            { "language": "pl", "text": "Dzień dobry. Chce Pan porozmawiać o decyzji. Czy chodzi o pytanie, czy chce Pan złożyć sprzeciw?" },
+            { "language": "ro", "text": "Bună ziua. Doriți să vorbiți despre o decizie. Este vorba despre o întrebare sau doriți să depuneți o contestație?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironi të flisni për një vendim. Është vetëm një pyetje apo dëshironi të paraqisni kundërshtim?" }
+          ],
+          "function": "open-procedure"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe den Bescheid vom 14. Juni erhalten. Darin wird mein Antrag abgelehnt, weil angeblich ein aktueller Arbeitgebernachweis fehlt. Ich möchte Widerspruch einlegen und zuerst klären, wie ich das korrekt und fristgerecht mache.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. I received the decision dated June 14. It rejects my application because a current employer proof is allegedly missing. I want to file an objection and first clarify how to do that correctly and within the deadline." },
+            { "language": "fa", "text": "روز بخیر. تصمیم اداری مورخ ۱۴ ژوئن را دریافت کرده‌ام. در آن درخواست من رد شده، چون ظاهراً مدرک جدید کارفرما کم است. می‌خواهم اعتراض اداری ثبت کنم و اول روشن کنم این کار را چگونه درست و در مهلت انجام بدهم." },
+            { "language": "ar", "text": "نهارك سعيد. تلقيت القرار المؤرخ في 14 يونيو. فيه تم رفض طلبي لأن إثباتاً حديثاً من جهة العمل غير موجود على ما يبدو. أريد تقديم اعتراض وأود أولاً أن أوضح كيف أفعل ذلك بشكل صحيح وضمن المهلة." },
+            { "language": "tr", "text": "İyi günler. 14 Haziran tarihli kararı aldım. Kararda başvurum, güncel bir işveren belgesi eksik olduğu gerekçesiyle reddediliyor. İtiraz etmek istiyorum ve önce bunu doğru ve süresi içinde nasıl yapacağımı netleştirmek istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я получил решение от 14 июня. В нём моя заявка отклонена, потому что якобы отсутствует актуальная справка от работодателя. Я хочу подать возражение и сначала уточнить, как сделать это правильно и в срок." },
+            { "language": "ckb", "text": "ڕۆژ باش. بڕیارنامەی ١٤ی حوزەیرانم وەرگرتووە. تێیدا داواکەم ڕەتکراوەتەوە چونکە گوایە بەڵگەی نوێی کارفرما کەمە. دەمەوێت ناڕەزایی پێشکەش بکەم و سەرەتا ڕوون بکەمەوە چۆن ئەمە بە دروستی و لە ناو مۆڵەتدا بکەم." },
+            { "language": "kmr", "text": "Roj baş. Min biryara 14ê Hezîranê wergirtiye. Tê de daxwaza min hatiye redkirin, ji ber ku belgeyeke nû ya kardêrê min gûya kêm e. Ez dixwazim îtîraz bikim û pêşî zelal bikim ka ez çawa vê yekê rast û di demê de bikim." },
+            { "language": "pl", "text": "Dzień dobry. Otrzymałem decyzję z 14 czerwca. Odrzucono w niej mój wniosek, ponieważ rzekomo brakuje aktualnego zaświadczenia od pracodawcy. Chcę złożyć sprzeciw i najpierw wyjaśnić, jak zrobić to poprawnie i w terminie." },
+            { "language": "ro", "text": "Bună ziua. Am primit decizia din 14 iunie. În ea cererea mea este respinsă deoarece ar lipsi o dovadă actuală de la angajator. Doresc să depun contestație și mai întâi vreau să clarific cum fac acest lucru corect și în termen." },
+            { "language": "sq", "text": "Mirëdita. Kam marrë vendimin e datës 14 qershor. Në të, kërkesa ime refuzohet sepse gjoja mungon një vërtetim i përditësuar nga punëdhënësi. Dua të paraqis kundërshtim dhe së pari të sqaroj si ta bëj këtë saktë dhe brenda afatit." }
+          ],
+          "function": "state-intention",
+          "expectedLearnerAction": "Nenne Datum, strittigen Punkt und die Absicht, fristgerecht Widerspruch einzulegen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "office-staff",
+          "baseText": "Ich kann Ihnen den Ablauf erklären, aber keine Rechtsberatung geben. Was genau halten Sie an dem Bescheid für falsch oder unvollständig?",
+          "translations": [
+            { "language": "en", "text": "I can explain the procedure, but I cannot give legal advice. What exactly do you think is wrong or incomplete in the decision?" },
+            { "language": "fa", "text": "می‌توانم روند را توضیح بدهم، اما مشاوره حقوقی نمی‌دهم. دقیقاً کدام بخش تصمیم را نادرست یا ناقص می‌دانید؟" },
+            { "language": "ar", "text": "يمكنني شرح الإجراء لك، لكن لا أستطيع تقديم استشارة قانونية. ما الذي تعتبره بالضبط خاطئاً أو ناقصاً في القرار؟" },
+            { "language": "tr", "text": "Size süreci açıklayabilirim, ancak hukuki danışmanlık veremem. Kararda tam olarak neyi yanlış veya eksik buluyorsunuz?" },
+            { "language": "ru", "text": "Я могу объяснить процедуру, но не могу давать юридическую консультацию. Что именно в решении вы считаете неправильным или неполным?" },
+            { "language": "ckb", "text": "دەتوانم ڕێکارەکە بۆت ڕوون بکەمەوە، بەڵام ڕاوێژی یاسایی نادەم. بە وردی کام بەشی بڕیارەکە بە هەڵە یان ناتەواو دەزانیت؟" },
+            { "language": "kmr", "text": "Ez dikarim pêvajoyê ji we re rave bikim, lê şêwirmendiya hiqûqî nadim. Hûn di biryarê de bi taybetî çi tiştê şaş an ne temam dibînin?" },
+            { "language": "pl", "text": "Mogę wyjaśnić procedurę, ale nie mogę udzielać porady prawnej. Co dokładnie uważa Pan w decyzji za błędne lub niepełne?" },
+            { "language": "ro", "text": "Vă pot explica procedura, dar nu pot oferi consiliere juridică. Ce anume considerați greșit sau incomplet în decizie?" },
+            { "language": "sq", "text": "Mund t'ju shpjegoj procedurën, por nuk mund të jap këshillim juridik. Çfarë saktësisht mendoni se është e gabuar ose e paplotë në vendim?" }
+          ],
+          "function": "set-procedure-boundary"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Der strittige Punkt ist der Arbeitgebernachweis. Ich habe am 3. Mai eine aktuelle Arbeitgeberbescheinigung über das Online-Portal hochgeladen. Ich habe auch eine Eingangsbestätigung. Deshalb möchte ich im Widerspruch erklären, dass dieser Nachweis bereits vorlag.",
+          "translations": [
+            { "language": "en", "text": "The disputed point is the employer proof. On May 3, I uploaded a current employer certificate through the online portal. I also have a confirmation of receipt. That is why I want to explain in the objection that this proof had already been submitted." },
+            { "language": "fa", "text": "نکته مورد اختلاف مدرک کارفرماست. من در ۳ مه یک گواهی جدید کارفرما را از طریق درگاه آنلاین بارگذاری کردم. تأیید دریافت هم دارم. بنابراین می‌خواهم در اعتراض توضیح بدهم که این مدرک قبلاً ارائه شده بود." },
+            { "language": "ar", "text": "النقطة المختلف عليها هي إثبات جهة العمل. في 3 مايو رفعت شهادة عمل حديثة عبر البوابة الإلكترونية. لدي أيضاً تأكيد بالاستلام. لذلك أريد أن أوضح في الاعتراض أن هذا الإثبات كان قد قُدم بالفعل." },
+            { "language": "tr", "text": "Tartışmalı nokta işveren belgesi. 3 Mayıs'ta güncel bir işveren yazısını çevrim içi portal üzerinden yükledim. Ayrıca alındı onayım da var. Bu nedenle itirazda bu belgenin zaten sunulmuş olduğunu açıklamak istiyorum." },
+            { "language": "ru", "text": "Спорный пункт — справка от работодателя. 3 мая я загрузил актуальную справку работодателя через онлайн-портал. У меня также есть подтверждение получения. Поэтому в возражении я хочу объяснить, что это доказательство уже было подано." },
+            { "language": "ckb", "text": "خاڵی ناکۆک بەڵگەی کارفرمایە. من لە ٣ی مایدا گواهییەکی نوێی کارفرمام لە ڕێگەی پۆرتاڵی ئۆنلاینەوە بارکرد. پشتڕاستکردنەوەی وەرگرتنیشم هەیە. بۆیە دەمەوێت لە ناڕەزاییەکەدا ڕوون بکەمەوە کە ئەم بەڵگەیە پێشتر پێشکەش کرابوو." },
+            { "language": "kmr", "text": "Xala nakok belgeya kardêr e. Min di 3ê Gulanê de belgeyeke nû ya kardêrê xwe bi rêya portala serhêl bar kir. Piştrastkirina wergirtinê jî heye. Ji ber vê yekê ez dixwazim di îtîrazê de rave bikim ku ev delîl berê hatiye radestkirin." },
+            { "language": "pl", "text": "Spornym punktem jest zaświadczenie od pracodawcy. 3 maja wgrałem aktualne zaświadczenie przez portal internetowy. Mam też potwierdzenie wpływu. Dlatego chcę w sprzeciwie wyjaśnić, że ten dowód był już złożony." },
+            { "language": "ro", "text": "Punctul contestat este dovada de la angajator. Pe 3 mai am încărcat o adeverință actuală de la angajator prin portalul online. Am și o confirmare de primire. De aceea vreau să explic în contestație că această dovadă fusese deja depusă." },
+            { "language": "sq", "text": "Pika e kundërshtuar është vërtetimi nga punëdhënësi. Më 3 maj kam ngarkuar një vërtetim të përditësuar nga punëdhënësi përmes portalit online. Kam edhe konfirmim marrjeje. Prandaj dua të shpjegoj në kundërshtim se kjo provë ishte dorëzuar tashmë." }
+          ],
+          "function": "name-evidence",
+          "expectedLearnerAction": "Erkläre den strittigen Punkt mit Datum, Nachweis und Eingangsbestätigung."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "office-staff",
+          "baseText": "Das ist eine klare Begründung. Für den Widerspruch brauchen wir in der Regel das Aktenzeichen, das Datum des Bescheids, Ihre Erklärung und Kopien der Nachweise. Haben Sie die Eingangsbestätigung dabei?",
+          "translations": [
+            { "language": "en", "text": "That is a clear reason. For the objection, we usually need the reference number, the date of the decision, your explanation, and copies of the proof. Do you have the confirmation of receipt with you?" },
+            { "language": "fa", "text": "این یک دلیل روشن است. برای اعتراض اداری معمولاً به شماره پرونده، تاریخ تصمیم، توضیح شما و کپی مدارک نیاز داریم. تأیید دریافت را همراه دارید؟" },
+            { "language": "ar", "text": "هذا تعليل واضح. للاعتراض نحتاج عادةً إلى رقم الملف، وتاريخ القرار، وشرحك، ونسخ من الإثباتات. هل لديك تأكيد الاستلام معك؟" },
+            { "language": "tr", "text": "Bu açık bir gerekçe. İtiraz için genellikle dosya numarası, karar tarihi, açıklamanız ve kanıtların kopyaları gerekir. Alındı onayı yanınızda mı?" },
+            { "language": "ru", "text": "Это ясное обоснование. Для возражения нам обычно нужны номер дела, дата решения, ваше объяснение и копии доказательств. У вас есть подтверждение получения?" },
+            { "language": "ckb", "text": "ئەمە پاساوێکی ڕوونە. بۆ ناڕەزاییەکە بە گشتی پێویستمان بە ژمارەی کەیس، بەرواری بڕیار، ڕوونکردنەوەکەت و کۆپی بەڵگەکان هەیە. پشتڕاستکردنەوەی وەرگرتنت پێیە؟" },
+            { "language": "kmr", "text": "Ev sedemeke zelal e. Ji bo îtîrazê bi gelemperî hejmarê dosyeyê, roja biryarê, ravekirina we û kopiyên delîlan pêwîst in. Piştrastkirina wergirtinê bi we re ye?" },
+            { "language": "pl", "text": "To jasne uzasadnienie. Do sprzeciwu zazwyczaj potrzebujemy numeru sprawy, daty decyzji, Pana wyjaśnienia i kopii dowodów. Czy ma Pan przy sobie potwierdzenie wpływu?" },
+            { "language": "ro", "text": "Aceasta este o justificare clară. Pentru contestație avem de obicei nevoie de numărul dosarului, data deciziei, explicația dumneavoastră și copii ale dovezilor. Aveți confirmarea de primire la dumneavoastră?" },
+            { "language": "sq", "text": "Kjo është një arsye e qartë. Për kundërshtimin zakonisht na duhen numri i dosjes, data e vendimit, shpjegimi juaj dhe kopje të provave. A e keni me vete konfirmimin e marrjes?" }
+          ],
+          "function": "list-required-elements"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja, die Bestätigung habe ich als PDF und ausgedruckt. Können Sie mir bitte sagen, ob ich den Widerspruch hier abgeben kann oder ob er schriftlich per Post eingereicht werden muss? Außerdem möchte ich wissen, ob die Begründung heute vollständig sein muss.",
+          "translations": [
+            { "language": "en", "text": "Yes, I have the confirmation as a PDF and printed out. Could you please tell me whether I can submit the objection here or whether it must be sent in writing by post? I would also like to know whether the reasoning has to be complete today." },
+            { "language": "fa", "text": "بله، تأیید را هم به صورت پی‌دی‌اف دارم و هم چاپ کرده‌ام. می‌توانید لطفاً بگویید آیا می‌توانم اعتراض را همین‌جا تحویل بدهم یا باید کتبی از طریق پست ارسال شود؟ همچنین می‌خواهم بدانم آیا دلیل‌نویسی باید امروز کامل باشد یا نه." },
+            { "language": "ar", "text": "نعم، لدي التأكيد بصيغة ملف إلكتروني ومطبوعاً. هل يمكنك أن تخبريني هل يمكنني تقديم الاعتراض هنا، أم يجب إرساله خطياً بالبريد؟ وأود أيضاً أن أعرف هل يجب أن يكون التعليل كاملاً اليوم." },
+            { "language": "tr", "text": "Evet, onay hem PDF olarak hem de basılı şekilde bende. İtirazı burada teslim edip edemeyeceğimi ya da yazılı olarak posta ile göndermem gerekip gerekmediğini söyleyebilir misiniz? Ayrıca gerekçenin bugün tam olması gerekip gerekmediğini bilmek istiyorum." },
+            { "language": "ru", "text": "Да, подтверждение у меня есть в виде файла и в распечатанном виде. Можете сказать, могу ли я подать возражение здесь или его нужно отправить письменно по почте? Кроме того, я хотел бы знать, должно ли обоснование быть полностью готово сегодня." },
+            { "language": "ckb", "text": "بەڵێ، پشتڕاستکردنەوەکەم بە شێوەی فایل و چاپکراو هەیە. دەتوانن تکایە پێم بڵێن ئایا دەتوانم ناڕەزاییەکە لێرە بدەم، یان دەبێت بە شێوەی نووسراو بە پۆست بنێردرێت؟ هەروەها دەمەوێت بزانم ئایا پاساوەکە دەبێت ئەمڕۆ تەواو بێت." },
+            { "language": "kmr", "text": "Erê, piştrastkirin hem wekî pel hem jî çapkirî li cem min heye. Hûn dikarin ji kerema xwe bêjin gelo ez dikarim îtîrazê li vir radest bikim an divê bi nivîskî bi postê were şandin? Her wiha ez dixwazim bizanim gelo sedem divê îro temam be." },
+            { "language": "pl", "text": "Tak, mam potwierdzenie jako plik i w wersji wydrukowanej. Czy może mi Pani powiedzieć, czy mogę złożyć sprzeciw tutaj, czy musi być złożony pisemnie pocztą? Chciałbym też wiedzieć, czy uzasadnienie musi być dziś kompletne." },
+            { "language": "ro", "text": "Da, am confirmarea ca fișier și tipărită. Îmi puteți spune, vă rog, dacă pot depune contestația aici sau dacă trebuie trimisă în scris prin poștă? De asemenea, aș vrea să știu dacă motivarea trebuie să fie completă astăzi." },
+            { "language": "sq", "text": "Po, konfirmimin e kam si skedar dhe të printuar. A mund të më thoni, ju lutem, nëse mund ta dorëzoj kundërshtimin këtu apo duhet të dërgohet me shkrim me postë? Gjithashtu dua të di nëse arsyetimi duhet të jetë i plotë sot." }
+          ],
+          "function": "ask-submission-route",
+          "expectedLearnerAction": "Frage nach Abgabeweg und Begründungsumfang, ohne Rechtsberatung zu verlangen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "office-staff",
+          "baseText": "Sie können den Widerspruch hier schriftlich abgeben oder per Post schicken. Wichtig ist, dass er fristgerecht eingeht. Die Begründung sollte möglichst konkret sein; wenn weitere Unterlagen folgen, schreiben Sie das bitte deutlich dazu.",
+          "translations": [
+            { "language": "en", "text": "You can submit the objection here in writing or send it by post. It is important that it arrives within the deadline. The reasoning should be as specific as possible; if further documents will follow, please state that clearly." },
+            { "language": "fa", "text": "می‌توانید اعتراض را اینجا به صورت کتبی تحویل بدهید یا با پست بفرستید. مهم این است که در مهلت مقرر دریافت شود. دلیل‌نویسی باید تا حد امکان مشخص باشد؛ اگر مدارک دیگری بعداً می‌آید، لطفاً آن را روشن بنویسید." },
+            { "language": "ar", "text": "يمكنك تقديم الاعتراض هنا خطياً أو إرساله بالبريد. المهم أن يصل ضمن المهلة. ينبغي أن يكون التعليل محدداً قدر الإمكان؛ وإذا كانت هناك مستندات أخرى ستتبع، فاكتب ذلك بوضوح." },
+            { "language": "tr", "text": "İtirazı burada yazılı olarak teslim edebilir veya posta ile gönderebilirsiniz. Önemli olan süresi içinde ulaşmasıdır. Gerekçe mümkün olduğunca somut olmalı; başka belgeler daha sonra gelecekse lütfen bunu açıkça yazın." },
+            { "language": "ru", "text": "Вы можете подать возражение здесь письменно или отправить его по почте. Важно, чтобы оно поступило в срок. Обоснование должно быть как можно более конкретным; если позже будут дополнительные документы, пожалуйста, ясно укажите это." },
+            { "language": "ckb", "text": "دەتوانیت ناڕەزاییەکە لێرە بە شێوەی نووسراو بدەیت یان بە پۆست بینێریت. گرنگە لە ناو مۆڵەتدا بگات. پاساوەکە باشترە تا دەتوانرێت دیاریکراو بێت؛ ئەگەر بەڵگەنامەی دیکە دواتر دێت، تکایە ئەوە بە ڕوونی بنووسە." },
+            { "language": "kmr", "text": "Hûn dikarin îtîrazê li vir bi nivîskî radest bikin an bi postê bişînin. Girîng e ku ew di demê de bigihîje. Sedem divê heta ku gengaz e konkret be; heke belgeyên din paşê werin, ji kerema xwe vê yekê eşkere binivîsin." },
+            { "language": "pl", "text": "Może Pan złożyć sprzeciw tutaj pisemnie albo wysłać go pocztą. Ważne jest, aby wpłynął w terminie. Uzasadnienie powinno być możliwie konkretne; jeśli kolejne dokumenty zostaną dosłane później, proszę to wyraźnie napisać." },
+            { "language": "ro", "text": "Puteți depune contestația aici în scris sau o puteți trimite prin poștă. Important este să ajungă în termen. Motivarea ar trebui să fie cât mai concretă; dacă vor urma alte documente, vă rog să scrieți clar acest lucru." },
+            { "language": "sq", "text": "Mund ta dorëzoni kundërshtimin këtu me shkrim ose ta dërgoni me postë. E rëndësishme është të mbërrijë brenda afatit. Arsyetimi duhet të jetë sa më konkret; nëse dokumente të tjera do të vijnë më vonë, ju lutem shkruajeni qartë." }
+          ],
+          "function": "explain-submission-route"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Dann formuliere ich den Widerspruch heute schriftlich und füge die Arbeitgeberbescheinigung sowie die Eingangsbestätigung bei. Ich schreibe auch dazu, dass ich bei Bedarf weitere Unterlagen nachreichen kann. Können Sie mir bitte den genauen Fristablauf nennen?",
+          "translations": [
+            { "language": "en", "text": "Then I will write the objection today and attach the employer certificate and the confirmation of receipt. I will also state that I can submit further documents if needed. Could you please tell me the exact end of the deadline?" },
+            { "language": "fa", "text": "پس امروز اعتراض را کتبی می‌نویسم و گواهی کارفرما و تأیید دریافت را پیوست می‌کنم. همچنین می‌نویسم که در صورت نیاز می‌توانم مدارک بیشتری ارائه کنم. می‌توانید لطفاً پایان دقیق مهلت را بگویید؟" },
+            { "language": "ar", "text": "إذن سأصيغ الاعتراض خطياً اليوم وأرفق شهادة جهة العمل وتأكيد الاستلام. وسأكتب أيضاً أنني أستطيع تقديم مستندات إضافية عند الحاجة. هل يمكنك أن تذكري لي نهاية المهلة بالضبط؟" },
+            { "language": "tr", "text": "O zaman itirazı bugün yazılı olarak hazırlayacağım ve işveren belgesini ve alındı onayını ekleyeceğim. Ayrıca gerekirse başka belgeler sunabileceğimi de yazacağım. Bana sürenin tam olarak ne zaman bittiğini söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Тогда я сегодня письменно составлю возражение и приложу справку от работодателя, а также подтверждение получения. Я также напишу, что при необходимости могу дослать дополнительные документы. Можете назвать точное окончание срока?" },
+            { "language": "ckb", "text": "کەواتە ئەمڕۆ ناڕەزاییەکە بە نووسراوی دادەنێم و گواهی کارفرما و پشتڕاستکردنەوەی وەرگرتن هاوپێچ دەکەم. هەروەها دەنووسم کە ئەگەر پێویست بوو دەتوانم بەڵگەنامەی زیاتر دواتر پێشکەش بکەم. دەتوانن تکایە کۆتایی وردی مۆڵەتەکە پێم بڵێن؟" },
+            { "language": "kmr", "text": "Wê demê ez îro îtîrazê bi nivîskî amade dikim û belgeya kardêr û piştrastkirina wergirtinê lê zêde dikim. Her wiha ez dinivîsim ku heke pêwîst be dikarim belgeyên din paşê radest bikim. Hûn dikarin ji kerema xwe dawiya demê ya rast bêjin?" },
+            { "language": "pl", "text": "W takim razie dziś sporządzę sprzeciw pisemnie i dołączę zaświadczenie od pracodawcy oraz potwierdzenie wpływu. Napiszę też, że w razie potrzeby mogę dosłać dalsze dokumenty. Czy może mi Pani podać dokładny koniec terminu?" },
+            { "language": "ro", "text": "Atunci voi redacta astăzi contestația în scris și voi anexa adeverința de la angajator, precum și confirmarea de primire. Voi scrie și că pot depune documente suplimentare dacă este nevoie. Îmi puteți spune, vă rog, data exactă la care expiră termenul?" },
+            { "language": "sq", "text": "Atëherë do ta formuloj sot kundërshtimin me shkrim dhe do të bashkëngjis vërtetimin nga punëdhënësi dhe konfirmimin e marrjes. Do të shkruaj gjithashtu se mund të dorëzoj dokumente të tjera nëse nevojiten. A mund të më thoni, ju lutem, afatin e saktë të përfundimit?" }
+          ],
+          "function": "summarize-submission-plan",
+          "expectedLearnerAction": "Fasse den Abgabeplan zusammen und frage nach dem genauen Fristende."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "office-staff",
+          "baseText": "Nach dem Zustelldatum in Ihrer Akte endet die Frist am 15. Juli. Wenn Sie den Widerspruch heute hier abgeben, bekommen Sie einen Eingangsstempel. Bewahren Sie bitte eine Kopie für Ihre Unterlagen auf.",
+          "translations": [
+            { "language": "en", "text": "According to the delivery date in your file, the deadline ends on July 15. If you submit the objection here today, you will receive an intake stamp. Please keep a copy for your records." },
+            { "language": "fa", "text": "طبق تاریخ ابلاغ در پرونده شما، مهلت در ۱۵ ژوئیه تمام می‌شود. اگر امروز اعتراض را همین‌جا تحویل بدهید، مهر دریافت می‌گیرید. لطفاً یک کپی برای مدارک خود نگه دارید." },
+            { "language": "ar", "text": "بحسب تاريخ التبليغ في ملفك، تنتهي المهلة في 15 يوليو. إذا قدمت الاعتراض هنا اليوم فستحصل على ختم استلام. احتفظ من فضلك بنسخة لسجلاتك." },
+            { "language": "tr", "text": "Dosyanızdaki tebliğ tarihine göre süre 15 Temmuz'da sona eriyor. İtirazı bugün burada teslim ederseniz giriş damgası alırsınız. Lütfen kendi evraklarınız için bir kopya saklayın." },
+            { "language": "ru", "text": "Согласно дате вручения в вашем деле, срок заканчивается 15 июля. Если вы сегодня подадите возражение здесь, вы получите отметку о приёме. Пожалуйста, сохраните копию для своих документов." },
+            { "language": "ckb", "text": "بەپێی بەرواری گەیاندن لە کەیسەکەتدا، مۆڵەتەکە لە ١٥ی تەممووز کۆتایی دێت. ئەگەر ئەمڕۆ ناڕەزاییەکە لێرە بدەیت، مۆری وەرگرتن وەردەگریت. تکایە کۆپییەک بۆ بەڵگەنامەکانی خۆت بهێڵەوە." },
+            { "language": "kmr", "text": "Li gor roja radestkirinê di dosyeya we de, dem di 15ê Tîrmehê de diqede. Heke hûn îro îtîrazê li vir radest bikin, hûn mohreke wergirtinê distînin. Ji kerema xwe kopiyekê ji bo belgeyên xwe biparêzin." },
+            { "language": "pl", "text": "Zgodnie z datą doręczenia w Pana aktach termin upływa 15 lipca. Jeśli złoży Pan sprzeciw dziś tutaj, otrzyma Pan pieczątkę wpływu. Proszę zachować kopię do swoich dokumentów." },
+            { "language": "ro", "text": "Conform datei de comunicare din dosarul dumneavoastră, termenul expiră la 15 iulie. Dacă depuneți contestația aici astăzi, veți primi o ștampilă de primire. Vă rog să păstrați o copie pentru documentele dumneavoastră." },
+            { "language": "sq", "text": "Sipas datës së dorëzimit në dosjen tuaj, afati përfundon më 15 korrik. Nëse e dorëzoni kundërshtimin këtu sot, do të merrni një vulë pranimi. Ju lutem ruani një kopje për dokumentet tuaja." }
+          ],
+          "function": "confirm-deadline-and-receipt"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann gebe ich den Widerspruch heute mit Aktenzeichen, Bescheiddatum, Arbeitgeberbescheinigung und Eingangsbestätigung ab. Ich bitte um einen Eingangsstempel auf meiner Kopie und notiere mir, dass die Frist am 15. Juli endet.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will submit the objection today with the reference number, decision date, employer certificate, and confirmation of receipt. I ask for an intake stamp on my copy and note that the deadline ends on July 15." },
+            { "language": "fa", "text": "خیلی ممنون. پس امروز اعتراض را با شماره پرونده، تاریخ تصمیم، گواهی کارفرما و تأیید دریافت تحویل می‌دهم. روی کپی خودم مهر دریافت می‌خواهم و یادداشت می‌کنم که مهلت در ۱۵ ژوئیه تمام می‌شود." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأقدم الاعتراض اليوم مع رقم الملف وتاريخ القرار وشهادة جهة العمل وتأكيد الاستلام. أطلب ختم استلام على نسختي وأسجل أن المهلة تنتهي في 15 يوليو." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman itirazı bugün dosya numarası, karar tarihi, işveren belgesi ve alındı onayıyla teslim edeceğim. Kendi kopyama giriş damgası rica edeceğim ve sürenin 15 Temmuz'da bittiğini not edeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я сегодня подам возражение с номером дела, датой решения, справкой от работодателя и подтверждением получения. Я попрошу поставить отметку о приёме на моей копии и запишу, что срок заканчивается 15 июля." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ ناڕەزاییەکە بە ژمارەی کەیس، بەرواری بڕیار، گواهی کارفرما و پشتڕاستکردنەوەی وەرگرتن دەدەم. داوای مۆری وەرگرتن لەسەر کۆپییەکەم دەکەم و تێبینی دەکەم کە مۆڵەتەکە لە ١٥ی تەممووز کۆتایی دێت." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez îro îtîrazê bi hejmarê dosyeyê, roja biryarê, belgeya kardêr û piştrastkirina wergirtinê radest dikim. Ez li ser kopiya xwe mohreke wergirtinê dixwazim û dinivîsim ku dem di 15ê Tîrmehê de diqede." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie dziś złożę sprzeciw z numerem sprawy, datą decyzji, zaświadczeniem od pracodawcy i potwierdzeniem wpływu. Poproszę o pieczątkę wpływu na mojej kopii i zanotuję, że termin upływa 15 lipca." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci voi depune astăzi contestația cu numărul dosarului, data deciziei, adeverința de la angajator și confirmarea de primire. Voi cere o ștampilă de primire pe copia mea și notez că termenul expiră la 15 iulie." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë sot do ta dorëzoj kundërshtimin me numrin e dosjes, datën e vendimit, vërtetimin nga punëdhënësi dhe konfirmimin e marrjes. Do të kërkoj një vulë pranimi në kopjen time dhe do të shënoj se afati përfundon më 15 korrik." }
+          ],
+          "function": "close-with-summary",
+          "expectedLearnerAction": "Schließe mit einer vollständigen Zusammenfassung und der Bitte um Eingangsbestätigung."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Ich habe den Bescheid vom 14. Juni erhalten. Darin wird mein Antrag abgelehnt, weil angeblich ein aktueller Arbeitgebernachweis fehlt. Ich möchte Widerspruch einlegen und zuerst klären, wie ich das korrekt und fristgerecht mache.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. I received the decision dated June 14. It rejects my application because a current employer proof is allegedly missing. I want to file an objection and first clarify how to do that correctly and within the deadline." },
+                { "language": "fa", "text": "روز بخیر. تصمیم اداری مورخ ۱۴ ژوئن را دریافت کرده‌ام. در آن درخواست من رد شده، چون ظاهراً مدرک جدید کارفرما کم است. می‌خواهم اعتراض اداری ثبت کنم و اول روشن کنم این کار را چگونه درست و در مهلت انجام بدهم." },
+                { "language": "ar", "text": "نهارك سعيد. تلقيت القرار المؤرخ في 14 يونيو. فيه تم رفض طلبي لأن إثباتاً حديثاً من جهة العمل غير موجود على ما يبدو. أريد تقديم اعتراض وأود أولاً أن أوضح كيف أفعل ذلك بشكل صحيح وضمن المهلة." },
+                { "language": "tr", "text": "İyi günler. 14 Haziran tarihli kararı aldım. Kararda başvurum, güncel bir işveren belgesi eksik olduğu gerekçesiyle reddediliyor. İtiraz etmek istiyorum ve önce bunu doğru ve süresi içinde nasıl yapacağımı netleştirmek istiyorum." },
+                { "language": "ru", "text": "Добрый день. Я получил решение от 14 июня. В нём моя заявка отклонена, потому что якобы отсутствует актуальная справка от работодателя. Я хочу подать возражение и сначала уточнить, как сделать это правильно и в срок." },
+                { "language": "ckb", "text": "ڕۆژ باش. بڕیارنامەی ١٤ی حوزەیرانم وەرگرتووە. تێیدا داواکەم ڕەتکراوەتەوە چونکە گوایە بەڵگەی نوێی کارفرما کەمە. دەمەوێت ناڕەزایی پێشکەش بکەم و سەرەتا ڕوون بکەمەوە چۆن ئەمە بە دروستی و لە ناو مۆڵەتدا بکەم." },
+                { "language": "kmr", "text": "Roj baş. Min biryara 14ê Hezîranê wergirtiye. Tê de daxwaza min hatiye redkirin, ji ber ku belgeyeke nû ya kardêrê min gûya kêm e. Ez dixwazim îtîraz bikim û pêşî zelal bikim ka ez çawa vê yekê rast û di demê de bikim." },
+                { "language": "pl", "text": "Dzień dobry. Otrzymałem decyzję z 14 czerwca. Odrzucono w niej mój wniosek, ponieważ rzekomo brakuje aktualnego zaświadczenia od pracodawcy. Chcę złożyć sprzeciw i najpierw wyjaśnić, jak zrobić to poprawnie i w terminie." },
+                { "language": "ro", "text": "Bună ziua. Am primit decizia din 14 iunie. În ea cererea mea este respinsă deoarece ar lipsi o dovadă actuală de la angajator. Doresc să depun contestație și mai întâi vreau să clarific cum fac acest lucru corect și în termen." },
+                { "language": "sq", "text": "Mirëdita. Kam marrë vendimin e datës 14 qershor. Në të, kërkesa ime refuzohet sepse gjoja mungon një vërtetim i përditësuar nga punëdhënësi. Dua të paraqis kundërshtim dhe së pari të sqaroj si ta bëj këtë saktë dhe brenda afatit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Bescheiddatum, strittigen Punkt und die Verfahrensfrage ohne Vorwurf.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer names the decision date, the disputed point, and the procedural question without blame." },
+                { "language": "fa", "text": "خوب است: پاسخ تاریخ تصمیم، نکته مورد اختلاف و پرسش درباره روند را بدون سرزنش بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة تاريخ القرار والنقطة المختلف عليها وسؤال الإجراء من دون اتهام." },
+                { "language": "tr", "text": "İyi: Yanıt karar tarihini, tartışmalı noktayı ve usul sorusunu suçlayıcı olmadan belirtir." },
+                { "language": "ru", "text": "Хорошо: ответ называет дату решения, спорный пункт и процедурный вопрос без обвинений." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەرواری بڕیار، خاڵی ناکۆک و پرسیاری ڕێکار بەبێ تاوانبارکردن دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv roja biryarê, xala nakok û pirsa rêkarê bê sûcdarkirinê dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje datę decyzji, sporny punkt i pytanie proceduralne bez oskarżania." },
+                { "language": "ro", "text": "Bine: răspunsul menționează data deciziei, punctul contestat și întrebarea procedurală fără acuzații." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend datën e vendimit, pikën e kundërshtuar dhe pyetjen procedurale pa akuzuar." }
+              ]
+            },
+            {
+              "id": "weak-too-emotional",
+              "text": "Ich finde den Bescheid unfair und will mich beschweren. Das kann doch nicht richtig sein.",
+              "translations": [
+                { "language": "en", "text": "I think the decision is unfair and want to complain. That cannot be right." },
+                { "language": "fa", "text": "به نظر من این تصمیم ناعادلانه است و می‌خواهم شکایت کنم. این نمی‌تواند درست باشد." },
+                { "language": "ar", "text": "أرى أن القرار غير عادل وأريد أن أشتكي. لا يمكن أن يكون هذا صحيحاً." },
+                { "language": "tr", "text": "Kararın haksız olduğunu düşünüyorum ve şikâyet etmek istiyorum. Bu doğru olamaz." },
+                { "language": "ru", "text": "Я считаю решение несправедливым и хочу пожаловаться. Так не может быть правильно." },
+                { "language": "ckb", "text": "پێم وایە بڕیارەکە نادادپەروەرە و دەمەوێت سکاڵا بکەم. ئەمە ناتوانێت ڕاست بێت." },
+                { "language": "kmr", "text": "Ez dibînim ku biryar ne dadmend e û dixwazim gilî bikim. Ev nikare rast be." },
+                { "language": "pl", "text": "Uważam, że decyzja jest niesprawiedliwa i chcę się poskarżyć. To nie może być prawidłowe." },
+                { "language": "ro", "text": "Consider că decizia este nedreaptă și vreau să mă plâng. Nu poate fi corect." },
+                { "language": "sq", "text": "Mendoj se vendimi është i padrejtë dhe dua të ankohem. Kjo nuk mund të jetë e saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach für B2: Die Antwort ist verständlich, aber zu emotional und ohne Datum, Aktenbezug oder konkreten Streitpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak for B2: The answer is understandable, but too emotional and lacks date, file reference, and a concrete disputed point." },
+                { "language": "fa", "text": "برای B2 ضعیف است: پاسخ قابل فهم است، اما بیش از حد احساسی است و تاریخ، ارجاع پرونده و نکته مشخص مورد اختلاف ندارد." },
+                { "language": "ar", "text": "ضعيفة لمستوى B2: الإجابة مفهومة لكنها عاطفية جداً ولا تذكر التاريخ أو مرجع الملف أو النقطة المحددة المختلف عليها." },
+                { "language": "tr", "text": "B2 için zayıf: Yanıt anlaşılır, fakat fazla duygusal; tarih, dosya bağlantısı ve somut tartışmalı nokta yok." },
+                { "language": "ru", "text": "Слабо для B2: ответ понятен, но слишком эмоционален и не содержит даты, ссылки на дело или конкретного спорного пункта." },
+                { "language": "ckb", "text": "بۆ B2 لاوازە: وەڵامەکە تێگەیشتراوە، بەڵام زۆر هەستیارە و بەروار، ئاماژەی کەیس و خاڵی ناکۆکی دیاریکراوی نییە." },
+                { "language": "kmr", "text": "Ji bo B2 qels e: Bersiv tê famkirin, lê pir hestyar e û roj, girêdana dosyeyê û xala nakok a konkret tune ye." },
+                { "language": "pl", "text": "Za słabe na B2: odpowiedź jest zrozumiała, ale zbyt emocjonalna i bez daty, odniesienia do sprawy oraz konkretnego spornego punktu." },
+                { "language": "ro", "text": "Prea slab pentru B2: răspunsul este de înțeles, dar prea emoțional și fără dată, referire la dosar sau punct contestat concret." },
+                { "language": "sq", "text": "Shumë e dobët për B2: përgjigjja kuptohet, por është tepër emocionale dhe nuk ka datë, lidhje me dosjen ose pikë konkrete kundërshtimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Der strittige Punkt ist der Arbeitgebernachweis. Ich habe am 3. Mai eine aktuelle Arbeitgeberbescheinigung über das Online-Portal hochgeladen. Ich habe auch eine Eingangsbestätigung. Deshalb möchte ich im Widerspruch erklären, dass dieser Nachweis bereits vorlag.",
+              "translations": [
+                { "language": "en", "text": "The disputed point is the employer proof. On May 3, I uploaded a current employer certificate through the online portal. I also have a confirmation of receipt. That is why I want to explain in the objection that this proof had already been submitted." },
+                { "language": "fa", "text": "نکته مورد اختلاف مدرک کارفرماست. من در ۳ مه یک گواهی جدید کارفرما را از طریق درگاه آنلاین بارگذاری کردم. تأیید دریافت هم دارم. بنابراین می‌خواهم در اعتراض توضیح بدهم که این مدرک قبلاً ارائه شده بود." },
+                { "language": "ar", "text": "النقطة المختلف عليها هي إثبات جهة العمل. في 3 مايو رفعت شهادة عمل حديثة عبر البوابة الإلكترونية. لدي أيضاً تأكيد بالاستلام. لذلك أريد أن أوضح في الاعتراض أن هذا الإثبات كان قد قُدم بالفعل." },
+                { "language": "tr", "text": "Tartışmalı nokta işveren belgesi. 3 Mayıs'ta güncel bir işveren yazısını çevrim içi portal üzerinden yükledim. Ayrıca alındı onayım da var. Bu nedenle itirazda bu belgenin zaten sunulmuş olduğunu açıklamak istiyorum." },
+                { "language": "ru", "text": "Спорный пункт — справка от работодателя. 3 мая я загрузил актуальную справку работодателя через онлайн-портал. У меня также есть подтверждение получения. Поэтому в возражении я хочу объяснить, что это доказательство уже было подано." },
+                { "language": "ckb", "text": "خاڵی ناکۆک بەڵگەی کارفرمایە. من لە ٣ی مایدا گواهییەکی نوێی کارفرمام لە ڕێگەی پۆرتاڵی ئۆنلاینەوە بارکرد. پشتڕاستکردنەوەی وەرگرتنیشم هەیە. بۆیە دەمەوێت لە ناڕەزاییەکەدا ڕوون بکەمەوە کە ئەم بەڵگەیە پێشتر پێشکەش کرابوو." },
+                { "language": "kmr", "text": "Xala nakok belgeya kardêr e. Min di 3ê Gulanê de belgeyeke nû ya kardêrê xwe bi rêya portala serhêl bar kir. Piştrastkirina wergirtinê jî heye. Ji ber vê yekê ez dixwazim di îtîrazê de rave bikim ku ev delîl berê hatiye radestkirin." },
+                { "language": "pl", "text": "Spornym punktem jest zaświadczenie od pracodawcy. 3 maja wgrałem aktualne zaświadczenie przez portal internetowy. Mam też potwierdzenie wpływu. Dlatego chcę w sprzeciwie wyjaśnić, że ten dowód był już złożony." },
+                { "language": "ro", "text": "Punctul contestat este dovada de la angajator. Pe 3 mai am încărcat o adeverință actuală de la angajator prin portalul online. Am și o confirmare de primire. De aceea vreau să explic în contestație că această dovadă fusese deja depusă." },
+                { "language": "sq", "text": "Pika e kundërshtuar është vërtetimi nga punëdhënësi. Më 3 maj kam ngarkuar një vërtetim të përditësuar nga punëdhënësi përmes portalit online. Kam edhe konfirmim marrjeje. Prandaj dua të shpjegoj në kundërshtim se kjo provë ishte dorëzuar tashmë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort trennt Meinung und Nachweis, nennt Datum und macht den Widerspruch nachvollziehbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer separates opinion from evidence, names the date, and makes the objection understandable." },
+                { "language": "fa", "text": "خوب است: پاسخ نظر شخصی را از مدرک جدا می‌کند، تاریخ را می‌گوید و اعتراض را قابل پیگیری می‌کند." },
+                { "language": "ar", "text": "جيد: تفصل الإجابة بين الرأي والدليل، وتذكر التاريخ، وتجعل الاعتراض مفهوماً." },
+                { "language": "tr", "text": "İyi: Yanıt görüşü kanıttan ayırır, tarihi belirtir ve itirazı anlaşılır kılar." },
+                { "language": "ru", "text": "Хорошо: ответ отделяет мнение от доказательства, называет дату и делает возражение понятным." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بۆچوون لە بەڵگە جیا دەکاتەوە، بەروار دەڵێت و ناڕەزاییەکە ڕوون دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv nerînê ji delîlê cuda dike, rojê dibêje û îtîrazê têgihîştî dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź oddziela opinię od dowodu, podaje datę i czyni sprzeciw zrozumiałym." },
+                { "language": "ro", "text": "Bine: răspunsul separă opinia de dovadă, menționează data și face contestația ușor de urmărit." },
+                { "language": "sq", "text": "Mirë: përgjigjja ndan mendimin nga prova, përmend datën dhe e bën kundërshtimin të kuptueshëm." }
+              ]
+            },
+            {
+              "id": "weak-missing-proof",
+              "text": "Der Nachweis fehlt nicht. Ich habe ihn bestimmt schon geschickt, aber ich weiß das Datum gerade nicht.",
+              "translations": [
+                { "language": "en", "text": "The proof is not missing. I definitely sent it already, but I do not know the date right now." },
+                { "language": "fa", "text": "مدرک کم نیست. حتماً آن را قبلاً فرستاده‌ام، اما الان تاریخش را نمی‌دانم." },
+                { "language": "ar", "text": "الإثبات ليس ناقصاً. بالتأكيد أرسلته من قبل، لكنني لا أعرف التاريخ الآن." },
+                { "language": "tr", "text": "Belge eksik değil. Kesinlikle daha önce gönderdim, ama şu anda tarihini bilmiyorum." },
+                { "language": "ru", "text": "Документ не отсутствует. Я точно уже отправлял его, но сейчас не знаю дату." },
+                { "language": "ckb", "text": "بەڵگەکە کەم نییە. دڵنیام پێشتر ناردوومە، بەڵام ئێستا بەروارەکە نازانم." },
+                { "language": "kmr", "text": "Belge kêm nîne. Ez bêguman berê wê şandime, lê niha rojê nizanim." },
+                { "language": "pl", "text": "Dowodu nie brakuje. Na pewno już go wysłałem, ale teraz nie znam daty." },
+                { "language": "ro", "text": "Dovada nu lipsește. Sigur am trimis-o deja, dar acum nu știu data." },
+                { "language": "sq", "text": "Prova nuk mungon. Me siguri e kam dërguar më parë, por tani nuk e di datën." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau: Ohne Datum und Eingangsbestätigung kann die Behörde den Punkt schwer prüfen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: Without date and confirmation of receipt, the authority can hardly check the point." },
+                { "language": "fa", "text": "قابل‌باور است، اما خیلی مبهم است: بدون تاریخ و تأیید دریافت، اداره به‌سختی می‌تواند موضوع را بررسی کند." },
+                { "language": "ar", "text": "معقول، لكنه غير دقيق بما يكفي: من دون تاريخ وتأكيد استلام يصعب على الجهة فحص النقطة." },
+                { "language": "tr", "text": "Makul ama fazla belirsiz: Tarih ve alındı onayı olmadan kurum bu noktayı zor kontrol eder." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: без даты и подтверждения получения ведомству трудно проверить этот пункт." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر ناڕوونە: بەبێ بەروار و پشتڕاستکردنەوەی وەرگرتن، فەرمانگە بە سەختی دەتوانێت خاڵەکە بپشکنێت." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e: Bê roj û piştrastkirina wergirtinê, dezgeh bi zehmetî dikare xala kontrol bike." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt nieprecyzyjne: bez daty i potwierdzenia wpływu urządowi trudno to sprawdzić." },
+                { "language": "ro", "text": "Plauzibil, dar prea neclar: fără dată și confirmare de primire, autoritatea poate verifica greu acest punct." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: pa datë dhe konfirmim marrjeje, institucioni e ka të vështirë ta kontrollojë pikën." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, die Bestätigung habe ich als PDF und ausgedruckt. Können Sie mir bitte sagen, ob ich den Widerspruch hier abgeben kann oder ob er schriftlich per Post eingereicht werden muss? Außerdem möchte ich wissen, ob die Begründung heute vollständig sein muss.",
+              "translations": [
+                { "language": "en", "text": "Yes, I have the confirmation as a PDF and printed out. Could you please tell me whether I can submit the objection here or whether it must be sent in writing by post? I would also like to know whether the reasoning has to be complete today." },
+                { "language": "fa", "text": "بله، تأیید را هم به صورت پی‌دی‌اف دارم و هم چاپ کرده‌ام. می‌توانید لطفاً بگویید آیا می‌توانم اعتراض را همین‌جا تحویل بدهم یا باید کتبی از طریق پست ارسال شود؟ همچنین می‌خواهم بدانم آیا دلیل‌نویسی باید امروز کامل باشد یا نه." },
+                { "language": "ar", "text": "نعم، لدي التأكيد بصيغة ملف إلكتروني ومطبوعاً. هل يمكنك أن تخبريني هل يمكنني تقديم الاعتراض هنا، أم يجب إرساله خطياً بالبريد؟ وأود أيضاً أن أعرف هل يجب أن يكون التعليل كاملاً اليوم." },
+                { "language": "tr", "text": "Evet, onay hem PDF olarak hem de basılı şekilde bende. İtirazı burada teslim edip edemeyeceğimi ya da yazılı olarak posta ile göndermem gerekip gerekmediğini söyleyebilir misiniz? Ayrıca gerekçenin bugün tam olması gerekip gerekmediğini bilmek istiyorum." },
+                { "language": "ru", "text": "Да, подтверждение у меня есть в виде файла и в распечатанном виде. Можете сказать, могу ли я подать возражение здесь или его нужно отправить письменно по почте? Кроме того, я хотел бы знать, должно ли обоснование быть полностью готово сегодня." },
+                { "language": "ckb", "text": "بەڵێ، پشتڕاستکردنەوەکەم بە شێوەی فایل و چاپکراو هەیە. دەتوانن تکایە پێم بڵێن ئایا دەتوانم ناڕەزاییەکە لێرە بدەم، یان دەبێت بە شێوەی نووسراو بە پۆست بنێردرێت؟ هەروەها دەمەوێت بزانم ئایا پاساوەکە دەبێت ئەمڕۆ تەواو بێت." },
+                { "language": "kmr", "text": "Erê, piştrastkirin hem wekî pel hem jî çapkirî li cem min heye. Hûn dikarin ji kerema xwe bêjin gelo ez dikarim îtîrazê li vir radest bikim an divê bi nivîskî bi postê were şandin? Her wiha ez dixwazim bizanim gelo sedem divê îro temam be." },
+                { "language": "pl", "text": "Tak, mam potwierdzenie jako plik i w wersji wydrukowanej. Czy może mi Pani powiedzieć, czy mogę złożyć sprzeciw tutaj, czy musi być złożony pisemnie pocztą? Chciałbym też wiedzieć, czy uzasadnienie musi być dziś kompletne." },
+                { "language": "ro", "text": "Da, am confirmarea ca fișier și tipărită. Îmi puteți spune, vă rog, dacă pot depune contestația aici sau dacă trebuie trimisă în scris prin poștă? De asemenea, aș vrea să știu dacă motivarea trebuie să fie completă astăzi." },
+                { "language": "sq", "text": "Po, konfirmimin e kam si skedar dhe të printuar. A mund të më thoni, ju lutem, nëse mund ta dorëzoj kundërshtimin këtu apo duhet të dërgohet me shkrim me postë? Gjithashtu dua të di nëse arsyetimi duhet të jetë i plotë sot." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fragt nach Abgabeweg und Umfang, ohne eine rechtliche Bewertung zu verlangen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer asks about submission route and scope without requesting a legal assessment." },
+                { "language": "fa", "text": "خوب است: پاسخ درباره راه تحویل و میزان توضیح لازم می‌پرسد، بدون اینکه ارزیابی حقوقی بخواهد." },
+                { "language": "ar", "text": "جيد: تسأل الإجابة عن طريقة التقديم ونطاق التعليل من دون طلب تقييم قانوني." },
+                { "language": "tr", "text": "İyi: Yanıt teslim yolunu ve açıklama kapsamını sorar, hukuki değerlendirme istemez." },
+                { "language": "ru", "text": "Хорошо: ответ спрашивает о способе подачи и объёме обоснования, не требуя юридической оценки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە لەسەر ڕێگای دان و قەبارەی پاساو دەپرسێت، بەبێ داوای هەڵسەنگاندنی یاسایی." },
+                { "language": "kmr", "text": "Baş e: Bersiv derbarê rêya radestkirinê û qada sedemê dipirse, bêyî daxwaza nirxandina hiqûqî." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pyta o sposób złożenia i zakres uzasadnienia, nie prosząc o ocenę prawną." },
+                { "language": "ro", "text": "Bine: răspunsul întreabă despre modalitatea de depunere și amploarea motivării, fără a cere o evaluare juridică." },
+                { "language": "sq", "text": "Mirë: përgjigjja pyet për mënyrën e dorëzimit dhe përmasën e arsyetimit, pa kërkuar vlerësim juridik." }
+              ]
+            },
+            {
+              "id": "weak-legal-advice",
+              "text": "Können Sie mir sagen, ob ich mit dem Widerspruch sicher Erfolg habe?",
+              "translations": [
+                { "language": "en", "text": "Can you tell me whether I will definitely succeed with the objection?" },
+                { "language": "fa", "text": "می‌توانید به من بگویید آیا حتماً با این اعتراض موفق می‌شوم؟" },
+                { "language": "ar", "text": "هل يمكنك أن تخبريني هل سأنجح بالتأكيد بهذا الاعتراض؟" },
+                { "language": "tr", "text": "Bu itirazla kesin başarılı olup olmayacağımı söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Можете сказать, точно ли я добьюсь успеха с этим возражением?" },
+                { "language": "ckb", "text": "دەتوانن پێم بڵێن ئایا بە دڵنیایی لەم ناڕەزاییە سەرکەوتوو دەبم؟" },
+                { "language": "kmr", "text": "Hûn dikarin bêjin gelo ez bi vê îtîrazê bêguman serkeftî dibim?" },
+                { "language": "pl", "text": "Czy może mi Pani powiedzieć, czy na pewno odniosę sukces z tym sprzeciwem?" },
+                { "language": "ro", "text": "Îmi puteți spune dacă voi avea sigur succes cu această contestație?" },
+                { "language": "sq", "text": "A mund të më thoni nëse do të kem patjetër sukses me këtë kundërshtim?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu riskant: Diese Frage verlangt eine Erfolgseinschätzung. Besser ist eine Frage nach Verfahren, Frist und Nachweisen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too risky: This asks for an assessment of success. A question about procedure, deadline, and proof is better." },
+                { "language": "fa", "text": "خیلی پرریسک است: این سؤال ارزیابی احتمال موفقیت می‌خواهد. بهتر است درباره روند، مهلت و مدارک بپرسی." },
+                { "language": "ar", "text": "خطِر جداً: هذا يطلب تقدير فرص النجاح. الأفضل السؤال عن الإجراء والمهلة والإثباتات." },
+                { "language": "tr", "text": "Fazla riskli: Bu, başarı değerlendirmesi ister. Süreç, süre ve kanıtlarla ilgili soru daha uygundur." },
+                { "language": "ru", "text": "Слишком рискованно: это требует оценки шансов на успех. Лучше спросить о процедуре, сроке и доказательствах." },
+                { "language": "ckb", "text": "زۆر مەترسیدارە: ئەمە داوای هەڵسەنگاندنی سەرکەوتن دەکات. باشترە لەسەر ڕێکار، مۆڵەت و بەڵگە بپرسی." },
+                { "language": "kmr", "text": "Pir bi metirsî ye: Ev daxwaza nirxandina serkeftinê dike. Pirs li ser rêkar, dem û delîlan baştir e." },
+                { "language": "pl", "text": "Zbyt ryzykowne: to prosi o ocenę szans powodzenia. Lepiej zapytać o procedurę, termin i dowody." },
+                { "language": "ro", "text": "Prea riscant: această întrebare cere o evaluare a șanselor de reușită. Mai bine întrebați despre procedură, termen și dovezi." },
+                { "language": "sq", "text": "Shumë e rrezikshme: kjo kërkon vlerësim të suksesit. Më mirë pyet për procedurën, afatin dhe provat." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Dann formuliere ich den Widerspruch heute schriftlich und füge die Arbeitgeberbescheinigung sowie die Eingangsbestätigung bei. Ich schreibe auch dazu, dass ich bei Bedarf weitere Unterlagen nachreichen kann. Können Sie mir bitte den genauen Fristablauf nennen?",
+              "translations": [
+                { "language": "en", "text": "Then I will write the objection today and attach the employer certificate and the confirmation of receipt. I will also state that I can submit further documents if needed. Could you please tell me the exact end of the deadline?" },
+                { "language": "fa", "text": "پس امروز اعتراض را کتبی می‌نویسم و گواهی کارفرما و تأیید دریافت را پیوست می‌کنم. همچنین می‌نویسم که در صورت نیاز می‌توانم مدارک بیشتری ارائه کنم. می‌توانید لطفاً پایان دقیق مهلت را بگویید؟" },
+                { "language": "ar", "text": "إذن سأصيغ الاعتراض خطياً اليوم وأرفق شهادة جهة العمل وتأكيد الاستلام. وسأكتب أيضاً أنني أستطيع تقديم مستندات إضافية عند الحاجة. هل يمكنك أن تذكري لي نهاية المهلة بالضبط؟" },
+                { "language": "tr", "text": "O zaman itirazı bugün yazılı olarak hazırlayacağım ve işveren belgesini ve alındı onayını ekleyeceğim. Ayrıca gerekirse başka belgeler sunabileceğimi de yazacağım. Bana sürenin tam olarak ne zaman bittiğini söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Тогда я сегодня письменно составлю возражение и приложу справку от работодателя, а также подтверждение получения. Я также напишу, что при необходимости могу дослать дополнительные документы. Можете назвать точное окончание срока?" },
+                { "language": "ckb", "text": "کەواتە ئەمڕۆ ناڕەزاییەکە بە نووسراوی دادەنێم و گواهی کارفرما و پشتڕاستکردنەوەی وەرگرتن هاوپێچ دەکەم. هەروەها دەنووسم کە ئەگەر پێویست بوو دەتوانم بەڵگەنامەی زیاتر دواتر پێشکەش بکەم. دەتوانن تکایە کۆتایی وردی مۆڵەتەکە پێم بڵێن؟" },
+                { "language": "kmr", "text": "Wê demê ez îro îtîrazê bi nivîskî amade dikim û belgeya kardêr û piştrastkirina wergirtinê lê zêde dikim. Her wiha ez dinivîsim ku heke pêwîst be dikarim belgeyên din paşê radest bikim. Hûn dikarin ji kerema xwe dawiya demê ya rast bêjin?" },
+                { "language": "pl", "text": "W takim razie dziś sporządzę sprzeciw pisemnie i dołączę zaświadczenie od pracodawcy oraz potwierdzenie wpływu. Napiszę też, że w razie potrzeby mogę dosłać dalsze dokumenty. Czy może mi Pani podać dokładny koniec terminu?" },
+                { "language": "ro", "text": "Atunci voi redacta astăzi contestația în scris și voi anexa adeverința de la angajator, precum și confirmarea de primire. Voi scrie și că pot depune documente suplimentare dacă este nevoie. Îmi puteți spune, vă rog, data exactă la care expiră termenul?" },
+                { "language": "sq", "text": "Atëherë do ta formuloj sot kundërshtimin me shkrim dhe do të bashkëngjis vërtetimin nga punëdhënësi dhe konfirmimin e marrjes. Do të shkruaj gjithashtu se mund të dorëzoj dokumente të tjera nëse nevojiten. A mund të më thoni, ju lutem, afatin e saktë të përfundimit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Abgabeplan, Anlagen, möglichen Nachtrag und konkrete Fristfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer connects the submission plan, attachments, possible later documents, and the exact deadline question." },
+                { "language": "fa", "text": "خوب است: پاسخ برنامه تحویل، پیوست‌ها، مدارک احتمالی بعدی و سؤال دقیق درباره مهلت را به هم وصل می‌کند." },
+                { "language": "ar", "text": "جيد: تربط الإجابة خطة التقديم والمرفقات والمستندات اللاحقة المحتملة والسؤال الدقيق عن المهلة." },
+                { "language": "tr", "text": "İyi: Yanıt teslim planını, ekleri, olası sonraki belgeleri ve kesin süre sorusunu birleştirir." },
+                { "language": "ru", "text": "Хорошо: ответ связывает план подачи, приложения, возможные дополнительные документы и точный вопрос о сроке." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پلانی دان، هاوپێچەکان، بەڵگەی داهاتووی ئەگەری و پرسیاری وردی مۆڵەت پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv plana radestkirinê, pêvek, belgeyên paşîn ên gengaz û pirsa demê ya rast bi hev ve girê dide." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy plan złożenia, załączniki, możliwe późniejsze dokumenty i dokładne pytanie o termin." },
+                { "language": "ro", "text": "Bine: răspunsul leagă planul de depunere, anexele, posibilele documente ulterioare și întrebarea exactă despre termen." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh planin e dorëzimit, shtojcat, dokumentet e mundshme të mëvonshme dhe pyetjen e saktë për afatin." }
+              ]
+            },
+            {
+              "id": "weak-too-general",
+              "text": "Dann gebe ich heute etwas Schriftliches ab und hoffe, dass es reicht.",
+              "translations": [
+                { "language": "en", "text": "Then I will submit something in writing today and hope that it is enough." },
+                { "language": "fa", "text": "پس امروز یک چیز کتبی تحویل می‌دهم و امیدوارم کافی باشد." },
+                { "language": "ar", "text": "إذن سأقدم شيئاً مكتوباً اليوم وآمل أن يكون كافياً." },
+                { "language": "tr", "text": "O zaman bugün yazılı bir şey teslim ederim ve yeterli olmasını umarım." },
+                { "language": "ru", "text": "Тогда я сегодня подам что-то письменное и надеюсь, что этого хватит." },
+                { "language": "ckb", "text": "کەواتە ئەمڕۆ شتێکی نووسراو دەدەم و هیوادارم بەس بێت." },
+                { "language": "kmr", "text": "Wê demê ez îro tiştekî nivîskî radest dikim û hêvî dikim ku bes be." },
+                { "language": "pl", "text": "W takim razie dziś złożę coś pisemnego i mam nadzieję, że wystarczy." },
+                { "language": "ro", "text": "Atunci voi depune astăzi ceva în scris și sper că va fi suficient." },
+                { "language": "sq", "text": "Atëherë sot do të dorëzoj diçka me shkrim dhe shpresoj që të mjaftojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber nicht B2-stark: Es fehlen Anlagen, Nachtragshinweis und genaue Fristfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not strong enough for B2: Attachments, the note about later documents, and the exact deadline question are missing." },
+                { "language": "fa", "text": "قابل‌باور است، اما برای B2 کافی نیست: پیوست‌ها، اشاره به مدارک بعدی و سؤال دقیق درباره مهلت کم است." },
+                { "language": "ar", "text": "معقول، لكنه ليس قوياً بما يكفي لمستوى B2: المرفقات، والإشارة إلى مستندات لاحقة، والسؤال الدقيق عن المهلة ناقصة." },
+                { "language": "tr", "text": "Makul, ama B2 için yeterince güçlü değil: Ekler, sonraki belgelerle ilgili not ve kesin süre sorusu eksik." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно сильно для B2: отсутствуют приложения, указание на последующие документы и точный вопрос о сроке." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام بۆ B2 بەهێز نییە: هاوپێچەکان، ئاماژە بە بەڵگەی دواتر و پرسیاری وردی مۆڵەت کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê ji bo B2 têra xwe xurt nîne: pêvek, nîşana belgeyên paşîn û pirsa rast a demê kêm in." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale nie jest wystarczająco mocne na B2: brakuje załączników, wzmianki o późniejszych dokumentach i dokładnego pytania o termin." },
+                { "language": "ro", "text": "Plauzibil, dar nu suficient de puternic pentru B2: lipsesc anexele, mențiunea despre documente ulterioare și întrebarea exactă despre termen." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e fortë për B2: mungojnë shtojcat, shënimi për dokumente të mëvonshme dhe pyetja e saktë për afatin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Dann gebe ich den Widerspruch heute mit Aktenzeichen, Bescheiddatum, Arbeitgeberbescheinigung und Eingangsbestätigung ab. Ich bitte um einen Eingangsstempel auf meiner Kopie und notiere mir, dass die Frist am 15. Juli endet.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will submit the objection today with the reference number, decision date, employer certificate, and confirmation of receipt. I ask for an intake stamp on my copy and note that the deadline ends on July 15." },
+                { "language": "fa", "text": "خیلی ممنون. پس امروز اعتراض را با شماره پرونده، تاریخ تصمیم، گواهی کارفرما و تأیید دریافت تحویل می‌دهم. روی کپی خودم مهر دریافت می‌خواهم و یادداشت می‌کنم که مهلت در ۱۵ ژوئیه تمام می‌شود." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأقدم الاعتراض اليوم مع رقم الملف وتاريخ القرار وشهادة جهة العمل وتأكيد الاستلام. أطلب ختم استلام على نسختي وأسجل أن المهلة تنتهي في 15 يوليو." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman itirazı bugün dosya numarası, karar tarihi, işveren belgesi ve alındı onayıyla teslim edeceğim. Kendi kopyama giriş damgası rica edeceğim ve sürenin 15 Temmuz'da bittiğini not edeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я сегодня подам возражение с номером дела, датой решения, справкой от работодателя и подтверждением получения. Я попрошу поставить отметку о приёме на моей копии и запишу, что срок заканчивается 15 июля." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ ناڕەزاییەکە بە ژمارەی کەیس، بەرواری بڕیار، گواهی کارفرما و پشتڕاستکردنەوەی وەرگرتن دەدەم. داوای مۆری وەرگرتن لەسەر کۆپییەکەم دەکەم و تێبینی دەکەم کە مۆڵەتەکە لە ١٥ی تەممووز کۆتایی دێت." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez îro îtîrazê bi hejmarê dosyeyê, roja biryarê, belgeya kardêr û piştrastkirina wergirtinê radest dikim. Ez li ser kopiya xwe mohreke wergirtinê dixwazim û dinivîsim ku dem di 15ê Tîrmehê de diqede." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie dziś złożę sprzeciw z numerem sprawy, datą decyzji, zaświadczeniem od pracodawcy i potwierdzeniem wpływu. Poproszę o pieczątkę wpływu na mojej kopii i zanotuję, że termin upływa 15 lipca." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci voi depune astăzi contestația cu numărul dosarului, data deciziei, adeverința de la angajator și confirmarea de primire. Voi cere o ștampilă de primire pe copia mea și notez că termenul expiră la 15 iulie." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë sot do ta dorëzoj kundërshtimin me numrin e dosjes, datën e vendimit, vërtetimin nga punëdhënësi dhe konfirmimin e marrjes. Do të kërkoj një vulë pranimi në kopjen time dhe do të shënoj se afati përfundon më 15 korrik." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fasst die Unterlagen, den Nachweis des Eingangs und die Frist vollständig zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer fully summarizes the documents, proof of receipt, and deadline." },
+                { "language": "fa", "text": "خوب است: پاسخ مدارک، مدرک دریافت و مهلت را کامل جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "جيد: تلخص الإجابة المستندات وإثبات الاستلام والمهلة بشكل كامل." },
+                { "language": "tr", "text": "İyi: Yanıt belgeleri, alındı kanıtını ve süreyi tam olarak özetler." },
+                { "language": "ru", "text": "Хорошо: ответ полностью суммирует документы, подтверждение приёма и срок." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەنامەکان، بەڵگەی وەرگرتن و مۆڵەت بە تەواوی کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv belge, delîla wergirtinê û demê bi temamî kurt dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź kompletnie podsumowuje dokumenty, dowód wpływu i termin." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă complet documentele, dovada primirii și termenul." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh plotësisht dokumentet, provën e marrjes dhe afatin." }
+              ]
+            },
+            {
+              "id": "weak-missing-confirmation",
+              "text": "Gut, dann gebe ich den Widerspruch heute ab. Mehr brauche ich dann wahrscheinlich nicht.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will submit the objection today. I probably do not need anything else then." },
+                { "language": "fa", "text": "خوب، پس امروز اعتراض را تحویل می‌دهم. احتمالاً دیگر چیز بیشتری لازم ندارم." },
+                { "language": "ar", "text": "حسناً، إذن سأقدم الاعتراض اليوم. على الأرجح لا أحتاج إلى شيء آخر." },
+                { "language": "tr", "text": "Tamam, o zaman itirazı bugün teslim edeceğim. Muhtemelen başka bir şeye ihtiyacım yok." },
+                { "language": "ru", "text": "Хорошо, тогда я сегодня подам возражение. Вероятно, больше мне ничего не нужно." },
+                { "language": "ckb", "text": "باشە، کەواتە ئەمڕۆ ناڕەزاییەکە دەدەم. پێدەچێت چی دیکەم پێویست نەبێت." },
+                { "language": "kmr", "text": "Baş e, wê demê ez îro îtîrazê radest dikim. Dibe ku tiştekî din pêwîst nebe." },
+                { "language": "pl", "text": "Dobrze, w takim razie dziś złożę sprzeciw. Pewnie nic więcej nie będzie mi potrzebne." },
+                { "language": "ro", "text": "Bine, atunci voi depune contestația astăzi. Probabil nu mai am nevoie de nimic altceva." },
+                { "language": "sq", "text": "Mirë, atëherë sot do ta dorëzoj kundërshtimin. Ndoshta nuk më duhet asgjë tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort vergisst Eingangsstempel, Kopie, konkrete Anlagen und Fristnotiz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: The answer forgets the intake stamp, copy, concrete attachments, and deadline note." },
+                { "language": "fa", "text": "خیلی کوتاه است: پاسخ مهر دریافت، کپی، پیوست‌های مشخص و یادداشت مهلت را فراموش می‌کند." },
+                { "language": "ar", "text": "قصيرة جداً: تنسى الإجابة ختم الاستلام والنسخة والمرفقات المحددة وتدوين المهلة." },
+                { "language": "tr", "text": "Çok kısa: Yanıt giriş damgasını, kopyayı, somut ekleri ve süre notunu unutuyor." },
+                { "language": "ru", "text": "Слишком кратко: ответ забывает отметку о приёме, копию, конкретные приложения и запись срока." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە مۆری وەرگرتن، کۆپی، هاوپێچی دیاریکراو و تێبینی مۆڵەت لەبیر دەکات." },
+                { "language": "kmr", "text": "Pir kurt e: Bersiv mohra wergirtinê, kopî, pêvekên konkret û nîşeya demê ji bîr dike." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź pomija pieczątkę wpływu, kopię, konkretne załączniki i zanotowanie terminu." },
+                { "language": "ro", "text": "Prea scurt: răspunsul uită ștampila de primire, copia, anexele concrete și notarea termenului." },
+                { "language": "sq", "text": "Shumë shkurt: përgjigjja harron vulën e pranimit, kopjen, shtojcat konkrete dhe shënimin e afatit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "content",
+          "text": "Bei Behörden wirkt eine sachliche Eröffnung stärker als Empörung: Datum, Entscheidung, strittiger Punkt und Ziel.",
+          "translations": [
+            { "language": "en", "text": "At authorities, a factual opening is stronger than outrage: date, decision, disputed point, and goal." },
+            { "language": "fa", "text": "در اداره‌ها شروع واقع‌محور از ناراحتی مؤثرتر است: تاریخ، تصمیم، نکته مورد اختلاف و هدف." },
+            { "language": "ar", "text": "في الدوائر الرسمية يكون البدء الموضوعي أقوى من الانفعال: التاريخ، القرار، النقطة المختلف عليها والهدف." },
+            { "language": "tr", "text": "Resmî kurumlarda somut bir başlangıç öfkeden daha güçlüdür: tarih, karar, tartışmalı nokta ve hedef." },
+            { "language": "ru", "text": "В ведомствах фактическое начало сильнее возмущения: дата, решение, спорный пункт и цель." },
+            { "language": "ckb", "text": "لە فەرمانگەکاندا دەستپێکی بابەتی لە تووڕەیی بەهێزترە: بەروار، بڕیار، خاڵی ناکۆک و ئامانج." },
+            { "language": "kmr", "text": "Li dezgehan destpêkeke rastîn ji hêrsê xurtir e: roj, biryar, xala nakok û armanc." },
+            { "language": "pl", "text": "W urzędach rzeczowe rozpoczęcie działa mocniej niż oburzenie: data, decyzja, sporny punkt i cel." },
+            { "language": "ro", "text": "La autorități, o deschidere obiectivă este mai puternică decât indignarea: data, decizia, punctul contestat și scopul." },
+            { "language": "sq", "text": "Në institucione, një hyrje faktike është më e fortë se zemërimi: data, vendimi, pika e kundërshtuar dhe qëllimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "strategy",
+          "text": "Ein B2-starker Widerspruch nennt nicht nur `ich bin dagegen`, sondern Beleg, Datum und nachvollziehbaren Fehler.",
+          "translations": [
+            { "language": "en", "text": "A strong B2 objection does not only say 'I disagree'; it names proof, date, and a traceable error." },
+            { "language": "fa", "text": "اعتراض قوی در سطح B2 فقط نمی‌گوید «مخالفم»، بلکه مدرک، تاریخ و خطای قابل پیگیری را بیان می‌کند." },
+            { "language": "ar", "text": "الاعتراض القوي في مستوى B2 لا يقول فقط «أنا أعترض»، بل يذكر الدليل والتاريخ والخطأ القابل للتتبع." },
+            { "language": "tr", "text": "B2 düzeyinde güçlü bir itiraz sadece 'karşıyım' demez; kanıtı, tarihi ve izlenebilir hatayı belirtir." },
+            { "language": "ru", "text": "Сильное возражение уровня B2 не просто говорит «я против», а называет доказательство, дату и проверяемую ошибку." },
+            { "language": "ckb", "text": "ناڕەزاییەکی بەهێزی B2 تەنها ناڵێت `من دژم`، بەڵکو بەڵگە، بەروار و هەڵەی قابل بەدواداچوون ناو دەبات." },
+            { "language": "kmr", "text": "Îtîrazeke xurt a B2 tenê nabêje `ez dijim`, lê delîl, roj û şaşiyeke şopandinbar bi nav dike." },
+            { "language": "pl", "text": "Mocny sprzeciw na poziomie B2 nie mówi tylko „nie zgadzam się”, lecz podaje dowód, datę i możliwy do sprawdzenia błąd." },
+            { "language": "ro", "text": "O contestație puternică de nivel B2 nu spune doar „nu sunt de acord”, ci menționează dovada, data și eroarea verificabilă." },
+            { "language": "sq", "text": "Një kundërshtim i fortë në B2 nuk thotë vetëm “jam kundër”, por përmend provën, datën dhe gabimin që mund të ndiqet." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "procedure",
+          "text": "Wenn du einen Verwaltungsweg klärst, trenne drei Dinge: Abgabeweg, Anlagen und Frist.",
+          "translations": [
+            { "language": "en", "text": "When clarifying an administrative route, separate three things: submission method, attachments, and deadline." },
+            { "language": "fa", "text": "وقتی مسیر اداری را روشن می‌کنی، سه چیز را جدا کن: راه تحویل، پیوست‌ها و مهلت." },
+            { "language": "ar", "text": "عندما توضح مساراً إدارياً، افصل بين ثلاثة أمور: طريقة التقديم، والمرفقات، والمهلة." },
+            { "language": "tr", "text": "Bir idari yolu netleştirirken üç şeyi ayır: teslim yolu, ekler ve süre." },
+            { "language": "ru", "text": "Когда уточняете административный путь, разделяйте три вещи: способ подачи, приложения и срок." },
+            { "language": "ckb", "text": "کاتێک ڕێگایەکی ئیداری ڕوون دەکەیتەوە، سێ شت جیا بکەرەوە: ڕێگای دان، هاوپێچەکان و مۆڵەت." },
+            { "language": "kmr", "text": "Dema rêyeke îdarî zelal dikî, sê tiştan cuda bike: rêya radestkirinê, pêvek û dem." },
+            { "language": "pl", "text": "Gdy wyjaśniasz drogę administracyjną, rozdziel trzy rzeczy: sposób złożenia, załączniki i termin." },
+            { "language": "ro", "text": "Când clarifici o cale administrativă, separă trei lucruri: modalitatea de depunere, anexele și termenul." },
+            { "language": "sq", "text": "Kur sqaron një rrugë administrative, ndaj tri gjëra: mënyrën e dorëzimit, shtojcat dhe afatin." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Die Schlussantwort ist gut, weil sie nicht nur `Danke` sagt, sondern den gesamten nächsten Schritt beweissicher zusammenfasst.",
+          "translations": [
+            { "language": "en", "text": "The closing answer is good because it does not only say 'thank you', but summarizes the whole next step with proof in mind." },
+            { "language": "fa", "text": "پاسخ پایانی خوب است، چون فقط «ممنون» نمی‌گوید، بلکه کل قدم بعدی را با توجه به مدرک و اثبات جمع‌بندی می‌کند." },
+            { "language": "ar", "text": "الإجابة الختامية جيدة لأنها لا تقول فقط «شكراً»، بل تلخص الخطوة التالية كاملة مع مراعاة الإثبات." },
+            { "language": "tr", "text": "Kapanış yanıtı iyi, çünkü sadece 'teşekkür ederim' demiyor; tüm sonraki adımı kanıt açısından güvenli biçimde özetliyor." },
+            { "language": "ru", "text": "Заключительный ответ хорош, потому что он не только говорит «спасибо», а надёжно с точки зрения доказательств подытоживает весь следующий шаг." },
+            { "language": "ckb", "text": "وەڵامی کۆتایی باشە، چونکە تەنها `سوپاس` ناڵێت، بەڵکو هەموو هەنگاوی داهاتوو بە شێوەی بەڵگەپارێز کورت دەکاتەوە." },
+            { "language": "kmr", "text": "Bersiva dawî baş e, ji ber ku tenê `spas` nabêje, lê hemû gava paşîn bi awayekî delîlparêz kurt dike." },
+            { "language": "pl", "text": "Odpowiedź końcowa jest dobra, bo nie tylko mówi „dziękuję”, lecz podsumowuje cały następny krok z myślą o dowodzie." },
+            { "language": "ro", "text": "Răspunsul final este bun pentru că nu spune doar „mulțumesc”, ci rezumă întregul pas următor într-un mod sigur din perspectiva dovezilor." },
+            { "language": "sq", "text": "Përgjigjja përmbyllëse është e mirë sepse nuk thotë vetëm “faleminderit”, por përmbledh të gjithë hapin tjetër duke pasur parasysh provën." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

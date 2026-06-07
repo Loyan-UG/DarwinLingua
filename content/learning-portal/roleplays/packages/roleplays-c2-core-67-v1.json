@@ -1,0 +1,723 @@
+{
+  "packageId": "roleplays-c2-core-67-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 67 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 67",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-in-einer-pruefung-einen-eigenen-fehler-elegant-korrigieren",
+      "linkedDialogueSlug": null,
+      "title": "In einer Prüfung einen eigenen Fehler elegant korrigieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Correcting your own mistake elegantly in an exam" },
+        { "language": "fa", "text": "اصلاح ظریف اشتباه خود در آزمون" },
+        { "language": "ar", "text": "تصحيح خطئك الشخصي بأناقة في اختبار" },
+        { "language": "tr", "text": "Sınavda kendi hatanı zarifçe düzeltmek" },
+        { "language": "ru", "text": "Элегантно исправить собственную ошибку на экзамене" },
+        { "language": "ckb", "text": "ڕاستکردنەوەی هەڵەی خۆت بە شێوەیەکی ڕێکوپێک لە تاقیکردنەوەدا" },
+        { "language": "kmr", "text": "Di ezmûnê de şaşiya xwe bi awayekî xweşik rastkirin" },
+        { "language": "pl", "text": "Eleganckie poprawienie własnego błędu na egzaminie" },
+        { "language": "ro", "text": "Corectarea elegantă a propriei greșeli la examen" },
+        { "language": "sq", "text": "Korrigjimi elegant i gabimit tuaj në provim" }
+      ],
+      "description": "In einer mündlichen C2-Prüfung haben Sie eine Aussage zu pauschal formuliert. Die Kommission fragt nach. Sie korrigieren sich ruhig, grenzen Ihre These ein und behalten den roten Faden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an oral C2 exam, you have formulated a statement too broadly. The panel follows up. You correct yourself calmly, narrow your thesis, and keep the thread." },
+        { "language": "fa", "text": "در آزمون شفاهی C2 یک گفته را بیش از حد کلی بیان کرده‌اید. کمیسیون پیگیری می‌کند. شما با آرامش خود را اصلاح می‌کنید، تزتان را محدود می‌کنید و رشته بحث را حفظ می‌کنید." },
+        { "language": "ar", "text": "في اختبار شفهي C2 صغتم عبارة بصورة عامة أكثر من اللازم. تسأل اللجنة متابعةً. تصححون أنفسكم بهدوء، وتحددون أطروحتكم، وتحافظون على تسلسل الكلام." },
+        { "language": "tr", "text": "Sözlü C2 sınavında bir ifadeyi fazla genel kurdunuz. Kurul takip sorusu soruyor. Kendinizi sakin biçimde düzeltir, tezinizi sınırlar ve ana çizgiyi korursunuz." },
+        { "language": "ru", "text": "На устном экзамене C2 вы сформулировали высказывание слишком широко. Комиссия задает уточняющий вопрос. Вы спокойно исправляете себя, сужаете тезис и сохраняете ход мысли." },
+        { "language": "ckb", "text": "لە تاقیکردنەوەی زارەکی C2 دا وتەیەکت زۆر گشتی داڕشتووە. لیژنە پرسیاری شوێنکەوتە دەکات. بە ئارامی خۆت ڕاست دەکەیتەوە، تێزەکەت سنووردار دەکەیت و ڕێڕەوی قسەکە دەپارێزیت." },
+        { "language": "kmr", "text": "Di ezmûna devkî ya C2 de we gotinek pir giştî ava kiriye. Komîsyon pirsê didomîne. Hûn bi aramî xwe rast dikin, teza xwe teng dikin û rêça axaftinê diparêzin." },
+        { "language": "pl", "text": "Na ustnym egzaminie C2 sformułował(a) Pan/Pani wypowiedź zbyt szeroko. Komisja dopytuje. Spokojnie poprawia się Pan/Pani, zawęża tezę i zachowuje tok wypowiedzi." },
+        { "language": "ro", "text": "La un examen oral C2 ați formulat o afirmație prea general. Comisia revine cu o întrebare. Vă corectați calm, restrângeți teza și păstrați firul argumentării." },
+        { "language": "sq", "text": "Në një provim me gojë C2 keni formuluar një pohim tepër të përgjithshëm. Komisioni pyet më tej. Ju korrigjoni veten me qetësi, e ngushtoni tezën dhe ruani vijën e argumentit." }
+      ],
+      "learnerGoal": "Einen eigenen Fehler in einer C2-Prüfung souverän korrigieren: die Ungenauigkeit benennen, die These präzisieren, ohne sich zu entschuldigen oder den ganzen Beitrag zurückzunehmen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Correct your own mistake confidently in a C2 exam: name the inaccuracy, refine the thesis, without apologizing too much or withdrawing the whole contribution." },
+        { "language": "fa", "text": "اشتباه خود را در آزمون C2 مسلط اصلاح کنید: نادقیقی را نام ببرید، تز را دقیق‌تر کنید، بدون عذرخواهی بیش از حد یا پس‌گرفتن کل پاسخ." },
+        { "language": "ar", "text": "صححوا خطأكم بثقة في اختبار C2: سمّوا عدم الدقة، ودققوا الأطروحة، من دون اعتذار زائد أو سحب المساهمة كلها." },
+        { "language": "tr", "text": "C2 sınavında kendi hatanızı kendinden emin biçimde düzeltin: belirsizliği adlandırın, tezi kesinleştirin, aşırı özür dilemeden ya da tüm katkıyı geri almadan." },
+        { "language": "ru", "text": "Уверенно исправить собственную ошибку на экзамене C2: назвать неточность, уточнить тезис, не извиняясь чрезмерно и не отзывая весь ответ." },
+        { "language": "ckb", "text": "هەڵەی خۆت لە تاقیکردنەوەی C2 دا بە دڵنیایی ڕاست بکەوە: ناوردییەکە ناوببە، تێزەکە وردتر بکە، بێ ئەوەی زۆر داوای لێبوردن بکەیت یان هەموو وەڵامەکە پاشبکەویتەوە." },
+        { "language": "kmr", "text": "Di ezmûna C2 de şaşiya xwe bi bawerî rast bikin: nerastiya biçûk bi nav bikin, tezê rasttir bikin, bê ku pir lêborîn bixwazin an tevahiya beşdariyê paş ve bikişînin." },
+        { "language": "pl", "text": "Pewnie poprawić własny błąd na egzaminie C2: nazwać niedokładność, doprecyzować tezę, bez nadmiernego przepraszania i wycofywania całej wypowiedzi." },
+        { "language": "ro", "text": "Corectați sigur propria greșeală la un examen C2: numiți inexactitatea, precizați teza, fără scuze excesive sau retragerea întregii contribuții." },
+        { "language": "sq", "text": "Korrigjoni me siguri gabimin tuaj në një provim C2: emërtoni pasaktësinë, saktësoni tezën, pa kërkuar tepër falje ose pa tërhequr të gjithë përgjigjen." }
+      ],
+      "cefrLevel": "C2",
+      "category": "exam",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "exam-speaking"],
+      "taskType": "handle-misunderstanding",
+      "interactionMode": "exam-room",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 67,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kandidat/in",
+          "translations": [
+            { "language": "en", "text": "Candidate" },
+            { "language": "fa", "text": "داوطلب" },
+            { "language": "ar", "text": "الممتحن" },
+            { "language": "tr", "text": "Aday" },
+            { "language": "ru", "text": "Кандидат" },
+            { "language": "ckb", "text": "بەشداربووی تاقیکردنەوە" },
+            { "language": "kmr", "text": "Namzed" },
+            { "language": "pl", "text": "Kandydat" },
+            { "language": "ro", "text": "Candidat" },
+            { "language": "sq", "text": "Kandidati" }
+          ]
+        },
+        {
+          "roleKey": "examiner",
+          "displayName": "Prüfer/in",
+          "translations": [
+            { "language": "en", "text": "Examiner" },
+            { "language": "fa", "text": "ممتحن" },
+            { "language": "ar", "text": "الفاحص" },
+            { "language": "tr", "text": "Sınav görevlisi" },
+            { "language": "ru", "text": "Экзаменатор" },
+            { "language": "ckb", "text": "تاقیکەرەوە" },
+            { "language": "kmr", "text": "Ezmûnvan" },
+            { "language": "pl", "text": "Egzaminator" },
+            { "language": "ro", "text": "Examinator" },
+            { "language": "sq", "text": "Provuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "examiner",
+          "baseText": "Sie haben eben gesagt, digitale Lernangebote seien immer gerechter als Präsenzkurse. Möchten Sie diese Aussage präzisieren?",
+          "translations": [
+            { "language": "en", "text": "You just said that digital learning offers are always fairer than in-person courses. Would you like to refine that statement?" },
+            { "language": "fa", "text": "همین حالا گفتید که پیشنهادهای یادگیری دیجیتال همیشه عادلانه‌تر از کلاس‌های حضوری هستند. می‌خواهید این گفته را دقیق‌تر کنید؟" },
+            { "language": "ar", "text": "قلتم للتو إن عروض التعلم الرقمية تكون دائمًا أكثر عدلًا من الدورات الحضورية. هل ترغبون في تدقيق هذه العبارة؟" },
+            { "language": "tr", "text": "Az önce dijital öğrenme olanaklarının yüz yüze kurslardan her zaman daha adil olduğunu söylediniz. Bu ifadeyi kesinleştirmek ister misiniz?" },
+            { "language": "ru", "text": "Вы только что сказали, что цифровые образовательные предложения всегда справедливее очных курсов. Хотите уточнить это высказывание?" },
+            { "language": "ckb", "text": "ئێستا وتت کە پێشکەشکارییەکانی فێربوونی دیجیتاڵ هەمیشە دادپەروەرانەترن لە وانەی ئامادەبوون. دەتەوێت ئەم وتەیە وردتر بکەیت؟" },
+            { "language": "kmr", "text": "We niha got ku pêşkêşên fêrbûna dîjîtal her tim ji dersên amadebûnê dadperwertir in. Hûn dixwazin vê gotinê zelaltir bikin?" },
+            { "language": "pl", "text": "Powiedział(a) Pan/Pani przed chwilą, że cyfrowe oferty edukacyjne są zawsze bardziej sprawiedliwe niż kursy stacjonarne. Czy chce Pan/Pani doprecyzować tę wypowiedź?" },
+            { "language": "ro", "text": "Ați spus adineauri că ofertele digitale de învățare sunt întotdeauna mai echitabile decât cursurile cu prezență. Doriți să precizați această afirmație?" },
+            { "language": "sq", "text": "Sapo thatë se ofertat digjitale të mësimit janë gjithmonë më të drejta se kurset me prani fizike. Dëshironi ta saktësoni këtë pohim?" }
+          ],
+          "function": "challenge-overgeneralization",
+          "toneNote": "The examiner gives a chance to repair the claim.",
+          "expectedLearnerAction": "Acknowledge the overgeneralization without panic."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, das war zu absolut formuliert. Präziser wäre: Digitale Lernangebote können gerechter sein, wenn Zugang, technische Ausstattung und Betreuung mitgedacht werden.",
+          "translations": [
+            { "language": "en", "text": "Yes, that was formulated too absolutely. More precisely: digital learning offers can be fairer if access, technical equipment, and support are considered as well." },
+            { "language": "fa", "text": "بله، آن را بیش از حد مطلق بیان کردم. دقیق‌تر این است: پیشنهادهای یادگیری دیجیتال می‌توانند عادلانه‌تر باشند، اگر دسترسی، تجهیزات فنی و پشتیبانی نیز در نظر گرفته شوند." },
+            { "language": "ar", "text": "نعم، صغت ذلك بصورة مطلقة أكثر من اللازم. الأدق هو: يمكن لعروض التعلم الرقمية أن تكون أكثر عدلًا إذا أُخذ الوصول والتجهيز التقني والدعم في الحسبان أيضًا." },
+            { "language": "tr", "text": "Evet, bunu fazla mutlak formüle ettim. Daha kesin biçimi şu olur: erişim, teknik donanım ve destek birlikte düşünülürse dijital öğrenme olanakları daha adil olabilir." },
+            { "language": "ru", "text": "Да, это было сформулировано слишком абсолютно. Точнее было бы так: цифровые образовательные предложения могут быть справедливее, если одновременно учитываются доступ, техническое оснащение и сопровождение." },
+            { "language": "ckb", "text": "بەڵێ، ئەوە زۆر ڕەها داڕێژرا. وردتر ئەمەیە: پێشکەشکارییەکانی فێربوونی دیجیتاڵ دەتوانن دادپەروەرانەتر بن، ئەگەر دەستگەیشتن، ئامێری تەکنیکی و پشتگیریش لەبەرچاو بگیرێن." },
+            { "language": "kmr", "text": "Erê, ew pir mutleq hatibû gotin. Rasttir wiha ye: pêşkêşên fêrbûna dîjîtal dikarin dadperwertir bin, heke gihîştin, amûrên teknîkî û piştgirî jî bên hesibandin." },
+            { "language": "pl", "text": "Tak, sformułowałem/am to zbyt absolutnie. Dokładniej: cyfrowe oferty edukacyjne mogą być bardziej sprawiedliwe, jeśli uwzględni się dostęp, sprzęt techniczny i wsparcie." },
+            { "language": "ro", "text": "Da, am formulat prea absolut. Mai precis ar fi: ofertele digitale de învățare pot fi mai echitabile dacă sunt luate în calcul accesul, echipamentul tehnic și sprijinul." },
+            { "language": "sq", "text": "Po, e formulova shumë absolutisht. Më saktë: ofertat digjitale të mësimit mund të jenë më të drejta nëse merren parasysh qasja, pajisjet teknike dhe mbështetja." }
+          ],
+          "function": "correct-overstatement",
+          "toneNote": "Names the error and immediately gives a stronger formulation.",
+          "expectedLearnerAction": "Correct the claim and preserve the argument."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "examiner",
+          "baseText": "Wie vermeiden Sie, dass diese Korrektur wie ein vollständiger Rückzug Ihrer Position klingt?",
+          "translations": [
+            { "language": "en", "text": "How do you prevent this correction from sounding like a complete withdrawal of your position?" },
+            { "language": "fa", "text": "چطور جلوگیری می‌کنید که این اصلاح مثل پس‌گرفتن کامل موضع شما به نظر برسد؟" },
+            { "language": "ar", "text": "كيف تمنعون أن يبدو هذا التصحيح كأنه تراجع كامل عن موقفكم؟" },
+            { "language": "tr", "text": "Bu düzeltmenin konumunuzu tamamen geri çekmişsiniz gibi duyulmasını nasıl önlersiniz?" },
+            { "language": "ru", "text": "Как вы избегаете того, чтобы это исправление звучало как полный отказ от вашей позиции?" },
+            { "language": "ckb", "text": "چۆن ڕێگری دەکەیت ئەم ڕاستکردنەوەیە وەک پاشەکشەی تەواو لە هەڵوێستەکەت دەنگ نەبدات؟" },
+            { "language": "kmr", "text": "Hûn çawa rê li ber vê digirin ku ev rastkirin wek vekişandina tevahî ya helwesta we xuya bike?" },
+            { "language": "pl", "text": "Jak unika Pan/Pani tego, by ta korekta zabrzmiała jak całkowite wycofanie stanowiska?" },
+            { "language": "ro", "text": "Cum evitați ca această corectare să sune ca o retragere completă a poziției dumneavoastră?" },
+            { "language": "sq", "text": "Si e shmangni që ky korrigjim të tingëllojë si tërheqje e plotë e qëndrimit tuaj?" }
+          ],
+          "function": "ask-repair-strategy",
+          "toneNote": "The learner must narrow, not collapse, the argument.",
+          "expectedLearnerAction": "Keep the core thesis while limiting its scope."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Kern beibehalten, aber die Bedingung klarer machen: Nicht das Format allein schafft Gerechtigkeit, sondern die Art, wie es sozial und technisch abgesichert wird.",
+          "translations": [
+            { "language": "en", "text": "I would keep the core, but make the condition clearer: the format alone does not create fairness; what matters is how it is socially and technically secured." },
+            { "language": "fa", "text": "من هسته بحث را حفظ می‌کنم، اما شرط را روشن‌تر می‌سازم: خود قالب به‌تنهایی عدالت ایجاد نمی‌کند، بلکه نحوه پشتیبانی اجتماعی و فنی آن مهم است." },
+            { "language": "ar", "text": "سأُبقي على جوهر الفكرة، لكن أوضح الشرط: ليس الشكل وحده هو الذي يخلق العدالة، بل طريقة تأمينه اجتماعيًا وتقنيًا." },
+            { "language": "tr", "text": "Çekirdeği korurdum, ama koşulu daha açık hale getirirdim: adaleti tek başına format yaratmaz; önemli olan bunun sosyal ve teknik olarak nasıl güvenceye alındığıdır." },
+            { "language": "ru", "text": "Я бы сохранил суть, но яснее обозначил условие: не сам формат создает справедливость, а то, как он социально и технически обеспечен." },
+            { "language": "ckb", "text": "ناوەڕۆکەکە دەپارێزم، بەڵام مەرجەکە ڕوونتر دەکەم: فۆرماتەکە بە تەنها دادپەروەری دروست ناکات، بەڵکو گرنگ ئەوەیە چۆن بە کۆمەڵایەتی و تەکنیکی پشتگیری دەکرێت." },
+            { "language": "kmr", "text": "Ez bingeha gotinê diparêzim, lê şertê zelaltir dikim: tenê formet dadperweriyê çênake; ya girîng ew e ku ew çawa ji aliyê civakî û teknîkî ve tê ewlekirin." },
+            { "language": "pl", "text": "Zachował(a)bym rdzeń tezy, ale jaśniej określił(a) warunek: to nie sam format tworzy sprawiedliwość, lecz sposób jego zabezpieczenia społecznego i technicznego." },
+            { "language": "ro", "text": "Aș păstra nucleul ideii, dar aș clarifica mai bine condiția: nu formatul singur creează echitate, ci modul în care este susținut social și tehnic." },
+            { "language": "sq", "text": "Do ta ruaja thelbin, por do ta bëja kushtin më të qartë: jo formati vetë krijon drejtësi, por mënyra si sigurohet shoqërisht dhe teknikisht." }
+          ],
+          "function": "preserve-and-limit-thesis",
+          "toneNote": "Strong correction without self-cancellation.",
+          "expectedLearnerAction": "Refine the claim through a condition."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "examiner",
+          "baseText": "Können Sie diese präzisierte Position an einem kurzen Beispiel zeigen?",
+          "translations": [
+            { "language": "en", "text": "Can you show this refined position with a brief example?" },
+            { "language": "fa", "text": "آیا می‌توانید این موضع دقیق‌تر را با یک مثال کوتاه نشان دهید؟" },
+            { "language": "ar", "text": "هل يمكنكم إظهار هذا الموقف الدقيق بمثال قصير؟" },
+            { "language": "tr", "text": "Bu kesinleştirilmiş konumu kısa bir örnekle gösterebilir misiniz?" },
+            { "language": "ru", "text": "Можете показать эту уточненную позицию на коротком примере?" },
+            { "language": "ckb", "text": "دەتوانیت ئەم هەڵوێستە وردکراوە بە نموونەیەکی کورت پیشان بدەیت؟" },
+            { "language": "kmr", "text": "Hûn dikarin vê helwesta zelalkirî bi mînakeke kurt nîşan bidin?" },
+            { "language": "pl", "text": "Czy może Pan/Pani pokazać to doprecyzowane stanowisko na krótkim przykładzie?" },
+            { "language": "ro", "text": "Puteți arăta această poziție precizată printr-un exemplu scurt?" },
+            { "language": "sq", "text": "A mund ta tregoni këtë qëndrim të saktësuar me një shembull të shkurtër?" }
+          ],
+          "function": "request-example",
+          "toneNote": "The example should support the corrected claim.",
+          "expectedLearnerAction": "Use one concrete contrast."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ein Onlinekurs kann sehr inklusiv sein, wenn Lernende Aufzeichnungen, klare Aufgaben und technische Hilfe bekommen. Ohne diese Bedingungen vergrößert er aber gerade für weniger routinierte Lernende die Hürden.",
+          "translations": [
+            { "language": "en", "text": "An online course can be very inclusive if learners receive recordings, clear tasks, and technical help. Without these conditions, however, it increases barriers especially for less experienced learners." },
+            { "language": "fa", "text": "یک دوره آنلاین می‌تواند بسیار فراگیر باشد، اگر زبان‌آموزان ضبط جلسات، تکلیف‌های روشن و کمک فنی دریافت کنند. اما بدون این شرایط، مخصوصاً برای زبان‌آموزان کم‌تجربه‌تر مانع‌ها را بیشتر می‌کند." },
+            { "language": "ar", "text": "يمكن أن تكون الدورة الإلكترونية شاملة جدًا إذا حصل المتعلمون على تسجيلات ومهام واضحة ومساعدة تقنية. لكن من دون هذه الشروط تزيد العوائق خصوصًا للمتعلمين الأقل خبرة." },
+            { "language": "tr", "text": "Öğrenciler kayıtlar, açık görevler ve teknik yardım alırsa çevrim içi kurs çok kapsayıcı olabilir. Ancak bu koşullar olmadan özellikle daha az deneyimli öğrenciler için engelleri artırır." },
+            { "language": "ru", "text": "Онлайн-курс может быть очень инклюзивным, если учащиеся получают записи, ясные задания и техническую помощь. Но без этих условий он усиливает барьеры, особенно для менее опытных учащихся." },
+            { "language": "ckb", "text": "کۆرسێکی ئۆنلاین دەتوانێت زۆر گشتگیر بێت، ئەگەر فێرخوازان تۆمار، ئەرکی ڕوون و یارمەتی تەکنیکی وەربگرن. بەبێ ئەم مەرجانە، بە تایبەتی بۆ فێرخوازانی کەم ئەزموونتر، ئاستەنگەکان زیاتر دەکات." },
+            { "language": "kmr", "text": "Kursêkî online dikare pir tevlêker be, heke fêrkar tomar, erkên zelal û alîkariya teknîkî bistînin. Lê bê van şertan ew astengan bi taybetî ji bo fêrkarên kêm-ezmotir mezintir dike." },
+            { "language": "pl", "text": "Kurs online może być bardzo włączający, jeśli uczący się otrzymują nagrania, jasne zadania i pomoc techniczną. Bez tych warunków zwiększa jednak bariery szczególnie dla mniej doświadczonych osób." },
+            { "language": "ro", "text": "Un curs online poate fi foarte incluziv dacă participanții primesc înregistrări, sarcini clare și ajutor tehnic. Fără aceste condiții însă, el mărește barierele mai ales pentru cei cu mai puțină experiență." },
+            { "language": "sq", "text": "Një kurs online mund të jetë shumë përfshirës nëse nxënësit marrin regjistrime, detyra të qarta dhe ndihmë teknike. Pa këto kushte, ai i rrit pengesat sidomos për nxënësit me më pak përvojë." }
+          ],
+          "function": "give-corrective-example",
+          "toneNote": "The example shows both potential and condition.",
+          "expectedLearnerAction": "Support the corrected position with contrast."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "examiner",
+          "baseText": "Was bedeutet diese Korrektur für Ihre ursprüngliche Schlussfolgerung?",
+          "translations": [
+            { "language": "en", "text": "What does this correction mean for your original conclusion?" },
+            { "language": "fa", "text": "این اصلاح برای نتیجه‌گیری اولیه شما چه معنایی دارد؟" },
+            { "language": "ar", "text": "ماذا يعني هذا التصحيح بالنسبة إلى استنتاجكم الأصلي؟" },
+            { "language": "tr", "text": "Bu düzeltme ilk sonucunuz için ne anlama geliyor?" },
+            { "language": "ru", "text": "Что это исправление означает для вашего первоначального вывода?" },
+            { "language": "ckb", "text": "ئەم ڕاستکردنەوەیە بۆ دەرئەنجامی سەرەتایی تۆ چی واتایەک هەیە؟" },
+            { "language": "kmr", "text": "Ev rastkirin ji bo encama destpêkê ya we çi wateyê dide?" },
+            { "language": "pl", "text": "Co ta korekta oznacza dla Pana/Pani pierwotnego wniosku?" },
+            { "language": "ro", "text": "Ce înseamnă această corectare pentru concluzia dumneavoastră inițială?" },
+            { "language": "sq", "text": "Çfarë do të thotë ky korrigjim për përfundimin tuaj fillestar?" }
+          ],
+          "function": "request-revised-conclusion",
+          "toneNote": "The conclusion must be adjusted, not abandoned.",
+          "expectedLearnerAction": "State the revised conclusion."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Meine Schlussfolgerung ändert sich also nicht grundsätzlich, sie wird bedingter. Ich würde nicht mehr sagen: digital ist gerechter, sondern: digital kann gerechter werden, wenn die Begleitstruktur stimmt.",
+          "translations": [
+            { "language": "en", "text": "So my conclusion does not change fundamentally; it becomes more conditional. I would no longer say: digital is fairer, but rather: digital can become fairer if the supporting structure is right." },
+            { "language": "fa", "text": "پس نتیجه‌گیری من اساساً عوض نمی‌شود، بلکه مشروط‌تر می‌شود. دیگر نمی‌گویم دیجیتال عادلانه‌تر است، بلکه می‌گویم: دیجیتال می‌تواند عادلانه‌تر شود، اگر ساختار پشتیبان درست باشد." },
+            { "language": "ar", "text": "إذن لا يتغير استنتاجي من حيث المبدأ، بل يصبح أكثر شرطية. لن أقول بعد الآن: الرقمي أكثر عدلًا، بل: يمكن أن يصبح الرقمي أكثر عدلًا إذا كانت البنية الداعمة مناسبة." },
+            { "language": "tr", "text": "Yani sonucum temelde değişmiyor, daha koşullu hale geliyor. Artık dijital daha adildir demem; bunun yerine destek yapısı uygunsa dijital daha adil hale gelebilir derim." },
+            { "language": "ru", "text": "Итак, мой вывод принципиально не меняется, он становится более условным. Я больше не сказал бы: цифровое справедливее, а сказал бы: цифровое может стать справедливее, если поддерживающая структура работает." },
+            { "language": "ckb", "text": "بۆیە دەرئەنجامەکەم بە بنەڕەتی ناگۆڕێت، بەڵکو مەرجدارتر دەبێت. چیتر ناڵێم: دیجیتاڵ دادپەروەرانەترە، بەڵکو دەڵێم: دیجیتاڵ دەتوانێت دادپەروەرانەتر ببێت، ئەگەر پێکهاتەی پشتگیری دروست بێت." },
+            { "language": "kmr", "text": "Ji ber vê yekê encama min bingehîn naguhere, ew şertdartir dibe. Ez êdî nabêjim: dîjîtal dadperwertir e, lê dibêjim: dîjîtal dikare dadperwertir bibe, heke avahiya piştgiriyê rast be." },
+            { "language": "pl", "text": "Mój wniosek nie zmienia się więc zasadniczo, staje się bardziej warunkowy. Nie powiedział(a)bym już: cyfrowe jest sprawiedliwsze, lecz: cyfrowe może stać się sprawiedliwsze, jeśli działa struktura wsparcia." },
+            { "language": "ro", "text": "Concluzia mea nu se schimbă deci fundamental, ci devine mai condiționată. Nu aș mai spune: digitalul este mai echitabil, ci: digitalul poate deveni mai echitabil dacă structura de sprijin funcționează." },
+            { "language": "sq", "text": "Pra përfundimi im nuk ndryshon në thelb, por bëhet më i kushtëzuar. Nuk do të thosha më: digjitalja është më e drejtë, por: digjitalja mund të bëhet më e drejtë nëse struktura mbështetëse funksionon." }
+          ],
+          "function": "revise-conclusion",
+          "toneNote": "Maintains fluency while correcting the thesis.",
+          "expectedLearnerAction": "Show how the conclusion changes."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "examiner",
+          "baseText": "Formulieren Sie zum Abschluss bitte einen Satz, der die Korrektur elegant integriert.",
+          "translations": [
+            { "language": "en", "text": "To conclude, please formulate one sentence that integrates the correction elegantly." },
+            { "language": "fa", "text": "در پایان، لطفاً جمله‌ای بیان کنید که اصلاح را ظریف در خود جای دهد." },
+            { "language": "ar", "text": "في الختام، صوغوا من فضلكم جملة تدمج التصحيح بأناقة." },
+            { "language": "tr", "text": "Son olarak, düzeltmeyi zarif biçimde içeren bir cümle kurun lütfen." },
+            { "language": "ru", "text": "В завершение сформулируйте, пожалуйста, одно предложение, которое элегантно включает исправление." },
+            { "language": "ckb", "text": "لە کۆتاییدا تکایە ڕستەیەک دابڕێژە کە ڕاستکردنەوەکە بە شێوەیەکی ڕێکوپێک تێدا بگونجێنێت." },
+            { "language": "kmr", "text": "Ji bo dawiyê, ji kerema xwe hevokek ava bikin ku rastkirinê bi awayekî xweşik tê de bihewîne." },
+            { "language": "pl", "text": "Na zakończenie proszę sformułować jedno zdanie, które elegancko włącza korektę." },
+            { "language": "ro", "text": "La final, vă rog să formulați o propoziție care integrează elegant corectarea." },
+            { "language": "sq", "text": "Në përfundim, ju lutem formuloni një fjali që e integron korrigjimin me elegancë." }
+          ],
+          "function": "request-final-repair",
+          "toneNote": "One sentence should sound precise and controlled.",
+          "expectedLearnerAction": "Close with a repaired thesis."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Zusammenfassend würde ich meine Aussage so korrigieren: Digitale Lernformen sind kein automatischer Garant für Gerechtigkeit, können aber unter guten Rahmenbedingungen einen wichtigen Beitrag dazu leisten.",
+          "translations": [
+            { "language": "en", "text": "In summary, I would correct my statement as follows: digital forms of learning are not an automatic guarantee of fairness, but under good conditions they can make an important contribution to it." },
+            { "language": "fa", "text": "در جمع‌بندی، گفته‌ام را این‌گونه اصلاح می‌کنم: شکل‌های دیجیتال یادگیری تضمین خودکار عدالت نیستند، اما در شرایط چارچوبی خوب می‌توانند سهم مهمی در آن داشته باشند." },
+            { "language": "ar", "text": "خلاصةً، سأصحح عبارتي هكذا: أشكال التعلم الرقمية ليست ضمانًا تلقائيًا للعدالة، لكنها يمكن أن تسهم فيها إسهامًا مهمًا في ظل شروط إطار جيدة." },
+            { "language": "tr", "text": "Özetle ifademi şöyle düzeltirdim: dijital öğrenme biçimleri adalet için otomatik bir garanti değildir, ancak iyi çerçeve koşulları altında buna önemli katkı sağlayabilir." },
+            { "language": "ru", "text": "В итоге я исправил бы свое высказывание так: цифровые формы обучения не являются автоматической гарантией справедливости, но при хороших рамочных условиях могут внести важный вклад." },
+            { "language": "ckb", "text": "بە کورتی، وتەکەم بەم شێوەیە ڕاست دەکەمەوە: شێوازە دیجیتاڵەکانی فێربوون گرەنتی خۆکاری دادپەروەری نین، بەڵام لە ژێر مەرجی باشدا دەتوانن بەشدارییەکی گرنگ تێدا بکەن." },
+            { "language": "kmr", "text": "Bi kurtî, ez gotina xwe wiha rast dikim: şêweyên dîjîtal ên fêrbûnê garantiyeke bixweber a dadperweriyê nînin, lê di bin şertên baş de dikarin beşdariyeke girîng bikin." },
+            { "language": "pl", "text": "Podsumowując, poprawił(a)bym swoją wypowiedź tak: cyfrowe formy nauki nie są automatyczną gwarancją sprawiedliwości, ale w dobrych warunkach ramowych mogą wnieść ważny wkład." },
+            { "language": "ro", "text": "În concluzie, mi-aș corecta afirmația astfel: formele digitale de învățare nu sunt o garanție automată a echității, dar în condiții-cadru bune pot contribui semnificativ la aceasta." },
+            { "language": "sq", "text": "Si përmbledhje, do ta korrigjoja pohimin tim kështu: format digjitale të mësimit nuk janë garanci automatike për drejtësi, por në kushte të mira kuadër mund të japin një kontribut të rëndësishëm." }
+          ],
+          "function": "close-with-repaired-thesis",
+          "toneNote": "Precise, calm, and coherent.",
+          "expectedLearnerAction": "End with a repaired thesis."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, das war zu absolut formuliert. Präziser wäre: Digitale Lernangebote können gerechter sein, wenn Zugang, technische Ausstattung und Betreuung mitgedacht werden.",
+              "translations": [
+                { "language": "en", "text": "Yes, that was formulated too absolutely. More precisely: digital learning offers can be fairer if access, technical equipment, and support are considered as well." },
+                { "language": "fa", "text": "بله، آن را بیش از حد مطلق بیان کردم. دقیق‌تر این است: پیشنهادهای یادگیری دیجیتال می‌توانند عادلانه‌تر باشند، اگر دسترسی، تجهیزات فنی و پشتیبانی نیز در نظر گرفته شوند." },
+                { "language": "ar", "text": "نعم، صغت ذلك بصورة مطلقة أكثر من اللازم. الأدق هو: يمكن لعروض التعلم الرقمية أن تكون أكثر عدلًا إذا أُخذ الوصول والتجهيز التقني والدعم في الحسبان أيضًا." },
+                { "language": "tr", "text": "Evet, bunu fazla mutlak formüle ettim. Daha kesin biçimi şu olur: erişim, teknik donanım ve destek birlikte düşünülürse dijital öğrenme olanakları daha adil olabilir." },
+                { "language": "ru", "text": "Да, это было сформулировано слишком абсолютно. Точнее: цифровые образовательные предложения могут быть справедливее, если учитывать доступ, техническое оснащение и сопровождение." },
+                { "language": "ckb", "text": "بەڵێ، ئەوە زۆر ڕەها داڕێژرا. وردتر ئەمەیە: پێشکەشکارییەکانی فێربوونی دیجیتاڵ دەتوانن دادپەروەرانەتر بن، ئەگەر دەستگەیشتن، ئامێری تەکنیکی و پشتگیریش لەبەرچاو بگیرێن." },
+                { "language": "kmr", "text": "Erê, ew pir mutleq hatibû gotin. Rasttir wiha ye: pêşkêşên fêrbûna dîjîtal dikarin dadperwertir bin, heke gihîştin, amûrên teknîkî û piştgirî jî bên hesibandin." },
+                { "language": "pl", "text": "Tak, sformułowałem/am to zbyt absolutnie. Dokładniej: cyfrowe oferty edukacyjne mogą być bardziej sprawiedliwe, jeśli uwzględni się dostęp, sprzęt techniczny i wsparcie." },
+                { "language": "ro", "text": "Da, am formulat prea absolut. Mai precis: ofertele digitale de învățare pot fi mai echitabile dacă sunt luate în calcul accesul, echipamentul tehnic și sprijinul." },
+                { "language": "sq", "text": "Po, e formulova shumë absolutisht. Më saktë: ofertat digjitale të mësimit mund të jenë më të drejta nëse merren parasysh qasja, pajisjet teknike dhe mbështetja." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort korrigiert die Übertreibung und liefert sofort eine präzisere These.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer corrects the exaggeration and immediately provides a more precise thesis." },
+                { "language": "fa", "text": "قوی: پاسخ اغراق را اصلاح می‌کند و فوراً تز دقیق‌تری ارائه می‌دهد." },
+                { "language": "ar", "text": "قوي: تصحح الإجابة المبالغة وتقدم فورًا أطروحة أدق." },
+                { "language": "tr", "text": "Güçlü: Cevap abartıyı düzeltir ve hemen daha kesin bir tez sunar." },
+                { "language": "ru", "text": "Сильно: ответ исправляет преувеличение и сразу дает более точный тезис." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە زیادەڕۆییەکە ڕاست دەکاتەوە و دەستبەجێ تێزێکی وردتر پێشکەش دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv zêdegaviyê rast dike û yekser tezeke rasttir dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź poprawia przesadę i od razu podaje precyzyjniejszą tezę." },
+                { "language": "ro", "text": "Puternic: răspunsul corectează exagerarea și oferă imediat o teză mai precisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja korrigjon teprimin dhe jep menjëherë një tezë më të saktë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, vielleicht war das etwas ungenau; digitale Kurse sind trotzdem meistens besser.",
+              "translations": [
+                { "language": "en", "text": "Yes, maybe that was a little imprecise; digital courses are still mostly better." },
+                { "language": "fa", "text": "بله، شاید کمی نادقیق بود؛ با این حال دوره‌های دیجیتال معمولاً بهترند." },
+                { "language": "ar", "text": "نعم، ربما كان ذلك غير دقيق قليلًا؛ ومع ذلك فالدورات الرقمية غالبًا أفضل." },
+                { "language": "tr", "text": "Evet, belki biraz belirsizdi; yine de dijital kurslar çoğunlukla daha iyidir." },
+                { "language": "ru", "text": "Да, возможно, это было немного неточно; цифровые курсы всё равно в большинстве случаев лучше." },
+                { "language": "ckb", "text": "بەڵێ، ڕەنگە کەمێک ناورد بووبێت؛ بەڵام کۆرسە دیجیتاڵەکان هێشتا زۆرجار باشترن." },
+                { "language": "kmr", "text": "Erê, dibe ku ew hinek nerast bû; lê dersên dîjîtal hê jî pir caran baştir in." },
+                { "language": "pl", "text": "Tak, może to było trochę niedokładne; kursy cyfrowe i tak są przeważnie lepsze." },
+                { "language": "ro", "text": "Da, poate a fost puțin inexact; cursurile digitale sunt totuși de cele mai multe ori mai bune." },
+                { "language": "sq", "text": "Po, ndoshta ishte pak e pasaktë; kurset digjitale megjithatë janë zakonisht më të mira." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu weich: Die Aussage korrigiert nicht wirklich und bleibt wieder pauschal.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too weak: the statement does not really correct itself and remains broad again." },
+                { "language": "fa", "text": "قابل‌باور است، اما ضعیف است: گفته واقعاً خود را اصلاح نمی‌کند و دوباره کلی می‌ماند." },
+                { "language": "ar", "text": "معقول، لكنه ضعيف جدًا: العبارة لا تصحح نفسها فعلًا وتبقى عامة مرة أخرى." },
+                { "language": "tr", "text": "Makul, ama zayıf: ifade kendini gerçekten düzeltmiyor ve yeniden genel kalıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слабо: высказывание на самом деле не исправляется и снова остается общим." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام لاوازە: وتەکە بە ڕاستی خۆی ڕاست ناکاتەوە و دیسان گشتی دەمێنێتەوە." },
+                { "language": "kmr", "text": "Bawerbar e, lê qels e: gotin bi rastî xwe rast nake û dîsa giştî dimîne." },
+                { "language": "pl", "text": "Brzmi sensownie, ale jest zbyt słabe: wypowiedź nie poprawia się naprawdę i znów pozostaje ogólna." },
+                { "language": "ro", "text": "Plauzibil, dar prea slab: afirmația nu se corectează cu adevărat și rămâne din nou generală." },
+                { "language": "sq", "text": "E besueshme, por shumë e dobët: pohimi nuk korrigjohet vërtet dhe mbetet përsëri i përgjithshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Nicht das Format allein schafft Gerechtigkeit, sondern die Art, wie es sozial und technisch abgesichert wird.",
+              "translations": [
+                { "language": "en", "text": "The format alone does not create fairness; what matters is how it is socially and technically secured." },
+                { "language": "fa", "text": "خود قالب به‌تنهایی عدالت ایجاد نمی‌کند، بلکه نحوه پشتیبانی اجتماعی و فنی آن مهم است." },
+                { "language": "ar", "text": "ليس الشكل وحده هو الذي يخلق العدالة، بل طريقة تأمينه اجتماعيًا وتقنيًا." },
+                { "language": "tr", "text": "Adaleti tek başına format yaratmaz; önemli olan bunun sosyal ve teknik olarak nasıl güvenceye alındığıdır." },
+                { "language": "ru", "text": "Не сам формат создает справедливость, а то, как он социально и технически обеспечен." },
+                { "language": "ckb", "text": "فۆرماتەکە بە تەنها دادپەروەری دروست ناکات، بەڵکو گرنگ ئەوەیە چۆن بە کۆمەڵایەتی و تەکنیکی پشتگیری دەکرێت." },
+                { "language": "kmr", "text": "Tenê formet dadperweriyê çênake; ya girîng ew e ku ew çawa ji aliyê civakî û teknîkî ve tê ewlekirin." },
+                { "language": "pl", "text": "To nie sam format tworzy sprawiedliwość, lecz sposób jego zabezpieczenia społecznego i technicznego." },
+                { "language": "ro", "text": "Nu formatul singur creează echitate, ci modul în care este susținut social și tehnic." },
+                { "language": "sq", "text": "Jo formati vetë krijon drejtësi, por mënyra si sigurohet shoqërisht dhe teknikisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort hält die Position, aber bindet sie an klare Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer keeps the position but ties it to clear conditions." },
+                { "language": "fa", "text": "قوی: پاسخ موضع را حفظ می‌کند، اما آن را به شرایط روشن وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تحافظ الإجابة على الموقف لكنها تربطه بشروط واضحة." },
+                { "language": "tr", "text": "Güçlü: Cevap konumu korur, ama açık koşullara bağlar." },
+                { "language": "ru", "text": "Сильно: ответ сохраняет позицию, но связывает ее с ясными условиями." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هەڵوێستەکە دەپارێزێت، بەڵام بە مەرجی ڕوونەوە دەیبەستێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv helwestê diparêze, lê bi şertên zelal ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź utrzymuje stanowisko, ale wiąże je z jasnymi warunkami." },
+                { "language": "ro", "text": "Puternic: răspunsul păstrează poziția, dar o leagă de condiții clare." },
+                { "language": "sq", "text": "E fortë: përgjigjja ruan qëndrimin, por e lidh me kushte të qarta." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich nehme den Punkt zurück und würde lieber über Präsenzunterricht sprechen.",
+              "translations": [
+                { "language": "en", "text": "I withdraw the point and would rather talk about in-person teaching." },
+                { "language": "fa", "text": "این نکته را پس می‌گیرم و ترجیح می‌دهم درباره آموزش حضوری صحبت کنم." },
+                { "language": "ar", "text": "أسحب هذه النقطة وأفضل الحديث عن التعليم الحضوري." },
+                { "language": "tr", "text": "Bu noktayı geri alıyorum ve yüz yüze eğitim hakkında konuşmayı tercih ederim." },
+                { "language": "ru", "text": "Я забираю этот пункт назад и лучше поговорил бы об очном обучении." },
+                { "language": "ckb", "text": "ئەم خاڵە پاشدەکەومەوە و پێم باشترە دەربارەی وانەی ئامادەبوون قسە بکەم." },
+                { "language": "kmr", "text": "Ez vê xalê vedikişînim û dixwazim çêtir li ser perwerdeya amadebûnê biaxivim." },
+                { "language": "pl", "text": "Wycofuję ten punkt i wolał(a)bym mówić o nauczaniu stacjonarnym." },
+                { "language": "ro", "text": "Retrag acest punct și aș prefera să vorbesc despre predarea cu prezență." },
+                { "language": "sq", "text": "E tërheq këtë pikë dhe do të preferoja të flisja për mësimin me prani fizike." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Die Antwort weicht aus und verliert die eigene Argumentationslinie.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: the answer evades and loses its own line of argument." },
+                { "language": "fa", "text": "بیش از حد دفاعی است: پاسخ طفره می‌رود و خط استدلال خود را از دست می‌دهد." },
+                { "language": "ar", "text": "دفاعي أكثر من اللازم: الإجابة تتهرب وتفقد خطها الحجاجي." },
+                { "language": "tr", "text": "Fazla savunmacı: cevap kaçınıyor ve kendi argüman çizgisini kaybediyor." },
+                { "language": "ru", "text": "Слишком оборонительно: ответ уклоняется и теряет собственную линию аргументации." },
+                { "language": "ckb", "text": "زۆر بەرگریکارانەیە: وەڵامەکە خۆی لادەدات و ڕێڕەوی بەڵگەهێنانەکەی لەدەست دەدات." },
+                { "language": "kmr", "text": "Pir berevanî ye: bersiv xwe dûr dixe û rêça argûmana xwe winda dike." },
+                { "language": "pl", "text": "Zbyt defensywne: odpowiedź unika tematu i traci własną linię argumentacji." },
+                { "language": "ro", "text": "Prea defensiv: răspunsul evită și pierde propria linie de argumentare." },
+                { "language": "sq", "text": "Shumë mbrojtëse: përgjigjja shmanget dhe humb vijën e vet të argumentimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ein Onlinekurs ist inklusiv, wenn es Aufzeichnungen, klare Aufgaben und technische Hilfe gibt; ohne diese Bedingungen entstehen neue Hürden.",
+              "translations": [
+                { "language": "en", "text": "An online course is inclusive if there are recordings, clear tasks, and technical help; without these conditions, new barriers arise." },
+                { "language": "fa", "text": "یک دوره آنلاین زمانی فراگیر است که ضبط جلسات، تکلیف‌های روشن و کمک فنی وجود داشته باشد؛ بدون این شرایط مانع‌های تازه ایجاد می‌شود." },
+                { "language": "ar", "text": "تكون الدورة الإلكترونية شاملة إذا وُجدت تسجيلات ومهام واضحة ومساعدة تقنية؛ ومن دون هذه الشروط تظهر عوائق جديدة." },
+                { "language": "tr", "text": "Kayıtlar, açık görevler ve teknik yardım varsa çevrim içi kurs kapsayıcıdır; bu koşullar olmadan yeni engeller oluşur." },
+                { "language": "ru", "text": "Онлайн-курс инклюзивен, если есть записи, ясные задания и техническая помощь; без этих условий возникают новые барьеры." },
+                { "language": "ckb", "text": "کۆرسی ئۆنلاین کاتێک گشتگیرە کە تۆمار، ئەرکی ڕوون و یارمەتی تەکنیکی هەبێت؛ بەبێ ئەم مەرجانە ئاستەنگی نوێ دروست دەبێت." },
+                { "language": "kmr", "text": "Kursa online heke tomar, erkên zelal û alîkariya teknîkî hebin tevlêker e; bê van şertan astengên nû çêdibin." },
+                { "language": "pl", "text": "Kurs online jest włączający, jeśli są nagrania, jasne zadania i pomoc techniczna; bez tych warunków powstają nowe bariery." },
+                { "language": "ro", "text": "Un curs online este incluziv dacă există înregistrări, sarcini clare și ajutor tehnic; fără aceste condiții apar bariere noi." },
+                { "language": "sq", "text": "Një kurs online është përfshirës nëse ka regjistrime, detyra të qarta dhe ndihmë teknike; pa këto kushte krijohen pengesa të reja." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Beispiel zeigt Nutzen und Grenze in einem Satz.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the example shows benefit and limit in one sentence." },
+                { "language": "fa", "text": "قوی: مثال سود و حد را در یک جمله نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: يوضح المثال الفائدة والحد في جملة واحدة." },
+                { "language": "tr", "text": "Güçlü: Örnek yararı ve sınırı tek cümlede gösteriyor." },
+                { "language": "ru", "text": "Сильно: пример показывает пользу и границу в одном предложении." },
+                { "language": "ckb", "text": "بەهێزە: نموونەکە سوود و سنوور لە یەک ڕستەدا پیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: Mînak sûd û sînor di yek hevokê de nîşan dide." },
+                { "language": "pl", "text": "Mocne: przykład pokazuje korzyść i granicę w jednym zdaniu." },
+                { "language": "ro", "text": "Puternic: exemplul arată beneficiul și limita într-o singură propoziție." },
+                { "language": "sq", "text": "E fortë: shembulli tregon përfitimin dhe kufirin në një fjali." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ein Onlinekurs ist praktisch, weil man nicht fahren muss und oft zu Hause bleiben kann.",
+              "translations": [
+                { "language": "en", "text": "An online course is practical because you do not have to travel and can often stay at home." },
+                { "language": "fa", "text": "یک دوره آنلاین عملی است، چون لازم نیست رفت‌وآمد کرد و اغلب می‌توان در خانه ماند." },
+                { "language": "ar", "text": "الدورة الإلكترونية عملية لأن المرء لا يحتاج إلى التنقل ويمكنه غالبًا البقاء في البيت." },
+                { "language": "tr", "text": "Çevrim içi kurs pratiktir, çünkü yol gitmek gerekmez ve çoğu zaman evde kalınabilir." },
+                { "language": "ru", "text": "Онлайн-курс практичен, потому что не нужно ездить и часто можно оставаться дома." },
+                { "language": "ckb", "text": "کۆرسی ئۆنلاین کردەییە، چونکە پێویست ناکات بچیت و زۆرجار دەتوانیت لە ماڵەوە بمێنیتەوە." },
+                { "language": "kmr", "text": "Kursa online pratîk e, ji ber ku ne hewce ye mirov biçe û gelek caran dikare li malê bimîne." },
+                { "language": "pl", "text": "Kurs online jest praktyczny, bo nie trzeba dojeżdżać i często można zostać w domu." },
+                { "language": "ro", "text": "Un curs online este practic pentru că nu trebuie să te deplasezi și adesea poți rămâne acasă." },
+                { "language": "sq", "text": "Një kurs online është praktik sepse nuk duhet të udhëtosh dhe shpesh mund të qëndrosh në shtëpi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einfach für C2: Die Antwort nennt Komfort, aber nicht die Fairness-Bedingung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too simple for C2: the answer names convenience, but not the condition for fairness." },
+                { "language": "fa", "text": "برای C2 بیش از حد ساده است: پاسخ راحتی را نام می‌برد، اما شرط عدالت را نه." },
+                { "language": "ar", "text": "بسيط جدًا لمستوى C2: تذكر الإجابة الراحة، لا شرط العدالة." },
+                { "language": "tr", "text": "C2 için çok basit: cevap konforu adlandırıyor, adalet koşulunu değil." },
+                { "language": "ru", "text": "Слишком просто для C2: ответ называет удобство, но не условие справедливости." },
+                { "language": "ckb", "text": "بۆ C2 زۆر سادەیە: وەڵامەکە ئاسانی ناودەبات، بەڵام مەرجی دادپەروەری نا." },
+                { "language": "kmr", "text": "Ji bo C2 pir hêsan e: bersiv rehetiyê nav dike, ne şertê dadperweriyê." },
+                { "language": "pl", "text": "Zbyt proste na C2: odpowiedź nazywa wygodę, ale nie warunek sprawiedliwości." },
+                { "language": "ro", "text": "Prea simplu pentru C2: răspunsul numește confortul, nu condiția echității." },
+                { "language": "sq", "text": "Shumë e thjeshtë për C2: përgjigjja përmend komoditetin, jo kushtin e drejtësisë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Meine Schlussfolgerung wird bedingter: Digital kann gerechter werden, wenn die Begleitstruktur stimmt.",
+              "translations": [
+                { "language": "en", "text": "My conclusion becomes more conditional: digital can become fairer if the supporting structure is right." },
+                { "language": "fa", "text": "نتیجه‌گیری من مشروط‌تر می‌شود: دیجیتال می‌تواند عادلانه‌تر شود، اگر ساختار پشتیبان درست باشد." },
+                { "language": "ar", "text": "يصبح استنتاجي أكثر شرطية: يمكن أن يصبح الرقمي أكثر عدلًا إذا كانت البنية الداعمة مناسبة." },
+                { "language": "tr", "text": "Sonucum daha koşullu hale geliyor: destek yapısı uygunsa dijital daha adil hale gelebilir." },
+                { "language": "ru", "text": "Мой вывод становится более условным: цифровое может стать справедливее, если поддерживающая структура работает." },
+                { "language": "ckb", "text": "دەرئەنجامەکەم مەرجدارتر دەبێت: دیجیتاڵ دەتوانێت دادپەروەرانەتر ببێت، ئەگەر پێکهاتەی پشتگیری دروست بێت." },
+                { "language": "kmr", "text": "Encama min şertdartir dibe: dîjîtal dikare dadperwertir bibe, heke avahiya piştgiriyê rast be." },
+                { "language": "pl", "text": "Mój wniosek staje się bardziej warunkowy: cyfrowe może stać się sprawiedliwsze, jeśli działa struktura wsparcia." },
+                { "language": "ro", "text": "Concluzia mea devine mai condiționată: digitalul poate deveni mai echitabil dacă structura de sprijin funcționează." },
+                { "language": "sq", "text": "Përfundimi im bëhet më i kushtëzuar: digjitalja mund të bëhet më e drejtë nëse struktura mbështetëse funksionon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Formulierung zeigt genau, wie die ursprüngliche These repariert wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the wording shows exactly how the original thesis is repaired." },
+                { "language": "fa", "text": "قوی: فرمول‌بندی دقیقاً نشان می‌دهد تز اولیه چگونه اصلاح می‌شود." },
+                { "language": "ar", "text": "قوي: تُظهر الصياغة بدقة كيف تُصلح الأطروحة الأصلية." },
+                { "language": "tr", "text": "Güçlü: Formülasyon ilk tezin nasıl onarıldığını tam gösteriyor." },
+                { "language": "ru", "text": "Сильно: формулировка точно показывает, как исправляется первоначальный тезис." },
+                { "language": "ckb", "text": "بەهێزە: داڕشتنەکە بە وردی پیشان دەدات تێزی سەرەتایی چۆن ڕاست دەکرێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Formulasyon rast nîşan dide ku teza destpêkê çawa tê rastkirin." },
+                { "language": "pl", "text": "Mocne: sformułowanie dokładnie pokazuje, jak naprawiana jest pierwotna teza." },
+                { "language": "ro", "text": "Puternic: formularea arată exact cum este reparată teza inițială." },
+                { "language": "sq", "text": "E fortë: formulimi tregon saktë si korrigjohet teza fillestare." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Meine Schlussfolgerung bleibt eigentlich dieselbe, nur würde ich sie etwas vorsichtiger sagen.",
+              "translations": [
+                { "language": "en", "text": "My conclusion actually remains the same; I would just say it a bit more cautiously." },
+                { "language": "fa", "text": "نتیجه‌گیری من در واقع همان می‌ماند؛ فقط آن را کمی محتاطانه‌تر می‌گویم." },
+                { "language": "ar", "text": "يبقى استنتاجي في الحقيقة كما هو؛ سأقوله فقط بحذر أكبر قليلًا." },
+                { "language": "tr", "text": "Sonucum aslında aynı kalıyor; sadece biraz daha dikkatli söylerdim." },
+                { "language": "ru", "text": "Мой вывод по сути остается тем же; я просто сказал бы его немного осторожнее." },
+                { "language": "ckb", "text": "دەرئەنجامەکەم لە ڕاستیدا هەمان دەبێت؛ تەنها کەمێک بە ئاگاداریتر دەیڵێم." },
+                { "language": "kmr", "text": "Encama min bi rastî heman dimîne; tenê ez wê hinek baldartir dibêjim." },
+                { "language": "pl", "text": "Mój wniosek właściwie pozostaje taki sam; powiedział(a)bym go tylko trochę ostrożniej." },
+                { "language": "ro", "text": "Concluzia mea rămâne de fapt aceeași; doar aș spune-o puțin mai prudent." },
+                { "language": "sq", "text": "Përfundimi im në fakt mbetet i njëjtë; vetëm do ta thosha pak më me kujdes." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu vage: Die Korrektur bleibt unklar und wirkt kosmetisch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too vague: the correction remains unclear and sounds cosmetic." },
+                { "language": "fa", "text": "قابل‌باور است، اما خیلی مبهم است: اصلاح روشن نیست و سطحی به نظر می‌رسد." },
+                { "language": "ar", "text": "معقول، لكنه غامض جدًا: يبقى التصحيح غير واضح ويبدو شكليًا." },
+                { "language": "tr", "text": "Makul, ama çok belirsiz: düzeltme açık değil ve yüzeysel duyuluyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком расплывчато: исправление остается неясным и звучит косметически." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر ناڕوونە: ڕاستکردنەوەکە ناڕوون دەمێنێتەوە و وەک جوانکردنی ڕووکەش دەردەکەوێت." },
+                { "language": "kmr", "text": "Bawerbar e, lê pir nezelal e: rastkirin nezelal dimîne û wek rûxweşkirinê xuya dike." },
+                { "language": "pl", "text": "Brzmi sensownie, ale zbyt ogólnie: korekta pozostaje niejasna i wygląda powierzchownie." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: corectarea rămâne neclară și pare superficială." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: korrigjimi mbetet i paqartë dhe duket sipërfaqësor." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Digitale Lernformen sind kein automatischer Garant für Gerechtigkeit, können aber unter guten Rahmenbedingungen einen wichtigen Beitrag dazu leisten.",
+              "translations": [
+                { "language": "en", "text": "Digital forms of learning are not an automatic guarantee of fairness, but under good conditions they can make an important contribution to it." },
+                { "language": "fa", "text": "شکل‌های دیجیتال یادگیری تضمین خودکار عدالت نیستند، اما در شرایط چارچوبی خوب می‌توانند سهم مهمی در آن داشته باشند." },
+                { "language": "ar", "text": "أشكال التعلم الرقمية ليست ضمانًا تلقائيًا للعدالة، لكنها يمكن أن تسهم فيها إسهامًا مهمًا في ظل شروط إطار جيدة." },
+                { "language": "tr", "text": "Dijital öğrenme biçimleri adalet için otomatik bir garanti değildir, ancak iyi çerçeve koşulları altında buna önemli katkı sağlayabilir." },
+                { "language": "ru", "text": "Цифровые формы обучения не являются автоматической гарантией справедливости, но при хороших рамочных условиях могут внести важный вклад." },
+                { "language": "ckb", "text": "شێوازە دیجیتاڵەکانی فێربوون گرەنتی خۆکاری دادپەروەری نین، بەڵام لە ژێر مەرجی باشدا دەتوانن بەشدارییەکی گرنگ تێدا بکەن." },
+                { "language": "kmr", "text": "Şêweyên dîjîtal ên fêrbûnê garantiyeke bixweber a dadperweriyê nînin, lê di bin şertên baş de dikarin beşdariyeke girîng bikin." },
+                { "language": "pl", "text": "Cyfrowe formy nauki nie są automatyczną gwarancją sprawiedliwości, ale w dobrych warunkach ramowych mogą wnieść ważny wkład." },
+                { "language": "ro", "text": "Formele digitale de învățare nu sunt o garanție automată a echității, dar în condiții-cadru bune pot contribui semnificativ la aceasta." },
+                { "language": "sq", "text": "Format digjitale të mësimit nuk janë garanci automatike për drejtësi, por në kushte të mira kuadër mund të japin një kontribut të rëndësishëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Satz integriert die Korrektur und endet mit einer klaren, differenzierten These.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the sentence integrates the correction and ends with a clear, differentiated thesis." },
+                { "language": "fa", "text": "قوی: جمله اصلاح را در خود جای می‌دهد و با تز روشن و تفکیک‌شده پایان می‌یابد." },
+                { "language": "ar", "text": "قوي: تدمج الجملة التصحيح وتنتهي بأطروحة واضحة ومتمايزة." },
+                { "language": "tr", "text": "Güçlü: Cümle düzeltmeyi içerir ve açık, ayrımlı bir tezle biter." },
+                { "language": "ru", "text": "Сильно: предложение включает исправление и завершается ясным, дифференцированным тезисом." },
+                { "language": "ckb", "text": "بەهێزە: ڕستەکە ڕاستکردنەوەکە تێدا دەگونجێنێت و بە تێزێکی ڕوون و جیاکراوە کۆتایی دێت." },
+                { "language": "kmr", "text": "Xurt e: Hevok rastkirinê tê de digire û bi tezeke zelal û cuda dawî dibe." },
+                { "language": "pl", "text": "Mocne: zdanie włącza korektę i kończy się jasną, zróżnicowaną tezą." },
+                { "language": "ro", "text": "Puternic: propoziția integrează corectarea și se încheie cu o teză clară, diferențiată." },
+                { "language": "sq", "text": "E fortë: fjalia e integron korrigjimin dhe përfundon me një tezë të qartë e të dalluar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde also sagen, dass digitale Lernformen meistens nützlich sind, aber man muss die Umstände beachten.",
+              "translations": [
+                { "language": "en", "text": "So I would say that digital forms of learning are mostly useful, but one has to consider the circumstances." },
+                { "language": "fa", "text": "پس می‌گویم که شکل‌های دیجیتال یادگیری معمولاً مفیدند، اما باید شرایط را در نظر گرفت." },
+                { "language": "ar", "text": "لذلك سأقول إن أشكال التعلم الرقمية مفيدة غالبًا، لكن يجب مراعاة الظروف." },
+                { "language": "tr", "text": "Yani dijital öğrenme biçimlerinin çoğunlukla yararlı olduğunu, ama koşulları dikkate almak gerektiğini söylerdim." },
+                { "language": "ru", "text": "То есть я бы сказал, что цифровые формы обучения в основном полезны, но нужно учитывать обстоятельства." },
+                { "language": "ckb", "text": "کەواتە دەڵێم شێوازە دیجیتاڵەکانی فێربوون زۆرجار بەسوودن، بەڵام پێویستە بارودۆخەکان لەبەرچاو بگیرێن." },
+                { "language": "kmr", "text": "Ji ber vê yekê ez dibêjim ku şêweyên dîjîtal ên fêrbûnê pir caran sûdmend in, lê divê şert û merc bên hesibandin." },
+                { "language": "pl", "text": "Powiedział(a)bym więc, że cyfrowe formy nauki są przeważnie użyteczne, ale trzeba uwzględnić okoliczności." },
+                { "language": "ro", "text": "Aș spune deci că formele digitale de învățare sunt de obicei utile, dar trebuie luate în considerare împrejurările." },
+                { "language": "sq", "text": "Pra do të thosha se format digjitale të mësimit janë zakonisht të dobishme, por duhen marrë parasysh rrethanat." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu allgemein: Für C2 fehlt der genaue Bezug zur korrigierten Fairness-These.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too general: for C2, it lacks the precise link to the corrected fairness thesis." },
+                { "language": "fa", "text": "قابل‌باور است، اما خیلی کلی است: برای C2 پیوند دقیق با تز اصلاح‌شده عدالت کم دارد." },
+                { "language": "ar", "text": "معقول، لكنه عام جدًا: في مستوى C2 ينقصه الربط الدقيق بأطروحة العدالة المصححة." },
+                { "language": "tr", "text": "Makul, ama çok genel: C2 için düzeltilmiş adalet teziyle kesin bağlantı eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком общо: для C2 не хватает точной связи с исправленным тезисом о справедливости." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر گشتییە: بۆ C2 پەیوەندیی ورد بە تێزی ڕاستکراوەی دادپەروەری کەمە." },
+                { "language": "kmr", "text": "Bawerbar e, lê pir giştî ye: ji bo C2 girêdana rast bi teza dadperweriyê ya rastkirî re kêm e." },
+                { "language": "pl", "text": "Brzmi sensownie, ale zbyt ogólnie: na C2 brakuje dokładnego związku z poprawioną tezą o sprawiedliwości." },
+                { "language": "ro", "text": "Plauzibil, dar prea general: pentru C2 lipsește legătura precisă cu teza corectată despre echitate." },
+                { "language": "sq", "text": "E besueshme, por shumë e përgjithshme: për C2 mungon lidhja e saktë me tezën e korrigjuar për drejtësinë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Korrigieren Sie zuerst die Formulierung, nicht Ihre ganze Position. Das wirkt souverän.",
+          "translations": [
+            { "language": "en", "text": "First correct the wording, not your entire position. That sounds confident." },
+            { "language": "fa", "text": "اول فرمول‌بندی را اصلاح کنید، نه کل موضع خود را. این مسلط به نظر می‌رسد." },
+            { "language": "ar", "text": "صححوا أولًا الصياغة، لا موقفكم كله. هذا يبدو واثقًا." },
+            { "language": "tr", "text": "Önce tüm konumunuzu değil, formülasyonu düzeltin. Bu kendinden emin duyulur." },
+            { "language": "ru", "text": "Сначала исправьте формулировку, а не всю позицию. Это звучит уверенно." },
+            { "language": "ckb", "text": "سەرەتا داڕشتنەکە ڕاست بکەوە، نە هەموو هەڵوێستەکەت. ئەمە دڵنیابوون پیشان دەدات." },
+            { "language": "kmr", "text": "Pêşî formulasyonê rast bikin, ne tevahiya helwesta xwe. Ev bi bawerî xuya dike." },
+            { "language": "pl", "text": "Najpierw popraw sformułowanie, nie całe stanowisko. To brzmi pewnie." },
+            { "language": "ro", "text": "Corectați mai întâi formularea, nu întreaga poziție. Sună sigur." },
+            { "language": "sq", "text": "Së pari korrigjoni formulimin, jo të gjithë qëndrimin. Kjo tingëllon me siguri." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "structure",
+          "text": "Eine elegante Korrektur hat drei Teile: Fehler benennen, Kern halten, Bedingung ergänzen.",
+          "translations": [
+            { "language": "en", "text": "An elegant correction has three parts: name the error, keep the core, add a condition." },
+            { "language": "fa", "text": "اصلاح ظریف سه بخش دارد: نام‌بردن خطا، حفظ هسته، افزودن شرط." },
+            { "language": "ar", "text": "للتصحيح الأنيق ثلاثة أجزاء: تسمية الخطأ، الحفاظ على الجوهر، إضافة شرط." },
+            { "language": "tr", "text": "Zarif bir düzeltmenin üç parçası vardır: hatayı adlandırmak, çekirdeği korumak, koşul eklemek." },
+            { "language": "ru", "text": "Элегантное исправление состоит из трех частей: назвать ошибку, сохранить суть, добавить условие." },
+            { "language": "ckb", "text": "ڕاستکردنەوەی ڕێکوپێک سێ بەشی هەیە: ناوبردنی هەڵە، پاراستنی ناوەڕۆک، زیادکردنی مەرج." },
+            { "language": "kmr", "text": "Rastkirineke xweşik sê beş hene: şaşiyê nav bike, bingehê biparêze, şertê zêde bike." },
+            { "language": "pl", "text": "Elegancka korekta ma trzy części: nazwać błąd, zachować rdzeń, dodać warunek." },
+            { "language": "ro", "text": "O corectare elegantă are trei părți: numirea greșelii, păstrarea nucleului, adăugarea condiției." },
+            { "language": "sq", "text": "Një korrigjim elegant ka tre pjesë: emërtoni gabimin, ruani thelbin, shtoni kushtin." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "tone",
+          "text": "Ein Beispiel sollte die Korrektur stützen. Komfort allein reicht als C2-Begründung nicht.",
+          "translations": [
+            { "language": "en", "text": "An example should support the correction. Convenience alone is not enough as a C2 justification." },
+            { "language": "fa", "text": "مثال باید از اصلاح پشتیبانی کند. راحتی به‌تنهایی برای استدلال C2 کافی نیست." },
+            { "language": "ar", "text": "ينبغي أن يدعم المثال التصحيح. الراحة وحدها لا تكفي كتسويغ بمستوى C2." },
+            { "language": "tr", "text": "Örnek düzeltmeyi desteklemelidir. Sadece konfor C2 gerekçesi olarak yetmez." },
+            { "language": "ru", "text": "Пример должен поддерживать исправление. Одного удобства недостаточно как обоснования уровня C2." },
+            { "language": "ckb", "text": "نموونە دەبێت پشتگیری ڕاستکردنەوەکە بکات. تەنها ئاسانی وەک پاساوی C2 بەس نییە." },
+            { "language": "kmr", "text": "Mînak divê piştgiriya rastkirinê bike. Tenê reheti wek hinceta C2 têr nake." },
+            { "language": "pl", "text": "Przykład powinien wspierać korektę. Sama wygoda nie wystarcza jako uzasadnienie na C2." },
+            { "language": "ro", "text": "Un exemplu trebuie să susțină corectarea. Confortul singur nu ajunge ca justificare C2." },
+            { "language": "sq", "text": "Shembulli duhet ta mbështesë korrigjimin. Vetëm komoditeti nuk mjafton si arsyetim C2." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "action",
+          "text": "Schließen Sie mit einer reparierten These. Sie darf klarer sein als die ursprüngliche Aussage.",
+          "translations": [
+            { "language": "en", "text": "Close with a repaired thesis. It may be clearer than the original statement." },
+            { "language": "fa", "text": "با تز اصلاح‌شده پایان دهید. این تز می‌تواند روشن‌تر از گفته اولیه باشد." },
+            { "language": "ar", "text": "اختموا بأطروحة مُصلحة. يمكن أن تكون أوضح من العبارة الأصلية." },
+            { "language": "tr", "text": "Onarılmış bir tezle bitirin. İlk ifadeden daha açık olabilir." },
+            { "language": "ru", "text": "Завершите исправленным тезисом. Он может быть яснее первоначального высказывания." },
+            { "language": "ckb", "text": "بە تێزێکی ڕاستکراوە کۆتایی پێبهێنە. دەتوانێت لە وتەی سەرەتایی ڕوونتر بێت." },
+            { "language": "kmr", "text": "Bi tezeke rastkirî biqedînin. Ew dikare ji gotina destpêkê zelaltir be." },
+            { "language": "pl", "text": "Zakończ poprawioną tezą. Może być jaśniejsza niż pierwotna wypowiedź." },
+            { "language": "ro", "text": "Încheiați cu o teză reparată. Poate fi mai clară decât afirmația inițială." },
+            { "language": "sq", "text": "Mbyllni me një tezë të korrigjuar. Ajo mund të jetë më e qartë se pohimi fillestar." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "oral-exam-correction-moment",
+          "placement": "detail-hero",
+          "purpose": "Show a neutral oral exam room where a candidate calmly refines an answer.",
+          "altText": "Ein ruhiger Prüfungsraum mit einer Kandidatin und zwei prüfenden Personen am Tisch.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm exam room with a candidate and two examiners at a table." },
+            { "language": "fa", "text": "یک اتاق آزمون آرام با یک داوطلب و دو ممتحن پشت میز." },
+            { "language": "ar", "text": "غرفة اختبار هادئة فيها ممتحن وجلسة مع فاحصين اثنين حول طاولة." },
+            { "language": "tr", "text": "Masada bir aday ve iki sınav görevlisinin bulunduğu sakin bir sınav odası." },
+            { "language": "ru", "text": "Спокойная экзаменационная комната с кандидатом и двумя экзаменаторами за столом." },
+            { "language": "ckb", "text": "ژوورێکی ئارامی تاقیکردنەوە بە بەشداربوویەک و دوو تاقیکەرەوە لەسەر مێز." },
+            { "language": "kmr", "text": "Jûreyeke ezmûnê ya aram bi namzedekî û du ezmûnvanan li ser maseyê." },
+            { "language": "pl", "text": "Spokojna sala egzaminacyjna z kandydatem i dwojgiem egzaminatorów przy stole." },
+            { "language": "ro", "text": "O sală de examen calmă cu un candidat și doi examinatori la masă." },
+            { "language": "sq", "text": "Një dhomë provimi e qetë me një kandidat dhe dy provues në tryezë." }
+          ],
+          "imagePrompt": "Clean educational illustration of a calm German oral exam room with one candidate and two examiners at a table, respectful atmosphere, diverse people, no readable text, no logos, no private data, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "packageId": "roleplays-b2-core-35-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 35 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 35",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-einen-therapieplan-nachfragen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Therapieplan nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask about a treatment plan" },
+        { "language": "fa", "text": "پرس‌وجو درباره برنامه درمان" },
+        { "language": "ar", "text": "السؤال عن خطة العلاج" },
+        { "language": "tr", "text": "Bir tedavi planını sormak" },
+        { "language": "ru", "text": "Уточнить план лечения" },
+        { "language": "ckb", "text": "پرسیارکردن لەبارەی پلانی چارەسەر" },
+        { "language": "kmr", "text": "Li ser plana dermankirinê pirs kirin" },
+        { "language": "pl", "text": "Dopytać o plan leczenia" },
+        { "language": "ro", "text": "A cere detalii despre un plan de tratament" },
+        { "language": "sq", "text": "Të pyesësh për një plan trajtimi" }
+      ],
+      "description": "Du bist in der Arztpraxis und möchtest den vorgeschlagenen Therapieplan genau verstehen. Du fragst nach Dauer, Zwischenschritten, Zuständigkeiten, Warnzeichen und danach, was du tun sollst, wenn die Beschwerden nicht besser werden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at the doctor's office and want to understand the proposed treatment plan precisely. You ask about duration, intermediate steps, responsibilities, warning signs, and what to do if the symptoms do not improve." },
+        { "language": "fa", "text": "در مطب پزشک هستی و می‌خواهی برنامه درمان پیشنهادی را دقیق بفهمی. درباره مدت، مراحل میانی، مسئولیت‌ها، علائم هشدار و اینکه اگر علائم بهتر نشدند چه باید بکنی سؤال می‌پرسی." },
+        { "language": "ar", "text": "أنت في عيادة الطبيب وتريد أن تفهم خطة العلاج المقترحة بدقة. تسأل عن المدة والخطوات المرحلية والمسؤوليات وعلامات التحذير وما يجب فعله إذا لم تتحسن الأعراض." },
+        { "language": "tr", "text": "Doktor muayenehanesindesin ve önerilen tedavi planını tam olarak anlamak istiyorsun. Süreyi, ara adımları, sorumlulukları, uyarı işaretlerini ve şikayetler düzelmezse ne yapman gerektiğini soruyorsun." },
+        { "language": "ru", "text": "Вы на приеме у врача и хотите точно понять предложенный план лечения. Вы спрашиваете о длительности, промежуточных шагах, ответственности, тревожных признаках и о том, что делать, если жалобы не уменьшатся." },
+        { "language": "ckb", "text": "لە کلینیکی پزیشکدایت و دەتەوێت پلانی چارەسەری پێشنیارکراو بە وردی تێبگەیت. لەبارەی ماوە، هەنگاوە ناوەندییەکان، بەرپرسیارێتییەکان، نیشانە ئاگادارکەرەوەکان و ئەوەی ئەگەر نارەحەتییەکان باشتر نەبوون چی بکەیت، پرسیار دەکەیت." },
+        { "language": "kmr", "text": "Tu li pratîka bijîşkî yî û dixwazî plana dermankirinê ya pêşniyarkirî bi hûrgilî fêm bikî. Tu li ser dem, gavên navîn, berpirsiyarî, nîşanên hişyariyê û tiştê ku heke gilî baştir nebin divê bikî dipirsî." },
+        { "language": "pl", "text": "Jesteś w gabinecie lekarskim i chcesz dokładnie zrozumieć zaproponowany plan leczenia. Pytasz o czas trwania, etapy pośrednie, odpowiedzialności, sygnały ostrzegawcze i o to, co zrobić, jeśli dolegliwości się nie poprawią." },
+        { "language": "ro", "text": "Ești la cabinetul medical și vrei să înțelegi exact planul de tratament propus. Întrebi despre durată, pași intermediari, responsabilități, semne de avertizare și ce să faci dacă simptomele nu se ameliorează." },
+        { "language": "sq", "text": "Je në ordinancën e mjekut dhe dëshiron ta kuptosh saktë planin e propozuar të trajtimit. Pyet për kohëzgjatjen, hapat ndërmjetës, përgjegjësitë, shenjat paralajmëruese dhe çfarë të bësh nëse shqetësimet nuk përmirësohen." }
+      ],
+      "learnerGoal": "Frage strukturiert nach Ablauf, Dauer, Erfolgskriterien, eigener Rolle, Kontrolltermin und nächstem Schritt, falls die Therapie nicht wie erwartet wirkt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask in a structured way about the process, duration, success criteria, your own role, follow-up appointment, and next step if the treatment does not work as expected." },
+        { "language": "fa", "text": "به‌صورت ساختارمند درباره روند، مدت، معیارهای موفقیت، نقش خودت، وقت پیگیری و قدم بعدی در صورت اثر نکردن درمان طبق انتظار سؤال کن." },
+        { "language": "ar", "text": "اسأل بشكل منظم عن المسار والمدة ومعايير النجاح ودورك الشخصي وموعد المتابعة والخطوة التالية إذا لم ينجح العلاج كما هو متوقع." },
+        { "language": "tr", "text": "Süreç, süre, başarı ölçütleri, kendi rolün, kontrol randevusu ve tedavi beklendiği gibi etki etmezse sonraki adım hakkında düzenli şekilde sor." },
+        { "language": "ru", "text": "Структурированно спросите о ходе, длительности, критериях успеха, своей роли, контрольном приеме и следующем шаге, если лечение не подействует так, как ожидается." },
+        { "language": "ckb", "text": "بە شێوەی ڕێکخراو لەبارەی ڕەوت، ماوە، پێوەرەکانی سەرکەوتن، ڕۆڵی خۆت، کاتی پشکنینی دواتر و هەنگاوی داهاتوو بپرسە ئەگەر چارەسەرەکە وەک چاوەڕوانکراو کاری نەکرد." },
+        { "language": "kmr", "text": "Bi rêkûpêk li ser pêvajoyê, demê, pîvanên serkeftinê, rola xwe, randevûya kontrolê û gava paşê bipirse heke dermankirin wekî tê payîn bandor neke." },
+        { "language": "pl", "text": "Zapytaj w uporządkowany sposób o przebieg, czas trwania, kryteria powodzenia, własną rolę, wizytę kontrolną i kolejny krok, jeśli leczenie nie zadziała zgodnie z oczekiwaniami." },
+        { "language": "ro", "text": "Întreabă structurat despre desfășurare, durată, criterii de succes, rolul tău, programarea de control și pasul următor dacă tratamentul nu funcționează conform așteptărilor." },
+        { "language": "sq", "text": "Pyet në mënyrë të strukturuar për ecurinë, kohëzgjatjen, kriteret e suksesit, rolin tënd, takimin e kontrollit dhe hapin tjetër nëse trajtimi nuk vepron siç pritet." }
+      ],
+      "cefrLevel": "B2",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "taskType": "ask-for-information",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Bijîşk" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medicul" },
+            { "language": "sq", "text": "Mjekja" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacienti" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Ich würde Ihnen für die nächsten Wochen einen Therapieplan vorschlagen. Bevor wir ihn festlegen, können wir gern offene Fragen klären.",
+          "translations": [
+            { "language": "en", "text": "I would suggest a treatment plan for the next few weeks. Before we finalize it, we can gladly clarify open questions." },
+            { "language": "fa", "text": "برای چند هفته آینده یک برنامه درمان به شما پیشنهاد می‌کنم. قبل از اینکه آن را نهایی کنیم، می‌توانیم سؤال‌های باز را روشن کنیم." },
+            { "language": "ar", "text": "أقترح لك خطة علاج للأسابيع القادمة. قبل أن نثبتها يمكننا بكل سرور توضيح الأسئلة المفتوحة." },
+            { "language": "tr", "text": "Önümüzdeki haftalar için size bir tedavi planı önermek isterim. Kesinleştirmeden önce açık soruları memnuniyetle netleştirebiliriz." },
+            { "language": "ru", "text": "Я бы предложила вам план лечения на ближайшие недели. Прежде чем мы его утвердим, мы можем спокойно уточнить открытые вопросы." },
+            { "language": "ckb", "text": "دەمەوێت بۆ چەند هەفتەی داهاتوو پلانێکی چارەسەر پێشنیار بکەم. پێش ئەوەی دیاری بکەین، دەتوانین پرسیارە کراوەکان ڕوون بکەینەوە." },
+            { "language": "kmr", "text": "Ez dixwazim ji bo hefteyên pêş planeke dermankirinê pêşniyar bikim. Berî ku em wê diyar bikin, em dikarin pirsên vekirî zelal bikin." },
+            { "language": "pl", "text": "Zaproponowałabym panu plan leczenia na najbliższe tygodnie. Zanim go ustalimy, możemy oczywiście wyjaśnić otwarte pytania." },
+            { "language": "ro", "text": "V-aș propune un plan de tratament pentru următoarele săptămâni. Înainte să îl stabilim, putem clarifica întrebările deschise." },
+            { "language": "sq", "text": "Do t'ju propozoja një plan trajtimi për javët e ardhshme. Para se ta vendosim, mund t'i sqarojmë me kënaqësi pyetjet e hapura." }
+          ],
+          "function": "open-treatment-plan",
+          "toneNote": "medical planning",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich möchte den Plan gern genau verstehen: Wie lange ist die Therapie zunächst gedacht, welche Zwischenschritte gibt es, und woran merken wir, ob sie wirkt?",
+          "translations": [
+            { "language": "en", "text": "Thank you. I would like to understand the plan precisely: how long is the treatment planned for at first, what intermediate steps are there, and how will we know whether it is working?" },
+            { "language": "fa", "text": "ممنون. می‌خواهم برنامه را دقیق بفهمم: درمان در ابتدا برای چه مدتی در نظر گرفته شده، چه مراحل میانی وجود دارد و از کجا می‌فهمیم که اثر می‌کند؟" },
+            { "language": "ar", "text": "شكراً. أود أن أفهم الخطة بدقة: ما المدة المخطط لها في البداية للعلاج، وما الخطوات المرحلية، وكيف سنعرف ما إذا كان ينجح؟" },
+            { "language": "tr", "text": "Teşekkür ederim. Planı tam olarak anlamak istiyorum: Tedavi ilk aşamada ne kadar süre için planlandı, hangi ara adımlar var ve işe yaradığını nasıl anlayacağız?" },
+            { "language": "ru", "text": "Спасибо. Я хотел бы точно понять план: на какой срок сначала рассчитано лечение, какие есть промежуточные шаги и по чему мы поймем, что оно действует?" },
+            { "language": "ckb", "text": "سوپاس. دەمەوێت پلانەکە بە وردی تێبگەم: لە سەرەتاوە چارەسەرەکە بۆ چەند ماوەیە، چ هەنگاوی ناوەندی هەیە و بە چی دەزانین کاری دەکات؟" },
+            { "language": "kmr", "text": "Spas. Ez dixwazim planê bi hûrgilî fêm bikim: dermankirin di destpêkê de ji bo çiqas demê hatiye plan kirin, kîjan gavên navîn hene û em ê çawa bizanin ku ew bandor dike?" },
+            { "language": "pl", "text": "Dziękuję. Chciałbym dokładnie zrozumieć plan: na jak długo leczenie jest początkowo przewidziane, jakie są etapy pośrednie i po czym poznamy, czy działa?" },
+            { "language": "ro", "text": "Mulțumesc. Aș vrea să înțeleg exact planul: pentru cât timp este gândit tratamentul la început, ce pași intermediari există și după ce ne dăm seama dacă funcționează?" },
+            { "language": "sq", "text": "Faleminderit. Do të doja ta kuptoja saktë planin: për sa kohë është menduar fillimisht trajtimi, cilët hapa ndërmjetës ka dhe si do ta kuptojmë nëse po vepron?" }
+          ],
+          "function": "ask-structure-duration-success-criteria",
+          "toneNote": "clear and respectful",
+          "expectedLearnerAction": "Frage nach Dauer, Zwischenschritten und Kriterien, ohne die Behandlung selbst zu bewerten."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Zunächst planen wir sechs Wochen. Danach prüfen wir, ob Schmerzen, Beweglichkeit und Belastbarkeit besser geworden sind. Welche Punkte sind für Ihren Alltag besonders wichtig?",
+          "translations": [
+            { "language": "en", "text": "First we plan six weeks. After that we check whether pain, mobility, and resilience have improved. Which points are especially important for your everyday life?" },
+            { "language": "fa", "text": "ابتدا شش هفته در نظر می‌گیریم. بعد بررسی می‌کنیم که آیا درد، حرکت‌پذیری و توان تحمل فشار بهتر شده‌اند یا نه. کدام نکات برای زندگی روزمره شما مهم‌تر هستند؟" },
+            { "language": "ar", "text": "في البداية نخطط لستة أسابيع. بعد ذلك نتحقق مما إذا كان الألم والحركة والقدرة على التحمل قد تحسنت. ما النقاط المهمة بشكل خاص في حياتك اليومية؟" },
+            { "language": "tr", "text": "Önce altı hafta planlıyoruz. Sonra ağrı, hareketlilik ve dayanıklılığın iyileşip iyileşmediğini kontrol ediyoruz. Günlük yaşamınız için hangi noktalar özellikle önemli?" },
+            { "language": "ru", "text": "Сначала мы планируем шесть недель. Затем проверим, стали ли лучше боль, подвижность и переносимость нагрузки. Какие пункты особенно важны для вашей повседневной жизни?" },
+            { "language": "ckb", "text": "لە سەرەتا شەش هەفتە پلاندانان دەکەین. پاشان دەبینین ئایا ئازار، جوڵان و توانای بەرگەگرتن باشتر بوون یان نا. کام خاڵەکان بۆ ژیانی ڕۆژانەتان بە تایبەتی گرنگن؟" },
+            { "language": "kmr", "text": "Di destpêkê de em şeş hefte plan dikin. Piştre em kontrol dikin ka êş, tevger û tehamûla barê baştir bûne an na. Kîjan xal ji bo jiyana we ya rojane bi taybetî girîng in?" },
+            { "language": "pl", "text": "Najpierw planujemy sześć tygodni. Potem sprawdzimy, czy ból, ruchomość i odporność na obciążenie się poprawiły. Które punkty są szczególnie ważne w pana codzienności?" },
+            { "language": "ro", "text": "Mai întâi planificăm șase săptămâni. După aceea verificăm dacă durerea, mobilitatea și rezistența la efort s-au îmbunătățit. Ce aspecte sunt deosebit de importante pentru viața dumneavoastră de zi cu zi?" },
+            { "language": "sq", "text": "Fillimisht planifikojmë gjashtë javë. Pastaj kontrollojmë nëse dhimbja, lëvizshmëria dhe aftësia për të përballuar ngarkesën janë përmirësuar. Cilat pika janë veçanërisht të rëndësishme për përditshmërinë tuaj?" }
+          ],
+          "function": "explain-initial-plan",
+          "toneNote": "informative",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Für mich ist wichtig, dass ich wieder längere Strecken gehen und bei der Arbeit sitzen kann, ohne danach starke Schmerzen zu haben. Können wir diese beiden Punkte als konkrete Ziele festhalten?",
+          "translations": [
+            { "language": "en", "text": "For me it is important that I can walk longer distances again and sit at work without having strong pain afterward. Can we record these two points as concrete goals?" },
+            { "language": "fa", "text": "برای من مهم است که بتوانم دوباره مسیرهای طولانی‌تری راه بروم و در محل کار بنشینم بدون اینکه بعدش درد شدید داشته باشم. می‌توانیم این دو نکته را به‌عنوان هدف مشخص ثبت کنیم؟" },
+            { "language": "ar", "text": "من المهم بالنسبة لي أن أستطيع المشي لمسافات أطول مرة أخرى والجلوس في العمل من دون ألم شديد بعد ذلك. هل يمكننا تثبيت هاتين النقطتين كهدفين محددين؟" },
+            { "language": "tr", "text": "Benim için yeniden daha uzun mesafeler yürüyebilmek ve işte sonrasında şiddetli ağrı olmadan oturabilmek önemli. Bu iki noktayı somut hedefler olarak kaydedebilir miyiz?" },
+            { "language": "ru", "text": "Для меня важно снова проходить более длинные расстояния и сидеть на работе без сильной боли после этого. Можем ли мы зафиксировать эти два пункта как конкретные цели?" },
+            { "language": "ckb", "text": "بۆ من گرنگە دووبارە بتوانم ڕێگای درێژتر بڕۆم و لە کاردا دانیشم بەبێ ئەوەی دواتر ئازاری توند هەبێت. دەتوانین ئەم دوو خاڵە وەک ئامانجی دیاریکراو تۆمار بکەین؟" },
+            { "language": "kmr", "text": "Ji bo min girîng e ku ez careke din rêyên dirêjtir bimeşim û li karê rûnim bêyî ku pişt re êşa tund hebe. Em dikarin van du xalan wekî armancên zehf diyar tomar bikin?" },
+            { "language": "pl", "text": "Dla mnie ważne jest, żebym znów mógł chodzić dłuższe odcinki i siedzieć w pracy bez silnego bólu potem. Czy możemy zapisać te dwa punkty jako konkretne cele?" },
+            { "language": "ro", "text": "Pentru mine este important să pot merge din nou distanțe mai lungi și să stau pe scaun la serviciu fără dureri puternice după aceea. Putem nota aceste două puncte ca obiective concrete?" },
+            { "language": "sq", "text": "Për mua është e rëndësishme të mund të ec përsëri distanca më të gjata dhe të ulem në punë pa pasur dhimbje të forta më pas. A mund t'i shënojmë këto dy pika si objektiva konkrete?" }
+          ],
+          "function": "name-personal-goals",
+          "toneNote": "specific daily-life goals",
+          "expectedLearnerAction": "Verbinde den Therapieplan mit konkreten Alltagszielen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Ja, das ist sinnvoll. Zusätzlich bekommen Sie Übungen für zu Hause. Entscheidend ist, dass Sie regelmäßig üben, aber die Belastung nicht zu schnell steigern.",
+          "translations": [
+            { "language": "en", "text": "Yes, that makes sense. In addition, you will get exercises for home. What matters is that you practice regularly, but do not increase the load too quickly." },
+            { "language": "fa", "text": "بله، منطقی است. علاوه بر آن تمرین‌هایی برای خانه دریافت می‌کنید. مهم این است که منظم تمرین کنید، اما فشار را خیلی سریع زیاد نکنید." },
+            { "language": "ar", "text": "نعم، هذا منطقي. بالإضافة إلى ذلك ستحصل على تمارين للمنزل. المهم أن تتمرن بانتظام، لكن لا تزيد الضغط بسرعة كبيرة." },
+            { "language": "tr", "text": "Evet, bu mantıklı. Ayrıca ev için egzersizler alacaksınız. Önemli olan düzenli çalışmanız, ama yükü çok hızlı artırmamanızdır." },
+            { "language": "ru", "text": "Да, это имеет смысл. Кроме того, вы получите упражнения для дома. Важно заниматься регулярно, но не увеличивать нагрузку слишком быстро." },
+            { "language": "ckb", "text": "بەڵێ، ئەمە مانای هەیە. هەروەها ڕاهێنان بۆ ماڵەوە وەردەگرن. گرنگ ئەوەیە بە ڕێکوپێکی ڕاهێنان بکەن، بەڵام فشارەکە زۆر خێرا زیاد نەکەن." },
+            { "language": "kmr", "text": "Erê, ev watedar e. Her wiha hûn ê ji bo malê hînkirinan bistînin. Tiştê girîng ew e ku hûn bi rêkûpêk hîn bikin, lê barê pir zû zêde nekin." },
+            { "language": "pl", "text": "Tak, to ma sens. Dodatkowo dostanie pan ćwiczenia do domu. Ważne jest, żeby ćwiczyć regularnie, ale nie zwiększać obciążenia zbyt szybko." },
+            { "language": "ro", "text": "Da, este util. În plus, veți primi exerciții pentru acasă. Important este să exersați regulat, dar să nu creșteți solicitarea prea repede." },
+            { "language": "sq", "text": "Po, kjo ka kuptim. Përveç kësaj do të merrni ushtrime për në shtëpi. E rëndësishme është të ushtroni rregullisht, por të mos e rrisni ngarkesën shumë shpejt." }
+          ],
+          "function": "explain-home-role",
+          "toneNote": "guidance",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Könnten Sie mir bitte genau sagen, wie oft ich die Übungen machen soll und welche Reaktion noch normal ist? Ich möchte vermeiden, dass ich zu vorsichtig bin oder mich überlaste.",
+          "translations": [
+            { "language": "en", "text": "Could you please tell me exactly how often I should do the exercises and which reaction is still normal? I want to avoid being too cautious or overloading myself." },
+            { "language": "fa", "text": "ممکن است دقیق بگویید چند بار باید تمرین‌ها را انجام بدهم و چه واکنشی هنوز طبیعی است؟ می‌خواهم نه بیش از حد محتاط باشم و نه به خودم فشار زیاد بیاورم." },
+            { "language": "ar", "text": "هل يمكن أن تخبريني بدقة كم مرة يجب أن أقوم بالتمارين وأي رد فعل لا يزال طبيعياً؟ أريد أن أتجنب أن أكون حذراً جداً أو أن أجهد نفسي." },
+            { "language": "tr", "text": "Lütfen egzersizleri ne sıklıkla yapmam gerektiğini ve hangi tepkinin hâlâ normal olduğunu tam olarak söyleyebilir misiniz? Çok temkinli olmaktan ya da kendimi fazla zorlamaktan kaçınmak istiyorum." },
+            { "language": "ru", "text": "Не могли бы вы точно сказать, как часто мне нужно делать упражнения и какая реакция еще считается нормальной? Я хочу избежать того, чтобы быть слишком осторожным или перегрузить себя." },
+            { "language": "ckb", "text": "دەتوانن تکایە بە وردی بڵێن چەند جار پێویستە ڕاهێنانەکان بکەم و کام وەڵامدانەوە هێشتا ئاساییە؟ دەمەوێت خۆم لەوە بپارێزم کە زۆر ئاگادار بم یان زۆر فشار بخەمە سەر خۆم." },
+            { "language": "kmr", "text": "Hûn dikarin ji kerema xwe bi hûrgilî bibêjin ez divê çend caran hînkirinan bikim û kîjan reaksiyon hîn normal e? Ez dixwazim xwe ji pir hişyartî an zêde barkirinê biparêzim." },
+            { "language": "pl", "text": "Czy mogłaby pani dokładnie powiedzieć, jak często mam wykonywać ćwiczenia i jaka reakcja jest jeszcze normalna? Chcę uniknąć zarówno zbyt dużej ostrożności, jak i przeciążenia." },
+            { "language": "ro", "text": "Îmi puteți spune, vă rog, exact cât de des ar trebui să fac exercițiile și ce reacție este încă normală? Vreau să evit să fiu prea precaut sau să mă suprasolicit." },
+            { "language": "sq", "text": "A mund të më thoni saktësisht sa shpesh duhet t'i bëj ushtrimet dhe cili reagim është ende normal? Dua të shmang që të jem tepër i kujdesshëm ose ta mbingarkoj veten." }
+          ],
+          "function": "ask-frequency-and-normal-reaction",
+          "toneNote": "precise safety question",
+          "expectedLearnerAction": "Bitte um konkrete Häufigkeit und um Abgrenzung zwischen normaler Reaktion und Überlastung."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Leichte Beschwerden nach den Übungen können vorkommen. Wenn die Schmerzen deutlich stärker werden, Taubheitsgefühle auftreten oder Sie den Alltag kaum schaffen, melden Sie sich bitte früher.",
+          "translations": [
+            { "language": "en", "text": "Mild discomfort after the exercises can occur. If the pain becomes clearly stronger, numbness occurs, or you can hardly manage everyday life, please contact us earlier." },
+            { "language": "fa", "text": "ناراحتی خفیف بعد از تمرین‌ها ممکن است پیش بیاید. اگر درد به‌طور واضح شدیدتر شد، بی‌حسی ایجاد شد یا به‌سختی از عهده کارهای روزمره برآمدید، لطفاً زودتر تماس بگیرید." },
+            { "language": "ar", "text": "قد تحدث أعراض خفيفة بعد التمارين. إذا أصبح الألم أقوى بوضوح، أو ظهر خدر، أو لم تعد قادراً تقريباً على تدبير الحياة اليومية، فيرجى التواصل في وقت أبكر." },
+            { "language": "tr", "text": "Egzersizlerden sonra hafif rahatsızlıklar olabilir. Ağrı belirgin şekilde artarsa, uyuşma olursa veya günlük yaşamı neredeyse sürdüremezseniz lütfen daha erken iletişime geçin." },
+            { "language": "ru", "text": "Легкий дискомфорт после упражнений может возникать. Если боль заметно усилится, появится онемение или вы почти не сможете справляться с повседневностью, пожалуйста, свяжитесь раньше." },
+            { "language": "ckb", "text": "نارەحەتییەکی سووک دوای ڕاهێنانەکان دەتوانێت ڕووبدات. ئەگەر ئازارەکە بە ڕوونی توندتر بوو، بێهەستی دەرکەوت یان بە زەحمەت بتوانن ژیانی ڕۆژانە بەڕێوە ببەن، تکایە زووتر پەیوەندی بکەن." },
+            { "language": "kmr", "text": "Piştî hînkirinan hinek nerehetiya sivik dikare çêbe. Heke êş bi eşkere tundtir bibe, bêhestî derkeve an hûn bi zehmetî jiyana rojane bi rê ve bibin, ji kerema xwe zûtir têkilî daynin." },
+            { "language": "pl", "text": "Lekkie dolegliwości po ćwiczeniach mogą się zdarzyć. Jeśli ból wyraźnie się nasili, pojawi się drętwienie albo prawie nie będzie pan radził sobie z codziennością, proszę zgłosić się wcześniej." },
+            { "language": "ro", "text": "Pot apărea ușoare neplăceri după exerciții. Dacă durerea devine clar mai puternică, apare amorțeală sau abia vă descurcați în viața de zi cu zi, vă rog să ne contactați mai devreme." },
+            { "language": "sq", "text": "Pas ushtrimeve mund të shfaqen shqetësime të lehta. Nëse dhimbja bëhet dukshëm më e fortë, shfaqet mpirje ose mezi e përballoni përditshmërinë, ju lutem kontaktoni më herët." }
+          ],
+          "function": "explain-warning-thresholds",
+          "toneNote": "safety threshold",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Damit ich es richtig dokumentiere: Soll ich Schmerzstärke, Beweglichkeit und Alltagssituationen notieren, zum Beispiel Treppensteigen, Sitzen und längeres Gehen?",
+          "translations": [
+            { "language": "en", "text": "So that I document it correctly: should I note pain level, mobility, and everyday situations, for example climbing stairs, sitting, and longer walking?" },
+            { "language": "fa", "text": "برای اینکه درست ثبت کنم: آیا باید شدت درد، میزان حرکت و موقعیت‌های روزمره را یادداشت کنم، مثلاً بالا رفتن از پله، نشستن و راه رفتن طولانی‌تر؟" },
+            { "language": "ar", "text": "لكي أوثق ذلك بشكل صحيح: هل يجب أن أسجل شدة الألم والحركة ومواقف الحياة اليومية، مثلاً صعود الدرج والجلوس والمشي لمدة أطول؟" },
+            { "language": "tr", "text": "Doğru belgelemek için: ağrı şiddetini, hareketliliği ve günlük durumları, örneğin merdiven çıkmayı, oturmayı ve daha uzun yürümeyi not etmeli miyim?" },
+            { "language": "ru", "text": "Чтобы я правильно это документировал: нужно ли мне записывать интенсивность боли, подвижность и повседневные ситуации, например подъем по лестнице, сидение и более длительную ходьбу?" },
+            { "language": "ckb", "text": "بۆ ئەوەی بە دروستی تۆماری بکەم: پێویستە توندی ئازار، جوڵان و دۆخەکانی ژیانی ڕۆژانە بنووسم، بۆ نموونە سەرکەوتنی پلیکانی، دانیشتن و ڕۆیشتنی درێژتر؟" },
+            { "language": "kmr", "text": "Ji bo ku ez wê rast belge bikim: divê ez tundiya êşê, tevgerê û rewşên jiyana rojane binivîsim, mînak derketina pileyê, rûniştin û meşiya dirêjtir?" },
+            { "language": "pl", "text": "Żeby dobrze to dokumentować: czy mam notować nasilenie bólu, ruchomość i sytuacje codzienne, na przykład wchodzenie po schodach, siedzenie i dłuższe chodzenie?" },
+            { "language": "ro", "text": "Ca să documentez corect: ar trebui să notez intensitatea durerii, mobilitatea și situațiile cotidiene, de exemplu urcatul scărilor, statul pe scaun și mersul mai lung?" },
+            { "language": "sq", "text": "Që ta dokumentoj si duhet: a duhet të shënoj intensitetin e dhimbjes, lëvizshmërinë dhe situatat e përditshme, për shembull ngjitjen e shkallëve, uljen dhe ecjen më të gjatë?" }
+          ],
+          "function": "ask-documentation-criteria",
+          "toneNote": "structured follow-up",
+          "expectedLearnerAction": "Frage, welche Beobachtungen du zwischen den Terminen dokumentieren sollst."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Genau. Bringen Sie diese Notizen zum Kontrolltermin in vier Wochen mit. Wenn sich vorher etwas deutlich verschlechtert, warten Sie bitte nicht bis zum Termin.",
+          "translations": [
+            { "language": "en", "text": "Exactly. Bring these notes to the follow-up appointment in four weeks. If something clearly worsens before then, please do not wait until the appointment." },
+            { "language": "fa", "text": "دقیقاً. این یادداشت‌ها را به وقت کنترل در چهار هفته دیگر بیاورید. اگر قبل از آن چیزی به‌طور واضح بدتر شد، لطفاً تا آن وقت صبر نکنید." },
+            { "language": "ar", "text": "بالضبط. أحضر هذه الملاحظات إلى موعد المتابعة بعد أربعة أسابيع. إذا ساء شيء بوضوح قبل ذلك، فلا تنتظر حتى الموعد." },
+            { "language": "tr", "text": "Aynen. Bu notları dört hafta sonraki kontrol randevusuna getirin. Ondan önce bir şey belirgin şekilde kötüleşirse lütfen randevuya kadar beklemeyin." },
+            { "language": "ru", "text": "Именно. Принесите эти записи на контрольный прием через четыре недели. Если до этого что-то явно ухудшится, пожалуйста, не ждите приема." },
+            { "language": "ckb", "text": "بە وردی. ئەم تێبینییانە بۆ کاتی پشکنینی دوای چوار هەفتە بهێنن. ئەگەر پێش ئەوە شتێک بە ڕوونی خراپتر بوو، تکایە تا کاتەکە چاوەڕێ مەکەن." },
+            { "language": "kmr", "text": "Belê. Van notan ji bo randevûya kontrolê ya çar hefteyan paşê bînin. Heke berî wê tiştek bi eşkere xirabtir bibe, ji kerema xwe heta randevûyê li benda nemînin." },
+            { "language": "pl", "text": "Dokładnie. Proszę przynieść te notatki na wizytę kontrolną za cztery tygodnie. Jeśli wcześniej coś wyraźnie się pogorszy, proszę nie czekać do wizyty." },
+            { "language": "ro", "text": "Exact. Aduceți aceste notițe la controlul de peste patru săptămâni. Dacă ceva se înrăutățește clar înainte, vă rog să nu așteptați până la programare." },
+            { "language": "sq", "text": "Saktësisht. Sillini këto shënime në kontrollin pas katër javësh. Nëse diçka përkeqësohet qartë më parë, ju lutem mos prisni deri në takim." }
+          ],
+          "function": "confirm-follow-up-plan",
+          "toneNote": "clear next step",
+          "expectedLearnerAction": null
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Dann fasse ich zusammen: Wir planen zunächst sechs Wochen, ich mache die Übungen regelmäßig, notiere Schmerzen, Beweglichkeit und Alltagssituationen und komme in vier Wochen zur Kontrolle. Bei deutlicher Verschlechterung oder Taubheitsgefühl melde ich mich früher.",
+          "translations": [
+            { "language": "en", "text": "Then I will summarize: we initially plan six weeks, I do the exercises regularly, note pain, mobility, and everyday situations, and come for a follow-up in four weeks. If there is clear worsening or numbness, I will contact you earlier." },
+            { "language": "fa", "text": "پس خلاصه می‌کنم: ابتدا شش هفته برنامه‌ریزی می‌کنیم، من تمرین‌ها را منظم انجام می‌دهم، درد، حرکت‌پذیری و موقعیت‌های روزمره را یادداشت می‌کنم و چهار هفته دیگر برای کنترل می‌آیم. اگر بدتر شدن واضح یا بی‌حسی پیش آمد، زودتر تماس می‌گیرم." },
+            { "language": "ar", "text": "إذن ألخص: نخطط أولاً لستة أسابيع، وأقوم بالتمارين بانتظام، وأسجل الألم والحركة ومواقف الحياة اليومية، وآتي للمتابعة بعد أربعة أسابيع. عند تدهور واضح أو خدر سأتواصل في وقت أبكر." },
+            { "language": "tr", "text": "O halde özetliyorum: Başta altı hafta planlıyoruz, egzersizleri düzenli yapıyorum, ağrıyı, hareketliliği ve günlük durumları not ediyorum ve dört hafta sonra kontrole geliyorum. Belirgin kötüleşme veya uyuşma olursa daha erken iletişime geçiyorum." },
+            { "language": "ru", "text": "Тогда я резюмирую: сначала мы планируем шесть недель, я регулярно делаю упражнения, записываю боль, подвижность и повседневные ситуации и прихожу на контроль через четыре недели. При явном ухудшении или онемении я свяжусь раньше." },
+            { "language": "ckb", "text": "کەواتە پوخت دەکەمەوە: لە سەرەتا شەش هەفتە پلاندانان دەکەین، من ڕاهێنانەکان بە ڕێکوپێکی دەکەم، ئازار، جوڵان و دۆخەکانی ژیانی ڕۆژانە تۆمار دەکەم و دوای چوار هەفتە بۆ پشکنین دێم. ئەگەر خراپبوونی ڕوون یان بێهەستی ڕوویدا، زووتر پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Wê demê ez kurte dikim: em di destpêkê de şeş hefte plan dikin, ez hînkirinan bi rêkûpêk dikim, êş, tevger û rewşên rojane dinivîsim û çar hefte paşê ji bo kontrolê têm. Heke xirabbûneke eşkere an bêhestî çêbe, ez zûtir têkilî datînim." },
+            { "language": "pl", "text": "W takim razie podsumuję: najpierw planujemy sześć tygodni, regularnie wykonuję ćwiczenia, notuję ból, ruchomość i sytuacje codzienne oraz przychodzę na kontrolę za cztery tygodnie. Przy wyraźnym pogorszeniu lub drętwieniu zgłaszam się wcześniej." },
+            { "language": "ro", "text": "Atunci rezum: planificăm inițial șase săptămâni, fac exercițiile regulat, notez durerea, mobilitatea și situațiile cotidiene și vin la control peste patru săptămâni. Dacă apare o agravare clară sau amorțeală, vă contactez mai devreme." },
+            { "language": "sq", "text": "Atëherë po përmbledh: fillimisht planifikojmë gjashtë javë, i bëj ushtrimet rregullisht, shënoj dhimbjen, lëvizshmërinë dhe situatat e përditshme dhe vij për kontroll pas katër javësh. Nëse ka përkeqësim të qartë ose mpirje, kontaktoj më herët." }
+          ],
+          "function": "summarize-treatment-plan",
+          "toneNote": "structured closing summary",
+          "expectedLearnerAction": "Fasse Dauer, eigene Aufgaben, Dokumentation, Kontrolltermin und Meldegründe zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Ich möchte den Plan gern genau verstehen: Wie lange ist die Therapie zunächst gedacht, welche Zwischenschritte gibt es, und woran merken wir, ob sie wirkt?",
+              "translations": [
+                { "language": "en", "text": "Thank you. I would like to understand the plan precisely: how long is the treatment planned for at first, what intermediate steps are there, and how will we know whether it is working?" },
+                { "language": "fa", "text": "ممنون. می‌خواهم برنامه را دقیق بفهمم: درمان در ابتدا برای چه مدتی در نظر گرفته شده، چه مراحل میانی وجود دارد و از کجا می‌فهمیم که اثر می‌کند؟" },
+                { "language": "ar", "text": "شكراً. أود أن أفهم الخطة بدقة: ما المدة المخطط لها في البداية للعلاج، وما الخطوات المرحلية، وكيف سنعرف ما إذا كان ينجح؟" },
+                { "language": "tr", "text": "Teşekkür ederim. Planı tam olarak anlamak istiyorum: Tedavi ilk aşamada ne kadar süre için planlandı, hangi ara adımlar var ve işe yaradığını nasıl anlayacağız?" },
+                { "language": "ru", "text": "Спасибо. Я хотел бы точно понять план: на какой срок сначала рассчитано лечение, какие есть промежуточные шаги и по чему мы поймем, что оно действует?" },
+                { "language": "ckb", "text": "سوپاس. دەمەوێت پلانەکە بە وردی تێبگەم: لە سەرەتاوە چارەسەرەکە بۆ چەند ماوەیە، چ هەنگاوی ناوەندی هەیە و بە چی دەزانین کاری دەکات؟" },
+                { "language": "kmr", "text": "Spas. Ez dixwazim planê bi hûrgilî fêm bikim: dermankirin di destpêkê de ji bo çiqas demê hatiye plan kirin, kîjan gavên navîn hene û em ê çawa bizanin ku ew bandor dike?" },
+                { "language": "pl", "text": "Dziękuję. Chciałbym dokładnie zrozumieć plan: na jak długo leczenie jest początkowo przewidziane, jakie są etapy pośrednie i po czym poznamy, czy działa?" },
+                { "language": "ro", "text": "Mulțumesc. Aș vrea să înțeleg exact planul: pentru cât timp este gândit tratamentul la început, ce pași intermediari există și după ce ne dăm seama dacă funcționează?" },
+                { "language": "sq", "text": "Faleminderit. Do të doja ta kuptoja saktë planin: për sa kohë është menduar fillimisht trajtimi, cilët hapa ndërmjetës ka dhe si do ta kuptojmë nëse po vepron?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage bündelt Dauer, Ablauf und Erfolgskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the question combines duration, process, and success criteria." },
+                { "language": "fa", "text": "خوب است: سؤال مدت، روند و معیارهای موفقیت را با هم می‌آورد." },
+                { "language": "ar", "text": "جيد: يجمع السؤال بين المدة والمسار ومعايير النجاح." },
+                { "language": "tr", "text": "İyi: soru süreyi, süreci ve başarı ölçütlerini birleştiriyor." },
+                { "language": "ru", "text": "Хорошо: вопрос объединяет длительность, процесс и критерии успеха." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە ماوە، ڕەوت و پێوەرەکانی سەرکەوتن کۆدەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: pirs dem, pêvajo û pîvanên serkeftinê bi hev re tîne." },
+                { "language": "pl", "text": "Dobrze: pytanie łączy czas trwania, przebieg i kryteria powodzenia." },
+                { "language": "ro", "text": "Bine: întrebarea combină durata, procesul și criteriile de succes." },
+                { "language": "sq", "text": "Mirë: pyetja bashkon kohëzgjatjen, ecurinë dhe kriteret e suksesit." }
+              ],
+              "explanationKey": "b2-treatment-plan-ask-structure"
+            },
+            {
+              "id": "weak-too-general",
+              "text": "Können Sie mir den Plan noch einmal erklären?",
+              "translations": [
+                { "language": "en", "text": "Can you explain the plan to me once more?" },
+                { "language": "fa", "text": "می‌توانید برنامه را یک بار دیگر برایم توضیح بدهید؟" },
+                { "language": "ar", "text": "هل يمكنك أن تشرح لي الخطة مرة أخرى؟" },
+                { "language": "tr", "text": "Planı bana bir kez daha açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Можете еще раз объяснить мне план?" },
+                { "language": "ckb", "text": "دەتوانن پلانەکە جارێکی تر بۆم ڕوون بکەنەوە؟" },
+                { "language": "kmr", "text": "Hûn dikarin planê careke din ji min re rave bikin?" },
+                { "language": "pl", "text": "Czy może mi pani jeszcze raz wyjaśnić plan?" },
+                { "language": "ro", "text": "Îmi puteți explica planul încă o dată?" },
+                { "language": "sq", "text": "A mund të ma shpjegoni planin edhe një herë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu allgemein für B2: Es fehlt, welche Punkte genau geklärt werden sollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too general for B2: it does not say which points should be clarified exactly." },
+                { "language": "fa", "text": "قابل فهم است، اما برای B2 خیلی کلی است: مشخص نمی‌کند دقیقاً کدام نکات باید روشن شوند." },
+                { "language": "ar", "text": "مفهوم، لكنه عام جداً لمستوى B2: لا يوضح أي نقاط يجب توضيحها بالضبط." },
+                { "language": "tr", "text": "Anlaşılır, ama B2 için fazla genel: hangi noktaların tam olarak netleştirilmesi gerektiğini söylemiyor." },
+                { "language": "ru", "text": "Понятно, но слишком общо для B2: не указано, какие именно пункты нужно уточнить." },
+                { "language": "ckb", "text": "تێگەیشتنەکە ڕوونە، بەڵام بۆ B2 زۆر گشتییە: ناڵێت بە وردی کام خاڵەکان پێویستە ڕوون بکرێنەوە." },
+                { "language": "kmr", "text": "Têgihiştinbar e, lê ji bo B2 pir giştî ye: nabêje kîjan xal bi hûrgilî divê zelal bibin." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt ogólne jak na B2: nie mówi, które punkty dokładnie mają zostać wyjaśnione." },
+                { "language": "ro", "text": "De înțeles, dar prea general pentru B2: nu spune ce puncte trebuie clarificate exact." },
+                { "language": "sq", "text": "E kuptueshme, por tepër e përgjithshme për B2: nuk thotë cilat pika duhen sqaruar saktësisht." }
+              ],
+              "explanationKey": "b2-treatment-plan-avoid-general-question"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Für mich ist wichtig, dass ich wieder längere Strecken gehen und bei der Arbeit sitzen kann, ohne danach starke Schmerzen zu haben. Können wir diese beiden Punkte als konkrete Ziele festhalten?",
+              "translations": [
+                { "language": "en", "text": "For me it is important that I can walk longer distances again and sit at work without having strong pain afterward. Can we record these two points as concrete goals?" },
+                { "language": "fa", "text": "برای من مهم است که بتوانم دوباره مسیرهای طولانی‌تری راه بروم و در محل کار بنشینم بدون اینکه بعدش درد شدید داشته باشم. می‌توانیم این دو نکته را به‌عنوان هدف مشخص ثبت کنیم؟" },
+                { "language": "ar", "text": "من المهم بالنسبة لي أن أستطيع المشي لمسافات أطول مرة أخرى والجلوس في العمل من دون ألم شديد بعد ذلك. هل يمكننا تثبيت هاتين النقطتين كهدفين محددين؟" },
+                { "language": "tr", "text": "Benim için yeniden daha uzun mesafeler yürüyebilmek ve işte sonrasında şiddetli ağrı olmadan oturabilmek önemli. Bu iki noktayı somut hedefler olarak kaydedebilir miyiz?" },
+                { "language": "ru", "text": "Для меня важно снова проходить более длинные расстояния и сидеть на работе без сильной боли после этого. Можем ли мы зафиксировать эти два пункта как конкретные цели?" },
+                { "language": "ckb", "text": "بۆ من گرنگە دووبارە بتوانم ڕێگای درێژتر بڕۆم و لە کاردا دانیشم بەبێ ئەوەی دواتر ئازاری توند هەبێت. دەتوانین ئەم دوو خاڵە وەک ئامانجی دیاریکراو تۆمار بکەین؟" },
+                { "language": "kmr", "text": "Ji bo min girîng e ku ez careke din rêyên dirêjtir bimeşim û li karê rûnim bêyî ku pişt re êşa tund hebe. Em dikarin van du xalan wekî armancên zehf diyar tomar bikin?" },
+                { "language": "pl", "text": "Dla mnie ważne jest, żebym znów mógł chodzić dłuższe odcinki i siedzieć w pracy bez silnego bólu potem. Czy możemy zapisać te dwa punkty jako konkretne cele?" },
+                { "language": "ro", "text": "Pentru mine este important să pot merge din nou distanțe mai lungi și să stau pe scaun la serviciu fără dureri puternice după aceea. Putem nota aceste două puncte ca obiective concrete?" },
+                { "language": "sq", "text": "Për mua është e rëndësishme të mund të ec përsëri distanca më të gjata dhe të ulem në punë pa pasur dhimbje të forta më pas. A mund t'i shënojmë këto dy pika si objektiva konkrete?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort macht aus dem Plan messbare Alltagsziele.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer turns the plan into measurable daily-life goals." },
+                { "language": "fa", "text": "خوب است: پاسخ برنامه را به هدف‌های روزمره و قابل سنجش تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: تحول الإجابة الخطة إلى أهداف يومية قابلة للقياس." },
+                { "language": "tr", "text": "İyi: cevap planı ölçülebilir günlük yaşam hedeflerine dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: ответ превращает план в измеримые повседневные цели." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پلانەکە دەگۆڕێت بۆ ئامانجە پێوانەکراوەکانی ژیانی ڕۆژانە." },
+                { "language": "kmr", "text": "Baş e: bersiv planê vediguherîne armancên jiyana rojane yên pîvanbar." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zamienia plan w mierzalne cele codzienne." },
+                { "language": "ro", "text": "Bine: răspunsul transformă planul în obiective cotidiene măsurabile." },
+                { "language": "sq", "text": "Mirë: përgjigjja e kthen planin në objektiva të përditshme të matshme." }
+              ],
+              "explanationKey": "b2-treatment-plan-daily-goals"
+            },
+            {
+              "id": "weak-vague-goal",
+              "text": "Ich möchte einfach, dass es bald besser wird.",
+              "translations": [
+                { "language": "en", "text": "I simply want it to get better soon." },
+                { "language": "fa", "text": "فقط می‌خواهم زود بهتر شود." },
+                { "language": "ar", "text": "أريد فقط أن يتحسن الأمر قريباً." },
+                { "language": "tr", "text": "Sadece yakında daha iyi olmasını istiyorum." },
+                { "language": "ru", "text": "Я просто хочу, чтобы скоро стало лучше." },
+                { "language": "ckb", "text": "تەنها دەمەوێت زوو باشتر ببێت." },
+                { "language": "kmr", "text": "Ez tenê dixwazim ku zû baştir bibe." },
+                { "language": "pl", "text": "Chcę po prostu, żeby wkrótce było lepiej." },
+                { "language": "ro", "text": "Vreau doar să fie mai bine curând." },
+                { "language": "sq", "text": "Thjesht dua që të përmirësohet shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau: Im Arztgespräch helfen konkrete Alltagssituationen mehr als ein allgemeiner Wunsch.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise: in a medical conversation, concrete everyday situations help more than a general wish." },
+                { "language": "fa", "text": "قابل‌تصور است، اما خیلی نامشخص: در گفت‌وگوی پزشکی، موقعیت‌های روزمره مشخص بیشتر از یک خواسته کلی کمک می‌کنند." },
+                { "language": "ar", "text": "مقبول، لكنه غير دقيق جداً: في الحديث الطبي تساعد المواقف اليومية المحددة أكثر من رغبة عامة." },
+                { "language": "tr", "text": "Olası ama fazla belirsiz: tıbbi konuşmada somut günlük durumlar genel bir dilekten daha çok yardımcı olur." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно: в медицинском разговоре конкретные повседневные ситуации помогают больше, чем общее пожелание." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام زۆر ناوردە: لە گفتوگۆی پزیشکیدا دۆخە دیاریکراوەکانی ژیانی ڕۆژانە زیاتر یارمەتی دەدەن وەک خواستێکی گشتی." },
+                { "language": "kmr", "text": "Guncaw e, lê pir nezelal e: di axaftina bijîşkî de rewşên rojane yên zehf diyar ji daxwazeke giştî bêtir alîkar in." },
+                { "language": "pl", "text": "Plausible, ale zbyt niedokładne: w rozmowie medycznej konkretne sytuacje codzienne pomagają bardziej niż ogólne życzenie." },
+                { "language": "ro", "text": "Plausibil, dar prea imprecis: într-o conversație medicală, situațiile cotidiene concrete ajută mai mult decât o dorință generală." },
+                { "language": "sq", "text": "E besueshme, por tepër e pasaktë: në një bisedë mjekësore, situatat konkrete të përditshme ndihmojnë më shumë se një dëshirë e përgjithshme." }
+              ],
+              "explanationKey": "b2-treatment-plan-avoid-vague-goal"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Könnten Sie mir bitte genau sagen, wie oft ich die Übungen machen soll und welche Reaktion noch normal ist? Ich möchte vermeiden, dass ich zu vorsichtig bin oder mich überlaste.",
+              "translations": [
+                { "language": "en", "text": "Could you please tell me exactly how often I should do the exercises and which reaction is still normal? I want to avoid being too cautious or overloading myself." },
+                { "language": "fa", "text": "ممکن است دقیق بگویید چند بار باید تمرین‌ها را انجام بدهم و چه واکنشی هنوز طبیعی است؟ می‌خواهم نه بیش از حد محتاط باشم و نه به خودم فشار زیاد بیاورم." },
+                { "language": "ar", "text": "هل يمكن أن تخبريني بدقة كم مرة يجب أن أقوم بالتمارين وأي رد فعل لا يزال طبيعياً؟ أريد أن أتجنب أن أكون حذراً جداً أو أن أجهد نفسي." },
+                { "language": "tr", "text": "Lütfen egzersizleri ne sıklıkla yapmam gerektiğini ve hangi tepkinin hâlâ normal olduğunu tam olarak söyleyebilir misiniz? Çok temkinli olmaktan ya da kendimi fazla zorlamaktan kaçınmak istiyorum." },
+                { "language": "ru", "text": "Не могли бы вы точно сказать, как часто мне нужно делать упражнения и какая реакция еще считается нормальной? Я хочу избежать того, чтобы быть слишком осторожным или перегрузить себя." },
+                { "language": "ckb", "text": "دەتوانن تکایە بە وردی بڵێن چەند جار پێویستە ڕاهێنانەکان بکەم و کام وەڵامدانەوە هێشتا ئاساییە؟ دەمەوێت خۆم لەوە بپارێزم کە زۆر ئاگادار بم یان زۆر فشار بخەمە سەر خۆم." },
+                { "language": "kmr", "text": "Hûn dikarin ji kerema xwe bi hûrgilî bibêjin ez divê çend caran hînkirinan bikim û kîjan reaksiyon hîn normal e? Ez dixwazim xwe ji pir hişyartî an zêde barkirinê biparêzim." },
+                { "language": "pl", "text": "Czy mogłaby pani dokładnie powiedzieć, jak często mam wykonywać ćwiczenia i jaka reakcja jest jeszcze normalna? Chcę uniknąć zarówno zbyt dużej ostrożności, jak i przeciążenia." },
+                { "language": "ro", "text": "Îmi puteți spune, vă rog, exact cât de des ar trebui să fac exercițiile și ce reacție este încă normală? Vreau să evit să fiu prea precaut sau să mă suprasolicit." },
+                { "language": "sq", "text": "A mund të më thoni saktësisht sa shpesh duhet t'i bëj ushtrimet dhe cili reagim është ende normal? Dua të shmang që të jem tepër i kujdesshëm ose ta mbingarkoj veten." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage klärt Dosierung der Übungen und die Grenze zwischen normaler Reaktion und Überlastung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the question clarifies the exercise frequency and the boundary between a normal reaction and overload." },
+                { "language": "fa", "text": "خوب است: سؤال تعداد تمرین‌ها و مرز بین واکنش طبیعی و فشار بیش از حد را روشن می‌کند." },
+                { "language": "ar", "text": "جيد: يوضح السؤال تكرار التمارين والحد بين رد الفعل الطبيعي والإجهاد الزائد." },
+                { "language": "tr", "text": "İyi: soru egzersiz sıklığını ve normal tepki ile aşırı yüklenme arasındaki sınırı netleştiriyor." },
+                { "language": "ru", "text": "Хорошо: вопрос уточняет частоту упражнений и границу между нормальной реакцией и перегрузкой." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە دووبارەبوونەوەی ڕاهێنان و سنووری نێوان وەڵامدانەوەی ئاسایی و فشارزیاد ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: pirs dûbarebûna hînkirinan û sînorê di navbera reaksiyona normal û zêdebarkirinê de zelal dike." },
+                { "language": "pl", "text": "Dobrze: pytanie wyjaśnia częstotliwość ćwiczeń i granicę między normalną reakcją a przeciążeniem." },
+                { "language": "ro", "text": "Bine: întrebarea clarifică frecvența exercițiilor și limita dintre reacția normală și suprasolicitare." },
+                { "language": "sq", "text": "Mirë: pyetja sqaron shpeshtësinë e ushtrimeve dhe kufirin midis reagimit normal dhe mbingarkesës." }
+              ],
+              "explanationKey": "b2-treatment-plan-frequency-threshold"
+            },
+            {
+              "id": "weak-no-threshold",
+              "text": "Ich mache die Übungen dann einfach so gut wie möglich.",
+              "translations": [
+                { "language": "en", "text": "Then I will simply do the exercises as well as possible." },
+                { "language": "fa", "text": "پس تمرین‌ها را تا جایی که بتوانم خوب انجام می‌دهم." },
+                { "language": "ar", "text": "إذن سأقوم بالتمارين بأفضل شكل ممكن." },
+                { "language": "tr", "text": "O zaman egzersizleri elimden geldiğince iyi yaparım." },
+                { "language": "ru", "text": "Тогда я просто буду делать упражнения настолько хорошо, насколько смогу." },
+                { "language": "ckb", "text": "کەواتە ڕاهێنانەکان بە باشترین شێوەی کە بتوانم دەکەم." },
+                { "language": "kmr", "text": "Wê demê ez hînkirinan bi qasî ku dikarim baş dikim." },
+                { "language": "pl", "text": "W takim razie będę po prostu wykonywał ćwiczenia najlepiej, jak potrafię." },
+                { "language": "ro", "text": "Atunci voi face exercițiile pur și simplu cât de bine pot." },
+                { "language": "sq", "text": "Atëherë do t'i bëj ushtrimet sa më mirë që mundem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Die Antwort zeigt Motivation, klärt aber keine Häufigkeit und keine Warnschwelle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: the answer shows motivation, but clarifies neither frequency nor warning threshold." },
+                { "language": "fa", "text": "خیلی نامشخص است: پاسخ انگیزه را نشان می‌دهد، اما نه تعداد تمرین و نه مرز هشدار را روشن نمی‌کند." },
+                { "language": "ar", "text": "غير دقيق جداً: تظهر الإجابة الدافع، لكنها لا توضح التكرار ولا حد التحذير." },
+                { "language": "tr", "text": "Fazla belirsiz: cevap motivasyon gösteriyor, ama ne sıklığı ne de uyarı eşiğini netleştiriyor." },
+                { "language": "ru", "text": "Слишком неточно: ответ показывает мотивацию, но не уточняет ни частоту, ни тревожный порог." },
+                { "language": "ckb", "text": "زۆر ناوردەیە: وەڵامەکە پاڵنەر دەردەخات، بەڵام نە دووبارەبوونەوە و نە سنووری ئاگادارکردنەوە ڕوون ناکاتەوە." },
+                { "language": "kmr", "text": "Pir nezelal e: bersiv motîvasyonê nîşan dide, lê ne dûbarebûnê û ne jî sînorê hişyariyê zelal dike." },
+                { "language": "pl", "text": "Zbyt niedokładne: odpowiedź pokazuje motywację, ale nie wyjaśnia częstotliwości ani progu ostrzegawczego." },
+                { "language": "ro", "text": "Prea imprecis: răspunsul arată motivație, dar nu clarifică nici frecvența, nici pragul de avertizare." },
+                { "language": "sq", "text": "Tepër e pasaktë: përgjigjja tregon motivim, por nuk sqaron as shpeshtësinë, as pragun paralajmërues." }
+              ],
+              "explanationKey": "b2-treatment-plan-ask-threshold"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Damit ich es richtig dokumentiere: Soll ich Schmerzstärke, Beweglichkeit und Alltagssituationen notieren, zum Beispiel Treppensteigen, Sitzen und längeres Gehen?",
+              "translations": [
+                { "language": "en", "text": "So that I document it correctly: should I note pain level, mobility, and everyday situations, for example climbing stairs, sitting, and longer walking?" },
+                { "language": "fa", "text": "برای اینکه درست ثبت کنم: آیا باید شدت درد، میزان حرکت و موقعیت‌های روزمره را یادداشت کنم، مثلاً بالا رفتن از پله، نشستن و راه رفتن طولانی‌تر؟" },
+                { "language": "ar", "text": "لكي أوثق ذلك بشكل صحيح: هل يجب أن أسجل شدة الألم والحركة ومواقف الحياة اليومية، مثلاً صعود الدرج والجلوس والمشي لمدة أطول؟" },
+                { "language": "tr", "text": "Doğru belgelemek için: ağrı şiddetini, hareketliliği ve günlük durumları, örneğin merdiven çıkmayı, oturmayı ve daha uzun yürümeyi not etmeli miyim?" },
+                { "language": "ru", "text": "Чтобы я правильно это документировал: нужно ли мне записывать интенсивность боли, подвижность и повседневные ситуации, например подъем по лестнице, сидение и более длительную ходьбу?" },
+                { "language": "ckb", "text": "بۆ ئەوەی بە دروستی تۆماری بکەم: پێویستە توندی ئازار، جوڵان و دۆخەکانی ژیانی ڕۆژانە بنووسم، بۆ نموونە سەرکەوتنی پلیکانی، دانیشتن و ڕۆیشتنی درێژتر؟" },
+                { "language": "kmr", "text": "Ji bo ku ez wê rast belge bikim: divê ez tundiya êşê, tevgerê û rewşên jiyana rojane binivîsim, mînak derketina pileyê, rûniştin û meşiya dirêjtir?" },
+                { "language": "pl", "text": "Żeby dobrze to dokumentować: czy mam notować nasilenie bólu, ruchomość i sytuacje codzienne, na przykład wchodzenie po schodach, siedzenie i dłuższe chodzenie?" },
+                { "language": "ro", "text": "Ca să documentez corect: ar trebui să notez intensitatea durerii, mobilitatea și situațiile cotidiene, de exemplu urcatul scărilor, statul pe scaun și mersul mai lung?" },
+                { "language": "sq", "text": "Që ta dokumentoj si duhet: a duhet të shënoj intensitetin e dhimbjes, lëvizshmërinë dhe situatat e përditshme, për shembull ngjitjen e shkallëve, uljen dhe ecjen më të gjatë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Frage macht die Beobachtung konkret und nützlich für den Kontrolltermin.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the question makes observation concrete and useful for the follow-up appointment." },
+                { "language": "fa", "text": "خوب است: سؤال مشاهده را مشخص و برای وقت کنترل مفید می‌کند." },
+                { "language": "ar", "text": "جيد: يجعل السؤال الملاحظة محددة ومفيدة لموعد المتابعة." },
+                { "language": "tr", "text": "İyi: soru gözlemi somut ve kontrol randevusu için yararlı hale getiriyor." },
+                { "language": "ru", "text": "Хорошо: вопрос делает наблюдение конкретным и полезным для контрольного приема." },
+                { "language": "ckb", "text": "باشە: پرسیارەکە تێبینییەکە دیاریکراو و بۆ کاتی پشکنین بەسوود دەکات." },
+                { "language": "kmr", "text": "Baş e: pirs çavdêriyê zehf diyar û ji bo randevûya kontrolê bikêr dike." },
+                { "language": "pl", "text": "Dobrze: pytanie czyni obserwację konkretną i przydatną na wizytę kontrolną." },
+                { "language": "ro", "text": "Bine: întrebarea face observația concretă și utilă pentru control." },
+                { "language": "sq", "text": "Mirë: pyetja e bën vëzhgimin konkret dhe të dobishëm për kontrollin." }
+              ],
+              "explanationKey": "b2-treatment-plan-documentation"
+            },
+            {
+              "id": "weak-no-examples",
+              "text": "Soll ich mir irgendetwas dazu aufschreiben?",
+              "translations": [
+                { "language": "en", "text": "Should I write down anything about it?" },
+                { "language": "fa", "text": "آیا باید چیزی درباره آن یادداشت کنم؟" },
+                { "language": "ar", "text": "هل يجب أن أكتب أي شيء عن ذلك؟" },
+                { "language": "tr", "text": "Bununla ilgili bir şey yazmalı mıyım?" },
+                { "language": "ru", "text": "Нужно ли мне что-нибудь об этом записывать?" },
+                { "language": "ckb", "text": "پێویستە شتێک لەبارەی ئەوە بنووسم؟" },
+                { "language": "kmr", "text": "Divê ez li ser vê tiştekî binivîsim?" },
+                { "language": "pl", "text": "Czy mam coś sobie na ten temat zapisać?" },
+                { "language": "ro", "text": "Ar trebui să notez ceva despre asta?" },
+                { "language": "sq", "text": "A duhet të shënoj diçka për këtë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Fast richtig, aber zu offen: Eine B2-Frage sollte Beispiele nennen, damit die Ärztin gezielt bestätigen oder korrigieren kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Almost right, but too open: a B2 question should name examples so the doctor can confirm or correct them precisely." },
+                { "language": "fa", "text": "تقریباً درست است، اما خیلی باز است: سؤال B2 باید مثال بیاورد تا پزشک بتواند دقیق تأیید یا اصلاح کند." },
+                { "language": "ar", "text": "قريب من الصحيح، لكنه مفتوح جداً: ينبغي لسؤال B2 أن يذكر أمثلة لكي تستطيع الطبيبة التأكيد أو التصحيح بدقة." },
+                { "language": "tr", "text": "Neredeyse doğru ama fazla açık: bir B2 sorusu örnekler vermeli ki doktor bunları hedefli biçimde onaylayabilsin veya düzeltebilsin." },
+                { "language": "ru", "text": "Почти правильно, но слишком открыто: вопрос уровня B2 должен назвать примеры, чтобы врач мог точно подтвердить или исправить." },
+                { "language": "ckb", "text": "نزیکە لە ڕاست، بەڵام زۆر کراوەیە: پرسیاری B2 پێویستە نموونە بهێنێت بۆ ئەوەی پزیشک بتوانێت بە ئامانجەوە پشتڕاست یان ڕاستی بکاتەوە." },
+                { "language": "kmr", "text": "Hema rast e, lê pir vekirî ye: pirseke B2 divê mînakan bibêje da ku bijîşk bikare bi armanc piştrast an sererast bike." },
+                { "language": "pl", "text": "Prawie dobrze, ale zbyt otwarte: pytanie B2 powinno podawać przykłady, aby lekarka mogła konkretnie potwierdzić lub poprawić." },
+                { "language": "ro", "text": "Aproape corect, dar prea deschis: o întrebare B2 ar trebui să dea exemple, ca medicul să poată confirma sau corecta precis." },
+                { "language": "sq", "text": "Pothuajse e saktë, por tepër e hapur: një pyetje B2 duhet të japë shembuj, që mjekja të mund t'i konfirmojë ose korrigjojë saktë." }
+              ],
+              "explanationKey": "b2-treatment-plan-documentation-examples"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Dann fasse ich zusammen: Wir planen zunächst sechs Wochen, ich mache die Übungen regelmäßig, notiere Schmerzen, Beweglichkeit und Alltagssituationen und komme in vier Wochen zur Kontrolle. Bei deutlicher Verschlechterung oder Taubheitsgefühl melde ich mich früher.",
+              "translations": [
+                { "language": "en", "text": "Then I will summarize: we initially plan six weeks, I do the exercises regularly, note pain, mobility, and everyday situations, and come for a follow-up in four weeks. If there is clear worsening or numbness, I will contact you earlier." },
+                { "language": "fa", "text": "پس خلاصه می‌کنم: ابتدا شش هفته برنامه‌ریزی می‌کنیم، من تمرین‌ها را منظم انجام می‌دهم، درد، حرکت‌پذیری و موقعیت‌های روزمره را یادداشت می‌کنم و چهار هفته دیگر برای کنترل می‌آیم. اگر بدتر شدن واضح یا بی‌حسی پیش آمد، زودتر تماس می‌گیرم." },
+                { "language": "ar", "text": "إذن ألخص: نخطط أولاً لستة أسابيع، وأقوم بالتمارين بانتظام، وأسجل الألم والحركة ومواقف الحياة اليومية، وآتي للمتابعة بعد أربعة أسابيع. عند تدهور واضح أو خدر سأتواصل في وقت أبكر." },
+                { "language": "tr", "text": "O halde özetliyorum: Başta altı hafta planlıyoruz, egzersizleri düzenli yapıyorum, ağrıyı, hareketliliği ve günlük durumları not ediyorum ve dört hafta sonra kontrole geliyorum. Belirgin kötüleşme veya uyuşma olursa daha erken iletişime geçiyorum." },
+                { "language": "ru", "text": "Тогда я резюмирую: сначала мы планируем шесть недель, я регулярно делаю упражнения, записываю боль, подвижность и повседневные ситуации и прихожу на контроль через четыре недели. При явном ухудшении или онемении я свяжусь раньше." },
+                { "language": "ckb", "text": "کەواتە پوخت دەکەمەوە: لە سەرەتا شەش هەفتە پلاندانان دەکەین، من ڕاهێنانەکان بە ڕێکوپێکی دەکەم، ئازار، جوڵان و دۆخەکانی ژیانی ڕۆژانە تۆمار دەکەم و دوای چوار هەفتە بۆ پشکنین دێم. ئەگەر خراپبوونی ڕوون یان بێهەستی ڕوویدا، زووتر پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Wê demê ez kurte dikim: em di destpêkê de şeş hefte plan dikin, ez hînkirinan bi rêkûpêk dikim, êş, tevger û rewşên rojane dinivîsim û çar hefte paşê ji bo kontrolê têm. Heke xirabbûneke eşkere an bêhestî çêbe, ez zûtir têkilî datînim." },
+                { "language": "pl", "text": "W takim razie podsumuję: najpierw planujemy sześć tygodni, regularnie wykonuję ćwiczenia, notuję ból, ruchomość i sytuacje codzienne oraz przychodzę na kontrolę za cztery tygodnie. Przy wyraźnym pogorszeniu lub drętwieniu zgłaszam się wcześniej." },
+                { "language": "ro", "text": "Atunci rezum: planificăm inițial șase săptămâni, fac exercițiile regulat, notez durerea, mobilitatea și situațiile cotidiene și vin la control peste patru săptămâni. Dacă apare o agravare clară sau amorțeală, vă contactez mai devreme." },
+                { "language": "sq", "text": "Atëherë po përmbledh: fillimisht planifikojmë gjashtë javë, i bëj ushtrimet rregullisht, shënoj dhimbjen, lëvizshmërinë dhe situatat e përditshme dhe vij për kontroll pas katër javësh. Nëse ka përkeqësim të qartë ose mpirje, kontaktoj më herët." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Zusammenfassung nennt Ablauf, eigene Aufgaben, Kontrolle und klare Meldegründe.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the summary names the process, your own tasks, follow-up, and clear reasons to contact the office." },
+                { "language": "fa", "text": "خوب است: خلاصه روند، وظایف خودت، کنترل و دلایل روشن تماس را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: يذكر الملخص المسار والمهام الشخصية والمتابعة وأسباب التواصل الواضحة." },
+                { "language": "tr", "text": "İyi: özet süreci, kendi görevlerini, kontrolü ve açık iletişim nedenlerini belirtiyor." },
+                { "language": "ru", "text": "Хорошо: резюме называет процесс, собственные задачи, контроль и четкие причины для связи." },
+                { "language": "ckb", "text": "باشە: پوختەکە ڕەوت، ئەرکەکانی خۆت، پشکنین و هۆکارە ڕوونەکانی پەیوەندی دەستنیشان دەکات." },
+                { "language": "kmr", "text": "Baş e: kurte pêvajoyê, erkên xwe, kontrolê û sedemên zelal ên têkilîdanê dibêje." },
+                { "language": "pl", "text": "Dobrze: podsumowanie wymienia przebieg, własne zadania, kontrolę i jasne powody kontaktu." },
+                { "language": "ro", "text": "Bine: rezumatul numește procesul, sarcinile proprii, controlul și motivele clare de contact." },
+                { "language": "sq", "text": "Mirë: përmbledhja përmend ecurinë, detyrat personale, kontrollin dhe arsyet e qarta për kontakt." }
+              ],
+              "explanationKey": "b2-treatment-plan-final-summary"
+            },
+            {
+              "id": "weak-missing-warning-threshold",
+              "text": "Gut, dann mache ich die Übungen und komme in vier Wochen wieder.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will do the exercises and come back in four weeks." },
+                { "language": "fa", "text": "خوب، پس تمرین‌ها را انجام می‌دهم و چهار هفته دیگر برمی‌گردم." },
+                { "language": "ar", "text": "حسناً، إذن سأقوم بالتمارين وأعود بعد أربعة أسابيع." },
+                { "language": "tr", "text": "Tamam, o zaman egzersizleri yaparım ve dört hafta sonra tekrar gelirim." },
+                { "language": "ru", "text": "Хорошо, тогда я буду делать упражнения и вернусь через четыре недели." },
+                { "language": "ckb", "text": "باشە، کەواتە ڕاهێنانەکان دەکەم و دوای چوار هەفتە دەگەڕێمەوە." },
+                { "language": "kmr", "text": "Baş e, wê demê ez hînkirinan dikim û çar hefte paşê dîsa têm." },
+                { "language": "pl", "text": "Dobrze, w takim razie będę wykonywał ćwiczenia i wrócę za cztery tygodnie." },
+                { "language": "ro", "text": "Bine, atunci fac exercițiile și revin peste patru săptămâni." },
+                { "language": "sq", "text": "Mirë, atëherë do t'i bëj ushtrimet dhe do të vij përsëri pas katër javësh." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unvollständig: Es fehlen Dokumentation und die Gründe, wann du dich früher melden sollst.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but incomplete: documentation and the reasons for contacting the office earlier are missing." },
+                { "language": "fa", "text": "قابل‌تصور است، اما ناقص: ثبت مشاهدات و دلایل تماس زودتر ذکر نشده‌اند." },
+                { "language": "ar", "text": "مقبول، لكنه غير كامل: ينقص التوثيق وأسباب التواصل في وقت أبكر." },
+                { "language": "tr", "text": "Olası ama eksik: belgeleme ve daha erken iletişime geçme nedenleri eksik." },
+                { "language": "ru", "text": "Правдоподобно, но неполно: отсутствуют документирование и причины, когда нужно связаться раньше." },
+                { "language": "ckb", "text": "گونجاوە، بەڵام ناتەواوە: تۆمارکردن و هۆکارەکانی زووتر پەیوەندی کردن کەمە." },
+                { "language": "kmr", "text": "Guncaw e, lê netemam e: belgekirin û sedemên ku kengê zûtir têkilî daynî kêm in." },
+                { "language": "pl", "text": "Plausible, ale niepełne: brakuje dokumentacji i powodów, kiedy należy zgłosić się wcześniej." },
+                { "language": "ro", "text": "Plausibil, dar incomplet: lipsesc documentarea și motivele pentru care trebuie să contactezi cabinetul mai devreme." },
+                { "language": "sq", "text": "E besueshme, por e paplotë: mungojnë dokumentimi dhe arsyet se kur duhet të kontaktosh më herët." }
+              ],
+              "explanationKey": "b2-treatment-plan-summary-complete"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Eine starke B2-Nachfrage nennt nicht nur 'den Plan', sondern fragt nach Dauer, Ablauf und Erfolgskriterien.",
+          "translations": [
+            { "language": "en", "text": "A strong B2 follow-up question does not only mention 'the plan', but asks about duration, process, and success criteria." },
+            { "language": "fa", "text": "یک سؤال پیگیری قوی در B2 فقط از «برنامه» حرف نمی‌زند، بلکه درباره مدت، روند و معیارهای موفقیت می‌پرسد." },
+            { "language": "ar", "text": "سؤال متابعة قوي في B2 لا يذكر «الخطة» فقط، بل يسأل عن المدة والمسار ومعايير النجاح." },
+            { "language": "tr", "text": "Güçlü bir B2 takip sorusu yalnızca 'planı' belirtmez, süreyi, süreci ve başarı ölçütlerini sorar." },
+            { "language": "ru", "text": "Сильный уточняющий вопрос уровня B2 не просто говорит о «плане», а спрашивает о длительности, процессе и критериях успеха." },
+            { "language": "ckb", "text": "پرسیاری بەدواداچوونی بەهێزی B2 تەنها «پلانەکە» ناو نابێت، بەڵکو لەبارەی ماوە، ڕەوت و پێوەرەکانی سەرکەوتن دەپرسێت." },
+            { "language": "kmr", "text": "Pirseke şopandinê ya xurt a B2 ne tenê 'planê' dibêje, lê li ser dem, pêvajo û pîvanên serkeftinê dipirse." },
+            { "language": "pl", "text": "Mocne pytanie doprecyzowujące na poziomie B2 nie mówi tylko o „planie”, lecz pyta o czas trwania, przebieg i kryteria powodzenia." },
+            { "language": "ro", "text": "O întrebare de clarificare puternică la B2 nu menționează doar „planul”, ci întreabă despre durată, proces și criterii de succes." },
+            { "language": "sq", "text": "Një pyetje e fortë sqaruese në B2 nuk përmend vetëm 'planin', por pyet për kohëzgjatjen, ecurinë dhe kriteret e suksesit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "language",
+          "text": "Konkrete Alltagsziele machen ein medizinisches Gespräch klarer: Gehen, Sitzen, Arbeiten und Belastung sind besser als vage Wünsche.",
+          "translations": [
+            { "language": "en", "text": "Concrete daily-life goals make a medical conversation clearer: walking, sitting, working, and load are better than vague wishes." },
+            { "language": "fa", "text": "هدف‌های روزمره مشخص گفت‌وگوی پزشکی را روشن‌تر می‌کنند: راه رفتن، نشستن، کار کردن و تحمل فشار بهتر از خواسته‌های مبهم هستند." },
+            { "language": "ar", "text": "الأهداف اليومية المحددة تجعل الحديث الطبي أوضح: المشي والجلوس والعمل والتحمل أفضل من الرغبات الغامضة." },
+            { "language": "tr", "text": "Somut günlük yaşam hedefleri tıbbi konuşmayı daha net yapar: yürümek, oturmak, çalışmak ve yüklenme belirsiz dileklerden daha iyidir." },
+            { "language": "ru", "text": "Конкретные повседневные цели делают медицинский разговор яснее: ходьба, сидение, работа и нагрузка лучше, чем расплывчатые пожелания." },
+            { "language": "ckb", "text": "ئامانجە دیاریکراوەکانی ژیانی ڕۆژانە گفتوگۆی پزیشکی ڕوونتر دەکەن: ڕۆیشتن، دانیشتن، کارکردن و فشار باشترن لە خواستە ناڕوونەکان." },
+            { "language": "kmr", "text": "Armancên rojane yên zehf diyar axaftina bijîşkî zelaltir dikin: meşîn, rûniştin, kar û bar ji daxwazên nezelal baştir in." },
+            { "language": "pl", "text": "Konkretne cele codzienne czynią rozmowę medyczną jaśniejszą: chodzenie, siedzenie, praca i obciążenie są lepsze niż niejasne życzenia." },
+            { "language": "ro", "text": "Obiectivele cotidiene concrete fac conversația medicală mai clară: mersul, statul pe scaun, munca și efortul sunt mai bune decât dorințele vagi." },
+            { "language": "sq", "text": "Objektivat konkrete të përditshme e bëjnë bisedën mjekësore më të qartë: ecja, ulja, puna dhe ngarkesa janë më të mira se dëshirat e paqarta." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "safety-note",
+          "text": "Bei Therapieplänen ist es wichtig, nach normalen Reaktionen und Warnzeichen zu fragen, statt selbst zu entscheiden, wann Belastung zu viel ist.",
+          "translations": [
+            { "language": "en", "text": "With treatment plans, it is important to ask about normal reactions and warning signs instead of deciding on your own when load is too much." },
+            { "language": "fa", "text": "در برنامه‌های درمانی مهم است درباره واکنش‌های طبیعی و علائم هشدار سؤال شود، نه اینکه فرد خودش تصمیم بگیرد چه زمانی فشار بیش از حد است." },
+            { "language": "ar", "text": "في خطط العلاج من المهم السؤال عن ردود الفعل الطبيعية وعلامات التحذير بدلاً من أن يقرر الشخص وحده متى يكون الضغط زائداً." },
+            { "language": "tr", "text": "Tedavi planlarında yükün ne zaman fazla olduğuna kendi başına karar vermek yerine normal tepkileri ve uyarı işaretlerini sormak önemlidir." },
+            { "language": "ru", "text": "В планах лечения важно спрашивать о нормальных реакциях и тревожных признаках, а не самостоятельно решать, когда нагрузка слишком велика." },
+            { "language": "ckb", "text": "لە پلانەکانی چارەسەردا گرنگە لەبارەی وەڵامدانەوە ئاساییەکان و نیشانە ئاگادارکەرەوەکان بپرسیت، نە ئەوەی خۆت بڕیار بدەیت کەی فشار زۆرە." },
+            { "language": "kmr", "text": "Di planên dermankirinê de girîng e li ser reaksiyonên normal û nîşanên hişyariyê bipirsî, ne ku bi serê xwe biryar bidî kengê bar zêde ye." },
+            { "language": "pl", "text": "Przy planach leczenia ważne jest pytanie o normalne reakcje i sygnały ostrzegawcze, zamiast samodzielnie decydować, kiedy obciążenie jest zbyt duże." },
+            { "language": "ro", "text": "În planurile de tratament este important să întrebi despre reacții normale și semne de avertizare, nu să decizi singur când solicitarea este prea mare." },
+            { "language": "sq", "text": "Në planet e trajtimit është e rëndësishme të pyesësh për reagimet normale dhe shenjat paralajmëruese, jo të vendosësh vetë kur ngarkesa është tepër e madhe." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Eine gute Schlusszusammenfassung hält Dauer, eigene Aufgaben, Dokumentation, Kontrolltermin und frühere Meldegründe fest.",
+          "translations": [
+            { "language": "en", "text": "A good closing summary records duration, your own tasks, documentation, follow-up appointment, and reasons for earlier contact." },
+            { "language": "fa", "text": "یک خلاصه پایانی خوب مدت، وظایف خود فرد، ثبت مشاهدات، وقت کنترل و دلایل تماس زودتر را مشخص می‌کند." },
+            { "language": "ar", "text": "ملخص ختامي جيد يثبت المدة والمهام الشخصية والتوثيق وموعد المتابعة وأسباب التواصل المبكر." },
+            { "language": "tr", "text": "İyi bir kapanış özeti süreyi, kendi görevlerini, belgelemeyi, kontrol randevusunu ve daha erken iletişim nedenlerini kaydeder." },
+            { "language": "ru", "text": "Хорошее заключительное резюме фиксирует длительность, собственные задачи, документирование, контрольный прием и причины для более ранней связи." },
+            { "language": "ckb", "text": "پوختەی کۆتایی باش ماوە، ئەرکەکانی خۆت، تۆمارکردن، کاتی پشکنین و هۆکارەکانی زووتر پەیوەندی کردن دیاری دەکات." },
+            { "language": "kmr", "text": "Kurtekirina dawî ya baş dem, erkên xwe, belgekirin, randevûya kontrolê û sedemên têkiliya zûtir tomar dike." },
+            { "language": "pl", "text": "Dobre podsumowanie końcowe utrwala czas trwania, własne zadania, dokumentację, wizytę kontrolną i powody wcześniejszego kontaktu." },
+            { "language": "ro", "text": "Un rezumat final bun fixează durata, sarcinile proprii, documentarea, controlul și motivele pentru contact mai devreme." },
+            { "language": "sq", "text": "Një përmbledhje e mirë përfundimtare fikson kohëzgjatjen, detyrat personale, dokumentimin, kontrollin dhe arsyet për kontakt më të hershëm." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3350
+    }
+  ]
+}

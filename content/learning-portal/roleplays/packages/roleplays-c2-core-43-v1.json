@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-43-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 43 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 43",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-langwierigen-mietkonflikt-moderieren",
+      "linkedDialogueSlug": null,
+      "title": "Einen langwierigen Mietkonflikt moderieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Moderating a long-running rental conflict" },
+        { "language": "fa", "text": "میانجی‌گری در یک اختلاف طولانی اجاره" },
+        { "language": "ar", "text": "إدارة نزاع إيجار طويل الأمد" },
+        { "language": "tr", "text": "Uzun süren bir kira anlaşmazlığını yönetmek" },
+        { "language": "ru", "text": "Модерация длительного арендного конфликта" },
+        { "language": "ckb", "text": "ناوبژیوانی لە ناکۆکییەکی درێژخایەنی کرێدا" },
+        { "language": "kmr", "text": "Navbeynkariya nakokiyeke dirêj a kirê" },
+        { "language": "pl", "text": "Moderowanie długotrwałego konfliktu najmu" },
+        { "language": "ro", "text": "Moderarea unui conflict locativ de durată" },
+        { "language": "sq", "text": "Moderimi i një konflikti të gjatë qiraje" }
+      ],
+      "description": "Sie moderieren ein Gespräch zwischen Mieterin und Vermieter, nachdem Feuchtigkeit, Lärm und mehrere erfolglose Reparaturtermine den Konflikt verhärtet haben. Sie sollen Vorwürfe entschärfen, belegbare Punkte sammeln, rechtliche Bewertungen vermeiden und einen dokumentierten nächsten Schritt vereinbaren.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You moderate a conversation between tenant and landlord after dampness, noise, and several unsuccessful repair appointments have hardened the conflict. You should de-escalate accusations, collect verifiable points, avoid legal judgments, and agree on a documented next step." },
+        { "language": "fa", "text": "شما گفت‌وگویی میان مستأجر و صاحب‌خانه را مدیریت می‌کنید، بعد از آنکه رطوبت، سر و صدا و چند وقت ناموفق تعمیر، اختلاف را سخت‌تر کرده‌اند. باید اتهام‌ها را آرام کنید، نکات قابل اثبات را جمع کنید، از ارزیابی حقوقی پرهیز کنید و قدم بعدی مستند را توافق کنید." },
+        { "language": "ar", "text": "تديرون حوارًا بين مستأجرة ومالك بعد أن جعلت الرطوبة والضجيج وعدة مواعيد إصلاح فاشلة النزاع أكثر تصلبًا. ينبغي تهدئة الاتهامات، وجمع النقاط القابلة للإثبات، وتجنب التقييمات القانونية، والاتفاق على خطوة تالية موثقة." },
+        { "language": "tr", "text": "Nem, gürültü ve birkaç başarısız onarım randevusundan sonra çatışma sertleştiği için kiracı ile ev sahibi arasındaki görüşmeyi yönetiyorsunuz. Suçlamaları yumuşatmalı, kanıtlanabilir noktaları toplamalı, hukuki değerlendirmelerden kaçınmalı ve belgelenmiş bir sonraki adım üzerinde anlaşmalısınız." },
+        { "language": "ru", "text": "Вы модерируете разговор между арендаторкой и арендодателем после того, как сырость, шум и несколько безуспешных визитов ремонтников ожесточили конфликт. Вам нужно смягчить обвинения, собрать проверяемые пункты, избегать юридических оценок и согласовать документированный следующий шаг." },
+        { "language": "ckb", "text": "تۆ گفتوگۆی نێوان کرێچییەک و خاوەن خانوو ڕێکدەخەیت، دوای ئەوەی شێ، دەنگ و چەند کاتی چاککردنەوەی بێئەنجام ناکۆکییەکەیان توندتر کردووە. پێویستە تاوانبارکردنەکان ئارام بکەیتەوە، خاڵە پشتڕاستکراوەکان کۆبکەیتەوە، لە هەڵسەنگاندنی یاسایی دوور بکەویت و هەنگاوێکی داهاتووی تۆمارکراو ڕێکبخەیت." },
+        { "language": "kmr", "text": "Hûn gotûbêja di navbera kirêdar û xwediyê xanî de rêve dibin, piştî ku şilbûn, deng û çend randevûyên sererastkirinê yên bêencam nakokî hişktir kirine. Divê tawanbar kirinan sivik bikin, xalên piştrastbar kom bikin, ji nirxandinên qanûnî dûr bikevin û gaveke paşê ya tomarbar li hev bikin." },
+        { "language": "pl", "text": "Moderuje Pan/Pani rozmowę między najemczynią a wynajmującym po tym, jak wilgoć, hałas i kilka nieudanych terminów naprawy zaostrzyły konflikt. Trzeba złagodzić zarzuty, zebrać sprawdzalne punkty, unikać ocen prawnych i uzgodnić udokumentowany następny krok." },
+        { "language": "ro", "text": "Moderați o discuție între chiriașă și proprietar după ce umezeala, zgomotul și mai multe programări de reparație nereușite au rigidizat conflictul. Trebuie să dezamorsați acuzațiile, să colectați puncte verificabile, să evitați evaluările juridice și să conveniți un pas următor documentat." },
+        { "language": "sq", "text": "Moderoni një bisedë mes qiramarrëses dhe pronarit pasi lagështia, zhurma dhe disa takime të pasuksesshme riparimi e kanë ashpërsuar konfliktin. Duhet të ulni akuzat, të mblidhni pika të verifikueshme, të shmangni vlerësimet ligjore dhe të bini dakord për një hap të dokumentuar." }
+      ],
+      "learnerGoal": "Einen verhärteten Mietkonflikt moderieren: Schuldzuweisungen in überprüfbare Punkte übersetzen, Belege von Schlussfolgerungen trennen, keine Rechtsberatung vortäuschen und einen konkreten, schriftlich bestätigten nächsten Schritt vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Moderate a hardened rental conflict: translate blame into verifiable points, separate evidence from conclusions, do not pretend to give legal advice, and agree on a concrete next step confirmed in writing." },
+        { "language": "fa", "text": "یک اختلاف سخت‌شده اجاره را مدیریت کنید: سرزنش‌ها را به نکات قابل بررسی تبدیل کنید، مدارک را از نتیجه‌گیری‌ها جدا کنید، نقش مشاور حقوقی را وانمود نکنید و قدم بعدی مشخص و کتبی‌شده را توافق کنید." },
+        { "language": "ar", "text": "أديروا نزاع إيجار متصلبًا: حولوا اللوم إلى نقاط قابلة للفحص، وافصلوا الأدلة عن الاستنتاجات، ولا تتظاهروا بتقديم استشارة قانونية، واتفقوا على خطوة تالية محددة ومؤكدة خطيًا." },
+        { "language": "tr", "text": "Sertleşmiş bir kira çatışmasını yönetin: suçlamaları incelenebilir noktalara çevirin, kanıtları sonuçlardan ayırın, hukuki danışmanlık veriyormuş gibi yapmayın ve yazılı teyit edilen somut bir sonraki adımda anlaşın." },
+        { "language": "ru", "text": "Модерируйте застывший арендный конфликт: переводите обвинения в проверяемые пункты, отделяйте доказательства от выводов, не изображайте юридическую консультацию и согласуйте конкретный следующий шаг с письменным подтверждением." },
+        { "language": "ckb", "text": "ناکۆکییەکی کرێی توندبوو ڕێکبخە: تاوانبارکردنەکان بگۆڕە بۆ خاڵی پشکنراو، بەڵگەکان لە ئەنجامگیری جیا بکەوە، خۆت وەک ڕاوێژکاری یاسایی نیشان مەدە و هەنگاوێکی داهاتووی دیاریکراو و نووسراو ڕێکبخە." },
+        { "language": "kmr", "text": "Nakokiyeke kirê ya hişk rêve bibin: tawanbar kirinan veguherînin xalên kontrolbar, belgeyan ji encaman veqetînin, xwe wek şêwirmendê qanûnî nîşan nedin û gaveke paşê ya konkret û bi nivîskî piştrastkirî li hev bikin." },
+        { "language": "pl", "text": "Moderować zaostrzony konflikt najmu: przekładać obwinianie na sprawdzalne punkty, oddzielać dowody od wniosków, nie udawać poradnictwa prawnego i uzgodnić konkretny, pisemnie potwierdzony następny krok." },
+        { "language": "ro", "text": "Moderați un conflict locativ înăsprit: transformați învinuirile în puncte verificabile, separați dovezile de concluzii, nu simulați consultanță juridică și conveniți un pas următor concret, confirmat în scris." },
+        { "language": "sq", "text": "Moderoni një konflikt të ashpërsuar qiraje: ktheni fajësimet në pika të verifikueshme, ndani provat nga përfundimet, mos pretendoni këshillim ligjor dhe bini dakord për një hap konkret të konfirmuar me shkrim." }
+      ],
+      "cefrLevel": "C2",
+      "category": "housing",
+      "topics": ["housing", "social-and-relationships"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 43,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Moderator",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "میانجی" },
+            { "language": "ar", "text": "الوسيط" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "ناوبژیوان" },
+            { "language": "kmr", "text": "Navbeynkar" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderatori" }
+          ]
+        },
+        {
+          "roleKey": "landlord",
+          "displayName": "Vermieter",
+          "translations": [
+            { "language": "en", "text": "Landlord" },
+            { "language": "fa", "text": "صاحب‌خانه" },
+            { "language": "ar", "text": "المالك" },
+            { "language": "tr", "text": "Ev sahibi" },
+            { "language": "ru", "text": "Арендодатель" },
+            { "language": "ckb", "text": "خاوەن خانوو" },
+            { "language": "kmr", "text": "Xwediyê xanî" },
+            { "language": "pl", "text": "Wynajmujący" },
+            { "language": "ro", "text": "Proprietarul" },
+            { "language": "sq", "text": "Pronari" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "landlord",
+          "baseText": "Ich habe den Eindruck, dass mir hier pauschal Untätigkeit unterstellt wird. Dabei waren schon mehrfach Handwerker vor Ort.",
+          "translations": [
+            { "language": "en", "text": "I have the impression that blanket inaction is being attributed to me here. Yet tradespeople have already been on site several times." },
+            { "language": "fa", "text": "احساس می‌کنم اینجا به‌طور کلی به من بی‌عملی نسبت داده می‌شود. در حالی که چند بار تعمیرکار در محل بوده است." },
+            { "language": "ar", "text": "لدي انطباع بأن التقاعس يُنسب إليّ هنا بشكل عام. مع أن الحرفيين حضروا إلى المكان عدة مرات." },
+            { "language": "tr", "text": "Burada bana genel olarak hareketsizlik atfedildiği izlenimine sahibim. Oysa ustalar birkaç kez yerinde bulundu." },
+            { "language": "ru", "text": "У меня впечатление, что мне здесь в целом приписывают бездействие. При этом мастера уже несколько раз были на месте." },
+            { "language": "ckb", "text": "هەستم وایە لێرە بە شێوەی گشتی بێکرداری بە من دەدرێت. لە کاتێکدا چەند جار کرێکاری چاککردنەوە لە شوێنەکە بوون." },
+            { "language": "kmr", "text": "Ez wisa hest dikim ku li vir bi giştî bêçalakî li min tê barkirin. Lê çend caran hunermendên sererastkirinê li cihê xwe bûn." },
+            { "language": "pl", "text": "Mam wrażenie, że ogólnie zarzuca mi się tu bezczynność. Tymczasem fachowcy byli już kilka razy na miejscu." },
+            { "language": "ro", "text": "Am impresia că mi se atribuie aici în mod general lipsa de acțiune. Totuși, meșteri au fost deja de mai multe ori la fața locului." },
+            { "language": "sq", "text": "Kam përshtypjen se këtu më ngarkohet në mënyrë të përgjithshme mosveprimi. Ndërkohë, mjeshtrit kanë qenë disa herë në vend." }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde gern die Vorwurfsfrage kurz beiseitelassen und den Ablauf rekonstruieren: Welche Termine haben stattgefunden, welche Mängel wurden dabei geprüft, und welche Punkte sind danach aus Sicht der Mieterin offen geblieben?",
+          "translations": [
+            { "language": "en", "text": "I would like to set the question of blame aside briefly and reconstruct the sequence: which appointments took place, which defects were inspected, and which points remained open afterward from the tenant's perspective?" },
+            { "language": "fa", "text": "مایلم فعلاً مسئله سرزنش را کنار بگذاریم و روند را بازسازی کنیم: چه وقت‌هایی انجام شده، کدام نقص‌ها بررسی شده و بعد از آن از دید مستأجر کدام نکات باز مانده‌اند؟" },
+            { "language": "ar", "text": "أود أن نضع مسألة اللوم جانبًا قليلًا ونعيد بناء التسلسل: ما المواعيد التي تمت، وما العيوب التي فُحصت، وما النقاط التي بقيت مفتوحة بعد ذلك من وجهة نظر المستأجرة؟" },
+            { "language": "tr", "text": "Suçlama meselesini kısa süreliğine bir kenara bırakıp süreci yeniden kurmak isterim: hangi randevular gerçekleşti, hangi kusurlar incelendi ve kiracının bakış açısından sonrasında hangi noktalar açık kaldı?" },
+            { "language": "ru", "text": "Я бы хотел ненадолго отложить вопрос обвинений и восстановить ход событий: какие встречи состоялись, какие дефекты проверялись и какие пункты после этого остались открытыми с точки зрения арендаторки?" },
+            { "language": "ckb", "text": "دەمەوێت بۆ ماوەیەکی کورت پرسی تاوانبارکردن لابنێین و ڕەوتەکە دوبارە ڕێکبخەین: کام کاتەکان ڕوویداوە، کام کەم‌وکورتەکان پشکنراون، و دوای ئەوە لە دیدی کرێچییەکە کام خاڵان کراوە ماونەتەوە؟" },
+            { "language": "kmr", "text": "Ez dixwazim pirsa tawanbar kirinê kurt demekê bidim alî û rêzê ji nû ve saz bikim: kîjan randevû pêk hatin, kîjan kêmasî hatin vekolîn, û piştî wê ji perspektîfa kirêdarê kîjan xal vekirî man?" },
+            { "language": "pl", "text": "Chciałbym/Chciałabym na chwilę odłożyć kwestię zarzutów i odtworzyć przebieg: jakie terminy się odbyły, jakie usterki wtedy sprawdzono i które punkty z perspektywy najemczyni pozostały potem otwarte?" },
+            { "language": "ro", "text": "Aș dori să lăsăm pe scurt deoparte întrebarea despre vină și să reconstruim desfășurarea: ce programări au avut loc, ce defecte au fost verificate și ce puncte au rămas deschise apoi din perspectiva chiriașei?" },
+            { "language": "sq", "text": "Do të doja ta lëmë pak mënjanë çështjen e fajësimit dhe të rindërtojmë rrjedhën: cilat takime u zhvilluan, cilat defekte u kontrolluan dhe cilat pika mbetën të hapura më pas nga këndvështrimi i qiramarrëses?" }
+          ],
+          "function": "de-escalate-and-structure",
+          "toneNote": "Schuldfrage stoppen und auf überprüfbare Chronologie lenken.",
+          "expectedLearnerAction": "Move from blame to documented sequence and open points."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "landlord",
+          "baseText": "Es gab zwei Termine wegen der Feuchtigkeit und einen wegen des Lärms im Treppenhaus. Beim Lärm sehe ich allerdings nicht, was ich als Vermieter konkret tun soll.",
+          "translations": [
+            { "language": "en", "text": "There were two appointments about the dampness and one about the noise in the stairwell. Regarding the noise, however, I do not see what I as landlord am specifically supposed to do." },
+            { "language": "fa", "text": "دو وقت برای رطوبت و یکی برای سر و صدای راه‌پله وجود داشت. اما درباره سر و صدا نمی‌دانم من به‌عنوان صاحب‌خانه دقیقاً چه کاری باید انجام دهم." },
+            { "language": "ar", "text": "كانت هناك جلستان بسبب الرطوبة وواحدة بسبب الضجيج في الدرج. أما بخصوص الضجيج فلا أرى ما الذي ينبغي عليّ كمالك فعله تحديدًا." },
+            { "language": "tr", "text": "Nem için iki randevu, merdiven boşluğundaki gürültü için bir randevu vardı. Gürültü konusunda ise ev sahibi olarak somut olarak ne yapmam gerektiğini göremiyorum." },
+            { "language": "ru", "text": "Было две встречи по поводу сырости и одна по поводу шума на лестничной клетке. Но по шуму я не вижу, что конкретно должен делать как арендодатель." },
+            { "language": "ckb", "text": "دوو کات هەبوو بۆ شێ و یەک کات بۆ دەنگ لە پەیژە. بەڵام دەربارەی دەنگەکە نابینم من وەک خاوەن خانوو بە وردی چی بکەم." },
+            { "language": "kmr", "text": "Du randevû ji bo şilbûnê û yek ji bo dengê di derenceyan de hebûn. Lê li ser deng ez nabînim wek xwediyê xanî bi konkret çi bikim." },
+            { "language": "pl", "text": "Były dwa terminy dotyczące wilgoci i jeden dotyczący hałasu na klatce schodowej. W sprawie hałasu nie widzę jednak, co konkretnie miałbym zrobić jako wynajmujący." },
+            { "language": "ro", "text": "Au fost două programări pentru umezeală și una pentru zgomotul de pe casa scării. În privința zgomotului însă nu văd ce ar trebui să fac concret ca proprietar." },
+            { "language": "sq", "text": "Pati dy takime për lagështinë dhe një për zhurmën në shkallë. Por për zhurmën nuk shoh çfarë duhet të bëj konkretisht si pronar." }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dann trennen wir beides: Bei der Feuchtigkeit geht es um technische Prüfung und Reparaturstand. Beim Lärm geht es zunächst um Dokumentation: Zeiten, Häufigkeit, beteiligte Parteien und ob ein Hausordnungsgespräch sinnvoll ist.",
+          "translations": [
+            { "language": "en", "text": "Then let us separate the two: with dampness, the issue is technical inspection and repair status. With noise, the first issue is documentation: times, frequency, parties involved, and whether a house-rules conversation makes sense." },
+            { "language": "fa", "text": "پس این دو را جدا می‌کنیم: در مورد رطوبت، مسئله بررسی فنی و وضعیت تعمیر است. در مورد سر و صدا، ابتدا مسئله مستندسازی است: زمان‌ها، تکرار، طرف‌های درگیر و اینکه آیا گفت‌وگو درباره مقررات ساختمان مفید است یا نه." },
+            { "language": "ar", "text": "إذن نفصل الأمرين: في الرطوبة يتعلق الأمر بالفحص الفني وحالة الإصلاح. أما في الضجيج فالأمر أولًا يتعلق بالتوثيق: الأوقات، والتكرار، والأطراف المعنية، وما إذا كان حوار حول قواعد المنزل مفيدًا." },
+            { "language": "tr", "text": "O halde ikisini ayıralım: nemde konu teknik inceleme ve onarım durumudur. Gürültüde ise önce belgeleme gerekir: saatler, sıklık, ilgili taraflar ve bina kuralları üzerine bir görüşmenin anlamlı olup olmadığı." },
+            { "language": "ru", "text": "Тогда разделим эти два вопроса: по сырости речь о технической проверке и состоянии ремонта. По шуму сначала речь о документировании: время, частота, участвующие стороны и имеет ли смысл разговор о правилах дома." },
+            { "language": "ckb", "text": "ئەوا هەردووکیان جیا دەکەینەوە: لە شێدا بابەتەکە پشکنینی تەکنیکی و دۆخی چاککردنەوەیە. لە دەنگدا سەرەتا بابەتەکە مستەندسازییە: کاتەکان، دووبارەبوونەوە، لایەنە پەیوەندیدارەکان و ئایا گفتوگۆی یاساکانی خانوو مانادارە یان نا." },
+            { "language": "kmr", "text": "Wê demê em herduyan veqetînin: di şilbûnê de mijar vekolîna teknîkî û rewşa sererastkirinê ye. Di deng de pêşî mijar belgekirin e: dem, pircarî, aliyên têkildar û ka gotûbêjek li ser rêzikên avahiyê watedar e an na." },
+            { "language": "pl", "text": "W takim razie oddzielmy te dwie sprawy: przy wilgoci chodzi o kontrolę techniczną i stan naprawy. Przy hałasie najpierw chodzi o dokumentację: godziny, częstotliwość, strony zaangażowane i czy rozmowa o regulaminie domu ma sens." },
+            { "language": "ro", "text": "Atunci separăm cele două aspecte: la umezeală este vorba despre verificarea tehnică și stadiul reparației. La zgomot este vorba mai întâi despre documentare: ore, frecvență, părți implicate și dacă are sens o discuție despre regulile imobilului." },
+            { "language": "sq", "text": "Atëherë i ndajmë të dyja: për lagështinë bëhet fjalë për kontroll teknik dhe gjendjen e riparimit. Për zhurmën bëhet fjalë së pari për dokumentim: oraret, shpeshtësia, palët e përfshira dhe nëse ka kuptim një bisedë për rregullat e ndërtesës." }
+          ],
+          "function": "separate-issues",
+          "toneNote": "Technische Mängel und soziale Störung nicht vermischen.",
+          "expectedLearnerAction": "Separate repair evidence from noise documentation and house-rule discussion."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "landlord",
+          "baseText": "Die Mieterin hat aber bereits eine Mietminderung angedeutet. Das macht das Gespräch schwierig, weil dann sofort eine rechtliche Ebene im Raum steht.",
+          "translations": [
+            { "language": "en", "text": "But the tenant has already hinted at a rent reduction. That makes the conversation difficult because then a legal level is immediately in the room." },
+            { "language": "fa", "text": "اما مستأجر قبلاً به کاهش اجاره اشاره کرده است. این گفت‌وگو را سخت می‌کند، چون فوراً سطح حقوقی وارد بحث می‌شود." },
+            { "language": "ar", "text": "لكن المستأجرة لمحت بالفعل إلى تخفيض الإيجار. وهذا يجعل الحوار صعبًا لأن المستوى القانوني يصبح حاضرًا فورًا." },
+            { "language": "tr", "text": "Ama kiracı daha önce kira indirimi ima etti. Bu görüşmeyi zorlaştırıyor, çünkü hemen hukuki bir düzey ortaya çıkıyor." },
+            { "language": "ru", "text": "Но арендаторка уже намекнула на снижение арендной платы. Это затрудняет разговор, потому что сразу появляется юридический уровень." },
+            { "language": "ckb", "text": "بەڵام کرێچییەکە پێشتر ئاماژەی بە کەمکردنەوەی کرێ کردووە. ئەمە گفتوگۆکە قورس دەکات، چونکە دەستبەجێ ئاستێکی یاسایی دێتە ناوەوە." },
+            { "language": "kmr", "text": "Lê kirêdar berê îşareta kêmkirina kirêyê kir. Ev gotûbêjê dijwar dike, ji ber ku wê demê asteke qanûnî yekser tê navê." },
+            { "language": "pl", "text": "Najemczyni zasugerowała już jednak obniżenie czynszu. To utrudnia rozmowę, bo wtedy od razu pojawia się poziom prawny." },
+            { "language": "ro", "text": "Chiriașa a sugerat deja o reducere a chiriei. Asta face discuția dificilă, deoarece apare imediat un nivel juridic." },
+            { "language": "sq", "text": "Por qiramarrësja tashmë ka lënë të kuptohet ulje qiraje. Kjo e bën bisedën të vështirë, sepse menjëherë hyn një nivel ligjor." }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Dann sollten wir klar sagen, dass dieses Gespräch keine Rechtsbewertung ersetzt. Heute können wir aber festhalten, welche Mängel behauptet werden, welche Belege vorliegen und bis wann eine technische Rückmeldung erfolgt.",
+          "translations": [
+            { "language": "en", "text": "Then we should clearly say that this conversation does not replace a legal assessment. Today, however, we can record which defects are being claimed, which evidence is available, and by when technical feedback will be given." },
+            { "language": "fa", "text": "پس باید روشن بگوییم که این گفت‌وگو جای ارزیابی حقوقی را نمی‌گیرد. اما امروز می‌توانیم ثبت کنیم کدام نقص‌ها مطرح شده‌اند، چه مدارکی وجود دارد و تا چه زمانی پاسخ فنی داده می‌شود." },
+            { "language": "ar", "text": "إذن ينبغي أن نقول بوضوح إن هذا الحوار لا يحل محل تقييم قانوني. لكن يمكننا اليوم تسجيل العيوب المطروحة، والأدلة المتوفرة، والموعد الذي ستصدر فيه ملاحظة فنية." },
+            { "language": "tr", "text": "O zaman bu görüşmenin hukuki bir değerlendirmenin yerine geçmediğini açıkça söylemeliyiz. Bugün ise hangi kusurların ileri sürüldüğünü, hangi kanıtların bulunduğunu ve teknik geri bildirimin ne zamana kadar yapılacağını kaydedebiliriz." },
+            { "language": "ru", "text": "Тогда нам следует ясно сказать, что этот разговор не заменяет юридическую оценку. Но сегодня мы можем зафиксировать, какие дефекты заявлены, какие доказательства имеются и до какого срока будет технический ответ." },
+            { "language": "ckb", "text": "ئەوا پێویستە بە ڕوونی بڵێین ئەم گفتوگۆیە جێگەی هەڵسەنگاندنی یاسایی ناگرێتەوە. بەڵام ئەمڕۆ دەتوانین تۆمار بکەین کام کەم‌وکورتانە بانگەشە کراون، کام بەڵگەکان هەن و تا کەی وەڵامی تەکنیکی دەدرێت." },
+            { "language": "kmr", "text": "Wê demê divê em bi zelalî bibêjin ku ev gotûbêj cihê nirxandina qanûnî nagire. Lê îro em dikarin tomar bikin kîjan kêmasî têne îdiakirin, kîjan belge hene û heta kengê bersiva teknîkî tê dayîn." },
+            { "language": "pl", "text": "Wtedy powinniśmy jasno powiedzieć, że ta rozmowa nie zastępuje oceny prawnej. Dziś możemy jednak odnotować, jakie usterki są zgłaszane, jakie dowody istnieją i do kiedy nastąpi odpowiedź techniczna." },
+            { "language": "ro", "text": "Atunci ar trebui să spunem clar că această discuție nu înlocuiește o evaluare juridică. Astăzi putem însă consemna ce defecte sunt invocate, ce dovezi există și până când va fi transmis un răspuns tehnic." },
+            { "language": "sq", "text": "Atëherë duhet të themi qartë se kjo bisedë nuk zëvendëson një vlerësim ligjor. Sot mund të shënojmë cilat defekte pretendohen, cilat prova ekzistojnë dhe deri kur do të jepet një përgjigje teknike." }
+          ],
+          "function": "avoid-legal-advice",
+          "toneNote": "Rechtsfragen abgrenzen und trotzdem handlungsfähig bleiben.",
+          "expectedLearnerAction": "State legal boundary and define factual documentation."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "landlord",
+          "baseText": "Wenn wir das so festhalten, brauche ich aber auch eine klare Frist für die Rückmeldung der Mieterin. Sonst kommen immer wieder neue Punkte dazu.",
+          "translations": [
+            { "language": "en", "text": "If we record it that way, I also need a clear deadline for the tenant's feedback. Otherwise new points keep being added." },
+            { "language": "fa", "text": "اگر این‌طور ثبت کنیم، من هم به یک مهلت روشن برای بازخورد مستأجر نیاز دارم. وگرنه مدام نکات جدید اضافه می‌شود." },
+            { "language": "ar", "text": "إذا سجلنا الأمر بهذه الطريقة، فأنا أحتاج أيضًا إلى مهلة واضحة لرد المستأجرة. وإلا ستُضاف نقاط جديدة باستمرار." },
+            { "language": "tr", "text": "Bunu böyle kaydedersek, kiracının geri bildirimi için de net bir süreye ihtiyacım var. Aksi halde sürekli yeni noktalar ekleniyor." },
+            { "language": "ru", "text": "Если мы так это зафиксируем, мне также нужен четкий срок для ответа арендаторки. Иначе постоянно добавляются новые пункты." },
+            { "language": "ckb", "text": "ئەگەر بەو شێوەیە تۆماری بکەین، منیش پێویستم بە مۆڵەتێکی ڕوونە بۆ وەڵامی کرێچییەکە. ئەگەر نا، بەردەوام خاڵی نوێ زیاد دەبێت." },
+            { "language": "kmr", "text": "Heke em wê wisa tomar bikin, pêwîstiya min jî bi demeke zelal ji bo bersiva kirêdarê heye. Heke na, her car xalên nû zêde dibin." },
+            { "language": "pl", "text": "Jeśli tak to odnotujemy, potrzebuję też jasnego terminu na informację zwrotną najemczyni. Inaczej ciągle dochodzą nowe punkty." },
+            { "language": "ro", "text": "Dacă consemnăm așa, am nevoie și de un termen clar pentru răspunsul chiriașei. Altfel apar mereu puncte noi." },
+            { "language": "sq", "text": "Nëse e shënojmë kështu, më duhet edhe një afat i qartë për përgjigjen e qiramarrëses. Përndryshe shtohen vazhdimisht pika të reja." }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist fair. Ich schlage einen beidseitigen Ablauf vor: Die Mieterin schickt bis Mittwoch Fotos und ein Lärmprotokoll, Sie geben bis Freitag eine technische Einschätzung zur Feuchtigkeit und nennen einen verbindlichen Reparaturtermin oder eine nachvollziehbare Begründung.",
+          "translations": [
+            { "language": "en", "text": "That is fair. I suggest a two-sided process: the tenant sends photos and a noise log by Wednesday; you provide a technical assessment of the dampness by Friday and name a binding repair appointment or a comprehensible reason." },
+            { "language": "fa", "text": "این منصفانه است. یک روند دوطرفه پیشنهاد می‌کنم: مستأجر تا چهارشنبه عکس‌ها و گزارش سر و صدا را می‌فرستد؛ شما تا جمعه ارزیابی فنی درباره رطوبت می‌دهید و یک وقت تعمیر الزام‌آور یا توضیح قابل فهم ارائه می‌کنید." },
+            { "language": "ar", "text": "هذا عادل. أقترح مسارًا من الطرفين: ترسل المستأجرة الصور وسجل الضجيج حتى الأربعاء، وأنتم تقدمون حتى الجمعة تقييمًا فنيًا للرطوبة وتذكرون موعد إصلاح ملزمًا أو تبريرًا مفهومًا." },
+            { "language": "tr", "text": "Bu adil. İki taraflı bir süreç öneriyorum: kiracı çarşambaya kadar fotoğrafları ve gürültü kaydını gönderir; siz cumaya kadar neme ilişkin teknik bir değerlendirme yapar ve bağlayıcı bir onarım randevusu ya da anlaşılır bir gerekçe belirtirsiniz." },
+            { "language": "ru", "text": "Это справедливо. Я предлагаю двусторонний процесс: арендаторка до среды отправляет фотографии и протокол шума; вы до пятницы даете техническую оценку сырости и называете обязательную дату ремонта или понятное обоснование." },
+            { "language": "ckb", "text": "ئەمە دادپەروەرانەیە. ڕەوتێکی دوولایەنە پێشنیار دەکەم: کرێچییەکە تا چوارشەممە وێنەکان و تۆماری دەنگ دەنێرێت؛ ئێوە تا هەینی هەڵسەنگاندنی تەکنیکی بۆ شێ دەدەن و کاتی چاککردنەوەی پابەندکەر یان پاساوێکی تێگەیشتوو ناودەبەن." },
+            { "language": "kmr", "text": "Ev adil e. Ez pêvajoyeke dualî pêşniyar dikim: kirêdar heta Çarşemê wêne û protokola dengê dişîne; hûn heta Înê nirxandineke teknîkî ya şilbûnê didin û randevûyek sererastkirinê ya girêdayî an sedemeke fêmbar nav dikin." },
+            { "language": "pl", "text": "To uczciwe. Proponuję dwustronny przebieg: najemczyni do środy wysyła zdjęcia i protokół hałasu, a Pan do piątku przekazuje techniczną ocenę wilgoci i podaje wiążący termin naprawy albo zrozumiałe uzasadnienie." },
+            { "language": "ro", "text": "Este corect. Propun un proces bilateral: chiriașa trimite până miercuri fotografii și un jurnal al zgomotului, iar dumneavoastră transmiteți până vineri o evaluare tehnică a umezelii și numiți o programare fermă pentru reparație sau o justificare clară." },
+            { "language": "sq", "text": "Kjo është e drejtë. Propozoj një proces dypalësh: qiramarrësja dërgon deri të mërkurën fotot dhe një regjistër zhurme; ju jepni deri të premten një vlerësim teknik për lagështinë dhe caktoni një takim të detyrueshëm riparimi ose një arsyetim të kuptueshëm." }
+          ],
+          "function": "two-sided-process",
+          "toneNote": "Fristen und Pflichten beider Seiten symmetrisch formulieren.",
+          "expectedLearnerAction": "Create a balanced documented process with dates and deliverables."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "landlord",
+          "baseText": "Damit kann ich arbeiten. Wichtig ist mir, dass daraus keine Anerkennung irgendeiner Forderung abgeleitet wird, solange die Prüfung läuft.",
+          "translations": [
+            { "language": "en", "text": "I can work with that. What matters to me is that no acknowledgment of any claim is derived from it while the review is ongoing." },
+            { "language": "fa", "text": "با این می‌توانم کار کنم. برایم مهم است که تا وقتی بررسی در جریان است، از آن پذیرش هیچ مطالبه‌ای برداشت نشود." },
+            { "language": "ar", "text": "يمكنني العمل بذلك. المهم بالنسبة إليّ ألا يُستنتج منه اعتراف بأي مطالبة ما دامت المراجعة جارية." },
+            { "language": "tr", "text": "Bununla çalışabilirim. Benim için önemli olan, inceleme sürerken bundan herhangi bir talebin kabul edildiği sonucunun çıkarılmamasıdır." },
+            { "language": "ru", "text": "С этим я могу работать. Для меня важно, чтобы из этого не выводилось признание какого-либо требования, пока проверка продолжается." },
+            { "language": "ckb", "text": "لەگەڵ ئەمە دەتوانم کار بکەم. بۆ من گرنگە تا کاتێک پشکنینەکە بەردەوامە، لەمەوە داننان بە هیچ داواکارییەک وەربگیرێت." },
+            { "language": "kmr", "text": "Ez dikarim bi vê re bixebitim. Ji bo min girîng e ku heta vekolîn didome, ji vê yekê pejirandina daxwazekê neyê derxistin." },
+            { "language": "pl", "text": "Z tym mogę pracować. Ważne jest dla mnie, aby w trakcie sprawdzania nie wywodzono z tego uznania jakiegokolwiek roszczenia." },
+            { "language": "ro", "text": "Cu asta pot lucra. Pentru mine este important să nu se deducă de aici recunoașterea vreunei pretenții cât timp verificarea este în curs." },
+            { "language": "sq", "text": "Me këtë mund të punoj. Për mua është e rëndësishme që gjatë shqyrtimit të mos nxirret prej kësaj njohje e ndonjë kërkese." }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das nehmen wir ausdrücklich ins Protokoll auf: Die Vereinbarung dient der Klärung und Dokumentation, nicht der rechtlichen Anerkennung. Gleichzeitig enthält sie zwei Fristen, die offenen Unterlagen und den nächsten Reparatur- oder Begründungsschritt.",
+          "translations": [
+            { "language": "en", "text": "We will include that explicitly in the record: the agreement serves clarification and documentation, not legal acknowledgment. At the same time, it contains two deadlines, the open documents, and the next repair or justification step." },
+            { "language": "fa", "text": "این را صریحاً در صورت‌جلسه می‌آوریم: توافق برای روشن‌سازی و مستندسازی است، نه پذیرش حقوقی. هم‌زمان شامل دو مهلت، مدارک بازمانده و قدم بعدی برای تعمیر یا ارائه دلیل است." },
+            { "language": "ar", "text": "سنذكر ذلك صراحة في المحضر: الاتفاق يخدم التوضيح والتوثيق، لا الاعتراف القانوني. وفي الوقت نفسه يتضمن مهلتين، والمستندات المفتوحة، وخطوة الإصلاح أو التبرير التالية." },
+            { "language": "tr", "text": "Bunu tutanağa açıkça alırız: anlaşma açıklığa kavuşturma ve belgeleme içindir, hukuki kabul için değil. Aynı zamanda iki süre, açık belgeler ve sonraki onarım ya da gerekçe adımını içerir." },
+            { "language": "ru", "text": "Мы прямо внесем это в протокол: соглашение служит прояснению и документированию, а не юридическому признанию. Одновременно оно содержит два срока, открытые документы и следующий шаг по ремонту или обоснованию." },
+            { "language": "ckb", "text": "ئەمە بە ڕوونی دەخەینە ناو پرۆتۆکۆڵەکە: ڕێککەوتنەکە بۆ ڕوونکردنەوە و مستەندسازییە، نەک داننانی یاسایی. هەمان کات دوو مۆڵەت، بەڵگە کراوەکان و هەنگاوی داهاتووی چاککردنەوە یان پاساوکردن لەخۆ دەگرێت." },
+            { "language": "kmr", "text": "Em vê bi zelalî di protokolê de dinivîsin: lihevhatin ji bo zelalkirin û belgekirinê ye, ne ji bo pejirandina qanûnî. Di heman demê de du dem, belgeyên vekirî û gava paşê ya sererastkirinê an sedemê dihewîne." },
+            { "language": "pl", "text": "Wpiszemy to wyraźnie do protokołu: uzgodnienie służy wyjaśnieniu i dokumentacji, a nie prawnemu uznaniu. Jednocześnie zawiera dwa terminy, otwarte dokumenty oraz następny krok naprawy albo uzasadnienia." },
+            { "language": "ro", "text": "Vom include asta explicit în procesul-verbal: acordul servește clarificării și documentării, nu recunoașterii juridice. În același timp, conține două termene, documentele deschise și următorul pas de reparație sau justificare." },
+            { "language": "sq", "text": "Këtë e përfshijmë qartë në procesverbal: marrëveshja shërben për sqarim dhe dokumentim, jo për njohje ligjore. Njëkohësisht ajo përmban dy afate, dokumentet e hapura dhe hapin e ardhshëm të riparimit ose arsyetimit." }
+          ],
+          "function": "documented-close",
+          "toneNote": "Anerkennungsgrenze und konkrete nächste Schritte zusammenfassen.",
+          "expectedLearnerAction": "Close with written record, boundaries, deadlines, and next repair/reasoning step."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde gern die Vorwurfsfrage kurz beiseitelassen und den Ablauf rekonstruieren: Welche Termine haben stattgefunden, welche Mängel wurden dabei geprüft, und welche Punkte sind danach aus Sicht der Mieterin offen geblieben?",
+              "translations": [
+                { "language": "en", "text": "I would like to set the question of blame aside briefly and reconstruct the sequence: which appointments took place, which defects were inspected, and which points remained open afterward from the tenant's perspective?" },
+                { "language": "fa", "text": "مایلم فعلاً مسئله سرزنش را کنار بگذاریم و روند را بازسازی کنیم: چه وقت‌هایی انجام شده، کدام نقص‌ها بررسی شده و بعد از آن از دید مستأجر کدام نکات باز مانده‌اند؟" },
+                { "language": "ar", "text": "أود أن نضع مسألة اللوم جانبًا قليلًا ونعيد بناء التسلسل: ما المواعيد التي تمت، وما العيوب التي فُحصت، وما النقاط التي بقيت مفتوحة بعد ذلك من وجهة نظر المستأجرة؟" },
+                { "language": "tr", "text": "Suçlama meselesini kısa süreliğine bir kenara bırakıp süreci yeniden kurmak isterim: hangi randevular gerçekleşti, hangi kusurlar incelendi ve kiracının bakış açısından sonrasında hangi noktalar açık kaldı?" },
+                { "language": "ru", "text": "Я бы хотел ненадолго отложить вопрос обвинений и восстановить ход событий: какие встречи состоялись, какие дефекты проверялись и какие пункты после этого остались открытыми с точки зрения арендаторки?" },
+                { "language": "ckb", "text": "دەمەوێت بۆ ماوەیەکی کورت پرسی تاوانبارکردن لابنێین و ڕەوتەکە دوبارە ڕێکبخەین: کام کاتەکان ڕوویداوە، کام کەم‌وکورتەکان پشکنراون، و دوای ئەوە لە دیدی کرێچییەکە کام خاڵان کراوە ماونەتەوە؟" },
+                { "language": "kmr", "text": "Ez dixwazim pirsa tawanbar kirinê kurt demekê bidim alî û rêzê ji nû ve saz bikim: kîjan randevû pêk hatin, kîjan kêmasî hatin vekolîn, û piştî wê ji perspektîfa kirêdarê kîjan xal vekirî man?" },
+                { "language": "pl", "text": "Chciałbym/Chciałabym na chwilę odłożyć kwestię zarzutów i odtworzyć przebieg: jakie terminy się odbyły, jakie usterki wtedy sprawdzono i które punkty z perspektywy najemczyni pozostały potem otwarte?" },
+                { "language": "ro", "text": "Aș dori să lăsăm pe scurt deoparte întrebarea despre vină și să reconstruim desfășurarea: ce programări au avut loc, ce defecte au fost verificate și ce puncte au rămas deschise apoi din perspectiva chiriașei?" },
+                { "language": "sq", "text": "Do të doja ta lëmë pak mënjanë çështjen e fajësimit dhe të rindërtojmë rrjedhën: cilat takime u zhvilluan, cilat defekte u kontrolluan dhe cilat pika mbetën të hapura më pas nga këndvështrimi i qiramarrëses?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort stoppt die Schuldspirale und führt zu prüfbaren Fakten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer stops the blame spiral and leads to verifiable facts." },
+                { "language": "fa", "text": "قوی: پاسخ چرخه سرزنش را متوقف می‌کند و بحث را به واقعیت‌های قابل بررسی می‌برد." },
+                { "language": "ar", "text": "قوي: الجواب يوقف دوامة اللوم ويقود إلى حقائق قابلة للفحص." },
+                { "language": "tr", "text": "Güçlü: Yanıt suçlama döngüsünü durduruyor ve incelenebilir gerçeklere götürüyor." },
+                { "language": "ru", "text": "Сильно: ответ останавливает спираль обвинений и ведет к проверяемым фактам." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بازنەی تاوانبارکردن دەوەستێنێت و دەباتە سەر ڕاستییە پشکنراوەکان." },
+                { "language": "kmr", "text": "Xurt e: Bersiv çerxa tawanbar kirinê disekinîne û ber bi rastiyên kontrolbar ve dibe." },
+                { "language": "pl", "text": "Mocne: odpowiedź zatrzymuje spiralę obwiniania i prowadzi do sprawdzalnych faktów." },
+                { "language": "ro", "text": "Puternic: răspunsul oprește spirala învinuirii și duce la fapte verificabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndalon spiralen e fajësimit dhe çon te faktet e verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich verstehe Ihren Punkt, aber die Mieterin hat offenbar das Gefühl, dass zu wenig passiert ist.",
+              "translations": [
+                { "language": "en", "text": "I understand your point, but the tenant apparently feels that too little has happened." },
+                { "language": "fa", "text": "نکته شما را می‌فهمم، اما ظاهراً مستأجر احساس می‌کند کار کافی انجام نشده است." },
+                { "language": "ar", "text": "أفهم وجهة نظركم، لكن يبدو أن المستأجرة تشعر بأن ما حدث كان قليلًا جدًا." },
+                { "language": "tr", "text": "Noktanızı anlıyorum, ama kiracı görünüşe göre çok az şey yapıldığını hissediyor." },
+                { "language": "ru", "text": "Я понимаю вашу точку зрения, но арендаторка, по-видимому, чувствует, что было сделано слишком мало." },
+                { "language": "ckb", "text": "خاڵەکەتان تێدەگەم، بەڵام دیارە کرێچییەکە هەست دەکات زۆر کەم کراوە." },
+                { "language": "kmr", "text": "Ez xalê we fêm dikim, lê xuya ye kirêdar hest dike ku pir hindik tişt hatiye kirin." },
+                { "language": "pl", "text": "Rozumiem Pana punkt, ale najemczyni najwyraźniej ma poczucie, że zrobiono za mało." },
+                { "language": "ro", "text": "Înțeleg punctul dumneavoastră, dar chiriașa pare să simtă că s-a făcut prea puțin." },
+                { "language": "sq", "text": "E kuptoj pikën tuaj, por qiramarrësja duket se ndien se është bërë shumë pak." }
+              ],
+              "isCorrect": false,
+              "feedback": "Höflich, aber zu unstrukturiert. Die Antwort benennt Gefühle, übersetzt sie aber nicht in überprüfbare Schritte.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite, but too unstructured. The answer names feelings but does not translate them into verifiable steps." },
+                { "language": "fa", "text": "مودبانه است، اما ساختار کافی ندارد. پاسخ احساسات را نام می‌برد، اما آن‌ها را به قدم‌های قابل بررسی تبدیل نمی‌کند." },
+                { "language": "ar", "text": "مهذب، لكنه غير منظم بما يكفي. الجواب يذكر المشاعر لكنه لا يحولها إلى خطوات قابلة للفحص." },
+                { "language": "tr", "text": "Kibar, ama fazla yapısız. Yanıt duyguları adlandırıyor, fakat onları incelenebilir adımlara çevirmiyor." },
+                { "language": "ru", "text": "Вежливо, но слишком неструктурированно. Ответ называет чувства, но не переводит их в проверяемые шаги." },
+                { "language": "ckb", "text": "ڕێزدارانەیە، بەڵام زۆر بێڕێکخستنە. وەڵامەکە هەستەکان ناودەبات، بەڵام ناگۆڕێتە هەنگاوی پشکنراو." },
+                { "language": "kmr", "text": "Bi rêz e, lê pir bêavahî ye. Bersiv hestan nav dike, lê wan naguhere gavên kontrolbar." },
+                { "language": "pl", "text": "Uprzejme, ale zbyt nieuporządkowane. Odpowiedź nazywa uczucia, ale nie przekłada ich na sprawdzalne kroki." },
+                { "language": "ro", "text": "Politicos, dar prea nestructurat. Răspunsul numește sentimentele, dar nu le transformă în pași verificabili." },
+                { "language": "sq", "text": "E sjellshme, por shumë e pastrukturuar. Përgjigjja përmend ndjenjat, por nuk i kthen në hapa të verifikueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann trennen wir beides: Bei der Feuchtigkeit geht es um technische Prüfung und Reparaturstand. Beim Lärm geht es zunächst um Dokumentation: Zeiten, Häufigkeit, beteiligte Parteien und ob ein Hausordnungsgespräch sinnvoll ist.",
+              "translations": [
+                { "language": "en", "text": "Then let us separate the two: with dampness, the issue is technical inspection and repair status. With noise, the first issue is documentation: times, frequency, parties involved, and whether a house-rules conversation makes sense." },
+                { "language": "fa", "text": "پس این دو را جدا می‌کنیم: در مورد رطوبت، مسئله بررسی فنی و وضعیت تعمیر است. در مورد سر و صدا، ابتدا مسئله مستندسازی است: زمان‌ها، تکرار، طرف‌های درگیر و اینکه آیا گفت‌وگو درباره مقررات ساختمان مفید است یا نه." },
+                { "language": "ar", "text": "إذن نفصل الأمرين: في الرطوبة يتعلق الأمر بالفحص الفني وحالة الإصلاح. أما في الضجيج فالأمر أولًا يتعلق بالتوثيق: الأوقات، والتكرار، والأطراف المعنية، وما إذا كان حوار حول قواعد المنزل مفيدًا." },
+                { "language": "tr", "text": "O halde ikisini ayıralım: nemde konu teknik inceleme ve onarım durumudur. Gürültüde ise önce belgeleme gerekir: saatler, sıklık, ilgili taraflar ve bina kuralları üzerine bir görüşmenin anlamlı olup olmadığı." },
+                { "language": "ru", "text": "Тогда разделим эти два вопроса: по сырости речь о технической проверке и состоянии ремонта. По шуму сначала речь о документировании: время, частота, участвующие стороны и имеет ли смысл разговор о правилах дома." },
+                { "language": "ckb", "text": "ئەوا هەردووکیان جیا دەکەینەوە: لە شێدا بابەتەکە پشکنینی تەکنیکی و دۆخی چاککردنەوەیە. لە دەنگدا سەرەتا بابەتەکە مستەندسازییە: کاتەکان، دووبارەبوونەوە، لایەنە پەیوەندیدارەکان و ئایا گفتوگۆی یاساکانی خانوو مانادارە یان نا." },
+                { "language": "kmr", "text": "Wê demê em herduyan veqetînin: di şilbûnê de mijar vekolîna teknîkî û rewşa sererastkirinê ye. Di deng de pêşî mijar belgekirin e: dem, pircarî, aliyên têkildar û ka gotûbêjek li ser rêzikên avahiyê watedar e an na." },
+                { "language": "pl", "text": "W takim razie oddzielmy te dwie sprawy: przy wilgoci chodzi o kontrolę techniczną i stan naprawy. Przy hałasie najpierw chodzi o dokumentację: godziny, częstotliwość, strony zaangażowane i czy rozmowa o regulaminie domu ma sens." },
+                { "language": "ro", "text": "Atunci separăm cele două aspecte: la umezeală este vorba despre verificarea tehnică și stadiul reparației. La zgomot este vorba mai întâi despre documentare: ore, frecvență, părți implicate și dacă are sens o discuție despre regulile imobilului." },
+                { "language": "sq", "text": "Atëherë i ndajmë të dyja: për lagështinë bëhet fjalë për kontroll teknik dhe gjendjen e riparimit. Për zhurmën bëhet fjalë së pari për dokumentim: oraret, shpeshtësia, palët e përfshira dhe nëse ka kuptim një bisedë për rregullat e ndërtesës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Unterschiedliche Konfliktarten werden getrennt bearbeitbar gemacht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: Different types of conflict are separated and made workable." },
+                { "language": "fa", "text": "قوی: انواع مختلف اختلاف جدا می‌شوند و قابل رسیدگی می‌گردند." },
+                { "language": "ar", "text": "قوي: يتم فصل أنواع النزاع المختلفة وجعلها قابلة للمعالجة." },
+                { "language": "tr", "text": "Güçlü: Farklı çatışma türleri ayrılıyor ve ele alınabilir hale geliyor." },
+                { "language": "ru", "text": "Сильно: разные типы конфликта разделяются и становятся пригодными для работы." },
+                { "language": "ckb", "text": "بەهێزە: جۆرە جیاوازەکانی ناکۆکی جیا دەکرێنەوە و دەبنە شتی چارەسەرکراو." },
+                { "language": "kmr", "text": "Xurt e: Cureyên cuda yên nakokiyê têne veqetandin û têne kirin karbar." },
+                { "language": "pl", "text": "Mocne: różne typy konfliktu zostają oddzielone i stają się możliwe do opracowania." },
+                { "language": "ro", "text": "Puternic: tipurile diferite de conflict sunt separate și devin gestionabile." },
+                { "language": "sq", "text": "E fortë: llojet e ndryshme të konfliktit ndahen dhe bëhen të trajtueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollten wir zuerst die Feuchtigkeit lösen, weil der Lärm wahrscheinlich schwerer zu beeinflussen ist.",
+              "translations": [
+                { "language": "en", "text": "Then we should first solve the dampness because the noise is probably harder to influence." },
+                { "language": "fa", "text": "پس اول باید رطوبت را حل کنیم، چون احتمالاً کنترل سر و صدا سخت‌تر است." },
+                { "language": "ar", "text": "إذن ينبغي أن نحل الرطوبة أولًا لأن التأثير في الضجيج ربما أصعب." },
+                { "language": "tr", "text": "O zaman önce nemi çözmeliyiz, çünkü gürültüyü etkilemek muhtemelen daha zor." },
+                { "language": "ru", "text": "Тогда сначала нужно решить вопрос сырости, потому что на шум, вероятно, труднее повлиять." },
+                { "language": "ckb", "text": "ئەوا پێویستە سەرەتا شێ چارەسەر بکەین، چونکە کاریگەریکردن لە دەنگەکە ڕەنگە قورستر بێت." },
+                { "language": "kmr", "text": "Wê demê divê em pêşî şilbûnê çareser bikin, ji ber ku bandorkirina li deng belkî dijwartir e." },
+                { "language": "pl", "text": "Wtedy powinniśmy najpierw rozwiązać wilgoć, bo na hałas prawdopodobnie trudniej wpłynąć." },
+                { "language": "ro", "text": "Atunci ar trebui să rezolvăm mai întâi umezeala, deoarece zgomotul este probabil mai greu de influențat." },
+                { "language": "sq", "text": "Atëherë duhet të zgjidhim së pari lagështinë, sepse zhurma ndoshta është më e vështirë për t'u ndikuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise sinnvoll, aber zu vorschnell. Der Lärm wird abgewertet, bevor er sauber dokumentiert wurde.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly reasonable, but too quick. The noise is downgraded before it has been properly documented." },
+                { "language": "fa", "text": "تا حدی منطقی است، اما شتاب‌زده است. سر و صدا قبل از مستندسازی درست کم‌اهمیت می‌شود." },
+                { "language": "ar", "text": "معقول جزئيًا، لكنه متسرع. يتم تقليل أهمية الضجيج قبل توثيقه بشكل مناسب." },
+                { "language": "tr", "text": "Kısmen mantıklı, ama aceleci. Gürültü düzgün belgelenmeden değersizleştiriliyor." },
+                { "language": "ru", "text": "Частично разумно, но слишком поспешно. Шум обесценивается до того, как он правильно задокументирован." },
+                { "language": "ckb", "text": "بەشێک مانادارە، بەڵام پەلەدارە. دەنگەکە پێش ئەوەی بە باشی مستەند بکرێت کەم‌بایەخ دەکرێت." },
+                { "language": "kmr", "text": "Beşek maqûl e, lê pir zû ye. Deng berî ku baş were belgekirin kêm tê nirxandin." },
+                { "language": "pl", "text": "Częściowo sensowne, ale zbyt pospieszne. Hałas zostaje pomniejszony, zanim został dobrze udokumentowany." },
+                { "language": "ro", "text": "Parțial rezonabil, dar prea grăbit. Zgomotul este minimalizat înainte să fie documentat corect." },
+                { "language": "sq", "text": "Pjesërisht e arsyeshme, por shumë e nxituar. Zhurma nënvlerësohet para se të dokumentohet siç duhet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Dann sollten wir klar sagen, dass dieses Gespräch keine Rechtsbewertung ersetzt. Heute können wir aber festhalten, welche Mängel behauptet werden, welche Belege vorliegen und bis wann eine technische Rückmeldung erfolgt.",
+              "translations": [
+                { "language": "en", "text": "Then we should clearly say that this conversation does not replace a legal assessment. Today, however, we can record which defects are being claimed, which evidence is available, and by when technical feedback will be given." },
+                { "language": "fa", "text": "پس باید روشن بگوییم که این گفت‌وگو جای ارزیابی حقوقی را نمی‌گیرد. اما امروز می‌توانیم ثبت کنیم کدام نقص‌ها مطرح شده‌اند، چه مدارکی وجود دارد و تا چه زمانی پاسخ فنی داده می‌شود." },
+                { "language": "ar", "text": "إذن ينبغي أن نقول بوضوح إن هذا الحوار لا يحل محل تقييم قانوني. لكن يمكننا اليوم تسجيل العيوب المطروحة، والأدلة المتوفرة، والموعد الذي ستصدر فيه ملاحظة فنية." },
+                { "language": "tr", "text": "O zaman bu görüşmenin hukuki bir değerlendirmenin yerine geçmediğini açıkça söylemeliyiz. Bugün ise hangi kusurların ileri sürüldüğünü, hangi kanıtların bulunduğunu ve teknik geri bildirimin ne zamana kadar yapılacağını kaydedebiliriz." },
+                { "language": "ru", "text": "Тогда нам следует ясно сказать, что этот разговор не заменяет юридическую оценку. Но сегодня мы можем зафиксировать, какие дефекты заявлены, какие доказательства имеются и до какого срока будет технический ответ." },
+                { "language": "ckb", "text": "ئەوا پێویستە بە ڕوونی بڵێین ئەم گفتوگۆیە جێگەی هەڵسەنگاندنی یاسایی ناگرێتەوە. بەڵام ئەمڕۆ دەتوانین تۆمار بکەین کام کەم‌وکورتانە بانگەشە کراون، کام بەڵگەکان هەن و تا کەی وەڵامی تەکنیکی دەدرێت." },
+                { "language": "kmr", "text": "Wê demê divê em bi zelalî bibêjin ku ev gotûbêj cihê nirxandina qanûnî nagire. Lê îro em dikarin tomar bikin kîjan kêmasî têne îdiakirin, kîjan belge hene û heta kengê bersiva teknîkî tê dayîn." },
+                { "language": "pl", "text": "Wtedy powinniśmy jasno powiedzieć, że ta rozmowa nie zastępuje oceny prawnej. Dziś możemy jednak odnotować, jakie usterki są zgłaszane, jakie dowody istnieją i do kiedy nastąpi odpowiedź techniczna." },
+                { "language": "ro", "text": "Atunci ar trebui să spunem clar că această discuție nu înlocuiește o evaluare juridică. Astăzi putem însă consemna ce defecte sunt invocate, ce dovezi există și până când va fi transmis un răspuns tehnic." },
+                { "language": "sq", "text": "Atëherë duhet të themi qartë se kjo bisedë nuk zëvendëson një vlerësim ligjor. Sot mund të shënojmë cilat defekte pretendohen, cilat prova ekzistojnë dhe deri kur do të jepet një përgjigje teknike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort grenzt Rechtsfragen ab und schafft trotzdem einen konkreten Arbeitsstand.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates legal questions and still creates a concrete work status." },
+                { "language": "fa", "text": "قوی: پاسخ پرسش‌های حقوقی را جدا می‌کند و با این حال وضعیت کاری مشخص می‌سازد." },
+                { "language": "ar", "text": "قوي: الجواب يحد الأسئلة القانونية ومع ذلك يخلق حالة عمل محددة." },
+                { "language": "tr", "text": "Güçlü: Yanıt hukuki soruları sınırlandırıyor ve yine de somut bir çalışma durumu oluşturuyor." },
+                { "language": "ru", "text": "Сильно: ответ отделяет юридические вопросы и все же создает конкретное рабочее состояние." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پرسە یاساییەکان جیا دەکاتەوە و هێشتا دۆخێکی کاری دیاریکراو دروست دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pirsên qanûnî sînordar dike û dîsa rewşeke kar a konkret diafirîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela pytania prawne, a mimo to tworzy konkretny stan roboczy." },
+                { "language": "ro", "text": "Puternic: răspunsul delimitează întrebările juridice și totuși creează un stadiu concret de lucru." },
+                { "language": "sq", "text": "E fortë: përgjigjja i kufizon pyetjet ligjore dhe megjithatë krijon një gjendje konkrete pune." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Über die Mietminderung sollten wir heute nicht sprechen, sonst eskaliert das Gespräch sofort.",
+              "translations": [
+                { "language": "en", "text": "We should not talk about the rent reduction today, otherwise the conversation will escalate immediately." },
+                { "language": "fa", "text": "امروز نباید درباره کاهش اجاره صحبت کنیم، وگرنه گفت‌وگو فوراً تشدید می‌شود." },
+                { "language": "ar", "text": "لا ينبغي أن نتحدث اليوم عن تخفيض الإيجار، وإلا سيتصاعد الحوار فورًا." },
+                { "language": "tr", "text": "Bugün kira indiriminden söz etmemeliyiz, yoksa görüşme hemen tırmanır." },
+                { "language": "ru", "text": "Сегодня не стоит говорить о снижении аренды, иначе разговор сразу обострится." },
+                { "language": "ckb", "text": "ئەمڕۆ نابێت دەربارەی کەمکردنەوەی کرێ قسە بکەین، ئەگەر نا گفتوگۆکە دەستبەجێ توند دەبێت." },
+                { "language": "kmr", "text": "Îro divê em li ser kêmkirina kirêyê neaxivin, heke na gotûbêj yekser tûj dibe." },
+                { "language": "pl", "text": "Nie powinniśmy dziś rozmawiać o obniżeniu czynszu, inaczej rozmowa natychmiast eskaluje." },
+                { "language": "ro", "text": "Nu ar trebui să vorbim astăzi despre reducerea chiriei, altfel discuția escaladează imediat." },
+                { "language": "sq", "text": "Sot nuk duhet të flasim për uljen e qirasë, përndryshe biseda përshkallëzohet menjëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend. Die Eskalationsgefahr ist real, aber der Punkt sollte abgegrenzt statt komplett verdrängt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive. The risk of escalation is real, but the point should be delimited rather than completely pushed aside." },
+                { "language": "fa", "text": "بیش از حد طفره‌آمیز است. خطر تشدید واقعی است، اما موضوع باید مرزبندی شود نه کاملاً کنار زده شود." },
+                { "language": "ar", "text": "مراوغ جدًا. خطر التصعيد حقيقي، لكن ينبغي تحديد النقطة لا إزاحتها تمامًا." },
+                { "language": "tr", "text": "Fazla kaçamak. Tırmanma riski gerçek, ama konu tamamen kenara itilmek yerine sınırlandırılmalı." },
+                { "language": "ru", "text": "Слишком уклончиво. Риск эскалации реален, но пункт нужно разграничить, а не полностью вытеснять." },
+                { "language": "ckb", "text": "زۆر خۆدزینەوەیە. مەترسی توندبوون ڕاستە، بەڵام خاڵەکە پێویستە سنووردار بکرێت نەک بە تەواوی لاببرێت." },
+                { "language": "kmr", "text": "Pir dûrketin e. Xetereya tûjbûnê rast e, lê xal divê bê sînorkirin ne ku bi tevahî bê alîkirin." },
+                { "language": "pl", "text": "Zbyt wymijające. Ryzyko eskalacji jest realne, ale punkt należy odgraniczyć, a nie całkowicie odsunąć." },
+                { "language": "ro", "text": "Prea evaziv. Riscul de escaladare este real, dar punctul ar trebui delimitat, nu eliminat complet." },
+                { "language": "sq", "text": "Shumë shmangëse. Rreziku i përshkallëzimit është real, por pika duhet kufizuar, jo shtyrë plotësisht mënjanë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das ist fair. Ich schlage einen beidseitigen Ablauf vor: Die Mieterin schickt bis Mittwoch Fotos und ein Lärmprotokoll, Sie geben bis Freitag eine technische Einschätzung zur Feuchtigkeit und nennen einen verbindlichen Reparaturtermin oder eine nachvollziehbare Begründung.",
+              "translations": [
+                { "language": "en", "text": "That is fair. I suggest a two-sided process: the tenant sends photos and a noise log by Wednesday; you provide a technical assessment of the dampness by Friday and name a binding repair appointment or a comprehensible reason." },
+                { "language": "fa", "text": "این منصفانه است. یک روند دوطرفه پیشنهاد می‌کنم: مستأجر تا چهارشنبه عکس‌ها و گزارش سر و صدا را می‌فرستد؛ شما تا جمعه ارزیابی فنی درباره رطوبت می‌دهید و یک وقت تعمیر الزام‌آور یا توضیح قابل فهم ارائه می‌کنید." },
+                { "language": "ar", "text": "هذا عادل. أقترح مسارًا من الطرفين: ترسل المستأجرة الصور وسجل الضجيج حتى الأربعاء، وأنتم تقدمون حتى الجمعة تقييمًا فنيًا للرطوبة وتذكرون موعد إصلاح ملزمًا أو تبريرًا مفهومًا." },
+                { "language": "tr", "text": "Bu adil. İki taraflı bir süreç öneriyorum: kiracı çarşambaya kadar fotoğrafları ve gürültü kaydını gönderir; siz cumaya kadar neme ilişkin teknik bir değerlendirme yapar ve bağlayıcı bir onarım randevusu ya da anlaşılır bir gerekçe belirtirsiniz." },
+                { "language": "ru", "text": "Это справедливо. Я предлагаю двусторонний процесс: арендаторка до среды отправляет фотографии и протокол шума; вы до пятницы даете техническую оценку сырости и называете обязательную дату ремонта или понятное обоснование." },
+                { "language": "ckb", "text": "ئەمە دادپەروەرانەیە. ڕەوتێکی دوولایەنە پێشنیار دەکەم: کرێچییەکە تا چوارشەممە وێنەکان و تۆماری دەنگ دەنێرێت؛ ئێوە تا هەینی هەڵسەنگاندنی تەکنیکی بۆ شێ دەدەن و کاتی چاککردنەوەی پابەندکەر یان پاساوێکی تێگەیشتوو ناودەبەن." },
+                { "language": "kmr", "text": "Ev adil e. Ez pêvajoyeke dualî pêşniyar dikim: kirêdar heta Çarşemê wêne û protokola dengê dişîne; hûn heta Înê nirxandineke teknîkî ya şilbûnê didin û randevûyek sererastkirinê ya girêdayî an sedemeke fêmbar nav dikin." },
+                { "language": "pl", "text": "To uczciwe. Proponuję dwustronny przebieg: najemczyni do środy wysyła zdjęcia i protokół hałasu, a Pan do piątku przekazuje techniczną ocenę wilgoci i podaje wiążący termin naprawy albo zrozumiałe uzasadnienie." },
+                { "language": "ro", "text": "Este corect. Propun un proces bilateral: chiriașa trimite până miercuri fotografii și un jurnal al zgomotului, iar dumneavoastră transmiteți până vineri o evaluare tehnică a umezelii și numiți o programare fermă pentru reparație sau o justificare clară." },
+                { "language": "sq", "text": "Kjo është e drejtë. Propozoj një proces dypalësh: qiramarrësja dërgon deri të mërkurën fotot dhe një regjistër zhurme; ju jepni deri të premten një vlerësim teknik për lagështinë dhe caktoni një takim të detyrueshëm riparimi ose një arsyetim të kuptueshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verteilt Pflichten symmetrisch und setzt konkrete Fristen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer distributes duties symmetrically and sets concrete deadlines." },
+                { "language": "fa", "text": "قوی: پاسخ وظایف را متقارن تقسیم می‌کند و مهلت‌های مشخص می‌گذارد." },
+                { "language": "ar", "text": "قوي: الجواب يوزع الالتزامات بشكل متوازن ويحدد مواعيد واضحة." },
+                { "language": "tr", "text": "Güçlü: Yanıt yükümlülükleri simetrik dağıtıyor ve somut süreler belirliyor." },
+                { "language": "ru", "text": "Сильно: ответ симметрично распределяет обязанности и устанавливает конкретные сроки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئەرکەکان بە هاوسەنگی دابەش دەکات و مۆڵەتی دیاریکراو دادەنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv erk bi hevahengî parve dike û demên konkret datîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź symetrycznie rozdziela obowiązki i wyznacza konkretne terminy." },
+                { "language": "ro", "text": "Puternic: răspunsul distribuie obligațiile simetric și stabilește termene concrete." },
+                { "language": "sq", "text": "E fortë: përgjigjja i shpërndan detyrimet në mënyrë simetrike dhe vendos afate konkrete." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann sollte die Mieterin alles noch einmal schriftlich schicken, und Sie prüfen anschließend, was davon technisch nachvollziehbar ist.",
+              "translations": [
+                { "language": "en", "text": "Then the tenant should send everything again in writing, and you then review what is technically comprehensible." },
+                { "language": "fa", "text": "پس مستأجر باید همه چیز را دوباره کتبی بفرستد و شما بعد بررسی کنید کدام بخش از نظر فنی قابل فهم است." },
+                { "language": "ar", "text": "إذن ينبغي أن ترسل المستأجرة كل شيء مرة أخرى كتابة، ثم تفحصون ما يمكن فهمه تقنيًا." },
+                { "language": "tr", "text": "O zaman kiracı her şeyi tekrar yazılı göndermeli, siz de ardından teknik olarak neyin anlaşılır olduğunu incelemelisiniz." },
+                { "language": "ru", "text": "Тогда арендаторка должна еще раз отправить все письменно, а вы затем проверите, что из этого технически понятно." },
+                { "language": "ckb", "text": "ئەوا کرێچییەکە پێویستە هەموو شت جارێکی تر بە نووسراوی بنێرێت، و ئێوە پاشان بپشکنن کامەی لە ڕووی تەکنیکییەوە تێگەیشتووە." },
+                { "language": "kmr", "text": "Wê demê divê kirêdar hemû tişt careke din bi nivîskî bişîne, û hûn paşê vekolin ka kîjan ji aliyê teknîkî ve fêmbar e." },
+                { "language": "pl", "text": "Wtedy najemczyni powinna wysłać wszystko jeszcze raz pisemnie, a Pan potem sprawdzi, co z tego jest technicznie zrozumiałe." },
+                { "language": "ro", "text": "Atunci chiriașa ar trebui să trimită totul încă o dată în scris, iar dumneavoastră verificați apoi ce este tehnic inteligibil." },
+                { "language": "sq", "text": "Atëherë qiramarrësja duhet ta dërgojë gjithçka edhe një herë me shkrim, dhe ju pastaj kontrolloni çfarë është teknikisht e kuptueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber einseitig. Die Frist und der konkrete Beitrag des Vermieters bleiben zu unklar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but one-sided. The deadline and the landlord's concrete contribution remain too unclear." },
+                { "language": "fa", "text": "اشتباه نیست، اما یک‌طرفه است. مهلت و سهم مشخص صاحب‌خانه خیلی مبهم می‌ماند." },
+                { "language": "ar", "text": "ليس خطأ، لكنه أحادي الجانب. تبقى المهلة ومساهمة المالك المحددة غير واضحتين بما يكفي." },
+                { "language": "tr", "text": "Yanlış değil, ama tek taraflı. Süre ve ev sahibinin somut katkısı fazla belirsiz kalıyor." },
+                { "language": "ru", "text": "Не неверно, но односторонне. Срок и конкретный вклад арендодателя остаются слишком неясными." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام یەکلایەنەیە. مۆڵەت و بەشداریی دیاریکراوی خاوەن خانوو زۆر نادیار دەمێنێتەوە." },
+                { "language": "kmr", "text": "Ne şaş e, lê yekalî ye. Dem û beşdariya konkret a xwediyê xanî pir nezelal dimînin." },
+                { "language": "pl", "text": "Nie jest błędne, ale jednostronne. Termin i konkretny wkład wynajmującego pozostają zbyt niejasne." },
+                { "language": "ro", "text": "Nu este greșit, dar este unilateral. Termenul și contribuția concretă a proprietarului rămân prea neclare." },
+                { "language": "sq", "text": "Nuk është gabim, por është e njëanshme. Afati dhe kontributi konkret i pronarit mbeten shumë të paqarta." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das nehmen wir ausdrücklich ins Protokoll auf: Die Vereinbarung dient der Klärung und Dokumentation, nicht der rechtlichen Anerkennung. Gleichzeitig enthält sie zwei Fristen, die offenen Unterlagen und den nächsten Reparatur- oder Begründungsschritt.",
+              "translations": [
+                { "language": "en", "text": "We will include that explicitly in the record: the agreement serves clarification and documentation, not legal acknowledgment. At the same time, it contains two deadlines, the open documents, and the next repair or justification step." },
+                { "language": "fa", "text": "این را صریحاً در صورت‌جلسه می‌آوریم: توافق برای روشن‌سازی و مستندسازی است، نه پذیرش حقوقی. هم‌زمان شامل دو مهلت، مدارک بازمانده و قدم بعدی برای تعمیر یا ارائه دلیل است." },
+                { "language": "ar", "text": "سنذكر ذلك صراحة في المحضر: الاتفاق يخدم التوضيح والتوثيق، لا الاعتراف القانوني. وفي الوقت نفسه يتضمن مهلتين، والمستندات المفتوحة، وخطوة الإصلاح أو التبرير التالية." },
+                { "language": "tr", "text": "Bunu tutanağa açıkça alırız: anlaşma açıklığa kavuşturma ve belgeleme içindir, hukuki kabul için değil. Aynı zamanda iki süre, açık belgeler ve sonraki onarım ya da gerekçe adımını içerir." },
+                { "language": "ru", "text": "Мы прямо внесем это в протокол: соглашение служит прояснению и документированию, а не юридическому признанию. Одновременно оно содержит два срока, открытые документы и следующий шаг по ремонту или обоснованию." },
+                { "language": "ckb", "text": "ئەمە بە ڕوونی دەخەینە ناو پرۆتۆکۆڵەکە: ڕێککەوتنەکە بۆ ڕوونکردنەوە و مستەندسازییە، نەک داننانی یاسایی. هەمان کات دوو مۆڵەت، بەڵگە کراوەکان و هەنگاوی داهاتووی چاککردنەوە یان پاساوکردن لەخۆ دەگرێت." },
+                { "language": "kmr", "text": "Em vê bi zelalî di protokolê de dinivîsin: lihevhatin ji bo zelalkirin û belgekirinê ye, ne ji bo pejirandina qanûnî. Di heman demê de du dem, belgeyên vekirî û gava paşê ya sererastkirinê an sedemê dihewîne." },
+                { "language": "pl", "text": "Wpiszemy to wyraźnie do protokołu: uzgodnienie służy wyjaśnieniu i dokumentacji, a nie prawnemu uznaniu. Jednocześnie zawiera dwa terminy, otwarte dokumenty oraz następny krok naprawy albo uzasadnienia." },
+                { "language": "ro", "text": "Vom include asta explicit în procesul-verbal: acordul servește clarificării și documentării, nu recunoașterii juridice. În același timp, conține două termene, documentele deschise și următorul pas de reparație sau justificare." },
+                { "language": "sq", "text": "Këtë e përfshijmë qartë në procesverbal: marrëveshja shërben për sqarim dhe dokumentim, jo për njohje ligjore. Njëkohësisht ajo përmban dy afate, dokumentet e hapura dhe hapin e ardhshëm të riparimit ose arsyetimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussantwort schützt die rechtliche Grenze und hält den Arbeitsplan trotzdem verbindlich.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final answer protects the legal boundary and still keeps the work plan binding." },
+                { "language": "fa", "text": "قوی: پاسخ پایانی مرز حقوقی را حفظ می‌کند و با این حال برنامه کاری را الزام‌آور نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: الجواب الختامي يحمي الحد القانوني ويبقي خطة العمل ملزمة في الوقت نفسه." },
+                { "language": "tr", "text": "Güçlü: Son yanıt hukuki sınırı koruyor ve yine de çalışma planını bağlayıcı tutuyor." },
+                { "language": "ru", "text": "Сильно: финальный ответ защищает юридическую границу и при этом сохраняет рабочий план обязательным." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامی کۆتایی سنووری یاسایی دەپارێزێت و هێشتا پلانی کارکردن پابەندکەر دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiva dawî sînorê qanûnî diparêze û dîsa plana karê girêdayî dihêle." },
+                { "language": "pl", "text": "Mocne: końcowa odpowiedź chroni granicę prawną, a jednocześnie utrzymuje plan pracy jako wiążący." },
+                { "language": "ro", "text": "Puternic: răspunsul final protejează limita juridică și păstrează totuși planul de lucru obligatoriu." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfundimtare mbron kufirin ligjor dhe megjithatë e mban planin e punës të detyrueshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann halten wir fest, dass damit noch nichts entschieden ist und beide Seiten bis Ende der Woche Unterlagen nachreichen.",
+              "translations": [
+                { "language": "en", "text": "Then we will record that nothing has been decided yet and both sides will submit documents by the end of the week." },
+                { "language": "fa", "text": "پس ثبت می‌کنیم که هنوز هیچ چیز تصمیم‌گیری نشده و هر دو طرف تا پایان هفته مدارک را ارائه می‌کنند." },
+                { "language": "ar", "text": "إذن نسجل أنه لم يُقرر شيء بعد وأن الطرفين سيقدمان المستندات حتى نهاية الأسبوع." },
+                { "language": "tr", "text": "O zaman henüz hiçbir şeyin kararlaştırılmadığını ve iki tarafın hafta sonuna kadar belge sunacağını kaydederiz." },
+                { "language": "ru", "text": "Тогда зафиксируем, что пока ничего не решено и обе стороны предоставят документы до конца недели." },
+                { "language": "ckb", "text": "ئەوا تۆمار دەکەین کە هێشتا هیچ شتێک بڕیار نەدراوە و هەردوو لایەن تا کۆتایی هەفتە بەڵگە پێشکەش دەکەن." },
+                { "language": "kmr", "text": "Wê demê em tomar dikin ku hîn tiştek nehatiye biryardan û herdu alî heta dawiya hefteyê belge dişînin." },
+                { "language": "pl", "text": "Wtedy odnotujemy, że nic jeszcze nie zostało rozstrzygnięte i obie strony dosyłają dokumenty do końca tygodnia." },
+                { "language": "ro", "text": "Atunci consemnăm că încă nu s-a decis nimic și că ambele părți transmit documente până la sfârșitul săptămânii." },
+                { "language": "sq", "text": "Atëherë shënojmë se ende nuk është vendosur asgjë dhe të dyja palët dorëzojnë dokumente deri në fund të javës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Ordentlich, aber zu knapp. Es fehlen die genaue Funktion der Vereinbarung, getrennte Fristen und der konkrete Reparatur- oder Begründungsschritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Orderly, but too brief. The exact function of the agreement, separate deadlines, and the concrete repair or justification step are missing." },
+                { "language": "fa", "text": "مرتب است، اما خیلی کوتاه است. کارکرد دقیق توافق، مهلت‌های جداگانه و قدم مشخص تعمیر یا توضیح کم است." },
+                { "language": "ar", "text": "منظم، لكنه مختصر جدًا. تنقص الوظيفة الدقيقة للاتفاق، والمهل المنفصلة، وخطوة الإصلاح أو التبرير المحددة." },
+                { "language": "tr", "text": "Düzenli, ama fazla kısa. Anlaşmanın kesin işlevi, ayrı süreler ve somut onarım ya da gerekçe adımı eksik." },
+                { "language": "ru", "text": "Аккуратно, но слишком кратко. Не хватает точной функции соглашения, отдельных сроков и конкретного шага по ремонту или обоснованию." },
+                { "language": "ckb", "text": "ڕێکە، بەڵام زۆر کورته. کاری وردی ڕێککەوتنەکە، مۆڵەتە جیاکان و هەنگاوی دیاریکراوی چاککردنەوە یان پاساوکردن کەمە." },
+                { "language": "kmr", "text": "Rêk e, lê pir kurt e. Fonksiyona rast a lihevhatinê, demên cuda û gava konkret a sererastkirinê an sedemê kêm in." },
+                { "language": "pl", "text": "Porządne, ale zbyt krótkie. Brakuje dokładnej funkcji uzgodnienia, oddzielnych terminów i konkretnego kroku naprawy albo uzasadnienia." },
+                { "language": "ro", "text": "Ordonat, dar prea scurt. Lipsesc funcția exactă a acordului, termenele separate și pasul concret de reparație sau justificare." },
+                { "language": "sq", "text": "E rregullt, por shumë e shkurtër. Mungojnë funksioni i saktë i marrëveshjes, afatet e ndara dhe hapi konkret i riparimit ose arsyetimit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "de-escalate-and-structure",
+          "text": "Bei verhärteten Konflikten hilft eine Chronologie oft mehr als eine direkte Bewertung der Schuldfrage.",
+          "translations": [
+            { "language": "en", "text": "In hardened conflicts, a chronology often helps more than directly assessing blame." },
+            { "language": "fa", "text": "در اختلاف‌های سخت‌شده، بازسازی زمان‌بندی اغلب بیش از ارزیابی مستقیم تقصیر کمک می‌کند." },
+            { "language": "ar", "text": "في النزاعات المتصلبة تساعد التسلسلات الزمنية غالبًا أكثر من تقييم اللوم مباشرة." },
+            { "language": "tr", "text": "Sertleşmiş çatışmalarda kronoloji çoğu zaman suç sorusunu doğrudan değerlendirmekten daha çok yardımcı olur." },
+            { "language": "ru", "text": "В застывших конфликтах хронология часто помогает больше, чем прямая оценка вины." },
+            { "language": "ckb", "text": "لە ناکۆکیی توندبوودا، زنجیرەی کات زۆرجار زیاتر یارمەتی دەدات لە هەڵسەنگاندنی ڕاستەوخۆی پرسی تاوان." },
+            { "language": "kmr", "text": "Di nakokiyên hişk de kronolojî gelek caran ji nirxandina rasterast a tawanê zêdetir alîkar e." },
+            { "language": "pl", "text": "W zaostrzonych konfliktach chronologia często pomaga bardziej niż bezpośrednia ocena winy." },
+            { "language": "ro", "text": "În conflictele înăsprite, o cronologie ajută adesea mai mult decât evaluarea directă a vinovăției." },
+            { "language": "sq", "text": "Në konfliktet e ashpërsuara, kronologjia shpesh ndihmon më shumë se vlerësimi i drejtpërdrejtë i fajit." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "separate-issues",
+          "text": "Technische Mängel, soziale Störungen und Rechtsfolgen sollten getrennt bearbeitet werden.",
+          "translations": [
+            { "language": "en", "text": "Technical defects, social disturbances, and legal consequences should be handled separately." },
+            { "language": "fa", "text": "نقص‌های فنی، مزاحمت‌های اجتماعی و پیامدهای حقوقی باید جداگانه رسیدگی شوند." },
+            { "language": "ar", "text": "ينبغي معالجة العيوب الفنية والاضطرابات الاجتماعية والآثار القانونية بشكل منفصل." },
+            { "language": "tr", "text": "Teknik kusurlar, sosyal rahatsızlıklar ve hukuki sonuçlar ayrı ele alınmalıdır." },
+            { "language": "ru", "text": "Технические дефекты, социальные нарушения и юридические последствия следует рассматривать отдельно." },
+            { "language": "ckb", "text": "کەم‌وکورتی تەکنیکی، تێکدانی کۆمەڵایەتی و کاریگەریی یاسایی پێویستە بە جیا مامەڵەیان لەگەڵ بکرێت." },
+            { "language": "kmr", "text": "Kêmasiyên teknîkî, astengiyên civakî û encamên qanûnî divê cuda bên rêvebirin." },
+            { "language": "pl", "text": "Usterki techniczne, zakłócenia społeczne i skutki prawne należy opracowywać oddzielnie." },
+            { "language": "ro", "text": "Defectele tehnice, tulburările sociale și consecințele juridice ar trebui gestionate separat." },
+            { "language": "sq", "text": "Defektet teknike, shqetësimet sociale dhe pasojat ligjore duhet të trajtohen veçmas." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "avoid-legal-advice",
+          "text": "Eine Moderation darf rechtliche Begriffe aufnehmen, ohne selbst Rechtsberatung zu spielen.",
+          "translations": [
+            { "language": "en", "text": "A moderation can take up legal terms without pretending to provide legal advice." },
+            { "language": "fa", "text": "میانجی‌گری می‌تواند اصطلاحات حقوقی را در نظر بگیرد، بدون اینکه نقش مشاوره حقوقی بازی کند." },
+            { "language": "ar", "text": "يمكن للوساطة أن تتناول مصطلحات قانونية من دون التظاهر بتقديم استشارة قانونية." },
+            { "language": "tr", "text": "Bir moderasyon hukuki terimleri ele alabilir, ama hukuki danışmanlık yapıyormuş gibi davranmamalıdır." },
+            { "language": "ru", "text": "Модерация может учитывать юридические термины, не притворяясь юридической консультацией." },
+            { "language": "ckb", "text": "ناوبژیوانی دەتوانێت زاراوەی یاسایی وەربگرێت، بەبێ ئەوەی خۆی وەک ڕاوێژکاری یاسایی پیشان بدات." },
+            { "language": "kmr", "text": "Navbeynkarî dikare têgehên qanûnî bigire, bêyî ku wek şêwirmendiya qanûnî xuya bike." },
+            { "language": "pl", "text": "Moderacja może uwzględniać terminy prawne, nie udając poradnictwa prawnego." },
+            { "language": "ro", "text": "O moderare poate prelua termeni juridici fără să pretindă că oferă consultanță juridică." },
+            { "language": "sq", "text": "Moderimi mund të përfshijë terma ligjorë pa pretenduar se ofron këshillim ligjor." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "documented-close",
+          "text": "Ein belastbarer Abschluss nennt Grenze, Fristen, Unterlagen und nächsten Schritt.",
+          "translations": [
+            { "language": "en", "text": "A robust closing names the boundary, deadlines, documents, and next step." },
+            { "language": "fa", "text": "پایان قابل اتکا مرز، مهلت‌ها، مدارک و قدم بعدی را نام می‌برد." },
+            { "language": "ar", "text": "الخاتمة المتينة تذكر الحد والمهل والمستندات والخطوة التالية." },
+            { "language": "tr", "text": "Sağlam bir kapanış sınırı, süreleri, belgeleri ve sonraki adımı belirtir." },
+            { "language": "ru", "text": "Надежное завершение называет границу, сроки, документы и следующий шаг." },
+            { "language": "ckb", "text": "کۆتایییەکی بەهێز سنوور، مۆڵەتەکان، بەڵگەکان و هەنگاوی داهاتوو ناودەبات." },
+            { "language": "kmr", "text": "Dawiyeke bihêz sînor, dem, belge û gava paşê nav dike." },
+            { "language": "pl", "text": "Solidne zakończenie nazywa granicę, terminy, dokumenty i następny krok." },
+            { "language": "ro", "text": "O încheiere solidă numește limita, termenele, documentele și pasul următor." },
+            { "language": "sq", "text": "Një përmbyllje e qëndrueshme përmend kufirin, afatet, dokumentet dhe hapin tjetër." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "rental-conflict-moderation-table",
+          "placement": "detail-header",
+          "purpose": "Illustrate a structured mediation table for a tenant-landlord conflict with documented issues and next steps.",
+          "altText": "Ein neutraler Moderator strukturiert an einem Tisch einen Mietkonflikt mit Kalender, Fotos und einer kurzen Mängelliste.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral moderator structures a rental conflict at a table with a calendar, photos, and a short defect list." },
+            { "language": "fa", "text": "یک میانجی بی‌طرف پشت میز اختلاف اجاره را با تقویم، عکس‌ها و فهرست کوتاه نقص‌ها ساختار می‌دهد." },
+            { "language": "ar", "text": "وسيط محايد ينظم نزاع إيجار على طاولة مع تقويم وصور وقائمة عيوب قصيرة." },
+            { "language": "tr", "text": "Tarafsız bir moderatör, bir masada takvim, fotoğraflar ve kısa kusur listesiyle kira çatışmasını yapılandırıyor." },
+            { "language": "ru", "text": "Нейтральный модератор структурирует арендный конфликт за столом с календарем, фотографиями и коротким списком дефектов." },
+            { "language": "ckb", "text": "ناوبژیوانێکی بێلایەن لەسەر مێزێک ناکۆکیی کرێ بە تەقویم، وێنە و لیستێکی کورتی کەم‌وکورتەکان ڕێکدەخات." },
+            { "language": "kmr", "text": "Navbeynkarê bêalî li ser maseyê bi salname, wêne û lîsteyeke kurt a kêmasiyan nakokiya kirê rêz dike." },
+            { "language": "pl", "text": "Neutralny moderator porządkuje przy stole konflikt najmu z kalendarzem, zdjęciami i krótką listą usterek." },
+            { "language": "ro", "text": "Un moderator neutru structurează la masă un conflict locativ cu calendar, fotografii și o scurtă listă de defecte." },
+            { "language": "sq", "text": "Një moderator neutral strukturon në tryezë një konflikt qiraje me kalendar, foto dhe një listë të shkurtër defektesh." }
+          ],
+          "imagePrompt": "Clean educational illustration, neutral mediator at a table with tenant-landlord documents, non-readable calendar, simple photos of apartment dampness, short checklist, calm conflict moderation setting, no logos, no private data, no courtroom scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

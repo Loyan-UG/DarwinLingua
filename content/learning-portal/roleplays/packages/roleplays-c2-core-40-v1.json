@@ -1,0 +1,708 @@
+{
+  "packageId": "roleplays-c2-core-40-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 40 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 40",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-therapieabbruch-differenziert-besprechen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Therapieabbruch differenziert besprechen",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing stopping therapy in a differentiated way" },
+        { "language": "fa", "text": "گفت‌وگوی دقیق درباره قطع یا تغییر درمان" },
+        { "language": "ar", "text": "مناقشة إيقاف العلاج بشكل متمايز" },
+        { "language": "tr", "text": "Tedaviyi bırakmayı ayrıntılı biçimde görüşmek" },
+        { "language": "ru", "text": "Дифференцированное обсуждение прекращения терапии" },
+        { "language": "ckb", "text": "گفتوگۆی ورد دەربارەی وەستاندن یان گۆڕینی چارەسەر" },
+        { "language": "kmr", "text": "Gotûbêja cuda li ser rawestandina an guhertina terapiyê" },
+        { "language": "pl", "text": "Zróżnicowana rozmowa o przerwaniu terapii" },
+        { "language": "ro", "text": "Discutarea diferențiată a întreruperii terapiei" },
+        { "language": "sq", "text": "Diskutim i diferencuar për ndërprerjen e terapisë" }
+      ],
+      "description": "Sie sprechen mit Ihrer Ärztin darüber, dass Sie eine laufende Therapie nicht einfach abbrechen, aber in der bisherigen Form kaum fortsetzen können. Sie möchten Nebenwirkungen, organisatorische Belastung, Zweifel am Nutzen und mögliche Alternativen präzise trennen, ohne eigenmächtig zu handeln oder die bisherige Behandlung pauschal abzuwerten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are speaking with your doctor because you do not want to simply stop an ongoing therapy, but can hardly continue it in its current form. You want to separate side effects, organizational burden, doubts about benefit, and possible alternatives precisely, without acting on your own or dismissing the previous treatment in general." },
+        { "language": "fa", "text": "با پزشک خود صحبت می‌کنید چون نمی‌خواهید درمان جاری را ساده قطع کنید، اما ادامه آن به شکل فعلی برایتان بسیار دشوار شده است. می‌خواهید عوارض، فشار سازمانی، تردید درباره فایده و گزینه‌های جایگزین را دقیق از هم جدا کنید، بدون اینکه خودسرانه عمل کنید یا درمان قبلی را به‌طور کلی بی‌ارزش جلوه دهید." },
+        { "language": "ar", "text": "تتحدثون مع الطبيبة لأنكم لا تريدون إيقاف علاج جارٍ ببساطة، لكنكم بالكاد تستطيعون مواصلته بالشكل الحالي. تريدون الفصل بدقة بين الآثار الجانبية والعبء التنظيمي والشكوك حول الفائدة والبدائل الممكنة، من دون التصرف بشكل منفرد أو التقليل من قيمة العلاج السابق بشكل عام." },
+        { "language": "tr", "text": "Doktorunuzla konuşuyorsunuz çünkü sürmekte olan bir tedaviyi basitçe bırakmak istemiyorsunuz, fakat mevcut biçimiyle sürdürmekte çok zorlanıyorsunuz. Yan etkileri, organizasyon yükünü, faydaya dair kuşkuları ve olası alternatifleri kesin biçimde ayırmak istiyorsunuz; bunu kendi başınıza hareket etmeden veya önceki tedaviyi genel olarak değersizleştirmeden yapmalısınız." },
+        { "language": "ru", "text": "Вы говорите с врачом о том, что не хотите просто прекратить текущую терапию, но почти не можете продолжать ее в прежнем виде. Вы хотите точно разделить побочные эффекты, организационную нагрузку, сомнения в пользе и возможные альтернативы, не действуя самовольно и не обесценивая прежнее лечение в целом." },
+        { "language": "ckb", "text": "لەگەڵ پزیشکەکەت قسە دەکەیت، چونکە ناتەوێت چارەسەرێکی بەردەوام بە سادەیی بوەستێنیت، بەڵام بە شێوەی ئێستای زۆر بە زەحمەت دەتوانیت بەردەوام بیت. دەتەوێت کاریگەرییە لاوەکییەکان، باری ڕێکخستن، گومان لە سوود و جێگرەوەکان بە وردی جیا بکەیتەوە، بەبێ ئەوەی خۆسەرانە کار بکەیت یان چارەسەری پێشوو بە گشتی کەم‌بایەخ بکەیت." },
+        { "language": "kmr", "text": "Hûn bi bijîşka xwe re diaxivin, ji ber ku hûn naxwazin terapiyeke berdewam bi hêsanî rawestînin, lê bi awayê heyî zor dikarin bidomînin. Hûn dixwazin bandorên alî, barê rêxistinê, gumanên li ser sûdê û alternatîfan bi hûrgilî ji hev veqetînin, bêyî ku bi serê xwe tev bigerin an dermankirina berê bi giştî kêm binirxînin." },
+        { "language": "pl", "text": "Rozmawia Pan/Pani z lekarką, ponieważ nie chce Pan/Pani po prostu przerwać trwającej terapii, ale prawie nie może jej kontynuować w dotychczasowej formie. Chce Pan/Pani precyzyjnie oddzielić działania niepożądane, obciążenie organizacyjne, wątpliwości co do korzyści i możliwe alternatywy, bez samowolnego działania i bez ogólnego deprecjonowania dotychczasowego leczenia." },
+        { "language": "ro", "text": "Discutați cu medicul deoarece nu doriți să opriți pur și simplu o terapie în curs, dar cu greu o mai puteți continua în forma actuală. Doriți să separați precis efectele secundare, povara organizatorică, îndoielile privind beneficiul și alternativele posibile, fără a acționa pe cont propriu sau a devaloriza în general tratamentul anterior." },
+        { "language": "sq", "text": "Flisni me mjeken sepse nuk doni ta ndërprisni thjesht një terapi në vazhdim, por mezi mund ta vazhdoni në formën aktuale. Doni të ndani saktë efektet anësore, ngarkesën organizative, dyshimet për përfitimin dhe alternativat e mundshme, pa vepruar vetë dhe pa e nënvlerësuar trajtimin e mëparshëm në përgjithësi." }
+      ],
+      "learnerGoal": "Einen möglichen Therapieabbruch sicher und differenziert besprechen: Beschwerden, Aufwand und Nutzenzweifel trennen, keine eigenmächtige Entscheidung treffen, Alternativen oder eine befristete Anpassung erfragen und klare Kontrollkriterien vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss a possible therapy stop safely and in a differentiated way: separate symptoms, effort, and doubts about benefit, do not make an independent decision, ask about alternatives or a time-limited adjustment, and agree on clear review criteria." },
+        { "language": "fa", "text": "قطع احتمالی درمان را به‌صورت ایمن و تفکیک‌شده مطرح کنید: شکایت‌ها، هزینه/فشار و تردید درباره فایده را جدا کنید، تصمیم خودسرانه نگیرید، درباره گزینه‌های جایگزین یا تنظیم موقت بپرسید و معیارهای کنترل روشن توافق کنید." },
+        { "language": "ar", "text": "ناقشوا احتمال إيقاف العلاج بأمان وبشكل متمايز: افصلوا بين الأعراض والجهد والشكوك حول الفائدة، ولا تتخذوا قرارًا منفردًا، واسألوا عن بدائل أو تعديل محدود المدة، واتفقوا على معايير مراجعة واضحة." },
+        { "language": "tr", "text": "Olası bir tedavi bırakmayı güvenli ve ayrıntılı biçimde görüşün: şikâyetleri, çabayı ve faydaya dair kuşkuları ayırın, bağımsız karar vermeyin, alternatifleri veya süreli bir uyarlamayı sorun ve açık kontrol ölçütleri belirleyin." },
+        { "language": "ru", "text": "Безопасно и дифференцированно обсудите возможное прекращение терапии: разделите жалобы, затраты и сомнения в пользе, не принимайте самостоятельного решения, спросите об альтернативах или временной корректировке и согласуйте четкие критерии контроля." },
+        { "language": "ckb", "text": "وەستاندنی ئەگەریی چارەسەر بە شێوەیەکی پارێزراو و ورد باس بکە: سکاڵاکان، هەوڵ و گومان لە سوود جیا بکەوە، بڕیاری خۆسەرانە مەدەر، دەربارەی جێگرەوە یان ڕێکخستنی کاتی بپرسە و پێوەری کۆنترۆڵی ڕوون ڕێکبکە." },
+        { "language": "kmr", "text": "Rawestandina gengaz a terapiyê bi ewle û cuda gotûbêj bikin: gilî, hewl û gumanên li ser sûdê ji hev veqetînin, biryara serbixwe nedin, li ser alternatîfan an lihevhatineke bi demê sînorkirî bipirsin û pîvanên kontrolê yên zelal li hev bikin." },
+        { "language": "pl", "text": "Omówić możliwe przerwanie terapii bezpiecznie i w sposób zróżnicowany: oddzielić dolegliwości, wysiłek i wątpliwości co do korzyści, nie podejmować samowolnej decyzji, zapytać o alternatywy lub czasową modyfikację i uzgodnić jasne kryteria kontroli." },
+        { "language": "ro", "text": "Discutați sigur și diferențiat o posibilă întrerupere a terapiei: separați simptomele, efortul și îndoielile privind beneficiul, nu luați o decizie pe cont propriu, întrebați despre alternative sau o adaptare limitată în timp și stabiliți criterii clare de control." },
+        { "language": "sq", "text": "Diskutoni në mënyrë të sigurt dhe të diferencuar një ndërprerje të mundshme të terapisë: ndani ankesat, përpjekjen dhe dyshimet për përfitimin, mos merrni vendim të pavarur, pyesni për alternativa ose përshtatje të kufizuar në kohë dhe bini dakord për kritere të qarta kontrolli." }
+      ],
+      "cefrLevel": "C2",
+      "category": "health",
+      "topics": ["appointments-and-health", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "agree-disagree",
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "estimatedPracticeMinutes": 20,
+      "isPublished": true,
+      "sortOrder": 40,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacienti" }
+          ]
+        },
+        {
+          "roleKey": "doctor",
+          "displayName": "Ärztin",
+          "translations": [
+            { "language": "en", "text": "Doctor" },
+            { "language": "fa", "text": "پزشک" },
+            { "language": "ar", "text": "الطبيبة" },
+            { "language": "tr", "text": "Doktor" },
+            { "language": "ru", "text": "Врач" },
+            { "language": "ckb", "text": "پزیشک" },
+            { "language": "kmr", "text": "Bijîşk" },
+            { "language": "pl", "text": "Lekarka" },
+            { "language": "ro", "text": "Medicul" },
+            { "language": "sq", "text": "Mjekja" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Sie hatten am Telefon gesagt, dass Sie die Therapie am liebsten abbrechen würden. Bevor wir darüber entscheiden: Was genau macht die Fortsetzung für Sie schwierig?",
+          "translations": [
+            { "language": "en", "text": "You said on the phone that you would prefer to stop the therapy. Before we decide on that: what exactly makes continuing difficult for you?" },
+            { "language": "fa", "text": "در تلفن گفتید ترجیح می‌دهید درمان را قطع کنید. قبل از اینکه درباره آن تصمیم بگیریم: دقیقاً چه چیزی ادامه آن را برای شما دشوار می‌کند؟" },
+            { "language": "ar", "text": "قلتم في الهاتف إنكم تفضلون إيقاف العلاج. قبل أن نقرر ذلك: ما الذي يجعل الاستمرار صعبًا عليكم بالضبط؟" },
+            { "language": "tr", "text": "Telefonda tedaviyi bırakmayı tercih ettiğinizi söylediniz. Buna karar vermeden önce: devam etmeyi sizin için tam olarak ne zorlaştırıyor?" },
+            { "language": "ru", "text": "По телефону вы сказали, что предпочли бы прекратить терапию. Прежде чем мы решим это: что именно делает продолжение для вас трудным?" },
+            { "language": "ckb", "text": "لە تەلەفۆندا گوتت پێت باشترە چارەسەرەکە بوەستێنیت. پێش ئەوەی بڕیار بدەین: بە وردی چی بەردەوامبوونەکە بۆت قورس دەکات؟" },
+            { "language": "kmr", "text": "We di telefonê de got ku hûn dixwazin terapiyê rawestînin. Berî ku em li ser wê biryar bidin: bi rastî çi domandinê ji bo we dijwar dike?" },
+            { "language": "pl", "text": "Powiedział Pan/Pani przez telefon, że najchętniej przerwałby/przerwałaby Pan/Pani terapię. Zanim o tym zdecydujemy: co dokładnie utrudnia Panu/Pani kontynuację?" },
+            { "language": "ro", "text": "Ați spus la telefon că ați prefera să întrerupeți terapia. Înainte să decidem asta: ce anume vă face continuarea dificilă?" },
+            { "language": "sq", "text": "Në telefon thatë se do të preferonit ta ndërprisnit terapinë. Para se të vendosim për këtë: çfarë saktësisht e bën vazhdimin të vështirë për ju?" }
+          ]
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich möchte sie nicht einfach abbrechen. In der bisherigen Form wird es aber problematisch: Nach den letzten Sitzungen hatte ich jeweils zwei Tage stärkere Schmerzen, und die Termine fallen so ungünstig, dass ich beruflich kaum nacharbeiten kann.",
+          "translations": [
+            { "language": "en", "text": "I do not want to simply stop it. But in its current form it is becoming problematic: after the last sessions I had stronger pain for two days each time, and the appointments are so badly timed that I can hardly catch up at work." },
+            { "language": "fa", "text": "نمی‌خواهم آن را ساده قطع کنم. اما در شکل فعلی مشکل‌ساز شده است: بعد از جلسه‌های اخیر هر بار دو روز درد بیشتری داشتم و وقت‌ها آن‌قدر نامناسب است که در کار به‌سختی می‌توانم عقب‌افتادگی را جبران کنم." },
+            { "language": "ar", "text": "لا أريد إيقافه ببساطة. لكن بالشكل الحالي أصبح الأمر مشكلة: بعد الجلسات الأخيرة كان لدي ألم أقوى لمدة يومين كل مرة، والمواعيد غير مناسبة جدًا بحيث بالكاد أستطيع تعويض العمل." },
+            { "language": "tr", "text": "Onu basitçe bırakmak istemiyorum. Ama mevcut biçimiyle sorunlu hale geliyor: son seanslardan sonra her defasında iki gün daha güçlü ağrım oldu ve randevular o kadar uygunsuz zamana denk geliyor ki işte açığı kapatmakta zorlanıyorum." },
+            { "language": "ru", "text": "Я не хочу просто прекращать ее. Но в нынешнем виде это становится проблемой: после последних сеансов у меня каждый раз два дня были более сильные боли, а записи назначены так неудобно, что на работе я почти не могу наверстать." },
+            { "language": "ckb", "text": "ناتەوێت بە سادەیی بیوەستێنم. بەڵام بە شێوەی ئێستای کێشەدار دەبێت: دوای دانیشتنەکانی دوایی هەر جار دوو ڕۆژ ئازاری زیاترەم هەبوو، و کاتەکان ئەوەندە نەگونجاون کە لە کاردا بە زەحمەت دەتوانم دواکه‌وتنەکان قەرەبوو بکەمەوە." },
+            { "language": "kmr", "text": "Ez naxwazim wê bi hêsanî rawestînim. Lê bi awayê heyî ew pirsgirêk dibe: piştî rûniştinên dawî her car du roj êşa min zêdetir bû, û randevû ewqas nebaş têne ku ez li kar bi zor dikarim paşketinê bigihînim." },
+            { "language": "pl", "text": "Nie chcę jej po prostu przerywać. Jednak w dotychczasowej formie staje się to problematyczne: po ostatnich sesjach miałem/miałam za każdym razem przez dwa dni silniejsze bóle, a terminy są tak niekorzystne, że w pracy prawie nie mogę nadrobić zaległości." },
+            { "language": "ro", "text": "Nu vreau să o opresc pur și simplu. Dar în forma actuală devine problematică: după ultimele ședințe am avut de fiecare dată dureri mai puternice timp de două zile, iar programările sunt atât de nepotrivite încât cu greu pot recupera la muncă." },
+            { "language": "sq", "text": "Nuk dua ta ndërpres thjesht. Por në formën aktuale po bëhet problematike: pas seancave të fundit pata çdo herë dhimbje më të forta për dy ditë dhe oraret janë aq të papërshtatshme sa mezi arrij të kompensoj në punë." }
+          ],
+          "function": "nuanced-opening",
+          "toneNote": "Nicht mit einer endgültigen Entscheidung beginnen; Problemfaktoren getrennt nennen.",
+          "expectedLearnerAction": "Clarify that the issue is current form, not rejection of all treatment."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Das ist ein wichtiger Unterschied. Geht es eher um Nebenwirkungen, um den organisatorischen Aufwand oder darum, dass Sie den Nutzen grundsätzlich anzweifeln?",
+          "translations": [
+            { "language": "en", "text": "That is an important distinction. Is it more about side effects, the organizational effort, or the fact that you fundamentally doubt the benefit?" },
+            { "language": "fa", "text": "این تفاوت مهمی است. مسئله بیشتر عوارض است، فشار سازمانی، یا اینکه اساساً درباره فایده درمان تردید دارید؟" },
+            { "language": "ar", "text": "هذا فرق مهم. هل يتعلق الأمر أكثر بالآثار الجانبية أم بالجهد التنظيمي أم بأنكم تشكون أساسًا في الفائدة؟" },
+            { "language": "tr", "text": "Bu önemli bir ayrım. Daha çok yan etkilerle mi, organizasyon yüküyle mi, yoksa faydayı temelden sorgulamanızla mı ilgili?" },
+            { "language": "ru", "text": "Это важное различие. Речь скорее о побочных эффектах, об организационных затратах или о том, что вы принципиально сомневаетесь в пользе?" },
+            { "language": "ckb", "text": "ئەمە جیاوازییەکی گرنگە. بابەتەکە زیاتر دەربارەی کاریگەریی لاوەکییە، یان باری ڕێکخستن، یان ئەوەی بە بنەڕەت گومان لە سوودەکە دەکەیت؟" },
+            { "language": "kmr", "text": "Ev cudahiyeke girîng e. Ma zêdetir li ser bandorên alî ye, li ser barê rêxistinê ye, an li ser wê ye ku hûn bi bingehîn ji sûdê guman dikin?" },
+            { "language": "pl", "text": "To ważne rozróżnienie. Czy chodzi raczej o działania niepożądane, o wysiłek organizacyjny, czy o to, że zasadniczo wątpi Pan/Pani w korzyść?" },
+            { "language": "ro", "text": "Aceasta este o distincție importantă. Este vorba mai degrabă despre efecte secundare, despre efortul organizatoric sau despre faptul că vă îndoiți fundamental de beneficiu?" },
+            { "language": "sq", "text": "Ky është një dallim i rëndësishëm. A bëhet fjalë më shumë për efektet anësore, për përpjekjen organizative apo për faktin që dyshoni në mënyrë themelore për përfitimin?" }
+          ]
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Es ist eine Mischung, aber nicht alles gleich stark. Die Schmerzen nach den Übungen verunsichern mich am meisten. Der Aufwand ist belastend, aber lösbar. Am Nutzen zweifle ich nicht grundsätzlich; ich frage mich eher, ob Tempo und Dosierung zu mir passen.",
+          "translations": [
+            { "language": "en", "text": "It is a mixture, but not all factors are equally strong. The pain after the exercises unsettles me most. The effort is burdensome but solvable. I do not fundamentally doubt the benefit; I am more wondering whether pace and dosage fit me." },
+            { "language": "fa", "text": "ترکیبی از چند عامل است، اما همه به یک اندازه قوی نیستند. درد بعد از تمرین‌ها بیشتر از همه مرا نگران می‌کند. فشار زمانی و برنامه‌ریزی سنگین است، اما قابل حل است. درباره فایده درمان اساساً تردید ندارم؛ بیشتر می‌پرسم آیا سرعت و میزان آن برای من مناسب است یا نه." },
+            { "language": "ar", "text": "إنه مزيج، لكن العوامل ليست كلها بالقوة نفسها. الألم بعد التمارين يقلقني أكثر شيء. الجهد مرهق لكنه قابل للحل. لا أشك في الفائدة بشكل أساسي؛ بل أتساءل أكثر عما إذا كانت السرعة والجرعة تناسبانني." },
+            { "language": "tr", "text": "Bu bir karışım, ama her şey aynı derecede güçlü değil. Egzersizlerden sonraki ağrılar beni en çok tedirgin ediyor. Çaba yorucu ama çözülebilir. Faydayı temelden sorgulamıyorum; daha çok tempo ve dozun bana uyup uymadığını merak ediyorum." },
+            { "language": "ru", "text": "Это сочетание, но не все факторы одинаково сильны. Больше всего меня тревожат боли после упражнений. Затраты обременительны, но решаемы. В пользе я принципиально не сомневаюсь; скорее спрашиваю себя, подходят ли мне темп и дозировка." },
+            { "language": "ckb", "text": "تێکەڵەیەکە، بەڵام هەموویان بە هەمان هێز نین. ئازارەکانی دوای ڕاهێنانەکان زیاترین نیگەرانی دروست دەکەن. بارەکە قورسە، بەڵام چارەسەر دەکرێت. لە سوودەکە بە بنەڕەت گومان ناکەم؛ زیاتر دەپرسم ئایا خێرایی و ڕێژەکە بۆ من گونجاوە یان نا." },
+            { "language": "kmr", "text": "Ew tevliheviyek e, lê hemû tişt bi heman hêzê ne. Êşa piştî hîndekariyan herî zêde min bêewle dike. Hewl barkirî ye, lê dikare çareser bibe. Ez bi bingehîn ji sûdê guman nakim; zêdetir dipirsim ka leza û doz ji bo min guncan in an na." },
+            { "language": "pl", "text": "To mieszanka, ale nie wszystko jest równie silne. Najbardziej niepokoją mnie bóle po ćwiczeniach. Wysiłek organizacyjny jest obciążający, ale możliwy do rozwiązania. Nie wątpię zasadniczo w korzyść; raczej zastanawiam się, czy tempo i dawka są dla mnie odpowiednie." },
+            { "language": "ro", "text": "Este un amestec, dar nu toate aspectele sunt la fel de puternice. Durerile după exerciții mă neliniștesc cel mai mult. Efortul este împovărător, dar rezolvabil. Nu mă îndoiesc fundamental de beneficiu; mă întreb mai degrabă dacă ritmul și dozarea mi se potrivesc." },
+            { "language": "sq", "text": "Është një përzierje, por jo të gjithë faktorët janë po aq të fortë. Dhimbjet pas ushtrimeve më shqetësojnë më shumë. Përpjekja organizative është e rëndë, por e zgjidhshme. Nuk dyshoj në thelb për përfitimin; më shumë pyes veten nëse ritmi dhe doza më përshtaten." }
+          ],
+          "function": "separate-reasons",
+          "toneNote": "Die Gründe gewichten, damit kein pauschaler Abbruchwunsch entsteht.",
+          "expectedLearnerAction": "Separate pain, logistics, and doubts about benefit."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Dann sollten wir nicht nur über Abbruch sprechen, sondern auch über Anpassung. Welche Veränderung wäre für Sie ein ernsthafter Versuch, bevor wir die Therapie ganz beenden?",
+          "translations": [
+            { "language": "en", "text": "Then we should not only talk about stopping, but also about adjustment. Which change would be a serious attempt for you before we end the therapy completely?" },
+            { "language": "fa", "text": "پس نباید فقط درباره قطع درمان صحبت کنیم، بلکه درباره تنظیم آن هم باید حرف بزنیم. چه تغییری برای شما یک تلاش جدی خواهد بود، قبل از اینکه درمان را کاملاً پایان دهیم؟" },
+            { "language": "ar", "text": "إذن لا ينبغي أن نتحدث عن الإيقاف فقط، بل أيضًا عن التعديل. أي تغيير سيكون بالنسبة لكم محاولة جدية قبل أن ننهي العلاج تمامًا؟" },
+            { "language": "tr", "text": "O zaman yalnızca bırakmayı değil, uyarlamayı da konuşmalıyız. Tedaviyi tamamen sonlandırmadan önce sizin için hangi değişiklik ciddi bir deneme olurdu?" },
+            { "language": "ru", "text": "Тогда нам следует говорить не только о прекращении, но и о корректировке. Какое изменение было бы для вас серьезной попыткой до полного завершения терапии?" },
+            { "language": "ckb", "text": "ئەوا نابێت تەنها دەربارەی وەستاندن قسە بکەین، بەڵکو دەربارەی ڕێکخستنیش. کام گۆڕانکاری بۆ تۆ هەوڵێکی جدی دەبێت پێش ئەوەی چارەسەرەکە بە تەواوی کۆتایی پێبهێنین؟" },
+            { "language": "kmr", "text": "Wê demê divê em ne tenê li ser rawestandinê, lê her wiha li ser lihevhatinê biaxivin. Kîjan guhertin ji bo we hewldaneke cidî ye berî ku em terapiyê bi tevahî biqedînin?" },
+            { "language": "pl", "text": "W takim razie powinniśmy mówić nie tylko o przerwaniu, lecz także o modyfikacji. Jaka zmiana byłaby dla Pana/Pani poważną próbą, zanim całkowicie zakończymy terapię?" },
+            { "language": "ro", "text": "Atunci nu ar trebui să discutăm doar despre întrerupere, ci și despre adaptare. Ce schimbare ar fi pentru dumneavoastră o încercare serioasă înainte să încheiem complet terapia?" },
+            { "language": "sq", "text": "Atëherë nuk duhet të flasim vetëm për ndërprerje, por edhe për përshtatje. Cili ndryshim do të ishte për ju një përpjekje serioze para se ta përfundojmë terapinë plotësisht?" }
+          ]
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich wäre bereit, zwei Wochen lang mit geringerer Intensität weiterzumachen: weniger Wiederholungen, ein klarer Schmerzgrenzwert und ein kurzer schriftlicher Plan für zu Hause. Wenn die Schmerzen dann trotzdem deutlich zunehmen, sollten wir über eine andere Methode sprechen.",
+          "translations": [
+            { "language": "en", "text": "I would be willing to continue for two weeks at lower intensity: fewer repetitions, a clear pain threshold, and a short written plan for home. If the pain still increases clearly, we should talk about another method." },
+            { "language": "fa", "text": "حاضرم دو هفته با شدت کمتر ادامه بدهم: تکرارهای کمتر، یک حد روشن برای درد و یک برنامه کوتاه کتبی برای خانه. اگر با وجود این درد به‌طور واضح بیشتر شد، باید درباره روش دیگری صحبت کنیم." },
+            { "language": "ar", "text": "سأكون مستعدًا للمتابعة لمدة أسبوعين بكثافة أقل: تكرارات أقل، حد واضح للألم، وخطة قصيرة مكتوبة للمنزل. إذا ازداد الألم رغم ذلك بوضوح، ينبغي أن نتحدث عن طريقة أخرى." },
+            { "language": "tr", "text": "İki hafta daha düşük yoğunlukla devam etmeye hazırım: daha az tekrar, net bir ağrı sınırı ve ev için kısa yazılı bir plan. Buna rağmen ağrılar belirgin artarsa başka bir yöntemden söz etmeliyiz." },
+            { "language": "ru", "text": "Я готов продолжать две недели с меньшей интенсивностью: меньше повторений, четкий болевой порог и короткий письменный план для дома. Если боли все равно заметно усилятся, нам следует поговорить о другом методе." },
+            { "language": "ckb", "text": "ئامادەم دوو هەفتە بە توندیی کەمتر بەردەوام بم: دووبارەکردنەوەی کەمتر، سنوورێکی ڕوونی ئازار و پلانێکی کورتی نووسراو بۆ ماڵەوە. ئەگەر هێشتا ئازار بە ڕوونی زیاد بوو، پێویستە دەربارەی ڕێگایەکی تر قسە بکەین." },
+            { "language": "kmr", "text": "Ez amade me du hefteyan bi tundiya kêmtir bidomînim: dubarekirinên kêmtir, sînorekî êşê yê zelal û planeke kurt a nivîskî ji bo malê. Heke êş tevî vê yekê bi zelalî zêde bibe, divê em li ser rêbazeke din biaxivin." },
+            { "language": "pl", "text": "Byłbym/byłabym gotów/gotowa kontynuować przez dwa tygodnie z mniejszą intensywnością: mniej powtórzeń, jasna granica bólu i krótki pisemny plan do domu. Jeśli ból mimo to wyraźnie wzrośnie, powinniśmy porozmawiać o innej metodzie." },
+            { "language": "ro", "text": "Aș fi dispus să continui timp de două săptămâni cu intensitate mai mică: mai puține repetări, un prag clar al durerii și un scurt plan scris pentru acasă. Dacă durerile cresc totuși clar, ar trebui să discutăm despre o altă metodă." },
+            { "language": "sq", "text": "Do të isha i gatshëm të vazhdoja për dy javë me intensitet më të ulët: më pak përsëritje, një kufi të qartë dhimbjeje dhe një plan të shkurtër me shkrim për në shtëpi. Nëse dhimbjet megjithatë rriten dukshëm, duhet të flasim për një metodë tjetër." }
+          ],
+          "function": "conditional-adjustment",
+          "toneNote": "Eine überprüfbare Alternative vorschlagen statt nur abzubrechen.",
+          "expectedLearnerAction": "Offer a limited adjustment with criteria for changing method."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Das wäre medizinisch besser steuerbar als ein sofortiger Abbruch. Wichtig wäre aber, dass Sie nicht bei jedem unangenehmen Gefühl abbrechen. Welche Warnzeichen wären für Sie wirklich ausschlaggebend?",
+          "translations": [
+            { "language": "en", "text": "That would be medically easier to manage than an immediate stop. But it would be important that you do not stop at every unpleasant feeling. Which warning signs would really be decisive for you?" },
+            { "language": "fa", "text": "این از نظر پزشکی بهتر از قطع فوری قابل کنترل است. اما مهم است که با هر احساس ناخوشایند درمان را قطع نکنید. کدام نشانه‌های هشدار برای شما واقعاً تعیین‌کننده خواهند بود؟" },
+            { "language": "ar", "text": "سيكون ذلك أسهل طبيًا في التحكم من الإيقاف الفوري. لكن من المهم ألا تتوقفوا عند كل شعور مزعج. ما علامات التحذير التي ستكون حاسمة حقًا بالنسبة لكم؟" },
+            { "language": "tr", "text": "Bu, tıbben hemen bırakmaktan daha iyi yönetilebilir. Ama her rahatsız edici duyguda bırakmamanız önemli olur. Hangi uyarı işaretleri sizin için gerçekten belirleyici olurdu?" },
+            { "language": "ru", "text": "С медицинской точки зрения это было бы лучше управляемо, чем немедленное прекращение. Но важно, чтобы вы не прекращали при каждом неприятном ощущении. Какие предупреждающие признаки были бы для вас действительно решающими?" },
+            { "language": "ckb", "text": "ئەمە لە ڕووی پزیشکییەوە باشتر کۆنترۆڵ دەکرێت لە وەستاندنی دەستبەجێ. بەڵام گرنگە لە هەر هەستێکی ناخۆشدا نەوەستیت. کام نیشانەی ئاگادارکردنەوە بۆ تۆ بەڕاستی بڕیارده‌ر دەبێت؟" },
+            { "language": "kmr", "text": "Ev ji aliyê bijîşkî ve ji rawestandina yekser baştir tê rêvebirin. Lê girîng e ku hûn li ber her hesteke nebaş rawestînin. Kîjan nîşanên hişyariyê ji bo we bi rastî diyarker in?" },
+            { "language": "pl", "text": "Medycznie byłoby to łatwiejsze do sterowania niż natychmiastowe przerwanie. Ważne jednak, aby nie przerywać przy każdym nieprzyjemnym odczuciu. Jakie objawy ostrzegawcze byłyby dla Pana/Pani naprawdę rozstrzygające?" },
+            { "language": "ro", "text": "Aceasta ar fi mai ușor de gestionat medical decât o întrerupere imediată. Dar ar fi important să nu opriți la fiecare senzație neplăcută. Ce semne de avertizare ar fi cu adevărat decisive pentru dumneavoastră?" },
+            { "language": "sq", "text": "Kjo do të ishte më e menaxhueshme nga ana mjekësore sesa një ndërprerje e menjëhershme. Por do të ishte e rëndësishme të mos ndaloni për çdo ndjesi të pakëndshme. Cilat shenja paralajmëruese do të ishin vërtet vendimtare për ju?" }
+          ]
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ausschlaggebend wären Schmerzen, die länger als zwei Tage deutlich über dem Ausgangsniveau bleiben, Taubheitsgefühle oder wenn ich Alltagsbewegungen danach schlechter ausführen kann. Normale Muskelreaktionen würde ich nicht als Abbruchgrund nehmen.",
+          "translations": [
+            { "language": "en", "text": "Decisive would be pain that stays clearly above the starting level for more than two days, numbness, or if I can perform everyday movements worse afterward. I would not treat normal muscle reactions as a reason to stop." },
+            { "language": "fa", "text": "تعیین‌کننده دردهایی است که بیش از دو روز به‌طور واضح بالاتر از سطح اولیه بماند، بی‌حسی، یا اینکه بعد از آن حرکات روزمره را بدتر انجام دهم. واکنش‌های معمول عضلانی را دلیل قطع درمان نمی‌دانم." },
+            { "language": "ar", "text": "سيكون الحاسم هو ألم يبقى أعلى بوضوح من المستوى الأساسي لأكثر من يومين، أو خدر، أو إذا أصبحت أؤدي حركات الحياة اليومية بعد ذلك بشكل أسوأ. لن أعتبر ردود الفعل العضلية العادية سببًا للإيقاف." },
+            { "language": "tr", "text": "Belirleyici olan, iki günden uzun süre başlangıç düzeyinin belirgin üstünde kalan ağrı, uyuşma ya da sonrasında günlük hareketleri daha kötü yapmam olurdu. Normal kas tepkilerini bırakma nedeni saymazdım." },
+            { "language": "ru", "text": "Решающими были бы боли, которые более двух дней явно остаются выше исходного уровня, онемение или если после этого я хуже выполняю повседневные движения. Обычные мышечные реакции я не считал бы причиной прекращения." },
+            { "language": "ckb", "text": "بڕیارده‌ر ئەو ئازارانە دەبن کە زیاتر لە دوو ڕۆژ بە ڕوونی لە ئاستی دەستپێک بەرزتر بمێنن، یان بێ‌هەستی، یان ئەگەر دوای ئەوە جوڵەکانی ڕۆژانە خراپتر بکەم. وەڵامی ئاسایی ماسولکە بە هۆکاری وەستاندن دانانێم." },
+            { "language": "kmr", "text": "Diyarker dê ew êş bin ku zêdetirî du rojan bi zelalî li jor asta destpêkê bimînin, bêhestî, an heke ez piştî wê tevgerên rojane xerabtir bikim. Ez bersivên asayî yên masûlkeyan wek sedema rawestandinê nagirim." },
+            { "language": "pl", "text": "Rozstrzygające byłyby bóle, które przez ponad dwa dni pozostają wyraźnie powyżej poziomu wyjściowego, drętwienie albo jeśli potem gorzej wykonuję codzienne ruchy. Normalnych reakcji mięśniowych nie uznałbym/uznałabym za powód do przerwania." },
+            { "language": "ro", "text": "Decisive ar fi durerile care rămân clar peste nivelul inițial mai mult de două zile, amorțeala sau dacă după aceea pot executa mai greu mișcările de zi cu zi. Nu aș considera reacțiile musculare normale un motiv de întrerupere." },
+            { "language": "sq", "text": "Vendimtare do të ishin dhimbjet që qëndrojnë qartë mbi nivelin fillestar më shumë se dy ditë, mpirja ose nëse më pas i kryej më keq lëvizjet e përditshme. Reagimet normale të muskujve nuk do t'i merrja si arsye për ndërprerje." }
+          ],
+          "function": "review-criteria",
+          "toneNote": "Warnzeichen von erwartbaren Reaktionen trennen.",
+          "expectedLearnerAction": "Define clear review criteria and avoid overreacting to normal discomfort."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "doctor",
+          "baseText": "Gut. Ich dokumentiere also keinen Abbruch gegen ärztlichen Rat, sondern eine gemeinsame Anpassung mit Kontrollkriterien. Wie möchten Sie den Plan am Ende zusammenfassen?",
+          "translations": [
+            { "language": "en", "text": "Good. So I will not document a stop against medical advice, but a shared adjustment with review criteria. How would you like to summarize the plan at the end?" },
+            { "language": "fa", "text": "خوب. پس من قطع درمان برخلاف توصیه پزشکی را ثبت نمی‌کنم، بلکه یک تنظیم مشترک با معیارهای کنترل را ثبت می‌کنم. می‌خواهید برنامه را در پایان چگونه خلاصه کنید؟" },
+            { "language": "ar", "text": "جيد. إذن لن أوثق إيقافًا ضد النصيحة الطبية، بل تعديلًا مشتركًا مع معايير مراجعة. كيف ترغبون في تلخيص الخطة في النهاية؟" },
+            { "language": "tr", "text": "İyi. O halde tıbbi tavsiyeye karşı bir bırakma değil, kontrol ölçütleri olan ortak bir uyarlama belgeleyeceğim. Planı sonunda nasıl özetlemek istersiniz?" },
+            { "language": "ru", "text": "Хорошо. Значит, я документирую не прекращение вопреки медицинскому совету, а совместную корректировку с критериями контроля. Как вы хотите в конце резюмировать план?" },
+            { "language": "ckb", "text": "باشە. کەواتە من وەستاندن دژ بە ئامۆژگاری پزیشکی تۆمار ناکەم، بەڵکو ڕێکخستنێکی هاوبەش لەگەڵ پێوەری کۆنترۆڵ. دەتەوێت لە کۆتاییدا پلانەکە چۆن پوختە بکەیت؟" },
+            { "language": "kmr", "text": "Baş e. Ji ber vê ez ne rawestandinek li dijî şîreta bijîşkî, lê lihevhatineke hevpar bi pîvanên kontrolê tomar dikim. Hûn dixwazin di dawiyê de planê çawa kurt bikin?" },
+            { "language": "pl", "text": "Dobrze. Nie udokumentuję więc przerwania wbrew zaleceniu lekarskiemu, lecz wspólną modyfikację z kryteriami kontroli. Jak chciałby/chciałaby Pan/Pani podsumować plan na końcu?" },
+            { "language": "ro", "text": "Bine. Așadar nu documentez o întrerupere împotriva sfatului medical, ci o adaptare comună cu criterii de control. Cum doriți să rezumați planul la final?" },
+            { "language": "sq", "text": "Mirë. Pra nuk dokumentoj një ndërprerje kundër këshillës mjekësore, por një përshtatje të përbashkët me kritere kontrolli. Si dëshironi ta përmblidhni planin në fund?" }
+          ]
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich halte fest: Ich breche die Therapie nicht eigenmächtig ab, sondern teste zwei Wochen eine reduzierte Dosierung mit klaren Schmerzgrenzen. Danach entscheiden wir gemeinsam, ob wir fortsetzen, die Methode wechseln oder eine Pause medizinisch begründen.",
+          "translations": [
+            { "language": "en", "text": "I will state this: I am not stopping the therapy on my own, but will test a reduced dosage with clear pain limits for two weeks. After that, we will decide together whether to continue, change the method, or medically justify a pause." },
+            { "language": "fa", "text": "این را ثبت می‌کنم: من درمان را خودسرانه قطع نمی‌کنم، بلکه دو هفته دوز/شدت کمتر را با مرزهای روشن درد امتحان می‌کنم. بعد از آن با هم تصمیم می‌گیریم ادامه دهیم، روش را عوض کنیم یا یک وقفه را از نظر پزشکی توجیه کنیم." },
+            { "language": "ar", "text": "أثبت ذلك: لا أوقف العلاج من تلقاء نفسي، بل أختبر لمدة أسبوعين جرعة مخفضة مع حدود واضحة للألم. بعد ذلك نقرر معًا ما إذا كنا سنواصل أو نغير الطريقة أو نبرر وقفة طبيًا." },
+            { "language": "tr", "text": "Şunu kayda geçiriyorum: Tedaviyi kendi başıma bırakmıyorum, iki hafta boyunca net ağrı sınırlarıyla azaltılmış bir doz deniyorum. Sonra birlikte devam edip etmeyeceğimize, yöntemi değiştirip değiştirmeyeceğimize veya tıbben gerekçeli bir ara verip vermeyeceğimize karar veririz." },
+            { "language": "ru", "text": "Я фиксирую: я не прекращаю терапию самовольно, а две недели пробую сниженный режим с четкими болевыми границами. После этого мы вместе решим, продолжать ли, менять метод или медицински обосновать паузу." },
+            { "language": "ckb", "text": "ئەمە تۆمار دەکەم: من چارەسەرەکە خۆسەرانە ناوەستێنم، بەڵکو دوو هەفتە ڕێژەی کەمکراوە لەگەڵ سنووری ڕوونی ئازار تاقی دەکەمەوە. پاشان بەیەکەوە بڕیار دەدەین ئایا بەردەوام بین، ڕێگاکە بگۆڕین یان پشوویەک بە پزیشکی پاساو بدەین." },
+            { "language": "kmr", "text": "Ez vê qeyd dikim: Ez terapiyê bi serê xwe narawestînim, lê du hefteyan dozeke kêmkirî bi sînorên êşê yên zelal têst dikim. Piştî wê em bi hev re biryar didin ka em bidomînin, rêbazê biguherînin an bêhnvedanekê ji aliyê bijîşkî ve rewa bikin." },
+            { "language": "pl", "text": "Podsumowuję: nie przerywam terapii samowolnie, lecz przez dwa tygodnie testuję zmniejszoną dawkę z jasnymi granicami bólu. Potem wspólnie zdecydujemy, czy kontynuować, zmienić metodę czy medycznie uzasadnić przerwę." },
+            { "language": "ro", "text": "Notez astfel: nu întrerup terapia pe cont propriu, ci testez timp de două săptămâni o dozare redusă cu limite clare ale durerii. Apoi decidem împreună dacă continuăm, schimbăm metoda sau justificăm medical o pauză." },
+            { "language": "sq", "text": "E përmbledh kështu: nuk e ndërpres terapinë vetë, por testoj për dy javë një dozë të reduktuar me kufij të qartë dhimbjeje. Pas kësaj vendosim së bashku nëse vazhdojmë, ndryshojmë metodën apo arsyetojmë mjekësisht një pushim." }
+          ],
+          "function": "safe-summary",
+          "toneNote": "Eigenmächtigkeit vermeiden und gemeinsame Entscheidung mit Kontrollpunkt nennen.",
+          "expectedLearnerAction": "Summarize reduced plan, review date, and possible next decisions."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich möchte sie nicht einfach abbrechen. In der bisherigen Form wird es aber problematisch: Nach den letzten Sitzungen hatte ich jeweils zwei Tage stärkere Schmerzen, und die Termine fallen so ungünstig, dass ich beruflich kaum nacharbeiten kann.",
+              "translations": [
+                { "language": "en", "text": "I do not want to simply stop it. But in its current form it is becoming problematic: after the last sessions I had stronger pain for two days each time, and the appointments are so badly timed that I can hardly catch up at work." },
+                { "language": "fa", "text": "نمی‌خواهم آن را ساده قطع کنم. اما در شکل فعلی مشکل‌ساز شده است: بعد از جلسه‌های اخیر هر بار دو روز درد بیشتری داشتم و وقت‌ها آن‌قدر نامناسب است که در کار به‌سختی می‌توانم عقب‌افتادگی را جبران کنم." },
+                { "language": "ar", "text": "لا أريد إيقافه ببساطة. لكن بالشكل الحالي أصبح الأمر مشكلة: بعد الجلسات الأخيرة كان لدي ألم أقوى لمدة يومين كل مرة، والمواعيد غير مناسبة جدًا بحيث بالكاد أستطيع تعويض العمل." },
+                { "language": "tr", "text": "Onu basitçe bırakmak istemiyorum. Ama mevcut biçimiyle sorunlu hale geliyor: son seanslardan sonra her defasında iki gün daha güçlü ağrım oldu ve randevular o kadar uygunsuz zamana denk geliyor ki işte açığı kapatmakta zorlanıyorum." },
+                { "language": "ru", "text": "Я не хочу просто прекращать ее. Но в нынешнем виде это становится проблемой: после последних сеансов у меня каждый раз два дня были более сильные боли, а записи назначены так неудобно, что на работе я почти не могу наверстать." },
+                { "language": "ckb", "text": "ناتەوێت بە سادەیی بیوەستێنم. بەڵام بە شێوەی ئێستای کێشەدار دەبێت: دوای دانیشتنەکانی دوایی هەر جار دوو ڕۆژ ئازاری زیاترەم هەبوو، و کاتەکان ئەوەندە نەگونجاون کە لە کاردا بە زەحمەت دەتوانم دواکه‌وتنەکان قەرەبوو بکەمەوە." },
+                { "language": "kmr", "text": "Ez naxwazim wê bi hêsanî rawestînim. Lê bi awayê heyî ew pirsgirêk dibe: piştî rûniştinên dawî her car du roj êşa min zêdetir bû, û randevû ewqas nebaş têne ku ez li kar bi zor dikarim paşketinê bigihînim." },
+                { "language": "pl", "text": "Nie chcę jej po prostu przerywać. Jednak w dotychczasowej formie staje się to problematyczne: po ostatnich sesjach miałem/miałam za każdym razem przez dwa dni silniejsze bóle, a terminy są tak niekorzystne, że w pracy prawie nie mogę nadrobić zaległości." },
+                { "language": "ro", "text": "Nu vreau să o opresc pur și simplu. Dar în forma actuală devine problematică: după ultimele ședințe am avut de fiecare dată dureri mai puternice timp de două zile, iar programările sunt atât de nepotrivite încât cu greu pot recupera la muncă." },
+                { "language": "sq", "text": "Nuk dua ta ndërpres thjesht. Por në formën aktuale po bëhet problematike: pas seancave të fundit pata çdo herë dhimbje më të forta për dy ditë dhe oraret janë aq të papërshtatshme sa mezi arrij të kompensoj në punë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet einen vorschnellen Abbruch und nennt zwei konkrete Problemfaktoren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer avoids a premature stop and names two concrete problem factors." },
+                { "language": "fa", "text": "قوی: پاسخ از قطع شتاب‌زده پرهیز می‌کند و دو عامل مشخص مشکل را نام می‌برد." },
+                { "language": "ar", "text": "قوي: الجواب يتجنب إيقافًا متسرعًا ويذكر عاملين محددين للمشكلة." },
+                { "language": "tr", "text": "Güçlü: Yanıt acele bir bırakmadan kaçınıyor ve iki somut sorun etkeni belirtiyor." },
+                { "language": "ru", "text": "Сильно: ответ избегает преждевременного прекращения и называет два конкретных проблемных фактора." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە وەستاندنی پەلەدار دوور دەکەوێتەوە و دوو هۆکاری دیاریکراوی کێشە ناودەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv ji rawestandina zû dûr dikeve û du faktorên konkret ên pirsgirêkê nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika pochopnego przerwania i nazywa dwa konkretne czynniki problemu." },
+                { "language": "ro", "text": "Puternic: răspunsul evită o întrerupere pripită și numește doi factori concreți ai problemei." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang një ndërprerje të nxituar dhe përmend dy faktorë konkretë të problemit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich glaube, die Therapie ist vielleicht zu viel für mich, deshalb möchte ich erst einmal aufhören.",
+              "translations": [
+                { "language": "en", "text": "I think the therapy may be too much for me, so I would like to stop for now." },
+                { "language": "fa", "text": "فکر می‌کنم درمان شاید برای من زیاد است، برای همین فعلاً می‌خواهم متوقف کنم." },
+                { "language": "ar", "text": "أعتقد أن العلاج ربما يكون كثيرًا علي، لذلك أود التوقف مؤقتًا." },
+                { "language": "tr", "text": "Tedavinin benim için fazla olabileceğini düşünüyorum, bu yüzden şimdilik bırakmak istiyorum." },
+                { "language": "ru", "text": "Я думаю, терапия, возможно, слишком тяжела для меня, поэтому пока хочу остановиться." },
+                { "language": "ckb", "text": "پێم وایە چارەسەرەکە ڕەنگە بۆ من زۆر بێت، بۆیە دەمەوێت ئێستا بوەستم." },
+                { "language": "kmr", "text": "Ez difikirim ku terapi belkî ji bo min zêde ye, ji ber vê ez dixwazim niha rawestim." },
+                { "language": "pl", "text": "Myślę, że terapia może być dla mnie zbyt dużym obciążeniem, dlatego chciałbym/chciałabym na razie przestać." },
+                { "language": "ro", "text": "Cred că terapia poate fi prea mult pentru mine, de aceea aș vrea să mă opresc deocamdată." },
+                { "language": "sq", "text": "Mendoj se terapia ndoshta është shumë për mua, prandaj dua të ndalem për momentin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu unpräzise. Es fehlen konkrete Beschwerden, Zeitraum und die Bereitschaft, Alternativen zu prüfen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise. Concrete symptoms, timeframe, and willingness to examine alternatives are missing." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی مبهم است. شکایت‌های مشخص، بازه زمانی و آمادگی برای بررسی جایگزین‌ها کم است." },
+                { "language": "ar", "text": "مفهوم، لكنه غير دقيق كفاية. تنقص الأعراض المحددة والإطار الزمني والاستعداد لفحص البدائل." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla belirsiz. Somut şikâyetler, zaman aralığı ve alternatifleri inceleme isteği eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно. Не хватает конкретных жалоб, периода и готовности рассмотреть альтернативы." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر نادیارە. سکاڵای دیاریکراو، ماوە و ئامادەیی بۆ پشکنینی جێگرەوەکان کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e. Gilîyên konkret, dem û amadebûna vekolîna alternatîfan kêm in." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt nieprecyzyjne. Brakuje konkretnych dolegliwości, ram czasowych i gotowości do sprawdzenia alternatyw." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis. Lipsesc simptome concrete, intervalul de timp și disponibilitatea de a analiza alternative." },
+                { "language": "sq", "text": "E besueshme, por shumë e pasaktë. Mungojnë ankesat konkrete, periudha kohore dhe gatishmëria për të shqyrtuar alternativa." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Es ist eine Mischung, aber nicht alles gleich stark. Die Schmerzen nach den Übungen verunsichern mich am meisten. Der Aufwand ist belastend, aber lösbar. Am Nutzen zweifle ich nicht grundsätzlich; ich frage mich eher, ob Tempo und Dosierung zu mir passen.",
+              "translations": [
+                { "language": "en", "text": "It is a mixture, but not all factors are equally strong. The pain after the exercises unsettles me most. The effort is burdensome but solvable. I do not fundamentally doubt the benefit; I am more wondering whether pace and dosage fit me." },
+                { "language": "fa", "text": "ترکیبی از چند عامل است، اما همه به یک اندازه قوی نیستند. درد بعد از تمرین‌ها بیشتر از همه مرا نگران می‌کند. فشار زمانی و برنامه‌ریزی سنگین است، اما قابل حل است. درباره فایده درمان اساساً تردید ندارم؛ بیشتر می‌پرسم آیا سرعت و میزان آن برای من مناسب است یا نه." },
+                { "language": "ar", "text": "إنه مزيج، لكن العوامل ليست كلها بالقوة نفسها. الألم بعد التمارين يقلقني أكثر شيء. الجهد مرهق لكنه قابل للحل. لا أشك في الفائدة بشكل أساسي؛ بل أتساءل أكثر عما إذا كانت السرعة والجرعة تناسبانني." },
+                { "language": "tr", "text": "Bu bir karışım, ama her şey aynı derecede güçlü değil. Egzersizlerden sonraki ağrılar beni en çok tedirgin ediyor. Çaba yorucu ama çözülebilir. Faydayı temelden sorgulamıyorum; daha çok tempo ve dozun bana uyup uymadığını merak ediyorum." },
+                { "language": "ru", "text": "Это сочетание, но не все факторы одинаково сильны. Больше всего меня тревожат боли после упражнений. Затраты обременительны, но решаемы. В пользе я принципиально не сомневаюсь; скорее спрашиваю себя, подходят ли мне темп и дозировка." },
+                { "language": "ckb", "text": "تێکەڵەیەکە، بەڵام هەموویان بە هەمان هێز نین. ئازارەکانی دوای ڕاهێنانەکان زیاترین نیگەرانی دروست دەکەن. بارەکە قورسە، بەڵام چارەسەر دەکرێت. لە سوودەکە بە بنەڕەت گومان ناکەم؛ زیاتر دەپرسم ئایا خێرایی و ڕێژەکە بۆ من گونجاوە یان نا." },
+                { "language": "kmr", "text": "Ew tevliheviyek e, lê hemû tişt bi heman hêzê ne. Êşa piştî hîndekariyan herî zêde min bêewle dike. Hewl barkirî ye, lê dikare çareser bibe. Ez bi bingehîn ji sûdê guman nakim; zêdetir dipirsim ka leza û doz ji bo min guncan in an na." },
+                { "language": "pl", "text": "To mieszanka, ale nie wszystko jest równie silne. Najbardziej niepokoją mnie bóle po ćwiczeniach. Wysiłek organizacyjny jest obciążający, ale możliwy do rozwiązania. Nie wątpię zasadniczo w korzyść; raczej zastanawiam się, czy tempo i dawka są dla mnie odpowiednie." },
+                { "language": "ro", "text": "Este un amestec, dar nu toate aspectele sunt la fel de puternice. Durerile după exerciții mă neliniștesc cel mai mult. Efortul este împovărător, dar rezolvabil. Nu mă îndoiesc fundamental de beneficiu; mă întreb mai degrabă dacă ritmul și dozarea mi se potrivesc." },
+                { "language": "sq", "text": "Është një përzierje, por jo të gjithë faktorët janë po aq të fortë. Dhimbjet pas ushtrimeve më shqetësojnë më shumë. Përpjekja organizative është e rëndë, por e zgjidhshme. Nuk dyshoj në thelb për përfitimin; më shumë pyes veten nëse ritmi dhe doza më përshtaten." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort gewichtet die Gründe und vermeidet eine pauschale Ablehnung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer weights the reasons and avoids a blanket rejection." },
+                { "language": "fa", "text": "قوی: پاسخ دلایل را وزن‌دهی می‌کند و از رد کلی درمان پرهیز می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يوازن الأسباب ويتجنب رفضًا عامًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt nedenleri ağırlıklandırıyor ve genel bir reddi önlüyor." },
+                { "language": "ru", "text": "Сильно: ответ взвешивает причины и избегает общего отказа." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە هۆکارەکان دەسەنگێنێت و لە ڕەتکردنەوەی گشتی دوور دەکەوێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv sedeman dinirxîne û ji redkirineke giştî dûr dikeve." },
+                { "language": "pl", "text": "Mocne: odpowiedź waży powody i unika ogólnego odrzucenia." },
+                { "language": "ro", "text": "Puternic: răspunsul cântărește motivele și evită o respingere generală." },
+                { "language": "sq", "text": "E fortë: përgjigjja i peshon arsyet dhe shmang një refuzim të përgjithshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Es ist anstrengend, und ich bin nicht sicher, ob mir das wirklich etwas bringt.",
+              "translations": [
+                { "language": "en", "text": "It is demanding, and I am not sure whether it is really helping me." },
+                { "language": "fa", "text": "سخت و فرساینده است و مطمئن نیستم واقعاً به من کمکی می‌کند یا نه." },
+                { "language": "ar", "text": "إنه مرهق، ولست متأكدًا مما إذا كان يفيدني حقًا." },
+                { "language": "tr", "text": "Yorucu ve bunun bana gerçekten fayda sağlayıp sağlamadığından emin değilim." },
+                { "language": "ru", "text": "Это тяжело, и я не уверен, действительно ли это мне помогает." },
+                { "language": "ckb", "text": "قورسە و دڵنیا نیم ئایا بەڕاستی یارمەتیم دەدات یان نا." },
+                { "language": "kmr", "text": "Ew westîner e, û ez ne bawer im ka bi rastî alîkariya min dike an na." },
+                { "language": "pl", "text": "To jest męczące i nie jestem pewien/pewna, czy naprawdę mi pomaga." },
+                { "language": "ro", "text": "Este solicitant și nu sunt sigur dacă mă ajută cu adevărat." },
+                { "language": "sq", "text": "Është e lodhshme dhe nuk jam i sigurt nëse më ndihmon vërtet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber für C2 zu grob. Es fehlen Gewichtung, konkrete Beschwerde und Unterschied zwischen Aufwand und Nutzenzweifel.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too rough for C2. Weighting, concrete symptoms, and the difference between effort and doubt about benefit are missing." },
+                { "language": "fa", "text": "اشتباه نیست، اما برای C2 خیلی کلی است. وزن‌دهی، شکایت مشخص و تفاوت بین فشار و تردید درباره فایده کم است." },
+                { "language": "ar", "text": "ليس خطأ، لكنه عام جدًا لمستوى C2. تنقص الموازنة والشكوى المحددة والفرق بين الجهد والشك في الفائدة." },
+                { "language": "tr", "text": "Yanlış değil, ama C2 için fazla kaba. Ağırlıklandırma, somut şikâyet ve çaba ile fayda kuşkusu arasındaki fark eksik." },
+                { "language": "ru", "text": "Не неверно, но для C2 слишком грубо. Не хватает взвешивания, конкретной жалобы и различия между затратами и сомнением в пользе." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام بۆ C2 زۆر گشتییە. سەنگاندن، سکاڵای دیاریکراو و جیاوازی نێوان هەوڵ و گومان لە سوود کەمە." },
+                { "language": "kmr", "text": "Ne şaş e, lê ji bo C2 pir giştî ye. Nirxandin, gilîya konkret û cudahiya di navbera hewl û gumanên sûdê de kêm in." },
+                { "language": "pl", "text": "Nie jest błędne, ale zbyt ogólne jak na C2. Brakuje ważenia, konkretnej dolegliwości i różnicy między wysiłkiem a wątpliwością co do korzyści." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea grosier pentru C2. Lipsesc cântărirea, simptomul concret și diferența dintre efort și îndoiala privind beneficiul." },
+                { "language": "sq", "text": "Nuk është gabim, por është shumë e përgjithshme për C2. Mungojnë peshimi, ankesa konkrete dhe dallimi mes përpjekjes dhe dyshimit për përfitim." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich wäre bereit, zwei Wochen lang mit geringerer Intensität weiterzumachen: weniger Wiederholungen, ein klarer Schmerzgrenzwert und ein kurzer schriftlicher Plan für zu Hause. Wenn die Schmerzen dann trotzdem deutlich zunehmen, sollten wir über eine andere Methode sprechen.",
+              "translations": [
+                { "language": "en", "text": "I would be willing to continue for two weeks at lower intensity: fewer repetitions, a clear pain threshold, and a short written plan for home. If the pain still increases clearly, we should talk about another method." },
+                { "language": "fa", "text": "حاضرم دو هفته با شدت کمتر ادامه بدهم: تکرارهای کمتر، یک حد روشن برای درد و یک برنامه کوتاه کتبی برای خانه. اگر با وجود این درد به‌طور واضح بیشتر شد، باید درباره روش دیگری صحبت کنیم." },
+                { "language": "ar", "text": "سأكون مستعدًا للمتابعة لمدة أسبوعين بكثافة أقل: تكرارات أقل، حد واضح للألم، وخطة قصيرة مكتوبة للمنزل. إذا ازداد الألم رغم ذلك بوضوح، ينبغي أن نتحدث عن طريقة أخرى." },
+                { "language": "tr", "text": "İki hafta daha düşük yoğunlukla devam etmeye hazırım: daha az tekrar, net bir ağrı sınırı ve ev için kısa yazılı bir plan. Buna rağmen ağrılar belirgin artarsa başka bir yöntemden söz etmeliyiz." },
+                { "language": "ru", "text": "Я готов продолжать две недели с меньшей интенсивностью: меньше повторений, четкий болевой порог и короткий письменный план для дома. Если боли все равно заметно усилятся, нам следует поговорить о другом методе." },
+                { "language": "ckb", "text": "ئامادەم دوو هەفتە بە توندیی کەمتر بەردەوام بم: دووبارەکردنەوەی کەمتر، سنوورێکی ڕوونی ئازار و پلانێکی کورتی نووسراو بۆ ماڵەوە. ئەگەر هێشتا ئازار بە ڕوونی زیاد بوو، پێویستە دەربارەی ڕێگایەکی تر قسە بکەین." },
+                { "language": "kmr", "text": "Ez amade me du hefteyan bi tundiya kêmtir bidomînim: dubarekirinên kêmtir, sînorekî êşê yê zelal û planeke kurt a nivîskî ji bo malê. Heke êş tevî vê yekê bi zelalî zêde bibe, divê em li ser rêbazeke din biaxivin." },
+                { "language": "pl", "text": "Byłbym/byłabym gotów/gotowa kontynuować przez dwa tygodnie z mniejszą intensywnością: mniej powtórzeń, jasna granica bólu i krótki pisemny plan do domu. Jeśli ból mimo to wyraźnie wzrośnie, powinniśmy porozmawiać o innej metodzie." },
+                { "language": "ro", "text": "Aș fi dispus să continui timp de două săptămâni cu intensitate mai mică: mai puține repetări, un prag clar al durerii și un scurt plan scris pentru acasă. Dacă durerile cresc totuși clar, ar trebui să discutăm despre o altă metodă." },
+                { "language": "sq", "text": "Do të isha i gatshëm të vazhdoja për dy javë me intensitet më të ulët: më pak përsëritje, një kufi të qartë dhimbjeje dhe një plan të shkurtër me shkrim për në shtëpi. Nëse dhimbjet megjithatë rriten dukshëm, duhet të flasim për një metodë tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bietet eine begrenzte Alternative mit überprüfbaren Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer offers a limited alternative with reviewable conditions." },
+                { "language": "fa", "text": "قوی: پاسخ یک جایگزین محدود با شرایط قابل بررسی ارائه می‌دهد." },
+                { "language": "ar", "text": "قوي: الجواب يقدم بديلًا محدودًا بشروط قابلة للمراجعة." },
+                { "language": "tr", "text": "Güçlü: Yanıt kontrol edilebilir koşullarla sınırlı bir alternatif sunuyor." },
+                { "language": "ru", "text": "Сильно: ответ предлагает ограниченную альтернативу с проверяемыми условиями." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە جێگرەوەیەکی سنووردار لەگەڵ مەرجی پێداچوونەوە پێشکەش دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv alternatîfeke sînorkirî bi şertên kontrolbar pêşkêş dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź proponuje ograniczoną alternatywę z warunkami możliwymi do sprawdzenia." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă o alternativă limitată cu condiții verificabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja ofron një alternativë të kufizuar me kushte të kontrollueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Vielleicht könnte ich es noch ein bisschen probieren, aber nur, wenn es nicht wieder schlimmer wird.",
+              "translations": [
+                { "language": "en", "text": "Maybe I could try it a little longer, but only if it does not get worse again." },
+                { "language": "fa", "text": "شاید بتوانم کمی بیشتر امتحان کنم، اما فقط اگر دوباره بدتر نشود." },
+                { "language": "ar", "text": "ربما يمكنني تجربته قليلًا بعد، لكن فقط إذا لم يزد سوءًا مرة أخرى." },
+                { "language": "tr", "text": "Belki biraz daha deneyebilirim, ama sadece tekrar kötüleşmezse." },
+                { "language": "ru", "text": "Возможно, я мог бы еще немного попробовать, но только если снова не станет хуже." },
+                { "language": "ckb", "text": "ڕەنگە بتوانم کەمێک زیاتر تاقی بکەمەوە، بەڵام تەنها ئەگەر جارێکی تر خراپتر نەبێت." },
+                { "language": "kmr", "text": "Belkî ez dikarim hinekî din biceribînim, lê tenê heke careke din xirabtir nebe." },
+                { "language": "pl", "text": "Może mógłbym/mogłabym spróbować jeszcze trochę, ale tylko jeśli znowu się nie pogorszy." },
+                { "language": "ro", "text": "Poate aș putea încerca încă puțin, dar doar dacă nu se înrăutățește din nou." },
+                { "language": "sq", "text": "Ndoshta mund ta provoj edhe pak, por vetëm nëse nuk përkeqësohet përsëri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage. Die Antwort zeigt Kompromissbereitschaft, aber keine Dosierung, Dauer oder Entscheidungskriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague. The answer shows willingness to compromise, but no dosage, duration, or decision criteria." },
+                { "language": "fa", "text": "بیش از حد مبهم است. پاسخ آمادگی برای سازش را نشان می‌دهد، اما میزان، مدت یا معیار تصمیم ندارد." },
+                { "language": "ar", "text": "غامض جدًا. الجواب يبين استعدادًا للتسوية، لكنه لا يذكر جرعة أو مدة أو معايير قرار." },
+                { "language": "tr", "text": "Çok belirsiz. Yanıt uzlaşma isteği gösteriyor, ama doz, süre veya karar ölçütü yok." },
+                { "language": "ru", "text": "Слишком расплывчато. Ответ показывает готовность к компромиссу, но не содержит дозировки, срока или критериев решения." },
+                { "language": "ckb", "text": "زۆر نادیارە. وەڵامەکە ئامادەیی بۆ سازش نیشان دەدات، بەڵام ڕێژە، ماوە یان پێوەری بڕیاری نییە." },
+                { "language": "kmr", "text": "Pir nezelal e. Bersiv amadebûna lihevhatinê nîşan dide, lê doz, dem an pîvanên biryarê tune ne." },
+                { "language": "pl", "text": "Zbyt niejasne. Odpowiedź pokazuje gotowość do kompromisu, ale nie podaje dawki, czasu ani kryteriów decyzji." },
+                { "language": "ro", "text": "Prea vag. Răspunsul arată disponibilitate de compromis, dar nu are dozare, durată sau criterii de decizie." },
+                { "language": "sq", "text": "Shumë e paqartë. Përgjigjja tregon gatishmëri për kompromis, por nuk ka dozë, kohëzgjatje ose kritere vendimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ausschlaggebend wären Schmerzen, die länger als zwei Tage deutlich über dem Ausgangsniveau bleiben, Taubheitsgefühle oder wenn ich Alltagsbewegungen danach schlechter ausführen kann. Normale Muskelreaktionen würde ich nicht als Abbruchgrund nehmen.",
+              "translations": [
+                { "language": "en", "text": "Decisive would be pain that stays clearly above the starting level for more than two days, numbness, or if I can perform everyday movements worse afterward. I would not treat normal muscle reactions as a reason to stop." },
+                { "language": "fa", "text": "تعیین‌کننده دردهایی است که بیش از دو روز به‌طور واضح بالاتر از سطح اولیه بماند، بی‌حسی، یا اینکه بعد از آن حرکات روزمره را بدتر انجام دهم. واکنش‌های معمول عضلانی را دلیل قطع درمان نمی‌دانم." },
+                { "language": "ar", "text": "سيكون الحاسم هو ألم يبقى أعلى بوضوح من المستوى الأساسي لأكثر من يومين، أو خدر، أو إذا أصبحت أؤدي حركات الحياة اليومية بعد ذلك بشكل أسوأ. لن أعتبر ردود الفعل العضلية العادية سببًا للإيقاف." },
+                { "language": "tr", "text": "Belirleyici olan, iki günden uzun süre başlangıç düzeyinin belirgin üstünde kalan ağrı, uyuşma ya da sonrasında günlük hareketleri daha kötü yapmam olurdu. Normal kas tepkilerini bırakma nedeni saymazdım." },
+                { "language": "ru", "text": "Решающими были бы боли, которые более двух дней явно остаются выше исходного уровня, онемение или если после этого я хуже выполняю повседневные движения. Обычные мышечные реакции я не считал бы причиной прекращения." },
+                { "language": "ckb", "text": "بڕیارده‌ر ئەو ئازارانە دەبن کە زیاتر لە دوو ڕۆژ بە ڕوونی لە ئاستی دەستپێک بەرزتر بمێنن، یان بێ‌هەستی، یان ئەگەر دوای ئەوە جوڵەکانی ڕۆژانە خراپتر بکەم. وەڵامی ئاسایی ماسولکە بە هۆکاری وەستاندن دانانێم." },
+                { "language": "kmr", "text": "Diyarker dê ew êş bin ku zêdetirî du rojan bi zelalî li jor asta destpêkê bimînin, bêhestî, an heke ez piştî wê tevgerên rojane xerabtir bikim. Ez bersivên asayî yên masûlkeyan wek sedema rawestandinê nagirim." },
+                { "language": "pl", "text": "Rozstrzygające byłyby bóle, które przez ponad dwa dni pozostają wyraźnie powyżej poziomu wyjściowego, drętwienie albo jeśli potem gorzej wykonuję codzienne ruchy. Normalnych reakcji mięśniowych nie uznałbym/uznałabym za powód do przerwania." },
+                { "language": "ro", "text": "Decisive ar fi durerile care rămân clar peste nivelul inițial mai mult de două zile, amorțeala sau dacă după aceea pot executa mai greu mișcările de zi cu zi. Nu aș considera reacțiile musculare normale un motiv de întrerupere." },
+                { "language": "sq", "text": "Vendimtare do të ishin dhimbjet që qëndrojnë qartë mbi nivelin fillestar më shumë se dy ditë, mpirja ose nëse më pas i kryej më keq lëvizjet e përditshme. Reagimet normale të muskujve nuk do t'i merrja si arsye për ndërprerje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Warnzeichen von erwartbaren Reaktionen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer separates warning signs from expected reactions." },
+                { "language": "fa", "text": "قوی: پاسخ نشانه‌های هشدار را از واکنش‌های قابل انتظار جدا می‌کند." },
+                { "language": "ar", "text": "قوي: الجواب يميز بين علامات التحذير وردود الفعل المتوقعة." },
+                { "language": "tr", "text": "Güçlü: Yanıt uyarı işaretlerini beklenen tepkilerden ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ отделяет предупреждающие признаки от ожидаемых реакций." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نیشانەی ئاگادارکردنەوە لە وەڵامە چاوەڕوانکراوەکان جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nîşanên hişyariyê ji bersivên hêvîkirî veqetîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela objawy ostrzegawcze od oczekiwanych reakcji." },
+                { "language": "ro", "text": "Puternic: răspunsul separă semnele de avertizare de reacțiile așteptate." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan shenjat paralajmëruese nga reagimet e pritshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wenn es sich wieder deutlich schlechter anfühlt, wäre das für mich ein Zeichen, dass die Therapie nicht passt.",
+              "translations": [
+                { "language": "en", "text": "If it feels clearly worse again, that would be a sign to me that the therapy does not fit." },
+                { "language": "fa", "text": "اگر دوباره به‌طور واضح بدتر احساس شود، برای من نشانه‌ای است که درمان مناسب نیست." },
+                { "language": "ar", "text": "إذا شعرت بأنه أسوأ بوضوح مرة أخرى، فسيكون ذلك بالنسبة لي علامة على أن العلاج لا يناسبني." },
+                { "language": "tr", "text": "Tekrar belirgin biçimde daha kötü hissedersem, bu benim için tedavinin uymadığının işareti olur." },
+                { "language": "ru", "text": "Если снова будет заметно хуже, для меня это будет признаком, что терапия не подходит." },
+                { "language": "ckb", "text": "ئەگەر جارێکی تر بە ڕوونی خراپتر هەستم کرد، بۆ من نیشانەی ئەوەیە کە چارەسەرەکە ناگونجێت." },
+                { "language": "kmr", "text": "Heke ew careke din bi zelalî xirabtir bihese, ji bo min ev nîşan e ku terapi nagunce." },
+                { "language": "pl", "text": "Jeśli znowu będzie się wyraźnie gorzej czuło, byłby to dla mnie znak, że terapia nie pasuje." },
+                { "language": "ro", "text": "Dacă se simte din nou clar mai rău, pentru mine ar fi un semn că terapia nu se potrivește." },
+                { "language": "sq", "text": "Nëse ndihet përsëri dukshëm më keq, për mua do të ishte shenjë se terapia nuk përshtatet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu subjektiv. Für eine gemeinsame Entscheidung braucht es Dauer, Intensität und konkrete Warnzeichen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too subjective. A shared decision needs duration, intensity, and concrete warning signs." },
+                { "language": "fa", "text": "قابل تصور است، اما خیلی ذهنی است. برای تصمیم مشترک، مدت، شدت و نشانه‌های هشدار مشخص لازم است." },
+                { "language": "ar", "text": "مفهوم، لكنه ذاتي جدًا. القرار المشترك يحتاج إلى مدة وشدة وعلامات تحذير محددة." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla öznel. Ortak karar için süre, yoğunluk ve somut uyarı işaretleri gerekir." },
+                { "language": "ru", "text": "Правдоподобно, но слишком субъективно. Для совместного решения нужны длительность, интенсивность и конкретные предупреждающие признаки." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر کەسییە. بۆ بڕیاری هاوبەش ماوە، توندی و نیشانەی ئاگادارکردنەوەی دیاریکراو پێویستە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir kesane ye. Ji bo biryara hevpar dem, tundî û nîşanên hişyariyê yên konkret pêwîst in." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt subiektywne. Do wspólnej decyzji potrzebne są czas trwania, intensywność i konkretne objawy ostrzegawcze." },
+                { "language": "ro", "text": "Plauzibil, dar prea subiectiv. Pentru o decizie comună sunt necesare durată, intensitate și semne concrete de avertizare." },
+                { "language": "sq", "text": "E besueshme, por shumë subjektive. Për një vendim të përbashkët duhen kohëzgjatja, intensiteti dhe shenja konkrete paralajmëruese." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich halte fest: Ich breche die Therapie nicht eigenmächtig ab, sondern teste zwei Wochen eine reduzierte Dosierung mit klaren Schmerzgrenzen. Danach entscheiden wir gemeinsam, ob wir fortsetzen, die Methode wechseln oder eine Pause medizinisch begründen.",
+              "translations": [
+                { "language": "en", "text": "I will state this: I am not stopping the therapy on my own, but will test a reduced dosage with clear pain limits for two weeks. After that, we will decide together whether to continue, change the method, or medically justify a pause." },
+                { "language": "fa", "text": "این را ثبت می‌کنم: من درمان را خودسرانه قطع نمی‌کنم، بلکه دو هفته دوز/شدت کمتر را با مرزهای روشن درد امتحان می‌کنم. بعد از آن با هم تصمیم می‌گیریم ادامه دهیم، روش را عوض کنیم یا یک وقفه را از نظر پزشکی توجیه کنیم." },
+                { "language": "ar", "text": "أثبت ذلك: لا أوقف العلاج من تلقاء نفسي، بل أختبر لمدة أسبوعين جرعة مخفضة مع حدود واضحة للألم. بعد ذلك نقرر معًا ما إذا كنا سنواصل أو نغير الطريقة أو نبرر وقفة طبيًا." },
+                { "language": "tr", "text": "Şunu kayda geçiriyorum: Tedaviyi kendi başıma bırakmıyorum, iki hafta boyunca net ağrı sınırlarıyla azaltılmış bir doz deniyorum. Sonra birlikte devam edip etmeyeceğimize, yöntemi değiştirip değiştirmeyeceğimize veya tıbben gerekçeli bir ara verip vermeyeceğimize karar veririz." },
+                { "language": "ru", "text": "Я фиксирую: я не прекращаю терапию самовольно, а две недели пробую сниженный режим с четкими болевыми границами. После этого мы вместе решим, продолжать ли, менять метод или медицински обосновать паузу." },
+                { "language": "ckb", "text": "ئەمە تۆمار دەکەم: من چارەسەرەکە خۆسەرانە ناوەستێنم، بەڵکو دوو هەفتە ڕێژەی کەمکراوە لەگەڵ سنووری ڕوونی ئازار تاقی دەکەمەوە. پاشان بەیەکەوە بڕیار دەدەین ئایا بەردەوام بین، ڕێگاکە بگۆڕین یان پشوویەک بە پزیشکی پاساو بدەین." },
+                { "language": "kmr", "text": "Ez vê qeyd dikim: Ez terapiyê bi serê xwe narawestînim, lê du hefteyan dozeke kêmkirî bi sînorên êşê yên zelal têst dikim. Piştî wê em bi hev re biryar didin ka em bidomînin, rêbazê biguherînin an bêhnvedanekê ji aliyê bijîşkî ve rewa bikin." },
+                { "language": "pl", "text": "Podsumowuję: nie przerywam terapii samowolnie, lecz przez dwa tygodnie testuję zmniejszoną dawkę z jasnymi granicami bólu. Potem wspólnie zdecydujemy, czy kontynuować, zmienić metodę czy medycznie uzasadnić przerwę." },
+                { "language": "ro", "text": "Notez astfel: nu întrerup terapia pe cont propriu, ci testez timp de două săptămâni o dozare redusă cu limite clare ale durerii. Apoi decidem împreună dacă continuăm, schimbăm metoda sau justificăm medical o pauză." },
+                { "language": "sq", "text": "E përmbledh kështu: nuk e ndërpres terapinë vetë, por testoj për dy javë një dozë të reduktuar me kufij të qartë dhimbjeje. Pas kësaj vendosim së bashku nëse vazhdojmë, ndryshojmë metodën apo arsyetojmë mjekësisht një pushim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussantwort hält Sicherheit, Anpassung und gemeinsame Entscheidung zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The final answer keeps safety, adjustment, and shared decision together." },
+                { "language": "fa", "text": "قوی: پاسخ پایانی ایمنی، تنظیم درمان و تصمیم مشترک را کنار هم نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: الجواب الختامي يجمع بين السلامة والتعديل والقرار المشترك." },
+                { "language": "tr", "text": "Güçlü: Son yanıt güvenliği, uyarlamayı ve ortak kararı bir arada tutuyor." },
+                { "language": "ru", "text": "Сильно: финальный ответ объединяет безопасность, корректировку и совместное решение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامی کۆتایی سەلامەتی، ڕێکخستن و بڕیاری هاوبەش پێکەوە دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiva dawî ewlehî, lihevhatin û biryara hevpar bi hev re digire." },
+                { "language": "pl", "text": "Mocne: końcowa odpowiedź łączy bezpieczeństwo, modyfikację i wspólną decyzję." },
+                { "language": "ro", "text": "Puternic: răspunsul final ține împreună siguranța, adaptarea și decizia comună." },
+                { "language": "sq", "text": "E fortë: përgjigjja përfundimtare mban bashkë sigurinë, përshtatjen dhe vendimin e përbashkët." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Dann probiere ich es noch zwei Wochen, und wenn es nicht besser wird, höre ich auf.",
+              "translations": [
+                { "language": "en", "text": "Then I will try it for another two weeks, and if it does not improve, I will stop." },
+                { "language": "fa", "text": "پس دو هفته دیگر امتحان می‌کنم، و اگر بهتر نشد، قطع می‌کنم." },
+                { "language": "ar", "text": "إذن سأجربه أسبوعين آخرين، وإذا لم يتحسن فسأتوقف." },
+                { "language": "tr", "text": "O zaman iki hafta daha denerim, düzelmezse bırakırım." },
+                { "language": "ru", "text": "Тогда я попробую еще две недели, и если не станет лучше, прекращу." },
+                { "language": "ckb", "text": "ئەوا دوو هەفتەی تر تاقی دەکەمەوە، و ئەگەر باشتر نەبوو، دەوەستم." },
+                { "language": "kmr", "text": "Wê demê ez du hefteyên din têst dikim, û heke baştir nebe, ez rawestim." },
+                { "language": "pl", "text": "Wtedy spróbuję jeszcze przez dwa tygodnie, a jeśli się nie poprawi, przestanę." },
+                { "language": "ro", "text": "Atunci mai încerc două săptămâni, iar dacă nu se îmbunătățește, mă opresc." },
+                { "language": "sq", "text": "Atëherë e provoj edhe dy javë, dhe nëse nuk përmirësohet, e ndërpres." }
+              ],
+              "isCorrect": false,
+              "feedback": "Teilweise richtig, aber zu einseitig. Es fehlt, dass die nächste Entscheidung gemeinsam und mit klaren Kriterien getroffen wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Partly right, but too one-sided. It is missing that the next decision will be made together and with clear criteria." },
+                { "language": "fa", "text": "تا حدی درست است، اما یک‌طرفه است. این نکته کم است که تصمیم بعدی مشترک و با معیارهای روشن گرفته می‌شود." },
+                { "language": "ar", "text": "صحيح جزئيًا، لكنه أحادي الجانب جدًا. ينقصه أن القرار التالي سيتخذ معًا وبمعايير واضحة." },
+                { "language": "tr", "text": "Kısmen doğru, ama fazla tek taraflı. Bir sonraki kararın birlikte ve açık ölçütlerle alınacağı eksik." },
+                { "language": "ru", "text": "Частично верно, но слишком односторонне. Не хватает того, что следующее решение будет принято совместно и по ясным критериям." },
+                { "language": "ckb", "text": "بەشێک ڕاستە، بەڵام زۆر یەکلایەنەیە. ئەوەی کەمە کە بڕیاری داهاتوو بەیەکەوە و بە پێوەری ڕوون دەدرێت." },
+                { "language": "kmr", "text": "Beşek rast e, lê pir yekalî ye. Kêm e ku biryara paşê bi hev re û bi pîvanên zelal bê dayîn." },
+                { "language": "pl", "text": "Częściowo dobrze, ale zbyt jednostronnie. Brakuje tego, że kolejna decyzja zostanie podjęta wspólnie i według jasnych kryteriów." },
+                { "language": "ro", "text": "Parțial corect, dar prea unilateral. Lipsește faptul că următoarea decizie va fi luată împreună și cu criterii clare." },
+                { "language": "sq", "text": "Pjesërisht e drejtë, por shumë e njëanshme. Mungon që vendimi tjetër do të merret së bashku dhe me kritere të qarta." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "nuanced-opening",
+          "text": "Ein sicherer Einstieg unterscheidet zwischen Abbruchwunsch und Problemen mit der aktuellen Therapieform.",
+          "translations": [
+            { "language": "en", "text": "A safe opening distinguishes between wanting to stop and problems with the current form of therapy." },
+            { "language": "fa", "text": "شروع ایمن بین میل به قطع درمان و مشکل با شکل فعلی درمان تفاوت می‌گذارد." },
+            { "language": "ar", "text": "البداية الآمنة تميز بين الرغبة في الإيقاف والمشكلات مع الشكل الحالي للعلاج." },
+            { "language": "tr", "text": "Güvenli bir başlangıç, bırakma isteği ile tedavinin mevcut biçimindeki sorunları ayırır." },
+            { "language": "ru", "text": "Безопасное начало различает желание прекратить и проблемы с текущей формой терапии." },
+            { "language": "ckb", "text": "دەستپێکی پارێزراو جیاوازی دەکات لەنێوان ئارەزووی وەستاندن و کێشە لەگەڵ شێوەی ئێستای چارەسەر." },
+            { "language": "kmr", "text": "Destpêkeke ewle di navbera daxwaza rawestandinê û pirsgirêkên awayê heyî yê terapiyê de cudahî dike." },
+            { "language": "pl", "text": "Bezpieczne rozpoczęcie odróżnia chęć przerwania od problemów z obecną formą terapii." },
+            { "language": "ro", "text": "Un început sigur distinge între dorința de întrerupere și problemele cu forma actuală a terapiei." },
+            { "language": "sq", "text": "Një hyrje e sigurt dallon mes dëshirës për ndërprerje dhe problemeve me formën aktuale të terapisë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "reason-weighting",
+          "text": "Bei C2 reicht ein allgemeines Unbehagen nicht; Gründe sollten getrennt und gewichtet werden.",
+          "translations": [
+            { "language": "en", "text": "At C2, general discomfort is not enough; reasons should be separated and weighted." },
+            { "language": "fa", "text": "در سطح C2، ناراحتی کلی کافی نیست؛ دلایل باید جدا و وزن‌دهی شوند." },
+            { "language": "ar", "text": "في مستوى C2 لا يكفي الانزعاج العام؛ ينبغي فصل الأسباب ووزنها." },
+            { "language": "tr", "text": "C2 düzeyinde genel rahatsızlık yeterli değildir; nedenler ayrılmalı ve ağırlıklandırılmalıdır." },
+            { "language": "ru", "text": "На уровне C2 общего дискомфорта недостаточно; причины следует разделять и взвешивать." },
+            { "language": "ckb", "text": "لە ئاستی C2دا ناخۆشیی گشتی بەس نییە؛ پێویستە هۆکارەکان جیا و بسەنگێندرێن." },
+            { "language": "kmr", "text": "Di asta C2 de nebaşiya giştî bes nake; divê sedem werin veqetandin û nirxandin." },
+            { "language": "pl", "text": "Na poziomie C2 ogólny dyskomfort nie wystarcza; powody należy oddzielić i zważyć." },
+            { "language": "ro", "text": "La nivel C2, disconfortul general nu este suficient; motivele trebuie separate și cântărite." },
+            { "language": "sq", "text": "Në nivelin C2, parehatia e përgjithshme nuk mjafton; arsyet duhet të ndahen dhe të peshohen." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "conditional-adjustment",
+          "text": "Eine befristete Anpassung ist oft präziser als ein sofortiger Abbruch.",
+          "translations": [
+            { "language": "en", "text": "A time-limited adjustment is often more precise than an immediate stop." },
+            { "language": "fa", "text": "تنظیم محدود به زمان اغلب دقیق‌تر از قطع فوری است." },
+            { "language": "ar", "text": "غالبًا ما يكون التعديل المحدود المدة أدق من الإيقاف الفوري." },
+            { "language": "tr", "text": "Süreyle sınırlı bir uyarlama çoğu zaman hemen bırakmaktan daha kesindir." },
+            { "language": "ru", "text": "Временная корректировка часто точнее, чем немедленное прекращение." },
+            { "language": "ckb", "text": "ڕێکخستنی سنووردار بە کات زۆرجار وردترە لە وەستاندنی دەستبەجێ." },
+            { "language": "kmr", "text": "Lihevhatina bi demê sînorkirî gelek caran ji rawestandina yekser hûrgiltir e." },
+            { "language": "pl", "text": "Czasowa modyfikacja jest często precyzyjniejsza niż natychmiastowe przerwanie." },
+            { "language": "ro", "text": "O adaptare limitată în timp este adesea mai precisă decât o întrerupere imediată." },
+            { "language": "sq", "text": "Një përshtatje e kufizuar në kohë shpesh është më e saktë se një ndërprerje e menjëhershme." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "safe-summary",
+          "text": "Die Schlussformel sollte Eigenmächtigkeit vermeiden und die nächste Entscheidung gemeinsam verankern.",
+          "translations": [
+            { "language": "en", "text": "The closing formula should avoid acting independently and anchor the next decision jointly." },
+            { "language": "fa", "text": "فرمول پایانی باید از خودسرانه عمل کردن پرهیز کند و تصمیم بعدی را مشترک تثبیت کند." },
+            { "language": "ar", "text": "ينبغي أن تتجنب الصيغة الختامية التصرف الفردي وأن تثبت القرار التالي بشكل مشترك." },
+            { "language": "tr", "text": "Son ifade, tek başına hareket etmeyi önlemeli ve sonraki kararı ortak biçimde temellendirmelidir." },
+            { "language": "ru", "text": "Заключительная формула должна избегать самовольных действий и закреплять следующее решение как совместное." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی پێویستە لە کرداری خۆسەرانە دوور بکەوێتەوە و بڕیاری داهاتوو بە هاوبەشی جێگیر بکات." },
+            { "language": "kmr", "text": "Formûla dawî divê ji tevgera serbixwe dûr bikeve û biryara paşê bi hevparî bicih bike." },
+            { "language": "pl", "text": "Formuła końcowa powinna unikać samowoli i osadzić kolejną decyzję we wspólnym trybie." },
+            { "language": "ro", "text": "Formula finală ar trebui să evite acțiunea pe cont propriu și să ancoreze următoarea decizie în comun." },
+            { "language": "sq", "text": "Formula përfundimtare duhet të shmangë veprimin e pavarur dhe ta vendosë vendimin tjetër në mënyrë të përbashkët." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "doctor-office-therapy-adjustment-discussion",
+          "placement": "detail-header",
+          "purpose": "Illustrate a calm doctor-office conversation about adjusting an ongoing therapy rather than stopping it abruptly.",
+          "altText": "Ein Patient und eine Ärztin besprechen in einer deutschen Praxis ruhig eine Therapieanpassung, Schmerzgrenzen und einen Kontrolltermin.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A patient and a doctor calmly discuss a therapy adjustment, pain limits, and a review appointment in a German medical office." },
+            { "language": "fa", "text": "یک بیمار و پزشک در مطب آلمان با آرامش درباره تنظیم درمان، مرزهای درد و وقت کنترل صحبت می‌کنند." },
+            { "language": "ar", "text": "مريض وطبيبة يناقشان بهدوء في عيادة ألمانية تعديل العلاج وحدود الألم وموعد المراجعة." },
+            { "language": "tr", "text": "Bir hasta ve doktor, Alman bir muayenehanede tedavi uyarlaması, ağrı sınırları ve kontrol randevusunu sakin biçimde konuşuyor." },
+            { "language": "ru", "text": "Пациент и врач спокойно обсуждают в немецком кабинете корректировку терапии, болевые границы и контрольный прием." },
+            { "language": "ckb", "text": "نەخۆشێک و پزیشکێک لە مطبێکی ئەڵمانیدا بە ئارامی دەربارەی ڕێکخستنی چارەسەر، سنووری ئازار و کاتی کۆنترۆڵ قسە دەکەن." },
+            { "language": "kmr", "text": "Nexweşek û bijîşkek li polîklînîkeke Alman bi aramî li ser lihevhatina terapiyê, sînorên êşê û randevûya kontrolê diaxivin." },
+            { "language": "pl", "text": "Pacjent i lekarka spokojnie omawiają w niemieckim gabinecie modyfikację terapii, granice bólu i wizytę kontrolną." },
+            { "language": "ro", "text": "Un pacient și o doctoriță discută calm într-un cabinet german adaptarea terapiei, limitele durerii și o programare de control." },
+            { "language": "sq", "text": "Një pacient dhe një mjeke diskutojnë qetësisht në një ordinancë gjermane përshtatjen e terapisë, kufijtë e dhimbjes dhe një takim kontrolli." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse patient and doctor seated in a German medical office, simple non-readable therapy plan sheet on desk, calm discussion about adjusting therapy intensity, pain limits, and follow-up appointment, no logos, no private data, no dramatic emergency scene, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

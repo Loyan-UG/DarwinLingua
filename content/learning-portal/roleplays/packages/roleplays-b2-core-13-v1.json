@@ -1,0 +1,632 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-13-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 13 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 13",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-in-einer-bewerbungssituation-nachfragen",
+      "linkedDialogueSlug": null,
+      "title": "In einer Bewerbungssituation nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Asking follow-up questions in a job interview" },
+        { "language": "fa", "text": "پرسیدن سؤال‌های پیگیرانه در مصاحبه کاری" },
+        { "language": "ar", "text": "طرح أسئلة متابعة في مقابلة عمل" },
+        { "language": "tr", "text": "İş görüşmesinde takip soruları sormak" },
+        { "language": "ru", "text": "Задавать уточняющие вопросы на собеседовании" },
+        { "language": "ckb", "text": "پرسیاری وردترکردنەوە لە چاوپێکەوتنی کار" },
+        { "language": "kmr", "text": "Di hevpeyvîna kar de pirsên şopandinê kirin" },
+        { "language": "pl", "text": "Zadawanie pytań doprecyzowujących na rozmowie kwalifikacyjnej" },
+        { "language": "ro", "text": "Întrebări de clarificare într-un interviu de angajare" },
+        { "language": "sq", "text": "Bërja e pyetjeve sqaruese në një intervistë pune" }
+      ],
+      "description": "Du bist am Ende eines Bewerbungsgesprächs und möchtest gezielt nach Aufgaben, Erwartungen, Einarbeitung und nächstem Schritt fragen. Du sollst interessiert wirken, aber nicht unsicher oder fordernd.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at the end of a job interview and want to ask precise questions about tasks, expectations, onboarding, and the next step. You should sound interested, but not insecure or demanding." },
+        { "language": "fa", "text": "در پایان یک مصاحبه کاری هستی و می‌خواهی دقیق درباره وظایف، انتظارات، دوره آشنایی با کار و قدم بعدی سؤال کنی. باید علاقه‌مند به نظر برسی، نه نامطمئن یا مطالبه‌گر." },
+        { "language": "ar", "text": "أنت في نهاية مقابلة عمل وتريد أن تسأل بدقة عن المهام والتوقعات والتدريب الأولي والخطوة التالية. ينبغي أن تبدو مهتماً، لا غير واثق أو كثير المطالب." },
+        { "language": "tr", "text": "Bir iş görüşmesinin sonundasın ve görevler, beklentiler, işe alışma süreci ve sonraki adım hakkında net sorular sormak istiyorsun. İlgili görünmelisin, ama güvensiz ya da talepkâr değil." },
+        { "language": "ru", "text": "Ты в конце собеседования и хочешь точнее спросить о задачах, ожиданиях, введении в работу и следующем шаге. Нужно звучать заинтересованно, но не неуверенно и не требовательно." },
+        { "language": "ckb", "text": "لە کۆتایی چاوپێکەوتنی کاردای و دەتەوێت بە وردی لەسەر ئەرکەکان، چاوەڕوانییەکان، ناساندنی سەرەتایی بە کار و هەنگاوی داهاتوو بپرسی. دەبێت خۆت وەک کەسێکی ئارەزوومەند پیشان بدەیت، نە نادڵنیا یان داواکاری زۆر." },
+        { "language": "kmr", "text": "Tu di dawiya hevpeyvîna kar de yî û dixwazî bi zelalî li ser erk, hêvî, destpêka nasandina kar û gaveke paşîn bipirsî. Divê tu wekî kesek eleqedar xuya bikî, ne bêbawer an pir daxwazkar." },
+        { "language": "pl", "text": "Jesteś pod koniec rozmowy kwalifikacyjnej i chcesz precyzyjnie zapytać o zadania, oczekiwania, wdrożenie oraz kolejny krok. Masz brzmieć zainteresowanie, ale nie niepewnie ani roszczeniowo." },
+        { "language": "ro", "text": "Ești la finalul unui interviu de angajare și vrei să întrebi precis despre sarcini, așteptări, integrare și pasul următor. Trebuie să pari interesat, dar nu nesigur sau revendicativ." },
+        { "language": "sq", "text": "Je në fund të një interviste pune dhe dëshiron të pyesësh saktë për detyrat, pritjet, integrimin fillestar dhe hapin tjetër. Duhet të dukesh i interesuar, jo i pasigurt ose kërkues." }
+      ],
+      "learnerGoal": "Stelle im Bewerbungsgespräch präzise Nachfragen: Kläre Aufgaben, Erfolgskriterien, Einarbeitung und Zeitplan und fasse am Ende deinen nächsten Schritt höflich zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Ask precise follow-up questions in the job interview: clarify tasks, success criteria, onboarding, and timeline, and politely summarize your next step at the end." },
+        { "language": "fa", "text": "در مصاحبه کاری سؤال‌های دقیق بپرس: وظایف، معیارهای موفقیت، آشنایی با کار و زمان‌بندی را روشن کن و در پایان قدم بعدی خودت را مؤدبانه جمع‌بندی کن." },
+        { "language": "ar", "text": "اطرح أسئلة متابعة دقيقة في مقابلة العمل: وضّح المهام ومعايير النجاح والتدريب الأولي والجدول الزمني، ثم لخّص خطوتك التالية بأدب في النهاية." },
+        { "language": "tr", "text": "İş görüşmesinde net takip soruları sor: görevleri, başarı ölçütlerini, işe alışma sürecini ve takvimi netleştir; sonunda kendi sonraki adımını nazikçe özetle." },
+        { "language": "ru", "text": "Задай точные уточняющие вопросы на собеседовании: проясни задачи, критерии успеха, введение в работу и график, а в конце вежливо подведи итог своему следующему шагу." },
+        { "language": "ckb", "text": "لە چاوپێکەوتنی کاردا پرسیاری ورد بپرسە: ئەرکەکان، پێوەرەکانی سەرکەوتن، ناساندنی کار و خشتەی کات ڕوون بکەوە و لە کۆتاییدا هەنگاوی داهاتووی خۆت بە ڕێزەوە کورت بکەوە." },
+        { "language": "kmr", "text": "Di hevpeyvîna kar de pirsên zelal bike: erk, pîvanên serkeftinê, nasandina kar û demjimêrê zelal bike û di dawiyê de gaveke paşîn a xwe bi rêzdarî kurt bike." },
+        { "language": "pl", "text": "Zadawaj precyzyjne pytania na rozmowie: wyjaśnij zadania, kryteria sukcesu, wdrożenie i harmonogram, a na końcu uprzejmie podsumuj swój następny krok." },
+        { "language": "ro", "text": "Pune întrebări precise la interviu: clarifică sarcinile, criteriile de succes, integrarea și calendarul, iar la final rezumă politicos pasul tău următor." },
+        { "language": "sq", "text": "Bëj pyetje të sakta në intervistë: sqaro detyrat, kriteret e suksesit, integrimin dhe afatin, dhe në fund përmblidh me mirësjellje hapin tënd tjetër." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "job-interview",
+      "interactionMode": "face-to-face",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3130,
+      "roles": [
+        {
+          "roleKey": "interviewer",
+          "displayName": "Interviewerin",
+          "translations": [
+            { "language": "en", "text": "Interviewer" },
+            { "language": "fa", "text": "مصاحبه‌گر" },
+            { "language": "ar", "text": "المحاورة" },
+            { "language": "tr", "text": "Görüşmeci" },
+            { "language": "ru", "text": "Интервьюер" },
+            { "language": "ckb", "text": "چاوپێکەوتنکەر" },
+            { "language": "kmr", "text": "Hevpeyvînker" },
+            { "language": "pl", "text": "Osoba prowadząca rozmowę" },
+            { "language": "ro", "text": "Intervievatoare" },
+            { "language": "sq", "text": "Intervistuesja" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Bewerber",
+          "translations": [
+            { "language": "en", "text": "Applicant" },
+            { "language": "fa", "text": "متقاضی" },
+            { "language": "ar", "text": "المتقدّم" },
+            { "language": "tr", "text": "Aday" },
+            { "language": "ru", "text": "Кандидат" },
+            { "language": "ckb", "text": "داواکار" },
+            { "language": "kmr", "text": "Serlêder" },
+            { "language": "pl", "text": "Kandydat" },
+            { "language": "ro", "text": "Candidat" },
+            { "language": "sq", "text": "Kandidati" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "interviewer",
+          "baseText": "Vielen Dank für Ihre Antworten. Haben Sie zum Abschluss noch Fragen an uns?",
+          "translations": [
+            { "language": "en", "text": "Thank you for your answers. Do you have any final questions for us?" },
+            { "language": "fa", "text": "از پاسخ‌هایتان ممنونم. در پایان هنوز سؤالی از ما دارید؟" },
+            { "language": "ar", "text": "شكراً على إجاباتك. هل لديك في الختام أي أسئلة لنا؟" },
+            { "language": "tr", "text": "Yanıtlarınız için teşekkür ederim. Son olarak bize sormak istediğiniz sorular var mı?" },
+            { "language": "ru", "text": "Спасибо за ваши ответы. Есть ли у вас в завершение вопросы к нам?" },
+            { "language": "ckb", "text": "سوپاس بۆ وەڵامەکانتان. لە کۆتاییدا هێشتا پرسیارتان لە ئێمە هەیە؟" },
+            { "language": "kmr", "text": "Spas ji bo bersivên we. Di dawiyê de hûn hîn pirsên xwe ji me hene?" },
+            { "language": "pl", "text": "Dziękuję za Pana odpowiedzi. Czy na zakończenie ma Pan jeszcze pytania do nas?" },
+            { "language": "ro", "text": "Vă mulțumesc pentru răspunsuri. Aveți la final întrebări pentru noi?" },
+            { "language": "sq", "text": "Faleminderit për përgjigjet tuaja. A keni në fund ndonjë pyetje për ne?" }
+          ],
+          "function": "open-candidate-questions",
+          "toneNote": "formal and open"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, gern. Mich interessiert besonders, welche Aufgaben in den ersten drei Monaten im Mittelpunkt stehen und woran Sie erkennen würden, dass die Einarbeitung gut läuft.",
+          "translations": [
+            { "language": "en", "text": "Yes, gladly. I am especially interested in which tasks are central in the first three months and how you would recognize that onboarding is going well." },
+            { "language": "fa", "text": "بله، با کمال میل. برایم به‌ویژه مهم است بدانم در سه ماه اول کدام وظایف در مرکز توجه هستند و شما از چه چیزی متوجه می‌شوید که آشنایی با کار خوب پیش می‌رود." },
+            { "language": "ar", "text": "نعم، بكل سرور. يهمني خصوصاً أن أعرف ما المهام التي ستكون في المركز خلال الأشهر الثلاثة الأولى، وكيف ستعرفون أن التدريب الأولي يسير بشكل جيد." },
+            { "language": "tr", "text": "Evet, memnuniyetle. Özellikle ilk üç ayda hangi görevlerin merkezde olacağını ve işe alışma sürecinin iyi gittiğini nasıl anlayacağınızı merak ediyorum." },
+            { "language": "ru", "text": "Да, с удовольствием. Меня особенно интересует, какие задачи будут главными в первые три месяца и по каким признакам вы поймёте, что введение в работу проходит хорошо." },
+            { "language": "ckb", "text": "بەڵێ، بە دڵخۆشی. بە تایبەتی گرنگە بزانم لە سێ مانگی یەکەمدا کام ئەرکەکان لە ناوەنددان و ئێوە بە چی دەزانن ناساندنی کار باش دەچێت." },
+            { "language": "kmr", "text": "Erê, bi kêfxweşî. Bi taybetî dixwazim bizanim di sê mehên yekem de kîjan erk di navendê de ne û hûn bi çi dizanin ku nasandina kar baş diçe." },
+            { "language": "pl", "text": "Tak, chętnie. Szczególnie interesuje mnie, które zadania będą najważniejsze w pierwszych trzech miesiącach i po czym Państwo poznają, że wdrożenie przebiega dobrze." },
+            { "language": "ro", "text": "Da, cu plăcere. Mă interesează în special ce sarcini vor fi centrale în primele trei luni și după ce veți vedea că integrarea merge bine." },
+            { "language": "sq", "text": "Po, me kënaqësi. Më intereson veçanërisht cilat detyra do të jenë kryesore në tre muajt e parë dhe nga çfarë do ta kuptoni që integrimi po ecën mirë." }
+          ],
+          "function": "ask-about-role-start",
+          "toneNote": "interested and precise",
+          "expectedLearnerAction": "Ask about initial tasks and success criteria in a focused way."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "interviewer",
+          "baseText": "Am Anfang geht es vor allem um Kundenkommunikation und interne Abstimmung. Die genauen Ziele legen wir gemeinsam fest.",
+          "translations": [
+            { "language": "en", "text": "At the beginning, it is mainly about customer communication and internal coordination. We set the exact goals together." },
+            { "language": "fa", "text": "در ابتدا موضوع اصلی ارتباط با مشتری و هماهنگی داخلی است. هدف‌های دقیق را با هم تعیین می‌کنیم." },
+            { "language": "ar", "text": "في البداية يتعلق الأمر أساساً بالتواصل مع العملاء والتنسيق الداخلي. نحدد الأهداف الدقيقة معاً." },
+            { "language": "tr", "text": "Başlangıçta esas olarak müşteri iletişimi ve iç koordinasyon söz konusu. Kesin hedefleri birlikte belirleriz." },
+            { "language": "ru", "text": "В начале речь прежде всего о коммуникации с клиентами и внутренней координации. Точные цели мы определяем вместе." },
+            { "language": "ckb", "text": "لە سەرەتادا بە تایبەتی پەیوەندی لەگەڵ کڕیار و هەماهەنگی ناوخۆیی گرنگە. ئامانجە وردەکان پێکەوە دیاری دەکەین." },
+            { "language": "kmr", "text": "Di destpêkê de herî zêde têkiliya bi mişterî û hevahengiya hundir girîng e. Armancên zelal em bi hev re diyar dikin." },
+            { "language": "pl", "text": "Na początku chodzi przede wszystkim o komunikację z klientami i wewnętrzną koordynację. Dokładne cele ustalimy wspólnie." },
+            { "language": "ro", "text": "La început este vorba mai ales despre comunicarea cu clienții și coordonarea internă. Stabilim împreună obiectivele exacte." },
+            { "language": "sq", "text": "Në fillim bëhet fjalë kryesisht për komunikimin me klientët dhe koordinimin e brendshëm. Qëllimet e sakta i përcaktojmë së bashku." }
+          ],
+          "function": "give-general-role-answer"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das klingt gut. Könnten Sie ein Beispiel nennen, bei dem die Zusammenarbeit zwischen Kundenkommunikation und interner Abstimmung besonders wichtig ist?",
+          "translations": [
+            { "language": "en", "text": "That sounds good. Could you give an example where cooperation between customer communication and internal coordination is especially important?" },
+            { "language": "fa", "text": "خوب به نظر می‌رسد. ممکن است مثالی بزنید که در آن همکاری بین ارتباط با مشتری و هماهنگی داخلی به‌ویژه مهم است؟" },
+            { "language": "ar", "text": "يبدو ذلك جيداً. هل يمكن أن تذكروا مثالاً تكون فيه العلاقة بين التواصل مع العملاء والتنسيق الداخلي مهمة بشكل خاص؟" },
+            { "language": "tr", "text": "Kulağa iyi geliyor. Müşteri iletişimi ile iç koordinasyon arasındaki iş birliğinin özellikle önemli olduğu bir örnek verebilir misiniz?" },
+            { "language": "ru", "text": "Звучит хорошо. Могли бы вы привести пример, где сотрудничество между клиентской коммуникацией и внутренней координацией особенно важно?" },
+            { "language": "ckb", "text": "باش دەردەکەوێت. دەتوانن نموونەیەک بڵێن کە هاوکاری نێوان پەیوەندی لەگەڵ کڕیار و هەماهەنگی ناوخۆیی تێیدا بە تایبەتی گرنگە؟" },
+            { "language": "kmr", "text": "Baş xuya dike. Hûn dikarin mînakek bidin ku hevkariya di navbera têkiliya bi mişterî û hevahengiya hundir de bi taybetî girîng e?" },
+            { "language": "pl", "text": "Brzmi dobrze. Czy mogą Państwo podać przykład sytuacji, w której współpraca między komunikacją z klientem a koordynacją wewnętrzną jest szczególnie ważna?" },
+            { "language": "ro", "text": "Sună bine. Ați putea da un exemplu în care colaborarea dintre comunicarea cu clienții și coordonarea internă este deosebit de importantă?" },
+            { "language": "sq", "text": "Tingëllon mirë. A mund të jepni një shembull ku bashkëpunimi midis komunikimit me klientët dhe koordinimit të brendshëm është veçanërisht i rëndësishëm?" }
+          ],
+          "function": "ask-for-concrete-example",
+          "toneNote": "specific follow-up instead of generic interest",
+          "expectedLearnerAction": "Ask for a concrete example to understand the role scope."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "interviewer",
+          "baseText": "Ein typisches Beispiel ist eine Beschwerde, bei der wir schnell klären müssen, was fachlich möglich ist und wie wir es dem Kunden erklären.",
+          "translations": [
+            { "language": "en", "text": "A typical example is a complaint where we quickly need to clarify what is technically possible and how we explain it to the customer." },
+            { "language": "fa", "text": "یک نمونه معمولی شکایتی است که در آن باید سریع روشن کنیم از نظر تخصصی چه چیزی ممکن است و آن را چطور برای مشتری توضیح می‌دهیم." },
+            { "language": "ar", "text": "مثال نموذجي هو شكوى نحتاج فيها بسرعة إلى توضيح ما هو ممكن مهنياً وكيف نشرح ذلك للعميل." },
+            { "language": "tr", "text": "Tipik bir örnek, teknik olarak neyin mümkün olduğunu ve bunu müşteriye nasıl açıklayacağımızı hızlıca netleştirmemiz gereken bir şikâyettir." },
+            { "language": "ru", "text": "Типичный пример — жалоба, где нам нужно быстро прояснить, что возможно по сути дела и как мы объясним это клиенту." },
+            { "language": "ckb", "text": "نموونەیەکی ئاسایی سکاڵایەکە کە تێیدا دەبێت بە خێرایی ڕوون بکەین لە ڕووی پیشەییەوە چی دەکرێت و چۆن ئەوە بۆ کڕیار ڕوون دەکەینەوە." },
+            { "language": "kmr", "text": "Mînakeke gelemperî gazindek e ku tê de divê em bi lez zelal bikin çi ji aliyê pisporiyê ve gengaz e û em wê çawa ji mişterî re rave dikin." },
+            { "language": "pl", "text": "Typowy przykład to reklamacja, przy której musimy szybko wyjaśnić, co jest merytorycznie możliwe i jak wytłumaczymy to klientowi." },
+            { "language": "ro", "text": "Un exemplu tipic este o reclamație în care trebuie să clarificăm rapid ce este posibil profesional și cum îi explicăm clientului." },
+            { "language": "sq", "text": "Një shembull tipik është një ankesë ku duhet të sqarojmë shpejt çfarë është e mundur profesionalisht dhe si ia shpjegojmë klientit." }
+          ],
+          "function": "give-example"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Welche Entscheidungsfreiheit hätte ich in solchen Fällen selbst, und ab welchem Punkt würde ich die Teamleitung einbeziehen?",
+          "translations": [
+            { "language": "en", "text": "I understand. How much decision-making freedom would I have in such cases myself, and from which point would I involve the team lead?" },
+            { "language": "fa", "text": "متوجه شدم. در چنین مواردی خودم تا چه حد اختیار تصمیم‌گیری دارم و از چه نقطه‌ای باید سرپرست تیم را درگیر کنم؟" },
+            { "language": "ar", "text": "فهمت. ما مقدار حرية القرار التي سأملكها بنفسي في مثل هذه الحالات، ومن أي نقطة سأشرك قائدة الفريق؟" },
+            { "language": "tr", "text": "Anladım. Böyle durumlarda kendi karar alanım ne kadar olur ve hangi noktadan itibaren ekip liderini dahil ederim?" },
+            { "language": "ru", "text": "Понимаю. Какая свобода принятия решений была бы у меня в таких случаях и с какого момента я должен подключать руководителя команды?" },
+            { "language": "ckb", "text": "تێگەیشتم. لە وەها حاڵەتاندا من خۆم تا چەند ئازادی بڕیاردانم دەبێت و لە کام خاڵەوە سەرپەرشتیاری تیم بەشدار دەکەم؟" },
+            { "language": "kmr", "text": "Ez têgihiştim. Di rewşên wisa de azadiya biryargirtina min çiqas e û ji kîjan xalê ve ez serokê tîmê tê de dikevim?" },
+            { "language": "pl", "text": "Rozumiem. Jaką swobodę decyzyjną miałbym w takich sytuacjach samodzielnie i od którego momentu włączałbym lidera zespołu?" },
+            { "language": "ro", "text": "Înțeleg. Ce libertate de decizie aș avea eu însumi în astfel de cazuri și din ce punct aș implica responsabilul echipei?" },
+            { "language": "sq", "text": "E kuptoj. Sa liri vendimmarrjeje do të kisha vetë në raste të tilla dhe nga cili moment do të përfshija drejtuesin e ekipit?" }
+          ],
+          "function": "ask-about-autonomy",
+          "toneNote": "professional and responsibility-aware",
+          "expectedLearnerAction": "Clarify authority and escalation boundaries."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "interviewer",
+          "baseText": "Sie würden kleinere Entscheidungen selbst treffen. Bei finanziellen Zusagen oder unklaren Prioritäten sprechen Sie sich mit der Teamleitung ab.",
+          "translations": [
+            { "language": "en", "text": "You would make smaller decisions yourself. For financial commitments or unclear priorities, you coordinate with the team lead." },
+            { "language": "fa", "text": "تصمیم‌های کوچک‌تر را خودتان می‌گیرید. برای تعهدهای مالی یا اولویت‌های نامشخص با سرپرست تیم هماهنگ می‌کنید." },
+            { "language": "ar", "text": "ستتخذ القرارات الصغيرة بنفسك. في الالتزامات المالية أو الأولويات غير الواضحة تتشاور مع قائدة الفريق." },
+            { "language": "tr", "text": "Daha küçük kararları kendiniz verirsiniz. Mali taahhütlerde veya belirsiz önceliklerde ekip lideriyle koordine olursunuz." },
+            { "language": "ru", "text": "Небольшие решения вы принимаете самостоятельно. При финансовых обязательствах или неясных приоритетах вы согласуете действия с руководителем команды." },
+            { "language": "ckb", "text": "بڕیارە بچووکەکان خۆتان دەدەن. لە بەڵێنە داراییەکان یان پێشینە نادیارەکاندا لەگەڵ سەرپەرشتیاری تیم هەماهەنگ دەبن." },
+            { "language": "kmr", "text": "Biryara biçûk hûn bi xwe digirin. Di sozên darayî an pêşîtiyên nezelal de hûn bi serokê tîmê re hevaheng dibin." },
+            { "language": "pl", "text": "Mniejsze decyzje podejmowałby Pan samodzielnie. Przy zobowiązaniach finansowych albo niejasnych priorytetach uzgadnia Pan sprawę z liderem zespołu." },
+            { "language": "ro", "text": "Ați lua singur deciziile mai mici. Pentru angajamente financiare sau priorități neclare vă coordonați cu responsabilul echipei." },
+            { "language": "sq", "text": "Vendimet më të vogla do t’i merrnit vetë. Për zotime financiare ose përparësi të paqarta koordinoheni me drejtuesin e ekipit." }
+          ],
+          "function": "explain-autonomy"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das hilft mir sehr. Mir ist wichtig, Verantwortung zu übernehmen, aber auch früh genug abzustimmen, wenn eine Entscheidung Auswirkungen auf Kosten oder Zusagen hat.",
+          "translations": [
+            { "language": "en", "text": "That helps me a lot. It is important to me to take responsibility, but also to coordinate early enough when a decision affects costs or commitments." },
+            { "language": "fa", "text": "این خیلی به من کمک می‌کند. برایم مهم است مسئولیت بپذیرم، اما وقتی یک تصمیم روی هزینه‌ها یا تعهدها اثر دارد، به‌موقع هم هماهنگ کنم." },
+            { "language": "ar", "text": "هذا يساعدني كثيراً. من المهم بالنسبة لي أن أتحمل المسؤولية، لكن أيضاً أن أنسق مبكراً بما يكفي عندما يؤثر قرار في التكاليف أو الالتزامات." },
+            { "language": "tr", "text": "Bu bana çok yardımcı oluyor. Sorumluluk almak benim için önemli, ama bir karar maliyetleri veya taahhütleri etkilediğinde yeterince erken koordine etmek de önemli." },
+            { "language": "ru", "text": "Это мне очень помогает. Для меня важно брать ответственность, но также достаточно рано согласовывать, если решение влияет на затраты или обязательства." },
+            { "language": "ckb", "text": "ئەمە زۆر یارمەتیم دەدات. بۆ من گرنگە بەرپرسیارێتی وەربگرم، بەڵام کاتێک بڕیارێک کاریگەری لەسەر تێچوو یان بەڵێن هەیە، زوو پێویستە هەماهەنگی بکەم." },
+            { "language": "kmr", "text": "Ev gelek alîkariya min dike. Ji bo min girîng e berpirsiyarî bigirim, lê her wiha zû têra xwe hevaheng bikim dema biryarek bandor li lêçûn an sozê dike." },
+            { "language": "pl", "text": "To bardzo mi pomaga. Ważne jest dla mnie branie odpowiedzialności, ale też odpowiednio wczesne uzgadnianie, gdy decyzja wpływa na koszty albo zobowiązania." },
+            { "language": "ro", "text": "Asta mă ajută mult. Pentru mine este important să îmi asum responsabilitatea, dar și să mă coordonez suficient de devreme când o decizie afectează costuri sau angajamente." },
+            { "language": "sq", "text": "Kjo më ndihmon shumë. Për mua është e rëndësishme të marr përgjegjësi, por edhe të koordinohem mjaft herët kur një vendim ndikon te kostot ose zotimet." }
+          ],
+          "function": "reflect-fit",
+          "toneNote": "shows maturity without overpromising",
+          "expectedLearnerAction": "Connect the answer to your work style and responsibility."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "interviewer",
+          "baseText": "Das passt gut zu unserer Arbeitsweise. Möchten Sie noch etwas zum weiteren Ablauf wissen?",
+          "translations": [
+            { "language": "en", "text": "That fits well with how we work. Would you like to know anything else about the next steps?" },
+            { "language": "fa", "text": "این با شیوه کار ما خوب هماهنگ است. آیا می‌خواهید درباره روند بعدی چیز دیگری بدانید؟" },
+            { "language": "ar", "text": "هذا يناسب طريقة عملنا جيداً. هل ترغب في معرفة شيء آخر عن الخطوات التالية؟" },
+            { "language": "tr", "text": "Bu çalışma şeklimize iyi uyuyor. Sonraki süreç hakkında başka bir şey bilmek ister misiniz?" },
+            { "language": "ru", "text": "Это хорошо соответствует нашему стилю работы. Хотели бы вы ещё что-то узнать о дальнейших шагах?" },
+            { "language": "ckb", "text": "ئەمە باش لەگەڵ شێوازی کارکردنی ئێمە دەگونجێت. دەتەوێت شتێکی تر لەسەر ڕەوتی داهاتوو بزانیت؟" },
+            { "language": "kmr", "text": "Ev baş bi awayê xebata me re digunce. Hûn dixwazin tiştekî din li ser pêvajoya paşîn bizanin?" },
+            { "language": "pl", "text": "To dobrze pasuje do naszego sposobu pracy. Czy chciałby Pan jeszcze coś wiedzieć o dalszym przebiegu?" },
+            { "language": "ro", "text": "Asta se potrivește bine cu modul nostru de lucru. Doriți să mai aflați ceva despre pașii următori?" },
+            { "language": "sq", "text": "Kjo përshtatet mirë me mënyrën tonë të punës. Dëshironi të dini diçka tjetër për hapat e mëtejshëm?" }
+          ],
+          "function": "ask-process-question"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ja, eine Frage noch: Bis wann planen Sie die nächste Rückmeldung, und gibt es Unterlagen oder Beispiele, die ich Ihnen bis dahin noch nachreichen sollte?",
+          "translations": [
+            { "language": "en", "text": "Yes, one more question: by when do you plan to give the next feedback, and are there any documents or examples I should still send you by then?" },
+            { "language": "fa", "text": "بله، یک سؤال دیگر: تا چه زمانی بازخورد بعدی را برنامه‌ریزی کرده‌اید، و آیا مدارک یا نمونه‌هایی هست که تا آن زمان برایتان ارسال کنم؟" },
+            { "language": "ar", "text": "نعم، سؤال أخير: حتى متى تخططون لإعطاء الرد التالي، وهل هناك مستندات أو أمثلة ينبغي أن أرسلها لكم حتى ذلك الحين؟" },
+            { "language": "tr", "text": "Evet, bir sorum daha var: bir sonraki geri bildirimi ne zamana kadar planlıyorsunuz ve o zamana kadar size göndermem gereken belgeler veya örnekler var mı?" },
+            { "language": "ru", "text": "Да, ещё один вопрос: к какому сроку вы планируете дать следующую обратную связь, и есть ли документы или примеры, которые мне стоит к тому времени дослать?" },
+            { "language": "ckb", "text": "بەڵێ، پرسیارێکی تر: تا کەی پلانی وەڵامی داهاتووتان هەیە، و ئایا بەڵگەنامە یان نموونەیەک هەیە کە تا ئەو کاتە بۆتان بنێرم؟" },
+            { "language": "kmr", "text": "Erê, pirseke din: hûn heta kengê bersiva paşîn plan dikin, û gelo belge an mînak hene ku ez heta wê demê ji we re bişînim?" },
+            { "language": "pl", "text": "Tak, jeszcze jedno pytanie: do kiedy planują Państwo kolejną informację zwrotną i czy są dokumenty albo przykłady, które powinienem do tego czasu dosłać?" },
+            { "language": "ro", "text": "Da, încă o întrebare: până când planificați următorul răspuns și există documente sau exemple pe care ar trebui să vi le trimit până atunci?" },
+            { "language": "sq", "text": "Po, edhe një pyetje: deri kur planifikoni përgjigjen e ardhshme dhe a ka dokumente ose shembuj që duhet t’ju dërgoj deri atëherë?" }
+          ],
+          "function": "ask-next-step",
+          "toneNote": "practical and polite",
+          "expectedLearnerAction": "Ask about timeline and any useful follow-up material."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "tasks-and-success-criteria",
+              "text": "Ja, gern. Mich interessiert besonders, welche Aufgaben in den ersten drei Monaten im Mittelpunkt stehen und woran Sie erkennen würden, dass die Einarbeitung gut läuft.",
+              "translations": [
+                { "language": "en", "text": "Yes, gladly. I am especially interested in which tasks are central in the first three months and how you would recognize that onboarding is going well." },
+                { "language": "fa", "text": "بله، با کمال میل. برایم به‌ویژه مهم است بدانم در سه ماه اول کدام وظایف در مرکز توجه هستند و شما از چه چیزی متوجه می‌شوید که آشنایی با کار خوب پیش می‌رود." },
+                { "language": "ar", "text": "نعم، بكل سرور. يهمني خصوصاً أن أعرف ما المهام التي ستكون في المركز خلال الأشهر الثلاثة الأولى، وكيف ستعرفون أن التدريب الأولي يسير بشكل جيد." },
+                { "language": "tr", "text": "Evet, memnuniyetle. Özellikle ilk üç ayda hangi görevlerin merkezde olacağını ve işe alışma sürecinin iyi gittiğini nasıl anlayacağınızı merak ediyorum." },
+                { "language": "ru", "text": "Да, с удовольствием. Меня особенно интересует, какие задачи будут главными в первые три месяца и по каким признакам вы поймёте, что введение в работу проходит хорошо." },
+                { "language": "ckb", "text": "بەڵێ، بە دڵخۆشی. بە تایبەتی گرنگە بزانم لە سێ مانگی یەکەمدا کام ئەرکەکان لە ناوەنددان و ئێوە بە چی دەزانن ناساندنی کار باش دەچێت." },
+                { "language": "kmr", "text": "Erê, bi kêfxweşî. Bi taybetî dixwazim bizanim di sê mehên yekem de kîjan erk di navendê de ne û hûn bi çi dizanin ku nasandina kar baş diçe." },
+                { "language": "pl", "text": "Tak, chętnie. Szczególnie interesuje mnie, które zadania będą najważniejsze w pierwszych trzech miesiącach i po czym Państwo poznają, że wdrożenie przebiega dobrze." },
+                { "language": "ro", "text": "Da, cu plăcere. Mă interesează în special ce sarcini vor fi centrale în primele trei luni și după ce veți vedea că integrarea merge bine." },
+                { "language": "sq", "text": "Po, me kënaqësi. Më intereson veçanërisht cilat detyra do të jenë kryesore në tre muajt e parë dhe nga çfarë do ta kuptoni që integrimi po ecën mirë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this shows interest and asks about tasks and success criteria instead of asking only about benefits.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this shows interest and asks about tasks and success criteria instead of asking only about benefits." },
+                { "language": "fa", "text": "خوب است: علاقه نشان می‌دهد و درباره وظایف و معیارهای موفقیت می‌پرسد، نه فقط درباره مزایا." },
+                { "language": "ar", "text": "جيد: يُظهر اهتماماً ويسأل عن المهام ومعايير النجاح، لا عن المزايا فقط." },
+                { "language": "tr", "text": "İyi: ilgi gösteriyor ve yalnızca haklar yerine görevler ile başarı ölçütlerini soruyor." },
+                { "language": "ru", "text": "Хорошо: ответ показывает интерес и спрашивает о задачах и критериях успеха, а не только о льготах." },
+                { "language": "ckb", "text": "باشە: ئارەزوو نیشان دەدات و لەسەر ئەرک و پێوەرەکانی سەرکەوتن دەپرسێت، نە تەنها لەسەر سوودەکان." },
+                { "language": "kmr", "text": "Baş e: eleqe nîşan dide û li ser erk û pîvanên serkeftinê dipirse, ne tenê li ser sûdan." },
+                { "language": "pl", "text": "Dobrze: pokazuje zainteresowanie i pyta o zadania oraz kryteria sukcesu, a nie tylko o świadczenia." },
+                { "language": "ro", "text": "Bine: arată interes și întreabă despre sarcini și criterii de succes, nu doar despre beneficii." },
+                { "language": "sq", "text": "Mirë: tregon interes dhe pyet për detyrat dhe kriteret e suksesit, jo vetëm për përfitimet." }
+              ],
+              "explanationKey": "tasks-success"
+            },
+            {
+              "id": "too-general-good-fit",
+              "text": "Ja, ich würde gern wissen, ob Sie denken, dass ich gut ins Team passen würde und wie schnell ich mich ungefähr einarbeiten kann.",
+              "translations": [
+                { "language": "en", "text": "Yes, I would like to know whether you think I would fit well into the team and roughly how quickly I can get up to speed." },
+                { "language": "fa", "text": "بله، می‌خواهم بدانم آیا فکر می‌کنید من خوب با تیم هماهنگ می‌شوم و تقریباً چقدر سریع می‌توانم با کار آشنا شوم." },
+                { "language": "ar", "text": "نعم، أود أن أعرف هل تعتقدون أنني سأناسب الفريق جيداً، وكم من الوقت تقريباً سأحتاج لأتأقلم مع العمل." },
+                { "language": "tr", "text": "Evet, ekibe iyi uyacağımı düşünüp düşünmediğinizi ve yaklaşık ne kadar hızlı işe alışabileceğimi bilmek isterim." },
+                { "language": "ru", "text": "Да, я хотел бы узнать, считаете ли вы, что я хорошо подойду команде, и примерно как быстро я смогу освоиться." },
+                { "language": "ckb", "text": "بەڵێ، دەمەوێت بزانم ئایا پێتان وایە من باش لەگەڵ تیم دەگونجێم و نزیکەیی چەند خێرا دەتوانم لە کارەکە ڕابم." },
+                { "language": "kmr", "text": "Erê, ez dixwazim bizanim gelo hûn difikirin ez baş bi tîmê re diguncim û bi qasî nêzîk çiqas zû dikarim xwe bi karê re bidim." },
+                { "language": "pl", "text": "Tak, chciałbym wiedzieć, czy uważają Państwo, że dobrze pasowałbym do zespołu i mniej więcej jak szybko mogę się wdrożyć." },
+                { "language": "ro", "text": "Da, aș dori să știu dacă vi se pare că m-aș potrivi bine în echipă și cam cât de repede mă pot integra." },
+                { "language": "sq", "text": "Po, do të doja të dija nëse mendoni se do të përshtatem mirë me ekipin dhe afërsisht sa shpejt mund të integrohem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weaker: it asks for evaluation of you personally, not for concrete tasks or criteria you can work with.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weaker: it asks for evaluation of you personally, not for concrete tasks or criteria you can work with." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد اما ضعیف‌تر است: درباره ارزیابی شخصی شما می‌پرسد، نه درباره وظایف یا معیارهای مشخصی که بتوانید با آن کار کنید." },
+                { "language": "ar", "text": "مقبول لكنه أضعف: يسأل عن تقييمك شخصياً، لا عن مهام أو معايير ملموسة يمكنك العمل بها." },
+                { "language": "tr", "text": "Makul ama daha zayıf: somut görevler veya ölçütler yerine sizin kişisel değerlendirmenizi soruyor." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слабее: вопрос просит личную оценку вас, а не конкретные задачи или критерии, с которыми можно работать." },
+                { "language": "ckb", "text": "قبوڵکراو دەردەکەوێت بەڵام لاوازترە: داوای هەڵسەنگاندنی کەسی دەکات، نە ئەرک یان پێوەری دیاریکراو کە بتوانیت لەسەری کار بکەیت." },
+                { "language": "kmr", "text": "Gengaz xuya dike lê lawaztir e: nirxandina te bi xwe dipirse, ne erk an pîvanên konkret ku tu dikarî pê bixebitî." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest słabsze: pyta o osobistą ocenę, a nie o konkretne zadania lub kryteria, z którymi można pracować." },
+                { "language": "ro", "text": "Plauzibil, dar mai slab: cere o evaluare personală, nu sarcini sau criterii concrete cu care poți lucra." },
+                { "language": "sq", "text": "E besueshme, por më e dobët: kërkon vlerësim personal për ty, jo detyra ose kritere konkrete me të cilat mund të punosh." }
+              ],
+              "explanationKey": "too-personal-evaluation"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "concrete-example",
+              "text": "Das klingt gut. Könnten Sie ein Beispiel nennen, bei dem die Zusammenarbeit zwischen Kundenkommunikation und interner Abstimmung besonders wichtig ist?",
+              "translations": [
+                { "language": "en", "text": "That sounds good. Could you give an example where cooperation between customer communication and internal coordination is especially important?" },
+                { "language": "fa", "text": "خوب به نظر می‌رسد. ممکن است مثالی بزنید که در آن همکاری بین ارتباط با مشتری و هماهنگی داخلی به‌ویژه مهم است؟" },
+                { "language": "ar", "text": "يبدو ذلك جيداً. هل يمكن أن تذكروا مثالاً تكون فيه العلاقة بين التواصل مع العملاء والتنسيق الداخلي مهمة بشكل خاص؟" },
+                { "language": "tr", "text": "Kulağa iyi geliyor. Müşteri iletişimi ile iç koordinasyon arasındaki iş birliğinin özellikle önemli olduğu bir örnek verebilir misiniz?" },
+                { "language": "ru", "text": "Звучит хорошо. Могли бы вы привести пример, где сотрудничество между клиентской коммуникацией и внутренней координацией особенно важно?" },
+                { "language": "ckb", "text": "باش دەردەکەوێت. دەتوانن نموونەیەک بڵێن کە هاوکاری نێوان پەیوەندی لەگەڵ کڕیار و هەماهەنگی ناوخۆیی تێیدا بە تایبەتی گرنگە؟" },
+                { "language": "kmr", "text": "Baş xuya dike. Hûn dikarin mînakek bidin ku hevkariya di navbera têkiliya bi mişterî û hevahengiya hundir de bi taybetî girîng e?" },
+                { "language": "pl", "text": "Brzmi dobrze. Czy mogą Państwo podać przykład sytuacji, w której współpraca między komunikacją z klientem a koordynacją wewnętrzną jest szczególnie ważna?" },
+                { "language": "ro", "text": "Sună bine. Ați putea da un exemplu în care colaborarea dintre comunicarea cu clienții și coordonarea internă este deosebit de importantă?" },
+                { "language": "sq", "text": "Tingëllon mirë. A mund të jepni një shembull ku bashkëpunimi midis komunikimit me klientët dhe koordinimit të brendshëm është veçanërisht i rëndësishëm?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this turns a general answer into a concrete picture of the role.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this turns a general answer into a concrete picture of the role." },
+                { "language": "fa", "text": "خوب است: پاسخ کلی را به تصویر مشخصی از نقش تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: يحوّل الإجابة العامة إلى صورة ملموسة عن الدور." },
+                { "language": "tr", "text": "İyi: genel bir yanıtı rol hakkında somut bir resme dönüştürüyor." },
+                { "language": "ru", "text": "Хорошо: общий ответ превращается в конкретное представление о роли." },
+                { "language": "ckb", "text": "باشە: وەڵامی گشتی دەکاتە وێنەیەکی دیاریکراوی ڕۆڵەکە." },
+                { "language": "kmr", "text": "Baş e: bersiveke giştî vediguherîne wêneyeke konkret a rolê." },
+                { "language": "pl", "text": "Dobrze: zamienia ogólną odpowiedź w konkretny obraz stanowiska." },
+                { "language": "ro", "text": "Bine: transformă un răspuns general într-o imagine concretă a rolului." },
+                { "language": "sq", "text": "Mirë: e kthen një përgjigje të përgjithshme në një pamje konkrete të rolit." }
+              ],
+              "explanationKey": "concrete-role-example"
+            },
+            {
+              "id": "vague-interest",
+              "text": "Das klingt interessant. Ich arbeite gern mit Kunden und kann mich normalerweise schnell auf neue Situationen einstellen.",
+              "translations": [
+                { "language": "en", "text": "That sounds interesting. I like working with customers and can usually adapt quickly to new situations." },
+                { "language": "fa", "text": "جالب به نظر می‌رسد. من از کار با مشتریان خوشم می‌آید و معمولاً می‌توانم سریع با موقعیت‌های جدید هماهنگ شوم." },
+                { "language": "ar", "text": "يبدو ذلك مثيراً للاهتمام. أحب العمل مع العملاء ويمكنني عادةً التكيف بسرعة مع المواقف الجديدة." },
+                { "language": "tr", "text": "Bu ilginç geliyor. Müşterilerle çalışmayı severim ve genellikle yeni durumlara hızlı uyum sağlayabilirim." },
+                { "language": "ru", "text": "Это звучит интересно. Мне нравится работать с клиентами, и обычно я быстро адаптируюсь к новым ситуациям." },
+                { "language": "ckb", "text": "ئەمە سەرنجڕاکێش دەردەکەوێت. من حەزم لە کارکردن لەگەڵ کڕیارانە و زۆرجار خێرا لەگەڵ دۆخە نوێیەکان دەگونجێم." },
+                { "language": "kmr", "text": "Ev balkêş xuya dike. Ez ji xebata bi mişteriyan re hez dikim û bi gelemperî zû xwe bi rewşên nû re diguncînim." },
+                { "language": "pl", "text": "Brzmi to interesująco. Lubię pracę z klientami i zwykle szybko dostosowuję się do nowych sytuacji." },
+                { "language": "ro", "text": "Sună interesant. Îmi place să lucrez cu clienții și de obicei mă adaptez rapid la situații noi." },
+                { "language": "sq", "text": "Kjo tingëllon interesante. Më pëlqen të punoj me klientë dhe zakonisht përshtatem shpejt me situata të reja." }
+              ],
+              "isCorrect": false,
+              "feedback": "Polite but not enough: it talks about you, but it does not ask the interviewer for useful detail.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite but not enough: it talks about you, but it does not ask the interviewer for useful detail." },
+                { "language": "fa", "text": "مؤدبانه است اما کافی نیست: درباره شما صحبت می‌کند، اما از مصاحبه‌گر جزئیات مفید نمی‌خواهد." },
+                { "language": "ar", "text": "مهذب لكنه غير كافٍ: يتحدث عنك، لكنه لا يطلب من المحاورة تفاصيل مفيدة." },
+                { "language": "tr", "text": "Nazik ama yeterli değil: sizden bahsediyor, fakat görüşmeciden işe yarar ayrıntı istemiyor." },
+                { "language": "ru", "text": "Вежливо, но недостаточно: вы говорите о себе, но не просите у интервьюера полезных деталей." },
+                { "language": "ckb", "text": "ڕێزدارانەیە بەڵام بەس نییە: لەسەر تۆ دەدوێت، بەڵام وردەکاریی بەسوود لە چاوپێکەوتنکەر ناپرسێت." },
+                { "language": "kmr", "text": "Bi rêz e lê têr nake: li ser te diaxive, lê ji hevpeyvînker agahiyên bikêr napirse." },
+                { "language": "pl", "text": "Uprzejme, ale niewystarczające: mówi o Panu, lecz nie prosi prowadzącej o przydatne szczegóły." },
+                { "language": "ro", "text": "Politicos, dar insuficient: vorbește despre tine, însă nu cere detalii utile de la intervievatoare." },
+                { "language": "sq", "text": "E sjellshme, por jo mjaftueshëm: flet për ty, por nuk kërkon detaje të dobishme nga intervistuesja." }
+              ],
+              "explanationKey": "no-follow-up-detail"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "autonomy-and-escalation",
+              "text": "Verstehe. Welche Entscheidungsfreiheit hätte ich in solchen Fällen selbst, und ab welchem Punkt würde ich die Teamleitung einbeziehen?",
+              "translations": [
+                { "language": "en", "text": "I understand. How much decision-making freedom would I have in such cases myself, and from which point would I involve the team lead?" },
+                { "language": "fa", "text": "متوجه شدم. در چنین مواردی خودم تا چه حد اختیار تصمیم‌گیری دارم و از چه نقطه‌ای باید سرپرست تیم را درگیر کنم؟" },
+                { "language": "ar", "text": "فهمت. ما مقدار حرية القرار التي سأملكها بنفسي في مثل هذه الحالات، ومن أي نقطة سأشرك قائدة الفريق؟" },
+                { "language": "tr", "text": "Anladım. Böyle durumlarda kendi karar alanım ne kadar olur ve hangi noktadan itibaren ekip liderini dahil ederim?" },
+                { "language": "ru", "text": "Понимаю. Какая свобода принятия решений была бы у меня в таких случаях и с какого момента я должен подключать руководителя команды?" },
+                { "language": "ckb", "text": "تێگەیشتم. لە وەها حاڵەتاندا من خۆم تا چەند ئازادی بڕیاردانم دەبێت و لە کام خاڵەوە سەرپەرشتیاری تیم بەشدار دەکەم؟" },
+                { "language": "kmr", "text": "Ez têgihiştim. Di rewşên wisa de azadiya biryargirtina min çiqas e û ji kîjan xalê ve ez serokê tîmê tê de dikevim?" },
+                { "language": "pl", "text": "Rozumiem. Jaką swobodę decyzyjną miałbym w takich sytuacjach samodzielnie i od którego momentu włączałbym lidera zespołu?" },
+                { "language": "ro", "text": "Înțeleg. Ce libertate de decizie aș avea eu însumi în astfel de cazuri și din ce punct aș implica responsabilul echipei?" },
+                { "language": "sq", "text": "E kuptoj. Sa liri vendimmarrjeje do të kisha vetë në raste të tilla dhe nga cili moment do të përfshija drejtuesin e ekipit?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this clarifies responsibility and escalation boundaries, which is valuable at B2 level.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this clarifies responsibility and escalation boundaries, which is valuable at B2 level." },
+                { "language": "fa", "text": "خوب است: مسئولیت و مرزهای ارجاع را روشن می‌کند، که در سطح B2 ارزشمند است." },
+                { "language": "ar", "text": "جيد: يوضح المسؤولية وحدود التصعيد، وهذا مهم في مستوى B2." },
+                { "language": "tr", "text": "İyi: sorumluluğu ve üst seviyeye taşıma sınırlarını netleştiriyor; bu B2 düzeyinde değerlidir." },
+                { "language": "ru", "text": "Хорошо: это проясняет ответственность и границы эскалации, что важно на уровне B2." },
+                { "language": "ckb", "text": "باشە: بەرپرسیارێتی و سنووری بەرزکردنەوە ڕوون دەکاتەوە، کە لە ئاستی B2 بەهادارە." },
+                { "language": "kmr", "text": "Baş e: berpirsiyarî û sînorên bilindkirinê zelal dike, ev di asta B2 de girîng e." },
+                { "language": "pl", "text": "Dobrze: wyjaśnia odpowiedzialność i granice eskalacji, co jest cenne na poziomie B2." },
+                { "language": "ro", "text": "Bine: clarifică responsabilitatea și limitele escaladării, lucru valoros la nivel B2." },
+                { "language": "sq", "text": "Mirë: sqaron përgjegjësinë dhe kufijtë e eskalimit, gjë e vlefshme në nivelin B2." }
+              ],
+              "explanationKey": "autonomy-boundaries"
+            },
+            {
+              "id": "ask-only-hierarchy",
+              "text": "Verstehe. Wer wäre dann meine direkte Ansprechperson, falls ich in der Probezeit viele Fragen habe?",
+              "translations": [
+                { "language": "en", "text": "I understand. Who would then be my direct contact person if I have many questions during the probationary period?" },
+                { "language": "fa", "text": "متوجه شدم. اگر در دوره آزمایشی سؤال‌های زیادی داشته باشم، شخص تماس مستقیم من چه کسی خواهد بود؟" },
+                { "language": "ar", "text": "فهمت. من سيكون الشخص المباشر الذي أتواصل معه إذا كان لدي أسئلة كثيرة خلال فترة التجربة؟" },
+                { "language": "tr", "text": "Anladım. Deneme süresinde çok sorum olursa doğrudan iletişim kişim kim olur?" },
+                { "language": "ru", "text": "Понимаю. Кто тогда будет моим прямым контактным лицом, если во время испытательного срока у меня будет много вопросов?" },
+                { "language": "ckb", "text": "تێگەیشتم. ئەگەر لە ماوەی تاقیکردنەوەدا پرسیاری زۆرم هەبێت، کەسی پەیوەندیی ڕاستەوخۆی من کێ دەبێت؟" },
+                { "language": "kmr", "text": "Ez têgihiştim. Heke di dema ceribandinê de gelek pirsên min hebin, kesê têkiliya rasterast a min kî ye?" },
+                { "language": "pl", "text": "Rozumiem. Kto byłby wtedy moją bezpośrednią osobą kontaktową, jeśli w okresie próbnym będę miał dużo pytań?" },
+                { "language": "ro", "text": "Înțeleg. Cine ar fi persoana mea directă de contact dacă în perioada de probă am multe întrebări?" },
+                { "language": "sq", "text": "E kuptoj. Kush do të ishte personi im i drejtpërdrejtë i kontaktit nëse gjatë periudhës së provës kam shumë pyetje?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Useful but narrower: it asks about support, but not about your own decision space or escalation point.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Useful but narrower: it asks about support, but not about your own decision space or escalation point." },
+                { "language": "fa", "text": "مفید است اما محدودتر: درباره پشتیبانی می‌پرسد، نه درباره اختیار تصمیم‌گیری یا نقطه ارجاع." },
+                { "language": "ar", "text": "مفيد لكنه أضيق: يسأل عن الدعم، لا عن مساحة قرارك أو نقطة التصعيد." },
+                { "language": "tr", "text": "Yararlı ama daha dar: destek hakkında soruyor, kendi karar alanınız veya üst seviyeye taşıma noktası hakkında değil." },
+                { "language": "ru", "text": "Полезно, но уже: вопрос о поддержке, а не о вашей зоне решений или точке эскалации." },
+                { "language": "ckb", "text": "بەسوودە بەڵام سنووردارترە: لەسەر پشتگیری دەپرسێت، نە لەسەر بۆشایی بڕیاری خۆت یان خاڵی بەرزکردنەوە." },
+                { "language": "kmr", "text": "Bikêr e lê tengtir e: li ser piştgiriyê dipirse, ne li ser qada biryara te an xala bilindkirinê." },
+                { "language": "pl", "text": "Przydatne, ale węższe: pyta o wsparcie, a nie o własny zakres decyzji lub punkt eskalacji." },
+                { "language": "ro", "text": "Util, dar mai îngust: întreabă despre sprijin, nu despre spațiul tău de decizie sau punctul de escaladare." },
+                { "language": "sq", "text": "E dobishme, por më e ngushtë: pyet për mbështetjen, jo për hapësirën tënde të vendimmarrjes ose pikën e eskalimit." }
+              ],
+              "explanationKey": "support-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "timeline-and-documents",
+              "text": "Ja, eine Frage noch: Bis wann planen Sie die nächste Rückmeldung, und gibt es Unterlagen oder Beispiele, die ich Ihnen bis dahin noch nachreichen sollte?",
+              "translations": [
+                { "language": "en", "text": "Yes, one more question: by when do you plan to give the next feedback, and are there any documents or examples I should still send you by then?" },
+                { "language": "fa", "text": "بله، یک سؤال دیگر: تا چه زمانی بازخورد بعدی را برنامه‌ریزی کرده‌اید، و آیا مدارک یا نمونه‌هایی هست که تا آن زمان برایتان ارسال کنم؟" },
+                { "language": "ar", "text": "نعم، سؤال أخير: حتى متى تخططون لإعطاء الرد التالي، وهل هناك مستندات أو أمثلة ينبغي أن أرسلها لكم حتى ذلك الحين؟" },
+                { "language": "tr", "text": "Evet, bir sorum daha var: bir sonraki geri bildirimi ne zamana kadar planlıyorsunuz ve o zamana kadar size göndermem gereken belgeler veya örnekler var mı?" },
+                { "language": "ru", "text": "Да, ещё один вопрос: к какому сроку вы планируете дать следующую обратную связь, и есть ли документы или примеры, которые мне стоит к тому времени дослать?" },
+                { "language": "ckb", "text": "بەڵێ، پرسیارێکی تر: تا کەی پلانی وەڵامی داهاتووتان هەیە، و ئایا بەڵگەنامە یان نموونەیەک هەیە کە تا ئەو کاتە بۆتان بنێرم؟" },
+                { "language": "kmr", "text": "Erê, pirseke din: hûn heta kengê bersiva paşîn plan dikin, û gelo belge an mînak hene ku ez heta wê demê ji we re bişînim?" },
+                { "language": "pl", "text": "Tak, jeszcze jedno pytanie: do kiedy planują Państwo kolejną informację zwrotną i czy są dokumenty albo przykłady, które powinienem do tego czasu dosłać?" },
+                { "language": "ro", "text": "Da, încă o întrebare: până când planificați următorul răspuns și există documente sau exemple pe care ar trebui să vi le trimit până atunci?" },
+                { "language": "sq", "text": "Po, edhe një pyetje: deri kur planifikoni përgjigjen e ardhshme dhe a ka dokumente ose shembuj që duhet t’ju dërgoj deri atëherë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this closes politely and asks for timeline plus a concrete follow-up action.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this closes politely and asks for timeline plus a concrete follow-up action." },
+                { "language": "fa", "text": "خوب است: مؤدبانه پایان می‌دهد و هم زمان‌بندی را می‌پرسد و هم اقدام پیگیری مشخص را." },
+                { "language": "ar", "text": "جيد: ينهي بأدب ويسأل عن الجدول الزمني وعن خطوة متابعة ملموسة." },
+                { "language": "tr", "text": "İyi: nazikçe kapatıyor ve hem takvimi hem de somut bir takip adımını soruyor." },
+                { "language": "ru", "text": "Хорошо: вежливое завершение с вопросом о сроках и конкретном следующем действии." },
+                { "language": "ckb", "text": "باشە: بە ڕێزەوە کۆتایی پێدەهێنێت و هەم خشتەی کات و هەم هەنگاوی بەدواداچوونی دیاریکراو دەپرسێت." },
+                { "language": "kmr", "text": "Baş e: bi rêzdarî diqedîne û hem demjimêr hem jî gaveke şopandinê ya konkret dipirse." },
+                { "language": "pl", "text": "Dobrze: uprzejmie kończy i pyta zarówno o harmonogram, jak i konkretny następny krok." },
+                { "language": "ro", "text": "Bine: încheie politicos și întreabă atât despre calendar, cât și despre o acțiune concretă de urmat." },
+                { "language": "sq", "text": "Mirë: e mbyll me mirësjellje dhe pyet për afatin si edhe për një veprim konkret pasues." }
+              ],
+              "explanationKey": "timeline-follow-up"
+            },
+            {
+              "id": "only-thank-you",
+              "text": "Nein, vielen Dank. Das Gespräch war sehr informativ, und ich freue mich, wenn ich bald von Ihnen höre.",
+              "translations": [
+                { "language": "en", "text": "No, thank you very much. The conversation was very informative, and I look forward to hearing from you soon." },
+                { "language": "fa", "text": "نه، بسیار ممنونم. گفت‌وگو بسیار اطلاعاتی بود و خوشحال می‌شوم به‌زودی از شما خبر بگیرم." },
+                { "language": "ar", "text": "لا، شكراً جزيلاً. كان الحديث مفيداً جداً، ويسعدني أن أسمع منكم قريباً." },
+                { "language": "tr", "text": "Hayır, çok teşekkür ederim. Görüşme çok bilgilendiriciydi ve yakında sizden haber almayı isterim." },
+                { "language": "ru", "text": "Нет, большое спасибо. Разговор был очень информативным, и я буду рад вскоре получить от вас ответ." },
+                { "language": "ckb", "text": "نەخێر، زۆر سوپاس. گفتوگۆکە زۆر زانیاری‌دار بوو و دڵخۆش دەبم بەزوویی لە ئێوە وەڵام وەربگرم." },
+                { "language": "kmr", "text": "Na, gelek spas. Axaftin gelek agahîdar bû û ez kêfxweş dibim ku zû ji we bersiv bistînim." },
+                { "language": "pl", "text": "Nie, bardzo dziękuję. Rozmowa była bardzo informacyjna i cieszę się na wiadomość od Państwa." },
+                { "language": "ro", "text": "Nu, vă mulțumesc mult. Discuția a fost foarte informativă și mă bucur să primesc vești de la dumneavoastră curând." },
+                { "language": "sq", "text": "Jo, shumë faleminderit. Biseda ishte shumë informuese dhe do të më gëzonte të dëgjoj së shpejti nga ju." }
+              ],
+              "isCorrect": false,
+              "feedback": "Polite but less complete: it ends well, but it misses the chance to clarify timeline and follow-up material.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite but less complete: it ends well, but it misses the chance to clarify timeline and follow-up material." },
+                { "language": "fa", "text": "مؤدبانه است اما کامل نیست: خوب تمام می‌کند، اما فرصت روشن کردن زمان‌بندی و مدارک پیگیری را از دست می‌دهد." },
+                { "language": "ar", "text": "مهذب لكنه أقل اكتمالاً: ينهي جيداً، لكنه يفوّت فرصة توضيح الجدول الزمني ومواد المتابعة." },
+                { "language": "tr", "text": "Nazik ama daha az eksiksiz: iyi kapatıyor, fakat takvimi ve takip belgelerini netleştirme fırsatını kaçırıyor." },
+                { "language": "ru", "text": "Вежливо, но менее полно: завершение хорошее, но упущена возможность уточнить сроки и материалы для досылки." },
+                { "language": "ckb", "text": "ڕێزدارانەیە بەڵام کەمتر تەواوە: باش کۆتایی پێدەهێنێت، بەڵام دەرفەتی ڕوونکردنەوەی خشتەی کات و بەڵگەی بەدواداچوون لەدەست دەدات." },
+                { "language": "kmr", "text": "Bi rêz e lê kêm temam e: baş diqedîne, lê derfeta zelalkirina demjimêr û belgeyên şopandinê winda dike." },
+                { "language": "pl", "text": "Uprzejme, ale mniej kompletne: dobrze kończy rozmowę, lecz traci okazję do wyjaśnienia harmonogramu i materiałów do dosłania." },
+                { "language": "ro", "text": "Politicos, dar mai puțin complet: încheie bine, însă pierde ocazia de a clarifica termenul și materialele de urmat." },
+                { "language": "sq", "text": "E sjellshme, por më pak e plotë: e mbyll mirë, por humb mundësinë të sqarojë afatin dhe materialet pasuese." }
+              ],
+              "explanationKey": "polite-but-no-next-step"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "coaching-note",
+          "text": "In a B2 interview, ask about concrete tasks and success criteria. That sounds more professional than general interest.",
+          "translations": [
+            { "language": "en", "text": "In a B2 interview, ask about concrete tasks and success criteria. That sounds more professional than general interest." },
+            { "language": "fa", "text": "در مصاحبه سطح B2 درباره وظایف مشخص و معیارهای موفقیت بپرس. این حرفه‌ای‌تر از علاقه کلی به نظر می‌رسد." },
+            { "language": "ar", "text": "في مقابلة بمستوى B2 اسأل عن مهام ملموسة ومعايير نجاح. هذا يبدو أكثر مهنية من اهتمام عام." },
+            { "language": "tr", "text": "B2 düzeyinde bir görüşmede somut görevleri ve başarı ölçütlerini sor. Bu, genel ilgiden daha profesyonel duyulur." },
+            { "language": "ru", "text": "На собеседовании уровня B2 спрашивай о конкретных задачах и критериях успеха. Это звучит профессиональнее, чем общий интерес." },
+            { "language": "ckb", "text": "لە چاوپێکەوتنی ئاستی B2دا لەسەر ئەرکی دیاریکراو و پێوەری سەرکەوتن بپرسە. ئەمە پیشەیی‌تر لە ئارەزووی گشتی دەردەکەوێت." },
+            { "language": "kmr", "text": "Di hevpeyvîna asta B2 de li ser erkên konkret û pîvanên serkeftinê bipirse. Ev ji eleqeya giştî profesyoneltir xuya dike." },
+            { "language": "pl", "text": "Na rozmowie poziomu B2 pytaj o konkretne zadania i kryteria sukcesu. To brzmi bardziej profesjonalnie niż ogólne zainteresowanie." },
+            { "language": "ro", "text": "Într-un interviu de nivel B2 întreabă despre sarcini concrete și criterii de succes. Sună mai profesionist decât interesul general." },
+            { "language": "sq", "text": "Në një intervistë të nivelit B2 pyet për detyra konkrete dhe kritere suksesi. Kjo tingëllon më profesionale se interesi i përgjithshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "coaching-note",
+          "text": "A good follow-up question asks for an example, not only for confirmation that the role sounds interesting.",
+          "translations": [
+            { "language": "en", "text": "A good follow-up question asks for an example, not only for confirmation that the role sounds interesting." },
+            { "language": "fa", "text": "یک سؤال پیگیرانه خوب نمونه می‌خواهد، نه فقط تأیید اینکه نقش جالب به نظر می‌رسد." },
+            { "language": "ar", "text": "سؤال المتابعة الجيد يطلب مثالاً، لا مجرد تأكيد أن الدور يبدو مثيراً للاهتمام." },
+            { "language": "tr", "text": "İyi bir takip sorusu örnek ister; yalnızca rolün ilginç göründüğünü onaylamaz." },
+            { "language": "ru", "text": "Хороший уточняющий вопрос просит пример, а не просто подтверждает, что роль звучит интересно." },
+            { "language": "ckb", "text": "پرسیاری بەدواداچوونی باش داوای نموونە دەکات، نە تەنها پشتڕاستکردنەوەی ئەوەی کە ڕۆڵەکە سەرنجڕاکێش دەردەکەوێت." },
+            { "language": "kmr", "text": "Pirseke şopandinê ya baş mînak dixwaze, ne tenê piştrast dike ku rol balkêş xuya dike." },
+            { "language": "pl", "text": "Dobre pytanie doprecyzowujące prosi o przykład, a nie tylko potwierdza, że rola brzmi interesująco." },
+            { "language": "ro", "text": "O întrebare bună de clarificare cere un exemplu, nu doar confirmă că rolul sună interesant." },
+            { "language": "sq", "text": "Një pyetje e mirë sqaruese kërkon shembull, jo vetëm pohon se roli tingëllon interesant." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "coaching-note",
+          "text": "Clarifying decision authority makes you sound responsible and helps you understand the real scope of the role.",
+          "translations": [
+            { "language": "en", "text": "Clarifying decision authority makes you sound responsible and helps you understand the real scope of the role." },
+            { "language": "fa", "text": "روشن کردن اختیار تصمیم‌گیری باعث می‌شود مسئولیت‌پذیر به نظر برسی و به درک محدوده واقعی نقش کمک می‌کند." },
+            { "language": "ar", "text": "توضيح صلاحية القرار يجعلك تبدو مسؤولاً ويساعدك على فهم النطاق الحقيقي للدور." },
+            { "language": "tr", "text": "Karar yetkisini netleştirmek sizi sorumlu gösterir ve rolün gerçek kapsamını anlamanıza yardım eder." },
+            { "language": "ru", "text": "Уточнение полномочий принятия решений показывает ответственность и помогает понять реальный объём роли." },
+            { "language": "ckb", "text": "ڕوونکردنەوەی دەسەڵاتی بڕیاردان تۆ وەک کەسێکی بەرپرسیار پیشان دەدات و یارمەتیت دەدات سنووری ڕاستەقینەی ڕۆڵەکە تێبگەیت." },
+            { "language": "kmr", "text": "Zelalkirina desthilata biryargirtinê te wek kesek berpirsiyar nîşan dide û alîkarî dike ku tu çarçoveya rastîn a rolê têbigihî." },
+            { "language": "pl", "text": "Wyjaśnienie zakresu decyzyjności sprawia, że brzmisz odpowiedzialnie i pomaga zrozumieć realny zakres roli." },
+            { "language": "ro", "text": "Clarificarea autorității de decizie te face să pari responsabil și te ajută să înțelegi domeniul real al rolului." },
+            { "language": "sq", "text": "Sqarimi i autoritetit të vendimmarrjes të bën të dukesh i përgjegjshëm dhe të ndihmon të kuptosh fushën reale të rolit." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "coaching-note",
+          "text": "End with timeline and follow-up material. That gives you a clear next step without sounding pushy.",
+          "translations": [
+            { "language": "en", "text": "End with timeline and follow-up material. That gives you a clear next step without sounding pushy." },
+            { "language": "fa", "text": "با زمان‌بندی و مدارک پیگیری پایان بده. این یک قدم بعدی روشن می‌دهد بدون اینکه فشارآور به نظر برسد." },
+            { "language": "ar", "text": "اختم بالجدول الزمني ومواد المتابعة. هذا يعطيك خطوة تالية واضحة من دون أن تبدو ضاغطاً." },
+            { "language": "tr", "text": "Takvim ve takip belgeleriyle bitir. Bu, ısrarcı görünmeden net bir sonraki adım sağlar." },
+            { "language": "ru", "text": "Заверши вопросом о сроках и материалах для досылки. Это даёт ясный следующий шаг без давления." },
+            { "language": "ckb", "text": "بە خشتەی کات و بەڵگەی بەدواداچوون کۆتایی پێبهێنە. ئەمە هەنگاوێکی داهاتووی ڕوون دەدات بە بێ ئەوەی فشار بخاتە سەر." },
+            { "language": "kmr", "text": "Bi demjimêr û belgeyên şopandinê bi dawî bike. Ev gaveke paşîn a zelal dide bê ku tu pir pêdagir xuya bikî." },
+            { "language": "pl", "text": "Zakończ pytaniem o harmonogram i materiały do dosłania. To daje jasny następny krok bez brzmienia nachalnie." },
+            { "language": "ro", "text": "Încheie cu calendarul și materialele de urmat. Asta îți oferă un pas următor clar fără să pari insistent." },
+            { "language": "sq", "text": "Mbylle me afatin dhe materialet pasuese. Kjo të jep një hap të qartë pa tingëlluar këmbëngulës." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

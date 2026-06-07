@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-16-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 16 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 16",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-im-team-eine-entscheidung-zusammenfassen",
+      "linkedDialogueSlug": null,
+      "title": "Im Team eine Entscheidung zusammenfassen",
+      "titleTranslations": [
+        { "language": "en", "text": "Summarizing a team decision" },
+        { "language": "fa", "text": "جمع‌بندی یک تصمیم در تیم" },
+        { "language": "ar", "text": "تلخيص قرار داخل الفريق" },
+        { "language": "tr", "text": "Ekip içinde bir kararı özetlemek" },
+        { "language": "ru", "text": "Подвести итог решения в команде" },
+        { "language": "ckb", "text": "پوختەکردنی بڕیارێک لە تیمدا" },
+        { "language": "kmr", "text": "Kurtkirina biryarekê di tîmê de" },
+        { "language": "pl", "text": "Podsumowanie decyzji w zespole" },
+        { "language": "ro", "text": "Rezumarea unei decizii în echipă" },
+        { "language": "sq", "text": "Përmbledhja e një vendimi në ekip" }
+      ],
+      "description": "Nach einer längeren Besprechung sollst du die Teamentscheidung so zusammenfassen, dass alle denselben Stand haben: Was wurde entschieden, warum, was bleibt offen, wer übernimmt was und bis wann?",
+      "descriptionTranslations": [
+        { "language": "en", "text": "After a longer meeting, you should summarize the team decision so that everyone has the same understanding: what was decided, why, what remains open, who takes over what, and by when?" },
+        { "language": "fa", "text": "بعد از یک جلسه طولانی، باید تصمیم تیم را طوری جمع‌بندی کنی که همه برداشت یکسانی داشته باشند: چه تصمیمی گرفته شد، چرا، چه چیزی هنوز باز است، چه کسی چه کاری را تا چه زمانی انجام می‌دهد؟" },
+        { "language": "ar", "text": "بعد اجتماع أطول، ينبغي أن تلخص قرار الفريق بحيث يكون لدى الجميع الفهم نفسه: ماذا تقرر، ولماذا، وما الذي بقي مفتوحاً، ومن يتولى ماذا وحتى متى؟" },
+        { "language": "tr", "text": "Uzun bir toplantıdan sonra ekip kararını herkes aynı bilgiye sahip olacak şekilde özetlemelisin: ne kararlaştırıldı, neden, ne açık kaldı, kim neyi ne zamana kadar üstleniyor?" },
+        { "language": "ru", "text": "После более долгого совещания нужно так подвести итог командного решения, чтобы у всех было одинаковое понимание: что решили, почему, что остаётся открытым, кто что берёт на себя и к какому сроку?" },
+        { "language": "ckb", "text": "دوای کۆبوونەوەیەکی درێژتر، دەبێت بڕیاری تیم بە شێوەیەک پوختە بکەیت کە هەمووان هەمان تێگەیشتنیان هەبێت: چی بڕیار درا، بۆچی، چی هێشتا کراوەیە، کێ چی دەگرێتە ئەستۆ و تا کەی؟" },
+        { "language": "kmr", "text": "Piştî civîneke dirêjtir, divê tu biryara tîmê wisa kurt bikî ku her kes heman têgihiştinê hebe: çi hate biryardan, çima, çi hêj vekirî ye, kî çi digire ser xwe û heta kengê?" },
+        { "language": "pl", "text": "Po dłuższym spotkaniu masz podsumować decyzję zespołu tak, aby wszyscy mieli ten sam stan wiedzy: co zdecydowano, dlaczego, co pozostaje otwarte, kto co przejmuje i do kiedy?" },
+        { "language": "ro", "text": "După o ședință mai lungă, trebuie să rezumi decizia echipei astfel încât toți să aibă aceeași înțelegere: ce s-a decis, de ce, ce rămâne deschis, cine preia ce și până când?" },
+        { "language": "sq", "text": "Pas një mbledhjeje më të gjatë, duhet ta përmbledhësh vendimin e ekipit në mënyrë që të gjithë të kenë të njëjtin kuptim: çfarë u vendos, pse, çfarë mbetet e hapur, kush merr përsipër çfarë dhe deri kur?" }
+      ],
+      "learnerGoal": "Fasse eine Teamentscheidung klar zusammen: Nenne Entscheidung, Begründung, offene Punkte, Verantwortliche und Termine, und prüfe am Ende, ob alle zustimmen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Summarize a team decision clearly: name the decision, reason, open points, owners, and dates, and check at the end whether everyone agrees." },
+        { "language": "fa", "text": "یک تصمیم تیمی را روشن جمع‌بندی کن: تصمیم، دلیل، نکات باز، مسئول‌ها و موعدها را نام ببر و در پایان بررسی کن که آیا همه موافق هستند یا نه." },
+        { "language": "ar", "text": "لخّص قراراً جماعياً بوضوح: اذكر القرار والسبب والنقاط المفتوحة والمسؤولين والمواعيد، وتحقق في النهاية مما إذا كان الجميع موافقين." },
+        { "language": "tr", "text": "Bir ekip kararını net özetle: kararı, gerekçeyi, açık noktaları, sorumluları ve tarihleri belirt ve sonunda herkesin onaylayıp onaylamadığını kontrol et." },
+        { "language": "ru", "text": "Чётко подведите итог командного решения: назовите решение, причину, открытые вопросы, ответственных и сроки, а в конце проверьте, все ли согласны." },
+        { "language": "ckb", "text": "بڕیارێکی تیم بە ڕوونی پوختە بکە: بڕیار، هۆکار، خاڵە کراوەکان، بەرپرسان و کاتەکان ناو ببرە و لە کۆتاییدا بپشکنە کە ئایا هەمووان ڕازین یان نا." },
+        { "language": "kmr", "text": "Biryareke tîmê bi zelalî kurt bike: biryar, sedem, xalên vekirî, berpirs û deman bi nav bike û di dawiyê de kontrol bike ka her kes razî ye an na." },
+        { "language": "pl", "text": "Jasno podsumuj decyzję zespołu: nazwij decyzję, uzasadnienie, punkty otwarte, osoby odpowiedzialne i terminy, a na końcu sprawdź, czy wszyscy się zgadzają." },
+        { "language": "ro", "text": "Rezumați clar o decizie de echipă: numiți decizia, motivul, punctele deschise, responsabilii și termenele, iar la final verificați dacă toți sunt de acord." },
+        { "language": "sq", "text": "Përmblidh qartë një vendim ekipi: përmend vendimin, arsyen, pikat e hapura, përgjegjësit dhe afatet, dhe në fund kontrollo nëse të gjithë pajtohen." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3160,
+      "roles": [
+        {
+          "roleKey": "facilitator",
+          "displayName": "Moderatorin",
+          "translations": [
+            { "language": "en", "text": "Facilitator" },
+            { "language": "fa", "text": "گرداننده جلسه" },
+            { "language": "ar", "text": "ميسّرة الاجتماع" },
+            { "language": "tr", "text": "Toplantı yöneticisi" },
+            { "language": "ru", "text": "Модератор встречи" },
+            { "language": "ckb", "text": "بەڕێوەبەری کۆبوونەوە" },
+            { "language": "kmr", "text": "Rêvebera civînê" },
+            { "language": "pl", "text": "Prowadząca spotkanie" },
+            { "language": "ro", "text": "Moderatoarea ședinței" },
+            { "language": "sq", "text": "Drejtuesja e mbledhjes" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Teammitglied",
+          "translations": [
+            { "language": "en", "text": "Team member" },
+            { "language": "fa", "text": "عضو تیم" },
+            { "language": "ar", "text": "عضو الفريق" },
+            { "language": "tr", "text": "Ekip üyesi" },
+            { "language": "ru", "text": "Член команды" },
+            { "language": "ckb", "text": "ئەندامی تیم" },
+            { "language": "kmr", "text": "Endamê tîmê" },
+            { "language": "pl", "text": "Członek zespołu" },
+            { "language": "ro", "text": "Membru al echipei" },
+            { "language": "sq", "text": "Anëtar i ekipit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "facilitator",
+          "baseText": "Wir haben jetzt mehrere Optionen diskutiert. Können Sie bitte zum Abschluss kurz zusammenfassen, worauf wir uns geeinigt haben?",
+          "translations": [
+            { "language": "en", "text": "We have now discussed several options. Could you briefly summarize at the end what we have agreed on?" },
+            { "language": "fa", "text": "حالا چند گزینه را بررسی کردیم. می‌توانید لطفاً در پایان کوتاه جمع‌بندی کنید که روی چه چیزی توافق کردیم؟" },
+            { "language": "ar", "text": "لقد ناقشنا الآن عدة خيارات. هل يمكنك في الختام أن تلخص بإيجاز ما اتفقنا عليه؟" },
+            { "language": "tr", "text": "Şimdi birkaç seçeneği tartıştık. Kapanışta ne üzerinde anlaştığımızı kısaca özetleyebilir misiniz?" },
+            { "language": "ru", "text": "Мы обсудили несколько вариантов. Можете в завершение кратко подвести итог, о чём мы договорились?" },
+            { "language": "ckb", "text": "ئێستا چەند هەڵبژاردەیەکمان گفتوگۆ کرد. دەتوانیت تکایە لە کۆتاییدا بە کورتی پوختە بکەیت کە لەسەر چی ڕێککەوتین؟" },
+            { "language": "kmr", "text": "Me niha çend vebijêrk gotûbêj kirin. Tu dikarî di dawiyê de bi kurtî bibêjî em li ser çi li hev kirin?" },
+            { "language": "pl", "text": "Omówiliśmy teraz kilka opcji. Czy może Pan na koniec krótko podsumować, co ustaliliśmy?" },
+            { "language": "ro", "text": "Am discutat acum mai multe opțiuni. Puteți, vă rog, să rezumați pe scurt la final asupra a ce am căzut de acord?" },
+            { "language": "sq", "text": "Tani diskutuam disa mundësi. A mund ta përmblidhni shkurt në fund se për çfarë ramë dakord?" }
+          ],
+          "function": "ask-for-summary"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Gerne. Wir haben entschieden, die Pilotversion zunächst mit den drei wichtigsten Funktionen zu starten und die Zusatzwünsche in eine zweite Phase zu verschieben. Der Grund ist, dass wir so den Termin halten und trotzdem sauber testen können.",
+          "translations": [
+            { "language": "en", "text": "Gladly. We decided to start the pilot version with the three most important functions first and move the additional requests to a second phase. The reason is that this lets us keep the date and still test properly." },
+            { "language": "fa", "text": "با کمال میل. تصمیم گرفتیم نسخه آزمایشی را ابتدا با سه قابلیت مهم شروع کنیم و خواسته‌های اضافی را به فاز دوم منتقل کنیم. دلیلش این است که با این روش می‌توانیم موعد را نگه داریم و در عین حال درست تست کنیم." },
+            { "language": "ar", "text": "بكل سرور. قررنا أن نبدأ النسخة التجريبية أولاً بالوظائف الثلاث الأهم، وأن ننقل الرغبات الإضافية إلى مرحلة ثانية. السبب هو أننا بذلك نستطيع الالتزام بالموعد ومع ذلك نختبر بشكل صحيح." },
+            { "language": "tr", "text": "Memnuniyetle. Pilot sürümü önce en önemli üç işlevle başlatmaya ve ek istekleri ikinci aşamaya taşımaya karar verdik. Bunun nedeni, böylece tarihi koruyup yine de düzgün test yapabilmemizdir." },
+            { "language": "ru", "text": "Конечно. Мы решили сначала запустить пилотную версию с тремя самыми важными функциями, а дополнительные пожелания перенести во второй этап. Причина в том, что так мы сможем соблюсти срок и всё же провести качественное тестирование." },
+            { "language": "ckb", "text": "بە دڵنیاییەوە. بڕیارمان دا وەشانی تاقیکردنەوە سەرەتا بە سێ تایبەتمەندیی گرنگترین دەست پێ بکات و خواستە زیادەکان بۆ قۆناغی دووەم دوا بخەین. هۆکارەکە ئەوەیە کە بەم شێوەیە دەتوانین کاتەکە بپارێزین و هەمان کات بە باشی تاقی بکەینەوە." },
+            { "language": "kmr", "text": "Bi kêfxweşî. Me biryar da ku guhertoya ceribandinê pêşî bi sê fonksiyonên herî girîng dest pê bike û daxwazên zêde bikişînin qonaxa duyem. Sedem ev e ku bi vî awayî em dikarin demê biparêzin û dîsa jî baş ceribandin bikin." },
+            { "language": "pl", "text": "Oczywiście. Ustaliliśmy, że wersję pilotażową uruchomimy najpierw z trzema najważniejszymi funkcjami, a dodatkowe życzenia przeniesiemy do drugiej fazy. Powód jest taki, że dzięki temu dotrzymamy terminu i nadal będziemy mogli porządnie testować." },
+            { "language": "ro", "text": "Cu plăcere. Am decis să pornim versiunea pilot mai întâi cu cele trei funcții principale și să mutăm cerințele suplimentare într-o a doua fază. Motivul este că astfel putem respecta termenul și totuși putem testa corect." },
+            { "language": "sq", "text": "Me kënaqësi. Vendosëm ta nisim versionin pilot fillimisht me tre funksionet më të rëndësishme dhe t’i zhvendosim kërkesat shtesë në fazën e dytë. Arsyeja është se kështu mund ta mbajmë afatin dhe prapë të testojmë siç duhet." }
+          ],
+          "function": "summarize-decision-and-reason",
+          "expectedLearnerAction": "State the decision and the reason in a compact, neutral way."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "facilitator",
+          "baseText": "Gut. Was ist noch offen, damit niemand denkt, es sei schon alles endgültig geklärt?",
+          "translations": [
+            { "language": "en", "text": "Good. What is still open so that no one thinks everything has already been finally clarified?" },
+            { "language": "fa", "text": "خوب. چه چیزی هنوز باز است تا کسی فکر نکند همه چیز نهایی روشن شده است؟" },
+            { "language": "ar", "text": "جيد. ما الذي لا يزال مفتوحاً حتى لا يظن أحد أن كل شيء قد حُسم نهائياً؟" },
+            { "language": "tr", "text": "İyi. Kimse her şeyin kesin olarak netleştiğini düşünmesin diye hâlâ açık olan nedir?" },
+            { "language": "ru", "text": "Хорошо. Что ещё остаётся открытым, чтобы никто не подумал, что всё уже окончательно прояснено?" },
+            { "language": "ckb", "text": "باشە. چی هێشتا کراوەیە بۆ ئەوەی کەس بیر نەکات هەموو شتێک بە تەواوی ڕوون بووەتەوە؟" },
+            { "language": "kmr", "text": "Baş e. Çi hêj vekirî ye, da ku kes nefikire her tişt bi dawî zelal bûye?" },
+            { "language": "pl", "text": "Dobrze. Co pozostaje jeszcze otwarte, żeby nikt nie pomyślał, że wszystko jest już ostatecznie wyjaśnione?" },
+            { "language": "ro", "text": "Bine. Ce mai rămâne deschis, ca nimeni să nu creadă că totul a fost deja clarificat definitiv?" },
+            { "language": "sq", "text": "Mirë. Çfarë mbetet ende e hapur, që askush të mos mendojë se gjithçka është sqaruar përfundimisht?" }
+          ],
+          "function": "ask-open-points"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Offen ist noch, wie die zweite Phase genau geschnitten wird. Wir müssen bis Mittwoch klären, welche Zusatzwünsche wirklich notwendig sind und welche später in den normalen Verbesserungsplan gehen.",
+          "translations": [
+            { "language": "en", "text": "What is still open is how exactly the second phase will be shaped. By Wednesday, we need to clarify which additional requests are truly necessary and which will later go into the normal improvement plan." },
+            { "language": "fa", "text": "هنوز باز است که فاز دوم دقیقاً چگونه تقسیم‌بندی می‌شود. باید تا چهارشنبه روشن کنیم کدام خواسته‌های اضافی واقعاً ضروری هستند و کدام‌ها بعداً وارد برنامه عادی بهبود می‌شوند." },
+            { "language": "ar", "text": "ما لا يزال مفتوحاً هو كيف ستُقسم المرحلة الثانية بالضبط. يجب أن نوضح حتى يوم الأربعاء أي رغبات إضافية ضرورية فعلاً وأيها ستدخل لاحقاً في خطة التحسين العادية." },
+            { "language": "tr", "text": "Açık olan nokta, ikinci aşamanın tam olarak nasıl sınırlandırılacağıdır. Çarşambaya kadar hangi ek isteklerin gerçekten gerekli olduğunu ve hangilerinin daha sonra normal iyileştirme planına gireceğini netleştirmeliyiz." },
+            { "language": "ru", "text": "Открытым остаётся то, как именно будет сформирован второй этап. До среды нужно уточнить, какие дополнительные пожелания действительно необходимы, а какие позже войдут в обычный план улучшений." },
+            { "language": "ckb", "text": "ئەوەی هێشتا کراوەیە ئەوەیە کە قۆناغی دووەم بە وردی چۆن سنووردار دەکرێت. دەبێت تا چوارشەممە ڕوون بکەین کام خواستە زیادەکان بەڕاستی پێویستن و کامەیان دواتر دەچنە ناو پلانی ئاسایی باشترکردن." },
+            { "language": "kmr", "text": "Tişta ku hêj vekirî ye ew e ka qonaxa duyem bi rastî çawa tê sînordarkirin. Divê heta Çarşemê zelal bikin ka kîjan daxwazên zêde bi rastî pêwîst in û kîjan paşê dikevin plana asayî ya başkirinê." },
+            { "language": "pl", "text": "Otwarte pozostaje to, jak dokładnie zostanie ułożona druga faza. Do środy musimy wyjaśnić, które dodatkowe życzenia są naprawdę konieczne, a które później trafią do zwykłego planu usprawnień." },
+            { "language": "ro", "text": "Rămâne deschis modul exact în care va fi delimitată faza a doua. Până miercuri trebuie să clarificăm ce cerințe suplimentare sunt cu adevărat necesare și care vor intra mai târziu în planul normal de îmbunătățiri." },
+            { "language": "sq", "text": "Ende mbetet e hapur si do të ndahet saktësisht faza e dytë. Deri të mërkurën duhet të sqarojmë cilat kërkesa shtesë janë vërtet të nevojshme dhe cilat do të futen më vonë në planin normal të përmirësimeve." }
+          ],
+          "function": "name-open-point",
+          "expectedLearnerAction": "Name what remains open and attach a date for clarification."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "facilitator",
+          "baseText": "Können Sie auch die Verantwortlichkeiten nennen? Das ging in der Diskussion etwas durcheinander.",
+          "translations": [
+            { "language": "en", "text": "Can you also name the responsibilities? That became a little mixed up in the discussion." },
+            { "language": "fa", "text": "می‌توانید مسئولیت‌ها را هم نام ببرید؟ در بحث کمی قاطی شد." },
+            { "language": "ar", "text": "هل يمكنك أيضاً ذكر المسؤوليات؟ لقد اختلط الأمر قليلاً أثناء النقاش." },
+            { "language": "tr", "text": "Sorumlulukları da belirtebilir misiniz? Tartışmada bu biraz karıştı." },
+            { "language": "ru", "text": "Можете также назвать зоны ответственности? В обсуждении это немного перемешалось." },
+            { "language": "ckb", "text": "دەتوانیت بەرپرسیارێتییەکانیش ناو ببرێت؟ لە گفتوگۆکەدا ئەمە کەمێک تێکەڵ بوو." },
+            { "language": "kmr", "text": "Tu dikarî berpirsiyariyan jî bi nav bikî? Di gotûbêjê de ev hinek tevlihev bû." },
+            { "language": "pl", "text": "Czy może Pan też wskazać odpowiedzialności? W dyskusji trochę się to pomieszało." },
+            { "language": "ro", "text": "Puteți numi și responsabilitățile? În discuție s-au amestecat puțin." },
+            { "language": "sq", "text": "A mund t’i përmendni edhe përgjegjësitë? Në diskutim kjo u ngatërrua pak." }
+          ],
+          "function": "ask-owners"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ja. Lea übernimmt die technische Prüfung bis Dienstagmittag. Samir sammelt bis Mittwoch die Kundenrückmeldungen. Ich schreibe heute das Entscheidungsprotokoll und markiere darin klar, was verbindlich ist und was noch offen bleibt.",
+          "translations": [
+            { "language": "en", "text": "Yes. Lea takes over the technical review by Tuesday noon. Samir collects the customer feedback by Wednesday. I will write the decision minutes today and clearly mark what is binding and what remains open." },
+            { "language": "fa", "text": "بله. لیا بررسی فنی را تا ظهر سه‌شنبه انجام می‌دهد. سمیر تا چهارشنبه بازخوردهای مشتری را جمع‌آوری می‌کند. من امروز صورت‌جلسه تصمیم را می‌نویسم و در آن روشن مشخص می‌کنم چه چیزی الزام‌آور است و چه چیزی باز می‌ماند." },
+            { "language": "ar", "text": "نعم. تتولى ليا الفحص التقني حتى ظهر الثلاثاء. يجمع سمير ملاحظات العملاء حتى الأربعاء. سأكتب اليوم محضر القرار وأوضح فيه بجلاء ما هو ملزم وما يبقى مفتوحاً." },
+            { "language": "tr", "text": "Evet. Lea teknik kontrolü Salı öğlene kadar üstleniyor. Samir müşteri geri bildirimlerini Çarşambaya kadar topluyor. Ben bugün karar tutanağını yazacağım ve içinde neyin bağlayıcı olduğunu, neyin açık kaldığını net işaretleyeceğim." },
+            { "language": "ru", "text": "Да. Леа берёт на себя техническую проверку до полудня вторника. Самир собирает отзывы клиентов до среды. Я сегодня напишу протокол решения и ясно отмечу, что является обязательным, а что остаётся открытым." },
+            { "language": "ckb", "text": "بەڵێ. لیا پشکنینی تەکنیکی تا نیوەڕۆی سێشەممە دەگرێتە ئەستۆ. سامیر تا چوارشەممە کاردانەوەکانی کڕیار کۆدەکاتەوە. من ئەمڕۆ پڕۆتۆکۆڵی بڕیارەکە دەنووسم و تێیدا بە ڕوونی دیاری دەکەم چی پابەندە و چی هێشتا کراوە دەمێنێتەوە." },
+            { "language": "kmr", "text": "Erê. Lea heta nîvroya Sêşemê kontrola teknîkî digire ser xwe. Samir heta Çarşemê bersivên xerîdar kom dike. Ez îro protokola biryarê dinivîsim û tê de bi zelalî nîşan dikim çi pêgir e û çi hêj vekirî dimîne." },
+            { "language": "pl", "text": "Tak. Lea przejmuje sprawdzenie techniczne do wtorku do południa. Samir zbiera informacje zwrotne od klientów do środy. Ja dziś napiszę protokół decyzji i jasno zaznaczę, co jest wiążące, a co pozostaje otwarte." },
+            { "language": "ro", "text": "Da. Lea preia verificarea tehnică până marți la prânz. Samir colectează reacțiile clienților până miercuri. Eu scriu astăzi procesul-verbal al deciziei și marchez clar ce este obligatoriu și ce rămâne deschis." },
+            { "language": "sq", "text": "Po. Lea merr përsipër kontrollin teknik deri të martën në mesditë. Samir mbledh reagimet e klientëve deri të mërkurën. Unë do ta shkruaj sot procesverbalin e vendimit dhe do të shënoj qartë çfarë është detyruese dhe çfarë mbetet e hapur." }
+          ],
+          "function": "assign-owners-and-deadlines",
+          "expectedLearnerAction": "Assign owners and deadlines precisely, including your own follow-up task."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "facilitator",
+          "baseText": "Ein Punkt war umstritten: die Benachrichtigungen. Wie formulieren Sie das, ohne den Konflikt wieder zu öffnen?",
+          "translations": [
+            { "language": "en", "text": "One point was disputed: notifications. How would you phrase that without reopening the conflict?" },
+            { "language": "fa", "text": "یک نکته محل اختلاف بود: اعلان‌ها. این را چطور بیان می‌کنید بدون اینکه اختلاف دوباره باز شود؟" },
+            { "language": "ar", "text": "كانت هناك نقطة محل خلاف: الإشعارات. كيف تصوغ ذلك من دون فتح الخلاف من جديد؟" },
+            { "language": "tr", "text": "Bir konu tartışmalıydı: bildirimler. Çatışmayı yeniden açmadan bunu nasıl ifade edersiniz?" },
+            { "language": "ru", "text": "Один пункт был спорным: уведомления. Как вы это сформулируете, не открывая конфликт заново?" },
+            { "language": "ckb", "text": "خاڵێک جێی ناکۆکی بوو: ئاگادارکردنەوەکان. ئەمە چۆن دەربڕیت بەبێ ئەوەی ناکۆکییەکە جارێکی تر بکەیتەوە؟" },
+            { "language": "kmr", "text": "Xalek nakok bû: agahdarkirin. Tu wê çawa dibêjî bêyî ku nakokiyê dîsa veke?" },
+            { "language": "pl", "text": "Jeden punkt był sporny: powiadomienia. Jak to Pan sformułuje, nie otwierając konfliktu na nowo?" },
+            { "language": "ro", "text": "Un punct a fost controversat: notificările. Cum formulați asta fără să redeschideți conflictul?" },
+            { "language": "sq", "text": "Një pikë ishte e diskutueshme: njoftimet. Si do ta formuloni këtë pa e rihapur konfliktin?" }
+          ],
+          "function": "ask-neutral-wording"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde schreiben: Bei den Benachrichtigungen gibt es noch unterschiedliche Einschätzungen. Für die Pilotversion bleibt es bei der einfachen Variante; die erweiterte Variante prüfen wir mit Nutzerdaten in Phase zwei.",
+          "translations": [
+            { "language": "en", "text": "I would write: There are still different assessments regarding notifications. For the pilot version, we will keep the simple version; we will review the extended version with user data in phase two." },
+            { "language": "fa", "text": "می‌نویسم: درباره اعلان‌ها هنوز ارزیابی‌های متفاوتی وجود دارد. برای نسخه آزمایشی، همان گزینه ساده باقی می‌ماند؛ گزینه گسترده‌تر را در فاز دوم با داده‌های کاربران بررسی می‌کنیم." },
+            { "language": "ar", "text": "سأكتب: ما زالت هناك تقييمات مختلفة بشأن الإشعارات. بالنسبة إلى النسخة التجريبية نبقى مع الخيار البسيط؛ أما الخيار الموسع فنراجعه في المرحلة الثانية باستخدام بيانات المستخدمين." },
+            { "language": "tr", "text": "Şöyle yazardım: Bildirimler konusunda hâlâ farklı değerlendirmeler var. Pilot sürüm için basit seçenekle devam ediyoruz; genişletilmiş seçeneği ikinci aşamada kullanıcı verileriyle inceleyeceğiz." },
+            { "language": "ru", "text": "Я бы написал так: по уведомлениям всё ещё есть разные оценки. Для пилотной версии остаётся простой вариант; расширенный вариант мы проверим во втором этапе на основе пользовательских данных." },
+            { "language": "ckb", "text": "من وەها دەنووسم: لەسەر ئاگادارکردنەوەکان هێشتا هەڵسەنگاندنی جیاواز هەیە. بۆ وەشانی تاقیکردنەوە، هەمان هەڵبژاردەی سادە دەمێنێتەوە؛ هەڵبژاردەی فراوانتر لە قۆناغی دووەم بە داتای بەکارهێنەران دەپشکنین." },
+            { "language": "kmr", "text": "Ez ê wisa binivîsim: Li ser agahdarkirinan hêj nirxandinên cuda hene. Ji bo guhertoya ceribandinê em li vebijêrka sade dimînin; vebijêrka firehtir di qonaxa duyem de bi daneyên bikarhêneran kontrol dikin." },
+            { "language": "pl", "text": "Napisałbym tak: W kwestii powiadomień nadal są różne oceny. W wersji pilotażowej zostajemy przy prostym wariancie; wariant rozszerzony sprawdzimy w drugiej fazie na podstawie danych użytkowników." },
+            { "language": "ro", "text": "Aș scrie: În privința notificărilor există încă evaluări diferite. Pentru versiunea pilot rămânem la varianta simplă; varianta extinsă o verificăm în faza a doua cu datele utilizatorilor." },
+            { "language": "sq", "text": "Do të shkruaja: Për njoftimet ka ende vlerësime të ndryshme. Për versionin pilot mbetemi te varianti i thjeshtë; variantin e zgjeruar e shqyrtojmë në fazën e dytë me të dhënat e përdoruesve." }
+          ],
+          "function": "neutralize-conflict",
+          "expectedLearnerAction": "Use neutral wording for disagreement and connect it to a future evidence check."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "facilitator",
+          "baseText": "Das klingt sauber. Wie schließen Sie die Zusammenfassung ab, damit alle die Möglichkeit haben zu korrigieren?",
+          "translations": [
+            { "language": "en", "text": "That sounds clean. How will you close the summary so that everyone has the chance to correct it?" },
+            { "language": "fa", "text": "این دقیق به نظر می‌رسد. جمع‌بندی را چطور تمام می‌کنید تا همه امکان اصلاح داشته باشند؟" },
+            { "language": "ar", "text": "هذا يبدو منظماً. كيف ستنهي الملخص حتى تتاح للجميع فرصة التصحيح؟" },
+            { "language": "tr", "text": "Bu temiz görünüyor. Herkesin düzeltme yapma imkânı olması için özeti nasıl kapatacaksınız?" },
+            { "language": "ru", "text": "Звучит аккуратно. Как вы завершите итог, чтобы у всех была возможность внести исправления?" },
+            { "language": "ckb", "text": "ئەمە پاک و ڕێکخراو دەردەکەوێت. پوختەکە چۆن کۆتایی پێدەهێنیت بۆ ئەوەی هەمووان دەرفەتی ڕاستکردنەوەیان هەبێت؟" },
+            { "language": "kmr", "text": "Ev rêkûpêk xuya dike. Tu ê kurteyê çawa bi dawî bikî da ku her kes derfeta rastkirinê hebe?" },
+            { "language": "pl", "text": "Brzmi to jasno. Jak zakończy Pan podsumowanie, żeby wszyscy mieli możliwość korekty?" },
+            { "language": "ro", "text": "Sună ordonat. Cum încheiați rezumatul, astfel încât toți să aibă posibilitatea să corecteze?" },
+            { "language": "sq", "text": "Kjo tingëllon e qartë. Si do ta mbyllni përmbledhjen që të gjithë të kenë mundësi të korrigjojnë?" }
+          ],
+          "function": "ask-confirmation-close"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde abschließen mit: Wenn ich etwas falsch zusammengefasst habe, geben Sie mir bitte bis heute 16 Uhr kurz Bescheid. Sonst verschicke ich das Protokoll danach als gemeinsamen Stand.",
+          "translations": [
+            { "language": "en", "text": "I would close with: If I have summarized anything incorrectly, please let me know briefly by 4 p.m. today. Otherwise, I will send the minutes afterward as our shared status." },
+            { "language": "fa", "text": "این‌طور تمام می‌کنم: اگر چیزی را اشتباه جمع‌بندی کرده‌ام، لطفاً تا امروز ساعت ۱۶ کوتاه به من اطلاع بدهید. در غیر این صورت بعد از آن صورت‌جلسه را به‌عنوان وضعیت مشترک ارسال می‌کنم." },
+            { "language": "ar", "text": "سأنهيها هكذا: إذا كنت قد لخّصت شيئاً بشكل غير صحيح، فأرجو أن تخبروني بإيجاز حتى الساعة الرابعة اليوم. وإلا فسأرسل المحضر بعد ذلك بوصفه الوضع المشترك بيننا." },
+            { "language": "tr", "text": "Şöyle kapatırdım: Bir şeyi yanlış özetlediysem lütfen bugün saat 16.00'ya kadar kısaca haber verin. Aksi takdirde tutanağı bundan sonra ortak durumumuz olarak göndereceğim." },
+            { "language": "ru", "text": "Я бы завершил так: если я что-то неправильно подытожил, пожалуйста, коротко сообщите мне сегодня до 16:00. Иначе после этого я отправлю протокол как наш общий статус." },
+            { "language": "ckb", "text": "من وەها کۆتایی پێدەهێنم: ئەگەر شتێکم بە هەڵە پوختە کردووە، تکایە تا ئەمڕۆ کاتژمێر ١٦ بە کورتی ئاگادارم بکەنەوە. ئەگەر نا، دوای ئەو کاتە پڕۆتۆکۆڵەکە وەک دۆخی هاوبەش دەنێرم." },
+            { "language": "kmr", "text": "Ez ê wisa bi dawî bikim: Ger min tiştek şaş kurt kiribe, ji kerema xwe heta îro saet 16 bi kurtî min agahdar bikin. Wekî din ez ê piştî wê protokolê wek rewşa hevpar bişînim." },
+            { "language": "pl", "text": "Zakończyłbym tak: Jeśli coś podsumowałem błędnie, proszę dać mi krótko znać dziś do godziny 16. W przeciwnym razie wyślę potem protokół jako nasz wspólny stan ustaleń." },
+            { "language": "ro", "text": "Aș încheia astfel: Dacă am rezumat ceva greșit, vă rog să mă anunțați scurt până astăzi la ora 16. În caz contrar, trimit apoi procesul-verbal ca stare comună." },
+            { "language": "sq", "text": "Do ta mbyllja kështu: Nëse kam përmbledhur diçka gabim, ju lutem më njoftoni shkurt deri sot në orën 16. Përndryshe, më pas do ta dërgoj procesverbalin si gjendjen tonë të përbashkët." }
+          ],
+          "function": "close-with-confirmation-window",
+          "expectedLearnerAction": "Close with a correction window and a clear rule for finalizing the minutes."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Gerne. Wir haben entschieden, die Pilotversion zunächst mit den drei wichtigsten Funktionen zu starten und die Zusatzwünsche in eine zweite Phase zu verschieben. Der Grund ist, dass wir so den Termin halten und trotzdem sauber testen können.",
+              "translations": [
+                { "language": "en", "text": "Gladly. We decided to start the pilot version with the three most important functions first and move the additional requests to a second phase. The reason is that this lets us keep the date and still test properly." },
+                { "language": "fa", "text": "با کمال میل. تصمیم گرفتیم نسخه آزمایشی را ابتدا با سه قابلیت مهم شروع کنیم و خواسته‌های اضافی را به فاز دوم منتقل کنیم. دلیلش این است که با این روش می‌توانیم موعد را نگه داریم و در عین حال درست تست کنیم." },
+                { "language": "ar", "text": "بكل سرور. قررنا أن نبدأ النسخة التجريبية أولاً بالوظائف الثلاث الأهم، وأن ننقل الرغبات الإضافية إلى مرحلة ثانية. السبب هو أننا بذلك نستطيع الالتزام بالموعد ومع ذلك نختبر بشكل صحيح." },
+                { "language": "tr", "text": "Memnuniyetle. Pilot sürümü önce en önemli üç işlevle başlatmaya ve ek istekleri ikinci aşamaya taşımaya karar verdik. Bunun nedeni, böylece tarihi koruyup yine de düzgün test yapabilmemizdir." },
+                { "language": "ru", "text": "Конечно. Мы решили сначала запустить пилотную версию с тремя самыми важными функциями, а дополнительные пожелания перенести во второй этап. Причина в том, что так мы сможем соблюсти срок и всё же провести качественное тестирование." },
+                { "language": "ckb", "text": "بە دڵنیاییەوە. بڕیارمان دا وەشانی تاقیکردنەوە سەرەتا بە سێ تایبەتمەندیی گرنگترین دەست پێ بکات و خواستە زیادەکان بۆ قۆناغی دووەم دوا بخەین. هۆکارەکە ئەوەیە کە بەم شێوەیە دەتوانین کاتەکە بپارێزین و هەمان کات بە باشی تاقی بکەینەوە." },
+                { "language": "kmr", "text": "Bi kêfxweşî. Me biryar da ku guhertoya ceribandinê pêşî bi sê fonksiyonên herî girîng dest pê bike û daxwazên zêde bikişînin qonaxa duyem. Sedem ev e ku bi vî awayî em dikarin demê biparêzin û dîsa jî baş ceribandin bikin." },
+                { "language": "pl", "text": "Oczywiście. Ustaliliśmy, że wersję pilotażową uruchomimy najpierw z trzema najważniejszymi funkcjami, a dodatkowe życzenia przeniesiemy do drugiej fazy. Powód jest taki, że dzięki temu dotrzymamy terminu i nadal będziemy mogli porządnie testować." },
+                { "language": "ro", "text": "Cu plăcere. Am decis să pornim versiunea pilot mai întâi cu cele trei funcții principale și să mutăm cerințele suplimentare într-o a doua fază. Motivul este că astfel putem respecta termenul și totuși putem testa corect." },
+                { "language": "sq", "text": "Me kënaqësi. Vendosëm ta nisim versionin pilot fillimisht me tre funksionet më të rëndësishme dhe t’i zhvendosim kërkesat shtesë në fazën e dytë. Arsyeja është se kështu mund ta mbajmë afatin dhe prapë të testojmë siç duhet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives the decision and its reason, not just a vague impression of the meeting.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives the decision and its reason, not just a vague impression of the meeting." },
+                { "language": "fa", "text": "خوب است: تصمیم و دلیل آن را می‌گوید، نه فقط یک برداشت مبهم از جلسه." },
+                { "language": "ar", "text": "جيد: يذكر القرار وسببه، وليس مجرد انطباع غامض عن الاجتماع." },
+                { "language": "tr", "text": "İyi: toplantıyla ilgili belirsiz bir izlenim değil, kararı ve gerekçesini veriyor." },
+                { "language": "ru", "text": "Хорошо: указаны решение и причина, а не просто расплывчатое впечатление от встречи." },
+                { "language": "ckb", "text": "باشە: بڕیار و هۆکارەکەی دەڵێت، نە تەنها تێگەیشتنێکی نادیار لە کۆبوونەوەکە." },
+                { "language": "kmr", "text": "Baş e: biryar û sedema wê dide, ne tenê bandoreke nezelal a civînê." },
+                { "language": "pl", "text": "Dobrze: podaje decyzję i jej powód, a nie tylko niejasne wrażenie ze spotkania." },
+                { "language": "ro", "text": "Bine: oferă decizia și motivul ei, nu doar o impresie vagă despre ședință." },
+                { "language": "sq", "text": "Mirë: jep vendimin dhe arsyen e tij, jo vetëm një përshtypje të paqartë nga mbledhja." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde sagen, wir starten erst einmal kleiner und schauen dann später, welche Wünsche wir noch schaffen.",
+              "translations": [
+                { "language": "en", "text": "I would say we start smaller for now and then later see which requests we can still manage." },
+                { "language": "fa", "text": "می‌گویم فعلاً کوچک‌تر شروع می‌کنیم و بعداً می‌بینیم کدام خواسته‌ها را هنوز می‌توانیم انجام دهیم." },
+                { "language": "ar", "text": "سأقول إننا نبدأ حالياً بشكل أصغر ثم نرى لاحقاً أي رغبات يمكننا تنفيذها أيضاً." },
+                { "language": "tr", "text": "Şimdilik daha küçük başlayalım ve sonra hangi istekleri hâlâ yapabileceğimize bakalım derdim." },
+                { "language": "ru", "text": "Я бы сказал, что пока мы начнём с меньшего объёма, а потом посмотрим, какие пожелания ещё сможем выполнить." },
+                { "language": "ckb", "text": "دەڵێم ئێستا بچووکتر دەست پێ دەکەین و دواتر دەبینین کام خواستەکان هێشتا دەتوانین جێبەجێ بکەین." },
+                { "language": "kmr", "text": "Ez ê bêjim em niha biçûktir dest pê dikin û paşê dibînin kîjan daxwazan hêj dikarin bikin." },
+                { "language": "pl", "text": "Powiedziałbym, że na razie zaczniemy skromniej, a później zobaczymy, które życzenia jeszcze damy radę zrealizować." },
+                { "language": "ro", "text": "Aș spune că începem deocamdată mai restrâns și apoi vedem mai târziu ce cerințe mai putem realiza." },
+                { "language": "sq", "text": "Do të thosha se për momentin fillojmë më ngushtë dhe më vonë shohim cilat kërkesa mund t’i realizojmë ende." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too loose: it mentions the direction, but not the actual decision, reason, or phase boundary.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too loose: it mentions the direction, but not the actual decision, reason, or phase boundary." },
+                { "language": "fa", "text": "بیش از حد آزاد و مبهم است: جهت کلی را می‌گوید، اما تصمیم واقعی، دلیل یا مرز فازها را مشخص نمی‌کند." },
+                { "language": "ar", "text": "فضفاض جداً: يذكر الاتجاه العام، لكنه لا يوضح القرار الفعلي أو السبب أو حدود المرحلة." },
+                { "language": "tr", "text": "Çok gevşek: yönü söylüyor, fakat asıl kararı, gerekçeyi veya aşama sınırını belirtmiyor." },
+                { "language": "ru", "text": "Слишком расплывчато: направление названо, но нет конкретного решения, причины или границы этапа." },
+                { "language": "ckb", "text": "زۆر شل و نادیارە: ئاراستەکە دەڵێت، بەڵام بڕیاری ڕاستەقینە، هۆکار یان سنووری قۆناغەکان دیاری ناکات." },
+                { "language": "kmr", "text": "Pir nezelal e: arasteyê dibêje, lê biryara rastîn, sedem an sînorê qonaxê nîşan nade." },
+                { "language": "pl", "text": "Zbyt luźne: wskazuje kierunek, ale nie podaje właściwej decyzji, uzasadnienia ani granicy fazy." },
+                { "language": "ro", "text": "Prea vag: menționează direcția, dar nu decizia reală, motivul sau limita fazei." },
+                { "language": "sq", "text": "Shumë e paqartë: përmend drejtimin, por jo vendimin konkret, arsyen ose kufirin e fazës." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Offen ist noch, wie die zweite Phase genau geschnitten wird. Wir müssen bis Mittwoch klären, welche Zusatzwünsche wirklich notwendig sind und welche später in den normalen Verbesserungsplan gehen.",
+              "translations": [
+                { "language": "en", "text": "What is still open is how exactly the second phase will be shaped. By Wednesday, we need to clarify which additional requests are truly necessary and which will later go into the normal improvement plan." },
+                { "language": "fa", "text": "هنوز باز است که فاز دوم دقیقاً چگونه تقسیم‌بندی می‌شود. باید تا چهارشنبه روشن کنیم کدام خواسته‌های اضافی واقعاً ضروری هستند و کدام‌ها بعداً وارد برنامه عادی بهبود می‌شوند." },
+                { "language": "ar", "text": "ما لا يزال مفتوحاً هو كيف ستُقسم المرحلة الثانية بالضبط. يجب أن نوضح حتى يوم الأربعاء أي رغبات إضافية ضرورية فعلاً وأيها ستدخل لاحقاً في خطة التحسين العادية." },
+                { "language": "tr", "text": "Açık olan nokta, ikinci aşamanın tam olarak nasıl sınırlandırılacağıdır. Çarşambaya kadar hangi ek isteklerin gerçekten gerekli olduğunu ve hangilerinin daha sonra normal iyileştirme planına gireceğini netleştirmeliyiz." },
+                { "language": "ru", "text": "Открытым остаётся то, как именно будет сформирован второй этап. До среды нужно уточнить, какие дополнительные пожелания действительно необходимы, а какие позже войдут в обычный план улучшений." },
+                { "language": "ckb", "text": "ئەوەی هێشتا کراوەیە ئەوەیە کە قۆناغی دووەم بە وردی چۆن سنووردار دەکرێت. دەبێت تا چوارشەممە ڕوون بکەین کام خواستە زیادەکان بەڕاستی پێویستن و کامەیان دواتر دەچنە ناو پلانی ئاسایی باشترکردن." },
+                { "language": "kmr", "text": "Tişta ku hêj vekirî ye ew e ka qonaxa duyem bi rastî çawa tê sînordarkirin. Divê heta Çarşemê zelal bikin ka kîjan daxwazên zêde bi rastî pêwîst in û kîjan paşê dikevin plana asayî ya başkirinê." },
+                { "language": "pl", "text": "Otwarte pozostaje to, jak dokładnie zostanie ułożona druga faza. Do środy musimy wyjaśnić, które dodatkowe życzenia są naprawdę konieczne, a które później trafią do zwykłego planu usprawnień." },
+                { "language": "ro", "text": "Rămâne deschis modul exact în care va fi delimitată faza a doua. Până miercuri trebuie să clarificăm ce cerințe suplimentare sunt cu adevărat necesare și care vor intra mai târziu în planul normal de îmbunătățiri." },
+                { "language": "sq", "text": "Ende mbetet e hapur si do të ndahet saktësisht faza e dytë. Deri të mërkurën duhet të sqarojmë cilat kërkesa shtesë janë vërtet të nevojshme dhe cilat do të futen më vonë në planin normal të përmirësimeve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this marks the open point and gives a deadline for clarification.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this marks the open point and gives a deadline for clarification." },
+                { "language": "fa", "text": "خوب است: نکته باز را مشخص می‌کند و برای روشن‌سازی موعد می‌گذارد." },
+                { "language": "ar", "text": "جيد: يحدد النقطة المفتوحة ويضع موعداً للتوضيح." },
+                { "language": "tr", "text": "İyi: açık noktayı işaretliyor ve netleştirme için tarih veriyor." },
+                { "language": "ru", "text": "Хорошо: открытый пункт обозначен и указан срок для уточнения." },
+                { "language": "ckb", "text": "باشە: خاڵی کراوە دیاری دەکات و کاتێک بۆ ڕوونکردنەوە دادەنێت." },
+                { "language": "kmr", "text": "Baş e: xala vekirî nîşan dide û ji bo zelalkirinê demek dide." },
+                { "language": "pl", "text": "Dobrze: wskazuje punkt otwarty i podaje termin doprecyzowania." },
+                { "language": "ro", "text": "Bine: marchează punctul deschis și dă un termen pentru clarificare." },
+                { "language": "sq", "text": "Mirë: shënon pikën e hapur dhe jep një afat për sqarim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Offen ist noch die zweite Phase, aber das können wir später genauer besprechen, wenn wir mit der Pilotversion fertig sind.",
+              "translations": [
+                { "language": "en", "text": "The second phase is still open, but we can discuss that more precisely later when we are finished with the pilot version." },
+                { "language": "fa", "text": "فاز دوم هنوز باز است، اما می‌توانیم بعداً وقتی نسخه آزمایشی تمام شد دقیق‌تر درباره آن صحبت کنیم." },
+                { "language": "ar", "text": "المرحلة الثانية لا تزال مفتوحة، لكن يمكننا مناقشتها بدقة أكبر لاحقاً عندما ننتهي من النسخة التجريبية." },
+                { "language": "tr", "text": "İkinci aşama hâlâ açık, ama pilot sürüm bittiğinde bunu daha ayrıntılı konuşabiliriz." },
+                { "language": "ru", "text": "Второй этап ещё открыт, но мы можем обсудить его подробнее позже, когда закончим пилотную версию." },
+                { "language": "ckb", "text": "قۆناغی دووەم هێشتا کراوەیە، بەڵام دەتوانین دواتر کاتێک وەشانی تاقیکردنەوە تەواو بوو بە وردیتر لەسەری بدوێین." },
+                { "language": "kmr", "text": "Qonaxa duyem hêj vekirî ye, lê em dikarin paşê dema guhertoya ceribandinê qedî bi hûrgilîtir li ser biaxivin." },
+                { "language": "pl", "text": "Druga faza jest jeszcze otwarta, ale możemy omówić ją dokładniej później, gdy skończymy wersję pilotażową." },
+                { "language": "ro", "text": "Faza a doua este încă deschisă, dar o putem discuta mai precis mai târziu, când terminăm versiunea pilot." },
+                { "language": "sq", "text": "Faza e dytë është ende e hapur, por mund ta diskutojmë më saktë më vonë, kur të përfundojmë versionin pilot." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too weak: it identifies the open area, but it gives no owner, date, or clarification criterion.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: it identifies the open area, but it gives no owner, date, or clarification criterion." },
+                { "language": "fa", "text": "خیلی ضعیف است: حوزه باز را مشخص می‌کند، اما مسئول، تاریخ یا معیار روشن‌سازی نمی‌دهد." },
+                { "language": "ar", "text": "ضعيف جداً: يحدد المجال المفتوح، لكنه لا يعطي مسؤولاً أو تاريخاً أو معياراً للتوضيح." },
+                { "language": "tr", "text": "Çok zayıf: açık alanı belirtiyor, fakat sorumlu, tarih veya netleştirme ölçütü vermiyor." },
+                { "language": "ru", "text": "Слишком слабо: открытая область названа, но нет ответственного, срока или критерия уточнения." },
+                { "language": "ckb", "text": "زۆر لاوازە: بوارە کراوەکە دیاری دەکات، بەڵام بەرپرس، کات یان پێوەری ڕوونکردنەوە نادات." },
+                { "language": "kmr", "text": "Pir qels e: qada vekirî nîşan dide, lê berpirs, dem an pîvana zelalkirinê nade." },
+                { "language": "pl", "text": "Zbyt słabe: wskazuje otwarty obszar, ale nie podaje osoby odpowiedzialnej, terminu ani kryterium doprecyzowania." },
+                { "language": "ro", "text": "Prea slab: identifică zona deschisă, dar nu dă responsabil, termen sau criteriu de clarificare." },
+                { "language": "sq", "text": "Shumë e dobët: e identifikon fushën e hapur, por nuk jep përgjegjës, datë ose kriter sqarimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja. Lea übernimmt die technische Prüfung bis Dienstagmittag. Samir sammelt bis Mittwoch die Kundenrückmeldungen. Ich schreibe heute das Entscheidungsprotokoll und markiere darin klar, was verbindlich ist und was noch offen bleibt.",
+              "translations": [
+                { "language": "en", "text": "Yes. Lea takes over the technical review by Tuesday noon. Samir collects the customer feedback by Wednesday. I will write the decision minutes today and clearly mark what is binding and what remains open." },
+                { "language": "fa", "text": "بله. لیا بررسی فنی را تا ظهر سه‌شنبه انجام می‌دهد. سمیر تا چهارشنبه بازخوردهای مشتری را جمع‌آوری می‌کند. من امروز صورت‌جلسه تصمیم را می‌نویسم و در آن روشن مشخص می‌کنم چه چیزی الزام‌آور است و چه چیزی باز می‌ماند." },
+                { "language": "ar", "text": "نعم. تتولى ليا الفحص التقني حتى ظهر الثلاثاء. يجمع سمير ملاحظات العملاء حتى الأربعاء. سأكتب اليوم محضر القرار وأوضح فيه بجلاء ما هو ملزم وما يبقى مفتوحاً." },
+                { "language": "tr", "text": "Evet. Lea teknik kontrolü Salı öğlene kadar üstleniyor. Samir müşteri geri bildirimlerini Çarşambaya kadar topluyor. Ben bugün karar tutanağını yazacağım ve içinde neyin bağlayıcı olduğunu, neyin açık kaldığını net işaretleyeceğim." },
+                { "language": "ru", "text": "Да. Леа берёт на себя техническую проверку до полудня вторника. Самир собирает отзывы клиентов до среды. Я сегодня напишу протокол решения и ясно отмечу, что является обязательным, а что остаётся открытым." },
+                { "language": "ckb", "text": "بەڵێ. لیا پشکنینی تەکنیکی تا نیوەڕۆی سێشەممە دەگرێتە ئەستۆ. سامیر تا چوارشەممە کاردانەوەکانی کڕیار کۆدەکاتەوە. من ئەمڕۆ پڕۆتۆکۆڵی بڕیارەکە دەنووسم و تێیدا بە ڕوونی دیاری دەکەم چی پابەندە و چی هێشتا کراوە دەمێنێتەوە." },
+                { "language": "kmr", "text": "Erê. Lea heta nîvroya Sêşemê kontrola teknîkî digire ser xwe. Samir heta Çarşemê bersivên xerîdar kom dike. Ez îro protokola biryarê dinivîsim û tê de bi zelalî nîşan dikim çi pêgir e û çi hêj vekirî dimîne." },
+                { "language": "pl", "text": "Tak. Lea przejmuje sprawdzenie techniczne do wtorku do południa. Samir zbiera informacje zwrotne od klientów do środy. Ja dziś napiszę protokół decyzji i jasno zaznaczę, co jest wiążące, a co pozostaje otwarte." },
+                { "language": "ro", "text": "Da. Lea preia verificarea tehnică până marți la prânz. Samir colectează reacțiile clienților până miercuri. Eu scriu astăzi procesul-verbal al deciziei și marchez clar ce este obligatoriu și ce rămâne deschis." },
+                { "language": "sq", "text": "Po. Lea merr përsipër kontrollin teknik deri të martën në mesditë. Samir mbledh reagimet e klientëve deri të mërkurën. Unë do ta shkruaj sot procesverbalin e vendimit dhe do të shënoj qartë çfarë është detyruese dhe çfarë mbetet e hapur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: responsibilities, deadlines, and the speaker's own task are clear.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: responsibilities, deadlines, and the speaker's own task are clear." },
+                { "language": "fa", "text": "خوب است: مسئولیت‌ها، موعدها و کار خود گوینده روشن هستند." },
+                { "language": "ar", "text": "جيد: المسؤوليات والمواعيد ومهمة المتحدث نفسه واضحة." },
+                { "language": "tr", "text": "İyi: sorumluluklar, tarihler ve konuşanın kendi görevi net." },
+                { "language": "ru", "text": "Хорошо: обязанности, сроки и собственная задача говорящего ясны." },
+                { "language": "ckb", "text": "باشە: بەرپرسیارێتییەکان، کاتەکان و ئەرکی خودی قسەکەر ڕوونن." },
+                { "language": "kmr", "text": "Baş e: berpirsiyarî, dem û erka axivêr bi zelalî diyar in." },
+                { "language": "pl", "text": "Dobrze: odpowiedzialności, terminy i własne zadanie mówiącego są jasne." },
+                { "language": "ro", "text": "Bine: responsabilitățile, termenele și sarcina proprie a vorbitorului sunt clare." },
+                { "language": "sq", "text": "Mirë: përgjegjësitë, afatet dhe detyra e vetë folësit janë të qarta." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Lea und Samir kümmern sich um die offenen Punkte, und ich schreibe später eine kurze Zusammenfassung für alle.",
+              "translations": [
+                { "language": "en", "text": "Lea and Samir will take care of the open points, and I will later write a short summary for everyone." },
+                { "language": "fa", "text": "لیا و سمیر به نکات باز رسیدگی می‌کنند، و من بعداً یک جمع‌بندی کوتاه برای همه می‌نویسم." },
+                { "language": "ar", "text": "ستتولى ليا وسمير النقاط المفتوحة، وسأكتب لاحقاً ملخصاً قصيراً للجميع." },
+                { "language": "tr", "text": "Lea ve Samir açık noktalarla ilgilenecek, ben de daha sonra herkes için kısa bir özet yazacağım." },
+                { "language": "ru", "text": "Леа и Самир займутся открытыми пунктами, а я позже напишу краткое резюме для всех." },
+                { "language": "ckb", "text": "لیا و سامیر چاودێری خاڵە کراوەکان دەکەن، و من دواتر پوختەیەکی کورت بۆ هەمووان دەنووسم." },
+                { "language": "kmr", "text": "Lea û Samir dê li xalên vekirî mêze bikin, û ez ê paşê ji bo her kes kurteyek binivîsim." },
+                { "language": "pl", "text": "Lea i Samir zajmą się punktami otwartymi, a ja później napiszę krótkie podsumowanie dla wszystkich." },
+                { "language": "ro", "text": "Lea și Samir se ocupă de punctele deschise, iar eu voi scrie mai târziu un scurt rezumat pentru toți." },
+                { "language": "sq", "text": "Lea dhe Samir do të merren me pikat e hapura, ndërsa unë më vonë do të shkruaj një përmbledhje të shkurtër për të gjithë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too imprecise: it names people but not exact tasks, dates, or the status of the written minutes.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too imprecise: it names people but not exact tasks, dates, or the status of the written minutes." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: افراد را نام می‌برد، اما کار دقیق، تاریخ‌ها یا وضعیت صورت‌جلسه را مشخص نمی‌کند." },
+                { "language": "ar", "text": "غير دقيق بما يكفي: يذكر الأشخاص، لكنه لا يحدد المهام الدقيقة أو المواعيد أو حالة المحضر المكتوب." },
+                { "language": "tr", "text": "Çok belirsiz: kişileri söylüyor, ancak kesin görevleri, tarihleri veya yazılı tutanağın durumunu belirtmiyor." },
+                { "language": "ru", "text": "Слишком неточно: люди названы, но нет точных задач, сроков или статуса письменного протокола." },
+                { "language": "ckb", "text": "زۆر نادیارە: کەسەکان ناو دەبات، بەڵام ئەرکی ورد، کاتەکان یان دۆخی پڕۆتۆکۆڵی نووسراو دیاری ناکات." },
+                { "language": "kmr", "text": "Pir nezelal e: kesan bi nav dike, lê erkên rast, dem an rewşa protokola nivîskî nîşan nade." },
+                { "language": "pl", "text": "Zbyt nieprecyzyjne: wymienia osoby, ale nie dokładne zadania, terminy ani status pisemnego protokołu." },
+                { "language": "ro", "text": "Prea imprecis: numește persoanele, dar nu sarcinile exacte, datele sau starea procesului-verbal scris." },
+                { "language": "sq", "text": "Shumë e pasaktë: përmend personat, por jo detyrat e sakta, datat ose gjendjen e procesverbalit me shkrim." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde schreiben: Bei den Benachrichtigungen gibt es noch unterschiedliche Einschätzungen. Für die Pilotversion bleibt es bei der einfachen Variante; die erweiterte Variante prüfen wir mit Nutzerdaten in Phase zwei.",
+              "translations": [
+                { "language": "en", "text": "I would write: There are still different assessments regarding notifications. For the pilot version, we will keep the simple version; we will review the extended version with user data in phase two." },
+                { "language": "fa", "text": "می‌نویسم: درباره اعلان‌ها هنوز ارزیابی‌های متفاوتی وجود دارد. برای نسخه آزمایشی، همان گزینه ساده باقی می‌ماند؛ گزینه گسترده‌تر را در فاز دوم با داده‌های کاربران بررسی می‌کنیم." },
+                { "language": "ar", "text": "سأكتب: ما زالت هناك تقييمات مختلفة بشأن الإشعارات. بالنسبة إلى النسخة التجريبية نبقى مع الخيار البسيط؛ أما الخيار الموسع فنراجعه في المرحلة الثانية باستخدام بيانات المستخدمين." },
+                { "language": "tr", "text": "Şöyle yazardım: Bildirimler konusunda hâlâ farklı değerlendirmeler var. Pilot sürüm için basit seçenekle devam ediyoruz; genişletilmiş seçeneği ikinci aşamada kullanıcı verileriyle inceleyeceğiz." },
+                { "language": "ru", "text": "Я бы написал так: по уведомлениям всё ещё есть разные оценки. Для пилотной версии остаётся простой вариант; расширенный вариант мы проверим во втором этапе на основе пользовательских данных." },
+                { "language": "ckb", "text": "من وەها دەنووسم: لەسەر ئاگادارکردنەوەکان هێشتا هەڵسەنگاندنی جیاواز هەیە. بۆ وەشانی تاقیکردنەوە، هەمان هەڵبژاردەی سادە دەمێنێتەوە؛ هەڵبژاردەی فراوانتر لە قۆناغی دووەم بە داتای بەکارهێنەران دەپشکنین." },
+                { "language": "kmr", "text": "Ez ê wisa binivîsim: Li ser agahdarkirinan hêj nirxandinên cuda hene. Ji bo guhertoya ceribandinê em li vebijêrka sade dimînin; vebijêrka firehtir di qonaxa duyem de bi daneyên bikarhêneran kontrol dikin." },
+                { "language": "pl", "text": "Napisałbym tak: W kwestii powiadomień nadal są różne oceny. W wersji pilotażowej zostajemy przy prostym wariancie; wariant rozszerzony sprawdzimy w drugiej fazie na podstawie danych użytkowników." },
+                { "language": "ro", "text": "Aș scrie: În privința notificărilor există încă evaluări diferite. Pentru versiunea pilot rămânem la varianta simplă; varianta extinsă o verificăm în faza a doua cu datele utilizatorilor." },
+                { "language": "sq", "text": "Do të shkruaja: Për njoftimet ka ende vlerësime të ndryshme. Për versionin pilot mbetemi te varianti i thjeshtë; variantin e zgjeruar e shqyrtojmë në fazën e dytë me të dhënat e përdoruesve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this acknowledges disagreement without blaming anyone and records the temporary decision.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this acknowledges disagreement without blaming anyone and records the temporary decision." },
+                { "language": "fa", "text": "خوب است: اختلاف نظر را بدون سرزنش کسی می‌پذیرد و تصمیم موقت را ثبت می‌کند." },
+                { "language": "ar", "text": "جيد: يعترف بوجود اختلاف في الرأي من دون لوم أحد، ويسجل القرار المؤقت." },
+                { "language": "tr", "text": "İyi: kimseyi suçlamadan görüş ayrılığını kabul ediyor ve geçici kararı kaydediyor." },
+                { "language": "ru", "text": "Хорошо: признаётся разница во мнениях без обвинений и фиксируется временное решение." },
+                { "language": "ckb", "text": "باشە: ناکۆکیی بۆچوونەکان بەبێ سەرزەنشتکردنی کەسێک دەناسێت و بڕیاری کاتی تۆمار دەکات." },
+                { "language": "kmr", "text": "Baş e: cudahiya nêrînan bê sûcdarkirinê qebûl dike û biryara demkî tomar dike." },
+                { "language": "pl", "text": "Dobrze: uznaje różnicę zdań bez obwiniania kogokolwiek i zapisuje tymczasową decyzję." },
+                { "language": "ro", "text": "Bine: recunoaște diferența de opinii fără să dea vina pe cineva și consemnează decizia temporară." },
+                { "language": "sq", "text": "Mirë: e pranon mospajtimin pa fajësuar askënd dhe regjistron vendimin e përkohshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde schreiben, dass wir bei den Benachrichtigungen keine Einigung hatten und das Thema deshalb erst später wieder aufnehmen.",
+              "translations": [
+                { "language": "en", "text": "I would write that we had no agreement on notifications and will therefore take up the topic again only later." },
+                { "language": "fa", "text": "می‌نویسم که درباره اعلان‌ها توافقی نداشتیم و بنابراین موضوع را فقط بعداً دوباره پیگیری می‌کنیم." },
+                { "language": "ar", "text": "سأكتب أننا لم نتوصل إلى اتفاق بشأن الإشعارات، ولذلك سنعود إلى الموضوع لاحقاً فقط." },
+                { "language": "tr", "text": "Bildirimler konusunda anlaşmaya varamadığımızı ve bu nedenle konuyu ancak daha sonra tekrar ele alacağımızı yazardım." },
+                { "language": "ru", "text": "Я бы написал, что по уведомлениям мы не договорились и поэтому вернёмся к теме только позже." },
+                { "language": "ckb", "text": "دەنووسم کە لەسەر ئاگادارکردنەوەکان ڕێک نەکەوتین و بۆیە تەنها دواتر جارێکی تر بابەتەکە دەگرینەوە." },
+                { "language": "kmr", "text": "Ez ê binivîsim ku em li ser agahdarkirinan li hev nekirin û ji ber vê yekê em mijarê tenê paşê dîsa digirin." },
+                { "language": "pl", "text": "Napisałbym, że nie osiągnęliśmy porozumienia w sprawie powiadomień i dlatego wrócimy do tematu dopiero później." },
+                { "language": "ro", "text": "Aș scrie că nu am ajuns la un acord privind notificările și de aceea vom relua subiectul abia mai târziu." },
+                { "language": "sq", "text": "Do të shkruaja se nuk arritëm marrëveshje për njoftimet dhe prandaj do ta rimarrim temën vetëm më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Incomplete: it records disagreement, but not the temporary decision for the pilot version.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: it records disagreement, but not the temporary decision for the pilot version." },
+                { "language": "fa", "text": "ناقص است: اختلاف را ثبت می‌کند، اما تصمیم موقت برای نسخه آزمایشی را نه." },
+                { "language": "ar", "text": "ناقص: يسجل الخلاف، لكنه لا يسجل القرار المؤقت للنسخة التجريبية." },
+                { "language": "tr", "text": "Eksik: anlaşmazlığı kaydediyor, fakat pilot sürüm için geçici kararı belirtmiyor." },
+                { "language": "ru", "text": "Неполно: фиксируется разногласие, но не временное решение для пилотной версии." },
+                { "language": "ckb", "text": "ناتەواوە: ناکۆکی تۆمار دەکات، بەڵام بڕیاری کاتی بۆ وەشانی تاقیکردنەوە نا." },
+                { "language": "kmr", "text": "Netemam e: nakokiyê tomar dike, lê biryara demkî ji bo guhertoya ceribandinê nade." },
+                { "language": "pl", "text": "Niepełne: zapisuje brak zgody, ale nie tymczasową decyzję dla wersji pilotażowej." },
+                { "language": "ro", "text": "Incomplet: consemnează dezacordul, dar nu decizia temporară pentru versiunea pilot." },
+                { "language": "sq", "text": "E paplotë: regjistron mospajtimin, por jo vendimin e përkohshëm për versionin pilot." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde abschließen mit: Wenn ich etwas falsch zusammengefasst habe, geben Sie mir bitte bis heute 16 Uhr kurz Bescheid. Sonst verschicke ich das Protokoll danach als gemeinsamen Stand.",
+              "translations": [
+                { "language": "en", "text": "I would close with: If I have summarized anything incorrectly, please let me know briefly by 4 p.m. today. Otherwise, I will send the minutes afterward as our shared status." },
+                { "language": "fa", "text": "این‌طور تمام می‌کنم: اگر چیزی را اشتباه جمع‌بندی کرده‌ام، لطفاً تا امروز ساعت ۱۶ کوتاه به من اطلاع بدهید. در غیر این صورت بعد از آن صورت‌جلسه را به‌عنوان وضعیت مشترک ارسال می‌کنم." },
+                { "language": "ar", "text": "سأنهيها هكذا: إذا كنت قد لخّصت شيئاً بشكل غير صحيح، فأرجو أن تخبروني بإيجاز حتى الساعة الرابعة اليوم. وإلا فسأرسل المحضر بعد ذلك بوصفه الوضع المشترك بيننا." },
+                { "language": "tr", "text": "Şöyle kapatırdım: Bir şeyi yanlış özetlediysem lütfen bugün saat 16.00'ya kadar kısaca haber verin. Aksi takdirde tutanağı bundan sonra ortak durumumuz olarak göndereceğim." },
+                { "language": "ru", "text": "Я бы завершил так: если я что-то неправильно подытожил, пожалуйста, коротко сообщите мне сегодня до 16:00. Иначе после этого я отправлю протокол как наш общий статус." },
+                { "language": "ckb", "text": "من وەها کۆتایی پێدەهێنم: ئەگەر شتێکم بە هەڵە پوختە کردووە، تکایە تا ئەمڕۆ کاتژمێر ١٦ بە کورتی ئاگادارم بکەنەوە. ئەگەر نا، دوای ئەو کاتە پڕۆتۆکۆڵەکە وەک دۆخی هاوبەش دەنێرم." },
+                { "language": "kmr", "text": "Ez ê wisa bi dawî bikim: Ger min tiştek şaş kurt kiribe, ji kerema xwe heta îro saet 16 bi kurtî min agahdar bikin. Wekî din ez ê piştî wê protokolê wek rewşa hevpar bişînim." },
+                { "language": "pl", "text": "Zakończyłbym tak: Jeśli coś podsumowałem błędnie, proszę dać mi krótko znać dziś do godziny 16. W przeciwnym razie wyślę potem protokół jako nasz wspólny stan ustaleń." },
+                { "language": "ro", "text": "Aș încheia astfel: Dacă am rezumat ceva greșit, vă rog să mă anunțați scurt până astăzi la ora 16. În caz contrar, trimit apoi procesul-verbal ca stare comună." },
+                { "language": "sq", "text": "Do ta mbyllja kështu: Nëse kam përmbledhur diçka gabim, ju lutem më njoftoni shkurt deri sot në orën 16. Përndryshe, më pas do ta dërgoj procesverbalin si gjendjen tonë të përbashkët." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives a correction window and makes clear when the minutes become the shared status.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives a correction window and makes clear when the minutes become the shared status." },
+                { "language": "fa", "text": "خوب است: فرصت اصلاح می‌دهد و روشن می‌کند صورت‌جلسه چه زمانی وضعیت مشترک محسوب می‌شود." },
+                { "language": "ar", "text": "جيد: يعطي فرصة للتصحيح ويوضح متى يصبح المحضر هو الوضع المشترك." },
+                { "language": "tr", "text": "İyi: düzeltme süresi veriyor ve tutanağın ne zaman ortak durum sayılacağını netleştiriyor." },
+                { "language": "ru", "text": "Хорошо: даётся окно для исправлений и ясно, когда протокол становится общим статусом." },
+                { "language": "ckb", "text": "باشە: کاتی ڕاستکردنەوە دەدات و ڕوون دەکاتەوە کە پڕۆتۆکۆڵەکە کەی دەبێتە دۆخی هاوبەش." },
+                { "language": "kmr", "text": "Baş e: derfeta rastkirinê dide û zelal dike kengê protokol dibe rewşa hevpar." },
+                { "language": "pl", "text": "Dobrze: daje okno na korektę i jasno mówi, kiedy protokół staje się wspólnym stanem ustaleń." },
+                { "language": "ro", "text": "Bine: oferă o fereastră de corectare și clarifică momentul în care procesul-verbal devine starea comună." },
+                { "language": "sq", "text": "Mirë: jep një hapësirë për korrigjim dhe sqaron kur procesverbali bëhet gjendja e përbashkët." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde am Ende einfach schreiben, dass ich die Zusammenfassung gleich verschicke und alle sich melden können, falls noch etwas fehlt.",
+              "translations": [
+                { "language": "en", "text": "At the end, I would simply write that I will send the summary right away and everyone can get in touch if something is still missing." },
+                { "language": "fa", "text": "در پایان فقط می‌نویسم که جمع‌بندی را همین الان می‌فرستم و اگر چیزی هنوز کم است، همه می‌توانند اطلاع بدهند." },
+                { "language": "ar", "text": "في النهاية سأكتب ببساطة أنني سأرسل الملخص فوراً، ويمكن للجميع التواصل إذا كان هناك شيء ناقص." },
+                { "language": "tr", "text": "Sonunda sadece özeti hemen göndereceğimi ve hâlâ eksik bir şey varsa herkesin bana yazabileceğini belirtirdim." },
+                { "language": "ru", "text": "В конце я бы просто написал, что сразу отправлю резюме, и все могут сообщить, если чего-то ещё не хватает." },
+                { "language": "ckb", "text": "لە کۆتاییدا تەنها دەنووسم کە پوختەکە یەکسەر دەنێرم و ئەگەر شتێک هێشتا کەم بوو، هەمووان دەتوانن ئاگادارم بکەنەوە." },
+                { "language": "kmr", "text": "Di dawiyê de ez ê tenê binivîsim ku ez kurteyê tavilê dişînim û ger tiştek hêj kêm be, her kes dikare agahdar bike." },
+                { "language": "pl", "text": "Na końcu po prostu napisałbym, że od razu wyślę podsumowanie i wszyscy mogą się odezwać, jeśli czegoś jeszcze brakuje." },
+                { "language": "ro", "text": "La final aș scrie pur și simplu că trimit imediat rezumatul și că toți se pot anunța dacă mai lipsește ceva." },
+                { "language": "sq", "text": "Në fund thjesht do të shkruaja se po e dërgoj menjëherë përmbledhjen dhe të gjithë mund të njoftojnë nëse mungon ende diçka." }
+              ],
+              "isCorrect": false,
+              "feedback": "Polite but incomplete: it does not set a correction deadline, so the summary may remain open indefinitely.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite but incomplete: it does not set a correction deadline, so the summary may remain open indefinitely." },
+                { "language": "fa", "text": "مؤدبانه اما ناقص است: موعد اصلاح تعیین نمی‌کند، بنابراین جمع‌بندی ممکن است نامحدود باز بماند." },
+                { "language": "ar", "text": "مهذب لكنه ناقص: لا يحدد موعداً للتصحيح، لذلك قد يبقى الملخص مفتوحاً بلا نهاية." },
+                { "language": "tr", "text": "Kibar ama eksik: düzeltme için tarih belirlemiyor, bu yüzden özet süresiz açık kalabilir." },
+                { "language": "ru", "text": "Вежливо, но неполно: нет срока для исправлений, поэтому итог может оставаться открытым неопределённо долго." },
+                { "language": "ckb", "text": "ڕێزدارانەیە بەڵام ناتەواوە: کاتی ڕاستکردنەوە دیاری ناکات، بۆیە پوختەکە ڕەنگە بە بێ سنوور کراوە بمێنێتەوە." },
+                { "language": "kmr", "text": "Bi rêz e lê netemam e: demek ji bo rastkirinê nade, ji ber vê kurte dikare bêdawî vekirî bimîne." },
+                { "language": "pl", "text": "Uprzejme, ale niepełne: nie ustala terminu korekty, więc podsumowanie może pozostać otwarte bez końca." },
+                { "language": "ro", "text": "Politicos, dar incomplet: nu stabilește un termen de corectare, deci rezumatul poate rămâne deschis pe termen nedefinit." },
+                { "language": "sq", "text": "E sjellshme, por e paplotë: nuk vendos afat për korrigjim, prandaj përmbledhja mund të mbetet e hapur pafund." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "A strong meeting summary starts with the actual decision and the reason behind it. This prevents later reinterpretation.",
+          "translations": [
+            { "language": "en", "text": "A strong meeting summary starts with the actual decision and the reason behind it. This prevents later reinterpretation." },
+            { "language": "fa", "text": "یک جمع‌بندی قوی جلسه با تصمیم واقعی و دلیل پشت آن شروع می‌شود. این کار جلوی تفسیر دوباره در آینده را می‌گیرد." },
+            { "language": "ar", "text": "الملخص القوي للاجتماع يبدأ بالقرار الفعلي والسبب وراءه. هذا يمنع إعادة التفسير لاحقاً." },
+            { "language": "tr", "text": "Güçlü bir toplantı özeti gerçek kararla ve arkasındaki gerekçeyle başlar. Bu, daha sonra yeniden yorumlamayı önler." },
+            { "language": "ru", "text": "Сильное резюме встречи начинается с фактического решения и его причины. Это предотвращает последующее переосмысление." },
+            { "language": "ckb", "text": "پوختەیەکی بەهێزی کۆبوونەوە بە بڕیاری ڕاستەقینە و هۆکارەکەی دەست پێ دەکات. ئەمە ڕێ لە لێکدانەوەی دواتر دەگرێت." },
+            { "language": "kmr", "text": "Kurteyeke bihêz a civînê bi biryara rastîn û sedema wê dest pê dike. Ev pêşî li şîrovekirina paşê digire." },
+            { "language": "pl", "text": "Mocne podsumowanie spotkania zaczyna się od właściwej decyzji i jej uzasadnienia. To zapobiega późniejszym reinterpretacjom." },
+            { "language": "ro", "text": "Un rezumat bun al ședinței începe cu decizia reală și motivul ei. Asta previne reinterpretările ulterioare." },
+            { "language": "sq", "text": "Një përmbledhje e fortë e mbledhjes fillon me vendimin real dhe arsyen pas tij. Kjo parandalon riinterpretime të mëvonshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "language",
+          "text": "For B2 workplace German, names plus deadlines are essential. Vague phrases such as 'later' or 'someone' make follow-up weak.",
+          "translations": [
+            { "language": "en", "text": "For B2 workplace German, names plus deadlines are essential. Vague phrases such as 'later' or 'someone' make follow-up weak." },
+            { "language": "fa", "text": "در آلمانی کاری سطح B2، نام افراد همراه با موعدها ضروری است. عبارت‌های مبهم مثل «بعداً» یا «یک نفر» پیگیری را ضعیف می‌کند." },
+            { "language": "ar", "text": "في الألمانية المهنية بمستوى B2، الأسماء مع المواعيد ضرورية. العبارات الغامضة مثل «لاحقاً» أو «شخص ما» تجعل المتابعة ضعيفة." },
+            { "language": "tr", "text": "B2 iş Almancasında isimler ve tarihler zorunludur. 'Daha sonra' veya 'birisi' gibi belirsiz ifadeler takibi zayıflatır." },
+            { "language": "ru", "text": "В рабочем немецком уровня B2 имена и сроки необходимы. Расплывчатые выражения вроде «позже» или «кто-нибудь» ослабляют последующие действия." },
+            { "language": "ckb", "text": "لە ئەڵمانی کاری B2دا، ناوی کەسەکان لەگەڵ کاتەکان پێویستن. دەستەواژەی نادیار وەک «دواتر» یان «کەسێک» بەدواداچوون لاواز دەکات." },
+            { "language": "kmr", "text": "Di Almaniya karê ya B2 de, nav û dem pêwîst in. Gotinên nezelal wek 'paşê' an 'kesek' şopandinê qels dikin." },
+            { "language": "pl", "text": "W niemieckim zawodowym na poziomie B2 imiona i terminy są konieczne. Niejasne zwroty typu „później” albo „ktoś” osłabiają dalsze działania." },
+            { "language": "ro", "text": "În germana profesională de nivel B2, numele și termenele sunt esențiale. Formulări vagi precum „mai târziu” sau „cineva” slăbesc urmărirea." },
+            { "language": "sq", "text": "Në gjermanishten profesionale B2, emrat dhe afatet janë thelbësore. Shprehje të paqarta si “më vonë” ose “dikush” e dobësojnë ndjekjen." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "strategy",
+          "text": "When a point was controversial, record it neutrally and state the temporary decision. Do not restart the debate in the minutes.",
+          "translations": [
+            { "language": "en", "text": "When a point was controversial, record it neutrally and state the temporary decision. Do not restart the debate in the minutes." },
+            { "language": "fa", "text": "وقتی نکته‌ای محل اختلاف بوده، آن را بی‌طرف ثبت کن و تصمیم موقت را بنویس. در صورت‌جلسه بحث را دوباره شروع نکن." },
+            { "language": "ar", "text": "عندما تكون نقطة ما مثيرة للخلاف، سجلها بحياد واذكر القرار المؤقت. لا تبدأ النقاش من جديد في المحضر." },
+            { "language": "tr", "text": "Bir nokta tartışmalıysa onu tarafsız kaydet ve geçici kararı belirt. Tutanakta tartışmayı yeniden başlatma." },
+            { "language": "ru", "text": "Если пункт был спорным, зафиксируйте его нейтрально и укажите временное решение. Не начинайте обсуждение заново в протоколе." },
+            { "language": "ckb", "text": "کاتێک خاڵێک جێی ناکۆکی بوو، بە بێلایەنی تۆماری بکە و بڕیاری کاتی بنووسە. لە پڕۆتۆکۆڵدا گفتوگۆکە دووبارە دەست پێ مەکە." },
+            { "language": "kmr", "text": "Dema xalek nakok bû, wê bêalî tomar bike û biryara demkî bibêje. Di protokolê de gotûbêjê dîsa dest pê neke." },
+            { "language": "pl", "text": "Gdy punkt był sporny, zapisz go neutralnie i podaj decyzję tymczasową. Nie otwieraj dyskusji od nowa w protokole." },
+            { "language": "ro", "text": "Când un punct a fost controversat, consemnează-l neutru și menționează decizia temporară. Nu relua dezbaterea în procesul-verbal." },
+            { "language": "sq", "text": "Kur një pikë ishte e diskutueshme, regjistroje në mënyrë neutrale dhe përmend vendimin e përkohshëm. Mos e rifillo debatin në procesverbal." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "strategy",
+          "text": "A correction window makes the summary fair and efficient. It gives colleagues a chance to correct mistakes without leaving the decision open forever.",
+          "translations": [
+            { "language": "en", "text": "A correction window makes the summary fair and efficient. It gives colleagues a chance to correct mistakes without leaving the decision open forever." },
+            { "language": "fa", "text": "فرصت اصلاح، جمع‌بندی را منصفانه و کارآمد می‌کند. به همکاران امکان اصلاح اشتباه می‌دهد، بدون اینکه تصمیم برای همیشه باز بماند." },
+            { "language": "ar", "text": "فترة التصحيح تجعل الملخص منصفاً وفعالاً. إنها تمنح الزملاء فرصة لتصحيح الأخطاء من دون أن يبقى القرار مفتوحاً إلى الأبد." },
+            { "language": "tr", "text": "Düzeltme süresi özeti adil ve verimli kılar. Kararı sonsuza kadar açık bırakmadan, çalışma arkadaşlarına hataları düzeltme şansı verir." },
+            { "language": "ru", "text": "Окно для исправлений делает резюме справедливым и эффективным. Оно даёт коллегам шанс исправить ошибки, не оставляя решение открытым навсегда." },
+            { "language": "ckb", "text": "کاتی ڕاستکردنەوە پوختەکە دادپەروەرانە و کارا دەکات. دەرفەتی ڕاستکردنەوەی هەڵە بە هاوکاران دەدات، بەبێ ئەوەی بڕیارەکە بۆ هەمیشە کراوە بمێنێتەوە." },
+            { "language": "kmr", "text": "Derfeta rastkirinê kurteyê dadperwer û bibandor dike. Ew derfet dide hevkaran ku şaşiyan rast bikin, bêyî ku biryar her tim vekirî bimîne." },
+            { "language": "pl", "text": "Okno na korektę sprawia, że podsumowanie jest uczciwe i skuteczne. Daje współpracownikom szansę poprawienia błędów, nie zostawiając decyzji otwartej na zawsze." },
+            { "language": "ro", "text": "O fereastră de corectare face rezumatul corect și eficient. Le oferă colegilor șansa de a corecta greșeli fără a lăsa decizia deschisă pentru totdeauna." },
+            { "language": "sq", "text": "Një hapësirë për korrigjim e bën përmbledhjen të drejtë dhe efikase. U jep kolegëve mundësinë të korrigjojnë gabimet pa e lënë vendimin të hapur përgjithmonë." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

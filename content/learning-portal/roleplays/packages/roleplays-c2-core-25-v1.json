@@ -1,0 +1,750 @@
+{
+  "packageId": "roleplays-c2-core-25-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 25 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 25",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-methodische-schwaeche-einraeumen",
+      "linkedDialogueSlug": null,
+      "title": "Eine methodische Schwäche einräumen",
+      "titleTranslations": [
+        { "language": "en", "text": "Acknowledging a methodological weakness" },
+        { "language": "fa", "text": "پذیرفتن یک ضعف روش‌شناختی" },
+        { "language": "ar", "text": "الإقرار بضعف منهجي" },
+        { "language": "tr", "text": "Yöntemsel bir zayıflığı kabul etmek" },
+        { "language": "ru", "text": "Признание методологической слабости" },
+        { "language": "ckb", "text": "دانپێدانان بە لاوازییەکی ڕێبازناسی" },
+        { "language": "kmr", "text": "Qebûlkirina qelsiyeke rêbazî" },
+        { "language": "pl", "text": "Uznanie słabości metodologicznej" },
+        { "language": "ro", "text": "Recunoașterea unei slăbiciuni metodologice" },
+        { "language": "sq", "text": "Pranimi i një dobësie metodologjike" }
+      ],
+      "description": "In einem Kolloquium stellen Sie eine Studie zu Lernstrategien vor. Ihre Stichprobe stammt überwiegend aus zwei städtischen Hochschulen, und eine Teilnehmerin fragt, ob die Ergebnisse überhaupt auf kleinere Hochschulen oder Berufskollegs übertragbar sind. Sie sollen die methodische Schwäche offen einräumen, ohne die gesamte Aussagekraft der Studie aufzugeben.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a colloquium, you present a study on learning strategies. Your sample comes mainly from two urban universities, and a participant asks whether the results can be transferred at all to smaller universities or vocational colleges. You are asked to openly acknowledge the methodological weakness without giving up the study's entire explanatory value." },
+        { "language": "fa", "text": "در یک کولکویوم، مطالعه‌ای درباره راهبردهای یادگیری ارائه می‌کنید. نمونه شما عمدتاً از دو دانشگاه شهری آمده است و یکی از شرکت‌کنندگان می‌پرسد آیا نتایج اصلاً به دانشگاه‌های کوچک‌تر یا کالج‌های فنی‌وحرفه‌ای قابل تعمیم هستند یا نه. شما باید ضعف روش‌شناختی را آشکارا بپذیرید، بدون اینکه کل ارزش توضیحی مطالعه را کنار بگذارید." },
+        { "language": "ar", "text": "في ندوة بحثية تعرضون دراسة عن استراتيجيات التعلم. تأتي عينتكم في الغالب من جامعتين حضريتين، وتسأل مشاركة هل يمكن نقل النتائج أصلاً إلى جامعات أصغر أو كليات مهنية. المطلوب أن تقروا بالضعف المنهجي بوضوح من دون التخلي عن كامل القيمة التفسيرية للدراسة." },
+        { "language": "tr", "text": "Bir kolokyumda öğrenme stratejileri üzerine bir çalışma sunuyorsunuz. Örnekleminiz çoğunlukla iki şehir üniversitesinden geliyor ve bir katılımcı sonuçların daha küçük üniversitelere ya da meslek yüksekokullarına aktarılıp aktarılamayacağını soruyor. Çalışmanın tüm açıklayıcı değerinden vazgeçmeden yöntemsel zayıflığı açıkça kabul etmeniz bekleniyor." },
+        { "language": "ru", "text": "На коллоквиуме вы представляете исследование о стратегиях обучения. Ваша выборка в основном взята из двух городских вузов, и участница спрашивает, можно ли вообще переносить результаты на небольшие вузы или профессиональные колледжи. Нужно открыто признать методологическую слабость, не отказываясь от всей объяснительной ценности исследования." },
+        { "language": "ckb", "text": "لە کۆلۆکیۆمێکدا توێژینەوەیەک دەربارەی ستراتیژییەکانی فێربوون پێشکەش دەکەیت. نموونەکەت زۆربەی لە دوو زانکۆی شارستانییەوە هاتووە، و بەشداربوویەک دەپرسێت ئایا ئەنجامەکان بەڕاستی دەتوانرێن بۆ زانکۆ بچووکترەکان یان کۆلێژە پیشەییەکان بگوازرێنەوە. دەبێت بە ئاشکرا دان بە لاوازیی ڕێبازناسیدا بنێیت، بەبێ ئەوەی هەموو بەهای ڕوونکردنەوەیی توێژینەوەکە وازبهێنیت." },
+        { "language": "kmr", "text": "Di kolokyûmekê de hûn lêkolîneke li ser stratejiyên fêrbûnê pêşkêş dikin. Nimûneya we bi piranî ji du zanîngehên bajarî tê, û beşdarek dipirse ka encam bi rastî dikarin li zanîngehên biçûktir an kolejanên pîşeyî bên veguhastin. Divê hûn qelsiya rêbazî eşkere qebûl bikin bêyî ku hemû nirxa raveker a lêkolînê berdin." },
+        { "language": "pl", "text": "Na kolokwium przedstawiasz badanie dotyczące strategii uczenia się. Próba pochodzi głównie z dwóch miejskich uczelni, a jedna z uczestniczek pyta, czy wyniki w ogóle można przenieść na mniejsze uczelnie lub kolegia zawodowe. Trzeba otwarcie uznać słabość metodologiczną, nie rezygnując z całej wartości wyjaśniającej badania." },
+        { "language": "ro", "text": "Într-un colocviu prezentați un studiu despre strategii de învățare. Eșantionul provine în mare parte din două universități urbane, iar o participantă întreabă dacă rezultatele pot fi transferate către universități mai mici sau colegii profesionale. Trebuie să recunoașteți deschis slăbiciunea metodologică fără să abandonați întreaga valoare explicativă a studiului." },
+        { "language": "sq", "text": "Në një kolokuium paraqisni një studim për strategjitë e të nxënit. Kampioni juaj vjen kryesisht nga dy universitete urbane dhe një pjesëmarrëse pyet nëse rezultatet mund të transferohen fare te universitete më të vogla ose kolegje profesionale. Ju duhet ta pranoni hapur dobësinë metodologjike pa hequr dorë nga e gjithë vlera shpjeguese e studimit." }
+      ],
+      "learnerGoal": "Eine methodische Schwäche souverän einräumen: Übertragbarkeit begrenzen, den verbleibenden Erkenntniswert benennen, vorhandene Absicherungen erklären und eine glaubwürdige nächste Analyse vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Acknowledge a methodological weakness confidently: limit transferability, name the remaining insight value, explain existing safeguards, and propose a credible next analysis." },
+        { "language": "fa", "text": "یک ضعف روش‌شناختی را با تسلط بپذیرید: تعمیم‌پذیری را محدود کنید، ارزش شناختی باقی‌مانده را نام ببرید، کاهش ریسک‌های موجود را توضیح دهید و تحلیل بعدی قابل‌باور پیشنهاد کنید." },
+        { "language": "ar", "text": "أقروا بضعف منهجي بثقة: حددوا قابلية النقل، واذكروا القيمة المعرفية المتبقية، واشرحوا وسائل الحد من المخاطر الموجودة، واقترحوا تحليلاً تالياً موثوقاً." },
+        { "language": "tr", "text": "Yöntemsel bir zayıflığı güvenle kabul edin: aktarılabilirliği sınırlayın, kalan bilgi değerini adlandırın, mevcut güvence adımlarını açıklayın ve güvenilir bir sonraki analiz önerin." },
+        { "language": "ru", "text": "Уверенно признать методологическую слабость: ограничить переносимость, назвать оставшуюся познавательную ценность, объяснить имеющиеся меры снижения риска и предложить убедительный следующий анализ." },
+        { "language": "ckb", "text": "بە دڵنیایی دان بە لاوازییەکی ڕێبازناسیدا بنێ: گواستنەوەی ئەنجام سنووردار بکە، بەهای زانیاریی ماوە ناوببە، ڕێگرییە هەبووەکان ڕوون بکە و شیکاریی داهاتووی باوەڕپێکراو پێشنیار بکە." },
+        { "language": "kmr", "text": "Qelsiyeke rêbazî bi bawerî qebûl bikin: veguhastinê sînordar bikin, nirxa zanînê ya mayî nav bikin, ewlekariyên heyî rave bikin û analîzeke din a pêbawer pêşniyar bikin." },
+        { "language": "pl", "text": "Pewnie uznać słabość metodologiczną: ograniczyć możliwość przeniesienia wyników, nazwać pozostałą wartość poznawczą, wyjaśnić istniejące zabezpieczenia i zaproponować wiarygodną kolejną analizę." },
+        { "language": "ro", "text": "Recunoașteți sigur o slăbiciune metodologică: limitați transferabilitatea, numiți valoarea de cunoaștere rămasă, explicați măsurile existente de reducere a riscului și propuneți o analiză următoare credibilă." },
+        { "language": "sq", "text": "Pranoni me siguri një dobësi metodologjike: kufizoni transferueshmërinë, përmendni vlerën e mbetur të njohjes, shpjegoni masat ekzistuese të sigurimit dhe propozoni një analizë të ardhshme të besueshme." }
+      ],
+      "cefrLevel": "C2",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "presentation-support"],
+      "taskType": "explain-problem",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 25,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Präsentierende Person",
+          "translations": [
+            { "language": "en", "text": "Presenter" },
+            { "language": "fa", "text": "ارائه‌دهنده" },
+            { "language": "ar", "text": "الشخص المقدّم" },
+            { "language": "tr", "text": "Sunumu yapan kişi" },
+            { "language": "ru", "text": "Докладчик" },
+            { "language": "ckb", "text": "پێشکەشکار" },
+            { "language": "kmr", "text": "Pêşkêşkar" },
+            { "language": "pl", "text": "Osoba prezentująca" },
+            { "language": "ro", "text": "Persoana care prezintă" },
+            { "language": "sq", "text": "Personi që prezanton" }
+          ]
+        },
+        {
+          "roleKey": "lecturer",
+          "displayName": "Dozentin",
+          "translations": [
+            { "language": "en", "text": "Lecturer" },
+            { "language": "fa", "text": "مدرس" },
+            { "language": "ar", "text": "محاضرة" },
+            { "language": "tr", "text": "Öğretim görevlisi" },
+            { "language": "ru", "text": "Преподавательница" },
+            { "language": "ckb", "text": "مامۆستای زانکۆ" },
+            { "language": "kmr", "text": "Mamosteya zanîngehê" },
+            { "language": "pl", "text": "Prowadząca" },
+            { "language": "ro", "text": "Cadru didactic" },
+            { "language": "sq", "text": "Lektore" }
+          ]
+        },
+        {
+          "roleKey": "student-a",
+          "displayName": "Kritische Teilnehmerin",
+          "translations": [
+            { "language": "en", "text": "Critical participant" },
+            { "language": "fa", "text": "شرکت‌کننده منتقد" },
+            { "language": "ar", "text": "مشاركة ناقدة" },
+            { "language": "tr", "text": "Eleştirel katılımcı" },
+            { "language": "ru", "text": "Критичная участница" },
+            { "language": "ckb", "text": "بەشداربووی ڕەخنەگر" },
+            { "language": "kmr", "text": "Beşdara rexneger" },
+            { "language": "pl", "text": "Krytyczna uczestniczka" },
+            { "language": "ro", "text": "Participantă critică" },
+            { "language": "sq", "text": "Pjesëmarrëse kritike" }
+          ]
+        },
+        {
+          "roleKey": "student-b",
+          "displayName": "Kolloquiumsteilnehmer",
+          "translations": [
+            { "language": "en", "text": "Colloquium participant" },
+            { "language": "fa", "text": "شرکت‌کننده کولکویوم" },
+            { "language": "ar", "text": "مشارك في الندوة البحثية" },
+            { "language": "tr", "text": "Kolokyum katılımcısı" },
+            { "language": "ru", "text": "Участник коллоквиума" },
+            { "language": "ckb", "text": "بەشداربووی کۆلۆکیۆم" },
+            { "language": "kmr", "text": "Beşdarê kolokyûmê" },
+            { "language": "pl", "text": "Uczestnik kolokwium" },
+            { "language": "ro", "text": "Participant la colocviu" },
+            { "language": "sq", "text": "Pjesëmarrës kolokuiumi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "lecturer",
+          "baseText": "Bitte gehen Sie auf die Kritik ein: Ihre Stichprobe stammt fast ausschließlich aus zwei städtischen Hochschulen. Wie stark schränkt das die Aussagekraft Ihrer Studie ein?",
+          "translations": [
+            { "language": "en", "text": "Please address the criticism: your sample comes almost exclusively from two urban universities. How strongly does that limit the explanatory value of your study?" },
+            { "language": "fa", "text": "لطفاً به این نقد بپردازید: نمونه شما تقریباً فقط از دو دانشگاه شهری آمده است. این موضوع تا چه حد ارزش توضیحی مطالعه شما را محدود می‌کند؟" },
+            { "language": "ar", "text": "يرجى تناول النقد: تأتي عينتكم تقريباً حصراً من جامعتين حضريتين. إلى أي حد يحد ذلك من القيمة التفسيرية لدراستكم؟" },
+            { "language": "tr", "text": "Lütfen eleştiriyi ele alın: örnekleminiz neredeyse yalnızca iki şehir üniversitesinden geliyor. Bu, çalışmanızın açıklayıcı değerini ne kadar sınırlar?" },
+            { "language": "ru", "text": "Пожалуйста, отреагируйте на критику: ваша выборка почти полностью взята из двух городских вузов. Насколько это ограничивает объяснительную ценность вашего исследования?" },
+            { "language": "ckb", "text": "تکایە مامەڵە لەگەڵ ڕەخنەکە بکە: نموونەکەت نزیکەی بە تەواوی لە دوو زانکۆی شارستانییەوە هاتووە. ئەمە تا چەند بەهای ڕوونکردنەوەیی توێژینەوەکەت سنووردار دەکات؟" },
+            { "language": "kmr", "text": "Ji kerema xwe bi rexneyê re mijûl bibin: nimûneya we hema hema tenê ji du zanîngehên bajarî tê. Ev çiqas nirxa raveker a lêkolîna we sînordar dike?" },
+            { "language": "pl", "text": "Proszę odnieść się do krytyki: próba pochodzi niemal wyłącznie z dwóch miejskich uczelni. Jak bardzo ogranicza to wartość wyjaśniającą badania?" },
+            { "language": "ro", "text": "Vă rog să abordați critica: eșantionul provine aproape exclusiv din două universități urbane. Cât de mult limitează acest lucru valoarea explicativă a studiului?" },
+            { "language": "sq", "text": "Ju lutem trajtoni kritikën: kampioni juaj vjen pothuajse vetëm nga dy universitete urbane. Sa shumë e kufizon kjo vlerën shpjeguese të studimit?" }
+          ],
+          "function": "challenge-sample-transferability",
+          "toneNote": "Formal und methodisch."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Die Einschränkung ist erheblich, vor allem für Aussagen über kleinere Hochschulen oder stärker praxisorientierte Bildungsgänge. Ich würde daher nicht von allgemeiner Übertragbarkeit sprechen. Aussagekräftig bleibt die Studie für den untersuchten Kontext und für den vermuteten Zusammenhang zwischen Lernstrategie, Selbststeuerung und Studienumgebung.",
+          "translations": [
+            { "language": "en", "text": "The limitation is substantial, especially for claims about smaller universities or more practice-oriented programs. I would therefore not speak of general transferability. The study remains informative for the examined context and for the assumed link between learning strategy, self-regulation, and study environment." },
+            { "language": "fa", "text": "این محدودیت قابل توجه است، به‌ویژه برای ادعاهایی درباره دانشگاه‌های کوچک‌تر یا مسیرهای آموزشی عمل‌محورتر. بنابراین از تعمیم‌پذیری کلی صحبت نمی‌کنم. مطالعه برای همان بافت بررسی‌شده و برای رابطه مفروض میان راهبرد یادگیری، خودتنظیمی و محیط تحصیل همچنان معنادار می‌ماند." },
+            { "language": "ar", "text": "القيد كبير، خصوصاً بالنسبة إلى ادعاءات تخص جامعات أصغر أو مسارات تعليمية أكثر تطبيقية. لذلك لن أتحدث عن قابلية نقل عامة. تبقى الدراسة ذات دلالة للسياق المدروس وللعلاقة المفترضة بين استراتيجية التعلم والتنظيم الذاتي وبيئة الدراسة." },
+            { "language": "tr", "text": "Sınırlama önemlidir, özellikle daha küçük üniversiteler ya da daha uygulama odaklı eğitim yolları hakkındaki iddialar için. Bu nedenle genel aktarılabilirlikten söz etmem. Çalışma, incelenen bağlam ve öğrenme stratejisi, öz düzenleme ile öğrenim ortamı arasındaki varsayılan ilişki için anlamlı kalır." },
+            { "language": "ru", "text": "Ограничение существенно, особенно для утверждений о небольших вузах или более практико-ориентированных программах. Поэтому я бы не говорил об общей переносимости. Исследование остается содержательным для изученного контекста и для предполагаемой связи между стратегией обучения, саморегуляцией и учебной средой." },
+            { "language": "ckb", "text": "سنووردارییەکە گرنگە، بە تایبەتی بۆ بانگەشە دەربارەی زانکۆ بچووکترەکان یان بەرنامەی خوێندنی زیاتر کرداری. بۆیە باس لە گواستنەوەی گشتی ناکەم. توێژینەوەکە بۆ ئەو بارودۆخەی پشکنراوە و بۆ پەیوەندیی گومانکراو لە نێوان ستراتیژیی فێربوون، خۆڕێکخستن و ژینگەی خوێندن مانادار دەمێنێتەوە." },
+            { "language": "kmr", "text": "Sînordarî girîng e, bi taybetî ji bo angaştên li ser zanîngehên biçûktir an rêyên perwerdeyê yên zêdetir pratîkî. Ji ber vê yekê ez behsa veguhastina giştî nakim. Lêkolîn ji bo wê şertê ku hatiye lêkolînkirin û ji bo têkiliya texmînkirî di navbera stratejiya fêrbûnê, xwe-rêkxistinê û hawîrdora xwendinê de watedar dimîne." },
+            { "language": "pl", "text": "Ograniczenie jest istotne, zwłaszcza dla twierdzeń o mniejszych uczelniach lub bardziej praktycznych kierunkach. Dlatego nie mówiłbym o ogólnej przenoszalności. Badanie pozostaje wartościowe dla analizowanego kontekstu oraz dla zakładanej zależności między strategią uczenia się, samoregulacją i środowiskiem studiowania." },
+            { "language": "ro", "text": "Limitarea este semnificativă, mai ales pentru afirmații despre universități mai mici sau programe mai orientate practic. De aceea nu aș vorbi despre transferabilitate generală. Studiul rămâne relevant pentru contextul analizat și pentru legătura presupusă dintre strategia de învățare, autoreglare și mediul de studiu." },
+            { "language": "sq", "text": "Kufizimi është i rëndësishëm, sidomos për pohime rreth universiteteve më të vogla ose programeve më të orientuara praktikisht. Prandaj nuk do të flisja për transferueshmëri të përgjithshme. Studimi mbetet kuptimplotë për kontekstin e shqyrtuar dhe për lidhjen e supozuar mes strategjisë së të nxënit, vetërregullimit dhe mjedisit të studimit." }
+          ],
+          "function": "concede-transferability-limit",
+          "toneNote": "Eindeutig und nicht entschuldigend.",
+          "expectedLearnerAction": "Die Schwäche anerkennen und den verbleibenden Erkenntniswert begrenzen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "student-a",
+          "baseText": "Aber wenn die Übertragbarkeit so eingeschränkt ist, warum sollte man die Ergebnisse dann überhaupt ernst nehmen?",
+          "translations": [
+            { "language": "en", "text": "But if transferability is so limited, why should the results be taken seriously at all?" },
+            { "language": "fa", "text": "اما اگر تعمیم‌پذیری تا این حد محدود است، چرا اصلاً باید نتایج را جدی گرفت؟" },
+            { "language": "ar", "text": "لكن إذا كانت قابلية النقل محدودة إلى هذا الحد، فلماذا ينبغي أخذ النتائج على محمل الجد أصلاً؟" },
+            { "language": "tr", "text": "Ama aktarılabilirlik bu kadar sınırlıysa, sonuçlar neden ciddiye alınmalı?" },
+            { "language": "ru", "text": "Но если переносимость настолько ограничена, почему вообще следует серьезно относиться к результатам?" },
+            { "language": "ckb", "text": "بەڵام ئەگەر گواستنەوەی ئەنجام ئەوەندە سنووردارە، بۆچی پێویستە ئەنجامەکان بە جددی وەربگیرێن؟" },
+            { "language": "kmr", "text": "Lê heke veguhastin ewqas sînordar be, çima divê encam bi cidî bên girtin?" },
+            { "language": "pl", "text": "Ale jeśli przenoszalność jest tak ograniczona, dlaczego w ogóle traktować wyniki poważnie?" },
+            { "language": "ro", "text": "Dar dacă transferabilitatea este atât de limitată, de ce ar trebui luate rezultatele în serios?" },
+            { "language": "sq", "text": "Por nëse transferueshmëria është kaq e kufizuar, pse duhen marrë seriozisht rezultatet?" }
+          ],
+          "function": "challenge-value-after-limitation",
+          "toneNote": "Zugespitzt."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Weil begrenzte Übertragbarkeit nicht gleichbedeutend mit Beliebigkeit ist. Die Daten zeigen innerhalb des untersuchten Milieus ein konsistentes Muster. Dieses Muster darf nicht als universelles Ergebnis verkauft werden, kann aber eine begründete Hypothese für weitere Gruppen liefern.",
+          "translations": [
+            { "language": "en", "text": "Because limited transferability is not the same as arbitrariness. Within the examined setting, the data show a consistent pattern. That pattern must not be sold as a universal result, but it can provide a well-founded hypothesis for further groups." },
+            { "language": "fa", "text": "چون تعمیم‌پذیری محدود به معنای دل‌بخواهی بودن نیست. داده‌ها در همان محیط بررسی‌شده یک الگوی منسجم نشان می‌دهند. این الگو نباید به‌عنوان نتیجه‌ای جهانی عرضه شود، اما می‌تواند فرضیه‌ای مستدل برای گروه‌های دیگر فراهم کند." },
+            { "language": "ar", "text": "لأن قابلية النقل المحدودة لا تعني الاعتباطية. داخل البيئة المدروسة تُظهر البيانات نمطاً متسقاً. لا يجوز عرض هذا النمط كأنه نتيجة كونية، لكنه يمكن أن يقدم فرضية مبررة لمجموعات أخرى." },
+            { "language": "tr", "text": "Çünkü sınırlı aktarılabilirlik keyfîlik anlamına gelmez. Veriler, incelenen çevre içinde tutarlı bir örüntü gösteriyor. Bu örüntü evrensel bir sonuç gibi sunulmamalıdır, ancak başka gruplar için gerekçeli bir hipotez sağlayabilir." },
+            { "language": "ru", "text": "Потому что ограниченная переносимость не равна произвольности. В изученной среде данные показывают устойчивый рисунок. Его нельзя продавать как универсальный результат, но он может дать обоснованную гипотезу для других групп." },
+            { "language": "ckb", "text": "چونکە گواستنەوەی سنووردار واتای هەڕەمەکیبوون نییە. داتا لە ناو ئەو ژینگەیەی پشکنراوەدا شێوازێکی یەکگرتوو نیشان دەدەن. ئەو شێوازە نابێت وەک ئەنجامی جیهانی پیشان بدرێت، بەڵام دەتوانێت گریمانەیەکی بەهۆکار بۆ گرووپەکانی تر بدات." },
+            { "language": "kmr", "text": "Ji ber ku veguhastina sînordar ne wateya keyfîbûnê ye. Dane di nav wê hawîrdora lêkolînkirî de şêweyeke yekgirtî nîşan didin. Ev şêwe nabe wekî encameke gerdûnî were pêşkêşkirin, lê dikare hîpotezeke bi hincet ji bo komên din bide." },
+            { "language": "pl", "text": "Bo ograniczona przenoszalność nie oznacza dowolności. W badanym środowisku dane pokazują spójny wzorzec. Nie wolno sprzedawać go jako wyniku uniwersalnego, ale może dostarczyć uzasadnionej hipotezy dla kolejnych grup." },
+            { "language": "ro", "text": "Pentru că transferabilitatea limitată nu înseamnă arbitrar. În mediul analizat, datele arată un tipar coerent. Acest tipar nu trebuie prezentat ca rezultat universal, dar poate oferi o ipoteză justificată pentru alte grupuri." },
+            { "language": "sq", "text": "Sepse transferueshmëria e kufizuar nuk do të thotë arbitraritet. Brenda mjedisit të shqyrtuar, të dhënat tregojnë një model të qëndrueshëm. Ky model nuk duhet shitur si rezultat universal, por mund të japë një hipotezë të arsyetuar për grupe të tjera." }
+          ],
+          "function": "preserve-insight-value",
+          "toneNote": "Abgewogen und präzise.",
+          "expectedLearnerAction": "Zwischen universellem Anspruch und begründeter Hypothese unterscheiden."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "student-b",
+          "baseText": "Welche Absicherung haben Sie schon in der Studie eingebaut?",
+          "translations": [
+            { "language": "en", "text": "What safeguard have you already built into the study?" },
+            { "language": "fa", "text": "چه کاهش ریسکی را از قبل در مطالعه وارد کرده‌اید؟" },
+            { "language": "ar", "text": "ما وسيلة الحد من المخاطر التي أدرجتموها بالفعل في الدراسة؟" },
+            { "language": "tr", "text": "Çalışmaya şimdiden hangi güvence adımını eklediniz?" },
+            { "language": "ru", "text": "Какая мера снижения риска уже заложена в исследование?" },
+            { "language": "ckb", "text": "چ ڕێگرییەکت پێشتر لە توێژینەوەکەدا داناوە؟" },
+            { "language": "kmr", "text": "We çi ewlekariyek jixwe di lêkolînê de daniye?" },
+            { "language": "pl", "text": "Jakie zabezpieczenie zostało już wbudowane w badanie?" },
+            { "language": "ro", "text": "Ce măsură de reducere a riscului ați inclus deja în studiu?" },
+            { "language": "sq", "text": "Çfarë mase sigurimi keni përfshirë tashmë në studim?" }
+          ],
+          "function": "ask-existing-safeguard",
+          "toneNote": "Kurz und fachlich."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wir haben zumindest innerhalb der beiden Hochschulen nach Studienfach, Semester und Vorwissen geschichtet. Das ersetzt keine breitere Stichprobe, verhindert aber, dass der Befund nur eine einzelne Fakultät oder ein einzelnes Semester abbildet.",
+          "translations": [
+            { "language": "en", "text": "At least within the two universities, we stratified by subject, semester, and prior knowledge. That does not replace a broader sample, but it prevents the finding from reflecting only one faculty or one semester." },
+            { "language": "fa", "text": "دست‌کم در داخل دو دانشگاه، نمونه را بر اساس رشته، ترم و دانش پیشین لایه‌بندی کردیم. این جای نمونه گسترده‌تر را نمی‌گیرد، اما مانع می‌شود یافته فقط بازتاب یک دانشکده یا یک ترم باشد." },
+            { "language": "ar", "text": "على الأقل داخل الجامعتين قمنا بالتقسيم بحسب التخصص والفصل الدراسي والمعرفة السابقة. هذا لا يعوض عينة أوسع، لكنه يمنع أن يعكس الاكتشاف كلية واحدة أو فصلاً واحداً فقط." },
+            { "language": "tr", "text": "En azından iki üniversite içinde bölüme, döneme ve ön bilgiye göre tabakalandırdık. Bu daha geniş bir örneklemin yerini tutmaz, ama bulgunun yalnızca tek bir fakülteyi ya da tek bir dönemi yansıtmasını engeller." },
+            { "language": "ru", "text": "По крайней мере внутри двух вузов мы провели стратификацию по специальности, семестру и исходным знаниям. Это не заменяет более широкую выборку, но не позволяет результату отражать только один факультет или один семестр." },
+            { "language": "ckb", "text": "لانیکەم لە ناو ئەو دوو زانکۆیەدا بە پێی بەش، وەرز و زانیاریی پێشووتر چینەبەندی کرد. ئەمە جێگای نموونەیەکی فراوانتر ناگرێتەوە، بەڵام ڕێگری دەکات دۆزینەوەکە تەنها یەک فاکەڵتە یان یەک وەرز نیشان بدات." },
+            { "language": "kmr", "text": "Herî kêm di nav her du zanîngehan de me li gorî beş, semestr û zanîna pêşîn qat kir. Ev cihê nimûneyeke firehtir nagire, lê nahêle ku encam tenê fakulteyek an semesterek nîşan bide." },
+            { "language": "pl", "text": "Przynajmniej w obrębie dwóch uczelni zastosowaliśmy warstwowanie według kierunku, semestru i wiedzy wyjściowej. To nie zastępuje szerszej próby, ale zapobiega temu, by wynik odzwierciedlał tylko jeden wydział albo jeden semestr." },
+            { "language": "ro", "text": "Cel puțin în cadrul celor două universități am stratificat după domeniu, semestru și cunoștințe anterioare. Aceasta nu înlocuiește un eșantion mai larg, dar împiedică rezultatul să reflecte doar o facultate sau un semestru." },
+            { "language": "sq", "text": "Të paktën brenda dy universiteteve kemi bërë shtresim sipas degës, semestrit dhe njohurive paraprake. Kjo nuk e zëvendëson një kampion më të gjerë, por pengon që gjetja të pasqyrojë vetëm një fakultet ose një semestër." }
+          ],
+          "function": "explain-existing-safeguard",
+          "toneNote": "Begrenzt und transparent.",
+          "expectedLearnerAction": "Vorhandene Absicherung nennen, ohne sie zu überschätzen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "lecturer",
+          "baseText": "Wie würden Sie das Ergebnis dann im Fazit sprachlich begrenzen?",
+          "translations": [
+            { "language": "en", "text": "How would you linguistically limit the result in the conclusion?" },
+            { "language": "fa", "text": "در جمع‌بندی، نتیجه را از نظر زبانی چگونه محدود می‌کنید؟" },
+            { "language": "ar", "text": "كيف ستحدون النتيجة لغوياً في الخاتمة؟" },
+            { "language": "tr", "text": "Sonuç bölümünde sonucu dilsel olarak nasıl sınırlardınız?" },
+            { "language": "ru", "text": "Как бы вы языково ограничили результат в выводе?" },
+            { "language": "ckb", "text": "لە کۆتاییدا ئەنجامەکە بە زمانی چۆن سنووردار دەکەیت؟" },
+            { "language": "kmr", "text": "Di encamê de hûn ê encamê bi ziman çawa sînordar bikin?" },
+            { "language": "pl", "text": "Jak językowo ograniczyć wynik w podsumowaniu?" },
+            { "language": "ro", "text": "Cum ați limita lingvistic rezultatul în concluzie?" },
+            { "language": "sq", "text": "Si do ta kufizonit gjuhësisht rezultatin në përfundim?" }
+          ],
+          "function": "ask-careful-conclusion-wording",
+          "toneNote": "Prüfend."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: In den untersuchten städtischen Hochschulkontexten deutet sich ein stabiler Zusammenhang an. Für andere Hochschulformen ist das Ergebnis als Ausgangspunkt zu verstehen, nicht als abgeschlossene Übertragung.",
+          "translations": [
+            { "language": "en", "text": "I would say: in the examined urban university contexts, a stable association is emerging. For other types of institutions, the result should be understood as a starting point, not as a completed transfer." },
+            { "language": "fa", "text": "می‌گویم: در بافت‌های دانشگاهی شهری بررسی‌شده، یک رابطه پایدار در حال نمایان شدن است. برای شکل‌های دیگر آموزش عالی، نتیجه باید نقطه آغاز فهمیده شود، نه انتقالی نهایی‌شده." },
+            { "language": "ar", "text": "سأقول: في سياقات الجامعات الحضرية المدروسة يظهر ارتباط مستقر. وبالنسبة إلى أشكال أخرى من مؤسسات التعليم العالي، ينبغي فهم النتيجة كنقطة انطلاق، لا كنقل مكتمل." },
+            { "language": "tr", "text": "Şöyle derdim: incelenen şehir üniversitesi bağlamlarında istikrarlı bir ilişki beliriyor. Diğer kurum türleri için sonuç bir başlangıç noktası olarak anlaşılmalıdır, tamamlanmış bir aktarım olarak değil." },
+            { "language": "ru", "text": "Я бы сказал: в изученных городских университетских контекстах проявляется устойчивая связь. Для других типов вузов результат следует понимать как исходную точку, а не как завершенный перенос." },
+            { "language": "ckb", "text": "دەڵێم: لەو بارودۆخە زانکۆییە شارستانیانەی پشکنراوندا پەیوەندییەکی جێگیر دەردەکەوێت. بۆ جۆرەکانی تری دامەزراوەی خوێندنی باڵا، ئەنجامەکە دەبێت وەک خاڵی دەستپێک تێبگەین، نە وەک گواستنەوەیەکی تەواوکراو." },
+            { "language": "kmr", "text": "Ez ê bêjim: di şertên zanîngehên bajarî yên lêkolînkirî de têkiliyek aram xuya dike. Ji bo cureyên din ên saziyên xwendina bilind, divê encam wekî destpêk were fêmkirin, ne wekî veguhastineke qediyayî." },
+            { "language": "pl", "text": "Powiedziałbym: w badanych miejskich kontekstach akademickich zarysowuje się stabilna zależność. Dla innych typów uczelni wynik należy rozumieć jako punkt wyjścia, a nie jako zakończone przeniesienie." },
+            { "language": "ro", "text": "Aș spune: în contextele universitare urbane analizate se conturează o asociere stabilă. Pentru alte tipuri de instituții, rezultatul trebuie înțeles ca punct de pornire, nu ca transfer finalizat." },
+            { "language": "sq", "text": "Do të thosha: në kontekstet universitare urbane të shqyrtuara po shfaqet një lidhje e qëndrueshme. Për lloje të tjera institucionesh, rezultati duhet kuptuar si pikënisje, jo si transferim i përfunduar." }
+          ],
+          "function": "limit-conclusion-language",
+          "toneNote": "Vorsichtig und akademisch.",
+          "expectedLearnerAction": "Ein Fazit mit klarer Reichweitenbegrenzung geben."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "student-a",
+          "baseText": "Welche nächste Analyse würde diese Schwäche am besten verringern?",
+          "translations": [
+            { "language": "en", "text": "Which next analysis would best reduce this weakness?" },
+            { "language": "fa", "text": "کدام تحلیل بعدی این ضعف را بهتر از همه کاهش می‌دهد؟" },
+            { "language": "ar", "text": "أي تحليل لاحق سيقلل هذا الضعف بأفضل شكل؟" },
+            { "language": "tr", "text": "Hangi sonraki analiz bu zayıflığı en iyi azaltır?" },
+            { "language": "ru", "text": "Какой следующий анализ лучше всего уменьшил бы эту слабость?" },
+            { "language": "ckb", "text": "کام شیکاریی داهاتوو ئەم لاوازییە باشتر لە هەموو کەم دەکاتەوە؟" },
+            { "language": "kmr", "text": "Kîjan analîza din vê qelsiyê herî baş kêm dike?" },
+            { "language": "pl", "text": "Jaka kolejna analiza najlepiej zmniejszyłaby tę słabość?" },
+            { "language": "ro", "text": "Ce analiză următoare ar reduce cel mai bine această slăbiciune?" },
+            { "language": "sq", "text": "Cila analizë e ardhshme do ta ulte më mirë këtë dobësi?" }
+          ],
+          "function": "ask-next-analysis",
+          "toneNote": "Konstruktiv."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde eine ergänzende Vergleichsanalyse planen: kleinere Hochschulen und Berufskollegs werden gezielt einbezogen, die zentralen Variablen bleiben gleich, und die Effekte werden getrennt nach Hochschulform geprüft. So lässt sich sehen, ob der Befund stabil bleibt, sich abschwächt oder an bestimmte Umgebungen gebunden ist.",
+          "translations": [
+            { "language": "en", "text": "I would plan a supplementary comparative analysis: smaller universities and vocational colleges are deliberately included, the central variables remain the same, and the effects are tested separately by type of institution. This makes it possible to see whether the finding remains stable, weakens, or is tied to particular environments." },
+            { "language": "fa", "text": "من یک تحلیل مقایسه‌ای تکمیلی برنامه‌ریزی می‌کنم: دانشگاه‌های کوچک‌تر و کالج‌های فنی‌وحرفه‌ای به‌طور هدفمند وارد می‌شوند، متغیرهای مرکزی ثابت می‌مانند و اثرها جداگانه بر اساس نوع مؤسسه بررسی می‌شوند. این‌گونه می‌توان دید آیا یافته پایدار می‌ماند، ضعیف‌تر می‌شود یا به محیط‌های خاص وابسته است." },
+            { "language": "ar", "text": "سأخطط لتحليل مقارن مكمّل: تُدرج الجامعات الأصغر والكليات المهنية بشكل مقصود، وتبقى المتغيرات المركزية كما هي، وتُفحص الآثار منفصلة بحسب نوع المؤسسة. بذلك يمكن معرفة ما إذا كان الاكتشاف يبقى مستقراً أو يضعف أو يرتبط ببيئات معينة." },
+            { "language": "tr", "text": "Tamamlayıcı bir karşılaştırmalı analiz planlardım: daha küçük üniversiteler ve meslek yüksekokulları bilinçli olarak dahil edilir, temel değişkenler aynı kalır ve etkiler kurum türüne göre ayrı ayrı sınanır. Böylece bulgunun sabit kalıp kalmadığı, zayıflayıp zayıflamadığı ya da belirli ortamlara bağlı olup olmadığı görülebilir." },
+            { "language": "ru", "text": "Я бы запланировал дополнительный сравнительный анализ: небольшие вузы и профессиональные колледжи целенаправленно включаются, центральные переменные остаются теми же, а эффекты проверяются отдельно по типу учреждения. Так можно увидеть, остается ли результат устойчивым, ослабевает ли он или привязан к определенным средам." },
+            { "language": "ckb", "text": "من شیکارییەکی بەراوردیی تەواوکەر پلاندانان دەکەم: زانکۆ بچووکترەکان و کۆلێژە پیشەییەکان بە ئامانجدار دەخرێنە ناوەوە، گۆڕاوە سەرەکییەکان هەمان دەمێنن و کاریگەرییەکان بە جیاوازی بە پێی جۆری دامەزراوە دەپشکنرێن. بەم شێوەیە دەبینرێت دۆزینەوەکە جێگیر دەمێنێت، لاواز دەبێت یان بە ژینگەی تایبەتەوە بەستراوە." },
+            { "language": "kmr", "text": "Ez ê analîzeke berawirdî ya temamker plan bikim: zanîngehên biçûktir û kolejanên pîşeyî bi armanc têne têxistin, guhêrbarên sereke wek hev dimînin û bandor li gorî cureyê saziyê cuda têne ceribandin. Bi vî awayî tê dîtin ka encam aram dimîne, qels dibe an bi hawîrdorên taybet ve girêdayî ye." },
+            { "language": "pl", "text": "Zaplanowałbym uzupełniającą analizę porównawczą: mniejsze uczelnie i kolegia zawodowe zostają celowo włączone, kluczowe zmienne pozostają takie same, a efekty są sprawdzane osobno według typu instytucji. Dzięki temu można zobaczyć, czy wynik pozostaje stabilny, słabnie, czy jest związany z określonymi środowiskami." },
+            { "language": "ro", "text": "Aș planifica o analiză comparativă suplimentară: universități mai mici și colegii profesionale sunt incluse intenționat, variabilele centrale rămân aceleași, iar efectele sunt testate separat după tipul instituției. Astfel se poate vedea dacă rezultatul rămâne stabil, se slăbește sau este legat de anumite medii." },
+            { "language": "sq", "text": "Do të planifikoja një analizë krahasuese plotësuese: universitetet më të vogla dhe kolegjet profesionale përfshihen qëllimisht, variablat qendrore mbeten të njëjta dhe efektet testohen veçmas sipas llojit të institucionit. Kështu shihet nëse gjetja mbetet e qëndrueshme, dobësohet ose lidhet me mjedise të caktuara." }
+          ],
+          "function": "propose-next-analysis",
+          "toneNote": "Konkret und überprüfbar.",
+          "expectedLearnerAction": "Eine glaubwürdige Analyse nennen, die die Schwäche gezielt verringert."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Die Schwäche schränkt allgemeine Übertragbarkeit deutlich ein. Aussagekräftig bleibt die Studie für den untersuchten Kontext und für die vermutete Beziehung zwischen Lernstrategie, Selbststeuerung und Studienumgebung.",
+              "translations": [
+                { "language": "en", "text": "The weakness clearly limits general transferability. The study remains informative for the examined context and for the assumed relationship between learning strategy, self-regulation, and study environment." },
+                { "language": "fa", "text": "این ضعف تعمیم‌پذیری کلی را به‌روشنی محدود می‌کند. مطالعه برای بافت بررسی‌شده و رابطه مفروض میان راهبرد یادگیری، خودتنظیمی و محیط تحصیل همچنان معنادار است." },
+                { "language": "ar", "text": "يحد هذا الضعف بوضوح من قابلية النقل العامة. تبقى الدراسة ذات دلالة للسياق المدروس وللعلاقة المفترضة بين استراتيجية التعلم والتنظيم الذاتي وبيئة الدراسة." },
+                { "language": "tr", "text": "Bu zayıflık genel aktarılabilirliği açıkça sınırlar. Çalışma, incelenen bağlam ve öğrenme stratejisi, öz düzenleme ile öğrenim ortamı arasındaki varsayılan ilişki için anlamlı kalır." },
+                { "language": "ru", "text": "Эта слабость явно ограничивает общую переносимость. Исследование остается содержательным для изученного контекста и предполагаемой связи между стратегией обучения, саморегуляцией и учебной средой." },
+                { "language": "ckb", "text": "ئەم لاوازییە گواستنەوەی گشتی بە ڕوونی سنووردار دەکات. توێژینەوەکە بۆ بارودۆخی پشکنراو و بۆ پەیوەندیی گومانکراو لە نێوان ستراتیژیی فێربوون، خۆڕێکخستن و ژینگەی خوێندن مانادار دەمێنێتەوە." },
+                { "language": "kmr", "text": "Ev qelsî veguhastina giştî bi zelalî sînordar dike. Lêkolîn ji bo şertê lêkolînkirî û ji bo têkiliya texmînkirî di navbera stratejiya fêrbûnê, xwe-rêkxistinê û hawîrdora xwendinê de watedar dimîne." },
+                { "language": "pl", "text": "Ta słabość wyraźnie ogranicza ogólną przenoszalność. Badanie pozostaje wartościowe dla analizowanego kontekstu oraz zakładanej relacji między strategią uczenia się, samoregulacją i środowiskiem studiowania." },
+                { "language": "ro", "text": "Această slăbiciune limitează clar transferabilitatea generală. Studiul rămâne relevant pentru contextul analizat și pentru relația presupusă dintre strategia de învățare, autoreglare și mediul de studiu." },
+                { "language": "sq", "text": "Kjo dobësi e kufizon qartë transferueshmërinë e përgjithshme. Studimi mbetet kuptimplotë për kontekstin e shqyrtuar dhe për marrëdhënien e supozuar mes strategjisë së të nxënit, vetërregullimit dhe mjedisit të studimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort räumt die Schwäche ein und grenzt den verbleibenden Wert sauber ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer acknowledges the weakness and cleanly delimits the remaining value." },
+                { "language": "fa", "text": "قوی است: پاسخ ضعف را می‌پذیرد و ارزش باقی‌مانده را دقیق محدود می‌کند." },
+                { "language": "ar", "text": "قوي: يقر الجواب بالضعف ويحدد القيمة المتبقية بوضوح." },
+                { "language": "tr", "text": "Güçlü: yanıt zayıflığı kabul ediyor ve kalan değeri temiz biçimde sınırlıyor." },
+                { "language": "ru", "text": "Сильно: ответ признает слабость и четко очерчивает оставшуюся ценность." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دان بە لاوازییەکەدا دەنێت و بەهای ماوە بە پاکی سنووردار دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv qelsiyê qebûl dike û nirxa mayî bi zelalî sînordar dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje słabość i jasno wyznacza pozostałą wartość." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște slăbiciunea și delimitează clar valoarea rămasă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e pranon dobësinë dhe kufizon qartë vlerën e mbetur." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Schwäche ist vorhanden, aber die Ergebnisse sind trotzdem interessant und können später noch erweitert werden.",
+              "translations": [
+                { "language": "en", "text": "The weakness is present, but the results are still interesting and can be expanded later." },
+                { "language": "fa", "text": "ضعف وجود دارد، اما نتایج همچنان جالب‌اند و می‌توانند بعداً گسترش پیدا کنند." },
+                { "language": "ar", "text": "الضعف موجود، لكن النتائج ما زالت مثيرة للاهتمام ويمكن توسيعها لاحقاً." },
+                { "language": "tr", "text": "Zayıflık var, ama sonuçlar yine de ilginç ve daha sonra genişletilebilir." },
+                { "language": "ru", "text": "Слабость есть, но результаты все равно интересны и могут быть позже расширены." },
+                { "language": "ckb", "text": "لاوازییەکە هەیە، بەڵام ئەنجامەکان هێشتا سەرنجڕاکێشن و دواتر دەتوانرێن فراوان بکرێن." },
+                { "language": "kmr", "text": "Qelsî heye, lê encam dîsa jî balkêş in û dikarin paşê bên firehkirin." },
+                { "language": "pl", "text": "Słabość istnieje, ale wyniki są mimo to interesujące i można je później rozszerzyć." },
+                { "language": "ro", "text": "Slăbiciunea există, dar rezultatele sunt totuși interesante și pot fi extinse ulterior." },
+                { "language": "sq", "text": "Dobësia ekziston, por rezultatet janë megjithatë interesante dhe mund të zgjerohen më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu weich. Die Antwort klingt beruhigend, benennt aber weder die genaue Reichweite noch den verbleibenden Erkenntniswert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too soft. The answer sounds reassuring, but names neither the exact reach nor the remaining insight value." },
+                { "language": "fa", "text": "بیش از حد نرم است. پاسخ آرام‌کننده به نظر می‌رسد، اما نه دامنه دقیق را می‌گوید و نه ارزش شناختی باقی‌مانده را." },
+                { "language": "ar", "text": "لين أكثر من اللازم. يبدو الجواب مطمئناً، لكنه لا يذكر المدى الدقيق ولا القيمة المعرفية المتبقية." },
+                { "language": "tr", "text": "Fazla yumuşak. Yanıt güven verici geliyor, ama ne kesin kapsamı ne de kalan bilgi değerini söylüyor." },
+                { "language": "ru", "text": "Слишком мягко. Ответ звучит успокаивающе, но не называет ни точный охват, ни оставшуюся познавательную ценность." },
+                { "language": "ckb", "text": "زۆر نەرمە. وەڵامەکە دڵنیاکەر دەردەکەوێت، بەڵام نە مەودای ورد ناودەبات و نە بەهای زانیاریی ماوە." },
+                { "language": "kmr", "text": "Pir nerm e. Bersiv aramker xuya dike, lê ne firehiya hûr û ne nirxa zanînê ya mayî nav dike." },
+                { "language": "pl", "text": "Zbyt miękkie. Odpowiedź brzmi uspokajająco, ale nie podaje ani dokładnego zakresu, ani pozostałej wartości poznawczej." },
+                { "language": "ro", "text": "Prea moale. Răspunsul sună liniștitor, dar nu numește nici aria exactă, nici valoarea de cunoaștere rămasă." },
+                { "language": "sq", "text": "Tepër e butë. Përgjigjja tingëllon qetësuese, por nuk përmend as shtrirjen e saktë, as vlerën e mbetur të njohjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Begrenzte Übertragbarkeit heißt nicht, dass der Befund wertlos ist. Er bleibt als konsistentes Muster im untersuchten Milieu relevant und kann weitere Hypothesen begründen.",
+              "translations": [
+                { "language": "en", "text": "Limited transferability does not mean the finding is worthless. It remains relevant as a consistent pattern in the examined setting and can justify further hypotheses." },
+                { "language": "fa", "text": "تعمیم‌پذیری محدود به معنای بی‌ارزش بودن یافته نیست. یافته به‌عنوان الگویی منسجم در محیط بررسی‌شده همچنان مهم است و می‌تواند فرضیه‌های بعدی را توجیه کند." },
+                { "language": "ar", "text": "قابلية النقل المحدودة لا تعني أن الاكتشاف بلا قيمة. يبقى مهماً كنمط متسق في البيئة المدروسة ويمكن أن يبرر فرضيات أخرى." },
+                { "language": "tr", "text": "Sınırlı aktarılabilirlik bulgunun değersiz olduğu anlamına gelmez. İncelenen çevrede tutarlı bir örüntü olarak önemini korur ve sonraki hipotezleri gerekçelendirebilir." },
+                { "language": "ru", "text": "Ограниченная переносимость не означает, что результат бесполезен. Он остается значимым как устойчивый рисунок в изученной среде и может обосновывать дальнейшие гипотезы." },
+                { "language": "ckb", "text": "گواستنەوەی سنووردار واتای بێبەهابونی دۆزینەوەکە نییە. وەک شێوازێکی یەکگرتوو لە ژینگەی پشکنراودا پەیوەندیدار دەمێنێتەوە و دەتوانێت گریمانەی داهاتوو پشتڕاست بکاتەوە." },
+                { "language": "kmr", "text": "Veguhastina sînordar wateya bê-nirxbûna encamê nade. Ew wekî şêweyeke yekgirtî di hawîrdora lêkolînkirî de girîng dimîne û dikare hîpotezên din bi hincet bike." },
+                { "language": "pl", "text": "Ograniczona przenoszalność nie znaczy, że wynik jest bezwartościowy. Pozostaje istotny jako spójny wzorzec w badanym środowisku i może uzasadniać dalsze hipotezy." },
+                { "language": "ro", "text": "Transferabilitatea limitată nu înseamnă că rezultatul este lipsit de valoare. El rămâne relevant ca tipar coerent în mediul analizat și poate justifica ipoteze viitoare." },
+                { "language": "sq", "text": "Transferueshmëria e kufizuar nuk do të thotë se gjetja është pa vlerë. Ajo mbetet e rëndësishme si model i qëndrueshëm në mjedisin e shqyrtuar dhe mund të arsyetojë hipoteza të tjera." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt fehlende Universalität von wissenschaftlichem Wert.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer separates lack of universality from scientific value." },
+                { "language": "fa", "text": "قوی است: پاسخ نبود جهان‌شمولی را از ارزش علمی جدا می‌کند." },
+                { "language": "ar", "text": "قوي: يفصل الجواب بين غياب الكونية والقيمة العلمية." },
+                { "language": "tr", "text": "Güçlü: yanıt evrensellik eksikliğini bilimsel değerden ayırıyor." },
+                { "language": "ru", "text": "Сильно: ответ отделяет отсутствие универсальности от научной ценности." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نەبوونی جیهانیبوون لە بەهای زانستی جیا دەکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv nebûna gerdûnîbûnê ji nirxa zanistî cuda dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela brak uniwersalności od wartości naukowej." },
+                { "language": "ro", "text": "Puternic: răspunsul separă lipsa universalității de valoarea științifică." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan mungesën e universalitetit nga vlera shkencore." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte die Ergebnisse ernst nehmen, weil sie statistisch signifikant sind.",
+              "translations": [
+                { "language": "en", "text": "The results should be taken seriously because they are statistically significant." },
+                { "language": "fa", "text": "باید نتایج را جدی گرفت، چون از نظر آماری معنادار هستند." },
+                { "language": "ar", "text": "ينبغي أخذ النتائج على محمل الجد لأنها ذات دلالة إحصائية." },
+                { "language": "tr", "text": "Sonuçlar ciddiye alınmalıdır, çünkü istatistiksel olarak anlamlıdır." },
+                { "language": "ru", "text": "Результаты следует воспринимать серьезно, потому что они статистически значимы." },
+                { "language": "ckb", "text": "پێویستە ئەنجامەکان بە جددی وەربگیرێن، چونکە لە ڕووی ئامارییەوە مانادارن." },
+                { "language": "kmr", "text": "Divê encam bi cidî bên girtin, ji ber ku ji aliyê amarî ve watedar in." },
+                { "language": "pl", "text": "Wyniki należy traktować poważnie, bo są statystycznie istotne." },
+                { "language": "ro", "text": "Rezultatele trebuie luate în serios deoarece sunt semnificative statistic." },
+                { "language": "sq", "text": "Rezultatet duhen marrë seriozisht sepse janë statistikisht domethënëse." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu kurz. Signifikanz beantwortet nicht die Frage, für welche Kontexte der Befund gilt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too short. Significance does not answer the question of which contexts the finding applies to." },
+                { "language": "fa", "text": "بسیار کوتاه است. معناداری آماری پاسخ نمی‌دهد که یافته برای کدام بافت‌ها معتبر است." },
+                { "language": "ar", "text": "قصير جداً. الدلالة الإحصائية لا تجيب عن سؤال السياقات التي ينطبق عليها الاكتشاف." },
+                { "language": "tr", "text": "Çok kısa. Anlamlılık, bulgunun hangi bağlamlar için geçerli olduğu sorusunu yanıtlamaz." },
+                { "language": "ru", "text": "Слишком кратко. Значимость не отвечает на вопрос, для каких контекстов действует результат." },
+                { "language": "ckb", "text": "زۆر کورتە. ماناداری وەڵامی ئەو پرسیارە نادات کە دۆزینەوەکە بۆ کام بارودۆخ دەگونجێت." },
+                { "language": "kmr", "text": "Pir kurt e. Watedariya amarî bersiva pirsa ka encam ji bo kîjan şertan derbas e nade." },
+                { "language": "pl", "text": "Zbyt krótkie. Istotność nie odpowiada na pytanie, dla jakich kontekstów wynik jest ważny." },
+                { "language": "ro", "text": "Prea scurt. Semnificația nu răspunde la întrebarea pentru ce contexte se aplică rezultatul." },
+                { "language": "sq", "text": "Shumë e shkurtër. Domethënia statistikore nuk i përgjigjet pyetjes se për cilat kontekste vlen gjetja." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir haben innerhalb der beiden Hochschulen nach Studienfach, Semester und Vorwissen geschichtet. Das ersetzt keine breitere Stichprobe, verhindert aber eine zu enge Verzerrung.",
+              "translations": [
+                { "language": "en", "text": "Within the two universities, we stratified by subject, semester, and prior knowledge. That does not replace a broader sample, but it prevents an overly narrow distortion." },
+                { "language": "fa", "text": "در داخل دو دانشگاه بر اساس رشته، ترم و دانش پیشین لایه‌بندی کردیم. این جای نمونه گسترده‌تر را نمی‌گیرد، اما از سوگیری بیش از حد محدود جلوگیری می‌کند." },
+                { "language": "ar", "text": "داخل الجامعتين قمنا بالتقسيم بحسب التخصص والفصل والمعرفة السابقة. هذا لا يعوض عينة أوسع، لكنه يمنع انحرافاً ضيقاً أكثر من اللازم." },
+                { "language": "tr", "text": "İki üniversite içinde bölüme, döneme ve ön bilgiye göre tabakalandırdık. Bu daha geniş bir örneklemin yerini tutmaz, ama aşırı dar bir çarpıklığı önler." },
+                { "language": "ru", "text": "Внутри двух вузов мы стратифицировали по специальности, семестру и исходным знаниям. Это не заменяет более широкую выборку, но предотвращает слишком узкое искажение." },
+                { "language": "ckb", "text": "لە ناو دوو زانکۆکەدا بە پێی بەش، وەرز و زانیاریی پێشووتر چینەبەندی کرد. ئەمە جێگای نموونەی فراوانتر ناگرێتەوە، بەڵام ڕێگری لە لادانی زۆر تەنگ دەکات." },
+                { "language": "kmr", "text": "Di nav her du zanîngehan de me li gorî beş, semestr û zanîna pêşîn qat kir. Ev cihê nimûneyeke firehtir nagire, lê xwarbûneke pir teng asteng dike." },
+                { "language": "pl", "text": "W obrębie dwóch uczelni zastosowaliśmy warstwowanie według kierunku, semestru i wiedzy wyjściowej. To nie zastępuje szerszej próby, ale zapobiega zbyt wąskiemu zniekształceniu." },
+                { "language": "ro", "text": "În cadrul celor două universități am stratificat după domeniu, semestru și cunoștințe anterioare. Aceasta nu înlocuiește un eșantion mai larg, dar previne o distorsiune prea îngustă." },
+                { "language": "sq", "text": "Brenda dy universiteteve kemi bërë shtresim sipas degës, semestrit dhe njohurive paraprake. Kjo nuk e zëvendëson një kampion më të gjerë, por parandalon një shtrembërim tepër të ngushtë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die vorhandene Absicherung wird genannt und zugleich begrenzt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the existing safeguard is named and limited at the same time." },
+                { "language": "fa", "text": "قوی است: کاهش ریسک موجود نام برده می‌شود و هم‌زمان محدود می‌ماند." },
+                { "language": "ar", "text": "قوي: تُذكر وسيلة الحد من المخاطر الموجودة وتُحد في الوقت نفسه." },
+                { "language": "tr", "text": "Güçlü: mevcut güvence adımı belirtiliyor ve aynı anda sınırlandırılıyor." },
+                { "language": "ru", "text": "Сильно: имеющаяся мера снижения риска названа и одновременно ограничена." },
+                { "language": "ckb", "text": "بەهێزە: ڕێگریی هەبوو ناودەبرێت و هاوکات سنووردار دەکرێت." },
+                { "language": "kmr", "text": "Xurt e: ewlekariya heyî tê navkirin û di heman demê de tê sînordarkirin." },
+                { "language": "pl", "text": "Mocne: istniejące zabezpieczenie zostaje nazwane i jednocześnie ograniczone." },
+                { "language": "ro", "text": "Puternic: măsura existentă de reducere a riscului este numită și limitată în același timp." },
+                { "language": "sq", "text": "E fortë: masa ekzistuese e sigurimit përmendet dhe njëkohësisht kufizohet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir haben die Daten sorgfältig erhoben und die wichtigsten Variablen sauber ausgewertet.",
+              "translations": [
+                { "language": "en", "text": "We collected the data carefully and evaluated the most important variables cleanly." },
+                { "language": "fa", "text": "داده‌ها را با دقت گردآوری کردیم و مهم‌ترین متغیرها را تمیز تحلیل کردیم." },
+                { "language": "ar", "text": "جمعنا البيانات بعناية وقيّمنا أهم المتغيرات بدقة." },
+                { "language": "tr", "text": "Verileri dikkatle topladık ve en önemli değişkenleri temiz biçimde değerlendirdik." },
+                { "language": "ru", "text": "Мы тщательно собрали данные и аккуратно оценили самые важные переменные." },
+                { "language": "ckb", "text": "داتاکانمان بە وریایی کۆکردەوە و گرنگترین گۆڕاوەکانمان بە پاکی هەڵسەنگاند." },
+                { "language": "kmr", "text": "Me dane bi hişyarî kom kirin û guhêrbarên herî girîng bi paqijî nirxandin." },
+                { "language": "pl", "text": "Starannie zebraliśmy dane i rzetelnie oceniliśmy najważniejsze zmienne." },
+                { "language": "ro", "text": "Am colectat datele cu atenție și am evaluat curat cele mai importante variabile." },
+                { "language": "sq", "text": "I kemi mbledhur të dhënat me kujdes dhe kemi vlerësuar pastër variablat më të rëndësishme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Sorgfalt ist wichtig, ersetzt aber keine konkrete Absicherung gegen Stichprobenverzerrung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. Care is important, but it does not replace a concrete safeguard against sample distortion." },
+                { "language": "fa", "text": "بیش از حد کلی است. دقت مهم است، اما جای کاهش ریسک مشخص در برابر سوگیری نمونه را نمی‌گیرد." },
+                { "language": "ar", "text": "عام أكثر من اللازم. العناية مهمة، لكنها لا تعوض وسيلة محددة للحد من انحراف العينة." },
+                { "language": "tr", "text": "Fazla genel. Dikkat önemlidir, ancak örneklem çarpıklığına karşı somut bir güvence yerine geçmez." },
+                { "language": "ru", "text": "Слишком общо. Тщательность важна, но не заменяет конкретной меры против искажения выборки." },
+                { "language": "ckb", "text": "زۆر گشتییە. وریایی گرنگە، بەڵام جێگای ڕێگرییەکی دیاریکراو لە دژی لادانی نموونە ناگرێتەوە." },
+                { "language": "kmr", "text": "Pir giştî ye. Hişyarî girîng e, lê cihê ewlekariyeke taybet li dijî xwarbûna nimûneyê nagire." },
+                { "language": "pl", "text": "Zbyt ogólne. Staranność jest ważna, ale nie zastępuje konkretnego zabezpieczenia przed zniekształceniem próby." },
+                { "language": "ro", "text": "Prea general. Atenția este importantă, dar nu înlocuiește o măsură concretă împotriva distorsiunii eșantionului." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Kujdesi është i rëndësishëm, por nuk zëvendëson një masë konkrete kundër shtrembërimit të kampionit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "In den untersuchten städtischen Hochschulkontexten deutet sich ein stabiler Zusammenhang an; für andere Hochschulformen ist das Ergebnis ein Ausgangspunkt, keine abgeschlossene Übertragung.",
+              "translations": [
+                { "language": "en", "text": "In the examined urban university contexts, a stable association is emerging; for other types of institutions, the result is a starting point, not a completed transfer." },
+                { "language": "fa", "text": "در بافت‌های دانشگاهی شهری بررسی‌شده، یک رابطه پایدار نمایان می‌شود؛ برای شکل‌های دیگر آموزش عالی، نتیجه نقطه آغاز است، نه انتقالی نهایی‌شده." },
+                { "language": "ar", "text": "في سياقات الجامعات الحضرية المدروسة يظهر ارتباط مستقر؛ وبالنسبة إلى أشكال أخرى من مؤسسات التعليم العالي، فالنتيجة نقطة انطلاق لا نقل مكتمل." },
+                { "language": "tr", "text": "İncelenen şehir üniversitesi bağlamlarında istikrarlı bir ilişki beliriyor; diğer kurum türleri için sonuç bir başlangıç noktasıdır, tamamlanmış bir aktarım değil." },
+                { "language": "ru", "text": "В изученных городских университетских контекстах проявляется устойчивая связь; для других типов вузов результат является исходной точкой, а не завершенным переносом." },
+                { "language": "ckb", "text": "لە بارودۆخە زانکۆییە شارستانییە پشکنراوەکاندا پەیوەندییەکی جێگیر دەردەکەوێت؛ بۆ جۆرەکانی تری خوێندنی باڵا، ئەنجامەکە خاڵی دەستپێکە، نە گواستنەوەیەکی تەواوکراو." },
+                { "language": "kmr", "text": "Di şertên zanîngehên bajarî yên lêkolînkirî de têkiliyek aram xuya dike; ji bo cureyên din ên xwendina bilind, encam destpêk e, ne veguhastineke qediyayî." },
+                { "language": "pl", "text": "W badanych miejskich kontekstach akademickich zarysowuje się stabilna zależność; dla innych typów uczelni wynik jest punktem wyjścia, a nie zakończonym przeniesieniem." },
+                { "language": "ro", "text": "În contextele universitare urbane analizate se conturează o asociere stabilă; pentru alte tipuri de instituții, rezultatul este un punct de pornire, nu un transfer finalizat." },
+                { "language": "sq", "text": "Në kontekstet universitare urbane të shqyrtuara shfaqet një lidhje e qëndrueshme; për lloje të tjera institucionesh, rezultati është pikënisje, jo transferim i përfunduar." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Reichweite wird sprachlich präzise begrenzt, ohne den Befund zu entwerten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the reach is linguistically limited with precision without devaluing the finding." },
+                { "language": "fa", "text": "قوی است: دامنه با زبان دقیق محدود می‌شود، بدون اینکه یافته بی‌ارزش شود." },
+                { "language": "ar", "text": "قوي: يُحد المدى لغوياً بدقة من دون التقليل من قيمة الاكتشاف." },
+                { "language": "tr", "text": "Güçlü: kapsam dilsel olarak kesin biçimde sınırlandırılıyor, bulgu değersizleştirilmiyor." },
+                { "language": "ru", "text": "Сильно: охват языково точно ограничен, при этом результат не обесценивается." },
+                { "language": "ckb", "text": "بەهێزە: مەودا بە زمانی ورد سنووردار دەکرێت، بەبێ بێبەهاکردنی دۆزینەوەکە." },
+                { "language": "kmr", "text": "Xurt e: firehî bi zimanê hûr tê sînordarkirin bêyî ku nirxa encamê kêm bike." },
+                { "language": "pl", "text": "Mocne: zakres zostaje językowo precyzyjnie ograniczony bez obniżania wartości wyniku." },
+                { "language": "ro", "text": "Puternic: aria este limitată lingvistic cu precizie, fără devalorizarea rezultatului." },
+                { "language": "sq", "text": "E fortë: shtrirja kufizohet gjuhësisht me saktësi, pa zhvlerësuar gjetjen." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Studie zeigt einen wichtigen Zusammenhang, der in Zukunft auch in anderen Hochschulen überprüft werden sollte.",
+              "translations": [
+                { "language": "en", "text": "The study shows an important association that should also be examined in other universities in the future." },
+                { "language": "fa", "text": "مطالعه رابطه مهمی را نشان می‌دهد که در آینده باید در دانشگاه‌های دیگر هم بررسی شود." },
+                { "language": "ar", "text": "تظهر الدراسة ارتباطاً مهماً ينبغي فحصه مستقبلاً في جامعات أخرى أيضاً." },
+                { "language": "tr", "text": "Çalışma, gelecekte başka üniversitelerde de incelenmesi gereken önemli bir ilişki gösteriyor." },
+                { "language": "ru", "text": "Исследование показывает важную связь, которую в будущем следует проверить и в других вузах." },
+                { "language": "ckb", "text": "توێژینەوەکە پەیوەندییەکی گرنگ نیشان دەدات کە لە داهاتوودا پێویستە لە زانکۆکانی تریش بپشکنرێت." },
+                { "language": "kmr", "text": "Lêkolîn têkiliyeke girîng nîşan dide ku divê di pêşerojê de li zanîngehên din jî were ceribandin." },
+                { "language": "pl", "text": "Badanie pokazuje ważną zależność, którą w przyszłości należy sprawdzić także na innych uczelniach." },
+                { "language": "ro", "text": "Studiul arată o asociere importantă care ar trebui verificată în viitor și în alte universități." },
+                { "language": "sq", "text": "Studimi tregon një lidhje të rëndësishme që në të ardhmen duhet shqyrtuar edhe në universitete të tjera." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau. Es fehlt die klare Begrenzung auf den untersuchten Kontext.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise. The clear limitation to the examined context is missing." },
+                { "language": "fa", "text": "قابل‌قبول است، اما بیش از حد نامشخص. محدودیت روشن به بافت بررسی‌شده کم است." },
+                { "language": "ar", "text": "معقول، لكنه غير دقيق بما يكفي. ينقصه التحديد الواضح للسياق المدروس." },
+                { "language": "tr", "text": "Makul, ama fazla belirsiz. İncelenen bağlamla sınırlama net biçimde eksik." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно. Не хватает четкого ограничения изученным контекстом." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر ناوردە. سنووردارکردنی ڕوون بە بارودۆخی پشکنراو کەمە." },
+                { "language": "kmr", "text": "Maqûl e, lê pir nezelal e. Sînorkirina zelal bi şertê lêkolînkirî kêm e." },
+                { "language": "pl", "text": "Prawdopodobne, ale zbyt nieprecyzyjne. Brakuje jasnego ograniczenia do badanego kontekstu." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis. Lipsește limitarea clară la contextul analizat." },
+                { "language": "sq", "text": "E besueshme, por tepër e pasaktë. Mungon kufizimi i qartë te konteksti i shqyrtuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eine ergänzende Vergleichsanalyse sollte kleinere Hochschulen und Berufskollegs gezielt einbeziehen, die zentralen Variablen konstant halten und Effekte nach Hochschulform getrennt prüfen.",
+              "translations": [
+                { "language": "en", "text": "A supplementary comparative analysis should deliberately include smaller universities and vocational colleges, keep the central variables constant, and test effects separately by type of institution." },
+                { "language": "fa", "text": "یک تحلیل مقایسه‌ای تکمیلی باید دانشگاه‌های کوچک‌تر و کالج‌های فنی‌وحرفه‌ای را هدفمند وارد کند، متغیرهای مرکزی را ثابت نگه دارد و اثرها را جداگانه بر اساس نوع مؤسسه بررسی کند." },
+                { "language": "ar", "text": "ينبغي لتحليل مقارن مكمّل أن يدرج جامعات أصغر وكليات مهنية بشكل مقصود، وأن يبقي المتغيرات المركزية ثابتة، وأن يفحص الآثار منفصلة بحسب نوع المؤسسة." },
+                { "language": "tr", "text": "Tamamlayıcı bir karşılaştırmalı analiz, daha küçük üniversiteleri ve meslek yüksekokullarını bilinçli olarak dahil etmeli, temel değişkenleri sabit tutmalı ve etkileri kurum türüne göre ayrı ayrı test etmelidir." },
+                { "language": "ru", "text": "Дополнительный сравнительный анализ должен целенаправленно включать небольшие вузы и профессиональные колледжи, удерживать центральные переменные постоянными и проверять эффекты отдельно по типу учреждения." },
+                { "language": "ckb", "text": "شیکارییەکی بەراوردیی تەواوکەر دەبێت زانکۆ بچووکترەکان و کۆلێژە پیشەییەکان بە ئامانجدار بخاتە ناوەوە، گۆڕاوە سەرەکییەکان جێگیر بهێڵێت و کاریگەرییەکان بە پێی جۆری دامەزراوە بە جیاوازی بپشکنێت." },
+                { "language": "kmr", "text": "Analîzeke berawirdî ya temamker divê zanîngehên biçûktir û kolejanên pîşeyî bi armanc têxe navê, guhêrbarên sereke wek hev bihêle û bandoran li gorî cureyê saziyê cuda biceribîne." },
+                { "language": "pl", "text": "Uzupełniająca analiza porównawcza powinna celowo włączyć mniejsze uczelnie i kolegia zawodowe, utrzymać stałe kluczowe zmienne i sprawdzić efekty osobno według typu instytucji." },
+                { "language": "ro", "text": "O analiză comparativă suplimentară ar trebui să includă intenționat universități mai mici și colegii profesionale, să mențină constante variabilele centrale și să testeze separat efectele după tipul instituției." },
+                { "language": "sq", "text": "Një analizë krahasuese plotësuese duhet të përfshijë qëllimisht universitete më të vogla dhe kolegje profesionale, të mbajë konstante variablat qendrore dhe të testojë efektet veçmas sipas llojit të institucionit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die nächste Analyse zielt genau auf die Schwäche, ohne das ursprüngliche Design nachträglich schönzureden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the next analysis targets the weakness precisely without retroactively making the original design look better." },
+                { "language": "fa", "text": "قوی است: تحلیل بعدی دقیقاً ضعف را هدف می‌گیرد، بدون اینکه طرح اولیه را بعداً زیباتر جلوه دهد." },
+                { "language": "ar", "text": "قوي: يستهدف التحليل التالي الضعف بدقة من دون تجميل التصميم الأصلي بأثر رجعي." },
+                { "language": "tr", "text": "Güçlü: sonraki analiz zayıflığı tam olarak hedefliyor ve ilk tasarımı sonradan olduğundan iyi göstermiyor." },
+                { "language": "ru", "text": "Сильно: следующий анализ точно нацелен на слабость, не приукрашивая исходный дизайн задним числом." },
+                { "language": "ckb", "text": "بەهێزە: شیکاریی داهاتوو بە وردی لاوازییەکە دەکاتە ئامانج، بەبێ ئەوەی دیزاینی سەرەتایی دواتر جوانتر پیشان بدات." },
+                { "language": "kmr", "text": "Xurt e: analîza din qelsiyê bi hûrgilî armanc dike bêyî ku sêwirana destpêkê paşê xweşik nîşan bide." },
+                { "language": "pl", "text": "Mocne: kolejna analiza trafia dokładnie w słabość, nie upiększając po fakcie pierwotnego schematu." },
+                { "language": "ro", "text": "Puternic: analiza următoare vizează exact slăbiciunea, fără să înfrumusețeze ulterior designul inițial." },
+                { "language": "sq", "text": "E fortë: analiza e ardhshme e synon saktë dobësinë, pa e zbukuruar më pas dizajnin fillestar." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Als Nächstes würde ich mehr Teilnehmende suchen, damit die Ergebnisse insgesamt belastbarer werden.",
+              "translations": [
+                { "language": "en", "text": "Next, I would look for more participants so that the results become more robust overall." },
+                { "language": "fa", "text": "در گام بعدی شرکت‌کنندگان بیشتری پیدا می‌کنم تا نتایج در کل قابل اتکاتر شوند." },
+                { "language": "ar", "text": "في الخطوة التالية سأبحث عن مشاركين أكثر حتى تصبح النتائج أكثر متانة عموماً." },
+                { "language": "tr", "text": "Sonraki adımda daha fazla katılımcı arardım, böylece sonuçlar genel olarak daha sağlam olur." },
+                { "language": "ru", "text": "Далее я бы искал больше участников, чтобы результаты в целом стали надежнее." },
+                { "language": "ckb", "text": "لە هەنگاوی داهاتوودا بەشداربووی زیاتر دەدۆزمەوە بۆ ئەوەی ئەنجامەکان بە گشتی پشتپێبەستراوتر بن." },
+                { "language": "kmr", "text": "Di gava din de ez ê beşdarên zêdetir bigerim, da ku encam bi giştî xurtir bibin." },
+                { "language": "pl", "text": "Następnie szukałbym większej liczby uczestników, aby wyniki ogólnie stały się bardziej wiarygodne." },
+                { "language": "ro", "text": "În pasul următor aș căuta mai mulți participanți, pentru ca rezultatele să devină în general mai solide." },
+                { "language": "sq", "text": "Në hapin tjetër do të kërkoja më shumë pjesëmarrës, që rezultatet në përgjithësi të bëhen më të besueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungerichtet. Mehr Teilnehmende helfen nur, wenn die fehlenden Hochschulformen gezielt einbezogen werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too untargeted. More participants help only if the missing institution types are deliberately included." },
+                { "language": "fa", "text": "بیش از حد بی‌هدف است. شرکت‌کننده بیشتر فقط زمانی کمک می‌کند که شکل‌های غایب مؤسسه‌ها هدفمند وارد شوند." },
+                { "language": "ar", "text": "غير موجه بما يكفي. زيادة المشاركين لا تساعد إلا إذا أُدرجت أنواع المؤسسات الناقصة بشكل مقصود." },
+                { "language": "tr", "text": "Fazla hedefsiz. Daha fazla katılımcı ancak eksik kurum türleri bilinçli olarak dahil edilirse yardımcı olur." },
+                { "language": "ru", "text": "Слишком нецеленаправленно. Больше участников помогает только тогда, когда недостающие типы учреждений включаются намеренно." },
+                { "language": "ckb", "text": "زۆر بێئامانجە. بەشداربووی زیاتر تەنها کاتێک یارمەتی دەدات کە جۆرە دامەزراوە نەبووەکان بە ئامانجدار بخرێنە ناوەوە." },
+                { "language": "kmr", "text": "Pir bê-armanc e. Beşdarên zêdetir tenê dema alîkar in ku cureyên saziyên kêm bi armanc bên têxistin." },
+                { "language": "pl", "text": "Zbyt nieukierunkowane. Więcej uczestników pomaga tylko wtedy, gdy brakujące typy instytucji są celowo włączone." },
+                { "language": "ro", "text": "Prea nețintit. Mai mulți participanți ajută doar dacă tipurile lipsă de instituții sunt incluse intenționat." },
+                { "language": "sq", "text": "Tepër e paorientuar. Më shumë pjesëmarrës ndihmojnë vetëm nëse llojet e munguara të institucioneve përfshihen qëllimisht." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "scope",
+          "text": "Eine methodische Schwäche wird stärker, wenn ihre genaue Reichweite benannt wird.",
+          "translations": [
+            { "language": "en", "text": "A methodological weakness is handled better when its exact reach is named." },
+            { "language": "fa", "text": "ضعف روش‌شناختی زمانی بهتر مدیریت می‌شود که دامنه دقیق آن نام برده شود." },
+            { "language": "ar", "text": "يُتعامل مع الضعف المنهجي بشكل أفضل عندما يُذكر مداه الدقيق." },
+            { "language": "tr", "text": "Yöntemsel bir zayıflık, kesin kapsamı belirtildiğinde daha iyi ele alınır." },
+            { "language": "ru", "text": "Методологическая слабость лучше обрабатывается, когда назван ее точный охват." },
+            { "language": "ckb", "text": "لاوازیی ڕێبازناسی باشتر مامەڵەی لەگەڵ دەکرێت کاتێک مەودای وردەکەی ناودەبرێت." },
+            { "language": "kmr", "text": "Qelsiyeke rêbazî baştir tê girtin dema ku firehiya wê ya hûr tê navkirin." },
+            { "language": "pl", "text": "Słabość metodologiczną lepiej się obsługuje, gdy nazywa się jej dokładny zakres." },
+            { "language": "ro", "text": "O slăbiciune metodologică este gestionată mai bine când îi este numită aria exactă." },
+            { "language": "sq", "text": "Një dobësi metodologjike trajtohet më mirë kur përmendet shtrirja e saj e saktë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "insight-value",
+          "text": "Begrenzte Reichweite bedeutet nicht fehlenden Erkenntniswert.",
+          "translations": [
+            { "language": "en", "text": "Limited reach does not mean lack of insight value." },
+            { "language": "fa", "text": "دامنه محدود به معنای نبود ارزش شناختی نیست." },
+            { "language": "ar", "text": "المدى المحدود لا يعني غياب القيمة المعرفية." },
+            { "language": "tr", "text": "Sınırlı kapsam, bilgi değerinin olmadığı anlamına gelmez." },
+            { "language": "ru", "text": "Ограниченный охват не означает отсутствия познавательной ценности." },
+            { "language": "ckb", "text": "مەودای سنووردار واتای نەبوونی بەهای زانیاری نییە." },
+            { "language": "kmr", "text": "Firehiya sînordar wateya nebûna nirxa zanînê nade." },
+            { "language": "pl", "text": "Ograniczony zakres nie oznacza braku wartości poznawczej." },
+            { "language": "ro", "text": "Aria limitată nu înseamnă lipsă de valoare de cunoaștere." },
+            { "language": "sq", "text": "Shtrirja e kufizuar nuk do të thotë mungesë e vlerës së njohjes." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "careful-conclusion",
+          "text": "Ein C2-Fazit macht den Geltungsbereich sichtbar, ohne den Befund kleinzureden.",
+          "translations": [
+            { "language": "en", "text": "A C2 conclusion makes the area of validity visible without playing down the finding." },
+            { "language": "fa", "text": "جمع‌بندی C2 حوزه اعتبار را آشکار می‌کند، بدون اینکه یافته را کوچک جلوه دهد." },
+            { "language": "ar", "text": "تجعل خاتمة C2 مجال الصلاحية مرئياً من دون التقليل من شأن الاكتشاف." },
+            { "language": "tr", "text": "C2 düzeyinde bir sonuç, bulguyu küçümsemeden geçerlilik alanını görünür kılar." },
+            { "language": "ru", "text": "Вывод на C2 показывает область применимости, не преуменьшая результат." },
+            { "language": "ckb", "text": "کۆتاییی C2 بواری ڕەوایی ئاشکرا دەکات، بەبێ کەمکردنەوەی دۆزینەوەکە." },
+            { "language": "kmr", "text": "Encama C2 qada derbasbûnê xuya dike bêyî ku encamê biçûk bike." },
+            { "language": "pl", "text": "Podsumowanie C2 pokazuje zakres obowiązywania, nie umniejszając wyniku." },
+            { "language": "ro", "text": "O concluzie C2 face vizibil domeniul de validitate fără să minimalizeze rezultatul." },
+            { "language": "sq", "text": "Një përfundim C2 e bën të dukshme fushën e vlefshmërisë pa e zvogëluar gjetjen." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "next-analysis",
+          "text": "Eine gute nächste Analyse trifft die Schwäche genau, statt nur mehr Daten zu sammeln.",
+          "translations": [
+            { "language": "en", "text": "A good next analysis targets the weakness precisely instead of merely collecting more data." },
+            { "language": "fa", "text": "تحلیل بعدی خوب دقیقاً ضعف را هدف می‌گیرد، نه اینکه فقط داده بیشتری جمع کند." },
+            { "language": "ar", "text": "التحليل التالي الجيد يستهدف الضعف بدقة بدلاً من جمع بيانات أكثر فقط." },
+            { "language": "tr", "text": "İyi bir sonraki analiz yalnızca daha fazla veri toplamak yerine zayıflığı tam olarak hedefler." },
+            { "language": "ru", "text": "Хороший следующий анализ точно нацелен на слабость, а не просто собирает больше данных." },
+            { "language": "ckb", "text": "شیکاریی داهاتووی باش بە وردی لاوازییەکە دەکاتە ئامانج، نە تەنها داتای زیاتر کۆبکاتەوە." },
+            { "language": "kmr", "text": "Analîza din a baş qelsiyê bi hûrgilî armanc dike, ne ku tenê daneyên zêdetir kom bike." },
+            { "language": "pl", "text": "Dobra kolejna analiza trafia dokładnie w słabość, zamiast tylko zbierać więcej danych." },
+            { "language": "ro", "text": "O analiză următoare bună vizează exact slăbiciunea, nu doar adună mai multe date." },
+            { "language": "sq", "text": "Një analizë e ardhshme e mirë e synon saktë dobësinë, në vend që thjesht të mbledhë më shumë të dhëna." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "methodological-weakness-colloquium",
+          "placement": "detail-header",
+          "purpose": "Illustrate a formal research colloquium where a presenter acknowledges a sampling limitation and proposes a comparative next analysis.",
+          "altText": "Eine kleine Gruppe Erwachsener diskutiert in einem Seminarraum sachlich über Stichprobe, Übertragbarkeit und nächste Analyse, mit Notizen und Laptop.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A small group of adults discusses sample, transferability, and next analysis in a seminar room, with notes and a laptop." },
+            { "language": "fa", "text": "گروه کوچکی از بزرگسالان در اتاق سمینار درباره نمونه، تعمیم‌پذیری و تحلیل بعدی گفت‌وگوی واقع‌محور می‌کنند، با یادداشت و لپ‌تاپ." },
+            { "language": "ar", "text": "مجموعة صغيرة من البالغين تناقش العينة وقابلية النقل والتحليل التالي في غرفة ندوة، مع ملاحظات وحاسوب محمول." },
+            { "language": "tr", "text": "Küçük bir yetişkin grubu seminer odasında notlar ve dizüstü bilgisayarla örneklem, aktarılabilirlik ve sonraki analizi tartışıyor." },
+            { "language": "ru", "text": "Небольшая группа взрослых в семинарской комнате предметно обсуждает выборку, переносимость и следующий анализ, с заметками и ноутбуком." },
+            { "language": "ckb", "text": "گرووپێکی بچووکی گەورەساڵان لە ژووری سمیناردا بە بابەتی دەربارەی نموونە، گواستنەوە و شیکاریی داهاتوو گفتوگۆ دەکەن، لەگەڵ تێبینی و لاپتۆپ." },
+            { "language": "kmr", "text": "Komeke biçûk a mezinan di odeya semînarê de li ser nimûne, veguhastin û analîza din bi not û laptopê gotûbêj dike." },
+            { "language": "pl", "text": "Mała grupa dorosłych rzeczowo dyskutuje w sali seminaryjnej o próbie, przenoszalności i kolejnej analizie, z notatkami i laptopem." },
+            { "language": "ro", "text": "Un grup mic de adulți discută factual într-o sală de seminar despre eșantion, transferabilitate și analiza următoare, cu notițe și laptop." },
+            { "language": "sq", "text": "Një grup i vogël të rriturish diskuton faktikisht në një dhomë seminari për kampionin, transferueshmërinë dhe analizën e ardhshme, me shënime dhe laptop." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adult graduate students and lecturer in a German seminar room, presenter discussing sample limits and transferability, notebooks and laptop on table, whiteboard with abstract chart shapes but no readable text, no logos, no private data, accessible composition, calm formal academic mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

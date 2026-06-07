@@ -1,0 +1,986 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-12-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 12 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-bei-der-krankenkasse-nachfragen",
+      "title": "Bei der Krankenkasse nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask the health insurance provider" },
+        { "language": "fa", "text": "پیگیری از بیمه درمانی" },
+        { "language": "ar", "text": "الاستفسار من شركة التأمين الصحي" },
+        { "language": "tr", "text": "Sağlık sigortasına danışmak" },
+        { "language": "ru", "text": "Уточнить в медицинской страховой кассе" },
+        { "language": "ckb", "text": "پرسیارکردن لە بیمەی تەندروستی" },
+        { "language": "kmr", "text": "Ji sîgorteya tenduristiyê pirsîn" },
+        { "language": "pl", "text": "Dopytać w kasie chorych" },
+        { "language": "ro", "text": "Să întrebi la casa de asigurări de sănătate" },
+        { "language": "sq", "text": "Të pyesësh te sigurimi shëndetësor" }
+      ],
+      "description": "Du rufst bei der Krankenkasse an, weil du einen Brief zur Kostenübernahme bekommen hast. Du nennst Datum und Versicherungsnummer und fragst, ob noch Unterlagen fehlen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the health insurance provider because you received a letter about cost coverage. You give the date and insurance number and ask whether any documents are still missing." },
+        { "language": "fa", "text": "به بیمه درمانی زنگ می‌زنی، چون نامه‌ای درباره پرداخت هزینه‌ها دریافت کرده‌ای. تاریخ و شماره بیمه را می‌گویی و می‌پرسی آیا هنوز مدرکی کم است یا نه." },
+        { "language": "ar", "text": "تتصل بشركة التأمين الصحي لأنك تلقيت رسالة حول تحمل التكاليف. تذكر التاريخ ورقم التأمين وتسأل هل لا تزال هناك مستندات ناقصة." },
+        { "language": "tr", "text": "Masraf karşılamasıyla ilgili bir yazı aldığın için sağlık sigortasını arıyorsun. Tarihi ve sigorta numarasını söylüyor, hâlâ eksik belge olup olmadığını soruyorsun." },
+        { "language": "ru", "text": "Ты звонишь в медицинскую страховую кассу, потому что получил письмо о покрытии расходов. Ты называешь дату и номер страховки и спрашиваешь, не хватает ли еще документов." },
+        { "language": "ckb", "text": "پەیوەندی بە بیمەی تەندروستی دەکەیت، چونکە نامەیەکت دەربارەی گرتنەئەستۆی خەرجی وەرگرتووە. بەروار و ژمارەی بیمە دەڵێیت و دەپرسی ئایا هێشتا بەڵگەنامەیەک کەمە یان نا." },
+        { "language": "kmr", "text": "Tu telefonî sîgorteya tenduristiyê dikî, ji ber ku nameyek li ser girtina lêçûnê te wergirtiye. Tu dîrok û jimareya sîgorteyê dibêjî û dipirsî gelo hîn belgeyek kêm e an na." },
+        { "language": "pl", "text": "Dzwonisz do kasy chorych, ponieważ dostałeś pismo w sprawie pokrycia kosztów. Podajesz datę i numer ubezpieczenia oraz pytasz, czy czegoś jeszcze brakuje." },
+        { "language": "ro", "text": "Suni la casa de asigurări de sănătate pentru că ai primit o scrisoare despre acoperirea costurilor. Dai data și numărul de asigurare și întrebi dacă mai lipsesc documente." },
+        { "language": "sq", "text": "Telefonon te sigurimi shëndetësor sepse ke marrë një shkresë për mbulimin e kostove. Jep datën dhe numrin e sigurimit dhe pyet nëse mungojnë ende dokumente." }
+      ],
+      "learnerGoal": "Du kannst am Telefon Datum, Versicherungsnummer und Anliegen nennen, nach fehlenden Unterlagen fragen und den Abgabeweg bestätigen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can give the date, insurance number, and concern on the phone, ask about missing documents, and confirm the submission channel." },
+        { "language": "fa", "text": "می‌توانی تلفنی تاریخ، شماره بیمه و موضوع را بگویی، درباره مدارک ناقص سؤال کنی و راه ارسال را تأیید کنی." },
+        { "language": "ar", "text": "يمكنك عبر الهاتف ذكر التاريخ ورقم التأمين والموضوع، والسؤال عن المستندات الناقصة، وتأكيد طريقة التسليم." },
+        { "language": "tr", "text": "Telefonda tarihi, sigorta numarasını ve konuyu söyleyebilir, eksik belgeleri sorabilir ve teslim yolunu onaylayabilirsin." },
+        { "language": "ru", "text": "Ты можешь по телефону назвать дату, номер страховки и тему, спросить о недостающих документах и подтвердить способ подачи." },
+        { "language": "ckb", "text": "دەتوانیت لە تەلەفۆندا بەروار، ژمارەی بیمە و بابەت بڵێیت، دەربارەی بەڵگەنامە کەمەکان بپرسی و ڕێگای پێشکەشکردن پشتڕاست بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî di telefonê de dîrok, jimareya sîgorteyê û mijarê bibêjî, li ser belgeyên kêm bipirsî û rêya radestkirinê piştrast bikî." },
+        { "language": "pl", "text": "Potrafisz przez telefon podać datę, numer ubezpieczenia i sprawę, zapytać o brakujące dokumenty i potwierdzić sposób złożenia." },
+        { "language": "ro", "text": "Poți da la telefon data, numărul de asigurare și motivul, poți întreba despre documente lipsă și poți confirma calea de trimitere." },
+        { "language": "sq", "text": "Mund të japësh në telefon datën, numrin e sigurimit dhe çështjen, të pyesësh për dokumente që mungojnë dhe të konfirmosh mënyrën e dorëzimit." }
+      ],
+      "cefrLevel": "B1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "appointments-and-health"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "examProfiles": [
+        "dtz-a2-b1"
+      ],
+      "sortOrder": 2260,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "insurance-staff",
+          "displayName": "Mitarbeiterin der Krankenkasse",
+          "translations": [
+            { "language": "en", "text": "Health insurance employee" },
+            { "language": "fa", "text": "کارمند بیمه درمانی" },
+            { "language": "ar", "text": "موظفة التأمين الصحي" },
+            { "language": "tr", "text": "Sağlık sigortası görevlisi" },
+            { "language": "ru", "text": "Сотрудница медицинской страховой кассы" },
+            { "language": "ckb", "text": "کارمەندی بیمەی تەندروستی" },
+            { "language": "kmr", "text": "Karmenda sîgorteya tenduristiyê" },
+            { "language": "pl", "text": "Pracowniczka kasy chorych" },
+            { "language": "ro", "text": "Angajată a casei de asigurări" },
+            { "language": "sq", "text": "Punonjëse e sigurimit shëndetësor" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Versicherte Person",
+          "translations": [
+            { "language": "en", "text": "Insured person" },
+            { "language": "fa", "text": "فرد بیمه‌شده" },
+            { "language": "ar", "text": "الشخص المؤمن عليه" },
+            { "language": "tr", "text": "Sigortalı kişi" },
+            { "language": "ru", "text": "Застрахованное лицо" },
+            { "language": "ckb", "text": "کەسی بیمەکراو" },
+            { "language": "kmr", "text": "Kesê sîgortekirî" },
+            { "language": "pl", "text": "Osoba ubezpieczona" },
+            { "language": "ro", "text": "Persoană asigurată" },
+            { "language": "sq", "text": "Person i siguruar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "insurance-staff",
+          "baseText": "Krankenkasse Nord, guten Tag. Wie kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "North Health Insurance, good day. How can I help you?" },
+            { "language": "fa", "text": "بیمه درمانی نورد، روز بخیر. چه کمکی می‌توانم به شما بکنم؟" },
+            { "language": "ar", "text": "شركة التأمين الصحي نورد، نهارك سعيد. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "Nord Sağlık Sigortası, iyi günler. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Медицинская страховая касса Норд, добрый день. Чем могу вам помочь?" },
+            { "language": "ckb", "text": "بیمەی تەندروستی نۆرد، ڕۆژباش. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Sîgorteya tenduristiyê Nord, roj baş. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Kasa chorych Nord, dzień dobry. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Casa de asigurări Nord, bună ziua. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Sigurimi shëndetësor Nord, mirëdita. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "phone-opening",
+          "toneNote": "Formal phone opening.",
+          "expectedLearnerAction": "State letter date and topic."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich habe am 12. Mai einen Brief zur Kostenübernahme für Physiotherapie bekommen.",
+          "translations": [
+            { "language": "en", "text": "Good day. On May 12, I received a letter about cost coverage for physiotherapy." },
+            { "language": "fa", "text": "روز بخیر. در ۱۲ مه نامه‌ای درباره پرداخت هزینه فیزیوتراپی دریافت کردم." },
+            { "language": "ar", "text": "نهارك سعيد. في 12 مايو تلقيت رسالة حول تحمل تكاليف العلاج الطبيعي." },
+            { "language": "tr", "text": "İyi günler. 12 Mayıs'ta fizyoterapi masraflarının karşılanmasıyla ilgili bir yazı aldım." },
+            { "language": "ru", "text": "Добрый день. 12 мая я получил письмо о покрытии расходов на физиотерапию." },
+            { "language": "ckb", "text": "ڕۆژباش. لە ١٢ی ئایار نامەیەکم دەربارەی گرتنەئەستۆی خەرجی فیزیۆتێراپی وەرگرت." },
+            { "language": "kmr", "text": "Roj baş. Di 12ê gulanê de min nameyek li ser girtina lêçûna fîzyoterapî wergirt." },
+            { "language": "pl", "text": "Dzień dobry. 12 maja otrzymałem pismo w sprawie pokrycia kosztów fizjoterapii." },
+            { "language": "ro", "text": "Bună ziua. Pe 12 mai am primit o scrisoare despre acoperirea costurilor pentru fizioterapie." },
+            { "language": "sq", "text": "Mirëdita. Më 12 maj mora një shkresë për mbulimin e kostove të fizioterapisë." }
+          ],
+          "function": "state-letter-topic",
+          "toneNote": "Clear date and topic.",
+          "expectedLearnerAction": "Name letter date and topic."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "insurance-staff",
+          "baseText": "Ich schaue gern nach. Haben Sie Ihre Versicherungsnummer zur Hand?",
+          "translations": [
+            { "language": "en", "text": "I will gladly check. Do you have your insurance number at hand?" },
+            { "language": "fa", "text": "با کمال میل بررسی می‌کنم. شماره بیمه‌تان را در دسترس دارید؟" },
+            { "language": "ar", "text": "سأتحقق بكل سرور. هل رقم التأمين لديك متاح؟" },
+            { "language": "tr", "text": "Memnuniyetle kontrol ederim. Sigorta numaranız yanınızda mı?" },
+            { "language": "ru", "text": "Я с удовольствием проверю. У вас под рукой номер страховки?" },
+            { "language": "ckb", "text": "بە دڵنیاییەوە دەیبینم. ژمارەی بیمەکەتان لەبەردەستە؟" },
+            { "language": "kmr", "text": "Bi kêfxweşî ez kontrol dikim. Jimareya sîgorteya we li ber destê we heye?" },
+            { "language": "pl", "text": "Chętnie sprawdzę. Czy ma pan pod ręką numer ubezpieczenia?" },
+            { "language": "ro", "text": "Verific cu plăcere. Aveți la îndemână numărul de asigurare?" },
+            { "language": "sq", "text": "Me kënaqësi e kontrolloj. A e keni pranë numrin e sigurimit?" }
+          ],
+          "function": "ask-insurance-number",
+          "toneNote": "Asks for reference data.",
+          "expectedLearnerAction": "Give insurance number and ask status."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, die Nummer ist K-7392. Können Sie mir sagen, ob die Behandlung schon genehmigt ist oder ob noch Unterlagen fehlen?",
+          "translations": [
+            { "language": "en", "text": "Yes, the number is K-7392. Can you tell me whether the treatment has already been approved or whether documents are still missing?" },
+            { "language": "fa", "text": "بله، شماره K-7392 است. می‌توانید بگویید آیا درمان تأیید شده است یا هنوز مدارکی کم است؟" },
+            { "language": "ar", "text": "نعم، الرقم هو K-7392. هل يمكنكم أن تخبروني هل تمت الموافقة على العلاج أم لا تزال هناك مستندات ناقصة؟" },
+            { "language": "tr", "text": "Evet, numara K-7392. Tedavinin onaylanıp onaylanmadığını ya da hâlâ eksik belge olup olmadığını söyleyebilir misiniz?" },
+            { "language": "ru", "text": "Да, номер K-7392. Можете сказать, лечение уже одобрено или еще не хватает документов?" },
+            { "language": "ckb", "text": "بەڵێ، ژمارەکە K-7392 ـە. دەتوانن بڵێن ئایا چارەسەرەکە پێشتر پەسەندکراوە یان هێشتا بەڵگەنامە کەمە؟" },
+            { "language": "kmr", "text": "Erê, jimare K-7392 e. Hûn dikarin bibêjin gelo dermankirin êdî hatiye pejirandin an hîn belge kêm in?" },
+            { "language": "pl", "text": "Tak, numer to K-7392. Czy może mi pani powiedzieć, czy leczenie zostało już zatwierdzone, czy brakuje jeszcze dokumentów?" },
+            { "language": "ro", "text": "Da, numărul este K-7392. Îmi puteți spune dacă tratamentul este deja aprobat sau dacă mai lipsesc documente?" },
+            { "language": "sq", "text": "Po, numri është K-7392. A mund të më thoni nëse trajtimi është miratuar tashmë apo nëse mungojnë ende dokumente?" }
+          ],
+          "function": "ask-coverage-status",
+          "toneNote": "Combines reference number and precise question.",
+          "expectedLearnerAction": "Ask approval status and missing documents."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "insurance-staff",
+          "baseText": "Der Antrag liegt vor. Es fehlt aber noch die ärztliche Verordnung mit Datum und Stempel.",
+          "translations": [
+            { "language": "en", "text": "The application is here. However, the doctor's prescription with date and stamp is still missing." },
+            { "language": "fa", "text": "درخواست موجود است. اما نسخه پزشک با تاریخ و مهر هنوز کم است." },
+            { "language": "ar", "text": "الطلب موجود لدينا. لكن وصفة الطبيب مع التاريخ والختم لا تزال ناقصة." },
+            { "language": "tr", "text": "Başvuru elimizde. Ancak tarih ve kaşeli doktor reçetesi hâlâ eksik." },
+            { "language": "ru", "text": "Заявление у нас есть. Но еще не хватает врачебного назначения с датой и печатью." },
+            { "language": "ckb", "text": "داواکارییەکە لەلامان هەیە. بەڵام هێشتا ڕەچەتەی پزیشک لەگەڵ بەروار و مۆر کەمە." },
+            { "language": "kmr", "text": "Daxwaz li cem me heye. Lê hîn fermana bijîşkî bi dîrok û morê kêm e." },
+            { "language": "pl", "text": "Wniosek jest u nas. Brakuje jednak jeszcze zlecenia lekarskiego z datą i pieczątką." },
+            { "language": "ro", "text": "Cererea este la noi. Însă mai lipsește recomandarea medicală cu dată și ștampilă." },
+            { "language": "sq", "text": "Kërkesa është te ne. Por ende mungon udhëzimi mjekësor me datë dhe vulë." }
+          ],
+          "function": "name-missing-document",
+          "toneNote": "Specific missing document.",
+          "expectedLearnerAction": "Ask how to submit the missing document."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Soll ich die Verordnung als Scan hochladen, oder brauchen Sie sie per Post?",
+          "translations": [
+            { "language": "en", "text": "I understand. Should I upload the prescription as a scan, or do you need it by post?" },
+            { "language": "fa", "text": "متوجه شدم. باید نسخه را به‌صورت اسکن بارگذاری کنم، یا آن را از طریق پست لازم دارید؟" },
+            { "language": "ar", "text": "فهمت. هل يجب أن أرفع الوصفة كنسخة ممسوحة، أم تحتاجون إليها بالبريد؟" },
+            { "language": "tr", "text": "Anladım. Reçeteyi taranmış dosya olarak yüklemeli miyim, yoksa posta ile mi gerekiyor?" },
+            { "language": "ru", "text": "Понимаю. Мне загрузить назначение как скан или вам нужно получить его по почте?" },
+            { "language": "ckb", "text": "تێگەیشتم. پێویستە ڕەچەتەکە وەک سکەن بار بکەم، یان بە پۆست پێویستانە؟" },
+            { "language": "kmr", "text": "Ez têgihîştim. Divê ez fermana bijîşkî wek belgeya skenkirî bar bikim, an hûn wê bi posteyê dixwazin?" },
+            { "language": "pl", "text": "Rozumiem. Czy mam przesłać zlecenie jako skan, czy potrzebują je państwo pocztą?" },
+            { "language": "ro", "text": "Înțeleg. Să încarc recomandarea ca document scanat sau aveți nevoie de ea prin poștă?" },
+            { "language": "sq", "text": "E kuptoj. A duhet ta ngarkoj udhëzimin si dokument të skanuar, apo ju duhet me postë?" }
+          ],
+          "function": "ask-submission-channel",
+          "toneNote": "Asks concrete channel.",
+          "expectedLearnerAction": "Ask how to submit."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "insurance-staff",
+          "baseText": "Ein Scan reicht. Bitte laden Sie die Verordnung bis nächsten Dienstag im Kundenportal hoch.",
+          "translations": [
+            { "language": "en", "text": "A scan is enough. Please upload the prescription in the customer portal by next Tuesday." },
+            { "language": "fa", "text": "اسکن کافی است. لطفاً نسخه را تا سه‌شنبه آینده در پورتال مشتری بارگذاری کنید." },
+            { "language": "ar", "text": "النسخة الممسوحة تكفي. يرجى رفع الوصفة في بوابة العملاء حتى الثلاثاء القادم." },
+            { "language": "tr", "text": "Taranmış dosya yeterli. Lütfen reçeteyi gelecek salı gününe kadar müşteri portalına yükleyin." },
+            { "language": "ru", "text": "Скана достаточно. Пожалуйста, загрузите назначение в клиентский портал до следующего вторника." },
+            { "language": "ckb", "text": "سکەن بەسە. تکایە ڕەچەتەکە تا سێشەممەی داهاتوو لە پۆرتاڵی کڕیار بار بکەن." },
+            { "language": "kmr", "text": "Belgeya skenkirî bes e. Ji kerema xwe fermana bijîşkî heta sêşema bê li portała xerîdar bar bikin." },
+            { "language": "pl", "text": "Skan wystarczy. Proszę przesłać zlecenie w portalu klienta do następnego wtorku." },
+            { "language": "ro", "text": "Documentul scanat este suficient. Vă rog să încărcați recomandarea în portalul pentru clienți până marțea viitoare." },
+            { "language": "sq", "text": "Dokumenti i skanuar mjafton. Ju lutem ngarkojeni udhëzimin në portalin e klientit deri të martën tjetër." }
+          ],
+          "function": "give-upload-instruction",
+          "toneNote": "Gives channel and deadline.",
+          "expectedLearnerAction": "Summarize upload task."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich lade die ärztliche Verordnung mit Datum und Stempel bis nächsten Dienstag im Kundenportal hoch.",
+          "translations": [
+            { "language": "en", "text": "Thank you. I will upload the doctor's prescription with date and stamp in the customer portal by next Tuesday." },
+            { "language": "fa", "text": "ممنون. نسخه پزشک با تاریخ و مهر را تا سه‌شنبه آینده در پورتال مشتری بارگذاری می‌کنم." },
+            { "language": "ar", "text": "شكرًا. سأرفع وصفة الطبيب مع التاريخ والختم في بوابة العملاء حتى الثلاثاء القادم." },
+            { "language": "tr", "text": "Teşekkür ederim. Tarih ve kaşeli doktor reçetesini gelecek salıya kadar müşteri portalına yükleyeceğim." },
+            { "language": "ru", "text": "Спасибо. Я загружу врачебное назначение с датой и печатью в клиентский портал до следующего вторника." },
+            { "language": "ckb", "text": "سوپاس. ڕەچەتەی پزیشک لەگەڵ بەروار و مۆر تا سێشەممەی داهاتوو لە پۆرتاڵی کڕیار بار دەکەم." },
+            { "language": "kmr", "text": "Spas. Ez fermana bijîşkî bi dîrok û morê heta sêşema bê li portała xerîdar bar dikim." },
+            { "language": "pl", "text": "Dziękuję. Do następnego wtorku prześlę w portalu klienta zlecenie lekarskie z datą i pieczątką." },
+            { "language": "ro", "text": "Mulțumesc. Încarc recomandarea medicală cu dată și ștampilă în portalul pentru clienți până marțea viitoare." },
+            { "language": "sq", "text": "Faleminderit. Do ta ngarkoj udhëzimin mjekësor me datë dhe vulë në portalin e klientit deri të martën tjetër." }
+          ],
+          "function": "confirm-upload",
+          "toneNote": "Complete final confirmation.",
+          "expectedLearnerAction": "Confirm document, deadline, and channel."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Ich habe am 12. Mai einen Brief zur Kostenübernahme für Physiotherapie bekommen.",
+              "translations": [
+                { "language": "en", "text": "Good day. On May 12, I received a letter about cost coverage for physiotherapy." },
+                { "language": "fa", "text": "روز بخیر. در ۱۲ مه نامه‌ای درباره پرداخت هزینه فیزیوتراپی دریافت کردم." },
+                { "language": "ar", "text": "نهارك سعيد. في 12 مايو تلقيت رسالة حول تحمل تكاليف العلاج الطبيعي." },
+                { "language": "tr", "text": "İyi günler. 12 Mayıs'ta fizyoterapi masraflarının karşılanmasıyla ilgili bir yazı aldım." },
+                { "language": "ru", "text": "Добрый день. 12 мая я получил письмо о покрытии расходов на физиотерапию." },
+                { "language": "ckb", "text": "ڕۆژباش. لە ١٢ی ئایار نامەیەکم دەربارەی گرتنەئەستۆی خەرجی فیزیۆتێراپی وەرگرت." },
+                { "language": "kmr", "text": "Roj baş. Di 12ê gulanê de min nameyek li ser girtina lêçûna fîzyoterapî wergirt." },
+                { "language": "pl", "text": "Dzień dobry. 12 maja otrzymałem pismo w sprawie pokrycia kosztów fizjoterapii." },
+                { "language": "ro", "text": "Bună ziua. Pe 12 mai am primit o scrisoare despre acoperirea costurilor pentru fizioterapie." },
+                { "language": "sq", "text": "Mirëdita. Më 12 maj mora një shkresë për mbulimin e kostove të fizioterapisë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Datum, Schreiben und Thema sofort.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer immediately names the date, letter, and topic." },
+                { "language": "fa", "text": "خوب است: پاسخ فوراً تاریخ، نامه و موضوع را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يذكر فورًا التاريخ والرسالة والموضوع." },
+                { "language": "tr", "text": "İyi: Cevap hemen tarihi, yazıyı ve konuyu söylüyor." },
+                { "language": "ru", "text": "Хорошо: ответ сразу называет дату, письмо и тему." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە دەستبەجێ بەروار، نامە و بابەت دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv yekser dîrok, name û mijarê dibêje." },
+                { "language": "pl", "text": "Dobrze: odpowiedź od razu podaje datę, pismo i temat." },
+                { "language": "ro", "text": "Bine: răspunsul dă imediat data, scrisoarea și subiectul." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep menjëherë datën, shkresën dhe temën." }
+              ],
+              "explanationKey": "state-date-topic"
+            },
+            {
+              "id": "too-vague",
+              "text": "Guten Tag. Ich habe einen Brief bekommen und verstehe ihn nicht.",
+              "translations": [
+                { "language": "en", "text": "Good day. I received a letter and do not understand it." },
+                { "language": "fa", "text": "روز بخیر. یک نامه دریافت کرده‌ام و آن را نمی‌فهمم." },
+                { "language": "ar", "text": "نهارك سعيد. تلقيت رسالة ولا أفهمها." },
+                { "language": "tr", "text": "İyi günler. Bir yazı aldım ve onu anlamıyorum." },
+                { "language": "ru", "text": "Добрый день. Я получил письмо и не понимаю его." },
+                { "language": "ckb", "text": "ڕۆژباش. نامەیەکم وەرگرتووە و تێی ناگەم." },
+                { "language": "kmr", "text": "Roj baş. Min nameyek wergirtiye û ez wê fêm nakim." },
+                { "language": "pl", "text": "Dzień dobry. Dostałem pismo i go nie rozumiem." },
+                { "language": "ro", "text": "Bună ziua. Am primit o scrisoare și nu o înțeleg." },
+                { "language": "sq", "text": "Mirëdita. Kam marrë një shkresë dhe nuk e kuptoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu ungenau: Datum und Thema des Schreibens fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too imprecise: the date and topic of the letter are missing." },
+                { "language": "fa", "text": "محترمانه است، اما خیلی نامشخص است: تاریخ و موضوع نامه کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير دقيق كفاية: تاريخ الرسالة وموضوعها ناقصان." },
+                { "language": "tr", "text": "Bu nazik, ama çok belirsiz: yazının tarihi ve konusu eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком неточно: не хватает даты и темы письма." },
+                { "language": "ckb", "text": "ئەمە بەڕێزە، بەڵام زۆر ناڕوونە: بەروار و بابەتی نامەکە کەمە." },
+                { "language": "kmr", "text": "Ev rêzdar e, lê pir nezelal e: dîrok û mijara nameyê kêm in." },
+                { "language": "pl", "text": "To jest grzeczne, ale zbyt nieprecyzyjne: brakuje daty i tematu pisma." },
+                { "language": "ro", "text": "Este politicos, dar prea neclar: lipsesc data și subiectul scrisorii." },
+                { "language": "sq", "text": "Është e sjellshme, por shumë e paqartë: mungojnë data dhe tema e shkresës." }
+              ],
+              "explanationKey": "too-vague"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, die Nummer ist K-7392. Können Sie mir sagen, ob die Behandlung schon genehmigt ist oder ob noch Unterlagen fehlen?",
+              "translations": [
+                { "language": "en", "text": "Yes, the number is K-7392. Can you tell me whether the treatment has already been approved or whether documents are still missing?" },
+                { "language": "fa", "text": "بله، شماره K-7392 است. می‌توانید بگویید آیا درمان تأیید شده است یا هنوز مدارکی کم است؟" },
+                { "language": "ar", "text": "نعم، الرقم هو K-7392. هل يمكنكم أن تخبروني هل تمت الموافقة على العلاج أم لا تزال هناك مستندات ناقصة؟" },
+                { "language": "tr", "text": "Evet, numara K-7392. Tedavinin onaylanıp onaylanmadığını ya da hâlâ eksik belge olup olmadığını söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Да, номер K-7392. Можете сказать, лечение уже одобрено или еще не хватает документов?" },
+                { "language": "ckb", "text": "بەڵێ، ژمارەکە K-7392 ـە. دەتوانن بڵێن ئایا چارەسەرەکە پێشتر پەسەندکراوە یان هێشتا بەڵگەنامە کەمە؟" },
+                { "language": "kmr", "text": "Erê, jimare K-7392 e. Hûn dikarin bibêjin gelo dermankirin êdî hatiye pejirandin an hîn belge kêm in?" },
+                { "language": "pl", "text": "Tak, numer to K-7392. Czy może mi pani powiedzieć, czy leczenie zostało już zatwierdzone, czy brakuje jeszcze dokumentów?" },
+                { "language": "ro", "text": "Da, numărul este K-7392. Îmi puteți spune dacă tratamentul este deja aprobat sau dacă mai lipsesc documente?" },
+                { "language": "sq", "text": "Po, numri është K-7392. A mund të më thoni nëse trajtimi është miratuar tashmë apo nëse mungojnë ende dokumente?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort gibt die Nummer und fragt gleichzeitig nach Genehmigung und fehlenden Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer gives the number and asks at the same time about approval and missing documents." },
+                { "language": "fa", "text": "خوب است: پاسخ شماره را می‌دهد و همزمان درباره تأیید و مدارک ناقص سؤال می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يعطي الرقم ويسأل في الوقت نفسه عن الموافقة والمستندات الناقصة." },
+                { "language": "tr", "text": "İyi: Cevap numarayı veriyor ve aynı anda onay ile eksik belgeleri soruyor." },
+                { "language": "ru", "text": "Хорошо: ответ дает номер и одновременно спрашивает об одобрении и недостающих документах." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ژمارەکە دەدات و هاوکات دەربارەی پەسەندکردن و بەڵگەنامە کەمەکان دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Bersiv jimareyê dide û di heman demê de li ser pejirandin û belgeyên kêm dipirse." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje numer i jednocześnie pyta o zatwierdzenie oraz brakujące dokumenty." },
+                { "language": "ro", "text": "Bine: răspunsul dă numărul și întreabă în același timp despre aprobare și documente lipsă." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep numrin dhe pyet njëkohësisht për miratimin dhe dokumentet që mungojnë." }
+              ],
+              "explanationKey": "ask-approval-and-documents"
+            },
+            {
+              "id": "too-narrow",
+              "text": "Ja, die Nummer ist K-7392. Ist das schon fertig?",
+              "translations": [
+                { "language": "en", "text": "Yes, the number is K-7392. Is it already finished?" },
+                { "language": "fa", "text": "بله، شماره K-7392 است. آیا کارش تمام شده است؟" },
+                { "language": "ar", "text": "نعم، الرقم هو K-7392. هل انتهى الأمر بالفعل؟" },
+                { "language": "tr", "text": "Evet, numara K-7392. Bu artık tamamlandı mı?" },
+                { "language": "ru", "text": "Да, номер K-7392. Это уже готово?" },
+                { "language": "ckb", "text": "بەڵێ، ژمارەکە K-7392 ـە. ئایا ئەمە پێشتر تەواو بووە؟" },
+                { "language": "kmr", "text": "Erê, jimare K-7392 e. Ev êdî temam bûye?" },
+                { "language": "pl", "text": "Tak, numer to K-7392. Czy to jest już gotowe?" },
+                { "language": "ro", "text": "Da, numărul este K-7392. Este deja gata?" },
+                { "language": "sq", "text": "Po, numri është K-7392. A është kjo tashmë gati?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Die Frage ist verständlich, aber zu eng: Sie fragt nicht nach fehlenden Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The question is understandable, but too narrow: it does not ask about missing documents." },
+                { "language": "fa", "text": "پرسش قابل فهم است، اما خیلی محدود است: درباره مدارک ناقص سؤال نمی‌کند." },
+                { "language": "ar", "text": "السؤال مفهوم، لكنه ضيق جدًا: لا يسأل عن المستندات الناقصة." },
+                { "language": "tr", "text": "Soru anlaşılır, ama çok dar: eksik belgeleri sormuyor." },
+                { "language": "ru", "text": "Вопрос понятен, но слишком узкий: он не спрашивает о недостающих документах." },
+                { "language": "ckb", "text": "پرسیارەکە تێگەیشتووە، بەڵام زۆر تەسکە: دەربارەی بەڵگەنامە کەمەکان ناپرسێت." },
+                { "language": "kmr", "text": "Pirs tê fêmkirin, lê pir teng e: li ser belgeyên kêm napirse." },
+                { "language": "pl", "text": "Pytanie jest zrozumiałe, ale zbyt wąskie: nie pyta o brakujące dokumenty." },
+                { "language": "ro", "text": "Întrebarea este de înțeles, dar prea îngustă: nu întreabă despre documente lipsă." },
+                { "language": "sq", "text": "Pyetja është e kuptueshme, por shumë e ngushtë: nuk pyet për dokumentet që mungojnë." }
+              ],
+              "explanationKey": "too-narrow"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Ich lade die ärztliche Verordnung mit Datum und Stempel bis nächsten Dienstag im Kundenportal hoch.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I will upload the doctor's prescription with date and stamp in the customer portal by next Tuesday." },
+                { "language": "fa", "text": "ممنون. نسخه پزشک با تاریخ و مهر را تا سه‌شنبه آینده در پورتال مشتری بارگذاری می‌کنم." },
+                { "language": "ar", "text": "شكرًا. سأرفع وصفة الطبيب مع التاريخ والختم في بوابة العملاء حتى الثلاثاء القادم." },
+                { "language": "tr", "text": "Teşekkür ederim. Tarih ve kaşeli doktor reçetesini gelecek salıya kadar müşteri sayfasına yükleyeceğim." },
+                { "language": "ru", "text": "Спасибо. Я загружу врачебное назначение с датой и печатью в клиентский портал до следующего вторника." },
+                { "language": "ckb", "text": "سوپاس. ڕەچەتەی پزیشک لەگەڵ بەروار و مۆر تا سێشەممەی داهاتوو لە پۆرتاڵی کڕیار بار دەکەم." },
+                { "language": "kmr", "text": "Spas. Ez fermana bijîşkî bi dîrok û morê heta sêşema bê li portała xerîdar bar dikim." },
+                { "language": "pl", "text": "Dziękuję. Do następnego wtorku prześlę w portalu klienta zlecenie lekarskie z datą i pieczątką." },
+                { "language": "ro", "text": "Mulțumesc. Încarc recomandarea medicală cu dată și ștampilă în portalul pentru clienți până marțea viitoare." },
+                { "language": "sq", "text": "Faleminderit. Do ta ngarkoj udhëzimin mjekësor me datë dhe vulë në portalin e klientit deri të martën tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bestätigt Dokument, Frist und Abgabeweg vollständig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer fully confirms document, deadline, and submission channel." },
+                { "language": "fa", "text": "خوب است: پاسخ مدرک، مهلت و راه ارسال را کامل تأیید می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يؤكد المستند والمهلة وطريقة التسليم بالكامل." },
+                { "language": "tr", "text": "İyi: Cevap belgeyi, süreyi ve teslim yolunu tam olarak onaylıyor." },
+                { "language": "ru", "text": "Хорошо: ответ полностью подтверждает документ, срок и способ подачи." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەنامە، مۆڵەت و ڕێگای پێشکەشکردن بە تەواوی پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv belge, dem û rêya radestkirinê bi temamî piştrast dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź w pełni potwierdza dokument, termin i sposób złożenia." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă complet documentul, termenul și calea de trimitere." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon plotësisht dokumentin, afatin dhe mënyrën e dorëzimit." }
+              ],
+              "explanationKey": "complete-upload-summary"
+            },
+            {
+              "id": "missing-details",
+              "text": "Danke, ich lade das dann hoch.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will upload it." },
+                { "language": "fa", "text": "ممنون، پس آن را بارگذاری می‌کنم." },
+                { "language": "ar", "text": "شكرًا، إذن سأرفعه." },
+                { "language": "tr", "text": "Teşekkür ederim, o zaman bunu yüklerim." },
+                { "language": "ru", "text": "Спасибо, тогда я это загружу." },
+                { "language": "ckb", "text": "سوپاس، ئەوا ئەمە بار دەکەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez wê bar dikim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie to prześlę." },
+                { "language": "ro", "text": "Mulțumesc, atunci îl încarc." },
+                { "language": "sq", "text": "Faleminderit, atëherë do ta ngarkoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber unvollständig: Welche Unterlage, welche Frist und welcher Ort fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but incomplete: it does not say which document, which deadline, or where." },
+                { "language": "fa", "text": "محترمانه است، اما کامل نیست: نمی‌گوید کدام مدرک، چه مهلتی و کجا." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير كامل: لا يذكر أي مستند، وأي مهلة، وأين." },
+                { "language": "tr", "text": "Bu nazik, ama eksik: hangi belge, hangi süre ve neresi belirtilmiyor." },
+                { "language": "ru", "text": "Это вежливо, но неполно: не сказано, какой документ, какой срок и куда." },
+                { "language": "ckb", "text": "ئەمە بەڕێزە، بەڵام تەواو نییە: ناڵێت کام بەڵگەنامە، کام مۆڵەت و لە کوێ." },
+                { "language": "kmr", "text": "Ev rêzdar e, lê ne temam e: nabêje kîjan belge, kîjan dem û li ku derê." },
+                { "language": "pl", "text": "To jest grzeczne, ale niepełne: nie mówi, jaki dokument, jaki termin i gdzie." },
+                { "language": "ro", "text": "Este politicos, dar incomplet: nu spune ce act, ce termen și unde." },
+                { "language": "sq", "text": "Është e sjellshme, por jo e plotë: nuk thotë cili dokument, cili afat dhe ku." }
+              ],
+              "explanationKey": "missing-details"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Bei der Krankenkasse solltest du Datum, Versicherungsnummer, Thema des Schreibens, fehlende Unterlage, Frist und Abgabeweg klar nennen.",
+          "translations": [
+            { "language": "en", "text": "With the health insurance provider, you should clearly name the date, insurance number, topic of the letter, missing document, deadline, and submission channel." },
+            { "language": "fa", "text": "در تماس با بیمه درمانی باید تاریخ، شماره بیمه، موضوع نامه، مدرک ناقص، مهلت و راه ارسال را روشن بگویی." },
+            { "language": "ar", "text": "مع شركة التأمين الصحي ينبغي أن تذكر بوضوح التاريخ ورقم التأمين وموضوع الرسالة والمستند الناقص والمهلة وطريقة التسليم." },
+            { "language": "tr", "text": "Sağlık sigortasında tarihi, sigorta numarasını, yazının konusunu, eksik belgeyi, süreyi ve teslim yolunu açıkça belirtmelisin." },
+            { "language": "ru", "text": "В разговоре со страховой кассой нужно ясно назвать дату, номер страховки, тему письма, недостающий документ, срок и способ подачи." },
+            { "language": "ckb", "text": "لە پەیوەندی لەگەڵ بیمەی تەندروستیدا پێویستە بەروار، ژمارەی بیمە، بابەتی نامەکە، بەڵگەنامەی کەم، مۆڵەت و ڕێگای پێشکەشکردن بە ڕوونی بڵێیت." },
+            { "language": "kmr", "text": "Li cem sîgorteya tenduristiyê divê tu dîrok, jimareya sîgorteyê, mijara nameyê, belgeya kêm, dem û rêya radestkirinê bi zelalî bibêjî." },
+            { "language": "pl", "text": "W rozmowie z kasą chorych trzeba jasno podać datę, numer ubezpieczenia, temat pisma, brakujący dokument, termin i sposób złożenia." },
+            { "language": "ro", "text": "La casa de asigurări trebuie să numești clar data, numărul de asigurare, subiectul scrisorii, documentul lipsă, termenul și calea de trimitere." },
+            { "language": "sq", "text": "Te sigurimi shëndetësor duhet të përmendësh qartë datën, numrin e sigurimit, temën e shkresës, dokumentin që mungon, afatin dhe mënyrën e dorëzimit." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-beim-jobcenter-eine-aenderung-melden",
+      "title": "Beim Jobcenter eine Änderung melden",
+      "titleTranslations": [
+        { "language": "en", "text": "Report a change to the Jobcenter" },
+        { "language": "fa", "text": "گزارش یک تغییر به Jobcenter" },
+        { "language": "ar", "text": "إبلاغ مركز العمل بتغيير" },
+        { "language": "tr", "text": "Jobcenter'a bir değişiklik bildirmek" },
+        { "language": "ru", "text": "Сообщить об изменении в Jobcenter" },
+        { "language": "ckb", "text": "ڕاپۆرتکردنی گۆڕانکارییەک بۆ Jobcenter" },
+        { "language": "kmr", "text": "Guhertinekê ji Jobcenter re ragihandin" },
+        { "language": "pl", "text": "Zgłosić zmianę w Jobcenter" },
+        { "language": "ro", "text": "Să anunți o schimbare la Jobcenter" },
+        { "language": "sq", "text": "Të njoftosh një ndryshim te Jobcenter" }
+      ],
+      "description": "Du rufst beim Jobcenter an, weil du bald eine Teilzeitstelle beginnst. Du meldest die Änderung, nennst das Datum und fragst, welche Nachweise du einreichen musst.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the Jobcenter because you will soon start a part-time job. You report the change, give the date, and ask which proofs you must submit." },
+        { "language": "fa", "text": "به Jobcenter زنگ می‌زنی، چون به‌زودی یک کار پاره‌وقت را شروع می‌کنی. تغییر را گزارش می‌دهی، تاریخ را می‌گویی و می‌پرسی چه مدارکی باید ارائه کنی." },
+        { "language": "ar", "text": "تتصل بمركز العمل لأنك ستبدأ قريبًا وظيفة بدوام جزئي. تبلغ عن التغيير، وتذكر التاريخ، وتسأل عن الإثباتات التي يجب تقديمها." },
+        { "language": "tr", "text": "Yakında yarı zamanlı bir işe başlayacağın için Jobcenter'ı arıyorsun. Değişikliği bildiriyor, tarihi söylüyor ve hangi kanıtları sunman gerektiğini soruyorsun." },
+        { "language": "ru", "text": "Ты звонишь в Jobcenter, потому что скоро начинаешь работу на неполный день. Ты сообщаешь об изменении, называешь дату и спрашиваешь, какие подтверждения нужно подать." },
+        { "language": "ckb", "text": "پەیوەندی بە Jobcenter دەکەیت، چونکە بەم زووانە کاری نیوەکات دەست پێدەکەیت. گۆڕانکارییەکە ڕادەگەیەنیت، بەروارەکە دەڵێیت و دەپرسی کام بەڵگە پێویستە پێشکەش بکەیت." },
+        { "language": "kmr", "text": "Tu telefonî Jobcenter dikî, ji ber ku tu zû karekî nîv-dem dest pê dikî. Tu guhertinê radigihînî, dîrokê dibêjî û dipirsî kîjan belge divê radest bikî." },
+        { "language": "pl", "text": "Dzwonisz do Jobcenter, ponieważ wkrótce zaczynasz pracę na część etatu. Zgłaszasz zmianę, podajesz datę i pytasz, jakie dowody musisz złożyć." },
+        { "language": "ro", "text": "Suni la Jobcenter pentru că vei începe curând un loc de muncă cu jumătate de normă. Anunți schimbarea, dai data și întrebi ce dovezi trebuie să depui." },
+        { "language": "sq", "text": "Telefonon te Jobcenter sepse së shpejti fillon një punë me orar të pjesshëm. Njofton ndryshimin, jep datën dhe pyet cilat dëshmi duhet të dorëzosh." }
+      ],
+      "learnerGoal": "Du kannst eine berufliche Änderung sachlich melden, den Beginn nennen und klären, welche Dokumente wann nachgereicht werden müssen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can report a work-related change factually, give the start date, and clarify which documents must be submitted and when." },
+        { "language": "fa", "text": "می‌توانی یک تغییر شغلی را دقیق گزارش بدهی، تاریخ شروع را بگویی و روشن کنی کدام مدارک و چه زمانی باید ارائه شوند." },
+        { "language": "ar", "text": "يمكنك إبلاغ تغيير مهني بشكل موضوعي، وذكر تاريخ البداية، وتوضيح أي مستندات يجب تقديمها ومتى." },
+        { "language": "tr", "text": "İşle ilgili bir değişikliği sakin biçimde bildirebilir, başlangıç tarihini söyleyebilir ve hangi belgelerin ne zaman sunulacağını netleştirebilirsin." },
+        { "language": "ru", "text": "Ты можешь по делу сообщить об изменении в работе, назвать дату начала и уточнить, какие документы и когда нужно подать." },
+        { "language": "ckb", "text": "دەتوانیت گۆڕانکارییەکی کاری بە شێوەیەکی بابەتی ڕابگەیەنیت، بەرواری دەستپێک بڵێیت و ڕوون بکەیتەوە کام بەڵگەنامە و کەی پێویستە پێشکەش بکرێن." },
+        { "language": "kmr", "text": "Tu dikarî guhertineke karî bi awayekî zelal ragihînî, dîroka destpêkê bibêjî û zelal bikî kîjan belge kengî divê werin radestkirin." },
+        { "language": "pl", "text": "Potrafisz rzeczowo zgłosić zmianę zawodową, podać datę rozpoczęcia i wyjaśnić, jakie dokumenty oraz kiedy trzeba dosłać." },
+        { "language": "ro", "text": "Poți anunța obiectiv o schimbare profesională, poți da data începerii și poți clarifica ce documente trebuie depuse și când." },
+        { "language": "sq", "text": "Mund të njoftosh qartë një ndryshim pune, të japësh datën e fillimit dhe të sqarosh cilat dokumente duhet të dorëzohen dhe kur." }
+      ],
+      "cefrLevel": "B1",
+      "category": "public-services",
+      "topics": [
+        "public-services",
+        "work-and-jobs"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "explain-problem",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "examProfiles": [
+        "dtz-a2-b1",
+        "berufssprache-b1"
+      ],
+      "sortOrder": 2270,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "jobcenter-staff",
+          "displayName": "Mitarbeiterin im Jobcenter",
+          "translations": [
+            { "language": "en", "text": "Jobcenter employee" },
+            { "language": "fa", "text": "کارمند Jobcenter" },
+            { "language": "ar", "text": "موظفة مركز العمل" },
+            { "language": "tr", "text": "Jobcenter görevlisi" },
+            { "language": "ru", "text": "Сотрудница Jobcenter" },
+            { "language": "ckb", "text": "کارمەندی Jobcenter" },
+            { "language": "kmr", "text": "Karmenda Jobcenter" },
+            { "language": "pl", "text": "Pracowniczka Jobcenter" },
+            { "language": "ro", "text": "Angajată Jobcenter" },
+            { "language": "sq", "text": "Punonjëse e Jobcenter" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Anruferin oder Anrufer",
+          "translations": [
+            { "language": "en", "text": "Caller" },
+            { "language": "fa", "text": "تماس‌گیرنده" },
+            { "language": "ar", "text": "المتصل" },
+            { "language": "tr", "text": "Arayan kişi" },
+            { "language": "ru", "text": "Звонящий" },
+            { "language": "ckb", "text": "پەیوەندیکەر" },
+            { "language": "kmr", "text": "Kesê telefon dike" },
+            { "language": "pl", "text": "Osoba dzwoniąca" },
+            { "language": "ro", "text": "Persoană care sună" },
+            { "language": "sq", "text": "Telefonues" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "jobcenter-staff",
+          "baseText": "Jobcenter, guten Tag. Was kann ich für Sie tun?",
+          "translations": [
+            { "language": "en", "text": "Jobcenter, good day. What can I do for you?" },
+            { "language": "fa", "text": "Jobcenter، روز بخیر. چه کمکی می‌توانم به شما بکنم؟" },
+            { "language": "ar", "text": "مركز العمل، نهارك سعيد. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "Jobcenter, iyi günler. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Jobcenter, добрый день. Чем могу вам помочь?" },
+            { "language": "ckb", "text": "Jobcenter، ڕۆژباش. چ یارمەتییەکتان بدەم؟" },
+            { "language": "kmr", "text": "Jobcenter, roj baş. Ez çi alîkariyê dikarim ji we re bikim?" },
+            { "language": "pl", "text": "Jobcenter, dzień dobry. W czym mogę pomóc?" },
+            { "language": "ro", "text": "Jobcenter, bună ziua. Cu ce vă pot ajuta?" },
+            { "language": "sq", "text": "Jobcenter, mirëdita. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "phone-opening",
+          "toneNote": "Formal phone opening.",
+          "expectedLearnerAction": "Report the work change."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich möchte eine Änderung melden: Ich beginne am 1. Juli eine Teilzeitstelle mit 20 Stunden pro Woche.",
+          "translations": [
+            { "language": "en", "text": "Good day. I would like to report a change: On July 1, I will start a part-time job with 20 hours per week." },
+            { "language": "fa", "text": "روز بخیر. می‌خواهم یک تغییر را گزارش کنم: از ۱ ژوئیه یک کار پاره‌وقت با ۲۰ ساعت در هفته شروع می‌کنم." },
+            { "language": "ar", "text": "نهارك سعيد. أود الإبلاغ عن تغيير: أبدأ في 1 يوليو وظيفة بدوام جزئي بواقع 20 ساعة في الأسبوع." },
+            { "language": "tr", "text": "İyi günler. Bir değişiklik bildirmek istiyorum: 1 Temmuz'da haftada 20 saatlik yarı zamanlı bir işe başlıyorum." },
+            { "language": "ru", "text": "Добрый день. Я хотел бы сообщить об изменении: 1 июля я начинаю работу на неполный день, 20 часов в неделю." },
+            { "language": "ckb", "text": "ڕۆژباش. دەمەوێت گۆڕانکارییەک ڕابگەیەنم: لە ١ی تەممووز کاری نیوەکات بە ٢٠ کاتژمێر لە هەفتەدا دەست پێدەکەم." },
+            { "language": "kmr", "text": "Roj baş. Ez dixwazim guhertinekê ragihînim: Di 1ê tîrmehê de ez karekî nîv-dem bi 20 saetan di hefteyê de dest pê dikim." },
+            { "language": "pl", "text": "Dzień dobry. Chciałbym zgłosić zmianę: 1 lipca zaczynam pracę na część etatu, 20 godzin tygodniowo." },
+            { "language": "ro", "text": "Bună ziua. Aș dori să anunț o schimbare: pe 1 iulie încep un loc de muncă cu jumătate de normă, 20 de ore pe săptămână." },
+            { "language": "sq", "text": "Mirëdita. Dua të njoftoj një ndryshim: më 1 korrik filloj një punë me orar të pjesshëm, 20 orë në javë." }
+          ],
+          "function": "report-change",
+          "toneNote": "Factual change report.",
+          "expectedLearnerAction": "State change, date, and hours."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "jobcenter-staff",
+          "baseText": "Danke für die Information. Haben Sie den Arbeitsvertrag schon unterschrieben?",
+          "translations": [
+            { "language": "en", "text": "Thank you for the information. Have you already signed the employment contract?" },
+            { "language": "fa", "text": "ممنون از اطلاع‌رسانی. آیا قرارداد کار را امضا کرده‌اید؟" },
+            { "language": "ar", "text": "شكرًا على المعلومة. هل وقعت عقد العمل بالفعل؟" },
+            { "language": "tr", "text": "Bilgi için teşekkür ederim. İş sözleşmesini imzaladınız mı?" },
+            { "language": "ru", "text": "Спасибо за информацию. Вы уже подписали трудовой договор?" },
+            { "language": "ckb", "text": "سوپاس بۆ زانیارییەکە. ئایا گرێبەستی کارتان پێشتر واژۆ کردووە؟" },
+            { "language": "kmr", "text": "Spas ji bo agahiyê. We peymana karê êdî îmze kiriye?" },
+            { "language": "pl", "text": "Dziękuję za informację. Czy podpisał pan już umowę o pracę?" },
+            { "language": "ro", "text": "Mulțumesc pentru informație. Ați semnat deja contractul de muncă?" },
+            { "language": "sq", "text": "Faleminderit për informacionin. A e keni nënshkruar tashmë kontratën e punës?" }
+          ],
+          "function": "ask-contract",
+          "toneNote": "Asks for proof status.",
+          "expectedLearnerAction": "Confirm contract and ask submission channel."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja, der Vertrag ist unterschrieben. Soll ich ihn im Online-Portal hochladen oder per Post schicken?",
+          "translations": [
+            { "language": "en", "text": "Yes, the contract is signed. Should I upload it in the online portal or send it by post?" },
+            { "language": "fa", "text": "بله، قرارداد امضا شده است. باید آن را در پورتال آنلاین بارگذاری کنم یا با پست بفرستم؟" },
+            { "language": "ar", "text": "نعم، العقد موقع. هل يجب أن أرفعه في البوابة الإلكترونية أم أرسله بالبريد؟" },
+            { "language": "tr", "text": "Evet, sözleşme imzalı. Bunu çevrimiçi portala mı yüklemeliyim yoksa posta ile mi göndermeliyim?" },
+            { "language": "ru", "text": "Да, договор подписан. Мне загрузить его в онлайн-портал или отправить по почте?" },
+            { "language": "ckb", "text": "بەڵێ، گرێبەستەکە واژۆکراوە. پێویستە لە پۆرتاڵی ئۆنلاین بار بکەم یان بە پۆست بنێرم؟" },
+            { "language": "kmr", "text": "Erê, peyman îmzekirî ye. Divê ez wê li portała serhêl bar bikim an bi posteyê bişînim?" },
+            { "language": "pl", "text": "Tak, umowa jest podpisana. Czy mam ją przesłać w portalu internetowym, czy wysłać pocztą?" },
+            { "language": "ro", "text": "Da, contractul este semnat. Să îl încarc în portalul online sau să îl trimit prin poștă?" },
+            { "language": "sq", "text": "Po, kontrata është e nënshkruar. A duhet ta ngarkoj në portalin online apo ta dërgoj me postë?" }
+          ],
+          "function": "ask-document-channel",
+          "toneNote": "Asks concrete submission channel.",
+          "expectedLearnerAction": "Ask which document channel is required."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "jobcenter-staff",
+          "baseText": "Bitte laden Sie den Vertrag im Online-Portal hoch. Die erste Gehaltsabrechnung reichen Sie später nach.",
+          "translations": [
+            { "language": "en", "text": "Please upload the contract in the online portal. You submit the first payslip later." },
+            { "language": "fa", "text": "لطفاً قرارداد را در پورتال آنلاین بارگذاری کنید. اولین فیش حقوقی را بعداً ارائه می‌کنید." },
+            { "language": "ar", "text": "يرجى رفع العقد في البوابة الإلكترونية. تقدم قسيمة الراتب الأولى لاحقًا." },
+            { "language": "tr", "text": "Lütfen sözleşmeyi çevrimiçi portala yükleyin. İlk maaş bordrosunu daha sonra sunarsınız." },
+            { "language": "ru", "text": "Пожалуйста, загрузите договор в онлайн-портал. Первую расчетную ведомость вы подадите позже." },
+            { "language": "ckb", "text": "تکایە گرێبەستەکە لە پۆرتاڵی ئۆنلاین بار بکەن. یەکەم پسوڵەی مووچە دواتر پێشکەش دەکەن." },
+            { "language": "kmr", "text": "Ji kerema xwe peymanê li portała serhêl bar bikin. Belgeya mûçeya yekem paşê radest dikin." },
+            { "language": "pl", "text": "Proszę przesłać umowę w portalu internetowym. Pierwszy pasek wynagrodzenia dosyła pan później." },
+            { "language": "ro", "text": "Vă rog să încărcați contractul în portalul online. Primul fluturaș de salariu îl trimiteți mai târziu." },
+            { "language": "sq", "text": "Ju lutem ngarkojeni kontratën në portalin online. Listën e parë të pagës e dorëzoni më vonë." }
+          ],
+          "function": "give-document-instruction",
+          "toneNote": "Names two required documents.",
+          "expectedLearnerAction": "Clarify whether the phone call is enough."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Verstehe. Muss ich die Änderung zusätzlich im Portal eintragen, oder reicht dieser Anruf?",
+          "translations": [
+            { "language": "en", "text": "I understand. Do I also have to enter the change in the portal, or is this phone call enough?" },
+            { "language": "fa", "text": "متوجه شدم. آیا باید تغییر را علاوه بر این در پورتال هم ثبت کنم، یا همین تماس کافی است؟" },
+            { "language": "ar", "text": "فهمت. هل يجب أن أسجل التغيير أيضًا في البوابة، أم تكفي هذه المكالمة؟" },
+            { "language": "tr", "text": "Anladım. Değişikliği ayrıca portala girmem gerekiyor mu, yoksa bu telefon yeterli mi?" },
+            { "language": "ru", "text": "Понимаю. Нужно ли мне дополнительно внести изменение в портал или этого звонка достаточно?" },
+            { "language": "ckb", "text": "تێگەیشتم. ئایا پێویستە گۆڕانکارییەکە زیادە لە پۆرتاڵدا تۆمار بکەم، یان ئەم پەیوەندییە بەسە؟" },
+            { "language": "kmr", "text": "Ez têgihîştim. Divê ez guhertinê zêdetir li portalê tomar bikim, an ev telefon bes e?" },
+            { "language": "pl", "text": "Rozumiem. Czy muszę dodatkowo wpisać zmianę w portalu, czy ten telefon wystarczy?" },
+            { "language": "ro", "text": "Înțeleg. Trebuie să introduc schimbarea și în portal sau este suficient acest telefon?" },
+            { "language": "sq", "text": "E kuptoj. A duhet ta regjistroj ndryshimin edhe në portal, apo mjafton kjo telefonatë?" }
+          ],
+          "function": "ask-formal-reporting-step",
+          "toneNote": "Checks whether formal portal entry is needed.",
+          "expectedLearnerAction": "Ask if additional written entry is required."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "jobcenter-staff",
+          "baseText": "Bitte tragen Sie die Änderung heute im Portal ein und laden Sie den Vertrag direkt dazu hoch.",
+          "translations": [
+            { "language": "en", "text": "Please enter the change in the portal today and upload the contract directly with it." },
+            { "language": "fa", "text": "لطفاً امروز تغییر را در پورتال ثبت کنید و قرارداد را مستقیم همراه آن بارگذاری کنید." },
+            { "language": "ar", "text": "يرجى تسجيل التغيير اليوم في البوابة ورفع العقد معه مباشرة." },
+            { "language": "tr", "text": "Lütfen değişikliği bugün portala girin ve sözleşmeyi doğrudan bununla birlikte yükleyin." },
+            { "language": "ru", "text": "Пожалуйста, внесите изменение в портал сегодня и сразу загрузите к нему договор." },
+            { "language": "ckb", "text": "تکایە ئەمڕۆ گۆڕانکارییەکە لە پۆرتاڵدا تۆمار بکەن و گرێبەستەکە ڕاستەوخۆ لەگەڵیدا بار بکەن." },
+            { "language": "kmr", "text": "Ji kerema xwe îro guhertinê li portalê tomar bikin û peymanê rasterast pê re bar bikin." },
+            { "language": "pl", "text": "Proszę dziś wpisać zmianę w portalu i od razu dołączyć umowę." },
+            { "language": "ro", "text": "Vă rog să introduceți schimbarea astăzi în portal și să încărcați contractul direct acolo." },
+            { "language": "sq", "text": "Ju lutem regjistrojeni ndryshimin sot në portal dhe ngarkojeni kontratën direkt aty." }
+          ],
+          "function": "give-formal-reporting-step",
+          "toneNote": "Gives exact next step.",
+          "expectedLearnerAction": "Summarize change report and later payslip."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich trage die Änderung heute im Portal ein, lade den Arbeitsvertrag hoch und reiche die erste Gehaltsabrechnung später nach.",
+          "translations": [
+            { "language": "en", "text": "Thank you. I will enter the change in the portal today, upload the employment contract, and submit the first payslip later." },
+            { "language": "fa", "text": "ممنون. امروز تغییر را در پورتال ثبت می‌کنم، قرارداد کار را بارگذاری می‌کنم و اولین فیش حقوقی را بعداً ارائه می‌دهم." },
+            { "language": "ar", "text": "شكرًا. سأدخل التغيير اليوم في البوابة، وأرفع عقد العمل، وأقدم قسيمة الراتب الأولى لاحقًا." },
+            { "language": "tr", "text": "Teşekkür ederim. Değişikliği bugün portala gireceğim, iş sözleşmesini yükleyeceğim ve ilk maaş bordrosunu daha sonra sunacağım." },
+            { "language": "ru", "text": "Спасибо. Сегодня я внесу изменение в портал, загружу трудовой договор и позже подам первую расчетную ведомость." },
+            { "language": "ckb", "text": "سوپاس. ئەمڕۆ گۆڕانکارییەکە لە پۆرتاڵدا تۆمار دەکەم، گرێبەستی کار بار دەکەم و یەکەم پسوڵەی مووچە دواتر پێشکەش دەکەم." },
+            { "language": "kmr", "text": "Spas. Ez îro guhertinê li portalê tomar dikim, peymana karê bar dikim û belgeya mûçeya yekem paşê radest dikim." },
+            { "language": "pl", "text": "Dziękuję. Dziś wpiszę zmianę w portalu, prześlę umowę o pracę i później dosyłam pierwszy pasek wynagrodzenia." },
+            { "language": "ro", "text": "Mulțumesc. Introduc astăzi schimbarea în portal, încarc contractul de muncă și trimit mai târziu primul fluturaș de salariu." },
+            { "language": "sq", "text": "Faleminderit. Sot do ta regjistroj ndryshimin në portal, do ta ngarkoj kontratën e punës dhe më vonë do të dorëzoj listën e parë të pagës." }
+          ],
+          "function": "summarize-reporting-step",
+          "toneNote": "Complete final confirmation.",
+          "expectedLearnerAction": "Confirm portal entry, contract, and payslip follow-up."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Ich möchte eine Änderung melden: Ich beginne am 1. Juli eine Teilzeitstelle mit 20 Stunden pro Woche.",
+              "translations": [
+                { "language": "en", "text": "Good day. I would like to report a change: On July 1, I will start a part-time job with 20 hours per week." },
+                { "language": "fa", "text": "روز بخیر. می‌خواهم یک تغییر را گزارش کنم: از ۱ ژوئیه یک کار پاره‌وقت با ۲۰ ساعت در هفته شروع می‌کنم." },
+                { "language": "ar", "text": "نهارك سعيد. أود الإبلاغ عن تغيير: أبدأ في 1 يوليو وظيفة بدوام جزئي بواقع 20 ساعة في الأسبوع." },
+                { "language": "tr", "text": "İyi günler. Bir değişiklik bildirmek istiyorum: 1 Temmuz'da haftada 20 saatlik yarı zamanlı bir işe başlıyorum." },
+                { "language": "ru", "text": "Добрый день. Я хотел бы сообщить об изменении: 1 июля я начинаю работу на неполный день, 20 часов в неделю." },
+                { "language": "ckb", "text": "ڕۆژباش. دەمەوێت گۆڕانکارییەک ڕابگەیەنم: لە ١ی تەممووز کاری نیوەکات بە ٢٠ کاتژمێر لە هەفتەدا دەست پێدەکەم." },
+                { "language": "kmr", "text": "Roj baş. Ez dixwazim guhertinekê ragihînim: Di 1ê tîrmehê de ez karekî nîv-dem bi 20 saetan di hefteyê de dest pê dikim." },
+                { "language": "pl", "text": "Dzień dobry. Chciałbym zgłosić zmianę: 1 lipca zaczynam pracę na część etatu, 20 godzin tygodniowo." },
+                { "language": "ro", "text": "Bună ziua. Aș dori să anunț o schimbare: pe 1 iulie încep un loc de muncă cu jumătate de normă, 20 de ore pe săptămână." },
+                { "language": "sq", "text": "Mirëdita. Dua të njoftoj një ndryshim: më 1 korrik filloj një punë me orar të pjesshëm, 20 orë në javë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Änderung wird mit Datum, Art der Arbeit und Stunden klar gemeldet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The change is reported clearly with date, type of work, and hours." },
+                { "language": "fa", "text": "خوب است: تغییر با تاریخ، نوع کار و تعداد ساعت‌ها روشن گزارش می‌شود." },
+                { "language": "ar", "text": "جيد: يتم الإبلاغ عن التغيير بوضوح مع التاريخ ونوع العمل وعدد الساعات." },
+                { "language": "tr", "text": "İyi: Değişiklik tarih, iş türü ve saatlerle açıkça bildiriliyor." },
+                { "language": "ru", "text": "Хорошо: изменение ясно сообщается с датой, видом работы и часами." },
+                { "language": "ckb", "text": "باشە: گۆڕانکارییەکە لەگەڵ بەروار، جۆری کار و کاتژمێرەکان بە ڕوونی ڕادەگەیەنرێت." },
+                { "language": "kmr", "text": "Baş e: Guhertin bi dîrok, cureyê kar û saetan bi zelalî tê ragihandin." },
+                { "language": "pl", "text": "Dobrze: zmiana jest jasno zgłoszona z datą, rodzajem pracy i liczbą godzin." },
+                { "language": "ro", "text": "Bine: schimbarea este anunțată clar cu data, tipul muncii și numărul de ore." },
+                { "language": "sq", "text": "Mirë: ndryshimi njoftohet qartë me datën, llojin e punës dhe orët." }
+              ],
+              "explanationKey": "report-change-clearly"
+            },
+            {
+              "id": "too-general",
+              "text": "Guten Tag. Ich habe bald einen Job.",
+              "translations": [
+                { "language": "en", "text": "Good day. I will soon have a job." },
+                { "language": "fa", "text": "روز بخیر. به‌زودی یک کار دارم." },
+                { "language": "ar", "text": "نهارك سعيد. سيكون لدي عمل قريبًا." },
+                { "language": "tr", "text": "İyi günler. Yakında bir işim olacak." },
+                { "language": "ru", "text": "Добрый день. У меня скоро будет работа." },
+                { "language": "ckb", "text": "ڕۆژباش. بەم زووانە کارێکم دەبێت." },
+                { "language": "kmr", "text": "Roj baş. Zû karekî min dê hebe." },
+                { "language": "pl", "text": "Dzień dobry. Wkrótce będę miał pracę." },
+                { "language": "ro", "text": "Bună ziua. În curând voi avea un loc de muncă." },
+                { "language": "sq", "text": "Mirëdita. Së shpejti do të kem një punë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist relevant, aber zu allgemein: Beginn, Stunden und Art der Stelle fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is relevant, but too general: start date, hours, and type of position are missing." },
+                { "language": "fa", "text": "مرتبط است، اما خیلی کلی است: تاریخ شروع، ساعت‌ها و نوع کار کم است." },
+                { "language": "ar", "text": "هذا مرتبط، لكنه عام جدًا: تاريخ البداية وعدد الساعات ونوع الوظيفة ناقصة." },
+                { "language": "tr", "text": "Bu ilgili, ama çok genel: başlangıç tarihi, saatler ve iş türü eksik." },
+                { "language": "ru", "text": "Это уместно, но слишком общее: не хватает даты начала, часов и вида работы." },
+                { "language": "ckb", "text": "ئەمە پەیوەندیدارە، بەڵام زۆر گشتییە: بەرواری دەستپێک، کاتژمێر و جۆری کار کەمە." },
+                { "language": "kmr", "text": "Ev têkildar e, lê pir giştî ye: dîroka destpêkê, saet û cureyê kar kêm in." },
+                { "language": "pl", "text": "To jest istotne, ale zbyt ogólne: brakuje daty rozpoczęcia, godzin i rodzaju stanowiska." },
+                { "language": "ro", "text": "Este relevant, dar prea general: lipsesc data începerii, orele și tipul postului." },
+                { "language": "sq", "text": "Është e rëndësishme, por shumë e përgjithshme: mungojnë data e fillimit, orët dhe lloji i vendit të punës." }
+              ],
+              "explanationKey": "too-general"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Ja, der Vertrag ist unterschrieben. Soll ich ihn im Online-Portal hochladen oder per Post schicken?",
+              "translations": [
+                { "language": "en", "text": "Yes, the contract is signed. Should I upload it in the online portal or send it by post?" },
+                { "language": "fa", "text": "بله، قرارداد امضا شده است. باید آن را در پورتال آنلاین بارگذاری کنم یا با پست بفرستم؟" },
+                { "language": "ar", "text": "نعم، العقد موقع. هل يجب أن أرفعه في البوابة الإلكترونية أم أرسله بالبريد؟" },
+                { "language": "tr", "text": "Evet, sözleşme imzalı. Bunu çevrimiçi portala mı yüklemeliyim yoksa posta ile mi göndermeliyim?" },
+                { "language": "ru", "text": "Да, договор подписан. Мне загрузить его в онлайн-портал или отправить по почте?" },
+                { "language": "ckb", "text": "بەڵێ، گرێبەستەکە واژۆکراوە. پێویستە لە پۆرتاڵی ئۆنلاین بار بکەم یان بە پۆست بنێرم؟" },
+                { "language": "kmr", "text": "Erê, peyman îmzekirî ye. Divê ez wê li portała serhêl bar bikim an bi posteyê bişînim?" },
+                { "language": "pl", "text": "Tak, umowa jest podpisana. Czy mam ją przesłać w portalu internetowym, czy wysłać pocztą?" },
+                { "language": "ro", "text": "Da, contractul este semnat. Să îl încarc pe pagina electronică sau să îl trimit prin poștă?" },
+                { "language": "sq", "text": "Po, kontrata është e nënshkruar. A duhet ta ngarkoj në faqen elektronike apo ta dërgoj me postë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bestätigt den Vertrag und fragt nach dem richtigen Abgabeweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer confirms the contract and asks for the correct submission channel." },
+                { "language": "fa", "text": "خوب است: پاسخ قرارداد را تأیید می‌کند و راه درست تحویل را می‌پرسد." },
+                { "language": "ar", "text": "جيد: الجواب يؤكد العقد ويسأل عن طريقة التسليم الصحيحة." },
+                { "language": "tr", "text": "İyi: Cevap sözleşmeyi onaylıyor ve doğru teslim yolunu soruyor." },
+                { "language": "ru", "text": "Хорошо: ответ подтверждает договор и спрашивает правильный способ подачи." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە گرێبەست پشتڕاست دەکاتەوە و ڕێگای دروستی پێشکەشکردن دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Bersiv peymanê piştrast dike û rêya rast a radestkirinê dipirse." },
+                { "language": "pl", "text": "Dobrze: odpowiedź potwierdza umowę i pyta o właściwy sposób złożenia." },
+                { "language": "ro", "text": "Bine: răspunsul confirmă contractul și întreabă despre calea corectă de depunere." },
+                { "language": "sq", "text": "Mirë: përgjigjja konfirmon kontratën dhe pyet për mënyrën e duhur të dorëzimit." }
+              ],
+              "explanationKey": "ask-document-channel"
+            },
+            {
+              "id": "not-enough",
+              "text": "Ja, der Vertrag ist unterschrieben.",
+              "translations": [
+                { "language": "en", "text": "Yes, the contract is signed." },
+                { "language": "fa", "text": "بله، قرارداد امضا شده است." },
+                { "language": "ar", "text": "نعم، العقد موقع." },
+                { "language": "tr", "text": "Evet, sözleşme imzalı." },
+                { "language": "ru", "text": "Да, договор подписан." },
+                { "language": "ckb", "text": "بەڵێ، گرێبەستەکە واژۆکراوە." },
+                { "language": "kmr", "text": "Erê, peyman îmzekirî ye." },
+                { "language": "pl", "text": "Tak, umowa jest podpisana." },
+                { "language": "ro", "text": "Da, contractul este semnat." },
+                { "language": "sq", "text": "Po, kontrata është e nënshkruar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das beantwortet nur die Frage, klärt aber nicht, wie der Vertrag eingereicht werden soll.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This only answers the question, but does not clarify how the contract should be submitted." },
+                { "language": "fa", "text": "این فقط به سؤال پاسخ می‌دهد، اما روشن نمی‌کند قرارداد چطور باید ارائه شود." },
+                { "language": "ar", "text": "هذا يجيب عن السؤال فقط، لكنه لا يوضح كيف يجب تقديم العقد." },
+                { "language": "tr", "text": "Bu yalnızca soruyu yanıtlıyor, ama sözleşmenin nasıl sunulacağını netleştirmiyor." },
+                { "language": "ru", "text": "Это только отвечает на вопрос, но не уточняет, как нужно подать договор." },
+                { "language": "ckb", "text": "ئەمە تەنها وەڵامی پرسیارەکە دەدات، بەڵام ڕوون ناکاتەوە گرێبەستەکە چۆن پێشکەش بکرێت." },
+                { "language": "kmr", "text": "Ev tenê bersiva pirsê dide, lê zelal nake ka peyman çawa divê were radestkirin." },
+                { "language": "pl", "text": "To tylko odpowiada na pytanie, ale nie wyjaśnia, jak należy złożyć umowę." },
+                { "language": "ro", "text": "Asta răspunde doar la întrebare, dar nu clarifică cum trebuie depus contractul." },
+                { "language": "sq", "text": "Kjo vetëm i përgjigjet pyetjes, por nuk sqaron si duhet dorëzuar kontrata." }
+              ],
+              "explanationKey": "not-enough"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Ich trage die Änderung heute im Portal ein, lade den Arbeitsvertrag hoch und reiche die erste Gehaltsabrechnung später nach.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I will enter the change in the portal today, upload the employment contract, and submit the first payslip later." },
+                { "language": "fa", "text": "ممنون. امروز تغییر را در پورتال ثبت می‌کنم، قرارداد کار را بارگذاری می‌کنم و اولین فیش حقوقی را بعداً ارائه می‌دهم." },
+                { "language": "ar", "text": "شكرًا. سأدخل التغيير اليوم في البوابة، وأرفع عقد العمل، وأقدم قسيمة الراتب الأولى لاحقًا." },
+                { "language": "tr", "text": "Teşekkür ederim. Değişikliği bugün portala gireceğim, iş sözleşmesini yükleyeceğim ve ilk maaş bordrosunu daha sonra sunacağım." },
+                { "language": "ru", "text": "Спасибо. Сегодня я внесу изменение в портал, загружу трудовой договор и позже подам первую расчетную ведомость." },
+                { "language": "ckb", "text": "سوپاس. ئەمڕۆ گۆڕانکارییەکە لە پۆرتاڵدا تۆمار دەکەم، گرێبەستی کار بار دەکەم و یەکەم پسوڵەی مووچە دواتر پێشکەش دەکەم." },
+                { "language": "kmr", "text": "Spas. Ez îro guhertinê li rûpela serhêl tomar dikim, peymana karê bar dikim û belgeya mûçeya yekem paşê radest dikim." },
+                { "language": "pl", "text": "Dziękuję. Dziś wpiszę zmianę w portalu, prześlę umowę o pracę i później dosyłam pierwszy pasek wynagrodzenia." },
+                { "language": "ro", "text": "Mulțumesc. Introduc astăzi schimbarea pe pagina electronică, încarc contractul de muncă și trimit mai târziu primul fluturaș de salariu." },
+                { "language": "sq", "text": "Faleminderit. Sot do ta regjistroj ndryshimin në faqen elektronike, do ta ngarkoj kontratën e punës dhe më vonë do të dorëzoj listën e parë të pagës." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fasst alle nächsten Schritte mit Reihenfolge zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer summarizes all next steps in order." },
+                { "language": "fa", "text": "خوب است: پاسخ همه قدم‌های بعدی را به ترتیب جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "جيد: الجواب يلخص كل الخطوات التالية بالترتيب." },
+                { "language": "tr", "text": "İyi: Cevap tüm sonraki adımları sırayla özetliyor." },
+                { "language": "ru", "text": "Хорошо: ответ по порядку подытоживает все следующие шаги." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەموو هەنگاوەکانی دواتر بە ڕیزبەندی کۆدەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv hemû gavên din bi rêzê kom dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podsumowuje wszystkie następne kroki w kolejności." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă toți pașii următori în ordine." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh të gjithë hapat e radhës me rend." }
+              ],
+              "explanationKey": "complete-next-steps"
+            },
+            {
+              "id": "too-short",
+              "text": "Danke, ich mache das heute.",
+              "translations": [
+                { "language": "en", "text": "Thank you, I will do that today." },
+                { "language": "fa", "text": "ممنون، امروز این کار را انجام می‌دهم." },
+                { "language": "ar", "text": "شكرًا، سأفعل ذلك اليوم." },
+                { "language": "tr", "text": "Teşekkür ederim, bunu bugün yapacağım." },
+                { "language": "ru", "text": "Спасибо, я сделаю это сегодня." },
+                { "language": "ckb", "text": "سوپاس، ئەمڕۆ ئەمە دەکەم." },
+                { "language": "kmr", "text": "Spas, ez ê îro vê bikim." },
+                { "language": "pl", "text": "Dziękuję, zrobię to dzisiaj." },
+                { "language": "ro", "text": "Mulțumesc, fac asta astăzi." },
+                { "language": "sq", "text": "Faleminderit, do ta bëj këtë sot." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu unklar: Änderung, Vertrag und spätere Gehaltsabrechnung fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly, but too unclear: the change, contract, and later payslip are missing." },
+                { "language": "fa", "text": "دوستانه است، اما خیلی نامشخص است: تغییر، قرارداد و فیش حقوقی بعدی کم است." },
+                { "language": "ar", "text": "هذا ودود، لكنه غير واضح كفاية: التغيير والعقد وقسيمة الراتب اللاحقة ناقصة." },
+                { "language": "tr", "text": "Bu nazik, ama çok belirsiz: değişiklik, sözleşme ve sonraki maaş bordrosu eksik." },
+                { "language": "ru", "text": "Это дружелюбно, но слишком неясно: не хватает изменения, договора и последующей расчетной ведомости." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر ناڕوونە: گۆڕانکاری، گرێبەست و پسوڵەی مووچەی دواتر کەمە." },
+                { "language": "kmr", "text": "Ev dostane ye, lê pir nezelal e: guhertin, peyman û belgeya mûçeya paşê kêm in." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt niejasne: brakuje zmiany, umowy i późniejszego paska wynagrodzenia." },
+                { "language": "ro", "text": "Este prietenos, dar prea neclar: lipsesc schimbarea, contractul și fluturașul de salariu ulterior." },
+                { "language": "sq", "text": "Është miqësore, por shumë e paqartë: mungojnë ndryshimi, kontrata dhe lista e pagës më vonë." }
+              ],
+              "explanationKey": "too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Beim Jobcenter sollte eine Änderung konkret gemeldet werden: Was ändert sich, ab wann, mit welchem Nachweis und welcher spätere Beleg folgt?",
+          "translations": [
+            { "language": "en", "text": "At the Jobcenter, a change should be reported concretely: what changes, from when, with which proof, and which later proof will follow?" },
+            { "language": "fa", "text": "در Jobcenter باید تغییر را مشخص گزارش کرد: چه چیزی تغییر می‌کند، از چه زمانی، با چه مدرکی و کدام مدرک بعداً ارائه می‌شود؟" },
+            { "language": "ar", "text": "في مركز العمل يجب الإبلاغ عن التغيير بشكل محدد: ما الذي يتغير، ومن متى، وبأي إثبات، وأي إثبات لاحق سيتبع؟" },
+            { "language": "tr", "text": "Jobcenter'da bir değişiklik somut biçimde bildirilmelidir: ne değişiyor, ne zamandan itibaren, hangi kanıtla ve hangi sonraki belge gelecek?" },
+            { "language": "ru", "text": "В Jobcenter изменение нужно сообщать конкретно: что меняется, с какого времени, с каким подтверждением и какой документ последует позже?" },
+            { "language": "ckb", "text": "لە Jobcenter پێویستە گۆڕانکاری بە دیاریکراوی ڕابگەیەنرێت: چی دەگۆڕێت، لە کەیەوە، بە کام بەڵگە و کام بەڵگەی دواتر دێت؟" },
+            { "language": "kmr", "text": "Li Jobcenter divê guhertin bi awayekî diyar were ragihandin: çi diguhere, ji kengî ve, bi kîjan belgeyê û kîjan belgeya paşê tê?" },
+            { "language": "pl", "text": "W Jobcenter zmianę trzeba zgłosić konkretnie: co się zmienia, od kiedy, z jakim dowodem i jaki późniejszy dokument będzie dosłany?" },
+            { "language": "ro", "text": "La Jobcenter o schimbare trebuie anunțată concret: ce se schimbă, de când, cu ce dovadă și ce document ulterior urmează?" },
+            { "language": "sq", "text": "Te Jobcenter ndryshimi duhet njoftuar konkretisht: çfarë ndryshon, nga kur, me cilën dëshmi dhe cili dokument vjen më vonë?" }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

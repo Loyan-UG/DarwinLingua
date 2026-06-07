@@ -1,0 +1,683 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-24-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 24 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 24",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-bei-der-krankenkasse-einen-fall-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Bei der Krankenkasse einen Fall klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying a case with the health insurance fund" },
+        { "language": "fa", "text": "روشن کردن یک پرونده با بیمه درمانی" },
+        { "language": "ar", "text": "توضيح حالة مع شركة التأمين الصحي" },
+        { "language": "tr", "text": "Sağlık sigortasıyla bir dosyayı açıklığa kavuşturmak" },
+        { "language": "ru", "text": "Прояснить случай с медицинской страховой кассой" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی کەیسێک لەگەڵ بیمەی تەندروستی" },
+        { "language": "kmr", "text": "Dozekê bi sîgorta tenduristiyê re zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnienie sprawy z kasą chorych" },
+        { "language": "ro", "text": "Clarificarea unui caz cu casa de asigurări de sănătate" },
+        { "language": "sq", "text": "Sqarimi i një rasti me sigurimin shëndetësor" }
+      ],
+      "description": "Du telefonierst mit deiner Krankenkasse, weil eine Krankengeld-Prüfung stockt. Ein Brief nennt fehlende Angaben, aber du weißt nicht, ob die elektronische Arbeitsunfähigkeitsmeldung oder die Arbeitgeberbescheinigung gemeint ist. Du sollst die Daten ruhig vergleichen, die fehlende Angabe präzise klären und um eine schriftliche Bestätigung des nächsten Schritts bitten.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are calling your health insurance fund because a sick pay review is stalled. A letter mentions missing information, but you do not know whether it refers to the electronic sick note or the employer certificate. You should calmly compare the dates, clarify the missing item precisely, and ask for written confirmation of the next step." },
+        { "language": "fa", "text": "با بیمه درمانی خود تماس می‌گیری، چون بررسی Krankengeld متوقف شده است. در یک نامه از اطلاعات ناقص صحبت شده، اما نمی‌دانی منظور گواهی الکترونیکی ناتوانی از کار است یا گواهی کارفرما. باید تاریخ‌ها را آرام مقایسه کنی، مورد ناقص را دقیق روشن کنی و تأیید کتبی قدم بعدی را بخواهی." },
+        { "language": "ar", "text": "تتصل بشركة التأمين الصحي لأن فحص بدل المرض متوقف. يذكر خطاب وجود معلومات ناقصة، لكنك لا تعرف هل المقصود بلاغ عدم القدرة على العمل الإلكتروني أم شهادة صاحب العمل. عليك أن تقارن التواريخ بهدوء، وتوضح العنصر الناقص بدقة، وتطلب تأكيداً خطياً للخطوة التالية." },
+        { "language": "tr", "text": "Hastalık parası incelemesi durduğu için sağlık sigortanı arıyorsun. Bir mektup eksik bilgilerden söz ediyor, ama elektronik iş göremezlik bildiriminin mi yoksa işveren belgesinin mi kastedildiğini bilmiyorsun. Tarihleri sakin biçimde karşılaştırmalı, eksik bilgiyi kesin olarak netleştirmeli ve sonraki adımın yazılı onayını istemelisin." },
+        { "language": "ru", "text": "Вы звоните в свою медицинскую страховую кассу, потому что проверка выплаты по болезни застопорилась. В письме указаны недостающие данные, но вы не знаете, имеется ли в виду электронное сообщение о нетрудоспособности или справка работодателя. Нужно спокойно сопоставить даты, точно уточнить недостающий пункт и попросить письменное подтверждение следующего шага." },
+        { "language": "ckb", "text": "تەلەفۆن بۆ بیمەی تەندروستی خۆت دەکەیت، چونکە پشکنینی پارەی نەخۆشی ڕاوەستاوە. نامەیەک زانیاریی کەم باس دەکات، بەڵام نازانیت مەبەست ڕاپۆرتی ئەلیکترۆنی ناتوانینی کارکردنە یان پشتڕاستکردنەوەی خاوەنکار. دەبێت بە ئارامی بەروارەکان بەراورد بکەیت، خاڵی کەم بە وردی ڕوون بکەیتەوە و داوای پشتڕاستکردنەوەی نووسراوی هەنگاوی داهاتوو بکەیت." },
+        { "language": "kmr", "text": "Tu telefonî sîgorta xwe ya tenduristiyê dikî, ji ber ku kontrola pereyê nexweşiyê sekinî ye. Nameyek agahiyên kêm dibêje, lê tu nizane gelo mebest agahdariya elektronîk a nekarîna xebatê ye an belgeya kardêr e. Divê tu rojan bi aramî bidî ber hev, xala kêm bi zelalî diyar bikî û daxwaza piştrastkirina nivîskî ya gava paşîn bike." },
+        { "language": "pl", "text": "Dzwonisz do swojej kasy chorych, ponieważ kontrola zasiłku chorobowego utknęła. Pismo wskazuje brakujące informacje, ale nie wiesz, czy chodzi o elektroniczne zwolnienie lekarskie, czy zaświadczenie pracodawcy. Masz spokojnie porównać daty, precyzyjnie wyjaśnić brakujący punkt i poprosić o pisemne potwierdzenie następnego kroku." },
+        { "language": "ro", "text": "Suni la casa ta de asigurări de sănătate deoarece verificarea indemnizației de boală este blocată. O scrisoare menționează informații lipsă, dar nu știi dacă este vorba despre notificarea electronică de incapacitate de muncă sau despre adeverința angajatorului. Trebuie să compari calm datele, să clarifici exact informația lipsă și să ceri confirmarea scrisă a pasului următor." },
+        { "language": "sq", "text": "Telefonon sigurimin tënd shëndetësor sepse kontrolli për pagesën gjatë sëmundjes ka ngecur. Një letër përmend të dhëna që mungojnë, por nuk e di nëse bëhet fjalë për njoftimin elektronik të paaftësisë për punë apo për vërtetimin e punëdhënësit. Duhet të krahasosh qetë datat, të sqarosh saktë çfarë mungon dhe të kërkosh konfirmim me shkrim për hapin tjetër." }
+      ],
+      "learnerGoal": "Kläre einen Versicherungsfall: Nenne Versicherungsnummer und Briefdatum, vergleiche die vorhandenen Meldungen, frage nach der konkret fehlenden Angabe, bitte um Frist und Versandweg, und fasse den nächsten Schritt schriftlich nachvollziehbar zusammen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify an insurance case: give the insurance number and letter date, compare the available submissions, ask for the exact missing information, request a deadline and submission method, and summarize the next step clearly in writing." },
+        { "language": "fa", "text": "یک پرونده بیمه را روشن کن: شماره بیمه و تاریخ نامه را بگو، گزارش‌های موجود را مقایسه کن، درباره مورد دقیق ناقص بپرس، مهلت و راه ارسال را درخواست کن و قدم بعدی را به‌صورت قابل پیگیری جمع‌بندی کن." },
+        { "language": "ar", "text": "وضح حالة تأمين: اذكر رقم التأمين وتاريخ الخطاب، وقارن البلاغات الموجودة، واسأل عن المعلومة الناقصة تحديداً، واطلب مهلة وطريقة إرسال، ثم لخّص الخطوة التالية بشكل قابل للتتبع." },
+        { "language": "tr", "text": "Bir sigorta dosyasını netleştir: sigorta numarasını ve mektup tarihini belirt, mevcut bildirimleri karşılaştır, tam olarak eksik bilgiyi sor, süre ve gönderim yolu iste ve sonraki adımı yazılı olarak izlenebilir biçimde özetle." },
+        { "language": "ru", "text": "Проясните страховой случай: назовите номер страховки и дату письма, сопоставьте имеющиеся сообщения, спросите о конкретно недостающих данных, попросите срок и способ отправки и письменно понятно подытожьте следующий шаг." },
+        { "language": "ckb", "text": "کەیسی بیمە ڕوون بکەوە: ژمارەی بیمە و بەرواری نامەکە ناو ببە، ڕاپۆرتە هەبووەکان بەراورد بکە، لە زانیاریی کەمەی دیاریکراو بپرسە، داوای مۆڵەت و ڕێگای ناردن بکە و هەنگاوی داهاتوو بە شێوەیەکی نووسراوی شوێنپێهەڵگیر کورت بکەوە." },
+        { "language": "kmr", "text": "Doza sîgorteyê zelal bike: hejmarê sîgorteyê û roja nameyê bi nav bike, agahdariyên heyî bidî ber hev, li ser agahiya bi taybetî kêm bipirse, dem û rêya şandinê bixwaze û gava paşîn bi nivîskî bi awayekî şopbar kurt bike." },
+        { "language": "pl", "text": "Wyjaśnij sprawę ubezpieczeniową: podaj numer ubezpieczenia i datę pisma, porównaj dostępne zgłoszenia, zapytaj o konkretnie brakującą informację, poproś o termin i sposób przesłania oraz zrozumiale podsumuj następny krok na piśmie." },
+        { "language": "ro", "text": "Clarifică un caz de asigurare: menționează numărul de asigurare și data scrisorii, compară notificările existente, întreabă ce informație lipsește exact, cere un termen și o modalitate de trimitere și rezumă în scris următorul pas în mod ușor de urmărit." },
+        { "language": "sq", "text": "Sqaro një rast sigurimi: përmend numrin e sigurimit dhe datën e letrës, krahaso njoftimet ekzistuese, pyet saktësisht çfarë të dhëne mungon, kërko afat dhe mënyrë dërgimi dhe përmblidh me shkrim hapin tjetër në mënyrë të gjurmueshme." }
+      ],
+      "cefrLevel": "B2",
+      "category": "public-services",
+      "topics": ["public-services", "appointments-and-health"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "phone-call"],
+      "taskType": "explain-problem",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 3240,
+      "roles": [
+        {
+          "roleKey": "insurance-staff",
+          "displayName": "Krankenkassen-Mitarbeiterin",
+          "translations": [
+            { "language": "en", "text": "Health insurance staff member" },
+            { "language": "fa", "text": "کارمند بیمه درمانی" },
+            { "language": "ar", "text": "موظفة التأمين الصحي" },
+            { "language": "tr", "text": "Sağlık sigortası görevlisi" },
+            { "language": "ru", "text": "Сотрудница медицинской страховой кассы" },
+            { "language": "ckb", "text": "کارمەندی بیمەی تەندروستی" },
+            { "language": "kmr", "text": "Karmenda sîgorta tenduristiyê" },
+            { "language": "pl", "text": "Pracowniczka kasy chorych" },
+            { "language": "ro", "text": "Angajata casei de asigurări" },
+            { "language": "sq", "text": "Punonjësja e sigurimit shëndetësor" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Versicherter",
+          "translations": [
+            { "language": "en", "text": "Insured person" },
+            { "language": "fa", "text": "شخص بیمه‌شده" },
+            { "language": "ar", "text": "الشخص المؤمَّن" },
+            { "language": "tr", "text": "Sigortalı kişi" },
+            { "language": "ru", "text": "Застрахованное лицо" },
+            { "language": "ckb", "text": "کەسی بیمەکراو" },
+            { "language": "kmr", "text": "Kesê sîgortekirî" },
+            { "language": "pl", "text": "Osoba ubezpieczona" },
+            { "language": "ro", "text": "Persoana asigurată" },
+            { "language": "sq", "text": "Personi i siguruar" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "insurance-staff",
+          "baseText": "Guten Tag, Krankenkasse Nord, Sie sprechen mit Frau Seidel. Worum geht es in Ihrem Anliegen?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon, North Health Insurance Fund, you are speaking with Ms. Seidel. What is your request about?" },
+            { "language": "fa", "text": "روز بخیر، بیمه درمانی شمال، با خانم زایدل صحبت می‌کنید. موضوع درخواست شما چیست؟" },
+            { "language": "ar", "text": "نهارك سعيد، شركة التأمين الصحي الشمالية، معك السيدة زايدل. ما موضوع طلبك؟" },
+            { "language": "tr", "text": "İyi günler, Kuzey Sağlık Sigortası, ben Seidel. Talebiniz neyle ilgili?" },
+            { "language": "ru", "text": "Добрый день, Северная медицинская страховая касса, с вами госпожа Зайдель. По какому вопросу вы обращаетесь?" },
+            { "language": "ckb", "text": "ڕۆژ باش، بیمەی تەندروستی باکوور، لەگەڵ خانمی زایدل قسە دەکەیت. داواکارییەکەت لەسەر چییە؟" },
+            { "language": "kmr", "text": "Roj baş, Sîgorta Tenduristiyê ya Bakur, hûn bi Xatûn Seidel re diaxivin. Mijara daxwaza we çi ye?" },
+            { "language": "pl", "text": "Dzień dobry, Kasa Chorych Północ, mówi pani Seidel. Czego dotyczy Pana sprawa?" },
+            { "language": "ro", "text": "Bună ziua, Casa de Asigurări de Sănătate Nord, vorbiți cu doamna Seidel. Despre ce este solicitarea dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita, Sigurimi Shëndetësor Veri, po flisni me zonjën Seidel. Për çfarë bëhet fjalë kërkesa juaj?" }
+          ],
+          "function": "open-phone-call"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Mein Name ist Farid Azimi, meine Versicherungsnummer ist K-7392. Ich habe einen Brief vom 11. Juli bekommen. Darin steht, dass für die Krankengeld-Prüfung noch Angaben fehlen. Ich möchte klären, welche Angabe genau gemeint ist.",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. My name is Farid Azimi, my insurance number is K-7392. I received a letter dated July 11. It says that information is still missing for the sick pay review. I would like to clarify exactly which information is meant." },
+            { "language": "fa", "text": "روز بخیر. نام من فرید عظیمی است، شماره بیمه‌ام K-7392 است. نامه‌ای به تاریخ ۱۱ ژوئیه دریافت کرده‌ام. در آن نوشته شده برای بررسی Krankengeld هنوز اطلاعاتی کم است. می‌خواهم روشن کنم دقیقاً کدام اطلاعات منظور است." },
+            { "language": "ar", "text": "نهارك سعيد. اسمي فريد عظيمي، ورقم تأميني هو K-7392. تلقيت خطاباً بتاريخ 11 يوليو. ورد فيه أن هناك معلومات ما زالت ناقصة لفحص بدل المرض. أود أن أوضح أي معلومة مقصودة بالضبط." },
+            { "language": "tr", "text": "İyi günler. Adım Farid Azimi, sigorta numaram K-7392. 11 Temmuz tarihli bir mektup aldım. Mektupta hastalık parası incelemesi için hâlâ bazı bilgilerin eksik olduğu yazıyor. Tam olarak hangi bilginin kastedildiğini açıklığa kavuşturmak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Меня зовут Фарид Азими, мой страховой номер K-7392. Я получил письмо от 11 июля. В нём сказано, что для проверки выплаты по болезни ещё не хватает данных. Я хотел бы уточнить, какие именно данные имеются в виду." },
+            { "language": "ckb", "text": "ڕۆژ باش. ناوم فەرید عەزیمییە، ژمارەی بیمەم K-7392 ـە. نامەیەکم بە بەرواری ١١ی تەممووز وەرگرتووە. تێیدا نووسراوە کە بۆ پشکنینی پارەی نەخۆشی هێشتا زانیاری کەمە. دەمەوێت ڕوون بکەمەوە بە وردی کام زانیاری مەبەستە." },
+            { "language": "kmr", "text": "Roj baş. Navê min Farid Azimi ye, hejmarê sîgorta min K-7392 e. Min nameyek bi roja 11ê Tîrmehê wergirt. Tê de hatiye nivîsandin ku ji bo kontrola pereyê nexweşiyê hîn agahî kêm in. Ez dixwazim zelal bikim ka bi rastî kîjan agahî tê gotin." },
+            { "language": "pl", "text": "Dzień dobry. Nazywam się Farid Azimi, mój numer ubezpieczenia to K-7392. Otrzymałem pismo z 11 lipca. Jest w nim napisane, że do kontroli zasiłku chorobowego nadal brakuje informacji. Chciałbym wyjaśnić, o którą informację dokładnie chodzi." },
+            { "language": "ro", "text": "Bună ziua. Mă numesc Farid Azimi, numărul meu de asigurare este K-7392. Am primit o scrisoare din 11 iulie. În ea scrie că pentru verificarea indemnizației de boală încă lipsesc informații. Aș dori să clarific exact ce informație este vizată." },
+            { "language": "sq", "text": "Mirëdita. Quhem Farid Azimi, numri im i sigurimit është K-7392. Kam marrë një letër të datës 11 korrik. Aty thuhet se për kontrollin e pagesës gjatë sëmundjes mungojnë ende të dhëna. Dua të sqaroj saktësisht cilat të dhëna kërkohen." }
+          ],
+          "function": "state-case-reference",
+          "expectedLearnerAction": "Nenne Namen, Versicherungsnummer, Briefdatum und die präzise Klärungsfrage."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "insurance-staff",
+          "baseText": "Ich prüfe den Vorgang. Einen Moment bitte. Im System sehe ich eine elektronische Arbeitsunfähigkeitsmeldung ab dem 3. Juli. Es gibt aber auch einen offenen Punkt zur Arbeitgeberbescheinigung.",
+          "translations": [
+            { "language": "en", "text": "I am checking the case. One moment, please. In the system I can see an electronic sick note from July 3. But there is also an open point concerning the employer certificate." },
+            { "language": "fa", "text": "پرونده را بررسی می‌کنم. یک لحظه لطفاً. در سیستم یک گزارش الکترونیکی ناتوانی از کار از ۳ ژوئیه می‌بینم. اما یک مورد باز درباره گواهی کارفرما هم وجود دارد." },
+            { "language": "ar", "text": "أراجع الحالة. لحظة من فضلك. أرى في النظام بلاغ عدم قدرة على العمل إلكترونياً من 3 يوليو. لكن هناك أيضاً نقطة مفتوحة بخصوص شهادة صاحب العمل." },
+            { "language": "tr", "text": "Dosyayı kontrol ediyorum. Bir dakika lütfen. Sistemde 3 Temmuz'dan itibaren elektronik iş göremezlik bildirimi görüyorum. Ancak işveren belgesiyle ilgili açık bir nokta da var." },
+            { "language": "ru", "text": "Я проверяю случай. Одну минуту, пожалуйста. В системе я вижу электронное сообщение о нетрудоспособности с 3 июля. Но есть также открытый пункт по справке работодателя." },
+            { "language": "ckb", "text": "کەیسەکە دەپشکنم. تکایە ساتێک. لە سیستەمدا ڕاپۆرتی ئەلیکترۆنی ناتوانینی کارکردن لە ٣ی تەممووزەوە دەبینم. بەڵام خاڵێکی کراوەش سەبارەت بە پشتڕاستکردنەوەی خاوەنکار هەیە." },
+            { "language": "kmr", "text": "Ez dozê kontrol dikim. Ji kerema xwe kêliyek. Di pergalê de ez agahdariya elektronîk a nekarîna xebatê ji 3ê Tîrmehê dibînim. Lê xalek vekirî jî derbarê belgeya kardêr heye." },
+            { "language": "pl", "text": "Sprawdzam sprawę. Chwileczkę, proszę. W systemie widzę elektroniczne zwolnienie lekarskie od 3 lipca. Jest jednak także otwarty punkt dotyczący zaświadczenia pracodawcy." },
+            { "language": "ro", "text": "Verific dosarul. Un moment, vă rog. În sistem văd o notificare electronică de incapacitate de muncă începând cu 3 iulie. Dar există și un punct deschis privind adeverința angajatorului." },
+            { "language": "sq", "text": "Po e kontrolloj rastin. Një moment, ju lutem. Në sistem shoh një njoftim elektronik për paaftësi pune nga 3 korriku. Por ka edhe një pikë të hapur për vërtetimin e punëdhënësit." }
+          ],
+          "function": "identify-possible-missing-item"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Danke. Dann möchte ich gern unterscheiden: Die Arbeitsunfähigkeitsmeldung ist also angekommen. Geht es bei der fehlenden Angabe nur um die Arbeitgeberbescheinigung, oder fehlt zusätzlich noch etwas von meiner Arztpraxis?",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I would like to distinguish between the two: the sick note has arrived, correct? Is the missing information only about the employer certificate, or is something additional still missing from my doctor's office?" },
+            { "language": "fa", "text": "ممنون. پس می‌خواهم این دو مورد را جدا کنم: یعنی گزارش ناتوانی از کار رسیده است. آیا اطلاعات ناقص فقط مربوط به گواهی کارفرماست، یا از مطب پزشک هم چیز دیگری کم است؟" },
+            { "language": "ar", "text": "شكراً. إذن أود أن أميّز بين الأمرين: بلاغ عدم القدرة على العمل وصل إذن. هل المعلومة الناقصة تتعلق فقط بشهادة صاحب العمل، أم أن شيئاً إضافياً من عيادة الطبيب ما زال ناقصاً؟" },
+            { "language": "tr", "text": "Teşekkür ederim. O zaman iki konuyu ayırmak isterim: iş göremezlik bildirimi gelmiş, doğru mu? Eksik bilgi sadece işveren belgesiyle mi ilgili, yoksa doktor muayenehanemden ayrıca bir şey daha mı eksik?" },
+            { "language": "ru", "text": "Спасибо. Тогда я хотел бы это разделить: сообщение о нетрудоспособности, значит, поступило. Недостающие данные относятся только к справке работодателя или дополнительно ещё чего-то не хватает от моей врачебной практики?" },
+            { "language": "ckb", "text": "سوپاس. کەواتە دەمەوێت ئەم دوو شتە جیا بکەمەوە: ڕاپۆرتی ناتوانینی کارکردن گەیشتووە. ئایا زانیاریی کەم تەنها پەیوەندی بە پشتڕاستکردنەوەی خاوەنکارەوە هەیە، یان شتێکی تریش لە لای پزیشکەکەم کەمە؟" },
+            { "language": "kmr", "text": "Spas. Wê demê ez dixwazim her du tiştan ji hev cuda bikim: agahdariya nekarîna xebatê gihîştiye. Ma agahiya kêm tenê derbarê belgeya kardêr e, an tiştekî din jî ji pratîka bijîşkê min kêm e?" },
+            { "language": "pl", "text": "Dziękuję. Chciałbym więc rozróżnić te dwie sprawy: zwolnienie lekarskie dotarło, tak? Czy brakująca informacja dotyczy tylko zaświadczenia pracodawcy, czy dodatkowo brakuje jeszcze czegoś z mojego gabinetu lekarskiego?" },
+            { "language": "ro", "text": "Mulțumesc. Atunci aș dori să separ cele două lucruri: notificarea de incapacitate de muncă a ajuns, deci. Informația lipsă se referă doar la adeverința angajatorului sau mai lipsește ceva și de la cabinetul meu medical?" },
+            { "language": "sq", "text": "Faleminderit. Atëherë dua t’i dalloj këto dy gjëra: njoftimi për paaftësi pune paska mbërritur. A lidhet e dhëna që mungon vetëm me vërtetimin e punëdhënësit, apo mungon edhe diçka tjetër nga ordinanca e mjekut tim?" }
+          ],
+          "function": "separate-possible-causes",
+          "expectedLearnerAction": "Trenne die ärztliche Meldung von der Arbeitgeberbescheinigung und frage nach der konkret fehlenden Quelle."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "insurance-staff",
+          "baseText": "Von der Arztpraxis fehlt nichts. Bei der Arbeitgeberbescheinigung fehlt das Feld zum letzten bezahlten Arbeitstag. Ohne diese Angabe können wir den Beginn der Zahlung nicht berechnen.",
+          "translations": [
+            { "language": "en", "text": "Nothing is missing from the doctor's office. In the employer certificate, the field for the last paid working day is missing. Without that information we cannot calculate the start of the payment." },
+            { "language": "fa", "text": "از مطب پزشک چیزی کم نیست. در گواهی کارفرما، فیلد مربوط به آخرین روز کاری پرداخت‌شده کم است. بدون این اطلاعات نمی‌توانیم شروع پرداخت را محاسبه کنیم." },
+            { "language": "ar", "text": "لا ينقص شيء من عيادة الطبيب. في شهادة صاحب العمل ينقص الحقل الخاص بآخر يوم عمل مدفوع. من دون هذه المعلومة لا نستطيع حساب بداية الدفع." },
+            { "language": "tr", "text": "Doktor muayenehanesinden hiçbir şey eksik değil. İşveren belgesinde son ücretli çalışma günü alanı eksik. Bu bilgi olmadan ödemenin başlangıcını hesaplayamayız." },
+            { "language": "ru", "text": "От врачебной практики ничего не не хватает. В справке работодателя отсутствует поле о последнем оплачиваемом рабочем дне. Без этих данных мы не можем рассчитать начало выплаты." },
+            { "language": "ckb", "text": "لە لای پزیشکەکە هیچ شتێک کەم نییە. لە پشتڕاستکردنەوەی خاوەنکاردا خانەی دوا ڕۆژی کاری پارەدراو کەمە. بەبێ ئەم زانیارییە ناتوانین دەستپێکی پارەدانەکە حیساب بکەین." },
+            { "language": "kmr", "text": "Ji pratîka bijîşk tiştek kêm nîne. Di belgeya kardêr de xala roja xebatê ya dawî ya pere dayî kêm e. Bê vê agahiyê em nikarin destpêka dayînê hesab bikin." },
+            { "language": "pl", "text": "Z gabinetu lekarskiego niczego nie brakuje. W zaświadczeniu pracodawcy brakuje pola dotyczącego ostatniego opłaconego dnia pracy. Bez tej informacji nie możemy obliczyć początku wypłaty." },
+            { "language": "ro", "text": "De la cabinetul medical nu lipsește nimic. În adeverința angajatorului lipsește câmpul privind ultima zi de lucru plătită. Fără această informație nu putem calcula începutul plății." },
+            { "language": "sq", "text": "Nga ordinanca e mjekut nuk mungon asgjë. Te vërtetimi i punëdhënësit mungon fusha për ditën e fundit të punës të paguar. Pa këtë të dhënë nuk mund ta llogarisim fillimin e pagesës." }
+          ],
+          "function": "explain-missing-field"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das hilft mir sehr. Ich kann die Personalabteilung heute noch bitten, die Arbeitgeberbescheinigung zu korrigieren. Soll die Korrektur ausschließlich über das Arbeitgeberportal kommen, oder darf ich eine PDF-Kopie zusätzlich hochladen?",
+          "translations": [
+            { "language": "en", "text": "That helps me a lot. I can ask HR today to correct the employer certificate. Should the correction come only through the employer portal, or may I also upload a PDF copy?" },
+            { "language": "fa", "text": "این خیلی کمکم می‌کند. می‌توانم امروز از بخش منابع انسانی بخواهم گواهی کارفرما را اصلاح کند. آیا اصلاح فقط باید از طریق درگاه کارفرما بیاید، یا من هم می‌توانم یک نسخه PDF را اضافه بارگذاری کنم؟" },
+            { "language": "ar", "text": "هذا يساعدني كثيراً. أستطيع اليوم أن أطلب من قسم الموارد البشرية تصحيح شهادة صاحب العمل. هل يجب أن يأتي التصحيح حصراً عبر بوابة صاحب العمل، أم يمكنني أيضاً رفع نسخة PDF إضافية؟" },
+            { "language": "tr", "text": "Bu bana çok yardımcı oluyor. Bugün insan kaynaklarından işveren belgesini düzeltmelerini isteyebilirim. Düzeltme yalnızca işveren portalı üzerinden mi gelmeli, yoksa ben ek olarak bir PDF kopyası yükleyebilir miyim?" },
+            { "language": "ru", "text": "Это мне очень помогает. Я могу сегодня попросить отдел кадров исправить справку работодателя. Исправление должно прийти исключительно через портал работодателя или я могу дополнительно загрузить PDF-копию?" },
+            { "language": "ckb", "text": "ئەمە زۆر یارمەتیم دەدات. دەتوانم ئەمڕۆ داوا لە بەشی کارگێڕی کارمەندان بکەم پشتڕاستکردنەوەی خاوەنکار ڕاست بکەنەوە. ئایا ڕاستکردنەوەکە تەنها دەبێت لە ڕێگەی پۆرتاڵی خاوەنکارەوە بێت، یان دەتوانم کۆپییەکی PDF ـیش زیادە بار بکەم؟" },
+            { "language": "kmr", "text": "Ev gelek alîkariya min dike. Ez dikarim îro ji beşa karmendan bixwazim belgeya kardêr rast bikin. Ma rastkirin divê tenê bi rêya portala kardêr were, an ez dikarim kopiyeke PDF jî zêde bar bikim?" },
+            { "language": "pl", "text": "To bardzo mi pomaga. Mogę jeszcze dziś poprosić dział kadr o poprawienie zaświadczenia pracodawcy. Czy korekta musi przyjść wyłącznie przez portal pracodawcy, czy mogę dodatkowo wgrać kopię PDF?" },
+            { "language": "ro", "text": "Acest lucru mă ajută mult. Pot cere astăzi departamentului de resurse umane să corecteze adeverința angajatorului. Corectarea trebuie să vină exclusiv prin portalul angajatorului sau pot încărca și eu suplimentar o copie PDF?" },
+            { "language": "sq", "text": "Kjo më ndihmon shumë. Sot mund t’i kërkoj burimeve njerëzore ta korrigjojnë vërtetimin e punëdhënësit. A duhet korrigjimi të vijë vetëm përmes portalit të punëdhënësit, apo mund të ngarkoj edhe unë një kopje PDF shtesë?" }
+          ],
+          "function": "ask-submission-route",
+          "expectedLearnerAction": "Nenne die konkrete Korrektur und frage nach dem richtigen Übermittlungsweg."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "insurance-staff",
+          "baseText": "Am besten kommt die Korrektur über das Arbeitgeberportal. Eine PDF-Kopie von Ihnen kann als Hinweis helfen, ersetzt aber die offizielle Meldung nicht. Wir brauchen die Korrektur bis Freitagmittag.",
+          "translations": [
+            { "language": "en", "text": "It is best if the correction comes through the employer portal. A PDF copy from you can help as a reference, but it does not replace the official submission. We need the correction by Friday noon." },
+            { "language": "fa", "text": "بهتر است اصلاح از طریق درگاه کارفرما بیاید. یک نسخه PDF از طرف شما می‌تواند به عنوان نشانه کمک کند، اما جایگزین گزارش رسمی نمی‌شود. ما اصلاح را تا ظهر جمعه لازم داریم." },
+            { "language": "ar", "text": "الأفضل أن يأتي التصحيح عبر بوابة صاحب العمل. يمكن أن تساعد نسخة PDF منك كمؤشر، لكنها لا تحل محل البلاغ الرسمي. نحتاج إلى التصحيح حتى ظهر الجمعة." },
+            { "language": "tr", "text": "Düzeltmenin işveren portalı üzerinden gelmesi en iyisi. Sizden gelen bir PDF kopyası bilgi olarak yardımcı olabilir, ancak resmi bildirimin yerine geçmez. Düzeltmeye cuma öğlene kadar ihtiyacımız var." },
+            { "language": "ru", "text": "Лучше всего, если исправление придёт через портал работодателя. PDF-копия от вас может помочь как указание, но не заменяет официальное сообщение. Исправление нужно нам до полудня пятницы." },
+            { "language": "ckb", "text": "باشترە ڕاستکردنەوەکە لە ڕێگەی پۆرتاڵی خاوەنکارەوە بێت. کۆپییەکی PDF لە لایەن تۆوە دەتوانێت وەک ئاماژە یارمەتیدەر بێت، بەڵام جێگای ڕاپۆرتی فەرمی ناگرێتەوە. پێویستمان بە ڕاستکردنەوەکە تا نیوەڕۆی هەینی هەیە." },
+            { "language": "kmr", "text": "Herî baş e ku rastkirin bi rêya portala kardêr were. Kopiyeke PDF ji aliyê we ve dikare wekî nîşan alîkar be, lê cihê agahdariya fermî nagire. Em hewceyê rastkirinê heta nîvroya roja Înê ne." },
+            { "language": "pl", "text": "Najlepiej, jeśli korekta przyjdzie przez portal pracodawcy. Kopia PDF od Pana może pomóc jako wskazówka, ale nie zastępuje oficjalnego zgłoszenia. Potrzebujemy korekty do piątku do południa." },
+            { "language": "ro", "text": "Cel mai bine este ca rectificarea să vină prin portalul angajatorului. O copie PDF de la dumneavoastră poate ajuta ca indiciu, dar nu înlocuiește transmiterea oficială. Avem nevoie de corectare până vineri la prânz." },
+            { "language": "sq", "text": "Më mirë është që korrigjimi të vijë përmes portalit të punëdhënësit. Një kopje PDF nga ju mund të ndihmojë si tregues, por nuk e zëvendëson njoftimin zyrtar. Na duhet korrigjimi deri të premten në mesditë." }
+          ],
+          "function": "state-route-and-deadline"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Verstanden. Könnten Sie mir bitte schriftlich bestätigen, dass nur das Feld zum letzten bezahlten Arbeitstag fehlt, dass die Korrektur über das Arbeitgeberportal kommen soll und dass Freitagmittag die Frist ist?",
+          "translations": [
+            { "language": "en", "text": "Understood. Could you please confirm in writing that only the field for the last paid working day is missing, that the correction should come through the employer portal, and that Friday noon is the deadline?" },
+            { "language": "fa", "text": "متوجه شدم. می‌توانید لطفاً کتبی تأیید کنید که فقط فیلد آخرین روز کاری پرداخت‌شده کم است، اصلاح باید از طریق درگاه کارفرما بیاید، و مهلت ظهر جمعه است؟" },
+            { "language": "ar", "text": "فهمت. هل يمكنك تأكيد ذلك خطياً: أن الحقل الخاص بآخر يوم عمل مدفوع فقط هو الناقص، وأن التصحيح يجب أن يأتي عبر بوابة صاحب العمل، وأن المهلة هي ظهر الجمعة؟" },
+            { "language": "tr", "text": "Anladım. Lütfen yazılı olarak şu bilgileri onaylayabilir misiniz: yalnızca son ücretli çalışma günü alanı eksik, düzeltme işveren portalı üzerinden gelmeli ve süre cuma öğlen?" },
+            { "language": "ru", "text": "Понял. Можете, пожалуйста, письменно подтвердить, что не хватает только поля о последнем оплачиваемом рабочем дне, что исправление должно прийти через портал работодателя и что срок — пятница до полудня?" },
+            { "language": "ckb", "text": "تێگەیشتم. دەتوانن تکایە بە نووسراوی پشتڕاست بکەنەوە کە تەنها خانەی دوا ڕۆژی کاری پارەدراو کەمە، ڕاستکردنەوەکە دەبێت لە ڕێگەی پۆرتاڵی خاوەنکارەوە بێت، و مۆڵەتەکە نیوەڕۆی هەینییە؟" },
+            { "language": "kmr", "text": "Min fam kir. Hûn dikarin ji kerema xwe bi nivîskî piştrast bikin ku tenê xala roja xebatê ya dawî ya pere dayî kêm e, rastkirin divê bi rêya portala kardêr were û dem nîvroya roja Înê ye?" },
+            { "language": "pl", "text": "Rozumiem. Czy może Pani potwierdzić pisemnie, że brakuje tylko pola dotyczącego ostatniego opłaconego dnia pracy, że korekta powinna przyjść przez portal pracodawcy i że termin to piątek do południa?" },
+            { "language": "ro", "text": "Am înțeles. Îmi puteți confirma, vă rog, în scris că lipsește doar câmpul privind ultima zi de lucru plătită, că rectificarea trebuie să vină prin portalul angajatorului și că termenul este vineri la prânz?" },
+            { "language": "sq", "text": "E kuptova. A mund të më konfirmoni me shkrim se mungon vetëm fusha për ditën e fundit të punës të paguar, se korrigjimi duhet të vijë përmes portalit të punëdhënësit dhe se afati është e premtja në mesditë?" }
+          ],
+          "function": "request-written-confirmation",
+          "expectedLearnerAction": "Bitte um schriftliche Bestätigung der fehlenden Angabe, des Übermittlungswegs und der Frist."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "insurance-staff",
+          "baseText": "Ja, ich sende Ihnen gleich eine Nachricht in Ihr Online-Postfach. Darin steht auch, dass die ärztliche Meldung vorliegt und von Ihrer Seite keine neue Arbeitsunfähigkeitsbescheinigung nötig ist.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will send you a message to your online mailbox right away. It will also state that the doctor's submission is available and that you do not need to provide a new sick note from your side." },
+            { "language": "fa", "text": "بله، همین حالا یک پیام به صندوق آنلاین شما می‌فرستم. در آن همچنین نوشته می‌شود که گزارش پزشک موجود است و از طرف شما گواهی ناتوانی از کار جدید لازم نیست." },
+            { "language": "ar", "text": "نعم، سأرسل لك فوراً رسالة إلى صندوقك الإلكتروني. وسيُذكر فيها أيضاً أن بلاغ الطبيب موجود وأنه لا يلزمك تقديم شهادة عدم قدرة على العمل جديدة من جانبك." },
+            { "language": "tr", "text": "Evet, size hemen çevrim içi posta kutunuza bir mesaj göndereceğim. Mesajda ayrıca doktor bildiriminin mevcut olduğu ve sizin tarafınızdan yeni bir iş göremezlik belgesi gerekmediği yazacak." },
+            { "language": "ru", "text": "Да, я сразу отправлю вам сообщение в ваш онлайн-почтовый ящик. В нём также будет указано, что врачебное сообщение имеется и что с вашей стороны новая справка о нетрудоспособности не нужна." },
+            { "language": "ckb", "text": "بەڵێ، هەر ئێستا پەیامێک بۆ سندووقی ئۆنلاینەکەت دەنێرم. تێیدا هەروەها دەنووسرێت کە ڕاپۆرتی پزیشک هەیە و لە لایەن تۆوە گواهیی نوێی ناتوانینی کارکردن پێویست نییە." },
+            { "language": "kmr", "text": "Erê, ez niha peyamekê di sindoqa we ya serhêl de ji we re dişînim. Tê de jî tê nivîsandin ku agahdariya bijîşkê heye û ji aliyê we ve belgeyeke nû ya nekarîna xebatê ne pêwîst e." },
+            { "language": "pl", "text": "Tak, od razu wyślę Panu wiadomość do skrzynki online. Będzie tam także zapisane, że zgłoszenie lekarskie jest dostępne i że z Pana strony nie jest potrzebne nowe zwolnienie lekarskie." },
+            { "language": "ro", "text": "Da, vă trimit imediat un mesaj în căsuța dumneavoastră online. În el va scrie și că notificarea medicului există și că din partea dumneavoastră nu este necesar un nou certificat de incapacitate de muncă." },
+            { "language": "sq", "text": "Po, do t’ju dërgoj menjëherë një mesazh në kutinë tuaj online. Aty do të shkruhet gjithashtu se njoftimi i mjekut ekziston dhe se nga ana juaj nuk nevojitet një vërtetim i ri për paaftësi pune." }
+          ],
+          "function": "confirm-written-message"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann fasse ich zusammen: Die ärztliche Meldung liegt vor. Ich bitte heute die Personalabteilung um die Korrektur des letzten bezahlten Arbeitstags über das Arbeitgeberportal. Die Frist ist Freitagmittag, und ich prüfe gleich die schriftliche Nachricht im Online-Postfach.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will summarize: the doctor's submission is available. Today I will ask HR to correct the last paid working day through the employer portal. The deadline is Friday noon, and I will check the written message in the online mailbox right away." },
+            { "language": "fa", "text": "خیلی ممنون. پس جمع‌بندی می‌کنم: گزارش پزشک موجود است. امروز از منابع انسانی می‌خواهم آخرین روز کاری پرداخت‌شده را از طریق درگاه کارفرما اصلاح کند. مهلت ظهر جمعه است و همین حالا پیام کتبی را در صندوق آنلاین بررسی می‌کنم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن ألخص: بلاغ الطبيب موجود. سأطلب اليوم من قسم الموارد البشرية تصحيح آخر يوم عمل مدفوع عبر بوابة صاحب العمل. المهلة هي ظهر الجمعة، وسأفحص فوراً الرسالة الخطية في الصندوق الإلكتروني." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman özetliyorum: doktor bildirimi mevcut. Bugün insan kaynaklarından son ücretli çalışma gününü işveren portalı üzerinden düzeltmesini isteyeceğim. Süre cuma öğlen ve yazılı mesajı hemen çevrim içi posta kutusunda kontrol edeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я подытожу: врачебное сообщение имеется. Сегодня я попрошу отдел кадров исправить последний оплачиваемый рабочий день через портал работодателя. Срок — пятница до полудня, и я сразу проверю письменное сообщение в онлайн-почтовом ящике." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە کورت دەکەمەوە: ڕاپۆرتی پزیشک هەیە. ئەمڕۆ داوا لە بەشی کارگێڕی کارمەندان دەکەم دوا ڕۆژی کاری پارەدراو لە ڕێگەی پۆرتاڵی خاوەنکارەوە ڕاست بکاتەوە. مۆڵەتەکە نیوەڕۆی هەینییە و هەر ئێستا پەیامی نووسراو لە سندووقی ئۆنلاین دەپشکنم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez kurt dikim: agahdariya bijîşkê heye. Îro ez ji beşa karmendan dixwazim roja xebatê ya dawî ya pere dayî bi rêya portala kardêr rast bike. Dem nîvroya roja Înê ye û ez niha peyama nivîskî di sindoqa serhêl de kontrol dikim." },
+            { "language": "pl", "text": "Bardzo dziękuję. Podsumowuję więc: zgłoszenie lekarskie jest dostępne. Dziś poproszę dział kadr o korektę ostatniego opłaconego dnia pracy przez portal pracodawcy. Termin to piątek do południa, a ja od razu sprawdzę pisemną wiadomość w skrzynce online." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci rezum: notificarea medicului există. Astăzi cer departamentului de resurse umane să corecteze ultima zi de lucru plătită prin portalul angajatorului. Termenul este vineri la prânz și verific imediat mesajul scris în căsuța online." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë po përmbledh: njoftimi i mjekut ekziston. Sot do t’i kërkoj burimeve njerëzore të korrigjojnë ditën e fundit të punës të paguar përmes portalit të punëdhënësit. Afati është e premtja në mesditë dhe do ta kontrolloj menjëherë mesazhin me shkrim në kutinë online." }
+          ],
+          "function": "summarize-next-step",
+          "expectedLearnerAction": "Fasse ärztliche Meldung, Arbeitgeberkorrektur, Frist und schriftlichen Prüfpunkt zusammen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Guten Tag. Mein Name ist Farid Azimi, meine Versicherungsnummer ist K-7392. Ich habe einen Brief vom 11. Juli bekommen. Darin steht, dass für die Krankengeld-Prüfung noch Angaben fehlen. Ich möchte klären, welche Angabe genau gemeint ist.",
+              "translations": [
+                { "language": "en", "text": "Good afternoon. My name is Farid Azimi, my insurance number is K-7392. I received a letter dated July 11. It says that information is still missing for the sick pay review. I would like to clarify exactly which information is meant." },
+                { "language": "fa", "text": "روز بخیر. نام من فرید عظیمی است، شماره بیمه‌ام K-7392 است. نامه‌ای به تاریخ ۱۱ ژوئیه دریافت کرده‌ام. در آن نوشته شده برای بررسی Krankengeld هنوز اطلاعاتی کم است. می‌خواهم روشن کنم دقیقاً کدام اطلاعات منظور است." },
+                { "language": "ar", "text": "نهارك سعيد. اسمي فريد عظيمي، ورقم تأميني هو K-7392. تلقيت خطاباً بتاريخ 11 يوليو. ورد فيه أن هناك معلومات ما زالت ناقصة لفحص بدل المرض. أود أن أوضح أي معلومة مقصودة بالضبط." },
+                { "language": "tr", "text": "İyi günler. Adım Farid Azimi, sigorta numaram K-7392. 11 Temmuz tarihli bir mektup aldım. Mektupta hastalık parası incelemesi için hâlâ bazı bilgilerin eksik olduğu yazıyor. Tam olarak hangi bilginin kastedildiğini açıklığa kavuşturmak istiyorum." },
+                { "language": "ru", "text": "Добрый день. Меня зовут Фарид Азими, мой страховой номер K-7392. Я получил письмо от 11 июля. В нём сказано, что для проверки выплаты по болезни ещё не хватает данных. Я хотел бы уточнить, какие именно данные имеются в виду." },
+                { "language": "ckb", "text": "ڕۆژ باش. ناوم فەرید عەزیمییە، ژمارەی بیمەم K-7392 ـە. نامەیەکم بە بەرواری ١١ی تەممووز وەرگرتووە. تێیدا نووسراوە کە بۆ پشکنینی پارەی نەخۆشی هێشتا زانیاری کەمە. دەمەوێت ڕوون بکەمەوە بە وردی کام زانیاری مەبەستە." },
+                { "language": "kmr", "text": "Roj baş. Navê min Farid Azimi ye, hejmarê sîgorta min K-7392 e. Min nameyek bi roja 11ê Tîrmehê wergirt. Tê de hatiye nivîsandin ku ji bo kontrola pereyê nexweşiyê hîn agahî kêm in. Ez dixwazim zelal bikim ka bi rastî kîjan agahî tê gotin." },
+                { "language": "pl", "text": "Dzień dobry. Nazywam się Farid Azimi, mój numer ubezpieczenia to K-7392. Otrzymałem pismo z 11 lipca. Jest w nim napisane, że do kontroli zasiłku chorobowego nadal brakuje informacji. Chciałbym wyjaśnić, o którą informację dokładnie chodzi." },
+                { "language": "ro", "text": "Bună ziua. Mă numesc Farid Azimi, numărul meu de asigurare este K-7392. Am primit o scrisoare din 11 iulie. În ea scrie că pentru verificarea indemnizației de boală încă lipsesc informații. Aș dori să clarific exact ce informație este vizată." },
+                { "language": "sq", "text": "Mirëdita. Quhem Farid Azimi, numri im i sigurimit është K-7392. Kam marrë një letër të datës 11 korrik. Aty thuhet se për kontrollin e pagesës gjatë sëmundjes mungojnë ende të dhëna. Dua të sqaroj saktësisht cilat të dhëna kërkohen." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt Versicherungsnummer, Briefdatum und eine präzise Klärungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer gives the insurance number, letter date, and a precise clarification question." },
+                { "language": "fa", "text": "خوب است: پاسخ شماره بیمه، تاریخ نامه و سؤال دقیق برای روشن‌سازی را بیان می‌کند." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة رقم التأمين وتاريخ الخطاب وسؤال توضيح دقيق." },
+                { "language": "tr", "text": "İyi: Yanıt sigorta numarasını, mektup tarihini ve net bir açıklama sorusunu verir." },
+                { "language": "ru", "text": "Хорошо: ответ называет номер страховки, дату письма и точный уточняющий вопрос." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە ژمارەی بیمە، بەرواری نامە و پرسیارێکی ورد بۆ ڕوونکردنەوە دەڵێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv hejmarê sîgorteyê, roja nameyê û pirseke zelal a ronîkirinê diyar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podaje numer ubezpieczenia, datę pisma i precyzyjne pytanie wyjaśniające." },
+                { "language": "ro", "text": "Bine: răspunsul menționează numărul de asigurare, data scrisorii și o întrebare precisă de clarificare." },
+                { "language": "sq", "text": "Mirë: përgjigjja jep numrin e sigurimit, datën e letrës dhe një pyetje të saktë sqaruese." }
+              ]
+            },
+            {
+              "id": "weak-too-vague",
+              "text": "Ich habe einen Brief bekommen und verstehe nicht, was fehlt. Können Sie mir das erklären?",
+              "translations": [
+                { "language": "en", "text": "I received a letter and do not understand what is missing. Can you explain it to me?" },
+                { "language": "fa", "text": "یک نامه دریافت کرده‌ام و نمی‌فهمم چه چیزی کم است. می‌توانید برایم توضیح بدهید؟" },
+                { "language": "ar", "text": "تلقيت خطاباً ولا أفهم ما الذي ينقص. هل يمكنك أن تشرحي ذلك لي؟" },
+                { "language": "tr", "text": "Bir mektup aldım ve neyin eksik olduğunu anlamıyorum. Bunu bana açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Я получил письмо и не понимаю, чего не хватает. Можете мне это объяснить?" },
+                { "language": "ckb", "text": "نامەیەکم وەرگرتووە و تێناگەم چی کەمە. دەتوانن بۆم ڕوون بکەنەوە؟" },
+                { "language": "kmr", "text": "Min nameyek wergirt û ez fam nakim çi kêm e. Hûn dikarin ji min re rave bikin?" },
+                { "language": "pl", "text": "Otrzymałem pismo i nie rozumiem, czego brakuje. Czy może mi to Pani wyjaśnić?" },
+                { "language": "ro", "text": "Am primit o scrisoare și nu înțeleg ce lipsește. Îmi puteți explica?" },
+                { "language": "sq", "text": "Kam marrë një letër dhe nuk e kuptoj çfarë mungon. A mund të ma shpjegoni?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Ohne Versicherungsnummer und Briefdatum muss die Mitarbeiterin erst nach dem Fall suchen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: Without the insurance number and letter date, the staff member first has to search for the case." },
+                { "language": "fa", "text": "خیلی کلی است: بدون شماره بیمه و تاریخ نامه، کارمند اول باید پرونده را پیدا کند." },
+                { "language": "ar", "text": "عام جداً: من دون رقم التأمين وتاريخ الخطاب يجب على الموظفة أولاً البحث عن الحالة." },
+                { "language": "tr", "text": "Çok genel: Sigorta numarası ve mektup tarihi olmadan görevli önce dosyayı aramak zorunda kalır." },
+                { "language": "ru", "text": "Слишком общо: без номера страховки и даты письма сотруднице сначала придётся искать случай." },
+                { "language": "ckb", "text": "زۆر گشتییە: بەبێ ژمارەی بیمە و بەرواری نامە، کارمەندەکە سەرەتا دەبێت کەیسەکە بدۆزێتەوە." },
+                { "language": "kmr", "text": "Pir gelemperî ye: Bê hejmarê sîgorteyê û roja nameyê, karmend pêşî divê dozê bigere." },
+                { "language": "pl", "text": "Zbyt ogólnie: bez numeru ubezpieczenia i daty pisma pracowniczka musi najpierw szukać sprawy." },
+                { "language": "ro", "text": "Prea general: fără numărul de asigurare și data scrisorii, angajata trebuie mai întâi să caute cazul." },
+                { "language": "sq", "text": "Shumë e përgjithshme: pa numrin e sigurimit dhe datën e letrës, punonjësja duhet së pari të kërkojë rastin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Danke. Dann möchte ich gern unterscheiden: Die Arbeitsunfähigkeitsmeldung ist also angekommen. Geht es bei der fehlenden Angabe nur um die Arbeitgeberbescheinigung, oder fehlt zusätzlich noch etwas von meiner Arztpraxis?",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I would like to distinguish between the two: the sick note has arrived, correct? Is the missing information only about the employer certificate, or is something additional still missing from my doctor's office?" },
+                { "language": "fa", "text": "ممنون. پس می‌خواهم این دو مورد را جدا کنم: یعنی گزارش ناتوانی از کار رسیده است. آیا اطلاعات ناقص فقط مربوط به گواهی کارفرماست، یا از مطب پزشک هم چیز دیگری کم است؟" },
+                { "language": "ar", "text": "شكراً. إذن أود أن أميّز بين الأمرين: بلاغ عدم القدرة على العمل وصل إذن. هل المعلومة الناقصة تتعلق فقط بشهادة صاحب العمل، أم أن شيئاً إضافياً من عيادة الطبيب ما زال ناقصاً؟" },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman iki konuyu ayırmak isterim: iş göremezlik bildirimi gelmiş, doğru mu? Eksik bilgi sadece işveren belgesiyle mi ilgili, yoksa doktor muayenehanemden ayrıca bir şey daha mı eksik?" },
+                { "language": "ru", "text": "Спасибо. Тогда я хотел бы это разделить: сообщение о нетрудоспособности, значит, поступило. Недостающие данные относятся только к справке работодателя или дополнительно ещё чего-то не хватает от моей врачебной практики?" },
+                { "language": "ckb", "text": "سوپاس. کەواتە دەمەوێت ئەم دوو شتە جیا بکەمەوە: ڕاپۆرتی ناتوانینی کارکردن گەیشتووە. ئایا زانیاریی کەم تەنها پەیوەندی بە پشتڕاستکردنەوەی خاوەنکارەوە هەیە، یان شتێکی تریش لە لای پزیشکەکەم کەمە؟" },
+                { "language": "kmr", "text": "Spas. Wê demê ez dixwazim her du tiştan ji hev cuda bikim: agahdariya nekarîna xebatê gihîştiye. Ma agahiya kêm tenê derbarê belgeya kardêr e, an tiştekî din jî ji pratîka bijîşkê min kêm e?" },
+                { "language": "pl", "text": "Dziękuję. Chciałbym więc rozróżnić te dwie sprawy: zwolnienie lekarskie dotarło, tak? Czy brakująca informacja dotyczy tylko zaświadczenia pracodawcy, czy dodatkowo brakuje jeszcze czegoś z mojego gabinetu lekarskiego?" },
+                { "language": "ro", "text": "Mulțumesc. Atunci aș dori să separ cele două lucruri: notificarea de incapacitate de muncă a ajuns, deci. Informația lipsă se referă doar la adeverința angajatorului sau mai lipsește ceva și de la cabinetul meu medical?" },
+                { "language": "sq", "text": "Faleminderit. Atëherë dua t’i dalloj këto dy gjëra: njoftimi për paaftësi pune paska mbërritur. A lidhet e dhëna që mungon vetëm me vërtetimin e punëdhënësit, apo mungon edhe diçka tjetër nga ordinanca e mjekut tim?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort trennt zwei mögliche Ursachen und fragt nach der konkreten Quelle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer separates two possible causes and asks for the concrete source." },
+                { "language": "fa", "text": "خوب است: پاسخ دو علت احتمالی را جدا می‌کند و درباره منبع دقیق می‌پرسد." },
+                { "language": "ar", "text": "جيد: تفصل الإجابة بين سببين محتملين وتسأل عن المصدر المحدد." },
+                { "language": "tr", "text": "İyi: Yanıt iki olası nedeni ayırır ve somut kaynağı sorar." },
+                { "language": "ru", "text": "Хорошо: ответ разделяет две возможные причины и спрашивает о конкретном источнике." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە دوو هۆکاری ئەگەری جیا دەکاتەوە و لەسەر سەرچاوەی دیاریکراو دەپرسێت." },
+                { "language": "kmr", "text": "Baş e: Bersiv du sedemên gengaz ji hev cuda dike û li ser çavkaniya zehf diyar dipirse." },
+                { "language": "pl", "text": "Dobrze: odpowiedź oddziela dwie możliwe przyczyny i pyta o konkretne źródło." },
+                { "language": "ro", "text": "Bine: răspunsul separă două cauze posibile și întreabă despre sursa concretă." },
+                { "language": "sq", "text": "Mirë: përgjigjja ndan dy shkaqe të mundshme dhe pyet për burimin konkret." }
+              ]
+            },
+            {
+              "id": "weak-assumes-too-much",
+              "text": "Dann rufe ich einfach meine Arztpraxis an und lasse alles noch einmal schicken.",
+              "translations": [
+                { "language": "en", "text": "Then I will simply call my doctor's office and have everything sent again." },
+                { "language": "fa", "text": "پس فقط با مطب پزشکم تماس می‌گیرم و می‌گذارم همه چیز را دوباره بفرستند." },
+                { "language": "ar", "text": "إذن سأتصل ببساطة بعيادة الطبيب وأطلب إرسال كل شيء مرة أخرى." },
+                { "language": "tr", "text": "O zaman doktor muayenehanemi arayıp her şeyi tekrar göndertirim." },
+                { "language": "ru", "text": "Тогда я просто позвоню в врачебную практику и попрошу отправить всё ещё раз." },
+                { "language": "ckb", "text": "کەواتە تەنها تەلەفۆن بۆ لای پزیشکەکەم دەکەم و هەموو شتێک جارێکی تر دەنێرن." },
+                { "language": "kmr", "text": "Wê demê ez tenê telefonî pratîka bijîşkê xwe dikim û dibêjim her tiştî careke din bişînin." },
+                { "language": "pl", "text": "W takim razie po prostu zadzwonię do gabinetu lekarskiego i poproszę o ponowne wysłanie wszystkiego." },
+                { "language": "ro", "text": "Atunci sun pur și simplu la cabinetul medical și cer să trimită totul încă o dată." },
+                { "language": "sq", "text": "Atëherë thjesht telefonoj ordinancën e mjekut dhe u kërkoj t’i dërgojnë të gjitha edhe një herë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber voreilig: Erst muss geklärt werden, ob wirklich die Arztpraxis betroffen ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but premature: First it must be clarified whether the doctor's office is really involved." },
+                { "language": "fa", "text": "قابل‌باور است، اما عجولانه است: اول باید روشن شود آیا واقعاً مطب پزشک درگیر است یا نه." },
+                { "language": "ar", "text": "معقول، لكنه متسرع: يجب أولاً توضيح ما إذا كانت عيادة الطبيب معنية فعلاً." },
+                { "language": "tr", "text": "Makul ama aceleci: Önce gerçekten doktor muayenehanesinin ilgili olup olmadığı netleştirilmeli." },
+                { "language": "ru", "text": "Правдоподобно, но преждевременно: сначала нужно выяснить, действительно ли касается врачебной практики." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام پێشوەختە: سەرەتا دەبێت ڕوون بکرێتەوە ئایا بە ڕاستی لای پزیشکەکە پەیوەندیدارە یان نا." },
+                { "language": "kmr", "text": "Maqûl e, lê zû ye: Pêşî divê zelal bibe ka pratîka bijîşkê bi rastî têkildar e an na." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest przedwczesne: najpierw trzeba wyjaśnić, czy gabinet lekarski rzeczywiście jest właściwym źródłem." },
+                { "language": "ro", "text": "Plauzibil, dar prematur: mai întâi trebuie clarificat dacă este cu adevărat implicat cabinetul medical." },
+                { "language": "sq", "text": "E besueshme, por e nxituar: së pari duhet sqaruar nëse ordinanca e mjekut është vërtet e përfshirë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Das hilft mir sehr. Ich kann die Personalabteilung heute noch bitten, die Arbeitgeberbescheinigung zu korrigieren. Soll die Korrektur ausschließlich über das Arbeitgeberportal kommen, oder darf ich eine PDF-Kopie zusätzlich hochladen?",
+              "translations": [
+                { "language": "en", "text": "That helps me a lot. I can ask HR today to correct the employer certificate. Should the correction come only through the employer portal, or may I also upload a PDF copy?" },
+                { "language": "fa", "text": "این خیلی کمکم می‌کند. می‌توانم امروز از بخش منابع انسانی بخواهم گواهی کارفرما را اصلاح کند. آیا اصلاح فقط باید از طریق درگاه کارفرما بیاید، یا من هم می‌توانم یک نسخه PDF را اضافه بارگذاری کنم؟" },
+                { "language": "ar", "text": "هذا يساعدني كثيراً. أستطيع اليوم أن أطلب من قسم الموارد البشرية تصحيح شهادة صاحب العمل. هل يجب أن يأتي التصحيح حصراً عبر بوابة صاحب العمل، أم يمكنني أيضاً رفع نسخة PDF إضافية؟" },
+                { "language": "tr", "text": "Bu bana çok yardımcı oluyor. Bugün insan kaynaklarından işveren belgesini düzeltmelerini isteyebilirim. Düzeltme yalnızca işveren portalı üzerinden mi gelmeli, yoksa ben ek olarak bir PDF kopyası yükleyebilir miyim?" },
+                { "language": "ru", "text": "Это мне очень помогает. Я могу сегодня попросить отдел кадров исправить справку работодателя. Исправление должно прийти исключительно через портал работодателя или я могу дополнительно загрузить PDF-копию?" },
+                { "language": "ckb", "text": "ئەمە زۆر یارمەتیم دەدات. دەتوانم ئەمڕۆ داوا لە بەشی کارگێڕی کارمەندان بکەم پشتڕاستکردنەوەی خاوەنکار ڕاست بکەنەوە. ئایا ڕاستکردنەوەکە تەنها دەبێت لە ڕێگەی پۆرتاڵی خاوەنکارەوە بێت، یان دەتوانم کۆپییەکی PDF ـیش زیادە بار بکەم؟" },
+                { "language": "kmr", "text": "Ev gelek alîkariya min dike. Ez dikarim îro ji beşa karmendan bixwazim belgeya kardêr rast bikin. Ma rastkirin divê tenê bi rêya portala kardêr were, an ez dikarim kopiyeke PDF jî zêde bar bikim?" },
+                { "language": "pl", "text": "To bardzo mi pomaga. Mogę jeszcze dziś poprosić dział kadr o poprawienie zaświadczenia pracodawcy. Czy korekta musi przyjść wyłącznie przez portal pracodawcy, czy mogę dodatkowo wgrać kopię PDF?" },
+                { "language": "ro", "text": "Acest lucru mă ajută mult. Pot cere astăzi departamentului de resurse umane să corecteze adeverința angajatorului. Corectarea trebuie să vină exclusiv prin portalul angajatorului sau pot încărca și eu suplimentar o copie PDF?" },
+                { "language": "sq", "text": "Kjo më ndihmon shumë. Sot mund t’i kërkoj burimeve njerëzore ta korrigjojnë vërtetimin e punëdhënësit. A duhet korrigjimi të vijë vetëm përmes portalit të punëdhënësit, apo mund të ngarkoj edhe unë një kopje PDF shtesë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort macht den nächsten Schritt konkret und klärt den offiziellen Übermittlungsweg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer makes the next step concrete and clarifies the official submission method." },
+                { "language": "fa", "text": "خوب است: پاسخ قدم بعدی را مشخص می‌کند و راه رسمی ارسال را روشن می‌کند." },
+                { "language": "ar", "text": "جيد: تجعل الإجابة الخطوة التالية محددة وتوضح طريقة الإرسال الرسمية." },
+                { "language": "tr", "text": "İyi: Yanıt sonraki adımı somutlaştırır ve resmi gönderim yolunu netleştirir." },
+                { "language": "ru", "text": "Хорошо: ответ конкретизирует следующий шаг и уточняет официальный способ передачи." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە هەنگاوی داهاتوو دیاریکراو دەکات و ڕێگای فەرمی ناردن ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv gava paşîn zehf diyar dike û rêya fermî ya şandinê zelal dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź konkretyzuje następny krok i wyjaśnia oficjalny sposób przekazania." },
+                { "language": "ro", "text": "Bine: răspunsul face pasul următor concret și clarifică modalitatea oficială de transmitere." },
+                { "language": "sq", "text": "Mirë: përgjigjja e bën hapin tjetër konkret dhe sqaron mënyrën zyrtare të dërgimit." }
+              ]
+            },
+            {
+              "id": "weak-sends-anything",
+              "text": "Dann schicke ich Ihnen einfach alles, was ich habe, per E-Mail.",
+              "translations": [
+                { "language": "en", "text": "Then I will simply send you everything I have by email." },
+                { "language": "fa", "text": "پس هر چیزی را که دارم ساده با ایمیل برایتان می‌فرستم." },
+                { "language": "ar", "text": "إذن سأرسل لكم ببساطة كل ما لدي عبر البريد الإلكتروني." },
+                { "language": "tr", "text": "O zaman elimde ne varsa size e-posta ile gönderirim." },
+                { "language": "ru", "text": "Тогда я просто отправлю вам по электронной почте всё, что у меня есть." },
+                { "language": "ckb", "text": "کەواتە هەرچی هەمە بە ئیمەیڵ بۆتان دەنێرم." },
+                { "language": "kmr", "text": "Wê demê ez her tiştê ku li cem min heye bi e-nameyê ji we re dişînim." },
+                { "language": "pl", "text": "W takim razie po prostu wyślę Państwu e-mailem wszystko, co mam." },
+                { "language": "ro", "text": "Atunci vă trimit pur și simplu prin e-mail tot ce am." },
+                { "language": "sq", "text": "Atëherë thjesht do t’ju dërgoj me e-mail gjithçka që kam." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungezielt: Bei Versicherungsfällen ist der offizielle Übermittlungsweg entscheidend.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too unfocused: In insurance cases, the official submission method is crucial." },
+                { "language": "fa", "text": "خیلی بی‌هدف است: در پرونده‌های بیمه، راه رسمی ارسال تعیین‌کننده است." },
+                { "language": "ar", "text": "غير محدد بما يكفي: في حالات التأمين تكون طريقة الإرسال الرسمية حاسمة." },
+                { "language": "tr", "text": "Çok hedefsiz: Sigorta dosyalarında resmi gönderim yolu belirleyicidir." },
+                { "language": "ru", "text": "Слишком нецеленаправленно: в страховых случаях официальный способ передачи имеет решающее значение." },
+                { "language": "ckb", "text": "زۆر بێئامانجە: لە کەیسەکانی بیمەدا ڕێگای فەرمی ناردن زۆر گرنگە." },
+                { "language": "kmr", "text": "Pir bêarmanc e: Di dozên sîgorteyê de rêya fermî ya şandinê girîng e." },
+                { "language": "pl", "text": "Za mało ukierunkowane: w sprawach ubezpieczeniowych oficjalny sposób przekazania jest kluczowy." },
+                { "language": "ro", "text": "Prea neclar: în cazurile de asigurare, modalitatea oficială de transmitere este decisivă." },
+                { "language": "sq", "text": "Shumë e paorientuar: në rastet e sigurimit, mënyra zyrtare e dërgimit është vendimtare." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Verstanden. Könnten Sie mir bitte schriftlich bestätigen, dass nur das Feld zum letzten bezahlten Arbeitstag fehlt, dass die Korrektur über das Arbeitgeberportal kommen soll und dass Freitagmittag die Frist ist?",
+              "translations": [
+                { "language": "en", "text": "Understood. Could you please confirm in writing that only the field for the last paid working day is missing, that the correction should come through the employer portal, and that Friday noon is the deadline?" },
+                { "language": "fa", "text": "متوجه شدم. می‌توانید لطفاً کتبی تأیید کنید که فقط فیلد آخرین روز کاری پرداخت‌شده کم است، اصلاح باید از طریق درگاه کارفرما بیاید، و مهلت ظهر جمعه است؟" },
+                { "language": "ar", "text": "فهمت. هل يمكنك تأكيد ذلك خطياً: أن الحقل الخاص بآخر يوم عمل مدفوع فقط هو الناقص، وأن التصحيح يجب أن يأتي عبر بوابة صاحب العمل، وأن المهلة هي ظهر الجمعة؟" },
+                { "language": "tr", "text": "Anladım. Lütfen yazılı olarak şu bilgileri onaylayabilir misiniz: yalnızca son ücretli çalışma günü alanı eksik, düzeltme işveren portalı üzerinden gelmeli ve süre cuma öğlen?" },
+                { "language": "ru", "text": "Понял. Можете, пожалуйста, письменно подтвердить, что не хватает только поля о последнем оплачиваемом рабочем дне, что исправление должно прийти через портал работодателя и что срок — пятница до полудня?" },
+                { "language": "ckb", "text": "تێگەیشتم. دەتوانن تکایە بە نووسراوی پشتڕاست بکەنەوە کە تەنها خانەی دوا ڕۆژی کاری پارەدراو کەمە، ڕاستکردنەوەکە دەبێت لە ڕێگەی پۆرتاڵی خاوەنکارەوە بێت، و مۆڵەتەکە نیوەڕۆی هەینییە؟" },
+                { "language": "kmr", "text": "Min fam kir. Hûn dikarin ji kerema xwe bi nivîskî piştrast bikin ku tenê xala roja xebatê ya dawî ya pere dayî kêm e, rastkirin divê bi rêya portala kardêr were û dem nîvroya roja Înê ye?" },
+                { "language": "pl", "text": "Rozumiem. Czy może Pani potwierdzić pisemnie, że brakuje tylko pola dotyczącego ostatniego opłaconego dnia pracy, że korekta powinna przyjść przez portal pracodawcy i że termin to piątek do południa?" },
+                { "language": "ro", "text": "Am înțeles. Îmi puteți confirma, vă rog, în scris că lipsește doar câmpul privind ultima zi de lucru plătită, că rectificarea trebuie să vină prin portalul angajatorului și că termenul este vineri la prânz?" },
+                { "language": "sq", "text": "E kuptova. A mund të më konfirmoni me shkrim se mungon vetëm fusha për ditën e fundit të punës të paguar, se korrigjimi duhet të vijë përmes portalit të punëdhënësit dhe se afati është e premtja në mesditë?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort sichert fehlende Angabe, Übermittlungsweg und Frist schriftlich ab.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer secures the missing item, submission method, and deadline in writing." },
+                { "language": "fa", "text": "خوب است: پاسخ مورد ناقص، راه ارسال و مهلت را کتبی تثبیت می‌کند." },
+                { "language": "ar", "text": "جيد: تثبت الإجابة العنصر الناقص وطريقة الإرسال والمهلة خطياً." },
+                { "language": "tr", "text": "İyi: Yanıt eksik bilgiyi, gönderim yolunu ve süreyi yazılı olarak güvenceye alır." },
+                { "language": "ru", "text": "Хорошо: ответ письменно закрепляет недостающий пункт, способ передачи и срок." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە خاڵی کەم، ڕێگای ناردن و مۆڵەت بە نووسراوی دڵنیا دەکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv xala kêm, rêya şandinê û demê bi nivîskî misoger dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zabezpiecza pisemnie brakujący punkt, sposób przekazania i termin." },
+                { "language": "ro", "text": "Bine: răspunsul asigură în scris informația lipsă, modalitatea de transmitere și termenul." },
+                { "language": "sq", "text": "Mirë: përgjigjja siguron me shkrim të dhënën që mungon, mënyrën e dërgimit dhe afatin." }
+              ]
+            },
+            {
+              "id": "weak-no-proof",
+              "text": "Gut, dann sage ich meiner Firma Bescheid und hoffe, dass es klappt.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will inform my company and hope that it works." },
+                { "language": "fa", "text": "خوب، پس به شرکت خود اطلاع می‌دهم و امیدوارم درست شود." },
+                { "language": "ar", "text": "حسناً، سأخبر شركتي وآمل أن ينجح الأمر." },
+                { "language": "tr", "text": "Tamam, o zaman şirketime haber veririm ve işe yarayacağını umarım." },
+                { "language": "ru", "text": "Хорошо, тогда я сообщу своей компании и надеюсь, что всё получится." },
+                { "language": "ckb", "text": "باشە، کەواتە بە کۆمپانیاکەم دەڵێم و هیوادارم کار بکات." },
+                { "language": "kmr", "text": "Baş e, wê demê ez agahî didim şirketa xwe û hêvî dikim ku çêbibe." },
+                { "language": "pl", "text": "Dobrze, w takim razie poinformuję firmę i mam nadzieję, że się uda." },
+                { "language": "ro", "text": "Bine, atunci îmi anunț firma și sper că va funcționa." },
+                { "language": "sq", "text": "Mirë, atëherë e njoftoj kompaninë time dhe shpresoj që të funksionojë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unsicher: Die Antwort enthält keinen Nachweis über Frist, Feld und offiziellen Weg.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too uncertain: The answer contains no proof of the deadline, field, or official route." },
+                { "language": "fa", "text": "خیلی نامطمئن است: پاسخ هیچ مدرکی درباره مهلت، فیلد و مسیر رسمی ندارد." },
+                { "language": "ar", "text": "غير مؤكد بما يكفي: لا تحتوي الإجابة على أي إثبات للمهلة أو الحقل أو الطريق الرسمي." },
+                { "language": "tr", "text": "Çok belirsiz: Yanıtta süre, alan ve resmi yol hakkında hiçbir kanıt yok." },
+                { "language": "ru", "text": "Слишком неопределённо: в ответе нет подтверждения срока, поля и официального пути." },
+                { "language": "ckb", "text": "زۆر نادڵنیایە: وەڵامەکە هیچ بەڵگەیەک لەسەر مۆڵەت، خانە و ڕێگای فەرمی نییە." },
+                { "language": "kmr", "text": "Pir nediyar e: Di bersivê de tu delîl li ser dem, xal û rêya fermî tune ye." },
+                { "language": "pl", "text": "Zbyt niepewnie: odpowiedź nie zawiera żadnego dowodu dotyczącego terminu, pola i oficjalnej drogi." },
+                { "language": "ro", "text": "Prea nesigur: răspunsul nu conține nicio dovadă privind termenul, câmpul și calea oficială." },
+                { "language": "sq", "text": "Shumë e pasigurt: përgjigjja nuk përmban asnjë provë për afatin, fushën dhe rrugën zyrtare." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "recommended",
+              "text": "Vielen Dank. Dann fasse ich zusammen: Die ärztliche Meldung liegt vor. Ich bitte heute die Personalabteilung um die Korrektur des letzten bezahlten Arbeitstags über das Arbeitgeberportal. Die Frist ist Freitagmittag, und ich prüfe gleich die schriftliche Nachricht im Online-Postfach.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will summarize: the doctor's submission is available. Today I will ask HR to correct the last paid working day through the employer portal. The deadline is Friday noon, and I will check the written message in the online mailbox right away." },
+                { "language": "fa", "text": "خیلی ممنون. پس جمع‌بندی می‌کنم: گزارش پزشک موجود است. امروز از منابع انسانی می‌خواهم آخرین روز کاری پرداخت‌شده را از طریق درگاه کارفرما اصلاح کند. مهلت ظهر جمعه است و همین حالا پیام کتبی را در صندوق آنلاین بررسی می‌کنم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن ألخص: بلاغ الطبيب موجود. سأطلب اليوم من قسم الموارد البشرية تصحيح آخر يوم عمل مدفوع عبر بوابة صاحب العمل. المهلة هي ظهر الجمعة، وسأفحص فوراً الرسالة الخطية في الصندوق الإلكتروني." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman özetliyorum: doktor bildirimi mevcut. Bugün insan kaynaklarından son ücretli çalışma gününü işveren portalı üzerinden düzeltmesini isteyeceğim. Süre cuma öğlen ve yazılı mesajı hemen çevrim içi posta kutusunda kontrol edeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я подытожу: врачебное сообщение имеется. Сегодня я попрошу отдел кадров исправить последний оплачиваемый рабочий день через портал работодателя. Срок — пятница до полудня, и я сразу проверю письменное сообщение в онлайн-почтовом ящике." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە کورت دەکەمەوە: ڕاپۆرتی پزیشک هەیە. ئەمڕۆ داوا لە بەشی کارگێڕی کارمەندان دەکەم دوا ڕۆژی کاری پارەدراو لە ڕێگەی پۆرتاڵی خاوەنکارەوە ڕاست بکاتەوە. مۆڵەتەکە نیوەڕۆی هەینییە و هەر ئێستا پەیامی نووسراو لە سندووقی ئۆنلاین دەپشکنم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez kurt dikim: agahdariya bijîşkê heye. Îro ez ji beşa karmendan dixwazim roja xebatê ya dawî ya pere dayî bi rêya portala kardêr rast bike. Dem nîvroya roja Înê ye û ez niha peyama nivîskî di sindoqa serhêl de kontrol dikim." },
+                { "language": "pl", "text": "Bardzo dziękuję. Podsumowuję więc: zgłoszenie lekarskie jest dostępne. Dziś poproszę dział kadr o korektę ostatniego opłaconego dnia pracy przez portal pracodawcy. Termin to piątek do południa, a ja od razu sprawdzę pisemną wiadomość w skrzynce online." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci rezum: notificarea medicului există. Astăzi cer departamentului de resurse umane să corecteze ultima zi de lucru plătită prin portalul angajatorului. Termenul este vineri la prânz și verific imediat mesajul scris în căsuța online." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë po përmbledh: njoftimi i mjekut ekziston. Sot do t’i kërkoj burimeve njerëzore të korrigjojnë ditën e fundit të punës të paguar përmes portalit të punëdhënësit. Afati është e premtja në mesditë dhe do ta kontrolloj menjëherë mesazhin me shkrim në kutinë online." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fasst den medizinischen Teil, die Arbeitgeberkorrektur, die Frist und den schriftlichen Prüfpunkt zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer summarizes the medical part, employer correction, deadline, and written check point." },
+                { "language": "fa", "text": "خوب است: پاسخ بخش پزشکی، اصلاح کارفرما، مهلت و نقطه بررسی کتبی را جمع‌بندی می‌کند." },
+                { "language": "ar", "text": "جيد: تلخص الإجابة الجزء الطبي وتصحيح صاحب العمل والمهلة ونقطة التحقق الخطية." },
+                { "language": "tr", "text": "İyi: Yanıt tıbbi kısmı, işveren düzeltmesini, süreyi ve yazılı kontrol noktasını özetler." },
+                { "language": "ru", "text": "Хорошо: ответ суммирует медицинскую часть, исправление работодателя, срок и письменный пункт проверки." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەشی پزیشکی، ڕاستکردنەوەی خاوەنکار، مۆڵەت و خاڵی پشکنینی نووسراو کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv beşa bijîşkî, rastkirina kardêr, dem û xala kontrola nivîskî kurt dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź podsumowuje część medyczną, korektę pracodawcy, termin i pisemny punkt kontroli." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă partea medicală, corectarea angajatorului, termenul și punctul de verificare scris." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh pjesën mjekësore, korrigjimin e punëdhënësit, afatin dhe pikën e kontrollit me shkrim." }
+              ]
+            },
+            {
+              "id": "weak-thanks-only",
+              "text": "Danke, dann kümmere ich mich darum.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will take care of it." },
+                { "language": "fa", "text": "ممنون، پس پیگیری می‌کنم." },
+                { "language": "ar", "text": "شكراً، إذن سأهتم بالأمر." },
+                { "language": "tr", "text": "Teşekkür ederim, o zaman ilgileneceğim." },
+                { "language": "ru", "text": "Спасибо, тогда я этим займусь." },
+                { "language": "ckb", "text": "سوپاس، کەواتە کاری لەسەر دەکەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez pê re mijûl dibim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie się tym zajmę." },
+                { "language": "ro", "text": "Mulțumesc, atunci mă ocup de asta." },
+                { "language": "sq", "text": "Faleminderit, atëherë do të merrem me këtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort kontrolliert weder die konkrete Korrektur noch die Frist oder den schriftlichen Nachweis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: The answer checks neither the concrete correction nor the deadline or written proof." },
+                { "language": "fa", "text": "خیلی کوتاه است: پاسخ نه اصلاح مشخص را کنترل می‌کند، نه مهلت یا مدرک کتبی را." },
+                { "language": "ar", "text": "قصيرة جداً: لا تتحقق الإجابة من التصحيح المحدد ولا من المهلة أو الإثبات الخطي." },
+                { "language": "tr", "text": "Çok kısa: Yanıt ne somut düzeltmeyi ne süreyi ne de yazılı kanıtı kontrol eder." },
+                { "language": "ru", "text": "Слишком кратко: ответ не проверяет ни конкретное исправление, ни срок, ни письменное подтверждение." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە نە ڕاستکردنەوەی دیاریکراو دەپشکنێت، نە مۆڵەت یان بەڵگەی نووسراو." },
+                { "language": "kmr", "text": "Pir kurt e: Bersiv ne rastkirina zehf diyar, ne dem û ne delîla nivîskî kontrol dike." },
+                { "language": "pl", "text": "Za krótko: odpowiedź nie sprawdza ani konkretnej korekty, ani terminu czy pisemnego dowodu." },
+                { "language": "ro", "text": "Prea scurt: răspunsul nu verifică nici corectarea concretă, nici termenul sau dovada scrisă." },
+                { "language": "sq", "text": "Shumë shkurt: përgjigjja nuk kontrollon as korrigjimin konkret, as afatin apo provën me shkrim." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "strategy",
+          "text": "Bei der Krankenkasse helfen Versicherungsnummer, Briefdatum und eine konkrete Frage mehr als eine allgemeine Beschwerde.",
+          "translations": [
+            { "language": "en", "text": "With the health insurance fund, the insurance number, letter date, and a concrete question help more than a general complaint." },
+            { "language": "fa", "text": "در تماس با بیمه درمانی، شماره بیمه، تاریخ نامه و سؤال مشخص بیشتر از شکایت کلی کمک می‌کند." },
+            { "language": "ar", "text": "مع شركة التأمين الصحي، يساعد رقم التأمين وتاريخ الخطاب وسؤال محدد أكثر من شكوى عامة." },
+            { "language": "tr", "text": "Sağlık sigortasında sigorta numarası, mektup tarihi ve somut bir soru genel bir şikâyetten daha çok yardımcı olur." },
+            { "language": "ru", "text": "В общении со страховой кассой номер страховки, дата письма и конкретный вопрос помогают больше, чем общая жалоба." },
+            { "language": "ckb", "text": "لەگەڵ بیمەی تەندروستی، ژمارەی بیمە، بەرواری نامە و پرسیارێکی دیاریکراو زیاتر یارمەتیدەرە لە سکاڵای گشتی." },
+            { "language": "kmr", "text": "Li cem sîgorta tenduristiyê, hejmarê sîgorteyê, roja nameyê û pirseke zehf diyar ji gilîyeke gelemperî zêdetir alîkar in." },
+            { "language": "pl", "text": "W kontakcie z kasą chorych numer ubezpieczenia, data pisma i konkretne pytanie pomagają bardziej niż ogólna skarga." },
+            { "language": "ro", "text": "La casa de asigurări, numărul de asigurare, data scrisorii și o întrebare concretă ajută mai mult decât o plângere generală." },
+            { "language": "sq", "text": "Te sigurimi shëndetësor, numri i sigurimit, data e letrës dhe një pyetje konkrete ndihmojnë më shumë se një ankesë e përgjithshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "content",
+          "text": "B2-Sicherheit entsteht, wenn du ähnliche Quellen sauber trennst: Arztpraxis, Arbeitgeber und Krankenkasse.",
+          "translations": [
+            { "language": "en", "text": "B2-level confidence comes from separating similar sources clearly: doctor's office, employer, and health insurance fund." },
+            { "language": "fa", "text": "اطمینان در سطح B2 وقتی ایجاد می‌شود که منابع مشابه را تمیز جدا کنی: مطب پزشک، کارفرما و بیمه درمانی." },
+            { "language": "ar", "text": "تأتي الثقة في مستوى B2 عندما تفصل المصادر المتشابهة بوضوح: عيادة الطبيب، وصاحب العمل، وشركة التأمين الصحي." },
+            { "language": "tr", "text": "B2 düzeyinde güven, benzer kaynakları temiz biçimde ayırdığında oluşur: doktor muayenehanesi, işveren ve sağlık sigortası." },
+            { "language": "ru", "text": "Уверенность уровня B2 возникает, когда вы чётко разделяете похожие источники: врачебная практика, работодатель и страховая касса." },
+            { "language": "ckb", "text": "دڵنیایی ئاستی B2 کاتێک دروست دەبێت کە سەرچاوە هاوشێوەکان بە پاکی جیا بکەیتەوە: لای پزیشک، خاوەنکار و بیمەی تەندروستی." },
+            { "language": "kmr", "text": "Ewlehiya asta B2 çêdibe dema ku tu çavkaniyên dişibin hev bi zelalî ji hev cuda bikî: pratîka bijîşk, kardêr û sîgorta tenduristiyê." },
+            { "language": "pl", "text": "Pewność na poziomie B2 powstaje wtedy, gdy jasno rozdzielasz podobne źródła: gabinet lekarski, pracodawcę i kasę chorych." },
+            { "language": "ro", "text": "Siguranța de nivel B2 apare când separi clar sursele asemănătoare: cabinetul medical, angajatorul și casa de asigurări." },
+            { "language": "sq", "text": "Siguria në nivelin B2 krijohet kur i ndan qartë burimet e ngjashme: ordinanca e mjekut, punëdhënësi dhe sigurimi shëndetësor." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "procedure",
+          "text": "Bei Zahlungsfragen sollte die Frist und der offizielle Übermittlungsweg schriftlich gesichert werden.",
+          "translations": [
+            { "language": "en", "text": "For payment questions, the deadline and official submission method should be secured in writing." },
+            { "language": "fa", "text": "در مسائل مربوط به پرداخت، مهلت و مسیر رسمی ارسال باید کتبی تثبیت شود." },
+            { "language": "ar", "text": "في مسائل الدفع، ينبغي تثبيت المهلة وطريقة الإرسال الرسمية خطياً." },
+            { "language": "tr", "text": "Ödeme konularında süre ve resmi gönderim yolu yazılı olarak güvenceye alınmalıdır." },
+            { "language": "ru", "text": "В вопросах выплат срок и официальный способ передачи следует закрепить письменно." },
+            { "language": "ckb", "text": "لە پرسی پارەداندا، دەبێت مۆڵەت و ڕێگای فەرمی ناردن بە نووسراوی دڵنیا بکرێت." },
+            { "language": "kmr", "text": "Di pirsgirêkên dayînê de, divê dem û rêya fermî ya şandinê bi nivîskî were misogerkirin." },
+            { "language": "pl", "text": "W sprawach dotyczących wypłat termin i oficjalny sposób przekazania powinny być zabezpieczone pisemnie." },
+            { "language": "ro", "text": "În chestiuni de plată, termenul și modalitatea oficială de transmitere trebuie asigurate în scris." },
+            { "language": "sq", "text": "Në çështjet e pagesës, afati dhe mënyra zyrtare e dërgimit duhet të sigurohen me shkrim." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "summary",
+          "text": "Eine starke Schlussantwort fasst nicht nur die Aufgabe zusammen, sondern verhindert auch doppelte oder falsche Nachreichungen.",
+          "translations": [
+            { "language": "en", "text": "A strong closing answer does not only summarize the task, but also prevents duplicate or incorrect submissions." },
+            { "language": "fa", "text": "پاسخ پایانی قوی فقط وظیفه را جمع‌بندی نمی‌کند، بلکه از ارسال تکراری یا اشتباه هم جلوگیری می‌کند." },
+            { "language": "ar", "text": "الإجابة الختامية القوية لا تلخص المهمة فقط، بل تمنع أيضاً التقديمات المكررة أو الخاطئة." },
+            { "language": "tr", "text": "Güçlü bir kapanış yanıtı yalnızca görevi özetlemez, aynı zamanda çift veya yanlış sonradan sunumları da önler." },
+            { "language": "ru", "text": "Сильный заключительный ответ не только суммирует задачу, но и предотвращает дублирующие или неправильные досылки." },
+            { "language": "ckb", "text": "وەڵامی کۆتایی بەهێز تەنها ئەرکەکە کورت ناکاتەوە، بەڵکو لە پێشکەشکردنی دووبارە یان هەڵەش ڕێگری دەکات." },
+            { "language": "kmr", "text": "Bersiveke dawî ya xurt tenê peywirê kurt nake, lê ji radestkirinên dubare an şaş jî rê digire." },
+            { "language": "pl", "text": "Mocna odpowiedź końcowa nie tylko podsumowuje zadanie, lecz także zapobiega podwójnym lub błędnym dosłaniom." },
+            { "language": "ro", "text": "Un răspuns final puternic nu doar rezumă sarcina, ci previne și depunerile duble sau greșite." },
+            { "language": "sq", "text": "Një përgjigje përmbyllëse e fortë jo vetëm përmbledh detyrën, por edhe parandalon dorëzime të dyfishta ose të gabuara." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

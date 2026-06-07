@@ -1,4 +1,7 @@
 using DarwinLingua.Identity;
+using DarwinLingua.Infrastructure.DependencyInjection;
+using DarwinLingua.Learning.Application.DependencyInjection;
+using DarwinLingua.Learning.Infrastructure.DependencyInjection;
 using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Localization;
@@ -159,6 +162,17 @@ if (string.IsNullOrWhiteSpace(webIdentityConnectionString))
 {
     throw new InvalidOperationException("A PostgreSQL Identity or WebIdentity connection string must be configured for DarwinLingua.Web.");
 }
+
+string sharedCatalogConnectionString = builder.Configuration.GetConnectionString("SharedCatalogAdmin")
+    ?? builder.Configuration.GetConnectionString("SharedCatalog")
+    ?? builder.Configuration.GetConnectionString("ServerContentAdmin")
+    ?? builder.Configuration.GetConnectionString("ServerContent")
+    ?? webIdentityConnectionString;
+
+builder.Services
+    .AddDarwinLinguaInfrastructureForPostgres(sharedCatalogConnectionString)
+    .AddLearningApplication()
+    .AddLearningInfrastructure();
 
 builder.Services.AddDbContext<WebIdentityDbContext>(options =>
     options.UseNpgsql(webIdentityConnectionString));

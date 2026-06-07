@@ -1,0 +1,873 @@
+{
+  "packageId": "roleplays-c1-core-19-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 19 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 19",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-eine-akademische-praesentation-diskutieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine akademische Präsentation diskutieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Discussing an academic presentation" },
+        { "language": "fa", "text": "بحث درباره یک ارائه دانشگاهی" },
+        { "language": "ar", "text": "مناقشة عرض أكاديمي" },
+        { "language": "tr", "text": "Akademik bir sunumu tartışmak" },
+        { "language": "ru", "text": "Обсуждение академической презентации" },
+        { "language": "ckb", "text": "گفتوگۆ دەربارەی پێشکەشکردنێکی ئەکادیمی" },
+        { "language": "kmr", "text": "Nîqaşkirina pêşkêşiyeke akademîk" },
+        { "language": "pl", "text": "Omówienie prezentacji akademickiej" },
+        { "language": "ro", "text": "Discutarea unei prezentări academice" },
+        { "language": "sq", "text": "Diskutimi i një prezantimi akademik" }
+      ],
+      "description": "In einer C1-Seminardiskussion geben Sie nach einer Präsentation differenziertes Feedback, stellen eine präzise Nachfrage und trennen inhaltliche Stärke von methodischen Grenzen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a C1 seminar discussion after a presentation, you give nuanced feedback, ask a precise follow-up question, and separate content strength from methodological limits." },
+        { "language": "fa", "text": "در یک بحث سمیناری سطح پیشرفته پس از ارائه، بازخورد دقیق می‌دهید، پرسش پیگیری مشخص می‌پرسید و قوت محتوایی را از محدودیت روش‌شناختی جدا می‌کنید." },
+        { "language": "ar", "text": "في نقاش ندوة بمستوى متقدم بعد عرض، تقدم تغذية راجعة متمايزة، وتطرح سؤال متابعة دقيقاً، وتفصل بين قوة المحتوى والحدود المنهجية." },
+        { "language": "tr", "text": "İleri düzey bir seminer tartışmasında, bir sunumdan sonra ayrıntılı geri bildirim verir, kesin bir takip sorusu sorar ve içerik gücünü yöntemsel sınırlardan ayırırsınız." },
+        { "language": "ru", "text": "В продвинутой семинарской дискуссии после презентации вы даёте дифференцированную обратную связь, задаёте точный уточняющий вопрос и отделяете содержательную силу от методических ограничений." },
+        { "language": "ckb", "text": "لە گفتوگۆی سیمیناری ئاستی پێشکەوتوودا دوای پێشکەشکردن، فیدباکی ورد دەدەیت، پرسیاری دواداچوونی دیاریکراو دەکەیت و بەهێزی ناوەڕۆک لە سنوورە میتۆدییەکان جیا دەکەیتەوە." },
+        { "language": "kmr", "text": "Di nîqaşeke semînerê ya asta pêşketî de piştî pêşkêşiyê, hûn vegotineke hûrgulî didin, pirseke şopandinê ya rast dikin û hêza naverokê ji sînorên metodîk veqetînin." },
+        { "language": "pl", "text": "W zaawansowanej dyskusji seminaryjnej po prezentacji udzielasz zniuansowanej informacji zwrotnej, zadajesz precyzyjne pytanie uzupełniające i oddzielasz moc treści od ograniczeń metodycznych." },
+        { "language": "ro", "text": "Într-o discuție de seminar avansată după o prezentare, oferiți feedback nuanțat, adresați o întrebare de clarificare precisă și separați forța conținutului de limitele metodologice." },
+        { "language": "sq", "text": "Në një diskutim seminarik të avancuar pas një prezantimi, jepni reagim të nuancuar, bëni një pyetje të saktë ndjekëse dhe ndani forcën e përmbajtjes nga kufijtë metodologjikë." }
+      ],
+      "learnerGoal": "Eine Präsentation akademisch diskutieren: eine Stärke benennen, eine präzise Nachfrage stellen, methodische Grenzen erklären und respektvoll weiterführendes Feedback formulieren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Discuss an academic presentation: name a strength, ask a precise follow-up question, explain methodological limits, and formulate respectful constructive feedback." },
+        { "language": "fa", "text": "یک ارائه دانشگاهی را بحث کنید: یک قوت را نام ببرید، پرسش پیگیری دقیق بپرسید، محدودیت‌های روش‌شناختی را توضیح دهید و بازخورد سازنده و محترمانه بدهید." },
+        { "language": "ar", "text": "ناقش عرضاً أكاديمياً: اذكر نقطة قوة، واطرح سؤال متابعة دقيقاً، واشرح الحدود المنهجية، وصغ تغذية راجعة بناءة ومحترمة." },
+        { "language": "tr", "text": "Akademik bir sunumu tartışın: bir güçlü yönü adlandırın, kesin bir takip sorusu sorun, yöntemsel sınırları açıklayın ve saygılı yapıcı geri bildirim formüle edin." },
+        { "language": "ru", "text": "Обсудить академическую презентацию: назвать сильную сторону, задать точный уточняющий вопрос, объяснить методические ограничения и сформулировать уважительную конструктивную обратную связь." },
+        { "language": "ckb", "text": "پێشکەشکردنێکی ئەکادیمی گفتوگۆ بکە: خاڵێکی بەهێز ناو ببە، پرسیاری دواداچوونی ورد بکە، سنوورە میتۆدییەکان ڕوون بکەوە و فیدباکی بنیاتنەر و بەڕێز دابڕێژە." },
+        { "language": "kmr", "text": "Pêşkêşiyeke akademîk nîqaş bikin: xalekî xurt nav bikin, pirseke şopandinê ya rast bikin, sînorên metodîk rave bikin û vegotineke avaker û bi rêz formule bikin." },
+        { "language": "pl", "text": "Omówić prezentację akademicką: nazwać mocną stronę, zadać precyzyjne pytanie uzupełniające, wyjaśnić ograniczenia metodyczne i sformułować konstruktywną, pełną szacunku informację zwrotną." },
+        { "language": "ro", "text": "Discutați o prezentare academică: numiți un punct forte, adresați o întrebare de clarificare precisă, explicați limitele metodologice și formulați feedback constructiv și respectuos." },
+        { "language": "sq", "text": "Diskutoni një prezantim akademik: përmendni një pikë të fortë, bëni një pyetje të saktë ndjekëse, shpjegoni kufijtë metodologjikë dhe formuloni reagim ndërtues e respektues." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "presentation-support"],
+      "taskType": "workplace-meeting",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 19,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Teilnehmer/in",
+          "translations": [
+            { "language": "en", "text": "Participant" },
+            { "language": "fa", "text": "شرکت‌کننده" },
+            { "language": "ar", "text": "المشارك" },
+            { "language": "tr", "text": "Katılımcı" },
+            { "language": "ru", "text": "Участник" },
+            { "language": "ckb", "text": "بەشداربوو" },
+            { "language": "kmr", "text": "Beşdar" },
+            { "language": "pl", "text": "Uczestnik" },
+            { "language": "ro", "text": "Participantul" },
+            { "language": "sq", "text": "Pjesëmarrësi" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Referent/in",
+          "translations": [
+            { "language": "en", "text": "Presenter" },
+            { "language": "fa", "text": "ارائه‌دهنده" },
+            { "language": "ar", "text": "مقدم العرض" },
+            { "language": "tr", "text": "Sunum yapan kişi" },
+            { "language": "ru", "text": "Докладчик" },
+            { "language": "ckb", "text": "پێشکەشکار" },
+            { "language": "kmr", "text": "Pêşkêşkar" },
+            { "language": "pl", "text": "Prelegent" },
+            { "language": "ro", "text": "Prezentatorul" },
+            { "language": "sq", "text": "Prezantuesi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Wir haben gerade die Präsentation zur Wirkung von Online-Lernplattformen auf Studienerfolg gehört. Beginnen Sie bitte mit einem differenzierten Feedback, nicht nur mit Lob oder Kritik.",
+          "translations": [
+            { "language": "en", "text": "We have just heard the presentation on the effect of online learning platforms on academic success. Please begin with nuanced feedback, not just praise or criticism." },
+            { "language": "fa", "text": "همین حالا ارائه درباره تأثیر پلتفرم‌های یادگیری آنلاین بر موفقیت تحصیلی را شنیدیم. لطفاً با بازخوردی دقیق شروع کنید، نه فقط با تعریف یا نقد." },
+            { "language": "ar", "text": "استمعنا للتو إلى العرض حول تأثير منصات التعلم عبر الإنترنت في النجاح الدراسي. يرجى البدء بتغذية راجعة متمايزة، لا بمجرد مدح أو نقد." },
+            { "language": "tr", "text": "Az önce çevrim içi öğrenme platformlarının akademik başarı üzerindeki etkisine ilişkin sunumu dinledik. Lütfen yalnızca övgü ya da eleştiri değil, ayrıntılı geri bildirimle başlayın." },
+            { "language": "ru", "text": "Мы только что услышали презентацию о влиянии онлайн-платформ обучения на учебную успешность. Пожалуйста, начните с дифференцированной обратной связи, а не только с похвалы или критики." },
+            { "language": "ckb", "text": "هەموومان ئێستا پێشکەشکردنەکەمان گوێ لێ بوو دەربارەی کاریگەری پلاتفۆرمەکانی فێربوونی ئۆنلاین لەسەر سەرکەوتنی خوێندن. تکایە بە فیدباکێکی ورد دەست پێ بکە، نە تەنها بە ستایش یان ڕەخنە." },
+            { "language": "kmr", "text": "Me niha pêşkêşiya derbarê bandora platformên fêrbûna serhêl li ser serkeftina xwendinê bihîst. Ji kerema xwe bi vegotineke hûrgulî dest pê bikin, ne tenê bi pesn an rexne." },
+            { "language": "pl", "text": "Właśnie wysłuchaliśmy prezentacji o wpływie platform edukacyjnych online na sukces studiów. Proszę zacząć od zniuansowanej informacji zwrotnej, a nie tylko od pochwały albo krytyki." },
+            { "language": "ro", "text": "Tocmai am ascultat prezentarea despre efectul platformelor de învățare online asupra succesului academic. Vă rog să începeți cu feedback nuanțat, nu doar cu laudă sau critică." },
+            { "language": "sq", "text": "Sapo dëgjuam prezantimin për ndikimin e platformave të mësimit në internet mbi suksesin akademik. Ju lutem filloni me reagim të nuancuar, jo vetëm me lavdërim ose kritikë." }
+          ],
+          "function": "seminar-prompt",
+          "toneNote": "Academic and balanced.",
+          "expectedLearnerAction": "give-nuanced-feedback"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Die Präsentation war stark darin, den Zusammenhang zwischen Selbstorganisation und Studienerfolg nachvollziehbar zu machen. Gleichzeitig blieb für mich offen, ob die dargestellten Effekte wirklich auf die Plattform selbst zurückgehen oder eher auf die Motivation der Studierenden, die sie intensiv nutzen.",
+          "translations": [
+            { "language": "en", "text": "The presentation was strong in making the connection between self-organization and academic success understandable. At the same time, it remained unclear to me whether the effects shown really go back to the platform itself or rather to the motivation of the students who use it intensively." },
+            { "language": "fa", "text": "نقطه قوت ارائه این بود که رابطه میان خودسازمان‌دهی و موفقیت تحصیلی را قابل فهم کرد. هم‌زمان برای من روشن نماند که اثرهای نشان‌داده‌شده واقعاً از خود پلتفرم می‌آیند یا بیشتر از انگیزه دانشجویانی که آن را زیاد استفاده می‌کنند." },
+            { "language": "ar", "text": "كانت قوة العرض في جعل العلاقة بين التنظيم الذاتي والنجاح الدراسي مفهومة. وفي الوقت نفسه بقي غير واضح لي ما إذا كانت الآثار المعروضة تعود فعلاً إلى المنصة نفسها أم بالأحرى إلى دافعية الطلاب الذين يستخدمونها بكثافة." },
+            { "language": "tr", "text": "Sunum, öz düzenleme ile akademik başarı arasındaki ilişkiyi anlaşılır kılma açısından güçlüydü. Aynı zamanda gösterilen etkilerin gerçekten platformun kendisinden mi, yoksa onu yoğun kullanan öğrencilerin motivasyonundan mı kaynaklandığı benim için açık kalmadı." },
+            { "language": "ru", "text": "Сильной стороной презентации было то, что она понятно показала связь между самоорганизацией и учебной успешностью. В то же время для меня осталось открытым, действительно ли показанные эффекты связаны с самой платформой или скорее с мотивацией студентов, которые активно её используют." },
+            { "language": "ckb", "text": "بەهێزی پێشکەشکردنەکە لەوەدا بوو کە پەیوەندی نێوان خۆڕێکخستن و سەرکەوتنی خوێندن بە شێوەیەکی تێگەیشتوو ڕوون کردەوە. هاوکات بۆ من هێشتا کراوە مایەوە کە ئایا کاریگەرییە پیشاندراوەکان بەڕاستی لە خودی پلاتفۆرمەکەوە دێن یان زیاتر لە انگیزەی ئەو خوێندکارانەوە کە زۆر بەکاری دەهێنن." },
+            { "language": "kmr", "text": "Pêşkêşî di wê de xurt bû ku têkiliya di navbera xwerêxistinê û serkeftina xwendinê de bi awayekî têgihiştbar kir. Di heman demê de ji bo min nezelal ma ka bandorên nîşandan rastî ji platformê bixwe tên an zêdetir ji motivasyona xwendekarên ku wê pir bi kar tînin." },
+            { "language": "pl", "text": "Prezentacja była mocna w tym, że jasno pokazała związek między samoorganizacją a sukcesem w studiach. Jednocześnie nie było dla mnie jasne, czy przedstawione efekty rzeczywiście wynikają z samej platformy, czy raczej z motywacji studentów, którzy intensywnie z niej korzystają." },
+            { "language": "ro", "text": "Prezentarea a fost puternică prin faptul că a făcut ușor de înțeles legătura dintre autoorganizare și succesul academic. În același timp, pentru mine a rămas neclar dacă efectele prezentate provin cu adevărat din platformă sau mai degrabă din motivația studenților care o folosesc intens." },
+            { "language": "sq", "text": "Prezantimi ishte i fortë sepse e bëri të kuptueshme lidhjen mes vetëorganizimit dhe suksesit akademik. Njëkohësisht për mua mbeti e paqartë nëse efektet e paraqitura vijnë vërtet nga vetë platforma apo më shumë nga motivimi i studentëve që e përdorin intensivisht." }
+          ],
+          "function": "model-response",
+          "toneNote": "Balanced feedback with methodological caveat.",
+          "expectedLearnerAction": "name-strength-and-limit"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "Das ist ein interessanter Punkt. Welche Nachfrage würden Sie mir als Referentin konkret stellen?",
+          "translations": [
+            { "language": "en", "text": "That is an interesting point. What concrete follow-up question would you ask me as the presenter?" },
+            { "language": "fa", "text": "این نکته جالبی است. به‌عنوان ارائه‌دهنده، چه پرسش پیگیری مشخصی از من می‌پرسید؟" },
+            { "language": "ar", "text": "هذه نقطة مثيرة للاهتمام. ما سؤال المتابعة المحدد الذي ستطرحه عليّ بوصفي مقدمة العرض؟" },
+            { "language": "tr", "text": "Bu ilginç bir nokta. Sunum yapan kişi olarak bana hangi somut takip sorusunu sorardınız?" },
+            { "language": "ru", "text": "Это интересный момент. Какой конкретный уточняющий вопрос вы задали бы мне как докладчице?" },
+            { "language": "ckb", "text": "ئەم خاڵە سەرنجڕاکێشە. وەک پێشکەشکار، چ پرسیاری دواداچوونی دیاریکراو لە من دەکەیت؟" },
+            { "language": "kmr", "text": "Ev xal balkêş e. Wekî pêşkêşkar, hûn ê kîjan pirsa şopandinê ya şênber ji min bikin?" },
+            { "language": "pl", "text": "To ciekawy punkt. Jakie konkretne pytanie uzupełniające zadałby mi pan jako prelegentce?" },
+            { "language": "ro", "text": "Este un punct interesant. Ce întrebare concretă de clarificare mi-ați adresa ca prezentatoare?" },
+            { "language": "sq", "text": "Kjo është një pikë interesante. Çfarë pyetjeje konkrete ndjekëse do të më bënit si prezantuese?" }
+          ],
+          "function": "follow-up-prompt",
+          "toneNote": "Invites precision.",
+          "expectedLearnerAction": "ask-precise-question"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Mich würde interessieren, ob in den ausgewerteten Daten zwischen aktiver Nutzung und bloßem Einloggen unterschieden wurde. Außerdem wäre wichtig zu wissen, ob Vorwissen, Erwerbstätigkeit und Betreuungsverpflichtungen der Studierenden kontrolliert wurden.",
+          "translations": [
+            { "language": "en", "text": "I would be interested in whether the analyzed data distinguished between active use and merely logging in. It would also be important to know whether prior knowledge, employment, and care responsibilities of the students were controlled for." },
+            { "language": "fa", "text": "برایم مهم است بدانم آیا در داده‌های تحلیل‌شده میان استفاده فعال و صرفاً ورود به سامانه تفاوت گذاشته شده است. همچنین مهم است بدانیم آیا دانش پیشین، اشتغال و مسئولیت‌های مراقبتی دانشجویان کنترل شده‌اند یا نه." },
+            { "language": "ar", "text": "يهمني أن أعرف ما إذا كانت البيانات المحللة قد ميزت بين الاستخدام النشط ومجرد تسجيل الدخول. ومن المهم أيضاً معرفة ما إذا كان قد تم التحكم في المعرفة السابقة والعمل والمسؤوليات الرعائية لدى الطلاب." },
+            { "language": "tr", "text": "Analiz edilen verilerde aktif kullanım ile yalnızca giriş yapma arasında ayrım yapılıp yapılmadığını merak ederim. Ayrıca öğrencilerin ön bilgisi, çalışma durumu ve bakım sorumluluklarının kontrol edilip edilmediğini bilmek önemli olurdu." },
+            { "language": "ru", "text": "Мне было бы интересно, различались ли в проанализированных данных активное использование и простая авторизация. Кроме того, важно знать, контролировались ли предварительные знания, занятость и обязанности по уходу у студентов." },
+            { "language": "ckb", "text": "حەز دەکەم بزانم ئایا لە داتا شیکراوەکاندا جیاوازی کراوە لە نێوان بەکارهێنانی چالاک و تەنها چوونەژوورەوە. هەروەها گرنگە بزانین ئایا زانیاری پێشووتر، کارکردن و بەرپرسیارییەکانی چاودێریی خوێندکاران کۆنترۆڵ کراون یان نا." },
+            { "language": "kmr", "text": "Min dixwest bizanim gelo di daneyên analîzkirî de cihê bikaranîna çalak û tenê têketinê hatiye kirin. Her wiha girîng e bizanin ka zanîna berê, xebat û berpirsiyariyên lênêrîna xwendekaran hatine kontrolkirin an na." },
+            { "language": "pl", "text": "Interesowałoby mnie, czy w analizowanych danych rozróżniono aktywne korzystanie od samego logowania. Ważne byłoby też wiedzieć, czy kontrolowano wcześniejszą wiedzę, pracę zarobkową i obowiązki opiekuńcze studentów." },
+            { "language": "ro", "text": "M-ar interesa dacă în datele analizate s-a făcut distincție între utilizarea activă și simpla autentificare. De asemenea, ar fi important de știut dacă au fost controlate cunoștințele anterioare, ocuparea profesională și responsabilitățile de îngrijire ale studenților." },
+            { "language": "sq", "text": "Do të më interesonte nëse në të dhënat e analizuara është dalluar përdorimi aktiv nga thjesht hyrja në sistem. Gjithashtu do të ishte e rëndësishme të dihej nëse janë kontrolluar njohuritë e mëparshme, punësimi dhe përgjegjësitë e kujdesit të studentëve." }
+          ],
+          "function": "model-response",
+          "toneNote": "Precise and research-oriented.",
+          "expectedLearnerAction": "ask-methodological-follow-up"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "colleague",
+          "baseText": "Die Daten unterscheiden aktive Nutzung und Logins, aber soziale Faktoren konnte ich nur am Rand berücksichtigen. Wie würden Sie das in Ihrem Feedback einordnen?",
+          "translations": [
+            { "language": "en", "text": "The data distinguish active use and logins, but I could only consider social factors marginally. How would you place that in your feedback?" },
+            { "language": "fa", "text": "داده‌ها میان استفاده فعال و ورود به سامانه فرق می‌گذارند، اما من توانستم عوامل اجتماعی را فقط در حاشیه در نظر بگیرم. این را در بازخوردتان چگونه جای‌گذاری می‌کنید؟" },
+            { "language": "ar", "text": "تميز البيانات بين الاستخدام النشط وتسجيلات الدخول، لكنني لم أستطع مراعاة العوامل الاجتماعية إلا بشكل هامشي. كيف ستضع ذلك في تغذيتك الراجعة؟" },
+            { "language": "tr", "text": "Veriler aktif kullanım ile girişleri ayırıyor, ancak sosyal faktörleri yalnızca sınırlı biçimde dikkate alabildim. Bunu geri bildiriminizde nasıl konumlandırırsınız?" },
+            { "language": "ru", "text": "Данные различают активное использование и входы в систему, но социальные факторы я смогла учесть лишь частично. Как бы вы это отразили в своей обратной связи?" },
+            { "language": "ckb", "text": "داتا جیاوازی دەکات لە نێوان بەکارهێنانی چالاک و چوونەژوورەوە، بەڵام توانیم فاکتەری کۆمەڵایەتی تەنها لە لاوەوە لەبەرچاو بگرم. ئەمە لە فیدباکەکەتدا چۆن دادەنێیت؟" },
+            { "language": "kmr", "text": "Dane cihê bikaranîna çalak û têketinan dikin, lê min tenê bi awayekî qeraxî faktoreyên civakî hesiband. Hûn ê vê di vegotina xwe de çawa bi cih bikin?" },
+            { "language": "pl", "text": "Dane rozróżniają aktywne korzystanie i logowania, ale czynniki społeczne mogłam uwzględnić tylko marginalnie. Jak ująłby pan to w informacji zwrotnej?" },
+            { "language": "ro", "text": "Datele disting între utilizarea activă și autentificări, dar factorii sociali i-am putut lua în considerare doar marginal. Cum ați încadra acest lucru în feedback?" },
+            { "language": "sq", "text": "Të dhënat dallojnë përdorimin aktiv nga hyrjet në sistem, por faktorët socialë munda t’i marr parasysh vetëm në mënyrë anësore. Si do ta vendosnit këtë në reagimin tuaj?" }
+          ],
+          "function": "presenter-clarification",
+          "toneNote": "Provides partial answer and asks for framing.",
+          "expectedLearnerAction": "frame-partial-limitation"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das würde ich als methodische Grenze, aber nicht als Schwäche der gesamten Präsentation formulieren. Die Unterscheidung zwischen aktiver Nutzung und Logins stärkt die Argumentation; die nur teilweise berücksichtigten sozialen Faktoren begrenzen jedoch die Übertragbarkeit der Schlussfolgerungen.",
+          "translations": [
+            { "language": "en", "text": "I would formulate that as a methodological limit, but not as a weakness of the whole presentation. The distinction between active use and logins strengthens the argument; however, the only partially considered social factors limit the transferability of the conclusions." },
+            { "language": "fa", "text": "من این را به‌عنوان محدودیت روش‌شناختی بیان می‌کنم، نه ضعف کل ارائه. تفکیک میان استفاده فعال و ورود به سامانه استدلال را تقویت می‌کند؛ اما عواملی اجتماعی که فقط تا حدی در نظر گرفته شده‌اند، تعمیم‌پذیری نتیجه‌گیری‌ها را محدود می‌کنند." },
+            { "language": "ar", "text": "سأصوغ ذلك كحد منهجي، لا كضعف للعرض كله. فالتمييز بين الاستخدام النشط وتسجيلات الدخول يقوي الحجة؛ لكن العوامل الاجتماعية التي أُخذت جزئياً فقط في الحسبان تحد من قابلية تعميم الاستنتاجات." },
+            { "language": "tr", "text": "Bunu tüm sunumun zayıflığı olarak değil, yöntemsel bir sınır olarak formüle ederdim. Aktif kullanım ile girişler arasındaki ayrım argümanı güçlendirir; ancak yalnızca kısmen dikkate alınan sosyal faktörler sonuçların aktarılabilirliğini sınırlar." },
+            { "language": "ru", "text": "Я сформулировал бы это как методическое ограничение, а не как слабость всей презентации. Различение активного использования и входов усиливает аргументацию; однако лишь частично учтённые социальные факторы ограничивают переносимость выводов." },
+            { "language": "ckb", "text": "من ئەمە وەک سنووری میتۆدی دەرببڕم، نە وەک لاوازیی تەواوی پێشکەشکردنەکە. جیاکردنەوەی بەکارهێنانی چالاک و چوونەژوورەوە پاساوەکە بەهێز دەکات؛ بەڵام فاکتەرە کۆمەڵایەتییەکان کە تەنها بەشێک لەبەرچاو گیراون، گواستنەوەی دەرئەنجامەکان سنووردار دەکەن." },
+            { "language": "kmr", "text": "Ez ê vê wekî sînorekî metodîk formule bikim, ne wekî qelsiya hemû pêşkêşiyê. Cihêkirina bikaranîna çalak û têketinan argumanê xurt dike; lê faktoreyên civakî yên tenê qismen hatine hesibandin veguhestina encaman sînordar dikin." },
+            { "language": "pl", "text": "Sformułowałbym to jako ograniczenie metodyczne, a nie jako słabość całej prezentacji. Rozróżnienie aktywnego korzystania i logowań wzmacnia argumentację; jednak tylko częściowo uwzględnione czynniki społeczne ograniczają przenoszalność wniosków." },
+            { "language": "ro", "text": "Aș formula acest lucru ca limită metodologică, nu ca slăbiciune a întregii prezentări. Distincția dintre utilizarea activă și autentificări întărește argumentația; totuși, factorii sociali luați doar parțial în considerare limitează transferabilitatea concluziilor." },
+            { "language": "sq", "text": "Do ta formuloja si kufi metodologjik, jo si dobësi të gjithë prezantimit. Dallimi mes përdorimit aktiv dhe hyrjeve në sistem e forcon argumentimin; megjithatë faktorët socialë të marrë parasysh vetëm pjesërisht kufizojnë transferueshmërinë e përfundimeve." }
+          ],
+          "function": "model-response",
+          "toneNote": "Keeps praise and limitation separate.",
+          "expectedLearnerAction": "separate-strength-and-limit"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "teacher",
+          "baseText": "Wie könnten Sie daraus eine konstruktive Rückmeldung machen, ohne dass es wie eine Abwertung der Präsentation klingt?",
+          "translations": [
+            { "language": "en", "text": "How could you turn that into constructive feedback without making it sound like a devaluation of the presentation?" },
+            { "language": "fa", "text": "چطور می‌توانید این را به بازخورد سازنده تبدیل کنید، بدون اینکه مثل کم‌ارزش کردن ارائه به نظر برسد؟" },
+            { "language": "ar", "text": "كيف يمكنك تحويل ذلك إلى تغذية راجعة بناءة من دون أن يبدو كأنه انتقاص من قيمة العرض؟" },
+            { "language": "tr", "text": "Bunu, sunumu değersizleştiriyormuş gibi duyulmadan nasıl yapıcı geri bildirime dönüştürebilirsiniz?" },
+            { "language": "ru", "text": "Как можно превратить это в конструктивную обратную связь, чтобы это не звучало как обесценивание презентации?" },
+            { "language": "ckb", "text": "چۆن دەتوانیت ئەمە بگۆڕیت بۆ فیدباکی بنیاتنەر، بەبێ ئەوەی وەک کەمکردنەوەی بەهای پێشکەشکردنەکە دەنگ بدات؟" },
+            { "language": "kmr", "text": "Hûn çawa dikarin vê veguherînin vegotineke avaker bêyî ku wekî kêmbuhayîkirina pêşkêşiyê xuya bike?" },
+            { "language": "pl", "text": "Jak można zamienić to w konstruktywną informację zwrotną, aby nie brzmiało jak umniejszanie prezentacji?" },
+            { "language": "ro", "text": "Cum ați putea transforma acest lucru în feedback constructiv fără să sune ca o devalorizare a prezentării?" },
+            { "language": "sq", "text": "Si mund ta ktheni këtë në reagim ndërtues pa tingëlluar si zhvlerësim i prezantimit?" }
+          ],
+          "function": "tone-prompt",
+          "toneNote": "Focuses on respectful feedback.",
+          "expectedLearnerAction": "phrase-constructive-feedback"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Gerade weil die Präsentation den Zusammenhang überzeugend herausarbeitet, wäre es spannend, die sozialen Einflussfaktoren im nächsten Schritt stärker einzubeziehen. Dadurch ließe sich präziser zeigen, für welche Gruppen die Plattform besonders hilfreich ist.",
+          "translations": [
+            { "language": "en", "text": "I would say: Precisely because the presentation convincingly develops the connection, it would be interesting to include social influencing factors more strongly in the next step. That would make it possible to show more precisely for which groups the platform is especially helpful." },
+            { "language": "fa", "text": "من می‌گویم: دقیقاً چون ارائه رابطه را قانع‌کننده نشان می‌دهد، جالب است در گام بعدی عوامل اجتماعی بیشتر وارد تحلیل شوند. این کار کمک می‌کند دقیق‌تر نشان داده شود پلتفرم برای کدام گروه‌ها به‌ویژه مفید است." },
+            { "language": "ar", "text": "سأقول: بالضبط لأن العرض يبرز العلاقة بشكل مقنع، سيكون من المفيد في الخطوة التالية إدماج العوامل الاجتماعية بدرجة أكبر. وبذلك يمكن إظهار الفئات التي تكون المنصة مفيدة لها بشكل خاص بدقة أكبر." },
+            { "language": "tr", "text": "Şöyle derdim: Sunum bağlantıyı ikna edici biçimde ortaya koyduğu için, bir sonraki adımda sosyal etki faktörlerini daha güçlü biçimde dahil etmek ilginç olurdu. Böylece platformun özellikle hangi gruplar için yararlı olduğu daha kesin gösterilebilir." },
+            { "language": "ru", "text": "Я бы сказал так: именно потому что презентация убедительно раскрывает связь, было бы интересно на следующем шаге сильнее включить социальные факторы влияния. Это позволило бы точнее показать, для каких групп платформа особенно полезна." },
+            { "language": "ckb", "text": "من دەڵێم: بە تایبەتی چونکە پێشکەشکردنەکە پەیوەندییەکە بە قانعکەرەوە دەردەخات، لە هەنگاوی دواتردا گرنگە فاکتەرە کۆمەڵایەتییەکان زیاتر بخرێنە ناو شیکارییەکە. بەوە دەکرێت بە وردی زیاتر پیشان بدرێت پلاتفۆرمەکە بۆ کام گرووپەکان بە تایبەتی بەسوودە." },
+            { "language": "kmr", "text": "Ez ê wisa bibêjim: Tam ji ber ku pêşkêşî têkiliyê bi awayekî qanîker derdixe, di gava din de balkêş e ku faktoreyên bandora civakî zêdetir têxin nav analîzê. Bi vî awayî dikare rasttir bê nîşandan ku platform ji bo kîjan koman bi taybetî bikêr e." },
+            { "language": "pl", "text": "Powiedziałbym: właśnie dlatego, że prezentacja przekonująco pokazuje ten związek, interesujące byłoby w kolejnym kroku silniej włączyć czynniki społeczne. Dzięki temu można by dokładniej pokazać, dla których grup platforma jest szczególnie pomocna." },
+            { "language": "ro", "text": "Aș spune: tocmai pentru că prezentarea evidențiază convingător legătura, ar fi interesant ca în pasul următor factorii sociali să fie integrați mai puternic. Astfel s-ar putea arăta mai precis pentru ce grupuri platforma este deosebit de utilă." },
+            { "language": "sq", "text": "Do të thosha: pikërisht sepse prezantimi e nxjerr bindshëm lidhjen, do të ishte interesante që në hapin tjetër faktorët socialë të përfshihen më fort. Kështu mund të tregohet më saktë për cilat grupe platforma është veçanërisht e dobishme." }
+          ],
+          "function": "model-response",
+          "toneNote": "Constructive and respectful.",
+          "expectedLearnerAction": "give-constructive-feedback"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "colleague",
+          "baseText": "Das klingt fair. Würden Sie trotzdem sagen, dass meine Schlussfolgerung zu weit geht?",
+          "translations": [
+            { "language": "en", "text": "That sounds fair. Would you still say that my conclusion goes too far?" },
+            { "language": "fa", "text": "این منصفانه به نظر می‌رسد. با این حال می‌گویید نتیجه‌گیری من بیش از حد جلو رفته است؟" },
+            { "language": "ar", "text": "يبدو ذلك منصفاً. هل ستقول مع ذلك إن استنتاجي يذهب بعيداً أكثر من اللازم؟" },
+            { "language": "tr", "text": "Bu adil geliyor. Yine de sonucumun fazla ileri gittiğini söyler miydiniz?" },
+            { "language": "ru", "text": "Это звучит справедливо. Но сказали бы вы всё же, что мой вывод заходит слишком далеко?" },
+            { "language": "ckb", "text": "ئەمە دادپەروەرانە دەردەکەوێت. بەڵام هێشتا دەڵێیت دەرئەنجامەکەم زۆر لە پێش چووە؟" },
+            { "language": "kmr", "text": "Ev adil xuya dike. Lê hûn hê jî dibêjin ku encama min pir dûr diçe?" },
+            { "language": "pl", "text": "To brzmi fair. Czy mimo to powiedziałby pan, że mój wniosek idzie za daleko?" },
+            { "language": "ro", "text": "Sună corect. Ați spune totuși că concluzia mea merge prea departe?" },
+            { "language": "sq", "text": "Kjo tingëllon e drejtë. Megjithatë do të thoshit se përfundimi im shkon shumë larg?" }
+          ],
+          "function": "clarification-prompt",
+          "toneNote": "Asks for direct but tactful evaluation.",
+          "expectedLearnerAction": "qualify-conclusion"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde nicht sagen, dass die Schlussfolgerung falsch ist, sondern dass sie noch stärker abgesichert werden müsste. Aus den gezeigten Daten lässt sich gut ableiten, dass die Plattform Lernprozesse unterstützen kann; ob sie Studienerfolg allgemein erhöht, bleibt eine weiterführende Frage.",
+          "translations": [
+            { "language": "en", "text": "I would not say that the conclusion is wrong, but that it would need stronger support. The data shown support the claim that the platform can assist learning processes; whether it generally increases academic success remains a further question." },
+            { "language": "fa", "text": "نمی‌گویم نتیجه‌گیری غلط است، بلکه می‌گویم باید پشتوانه قوی‌تری داشته باشد. از داده‌های نشان‌داده‌شده به‌خوبی می‌توان نتیجه گرفت که پلتفرم می‌تواند فرایندهای یادگیری را پشتیبانی کند؛ اما اینکه به‌طور کلی موفقیت تحصیلی را افزایش می‌دهد، پرسشی جداگانه باقی می‌ماند." },
+            { "language": "ar", "text": "لا أقول إن الاستنتاج خاطئ، بل إنه يحتاج إلى دعم أقوى. من البيانات المعروضة يمكن جيداً استنتاج أن المنصة قد تدعم عمليات التعلم؛ أما ما إذا كانت ترفع النجاح الدراسي عموماً فيبقى سؤالاً آخر." },
+            { "language": "tr", "text": "Sonucun yanlış olduğunu söylemezdim, fakat daha güçlü biçimde desteklenmesi gerektiğini söylerdim. Gösterilen verilerden platformun öğrenme süreçlerini destekleyebileceği iyi çıkarılabilir; ancak akademik başarıyı genel olarak artırıp artırmadığı ayrı bir soru olarak kalır." },
+            { "language": "ru", "text": "Я бы не сказал, что вывод неверен, а сказал бы, что его нужно сильнее обосновать. Из показанных данных хорошо следует, что платформа может поддерживать процессы обучения; повышает ли она учебную успешность в целом, остаётся отдельным вопросом." },
+            { "language": "ckb", "text": "من ناڵێم دەرئەنجامەکە هەڵەیە، بەڵکو دەڵێم پێویستە پشتوانەی بەهێزتری هەبێت. لە داتا پیشاندراوەکان باش دەکرێت دەرئەنجام بگیرێت کە پلاتفۆرمەکە دەتوانێت پرۆسەکانی فێربوون پشتگیری بکات؛ بەڵام ئەوەی بە گشتی سەرکەوتنی خوێندن زیاد دەکات یان نا، پرسیارێکی دواترە." },
+            { "language": "kmr", "text": "Ez nabêjim encam şaş e, lê dibêjim divê hê zêdetir bê piştgirîkirin. Ji daneyên nîşandan dikare baş bê derxistin ku platform dikare pêvajoyên fêrbûnê piştgirî bike; lê gelo ew bi giştî serkeftina xwendinê zêde dike, pirseke din dimîne." },
+            { "language": "pl", "text": "Nie powiedziałbym, że wniosek jest błędny, lecz że wymaga mocniejszego zabezpieczenia. Z pokazanych danych dobrze wynika, że platforma może wspierać procesy uczenia się; czy ogólnie zwiększa sukces w studiach, pozostaje odrębnym pytaniem." },
+            { "language": "ro", "text": "Nu aș spune că concluzia este greșită, ci că ar trebui susținută mai puternic. Din datele prezentate se poate deduce bine că platforma poate sprijini procesele de învățare; dacă ea crește în general succesul academic rămâne o întrebare separată." },
+            { "language": "sq", "text": "Nuk do të thosha se përfundimi është i gabuar, por se duhet mbështetur më fort. Nga të dhënat e paraqitura mund të nxirret mirë se platforma mund të mbështesë proceset e të nxënit; nëse ajo rrit në përgjithësi suksesin akademik mbetet një pyetje tjetër." }
+          ],
+          "function": "model-response",
+          "toneNote": "Direct but not dismissive.",
+          "expectedLearnerAction": "limit-conclusion"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "teacher",
+          "baseText": "Fassen Sie zum Schluss bitte in zwei Sätzen zusammen: Was war die Stärke der Präsentation, und welcher Punkt sollte weiter untersucht werden?",
+          "translations": [
+            { "language": "en", "text": "To conclude, please summarize in two sentences: What was the strength of the presentation, and which point should be examined further?" },
+            { "language": "fa", "text": "در پایان، لطفاً در دو جمله خلاصه کنید: قوت ارائه چه بود و کدام نکته باید بیشتر بررسی شود؟" },
+            { "language": "ar", "text": "في الختام، لخص من فضلك في جملتين: ما نقطة قوة العرض، وأي نقطة ينبغي فحصها أكثر؟" },
+            { "language": "tr", "text": "Son olarak lütfen iki cümlede özetleyin: Sunumun güçlü yanı neydi ve hangi nokta daha fazla incelenmeli?" },
+            { "language": "ru", "text": "В завершение, пожалуйста, подытожьте в двух предложениях: в чём была сильная сторона презентации и какой пункт следует дальше исследовать?" },
+            { "language": "ckb", "text": "لە کۆتاییدا، تکایە لە دوو ڕستەدا کورت بکەوە: بەهێزی پێشکەشکردنەکە چی بوو و کام خاڵ پێویستە زیاتر بپشکنرێت؟" },
+            { "language": "kmr", "text": "Di dawiyê de, ji kerema xwe di du hevokan de kurt bikin: Xala xurt a pêşkêşiyê çi bû û kîjan xal divê zêdetir bê lêkolînkirin?" },
+            { "language": "pl", "text": "Na koniec proszę podsumować w dwóch zdaniach: jaka była mocna strona prezentacji i który punkt powinien zostać dalej zbadany?" },
+            { "language": "ro", "text": "La final, vă rog să rezumați în două propoziții: care a fost punctul forte al prezentării și ce aspect ar trebui cercetat în continuare?" },
+            { "language": "sq", "text": "Në fund, ju lutem përmblidhni në dy fjali: cila ishte pika e fortë e prezantimit dhe cili aspekt duhet hulumtuar më tej?" }
+          ],
+          "function": "summary-prompt",
+          "toneNote": "Requires concise synthesis.",
+          "expectedLearnerAction": "summarize-feedback"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Die Stärke der Präsentation lag darin, dass sie den Zusammenhang zwischen Plattformnutzung und Selbstorganisation anschaulich und nachvollziehbar erklärt hat. Weiter untersucht werden sollte, inwiefern soziale Voraussetzungen und unterschiedliche Nutzungsformen die Aussage über Studienerfolg begrenzen.",
+          "translations": [
+            { "language": "en", "text": "The strength of the presentation lay in the fact that it explained the connection between platform use and self-organization clearly and understandably. What should be examined further is the extent to which social conditions and different forms of use limit the claim about academic success." },
+            { "language": "fa", "text": "قوت ارائه در این بود که رابطه میان استفاده از پلتفرم و خودسازمان‌دهی را روشن و قابل فهم توضیح داد. نکته‌ای که باید بیشتر بررسی شود این است که شرایط اجتماعی و شکل‌های متفاوت استفاده تا چه حد ادعای مربوط به موفقیت تحصیلی را محدود می‌کنند." },
+            { "language": "ar", "text": "كانت قوة العرض في أنه شرح العلاقة بين استخدام المنصة والتنظيم الذاتي بوضوح وبطريقة مفهومة. وما ينبغي فحصه أكثر هو إلى أي مدى تحد الشروط الاجتماعية وأشكال الاستخدام المختلفة من الادعاء المتعلق بالنجاح الدراسي." },
+            { "language": "tr", "text": "Sunumun güçlü yanı, platform kullanımı ile öz düzenleme arasındaki ilişkiyi açık ve anlaşılır biçimde açıklamasıydı. Daha fazla incelenmesi gereken nokta, sosyal koşulların ve farklı kullanım biçimlerinin akademik başarıya ilişkin iddiayı ne ölçüde sınırladığıdır." },
+            { "language": "ru", "text": "Сильная сторона презентации заключалась в том, что она наглядно и понятно объяснила связь между использованием платформы и самоорганизацией. Дальше следует исследовать, в какой мере социальные условия и разные формы использования ограничивают утверждение об учебной успешности." },
+            { "language": "ckb", "text": "بەهێزی پێشکەشکردنەکە لەوەدا بوو کە پەیوەندی نێوان بەکارهێنانی پلاتفۆرم و خۆڕێکخستن بە ڕوونی و بە شێوەیەکی تێگەیشتوو ڕوون کردەوە. ئەو خاڵەی پێویستە زیاتر بپشکنرێت ئەوەیە کە مەرجە کۆمەڵایەتییەکان و شێوە جیاوازەکانی بەکارهێنان تا چ ڕادەیەک بانگەشەی سەرکەوتنی خوێندن سنووردار دەکەن." },
+            { "language": "kmr", "text": "Xala xurt a pêşkêşiyê ew bû ku têkiliya di navbera bikaranîna platformê û xwerêxistinê de bi awayekî zelal û têgihiştbar rave kir. Ya ku divê zêdetir bê lêkolînkirin ew e ka mercên civakî û şêweyên cuda yên bikaranînê heta çi radeyê îdiaya serkeftina xwendinê sînordar dikin." },
+            { "language": "pl", "text": "Mocną stroną prezentacji było to, że jasno i zrozumiale wyjaśniła związek między korzystaniem z platformy a samoorganizacją. Dalej należy zbadać, w jakim stopniu warunki społeczne i różne formy korzystania ograniczają twierdzenie o sukcesie w studiach." },
+            { "language": "ro", "text": "Punctul forte al prezentării a fost că a explicat clar și inteligibil legătura dintre utilizarea platformei și autoorganizare. Ar trebui cercetat în continuare în ce măsură condițiile sociale și formele diferite de utilizare limitează afirmația despre succesul academic." },
+            { "language": "sq", "text": "Pika e fortë e prezantimit ishte se shpjegoi qartë dhe kuptueshëm lidhjen mes përdorimit të platformës dhe vetëorganizimit. Duhet hulumtuar më tej se deri në çfarë mase kushtet sociale dhe format e ndryshme të përdorimit e kufizojnë pohimin për suksesin akademik." }
+          ],
+          "function": "model-response",
+          "toneNote": "Concise final synthesis.",
+          "expectedLearnerAction": "give-two-sentence-summary"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Präsentation war stark darin, den Zusammenhang zwischen Selbstorganisation und Studienerfolg nachvollziehbar zu machen. Gleichzeitig blieb für mich offen, ob die dargestellten Effekte wirklich auf die Plattform selbst zurückgehen oder eher auf die Motivation der Studierenden, die sie intensiv nutzen.",
+              "translations": [
+                { "language": "en", "text": "The presentation was strong in making the connection between self-organization and academic success understandable. At the same time, it remained unclear to me whether the effects shown really go back to the platform itself or rather to the motivation of the students who use it intensively." },
+                { "language": "fa", "text": "نقطه قوت ارائه این بود که رابطه میان خودسازمان‌دهی و موفقیت تحصیلی را قابل فهم کرد. هم‌زمان برای من روشن نماند که اثرهای نشان‌داده‌شده واقعاً از خود پلتفرم می‌آیند یا بیشتر از انگیزه دانشجویانی که آن را زیاد استفاده می‌کنند." },
+                { "language": "ar", "text": "كانت قوة العرض في جعل العلاقة بين التنظيم الذاتي والنجاح الدراسي مفهومة. وفي الوقت نفسه بقي غير واضح لي ما إذا كانت الآثار المعروضة تعود فعلاً إلى المنصة نفسها أم بالأحرى إلى دافعية الطلاب الذين يستخدمونها بكثافة." },
+                { "language": "tr", "text": "Sunum, öz düzenleme ile akademik başarı arasındaki ilişkiyi anlaşılır kılma açısından güçlüydü. Aynı zamanda gösterilen etkilerin gerçekten platformun kendisinden mi, yoksa onu yoğun kullanan öğrencilerin motivasyonundan mı kaynaklandığı benim için açık kalmadı." },
+                { "language": "ru", "text": "Сильной стороной презентации было то, что она понятно показала связь между самоорганизацией и учебной успешностью. В то же время для меня осталось открытым, действительно ли показанные эффекты связаны с самой платформой или скорее с мотивацией студентов, которые активно её используют." },
+                { "language": "ckb", "text": "بەهێزی پێشکەشکردنەکە لەوەدا بوو کە پەیوەندی نێوان خۆڕێکخستن و سەرکەوتنی خوێندن بە شێوەیەکی تێگەیشتوو ڕوون کردەوە. هاوکات بۆ من هێشتا کراوە مایەوە کە ئایا کاریگەرییە پیشاندراوەکان بەڕاستی لە خودی پلاتفۆرمەکەوە دێن یان زیاتر لە انگیزەی ئەو خوێندکارانەوە کە زۆر بەکاری دەهێنن." },
+                { "language": "kmr", "text": "Pêşkêşî di wê de xurt bû ku têkiliya di navbera xwerêxistinê û serkeftina xwendinê de bi awayekî têgihiştbar kir. Di heman demê de ji bo min nezelal ma ka bandorên nîşandan rastî ji platformê bixwe tên an zêdetir ji motivasyona xwendekarên ku wê pir bi kar tînin." },
+                { "language": "pl", "text": "Prezentacja była mocna w tym, że jasno pokazała związek między samoorganizacją a sukcesem w studiach. Jednocześnie nie było dla mnie jasne, czy przedstawione efekty rzeczywiście wynikają z samej platformy, czy raczej z motywacji studentów, którzy intensywnie z niej korzystają." },
+                { "language": "ro", "text": "Prezentarea a fost puternică prin faptul că a făcut ușor de înțeles legătura dintre autoorganizare și succesul academic. În același timp, pentru mine a rămas neclar dacă efectele prezentate provin cu adevărat din platformă sau mai degrabă din motivația studenților care o folosesc intens." },
+                { "language": "sq", "text": "Prezantimi ishte i fortë sepse e bëri të kuptueshme lidhjen mes vetëorganizimit dhe suksesit akademik. Njëkohësisht për mua mbeti e paqartë nëse efektet e paraqitura vijnë vërtet nga vetë platforma apo më shumë nga motivimi i studentëve që e përdorin intensivisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort beginnt mit einer konkreten Stärke und nennt dann eine methodische offene Frage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer begins with a concrete strength and then names an open methodological question." },
+                { "language": "fa", "text": "قوی: پاسخ با یک قوت مشخص شروع می‌کند و سپس یک پرسش روش‌شناختی باز را نام می‌برد." },
+                { "language": "ar", "text": "قوي: تبدأ الإجابة بنقطة قوة ملموسة ثم تذكر سؤالاً منهجياً مفتوحاً." },
+                { "language": "tr", "text": "Güçlü: Yanıt somut bir güçlü yönle başlar ve ardından açık bir yöntemsel soru belirtir." },
+                { "language": "ru", "text": "Сильно: ответ начинается с конкретной сильной стороны, а затем называет открытый методический вопрос." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە خاڵێکی بەهێزی دیاریکراو دەست پێ دەکات و پاشان پرسیارێکی میتۆدی کراوە ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv bi xalekî xurt ê şênber dest pê dike û paşê pirseke metodîk a vekirî nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź zaczyna się od konkretnej mocnej strony, a potem wskazuje otwarte pytanie metodyczne." },
+                { "language": "ro", "text": "Puternic: răspunsul începe cu un punct forte concret și apoi numește o întrebare metodologică deschisă." },
+                { "language": "sq", "text": "E fortë: përgjigjja fillon me një pikë të fortë konkrete dhe pastaj përmend një pyetje metodologjike të hapur." }
+              ],
+              "explanationKey": "strength-plus-limit"
+            },
+            {
+              "id": "weaker",
+              "text": "Die Präsentation war gut und gut strukturiert, aber an manchen Stellen hätte man noch mehr ins Detail gehen können.",
+              "translations": [
+                { "language": "en", "text": "The presentation was good and well structured, but in some places one could have gone into more detail." },
+                { "language": "fa", "text": "ارائه خوب و خوب ساختارمند بود، اما در بعضی جاها می‌شد وارد جزئیات بیشتری شد." },
+                { "language": "ar", "text": "كان العرض جيداً ومنظماً، لكن في بعض المواضع كان يمكن الدخول في تفاصيل أكثر." },
+                { "language": "tr", "text": "Sunum iyi ve iyi yapılandırılmıştı, ancak bazı yerlerde daha fazla ayrıntıya girilebilirdi." },
+                { "language": "ru", "text": "Презентация была хорошей и хорошо структурированной, но в некоторых местах можно было бы подробнее раскрыть детали." },
+                { "language": "ckb", "text": "پێشکەشکردنەکە باش و باش ڕێکخراو بوو، بەڵام لە هەندێک شوێن دەکرا بچرێتە ناو وردەکاری زیاتر." },
+                { "language": "kmr", "text": "Pêşkêşî baş û baş rêxistinbû, lê li hin cihan dikarîbû zêdetir bikeve hûrguliyan." },
+                { "language": "pl", "text": "Prezentacja była dobra i dobrze uporządkowana, ale w niektórych miejscach można było wejść bardziej w szczegóły." },
+                { "language": "ro", "text": "Prezentarea a fost bună și bine structurată, dar în unele locuri s-ar fi putut intra mai mult în detalii." },
+                { "language": "sq", "text": "Prezantimi ishte i mirë dhe i strukturuar mirë, por në disa vende mund të hyhej më shumë në detaje." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein: Das klingt höflich, aber es sagt nicht, welche Stärke oder welche Grenze fachlich relevant ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general: It sounds polite, but it does not say which strength or limitation is academically relevant." },
+                { "language": "fa", "text": "زیادی کلی است: مؤدبانه به نظر می‌رسد، اما نمی‌گوید کدام قوت یا محدودیت از نظر علمی مهم است." },
+                { "language": "ar", "text": "عام جداً: يبدو مهذباً، لكنه لا يوضح أي قوة أو حد له أهمية علمية." },
+                { "language": "tr", "text": "Fazla genel: Kibar duyuluyor, ancak hangi güçlü yönün veya sınırın akademik olarak ilgili olduğunu söylemiyor." },
+                { "language": "ru", "text": "Слишком общее: звучит вежливо, но не говорит, какая сильная сторона или ограничение важны с научной точки зрения." },
+                { "language": "ckb", "text": "زۆر گشتییە: بەڕێز دەنگ دەدات، بەڵام ناڵێت کام خاڵی بەهێز یان کام سنوور لە ڕووی زانستییەوە گرنگە." },
+                { "language": "kmr", "text": "Pir giştî ye: Bi rêz xuya dike, lê nabêje kîjan xalê xurt an sînor ji aliyê zanistî ve girîng e." },
+                { "language": "pl", "text": "Zbyt ogólne: brzmi uprzejmie, ale nie mówi, która mocna strona lub które ograniczenie są naukowo istotne." },
+                { "language": "ro", "text": "Prea general: sună politicos, dar nu spune care punct forte sau limită este relevantă academic." },
+                { "language": "sq", "text": "Shumë e përgjithshme: tingëllon e sjellshme, por nuk tregon cila pikë e fortë ose cili kufi është i rëndësishëm shkencërisht." }
+              ],
+              "explanationKey": "generic-feedback"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Mich würde interessieren, ob in den ausgewerteten Daten zwischen aktiver Nutzung und bloßem Einloggen unterschieden wurde. Außerdem wäre wichtig zu wissen, ob Vorwissen, Erwerbstätigkeit und Betreuungsverpflichtungen der Studierenden kontrolliert wurden.",
+              "translations": [
+                { "language": "en", "text": "I would be interested in whether the analyzed data distinguished between active use and merely logging in. It would also be important to know whether prior knowledge, employment, and care responsibilities of the students were controlled for." },
+                { "language": "fa", "text": "برایم مهم است بدانم آیا در داده‌های تحلیل‌شده میان استفاده فعال و صرفاً ورود به سامانه تفاوت گذاشته شده است. همچنین مهم است بدانیم آیا دانش پیشین، اشتغال و مسئولیت‌های مراقبتی دانشجویان کنترل شده‌اند یا نه." },
+                { "language": "ar", "text": "يهمني أن أعرف ما إذا كانت البيانات المحللة قد ميزت بين الاستخدام النشط ومجرد تسجيل الدخول. ومن المهم أيضاً معرفة ما إذا كان قد تم التحكم في المعرفة السابقة والعمل والمسؤوليات الرعائية لدى الطلاب." },
+                { "language": "tr", "text": "Analiz edilen verilerde aktif kullanım ile yalnızca giriş yapma arasında ayrım yapılıp yapılmadığını merak ederim. Ayrıca öğrencilerin ön bilgisi, çalışma durumu ve bakım sorumluluklarının kontrol edilip edilmediğini bilmek önemli olurdu." },
+                { "language": "ru", "text": "Мне было бы интересно, различались ли в проанализированных данных активное использование и простая авторизация. Кроме того, важно знать, контролировались ли предварительные знания, занятость и обязанности по уходу у студентов." },
+                { "language": "ckb", "text": "حەز دەکەم بزانم ئایا لە داتا شیکراوەکاندا جیاوازی کراوە لە نێوان بەکارهێنانی چالاک و تەنها چوونەژوورەوە. هەروەها گرنگە بزانین ئایا زانیاری پێشووتر، کارکردن و بەرپرسیارییەکانی چاودێریی خوێندکاران کۆنترۆڵ کراون یان نا." },
+                { "language": "kmr", "text": "Min dixwest bizanim gelo di daneyên analîzkirî de cihê bikaranîna çalak û tenê têketinê hatiye kirin. Her wiha girîng e bizanin ka zanîna berê, xebat û berpirsiyariyên lênêrîna xwendekaran hatine kontrolkirin an na." },
+                { "language": "pl", "text": "Interesowałoby mnie, czy w analizowanych danych rozróżniono aktywne korzystanie od samego logowania. Ważne byłoby też wiedzieć, czy kontrolowano wcześniejszą wiedzę, pracę zarobkową i obowiązki opiekuńcze studentów." },
+                { "language": "ro", "text": "M-ar interesa dacă în datele analizate s-a făcut distincție între utilizarea activă și simpla autentificare. De asemenea, ar fi important de știut dacă au fost controlate cunoștințele anterioare, ocuparea profesională și responsabilitățile de îngrijire ale studenților." },
+                { "language": "sq", "text": "Do të më interesonte nëse në të dhënat e analizuara është dalluar përdorimi aktiv nga thjesht hyrja në sistem. Gjithashtu do të ishte e rëndësishme të dihej nëse janë kontrolluar njohuritë e mëparshme, punësimi dhe përgjegjësitë e kujdesit të studentëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Nachfrage ist präzise und prüft die Aussagekraft der Daten, ohne die Präsentation abzuwerten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The follow-up question is precise and tests the evidential value of the data without devaluing the presentation." },
+                { "language": "fa", "text": "قوی: پرسش پیگیری دقیق است و ارزش استنادی داده‌ها را بررسی می‌کند، بدون اینکه ارائه را کم‌ارزش کند." },
+                { "language": "ar", "text": "قوي: سؤال المتابعة دقيق ويفحص قوة دلالة البيانات من دون التقليل من قيمة العرض." },
+                { "language": "tr", "text": "Güçlü: Takip sorusu kesin ve verilerin kanıt değerini sunumu değersizleştirmeden sınar." },
+                { "language": "ru", "text": "Сильно: уточняющий вопрос точен и проверяет доказательную ценность данных, не обесценивая презентацию." },
+                { "language": "ckb", "text": "بەهێزە: پرسیاری دواداچوونەکە وردە و بەهای بەڵگەیی داتا دەپشکنێت، بەبێ کەمکردنەوەی بەهای پێشکەشکردنەکە." },
+                { "language": "kmr", "text": "Xurt e: Pirsa şopandinê rast e û nirxa delîlkirina daneyan dipirse bêyî ku pêşkêşiyê kêmbuha bike." },
+                { "language": "pl", "text": "Mocne: pytanie uzupełniające jest precyzyjne i sprawdza wartość dowodową danych, nie umniejszając prezentacji." },
+                { "language": "ro", "text": "Puternic: întrebarea de clarificare este precisă și verifică valoarea probatorie a datelor fără să devalorizeze prezentarea." },
+                { "language": "sq", "text": "E fortë: pyetja ndjekëse është e saktë dhe kontrollon vlerën dëshmuese të të dhënave pa e zhvlerësuar prezantimin." }
+              ],
+              "explanationKey": "precise-follow-up"
+            },
+            {
+              "id": "weaker",
+              "text": "Ich würde fragen, ob Sie noch mehr Beispiele für die Wirkung der Plattform nennen können.",
+              "translations": [
+                { "language": "en", "text": "I would ask whether you can name more examples of the platform's effect." },
+                { "language": "fa", "text": "می‌پرسم آیا می‌توانید مثال‌های بیشتری از اثر پلتفرم بگویید." },
+                { "language": "ar", "text": "سأسأل ما إذا كان بإمكانك ذكر أمثلة إضافية على تأثير المنصة." },
+                { "language": "tr", "text": "Platformun etkisine dair daha fazla örnek verip veremeyeceğinizi sorardım." },
+                { "language": "ru", "text": "Я бы спросил, можете ли вы назвать больше примеров влияния платформы." },
+                { "language": "ckb", "text": "دەپرسێم ئایا دەتوانیت نموونەی زیاتری کاریگەری پلاتفۆرمەکە بڵێیت." },
+                { "language": "kmr", "text": "Ez ê bipirsim ka hûn dikarin mînakên zêdetir ên bandora platformê nav bikin." },
+                { "language": "pl", "text": "Zapytałbym, czy może pani podać więcej przykładów wpływu platformy." },
+                { "language": "ro", "text": "Aș întreba dacă puteți da mai multe exemple ale efectului platformei." },
+                { "language": "sq", "text": "Do të pyesja nëse mund të përmendni më shumë shembuj të ndikimit të platformës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu wenig C1: Die Frage bittet um mehr Material, prüft aber nicht Methode, Kontrollvariablen oder Aussagekraft.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but not C1 enough: The question asks for more material, but does not test method, control variables, or evidential value." },
+                { "language": "fa", "text": "قابل‌باور است، اما برای سطح پیشرفته کافی نیست: پرسش فقط ماده بیشتر می‌خواهد و روش، متغیرهای کنترل یا ارزش استنادی را بررسی نمی‌کند." },
+                { "language": "ar", "text": "مقبول، لكنه ليس بمستوى متقدم كافٍ: السؤال يطلب مادة أكثر، لكنه لا يفحص المنهج أو المتغيرات الضابطة أو قوة الدلالة." },
+                { "language": "tr", "text": "Makûl, ama ileri düzey için yeterli değil: Soru daha fazla malzeme ister, ancak yöntem, kontrol değişkenleri veya kanıt değerini sınamaz." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно для продвинутого уровня: вопрос просит больше материала, но не проверяет метод, контрольные переменные или доказательную ценность." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام بۆ ئاستی پێشکەوتوو بەس نییە: پرسیارەکە تەنها مادەی زیاتر دەوێت و میتۆد، گۆڕاوە کۆنترۆڵکراوەکان یان بەهای بەڵگەیی ناپشکنێت." },
+                { "language": "kmr", "text": "Maqûl e, lê ji bo asta pêşketî ne bes e: Pirs tenê materyala zêdetir dixwaze, lê metod, guhêrbarên kontrolê an nirxa delîlkirinê venakole." },
+                { "language": "pl", "text": "Plausible, ale za mało zaawansowane: pytanie prosi o więcej materiału, lecz nie sprawdza metody, zmiennych kontrolnych ani wartości dowodowej." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient pentru nivel avansat: întrebarea cere mai mult material, dar nu verifică metoda, variabilele de control sau valoarea probatorie." },
+                { "language": "sq", "text": "E besueshme, por jo mjaft e avancuar: pyetja kërkon më shumë material, por nuk kontrollon metodën, variablat e kontrollit ose vlerën dëshmuese." }
+              ],
+              "explanationKey": "too-example-focused"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Das würde ich als methodische Grenze, aber nicht als Schwäche der gesamten Präsentation formulieren. Die Unterscheidung zwischen aktiver Nutzung und Logins stärkt die Argumentation; die nur teilweise berücksichtigten sozialen Faktoren begrenzen jedoch die Übertragbarkeit der Schlussfolgerungen.",
+              "translations": [
+                { "language": "en", "text": "I would formulate that as a methodological limit, but not as a weakness of the whole presentation. The distinction between active use and logins strengthens the argument; however, the only partially considered social factors limit the transferability of the conclusions." },
+                { "language": "fa", "text": "من این را به‌عنوان محدودیت روش‌شناختی بیان می‌کنم، نه ضعف کل ارائه. تفکیک میان استفاده فعال و ورود به سامانه استدلال را تقویت می‌کند؛ اما عواملی اجتماعی که فقط تا حدی در نظر گرفته شده‌اند، تعمیم‌پذیری نتیجه‌گیری‌ها را محدود می‌کنند." },
+                { "language": "ar", "text": "سأصوغ ذلك كحد منهجي، لا كضعف للعرض كله. فالتمييز بين الاستخدام النشط وتسجيلات الدخول يقوي الحجة؛ لكن العوامل الاجتماعية التي أُخذت جزئياً فقط في الحسبان تحد من قابلية تعميم الاستنتاجات." },
+                { "language": "tr", "text": "Bunu tüm sunumun zayıflığı olarak değil, yöntemsel bir sınır olarak formüle ederdim. Aktif kullanım ile girişler arasındaki ayrım argümanı güçlendirir; ancak yalnızca kısmen dikkate alınan sosyal faktörler sonuçların aktarılabilirliğini sınırlar." },
+                { "language": "ru", "text": "Я сформулировал бы это как методическое ограничение, а не как слабость всей презентации. Различение активного использования и входов усиливает аргументацию; однако лишь частично учтённые социальные факторы ограничивают переносимость выводов." },
+                { "language": "ckb", "text": "من ئەمە وەک سنووری میتۆدی دەرببڕم، نە وەک لاوازیی تەواوی پێشکەشکردنەکە. جیاکردنەوەی بەکارهێنانی چالاک و چوونەژوورەوە پاساوەکە بەهێز دەکات؛ بەڵام فاکتەرە کۆمەڵایەتییەکان کە تەنها بەشێک لەبەرچاو گیراون، گواستنەوەی دەرئەنجامەکان سنووردار دەکەن." },
+                { "language": "kmr", "text": "Ez ê vê wekî sînorekî metodîk formule bikim, ne wekî qelsiya hemû pêşkêşiyê. Cihêkirina bikaranîna çalak û têketinan argumanê xurt dike; lê faktoreyên civakî yên tenê qismen hatine hesibandin veguhestina encaman sînordar dikin." },
+                { "language": "pl", "text": "Sformułowałbym to jako ograniczenie metodyczne, a nie jako słabość całej prezentacji. Rozróżnienie aktywnego korzystania i logowań wzmacnia argumentację; jednak tylko częściowo uwzględnione czynniki społeczne ograniczają przenoszalność wniosków." },
+                { "language": "ro", "text": "Aș formula acest lucru ca limită metodologică, nu ca slăbiciune a întregii prezentări. Distincția dintre utilizarea activă și autentificări întărește argumentația; totuși, factorii sociali luați doar parțial în considerare limitează transferabilitatea concluziilor." },
+                { "language": "sq", "text": "Do ta formuloja si kufi metodologjik, jo si dobësi të gjithë prezantimit. Dallimi mes përdorimit aktiv dhe hyrjeve në sistem e forcon argumentimin; megjithatë faktorët socialë të marrë parasysh vetëm pjesërisht kufizojnë transferueshmërinë e përfundimeve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schützt die Leistung der Präsentation und benennt trotzdem eine klare methodische Grenze.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer protects the value of the presentation while still naming a clear methodological limit." },
+                { "language": "fa", "text": "قوی: پاسخ ارزش ارائه را حفظ می‌کند و در عین حال یک محدودیت روش‌شناختی روشن را نام می‌برد." },
+                { "language": "ar", "text": "قوي: تحافظ الإجابة على قيمة العرض وفي الوقت نفسه تذكر حداً منهجياً واضحاً." },
+                { "language": "tr", "text": "Güçlü: Yanıt sunumun değerini korur ve yine de açık bir yöntemsel sınır belirtir." },
+                { "language": "ru", "text": "Сильно: ответ сохраняет ценность презентации и при этом называет ясное методическое ограничение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەهای پێشکەشکردنەکە دەپارێزێت و هەمان کات سنوورێکی میتۆدی ڕوون ناو دەبات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nirxa pêşkêşiyê diparêze û di heman demê de sînorekî metodîk ê zelal nav dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź chroni wartość prezentacji, a jednocześnie wskazuje jasne ograniczenie metodyczne." },
+                { "language": "ro", "text": "Puternic: răspunsul protejează valoarea prezentării și totuși numește o limită metodologică clară." },
+                { "language": "sq", "text": "E fortë: përgjigjja ruan vlerën e prezantimit dhe njëkohësisht përmend një kufi të qartë metodologjik." }
+              ],
+              "explanationKey": "strength-and-method-limit"
+            },
+            {
+              "id": "weaker",
+              "text": "Dann würde ich sagen, dass die Präsentation zwar interessant war, aber wegen der fehlenden sozialen Faktoren nicht ganz überzeugend ist.",
+              "translations": [
+                { "language": "en", "text": "Then I would say that the presentation was interesting, but not entirely convincing because of the missing social factors." },
+                { "language": "fa", "text": "پس می‌گویم ارائه جالب بود، اما به دلیل نبود عوامل اجتماعی کاملاً قانع‌کننده نیست." },
+                { "language": "ar", "text": "عندئذ سأقول إن العرض كان مثيراً للاهتمام، لكنه ليس مقنعاً تماماً بسبب غياب العوامل الاجتماعية." },
+                { "language": "tr", "text": "O zaman sunumun ilginç olduğunu, ancak eksik sosyal faktörler nedeniyle tam ikna edici olmadığını söylerdim." },
+                { "language": "ru", "text": "Тогда я бы сказал, что презентация была интересной, но из-за отсутствующих социальных факторов не полностью убедительной." },
+                { "language": "ckb", "text": "ئەوا دەڵێم پێشکەشکردنەکە سەرنجڕاکێش بوو، بەڵام بەهۆی نەبوونی فاکتەرە کۆمەڵایەتییەکان بە تەواوی قانعکەر نییە." },
+                { "language": "kmr", "text": "Wê demê ez dibêjim pêşkêşî balkêş bû, lê ji ber tunebûna faktoreyên civakî bi tevahî qanîker nîne." },
+                { "language": "pl", "text": "Wtedy powiedziałbym, że prezentacja była interesująca, ale z powodu brakujących czynników społecznych nie jest całkiem przekonująca." },
+                { "language": "ro", "text": "Atunci aș spune că prezentarea a fost interesantă, dar nu este pe deplin convingătoare din cauza factorilor sociali lipsă." },
+                { "language": "sq", "text": "Atëherë do të thosha se prezantimi ishte interesant, por për shkak të mungesës së faktorëve socialë nuk është plotësisht bindës." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu hart und zu wenig differenziert: Die Antwort verliert die konkrete Stärke aus dem Blick und bewertet pauschal.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too harsh and not differentiated enough: The answer loses sight of the concrete strength and evaluates too broadly." },
+                { "language": "fa", "text": "زیادی تند و کم‌تفکیک است: پاسخ قوت مشخص را از نظر دور می‌کند و کلی قضاوت می‌کند." },
+                { "language": "ar", "text": "قاسية جداً وغير متمايزة بما يكفي: تفقد الإجابة نقطة القوة الملموسة وتصدر حكماً عاماً." },
+                { "language": "tr", "text": "Fazla sert ve yeterince ayrıştırılmış değil: Yanıt somut güçlü yönü gözden kaçırır ve genelleyici değerlendirir." },
+                { "language": "ru", "text": "Слишком резко и недостаточно дифференцированно: ответ теряет из виду конкретную сильную сторону и оценивает слишком обобщённо." },
+                { "language": "ckb", "text": "زۆر توند و کەم جیاکراوەیە: وەڵامەکە خاڵی بەهێزی دیاریکراو لەبیر دەکات و بە گشتی هەڵسەنگاندن دەکات." },
+                { "language": "kmr", "text": "Pir tund û ne qasî pêwîst cuda ye: Bersiv xala xurt a şênber ji bîr dike û pir giştî dinirxîne." },
+                { "language": "pl", "text": "Zbyt ostre i za mało zniuansowane: odpowiedź traci z oczu konkretną mocną stronę i ocenia zbyt ogólnie." },
+                { "language": "ro", "text": "Prea dur și insuficient diferențiat: răspunsul pierde din vedere punctul forte concret și evaluează prea general." },
+                { "language": "sq", "text": "Shumë e ashpër dhe jo mjaft e diferencuar: përgjigjja e humb nga vëmendja pikën e fortë konkrete dhe vlerëson në mënyrë shumë të përgjithshme." }
+              ],
+              "explanationKey": "overbroad-criticism"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde sagen: Gerade weil die Präsentation den Zusammenhang überzeugend herausarbeitet, wäre es spannend, die sozialen Einflussfaktoren im nächsten Schritt stärker einzubeziehen. Dadurch ließe sich präziser zeigen, für welche Gruppen die Plattform besonders hilfreich ist.",
+              "translations": [
+                { "language": "en", "text": "I would say: Precisely because the presentation convincingly develops the connection, it would be interesting to include social influencing factors more strongly in the next step. That would make it possible to show more precisely for which groups the platform is especially helpful." },
+                { "language": "fa", "text": "من می‌گویم: دقیقاً چون ارائه رابطه را قانع‌کننده نشان می‌دهد، جالب است در گام بعدی عوامل اجتماعی بیشتر وارد تحلیل شوند. این کار کمک می‌کند دقیق‌تر نشان داده شود پلتفرم برای کدام گروه‌ها به‌ویژه مفید است." },
+                { "language": "ar", "text": "سأقول: بالضبط لأن العرض يبرز العلاقة بشكل مقنع، سيكون من المفيد في الخطوة التالية إدماج العوامل الاجتماعية بدرجة أكبر. وبذلك يمكن إظهار الفئات التي تكون المنصة مفيدة لها بشكل خاص بدقة أكبر." },
+                { "language": "tr", "text": "Şöyle derdim: Sunum bağlantıyı ikna edici biçimde ortaya koyduğu için, bir sonraki adımda sosyal etki faktörlerini daha güçlü biçimde dahil etmek ilginç olurdu. Böylece platformun özellikle hangi gruplar için yararlı olduğu daha kesin gösterilebilir." },
+                { "language": "ru", "text": "Я бы сказал так: именно потому что презентация убедительно раскрывает связь, было бы интересно на следующем шаге сильнее включить социальные факторы влияния. Это позволило бы точнее показать, для каких групп платформа особенно полезна." },
+                { "language": "ckb", "text": "من دەڵێم: بە تایبەتی چونکە پێشکەشکردنەکە پەیوەندییەکە بە قانعکەرەوە دەردەخات، لە هەنگاوی دواتردا گرنگە فاکتەرە کۆمەڵایەتییەکان زیاتر بخرێنە ناو شیکارییەکە. بەوە دەکرێت بە وردی زیاتر پیشان بدرێت پلاتفۆرمەکە بۆ کام گرووپەکان بە تایبەتی بەسوودە." },
+                { "language": "kmr", "text": "Ez ê wisa bibêjim: Tam ji ber ku pêşkêşî têkiliyê bi awayekî qanîker derdixe, di gava din de balkêş e ku faktoreyên bandora civakî zêdetir têxin nav analîzê. Bi vî awayî dikare rasttir bê nîşandan ku platform ji bo kîjan koman bi taybetî bikêr e." },
+                { "language": "pl", "text": "Powiedziałbym: właśnie dlatego, że prezentacja przekonująco pokazuje ten związek, interesujące byłoby w kolejnym kroku silniej włączyć czynniki społeczne. Dzięki temu można by dokładniej pokazać, dla których grup platforma jest szczególnie pomocna." },
+                { "language": "ro", "text": "Aș spune: tocmai pentru că prezentarea evidențiază convingător legătura, ar fi interesant ca în pasul următor factorii sociali să fie integrați mai puternic. Astfel s-ar putea arăta mai precis pentru ce grupuri platforma este deosebit de utilă." },
+                { "language": "sq", "text": "Do të thosha: pikërisht sepse prezantimi e nxjerr bindshëm lidhjen, do të ishte interesante që në hapin tjetër faktorët socialë të përfshihen më fort. Kështu mund të tregohet më saktë për cilat grupe platforma është veçanërisht e dobishme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort verbindet Anerkennung mit einem konkreten nächsten Forschungsschritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer connects recognition with a concrete next research step." },
+                { "language": "fa", "text": "قوی: پاسخ قدردانی را با یک گام پژوهشی مشخص برای ادامه کار وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الإجابة التقدير بخطوة بحثية تالية ملموسة." },
+                { "language": "tr", "text": "Güçlü: Yanıt takdiri somut bir sonraki araştırma adımıyla birleştirir." },
+                { "language": "ru", "text": "Сильно: ответ связывает признание с конкретным следующим исследовательским шагом." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕێزلێنان بە هەنگاوێکی توێژینەوەی دیاریکراوی دواترەوە دەبەستێتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv pejirandinê bi gaveke lêkolînê ya şênber a din ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź łączy uznanie z konkretnym następnym krokiem badawczym." },
+                { "language": "ro", "text": "Puternic: răspunsul leagă aprecierea de un pas concret de cercetare următor." },
+                { "language": "sq", "text": "E fortë: përgjigjja e lidh vlerësimin me një hap konkret të mëtejshëm kërkimor." }
+              ],
+              "explanationKey": "constructive-feedback"
+            },
+            {
+              "id": "weaker",
+              "text": "Die Präsentation war überzeugend, aber beim nächsten Mal sollten Sie noch die sozialen Faktoren ergänzen.",
+              "translations": [
+                { "language": "en", "text": "The presentation was convincing, but next time you should add the social factors." },
+                { "language": "fa", "text": "ارائه قانع‌کننده بود، اما دفعه بعد باید عوامل اجتماعی را هم اضافه کنید." },
+                { "language": "ar", "text": "كان العرض مقنعاً، لكن في المرة القادمة ينبغي أن تضيفي العوامل الاجتماعية أيضاً." },
+                { "language": "tr", "text": "Sunum ikna ediciydi, ama bir dahaki sefere sosyal faktörleri de eklemelisiniz." },
+                { "language": "ru", "text": "Презентация была убедительной, но в следующий раз вам следует добавить и социальные факторы." },
+                { "language": "ckb", "text": "پێشکەشکردنەکە قانعکەر بوو، بەڵام جارێکی تر پێویستە فاکتەرە کۆمەڵایەتییەکانیش زیاد بکەیت." },
+                { "language": "kmr", "text": "Pêşkêşî qanîker bû, lê cara din divê hûn faktoreyên civakî jî lê zêde bikin." },
+                { "language": "pl", "text": "Prezentacja była przekonująca, ale następnym razem powinna pani dodać jeszcze czynniki społeczne." },
+                { "language": "ro", "text": "Prezentarea a fost convingătoare, dar data viitoare ar trebui să adăugați și factorii sociali." },
+                { "language": "sq", "text": "Prezantimi ishte bindës, por herën tjetër duhet të shtoni edhe faktorët socialë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu direktiv: Die Antwort klingt wie eine Anweisung und erklärt nicht, warum dieser Schritt fachlich weiterführt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too directive: The answer sounds like an instruction and does not explain why this step advances the academic argument." },
+                { "language": "fa", "text": "قابل‌باور است، اما زیادی دستوری است: پاسخ مثل دستور به نظر می‌رسد و توضیح نمی‌دهد چرا این گام از نظر علمی بحث را جلو می‌برد." },
+                { "language": "ar", "text": "مقبول، لكنه توجيهي أكثر من اللازم: تبدو الإجابة كتعليمات ولا تشرح لماذا تدفع هذه الخطوة الحجة علمياً إلى الأمام." },
+                { "language": "tr", "text": "Makûl ama fazla buyurgan: Yanıt bir talimat gibi duyuluyor ve bu adımın akademik argümanı neden ilerlettiğini açıklamıyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком директивно: ответ звучит как указание и не объясняет, почему этот шаг продвигает научный аргумент." },
+                { "language": "ckb", "text": "باوەڕپێکراوە، بەڵام زۆر فەرماندانەیە: وەڵامەکە وەک ڕێنمایی دەنگ دەدات و ڕوون ناکاتەوە بۆچی ئەم هەنگاوە لە ڕووی زانستییەوە باسەکە دەباتە پێش." },
+                { "language": "kmr", "text": "Maqûl e, lê pir fermankar e: Bersiv wekî talîmatê xuya dike û rave nake çima ev gav argumana akademîk pêş dixe." },
+                { "language": "pl", "text": "Plausible, ale zbyt dyrektywne: odpowiedź brzmi jak polecenie i nie wyjaśnia, dlaczego ten krok rozwija argument naukowo." },
+                { "language": "ro", "text": "Plauzibil, dar prea directiv: răspunsul sună ca o instrucțiune și nu explică de ce acest pas dezvoltă argumentul academic." },
+                { "language": "sq", "text": "E besueshme, por shumë urdhëruese: përgjigjja tingëllon si udhëzim dhe nuk shpjegon pse ky hap e çon përpara argumentin akademik." }
+              ],
+              "explanationKey": "too-directive-feedback"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich würde nicht sagen, dass die Schlussfolgerung falsch ist, sondern dass sie noch stärker abgesichert werden müsste. Aus den gezeigten Daten lässt sich gut ableiten, dass die Plattform Lernprozesse unterstützen kann; ob sie Studienerfolg allgemein erhöht, bleibt eine weiterführende Frage.",
+              "translations": [
+                { "language": "en", "text": "I would not say that the conclusion is wrong, but that it would need stronger support. The data shown support the claim that the platform can assist learning processes; whether it generally increases academic success remains a further question." },
+                { "language": "fa", "text": "نمی‌گویم نتیجه‌گیری غلط است، بلکه می‌گویم باید پشتوانه قوی‌تری داشته باشد. از داده‌های نشان‌داده‌شده به‌خوبی می‌توان نتیجه گرفت که پلتفرم می‌تواند فرایندهای یادگیری را پشتیبانی کند؛ اما اینکه به‌طور کلی موفقیت تحصیلی را افزایش می‌دهد، پرسشی جداگانه باقی می‌ماند." },
+                { "language": "ar", "text": "لا أقول إن الاستنتاج خاطئ، بل إنه يحتاج إلى دعم أقوى. من البيانات المعروضة يمكن جيداً استنتاج أن المنصة قد تدعم عمليات التعلم؛ أما ما إذا كانت ترفع النجاح الدراسي عموماً فيبقى سؤالاً آخر." },
+                { "language": "tr", "text": "Sonucun yanlış olduğunu söylemezdim, fakat daha güçlü biçimde desteklenmesi gerektiğini söylerdim. Gösterilen verilerden platformun öğrenme süreçlerini destekleyebileceği iyi çıkarılabilir; ancak akademik başarıyı genel olarak artırıp artırmadığı ayrı bir soru olarak kalır." },
+                { "language": "ru", "text": "Я бы не сказал, что вывод неверен, а сказал бы, что его нужно сильнее обосновать. Из показанных данных хорошо следует, что платформа может поддерживать процессы обучения; повышает ли она учебную успешность в целом, остаётся отдельным вопросом." },
+                { "language": "ckb", "text": "من ناڵێم دەرئەنجامەکە هەڵەیە، بەڵکو دەڵێم پێویستە پشتوانەی بەهێزتری هەبێت. لە داتا پیشاندراوەکان باش دەکرێت دەرئەنجام بگیرێت کە پلاتفۆرمەکە دەتوانێت پرۆسەکانی فێربوون پشتگیری بکات؛ بەڵام ئەوەی بە گشتی سەرکەوتنی خوێندن زیاد دەکات یان نا، پرسیارێکی دواترە." },
+                { "language": "kmr", "text": "Ez nabêjim encam şaş e, lê dibêjim divê hê zêdetir bê piştgirîkirin. Ji daneyên nîşandan dikare baş bê derxistin ku platform dikare pêvajoyên fêrbûnê piştgirî bike; lê gelo ew bi giştî serkeftina xwendinê zêde dike, pirseke din dimîne." },
+                { "language": "pl", "text": "Nie powiedziałbym, że wniosek jest błędny, lecz że wymaga mocniejszego zabezpieczenia. Z pokazanych danych dobrze wynika, że platforma może wspierać procesy uczenia się; czy ogólnie zwiększa sukces w studiach, pozostaje odrębnym pytaniem." },
+                { "language": "ro", "text": "Nu aș spune că concluzia este greșită, ci că ar trebui susținută mai puternic. Din datele prezentate se poate deduce bine că platforma poate sprijini procesele de învățare; dacă ea crește în general succesul academic rămâne o întrebare separată." },
+                { "language": "sq", "text": "Nuk do të thosha se përfundimi është i gabuar, por se duhet mbështetur më fort. Nga të dhënat e paraqitura mund të nxirret mirë se platforma mund të mbështesë proceset e të nxënit; nëse ajo rrit në përgjithësi suksesin akademik mbetet një pyetje tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort bleibt sachlich und begrenzt die Schlussfolgerung, ohne sie pauschal zurückzuweisen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer remains factual and limits the conclusion without rejecting it wholesale." },
+                { "language": "fa", "text": "قوی: پاسخ عینی می‌ماند و نتیجه‌گیری را محدود می‌کند، بدون اینکه آن را کلی رد کند." },
+                { "language": "ar", "text": "قوي: تبقى الإجابة موضوعية وتحد من الاستنتاج من دون رفضه كلياً." },
+                { "language": "tr", "text": "Güçlü: Yanıt nesnel kalır ve sonucu bütünüyle reddetmeden sınırlar." },
+                { "language": "ru", "text": "Сильно: ответ остаётся предметным и ограничивает вывод, не отвергая его целиком." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بابەتی دەمێنێتەوە و دەرئەنجامەکە سنووردار دەکات، بەبێ ئەوەی بە گشتی ڕەتی بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: Bersiv rastî dimîne û encamê sînordar dike bêyî ku wê bi tevahî red bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź pozostaje rzeczowa i ogranicza wniosek, nie odrzucając go w całości." },
+                { "language": "ro", "text": "Puternic: răspunsul rămâne factual și limitează concluzia fără să o respingă global." },
+                { "language": "sq", "text": "E fortë: përgjigjja mbetet faktike dhe e kufizon përfundimin pa e refuzuar atë tërësisht." }
+              ],
+              "explanationKey": "limit-not-reject"
+            },
+            {
+              "id": "weaker",
+              "text": "Ja, die Schlussfolgerung geht etwas zu weit, weil die Daten noch nicht vollständig genug sind.",
+              "translations": [
+                { "language": "en", "text": "Yes, the conclusion goes a bit too far because the data are not yet complete enough." },
+                { "language": "fa", "text": "بله، نتیجه‌گیری کمی بیش از حد جلو رفته است، چون داده‌ها هنوز به اندازه کافی کامل نیستند." },
+                { "language": "ar", "text": "نعم، الاستنتاج يذهب بعيداً بعض الشيء لأن البيانات ليست كاملة بما يكفي بعد." },
+                { "language": "tr", "text": "Evet, sonuç biraz fazla ileri gidiyor, çünkü veriler henüz yeterince tam değil." },
+                { "language": "ru", "text": "Да, вывод немного заходит слишком далеко, потому что данных пока недостаточно." },
+                { "language": "ckb", "text": "بەڵێ، دەرئەنجامەکە کەمێک زۆر لە پێش چووە، چونکە داتا هێشتا بە قەدەر پێویست تەواو نییە." },
+                { "language": "kmr", "text": "Erê, encam hinekî pir dûr diçe, ji ber ku dane hê qasî pêwîst temam nînin." },
+                { "language": "pl", "text": "Tak, wniosek idzie trochę za daleko, ponieważ dane nie są jeszcze wystarczająco pełne." },
+                { "language": "ro", "text": "Da, concluzia merge puțin prea departe, deoarece datele nu sunt încă suficient de complete." },
+                { "language": "sq", "text": "Po, përfundimi shkon paksa shumë larg, sepse të dhënat nuk janë ende mjaftueshëm të plota." }
+              ],
+              "isCorrect": false,
+              "feedback": "Verständlich, aber zu knapp: Die Antwort sagt nicht, welcher Teil der Schlussfolgerung tragfähig ist und welcher offen bleibt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Understandable, but too brief: The answer does not say which part of the conclusion is supported and which remains open." },
+                { "language": "fa", "text": "قابل فهم است، اما زیادی کوتاه: پاسخ نمی‌گوید کدام بخش نتیجه‌گیری پشتوانه دارد و کدام بخش باز می‌ماند." },
+                { "language": "ar", "text": "مفهوم، لكنه موجز جداً: لا تذكر الإجابة أي جزء من الاستنتاج مدعوم وأي جزء يبقى مفتوحاً." },
+                { "language": "tr", "text": "Anlaşılır, ama fazla kısa: Yanıt sonucun hangi kısmının desteklendiğini ve hangi kısmının açık kaldığını söylemiyor." },
+                { "language": "ru", "text": "Понятно, но слишком кратко: ответ не говорит, какая часть вывода подтверждена, а какая остаётся открытой." },
+                { "language": "ckb", "text": "تێگەیشتووە، بەڵام زۆر کورتە: وەڵامەکە ناڵێت کام بەشی دەرئەنجام پشتوانەی هەیە و کام بەش هێشتا کراوەیە." },
+                { "language": "kmr", "text": "Têgihiştbar e, lê pir kurt e: Bersiv nabêje kîjan beşa encamê piştgirî heye û kîjan beş vekirî dimîne." },
+                { "language": "pl", "text": "Zrozumiałe, ale zbyt krótkie: odpowiedź nie mówi, która część wniosku jest poparta, a która pozostaje otwarta." },
+                { "language": "ro", "text": "De înțeles, dar prea scurt: răspunsul nu spune ce parte a concluziei este susținută și ce parte rămâne deschisă." },
+                { "language": "sq", "text": "E kuptueshme, por shumë e shkurtër: përgjigjja nuk tregon cila pjesë e përfundimit mbështetet dhe cila mbetet e hapur." }
+              ],
+              "explanationKey": "too-brief-limitation"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Die Stärke der Präsentation lag darin, dass sie den Zusammenhang zwischen Plattformnutzung und Selbstorganisation anschaulich und nachvollziehbar erklärt hat. Weiter untersucht werden sollte, inwiefern soziale Voraussetzungen und unterschiedliche Nutzungsformen die Aussage über Studienerfolg begrenzen.",
+              "translations": [
+                { "language": "en", "text": "The strength of the presentation lay in the fact that it explained the connection between platform use and self-organization clearly and understandably. What should be examined further is the extent to which social conditions and different forms of use limit the claim about academic success." },
+                { "language": "fa", "text": "قوت ارائه در این بود که رابطه میان استفاده از پلتفرم و خودسازمان‌دهی را روشن و قابل فهم توضیح داد. نکته‌ای که باید بیشتر بررسی شود این است که شرایط اجتماعی و شکل‌های متفاوت استفاده تا چه حد ادعای مربوط به موفقیت تحصیلی را محدود می‌کنند." },
+                { "language": "ar", "text": "كانت قوة العرض في أنه شرح العلاقة بين استخدام المنصة والتنظيم الذاتي بوضوح وبطريقة مفهومة. وما ينبغي فحصه أكثر هو إلى أي مدى تحد الشروط الاجتماعية وأشكال الاستخدام المختلفة من الادعاء المتعلق بالنجاح الدراسي." },
+                { "language": "tr", "text": "Sunumun güçlü yanı, platform kullanımı ile öz düzenleme arasındaki ilişkiyi açık ve anlaşılır biçimde açıklamasıydı. Daha fazla incelenmesi gereken nokta, sosyal koşulların ve farklı kullanım biçimlerinin akademik başarıya ilişkin iddiayı ne ölçüde sınırladığıdır." },
+                { "language": "ru", "text": "Сильная сторона презентации заключалась в том, что она наглядно и понятно объяснила связь между использованием платформы и самоорганизацией. Дальше следует исследовать, в какой мере социальные условия и разные формы использования ограничивают утверждение об учебной успешности." },
+                { "language": "ckb", "text": "بەهێزی پێشکەشکردنەکە لەوەدا بوو کە پەیوەندی نێوان بەکارهێنانی پلاتفۆرم و خۆڕێکخستن بە ڕوونی و بە شێوەیەکی تێگەیشتوو ڕوون کردەوە. ئەو خاڵەی پێویستە زیاتر بپشکنرێت ئەوەیە کە مەرجە کۆمەڵایەتییەکان و شێوە جیاوازەکانی بەکارهێنان تا چ ڕادەیەک بانگەشەی سەرکەوتنی خوێندن سنووردار دەکەن." },
+                { "language": "kmr", "text": "Xala xurt a pêşkêşiyê ew bû ku têkiliya di navbera bikaranîna platformê û xwerêxistinê de bi awayekî zelal û têgihiştbar rave kir. Ya ku divê zêdetir bê lêkolînkirin ew e ka mercên civakî û şêweyên cuda yên bikaranînê heta çi radeyê îdiaya serkeftina xwendinê sînordar dikin." },
+                { "language": "pl", "text": "Mocną stroną prezentacji było to, że jasno i zrozumiale wyjaśniła związek między korzystaniem z platformy a samoorganizacją. Dalej należy zbadać, w jakim stopniu warunki społeczne i różne formy korzystania ograniczają twierdzenie o sukcesie w studiach." },
+                { "language": "ro", "text": "Punctul forte al prezentării a fost că a explicat clar și inteligibil legătura dintre utilizarea platformei și autoorganizare. Ar trebui cercetat în continuare în ce măsură condițiile sociale și formele diferite de utilizare limitează afirmația despre succesul academic." },
+                { "language": "sq", "text": "Pika e fortë e prezantimit ishte se shpjegoi qartë dhe kuptueshëm lidhjen mes përdorimit të platformës dhe vetëorganizimit. Duhet hulumtuar më tej se deri në çfarë mase kushtet sociale dhe format e ndryshme të përdorimit e kufizojnë pohimin për suksesin akademik." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Zusammenfassung enthält eine klare Anerkennung und eine präzise offene Forschungsfrage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The summary contains clear recognition and a precise open research question." },
+                { "language": "fa", "text": "قوی: خلاصه هم قدردانی روشن دارد و هم یک پرسش پژوهشی باز و دقیق." },
+                { "language": "ar", "text": "قوي: يتضمن الملخص تقديراً واضحاً وسؤال بحث مفتوحاً ودقيقاً." },
+                { "language": "tr", "text": "Güçlü: Özet net bir takdir ve kesin bir açık araştırma sorusu içerir." },
+                { "language": "ru", "text": "Сильно: резюме содержит ясное признание сильной стороны и точный открытый исследовательский вопрос." },
+                { "language": "ckb", "text": "بەهێزە: کورتەکە ڕێزلێنانی ڕوون و پرسیاری توێژینەوەی کراوە و وردی تێدایە." },
+                { "language": "kmr", "text": "Xurt e: Kurte hem pejirandineke zelal û hem pirseke lêkolînê ya vekirî û rast dihewîne." },
+                { "language": "pl", "text": "Mocne: podsumowanie zawiera jasne uznanie i precyzyjne otwarte pytanie badawcze." },
+                { "language": "ro", "text": "Puternic: rezumatul conține o apreciere clară și o întrebare de cercetare deschisă și precisă." },
+                { "language": "sq", "text": "E fortë: përmbledhja përmban vlerësim të qartë dhe një pyetje kërkimore të hapur e të saktë." }
+              ],
+              "explanationKey": "two-sentence-summary"
+            },
+            {
+              "id": "weaker",
+              "text": "Die Präsentation war gut erklärt, aber einige Punkte müssten noch genauer untersucht werden.",
+              "translations": [
+                { "language": "en", "text": "The presentation was well explained, but some points would need to be examined more precisely." },
+                { "language": "fa", "text": "ارائه خوب توضیح داده شده بود، اما بعضی نکته‌ها باید دقیق‌تر بررسی شوند." },
+                { "language": "ar", "text": "كان العرض موضحاً جيداً، لكن بعض النقاط تحتاج إلى فحص أدق." },
+                { "language": "tr", "text": "Sunum iyi açıklanmıştı, ancak bazı noktaların daha kesin incelenmesi gerekirdi." },
+                { "language": "ru", "text": "Презентация была хорошо объяснена, но некоторые пункты нужно было бы изучить точнее." },
+                { "language": "ckb", "text": "پێشکەشکردنەکە باش ڕوون کرابووەوە، بەڵام هەندێک خاڵ پێویستە وردتر بپشکنرێن." },
+                { "language": "kmr", "text": "Pêşkêşî baş hatibû ravekirin, lê divê hin xal zêdetir bi rastî bên lêkolînkirin." },
+                { "language": "pl", "text": "Prezentacja była dobrze wyjaśniona, ale niektóre punkty należałoby dokładniej zbadać." },
+                { "language": "ro", "text": "Prezentarea a fost bine explicată, dar unele puncte ar trebui cercetate mai precis." },
+                { "language": "sq", "text": "Prezantimi ishte shpjeguar mirë, por disa pika duhet të hulumtohen më saktë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein als Abschluss: Die Antwort benennt weder die konkrete Stärke noch den genauen offenen Punkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general as a conclusion: The answer names neither the concrete strength nor the precise open issue." },
+                { "language": "fa", "text": "برای جمع‌بندی زیادی کلی است: پاسخ نه قوت مشخص را می‌گوید و نه نکته باز دقیق را." },
+                { "language": "ar", "text": "عام جداً كخاتمة: لا تذكر الإجابة نقطة القوة الملموسة ولا المسألة المفتوحة الدقيقة." },
+                { "language": "tr", "text": "Sonuç için fazla genel: Yanıt ne somut güçlü yönü ne de kesin açık noktayı adlandırıyor." },
+                { "language": "ru", "text": "Слишком общее для заключения: ответ не называет ни конкретную сильную сторону, ни точный открытый пункт." },
+                { "language": "ckb", "text": "بۆ کۆتایی زۆر گشتییە: وەڵامەکە نە خاڵی بەهێزی دیاریکراو ناو دەبات و نە خاڵی کراوەی ورد." },
+                { "language": "kmr", "text": "Ji bo dawî pir giştî ye: Bersiv ne xala xurt a şênber û ne jî xala vekirî ya rast nav dike." },
+                { "language": "pl", "text": "Zbyt ogólne jako podsumowanie: odpowiedź nie wskazuje ani konkretnej mocnej strony, ani dokładnego punktu otwartego." },
+                { "language": "ro", "text": "Prea general ca încheiere: răspunsul nu numește nici punctul forte concret, nici aspectul deschis precis." },
+                { "language": "sq", "text": "Shumë e përgjithshme si përfundim: përgjigjja nuk përmend as pikën e fortë konkrete, as çështjen e hapur të saktë." }
+              ],
+              "explanationKey": "generic-summary"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "balanced-feedback",
+          "text": "C1 feedback should begin with a specific strength and then name a precise academic limitation.",
+          "translations": [
+            { "language": "en", "text": "C1 feedback should begin with a specific strength and then name a precise academic limitation." },
+            { "language": "fa", "text": "بازخورد سطح پیشرفته باید با یک قوت مشخص شروع شود و سپس یک محدودیت علمی دقیق را نام ببرد." },
+            { "language": "ar", "text": "ينبغي أن تبدأ التغذية الراجعة في المستوى المتقدم بنقطة قوة محددة ثم تذكر حداً علمياً دقيقاً." },
+            { "language": "tr", "text": "İleri düzey geri bildirim belirli bir güçlü yönle başlamalı ve ardından kesin bir akademik sınır belirtmelidir." },
+            { "language": "ru", "text": "Обратная связь продвинутого уровня должна начинаться с конкретной сильной стороны, а затем называть точное академическое ограничение." },
+            { "language": "ckb", "text": "فیدباکی ئاستی پێشکەوتوو پێویستە بە خاڵێکی بەهێزی دیاریکراو دەست پێ بکات و پاشان سنوورێکی زانستی ورد ناو ببە." },
+            { "language": "kmr", "text": "Vegotina asta pêşketî divê bi xalekî xurt ê şênber dest pê bike û paşê sînorekî akademîk ê rast nav bike." },
+            { "language": "pl", "text": "Informacja zwrotna na poziomie zaawansowanym powinna zacząć się od konkretnej mocnej strony, a następnie wskazać precyzyjne ograniczenie akademickie." },
+            { "language": "ro", "text": "Feedbackul de nivel avansat trebuie să înceapă cu un punct forte specific și apoi să numească o limită academică precisă." },
+            { "language": "sq", "text": "Reagimi i nivelit të avancuar duhet të fillojë me një pikë të fortë specifike dhe pastaj të përmendë një kufi akademik të saktë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "precise-question",
+          "text": "A strong follow-up question tests the basis of the claim instead of asking only for more examples.",
+          "translations": [
+            { "language": "en", "text": "A strong follow-up question tests the basis of the claim instead of asking only for more examples." },
+            { "language": "fa", "text": "پرسش پیگیری قوی پایه ادعا را بررسی می‌کند، نه اینکه فقط مثال‌های بیشتری بخواهد." },
+            { "language": "ar", "text": "سؤال المتابعة القوي يفحص أساس الادعاء بدلاً من طلب أمثلة إضافية فقط." },
+            { "language": "tr", "text": "Güçlü bir takip sorusu yalnızca daha fazla örnek istemek yerine iddianın temelini sınar." },
+            { "language": "ru", "text": "Сильный уточняющий вопрос проверяет основу утверждения, а не просто просит больше примеров." },
+            { "language": "ckb", "text": "پرسیاری دواداچوونی بەهێز بنەمای بانگەشەکە دەپشکنێت، نە ئەوەی تەنها نموونەی زیاتر بخوازێت." },
+            { "language": "kmr", "text": "Pirsa şopandinê ya xurt bingeha îdiayê dicêribîne, ne ku tenê mînakên zêdetir bixwaze." },
+            { "language": "pl", "text": "Mocne pytanie uzupełniające sprawdza podstawę twierdzenia, a nie tylko prosi o więcej przykładów." },
+            { "language": "ro", "text": "O întrebare de clarificare puternică verifică baza afirmației, nu cere doar mai multe exemple." },
+            { "language": "sq", "text": "Një pyetje e fortë ndjekëse kontrollon bazën e pohimit, jo vetëm kërkon më shumë shembuj." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "method-limit",
+          "text": "A methodological limit is not the same as dismissing the entire presentation.",
+          "translations": [
+            { "language": "en", "text": "A methodological limit is not the same as dismissing the entire presentation." },
+            { "language": "fa", "text": "محدودیت روش‌شناختی با رد کردن کل ارائه یکی نیست." },
+            { "language": "ar", "text": "الحد المنهجي ليس هو نفسه رفض العرض بأكمله." },
+            { "language": "tr", "text": "Yöntemsel bir sınır, tüm sunumu reddetmekle aynı şey değildir." },
+            { "language": "ru", "text": "Методическое ограничение не равно отклонению всей презентации." },
+            { "language": "ckb", "text": "سنووری میتۆدی هاوشێوەی ڕەتکردنەوەی تەواوی پێشکەشکردنەکە نییە." },
+            { "language": "kmr", "text": "Sînorekî metodîk ne wekî redkirina hemû pêşkêşiyê ye." },
+            { "language": "pl", "text": "Ograniczenie metodyczne nie jest tym samym co odrzucenie całej prezentacji." },
+            { "language": "ro", "text": "O limită metodologică nu este același lucru cu respingerea întregii prezentări." },
+            { "language": "sq", "text": "Një kufi metodologjik nuk është njësoj si refuzimi i gjithë prezantimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "qualified-conclusion",
+          "text": "C1 discussion often requires limiting a conclusion without calling it simply wrong.",
+          "translations": [
+            { "language": "en", "text": "C1 discussion often requires limiting a conclusion without calling it simply wrong." },
+            { "language": "fa", "text": "بحث سطح پیشرفته اغلب نیاز دارد نتیجه‌گیری محدود شود، بدون اینکه ساده بگوییم غلط است." },
+            { "language": "ar", "text": "غالباً يتطلب النقاش المتقدم تقييد الاستنتاج من دون وصفه ببساطة بأنه خاطئ." },
+            { "language": "tr", "text": "İleri düzey tartışma çoğu zaman bir sonucu basitçe yanlış demeden sınırlamayı gerektirir." },
+            { "language": "ru", "text": "Дискуссия продвинутого уровня часто требует ограничить вывод, не называя его просто неверным." },
+            { "language": "ckb", "text": "گفتوگۆی ئاستی پێشکەوتوو زۆرجار پێویستی بە سنووردارکردنی دەرئەنجام هەیە، بەبێ ئەوەی بە سادەیی بڵێین هەڵەیە." },
+            { "language": "kmr", "text": "Nîqaşa asta pêşketî gelek caran hewce dike encamekê sînordar bike bêyî ku tenê bêje şaş e." },
+            { "language": "pl", "text": "Dyskusja na poziomie zaawansowanym często wymaga ograniczenia wniosku bez prostego stwierdzenia, że jest błędny." },
+            { "language": "ro", "text": "Discuția de nivel avansat cere adesea limitarea unei concluzii fără a o numi pur și simplu greșită." },
+            { "language": "sq", "text": "Diskutimi i nivelit të avancuar shpesh kërkon kufizimin e një përfundimi pa e quajtur thjesht të gabuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "summary",
+          "text": "A strong final summary names both the presentation's contribution and the precise point for further research.",
+          "translations": [
+            { "language": "en", "text": "A strong final summary names both the presentation's contribution and the precise point for further research." },
+            { "language": "fa", "text": "جمع‌بندی پایانی قوی هم سهم ارائه را نام می‌برد و هم نکته دقیق برای پژوهش بیشتر را." },
+            { "language": "ar", "text": "يلخص الختام القوي إسهام العرض والنقطة الدقيقة التي تحتاج إلى بحث إضافي." },
+            { "language": "tr", "text": "Güçlü bir son özet hem sunumun katkısını hem de daha fazla araştırma için kesin noktayı belirtir." },
+            { "language": "ru", "text": "Сильное итоговое резюме называет и вклад презентации, и точный пункт для дальнейшего исследования." },
+            { "language": "ckb", "text": "کورتەی کۆتایی بەهێز هەم بەشداری پێشکەشکردنەکە ناو دەبات و هەم خاڵی ورد بۆ توێژینەوەی زیاتر." },
+            { "language": "kmr", "text": "Kurteya dawî ya xurt hem beşdariya pêşkêşiyê û hem xala rast ji bo lêkolîna zêdetir nav dike." },
+            { "language": "pl", "text": "Mocne końcowe podsumowanie wskazuje zarówno wkład prezentacji, jak i precyzyjny punkt do dalszych badań." },
+            { "language": "ro", "text": "Un rezumat final puternic numește atât contribuția prezentării, cât și punctul precis pentru cercetare ulterioară." },
+            { "language": "sq", "text": "Një përmbledhje përfundimtare e fortë përmend si kontributin e prezantimit, ashtu edhe pikën e saktë për hulumtim të mëtejshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "academic-presentation-discussion",
+          "placement": "header",
+          "purpose": "Show a seminar presentation discussion without displaying real slides, names, or private data.",
+          "altText": "A university seminar room where adult students discuss a presentation with abstract slides and notes.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A university seminar room where adult students discuss a presentation with abstract slides and notes." },
+            { "language": "fa", "text": "اتاق سمینار دانشگاهی که دانشجویان بزرگسال در آن درباره یک ارائه با اسلایدهای انتزاعی و یادداشت‌ها بحث می‌کنند." },
+            { "language": "ar", "text": "قاعة ندوة جامعية يناقش فيها طلاب بالغون عرضاً مع شرائح تجريدية وملاحظات." },
+            { "language": "tr", "text": "Yetişkin öğrencilerin soyut slaytlar ve notlarla bir sunumu tartıştığı üniversite seminer odası." },
+            { "language": "ru", "text": "Университетская семинарская аудитория, где взрослые студенты обсуждают презентацию с абстрактными слайдами и заметками." },
+            { "language": "ckb", "text": "ژووری سیمیناری زانکۆ کە خوێندکارانی گەورەساڵ تێیدا دەربارەی پێشکەشکردنێک بە سلایدی ئەبستراکت و تێبینی گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Odeya semînera zanîngehê ku tê de xwendekarên mezin li ser pêşkêşiyekê bi slaydên abstrakt û notan nîqaş dikin." },
+            { "language": "pl", "text": "Sala seminaryjna na uczelni, w której dorośli studenci omawiają prezentację z abstrakcyjnymi slajdami i notatkami." },
+            { "language": "ro", "text": "O sală de seminar universitar în care studenți adulți discută o prezentare cu diapozitive abstracte și notițe." },
+            { "language": "sq", "text": "Një sallë seminari universitar ku studentë të rritur diskutojnë një prezantim me sllajde abstrakte dhe shënime." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult university seminar group discussing an academic presentation, abstract slides with no readable text, notebooks on a table, German higher-education setting, no logos, no private data, accessible composition, calm academic atmosphere.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

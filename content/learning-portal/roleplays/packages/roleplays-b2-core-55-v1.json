@@ -1,0 +1,662 @@
+{
+  "packageId": "roleplays-b2-core-55-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 55 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 55",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "culture": "de-DE",
+  "sourceLanguage": "de",
+  "notes": "B2 standalone RoleplayScenario package. German-first source content with localized learner-language projections. One scenario only for quality review.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-hotelbuchung-mit-problem-klaeren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Hotelbuchung mit Problem klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarifying a hotel booking problem" },
+        { "language": "fa", "text": "روشن کردن مشکل رزرو هتل" },
+        { "language": "ar", "text": "توضيح مشكلة في حجز الفندق" },
+        { "language": "tr", "text": "Bir otel rezervasyonu sorununu netleştirmek" },
+        { "language": "ru", "text": "Уточнить проблему с бронированием отеля" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی کێشەیەکی حجزکردنی هۆتێل" },
+        { "language": "kmr", "text": "Zelalkirina pirsgirêka rezervasyona otêlê" },
+        { "language": "pl", "text": "Wyjaśnienie problemu z rezerwacją hotelu" },
+        { "language": "ro", "text": "Clarificarea unei probleme la rezervarea hotelului" },
+        { "language": "sq", "text": "Sqarimi i një problemi me rezervimin e hotelit" }
+      ],
+      "description": "Du rufst im Hotel an, weil die Bestätigung ein ruhiges Doppelzimmer mit Frühstück zeigt, die neue Nachricht des Hotels aber ein kleineres Zimmer ohne Frühstück nennt. Du erklärst Buchungsnummer, Reisedaten und Problem, verhandelst eine gleichwertige Lösung ohne Aufpreis und bittest um eine schriftliche Bestätigung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the hotel because the confirmation shows a quiet double room with breakfast, but the hotel's new message mentions a smaller room without breakfast. You explain the booking number, travel dates, and problem, negotiate an equivalent solution without extra charge, and ask for written confirmation." },
+        { "language": "fa", "text": "با هتل تماس می‌گیری، چون تأییدیه یک اتاق دو نفره آرام با صبحانه را نشان می‌دهد، اما پیام جدید هتل یک اتاق کوچک‌تر بدون صبحانه را ذکر کرده است. شماره رزرو، تاریخ سفر و مشکل را توضیح می‌دهی، یک راه‌حل هم‌ارز بدون هزینه اضافه مذاکره می‌کنی و تأیید کتبی می‌خواهی." },
+        { "language": "ar", "text": "تتصل بالفندق لأن التأكيد يظهر غرفة مزدوجة هادئة مع فطور، لكن رسالة الفندق الجديدة تذكر غرفة أصغر من دون فطور. تشرح رقم الحجز وتواريخ السفر والمشكلة، وتفاوض على حل مكافئ من دون رسوم إضافية، وتطلب تأكيدًا خطيًا." },
+        { "language": "tr", "text": "Onay belgesinde kahvaltılı sakin bir çift kişilik oda göründüğü, fakat otelin yeni mesajında kahvaltısız daha küçük bir oda yazdığı için oteli arıyorsun. Rezervasyon numarasını, seyahat tarihlerini ve sorunu açıklıyor, ek ücret olmadan eşdeğer bir çözüm müzakere ediyor ve yazılı onay istiyorsun." },
+        { "language": "ru", "text": "Ты звонишь в отель, потому что в подтверждении указана тихая двухместная комната с завтраком, а в новом сообщении отеля говорится о меньшем номере без завтрака. Ты объясняешь номер бронирования, даты поездки и проблему, договариваешься о равноценном решении без доплаты и просишь письменное подтверждение." },
+        { "language": "ckb", "text": "پەیوەندی بە هۆتێلەکە دەکەیت، چونکە پشتڕاستکردنەوەکە ژوورێکی دوو کەسی ئارام لەگەڵ بەیانی نیشان دەدات، بەڵام پەیامی نوێی هۆتێلەکە ژوورێکی بچووکتر بەبێ بەیانی دەڵێت. ژمارەی حجز، بەروارەکانی گەشت و کێشەکە ڕوون دەکەیتەوە، چارەسەرێکی هاوتا بەبێ تێچووی زیادە گفتوگۆ دەکەیت و داوای پشتڕاستکردنەوەی نووسراو دەکەیت." },
+        { "language": "kmr", "text": "Tu telefonî otêlê dikî, ji ber ku piştrastkirin odeyeke du kesî ya bêdeng bi taştê nîşan dide, lê peyama nû ya otêlê odeyeke biçûktir bê taştê dibêje. Tu jimareya rezervasyonê, demên rêwîtiyê û pirsgirêkê şirove dikî, çareseriyeke wekhev bê lêçûneke zêde diaxifî û daxwaza piştrastkirina nivîskî dikî." },
+        { "language": "pl", "text": "Dzwonisz do hotelu, ponieważ potwierdzenie pokazuje cichy pokój dwuosobowy ze śniadaniem, ale nowa wiadomość z hotelu wymienia mniejszy pokój bez śniadania. Wyjaśniasz numer rezerwacji, daty podróży i problem, negocjujesz równoważne rozwiązanie bez dopłaty i prosisz o pisemne potwierdzenie." },
+        { "language": "ro", "text": "Suni la hotel deoarece confirmarea arată o cameră dublă liniștită cu mic dejun, dar noul mesaj al hotelului menționează o cameră mai mică fără mic dejun. Explici numărul rezervării, datele călătoriei și problema, negociezi o soluție echivalentă fără cost suplimentar și ceri o confirmare scrisă." },
+        { "language": "sq", "text": "Telefonon hotelin sepse konfirmimi tregon një dhomë dyshe të qetë me mëngjes, por mesazhi i ri i hotelit përmend një dhomë më të vogël pa mëngjes. Shpjegon numrin e rezervimit, datat e udhëtimit dhe problemin, negocion një zgjidhje të barasvlershme pa pagesë shtesë dhe kërkon konfirmim me shkrim." }
+      ],
+      "learnerGoal": "Kläre die Hotelbuchung: nenne Buchungsnummer, Zeitraum und bestätigte Leistungen, erkläre die Abweichung, frage nach einer gleichwertigen ruhigen Alternative ohne Aufpreis und sichere dir eine schriftliche Bestätigung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Clarify the hotel booking: name the booking number, dates, and confirmed services, explain the discrepancy, ask for an equivalent quiet alternative without extra charge, and secure written confirmation." },
+        { "language": "fa", "text": "رزرو هتل را روشن کن: شماره رزرو، بازه زمانی و خدمات تأییدشده را بگو، اختلاف را توضیح بده، یک جایگزین آرام و هم‌ارز بدون هزینه اضافه بخواه و تأیید کتبی بگیر." },
+        { "language": "ar", "text": "وضّح حجز الفندق: اذكر رقم الحجز والمدة والخدمات المؤكدة، واشرح الاختلاف، واطلب بديلاً هادئًا مكافئًا من دون رسوم إضافية، واحصل على تأكيد خطي." },
+        { "language": "tr", "text": "Otel rezervasyonunu netleştir: rezervasyon numarasını, tarih aralığını ve onaylanan hizmetleri söyle, farklılığı açıkla, ek ücret olmadan eşdeğer sakin bir alternatif iste ve yazılı onay al." },
+        { "language": "ru", "text": "Уточни бронирование отеля: назови номер бронирования, даты и подтвержденные услуги, объясни расхождение, попроси равноценную тихую альтернативу без доплаты и добейся письменного подтверждения." },
+        { "language": "ckb", "text": "حجزی هۆتێل ڕوون بکەوە: ژمارەی حجز، ماوە و خزمەتگوزارییە پشتڕاستکراوەکان بڵێ، جیاوازییەکە ڕوون بکەوە، داوای جێگرەوەیەکی ئارام و هاوتا بەبێ تێچووی زیادە بکە و پشتڕاستکردنەوەی نووسراو وەربگرە." },
+        { "language": "kmr", "text": "Rezervasyona otêlê zelal bike: jimareya rezervasyonê, dem û xizmetên piştrastkirî bibêje, cudahiyê şirove bike, daxwaza alternatîfeke bêdeng û wekhev bê lêçûneke zêde bike û piştrastkirina nivîskî bistîne." },
+        { "language": "pl", "text": "Wyjaśnij rezerwację hotelu: podaj numer rezerwacji, termin i potwierdzone świadczenia, wyjaśnij rozbieżność, poproś o równoważną cichą alternatywę bez dopłaty i uzyskaj pisemne potwierdzenie." },
+        { "language": "ro", "text": "Clarifică rezervarea la hotel: menționează numărul rezervării, perioada și serviciile confirmate, explică diferența, cere o alternativă liniștită echivalentă fără cost suplimentar și obține confirmare scrisă." },
+        { "language": "sq", "text": "Sqaro rezervimin e hotelit: përmend numrin e rezervimit, periudhën dhe shërbimet e konfirmuara, shpjego mospërputhjen, kërko një alternativë të qetë dhe të barasvlershme pa pagesë shtesë dhe siguro konfirmim me shkrim." }
+      ],
+      "cefrLevel": "B2",
+      "category": "travel",
+      "topics": [
+        "transport-and-travel",
+        "customer-service"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "taskType": "explain-problem",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "hotel-reception",
+          "displayName": "Hotelrezeption",
+          "translations": [
+            { "language": "en", "text": "Hotel reception" },
+            { "language": "fa", "text": "پذیرش هتل" },
+            { "language": "ar", "text": "استقبال الفندق" },
+            { "language": "tr", "text": "Otel resepsiyonu" },
+            { "language": "ru", "text": "Ресепшен отеля" },
+            { "language": "ckb", "text": "پێشوازی هۆتێل" },
+            { "language": "kmr", "text": "Pêşwaziya otêlê" },
+            { "language": "pl", "text": "Recepcja hotelu" },
+            { "language": "ro", "text": "Recepția hotelului" },
+            { "language": "sq", "text": "Recepsioni i hotelit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Gast",
+          "translations": [
+            { "language": "en", "text": "Guest" },
+            { "language": "fa", "text": "مهمان" },
+            { "language": "ar", "text": "الضيف" },
+            { "language": "tr", "text": "Misafir" },
+            { "language": "ru", "text": "Гость" },
+            { "language": "ckb", "text": "میوان" },
+            { "language": "kmr", "text": "Mêvan" },
+            { "language": "pl", "text": "Gość" },
+            { "language": "ro", "text": "Oaspete" },
+            { "language": "sq", "text": "Mysafiri" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "hotel-reception",
+          "baseText": "Hotel Rheinblick, guten Tag. Sie sprechen mit der Rezeption. Wie kann ich Ihnen helfen?",
+          "translations": [
+            { "language": "en", "text": "Hotel Rheinblick, good day. You are speaking with reception. How can I help you?" },
+            { "language": "fa", "text": "هتل راین‌بلیک، روز بخیر. با پذیرش صحبت می‌کنید. چطور می‌توانم کمکتان کنم؟" },
+            { "language": "ar", "text": "فندق راينبليك، نهارك سعيد. تتحدث مع الاستقبال. كيف يمكنني مساعدتك؟" },
+            { "language": "tr", "text": "Hotel Rheinblick, iyi günler. Resepsiyonla görüşüyorsunuz. Size nasıl yardımcı olabilirim?" },
+            { "language": "ru", "text": "Отель Rheinblick, добрый день. Вы говорите с ресепшеном. Чем могу вам помочь?" },
+            { "language": "ckb", "text": "هۆتێلی ڕاین‌بلیک، ڕۆژ باش. لەگەڵ پێشوازی قسە دەکەن. چۆن دەتوانم یارمەتیتان بدەم؟" },
+            { "language": "kmr", "text": "Hotel Rheinblick, roj baş. Hûn bi pêşwaziyê re diaxivin. Ez çawa dikarim alîkariya we bikim?" },
+            { "language": "pl", "text": "Hotel Rheinblick, dzień dobry. Rozmawia pan/pani z recepcją. Jak mogę pomóc?" },
+            { "language": "ro", "text": "Hotel Rheinblick, bună ziua. Vorbiți cu recepția. Cum vă pot ajuta?" },
+            { "language": "sq", "text": "Hotel Rheinblick, mirëdita. Po flisni me recepsionin. Si mund t'ju ndihmoj?" }
+          ],
+          "function": "opening",
+          "toneNote": "Die Rezeption eröffnet das Gespräch professionell.",
+          "expectedLearnerAction": "Buchungsproblem mit Nummer und Zeitraum nennen."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Ich rufe wegen meiner Buchung HB-48291 vom 12. bis 14. Juni an. In meiner Bestätigung steht ein ruhiges Doppelzimmer mit Frühstück. In Ihrer neuen Nachricht steht aber ein kleineres Zimmer ohne Frühstück. Ich möchte klären, was hier falsch gelaufen ist.",
+          "translations": [
+            { "language": "en", "text": "Good day. I am calling about my booking HB-48291 from June 12 to 14. My confirmation says a quiet double room with breakfast. But your new message says a smaller room without breakfast. I would like to clarify what went wrong here." },
+            { "language": "fa", "text": "روز بخیر. درباره رزرو HB-48291 از ۱۲ تا ۱۴ ژوئن تماس می‌گیرم. در تأییدیه من یک اتاق دو نفره آرام با صبحانه آمده است. اما در پیام جدید شما یک اتاق کوچک‌تر بدون صبحانه نوشته شده. می‌خواهم روشن کنم اینجا چه اشتباهی پیش آمده است." },
+            { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص حجزي HB-48291 من 12 إلى 14 يونيو. في تأكيدي توجد غرفة مزدوجة هادئة مع فطور. لكن في رسالتكم الجديدة توجد غرفة أصغر من دون فطور. أريد أن أوضح ما الخطأ الذي حدث هنا." },
+            { "language": "tr", "text": "İyi günler. 12-14 Haziran tarihli HB-48291 numaralı rezervasyonumla ilgili arıyorum. Onayımda kahvaltılı sakin bir çift kişilik oda yazıyor. Ancak yeni mesajınızda kahvaltısız daha küçük bir oda yazıyor. Burada neyin yanlış gittiğini netleştirmek istiyorum." },
+            { "language": "ru", "text": "Добрый день. Я звоню по поводу моего бронирования HB-48291 с 12 по 14 июня. В моем подтверждении указана тихая двухместная комната с завтраком. Но в вашем новом сообщении указана меньшая комната без завтрака. Я хочу уточнить, что здесь пошло не так." },
+            { "language": "ckb", "text": "ڕۆژ باش. پەیوەندی دەکەم لەبارەی حجزی HB-48291 لە ١٢ تا ١٤ی حوزەیران. لە پشتڕاستکردنەوەکەمدا ژوورێکی دوو کەسی ئارام لەگەڵ بەیانی نووسراوە. بەڵام لە پەیامی نوێتاندا ژوورێکی بچووکتر بەبێ بەیانی نووسراوە. دەمەوێت ڕوون بکەمەوە لێرە چی هەڵە بووە." },
+            { "language": "kmr", "text": "Roj baş. Ez ji bo rezervasyona xwe ya HB-48291 ji 12 heta 14ê Hezîranê telefon dikim. Di piştrastkirina min de odeyeke du kesî ya bêdeng bi taştê hatiye nivîsîn. Lê di peyama nû ya we de odeyeke biçûktir bê taştê heye. Ez dixwazim zelal bikim ka li vir çi xelet çûye." },
+            { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie mojej rezerwacji HB-48291 od 12 do 14 czerwca. W moim potwierdzeniu widnieje cichy pokój dwuosobowy ze śniadaniem. W państwa nowej wiadomości jest jednak mniejszy pokój bez śniadania. Chciałbym/chciałabym wyjaśnić, co tutaj poszło nie tak." },
+            { "language": "ro", "text": "Bună ziua. Sun în legătură cu rezervarea mea HB-48291 din 12 până în 14 iunie. În confirmarea mea apare o cameră dublă liniștită cu mic dejun. Însă în noul dumneavoastră mesaj apare o cameră mai mică fără mic dejun. Aș dori să clarific ce s-a întâmplat greșit aici." },
+            { "language": "sq", "text": "Mirëdita. Po telefonoj për rezervimin tim HB-48291 nga 12 deri më 14 qershor. Në konfirmimin tim shkruhet një dhomë dyshe e qetë me mëngjes. Por në mesazhin tuaj të ri shkruhet një dhomë më e vogël pa mëngjes. Dua të sqaroj çfarë ka shkuar gabim këtu." }
+          ],
+          "function": "state discrepancy",
+          "toneNote": "Du nennst Nummer, Zeitraum, bestätigte Leistung und Abweichung.",
+          "expectedLearnerAction": "Buchungsdaten und Problem präzise formulieren."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "hotel-reception",
+          "baseText": "Einen Moment bitte, ich prüfe das. Ich sehe tatsächlich eine Änderung im System. Die ruhigen Doppelzimmer sind an diesem Wochenende überbucht. Haben Sie direkt bei uns gebucht oder über ein Portal?",
+          "translations": [
+            { "language": "en", "text": "One moment please, I will check that. I do see a change in the system. The quiet double rooms are overbooked that weekend. Did you book directly with us or through a portal?" },
+            { "language": "fa", "text": "یک لحظه لطفاً، بررسی می‌کنم. واقعاً یک تغییر در سیستم می‌بینم. اتاق‌های دو نفره آرام در آن آخر هفته بیش از ظرفیت رزرو شده‌اند. مستقیم از ما رزرو کردید یا از طریق یک پورتال؟" },
+            { "language": "ar", "text": "لحظة من فضلك، سأتحقق من ذلك. أرى بالفعل تغييرًا في النظام. الغرف المزدوجة الهادئة محجوزة فوق السعة في نهاية ذلك الأسبوع. هل حجزت مباشرة عندنا أم عبر بوابة؟" },
+            { "language": "tr", "text": "Bir dakika lütfen, bunu kontrol ediyorum. Sistemde gerçekten bir değişiklik görüyorum. O hafta sonu sakin çift kişilik odalar fazla rezerve edilmiş. Doğrudan bizden mi yoksa bir portal üzerinden mi rezervasyon yaptınız?" },
+            { "language": "ru", "text": "Одну минуту, пожалуйста, я проверю. Я действительно вижу изменение в системе. Тихие двухместные номера на эти выходные перебронированы. Вы бронировали напрямую у нас или через портал?" },
+            { "language": "ckb", "text": "تکایە چاوەڕێیەک بکەن، ئەمە دەپشکنم. بەڕاستی گۆڕانکارییەک لە سیستەمدا دەبینم. ژوورە دوو کەسییە ئارامەکان لەو کۆتایی هەفتەیەدا زیاتر لە توانایان حجزکراون. ڕاستەوخۆ لای ئێمە حجزتان کردووە یان لە ڕێگەی پۆرتاڵێکەوە؟" },
+            { "language": "kmr", "text": "Demekê ji kerema xwe, ez wê kontrol dikim. Bi rastî ez guherînekê di pergalê de dibînim. Odeyên du kesî yên bêdeng di wê dawiya hefteyê de zêde rezerv kirine. We rasterast li cem me rezerv kir an bi rêya portalekê?" },
+            { "language": "pl", "text": "Chwileczkę, proszę, sprawdzę to. Rzeczywiście widzę zmianę w systemie. Ciche pokoje dwuosobowe są w ten weekend nadmiernie zarezerwowane. Czy rezerwacja była bezpośrednio u nas, czy przez portal?" },
+            { "language": "ro", "text": "O clipă, vă rog, verific. Văd într-adevăr o modificare în sistem. Camerele duble liniștite sunt suprarezervate în acel weekend. Ați rezervat direct la noi sau printr-un portal?" },
+            { "language": "sq", "text": "Një moment ju lutem, po e kontrolloj. Në të vërtetë shoh një ndryshim në sistem. Dhomat dyshe të qeta janë të mbirezervuara atë fundjavë. A rezervuat drejtpërdrejt te ne apo përmes një portali?" }
+          ],
+          "function": "identify cause",
+          "toneNote": "Die Rezeption erklärt die Ursache, fragt aber nach dem Buchungsweg.",
+          "expectedLearnerAction": "Buchungsweg und Beleglage nennen."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ich habe direkt über Ihre Website gebucht und die Bestätigung als PDF vorliegen. Deshalb gehe ich davon aus, dass die bestätigte Leistung gilt. Wenn das ursprüngliche Zimmer nicht verfügbar ist, brauche ich bitte eine gleichwertige Alternative ohne Aufpreis.",
+          "translations": [
+            { "language": "en", "text": "I booked directly through your website and have the confirmation as a PDF. That is why I assume that the confirmed service applies. If the original room is not available, I would need an equivalent alternative without extra charge." },
+            { "language": "fa", "text": "من مستقیم از طریق وب‌سایت شما رزرو کردم و تأییدیه را به صورت PDF دارم. به همین دلیل فرض می‌کنم خدمات تأییدشده معتبر است. اگر اتاق اصلی در دسترس نیست، لطفاً به یک جایگزین هم‌ارز بدون هزینه اضافه نیاز دارم." },
+            { "language": "ar", "text": "حجزت مباشرة عبر موقعكم الإلكتروني ولدي التأكيد بصيغة PDF. لذلك أفترض أن الخدمة المؤكدة هي السارية. إذا لم تكن الغرفة الأصلية متاحة، فأحتاج من فضلكم إلى بديل مكافئ من دون رسوم إضافية." },
+            { "language": "tr", "text": "Doğrudan web siteniz üzerinden rezervasyon yaptım ve onay belgesi PDF olarak elimde. Bu nedenle onaylanan hizmetin geçerli olduğunu varsayıyorum. Orijinal oda mevcut değilse, lütfen ek ücret olmadan eşdeğer bir alternatife ihtiyacım var." },
+            { "language": "ru", "text": "Я бронировал напрямую через ваш сайт и имею подтверждение в формате PDF. Поэтому я исхожу из того, что подтвержденная услуга действует. Если первоначальный номер недоступен, мне нужна равноценная альтернатива без доплаты." },
+            { "language": "ckb", "text": "من ڕاستەوخۆ لە ڕێگەی ماڵپەڕەکەتانەوە حجز کردم و پشتڕاستکردنەوەکە بە PDF لامە. بۆیە وای دادەنێم خزمەتگوزارییە پشتڕاستکراوەکە کارا بێت. ئەگەر ژووری سەرەتایی بەردەست نییە، تکایە پێویستم بە جێگرەوەیەکی هاوتا بەبێ تێچووی زیادە هەیە." },
+            { "language": "kmr", "text": "Min rasterast bi malpera we rezerv kir û piştrastkirin wek PDF li ber destê min e. Ji ber vê ez texmîn dikim ku xizmeta piştrastkirî derbasdar e. Ger odeya destpêkê peyda nebe, ji kerema xwe alternatîfeke wekhev bê lêçûneke zêde divê." },
+            { "language": "pl", "text": "Rezerwowałem/rezerwowałam bezpośrednio przez państwa stronę i mam potwierdzenie w PDF-ie. Dlatego zakładam, że obowiązuje potwierdzone świadczenie. Jeśli pierwotny pokój nie jest dostępny, potrzebuję równoważnej alternatywy bez dopłaty." },
+            { "language": "ro", "text": "Am rezervat direct prin site-ul dumneavoastră și am confirmarea ca PDF. De aceea presupun că serviciul confirmat este valabil. Dacă camera inițială nu este disponibilă, am nevoie, vă rog, de o alternativă echivalentă fără cost suplimentar." },
+            { "language": "sq", "text": "Kam rezervuar drejtpërdrejt përmes faqes suaj dhe e kam konfirmimin si PDF. Prandaj supozoj se shërbimi i konfirmuar vlen. Nëse dhoma fillestare nuk është e disponueshme, më duhet ju lutem një alternativë e barasvlershme pa pagesë shtesë." }
+          ],
+          "function": "assert confirmation and request equivalent solution",
+          "toneNote": "Du bleibst höflich, aber machst deinen Anspruch nachvollziehbar.",
+          "expectedLearnerAction": "Buchungsweg, Beleg und gewünschte Lösung nennen."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "hotel-reception",
+          "baseText": "Ich verstehe. Wir könnten Ihnen ein Doppelzimmer zur Straßenseite geben und das Frühstück dazubuchen. Alternativ hätten wir ein Superior-Zimmer im ruhigeren Gebäudeteil, allerdings normalerweise mit Aufpreis.",
+          "translations": [
+            { "language": "en", "text": "I understand. We could give you a double room facing the street and add breakfast. Alternatively, we would have a superior room in the quieter part of the building, but normally with an extra charge." },
+            { "language": "fa", "text": "متوجه هستم. می‌توانیم یک اتاق دو نفره رو به خیابان به شما بدهیم و صبحانه را اضافه کنیم. یا یک اتاق superior در بخش آرام‌تر ساختمان داریم، اما معمولاً با هزینه اضافه." },
+            { "language": "ar", "text": "أفهم ذلك. يمكننا أن نعطيكم غرفة مزدوجة باتجاه الشارع ونضيف الفطور. وبديلًا عن ذلك لدينا غرفة سوبيريور في الجزء الأكثر هدوءًا من المبنى، لكنها عادةً برسوم إضافية." },
+            { "language": "tr", "text": "Anlıyorum. Size cadde tarafına bakan bir çift kişilik oda verebilir ve kahvaltıyı ekleyebiliriz. Alternatif olarak binanın daha sakin bölümünde bir superior odamız var, ancak normalde ek ücretli." },
+            { "language": "ru", "text": "Понимаю. Мы могли бы дать вам двухместный номер на сторону улицы и добавить завтрак. В качестве альтернативы у нас есть номер superior в более тихой части здания, но обычно с доплатой." },
+            { "language": "ckb", "text": "تێدەگەم. دەتوانین ژوورێکی دوو کەسی ڕوو لە شەقام پێتان بدەین و بەیانی زیاد بکەین. یان ژوورێکی superior لە بەشی ئارامترى بیناکەمان هەیە، بەڵام بە شێوەی ئاسایی بە تێچووی زیادە." },
+            { "language": "kmr", "text": "Ez têdigihim. Em dikarin odeyeke du kesî li aliyê kolanê bidin we û taştê lê zêde bikin. Wek alternatîf odeyeke superior di beşa bêdengtir a avahiyê de heye, lê bi gelemperî bi lêçûneke zêde ye." },
+            { "language": "pl", "text": "Rozumiem. Moglibyśmy dać państwu pokój dwuosobowy od strony ulicy i dodać śniadanie. Alternatywnie mielibyśmy pokój superior w cichszej części budynku, jednak normalnie za dopłatą." },
+            { "language": "ro", "text": "Înțeleg. V-am putea oferi o cameră dublă spre stradă și am putea adăuga micul dejun. Alternativ, am avea o cameră superior în partea mai liniștită a clădirii, însă în mod normal cu cost suplimentar." },
+            { "language": "sq", "text": "E kuptoj. Mund t'ju japim një dhomë dyshe nga ana e rrugës dhe të shtojmë mëngjesin. Si alternativë kemi një dhomë superior në pjesën më të qetë të ndërtesës, por zakonisht me pagesë shtesë." }
+          ],
+          "function": "offer alternatives",
+          "toneNote": "Die Rezeption nennt zwei Möglichkeiten, aber eine ist noch nicht gleichwertig.",
+          "expectedLearnerAction": "Ruhige Alternative und Kostenfrage verhandeln."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das straßenseitige Zimmer ist für mich schwierig, weil ich am nächsten Morgen einen frühen Termin habe. Können Sie bitte prüfen, ob das ruhigere Superior-Zimmer ohne Aufpreis möglich ist und ob das Frühstück wie bestätigt enthalten bleibt?",
+          "translations": [
+            { "language": "en", "text": "The room facing the street is difficult for me because I have an early appointment the next morning. Could you please check whether the quieter superior room is possible without an extra charge and whether breakfast remains included as confirmed?" },
+            { "language": "fa", "text": "اتاق رو به خیابان برای من مشکل است، چون صبح روز بعد یک قرار زود دارم. لطفاً می‌توانید بررسی کنید آیا اتاق superior آرام‌تر بدون هزینه اضافه ممکن است و آیا صبحانه همان‌طور که تأیید شده شامل می‌ماند؟" },
+            { "language": "ar", "text": "الغرفة باتجاه الشارع صعبة بالنسبة لي لأن لدي موعدًا مبكرًا في صباح اليوم التالي. هل يمكنكم من فضلكم التحقق مما إذا كانت غرفة السوبيريور الأكثر هدوءًا ممكنة من دون رسوم إضافية، وما إذا كان الفطور سيبقى مشمولًا كما تم تأكيده؟" },
+            { "language": "tr", "text": "Cadde tarafındaki oda benim için zor, çünkü ertesi sabah erken bir randevum var. Lütfen daha sakin superior odanın ek ücret olmadan mümkün olup olmadığını ve kahvaltının onaylandığı gibi dahil kalıp kalmadığını kontrol eder misiniz?" },
+            { "language": "ru", "text": "Номер на сторону улицы для меня проблематичен, потому что на следующее утро у меня ранняя встреча. Можете, пожалуйста, проверить, возможен ли более тихий номер superior без доплаты и остается ли завтрак включенным, как подтверждено?" },
+            { "language": "ckb", "text": "ژووری ڕوو لە شەقام بۆ من قورسە، چونکە بەیانی ڕۆژی دواتر کۆبوونەوەیەکی زووم هەیە. تکایە دەتوانن بپشکنن ئایا ژووری superior ئارامتر بەبێ تێچووی زیادە دەکرێت و ئایا بەیانی وەک پشتڕاستکراوەکە لەخۆ دەگرێت؟" },
+            { "language": "kmr", "text": "Odeya li aliyê kolanê ji bo min dijwar e, ji ber ku sibêya roja din randevûyeke zû heye. Ji kerema xwe hûn dikarin kontrol bikin ka odeya superior a bêdengtir bê lêçûneke zêde mumkin e û ka taştê wekî ku hatiye piştrastkirin tê de dimîne?" },
+            { "language": "pl", "text": "Pokój od strony ulicy jest dla mnie problematyczny, ponieważ następnego ranka mam wczesne spotkanie. Czy mogą państwo sprawdzić, czy cichszy pokój superior jest możliwy bez dopłaty i czy śniadanie pozostaje w cenie zgodnie z potwierdzeniem?" },
+            { "language": "ro", "text": "Camera spre stradă este dificilă pentru mine, deoarece în dimineața următoare am o programare devreme. Puteți verifica, vă rog, dacă este posibilă camera superior mai liniștită fără cost suplimentar și dacă micul dejun rămâne inclus așa cum a fost confirmat?" },
+            { "language": "sq", "text": "Dhoma nga ana e rrugës është e vështirë për mua, sepse mëngjesin tjetër kam një takim herët. A mund të kontrolloni ju lutem nëse dhoma superior më e qetë është e mundur pa pagesë shtesë dhe nëse mëngjesi mbetet i përfshirë siç është konfirmuar?" }
+          ],
+          "function": "negotiate alternative",
+          "toneNote": "Du begründest deinen Bedarf und fragst gezielt nach Kosten und Leistung.",
+          "expectedLearnerAction": "Ablehnung der schwächeren Alternative sachlich begründen."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "hotel-reception",
+          "baseText": "Ich habe mit der Reservierungsleitung gesprochen. Wir können Ihnen das Superior-Zimmer im ruhigeren Gebäudeteil ohne Aufpreis geben. Frühstück bleibt enthalten. Der Check-in wäre allerdings erst ab 16 Uhr möglich.",
+          "translations": [
+            { "language": "en", "text": "I spoke with the reservations manager. We can give you the superior room in the quieter part of the building without extra charge. Breakfast remains included. However, check-in would only be possible from 4 p.m." },
+            { "language": "fa", "text": "با مسئول رزرو صحبت کردم. می‌توانیم اتاق superior را در بخش آرام‌تر ساختمان بدون هزینه اضافه به شما بدهیم. صبحانه همچنان شامل است. البته ورود فقط از ساعت ۱۶ ممکن خواهد بود." },
+            { "language": "ar", "text": "تحدثت مع إدارة الحجوزات. يمكننا أن نعطيكم غرفة السوبيريور في الجزء الأكثر هدوءًا من المبنى من دون رسوم إضافية. يبقى الفطور مشمولًا. لكن تسجيل الوصول لن يكون ممكنًا إلا ابتداءً من الساعة 16." },
+            { "language": "tr", "text": "Rezervasyon sorumlusuyla konuştum. Size binanın daha sakin bölümündeki superior odayı ek ücret olmadan verebiliriz. Kahvaltı dahil kalıyor. Ancak giriş yalnızca saat 16'dan itibaren mümkün olur." },
+            { "language": "ru", "text": "Я поговорил(а) с руководством бронирования. Мы можем предоставить вам номер superior в более тихой части здания без доплаты. Завтрак остается включенным. Однако заселение будет возможно только с 16:00." },
+            { "language": "ckb", "text": "لەگەڵ بەرپرسی حجزکردن قسەم کرد. دەتوانین ژووری superior لە بەشی ئارامترى بیناکە بەبێ تێچووی زیادە پێتان بدەین. بەیانی لەخۆ دەگرێت. بەڵام چوونەژوورەوە تەنها لە کاتژمێر ١٦ەوە دەکرێت." },
+            { "language": "kmr", "text": "Min bi rêveberiya rezervasyonê re axivî. Em dikarin odeya superior di beşa bêdengtir a avahiyê de bê lêçûneke zêde bidin we. Taştê tê de dimîne. Lê ketina hundir tenê ji saet 16ê ve mumkin e." },
+            { "language": "pl", "text": "Rozmawiałem/rozmawiałam z kierownictwem rezerwacji. Możemy dać państwu pokój superior w cichszej części budynku bez dopłaty. Śniadanie pozostaje w cenie. Zameldowanie byłoby jednak możliwe dopiero od godziny 16." },
+            { "language": "ro", "text": "Am vorbit cu responsabilul de rezervări. Vă putem oferi camera superior în partea mai liniștită a clădirii fără cost suplimentar. Micul dejun rămâne inclus. Totuși, sosirea ar fi posibilă abia de la ora 16." },
+            { "language": "sq", "text": "Fola me përgjegjësin e rezervimeve. Mund t'ju japim dhomën superior në pjesën më të qetë të ndërtesës pa pagesë shtesë. Mëngjesi mbetet i përfshirë. Megjithatë, hyrja do të ishte e mundur vetëm nga ora 16." }
+          ],
+          "function": "confirm solution with condition",
+          "toneNote": "Die Rezeption bietet eine gute Lösung, aber mit einer zeitlichen Einschränkung.",
+          "expectedLearnerAction": "Details und schriftliche Bestätigung absichern."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das klingt grundsätzlich gut. Damit es bei der Anreise keine Missverständnisse gibt, könnten Sie mir bitte schriftlich bestätigen: Superior-Zimmer im ruhigen Gebäudeteil, Frühstück inklusive, kein Aufpreis und Check-in ab 16 Uhr?",
+          "translations": [
+            { "language": "en", "text": "That sounds good in principle. To avoid misunderstandings on arrival, could you please confirm in writing: superior room in the quiet part of the building, breakfast included, no extra charge, and check-in from 4 p.m.?" },
+            { "language": "fa", "text": "در اصل خوب به نظر می‌رسد. برای اینکه هنگام رسیدن سوءتفاهمی پیش نیاید، لطفاً می‌توانید کتبی تأیید کنید: اتاق superior در بخش آرام ساختمان، صبحانه شامل، بدون هزینه اضافه و ورود از ساعت ۱۶؟" },
+            { "language": "ar", "text": "هذا يبدو جيدًا من حيث المبدأ. حتى لا تحدث سوء تفاهم عند الوصول، هل يمكنكم من فضلكم أن تؤكدوا لي خطيًا: غرفة سوبيريور في الجزء الهادئ من المبنى، الفطور مشمول، من دون رسوم إضافية، وتسجيل الوصول من الساعة 16؟" },
+            { "language": "tr", "text": "Bu genel olarak iyi görünüyor. Varışta yanlış anlaşılma olmaması için lütfen yazılı olarak şunları onaylar mısınız: binanın sakin bölümünde superior oda, kahvaltı dahil, ek ücret yok ve giriş saat 16'dan itibaren?" },
+            { "language": "ru", "text": "В целом это звучит хорошо. Чтобы при заезде не было недоразумений, можете, пожалуйста, письменно подтвердить: номер superior в тихой части здания, завтрак включен, без доплаты и заселение с 16:00?" },
+            { "language": "ckb", "text": "ئەمە بە گشتی باش دەردەکەوێت. بۆ ئەوەی لە کاتی گەیشتندا تێنەگەیشتن ڕوونەدات، تکایە دەتوانن بە نووسراوی پشتڕاستی بکەنەوە: ژووری superior لە بەشی ئارامی بیناکە، بەیانی لەخۆ دەگرێت، هیچ تێچووی زیادە نییە و چوونەژوورەوە لە کاتژمێر ١٦ەوە؟" },
+            { "language": "kmr", "text": "Ev bi giştî baş xuya dike. Da ku dema hatinê şaşfêmî çênebe, hûn dikarin ji kerema xwe bi nivîskî piştrast bikin: odeya superior di beşa bêdeng a avahiyê de, taştê tê de, bê lêçûneke zêde û ketina hundir ji saet 16ê ve?" },
+            { "language": "pl", "text": "To zasadniczo brzmi dobrze. Aby przy przyjeździe nie było nieporozumień, czy mogą państwo potwierdzić mi pisemnie: pokój superior w cichej części budynku, śniadanie w cenie, bez dopłaty i zameldowanie od godziny 16?" },
+            { "language": "ro", "text": "În principiu sună bine. Pentru ca la sosire să nu apară neînțelegeri, îmi puteți confirma, vă rog, în scris: cameră superior în partea liniștită a clădirii, mic dejun inclus, fără cost suplimentar și sosire de la ora 16?" },
+            { "language": "sq", "text": "Në parim kjo tingëllon mirë. Që të mos ketë keqkuptime në mbërritje, a mund të më konfirmoni ju lutem me shkrim: dhomë superior në pjesën e qetë të ndërtesës, mëngjes i përfshirë, pa pagesë shtesë dhe hyrje nga ora 16?" }
+          ],
+          "function": "request written confirmation",
+          "toneNote": "Du fasst die Lösung strukturiert zusammen und bittest um schriftliche Sicherheit.",
+          "expectedLearnerAction": "Alle relevanten Details in einer Bestätigungsfrage bündeln."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "hotel-reception",
+          "baseText": "Ja, das kann ich Ihnen so bestätigen. Ich sende Ihnen gleich eine aktualisierte Bestätigung per E-Mail. Wenn sie in 15 Minuten nicht angekommen ist, rufen Sie bitte noch einmal an.",
+          "translations": [
+            { "language": "en", "text": "Yes, I can confirm that for you. I will send you an updated confirmation by email right away. If it has not arrived within 15 minutes, please call again." },
+            { "language": "fa", "text": "بله، می‌توانم همین‌طور برایتان تأیید کنم. همین الان یک تأییدیه به‌روزشده از طریق ایمیل برایتان می‌فرستم. اگر تا ۱۵ دقیقه نرسید، لطفاً دوباره تماس بگیرید." },
+            { "language": "ar", "text": "نعم، يمكنني أن أؤكد لكم ذلك بهذه الصورة. سأرسل لكم فورًا تأكيدًا محدثًا عبر البريد الإلكتروني. إذا لم يصل خلال 15 دقيقة، فاتصلوا من فضلكم مرة أخرى." },
+            { "language": "tr", "text": "Evet, bunu size bu şekilde onaylayabilirim. Size hemen e-posta ile güncellenmiş bir onay göndereceğim. 15 dakika içinde ulaşmazsa lütfen tekrar arayın." },
+            { "language": "ru", "text": "Да, я могу подтвердить это для вас. Я сразу отправлю вам обновленное подтверждение по электронной почте. Если оно не придет через 15 минут, пожалуйста, позвоните еще раз." },
+            { "language": "ckb", "text": "بەڵێ، دەتوانم بەو شێوەیە پشتڕاستی بۆتان بکەمەوە. هەر ئێستا پشتڕاستکردنەوەیەکی نوێکراوە بە ئیمەیڵ بۆتان دەنێرم. ئەگەر لە ١٥ خولەکدا نەگەیشت، تکایە جارێکی تر پەیوەندی بکەن." },
+            { "language": "kmr", "text": "Erê, ez dikarim wisa ji we re piştrast bikim. Ez naha piştrastkirineke nûkirî bi e-peyamê ji we re dişînim. Ger di 15 deqeyan de negihêje, ji kerema xwe careke din telefon bikin." },
+            { "language": "pl", "text": "Tak, mogę to państwu tak potwierdzić. Zaraz wyślę zaktualizowane potwierdzenie e-mailem. Jeśli nie dotrze w ciągu 15 minut, proszę zadzwonić ponownie." },
+            { "language": "ro", "text": "Da, vă pot confirma acest lucru așa. Vă trimit imediat o confirmare actualizată prin e-mail. Dacă nu ajunge în 15 minute, vă rog să sunați din nou." },
+            { "language": "sq", "text": "Po, mund t'jua konfirmoj kështu. Do t'ju dërgoj menjëherë një konfirmim të përditësuar me e-mail. Nëse nuk mbërrin brenda 15 minutash, ju lutem telefononi përsëri." }
+          ],
+          "function": "confirm next step",
+          "toneNote": "Die Rezeption bestätigt den nächsten Schritt mit Frist.",
+          "expectedLearnerAction": "Abschluss mit Zusammenfassung und Dank formulieren."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann warte ich auf die aktualisierte Bestätigung. Ich achte darauf, dass dort das Superior-Zimmer im ruhigen Gebäudeteil, Frühstück inklusive, kein Aufpreis und Check-in ab 16 Uhr stehen. Falls die E-Mail nicht kommt, melde ich mich noch einmal.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will wait for the updated confirmation. I will make sure it states the superior room in the quiet part of the building, breakfast included, no extra charge, and check-in from 4 p.m. If the email does not arrive, I will get in touch again." },
+            { "language": "fa", "text": "بسیار ممنون. پس منتظر تأییدیه به‌روزشده می‌مانم. دقت می‌کنم که در آن اتاق superior در بخش آرام ساختمان، صبحانه شامل، بدون هزینه اضافه و ورود از ساعت ۱۶ نوشته شده باشد. اگر ایمیل نرسید، دوباره تماس می‌گیرم." },
+            { "language": "ar", "text": "شكرًا جزيلًا. إذن سأنتظر التأكيد المحدث. سأنتبه إلى أن يكون مذكورًا فيه غرفة السوبيريور في الجزء الهادئ من المبنى، الفطور مشمول، من دون رسوم إضافية، وتسجيل الوصول من الساعة 16. إذا لم تصل رسالة البريد الإلكتروني، فسأتواصل مرة أخرى." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde güncellenmiş onayı bekleyeceğim. Orada binanın sakin bölümünde superior oda, kahvaltı dahil, ek ücret yok ve saat 16'dan itibaren giriş yazmasına dikkat edeceğim. E-posta gelmezse tekrar iletişime geçeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я буду ждать обновленное подтверждение. Я проверю, чтобы там были указаны номер superior в тихой части здания, завтрак включен, без доплаты и заселение с 16:00. Если письмо не придет, я свяжусь еще раз." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی پشتڕاستکردنەوەی نوێکراوە دەبم. ئاگادار دەبم کە لەوێدا ژووری superior لە بەشی ئارامی بیناکە، بەیانی لەخۆ دەگرێت، هیچ تێچووی زیادە نییە و چوونەژوورەوە لە کاتژمێر ١٦ەوە نووسرابێت. ئەگەر ئیمەیڵەکە نەهات، جارێکی تر پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Gelek spas. Hingê ez li benda piştrastkirina nûkirî dimînim. Ez balê dikim ku tê de odeya superior di beşa bêdeng a avahiyê de, taştê tê de, bê lêçûneke zêde û ketina hundir ji saet 16ê ve nivîsandî be. Ger e-peyam neyê, ez careke din têkilî digirim." },
+            { "language": "pl", "text": "Dziękuję bardzo. W takim razie poczekam na zaktualizowane potwierdzenie. Sprawdzę, czy widnieje tam pokój superior w cichej części budynku, śniadanie w cenie, bez dopłaty i zameldowanie od godziny 16. Jeśli e-mail nie przyjdzie, skontaktuję się ponownie." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci aștept confirmarea actualizată. Voi verifica să fie menționate camera superior în partea liniștită a clădirii, micul dejun inclus, fără cost suplimentar și sosire de la ora 16. Dacă e-mailul nu ajunge, vă contactez din nou." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë do të pres konfirmimin e përditësuar. Do të kontrolloj që aty të shkruhet dhomë superior në pjesën e qetë të ndërtesës, mëngjes i përfshirë, pa pagesë shtesë dhe hyrje nga ora 16. Nëse e-maili nuk vjen, do të kontaktoj përsëri." }
+          ],
+          "function": "close and summarize",
+          "toneNote": "Du beendest das Gespräch verbindlich und prüfst die Bestätigung aktiv.",
+          "expectedLearnerAction": "Lösung und Folgehandlung knapp zusammenfassen."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "b2-hotel-55-t2-a",
+              "text": "Guten Tag. Ich rufe wegen meiner Buchung HB-48291 vom 12. bis 14. Juni an. In meiner Bestätigung steht ein ruhiges Doppelzimmer mit Frühstück. In Ihrer neuen Nachricht steht aber ein kleineres Zimmer ohne Frühstück. Ich möchte klären, was hier falsch gelaufen ist.",
+              "translations": [
+                { "language": "en", "text": "Good day. I am calling about my booking HB-48291 from June 12 to 14. My confirmation says a quiet double room with breakfast. But your new message says a smaller room without breakfast. I would like to clarify what went wrong here." },
+                { "language": "fa", "text": "روز بخیر. درباره رزرو HB-48291 از ۱۲ تا ۱۴ ژوئن تماس می‌گیرم. در تأییدیه من یک اتاق دو نفره آرام با صبحانه آمده است. اما در پیام جدید شما یک اتاق کوچک‌تر بدون صبحانه نوشته شده. می‌خواهم روشن کنم اینجا چه اشتباهی پیش آمده است." },
+                { "language": "ar", "text": "نهارك سعيد. أتصل بخصوص حجزي HB-48291 من 12 إلى 14 يونيو. في تأكيدي توجد غرفة مزدوجة هادئة مع فطور. لكن في رسالتكم الجديدة توجد غرفة أصغر من دون فطور. أريد أن أوضح ما الخطأ الذي حدث هنا." },
+                { "language": "tr", "text": "İyi günler. 12-14 Haziran tarihli HB-48291 numaralı rezervasyonumla ilgili arıyorum. Onayımda kahvaltılı sakin bir çift kişilik oda yazıyor. Ancak yeni mesajınızda kahvaltısız daha küçük bir oda yazıyor. Burada neyin yanlış gittiğini netleştirmek istiyorum." },
+                { "language": "ru", "text": "Добрый день. Я звоню по поводу моего бронирования HB-48291 с 12 по 14 июня. В моем подтверждении указана тихая двухместная комната с завтраком. Но в вашем новом сообщении указана меньшая комната без завтрака. Я хочу уточнить, что здесь пошло не так." },
+                { "language": "ckb", "text": "ڕۆژ باش. پەیوەندی دەکەم لەبارەی حجزی HB-48291 لە ١٢ تا ١٤ی حوزەیران. لە پشتڕاستکردنەوەکەمدا ژوورێکی دوو کەسی ئارام لەگەڵ بەیانی نووسراوە. بەڵام لە پەیامی نوێتاندا ژوورێکی بچووکتر بەبێ بەیانی نووسراوە. دەمەوێت ڕوون بکەمەوە لێرە چی هەڵە بووە." },
+                { "language": "kmr", "text": "Roj baş. Ez ji bo rezervasyona xwe ya HB-48291 ji 12 heta 14ê Hezîranê telefon dikim. Di piştrastkirina min de odeyeke du kesî ya bêdeng bi taştê hatiye nivîsîn. Lê di peyama nû ya we de odeyeke biçûktir bê taştê heye. Ez dixwazim zelal bikim ka li vir çi xelet çûye." },
+                { "language": "pl", "text": "Dzień dobry. Dzwonię w sprawie mojej rezerwacji HB-48291 od 12 do 14 czerwca. W moim potwierdzeniu widnieje cichy pokój dwuosobowy ze śniadaniem. W państwa nowej wiadomości jest jednak mniejszy pokój bez śniadania. Chciałbym/chciałabym wyjaśnić, co tutaj poszło nie tak." },
+                { "language": "ro", "text": "Bună ziua. Sun în legătură cu rezervarea mea HB-48291 din 12 până în 14 iunie. În confirmarea mea apare o cameră dublă liniștită cu mic dejun. Însă în noul dumneavoastră mesaj apare o cameră mai mică fără mic dejun. Aș dori să clarific ce s-a întâmplat greșit aici." },
+                { "language": "sq", "text": "Mirëdita. Po telefonoj për rezervimin tim HB-48291 nga 12 deri më 14 qershor. Në konfirmimin tim shkruhet një dhomë dyshe e qetë me mëngjes. Por në mesazhin tuaj të ri shkruhet një dhomë më e vogël pa mëngjes. Dua të sqaroj çfarë ka shkuar gabim këtu." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist stark: Buchungsnummer, Zeitraum, bestätigte Leistung und Abweichung sind sofort klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is strong: booking number, dates, confirmed service, and discrepancy are immediately clear." },
+                { "language": "fa", "text": "این پاسخ قوی است: شماره رزرو، بازه زمانی، خدمات تأییدشده و اختلاف فوراً روشن است." },
+                { "language": "ar", "text": "هذا قوي: رقم الحجز والمدة والخدمة المؤكدة والاختلاف واضحة فورًا." },
+                { "language": "tr", "text": "Bu güçlü: rezervasyon numarası, tarih aralığı, onaylanan hizmet ve farklılık hemen net." },
+                { "language": "ru", "text": "Это сильный ответ: номер бронирования, даты, подтвержденная услуга и расхождение сразу ясны." },
+                { "language": "ckb", "text": "ئەمە بەهێزە: ژمارەی حجز، ماوە، خزمەتگوزاری پشتڕاستکراوە و جیاوازییەکە دەستبەجێ ڕوونن." },
+                { "language": "kmr", "text": "Ev bihêz e: jimareya rezervasyonê, dem, xizmeta piştrastkirî û cudahî tavilê zelal in." },
+                { "language": "pl", "text": "To mocna odpowiedź: numer rezerwacji, termin, potwierdzone świadczenie i rozbieżność są od razu jasne." },
+                { "language": "ro", "text": "Este un răspuns puternic: numărul rezervării, perioada, serviciul confirmat și diferența sunt imediat clare." },
+                { "language": "sq", "text": "Kjo është e fortë: numri i rezervimit, periudha, shërbimi i konfirmuar dhe mospërputhja janë menjëherë të qarta." }
+              ],
+              "explanationKey": "complete-booking-problem-opening"
+            },
+            {
+              "id": "b2-hotel-55-t2-b",
+              "text": "Guten Tag. Ich habe eine Buchung bei Ihnen, aber in der Nachricht steht etwas anderes. Können Sie das bitte prüfen?",
+              "translations": [
+                { "language": "en", "text": "Good day. I have a booking with you, but the message says something different. Could you please check that?" },
+                { "language": "fa", "text": "روز بخیر. من پیش شما رزرو دارم، اما در پیام چیز دیگری نوشته شده است. می‌توانید لطفاً آن را بررسی کنید؟" },
+                { "language": "ar", "text": "نهارك سعيد. لدي حجز عندكم، لكن في الرسالة مكتوب شيء آخر. هل يمكنكم التحقق من ذلك من فضلكم؟" },
+                { "language": "tr", "text": "İyi günler. Sizde bir rezervasyonum var, ama mesajda farklı bir şey yazıyor. Lütfen bunu kontrol eder misiniz?" },
+                { "language": "ru", "text": "Добрый день. У меня есть бронирование у вас, но в сообщении написано что-то другое. Можете, пожалуйста, проверить?" },
+                { "language": "ckb", "text": "ڕۆژ باش. من حجزێکم لای ئێوە هەیە، بەڵام لە پەیامەکەدا شتێکی تر نووسراوە. تکایە دەتوانن ئەمە بپشکنن؟" },
+                { "language": "kmr", "text": "Roj baş. Li cem we rezervasyonek min heye, lê di peyamê de tiştekî din nivîsandî ye. Hûn dikarin ji kerema xwe wê kontrol bikin?" },
+                { "language": "pl", "text": "Dzień dobry. Mam u państwa rezerwację, ale w wiadomości jest napisane coś innego. Czy mogą państwo to sprawdzić?" },
+                { "language": "ro", "text": "Bună ziua. Am o rezervare la dumneavoastră, dar în mesaj scrie altceva. Puteți verifica, vă rog?" },
+                { "language": "sq", "text": "Mirëdita. Kam një rezervim te ju, por në mesazh shkruhet diçka tjetër. A mund ta kontrolloni ju lutem?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu ungenau. Für B2 fehlen Buchungsnummer, Zeitraum und die konkrete Abweichung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but too vague. For B2, the booking number, dates, and specific discrepancy are missing." },
+                { "language": "fa", "text": "این مؤدبانه است، اما خیلی مبهم است. برای B2 شماره رزرو، بازه زمانی و اختلاف مشخص کم است." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير دقيق بما يكفي. في مستوى B2 ينقص رقم الحجز والمدة والاختلاف المحدد." },
+                { "language": "tr", "text": "Bu kibar, ama fazla belirsiz. B2 için rezervasyon numarası, tarih aralığı ve somut farklılık eksik." },
+                { "language": "ru", "text": "Это вежливо, но слишком неточно. Для B2 не хватает номера бронирования, дат и конкретного расхождения." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر ناوردە. بۆ B2 ژمارەی حجز، ماوە و جیاوازییە دیاریکراوەکە کەمە." },
+                { "language": "kmr", "text": "Ev bi rêzdarî ye, lê pir nezelal e. Ji bo B2 jimareya rezervasyonê, dem û cudahiya taybet kêm in." },
+                { "language": "pl", "text": "To uprzejme, ale zbyt nieprecyzyjne. Na poziomie B2 brakuje numeru rezerwacji, terminu i konkretnej rozbieżności." },
+                { "language": "ro", "text": "Este politicos, dar prea neclar. Pentru B2 lipsesc numărul rezervării, perioada și diferența concretă." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e paqartë. Për B2 mungojnë numri i rezervimit, periudha dhe mospërputhja konkrete." }
+              ],
+              "explanationKey": "opening-missing-booking-details"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "b2-hotel-55-t4-a",
+              "text": "Ich habe direkt über Ihre Website gebucht und die Bestätigung als PDF vorliegen. Deshalb gehe ich davon aus, dass die bestätigte Leistung gilt. Wenn das ursprüngliche Zimmer nicht verfügbar ist, brauche ich bitte eine gleichwertige Alternative ohne Aufpreis.",
+              "translations": [
+                { "language": "en", "text": "I booked directly through your website and have the confirmation as a PDF. That is why I assume that the confirmed service applies. If the original room is not available, I would need an equivalent alternative without extra charge." },
+                { "language": "fa", "text": "من مستقیم از طریق وب‌سایت شما رزرو کردم و تأییدیه را به صورت PDF دارم. به همین دلیل فرض می‌کنم خدمات تأییدشده معتبر است. اگر اتاق اصلی در دسترس نیست، لطفاً به یک جایگزین هم‌ارز بدون هزینه اضافه نیاز دارم." },
+                { "language": "ar", "text": "حجزت مباشرة عبر موقعكم الإلكتروني ولدي التأكيد بصيغة PDF. لذلك أفترض أن الخدمة المؤكدة هي السارية. إذا لم تكن الغرفة الأصلية متاحة، فأحتاج من فضلكم إلى بديل مكافئ من دون رسوم إضافية." },
+                { "language": "tr", "text": "Doğrudan web siteniz üzerinden rezervasyon yaptım ve onay belgesi PDF olarak elimde. Bu nedenle onaylanan hizmetin geçerli olduğunu varsayıyorum. Orijinal oda mevcut değilse, lütfen ek ücret olmadan eşdeğer bir alternatife ihtiyacım var." },
+                { "language": "ru", "text": "Я бронировал напрямую через ваш сайт и имею подтверждение в формате PDF. Поэтому я исхожу из того, что подтвержденная услуга действует. Если первоначальный номер недоступен, мне нужна равноценная альтернатива без доплаты." },
+                { "language": "ckb", "text": "من ڕاستەوخۆ لە ڕێگەی ماڵپەڕەکەتانەوە حجز کردم و پشتڕاستکردنەوەکە بە PDF لامە. بۆیە وای دادەنێم خزمەتگوزارییە پشتڕاستکراوەکە کارا بێت. ئەگەر ژووری سەرەتایی بەردەست نییە، تکایە پێویستم بە جێگرەوەیەکی هاوتا بەبێ تێچووی زیادە هەیە." },
+                { "language": "kmr", "text": "Min rasterast bi malpera we rezerv kir û piştrastkirin wek PDF li ber destê min e. Ji ber vê ez texmîn dikim ku xizmeta piştrastkirî derbasdar e. Ger odeya destpêkê peyda nebe, ji kerema xwe alternatîfeke wekhev bê lêçûneke zêde divê." },
+                { "language": "pl", "text": "Rezerwowałem/rezerwowałam bezpośrednio przez państwa stronę i mam potwierdzenie w PDF-ie. Dlatego zakładam, że obowiązuje potwierdzone świadczenie. Jeśli pierwotny pokój nie jest dostępny, potrzebuję równoważnej alternatywy bez dopłaty." },
+                { "language": "ro", "text": "Am rezervat direct prin site-ul dumneavoastră și am confirmarea ca PDF. De aceea presupun că serviciul confirmat este valabil. Dacă camera inițială nu este disponibilă, am nevoie, vă rog, de o alternativă echivalentă fără cost suplimentar." },
+                { "language": "sq", "text": "Kam rezervuar drejtpërdrejt përmes faqes suaj dhe e kam konfirmimin si PDF. Prandaj supozoj se shërbimi i konfirmuar vlen. Nëse dhoma fillestare nuk është e disponueshme, më duhet ju lutem një alternativë e barasvlershme pa pagesë shtesë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist angemessen: Du belegst die direkte Buchung und formulierst eine faire, konkrete Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is appropriate: you prove the direct booking and formulate a fair, concrete solution." },
+                { "language": "fa", "text": "این مناسب است: رزرو مستقیم را با مدرک نشان می‌دهی و یک راه‌حل منصفانه و مشخص مطرح می‌کنی." },
+                { "language": "ar", "text": "هذا مناسب: تثبت الحجز المباشر وتطرح حلًا عادلًا ومحددًا." },
+                { "language": "tr", "text": "Bu uygun: doğrudan rezervasyonu belgeliyorsun ve adil, somut bir çözüm ifade ediyorsun." },
+                { "language": "ru", "text": "Это уместно: ты подтверждаешь прямое бронирование и формулируешь справедливое, конкретное решение." },
+                { "language": "ckb", "text": "ئەمە گونجاوە: حجزی ڕاستەوخۆ بە بەڵگە دەردەخەیت و چارەسەرێکی دادپەروەرانە و دیاریکراو دەخەیتەڕوو." },
+                { "language": "kmr", "text": "Ev guncan e: tu rezervasyona rasterast bi belge nîşan didî û çareseriyeke dadmend û zehf dibêjî." },
+                { "language": "pl", "text": "To odpowiednie: potwierdzasz bezpośrednią rezerwację i formułujesz uczciwe, konkretne rozwiązanie." },
+                { "language": "ro", "text": "Este potrivit: dovedești rezervarea directă și formulezi o soluție corectă și concretă." },
+                { "language": "sq", "text": "Kjo është e përshtatshme: vërteton rezervimin e drejtpërdrejtë dhe formulon një zgjidhje të drejtë e konkrete." }
+              ],
+              "explanationKey": "direct-booking-equivalent-solution"
+            },
+            {
+              "id": "b2-hotel-55-t4-b",
+              "text": "Ich habe direkt gebucht. Wenn das Zimmer nicht da ist, geben Sie mir bitte einfach ein anderes Zimmer.",
+              "translations": [
+                { "language": "en", "text": "I booked directly. If the room is not there, please just give me another room." },
+                { "language": "fa", "text": "من مستقیم رزرو کردم. اگر آن اتاق نیست، لطفاً فقط یک اتاق دیگر به من بدهید." },
+                { "language": "ar", "text": "حجزت مباشرة. إذا لم تكن الغرفة موجودة، فأعطوني من فضلكم غرفة أخرى فقط." },
+                { "language": "tr", "text": "Doğrudan rezervasyon yaptım. Oda yoksa lütfen bana sadece başka bir oda verin." },
+                { "language": "ru", "text": "Я бронировал напрямую. Если этого номера нет, просто дайте мне, пожалуйста, другой номер." },
+                { "language": "ckb", "text": "من ڕاستەوخۆ حجز کردم. ئەگەر ژوورەکە نییە، تکایە تەنها ژوورێکی ترم پێ بدەن." },
+                { "language": "kmr", "text": "Min rasterast rezerv kir. Ger ode nebe, ji kerema xwe tenê odeyek din bidin min." },
+                { "language": "pl", "text": "Rezerwowałem/rezerwowałam bezpośrednio. Jeśli tego pokoju nie ma, proszę po prostu dać mi inny pokój." },
+                { "language": "ro", "text": "Am rezervat direct. Dacă acea cameră nu există, vă rog să îmi dați pur și simplu o altă cameră." },
+                { "language": "sq", "text": "Kam rezervuar drejtpërdrejt. Nëse ajo dhomë nuk është, ju lutem më jepni thjesht një dhomë tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist verständlich, aber zu schwach. Es fehlen die bestätigte Leistung, der Beleg und die Bedingung ohne Aufpreis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is understandable, but too weak. The confirmed service, proof, and condition of no extra charge are missing." },
+                { "language": "fa", "text": "این قابل فهم است، اما خیلی ضعیف است. خدمات تأییدشده، مدرک و شرط بدون هزینه اضافه در آن نیست." },
+                { "language": "ar", "text": "هذا مفهوم، لكنه ضعيف جدًا. تنقصه الخدمة المؤكدة والإثبات وشرط عدم وجود رسوم إضافية." },
+                { "language": "tr", "text": "Bu anlaşılır, ama fazla zayıf. Onaylanan hizmet, kanıt ve ek ücret olmaması şartı eksik." },
+                { "language": "ru", "text": "Это понятно, но слишком слабо. Не хватает подтвержденной услуги, доказательства и условия без доплаты." },
+                { "language": "ckb", "text": "ئەمە تێگەیشتنەوەی هەیە، بەڵام زۆر لاوازە. خزمەتگوزارییە پشتڕاستکراوەکە، بەڵگە و مەرجی بێ تێچووی زیادە کەمە." },
+                { "language": "kmr", "text": "Ev têgihiştî ye, lê pir lawaz e. Xizmeta piştrastkirî, belge û şertê bê lêçûneke zêde kêm in." },
+                { "language": "pl", "text": "To zrozumiałe, ale zbyt słabe. Brakuje potwierdzonego świadczenia, dowodu i warunku bez dopłaty." },
+                { "language": "ro", "text": "Este de înțeles, dar prea slab. Lipsesc serviciul confirmat, dovada și condiția fără cost suplimentar." },
+                { "language": "sq", "text": "Kjo është e kuptueshme, por shumë e dobët. Mungojnë shërbimi i konfirmuar, prova dhe kushti pa pagesë shtesë." }
+              ],
+              "explanationKey": "alternative-too-unspecific"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "b2-hotel-55-t6-a",
+              "text": "Das straßenseitige Zimmer ist für mich schwierig, weil ich am nächsten Morgen einen frühen Termin habe. Können Sie bitte prüfen, ob das ruhigere Superior-Zimmer ohne Aufpreis möglich ist und ob das Frühstück wie bestätigt enthalten bleibt?",
+              "translations": [
+                { "language": "en", "text": "The room facing the street is difficult for me because I have an early appointment the next morning. Could you please check whether the quieter superior room is possible without an extra charge and whether breakfast remains included as confirmed?" },
+                { "language": "fa", "text": "اتاق رو به خیابان برای من مشکل است، چون صبح روز بعد یک قرار زود دارم. لطفاً می‌توانید بررسی کنید آیا اتاق superior آرام‌تر بدون هزینه اضافه ممکن است و آیا صبحانه همان‌طور که تأیید شده شامل می‌ماند؟" },
+                { "language": "ar", "text": "الغرفة باتجاه الشارع صعبة بالنسبة لي لأن لدي موعدًا مبكرًا في صباح اليوم التالي. هل يمكنكم من فضلكم التحقق مما إذا كانت غرفة السوبيريور الأكثر هدوءًا ممكنة من دون رسوم إضافية، وما إذا كان الفطور سيبقى مشمولًا كما تم تأكيده؟" },
+                { "language": "tr", "text": "Cadde tarafındaki oda benim için zor, çünkü ertesi sabah erken bir randevum var. Lütfen daha sakin superior odanın ek ücret olmadan mümkün olup olmadığını ve kahvaltının onaylandığı gibi dahil kalıp kalmadığını kontrol eder misiniz?" },
+                { "language": "ru", "text": "Номер на сторону улицы для меня проблематичен, потому что на следующее утро у меня ранняя встреча. Можете, пожалуйста, проверить, возможен ли более тихий номер superior без доплаты и остается ли завтрак включенным, как подтверждено?" },
+                { "language": "ckb", "text": "ژووری ڕوو لە شەقام بۆ من قورسە، چونکە بەیانی ڕۆژی دواتر کۆبوونەوەیەکی زووم هەیە. تکایە دەتوانن بپشکنن ئایا ژووری superior ئارامتر بەبێ تێچووی زیادە دەکرێت و ئایا بەیانی وەک پشتڕاستکراوەکە لەخۆ دەگرێت؟" },
+                { "language": "kmr", "text": "Odeya li aliyê kolanê ji bo min dijwar e, ji ber ku sibêya roja din randevûyeke zû heye. Ji kerema xwe hûn dikarin kontrol bikin ka odeya superior a bêdengtir bê lêçûneke zêde mumkin e û ka taştê wekî ku hatiye piştrastkirin tê de dimîne?" },
+                { "language": "pl", "text": "Pokój od strony ulicy jest dla mnie problematyczny, ponieważ następnego ranka mam wczesne spotkanie. Czy mogą państwo sprawdzić, czy cichszy pokój superior jest możliwy bez dopłaty i czy śniadanie pozostaje w cenie zgodnie z potwierdzeniem?" },
+                { "language": "ro", "text": "Camera spre stradă este dificilă pentru mine, deoarece în dimineața următoare am o programare devreme. Puteți verifica, vă rog, dacă este posibilă camera superior mai liniștită fără cost suplimentar și dacă micul dejun rămâne inclus așa cum a fost confirmat?" },
+                { "language": "sq", "text": "Dhoma nga ana e rrugës është e vështirë për mua, sepse mëngjesin tjetër kam një takim herët. A mund të kontrolloni ju lutem nëse dhoma superior më e qetë është e mundur pa pagesë shtesë dhe nëse mëngjesi mbetet i përfshirë siç është konfirmuar?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist B2-gerecht: Du lehnst nicht nur ab, sondern begründest und verhandelst Kosten und Leistung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This fits B2: you do not just refuse, but give a reason and negotiate cost and service." },
+                { "language": "fa", "text": "این برای B2 مناسب است: فقط رد نمی‌کنی، بلکه دلیل می‌آوری و درباره هزینه و خدمات مذاکره می‌کنی." },
+                { "language": "ar", "text": "هذا مناسب لمستوى B2: أنت لا ترفض فقط، بل تقدم سببًا وتفاوض على التكلفة والخدمة." },
+                { "language": "tr", "text": "Bu B2'ye uygun: sadece reddetmiyor, gerekçe veriyor ve maliyet ile hizmeti müzakere ediyorsun." },
+                { "language": "ru", "text": "Это соответствует B2: ты не просто отказываешься, а объясняешь причину и обсуждаешь стоимость и услугу." },
+                { "language": "ckb", "text": "ئەمە بۆ B2 گونجاوە: تەنها ڕەت ناکەیتەوە، بەڵکو هۆکار دەهێنیتەوە و لەبارەی تێچوو و خزمەتگوزاری گفتوگۆ دەکەیت." },
+                { "language": "kmr", "text": "Ev ji bo B2 guncan e: tu tenê red nakî, sedemê dibêjî û lêçûn û xizmetê diaxifî." },
+                { "language": "pl", "text": "To pasuje do B2: nie tylko odmawiasz, ale uzasadniasz i negocjujesz koszt oraz świadczenie." },
+                { "language": "ro", "text": "Este potrivit pentru B2: nu doar refuzi, ci dai un motiv și negociezi costul și serviciul." },
+                { "language": "sq", "text": "Kjo i përshtatet B2: nuk refuzon thjesht, por jep arsye dhe negocion koston dhe shërbimin." }
+              ],
+              "explanationKey": "reasoned-hotel-negotiation"
+            },
+            {
+              "id": "b2-hotel-55-t6-b",
+              "text": "Das Zimmer zur Straße ist nicht ideal. Vielleicht nehme ich das Superior-Zimmer, wenn es nicht zu teuer ist.",
+              "translations": [
+                { "language": "en", "text": "The room facing the street is not ideal. Maybe I will take the superior room if it is not too expensive." },
+                { "language": "fa", "text": "اتاق رو به خیابان ایده‌آل نیست. شاید اتاق superior را بگیرم، اگر خیلی گران نباشد." },
+                { "language": "ar", "text": "الغرفة باتجاه الشارع ليست مثالية. ربما آخذ غرفة السوبيريور إذا لم تكن غالية جدًا." },
+                { "language": "tr", "text": "Cadde tarafındaki oda ideal değil. Çok pahalı değilse belki superior odayı alırım." },
+                { "language": "ru", "text": "Номер на сторону улицы не идеален. Возможно, я возьму номер superior, если он не слишком дорогой." },
+                { "language": "ckb", "text": "ژووری ڕوو لە شەقام باشترین نییە. ڕەنگە ژووری superior وەربگرم، ئەگەر زۆر گران نەبێت." },
+                { "language": "kmr", "text": "Odeya li aliyê kolanê ne îdeal e. Ger pir biha nebe, belkî ez odeya superior bigirim." },
+                { "language": "pl", "text": "Pokój od strony ulicy nie jest idealny. Może wezmę pokój superior, jeśli nie będzie zbyt drogi." },
+                { "language": "ro", "text": "Camera spre stradă nu este ideală. Poate iau camera superior dacă nu este prea scumpă." },
+                { "language": "sq", "text": "Dhoma nga ana e rrugës nuk është ideale. Ndoshta marr dhomën superior nëse nuk është shumë e shtrenjtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist plausibel, aber zu nachgiebig. Du nennst keinen Grund und sicherst nicht ab, dass kein Aufpreis entsteht.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is plausible, but too yielding. You do not give a reason and do not secure that there will be no extra charge." },
+                { "language": "fa", "text": "این ممکن است قابل قبول به نظر برسد، اما زیادی کوتاه می‌آید. دلیل نمی‌آوری و تضمین نمی‌کنی که هزینه اضافه پیش نیاید." },
+                { "language": "ar", "text": "هذا يبدو معقولًا، لكنه متساهل جدًا. لا تذكر سببًا ولا تضمن عدم وجود رسوم إضافية." },
+                { "language": "tr", "text": "Bu makul, ama fazla tavizkar. Gerekçe belirtmiyor ve ek ücret olmamasını güvenceye almıyorsun." },
+                { "language": "ru", "text": "Это правдоподобно, но слишком уступчиво. Ты не называешь причину и не закрепляешь отсутствие доплаты." },
+                { "language": "ckb", "text": "ئەمە باوەڕپێکراوە، بەڵام زۆر سازشکارانەیە. هۆکار ناهێنیتەوە و دڵنیا ناکەیت کە تێچووی زیادە نەبێت." },
+                { "language": "kmr", "text": "Ev mumkin xuya dike, lê pir lihevhatî ye. Tu sedemê nabêjî û ewle nakî ku lêçûneke zêde çênebe." },
+                { "language": "pl", "text": "To brzmi wiarygodnie, ale jest zbyt ustępliwe. Nie podajesz powodu i nie zabezpieczasz braku dopłaty." },
+                { "language": "ro", "text": "Este plauzibil, dar prea concesiv. Nu dai un motiv și nu asiguri că nu va exista cost suplimentar." },
+                { "language": "sq", "text": "Kjo duket e besueshme, por është shumë lëshuese. Nuk jep arsye dhe nuk siguron që të mos ketë pagesë shtesë." }
+              ],
+              "explanationKey": "too-yielding-room-choice"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "b2-hotel-55-t10-a",
+              "text": "Vielen Dank. Dann warte ich auf die aktualisierte Bestätigung. Ich achte darauf, dass dort das Superior-Zimmer im ruhigen Gebäudeteil, Frühstück inklusive, kein Aufpreis und Check-in ab 16 Uhr stehen. Falls die E-Mail nicht kommt, melde ich mich noch einmal.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for the updated confirmation. I will make sure it states the superior room in the quiet part of the building, breakfast included, no extra charge, and check-in from 4 p.m. If the email does not arrive, I will get in touch again." },
+                { "language": "fa", "text": "بسیار ممنون. پس منتظر تأییدیه به‌روزشده می‌مانم. دقت می‌کنم که در آن اتاق superior در بخش آرام ساختمان، صبحانه شامل، بدون هزینه اضافه و ورود از ساعت ۱۶ نوشته شده باشد. اگر ایمیل نرسید، دوباره تماس می‌گیرم." },
+                { "language": "ar", "text": "شكرًا جزيلًا. إذن سأنتظر التأكيد المحدث. سأنتبه إلى أن يكون مذكورًا فيه غرفة السوبيريور في الجزء الهادئ من المبنى، الفطور مشمول، من دون رسوم إضافية، وتسجيل الوصول من الساعة 16. إذا لم تصل رسالة البريد الإلكتروني، فسأتواصل مرة أخرى." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde güncellenmiş onayı bekleyeceğim. Orada binanın sakin bölümünde superior oda, kahvaltı dahil, ek ücret yok ve saat 16'dan itibaren giriş yazmasına dikkat edeceğim. E-posta gelmezse tekrar iletişime geçeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я буду ждать обновленное подтверждение. Я проверю, чтобы там были указаны номер superior в тихой части здания, завтрак включен, без доплаты и заселение с 16:00. Если письмо не придет, я свяжусь еще раз." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە چاوەڕێی پشتڕاستکردنەوەی نوێکراوە دەبم. ئاگادار دەبم کە لەوێدا ژووری superior لە بەشی ئارامی بیناکە، بەیانی لەخۆ دەگرێت، هیچ تێچووی زیادە نییە و چوونەژوورەوە لە کاتژمێر ١٦ەوە نووسرابێت. ئەگەر ئیمەیڵەکە نەهات، جارێکی تر پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Gelek spas. Hingê ez li benda piştrastkirina nûkirî dimînim. Ez balê dikim ku tê de odeya superior di beşa bêdeng a avahiyê de, taştê tê de, bê lêçûneke zêde û ketina hundir ji saet 16ê ve nivîsandî be. Ger e-peyam neyê, ez careke din têkilî digirim." },
+                { "language": "pl", "text": "Dziękuję bardzo. W takim razie poczekam na zaktualizowane potwierdzenie. Sprawdzę, czy widnieje tam pokój superior w cichej części budynku, śniadanie w cenie, bez dopłaty i zameldowanie od godziny 16. Jeśli e-mail nie przyjdzie, skontaktuję się ponownie." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci aștept confirmarea actualizată. Voi verifica să fie menționate camera superior în partea liniștită a clădirii, micul dejun inclus, fără cost suplimentar și sosire de la ora 16. Dacă e-mailul nu ajunge, vă contactez din nou." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë do të pres konfirmimin e përditësuar. Do të kontrolloj që aty të shkruhet dhomë superior në pjesën e qetë të ndërtesës, mëngjes i përfshirë, pa pagesë shtesë dhe hyrje nga ora 16. Nëse e-maili nuk vjen, do të kontaktoj përsëri." }
+              ],
+              "isCorrect": true,
+              "feedback": "Das ist ein klarer Abschluss: Lösung, Bedingungen und nächster Schritt sind vollständig zusammengefasst.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is a clear closing: solution, conditions, and next step are fully summarized." },
+                { "language": "fa", "text": "این پایان‌بندی روشن است: راه‌حل، شرایط و قدم بعدی کامل خلاصه شده‌اند." },
+                { "language": "ar", "text": "هذه خاتمة واضحة: الحل والشروط والخطوة التالية ملخصة بالكامل." },
+                { "language": "tr", "text": "Bu net bir kapanış: çözüm, koşullar ve sonraki adım tamamen özetlenmiş." },
+                { "language": "ru", "text": "Это четкое завершение: решение, условия и следующий шаг полностью подытожены." },
+                { "language": "ckb", "text": "ئەمە کۆتاییەکی ڕوونە: چارەسەر، مەرجەکان و هەنگاوی دواتر بە تەواوی کورتکراونەتەوە." },
+                { "language": "kmr", "text": "Ev dawîkirineke zelal e: çareserî, merc û gava paşê bi tevahî hatine kurtkirin." },
+                { "language": "pl", "text": "To jasne zakończenie: rozwiązanie, warunki i następny krok są w pełni podsumowane." },
+                { "language": "ro", "text": "Este o încheiere clară: soluția, condițiile și pasul următor sunt rezumate complet." },
+                { "language": "sq", "text": "Kjo është një mbyllje e qartë: zgjidhja, kushtet dhe hapi i ardhshëm janë përmbledhur plotësisht." }
+              ],
+              "explanationKey": "complete-hotel-booking-closing"
+            },
+            {
+              "id": "b2-hotel-55-t10-b",
+              "text": "Vielen Dank. Dann warte ich auf Ihre E-Mail und hoffe, dass alles stimmt.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for your email and hope that everything is correct." },
+                { "language": "fa", "text": "ممنون. پس منتظر ایمیل شما می‌مانم و امیدوارم همه چیز درست باشد." },
+                { "language": "ar", "text": "شكرًا. إذن سأنتظر بريدكم الإلكتروني وآمل أن يكون كل شيء صحيحًا." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman e-postanızı bekleyeceğim ve her şeyin doğru olmasını umacağım." },
+                { "language": "ru", "text": "Спасибо. Тогда я буду ждать ваше письмо и надеюсь, что все будет правильно." },
+                { "language": "ckb", "text": "سوپاس. کەواتە چاوەڕێی ئیمەیڵەکەتان دەبم و هیوادارم هەموو شتێک ڕاست بێت." },
+                { "language": "kmr", "text": "Spas. Hingê ez li benda e-peyama we dimînim û hêvî dikim her tişt rast be." },
+                { "language": "pl", "text": "Dziękuję. W takim razie poczekam na państwa e-mail i mam nadzieję, że wszystko będzie się zgadzać." },
+                { "language": "ro", "text": "Mulțumesc. Atunci aștept e-mailul dumneavoastră și sper că totul va fi corect." },
+                { "language": "sq", "text": "Faleminderit. Atëherë do të pres e-mailin tuaj dhe shpresoj që gjithçka të jetë në rregull." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber nicht prüfbar. Es fehlen die konkreten Punkte, die in der Bestätigung stehen müssen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite, but not verifiable. The concrete points that must appear in the confirmation are missing." },
+                { "language": "fa", "text": "این مؤدبانه است، اما قابل بررسی نیست. نکات مشخصی که باید در تأییدیه بیاید، در آن نیست." },
+                { "language": "ar", "text": "هذا مهذب، لكنه غير قابل للتحقق. تنقصه النقاط المحددة التي يجب أن تظهر في التأكيد." },
+                { "language": "tr", "text": "Bu kibar, ama kontrol edilebilir değil. Onayda yer alması gereken somut noktalar eksik." },
+                { "language": "ru", "text": "Это вежливо, но непроверяемо. Не хватает конкретных пунктов, которые должны быть в подтверждении." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام ناتوانرێت بپشکنرێت. خاڵە دیاریکراوەکان کە دەبێت لە پشتڕاستکردنەوەکەدا بن کەمن." },
+                { "language": "kmr", "text": "Ev bi rêzdarî ye, lê nayê kontrolkirin. Xalên taybet ên ku divê di piştrastkirinê de hebin kêm in." },
+                { "language": "pl", "text": "To uprzejme, ale nieweryfikowalne. Brakuje konkretnych punktów, które muszą znaleźć się w potwierdzeniu." },
+                { "language": "ro", "text": "Este politicos, dar nu este verificabil. Lipsesc punctele concrete care trebuie să apară în confirmare." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por jo e verifikueshme. Mungojnë pikat konkrete që duhet të jenë në konfirmim." }
+              ],
+              "explanationKey": "closing-not-verifiable"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "problem-framing",
+          "text": "Bei einer Buchungsabweichung hilft eine präzise Eröffnung: Nummer, Zeitraum, bestätigte Leistung und aktuelle Abweichung.",
+          "translations": [
+            { "language": "en", "text": "With a booking discrepancy, a precise opening helps: number, dates, confirmed service, and current discrepancy." },
+            { "language": "fa", "text": "در اختلاف رزرو، شروع دقیق کمک می‌کند: شماره، بازه زمانی، خدمات تأییدشده و اختلاف فعلی." },
+            { "language": "ar", "text": "عند وجود اختلاف في الحجز تساعد البداية الدقيقة: الرقم والمدة والخدمة المؤكدة والاختلاف الحالي." },
+            { "language": "tr", "text": "Rezervasyon farklılığında net bir açılış yardımcı olur: numara, tarih aralığı, onaylanan hizmet ve mevcut farklılık." },
+            { "language": "ru", "text": "При расхождении в бронировании помогает точное начало: номер, даты, подтвержденная услуга и текущее расхождение." },
+            { "language": "ckb", "text": "لە کاتی جیاوازیی حجزدا دەستپێکردنی ورد یارمەتیدەرە: ژمارە، ماوە، خزمەتگوزاری پشتڕاستکراوە و جیاوازیی ئێستا." },
+            { "language": "kmr", "text": "Di cudahiya rezervasyonê de destpêkeke zelal alîkar e: jimare, dem, xizmeta piştrastkirî û cudahiya niha." },
+            { "language": "pl", "text": "Przy rozbieżności w rezerwacji pomaga precyzyjny początek: numer, termin, potwierdzone świadczenie i aktualna różnica." },
+            { "language": "ro", "text": "La o diferență de rezervare ajută o deschidere precisă: număr, perioadă, serviciu confirmat și diferența actuală." },
+            { "language": "sq", "text": "Në një mospërputhje rezervimi ndihmon një hapje e saktë: numri, periudha, shërbimi i konfirmuar dhe ndryshimi aktual." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "claim-and-evidence",
+          "text": "Direkte Buchung und PDF-Bestätigung machen deine Bitte um eine gleichwertige Lösung ohne Aufpreis nachvollziehbar.",
+          "translations": [
+            { "language": "en", "text": "Direct booking and PDF confirmation make your request for an equivalent solution without extra charge understandable." },
+            { "language": "fa", "text": "رزرو مستقیم و تأییدیه PDF درخواستت برای راه‌حل هم‌ارز بدون هزینه اضافه را قابل فهم و قابل دفاع می‌کند." },
+            { "language": "ar", "text": "الحجز المباشر وتأكيد PDF يجعلان طلبك لحل مكافئ من دون رسوم إضافية مفهومًا." },
+            { "language": "tr", "text": "Doğrudan rezervasyon ve PDF onayı, ek ücret olmadan eşdeğer çözüm talebini anlaşılır kılar." },
+            { "language": "ru", "text": "Прямое бронирование и подтверждение PDF делают твою просьбу о равноценном решении без доплаты понятной." },
+            { "language": "ckb", "text": "حجزی ڕاستەوخۆ و پشتڕاستکردنەوەی PDF داواکەت بۆ چارەسەرێکی هاوتا بەبێ تێچووی زیادە تێگەیشتنەوەدار دەکەن." },
+            { "language": "kmr", "text": "Rezervasyona rasterast û piştrastkirina PDF daxwaza te ya çareseriyeke wekhev bê lêçûneke zêde têgihiştî dike." },
+            { "language": "pl", "text": "Bezpośrednia rezerwacja i potwierdzenie PDF sprawiają, że prośba o równoważne rozwiązanie bez dopłaty jest zrozumiała." },
+            { "language": "ro", "text": "Rezervarea directă și confirmarea PDF fac cererea ta pentru o soluție echivalentă fără cost suplimentar ușor de înțeles." },
+            { "language": "sq", "text": "Rezervimi i drejtpërdrejtë dhe konfirmimi PDF e bëjnë të kuptueshme kërkesën tënde për një zgjidhje të barasvlershme pa pagesë shtesë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "negotiation",
+          "text": "Eine gute Verhandlung verbindet persönliche Notwendigkeit mit konkreter Forderung: ruhig, gleichwertig, Frühstück inklusive, kein Aufpreis.",
+          "translations": [
+            { "language": "en", "text": "Good negotiation connects personal necessity with a concrete demand: quiet, equivalent, breakfast included, no extra charge." },
+            { "language": "fa", "text": "مذاکره خوب ضرورت شخصی را با خواسته مشخص وصل می‌کند: آرام، هم‌ارز، صبحانه شامل، بدون هزینه اضافه." },
+            { "language": "ar", "text": "التفاوض الجيد يربط الضرورة الشخصية بطلب محدد: هادئ، مكافئ، الفطور مشمول، من دون رسوم إضافية." },
+            { "language": "tr", "text": "İyi bir müzakere kişisel ihtiyacı somut taleple bağlar: sakin, eşdeğer, kahvaltı dahil, ek ücret yok." },
+            { "language": "ru", "text": "Хорошие переговоры связывают личную необходимость с конкретным требованием: тихо, равноценно, завтрак включен, без доплаты." },
+            { "language": "ckb", "text": "گفتوگۆی باش پێویستی کەسی بە داواکاریی دیاریکراوەوە دەبەستێت: ئارام، هاوتا، بەیانی لەخۆ دەگرێت، بێ تێچووی زیادە." },
+            { "language": "kmr", "text": "Axaftina baş hewcedariya kesane bi daxwazeke taybet ve girê dide: bêdeng, wekhev, taştê tê de, bê lêçûneke zêde." },
+            { "language": "pl", "text": "Dobre negocjowanie łączy osobistą potrzebę z konkretnym żądaniem: cicho, równoważnie, śniadanie w cenie, bez dopłaty." },
+            { "language": "ro", "text": "O negociere bună leagă necesitatea personală de o cerere concretă: liniștit, echivalent, mic dejun inclus, fără cost suplimentar." },
+            { "language": "sq", "text": "Një negociim i mirë lidh nevojën personale me kërkesën konkrete: e qetë, e barasvlershme, mëngjes i përfshirë, pa pagesë shtesë." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "written-confirmation",
+          "text": "Am Telefon reicht ein mündliches Ja oft nicht. Wiederhole die Details, die später in der schriftlichen Bestätigung stehen müssen.",
+          "translations": [
+            { "language": "en", "text": "On the phone, a verbal yes is often not enough. Repeat the details that must later appear in the written confirmation." },
+            { "language": "fa", "text": "در تلفن، یک بله شفاهی اغلب کافی نیست. جزئیاتی را تکرار کن که بعداً باید در تأیید کتبی بیاید." },
+            { "language": "ar", "text": "على الهاتف لا يكفي غالبًا نعم الشفهية. كرر التفاصيل التي يجب أن تظهر لاحقًا في التأكيد الخطي." },
+            { "language": "tr", "text": "Telefonda sözlü bir evet çoğu zaman yeterli değildir. Daha sonra yazılı onayda yer alması gereken ayrıntıları tekrarla." },
+            { "language": "ru", "text": "По телефону устного «да» часто недостаточно. Повтори детали, которые позже должны быть в письменном подтверждении." },
+            { "language": "ckb", "text": "لەسەر تەلەفۆن، بەڵێیەکی زارەکی زۆرجار بەس نییە. ئەو وردەکارییانە دووبارە بکەوە کە دواتر دەبێت لە پشتڕاستکردنەوەی نووسراودا بن." },
+            { "language": "kmr", "text": "Di telefonê de erêya devkî gelek caran têr nake. Hûrgilên ku paşê divê di piştrastkirina nivîskî de hebin dubare bike." },
+            { "language": "pl", "text": "Przez telefon ustne „tak” często nie wystarcza. Powtórz szczegóły, które później muszą znaleźć się w pisemnym potwierdzeniu." },
+            { "language": "ro", "text": "La telefon, un da verbal nu este adesea suficient. Repetă detaliile care trebuie să apară mai târziu în confirmarea scrisă." },
+            { "language": "sq", "text": "Në telefon, një po gojore shpesh nuk mjafton. Përsërit detajet që më vonë duhet të jenë në konfirmimin me shkrim." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3550
+    }
+  ]
+}

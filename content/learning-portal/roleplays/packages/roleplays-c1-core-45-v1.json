@@ -1,0 +1,857 @@
+{
+  "packageId": "roleplays-c1-core-45-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 45 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 45",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-vertragskonflikt-mit-kulanzoption-verhandeln",
+      "linkedDialogueSlug": null,
+      "title": "Einen Vertragskonflikt mit Kulanzoption verhandeln",
+      "titleTranslations": [
+        { "language": "en", "text": "Negotiating a contract conflict with a goodwill option" },
+        { "language": "fa", "text": "مذاکره درباره اختلاف قراردادی با گزینه ارفاقی" },
+        { "language": "ar", "text": "التفاوض حول نزاع تعاقدي مع خيار تسوية ودية" },
+        { "language": "tr", "text": "İyi niyet seçeneğiyle bir sözleşme anlaşmazlığını müzakere etmek" },
+        { "language": "ru", "text": "Переговоры по договорному конфликту с вариантом доброй воли" },
+        { "language": "ckb", "text": "گفتوگۆکردن لەسەر ناکۆکیی گرێبەست بە هەڵبژاردەی کولانتس" },
+        { "language": "kmr", "text": "Li ser nakokiya peymanê bi vebijêrka dilxwaziyê danûstandin kirin" },
+        { "language": "pl", "text": "Negocjowanie konfliktu umownego z opcją polubowną" },
+        { "language": "ro", "text": "Negocierea unui conflict contractual cu o opțiune de bunăvoință" },
+        { "language": "sq", "text": "Negocimi i një konflikti kontraktual me opsion mirëkuptimi" }
+      ],
+      "description": "Sie rufen bei einem Dienstleister an, weil Ihr Vertrag trotz Kündigungsversuch verlängert wurde. Sie wollen den Fall nicht emotional eskalieren, sondern mit Datum, vorherigem Kontakt und einem fairen Kulanzvorschlag eine realistische Lösung verhandeln.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call a service provider because your contract was extended despite an attempted cancellation. You do not want to escalate emotionally, but negotiate a realistic solution using dates, prior contact, and a fair goodwill proposal." },
+        { "language": "fa", "text": "شما با یک ارائه‌دهنده خدمات تماس می‌گیرید، چون قرارداد شما با وجود تلاش برای فسخ، تمدید شده است. نمی‌خواهید موضوع را احساسی تشدید کنید، بلکه با تاریخ‌ها، تماس قبلی و پیشنهاد ارفاقی منصفانه راه‌حلی واقع‌بینانه مذاکره می‌کنید." },
+        { "language": "ar", "text": "تتصل بمقدم خدمة لأن عقدك مُدّد رغم محاولة الإلغاء. لا تريد تصعيد الأمر عاطفياً، بل التفاوض على حل واقعي باستخدام التواريخ والتواصل السابق واقتراح تسوية ودية عادل." },
+        { "language": "tr", "text": "İptal girişiminize rağmen sözleşmeniz uzatıldığı için bir hizmet sağlayıcıyı arıyorsunuz. Konuyu duygusal olarak tırmandırmak istemiyor, tarihler, önceki temas ve adil bir iyi niyet önerisiyle gerçekçi bir çözüm müzakere ediyorsunuz." },
+        { "language": "ru", "text": "Вы звоните поставщику услуг, потому что ваш договор был продлен, несмотря на попытку расторжения. Вы не хотите эмоционально обострять ситуацию, а хотите договориться о реалистичном решении, опираясь на даты, предыдущий контакт и справедливое предложение доброй воли." },
+        { "language": "ckb", "text": "تۆ پەیوەندی بە دابینکەری خزمەتگوزارییەکەوە دەکەیت، چونکە گرێبەستەکەت سەرەڕای هەوڵی هەڵوەشاندنەوە درێژکراوەتەوە. نامەوێت بابەتەکە بە هەستەوە توند بکەیت، بەڵکوو بە بەروار، پەیوەندیی پێشووتر و پێشنیارێکی دادپەروەرانەی کولانتس چارەسەرێکی واقیعی گفتوگۆ بکەیت." },
+        { "language": "kmr", "text": "Hûn bi peydakirê xizmetê re telefon dikin, ji ber ku peymana we tevî hewla betalkirinê dirêj bûye. Hûn naxwazin mijarê bi hestî bilind bikin, lê bi tarîxan, têkiliya berê û pêşniyareke adil a dilxwaziyê çareseriyeke rast danûstandin bikin." },
+        { "language": "pl", "text": "Dzwoni Pan do usługodawcy, ponieważ umowa została przedłużona mimo próby wypowiedzenia. Nie chce Pan eskalować emocjonalnie, lecz wynegocjować realistyczne rozwiązanie, używając dat, wcześniejszego kontaktu i uczciwej propozycji polubownej." },
+        { "language": "ro", "text": "Sunați la un furnizor de servicii deoarece contractul dumneavoastră a fost prelungit în ciuda unei încercări de reziliere. Nu vreți să escaladați emoțional, ci să negociați o soluție realistă folosind date, contactul anterior și o propunere echitabilă de bunăvoință." },
+        { "language": "sq", "text": "Telefononi një ofrues shërbimi sepse kontrata juaj u zgjat pavarësisht përpjekjes për anulim. Nuk doni ta përshkallëzoni emocionalisht, por të negocioni një zgjidhje realiste me data, kontakt të mëparshëm dhe një propozim të drejtë mirëkuptimi." }
+      ],
+      "learnerGoal": "Einen Vertragskonflikt sachlich verhandeln: Fristen anerkennen, frühere Kontakte belegen, rechtliche Drohungen vermeiden, eine faire Kulanzoption vorschlagen und eine schriftliche Bestätigung der nächsten Schritte sichern.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Negotiate a contract conflict factually: acknowledge deadlines, document previous contacts, avoid legal threats, propose a fair goodwill option, and secure written confirmation of the next steps." },
+        { "language": "fa", "text": "یک اختلاف قراردادی را به‌صورت factual مذاکره کنید: مهلت‌ها را بپذیرید، تماس‌های قبلی را مستند کنید، از تهدید حقوقی پرهیز کنید، گزینه ارفاقی منصفانه پیشنهاد دهید و تأیید کتبی مراحل بعدی را بگیرید." },
+        { "language": "ar", "text": "فاوض بشأن نزاع تعاقدي بشكل موضوعي: اعترف بالمواعيد النهائية، ووثق الاتصالات السابقة، وتجنب التهديدات القانونية، واقترح خيار تسوية ودية عادل، واحصل على تأكيد مكتوب للخطوات التالية." },
+        { "language": "tr", "text": "Bir sözleşme anlaşmazlığını nesnel biçimde müzakere edin: süreleri kabul edin, önceki temasları belgeleyin, hukuki tehditlerden kaçının, adil bir iyi niyet seçeneği önerin ve sonraki adımların yazılı onayını güvenceye alın." },
+        { "language": "ru", "text": "Предметно вести переговоры по договорному конфликту: признать сроки, подтвердить предыдущие контакты, избегать юридических угроз, предложить справедливый вариант доброй воли и получить письменное подтверждение следующих шагов." },
+        { "language": "ckb", "text": "ناکۆکیی گرێبەست بە شێوەی بابەتی گفتوگۆ بکە: کاتە دیاریکراوەکان بپذێرە، پەیوەندییە پێشووترەکان بە بەڵگە پێشان بدە، لە هەڕەشەی یاسایی دوور بکەوە، هەڵبژاردەیەکی کولانتسی دادپەروەرانە پێشنیار بکە و پشتڕاستکردنەوەی نووسراوی هەنگاوەکانی داهاتوو وەربگرە." },
+        { "language": "kmr", "text": "Nakokiya peymanê bi awayekî rast danûstandin bikin: demên dawî qebûl bikin, têkiliyên berê belge bikin, ji gefên hiqûqî dûr bikevin, vebijêrkeke adil a dilxwaziyê pêşniyar bikin û piştrastkirina nivîskî ya gavên paşê bistînin." },
+        { "language": "pl", "text": "Rzeczowo negocjować konflikt umowny: uznać terminy, udokumentować wcześniejsze kontakty, unikać gróźb prawnych, zaproponować uczciwą opcję polubowną i uzyskać pisemne potwierdzenie kolejnych kroków." },
+        { "language": "ro", "text": "Negociați factual un conflict contractual: recunoașteți termenele, documentați contactele anterioare, evitați amenințările juridice, propuneți o opțiune echitabilă de bunăvoință și obțineți confirmarea scrisă a pașilor următori." },
+        { "language": "sq", "text": "Negocioni në mënyrë faktike një konflikt kontraktual: pranoni afatet, dokumentoni kontaktet e mëparshme, shmangni kërcënimet ligjore, propozoni një opsion të drejtë mirëkuptimi dhe siguroni konfirmim me shkrim për hapat e ardhshëm." }
+      ],
+      "cefrLevel": "C1",
+      "category": "customer-service",
+      "topics": ["customer-service", "documents-and-administration"],
+      "examProfiles": ["c1-hochschule", "berufssprache-b2"],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "phone",
+      "register": "formal",
+      "estimatedPracticeMinutes": 18,
+      "isPublished": true,
+      "sortOrder": 45,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kund/in",
+          "translations": [
+            { "language": "en", "text": "Customer negotiating a contract issue" },
+            { "language": "fa", "text": "مشتری که درباره مسئله قراردادی مذاکره می‌کند" },
+            { "language": "ar", "text": "العميل الذي يتفاوض بشأن مسألة تعاقدية" },
+            { "language": "tr", "text": "Sözleşme konusunu müzakere eden müşteri" },
+            { "language": "ru", "text": "Клиент, ведущий переговоры по договорному вопросу" },
+            { "language": "ckb", "text": "کڕیارێک کە لەسەر بابەتی گرێبەست گفتوگۆ دەکات" },
+            { "language": "kmr", "text": "Mişteriyê ku li ser mijara peymanê danûstandin dike" },
+            { "language": "pl", "text": "Klient negocjujący kwestię umowną" },
+            { "language": "ro", "text": "Clientul care negociază o problemă contractuală" },
+            { "language": "sq", "text": "Klienti që negocion një çështje kontraktuale" }
+          ]
+        },
+        {
+          "roleKey": "agent",
+          "displayName": "Kundenservice",
+          "translations": [
+            { "language": "en", "text": "Customer service agent" },
+            { "language": "fa", "text": "کارشناس خدمات مشتریان" },
+            { "language": "ar", "text": "موظف خدمة العملاء" },
+            { "language": "tr", "text": "Müşteri hizmetleri temsilcisi" },
+            { "language": "ru", "text": "Сотрудник службы поддержки клиентов" },
+            { "language": "ckb", "text": "کارمەندی خزمەتگوزاری کڕیاران" },
+            { "language": "kmr", "text": "Nûnerê xizmeta mişteriyan" },
+            { "language": "pl", "text": "Pracownik obsługi klienta" },
+            { "language": "ro", "text": "Agent de servicii clienți" },
+            { "language": "sq", "text": "Agjent i shërbimit ndaj klientit" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "agent",
+          "baseText": "Guten Tag, Sie sprechen mit dem Kundenservice. Worum geht es in Ihrem Vertrag?",
+          "translations": [
+            { "language": "en", "text": "Good day, you are speaking with customer service. What is your contract issue about?" },
+            { "language": "fa", "text": "روز بخیر، شما با خدمات مشتریان صحبت می‌کنید. موضوع قرارداد شما چیست؟" },
+            { "language": "ar", "text": "مرحباً، أنت تتحدث مع خدمة العملاء. ما موضوع عقدك؟" },
+            { "language": "tr", "text": "İyi günler, müşteri hizmetleriyle görüşüyorsunuz. Sözleşmenizle ilgili konu nedir?" },
+            { "language": "ru", "text": "Добрый день, вы говорите со службой поддержки клиентов. В чем вопрос по вашему договору?" },
+            { "language": "ckb", "text": "ڕۆژباش، تۆ لەگەڵ خزمەتگوزاری کڕیاران قسە دەکەیت. بابەتی گرێبەستەکەت چییە؟" },
+            { "language": "kmr", "text": "Roj baş, hûn bi xizmeta mişteriyan re diaxivin. Mijara peymana we çi ye?" },
+            { "language": "pl", "text": "Dzień dobry, rozmawia Pan z obsługą klienta. Czego dotyczy Pana umowa?" },
+            { "language": "ro", "text": "Bună ziua, vorbiți cu serviciul clienți. Despre ce este vorba în contractul dumneavoastră?" },
+            { "language": "sq", "text": "Mirëdita, po flisni me shërbimin ndaj klientit. Për çfarë bëhet fjalë në kontratën tuaj?" }
+          ],
+          "function": "open-case",
+          "toneNote": "The agent asks for a concise case opening.",
+          "expectedLearnerAction": "Open with the issue and avoid immediate accusation."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Guten Tag. Es geht um die Verlängerung meines Servicevertrags, obwohl ich vor dem Umzug versucht hatte zu kündigen. Mir ist bewusst, dass Fristen eine Rolle spielen; ich möchte den Verlauf sachlich prüfen und eine Kulanzlösung anfragen.",
+          "translations": [
+            { "language": "en", "text": "Good day. This is about the extension of my service contract, although I had tried to cancel before moving. I am aware that deadlines matter; I would like to review the timeline factually and ask about a goodwill solution." },
+            { "language": "fa", "text": "روز بخیر. موضوع تمدید قرارداد خدمات من است، با اینکه قبل از اسباب‌کشی تلاش کرده بودم آن را فسخ کنم. می‌دانم که مهلت‌ها مهم هستند؛ می‌خواهم روند را factual بررسی کنم و درباره راه‌حل ارفاقی بپرسم." },
+            { "language": "ar", "text": "مرحباً. يتعلق الأمر بتمديد عقد الخدمة الخاص بي رغم أنني حاولت إلغاءه قبل الانتقال. أعلم أن المواعيد النهائية مهمة؛ أود مراجعة التسلسل بشكل موضوعي والسؤال عن حل ودي." },
+            { "language": "tr", "text": "İyi günler. Taşınmadan önce iptal etmeye çalışmış olmama rağmen hizmet sözleşmemin uzatılmasıyla ilgili. Sürelerin önemli olduğunun farkındayım; süreci nesnel olarak kontrol etmek ve iyi niyet çözümü sormak istiyorum." },
+            { "language": "ru", "text": "Добрый день. Речь о продлении моего сервисного договора, хотя я пытался расторгнуть его до переезда. Я понимаю, что сроки важны; я хотел бы предметно проверить ход событий и спросить о решении доброй воли." },
+            { "language": "ckb", "text": "ڕۆژباش. بابەتەکە لەسەر درێژکردنەوەی گرێبەستی خزمەتگوزاریی منە، سەرەڕای ئەوەی پێش گواستنەوە هەوڵم دا هەڵیبوەشێنمەوە. دەزانم کە کاتەکان گرنگن؛ دەمەوێت ڕەوتەکە بە شێوەی بابەتی بپشکنم و لەسەر چارەسەری کولانتس بپرسم." },
+            { "language": "kmr", "text": "Roj baş. Mijar li ser dirêjkirina peymana xizmeta min e, tevî ku min berî koçkirinê hewl dabû betalkirinê. Ez dizanim ku demên dawî girîng in; ez dixwazim rêzê bi awayekî rast kontrol bikim û li ser çareseriya dilxwaziyê bipirsim." },
+            { "language": "pl", "text": "Dzień dobry. Chodzi o przedłużenie mojej umowy serwisowej, chociaż przed przeprowadzką próbowałem ją wypowiedzieć. Mam świadomość, że terminy mają znaczenie; chciałbym rzeczowo sprawdzić przebieg sprawy i zapytać o rozwiązanie polubowne." },
+            { "language": "ro", "text": "Bună ziua. Este vorba despre prelungirea contractului meu de servicii, deși înainte de mutare încercasem să îl reziliez. Sunt conștient că termenele contează; aș dori să verific factual desfășurarea și să întreb despre o soluție de bunăvoință." },
+            { "language": "sq", "text": "Mirëdita. Bëhet fjalë për zgjatjen e kontratës sime të shërbimit, megjithëse para zhvendosjes kisha provuar ta anuloja. E di që afatet kanë rëndësi; dua ta shqyrtoj rrjedhën faktikisht dhe të pyes për një zgjidhje mirëkuptimi." }
+          ],
+          "function": "fact-based-opening",
+          "toneNote": "The learner acknowledges deadlines and avoids a hostile opening.",
+          "expectedLearnerAction": "Frame the call as review plus goodwill request, not as a threat."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "agent",
+          "baseText": "Ich sehe im System, dass die Kündigung nach Ablauf der Frist eingegangen ist. Deshalb wurde der Vertrag automatisch um sechs Monate verlängert.",
+          "translations": [
+            { "language": "en", "text": "I see in the system that the cancellation was received after the deadline. Therefore the contract was automatically extended by six months." },
+            { "language": "fa", "text": "در سیستم می‌بینم که فسخ بعد از پایان مهلت دریافت شده است. به همین دلیل قرارداد به طور خودکار شش ماه تمدید شده است." },
+            { "language": "ar", "text": "أرى في النظام أن الإلغاء وصل بعد انتهاء المهلة. لذلك تم تمديد العقد تلقائياً لمدة ستة أشهر." },
+            { "language": "tr", "text": "Sistemde iptalin sürenin bitiminden sonra ulaştığını görüyorum. Bu nedenle sözleşme otomatik olarak altı ay uzatılmış." },
+            { "language": "ru", "text": "Я вижу в системе, что расторжение поступило после истечения срока. Поэтому договор автоматически продлен на шесть месяцев." },
+            { "language": "ckb", "text": "لە سیستەمدا دەبینم کە هەڵوەشاندنەوەکە دوای تەواوبوونی مۆڵەتەکە گەیشتووە. بۆیە گرێبەستەکە بە شێوەی خۆکار بۆ شەش مانگ درێژکراوەتەوە." },
+            { "language": "kmr", "text": "Ez di pergalê de dibînim ku betalkirin piştî demê dawî hatine wergirtin. Ji ber vê yekê peyman bixweber şeş mehan dirêj bûye." },
+            { "language": "pl", "text": "Widzę w systemie, że wypowiedzenie wpłynęło po terminie. Dlatego umowa została automatycznie przedłużona o sześć miesięcy." },
+            { "language": "ro", "text": "Văd în sistem că rezilierea a fost primită după termen. De aceea contractul a fost prelungit automat cu șase luni." },
+            { "language": "sq", "text": "Në sistem shoh që anulimi është marrë pas afatit. Prandaj kontrata është zgjatur automatikisht me gjashtë muaj." }
+          ],
+          "function": "state-contract-position",
+          "toneNote": "The agent states the formal contract position.",
+          "expectedLearnerAction": "Do not deny the deadline; add the missing context and evidence."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Dass die endgültige Kündigung spät eingegangen ist, bestreite ich nicht. Entscheidend ist für mich der vorherige Kontakt am 12. März: Damals wurde mir gesagt, ich solle den Umzugsnachweis nachreichen, damit eine Kulanzprüfung möglich ist.",
+          "translations": [
+            { "language": "en", "text": "I do not dispute that the final cancellation was received late. What matters to me is the prior contact on March 12: at that time I was told to submit proof of moving later so that a goodwill review would be possible." },
+            { "language": "fa", "text": "این را انکار نمی‌کنم که فسخ نهایی دیر دریافت شده است. نکته مهم برای من تماس قبلی در ۱۲ مارس است: آن زمان به من گفته شد مدرک اسباب‌کشی را بعداً ارسال کنم تا بررسی ارفاقی ممکن باشد." },
+            { "language": "ar", "text": "لا أنكر أن الإلغاء النهائي وصل متأخراً. المهم بالنسبة لي هو التواصل السابق في 12 مارس: حينها قيل لي أن أرسل إثبات الانتقال لاحقاً لكي يكون فحص التسوية الودية ممكناً." },
+            { "language": "tr", "text": "Nihai iptalin geç ulaştığını inkar etmiyorum. Benim için önemli olan 12 Mart'taki önceki temas: o zaman bana taşınma belgesini sonradan göndermem söylendi, böylece iyi niyet incelemesi mümkün olacaktı." },
+            { "language": "ru", "text": "Я не оспариваю, что окончательное расторжение поступило поздно. Для меня важен предыдущий контакт 12 марта: тогда мне сказали дослать подтверждение переезда, чтобы была возможна проверка на решение доброй воли." },
+            { "language": "ckb", "text": "ئەوە ڕەت ناکەم کە هەڵوەشاندنەوەی کۆتایی درەنگ گەیشتووە. ئەوەی بۆ من گرنگە پەیوەندیی پێشووتری ١٢ی ئازارە: ئەوکات پێم وترا بەڵگەی گواستنەوە دواتر بنێرم، بۆ ئەوەی پشکنینی کولانتس ممکن بێت." },
+            { "language": "kmr", "text": "Ez nakim nakokî ku betalkirina dawî dereng hatine wergirtin. Ya ji bo min girîng e têkiliya berê ya 12ê Adarê ye: wê demê ji min re hat gotin ku ez belgeya koçkirinê paşê bişînim da ku kontrola dilxwaziyê gengaz be." },
+            { "language": "pl", "text": "Nie kwestionuję, że ostateczne wypowiedzenie wpłynęło późno. Decydujący jest dla mnie wcześniejszy kontakt z 12 marca: wtedy powiedziano mi, żebym dosłał potwierdzenie przeprowadzki, aby możliwa była kontrola polubowna." },
+            { "language": "ro", "text": "Nu contest că rezilierea finală a sosit târziu. Important pentru mine este contactul anterior din 12 martie: atunci mi s-a spus să trimit ulterior dovada mutării, pentru ca o verificare de bunăvoință să fie posibilă." },
+            { "language": "sq", "text": "Nuk e kundërshtoj që anulimi përfundimtar ka mbërritur vonë. Vendimtar për mua është kontakti i mëparshëm më 12 mars: atëherë më thanë ta dërgoj më vonë dëshminë e zhvendosjes, që të ishte i mundur një shqyrtim mirëkuptimi." }
+          ],
+          "function": "add-prior-contact-context",
+          "toneNote": "The learner accepts the formal problem and introduces a documented context.",
+          "expectedLearnerAction": "Distinguish between the formal deadline and the goodwill review basis."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "agent",
+          "baseText": "Ich sehe hier nur eine allgemeine Notiz zum Umzug, aber keine Zusage, dass der Vertrag beendet wird.",
+          "translations": [
+            { "language": "en", "text": "I only see a general note about the move here, but no promise that the contract would be ended." },
+            { "language": "fa", "text": "اینجا فقط یک یادداشت عمومی درباره اسباب‌کشی می‌بینم، اما هیچ تعهدی نمی‌بینم که قرارداد پایان داده می‌شود." },
+            { "language": "ar", "text": "أرى هنا فقط ملاحظة عامة حول الانتقال، لكن لا توجد أي وعد بأن العقد سينتهي." },
+            { "language": "tr", "text": "Burada taşınmayla ilgili sadece genel bir not görüyorum, ancak sözleşmenin sona ereceğine dair bir taahhüt yok." },
+            { "language": "ru", "text": "Я вижу здесь только общую заметку о переезде, но не обещание, что договор будет прекращен." },
+            { "language": "ckb", "text": "لێرە تەنها تێبینییەکی گشتی لەسەر گواستنەوە دەبینم، بەڵام هیچ بەڵێنێک نییە کە گرێبەستەکە کۆتایی پێدێت." },
+            { "language": "kmr", "text": "Ez li vir tenê noteke giştî li ser koçkirinê dibînim, lê ti sozek nîne ku peyman dê bi dawî bibe." },
+            { "language": "pl", "text": "Widzę tutaj tylko ogólną notatkę o przeprowadzce, ale żadnej obietnicy, że umowa zostanie zakończona." },
+            { "language": "ro", "text": "Văd aici doar o notă generală despre mutare, dar nicio promisiune că se va încheia contractul." },
+            { "language": "sq", "text": "Këtu shoh vetëm një shënim të përgjithshëm për zhvendosjen, por jo një premtim që kontrata do të përfundojë." }
+          ],
+          "function": "limit-evidence",
+          "toneNote": "The agent narrows what the system can prove.",
+          "expectedLearnerAction": "Offer evidence without exaggerating it into a promise."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das verstehe ich. Ich möchte daraus auch keine Zusage konstruieren. Ich habe aber die E-Mail vom selben Tag und die Uploadbestätigung für den Nachweis. Mein Vorschlag wäre: Ich zahle noch einen Monat als Übergang, und die restliche Verlängerung wird aus Kulanz beendet.",
+          "translations": [
+            { "language": "en", "text": "I understand that. I also do not want to turn it into a promise. However, I have the email from the same day and the upload confirmation for the proof. My proposal would be: I pay one more month as a transition, and the remaining extension is ended as a goodwill gesture." },
+            { "language": "fa", "text": "این را می‌فهمم. نمی‌خواهم از آن یک تعهد قطعی بسازم. اما ایمیل همان روز و تأیید آپلود مدرک را دارم. پیشنهاد من این است: یک ماه دیگر را به عنوان دوره انتقال پرداخت کنم و باقی تمدید از روی ارفاق پایان داده شود." },
+            { "language": "ar", "text": "أفهم ذلك. ولا أريد أيضاً تحويله إلى وعد. لكن لدي البريد الإلكتروني من نفس اليوم وتأكيد رفع الإثبات. اقتراحي هو: أدفع شهراً إضافياً كفترة انتقال، ويتم إنهاء بقية التمديد كإجراء ودي." },
+            { "language": "tr", "text": "Bunu anlıyorum. Bunu bir taahhüt gibi göstermek de istemiyorum. Ancak aynı güne ait e-posta ve belgenin yükleme onayı bende var. Önerim şu olurdu: geçiş için bir ay daha ödeyeyim ve kalan uzatma iyi niyet kapsamında sona erdirilsin." },
+            { "language": "ru", "text": "Я это понимаю. Я также не хочу превращать это в обещание. Но у меня есть письмо того же дня и подтверждение загрузки документа. Мое предложение: я оплачиваю еще один месяц как переходный период, а оставшееся продление прекращается в порядке доброй воли." },
+            { "language": "ckb", "text": "ئەوە تێدەگەم. هەروەها نامەوێت ئەوە بکەمە بەڵێنێک. بەڵام ئیمەیلی هەمان ڕۆژ و پشتڕاستکردنەوەی بارکردنی بەڵگەکەم هەیە. پێشنیارم ئەوەیە: مانگێکی تر وەک قۆناغی گواستنەوە بدەم، و بەشە ماوەی درێژکردنەوەکە بە کولانتس کۆتایی پێبهێنرێت." },
+            { "language": "kmr", "text": "Ez vê fam dikim. Ez naxwazim ji vê sozek çêkim. Lê e-nameya heman rojê û piştrastkirina barkirina belgeyê li cem min heye. Pêşniyara min ev e: ez mehekî din wekî derbasbûnê bidim, û mayîna dirêjkirinê bi dilxwaziyê bi dawî bibe." },
+            { "language": "pl", "text": "Rozumiem to. Nie chcę też robić z tego obietnicy. Mam jednak e-mail z tego samego dnia i potwierdzenie przesłania dowodu. Moja propozycja byłaby taka: płacę jeszcze jeden miesiąc jako przejście, a pozostałe przedłużenie zostaje zakończone polubownie." },
+            { "language": "ro", "text": "Înțeleg asta. Nici nu vreau să transform acest lucru într-o promisiune. Am însă e-mailul din aceeași zi și confirmarea încărcării dovezii. Propunerea mea ar fi: plătesc încă o lună ca tranziție, iar restul prelungirii este încheiat din bunăvoință." },
+            { "language": "sq", "text": "E kuptoj këtë. Nuk dua ta kthej as në premtim. Por kam emailin e së njëjtës ditë dhe konfirmimin e ngarkimit të dëshmisë. Propozimi im do të ishte: paguaj edhe një muaj si periudhë kalimtare dhe pjesa e mbetur e zgjatjes përfundon si mirëkuptim." }
+          ],
+          "function": "fair-goodwill-proposal",
+          "toneNote": "The learner avoids overclaiming and makes a concrete compromise.",
+          "expectedLearnerAction": "Combine evidence with a fair proposal, not with blame."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "agent",
+          "baseText": "Ich kann nicht garantieren, dass wir das so entscheiden. Wir müssen auch vermeiden, dass Kulanz wie ein Anspruch behandelt wird.",
+          "translations": [
+            { "language": "en", "text": "I cannot guarantee that we will decide it that way. We also have to avoid goodwill being treated like an entitlement." },
+            { "language": "fa", "text": "نمی‌توانم تضمین کنم که این‌طور تصمیم بگیریم. همچنین باید جلوگیری کنیم که ارفاق مثل یک حق قطعی تلقی شود." },
+            { "language": "ar", "text": "لا أستطيع ضمان أننا سنقرر الأمر بهذه الطريقة. علينا أيضاً تجنب أن يتم التعامل مع التسوية الودية كأنها حق مكتسب." },
+            { "language": "tr", "text": "Bunu böyle kararlaştıracağımızı garanti edemem. İyi niyetin bir hak gibi görülmesini de engellememiz gerekiyor." },
+            { "language": "ru", "text": "Я не могу гарантировать, что мы так решим. Нам также нужно избегать того, чтобы добрая воля воспринималась как право." },
+            { "language": "ckb", "text": "ناتوانم گەرەنتی بدەم کە بەو شێوەیە بڕیار بدەین. هەروەها دەبێت ڕێگری بکەین لەوەی کولانتس وەک مافێک مامەڵەی لەگەڵ بکرێت." },
+            { "language": "kmr", "text": "Ez nikarim garantî bikim ku em wisa biryar bidin. Her wiha divê em rê nedin ku dilxwazî wekî maf were dîtin." },
+            { "language": "pl", "text": "Nie mogę zagwarantować, że tak zdecydujemy. Musimy też unikać traktowania polubowności jak roszczenia." },
+            { "language": "ro", "text": "Nu pot garanta că vom decide așa. Trebuie să evităm și ca bunăvoința să fie tratată ca un drept." },
+            { "language": "sq", "text": "Nuk mund të garantoj që do të vendosim kështu. Duhet gjithashtu të shmangim që mirëkuptimi të trajtohet si e drejtë." }
+          ],
+          "function": "goodwill-boundary",
+          "toneNote": "The agent protects the company's discretion.",
+          "expectedLearnerAction": "Accept the discretionary nature and argue with criteria."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das ist nachvollziehbar. Ich formuliere es deshalb bewusst als Bitte um Einzelfallprüfung: langjährige Kundschaft, dokumentierter Umzug, keine Nutzung seit dem neuen Wohnort und ein vorheriger Kontakt, der zumindest eine Prüfung in Aussicht gestellt hat.",
+          "translations": [
+            { "language": "en", "text": "That is understandable. That is why I deliberately phrase it as a request for individual review: long-term customer relationship, documented move, no use since the new place of residence, and prior contact that at least indicated a review would be possible." },
+            { "language": "fa", "text": "این قابل درک است. به همین دلیل آن را آگاهانه به صورت درخواست بررسی موردی بیان می‌کنم: مشتری بلندمدت، اسباب‌کشی مستند، عدم استفاده از زمان محل سکونت جدید و تماس قبلی که حداقل امکان بررسی را مطرح کرده بود." },
+            { "language": "ar", "text": "هذا مفهوم. لذلك أصوغه عمداً كطلب فحص حالة فردية: علاقة عميل طويلة، انتقال موثق، عدم استخدام منذ مكان السكن الجديد، وتواصل سابق أشار على الأقل إلى إمكانية الفحص." },
+            { "language": "tr", "text": "Bu anlaşılır. Bu yüzden bunu bilinçli olarak bireysel inceleme talebi olarak formüle ediyorum: uzun süreli müşteri ilişkisi, belgelenmiş taşınma, yeni ikamet yerinden beri kullanım olmaması ve en azından inceleme olabileceğini gösteren önceki temas." },
+            { "language": "ru", "text": "Это понятно. Поэтому я сознательно формулирую это как просьбу об индивидуальной проверке: долгосрочные отношения с клиентом, документированный переезд, отсутствие использования с нового места жительства и предыдущий контакт, который как минимум обозначил возможность проверки." },
+            { "language": "ckb", "text": "ئەوە تێگەیشتووە. بۆیە بە ئاگایی وەک داوای پشکنینی تاکەکەسی دایدەڕێژم: کڕیاریی درێژخایەن، گواستنەوەی بەڵگەدار، نەبوونی بەکارهێنان لە شوێنی نیشتەجێبوونی نوێوە و پەیوەندیی پێشووتر کە لانیکەم پشکنینێکی بەڵێن داوە." },
+            { "language": "kmr", "text": "Ev têgihîştî ye. Ji ber vê yekê ez bi zanebûn wekî daxwaza kontrola takekesî formul dikim: mişterîtiya dirêj, koçkirina belgekirî, bê bikaranîn ji cihê rûniştina nû ve û têkiliya berê ku herî kêm îhtîmala kontrolê nîşan dabû." },
+            { "language": "pl", "text": "To zrozumiałe. Dlatego świadomie formułuję to jako prośbę o indywidualną ocenę: długoletni klient, udokumentowana przeprowadzka, brak korzystania od nowego miejsca zamieszkania i wcześniejszy kontakt, który przynajmniej zapowiadał możliwość sprawdzenia." },
+            { "language": "ro", "text": "Este de înțeles. De aceea formulez intenționat ca cerere de verificare individuală: client vechi, mutare documentată, lipsă de utilizare de la noua adresă și un contact anterior care cel puțin a indicat posibilitatea unei verificări." },
+            { "language": "sq", "text": "Kjo është e kuptueshme. Prandaj e formuloj qëllimisht si kërkesë për shqyrtim individual: klient i gjatë, zhvendosje e dokumentuar, mosshfrytëzim që nga vendbanimi i ri dhe kontakt i mëparshëm që të paktën kishte lënë të kuptohej mundësia e shqyrtimit." }
+          ],
+          "function": "criteria-based-goodwill",
+          "toneNote": "The learner respects discretion while naming concrete criteria.",
+          "expectedLearnerAction": "Make goodwill criteria visible without sounding entitled."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "agent",
+          "baseText": "Wenn Sie mir die Unterlagen noch einmal senden, kann ich den Fall an die Kulanzprüfung weitergeben. Eine sofortige Entscheidung bekomme ich heute aber nicht.",
+          "translations": [
+            { "language": "en", "text": "If you send me the documents again, I can forward the case for a goodwill review. But I will not get an immediate decision today." },
+            { "language": "fa", "text": "اگر مدارک را دوباره برای من بفرستید، می‌توانم پرونده را برای بررسی ارفاقی ارجاع بدهم. اما امروز تصمیم فوری نمی‌گیرم." },
+            { "language": "ar", "text": "إذا أرسلت لي المستندات مرة أخرى، يمكنني إحالة الحالة إلى فحص التسوية الودية. لكنني لن أحصل على قرار فوري اليوم." },
+            { "language": "tr", "text": "Belgeleri bana tekrar gönderirseniz, dosyayı iyi niyet incelemesine iletebilirim. Ancak bugün hemen bir karar alamam." },
+            { "language": "ru", "text": "Если вы еще раз отправите мне документы, я могу передать случай на проверку доброй воли. Но немедленного решения сегодня я не получу." },
+            { "language": "ckb", "text": "ئەگەر بەڵگەکان جارێکی تر بۆم بنێریت، دەتوانم دۆسیەکە بۆ پشکنینی کولانتس بنێرم. بەڵام ئەمڕۆ بڕیارێکی دەستبەجێ وەرناگرم." },
+            { "language": "kmr", "text": "Heke hûn belgeyan careke din ji min re bişînin, ez dikarim dozê ji bo kontrola dilxwaziyê bişînim. Lê ez îro biryareke tavilê nagirim." },
+            { "language": "pl", "text": "Jeśli prześle mi Pan dokumenty jeszcze raz, mogę przekazać sprawę do oceny polubownej. Natychmiastowej decyzji dziś jednak nie otrzymam." },
+            { "language": "ro", "text": "Dacă îmi trimiteți documentele încă o dată, pot transmite cazul pentru verificarea de bunăvoință. Dar nu primesc astăzi o decizie imediată." },
+            { "language": "sq", "text": "Nëse mi dërgoni dokumentet edhe një herë, mund ta kaloj rastin për shqyrtim mirëkuptimi. Por sot nuk marr një vendim të menjëhershëm." }
+          ],
+          "function": "process-offer",
+          "toneNote": "The agent offers a process, not an outcome.",
+          "expectedLearnerAction": "Secure timeline, documents, and interim billing treatment."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das ist in Ordnung. Damit es nicht wieder unklar bleibt: Welche Unterlagen brauchen Sie genau, bis wann sollte ich sie schicken, und können Sie bis zur Entscheidung eine Mahnsperre oder zumindest einen Vermerk zur laufenden Prüfung setzen?",
+          "translations": [
+            { "language": "en", "text": "That is fine. So that it does not remain unclear again: exactly which documents do you need, by when should I send them, and can you place a dunning block or at least a note about the ongoing review until the decision?" },
+            { "language": "fa", "text": "اشکالی ندارد. برای اینکه دوباره مبهم نماند: دقیقاً چه مدارکی نیاز دارید، تا چه زمانی باید بفرستم، و آیا می‌توانید تا زمان تصمیم، توقف پیگیری بدهی یا دست‌کم یادداشتی درباره بررسی در جریان بگذارید؟" },
+            { "language": "ar", "text": "هذا مقبول. حتى لا يبقى الأمر غير واضح مرة أخرى: ما المستندات التي تحتاجونها بالضبط، وإلى متى يجب أن أرسلها، وهل يمكنكم وضع إيقاف للمطالبات أو على الأقل ملاحظة عن الفحص الجاري حتى صدور القرار؟" },
+            { "language": "tr", "text": "Bu tamam. Tekrar belirsiz kalmaması için: Tam olarak hangi belgelere ihtiyacınız var, ne zamana kadar göndermeliyim ve karara kadar bir ihtar durdurması ya da en azından devam eden incelemeyle ilgili bir not koyabilir misiniz?" },
+            { "language": "ru", "text": "Это нормально. Чтобы снова не осталось неясности: какие именно документы вам нужны, до какого срока я должен их отправить, и можете ли вы до решения поставить блокировку напоминаний об оплате или хотя бы отметку о текущей проверке?" },
+            { "language": "ckb", "text": "باشە. بۆ ئەوەی جارێکی تر نادیار نەبمێنێتەوە: بە وردی چ بەڵگەیەکتان پێویستە، تا کەی دەبێت بیاننێرم، و دەتوانن تا بڕیارەکە قەدەغەی ئاگادارکردنەوەی قەرز یان لانیکەم تێبینییەک لەسەر پشکنینی بەردەوام دابنێن؟" },
+            { "language": "kmr", "text": "Ev baş e. Da ku careke din nezelal nemîne: hûn bi rastî kîjan belgeyan dixwazin, heta kengê divê ez bişînim, û heta biryarê hûn dikarin astengkirina daxwaza dravdanê an herî kêm notek li ser kontrola domdar daynin?" },
+            { "language": "pl", "text": "W porządku. Żeby znów nie pozostało to niejasne: jakich dokładnie dokumentów Państwo potrzebują, do kiedy mam je wysłać i czy do czasu decyzji mogą Państwo zablokować wezwania do zapłaty albo przynajmniej dodać adnotację o trwającej kontroli?" },
+            { "language": "ro", "text": "Este în regulă. Ca să nu rămână din nou neclar: de ce documente aveți nevoie exact, până când ar trebui să le trimit și puteți pune până la decizie o blocare a somațiilor sau măcar o notă privind verificarea în curs?" },
+            { "language": "sq", "text": "Në rregull. Që të mos mbetet përsëri e paqartë: cilat dokumente ju duhen saktësisht, deri kur duhet t'i dërgoj dhe a mund të vendosni deri në vendim një bllokim të njoftimeve për pagesë ose të paktën një shënim për shqyrtimin në vazhdim?" }
+          ],
+          "function": "secure-process-conditions",
+          "toneNote": "The learner accepts the process and asks for concrete safeguards.",
+          "expectedLearnerAction": "Ask for documents, deadline, and interim handling."
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "agent",
+          "baseText": "Ich notiere: Umzugsnachweis, die E-Mail vom 12. März und die Uploadbestätigung. Wenn alles bis Freitag eingeht, wird der Fall innerhalb von zehn Werktagen geprüft. Einen Vermerk zur laufenden Prüfung kann ich setzen.",
+          "translations": [
+            { "language": "en", "text": "I am noting: proof of moving, the email from March 12, and the upload confirmation. If everything is received by Friday, the case will be reviewed within ten business days. I can add a note about the ongoing review." },
+            { "language": "fa", "text": "یادداشت می‌کنم: مدرک اسباب‌کشی، ایمیل ۱۲ مارس و تأیید آپلود. اگر همه چیز تا جمعه برسد، پرونده ظرف ده روز کاری بررسی می‌شود. می‌توانم یادداشتی درباره بررسی در جریان بگذارم." },
+            { "language": "ar", "text": "أسجل: إثبات الانتقال، البريد الإلكتروني من 12 مارس، وتأكيد الرفع. إذا وصل كل شيء حتى يوم الجمعة، ستتم مراجعة الحالة خلال عشرة أيام عمل. يمكنني وضع ملاحظة حول الفحص الجاري." },
+            { "language": "tr", "text": "Not ediyorum: taşınma belgesi, 12 Mart tarihli e-posta ve yükleme onayı. Her şey cumaya kadar ulaşırsa, dosya on iş günü içinde incelenecek. Devam eden incelemeyle ilgili bir not koyabilirim." },
+            { "language": "ru", "text": "Я отмечаю: подтверждение переезда, письмо от 12 марта и подтверждение загрузки. Если все поступит до пятницы, случай будет проверен в течение десяти рабочих дней. Я могу поставить отметку о текущей проверке." },
+            { "language": "ckb", "text": "تۆمار دەکەم: بەڵگەی گواستنەوە، ئیمەیلی ١٢ی ئازار و پشتڕاستکردنەوەی بارکردن. ئەگەر هەموو شتێک تا هەینی بگات، دۆسیەکە لە ماوەی دە ڕۆژی کاری پشکنین دەکرێت. دەتوانم تێبینییەک لەسەر پشکنینی بەردەوام دابنێم." },
+            { "language": "kmr", "text": "Ez tomar dikim: belgeya koçkirinê, e-nameya 12ê Adarê û piştrastkirina barkirinê. Heke her tişt heta înê were, doz di nav deh rojên kar de tê kontrolkirin. Ez dikarim notek li ser kontrola domdar daynim." },
+            { "language": "pl", "text": "Notuję: potwierdzenie przeprowadzki, e-mail z 12 marca i potwierdzenie przesłania. Jeśli wszystko wpłynie do piątku, sprawa zostanie sprawdzona w ciągu dziesięciu dni roboczych. Mogę dodać adnotację o trwającej kontroli." },
+            { "language": "ro", "text": "Notez: dovada mutării, e-mailul din 12 martie și confirmarea încărcării. Dacă totul intră până vineri, cazul va fi verificat în termen de zece zile lucrătoare. Pot pune o notă privind verificarea în curs." },
+            { "language": "sq", "text": "Po shënoj: dëshmia e zhvendosjes, emaili i 12 marsit dhe konfirmimi i ngarkimit. Nëse gjithçka mbërrin deri të premten, rasti do të shqyrtohet brenda dhjetë ditësh pune. Mund të vendos një shënim për shqyrtimin në vazhdim." }
+          ],
+          "function": "confirm-process-details",
+          "toneNote": "The agent gives document and timeline details.",
+          "expectedLearnerAction": "Close by restating the agreed process and asking for written confirmation."
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann sende ich heute Umzugsnachweis, E-Mail und Uploadbestätigung erneut. Bitte bestätigen Sie mir schriftlich die laufende Kulanzprüfung, den Vermerk im Konto und die Prüfungsfrist von zehn Werktagen.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Then I will resend the proof of moving, email, and upload confirmation today. Please confirm in writing the ongoing goodwill review, the note in the account, and the review period of ten business days." },
+            { "language": "fa", "text": "خیلی ممنون. پس امروز مدرک اسباب‌کشی، ایمیل و تأیید آپلود را دوباره می‌فرستم. لطفاً بررسی ارفاقی در جریان، یادداشت در حساب و مهلت بررسی ده روز کاری را کتبی برایم تأیید کنید." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأرسل اليوم إثبات الانتقال والبريد الإلكتروني وتأكيد الرفع مرة أخرى. يرجى تأكيد فحص التسوية الودية الجاري والملاحظة في الحساب ومدة الفحص البالغة عشرة أيام عمل كتابياً." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O halde taşınma belgesini, e-postayı ve yükleme onayını bugün tekrar göndereceğim. Lütfen devam eden iyi niyet incelemesini, hesaptaki notu ve on iş günlük inceleme süresini bana yazılı olarak onaylayın." },
+            { "language": "ru", "text": "Большое спасибо. Тогда сегодня я еще раз отправлю подтверждение переезда, письмо и подтверждение загрузки. Пожалуйста, письменно подтвердите мне текущую проверку доброй воли, отметку в аккаунте и срок проверки в десять рабочих дней." },
+            { "language": "ckb", "text": "زۆر سوپاس. کەواتە ئەمڕۆ بەڵگەی گواستنەوە، ئیمەیل و پشتڕاستکردنەوەی بارکردن جارێکی تر دەنێرم. تکایە پشکنینی کولانتسی بەردەوام، تێبینی لە هەژمارەکە و ماوەی پشکنینی دە ڕۆژی کاری بە نووسراوی پشتم ڕاست بکەنەوە." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez ê îro belgeya koçkirinê, e-name û piştrastkirina barkirinê careke din bişînim. Ji kerema xwe kontrola dilxwaziyê ya domdar, nota di hesabê de û dema kontrolê ya deh rojên kar bi nivîsê ji min re piştrast bikin." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie dziś ponownie wyślę potwierdzenie przeprowadzki, e-mail i potwierdzenie przesłania. Proszę pisemnie potwierdzić trwającą ocenę polubowną, adnotację na koncie i termin sprawdzenia dziesięciu dni roboczych." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci trimit astăzi din nou dovada mutării, e-mailul și confirmarea încărcării. Vă rog să îmi confirmați în scris verificarea de bunăvoință în curs, nota din cont și termenul de verificare de zece zile lucrătoare." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë sot do të ridërgoj dëshminë e zhvendosjes, emailin dhe konfirmimin e ngarkimit. Ju lutem më konfirmoni me shkrim shqyrtimin e mirëkuptimit në vazhdim, shënimin në llogari dhe afatin e shqyrtimit prej dhjetë ditësh pune." }
+          ],
+          "function": "written-process-close",
+          "toneNote": "The learner ends by securing written confirmation without claiming an outcome.",
+          "expectedLearnerAction": "Summarize documents, process, account note, and deadline."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "fact-based-goodwill-opening",
+              "text": "Mir ist bewusst, dass Fristen eine Rolle spielen; ich möchte den Verlauf sachlich prüfen und eine Kulanzlösung anfragen.",
+              "translations": [
+                { "language": "en", "text": "I am aware that deadlines matter; I would like to review the timeline factually and ask about a goodwill solution." },
+                { "language": "fa", "text": "می‌دانم که مهلت‌ها مهم هستند؛ می‌خواهم روند را factual بررسی کنم و درباره راه‌حل ارفاقی بپرسم." },
+                { "language": "ar", "text": "أعلم أن المواعيد النهائية مهمة؛ أود مراجعة التسلسل بشكل موضوعي والسؤال عن حل ودي." },
+                { "language": "tr", "text": "Sürelerin önemli olduğunun farkındayım; süreci nesnel olarak kontrol etmek ve iyi niyet çözümü sormak istiyorum." },
+                { "language": "ru", "text": "Я понимаю, что сроки важны; я хотел бы предметно проверить ход событий и спросить о решении доброй воли." },
+                { "language": "ckb", "text": "دەزانم کە کاتەکان گرنگن؛ دەمەوێت ڕەوتەکە بە شێوەی بابەتی بپشکنم و لەسەر چارەسەری کولانتس بپرسم." },
+                { "language": "kmr", "text": "Ez dizanim ku demên dawî girîng in; ez dixwazim rêzê bi awayekî rast kontrol bikim û li ser çareseriya dilxwaziyê bipirsim." },
+                { "language": "pl", "text": "Mam świadomość, że terminy mają znaczenie; chciałbym rzeczowo sprawdzić przebieg sprawy i zapytać o rozwiązanie polubowne." },
+                { "language": "ro", "text": "Sunt conștient că termenele contează; aș dori să verific factual desfășurarea și să întreb despre o soluție de bunăvoință." },
+                { "language": "sq", "text": "E di që afatet kanë rëndësi; dua ta shqyrtoj rrjedhën faktikisht dhe të pyes për një zgjidhje mirëkuptimi." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort bleibt sachlich, anerkennt die Frist und öffnet trotzdem den Weg zur Kulanzprüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer stays factual, acknowledges the deadline, and still opens the path to a goodwill review." },
+                { "language": "fa", "text": "خوب است: پاسخ factual می‌ماند، مهلت را می‌پذیرد و با این حال مسیر بررسی ارفاقی را باز می‌کند." },
+                { "language": "ar", "text": "جيد: تبقى الإجابة موضوعية، وتعترف بالمهلة، ومع ذلك تفتح الطريق لفحص التسوية الودية." },
+                { "language": "tr", "text": "İyi: Yanıt nesnel kalır, süreyi kabul eder ve yine de iyi niyet incelemesinin yolunu açar." },
+                { "language": "ru", "text": "Хорошо: ответ остается предметным, признает срок и все же открывает путь к проверке доброй воли." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بابەتی دەمێنێتەوە، کاتەکە دەقبوڵێت و هێشتا ڕێگا بۆ پشکنینی کولانتس دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: Bersiv rast dimîne, demê dawî qebûl dike û dîsa rêya kontrola dilxwaziyê vedike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź pozostaje rzeczowa, uznaje termin i mimo to otwiera drogę do oceny polubownej." },
+                { "language": "ro", "text": "Bine: răspunsul rămâne factual, recunoaște termenul și totuși deschide calea verificării de bunăvoință." },
+                { "language": "sq", "text": "Mirë: përgjigjja mbetet faktike, pranon afatin dhe megjithatë hap rrugën për shqyrtim mirëkuptimi." }
+              ],
+              "explanationKey": "goodwill-opening"
+            },
+            {
+              "id": "threatening-opening",
+              "text": "Die Verlängerung ist aus meiner Sicht unzulässig, und ich möchte, dass das sofort korrigiert wird.",
+              "translations": [
+                { "language": "en", "text": "In my view the extension is inadmissible, and I want it corrected immediately." },
+                { "language": "fa", "text": "از نظر من تمدید غیرمجاز است و می‌خواهم فوراً اصلاح شود." },
+                { "language": "ar", "text": "من وجهة نظري التمديد غير جائز، وأريد تصحيحه فوراً." },
+                { "language": "tr", "text": "Bence uzatma kabul edilemez ve bunun hemen düzeltilmesini istiyorum." },
+                { "language": "ru", "text": "С моей точки зрения продление недопустимо, и я хочу, чтобы это немедленно исправили." },
+                { "language": "ckb", "text": "لە دیدی منەوە درێژکردنەوەکە ڕێگەپێدراو نییە و دەمەوێت دەستبەجێ ڕاست بکرێتەوە." },
+                { "language": "kmr", "text": "Li gorî min dirêjkirin ne destûrdar e û ez dixwazim ev tavilê were rastkirin." },
+                { "language": "pl", "text": "Moim zdaniem przedłużenie jest niedopuszczalne i chcę, żeby natychmiast je skorygowano." },
+                { "language": "ro", "text": "Din punctul meu de vedere prelungirea este inadmisibilă și vreau să fie corectată imediat." },
+                { "language": "sq", "text": "Sipas meje zgjatja është e papranueshme dhe dua që të korrigjohet menjëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Strategisch schwach: Die Antwort behauptet schon ein Ergebnis, bevor der Fall geprüft wurde, und macht Kulanz unwahrscheinlicher.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strategically weak: The answer already asserts an outcome before the case has been reviewed and makes goodwill less likely." },
+                { "language": "fa", "text": "از نظر راهبردی ضعیف است: پاسخ قبل از بررسی پرونده نتیجه را قطعی اعلام می‌کند و احتمال ارفاق را کمتر می‌کند." },
+                { "language": "ar", "text": "ضعيف استراتيجياً: تؤكد الإجابة نتيجة قبل فحص الحالة وتجعل التسوية الودية أقل احتمالاً." },
+                { "language": "tr", "text": "Stratejik olarak zayıf: Yanıt dosya incelenmeden sonucu ileri sürer ve iyi niyeti daha düşük ihtimal haline getirir." },
+                { "language": "ru", "text": "Стратегически слабо: ответ уже утверждает результат до проверки случая и делает добрую волю менее вероятной." },
+                { "language": "ckb", "text": "لە ڕووی ستراتیژییەوە لاوازە: وەڵامەکە پێش پشکنینی دۆسیەکە ئەنجامێک دەسەپێنێت و ئەگەری کولانتس کەمتر دەکات." },
+                { "language": "kmr", "text": "Ji aliyê stratejîk ve lawaz e: Bersiv berî kontrola dozê encamekê destnîşan dike û dilxwaziyê kêmtir gengaz dike." },
+                { "language": "pl", "text": "Strategicznie słabe: odpowiedź przesądza wynik przed sprawdzeniem sprawy i zmniejsza szansę na polubowne rozwiązanie." },
+                { "language": "ro", "text": "Slab strategic: răspunsul afirmă deja un rezultat înainte ca dosarul să fie verificat și face bunăvoința mai puțin probabilă." },
+                { "language": "sq", "text": "E dobët strategjikisht: përgjigjja pohon një rezultat para se rasti të shqyrtohet dhe e bën mirëkuptimin më pak të mundshëm." }
+              ],
+              "explanationKey": "avoid-premature-claim"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "acknowledge-deadline-add-context",
+              "text": "Dass die endgültige Kündigung spät eingegangen ist, bestreite ich nicht; entscheidend ist für mich der vorherige Kontakt am 12. März.",
+              "translations": [
+                { "language": "en", "text": "I do not dispute that the final cancellation was received late; what matters to me is the prior contact on March 12." },
+                { "language": "fa", "text": "انکار نمی‌کنم که فسخ نهایی دیر دریافت شده است؛ نکته مهم برای من تماس قبلی در ۱۲ مارس است." },
+                { "language": "ar", "text": "لا أنكر أن الإلغاء النهائي وصل متأخراً؛ المهم بالنسبة لي هو التواصل السابق في 12 مارس." },
+                { "language": "tr", "text": "Nihai iptalin geç ulaştığını inkar etmiyorum; benim için önemli olan 12 Mart'taki önceki temas." },
+                { "language": "ru", "text": "Я не оспариваю, что окончательное расторжение поступило поздно; для меня важен предыдущий контакт 12 марта." },
+                { "language": "ckb", "text": "ڕەت ناکەم کە هەڵوەشاندنەوەی کۆتایی درەنگ گەیشتووە؛ ئەوەی بۆ من گرنگە پەیوەندیی پێشووتری ١٢ی ئازارە." },
+                { "language": "kmr", "text": "Ez nakim nakokî ku betalkirina dawî dereng hat; ya ji bo min girîng e têkiliya berê ya 12ê Adarê." },
+                { "language": "pl", "text": "Nie kwestionuję, że ostateczne wypowiedzenie wpłynęło późno; decydujący jest dla mnie wcześniejszy kontakt z 12 marca." },
+                { "language": "ro", "text": "Nu contest că rezilierea finală a sosit târziu; important pentru mine este contactul anterior din 12 martie." },
+                { "language": "sq", "text": "Nuk e kundërshtoj që anulimi përfundimtar ka mbërritur vonë; vendimtar për mua është kontakti i mëparshëm më 12 mars." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort akzeptiert den Schwachpunkt und lenkt auf den prüfbaren Zusatzkontext.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer accepts the weak point and shifts to the verifiable additional context." },
+                { "language": "fa", "text": "خوب است: پاسخ نقطه ضعف را می‌پذیرد و به زمینه اضافی قابل بررسی منتقل می‌شود." },
+                { "language": "ar", "text": "جيد: تقبل الإجابة نقطة الضعف وتنتقل إلى السياق الإضافي القابل للتحقق." },
+                { "language": "tr", "text": "İyi: Yanıt zayıf noktayı kabul eder ve denetlenebilir ek bağlama yönelir." },
+                { "language": "ru", "text": "Хорошо: ответ принимает слабое место и переводит разговор к проверяемому дополнительному контексту." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە خاڵی لاواز دەقبوڵێت و دەچێتەسەر کۆنتێکستی زیادەی پشکنراو." },
+                { "language": "kmr", "text": "Baş e: Bersiv xala lawaz qebûl dike û diçe ser konteksta zêde ya kontrolbar." },
+                { "language": "pl", "text": "Dobrze: odpowiedź uznaje słaby punkt i kieruje rozmowę na sprawdzalny dodatkowy kontekst." },
+                { "language": "ro", "text": "Bine: răspunsul acceptă punctul slab și mută discuția spre contextul suplimentar verificabil." },
+                { "language": "sq", "text": "Mirë: përgjigjja pranon pikën e dobët dhe e zhvendos bisedën te konteksti shtesë i verifikueshëm." }
+              ],
+              "explanationKey": "accept-weak-point"
+            },
+            {
+              "id": "deny-deadline",
+              "text": "Ich sehe das anders; für mich war die Kündigung rechtzeitig genug.",
+              "translations": [
+                { "language": "en", "text": "I see it differently; for me the cancellation was early enough." },
+                { "language": "fa", "text": "من این را متفاوت می‌بینم؛ از نظر من فسخ به اندازه کافی به‌موقع بود." },
+                { "language": "ar", "text": "أرى الأمر بشكل مختلف؛ بالنسبة لي كان الإلغاء في الوقت المناسب بما يكفي." },
+                { "language": "tr", "text": "Ben bunu farklı görüyorum; bana göre iptal yeterince zamanında yapıldı." },
+                { "language": "ru", "text": "Я вижу это иначе; для меня расторжение было достаточно своевременным." },
+                { "language": "ckb", "text": "من ئەوە بە شێوەیەکی تر دەبینم؛ لە دیدی منەوە هەڵوەشاندنەوەکە بە کاتێکی تەواو گەیشتووە." },
+                { "language": "kmr", "text": "Ez vê cuda dibînim; li gorî min betalkirin têr di demê de bû." },
+                { "language": "pl", "text": "Widzę to inaczej; dla mnie wypowiedzenie było wystarczająco terminowe." },
+                { "language": "ro", "text": "Eu văd altfel; pentru mine rezilierea a fost suficient de la timp." },
+                { "language": "sq", "text": "Unë e shoh ndryshe; për mua anulimi ishte mjaftueshëm në kohë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach für C1: Ohne neue Fakten wirkt das wie ein bloßes Gefühl und hilft bei der Kulanzprüfung kaum.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak for C1: Without new facts this sounds like a mere feeling and hardly helps with the goodwill review." },
+                { "language": "fa", "text": "برای C1 ضعیف است: بدون واقعیت جدید، این فقط مثل احساس شخصی به نظر می‌رسد و کمکی به بررسی ارفاقی نمی‌کند." },
+                { "language": "ar", "text": "ضعيف جداً لمستوى C1: من دون وقائع جديدة يبدو كإحساس فقط ولا يساعد كثيراً في فحص التسوية الودية." },
+                { "language": "tr", "text": "C1 için çok zayıf: Yeni olgu olmadan bu sadece bir his gibi görünür ve iyi niyet incelemesine pek yardımcı olmaz." },
+                { "language": "ru", "text": "Слишком слабо для C1: без новых фактов это звучит как простое ощущение и мало помогает проверке доброй воли." },
+                { "language": "ckb", "text": "بۆ C1 زۆر لاوازە: بەبێ ڕاستیی نوێ، وەک هەستێکی تەنها دەردەکەوێت و زۆر یارمەتی پشکنینی کولانتس نادات." },
+                { "language": "kmr", "text": "Ji bo C1 pir lawaz e: Bê rastiyên nû ev wek hestekî tenê xuya dike û zêde alîkariya kontrola dilxwaziyê nake." },
+                { "language": "pl", "text": "Zbyt słabe na C1: bez nowych faktów brzmi to jak samo odczucie i niewiele pomaga w ocenie polubownej." },
+                { "language": "ro", "text": "Prea slab pentru C1: fără fapte noi pare doar o impresie și ajută prea puțin la verificarea de bunăvoință." },
+                { "language": "sq", "text": "Shumë e dobët për C1: pa fakte të reja tingëllon si ndjesi e thjeshtë dhe ndihmon pak në shqyrtimin e mirëkuptimit." }
+              ],
+              "explanationKey": "avoid-feeling-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "evidence-plus-compromise",
+              "text": "Ich habe die E-Mail und die Uploadbestätigung; mein Vorschlag wäre ein weiterer Übergangsmonat und danach die Beendigung der restlichen Verlängerung aus Kulanz.",
+              "translations": [
+                { "language": "en", "text": "I have the email and the upload confirmation; my proposal would be one additional transition month and then ending the remaining extension as a goodwill gesture." },
+                { "language": "fa", "text": "ایمیل و تأیید آپلود را دارم؛ پیشنهادم یک ماه انتقالی دیگر و سپس پایان دادن به باقی تمدید از روی ارفاق است." },
+                { "language": "ar", "text": "لدي البريد الإلكتروني وتأكيد الرفع؛ اقتراحي هو شهر انتقالي إضافي ثم إنهاء بقية التمديد كإجراء ودي." },
+                { "language": "tr", "text": "E-posta ve yükleme onayı bende var; önerim bir ek geçiş ayı ve ardından kalan uzatmanın iyi niyet kapsamında sona erdirilmesi." },
+                { "language": "ru", "text": "У меня есть письмо и подтверждение загрузки; мое предложение — еще один переходный месяц, а затем прекращение оставшегося продления в порядке доброй воли." },
+                { "language": "ckb", "text": "ئیمەیل و پشتڕاستکردنەوەی بارکردنم هەیە؛ پێشنیارم مانگێکی تری گواستنەوە و پاشان کۆتاییهێنان بە بەشە ماوەی درێژکردنەوەکە بە کولانتسە." },
+                { "language": "kmr", "text": "E-name û piştrastkirina barkirinê li cem min hene; pêşniyara min meheke derbasbûnê ya din û piştre dawîkirina mayîna dirêjkirinê bi dilxwaziyê ye." },
+                { "language": "pl", "text": "Mam e-mail i potwierdzenie przesłania; moja propozycja to jeszcze jeden miesiąc przejściowy, a potem zakończenie pozostałego przedłużenia polubownie." },
+                { "language": "ro", "text": "Am e-mailul și confirmarea încărcării; propunerea mea ar fi încă o lună de tranziție și apoi încheierea restului prelungirii din bunăvoință." },
+                { "language": "sq", "text": "Kam emailin dhe konfirmimin e ngarkimit; propozimi im do të ishte një muaj shtesë kalimtar dhe pastaj përfundimi i pjesës së mbetur të zgjatjes si mirëkuptim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Belege mit einem fairen Gegenvorschlag, statt nur Erstattung zu verlangen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer combines evidence with a fair counterproposal instead of merely demanding reimbursement." },
+                { "language": "fa", "text": "خوب است: پاسخ مدارک را با پیشنهاد متقابل منصفانه ترکیب می‌کند، نه اینکه فقط بازپرداخت بخواهد." },
+                { "language": "ar", "text": "جيد: تجمع الإجابة بين الأدلة واقتراح مقابل عادل بدلاً من المطالبة بالتعويض فقط." },
+                { "language": "tr", "text": "İyi: Yanıt belgeleri adil bir karşı öneriyle birleştirir, sadece iade talep etmez." },
+                { "language": "ru", "text": "Хорошо: ответ объединяет доказательства со справедливым встречным предложением, а не просто требует возврата." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەکان لەگەڵ پێشنیاری بەرامبەری دادپەروەرانە کۆدەکاتەوە، نە تەنها داوای پارەدانەوە بکات." },
+                { "language": "kmr", "text": "Baş e: Bersiv belgeyan bi pêşniyareke bersivî ya adil re têk dide, ne tenê vegerandina drav dixwaze." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy dowody z uczciwą kontrpropozycją, zamiast tylko żądać zwrotu." },
+                { "language": "ro", "text": "Bine: răspunsul combină dovezile cu o contrapropunere echitabilă, nu cere doar rambursare." },
+                { "language": "sq", "text": "Mirë: përgjigjja kombinon dëshmitë me një kundërpropozim të drejtë, në vend që të kërkojë vetëm rimbursim." }
+              ],
+              "explanationKey": "evidence-compromise"
+            },
+            {
+              "id": "evidence-without-solution",
+              "text": "Ich kann Ihnen alle Unterlagen schicken, dann sehen Sie ja, dass ich im Recht bin.",
+              "translations": [
+                { "language": "en", "text": "I can send you all the documents, then you will see that I am right." },
+                { "language": "fa", "text": "می‌توانم همه مدارک را برایتان بفرستم، بعد می‌بینید که حق با من است." },
+                { "language": "ar", "text": "يمكنني إرسال كل المستندات إليك، وعندها سترى أنني على حق." },
+                { "language": "tr", "text": "Size tüm belgeleri gönderebilirim, o zaman haklı olduğumu görürsünüz." },
+                { "language": "ru", "text": "Я могу отправить вам все документы, тогда вы увидите, что я прав." },
+                { "language": "ckb", "text": "دەتوانم هەموو بەڵگەکانتان بۆ بنێرم، پاشان دەبینن کە ماف لەگەڵ منە." },
+                { "language": "kmr", "text": "Ez dikarim hemû belgeyan ji we re bişînim, wê demê hûn ê bibînin ku ez rast im." },
+                { "language": "pl", "text": "Mogę przesłać Państwu wszystkie dokumenty, wtedy zobaczą Państwo, że mam rację." },
+                { "language": "ro", "text": "Vă pot trimite toate documentele, atunci veți vedea că am dreptate." },
+                { "language": "sq", "text": "Mund t'ju dërgoj të gjitha dokumentet, atëherë do ta shihni që kam të drejtë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Die Belege sind wichtig, aber ohne konkreten Lösungsvorschlag bleibt die Verhandlung offen und konfrontativ.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: The evidence is important, but without a concrete proposed solution the negotiation remains open and confrontational." },
+                { "language": "fa", "text": "ناقص است: مدارک مهم‌اند، اما بدون پیشنهاد راه‌حل مشخص، مذاکره باز و تقابلی می‌ماند." },
+                { "language": "ar", "text": "غير مكتمل: الأدلة مهمة، لكن من دون اقتراح حل محدد تبقى المفاوضة مفتوحة وتصادمية." },
+                { "language": "tr", "text": "Eksik: Belgeler önemlidir, ama somut çözüm önerisi olmadan müzakere açık ve karşıt kalır." },
+                { "language": "ru", "text": "Неполно: доказательства важны, но без конкретного предложения решения переговоры остаются открытыми и конфронтационными." },
+                { "language": "ckb", "text": "ناتەواوە: بەڵگەکان گرنگن، بەڵام بەبێ پێشنیاری چارەسەری دیاریکراو، گفتوگۆکە کراوە و ڕووبەڕوومانە دەمێنێتەوە." },
+                { "language": "kmr", "text": "Netemam e: Belge girîng in, lê bê pêşniyara çareseriyê ya konkret, danûstandin vekirî û dijber dimîne." },
+                { "language": "pl", "text": "Niepełne: dowody są ważne, ale bez konkretnej propozycji rozwiązania negocjacja pozostaje otwarta i konfrontacyjna." },
+                { "language": "ro", "text": "Incomplet: dovezile sunt importante, dar fără o propunere concretă de soluție negocierea rămâne deschisă și confruntațională." },
+                { "language": "sq", "text": "E paplotë: dëshmitë janë të rëndësishme, por pa propozim konkret zgjidhjeje negociata mbetet e hapur dhe konfrontuese." }
+              ],
+              "explanationKey": "avoid-evidence-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "criteria-based-review",
+              "text": "Ich formuliere es als Bitte um Einzelfallprüfung: langjährige Kundschaft, dokumentierter Umzug, keine Nutzung und vorheriger Kontakt.",
+              "translations": [
+                { "language": "en", "text": "I phrase it as a request for individual review: long-term customer relationship, documented move, no use, and prior contact." },
+                { "language": "fa", "text": "آن را به عنوان درخواست بررسی موردی بیان می‌کنم: مشتری بلندمدت، اسباب‌کشی مستند، عدم استفاده و تماس قبلی." },
+                { "language": "ar", "text": "أصوغه كطلب فحص حالة فردية: علاقة عميل طويلة، انتقال موثق، عدم استخدام، وتواصل سابق." },
+                { "language": "tr", "text": "Bunu bireysel inceleme talebi olarak formüle ediyorum: uzun süreli müşteri ilişkisi, belgelenmiş taşınma, kullanım olmaması ve önceki temas." },
+                { "language": "ru", "text": "Я формулирую это как просьбу об индивидуальной проверке: долгосрочный клиент, документированный переезд, отсутствие использования и предыдущий контакт." },
+                { "language": "ckb", "text": "وەک داوای پشکنینی تاکەکەسی دایدەڕێژم: کڕیاریی درێژخایەن، گواستنەوەی بەڵگەدار، نەبوونی بەکارهێنان و پەیوەندیی پێشووتر." },
+                { "language": "kmr", "text": "Ez vê wekî daxwaza kontrola takekesî formul dikim: mişterîtiya dirêj, koçkirina belgekirî, bê bikaranîn û têkiliya berê." },
+                { "language": "pl", "text": "Formułuję to jako prośbę o indywidualną ocenę: długoletni klient, udokumentowana przeprowadzka, brak korzystania i wcześniejszy kontakt." },
+                { "language": "ro", "text": "Formulez ca cerere de verificare individuală: client vechi, mutare documentată, lipsă de utilizare și contact anterior." },
+                { "language": "sq", "text": "E formuloj si kërkesë për shqyrtim individual: klient i gjatë, zhvendosje e dokumentuar, mosshfrytëzim dhe kontakt i mëparshëm." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Kulanz wird nicht als Anspruch dargestellt, sondern mit überprüfbaren Kriterien begründet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: Goodwill is not presented as an entitlement, but justified with verifiable criteria." },
+                { "language": "fa", "text": "خوب است: ارفاق به عنوان حق قطعی نشان داده نمی‌شود، بلکه با معیارهای قابل بررسی توجیه می‌شود." },
+                { "language": "ar", "text": "جيد: لا تُعرض التسوية الودية كحق، بل تُبرر بمعايير قابلة للتحقق." },
+                { "language": "tr", "text": "İyi: İyi niyet bir hak olarak sunulmaz, denetlenebilir ölçütlerle gerekçelendirilir." },
+                { "language": "ru", "text": "Хорошо: добрая воля не представляется как право, а обосновывается проверяемыми критериями." },
+                { "language": "ckb", "text": "باشە: کولانتس وەک ماف پیشان نادرێت، بەڵکوو بە پێوەرە پشکنراوەکان پاساو دەدرێت." },
+                { "language": "kmr", "text": "Baş e: Dilxwazî wekî maf nayê nîşandan, lê bi kriterên kontrolbar tê sedemkirin." },
+                { "language": "pl", "text": "Dobrze: polubowność nie jest przedstawiona jako roszczenie, lecz uzasadniona sprawdzalnymi kryteriami." },
+                { "language": "ro", "text": "Bine: bunăvoința nu este prezentată ca un drept, ci justificată prin criterii verificabile." },
+                { "language": "sq", "text": "Mirë: mirëkuptimi nuk paraqitet si e drejtë, por arsyetohet me kritere të verifikueshme." }
+              ],
+              "explanationKey": "criteria-not-entitlement"
+            },
+            {
+              "id": "loyalty-only",
+              "text": "Ich bin schon lange Kunde, deshalb sollte man mir entgegenkommen.",
+              "translations": [
+                { "language": "en", "text": "I have been a customer for a long time, so you should accommodate me." },
+                { "language": "fa", "text": "من مدت زیادی مشتری بوده‌ام، پس باید با من راه بیایید." },
+                { "language": "ar", "text": "أنا عميل منذ فترة طويلة، لذلك ينبغي أن تتعاونوا معي." },
+                { "language": "tr", "text": "Uzun zamandır müşteriyim, bu yüzden bana yardımcı olmalısınız." },
+                { "language": "ru", "text": "Я давно являюсь клиентом, поэтому вы должны пойти мне навстречу." },
+                { "language": "ckb", "text": "من ماوەیەکی زۆرە کڕیارم، بۆیە پێویستە لەگەڵم ڕێک بکەون." },
+                { "language": "kmr", "text": "Ez demekî dirêj e mişterî me, ji ber vê yekê divê hûn alîkariyê bikin." },
+                { "language": "pl", "text": "Jestem klientem od dawna, więc powinni Państwo pójść mi na rękę." },
+                { "language": "ro", "text": "Sunt client de mult timp, deci ar trebui să îmi veniți în întâmpinare." },
+                { "language": "sq", "text": "Jam klient prej kohësh, prandaj duhet të më vini në ndihmë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu dünn: Kundentreue kann ein Argument sein, reicht allein aber selten für eine belastbare Einzelfallprüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too thin: customer loyalty can be an argument, but alone it is rarely enough for a solid individual review." },
+                { "language": "fa", "text": "زیادی کم‌عمق است: وفاداری مشتری می‌تواند یک دلیل باشد، اما به‌تنهایی معمولاً برای بررسی موردی قوی کافی نیست." },
+                { "language": "ar", "text": "ضعيف جداً: ولاء العميل يمكن أن يكون حجة، لكنه وحده نادراً ما يكفي لفحص حالة فردية متين." },
+                { "language": "tr", "text": "Çok zayıf: müşteri sadakati bir argüman olabilir, ama tek başına sağlam bir bireysel inceleme için nadiren yeterlidir." },
+                { "language": "ru", "text": "Слишком слабо: лояльность клиента может быть аргументом, но сама по себе редко достаточна для надежной индивидуальной проверки." },
+                { "language": "ckb", "text": "زۆر کەمە: وەفاداری کڕیار دەتوانێت پاساوێک بێت، بەڵام بە تەنها زۆرجار بۆ پشکنینی تاکەکەسی پتەو بەس نییە." },
+                { "language": "kmr", "text": "Pir tenik e: dilsoziya mişterî dikare argûman be, lê bi tenê kêm caran ji bo kontrola takekesî ya bihêz têr e." },
+                { "language": "pl", "text": "Zbyt słabe: lojalność klienta może być argumentem, ale sama rzadko wystarcza do solidnej oceny indywidualnej." },
+                { "language": "ro", "text": "Prea subțire: loialitatea clientului poate fi un argument, dar singură rareori ajunge pentru o verificare individuală solidă." },
+                { "language": "sq", "text": "Shumë e dobët: besnikëria e klientit mund të jetë argument, por vetëm rrallë mjafton për një shqyrtim individual të qëndrueshëm." }
+              ],
+              "explanationKey": "avoid-loyalty-only"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "documents-deadline-interim-note",
+              "text": "Welche Unterlagen brauchen Sie genau, bis wann sollte ich sie schicken, und können Sie einen Vermerk zur laufenden Prüfung setzen?",
+              "translations": [
+                { "language": "en", "text": "Exactly which documents do you need, by when should I send them, and can you add a note about the ongoing review?" },
+                { "language": "fa", "text": "دقیقاً چه مدارکی نیاز دارید، تا چه زمانی باید بفرستم، و آیا می‌توانید یادداشتی درباره بررسی در جریان بگذارید؟" },
+                { "language": "ar", "text": "ما المستندات التي تحتاجونها بالضبط، وإلى متى يجب أن أرسلها، وهل يمكنكم وضع ملاحظة حول الفحص الجاري؟" },
+                { "language": "tr", "text": "Tam olarak hangi belgelere ihtiyacınız var, ne zamana kadar göndermeliyim ve devam eden incelemeyle ilgili bir not koyabilir misiniz?" },
+                { "language": "ru", "text": "Какие именно документы вам нужны, до какого срока я должен их отправить, и можете ли вы поставить отметку о текущей проверке?" },
+                { "language": "ckb", "text": "بە وردی چ بەڵگەیەکتان پێویستە، تا کەی دەبێت بیاننێرم، و دەتوانن تێبینییەک لەسەر پشکنینی بەردەوام دابنێن؟" },
+                { "language": "kmr", "text": "Hûn bi rastî kîjan belgeyan dixwazin, heta kengê divê ez bişînim, û hûn dikarin notek li ser kontrola domdar daynin?" },
+                { "language": "pl", "text": "Jakich dokładnie dokumentów Państwo potrzebują, do kiedy mam je wysłać i czy mogą Państwo dodać adnotację o trwającej kontroli?" },
+                { "language": "ro", "text": "De ce documente aveți nevoie exact, până când ar trebui să le trimit și puteți pune o notă privind verificarea în curs?" },
+                { "language": "sq", "text": "Cilat dokumente ju duhen saktësisht, deri kur duhet t'i dërgoj dhe a mund të vendosni një shënim për shqyrtimin në vazhdim?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verwandelt ein vages Prüfangebot in einen klaren Prozess mit Frist und Aktenvermerk.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The answer turns a vague review offer into a clear process with deadline and account note." },
+                { "language": "fa", "text": "خوب است: پاسخ پیشنهاد مبهم بررسی را به فرآیندی روشن با مهلت و یادداشت پرونده تبدیل می‌کند." },
+                { "language": "ar", "text": "جيد: تحول الإجابة عرض الفحص الغامض إلى عملية واضحة بمهلة وملاحظة في الملف." },
+                { "language": "tr", "text": "İyi: Yanıt belirsiz inceleme teklifini süre ve dosya notu olan net bir sürece çevirir." },
+                { "language": "ru", "text": "Хорошо: ответ превращает расплывчатое предложение проверки в четкий процесс со сроком и отметкой в деле." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە پێشنیاری پشکنینی نادیار دەکاتە پرۆسەیەکی ڕوون بە مۆڵەت و تێبینی دۆسیە." },
+                { "language": "kmr", "text": "Baş e: Bersiv pêşniyara kontrolê ya nezelal dike pêvajoyeke zelal bi demê dawî û nota dosyayê." },
+                { "language": "pl", "text": "Dobrze: odpowiedź zmienia niejasną ofertę sprawdzenia w jasny proces z terminem i adnotacją w sprawie." },
+                { "language": "ro", "text": "Bine: răspunsul transformă o ofertă vagă de verificare într-un proces clar cu termen și notă în dosar." },
+                { "language": "sq", "text": "Mirë: përgjigjja e kthen një ofertë të paqartë shqyrtimi në proces të qartë me afat dhe shënim në dosje." }
+              ],
+              "explanationKey": "secure-process"
+            },
+            {
+              "id": "send-and-wait",
+              "text": "Gut, dann schicke ich die Unterlagen einfach noch einmal und warte auf Ihre Rückmeldung.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will simply send the documents again and wait for your response." },
+                { "language": "fa", "text": "خوب، پس فقط مدارک را دوباره می‌فرستم و منتظر پاسخ شما می‌مانم." },
+                { "language": "ar", "text": "حسناً، إذن سأرسل المستندات مرة أخرى وأنتظر ردكم." },
+                { "language": "tr", "text": "Tamam, o zaman belgeleri tekrar gönderirim ve yanıtınızı beklerim." },
+                { "language": "ru", "text": "Хорошо, тогда я просто еще раз отправлю документы и буду ждать вашего ответа." },
+                { "language": "ckb", "text": "باشە، کەواتە تەنها بەڵگەکان جارێکی تر دەنێرم و چاوەڕێی وەڵامتان دەکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez belgeyan careke din bişînim û li benda bersiva we bim." },
+                { "language": "pl", "text": "Dobrze, w takim razie po prostu wyślę dokumenty jeszcze raz i poczekam na Państwa odpowiedź." },
+                { "language": "ro", "text": "Bine, atunci trimit pur și simplu documentele încă o dată și aștept răspunsul dumneavoastră." },
+                { "language": "sq", "text": "Mirë, atëherë thjesht do t'i dërgoj dokumentet edhe një herë dhe do të pres përgjigjen tuaj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu passiv: Ohne konkrete Frist, Unterlagenliste und Vermerk kann derselbe Unklarheitsfehler erneut passieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: without a concrete deadline, document list, and note, the same clarity problem can happen again." },
+                { "language": "fa", "text": "زیادی منفعل است: بدون مهلت مشخص، فهرست مدارک و یادداشت، همان مشکل ابهام می‌تواند دوباره تکرار شود." },
+                { "language": "ar", "text": "سلبي جداً: من دون مهلة محددة وقائمة مستندات وملاحظة يمكن أن تتكرر مشكلة الغموض نفسها." },
+                { "language": "tr", "text": "Çok pasif: somut süre, belge listesi ve not olmadan aynı belirsizlik sorunu tekrar yaşanabilir." },
+                { "language": "ru", "text": "Слишком пассивно: без конкретного срока, списка документов и отметки та же проблема неясности может повториться." },
+                { "language": "ckb", "text": "زۆر نائاکتیڤە: بەبێ مۆڵەتی دیاریکراو، لیستی بەڵگە و تێبینی، هەمان کێشەی نادیاری دەتوانێت دووبارە ببێتەوە." },
+                { "language": "kmr", "text": "Pir pasîf e: Bê dema konkret, lîsteya belgeyan û notê, heman pirsgirêka nezelaliyê dikare dubare bibe." },
+                { "language": "pl", "text": "Zbyt biernie: bez konkretnego terminu, listy dokumentów i adnotacji ten sam problem niejasności może się powtórzyć." },
+                { "language": "ro", "text": "Prea pasiv: fără termen concret, listă de documente și notă, aceeași problemă de neclaritate se poate repeta." },
+                { "language": "sq", "text": "Shumë pasive: pa afat konkret, listë dokumentesh dhe shënim, i njëjti problem paqartësie mund të ndodhë përsëri." }
+              ],
+              "explanationKey": "avoid-passive-waiting"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "written-confirmation-close",
+              "text": "Bitte bestätigen Sie mir schriftlich die laufende Kulanzprüfung, den Vermerk im Konto und die Prüfungsfrist von zehn Werktagen.",
+              "translations": [
+                { "language": "en", "text": "Please confirm in writing the ongoing goodwill review, the note in the account, and the review period of ten business days." },
+                { "language": "fa", "text": "لطفاً بررسی ارفاقی در جریان، یادداشت در حساب و مهلت بررسی ده روز کاری را کتبی برایم تأیید کنید." },
+                { "language": "ar", "text": "يرجى تأكيد فحص التسوية الودية الجاري والملاحظة في الحساب ومدة الفحص البالغة عشرة أيام عمل كتابياً." },
+                { "language": "tr", "text": "Lütfen devam eden iyi niyet incelemesini, hesaptaki notu ve on iş günlük inceleme süresini bana yazılı olarak onaylayın." },
+                { "language": "ru", "text": "Пожалуйста, письменно подтвердите текущую проверку доброй воли, отметку в аккаунте и срок проверки в десять рабочих дней." },
+                { "language": "ckb", "text": "تکایە پشکنینی کولانتسی بەردەوام، تێبینی لە هەژمارەکە و ماوەی پشکنینی دە ڕۆژی کاری بە نووسراوی پشتم ڕاست بکەنەوە." },
+                { "language": "kmr", "text": "Ji kerema xwe kontrola dilxwaziyê ya domdar, nota di hesabê de û dema kontrolê ya deh rojên kar bi nivîsê ji min re piştrast bikin." },
+                { "language": "pl", "text": "Proszę pisemnie potwierdzić trwającą ocenę polubowną, adnotację na koncie i termin sprawdzenia dziesięciu dni roboczych." },
+                { "language": "ro", "text": "Vă rog să îmi confirmați în scris verificarea de bunăvoință în curs, nota din cont și termenul de verificare de zece zile lucrătoare." },
+                { "language": "sq", "text": "Ju lutem më konfirmoni me shkrim shqyrtimin e mirëkuptimit në vazhdim, shënimin në llogari dhe afatin e shqyrtimit prej dhjetë ditësh pune." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Der Abschluss sichert den Prozess schriftlich, ohne ein Ergebnis vorwegzunehmen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: The closing secures the process in writing without anticipating an outcome." },
+                { "language": "fa", "text": "خوب است: پایان، فرایند را کتبی تثبیت می‌کند، بدون اینکه نتیجه را پیشاپیش قطعی کند." },
+                { "language": "ar", "text": "جيد: تؤمن الخاتمة العملية كتابياً من دون استباق النتيجة." },
+                { "language": "tr", "text": "İyi: Kapanış süreci yazılı güvenceye alır, sonucu önceden belirlemez." },
+                { "language": "ru", "text": "Хорошо: завершение письменно фиксирует процесс, не предвосхищая результат." },
+                { "language": "ckb", "text": "باشە: کۆتاییەکە پرۆسەکە بە نووسراوی دڵنیا دەکات، بەبێ ئەوەی ئەنجامەکە پێشوەختە دیاری بکات." },
+                { "language": "kmr", "text": "Baş e: Girtin pêvajoyê bi nivîsê ewle dike bê ku encamê berê ve diyar bike." },
+                { "language": "pl", "text": "Dobrze: zakończenie zabezpiecza proces pisemnie, nie przesądzając wyniku." },
+                { "language": "ro", "text": "Bine: încheierea securizează procesul în scris fără a anticipa rezultatul." },
+                { "language": "sq", "text": "Mirë: mbyllja e siguron procesin me shkrim pa paracaktuar rezultatin." }
+              ],
+              "explanationKey": "process-close"
+            },
+            {
+              "id": "outcome-demand-close",
+              "text": "Bitte bestätigen Sie mir schriftlich, dass die restliche Laufzeit auf jeden Fall gestrichen wird.",
+              "translations": [
+                { "language": "en", "text": "Please confirm in writing that the remaining term will definitely be cancelled." },
+                { "language": "fa", "text": "لطفاً کتبی تأیید کنید که مدت باقی‌مانده قطعاً حذف می‌شود." },
+                { "language": "ar", "text": "يرجى تأكيد كتابياً أن المدة المتبقية ستُلغى بالتأكيد." },
+                { "language": "tr", "text": "Lütfen kalan sürenin kesinlikle iptal edileceğini yazılı olarak onaylayın." },
+                { "language": "ru", "text": "Пожалуйста, письменно подтвердите, что оставшийся срок в любом случае будет отменен." },
+                { "language": "ckb", "text": "تکایە بە نووسراوی پشتڕاست بکەنەوە کە ماوەی ماوە بە هەر شێوەیەک دەسڕدرێتەوە." },
+                { "language": "kmr", "text": "Ji kerema xwe bi nivîsê piştrast bikin ku dema mayî bi her awayî were rakirin." },
+                { "language": "pl", "text": "Proszę pisemnie potwierdzić, że pozostały okres na pewno zostanie anulowany." },
+                { "language": "ro", "text": "Vă rog să confirmați în scris că durata rămasă va fi eliminată în orice caz." },
+                { "language": "sq", "text": "Ju lutem konfirmoni me shkrim që periudha e mbetur do të hiqet patjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu früh: Der Service hat nur eine Prüfung angeboten. Ein Ergebnis zu verlangen, kann den bisher sachlichen Verlauf wieder belasten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too early: customer service has only offered a review. Demanding an outcome can burden the previously factual course again." },
+                { "language": "fa", "text": "زود است: خدمات مشتریان فقط بررسی را پیشنهاد کرده است. درخواست نتیجه قطعی می‌تواند روند factual قبلی را دوباره سنگین کند." },
+                { "language": "ar", "text": "مبكر جداً: خدمة العملاء عرضت الفحص فقط. المطالبة بنتيجة قد تثقل المسار الموضوعي السابق من جديد." },
+                { "language": "tr", "text": "Çok erken: müşteri hizmetleri yalnızca inceleme teklif etti. Sonuç talep etmek şimdiye kadarki nesnel süreci yeniden zorlayabilir." },
+                { "language": "ru", "text": "Слишком рано: служба поддержки предложила только проверку. Требование результата может снова осложнить предметный ход разговора." },
+                { "language": "ckb", "text": "زۆر زووە: خزمەتگوزاری کڕیاران تەنها پشکنین پێشنیار کردووە. داواکردنی ئەنجام دەتوانێت ڕەوتی بابەتی پێشووتر دووبارە قورس بکات." },
+                { "language": "kmr", "text": "Pir zû ye: Xizmeta mişteriyan tenê kontrol pêşniyar kir. Xwestina encamê dikare rêza rast a berê dîsa bar bike." },
+                { "language": "pl", "text": "Za wcześnie: obsługa klienta zaoferowała tylko sprawdzenie. Żądanie wyniku może ponownie obciążyć dotychczas rzeczowy przebieg." },
+                { "language": "ro", "text": "Prea devreme: serviciul clienți a oferit doar o verificare. Cererea unui rezultat poate încărca din nou cursul factual de până acum." },
+                { "language": "sq", "text": "Shumë herët: shërbimi ndaj klientit ka ofruar vetëm shqyrtim. Kërkimi i rezultatit mund ta rëndojë përsëri rrjedhën faktike të deritanishme." }
+              ],
+              "explanationKey": "avoid-premature-outcome-demand"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "opening-note",
+          "text": "Bei Vertragskonflikten ist ein ruhiger Einstieg wichtig: Frist anerkennen, Ziel nennen und Kulanz nicht als Anspruch formulieren.",
+          "translations": [
+            { "language": "en", "text": "In contract conflicts, a calm opening is important: acknowledge the deadline, state the goal, and do not phrase goodwill as an entitlement." },
+            { "language": "fa", "text": "در اختلاف‌های قراردادی شروع آرام مهم است: مهلت را بپذیرید، هدف را بگویید و ارفاق را به صورت حق قطعی بیان نکنید." },
+            { "language": "ar", "text": "في النزاعات التعاقدية يكون الافتتاح الهادئ مهماً: اعترف بالمهلة، واذكر الهدف، ولا تصغ التسوية الودية كحق." },
+            { "language": "tr", "text": "Sözleşme anlaşmazlıklarında sakin bir giriş önemlidir: süreyi kabul edin, hedefi söyleyin ve iyi niyeti hak gibi formüle etmeyin." },
+            { "language": "ru", "text": "В договорных конфликтах важен спокойный вход: признать срок, назвать цель и не формулировать добрую волю как право." },
+            { "language": "ckb", "text": "لە ناکۆکیی گرێبەستدا دەستپێکی ئارام گرنگە: کاتەکە بپذێرە، ئامانجەکە بڵێ و کولانتس وەک ماف داینەڕێژە." },
+            { "language": "kmr", "text": "Di nakokiyên peymanê de destpêkeke aram girîng e: demê dawî qebûl bikin, armancê bibêjin û dilxwaziyê wekî maf formul nekin." },
+            { "language": "pl", "text": "W konfliktach umownych ważne jest spokojne rozpoczęcie: uznać termin, nazwać cel i nie formułować polubowności jako roszczenia." },
+            { "language": "ro", "text": "În conflictele contractuale este important un început calm: recunoașteți termenul, numiți obiectivul și nu formulați bunăvoința ca drept." },
+            { "language": "sq", "text": "Në konfliktet kontraktuale është i rëndësishëm një fillim i qetë: pranoni afatin, thoni qëllimin dhe mos e formuloni mirëkuptimin si të drejtë." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence-note",
+          "text": "C1-Verhandlungssprache trennt sauber zwischen unstreitigen Fakten, zusätzlichem Kontext und gewünschter Prüfung.",
+          "translations": [
+            { "language": "en", "text": "C1 negotiation language clearly separates undisputed facts, additional context, and the requested review." },
+            { "language": "fa", "text": "زبان مذاکره C1 واقعیت‌های مورد اختلاف نبود، زمینه اضافی و بررسی مورد درخواست را روشن از هم جدا می‌کند." },
+            { "language": "ar", "text": "تفصل لغة التفاوض في C1 بوضوح بين الوقائع غير المتنازع عليها والسياق الإضافي والفحص المطلوب." },
+            { "language": "tr", "text": "C1 müzakere dili tartışmasız olguları, ek bağlamı ve istenen incelemeyi net ayırır." },
+            { "language": "ru", "text": "Язык переговоров C1 четко разделяет неоспариваемые факты, дополнительный контекст и запрошенную проверку." },
+            { "language": "ckb", "text": "زمانی گفتوگۆی C1 بە ڕوونی ڕاستییە ناکۆکینەبووەکان، کۆنتێکستی زیادە و پشکنینی داواکراو جیا دەکاتەوە." },
+            { "language": "kmr", "text": "Zimanê danûstandinê yê C1 rastiyên bê nakokî, konteksta zêde û kontrola xwestî bi zelalî ji hev vediqetîne." },
+            { "language": "pl", "text": "Język negocjacji C1 jasno oddziela fakty bezsporne, dodatkowy kontekst i oczekiwaną kontrolę." },
+            { "language": "ro", "text": "Limbajul de negociere C1 separă clar faptele necontestate, contextul suplimentar și verificarea cerută." },
+            { "language": "sq", "text": "Gjuha e negociimit C1 ndan qartë faktet e pakontestuara, kontekstin shtesë dhe shqyrtimin e kërkuar." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "proposal-note",
+          "text": "Ein guter Kulanzvorschlag enthält meist auch ein Entgegenkommen der Kundenseite, etwa eine Übergangszahlung.",
+          "translations": [
+            { "language": "en", "text": "A good goodwill proposal usually also includes a concession from the customer side, such as a transition payment." },
+            { "language": "fa", "text": "پیشنهاد ارفاقی خوب معمولاً یک امتیاز از طرف مشتری هم دارد، مثلاً پرداخت دوره انتقال." },
+            { "language": "ar", "text": "عادةً ما يتضمن اقتراح التسوية الودية الجيد تنازلاً من جانب العميل أيضاً، مثل دفعة انتقالية." },
+            { "language": "tr", "text": "İyi bir iyi niyet önerisi genellikle müşteri tarafının da bir tavizini içerir, örneğin geçiş ödemesi." },
+            { "language": "ru", "text": "Хорошее предложение доброй воли обычно также включает уступку со стороны клиента, например переходный платеж." },
+            { "language": "ckb", "text": "پێشنیاری باشی کولانتس زۆرجار لە لایەن کڕیارەوەش پاشەکشەیەک لەخۆ دەگرێت، وەک پارەدانی قۆناغی گواستنەوە." },
+            { "language": "kmr", "text": "Pêşniyareke baş a dilxwaziyê gelek caran ji aliyê mişterî ve jî berdaneke tê de heye, wek dravdana derbasbûnê." },
+            { "language": "pl", "text": "Dobra propozycja polubowna zwykle zawiera też ustępstwo ze strony klienta, na przykład płatność przejściową." },
+            { "language": "ro", "text": "O propunere bună de bunăvoință conține de obicei și o concesie din partea clientului, de exemplu o plată de tranziție." },
+            { "language": "sq", "text": "Një propozim i mirë mirëkuptimi zakonisht përfshin edhe një lëshim nga ana e klientit, për shembull një pagesë kalimtare." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "process-note",
+          "text": "Wenn ein Ergebnis noch offen ist, sichern starke Formulierungen zumindest Prozess, Frist, Unterlagen und Kontovermerk.",
+          "translations": [
+            { "language": "en", "text": "When the outcome is still open, strong phrasing at least secures process, deadline, documents, and account note." },
+            { "language": "fa", "text": "وقتی نتیجه هنوز باز است، عبارت‌های قوی دست‌کم فرایند، مهلت، مدارک و یادداشت حساب را تثبیت می‌کنند." },
+            { "language": "ar", "text": "عندما تبقى النتيجة مفتوحة، تؤمن الصياغات القوية على الأقل العملية والمهلة والمستندات والملاحظة في الحساب." },
+            { "language": "tr", "text": "Sonuç hâlâ açıksa, güçlü ifadeler en azından süreci, süreyi, belgeleri ve hesap notunu güvenceye alır." },
+            { "language": "ru", "text": "Когда результат еще открыт, сильные формулировки как минимум фиксируют процесс, срок, документы и отметку в аккаунте." },
+            { "language": "ckb", "text": "کاتێک ئەنجامەکە هێشتا کراوەیە، داڕشتنی بەهێز لانیکەم پرۆسە، مۆڵەت، بەڵگە و تێبینی هەژمار دڵنیا دەکات." },
+            { "language": "kmr", "text": "Dema encam hîn vekirî be, formulasyonên xurt herî kêm pêvajo, dem, belge û nota hesabê ewle dikin." },
+            { "language": "pl", "text": "Gdy wynik jest jeszcze otwarty, mocne sformułowania zabezpieczają przynajmniej proces, termin, dokumenty i adnotację na koncie." },
+            { "language": "ro", "text": "Când rezultatul este încă deschis, formulările puternice securizează cel puțin procesul, termenul, documentele și nota din cont." },
+            { "language": "sq", "text": "Kur rezultati është ende i hapur, formulimet e forta sigurojnë të paktën procesin, afatin, dokumentet dhe shënimin në llogari." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "closing-note",
+          "text": "Ein professioneller Abschluss verlangt nicht vorschnell das Ergebnis, sondern macht den nächsten prüfbaren Schritt schriftlich fest.",
+          "translations": [
+            { "language": "en", "text": "A professional closing does not prematurely demand the outcome, but records the next verifiable step in writing." },
+            { "language": "fa", "text": "پایان حرفه‌ای نتیجه را زودهنگام مطالبه نمی‌کند، بلکه قدم بعدی قابل بررسی را کتبی ثبت می‌کند." },
+            { "language": "ar", "text": "الخاتمة المهنية لا تطالب بالنتيجة مبكراً، بل تثبت الخطوة التالية القابلة للتحقق كتابياً." },
+            { "language": "tr", "text": "Profesyonel bir kapanış sonucu erken talep etmez, bir sonraki denetlenebilir adımı yazılı olarak sabitler." },
+            { "language": "ru", "text": "Профессиональное завершение не требует результата преждевременно, а письменно фиксирует следующий проверяемый шаг." },
+            { "language": "ckb", "text": "کۆتاییەکی پیشەیی ئەنجامەکە پێشوەختە داوا ناکات، بەڵکوو هەنگاوی داهاتووی پشکنراو بە نووسراوی جێگیر دەکات." },
+            { "language": "kmr", "text": "Girtineke profesyonel encamê zû naxwaze, lê gava paşê ya kontrolbar bi nivîsê sabît dike." },
+            { "language": "pl", "text": "Profesjonalne zakończenie nie żąda przedwcześnie wyniku, lecz zapisuje na piśmie kolejny sprawdzalny krok." },
+            { "language": "ro", "text": "O încheiere profesională nu cere prematur rezultatul, ci fixează în scris următorul pas verificabil." },
+            { "language": "sq", "text": "Një mbyllje profesionale nuk e kërkon rezultatin para kohe, por e fikson me shkrim hapin tjetër të verifikueshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "contract-conflict-goodwill-phone-call",
+          "placement": "header",
+          "purpose": "Show a calm customer-service phone call about a contract issue, with documents and a neutral negotiation mood.",
+          "altText": "Eine neutrale Illustration eines Telefonats mit Kundenservice, Vertragsunterlagen und ruhiger Verhandlungssituation.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A neutral illustration of a phone call with customer service, contract documents, and a calm negotiation situation." },
+            { "language": "fa", "text": "تصویری بی‌طرف از تماس تلفنی با خدمات مشتریان، مدارک قرارداد و وضعیت مذاکره آرام." },
+            { "language": "ar", "text": "رسم محايد لمكالمة هاتفية مع خدمة العملاء، ووثائق عقد، وموقف تفاوض هادئ." },
+            { "language": "tr", "text": "Müşteri hizmetleriyle telefon görüşmesi, sözleşme belgeleri ve sakin bir müzakere durumunun tarafsız illüstrasyonu." },
+            { "language": "ru", "text": "Нейтральная иллюстрация телефонного разговора со службой поддержки, договорных документов и спокойной переговорной ситуации." },
+            { "language": "ckb", "text": "وێنەیەکی بێلایەن لە پەیوەندی تەلەفۆنی لەگەڵ خزمەتگوزاری کڕیاران، بەڵگەکانی گرێبەست و دۆخی گفتوگۆی ئارام." },
+            { "language": "kmr", "text": "Wêneyeke bêalî ya telefonê bi xizmeta mişteriyan re, belgeyên peymanê û rewşa danûstandina aram." },
+            { "language": "pl", "text": "Neutralna ilustracja rozmowy telefonicznej z obsługą klienta, dokumentów umowy i spokojnej sytuacji negocjacyjnej." },
+            { "language": "ro", "text": "O ilustrație neutră a unui apel telefonic cu serviciul clienți, documente contractuale și o situație de negociere calmă." },
+            { "language": "sq", "text": "Një ilustrim neutral i një telefonate me shërbimin ndaj klientit, dokumente kontrate dhe një situatë negociimi të qetë." }
+          ],
+          "imagePrompt": "Clean educational illustration, non-photorealistic, adult customer on a phone call at a desk with generic contract documents, customer-service headset icon on a laptop screen, calm negotiation mood, no readable private data, no logos, accessible composition, neutral German everyday service context.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

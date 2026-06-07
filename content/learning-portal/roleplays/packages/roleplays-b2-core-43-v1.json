@@ -1,0 +1,716 @@
+{
+  "packageId": "roleplays-b2-core-43-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien B2 Core 43 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 43",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-eine-kursstufe-wechseln-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Eine Kursstufe wechseln und begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Request and justify a course level change" },
+        { "language": "fa", "text": "درخواست تغییر سطح دوره و دلیل آوردن برای آن" },
+        { "language": "ar", "text": "طلب تغيير مستوى الدورة وتبريره" },
+        { "language": "tr", "text": "Kurs seviyesini değiştirmeyi istemek ve gerekçelendirmek" },
+        { "language": "ru", "text": "Попросить смену уровня курса и обосновать ее" },
+        { "language": "ckb", "text": "داواکردن و پاساوهێنانەوە بۆ گۆڕینی ئاستی کۆرس" },
+        { "language": "kmr", "text": "Guhertina asta kursê xwestin û sedemên wê rave kirin" },
+        { "language": "pl", "text": "Poprosić o zmianę poziomu kursu i ją uzasadnić" },
+        { "language": "ro", "text": "Solicitarea și justificarea schimbării nivelului de curs" },
+        { "language": "sq", "text": "Të kërkosh dhe të arsyetosh ndryshimin e nivelit të kursit" }
+      ],
+      "description": "Du sprichst mit der Kursberatung, weil dein aktueller Deutschkurs entweder zu langsam oder fachlich nicht passend wirkt. Du beschreibst deine Lernziele, nennst konkrete Hinweise aus dem Unterricht, gehst auf mögliche Risiken ein und schlägst einen überprüfbaren Probetermin in einer anderen Kursstufe vor.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with course advising because your current German course feels either too slow or not the right fit. You describe your learning goals, name concrete classroom evidence, address possible risks, and suggest a verifiable trial appointment in another course level." },
+        { "language": "fa", "text": "با مشاور دوره صحبت می‌کنی، چون دوره‌ی فعلی آلمانی یا خیلی کند به نظر می‌رسد یا از نظر محتوایی مناسب تو نیست. هدف‌های یادگیری‌ات را توضیح می‌دهی، نشانه‌های مشخص از کلاس می‌آوری، به ریسک‌های احتمالی پاسخ می‌دهی و یک جلسه‌ی آزمایشی قابل ارزیابی در سطح دیگر پیشنهاد می‌کنی." },
+        { "language": "ar", "text": "تتحدث مع استشارة الدورة لأن دورة الألمانية الحالية تبدو إما بطيئة جداً أو غير مناسبة من حيث المحتوى. تشرح أهدافك التعليمية، وتذكر دلائل محددة من الدرس، وتتناول المخاطر المحتملة، وتقترح موعداً تجريبياً قابلاً للتقييم في مستوى آخر." },
+        { "language": "tr", "text": "Mevcut Almanca kursun ya çok yavaş ya da içerik açısından uygun olmadığı için kurs danışmanıyla konuşuyorsun. Öğrenme hedeflerini anlatıyor, dersten somut göstergeler veriyor, olası risklere değiniyor ve başka bir seviyede değerlendirilebilir bir deneme dersi öneriyorsun." },
+        { "language": "ru", "text": "Вы разговариваете с консультацией по курсам, потому что текущий курс немецкого кажется либо слишком медленным, либо неподходящим по содержанию. Вы описываете учебные цели, приводите конкретные признаки с занятий, учитываете возможные риски и предлагаете проверяемое пробное занятие на другом уровне." },
+        { "language": "ckb", "text": "لەگەڵ ڕاوێژکاری کۆرس قسە دەکەیت، چونکە کۆرسی ئێستای ئەڵمانی یان زۆر هێواش دەردەکەوێت یان لە ڕووی ناوەڕۆکەوە بۆت گونجاو نییە. ئامانجەکانی فێربوونت ڕوون دەکەیتەوە، نیشانەی دیاریکراو لە وانە دەهێنیت، باس لە مەترسییە ئەگەرییەکان دەکەیت و دانیشتنێکی تاقیکاری قابل هەڵسەنگاندن لە ئاستێکی تر پێشنیار دەکەیت." },
+        { "language": "kmr", "text": "Tu bi şêwirmendiya kursê re diaxivî, ji ber ku kursa almanî ya niha yan pir hêdî xuya dike yan ji aliyê naverokê ve ji te re ne guncav e. Tu armancên xwe yên fêrbûnê rave dikî, nîşanên diyar ji dersê tînî, li ser metirsiyên mumkin diaxivî û rûniştineke ceribandinê ya tê nirxandin di asteke din de pêşniyar dikî." },
+        { "language": "pl", "text": "Rozmawiasz z doradztwem kursowym, ponieważ obecny kurs niemieckiego wydaje się zbyt wolny albo merytorycznie niedopasowany. Opisujesz swoje cele nauki, podajesz konkretne sygnały z zajęć, odnosisz się do możliwych ryzyk i proponujesz możliwą do oceny lekcję próbną na innym poziomie." },
+        { "language": "ro", "text": "Vorbești cu consilierea de curs deoarece cursul actual de germană pare fie prea lent, fie nepotrivit ca nivel de conținut. Îți descrii obiectivele de învățare, numești indicii concrete din lecții, abordezi riscurile posibile și propui o ședință de probă evaluabilă la un alt nivel." },
+        { "language": "sq", "text": "Flet me këshillimin e kursit sepse kursi aktual i gjermanishtes duket ose shumë i ngadalshëm, ose jo i përshtatshëm nga përmbajtja. Përshkruan qëllimet e tua të të mësuarit, jep shenja konkrete nga mësimi, trajton rreziqet e mundshme dhe propozon një orë prove të vlerësueshme në një nivel tjetër." }
+      ],
+      "learnerGoal": "Begründe einen Kursstufenwechsel sachlich: aktuelles Niveau, Lernziel, Unterrichtsbelege, Risiko und Probelösung vergleichen und eine klare nächste Entscheidung vereinbaren.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Justify a course level change factually: compare current level, learning goal, classroom evidence, risk, and trial solution, and agree on a clear next decision." },
+        { "language": "fa", "text": "تغییر سطح دوره را واقع‌بینانه توجیه کن: سطح فعلی، هدف یادگیری، شواهد کلاسی، ریسک و راه‌حل آزمایشی را مقایسه کن و درباره‌ی تصمیم بعدی به توافق روشن برس." },
+        { "language": "ar", "text": "برر تغيير مستوى الدورة بشكل موضوعي: قارن بين المستوى الحالي، وهدف التعلم، والأدلة من الدرس، والمخاطر، والحل التجريبي، واتفق على قرار تالٍ واضح." },
+        { "language": "tr", "text": "Kurs seviyesi değişikliğini nesnel biçimde gerekçelendir: mevcut seviye, öğrenme hedefi, dersten kanıtlar, risk ve deneme çözümünü karşılaştır ve net bir sonraki karar üzerinde anlaş." },
+        { "language": "ru", "text": "Обоснуйте смену уровня курса по существу: сравните текущий уровень, учебную цель, доказательства с занятий, риск и пробное решение, а затем договоритесь о следующем четком решении." },
+        { "language": "ckb", "text": "گۆڕینی ئاستی کۆرس بە بابەتی پاساو بدە: ئاستی ئێستا، ئامانجی فێربوون، بەڵگەکانی وانە، مەترسی و چارەسەری تاقیکاری بەراورد بکە و لەسەر بڕیاری داهاتووی ڕوون ڕێک بکەوە." },
+        { "language": "kmr", "text": "Guhertina asta kursê bi awayekî objektîf rave bike: asta niha, armanca fêrbûnê, delîlên ji dersê, metirsî û çareseriya ceribandinê berhev bike û li ser biryara din a zelal li hev were." },
+        { "language": "pl", "text": "Uzasadnij zmianę poziomu kursu rzeczowo: porównaj obecny poziom, cel nauki, dowody z zajęć, ryzyko i rozwiązanie próbne oraz ustal jasną kolejną decyzję." },
+        { "language": "ro", "text": "Justifica obiectiv schimbarea nivelului de curs: compară nivelul actual, obiectivul de învățare, dovezile din lecții, riscul și soluția de probă și stabiliți o următoare decizie clară." },
+        { "language": "sq", "text": "Arsyeto në mënyrë objektive ndryshimin e nivelit të kursit: krahaso nivelin aktual, qëllimin e mësimit, provat nga ora, rrezikun dhe zgjidhjen provuese, dhe bini dakord për vendimin e qartë të radhës." }
+      ],
+      "cefrLevel": "B2",
+      "category": "education",
+      "topics": [
+        "education-and-training",
+        "documents-and-administration"
+      ],
+      "examProfiles": [],
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "taskType": "negotiate-solution",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 16,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Kursberatung",
+          "translations": [
+            { "language": "en", "text": "Course advisor" },
+            { "language": "fa", "text": "مشاور دوره" },
+            { "language": "ar", "text": "مستشار الدورة" },
+            { "language": "tr", "text": "Kurs danışmanı" },
+            { "language": "ru", "text": "Консультант по курсу" },
+            { "language": "ckb", "text": "ڕاوێژکاری کۆرس" },
+            { "language": "kmr", "text": "Şêwirmendê kursê" },
+            { "language": "pl", "text": "Doradca kursowy" },
+            { "language": "ro", "text": "Consilier de curs" },
+            { "language": "sq", "text": "Këshilltar i kursit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kursteilnehmer",
+          "translations": [
+            { "language": "en", "text": "Course participant" },
+            { "language": "fa", "text": "شرکت‌کننده‌ی دوره" },
+            { "language": "ar", "text": "مشارك في الدورة" },
+            { "language": "tr", "text": "Kurs katılımcısı" },
+            { "language": "ru", "text": "Участник курса" },
+            { "language": "ckb", "text": "بەشداربووی کۆرس" },
+            { "language": "kmr", "text": "Beşdarê kursê" },
+            { "language": "pl", "text": "Uczestnik kursu" },
+            { "language": "ro", "text": "Participant la curs" },
+            { "language": "sq", "text": "Pjesëmarrës në kurs" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Guten Tag. Sie möchten über Ihre Kursstufe sprechen. Was genau passt im aktuellen Kurs nicht?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. You would like to talk about your course level. What exactly does not fit in the current course?" },
+            { "language": "fa", "text": "روز بخیر. می‌خواهید درباره‌ی سطح دوره‌تان صحبت کنید. دقیقاً چه چیزی در دوره‌ی فعلی مناسب نیست؟" },
+            { "language": "ar", "text": "طاب يومك. تريد أن تتحدث عن مستوى دورتك. ما الذي لا يناسبك تحديداً في الدورة الحالية؟" },
+            { "language": "tr", "text": "İyi günler. Kurs seviyeniz hakkında konuşmak istiyorsunuz. Mevcut kursta tam olarak ne uygun değil?" },
+            { "language": "ru", "text": "Добрый день. Вы хотите поговорить о своем уровне курса. Что именно не подходит в текущем курсе?" },
+            { "language": "ckb", "text": "ڕۆژباش. دەتەوێت دەربارەی ئاستی کۆرسەکەت قسە بکەیت. بە دیاریکراوی چی لە کۆرسی ئێستادا گونجاو نییە؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn dixwazin li ser asta kursa xwe biaxivin. Bi taybetî çi di kursa niha de ne guncav e?" },
+            { "language": "pl", "text": "Dzień dobry. Chce pan porozmawiać o swoim poziomie kursu. Co dokładnie nie pasuje w obecnym kursie?" },
+            { "language": "ro", "text": "Bună ziua. Doriți să vorbiți despre nivelul cursului. Ce anume nu se potrivește în cursul actual?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironi të flisni për nivelin tuaj të kursit. Çfarë saktësisht nuk përshtatet në kursin aktual?" }
+          ],
+          "function": "open-level-review",
+          "toneNote": "Sachlich und beratend."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke, dass Sie sich Zeit nehmen. Ich möchte prüfen, ob ein Wechsel in die höhere Kursstufe sinnvoll wäre. Im aktuellen Kurs verstehe ich die Aufgaben schnell, aber ich brauche mehr Übung im freien Sprechen und bei längeren Begründungen.",
+          "translations": [
+            { "language": "en", "text": "Thank you for taking the time. I would like to check whether moving to the higher course level would make sense. In the current course I understand the tasks quickly, but I need more practice in free speaking and longer justifications." },
+            { "language": "fa", "text": "ممنون که وقت می‌گذارید. می‌خواهم بررسی کنم آیا رفتن به سطح بالاتر منطقی است یا نه. در دوره‌ی فعلی تمرین‌ها را سریع می‌فهمم، اما به تمرین بیشتری در صحبت آزاد و دلیل‌آوری طولانی‌تر نیاز دارم." },
+            { "language": "ar", "text": "شكراً لأنك خصصت وقتاً. أود أن أتحقق مما إذا كان الانتقال إلى المستوى الأعلى مناسباً. في الدورة الحالية أفهم المهام بسرعة، لكنني أحتاج إلى تدريب أكثر في الحديث الحر وفي التبريرات الأطول." },
+            { "language": "tr", "text": "Zaman ayırdığınız için teşekkür ederim. Daha yüksek kurs seviyesine geçmenin mantıklı olup olmadığını değerlendirmek istiyorum. Mevcut kursta görevleri hızlı anlıyorum, ama serbest konuşma ve daha uzun gerekçelendirmelerde daha fazla pratiğe ihtiyacım var." },
+            { "language": "ru", "text": "Спасибо, что нашли время. Я хотел бы проверить, имеет ли смысл переход на более высокий уровень курса. В текущем курсе я быстро понимаю задания, но мне нужно больше практики в свободной речи и более длинных обоснованиях." },
+            { "language": "ckb", "text": "سوپاس کە کاتت دانا. دەمەوێت بزانم ئایا گواستنەوە بۆ ئاستی بەرزتری کۆرس مانادارە یان نا. لە کۆرسی ئێستادا ئەرکەکان بە خێرایی تێدەگەم، بەڵام پێویستم بە ڕاهێنانی زیاترە لە قسەکردنی ئازاد و پاساوهێنانەوەی درێژتر." },
+            { "language": "kmr", "text": "Spas ku we dem da. Ez dixwazim kontrol bikim ka derbasbûn bo asta bilindtir a kursê maqûl e an na. Di kursa niha de ez peywiran zû fam dikim, lê ji bo axaftina azad û sedemên dirêjtir pratîka zêdetir hewce ye." },
+            { "language": "pl", "text": "Dziękuję, że znajduje pan czas. Chciałbym sprawdzić, czy przejście na wyższy poziom kursu miałoby sens. W obecnym kursie szybko rozumiem zadania, ale potrzebuję więcej ćwiczeń w swobodnym mówieniu i dłuższym uzasadnianiu." },
+            { "language": "ro", "text": "Vă mulțumesc că vă faceți timp. Aș vrea să verific dacă trecerea la un nivel mai înalt de curs ar avea sens. În cursul actual înțeleg repede sarcinile, dar am nevoie de mai mult exercițiu la vorbirea liberă și la justificări mai lungi." },
+            { "language": "sq", "text": "Faleminderit që po gjeni kohë. Dua të shoh nëse kalimi në një nivel më të lartë kursi do të kishte kuptim. Në kursin aktual i kuptoj shpejt detyrat, por kam nevojë për më shumë ushtrim në të folur të lirë dhe në arsyetime më të gjata." }
+          ],
+          "function": "state-level-request",
+          "expectedLearnerAction": "State the requested change and compare current strength with the missing challenge."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "teacher",
+          "baseText": "Haben Sie dafür konkrete Hinweise aus dem Unterricht oder aus einem Test?",
+          "translations": [
+            { "language": "en", "text": "Do you have concrete evidence for that from class or from a test?" },
+            { "language": "fa", "text": "برای این موضوع شواهد مشخصی از کلاس یا از یک آزمون دارید؟" },
+            { "language": "ar", "text": "هل لديك دلائل محددة على ذلك من الدرس أو من اختبار؟" },
+            { "language": "tr", "text": "Bunun için dersten ya da bir sınavdan somut göstergeleriniz var mı?" },
+            { "language": "ru", "text": "Есть ли у вас конкретные признаки этого с занятий или из теста?" },
+            { "language": "ckb", "text": "بۆ ئەمە نیشانەی دیاریکراوت لە وانە یان لە تاقیکردنەوەیەکەوە هەیە؟" },
+            { "language": "kmr", "text": "Ji bo vê yekê delîlên diyar ji dersê an ji azmûnekê hene?" },
+            { "language": "pl", "text": "Czy ma pan na to konkretne wskazówki z zajęć albo z testu?" },
+            { "language": "ro", "text": "Aveți indicii concrete pentru asta din lecții sau dintr-un test?" },
+            { "language": "sq", "text": "A keni shenja konkrete për këtë nga mësimi ose nga një test?" }
+          ],
+          "function": "ask-for-evidence",
+          "toneNote": "Nachweise statt Bauchgefühl."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Ja. Bei den letzten drei Schreibaufgaben hatte ich fast keine Korrekturen, und im Einstufungstest lag ich knapp unter der nächsten Stufe. Gleichzeitig merke ich, dass mir Diskussionen mit mehreren Argumenten noch schwerfallen.",
+          "translations": [
+            { "language": "en", "text": "Yes. In the last three writing tasks I had almost no corrections, and in the placement test I was just below the next level. At the same time, I notice that discussions with several arguments are still difficult for me." },
+            { "language": "fa", "text": "بله. در سه تمرین نوشتاری اخیر تقریباً هیچ اصلاحی نداشتم و در آزمون تعیین سطح کمی پایین‌تر از سطح بعدی بودم. هم‌زمان می‌بینم که بحث‌هایی با چند دلیل هنوز برایم سخت هستند." },
+            { "language": "ar", "text": "نعم. في آخر ثلاث مهام كتابية لم تكن لدي تقريباً أي تصحيحات، وفي اختبار تحديد المستوى كنت أقل قليلاً من المستوى التالي. وفي الوقت نفسه ألاحظ أن النقاشات التي تتضمن عدة حجج ما زالت صعبة علي." },
+            { "language": "tr", "text": "Evet. Son üç yazma görevinde neredeyse hiç düzeltmem yoktu ve seviye belirleme sınavında bir sonraki seviyenin hemen altındaydım. Aynı zamanda birkaç argüman içeren tartışmaların hâlâ bana zor geldiğini fark ediyorum." },
+            { "language": "ru", "text": "Да. В последних трех письменных заданиях у меня почти не было исправлений, а в вступительном тесте я был чуть ниже следующего уровня. В то же время я замечаю, что дискуссии с несколькими аргументами мне еще даются трудно." },
+            { "language": "ckb", "text": "بەڵێ. لە سێ ئەرکی نووسینی دواییدا نزیکەی هیچ ڕاستکردنەوەیەکم نەبوو، و لە تاقیکردنەوەی دیاریکردنی ئاستدا کەمێک خوار ئاستی داهاتوو بووم. لە هەمان کاتدا تێدەگەم کە گفتوگۆ بە چەند پاساوەوە هێشتا بۆم قورسە." },
+            { "language": "kmr", "text": "Erê. Di sê peywirên nivîsandinê yên dawî de hema hema tu rastkirinên min tune bûn, û di azmûna destnîşankirina astê de ez hinekî li bin asta din bûm. Di heman demê de ez dibînim ku nîqaşên bi çend sedeman hîn ji min re dijwar in." },
+            { "language": "pl", "text": "Tak. W ostatnich trzech zadaniach pisemnych miałem prawie żadnych poprawek, a w teście poziomującym byłem tuż poniżej następnego poziomu. Jednocześnie widzę, że dyskusje z kilkoma argumentami nadal sprawiają mi trudność." },
+            { "language": "ro", "text": "Da. La ultimele trei sarcini de scriere am avut aproape nicio corectură, iar la testul de nivel am fost puțin sub nivelul următor. În același timp observ că discuțiile cu mai multe argumente îmi sunt încă dificile." },
+            { "language": "sq", "text": "Po. Në tri detyrat e fundit me shkrim pata pothuajse asnjë korrigjim, dhe në testin e nivelit isha pak nën nivelin tjetër. Në të njëjtën kohë vërej se diskutimet me disa argumente janë ende të vështira për mua." }
+          ],
+          "function": "give-evidence-and-gap",
+          "expectedLearnerAction": "Give evidence and name the remaining learning gap, not only success."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Das klingt nachvollziehbar. Ein Wechsel kann aber auch bedeuten, dass Grammatik und Tempo deutlich anspruchsvoller werden. Wie würden Sie damit umgehen?",
+          "translations": [
+            { "language": "en", "text": "That sounds understandable. But a change can also mean that grammar and pace become significantly more demanding. How would you handle that?" },
+            { "language": "fa", "text": "این قابل درک به نظر می‌رسد. اما تغییر سطح می‌تواند به این معنا باشد که دستور زبان و سرعت کلاس به‌طور قابل توجهی دشوارتر شوند. با آن چطور کنار می‌آیید؟" },
+            { "language": "ar", "text": "يبدو ذلك مفهوماً. لكن التغيير قد يعني أيضاً أن القواعد والوتيرة ستصبحان أكثر تطلباً بكثير. كيف ستتعامل مع ذلك؟" },
+            { "language": "tr", "text": "Bu anlaşılır görünüyor. Ancak değişiklik gramerin ve temponun belirgin şekilde daha zor olacağı anlamına da gelebilir. Bununla nasıl başa çıkarsınız?" },
+            { "language": "ru", "text": "Это звучит понятно. Но переход может также означать, что грамматика и темп станут значительно требовательнее. Как вы с этим справитесь?" },
+            { "language": "ckb", "text": "ئەمە تێگەیشتراو دەردەکەوێت. بەڵام گۆڕینیش دەتوانێت مانای ئەوە بێت کە ڕێزمان و خێرایی وانە زۆر داواکارتربن. چۆن مامەڵەی لەگەڵ دەکەیت؟" },
+            { "language": "kmr", "text": "Ev tê famkirin. Lê guhertin dikare wateya wê jî hebe ku rêziman û lez bi awayekî girîng zor bibin. Hûn ê çawa pê re mijûl bibin?" },
+            { "language": "pl", "text": "To brzmi zrozumiale. Zmiana może jednak oznaczać, że gramatyka i tempo będą znacznie bardziej wymagające. Jak pan sobie z tym poradzi?" },
+            { "language": "ro", "text": "Sună de înțeles. Dar o schimbare poate însemna și că gramatica și ritmul devin mult mai solicitante. Cum ați gestiona asta?" },
+            { "language": "sq", "text": "Kjo duket e kuptueshme. Por ndryshimi mund të thotë edhe që gramatika dhe ritmi bëhen dukshëm më kërkues. Si do ta përballonit këtë?" }
+          ],
+          "function": "name-risk",
+          "toneNote": "Risiko transparent machen."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Mir ist das Risiko bewusst. Deshalb würde ich keinen sofortigen festen Wechsel verlangen, sondern zuerst eine Probestunde besuchen. Danach könnten wir gemeinsam entscheiden, ob der Wechsel wirklich passt.",
+          "translations": [
+            { "language": "en", "text": "I am aware of the risk. That is why I would not demand an immediate permanent change, but would first attend a trial lesson. After that we could decide together whether the change really fits." },
+            { "language": "fa", "text": "از این ریسک آگاه هستم. برای همین تغییر قطعی و فوری نمی‌خواهم، بلکه اول در یک جلسه‌ی آزمایشی شرکت می‌کنم. بعد از آن می‌توانیم با هم تصمیم بگیریم که آیا تغییر واقعاً مناسب است یا نه." },
+            { "language": "ar", "text": "أنا واعٍ بهذا الخطر. لذلك لا أطلب تغييراً ثابتاً فورياً، بل أود أولاً حضور حصة تجريبية. بعد ذلك يمكننا أن نقرر معاً هل يناسبني التغيير فعلاً." },
+            { "language": "tr", "text": "Bu riskin farkındayım. Bu yüzden hemen kalıcı bir değişiklik talep etmiyorum; önce bir deneme dersine katılmak isterim. Sonrasında değişikliğin gerçekten uygun olup olmadığına birlikte karar verebiliriz." },
+            { "language": "ru", "text": "Я осознаю этот риск. Поэтому я не требую немедленного постоянного перехода, а сначала хотел бы посетить пробное занятие. После этого мы могли бы вместе решить, действительно ли переход подходит." },
+            { "language": "ckb", "text": "من ئاگاداری ئەو مەترسییەم. بۆیە داوای گۆڕینی هەمیشەیی دەستبەجێ ناکەم، بەڵکو سەرەتا دەمەوێت لە دانیشتنێکی تاقیکاریدا بەشداری بکەم. پاشان دەتوانین پێکەوە بڕیار بدەین ئایا گۆڕینەکە بەڕاستی گونجاوە یان نا." },
+            { "language": "kmr", "text": "Ez ji vê metirsiyê agahdar im. Ji ber vê yekê ez guhertineke mayînde ya tavilê naxwazim, lê pêşî dixwazim beşdarî derseke ceribandinê bibim. Paşê em dikarin bi hev re biryar bidin ka guhertin bi rastî guncav e an na." },
+            { "language": "pl", "text": "Jestem świadomy tego ryzyka. Dlatego nie domagam się od razu stałej zmiany, tylko najpierw chciałbym wziąć udział w lekcji próbnej. Potem moglibyśmy wspólnie zdecydować, czy zmiana naprawdę pasuje." },
+            { "language": "ro", "text": "Sunt conștient de acest risc. De aceea nu aș cere o schimbare definitivă imediată, ci aș participa mai întâi la o lecție de probă. După aceea am putea decide împreună dacă schimbarea se potrivește cu adevărat." },
+            { "language": "sq", "text": "Jam i vetëdijshëm për këtë rrezik. Prandaj nuk do të kërkoja menjëherë një ndryshim të përhershëm, por fillimisht do të merrja pjesë në një orë prove. Pastaj mund të vendosim së bashku nëse ndryshimi përshtatet vërtet." }
+          ],
+          "function": "offer-trial-solution",
+          "expectedLearnerAction": "Acknowledge the risk and propose a reversible trial."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "teacher",
+          "baseText": "Das wäre möglich. Damit ich es organisieren kann: Was wäre für Sie ein realistisches Kriterium nach der Probestunde?",
+          "translations": [
+            { "language": "en", "text": "That would be possible. So I can organize it: what would be a realistic criterion for you after the trial lesson?" },
+            { "language": "fa", "text": "این امکان‌پذیر است. برای اینکه بتوانم آن را هماهنگ کنم: بعد از جلسه‌ی آزمایشی چه معیاری برای شما واقع‌بینانه خواهد بود؟" },
+            { "language": "ar", "text": "سيكون ذلك ممكناً. لكي أستطيع تنظيمه: ما المعيار الواقعي بالنسبة لك بعد الحصة التجريبية؟" },
+            { "language": "tr", "text": "Bu mümkün olur. Organize edebilmem için: deneme dersinden sonra sizin için gerçekçi bir ölçüt ne olurdu?" },
+            { "language": "ru", "text": "Это было бы возможно. Чтобы я мог это организовать: какой критерий после пробного занятия был бы для вас реалистичным?" },
+            { "language": "ckb", "text": "ئەمە دەکرێت. بۆ ئەوەی بتوانم ڕێکی بخەم: پاش دانیشتنی تاقیکاری چ پێوەرێک بۆت واقیعی دەبێت؟" },
+            { "language": "kmr", "text": "Ev mumkin e. Da ku ez wê organîze bikim: piştî dersa ceribandinê ji bo we pîvaneke rastîn çi ye?" },
+            { "language": "pl", "text": "To byłoby możliwe. Żebym mogła to zorganizować: jakie kryterium po lekcji próbnej byłoby dla pana realistyczne?" },
+            { "language": "ro", "text": "Ar fi posibil. Ca să pot organiza: care ar fi pentru dumneavoastră un criteriu realist după lecția de probă?" },
+            { "language": "sq", "text": "Kjo do të ishte e mundur. Që ta organizoj: cili do të ishte për ju një kriter realist pas orës së provës?" }
+          ],
+          "function": "ask-for-criterion",
+          "toneNote": "Entscheidungskriterium klären."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Für mich wäre entscheidend, ob ich dem Unterricht grundsätzlich folgen kann und ob ich in der Diskussion mindestens zwei eigene Beiträge sinnvoll einbringen kann. Wenn ich komplett überfordert bin, bleibe ich lieber im aktuellen Kurs.",
+          "translations": [
+            { "language": "en", "text": "For me, the decisive point would be whether I can basically follow the lesson and whether I can contribute at least two meaningful points in the discussion. If I am completely overwhelmed, I would rather stay in the current course." },
+            { "language": "fa", "text": "برای من تعیین‌کننده این است که آیا در اصل می‌توانم درس را دنبال کنم و آیا در بحث حداقل دو مشارکت معنادار داشته باشم. اگر کاملاً تحت فشار باشم، ترجیح می‌دهم در دوره‌ی فعلی بمانم." },
+            { "language": "ar", "text": "بالنسبة لي سيكون الأمر الحاسم هو ما إذا كنت أستطيع متابعة الدرس بشكل عام، وما إذا كنت أستطيع تقديم مشاركتين مفيدتين على الأقل في النقاش. إذا كنت مرهقاً تماماً، فأفضّل البقاء في الدورة الحالية." },
+            { "language": "tr", "text": "Benim için belirleyici olan, dersi genel olarak takip edip edemeyeceğim ve tartışmada en az iki anlamlı katkı sunup sunamayacağımdır. Tamamen zorlanırsam mevcut kursta kalmayı tercih ederim." },
+            { "language": "ru", "text": "Для меня решающим было бы, смогу ли я в целом следить за занятием и внести в дискуссию как минимум два содержательных вклада. Если я буду полностью перегружен, я предпочту остаться в текущем курсе." },
+            { "language": "ckb", "text": "بۆ من گرنگترین شت ئەوە دەبێت ئایا بە گشتی دەتوانم وانەکە شوێن بکەوم و لە گفتوگۆدا لانیکەم دوو بەشداری مانادار بخەمەڕوو یان نا. ئەگەر بە تەواوی لە توانام بەرزتر بوو، پێم باشترە لە کۆرسی ئێستا بمێنمەوە." },
+            { "language": "kmr", "text": "Ji bo min tişta girîng ew e ka ez dikarim bi giştî dersê bişopînim û di nîqaşê de herî kêm du beşdariyên watedar bikim an na. Ger ez bi temamî zêde bar bibim, ez tercîh dikim di kursa niha de bimînim." },
+            { "language": "pl", "text": "Dla mnie decydujące byłoby, czy zasadniczo nadążam za lekcją i czy w dyskusji mogę wnieść przynajmniej dwie sensowne wypowiedzi. Jeśli będę całkowicie przeciążony, wolę zostać w obecnym kursie." },
+            { "language": "ro", "text": "Pentru mine ar fi decisiv dacă pot urmări în principiu lecția și dacă pot aduce cel puțin două contribuții relevante în discuție. Dacă sunt complet depășit, prefer să rămân în cursul actual." },
+            { "language": "sq", "text": "Për mua do të ishte vendimtare nëse mund ta ndjek në përgjithësi mësimin dhe nëse mund të jap të paktën dy kontribute kuptimplota në diskutim. Nëse mbingarkohem plotësisht, preferoj të qëndroj në kursin aktual." }
+          ],
+          "function": "define-decision-criterion",
+          "expectedLearnerAction": "Define fair success and fallback criteria."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Gut. Ich kann Sie nächste Woche in einer Stunde der höheren Stufe hospitieren lassen. Danach sprechen wir zehn Minuten und entscheiden, ob wir den Wechsel beantragen.",
+          "translations": [
+            { "language": "en", "text": "Good. I can let you observe a lesson at the higher level next week. Afterward we will speak for ten minutes and decide whether to request the change." },
+            { "language": "fa", "text": "خوب. می‌توانم هفته‌ی آینده اجازه بدهم در یک جلسه از سطح بالاتر به‌صورت آزمایشی شرکت کنید. بعد از آن ده دقیقه صحبت می‌کنیم و تصمیم می‌گیریم که آیا درخواست تغییر سطح بدهیم یا نه." },
+            { "language": "ar", "text": "جيد. يمكنني أن أسمح لك بحضور حصة في المستوى الأعلى الأسبوع القادم على سبيل التجربة. بعد ذلك نتحدث عشر دقائق ونقرر هل سنقدم طلب التغيير." },
+            { "language": "tr", "text": "İyi. Gelecek hafta daha yüksek seviyedeki bir derse gözlemci olarak katılmanızı sağlayabilirim. Sonrasında on dakika konuşur ve değişiklik başvurusu yapıp yapmayacağımıza karar veririz." },
+            { "language": "ru", "text": "Хорошо. На следующей неделе я могу разрешить вам посетить одно занятие более высокого уровня. После этого мы поговорим десять минут и решим, подавать ли заявку на переход." },
+            { "language": "ckb", "text": "باشە. دەتوانم هەفتەی داهاتوو ڕێگات بدەم لە دانیشتنێکی ئاستی بەرزتر بە شێوەی تاقیکاری بەشداری بکەیت. پاشان دە خولەک قسە دەکەین و بڕیار دەدەین ئایا داوای گۆڕین پێشکەش بکەین یان نا." },
+            { "language": "kmr", "text": "Baş e. Ez dikarim hefteya bê we bihêlim ku hûn beşdarî derseke asta bilindtir bibin. Paşê em deh deqîqe diaxivin û biryar didin ka daxwaza guhertinê bikin an na." },
+            { "language": "pl", "text": "Dobrze. W przyszłym tygodniu mogę pozwolić panu hospitować jedną lekcję na wyższym poziomie. Potem porozmawiamy dziesięć minut i zdecydujemy, czy złożymy wniosek o zmianę." },
+            { "language": "ro", "text": "Bine. Săptămâna viitoare vă pot permite să asistați la o lecție de nivel mai înalt. După aceea discutăm zece minute și decidem dacă solicităm schimbarea." },
+            { "language": "sq", "text": "Mirë. Javën tjetër mund t’ju lejoj të ndiqni një orë në nivelin më të lartë. Pas kësaj flasim dhjetë minuta dhe vendosim nëse do ta kërkojmë ndryshimin." }
+          ],
+          "function": "offer-trial-and-decision",
+          "toneNote": "Konkreter nächster Schritt."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Das klingt fair. Dann nehme ich nächste Woche an der Probestunde teil, achte auf Verständnis und aktive Beiträge und bespreche danach mit Ihnen, ob ein Antrag auf Kurswechsel sinnvoll ist.",
+          "translations": [
+            { "language": "en", "text": "That sounds fair. Then I will attend the trial lesson next week, pay attention to comprehension and active contributions, and afterward discuss with you whether a request for a course change makes sense." },
+            { "language": "fa", "text": "این عادلانه به نظر می‌رسد. پس هفته‌ی آینده در جلسه‌ی آزمایشی شرکت می‌کنم، به فهم درس و مشارکت فعال توجه می‌کنم و بعد با شما بررسی می‌کنم که آیا درخواست تغییر دوره منطقی است یا نه." },
+            { "language": "ar", "text": "يبدو ذلك عادلاً. إذن سأحضر الحصة التجريبية الأسبوع القادم، وأنتبه إلى الفهم والمشاركات النشطة، ثم أناقش معك بعد ذلك ما إذا كان طلب تغيير الدورة مناسباً." },
+            { "language": "tr", "text": "Bu adil görünüyor. O halde gelecek hafta deneme dersine katılacağım, anlama ve aktif katkılarıma dikkat edeceğim ve sonrasında kurs değişikliği başvurusunun mantıklı olup olmadığını sizinle görüşeceğim." },
+            { "language": "ru", "text": "Это звучит справедливо. Тогда на следующей неделе я посещу пробное занятие, обращу внимание на понимание и активные вклады, а затем обсужу с вами, имеет ли смысл заявление на смену курса." },
+            { "language": "ckb", "text": "ئەمە دادپەروەرانە دەردەکەوێت. کەواتە هەفتەی داهاتوو لە دانیشتنی تاقیکاریدا بەشداری دەکەم، سەرنج دەدەم بە تێگەیشتن و بەشدارییە چالاکەکان، و پاشان لەگەڵت باس دەکەم ئایا داواکاری گۆڕینی کۆرس مانادارە یان نا." },
+            { "language": "kmr", "text": "Ev adil xuya dike. Wê demê ez hefteya bê beşdarî dersa ceribandinê dibim, balê didim têgihiştin û beşdariyên çalak, û paşê bi we re diaxivim ka daxwaza guhertina kursê maqûl e an na." },
+            { "language": "pl", "text": "To brzmi fair. W przyszłym tygodniu wezmę więc udział w lekcji próbnej, zwrócę uwagę na rozumienie i aktywne wypowiedzi, a potem omówię z panem, czy wniosek o zmianę kursu ma sens." },
+            { "language": "ro", "text": "Sună corect. Atunci voi participa săptămâna viitoare la lecția de probă, voi urmări înțelegerea și contribuțiile active, iar după aceea voi discuta cu dumneavoastră dacă o cerere de schimbare a cursului are sens." },
+            { "language": "sq", "text": "Kjo duket e drejtë. Atëherë javën tjetër do të marr pjesë në orën e provës, do t’i kushtoj vëmendje kuptimit dhe kontributeve aktive, dhe pastaj do të diskutoj me ju nëse kërkesa për ndryshim kursi ka kuptim." }
+          ],
+          "function": "summarize-trial-plan",
+          "expectedLearnerAction": "Summarize the trial, criteria, and follow-up decision."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct-balanced-request",
+              "text": "Danke, dass Sie sich Zeit nehmen. Ich möchte prüfen, ob ein Wechsel in die höhere Kursstufe sinnvoll wäre. Im aktuellen Kurs verstehe ich die Aufgaben schnell, aber ich brauche mehr Übung im freien Sprechen und bei längeren Begründungen.",
+              "translations": [
+                { "language": "en", "text": "Thank you for taking the time. I would like to check whether moving to the higher course level would make sense. In the current course I understand the tasks quickly, but I need more practice in free speaking and longer justifications." },
+                { "language": "fa", "text": "ممنون که وقت می‌گذارید. می‌خواهم بررسی کنم آیا رفتن به سطح بالاتر منطقی است یا نه. در دوره‌ی فعلی تمرین‌ها را سریع می‌فهمم، اما به تمرین بیشتری در صحبت آزاد و دلیل‌آوری طولانی‌تر نیاز دارم." },
+                { "language": "ar", "text": "شكراً لأنك خصصت وقتاً. أود أن أتحقق مما إذا كان الانتقال إلى المستوى الأعلى مناسباً. في الدورة الحالية أفهم المهام بسرعة، لكنني أحتاج إلى تدريب أكثر في الحديث الحر وفي التبريرات الأطول." },
+                { "language": "tr", "text": "Zaman ayırdığınız için teşekkür ederim. Daha yüksek kurs seviyesine geçmenin mantıklı olup olmadığını değerlendirmek istiyorum. Mevcut kursta görevleri hızlı anlıyorum, ama serbest konuşma ve daha uzun gerekçelendirmelerde daha fazla pratiğe ihtiyacım var." },
+                { "language": "ru", "text": "Спасибо, что нашли время. Я хотел бы проверить, имеет ли смысл переход на более высокий уровень курса. В текущем курсе я быстро понимаю задания, но мне нужно больше практики в свободной речи и более длинных обоснованиях." },
+                { "language": "ckb", "text": "سوپاس کە کاتت دانا. دەمەوێت بزانم ئایا گواستنەوە بۆ ئاستی بەرزتری کۆرس مانادارە یان نا. لە کۆرسی ئێستادا ئەرکەکان بە خێرایی تێدەگەم، بەڵام پێویستم بە ڕاهێنانی زیاترە لە قسەکردنی ئازاد و پاساوهێنانەوەی درێژتر." },
+                { "language": "kmr", "text": "Spas ku we dem da. Ez dixwazim kontrol bikim ka derbasbûn bo asta bilindtir a kursê maqûl e an na. Di kursa niha de ez peywiran zû fam dikim, lê ji bo axaftina azad û sedemên dirêjtir pratîka zêdetir hewce ye." },
+                { "language": "pl", "text": "Dziękuję, że znajduje pan czas. Chciałbym sprawdzić, czy przejście na wyższy poziom kursu miałoby sens. W obecnym kursie szybko rozumiem zadania, ale potrzebuję więcej ćwiczeń w swobodnym mówieniu i dłuższym uzasadnianiu." },
+                { "language": "ro", "text": "Vă mulțumesc că vă faceți timp. Aș vrea să verific dacă trecerea la un nivel mai înalt de curs ar avea sens. În cursul actual înțeleg repede sarcinile, dar am nevoie de mai mult exercițiu la vorbirea liberă și la justificări mai lungi." },
+                { "language": "sq", "text": "Faleminderit që po gjeni kohë. Dua të shoh nëse kalimi në një nivel më të lartë kursi do të kishte kuptim. Në kursin aktual i kuptoj shpejt detyrat, por kam nevojë për më shumë ushtrim në të folur të lirë dhe në arsyetime më të gjata." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nennt den Wunsch, aber auch die konkrete Lernlücke. Das wirkt realistisch und nicht fordernd.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer names the wish, but also the concrete learning gap. That sounds realistic and not demanding." },
+                { "language": "fa", "text": "خوب: پاسخ خواسته را می‌گوید، اما شکاف یادگیری مشخص را هم نام می‌برد. این واقع‌بینانه است و حالت مطالبه‌گر ندارد." },
+                { "language": "ar", "text": "جيد: تذكر الإجابة الرغبة، لكنها تذكر أيضاً فجوة التعلم المحددة. هذا يبدو واقعياً وغير متطلب." },
+                { "language": "tr", "text": "İyi: cevap isteği söylüyor, ama somut öğrenme açığını da belirtiyor. Bu gerçekçi ve talepkâr olmayan bir tonda." },
+                { "language": "ru", "text": "Хорошо: ответ называет желание, но также конкретный учебный пробел. Это звучит реалистично и не требовательно." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە خواستەکە ناو دەبات، بەڵام کەلێنی دیاریکراوی فێربوونیش دەڵێت. ئەمە واقیعی و نە داواکاریی زۆر دەردەکەوێت." },
+                { "language": "kmr", "text": "Baş e: bersiv daxwazê dibêje, lê kêmasiya fêrbûnê ya diyar jî nav dike. Ev rastîn û ne pir daxwazkar xuya dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź nazywa życzenie, ale też konkretną lukę w nauce. Brzmi to realistycznie, a nie roszczeniowo." },
+                { "language": "ro", "text": "Bine: răspunsul numește dorința, dar și lacuna concretă de învățare. Sună realist și nu revendicativ." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmend dëshirën, por edhe boshllëkun konkret në të mësuar. Kjo tingëllon realiste dhe jo kërkuese." }
+              ],
+              "explanationKey": "b2-course-level-balanced-request"
+            },
+            {
+              "id": "weak-entitled",
+              "text": "Der Kurs ist mir zu einfach. Ich möchte sofort in die nächste Stufe wechseln.",
+              "translations": [
+                { "language": "en", "text": "The course is too easy for me. I want to move to the next level immediately." },
+                { "language": "fa", "text": "این دوره برای من خیلی آسان است. می‌خواهم فوراً به سطح بعدی بروم." },
+                { "language": "ar", "text": "الدورة سهلة جداً بالنسبة لي. أريد الانتقال فوراً إلى المستوى التالي." },
+                { "language": "tr", "text": "Kurs benim için fazla kolay. Hemen bir sonraki seviyeye geçmek istiyorum." },
+                { "language": "ru", "text": "Курс для меня слишком легкий. Я хочу сразу перейти на следующий уровень." },
+                { "language": "ckb", "text": "کۆرسەکە بۆ من زۆر ئاسانە. دەمەوێت دەستبەجێ بچمە ئاستی داهاتوو." },
+                { "language": "kmr", "text": "Kurs ji bo min pir hêsan e. Ez dixwazim tavilê biçim asta din." },
+                { "language": "pl", "text": "Kurs jest dla mnie zbyt łatwy. Chcę od razu przejść na następny poziom." },
+                { "language": "ro", "text": "Cursul este prea ușor pentru mine. Vreau să trec imediat la nivelul următor." },
+                { "language": "sq", "text": "Kursi është shumë i lehtë për mua. Dua të kaloj menjëherë në nivelin tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu direkt: Die Antwort nennt den Wunsch, aber keine Lernziele, Belege oder realistische Prüfung des Risikos.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too direct: the answer names the wish, but no learning goals, evidence, or realistic risk check." },
+                { "language": "fa", "text": "زیادی مستقیم است: پاسخ خواسته را می‌گوید، اما هدف یادگیری، شواهد یا بررسی واقع‌بینانه‌ی ریسک ندارد." },
+                { "language": "ar", "text": "مباشر جداً: تذكر الإجابة الرغبة، لكنها لا تذكر أهداف التعلم أو الأدلة أو فحصاً واقعياً للمخاطر." },
+                { "language": "tr", "text": "Fazla doğrudan: cevap isteği söylüyor, ama öğrenme hedefi, kanıt veya gerçekçi risk kontrolü yok." },
+                { "language": "ru", "text": "Слишком прямо: ответ называет желание, но не учебные цели, доказательства или реалистичную проверку риска." },
+                { "language": "ckb", "text": "زۆر ڕاستەوخۆیە: وەڵامەکە خواستەکە دەڵێت، بەڵام ئامانجی فێربوون، بەڵگە یان پشکنینی واقیعیی مەترسی نییە." },
+                { "language": "kmr", "text": "Pir rasterast e: bersiv daxwazê dibêje, lê armancên fêrbûnê, delîl an kontrola metirsiyê ya rastîn tune ye." },
+                { "language": "pl", "text": "Zbyt bezpośrednio: odpowiedź podaje życzenie, ale nie cele nauki, dowody ani realistyczną ocenę ryzyka." },
+                { "language": "ro", "text": "Prea direct: răspunsul numește dorința, dar nu oferă obiective de învățare, dovezi sau verificarea realistă a riscului." },
+                { "language": "sq", "text": "Shumë e drejtpërdrejtë: përgjigjja përmend dëshirën, por jo qëllime mësimore, prova ose kontroll realist të rrezikut." }
+              ],
+              "explanationKey": "b2-course-level-avoid-entitled-request"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct-evidence-and-gap",
+              "text": "Ja. Bei den letzten drei Schreibaufgaben hatte ich fast keine Korrekturen, und im Einstufungstest lag ich knapp unter der nächsten Stufe. Gleichzeitig merke ich, dass mir Diskussionen mit mehreren Argumenten noch schwerfallen.",
+              "translations": [
+                { "language": "en", "text": "Yes. In the last three writing tasks I had almost no corrections, and in the placement test I was just below the next level. At the same time, I notice that discussions with several arguments are still difficult for me." },
+                { "language": "fa", "text": "بله. در سه تمرین نوشتاری اخیر تقریباً هیچ اصلاحی نداشتم و در آزمون تعیین سطح کمی پایین‌تر از سطح بعدی بودم. هم‌زمان می‌بینم که بحث‌هایی با چند دلیل هنوز برایم سخت هستند." },
+                { "language": "ar", "text": "نعم. في آخر ثلاث مهام كتابية لم تكن لدي تقريباً أي تصحيحات، وفي اختبار تحديد المستوى كنت أقل قليلاً من المستوى التالي. وفي الوقت نفسه ألاحظ أن النقاشات التي تتضمن عدة حجج ما زالت صعبة علي." },
+                { "language": "tr", "text": "Evet. Son üç yazma görevinde neredeyse hiç düzeltmem yoktu ve seviye belirleme sınavında bir sonraki seviyenin hemen altındaydım. Aynı zamanda birkaç argüman içeren tartışmaların hâlâ bana zor geldiğini fark ediyorum." },
+                { "language": "ru", "text": "Да. В последних трех письменных заданиях у меня почти не было исправлений, а в вступительном тесте я был чуть ниже следующего уровня. В то же время я замечаю, что дискуссии с несколькими аргументами мне еще даются трудно." },
+                { "language": "ckb", "text": "بەڵێ. لە سێ ئەرکی نووسینی دواییدا نزیکەی هیچ ڕاستکردنەوەیەکم نەبوو، و لە تاقیکردنەوەی دیاریکردنی ئاستدا کەمێک خوار ئاستی داهاتوو بووم. لە هەمان کاتدا تێدەگەم کە گفتوگۆ بە چەند پاساوەوە هێشتا بۆم قورسە." },
+                { "language": "kmr", "text": "Erê. Di sê peywirên nivîsandinê yên dawî de hema hema tu rastkirinên min tune bûn, û di azmûna destnîşankirina astê de ez hinekî li bin asta din bûm. Di heman demê de ez dibînim ku nîqaşên bi çend sedeman hîn ji min re dijwar in." },
+                { "language": "pl", "text": "Tak. W ostatnich trzech zadaniach pisemnych miałem prawie żadnych poprawek, a w teście poziomującym byłem tuż poniżej następnego poziomu. Jednocześnie widzę, że dyskusje z kilkoma argumentami nadal sprawiają mi trudność." },
+                { "language": "ro", "text": "Da. La ultimele trei sarcini de scriere am avut aproape nicio corectură, iar la testul de nivel am fost puțin sub nivelul următor. În același timp observ că discuțiile cu mai multe argumente îmi sunt încă dificile." },
+                { "language": "sq", "text": "Po. Në tri detyrat e fundit me shkrim pata pothuajse asnjë korrigjim, dhe në testin e nivelit isha pak nën nivelin tjetër. Në të njëjtën kohë vërej se diskutimet me disa argumente janë ende të vështira për mua." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort verbindet Belege mit einer ehrlichen Schwäche. Das macht den Wechselwunsch glaubwürdig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer connects evidence with an honest weakness. That makes the request for change credible." },
+                { "language": "fa", "text": "خوب: پاسخ شواهد را با یک ضعف صادقانه پیوند می‌دهد. این درخواست تغییر را معتبر می‌کند." },
+                { "language": "ar", "text": "جيد: تربط الإجابة الأدلة بضعف صادق. هذا يجعل طلب التغيير موثوقاً." },
+                { "language": "tr", "text": "İyi: cevap kanıtları dürüst bir zayıflıkla ilişkilendiriyor. Bu değişiklik isteğini güvenilir kılıyor." },
+                { "language": "ru", "text": "Хорошо: ответ связывает доказательства с честной слабостью. Это делает просьбу о переходе убедительной." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە بەڵگەکان بە لاوازییەکی ڕاستگۆیانە دەبەستێتەوە. ئەمە خواستی گۆڕینەکە باوەڕپێکراو دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv delîlan bi lawaziyeke rastgoyane ve girê dide. Ev daxwaza guhertinê bawerbar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź łączy dowody ze szczerą słabością. To czyni prośbę o zmianę wiarygodną." },
+                { "language": "ro", "text": "Bine: răspunsul leagă dovezile de o slăbiciune sinceră. Asta face cererea de schimbare credibilă." },
+                { "language": "sq", "text": "Mirë: përgjigjja lidh provat me një dobësi të sinqertë. Kjo e bën kërkesën për ndryshim të besueshme." }
+              ],
+              "explanationKey": "b2-course-level-evidence-with-gap"
+            },
+            {
+              "id": "weak-only-test-score",
+              "text": "Ich war im Test fast gut genug für die nächste Stufe. Deshalb denke ich, dass ich wechseln sollte.",
+              "translations": [
+                { "language": "en", "text": "I was almost good enough for the next level in the test. That is why I think I should change." },
+                { "language": "fa", "text": "در آزمون تقریباً برای سطح بعدی کافی بودم. برای همین فکر می‌کنم باید تغییر سطح بدهم." },
+                { "language": "ar", "text": "كنت في الاختبار قريباً من المستوى التالي. لذلك أعتقد أنني يجب أن أغير المستوى." },
+                { "language": "tr", "text": "Sınavda bir sonraki seviye için neredeyse yeterliydim. Bu yüzden değişmem gerektiğini düşünüyorum." },
+                { "language": "ru", "text": "В тесте мне почти хватило для следующего уровня. Поэтому я думаю, что должен перейти." },
+                { "language": "ckb", "text": "لە تاقیکردنەوەکەدا نزیک بووم بۆ ئاستی داهاتوو بەس بم. بۆیە پێم وایە دەبێت بگۆڕم." },
+                { "language": "kmr", "text": "Di azmûnê de ez hema hema ji bo asta din têr bûm. Ji ber vê yekê ez difikirim ku divê biguherim." },
+                { "language": "pl", "text": "W teście byłem prawie wystarczająco dobry na następny poziom. Dlatego myślę, że powinienem zmienić." },
+                { "language": "ro", "text": "La test am fost aproape suficient de bun pentru nivelul următor. De aceea cred că ar trebui să schimb." },
+                { "language": "sq", "text": "Në test isha pothuajse mjaftueshëm mirë për nivelin tjetër. Prandaj mendoj se duhet të ndryshoj." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Ein Testergebnis allein reicht selten; Unterrichtsbelege und Lernziel machen die Begründung stärker.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: one test result alone is rarely enough; classroom evidence and a learning goal make the justification stronger." },
+                { "language": "fa", "text": "ناقص است: فقط یک نتیجه‌ی آزمون معمولاً کافی نیست؛ شواهد کلاسی و هدف یادگیری دلیل را قوی‌تر می‌کند." },
+                { "language": "ar", "text": "غير مكتمل: نتيجة اختبار واحدة وحدها نادراً ما تكفي؛ الأدلة من الدرس وهدف التعلم يجعلان التبرير أقوى." },
+                { "language": "tr", "text": "Eksik: tek bir sınav sonucu çoğu zaman yetmez; dersten kanıtlar ve öğrenme hedefi gerekçeyi güçlendirir." },
+                { "language": "ru", "text": "Неполно: одного результата теста редко достаточно; доказательства с занятий и учебная цель делают обоснование сильнее." },
+                { "language": "ckb", "text": "ناتەواوە: تەنها ئەنجامی تاقیکردنەوەیەک زۆرجار بەس نییە؛ بەڵگەی وانە و ئامانجی فێربوون پاساوەکە بەهێزتر دەکەن." },
+                { "language": "kmr", "text": "Netemam e: encama tenê ya azmûnê gelek caran têr nake; delîlên ji dersê û armanca fêrbûnê sedemê bihêztir dikin." },
+                { "language": "pl", "text": "Niepełne: sam wynik testu rzadko wystarcza; dowody z zajęć i cel nauki wzmacniają uzasadnienie." },
+                { "language": "ro", "text": "Incomplet: un singur rezultat de test rareori ajunge; dovezile din lecții și obiectivul de învățare întăresc justificarea." },
+                { "language": "sq", "text": "E paplotë: vetëm një rezultat testi rrallë mjafton; provat nga mësimi dhe qëllimi i të mësuarit e forcojnë arsyetimin." }
+              ],
+              "explanationKey": "b2-course-level-test-alone-not-enough"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct-trial-solution",
+              "text": "Mir ist das Risiko bewusst. Deshalb würde ich keinen sofortigen festen Wechsel verlangen, sondern zuerst eine Probestunde besuchen. Danach könnten wir gemeinsam entscheiden, ob der Wechsel wirklich passt.",
+              "translations": [
+                { "language": "en", "text": "I am aware of the risk. That is why I would not demand an immediate permanent change, but would first attend a trial lesson. After that we could decide together whether the change really fits." },
+                { "language": "fa", "text": "از این ریسک آگاه هستم. برای همین تغییر قطعی و فوری نمی‌خواهم، بلکه اول در یک جلسه‌ی آزمایشی شرکت می‌کنم. بعد از آن می‌توانیم با هم تصمیم بگیریم که آیا تغییر واقعاً مناسب است یا نه." },
+                { "language": "ar", "text": "أنا واعٍ بهذا الخطر. لذلك لا أطلب تغييراً ثابتاً فورياً، بل أود أولاً حضور حصة تجريبية. بعد ذلك يمكننا أن نقرر معاً هل يناسبني التغيير فعلاً." },
+                { "language": "tr", "text": "Bu riskin farkındayım. Bu yüzden hemen kalıcı bir değişiklik talep etmiyorum; önce bir deneme dersine katılmak isterim. Sonrasında değişikliğin gerçekten uygun olup olmadığına birlikte karar verebiliriz." },
+                { "language": "ru", "text": "Я осознаю этот риск. Поэтому я не требую немедленного постоянного перехода, а сначала хотел бы посетить пробное занятие. После этого мы могли бы вместе решить, действительно ли переход подходит." },
+                { "language": "ckb", "text": "من ئاگاداری ئەو مەترسییەم. بۆیە داوای گۆڕینی هەمیشەیی دەستبەجێ ناکەم، بەڵکو سەرەتا دەمەوێت لە دانیشتنێکی تاقیکاریدا بەشداری بکەم. پاشان دەتوانین پێکەوە بڕیار بدەین ئایا گۆڕینەکە بەڕاستی گونجاوە یان نا." },
+                { "language": "kmr", "text": "Ez ji vê metirsiyê agahdar im. Ji ber vê yekê ez guhertineke mayînde ya tavilê naxwazim, lê pêşî dixwazim beşdarî derseke ceribandinê bibim. Paşê em dikarin bi hev re biryar bidin ka guhertin bi rastî guncav e an na." },
+                { "language": "pl", "text": "Jestem świadomy tego ryzyka. Dlatego nie domagam się od razu stałej zmiany, tylko najpierw chciałbym wziąć udział w lekcji próbnej. Potem moglibyśmy wspólnie zdecydować, czy zmiana naprawdę pasuje." },
+                { "language": "ro", "text": "Sunt conștient de acest risc. De aceea nu aș cere o schimbare definitivă imediată, ci aș participa mai întâi la o lecție de probă. După aceea am putea decide împreună dacă schimbarea se potrivește cu adevărat." },
+                { "language": "sq", "text": "Jam i vetëdijshëm për këtë rrezik. Prandaj nuk do të kërkoja menjëherë një ndryshim të përhershëm, por fillimisht do të merrja pjesë në një orë prove. Pastaj mund të vendosim së bashku nëse ndryshimi përshtatet vërtet." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort nimmt das Risiko ernst und bietet eine reversible Lösung an.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer takes the risk seriously and offers a reversible solution." },
+                { "language": "fa", "text": "خوب: پاسخ ریسک را جدی می‌گیرد و راه‌حلی قابل برگشت پیشنهاد می‌کند." },
+                { "language": "ar", "text": "جيد: تأخذ الإجابة الخطر بجدية وتقدم حلاً قابلاً للتراجع." },
+                { "language": "tr", "text": "İyi: cevap riski ciddiye alıyor ve geri döndürülebilir bir çözüm sunuyor." },
+                { "language": "ru", "text": "Хорошо: ответ серьезно относится к риску и предлагает обратимое решение." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە مەترسییەکە بە جدی وەردەگرێت و چارەسەرێکی قابل گەڕانەوە پێشنیار دەکات." },
+                { "language": "kmr", "text": "Baş e: bersiv metirsiyê cidî digire û çareseriyeke vegerbar pêşniyar dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź traktuje ryzyko poważnie i proponuje odwracalne rozwiązanie." },
+                { "language": "ro", "text": "Bine: răspunsul ia riscul în serios și oferă o soluție reversibilă." },
+                { "language": "sq", "text": "Mirë: përgjigjja e merr rrezikun seriozisht dhe ofron një zgjidhje të kthyeshme." }
+              ],
+              "explanationKey": "b2-course-level-reversible-trial"
+            },
+            {
+              "id": "weak-dismiss-risk",
+              "text": "Ich glaube nicht, dass das ein Problem wird. Wenn es schwerer ist, lerne ich eben schneller.",
+              "translations": [
+                { "language": "en", "text": "I do not think that will be a problem. If it is harder, I will simply learn faster." },
+                { "language": "fa", "text": "فکر نمی‌کنم مشکلی باشد. اگر سخت‌تر باشد، خب سریع‌تر یاد می‌گیرم." },
+                { "language": "ar", "text": "لا أعتقد أن ذلك سيكون مشكلة. إذا كان أصعب، فسأتعلم ببساطة أسرع." },
+                { "language": "tr", "text": "Bunun sorun olacağını sanmıyorum. Daha zor olursa daha hızlı öğrenirim." },
+                { "language": "ru", "text": "Я не думаю, что это будет проблемой. Если будет сложнее, я просто буду учиться быстрее." },
+                { "language": "ckb", "text": "پێم وانەبێت ئەمە کێشە بێت. ئەگەر قورستر بوو، خێراتر فێر دەبم." },
+                { "language": "kmr", "text": "Ez nafikirim ku ev bibe pirsgirêk. Ger dijwartir be, ez zûtir fêr dibim." },
+                { "language": "pl", "text": "Nie sądzę, żeby to był problem. Jeśli będzie trudniej, po prostu szybciej się nauczę." },
+                { "language": "ro", "text": "Nu cred că va fi o problemă. Dacă va fi mai greu, voi învăța pur și simplu mai repede." },
+                { "language": "sq", "text": "Nuk mendoj se do të jetë problem. Nëse është më e vështirë, thjesht do të mësoj më shpejt." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu optimistisch: Die Antwort wirkt motiviert, aber sie zeigt keinen konkreten Plan für das höhere Tempo.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too optimistic: the answer sounds motivated, but it shows no concrete plan for the higher pace." },
+                { "language": "fa", "text": "زیادی خوش‌بینانه است: پاسخ انگیزه نشان می‌دهد، اما برنامه‌ی مشخصی برای سرعت بالاتر ندارد." },
+                { "language": "ar", "text": "متفائل جداً: تبدو الإجابة متحمسة، لكنها لا تُظهر خطة محددة للوتيرة الأعلى." },
+                { "language": "tr", "text": "Fazla iyimser: cevap motive görünüyor, ancak daha yüksek tempo için somut plan göstermiyor." },
+                { "language": "ru", "text": "Слишком оптимистично: ответ звучит мотивированно, но не показывает конкретного плана для более высокого темпа." },
+                { "language": "ckb", "text": "زۆر گەشبینانەیە: وەڵامەکە هاندەر دەردەکەوێت، بەڵام پلانی دیاریکراو بۆ خێرایی بەرزتر نیشان نادات." },
+                { "language": "kmr", "text": "Pir hêvîdar e: bersiv bi motîvasyon xuya dike, lê ji bo lezê bilindtir planeke diyar nîşan nade." },
+                { "language": "pl", "text": "Zbyt optymistycznie: odpowiedź brzmi motywująco, ale nie pokazuje konkretnego planu na wyższe tempo." },
+                { "language": "ro", "text": "Prea optimist: răspunsul sună motivat, dar nu arată un plan concret pentru ritmul mai ridicat." },
+                { "language": "sq", "text": "Shumë optimiste: përgjigjja tingëllon e motivuar, por nuk tregon një plan konkret për ritmin më të lartë." }
+              ],
+              "explanationKey": "b2-course-level-plan-for-risk"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct-criteria",
+              "text": "Für mich wäre entscheidend, ob ich dem Unterricht grundsätzlich folgen kann und ob ich in der Diskussion mindestens zwei eigene Beiträge sinnvoll einbringen kann. Wenn ich komplett überfordert bin, bleibe ich lieber im aktuellen Kurs.",
+              "translations": [
+                { "language": "en", "text": "For me, the decisive point would be whether I can basically follow the lesson and whether I can contribute at least two meaningful points in the discussion. If I am completely overwhelmed, I would rather stay in the current course." },
+                { "language": "fa", "text": "برای من تعیین‌کننده این است که آیا در اصل می‌توانم درس را دنبال کنم و آیا در بحث حداقل دو مشارکت معنادار داشته باشم. اگر کاملاً تحت فشار باشم، ترجیح می‌دهم در دوره‌ی فعلی بمانم." },
+                { "language": "ar", "text": "بالنسبة لي سيكون الأمر الحاسم هو ما إذا كنت أستطيع متابعة الدرس بشكل عام، وما إذا كنت أستطيع تقديم مشاركتين مفيدتين على الأقل في النقاش. إذا كنت مرهقاً تماماً، فأفضّل البقاء في الدورة الحالية." },
+                { "language": "tr", "text": "Benim için belirleyici olan, dersi genel olarak takip edip edemeyeceğim ve tartışmada en az iki anlamlı katkı sunup sunamayacağımdır. Tamamen zorlanırsam mevcut kursta kalmayı tercih ederim." },
+                { "language": "ru", "text": "Для меня решающим было бы, смогу ли я в целом следить за занятием и внести в дискуссию как минимум два содержательных вклада. Если я буду полностью перегружен, я предпочту остаться в текущем курсе." },
+                { "language": "ckb", "text": "بۆ من گرنگترین شت ئەوە دەبێت ئایا بە گشتی دەتوانم وانەکە شوێن بکەوم و لە گفتوگۆدا لانیکەم دوو بەشداری مانادار بخەمەڕوو یان نا. ئەگەر بە تەواوی لە توانام بەرزتر بوو، پێم باشترە لە کۆرسی ئێستا بمێنمەوە." },
+                { "language": "kmr", "text": "Ji bo min tişta girîng ew e ka ez dikarim bi giştî dersê bişopînim û di nîqaşê de herî kêm du beşdariyên watedar bikim an na. Ger ez bi temamî zêde bar bibim, ez tercîh dikim di kursa niha de bimînim." },
+                { "language": "pl", "text": "Dla mnie decydujące byłoby, czy zasadniczo nadążam za lekcją i czy w dyskusji mogę wnieść przynajmniej dwie sensowne wypowiedzi. Jeśli będę całkowicie przeciążony, wolę zostać w obecnym kursie." },
+                { "language": "ro", "text": "Pentru mine ar fi decisiv dacă pot urmări în principiu lecția și dacă pot aduce cel puțin două contribuții relevante în discuție. Dacă sunt complet depășit, prefer să rămân în cursul actual." },
+                { "language": "sq", "text": "Për mua do të ishte vendimtare nëse mund ta ndjek në përgjithësi mësimin dhe nëse mund të jap të paktën dy kontribute kuptimplota në diskutim. Nëse mbingarkohem plotësisht, preferoj të qëndroj në kursin aktual." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort definiert Erfolg und Rückfalloption. Dadurch bleibt die Entscheidung überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer defines success and fallback option. That keeps the decision verifiable." },
+                { "language": "fa", "text": "خوب: پاسخ موفقیت و گزینه‌ی بازگشت را تعریف می‌کند. این تصمیم را قابل ارزیابی نگه می‌دارد." },
+                { "language": "ar", "text": "جيد: تحدد الإجابة النجاح وخيار الرجوع. وبذلك تبقى القرار قابلاً للتقييم." },
+                { "language": "tr", "text": "İyi: cevap başarıyı ve geri dönüş seçeneğini tanımlıyor. Böylece karar değerlendirilebilir kalıyor." },
+                { "language": "ru", "text": "Хорошо: ответ определяет успех и запасной вариант. Благодаря этому решение остается проверяемым." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە سەرکەوتن و هەڵبژاردەی گەڕانەوە دیاری دەکات. بەمە بڕیارەکە قابل هەڵسەنگاندن دەمێنێتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv serkeftin û vebijarka vegerê diyar dike. Bi vî awayî biryar tê nirxandin dimîne." },
+                { "language": "pl", "text": "Dobrze: odpowiedź definiuje sukces i opcję powrotu. Dzięki temu decyzja pozostaje możliwa do oceny." },
+                { "language": "ro", "text": "Bine: răspunsul definește succesul și opțiunea de revenire. Astfel decizia rămâne verificabilă." },
+                { "language": "sq", "text": "Mirë: përgjigjja përcakton suksesin dhe mundësinë e kthimit. Kështu vendimi mbetet i vlerësueshëm." }
+              ],
+              "explanationKey": "b2-course-level-clear-criteria"
+            },
+            {
+              "id": "weak-vague-criteria",
+              "text": "Ich werde nach der Probestunde einfach sehen, ob es mir gefällt.",
+              "translations": [
+                { "language": "en", "text": "After the trial lesson, I will simply see whether I like it." },
+                { "language": "fa", "text": "بعد از جلسه‌ی آزمایشی فقط می‌بینم که از آن خوشم می‌آید یا نه." },
+                { "language": "ar", "text": "بعد الحصة التجريبية سأرى ببساطة هل يعجبني الأمر أم لا." },
+                { "language": "tr", "text": "Deneme dersinden sonra sadece hoşuma gidip gitmediğine bakarım." },
+                { "language": "ru", "text": "После пробного занятия я просто посмотрю, понравится ли мне." },
+                { "language": "ckb", "text": "پاش دانیشتنی تاقیکاری تەنها دەبینم پێم خۆشە یان نا." },
+                { "language": "kmr", "text": "Piştî dersa ceribandinê ez tenê dibînim ka ji min re xweş e an na." },
+                { "language": "pl", "text": "Po lekcji próbnej po prostu zobaczę, czy mi się spodoba." },
+                { "language": "ro", "text": "După lecția de probă voi vedea pur și simplu dacă îmi place." },
+                { "language": "sq", "text": "Pas orës së provës thjesht do të shoh nëse më pëlqen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage: Sympathie reicht nicht; bei B2 sollte ein beobachtbares Kriterium genannt werden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: liking it is not enough; at B2 an observable criterion should be named." },
+                { "language": "fa", "text": "زیادی مبهم است: خوش آمدن کافی نیست؛ در سطح B2 باید معیار قابل مشاهده گفته شود." },
+                { "language": "ar", "text": "غامض جداً: الإعجاب لا يكفي؛ في مستوى B2 ينبغي ذكر معيار قابل للملاحظة." },
+                { "language": "tr", "text": "Fazla belirsiz: hoşlanmak yetmez; B2 düzeyinde gözlemlenebilir bir ölçüt belirtilmelidir." },
+                { "language": "ru", "text": "Слишком расплывчато: симпатии недостаточно; на уровне B2 нужно назвать наблюдаемый критерий." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: خۆشبوون بەس نییە؛ لە ئاستی B2 دەبێت پێوەرێکی قابل تێبینیکردن ناو ببرێت." },
+                { "language": "kmr", "text": "Pir nezelal e: xweşhatin têr nake; di asta B2 de divê pîvaneke tê dîtin bê gotin." },
+                { "language": "pl", "text": "Zbyt niejasne: samo podobanie się nie wystarczy; na poziomie B2 trzeba podać obserwowalne kryterium." },
+                { "language": "ro", "text": "Prea vag: faptul că vă place nu ajunge; la nivel B2 trebuie numit un criteriu observabil." },
+                { "language": "sq", "text": "Shumë e paqartë: të pëlqyerit nuk mjafton; në nivel B2 duhet përmendur një kriter i vëzhgueshëm." }
+              ],
+              "explanationKey": "b2-course-level-vague-criteria"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct-trial-summary",
+              "text": "Das klingt fair. Dann nehme ich nächste Woche an der Probestunde teil, achte auf Verständnis und aktive Beiträge und bespreche danach mit Ihnen, ob ein Antrag auf Kurswechsel sinnvoll ist.",
+              "translations": [
+                { "language": "en", "text": "That sounds fair. Then I will attend the trial lesson next week, pay attention to comprehension and active contributions, and afterward discuss with you whether a request for a course change makes sense." },
+                { "language": "fa", "text": "این عادلانه به نظر می‌رسد. پس هفته‌ی آینده در جلسه‌ی آزمایشی شرکت می‌کنم، به فهم درس و مشارکت فعال توجه می‌کنم و بعد با شما بررسی می‌کنم که آیا درخواست تغییر دوره منطقی است یا نه." },
+                { "language": "ar", "text": "يبدو ذلك عادلاً. إذن سأحضر الحصة التجريبية الأسبوع القادم، وأنتبه إلى الفهم والمشاركات النشطة، ثم أناقش معك بعد ذلك ما إذا كان طلب تغيير الدورة مناسباً." },
+                { "language": "tr", "text": "Bu adil görünüyor. O halde gelecek hafta deneme dersine katılacağım, anlama ve aktif katkılarıma dikkat edeceğim ve sonrasında kurs değişikliği başvurusunun mantıklı olup olmadığını sizinle görüşeceğim." },
+                { "language": "ru", "text": "Это звучит справедливо. Тогда на следующей неделе я посещу пробное занятие, обращу внимание на понимание и активные вклады, а затем обсужу с вами, имеет ли смысл заявление на смену курса." },
+                { "language": "ckb", "text": "ئەمە دادپەروەرانە دەردەکەوێت. کەواتە هەفتەی داهاتوو لە دانیشتنی تاقیکاریدا بەشداری دەکەم، سەرنج دەدەم بە تێگەیشتن و بەشدارییە چالاکەکان، و پاشان لەگەڵت باس دەکەم ئایا داواکاری گۆڕینی کۆرس مانادارە یان نا." },
+                { "language": "kmr", "text": "Ev adil xuya dike. Wê demê ez hefteya bê beşdarî dersa ceribandinê dibim, balê didim têgihiştin û beşdariyên çalak, û paşê bi we re diaxivim ka daxwaza guhertina kursê maqûl e an na." },
+                { "language": "pl", "text": "To brzmi fair. W przyszłym tygodniu wezmę więc udział w lekcji próbnej, zwrócę uwagę na rozumienie i aktywne wypowiedzi, a potem omówię z panem, czy wniosek o zmianę kursu ma sens." },
+                { "language": "ro", "text": "Sună corect. Atunci voi participa săptămâna viitoare la lecția de probă, voi urmări înțelegerea și contribuțiile active, iar după aceea voi discuta cu dumneavoastră dacă o cerere de schimbare a cursului are sens." },
+                { "language": "sq", "text": "Kjo duket e drejtë. Atëherë javën tjetër do të marr pjesë në orën e provës, do t’i kushtoj vëmendje kuptimit dhe kontributeve aktive, dhe pastaj do të diskutoj me ju nëse kërkesa për ndryshim kursi ka kuptim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Die Antwort fasst Termin, Kriterien und Entscheidungsschritt klar zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: the answer clearly summarizes the appointment, criteria, and decision step." },
+                { "language": "fa", "text": "خوب: پاسخ زمان، معیارها و مرحله‌ی تصمیم‌گیری را روشن خلاصه می‌کند." },
+                { "language": "ar", "text": "جيد: تلخص الإجابة الموعد والمعايير وخطوة القرار بوضوح." },
+                { "language": "tr", "text": "İyi: cevap randevuyu, ölçütleri ve karar adımını net biçimde özetliyor." },
+                { "language": "ru", "text": "Хорошо: ответ ясно подводит итог встрече, критериям и шагу решения." },
+                { "language": "ckb", "text": "باشە: وەڵامەکە کات، پێوەرەکان و هەنگاوی بڕیاردان بە ڕوونی کورت دەکاتەوە." },
+                { "language": "kmr", "text": "Baş e: bersiv dem, pîvan û gavê biryarê bi zelalî kurt dike." },
+                { "language": "pl", "text": "Dobrze: odpowiedź jasno podsumowuje termin, kryteria i krok decyzyjny." },
+                { "language": "ro", "text": "Bine: răspunsul rezumă clar întâlnirea, criteriile și pasul de decizie." },
+                { "language": "sq", "text": "Mirë: përgjigjja përmbledh qartë takimin, kriteret dhe hapin e vendimit." }
+              ],
+              "explanationKey": "b2-course-level-clear-summary"
+            },
+            {
+              "id": "weak-thanks-only",
+              "text": "Vielen Dank. Dann komme ich nächste Woche einfach vorbei.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will simply come by next week." },
+                { "language": "fa", "text": "خیلی ممنون. پس هفته‌ی آینده فقط می‌آیم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأحضر ببساطة الأسبوع القادم." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O halde gelecek hafta sadece gelirim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я просто приду на следующей неделе." },
+                { "language": "ckb", "text": "زۆر سوپاس. کەواتە هەفتەی داهاتوو تەنها دێم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez hefteya bê tenê têm." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie po prostu przyjdę w przyszłym tygodniu." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci vin pur și simplu săptămâna viitoare." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë thjesht do të vij javën tjetër." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort ist höflich, aber sie wiederholt weder Kriterien noch den Entscheidungsschritt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: the answer is polite, but it repeats neither the criteria nor the decision step." },
+                { "language": "fa", "text": "زیادی کوتاه است: پاسخ مؤدبانه است، اما نه معیارها را تکرار می‌کند و نه مرحله‌ی تصمیم‌گیری را." },
+                { "language": "ar", "text": "قصير جداً: الإجابة مهذبة، لكنها لا تكرر المعايير ولا خطوة القرار." },
+                { "language": "tr", "text": "Fazla kısa: cevap kibar, ancak ne ölçütleri ne de karar adımını tekrar ediyor." },
+                { "language": "ru", "text": "Слишком кратко: ответ вежливый, но не повторяет ни критерии, ни шаг решения." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە ڕێزدارە، بەڵام نە پێوەرەکان دووبارە دەکاتەوە نە هەنگاوی بڕیاردان." },
+                { "language": "kmr", "text": "Pir kurt e: bersiv bi rêz e, lê ne pîvanan û ne jî gavê biryarê dubare dike." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź jest uprzejma, ale nie powtarza ani kryteriów, ani kroku decyzyjnego." },
+                { "language": "ro", "text": "Prea scurt: răspunsul este politicos, dar nu repetă nici criteriile, nici pasul de decizie." },
+                { "language": "sq", "text": "Shumë e shkurtër: përgjigjja është e sjellshme, por nuk përsërit as kriteret, as hapin e vendimit." }
+              ],
+              "explanationKey": "b2-course-level-summary-too-short"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "balanced-request",
+          "text": "Ein überzeugender Wechselwunsch verbindet Ziel, aktuelle Stärke und fehlende Herausforderung.",
+          "translations": [
+            { "language": "en", "text": "A convincing request to change level connects goal, current strength, and missing challenge." },
+            { "language": "fa", "text": "درخواست قانع‌کننده برای تغییر سطح، هدف، توانایی فعلی و چالشِ کمبود را به هم وصل می‌کند." },
+            { "language": "ar", "text": "طلب تغيير المستوى المقنع يربط بين الهدف والقوة الحالية والتحدي الناقص." },
+            { "language": "tr", "text": "İkna edici bir seviye değişikliği isteği hedefi, mevcut gücü ve eksik meydan okumayı birbirine bağlar." },
+            { "language": "ru", "text": "Убедительная просьба о смене уровня связывает цель, текущую сильную сторону и недостающий вызов." },
+            { "language": "ckb", "text": "داوای قانعکەری گۆڕینی ئاست ئامانج، توانای ئێستا و کەمبوونی ئاستەنگ پێکەوە دەبەستێتەوە." },
+            { "language": "kmr", "text": "Daxwaza bawerker a guhertina astê armanc, hêza niha û kêmasiya astengiyê bi hev ve girê dide." },
+            { "language": "pl", "text": "Przekonująca prośba o zmianę poziomu łączy cel, obecną mocną stronę i brakujące wyzwanie." },
+            { "language": "ro", "text": "O cerere convingătoare de schimbare a nivelului leagă obiectivul, punctul forte actual și provocarea lipsă." },
+            { "language": "sq", "text": "Një kërkesë bindëse për ndryshim niveli lidh qëllimin, forcën aktuale dhe sfidën që mungon." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "evidence",
+          "text": "Nennen Sie nicht nur ein Testergebnis. Unterrichtsbelege und eine konkrete Lernlücke machen die Begründung belastbarer.",
+          "translations": [
+            { "language": "en", "text": "Do not name only a test result. Classroom evidence and a concrete learning gap make the justification more robust." },
+            { "language": "fa", "text": "فقط نتیجه‌ی آزمون را نگو. شواهد کلاسی و یک شکاف یادگیری مشخص، دلیل را محکم‌تر می‌کند." },
+            { "language": "ar", "text": "لا تذكر نتيجة اختبار فقط. الأدلة من الدرس وفجوة تعلم محددة تجعل التبرير أقوى." },
+            { "language": "tr", "text": "Sadece sınav sonucu söylemeyin. Dersten kanıtlar ve somut bir öğrenme açığı gerekçeyi daha sağlam yapar." },
+            { "language": "ru", "text": "Не называйте только результат теста. Доказательства с занятий и конкретный учебный пробел делают обоснование надежнее." },
+            { "language": "ckb", "text": "تەنها ئەنجامی تاقیکردنەوە مەڵێ. بەڵگەی وانە و کەلێنی دیاریکراوی فێربوون پاساوەکە بەهێزتر دەکەن." },
+            { "language": "kmr", "text": "Tenê encama azmûnê nebêjin. Delîlên ji dersê û kêmasiyeke fêrbûnê ya diyar sedemê bihêztir dikin." },
+            { "language": "pl", "text": "Nie podawaj tylko wyniku testu. Dowody z zajęć i konkretna luka w nauce czynią uzasadnienie solidniejszym." },
+            { "language": "ro", "text": "Nu numiți doar un rezultat de test. Dovezile din lecții și o lacună concretă de învățare fac justificarea mai solidă." },
+            { "language": "sq", "text": "Mos përmend vetëm rezultatin e testit. Provat nga ora dhe një boshllëk konkret mësimor e bëjnë arsyetimin më të qëndrueshëm." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "risk-management",
+          "text": "Bei einem Kurswechsel wirkt ein Probetermin professioneller als eine sofortige Forderung.",
+          "translations": [
+            { "language": "en", "text": "For a course level change, a trial appointment sounds more professional than an immediate demand." },
+            { "language": "fa", "text": "برای تغییر سطح دوره، جلسه‌ی آزمایشی حرفه‌ای‌تر از مطالبه‌ی فوری به نظر می‌رسد." },
+            { "language": "ar", "text": "عند تغيير مستوى الدورة يبدو الموعد التجريبي أكثر مهنية من طلب فوري." },
+            { "language": "tr", "text": "Kurs seviyesi değişikliğinde deneme randevusu, hemen talep etmekten daha profesyonel görünür." },
+            { "language": "ru", "text": "При смене уровня курса пробная встреча выглядит профессиональнее, чем немедленное требование." },
+            { "language": "ckb", "text": "لە گۆڕینی ئاستی کۆرسدا دانیشتنی تاقیکاری پیشەییتر دەردەکەوێت وەک داواکارییەکی دەستبەجێ." },
+            { "language": "kmr", "text": "Di guhertina asta kursê de demeke ceribandinê ji daxwazeke tavilê profesyoneltir xuya dike." },
+            { "language": "pl", "text": "Przy zmianie poziomu kursu termin próbny brzmi bardziej profesjonalnie niż natychmiastowe żądanie." },
+            { "language": "ro", "text": "La schimbarea nivelului de curs, o întâlnire de probă sună mai profesionist decât o cerere imediată." },
+            { "language": "sq", "text": "Për ndryshimin e nivelit të kursit, një takim prove tingëllon më profesional sesa një kërkesë e menjëhershme." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "decision-summary",
+          "text": "Schließen Sie mit Termin, Beobachtungskriterien und Entscheidungsschritt ab.",
+          "translations": [
+            { "language": "en", "text": "Close with the appointment, observation criteria, and decision step." },
+            { "language": "fa", "text": "با زمان جلسه، معیارهای مشاهده و مرحله‌ی تصمیم‌گیری جمع‌بندی کن." },
+            { "language": "ar", "text": "اختم بالموعد ومعايير الملاحظة وخطوة القرار." },
+            { "language": "tr", "text": "Randevu, gözlem ölçütleri ve karar adımıyla kapatın." },
+            { "language": "ru", "text": "Завершите временем встречи, критериями наблюдения и шагом решения." },
+            { "language": "ckb", "text": "بە کاتی دانیشتن، پێوەرەکانی چاودێری و هەنگاوی بڕیاردان کۆتایی پێبهێنە." },
+            { "language": "kmr", "text": "Bi demê, pîvanên çavdêriyê û gavê biryarê bi dawî bike." },
+            { "language": "pl", "text": "Zakończ terminem, kryteriami obserwacji i krokiem decyzyjnym." },
+            { "language": "ro", "text": "Încheiați cu programarea, criteriile de observație și pasul de decizie." },
+            { "language": "sq", "text": "Mbylle me takimin, kriteret e vëzhgimit dhe hapin e vendimit." }
+          ]
+        }
+      ],
+      "imageSlots": [],
+      "isPublished": true,
+      "sortOrder": 3430
+    }
+  ]
+}

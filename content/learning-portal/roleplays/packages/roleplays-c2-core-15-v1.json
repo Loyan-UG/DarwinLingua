@@ -1,0 +1,745 @@
+{
+  "packageId": "roleplays-c2-core-15-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 15 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 15",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-einen-medienbeitrag-kritisch-einordnen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Medienbeitrag kritisch einordnen",
+      "titleTranslations": [
+        { "language": "en", "text": "Critically classifying a media item" },
+        { "language": "fa", "text": "ارزیابی انتقادی یک محتوای رسانه‌ای" },
+        { "language": "ar", "text": "تقييم مادة إعلامية نقدياً" },
+        { "language": "tr", "text": "Bir medya içeriğini eleştirel biçimde değerlendirmek" },
+        { "language": "ru", "text": "Критически оценить медиаматериал" },
+        { "language": "ckb", "text": "هەڵسەنگاندنی ڕەخنەگرانەی بابەتێکی میدیایی" },
+        { "language": "kmr", "text": "Nirxandina rexneyî ya naveroka medyayê" },
+        { "language": "pl", "text": "Krytyczna ocena materiału medialnego" },
+        { "language": "ro", "text": "Încadrarea critică a unui material media" },
+        { "language": "sq", "text": "Vlerësimi kritik i një materiali mediatik" }
+      ],
+      "description": "In einer Diskussionsgruppe wird ein zugespitzter Online-Beitrag über Veränderungen in der Innenstadt geteilt. Der Beitrag kombiniert eine echte Zahl, eine starke Überschrift, ein emotionales Foto und eine weitreichende Schlussfolgerung. Sie sollen den Beitrag einordnen, ohne ihn pauschal als falsch abzutun oder ungeprüft zu übernehmen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In a discussion group, a pointed online post about changes in the city center is shared. The item combines a real number, a strong headline, an emotional photo, and a far-reaching conclusion. You must classify the item without dismissing it as entirely false or accepting it uncritically." },
+        { "language": "fa", "text": "در یک گروه بحث، یک پست آنلاین تند درباره تغییرات مرکز شهر به اشتراک گذاشته می‌شود. این محتوا یک عدد واقعی، تیتر شدید، عکس احساسی و نتیجه‌گیری گسترده را ترکیب می‌کند. شما باید آن را ارزیابی کنید، بدون اینکه کلی آن را غلط بدانید یا بی‌بررسی بپذیرید." },
+        { "language": "ar", "text": "في مجموعة نقاش، تُشارك مادة إلكترونية حادة حول تغييرات في وسط المدينة. تجمع المادة بين رقم حقيقي، وعنوان قوي، وصورة عاطفية، واستنتاج واسع. عليكم تصنيفها من دون رفضها كلها بوصفها خاطئة أو قبولها بلا تمحيص." },
+        { "language": "tr", "text": "Bir tartışma grubunda şehir merkezindeki değişiklikler hakkında keskin bir çevrimiçi paylaşım dolaşır. İçerik gerçek bir sayı, güçlü bir başlık, duygusal bir fotoğraf ve geniş kapsamlı bir sonuç birleştirir. Bunu bütünüyle yanlış saymadan ya da sorgulamadan kabul etmeden sınıflandırmanız gerekir." },
+        { "language": "ru", "text": "В дискуссионной группе делятся заостренной онлайн-публикацией об изменениях в центре города. Материал сочетает реальную цифру, сильный заголовок, эмоциональную фотографию и далеко идущий вывод. Вам нужно оценить материал, не объявляя его полностью ложным и не принимая без проверки." },
+        { "language": "ckb", "text": "لە گرووپی گفتوگۆدا پۆستێکی ئۆنلاین و توند دەربارەی گۆڕانکارییەکانی ناوەندی شار هاوبەش دەکرێت. بابەتەکە ژمارەیەکی ڕاست، سەردێڕێکی بەهێز، وێنەیەکی هەستیار و دەرئەنجامێکی فراوان پێکەوە دەکات. دەبێت بابەتەکە هەڵبسەنگێنیت، بێ ئەوەی بە گشتی بە هەڵەی دابنێیت یان بێ پشکنین وەریبگریت." },
+        { "language": "kmr", "text": "Di komeke gotûbêjê de nivîsek online a tûj li ser guhertinên navenda bajêr tê parvekirin. Nivîs hejmareke rast, sernivîsek bihêz, wêneyeke hestî û encameke fireh bi hev re dike. Divê hûn wê binirxînin bêyî ku bi giştî wê wekî şaş red bikin an bê kontrol qebûl bikin." },
+        { "language": "pl", "text": "W grupie dyskusyjnej udostępniono zaostrzony wpis internetowy o zmianach w centrum miasta. Materiał łączy prawdziwą liczbę, mocny nagłówek, emocjonalne zdjęcie i daleko idący wniosek. Trzeba go ocenić, nie odrzucając go zbiorczo jako fałszywego ani nie przyjmując bez sprawdzenia." },
+        { "language": "ro", "text": "Într-un grup de discuții este distribuită o postare online incisivă despre schimbări în centrul orașului. Materialul combină o cifră reală, un titlu puternic, o fotografie emoțională și o concluzie amplă. Trebuie să îl încadrați fără să îl respingeți în bloc ca fals sau să îl acceptați neverificat." },
+        { "language": "sq", "text": "Në një grup diskutimi shpërndahet një postim online i mprehtë për ndryshimet në qendrën e qytetit. Materiali kombinon një shifër reale, një titull të fortë, një foto emocionale dhe një përfundim të gjerë. Duhet ta vlerësoni pa e hedhur poshtë të gjithin si të rremë dhe pa e pranuar pa verifikim." }
+      ],
+      "learnerGoal": "Einen Medienbeitrag auf C2-Niveau einordnen: Fakt, Auswahl, Deutung, Bildwirkung, Quelle und offene Unsicherheit trennen; vorsichtig widersprechen; und eine faire Prüfstrategie vorschlagen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Classify a media item at C2 level: separate fact, selection, interpretation, image effect, source, and open uncertainty; disagree carefully; and propose a fair verification strategy." },
+        { "language": "fa", "text": "یک محتوای رسانه‌ای را در سطح C2 ارزیابی کنید: واقعیت، انتخاب داده، تفسیر، اثر تصویر، منبع و عدم قطعیت باز را از هم جدا کنید؛ با احتیاط مخالفت کنید؛ و راهبردی منصفانه برای بررسی پیشنهاد دهید." },
+        { "language": "ar", "text": "صنفوا مادة إعلامية على مستوى C2: افصلوا بين الواقعة، والاختيار، والتفسير، وأثر الصورة، والمصدر، وعدم اليقين المفتوح؛ واعترضوا بحذر؛ واقترحوا استراتيجية تحقق عادلة." },
+        { "language": "tr", "text": "Bir medya içeriğini C2 düzeyinde değerlendirin: olgu, seçim, yorum, görsel etki, kaynak ve açık belirsizliği ayırın; dikkatli itiraz edin; adil bir doğrulama stratejisi önerin." },
+        { "language": "ru", "text": "Оценить медиаматериал на уровне C2: разделить факт, отбор, интерпретацию, эффект изображения, источник и открытую неопределенность; осторожно возразить; предложить справедливую стратегию проверки." },
+        { "language": "ckb", "text": "بابەتێکی میدیایی لە ئاستی C2 هەڵبسەنگێنە: ڕاستی، هەڵبژاردن، لێکدانەوە، کاریگەری وێنە، سەرچاوە و نادڵنیایی کراوە لێک جیا بکە؛ بە وریایی ناڕەزایی دەرببڕە؛ و ستراتیژی پشکنینی دادپەروەرانە پێشنیار بکە." },
+        { "language": "kmr", "text": "Naveroka medyayê di asta C2 de binirxînin: rastî, hilbijartin, şîrove, bandora wêneyê, çavkanî û nezelaliya vekirî ji hev veqetînin; bi baldarî nerazîbûnê bibêjin; û stratejiyeke kontrolkirina dadwerane pêşniyar bikin." },
+        { "language": "pl", "text": "Ocenić materiał medialny na poziomie C2: oddzielić fakt, dobór, interpretację, efekt obrazu, źródło i otwartą niepewność; ostrożnie się nie zgodzić; zaproponować uczciwą strategię weryfikacji." },
+        { "language": "ro", "text": "Încadrați un material media la nivel C2: separați fapt, selecție, interpretare, efectul imaginii, sursa și incertitudinea deschisă; contraziceți prudent; și propuneți o strategie corectă de verificare." },
+        { "language": "sq", "text": "Vlerësoni një material mediatik në nivel C2: ndani faktin, përzgjedhjen, interpretimin, efektin e imazhit, burimin dhe pasigurinë e hapur; kundërshtoni me kujdes; dhe propozoni një strategji të drejtë verifikimi." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-discussion",
+      "topics": ["education-and-training", "everyday-life"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "give-opinion",
+      "interactionMode": "group-work",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 15,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsteilnahme",
+          "translations": [
+            { "language": "en", "text": "Discussion participant" },
+            { "language": "fa", "text": "شرکت‌کننده در بحث" },
+            { "language": "ar", "text": "مشارك في النقاش" },
+            { "language": "tr", "text": "Tartışma katılımcısı" },
+            { "language": "ru", "text": "Участник дискуссии" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê" },
+            { "language": "pl", "text": "Uczestnik dyskusji" },
+            { "language": "ro", "text": "Participant la discuție" },
+            { "language": "sq", "text": "Pjesëmarrës në diskutim" }
+          ]
+        },
+        {
+          "roleKey": "moderation",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مجری" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderator" }
+          ]
+        },
+        {
+          "roleKey": "quick-reader",
+          "displayName": "Schnelle Leserin",
+          "translations": [
+            { "language": "en", "text": "Quick reader" },
+            { "language": "fa", "text": "خواننده سریع" },
+            { "language": "ar", "text": "قارئة سريعة" },
+            { "language": "tr", "text": "Hızlı okur" },
+            { "language": "ru", "text": "Быстрая читательница" },
+            { "language": "ckb", "text": "خوێنەری خێرا" },
+            { "language": "kmr", "text": "Xwendevanê lezgîn" },
+            { "language": "pl", "text": "Szybka czytelniczka" },
+            { "language": "ro", "text": "Cititoare grăbită" },
+            { "language": "sq", "text": "Lexuese e shpejtë" }
+          ]
+        },
+        {
+          "roleKey": "media-coach",
+          "displayName": "Mediencoach",
+          "translations": [
+            { "language": "en", "text": "Media coach" },
+            { "language": "fa", "text": "مربی سواد رسانه‌ای" },
+            { "language": "ar", "text": "مدرب إعلامي" },
+            { "language": "tr", "text": "Medya koçu" },
+            { "language": "ru", "text": "Тренер по медиаграмотности" },
+            { "language": "ckb", "text": "ڕاهێنەری میدیا" },
+            { "language": "kmr", "text": "Rahênerê medyayê" },
+            { "language": "pl", "text": "Trener medialny" },
+            { "language": "ro", "text": "Coach media" },
+            { "language": "sq", "text": "Trajner mediatik" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderation",
+          "baseText": "In der Gruppe wurde ein Beitrag geteilt: „Neue Zahlen beweisen: Die Innenstadt stirbt wegen der Verkehrsberuhigung.“ Wie würden Sie den Beitrag einordnen, bevor wir ihn weiterverbreiten?",
+          "translations": [
+            { "language": "en", "text": "A post was shared in the group: “New figures prove: the city center is dying because of traffic calming.” How would you classify the item before we share it further?" },
+            { "language": "fa", "text": "در گروه پستی به اشتراک گذاشته شد: «آمار جدید ثابت می‌کند: مرکز شهر به دلیل آرام‌سازی ترافیک در حال نابودی است.» قبل از بازنشر، آن را چطور ارزیابی می‌کنید؟" },
+            { "language": "ar", "text": "تمت مشاركة منشور في المجموعة: «أرقام جديدة تثبت أن وسط المدينة يموت بسبب تهدئة المرور.» كيف تصنفون المادة قبل أن ننشرها أكثر؟" },
+            { "language": "tr", "text": "Grupta bir paylaşım yapıldı: “Yeni rakamlar kanıtlıyor: şehir merkezi trafik sakinleştirme yüzünden ölüyor.” Bunu daha fazla paylaşmadan önce nasıl değerlendirirsiniz?" },
+            { "language": "ru", "text": "В группе поделились постом: «Новые цифры доказывают: центр города умирает из-за снижения трафика». Как вы оцените материал, прежде чем мы будем распространять его дальше?" },
+            { "language": "ckb", "text": "لە گرووپەکەدا پۆستێک هاوبەش کرا: «ژمارە نوێیەکان دەسەلمێنن: ناوەندی شار بەهۆی ئارامکردنەوەی هاتوچۆوە دەمرێت.» پێش ئەوەی زیاتر بڵاوی بکەینەوە، چۆن هەڵیدەسەنگێنن؟" },
+            { "language": "kmr", "text": "Di komê de nivîsek hat parvekirin: “Hejmarên nû diselimînin: navenda bajêr ji ber aramkirina trafîkê dimire.” Berî ku em wê zêdetir belav bikin, hûn wê çawa dinirxînin?" },
+            { "language": "pl", "text": "W grupie udostępniono wpis: „Nowe dane dowodzą: centrum miasta umiera przez uspokojenie ruchu”. Jak oceniłby Pan/Pani materiał, zanim udostępnimy go dalej?" },
+            { "language": "ro", "text": "În grup a fost distribuită o postare: „Noile cifre dovedesc: centrul orașului moare din cauza calmării traficului.” Cum ați încadra materialul înainte să îl distribuim mai departe?" },
+            { "language": "sq", "text": "Në grup u shpërnda një postim: “Shifrat e reja vërtetojnë: qendra e qytetit po vdes për shkak të qetësimit të trafikut.” Si do ta vlerësonit materialin para se ta shpërndajmë më tej?" }
+          ],
+          "function": "frame-media-item",
+          "toneNote": "Neutral and analytical."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde zuerst trennen: Die Zahl kann echt sein, die Überschrift ist aber bereits eine Deutung. „Beweisen“ und „stirbt“ sind starke Wörter. Bevor wir zustimmen oder widersprechen, müssten wir prüfen, welche Zahl genau gemeint ist, welcher Zeitraum verglichen wird und ob andere Ursachen ausgeschlossen wurden.",
+          "translations": [
+            { "language": "en", "text": "I would first separate things: the figure may be real, but the headline is already an interpretation. “Prove” and “is dying” are strong words. Before we agree or disagree, we need to check exactly which figure is meant, which period is compared, and whether other causes were ruled out." },
+            { "language": "fa", "text": "اول این‌ها را جدا می‌کنم: عدد ممکن است واقعی باشد، اما تیتر خودش یک تفسیر است. «ثابت می‌کند» و «در حال نابودی است» واژه‌های قوی‌اند. قبل از موافقت یا مخالفت باید بررسی کنیم دقیقاً کدام عدد منظور است، چه دوره‌ای مقایسه شده و آیا علت‌های دیگر کنار گذاشته شده‌اند یا نه." },
+            { "language": "ar", "text": "سأفصل أولاً بين الأمور: قد يكون الرقم حقيقياً، لكن العنوان هو بالفعل تفسير. كلمتا «يثبت» و«يموت» قويتان. قبل أن نوافق أو نعترض، علينا أن نتحقق من الرقم المقصود بدقة، والفترة المقارنة، وما إذا كانت أسباب أخرى قد استُبعدت." },
+            { "language": "tr", "text": "Önce ayırırdım: sayı gerçek olabilir, ama başlık zaten bir yorumdur. “Kanıtlıyor” ve “ölüyor” güçlü kelimeler. Kabul etmeden ya da karşı çıkmadan önce tam olarak hangi sayının kastedildiğini, hangi dönemin karşılaştırıldığını ve başka nedenlerin dışlanıp dışlanmadığını kontrol etmeliyiz." },
+            { "language": "ru", "text": "Я бы сначала разделил уровни: цифра может быть реальной, но заголовок уже является интерпретацией. «Доказывает» и «умирает» — сильные слова. Прежде чем соглашаться или возражать, нужно проверить, какая именно цифра имеется в виду, какой период сравнивается и были ли исключены другие причины." },
+            { "language": "ckb", "text": "سەرەتا جیا دەکەمەوە: ژمارەکە دەتوانێت ڕاست بێت، بەڵام سەردێڕەکە خۆی لێکدانەوەیە. «دەسەلمێنێت» و «دەمرێت» وشەی بەهێزن. پێش ئەوەی ڕازی بین یان ناڕازی، دەبێت بزانین کام ژمارە بە وردی مەبەستە، کام ماوە بەراورد کراوە و ئایا هۆکاری تر لابراوە یان نا." },
+            { "language": "kmr", "text": "Ez ê pêşî tiştan ji hev veqetînim: hejmar dikare rast be, lê sernivîs jixwe şîroveyek e. “Diselimîne” û “dimire” peyvên xurt in. Berî ku em razî bibin an dijî bin, divê em kontrol bikin ka kîjan hejmar bi hûrgilî tê gotin, kîjan dem tê berhevkirin û gelo sedemên din hatine derxistin." },
+            { "language": "pl", "text": "Najpierw bym rozdzielił poziomy: liczba może być prawdziwa, ale nagłówek jest już interpretacją. „Dowodzi” i „umiera” to mocne słowa. Zanim się zgodzimy lub sprzeciwimy, trzeba sprawdzić, o jaką dokładnie liczbę chodzi, jaki okres porównano i czy wykluczono inne przyczyny." },
+            { "language": "ro", "text": "Aș separa mai întâi lucrurile: cifra poate fi reală, dar titlul este deja o interpretare. „Dovedește” și „moare” sunt cuvinte puternice. Înainte să fim de acord sau să contrazicem, trebuie să verificăm exact ce cifră este vizată, ce perioadă se compară și dacă au fost excluse alte cauze." },
+            { "language": "sq", "text": "Së pari do t'i ndaja gjërat: shifra mund të jetë reale, por titulli është tashmë interpretim. “Vërteton” dhe “po vdes” janë fjalë të forta. Para se të pajtohemi ose të kundërshtojmë, duhet të kontrollojmë cilën shifër saktësisht ka parasysh, çfarë periudhe krahasohet dhe nëse janë përjashtuar shkaqe të tjera." }
+          ],
+          "function": "separate-fact-and-framing",
+          "toneNote": "Analytical and cautious."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "quick-reader",
+          "baseText": "Aber wenn die Zahl stimmt, ist die Aussage doch im Kern richtig. Sonst würden sie die Zahl ja nicht verwenden.",
+          "translations": [
+            { "language": "en", "text": "But if the number is correct, the statement is basically right. Otherwise they would not use the number." },
+            { "language": "fa", "text": "اما اگر عدد درست باشد، اصل حرف هم درست است. وگرنه از آن عدد استفاده نمی‌کردند." },
+            { "language": "ar", "text": "لكن إذا كان الرقم صحيحاً، فالمقولة صحيحة في جوهرها. وإلا لما استخدموا الرقم." },
+            { "language": "tr", "text": "Ama sayı doğruysa ifade özünde doğrudur. Yoksa o sayıyı kullanmazlardı." },
+            { "language": "ru", "text": "Но если цифра верная, то утверждение в основе правильно. Иначе они бы эту цифру не использовали." },
+            { "language": "ckb", "text": "بەڵام ئەگەر ژمارەکە ڕاست بێت، ئەوا قسەکە لە بنەڕەتدا ڕاستە. ئەگەر نا، ئەو ژمارەیان بەکار نەدەهێنا." },
+            { "language": "kmr", "text": "Lê heke hejmar rast be, gotin di bingehê xwe de rast e. Wekî din wan ew hejmar bikar nedianî." },
+            { "language": "pl", "text": "Ale jeśli liczba jest prawdziwa, to teza jest w gruncie rzeczy słuszna. Inaczej nie używaliby tej liczby." },
+            { "language": "ro", "text": "Dar dacă cifra este corectă, afirmația este în esență corectă. Altfel nu ar folosi cifra." },
+            { "language": "sq", "text": "Por nëse shifra është e saktë, atëherë pohimi në thelb është i drejtë. Përndryshe nuk do ta përdornin atë shifër." }
+          ],
+          "function": "push-simplification",
+          "toneNote": "Common media-reading shortcut."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Eine richtige Zahl kann in eine schiefe Erzählung eingebaut werden. Entscheidend ist, welche Bezugsgröße fehlt: absolute Besucherzahlen, Umsatz, Leerstand oder nur einzelne Zählpunkte? Außerdem sagt eine Korrelation noch nicht, dass die Verkehrsberuhigung die Ursache ist.",
+          "translations": [
+            { "language": "en", "text": "A correct number can be built into a skewed narrative. What matters is which reference point is missing: total visitor numbers, revenue, vacancy, or only individual counting points? Also, correlation does not yet mean that traffic calming is the cause." },
+            { "language": "fa", "text": "یک عدد درست می‌تواند در روایت کج‌وکوله‌ای قرار بگیرد. مهم این است که کدام مبنای مقایسه کم است: تعداد کل بازدیدکنندگان، درآمد، مغازه‌های خالی یا فقط چند نقطه شمارش؟ علاوه بر این، همبستگی هنوز به معنای این نیست که آرام‌سازی ترافیک علت است." },
+            { "language": "ar", "text": "يمكن إدخال رقم صحيح في سردية مائلة. المهم هو ما المرجع الناقص: العدد الإجمالي للزوار، أو الإيراد، أو الشواغر، أم مجرد نقاط عد فردية؟ إضافة إلى ذلك، الارتباط لا يعني بعد أن تهدئة المرور هي السبب." },
+            { "language": "tr", "text": "Doğru bir sayı çarpık bir anlatının içine yerleştirilebilir. Önemli olan hangi referansın eksik olduğudur: toplam ziyaretçi sayısı mı, ciro mu, boş dükkân oranı mı, yoksa sadece tekil sayım noktaları mı? Ayrıca korelasyon, trafik sakinleştirmenin neden olduğu anlamına gelmez." },
+            { "language": "ru", "text": "Верная цифра может быть встроена в перекошенный рассказ. Важно, какая точка отсчета отсутствует: общее число посетителей, выручка, пустующие помещения или только отдельные точки подсчета? Кроме того, корреляция еще не означает, что снижение трафика является причиной." },
+            { "language": "ckb", "text": "ژمارەیەکی ڕاست دەتوانرێت لە چیرۆکێکی لاردا دابنرێت. گرنگ ئەوەیە کام بنەمای بەراورد نییە: ژمارەی گشتی سەردانکەران، داهات، شوێنی بەتاڵ یان تەنها خاڵی ژماردنی تاک؟ هەروەها پەیوەندی ژمارەیی هێشتا مانای ئەوە نییە کە ئارامکردنەوەی هاتوچۆ هۆکارەکەیە." },
+            { "language": "kmr", "text": "Hejmareke rast dikare were danîn nav vegotineke xwar. Ya girîng ev e ka kîjan bingehê berhevkirinê tune ye: hejmarên giştî yên serdankeran, hatin, cihên vala an tenê xalên hejmartinê? Her wiha têkilîya hejmarî hîn nabe wateya ku aramkirina trafîkê sedem e." },
+            { "language": "pl", "text": "Prawdziwą liczbę można wbudować w skrzywioną narrację. Kluczowe jest, jakiego punktu odniesienia brakuje: ogólnej liczby odwiedzających, obrotów, pustostanów czy tylko pojedynczych punktów pomiarowych? Poza tym korelacja nie oznacza jeszcze, że uspokojenie ruchu jest przyczyną." },
+            { "language": "ro", "text": "O cifră corectă poate fi integrată într-o narațiune înclinată. Important este ce reper lipsește: numărul total de vizitatori, cifra de afaceri, spațiile goale sau doar puncte individuale de numărare? În plus, corelația nu înseamnă încă faptul că calmarea traficului este cauza." },
+            { "language": "sq", "text": "Një shifër e saktë mund të futet në një narrativë të shtrembër. Vendimtare është çfarë pike referimi mungon: numri i përgjithshëm i vizitorëve, xhiroja, hapësirat bosh apo vetëm pika të veçanta numërimi? Për më tepër, korrelacioni nuk do të thotë ende se qetësimi i trafikut është shkaku." }
+          ],
+          "function": "explain-context-and-causality",
+          "toneNote": "Precise and non-dismissive."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "media-coach",
+          "baseText": "Der Beitrag zeigt ein Foto von einer leeren Einkaufsstraße am frühen Morgen. Wie würden Sie die Bildwirkung einordnen?",
+          "translations": [
+            { "language": "en", "text": "The post shows a photo of an empty shopping street early in the morning. How would you classify the image effect?" },
+            { "language": "fa", "text": "پست عکسی از یک خیابان خرید خالی در صبح زود نشان می‌دهد. اثر تصویری آن را چطور ارزیابی می‌کنید؟" },
+            { "language": "ar", "text": "يعرض المنشور صورة لشارع تسوق فارغ في الصباح الباكر. كيف تقيمون أثر الصورة؟" },
+            { "language": "tr", "text": "Paylaşım sabah erken saatte boş bir alışveriş caddesi fotoğrafı gösteriyor. Görsel etkiyi nasıl değerlendirirsiniz?" },
+            { "language": "ru", "text": "Пост показывает фотографию пустой торговой улицы рано утром. Как вы оцените эффект изображения?" },
+            { "language": "ckb", "text": "پۆستەکە وێنەی شەقامێکی کڕینی بەتاڵ لە بەیانی زوو پیشان دەدات. کاریگەری وێنەکە چۆن هەڵدەسەنگێنن؟" },
+            { "language": "kmr", "text": "Nivîs wêneyê kolaneke kirînê ya vala di sibê zû de nîşan dide. Hûn bandora wêneyê çawa dinirxînin?" },
+            { "language": "pl", "text": "Wpis pokazuje zdjęcie pustej ulicy handlowej wczesnym rankiem. Jak oceniłby Pan/Pani efekt obrazu?" },
+            { "language": "ro", "text": "Postarea arată o fotografie cu o stradă comercială goală dimineața devreme. Cum ați încadra efectul imaginii?" },
+            { "language": "sq", "text": "Postimi tregon një foto të një rruge tregtare bosh herët në mëngjes. Si do ta vlerësonit efektin e imazhit?" }
+          ],
+          "function": "ask-image-framing",
+          "toneNote": "Media-literacy prompt."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Das Foto kann die Stimmung stark prägen, beweist aber wenig, solange Zeitpunkt und Auswahl unklar sind. Ein leerer Ausschnitt am Morgen kann real sein und trotzdem einen falschen Gesamteindruck erzeugen. Ich würde es als emotionales Beispiel behandeln, nicht als eigenständigen Beleg.",
+          "translations": [
+            { "language": "en", "text": "The photo can strongly shape the mood, but proves little as long as timing and selection are unclear. An empty section in the morning can be real and still create a false overall impression. I would treat it as an emotional example, not as independent evidence." },
+            { "language": "fa", "text": "عکس می‌تواند فضای احساسی را شدیداً شکل دهد، اما تا وقتی زمان و انتخاب آن روشن نیست، چیز زیادی ثابت نمی‌کند. یک بخش خالی در صبح می‌تواند واقعی باشد و با این حال برداشت کلی نادرستی بسازد. من آن را نمونه‌ای احساسی می‌دانم، نه شاهد مستقل." },
+            { "language": "ar", "text": "يمكن للصورة أن تؤثر بقوة في الانطباع، لكنها لا تثبت الكثير ما دام التوقيت والاختيار غير واضحين. قد يكون مقطع فارغ في الصباح حقيقياً ومع ذلك يخلق انطباعاً عاماً خاطئاً. سأتعامل معه كمثال عاطفي، لا كدليل مستقل." },
+            { "language": "tr", "text": "Fotoğraf ruh halini güçlü biçimde şekillendirebilir, ancak zaman ve seçim belirsizse çok az şey kanıtlar. Sabah boş bir kesit gerçek olabilir ve yine de yanlış bir genel izlenim yaratabilir. Bunu bağımsız kanıt değil, duygusal bir örnek olarak ele alırdım." },
+            { "language": "ru", "text": "Фотография может сильно задавать настроение, но доказывает мало, пока неясны время и отбор. Пустой фрагмент утром может быть реальным и всё же создавать ложное общее впечатление. Я бы рассматривал его как эмоциональный пример, а не как самостоятельное доказательство." },
+            { "language": "ckb", "text": "وێنەکە دەتوانێت کەشەکە بەهێز دروست بکات، بەڵام تا کات و هەڵبژاردنەکە ناڕوون بێت، کەم شت دەسەلمێنێت. بەشێکی بەتاڵ لە بەیانی دەتوانێت ڕاست بێت و هێشتا تێگەیشتنێکی گشتی هەڵە دروست بکات. من وەک نموونەیەکی هەستیار مامەڵەی لەگەڵ دەکەم، نە وەک بەڵگەی سەربەخۆ." },
+            { "language": "kmr", "text": "Wêne dikare hestê giştî bi hêz çêbike, lê heke dem û hilbijartin nezelal bin, kêm tişt diselimîne. Beşeke vala di sibê de dikare rast be û dîsa jî têgihiştineke giştî ya şaş çêbike. Ez wê wekî mînakeke hestî dibînim, ne wekî delîlek serbixwe." },
+            { "language": "pl", "text": "Zdjęcie może silnie kształtować nastrój, ale niewiele dowodzi, dopóki czas i wybór są niejasne. Pusty fragment rano może być prawdziwy, a mimo to tworzyć fałszywe ogólne wrażenie. Traktowałbym je jako emocjonalny przykład, nie jako samodzielny dowód." },
+            { "language": "ro", "text": "Fotografia poate modela puternic atmosfera, dar dovedește puțin cât timp momentul și selecția sunt neclare. Un cadru gol dimineața poate fi real și totuși poate crea o impresie generală falsă. Aș trata-o ca exemplu emoțional, nu ca dovadă independentă." },
+            { "language": "sq", "text": "Fotoja mund ta formojë fort atmosferën, por vërteton pak për sa kohë koha dhe përzgjedhja janë të paqarta. Një pjesë bosh në mëngjes mund të jetë reale dhe megjithatë të krijojë përshtypje të përgjithshme të gabuar. Do ta trajtoja si shembull emocional, jo si provë të pavarur." }
+          ],
+          "function": "analyze-image-effect",
+          "toneNote": "Separates emotional force from evidence."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "quick-reader",
+          "baseText": "Dann kann man dem Beitrag ja gar nicht trauen. Vielleicht ist das einfach manipulative Berichterstattung.",
+          "translations": [
+            { "language": "en", "text": "Then you cannot trust the post at all. Maybe this is simply manipulative reporting." },
+            { "language": "fa", "text": "پس اصلاً نمی‌شود به پست اعتماد کرد. شاید این فقط گزارشگری دستکاری‌کننده باشد." },
+            { "language": "ar", "text": "إذن لا يمكن الوثوق بالمنشور إطلاقاً. ربما يكون هذا ببساطة تقريراً تلاعبياً." },
+            { "language": "tr", "text": "O zaman paylaşıma hiç güvenilemez. Belki bu sadece manipülatif haberciliktir." },
+            { "language": "ru", "text": "Тогда посту вообще нельзя доверять. Может быть, это просто манипулятивная журналистика." },
+            { "language": "ckb", "text": "ئەوا ناتوانرێت بە پۆستەکە هیچ متمانە بکرێت. ڕەنگە ئەمە تەنها ڕاپۆرتکردنی دەستکاریکەر بێت." },
+            { "language": "kmr", "text": "Wê demê mirov nikare qet baweriyê bi nivîsê bike. Belkî ev tenê ragihandineke manipulatîf be." },
+            { "language": "pl", "text": "W takim razie w ogóle nie można ufać temu wpisowi. Może to po prostu manipulacyjny przekaz." },
+            { "language": "ro", "text": "Atunci nu poți avea deloc încredere în postare. Poate este pur și simplu o relatare manipulatoare." },
+            { "language": "sq", "text": "Atëherë nuk mund t'i besohet fare postimit. Ndoshta është thjesht raportim manipulues." }
+          ],
+          "function": "overcorrect-to-distrust",
+          "toneNote": "Shows a different shortcut: blanket distrust."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Ich wäre mit dem Wort „manipulativ“ vorsichtig, solange wir Absicht und Arbeitsweise nicht kennen. Besser wäre: Der Beitrag ist stark zugespitzt und prüfbedürftig. Wir können Quelle, Originaldaten, Gegenbeispiele und die Rolle der Überschrift prüfen, ohne sofort eine Absicht zu unterstellen.",
+          "translations": [
+            { "language": "en", "text": "I would be careful with the word “manipulative” as long as we do not know intent and working method. Better would be: the item is strongly pointed and needs verification. We can check the source, original data, counterexamples, and the role of the headline without immediately assuming intent." },
+            { "language": "fa", "text": "تا وقتی نیت و روش کار را نمی‌دانیم، با واژه «دستکاری‌کننده» محتاط هستم. بهتر است بگوییم: این محتوا بسیار تند و نیازمند بررسی است. می‌توانیم منبع، داده‌های اصلی، نمونه‌های مخالف و نقش تیتر را بررسی کنیم، بدون اینکه فوراً نیت خاصی نسبت دهیم." },
+            { "language": "ar", "text": "سأكون حذراً مع كلمة «تلاعبية» ما دمنا لا نعرف النية وطريقة العمل. الأفضل أن نقول: المادة حادة جداً وتحتاج إلى تحقق. يمكننا فحص المصدر، والبيانات الأصلية، والأمثلة المضادة، ودور العنوان من دون افتراض نية فوراً." },
+            { "language": "tr", "text": "Niyet ve çalışma yöntemi bilinmediği sürece “manipülatif” kelimesinde dikkatli olurdum. Daha iyisi şu olurdu: içerik çok sivriltilmiş ve kontrol edilmesi gerekiyor. Kaynağı, özgün verileri, karşı örnekleri ve başlığın rolünü hemen niyet varsaymadan inceleyebiliriz." },
+            { "language": "ru", "text": "Я был бы осторожен со словом «манипулятивный», пока мы не знаем намерение и метод работы. Лучше сказать: материал сильно заострен и требует проверки. Мы можем проверить источник, исходные данные, контрпримеры и роль заголовка, не приписывая сразу намерение." },
+            { "language": "ckb", "text": "من لە وشەی «دەستکاریکەر» وریا دەبم تا مەبەست و شێوازی کارکردن نەزانین. باشترە بڵێین: بابەتەکە زۆر توندکراوە و پێویستی بە پشکنینە. دەتوانین سەرچاوە، داتای بنەڕەتی، نموونەی بەرامبەر و ڕۆڵی سەردێڕ بپشکنین، بێ ئەوەی دەستبەجێ مەبەستێک بسەپێنین." },
+            { "language": "kmr", "text": "Ez ê bi peyva “manipulatîf” baldar bim, heya ku em armanc û şêwaza karê nizanin. Çêtir ev e: naverok pir tûj hatiye gotin û pêdivî bi kontrolê heye. Em dikarin çavkanî, daneyên orîjînal, mînakên dijber û rola sernivîsê kontrol bikin bêyî ku yekser armancekê pê ve girê bidin." },
+            { "language": "pl", "text": "Byłbym ostrożny ze słowem „manipulacyjny”, dopóki nie znamy intencji i sposobu pracy. Lepiej powiedzieć: materiał jest mocno zaostrzony i wymaga sprawdzenia. Możemy zbadać źródło, dane pierwotne, kontrprzykłady i rolę nagłówka, nie przypisując od razu intencji." },
+            { "language": "ro", "text": "Aș fi prudent cu termenul „manipulator” cât timp nu cunoaștem intenția și metoda de lucru. Mai bine ar fi: materialul este puternic accentuat și necesită verificare. Putem verifica sursa, datele originale, contraexemplele și rolul titlului fără a presupune imediat o intenție." },
+            { "language": "sq", "text": "Do të isha i kujdesshëm me fjalën “manipulues” për sa kohë nuk njohim qëllimin dhe mënyrën e punës. Më mirë: materiali është shumë i mprehtë dhe ka nevojë për verifikim. Mund të kontrollojmë burimin, të dhënat origjinale, kundërshembujt dhe rolin e titullit pa supozuar menjëherë qëllimin." }
+          ],
+          "function": "avoid-intent-claim",
+          "toneNote": "Criticizes method without overclaiming intent."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "media-coach",
+          "baseText": "Welche nächste Handlung wäre fair: ignorieren, sofort teilen, oder erst gezielt prüfen?",
+          "translations": [
+            { "language": "en", "text": "Which next action would be fair: ignore it, share immediately, or first check it in a targeted way?" },
+            { "language": "fa", "text": "کدام اقدام بعدی منصفانه است: نادیده گرفتن، فوراً بازنشر کردن، یا اول به‌طور هدفمند بررسی کردن؟" },
+            { "language": "ar", "text": "ما التصرف التالي العادل: تجاهله، أم نشره فوراً، أم التحقق منه أولاً بطريقة هادفة؟" },
+            { "language": "tr", "text": "Hangi sonraki adım adil olur: görmezden gelmek, hemen paylaşmak ya da önce hedefli biçimde kontrol etmek?" },
+            { "language": "ru", "text": "Какое следующее действие будет справедливым: игнорировать, сразу поделиться или сначала целенаправленно проверить?" },
+            { "language": "ckb", "text": "کام هەنگاوی داهاتوو دادپەروەرانەیە: پشتگوێخستن، دەستبەجێ بڵاوکردنەوە، یان سەرەتا بە ئامانجدار پشکنین؟" },
+            { "language": "kmr", "text": "Kîjan gava din dadwerane ye: paşguhkirin, yekser parvekirin, an pêşî bi hedef kontrolkirin?" },
+            { "language": "pl", "text": "Jaki kolejny krok byłby uczciwy: zignorować, natychmiast udostępnić czy najpierw celowo sprawdzić?" },
+            { "language": "ro", "text": "Care acțiune următoare ar fi corectă: să îl ignorăm, să îl distribuim imediat sau să îl verificăm mai întâi țintit?" },
+            { "language": "sq", "text": "Cili veprim i radhës do të ishte i drejtë: ta injorojmë, ta shpërndajmë menjëherë apo ta verifikojmë së pari në mënyrë të synuar?" }
+          ],
+          "function": "ask-next-step",
+          "toneNote": "Pushes toward procedure."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde ihn nicht sofort teilen, aber auch nicht ignorieren. Fair wäre ein Prüfhinweis: Die Zahl kann relevant sein, doch Überschrift, Foto und Kausalbehauptung gehen weiter als die belegte Information. Vor einer Weitergabe sollten wir Originalquelle, Vergleichszeitraum und mindestens eine unabhängige Einordnung prüfen.",
+          "translations": [
+            { "language": "en", "text": "I would not share it immediately, but I would not ignore it either. A fair note would be: the figure may be relevant, but the headline, photo, and causal claim go beyond the documented information. Before sharing, we should check the original source, comparison period, and at least one independent assessment." },
+            { "language": "fa", "text": "من آن را فوراً بازنشر نمی‌کنم، اما نادیده هم نمی‌گیرم. یادداشت منصفانه این است: عدد ممکن است مهم باشد، اما تیتر، عکس و ادعای علّی فراتر از اطلاعات مستند می‌روند. قبل از بازنشر باید منبع اصلی، دوره مقایسه و دست‌کم یک ارزیابی مستقل را بررسی کنیم." },
+            { "language": "ar", "text": "لن أنشره فوراً، لكنني لن أتجاهله أيضاً. الملاحظة العادلة هي: قد يكون الرقم مهماً، لكن العنوان والصورة والادعاء السببي تتجاوز المعلومات الموثقة. قبل النشر، ينبغي أن نتحقق من المصدر الأصلي، وفترة المقارنة، وتقييم مستقل واحد على الأقل." },
+            { "language": "tr", "text": "Hemen paylaşmazdım, ama görmezden de gelmezdim. Adil bir not şu olurdu: sayı önemli olabilir, ancak başlık, fotoğraf ve nedensellik iddiası belgelenmiş bilginin ötesine geçiyor. Paylaşmadan önce özgün kaynağı, karşılaştırma dönemini ve en az bir bağımsız değerlendirmeyi kontrol etmeliyiz." },
+            { "language": "ru", "text": "Я бы не стал сразу делиться, но и не игнорировал бы. Справедливая пометка была бы такой: цифра может быть значимой, но заголовок, фото и причинное утверждение выходят за пределы подтвержденной информации. Перед распространением нужно проверить исходный источник, период сравнения и как минимум одну независимую оценку." },
+            { "language": "ckb", "text": "من دەستبەجێ بڵاوی ناکەمەوە، بەڵام پشتگوێیشی ناخەم. تێبینییەکی دادپەروەرانە ئەمەیە: ژمارەکە دەتوانێت گرنگ بێت، بەڵام سەردێڕ، وێنە و بانگەشەی هۆکارێتی لە زانیاری بەڵگەدار زیاتر دەڕۆن. پێش بڵاوکردنەوە، دەبێت سەرچاوەی بنەڕەتی، ماوەی بەراورد و لانی کەم هەڵسەنگاندنێکی سەربەخۆ بپشکنین." },
+            { "language": "kmr", "text": "Ez ê wê yekser parve nekim, lê paşguh jî nekim. Nîşanek dadwerane ev e: hejmar dikare girîng be, lê sernivîs, wêne û gotina sedemî ji agahiya belgekirî wêdetir diçin. Berî parvekirinê divê em çavkaniya orîjînal, dema berhevkirinê û herî kêm nirxandineke serbixwe kontrol bikin." },
+            { "language": "pl", "text": "Nie udostępniłbym tego od razu, ale też bym nie ignorował. Uczciwa adnotacja brzmiałaby: liczba może być istotna, ale nagłówek, zdjęcie i twierdzenie przyczynowe wychodzą poza udokumentowaną informację. Przed udostępnieniem powinniśmy sprawdzić źródło pierwotne, okres porównania i co najmniej jedną niezależną ocenę." },
+            { "language": "ro", "text": "Nu l-aș distribui imediat, dar nici nu l-aș ignora. O notă corectă ar fi: cifra poate fi relevantă, dar titlul, fotografia și afirmația cauzală merg mai departe decât informația documentată. Înainte de distribuire ar trebui să verificăm sursa originală, perioada de comparație și cel puțin o evaluare independentă." },
+            { "language": "sq", "text": "Nuk do ta shpërndaja menjëherë, por as nuk do ta injoroja. Një shënim i drejtë do të ishte: shifra mund të jetë e rëndësishme, por titulli, fotoja dhe pretendimi shkakësor shkojnë përtej informacionit të dokumentuar. Para shpërndarjes duhet të kontrollojmë burimin origjinal, periudhën e krahasimit dhe të paktën një vlerësim të pavarur." }
+          ],
+          "function": "propose-verification-strategy",
+          "toneNote": "Balanced and procedural."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde zuerst trennen: Die Zahl kann echt sein, die Überschrift ist aber bereits eine Deutung. „Beweisen“ und „stirbt“ sind starke Wörter. Bevor wir zustimmen oder widersprechen, müssten wir prüfen, welche Zahl genau gemeint ist, welcher Zeitraum verglichen wird und ob andere Ursachen ausgeschlossen wurden.",
+              "translations": [
+                { "language": "en", "text": "I would first separate things: the figure may be real, but the headline is already an interpretation. “Prove” and “is dying” are strong words. Before we agree or disagree, we need to check exactly which figure is meant, which period is compared, and whether other causes were ruled out." },
+                { "language": "fa", "text": "اول این‌ها را جدا می‌کنم: عدد ممکن است واقعی باشد، اما تیتر خودش یک تفسیر است. «ثابت می‌کند» و «در حال نابودی است» واژه‌های قوی‌اند. قبل از موافقت یا مخالفت باید بررسی کنیم دقیقاً کدام عدد منظور است، چه دوره‌ای مقایسه شده و آیا علت‌های دیگر کنار گذاشته شده‌اند یا نه." },
+                { "language": "ar", "text": "سأفصل أولاً بين الأمور: قد يكون الرقم حقيقياً، لكن العنوان هو بالفعل تفسير. كلمتا «يثبت» و«يموت» قويتان. قبل أن نوافق أو نعترض، علينا أن نتحقق من الرقم المقصود بدقة، والفترة المقارنة، وما إذا كانت أسباب أخرى قد استُبعدت." },
+                { "language": "tr", "text": "Önce ayırırdım: sayı gerçek olabilir, ama başlık zaten bir yorumdur. “Kanıtlıyor” ve “ölüyor” güçlü kelimeler. Kabul etmeden ya da karşı çıkmadan önce tam olarak hangi sayının kastedildiğini, hangi dönemin karşılaştırıldığını ve başka nedenlerin dışlanıp dışlanmadığını kontrol etmeliyiz." },
+                { "language": "ru", "text": "Я бы сначала разделил уровни: цифра может быть реальной, но заголовок уже является интерпретацией. «Доказывает» и «умирает» — сильные слова. Прежде чем соглашаться или возражать, нужно проверить, какая именно цифра имеется в виду, какой период сравнивается и были ли исключены другие причины." },
+                { "language": "ckb", "text": "سەرەتا جیا دەکەمەوە: ژمارەکە دەتوانێت ڕاست بێت، بەڵام سەردێڕەکە خۆی لێکدانەوەیە. «دەسەلمێنێت» و «دەمرێت» وشەی بەهێزن. پێش ئەوەی ڕازی بین یان ناڕازی، دەبێت بزانین کام ژمارە بە وردی مەبەستە، کام ماوە بەراورد کراوە و ئایا هۆکاری تر لابراوە یان نا." },
+                { "language": "kmr", "text": "Ez ê pêşî tiştan ji hev veqetînim: hejmar dikare rast be, lê sernivîs jixwe şîroveyek e. “Diselimîne” û “dimire” peyvên xurt in. Berî ku em razî bibin an dijî bin, divê em kontrol bikin ka kîjan hejmar bi hûrgilî tê gotin, kîjan dem tê berhevkirin û gelo sedemên din hatine derxistin." },
+                { "language": "pl", "text": "Najpierw bym rozdzielił poziomy: liczba może być prawdziwa, ale nagłówek jest już interpretacją. „Dowodzi” i „umiera” to mocne słowa. Zanim się zgodzimy lub sprzeciwimy, trzeba sprawdzić, o jaką dokładnie liczbę chodzi, jaki okres porównano i czy wykluczono inne przyczyny." },
+                { "language": "ro", "text": "Aș separa mai întâi lucrurile: cifra poate fi reală, dar titlul este deja o interpretare. „Dovedește” și „moare” sunt cuvinte puternice. Înainte să fim de acord sau să contrazicem, trebuie să verificăm exact ce cifră este vizată, ce perioadă se compară și dacă au fost excluse alte cauze." },
+                { "language": "sq", "text": "Së pari do t'i ndaja gjërat: shifra mund të jetë reale, por titulli është tashmë interpretim. “Vërteton” dhe “po vdes” janë fjalë të forta. Para se të pajtohemi ose të kundërshtojmë, duhet të kontrollojmë cilën shifër saktësisht ka parasysh, çfarë periudhe krahasohet dhe nëse janë përjashtuar shkaqe të tjera." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort trennt Fakt, Deutung und Prüfbedarf, statt sofort Zustimmung oder Ablehnung zu signalisieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer separates fact, interpretation, and need for verification instead of immediately signaling agreement or rejection." },
+                { "language": "fa", "text": "قوی است: پاسخ واقعیت، تفسیر و نیاز به بررسی را جدا می‌کند، به‌جای اینکه فوراً موافقت یا رد را اعلام کند." },
+                { "language": "ar", "text": "قوي: يفصل الجواب بين الواقعة والتفسير والحاجة إلى التحقق بدلاً من إعلان الموافقة أو الرفض فوراً." },
+                { "language": "tr", "text": "Güçlü: cevap olgu, yorum ve kontrol ihtiyacını ayırıyor; hemen kabul ya da ret işareti vermiyor." },
+                { "language": "ru", "text": "Сильно: ответ разделяет факт, интерпретацию и необходимость проверки, а не сразу сигнализирует согласие или отказ." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕاستی، لێکدانەوە و پێویستی پشکنین جیا دەکاتەوە، نە ئەوەی دەستبەجێ ڕازیبوون یان ڕەتکردنەوە پیشان بدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv rastî, şîrove û pêdiviya kontrolê ji hev veqetîne, ne ku yekser razîbûn an redkirin nîşan bide." },
+                { "language": "pl", "text": "Mocne: odpowiedź oddziela fakt, interpretację i potrzebę weryfikacji, zamiast od razu sygnalizować zgodę lub odrzucenie." },
+                { "language": "ro", "text": "Puternic: răspunsul separă faptul, interpretarea și nevoia de verificare, în loc să semnaleze imediat acord sau respingere." },
+                { "language": "sq", "text": "E fortë: përgjigjja ndan faktin, interpretimin dhe nevojën për verifikim, në vend që të sinjalizojë menjëherë pajtim ose refuzim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Beitrag ist wahrscheinlich übertrieben, aber er zeigt sicher, dass es ein Problem gibt.",
+              "translations": [
+                { "language": "en", "text": "The post is probably exaggerated, but it surely shows that there is a problem." },
+                { "language": "fa", "text": "پست احتمالاً اغراق‌آمیز است، اما حتماً نشان می‌دهد که مشکلی وجود دارد." },
+                { "language": "ar", "text": "المنشور على الأرجح مبالغ فيه، لكنه بالتأكيد يظهر وجود مشكلة." },
+                { "language": "tr", "text": "Paylaşım muhtemelen abartılı, ama kesinlikle bir sorun olduğunu gösteriyor." },
+                { "language": "ru", "text": "Пост, вероятно, преувеличен, но он точно показывает, что проблема есть." },
+                { "language": "ckb", "text": "پۆستەکە بە ئەگەرێکی زۆر زیادەڕۆیە، بەڵام بە دڵنیایی پیشان دەدات کێشەیەک هەیە." },
+                { "language": "kmr", "text": "Nivîs dibe ku zêde hatibe gotin, lê bê guman nîşan dide ku pirsgirêkek heye." },
+                { "language": "pl", "text": "Wpis jest pewnie przesadzony, ale na pewno pokazuje, że istnieje problem." },
+                { "language": "ro", "text": "Postarea este probabil exagerată, dar sigur arată că există o problemă." },
+                { "language": "sq", "text": "Postimi ndoshta është i ekzagjeruar, por patjetër tregon se ka një problem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu ungenau. Die Antwort ersetzt Prüfung durch eine vorsichtige Vermutung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too imprecise. The answer replaces verification with a cautious guess." },
+                { "language": "fa", "text": "قابل تصور است، اما بیش از حد مبهم. پاسخ بررسی را با حدس محتاطانه جایگزین می‌کند." },
+                { "language": "ar", "text": "معقول ظاهرياً، لكنه غير دقيق بما يكفي. يستبدل الجواب التحقق بتخمين حذر." },
+                { "language": "tr", "text": "Akla yatkın, ama fazla belirsiz. Cevap doğrulamanın yerine temkinli bir tahmin koyuyor." },
+                { "language": "ru", "text": "Правдоподобно, но слишком неточно. Ответ заменяет проверку осторожным предположением." },
+                { "language": "ckb", "text": "قابل قبووڵە، بەڵام زۆر ناوردە. وەڵامەکە پشکنین بە گومانێکی وریایانە جێگرەوە دەکات." },
+                { "language": "kmr", "text": "Wateyê wê heye, lê pir nezelal e. Bersiv kontrolkirinê bi texmîneke baldar diguherîne." },
+                { "language": "pl", "text": "Wiarygodne, ale zbyt nieprecyzyjne. Odpowiedź zastępuje weryfikację ostrożnym przypuszczeniem." },
+                { "language": "ro", "text": "Plauzibil, dar prea imprecis. Răspunsul înlocuiește verificarea cu o presupunere prudentă." },
+                { "language": "sq", "text": "E besueshme, por tepër e pasaktë. Përgjigjja zëvendëson verifikimin me një hamendësim të kujdesshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eine richtige Zahl kann in eine schiefe Erzählung eingebaut werden. Entscheidend ist, welche Bezugsgröße fehlt: absolute Besucherzahlen, Umsatz, Leerstand oder nur einzelne Zählpunkte? Außerdem sagt eine Korrelation noch nicht, dass die Verkehrsberuhigung die Ursache ist.",
+              "translations": [
+                { "language": "en", "text": "A correct number can be built into a skewed narrative. What matters is which reference point is missing: total visitor numbers, revenue, vacancy, or only individual counting points? Also, correlation does not yet mean that traffic calming is the cause." },
+                { "language": "fa", "text": "یک عدد درست می‌تواند در روایت کج‌وکوله‌ای قرار بگیرد. مهم این است که کدام مبنای مقایسه کم است: تعداد کل بازدیدکنندگان، درآمد، مغازه‌های خالی یا فقط چند نقطه شمارش؟ علاوه بر این، همبستگی هنوز به معنای این نیست که آرام‌سازی ترافیک علت است." },
+                { "language": "ar", "text": "يمكن إدخال رقم صحيح في سردية مائلة. المهم هو ما المرجع الناقص: العدد الإجمالي للزوار، أو الإيراد، أو الشواغر، أم مجرد نقاط عد فردية؟ إضافة إلى ذلك، الارتباط لا يعني بعد أن تهدئة المرور هي السبب." },
+                { "language": "tr", "text": "Doğru bir sayı çarpık bir anlatının içine yerleştirilebilir. Önemli olan hangi referansın eksik olduğudur: toplam ziyaretçi sayısı mı, ciro mu, boş dükkân oranı mı, yoksa sadece tekil sayım noktaları mı? Ayrıca korelasyon, trafik sakinleştirmenin neden olduğu anlamına gelmez." },
+                { "language": "ru", "text": "Верная цифра может быть встроена в перекошенный рассказ. Важно, какая точка отсчета отсутствует: общее число посетителей, выручка, пустующие помещения или только отдельные точки подсчета? Кроме того, корреляция еще не означает, что снижение трафика является причиной." },
+                { "language": "ckb", "text": "ژمارەیەکی ڕاست دەتوانرێت لە چیرۆکێکی لاردا دابنرێت. گرنگ ئەوەیە کام بنەمای بەراورد نییە: ژمارەی گشتی سەردانکەران، داهات، شوێنی بەتاڵ یان تەنها خاڵی ژماردنی تاک؟ هەروەها پەیوەندی ژمارەیی هێشتا مانای ئەوە نییە کە ئارامکردنەوەی هاتوچۆ هۆکارەکەیە." },
+                { "language": "kmr", "text": "Hejmareke rast dikare were danîn nav vegotineke xwar. Ya girîng ev e ka kîjan bingehê berhevkirinê tune ye: hejmarên giştî yên serdankeran, hatin, cihên vala an tenê xalên hejmartinê? Her wiha têkilîya hejmarî hîn nabe wateya ku aramkirina trafîkê sedem e." },
+                { "language": "pl", "text": "Prawdziwą liczbę można wbudować w skrzywioną narrację. Kluczowe jest, jakiego punktu odniesienia brakuje: ogólnej liczby odwiedzających, obrotów, pustostanów czy tylko pojedynczych punktów pomiarowych? Poza tym korelacja nie oznacza jeszcze, że uspokojenie ruchu jest przyczyną." },
+                { "language": "ro", "text": "O cifră corectă poate fi integrată într-o narațiune înclinată. Important este ce reper lipsește: numărul total de vizitatori, cifra de afaceri, spațiile goale sau doar puncte individuale de numărare? În plus, corelația nu înseamnă încă faptul că calmarea traficului este cauza." },
+                { "language": "sq", "text": "Një shifër e saktë mund të futet në një narrativë të shtrembër. Vendimtare është çfarë pike referimi mungon: numri i përgjithshëm i vizitorëve, xhiroja, hapësirat bosh apo vetëm pika të veçanta numërimi? Për më tepër, korrelacioni nuk do të thotë ende se qetësimi i trafikut është shkaku." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt, warum eine korrekte Zahl ohne Bezugsrahmen und Kausalprüfung irreführen kann.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer shows why a correct number can mislead without a frame of reference and causal check." },
+                { "language": "fa", "text": "قوی است: پاسخ نشان می‌دهد چرا یک عدد درست بدون چارچوب مقایسه و بررسی علّی می‌تواند گمراه‌کننده باشد." },
+                { "language": "ar", "text": "قوي: يوضح الجواب لماذا قد يضلل رقم صحيح من دون إطار مرجعي وفحص سببي." },
+                { "language": "tr", "text": "Güçlü: cevap, doğru bir sayının referans çerçevesi ve nedensellik kontrolü olmadan neden yanıltabileceğini gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ показывает, почему правильная цифра может вводить в заблуждение без рамки сравнения и проверки причинности." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پیشان دەدات بۆچی ژمارەی ڕاست بەبێ چوارچێوەی بەراورد و پشکنینی هۆکارێتی دەتوانێت گمڕاکەر بێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv nîşan dide çima hejmareke rast bê çarçoveya berhevkirinê û kontrola sedemî dikare şaş rêberî bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje, dlaczego prawidłowa liczba bez ramy odniesienia i sprawdzenia przyczynowości może wprowadzać w błąd." },
+                { "language": "ro", "text": "Puternic: răspunsul arată de ce o cifră corectă poate induce în eroare fără cadru de referință și verificare cauzală." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon pse një shifër e saktë mund të çorientojë pa kornizë reference dhe kontroll shkakësor." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man müsste vielleicht schauen, ob es noch andere Zahlen gibt.",
+              "translations": [
+                { "language": "en", "text": "One might perhaps need to see whether there are other numbers." },
+                { "language": "fa", "text": "شاید باید دید آیا عددهای دیگری هم وجود دارد یا نه." },
+                { "language": "ar", "text": "ربما ينبغي النظر فيما إذا كانت هناك أرقام أخرى." },
+                { "language": "tr", "text": "Belki başka sayılar var mı diye bakmak gerekir." },
+                { "language": "ru", "text": "Возможно, нужно посмотреть, есть ли другие цифры." },
+                { "language": "ckb", "text": "ڕەنگە پێویست بێت ببینرێت ئایا ژمارەی تر هەیە یان نا." },
+                { "language": "kmr", "text": "Dibe ku divê mirov bibîne gelo hejmarên din hene an na." },
+                { "language": "pl", "text": "Może trzeba by sprawdzić, czy są jeszcze inne liczby." },
+                { "language": "ro", "text": "Poate ar trebui văzut dacă există și alte cifre." },
+                { "language": "sq", "text": "Ndoshta duhet parë nëse ka edhe shifra të tjera." }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht falsch, aber zu schwach. Für C2 muss benannt werden, welche Bezugsgrößen und Kausalfragen fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not wrong, but too weak. At C2, you must name which reference points and causal questions are missing." },
+                { "language": "fa", "text": "غلط نیست، اما ضعیف است. در سطح C2 باید مشخص شود کدام مبناهای مقایسه و پرسش‌های علّی کم هستند." },
+                { "language": "ar", "text": "ليس خطأ، لكنه ضعيف جداً. في مستوى C2 يجب تسمية المراجع والأسئلة السببية الناقصة." },
+                { "language": "tr", "text": "Yanlış değil, ama fazla zayıf. C2 düzeyinde hangi referansların ve nedensellik sorularının eksik olduğu belirtilmelidir." },
+                { "language": "ru", "text": "Не неверно, но слишком слабо. На C2 нужно назвать, какие точки отсчета и причинные вопросы отсутствуют." },
+                { "language": "ckb", "text": "هەڵە نییە، بەڵام زۆر لاوازە. لە C2 دەبێت ناوی ئەو بنەما و پرسیارە هۆکارییانە ببرێت کە کەمە." },
+                { "language": "kmr", "text": "Ne şaş e, lê pir lawaz e. Di C2 de divê mirov binav bike ka kîjan bingeh û pirsên sedemî kêm in." },
+                { "language": "pl", "text": "Nie jest błędne, ale zbyt słabe. Na C2 trzeba nazwać, jakich punktów odniesienia i pytań przyczynowych brakuje." },
+                { "language": "ro", "text": "Nu este greșit, dar este prea slab. La C2 trebuie numite reperele și întrebările cauzale care lipsesc." },
+                { "language": "sq", "text": "Nuk është gabim, por tepër e dobët. Në C2 duhet emërtuar cilat pika reference dhe pyetje shkakësore mungojnë." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Das Foto kann die Stimmung stark prägen, beweist aber wenig, solange Zeitpunkt und Auswahl unklar sind. Ein leerer Ausschnitt am Morgen kann real sein und trotzdem einen falschen Gesamteindruck erzeugen. Ich würde es als emotionales Beispiel behandeln, nicht als eigenständigen Beleg.",
+              "translations": [
+                { "language": "en", "text": "The photo can strongly shape the mood, but proves little as long as timing and selection are unclear. An empty section in the morning can be real and still create a false overall impression. I would treat it as an emotional example, not as independent evidence." },
+                { "language": "fa", "text": "عکس می‌تواند فضای احساسی را شدیداً شکل دهد، اما تا وقتی زمان و انتخاب آن روشن نیست، چیز زیادی ثابت نمی‌کند. یک بخش خالی در صبح می‌تواند واقعی باشد و با این حال برداشت کلی نادرستی بسازد. من آن را نمونه‌ای احساسی می‌دانم، نه شاهد مستقل." },
+                { "language": "ar", "text": "يمكن للصورة أن تؤثر بقوة في الانطباع، لكنها لا تثبت الكثير ما دام التوقيت والاختيار غير واضحين. قد يكون مقطع فارغ في الصباح حقيقياً ومع ذلك يخلق انطباعاً عاماً خاطئاً. سأتعامل معه كمثال عاطفي، لا كدليل مستقل." },
+                { "language": "tr", "text": "Fotoğraf ruh halini güçlü biçimde şekillendirebilir, ancak zaman ve seçim belirsizse çok az şey kanıtlar. Sabah boş bir kesit gerçek olabilir ve yine de yanlış bir genel izlenim yaratabilir. Bunu bağımsız kanıt değil, duygusal bir örnek olarak ele alırdım." },
+                { "language": "ru", "text": "Фотография может сильно задавать настроение, но доказывает мало, пока неясны время и отбор. Пустой фрагмент утром может быть реальным и всё же создавать ложное общее впечатление. Я бы рассматривал его как эмоциональный пример, а не как самостоятельное доказательство." },
+                { "language": "ckb", "text": "وێنەکە دەتوانێت کەشەکە بەهێز دروست بکات، بەڵام تا کات و هەڵبژاردنەکە ناڕوون بێت، کەم شت دەسەلمێنێت. بەشێکی بەتاڵ لە بەیانی دەتوانێت ڕاست بێت و هێشتا تێگەیشتنێکی گشتی هەڵە دروست بکات. من وەک نموونەیەکی هەستیار مامەڵەی لەگەڵ دەکەم، نە وەک بەڵگەی سەربەخۆ." },
+                { "language": "kmr", "text": "Wêne dikare hestê giştî bi hêz çêbike, lê heke dem û hilbijartin nezelal bin, kêm tişt diselimîne. Beşeke vala di sibê de dikare rast be û dîsa jî têgihiştineke giştî ya şaş çêbike. Ez wê wekî mînakeke hestî dibînim, ne wekî delîlek serbixwe." },
+                { "language": "pl", "text": "Zdjęcie może silnie kształtować nastrój, ale niewiele dowodzi, dopóki czas i wybór są niejasne. Pusty fragment rano może być prawdziwy, a mimo to tworzyć fałszywe ogólne wrażenie. Traktowałbym je jako emocjonalny przykład, nie jako samodzielny dowód." },
+                { "language": "ro", "text": "Fotografia poate modela puternic atmosfera, dar dovedește puțin cât timp momentul și selecția sunt neclare. Un cadru gol dimineața poate fi real și totuși poate crea o impresie generală falsă. Aș trata-o ca exemplu emoțional, nu ca dovadă independentă." },
+                { "language": "sq", "text": "Fotoja mund ta formojë fort atmosferën, por vërteton pak për sa kohë koha dhe përzgjedhja janë të paqarta. Një pjesë bosh në mëngjes mund të jetë reale dhe megjithatë të krijojë përshtypje të përgjithshme të gabuar. Do ta trajtoja si shembull emocional, jo si provë të pavarur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort benennt die Wirkung des Bildes, ohne seine Realität zu bestreiten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer names the effect of the image without denying its reality." },
+                { "language": "fa", "text": "قوی است: پاسخ اثر تصویر را نام می‌برد، بدون اینکه واقعی بودن آن را انکار کند." },
+                { "language": "ar", "text": "قوي: يذكر الجواب أثر الصورة من دون إنكار واقعيتها." },
+                { "language": "tr", "text": "Güçlü: cevap görselin etkisini adlandırıyor, gerçekliğini inkâr etmiyor." },
+                { "language": "ru", "text": "Сильно: ответ называет эффект изображения, не отрицая его реальности." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کاریگەری وێنەکە ناو دەبات، بێ ئەوەی ڕاستبوونی ڕەت بکاتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv bandora wêneyê bi nav dike bêyî ku rastbûna wê înkar bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa efekt obrazu, nie zaprzeczając jego realności." },
+                { "language": "ro", "text": "Puternic: răspunsul numește efectul imaginii fără a-i nega realitatea." },
+                { "language": "sq", "text": "E fortë: përgjigjja emërton efektin e imazhit pa mohuar realitetin e tij." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Das Foto ist wahrscheinlich nur ausgewählt worden, um Stimmung zu machen.",
+              "translations": [
+                { "language": "en", "text": "The photo was probably just chosen to create a mood." },
+                { "language": "fa", "text": "عکس احتمالاً فقط انتخاب شده تا فضا بسازد." },
+                { "language": "ar", "text": "ربما اختيرت الصورة فقط لصنع انطباع عاطفي." },
+                { "language": "tr", "text": "Fotoğraf muhtemelen sadece hava yaratmak için seçildi." },
+                { "language": "ru", "text": "Фото, вероятно, выбрано только для создания настроения." },
+                { "language": "ckb", "text": "وێنەکە بە ئەگەرێکی زۆر تەنها هەڵبژێردراوە بۆ دروستکردنی کەش." },
+                { "language": "kmr", "text": "Wêne belkî tenê ji bo çêkirina hestê hatiye hilbijartin." },
+                { "language": "pl", "text": "Zdjęcie prawdopodobnie wybrano tylko po to, żeby stworzyć nastrój." },
+                { "language": "ro", "text": "Fotografia a fost probabil aleasă doar pentru a crea atmosferă." },
+                { "language": "sq", "text": "Fotoja ndoshta është zgjedhur vetëm për të krijuar atmosferë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu absichtsbezogen. Die Antwort erkennt die Bildwirkung, unterstellt aber eine Motivation, die nicht belegt ist.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too focused on intent. The answer recognizes the image effect, but assumes a motivation that is not documented." },
+                { "language": "fa", "text": "بیش از حد بر نیت تمرکز دارد. پاسخ اثر تصویر را می‌فهمد، اما انگیزه‌ای را نسبت می‌دهد که مستند نیست." },
+                { "language": "ar", "text": "يركز كثيراً على النية. يدرك الجواب أثر الصورة، لكنه يفترض دافعاً غير موثق." },
+                { "language": "tr", "text": "Niyete fazla odaklı. Cevap görsel etkisini fark ediyor, ama belgelenmemiş bir motivasyon varsayıyor." },
+                { "language": "ru", "text": "Слишком сосредоточено на намерении. Ответ видит эффект изображения, но приписывает мотив, который не подтвержден." },
+                { "language": "ckb", "text": "زۆر پەیوەستە بە مەبەست. وەڵامەکە کاریگەری وێنە دەناسێت، بەڵام مەبەستێک دەسەپێنێت کە بەڵگەدار نییە." },
+                { "language": "kmr", "text": "Pir li ser armancê ye. Bersiv bandora wêneyê dibîne, lê motîvasyonek bê belge pê ve girê dide." },
+                { "language": "pl", "text": "Zbyt skupione na intencji. Odpowiedź rozpoznaje efekt obrazu, ale przypisuje motywację, której nie udokumentowano." },
+                { "language": "ro", "text": "Prea concentrat pe intenție. Răspunsul recunoaște efectul imaginii, dar presupune o motivație nedocumentată." },
+                { "language": "sq", "text": "Tepër e përqendruar te qëllimi. Përgjigjja e njeh efektin e imazhit, por supozon një motivim që nuk është i dokumentuar." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich wäre mit dem Wort „manipulativ“ vorsichtig, solange wir Absicht und Arbeitsweise nicht kennen. Besser wäre: Der Beitrag ist stark zugespitzt und prüfbedürftig. Wir können Quelle, Originaldaten, Gegenbeispiele und die Rolle der Überschrift prüfen, ohne sofort eine Absicht zu unterstellen.",
+              "translations": [
+                { "language": "en", "text": "I would be careful with the word “manipulative” as long as we do not know intent and working method. Better would be: the item is strongly pointed and needs verification. We can check the source, original data, counterexamples, and the role of the headline without immediately assuming intent." },
+                { "language": "fa", "text": "تا وقتی نیت و روش کار را نمی‌دانیم، با واژه «دستکاری‌کننده» محتاط هستم. بهتر است بگوییم: این محتوا بسیار تند و نیازمند بررسی است. می‌توانیم منبع، داده‌های اصلی، نمونه‌های مخالف و نقش تیتر را بررسی کنیم، بدون اینکه فوراً نیت خاصی نسبت دهیم." },
+                { "language": "ar", "text": "سأكون حذراً مع كلمة «تلاعبية» ما دمنا لا نعرف النية وطريقة العمل. الأفضل أن نقول: المادة حادة جداً وتحتاج إلى تحقق. يمكننا فحص المصدر، والبيانات الأصلية، والأمثلة المضادة، ودور العنوان من دون افتراض نية فوراً." },
+                { "language": "tr", "text": "Niyet ve çalışma yöntemi bilinmediği sürece “manipülatif” kelimesinde dikkatli olurdum. Daha iyisi şu olurdu: içerik çok sivriltilmiş ve kontrol edilmesi gerekiyor. Kaynağı, özgün verileri, karşı örnekleri ve başlığın rolünü hemen niyet varsaymadan inceleyebiliriz." },
+                { "language": "ru", "text": "Я был бы осторожен со словом «манипулятивный», пока мы не знаем намерение и метод работы. Лучше сказать: материал сильно заострен и требует проверки. Мы можем проверить источник, исходные данные, контрпримеры и роль заголовка, не приписывая сразу намерение." },
+                { "language": "ckb", "text": "من لە وشەی «دەستکاریکەر» وریا دەبم تا مەبەست و شێوازی کارکردن نەزانین. باشترە بڵێین: بابەتەکە زۆر توندکراوە و پێویستی بە پشکنینە. دەتوانین سەرچاوە، داتای بنەڕەتی، نموونەی بەرامبەر و ڕۆڵی سەردێڕ بپشکنین، بێ ئەوەی دەستبەجێ مەبەستێک بسەپێنین." },
+                { "language": "kmr", "text": "Ez ê bi peyva “manipulatîf” baldar bim, heya ku em armanc û şêwaza karê nizanin. Çêtir ev e: naverok pir tûj hatiye gotin û pêdivî bi kontrolê heye. Em dikarin çavkanî, daneyên orîjînal, mînakên dijber û rola sernivîsê kontrol bikin bêyî ku yekser armancekê pê ve girê bidin." },
+                { "language": "pl", "text": "Byłbym ostrożny ze słowem „manipulacyjny”, dopóki nie znamy intencji i sposobu pracy. Lepiej powiedzieć: materiał jest mocno zaostrzony i wymaga sprawdzenia. Możemy zbadać źródło, dane pierwotne, kontrprzykłady i rolę nagłówka, nie przypisując od razu intencji." },
+                { "language": "ro", "text": "Aș fi prudent cu termenul „manipulator” cât timp nu cunoaștem intenția și metoda de lucru. Mai bine ar fi: materialul este puternic accentuat și necesită verificare. Putem verifica sursa, datele originale, contraexemplele și rolul titlului fără a presupune imediat o intenție." },
+                { "language": "sq", "text": "Do të isha i kujdesshëm me fjalën “manipulues” për sa kohë nuk njohim qëllimin dhe mënyrën e punës. Më mirë: materiali është shumë i mprehtë dhe ka nevojë për verifikim. Mund të kontrollojmë burimin, të dhënat origjinale, kundërshembujt dhe rolin e titullit pa supozuar menjëherë qëllimin." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort kritisiert den Beitrag präzise, ohne unbelegte Absichten zu behaupten.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer criticizes the item precisely without claiming undocumented intent." },
+                { "language": "fa", "text": "قوی است: پاسخ محتوا را دقیق نقد می‌کند، بدون اینکه نیت اثبات‌نشده‌ای ادعا کند." },
+                { "language": "ar", "text": "قوي: ينتقد الجواب المادة بدقة من دون الادعاء بنية غير موثقة." },
+                { "language": "tr", "text": "Güçlü: cevap içeriği kesin biçimde eleştiriyor, ama belgelenmemiş niyet iddia etmiyor." },
+                { "language": "ru", "text": "Сильно: ответ точно критикует материал, не утверждая недоказанное намерение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بە وردی ڕەخنە لە بابەتەکە دەگرێت، بێ ئەوەی مەبەستی نەسەلمێنراو بانگەشە بکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv naverokê bi hûrgilî rexne dike bêyî ku armanceke bê belge îdia bike." },
+                { "language": "pl", "text": "Mocne: odpowiedź precyzyjnie krytykuje materiał, nie twierdząc o nieudokumentowanej intencji." },
+                { "language": "ro", "text": "Puternic: răspunsul critică materialul precis, fără a susține intenții nedocumentate." },
+                { "language": "sq", "text": "E fortë: përgjigjja e kritikon materialin saktë, pa pretenduar qëllime të padokumentuara." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde sagen, dass man solchen Medien grundsätzlich misstrauen sollte.",
+              "translations": [
+                { "language": "en", "text": "I would say that one should generally distrust such media." },
+                { "language": "fa", "text": "می‌گویم که اصولاً باید به چنین رسانه‌هایی بی‌اعتماد بود." },
+                { "language": "ar", "text": "سأقول إنه ينبغي عموماً عدم الثقة بمثل هذه الوسائل الإعلامية." },
+                { "language": "tr", "text": "Böyle medyaya genel olarak güvenmemek gerektiğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал, что таким медиа в принципе не стоит доверять." },
+                { "language": "ckb", "text": "دەڵێم بە گشتی نابێت متمانە بە میدیای وەها بکرێت." },
+                { "language": "kmr", "text": "Ez ê bêjim ku divê mirov bi giştî baweriyê bi medyayên wisa neke." },
+                { "language": "pl", "text": "Powiedziałbym, że takim mediom zasadniczo nie należy ufać." },
+                { "language": "ro", "text": "Aș spune că, în general, astfel de media trebuie privite cu neîncredere." },
+                { "language": "sq", "text": "Do të thosha se në përgjithësi duhet mos u besuar mediave të tilla." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu pauschal. Medienkritik soll prüfbar bleiben und nicht in generelles Misstrauen kippen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too sweeping. Media criticism should remain verifiable and not slide into general distrust." },
+                { "language": "fa", "text": "بیش از حد کلی است. نقد رسانه باید قابل بررسی بماند و به بی‌اعتمادی کلی تبدیل نشود." },
+                { "language": "ar", "text": "عام جداً. ينبغي أن يبقى نقد الإعلام قابلاً للتحقق وألا ينزلق إلى عدم ثقة عام." },
+                { "language": "tr", "text": "Fazla genelleyici. Medya eleştirisi doğrulanabilir kalmalı ve genel güvensizliğe kaymamalıdır." },
+                { "language": "ru", "text": "Слишком обобщенно. Критика медиа должна оставаться проверяемой и не скатываться в общее недоверие." },
+                { "language": "ckb", "text": "زۆر گشتییە. ڕەخنەی میدیا دەبێت قابل پشکنین بمێنێتەوە و نەکەوێتە ناو بێمتمانەیی گشتی." },
+                { "language": "kmr", "text": "Pir giştî ye. Rexneya medyayê divê dikare were kontrolkirin bimîne û neçe nav nebaweriya giştî." },
+                { "language": "pl", "text": "Zbyt ogólne. Krytyka mediów powinna pozostać sprawdzalna i nie przechodzić w ogólną nieufność." },
+                { "language": "ro", "text": "Prea general. Critica media trebuie să rămână verificabilă și să nu alunece în neîncredere generală." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Kritika mediatike duhet të mbetet e verifikueshme dhe të mos rrëshqasë në mosbesim të përgjithshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde ihn nicht sofort teilen, aber auch nicht ignorieren. Fair wäre ein Prüfhinweis: Die Zahl kann relevant sein, doch Überschrift, Foto und Kausalbehauptung gehen weiter als die belegte Information. Vor einer Weitergabe sollten wir Originalquelle, Vergleichszeitraum und mindestens eine unabhängige Einordnung prüfen.",
+              "translations": [
+                { "language": "en", "text": "I would not share it immediately, but I would not ignore it either. A fair note would be: the figure may be relevant, but the headline, photo, and causal claim go beyond the documented information. Before sharing, we should check the original source, comparison period, and at least one independent assessment." },
+                { "language": "fa", "text": "من آن را فوراً بازنشر نمی‌کنم، اما نادیده هم نمی‌گیرم. یادداشت منصفانه این است: عدد ممکن است مهم باشد، اما تیتر، عکس و ادعای علّی فراتر از اطلاعات مستند می‌روند. قبل از بازنشر باید منبع اصلی، دوره مقایسه و دست‌کم یک ارزیابی مستقل را بررسی کنیم." },
+                { "language": "ar", "text": "لن أنشره فوراً، لكنني لن أتجاهله أيضاً. الملاحظة العادلة هي: قد يكون الرقم مهماً، لكن العنوان والصورة والادعاء السببي تتجاوز المعلومات الموثقة. قبل النشر، ينبغي أن نتحقق من المصدر الأصلي، وفترة المقارنة، وتقييم مستقل واحد على الأقل." },
+                { "language": "tr", "text": "Hemen paylaşmazdım, ama görmezden de gelmezdim. Adil bir not şu olurdu: sayı önemli olabilir, ancak başlık, fotoğraf ve nedensellik iddiası belgelenmiş bilginin ötesine geçiyor. Paylaşmadan önce özgün kaynağı, karşılaştırma dönemini ve en az bir bağımsız değerlendirmeyi kontrol etmeliyiz." },
+                { "language": "ru", "text": "Я бы не стал сразу делиться, но и не игнорировал бы. Справедливая пометка была бы такой: цифра может быть значимой, но заголовок, фото и причинное утверждение выходят за пределы подтвержденной информации. Перед распространением нужно проверить исходный источник, период сравнения и как минимум одну независимую оценку." },
+                { "language": "ckb", "text": "من دەستبەجێ بڵاوی ناکەمەوە، بەڵام پشتگوێیشی ناخەم. تێبینییەکی دادپەروەرانە ئەمەیە: ژمارەکە دەتوانێت گرنگ بێت، بەڵام سەردێڕ، وێنە و بانگەشەی هۆکارێتی لە زانیاری بەڵگەدار زیاتر دەڕۆن. پێش بڵاوکردنەوە، دەبێت سەرچاوەی بنەڕەتی، ماوەی بەراورد و لانی کەم هەڵسەنگاندنێکی سەربەخۆ بپشکنین." },
+                { "language": "kmr", "text": "Ez ê wê yekser parve nekim, lê paşguh jî nekim. Nîşanek dadwerane ev e: hejmar dikare girîng be, lê sernivîs, wêne û gotina sedemî ji agahiya belgekirî wêdetir diçin. Berî parvekirinê divê em çavkaniya orîjînal, dema berhevkirinê û herî kêm nirxandineke serbixwe kontrol bikin." },
+                { "language": "pl", "text": "Nie udostępniłbym tego od razu, ale też bym nie ignorował. Uczciwa adnotacja brzmiałaby: liczba może być istotna, ale nagłówek, zdjęcie i twierdzenie przyczynowe wychodzą poza udokumentowaną informację. Przed udostępnieniem powinniśmy sprawdzić źródło pierwotne, okres porównania i co najmniej jedną niezależną ocenę." },
+                { "language": "ro", "text": "Nu l-aș distribui imediat, dar nici nu l-aș ignora. O notă corectă ar fi: cifra poate fi relevantă, dar titlul, fotografia și afirmația cauzală merg mai departe decât informația documentată. Înainte de distribuire ar trebui să verificăm sursa originală, perioada de comparație și cel puțin o evaluare independentă." },
+                { "language": "sq", "text": "Nuk do ta shpërndaja menjëherë, por as nuk do ta injoroja. Një shënim i drejtë do të ishte: shifra mund të jetë e rëndësishme, por titulli, fotoja dhe pretendimi shkakësor shkojnë përtej informacionit të dokumentuar. Para shpërndarjes duhet të kontrollojmë burimin origjinal, periudhën e krahasimit dhe të paktën një vlerësim të pavarur." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort liefert eine faire Handlungsempfehlung und hält Unsicherheit sichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer gives a fair action recommendation and keeps uncertainty visible." },
+                { "language": "fa", "text": "قوی است: پاسخ پیشنهاد اقدام منصفانه می‌دهد و عدم قطعیت را آشکار نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: يقدم الجواب توصية عمل عادلة ويبقي عدم اليقين مرئياً." },
+                { "language": "tr", "text": "Güçlü: cevap adil bir eylem önerisi veriyor ve belirsizliği görünür tutuyor." },
+                { "language": "ru", "text": "Сильно: ответ дает справедливую рекомендацию к действию и сохраняет неопределенность видимой." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە پێشنیاری کردارێکی دادپەروەرانە دەدات و نادڵنیایی دیار دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv pêşniyara kiryareke dadwerane dide û nezelaliyê xuya dihêle." },
+                { "language": "pl", "text": "Mocne: odpowiedź daje uczciwą rekomendację działania i pozostawia widoczną niepewność." },
+                { "language": "ro", "text": "Puternic: răspunsul oferă o recomandare de acțiune corectă și menține incertitudinea vizibilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja jep një rekomandim të drejtë veprimi dhe e mban të dukshme pasigurinë." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde den Beitrag mit dem Hinweis teilen, dass sich alle selbst eine Meinung bilden sollen.",
+              "translations": [
+                { "language": "en", "text": "I would share the post with the note that everyone should form their own opinion." },
+                { "language": "fa", "text": "من پست را با این توضیح بازنشر می‌کنم که هرکس خودش نظرش را شکل بدهد." },
+                { "language": "ar", "text": "سأنشر المنشور مع ملاحظة أن على الجميع تكوين رأيهم بأنفسهم." },
+                { "language": "tr", "text": "Paylaşımı, herkesin kendi fikrini oluşturması gerektiği notuyla paylaşırdım." },
+                { "language": "ru", "text": "Я бы поделился постом с пометкой, что каждый должен сам составить мнение." },
+                { "language": "ckb", "text": "پۆستەکە بڵاو دەکەمەوە لەگەڵ تێبینیی ئەوەی هەموو کەس خۆی بۆچوونی دروست بکات." },
+                { "language": "kmr", "text": "Ez ê nivîsê bi nîşana ku herkes divê nêrîna xwe çêbike parve bikim." },
+                { "language": "pl", "text": "Udostępniłbym wpis z uwagą, że każdy powinien sam wyrobić sobie zdanie." },
+                { "language": "ro", "text": "Aș distribui postarea cu nota că fiecare ar trebui să își formeze propria opinie." },
+                { "language": "sq", "text": "Do ta shpërndaja postimin me shënimin që secili të formojë vetë mendimin e vet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber unzureichend. Der Hinweis verlagert Verantwortung, statt die problematischen Teile des Beitrags zu markieren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but insufficient. The note shifts responsibility instead of marking the problematic parts of the item." },
+                { "language": "fa", "text": "قابل تصور است، اما کافی نیست. این توضیح مسئولیت را منتقل می‌کند، به‌جای اینکه بخش‌های مسئله‌دار محتوا را مشخص کند." },
+                { "language": "ar", "text": "معقول ظاهرياً، لكنه غير كاف. تنقل الملاحظة المسؤولية بدلاً من تمييز الأجزاء الإشكالية في المادة." },
+                { "language": "tr", "text": "Akla yatkın, ama yetersiz. Not, içeriğin problemli kısımlarını işaretlemek yerine sorumluluğu başkasına devrediyor." },
+                { "language": "ru", "text": "Правдоподобно, но недостаточно. Пометка перекладывает ответственность вместо того, чтобы обозначить проблемные части материала." },
+                { "language": "ckb", "text": "قابل قبووڵە، بەڵام ناکافییە. تێبینییەکە بەرپرسیاریەتی دەگوازێتەوە، لەبری ئەوەی بەشە کێشەدارەکانی بابەتەکە نیشان بدات." },
+                { "language": "kmr", "text": "Wateyê wê heye, lê ne bes e. Nîşan berpirsiyarîyê diguhezîne li şûna ku beşên pirsgirêkdar ên naverokê nîşan bide." },
+                { "language": "pl", "text": "Wiarygodne, ale niewystarczające. Uwaga przenosi odpowiedzialność zamiast oznaczyć problematyczne części materiału." },
+                { "language": "ro", "text": "Plauzibil, dar insuficient. Nota transferă responsabilitatea în loc să marcheze părțile problematice ale materialului." },
+                { "language": "sq", "text": "E besueshme, por e pamjaftueshme. Shënimi e zhvendos përgjegjësinë, në vend që të shënojë pjesët problematike të materialit." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "framing",
+          "text": "Medienkritik beginnt mit Trennung: Was ist belegt, was ist Deutung, und was wird nur nahegelegt?",
+          "translations": [
+            { "language": "en", "text": "Media criticism begins with separation: what is documented, what is interpretation, and what is merely implied?" },
+            { "language": "fa", "text": "نقد رسانه با جداسازی شروع می‌شود: چه چیزی مستند است، چه چیزی تفسیر است و چه چیزی فقط القا می‌شود؟" },
+            { "language": "ar", "text": "يبدأ نقد الإعلام بالفصل: ما الموثق، وما التفسير، وما الذي يُلمح إليه فقط؟" },
+            { "language": "tr", "text": "Medya eleştirisi ayırmakla başlar: ne belgeli, ne yorum, ne sadece ima ediliyor?" },
+            { "language": "ru", "text": "Критика медиа начинается с разделения: что подтверждено, что является интерпретацией, а что лишь подразумевается?" },
+            { "language": "ckb", "text": "ڕەخنەی میدیا بە جیاکردنەوە دەست پێدەکات: چی بەڵگەدارە، چی لێکدانەوەیە، و چی تەنها ئاماژەی پێدەکرێت؟" },
+            { "language": "kmr", "text": "Rexneya medyayê bi veqetandinê dest pê dike: çi belgekirî ye, çi şîrove ye, û çi tenê tê îma kirin?" },
+            { "language": "pl", "text": "Krytyka mediów zaczyna się od rozdzielenia: co jest udokumentowane, co jest interpretacją, a co tylko sugerowane?" },
+            { "language": "ro", "text": "Critica media începe cu separarea: ce este documentat, ce este interpretare și ce este doar sugerat?" },
+            { "language": "sq", "text": "Kritika mediatike fillon me ndarjen: çfarë është e dokumentuar, çfarë është interpretim dhe çfarë vetëm nënkuptohet?" }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "causality",
+          "text": "Auf C2 reicht es nicht, eine Zahl zu erwähnen; der Bezugsrahmen und die Kausalfrage müssen mitgesprochen werden.",
+          "translations": [
+            { "language": "en", "text": "At C2, mentioning a number is not enough; the frame of reference and causal question must be stated too." },
+            { "language": "fa", "text": "در سطح C2 فقط گفتن یک عدد کافی نیست؛ چارچوب مقایسه و پرسش علّی هم باید گفته شود." },
+            { "language": "ar", "text": "في مستوى C2 لا يكفي ذكر رقم؛ يجب أيضاً ذكر الإطار المرجعي والسؤال السببي." },
+            { "language": "tr", "text": "C2 düzeyinde bir sayıdan söz etmek yetmez; referans çerçevesi ve nedensellik sorusu da belirtilmelidir." },
+            { "language": "ru", "text": "На C2 недостаточно упомянуть цифру; нужно также проговорить рамку сравнения и причинный вопрос." },
+            { "language": "ckb", "text": "لە C2 تەنها باسکردنی ژمارەیەک بەس نییە؛ دەبێت چوارچێوەی بەراورد و پرسی هۆکارێتییش بگوترێت." },
+            { "language": "kmr", "text": "Di C2 de behsa hejmarekê bes nake; divê çarçoveya berhevkirinê û pirsa sedemî jî bê gotin." },
+            { "language": "pl", "text": "Na C2 nie wystarczy wspomnieć liczby; trzeba też nazwać ramę odniesienia i pytanie przyczynowe." },
+            { "language": "ro", "text": "La C2 nu este suficient să menționați o cifră; trebuie spus și cadrul de referință și întrebarea cauzală." },
+            { "language": "sq", "text": "Në C2 nuk mjafton të përmendet një shifër; duhet thënë edhe korniza e referencës dhe pyetja shkakësore." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "precision",
+          "text": "Kritik an Zuspitzung ist stärker als eine unbelegte Behauptung über Manipulationsabsicht.",
+          "translations": [
+            { "language": "en", "text": "Criticism of exaggeration is stronger than an undocumented claim about manipulative intent." },
+            { "language": "fa", "text": "نقد تندکردن محتوا قوی‌تر از ادعای اثبات‌نشده درباره نیت دستکاری است." },
+            { "language": "ar", "text": "نقد المبالغة أقوى من ادعاء غير موثق حول نية التلاعب." },
+            { "language": "tr", "text": "Keskinleştirmeyi eleştirmek, manipülasyon niyetine dair belgelenmemiş bir iddiadan daha güçlüdür." },
+            { "language": "ru", "text": "Критика заострения сильнее, чем недокументированное утверждение о манипулятивном намерении." },
+            { "language": "ckb", "text": "ڕەخنە لە توندکردنەوە بەهێزترە لە بانگەشەی نەسەلمێنراو دەربارەی مەبەستی دەستکاری." },
+            { "language": "kmr", "text": "Rexneya li tûjkirinê ji îdiayeke bê belge li ser armanca manipulatîf xurtir e." },
+            { "language": "pl", "text": "Krytyka zaostrzenia jest silniejsza niż nieudokumentowane twierdzenie o intencji manipulacji." },
+            { "language": "ro", "text": "Critica accentuării este mai puternică decât o afirmație nedocumentată despre intenția de manipulare." },
+            { "language": "sq", "text": "Kritika ndaj mprehjes së mesazhit është më e fortë se një pretendim i padokumentuar për qëllim manipulues." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "action",
+          "text": "Eine gute Prüfstrategie benennt nicht nur Zweifel, sondern auch konkrete nächste Quellen.",
+          "translations": [
+            { "language": "en", "text": "A good verification strategy names not only doubts, but also concrete next sources." },
+            { "language": "fa", "text": "یک راهبرد خوب برای بررسی فقط تردیدها را نام نمی‌برد، بلکه منابع بعدی مشخص را هم معرفی می‌کند." },
+            { "language": "ar", "text": "استراتيجية التحقق الجيدة لا تذكر الشكوك فقط، بل تذكر أيضاً مصادر تالية ملموسة." },
+            { "language": "tr", "text": "İyi bir doğrulama stratejisi yalnızca kuşkuları değil, somut sonraki kaynakları da belirtir." },
+            { "language": "ru", "text": "Хорошая стратегия проверки называет не только сомнения, но и конкретные следующие источники." },
+            { "language": "ckb", "text": "ستراتیژی پشکنینی باش تەنها گومانەکان ناو نابردرێت، بەڵکو سەرچاوەی داهاتووی دیاریکراویش دەناسێنێت." },
+            { "language": "kmr", "text": "Stratejiyeke kontrolkirina baş ne tenê gumanan bi nav dike, lê çavkaniyên din ên konkret jî diyar dike." },
+            { "language": "pl", "text": "Dobra strategia weryfikacji nazywa nie tylko wątpliwości, lecz także konkretne kolejne źródła." },
+            { "language": "ro", "text": "O strategie bună de verificare numește nu doar îndoielile, ci și următoarele surse concrete." },
+            { "language": "sq", "text": "Një strategji e mirë verifikimi nuk emërton vetëm dyshimet, por edhe burimet konkrete të radhës." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "media-literacy-discussion",
+          "placement": "detail-header",
+          "purpose": "Illustrate a neutral media-literacy discussion about checking an online post.",
+          "altText": "Eine ruhige Lerngruppe betrachtet gemeinsam einen abstrakten Online-Beitrag auf einem Tablet und macht Notizen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm learning group looks together at an abstract online post on a tablet and takes notes." },
+            { "language": "fa", "text": "یک گروه آموزشی آرام با هم یک پست آنلاین انتزاعی را روی تبلت نگاه می‌کنند و یادداشت برمی‌دارند." },
+            { "language": "ar", "text": "مجموعة تعلم هادئة تنظر معاً إلى منشور إلكتروني مجرد على جهاز لوحي وتدوّن ملاحظات." },
+            { "language": "tr", "text": "Sakin bir öğrenme grubu tablette soyut bir çevrimiçi paylaşımı birlikte inceler ve not alır." },
+            { "language": "ru", "text": "Спокойная учебная группа вместе рассматривает абстрактный онлайн-пост на планшете и делает заметки." },
+            { "language": "ckb", "text": "گرووپێکی فێربوونی ئارام بەیەکەوە پۆستێکی ئۆنلاین ئەبستراکت لەسەر تابلێت دەبینن و تێبینی دەنووسن." },
+            { "language": "kmr", "text": "Komeke hînkirinê ya aram bi hev re li ser tabletê li nivîseke online a abstrakt dinêre û notan digire." },
+            { "language": "pl", "text": "Spokojna grupa ucząca się wspólnie ogląda abstrakcyjny wpis online na tablecie i robi notatki." },
+            { "language": "ro", "text": "Un grup de învățare calm privește împreună o postare online abstractă pe o tabletă și ia notițe." },
+            { "language": "sq", "text": "Një grup i qetë mësimi shikon së bashku një postim online abstrakt në tablet dhe mban shënime." }
+          ],
+          "imagePrompt": "Clean educational illustration, adult language learners in Germany discussing media literacy, tablet with abstract non-readable online post, note cards, calm classroom or community-room setting, no logos, no readable text, no political symbols, no private data, accessible composition, neutral analytical mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

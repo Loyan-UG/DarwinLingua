@@ -7,14 +7,17 @@ public sealed record CourseIndexPageViewModel(
     IReadOnlyList<CoursePathListItemModel> Courses,
     IReadOnlyList<string> CefrLevels,
     string? SelectedCefrLevel,
-    string? Query);
+    string? Query,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record CourseDetailPageViewModel(
-    CoursePathDetailModel Course);
+    CoursePathDetailModel Course,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record CourseLessonPageViewModel(
     CourseLessonDetailModel Lesson,
-    UserContentProgressModel? Progress);
+    UserContentProgressModel? Progress,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record AdminCoursesPageViewModel(
     IReadOnlyList<CoursePathListItemModel> Courses);

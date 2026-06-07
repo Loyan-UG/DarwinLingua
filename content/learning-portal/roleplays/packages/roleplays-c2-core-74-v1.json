@@ -1,0 +1,718 @@
+{
+  "packageId": "roleplays-c2-core-74-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 74 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 74",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-sicherheitsluecke-ohne-panik-kommunizieren",
+      "linkedDialogueSlug": null,
+      "title": "Eine Sicherheitslücke ohne Panik kommunizieren",
+      "titleTranslations": [
+        { "language": "en", "text": "Communicating a security issue without panic" },
+        { "language": "fa", "text": "اطلاع‌رسانی درباره یک رخنه امنیتی بدون ایجاد وحشت" },
+        { "language": "ar", "text": "التواصل بشأن ثغرة أمنية من دون إثارة ذعر" },
+        { "language": "tr", "text": "Bir güvenlik açığını panik yaratmadan iletmek" },
+        { "language": "ru", "text": "Сообщить об уязвимости безопасности без паники" },
+        { "language": "ckb", "text": "ڕاگەیاندنی کەلێنێکی ئاسایشی بەبێ دروستکردنی ترس" },
+        { "language": "kmr", "text": "Ragihandina valahiyeke ewlehiyê bê panîk" },
+        { "language": "pl", "text": "Komunikowanie luki bezpieczeństwa bez paniki" },
+        { "language": "ro", "text": "Comunicarea unei breșe de securitate fără panică" },
+        { "language": "sq", "text": "Komunikimi i një dobësie sigurie pa panik" }
+      ],
+      "description": "In einem internen Krisengespräch müssen Sie eine entdeckte Sicherheitslücke erklären. Die Kommunikation soll klar und ruhig sein: bekannte Fakten, offene Fragen, Sofortmaßnahmen, mögliche Auswirkungen und der nächste Informationszeitpunkt müssen getrennt werden.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an internal crisis discussion, you must explain a discovered security issue. Communication should be clear and calm: known facts, open questions, immediate actions, possible impact, and the next update time must be kept separate." },
+        { "language": "fa", "text": "در یک گفت‌وگوی بحرانی داخلی باید یک رخنه امنیتی کشف‌شده را توضیح دهید. ارتباط باید روشن و آرام باشد: واقعیت‌های شناخته‌شده، پرسش‌های باز، اقدامات فوری، اثر احتمالی و زمان اطلاع‌رسانی بعدی باید از هم جدا شوند." },
+        { "language": "ar", "text": "في نقاش أزمة داخلي يجب أن تشرحوا ثغرة أمنية مكتشفة. ينبغي أن يكون التواصل واضحًا وهادئًا: يجب فصل الحقائق المعروفة والأسئلة المفتوحة والإجراءات الفورية والأثر المحتمل وموعد التحديث التالي." },
+        { "language": "tr", "text": "İç kriz görüşmesinde tespit edilen bir güvenlik açığını açıklamanız gerekir. İletişim açık ve sakin olmalıdır: bilinen olgular, açık sorular, acil önlemler, olası etkiler ve bir sonraki bilgilendirme zamanı ayrılmalıdır." },
+        { "language": "ru", "text": "На внутреннем кризисном обсуждении нужно объяснить обнаруженную уязвимость безопасности. Коммуникация должна быть ясной и спокойной: известные факты, открытые вопросы, срочные меры, возможные последствия и время следующего обновления нужно разделить." },
+        { "language": "ckb", "text": "لە گفتوگۆیەکی قەیرانی ناوخۆییدا دەبێت کەلێنێکی ئاسایشی دۆزراوە ڕوون بکەیتەوە. پەیوەندیکردن دەبێت ڕوون و ئارام بێت: ڕاستییە ناسراوەکان، پرسیاری کراوە، هەنگاوی خێرا، کاریگەریی ئەگەری و کاتی زانیاریی داهاتوو دەبێت جیا بکرێنەوە." },
+        { "language": "kmr", "text": "Di gotûbêja qeyranê ya navxweyî de divê hûn valahiyeke ewlehiyê ya hatiye dîtin rave bikin. Ragihandin divê zelal û aram be: rastiyên tê zanîn, pirsên vekirî, gavên lezgîn, bandora gengaz û dema agahdariya din divê ji hev bên veqetandin." },
+        { "language": "pl", "text": "W wewnętrznej rozmowie kryzysowej musi Pan/Pani wyjaśnić wykrytą lukę bezpieczeństwa. Komunikacja ma być jasna i spokojna: znane fakty, otwarte pytania, działania natychmiastowe, możliwe skutki i termin kolejnej informacji trzeba oddzielić." },
+        { "language": "ro", "text": "Într-o discuție internă de criză trebuie să explicați o breșă de securitate descoperită. Comunicarea trebuie să fie clară și calmă: faptele cunoscute, întrebările deschise, măsurile imediate, impactul posibil și momentul următoarei informări trebuie separate." },
+        { "language": "sq", "text": "Në një diskutim të brendshëm krize duhet të shpjegoni një dobësi sigurie të zbuluar. Komunikimi duhet të jetë i qartë dhe i qetë: faktet e njohura, pyetjet e hapura, masat e menjëhershme, ndikimi i mundshëm dhe koha e njoftimit tjetër duhen ndarë." }
+      ],
+      "learnerGoal": "Eine Sicherheitslücke auf C2-Niveau kommunizieren: bestätigte Fakten von Vermutungen trennen, Unsicherheit benennen, Schutzmaßnahmen erklären, Panik vermeiden und einen überprüfbaren nächsten Informationspunkt setzen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Communicate a security issue at C2 level: separate confirmed facts from assumptions, name uncertainty, explain protective actions, avoid panic, and set a verifiable next update point." },
+        { "language": "fa", "text": "یک رخنه امنیتی را در سطح C2 اطلاع‌رسانی کنید: واقعیت‌های تأییدشده را از حدس‌ها جدا کنید، عدم قطعیت را نام ببرید، اقدامات محافظتی را توضیح دهید، از ایجاد وحشت پرهیز کنید و یک نقطه اطلاع‌رسانی بعدی قابل بررسی تعیین کنید." },
+        { "language": "ar", "text": "تواصلوا بشأن ثغرة أمنية بمستوى C2: افصلوا الحقائق المؤكدة عن الافتراضات، واذكروا عدم اليقين، واشرحوا إجراءات الحماية، وتجنبوا الذعر، وحددوا نقطة تحديث لاحقة قابلة للتحقق." },
+        { "language": "tr", "text": "Bir güvenlik açığını C2 düzeyinde iletin: doğrulanmış olguları varsayımlardan ayırın, belirsizliği adlandırın, koruma önlemlerini açıklayın, paniği önleyin ve doğrulanabilir bir sonraki bilgilendirme noktası belirleyin." },
+        { "language": "ru", "text": "Сообщить об уязвимости безопасности на уровне C2: отделить подтвержденные факты от предположений, назвать неопределенность, объяснить защитные меры, избежать паники и назначить проверяемую точку следующего обновления." },
+        { "language": "ckb", "text": "کەلێنێکی ئاسایشی لە ئاستی C2 ڕابگەیەنە: ڕاستییە پشتڕاستکراوەکان لە گومان جیا بکەوە، نادڵنیایی ناوببە، هەنگاوە پارێزگارییەکان ڕوون بکەوە، لە ترس دروستکردن دووربکەوە و خاڵێکی زانیاریی داهاتووی پشکنراو دابنێ." },
+        { "language": "kmr", "text": "Valahiyeke ewlehiyê di asta C2 de ragihînin: rastiyên piştrastkirî ji texmînan veqetînin, nezelaliyê nav bikin, gavên parastinê rave bikin, ji panîkê dûr bikevin û xalekî agahdariya din a kontrolbar danîn." },
+        { "language": "pl", "text": "Komunikować lukę bezpieczeństwa na poziomie C2: oddzielić potwierdzone fakty od przypuszczeń, nazwać niepewność, wyjaśnić środki ochronne, unikać paniki i wyznaczyć sprawdzalny kolejny punkt informacyjny." },
+        { "language": "ro", "text": "Comunicați o breșă de securitate la nivel C2: separați faptele confirmate de presupuneri, numiți incertitudinea, explicați măsurile de protecție, evitați panica și stabiliți un punct verificabil pentru următoarea informare." },
+        { "language": "sq", "text": "Komunikoni një dobësi sigurie në nivel C2: ndani faktet e konfirmuara nga supozimet, emërtoni pasigurinë, shpjegoni masat mbrojtëse, shmangni panikun dhe caktoni një pikë të verifikueshme për njoftimin tjetër." }
+      ],
+      "cefrLevel": "C2",
+      "category": "technology",
+      "topics": ["business-communication", "documents-and-administration"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "workplace-communication"],
+      "taskType": "explain-problem",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 24,
+      "isPublished": true,
+      "sortOrder": 74,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Kommunikationsverantwortliche/r",
+          "translations": [
+            { "language": "en", "text": "Communications lead" },
+            { "language": "fa", "text": "مسئول ارتباطات" },
+            { "language": "ar", "text": "مسؤول التواصل" },
+            { "language": "tr", "text": "İletişim sorumlusu" },
+            { "language": "ru", "text": "Ответственный за коммуникацию" },
+            { "language": "ckb", "text": "بەرپرسی پەیوەندیکردن" },
+            { "language": "kmr", "text": "Berpirsiyarê ragihandinê" },
+            { "language": "pl", "text": "Osoba odpowiedzialna za komunikację" },
+            { "language": "ro", "text": "Responsabilul de comunicare" },
+            { "language": "sq", "text": "Përgjegjësi i komunikimit" }
+          ]
+        },
+        {
+          "roleKey": "moderator",
+          "displayName": "Krisenstab",
+          "translations": [
+            { "language": "en", "text": "Crisis team" },
+            { "language": "fa", "text": "تیم بحران" },
+            { "language": "ar", "text": "فريق الأزمة" },
+            { "language": "tr", "text": "Kriz ekibi" },
+            { "language": "ru", "text": "Кризисная группа" },
+            { "language": "ckb", "text": "تیمی قەیران" },
+            { "language": "kmr", "text": "Tîma qeyranê" },
+            { "language": "pl", "text": "Sztab kryzysowy" },
+            { "language": "ro", "text": "Echipa de criză" },
+            { "language": "sq", "text": "Ekipi i krizës" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderator",
+          "baseText": "Wir haben eine Sicherheitslücke entdeckt, aber noch nicht alle Details geprüft. Wie informieren wir intern, ohne entweder zu verharmlosen oder Panik auszulösen?",
+          "translations": [
+            { "language": "en", "text": "We have discovered a security issue, but have not yet checked all details. How do we inform people internally without either downplaying it or triggering panic?" },
+            { "language": "fa", "text": "ما یک رخنه امنیتی کشف کرده‌ایم، اما هنوز همه جزئیات را بررسی نکرده‌ایم. چگونه داخلی اطلاع‌رسانی کنیم، بدون اینکه مسئله را کوچک جلوه دهیم یا وحشت ایجاد کنیم؟" },
+            { "language": "ar", "text": "اكتشفنا ثغرة أمنية، لكننا لم نفحص كل التفاصيل بعد. كيف نُبلغ داخليًا من دون التقليل منها أو إثارة الذعر؟" },
+            { "language": "tr", "text": "Bir güvenlik açığı tespit ettik, ancak tüm ayrıntıları henüz kontrol etmedik. Konuyu ne küçümseyerek ne de panik yaratarak içeride nasıl duyururuz?" },
+            { "language": "ru", "text": "Мы обнаружили уязвимость безопасности, но еще не проверили все детали. Как сообщить об этом внутри, не преуменьшая проблему и не вызывая паники?" },
+            { "language": "ckb", "text": "ئێمە کەلێنێکی ئاسایشی دۆزیومانەتەوە، بەڵام هێشتا هەموو وردەکارییەکانمان نە پشکنین. چۆن لە ناوخۆدا زانیاری بدەین، بەبێ ئەوەی بابەتەکە بچووک پیشان بدەین یان ترس دروست بکەین؟" },
+            { "language": "kmr", "text": "Me valahiyeke ewlehiyê dît, lê hîn hemû hûrgilî nehatine kontrolkirin. Em çawa li navxweyê agahdar bikin, bêyî ku mijarê biçûk bikin an panîk çêbikin?" },
+            { "language": "pl", "text": "Wykryliśmy lukę bezpieczeństwa, ale nie sprawdziliśmy jeszcze wszystkich szczegółów. Jak informować wewnętrznie, nie bagatelizując sprawy i nie wywołując paniki?" },
+            { "language": "ro", "text": "Am descoperit o breșă de securitate, dar nu am verificat încă toate detaliile. Cum informăm intern fără să minimalizăm problema sau să declanșăm panică?" },
+            { "language": "sq", "text": "Kemi zbuluar një dobësi sigurie, por ende nuk i kemi kontrolluar të gjitha detajet. Si të informojmë brenda organizatës pa e minimizuar çështjen dhe pa shkaktuar panik?" }
+          ],
+          "function": "opening prompt",
+          "toneNote": "urgent, balanced"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde mit drei getrennten Ebenen beginnen: Was wissen wir sicher, was prüfen wir noch, und was tun wir bereits. So entsteht Orientierung, ohne dass wir mehr behaupten, als belastbar ist.",
+          "translations": [
+            { "language": "en", "text": "I would begin with three separate levels: what we know for certain, what we are still checking, and what we are already doing. That creates orientation without claiming more than is reliable." },
+            { "language": "fa", "text": "من با سه سطح جدا شروع می‌کنم: چه چیزی را قطعی می‌دانیم، چه چیزی را هنوز بررسی می‌کنیم و چه کاری را همین حالا انجام می‌دهیم. این کار جهت می‌دهد، بدون اینکه بیش از آنچه قابل اتکاست ادعا کنیم." },
+            { "language": "ar", "text": "سأبدأ بثلاث طبقات منفصلة: ما نعرفه بيقين، وما نزال نفحصه، وما نفعله بالفعل. هكذا ينشأ توجيه من دون أن ندعي أكثر مما يمكن الاعتماد عليه." },
+            { "language": "tr", "text": "Üç ayrı düzeyle başlardım: kesin olarak ne biliyoruz, neyi hâlâ kontrol ediyoruz ve şu anda ne yapıyoruz. Böylece güvenilir olandan fazlasını iddia etmeden yön veririz." },
+            { "language": "ru", "text": "Я бы начал с трех отдельных уровней: что мы знаем точно, что еще проверяем и что уже делаем. Так появляется ориентир, не утверждая больше, чем надежно подтверждено." },
+            { "language": "ckb", "text": "من بە سێ ئاستی جیاواز دەست پێدەکەم: چی بە دڵنیایی دەزانین، چی هێشتا دەپشکنین، و چی ئێستا دەکەین. بەمە ئاراستە دروست دەبێت، بەبێ ئەوەی زیاتر لەوەی پشتپێبەستراوە بانگەشە بکەین." },
+            { "language": "kmr", "text": "Ez bi sê astên cuda dest pê dikim: em çi bi piştrastî dizanin, em hîn çi kontrol dikin û em jixwe çi dikin. Bi vî awayî rêberî çêdibe, bêyî ku em ji ya pêbawer zêdetir îdia bikin." },
+            { "language": "pl", "text": "Zacząłbym od trzech oddzielnych poziomów: co wiemy na pewno, co jeszcze sprawdzamy i co już robimy. To daje orientację bez twierdzenia więcej, niż jest wiarygodnie potwierdzone." },
+            { "language": "ro", "text": "Aș începe cu trei niveluri separate: ce știm sigur, ce verificăm încă și ce facem deja. Astfel se creează orientare fără să afirmăm mai mult decât este susținut." },
+            { "language": "sq", "text": "Do të filloja me tri nivele të ndara: çfarë dimë me siguri, çfarë po kontrollojmë ende dhe çfarë po bëjmë tashmë. Kjo krijon orientim pa pretenduar më shumë sesa është e mbështetur." }
+          ],
+          "function": "structure announcement",
+          "toneNote": "calm, structured",
+          "expectedLearnerAction": "Separate facts, unknowns, and actions."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "moderator",
+          "baseText": "Welche bestätigten Fakten würden Sie im ersten Satz nennen?",
+          "translations": [
+            { "language": "en", "text": "Which confirmed facts would you name in the first sentence?" },
+            { "language": "fa", "text": "کدام واقعیت‌های تأییدشده را در جمله اول نام می‌برید؟" },
+            { "language": "ar", "text": "أي حقائق مؤكدة ستذكرونها في الجملة الأولى؟" },
+            { "language": "tr", "text": "İlk cümlede hangi doğrulanmış olguları söylersiniz?" },
+            { "language": "ru", "text": "Какие подтвержденные факты вы назовете в первом предложении?" },
+            { "language": "ckb", "text": "کام ڕاستییە پشتڕاستکراوەکان لە ڕستەی یەکەمدا ناودەبەیت؟" },
+            { "language": "kmr", "text": "Hûn di hevoka yekem de kîjan rastiyên piştrastkirî nav dikin?" },
+            { "language": "pl", "text": "Jakie potwierdzone fakty wymieni Pan/Pani w pierwszym zdaniu?" },
+            { "language": "ro", "text": "Ce fapte confirmate ați numi în prima propoziție?" },
+            { "language": "sq", "text": "Cilat fakte të konfirmuara do t'i përmendnit në fjalinë e parë?" }
+          ],
+          "function": "fact prompt",
+          "toneNote": "precise"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Bestätigt ist: Es gab eine Schwachstelle in einem internen Zugang, sie wurde heute Vormittag geschlossen, und bisher gibt es keinen Hinweis auf einen Abfluss von Kundendaten. Gleichzeitig prüfen wir die Protokolle weiter.",
+          "translations": [
+            { "language": "en", "text": "Confirmed is this: there was a weakness in an internal access point, it was closed this morning, and so far there is no indication of customer data leaving the system. At the same time, we are continuing to check the logs." },
+            { "language": "fa", "text": "تأیید شده این است: در یک دسترسی داخلی ضعف وجود داشت، امروز صبح بسته شد و تا این لحظه نشانه‌ای از خروج داده‌های مشتری وجود ندارد. هم‌زمان بررسی گزارش‌های فنی ادامه دارد." },
+            { "language": "ar", "text": "المؤكد هو: كانت هناك نقطة ضعف في وصول داخلي، أُغلقت هذا الصباح، ولا يوجد حتى الآن مؤشر على خروج بيانات العملاء. وفي الوقت نفسه نواصل فحص السجلات." },
+            { "language": "tr", "text": "Doğrulanan şu: İç erişim noktasında bir zayıflık vardı, bu sabah kapatıldı ve şu ana kadar müşteri verilerinin dışarı çıktığına dair bir işaret yok. Aynı zamanda kayıtları incelemeye devam ediyoruz." },
+            { "language": "ru", "text": "Подтверждено следующее: была слабость во внутренней точке доступа, сегодня утром ее закрыли, и пока нет признаков выхода клиентских данных из системы. Одновременно мы продолжаем проверять журналы." },
+            { "language": "ckb", "text": "پشتڕاستکراوە ئەوەیە: لاوازییەک لە دەستگەیشتنێکی ناوخۆییدا هەبوو، ئەم بەیانییە داخرا، و تا ئێستا هیچ نیشانەیەک نییە کە داتای کڕیاران دەرچووبێت. هەمان کات پشکنینی تۆمارە تەکنیکییەکان بەردەوامە." },
+            { "language": "kmr", "text": "Ya piştrast ev e: di gihîştineke navxweyî de lawaziyek hebû, îro sibeh hate girtin, û heta niha nîşaneyek tune ye ku daneyên xerîdaran ji pergalê derketine. Di heman demê de em kontrola tomarên teknîkî didomînin." },
+            { "language": "pl", "text": "Potwierdzone jest to: w wewnętrznym dostępie była słabość, dziś rano została zamknięta i dotąd nie ma sygnału o wypłynięciu danych klientów. Jednocześnie nadal sprawdzamy logi." },
+            { "language": "ro", "text": "Confirmat este: a existat o slăbiciune într-un acces intern, a fost închisă în această dimineață și până acum nu există indiciu privind ieșirea datelor clienților. În același timp continuăm verificarea jurnalelor tehnice." },
+            { "language": "sq", "text": "E konfirmuar është kjo: pati një dobësi në një qasje të brendshme, ajo u mbyll sot paradite dhe deri tani nuk ka tregues për dalje të të dhënave të klientëve. Njëkohësisht po vazhdojmë kontrollin e regjistrave teknikë." }
+          ],
+          "function": "confirmed facts",
+          "toneNote": "factual, limited",
+          "expectedLearnerAction": "State confirmed facts and ongoing verification."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "moderator",
+          "baseText": "Wie sprechen Sie über das, was wir noch nicht wissen?",
+          "translations": [
+            { "language": "en", "text": "How do you talk about what we do not yet know?" },
+            { "language": "fa", "text": "درباره چیزهایی که هنوز نمی‌دانیم چگونه صحبت می‌کنید؟" },
+            { "language": "ar", "text": "كيف تتحدثون عما لا نعرفه بعد؟" },
+            { "language": "tr", "text": "Henüz bilmediklerimiz hakkında nasıl konuşursunuz?" },
+            { "language": "ru", "text": "Как вы говорите о том, чего мы еще не знаем?" },
+            { "language": "ckb", "text": "دەربارەی ئەو شتانەی هێشتا نایزانین چۆن قسە دەکەیت؟" },
+            { "language": "kmr", "text": "Hûn li ser tiştên ku em hîn nizanin çawa diaxivin?" },
+            { "language": "pl", "text": "Jak mówi Pan/Pani o tym, czego jeszcze nie wiemy?" },
+            { "language": "ro", "text": "Cum vorbiți despre ceea ce încă nu știm?" },
+            { "language": "sq", "text": "Si flisni për gjërat që ende nuk i dimë?" }
+          ],
+          "function": "uncertainty prompt",
+          "toneNote": "careful"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde Unsicherheit ausdrücklich benennen, aber nicht spekulieren: Wir wissen noch nicht, ob einzelne Dateien eingesehen wurden. Genau dafür läuft die Protokollprüfung; das Ergebnis nennen wir mit Uhrzeit im nächsten Update.",
+          "translations": [
+            { "language": "en", "text": "I would name uncertainty explicitly, but not speculate: we do not yet know whether individual files were viewed. That is exactly why the log review is running; we will state the result with a time in the next update." },
+            { "language": "fa", "text": "عدم قطعیت را صریح نام می‌برم، اما حدس نمی‌زنم: هنوز نمی‌دانیم آیا فایل‌های جداگانه دیده شده‌اند یا نه. دقیقاً برای همین بررسی گزارش‌ها در جریان است؛ نتیجه را همراه با زمان در اطلاع‌رسانی بعدی اعلام می‌کنیم." },
+            { "language": "ar", "text": "سأذكر عدم اليقين صراحة، لكن من دون تخمين: لا نعرف بعد هل تم الاطلاع على ملفات فردية. لهذا بالضبط يجري فحص السجلات؛ سنذكر النتيجة مع الوقت في التحديث التالي." },
+            { "language": "tr", "text": "Belirsizliği açıkça söylerdim, ama spekülasyon yapmazdım: tek tek dosyaların görülüp görülmediğini henüz bilmiyoruz. Kayıt incelemesi tam da bunun için sürüyor; sonucu bir saat bilgisiyle bir sonraki duyuruda paylaşacağız." },
+            { "language": "ru", "text": "Я бы прямо назвал неопределенность, но не стал бы строить догадки: мы еще не знаем, просматривались ли отдельные файлы. Именно для этого идет проверка журналов; результат с указанием времени мы назовем в следующем обновлении." },
+            { "language": "ckb", "text": "نادڵنیایی بە ڕوونی ناودەبەم، بەڵام گومان ناکەم: هێشتا نازانین ئایا فایلە تاکەکان بینراون یان نا. بۆ هەمان ئەمە پشکنینی تۆمارەکان بەردەوامە؛ ئەنجامەکە بەگەڵ کات لە زانیاریی داهاتوودا دەڵێین." },
+            { "language": "kmr", "text": "Ez nezelaliyê bi eşkere nav dikim, lê texmîn nakim: em hîn nizanin ka pelên takekesî hatine dîtin an na. Ji bo vê yekê kontrola tomaran didome; encamê bi demê re di agahdariya din de dibêjin." },
+            { "language": "pl", "text": "Nazwałbym niepewność wprost, ale nie spekulował: nie wiemy jeszcze, czy pojedyncze pliki zostały obejrzane. Właśnie po to trwa kontrola logów; wynik podamy z godziną w kolejnej informacji." },
+            { "language": "ro", "text": "Aș numi incertitudinea explicit, dar nu aș specula: încă nu știm dacă fișiere individuale au fost vizualizate. Tocmai pentru asta este în desfășurare verificarea jurnalelor; vom comunica rezultatul cu ora în următoarea informare." },
+            { "language": "sq", "text": "Do ta emërtoja pasigurinë hapur, por nuk do të spekuloja: ende nuk e dimë nëse janë parë skedarë të veçantë. Pikërisht për këtë po bëhet kontrolli i regjistrave; rezultatin do ta japim me orë në njoftimin tjetër." }
+          ],
+          "function": "uncertainty without speculation",
+          "toneNote": "transparent, controlled",
+          "expectedLearnerAction": "Name uncertainty and attach it to a verification process."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "moderator",
+          "baseText": "Welche konkrete Handlungsanweisung geben Sie den Kolleginnen und Kollegen?",
+          "translations": [
+            { "language": "en", "text": "What concrete instruction do you give colleagues?" },
+            { "language": "fa", "text": "چه دستور عملی مشخصی به همکاران می‌دهید؟" },
+            { "language": "ar", "text": "ما التعليمات العملية المحددة التي تعطونها للزملاء؟" },
+            { "language": "tr", "text": "Çalışma arkadaşlarına hangi somut talimatı verirsiniz?" },
+            { "language": "ru", "text": "Какое конкретное указание вы дадите коллегам?" },
+            { "language": "ckb", "text": "کام ڕێنمایی کردەیی دیاریکراو بە هاوکاران دەدەیت؟" },
+            { "language": "kmr", "text": "Hûn kîjan rêwerza pratîk a diyarkirî didin hevkaran?" },
+            { "language": "pl", "text": "Jaką konkretną instrukcję działania przekazuje Pan/Pani osobom w zespole?" },
+            { "language": "ro", "text": "Ce instrucțiune concretă de acțiune le dați colegilor?" },
+            { "language": "sq", "text": "Çfarë udhëzimi konkret veprimi u jepni kolegëve?" }
+          ],
+          "function": "action prompt",
+          "toneNote": "practical"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Bis zum nächsten Update sollen keine eigenen Bewertungen weitergegeben werden. Fragen gehen an die zentrale Kontaktadresse, verdächtige Zugriffe werden dort gemeldet, und externe Aussagen stimmen wir vorher mit Technik und Kommunikation ab.",
+          "translations": [
+            { "language": "en", "text": "Until the next update, no individual assessments should be passed on. Questions go to the central contact address, suspicious access is reported there, and external statements are coordinated beforehand with technology and communications." },
+            { "language": "fa", "text": "تا اطلاع‌رسانی بعدی، هیچ ارزیابی شخصی منتقل نشود. پرسش‌ها به نشانی تماس مرکزی می‌روند، دسترسی‌های مشکوک همان‌جا گزارش می‌شوند و اظهارنظرهای بیرونی را پیش از انتشار با بخش فنی و ارتباطات هماهنگ می‌کنیم." },
+            { "language": "ar", "text": "حتى التحديث التالي لا ينبغي نقل أي تقييمات فردية. تُوجَّه الأسئلة إلى عنوان الاتصال المركزي، وتُبلَّغ هناك محاولات الوصول المشبوهة، وتُنسَّق التصريحات الخارجية مسبقًا مع التقنية والتواصل." },
+            { "language": "tr", "text": "Bir sonraki bilgilendirmeye kadar bireysel değerlendirmeler aktarılmamalı. Sorular merkezi iletişim adresine gider, şüpheli erişimler oraya bildirilir ve dış açıklamalar önceden teknik ekip ve iletişimle koordine edilir." },
+            { "language": "ru", "text": "До следующего обновления не следует передавать собственные оценки. Вопросы направляются на центральный контактный адрес, подозрительные доступы сообщаются туда, а внешние заявления заранее согласуются с технической командой и коммуникацией." },
+            { "language": "ckb", "text": "تا زانیاریی داهاتوو نابێت هیچ هەڵسەنگاندنی کەسی بڵاو بکرێتەوە. پرسیارەکان دەچن بۆ ناونیشانی پەیوەندیی ناوەندی، دەستگەیشتنی گومانلێکراو لەوێ ڕادەگەیەنرێت و وتەی دەرەکی پێشتر لەگەڵ تەکنیک و پەیوەندیکردن ڕێکدەخرێت." },
+            { "language": "kmr", "text": "Heta agahdariya din nabe nirxandinên kesane bên derbas kirin. Pirs diçin navnîşana têkiliyê ya navendî, gihîştinên gumanbar li wir tên ragihandin û daxuyaniyên derveyî berê bi teknîk û ragihandinê re tên hevrêzkirin." },
+            { "language": "pl", "text": "Do kolejnej informacji nie należy przekazywać własnych ocen. Pytania trafiają na centralny adres kontaktowy, podejrzane dostępy zgłasza się tam, a wypowiedzi zewnętrzne uzgadniamy wcześniej z techniką i komunikacją." },
+            { "language": "ro", "text": "Până la următoarea informare nu se transmit evaluări proprii. Întrebările merg la adresa centrală de contact, accesările suspecte se raportează acolo, iar declarațiile externe le coordonăm înainte cu tehnicul și comunicarea." },
+            { "language": "sq", "text": "Deri në njoftimin tjetër nuk duhet të përcillen vlerësime personale. Pyetjet shkojnë te adresa qendrore e kontaktit, qasjet e dyshimta raportohen aty dhe deklaratat e jashtme i koordinojmë paraprakisht me teknikën dhe komunikimin." }
+          ],
+          "function": "action guidance",
+          "toneNote": "operational, clear",
+          "expectedLearnerAction": "Give concrete instructions and prevent rumor spread."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderator",
+          "baseText": "Formulieren Sie bitte eine Schlussformulierung für die interne Nachricht.",
+          "translations": [
+            { "language": "en", "text": "Please formulate a closing sentence for the internal message." },
+            { "language": "fa", "text": "لطفاً یک جمله پایانی برای پیام داخلی بیان کنید." },
+            { "language": "ar", "text": "يرجى صياغة عبارة ختامية للرسالة الداخلية." },
+            { "language": "tr", "text": "Lütfen iç mesaj için bir kapanış ifadesi formüle edin." },
+            { "language": "ru", "text": "Пожалуйста, сформулируйте заключительную фразу для внутреннего сообщения." },
+            { "language": "ckb", "text": "تکایە وتەیەکی کۆتایی بۆ پەیامی ناوخۆیی دابڕێژە." },
+            { "language": "kmr", "text": "Ji kerema xwe gotineke dawî ji bo peyama navxweyî ava bikin." },
+            { "language": "pl", "text": "Proszę sformułować zdanie końcowe do wiadomości wewnętrznej." },
+            { "language": "ro", "text": "Vă rog să formulați o încheiere pentru mesajul intern." },
+            { "language": "sq", "text": "Ju lutem formuloni një fjali përmbyllëse për mesazhin e brendshëm." }
+          ],
+          "function": "closing prompt",
+          "toneNote": "synthesis"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Wir behandeln den Vorfall ernst, aber auf Grundlage geprüfter Informationen: Die Schwachstelle ist geschlossen, die Prüfung läuft, Handlungswege sind benannt, und das nächste Update erfolgt heute um 16 Uhr.",
+          "translations": [
+            { "language": "en", "text": "We are treating the incident seriously, but on the basis of verified information: the issue has been closed, the review is running, action paths have been named, and the next update will be today at 4 p.m." },
+            { "language": "fa", "text": "ما این رویداد را جدی می‌گیریم، اما بر پایه اطلاعات بررسی‌شده: رخنه بسته شده، بررسی در جریان است، مسیرهای اقدام مشخص شده‌اند و اطلاع‌رسانی بعدی امروز ساعت ۱۶ انجام می‌شود." },
+            { "language": "ar", "text": "نتعامل مع الحادث بجدية، لكن على أساس معلومات مفحوصة: أُغلقت الثغرة، والفحص جار، ومسارات العمل محددة، وسيصدر التحديث التالي اليوم في الساعة 16." },
+            { "language": "tr", "text": "Olayı ciddiye alıyoruz, ancak doğrulanmış bilgiler temelinde: açık kapatıldı, inceleme sürüyor, eylem yolları belirtildi ve bir sonraki bilgilendirme bugün saat 16.00'da yapılacak." },
+            { "language": "ru", "text": "Мы относимся к инциденту серьезно, но опираемся на проверенную информацию: уязвимость закрыта, проверка идет, пути действий названы, следующее обновление будет сегодня в 16:00." },
+            { "language": "ckb", "text": "ئێمە ئەم ڕووداوە بە جدی وەردەگرین، بەڵام لەسەر بنەمای زانیاریی پشکنراو: کەلێنەکە داخراوە، پشکنین بەردەوامە، ڕێگاکانی هەنگاو ناودراون و زانیاریی داهاتوو ئەمڕۆ کاتژمێر ١٦ دەبێت." },
+            { "language": "kmr", "text": "Em vê bûyerê cidî digirin, lê li ser bingeha agahdariya kontrolkirî: valahî hatiye girtin, kontrol didome, rêyên çalakiyê hatine navkirin û agahdariya din îro saet 16 dibe." },
+            { "language": "pl", "text": "Traktujemy zdarzenie poważnie, ale na podstawie sprawdzonych informacji: luka jest zamknięta, kontrola trwa, ścieżki działania zostały wskazane, a kolejna informacja pojawi się dziś o 16:00." },
+            { "language": "ro", "text": "Tratăm incidentul cu seriozitate, dar pe baza informațiilor verificate: breșa este închisă, verificarea continuă, căile de acțiune au fost numite, iar următoarea informare va avea loc astăzi la ora 16." },
+            { "language": "sq", "text": "E trajtojmë ngjarjen seriozisht, por mbi bazën e informacionit të kontrolluar: dobësia është mbyllur, kontrolli vazhdon, rrugët e veprimit janë emërtuar dhe njoftimi tjetër bëhet sot në orën 16." }
+          ],
+          "function": "final internal message",
+          "toneNote": "calm, responsible",
+          "expectedLearnerAction": "Close with seriousness, verified facts, and next update."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir trennen klar: Was wissen wir sicher, was prüfen wir noch, und was tun wir bereits.",
+              "translations": [
+                { "language": "en", "text": "We separate clearly: what we know for certain, what we are still checking, and what we are already doing." },
+                { "language": "fa", "text": "روشن جدا می‌کنیم: چه چیزی را قطعی می‌دانیم، چه چیزی را هنوز بررسی می‌کنیم و چه کاری را همین حالا انجام می‌دهیم." },
+                { "language": "ar", "text": "نفصل بوضوح: ما نعرفه بيقين، وما لا نزال نفحصه، وما نفعله بالفعل." },
+                { "language": "tr", "text": "Açıkça ayırıyoruz: kesin olarak ne biliyoruz, neyi hâlâ kontrol ediyoruz ve şu anda ne yapıyoruz." },
+                { "language": "ru", "text": "Мы четко разделяем: что знаем точно, что еще проверяем и что уже делаем." },
+                { "language": "ckb", "text": "بە ڕوونی جیا دەکەینەوە: چی بە دڵنیایی دەزانین، چی هێشتا دەپشکنین و چی ئێستا دەکەین." },
+                { "language": "kmr", "text": "Em bi zelalî veqetînin: em çi bi piştrastî dizanin, em hîn çi kontrol dikin û em jixwe çi dikin." },
+                { "language": "pl", "text": "Wyraźnie oddzielamy: co wiemy na pewno, co jeszcze sprawdzamy i co już robimy." },
+                { "language": "ro", "text": "Separăm clar: ce știm sigur, ce verificăm încă și ce facem deja." },
+                { "language": "sq", "text": "I ndajmë qartë: çfarë dimë me siguri, çfarë po kontrollojmë ende dhe çfarë po bëjmë tashmë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort schafft Orientierung und verhindert Spekulation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer creates orientation and prevents speculation." },
+                { "language": "fa", "text": "قوی: پاسخ جهت می‌دهد و جلوی حدس‌زنی را می‌گیرد." },
+                { "language": "ar", "text": "قوي: تخلق الإجابة توجيهًا وتمنع التخمين." },
+                { "language": "tr", "text": "Güçlü: Yanıt yön verir ve spekülasyonu önler." },
+                { "language": "ru", "text": "Сильно: ответ дает ориентир и предотвращает догадки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ئاراستە دەدات و ڕێگری لە گومان دەکات." },
+                { "language": "kmr", "text": "Xurt e: bersiv rêberî çêdike û pêşiya texmînê digire." },
+                { "language": "pl", "text": "Mocne: odpowiedź daje orientację i zapobiega spekulacjom." },
+                { "language": "ro", "text": "Puternic: răspunsul creează orientare și previne speculațiile." },
+                { "language": "sq", "text": "E fortë: përgjigjja krijon orientim dhe parandalon hamendësimet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir sollten zuerst sagen, dass kein Grund zur Beunruhigung besteht, und danach die Details erklären.",
+              "translations": [
+                { "language": "en", "text": "We should first say that there is no reason for concern and then explain the details." },
+                { "language": "fa", "text": "باید اول بگوییم دلیلی برای نگرانی وجود ندارد و بعد جزئیات را توضیح دهیم." },
+                { "language": "ar", "text": "ينبغي أن نقول أولًا إنه لا يوجد سبب للقلق، ثم نشرح التفاصيل." },
+                { "language": "tr", "text": "Önce endişe için bir neden olmadığını söylemeli, sonra ayrıntıları açıklamalıyız." },
+                { "language": "ru", "text": "Сначала нужно сказать, что нет причин для беспокойства, а затем объяснить детали." },
+                { "language": "ckb", "text": "پێویستە سەرەتا بڵێین هیچ هۆکارێک بۆ نیگەرانی نییە و پاشان وردەکارییەکان ڕوون بکەینەوە." },
+                { "language": "kmr", "text": "Divê pêşî bêjin sedemek ji bo xemê tune ye û paşê hûrgiliyan rave bikin." },
+                { "language": "pl", "text": "Powinniśmy najpierw powiedzieć, że nie ma powodu do niepokoju, a potem wyjaśnić szczegóły." },
+                { "language": "ro", "text": "Ar trebui să spunem mai întâi că nu există motiv de îngrijorare și apoi să explicăm detaliile." },
+                { "language": "sq", "text": "Duhet së pari të themi se nuk ka arsye për shqetësim dhe pastaj të shpjegojmë detajet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu beschwichtigend: Ohne Fakten wirkt die Beruhigung unglaubwürdig.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too reassuring: without facts, the calming statement lacks credibility." },
+                { "language": "fa", "text": "بیش از حد آرام‌ساز است: بدون واقعیت‌ها، آرام‌سازی باورپذیر نیست." },
+                { "language": "ar", "text": "مطمئن أكثر من اللازم: من دون حقائق تبدو التهدئة غير موثوقة." },
+                { "language": "tr", "text": "Fazla yatıştırıcı: Olgular olmadan güven verme inandırıcı olmaz." },
+                { "language": "ru", "text": "Слишком успокаивающе: без фактов такое успокоение выглядит недостоверно." },
+                { "language": "ckb", "text": "زۆر ئارامکەرەوەیە: بەبێ ڕاستییەکان ئارامکردنەوەکە باوەڕپێکراو نابێت." },
+                { "language": "kmr", "text": "Pir aramker e: bê rastî, aramkirin pêbawer xuya nake." },
+                { "language": "pl", "text": "Zbyt uspokajające: bez faktów takie uspokojenie brzmi niewiarygodnie." },
+                { "language": "ro", "text": "Prea liniștitor: fără fapte, calmarea pare necredibilă." },
+                { "language": "sq", "text": "Shumë qetësuese: pa fakte, qetësimi duket jo i besueshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Bestätigt ist: Die Schwachstelle ist geschlossen, bisher gibt es keinen Hinweis auf Datenabfluss, und die Protokolle werden weiter geprüft.",
+              "translations": [
+                { "language": "en", "text": "Confirmed is this: the issue is closed, so far there is no indication of data leaving the system, and the logs are still being checked." },
+                { "language": "fa", "text": "تأیید شده این است: رخنه بسته شده، تا این لحظه نشانه‌ای از خروج داده وجود ندارد و گزارش‌ها همچنان بررسی می‌شوند." },
+                { "language": "ar", "text": "المؤكد هو: أُغلقت الثغرة، ولا يوجد حتى الآن مؤشر على خروج بيانات، وما زالت السجلات تُفحص." },
+                { "language": "tr", "text": "Doğrulanan şu: Açık kapatıldı, şu ana kadar veri çıkışına dair bir işaret yok ve kayıtlar hâlâ inceleniyor." },
+                { "language": "ru", "text": "Подтверждено следующее: уязвимость закрыта, пока нет признаков выхода данных, журналы продолжают проверяться." },
+                { "language": "ckb", "text": "پشتڕاستکراوە ئەوەیە: کەلێنەکە داخراوە، تا ئێستا هیچ نیشانەی دەرچوونی داتا نییە و تۆمارەکان هێشتا دەپشکنرێن." },
+                { "language": "kmr", "text": "Ya piştrast ev e: valahî hatiye girtin, heta niha nîşaneyek li ser derketina daneyan tune ye û tomar hîn tên kontrolkirin." },
+                { "language": "pl", "text": "Potwierdzone jest to: luka została zamknięta, dotąd nie ma sygnału o wypływie danych, a logi są nadal sprawdzane." },
+                { "language": "ro", "text": "Confirmat este: breșa este închisă, până acum nu există indiciu privind ieșirea datelor, iar jurnalele sunt încă verificate." },
+                { "language": "sq", "text": "E konfirmuar është kjo: dobësia është mbyllur, deri tani nuk ka tregues për dalje të të dhënave dhe regjistrat po kontrollohen ende." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort nennt Fakten und hält die laufende Prüfung sichtbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names facts and keeps the ongoing review visible." },
+                { "language": "fa", "text": "قوی: پاسخ واقعیت‌ها را نام می‌برد و بررسی جاری را قابل مشاهده نگه می‌دارد." },
+                { "language": "ar", "text": "قوي: تذكر الإجابة الحقائق وتُبقي الفحص الجاري ظاهرًا." },
+                { "language": "tr", "text": "Güçlü: Yanıt olguları belirtir ve süren incelemeyi görünür tutar." },
+                { "language": "ru", "text": "Сильно: ответ называет факты и показывает продолжающуюся проверку." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ڕاستییەکان ناودەبات و پشکنینی بەردەوام دیار دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Xurt e: bersiv rastiyan nav dike û kontrola didome xuya dihêle." },
+                { "language": "pl", "text": "Mocne: odpowiedź podaje fakty i pokazuje trwającą kontrolę." },
+                { "language": "ro", "text": "Puternic: răspunsul numește faptele și menține vizibilă verificarea în curs." },
+                { "language": "sq", "text": "E fortë: përgjigjja përmend faktet dhe e mban të dukshëm kontrollin në vazhdim." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Bestätigt ist, dass die Lücke gefunden und geschlossen wurde; alles Weitere können wir später nachreichen.",
+              "translations": [
+                { "language": "en", "text": "It is confirmed that the issue was found and closed; everything else can be supplied later." },
+                { "language": "fa", "text": "تأیید شده که رخنه پیدا و بسته شده است؛ بقیه موارد را می‌توانیم بعداً اضافه کنیم." },
+                { "language": "ar", "text": "المؤكد أن الثغرة وُجدت وأُغلقت؛ ويمكننا تقديم كل ما تبقى لاحقًا." },
+                { "language": "tr", "text": "Açığın bulunduğu ve kapatıldığı doğrulandı; geri kalan her şeyi sonra ekleyebiliriz." },
+                { "language": "ru", "text": "Подтверждено, что уязвимость найдена и закрыта; все остальное можно добавить позже." },
+                { "language": "ckb", "text": "پشتڕاستکراوە کە کەلێنەکە دۆزراوەتەوە و داخراوە؛ هەموو ئەوانی تر دەتوانین دواتر زیاد بکەین." },
+                { "language": "kmr", "text": "Hatiye piştrastkirin ku valahî hatiye dîtin û girtin; hemû tiştên din dikarin paşê bên zêdekirin." },
+                { "language": "pl", "text": "Potwierdzone jest, że luka została znaleziona i zamknięta; wszystko inne możemy uzupełnić później." },
+                { "language": "ro", "text": "Este confirmat că breșa a fost găsită și închisă; restul îl putem adăuga mai târziu." },
+                { "language": "sq", "text": "Është konfirmuar se dobësia u gjet dhe u mbyll; gjithçka tjetër mund ta shtojmë më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die Antwort verschweigt offene Prüfung und mögliche Betroffenheit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: the answer hides the ongoing review and possible impact." },
+                { "language": "fa", "text": "بیش از حد کوتاه است: پاسخ بررسی باز و اثر احتمالی را پنهان می‌کند." },
+                { "language": "ar", "text": "مختصر جدًا: تخفي الإجابة الفحص المفتوح والأثر المحتمل." },
+                { "language": "tr", "text": "Fazla kısa: Yanıt açık incelemeyi ve olası etkiyi gizliyor." },
+                { "language": "ru", "text": "Слишком кратко: ответ скрывает продолжающуюся проверку и возможное влияние." },
+                { "language": "ckb", "text": "زۆر کورتە: وەڵامەکە پشکنینی کراوە و کاریگەریی ئەگەری دەشارێتەوە." },
+                { "language": "kmr", "text": "Pir kurt e: bersiv kontrola vekirî û bandora gengaz veşêre." },
+                { "language": "pl", "text": "Zbyt krótko: odpowiedź ukrywa otwartą kontrolę i możliwy wpływ." },
+                { "language": "ro", "text": "Prea scurt: răspunsul ascunde verificarea deschisă și impactul posibil." },
+                { "language": "sq", "text": "Shumë e shkurtër: përgjigjja fsheh kontrollin e hapur dhe ndikimin e mundshëm." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir wissen noch nicht, ob einzelne Dateien eingesehen wurden; deshalb läuft die Protokollprüfung, deren Ergebnis wir im nächsten Update nennen.",
+              "translations": [
+                { "language": "en", "text": "We do not yet know whether individual files were viewed; that is why the log review is running, and we will name its result in the next update." },
+                { "language": "fa", "text": "هنوز نمی‌دانیم آیا فایل‌های جداگانه دیده شده‌اند یا نه؛ به همین دلیل بررسی گزارش‌ها در جریان است و نتیجه‌اش را در اطلاع‌رسانی بعدی اعلام می‌کنیم." },
+                { "language": "ar", "text": "لا نعرف بعد هل تم الاطلاع على ملفات فردية؛ لذلك يجري فحص السجلات، وسنذكر نتيجته في التحديث التالي." },
+                { "language": "tr", "text": "Tek tek dosyaların görülüp görülmediğini henüz bilmiyoruz; bu nedenle kayıt incelemesi sürüyor ve sonucunu bir sonraki duyuruda paylaşacağız." },
+                { "language": "ru", "text": "Мы еще не знаем, просматривались ли отдельные файлы; поэтому идет проверка журналов, результат которой мы назовем в следующем обновлении." },
+                { "language": "ckb", "text": "هێشتا نازانین ئایا فایلە تاکەکان بینراون یان نا؛ بۆیە پشکنینی تۆمارەکان بەردەوامە و ئەنجامەکەی لە زانیاریی داهاتوودا دەڵێین." },
+                { "language": "kmr", "text": "Em hîn nizanin ka pelên takekesî hatine dîtin an na; ji ber vê kontrola tomaran didome û encama wê di agahdariya din de dibêjin." },
+                { "language": "pl", "text": "Nie wiemy jeszcze, czy pojedyncze pliki zostały obejrzane; dlatego trwa kontrola logów, a jej wynik podamy w kolejnej informacji." },
+                { "language": "ro", "text": "Încă nu știm dacă fișiere individuale au fost vizualizate; de aceea verificarea jurnalelor este în desfășurare, iar rezultatul îl vom comunica în următoarea informare." },
+                { "language": "sq", "text": "Ende nuk e dimë nëse janë parë skedarë të veçantë; prandaj po bëhet kontrolli i regjistrave dhe rezultatin do ta japim në njoftimin tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort benennt Unsicherheit und bindet sie an einen Prüfprozess.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer names uncertainty and ties it to a review process." },
+                { "language": "fa", "text": "قوی: پاسخ عدم قطعیت را نام می‌برد و آن را به فرایند بررسی وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تذكر الإجابة عدم اليقين وتربطه بعملية فحص." },
+                { "language": "tr", "text": "Güçlü: Yanıt belirsizliği belirtir ve bunu bir inceleme sürecine bağlar." },
+                { "language": "ru", "text": "Сильно: ответ называет неопределенность и связывает ее с процессом проверки." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە نادڵنیایی ناودەبات و بە پرۆسەی پشکنینەوە دەیبەستێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv nezelaliyê nav dike û wê bi pêvajoya kontrolê ve girê dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź nazywa niepewność i wiąże ją z procesem kontroli." },
+                { "language": "ro", "text": "Puternic: răspunsul numește incertitudinea și o leagă de un proces de verificare." },
+                { "language": "sq", "text": "E fortë: përgjigjja emërton pasigurinë dhe e lidh me një proces kontrolli." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir gehen derzeit nicht davon aus, dass etwas Ernstes passiert ist, prüfen aber zur Sicherheit weiter.",
+              "translations": [
+                { "language": "en", "text": "We currently do not assume that anything serious happened, but we continue checking to be safe." },
+                { "language": "fa", "text": "در حال حاضر فرض نمی‌کنیم اتفاق جدی افتاده باشد، اما برای اطمینان بررسی را ادامه می‌دهیم." },
+                { "language": "ar", "text": "لا نفترض حاليًا أن شيئًا خطيرًا حدث، لكننا نواصل الفحص للاطمئنان." },
+                { "language": "tr", "text": "Şu anda ciddi bir şey olduğunu varsaymıyoruz, ancak güvenli olmak için incelemeye devam ediyoruz." },
+                { "language": "ru", "text": "Сейчас мы не предполагаем, что произошло что-то серьезное, но продолжаем проверку для уверенности." },
+                { "language": "ckb", "text": "ئێستا پێمان وایە هیچ شتێکی جدی ڕووی نەداوە، بەڵام بۆ دڵنیایی پشکنین بەردەوام دەکەین." },
+                { "language": "kmr", "text": "Niha em texmîn nakin ku tiştekî cidî qewimîbe, lê ji bo ewlehiyê kontrolê didomînin." },
+                { "language": "pl", "text": "Obecnie nie zakładamy, że stało się coś poważnego, ale dla pewności dalej sprawdzamy." },
+                { "language": "ro", "text": "În prezent nu presupunem că s-a întâmplat ceva grav, dar continuăm verificarea pentru siguranță." },
+                { "language": "sq", "text": "Aktualisht nuk supozojmë se ka ndodhur diçka serioze, por vazhdojmë kontrollin për siguri." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu spekulativ: Die Formulierung ersetzt überprüfbare Unsicherheit durch eine beruhigende Annahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too speculative: the wording replaces verifiable uncertainty with a reassuring assumption." },
+                { "language": "fa", "text": "بیش از حد حدسی است: عبارت، عدم قطعیت قابل بررسی را با یک فرض آرام‌کننده جایگزین می‌کند." },
+                { "language": "ar", "text": "تخميني جدًا: تستبدل الصياغة عدم اليقين القابل للفحص بافتراض مطمئن." },
+                { "language": "tr", "text": "Fazla varsayımsal: İfade denetlenebilir belirsizliği yatıştırıcı bir varsayımla değiştiriyor." },
+                { "language": "ru", "text": "Слишком предположительно: формулировка заменяет проверяемую неопределенность успокаивающим предположением." },
+                { "language": "ckb", "text": "زۆر گومانییە: داڕشتنەکە نادڵنیایی پشکنراو بە گومانێکی ئارامکەرەوە دەگۆڕێت." },
+                { "language": "kmr", "text": "Pir texmînî ye: formûlasyon nezelaliya kontrolbar bi texmîneke aramker diguherîne." },
+                { "language": "pl", "text": "Zbyt spekulacyjne: sformułowanie zastępuje sprawdzalną niepewność uspokajającym założeniem." },
+                { "language": "ro", "text": "Prea speculativ: formularea înlocuiește incertitudinea verificabilă cu o presupunere liniștitoare." },
+                { "language": "sq", "text": "Shumë hamendësuese: formulimi zëvendëson pasigurinë e verifikueshme me një supozim qetësues." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Keine eigenen Bewertungen weitergeben, Fragen zentral sammeln, verdächtige Zugriffe melden und externe Aussagen vorher abstimmen.",
+              "translations": [
+                { "language": "en", "text": "Do not pass on individual assessments, collect questions centrally, report suspicious access, and coordinate external statements beforehand." },
+                { "language": "fa", "text": "ارزیابی شخصی منتقل نکنید، پرسش‌ها را مرکزی جمع کنید، دسترسی‌های مشکوک را گزارش دهید و اظهارنظرهای بیرونی را پیشاپیش هماهنگ کنید." },
+                { "language": "ar", "text": "لا تنقلوا تقييمات فردية، اجمعوا الأسئلة مركزيًا، بلّغوا عن الوصول المشبوه، ونسّقوا التصريحات الخارجية مسبقًا." },
+                { "language": "tr", "text": "Bireysel değerlendirme aktarmayın, soruları merkezi olarak toplayın, şüpheli erişimleri bildirin ve dış açıklamaları önceden koordine edin." },
+                { "language": "ru", "text": "Не передавайте собственные оценки, собирайте вопросы централизованно, сообщайте о подозрительных доступах и заранее согласуйте внешние заявления." },
+                { "language": "ckb", "text": "هەڵسەنگاندنی کەسی مەگوازنەوە، پرسیارەکان بە ناوەندی کۆبکەنەوە، دەستگەیشتنی گومانلێکراو ڕابگەیەنن و وتەی دەرەکی پێشتر ڕێکبخەن." },
+                { "language": "kmr", "text": "Nirxandinên kesane derbas nekin, pirsan navendî kom bikin, gihîştinên gumanbar ragihînin û daxuyaniyên derveyî berê hevrêz bikin." },
+                { "language": "pl", "text": "Nie przekazywać własnych ocen, zbierać pytania centralnie, zgłaszać podejrzane dostępy i wcześniej uzgadniać wypowiedzi zewnętrzne." },
+                { "language": "ro", "text": "Nu transmiteți evaluări proprii, colectați întrebările centralizat, raportați accesări suspecte și coordonați declarațiile externe înainte." },
+                { "language": "sq", "text": "Mos përcillni vlerësime personale, mblidhni pyetjet në mënyrë qendrore, raportoni qasjet e dyshimta dhe koordinoni paraprakisht deklaratat e jashtme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Anweisung verhindert Gerüchte und schafft handlungsfähige Kanäle.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The instruction prevents rumors and creates usable channels for action." },
+                { "language": "fa", "text": "قوی: دستور جلوی شایعه را می‌گیرد و مسیرهای عملی ایجاد می‌کند." },
+                { "language": "ar", "text": "قوي: تمنع التعليمات الشائعات وتخلق قنوات عملية للتصرف." },
+                { "language": "tr", "text": "Güçlü: Talimat söylentileri önler ve işlemeye uygun kanallar oluşturur." },
+                { "language": "ru", "text": "Сильно: указание предотвращает слухи и создает рабочие каналы действий." },
+                { "language": "ckb", "text": "بەهێزە: ڕێنماییەکە ڕێگری لە دەنگۆ دەکات و کەناڵی کردەیی دروست دەکات." },
+                { "language": "kmr", "text": "Xurt e: rêwerz pêşiya gotegotan digire û kanalên pratîk çêdike." },
+                { "language": "pl", "text": "Mocne: instrukcja zapobiega plotkom i tworzy użyteczne kanały działania." },
+                { "language": "ro", "text": "Puternic: instrucțiunea previne zvonurile și creează canale funcționale de acțiune." },
+                { "language": "sq", "text": "E fortë: udhëzimi parandalon thashethemet dhe krijon kanale veprimi të përdorshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Alle sollen ruhig bleiben und nur dann reagieren, wenn konkrete Rückfragen kommen.",
+              "translations": [
+                { "language": "en", "text": "Everyone should stay calm and react only when concrete follow-up questions come in." },
+                { "language": "fa", "text": "همه باید آرام بمانند و فقط وقتی پرسش‌های مشخص آمد واکنش نشان دهند." },
+                { "language": "ar", "text": "على الجميع أن يبقوا هادئين وألا يتفاعلوا إلا عندما ترد أسئلة محددة." },
+                { "language": "tr", "text": "Herkes sakin kalmalı ve yalnızca somut sorular geldiğinde tepki vermeli." },
+                { "language": "ru", "text": "Все должны сохранять спокойствие и реагировать только тогда, когда поступят конкретные вопросы." },
+                { "language": "ckb", "text": "هەموو کەس دەبێت ئارام بمێنێتەوە و تەنها کاتێک وەڵام بداتەوە کە پرسیاری دیاریکراو دێت." },
+                { "language": "kmr", "text": "Divê hemû kes aram bimînin û tenê dema pirsên diyarkirî werin bersiv bidin." },
+                { "language": "pl", "text": "Wszyscy powinni zachować spokój i reagować dopiero wtedy, gdy pojawią się konkretne pytania." },
+                { "language": "ro", "text": "Toți ar trebui să rămână calmi și să reacționeze doar când apar întrebări concrete." },
+                { "language": "sq", "text": "Të gjithë duhet të qëndrojnë të qetë dhe të reagojnë vetëm kur vijnë pyetje konkrete." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu passiv: Ruhe ist wichtig, aber ohne Meldeweg und Abstimmung entstehen Lücken.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: calm is important, but without reporting paths and coordination, gaps arise." },
+                { "language": "fa", "text": "بیش از حد منفعل است: آرامش مهم است، اما بدون مسیر گزارش و هماهنگی، خلأ ایجاد می‌شود." },
+                { "language": "ar", "text": "سلبي جدًا: الهدوء مهم، لكن من دون مسار إبلاغ وتنسيق تنشأ فجوات." },
+                { "language": "tr", "text": "Fazla pasif: Sakinlik önemlidir, ancak bildirim yolu ve koordinasyon olmadan boşluklar oluşur." },
+                { "language": "ru", "text": "Слишком пассивно: спокойствие важно, но без пути сообщения и координации появляются пробелы." },
+                { "language": "ckb", "text": "زۆر پاسیڤە: ئارامی گرنگە، بەڵام بێ ڕێگای ڕاگەیاندن و ڕێکخستن کەلێن دروست دەبێت." },
+                { "language": "kmr", "text": "Pir pasîf e: aramî girîng e, lê bê rêya ragihandinê û hevrêzkirinê valahî çêdibin." },
+                { "language": "pl", "text": "Zbyt pasywne: spokój jest ważny, ale bez ścieżki zgłaszania i koordynacji powstają luki." },
+                { "language": "ro", "text": "Prea pasiv: calmul este important, dar fără cale de raportare și coordonare apar goluri." },
+                { "language": "sq", "text": "Shumë pasive: qetësia është e rëndësishme, por pa rrugë raportimi dhe koordinim krijohen boshllëqe." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wir behandeln den Vorfall ernst, die Schwachstelle ist geschlossen, die Prüfung läuft, und das nächste Update erfolgt heute um 16 Uhr.",
+              "translations": [
+                { "language": "en", "text": "We are treating the incident seriously, the issue is closed, the review is running, and the next update will be today at 4 p.m." },
+                { "language": "fa", "text": "ما این رویداد را جدی می‌گیریم، رخنه بسته شده، بررسی در جریان است و اطلاع‌رسانی بعدی امروز ساعت ۱۶ انجام می‌شود." },
+                { "language": "ar", "text": "نتعامل مع الحادث بجدية، وقد أُغلقت الثغرة، والفحص جار، وسيصدر التحديث التالي اليوم في الساعة 16." },
+                { "language": "tr", "text": "Olayı ciddiye alıyoruz, açık kapatıldı, inceleme sürüyor ve bir sonraki bilgilendirme bugün saat 16.00'da yapılacak." },
+                { "language": "ru", "text": "Мы относимся к инциденту серьезно, уязвимость закрыта, проверка идет, следующее обновление будет сегодня в 16:00." },
+                { "language": "ckb", "text": "ئێمە ئەم ڕووداوە بە جدی وەردەگرین، کەلێنەکە داخراوە، پشکنین بەردەوامە و زانیاریی داهاتوو ئەمڕۆ کاتژمێر ١٦ دەبێت." },
+                { "language": "kmr", "text": "Em vê bûyerê cidî digirin, valahî hatiye girtin, kontrol didome û agahdariya din îro saet 16 dibe." },
+                { "language": "pl", "text": "Traktujemy zdarzenie poważnie, luka jest zamknięta, kontrola trwa, a kolejna informacja pojawi się dziś o 16:00." },
+                { "language": "ro", "text": "Tratăm incidentul cu seriozitate, breșa este închisă, verificarea continuă, iar următoarea informare va avea loc astăzi la ora 16." },
+                { "language": "sq", "text": "E trajtojmë ngjarjen seriozisht, dobësia është mbyllur, kontrolli vazhdon dhe njoftimi tjetër bëhet sot në orën 16." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Schlussformel verbindet Ernsthaftigkeit, Faktenlage, Prüfung und nächsten Zeitpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The closing formula connects seriousness, facts, review, and the next time point." },
+                { "language": "fa", "text": "قوی: جمله پایانی جدیت، وضعیت واقعیت‌ها، بررسی و زمان بعدی را به هم وصل می‌کند." },
+                { "language": "ar", "text": "قوي: تربط الصيغة الختامية الجدية والحقائق والفحص والموعد التالي." },
+                { "language": "tr", "text": "Güçlü: Kapanış ifadesi ciddiyeti, olguları, incelemeyi ve sonraki zamanı birleştirir." },
+                { "language": "ru", "text": "Сильно: заключительная формула связывает серьезность, факты, проверку и следующий срок." },
+                { "language": "ckb", "text": "بەهێزە: داڕشتنی کۆتایی جدیبوون، ڕاستییەکان، پشکنین و کاتی داهاتوو پێکەوە دەبەستێت." },
+                { "language": "kmr", "text": "Xurt e: formûla dawî cidîbûn, rastî, kontrol û dema din bi hev ve girê dide." },
+                { "language": "pl", "text": "Mocne: formuła końcowa łączy powagę, stan faktów, kontrolę i kolejny termin." },
+                { "language": "ro", "text": "Puternic: formula finală leagă seriozitatea, starea faptelor, verificarea și următorul moment." },
+                { "language": "sq", "text": "E fortë: formula përmbyllëse lidh seriozitetin, gjendjen e fakteve, kontrollin dhe kohën e ardhshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir haben alles Nötige eingeleitet und informieren wieder, sobald es etwas Neues gibt.",
+              "translations": [
+                { "language": "en", "text": "We have initiated everything necessary and will inform again as soon as there is something new." },
+                { "language": "fa", "text": "همه اقدامات لازم را آغاز کرده‌ایم و به محض وجود مورد تازه دوباره اطلاع می‌دهیم." },
+                { "language": "ar", "text": "لقد بدأنا كل ما يلزم وسنبلغ من جديد بمجرد وجود شيء جديد." },
+                { "language": "tr", "text": "Gerekli her şeyi başlattık ve yeni bir şey olduğunda tekrar bilgilendireceğiz." },
+                { "language": "ru", "text": "Мы инициировали все необходимое и сообщим снова, как только появится что-то новое." },
+                { "language": "ckb", "text": "هەموو شتی پێویستمان دەست پێکردووە و کاتێک شتێکی نوێ هەبوو دووبارە زانیاری دەدەین." },
+                { "language": "kmr", "text": "Me hemû tiştên pêwîst dest pê kirine û dema tiştekî nû hebe dîsa agahdar dikin." },
+                { "language": "pl", "text": "Uruchomiliśmy wszystko, co potrzebne, i poinformujemy ponownie, gdy pojawi się coś nowego." },
+                { "language": "ro", "text": "Am inițiat tot ce era necesar și vom informa din nou de îndată ce apare ceva nou." },
+                { "language": "sq", "text": "Kemi nisur gjithçka të nevojshme dhe do të informojmë sërish sapo të ketë diçka të re." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu unbestimmt: Ohne nächsten Zeitpunkt und konkrete Fakten bleibt die Nachricht schwach.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too indefinite: without a next time point and concrete facts, the message remains weak." },
+                { "language": "fa", "text": "بیش از حد نامشخص است: بدون زمان بعدی و واقعیت‌های مشخص، پیام ضعیف می‌ماند." },
+                { "language": "ar", "text": "غير محدد جدًا: من دون موعد تالٍ وحقائق ملموسة تبقى الرسالة ضعيفة." },
+                { "language": "tr", "text": "Fazla belirsiz: Sonraki zaman ve somut olgular olmadan mesaj zayıf kalır." },
+                { "language": "ru", "text": "Слишком неопределенно: без следующего срока и конкретных фактов сообщение остается слабым." },
+                { "language": "ckb", "text": "زۆر نادیارە: بەبێ کاتی داهاتوو و ڕاستییە دیاریکراوەکان پەیامەکە لاواز دەمێنێت." },
+                { "language": "kmr", "text": "Pir nediyar e: bê dema din û rastiyên diyarkirî, peyam lawaz dimîne." },
+                { "language": "pl", "text": "Zbyt nieokreślone: bez kolejnego terminu i konkretnych faktów wiadomość pozostaje słaba." },
+                { "language": "ro", "text": "Prea nedefinit: fără un moment următor și fapte concrete, mesajul rămâne slab." },
+                { "language": "sq", "text": "Shumë e papërcaktuar: pa kohën e ardhshme dhe fakte konkrete, mesazhi mbetet i dobët." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "structure",
+          "text": "In Krisenkommunikation müssen Fakten, offene Prüfung und Maßnahmen sichtbar getrennt bleiben.",
+          "translations": [
+            { "language": "en", "text": "In crisis communication, facts, ongoing review, and actions must remain visibly separate." },
+            { "language": "fa", "text": "در ارتباطات بحرانی، واقعیت‌ها، بررسی باز و اقدامات باید به‌طور قابل مشاهده جدا بمانند." },
+            { "language": "ar", "text": "في تواصل الأزمات يجب أن تبقى الحقائق والفحص الجاري والإجراءات منفصلة بوضوح." },
+            { "language": "tr", "text": "Kriz iletişiminde olgular, süren inceleme ve önlemler görünür biçimde ayrı kalmalıdır." },
+            { "language": "ru", "text": "В кризисной коммуникации факты, текущая проверка и меры должны оставаться явно разделенными." },
+            { "language": "ckb", "text": "لە پەیوەندیکردنی قەیراندا ڕاستییەکان، پشکنینی کراوە و هەنگاوەکان دەبێت بە دیاری جیا بمێننەوە." },
+            { "language": "kmr", "text": "Di ragihandina qeyranê de rastî, kontrola didome û gav divê bi xuya ji hev cuda bimînin." },
+            { "language": "pl", "text": "W komunikacji kryzysowej fakty, trwająca kontrola i działania muszą pozostać wyraźnie oddzielone." },
+            { "language": "ro", "text": "În comunicarea de criză, faptele, verificarea în curs și măsurile trebuie să rămână vizibil separate." },
+            { "language": "sq", "text": "Në komunikimin e krizës, faktet, kontrolli në vazhdim dhe masat duhet të mbeten dukshëm të ndara." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "facts",
+          "text": "Nennen Sie nur bestätigte Fakten und markieren Sie laufende Prüfungen ausdrücklich.",
+          "translations": [
+            { "language": "en", "text": "Name only confirmed facts and explicitly mark ongoing reviews." },
+            { "language": "fa", "text": "فقط واقعیت‌های تأییدشده را نام ببرید و بررسی‌های جاری را صریح علامت‌گذاری کنید." },
+            { "language": "ar", "text": "اذكروا الحقائق المؤكدة فقط وعلّموا الفحوص الجارية صراحة." },
+            { "language": "tr", "text": "Yalnızca doğrulanmış olguları belirtin ve süren incelemeleri açıkça işaretleyin." },
+            { "language": "ru", "text": "Называйте только подтвержденные факты и прямо обозначайте текущие проверки." },
+            { "language": "ckb", "text": "تەنها ڕاستییە پشتڕاستکراوەکان ناوببە و پشکنینە بەردەوامەکان بە ڕوونی دیاری بکە." },
+            { "language": "kmr", "text": "Tenê rastiyên piştrastkirî nav bikin û kontrolên didomin bi eşkere nîşan bikin." },
+            { "language": "pl", "text": "Podawaj tylko potwierdzone fakty i wyraźnie oznaczaj trwające kontrole." },
+            { "language": "ro", "text": "Numiți doar fapte confirmate și marcați explicit verificările în curs." },
+            { "language": "sq", "text": "Përmendni vetëm fakte të konfirmuara dhe shënoni qartë kontrollet në vazhdim." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "uncertainty",
+          "text": "Unsicherheit ist akzeptabel, wenn sie mit einem Prüfweg und einem Updatezeitpunkt verbunden wird.",
+          "translations": [
+            { "language": "en", "text": "Uncertainty is acceptable when it is connected to a review path and an update time." },
+            { "language": "fa", "text": "عدم قطعیت قابل قبول است، اگر به مسیر بررسی و زمان اطلاع‌رسانی بعدی وصل شود." },
+            { "language": "ar", "text": "عدم اليقين مقبول عندما يرتبط بمسار فحص وموعد تحديث." },
+            { "language": "tr", "text": "Belirsizlik, bir inceleme yolu ve bilgilendirme zamanıyla bağlantılı olduğunda kabul edilebilir." },
+            { "language": "ru", "text": "Неопределенность приемлема, если она связана с путем проверки и временем обновления." },
+            { "language": "ckb", "text": "نادڵنیایی پەسەندە ئەگەر بە ڕێگای پشکنین و کاتی زانیاریی داهاتووەوە ببەسترێت." },
+            { "language": "kmr", "text": "Nezelalî tê pejirandin heke bi rêya kontrolê û dema agahdariya din ve were girêdan." },
+            { "language": "pl", "text": "Niepewność jest dopuszczalna, jeśli wiąże się ze ścieżką kontroli i terminem aktualizacji." },
+            { "language": "ro", "text": "Incertitudinea este acceptabilă când este legată de o cale de verificare și de un moment de informare." },
+            { "language": "sq", "text": "Pasiguria është e pranueshme kur lidhet me një rrugë kontrolli dhe një kohë njoftimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "closure",
+          "text": "Eine starke Schlussformulierung beruhigt nicht pauschal, sondern nennt Zustand, Prüfung, Handlung und nächsten Zeitpunkt.",
+          "translations": [
+            { "language": "en", "text": "A strong closing statement does not reassure broadly, but names status, review, action, and the next time point." },
+            { "language": "fa", "text": "جمله پایانی قوی به‌طور کلی آرام‌سازی نمی‌کند، بلکه وضعیت، بررسی، اقدام و زمان بعدی را نام می‌برد." },
+            { "language": "ar", "text": "الصياغة الختامية القوية لا تطمئن بشكل عام، بل تذكر الحالة والفحص والإجراء والموعد التالي." },
+            { "language": "tr", "text": "Güçlü bir kapanış ifadesi genel güvence vermez; durum, inceleme, eylem ve sonraki zamanı belirtir." },
+            { "language": "ru", "text": "Сильная заключительная формулировка не успокаивает общо, а называет статус, проверку, действие и следующий срок." },
+            { "language": "ckb", "text": "داڕشتنی کۆتایی بەهێز بە گشتی ئارام ناکاتەوە، بەڵکو دۆخ، پشکنین، هەنگاو و کاتی داهاتوو ناودەبات." },
+            { "language": "kmr", "text": "Formûlasyona dawî ya xurt bi giştî aram nake, lê rewş, kontrol, çalakî û dema din nav dike." },
+            { "language": "pl", "text": "Mocna formuła końcowa nie uspokaja ogólnie, lecz wskazuje stan, kontrolę, działanie i kolejny termin." },
+            { "language": "ro", "text": "O formulare finală puternică nu liniștește generic, ci numește starea, verificarea, acțiunea și momentul următor." },
+            { "language": "sq", "text": "Një formulim përmbyllës i fortë nuk qetëson në përgjithësi, por emërton gjendjen, kontrollin, veprimin dhe kohën e ardhshme." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "security-briefing-calm-update",
+          "placement": "detail-header",
+          "purpose": "Show a calm internal security briefing with facts, actions, and a next update time.",
+          "altText": "Ein ruhiges internes Sicherheitsbriefing mit einer strukturierten Übersicht.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A calm internal security briefing with a structured overview." },
+            { "language": "fa", "text": "یک جلسه داخلی آرام درباره امنیت با نمای کلی ساختارمند." },
+            { "language": "ar", "text": "إحاطة أمنية داخلية هادئة مع عرض منظم." },
+            { "language": "tr", "text": "Yapılandırılmış bir özetle sakin bir iç güvenlik bilgilendirmesi." },
+            { "language": "ru", "text": "Спокойный внутренний брифинг по безопасности со структурированным обзором." },
+            { "language": "ckb", "text": "کۆبوونەوەیەکی ناوخۆیی ئارام لەسەر ئاسایش بە پوختەیەکی ڕێکخراو." },
+            { "language": "kmr", "text": "Agahdariyeke navxweyî ya ewlehiyê ya aram bi kurteyekî rêkûpêk." },
+            { "language": "pl", "text": "Spokojny wewnętrzny briefing bezpieczeństwa z uporządkowanym przeglądem." },
+            { "language": "ro", "text": "O informare internă calmă de securitate cu o prezentare structurată." },
+            { "language": "sq", "text": "Një informim i brendshëm i qetë për sigurinë me një përmbledhje të strukturuar." }
+          ],
+          "imagePrompt": "Clean educational illustration of an internal security briefing in a professional meeting room, with a diverse group of people looking at an abstract board divided into facts, checks, actions, and next update using icons only, no readable private data, no logos, no code, no alarming visuals, calm neutral colors, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

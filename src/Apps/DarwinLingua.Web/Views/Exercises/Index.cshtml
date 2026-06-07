@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.ExerciseIndexPageViewModel
 @{
     ViewData["Title"] = T["Exercises"];
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
@@ -32,7 +33,15 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@set.CefrLevel · @T[set.OwnerType]</span>
                 <h2 class="headline-sm"><a asp-controller="Exercises" asp-action="Set" asp-route-slug="@set.Slug">@set.Title</a></h2>
+                @if (!string.IsNullOrWhiteSpace(set.LearnerLanguageTitle))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @set.LearnerLanguageTitle</p>
+                }
                 <p>@set.Description</p>
+                @if (!string.IsNullOrWhiteSpace(set.LearnerLanguageDescription))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @set.LearnerLanguageDescription</p>
+                }
                 <p>@T["{0} exercises", set.ExerciseCount]</p>
                 <a class="button button--secondary" asp-controller="Exercises" asp-action="Set" asp-route-slug="@set.Slug">@T["Open exercise set"]</a>
             </article>

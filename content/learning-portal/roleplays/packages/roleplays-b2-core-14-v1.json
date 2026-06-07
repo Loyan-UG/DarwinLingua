@@ -1,0 +1,698 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b2-core-14-v1",
+  "packageName": "Roleplay-Szenarien B2 Core 14 v1",
+  "source": "Darwin Lingua RoleplayScenario B2 Core 14",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b2-ein-gehaltsgespraech-vorbereiten",
+      "linkedDialogueSlug": null,
+      "title": "Ein Gehaltsgespräch vorbereiten",
+      "titleTranslations": [
+        { "language": "en", "text": "Preparing a salary conversation" },
+        { "language": "fa", "text": "آماده شدن برای گفت‌وگوی حقوق" },
+        { "language": "ar", "text": "الاستعداد لمحادثة حول الراتب" },
+        { "language": "tr", "text": "Maaş görüşmesine hazırlanmak" },
+        { "language": "ru", "text": "Подготовиться к разговору о зарплате" },
+        { "language": "ckb", "text": "ئامادەبوون بۆ گفتوگۆی مووچە" },
+        { "language": "kmr", "text": "Amadekirina axaftina mûçeyê" },
+        { "language": "pl", "text": "Przygotowanie rozmowy o wynagrodzeniu" },
+        { "language": "ro", "text": "Pregătirea unei discuții despre salariu" },
+        { "language": "sq", "text": "Përgatitja e një bisede për pagën" }
+      ],
+      "description": "Du sprichst mit deiner Teamleitung über eine mögliche Gehaltsanpassung. Du sollst deine Leistungen, zusätzliche Verantwortung und Marktargumente strukturiert nennen und gleichzeitig offen für einen realistischen nächsten Schritt bleiben.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You talk with your team lead about a possible salary adjustment. You should structure your achievements, additional responsibility, and market arguments while staying open to a realistic next step." },
+        { "language": "fa", "text": "با سرپرست تیم درباره احتمال تعدیل حقوق صحبت می‌کنی. باید دستاوردها، مسئولیت‌های اضافه و استدلال‌های مربوط به بازار را ساختارمند بیان کنی و همزمان برای قدم بعدی واقع‌بینانه باز بمانی." },
+        { "language": "ar", "text": "تتحدث مع قائدة الفريق عن إمكانية تعديل الراتب. ينبغي أن تذكر إنجازاتك والمسؤوليات الإضافية وحجج السوق بشكل منظم، وأن تبقى منفتحاً على خطوة تالية واقعية." },
+        { "language": "tr", "text": "Ekip liderinle olası bir maaş düzenlemesi hakkında konuşuyorsun. Başarılarını, ek sorumluluğu ve piyasa gerekçelerini yapılandırılmış biçimde anlatmalı ve gerçekçi bir sonraki adıma açık kalmalısın." },
+        { "language": "ru", "text": "Ты говоришь с руководителем команды о возможной корректировке зарплаты. Нужно структурированно назвать результаты, дополнительную ответственность и рыночные аргументы, оставаясь открытым к реалистичному следующему шагу." },
+        { "language": "ckb", "text": "لەگەڵ سەرپەرشتیاری تیم لەسەر گونجاندنی مووچە گفتوگۆ دەکەیت. دەبێت دەستکەوتەکانت، بەرپرسیارێتی زیادە و بەڵگەکانی بازاڕ بە شێوەی ڕێکخراو بڵێیت و هەمان کات کراوە بیت بۆ هەنگاوی داهاتووی ڕاستەقینە." },
+        { "language": "kmr", "text": "Tu bi serokê tîmê re li ser gengazkirina sererastkirina mûçeyê diaxivî. Divê destkeftiyên xwe, berpirsiyariya zêde û argumanên bazarê bi rêkûpêk bibêjî û di heman demê de ji bo gaveke paşîn a rastîn vekirî bimînî." },
+        { "language": "pl", "text": "Rozmawiasz z liderką zespołu o możliwej korekcie wynagrodzenia. Masz uporządkowanie przedstawić osiągnięcia, dodatkową odpowiedzialność i argumenty rynkowe, pozostając otwartym na realistyczny kolejny krok." },
+        { "language": "ro", "text": "Discuți cu coordonatoarea echipei despre o posibilă ajustare salarială. Trebuie să prezinți structurat rezultatele, responsabilitatea suplimentară și argumentele de piață, rămânând deschis la un pas următor realist." },
+        { "language": "sq", "text": "Flet me drejtuesen e ekipit për një përshtatje të mundshme të pagës. Duhet të përmendësh të arriturat, përgjegjësinë shtesë dhe argumentet e tregut në mënyrë të strukturuar, duke mbetur i hapur për një hap realist." }
+      ],
+      "learnerGoal": "Führe ein sachliches Gehaltsgespräch: Begründe deine Bitte mit Leistung, Verantwortung und Marktvergleich, reagiere auf Budgetgrenzen und vereinbare einen konkreten nächsten Schritt.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Hold a factual salary conversation: justify your request with performance, responsibility, and market comparison, respond to budget limits, and agree on a concrete next step." },
+        { "language": "fa", "text": "یک گفت‌وگوی حقوقی مستند انجام بده: درخواستت را با عملکرد، مسئولیت و مقایسه بازار توجیه کن، به محدودیت بودجه پاسخ بده و روی قدم بعدی مشخص توافق کن." },
+        { "language": "ar", "text": "أجرِ محادثة راتب موضوعية: برّر طلبك بالأداء والمسؤولية والمقارنة مع السوق، وردّ على حدود الميزانية، واتفق على خطوة تالية ملموسة." },
+        { "language": "tr", "text": "Olgusal bir maaş görüşmesi yap: talebini performans, sorumluluk ve piyasa karşılaştırmasıyla gerekçelendir, bütçe sınırlarına yanıt ver ve somut bir sonraki adım üzerinde anlaş." },
+        { "language": "ru", "text": "Проведи деловой разговор о зарплате: обоснуй просьбу результатами, ответственностью и сравнением с рынком, отреагируй на бюджетные ограничения и договорись о конкретном следующем шаге." },
+        { "language": "ckb", "text": "گفتوگۆیەکی بابەتی لەسەر مووچە بکە: داواکەت بە کارایی، بەرپرسیارێتی و بەراوردی بازاڕ پشتڕاست بکەوە، وەڵامی سنووری بودجە بدەوە و لەسەر هەنگاوێکی داهاتووی دیاریکراو ڕێکبکەوە." },
+        { "language": "kmr", "text": "Axaftineke mûçeyê ya babetî bike: daxwaza xwe bi performans, berpirsiyarî û berawirdkirina bazarê piştrast bike, li sînorên budceyê bersiv bide û li ser gaveke paşîn a konkret li hev bike." },
+        { "language": "pl", "text": "Przeprowadź rzeczową rozmowę o wynagrodzeniu: uzasadnij prośbę wynikami, odpowiedzialnością i porównaniem rynkowym, odpowiedz na ograniczenia budżetowe i ustal konkretny następny krok." },
+        { "language": "ro", "text": "Poartă o discuție salarială bazată pe fapte: justifică cererea prin performanță, responsabilitate și comparație de piață, răspunde la limitele bugetare și stabilește un pas următor concret." },
+        { "language": "sq", "text": "Zhvillo një bisedë faktike për pagën: arsyeto kërkesën me performancë, përgjegjësi dhe krahasim tregu, reago ndaj kufijve të buxhetit dhe bini dakord për një hap konkret." }
+      ],
+      "cefrLevel": "B2",
+      "category": "workplace",
+      "topics": ["work-and-jobs", "business-communication"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "negotiation"],
+      "taskType": "discuss-plan",
+      "interactionMode": "workplace",
+      "register": "formal",
+      "estimatedPracticeMinutes": 14,
+      "isPublished": true,
+      "sortOrder": 3140,
+      "roles": [
+        {
+          "roleKey": "manager",
+          "displayName": "Teamleitung",
+          "translations": [
+            { "language": "en", "text": "Team lead" },
+            { "language": "fa", "text": "سرپرست تیم" },
+            { "language": "ar", "text": "قائدة الفريق" },
+            { "language": "tr", "text": "Ekip lideri" },
+            { "language": "ru", "text": "Руководитель команды" },
+            { "language": "ckb", "text": "سەرپەرشتیاری تیم" },
+            { "language": "kmr", "text": "Serokê tîmê" },
+            { "language": "pl", "text": "Liderka zespołu" },
+            { "language": "ro", "text": "Coordonatoarea echipei" },
+            { "language": "sq", "text": "Drejtuesja e ekipit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Mitarbeiter",
+          "translations": [
+            { "language": "en", "text": "Employee" },
+            { "language": "fa", "text": "کارمند" },
+            { "language": "ar", "text": "الموظف" },
+            { "language": "tr", "text": "Çalışan" },
+            { "language": "ru", "text": "Сотрудник" },
+            { "language": "ckb", "text": "کارمەند" },
+            { "language": "kmr", "text": "Karker" },
+            { "language": "pl", "text": "Pracownik" },
+            { "language": "ro", "text": "Angajat" },
+            { "language": "sq", "text": "Punonjësi" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "manager",
+          "baseText": "Sie wollten über Ihre Entwicklung und eine mögliche Gehaltsanpassung sprechen. Was ist Ihnen dabei besonders wichtig?",
+          "translations": [
+            { "language": "en", "text": "You wanted to talk about your development and a possible salary adjustment. What is especially important to you?" },
+            { "language": "fa", "text": "می‌خواستید درباره پیشرفت خودتان و تعدیل احتمالی حقوق صحبت کنید. در این موضوع چه چیزی برایتان به‌ویژه مهم است؟" },
+            { "language": "ar", "text": "أردت أن تتحدث عن تطورك وعن تعديل محتمل للراتب. ما الأمر المهم لك بشكل خاص في ذلك؟" },
+            { "language": "tr", "text": "Gelişiminiz ve olası bir maaş düzenlemesi hakkında konuşmak istemiştiniz. Bu konuda sizin için özellikle önemli olan nedir?" },
+            { "language": "ru", "text": "Вы хотели поговорить о своём развитии и возможной корректировке зарплаты. Что для вас в этом особенно важно?" },
+            { "language": "ckb", "text": "دەتانویست لەسەر پەرەسەندنتان و گونجاندنی مووچەیەکی ئەگەری گفتوگۆ بکەن. لەم بابەتەدا چی بە تایبەتی بۆتان گرنگە؟" },
+            { "language": "kmr", "text": "We dixwest li ser pêşketina xwe û sererastkirina gengaz a mûçeyê biaxivin. Di vê mijarê de çi bi taybetî ji bo we girîng e?" },
+            { "language": "pl", "text": "Chciał Pan porozmawiać o swoim rozwoju i możliwej korekcie wynagrodzenia. Co jest dla Pana w tym szczególnie ważne?" },
+            { "language": "ro", "text": "Ați dorit să vorbiți despre evoluția dumneavoastră și o posibilă ajustare salarială. Ce este deosebit de important pentru dumneavoastră aici?" },
+            { "language": "sq", "text": "Dëshironit të flisnit për zhvillimin tuaj dhe për një përshtatje të mundshme të pagës. Çfarë është veçanërisht e rëndësishme për ju?" }
+          ],
+          "function": "open-salary-conversation"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Mir ist wichtig, das Gespräch sachlich zu führen. Seit dem letzten Jahresgespräch habe ich zusätzliche Aufgaben übernommen, zwei Kundenprozesse stabilisiert und neue Kolleginnen eingearbeitet. Deshalb möchte ich über eine Anpassung sprechen.",
+          "translations": [
+            { "language": "en", "text": "It is important to me to keep the conversation factual. Since the last annual review, I have taken on additional tasks, stabilized two customer processes, and onboarded new colleagues. That is why I would like to talk about an adjustment." },
+            { "language": "fa", "text": "برایم مهم است گفت‌وگو را مستند و واقع‌محور پیش ببرم. از آخرین گفت‌وگوی سالانه، وظایف اضافه گرفته‌ام، دو فرایند مشتری را پایدار کرده‌ام و همکاران جدید را آموزش داده‌ام. به همین دلیل می‌خواهم درباره تعدیل حقوق صحبت کنم." },
+            { "language": "ar", "text": "من المهم لي أن أجري الحديث بشكل موضوعي. منذ آخر محادثة سنوية توليت مهام إضافية، وثبّتُّ عمليتين للعملاء، ودربت زميلات جديدات. لذلك أود أن أتحدث عن تعديل." },
+            { "language": "tr", "text": "Görüşmeyi olgusal yürütmek benim için önemli. Son yıllık görüşmeden bu yana ek görevler üstlendim, iki müşteri sürecini istikrara kavuşturdum ve yeni çalışma arkadaşlarını işe alıştırdım. Bu nedenle bir düzenleme hakkında konuşmak istiyorum." },
+            { "language": "ru", "text": "Для меня важно вести разговор по существу. С последней годовой беседы я взял дополнительные задачи, стабилизировал два клиентских процесса и ввёл в работу новых коллег. Поэтому я хотел бы поговорить о корректировке." },
+            { "language": "ckb", "text": "بۆ من گرنگە گفتوگۆکە بە شێوەی بابەتی ببەم. لە دوا گفتوگۆی ساڵانەوە، ئەرکی زیادەم وەرگرتووە، دوو پرۆسەی کڕیارم جێگیر کردووە و هاوکارە نوێیەکانم ڕاهێناوە. بۆیە دەمەوێت لەسەر گونجاندن گفتوگۆ بکەم." },
+            { "language": "kmr", "text": "Ji bo min girîng e ku axaftinê bi awayekî babetî bimeşînim. Ji hevpeyivîna salane ya dawî ve min erkên zêde girtine, du pêvajoyên mişterî aram kirine û hevkarên nû nasandine. Ji ber vê ez dixwazim li ser sererastkirinê biaxivim." },
+            { "language": "pl", "text": "Zależy mi, aby poprowadzić rozmowę rzeczowo. Od ostatniej rozmowy rocznej przejąłem dodatkowe zadania, ustabilizowałem dwa procesy klienta i wdrożyłem nowe koleżanki. Dlatego chciałbym porozmawiać o korekcie." },
+            { "language": "ro", "text": "Pentru mine este important să port discuția pe baza faptelor. De la ultima discuție anuală am preluat sarcini suplimentare, am stabilizat două procese pentru clienți și am integrat colege noi. De aceea aș dori să discutăm despre o ajustare." },
+            { "language": "sq", "text": "Për mua është e rëndësishme ta zhvilloj bisedën në mënyrë faktike. Që nga biseda e fundit vjetore kam marrë detyra shtesë, kam stabilizuar dy procese klientësh dhe kam trajnuar kolege të reja. Prandaj dua të flas për një përshtatje." }
+          ],
+          "function": "state-factual-basis",
+          "toneNote": "professional and evidence-based",
+          "expectedLearnerAction": "Open with evidence, not emotion or comparison with colleagues."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "manager",
+          "baseText": "Können Sie konkreter machen, welche Wirkung diese zusätzlichen Aufgaben hatten?",
+          "translations": [
+            { "language": "en", "text": "Can you make more concrete what effect these additional tasks had?" },
+            { "language": "fa", "text": "می‌توانید مشخص‌تر بگویید این وظایف اضافی چه اثری داشته‌اند؟" },
+            { "language": "ar", "text": "هل يمكنك أن توضح بشكل أكثر تحديداً ما الأثر الذي أحدثته هذه المهام الإضافية؟" },
+            { "language": "tr", "text": "Bu ek görevlerin ne gibi bir etkisi olduğunu daha somut anlatabilir misiniz?" },
+            { "language": "ru", "text": "Можете конкретнее описать, какой эффект дали эти дополнительные задачи?" },
+            { "language": "ckb", "text": "دەتوانن بە دیاریکراوی بڵێن ئەم ئەرکە زیادانە چ کاریگەرییەکیان هەبوو؟" },
+            { "language": "kmr", "text": "Hûn dikarin konkretir bikin ku ev erkên zêde çi bandor hebûn?" },
+            { "language": "pl", "text": "Czy może Pan bardziej konkretnie opisać, jaki efekt miały te dodatkowe zadania?" },
+            { "language": "ro", "text": "Puteți concretiza ce efect au avut aceste sarcini suplimentare?" },
+            { "language": "sq", "text": "A mund ta bëni më konkrete çfarë ndikimi patën këto detyra shtesë?" }
+          ],
+          "function": "ask-impact"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Bei den beiden Kundenprozessen sind die Rückfragen deutlich gesunken, weil wir klare Vorlagen eingeführt haben. Außerdem konnte das Team neue Anfragen schneller übernehmen, nachdem ich die Übergabedokumentation erstellt hatte.",
+          "translations": [
+            { "language": "en", "text": "For the two customer processes, follow-up questions dropped noticeably because we introduced clear templates. Also, the team could take over new requests faster after I created the handover documentation." },
+            { "language": "fa", "text": "در آن دو فرایند مشتری، سؤال‌های برگشتی به‌طور محسوسی کمتر شدند، چون الگوهای روشن معرفی کردیم. همچنین بعد از اینکه مستندات تحویل را آماده کردم، تیم توانست درخواست‌های جدید را سریع‌تر بگیرد." },
+            { "language": "ar", "text": "في العمليتين الخاصتين بالعملاء انخفضت الأسئلة اللاحقة بشكل واضح، لأننا أدخلنا قوالب واضحة. كما استطاع الفريق أن يتولى الطلبات الجديدة بسرعة أكبر بعد أن أعددت وثائق التسليم." },
+            { "language": "tr", "text": "İki müşteri sürecinde geri sorular belirgin biçimde azaldı, çünkü net şablonlar oluşturduk. Ayrıca devir dokümantasyonunu hazırladıktan sonra ekip yeni talepleri daha hızlı devralabildi." },
+            { "language": "ru", "text": "В двух клиентских процессах количество уточняющих вопросов заметно снизилось, потому что мы ввели понятные шаблоны. Кроме того, команда смогла быстрее брать новые запросы после того, как я подготовил документацию передачи." },
+            { "language": "ckb", "text": "لەو دوو پرۆسەی کڕیاردا پرسە بەدواداچوونەکان بە شێوەیەکی دیار کەم بوون، چونکە قاڵبی ڕوونمان دانا. هەروەها دوای ئەوەی بەڵگەنامەی گواستنەوەم ئامادە کرد، تیم توانای وەرگرتنی داواکاریی نوێی خێراتری هەبوو." },
+            { "language": "kmr", "text": "Di wan du pêvajoyên mişterî de pirsên şopandinê bi awayekî xuya kêm bûn, ji ber ku me şablonên zelal danîn. Her wiha piştî ku min belgeyên radestkirinê amade kirin, tîm dikaribû daxwazên nû zûtir bigire." },
+            { "language": "pl", "text": "W tych dwóch procesach klienta liczba pytań uzupełniających wyraźnie spadła, bo wprowadziliśmy jasne szablony. Poza tym zespół mógł szybciej przejmować nowe zgłoszenia po tym, jak przygotowałem dokumentację przekazania." },
+            { "language": "ro", "text": "În cele două procese pentru clienți, întrebările de clarificare au scăzut vizibil, deoarece am introdus șabloane clare. În plus, echipa a putut prelua mai repede cereri noi după ce am creat documentația de predare." },
+            { "language": "sq", "text": "Në dy proceset e klientëve, pyetjet pasuese ranë dukshëm, sepse vendosëm modele të qarta. Gjithashtu, ekipi mundi të merrte më shpejt kërkesa të reja pasi përgatita dokumentacionin e dorëzimit." }
+          ],
+          "function": "give-impact-evidence",
+          "toneNote": "specific impact without exaggeration",
+          "expectedLearnerAction": "Explain measurable or observable impact."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "manager",
+          "baseText": "Das sind gute Punkte. Welche Gehaltsspanne stellen Sie sich vor, und worauf stützen Sie diese Einschätzung?",
+          "translations": [
+            { "language": "en", "text": "Those are good points. What salary range do you have in mind, and what do you base that assessment on?" },
+            { "language": "fa", "text": "نکات خوبی هستند. چه بازه حقوقی مد نظرتان است و این ارزیابی را بر چه چیزی تکیه می‌دهید؟" },
+            { "language": "ar", "text": "هذه نقاط جيدة. ما نطاق الراتب الذي تتصوره، وعلى ماذا تستند في هذا التقدير؟" },
+            { "language": "tr", "text": "Bunlar iyi noktalar. Aklınızda hangi maaş aralığı var ve bu değerlendirmeyi neye dayandırıyorsunuz?" },
+            { "language": "ru", "text": "Это хорошие аргументы. Какой диапазон зарплаты вы себе представляете и на чём основана эта оценка?" },
+            { "language": "ckb", "text": "ئەمە خاڵی باشن. کام مەودای مووچە لە خەیاڵتاندایە و ئەم هەڵسەنگاندنە لەسەر چی بنیات دەنێن؟" },
+            { "language": "kmr", "text": "Ev xalên baş in. Hûn kîjan navbera mûçeyê di bîra xwe de hene û ev nirxandinê li ser çi ava dikin?" },
+            { "language": "pl", "text": "To dobre punkty. Jaki przedział wynagrodzenia ma Pan na myśli i na czym opiera Pan tę ocenę?" },
+            { "language": "ro", "text": "Sunt puncte bune. La ce interval salarial vă gândiți și pe ce vă bazați această evaluare?" },
+            { "language": "sq", "text": "Këto janë pika të mira. Çfarë intervali page keni parasysh dhe mbi çfarë e mbështesni këtë vlerësim?" }
+          ],
+          "function": "ask-range-and-basis"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Auf Basis meiner erweiterten Verantwortung und eines Vergleichs ähnlicher Rollen halte ich eine Anpassung im Bereich von sechs bis acht Prozent für angemessen. Mir ist aber wichtig, Ihre Einschätzung und den internen Rahmen zu verstehen.",
+          "translations": [
+            { "language": "en", "text": "Based on my expanded responsibility and a comparison with similar roles, I consider an adjustment in the range of six to eight percent appropriate. But it is important to me to understand your assessment and the internal framework." },
+            { "language": "fa", "text": "بر اساس مسئولیت گسترده‌ترم و مقایسه با نقش‌های مشابه، تعدیلی در بازه شش تا هشت درصد را مناسب می‌دانم. اما برایم مهم است ارزیابی شما و چارچوب داخلی را هم بفهمم." },
+            { "language": "ar", "text": "بناءً على مسؤوليتي الموسعة ومقارنة بأدوار مشابهة، أرى أن تعديلاً في نطاق ستة إلى ثمانية في المئة مناسب. لكن من المهم لي أن أفهم تقييمكم والإطار الداخلي." },
+            { "language": "tr", "text": "Genişleyen sorumluluğum ve benzer rollerle karşılaştırma temelinde yüzde altı ile sekiz arasında bir düzenlemeyi uygun görüyorum. Ancak sizin değerlendirmenizi ve iç çerçeveyi anlamak benim için önemli." },
+            { "language": "ru", "text": "Исходя из расширенной ответственности и сравнения с похожими ролями, я считаю корректировку в диапазоне шести-восьми процентов уместной. Но мне важно понять вашу оценку и внутренние рамки." },
+            { "language": "ckb", "text": "بەپێی بەرپرسیارێتی فراوانترم و بەراورد لەگەڵ ڕۆڵە هاوشێوەکان، گونجاندنێک لە مەودای شەش تا هەشت لەسەد بە گونجاو دەزانم. بەڵام بۆ من گرنگە هەڵسەنگاندنی ئێوە و چوارچێوەی ناوخۆ تێبگەم." },
+            { "language": "kmr", "text": "Li gor berpirsiyariya min a firehtir û berawirdkirina bi rolên mîna wê re, ez sererastkirinek di navbera şeş heta heşt ji sedî de guncaw dibînim. Lê ji bo min girîng e nirxandina we û çarçoveya hundir fêm bikim." },
+            { "language": "pl", "text": "Na podstawie rozszerzonej odpowiedzialności i porównania z podobnymi rolami uważam korektę w przedziale od sześciu do ośmiu procent za odpowiednią. Ważne jest jednak dla mnie zrozumienie Państwa oceny i wewnętrznych ram." },
+            { "language": "ro", "text": "Pe baza responsabilității mele extinse și a unei comparații cu roluri similare, consider potrivită o ajustare între șase și opt procente. Dar pentru mine este important să înțeleg evaluarea dumneavoastră și cadrul intern." },
+            { "language": "sq", "text": "Bazuar në përgjegjësinë time të zgjeruar dhe në krahasimin me role të ngjashme, e konsideroj të përshtatshme një përshtatje midis gjashtë dhe tetë për qind. Por për mua është e rëndësishme të kuptoj vlerësimin tuaj dhe kornizën e brendshme." }
+          ],
+          "function": "state-range-and-basis",
+          "toneNote": "clear request with openness",
+          "expectedLearnerAction": "Name a reasoned range and keep space for the company's framework."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "manager",
+          "baseText": "Im aktuellen Budget ist eine sofortige Anpassung in dieser Höhe schwierig. Wir könnten aber über einen Stufenplan sprechen.",
+          "translations": [
+            { "language": "en", "text": "In the current budget, an immediate adjustment at that level is difficult. But we could talk about a staged plan." },
+            { "language": "fa", "text": "در بودجه فعلی، تعدیل فوری در این سطح دشوار است. اما می‌توانیم درباره یک برنامه مرحله‌ای صحبت کنیم." },
+            { "language": "ar", "text": "في الميزانية الحالية، من الصعب إجراء تعديل فوري بهذا المستوى. لكن يمكننا التحدث عن خطة مرحلية." },
+            { "language": "tr", "text": "Mevcut bütçede bu düzeyde hemen bir düzenleme yapmak zor. Ama kademeli bir plan hakkında konuşabiliriz." },
+            { "language": "ru", "text": "В текущем бюджете немедленная корректировка такого уровня сложна. Но мы могли бы обсудить поэтапный план." },
+            { "language": "ckb", "text": "لە بودجەی ئێستادا گونجاندنی دەستبەجێ لەم ئاستەدا قورسە. بەڵام دەتوانین لەسەر پلانێکی قۆناغی گفتوگۆ بکەین." },
+            { "language": "kmr", "text": "Di budceya heyî de sererastkirina tavilê di vê astê de dijwar e. Lê em dikarin li ser planeke qonaxî biaxivin." },
+            { "language": "pl", "text": "W obecnym budżecie natychmiastowa korekta na tym poziomie jest trudna. Moglibyśmy jednak porozmawiać o planie etapowym." },
+            { "language": "ro", "text": "În bugetul actual, o ajustare imediată la acest nivel este dificilă. Dar am putea discuta despre un plan în etape." },
+            { "language": "sq", "text": "Në buxhetin aktual, një përshtatje e menjëhershme në këtë nivel është e vështirë. Por mund të flasim për një plan me faza." }
+          ],
+          "function": "budget-limitation"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Das kann ich nachvollziehen. Ein Stufenplan wäre für mich sinnvoll, wenn wir klare Kriterien und einen Zeitpunkt festhalten, zum Beispiel nach dem nächsten Quartal mit Blick auf die übernommenen Verantwortungsbereiche.",
+          "translations": [
+            { "language": "en", "text": "I can understand that. A staged plan would make sense to me if we record clear criteria and a date, for example after the next quarter with regard to the areas of responsibility I have taken over." },
+            { "language": "fa", "text": "این را می‌توانم درک کنم. برنامه مرحله‌ای برایم منطقی است، اگر معیارهای روشن و یک زمان مشخص ثبت کنیم، مثلاً بعد از فصل بعد با توجه به حوزه‌های مسئولیتی که بر عهده گرفته‌ام." },
+            { "language": "ar", "text": "أستطيع فهم ذلك. ستكون الخطة المرحلية منطقية بالنسبة لي إذا سجلنا معايير واضحة وموعداً محدداً، مثلاً بعد الربع القادم بالنظر إلى مجالات المسؤولية التي توليتها." },
+            { "language": "tr", "text": "Bunu anlayabiliyorum. Net ölçütler ve bir tarih belirlersek kademeli bir plan benim için anlamlı olur; örneğin üstlendiğim sorumluluk alanlarına bakarak gelecek çeyrekten sonra." },
+            { "language": "ru", "text": "Я могу это понять. Поэтапный план был бы для меня разумным, если мы зафиксируем ясные критерии и дату, например после следующего квартала с учётом принятых мной зон ответственности." },
+            { "language": "ckb", "text": "دەتوانم ئەوە تێبگەم. پلانێکی قۆناغی بۆ من مانادار دەبێت ئەگەر پێوەرە ڕوونەکان و کاتێک تۆمار بکەین، بۆ نموونە دوای چارەکی داهاتوو بە سەرنجدان بە بوارە بەرپرسیارێتییەکان کە وەرگرتوومن." },
+            { "language": "kmr", "text": "Ez dikarim vê fêm bikim. Planeke qonaxî ji bo min watedar e heke em pîvanên zelal û demekê tomar bikin, mînak piştî çaryeka paşîn bi baldarî li qadên berpirsiyariyê yên ku min girtine." },
+            { "language": "pl", "text": "Rozumiem to. Plan etapowy miałby dla mnie sens, jeśli zapiszemy jasne kryteria i termin, na przykład po kolejnym kwartale z uwzględnieniem przejętych przeze mnie obszarów odpowiedzialności." },
+            { "language": "ro", "text": "Pot înțelege asta. Un plan în etape ar avea sens pentru mine dacă stabilim criterii clare și un termen, de exemplu după trimestrul următor, având în vedere domeniile de responsabilitate preluate." },
+            { "language": "sq", "text": "Mund ta kuptoj këtë. Një plan me faza do të kishte kuptim për mua nëse përcaktojmë kritere të qarta dhe një datë, për shembull pas tremujorit të ardhshëm duke parë fushat e përgjegjësisë që kam marrë." }
+          ],
+          "function": "respond-to-budget-limit",
+          "toneNote": "constructive and specific",
+          "expectedLearnerAction": "Accept the constraint while requesting criteria and a review date."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "manager",
+          "baseText": "Damit kann ich arbeiten. Ich würde die Punkte mit HR prüfen und Ihnen nächste Woche einen konkreten Vorschlag machen.",
+          "translations": [
+            { "language": "en", "text": "I can work with that. I would review the points with HR and make you a concrete proposal next week." },
+            { "language": "fa", "text": "با این می‌توانم کار کنم. این نکات را با منابع انسانی بررسی می‌کنم و هفته آینده یک پیشنهاد مشخص به شما می‌دهم." },
+            { "language": "ar", "text": "يمكنني العمل على هذا الأساس. سأراجع النقاط مع الموارد البشرية وأقدم لك اقتراحاً ملموساً الأسبوع القادم." },
+            { "language": "tr", "text": "Bununla çalışabilirim. Noktaları insan kaynaklarıyla kontrol eder ve gelecek hafta size somut bir öneri sunarım." },
+            { "language": "ru", "text": "С этим можно работать. Я проверю пункты с отделом кадров и на следующей неделе сделаю вам конкретное предложение." },
+            { "language": "ckb", "text": "دەتوانم لەسەر ئەمە کار بکەم. ئەم خاڵانە لەگەڵ بەشی سەرچاوە مرۆییەکان دەپشکنم و هەفتەی داهاتوو پێشنیارێکی دیاریکراوتان پێدەدەم." },
+            { "language": "kmr", "text": "Ez dikarim bi vê re bixebitim. Ez ê xalên hanê bi beşa mirovî re kontrol bikim û hefteya bê ji we re pêşniyarek konkret bikim." },
+            { "language": "pl", "text": "Na tym mogę pracować. Sprawdzę te punkty z działem kadr i w przyszłym tygodniu przedstawię Panu konkretną propozycję." },
+            { "language": "ro", "text": "Pot lucra cu asta. Voi verifica punctele cu departamentul de resurse umane și săptămâna viitoare vă voi face o propunere concretă." },
+            { "language": "sq", "text": "Me këtë mund të punoj. Do t’i kontrolloj pikat me departamentin e burimeve njerëzore dhe javën tjetër do t’ju bëj një propozim konkret." }
+          ],
+          "function": "offer-next-step"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann halte ich die drei Punkte noch einmal schriftlich fest: zusätzliche Verantwortung, konkrete Wirkung und der gewünschte Stufenplan. Wenn es für Sie passt, sende ich Ihnen die Zusammenfassung heute Nachmittag.",
+          "translations": [
+            { "language": "en", "text": "Thank you. I will then write down the three points again: additional responsibility, concrete impact, and the desired staged plan. If that works for you, I will send you the summary this afternoon." },
+            { "language": "fa", "text": "ممنونم. پس سه نکته را یک بار دیگر کتبی ثبت می‌کنم: مسئولیت اضافه، اثر مشخص و برنامه مرحله‌ای مورد نظر. اگر برای شما مناسب است، خلاصه را امروز بعدازظهر برایتان می‌فرستم." },
+            { "language": "ar", "text": "شكراً. إذن سأثبت النقاط الثلاث مرة أخرى كتابةً: المسؤولية الإضافية، والأثر الملموس، والخطة المرحلية المطلوبة. إذا كان ذلك مناسباً لكم، فسأرسل لكم الملخص بعد ظهر اليوم." },
+            { "language": "tr", "text": "Teşekkür ederim. O zaman üç noktayı tekrar yazılı olarak toparlarım: ek sorumluluk, somut etki ve istenen kademeli plan. Sizin için uygunsa özeti bugün öğleden sonra gönderirim." },
+            { "language": "ru", "text": "Спасибо. Тогда я ещё раз письменно зафиксирую три пункта: дополнительную ответственность, конкретный эффект и желаемый поэтапный план. Если вам подходит, я отправлю резюме сегодня после обеда." },
+            { "language": "ckb", "text": "سوپاس. ئەوا سێ خاڵەکە جارێکی تر بە نووسراوی دەنووسم: بەرپرسیارێتی زیادە، کاریگەری دیاریکراو و پلانی قۆناغی خوازراو. ئەگەر بۆتان گونجاوە، کورتەکە ئەم پاشنیوەڕۆیە بۆتان دەنێرم." },
+            { "language": "kmr", "text": "Spas. Hingê ez ê sê xalan careke din bi nivîskî tomar bikim: berpirsiyariya zêde, bandora konkret û plana qonaxî ya daxwazkirî. Heke ji bo we guncaw be, ez ê kurteyê îro piştî nîvro ji we re bişînim." },
+            { "language": "pl", "text": "Dziękuję. W takim razie zapiszę jeszcze raz trzy punkty: dodatkową odpowiedzialność, konkretny efekt i oczekiwany plan etapowy. Jeśli to Pani odpowiada, wyślę podsumowanie dziś po południu." },
+            { "language": "ro", "text": "Vă mulțumesc. Atunci notez din nou în scris cele trei puncte: responsabilitatea suplimentară, impactul concret și planul în etape dorit. Dacă este în regulă pentru dumneavoastră, vă trimit rezumatul astăzi după-amiază." },
+            { "language": "sq", "text": "Faleminderit. Atëherë i shënoj edhe një herë me shkrim tre pikat: përgjegjësinë shtesë, ndikimin konkret dhe planin e dëshiruar me faza. Nëse është në rregull për ju, do t’ju dërgoj përmbledhjen sot pasdite." }
+          ],
+          "function": "close-with-summary",
+          "toneNote": "clear and cooperative",
+          "expectedLearnerAction": "Close by summarizing evidence and next action in writing."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "evidence-based-opening",
+              "text": "Mir ist wichtig, das Gespräch sachlich zu führen. Seit dem letzten Jahresgespräch habe ich zusätzliche Aufgaben übernommen, zwei Kundenprozesse stabilisiert und neue Kolleginnen eingearbeitet. Deshalb möchte ich über eine Anpassung sprechen.",
+              "translations": [
+                { "language": "en", "text": "It is important to me to keep the conversation factual. Since the last annual review, I have taken on additional tasks, stabilized two customer processes, and onboarded new colleagues. That is why I would like to talk about an adjustment." },
+                { "language": "fa", "text": "برایم مهم است گفت‌وگو را مستند و واقع‌محور پیش ببرم. از آخرین گفت‌وگوی سالانه، وظایف اضافه گرفته‌ام، دو فرایند مشتری را پایدار کرده‌ام و همکاران جدید را آموزش داده‌ام. به همین دلیل می‌خواهم درباره تعدیل حقوق صحبت کنم." },
+                { "language": "ar", "text": "من المهم لي أن أجري الحديث بشكل موضوعي. منذ آخر محادثة سنوية توليت مهام إضافية، وثبّتُّ عمليتين للعملاء، ودربت زميلات جديدات. لذلك أود أن أتحدث عن تعديل." },
+                { "language": "tr", "text": "Görüşmeyi olgusal yürütmek benim için önemli. Son yıllık görüşmeden bu yana ek görevler üstlendim, iki müşteri sürecini istikrara kavuşturdum ve yeni çalışma arkadaşlarını işe alıştırdım. Bu nedenle bir düzenleme hakkında konuşmak istiyorum." },
+                { "language": "ru", "text": "Для меня важно вести разговор по существу. С последней годовой беседы я взял дополнительные задачи, стабилизировал два клиентских процесса и ввёл в работу новых коллег. Поэтому я хотел бы поговорить о корректировке." },
+                { "language": "ckb", "text": "بۆ من گرنگە گفتوگۆکە بە شێوەی بابەتی ببەم. لە دوا گفتوگۆی ساڵانەوە، ئەرکی زیادەم وەرگرتووە، دوو پرۆسەی کڕیارم جێگیر کردووە و هاوکارە نوێیەکانم ڕاهێناوە. بۆیە دەمەوێت لەسەر گونجاندن گفتوگۆ بکەم." },
+                { "language": "kmr", "text": "Ji bo min girîng e ku axaftinê bi awayekî babetî bimeşînim. Ji hevpeyivîna salane ya dawî ve min erkên zêde girtine, du pêvajoyên mişterî aram kirine û hevkarên nû nasandine. Ji ber vê ez dixwazim li ser sererastkirinê biaxivim." },
+                { "language": "pl", "text": "Zależy mi, aby poprowadzić rozmowę rzeczowo. Od ostatniej rozmowy rocznej przejąłem dodatkowe zadania, ustabilizowałem dwa procesy klienta i wdrożyłem nowe koleżanki. Dlatego chciałbym porozmawiać o korekcie." },
+                { "language": "ro", "text": "Pentru mine este important să port discuția pe baza faptelor. De la ultima discuție anuală am preluat sarcini suplimentare, am stabilizat două procese pentru clienți și am integrat colege noi. De aceea aș dori să discutăm despre o ajustare." },
+                { "language": "sq", "text": "Për mua është e rëndësishme ta zhvilloj bisedën në mënyrë faktike. Që nga biseda e fundit vjetore kam marrë detyra shtesë, kam stabilizuar dy procese klientësh dhe kam trajnuar kolege të reja. Prandaj dua të flas për një përshtatje." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this opens with evidence and keeps the tone factual.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this opens with evidence and keeps the tone factual." },
+                { "language": "fa", "text": "خوب است: با شواهد شروع می‌کند و لحن را مستند و واقع‌محور نگه می‌دارد." },
+                { "language": "ar", "text": "جيد: يبدأ بأدلة ويحافظ على نبرة موضوعية." },
+                { "language": "tr", "text": "İyi: kanıtlarla başlıyor ve tonu olgusal tutuyor." },
+                { "language": "ru", "text": "Хорошо: начало основано на фактах и сохраняет деловой тон." },
+                { "language": "ckb", "text": "باشە: بە بەڵگە دەست پێ دەکات و لەحنەکە بابەتی دەپارێزێت." },
+                { "language": "kmr", "text": "Baş e: bi delîlan dest pê dike û tonê babetî dihêle." },
+                { "language": "pl", "text": "Dobrze: zaczyna od dowodów i zachowuje rzeczowy ton." },
+                { "language": "ro", "text": "Bine: începe cu dovezi și păstrează tonul bazat pe fapte." },
+                { "language": "sq", "text": "Mirë: fillon me prova dhe e mban tonin faktik." }
+              ],
+              "explanationKey": "evidence-opening"
+            },
+            {
+              "id": "comparison-with-colleagues",
+              "text": "Ich finde, dass mein Gehalt nicht mehr richtig passt, vor allem wenn man sieht, was andere in ähnlichen Positionen bekommen.",
+              "translations": [
+                { "language": "en", "text": "I think my salary no longer really fits, especially when you see what others in similar positions receive." },
+                { "language": "fa", "text": "فکر می‌کنم حقوق من دیگر واقعاً مناسب نیست، مخصوصاً وقتی ببینیم دیگران در موقعیت‌های مشابه چه دریافت می‌کنند." },
+                { "language": "ar", "text": "أعتقد أن راتبي لم يعد مناسباً حقاً، خصوصاً عندما نرى ما يحصل عليه الآخرون في مناصب مشابهة." },
+                { "language": "tr", "text": "Maaşımın artık pek uygun olmadığını düşünüyorum, özellikle benzer pozisyonlardaki diğer kişilerin ne aldığını görünce." },
+                { "language": "ru", "text": "Я считаю, что моя зарплата уже не совсем соответствует, особенно если посмотреть, сколько получают другие на похожих позициях." },
+                { "language": "ckb", "text": "پێم وایە مووچەکەم چیتر بەڕاستی گونجاو نییە، بە تایبەتی کاتێک دەبینین کەسانی تر لە پۆستی هاوشێوەدا چی وەردەگرن." },
+                { "language": "kmr", "text": "Ez difikirim mûçeya min êdî rast nagunce, bi taybetî dema mirov dibîne kesên din di pozîsyonên mîna wê de çi distînin." },
+                { "language": "pl", "text": "Uważam, że moje wynagrodzenie już nie do końca pasuje, zwłaszcza gdy spojrzy się na to, co otrzymują inni na podobnych stanowiskach." },
+                { "language": "ro", "text": "Cred că salariul meu nu mai este potrivit, mai ales când vezi ce primesc alții în poziții similare." },
+                { "language": "sq", "text": "Mendoj se paga ime nuk përshtatet më mirë, sidomos kur sheh çfarë marrin të tjerët në pozicione të ngjashme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but weaker: it relies on comparison and gives no concrete evidence of your own impact.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but weaker: it relies on comparison and gives no concrete evidence of your own impact." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد اما ضعیف‌تر است: بر مقایسه تکیه می‌کند و شواهد مشخصی از اثر خودتان نمی‌دهد." },
+                { "language": "ar", "text": "مقبول لكنه أضعف: يعتمد على المقارنة ولا يعطي دليلاً ملموساً على أثر عملك." },
+                { "language": "tr", "text": "Makul ama daha zayıf: karşılaştırmaya dayanıyor ve kendi etkiniz için somut kanıt vermiyor." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слабее: опирается на сравнение и не даёт конкретных доказательств вашего вклада." },
+                { "language": "ckb", "text": "قبوڵکراو دەردەکەوێت بەڵام لاوازترە: پشت بە بەراورد دەبەستێت و بەڵگەی دیاریکراو لە کاریگەری خۆت نادات." },
+                { "language": "kmr", "text": "Gengaz xuya dike lê lawaztir e: li berawirdkirinê disekine û delîlên konkret ên bandora te nade." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest słabsze: opiera się na porównaniu i nie daje konkretnych dowodów własnego wpływu." },
+                { "language": "ro", "text": "Plauzibil, dar mai slab: se bazează pe comparație și nu oferă dovezi concrete ale impactului tău." },
+                { "language": "sq", "text": "E besueshme, por më e dobët: mbështetet te krahasimi dhe nuk jep prova konkrete të ndikimit tënd." }
+              ],
+              "explanationKey": "comparison-without-evidence"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "observable-impact",
+              "text": "Bei den beiden Kundenprozessen sind die Rückfragen deutlich gesunken, weil wir klare Vorlagen eingeführt haben. Außerdem konnte das Team neue Anfragen schneller übernehmen, nachdem ich die Übergabedokumentation erstellt hatte.",
+              "translations": [
+                { "language": "en", "text": "For the two customer processes, follow-up questions dropped noticeably because we introduced clear templates. Also, the team could take over new requests faster after I created the handover documentation." },
+                { "language": "fa", "text": "در آن دو فرایند مشتری، سؤال‌های برگشتی به‌طور محسوسی کمتر شدند، چون الگوهای روشن معرفی کردیم. همچنین بعد از اینکه مستندات تحویل را آماده کردم، تیم توانست درخواست‌های جدید را سریع‌تر بگیرد." },
+                { "language": "ar", "text": "في العمليتين الخاصتين بالعملاء انخفضت الأسئلة اللاحقة بشكل واضح، لأننا أدخلنا قوالب واضحة. كما استطاع الفريق أن يتولى الطلبات الجديدة بسرعة أكبر بعد أن أعددت وثائق التسليم." },
+                { "language": "tr", "text": "İki müşteri sürecinde geri sorular belirgin biçimde azaldı, çünkü net şablonlar oluşturduk. Ayrıca devir dokümantasyonunu hazırladıktan sonra ekip yeni talepleri daha hızlı devralabildi." },
+                { "language": "ru", "text": "В двух клиентских процессах количество уточняющих вопросов заметно снизилось, потому что мы ввели понятные шаблоны. Кроме того, команда смогла быстрее брать новые запросы после того, как я подготовил документацию передачи." },
+                { "language": "ckb", "text": "لەو دوو پرۆسەی کڕیاردا پرسە بەدواداچوونەکان بە شێوەیەکی دیار کەم بوون، چونکە قاڵبی ڕوونمان دانا. هەروەها دوای ئەوەی بەڵگەنامەی گواستنەوەم ئامادە کرد، تیم توانای وەرگرتنی داواکاریی نوێی خێراتری هەبوو." },
+                { "language": "kmr", "text": "Di wan du pêvajoyên mişterî de pirsên şopandinê bi awayekî xuya kêm bûn, ji ber ku me şablonên zelal danîn. Her wiha piştî ku min belgeyên radestkirinê amade kirin, tîm dikaribû daxwazên nû zûtir bigire." },
+                { "language": "pl", "text": "W tych dwóch procesach klienta liczba pytań uzupełniających wyraźnie spadła, bo wprowadziliśmy jasne szablony. Poza tym zespół mógł szybciej przejmować nowe zgłoszenia po tym, jak przygotowałem dokumentację przekazania." },
+                { "language": "ro", "text": "În cele două procese pentru clienți, întrebările de clarificare au scăzut vizibil, deoarece am introdus șabloane clare. În plus, echipa a putut prelua mai repede cereri noi după ce am creat documentația de predare." },
+                { "language": "sq", "text": "Në dy proceset e klientëve, pyetjet pasuese ranë dukshëm, sepse vendosëm modele të qarta. Gjithashtu, ekipi mundi të merrte më shpejt kërkesa të reja pasi përgatita dokumentacionin e dorëzimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this describes observable impact and connects it to your work.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this describes observable impact and connects it to your work." },
+                { "language": "fa", "text": "خوب است: اثر قابل مشاهده را توضیح می‌دهد و آن را به کار شما وصل می‌کند." },
+                { "language": "ar", "text": "جيد: يصف أثراً ملحوظاً ويربطه بعملك." },
+                { "language": "tr", "text": "İyi: gözlemlenebilir etkiyi anlatıyor ve bunu sizin çalışmanıza bağlıyor." },
+                { "language": "ru", "text": "Хорошо: описан наблюдаемый эффект и связь с вашей работой." },
+                { "language": "ckb", "text": "باشە: کاریگەریی دیار دەربڕێت و بە کارەکەت دەیبەستێتەوە." },
+                { "language": "kmr", "text": "Baş e: bandora xuya rave dike û wê bi xebata te ve girê dide." },
+                { "language": "pl", "text": "Dobrze: opisuje widoczny wpływ i łączy go z Pana pracą." },
+                { "language": "ro", "text": "Bine: descrie impact observabil și îl leagă de munca ta." },
+                { "language": "sq", "text": "Mirë: përshkruan ndikim të dukshëm dhe e lidh me punën tënde." }
+              ],
+              "explanationKey": "observable-impact"
+            },
+            {
+              "id": "busy-but-no-impact",
+              "text": "Ich hatte in den letzten Monaten einfach sehr viel zu tun und war bei vielen Themen die Person, die am Ende einspringen musste.",
+              "translations": [
+                { "language": "en", "text": "In recent months I simply had a lot to do and was the person who had to step in for many topics in the end." },
+                { "language": "fa", "text": "در ماه‌های گذشته واقعاً کار زیادی داشتم و در بسیاری از موضوعات در نهایت من کسی بودم که باید وارد عمل می‌شد." },
+                { "language": "ar", "text": "في الأشهر الماضية كان لدي ببساطة الكثير من العمل، وكنت في كثير من المواضيع الشخص الذي اضطر في النهاية إلى التدخل." },
+                { "language": "tr", "text": "Son aylarda gerçekten çok işim vardı ve birçok konuda sonunda devreye girmek zorunda kalan kişi bendim." },
+                { "language": "ru", "text": "В последние месяцы у меня просто было очень много работы, и по многим темам именно мне в итоге приходилось подключаться." },
+                { "language": "ckb", "text": "لە مانگەکانی ڕابردوودا بەڕاستی کارم زۆر بوو و لە زۆر بابەتدا لە کۆتاییدا من بووم دەبوو بەشدار ببم." },
+                { "language": "kmr", "text": "Di mehên dawî de bi rastî gelek karê min hebû û di gelek mijaran de ez kesê bûm ku di dawiyê de diviya tê de bikeve." },
+                { "language": "pl", "text": "W ostatnich miesiącach miałem po prostu bardzo dużo pracy i przy wielu tematach byłem osobą, która na końcu musiała wejść do działania." },
+                { "language": "ro", "text": "În ultimele luni am avut pur și simplu foarte mult de lucru și în multe teme eu am fost persoana care a trebuit să intervină la final." },
+                { "language": "sq", "text": "Në muajt e fundit thjesht kisha shumë punë dhe në shumë tema isha personi që në fund duhej të ndërhynte." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausible but too vague: workload alone is weaker than concrete effect, responsibility, and evidence.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible but too vague: workload alone is weaker than concrete effect, responsibility, and evidence." },
+                { "language": "fa", "text": "قابل قبول به نظر می‌رسد اما بیش از حد مبهم است: حجم کار به‌تنهایی از اثر مشخص، مسئولیت و شواهد ضعیف‌تر است." },
+                { "language": "ar", "text": "مقبول لكنه غامض جداً: حجم العمل وحده أضعف من الأثر الملموس والمسؤولية والدليل." },
+                { "language": "tr", "text": "Makul ama çok belirsiz: iş yükü tek başına somut etki, sorumluluk ve kanıttan daha zayıftır." },
+                { "language": "ru", "text": "Звучит правдоподобно, но слишком расплывчато: нагрузка сама по себе слабее, чем конкретный эффект, ответственность и доказательства." },
+                { "language": "ckb", "text": "قبوڵکراو دەردەکەوێت بەڵام زۆر ناڕوونە: قەبارەی کار بە تەنها لاوازترە لە کاریگەری دیار، بەرپرسیارێتی و بەڵگە." },
+                { "language": "kmr", "text": "Gengaz xuya dike lê pir nezelal e: barê karê tenê ji bandora konkret, berpirsiyarî û delîlan lawaztir e." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale zbyt ogólnie: samo obciążenie pracą jest słabsze niż konkretny efekt, odpowiedzialność i dowody." },
+                { "language": "ro", "text": "Plauzibil, dar prea vag: volumul de muncă singur este mai slab decât efectul concret, responsabilitatea și dovezile." },
+                { "language": "sq", "text": "E besueshme, por shumë e paqartë: ngarkesa e punës vetëm është më e dobët se ndikimi konkret, përgjegjësia dhe provat." }
+              ],
+              "explanationKey": "busy-no-impact"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "range-with-basis",
+              "text": "Auf Basis meiner erweiterten Verantwortung und eines Vergleichs ähnlicher Rollen halte ich eine Anpassung im Bereich von sechs bis acht Prozent für angemessen. Mir ist aber wichtig, Ihre Einschätzung und den internen Rahmen zu verstehen.",
+              "translations": [
+                { "language": "en", "text": "Based on my expanded responsibility and a comparison with similar roles, I consider an adjustment in the range of six to eight percent appropriate. But it is important to me to understand your assessment and the internal framework." },
+                { "language": "fa", "text": "بر اساس مسئولیت گسترده‌ترم و مقایسه با نقش‌های مشابه، تعدیلی در بازه شش تا هشت درصد را مناسب می‌دانم. اما برایم مهم است ارزیابی شما و چارچوب داخلی را هم بفهمم." },
+                { "language": "ar", "text": "بناءً على مسؤوليتي الموسعة ومقارنة بأدوار مشابهة، أرى أن تعديلاً في نطاق ستة إلى ثمانية في المئة مناسب. لكن من المهم لي أن أفهم تقييمكم والإطار الداخلي." },
+                { "language": "tr", "text": "Genişleyen sorumluluğum ve benzer rollerle karşılaştırma temelinde yüzde altı ile sekiz arasında bir düzenlemeyi uygun görüyorum. Ancak sizin değerlendirmenizi ve iç çerçeveyi anlamak benim için önemli." },
+                { "language": "ru", "text": "Исходя из расширенной ответственности и сравнения с похожими ролями, я считаю корректировку в диапазоне шести-восьми процентов уместной. Но мне важно понять вашу оценку и внутренние рамки." },
+                { "language": "ckb", "text": "بەپێی بەرپرسیارێتی فراوانترم و بەراورد لەگەڵ ڕۆڵە هاوشێوەکان، گونجاندنێک لە مەودای شەش تا هەشت لەسەد بە گونجاو دەزانم. بەڵام بۆ من گرنگە هەڵسەنگاندنی ئێوە و چوارچێوەی ناوخۆ تێبگەم." },
+                { "language": "kmr", "text": "Li gor berpirsiyariya min a firehtir û berawirdkirina bi rolên mîna wê re, ez sererastkirinek di navbera şeş heta heşt ji sedî de guncaw dibînim. Lê ji bo min girîng e nirxandina we û çarçoveya hundir fêm bikim." },
+                { "language": "pl", "text": "Na podstawie rozszerzonej odpowiedzialności i porównania z podobnymi rolami uważam korektę w przedziale od sześciu do ośmiu procent za odpowiednią. Ważne jest jednak dla mnie zrozumienie Państwa oceny i wewnętrznych ram." },
+                { "language": "ro", "text": "Pe baza responsabilității mele extinse și a unei comparații cu roluri similare, consider potrivită o ajustare între șase și opt procente. Dar pentru mine este important să înțeleg evaluarea dumneavoastră și cadrul intern." },
+                { "language": "sq", "text": "Bazuar në përgjegjësinë time të zgjeruar dhe në krahasimin me role të ngjashme, e konsideroj të përshtatshme një përshtatje midis gjashtë dhe tetë për qind. Por për mua është e rëndësishme të kuptoj vlerësimin tuaj dhe kornizën e brendshme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this gives a range, explains the basis, and still leaves room for the company's view.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this gives a range, explains the basis, and still leaves room for the company's view." },
+                { "language": "fa", "text": "خوب است: بازه می‌دهد، مبنا را توضیح می‌دهد و همچنان برای دیدگاه شرکت فضا می‌گذارد." },
+                { "language": "ar", "text": "جيد: يعطي نطاقاً ويشرح الأساس، ويترك مجالاً لرأي الشركة." },
+                { "language": "tr", "text": "İyi: bir aralık veriyor, dayanağı açıklıyor ve şirketin görüşüne alan bırakıyor." },
+                { "language": "ru", "text": "Хорошо: указан диапазон, объяснено основание и оставлено пространство для позиции компании." },
+                { "language": "ckb", "text": "باشە: مەودا دەدات، بنەماکە ڕوون دەکاتەوە و هێشتا شوێن بۆ بۆچوونی کۆمپانیا دەهێڵێتەوە." },
+                { "language": "kmr", "text": "Baş e: navberê dide, bingehê rave dike û hîn jî cih ji bo dîtina şirketê dihêle." },
+                { "language": "pl", "text": "Dobrze: podaje przedział, wyjaśnia podstawę i zostawia miejsce na perspektywę firmy." },
+                { "language": "ro", "text": "Bine: oferă un interval, explică baza și lasă spațiu pentru perspectiva companiei." },
+                { "language": "sq", "text": "Mirë: jep një interval, shpjegon bazën dhe lë hapësirë për këndvështrimin e kompanisë." }
+              ],
+              "explanationKey": "range-with-basis"
+            },
+            {
+              "id": "hard-demand",
+              "text": "Ich würde mindestens acht Prozent erwarten, weil ich sonst nicht sehe, dass meine zusätzliche Arbeit ausreichend anerkannt wird.",
+              "translations": [
+                { "language": "en", "text": "I would expect at least eight percent, because otherwise I do not see my additional work being sufficiently recognized." },
+                { "language": "fa", "text": "حداقل هشت درصد انتظار دارم، چون در غیر این صورت نمی‌بینم که کار اضافه من به اندازه کافی به رسمیت شناخته شود." },
+                { "language": "ar", "text": "أتوقع ثمانية في المئة على الأقل، لأنني لا أرى غير ذلك أن عملي الإضافي يُعترف به بما يكفي." },
+                { "language": "tr", "text": "En az yüzde sekiz beklerim, çünkü aksi hâlde ek çalışmamın yeterince takdir edildiğini görmüyorum." },
+                { "language": "ru", "text": "Я ожидал бы как минимум восемь процентов, потому что иначе не вижу достаточного признания моей дополнительной работы." },
+                { "language": "ckb", "text": "لانیکەم هەشت لەسەد چاوەڕوان دەکەم، چونکە بە پێچەوانەوە نابینم کاری زیادەم بە پێویستی دان پێدا بنرێت." },
+                { "language": "kmr", "text": "Ez herî kêm heşt ji sedî hêvî dikim, ji ber ku wekî din nabînim ku xebata min a zêde têra xwe tê pejirandin." },
+                { "language": "pl", "text": "Oczekiwałbym co najmniej ośmiu procent, bo w przeciwnym razie nie widzę, aby moja dodatkowa praca była wystarczająco doceniona." },
+                { "language": "ro", "text": "M-aș aștepta la cel puțin opt procente, pentru că altfel nu văd ca munca mea suplimentară să fie recunoscută suficient." },
+                { "language": "sq", "text": "Do të prisja të paktën tetë për qind, sepse përndryshe nuk shoh që puna ime shtesë të njihet mjaftueshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too hard for this context: it states a demand, but it gives less room for budget, framework, or negotiation.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too hard for this context: it states a demand, but it gives less room for budget, framework, or negotiation." },
+                { "language": "fa", "text": "برای این موقعیت بیش از حد سخت است: مطالبه را بیان می‌کند، اما برای بودجه، چارچوب یا مذاکره فضای کمتری می‌گذارد." },
+                { "language": "ar", "text": "صارم جداً لهذا السياق: يطرح مطلباً، لكنه يترك مساحة أقل للميزانية أو الإطار أو التفاوض." },
+                { "language": "tr", "text": "Bu bağlam için fazla sert: bir talep bildiriyor, ama bütçe, çerçeve veya müzakere için daha az alan bırakıyor." },
+                { "language": "ru", "text": "Слишком жёстко для этого контекста: это требование, а не пространство для бюджета, рамок и переговоров." },
+                { "language": "ckb", "text": "بۆ ئەم دۆخە زۆر توندە: داواکاری دەردەبڕێت، بەڵام شوێنی کەمتر بۆ بودجە، چوارچێوە یان گفتوگۆ دەهێڵێت." },
+                { "language": "kmr", "text": "Ji bo vê rewşê pir hişk e: daxwazek dibêje, lê ji bo budce, çarçove an lihevkirinê cihê kêmtir dihêle." },
+                { "language": "pl", "text": "Zbyt twarde w tym kontekście: stawia żądanie i zostawia mniej miejsca na budżet, ramy lub negocjacje." },
+                { "language": "ro", "text": "Prea dur pentru acest context: exprimă o cerere, dar lasă mai puțin spațiu pentru buget, cadru sau negociere." },
+                { "language": "sq", "text": "Shumë e fortë për këtë kontekst: paraqet një kërkesë, por lë më pak hapësirë për buxhet, kornizë ose negociim." }
+              ],
+              "explanationKey": "hard-demand"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "staged-plan-with-criteria",
+              "text": "Das kann ich nachvollziehen. Ein Stufenplan wäre für mich sinnvoll, wenn wir klare Kriterien und einen Zeitpunkt festhalten, zum Beispiel nach dem nächsten Quartal mit Blick auf die übernommenen Verantwortungsbereiche.",
+              "translations": [
+                { "language": "en", "text": "I can understand that. A staged plan would make sense to me if we record clear criteria and a date, for example after the next quarter with regard to the areas of responsibility I have taken over." },
+                { "language": "fa", "text": "این را می‌توانم درک کنم. برنامه مرحله‌ای برایم منطقی است، اگر معیارهای روشن و یک زمان مشخص ثبت کنیم، مثلاً بعد از فصل بعد با توجه به حوزه‌های مسئولیتی که بر عهده گرفته‌ام." },
+                { "language": "ar", "text": "أستطيع فهم ذلك. ستكون الخطة المرحلية منطقية بالنسبة لي إذا سجلنا معايير واضحة وموعداً محدداً، مثلاً بعد الربع القادم بالنظر إلى مجالات المسؤولية التي توليتها." },
+                { "language": "tr", "text": "Bunu anlayabiliyorum. Net ölçütler ve bir tarih belirlersek kademeli bir plan benim için anlamlı olur; örneğin üstlendiğim sorumluluk alanlarına bakarak gelecek çeyrekten sonra." },
+                { "language": "ru", "text": "Я могу это понять. Поэтапный план был бы для меня разумным, если мы зафиксируем ясные критерии и дату, например после следующего квартала с учётом принятых мной зон ответственности." },
+                { "language": "ckb", "text": "دەتوانم ئەوە تێبگەم. پلانێکی قۆناغی بۆ من مانادار دەبێت ئەگەر پێوەرە ڕوونەکان و کاتێک تۆمار بکەین، بۆ نموونە دوای چارەکی داهاتوو بە سەرنجدان بە بوارە بەرپرسیارێتییەکان کە وەرگرتوومن." },
+                { "language": "kmr", "text": "Ez dikarim vê fêm bikim. Planeke qonaxî ji bo min watedar e heke em pîvanên zelal û demekê tomar bikin, mînak piştî çaryeka paşîn bi baldarî li qadên berpirsiyariyê yên ku min girtine." },
+                { "language": "pl", "text": "Rozumiem to. Plan etapowy miałby dla mnie sens, jeśli zapiszemy jasne kryteria i termin, na przykład po kolejnym kwartale z uwzględnieniem przejętych przeze mnie obszarów odpowiedzialności." },
+                { "language": "ro", "text": "Pot înțelege asta. Un plan în etape ar avea sens pentru mine dacă stabilim criterii clare și un termen, de exemplu după trimestrul următor, având în vedere domeniile de responsabilitate preluate." },
+                { "language": "sq", "text": "Mund ta kuptoj këtë. Një plan me faza do të kishte kuptim për mua nëse përcaktojmë kritere të qarta dhe një datë, për shembull pas tremujorit të ardhshëm duke parë fushat e përgjegjësisë që kam marrë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this accepts the constraint but protects the request with criteria and a review date.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this accepts the constraint but protects the request with criteria and a review date." },
+                { "language": "fa", "text": "خوب است: محدودیت را می‌پذیرد اما درخواست را با معیارها و تاریخ بازبینی حفظ می‌کند." },
+                { "language": "ar", "text": "جيد: يقبل القيد لكنه يحمي الطلب بمعايير وموعد مراجعة." },
+                { "language": "tr", "text": "İyi: kısıtı kabul ediyor ama talebi ölçütler ve değerlendirme tarihiyle koruyor." },
+                { "language": "ru", "text": "Хорошо: ограничение принято, но просьба защищена критериями и датой пересмотра." },
+                { "language": "ckb", "text": "باشە: سنوورەکە قبوڵ دەکات بەڵام داواکە بە پێوەر و کاتی پێداچوونەوە دەپارێزێت." },
+                { "language": "kmr", "text": "Baş e: sînorê dipejirîne lê daxwazê bi pîvan û dema nirxandinê diparêze." },
+                { "language": "pl", "text": "Dobrze: akceptuje ograniczenie, ale zabezpiecza prośbę kryteriami i datą przeglądu." },
+                { "language": "ro", "text": "Bine: acceptă limita, dar protejează cererea prin criterii și o dată de revizuire." },
+                { "language": "sq", "text": "Mirë: e pranon kufizimin, por e mbron kërkesën me kritere dhe një datë rishikimi." }
+              ],
+              "explanationKey": "staged-plan"
+            },
+            {
+              "id": "accept-without-criteria",
+              "text": "Ich verstehe, dass das Budget schwierig ist. Dann warte ich einfach ab, was HR dazu sagt, und wir schauen später weiter.",
+              "translations": [
+                { "language": "en", "text": "I understand that the budget is difficult. Then I will simply wait to see what HR says, and we will look further later." },
+                { "language": "fa", "text": "می‌فهمم که بودجه دشوار است. پس فقط منتظر می‌مانم ببینم منابع انسانی چه می‌گوید و بعداً ادامه را بررسی می‌کنیم." },
+                { "language": "ar", "text": "أفهم أن الميزانية صعبة. إذن سأنتظر ببساطة ما تقوله الموارد البشرية، ثم نرى لاحقاً." },
+                { "language": "tr", "text": "Bütçenin zor olduğunu anlıyorum. O zaman sadece insan kaynaklarının ne diyeceğini beklerim, sonra daha sonra bakarız." },
+                { "language": "ru", "text": "Я понимаю, что с бюджетом сложно. Тогда я просто подожду, что скажет отдел кадров, а потом посмотрим дальше." },
+                { "language": "ckb", "text": "تێدەگەم کە بودجە قورسە. ئەوا تەنها چاوەڕێ دەکەم ببینم بەشی سەرچاوە مرۆییەکان چی دەڵێت و دواتر دەبینین چی دەکەین." },
+                { "language": "kmr", "text": "Ez têdigihîjim ku budce dijwar e. Hingê ez tenê li benda vê dimînim ka beşa mirovî çi dibêje û paşê em dê bêtir bibînin." },
+                { "language": "pl", "text": "Rozumiem, że budżet jest trudny. W takim razie po prostu poczekam, co powie dział kadr, i później zobaczymy dalej." },
+                { "language": "ro", "text": "Înțeleg că bugetul este dificil. Atunci pur și simplu aștept ce spune departamentul de resurse umane și vedem mai târziu." },
+                { "language": "sq", "text": "E kuptoj që buxheti është i vështirë. Atëherë thjesht pres çfarë thotë departamenti i burimeve njerëzore dhe shohim më vonë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Too passive: it accepts the limit but does not secure criteria, timing, or a review point.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too passive: it accepts the limit but does not secure criteria, timing, or a review point." },
+                { "language": "fa", "text": "بیش از حد منفعل است: محدودیت را می‌پذیرد اما معیار، زمان‌بندی یا نقطه بازبینی را قطعی نمی‌کند." },
+                { "language": "ar", "text": "سلبي جداً: يقبل القيد لكنه لا يضمن معايير أو توقيتاً أو نقطة مراجعة." },
+                { "language": "tr", "text": "Çok pasif: sınırı kabul ediyor ama ölçüt, zamanlama veya değerlendirme noktası sağlamıyor." },
+                { "language": "ru", "text": "Слишком пассивно: ограничение принято, но не зафиксированы критерии, сроки или точка пересмотра." },
+                { "language": "ckb", "text": "زۆر نائاکتیڤە: سنوورەکە قبوڵ دەکات بەڵام پێوەر، کات یان خاڵی پێداچوونەوە دڵنیا ناکات." },
+                { "language": "kmr", "text": "Pir pasîf e: sînorê dipejirîne lê pîvan, dem an xala nirxandinê ewle nake." },
+                { "language": "pl", "text": "Zbyt bierne: akceptuje ograniczenie, ale nie zabezpiecza kryteriów, terminu ani punktu przeglądu." },
+                { "language": "ro", "text": "Prea pasiv: acceptă limita, dar nu asigură criterii, calendar sau punct de revizuire." },
+                { "language": "sq", "text": "Shumë pasive: e pranon kufizimin, por nuk siguron kritere, afat ose pikë rishikimi." }
+              ],
+              "explanationKey": "passive-no-criteria"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "written-summary",
+              "text": "Vielen Dank. Dann halte ich die drei Punkte noch einmal schriftlich fest: zusätzliche Verantwortung, konkrete Wirkung und der gewünschte Stufenplan. Wenn es für Sie passt, sende ich Ihnen die Zusammenfassung heute Nachmittag.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I will then write down the three points again: additional responsibility, concrete impact, and the desired staged plan. If that works for you, I will send you the summary this afternoon." },
+                { "language": "fa", "text": "ممنونم. پس سه نکته را یک بار دیگر کتبی ثبت می‌کنم: مسئولیت اضافه، اثر مشخص و برنامه مرحله‌ای مورد نظر. اگر برای شما مناسب است، خلاصه را امروز بعدازظهر برایتان می‌فرستم." },
+                { "language": "ar", "text": "شكراً. إذن سأثبت النقاط الثلاث مرة أخرى كتابةً: المسؤولية الإضافية، والأثر الملموس، والخطة المرحلية المطلوبة. إذا كان ذلك مناسباً لكم، فسأرسل لكم الملخص بعد ظهر اليوم." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman üç noktayı tekrar yazılı olarak toparlarım: ek sorumluluk, somut etki ve istenen kademeli plan. Sizin için uygunsa özeti bugün öğleden sonra gönderirim." },
+                { "language": "ru", "text": "Спасибо. Тогда я ещё раз письменно зафиксирую три пункта: дополнительную ответственность, конкретный эффект и желаемый поэтапный план. Если вам подходит, я отправлю резюме сегодня после обеда." },
+                { "language": "ckb", "text": "سوپاس. ئەوا سێ خاڵەکە جارێکی تر بە نووسراوی دەنووسم: بەرپرسیارێتی زیادە، کاریگەری دیاریکراو و پلانی قۆناغی خوازراو. ئەگەر بۆتان گونجاوە، کورتەکە ئەم پاشنیوەڕۆیە بۆتان دەنێرم." },
+                { "language": "kmr", "text": "Spas. Hingê ez ê sê xalan careke din bi nivîskî tomar bikim: berpirsiyariya zêde, bandora konkret û plana qonaxî ya daxwazkirî. Heke ji bo we guncaw be, ez ê kurteyê îro piştî nîvro ji we re bişînim." },
+                { "language": "pl", "text": "Dziękuję. W takim razie zapiszę jeszcze raz trzy punkty: dodatkową odpowiedzialność, konkretny efekt i oczekiwany plan etapowy. Jeśli to Pani odpowiada, wyślę podsumowanie dziś po południu." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci notez din nou în scris cele trei puncte: responsabilitatea suplimentară, impactul concret și planul în etape dorit. Dacă este în regulă pentru dumneavoastră, vă trimit rezumatul astăzi după-amiază." },
+                { "language": "sq", "text": "Faleminderit. Atëherë i shënoj edhe një herë me shkrim tre pikat: përgjegjësinë shtesë, ndikimin konkret dhe planin e dëshiruar me faza. Nëse është në rregull për ju, do t’ju dërgoj përmbledhjen sot pasdite." }
+              ],
+              "isCorrect": true,
+              "feedback": "Good: this closes professionally and creates a written basis for the next step.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: this closes professionally and creates a written basis for the next step." },
+                { "language": "fa", "text": "خوب است: حرفه‌ای پایان می‌دهد و برای قدم بعدی یک مبنای کتبی می‌سازد." },
+                { "language": "ar", "text": "جيد: ينهي الحديث بمهنية ويخلق أساساً كتابياً للخطوة التالية." },
+                { "language": "tr", "text": "İyi: profesyonelce kapatıyor ve sonraki adım için yazılı bir temel oluşturuyor." },
+                { "language": "ru", "text": "Хорошо: профессиональное завершение и письменная основа для следующего шага." },
+                { "language": "ckb", "text": "باشە: بە شێوەی پیشەیی کۆتایی پێدەهێنێت و بنەمایەکی نووسراو بۆ هەنگاوی داهاتوو دروست دەکات." },
+                { "language": "kmr", "text": "Baş e: bi awayekî profesyonel diqedîne û ji bo gaveke paşîn bingeheke nivîskî çêdike." },
+                { "language": "pl", "text": "Dobrze: zamyka rozmowę profesjonalnie i tworzy pisemną podstawę dla następnego kroku." },
+                { "language": "ro", "text": "Bine: încheie profesionist și creează o bază scrisă pentru pasul următor." },
+                { "language": "sq", "text": "Mirë: e mbyll profesionalisht dhe krijon një bazë me shkrim për hapin tjetër." }
+              ],
+              "explanationKey": "written-summary"
+            },
+            {
+              "id": "leave-without-summary",
+              "text": "Vielen Dank. Dann warte ich auf Ihre Rückmeldung und hoffe, dass wir eine gute Lösung finden.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Then I will wait for your feedback and hope that we find a good solution." },
+                { "language": "fa", "text": "ممنونم. پس منتظر بازخورد شما می‌مانم و امیدوارم راه‌حل خوبی پیدا کنیم." },
+                { "language": "ar", "text": "شكراً. إذن سأنتظر ردكم وآمل أن نجد حلاً جيداً." },
+                { "language": "tr", "text": "Teşekkür ederim. O zaman geri bildiriminizi beklerim ve iyi bir çözüm bulacağımızı umarım." },
+                { "language": "ru", "text": "Спасибо. Тогда я буду ждать вашего ответа и надеюсь, что мы найдём хорошее решение." },
+                { "language": "ckb", "text": "سوپاس. ئەوا چاوەڕێی وەڵامتان دەبم و هیوادارم چارەسەرێکی باش بدۆزینەوە." },
+                { "language": "kmr", "text": "Spas. Hingê ez li benda bersiva we dimînim û hêvî dikim em çareseriyeke baş bibînin." },
+                { "language": "pl", "text": "Dziękuję. W takim razie poczekam na Pani odpowiedź i mam nadzieję, że znajdziemy dobre rozwiązanie." },
+                { "language": "ro", "text": "Vă mulțumesc. Atunci aștept răspunsul dumneavoastră și sper să găsim o soluție bună." },
+                { "language": "sq", "text": "Faleminderit. Atëherë pres përgjigjen tuaj dhe shpresoj që të gjejmë një zgjidhje të mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Polite but weaker: it does not preserve the agreed points or create a written next-step basis.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Polite but weaker: it does not preserve the agreed points or create a written next-step basis." },
+                { "language": "fa", "text": "مؤدبانه است اما ضعیف‌تر: نکات توافق‌شده را حفظ نمی‌کند و مبنای کتبی برای قدم بعدی نمی‌سازد." },
+                { "language": "ar", "text": "مهذب لكنه أضعف: لا يحفظ النقاط المتفق عليها ولا ينشئ أساساً كتابياً للخطوة التالية." },
+                { "language": "tr", "text": "Nazik ama daha zayıf: üzerinde anlaşılan noktaları korumuyor ve sonraki adım için yazılı temel oluşturmuyor." },
+                { "language": "ru", "text": "Вежливо, но слабее: согласованные пункты не закреплены, письменная основа для следующего шага не создана." },
+                { "language": "ckb", "text": "ڕێزدارانەیە بەڵام لاوازترە: خاڵە ڕێککەوتووەکان ناپارێزێت و بنەمای نووسراو بۆ هەنگاوی داهاتوو دروست ناکات." },
+                { "language": "kmr", "text": "Bi rêz e lê lawaztir e: xalên li hev hatî naparêze û bingeha nivîskî ji bo gaveke paşîn çênake." },
+                { "language": "pl", "text": "Uprzejme, ale słabsze: nie utrwala uzgodnionych punktów ani nie tworzy pisemnej podstawy kolejnego kroku." },
+                { "language": "ro", "text": "Politicos, dar mai slab: nu păstrează punctele convenite și nu creează o bază scrisă pentru pasul următor." },
+                { "language": "sq", "text": "E sjellshme, por më e dobët: nuk ruan pikat e dakorduara dhe nuk krijon bazë me shkrim për hapin tjetër." }
+              ],
+              "explanationKey": "no-written-basis"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "coaching-note",
+          "text": "Start a salary conversation with evidence and scope of responsibility, not with frustration or comparison alone.",
+          "translations": [
+            { "language": "en", "text": "Start a salary conversation with evidence and scope of responsibility, not with frustration or comparison alone." },
+            { "language": "fa", "text": "گفت‌وگوی حقوق را با شواهد و محدوده مسئولیت شروع کن، نه فقط با ناراحتی یا مقایسه." },
+            { "language": "ar", "text": "ابدأ محادثة الراتب بالأدلة ونطاق المسؤولية، لا بالإحباط أو المقارنة وحدهما." },
+            { "language": "tr", "text": "Maaş görüşmesine kanıt ve sorumluluk kapsamıyla başla; yalnızca hayal kırıklığı veya karşılaştırmayla değil." },
+            { "language": "ru", "text": "Начинай разговор о зарплате с доказательств и зоны ответственности, а не только с недовольства или сравнения." },
+            { "language": "ckb", "text": "گفتوگۆی مووچە بە بەڵگە و سنووری بەرپرسیارێتی دەست پێ بکە، نە تەنها بە نائارامی یان بەراورد." },
+            { "language": "kmr", "text": "Axaftina mûçeyê bi delîl û çarçoveya berpirsiyariyê dest pê bike, ne tenê bi nerazîbûn an berawirdkirinê." },
+            { "language": "pl", "text": "Rozmowę o wynagrodzeniu zacznij od dowodów i zakresu odpowiedzialności, nie tylko od frustracji albo porównania." },
+            { "language": "ro", "text": "Începe o discuție salarială cu dovezi și domeniul responsabilității, nu doar cu frustrare sau comparație." },
+            { "language": "sq", "text": "Fillo një bisedë për pagën me prova dhe fushën e përgjegjësisë, jo vetëm me pakënaqësi ose krahasim." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "coaching-note",
+          "text": "A salary range sounds stronger when it is linked to responsibility, impact, and an external or role-based comparison.",
+          "translations": [
+            { "language": "en", "text": "A salary range sounds stronger when it is linked to responsibility, impact, and an external or role-based comparison." },
+            { "language": "fa", "text": "بازه حقوقی وقتی قوی‌تر است که به مسئولیت، اثر و مقایسه بیرونی یا مبتنی بر نقش وصل شود." },
+            { "language": "ar", "text": "يبدو نطاق الراتب أقوى عندما يرتبط بالمسؤولية والأثر ومقارنة خارجية أو قائمة على الدور." },
+            { "language": "tr", "text": "Bir maaş aralığı sorumluluk, etki ve dış ya da rol temelli karşılaştırmayla bağlantılı olduğunda daha güçlü duyulur." },
+            { "language": "ru", "text": "Диапазон зарплаты звучит сильнее, когда связан с ответственностью, эффектом и внешним или ролевым сравнением." },
+            { "language": "ckb", "text": "مەودای مووچە کاتێک بەهێزتر دەردەکەوێت کە بە بەرپرسیارێتی، کاریگەری و بەراوردی دەرەکی یان بنەمای ڕۆڵەوە ببەسترێتەوە." },
+            { "language": "kmr", "text": "Navbera mûçeyê dema bi berpirsiyarî, bandor û berawirdkirina derveyî an li ser rolê ve girêdayî be, bihêztir xuya dike." },
+            { "language": "pl", "text": "Przedział wynagrodzenia brzmi mocniej, gdy jest powiązany z odpowiedzialnością, wpływem i porównaniem zewnętrznym lub opartym na roli." },
+            { "language": "ro", "text": "Un interval salarial sună mai solid când este legat de responsabilitate, impact și o comparație externă sau bazată pe rol." },
+            { "language": "sq", "text": "Një interval page tingëllon më i fortë kur lidhet me përgjegjësinë, ndikimin dhe një krahasim të jashtëm ose të bazuar në rol." }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "coaching-note",
+          "text": "If the budget blocks an immediate raise, negotiate criteria and a review date instead of dropping the request.",
+          "translations": [
+            { "language": "en", "text": "If the budget blocks an immediate raise, negotiate criteria and a review date instead of dropping the request." },
+            { "language": "fa", "text": "اگر بودجه افزایش فوری را مسدود می‌کند، به جای رها کردن درخواست، درباره معیارها و تاریخ بازبینی مذاکره کن." },
+            { "language": "ar", "text": "إذا منعت الميزانية زيادة فورية، فتفاوض على المعايير وموعد مراجعة بدلاً من التخلي عن الطلب." },
+            { "language": "tr", "text": "Bütçe hemen artışı engelliyorsa, talebi bırakmak yerine ölçütleri ve değerlendirme tarihini müzakere et." },
+            { "language": "ru", "text": "Если бюджет блокирует немедленное повышение, договаривайся о критериях и дате пересмотра вместо отказа от просьбы." },
+            { "language": "ckb", "text": "ئەگەر بودجە زیادکردنی دەستبەجێ ڕابگرێت، لە جیاتی وازهێنان لە داواکە لەسەر پێوەر و کاتی پێداچوونەوە گفتوگۆ بکە." },
+            { "language": "kmr", "text": "Heke budce zêdekirina tavilê asteng bike, li şûna berdana daxwazê li ser pîvan û dema nirxandinê li hev bike." },
+            { "language": "pl", "text": "Jeśli budżet blokuje natychmiastową podwyżkę, negocjuj kryteria i datę przeglądu zamiast porzucać prośbę." },
+            { "language": "ro", "text": "Dacă bugetul blochează o creștere imediată, negociază criterii și o dată de revizuire în loc să renunți la cerere." },
+            { "language": "sq", "text": "Nëse buxheti pengon një rritje të menjëhershme, negocio kriteret dhe datën e rishikimit në vend që ta lësh kërkesën." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "coaching-note",
+          "text": "A written summary after a sensitive workplace conversation reduces misunderstandings and keeps the next step concrete.",
+          "translations": [
+            { "language": "en", "text": "A written summary after a sensitive workplace conversation reduces misunderstandings and keeps the next step concrete." },
+            { "language": "fa", "text": "خلاصه کتبی بعد از یک گفت‌وگوی حساس کاری سوءتفاهم را کم می‌کند و قدم بعدی را مشخص نگه می‌دارد." },
+            { "language": "ar", "text": "الملخص المكتوب بعد محادثة عمل حساسة يقلل سوء الفهم ويحافظ على الخطوة التالية ملموسة." },
+            { "language": "tr", "text": "Hassas bir iş görüşmesinden sonra yazılı özet yanlış anlamaları azaltır ve sonraki adımı somut tutar." },
+            { "language": "ru", "text": "Письменное резюме после чувствительного рабочего разговора снижает недопонимания и делает следующий шаг конкретным." },
+            { "language": "ckb", "text": "کورتەی نووسراو دوای گفتوگۆیەکی هەستیار لە کاردا تێنەگەیشتن کەم دەکات و هەنگاوی داهاتوو دیاریکراو دەپارێزێت." },
+            { "language": "kmr", "text": "Kurteya nivîskî piştî axaftineke hestiyar a kar şaşfêmiyan kêm dike û gaveke paşîn konkret dihêle." },
+            { "language": "pl", "text": "Pisemne podsumowanie po wrażliwej rozmowie zawodowej zmniejsza nieporozumienia i utrzymuje konkretny następny krok." },
+            { "language": "ro", "text": "Un rezumat scris după o discuție sensibilă la locul de muncă reduce neînțelegerile și menține pasul următor concret." },
+            { "language": "sq", "text": "Një përmbledhje me shkrim pas një bisede të ndjeshme pune ul keqkuptimet dhe e mban hapin tjetër konkret." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

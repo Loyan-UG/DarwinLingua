@@ -1,0 +1,750 @@
+{
+  "packageId": "roleplays-c2-core-22-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C2 Core 22 v1",
+  "source": "Darwin Lingua RoleplayScenario C2 Core 22",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C2 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c2-eine-komplexe-umweltentscheidung-vermitteln",
+      "linkedDialogueSlug": null,
+      "title": "Eine komplexe Umweltentscheidung vermitteln",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a complex environmental decision" },
+        { "language": "fa", "text": "توضیح یک تصمیم پیچیده محیط‌زیستی" },
+        { "language": "ar", "text": "شرح قرار بيئي معقد" },
+        { "language": "tr", "text": "Karmaşık bir çevre kararını açıklamak" },
+        { "language": "ru", "text": "Объяснение сложного экологического решения" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی بڕیارێکی ئاڵۆزی ژینگەیی" },
+        { "language": "kmr", "text": "Şirovekirina biryareke hawîrdorî ya tevlihev" },
+        { "language": "pl", "text": "Wyjaśnianie złożonej decyzji środowiskowej" },
+        { "language": "ro", "text": "Explicarea unei decizii complexe de mediu" },
+        { "language": "sq", "text": "Shpjegimi i një vendimi të ndërlikuar mjedisor" }
+      ],
+      "description": "In einer Stadtteilversammlung soll eine Hauptstraße klimaangepasst umgebaut werden: weniger Parkplätze, mehr Bäume, breitere Gehwege, ein geschützter Radstreifen und Ladezonen für Lieferverkehr. Viele unterstützen das Ziel, andere fürchten Umsatzeinbußen, höhere Kosten und schlechtere Erreichbarkeit. Sie sollen die Entscheidung vermitteln, ohne Verlierer unsichtbar zu machen oder den langfristigen Nutzen zu beschönigen.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "At a neighborhood meeting, a main street is to be redesigned for climate adaptation: fewer parking spaces, more trees, wider sidewalks, a protected bike lane, and loading zones for deliveries. Many support the goal, while others fear lost revenue, higher costs, and poorer access. You are asked to explain the decision without making those who lose out invisible or idealizing the long-term benefit." },
+        { "language": "fa", "text": "در یک نشست محله‌ای قرار است خیابان اصلی برای سازگاری با اقلیم بازطراحی شود: جای پارک کمتر، درختان بیشتر، پیاده‌روهای عریض‌تر، مسیر دوچرخه محافظت‌شده و محل بارگیری برای تحویل کالا. بسیاری از هدف حمایت می‌کنند، اما برخی از کاهش درآمد، هزینه بالاتر و دسترسی بدتر می‌ترسند. شما باید تصمیم را توضیح دهید، بدون آنکه زیان‌دیدگان را نادیده بگیرید یا فایده بلندمدت را بیش از حد زیبا جلوه دهید." },
+        { "language": "ar", "text": "في اجتماع حي يُفترض إعادة تصميم شارع رئيسي للتكيف مع المناخ: أماكن ركن أقل، أشجار أكثر، أرصفة أوسع، مسار دراجات محمي، ومناطق تحميل للتوصيل. يؤيد كثيرون الهدف، بينما يخشى آخرون انخفاض الدخل وارتفاع التكاليف وصعوبة الوصول. المطلوب شرح القرار من دون جعل المتضررين غير مرئيين أو تجميل الفائدة الطويلة الأمد." },
+        { "language": "tr", "text": "Bir mahalle toplantısında ana caddenin iklime uyum için yeniden düzenlenmesi planlanıyor: daha az park yeri, daha fazla ağaç, daha geniş kaldırımlar, korumalı bisiklet şeridi ve teslimatlar için yükleme alanları. Birçok kişi hedefi destekliyor, bazıları ise gelir kaybı, yüksek maliyet ve daha zor erişimden korkuyor. Kararı, kaybedenleri görünmez kılmadan ve uzun vadeli yararı süslemeden açıklamanız bekleniyor." },
+        { "language": "ru", "text": "На районном собрании обсуждается перестройка главной улицы с учетом адаптации к климату: меньше парковочных мест, больше деревьев, более широкие тротуары, защищенная велополоса и зоны погрузки для доставки. Многие поддерживают цель, другие опасаются потери выручки, более высоких расходов и худшей доступности. Нужно объяснить решение, не делая проигрывающих невидимыми и не приукрашивая долгосрочную пользу." },
+        { "language": "ckb", "text": "لە کۆبوونەوەیەکی گەڕەکدا بڕیارە شەقامێکی سەرەکی بۆ گونجاندنی کەشوهەوا دووبارە ڕێکبخرێت: شوێنی پارککردنی کەمتر، دارێکی زیاتر، پیادەڕەوی فراوانتر، ڕێگای پاسکیلی پارێزراو و شوێنی بارکردن بۆ گەیاندن. زۆر کەس ئامانجەکە پشتگیری دەکەن، بەڵام هەندێک لە کەمبوونی داهات، تێچوونی زیاتر و گەیشتنی خراپتر دەترسن. دەبێت بڕیارەکە ڕوون بکەیتەوە، بەبێ ئەوەی زیانمەندان نەبینرێن یان سوودی درێژخایەن جوانتر لە ڕاستی پیشان بدرێت." },
+        { "language": "kmr", "text": "Di civîneke taxê de tê plansaz kirin ku kolana sereke ji bo lihevhatina bi avhewayê ji nû ve were guhertin: cihên parkê kêm, darên zêdetir, rêyên peyayan firehtir, rêya bisîkletê ya parastî û cihên barkirinê ji bo radestkirinê. Gelek kes armancê piştgirî dikin, lê hin kes ji kêmkirina dahatê, lêçûnên bilindtir û gihîştina dijwartir ditirsin. Divê hûn biryarê rave bikin bêyî ku kesên ziyan dibînin nayên dîtin an sûda demdirêj were xweşikkirin." },
+        { "language": "pl", "text": "Na spotkaniu dzielnicowym główna ulica ma zostać przebudowana pod kątem adaptacji do klimatu: mniej miejsc parkingowych, więcej drzew, szersze chodniki, chroniony pas rowerowy i strefy załadunku dla dostaw. Wielu popiera cel, inni obawiają się spadku obrotów, wyższych kosztów i gorszej dostępności. Trzeba wyjaśnić decyzję, nie czyniąc przegranych niewidzialnymi i nie upiększając długoterminowej korzyści." },
+        { "language": "ro", "text": "La o întâlnire de cartier se discută reamenajarea unei străzi principale pentru adaptare climatică: mai puține locuri de parcare, mai mulți copaci, trotuare mai largi, o bandă protejată pentru biciclete și zone de încărcare pentru livrări. Mulți susțin scopul, alții se tem de scăderi ale veniturilor, costuri mai mari și acces mai dificil. Trebuie să explicați decizia fără să îi faceți invizibili pe cei dezavantajați sau să înfrumusețați beneficiul pe termen lung." },
+        { "language": "sq", "text": "Në një takim lagjeje planifikohet që rruga kryesore të rindërtohet për përshtatje klimatike: më pak vende parkimi, më shumë pemë, trotuare më të gjera, korsi e mbrojtur biçikletash dhe zona ngarkimi për dërgesa. Shumë e mbështesin qëllimin, të tjerë kanë frikë nga humbja e të ardhurave, kosto më të larta dhe qasje më e dobët. Ju duhet ta shpjegoni vendimin pa i bërë të padukshëm ata që humbin dhe pa e zbukuruar përfitimin afatgjatë." }
+      ],
+      "learnerGoal": "Eine schwierige Umweltentscheidung differenziert vermitteln: kurzfristige Belastungen anerkennen, langfristige Klima- und Gesundheitsziele erklären, soziale Ausgleichsmaßnahmen nennen, Umsetzbarkeit prüfen und eine faire Bewertungslogik anbieten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Explain a difficult environmental decision in a nuanced way: acknowledge short-term burdens, explain long-term climate and health goals, name social balancing measures, check feasibility, and offer a fair evaluation logic." },
+        { "language": "fa", "text": "یک تصمیم دشوار محیط‌زیستی را با ظرافت توضیح دهید: فشارهای کوتاه‌مدت را بپذیرید، هدف‌های بلندمدت اقلیمی و سلامت را توضیح دهید، اقدام‌های جبرانی اجتماعی را نام ببرید، امکان اجرا را بررسی کنید و منطق ارزیابی منصفانه‌ای ارائه دهید." },
+        { "language": "ar", "text": "اشرحوا قراراً بيئياً صعباً بدقة: اعترفوا بالأعباء القصيرة الأمد، واشرحوا أهداف المناخ والصحة الطويلة الأمد، واذكروا إجراءات تعويض اجتماعي، وافحصوا قابلية التنفيذ، وقدموا منطق تقييم منصفاً." },
+        { "language": "tr", "text": "Zor bir çevre kararını nüanslı açıklayın: kısa vadeli yükleri kabul edin, uzun vadeli iklim ve sağlık hedeflerini açıklayın, sosyal dengeleme önlemlerini belirtin, uygulanabilirliği kontrol edin ve adil bir değerlendirme mantığı sunun." },
+        { "language": "ru", "text": "Нюансированно объяснить сложное экологическое решение: признать краткосрочные нагрузки, объяснить долгосрочные климатические и медицинские цели, назвать меры социального выравнивания, проверить реализуемость и предложить справедливую логику оценки." },
+        { "language": "ckb", "text": "بڕیارێکی قورسی ژینگەیی بە وردی ڕوون بکەوە: بارگرانییە کورتخایەنەکان بپەژێنە، ئامانجە درێژخایەنەکانی کەشوهەوا و تەندروستی ڕوون بکەوە، هەنگاوە کۆمەڵایەتییە هاوسەنگکەرەکان ناوببە، جێبەجێبوون بپشکنە و لۆژیکی هەڵسەنگاندنی دادپەروەرانە پێشکەش بکە." },
+        { "language": "kmr", "text": "Biryareke dijwar a hawîrdorî bi hûrgilî rave bikin: barên kurt-dem qebûl bikin, armancên demdirêj ên avhewa û tenduristiyê rave bikin, tedbîrên civakî yên hevsengkirinê nav bikin, pêkanînbûnê kontrol bikin û mantiqeke nirxandinê ya dadwerane pêşkêş bikin." },
+        { "language": "pl", "text": "Wyjaśnić trudną decyzję środowiskową w sposób zniuansowany: uznać krótkoterminowe obciążenia, wyjaśnić długoterminowe cele klimatyczne i zdrowotne, wskazać działania wyrównawcze, sprawdzić wykonalność i zaproponować uczciwą logikę oceny." },
+        { "language": "ro", "text": "Explicați nuanțat o decizie dificilă de mediu: recunoașteți poverile pe termen scurt, explicați obiectivele climatice și de sănătate pe termen lung, numiți măsuri sociale de compensare, verificați fezabilitatea și oferiți o logică de evaluare corectă." },
+        { "language": "sq", "text": "Shpjegoni me nuanca një vendim të vështirë mjedisor: pranoni barrat afatshkurtra, shpjegoni qëllimet afatgjata klimatike dhe shëndetësore, përmendni masa sociale balancuese, kontrolloni zbatueshmërinë dhe ofroni një logjikë vlerësimi të drejtë." }
+      ],
+      "cefrLevel": "C2",
+      "category": "public-discussion",
+      "topics": ["everyday-life", "education-and-training"],
+      "examProfiles": [],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "compare-options",
+      "interactionMode": "group-work",
+      "register": "formal",
+      "estimatedPracticeMinutes": 22,
+      "isPublished": true,
+      "sortOrder": 22,
+      "roles": [
+        {
+          "roleKey": "learner",
+          "displayName": "Diskussionsteilnahme",
+          "translations": [
+            { "language": "en", "text": "Discussion participant" },
+            { "language": "fa", "text": "شرکت‌کننده در بحث" },
+            { "language": "ar", "text": "مشارك في النقاش" },
+            { "language": "tr", "text": "Tartışma katılımcısı" },
+            { "language": "ru", "text": "Участник дискуссии" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ" },
+            { "language": "kmr", "text": "Beşdarê gotûbêjê" },
+            { "language": "pl", "text": "Uczestnik dyskusji" },
+            { "language": "ro", "text": "Participant la discuție" },
+            { "language": "sq", "text": "Pjesëmarrës në diskutim" }
+          ]
+        },
+        {
+          "roleKey": "moderation",
+          "displayName": "Moderation",
+          "translations": [
+            { "language": "en", "text": "Moderator" },
+            { "language": "fa", "text": "مجری" },
+            { "language": "ar", "text": "مدير النقاش" },
+            { "language": "tr", "text": "Moderatör" },
+            { "language": "ru", "text": "Модератор" },
+            { "language": "ckb", "text": "بەڕێوەبەر" },
+            { "language": "kmr", "text": "Moderator" },
+            { "language": "pl", "text": "Moderator" },
+            { "language": "ro", "text": "Moderator" },
+            { "language": "sq", "text": "Moderator" }
+          ]
+        },
+        {
+          "roleKey": "shop-owner",
+          "displayName": "Ladeninhaberin",
+          "translations": [
+            { "language": "en", "text": "Shop owner" },
+            { "language": "fa", "text": "صاحب فروشگاه" },
+            { "language": "ar", "text": "مالكة متجر" },
+            { "language": "tr", "text": "Dükkan sahibi" },
+            { "language": "ru", "text": "Владелица магазина" },
+            { "language": "ckb", "text": "خاوەنی فرۆشگا" },
+            { "language": "kmr", "text": "Xwedîya dikanê" },
+            { "language": "pl", "text": "Właścicielka sklepu" },
+            { "language": "ro", "text": "Proprietară de magazin" },
+            { "language": "sq", "text": "Pronare dyqani" }
+          ]
+        },
+        {
+          "roleKey": "planner",
+          "displayName": "Klimaplanerin",
+          "translations": [
+            { "language": "en", "text": "Climate planner" },
+            { "language": "fa", "text": "برنامه‌ریز اقلیمی" },
+            { "language": "ar", "text": "مخططة مناخية" },
+            { "language": "tr", "text": "İklim planlamacısı" },
+            { "language": "ru", "text": "Специалистка по климатическому планированию" },
+            { "language": "ckb", "text": "پلانداڕێژی کەشوهەوا" },
+            { "language": "kmr", "text": "Plansazkara avhewayê" },
+            { "language": "pl", "text": "Planistka klimatyczna" },
+            { "language": "ro", "text": "Planificatoare climatică" },
+            { "language": "sq", "text": "Planifikuese klimatike" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "moderation",
+          "baseText": "Die Stadt will eine Hauptstraße umbauen: weniger Parkplätze, mehr Bäume, bessere Gehwege und ein geschützter Radstreifen. Viele fragen: Ist das ökologisch sinnvoll, sozial fair und wirtschaftlich tragbar? Wie erklären Sie die Entscheidung?",
+          "translations": [
+            { "language": "en", "text": "The city wants to redesign a main street: fewer parking spaces, more trees, better sidewalks, and a protected bike lane. Many ask: is this environmentally sensible, socially fair, and economically sustainable? How do you explain the decision?" },
+            { "language": "fa", "text": "شهر می‌خواهد خیابان اصلی را بازطراحی کند: جای پارک کمتر، درختان بیشتر، پیاده‌روهای بهتر و مسیر دوچرخه محافظت‌شده. بسیاری می‌پرسند: آیا این از نظر محیط‌زیستی منطقی، از نظر اجتماعی منصفانه و از نظر اقتصادی قابل دوام است؟ شما تصمیم را چگونه توضیح می‌دهید؟" },
+            { "language": "ar", "text": "تريد المدينة إعادة تصميم شارع رئيسي: أماكن ركن أقل، أشجار أكثر، أرصفة أفضل، ومسار دراجات محمي. يسأل كثيرون: هل هذا منطقي بيئياً، ومنصف اجتماعياً، وقابل للتحمل اقتصادياً؟ كيف تشرحون القرار؟" },
+            { "language": "tr", "text": "Belediye bir ana caddeyi yeniden düzenlemek istiyor: daha az park yeri, daha fazla ağaç, daha iyi kaldırımlar ve korumalı bisiklet şeridi. Birçok kişi soruyor: bu çevresel açıdan anlamlı, sosyal açıdan adil ve ekonomik açıdan taşınabilir mi? Kararı nasıl açıklarsınız?" },
+            { "language": "ru", "text": "Город хочет перестроить главную улицу: меньше парковочных мест, больше деревьев, лучшие тротуары и защищенная велополоса. Многие спрашивают: экологически ли это разумно, социально справедливо и экономически устойчиво? Как вы объясните решение?" },
+            { "language": "ckb", "text": "شارەوانی دەیەوێت شەقامێکی سەرەکی دووبارە ڕێکبخات: شوێنی پارککردنی کەمتر، دارێکی زیاتر، پیادەڕەوی باشتر و ڕێگای پاسکیلی پارێزراو. زۆر کەس دەپرسن: ئایا ئەمە لە ڕووی ژینگەییەوە مانادارە، لە کۆمەڵایەتیدا دادپەروەرانەیە و لە ئابووریدا جێگیرە؟ بڕیارەکە چۆن ڕوون دەکەیتەوە؟" },
+            { "language": "kmr", "text": "Şaredarî dixwaze kolanek sereke ji nû ve biguherîne: cihên parkê kêm, darên zêdetir, rêyên peyayan baştir û rêya bisîkletê ya parastî. Gelek kes dipirsin: ev ji aliyê hawîrdorî ve maqûl, ji aliyê civakî ve dadwerane û ji aliyê aborî ve hilgir e? Hûn biryarê çawa rave dikin?" },
+            { "language": "pl", "text": "Miasto chce przebudować główną ulicę: mniej miejsc parkingowych, więcej drzew, lepsze chodniki i chroniony pas rowerowy. Wielu pyta: czy to ma sens ekologiczny, jest społecznie sprawiedliwe i ekonomicznie udźwignięte? Jak wyjaśni Pan/Pani tę decyzję?" },
+            { "language": "ro", "text": "Orașul vrea să reamenajeze o stradă principală: mai puține locuri de parcare, mai mulți copaci, trotuare mai bune și o bandă protejată pentru biciclete. Mulți întreabă: este ecologic sensat, social corect și economic sustenabil? Cum explicați decizia?" },
+            { "language": "sq", "text": "Qyteti dëshiron të rindërtojë një rrugë kryesore: më pak vende parkimi, më shumë pemë, trotuare më të mira dhe korsi e mbrojtur biçikletash. Shumë pyesin: a është kjo e arsyeshme mjedisore, e drejtë shoqërisht dhe e përballueshme ekonomikisht? Si e shpjegoni vendimin?" }
+          ],
+          "function": "frame-decision",
+          "toneNote": "Sachlich und mehrdimensional."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ich würde die Entscheidung nicht als einfachen Gegensatz zwischen Auto und Klima darstellen. Es geht um eine Abwägung: Hitzeschutz, Gesundheit und sichere Wege auf der einen Seite; Erreichbarkeit, Kosten und Übergangsbelastungen auf der anderen Seite.",
+          "translations": [
+            { "language": "en", "text": "I would not present the decision as a simple opposition between cars and climate. It is a balancing act: heat protection, health, and safe routes on one side; access, costs, and transition burdens on the other." },
+            { "language": "fa", "text": "من تصمیم را به صورت تقابل ساده میان خودرو و اقلیم نشان نمی‌دهم. مسئله یک سنجش چندجانبه است: حفاظت در برابر گرما، سلامت و مسیرهای امن در یک سو؛ دسترسی، هزینه‌ها و فشارهای دوره گذار در سوی دیگر." },
+            { "language": "ar", "text": "لن أعرض القرار كتناقض بسيط بين السيارات والمناخ. الأمر موازنة: الحماية من الحر، والصحة، والطرق الآمنة من جهة؛ والوصول، والتكاليف، وأعباء المرحلة الانتقالية من جهة أخرى." },
+            { "language": "tr", "text": "Kararı otomobil ile iklim arasında basit bir karşıtlık olarak sunmazdım. Bu bir dengeleme: bir tarafta sıcaktan korunma, sağlık ve güvenli yollar; diğer tarafta erişim, maliyetler ve geçiş yükleri." },
+            { "language": "ru", "text": "Я бы не представлял решение как простое противопоставление автомобиля и климата. Речь идет о взвешивании: защита от жары, здоровье и безопасные пути с одной стороны; доступность, расходы и переходные нагрузки с другой." },
+            { "language": "ckb", "text": "من بڕیارەکە وەک دژایەتییەکی سادەی نێوان ئۆتۆمبێل و کەشوهەوا پیشان نادەم. بابەتەکە هاوسەنگکردنە: پاراستن لە گەرما، تەندروستی و ڕێگای ئارام لە لایەک؛ گەیشتن، تێچوون و بارگرانییەکانی قۆناغی گۆڕان لە لایەکی تر." },
+            { "language": "kmr", "text": "Ez ê biryarê wekî dijberiyeke sade di navbera erebe û avhewayê de nîşan nedim. Ev hevsengkirin e: parastina ji germê, tenduristî û rêyên ewle li aliyekî; gihîştin, lêçûn û barên qonaxa veguhertinê li aliyê din." },
+            { "language": "pl", "text": "Nie przedstawiałbym tej decyzji jako prostego przeciwstawienia samochodu i klimatu. Chodzi o wyważenie: ochrona przed upałem, zdrowie i bezpieczne trasy po jednej stronie; dostępność, koszty i obciążenia przejściowe po drugiej." },
+            { "language": "ro", "text": "Nu aș prezenta decizia ca pe o opoziție simplă între mașină și climă. Este o cântărire: protecție împotriva căldurii, sănătate și trasee sigure pe de o parte; acces, costuri și poveri de tranziție pe de altă parte." },
+            { "language": "sq", "text": "Nuk do ta paraqisja vendimin si kundërvënie të thjeshtë mes makinës dhe klimës. Bëhet fjalë për peshim: mbrojtje nga nxehtësia, shëndet dhe rrugë të sigurta nga njëra anë; qasje, kosto dhe barrë kalimtare nga ana tjetër." }
+          ],
+          "function": "avoid-false-binary",
+          "toneNote": "Komplexität ohne Ausrede.",
+          "expectedLearnerAction": "Den Zielkonflikt mehrdimensional eröffnen."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "shop-owner",
+          "baseText": "Für mein Geschäft sind Parkplätze aber nicht abstrakt. Wenn Kundinnen nicht mehr kurz halten können, verliere ich Umsatz.",
+          "translations": [
+            { "language": "en", "text": "For my shop, parking spaces are not abstract. If customers can no longer stop briefly, I lose revenue." },
+            { "language": "fa", "text": "برای فروشگاه من، جای پارک موضوعی انتزاعی نیست. اگر مشتریان دیگر نتوانند کوتاه توقف کنند، من درآمد از دست می‌دهم." },
+            { "language": "ar", "text": "بالنسبة لمتجري، أماكن الركن ليست أمراً مجرداً. إذا لم يعد بإمكان الزبائن التوقف قصيراً، فسأفقد دخلاً." },
+            { "language": "tr", "text": "Benim dükkanım için park yerleri soyut değil. Müşteriler artık kısa süre duramazsa gelir kaybederim." },
+            { "language": "ru", "text": "Для моего магазина парковочные места не абстракция. Если покупатели больше не смогут ненадолго остановиться, я потеряю выручку." },
+            { "language": "ckb", "text": "بۆ فرۆشگاکەم، شوێنی پارککردن شتێکی ئەبستراکت نییە. ئەگەر کڕیاران نەتوانن چەند خولەکێک بوەستن، من داهات لەدەست دەدەم." },
+            { "language": "kmr", "text": "Ji bo dikana min, cihên parkê ne tiştekî teorîk in. Heke xerîdar nema karibin kurt bisekinin, ez dahatê winda dikim." },
+            { "language": "pl", "text": "Dla mojego sklepu miejsca parkingowe nie są abstrakcją. Jeśli klienci nie będą mogli krótko się zatrzymać, stracę obrót." },
+            { "language": "ro", "text": "Pentru magazinul meu, locurile de parcare nu sunt abstracte. Dacă clienții nu mai pot opri scurt, pierd venituri." },
+            { "language": "sq", "text": "Për dyqanin tim vendet e parkimit nuk janë abstrakte. Nëse klientët nuk mund të ndalojnë më shkurt, humbas të ardhura." }
+          ],
+          "function": "raise-economic-burden",
+          "toneNote": "Konkrete Betroffenheit."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das ist ein berechtigter Einwand. Eine faire Entscheidung muss deshalb nicht nur das Endbild zeigen, sondern auch die Übergangsrisiken: Lieferzonen, Kurzhalteflächen, Baustellenphasen und eine Auswertung nach sechs Monaten gehören in die Zusage.",
+          "translations": [
+            { "language": "en", "text": "That is a legitimate objection. A fair decision therefore must show not only the final picture, but also the transition risks: loading zones, short-stay areas, construction phases, and an evaluation after six months should be part of the commitment." },
+            { "language": "fa", "text": "این اعتراض موجهی است. بنابراین تصمیم منصفانه نباید فقط تصویر نهایی را نشان دهد، بلکه باید خطرهای دوره گذار را هم در نظر بگیرد: محل بارگیری، توقف کوتاه، مرحله‌های ساخت‌وساز و ارزیابی پس از شش ماه باید بخشی از تعهد باشد." },
+            { "language": "ar", "text": "هذا اعتراض مبرر. لذلك لا ينبغي للقرار المنصف أن يعرض الصورة النهائية فقط، بل أيضاً مخاطر المرحلة الانتقالية: مناطق التحميل، أماكن التوقف القصير، مراحل البناء، وتقييم بعد ستة أشهر يجب أن تكون جزءاً من التعهد." },
+            { "language": "tr", "text": "Bu haklı bir itiraz. Bu yüzden adil bir karar yalnızca son tabloyu değil, geçiş risklerini de göstermelidir: yükleme alanları, kısa durma yerleri, inşaat aşamaları ve altı ay sonra değerlendirme taahhüdün parçası olmalıdır." },
+            { "language": "ru", "text": "Это обоснованное возражение. Поэтому справедливое решение должно показывать не только итоговую картину, но и переходные риски: зоны погрузки, места краткой остановки, этапы стройки и оценка через шесть месяцев должны быть частью обещания." },
+            { "language": "ckb", "text": "ئەمە ڕەخنەیەکی ڕەوایە. بۆیە بڕیاری دادپەروەرانە نابێت تەنها وێنەی کۆتایی پیشان بدات، بەڵکو مەترسییەکانی قۆناغی گۆڕانیش: شوێنی بارکردن، شوێنی وەستانی کورت، قۆناغەکانی بیناسازی و هەڵسەنگاندن دوای شەش مانگ دەبێت بەشێک لە بەڵێنەکە بن." },
+            { "language": "kmr", "text": "Ev nerazîbûneke mafdar e. Ji ber vê yekê biryareke dadwerane ne tenê wêneya dawî nîşan dide, lê metirsiyên veguhertinê jî: cihên barkirinê, cihên rawestana kurt, qonaxên avahîsaziyê û nirxandin piştî şeş mehan divê beşek ji sozê bin." },
+            { "language": "pl", "text": "To uzasadniony zarzut. Uczciwa decyzja nie może więc pokazywać tylko obrazu końcowego, lecz także ryzyka przejściowe: strefy załadunku, miejsca krótkiego postoju, etapy budowy i ocena po sześciu miesiącach powinny być częścią zobowiązania." },
+            { "language": "ro", "text": "Este o obiecție legitimă. O decizie corectă nu trebuie deci să arate doar imaginea finală, ci și riscurile de tranziție: zone de încărcare, spații de oprire scurtă, faze de șantier și o evaluare după șase luni trebuie să facă parte din angajament." },
+            { "language": "sq", "text": "Ky është një kundërshtim i arsyeshëm. Prandaj një vendim i drejtë nuk duhet të tregojë vetëm pamjen përfundimtare, por edhe rreziqet e kalimit: zona ngarkimi, hapësira ndalimi të shkurtër, faza ndërtimi dhe vlerësim pas gjashtë muajsh duhet të jenë pjesë e zotimit." }
+          ],
+          "function": "acknowledge-transition-risk",
+          "toneNote": "Anerkennend und verbindlich.",
+          "expectedLearnerAction": "Ökologisches Ziel mit konkretem Ausgleich verbinden."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "planner",
+          "baseText": "Wie machen Sie deutlich, dass der langfristige Nutzen nicht nur ein schönes Zukunftsbild ist?",
+          "translations": [
+            { "language": "en", "text": "How do you make clear that the long-term benefit is not just an attractive future picture?" },
+            { "language": "fa", "text": "چگونه روشن می‌کنید که فایده بلندمدت فقط یک تصویر زیبا از آینده نیست؟" },
+            { "language": "ar", "text": "كيف توضحون أن الفائدة الطويلة الأمد ليست مجرد صورة مستقبلية جميلة؟" },
+            { "language": "tr", "text": "Uzun vadeli yararın sadece güzel bir gelecek resmi olmadığını nasıl netleştirirsiniz?" },
+            { "language": "ru", "text": "Как вы покажете, что долгосрочная польза — не просто красивая картина будущего?" },
+            { "language": "ckb", "text": "چۆن ڕوون دەکەیتەوە کە سوودی درێژخایەن تەنها وێنەیەکی جوانی داهاتوو نییە؟" },
+            { "language": "kmr", "text": "Hûn çawa zelal dikin ku sûda demdirêj ne tenê wêneyeke xweşik a paşerojê ye?" },
+            { "language": "pl", "text": "Jak pokaże Pan/Pani, że długoterminowa korzyść nie jest tylko ładnym obrazem przyszłości?" },
+            { "language": "ro", "text": "Cum arătați clar că beneficiul pe termen lung nu este doar o imagine frumoasă a viitorului?" },
+            { "language": "sq", "text": "Si e bëni të qartë se përfitimi afatgjatë nuk është vetëm një pamje e bukur e së ardhmes?" }
+          ],
+          "function": "ask-long-term-evidence",
+          "toneNote": "Prüfend."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde den Nutzen messbar machen: weniger Hitzestress, mehr Schatten, sicherere Schulwege, bessere Aufenthaltsqualität. Gleichzeitig würde ich offen sagen, welche Wirkungen erst später sichtbar werden und welche Kennzahlen regelmäßig geprüft werden.",
+          "translations": [
+            { "language": "en", "text": "I would make the benefit measurable: less heat stress, more shade, safer routes to school, better quality of stay. At the same time, I would openly say which effects will become visible only later and which indicators will be checked regularly." },
+            { "language": "fa", "text": "من فایده را قابل سنجش می‌کنم: تنش گرمایی کمتر، سایه بیشتر، مسیر امن‌تر به مدرسه و کیفیت بهتر حضور در خیابان. هم‌زمان آشکارا می‌گویم کدام اثرها دیرتر دیده می‌شوند و کدام شاخص‌ها منظم بررسی می‌شوند." },
+            { "language": "ar", "text": "سأجعل الفائدة قابلة للقياس: إجهاد حراري أقل، ظل أكثر، طرق مدرسية أكثر أماناً، وجودة إقامة أفضل في الشارع. وفي الوقت نفسه سأقول بصراحة أي آثار لن تظهر إلا لاحقاً وأي مؤشرات ستُفحص بانتظام." },
+            { "language": "tr", "text": "Yararı ölçülebilir hale getirirdim: daha az sıcak stresi, daha fazla gölge, daha güvenli okul yolları, daha iyi kalma kalitesi. Aynı zamanda hangi etkilerin ancak daha sonra görüleceğini ve hangi göstergelerin düzenli kontrol edileceğini açıkça söylerdim." },
+            { "language": "ru", "text": "Я бы сделал пользу измеримой: меньше теплового стресса, больше тени, более безопасные пути в школу, лучшее качество пребывания на улице. Одновременно я бы открыто сказал, какие эффекты станут видны позже и какие показатели будут регулярно проверяться." },
+            { "language": "ckb", "text": "من سوودەکە پێوانەکراو دەکەم: فشاری گەرمایی کەمتر، سێبەری زیاتر، ڕێگای قوتابخانەی ئارامتر، و کوالێتی باشتر بۆ مانەوە لە شەقام. لە هەمان کاتدا بە ڕوونی دەڵێم کام کاریگەرییەکان دواتر دەردەکەون و کام نیشانەکان بەردەوام دەپشکنرێن." },
+            { "language": "kmr", "text": "Ez ê sûdê pîvanbar bikim: stresê germê kêm, sîber zêdetir, rêyên dibistanê ewletir, kalîteya mayînê li kolanê baştir. Di heman demê de ez ê bi vekirî bibêjim kîjan bandor tenê paşê xuya dibin û kîjan nîşanker bi rêkûpêk tên kontrolkirin." },
+            { "language": "pl", "text": "Uczyniłbym korzyść mierzalną: mniej stresu cieplnego, więcej cienia, bezpieczniejsze drogi do szkoły, lepsza jakość przebywania na ulicy. Jednocześnie otwarcie powiedziałbym, które efekty będą widoczne dopiero później i które wskaźniki będą regularnie sprawdzane." },
+            { "language": "ro", "text": "Aș face beneficiul măsurabil: mai puțin stres termic, mai multă umbră, drumuri mai sigure spre școală, calitate mai bună a șederii în stradă. În același timp aș spune deschis ce efecte vor deveni vizibile abia mai târziu și ce indicatori vor fi verificați regulat." },
+            { "language": "sq", "text": "Do ta bëja përfitimin të matshëm: më pak stres nga nxehtësia, më shumë hije, rrugë më të sigurta për në shkollë, cilësi më e mirë qëndrimi në rrugë. Njëkohësisht do të thosha hapur cilat efekte do të duken vetëm më vonë dhe cilët tregues do të kontrollohen rregullisht." }
+          ],
+          "function": "make-benefit-measurable",
+          "toneNote": "Messbar statt werbend.",
+          "expectedLearnerAction": "Langfristigen Nutzen mit Kriterien und Unsicherheit erklären."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "shop-owner",
+          "baseText": "Trotzdem habe ich den Eindruck, dass die Kosten sofort bei uns landen und der Nutzen irgendwann allen versprochen wird.",
+          "translations": [
+            { "language": "en", "text": "Still, I have the impression that the costs land with us immediately, while the benefit is promised to everyone at some point." },
+            { "language": "fa", "text": "با این حال من این احساس را دارم که هزینه‌ها فوراً روی دوش ما می‌افتد، اما فایده برای زمانی نامشخص به همه وعده داده می‌شود." },
+            { "language": "ar", "text": "مع ذلك لدي انطباع بأن التكاليف تقع علينا فوراً، بينما تُوعد الفائدة للجميع في وقت ما لاحقاً." },
+            { "language": "tr", "text": "Yine de maliyetlerin hemen bizim üzerimize kaldığı, yararın ise bir gün herkese vaat edildiği izlenimine sahibim." },
+            { "language": "ru", "text": "И все же у меня впечатление, что расходы сразу ложатся на нас, а польза когда-нибудь обещается всем." },
+            { "language": "ckb", "text": "لەگەڵ ئەوەشدا هەستم ئەوەیە کە تێچوونەکان دەستبەجێ دەکەونە سەر ئێمە و سوودەکە لە کاتێکی نادیاردا بە هەمووان بەڵێن دەدرێت." },
+            { "language": "kmr", "text": "Dîsa jî ez wisa hîs dikim ku lêçûn yekser li ser me dimînin û sûd rojekê ji bo hemûyan tê sozdan." },
+            { "language": "pl", "text": "Mimo to mam wrażenie, że koszty od razu spadają na nas, a korzyść obiecuje się wszystkim kiedyś w przyszłości." },
+            { "language": "ro", "text": "Totuși am impresia că costurile ajung imediat la noi, iar beneficiul este promis tuturor cândva." },
+            { "language": "sq", "text": "Megjithatë kam përshtypjen se kostot bien menjëherë mbi ne, ndërsa përfitimi u premtohet të gjithëve dikur." }
+          ],
+          "function": "raise-distribution-risk",
+          "toneNote": "Verteilungsfrage."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Genau deshalb muss die Entscheidung eine Verteilungslogik enthalten. Wer kurzfristig besonders belastet wird, braucht konkrete Entlastung: klare Lieferfenster, Beratung, Zwischenparkplätze und eine Korrekturmöglichkeit, falls die Wirkung für kleine Geschäfte anders ausfällt als erwartet.",
+          "translations": [
+            { "language": "en", "text": "Exactly for that reason, the decision must include a distribution logic. Those who are especially burdened in the short term need concrete relief: clear delivery windows, advice, temporary parking spaces, and a correction option if the impact on small shops turns out differently than expected." },
+            { "language": "fa", "text": "دقیقاً به همین دلیل، تصمیم باید منطق توزیع بار داشته باشد. کسانی که در کوتاه‌مدت بیش از همه تحت فشار قرار می‌گیرند، به حمایت مشخص نیاز دارند: زمان‌بندی روشن برای تحویل کالا، مشاوره، جای پارک موقت و امکان اصلاح اگر اثر بر فروشگاه‌های کوچک برخلاف انتظار باشد." },
+            { "language": "ar", "text": "لهذا السبب بالضبط يجب أن يتضمن القرار منطق توزيع. من يتعرض لعبء خاص في المدى القصير يحتاج إلى تخفيف ملموس: نوافذ تسليم واضحة، استشارة، أماكن ركن مؤقتة، وإمكانية تصحيح إذا اختلف الأثر على المتاجر الصغيرة عما كان متوقعاً." },
+            { "language": "tr", "text": "Tam da bu nedenle karar bir dağıtım mantığı içermelidir. Kısa vadede özellikle yük altında kalanların somut rahatlatmaya ihtiyacı vardır: açık teslimat saatleri, danışmanlık, geçici park yerleri ve küçük dükkanlar üzerindeki etki beklenenden farklı çıkarsa düzeltme imkanı." },
+            { "language": "ru", "text": "Именно поэтому решение должно содержать логику распределения. Тем, кто особенно нагружен в краткосрочной перспективе, нужна конкретная разгрузка: ясные окна доставки, консультации, временные парковочные места и возможность корректировки, если влияние на небольшие магазины окажется иным, чем ожидалось." },
+            { "language": "ckb", "text": "هەر بەو هۆیە بڕیارەکە دەبێت لۆژیکی دابەشکردنی بار هەبێت. ئەوانەی لە کورتخایەندا بە تایبەتی بارگرانییان دەکەوێتە سەر، پێویستیان بە کەمکردنەوەی دیاریکراو هەیە: کاتی ڕوونی گەیاندن، ڕاوێژ، شوێنی پارککردنی کاتی و دەرفەتی ڕاستکردنەوە ئەگەر کاریگەری لەسەر فرۆشگای بچووک جیاواز لە پێشبینی بوو." },
+            { "language": "kmr", "text": "Bi rastî ji ber vê yekê divê biryar mantiqeke belavkirinê hebe. Kesên ku di demeke kurt de bi taybetî bar giran dibin, hewceyî sivikkirina zehf diyar in: demên radestkirinê yên zelal, şêwir, cihên parkê yên demkî û derfeta sererastkirinê heke bandor li ser dikanên biçûk ji bendewariyê cuda derkeve." },
+            { "language": "pl", "text": "Właśnie dlatego decyzja musi zawierać logikę dystrybucji obciążeń. Ci, którzy krótkoterminowo są szczególnie obciążeni, potrzebują konkretnego odciążenia: jasnych okien dostaw, doradztwa, tymczasowych miejsc parkingowych i możliwości korekty, jeśli wpływ na małe sklepy okaże się inny niż oczekiwano." },
+            { "language": "ro", "text": "Tocmai de aceea decizia trebuie să includă o logică de distribuire. Cei împovărați în mod special pe termen scurt au nevoie de sprijin concret: intervale clare de livrare, consiliere, locuri temporare de parcare și posibilitate de corecție dacă efectul asupra magazinelor mici este diferit de cel așteptat." },
+            { "language": "sq", "text": "Pikërisht për këtë arsye vendimi duhet të përmbajë një logjikë shpërndarjeje. Ata që ngarkohen veçanërisht në afat të shkurtër kanë nevojë për lehtësim konkret: orare të qarta dërgesash, këshillim, vende parkimi të përkohshme dhe mundësi korrigjimi nëse ndikimi te dyqanet e vogla del ndryshe nga pritej." }
+          ],
+          "function": "add-social-balancing",
+          "toneNote": "Fairness konkretisieren.",
+          "expectedLearnerAction": "Kostenverteilung und Korrekturmechanismus benennen."
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "moderation",
+          "baseText": "Bitte schließen Sie mit einer kurzen, fairen Begründung, die sowohl den Umbau als auch die Einwände ernst nimmt.",
+          "translations": [
+            { "language": "en", "text": "Please close with a brief, fair justification that takes both the redesign and the objections seriously." },
+            { "language": "fa", "text": "لطفاً با یک دلیل‌آوری کوتاه و منصفانه جمع‌بندی کنید که هم بازطراحی و هم اعتراض‌ها را جدی بگیرد." },
+            { "language": "ar", "text": "يرجى الختام بتبرير قصير ومنصف يأخذ إعادة التصميم والاعتراضات بجدية." },
+            { "language": "tr", "text": "Lütfen hem yeniden düzenlemeyi hem de itirazları ciddiye alan kısa ve adil bir gerekçeyle bitirin." },
+            { "language": "ru", "text": "Пожалуйста, завершите кратким и справедливым обоснованием, которое серьезно относится и к перестройке, и к возражениям." },
+            { "language": "ckb", "text": "تکایە بە پاساوێکی کورت و دادپەروەرانە کۆتایی پێبهێنە کە هەم دووبارە ڕێکخستنەکە و هەم ڕەخنەکان بە جدی وەربگرێت." },
+            { "language": "kmr", "text": "Ji kerema xwe bi hincetek kurt û dadwerane bi dawî bikin ku hem guhertinê hem jî nerazîbûnan bi giranî bigire." },
+            { "language": "pl", "text": "Proszę zakończyć krótkim, uczciwym uzasadnieniem, które poważnie traktuje zarówno przebudowę, jak i zastrzeżenia." },
+            { "language": "ro", "text": "Vă rog să încheiați cu o justificare scurtă și corectă, care ia în serios atât reamenajarea, cât și obiecțiile." },
+            { "language": "sq", "text": "Ju lutem mbylleni me një arsyetim të shkurtër dhe të drejtë që merr seriozisht si rindërtimin, ashtu edhe kundërshtimet." }
+          ],
+          "function": "request-balanced-closing",
+          "toneNote": "Abschließend."
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde sagen: Der Umbau ist vertretbar, wenn er nicht nur ein Umweltziel behauptet, sondern Hitze, Sicherheit und Aufenthaltsqualität messbar verbessert und die kurzfristigen Lasten fair verteilt. Darum braucht es Begleitmaßnahmen, klare Prüfpunkte und die Bereitschaft, nachzusteuern.",
+          "translations": [
+            { "language": "en", "text": "I would say: the redesign is defensible if it does not merely claim an environmental goal, but measurably improves heat resilience, safety, and quality of stay, and distributes the short-term burdens fairly. That is why it needs accompanying measures, clear review points, and a willingness to adjust." },
+            { "language": "fa", "text": "من می‌گویم: بازطراحی قابل دفاع است اگر فقط یک هدف محیط‌زیستی را ادعا نکند، بلکه مقاومت در برابر گرما، ایمنی و کیفیت حضور در خیابان را قابل سنجش بهتر کند و بارهای کوتاه‌مدت را منصفانه تقسیم کند. به همین دلیل به اقدام‌های همراه، نقاط بررسی روشن و آمادگی برای اصلاح نیاز دارد." },
+            { "language": "ar", "text": "سأقول: إعادة التصميم قابلة للدفاع إذا لم تكتف بادعاء هدف بيئي، بل حسّنت بشكل قابل للقياس مقاومة الحر والسلامة وجودة الوجود في الشارع ووزعت الأعباء القصيرة الأمد بإنصاف. لذلك تحتاج إلى إجراءات مرافقة ونقاط فحص واضحة واستعداد للتعديل." },
+            { "language": "tr", "text": "Şunu söylerdim: yeniden düzenleme, yalnızca çevresel bir hedef iddia etmekle kalmayıp sıcaklığa dayanıklılığı, güvenliği ve sokakta kalma kalitesini ölçülebilir biçimde iyileştirir ve kısa vadeli yükleri adil dağıtırsa savunulabilir. Bu yüzden eşlik eden önlemlere, açık kontrol noktalarına ve düzeltme isteğine ihtiyaç vardır." },
+            { "language": "ru", "text": "Я бы сказал: перестройка оправданна, если она не просто заявляет экологическую цель, а измеримо улучшает устойчивость к жаре, безопасность и качество пребывания на улице и справедливо распределяет краткосрочные нагрузки. Поэтому нужны сопутствующие меры, ясные точки проверки и готовность корректировать." },
+            { "language": "ckb", "text": "من دەڵێم: دووبارە ڕێکخستنەکە دەتوانرێت پاساو بدرێت ئەگەر تەنها ئامانجێکی ژینگەیی نەگەیەنێت، بەڵکو بە پێوانەکراوی بەرگری لە گەرما، ئارامی و کوالێتی مانەوە لە شەقام باشتر بکات و بارە کورتخایەنەکان بە دادپەروەرانە دابەش بکات. بۆیە پێویستی بە هەنگاوی هاوپەیوەند، خاڵی پشکنینی ڕوون و ئامادەیی بۆ ڕاستکردنەوە هەیە." },
+            { "language": "kmr", "text": "Ez ê bibêjim: guhertin dikare were parastin heke ne tenê armanceke hawîrdorî îdia bike, lê bi pîvanbarî berxwedana li dijî germê, ewlehî û kalîteya mayînê li kolanê baştir bike û barên kurt-dem bi dadwerî belav bike. Ji ber vê yekê ew hewceyî tedbîrên heval, xalên kontrolê yên zelal û amadebûna sererastkirinê ye." },
+            { "language": "pl", "text": "Powiedziałbym: przebudowa jest do obrony, jeśli nie tylko deklaruje cel środowiskowy, lecz mierzalnie poprawia odporność na upał, bezpieczeństwo i jakość przebywania na ulicy oraz uczciwie rozkłada krótkoterminowe obciążenia. Dlatego potrzebuje działań towarzyszących, jasnych punktów kontroli i gotowości do korekty." },
+            { "language": "ro", "text": "Aș spune: reamenajarea este justificabilă dacă nu doar afirmă un obiectiv de mediu, ci îmbunătățește măsurabil rezistența la căldură, siguranța și calitatea șederii în stradă și distribuie corect poverile pe termen scurt. De aceea are nevoie de măsuri însoțitoare, puncte clare de verificare și disponibilitate de ajustare." },
+            { "language": "sq", "text": "Do të thosha: rindërtimi është i mbrojtshëm nëse nuk pretendon vetëm një qëllim mjedisor, por përmirëson në mënyrë të matshme qëndrueshmërinë ndaj nxehtësisë, sigurinë dhe cilësinë e qëndrimit në rrugë, si dhe shpërndan drejt barrat afatshkurtra. Prandaj duhen masa shoqëruese, pika të qarta kontrolli dhe gatishmëri për korrigjim." }
+          ],
+          "function": "balanced-closing",
+          "toneNote": "Bedingt zustimmend und überprüfbar.",
+          "expectedLearnerAction": "Ein konditionales Fazit mit Kriterien, Ausgleich und Korrektur geben."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde die Entscheidung nicht als einfachen Gegensatz zwischen Auto und Klima darstellen. Es geht um eine Abwägung: Hitzeschutz, Gesundheit und sichere Wege einerseits; Erreichbarkeit, Kosten und Übergangsbelastungen andererseits.",
+              "translations": [
+                { "language": "en", "text": "I would not present the decision as a simple opposition between cars and climate. It is a balancing act: heat protection, health, and safe routes on one side; access, costs, and transition burdens on the other." },
+                { "language": "fa", "text": "من تصمیم را به صورت تقابل ساده میان خودرو و اقلیم نشان نمی‌دهم. مسئله یک سنجش چندجانبه است: حفاظت در برابر گرما، سلامت و مسیرهای امن از یک سو؛ دسترسی، هزینه‌ها و فشارهای دوره گذار از سوی دیگر." },
+                { "language": "ar", "text": "لن أعرض القرار كتناقض بسيط بين السيارات والمناخ. الأمر موازنة: الحماية من الحر، والصحة، والطرق الآمنة من جهة؛ والوصول، والتكاليف، وأعباء المرحلة الانتقالية من جهة أخرى." },
+                { "language": "tr", "text": "Kararı otomobil ile iklim arasında basit bir karşıtlık olarak sunmazdım. Bu bir dengeleme: bir tarafta sıcaktan korunma, sağlık ve güvenli yollar; diğer tarafta erişim, maliyetler ve geçiş yükleri." },
+                { "language": "ru", "text": "Я бы не представлял решение как простое противопоставление автомобиля и климата. Речь идет о взвешивании: защита от жары, здоровье и безопасные пути с одной стороны; доступность, расходы и переходные нагрузки с другой." },
+                { "language": "ckb", "text": "من بڕیارەکە وەک دژایەتییەکی سادەی نێوان ئۆتۆمبێل و کەشوهەوا پیشان نادەم. بابەتەکە هاوسەنگکردنە: پاراستن لە گەرما، تەندروستی و ڕێگای ئارام لە لایەک؛ گەیشتن، تێچوون و بارگرانییەکانی قۆناغی گۆڕان لە لایەکی تر." },
+                { "language": "kmr", "text": "Ez ê biryarê wekî dijberiyeke sade di navbera erebe û avhewayê de nîşan nedim. Ev hevsengkirin e: parastina ji germê, tenduristî û rêyên ewle li aliyekî; gihîştin, lêçûn û barên qonaxa veguhertinê li aliyê din." },
+                { "language": "pl", "text": "Nie przedstawiałbym tej decyzji jako prostego przeciwstawienia samochodu i klimatu. Chodzi o wyważenie: ochrona przed upałem, zdrowie i bezpieczne trasy po jednej stronie; dostępność, koszty i obciążenia przejściowe po drugiej." },
+                { "language": "ro", "text": "Nu aș prezenta decizia ca pe o opoziție simplă între mașină și climă. Este o cântărire: protecție împotriva căldurii, sănătate și trasee sigure pe de o parte; acces, costuri și poveri de tranziție pe de altă parte." },
+                { "language": "sq", "text": "Nuk do ta paraqisja vendimin si kundërvënie të thjeshtë mes makinës dhe klimës. Bëhet fjalë për peshim: mbrojtje nga nxehtësia, shëndet dhe rrugë të sigurta nga njëra anë; qasje, kosto dhe barrë kalimtare nga ana tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort vermeidet ein falsches Entweder-oder und zeigt den Zielkonflikt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer avoids a false either-or and shows the conflict between goals." },
+                { "language": "fa", "text": "قوی است: پاسخ از دوگانه‌سازی غلط پرهیز می‌کند و تضاد میان هدف‌ها را نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: تتجنب الإجابة ثنائية زائفة وتُظهر تعارض الأهداف." },
+                { "language": "tr", "text": "Güçlü: cevap yanlış bir ya o ya bu ikileminden kaçınıyor ve hedef çatışmasını gösteriyor." },
+                { "language": "ru", "text": "Сильно: ответ избегает ложного «или-или» и показывает конфликт целей." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە لە دووانەی هەڵەی یان ئەمە یان ئەوە دوور دەکەوێتەوە و ململاێی ئامانجەکان پیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: bersiv ji yan-yaneke şaş dûr dikeve û pevçûna armancan nîşan dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź unika fałszywego albo-albo i pokazuje konflikt celów." },
+                { "language": "ro", "text": "Puternic: răspunsul evită un fals ori-ori și arată conflictul dintre obiective." },
+                { "language": "sq", "text": "E fortë: përgjigjja shmang një ose-ose të rremë dhe tregon konfliktin mes qëllimeve." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde sagen, dass Klimaschutz wichtiger ist und man die Straße deshalb umbauen muss.",
+              "translations": [
+                { "language": "en", "text": "I would say that climate protection is more important and that the street therefore must be redesigned." },
+                { "language": "fa", "text": "من می‌گویم حفاظت از اقلیم مهم‌تر است و بنابراین خیابان باید بازطراحی شود." },
+                { "language": "ar", "text": "سأقول إن حماية المناخ أهم ولذلك يجب إعادة تصميم الشارع." },
+                { "language": "tr", "text": "İklim korumasının daha önemli olduğunu ve bu yüzden caddenin yeniden düzenlenmesi gerektiğini söylerdim." },
+                { "language": "ru", "text": "Я бы сказал, что защита климата важнее и поэтому улицу нужно перестроить." },
+                { "language": "ckb", "text": "من دەڵێم پاراستنی کەشوهەوا گرنگترە و بۆیە دەبێت شەقامەکە دووبارە ڕێکبخرێت." },
+                { "language": "kmr", "text": "Ez ê bibêjim ku parastina avhewayê girîngtir e û ji ber vê yekê divê kolan ji nû ve were guhertin." },
+                { "language": "pl", "text": "Powiedziałbym, że ochrona klimatu jest ważniejsza i dlatego ulicę trzeba przebudować." },
+                { "language": "ro", "text": "Aș spune că protecția climei este mai importantă și că de aceea strada trebuie reamenajată." },
+                { "language": "sq", "text": "Do të thosha se mbrojtja e klimës është më e rëndësishme dhe prandaj rruga duhet rindërtuar." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu einseitig. Die Antwort erklärt das Ziel, aber blendet Kosten, Erreichbarkeit und soziale Ausgleichsfragen aus.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too one-sided. The answer explains the goal, but leaves out costs, access, and social balancing questions." },
+                { "language": "fa", "text": "بیش از حد یک‌طرفه است. پاسخ هدف را توضیح می‌دهد، اما هزینه‌ها، دسترسی و پرسش‌های جبران اجتماعی را کنار می‌گذارد." },
+                { "language": "ar", "text": "أحادي الجانب أكثر من اللازم. تشرح الإجابة الهدف، لكنها تغفل التكاليف والوصول وأسئلة التعويض الاجتماعي." },
+                { "language": "tr", "text": "Fazla tek taraflı. Cevap hedefi açıklıyor, ama maliyetleri, erişimi ve sosyal dengeleme sorularını dışarıda bırakıyor." },
+                { "language": "ru", "text": "Слишком односторонне. Ответ объясняет цель, но оставляет в стороне расходы, доступность и вопросы социального выравнивания." },
+                { "language": "ckb", "text": "زۆر یەک‌لایەنەیە. وەڵامەکە ئامانجەکە ڕوون دەکاتەوە، بەڵام تێچوون، گەیشتن و پرسی جبرانکاری کۆمەڵایەتی پشتگوێ دەخات." },
+                { "language": "kmr", "text": "Pir yekalî ye. Bersiv armancê rave dike, lê lêçûn, gihîştin û pirsên hevsengkirina civakî ji derve dihêle." },
+                { "language": "pl", "text": "Zbyt jednostronne. Odpowiedź wyjaśnia cel, ale pomija koszty, dostępność i kwestie wyrównania społecznego." },
+                { "language": "ro", "text": "Prea unilateral. Răspunsul explică obiectivul, dar ignoră costurile, accesul și întrebările de compensare socială." },
+                { "language": "sq", "text": "Tepër e njëanshme. Përgjigjja shpjegon qëllimin, por lë jashtë kostot, qasjen dhe pyetjet e balancimit social." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eine faire Entscheidung muss nicht nur das Endbild zeigen, sondern auch die Übergangsrisiken: Lieferzonen, Kurzhalteflächen, Baustellenphasen und eine Auswertung nach sechs Monaten gehören in die Zusage.",
+              "translations": [
+                { "language": "en", "text": "A fair decision must show not only the final picture, but also the transition risks: loading zones, short-stay areas, construction phases, and an evaluation after six months should be part of the commitment." },
+                { "language": "fa", "text": "تصمیم منصفانه نباید فقط تصویر نهایی را نشان دهد، بلکه باید خطرهای دوره گذار را هم در نظر بگیرد: محل بارگیری، توقف کوتاه، مرحله‌های ساخت‌وساز و ارزیابی پس از شش ماه باید بخشی از تعهد باشد." },
+                { "language": "ar", "text": "لا ينبغي للقرار المنصف أن يعرض الصورة النهائية فقط، بل أيضاً مخاطر المرحلة الانتقالية: مناطق التحميل، أماكن التوقف القصير، مراحل البناء، وتقييم بعد ستة أشهر يجب أن تكون جزءاً من التعهد." },
+                { "language": "tr", "text": "Adil bir karar yalnızca son tabloyu değil, geçiş risklerini de göstermelidir: yükleme alanları, kısa durma yerleri, inşaat aşamaları ve altı ay sonra değerlendirme taahhüdün parçası olmalıdır." },
+                { "language": "ru", "text": "Справедливое решение должно показывать не только итоговую картину, но и переходные риски: зоны погрузки, места краткой остановки, этапы стройки и оценка через шесть месяцев должны быть частью обещания." },
+                { "language": "ckb", "text": "بڕیاری دادپەروەرانە نابێت تەنها وێنەی کۆتایی پیشان بدات، بەڵکو مەترسییەکانی قۆناغی گۆڕانیش: شوێنی بارکردن، شوێنی وەستانی کورت، قۆناغەکانی بیناسازی و هەڵسەنگاندن دوای شەش مانگ دەبێت بەشێک لە بەڵێنەکە بن." },
+                { "language": "kmr", "text": "Biryareke dadwerane ne tenê wêneya dawî nîşan dide, lê metirsiyên veguhertinê jî: cihên barkirinê, cihên rawestana kurt, qonaxên avahîsaziyê û nirxandin piştî şeş mehan divê beşek ji sozê bin." },
+                { "language": "pl", "text": "Uczciwa decyzja nie może pokazywać tylko obrazu końcowego, lecz także ryzyka przejściowe: strefy załadunku, miejsca krótkiego postoju, etapy budowy i ocena po sześciu miesiącach powinny być częścią zobowiązania." },
+                { "language": "ro", "text": "O decizie corectă nu trebuie să arate doar imaginea finală, ci și riscurile de tranziție: zone de încărcare, spații de oprire scurtă, faze de șantier și o evaluare după șase luni trebuie să facă parte din angajament." },
+                { "language": "sq", "text": "Një vendim i drejtë nuk duhet të tregojë vetëm pamjen përfundimtare, por edhe rreziqet e kalimit: zona ngarkimi, hapësira ndalimi të shkurtër, faza ndërtimi dhe vlerësim pas gjashtë muajsh duhet të jenë pjesë e zotimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort anerkennt wirtschaftliche Betroffenheit und übersetzt sie in konkrete Bedingungen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer acknowledges economic impact and translates it into concrete conditions." },
+                { "language": "fa", "text": "قوی است: پاسخ اثر اقتصادی را می‌پذیرد و آن را به شرط‌های مشخص تبدیل می‌کند." },
+                { "language": "ar", "text": "قوي: تعترف الإجابة بالأثر الاقتصادي وتحوله إلى شروط ملموسة." },
+                { "language": "tr", "text": "Güçlü: cevap ekonomik etkilenmeyi kabul ediyor ve bunu somut koşullara çeviriyor." },
+                { "language": "ru", "text": "Сильно: ответ признает экономическое воздействие и переводит его в конкретные условия." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە کاریگەری ئابووری دەپەژێنێت و دەیکاتە مەرجی دیاریکراو." },
+                { "language": "kmr", "text": "Xurt e: bersiv bandora aborî qebûl dike û wê vediguherîne şertên zehf diyar." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje wpływ ekonomiczny i przekłada go na konkretne warunki." },
+                { "language": "ro", "text": "Puternic: răspunsul recunoaște impactul economic și îl transformă în condiții concrete." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon ndikimin ekonomik dhe e kthen atë në kushte konkrete." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Die Geschäfte werden sich wahrscheinlich anpassen, wenn die Straße attraktiver wird.",
+              "translations": [
+                { "language": "en", "text": "The shops will probably adapt once the street becomes more attractive." },
+                { "language": "fa", "text": "فروشگاه‌ها احتمالاً وقتی خیابان جذاب‌تر شود خود را وفق می‌دهند." },
+                { "language": "ar", "text": "من المرجح أن تتكيف المتاجر عندما يصبح الشارع أكثر جاذبية." },
+                { "language": "tr", "text": "Cadde daha çekici hale gelince dükkanlar muhtemelen uyum sağlayacaktır." },
+                { "language": "ru", "text": "Магазины, вероятно, адаптируются, когда улица станет привлекательнее." },
+                { "language": "ckb", "text": "فرۆشگاکان بە ئەگەرێکی زۆر خۆیان دەگونجێنن کاتێک شەقامەکە سەرنجڕاکێشتر دەبێت." },
+                { "language": "kmr", "text": "Dikan belkî xwe li hev bînin dema kolan balkêştir bibe." },
+                { "language": "pl", "text": "Sklepy prawdopodobnie się dostosują, gdy ulica stanie się atrakcyjniejsza." },
+                { "language": "ro", "text": "Magazinele probabil se vor adapta când strada va deveni mai atractivă." },
+                { "language": "sq", "text": "Dyqanet ndoshta do të përshtaten kur rruga të bëhet më tërheqëse." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu optimistisch. Die Antwort verspricht Anpassung, ohne die Übergangsbelastung oder eine Korrekturmöglichkeit zu sichern.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too optimistic. The answer promises adaptation without securing transition burdens or a correction option." },
+                { "language": "fa", "text": "بیش از حد خوش‌بینانه است. پاسخ سازگاری را وعده می‌دهد، بدون آنکه فشار دوره گذار یا امکان اصلاح را تضمین کند." },
+                { "language": "ar", "text": "متفائل أكثر من اللازم. تعد الإجابة بالتكيف من دون تأمين أعباء المرحلة الانتقالية أو إمكانية التصحيح." },
+                { "language": "tr", "text": "Fazla iyimser. Cevap uyum vaat ediyor, ama geçiş yükünü ya da düzeltme imkanını güvenceye almıyor." },
+                { "language": "ru", "text": "Слишком оптимистично. Ответ обещает адаптацию, не обеспечивая переходную нагрузку или возможность корректировки." },
+                { "language": "ckb", "text": "زۆر خۆشبینانەیە. وەڵامەکە گونجاندن بەڵێن دەدات، بەبێ دڵنیایی لە بارگرانی قۆناغی گۆڕان یان دەرفەتی ڕاستکردنەوە." },
+                { "language": "kmr", "text": "Pir hêvîdar e. Bersiv lihevhatinê soz dide, bêyî ku barên veguhertinê an derfeta sererastkirinê ewle bike." },
+                { "language": "pl", "text": "Zbyt optymistyczne. Odpowiedź obiecuje dostosowanie, nie zabezpieczając obciążeń przejściowych ani możliwości korekty." },
+                { "language": "ro", "text": "Prea optimist. Răspunsul promite adaptare fără să asigure poverile de tranziție sau o posibilitate de corecție." },
+                { "language": "sq", "text": "Tepër optimiste. Përgjigjja premton përshtatje pa siguruar barrat e kalimit apo mundësinë e korrigjimit." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ich würde den Nutzen messbar machen: weniger Hitzestress, mehr Schatten, sicherere Schulwege, bessere Aufenthaltsqualität und regelmäßig geprüfte Kennzahlen.",
+              "translations": [
+                { "language": "en", "text": "I would make the benefit measurable: less heat stress, more shade, safer routes to school, better quality of stay, and regularly checked indicators." },
+                { "language": "fa", "text": "من فایده را قابل سنجش می‌کنم: تنش گرمایی کمتر، سایه بیشتر، مسیر امن‌تر به مدرسه، کیفیت بهتر حضور در خیابان و شاخص‌هایی که منظم بررسی می‌شوند." },
+                { "language": "ar", "text": "سأجعل الفائدة قابلة للقياس: إجهاد حراري أقل، ظل أكثر، طرق مدرسية أكثر أماناً، جودة إقامة أفضل، ومؤشرات تُفحص بانتظام." },
+                { "language": "tr", "text": "Yararı ölçülebilir hale getirirdim: daha az sıcak stresi, daha fazla gölge, daha güvenli okul yolları, daha iyi kalma kalitesi ve düzenli kontrol edilen göstergeler." },
+                { "language": "ru", "text": "Я бы сделал пользу измеримой: меньше теплового стресса, больше тени, более безопасные пути в школу, лучшее качество пребывания и регулярно проверяемые показатели." },
+                { "language": "ckb", "text": "من سوودەکە پێوانەکراو دەکەم: فشاری گەرمایی کەمتر، سێبەری زیاتر، ڕێگای قوتابخانەی ئارامتر، کوالێتی باشتر بۆ مانەوە و نیشانەی بەردەوام پشکنراو." },
+                { "language": "kmr", "text": "Ez ê sûdê pîvanbar bikim: stresê germê kêm, sîber zêdetir, rêyên dibistanê ewletir, kalîteya mayînê baştir û nîşankerên bi rêkûpêk kontrolkirî." },
+                { "language": "pl", "text": "Uczyniłbym korzyść mierzalną: mniej stresu cieplnego, więcej cienia, bezpieczniejsze drogi do szkoły, lepsza jakość przebywania i regularnie sprawdzane wskaźniki." },
+                { "language": "ro", "text": "Aș face beneficiul măsurabil: mai puțin stres termic, mai multă umbră, drumuri mai sigure spre școală, calitate mai bună a șederii și indicatori verificați regulat." },
+                { "language": "sq", "text": "Do ta bëja përfitimin të matshëm: më pak stres nga nxehtësia, më shumë hije, rrugë më të sigurta për në shkollë, cilësi më e mirë qëndrimi dhe tregues të kontrolluar rregullisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort ersetzt Werbesprache durch messbare Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer replaces promotional language with measurable criteria." },
+                { "language": "fa", "text": "قوی است: پاسخ زبان تبلیغاتی را با معیارهای قابل سنجش جایگزین می‌کند." },
+                { "language": "ar", "text": "قوي: تستبدل الإجابة اللغة الترويجية بمعايير قابلة للقياس." },
+                { "language": "tr", "text": "Güçlü: cevap tanıtıcı dili ölçülebilir kriterlerle değiştiriyor." },
+                { "language": "ru", "text": "Сильно: ответ заменяет рекламный язык измеримыми критериями." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە زمانی ڕیکلامی بە پێوەری پێوانەکراو دەگۆڕێت." },
+                { "language": "kmr", "text": "Xurt e: bersiv zimanê reklamê bi pîvanên pîvanbar diguherîne." },
+                { "language": "pl", "text": "Mocne: odpowiedź zastępuje język promocyjny mierzalnymi kryteriami." },
+                { "language": "ro", "text": "Puternic: răspunsul înlocuiește limbajul promoțional cu criterii măsurabile." },
+                { "language": "sq", "text": "E fortë: përgjigjja zëvendëson gjuhën reklamuese me kritere të matshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ich würde betonen, dass die Straße in Zukunft lebenswerter wird.",
+              "translations": [
+                { "language": "en", "text": "I would emphasize that the street will be more livable in the future." },
+                { "language": "fa", "text": "من تأکید می‌کنم که خیابان در آینده زیست‌پذیرتر خواهد شد." },
+                { "language": "ar", "text": "سأؤكد أن الشارع سيصبح أكثر ملاءمة للحياة في المستقبل." },
+                { "language": "tr", "text": "Caddenin gelecekte daha yaşanabilir olacağını vurgulardım." },
+                { "language": "ru", "text": "Я бы подчеркнул, что улица в будущем станет более пригодной для жизни." },
+                { "language": "ckb", "text": "من جەخت دەکەمەوە کە شەقامەکە لە داهاتوودا ژیان‌پەسەندتر دەبێت." },
+                { "language": "kmr", "text": "Ez ê tekez bikim ku kolan di paşerojê de jiyanbarîtir dibe." },
+                { "language": "pl", "text": "Podkreśliłbym, że ulica w przyszłości stanie się bardziej przyjazna do życia." },
+                { "language": "ro", "text": "Aș sublinia că strada va deveni mai locuibilă în viitor." },
+                { "language": "sq", "text": "Do të theksoja se rruga në të ardhmen do të bëhet më e jetueshme." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu vage. Die Antwort bleibt beim Zukunftsbild und nennt keine prüfbaren Kriterien.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague. The answer stays with a future picture and names no checkable criteria." },
+                { "language": "fa", "text": "بیش از حد مبهم است. پاسخ در حد تصویر آینده می‌ماند و معیار قابل بررسی نام نمی‌برد." },
+                { "language": "ar", "text": "غامض أكثر من اللازم. تبقى الإجابة عند صورة مستقبلية ولا تذكر معايير قابلة للفحص." },
+                { "language": "tr", "text": "Fazla belirsiz. Cevap gelecek resmiyle kalıyor ve kontrol edilebilir kriter belirtmiyor." },
+                { "language": "ru", "text": "Слишком расплывчато. Ответ остается на уровне картины будущего и не называет проверяемых критериев." },
+                { "language": "ckb", "text": "زۆر نادیارە. وەڵامەکە لە وێنەی داهاتوو دەمێنێتەوە و پێوەری پشکنراو ناودەبات." },
+                { "language": "kmr", "text": "Pir nezelal e. Bersiv li ser wêneya paşerojê dimîne û pîvanên kontrolbar nav nake." },
+                { "language": "pl", "text": "Zbyt ogólne. Odpowiedź pozostaje przy obrazie przyszłości i nie wskazuje sprawdzalnych kryteriów." },
+                { "language": "ro", "text": "Prea vag. Răspunsul rămâne la imaginea viitorului și nu numește criterii verificabile." },
+                { "language": "sq", "text": "Tepër e paqartë. Përgjigjja mbetet te pamja e së ardhmes dhe nuk përmend kritere të verifikueshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Wer kurzfristig besonders belastet wird, braucht konkrete Entlastung: klare Lieferfenster, Beratung, Zwischenparkplätze und eine Korrekturmöglichkeit, falls die Wirkung anders ausfällt als erwartet.",
+              "translations": [
+                { "language": "en", "text": "Those who are especially burdened in the short term need concrete relief: clear delivery windows, advice, temporary parking spaces, and a correction option if the impact turns out differently than expected." },
+                { "language": "fa", "text": "کسانی که در کوتاه‌مدت بیش از همه تحت فشار قرار می‌گیرند، به حمایت مشخص نیاز دارند: زمان‌بندی روشن برای تحویل کالا، مشاوره، جای پارک موقت و امکان اصلاح اگر اثر برخلاف انتظار باشد." },
+                { "language": "ar", "text": "من يتعرض لعبء خاص في المدى القصير يحتاج إلى تخفيف ملموس: نوافذ تسليم واضحة، استشارة، أماكن ركن مؤقتة، وإمكانية تصحيح إذا اختلف الأثر عما كان متوقعاً." },
+                { "language": "tr", "text": "Kısa vadede özellikle yük altında kalanların somut rahatlatmaya ihtiyacı vardır: açık teslimat saatleri, danışmanlık, geçici park yerleri ve etki beklenenden farklı çıkarsa düzeltme imkanı." },
+                { "language": "ru", "text": "Тем, кто особенно нагружен в краткосрочной перспективе, нужна конкретная разгрузка: ясные окна доставки, консультации, временные парковочные места и возможность корректировки, если влияние окажется иным, чем ожидалось." },
+                { "language": "ckb", "text": "ئەوانەی لە کورتخایەندا بە تایبەتی بارگرانییان دەکەوێتە سەر، پێویستیان بە کەمکردنەوەی دیاریکراو هەیە: کاتی ڕوونی گەیاندن، ڕاوێژ، شوێنی پارککردنی کاتی و دەرفەتی ڕاستکردنەوە ئەگەر کاریگەری جیاواز لە پێشبینی بوو." },
+                { "language": "kmr", "text": "Kesên ku di demeke kurt de bi taybetî bar giran dibin, hewceyî sivikkirina zehf diyar in: demên radestkirinê yên zelal, şêwir, cihên parkê yên demkî û derfeta sererastkirinê heke bandor ji bendewariyê cuda derkeve." },
+                { "language": "pl", "text": "Ci, którzy krótkoterminowo są szczególnie obciążeni, potrzebują konkretnego odciążenia: jasnych okien dostaw, doradztwa, tymczasowych miejsc parkingowych i możliwości korekty, jeśli wpływ okaże się inny niż oczekiwano." },
+                { "language": "ro", "text": "Cei împovărați în mod special pe termen scurt au nevoie de sprijin concret: intervale clare de livrare, consiliere, locuri temporare de parcare și posibilitate de corecție dacă efectul este diferit de cel așteptat." },
+                { "language": "sq", "text": "Ata që ngarkohen veçanërisht në afat të shkurtër kanë nevojë për lehtësim konkret: orare të qarta dërgesash, këshillim, vende parkimi të përkohshme dhe mundësi korrigjimi nëse ndikimi del ndryshe nga pritej." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort macht Fairness praktisch und überprüfbar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the answer makes fairness practical and checkable." },
+                { "language": "fa", "text": "قوی است: پاسخ انصاف را عملی و قابل بررسی می‌کند." },
+                { "language": "ar", "text": "قوي: تجعل الإجابة الإنصاف عملياً وقابلاً للفحص." },
+                { "language": "tr", "text": "Güçlü: cevap adaleti pratik ve kontrol edilebilir hale getiriyor." },
+                { "language": "ru", "text": "Сильно: ответ делает справедливость практической и проверяемой." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە دادپەروەری دەکاتە کردەیی و پشکنراو." },
+                { "language": "kmr", "text": "Xurt e: bersiv dadweriyê dike pratîk û kontrolbar." },
+                { "language": "pl", "text": "Mocne: odpowiedź czyni sprawiedliwość praktyczną i sprawdzalną." },
+                { "language": "ro", "text": "Puternic: răspunsul face corectitudinea practică și verificabilă." },
+                { "language": "sq", "text": "E fortë: përgjigjja e bën drejtësinë praktike dhe të verifikueshme." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Man sollte den Betroffenen gut zuhören und ihre Sorgen in die Planung aufnehmen.",
+              "translations": [
+                { "language": "en", "text": "Those affected should be listened to carefully and their concerns should be included in the planning." },
+                { "language": "fa", "text": "باید به افراد درگیر خوب گوش داد و نگرانی‌هایشان را در برنامه‌ریزی وارد کرد." },
+                { "language": "ar", "text": "ينبغي الاستماع جيداً إلى المتأثرين وإدخال مخاوفهم في التخطيط." },
+                { "language": "tr", "text": "Etkilenenler iyi dinlenmeli ve endişeleri planlamaya dahil edilmelidir." },
+                { "language": "ru", "text": "Нужно внимательно слушать затронутых людей и включать их опасения в планирование." },
+                { "language": "ckb", "text": "دەبێت باش گوێ لە کەسانی کاریگەرکراو بگیرێت و نیگەرانییەکانیان بخرێتە ناو پلاندا." },
+                { "language": "kmr", "text": "Divê bi başî guh li kesên bandor lê kirî were girtin û xemên wan bikevin nav plansaziyê." },
+                { "language": "pl", "text": "Należy dobrze wysłuchać osób dotkniętych zmianą i uwzględnić ich obawy w planowaniu." },
+                { "language": "ro", "text": "Trebuie ascultați bine cei afectați, iar îngrijorările lor trebuie incluse în planificare." },
+                { "language": "sq", "text": "Duhet t'u dëgjohet mirë personave të prekur dhe shqetësimet e tyre të përfshihen në planifikim." }
+              ],
+              "isCorrect": false,
+              "feedback": "Richtig in der Haltung, aber zu unbestimmt. Es fehlen konkrete Entlastungen und eine Korrekturmöglichkeit.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Right in attitude, but too unspecific. Concrete relief measures and a correction option are missing." },
+                { "language": "fa", "text": "از نظر نگرش درست است، اما بیش از حد نامشخص. حمایت‌های مشخص و امکان اصلاح کم است." },
+                { "language": "ar", "text": "صحيح من حيث الموقف، لكنه غير محدد بما يكفي. تنقصه إجراءات تخفيف ملموسة وإمكانية تصحيح." },
+                { "language": "tr", "text": "Tutum olarak doğru, ama fazla belirsiz. Somut rahatlatma önlemleri ve düzeltme imkanı eksik." },
+                { "language": "ru", "text": "По установке верно, но слишком неопределенно. Не хватает конкретных мер разгрузки и возможности корректировки." },
+                { "language": "ckb", "text": "لە ڕووی هەڵوێستەوە ڕاستە، بەڵام زۆر نادیارە. کەمکردنەوەی دیاریکراو و دەرفەتی ڕاستکردنەوەی تێدا کەمە." },
+                { "language": "kmr", "text": "Ji aliyê helwestê ve rast e, lê pir nezelal e. Tedbîrên sivikkirinê yên zehf diyar û derfeta sererastkirinê kêm in." },
+                { "language": "pl", "text": "Postawa jest właściwa, ale odpowiedź zbyt nieokreślona. Brakuje konkretnych odciążeń i możliwości korekty." },
+                { "language": "ro", "text": "Corect ca atitudine, dar prea nespecific. Lipsesc măsuri concrete de sprijin și o posibilitate de corecție." },
+                { "language": "sq", "text": "E drejtë si qëndrim, por tepër e papërcaktuar. Mungojnë lehtësime konkrete dhe mundësi korrigjimi." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Der Umbau ist vertretbar, wenn er Hitze, Sicherheit und Aufenthaltsqualität messbar verbessert und die kurzfristigen Lasten fair verteilt. Darum braucht es Begleitmaßnahmen, klare Prüfpunkte und die Bereitschaft, nachzusteuern.",
+              "translations": [
+                { "language": "en", "text": "The redesign is defensible if it measurably improves heat resilience, safety, and quality of stay, and distributes the short-term burdens fairly. That is why it needs accompanying measures, clear review points, and a willingness to adjust." },
+                { "language": "fa", "text": "بازطراحی قابل دفاع است اگر مقاومت در برابر گرما، ایمنی و کیفیت حضور در خیابان را قابل سنجش بهتر کند و بارهای کوتاه‌مدت را منصفانه تقسیم کند. به همین دلیل به اقدام‌های همراه، نقاط بررسی روشن و آمادگی برای اصلاح نیاز دارد." },
+                { "language": "ar", "text": "إعادة التصميم قابلة للدفاع إذا حسّنت بشكل قابل للقياس مقاومة الحر والسلامة وجودة الوجود في الشارع ووزعت الأعباء القصيرة الأمد بإنصاف. لذلك تحتاج إلى إجراءات مرافقة ونقاط فحص واضحة واستعداد للتعديل." },
+                { "language": "tr", "text": "Yeniden düzenleme sıcaklığa dayanıklılığı, güvenliği ve sokakta kalma kalitesini ölçülebilir biçimde iyileştirir ve kısa vadeli yükleri adil dağıtırsa savunulabilir. Bu yüzden eşlik eden önlemlere, açık kontrol noktalarına ve düzeltme isteğine ihtiyaç vardır." },
+                { "language": "ru", "text": "Перестройка оправданна, если она измеримо улучшает устойчивость к жаре, безопасность и качество пребывания на улице и справедливо распределяет краткосрочные нагрузки. Поэтому нужны сопутствующие меры, ясные точки проверки и готовность корректировать." },
+                { "language": "ckb", "text": "دووبارە ڕێکخستنەکە دەتوانرێت پاساو بدرێت ئەگەر بە پێوانەکراوی بەرگری لە گەرما، ئارامی و کوالێتی مانەوە لە شەقام باشتر بکات و بارە کورتخایەنەکان بە دادپەروەرانە دابەش بکات. بۆیە پێویستی بە هەنگاوی هاوپەیوەند، خاڵی پشکنینی ڕوون و ئامادەیی بۆ ڕاستکردنەوە هەیە." },
+                { "language": "kmr", "text": "Guhertin dikare were parastin heke bi pîvanbarî berxwedana li dijî germê, ewlehî û kalîteya mayînê li kolanê baştir bike û barên kurt-dem bi dadwerî belav bike. Ji ber vê yekê ew hewceyî tedbîrên heval, xalên kontrolê yên zelal û amadebûna sererastkirinê ye." },
+                { "language": "pl", "text": "Przebudowa jest do obrony, jeśli mierzalnie poprawia odporność na upał, bezpieczeństwo i jakość przebywania na ulicy oraz uczciwie rozkłada krótkoterminowe obciążenia. Dlatego potrzebuje działań towarzyszących, jasnych punktów kontroli i gotowości do korekty." },
+                { "language": "ro", "text": "Reamenajarea este justificabilă dacă îmbunătățește măsurabil rezistența la căldură, siguranța și calitatea șederii în stradă și distribuie corect poverile pe termen scurt. De aceea are nevoie de măsuri însoțitoare, puncte clare de verificare și disponibilitate de ajustare." },
+                { "language": "sq", "text": "Rindërtimi është i mbrojtshëm nëse përmirëson në mënyrë të matshme qëndrueshmërinë ndaj nxehtësisë, sigurinë dhe cilësinë e qëndrimit në rrugë, si dhe shpërndan drejt barrat afatshkurtra. Prandaj duhen masa shoqëruese, pika të qarta kontrolli dhe gatishmëri për korrigjim." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Das Fazit ist zustimmend, aber an Bedingungen, Ausgleich und Nachprüfung gebunden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: the conclusion agrees, but ties agreement to conditions, balancing measures, and review." },
+                { "language": "fa", "text": "قوی است: جمع‌بندی موافق است، اما موافقت را به شرط‌ها، جبران و بازبینی گره می‌زند." },
+                { "language": "ar", "text": "قوي: الخلاصة موافقة، لكنها تربط الموافقة بالشروط والتعويض والفحص اللاحق." },
+                { "language": "tr", "text": "Güçlü: sonuç olumlu, ama onayı koşullara, dengeleyici önlemlere ve yeniden kontrole bağlıyor." },
+                { "language": "ru", "text": "Сильно: вывод согласительный, но связывает согласие с условиями, выравниванием и последующей проверкой." },
+                { "language": "ckb", "text": "بەهێزە: کۆتاییەکە ڕازییە، بەڵام ڕازێبوونەکە دەبەستێت بە مەرج، هاوسەنگکردن و پشکنینی دواتر." },
+                { "language": "kmr", "text": "Xurt e: encam erênî ye, lê razîbûnê bi şert, hevsengkirin û kontrola paşê ve girê dide." },
+                { "language": "pl", "text": "Mocne: wniosek jest aprobujący, ale wiąże zgodę z warunkami, wyrównaniem i późniejszym sprawdzeniem." },
+                { "language": "ro", "text": "Puternic: concluzia este favorabilă, dar leagă acordul de condiții, compensare și verificare ulterioară." },
+                { "language": "sq", "text": "E fortë: përfundimi është miratues, por e lidh miratimin me kushte, balancim dhe kontroll të mëvonshëm." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Umbau ist ein wichtiger Schritt, weil die Stadt langfristig grüner und gesünder werden muss.",
+              "translations": [
+                { "language": "en", "text": "The redesign is an important step because the city must become greener and healthier in the long term." },
+                { "language": "fa", "text": "بازطراحی گام مهمی است، چون شهر در بلندمدت باید سبزتر و سالم‌تر شود." },
+                { "language": "ar", "text": "إعادة التصميم خطوة مهمة لأن المدينة يجب أن تصبح على المدى الطويل أكثر خضرة وصحة." },
+                { "language": "tr", "text": "Yeniden düzenleme önemli bir adımdır, çünkü kentin uzun vadede daha yeşil ve sağlıklı olması gerekir." },
+                { "language": "ru", "text": "Перестройка — важный шаг, потому что город в долгосрочной перспективе должен стать более зеленым и здоровым." },
+                { "language": "ckb", "text": "دووبارە ڕێکخستنەکە هەنگاوێکی گرنگە، چونکە شارەکە لە درێژخایەندا دەبێت سەوزتر و تەندروستتر بێت." },
+                { "language": "kmr", "text": "Guhertin gaveke girîng e, ji ber ku bajar di demdirêj de divê keskîtir û tenduristtir bibe." },
+                { "language": "pl", "text": "Przebudowa jest ważnym krokiem, ponieważ miasto musi w długim okresie stać się bardziej zielone i zdrowsze." },
+                { "language": "ro", "text": "Reamenajarea este un pas important, deoarece orașul trebuie să devină pe termen lung mai verde și mai sănătos." },
+                { "language": "sq", "text": "Rindërtimi është një hap i rëndësishëm, sepse qyteti në afat të gjatë duhet të bëhet më i gjelbër dhe më i shëndetshëm." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu allgemein. Das Fazit nennt ein Ziel, aber keine Bedingungen, keinen Ausgleich und keine Überprüfung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too general. The conclusion names a goal, but no conditions, no balancing measures, and no review." },
+                { "language": "fa", "text": "بیش از حد کلی است. جمع‌بندی یک هدف را نام می‌برد، اما شرط، جبران و بازبینی ندارد." },
+                { "language": "ar", "text": "عام أكثر من اللازم. تذكر الخلاصة هدفاً، لكنها لا تذكر شروطاً ولا تعويضاً ولا فحصاً." },
+                { "language": "tr", "text": "Fazla genel. Sonuç bir hedef belirtiyor, ama koşul, dengeleme ve yeniden kontrol yok." },
+                { "language": "ru", "text": "Слишком общее. Вывод называет цель, но не условия, не выравнивание и не проверку." },
+                { "language": "ckb", "text": "زۆر گشتییە. کۆتاییەکە ئامانجێک ناودەبات، بەڵام مەرج، هاوسەنگکردن و پشکنین نییە." },
+                { "language": "kmr", "text": "Pir giştî ye. Encam armancek nav dike, lê şert, hevsengkirin û kontrol tune ye." },
+                { "language": "pl", "text": "Zbyt ogólne. Wniosek nazywa cel, ale nie warunki, wyrównanie ani sprawdzenie." },
+                { "language": "ro", "text": "Prea general. Concluzia numește un obiectiv, dar fără condiții, compensare și verificare." },
+                { "language": "sq", "text": "Tepër e përgjithshme. Përfundimi përmend një qëllim, por jo kushte, balancim apo kontroll." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "tradeoff",
+          "text": "C2-Sprache vermeidet einfache Lagerbildung und benennt mehrere legitime Bewertungskriterien.",
+          "translations": [
+            { "language": "en", "text": "C2 language avoids simple camp thinking and names several legitimate evaluation criteria." },
+            { "language": "fa", "text": "زبان C2 از دو قطبی‌سازی ساده پرهیز می‌کند و چند معیار معتبر ارزیابی را نام می‌برد." },
+            { "language": "ar", "text": "تتجنب لغة C2 الاصطفاف البسيط وتذكر عدة معايير تقييم مشروعة." },
+            { "language": "tr", "text": "C2 dili basit taraflaşmadan kaçınır ve birkaç meşru değerlendirme kriteri belirtir." },
+            { "language": "ru", "text": "Язык C2 избегает простого лагерного мышления и называет несколько законных критериев оценки." },
+            { "language": "ckb", "text": "زمانی C2 لە دوو لایەنکردنی سادە دوور دەکەوێتەوە و چەند پێوەری ڕەوای هەڵسەنگاندن ناودەبات." },
+            { "language": "kmr", "text": "Zimanê C2 ji aliyên sade dûr dikeve û çend pîvanên nirxandinê yên rewa nav dike." },
+            { "language": "pl", "text": "Język C2 unika prostego myślenia obozowego i wskazuje kilka uprawnionych kryteriów oceny." },
+            { "language": "ro", "text": "Limbajul C2 evită împărțirea simplă pe tabere și numește mai multe criterii legitime de evaluare." },
+            { "language": "sq", "text": "Gjuha C2 shmang ndarjen e thjeshtë në kampe dhe përmend disa kritere të ligjshme vlerësimi." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "burden",
+          "text": "Wer langfristigen Nutzen vermittelt, muss kurzfristige Lasten konkret absichern.",
+          "translations": [
+            { "language": "en", "text": "Anyone explaining long-term benefit must concretely secure short-term burdens." },
+            { "language": "fa", "text": "کسی که فایده بلندمدت را توضیح می‌دهد، باید بارهای کوتاه‌مدت را مشخصاً پوشش دهد." },
+            { "language": "ar", "text": "من يشرح الفائدة الطويلة الأمد يجب أن يؤمن الأعباء القصيرة الأمد بشكل ملموس." },
+            { "language": "tr", "text": "Uzun vadeli yararı açıklayan kişi kısa vadeli yükleri somut biçimde güvenceye almalıdır." },
+            { "language": "ru", "text": "Тот, кто объясняет долгосрочную пользу, должен конкретно обеспечить краткосрочные нагрузки." },
+            { "language": "ckb", "text": "ئەوەی سوودی درێژخایەن ڕوون دەکاتەوە، دەبێت بارە کورتخایەنەکان بە دیاریکراوی دابین بکات." },
+            { "language": "kmr", "text": "Kesê ku sûda demdirêj rave dike, divê barên kurt-dem bi awayekî zehf diyar ewle bike." },
+            { "language": "pl", "text": "Kto wyjaśnia długoterminową korzyść, musi konkretnie zabezpieczyć krótkoterminowe obciążenia." },
+            { "language": "ro", "text": "Cine explică beneficiul pe termen lung trebuie să asigure concret poverile pe termen scurt." },
+            { "language": "sq", "text": "Kush shpjegon përfitimin afatgjatë duhet të sigurojë konkretisht barrat afatshkurtra." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "criteria",
+          "text": "Langfristige Umweltziele werden überzeugender, wenn sie mit messbaren Kriterien verbunden sind.",
+          "translations": [
+            { "language": "en", "text": "Long-term environmental goals become more convincing when tied to measurable criteria." },
+            { "language": "fa", "text": "هدف‌های بلندمدت محیط‌زیستی وقتی قانع‌کننده‌تر می‌شوند که به معیارهای قابل سنجش وصل باشند." },
+            { "language": "ar", "text": "تصبح الأهداف البيئية الطويلة الأمد أكثر إقناعاً عندما ترتبط بمعايير قابلة للقياس." },
+            { "language": "tr", "text": "Uzun vadeli çevre hedefleri ölçülebilir kriterlerle bağlandığında daha ikna edici olur." },
+            { "language": "ru", "text": "Долгосрочные экологические цели становятся убедительнее, когда связаны с измеримыми критериями." },
+            { "language": "ckb", "text": "ئامانجە درێژخایەنەکانی ژینگەیی کاتێک قایلکەرتر دەبن کە بە پێوەری پێوانەکراوەوە ببەسترێن." },
+            { "language": "kmr", "text": "Armancên hawîrdorî yên demdirêj dema bi pîvanên pîvanbar ve girêdayî bin qanehkerîtir dibin." },
+            { "language": "pl", "text": "Długoterminowe cele środowiskowe są bardziej przekonujące, gdy łączą się z mierzalnymi kryteriami." },
+            { "language": "ro", "text": "Obiectivele de mediu pe termen lung devin mai convingătoare când sunt legate de criterii măsurabile." },
+            { "language": "sq", "text": "Qëllimet afatgjata mjedisore bëhen më bindëse kur lidhen me kritere të matshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "synthesis",
+          "text": "Ein tragfähiges Fazit ist bedingt: Zustimmung hängt an Kriterien, Ausgleich und Nachsteuerung.",
+          "translations": [
+            { "language": "en", "text": "A robust conclusion is conditional: agreement depends on criteria, balancing measures, and later adjustment." },
+            { "language": "fa", "text": "جمع‌بندی پایدار مشروط است: موافقت به معیارها، جبران و اصلاح بعدی وابسته است." },
+            { "language": "ar", "text": "الخلاصة المتينة مشروطة: الموافقة تعتمد على المعايير والتعويض والتعديل اللاحق." },
+            { "language": "tr", "text": "Dayanıklı bir sonuç koşulludur: onay kriterlere, dengeleyici önlemlere ve sonraki düzeltmeye bağlıdır." },
+            { "language": "ru", "text": "Устойчивый вывод условен: согласие зависит от критериев, выравнивания и последующей корректировки." },
+            { "language": "ckb", "text": "کۆتاییەکی بەردەوام مەرجدارە: ڕازێبوون پەیوەستە بە پێوەر، هاوسەنگکردن و ڕاستکردنەوەی دواتر." },
+            { "language": "kmr", "text": "Encameke qayîm şertdar e: razîbûn bi pîvan, hevsengkirin û sererastkirina paşê ve girêdayî ye." },
+            { "language": "pl", "text": "Nośny wniosek jest warunkowy: zgoda zależy od kryteriów, wyrównania i późniejszej korekty." },
+            { "language": "ro", "text": "O concluzie solidă este condiționată: acordul depinde de criterii, compensare și ajustare ulterioară." },
+            { "language": "sq", "text": "Një përfundim i qëndrueshëm është i kushtëzuar: miratimi varet nga kriteret, balancimi dhe korrigjimi i mëvonshëm." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "climate-street-redesign-discussion",
+          "placement": "detail-header",
+          "purpose": "Illustrate a respectful neighborhood discussion about climate-adapted street redesign, trees, sidewalks, bike lanes, parking, and local businesses.",
+          "altText": "Eine diverse Gruppe Erwachsener bespricht an einem runden Tisch einen neutralen Plan für eine umgestaltete Stadtstraße mit Bäumen, Gehwegen und Lieferzonen.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A diverse group of adults discusses a neutral plan for a redesigned city street with trees, sidewalks, and loading zones at a round table." },
+            { "language": "fa", "text": "گروهی متنوع از بزرگسالان دور یک میز گرد درباره طرحی خنثی برای خیابانی بازطراحی‌شده با درخت، پیاده‌رو و محل بارگیری گفت‌وگو می‌کنند." },
+            { "language": "ar", "text": "مجموعة متنوعة من البالغين تناقش حول طاولة مستديرة مخططاً محايداً لشارع مُعاد تصميمه مع أشجار وأرصفة ومناطق تحميل." },
+            { "language": "tr", "text": "Farklı yetişkinlerden oluşan bir grup yuvarlak masada ağaçlar, kaldırımlar ve yükleme alanları olan yeniden düzenlenmiş bir kent caddesi planını tartışıyor." },
+            { "language": "ru", "text": "Разнообразная группа взрослых за круглым столом обсуждает нейтральный план перестроенной городской улицы с деревьями, тротуарами и зонами погрузки." },
+            { "language": "ckb", "text": "گرووپێکی جۆراوجۆری گەورەساڵ لە دەوری مێزێکی بازنەیی پلانێکی بێلایەنی شەقامێکی شار گفتوگۆ دەکەن کە دار، پیادەڕەو و شوێنی بارکردنی تێدایە." },
+            { "language": "kmr", "text": "Komeke cihêreng a mezinan li dora maseyekê plansaziyeke bêalî ya kolaneke bajêr a ji nû ve guhertî bi daran, rêyên peyayan û cihên barkirinê gotûbêj dike." },
+            { "language": "pl", "text": "Zróżnicowana grupa dorosłych omawia przy okrągłym stole neutralny plan przebudowanej ulicy miejskiej z drzewami, chodnikami i strefami załadunku." },
+            { "language": "ro", "text": "Un grup divers de adulți discută la o masă rotundă un plan neutru pentru o stradă urbană reamenajată cu copaci, trotuare și zone de încărcare." },
+            { "language": "sq", "text": "Një grup i larmishëm të rriturish diskuton rreth një tryeze të rrumbullakët një plan neutral për një rrugë qyteti të rindërtuar me pemë, trotuare dhe zona ngarkimi." }
+          ],
+          "imagePrompt": "Clean educational illustration, diverse adults in a German neighborhood meeting discussing a neutral street redesign plan with trees, wider sidewalks, protected bike lane, loading zones, and local shops, no readable text, no logos, no campaign signs, no private data, accessible composition, calm balanced public discussion mood.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

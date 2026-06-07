@@ -1895,6 +1895,96 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue => issue.Message.Contains("Exam profile key 'bad-profile' is not supported.", StringComparison.Ordinal));
     }
 
+    [Fact]
+    public async Task ImportAsync_ShouldImportExercise_WhenTranslatedContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExercises(CreateValidExercise(), CreateValidExerciseSet());
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exercises.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Exercise exercise = Assert.Single(repository.ImportedExercises);
+        Assert.Equal("a1-article-choice", exercise.Slug);
+        Assert.Contains("\"language\":\"fa\"", exercise.TitleTranslationsJson, StringComparison.Ordinal);
+        ExerciseSet exerciseSet = Assert.Single(repository.ImportedExerciseSets);
+        Assert.Equal("a1-core-practice", exerciseSet.Slug);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExercise_WhenTranslationLanguageIsNotActive()
+    {
+        ParsedExerciseModel exercise = CreateValidExercise() with
+        {
+            TitleTranslations = [new ParsedContentMeaningModel("zz", "Bad language")],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExercises(exercise, CreateValidExerciseSet());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exercises.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Exercise titleTranslations", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExerciseSet_WhenItReferencesUnknownExercise()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExercises(
+            CreateValidExercise(),
+            CreateValidExerciseSet() with { ExerciseSlugs = ["missing-exercise"] });
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exercises.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("unknown exercise slug 'missing-exercise'", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportCourse_WhenTranslatedContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCourse();
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("course.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        CoursePath course = Assert.Single(repository.ImportedCoursePaths);
+        Assert.Equal("a1-deutsch-start", course.Slug);
+        Assert.Contains("\"language\":\"fa\"", course.TitleTranslationsJson, StringComparison.Ordinal);
+        CourseLesson lesson = Assert.Single(repository.ImportedCourseLessons);
+        Assert.Contains("\"texts\"", lesson.LearningGoalsTranslationsJson, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectCourse_WhenLearningGoalTranslationLanguageIsNotActive()
+    {
+        ParsedCourseLessonModel lesson = CreateValidCourseLesson() with
+        {
+            LearningGoalsTranslations = [new ParsedCourseTextListTranslationModel("zz", ["Bad language"])],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCourse(lesson);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("course.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("learningGoalsTranslations", StringComparison.Ordinal));
+    }
+
     private static ServiceProvider BuildServiceProvider(
         IContentImportFileReader fileReader,
         IContentImportParser parser,
@@ -1923,6 +2013,147 @@ public sealed class ContentImportServiceApplicationTests
             ExpressionEntries = [expression],
         };
     }
+
+    private static ParsedContentPackageModel CreatePackageWithExercises(
+        ParsedExerciseModel exercise,
+        ParsedExerciseSetModel exerciseSet)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "exercise-test-package",
+            "Exercise Test Package",
+            "Manual",
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [],
+            [])
+        {
+            Exercises = [exercise],
+            ExerciseSets = [exerciseSet],
+        };
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithCourse(ParsedCourseLessonModel? lesson = null)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "course-test-package",
+            "Course Test Package",
+            "Manual",
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [],
+            [])
+        {
+            CoursePaths =
+            [
+                new ParsedCoursePathModel(
+                    "a1-deutsch-start",
+                    "A1 Deutsch Start",
+                    RequiredMeaningTranslations("A1 German start"),
+                    "Ein kurzer Lernpfad fuer die ersten Schritte.",
+                    RequiredMeaningTranslations("A short learning path for first steps."),
+                    "A1",
+                    null,
+                    true,
+                    10)
+            ],
+            CourseModules =
+            [
+                new ParsedCourseModuleModel(
+                    "a1-erste-schritte",
+                    "a1-deutsch-start",
+                    "Erste Schritte",
+                    RequiredMeaningTranslations("First steps"),
+                    "Begruessungen, Namen und einfache Saetze.",
+                    RequiredMeaningTranslations("Greetings, names, and simple sentences."),
+                    1,
+                    "A1",
+                    true,
+                    10)
+            ],
+            CourseLessons = [lesson ?? CreateValidCourseLesson()],
+        };
+    }
+
+    private static ParsedCourseLessonModel CreateValidCourseLesson() =>
+        new(
+            "a1-begruessung-und-name",
+            "a1-deutsch-start",
+            "a1-erste-schritte",
+            1,
+            "Begruessung und Name",
+            RequiredMeaningTranslations("Greeting and name"),
+            "Du lernst, jemanden zu begruessen und deinen Namen zu sagen.",
+            RequiredMeaningTranslations("You learn to greet someone and say your name."),
+            "In dieser Lektion kombinierst du kurze deutsche Saetze mit bekannten Dialogen und Uebungen.",
+            RequiredMeaningTranslations("In this lesson you combine short German sentences with known dialogues and exercises."),
+            "A1",
+            20,
+            ["Jemanden begruessen", "Den eigenen Namen sagen"],
+            RequiredMeaningListTranslations(["Greet someone", "Say your own name"]),
+            [],
+            null,
+            ["a1-word-order"],
+            ["hallo"],
+            ["guten-morgen"],
+            ["a1-introductions"],
+            ["a1-greetings"],
+            ["a1-core-practice"],
+            [],
+            "Wiederhole die Begruessung und den Namen laut.",
+            RequiredMeaningTranslations("Repeat the greeting and the name aloud."),
+            "Schreibe drei kurze Saetze ueber dich.",
+            RequiredMeaningTranslations("Write three short sentences about yourself."),
+            true,
+            10);
+
+    private static IReadOnlyList<ParsedCourseTextListTranslationModel> RequiredMeaningListTranslations(IReadOnlyList<string> texts) =>
+        ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(language => new ParsedCourseTextListTranslationModel(language, texts))
+            .ToArray();
+
+    private static ParsedExerciseModel CreateValidExercise() =>
+        new(
+            "a1-article-choice",
+            "Artikel wählen",
+            RequiredMeaningTranslations("Choose the article"),
+            "Wähle den richtigen Artikel.",
+            RequiredMeaningTranslations("Choose the correct article."),
+            "A1",
+            "article-selection",
+            "grammar",
+            "grammar-topic",
+            "a1-articles",
+            """{ "stem": "___ Kaffee", "options": [{ "id": "der", "text": "der" }, { "id": "die", "text": "die" }] }""",
+            """{ "correctOptionIds": ["der"] }""",
+            "Der Artikel ist richtig.",
+            RequiredMeaningTranslations("The article is correct."),
+            "Prüfe das Genus des Nomens.",
+            RequiredMeaningTranslations("Review the noun gender."),
+            "Kaffee ist maskulin.",
+            RequiredMeaningTranslations("Kaffee is masculine."),
+            "Nicht: die Kaffee.",
+            RequiredMeaningTranslations("Do not say: die Kaffee."),
+            true,
+            10);
+
+    private static ParsedExerciseSetModel CreateValidExerciseSet() =>
+        new(
+            "a1-core-practice",
+            "A1 Basisübungen",
+            RequiredMeaningTranslations("A1 basic exercises"),
+            "Kurze Übungen zu Artikeln und einfachen Sätzen.",
+            RequiredMeaningTranslations("Short exercises for articles and simple sentences."),
+            "A1",
+            "grammar-topic",
+            "a1-articles",
+            ["a1-article-choice"],
+            true,
+            10);
+
+    private static IReadOnlyList<ParsedContentMeaningModel> RequiredMeaningTranslations(string text) =>
+        ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(language => new ParsedContentMeaningModel(language, text))
+            .ToArray();
 
     private static ParsedContentPackageModel CreatePackageWithRoleplayScenario(ParsedRoleplayScenarioModel scenario)
     {
@@ -2482,6 +2713,16 @@ public sealed class ContentImportServiceApplicationTests
 
         public IReadOnlyList<ExamPrepUnit> ImportedExamPrepUnits { get; private set; } = [];
 
+        public IReadOnlyList<Exercise> ImportedExercises { get; private set; } = [];
+
+        public IReadOnlyList<ExerciseSet> ImportedExerciseSets { get; private set; } = [];
+
+        public IReadOnlyList<CoursePath> ImportedCoursePaths { get; private set; } = [];
+
+        public IReadOnlyList<CourseModule> ImportedCourseModules { get; private set; } = [];
+
+        public IReadOnlyList<CourseLesson> ImportedCourseLessons { get; private set; } = [];
+
         public IReadOnlyList<RoleplayScenario> ImportedRoleplayScenarios { get; private set; } = [];
 
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
@@ -2555,6 +2796,11 @@ public sealed class ContentImportServiceApplicationTests
             ImportedCulturalNotes = importedCulturalNotes;
             ImportedExamProfiles = importedExamProfiles;
             ImportedExamPrepUnits = importedExamPrepUnits;
+            ImportedExercises = importedExercises;
+            ImportedExerciseSets = importedExerciseSets;
+            ImportedCoursePaths = importedCoursePaths;
+            ImportedCourseModules = importedCourseModules;
+            ImportedCourseLessons = importedCourseLessons;
             ImportedRoleplayScenarios = importedRoleplayScenarios;
             return Task.CompletedTask;
         }

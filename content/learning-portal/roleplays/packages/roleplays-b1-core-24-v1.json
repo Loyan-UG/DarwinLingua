@@ -1,0 +1,920 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-24-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 24 v1",
+  "source": "Darwin Lingua RoleplayScenario B1 Core 24",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-einen-kurswechsel-begruenden",
+      "linkedDialogueSlug": null,
+      "title": "Einen Kurswechsel begründen",
+      "titleTranslations": [
+        { "language": "en", "text": "Explaining a course change request" },
+        { "language": "fa", "text": "توضیح دلیل درخواست تغییر کلاس" },
+        { "language": "ar", "text": "شرح سبب طلب تغيير الدورة" },
+        { "language": "tr", "text": "Kurs değişikliği talebini gerekçelendirmek" },
+        { "language": "ru", "text": "Обосновать просьбу о смене курса" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی هۆکاری داوای گۆڕینی کۆرس" },
+        { "language": "kmr", "text": "Şirovekirina sedema daxwaza guhartina kursê" },
+        { "language": "pl", "text": "Uzasadnienie prośby o zmianę kursu" },
+        { "language": "ro", "text": "Motivarea unei cereri de schimbare a cursului" },
+        { "language": "sq", "text": "Arsyetimi i kërkesës për ndryshim kursi" }
+      ],
+      "description": "Du sprichst mit der Kursleitung, weil dein aktueller Kurs zeitlich und fachlich nicht mehr gut passt. Du erklärst den Grund und bittest um eine realistische Lösung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You speak with the course office because your current course no longer fits well in terms of time and level. You explain the reason and ask for a realistic solution." },
+        { "language": "fa", "text": "با مسئول دوره صحبت می‌کنی، چون کلاس فعلی از نظر زمان و سطح دیگر برایت مناسب نیست. دلیل را توضیح می‌دهی و یک راه‌حل واقع‌بینانه می‌خواهی." },
+        { "language": "ar", "text": "تتحدث مع إدارة الدورة لأن دورتك الحالية لم تعد مناسبة من حيث الوقت والمستوى. تشرح السبب وتطلب حلاً واقعياً." },
+        { "language": "tr", "text": "Mevcut kursun zaman ve seviye açısından artık sana uymadığı için kurs yönetimiyle konuşuyorsun. Nedeni açıklıyor ve gerçekçi bir çözüm istiyorsun." },
+        { "language": "ru", "text": "Ты говоришь с руководством курса, потому что текущий курс больше не подходит по времени и уровню. Объясняешь причину и просишь реалистичное решение." },
+        { "language": "ckb", "text": "لەگەڵ بەڕێوەبەری کۆرسەکە قسە دەکەیت چونکە کۆرسی ئێستات لە ڕووی کات و ئاستەوە چیتر باش ناگونجێت. هۆکارەکە ڕوون دەکەیتەوە و داوای چارەسەرێکی واقیعی دەکەیت." },
+        { "language": "kmr", "text": "Tu bi rêveberiya kursê re diaxivî, ji ber ku kursa te ya niha ji aliyê dem û astê ve êdî baş nagunce. Tu sedemê şirove dikî û çareseriyeke rastîn dixwazî." },
+        { "language": "pl", "text": "Rozmawiasz z administracją kursu, bo obecny kurs nie pasuje już dobrze pod względem czasu i poziomu. Wyjaśniasz powód i prosisz o realistyczne rozwiązanie." },
+        { "language": "ro", "text": "Vorbești cu administrația cursului deoarece cursul actual nu se mai potrivește bine ca program și nivel. Explici motivul și ceri o soluție realistă." },
+        { "language": "sq", "text": "Flet me administratën e kursit sepse kursi aktual nuk të përshtatet më mirë nga koha dhe niveli. Shpjegon arsyen dhe kërkon një zgjidhje realiste." }
+      ],
+      "learnerGoal": "Begründe einen Kurswechsel sachlich, nenne Zeit- und Lernproblem und frage nach konkreten nächsten Schritten.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Justify a course change factually, name the scheduling and learning problem, and ask for concrete next steps." },
+        { "language": "fa", "text": "درخواست تغییر کلاس را منطقی توضیح بده، مشکل زمان و یادگیری را نام ببر و درباره قدم‌های مشخص بعدی بپرس." },
+        { "language": "ar", "text": "برّر تغيير الدورة بموضوعية، واذكر مشكلة الوقت والتعلّم، واسأل عن الخطوات التالية المحددة." },
+        { "language": "tr", "text": "Kurs değişikliğini nesnel biçimde gerekçelendir, zaman ve öğrenme sorununu belirt ve somut sonraki adımları sor." },
+        { "language": "ru", "text": "Обоснуй смену курса по существу, назови проблему со временем и обучением и спроси о конкретных следующих шагах." },
+        { "language": "ckb", "text": "گۆڕینی کۆرس بە شێوەیەکی بابەتی ڕوون بکەرەوە، کێشەی کات و فێربوون بناسێنە و لە هەنگاوە دیاریکراوەکانی داهاتوو بپرسە." },
+        { "language": "kmr", "text": "Guhartina kursê bi awayekî rast şirove bike, pirsgirêka dem û fêrbûnê bibêje û li ser gavên paşê yên zelal bipirse." },
+        { "language": "pl", "text": "Uzasadnij zmianę kursu rzeczowo, nazwij problem z czasem i nauką oraz zapytaj o konkretne kolejne kroki." },
+        { "language": "ro", "text": "Motivează obiectiv schimbarea cursului, numește problema de program și de învățare și întreabă despre pașii următori concreți." },
+        { "language": "sq", "text": "Arsyeto ndryshimin e kursit në mënyrë faktike, përmend problemin e orarit dhe të mësimit dhe pyet për hapat konkretë të ardhshëm." }
+      ],
+      "cefrLevel": "B1",
+      "category": "education",
+      "topics": ["education-and-training", "documents-and-administration"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "formal-conversation"],
+      "taskType": "negotiate-solution",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 9,
+      "isPublished": true,
+      "sortOrder": 2500,
+      "roles": [
+        {
+          "roleKey": "course-office",
+          "displayName": "Kursleitung",
+          "translations": [
+            { "language": "en", "text": "Course office" },
+            { "language": "fa", "text": "مسئول دوره" },
+            { "language": "ar", "text": "إدارة الدورة" },
+            { "language": "tr", "text": "Kurs yönetimi" },
+            { "language": "ru", "text": "Руководство курса" },
+            { "language": "ckb", "text": "بەڕێوەبەری کۆرس" },
+            { "language": "kmr", "text": "Rêveberiya kursê" },
+            { "language": "pl", "text": "Administracja kursu" },
+            { "language": "ro", "text": "Administrația cursului" },
+            { "language": "sq", "text": "Administrata e kursit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kursteilnehmer",
+          "translations": [
+            { "language": "en", "text": "Course participant" },
+            { "language": "fa", "text": "شرکت‌کننده دوره" },
+            { "language": "ar", "text": "مشارك في الدورة" },
+            { "language": "tr", "text": "Kurs katılımcısı" },
+            { "language": "ru", "text": "Участник курса" },
+            { "language": "ckb", "text": "بەشداربووی کۆرس" },
+            { "language": "kmr", "text": "Beşdarê kursê" },
+            { "language": "pl", "text": "Uczestnik kursu" },
+            { "language": "ro", "text": "Participant la curs" },
+            { "language": "sq", "text": "Pjesëmarrës në kurs" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "course-office",
+          "baseText": "Guten Tag. Sie möchten über einen möglichen Kurswechsel sprechen. Was ist der Grund dafür?",
+          "translations": [
+            { "language": "en", "text": "Good afternoon. You would like to talk about a possible course change. What is the reason for that?" },
+            { "language": "fa", "text": "روز بخیر. شما می‌خواهید درباره امکان تغییر کلاس صحبت کنید. دلیلش چیست؟" },
+            { "language": "ar", "text": "مساء الخير. ترغب في الحديث عن إمكانية تغيير الدورة. ما السبب؟" },
+            { "language": "tr", "text": "İyi günler. Olası bir kurs değişikliği hakkında konuşmak istiyorsunuz. Bunun nedeni nedir?" },
+            { "language": "ru", "text": "Добрый день. Вы хотите поговорить о возможной смене курса. В чем причина?" },
+            { "language": "ckb", "text": "ڕۆژ باش. دەتەوێت دەربارەی گۆڕینی گونجاوی کۆرس قسە بکەیت. هۆکارەکە چییە؟" },
+            { "language": "kmr", "text": "Roj baş. Hûn dixwazin li ser guhartineke gengaz a kursê biaxivin. Sedem çi ye?" },
+            { "language": "pl", "text": "Dzień dobry. Chce pan porozmawiać o możliwej zmianie kursu. Jaki jest powód?" },
+            { "language": "ro", "text": "Bună ziua. Doriți să vorbiți despre o posibilă schimbare a cursului. Care este motivul?" },
+            { "language": "sq", "text": "Mirëdita. Dëshironi të flisni për një ndryshim të mundshëm kursi. Cila është arsyeja?" }
+          ],
+          "function": "opening"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Ich möchte den Kurs nicht abbrechen, aber der Abendkurs passt wegen meiner neuen Arbeitszeiten kaum noch. Außerdem merke ich, dass ich beim Schreiben nicht mehr gut mitkomme.",
+          "translations": [
+            { "language": "en", "text": "Thank you. I do not want to quit the course, but the evening course hardly fits my new work schedule anymore. I also notice that I can no longer keep up well with writing." },
+            { "language": "fa", "text": "ممنون. نمی‌خواهم دوره را رها کنم، اما کلاس عصر به خاطر ساعت‌های کاری جدیدم تقریباً دیگر مناسب نیست. علاوه بر این، متوجه شده‌ام که در بخش نوشتن دیگر خوب همگام نمی‌شوم." },
+            { "language": "ar", "text": "شكراً. لا أريد ترك الدورة، لكن دورة المساء لم تعد تناسب أوقات عملي الجديدة تقريباً. كما ألاحظ أنني لم أعد أستطيع مجاراة الكتابة جيداً." },
+            { "language": "tr", "text": "Teşekkür ederim. Kursu bırakmak istemiyorum, ama akşam kursu yeni çalışma saatlerime artık neredeyse uymuyor. Ayrıca yazmada artık iyi yetişemediğimi fark ediyorum." },
+            { "language": "ru", "text": "Спасибо. Я не хочу бросать курс, но вечерний курс почти больше не подходит из-за моего нового рабочего графика. Кроме того, я замечаю, что больше плохо успеваю по письму." },
+            { "language": "ckb", "text": "سوپاس. نایەوێت کۆرسەکە بوەستێنم، بەڵام کۆرسی ئێوارە بەهۆی کاتە نوێیەکانی کارم چیتر زۆر ناگونجێت. هەروەها هەست دەکەم لە نووسیندا چیتر باش لەگەڵ وانەکان ناچم." },
+            { "language": "kmr", "text": "Spas. Ez naxwazim kursê biqedînim, lê kursa êvarê ji ber demên karê min ên nû êdî hema hema nagunce. Her wiha dibînim ku di nivîsandinê de êdî baş nagihîjim." },
+            { "language": "pl", "text": "Dziękuję. Nie chcę rezygnować z kursu, ale kurs wieczorny prawie nie pasuje już do moich nowych godzin pracy. Poza tym widzę, że nie nadążam już dobrze z pisaniem." },
+            { "language": "ro", "text": "Mulțumesc. Nu vreau să renunț la curs, dar cursul de seară aproape că nu se mai potrivește cu noul meu program de lucru. În plus, observ că nu mai țin pasul bine la scris." },
+            { "language": "sq", "text": "Faleminderit. Nuk dua ta lë kursin, por kursi i mbrëmjes pothuajse nuk përshtatet më me orarin tim të ri të punës. Përveç kësaj, vërej se nuk po e ndjek mirë më pjesën e shkrimit." }
+          ],
+          "function": "state-reason",
+          "expectedLearnerAction": "Give both the scheduling reason and the learning reason without quitting the course."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "course-office",
+          "baseText": "Verstehe. Geht es Ihnen eher um eine andere Uhrzeit oder um ein anderes Kursniveau?",
+          "translations": [
+            { "language": "en", "text": "I understand. Is it more about a different time or a different course level?" },
+            { "language": "fa", "text": "متوجه شدم. بیشتر موضوع زمان دیگری است یا سطح دیگری از کلاس؟" },
+            { "language": "ar", "text": "فهمت. هل يتعلق الأمر أكثر بوقت آخر أم بمستوى دورة آخر؟" },
+            { "language": "tr", "text": "Anladım. Daha çok farklı bir saat mi, yoksa farklı bir kurs seviyesi mi söz konusu?" },
+            { "language": "ru", "text": "Понимаю. Речь скорее о другом времени или о другом уровне курса?" },
+            { "language": "ckb", "text": "تێگەیشتم. زیاتر بابەتی کاتێکی ترە یان ئاستێکی تری کۆرس؟" },
+            { "language": "kmr", "text": "Fêm kirim. Ma zêdetir li ser demeke din e an asta kursê ya din?" },
+            { "language": "pl", "text": "Rozumiem. Chodzi panu bardziej o inną godzinę czy o inny poziom kursu?" },
+            { "language": "ro", "text": "Înțeleg. Este vorba mai degrabă despre altă oră sau despre alt nivel de curs?" },
+            { "language": "sq", "text": "E kuptoj. A bëhet fjalë më shumë për një orar tjetër apo për një nivel tjetër kursi?" }
+          ],
+          "function": "clarify-need"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Am besten wäre ein Kurs am Nachmittag auf demselben Niveau oder ein etwas langsamerer B1-Kurs. Ich möchte weiterlernen, aber ich brauche eine Lösung, die ich regelmäßig umsetzen kann.",
+          "translations": [
+            { "language": "en", "text": "A course in the afternoon at the same level or a slightly slower B1 course would be best. I want to continue learning, but I need a solution that I can follow regularly." },
+            { "language": "fa", "text": "بهترین حالت یک کلاس بعدازظهر در همان سطح یا یک کلاس B1 کمی کندتر است. می‌خواهم به یادگیری ادامه بدهم، اما به راه‌حلی نیاز دارم که بتوانم منظم انجامش بدهم." },
+            { "language": "ar", "text": "الأفضل أن تكون دورة بعد الظهر على المستوى نفسه أو دورة B1 أبطأ قليلاً. أريد أن أستمر في التعلّم، لكنني أحتاج إلى حل أستطيع تطبيقه بانتظام." },
+            { "language": "tr", "text": "En iyisi aynı seviyede öğleden sonra bir kurs ya da biraz daha yavaş bir B1 kursu olur. Öğrenmeye devam etmek istiyorum, ama düzenli olarak uygulayabileceğim bir çözüme ihtiyacım var." },
+            { "language": "ru", "text": "Лучше всего был бы курс после обеда на том же уровне или немного более медленный курс B1. Я хочу продолжать учиться, но мне нужно решение, которое я смогу регулярно выполнять." },
+            { "language": "ckb", "text": "باشترین چارەسەر کۆرسێکە لە دوای نیوەڕۆ لە هەمان ئاستدا یان کۆرسێکی B1 کەمێک خاوتر. دەمەوێت بە فێربوون بەردەوام بم، بەڵام پێویستم بە چارەسەرێکە کە بتوانم بەردەوام جێبەجێی بکەم." },
+            { "language": "kmr", "text": "Ya herî baş kursê piştî nîvro li heman astê be an kursa B1 hinek hêdîtir. Ez dixwazim fêrbûnê bidomînim, lê çareseriyek pêwîst e ku ez bi rêkûpêk pêk bînim." },
+            { "language": "pl", "text": "Najlepszy byłby kurs po południu na tym samym poziomie albo trochę wolniejszy kurs B1. Chcę dalej się uczyć, ale potrzebuję rozwiązania, które mogę regularnie realizować." },
+            { "language": "ro", "text": "Cel mai bine ar fi un curs după-amiaza la același nivel sau un curs B1 puțin mai lent. Vreau să continui să învăț, dar am nevoie de o soluție pe care să o pot aplica regulat." },
+            { "language": "sq", "text": "Më i miri do të ishte një kurs pasdite në të njëjtin nivel ose një kurs B1 pak më i ngadalshëm. Dua të vazhdoj të mësoj, por më duhet një zgjidhje që mund ta zbatoj rregullisht." }
+          ],
+          "function": "propose-options",
+          "expectedLearnerAction": "Name practical options and explain why they are realistic."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "course-office",
+          "baseText": "Wir haben eine Warteliste für einen Nachmittagskurs. Zusätzlich könnten wir mit Ihrer Lehrerin kurz prüfen, ob das Niveau wirklich passt.",
+          "translations": [
+            { "language": "en", "text": "We have a waiting list for an afternoon course. In addition, we could briefly check with your teacher whether the level really fits." },
+            { "language": "fa", "text": "برای کلاس بعدازظهر فهرست انتظار داریم. علاوه بر آن می‌توانیم کوتاه با معلم شما بررسی کنیم که آیا سطح واقعاً مناسب است یا نه." },
+            { "language": "ar", "text": "لدينا قائمة انتظار لدورة بعد الظهر. بالإضافة إلى ذلك يمكننا أن نتحقق باختصار مع معلمتك مما إذا كان المستوى مناسباً فعلاً." },
+            { "language": "tr", "text": "Öğleden sonra kursu için bir bekleme listemiz var. Ayrıca öğretmeninizle seviyenin gerçekten uygun olup olmadığını kısaca kontrol edebiliriz." },
+            { "language": "ru", "text": "У нас есть список ожидания на дневной курс. Кроме того, мы можем коротко проверить с вашей преподавательницей, действительно ли уровень подходит." },
+            { "language": "ckb", "text": "بۆ کۆرسی دوای نیوەڕۆ لیستی چاوەڕوانیمان هەیە. هەروەها دەتوانین بە کورتی لەگەڵ مامۆستاکەتان بپشکنین کە ئاستەکە بەڕاستی گونجاوە یان نا." },
+            { "language": "kmr", "text": "Ji bo kursa piştî nîvro lîsteya bendê heye. Her wiha em dikarin bi mamosteya we re bi kurtî kontrol bikin gelo ast bi rastî digunce." },
+            { "language": "pl", "text": "Mamy listę oczekujących na kurs popołudniowy. Dodatkowo możemy krótko sprawdzić z pani nauczycielką, czy poziom naprawdę pasuje." },
+            { "language": "ro", "text": "Avem o listă de așteptare pentru un curs de după-amiază. În plus, putem verifica scurt cu profesoara dumneavoastră dacă nivelul se potrivește cu adevărat." },
+            { "language": "sq", "text": "Kemi një listë pritjeje për një kurs pasdite. Përveç kësaj, mund të kontrollojmë shkurt me mësuesen tuaj nëse niveli përshtatet vërtet." }
+          ],
+          "function": "offer-options"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Welche Unterlagen brauchen Sie dafür? Und bleibt meine bisherige Teilnahme gültig, wenn ich auf die Warteliste komme?",
+          "translations": [
+            { "language": "en", "text": "Which documents do you need for that? And does my previous attendance remain valid if I go on the waiting list?" },
+            { "language": "fa", "text": "برای این کار چه مدارکی لازم دارید؟ و اگر وارد فهرست انتظار شوم، حضور قبلی من معتبر می‌ماند؟" },
+            { "language": "ar", "text": "ما المستندات التي تحتاجونها لذلك؟ وهل تبقى مشاركتي السابقة صالحة إذا دخلت قائمة الانتظار؟" },
+            { "language": "tr", "text": "Bunun için hangi belgeler gerekiyor? Ve bekleme listesine girersem önceki katılımım geçerli kalır mı?" },
+            { "language": "ru", "text": "Какие документы вам для этого нужны? И остается ли мое прежнее посещение действительным, если я попаду в список ожидания?" },
+            { "language": "ckb", "text": "بۆ ئەمە کام بەڵگەنامە پێویستتانە؟ و ئەگەر بچمە لیستی چاوەڕوانی، بەشدارییەکانی پێشووم بەردەوام بەکار دەهێنرێن؟" },
+            { "language": "kmr", "text": "Ji bo vê kîjan belgeyan pêwîst in? Û heke ez bikevim lîsteya bendê, beşdarbûna min a berê hêj derbasdar dimîne?" },
+            { "language": "pl", "text": "Jakie dokumenty są do tego potrzebne? I czy moje dotychczasowe uczestnictwo pozostaje ważne, jeśli trafię na listę oczekujących?" },
+            { "language": "ro", "text": "De ce documente aveți nevoie pentru asta? Și participarea mea de până acum rămâne valabilă dacă intru pe lista de așteptare?" },
+            { "language": "sq", "text": "Çfarë dokumentesh ju duhen për këtë? Dhe a mbetet e vlefshme pjesëmarrja ime e deritanishme nëse futem në listën e pritjes?" }
+          ],
+          "function": "ask-process",
+          "expectedLearnerAction": "Ask about documents and the practical effect on current attendance."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "course-office",
+          "baseText": "Bitte füllen Sie dieses Formular aus und schreiben Sie kurz den Grund dazu. Ihre Teilnahme bleibt gültig. Eine Rückmeldung bekommen Sie voraussichtlich nächste Woche.",
+          "translations": [
+            { "language": "en", "text": "Please fill out this form and briefly write the reason. Your attendance remains valid. You will probably receive feedback next week." },
+            { "language": "fa", "text": "لطفاً این فرم را پر کنید و دلیل را کوتاه بنویسید. حضور شما معتبر می‌ماند. احتمالاً هفته آینده پاسخ دریافت می‌کنید." },
+            { "language": "ar", "text": "يرجى ملء هذا النموذج وكتابة السبب باختصار. تبقى مشاركتك صالحة. ستحصل غالباً على رد في الأسبوع القادم." },
+            { "language": "tr", "text": "Lütfen bu formu doldurun ve nedeni kısaca yazın. Katılımınız geçerli kalır. Muhtemelen gelecek hafta geri bildirim alırsınız." },
+            { "language": "ru", "text": "Пожалуйста, заполните эту форму и коротко напишите причину. Ваше посещение остается действительным. Ответ вы, вероятно, получите на следующей неделе." },
+            { "language": "ckb", "text": "تکایە ئەم فۆرمە پڕ بکەنەوە و هۆکارەکە بە کورتی بنووسن. بەشدارییەکەتان بەردەوام بەکار دەهێنرێت. بە ئەگەرەوە هەفتەی داهاتوو وەڵام وەردەگرن." },
+            { "language": "kmr", "text": "Ji kerema xwe vê formê dagirin û sedemê bi kurtî binivîsin. Beşdarbûna we derbasdar dimîne. Hûn ê bi îhtîmal hefteya bê bersiv bistînin." },
+            { "language": "pl", "text": "Proszę wypełnić ten formularz i krótko wpisać powód. Pańskie uczestnictwo pozostaje ważne. Odpowiedź otrzyma pan prawdopodobnie w przyszłym tygodniu." },
+            { "language": "ro", "text": "Vă rugăm să completați acest formular și să scrieți pe scurt motivul. Participarea dumneavoastră rămâne valabilă. Probabil primiți un răspuns săptămâna viitoare." },
+            { "language": "sq", "text": "Ju lutemi plotësoni këtë formular dhe shkruani shkurt arsyen. Pjesëmarrja juaj mbetet e vlefshme. Me gjasë do të merrni përgjigje javën tjetër." }
+          ],
+          "function": "give-process"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Dann fülle ich das Formular aus, nenne Arbeitszeiten und Schreibprobleme als Grund und warte auf Ihre Rückmeldung nächste Woche.",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. Then I will fill out the form, name work schedule and writing problems as the reason, and wait for your feedback next week." },
+            { "language": "fa", "text": "خیلی ممنون. پس فرم را پر می‌کنم، ساعت‌های کاری و مشکل نوشتن را به‌عنوان دلیل می‌نویسم و منتظر پاسخ شما در هفته آینده می‌مانم." },
+            { "language": "ar", "text": "شكراً جزيلاً. إذن سأملأ النموذج، وأذكر أوقات العمل ومشكلة الكتابة كسبب، وأنتظر ردكم الأسبوع القادم." },
+            { "language": "tr", "text": "Çok teşekkür ederim. O zaman formu dolduracağım, neden olarak çalışma saatlerini ve yazma sorunlarını yazacağım ve gelecek hafta geri bildiriminizi bekleyeceğim." },
+            { "language": "ru", "text": "Большое спасибо. Тогда я заполню форму, укажу рабочий график и проблемы с письмом как причину и буду ждать вашего ответа на следующей неделе." },
+            { "language": "ckb", "text": "زۆر سوپاس. ئەوا فۆرمەکە پڕ دەکەمەوە، کاتەکانی کار و کێشەکانی نووسین وەک هۆکار دەنووسم و چاوەڕێی وەڵامتان لە هەفتەی داهاتوو دەبم." },
+            { "language": "kmr", "text": "Gelek spas. Wê demê ez formê dagirim, demên kar û pirsgirêkên nivîsandinê wek sedem dinivîsim û benda bersiva we ya hefteya bê dimînim." },
+            { "language": "pl", "text": "Bardzo dziękuję. W takim razie wypełnię formularz, podam godziny pracy i problemy z pisaniem jako powód i poczekam na odpowiedź w przyszłym tygodniu." },
+            { "language": "ro", "text": "Vă mulțumesc mult. Atunci completez formularul, menționez programul de lucru și problemele la scris ca motiv și aștept răspunsul dumneavoastră săptămâna viitoare." },
+            { "language": "sq", "text": "Faleminderit shumë. Atëherë do ta plotësoj formularin, do të përmend orarin e punës dhe problemet me shkrimin si arsye dhe do të pres përgjigjen tuaj javën tjetër." }
+          ],
+          "function": "summarize",
+          "expectedLearnerAction": "Summarize the form, reason, and expected follow-up."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Danke. Ich möchte den Kurs nicht abbrechen, aber der Abendkurs passt wegen meiner neuen Arbeitszeiten kaum noch. Außerdem merke ich, dass ich beim Schreiben nicht mehr gut mitkomme.",
+              "translations": [
+                { "language": "en", "text": "Thank you. I do not want to quit the course, but the evening course hardly fits my new work schedule anymore. I also notice that I can no longer keep up well with writing." },
+                { "language": "fa", "text": "ممنون. نمی‌خواهم دوره را رها کنم، اما کلاس عصر به خاطر ساعت‌های کاری جدیدم تقریباً دیگر مناسب نیست. علاوه بر این، متوجه شده‌ام که در بخش نوشتن دیگر خوب همگام نمی‌شوم." },
+                { "language": "ar", "text": "شكراً. لا أريد ترك الدورة، لكن دورة المساء لم تعد تناسب أوقات عملي الجديدة تقريباً. كما ألاحظ أنني لم أعد أستطيع مجاراة الكتابة جيداً." },
+                { "language": "tr", "text": "Teşekkür ederim. Kursu bırakmak istemiyorum, ama akşam kursu yeni çalışma saatlerime artık neredeyse uymuyor. Ayrıca yazmada artık iyi yetişemediğimi fark ediyorum." },
+                { "language": "ru", "text": "Спасибо. Я не хочу бросать курс, но вечерний курс почти больше не подходит из-за моего нового рабочего графика. Кроме того, я замечаю, что больше плохо успеваю по письму." },
+                { "language": "ckb", "text": "سوپاس. نایەوێت کۆرسەکە بوەستێنم، بەڵام کۆرسی ئێوارە بەهۆی کاتە نوێیەکانی کارم چیتر زۆر ناگونجێت. هەروەها هەست دەکەم لە نووسیندا چیتر باش لەگەڵ وانەکان ناچم." },
+                { "language": "kmr", "text": "Spas. Ez naxwazim kursê biqedînim, lê kursa êvarê ji ber demên karê min ên nû êdî hema hema nagunce. Her wiha dibînim ku di nivîsandinê de êdî baş nagihîjim." },
+                { "language": "pl", "text": "Dziękuję. Nie chcę rezygnować z kursu, ale kurs wieczorny prawie nie pasuje już do moich nowych godzin pracy. Poza tym widzę, że nie nadążam już dobrze z pisaniem." },
+                { "language": "ro", "text": "Mulțumesc. Nu vreau să renunț la curs, dar cursul de seară aproape că nu se mai potrivește cu noul meu program de lucru. În plus, observ că nu mai țin pasul bine la scris." },
+                { "language": "sq", "text": "Faleminderit. Nuk dua ta lë kursin, por kursi i mbrëmjes pothuajse nuk përshtatet më me orarin tim të ri të punës. Përveç kësaj, vërej se nuk po e ndjek mirë më pjesën e shkrimit." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort nennt zwei konkrete Gründe und zeigt, dass du im System bleiben möchtest.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer names two concrete reasons and shows that you want to stay in the course system." },
+                { "language": "fa", "text": "این پاسخ دو دلیل مشخص می‌آورد و نشان می‌دهد که می‌خواهی در مسیر دوره بمانی." },
+                { "language": "ar", "text": "تذكر الإجابة سببين محددين وتُظهر أنك تريد البقاء ضمن نظام الدورة." },
+                { "language": "tr", "text": "Cevap iki somut neden belirtir ve kurs sisteminde kalmak istediğini gösterir." },
+                { "language": "ru", "text": "Ответ называет две конкретные причины и показывает, что вы хотите остаться в системе курса." },
+                { "language": "ckb", "text": "وەڵامەکە دوو هۆکاری دیاریکراو دەڵێت و نیشان دەدات دەتەوێت لە سیستەمی کۆرسدا بمێنیتەوە." },
+                { "language": "kmr", "text": "Bersiv du sedemên zelal dibêje û nîşan dide ku tu dixwazî di pergala kursê de bimînî." },
+                { "language": "pl", "text": "Odpowiedź podaje dwa konkretne powody i pokazuje, że chcesz pozostać w systemie kursu." },
+                { "language": "ro", "text": "Răspunsul numește două motive concrete și arată că vrei să rămâi în sistemul cursului." },
+                { "language": "sq", "text": "Përgjigjja jep dy arsye konkrete dhe tregon se dëshiron të mbetesh në sistemin e kursit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Der Kurs passt nicht mehr. Ich möchte bitte wechseln.",
+              "translations": [
+                { "language": "en", "text": "The course no longer fits. I would like to change, please." },
+                { "language": "fa", "text": "کلاس دیگر مناسب نیست. لطفاً می‌خواهم تغییر بدهم." },
+                { "language": "ar", "text": "الدورة لم تعد مناسبة. أود أن أغيّر من فضلك." },
+                { "language": "tr", "text": "Kurs artık uymuyor. Lütfen değiştirmek istiyorum." },
+                { "language": "ru", "text": "Курс больше не подходит. Я хотел бы сменить, пожалуйста." },
+                { "language": "ckb", "text": "کۆرسەکە چیتر ناگونجێت. تکایە دەمەوێت بیگۆڕم." },
+                { "language": "kmr", "text": "Kurs êdî nagunce. Ji kerema xwe ez dixwazim biguherînim." },
+                { "language": "pl", "text": "Kurs już nie pasuje. Chciałbym proszę zmienić." },
+                { "language": "ro", "text": "Cursul nu se mai potrivește. Aș dori să schimb, vă rog." },
+                { "language": "sq", "text": "Kursi nuk përshtatet më. Dua ta ndryshoj, ju lutem." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist höflich, aber zu knapp: Ohne Zeit- und Lernproblem kann die Kursleitung keine passende Lösung finden.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is polite but too brief: without the scheduling and learning problem, the course office cannot find a suitable solution." },
+                { "language": "fa", "text": "مودبانه است، اما خیلی کوتاه است: بدون مشکل زمان و یادگیری، مسئول دوره نمی‌تواند راه‌حل مناسب پیدا کند." },
+                { "language": "ar", "text": "هذا مهذب لكنه مختصر جداً: من دون مشكلة الوقت والتعلّم لا تستطيع إدارة الدورة إيجاد حل مناسب." },
+                { "language": "tr", "text": "Bu kibar ama çok kısa: zaman ve öğrenme sorunu olmadan kurs yönetimi uygun çözüm bulamaz." },
+                { "language": "ru", "text": "Это вежливо, но слишком кратко: без проблемы со временем и обучением руководство курса не сможет найти подходящее решение." },
+                { "language": "ckb", "text": "ئەمە ڕێزدارانەیە، بەڵام زۆر کورتە: بەبێ کێشەی کات و فێربوون، بەڕێوەبەری کۆرس ناتوانێت چارەسەرێکی گونجاو بدۆزێتەوە." },
+                { "language": "kmr", "text": "Ev bi rêz e, lê pir kurt e: bê pirsgirêka dem û fêrbûnê rêveberiya kursê nikare çareseriyeke guncaw bibîne." },
+                { "language": "pl", "text": "To jest uprzejme, ale zbyt krótkie: bez problemu z czasem i nauką administracja kursu nie znajdzie odpowiedniego rozwiązania." },
+                { "language": "ro", "text": "Este politicos, dar prea scurt: fără problema de program și de învățare, administrația cursului nu poate găsi o soluție potrivită." },
+                { "language": "sq", "text": "Kjo është e sjellshme, por shumë e shkurtër: pa problemin e orarit dhe të mësimit, administrata e kursit nuk mund të gjejë zgjidhje të përshtatshme." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Am besten wäre ein Kurs am Nachmittag auf demselben Niveau oder ein etwas langsamerer B1-Kurs. Ich möchte weiterlernen, aber ich brauche eine Lösung, die ich regelmäßig umsetzen kann.",
+              "translations": [
+                { "language": "en", "text": "A course in the afternoon at the same level or a slightly slower B1 course would be best. I want to continue learning, but I need a solution that I can follow regularly." },
+                { "language": "fa", "text": "بهترین حالت یک کلاس بعدازظهر در همان سطح یا یک کلاس B1 کمی کندتر است. می‌خواهم به یادگیری ادامه بدهم، اما به راه‌حلی نیاز دارم که بتوانم منظم انجامش بدهم." },
+                { "language": "ar", "text": "الأفضل أن تكون دورة بعد الظهر على المستوى نفسه أو دورة B1 أبطأ قليلاً. أريد أن أستمر في التعلّم، لكنني أحتاج إلى حل أستطيع تطبيقه بانتظام." },
+                { "language": "tr", "text": "En iyisi aynı seviyede öğleden sonra bir kurs ya da biraz daha yavaş bir B1 kursu olur. Öğrenmeye devam etmek istiyorum, ama düzenli olarak uygulayabileceğim bir çözüme ihtiyacım var." },
+                { "language": "ru", "text": "Лучше всего был бы курс после обеда на том же уровне или немного более медленный курс B1. Я хочу продолжать учиться, но мне нужно решение, которое я смогу регулярно выполнять." },
+                { "language": "ckb", "text": "باشترین چارەسەر کۆرسێکە لە دوای نیوەڕۆ لە هەمان ئاستدا یان کۆرسێکی B1 کەمێک خاوتر. دەمەوێت بە فێربوون بەردەوام بم، بەڵام پێویستم بە چارەسەرێکە کە بتوانم بەردەوام جێبەجێی بکەم." },
+                { "language": "kmr", "text": "Ya herî baş kursê piştî nîvro li heman astê be an kursa B1 hinek hêdîtir. Ez dixwazim fêrbûnê bidomînim, lê çareseriyek pêwîst e ku ez bi rêkûpêk pêk bînim." },
+                { "language": "pl", "text": "Najlepszy byłby kurs po południu na tym samym poziomie albo trochę wolniejszy kurs B1. Chcę dalej się uczyć, ale potrzebuję rozwiązania, które mogę regularnie realizować." },
+                { "language": "ro", "text": "Cel mai bine ar fi un curs după-amiaza la același nivel sau un curs B1 puțin mai lent. Vreau să continui să învăț, dar am nevoie de o soluție pe care să o pot aplica regulat." },
+                { "language": "sq", "text": "Më i miri do të ishte një kurs pasdite në të njëjtin nivel ose një kurs B1 pak më i ngadalshëm. Dua të vazhdoj të mësoj, por më duhet një zgjidhje që mund ta zbatoj rregullisht." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort bietet zwei realistische Optionen und begründet sie mit regelmäßiger Teilnahme.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer offers two realistic options and justifies them with regular attendance." },
+                { "language": "fa", "text": "این پاسخ دو گزینه واقع‌بینانه پیشنهاد می‌کند و آن‌ها را با امکان حضور منظم توضیح می‌دهد." },
+                { "language": "ar", "text": "تقدّم الإجابة خيارين واقعيين وتبررهما بإمكانية الحضور المنتظم." },
+                { "language": "tr", "text": "Cevap iki gerçekçi seçenek sunar ve bunları düzenli katılımla gerekçelendirir." },
+                { "language": "ru", "text": "Ответ предлагает два реалистичных варианта и обосновывает их регулярным посещением." },
+                { "language": "ckb", "text": "وەڵامەکە دوو هەڵبژاردەی واقیعی پێشنیار دەکات و بە بەشداریی بەردەوام پاساویان دەدات." },
+                { "language": "kmr", "text": "Bersiv du vebijarkên rastîn pêşniyar dike û wan bi beşdarbûna rêkûpêk re şirove dike." },
+                { "language": "pl", "text": "Odpowiedź daje dwie realistyczne opcje i uzasadnia je możliwością regularnego uczestnictwa." },
+                { "language": "ro", "text": "Răspunsul oferă două opțiuni realiste și le motivează prin participare regulată." },
+                { "language": "sq", "text": "Përgjigjja ofron dy opsione realiste dhe i arsyeton me pjesëmarrje të rregullt." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Vielleicht gibt es einen anderen Kurs für mich.",
+              "translations": [
+                { "language": "en", "text": "Maybe there is another course for me." },
+                { "language": "fa", "text": "شاید کلاس دیگری برای من وجود داشته باشد." },
+                { "language": "ar", "text": "ربما توجد دورة أخرى مناسبة لي." },
+                { "language": "tr", "text": "Belki benim için başka bir kurs vardır." },
+                { "language": "ru", "text": "Может быть, для меня есть другой курс." },
+                { "language": "ckb", "text": "ڕەنگە کۆرسێکی تر بۆ من هەبێت." },
+                { "language": "kmr", "text": "Belkî kurseke din ji bo min hebe." },
+                { "language": "pl", "text": "Może jest dla mnie inny kurs." },
+                { "language": "ro", "text": "Poate există un alt curs pentru mine." },
+                { "language": "sq", "text": "Ndoshta ka një kurs tjetër për mua." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist möglich, aber zu ungenau: Es fehlen Wunschzeit, Niveau und Grund für die Lösung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is possible but too imprecise: desired time, level, and reason for the solution are missing." },
+                { "language": "fa", "text": "ممکن است، اما خیلی نامشخص است: زمان دلخواه، سطح و دلیل راه‌حل را ندارد." },
+                { "language": "ar", "text": "هذا ممكن لكنه غير دقيق بما يكفي: الوقت المطلوب والمستوى وسبب الحل غير مذكورين." },
+                { "language": "tr", "text": "Bu mümkün, ama çok belirsiz: istenen zaman, seviye ve çözüm nedeni eksik." },
+                { "language": "ru", "text": "Это возможно, но слишком неточно: нет желаемого времени, уровня и причины решения." },
+                { "language": "ckb", "text": "ئەمە دەکرێت، بەڵام زۆر نادیارە: کاتی خوازراو، ئاست و هۆکاری چارەسەرەکە کەمە." },
+                { "language": "kmr", "text": "Ev gengaz e, lê pir nezelal e: dema xwestî, ast û sedema çareseriyê kêm in." },
+                { "language": "pl", "text": "To możliwe, ale zbyt nieprecyzyjne: brakuje pożądanego czasu, poziomu i powodu rozwiązania." },
+                { "language": "ro", "text": "Este posibil, dar prea imprecis: lipsesc ora dorită, nivelul și motivul soluției." },
+                { "language": "sq", "text": "Kjo është e mundur, por shumë e pasaktë: mungojnë orari i dëshiruar, niveli dhe arsyeja e zgjidhjes." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Vielen Dank. Dann fülle ich das Formular aus, nenne Arbeitszeiten und Schreibprobleme als Grund und warte auf Ihre Rückmeldung nächste Woche.",
+              "translations": [
+                { "language": "en", "text": "Thank you very much. Then I will fill out the form, name work schedule and writing problems as the reason, and wait for your feedback next week." },
+                { "language": "fa", "text": "خیلی ممنون. پس فرم را پر می‌کنم، ساعت‌های کاری و مشکل نوشتن را به‌عنوان دلیل می‌نویسم و منتظر پاسخ شما در هفته آینده می‌مانم." },
+                { "language": "ar", "text": "شكراً جزيلاً. إذن سأملأ النموذج، وأذكر أوقات العمل ومشكلة الكتابة كسبب، وأنتظر ردكم الأسبوع القادم." },
+                { "language": "tr", "text": "Çok teşekkür ederim. O zaman formu dolduracağım, neden olarak çalışma saatlerini ve yazma sorunlarını yazacağım ve gelecek hafta geri bildiriminizi bekleyeceğim." },
+                { "language": "ru", "text": "Большое спасибо. Тогда я заполню форму, укажу рабочий график и проблемы с письмом как причину и буду ждать вашего ответа на следующей неделе." },
+                { "language": "ckb", "text": "زۆر سوپاس. ئەوا فۆرمەکە پڕ دەکەمەوە، کاتەکانی کار و کێشەکانی نووسین وەک هۆکار دەنووسم و چاوەڕێی وەڵامتان لە هەفتەی داهاتوو دەبم." },
+                { "language": "kmr", "text": "Gelek spas. Wê demê ez formê dagirim, demên kar û pirsgirêkên nivîsandinê wek sedem dinivîsim û benda bersiva we ya hefteya bê dimînim." },
+                { "language": "pl", "text": "Bardzo dziękuję. W takim razie wypełnię formularz, podam godziny pracy i problemy z pisaniem jako powód i poczekam na odpowiedź w przyszłym tygodniu." },
+                { "language": "ro", "text": "Vă mulțumesc mult. Atunci completez formularul, menționez programul de lucru și problemele la scris ca motiv și aștept răspunsul dumneavoastră săptămâna viitoare." },
+                { "language": "sq", "text": "Faleminderit shumë. Atëherë do ta plotësoj formularin, do të përmend orarin e punës dhe problemet me shkrimin si arsye dhe do të pres përgjigjen tuaj javën tjetër." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort bestätigt Formular, Begründung und nächsten Zeitpunkt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer confirms the form, reason, and next timing." },
+                { "language": "fa", "text": "این پاسخ فرم، دلیل و زمان بعدی را تأیید می‌کند." },
+                { "language": "ar", "text": "تؤكد الإجابة النموذج والسبب والموعد التالي." },
+                { "language": "tr", "text": "Cevap formu, gerekçeyi ve sonraki zamanı doğrular." },
+                { "language": "ru", "text": "Ответ подтверждает форму, обоснование и следующий срок." },
+                { "language": "ckb", "text": "وەڵامەکە فۆرم، هۆکار و کاتی داهاتوو پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv form, sedem û dema paşê piştrast dike." },
+                { "language": "pl", "text": "Odpowiedź potwierdza formularz, uzasadnienie i kolejny termin." },
+                { "language": "ro", "text": "Răspunsul confirmă formularul, motivul și următorul termen." },
+                { "language": "sq", "text": "Përgjigjja konfirmon formularin, arsyen dhe kohën tjetër." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Danke, dann warte ich einfach.",
+              "translations": [
+                { "language": "en", "text": "Thanks, then I will simply wait." },
+                { "language": "fa", "text": "ممنون، پس فقط منتظر می‌مانم." },
+                { "language": "ar", "text": "شكراً، إذن سأنتظر فقط." },
+                { "language": "tr", "text": "Teşekkürler, o zaman sadece bekleyeceğim." },
+                { "language": "ru", "text": "Спасибо, тогда я просто подожду." },
+                { "language": "ckb", "text": "سوپاس، ئەوا تەنیا چاوەڕێ دەکەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez tenê benda dimînim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie po prostu poczekam." },
+                { "language": "ro", "text": "Mulțumesc, atunci doar aștept." },
+                { "language": "sq", "text": "Faleminderit, atëherë thjesht do të pres." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber nicht vollständig: Formular, Grund und nächster Termin werden nicht wiederholt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly but incomplete: form, reason, and next date are not repeated." },
+                { "language": "fa", "text": "دوستانه است، اما کامل نیست: فرم، دلیل و زمان بعدی تکرار نمی‌شوند." },
+                { "language": "ar", "text": "هذا ودود لكنه غير كامل: لا يكرر النموذج والسبب والموعد التالي." },
+                { "language": "tr", "text": "Bu dostça, ama eksik: form, gerekçe ve sonraki tarih tekrarlanmıyor." },
+                { "language": "ru", "text": "Это дружелюбно, но неполно: форма, причина и следующий срок не повторяются." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام تەواو نییە: فۆرم، هۆکار و کاتی داهاتوو دووبارە ناکرێنەوە." },
+                { "language": "kmr", "text": "Ev hevalane ye, lê ne temam e: form, sedem û roja paşê nayên dubarekirin." },
+                { "language": "pl", "text": "To jest miłe, ale niepełne: formularz, powód i kolejny termin nie są powtórzone." },
+                { "language": "ro", "text": "Este prietenos, dar incomplet: formularul, motivul și următorul termen nu sunt repetate." },
+                { "language": "sq", "text": "Kjo është miqësore, por jo e plotë: formulari, arsyeja dhe data tjetër nuk përsëriten." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Ein Kurswechsel wirkt überzeugender, wenn du nicht nur wechseln willst, sondern Zeitproblem, Lernproblem und eine realistische Alternative nennst.",
+          "translations": [
+            { "language": "en", "text": "A course change sounds more convincing when you do not only want to change, but name the scheduling problem, learning problem, and a realistic alternative." },
+            { "language": "fa", "text": "درخواست تغییر کلاس وقتی قانع‌کننده‌تر است که فقط تغییر نخواهی، بلکه مشکل زمان، مشکل یادگیری و یک جایگزین واقع‌بینانه را هم بگویی." },
+            { "language": "ar", "text": "يبدو طلب تغيير الدورة أكثر إقناعاً عندما لا تطلب التغيير فقط، بل تذكر مشكلة الوقت ومشكلة التعلّم وبديلاً واقعياً." },
+            { "language": "tr", "text": "Kurs değişikliği daha ikna edici olur; sadece değişmek istemek yerine zaman sorunu, öğrenme sorunu ve gerçekçi bir alternatif belirtirsen." },
+            { "language": "ru", "text": "Просьба о смене курса звучит убедительнее, если вы не просто хотите перейти, а называете проблему со временем, учебную проблему и реалистичную альтернативу." },
+            { "language": "ckb", "text": "داوای گۆڕینی کۆرس قانعکەرتر دەبێت ئەگەر تەنیا نەڵێیت دەمەوێت بگۆڕم، بەڵکو کێشەی کات، کێشەی فێربوون و جێگرەوەیەکی واقیعی بناسێنیت." },
+            { "language": "kmr", "text": "Daxwaza guhartina kursê bawerkertir dibe heke tu ne tenê guhartinê bixwazî, lê pirsgirêka demê, fêrbûnê û alternatîfeke rastîn bibêjî." },
+            { "language": "pl", "text": "Zmiana kursu brzmi bardziej przekonująco, gdy nie tylko chcesz zmiany, lecz także nazywasz problem z czasem, problem z nauką i realistyczną alternatywę." },
+            { "language": "ro", "text": "O schimbare de curs pare mai convingătoare când nu vrei doar să schimbi, ci numești problema de program, problema de învățare și o alternativă realistă." },
+            { "language": "sq", "text": "Një ndryshim kursi tingëllon më bindës kur nuk kërkon vetëm ndryshim, por përmend problemin e orarit, të mësimit dhe një alternativë realiste." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-mit-lernpartnern-einen-plan-machen",
+      "linkedDialogueSlug": null,
+      "title": "Mit Lernpartnern einen Plan machen",
+      "titleTranslations": [
+        { "language": "en", "text": "Making a plan with study partners" },
+        { "language": "fa", "text": "برنامه‌ریزی با هم‌درس‌ها" },
+        { "language": "ar", "text": "وضع خطة مع شركاء التعلّم" },
+        { "language": "tr", "text": "Çalışma arkadaşlarıyla plan yapmak" },
+        { "language": "ru", "text": "Составить план с учебными партнерами" },
+        { "language": "ckb", "text": "دانانی پلان لەگەڵ هاوفێرکاران" },
+        { "language": "kmr", "text": "Bi hevkarên fêrbûnê re plan çêkirin" },
+        { "language": "pl", "text": "Ułożenie planu z partnerami do nauki" },
+        { "language": "ro", "text": "Realizarea unui plan cu partenerii de învățare" },
+        { "language": "sq", "text": "Bërja e një plani me partnerët e mësimit" }
+      ],
+      "description": "Du planst mit einer Lernpartnerin regelmäßiges Deutschtraining. Ihr vereinbart Thema, Zeit, Rollen und eine kurze gegenseitige Rückmeldung.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You plan regular German practice with a study partner. You agree on topic, time, roles, and brief mutual feedback." },
+        { "language": "fa", "text": "با یک هم‌درس تمرین منظم آلمانی برنامه‌ریزی می‌کنی. درباره موضوع، زمان، نقش‌ها و بازخورد کوتاه دوطرفه توافق می‌کنید." },
+        { "language": "ar", "text": "تخطط مع شريكة تعلّم لتدريب ألماني منتظم. تتفقان على الموضوع والوقت والأدوار وتغذية راجعة قصيرة متبادلة." },
+        { "language": "tr", "text": "Bir çalışma arkadaşıyla düzenli Almanca pratiği planlıyorsun. Konu, zaman, roller ve kısa karşılıklı geri bildirim üzerinde anlaşıyorsunuz." },
+        { "language": "ru", "text": "Ты планируешь регулярную практику немецкого с учебной партнершей. Вы договариваетесь о теме, времени, ролях и короткой взаимной обратной связи." },
+        { "language": "ckb", "text": "لەگەڵ هاوفێرکارێک ڕاهێنانی بەردەوامی ئەڵمانی پلان دەکەیت. لەسەر بابەت، کات، ڕۆڵەکان و فیدباکی کورتی دوولایەنە ڕێکدەکەون." },
+        { "language": "kmr", "text": "Tu bi hevkareke fêrbûnê re pratîka rêkûpêk a Almanî plan dikî. Hûn li ser mijar, dem, rol û vegerandina kurt a hevdu li hev dikin." },
+        { "language": "pl", "text": "Planujesz regularne ćwiczenie niemieckiego z partnerką do nauki. Ustalacie temat, czas, role i krótką wzajemną informację zwrotną." },
+        { "language": "ro", "text": "Planifici practică regulată de germană cu o parteneră de învățare. Stabiliți tema, timpul, rolurile și un feedback reciproc scurt." },
+        { "language": "sq", "text": "Planifikon praktikë të rregullt gjermanishteje me një partnere mësimi. Bini dakord për temën, kohën, rolet dhe një feedback të shkurtër të ndërsjellë." }
+      ],
+      "learnerGoal": "Vereinbare mit einer Lernpartnerin einen konkreten Übungsplan mit Thema, Zeit, Rollen und Rückmeldung.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Agree on a concrete practice plan with a study partner, including topic, time, roles, and feedback." },
+        { "language": "fa", "text": "با یک هم‌درس یک برنامه تمرین مشخص شامل موضوع، زمان، نقش‌ها و بازخورد توافق کن." },
+        { "language": "ar", "text": "اتفق مع شريكة تعلّم على خطة تدريب محددة تشمل الموضوع والوقت والأدوار والتغذية الراجعة." },
+        { "language": "tr", "text": "Bir çalışma arkadaşıyla konu, zaman, roller ve geri bildirim içeren somut bir pratik planı üzerinde anlaş." },
+        { "language": "ru", "text": "Договорись с учебной партнершей о конкретном плане практики с темой, временем, ролями и обратной связью." },
+        { "language": "ckb", "text": "لەگەڵ هاوفێرکارێک لەسەر پلانی ڕاهێنانی دیاریکراو لەگەڵ بابەت، کات، ڕۆڵ و فیدباک ڕێکبکەوە." },
+        { "language": "kmr", "text": "Bi hevkareke fêrbûnê re li ser planeke pratîkê ya zelal bi mijar, dem, rol û vegerandinê li hev bike." },
+        { "language": "pl", "text": "Ustal z partnerką do nauki konkretny plan ćwiczeń z tematem, czasem, rolami i informacją zwrotną." },
+        { "language": "ro", "text": "Stabilește cu o parteneră de învățare un plan concret de exercițiu cu temă, timp, roluri și feedback." },
+        { "language": "sq", "text": "Bini dakord me një partnere mësimi për një plan konkret ushtrimi me temë, kohë, role dhe feedback." }
+      ],
+      "cefrLevel": "B1",
+      "category": "education",
+      "topics": ["education-and-training", "social-and-relationships"],
+      "examProfiles": ["dtz-a2-b1"],
+      "skillFocus": ["speaking", "roleplay", "informal-conversation"],
+      "taskType": "discuss-plan",
+      "interactionMode": "pair-work",
+      "register": "neutral",
+      "estimatedPracticeMinutes": 9,
+      "isPublished": true,
+      "sortOrder": 2510,
+      "roles": [
+        {
+          "roleKey": "study-partner",
+          "displayName": "Lernpartnerin",
+          "translations": [
+            { "language": "en", "text": "Study partner" },
+            { "language": "fa", "text": "هم‌درس" },
+            { "language": "ar", "text": "شريكة التعلّم" },
+            { "language": "tr", "text": "Çalışma arkadaşı" },
+            { "language": "ru", "text": "Учебная партнерша" },
+            { "language": "ckb", "text": "هاوفێرکار" },
+            { "language": "kmr", "text": "Hevkara fêrbûnê" },
+            { "language": "pl", "text": "Partnerka do nauki" },
+            { "language": "ro", "text": "Parteneră de învățare" },
+            { "language": "sq", "text": "Partnere mësimi" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Kursteilnehmer",
+          "translations": [
+            { "language": "en", "text": "Course participant" },
+            { "language": "fa", "text": "شرکت‌کننده دوره" },
+            { "language": "ar", "text": "مشارك في الدورة" },
+            { "language": "tr", "text": "Kurs katılımcısı" },
+            { "language": "ru", "text": "Участник курса" },
+            { "language": "ckb", "text": "بەشداربووی کۆرس" },
+            { "language": "kmr", "text": "Beşdarê kursê" },
+            { "language": "pl", "text": "Uczestnik kursu" },
+            { "language": "ro", "text": "Participant la curs" },
+            { "language": "sq", "text": "Pjesëmarrës në kurs" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "study-partner",
+          "baseText": "Wollen wir diese Woche zusammen Deutsch üben? Ich brauche etwas mehr Struktur, sonst verschieben wir es immer.",
+          "translations": [
+            { "language": "en", "text": "Shall we practice German together this week? I need a bit more structure; otherwise we always postpone it." },
+            { "language": "fa", "text": "این هفته با هم آلمانی تمرین کنیم؟ من کمی ساختار بیشتر لازم دارم، وگرنه همیشه آن را عقب می‌اندازیم." },
+            { "language": "ar", "text": "هل نتمرن على الألمانية معاً هذا الأسبوع؟ أحتاج إلى تنظيم أكثر قليلاً، وإلا نؤجل الأمر دائماً." },
+            { "language": "tr", "text": "Bu hafta birlikte Almanca çalışalım mı? Biraz daha yapıya ihtiyacım var, yoksa hep erteliyoruz." },
+            { "language": "ru", "text": "Будем вместе заниматься немецким на этой неделе? Мне нужно немного больше структуры, иначе мы все время откладываем." },
+            { "language": "ckb", "text": "ئەم هەفتەیە پێکەوە ئەڵمانی ڕاهێنان بکەین؟ پێویستم بە کەمێک پێکهاتەی زیاترە، ئەگەرنا هەمیشە دوا دەخەین." },
+            { "language": "kmr", "text": "Em vê hefteyê bi hev re Almanî pratîk bikin? Min hinek zêdetir avahî pêwîst e, nexwe em her car paş dixin." },
+            { "language": "pl", "text": "Poćwiczymy razem niemiecki w tym tygodniu? Potrzebuję trochę więcej struktury, inaczej zawsze to odkładamy." },
+            { "language": "ro", "text": "Exersăm împreună germana săptămâna aceasta? Am nevoie de puțin mai multă structură, altfel tot amânăm." },
+            { "language": "sq", "text": "A të ushtrojmë gjermanisht së bashku këtë javë? Kam nevojë për pak më shumë strukturë, përndryshe e shtyjmë gjithmonë." }
+          ],
+          "function": "open-plan"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Ja, gern. Ich schlage vor, dass wir zweimal pro Woche 30 Minuten üben: zuerst ein kurzes Rollenspiel und danach fünf Minuten Feedback.",
+          "translations": [
+            { "language": "en", "text": "Yes, gladly. I suggest that we practice twice a week for 30 minutes: first a short roleplay and then five minutes of feedback." },
+            { "language": "fa", "text": "بله، با کمال میل. پیشنهاد می‌کنم هفته‌ای دو بار ۳۰ دقیقه تمرین کنیم: اول یک نقش‌آفرینی کوتاه و بعد پنج دقیقه بازخورد." },
+            { "language": "ar", "text": "نعم، بكل سرور. أقترح أن نتمرن مرتين في الأسبوع لمدة 30 دقيقة: أولاً لعب دور قصير، ثم خمس دقائق تغذية راجعة." },
+            { "language": "tr", "text": "Evet, memnuniyetle. Haftada iki kez 30 dakika çalışmayı öneriyorum: önce kısa bir rol oyunu, sonra beş dakika geri bildirim." },
+            { "language": "ru", "text": "Да, с удовольствием. Предлагаю заниматься два раза в неделю по 30 минут: сначала короткая ролевая ситуация, потом пять минут обратной связи." },
+            { "language": "ckb", "text": "بەڵێ، بە دڵخۆشی. پێشنیار دەکەم هەفتەی دوو جار ٣٠ خولەک ڕاهێنان بکەین: سەرەتا ڕۆڵێکی کورت، پاشان پێنج خولەک فیدباک." },
+            { "language": "kmr", "text": "Erê, bi kêfxweşî. Ez pêşniyar dikim ku em hefteyê du caran 30 deqîqe pratîk bikin: pêşî roleplayeke kurt û paşê pênc deqîqe vegerandin." },
+            { "language": "pl", "text": "Tak, chętnie. Proponuję, żebyśmy ćwiczyli dwa razy w tygodniu po 30 minut: najpierw krótka scenka, potem pięć minut informacji zwrotnej." },
+            { "language": "ro", "text": "Da, cu plăcere. Propun să exersăm de două ori pe săptămână câte 30 de minute: mai întâi un joc de rol scurt și apoi cinci minute de feedback." },
+            { "language": "sq", "text": "Po, me kënaqësi. Propozoj të ushtrojmë dy herë në javë nga 30 minuta: së pari një roleplay të shkurtër dhe pastaj pesë minuta feedback." }
+          ],
+          "function": "propose-structure",
+          "expectedLearnerAction": "Propose frequency, duration, task type, and feedback."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "study-partner",
+          "baseText": "Das klingt gut. Welches Thema nehmen wir zuerst, damit es nicht zu allgemein wird?",
+          "translations": [
+            { "language": "en", "text": "That sounds good. Which topic should we take first so it does not become too general?" },
+            { "language": "fa", "text": "خوب به نظر می‌رسد. اول چه موضوعی را انتخاب کنیم تا خیلی کلی نشود؟" },
+            { "language": "ar", "text": "يبدو ذلك جيداً. أي موضوع نأخذ أولاً حتى لا يصبح عاماً جداً؟" },
+            { "language": "tr", "text": "Bu iyi görünüyor. Çok genel olmaması için önce hangi konuyu alalım?" },
+            { "language": "ru", "text": "Звучит хорошо. Какую тему возьмем сначала, чтобы это не стало слишком общим?" },
+            { "language": "ckb", "text": "باش دەردەکەوێت. سەرەتا کام بابەت هەڵبژێرین تا زۆر گشتی نەبێت؟" },
+            { "language": "kmr", "text": "Ev baş xuya dike. Em pêşî kîjan mijarê bigirin da ku pir giştî nebe?" },
+            { "language": "pl", "text": "Brzmi dobrze. Jaki temat weźmiemy najpierw, żeby nie było zbyt ogólnie?" },
+            { "language": "ro", "text": "Sună bine. Ce temă alegem mai întâi, ca să nu fie prea general?" },
+            { "language": "sq", "text": "Tingëllon mirë. Cilën temë të marrim së pari që të mos bëhet shumë e përgjithshme?" }
+          ],
+          "function": "ask-topic"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Lass uns mit Telefonterminen anfangen. Eine Person spielt die Praxis, die andere bittet um einen Termin und erklärt kurz den Grund.",
+          "translations": [
+            { "language": "en", "text": "Let us start with phone appointments. One person plays the doctor's office, the other asks for an appointment and briefly explains the reason." },
+            { "language": "fa", "text": "بیایید با وقت گرفتن تلفنی شروع کنیم. یک نفر نقش مطب را بازی می‌کند، نفر دیگر درخواست وقت می‌کند و دلیل را کوتاه توضیح می‌دهد." },
+            { "language": "ar", "text": "لنبدأ بمواعيد الهاتف. شخص يلعب دور العيادة، والآخر يطلب موعداً ويشرح السبب باختصار." },
+            { "language": "tr", "text": "Telefonla randevu alma ile başlayalım. Bir kişi muayenehaneyi oynar, diğeri randevu ister ve nedeni kısaca açıklar." },
+            { "language": "ru", "text": "Давай начнем с записи по телефону. Один человек играет практику, другой просит о записи и коротко объясняет причину." },
+            { "language": "ckb", "text": "با بە وەرگرتنی کاتی تەلەفۆنی دەست پێبکەین. کەسێک ڕۆڵی مطب دەبینێت، ئەوی تر داوای کات دەکات و هۆکارەکە بە کورتی ڕوون دەکاتەوە." },
+            { "language": "kmr", "text": "Ka em bi randevûyên telefonê dest pê bikin. Kesek rola muayenehaneyê dilîze, yê din randevû dixwaze û sedemê bi kurtî şirove dike." },
+            { "language": "pl", "text": "Zacznijmy od terminów telefonicznych. Jedna osoba gra przychodnię, druga prosi o termin i krótko wyjaśnia powód." },
+            { "language": "ro", "text": "Să începem cu programările telefonice. O persoană joacă rolul cabinetului, cealaltă cere o programare și explică pe scurt motivul." },
+            { "language": "sq", "text": "Le të fillojmë me termine me telefon. Një person luan rolin e ordinancës, tjetri kërkon një termin dhe shpjegon shkurt arsyen." }
+          ],
+          "function": "choose-topic-and-roles",
+          "expectedLearnerAction": "Choose a specific topic and assign simple roles."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "study-partner",
+          "baseText": "Gut. Sollen wir uns beim Feedback auf Aussprache konzentrieren oder auch auf Satzbau?",
+          "translations": [
+            { "language": "en", "text": "Good. Should we focus on pronunciation in the feedback or also on sentence structure?" },
+            { "language": "fa", "text": "خوب. در بازخورد روی تلفظ تمرکز کنیم یا روی ساختار جمله هم؟" },
+            { "language": "ar", "text": "جيد. هل نركز في التغذية الراجعة على النطق أم أيضاً على بناء الجملة؟" },
+            { "language": "tr", "text": "Tamam. Geri bildirimde telaffuza mı odaklanalım, yoksa cümle yapısına da mı?" },
+            { "language": "ru", "text": "Хорошо. В обратной связи сосредоточимся на произношении или также на построении предложений?" },
+            { "language": "ckb", "text": "باشە. لە فیدباکدا سەرنج بدەینە سەر دەربڕین یان هەروەها سەر پێکهاتەی ڕستە؟" },
+            { "language": "kmr", "text": "Baş e. Di vegerandinê de em li ser bilêvkirinê bisekinin an li ser avahiya hevokê jî?" },
+            { "language": "pl", "text": "Dobrze. Czy w informacji zwrotnej skupimy się na wymowie, czy też na budowie zdań?" },
+            { "language": "ro", "text": "Bine. La feedback ne concentrăm pe pronunție sau și pe structura propoziției?" },
+            { "language": "sq", "text": "Mirë. Në feedback të përqendrohemi te shqiptimi apo edhe te struktura e fjalisë?" }
+          ],
+          "function": "ask-feedback-focus"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Am Anfang lieber nur auf zwei Punkte: ob die Bitte höflich klingt und ob die Wortstellung verständlich ist. Mehr Feedback wäre mir zu viel.",
+          "translations": [
+            { "language": "en", "text": "At the beginning, preferably only on two points: whether the request sounds polite and whether the word order is understandable. More feedback would be too much for me." },
+            { "language": "fa", "text": "در ابتدا بهتر است فقط روی دو نکته باشد: آیا درخواست مودبانه به نظر می‌رسد و آیا ترتیب کلمات قابل فهم است. بازخورد بیشتر برایم زیاد می‌شود." },
+            { "language": "ar", "text": "في البداية أفضل التركيز على نقطتين فقط: هل يبدو الطلب مهذباً، وهل ترتيب الكلمات مفهوم. التغذية الراجعة الأكثر ستكون كثيرة عليّ." },
+            { "language": "tr", "text": "Başlangıçta sadece iki noktaya odaklanmak daha iyi: rica kibar duyuluyor mu ve kelime sırası anlaşılır mı. Daha fazla geri bildirim bana fazla olur." },
+            { "language": "ru", "text": "В начале лучше только на двух пунктах: звучит ли просьба вежливо и понятен ли порядок слов. Больше обратной связи было бы для меня слишком много." },
+            { "language": "ckb", "text": "لە سەرەتادا باشترە تەنیا لەسەر دوو خاڵ بێت: ئایا داواکارییەکە ڕێزدارانە دەبیسترێت و ئایا ڕیزبەندی وشەکان تێدەگەیەنێت. فیدباکی زیاتر بۆ من زۆر دەبێت." },
+            { "language": "kmr", "text": "Di destpêkê de baştir e tenê li ser du xal be: gelo daxwaz bi rêz tê bihîstin û gelo rêza peyvan tê fêmkirin. Vegerandina zêdetir ji bo min pir e." },
+            { "language": "pl", "text": "Na początku lepiej tylko na dwóch punktach: czy prośba brzmi uprzejmie i czy szyk zdania jest zrozumiały. Więcej informacji zwrotnej byłoby dla mnie za dużo." },
+            { "language": "ro", "text": "La început, mai bine doar pe două puncte: dacă cererea sună politicos și dacă ordinea cuvintelor este inteligibilă. Mai mult feedback ar fi prea mult pentru mine." },
+            { "language": "sq", "text": "Në fillim më mirë vetëm te dy pika: nëse kërkesa tingëllon e sjellshme dhe nëse rendi i fjalëve kuptohet. Më shumë feedback do të ishte tepër për mua." }
+          ],
+          "function": "set-feedback-focus",
+          "expectedLearnerAction": "Limit feedback to two useful points."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "study-partner",
+          "baseText": "Einverstanden. Dann treffen wir uns Dienstag und Donnerstag nach dem Kurs. Jede Person bringt fünf passende Sätze mit.",
+          "translations": [
+            { "language": "en", "text": "Agreed. Then we will meet Tuesday and Thursday after the course. Each person brings five suitable sentences." },
+            { "language": "fa", "text": "موافقم. پس سه‌شنبه و پنجشنبه بعد از کلاس همدیگر را می‌بینیم. هر نفر پنج جمله مناسب همراه می‌آورد." },
+            { "language": "ar", "text": "متفقون. إذن نلتقي الثلاثاء والخميس بعد الدورة. كل شخص يحضر خمس جمل مناسبة." },
+            { "language": "tr", "text": "Anlaştık. O zaman salı ve perşembe kurstan sonra buluşuyoruz. Her kişi beş uygun cümle getirir." },
+            { "language": "ru", "text": "Договорились. Тогда встречаемся во вторник и четверг после курса. Каждый приносит пять подходящих предложений." },
+            { "language": "ckb", "text": "ڕێکەوتین. ئەوا سێشەممە و پێنجشەممە دوای کۆرس یەک دەبینین. هەر کەسێک پێنج ڕستەی گونجاو دەهێنێت." },
+            { "language": "kmr", "text": "Li hev hat. Wê demê em sêşem û pêncşem piştî kursê dicivin. Her kes pênc hevokên guncaw tîne." },
+            { "language": "pl", "text": "Zgoda. W takim razie spotykamy się we wtorek i czwartek po kursie. Każda osoba przynosi pięć pasujących zdań." },
+            { "language": "ro", "text": "De acord. Atunci ne întâlnim marți și joi după curs. Fiecare persoană aduce cinci propoziții potrivite." },
+            { "language": "sq", "text": "Dakord. Atëherë takohemi të martën dhe të enjten pas kursit. Secili sjell pesë fjali të përshtatshme." }
+          ],
+          "function": "confirm-schedule"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Super. Dann üben wir dienstags und donnerstags 30 Minuten, starten mit Telefonterminen und geben uns Feedback zu Höflichkeit und Wortstellung.",
+          "translations": [
+            { "language": "en", "text": "Great. Then we practice on Tuesdays and Thursdays for 30 minutes, start with phone appointments, and give each other feedback on politeness and word order." },
+            { "language": "fa", "text": "عالی. پس سه‌شنبه‌ها و پنجشنبه‌ها ۳۰ دقیقه تمرین می‌کنیم، با وقت گرفتن تلفنی شروع می‌کنیم و درباره ادب و ترتیب کلمات به هم بازخورد می‌دهیم." },
+            { "language": "ar", "text": "رائع. إذن نتمرن أيام الثلاثاء والخميس لمدة 30 دقيقة، ونبدأ بمواعيد الهاتف، ونعطي بعضنا تغذية راجعة عن اللباقة وترتيب الكلمات." },
+            { "language": "tr", "text": "Harika. O zaman salı ve perşembe günleri 30 dakika çalışıyoruz, telefonla randevularla başlıyoruz ve nezaket ile kelime sırası hakkında birbirimize geri bildirim veriyoruz." },
+            { "language": "ru", "text": "Отлично. Тогда занимаемся по вторникам и четвергам 30 минут, начинаем с телефонной записи и даем друг другу обратную связь по вежливости и порядку слов." },
+            { "language": "ckb", "text": "زۆر باش. ئەوا سێشەممە و پێنجشەممە ٣٠ خولەک ڕاهێنان دەکەین، بە وەرگرتنی کاتی تەلەفۆنی دەست پێدەکەین و لەسەر ڕێز و ڕیزبەندی وشەکان فیدباکی یەکتر دەدەین." },
+            { "language": "kmr", "text": "Gelek baş. Wê demê em sêşem û pêncşem 30 deqîqe pratîk dikin, bi randevûyên telefonê dest pê dikin û li ser rêzdarî û rêza peyvan vegerandin didin hev." },
+            { "language": "pl", "text": "Świetnie. W takim razie ćwiczymy we wtorki i czwartki po 30 minut, zaczynamy od terminów telefonicznych i dajemy sobie informację zwrotną o uprzejmości i szyku zdania." },
+            { "language": "ro", "text": "Super. Atunci exersăm marțea și joia 30 de minute, începem cu programări telefonice și ne dăm feedback despre politețe și ordinea cuvintelor." },
+            { "language": "sq", "text": "Shumë mirë. Atëherë ushtrojmë të martave dhe të enjteve nga 30 minuta, fillojmë me termine telefonike dhe i japim njëri-tjetrit feedback për mirësjelljen dhe rendin e fjalëve." }
+          ],
+          "function": "summarize",
+          "expectedLearnerAction": "Summarize schedule, topic, and feedback focus."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ja, gern. Ich schlage vor, dass wir zweimal pro Woche 30 Minuten üben: zuerst ein kurzes Rollenspiel und danach fünf Minuten Feedback.",
+              "translations": [
+                { "language": "en", "text": "Yes, gladly. I suggest that we practice twice a week for 30 minutes: first a short roleplay and then five minutes of feedback." },
+                { "language": "fa", "text": "بله، با کمال میل. پیشنهاد می‌کنم هفته‌ای دو بار ۳۰ دقیقه تمرین کنیم: اول یک نقش‌آفرینی کوتاه و بعد پنج دقیقه بازخورد." },
+                { "language": "ar", "text": "نعم، بكل سرور. أقترح أن نتمرن مرتين في الأسبوع لمدة 30 دقيقة: أولاً لعب دور قصير، ثم خمس دقائق تغذية راجعة." },
+                { "language": "tr", "text": "Evet, memnuniyetle. Haftada iki kez 30 dakika çalışmayı öneriyorum: önce kısa bir rol oyunu, sonra beş dakika geri bildirim." },
+                { "language": "ru", "text": "Да, с удовольствием. Предлагаю заниматься два раза в неделю по 30 минут: сначала короткая ролевая ситуация, потом пять минут обратной связи." },
+                { "language": "ckb", "text": "بەڵێ، بە دڵخۆشی. پێشنیار دەکەم هەفتەی دوو جار ٣٠ خولەک ڕاهێنان بکەین: سەرەتا ڕۆڵێکی کورت، پاشان پێنج خولەک فیدباک." },
+                { "language": "kmr", "text": "Erê, bi kêfxweşî. Ez pêşniyar dikim ku em hefteyê du caran 30 deqîqe pratîk bikin: pêşî roleplayeke kurt û paşê pênc deqîqe vegerandin." },
+                { "language": "pl", "text": "Tak, chętnie. Proponuję, żebyśmy ćwiczyli dwa razy w tygodniu po 30 minut: najpierw krótka scenka, potem pięć minut informacji zwrotnej." },
+                { "language": "ro", "text": "Da, cu plăcere. Propun să exersăm de două ori pe săptămână câte 30 de minute: mai întâi un joc de rol scurt și apoi cinci minute de feedback." },
+                { "language": "sq", "text": "Po, me kënaqësi. Propozoj të ushtrojmë dy herë në javë nga 30 minuta: së pari një roleplay të shkurtër dhe pastaj pesë minuta feedback." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort ist konkret: Häufigkeit, Dauer, Aufgabe und Feedback sind klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer is concrete: frequency, duration, task, and feedback are clear." },
+                { "language": "fa", "text": "این پاسخ مشخص است: تعداد دفعات، مدت، تمرین و بازخورد روشن هستند." },
+                { "language": "ar", "text": "الإجابة محددة: التكرار والمدة والمهمة والتغذية الراجعة واضحة." },
+                { "language": "tr", "text": "Cevap somuttur: sıklık, süre, görev ve geri bildirim nettir." },
+                { "language": "ru", "text": "Ответ конкретный: частота, длительность, задание и обратная связь ясны." },
+                { "language": "ckb", "text": "وەڵامەکە دیاریکراوە: ژمارەی جار، ماوە، ئەرک و فیدباک ڕوونن." },
+                { "language": "kmr", "text": "Bersiv zelal e: caran, dem, peywir û vegerandin eşkere ne." },
+                { "language": "pl", "text": "Odpowiedź jest konkretna: częstotliwość, czas, zadanie i informacja zwrotna są jasne." },
+                { "language": "ro", "text": "Răspunsul este concret: frecvența, durata, sarcina și feedbackul sunt clare." },
+                { "language": "sq", "text": "Përgjigjja është konkrete: shpeshtësia, kohëzgjatja, detyra dhe feedbacku janë të qarta." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Ja, wir können irgendwann zusammen üben.",
+              "translations": [
+                { "language": "en", "text": "Yes, we can practice together sometime." },
+                { "language": "fa", "text": "بله، می‌توانیم یک وقتی با هم تمرین کنیم." },
+                { "language": "ar", "text": "نعم، يمكننا أن نتمرن معاً في وقت ما." },
+                { "language": "tr", "text": "Evet, bir ara birlikte çalışabiliriz." },
+                { "language": "ru", "text": "Да, мы можем как-нибудь позаниматься вместе." },
+                { "language": "ckb", "text": "بەڵێ، دەتوانین کاتێک پێکەوە ڕاهێنان بکەین." },
+                { "language": "kmr", "text": "Erê, em dikarin demekê bi hev re pratîk bikin." },
+                { "language": "pl", "text": "Tak, możemy kiedyś razem poćwiczyć." },
+                { "language": "ro", "text": "Da, putem exersa împreună cândva." },
+                { "language": "sq", "text": "Po, mund të ushtrojmë së bashku ndonjëherë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist freundlich, aber zu ungenau: Ohne Zeit, Dauer und Aufgabe wird der Plan wahrscheinlich verschoben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is friendly but too vague: without time, duration, and task, the plan will probably be postponed." },
+                { "language": "fa", "text": "دوستانه است، اما خیلی مبهم است: بدون زمان، مدت و تمرین، احتمالاً برنامه عقب می‌افتد." },
+                { "language": "ar", "text": "هذا ودود لكنه غير محدد بما يكفي: من دون وقت ومدة ومهمة سيؤجل الخطة غالباً." },
+                { "language": "tr", "text": "Bu dostça, ama çok belirsiz: zaman, süre ve görev olmadan plan büyük olasılıkla ertelenir." },
+                { "language": "ru", "text": "Это дружелюбно, но слишком расплывчато: без времени, длительности и задания план, вероятно, отложится." },
+                { "language": "ckb", "text": "ئەمە دۆستانەیە، بەڵام زۆر ناڕوونە: بەبێ کات، ماوە و ئەرک، پلانی ڕاهێنان بە ئەگەرەوە دوا دەخرێت." },
+                { "language": "kmr", "text": "Ev hevalane ye, lê pir nezelal e: bê dem, dirêjahî û peywir, plan bi îhtîmal paş dikeve." },
+                { "language": "pl", "text": "To jest miłe, ale zbyt niejasne: bez czasu, długości i zadania plan prawdopodobnie zostanie odłożony." },
+                { "language": "ro", "text": "Este prietenos, dar prea vag: fără timp, durată și sarcină, planul va fi probabil amânat." },
+                { "language": "sq", "text": "Kjo është miqësore, por shumë e paqartë: pa kohë, kohëzgjatje dhe detyrë, plani me gjasë do të shtyhet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Lass uns mit Telefonterminen anfangen. Eine Person spielt die Praxis, die andere bittet um einen Termin und erklärt kurz den Grund.",
+              "translations": [
+                { "language": "en", "text": "Let us start with phone appointments. One person plays the doctor's office, the other asks for an appointment and briefly explains the reason." },
+                { "language": "fa", "text": "بیایید با وقت گرفتن تلفنی شروع کنیم. یک نفر نقش مطب را بازی می‌کند، نفر دیگر درخواست وقت می‌کند و دلیل را کوتاه توضیح می‌دهد." },
+                { "language": "ar", "text": "لنبدأ بمواعيد الهاتف. شخص يلعب دور العيادة، والآخر يطلب موعداً ويشرح السبب باختصار." },
+                { "language": "tr", "text": "Telefonla randevu alma ile başlayalım. Bir kişi muayenehaneyi oynar, diğeri randevu ister ve nedeni kısaca açıklar." },
+                { "language": "ru", "text": "Давай начнем с записи по телефону. Один человек играет практику, другой просит о записи и коротко объясняет причину." },
+                { "language": "ckb", "text": "با بە وەرگرتنی کاتی تەلەفۆنی دەست پێبکەین. کەسێک ڕۆڵی مطب دەبینێت، ئەوی تر داوای کات دەکات و هۆکارەکە بە کورتی ڕوون دەکاتەوە." },
+                { "language": "kmr", "text": "Ka em bi randevûyên telefonê dest pê bikin. Kesek rola muayenehaneyê dilîze, yê din randevû dixwaze û sedemê bi kurtî şirove dike." },
+                { "language": "pl", "text": "Zacznijmy od terminów telefonicznych. Jedna osoba gra przychodnię, druga prosi o termin i krótko wyjaśnia powód." },
+                { "language": "ro", "text": "Să începem cu programările telefonice. O persoană joacă rolul cabinetului, cealaltă cere o programare și explică pe scurt motivul." },
+                { "language": "sq", "text": "Le të fillojmë me termine me telefon. Një person luan rolin e ordinancës, tjetri kërkon një termin dhe shpjegon shkurt arsyen." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort macht das Thema spielbar und verteilt die Rollen klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer makes the topic playable and assigns the roles clearly." },
+                { "language": "fa", "text": "این پاسخ موضوع را قابل تمرین می‌کند و نقش‌ها را روشن تقسیم می‌کند." },
+                { "language": "ar", "text": "تجعل الإجابة الموضوع قابلاً للتدريب وتوزع الأدوار بوضوح." },
+                { "language": "tr", "text": "Cevap konuyu oynanabilir hâle getirir ve rolleri net dağıtır." },
+                { "language": "ru", "text": "Ответ делает тему пригодной для отработки и ясно распределяет роли." },
+                { "language": "ckb", "text": "وەڵامەکە بابەتەکە دەکاتە شتێکی قابل ڕاهێنان و ڕۆڵەکان بە ڕوونی دابەش دەکات." },
+                { "language": "kmr", "text": "Bersiv mijarê dike pratîkbar û rolan bi zelalî dabeş dike." },
+                { "language": "pl", "text": "Odpowiedź czyni temat możliwym do odegrania i jasno rozdziela role." },
+                { "language": "ro", "text": "Răspunsul face tema ușor de jucat și împarte clar rolurile." },
+                { "language": "sq", "text": "Përgjigjja e bën temën të ushtrueshme dhe i ndan qartë rolet." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Wir können einfach über Gesundheit sprechen.",
+              "translations": [
+                { "language": "en", "text": "We can simply talk about health." },
+                { "language": "fa", "text": "می‌توانیم فقط درباره سلامت صحبت کنیم." },
+                { "language": "ar", "text": "يمكننا فقط أن نتحدث عن الصحة." },
+                { "language": "tr", "text": "Sadece sağlık hakkında konuşabiliriz." },
+                { "language": "ru", "text": "Мы можем просто поговорить о здоровье." },
+                { "language": "ckb", "text": "دەتوانین تەنیا دەربارەی تەندروستی قسە بکەین." },
+                { "language": "kmr", "text": "Em dikarin tenê li ser tenduristiyê biaxivin." },
+                { "language": "pl", "text": "Możemy po prostu porozmawiać o zdrowiu." },
+                { "language": "ro", "text": "Putem pur și simplu să vorbim despre sănătate." },
+                { "language": "sq", "text": "Mund të flasim thjesht për shëndetin." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das Thema passt ungefähr, aber es ist zu breit: Für B1 braucht ihr eine konkrete Situation und Rollen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The topic roughly fits, but it is too broad: for B1 you need a concrete situation and roles." },
+                { "language": "fa", "text": "موضوع تقریباً مناسب است، اما خیلی گسترده است: برای B1 به موقعیت و نقش‌های مشخص نیاز دارید." },
+                { "language": "ar", "text": "الموضوع مناسب تقريباً، لكنه واسع جداً: في B1 تحتاجان إلى موقف وأدوار محددة." },
+                { "language": "tr", "text": "Konu yaklaşık olarak uygun, ama çok geniş: B1 için somut bir durum ve roller gerekir." },
+                { "language": "ru", "text": "Тема в целом подходит, но слишком широкая: для B1 нужны конкретная ситуация и роли." },
+                { "language": "ckb", "text": "بابەتەکە تا ڕادەیەک گونجاوە، بەڵام زۆر فراوانە: بۆ B1 پێویستتان بە دۆخ و ڕۆڵی دیاریکراوە." },
+                { "language": "kmr", "text": "Mijar hinekê digunce, lê pir fireh e: ji bo B1 rewş û rolên zelal pêwîst in." },
+                { "language": "pl", "text": "Temat mniej więcej pasuje, ale jest zbyt szeroki: na B1 potrzebujecie konkretnej sytuacji i ról." },
+                { "language": "ro", "text": "Tema se potrivește aproximativ, dar este prea largă: pentru B1 aveți nevoie de o situație și roluri concrete." },
+                { "language": "sq", "text": "Tema përafërsisht përshtatet, por është shumë e gjerë: për B1 ju duhet një situatë konkrete dhe role." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Super. Dann üben wir dienstags und donnerstags 30 Minuten, starten mit Telefonterminen und geben uns Feedback zu Höflichkeit und Wortstellung.",
+              "translations": [
+                { "language": "en", "text": "Great. Then we practice on Tuesdays and Thursdays for 30 minutes, start with phone appointments, and give each other feedback on politeness and word order." },
+                { "language": "fa", "text": "عالی. پس سه‌شنبه‌ها و پنجشنبه‌ها ۳۰ دقیقه تمرین می‌کنیم، با وقت گرفتن تلفنی شروع می‌کنیم و درباره ادب و ترتیب کلمات به هم بازخورد می‌دهیم." },
+                { "language": "ar", "text": "رائع. إذن نتمرن أيام الثلاثاء والخميس لمدة 30 دقيقة، ونبدأ بمواعيد الهاتف، ونعطي بعضنا تغذية راجعة عن اللباقة وترتيب الكلمات." },
+                { "language": "tr", "text": "Harika. O zaman salı ve perşembe günleri 30 dakika çalışıyoruz, telefonla randevularla başlıyoruz ve nezaket ile kelime sırası hakkında birbirimize geri bildirim veriyoruz." },
+                { "language": "ru", "text": "Отлично. Тогда занимаемся по вторникам и четвергам 30 минут, начинаем с телефонной записи и даем друг другу обратную связь по вежливости и порядку слов." },
+                { "language": "ckb", "text": "زۆر باش. ئەوا سێشەممە و پێنجشەممە ٣٠ خولەک ڕاهێنان دەکەین، بە وەرگرتنی کاتی تەلەفۆنی دەست پێدەکەین و لەسەر ڕێز و ڕیزبەندی وشەکان فیدباکی یەکتر دەدەین." },
+                { "language": "kmr", "text": "Gelek baş. Wê demê em sêşem û pêncşem 30 deqîqe pratîk dikin, bi randevûyên telefonê dest pê dikin û li ser rêzdarî û rêza peyvan vegerandin didin hev." },
+                { "language": "pl", "text": "Świetnie. W takim razie ćwiczymy we wtorki i czwartki po 30 minut, zaczynamy od terminów telefonicznych i dajemy sobie informację zwrotną o uprzejmości i szyku zdania." },
+                { "language": "ro", "text": "Super. Atunci exersăm marțea și joia 30 de minute, începem cu programări telefonice și ne dăm feedback despre politețe și ordinea cuvintelor." },
+                { "language": "sq", "text": "Shumë mirë. Atëherë ushtrojmë të martave dhe të enjteve nga 30 minuta, fillojmë me termine telefonike dhe i japim njëri-tjetrit feedback për mirësjelljen dhe rendin e fjalëve." }
+              ],
+              "isCorrect": true,
+              "feedback": "Die Antwort bestätigt alle wichtigen Teile des Plans.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "The answer confirms all important parts of the plan." },
+                { "language": "fa", "text": "این پاسخ همه بخش‌های مهم برنامه را تأیید می‌کند." },
+                { "language": "ar", "text": "تؤكد الإجابة كل الأجزاء المهمة من الخطة." },
+                { "language": "tr", "text": "Cevap planın tüm önemli parçalarını onaylar." },
+                { "language": "ru", "text": "Ответ подтверждает все важные части плана." },
+                { "language": "ckb", "text": "وەڵامەکە هەموو بەشە گرنگەکانی پلانەکە پشتڕاست دەکاتەوە." },
+                { "language": "kmr", "text": "Bersiv hemû beşên girîng ên planê piştrast dike." },
+                { "language": "pl", "text": "Odpowiedź potwierdza wszystkie ważne części planu." },
+                { "language": "ro", "text": "Răspunsul confirmă toate părțile importante ale planului." },
+                { "language": "sq", "text": "Përgjigjja konfirmon të gjitha pjesët e rëndësishme të planit." }
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Super, dann machen wir das so.",
+              "translations": [
+                { "language": "en", "text": "Great, then we will do it like that." },
+                { "language": "fa", "text": "عالی، پس همین کار را می‌کنیم." },
+                { "language": "ar", "text": "رائع، إذن نفعل ذلك هكذا." },
+                { "language": "tr", "text": "Harika, o zaman böyle yaparız." },
+                { "language": "ru", "text": "Отлично, тогда так и сделаем." },
+                { "language": "ckb", "text": "زۆر باش، ئەوا بەو شێوەیە دەکەین." },
+                { "language": "kmr", "text": "Gelek baş, wê demê em wisa dikin." },
+                { "language": "pl", "text": "Świetnie, więc tak zrobimy." },
+                { "language": "ro", "text": "Super, atunci facem așa." },
+                { "language": "sq", "text": "Shumë mirë, atëherë e bëjmë kështu." }
+              ],
+              "isCorrect": false,
+              "feedback": "Das ist nett, aber für eine Planungsaufgabe zu kurz: Zeit, Thema und Feedback-Fokus werden nicht wiederholt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "This is nice but too short for a planning task: time, topic, and feedback focus are not repeated." },
+                { "language": "fa", "text": "خوب است، اما برای یک تمرین برنامه‌ریزی خیلی کوتاه است: زمان، موضوع و تمرکز بازخورد تکرار نمی‌شوند." },
+                { "language": "ar", "text": "هذا لطيف، لكنه قصير جداً لمهمة تخطيط: لا يتم تكرار الوقت والموضوع وتركيز التغذية الراجعة." },
+                { "language": "tr", "text": "Bu güzel, ama bir planlama görevi için çok kısa: zaman, konu ve geri bildirim odağı tekrarlanmıyor." },
+                { "language": "ru", "text": "Это хорошо, но слишком коротко для задания на планирование: время, тема и фокус обратной связи не повторяются." },
+                { "language": "ckb", "text": "ئەمە باشە، بەڵام بۆ ئەرکی پلانکردن زۆر کورتە: کات، بابەت و سەرنجی فیدباک دووبارە ناکرێنەوە." },
+                { "language": "kmr", "text": "Ev xweş e, lê ji bo peywira plankirinê pir kurt e: dem, mijar û bala vegerandinê nayên dubarekirin." },
+                { "language": "pl", "text": "To miłe, ale zbyt krótkie jak na zadanie planowania: czas, temat i fokus informacji zwrotnej nie są powtórzone." },
+                { "language": "ro", "text": "Este drăguț, dar prea scurt pentru o sarcină de planificare: timpul, tema și focusul feedbackului nu sunt repetate." },
+                { "language": "sq", "text": "Kjo është e mirë, por shumë e shkurtër për një detyrë planifikimi: koha, tema dhe fokusi i feedbackut nuk përsëriten." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "summary",
+          "text": "Ein Lernplan funktioniert besser, wenn Thema, Zeit, Rollen und Feedback-Fokus konkret vereinbart werden.",
+          "translations": [
+            { "language": "en", "text": "A study plan works better when topic, time, roles, and feedback focus are agreed concretely." },
+            { "language": "fa", "text": "برنامه یادگیری وقتی بهتر کار می‌کند که موضوع، زمان، نقش‌ها و تمرکز بازخورد مشخص توافق شوند." },
+            { "language": "ar", "text": "تعمل خطة التعلّم بشكل أفضل عندما يتم الاتفاق بوضوح على الموضوع والوقت والأدوار وتركيز التغذية الراجعة." },
+            { "language": "tr", "text": "Bir öğrenme planı; konu, zaman, roller ve geri bildirim odağı somut biçimde belirlendiğinde daha iyi işler." },
+            { "language": "ru", "text": "Учебный план работает лучше, когда тема, время, роли и фокус обратной связи согласованы конкретно." },
+            { "language": "ckb", "text": "پلانی فێربوون باشتر کار دەکات کاتێک بابەت، کات، ڕۆڵەکان و سەرنجی فیدباک بە دیاریکراوی ڕێکدەخرێن." },
+            { "language": "kmr", "text": "Planeke fêrbûnê baştir dixebite gava mijar, dem, rol û bala vegerandinê bi zelalî li hev bên kirin." },
+            { "language": "pl", "text": "Plan nauki działa lepiej, gdy temat, czas, role i fokus informacji zwrotnej są ustalone konkretnie." },
+            { "language": "ro", "text": "Un plan de învățare funcționează mai bine când tema, timpul, rolurile și focusul feedbackului sunt stabilite concret." },
+            { "language": "sq", "text": "Një plan mësimi funksionon më mirë kur tema, koha, rolet dhe fokusi i feedbackut bien dakord konkretisht." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}

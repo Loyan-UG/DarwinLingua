@@ -1,0 +1,873 @@
+{
+  "packageId": "roleplays-c1-core-21-v1",
+  "packageVersion": "1.0",
+  "packageName": "Roleplay-Szenarien C1 Core 21 v1",
+  "source": "Darwin Lingua RoleplayScenario C1 Core 21",
+  "sourceLanguage": "de",
+  "culture": "de-DE",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "notes": "Small reviewed C1 standalone roleplay package. German-first source content with learner-language projections. No AI/free-text evaluation.",
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "c1-einen-einwand-im-kolloquium-aufgreifen",
+      "linkedDialogueSlug": null,
+      "title": "Einen Einwand im Kolloquium aufgreifen",
+      "titleTranslations": [
+        { "language": "en", "text": "Responding to an objection in a colloquium" },
+        { "language": "fa", "text": "پاسخ دادن به یک ایراد در جلسه پژوهشی" },
+        { "language": "ar", "text": "التعامل مع اعتراض في ندوة بحثية" },
+        { "language": "tr", "text": "Kolokyumda bir itiraza yanıt vermek" },
+        { "language": "ru", "text": "Ответ на возражение на коллоквиуме" },
+        { "language": "ckb", "text": "وەڵامدانەوە بە ڕەخنەیەک لە کۆڵۆکیۆمدا" },
+        { "language": "kmr", "text": "Bersivdana îtîrazekê di kolokyumê de" },
+        { "language": "pl", "text": "Odniesienie się do zarzutu na kolokwium" },
+        { "language": "ro", "text": "Preluarea unei obiecții într-un colocviu" },
+        { "language": "sq", "text": "Trajtimi i një kundërshtimi në kolokium" }
+      ],
+      "description": "In einem C1-Kolloquium reagieren Sie auf einen kritischen Einwand, nehmen einen berechtigten Punkt auf, begrenzen Ihre These und formulieren das Argument präziser.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "In an advanced colloquium, you respond to a critical objection, take up a valid point, limit your thesis, and formulate the argument more precisely." },
+        { "language": "fa", "text": "در یک جلسه پژوهشی پیشرفته، به یک ایراد انتقادی پاسخ می‌دهید، نکته درست آن را می‌پذیرید، تز خود را محدود می‌کنید و استدلال را دقیق‌تر بیان می‌کنید." },
+        { "language": "ar", "text": "في ندوة بحثية متقدمة، ترد على اعتراض نقدي، وتتبنى نقطة وجيهة، وتحدد أطروحتك، وتصوغ الحجة بدقة أكبر." },
+        { "language": "tr", "text": "İleri düzey bir kolokyumda eleştirel bir itiraza yanıt verir, haklı bir noktayı alır, tezinizi sınırlar ve argümanı daha kesin formüle edersiniz." },
+        { "language": "ru", "text": "На продвинутом коллоквиуме вы отвечаете на критическое возражение, принимаете обоснованный пункт, ограничиваете свой тезис и точнее формулируете аргумент." },
+        { "language": "ckb", "text": "لە کۆڵۆکیۆمی پێشکەوتوودا وەڵامی ڕەخنەیەکی گرنگ دەدەیتەوە، خاڵێکی ڕەوا وەردەگریت، تێزەکەت سنووردار دەکەیت و بەڵگەکە وردتر دادەڕێژیت." },
+        { "language": "kmr", "text": "Di kolokyumeke asta pêşketî de hûn bersiva îtîrazeke rexneyî didin, xalekî rast werdigirin, teza xwe sînordar dikin û argumanê zelaltir formule dikin." },
+        { "language": "pl", "text": "Na zaawansowanym kolokwium odpowiadasz na krytyczny zarzut, podejmujesz uzasadniony punkt, ograniczasz tezę i precyzyjniej formułujesz argument." },
+        { "language": "ro", "text": "Într-un colocviu avansat, răspundeți la o obiecție critică, preluați un punct justificat, vă limitați teza și formulați argumentul mai precis." },
+        { "language": "sq", "text": "Në një kolokium të avancuar, i përgjigjeni një kundërshtimi kritik, merrni parasysh një pikë të vlefshme, kufizoni tezën dhe e formuloni argumentin më saktë." }
+      ],
+      "learnerGoal": "Einen Einwand akademisch aufnehmen: berechtigte Kritik anerkennen, den eigenen Anspruch begrenzen und die These ohne defensive Reaktion weiterentwickeln.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "Handle an academic objection: acknowledge valid criticism, limit your own claim, and develop the thesis further without reacting defensively." },
+        { "language": "fa", "text": "یک ایراد آکادمیک را مدیریت کنید: نقد درست را بپذیرید، سطح ادعای خود را محدود کنید و تز را بدون واکنش دفاعی پیش ببرید." },
+        { "language": "ar", "text": "تعامل مع اعتراض أكاديمي: اعترف بالنقد الوجيه، وحدد مستوى ادعائك، وطور الأطروحة من دون رد دفاعي." },
+        { "language": "tr", "text": "Akademik bir itirazı yönetin: haklı eleştiriyi kabul edin, kendi iddianızı sınırlandırın ve savunmaya geçmeden tezi geliştirin." },
+        { "language": "ru", "text": "Обработать академическое возражение: признать обоснованную критику, ограничить собственное притязание и развить тезис без защитной реакции." },
+        { "language": "ckb", "text": "ڕەخنەیەکی ئەکادیمی بەڕێوە ببە: ڕەخنەی ڕەوا قبووڵ بکە، ئاستی بانگەشەی خۆت سنووردار بکە و تێزەکە بەبێ وەڵامی بەرگریی پێش بخە." },
+        { "language": "kmr", "text": "Îtîrazeke akademîk birêve bibin: rexneya rast qebûl bikin, asta îdiaya xwe sînordar bikin û tezê bê bersiveke berevanî pêşve bibin." },
+        { "language": "pl", "text": "Opracować zarzut akademicki: uznać zasadną krytykę, ograniczyć własne roszczenie i rozwinąć tezę bez reakcji obronnej." },
+        { "language": "ro", "text": "Gestionați o obiecție academică: recunoașteți critica justificată, limitați propria pretenție și dezvoltați teza fără reacție defensivă." },
+        { "language": "sq", "text": "Trajtoni një kundërshtim akademik: pranoni kritikën e vlefshme, kufizoni pretendimin tuaj dhe zhvilloni tezën pa reagim mbrojtës." }
+      ],
+      "cefrLevel": "C1",
+      "category": "education",
+      "topics": ["education-and-training", "meetings-and-presentations"],
+      "examProfiles": ["testdaf-b2-c1", "c1-hochschule"],
+      "skillFocus": ["speaking", "roleplay", "discussion"],
+      "taskType": "agree-disagree",
+      "interactionMode": "classroom",
+      "register": "formal",
+      "estimatedPracticeMinutes": 15,
+      "isPublished": true,
+      "sortOrder": 21,
+      "roles": [
+        {
+          "roleKey": "teacher",
+          "displayName": "Seminarleitung",
+          "translations": [
+            { "language": "en", "text": "Seminar instructor" },
+            { "language": "fa", "text": "مدرس سمینار" },
+            { "language": "ar", "text": "مدرس الندوة" },
+            { "language": "tr", "text": "Seminer yürütücüsü" },
+            { "language": "ru", "text": "Ведущий семинара" },
+            { "language": "ckb", "text": "مامۆستای سیمینار" },
+            { "language": "kmr", "text": "Mamosteyê semînerê" },
+            { "language": "pl", "text": "Prowadzący seminarium" },
+            { "language": "ro", "text": "Coordonatorul seminarului" },
+            { "language": "sq", "text": "Drejtuesi i seminarit" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Referent/in",
+          "translations": [
+            { "language": "en", "text": "Presenter" },
+            { "language": "fa", "text": "ارائه‌دهنده" },
+            { "language": "ar", "text": "مقدم العرض" },
+            { "language": "tr", "text": "Sunum yapan kişi" },
+            { "language": "ru", "text": "Докладчик" },
+            { "language": "ckb", "text": "پێشکەشکار" },
+            { "language": "kmr", "text": "Pêşkêşkar" },
+            { "language": "pl", "text": "Prelegent" },
+            { "language": "ro", "text": "Prezentatorul" },
+            { "language": "sq", "text": "Prezantuesi" }
+          ]
+        },
+        {
+          "roleKey": "colleague",
+          "displayName": "Mitdiskutant/in",
+          "translations": [
+            { "language": "en", "text": "Discussion participant" },
+            { "language": "fa", "text": "شرکت‌کننده در بحث" },
+            { "language": "ar", "text": "مشارك في النقاش" },
+            { "language": "tr", "text": "Tartışma katılımcısı" },
+            { "language": "ru", "text": "Участник обсуждения" },
+            { "language": "ckb", "text": "بەشداربووی گفتوگۆ" },
+            { "language": "kmr", "text": "Beşdarê nîqaşê" },
+            { "language": "pl", "text": "Uczestnik dyskusji" },
+            { "language": "ro", "text": "Participantul la discuție" },
+            { "language": "sq", "text": "Pjesëmarrësi në diskutim" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "teacher",
+          "baseText": "Im Kolloquium wurde gerade eingewandt, Ihre These zu hybriden Seminaren unterschätze, dass Online-Teilnehmende oft weniger sichtbar sind. Wie greifen Sie diesen Einwand auf?",
+          "translations": [
+            { "language": "en", "text": "In the colloquium, someone just objected that your thesis on hybrid seminars underestimates how online participants are often less visible. How do you take up this objection?" },
+            { "language": "fa", "text": "در جلسه پژوهشی همین الان ایراد گرفته شد که تز شما درباره سمینارهای ترکیبی کم‌رنگ‌تر دیده شدن شرکت‌کنندگان آنلاین را دست‌کم می‌گیرد. این ایراد را چگونه می‌پذیرید و ادامه می‌دهید؟" },
+            { "language": "ar", "text": "في الندوة البحثية طُرح للتو اعتراض بأن أطروحتك حول الندوات الهجينة تقلل من شأن أن المشاركين عبر الإنترنت يكونون غالباً أقل ظهوراً. كيف تتعامل مع هذا الاعتراض؟" },
+            { "language": "tr", "text": "Kolokyumda az önce hibrit seminerlerle ilgili tezinizin çevrimiçi katılımcıların çoğu zaman daha az görünür olmasını hafife aldığı itirazı geldi. Bu itirazı nasıl ele alırsınız?" },
+            { "language": "ru", "text": "На коллоквиуме только что возразили, что ваш тезис о гибридных семинарах недооценивает то, что онлайн-участники часто менее заметны. Как вы примете это возражение?" },
+            { "language": "ckb", "text": "لە کۆڵۆکیۆمدا ئێستا ڕەخنە گیرا کە تێزی تۆ دەربارەی سیمینارە هایبرێدەکان کەمتر دیاربوونی بەشداربووانی ئۆنلاین کەم دەگرێتەوە. چۆن ئەم ڕەخنەیە وەردەگریت؟" },
+            { "language": "kmr", "text": "Di kolokyumê de niha hat gotin ku teza we li ser semînerên hîbrîd wê kêmtir xuya bûna beşdarên online biçûk dibîne. Hûn vê îtîrazê çawa werdigirin?" },
+            { "language": "pl", "text": "Na kolokwium właśnie zgłoszono zarzut, że Pana teza o seminariach hybrydowych nie docenia faktu, że uczestnicy online są często mniej widoczni. Jak odniesie się Pan do tego zarzutu?" },
+            { "language": "ro", "text": "În colocviu s-a obiectat tocmai că teza dumneavoastră despre seminarele hibride subestimează faptul că participanții online sunt adesea mai puțin vizibili. Cum preluați această obiecție?" },
+            { "language": "sq", "text": "Në kolokium sapo u ngrit kundërshtimi se teza juaj për seminaret hibride e nënvlerëson faktin që pjesëmarrësit online shpesh janë më pak të dukshëm. Si e trajtoni këtë kundërshtim?" }
+          ],
+          "function": "objection-prompt",
+          "toneNote": "prüfend",
+          "expectedLearnerAction": "Einwand anerkennen und Anspruch begrenzen"
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Der Einwand ist berechtigt, wenn man hybride Seminare als automatisch inklusiver versteht. Meine These ist enger: Hybride Formate können Barrieren senken, wenn Sichtbarkeit, Moderation und technische Unterstützung ausdrücklich mitgedacht werden.",
+          "translations": [
+            { "language": "en", "text": "The objection is valid if hybrid seminars are understood as automatically more inclusive. My thesis is narrower: hybrid formats can reduce barriers if visibility, moderation, and technical support are explicitly planned." },
+            { "language": "fa", "text": "این ایراد وارد است اگر سمینارهای ترکیبی را خودبه‌خود فراگیرتر بدانیم. تز من محدودتر است: قالب‌های ترکیبی می‌توانند موانع را کاهش دهند، اگر دیده‌شدن، مدیریت بحث و پشتیبانی فنی صریحاً در طراحی لحاظ شوند." },
+            { "language": "ar", "text": "الاعتراض وجيه إذا فُهمت الندوات الهجينة على أنها أكثر شمولاً تلقائياً. أطروحتي أضيق: يمكن للصيغ الهجينة أن تخفض الحواجز إذا أُخذت الرؤية والإدارة والدعم التقني في الحسبان صراحة." },
+            { "language": "tr", "text": "Hibrit seminerler otomatik olarak daha kapsayıcı kabul edilirse itiraz haklıdır. Benim tezim daha dar: görünürlük, moderasyon ve teknik destek açıkça planlanırsa hibrit formatlar engelleri azaltabilir." },
+            { "language": "ru", "text": "Возражение обосновано, если понимать гибридные семинары как автоматически более инклюзивные. Мой тезис уже: гибридные форматы могут снижать барьеры, если явно продуманы видимость, модерация и техническая поддержка." },
+            { "language": "ckb", "text": "ئەم ڕەخنەیە ڕەوایە ئەگەر سیمینارە هایبرێدەکان وەک خۆکارانە فراوانتر وەربگیرێن. تێزی من سنووردارترە: فۆرماتە هایبرێدەکان دەتوانن بەربەست کەم بکەن، ئەگەر دیاربون، بەڕێوەبردنی گفتوگۆ و پشتگیری تەکنیکی بە ڕوونی پێشبینی بکرێن." },
+            { "language": "kmr", "text": "Ev îtîraz rast e heke semînerên hîbrîd wek xweber inklûsîvtir werin fêmkirin. Teza min tengtir e: formatên hîbrîd dikarin astengan kêm bikin, heke xuya bûn, moderasyon û piştgiriya teknîkî eşkere bên plan kirin." },
+            { "language": "pl", "text": "Zarzut jest zasadny, jeśli seminaria hybrydowe rozumie się jako automatycznie bardziej włączające. Moja teza jest węższa: formaty hybrydowe mogą obniżać bariery, jeśli wyraźnie uwzględnia się widoczność, moderację i wsparcie techniczne." },
+            { "language": "ro", "text": "Obiecția este justificată dacă seminarele hibride sunt înțelese ca automat mai incluzive. Teza mea este mai restrânsă: formatele hibride pot reduce barierele dacă vizibilitatea, moderarea și sprijinul tehnic sunt gândite explicit." },
+            { "language": "sq", "text": "Kundërshtimi është i vlefshëm nëse seminaret hibride kuptohen si automatikisht më përfshirëse. Teza ime është më e ngushtë: formatet hibride mund të ulin pengesat nëse dukshmëria, moderimi dhe mbështetja teknike planifikohen qartë." }
+          ],
+          "function": "objection-acceptance",
+          "toneNote": "sachlich, nicht defensiv",
+          "expectedLearnerAction": "Berechtigten Punkt anerkennen und These präzisieren"
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "colleague",
+          "baseText": "In Ihren Daten sprechen die Online-Teilnehmenden aber tatsächlich seltener. Widerspricht das nicht Ihrer Aussage, dass hybride Formate Beteiligung erleichtern?",
+          "translations": [
+            { "language": "en", "text": "But in your data, online participants actually speak less often. Doesn't that contradict your statement that hybrid formats make participation easier?" },
+            { "language": "fa", "text": "اما در داده‌های شما شرکت‌کنندگان آنلاین واقعاً کمتر صحبت می‌کنند. آیا این با گفته شما که قالب‌های ترکیبی مشارکت را آسان‌تر می‌کنند تناقض ندارد؟" },
+            { "language": "ar", "text": "لكن في بياناتك يتحدث المشاركون عبر الإنترنت فعلاً بوتيرة أقل. ألا يتعارض ذلك مع قولك إن الصيغ الهجينة تسهل المشاركة؟" },
+            { "language": "tr", "text": "Ama verilerinizde çevrimiçi katılımcılar gerçekten daha az konuşuyor. Bu, hibrit formatların katılımı kolaylaştırdığı iddianızla çelişmiyor mu?" },
+            { "language": "ru", "text": "Но в ваших данных онлайн-участники действительно говорят реже. Разве это не противоречит вашему утверждению, что гибридные форматы облегчают участие?" },
+            { "language": "ckb", "text": "بەڵام لە داتاکانتدا بەشداربووانی ئۆنلاین بەڕاستی کەمتر قسە دەکەن. ئایا ئەمە دژ بە وتەکەت نییە کە فۆرماتە هایبرێدەکان بەشداری ئاسانتر دەکەن؟" },
+            { "language": "kmr", "text": "Lê di daneyên we de beşdarên online bi rastî kêmtir diaxivin. Ma ev bi gotina we ya ku formatên hîbrîd beşdariyê hêsantir dikin nakok nîne?" },
+            { "language": "pl", "text": "Jednak w Pana danych uczestnicy online rzeczywiście zabierają głos rzadziej. Czy to nie przeczy twierdzeniu, że formaty hybrydowe ułatwiają uczestnictwo?" },
+            { "language": "ro", "text": "Dar în datele dumneavoastră participanții online vorbesc într-adevăr mai rar. Nu contrazice asta afirmația că formatele hibride facilitează participarea?" },
+            { "language": "sq", "text": "Por në të dhënat tuaja pjesëmarrësit online flasin vërtet më rrallë. A nuk bie kjo ndesh me pohimin tuaj se formatet hibride e lehtësojnë pjesëmarrjen?" }
+          ],
+          "function": "data-objection",
+          "toneNote": "kritisch, datenbezogen",
+          "expectedLearnerAction": "Unterschiedliche Beteiligungsformen trennen"
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Das widerspricht der These nur, wenn Beteiligung ausschließlich als mündlicher Redebeitrag verstanden wird. Ich muss genauer unterscheiden zwischen Zugang zum Seminar, sichtbarer Redezeit und schriftlichen Beteiligungsformen wie Chat oder geteilten Notizen.",
+          "translations": [
+            { "language": "en", "text": "It contradicts the thesis only if participation is understood solely as spoken contribution. I need to distinguish more precisely between access to the seminar, visible speaking time, and written forms of participation such as chat or shared notes." },
+            { "language": "fa", "text": "این فقط زمانی با تز تناقض دارد که مشارکت را فقط به معنای صحبت شفاهی بگیریم. باید دقیق‌تر میان دسترسی به سمینار، زمان گفتار قابل مشاهده و شکل‌های نوشتاری مشارکت مثل چت یا یادداشت‌های مشترک فرق بگذارم." },
+            { "language": "ar", "text": "يتعارض ذلك مع الأطروحة فقط إذا فُهمت المشاركة على أنها مساهمة شفوية فحسب. يجب أن أميز بدقة أكبر بين الوصول إلى الندوة، ووقت الكلام المرئي، وأشكال المشاركة الكتابية مثل الدردشة أو الملاحظات المشتركة." },
+            { "language": "tr", "text": "Bu, ancak katılım yalnızca sözlü katkı olarak anlaşılırsa tezle çelişir. Seminere erişim, görünür konuşma süresi ve sohbet ya da ortak notlar gibi yazılı katılım biçimlerini daha kesin ayırmalıyım." },
+            { "language": "ru", "text": "Это противоречит тезису только в том случае, если участие понимать исключительно как устное выступление. Мне нужно точнее различать доступ к семинару, видимое время речи и письменные формы участия, такие как чат или общие заметки." },
+            { "language": "ckb", "text": "ئەمە تەنها کاتێک دژ بە تێزەکەیە کە بەشداری تەنها وەک قسەکردنی دەنگی وەربگیرێت. دەبێت وردتر جیا بکەمەوە نێوان دەستگەیشتن بە سیمینار، کاتی قسەکردنی دیار و شێوە نووسراوەکانی بەشداری وەک چات یان تێبینی هاوبەش." },
+            { "language": "kmr", "text": "Ev tenê wê demê bi tezê nakok e ku beşdarî tenê wek axaftina devkî were fêmkirin. Divê ez baştir cihêketinê, dema axaftina xuya û formên nivîskî yên beşdariyê wek chat an notên hevpar ji hev veqetînim." },
+            { "language": "pl", "text": "To przeczy tezie tylko wtedy, gdy uczestnictwo rozumiemy wyłącznie jako wypowiedź ustną. Muszę dokładniej rozróżnić dostęp do seminarium, widoczny czas mówienia oraz pisemne formy uczestnictwa, takie jak czat czy wspólne notatki." },
+            { "language": "ro", "text": "Contrazice teza doar dacă participarea este înțeleasă exclusiv ca intervenție orală. Trebuie să disting mai precis între accesul la seminar, timpul de vorbire vizibil și formele scrise de participare, precum chatul sau notițele partajate." },
+            { "language": "sq", "text": "Kjo e kundërshton tezën vetëm nëse pjesëmarrja kuptohet vetëm si kontribut gojor. Duhet të dalloj më saktë mes qasjes në seminar, kohës së dukshme të të folurit dhe formave të shkruara të pjesëmarrjes si biseda ose shënimet e përbashkëta." }
+          ],
+          "function": "concept-differentiation",
+          "toneNote": "differenzierend",
+          "expectedLearnerAction": "Begriff differenzieren"
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "teacher",
+          "baseText": "Wie müsste Ihre zentrale Aussage dann lauten, damit sie den Einwand aufnimmt und trotzdem eine klare Position behält?",
+          "translations": [
+            { "language": "en", "text": "How would your central statement need to be phrased so that it takes up the objection while still maintaining a clear position?" },
+            { "language": "fa", "text": "پس گزاره مرکزی شما باید چگونه بیان شود تا هم ایراد را بپذیرد و هم همچنان موضع روشن خود را حفظ کند؟" },
+            { "language": "ar", "text": "كيف ينبغي أن تُصاغ عبارتك المركزية بحيث تأخذ الاعتراض في الحسبان ومع ذلك تحتفظ بموقف واضح؟" },
+            { "language": "tr", "text": "O hâlde temel ifadeniz, itirazı dikkate alıp yine de açık bir pozisyon koruyacak şekilde nasıl olmalı?" },
+            { "language": "ru", "text": "Как тогда должна звучать ваша центральная мысль, чтобы она учитывала возражение и при этом сохраняла ясную позицию?" },
+            { "language": "ckb", "text": "ئەوا وتەی سەرەکیی تۆ دەبێت چۆن بێت کە ڕەخنەکە وەربگرێت و هێشتا هەڵوێستی ڕوون بهێڵێتەوە؟" },
+            { "language": "kmr", "text": "Wê demê gotina we ya navendî divê çawa be ku îtîrazê bigire û hîn jî helwesteke zelal biparêze?" },
+            { "language": "pl", "text": "Jak więc powinna brzmieć Pana główna teza, aby uwzględniała zarzut, a jednocześnie zachowała jasne stanowisko?" },
+            { "language": "ro", "text": "Cum ar trebui formulată afirmația centrală astfel încât să preia obiecția și totuși să păstreze o poziție clară?" },
+            { "language": "sq", "text": "Si duhet të formulohet pohimi juaj qendror që ta marrë parasysh kundërshtimin dhe njëkohësisht të ruajë një qëndrim të qartë?" }
+          ],
+          "function": "reformulation-prompt",
+          "toneNote": "methodisch",
+          "expectedLearnerAction": "These neu formulieren"
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Ich würde formulieren: Nicht das hybride Format an sich demokratisiert Beteiligung, sondern erst eine didaktische Gestaltung, die parallele Beteiligungskanäle sichtbar macht und aktiv moderiert.",
+          "translations": [
+            { "language": "en", "text": "I would phrase it this way: It is not the hybrid format itself that democratizes participation, but rather didactic design that makes parallel channels of participation visible and actively moderates them." },
+            { "language": "fa", "text": "این‌طور بیان می‌کنم: خود قالب ترکیبی مشارکت را دموکراتیک‌تر نمی‌کند؛ بلکه طراحی آموزشی‌ای که کانال‌های موازی مشارکت را قابل مشاهده کند و فعالانه مدیریت کند چنین نقشی دارد." },
+            { "language": "ar", "text": "سأصوغها هكذا: ليس الشكل الهجين بحد ذاته ما يجعل المشاركة أكثر ديمقراطية، بل التصميم التعليمي الذي يجعل قنوات المشاركة المتوازية مرئية ويديرها بنشاط." },
+            { "language": "tr", "text": "Şöyle formüle ederim: Katılımı demokratikleştiren hibrit formatın kendisi değil, paralel katılım kanallarını görünür kılan ve aktif biçimde yöneten didaktik tasarımdır." },
+            { "language": "ru", "text": "Я бы сформулировал так: не сам гибридный формат демократизирует участие, а дидактическое оформление, которое делает параллельные каналы участия видимыми и активно модерирует их." },
+            { "language": "ckb", "text": "وای دادەڕێژم: خۆی فۆرماتی هایبرێد بەشداری دیموکراتی ناکات، بەڵکو داڕشتنی فێرکارییە کە کاناڵە هاوتاکانی بەشداری دیار دەکات و بە چاالکی بەڕێوەیان دەبات." },
+            { "language": "kmr", "text": "Ez wisa formule dikim: Ne forma hîbrîd bixwe beşdariyê demokratîk dike, lê sêwirana didaktîk ku kanalên beşdariyê yên hevdem xuya dike û bi aktîvî moderasyon dike." },
+            { "language": "pl", "text": "Sformułowałbym to tak: to nie sam format hybrydowy demokratyzuje uczestnictwo, lecz projekt dydaktyczny, który uwidacznia równoległe kanały uczestnictwa i aktywnie je moderuje." },
+            { "language": "ro", "text": "Aș formula astfel: nu formatul hibrid în sine democratizează participarea, ci o proiectare didactică ce face vizibile canalele paralele de participare și le moderează activ." },
+            { "language": "sq", "text": "Do ta formuloja kështu: nuk është vetë formati hibrid që e demokratizon pjesëmarrjen, por një dizajn didaktik që i bën të dukshme kanalet paralele të pjesëmarrjes dhe i moderon aktivisht." }
+          ],
+          "function": "thesis-reformulation",
+          "toneNote": "präzise",
+          "expectedLearnerAction": "Argument begrenzt neu formulieren"
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "colleague",
+          "baseText": "Schwächen Sie Ihre These damit nicht zu stark ab? Dann bleibt doch nur übrig, dass gute Moderation wichtig ist.",
+          "translations": [
+            { "language": "en", "text": "Aren't you weakening your thesis too much? Then all that remains is that good moderation is important." },
+            { "language": "fa", "text": "آیا با این کار تز خود را بیش از حد ضعیف نمی‌کنید؟ در این صورت فقط می‌ماند اینکه مدیریت خوب بحث مهم است." },
+            { "language": "ar", "text": "ألا تضعف أطروحتك كثيراً بهذا؟ عندئذ لا يبقى إلا أن الإدارة الجيدة مهمة." },
+            { "language": "tr", "text": "Böylece tezinizi fazla zayıflatmıyor musunuz? O zaman geriye sadece iyi moderasyonun önemli olduğu kalır." },
+            { "language": "ru", "text": "Не слишком ли вы ослабляете свой тезис? Тогда остаётся только то, что хорошая модерация важна." },
+            { "language": "ckb", "text": "ئایا بەوە تێزەکەت زۆر لاواز ناکەیت؟ ئەوا تەنها ئەوە دەمێنێتەوە کە بەڕێوەبردنی باش گرنگە." },
+            { "language": "kmr", "text": "Ma hûn bi vê yekê teza xwe pir lawaz nakin? Wê demê tenê dimîne ku moderasyona baş girîng e." },
+            { "language": "pl", "text": "Czy nie osłabia Pan w ten sposób swojej tezy zbyt mocno? Wtedy zostaje tylko stwierdzenie, że dobra moderacja jest ważna." },
+            { "language": "ro", "text": "Nu vă slăbiți astfel prea mult teza? Atunci rămâne doar ideea că moderarea bună este importantă." },
+            { "language": "sq", "text": "A nuk e dobësoni kështu tepër tezën tuaj? Atëherë mbetet vetëm se moderimi i mirë është i rëndësishëm." }
+          ],
+          "function": "contribution-challenge",
+          "toneNote": "zugespitzt",
+          "expectedLearnerAction": "Beitrag der Präzisierung erklären"
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Der Beitrag liegt gerade in dieser Verschiebung: Ich frage nicht mehr, ob Hybridität grundsätzlich besser ist, sondern unter welchen Gestaltungsbedingungen sie unterschiedliche Beteiligungsformen gleichwertig sichtbar machen kann.",
+          "translations": [
+            { "language": "en", "text": "The contribution lies precisely in this shift: I no longer ask whether hybridity is generally better, but under which design conditions it can make different forms of participation equally visible." },
+            { "language": "fa", "text": "سهم پژوهش دقیقاً در همین جابه‌جایی است: دیگر نمی‌پرسم آیا ترکیبی بودن اصولاً بهتر است، بلکه می‌پرسم تحت چه شرایط طراحی می‌تواند شکل‌های مختلف مشارکت را به‌طور هم‌ارزش قابل مشاهده کند." },
+            { "language": "ar", "text": "تكمن المساهمة تحديداً في هذا التحويل: لم أعد أسأل هل الهجنة أفضل عموماً، بل تحت أي شروط تصميمية يمكنها أن تجعل أشكال المشاركة المختلفة مرئية بقيمة متساوية." },
+            { "language": "tr", "text": "Katkı tam da bu kaymada yatıyor: Artık hibritliğin genel olarak daha iyi olup olmadığını değil, hangi tasarım koşullarında farklı katılım biçimlerini eşdeğer biçimde görünür kılabileceğini soruyorum." },
+            { "language": "ru", "text": "Вклад как раз в этом смещении: я больше не спрашиваю, лучше ли гибридность в принципе, а спрашиваю, при каких условиях дизайна она может делать разные формы участия равноценно видимыми." },
+            { "language": "ckb", "text": "بەشداریی توێژینەوەکە ڕێک لەم گواستنەوەیەدایە: چیتر ناپرسم ئایا هایبرێدبوون بە گشتی باشترە، بەڵکو دەپرسەم لە ژێر کام مەرجی داڕشتندا دەتوانێت شێوە جیاوازەکانی بەشداری بە هاوبەهایی دیار بکات." },
+            { "language": "kmr", "text": "Beşdariya lêkolînê rast di vê guherînê de ye: Ez êdî napirsim ka hîbrîdbûn bi giştî çêtir e, lê dipirsim di bin kîjan mercên sêwiranê de dikare formên cuda yên beşdariyê bi nirxeke wekhev xuya bike." },
+            { "language": "pl", "text": "Wkład polega właśnie na tym przesunięciu: nie pytam już, czy hybrydowość jest zasadniczo lepsza, lecz w jakich warunkach projektowych może równoważnie uwidaczniać różne formy uczestnictwa." },
+            { "language": "ro", "text": "Contribuția stă tocmai în această deplasare: nu mai întreb dacă hibriditatea este în general mai bună, ci în ce condiții de proiectare poate face vizibile în mod echivalent diferite forme de participare." },
+            { "language": "sq", "text": "Kontributi qëndron pikërisht në këtë zhvendosje: nuk pyes më nëse hibriditeti është përgjithësisht më i mirë, por nën cilat kushte dizajni mund t'i bëjë të dukshme në mënyrë të barabartë format e ndryshme të pjesëmarrjes." }
+          ],
+          "function": "contribution-definition",
+          "toneNote": "argumentativ",
+          "expectedLearnerAction": "Forschungsbeitrag begründen"
+        },
+        {
+          "sortOrder": 9,
+          "speakerRole": "teacher",
+          "baseText": "Wie würden Sie diese Präzisierung in Ihrer schriftlichen Fassung sichtbar machen, ohne den roten Faden zu verlieren?",
+          "translations": [
+            { "language": "en", "text": "How would you make this refinement visible in your written version without losing the thread of the argument?" },
+            { "language": "fa", "text": "این دقیق‌سازی را در نسخه نوشتاری چگونه نشان می‌دهید، بدون اینکه رشته اصلی استدلال از دست برود؟" },
+            { "language": "ar", "text": "كيف ستجعل هذا التدقيق ظاهراً في النسخة المكتوبة من دون أن تفقد خيط الحجة الرئيسي؟" },
+            { "language": "tr", "text": "Bu netleştirmeyi yazılı metninizde, argümanın ana çizgisini kaybetmeden nasıl görünür kılarsınız?" },
+            { "language": "ru", "text": "Как вы покажете это уточнение в письменной версии, не теряя нить аргумента?" },
+            { "language": "ckb", "text": "ئەم وردکردنەوەیە لە وەشانی نووسراودا چۆن دیار دەکەیت، بەبێ ئەوەی هێڵی سەرەکی بەڵگەکە لەدەست بدەیت؟" },
+            { "language": "kmr", "text": "Hûn ê vê zelalkirinê di nusxeya nivîskî de çawa xuya bikin, bêyî ku rêza sereke ya argumanê winda bikin?" },
+            { "language": "pl", "text": "Jak pokaże Pan to doprecyzowanie w wersji pisemnej, nie tracąc głównej linii argumentacji?" },
+            { "language": "ro", "text": "Cum veți face vizibilă această precizare în versiunea scrisă fără să pierdeți firul argumentului?" },
+            { "language": "sq", "text": "Si do ta bëni të dukshëm këtë saktësim në versionin e shkruar pa humbur fillin kryesor të argumentit?" }
+          ],
+          "function": "writing-transfer",
+          "toneNote": "strukturierend",
+          "expectedLearnerAction": "Schriftliche Überarbeitung planen"
+        },
+        {
+          "sortOrder": 10,
+          "speakerRole": "learner",
+          "baseText": "Ich würde im Ergebnisteil die geringere mündliche Beteiligung ausdrücklich als Grenze nennen und die Schlussfolgerung anpassen: Hybridität wirkt nicht automatisch inklusiv, sondern nur bei bewusst gestalteten Beteiligungswegen.",
+          "translations": [
+            { "language": "en", "text": "In the results section, I would explicitly name the lower spoken participation as a limitation and adjust the conclusion: hybridity does not automatically have an inclusive effect, but only through deliberately designed participation paths." },
+            { "language": "fa", "text": "در بخش نتایج، مشارکت شفاهی کمتر را صریحاً به‌عنوان محدودیت نام می‌برم و نتیجه‌گیری را اصلاح می‌کنم: ترکیبی بودن خودبه‌خود اثر فراگیر ندارد، بلکه فقط با مسیرهای مشارکت آگاهانه طراحی‌شده چنین اثری پیدا می‌کند." },
+            { "language": "ar", "text": "في قسم النتائج سأذكر المشاركة الشفوية الأقل صراحة كحدّ، وأعدل الاستنتاج: لا تؤدي الهجنة تلقائياً إلى أثر شامل، بل فقط عبر مسارات مشاركة مصممة بوعي." },
+            { "language": "tr", "text": "Bulgular bölümünde daha düşük sözlü katılımı açıkça bir sınır olarak belirtir ve sonucu düzeltirim: hibritlik otomatik olarak kapsayıcı etki yaratmaz, ancak bilinçli tasarlanmış katılım yollarıyla bunu sağlayabilir." },
+            { "language": "ru", "text": "В разделе результатов я прямо назвал бы меньшую устную активность ограничением и скорректировал бы вывод: гибридность не действует инклюзивно автоматически, а только при сознательно спроектированных путях участия." },
+            { "language": "ckb", "text": "لە بەشی ئەنجامەکاندا بەشداریی دەنگی کەمتر بە ڕوونی وەک سنوور ناو دەبەم و دەرئەنجامەکە چاک دەکەم: هایبرێدبوون خۆکارانە کاریگەری فراوانکردن نییە، بەڵکو تەنها لە ڕێگەی ڕێڕەوی بەشداریی بە ئاگایی داڕێژراوە." },
+            { "language": "kmr", "text": "Di beşa encaman de ez beşdariya devkî ya kêmtir eşkere wek sînor nav dikim û encamê sererast dikim: hîbrîdbûn xweber bandoreke inklûsîv nake, lê tenê bi rêyên beşdariyê yên bi zanebûn sêwirandî." },
+            { "language": "pl", "text": "W części wyników wyraźnie nazwałbym mniejszy udział ustny ograniczeniem i dostosował wniosek: hybrydowość nie działa inkluzyjnie automatycznie, lecz tylko przy świadomie zaprojektowanych ścieżkach uczestnictwa." },
+            { "language": "ro", "text": "În secțiunea de rezultate aș numi explicit participarea orală mai redusă drept limită și aș ajusta concluzia: hibriditatea nu are automat efect incluziv, ci doar prin căi de participare proiectate conștient." },
+            { "language": "sq", "text": "Në pjesën e rezultateve do ta përmendja qartë pjesëmarrjen më të ulët gojore si kufizim dhe do ta rregulloja përfundimin: hibriditeti nuk vepron automatikisht në mënyrë përfshirëse, por vetëm përmes rrugëve të pjesëmarrjes të dizajnuara me vetëdije." }
+          ],
+          "function": "revision-plan",
+          "toneNote": "strukturiert",
+          "expectedLearnerAction": "Überarbeitung konkretisieren"
+        },
+        {
+          "sortOrder": 11,
+          "speakerRole": "colleague",
+          "baseText": "Können Sie den Einwand am Ende noch einmal in einem Satz aufnehmen, der weder ausweicht noch Ihre ganze Arbeit zurücknimmt?",
+          "translations": [
+            { "language": "en", "text": "Can you take up the objection once more at the end in a sentence that neither evades it nor withdraws your whole work?" },
+            { "language": "fa", "text": "آیا می‌توانید در پایان یک بار دیگر این ایراد را در یک جمله بگیرید، طوری که نه از آن فرار کند و نه کل کار شما را پس بگیرد؟" },
+            { "language": "ar", "text": "هل يمكنك في النهاية أن تتناول الاعتراض مرة أخرى في جملة لا تتهرب منه ولا تسحب عملك كله؟" },
+            { "language": "tr", "text": "Sonunda itirazı ne ondan kaçan ne de bütün çalışmanızı geri çeken bir cümleyle yeniden ele alabilir misiniz?" },
+            { "language": "ru", "text": "Можете в конце ещё раз принять это возражение в одном предложении, которое не уклоняется от него и не отменяет всю вашу работу?" },
+            { "language": "ckb", "text": "دەتوانیت لە کۆتاییدا جارێکی تر ئەم ڕەخنەیە لە ڕستەیەکدا وەربگریت کە نە لێی دەربچێت و نە هەموو کارەکەت پاشوپێش بکات؟" },
+            { "language": "kmr", "text": "Hûn dikarin di dawiyê de vê îtîrazê carek din di hevokekê de bigirin ku ne jê direve û ne hemû xebata we paşve dikişîne?" },
+            { "language": "pl", "text": "Czy może Pan na końcu raz jeszcze ująć zarzut w zdaniu, które ani go nie omija, ani nie wycofuje całej pracy?" },
+            { "language": "ro", "text": "Puteți la final să preluați încă o dată obiecția într-o propoziție care nici nu o evită, nici nu retrage întreaga lucrare?" },
+            { "language": "sq", "text": "A mund ta trajtoni në fund edhe një herë kundërshtimin në një fjali që as nuk i shmanget, as nuk e tërheq gjithë punën tuaj?" }
+          ],
+          "function": "final-response-prompt",
+          "toneNote": "abschließend",
+          "expectedLearnerAction": "Finale Einwandantwort formulieren"
+        },
+        {
+          "sortOrder": 12,
+          "speakerRole": "learner",
+          "baseText": "Der Einwand zeigt, dass hybride Seminare Beteiligung nicht automatisch ausgleichen; er stärkt aber die präzisierte These, dass Inklusion erst dort entsteht, wo digitale und präsente Beiträge didaktisch gleichwertig eingebunden werden.",
+          "translations": [
+            { "language": "en", "text": "The objection shows that hybrid seminars do not automatically balance participation; however, it strengthens the refined thesis that inclusion emerges only where digital and in-person contributions are didactically integrated as equally valuable." },
+            { "language": "fa", "text": "این ایراد نشان می‌دهد که سمینارهای ترکیبی مشارکت را خودبه‌خود متعادل نمی‌کنند؛ اما تز دقیق‌شده را تقویت می‌کند که فراگیری فقط جایی شکل می‌گیرد که مشارکت‌های دیجیتال و حضوری از نظر آموزشی هم‌ارزش وارد شوند." },
+            { "language": "ar", "text": "يبين الاعتراض أن الندوات الهجينة لا توازن المشاركة تلقائياً؛ لكنه يقوي الأطروحة المصاغة بدقة بأن الشمول لا ينشأ إلا حيث تُدمج المساهمات الرقمية والحضورية تعليمياً بقيمة متساوية." },
+            { "language": "tr", "text": "İtiraz, hibrit seminerlerin katılımı otomatik olarak dengelemediğini gösterir; ancak kapsayıcılığın ancak dijital ve yüz yüze katkıların didaktik olarak eşdeğer biçimde dahil edildiği yerde oluştuğu yönündeki netleştirilmiş tezi güçlendirir." },
+            { "language": "ru", "text": "Возражение показывает, что гибридные семинары не выравнивают участие автоматически; однако оно усиливает уточнённый тезис о том, что инклюзия возникает только там, где цифровые и очные вклады дидактически включаются как равноценные." },
+            { "language": "ckb", "text": "ئەم ڕەخنەیە پیشان دەدات کە سیمینارە هایبرێدەکان بەشداری خۆکارانە هاوسەنگ ناکەن؛ بەڵام تێزی وردکراو بەهێز دەکات کە فراوانبوون تەنها لەو شوێنەدا دروست دەبێت کە بەشداریی دیجیتاڵ و ئامادەبوون لە ڕووی فێرکارییەوە بە هاوبەهایی تێکەڵ بکرێن." },
+            { "language": "kmr", "text": "Ev îtîraz nîşan dide ku semînerên hîbrîd beşdariyê xweber hevseng nakin; lê teza zelalkirî xurt dike ku inklûzyon tenê li wir çêdibe ku beşdariyên dîjîtal û amade bi awayekî didaktîk wek hevnirx werin têxistin." },
+            { "language": "pl", "text": "Zarzut pokazuje, że seminaria hybrydowe nie wyrównują uczestnictwa automatycznie; wzmacnia jednak doprecyzowaną tezę, że inkluzja powstaje dopiero tam, gdzie wkłady cyfrowe i stacjonarne są dydaktycznie włączane jako równowartościowe." },
+            { "language": "ro", "text": "Obiecția arată că seminarele hibride nu echilibrează automat participarea; ea întărește însă teza precizată că incluziunea apare doar acolo unde contribuțiile digitale și cele prezente fizic sunt integrate didactic ca echivalente." },
+            { "language": "sq", "text": "Kundërshtimi tregon se seminaret hibride nuk e baraspeshojnë automatikisht pjesëmarrjen; megjithatë ai e forcon tezën e saktësuar se përfshirja lind vetëm aty ku kontributet digjitale dhe ato të pranishme integrohen didaktikisht si të barasvlershme." }
+          ],
+          "function": "final-objection-response",
+          "toneNote": "präzise, souverän",
+          "expectedLearnerAction": "Einwand integrieren und These sichern"
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Einwand ist berechtigt, wenn man hybride Seminare als automatisch inklusiver versteht. Meine These ist enger und hängt an Sichtbarkeit, Moderation und technischer Unterstützung.",
+              "translations": [
+                { "language": "en", "text": "The objection is valid if hybrid seminars are understood as automatically more inclusive. My thesis is narrower and depends on visibility, moderation, and technical support." },
+                { "language": "fa", "text": "این ایراد وارد است اگر سمینارهای ترکیبی را خودبه‌خود فراگیرتر بدانیم. تز من محدودتر است و به دیده‌شدن، مدیریت بحث و پشتیبانی فنی وابسته است." },
+                { "language": "ar", "text": "الاعتراض وجيه إذا فُهمت الندوات الهجينة على أنها أكثر شمولاً تلقائياً. أطروحتي أضيق وترتبط بالرؤية والإدارة والدعم التقني." },
+                { "language": "tr", "text": "Hibrit seminerler otomatik olarak daha kapsayıcı görülürse itiraz haklıdır. Benim tezim daha dar ve görünürlük, moderasyon ve teknik desteğe bağlıdır." },
+                { "language": "ru", "text": "Возражение обосновано, если гибридные семинары понимать как автоматически более инклюзивные. Мой тезис уже и зависит от видимости, модерации и технической поддержки." },
+                { "language": "ckb", "text": "ئەم ڕەخنەیە ڕەوایە ئەگەر سیمینارە هایبرێدەکان وەک خۆکارانە فراوانتر وەربگیرێن. تێزی من سنووردارترە و بە دیاربون، بەڕێوەبردنی گفتوگۆ و پشتگیری تەکنیکی بەستراوە." },
+                { "language": "kmr", "text": "Ev îtîraz rast e heke semînerên hîbrîd wek xweber inklûsîvtir werin fêmkirin. Teza min tengtir e û bi xuya bûn, moderasyon û piştgiriya teknîkî ve girêdayî ye." },
+                { "language": "pl", "text": "Zarzut jest zasadny, jeśli seminaria hybrydowe rozumie się jako automatycznie bardziej włączające. Moja teza jest węższa i zależy od widoczności, moderacji oraz wsparcia technicznego." },
+                { "language": "ro", "text": "Obiecția este justificată dacă seminarele hibride sunt înțelese ca automat mai incluzive. Teza mea este mai restrânsă și depinde de vizibilitate, moderare și sprijin tehnic." },
+                { "language": "sq", "text": "Kundërshtimi është i vlefshëm nëse seminaret hibride kuptohen si automatikisht më përfshirëse. Teza ime është më e ngushtë dhe varet nga dukshmëria, moderimi dhe mbështetja teknike." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort akzeptiert den berechtigten Teil und begrenzt die These, ohne sie aufzugeben.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer accepts the valid part and limits the thesis without abandoning it." },
+                { "language": "fa", "text": "قوی: پاسخ بخش درست ایراد را می‌پذیرد و تز را محدود می‌کند، بدون اینکه آن را کنار بگذارد." },
+                { "language": "ar", "text": "قوي: تقبل الإجابة الجزء الوجيه وتحدد الأطروحة من دون التخلي عنها." },
+                { "language": "tr", "text": "Güçlü: Yanıt haklı kısmı kabul eder ve tezi terk etmeden sınırlar." },
+                { "language": "ru", "text": "Сильно: ответ принимает обоснованную часть и ограничивает тезис, не отказываясь от него." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بەشی ڕەوا وەردەگرێت و تێزەکە سنووردار دەکات بەبێ ئەوەی وازی لێ بهێنێت." },
+                { "language": "kmr", "text": "Xurt e: Bersiv beşa rast qebûl dike û tezê sînordar dike bê ku wê berde." },
+                { "language": "pl", "text": "Mocne: odpowiedź uznaje zasadną część i ogranicza tezę, nie rezygnując z niej." },
+                { "language": "ro", "text": "Puternic: răspunsul acceptă partea justificată și limitează teza fără să renunțe la ea." },
+                { "language": "sq", "text": "E fortë: përgjigjja pranon pjesën e vlefshme dhe kufizon tezën pa e braktisur atë." }
+              ],
+              "explanationKey": "accept-and-limit"
+            },
+            {
+              "id": "weak-defensive",
+              "text": "Ich sehe den Einwand, aber meine Daten zeigen trotzdem, dass hybride Seminare viele Vorteile haben.",
+              "translations": [
+                { "language": "en", "text": "I see the objection, but my data still show that hybrid seminars have many advantages." },
+                { "language": "fa", "text": "ایراد را می‌بینم، اما داده‌های من با این حال نشان می‌دهند که سمینارهای ترکیبی مزایای زیادی دارند." },
+                { "language": "ar", "text": "أرى الاعتراض، لكن بياناتي مع ذلك تظهر أن الندوات الهجينة لها مزايا كثيرة." },
+                { "language": "tr", "text": "İtirazı görüyorum, ama verilerim yine de hibrit seminerlerin birçok avantajı olduğunu gösteriyor." },
+                { "language": "ru", "text": "Я вижу возражение, но мои данные всё равно показывают, что гибридные семинары имеют много преимуществ." },
+                { "language": "ckb", "text": "ڕەخنەکە دەبینم، بەڵام داتاکانم هێشتا پیشان دەدەن کە سیمینارە هایبرێدەکان سوودی زۆریان هەیە." },
+                { "language": "kmr", "text": "Ez îtîrazê dibînim, lê daneyên min dîsa nîşan didin ku semînerên hîbrîd gelek sûd hene." },
+                { "language": "pl", "text": "Widzę ten zarzut, ale moje dane mimo to pokazują, że seminaria hybrydowe mają wiele zalet." },
+                { "language": "ro", "text": "Văd obiecția, dar datele mele arată totuși că seminarele hibride au multe avantaje." },
+                { "language": "sq", "text": "E shoh kundërshtimin, por të dhënat e mia megjithatë tregojnë se seminaret hibride kanë shumë përparësi." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu defensiv: Der Einwand wird erwähnt, aber nicht in die These eingearbeitet.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too defensive: The objection is mentioned but not worked into the thesis." },
+                { "language": "fa", "text": "بیش از حد دفاعی است: ایراد فقط ذکر می‌شود، اما وارد تز نمی‌شود." },
+                { "language": "ar", "text": "دفاعي جداً: يُذكر الاعتراض لكنه لا يُدمج في الأطروحة." },
+                { "language": "tr", "text": "Fazla savunmacı: İtirazdan söz ediliyor, ama teze dahil edilmiyor." },
+                { "language": "ru", "text": "Слишком защитно: возражение упоминается, но не включается в тезис." },
+                { "language": "ckb", "text": "زۆر بەرگرییانەیە: ڕەخنەکە ناو دەبرێت، بەڵام ناخاتە ناو تێزەکە." },
+                { "language": "kmr", "text": "Pir berevanî ye: Îtîraz tê gotin, lê di tezê de nayê xebitandin." },
+                { "language": "pl", "text": "Zbyt obronne: zarzut zostaje wspomniany, ale nie włączony do tezy." },
+                { "language": "ro", "text": "Prea defensiv: obiecția este menționată, dar nu este integrată în teză." },
+                { "language": "sq", "text": "Tepër mbrojtëse: kundërshtimi përmendet, por nuk përfshihet në tezë." }
+              ],
+              "explanationKey": "defensive-mention"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich muss Beteiligung differenzieren: Zugang, mündliche Redezeit und schriftliche Beteiligung sind nicht dasselbe.",
+              "translations": [
+                { "language": "en", "text": "I need to differentiate participation: access, spoken speaking time, and written participation are not the same thing." },
+                { "language": "fa", "text": "باید مشارکت را تفکیک کنم: دسترسی، زمان گفتار شفاهی و مشارکت نوشتاری یک چیز نیستند." },
+                { "language": "ar", "text": "يجب أن أميز المشاركة: الوصول ووقت الكلام الشفوي والمشاركة الكتابية ليست شيئاً واحداً." },
+                { "language": "tr", "text": "Katılımı ayırmam gerekir: erişim, sözlü konuşma süresi ve yazılı katılım aynı şey değildir." },
+                { "language": "ru", "text": "Мне нужно различать участие: доступ, устное время речи и письменное участие — не одно и то же." },
+                { "language": "ckb", "text": "دەبێت بەشداری جیا بکەمەوە: دەستگەیشتن، کاتی قسەکردنی دەنگی و بەشداریی نووسراو یەک شت نین." },
+                { "language": "kmr", "text": "Divê ez beşdariyê veqetînim: gihîştin, dema axaftina devkî û beşdariya nivîskî ne heman tişt in." },
+                { "language": "pl", "text": "Muszę zróżnicować uczestnictwo: dostęp, ustny czas wypowiedzi i udział pisemny to nie to samo." },
+                { "language": "ro", "text": "Trebuie să diferențiez participarea: accesul, timpul de vorbire orală și participarea scrisă nu sunt același lucru." },
+                { "language": "sq", "text": "Duhet ta diferencoj pjesëmarrjen: qasja, koha e të folurit gojor dhe pjesëmarrja e shkruar nuk janë e njëjta gjë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort löst den scheinbaren Widerspruch durch eine begriffliche Differenzierung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer resolves the apparent contradiction through conceptual differentiation." },
+                { "language": "fa", "text": "قوی: پاسخ تناقض ظاهری را با تفکیک مفهومی حل می‌کند." },
+                { "language": "ar", "text": "قوي: تحل الإجابة التناقض الظاهري من خلال تمييز مفهومي." },
+                { "language": "tr", "text": "Güçlü: Yanıt görünen çelişkiyi kavramsal bir ayrımla çözer." },
+                { "language": "ru", "text": "Сильно: ответ снимает кажущееся противоречие через понятийное различение." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە ناکۆکیی ڕواڵەتی بە جیاکردنەوەی چەمکی چارەسەر دەکات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nakokiya xuya bi veqetandina têgehî çareser dike." },
+                { "language": "pl", "text": "Mocne: odpowiedź rozwiązuje pozorną sprzeczność przez rozróżnienie pojęciowe." },
+                { "language": "ro", "text": "Puternic: răspunsul rezolvă contradicția aparentă printr-o diferențiere conceptuală." },
+                { "language": "sq", "text": "E fortë: përgjigjja e zgjidh kundërshtinë e dukshme përmes diferencimit konceptual." }
+              ],
+              "explanationKey": "differentiate-participation"
+            },
+            {
+              "id": "weak-dismiss-data",
+              "text": "Die geringere Redezeit ist interessant, aber sie ist für meine Hauptthese nicht entscheidend.",
+              "translations": [
+                { "language": "en", "text": "The lower speaking time is interesting, but it is not decisive for my main thesis." },
+                { "language": "fa", "text": "زمان گفتار کمتر جالب است، اما برای تز اصلی من تعیین‌کننده نیست." },
+                { "language": "ar", "text": "وقت الكلام الأقل أمر مثير للاهتمام، لكنه ليس حاسماً لأطروحتي الرئيسية." },
+                { "language": "tr", "text": "Daha düşük konuşma süresi ilginç, ama ana tezim için belirleyici değil." },
+                { "language": "ru", "text": "Меньшее время речи интересно, но для моего главного тезиса не является решающим." },
+                { "language": "ckb", "text": "کاتی قسەکردنی کەمتر سەرنجڕاکێشە، بەڵام بۆ تێزی سەرەکیی من یەکلاکەرەوە نییە." },
+                { "language": "kmr", "text": "Dema axaftinê ya kêmtir balkêş e, lê ji bo teza min a sereke ne biryardar e." },
+                { "language": "pl", "text": "Mniejszy czas wypowiedzi jest interesujący, ale nie jest rozstrzygający dla mojej głównej tezy." },
+                { "language": "ro", "text": "Timpul de vorbire mai redus este interesant, dar nu este decisiv pentru teza mea principală." },
+                { "language": "sq", "text": "Koha më e ulët e të folurit është interesante, por nuk është vendimtare për tezën time kryesore." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu schwach: Die Daten werden abgeschwächt, statt den Beteiligungsbegriff präziser zu machen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too weak: The data are downplayed instead of making the concept of participation more precise." },
+                { "language": "fa", "text": "ضعیف است: داده‌ها کم‌اهمیت جلوه داده می‌شوند، به جای اینکه مفهوم مشارکت دقیق‌تر شود." },
+                { "language": "ar", "text": "ضعيف: تُخفف أهمية البيانات بدلاً من جعل مفهوم المشاركة أدق." },
+                { "language": "tr", "text": "Zayıf: Veriler önemsizleştiriliyor, katılım kavramı daha kesin yapılmıyor." },
+                { "language": "ru", "text": "Слабо: данные принижаются, вместо того чтобы точнее определить понятие участия." },
+                { "language": "ckb", "text": "لاوازە: داتاکان کەم گرنگ پیشان دەدرێن، نە ئەوەی چەمکی بەشداری وردتر بکرێت." },
+                { "language": "kmr", "text": "Lawaz e: Dane tên sivikkirin, ne ku têgeha beşdariyê zelaltir bibe." },
+                { "language": "pl", "text": "Za słabe: dane są pomniejszane, zamiast doprecyzować pojęcie uczestnictwa." },
+                { "language": "ro", "text": "Prea slab: datele sunt minimalizate, în loc să se precizeze conceptul de participare." },
+                { "language": "sq", "text": "E dobët: të dhënat zbuten, në vend që koncepti i pjesëmarrjes të bëhet më i saktë." }
+              ],
+              "explanationKey": "data-downplay"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Nicht das Format selbst demokratisiert Beteiligung, sondern eine didaktische Gestaltung, die parallele Kanäle sichtbar macht und moderiert.",
+              "translations": [
+                { "language": "en", "text": "It is not the format itself that democratizes participation, but didactic design that makes parallel channels visible and moderates them." },
+                { "language": "fa", "text": "خود قالب مشارکت را دموکراتیک‌تر نمی‌کند، بلکه طراحی آموزشی‌ای چنین می‌کند که کانال‌های موازی را قابل مشاهده کند و مدیریت کند." },
+                { "language": "ar", "text": "ليس الشكل نفسه ما يجعل المشاركة أكثر ديمقراطية، بل التصميم التعليمي الذي يجعل القنوات المتوازية مرئية ويديرها." },
+                { "language": "tr", "text": "Katılımı demokratikleştiren formatın kendisi değil, paralel kanalları görünür kılan ve yöneten didaktik tasarımdır." },
+                { "language": "ru", "text": "Участие демократизирует не сам формат, а дидактический дизайн, который делает параллельные каналы видимыми и модерирует их." },
+                { "language": "ckb", "text": "خۆی فۆرماتەکە بەشداری دیموکراتی ناکات، بەڵکو داڕشتنی فێرکارییە کە کاناڵە هاوتاکان دیار دەکات و بەڕێوەیان دەبات." },
+                { "language": "kmr", "text": "Ne format bixwe beşdariyê demokratîk dike, lê sêwirana didaktîk ku kanalên hevdem xuya dike û moderasyon dike." },
+                { "language": "pl", "text": "To nie sam format demokratyzuje uczestnictwo, lecz projekt dydaktyczny, który uwidacznia i moderuje równoległe kanały." },
+                { "language": "ro", "text": "Nu formatul în sine democratizează participarea, ci proiectarea didactică ce face vizibile și moderează canalele paralele." },
+                { "language": "sq", "text": "Nuk është vetë formati që e demokratizon pjesëmarrjen, por dizajni didaktik që i bën të dukshme dhe i moderon kanalet paralele." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die neue These ist begrenzt, aber weiterhin argumentativ klar.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The new thesis is limited but still argumentatively clear." },
+                { "language": "fa", "text": "قوی: تز جدید محدود است، اما همچنان از نظر استدلالی روشن است." },
+                { "language": "ar", "text": "قوي: الأطروحة الجديدة محددة لكنها ما زالت واضحة حجاجياً." },
+                { "language": "tr", "text": "Güçlü: Yeni tez sınırlı, ama argümantatif olarak hâlâ açık." },
+                { "language": "ru", "text": "Сильно: новый тезис ограничен, но всё ещё аргументативно ясен." },
+                { "language": "ckb", "text": "بەهێزە: تێزی نوێ سنووردارە، بەڵام هێشتا لە ڕووی بەڵگەوە ڕوونە." },
+                { "language": "kmr", "text": "Xurt e: Teza nû sînordar e, lê hîn jî ji aliyê argumanê ve zelal e." },
+                { "language": "pl", "text": "Mocne: nowa teza jest ograniczona, ale nadal jasno argumentacyjna." },
+                { "language": "ro", "text": "Puternic: noua teză este limitată, dar rămâne clară argumentativ." },
+                { "language": "sq", "text": "E fortë: teza e re është e kufizuar, por ende e qartë argumentueshëm." }
+              ],
+              "explanationKey": "limited-clear-thesis"
+            },
+            {
+              "id": "weak-too-flat",
+              "text": "Hybride Seminare funktionieren gut, wenn die Lehrperson gut moderiert und alle Technik nutzen können.",
+              "translations": [
+                { "language": "en", "text": "Hybrid seminars work well if the teacher moderates well and everyone can use the technology." },
+                { "language": "fa", "text": "سمینارهای ترکیبی وقتی خوب کار می‌کنند که مدرس خوب مدیریت کند و همه بتوانند از فناوری استفاده کنند." },
+                { "language": "ar", "text": "تنجح الندوات الهجينة إذا أدار المدرس النقاش جيداً واستطاع الجميع استخدام التقنية." },
+                { "language": "tr", "text": "Hibrit seminerler, öğretim elemanı iyi moderasyon yaparsa ve herkes teknolojiyi kullanabilirse iyi işler." },
+                { "language": "ru", "text": "Гибридные семинары хорошо работают, если преподаватель хорошо модерирует и все могут пользоваться техникой." },
+                { "language": "ckb", "text": "سیمینارە هایبرێدەکان باش کار دەکەن ئەگەر مامۆستا گفتوگۆ باش بەڕێوە ببات و هەمووان بتوانن تەکنەلۆژیا بەکاربهێنن." },
+                { "language": "kmr", "text": "Semînerên hîbrîd baş dixebitin heke mamoste baş moderasyon bike û hemû kes karibin teknolojiyê bi kar bînin." },
+                { "language": "pl", "text": "Seminaria hybrydowe działają dobrze, jeśli prowadzący dobrze moderuje i wszyscy potrafią korzystać z technologii." },
+                { "language": "ro", "text": "Seminarele hibride funcționează bine dacă profesorul moderează bine și toți pot folosi tehnologia." },
+                { "language": "sq", "text": "Seminaret hibride funksionojnë mirë nëse mësimdhënësi moderon mirë dhe të gjithë mund ta përdorin teknologjinë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Plausibel, aber zu flach: Die Formulierung enthält keine präzise Beziehung zwischen Einwand und These.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Plausible, but too flat: The wording contains no precise relationship between objection and thesis." },
+                { "language": "fa", "text": "قابل تصور است، اما سطحی است: جمله رابطه دقیق میان ایراد و تز را نشان نمی‌دهد." },
+                { "language": "ar", "text": "مقبول ظاهرياً، لكنه سطحي: لا تتضمن الصياغة علاقة دقيقة بين الاعتراض والأطروحة." },
+                { "language": "tr", "text": "Makul, ama yüzeysel: Formülasyon itiraz ile tez arasında kesin bir ilişki kurmuyor." },
+                { "language": "ru", "text": "Правдоподобно, но поверхностно: формулировка не показывает точной связи между возражением и тезисом." },
+                { "language": "ckb", "text": "قابیلی باوەڕە، بەڵام ڕووکەشە: داڕشتنەکە پەیوەندیی وردی نێوان ڕەخنە و تێز پیشان نادات." },
+                { "language": "kmr", "text": "Gengaz e, lê asteng e: Formulasyon têkiliyeke zelal di navbera îtîraz û tezê de nîşan nade." },
+                { "language": "pl", "text": "Brzmi wiarygodnie, ale jest zbyt płaskie: sformułowanie nie pokazuje precyzyjnej relacji między zarzutem a tezą." },
+                { "language": "ro", "text": "Plauzibil, dar prea plat: formularea nu conține o relație precisă între obiecție și teză." },
+                { "language": "sq", "text": "E besueshme, por tepër e sheshtë: formulimi nuk përmban një lidhje të saktë mes kundërshtimit dhe tezës." }
+              ],
+              "explanationKey": "flat-reformulation"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Beitrag ist die Verschiebung von der Frage, ob Hybridität besser ist, zur Frage, unter welchen Bedingungen Beteiligung gleichwertig sichtbar wird.",
+              "translations": [
+                { "language": "en", "text": "The contribution is the shift from asking whether hybridity is better to asking under which conditions participation becomes equally visible." },
+                { "language": "fa", "text": "سهم پژوهش، جابه‌جایی از این پرسش است که آیا ترکیبی بودن بهتر است، به این پرسش که تحت چه شرایطی مشارکت به‌طور هم‌ارزش قابل مشاهده می‌شود." },
+                { "language": "ar", "text": "تكمن المساهمة في الانتقال من سؤال ما إذا كانت الهجنة أفضل إلى سؤال الشروط التي تصبح فيها المشاركة مرئية بقيمة متساوية." },
+                { "language": "tr", "text": "Katkı, hibritliğin daha iyi olup olmadığı sorusundan katılımın hangi koşullarda eşdeğer görünür hâle geldiği sorusuna geçiştir." },
+                { "language": "ru", "text": "Вклад состоит в переходе от вопроса, лучше ли гибридность, к вопросу о том, при каких условиях участие становится равноценно видимым." },
+                { "language": "ckb", "text": "بەشداریی توێژینەوەکە گواستنەوەیە لە پرسیاری ئەوەی ئایا هایبرێدبوون باشترە بۆ پرسیاری ئەوەی لە ژێر کام مەرجدا بەشداری بە هاوبەهایی دیار دەبێت." },
+                { "language": "kmr", "text": "Beşdariya lêkolînê guherîna ji pirsa ka hîbrîdbûn çêtir e ber bi pirsa ka di kîjan mercan de beşdarî wekhev xuya dibe ye." },
+                { "language": "pl", "text": "Wkład polega na przesunięciu od pytania, czy hybrydowość jest lepsza, do pytania, w jakich warunkach uczestnictwo staje się równoważnie widoczne." },
+                { "language": "ro", "text": "Contribuția este deplasarea de la întrebarea dacă hibriditatea este mai bună la întrebarea în ce condiții participarea devine vizibilă în mod echivalent." },
+                { "language": "sq", "text": "Kontributi është zhvendosja nga pyetja nëse hibriditeti është më i mirë te pyetja nën cilat kushte pjesëmarrja bëhet e dukshme në mënyrë të barabartë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Antwort zeigt den wissenschaftlichen Mehrwert der Einschränkung.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The answer shows the scholarly value of the limitation." },
+                { "language": "fa", "text": "قوی: پاسخ ارزش علمی محدودسازی را نشان می‌دهد." },
+                { "language": "ar", "text": "قوي: تُظهر الإجابة القيمة العلمية للتحديد." },
+                { "language": "tr", "text": "Güçlü: Yanıt sınırlamanın bilimsel değerini gösterir." },
+                { "language": "ru", "text": "Сильно: ответ показывает научную ценность ограничения." },
+                { "language": "ckb", "text": "بەهێزە: وەڵامەکە بایەخی زانستیی سنووردارکردنەکە پیشان دەدات." },
+                { "language": "kmr", "text": "Xurt e: Bersiv nirxa zanistî ya sînordarkirinê nîşan dide." },
+                { "language": "pl", "text": "Mocne: odpowiedź pokazuje naukową wartość ograniczenia." },
+                { "language": "ro", "text": "Puternic: răspunsul arată valoarea științifică a limitării." },
+                { "language": "sq", "text": "E fortë: përgjigjja tregon vlerën shkencore të kufizimit." }
+              ],
+              "explanationKey": "contribution-by-shift"
+            },
+            {
+              "id": "weak-just-moderation",
+              "text": "Der Beitrag ist, dass Lehrende in hybriden Seminaren stärker auf die Online-Gruppe achten sollten.",
+              "translations": [
+                { "language": "en", "text": "The contribution is that teachers should pay more attention to the online group in hybrid seminars." },
+                { "language": "fa", "text": "سهم پژوهش این است که مدرسان در سمینارهای ترکیبی باید بیشتر به گروه آنلاین توجه کنند." },
+                { "language": "ar", "text": "المساهمة هي أن على المدرسين في الندوات الهجينة أن يهتموا أكثر بالمجموعة المتصلة عبر الإنترنت." },
+                { "language": "tr", "text": "Katkı, öğretim elemanlarının hibrit seminerlerde çevrimiçi gruba daha fazla dikkat etmesi gerektiğidir." },
+                { "language": "ru", "text": "Вклад состоит в том, что преподаватели на гибридных семинарах должны больше обращать внимание на онлайн-группу." },
+                { "language": "ckb", "text": "بەشداریی توێژینەوەکە ئەوەیە کە مامۆستایان لە سیمینارە هایبرێدەکاندا دەبێت زیاتر سەرنج بدەنە گرووپی ئۆنلاین." },
+                { "language": "kmr", "text": "Beşdariya lêkolînê ev e ku mamoste di semînerên hîbrîd de divê zêdetir bala xwe bidin koma online." },
+                { "language": "pl", "text": "Wkład polega na tym, że prowadzący seminaria hybrydowe powinni bardziej zwracać uwagę na grupę online." },
+                { "language": "ro", "text": "Contribuția este că profesorii din seminarele hibride ar trebui să acorde mai multă atenție grupului online." },
+                { "language": "sq", "text": "Kontributi është se mësimdhënësit në seminaret hibride duhet t'i kushtojnë më shumë vëmendje grupit online." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu praktisch verkürzt: Das ist eine Empfehlung, aber noch kein klarer wissenschaftlicher Beitrag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too practically shortened: This is a recommendation, but not yet a clear scholarly contribution." },
+                { "language": "fa", "text": "بیش از حد عملی و کوتاه‌شده است: این یک توصیه است، اما هنوز سهم علمی روشن نیست." },
+                { "language": "ar", "text": "مختصر عملياً أكثر من اللازم: هذه توصية، لكنها ليست بعد مساهمة علمية واضحة." },
+                { "language": "tr", "text": "Fazla pratik indirgenmiş: Bu bir öneri, ama henüz açık bir bilimsel katkı değil." },
+                { "language": "ru", "text": "Слишком практическое сокращение: это рекомендация, но ещё не ясный научный вклад." },
+                { "language": "ckb", "text": "زۆر بە کرداری کورتکراوەتەوە: ئەمە ڕاسپاردەیە، بەڵام هێشتا بەشداریی زانستیی ڕوون نییە." },
+                { "language": "kmr", "text": "Pir pratîk hatiye kurtkirin: Ev pêşniyar e, lê hêj beşdariyeke zanistî ya zelal nîne." },
+                { "language": "pl", "text": "Zbyt praktycznie skrócone: to zalecenie, ale jeszcze nie jasny wkład naukowy." },
+                { "language": "ro", "text": "Prea redus practic: aceasta este o recomandare, dar nu încă o contribuție științifică clară." },
+                { "language": "sq", "text": "Tepër e shkurtuar praktikisht: kjo është një rekomandim, por ende jo një kontribut i qartë shkencor." }
+              ],
+              "explanationKey": "recommendation-not-contribution"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Ich nenne die geringere mündliche Beteiligung als Grenze und passe die Schlussfolgerung auf bewusst gestaltete Beteiligungswege an.",
+              "translations": [
+                { "language": "en", "text": "I name the lower spoken participation as a limitation and adjust the conclusion toward deliberately designed participation paths." },
+                { "language": "fa", "text": "مشارکت شفاهی کمتر را به‌عنوان محدودیت نام می‌برم و نتیجه‌گیری را به سمت مسیرهای مشارکت آگاهانه طراحی‌شده اصلاح می‌کنم." },
+                { "language": "ar", "text": "أذكر المشاركة الشفوية الأقل كحدّ، وأعدل الاستنتاج باتجاه مسارات مشاركة مصممة بوعي." },
+                { "language": "tr", "text": "Daha düşük sözlü katılımı bir sınır olarak belirtir ve sonucu bilinçli tasarlanmış katılım yollarına göre düzeltirim." },
+                { "language": "ru", "text": "Я называю меньшую устную активность ограничением и корректирую вывод в сторону сознательно спроектированных путей участия." },
+                { "language": "ckb", "text": "بەشداریی دەنگی کەمتر وەک سنوور ناو دەبەم و دەرئەنجامەکە بەرەو ڕێڕەوی بەشداریی بە ئاگایی داڕێژراو چاک دەکەم." },
+                { "language": "kmr", "text": "Ez beşdariya devkî ya kêmtir wek sînor nav dikim û encamê ber bi rêyên beşdariyê yên bi zanebûn sêwirandî sererast dikim." },
+                { "language": "pl", "text": "Nazywam mniejszy udział ustny ograniczeniem i dostosowuję wniosek do świadomie zaprojektowanych ścieżek uczestnictwa." },
+                { "language": "ro", "text": "Numesc participarea orală mai redusă drept limită și ajustez concluzia către căi de participare proiectate conștient." },
+                { "language": "sq", "text": "E përmend pjesëmarrjen më të ulët gojore si kufizim dhe e rregulloj përfundimin drejt rrugëve të pjesëmarrjes të dizajnuara me vetëdije." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Die Überarbeitung zeigt konkret, wo der Einwand im Text verarbeitet wird.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The revision shows concretely where the objection is processed in the text." },
+                { "language": "fa", "text": "قوی: بازنگری مشخص می‌کند ایراد در کجای متن پردازش می‌شود." },
+                { "language": "ar", "text": "قوي: يوضح التعديل تحديداً أين يُعالج الاعتراض في النص." },
+                { "language": "tr", "text": "Güçlü: Revizyon, itirazın metinde nerede işlendiğini somut biçimde gösterir." },
+                { "language": "ru", "text": "Сильно: переработка конкретно показывает, где возражение обработано в тексте." },
+                { "language": "ckb", "text": "بەهێزە: چاککردنەوەکە بە ڕوونی پیشان دەدات ڕەخنەکە لە کوێی دەقەکەدا چارەسەر دەکرێت." },
+                { "language": "kmr", "text": "Xurt e: Sererastkirin bi şênberî nîşan dide ku îtîraz di nivîsê de li ku tê xebitandin." },
+                { "language": "pl", "text": "Mocne: poprawka konkretnie pokazuje, gdzie zarzut zostaje opracowany w tekście." },
+                { "language": "ro", "text": "Puternic: revizuirea arată concret unde este prelucrată obiecția în text." },
+                { "language": "sq", "text": "E fortë: rishikimi tregon konkretisht ku përpunohet kundërshtimi në tekst." }
+              ],
+              "explanationKey": "revision-location"
+            },
+            {
+              "id": "weak-add-footnote",
+              "text": "Ich würde den Einwand in einer Fußnote erwähnen, damit die Argumentation im Haupttext nicht unterbrochen wird.",
+              "translations": [
+                { "language": "en", "text": "I would mention the objection in a footnote so the argument in the main text is not interrupted." },
+                { "language": "fa", "text": "ایراد را در یک پاورقی ذکر می‌کنم تا استدلال در متن اصلی قطع نشود." },
+                { "language": "ar", "text": "سأذكر الاعتراض في حاشية كي لا ينقطع الحجاج في المتن الرئيسي." },
+                { "language": "tr", "text": "İtirazı bir dipnotta belirtirim, böylece ana metindeki argüman kesintiye uğramaz." },
+                { "language": "ru", "text": "Я бы упомянул возражение в сноске, чтобы аргументация в основном тексте не прерывалась." },
+                { "language": "ckb", "text": "ڕەخنەکە لە پەراوێزێکدا دەنووسم، بۆ ئەوەی بەڵگەهێنان لە دەقی سەرەکیدا نەبڕێت." },
+                { "language": "kmr", "text": "Ez îtîrazê di jêrenivîsekê de dinivîsim da ku arguman di nivîsa sereke de neyê qutkirin." },
+                { "language": "pl", "text": "Wspomniałbym o zarzucie w przypisie, aby nie przerywać argumentacji w tekście głównym." },
+                { "language": "ro", "text": "Aș menționa obiecția într-o notă de subsol, ca argumentația din textul principal să nu fie întreruptă." },
+                { "language": "sq", "text": "Do ta përmendja kundërshtimin në një shënim fundor, që argumentimi në tekstin kryesor të mos ndërpritet." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ausweichend: Ein zentraler Einwand gehört in die Argumentation, nicht nur an den Rand.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too evasive: A central objection belongs in the argument, not only at the margin." },
+                { "language": "fa", "text": "بیش از حد گریزان است: ایراد مرکزی باید وارد استدلال شود، نه فقط در حاشیه بیاید." },
+                { "language": "ar", "text": "تهرب زائد: الاعتراض المركزي مكانه في الحجة، لا في الهامش فقط." },
+                { "language": "tr", "text": "Fazla kaçamak: Merkezi bir itiraz argümana aittir, yalnızca kenara değil." },
+                { "language": "ru", "text": "Слишком уклончиво: центральное возражение должно быть в аргументации, а не только на полях." },
+                { "language": "ckb", "text": "زۆر لادانە: ڕەخنەی سەرەکی شوێنی لە ناو بەڵگەهێنانەکەدایە، نە تەنها لە پەراوێزدا." },
+                { "language": "kmr", "text": "Pir revîn e: Îtîrazeke navendî divê di argumanê de be, ne tenê li qeraxê." },
+                { "language": "pl", "text": "Zbyt wymijające: centralny zarzut należy do argumentacji, nie tylko na margines." },
+                { "language": "ro", "text": "Prea evaziv: o obiecție centrală aparține argumentației, nu doar marginii." },
+                { "language": "sq", "text": "Tepër shmangëse: një kundërshtim qendror i përket argumentimit, jo vetëm margjinës." }
+              ],
+              "explanationKey": "footnote-evasion"
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "choices": [
+            {
+              "id": "correct",
+              "text": "Der Einwand zeigt, dass hybride Seminare Beteiligung nicht automatisch ausgleichen; er stärkt aber die präzisierte These zu didaktisch gleichwertig eingebundenen Beiträgen.",
+              "translations": [
+                { "language": "en", "text": "The objection shows that hybrid seminars do not automatically balance participation; however, it strengthens the refined thesis on contributions integrated didactically as equally valuable." },
+                { "language": "fa", "text": "این ایراد نشان می‌دهد که سمینارهای ترکیبی مشارکت را خودبه‌خود متعادل نمی‌کنند؛ اما تز دقیق‌شده درباره وارد کردن هم‌ارزش مشارکت‌ها از نظر آموزشی را تقویت می‌کند." },
+                { "language": "ar", "text": "يبين الاعتراض أن الندوات الهجينة لا توازن المشاركة تلقائياً؛ لكنه يقوي الأطروحة المصاغة بدقة حول إدماج المساهمات تعليمياً بقيمة متساوية." },
+                { "language": "tr", "text": "İtiraz, hibrit seminerlerin katılımı otomatik olarak dengelemediğini gösterir; ancak katkıların didaktik olarak eşdeğer biçimde dahil edilmesine ilişkin netleştirilmiş tezi güçlendirir." },
+                { "language": "ru", "text": "Возражение показывает, что гибридные семинары не выравнивают участие автоматически; однако оно усиливает уточнённый тезис о дидактически равноценном включении вкладов." },
+                { "language": "ckb", "text": "ئەم ڕەخنەیە پیشان دەدات کە سیمینارە هایبرێدەکان بەشداری خۆکارانە هاوسەنگ ناکەن؛ بەڵام تێزی وردکراو دەربارەی تێکەڵکردنی بەشدارییەکان بە هاوبەهایی فێرکاری بەهێز دەکات." },
+                { "language": "kmr", "text": "Ev îtîraz nîşan dide ku semînerên hîbrîd beşdariyê xweber hevseng nakin; lê teza zelalkirî li ser têxistina beşdariyan wek hevnirx a didaktîk xurt dike." },
+                { "language": "pl", "text": "Zarzut pokazuje, że seminaria hybrydowe nie wyrównują uczestnictwa automatycznie; wzmacnia jednak doprecyzowaną tezę o dydaktycznym, równowartościowym włączaniu wkładów." },
+                { "language": "ro", "text": "Obiecția arată că seminarele hibride nu echilibrează automat participarea; ea întărește însă teza precizată despre integrarea didactică echivalentă a contribuțiilor." },
+                { "language": "sq", "text": "Kundërshtimi tregon se seminaret hibride nuk e baraspeshojnë automatikisht pjesëmarrjen; megjithatë e forcon tezën e saktësuar për integrimin didaktik të kontributeve si të barasvlershme." }
+              ],
+              "isCorrect": true,
+              "feedback": "Stark: Der Satz integriert den Einwand und sichert zugleich den eigenen Beitrag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Strong: The sentence integrates the objection while also securing your own contribution." },
+                { "language": "fa", "text": "قوی: جمله ایراد را در خود می‌گیرد و هم‌زمان سهم خود را حفظ می‌کند." },
+                { "language": "ar", "text": "قوي: تدمج الجملة الاعتراض وفي الوقت نفسه تحفظ مساهمتك الخاصة." },
+                { "language": "tr", "text": "Güçlü: Cümle itirazı entegre ederken aynı zamanda kendi katkınızı korur." },
+                { "language": "ru", "text": "Сильно: предложение интегрирует возражение и одновременно сохраняет собственный вклад." },
+                { "language": "ckb", "text": "بەهێزە: ڕستەکە ڕەخنەکە تێکەڵ دەکات و هاوکات بەشداریی خۆت دەپارێزێت." },
+                { "language": "kmr", "text": "Xurt e: Hevok îtîrazê tê de digire û di heman demê de beşdariya we diparêze." },
+                { "language": "pl", "text": "Mocne: zdanie integruje zarzut i jednocześnie zabezpiecza własny wkład." },
+                { "language": "ro", "text": "Puternic: propoziția integrează obiecția și în același timp protejează contribuția proprie." },
+                { "language": "sq", "text": "E fortë: fjalia e integron kundërshtimin dhe njëkohësisht e ruan kontributin tuaj." }
+              ],
+              "explanationKey": "integrated-final-response"
+            },
+            {
+              "id": "weak-full-retreat",
+              "text": "Der Einwand zeigt, dass meine These zu stark war und hybride Seminare vermutlich doch keine bessere Beteiligung ermöglichen.",
+              "translations": [
+                { "language": "en", "text": "The objection shows that my thesis was too strong and that hybrid seminars probably do not enable better participation after all." },
+                { "language": "fa", "text": "این ایراد نشان می‌دهد که تز من بیش از حد قوی بوده و سمینارهای ترکیبی احتمالاً در نهایت مشارکت بهتر را ممکن نمی‌کنند." },
+                { "language": "ar", "text": "يبين الاعتراض أن أطروحتي كانت قوية أكثر من اللازم وأن الندوات الهجينة ربما لا تتيح مشاركة أفضل في النهاية." },
+                { "language": "tr", "text": "İtiraz, tezimin fazla güçlü olduğunu ve hibrit seminerlerin muhtemelen daha iyi katılım sağlamadığını gösteriyor." },
+                { "language": "ru", "text": "Возражение показывает, что мой тезис был слишком сильным и что гибридные семинары, вероятно, всё же не обеспечивают лучшего участия." },
+                { "language": "ckb", "text": "ئەم ڕەخنەیە پیشان دەدات کە تێزەکەم زۆر بەهێز بووە و سیمینارە هایبرێدەکان لەوانەیە بەشداریی باشتر نەکەن." },
+                { "language": "kmr", "text": "Ev îtîraz nîşan dide ku teza min pir xurt bû û semînerên hîbrîd belkî beşdariyeke çêtir peyda nakin." },
+                { "language": "pl", "text": "Zarzut pokazuje, że moja teza była zbyt mocna i że seminaria hybrydowe prawdopodobnie jednak nie umożliwiają lepszego uczestnictwa." },
+                { "language": "ro", "text": "Obiecția arată că teza mea a fost prea puternică și că seminarele hibride probabil nu permit totuși o participare mai bună." },
+                { "language": "sq", "text": "Kundërshtimi tregon se teza ime ishte tepër e fortë dhe se seminaret hibride ndoshta nuk mundësojnë pjesëmarrje më të mirë." }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu starke Rücknahme: Der Einwand wird akzeptiert, aber der präzisierte eigene Beitrag geht verloren.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too much retreat: The objection is accepted, but the refined contribution is lost." },
+                { "language": "fa", "text": "عقب‌نشینی بیش از حد است: ایراد پذیرفته می‌شود، اما سهم دقیق‌شده از دست می‌رود." },
+                { "language": "ar", "text": "تراجع مفرط: يُقبل الاعتراض، لكن المساهمة المصاغة بدقة تضيع." },
+                { "language": "tr", "text": "Fazla geri çekilme: İtiraz kabul ediliyor, ama netleştirilmiş katkı kayboluyor." },
+                { "language": "ru", "text": "Слишком сильное отступление: возражение принято, но уточнённый вклад теряется." },
+                { "language": "ckb", "text": "پاشەکشەی زۆرە: ڕەخنەکە قبووڵ دەکرێت، بەڵام بەشداریی وردکراو لەدەست دەچێت." },
+                { "language": "kmr", "text": "Pir paşvekişandin e: Îtîraz tê qebûlkirin, lê beşdariya zelalkirî winda dibe." },
+                { "language": "pl", "text": "Zbyt dalekie wycofanie: zarzut zostaje przyjęty, ale doprecyzowany wkład znika." },
+                { "language": "ro", "text": "Retragere prea mare: obiecția este acceptată, dar contribuția precizată se pierde." },
+                { "language": "sq", "text": "Tërheqje tepër e madhe: kundërshtimi pranohet, por kontributi i saktësuar humbet." }
+              ],
+              "explanationKey": "over-retreat"
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 2,
+          "feedbackType": "objection-strategy",
+          "text": "Ein starker Einwand muss nicht abgewehrt werden. Er kann die These präziser und glaubwürdiger machen.",
+          "translations": [
+            { "language": "en", "text": "A strong objection does not have to be fought off. It can make the thesis more precise and credible." },
+            { "language": "fa", "text": "ایراد قوی لازم نیست دفع شود. می‌تواند تز را دقیق‌تر و قابل‌باورتر کند." },
+            { "language": "ar", "text": "لا يجب صد الاعتراض القوي دائماً. يمكنه أن يجعل الأطروحة أدق وأكثر مصداقية." },
+            { "language": "tr", "text": "Güçlü bir itirazı savuşturmak gerekmez. Tezi daha kesin ve inandırıcı kılabilir." },
+            { "language": "ru", "text": "Сильное возражение не обязательно отражать. Оно может сделать тезис точнее и убедительнее." },
+            { "language": "ckb", "text": "ڕەخنەی بەهێز پێویست نییە ڕەت بکرێتەوە. دەتوانێت تێزەکە وردتر و باوەڕپێکراوتر بکات." },
+            { "language": "kmr", "text": "Îtîrazeke xurt ne pêwîst e were parastin. Dikare tezê zelaltir û bawerbar tir bike." },
+            { "language": "pl", "text": "Silnego zarzutu nie trzeba odpierać. Może uczynić tezę bardziej precyzyjną i wiarygodną." },
+            { "language": "ro", "text": "O obiecție puternică nu trebuie respinsă. Ea poate face teza mai precisă și mai credibilă." },
+            { "language": "sq", "text": "Një kundërshtim i fortë nuk duhet domosdoshmërisht të hidhet poshtë. Ai mund ta bëjë tezën më të saktë dhe më të besueshme." }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "feedbackType": "concept-note",
+          "text": "Wenn ein Datenpunkt widersprüchlich wirkt, prüfen Sie zuerst, ob der zentrale Begriff zu grob gefasst ist.",
+          "translations": [
+            { "language": "en", "text": "When a data point seems contradictory, first check whether the central concept is defined too broadly." },
+            { "language": "fa", "text": "وقتی یک داده متناقض به نظر می‌رسد، اول بررسی کنید آیا مفهوم اصلی بیش از حد کلی تعریف شده است یا نه." },
+            { "language": "ar", "text": "عندما تبدو نقطة بيانات متناقضة، افحص أولاً ما إذا كان المفهوم المركزي مصاغاً على نحو واسع جداً." },
+            { "language": "tr", "text": "Bir veri noktası çelişkili görünüyorsa önce temel kavramın fazla geniş tanımlanıp tanımlanmadığını kontrol edin." },
+            { "language": "ru", "text": "Когда отдельный показатель кажется противоречивым, сначала проверьте, не слишком ли широко определено центральное понятие." },
+            { "language": "ckb", "text": "کاتێک خاڵێکی داتا وەک ناکۆک دەردەکەوێت، سەرەتا بپشکنە ئایا چەمکی سەرەکی زۆر فراوان داڕێژراوە یان نا." },
+            { "language": "kmr", "text": "Dema xalekî dane wek nakok xuya dike, pêşî binêrin ka têgeha navendî pir fireh hatiye pênasekirin an na." },
+            { "language": "pl", "text": "Gdy punkt danych wydaje się sprzeczny, najpierw sprawdź, czy pojęcie centralne nie jest ujęte zbyt szeroko." },
+            { "language": "ro", "text": "Când un punct de date pare contradictoriu, verificați mai întâi dacă termenul central este definit prea larg." },
+            { "language": "sq", "text": "Kur një pikë të dhënash duket kontradiktore, së pari kontrolloni nëse koncepti qendror është përkufizuar tepër gjerë." }
+          ]
+        },
+        {
+          "turnSortOrder": 6,
+          "feedbackType": "thesis-note",
+          "text": "Eine begrenzte These ist nicht automatisch schwach. Sie ist oft wissenschaftlich belastbarer als eine große, ungesicherte Behauptung.",
+          "translations": [
+            { "language": "en", "text": "A limited thesis is not automatically weak. It is often more academically robust than a large, unsecured claim." },
+            { "language": "fa", "text": "تز محدود الزاماً ضعیف نیست. اغلب از یک ادعای بزرگ و بدون پشتوانه، از نظر علمی قابل اتکاتر است." },
+            { "language": "ar", "text": "الأطروحة المحددة ليست ضعيفة بالضرورة. غالباً ما تكون أكثر متانة علمياً من ادعاء كبير غير مضمون." },
+            { "language": "tr", "text": "Sınırlı bir tez otomatik olarak zayıf değildir. Çoğu zaman büyük ama güvencesiz bir iddiadan akademik olarak daha sağlamdır." },
+            { "language": "ru", "text": "Ограниченный тезис не обязательно слаб. Часто он научно устойчивее, чем крупное, но необеспеченное утверждение." },
+            { "language": "ckb", "text": "تێزی سنووردار خۆکارانە لاواز نییە. زۆرجار لە بانگەشەیەکی گەورە و بێ پشتوانە زانستییانە پشتپێبەستترە." },
+            { "language": "kmr", "text": "Tezeke sînordar xweber lawaz nîne. Gelek caran ji îdiayeke mezin û bê piştgirî zanistî xurtir e." },
+            { "language": "pl", "text": "Ograniczona teza nie jest automatycznie słaba. Często jest naukowo solidniejsza niż duże, niezabezpieczone twierdzenie." },
+            { "language": "ro", "text": "O teză limitată nu este automat slabă. Adesea este mai solidă științific decât o afirmație mare, nesusținută." },
+            { "language": "sq", "text": "Një tezë e kufizuar nuk është automatikisht e dobët. Shpesh është shkencërisht më e qëndrueshme se një pretendim i madh dhe i pambështetur." }
+          ]
+        },
+        {
+          "turnSortOrder": 10,
+          "feedbackType": "revision-note",
+          "text": "Ein Einwand ist gut verarbeitet, wenn er die Schlussfolgerung sichtbar verändert, aber nicht den gesamten Argumentationsaufbau zerstört.",
+          "translations": [
+            { "language": "en", "text": "An objection is well processed when it visibly changes the conclusion without destroying the entire structure of the argument." },
+            { "language": "fa", "text": "ایراد زمانی خوب پردازش شده است که نتیجه‌گیری را آشکارا تغییر دهد، اما کل ساختار استدلال را خراب نکند." },
+            { "language": "ar", "text": "يُعالج الاعتراض جيداً عندما يغير الاستنتاج بوضوح من دون أن يهدم بنية الحجة كلها." },
+            { "language": "tr", "text": "Bir itiraz, sonucu görünür biçimde değiştirip tüm argüman yapısını yıkmadığında iyi işlenmiştir." },
+            { "language": "ru", "text": "Возражение хорошо обработано, если оно заметно меняет вывод, но не разрушает всю структуру аргумента." },
+            { "language": "ckb", "text": "ڕەخنە کاتێک باش چارەسەر کراوە کە دەرئەنجامەکە بە دیاری بگۆڕێت، بەڵام هەموو پێکهاتەی بەڵگەهێنان تێک نەدات." },
+            { "language": "kmr", "text": "Îtîraz baş hatiye xebitandin dema ku encamê bi xuya diguherîne, lê tevahiya avahiya argumanê hilnade." },
+            { "language": "pl", "text": "Zarzut jest dobrze opracowany, gdy widocznie zmienia wniosek, ale nie niszczy całej struktury argumentacji." },
+            { "language": "ro", "text": "O obiecție este bine prelucrată când schimbă vizibil concluzia, dar nu distruge întreaga structură a argumentului." },
+            { "language": "sq", "text": "Një kundërshtim është përpunuar mirë kur e ndryshon dukshëm përfundimin, por nuk e shkatërron gjithë strukturën e argumentimit." }
+          ]
+        },
+        {
+          "turnSortOrder": 12,
+          "feedbackType": "final-response",
+          "text": "Eine souveräne Schlussantwort vermeidet zwei Extreme: den Einwand kleinreden oder die eigene These vollständig zurücknehmen.",
+          "translations": [
+            { "language": "en", "text": "A confident final response avoids two extremes: minimizing the objection or fully withdrawing your own thesis." },
+            { "language": "fa", "text": "پاسخ پایانی مسلط از دو افراط پرهیز می‌کند: کوچک جلوه دادن ایراد یا پس گرفتن کامل تز خود." },
+            { "language": "ar", "text": "الرد الختامي المتزن يتجنب طرفين: التقليل من الاعتراض أو سحب أطروحتك بالكامل." },
+            { "language": "tr", "text": "Güvenli bir son yanıt iki uçtan kaçınır: itirazı küçümsemek ya da kendi tezini tamamen geri çekmek." },
+            { "language": "ru", "text": "Уверенный заключительный ответ избегает двух крайностей: приуменьшать возражение или полностью отказываться от собственного тезиса." },
+            { "language": "ckb", "text": "وەڵامی کۆتایی بەهێز لە دوو سنوور دوور دەکەوێتەوە: بچووککردنەوەی ڕەخنە یان پاشوپێشکردنی تەواوی تێزی خۆت." },
+            { "language": "kmr", "text": "Bersiva dawî ya bi bawerî ji du tundiyan dûr dikeve: biçûk dîtina îtîrazê an bi tevahî paşvekişandina teza xwe." },
+            { "language": "pl", "text": "Pewna odpowiedź końcowa unika dwóch skrajności: pomniejszania zarzutu albo całkowitego wycofania własnej tezy." },
+            { "language": "ro", "text": "Un răspuns final stăpânit evită două extreme: minimalizarea obiecției sau retragerea completă a propriei teze." },
+            { "language": "sq", "text": "Një përgjigje përfundimtare e sigurt shmang dy ekstreme: zvogëlimin e kundërshtimit ose tërheqjen e plotë të tezës suaj." }
+          ]
+        }
+      ],
+      "imageSlots": [
+        {
+          "slotKey": "colloquium-objection-discussion",
+          "placement": "header",
+          "purpose": "Show a neutral academic colloquium discussion where an objection is being addressed without readable names, slides, or private research data.",
+          "altText": "A university colloquium table where adult participants discuss an academic objection with abstract notes and no readable private data.",
+          "altTextTranslations": [
+            { "language": "en", "text": "A university colloquium table where adult participants discuss an academic objection with abstract notes and no readable private data." },
+            { "language": "fa", "text": "میز یک جلسه پژوهشی دانشگاهی که شرکت‌کنندگان بزرگسال کنار آن درباره یک ایراد آکادمیک با یادداشت‌های انتزاعی و بدون داده شخصی خوانا بحث می‌کنند." },
+            { "language": "ar", "text": "طاولة ندوة بحثية جامعية يناقش عندها بالغون اعتراضاً أكاديمياً مع ملاحظات تجريدية ومن دون بيانات شخصية مقروءة." },
+            { "language": "tr", "text": "Yetişkin katılımcıların soyut notlarla ve okunabilir özel veri olmadan akademik bir itirazı tartıştığı üniversite kolokyum masası." },
+            { "language": "ru", "text": "Стол университетского коллоквиума, за которым взрослые участники обсуждают академическое возражение с абстрактными заметками и без читаемых личных данных." },
+            { "language": "ckb", "text": "مێزی کۆڵۆکیۆمی زانکۆ کە بەشداربووانی گەورەساڵ لەسەری دەربارەی ڕەخنەیەکی ئەکادیمی بە تێبینی ئەبستراکت و بەبێ داتای کەسیی خوێندراو گفتوگۆ دەکەن." },
+            { "language": "kmr", "text": "Maseya kolokyuma zanîngehê ku beşdarên mezin li ser îtîrazeke akademîk bi notên abstrakt û bê daneyên kesane yên xwendinbar nîqaş dikin." },
+            { "language": "pl", "text": "Stół kolokwium uniwersyteckiego, przy którym dorośli uczestnicy omawiają zarzut akademicki z abstrakcyjnymi notatkami i bez czytelnych danych prywatnych." },
+            { "language": "ro", "text": "O masă de colocviu universitar unde participanți adulți discută o obiecție academică cu notițe abstracte și fără date personale lizibile." },
+            { "language": "sq", "text": "Një tavolinë kolokiumi universitar ku pjesëmarrës të rritur diskutojnë një kundërshtim akademik me shënime abstrakte dhe pa të dhëna personale të lexueshme." }
+          ],
+          "imagePrompt": "Clean educational illustration of a diverse adult university colloquium group discussing an academic objection around a table, abstract notes and simple presentation board with no readable text, German higher-education setting, no logos, no private data, calm critical discussion, accessible composition.",
+          "assetPath": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

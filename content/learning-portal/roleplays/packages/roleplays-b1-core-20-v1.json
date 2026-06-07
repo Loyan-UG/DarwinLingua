@@ -1,0 +1,969 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "roleplays-b1-core-20-v1",
+  "packageName": "Roleplay-Szenarien B1 Core 20 v1",
+  "source": "Hybrid",
+  "defaultMeaningLanguages": [
+    "en",
+    "fa",
+    "ar",
+    "tr",
+    "ru",
+    "ckb",
+    "kmr",
+    "pl",
+    "ro",
+    "sq"
+  ],
+  "entries": [],
+  "roleplayScenarios": [
+    {
+      "slug": "b1-mit-der-praxis-einen-befund-klaeren",
+      "title": "Mit der Praxis einen Befund klären",
+      "titleTranslations": [
+        { "language": "en", "text": "Clarify a test result with the doctor's office" },
+        { "language": "fa", "text": "پیگیری نتیجه آزمایش با مطب" },
+        { "language": "ar", "text": "توضيح نتيجة فحص مع العيادة" },
+        { "language": "tr", "text": "Muayenehaneyle bir sonucu netleştirmek" },
+        { "language": "ru", "text": "Уточнить результат исследования в практике" },
+        { "language": "ckb", "text": "ڕوونکردنەوەی ئەنجامی پشکنین لەگەڵ مطب" },
+        { "language": "kmr", "text": "Encama kontrolê bi muayenehaneyê zelal kirin" },
+        { "language": "pl", "text": "Wyjaśnić wynik badania z przychodnią" },
+        { "language": "ro", "text": "Să clarifici un rezultat cu cabinetul" },
+        { "language": "sq", "text": "Të sqarosh një rezultat me ordinancën" }
+      ],
+      "description": "Du rufst in der Praxis an, weil du auf einen Befund wartest. Du fragst sachlich, ob ein Rückruf nötig ist, was der nächste Schritt ist und ob du eine Kopie bekommen kannst.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You call the doctor's office because you are waiting for a test result. You ask factually whether a callback is needed, what the next step is, and whether you can get a copy." },
+        { "language": "fa", "text": "با مطب تماس می‌گیری، چون منتظر نتیجه آزمایش هستی. آرام و دقیق می‌پرسی آیا تماس پزشک لازم است، قدم بعدی چیست و آیا می‌توانی نسخه‌ای دریافت کنی." },
+        { "language": "ar", "text": "تتصل بالعيادة لأنك تنتظر نتيجة فحص. تسأل بشكل موضوعي هل يلزم اتصال عكسي، وما الخطوة التالية، وهل يمكنك الحصول على نسخة." },
+        { "language": "tr", "text": "Bir sonuç beklediğin için muayenehaneyi arıyorsun. Geri arama gerekip gerekmediğini, sonraki adımın ne olduğunu ve bir kopya alıp alamayacağını somut şekilde soruyorsun." },
+        { "language": "ru", "text": "Ты звонишь в практику, потому что ждешь результат. Ты спокойно спрашиваешь, нужен ли обратный звонок, какой следующий шаг и можно ли получить копию." },
+        { "language": "ckb", "text": "پەیوەندی بە مطب دەکەیت، چونکە چاوەڕێی ئەنجامی پشکنینیت. بە شێوەیەکی ڕاست دەپرسی ئایا پەیوەندییەکی گەڕاوە پێویستە، هەنگاوی دواتر چییە و ئایا دەتوانیت کۆپییەک وەربگریت." },
+        { "language": "kmr", "text": "Tu telefonî muayenehaneyê dikî, ji ber ku li benda encama kontrolê yî. Tu bi rastî dipirsî ka paşve-telefon pêwîst e, gava din çi ye û gelo dikarî kopiyekê bistînî." },
+        { "language": "pl", "text": "Dzwonisz do przychodni, ponieważ czekasz na wynik badania. Rzeczowo pytasz, czy potrzebny jest telefon zwrotny, jaki jest następny krok i czy możesz dostać kopię." },
+        { "language": "ro", "text": "Suni la cabinet pentru că aștepți un rezultat. Întrebi obiectiv dacă este necesar un apel înapoi, care este pasul următor și dacă poți primi o copie." },
+        { "language": "sq", "text": "Telefonon në ordinancë sepse po pret një rezultat. Pyet me qetësi nëse duhet një telefonatë kthimi, cili është hapi pasues dhe nëse mund të marrësh një kopje." }
+      ],
+      "learnerGoal": "Du kannst telefonisch nach einem Befund fragen, ohne eine medizinische Bewertung zu erzwingen, und Rückruf, nächste Schritte und Kopie klären.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can ask about a test result by phone without forcing a medical assessment, and clarify callback, next steps, and a copy." },
+        { "language": "fa", "text": "می‌توانی تلفنی درباره نتیجه آزمایش بپرسی، بدون اینکه ارزیابی پزشکی را تحمیل کنی، و تماس پزشک، قدم‌های بعدی و نسخه کپی را روشن کنی." },
+        { "language": "ar", "text": "يمكنك السؤال هاتفيًا عن نتيجة فحص دون فرض تقييم طبي، وتوضيح الاتصال العكسي والخطوات التالية والنسخة." },
+        { "language": "tr", "text": "Telefonda tıbbi değerlendirmeyi zorlamadan bir sonucu sorabilir, geri aramayı, sonraki adımları ve kopyayı netleştirebilirsin." },
+        { "language": "ru", "text": "Ты можешь по телефону спросить о результате, не требуя медицинской оценки, и уточнить обратный звонок, следующие шаги и копию." },
+        { "language": "ckb", "text": "دەتوانیت بە تەلەفۆن دەربارەی ئەنجامی پشکنین بپرسی، بەبێ ئەوەی هەڵسەنگاندنی پزیشکی بەزۆر داوا بکەیت، و پەیوەندیی گەڕاوە، هەنگاوی دواتر و کۆپی ڕوون بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî bi telefonê li ser encama kontrolê bipirsî bêyî ku nirxandineke tibî bi zorê bixwazî, û paşve-telefon, gavên din û kopî zelal bikî." },
+        { "language": "pl", "text": "Potrafisz telefonicznie zapytać o wynik bez wymuszania oceny medycznej oraz wyjaśnić telefon zwrotny, następne kroki i kopię." },
+        { "language": "ro", "text": "Poți întreba telefonic despre un rezultat fără să forțezi o evaluare medicală și poți clarifica apelul înapoi, pașii următori și copia." },
+        { "language": "sq", "text": "Mund të pyesësh me telefon për një rezultat pa kërkuar me ngulm vlerësim mjekësor dhe të sqarosh telefonatën kthimi, hapat pasues dhe kopjen." }
+      ],
+      "cefrLevel": "B1",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "documents-and-administration"
+      ],
+      "interactionMode": "phone",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "phone-call"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2420,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "receptionist",
+          "displayName": "Mitarbeiterin der Praxis",
+          "translations": [
+            { "language": "en", "text": "Doctor's office staff member" },
+            { "language": "fa", "text": "کارمند مطب" },
+            { "language": "ar", "text": "موظفة العيادة" },
+            { "language": "tr", "text": "Muayenehane çalışanı" },
+            { "language": "ru", "text": "Сотрудница практики" },
+            { "language": "ckb", "text": "کارمەندی مطب" },
+            { "language": "kmr", "text": "Karmenda muayenehaneyê" },
+            { "language": "pl", "text": "Pracowniczka przychodni" },
+            { "language": "ro", "text": "Angajată a cabinetului" },
+            { "language": "sq", "text": "Punonjëse e ordinancës" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "receptionist",
+          "baseText": "Praxis Dr. Keller, guten Tag. Sie hatten letzte Woche Blut abgenommen bekommen. Der Befund liegt vor, aber die Ärztin muss ihn noch freigeben.",
+          "translations": [
+            { "language": "en", "text": "Dr. Keller's office, good day. You had blood taken last week. The result is available, but the doctor still needs to release it." },
+            { "language": "fa", "text": "مطب دکتر کلر، روز بخیر. هفته گذشته از شما خون گرفته شد. نتیجه آماده است، اما پزشک هنوز باید آن را تأیید کند." },
+            { "language": "ar", "text": "عيادة الدكتور كيلر، يومك سعيد. تم سحب دم منك الأسبوع الماضي. النتيجة موجودة، لكن الطبيبة يجب أن تعتمدها بعد." },
+            { "language": "tr", "text": "Dr. Keller muayenehanesi, iyi günler. Geçen hafta kan vermiştiniz. Sonuç hazır, ama doktorun onu henüz onaylaması gerekiyor." },
+            { "language": "ru", "text": "Практика доктора Келлера, добрый день. На прошлой неделе у вас брали кровь. Результат уже есть, но врач еще должна его утвердить." },
+            { "language": "ckb", "text": "مطبی دکتۆر کێلەر، ڕۆژ باش. هەفتەی ڕابردوو خوێنتان لێوەرگیرا. ئەنجامەکە ئامادەیە، بەڵام پزیشکەکە هێشتا دەبێت پەسەندی بکات." },
+            { "language": "kmr", "text": "Muayenehaneya Dr. Keller, roj baş. Hefteya borî xwîn ji we hatibû girtin. Encam amade ye, lê doktor divê hîn wê erê bike." },
+            { "language": "pl", "text": "Przychodnia doktora Kellera, dzień dobry. W zeszłym tygodniu pobrano panu krew. Wynik jest dostępny, ale lekarka musi go jeszcze zatwierdzić." },
+            { "language": "ro", "text": "Cabinetul Dr. Keller, bună ziua. Săptămâna trecută vi s-a luat sânge. Rezultatul este disponibil, dar medicul trebuie încă să îl valideze." },
+            { "language": "sq", "text": "Ordinanca e Dr. Keller, mirëdita. Javën e kaluar ju morën gjak. Rezultati është gati, por mjekja duhet ende ta miratojë." }
+          ],
+          "function": "result-status",
+          "toneNote": "Administrative result status without medical interpretation.",
+          "expectedLearnerAction": "Ask for callback and next step."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Danke. Können Sie mir sagen, ob ich einen Rückruf von der Ärztin brauche und was der nächste Schritt ist? Eine medizinische Bewertung erwarte ich am Telefon nicht.",
+          "translations": [
+            { "language": "en", "text": "Thank you. Can you tell me whether I need a callback from the doctor and what the next step is? I do not expect a medical assessment by phone." },
+            { "language": "fa", "text": "ممنون. می‌توانید بگویید آیا به تماس پزشک نیاز دارم و قدم بعدی چیست؟ انتظار ارزیابی پزشکی از طریق تلفن ندارم." },
+            { "language": "ar", "text": "شكرًا. هل يمكنك أن تقولي لي هل أحتاج إلى اتصال عكسي من الطبيبة وما الخطوة التالية؟ لا أتوقع تقييمًا طبيًا عبر الهاتف." },
+            { "language": "tr", "text": "Teşekkürler. Doktorun beni geri araması gerekip gerekmediğini ve sonraki adımın ne olduğunu söyleyebilir misiniz? Telefonda tıbbi değerlendirme beklemiyorum." },
+            { "language": "ru", "text": "Спасибо. Можете сказать, нужен ли мне обратный звонок врача и какой следующий шаг? Медицинской оценки по телефону я не ожидаю." },
+            { "language": "ckb", "text": "سوپاس. دەتوانن پێم بڵێن ئایا پێویستم بە پەیوەندیی گەڕاوەی پزیشک هەیە و هەنگاوی دواتر چییە؟ چاوەڕێی هەڵسەنگاندنی پزیشکی بە تەلەفۆن ناکەم." },
+            { "language": "kmr", "text": "Spas. Hûn dikarin ji min re bibêjin gelo paşve-telefona doktorê pêwîst e û gava din çi ye? Ez nirxandineke tibî bi telefonê hêvî nakim." },
+            { "language": "pl", "text": "Dziękuję. Czy może mi pani powiedzieć, czy potrzebuję telefonu zwrotnego od lekarki i jaki jest następny krok? Nie oczekuję oceny medycznej przez telefon." },
+            { "language": "ro", "text": "Mulțumesc. Îmi puteți spune dacă am nevoie de un apel înapoi de la medic și care este pasul următor? Nu aștept o evaluare medicală la telefon." },
+            { "language": "sq", "text": "Faleminderit. A mund të më thoni nëse kam nevojë për një telefonatë kthimi nga mjekja dhe cili është hapi pasues? Nuk pres vlerësim mjekësor me telefon." }
+          ],
+          "function": "ask-result-process",
+          "toneNote": "Polite and realistic request without forcing diagnosis.",
+          "expectedLearnerAction": "Ask for callback, next step, and boundary."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "receptionist",
+          "baseText": "Das ist gut formuliert. Ich kann eine Rückrufnotiz machen. Die Ärztin entscheidet dann, ob sie anruft oder ob wir Ihnen nur eine kurze Nachricht schicken.",
+          "translations": [
+            { "language": "en", "text": "That is well phrased. I can make a callback note. The doctor will then decide whether she calls or whether we only send you a short message." },
+            { "language": "fa", "text": "این خوب بیان شد. می‌توانم یادداشت تماس برگشتی بگذارم. بعد پزشک تصمیم می‌گیرد که تماس بگیرد یا فقط پیام کوتاهی برایتان بفرستیم." },
+            { "language": "ar", "text": "هذا مصاغ جيدًا. يمكنني عمل ملاحظة للاتصال العكسي. ثم تقرر الطبيبة هل تتصل أم نرسل لك فقط رسالة قصيرة." },
+            { "language": "tr", "text": "Bu iyi ifade edildi. Bir geri arama notu bırakabilirim. Doktor sonra arayıp aramayacağına ya da size sadece kısa bir mesaj gönderip göndermeyeceğimize karar verir." },
+            { "language": "ru", "text": "Это хорошо сформулировано. Я могу сделать заметку для обратного звонка. Затем врач решит, позвонит ли она или мы только отправим вам короткое сообщение." },
+            { "language": "ckb", "text": "ئەمە باش داڕێژراوە. دەتوانم تێبینیی پەیوەندیی گەڕاوە بنووسم. پاشان پزیشک بڕیار دەدات ئایا پەیوەندی دەکات یان تەنها پەیامێکی کورتتان بۆ دەنێرین." },
+            { "language": "kmr", "text": "Ev baş hate gotin. Ez dikarim noteke paşve-telefonê çêkim. Paşê doktor biryar dide ka telefon dike an em tenê peyameke kurt ji we re dişînin." },
+            { "language": "pl", "text": "To jest dobrze sformułowane. Mogę zrobić notatkę o telefonie zwrotnym. Lekarka zdecyduje potem, czy zadzwoni, czy wyślemy panu tylko krótką wiadomość." },
+            { "language": "ro", "text": "Este bine formulat. Pot face o notă pentru apel înapoi. Medicul decide apoi dacă sună sau dacă vă trimitem doar un mesaj scurt." },
+            { "language": "sq", "text": "Kjo është formuluar mirë. Mund të bëj një shënim për telefonatë kthimi. Pastaj mjekja vendos nëse telefonon apo nëse ju dërgojmë vetëm një mesazh të shkurtër." }
+          ],
+          "function": "offer-callback-note",
+          "toneNote": "Explains process and decision boundary.",
+          "expectedLearnerAction": "Provide callback details and ask document availability."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Bitte notieren Sie, dass ich wissen möchte, ob ich etwas ändern oder einen weiteren Termin vereinbaren soll. Kann ich den Befund später auch als Kopie bekommen?",
+          "translations": [
+            { "language": "en", "text": "Please note that I would like to know whether I should change anything or make another appointment. Can I also get the result as a copy later?" },
+            { "language": "fa", "text": "لطفاً یادداشت کنید که می‌خواهم بدانم آیا باید چیزی را تغییر بدهم یا وقت دیگری بگیرم. آیا می‌توانم بعداً نتیجه را به‌صورت کپی هم بگیرم؟" },
+            { "language": "ar", "text": "يرجى تدوين أنني أريد أن أعرف هل يجب أن أغير شيئًا أو أحدد موعدًا آخر. هل يمكنني لاحقًا الحصول على النتيجة كنسخة أيضًا؟" },
+            { "language": "tr", "text": "Lütfen bir şeyi değiştirmem veya başka bir randevu almam gerekip gerekmediğini bilmek istediğimi not edin. Sonucu daha sonra kopya olarak da alabilir miyim?" },
+            { "language": "ru", "text": "Пожалуйста, запишите, что я хочу знать, нужно ли мне что-то изменить или назначить еще один прием. Могу ли я позже получить результат как копию?" },
+            { "language": "ckb", "text": "تکایە بنووسن کە دەمەوێت بزانم ئایا پێویستە شتێک بگۆڕم یان وەعدەیەکی تر دابنێم. ئایا دەتوانم دواتر ئەنجامەکە وەک کۆپی وەربگرم؟" },
+            { "language": "kmr", "text": "Ji kerema xwe binivîsin ku ez dixwazim bizanim ka divê ez tiştek biguherînim an randevûyek din çêkim. Ez dikarim paşê encamê wekî kopî jî bistînim?" },
+            { "language": "pl", "text": "Proszę zanotować, że chcę wiedzieć, czy powinienem coś zmienić albo umówić kolejny termin. Czy mogę później dostać wynik także jako kopię?" },
+            { "language": "ro", "text": "Vă rog să notați că vreau să știu dacă trebuie să schimb ceva sau să fac o altă programare. Pot primi mai târziu rezultatul și ca copie?" },
+            { "language": "sq", "text": "Ju lutem shënoni se dua të di nëse duhet të ndryshoj diçka ose të caktoj një takim tjetër. A mund ta marr rezultatin më vonë edhe si kopje?" }
+          ],
+          "function": "state-question-and-copy-request",
+          "toneNote": "Specific callback note and document question.",
+          "expectedLearnerAction": "Ask about next step and copy."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "receptionist",
+          "baseText": "Ja, eine Kopie können wir vorbereiten. Für die Abholung brauchen Sie bitte Ihre Gesundheitskarte oder einen Ausweis. Der Rückruf ist voraussichtlich heute Nachmittag.",
+          "translations": [
+            { "language": "en", "text": "Yes, we can prepare a copy. For pickup, please bring your health insurance card or an ID. The callback will probably be this afternoon." },
+            { "language": "fa", "text": "بله، می‌توانیم یک کپی آماده کنیم. برای دریافت، لطفاً کارت بیمه سلامت یا کارت شناسایی همراه داشته باشید. تماس برگشتی احتمالاً امروز بعدازظهر است." },
+            { "language": "ar", "text": "نعم، يمكننا تجهيز نسخة. للاستلام يرجى إحضار بطاقة التأمين الصحي أو هوية. من المتوقع أن يكون الاتصال العكسي بعد ظهر اليوم." },
+            { "language": "tr", "text": "Evet, bir kopya hazırlayabiliriz. Teslim almak için lütfen sağlık kartınızı veya kimliğinizi getirin. Geri arama muhtemelen bugün öğleden sonra olacak." },
+            { "language": "ru", "text": "Да, мы можем подготовить копию. Для получения, пожалуйста, принесите медицинскую карту или удостоверение. Обратный звонок, вероятно, будет сегодня днем." },
+            { "language": "ckb", "text": "بەڵێ، دەتوانین کۆپییەک ئامادە بکەین. بۆ وەرگرتن، تکایە کارتی تەندروستی یان ناسنامە بهێنن. پەیوەندیی گەڕاوە بە گشتی ئەمڕۆ دوای نیوەڕۆ دەبێت." },
+            { "language": "kmr", "text": "Erê, em dikarin kopiyekê amade bikin. Ji bo wergirtinê ji kerema xwe karta tenduristiyê an nasnameyê bînin. Paşve-telefon guman e îro piştî nîvro be." },
+            { "language": "pl", "text": "Tak, możemy przygotować kopię. Do odbioru proszę przynieść kartę ubezpieczenia zdrowotnego albo dowód. Telefon zwrotny będzie prawdopodobnie dziś po południu." },
+            { "language": "ro", "text": "Da, putem pregăti o copie. Pentru ridicare, vă rog să aduceți cardul de sănătate sau un act de identitate. Apelul înapoi va fi probabil astăzi după-amiază." },
+            { "language": "sq", "text": "Po, mund të përgatisim një kopje. Për ta marrë, ju lutem sillni kartën e sigurimit shëndetësor ose një dokument identiteti. Telefonata kthimi pritet sot pasdite." }
+          ],
+          "function": "copy-and-callback-answer",
+          "toneNote": "Gives document and timing instructions.",
+          "expectedLearnerAction": "Ask what to do if no callback arrives."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Vielen Dank. Falls ich heute keinen Rückruf bekomme, soll ich morgen noch einmal anrufen, oder warten Sie dann noch auf die Freigabe?",
+          "translations": [
+            { "language": "en", "text": "Thank you very much. If I do not receive a callback today, should I call again tomorrow, or would you then still be waiting for the release?" },
+            { "language": "fa", "text": "خیلی ممنون. اگر امروز تماسی دریافت نکردم، فردا دوباره تماس بگیرم یا شما هنوز منتظر تأیید می‌مانید؟" },
+            { "language": "ar", "text": "شكرًا جزيلًا. إذا لم أتلق اتصالًا عكسيًا اليوم، هل ينبغي أن أتصل مرة أخرى غدًا، أم تكونون حينها ما زلتم تنتظرون الاعتماد؟" },
+            { "language": "tr", "text": "Çok teşekkürler. Bugün geri arama almazsam yarın tekrar aramalı mıyım, yoksa o zaman hâlâ onayı mı bekliyor olursunuz?" },
+            { "language": "ru", "text": "Большое спасибо. Если сегодня мне не перезвонят, мне завтра позвонить еще раз или вы тогда еще будете ждать утверждения?" },
+            { "language": "ckb", "text": "زۆر سوپاس. ئەگەر ئەمڕۆ پەیوەندیی گەڕاوەم پێنەکرا، ئایا سبەی جارێکی تر پەیوەندی بکەم، یان ئەوسا هێشتا چاوەڕێی پەسەندکردن دەبن؟" },
+            { "language": "kmr", "text": "Gelek spas. Heke îro paşve-telefon negihîje min, divê ez sibê careke din telefon bikim, an hûn wê demê hîn li benda erêkirinê bin?" },
+            { "language": "pl", "text": "Bardzo dziękuję. Jeśli dziś nie dostanę telefonu zwrotnego, czy mam jutro zadzwonić jeszcze raz, czy będą państwo wtedy nadal czekać na zatwierdzenie?" },
+            { "language": "ro", "text": "Vă mulțumesc mult. Dacă nu primesc astăzi apelul înapoi, ar trebui să sun din nou mâine sau veți aștepta încă validarea?" },
+            { "language": "sq", "text": "Faleminderit shumë. Nëse sot nuk marr telefonatë kthimi, a duhet të telefonoj përsëri nesër, apo do të prisni ende miratimin?" }
+          ],
+          "function": "ask-follow-up-if-no-callback",
+          "toneNote": "Clarifies fallback without pressure.",
+          "expectedLearnerAction": "Ask when to follow up."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "receptionist",
+          "baseText": "Wenn bis morgen Mittag nichts gekommen ist, rufen Sie bitte noch einmal an. Dann sehen wir, ob die Freigabe fehlt oder ob die Ärztin schon eine Nachricht hinterlegt hat.",
+          "translations": [
+            { "language": "en", "text": "If nothing has come by tomorrow noon, please call again. Then we will see whether the release is missing or whether the doctor has already left a message." },
+            { "language": "fa", "text": "اگر تا فردا ظهر خبری نیامد، لطفاً دوباره تماس بگیرید. بعد بررسی می‌کنیم آیا تأیید هنوز کم است یا پزشک قبلاً پیامی گذاشته است." },
+            { "language": "ar", "text": "إذا لم يصل شيء حتى ظهر الغد، فاتصل مرة أخرى من فضلك. عندها نرى هل الاعتماد ناقص أم أن الطبيبة تركت رسالة بالفعل." },
+            { "language": "tr", "text": "Yarın öğlene kadar bir şey gelmezse lütfen tekrar arayın. O zaman onayın eksik olup olmadığını veya doktorun zaten bir mesaj bırakıp bırakmadığını görürüz." },
+            { "language": "ru", "text": "Если до завтрашнего полудня ничего не придет, пожалуйста, позвоните еще раз. Тогда мы посмотрим, не хватает ли утверждения или врач уже оставила сообщение." },
+            { "language": "ckb", "text": "ئەگەر تا نیوەڕۆی سبەی هیچ شتێک نەهات، تکایە جارێکی تر پەیوەندی بکەن. ئەوسا دەبینین ئایا پەسەندکردن کەمە یان پزیشک پەیامێکی پێشتر جێهێشتووە." },
+            { "language": "kmr", "text": "Heke heta nîvroya sibê tiştek neyê, ji kerema xwe careke din telefon bikin. Wê demê em dibînin ka erêkirin kêm e an doktor jixwe peyamek hiştiye." },
+            { "language": "pl", "text": "Jeśli do jutra do południa nic nie przyjdzie, proszę zadzwonić jeszcze raz. Wtedy sprawdzimy, czy brakuje zatwierdzenia, czy lekarka zostawiła już wiadomość." },
+            { "language": "ro", "text": "Dacă până mâine la prânz nu vine nimic, vă rog să sunați din nou. Atunci vedem dacă lipsește validarea sau dacă medicul a lăsat deja un mesaj." },
+            { "language": "sq", "text": "Nëse deri nesër në mesditë nuk vjen asgjë, ju lutem telefononi përsëri. Atëherë shohim nëse mungon miratimi apo nëse mjekja ka lënë tashmë një mesazh." }
+          ],
+          "function": "follow-up-instruction",
+          "toneNote": "Gives a clear follow-up time.",
+          "expectedLearnerAction": "Summarize callback, copy, and follow-up."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Gut, dann warte ich heute auf den Rückruf oder eine Nachricht, hole die Kopie mit Gesundheitskarte ab und melde mich morgen Mittag noch einmal, falls nichts kommt.",
+          "translations": [
+            { "language": "en", "text": "Good, then I will wait today for the callback or a message, pick up the copy with my health insurance card, and contact you again tomorrow noon if nothing comes." },
+            { "language": "fa", "text": "خوب، پس امروز منتظر تماس برگشتی یا پیام می‌مانم، کپی را با کارت بیمه سلامت تحویل می‌گیرم و اگر خبری نیامد فردا ظهر دوباره تماس می‌گیرم." },
+            { "language": "ar", "text": "حسنًا، إذن أنتظر اليوم الاتصال العكسي أو رسالة، وآخذ النسخة مع بطاقة التأمين الصحي، وأتصل مرة أخرى ظهر الغد إذا لم يصل شيء." },
+            { "language": "tr", "text": "Tamam, o zaman bugün geri aramayı veya bir mesajı beklerim, kopyayı sağlık kartımla alırım ve hiçbir şey gelmezse yarın öğlen tekrar ararım." },
+            { "language": "ru", "text": "Хорошо, тогда сегодня я жду обратного звонка или сообщения, заберу копию с медицинской картой и завтра в полдень свяжусь снова, если ничего не придет." },
+            { "language": "ckb", "text": "باشە، ئەوا ئەمڕۆ چاوەڕێی پەیوەندیی گەڕاوە یان پەیام دەکەم، کۆپییەکە بە کارتی تەندروستی وەردەگرم و ئەگەر هیچ نەهات سبەی نیوەڕۆ جارێکی تر پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Baş e, wê demê ez îro li benda paşve-telefonê an peyamekê dimînim, kopiyê bi karta tenduristiyê werdigirim û heke tiştek neyê sibê nîvro careke din têkilî digirim." },
+            { "language": "pl", "text": "Dobrze, w takim razie dziś poczekam na telefon zwrotny albo wiadomość, odbiorę kopię z kartą ubezpieczenia i odezwę się jutro w południe, jeśli nic nie przyjdzie." },
+            { "language": "ro", "text": "Bine, atunci aștept astăzi apelul înapoi sau un mesaj, ridic copia cu cardul de sănătate și revin mâine la prânz dacă nu vine nimic." },
+            { "language": "sq", "text": "Mirë, atëherë sot pres telefonatën kthimi ose një mesazh, marr kopjen me kartën e sigurimit shëndetësor dhe kontaktoj përsëri nesër në mesditë nëse nuk vjen asgjë." }
+          ],
+          "function": "summarize-result-process",
+          "toneNote": "Complete administrative summary.",
+          "expectedLearnerAction": "Summarize callback, copy pickup, and follow-up time."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "process-and-boundary-question",
+              "text": "Danke. Können Sie mir sagen, ob ich einen Rückruf von der Ärztin brauche und was der nächste Schritt ist? Eine medizinische Bewertung erwarte ich am Telefon nicht.",
+              "translations": [
+                { "language": "en", "text": "Thank you. Can you tell me whether I need a callback from the doctor and what the next step is? I do not expect a medical assessment by phone." },
+                { "language": "fa", "text": "ممنون. می‌توانید بگویید آیا به تماس پزشک نیاز دارم و قدم بعدی چیست؟ انتظار ارزیابی پزشکی از طریق تلفن ندارم." },
+                { "language": "ar", "text": "شكرًا. هل يمكنك أن تقولي لي هل أحتاج إلى اتصال عكسي من الطبيبة وما الخطوة التالية؟ لا أتوقع تقييمًا طبيًا عبر الهاتف." },
+                { "language": "tr", "text": "Teşekkürler. Doktorun beni geri araması gerekip gerekmediğini ve sonraki adımın ne olduğunu söyleyebilir misiniz? Telefonda tıbbi değerlendirme beklemiyorum." },
+                { "language": "ru", "text": "Спасибо. Можете сказать, нужен ли мне обратный звонок врача и какой следующий шаг? Медицинской оценки по телефону я не ожидаю." },
+                { "language": "ckb", "text": "سوپاس. دەتوانن پێم بڵێن ئایا پێویستم بە پەیوەندیی گەڕاوەی پزیشک هەیە و هەنگاوی دواتر چییە؟ چاوەڕێی هەڵسەنگاندنی پزیشکی بە تەلەفۆن ناکەم." },
+                { "language": "kmr", "text": "Spas. Hûn dikarin ji min re bibêjin gelo paşve-telefona doktorê pêwîst e û gava din çi ye? Ez nirxandineke tibî bi telefonê hêvî nakim." },
+                { "language": "pl", "text": "Dziękuję. Czy może mi pani powiedzieć, czy potrzebuję telefonu zwrotnego od lekarki i jaki jest następny krok? Nie oczekuję oceny medycznej przez telefon." },
+                { "language": "ro", "text": "Mulțumesc. Îmi puteți spune dacă am nevoie de un apel înapoi de la medic și care este pasul următor? Nu aștept o evaluare medicală la telefon." },
+                { "language": "sq", "text": "Faleminderit. A mund të më thoni nëse kam nevojë për një telefonatë kthimi nga mjekja dhe cili është hapi pasues? Nuk pres vlerësim mjekësor me telefon." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fragst nach dem Prozess und respektierst die Grenze am Telefon.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You ask about the process and respect the phone boundary." },
+                { "language": "fa", "text": "خوب است: درباره فرایند می‌پرسی و محدودیت تلفنی را رعایت می‌کنی." },
+                { "language": "ar", "text": "جيد: تسأل عن الإجراء وتحترم حدود الهاتف." },
+                { "language": "tr", "text": "İyi: Süreci soruyor ve telefon sınırına saygı gösteriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты спрашиваешь о процессе и уважаешь границы телефонного разговора." },
+                { "language": "ckb", "text": "باشە: دەربارەی پرۆسەکە دەپرسی و سنووری تەلەفۆن ڕێز دەگریت." },
+                { "language": "kmr", "text": "Baş e: Tu li ser pêvajoyê dipirsî û sînorê telefonê rêz digirî." },
+                { "language": "pl", "text": "Dobrze: pytasz o proces i szanujesz granicę rozmowy telefonicznej." },
+                { "language": "ro", "text": "Bine: întrebi despre proces și respecți limita la telefon." },
+                { "language": "sq", "text": "Mirë: pyet për procesin dhe respekton kufirin në telefon." }
+              ]
+            },
+            {
+              "id": "asks-for-diagnosis",
+              "text": "Können Sie mir kurz sagen, ob der Befund gut oder schlecht ist?",
+              "translations": [
+                { "language": "en", "text": "Can you briefly tell me whether the result is good or bad?" },
+                { "language": "fa", "text": "می‌توانید کوتاه بگویید نتیجه خوب است یا بد؟" },
+                { "language": "ar", "text": "هل يمكنك أن تقولي لي باختصار هل النتيجة جيدة أم سيئة؟" },
+                { "language": "tr", "text": "Sonucun iyi mi kötü mü olduğunu kısaca söyleyebilir misiniz?" },
+                { "language": "ru", "text": "Можете коротко сказать, результат хороший или плохой?" },
+                { "language": "ckb", "text": "دەتوانن بە کورتی پێم بڵێن ئەنجامەکە باشە یان خراپ؟" },
+                { "language": "kmr", "text": "Hûn dikarin bi kurtî bibêjin ka encam baş e an xirab?" },
+                { "language": "pl", "text": "Czy może mi pani krótko powiedzieć, czy wynik jest dobry czy zły?" },
+                { "language": "ro", "text": "Îmi puteți spune pe scurt dacă rezultatul este bun sau rău?" },
+                { "language": "sq", "text": "A mund të më thoni shkurt nëse rezultati është i mirë apo i keq?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Nicht ideal: Du verlangst eine medizinische Bewertung von der Rezeption, statt den Prozess zu klären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Not ideal: You request a medical assessment from reception instead of clarifying the process." },
+                { "language": "fa", "text": "ایده‌آل نیست: به جای روشن کردن فرایند، از پذیرش ارزیابی پزشکی می‌خواهی." },
+                { "language": "ar", "text": "ليس مثاليًا: تطلب تقييمًا طبيًا من الاستقبال بدلًا من توضيح الإجراء." },
+                { "language": "tr", "text": "İdeal değil: Süreci netleştirmek yerine resepsiyondan tıbbi değerlendirme istiyorsun." },
+                { "language": "ru", "text": "Не идеально: ты просишь медицинскую оценку у регистратуры вместо уточнения процесса." },
+                { "language": "ckb", "text": "گونجاو نییە: لە جیاتی ڕوونکردنەوەی پرۆسەکە، لە پێشوازی هەڵسەنگاندنی پزیشکی داوا دەکەیت." },
+                { "language": "kmr", "text": "Ne baş e: Tu li şûna zelalkirina pêvajoyê, ji resepsiyonê nirxandina tibî dixwazî." },
+                { "language": "pl", "text": "Nieidealnie: prosisz recepcję o ocenę medyczną zamiast wyjaśnić proces." },
+                { "language": "ro", "text": "Nu este ideal: ceri o evaluare medicală de la recepție în loc să clarifici procesul." },
+                { "language": "sq", "text": "Jo ideale: kërkon vlerësim mjekësor nga recepsioni në vend që të sqarosh procesin." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "specific-note-and-copy",
+              "text": "Bitte notieren Sie, dass ich wissen möchte, ob ich etwas ändern oder einen weiteren Termin vereinbaren soll. Kann ich den Befund später auch als Kopie bekommen?",
+              "translations": [
+                { "language": "en", "text": "Please note that I would like to know whether I should change anything or make another appointment. Can I also get the result as a copy later?" },
+                { "language": "fa", "text": "لطفاً یادداشت کنید که می‌خواهم بدانم آیا باید چیزی را تغییر بدهم یا وقت دیگری بگیرم. آیا می‌توانم بعداً نتیجه را به‌صورت کپی هم بگیرم؟" },
+                { "language": "ar", "text": "يرجى تدوين أنني أريد أن أعرف هل يجب أن أغير شيئًا أو أحدد موعدًا آخر. هل يمكنني لاحقًا الحصول على النتيجة كنسخة أيضًا؟" },
+                { "language": "tr", "text": "Lütfen bir şeyi değiştirmem veya başka bir randevu almam gerekip gerekmediğini bilmek istediğimi not edin. Sonucu daha sonra kopya olarak da alabilir miyim?" },
+                { "language": "ru", "text": "Пожалуйста, запишите, что я хочу знать, нужно ли мне что-то изменить или назначить еще один прием. Могу ли я позже получить результат как копию?" },
+                { "language": "ckb", "text": "تکایە بنووسن کە دەمەوێت بزانم ئایا پێویستە شتێک بگۆڕم یان وەعدەیەکی تر دابنێم. ئایا دەتوانم دواتر ئەنجامەکە وەک کۆپی وەربگرم؟" },
+                { "language": "kmr", "text": "Ji kerema xwe binivîsin ku ez dixwazim bizanim ka divê ez tiştek biguherînim an randevûyek din çêkim. Ez dikarim paşê encamê wekî kopî jî bistînim?" },
+                { "language": "pl", "text": "Proszę zanotować, że chcę wiedzieć, czy powinienem coś zmienić albo umówić kolejny termin. Czy mogę później dostać wynik także jako kopię?" },
+                { "language": "ro", "text": "Vă rog să notați că vreau să știu dacă trebuie să schimb ceva sau să fac o altă programare. Pot primi mai târziu rezultatul și ca copie?" },
+                { "language": "sq", "text": "Ju lutem shënoni se dua të di nëse duhet të ndryshoj diçka ose të caktoj një takim tjetër. A mund ta marr rezultatin më vonë edhe si kopje?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du formulierst die Rückruffrage konkret und klärst die Unterlage.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You phrase the callback question concretely and clarify the document." },
+                { "language": "fa", "text": "خوب است: سؤال تماس برگشتی را مشخص می‌گویی و مدرک را روشن می‌کنی." },
+                { "language": "ar", "text": "جيد: تصوغ سؤال الاتصال العكسي بشكل محدد وتوضح الوثيقة." },
+                { "language": "tr", "text": "İyi: Geri arama sorusunu somut ifade ediyor ve belgeyi netleştiriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты конкретно формулируешь вопрос для обратного звонка и уточняешь документ." },
+                { "language": "ckb", "text": "باشە: پرسیاری پەیوەندیی گەڕاوە بە دیاری داڕێژیت و بەڵگەکە ڕوون دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu pirsa paşve-telefonê bi konkretî dibêjî û belgeyê zelal dikî." },
+                { "language": "pl", "text": "Dobrze: konkretnie formułujesz pytanie do telefonu zwrotnego i wyjaśniasz dokument." },
+                { "language": "ro", "text": "Bine: formulezi concret întrebarea pentru apelul înapoi și clarifici documentul." },
+                { "language": "sq", "text": "Mirë: e formulon konkretisht pyetjen për telefonatën kthimi dhe sqaron dokumentin." }
+              ]
+            },
+            {
+              "id": "too-short-copy-only",
+              "text": "Okay, dann warten wir. Kann ich eine Kopie bekommen?",
+              "translations": [
+                { "language": "en", "text": "Okay, then we wait. Can I get a copy?" },
+                { "language": "fa", "text": "باشه، پس منتظر می‌مانیم. می‌توانم یک کپی بگیرم؟" },
+                { "language": "ar", "text": "حسنًا، إذن ننتظر. هل يمكنني الحصول على نسخة؟" },
+                { "language": "tr", "text": "Tamam, o zaman bekleriz. Bir kopya alabilir miyim?" },
+                { "language": "ru", "text": "Хорошо, тогда подождем. Могу я получить копию?" },
+                { "language": "ckb", "text": "باشە، ئەوا چاوەڕێ دەکەین. دەتوانم کۆپییەک وەربگرم؟" },
+                { "language": "kmr", "text": "Baş e, wê demê em li bendê dimînin. Ez dikarim kopiyekê bistînim?" },
+                { "language": "pl", "text": "Dobrze, to poczekamy. Czy mogę dostać kopię?" },
+                { "language": "ro", "text": "Bine, atunci așteptăm. Pot primi o copie?" },
+                { "language": "sq", "text": "Mirë, atëherë presim. A mund të marr një kopje?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu knapp: Die konkrete Frage an die Ärztin fehlt.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too brief: The concrete question for the doctor is missing." },
+                { "language": "fa", "text": "خیلی کوتاه است: سؤال مشخص برای پزشک کم است." },
+                { "language": "ar", "text": "قصير جدًا: السؤال المحدد للطبيبة مفقود." },
+                { "language": "tr", "text": "Çok kısa: Doktor için somut soru eksik." },
+                { "language": "ru", "text": "Слишком кратко: не хватает конкретного вопроса для врача." },
+                { "language": "ckb", "text": "زۆر کورتە: پرسیاری دیاریکراو بۆ پزیشک کەمە." },
+                { "language": "kmr", "text": "Pir kurt e: Pirsa konkret ji bo doktorê kêm e." },
+                { "language": "pl", "text": "Zbyt krótko: brakuje konkretnego pytania do lekarki." },
+                { "language": "ro", "text": "Prea scurt: lipsește întrebarea concretă pentru medic." },
+                { "language": "sq", "text": "Shumë e shkurtër: mungon pyetja konkrete për mjeken." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-result-summary",
+              "text": "Gut, dann warte ich heute auf den Rückruf oder eine Nachricht, hole die Kopie mit Gesundheitskarte ab und melde mich morgen Mittag noch einmal, falls nichts kommt.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will wait today for the callback or a message, pick up the copy with my health insurance card, and contact you again tomorrow noon if nothing comes." },
+                { "language": "fa", "text": "خوب، پس امروز منتظر تماس برگشتی یا پیام می‌مانم، کپی را با کارت بیمه سلامت تحویل می‌گیرم و اگر خبری نیامد فردا ظهر دوباره تماس می‌گیرم." },
+                { "language": "ar", "text": "حسنًا، إذن أنتظر اليوم الاتصال العكسي أو رسالة، وآخذ النسخة مع بطاقة التأمين الصحي، وأتصل مرة أخرى ظهر الغد إذا لم يصل شيء." },
+                { "language": "tr", "text": "Tamam, o zaman bugün geri aramayı veya bir mesajı beklerim, kopyayı sağlık kartımla alırım ve hiçbir şey gelmezse yarın öğlen tekrar ararım." },
+                { "language": "ru", "text": "Хорошо, тогда сегодня я жду обратного звонка или сообщения, заберу копию с медицинской картой и завтра в полдень свяжусь снова, если ничего не придет." },
+                { "language": "ckb", "text": "باشە، ئەوا ئەمڕۆ چاوەڕێی پەیوەندیی گەڕاوە یان پەیام دەکەم، کۆپییەکە بە کارتی تەندروستی وەردەگرم و ئەگەر هیچ نەهات سبەی نیوەڕۆ جارێکی تر پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez îro li benda paşve-telefonê an peyamekê dimînim, kopiyê bi karta tenduristiyê werdigirim û heke tiştek neyê sibê nîvro careke din têkilî digirim." },
+                { "language": "pl", "text": "Dobrze, w takim razie dziś poczekam na telefon zwrotny albo wiadomość, odbiorę kopię z kartą ubezpieczenia i odezwę się jutro w południe, jeśli nic nie przyjdzie." },
+                { "language": "ro", "text": "Bine, atunci aștept astăzi apelul înapoi sau un mesaj, ridic copia cu cardul de sănătate și revin mâine la prânz dacă nu vine nimic." },
+                { "language": "sq", "text": "Mirë, atëherë sot pres telefonatën kthimi ose një mesazh, marr kopjen me kartën e sigurimit shëndetësor dhe kontaktoj përsëri nesër në mesditë nëse nuk vjen asgjë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fasst Rückruf, Kopie und Follow-up-Zeit vollständig zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You fully summarize callback, copy, and follow-up time." },
+                { "language": "fa", "text": "خوب است: تماس برگشتی، کپی و زمان پیگیری را کامل جمع‌بندی می‌کنی." },
+                { "language": "ar", "text": "جيد: تلخص الاتصال العكسي والنسخة ووقت المتابعة بالكامل." },
+                { "language": "tr", "text": "İyi: Geri aramayı, kopyayı ve takip zamanını tam özetliyorsun." },
+                { "language": "ru", "text": "Хорошо: ты полностью подытоживаешь обратный звонок, копию и время повторного обращения." },
+                { "language": "ckb", "text": "باشە: پەیوەندیی گەڕاوە، کۆپی و کاتی بەدواداچوون بە تەواوی کورت دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu paşve-telefon, kopî û dema şopandinê bi tevahî kurt dikî." },
+                { "language": "pl", "text": "Dobrze: w pełni podsumowujesz telefon zwrotny, kopię i czas ponownego kontaktu." },
+                { "language": "ro", "text": "Bine: rezumi complet apelul înapoi, copia și ora de revenire." },
+                { "language": "sq", "text": "Mirë: përmbledh plotësisht telefonatën kthimi, kopjen dhe kohën e ndjekjes." }
+              ]
+            },
+            {
+              "id": "summary-missing-follow-up",
+              "text": "Gut, dann warte ich auf den Rückruf und hole die Kopie ab.",
+              "translations": [
+                { "language": "en", "text": "Good, then I will wait for the callback and pick up the copy." },
+                { "language": "fa", "text": "خوب، پس منتظر تماس برگشتی می‌مانم و کپی را تحویل می‌گیرم." },
+                { "language": "ar", "text": "حسنًا، إذن أنتظر الاتصال العكسي وآخذ النسخة." },
+                { "language": "tr", "text": "Tamam, o zaman geri aramayı beklerim ve kopyayı alırım." },
+                { "language": "ru", "text": "Хорошо, тогда я подожду обратного звонка и заберу копию." },
+                { "language": "ckb", "text": "باشە، ئەوا چاوەڕێی پەیوەندیی گەڕاوە دەکەم و کۆپییەکە وەردەگرم." },
+                { "language": "kmr", "text": "Baş e, wê demê ez li benda paşve-telefonê dimînim û kopiyê werdigirim." },
+                { "language": "pl", "text": "Dobrze, w takim razie poczekam na telefon zwrotny i odbiorę kopię." },
+                { "language": "ro", "text": "Bine, atunci aștept apelul înapoi și ridic copia." },
+                { "language": "sq", "text": "Mirë, atëherë pres telefonatën kthimi dhe marr kopjen." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Es fehlen Gesundheitskarte und der Follow-up-Zeitpunkt morgen Mittag.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: The health insurance card and the follow-up time tomorrow noon are missing." },
+                { "language": "fa", "text": "ناقص است: کارت بیمه سلامت و زمان پیگیری فردا ظهر کم است." },
+                { "language": "ar", "text": "غير كامل: بطاقة التأمين الصحي ووقت المتابعة ظهر الغد مفقودان." },
+                { "language": "tr", "text": "Eksik: Sağlık kartı ve yarın öğlen takip zamanı eksik." },
+                { "language": "ru", "text": "Неполно: не хватает медицинской карты и времени повторного обращения завтра в полдень." },
+                { "language": "ckb", "text": "ناتەواوە: کارتی تەندروستی و کاتی بەدواداچوون لە نیوەڕۆی سبەی کەمە." },
+                { "language": "kmr", "text": "Netemam e: Karta tenduristiyê û dema şopandinê sibê nîvro kêm in." },
+                { "language": "pl", "text": "Niepełne: brakuje karty ubezpieczenia zdrowotnego i czasu ponownego kontaktu jutro w południe." },
+                { "language": "ro", "text": "Incomplet: lipsesc cardul de sănătate și ora de revenire mâine la prânz." },
+                { "language": "sq", "text": "E paplotë: mungojnë karta e sigurimit shëndetësor dhe koha e ndjekjes nesër në mesditë." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "administration-note",
+          "text": "Bei Befunden ist es wichtig, zwischen medizinischer Bewertung und organisatorischer Klärung zu unterscheiden: Rückruf, Kopie und nächster Kontakt.",
+          "translations": [
+            { "language": "en", "text": "With results, it is important to distinguish between medical assessment and organizational clarification: callback, copy, and next contact." },
+            { "language": "fa", "text": "در مورد نتایج آزمایش مهم است بین ارزیابی پزشکی و روشن‌سازی اداری فرق بگذاری: تماس برگشتی، کپی و تماس بعدی." },
+            { "language": "ar", "text": "في النتائج، من المهم التمييز بين التقييم الطبي والتوضيح التنظيمي: الاتصال العكسي والنسخة والتواصل التالي." },
+            { "language": "tr", "text": "Sonuçlarda tıbbi değerlendirme ile organizasyonel netleştirmeyi ayırmak önemlidir: geri arama, kopya ve sonraki iletişim." },
+            { "language": "ru", "text": "При результатах важно различать медицинскую оценку и организационное уточнение: обратный звонок, копия и следующий контакт." },
+            { "language": "ckb", "text": "لە ئەنجامەکاندا گرنگە جیاوازی بکەیت لە نێوان هەڵسەنگاندنی پزیشکی و ڕوونکردنەوەی ڕێکخستنی: پەیوەندیی گەڕاوە، کۆپی و پەیوەندیی دواتر." },
+            { "language": "kmr", "text": "Di encaman de girîng e cudahiya di navbera nirxandina tibî û zelalkirina rêxistinî de bê kirin: paşve-telefon, kopî û têkiliya din." },
+            { "language": "pl", "text": "Przy wynikach ważne jest rozróżnienie między oceną medyczną a wyjaśnieniem organizacyjnym: telefon zwrotny, kopia i następny kontakt." },
+            { "language": "ro", "text": "La rezultate este important să distingi între evaluarea medicală și clarificarea organizatorică: apel înapoi, copie și contactul următor." },
+            { "language": "sq", "text": "Te rezultatet është e rëndësishme të dallosh vlerësimin mjekësor nga sqarimi organizativ: telefonata kthimi, kopja dhe kontakti pasues." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    },
+    {
+      "slug": "b1-eine-ueberweisung-nachfragen",
+      "title": "Eine Überweisung nachfragen",
+      "titleTranslations": [
+        { "language": "en", "text": "Ask about a referral" },
+        { "language": "fa", "text": "پرسیدن درباره ارجاع پزشکی" },
+        { "language": "ar", "text": "السؤال عن إحالة طبية" },
+        { "language": "tr", "text": "Sevk hakkında soru sormak" },
+        { "language": "ru", "text": "Спросить о направлении" },
+        { "language": "ckb", "text": "پرسیارکردن دەربارەی ڕەوانەکردنی پزیشکی" },
+        { "language": "kmr", "text": "Li ser şandina tibî pirsîn" },
+        { "language": "pl", "text": "Zapytać o skierowanie" },
+        { "language": "ro", "text": "Să întrebi despre o trimitere" },
+        { "language": "sq", "text": "Të pyesësh për një referim" }
+      ],
+      "description": "Du bist beim Hausarzt. Die Beschwerden bleiben, und du möchtest wissen, ob eine Überweisung zur Fachärztin sinnvoll ist, warum sie nötig wäre und wie du den Termin organisierst.",
+      "descriptionTranslations": [
+        { "language": "en", "text": "You are at the family doctor. The symptoms remain, and you want to know whether a referral to a specialist makes sense, why it would be needed, and how to organize the appointment." },
+        { "language": "fa", "text": "نزد پزشک خانواده هستی. علائم باقی مانده‌اند و می‌خواهی بدانی آیا ارجاع به متخصص منطقی است، چرا لازم می‌شود و چطور وقت را هماهنگ می‌کنی." },
+        { "language": "ar", "text": "أنت عند طبيب الأسرة. الأعراض مستمرة، وتريد أن تعرف هل الإحالة إلى طبيبة مختصة مفيدة، ولماذا قد تكون ضرورية، وكيف تنظم الموعد." },
+        { "language": "tr", "text": "Aile doktorundasın. Şikayetler devam ediyor ve uzman doktora sevkin mantıklı olup olmadığını, neden gerekli olabileceğini ve randevuyu nasıl organize edeceğini bilmek istiyorsun." },
+        { "language": "ru", "text": "Ты у семейного врача. Жалобы остаются, и ты хочешь узнать, имеет ли смысл направление к специалисту, почему оно было бы нужно и как организовать прием." },
+        { "language": "ckb", "text": "لە لای پزیشکی خێزانیت. نیشانەکان بەردەوامن و دەتەوێت بزانیت ئایا ڕەوانەکردن بۆ پسپۆڕێک گونجاوە، بۆچی پێویست دەبێت و چۆن وەعدەکە ڕێک دەخەیت." },
+        { "language": "kmr", "text": "Tu li cem doktorê malbatê yî. Gazin didomin, û tu dixwazî bizanî gelo şandin ji bo pisporê wateyê heye, çima pêwîst be û tu çawa randevûyê rêxistin bikî." },
+        { "language": "pl", "text": "Jesteś u lekarza rodzinnego. Dolegliwości pozostają i chcesz wiedzieć, czy skierowanie do specjalistki ma sens, dlaczego byłoby potrzebne i jak zorganizować termin." },
+        { "language": "ro", "text": "Ești la medicul de familie. Simptomele persistă și vrei să știi dacă o trimitere la specialistă are sens, de ce ar fi necesară și cum organizezi programarea." },
+        { "language": "sq", "text": "Je te mjeku i familjes. Shqetësimet vazhdojnë dhe dëshiron të dish nëse një referim te specialistja ka kuptim, pse do të duhej dhe si ta organizosh takimin." }
+      ],
+      "learnerGoal": "Du kannst nach Sinn, Fachrichtung, Unterlagen und Terminprozess einer Überweisung fragen und die nächsten Schritte zusammenfassen.",
+      "learnerGoalTranslations": [
+        { "language": "en", "text": "You can ask about the purpose, specialty, documents, and appointment process of a referral and summarize the next steps." },
+        { "language": "fa", "text": "می‌توانی درباره هدف، تخصص، مدارک و فرایند وقت گرفتن برای ارجاع بپرسی و قدم‌های بعدی را جمع‌بندی کنی." },
+        { "language": "ar", "text": "يمكنك السؤال عن الهدف والاختصاص والوثائق وإجراء الموعد للإحالة وتلخيص الخطوات التالية." },
+        { "language": "tr", "text": "Bir sevkin amacı, uzmanlık alanı, belgeleri ve randevu süreci hakkında soru sorabilir ve sonraki adımları özetleyebilirsin." },
+        { "language": "ru", "text": "Ты можешь спросить о цели, специальности, документах и процессе записи по направлению и подытожить следующие шаги." },
+        { "language": "ckb", "text": "دەتوانیت دەربارەی ئامانج، پسپۆڕی، بەڵگەکان و پرۆسەی وەعدەی ڕەوانەکردن بپرسی و هەنگاوەکانی دواتر کورت بکەیتەوە." },
+        { "language": "kmr", "text": "Tu dikarî li ser armanc, pisporî, belge û pêvajoya randevûya şandinê bipirsî û gavên din kurt bikî." },
+        { "language": "pl", "text": "Potrafisz zapytać o cel, specjalizację, dokumenty i proces umawiania skierowania oraz podsumować następne kroki." },
+        { "language": "ro", "text": "Poți întreba despre scopul, specialitatea, documentele și procesul de programare al unei trimiteri și poți rezuma pașii următori." },
+        { "language": "sq", "text": "Mund të pyesësh për qëllimin, specialitetin, dokumentet dhe procesin e takimit për një referim dhe të përmbledhësh hapat pasues." }
+      ],
+      "cefrLevel": "B1",
+      "category": "health",
+      "topics": [
+        "appointments-and-health",
+        "documents-and-administration"
+      ],
+      "interactionMode": "doctor-office",
+      "register": "formal",
+      "taskType": "ask-for-information",
+      "skillFocus": [
+        "speaking",
+        "roleplay",
+        "formal-conversation"
+      ],
+      "examProfiles": [],
+      "sortOrder": 2430,
+      "estimatedPracticeMinutes": 12,
+      "isPublished": true,
+      "linkedDialogueSlug": null,
+      "roles": [
+        {
+          "roleKey": "doctor",
+          "displayName": "Hausärztin",
+          "translations": [
+            { "language": "en", "text": "Family doctor" },
+            { "language": "fa", "text": "پزشک خانواده" },
+            { "language": "ar", "text": "طبيبة الأسرة" },
+            { "language": "tr", "text": "Aile doktoru" },
+            { "language": "ru", "text": "Семейный врач" },
+            { "language": "ckb", "text": "پزیشکی خێزان" },
+            { "language": "kmr", "text": "Doktora malbatê" },
+            { "language": "pl", "text": "Lekarka rodzinna" },
+            { "language": "ro", "text": "Medic de familie" },
+            { "language": "sq", "text": "Mjeke familjeje" }
+          ]
+        },
+        {
+          "roleKey": "learner",
+          "displayName": "Patient",
+          "translations": [
+            { "language": "en", "text": "Patient" },
+            { "language": "fa", "text": "بیمار" },
+            { "language": "ar", "text": "المريض" },
+            { "language": "tr", "text": "Hasta" },
+            { "language": "ru", "text": "Пациент" },
+            { "language": "ckb", "text": "نەخۆش" },
+            { "language": "kmr", "text": "Nexweş" },
+            { "language": "pl", "text": "Pacjent" },
+            { "language": "ro", "text": "Pacient" },
+            { "language": "sq", "text": "Pacient" }
+          ]
+        }
+      ],
+      "turns": [
+        {
+          "sortOrder": 1,
+          "speakerRole": "doctor",
+          "baseText": "Da die Beschwerden trotz Behandlung weiter bestehen, wäre es sinnvoll, dass sich eine Fachärztin das genauer anschaut.",
+          "translations": [
+            { "language": "en", "text": "Since the symptoms continue despite treatment, it would make sense for a specialist to look at it more closely." },
+            { "language": "fa", "text": "از آنجا که علائم با وجود درمان ادامه دارند، منطقی است که یک پزشک متخصص دقیق‌تر آن را بررسی کند." },
+            { "language": "ar", "text": "بما أن الأعراض مستمرة رغم العلاج، فمن المفيد أن تنظر طبيبة مختصة في الأمر بشكل أدق." },
+            { "language": "tr", "text": "Şikayetler tedaviye rağmen devam ettiği için bir uzman doktorun bunu daha ayrıntılı incelemesi mantıklı olur." },
+            { "language": "ru", "text": "Поскольку жалобы продолжаются несмотря на лечение, имеет смысл, чтобы специалист посмотрел на это подробнее." },
+            { "language": "ckb", "text": "لەبەر ئەوەی نیشانەکان بە هەبوونی چارەسەر بەردەوامن، گونجاوە پزیشکێکی پسپۆڕ بە وردیتر سەیری بکات." },
+            { "language": "kmr", "text": "Ji ber ku gazin tevî dermankirinê didomin, wateyê heye ku pisporê wê bi hûrgilî binihêre." },
+            { "language": "pl", "text": "Ponieważ dolegliwości utrzymują się mimo leczenia, sensowne byłoby, aby specjalistka przyjrzała się temu dokładniej." },
+            { "language": "ro", "text": "Deoarece simptomele persistă în ciuda tratamentului, ar avea sens ca o specialistă să analizeze mai atent." },
+            { "language": "sq", "text": "Meqë shqetësimet vazhdojnë pavarësisht trajtimit, do të kishte kuptim që një specialiste ta shikojë më me kujdes." }
+          ],
+          "function": "introduce-referral",
+          "toneNote": "Medical next-step explanation.",
+          "expectedLearnerAction": "Ask whether referral is needed and why."
+        },
+        {
+          "sortOrder": 2,
+          "speakerRole": "learner",
+          "baseText": "Heißt das, dass ich eine Überweisung brauche? Können Sie mir bitte erklären, zu welcher Fachrichtung und aus welchem Grund?",
+          "translations": [
+            { "language": "en", "text": "Does that mean I need a referral? Could you please explain to which specialty and for what reason?" },
+            { "language": "fa", "text": "یعنی به ارجاع نیاز دارم؟ ممکن است لطفاً توضیح بدهید به کدام تخصص و به چه دلیل؟" },
+            { "language": "ar", "text": "هل يعني ذلك أنني أحتاج إلى إحالة؟ هل يمكنك من فضلك أن تشرحي إلى أي اختصاص ولأي سبب؟" },
+            { "language": "tr", "text": "Bu, sevke ihtiyacım olduğu anlamına mı geliyor? Lütfen hangi uzmanlık alanına ve hangi nedenle olduğunu açıklayabilir misiniz?" },
+            { "language": "ru", "text": "Это значит, что мне нужно направление? Не могли бы вы объяснить, к какой специальности и по какой причине?" },
+            { "language": "ckb", "text": "ئایا ئەمە واتە پێویستم بە ڕەوانەکردن هەیە؟ دەتوانن تکایە ڕوون بکەنەوە بۆ کام پسپۆڕی و بە چ هۆکارێک؟" },
+            { "language": "kmr", "text": "Ev tê wê wateyê ku şandin pêwîst e? Hûn dikarin ji kerema xwe şirove bikin ji bo kîjan pisporiyê û bi çi sedemê?" },
+            { "language": "pl", "text": "Czy to znaczy, że potrzebuję skierowania? Czy może pani wyjaśnić, do jakiej specjalizacji i z jakiego powodu?" },
+            { "language": "ro", "text": "Asta înseamnă că am nevoie de o trimitere? Îmi puteți explica, vă rog, către ce specialitate și din ce motiv?" },
+            { "language": "sq", "text": "A do të thotë kjo që kam nevojë për një referim? A mund të më shpjegoni ju lutem për cilin specialitet dhe për çfarë arsyeje?" }
+          ],
+          "function": "ask-referral-purpose",
+          "toneNote": "Precise and respectful question.",
+          "expectedLearnerAction": "Ask about referral need, specialty, and reason."
+        },
+        {
+          "sortOrder": 3,
+          "speakerRole": "doctor",
+          "baseText": "Ja, ich gebe Ihnen eine Überweisung zur Orthopädie. Dort kann man genauer prüfen, ob ein Gelenk oder ein Nerv beteiligt ist.",
+          "translations": [
+            { "language": "en", "text": "Yes, I will give you a referral to orthopedics. There they can check more precisely whether a joint or a nerve is involved." },
+            { "language": "fa", "text": "بله، برای ارتوپدی به شما ارجاع می‌دهم. آنجا می‌توانند دقیق‌تر بررسی کنند آیا مفصل یا عصب درگیر است." },
+            { "language": "ar", "text": "نعم، سأعطيك إحالة إلى طب العظام. هناك يمكنهم فحص ما إذا كان مفصل أو عصب متأثرًا بشكل أدق." },
+            { "language": "tr", "text": "Evet, size ortopediye sevk vereceğim. Orada bir eklem veya sinirin dahil olup olmadığı daha ayrıntılı kontrol edilebilir." },
+            { "language": "ru", "text": "Да, я дам вам направление к ортопеду. Там смогут точнее проверить, связан ли сустав или нерв." },
+            { "language": "ckb", "text": "بەڵێ، ڕەوانەکردنتان بۆ ئۆرتۆپیدی دەدەم. لەوێ دەتوانن بە وردیتر بپشکنن ئایا جومگە یان دەمارێک بەشدارە." },
+            { "language": "kmr", "text": "Erê, ez ji we re şandinek ji bo ortopediyê didim. Li wir dikarin bi hûrgilî kontrol bikin ka girek an demarek tê de ye." },
+            { "language": "pl", "text": "Tak, dam panu skierowanie do ortopedii. Tam można dokładniej sprawdzić, czy chodzi o staw albo nerw." },
+            { "language": "ro", "text": "Da, vă dau o trimitere la ortopedie. Acolo se poate verifica mai exact dacă este implicată o articulație sau un nerv." },
+            { "language": "sq", "text": "Po, do t'ju jap një referim për ortopedi. Atje mund të kontrollohet më saktë nëse është i përfshirë një nyje ose një nerv." }
+          ],
+          "function": "explain-specialty",
+          "toneNote": "Explains specialist purpose.",
+          "expectedLearnerAction": "Ask about appointment process and documents."
+        },
+        {
+          "sortOrder": 4,
+          "speakerRole": "learner",
+          "baseText": "Wie vereinbare ich den Termin am besten? Soll ich die Überweisung, meine bisherigen Befunde und eine Medikamentenliste mitnehmen?",
+          "translations": [
+            { "language": "en", "text": "What is the best way to make the appointment? Should I take the referral, my previous results, and a medication list with me?" },
+            { "language": "fa", "text": "بهترین راه برای گرفتن وقت چیست؟ آیا باید ارجاع، نتایج قبلی و فهرست داروهایم را همراه ببرم؟" },
+            { "language": "ar", "text": "ما أفضل طريقة لتحديد الموعد؟ هل ينبغي أن آخذ الإحالة ونتائجي السابقة وقائمة الأدوية معي؟" },
+            { "language": "tr", "text": "Randevuyu en iyi nasıl alırım? Sevki, önceki sonuçlarımı ve ilaç listemi yanımda götürmeli miyim?" },
+            { "language": "ru", "text": "Как лучше всего записаться на прием? Нужно ли взять с собой направление, предыдущие результаты и список лекарств?" },
+            { "language": "ckb", "text": "باشترین شێوە بۆ دانانی وەعدە چییە؟ ئایا ڕەوانەکردنەکە، ئەنجامە پێشووترەکانم و لیستی دەرمانەکانم لەگەڵ خۆم ببەم؟" },
+            { "language": "kmr", "text": "Çawa herî baş randevûyê çêkim? Divê şandinê, encamên berê û lîsteya dermanên xwe bi xwe re bibim?" },
+            { "language": "pl", "text": "Jak najlepiej umówić termin? Czy powinienem zabrać skierowanie, dotychczasowe wyniki i listę leków?" },
+            { "language": "ro", "text": "Cum ar fi cel mai bine să fac programarea? Ar trebui să iau trimiterea, rezultatele anterioare și o listă cu medicamente?" },
+            { "language": "sq", "text": "Si ta caktoj më mirë takimin? A duhet të marr me vete referimin, rezultatet e mëparshme dhe një listë të ilaçeve?" }
+          ],
+          "function": "ask-appointment-documents",
+          "toneNote": "Practical process question.",
+          "expectedLearnerAction": "Ask about appointment and documents."
+        },
+        {
+          "sortOrder": 5,
+          "speakerRole": "doctor",
+          "baseText": "Rufen Sie bei einer orthopädischen Praxis an und sagen Sie, dass Sie eine Überweisung haben. Nehmen Sie bitte die Überweisung, die Befunde und Ihre Medikamentenliste mit.",
+          "translations": [
+            { "language": "en", "text": "Call an orthopedic practice and say that you have a referral. Please take the referral, the results, and your medication list with you." },
+            { "language": "fa", "text": "با یک مطب ارتوپدی تماس بگیرید و بگویید که ارجاع دارید. لطفاً ارجاع، نتایج و فهرست داروهایتان را همراه ببرید." },
+            { "language": "ar", "text": "اتصل بعيادة عظام وقل إن لديك إحالة. يرجى أخذ الإحالة والنتائج وقائمة أدويتك معك." },
+            { "language": "tr", "text": "Bir ortopedi muayenehanesini arayın ve sevkiniz olduğunu söyleyin. Lütfen sevki, sonuçları ve ilaç listenizi yanınıza alın." },
+            { "language": "ru", "text": "Позвоните в ортопедическую практику и скажите, что у вас есть направление. Пожалуйста, возьмите с собой направление, результаты и список лекарств." },
+            { "language": "ckb", "text": "پەیوەندی بە مطبێکی ئۆرتۆپیدی بکەن و بڵێن ڕەوانەکردنتان هەیە. تکایە ڕەوانەکردنەکە، ئەنجامەکان و لیستی دەرمانەکانتان لەگەڵ خۆتان ببەن." },
+            { "language": "kmr", "text": "Telefonî muayenehaneyeke ortopediyê bikin û bibêjin ku şandina we heye. Ji kerema xwe şandinê, encaman û lîsteya dermanên xwe bi xwe re bibin." },
+            { "language": "pl", "text": "Proszę zadzwonić do poradni ortopedycznej i powiedzieć, że ma pan skierowanie. Proszę zabrać skierowanie, wyniki i listę leków." },
+            { "language": "ro", "text": "Sunați la un cabinet de ortopedie și spuneți că aveți o trimitere. Vă rog să luați cu dumneavoastră trimiterea, rezultatele și lista medicamentelor." },
+            { "language": "sq", "text": "Telefononi në një ordinancë ortopedie dhe thoni se keni një referim. Ju lutem merrni me vete referimin, rezultatet dhe listën e ilaçeve." }
+          ],
+          "function": "explain-process-documents",
+          "toneNote": "Gives clear next steps.",
+          "expectedLearnerAction": "Ask what to do during waiting time."
+        },
+        {
+          "sortOrder": 6,
+          "speakerRole": "learner",
+          "baseText": "Wenn ich erst in einigen Wochen einen Termin bekomme, was soll ich bis dahin beachten? Gibt es etwas, wobei ich sofort wiederkommen sollte?",
+          "translations": [
+            { "language": "en", "text": "If I only get an appointment in a few weeks, what should I pay attention to until then? Is there anything where I should come back immediately?" },
+            { "language": "fa", "text": "اگر تازه چند هفته دیگر وقت بگیرم، تا آن زمان به چه چیزهایی توجه کنم؟ آیا چیزی هست که در صورت آن باید فوراً برگردم؟" },
+            { "language": "ar", "text": "إذا حصلت على موعد بعد عدة أسابيع فقط، فما الذي ينبغي أن أنتبه إليه حتى ذلك الوقت؟ هل هناك شيء يجب أن أعود فورًا عند حدوثه؟" },
+            { "language": "tr", "text": "Ancak birkaç hafta sonra randevu alırsam o zamana kadar nelere dikkat etmeliyim? Hangi durumda hemen tekrar gelmeliyim?" },
+            { "language": "ru", "text": "Если я получу прием только через несколько недель, на что мне до тех пор обращать внимание? Есть ли что-то, при чем мне нужно сразу прийти снова?" },
+            { "language": "ckb", "text": "ئەگەر تەنها دوای چەند هەفتەیەک وەعدە وەربگرم، تا ئەو کاتە چی ڕەچاو بکەم؟ ئایا شتێک هەیە کە لەو حاڵەتەدا دەبێت دەستبەجێ بگەڕێمەوە؟" },
+            { "language": "kmr", "text": "Heke ez tenê piştî çend hefteyan randevû bistînim, heta wê demê divê ez balê bidim çi? Tiştek heye ku divê ez li ser wê demildest vegerim?" },
+            { "language": "pl", "text": "Jeśli dostanę termin dopiero za kilka tygodni, na co mam do tego czasu uważać? Czy jest coś, z czym powinienem natychmiast wrócić?" },
+            { "language": "ro", "text": "Dacă primesc o programare abia peste câteva săptămâni, la ce ar trebui să fiu atent până atunci? Există ceva pentru care ar trebui să revin imediat?" },
+            { "language": "sq", "text": "Nëse marr takim vetëm pas disa javësh, çfarë duhet të kem parasysh deri atëherë? A ka diçka për të cilën duhet të kthehem menjëherë?" }
+          ],
+          "function": "ask-waiting-time-safety",
+          "toneNote": "Asks for interim behavior and warning signs.",
+          "expectedLearnerAction": "Ask about waiting period and red flags."
+        },
+        {
+          "sortOrder": 7,
+          "speakerRole": "doctor",
+          "baseText": "Belasten Sie die Stelle nicht zu stark und melden Sie sich sofort, wenn Taubheitsgefühle, starke Schwellung oder plötzlich deutlich stärkere Schmerzen auftreten.",
+          "translations": [
+            { "language": "en", "text": "Do not put too much strain on the area and contact us immediately if numbness, severe swelling, or suddenly clearly stronger pain occurs." },
+            { "language": "fa", "text": "آن قسمت را زیاد تحت فشار نگذارید و اگر بی‌حسی، ورم شدید یا درد ناگهانی و به‌وضوح شدیدتر پیش آمد، فوراً با ما تماس بگیرید." },
+            { "language": "ar", "text": "لا تجهد المنطقة كثيرًا، واتصل بنا فورًا إذا ظهر خدر أو تورم شديد أو ألم أقوى بوضوح بشكل مفاجئ." },
+            { "language": "tr", "text": "O bölgeye çok fazla yük bindirmeyin ve uyuşma, şiddetli şişlik veya aniden belirgin şekilde daha güçlü ağrı olursa hemen bize başvurun." },
+            { "language": "ru", "text": "Не нагружайте это место слишком сильно и сразу свяжитесь с нами, если появится онемение, сильный отек или внезапно заметно более сильная боль." },
+            { "language": "ckb", "text": "ئەو شوێنە زۆر بار مەکەن و ئەگەر بێحەسی، ئاوسانی توند یان ئازاری لەناکاوی بە ڕوونی توندتر ڕوویدا، دەستبەجێ پەیوەندیمان پێوە بکەن." },
+            { "language": "kmr", "text": "Ew cih zêde bar nekin û heke bêhestî, werimîna xurt an êşeke ji nişkê ve bi zelalî xurtir derkeve, demildest bi me re têkilî daynin." },
+            { "language": "pl", "text": "Proszę nie obciążać tego miejsca zbyt mocno i zgłosić się od razu, jeśli wystąpi drętwienie, silny obrzęk albo nagle wyraźnie silniejszy ból." },
+            { "language": "ro", "text": "Nu solicitați prea mult zona și contactați-ne imediat dacă apar amorțeală, umflare puternică sau dureri brusc mult mai puternice." },
+            { "language": "sq", "text": "Mos e ngarkoni shumë atë vend dhe na kontaktoni menjëherë nëse shfaqet mpirje, ënjtje e fortë ose dhimbje papritur dukshëm më e fortë." }
+          ],
+          "function": "interim-safety-advice",
+          "toneNote": "Clear interim behavior and red flags.",
+          "expectedLearnerAction": "Summarize referral process and warning signs."
+        },
+        {
+          "sortOrder": 8,
+          "speakerRole": "learner",
+          "baseText": "Danke, dann rufe ich bei einer Orthopädiepraxis an, nehme Überweisung, Befunde und Medikamentenliste mit und melde mich sofort, wenn Taubheitsgefühle oder starke Schwellung dazukommen.",
+          "translations": [
+            { "language": "en", "text": "Thank you, then I will call an orthopedic practice, take the referral, results, and medication list with me, and contact you immediately if numbness or severe swelling occurs." },
+            { "language": "fa", "text": "ممنون، پس با یک مطب ارتوپدی تماس می‌گیرم، ارجاع، نتایج و فهرست داروها را همراه می‌برم و اگر بی‌حسی یا ورم شدید اضافه شد فوراً تماس می‌گیرم." },
+            { "language": "ar", "text": "شكرًا، إذن سأتصل بعيادة عظام، وآخذ الإحالة والنتائج وقائمة الأدوية معي، وأتواصل فورًا إذا ظهر خدر أو تورم شديد." },
+            { "language": "tr", "text": "Teşekkürler, o zaman bir ortopedi muayenehanesini ararım, sevki, sonuçları ve ilaç listesini yanımda götürürüm ve uyuşma veya şiddetli şişlik olursa hemen başvururum." },
+            { "language": "ru", "text": "Спасибо, тогда я позвоню в ортопедическую практику, возьму с собой направление, результаты и список лекарств и сразу свяжусь, если появится онемение или сильный отек." },
+            { "language": "ckb", "text": "سوپاس، ئەوا پەیوەندی بە مطبێکی ئۆرتۆپیدی دەکەم، ڕەوانەکردن، ئەنجامەکان و لیستی دەرمانەکان لەگەڵ خۆم دەبەم و ئەگەر بێحەسی یان ئاوسانی توند زیاد بوو دەستبەجێ پەیوەندی دەکەم." },
+            { "language": "kmr", "text": "Spas, wê demê ez telefonî muayenehaneyeke ortopediyê dikim, şandin, encam û lîsteya dermanan bi xwe re dibim û heke bêhestî an werimîna xurt derkeve demildest têkilî digirim." },
+            { "language": "pl", "text": "Dziękuję, w takim razie zadzwonię do poradni ortopedycznej, zabiorę skierowanie, wyniki i listę leków oraz zgłoszę się od razu, jeśli pojawi się drętwienie albo silny obrzęk." },
+            { "language": "ro", "text": "Mulțumesc, atunci sun la un cabinet de ortopedie, iau cu mine trimiterea, rezultatele și lista medicamentelor și revin imediat dacă apare amorțeală sau umflare puternică." },
+            { "language": "sq", "text": "Faleminderit, atëherë telefonoj në një ordinancë ortopedie, marr me vete referimin, rezultatet dhe listën e ilaçeve dhe kontaktoj menjëherë nëse shfaqet mpirje ose ënjtje e fortë." }
+          ],
+          "function": "summarize-referral",
+          "toneNote": "Complete summary of referral process and red flags.",
+          "expectedLearnerAction": "Summarize specialist, documents, and warning signs."
+        }
+      ],
+      "answerChoices": [
+        {
+          "turnSortOrder": 2,
+          "choices": [
+            {
+              "id": "ask-specialty-and-reason",
+              "text": "Heißt das, dass ich eine Überweisung brauche? Können Sie mir bitte erklären, zu welcher Fachrichtung und aus welchem Grund?",
+              "translations": [
+                { "language": "en", "text": "Does that mean I need a referral? Could you please explain to which specialty and for what reason?" },
+                { "language": "fa", "text": "یعنی به ارجاع نیاز دارم؟ ممکن است لطفاً توضیح بدهید به کدام تخصص و به چه دلیل؟" },
+                { "language": "ar", "text": "هل يعني ذلك أنني أحتاج إلى إحالة؟ هل يمكنك من فضلك أن تشرحي إلى أي اختصاص ولأي سبب؟" },
+                { "language": "tr", "text": "Bu, sevke ihtiyacım olduğu anlamına mı geliyor? Lütfen hangi uzmanlık alanına ve hangi nedenle olduğunu açıklayabilir misiniz?" },
+                { "language": "ru", "text": "Это значит, что мне нужно направление? Не могли бы вы объяснить, к какой специальности и по какой причине?" },
+                { "language": "ckb", "text": "ئایا ئەمە واتە پێویستم بە ڕەوانەکردن هەیە؟ دەتوانن تکایە ڕوون بکەنەوە بۆ کام پسپۆڕی و بە چ هۆکارێک؟" },
+                { "language": "kmr", "text": "Ev tê wê wateyê ku şandin pêwîst e? Hûn dikarin ji kerema xwe şirove bikin ji bo kîjan pisporiyê û bi çi sedemê?" },
+                { "language": "pl", "text": "Czy to znaczy, że potrzebuję skierowania? Czy może pani wyjaśnić, do jakiej specjalizacji i z jakiego powodu?" },
+                { "language": "ro", "text": "Asta înseamnă că am nevoie de o trimitere? Îmi puteți explica, vă rog, către ce specialitate și din ce motiv?" },
+                { "language": "sq", "text": "A do të thotë kjo që kam nevojë për një referim? A mund të më shpjegoni ju lutem për cilin specialitet dhe për çfarë arsyeje?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du klärst Bedarf, Fachrichtung und medizinischen Grund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You clarify need, specialty, and medical reason." },
+                { "language": "fa", "text": "خوب است: نیاز، تخصص و دلیل پزشکی را روشن می‌کنی." },
+                { "language": "ar", "text": "جيد: توضح الحاجة والاختصاص والسبب الطبي." },
+                { "language": "tr", "text": "İyi: İhtiyacı, uzmanlığı ve tıbbi nedeni netleştiriyorsun." },
+                { "language": "ru", "text": "Хорошо: ты уточняешь необходимость, специальность и медицинскую причину." },
+                { "language": "ckb", "text": "باشە: پێویستی، پسپۆڕی و هۆکاری پزیشکی ڕوون دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu pêwîstî, pisporî û sedema tibî zelal dikî." },
+                { "language": "pl", "text": "Dobrze: wyjaśniasz potrzebę, specjalizację i powód medyczny." },
+                { "language": "ro", "text": "Bine: clarifici necesitatea, specialitatea și motivul medical." },
+                { "language": "sq", "text": "Mirë: sqaron nevojën, specialitetin dhe arsyen mjekësore." }
+              ]
+            },
+            {
+              "id": "only-asks-paper",
+              "text": "Okay, bekomme ich dann einen Zettel?",
+              "translations": [
+                { "language": "en", "text": "Okay, will I then get a paper?" },
+                { "language": "fa", "text": "باشه، پس یک برگه می‌گیرم؟" },
+                { "language": "ar", "text": "حسنًا، هل سأحصل إذن على ورقة؟" },
+                { "language": "tr", "text": "Tamam, o zaman bir kağıt mı alacağım?" },
+                { "language": "ru", "text": "Хорошо, тогда я получу бумагу?" },
+                { "language": "ckb", "text": "باشە، ئەوا کاغەزێک وەردەگرم؟" },
+                { "language": "kmr", "text": "Baş e, wê demê ez kaxezekê werdigirim?" },
+                { "language": "pl", "text": "Dobrze, czy dostanę wtedy kartkę?" },
+                { "language": "ro", "text": "Bine, primesc atunci o hârtie?" },
+                { "language": "sq", "text": "Mirë, atëherë do të marr një letër?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu ungenau: Du fragst nur nach dem Papier, aber nicht nach Fachrichtung oder Grund.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too vague: You only ask about the paper, not the specialty or reason." },
+                { "language": "fa", "text": "خیلی مبهم است: فقط درباره برگه می‌پرسی، نه درباره تخصص یا دلیل." },
+                { "language": "ar", "text": "غامض جدًا: تسأل فقط عن الورقة، وليس عن الاختصاص أو السبب." },
+                { "language": "tr", "text": "Çok belirsiz: Sadece kağıdı soruyorsun, uzmanlık alanını veya nedeni değil." },
+                { "language": "ru", "text": "Слишком неопределенно: ты спрашиваешь только о бумаге, а не о специальности или причине." },
+                { "language": "ckb", "text": "زۆر ناڕوونە: تەنها دەربارەی کاغەزەکە دەپرسی، نە پسپۆڕی یان هۆکار." },
+                { "language": "kmr", "text": "Pir nezelal e: Tu tenê li ser kaxezê dipirsî, ne pisporî an sedemê." },
+                { "language": "pl", "text": "Zbyt niejasno: pytasz tylko o papier, a nie o specjalizację albo powód." },
+                { "language": "ro", "text": "Prea vag: întrebi doar despre hârtie, nu despre specialitate sau motiv." },
+                { "language": "sq", "text": "Shumë e paqartë: pyet vetëm për letrën, jo për specialitetin ose arsyen." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 4,
+          "choices": [
+            {
+              "id": "appointment-and-documents",
+              "text": "Wie vereinbare ich den Termin am besten? Soll ich die Überweisung, meine bisherigen Befunde und eine Medikamentenliste mitnehmen?",
+              "translations": [
+                { "language": "en", "text": "What is the best way to make the appointment? Should I take the referral, my previous results, and a medication list with me?" },
+                { "language": "fa", "text": "بهترین راه برای گرفتن وقت چیست؟ آیا باید ارجاع، نتایج قبلی و فهرست داروهایم را همراه ببرم؟" },
+                { "language": "ar", "text": "ما أفضل طريقة لتحديد الموعد؟ هل ينبغي أن آخذ الإحالة ونتائجي السابقة وقائمة الأدوية معي؟" },
+                { "language": "tr", "text": "Randevuyu en iyi nasıl alırım? Sevki, önceki sonuçlarımı ve ilaç listemi yanımda götürmeli miyim?" },
+                { "language": "ru", "text": "Как лучше всего записаться на прием? Нужно ли взять с собой направление, предыдущие результаты и список лекарств?" },
+                { "language": "ckb", "text": "باشترین شێوە بۆ دانانی وەعدە چییە؟ ئایا ڕەوانەکردنەکە، ئەنجامە پێشووترەکانم و لیستی دەرمانەکانم لەگەڵ خۆم ببەم؟" },
+                { "language": "kmr", "text": "Çawa herî baş randevûyê çêkim? Divê şandinê, encamên berê û lîsteya dermanên xwe bi xwe re bibim?" },
+                { "language": "pl", "text": "Jak najlepiej umówić termin? Czy powinienem zabrać skierowanie, dotychczasowe wyniki i listę leków?" },
+                { "language": "ro", "text": "Cum ar fi cel mai bine să fac programarea? Ar trebui să iau trimiterea, rezultatele anterioare și o listă cu medicamente?" },
+                { "language": "sq", "text": "Si ta caktoj më mirë takimin? A duhet të marr me vete referimin, rezultatet e mëparshme dhe një listë të ilaçeve?" }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fragst nach Terminprozess und wichtigen Unterlagen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You ask about the appointment process and important documents." },
+                { "language": "fa", "text": "خوب است: درباره فرایند وقت گرفتن و مدارک مهم می‌پرسی." },
+                { "language": "ar", "text": "جيد: تسأل عن إجراء الموعد والوثائق المهمة." },
+                { "language": "tr", "text": "İyi: Randevu sürecini ve önemli belgeleri soruyorsun." },
+                { "language": "ru", "text": "Хорошо: ты спрашиваешь о процессе записи и важных документах." },
+                { "language": "ckb", "text": "باشە: دەربارەی پرۆسەی وەعدە و بەڵگە گرنگەکان دەپرسی." },
+                { "language": "kmr", "text": "Baş e: Tu li ser pêvajoya randevûyê û belgeyên girîng dipirsî." },
+                { "language": "pl", "text": "Dobrze: pytasz o proces umawiania terminu i ważne dokumenty." },
+                { "language": "ro", "text": "Bine: întrebi despre procesul de programare și documentele importante." },
+                { "language": "sq", "text": "Mirë: pyet për procesin e takimit dhe dokumentet e rëndësishme." }
+              ]
+            },
+            {
+              "id": "only-asks-address",
+              "text": "Können Sie mir eine Adresse geben?",
+              "translations": [
+                { "language": "en", "text": "Can you give me an address?" },
+                { "language": "fa", "text": "می‌توانید یک آدرس به من بدهید؟" },
+                { "language": "ar", "text": "هل يمكنك أن تعطيني عنوانًا؟" },
+                { "language": "tr", "text": "Bana bir adres verebilir misiniz?" },
+                { "language": "ru", "text": "Можете дать мне адрес?" },
+                { "language": "ckb", "text": "دەتوانن ناونیشانێکم پێ بدەن؟" },
+                { "language": "kmr", "text": "Hûn dikarin navnîşanekê bidin min?" },
+                { "language": "pl", "text": "Czy może mi pani dać adres?" },
+                { "language": "ro", "text": "Îmi puteți da o adresă?" },
+                { "language": "sq", "text": "A mund të më jepni një adresë?" }
+              ],
+              "isCorrect": false,
+              "feedback": "Zu wenig: Eine Adresse reicht nicht; du musst Terminprozess und Unterlagen klären.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Too little: An address is not enough; you need to clarify the appointment process and documents." },
+                { "language": "fa", "text": "کم است: آدرس کافی نیست؛ باید فرایند وقت گرفتن و مدارک را روشن کنی." },
+                { "language": "ar", "text": "غير كافٍ: العنوان لا يكفي؛ يجب توضيح إجراء الموعد والوثائق." },
+                { "language": "tr", "text": "Yetersiz: Bir adres yetmez; randevu sürecini ve belgeleri netleştirmelisin." },
+                { "language": "ru", "text": "Слишком мало: адреса недостаточно; нужно уточнить процесс записи и документы." },
+                { "language": "ckb", "text": "کەمە: ناونیشان بەس نییە؛ دەبێت پرۆسەی وەعدە و بەڵگەکان ڕوون بکەیتەوە." },
+                { "language": "kmr", "text": "Kêm e: Navnîşan têrê nake; divê pêvajoya randevûyê û belgeyan zelal bikî." },
+                { "language": "pl", "text": "Za mało: adres nie wystarczy; trzeba wyjaśnić proces terminu i dokumenty." },
+                { "language": "ro", "text": "Prea puțin: o adresă nu ajunge; trebuie să clarifici procesul de programare și documentele." },
+                { "language": "sq", "text": "Shumë pak: një adresë nuk mjafton; duhet të sqarosh procesin e takimit dhe dokumentet." }
+              ]
+            }
+          ]
+        },
+        {
+          "turnSortOrder": 8,
+          "choices": [
+            {
+              "id": "complete-referral-summary",
+              "text": "Danke, dann rufe ich bei einer Orthopädiepraxis an, nehme Überweisung, Befunde und Medikamentenliste mit und melde mich sofort, wenn Taubheitsgefühle oder starke Schwellung dazukommen.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will call an orthopedic practice, take the referral, results, and medication list with me, and contact you immediately if numbness or severe swelling occurs." },
+                { "language": "fa", "text": "ممنون، پس با یک مطب ارتوپدی تماس می‌گیرم، ارجاع، نتایج و فهرست داروها را همراه می‌برم و اگر بی‌حسی یا ورم شدید اضافه شد فوراً تماس می‌گیرم." },
+                { "language": "ar", "text": "شكرًا، إذن سأتصل بعيادة عظام، وآخذ الإحالة والنتائج وقائمة الأدوية معي، وأتواصل فورًا إذا ظهر خدر أو تورم شديد." },
+                { "language": "tr", "text": "Teşekkürler, o zaman bir ortopedi muayenehanesini ararım, sevki, sonuçları ve ilaç listesini yanımda götürürüm ve uyuşma veya şiddetli şişlik olursa hemen başvururum." },
+                { "language": "ru", "text": "Спасибо, тогда я позвоню в ортопедическую практику, возьму с собой направление, результаты и список лекарств и сразу свяжусь, если появится онемение или сильный отек." },
+                { "language": "ckb", "text": "سوپاس، ئەوا پەیوەندی بە مطبێکی ئۆرتۆپیدی دەکەم، ڕەوانەکردن، ئەنجامەکان و لیستی دەرمانەکان لەگەڵ خۆم دەبەم و ئەگەر بێحەسی یان ئاوسانی توند زیاد بوو دەستبەجێ پەیوەندی دەکەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez telefonî muayenehaneyeke ortopediyê dikim, şandin, encam û lîsteya dermanan bi xwe re dibim û heke bêhestî an werimîna xurt derkeve demildest têkilî digirim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie zadzwonię do poradni ortopedycznej, zabiorę skierowanie, wyniki i listę leków oraz zgłoszę się od razu, jeśli pojawi się drętwienie albo silny obrzęk." },
+                { "language": "ro", "text": "Mulțumesc, atunci sun la un cabinet de ortopedie, iau cu mine trimiterea, rezultatele și lista medicamentelor și revin imediat dacă apare amorțeală sau umflare puternică." },
+                { "language": "sq", "text": "Faleminderit, atëherë telefonoj në një ordinancë ortopedie, marr me vete referimin, rezultatet dhe listën e ilaçeve dhe kontaktoj menjëherë nëse shfaqet mpirje ose ënjtje e fortë." }
+              ],
+              "isCorrect": true,
+              "feedback": "Gut: Du fasst Fachrichtung, Unterlagen und Warnzeichen vollständig zusammen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Good: You fully summarize specialty, documents, and warning signs." },
+                { "language": "fa", "text": "خوب است: تخصص، مدارک و علائم هشدار را کامل جمع‌بندی می‌کنی." },
+                { "language": "ar", "text": "جيد: تلخص الاختصاص والوثائق وعلامات التحذير بالكامل." },
+                { "language": "tr", "text": "İyi: Uzmanlık alanını, belgeleri ve uyarı işaretlerini tam özetliyorsun." },
+                { "language": "ru", "text": "Хорошо: ты полностью подытоживаешь специальность, документы и тревожные признаки." },
+                { "language": "ckb", "text": "باشە: پسپۆڕی، بەڵگەکان و نیشانەکانی ئاگاداری بە تەواوی کورت دەکەیتەوە." },
+                { "language": "kmr", "text": "Baş e: Tu pisporî, belge û nîşanên hişyariyê bi tevahî kurt dikî." },
+                { "language": "pl", "text": "Dobrze: w pełni podsumowujesz specjalizację, dokumenty i sygnały ostrzegawcze." },
+                { "language": "ro", "text": "Bine: rezumi complet specialitatea, documentele și semnele de avertizare." },
+                { "language": "sq", "text": "Mirë: përmbledh plotësisht specialitetin, dokumentet dhe shenjat paralajmëruese." }
+              ]
+            },
+            {
+              "id": "summary-missing-warning",
+              "text": "Danke, dann rufe ich bei der Orthopädie an und nehme die Überweisung mit.",
+              "translations": [
+                { "language": "en", "text": "Thank you, then I will call orthopedics and take the referral with me." },
+                { "language": "fa", "text": "ممنون، پس با ارتوپدی تماس می‌گیرم و ارجاع را همراه می‌برم." },
+                { "language": "ar", "text": "شكرًا، إذن سأتصل بطب العظام وآخذ الإحالة معي." },
+                { "language": "tr", "text": "Teşekkürler, o zaman ortopediyi ararım ve sevki yanımda götürürüm." },
+                { "language": "ru", "text": "Спасибо, тогда я позвоню в ортопедию и возьму направление с собой." },
+                { "language": "ckb", "text": "سوپاس، ئەوا پەیوەندی بە ئۆرتۆپیدی دەکەم و ڕەوانەکردنەکە لەگەڵ خۆم دەبەم." },
+                { "language": "kmr", "text": "Spas, wê demê ez telefonî ortopediyê dikim û şandinê bi xwe re dibim." },
+                { "language": "pl", "text": "Dziękuję, w takim razie zadzwonię do ortopedii i zabiorę skierowanie." },
+                { "language": "ro", "text": "Mulțumesc, atunci sun la ortopedie și iau trimiterea cu mine." },
+                { "language": "sq", "text": "Faleminderit, atëherë telefonoj në ortopedi dhe marr referimin me vete." }
+              ],
+              "isCorrect": false,
+              "feedback": "Unvollständig: Befunde, Medikamentenliste und Warnzeichen fehlen.",
+              "feedbackTranslations": [
+                { "language": "en", "text": "Incomplete: Results, medication list, and warning signs are missing." },
+                { "language": "fa", "text": "ناقص است: نتایج، فهرست داروها و علائم هشدار کم است." },
+                { "language": "ar", "text": "غير كامل: النتائج وقائمة الأدوية وعلامات التحذير مفقودة." },
+                { "language": "tr", "text": "Eksik: Sonuçlar, ilaç listesi ve uyarı işaretleri eksik." },
+                { "language": "ru", "text": "Неполно: не хватает результатов, списка лекарств и тревожных признаков." },
+                { "language": "ckb", "text": "ناتەواوە: ئەنجامەکان، لیستی دەرمانەکان و نیشانەکانی ئاگاداری کەمە." },
+                { "language": "kmr", "text": "Netemam e: Encam, lîsteya dermanan û nîşanên hişyariyê kêm in." },
+                { "language": "pl", "text": "Niepełne: brakuje wyników, listy leków i sygnałów ostrzegawczych." },
+                { "language": "ro", "text": "Incomplet: lipsesc rezultatele, lista medicamentelor și semnele de avertizare." },
+                { "language": "sq", "text": "E paplotë: mungojnë rezultatet, lista e ilaçeve dhe shenjat paralajmëruese." }
+              ]
+            }
+          ]
+        }
+      ],
+      "staticFeedback": [
+        {
+          "turnSortOrder": 8,
+          "feedbackType": "referral-summary",
+          "text": "Bei einer Überweisung solltest du drei Dinge klären: zu welcher Fachrichtung, mit welchen Unterlagen und welche Warnzeichen nicht warten dürfen.",
+          "translations": [
+            { "language": "en", "text": "With a referral, you should clarify three things: which specialty, which documents, and which warning signs must not wait." },
+            { "language": "fa", "text": "در یک ارجاع باید سه چیز را روشن کنی: به کدام تخصص، با چه مدارکی، و کدام علائم هشدار نباید منتظر بمانند." },
+            { "language": "ar", "text": "في الإحالة ينبغي توضيح ثلاثة أمور: إلى أي اختصاص، وبأي وثائق، وأي علامات تحذير لا يجوز أن تنتظر." },
+            { "language": "tr", "text": "Bir sevkte üç şeyi netleştirmelisin: hangi uzmanlık alanı, hangi belgeler ve hangi uyarı işaretleri beklememeli." },
+            { "language": "ru", "text": "При направлении нужно уточнить три вещи: к какой специальности, с какими документами и какие тревожные признаки не должны ждать." },
+            { "language": "ckb", "text": "لە ڕەوانەکردندا دەبێت سێ شت ڕوون بکەیتەوە: بۆ کام پسپۆڕی، بە چ بەڵگەیەک، و کام نیشانەی ئاگاداری نابێت چاوەڕێ بکات." },
+            { "language": "kmr", "text": "Di şandinê de divê tu sê tiştan zelal bikî: ji bo kîjan pisporiyê, bi kîjan belgeyan, û kîjan nîşanên hişyariyê divê ne li bendê bimînin." },
+            { "language": "pl", "text": "Przy skierowaniu trzeba wyjaśnić trzy rzeczy: do jakiej specjalizacji, z jakimi dokumentami i które sygnały ostrzegawcze nie mogą czekać." },
+            { "language": "ro", "text": "La o trimitere trebuie să clarifici trei lucruri: către ce specialitate, cu ce documente și ce semne de avertizare nu trebuie să aștepte." },
+            { "language": "sq", "text": "Te një referim duhet të sqarosh tri gjëra: për cilin specialitet, me cilat dokumente dhe cilat shenja paralajmëruese nuk duhet të presin." }
+          ]
+        }
+      ],
+      "imageSlots": []
+    }
+  ]
+}
